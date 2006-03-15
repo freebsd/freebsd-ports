@@ -6,7 +6,7 @@
 
 PORTNAME=	chardet
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc python
 MASTER_SITES=	http://chardet.feedparser.org/download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,5 +17,17 @@ COMMENT=	Character encoding auto-detection in Python
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	docs COPYING
+.endif
+
+post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+.for i in ${PORTDOCS}
+	${CP} -R ${WRKSRC}/${i} ${DOCSDIR}
+.endfor
+.endif
 
 .include <bsd.port.mk>
