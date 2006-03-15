@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	matchbox
-PORTVERSION=	0.9.5
+PORTVERSION=	1.0
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://projects.o-hand.com/matchbox/sources/matchbox-window-manager/%SUBDIR%/
-MASTER_SITE_SUBDIR=	${PORTVERSION:R}
+MASTER_SITE_SUBDIR=	${PORTVERSION}
 DISTNAME=	${PORTNAME}-window-manager-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
