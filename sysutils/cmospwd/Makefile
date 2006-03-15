@@ -6,12 +6,14 @@
 #
 
 PORTNAME=	cmospwd
-PORTVERSION=	4.7
+PORTVERSION=	4.8
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.cgsecurity.org/
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A BIOS password recovery tool
+
+USE_BZIP2=	yes
 
 PLIST_FILES=	bin/cmospwd
 PORTDOCS=	cmospwd.txt
