@@ -3,19 +3,13 @@ bin/c++%%SUFFIX%%
 bin/cpp%%SUFFIX%%
 bin/g++%%SUFFIX%%
 bin/gcc%%SUFFIX%%
+bin/gccbug%%SUFFIX%%
 bin/gcov%%SUFFIX%%
 bin/%%GNU_HOST%%-c++%%SUFFIX%%
 bin/%%GNU_HOST%%-g++%%SUFFIX%%
 bin/%%GNU_HOST%%-gcc-%%GCC_VER%%
 bin/%%GNU_HOST%%-gcc%%SUFFIX%%
-bin/gccbug%%SUFFIX%%
-include/mf-runtime.h
-include/ssp/ssp.h
-include/ssp/string.h
-include/ssp/stdio.h
-include/ssp/unistd.h
 include/omp.h
-@dirrm include/ssp
 info/gcc%%SUFFIX%%/dir
 %%FORTRAN%%bin/gfortran%%SUFFIX%%
 %%FORTRAN%%bin/%%GNU_HOST%%-gfortran%%SUFFIX%%
