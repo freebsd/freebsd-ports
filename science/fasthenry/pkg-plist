@@ -1,0 +1,37 @@
+bin/fasthenry
+bin/zbuf
+%%PORTDOCS%%%%DOCSDIR%%/manual.ps.gz
+%%PORTDOCS%%%%DOCSDIR%%/ms_thesis.ps.gz
+%%PORTDOCS%%%%DOCSDIR%%/nonuniform_manual.ps.gz
+%%PORTDOCS%%%%DOCSDIR%%/readme.gz
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%%%EXAMPLESDIR%%/30pin.inp
+%%PORTDOCS%%%%EXAMPLESDIR%%/3d_example2.inp
+%%PORTDOCS%%%%EXAMPLESDIR%%/3d_example2_coarse.inp
+%%PORTDOCS%%%%EXAMPLESDIR%%/Zc_3d_examp2.mat
+%%PORTDOCS%%%%EXAMPLESDIR%%/Zc_pin_con7.mat
+%%PORTDOCS%%%%EXAMPLESDIR%%/broken.inp
+%%PORTDOCS%%%%EXAMPLESDIR%%/gpexamp_copper.inp
+%%PORTDOCS%%%%EXAMPLESDIR%%/hole.inp
+%%PORTDOCS%%%%EXAMPLESDIR%%/holey_gp.inp
+%%PORTDOCS%%%%EXAMPLESDIR%%/make_nonuniform.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/msm.inp
+%%PORTDOCS%%%%EXAMPLESDIR%%/nonuni01.inp
+%%PORTDOCS%%%%EXAMPLESDIR%%/onebargp.inp
+%%PORTDOCS%%%%EXAMPLESDIR%%/pin-con2seg.inp
+%%PORTDOCS%%%%EXAMPLESDIR%%/pin-con7.inp
+%%PORTDOCS%%%%EXAMPLESDIR%%/pin-connect.inp
+%%PORTDOCS%%%%EXAMPLESDIR%%/plane.in
+%%PORTDOCS%%%%EXAMPLESDIR%%/rom_check_con7_r20.ckt
+%%PORTDOCS%%%%EXAMPLESDIR%%/sline1.inp
+%%PORTDOCS%%%%EXAMPLESDIR%%/sline2.inp
+%%PORTDOCS%%%%EXAMPLESDIR%%/simple_gp.inp
+%%PORTDOCS%%%%EXAMPLESDIR%%/template.inp
+%%PORTDOCS%%%%EXAMPLESDIR%%/together.inp
+%%PORTDOCS%%%%EXAMPLESDIR%%/together_nonuni.inp
+%%PORTDOCS%%%%EXAMPLESDIR%%/trace.test.release
+%%PORTDOCS%%%%EXAMPLESDIR%%/trace_over_mesh_new.inp
+%%PORTDOCS%%%%EXAMPLESDIR%%/tree_sample.hier
+%%PORTDOCS%%%%EXAMPLESDIR%%/tree_sample.inp
+%%PORTDOCS%%%%EXAMPLESDIR%%/vias.inp
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
