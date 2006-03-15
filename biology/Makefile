@@ -37,6 +37,7 @@
     SUBDIR += lamarc
     SUBDIR += libgenome
     SUBDIR += lsysexp
+    SUBDIR += mafft
     SUBDIR += migrate
     SUBDIR += molden
     SUBDIR += mopac
