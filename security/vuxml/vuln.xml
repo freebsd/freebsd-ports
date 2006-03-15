@@ -34,6 +34,45 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="83421018-b3ef-11da-a32d-000c6ec775d9">
+    <topic>linux-flashplugin -- arbitrary code execution vulnerability</topic>
+    <affects>
+      <package>
+	<name>linux-flashplugin</name>
+	<range><lt>7.0r63</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Adobe reports:</p>
+	<blockquote cite="http://www.macromedia.com/devnet/security/security_zone/apsb06-03.html">
+	  <p>Critical vulnerabilities have been identified in Flash
+	    Player that could allow an attacker who successfully
+	    exploits these vulnerabilities to take control of the
+	    affected system. A malicious SWF must be loaded in Flash
+	    Player by the user for an attacker to exploit these
+	    vulnerabilities.</p>
+	  <p>Flash Player 8 update (8.0.24.0), and Flash Player 7
+	    update (7.0.63.0) address security vulnerabilities in
+	    previous versions of Flash Player, which could lead to the
+	    potential execution of arbitrary code. These
+	    vulnerabilities could be accessed through content
+	    delivered from a remote location via the users web
+	    browser, email client, or other applications that include
+	    or reference the Flash Player.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-0024</cvename>
+      <url>http://www.macromedia.com/devnet/security/security_zone/apsb06-03.html</url>
+    </references>
+    <dates>
+      <discovery>2006-03-14</discovery>
+      <entry>2006-03-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6111ecb8-b20d-11da-b2fb-000e0c2e438a">
     <topic>nfs -- remote denial of service</topic>
     <affects>
