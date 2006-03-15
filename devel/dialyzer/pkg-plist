@@ -8,22 +8,36 @@ lib/erlang/lib/dialyzer-%%VERSION%%/doc/warnings.txt
 lib/erlang/lib/dialyzer-%%VERSION%%/ebin/dialyzer.app
 lib/erlang/lib/dialyzer-%%VERSION%%/ebin/dialyzer.beam
 lib/erlang/lib/dialyzer-%%VERSION%%/ebin/dialyzer_analysis.beam
+lib/erlang/lib/dialyzer-%%VERSION%%/ebin/dialyzer_analysis_callgraph.beam
+lib/erlang/lib/dialyzer-%%VERSION%%/ebin/dialyzer_callgraph.beam
 lib/erlang/lib/dialyzer-%%VERSION%%/ebin/dialyzer_cl.beam
+lib/erlang/lib/dialyzer-%%VERSION%%/ebin/dialyzer_codeserver.beam
+lib/erlang/lib/dialyzer-%%VERSION%%/ebin/dialyzer_dataflow.beam
+lib/erlang/lib/dialyzer-%%VERSION%%/ebin/dialyzer_dep.beam
 lib/erlang/lib/dialyzer-%%VERSION%%/ebin/dialyzer_gui.beam
+lib/erlang/lib/dialyzer-%%VERSION%%/ebin/dialyzer_icode.beam
 lib/erlang/lib/dialyzer-%%VERSION%%/ebin/dialyzer_module_callgraph.beam
 lib/erlang/lib/dialyzer-%%VERSION%%/ebin/dialyzer_options.beam
 lib/erlang/lib/dialyzer-%%VERSION%%/ebin/dialyzer_plt.beam
+lib/erlang/lib/dialyzer-%%VERSION%%/ebin/dialyzer_typesig.beam
 lib/erlang/lib/dialyzer-%%VERSION%%/src/dialyzer.app.src
 lib/erlang/lib/dialyzer-%%VERSION%%/src/dialyzer.erl
 lib/erlang/lib/dialyzer-%%VERSION%%/src/dialyzer.hrl
 lib/erlang/lib/dialyzer-%%VERSION%%/src/dialyzer.hrl.src
 lib/erlang/lib/dialyzer-%%VERSION%%/src/dialyzer.src
 lib/erlang/lib/dialyzer-%%VERSION%%/src/dialyzer_analysis.erl
+lib/erlang/lib/dialyzer-%%VERSION%%/src/dialyzer_analysis_callgraph.erl
+lib/erlang/lib/dialyzer-%%VERSION%%/src/dialyzer_callgraph.erl
 lib/erlang/lib/dialyzer-%%VERSION%%/src/dialyzer_cl.erl
+lib/erlang/lib/dialyzer-%%VERSION%%/src/dialyzer_codeserver.erl
+lib/erlang/lib/dialyzer-%%VERSION%%/src/dialyzer_dataflow.erl
+lib/erlang/lib/dialyzer-%%VERSION%%/src/dialyzer_dep.erl
 lib/erlang/lib/dialyzer-%%VERSION%%/src/dialyzer_gui.erl
+lib/erlang/lib/dialyzer-%%VERSION%%/src/dialyzer_icode.erl
 lib/erlang/lib/dialyzer-%%VERSION%%/src/dialyzer_module_callgraph.erl
 lib/erlang/lib/dialyzer-%%VERSION%%/src/dialyzer_options.erl
 lib/erlang/lib/dialyzer-%%VERSION%%/src/dialyzer_plt.erl
+lib/erlang/lib/dialyzer-%%VERSION%%/src/dialyzer_typesig.erl
 lib/erlang/lib/dialyzer-%%VERSION%%/src/hipe_icode_type.hrl
 @dirrm lib/erlang/lib/dialyzer-%%VERSION%%/src
 @dirrm lib/erlang/lib/dialyzer-%%VERSION%%/ebin
