@@ -844,6 +844,7 @@ bogofilter-sqlite	ports/mail/bogofilter-sqlite
 bogosort	ports/misc/bogosort
 boiling-egg	ports/editors/boiling-egg
 boinc-client	ports/net/boinc-client
+boinc-einsteinathome	ports/astro/boinc-einsteinathome
 boinc-setiathome	ports/astro/boinc-setiathome
 bomb		ports/games/bomb
 bomberclone	ports/games/bomberclone
