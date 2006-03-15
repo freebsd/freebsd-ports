@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	roundup
-PORTVERSION=	1.1.0
+PORTVERSION=	1.1.1
 CATEGORIES=	www python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://cheeseshop.python.org/packages/source/r/roundup/ \
