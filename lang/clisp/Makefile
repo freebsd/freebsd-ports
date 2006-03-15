@@ -11,7 +11,7 @@ CATEGORIES=	lang lisp
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=${PORTNAME}/release/${PORTVERSION}
 
-MAINTAINER=	jakub@rehor.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Common Lisp implementation
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libsigsegv.a:${PORTSDIR}/devel/libsigsegv \
@@ -21,6 +21,8 @@ USE_BZIP2=	yes
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
+
+MAN1=	clisp.1
 
 # Build subdirectory
 BUILD_DIRNAME=${CONFIGURE_TARGET}
@@ -32,7 +34,7 @@ MAKEMAKE_ARGS=--prefix=${PREFIX} --mandir=${PREFIX}/man --with-dynamic-ffi \
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == amd64 || ${ARCH} == ia64
-CONFIGURE_ARGS+= --disable-mmap
+CONFIGURE_ARGS+=	--disable-mmap
 .endif
 
 # The source doesn't include a top-level Makefile, so we'll fake one.
@@ -45,7 +47,5 @@ post-configure:
 	cd ${WRKSRC}/${BUILD_DIRNAME} && \
 	./makemake ${MAKEMAKE_ARGS} > Makefile && \
 	make config.lisp
-
-MAN1=	clisp.1
 
 .include <bsd.port.post.mk>

@@ -20,5 +20,3 @@ An X11 interface is available through CLX, Garnet, CLUE/CLIO.
 GNU CLISP runs Maxima, ACL2 and many other Common Lisp packages.
 
 WWW: http://clisp.cons.org/
-- Jakub Rehor
-jakub@rehor.net
