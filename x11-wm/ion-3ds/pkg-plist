@@ -76,6 +76,7 @@ share/ion3/welcome.txt
 share/locale/cs/LC_MESSAGES/ion3.mo
 share/locale/de/LC_MESSAGES/ion3.mo
 share/locale/fi/LC_MESSAGES/ion3.mo
+share/locale/ru/LC_MESSAGES/ion3.mo
 @dirrm lib/ion3/bin
 @dirrm lib/ion3/lc
 @dirrm lib/ion3/mod
