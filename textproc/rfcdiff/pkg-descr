@@ -10,4 +10,4 @@ formats:
 In all cases, internet-draft headers and footers are stripped before
 generating the diff, to produce a cleaner diff.
 
-WWW: http://www.levkowetz.com/ietf/tools/rfcdiff
+WWW: http://tools.ietf.org/tools/rfcdiff/
