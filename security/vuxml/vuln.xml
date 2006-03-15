@@ -34,6 +34,44 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="c7c09579-b466-11da-82d0-0050bf27ba24">
+    <topic>horde -- "url" disclosure of sensitive information
+      vulnerability</topic>
+    <affects>
+      <package>
+	<name>horde</name>
+	<name>horde-php5</name>
+	<range><lt>3.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p> Secunia advisory SA19246:</p>
+	<blockquote cite="http://secunia.com/advisories/19246/">
+	  <p>Paul Craig has discovered a vulnerability in Horde, which
+	    can be exploited by malicious people to disclose sensitive
+	    information.
+	    Input passed to the "url" parameter in "services/go.php"
+	    isn't properly verified, before it is used in a
+	    "readfile()" call. This can be exploited to disclose the
+	    content of arbitrary files via e.g. the "php://" protocol
+	    wrapper.</p>
+	  <p>The vulnerability has been confirmed in version 3.0.9 and
+	    has also been reported in prior versions.</p>
+	  <p>Provided and/or discovered by:
+	    Paul Craig, Security-Assessment.com.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://secunia.com/advisories/19246/</url>
+    </references>
+    <dates>
+      <discovery>2006-03-15</discovery>
+      <entry>2006-03-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="83421018-b3ef-11da-a32d-000c6ec775d9">
     <topic>linux-flashplugin -- arbitrary code execution vulnerability</topic>
     <affects>
