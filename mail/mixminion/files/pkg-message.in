@@ -1,0 +1,8 @@
+
+=====================================================================================
+WARNING: We don't have statistics yet, so the system isn't robust in the presence of 
+unreliable servers in the directory.  Please don't publish a server if you don't think 
+you can keep it up for a good while.  To enable the mixminion server, set 
+mixminiond_enable="YES" in your /etc/rc.conf and edit %%PREFIX%%/etc/mixminiond.conf.
+=====================================================================================
+

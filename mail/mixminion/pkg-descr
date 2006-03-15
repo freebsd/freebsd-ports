@@ -1,6 +1,21 @@
-Mixminion is a Type III Anonymous Remailer
+Mixminion is the standard implementation of the Type III anonymous remailer
+protocol, which lets you send very anonymous email.  This best-of-breed
+remailer uses conservative design approaches to provide security against most
+known attacks.  We chose a simple, extensible design so that we can provide a
+robust core system and then experiment with new research features such as
+dummy policies, directory servers, and reputation systems.
 
-This is still alpha quality code, so do not rely on it for anonymity yet.
+You can find the latest information at http://mixminion.net/, or on the
+mailing list, archived at http://archives.seul.org/mixminion/dev/.  Please
+consider subscribing, especially if you're going to run a node.
+
+This is a testing alpha release.  You will probably only want to use it if
+you are technically inclined, curious, and interested in helping the
+Mixminion development effort.
+
+WARNING!  Do NOT use this release if you require strong anonymity.  It has
+known deficiencies, including some that make it possible for an adversary
+to trace your message through the system.
 
 WWW: http://www.mixminion.net/
 
