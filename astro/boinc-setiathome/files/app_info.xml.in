@@ -8,7 +8,7 @@
     </file_info>
     <app_version>
         <app_name>setiathome</app_name>
-        <version_num>407</version_num>
+        <version_num>%%SETI_NODOTVER%%</version_num>
         <file_ref>
             <file_name>%%SETI_BINARY%%</file_name>
             <main_program/>
