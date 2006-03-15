@@ -8,6 +8,7 @@
     SUBDIR += artemis
     SUBDIR += avida
     SUBDIR += babel
+    SUBDIR += belvu
     SUBDIR += biojava
     SUBDIR += blast
     SUBDIR += clustalw

@@ -1,0 +1,12 @@
+Belvu is an X-windows viewer for multiple sequence alignments. One of the main
+advantages of Belvu is that it has an extensive set of modes to color the
+residues. There are several ways to color them by conservation and by residue
+type (user-configurable). Other useful features are fetching of the Swissprot
+(or PIR) entries by double clicking and easy tracking of the position in the
+alignment.
+
+Belvu further supports some simple editing commands for rows and columns, but
+is not intended as a full editor. For actually editing the alignment, use your
+favorite alignment editor or Emacs.
+
+WWW: http://www.cgb.ki.se/cgb/groups/sonnhammer/Belvu.html
