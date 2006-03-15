@@ -5,4 +5,4 @@ It is used with htmlsplit.rb and adds a method "compact" to the
 HTMLSplit class.
 
 Author:	MoonWolf <moonwolf-ruby@moonwolf.com>
-WWW:	http://www.ruby-lang.org/raa/list.rhtml?name=htmlcompact
+WWW: http://raa.ruby-lang.org/project/htmlcompact/
