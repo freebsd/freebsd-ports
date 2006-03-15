@@ -2210,3 +2210,4 @@ devel/libtool13||2006-02-23|Remove defunct libtool
 japanese/squirrelmail|mail/squirrelmail|2006-03-05|Integrated to mail/squirrelmail
 japanese/vje30-trial||2006-03-07|no longer distributed
 security/hpn-ssh|security/openssh-portable|2006-03-15|Now an option in security/openssh-portable
+audio/musicbrainz||2006-03-15|Remove expired port

@@ -338,7 +338,6 @@
     SUBDIR += muse
     SUBDIR += musepack
     SUBDIR += musicbox-tag-editor
-    SUBDIR += musicbrainz
     SUBDIR += musiccontrol
     SUBDIR += musicpd
     SUBDIR += mutemix

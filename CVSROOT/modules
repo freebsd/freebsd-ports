@@ -6703,7 +6703,6 @@ mupen64-sound	ports/emulators/mupen64-sound
 muse		ports/sysutils/muse
 musepack	ports/audio/musepack
 musicbox-tag-editor	ports/audio/musicbox-tag-editor
-musicbrainz	ports/audio/musicbrainz
 musiccontrol	ports/audio/musiccontrol
 musicpd		ports/audio/musicpd
 musixtex	ports/print/musixtex
