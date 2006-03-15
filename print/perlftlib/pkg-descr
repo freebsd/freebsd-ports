@@ -17,7 +17,5 @@ fonts.dir automatically. And it detects what language's fonts are
 contained in it by looking at code_page_range field in os2 table, so
 it makes right entries.
 
-WWW: http://www.io.com/~kazushi/xtt/#perlftlib
-
 Note that ftinfo core-dumps with a signal 11 in case using
 perl5.00502. :-)
