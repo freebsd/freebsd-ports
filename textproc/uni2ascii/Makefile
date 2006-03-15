@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	uni2ascii
-PORTVERSION=	3.0
+PORTVERSION=	3.4
 CATEGORIES=	textproc
-MASTER_SITES=	http://critical.ch/distfiles/
+MASTER_SITES=	http://billposer.org/Software/Downloads/ \
+		http://critical.ch/distfiles/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ehaupt@FreeBSD.org
