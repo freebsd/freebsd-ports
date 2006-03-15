@@ -427,11 +427,6 @@ share/aclocal/glibmm_check_perl.m4
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/convert_8h.html
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/date_8h.html
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/debug_8h.html
-%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/dir_000000.html
-%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/dir_000000_dep.png
-%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/dir_000001.html
-%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/dir_000001_dep.png
-%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/dirs.html
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/dispatcher_8h.html
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/doxygen.css
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/doxygen.png
@@ -710,6 +705,7 @@ share/aclocal/glibmm_check_perl.m4
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/structGlib_1_1TimeVal-members.html
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/structGlib_1_1TimeVal.html
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/structGlib_1_1TimeVal__inherit__graph.png
+%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/tabs.css
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/thread_2dispatcher_8cc-example.html
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/thread_2thread_8cc-example.html
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/thread_8h.html
