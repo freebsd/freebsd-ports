@@ -47,6 +47,12 @@ PLIST_SUB+=	MPI="@comment "
 CONFLICTS=	spooles-mpich-2*
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+CFLAGS+=        -fPIC
+.endif
+
 .SILENT:
 
 pre-everything::
@@ -63,9 +69,9 @@ post-patch:
 
 post-build:
 .if defined(WITH_MPI)
-	@(cd ${WRKSRC}/MPI/src; ${GMAKE} -f makeGlobalLib)
+	@(cd ${WRKSRC}/MPI/src; ${SETENV} ${MAKE_ENV} ${GMAKE} -f makeGlobalLib)
 .else
-	@(cd ${WRKSRC}/MT/src; ${GMAKE} -f makeGlobalLib)
+	@(cd ${WRKSRC}/MT/src; ${SETENV} ${MAKE_ENV} ${GMAKE} -f makeGlobalLib)
 .endif
 
 do-install:
@@ -97,4 +103,4 @@ do-install:
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/ReferenceManual.ps.gz	${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
