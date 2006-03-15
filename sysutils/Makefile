@@ -219,6 +219,7 @@
     SUBDIR += graft
     SUBDIR += graphicboot
     SUBDIR += graveman
+    SUBDIR += grok
     SUBDIR += growspd
     SUBDIR += grub
     SUBDIR += gstopd
