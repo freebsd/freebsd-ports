@@ -14,7 +14,7 @@ DISTNAME=	UMFPACKv${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unsymmetric-pattern MultiFrontal Package
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libcblas.a:${PORTSDIR}/math/atlas
+LIB_DEPENDS=	atlas.1:${PORTSDIR}/math/atlas
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/UMFPACK
 ALL_TARGET=	lib
