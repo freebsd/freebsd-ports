@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ace+tao-doc
-PORTVERSION=	5.4.0
+PORTVERSION=	5.5.0
 CATEGORIES=	devel
 MASTER_SITES=	http://deuce.doc.wustl.edu/old_distribution/ \
 		http://www.navicon.dk/mirrors/ace/deuce.doc.wustl.edu/old_distribution/
@@ -15,6 +15,7 @@ DISTNAME=	ACE-${PORTVERSION:C/\.0$//}-html
 MAINTAINER=	sem@FreeBSD.org
 COMMENT=	The ACE+TAO HTML documentation
 
+USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/html
 NO_BUILD=	yes
 PLIST=		${WRKDIR}/pkg-plist
