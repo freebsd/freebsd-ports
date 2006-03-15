@@ -1,5 +1,5 @@
---- cgx_1.4/src/uselibSNL.cpp.orig	Tue Sep 13 06:34:28 2005
-+++ cgx_1.4/src/uselibSNL.cpp	Mon Oct 10 16:05:10 2005
+--- cgx_1.5/src/uselibSNL.cpp.orig	Sun Feb 19 22:06:07 2006
++++ cgx_1.5/src/uselibSNL.cpp	Sun Feb 19 22:06:38 2006
 @@ -26,7 +26,7 @@
  
  #include <extUtil.h>
