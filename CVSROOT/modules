@@ -2173,7 +2173,6 @@ evas		ports/graphics/evas
 eventum		ports/www/eventum
 eventwatcher	ports/sysutils/eventwatcher
 everygui	ports/deskutils/everygui
-evg		ports/www/evg
 evidence	ports/x11-fm/evidence
 evilfinder	ports/games/evilfinder
 evilwm		ports/x11-wm/evilwm
@@ -3044,7 +3043,6 @@ glload		ports/sysutils/glload
 glmaze		ports/games/glmaze
 glob2		ports/games/glob2
 global		ports/devel/global
-globus2		ports/misc/globus2
 globus4		ports/net/globus4
 glom		ports/databases/glom
 glpk		ports/math/glpk
@@ -5966,7 +5964,6 @@ log4j		ports/devel/log4j
 log4sh		ports/devel/log4sh
 log_analysis	ports/sysutils/log_analysis
 logcheck	ports/security/logcheck
-login.app	ports/x11/login.app
 logjam		ports/deskutils/logjam
 logmon		ports/sysutils/logmon
 logo		ports/lang/logo
@@ -10390,7 +10387,6 @@ proxyper	ports/misc/proxyper
 proxytunnel	ports/security/proxytunnel
 prozilla	ports/ftp/prozilla
 prtunnel	ports/net/prtunnel
-prune		ports/sysutils/prune
 ps2eps		ports/print/ps2eps
 pscal		ports/print/pscal
 pscan		ports/security/pscan
@@ -11961,7 +11957,6 @@ sml-mode.el	ports/lang/sml-mode.el
 sml-nj		ports/lang/sml-nj
 sml-nj-devel	ports/lang/sml-nj-devel
 smm++		ports/net/smm++
-smoke		ports/graphics/smoke
 smokeping	ports/net/smokeping
 smpeg		ports/multimedia/smpeg
 smpeg-xmms	ports/multimedia/smpeg-xmms
@@ -12985,7 +12980,6 @@ vi-xvnkb	ports/vietnamese/xvnkb
 vic		ports/mbone/vic
 vice		ports/emulators/vice
 vicq		ports/net-im/vicq
-vid		ports/graphics/vid
 vida		ports/security/vida
 videogen	ports/sysutils/videogen
 videotext	ports/misc/videotext

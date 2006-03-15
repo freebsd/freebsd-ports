@@ -1,5 +1,0 @@
-bin/smoke
-%%EXAMPLESDIR%%/tests/tiger.smoke
-%%EXAMPLESDIR%%/tests/tiger.svg
-@dirrm %%EXAMPLESDIR%%/tests
-@dirrm %%EXAMPLESDIR%%
