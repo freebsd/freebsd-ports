@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dk-milter
-PORTVERSION=	0.3.2
-PORTREVISION=	2
+PORTVERSION=	0.3.3
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	dk-milter
@@ -26,7 +25,6 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/libmilter.a:${PORTSDIR}/mail/${SENDMAIL_MILTER_
 .endif
 
 SENDMAIL_MILTER_PORT?=	sendmail
-USE_REINPLACE=	yes
 SUB_FILES=	milter-dk.sh
 WCONF=		${WRKSRC}/devtools/Site
 MAN8=		dk-filter.8
