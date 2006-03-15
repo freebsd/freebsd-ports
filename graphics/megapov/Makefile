@@ -14,16 +14,14 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Unofficial extensions of POV-Ray
 
-USE_BZIP2=	yes
 RUN_DEPENDS=	povray:${PORTSDIR}/graphics/povray
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		jpeg:${PORTSDIR}/graphics/jpeg \
-		tiff:${PORTSDIR}/graphics/tiff \
-		vga:${PORTSDIR}/graphics/svgalib
+		tiff:${PORTSDIR}/graphics/tiff
 
+USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_XLIB=	yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 ALL_TARGET=	# empty
@@ -32,10 +30,16 @@ LDFLAGS+= -L${LOCALBASE}/lib -L${X11BASE}/lib
 CFLAGS+= -I${LOCALBASE}/include -I${X11BASE}/include
 CXXFLAGS+= -I${LOCALBASE}/include -I${X11BASE}/include
 
+.include <bsd.port.pre.mk>
+
+.if (${ARCH} == "i386")
+LIB_DEPENDS+=	vga:${PORTSDIR}/graphics/svgalib
+.endif
+
 .if defined(WITH_OPTIMIZED_FLAGS)
-CFLAGS+=	-O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations -malign-double -Wunused-variable
-CXXFLAGS+=	-O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations -malign-double  -Wunused-variable -Wno-multichar
-.if (${MACHINE_ARCH} == "i386")
+CFLAGS+=	-O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations
+CXXFLAGS+=	-O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations
+.if (${ARCH} == "i386")
 CFLAGS+=	-mcpu=i686 -march=i686 -mfancy-math-387
 CXXFLAGS+=	-mcpu=i686 -march=i686 -mfancy-math-387
 .endif # i386
@@ -61,4 +65,4 @@ do-install:
 	@${FIND} ${EXAMPLESDIR} -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
