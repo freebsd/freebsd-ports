@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	avahi
-PORTVERSION=	0.6.5
-PORTREVISION?=	3
+PORTVERSION=	0.6.9
+PORTREVISION?=	0
 CATEGORIES=	net dns
 MASTER_SITES=	http://www.avahi.org/download/
 
@@ -39,12 +39,11 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
 .if !defined(AVAHI_SLAVE)
-USE_RC_SUBR=	yes
 
 MAN1=	avahi-browse-domains.1 avahi-browse.1 avahi-publish-address.1 \
 	avahi-publish-service.1 avahi-publish.1 avahi-resolve-address.1 \
 	avahi-resolve-host-name.1 avahi-resolve.1
-MAN5=	avahi-daemon.conf.5 avahi.service.5
+MAN5=	avahi-daemon.conf.5 avahi.service.5 avahi.hosts.5
 MAN8=	avahi-daemon.8 avahi-dnsconfd.8 avahi-dnsconfd.action.8
 
 OPTIONS=	GTK2 "Build a GTK+ 2 browser utility" off
