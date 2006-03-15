@@ -102,6 +102,10 @@ LANG_PKGNAME=	${LOCALIZED_LANG}
 LANG_PKGNAME=	${LOCALIZED_LANG}
 .endif
 ################################################################
+.if ${LOCALIZED_LANG} == "fa"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
 .if ${LOCALIZED_LANG} == "fi"
 LANG_PKGNAME=	${LOCALIZED_LANG}
 .endif

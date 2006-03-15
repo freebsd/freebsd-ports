@@ -1,0 +1,30 @@
+--- config_office/configure~	Sat Mar  4 16:12:31 2006
++++ config_office/configure	Sat Mar  4 16:12:45 2006
+@@ -7544,7 +7544,7 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lgcjawt  $LIBS"
++LIBS="-lgcjawt  -pthread $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ /* confdefs.h.  */
+
+http://qa.openoffice.org/issues/show_bug.cgi?id=63095
+Index: stoc/source/javaloader/makefile.mk
+===================================================================
+RCS file: /cvs/udk/stoc/source/javaloader/makefile.mk,v
+retrieving revision 1.16
+diff -u -r1.16 makefile.mk
+--- stoc/source/javaloader/makefile.mk	8 Sep 2005 07:57:58 -0000	1.16
++++ stoc/source/javaloader/makefile.mk	13 Mar 2006 00:54:46 -0000
+@@ -59,7 +59,8 @@
+ 		$(CPPUHELPERLIB) 	\
+ 		$(CPPULIB)			\
+ 		$(SALLIB) \
+-        $(JVMACCESSLIB)
++        $(JVMACCESSLIB) \
++        -L/usr/local/lib -liconv
+ 
+ SHL1VERSIONMAP = javaloader.map
+ SHL1DEPN=		
