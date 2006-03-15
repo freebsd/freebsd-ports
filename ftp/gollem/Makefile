@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gollem
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	ftp www
 MASTER_SITES=	ftp://ftp.horde.org/pub/gollem/				\
 		ftp://ftp.planetmirror.com/pub/horde/gollem/		\
@@ -24,6 +24,7 @@ COMMENT=	Gollem is the Horde web-based File Manager
 RUN_DEPENDS=	${LOCALBASE}/${LHORDEDIR}/rpc.php:${PORTSDIR}/www/horde
 
 NO_BUILD=	yes
+USE_GETTEXT=	yes
 USE_APACHE=	1.3+	# needed to test APACHE_VERSION
 
 PLIST_SUB=	GOLLEMDIR=${LGOLLEMDIR} HORDE_INC=${HORDE_INC:S|^${LOCALBASE}/||}
@@ -36,7 +37,7 @@ DOCS=		README docs/CHANGES docs/CREDITS docs/INSTALL	\
 		docs/RELEASE_NOTES docs/TODO
 CONFFILE=	backends.php credentials.php menu.php mime_drivers.php motd.php	\
 		prefs.php
-SUB_DIRS=	config lib locale po templates themes
+SUB_DIRS=	config js lib locale po templates themes
 
 LHORDEDIR?=	www/horde
 LGOLLEMDIR?=	${LHORDEDIR}/gollem
