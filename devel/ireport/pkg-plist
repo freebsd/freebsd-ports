@@ -8,15 +8,19 @@ bin/iReport
 %%PORTDOCS%%%%DATADIR%%/docs/cap6.html
 %%PORTDOCS%%%%DATADIR%%/docs/cap7.html
 %%PORTDOCS%%%%DATADIR%%/docs/cap8.html
+%%PORTDOCS%%%%DATADIR%%/docs/images/jaspersoft_mes.jpg
 %%PORTDOCS%%%%DATADIR%%/docs/images/logo.gif
 %%PORTDOCS%%%%DATADIR%%/docs/images/logo_igor.gif
 %%PORTDOCS%%%%DATADIR%%/docs/images/manual_p1.jpg
+%%PORTDOCS%%%%DATADIR%%/docs/images/manual_p2.jpg
 %%PORTDOCS%%%%DATADIR%%/docs/images/manual_p3.jpg
 %%PORTDOCS%%%%DATADIR%%/docs/images/manual_p4.jpg
 %%PORTDOCS%%%%DATADIR%%/docs/images/manual_p5.jpg
 %%PORTDOCS%%%%DATADIR%%/docs/images/manual_p6.jpg
+%%PORTDOCS%%%%DATADIR%%/docs/images/manual_p7.jpg
 %%PORTDOCS%%%%DATADIR%%/docs/images/new_manual.jpg
 %%PORTDOCS%%%%DATADIR%%/docs/images/null.gif
+%%PORTDOCS%%%%DATADIR%%/docs/images/printer.gif
 %%PORTDOCS%%%%DATADIR%%/docs/images/regsoft.gif
 %%PORTDOCS%%%%DATADIR%%/docs/images/sflogo.gif
 %%PORTDOCS%%%%DATADIR%%/docs/index.html
@@ -82,7 +86,7 @@ bin/iReport
 %%PORTDOCS%%%%DATADIR%%/docs/manual%%VERMAN%%/8_9big.jpg
 %%PORTDOCS%%%%DATADIR%%/docs/manual%%VERMAN%%/options1.jpg
 %%PORTDOCS%%%%DATADIR%%/docs/manual%%VERMAN%%/stylesheet.css
-%%PORTDOCS%%%%DATADIR%%/docs/manual0.4.1.html
+%%PORTDOCS%%%%DATADIR%%/docs/manualtoc.html
 %%DATADIR%%/fonts/Balker.ttf
 %%DATADIR%%/fonts/Domestic_Manners.ttf
 %%DATADIR%%/fonts/Dustismo.ttf
@@ -105,6 +109,7 @@ bin/iReport
 %%DATADIR%%/fonts/progenisis.ttf
 @exec ln -sf %D/%%JAVAJARDIR%% %D/%%DATADIR%%/lib
 @unexec rm -f %D/%%DATADIR%%/lib
+%%DATADIR%%/notice.txt
 %%DATADIR%%/plugins/checkupdate.xml
 %%DATADIR%%/plugins/example_1.xml
 %%DATADIR%%/plugins/massive_compiler.xml
@@ -125,14 +130,26 @@ bin/iReport
 %%DATADIR%%/templates/grayT.xml
 %%DATADIR%%/templates/gray_landscapeT.gif
 %%DATADIR%%/templates/gray_landscapeT.xml
+%%JAVAJARDIR%%/LICENSE.asm-attr.txt
+%%JAVAJARDIR%%/LICENSE.asm.txt
 %%JAVAJARDIR%%/LICENSE.barbecue-1.1.txt
+%%JAVAJARDIR%%/LICENSE.jta.txt
+%%JAVAJARDIR%%/asm-attrs.jar
+%%JAVAJARDIR%%/asm.jar
 %%JAVAJARDIR%%/barbecue-1.1.jar
+%%JAVAJARDIR%%/cglib-2.1.jar
+%%JAVAJARDIR%%/ehcache-1.1.jar
 %%JAVAJARDIR%%/groovy-all-1.0-beta-10.jar
+%%JAVAJARDIR%%/hibernate3.jar
 %%JAVAJARDIR%%/iReport.jar
 %%JAVAJARDIR%%/jdt-compiler.jar
+%%JAVAJARDIR%%/jexelapiexporter-jr120.jar
 %%JAVAJARDIR%%/jr-bsh-compiler.jar
 %%JAVAJARDIR%%/jr-groovy-compiler.jar
+%%JAVAJARDIR%%/jta.jar
+%%JAVAJARDIR%%/jxl.jar
 %%JAVAJARDIR%%/pngencoder.jar
+%%JAVAJARDIR%%/toniclf.jar
 @dirrm %%DATADIR%%/templates
 @dirrm %%DATADIR%%/plugins
 @dirrm %%DATADIR%%/fonts
