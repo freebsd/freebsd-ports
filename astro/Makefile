@@ -4,6 +4,7 @@
     COMMENT = Astronomical ports
 
     SUBDIR += accrete
+    SUBDIR += boinc-einsteinathome
     SUBDIR += boinc-setiathome
     SUBDIR += celestia
     SUBDIR += cfitsio

@@ -1,0 +1,19 @@
+Einstein@Home - Search for gravitational waves
+
+Use your unused CPU cycles to aid in computations analyzing telescope
+information for possible gravitational waves emitted by pulsars as
+predicted by Albert Einstein.
+
+Einstein@home is based on BOINC (Berkeley Open Infrastructure for
+Network Computing).  Several other projects besides Einstein@home are
+using BOINC.  BOINC lets you participate in more than one project,
+and it lets you specify what fraction of your computer time should go
+to each project.
+
+Be sure to join the "FreeBSD" team on the Einstein website once you're
+up and running.
+
+The FreeBSD version of this client is currently in its beta-testing
+phase.
+
+WWW: http://einstein.phys.uwm.edu/
