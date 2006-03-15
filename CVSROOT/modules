@@ -2275,6 +2275,7 @@ fastdb		ports/databases/fastdb
 fastdep		ports/devel/fastdep
 fastdnaml	ports/biology/fastdnaml
 fastest_cvsup	ports/sysutils/fastest_cvsup
+fasthenry	ports/science/fasthenry
 fastjar		ports/archivers/fastjar
 fastresolve	ports/dns/fastresolve
 fatback		ports/sysutils/fatback
