@@ -11,6 +11,7 @@
 
 PORTNAME=	openmpi
 DISTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	net parallel
 MASTER_SITES=	http://www.open-mpi.org/software/ompi/v1.0/downloads/
 
@@ -22,9 +23,6 @@ LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo
 USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
-# Can't use until does not imply GNU_CONFIGURE or there's a sane way
-# to change the prefix for configure.
-#USE_AUTOTOOLS=	libtool:15
 
 MPIBASE?=	mpi
 MPIDIR?=	${MPIBASE}/${UNIQUENAME}
@@ -41,17 +39,13 @@ CONFIGURE_ARGS+=	--prefix=${PREFIX}/${MPIDIR} ${CONFIGURE_TARGET}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} > 700000
-BROKEN=		Does not compile on FreeBSD >= 7.0
-.endif
-
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not compile on sparc64
 .endif
 
 .if ${OSVERSION} < 503000
 .if !exists(/usr/include/stdint.h)
-BROKEN=         "requires stdint.h"
+BROKEN=         requires stdint.h
 .else
 IGNORE=         is not supported for FreeBSD < 5.3
 .endif

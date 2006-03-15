@@ -1,0 +1,15 @@
+
+$FreeBSD$
+
+--- opal/event/Makefile.in.orig
++++ opal/event/Makefile.in
+@@ -828,8 +828,7 @@
+ # Also specify where we can find this package's config.h because some
+ # of the header files in this directory get included elsewhere in OMPI.
+ # #@%@#$...
+-AM_CPPFLAGS = \
+-        -I$(top_srcdir)/opal/event/compat
++AM_CPPFLAGS = 
+ 
+ 
+ # OMPI: No need to build the sample or test
