@@ -423,6 +423,7 @@
     SUBDIR += p5-Net-Rsh
     SUBDIR += p5-Net-SAP
     SUBDIR += p5-Net-SCP
+    SUBDIR += p5-Net-SCP-Expect
     SUBDIR += p5-Net-SDP
     SUBDIR += p5-Net-SFTP
     SUBDIR += p5-Net-SMPP

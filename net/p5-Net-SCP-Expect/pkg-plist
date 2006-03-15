@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Net/SCP/Expect.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SCP/Expect/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SCP/Expect
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SCP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
+@dirrmtry %%SITE_PERL%%/Net/SCP
+@dirrmtry %%SITE_PERL%%/Net
