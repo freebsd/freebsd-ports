@@ -9,12 +9,11 @@ PORTNAME=	ascii2binary
 PORTVERSION=	2.10
 CATEGORIES=	converters
 MASTER_SITES=	http://billposer.org/Software/Downloads/
-DISTNAME=	${PORTNAME}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Convert between textual representations of numbers and binary
 
+USE_BZIP2=	yes
 USE_GETTEXT=	yes
 
 GNU_CONFIGURE=	yes
