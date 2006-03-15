@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fig2sxd
-PORTVERSION=	0.13
+PORTVERSION=	0.14
 CATEGORIES=	graphics converters
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,6 +22,11 @@ WRKSRC=		${WRKDIR}/${DISTNAME:C/_/-/}
 
 MAN1=		fig2sxd.1
 PLIST_FILES=	bin/fig2sxd
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		'/^CXX/d; s|^\(all:\).*|\1 $$(TARGET1) fig2sxd.1|' \
+			${WRKSRC}/${MAKEFILE}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
