@@ -1,15 +1,27 @@
 bin/build-guile-gtk
 bin/build-guile-gtk-1.2
 include/guile-gtk.h
+lib/libguilegdkpixbuf-1.2.a
+lib/libguilegdkpixbuf-1.2.la
+lib/libguilegdkpixbuf-1.2.so
+lib/libguilegdkpixbuf-1.2.so.0
+lib/libguileglade-1.2.a
+lib/libguileglade-1.2.la
+lib/libguileglade-1.2.so
+lib/libguileglade-1.2.so.0
 lib/libguilegtk-1.2.a
 lib/libguilegtk-1.2.la
 lib/libguilegtk-1.2.so
 lib/libguilegtk-1.2.so.0
-share/guile-gtk/gdk-1.2.defs
-share/guile-gtk/gtk-1.2.defs
+%%DATADIR%%/gdk-1.2.defs
+%%DATADIR%%/gdk-pixbuf.defs
+%%DATADIR%%/glade.defs
+%%DATADIR%%/gtk-1.2.defs
 share/guile/gtk-1.2/config.scm
 share/guile/gtk-1.2/dynlink.scm
+share/guile/gtk-1.2/gdk-pixbuf.scm
 share/guile/gtk-1.2/gdk.scm
+share/guile/gtk-1.2/glade
 share/guile/gtk-1.2/gtk.scm
 share/guile/gtk-1.2/repl.scm
 share/guile/gtk-1.2/threads.scm
@@ -19,7 +31,7 @@ share/guile/gtk/gdk.scm
 share/guile/gtk/gtk.scm
 share/guile/gtk/repl.scm
 share/guile/gtk/threads.scm
-@dirrm share/guile-gtk
+@dirrm %%DATADIR%%
 @dirrm share/guile/gtk-1.2
 @dirrm share/guile/gtk
 @dirrm share/guile
