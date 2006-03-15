@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	glark
-PORTVERSION=	1.7.5
+PORTVERSION=	1.7.7
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.incava.org/pub/glark/
 
