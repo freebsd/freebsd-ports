@@ -1,0 +1,17 @@
+bin/blat
+bin/faToNib
+bin/faToTwoBit
+bin/gfClient
+bin/gfServer
+bin/nibFrag
+bin/pslPretty
+bin/pslReps
+bin/pslSort
+bin/twoBitInfo
+bin/twoBitToFa
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%DATADIR%%/webBlat/webBlat
+%%DATADIR%%/webBlat/install.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%/webBlat
+@dirrm %%DATADIR%%

@@ -13,6 +13,7 @@
     SUBDIR += blast
     SUBDIR += clustalw
     SUBDIR += coalesce
+    SUBDIR += blat
     SUBDIR += chemeq
     SUBDIR += crimap
     SUBDIR += distribfold
