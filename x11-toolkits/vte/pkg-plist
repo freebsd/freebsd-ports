@@ -105,7 +105,10 @@ share/locale/vi/LC_MESSAGES/vte.mo
 share/locale/wa/LC_MESSAGES/vte.mo
 share/locale/xh/LC_MESSAGES/vte.mo
 share/locale/zh_CN/LC_MESSAGES/vte.mo
+share/locale/zh_HK/LC_MESSAGES/vte.mo
 share/locale/zh_TW/LC_MESSAGES/vte.mo
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/ug/LC_MESSAGES
 @dirrmtry share/locale/ug
 @dirrmtry share/locale/ky/LC_MESSAGES

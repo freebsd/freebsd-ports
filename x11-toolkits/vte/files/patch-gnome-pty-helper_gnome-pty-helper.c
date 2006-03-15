@@ -1,5 +1,5 @@
---- gnome-pty-helper/gnome-pty-helper.c.orig	Sat Aug 13 07:55:19 2005
-+++ gnome-pty-helper/gnome-pty-helper.c	Wed Aug 24 19:03:08 2005
+--- gnome-pty-helper/gnome-pty-helper.c.orig	Tue Feb 14 03:58:10 2006
++++ gnome-pty-helper/gnome-pty-helper.c	Sat Feb 25 16:38:04 2006
 @@ -95,12 +95,12 @@ static pty_info *pty_list;
  #endif /* CMSG_DATA */
  
@@ -8,7 +8,7 @@
 +static socklen_t CONTROLLEN;
  
  static int
- init_msg_pass ()
+ init_msg_pass (void)
  {
 -	CONTROLLEN = (CMSG_DATA (cmptr) - (unsigned char *)cmptr) + sizeof(int);
 +	CONTROLLEN = CMSG_SPACE (sizeof (int));
