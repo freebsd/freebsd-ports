@@ -542,7 +542,6 @@
     SUBDIR += showimg
     SUBDIR += simage
     SUBDIR += skencil
-    SUBDIR += smoke
     SUBDIR += sng
     SUBDIR += snx101util
     SUBDIR += sodipodi
@@ -575,7 +574,6 @@
     SUBDIR += urt
     SUBDIR += vcg
     SUBDIR += vertex
-    SUBDIR += vid
     SUBDIR += view3ds
     SUBDIR += vigra
     SUBDIR += vips

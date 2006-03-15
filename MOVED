@@ -2213,3 +2213,9 @@ security/hpn-ssh|security/openssh-portable|2006-03-15|Now an option in security/
 audio/musicbrainz||2006-03-15|Remove expired port
 graphics/quickpics||2006-03-15|Remove expired port
 graphics/threeDS||2006-03-15|Remove expired port
+graphics/vid||2006-03-15|Remove expired port
+graphics/smoke||2006-03-15|Remove expired port
+misc/globus2||2006-03-15|Remove expired port
+sysutils/prune||2006-03-15|Remove expired port
+www/evg||2006-03-15|Remove expired port
+x11/login.app||2006-03-15|Remove expired port

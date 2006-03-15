@@ -1,4 +1,0 @@
-bin/evg
-%%PYTHON_SITELIBDIR%%/eclipthtml.py
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -130,7 +130,6 @@
     SUBDIR += libxklavier
     SUBDIR += linux-XFree86-libs
     SUBDIR += linux-gnomelibs
-    SUBDIR += login.app
     SUBDIR += lupe
     SUBDIR += mgapdesk
     SUBDIR += mlterm
