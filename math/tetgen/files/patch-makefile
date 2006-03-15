@@ -1,6 +1,6 @@
---- makefile.orig	Mon Jan  9 11:33:37 2006
-+++ makefile	Mon Jan  9 11:35:33 2006
-@@ -6,7 +6,7 @@
+--- makefile.orig	Fri Jan 13 15:30:08 2006
++++ makefile	Wed Mar  8 16:20:59 2006
+@@ -6,12 +6,12 @@
  
  # CC should be set to the name of your favorite C++ compiler.
  
@@ -9,17 +9,18 @@
  
  # OPT is the level of optimiztion, default is -O. One should try -O2, -O3
  #   ... to find the best optimization level.
-@@ -23,11 +23,11 @@
+ 
+-OPT = -g
++OPT = ${CXXFLAGS}
+ 
+ # CFLAGS is a list of switches to compile TetGen.
+ #
+@@ -23,7 +23,7 @@
  #   down the speed of TetGen.  They can be skipped by define the -DNDEBUG
  #   switch.
  
--CFLAGS = 
-+CFLAGS ?= $(CXXFLAGS)  
+-CFLAGS = -Wall -DSELF_CHECK
++CFLAGS = -DNDEBUG
  
- # RM should be set to the name of your favorite rm (file deletion program).
- 
--RM = /bin/rm
-+RM ?= /bin/rm
- 
- # The action starts here.
- 
+ #CFLAGS = -funroll-all-loops -fomit-frame-pointer\
+ #         -Wall -Wabi -Wctor-dtor-privacy \
