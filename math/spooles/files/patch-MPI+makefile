@@ -1,0 +1,13 @@
+--- MPI/makefile.orig	Mon Feb 20 16:41:10 2006
++++ MPI/makefile	Mon Feb 20 16:42:02 2006
+@@ -1,8 +1,8 @@
+ all_drivers :
+-	cd drivers ; make drivers
++	cd drivers ; ${MAKE} drivers
+ 
+ lib :
+-	cd src ; make spoolesMPI.a
++	cd src ; ${MAKE} spoolesMPI.a
+ 
+ clean :
+ 	cd src ; make clean
