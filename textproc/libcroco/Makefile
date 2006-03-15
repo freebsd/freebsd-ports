@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libcroco
-PORTVERSION=	0.6.0
-PORTREVISION=	3
+PORTVERSION=	0.6.1
 CATEGORIES=	textproc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.6
@@ -17,9 +16,9 @@ COMMENT=	CSS2 parsing library
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
-USE_GNOME=	gnomehack lthack glib20 libxml2
+USE_GNOME=	gnomehack glib20 libxml2 ltverhack
 
 PLIST_SUB=	VERSION="0.6"
 
