@@ -4,54 +4,51 @@
 #
 # $FreeBSD$
 
-PORTNAME=		jackit
-PORTVERSION=		0.100.0
-PORTREVISION=		1
-CATEGORIES=		audio
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
+PORTNAME=	jackit
+PORTVERSION=	0.100.0
+PORTREVISION=	2
+CATEGORIES=	audio
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	jackit
-DISTNAME=		jack-audio-connection-kit-${PORTVERSION}
+DISTNAME=	jack-audio-connection-kit-${PORTVERSION}
 
-MAINTAINER=		ports@FreeBSD.org
-COMMENT=		A low-latency audio server
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A low-latency audio server
 
-LIB_DEPENDS=		portaudio.0:${PORTSDIR}/audio/portaudio \
-			sndfile.1:${PORTSDIR}/audio/libsndfile
+LIB_DEPENDS=	portaudio.0:${PORTSDIR}/audio/portaudio \
+		sndfile.1:${PORTSDIR}/audio/libsndfile
 
-OPTIONS=		DOCS "Build HTML documentation. Requires doxygen/TeX." off
+OPTIONS=	DOCS "Build HTML documentation. Requires doxygen/TeX." off
 
-LATEST_LINK=		jack
-CONFIGURE_ENV=		LIBS="${PTHREAD_LIBS}" LDFLAGS="-L${LOCALBASE}/lib" \
-			CPPFLAGS="-I${LOCALBASE}/include" \
-			CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}"
-GNU_CONFIGURE=  yes
+LATEST_LINK=	jack
+CONFIGURE_ENV=	LIBS="${PTHREAD_LIBS}" LDFLAGS="-L${LOCALBASE}/lib" \
+		CPPFLAGS="-I${LOCALBASE}/include" \
+		CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}"
+GNU_CONFIGURE=	yes
 USE_GETOPT_LONG=	yes
-USE_REINPLACE=		yes
-INSTALLS_SHLIB=		yes
-USE_GNOME=		pkgconfig gnometarget gnomehack
-ONLY_FOR_ARCHS=		i386 amd64
+INSTALLS_SHLIB=	yes
+USE_GNOME=	pkgconfig gnometarget gnomehack
+ONLY_FOR_ARCHS=	i386 amd64
 
-MAN1=	jackd.1 jackstart.1
+MAN1=		jackd.1 jackstart.1
 
 .include <bsd.port.pre.mk>
 
-.if exists(${LOCALBASE}/bin/doxygen)
-.	if !defined(WITH_GNOKII)
+.if exists(${LOCALBASE}/bin/doxygen) && !defined(WITH_GNOKII)
 DOCS_OVERRIDE=	yes
 WITH_DOCS=	yes
-.	endif
 .endif
 
 .if defined(WITH_DOCS) || defined(PACKAGE_BUILDING)
-BUILD_DEPENDS+=		doxygen:${PORTSDIR}/devel/doxygen
-PLIST_SUB+=		DOCS=""
-.elif defined(WITHOUT_DOCS)
-CONFIGURE_ENV+=		ac_cv_prog_HAVE_DOXYGEN="false"
-PLIST_SUB+=		DOCS="@comment "
+BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
+PLIST_SUB+=	DOCS=""
+.else
+CONFIGURE_ENV+=	ac_cv_prog_HAVE_DOXYGEN="false"
+PLIST_SUB+=	DOCS="@comment "
 .endif
 
 .if (${OSVERSION} > 500000 ) && (${OSVERSION} < 502102 )
-BROKEN=		"Does not compile"
+BROKEN=		Does not compile
 .endif
 
 pre-everything::
@@ -64,16 +61,17 @@ pre-everything::
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e "s,-lpthread,${PTHREAD_LIBS},"  \
+	@${REINPLACE_CMD} -e "s,-lpthread,${PTHREAD_LIBS},"  \
 		${WRKSRC}/configure ${WRKSRC}/libjack/Makefile.in \
 		${WRKSRC}/jackd/Makefile.in \
 		${WRKSRC}/example-clients/Makefile.in ${WRKSRC}/jack.pc.in
-	${REINPLACE_CMD} -e "s,-lrt,," ${WRKSRC}/libjack/Makefile.in \
+	@${REINPLACE_CMD} -e "s,-lrt,," ${WRKSRC}/libjack/Makefile.in \
 		${WRKSRC}/jackd/Makefile.in \
 		${WRKSRC}/example-clients/Makefile.in
-	${REINPLACE_CMD} -e "s,-ldl,," ${WRKSRC}/jackd/Makefile.in \
+	@${REINPLACE_CMD} -e "s,-ldl,," ${WRKSRC}/jackd/Makefile.in \
 		${WRKSRC}/example-clients/Makefile.in
+
 post-build:
-	${RM} -f ${WRKSRC}/doc/reference/html/dir__2F*
+	@${RM} -f ${WRKSRC}/doc/reference/html/dir__2F*
 
 .include <bsd.port.post.mk>
