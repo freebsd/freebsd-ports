@@ -7,6 +7,7 @@
 
 PORTNAME=	jasperreports
 PORTVERSION=	1.2.0
+PORTREVISION=	1
 CATEGORIES=	databases print java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -47,11 +48,18 @@ WITH_ORACLE8=	yes
 RUN_DEPENDS+=	${JAVALIBDIR}/classes12.zip:${PORTSDIR}/databases/jdbc-oracle8i
 .endif
 
-.if exists(${JAVALIBDIR}/ojdbc14.zip)
+.if exists(${JAVALIBDIR}/ojdbc14.jar)
 WITH_ORACLE9=	yes
 .endif
 .if defined(WITH_ORACLE9)
-RUN_DEPENDS+=	${JAVALIBDIR}/ojdbc14.zip:${PORTSDIR}/databases/jdbc-oracle9i
+RUN_DEPENDS+=	${JAVALIBDIR}/ojdbc14.jar:${PORTSDIR}/databases/jdbc-oracle9i
+.endif
+
+.if exists(${JAVALIBDIR}/hsqldb.jar)
+WITH_HSQLDB=	yes
+.endif
+.if defined(WITH_HSQLDB)
+RUN_DEPENDS+=	${JAVALIBDIR}/hsqldb.jar:${PORTSDIR}/databases/hsqldb
 .endif
 
 pre-everything::
@@ -68,6 +76,9 @@ pre-everything::
 .endif
 .if !defined(WITH_ORACLE9)
 	@${ECHO_MSG} '* Define WITH_ORACLE9 to add Oracle 9i support.         *'
+.endif
+.if !defined(WITH_HSQLDB)
+	@${ECHO_MSG} '* Define WITH_HSQLDB to add HSQLDB support.            *'
 .endif
 	@${ECHO_MSG} '*********************************************************'
 
