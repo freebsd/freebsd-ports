@@ -7,7 +7,6 @@
 
 PORTNAME=	openoffice.org
 PORTVERSION=	1.1.5.${SNAPDATE}
-PORTREVISION=	1
 CATEGORIES+=	editors
 MASTER_SITES+=	http://openoffice.lunarshells.com/sources/ \
 		ftp://ooopackages.good-day.net/pub/OpenOffice.org/sources/ \
@@ -25,11 +24,11 @@ MASTER_SITE_SUBDIR+=	maho/openoffice.org/:moz \
 		mozilla/releases/mozilla${MOZILLA_VERSION}/src/:mozsrc \
 		misc/openoffice/contrib/helpcontent/:help \
 		misc/openoffice/contrib/helpcontent-1.0/:help3
-DISTFILES+=	OOo_${RELEASE_NR}m${MILESTONE}_source.tar.bz2
+DISTFILES+=	OOo_SRX645_m${MILESTONE}_source.tar.bz2
 .if defined(WITH_GPC)
 DISTFILES+=	gpc231.tar.Z:gpc
 .endif
-EXTRACT_ONLY=	OOo_${RELEASE_NR}m${MILESTONE}_source.tar.bz2
+EXTRACT_ONLY=	OOo_SRX645_m${MILESTONE}_source.tar.bz2
 
 MAINTAINER=	openoffice@FreeBSD.org
 COMMENT?=	Integrated wordprocessor/dbase/spreadsheet/drawing/chart/browser
@@ -93,8 +92,8 @@ L10NHELPS=	helpcontent_01_unix.tgz helpcontent_07_unix.tgz \
 
 CODELINE=		645
 RELEASE_NR=		1.1.5
-MILESTONE=		58
-SNAPDATE=		20050914
+MILESTONE=		60
+SNAPDATE=		20060114
 INSTALLATION_BASEDIR=	OpenOffice.org${RELEASE_NR}
 EXECBASE=		openoffice.org-${RELEASE_NR}m${MILESTONE}
 DIST_SUBDIR=		openoffice.org1.1
