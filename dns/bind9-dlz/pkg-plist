@@ -93,6 +93,7 @@ include/isc/eventclass.h
 include/isc/file.h
 include/isc/formatcheck.h
 include/isc/fsaccess.h
+%%BIND931%%include/isc/hash.h
 include/isc/heap.h
 include/isc/hex.h
 include/isc/hmacmd5.h
