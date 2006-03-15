@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	jed
-DISTVERSION=	0.99-17.135
+DISTVERSION=	0.99-17.165
 CATEGORIES=	editors
-MASTER_SITES=	ftp://space.mit.edu/pub/davis/jed/v0.99/pre-0.99-17/
+MASTER_SITES=	http://download.gna.org/jed/v0.99/devel/
 PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME}-B${DISTVERSION}
 
@@ -22,8 +22,8 @@ LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
 OPTIONS=	X11 "Build xjed (depends of X11)" on \
 		SLANG2 "Build using libslang-2.x" off
 
+USE_BZIP2=	yes
 DIST_SUBDIR=	jed
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	JED_ROOT=${PREFIX}/lib/jed
 MAKE_ENV+=	DEST_DOC_DIR=${DOCSDIR}
@@ -56,11 +56,6 @@ PLIST_SUB+=	XJED=""
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,<malloc.h>,<stdlib.h>,' \
-		${WRKSRC}/src/jdmacros.h \
-		${WRKSRC}/src/ledit.c
-	@${REINPLACE_CMD} -e 's,__linux__,__FreeBSD__,g' \
-		${WRKSRC}/src/pty.c
 	@${REINPLACE_CMD} -e 's,(DEST_JED_ROOT)/doc,(DEST_DOC_DIR),g' \
 			  -e 's,\.\./info/\*,,' \
 			  -e 's,^\(JED_DOC_.*FILES\) =,\1 \?=,g' \
