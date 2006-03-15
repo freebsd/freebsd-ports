@@ -1,0 +1,14 @@
+BLAT is a bioinformatics software tool which performs rapid mRNA/DNA
+and cross-species protein alignments. BLAT is more accurate and 500
+times faster than popular existing tools for mRNA/DNA alignments and 50
+times faster for protein alignments at sensitivity settings typically
+used when comparing vertebrate sequences. (Source: Kent, W.J. 2002. BLAT
+-- The BLAST-Like Alignment Tool. Genome Research 4: 656-664.
+http://dx.doi.org/10.1101/gr.229202)
+
+BLAT is not BLAST. DNA BLAT works by keeping an index of the entire
+genome (but not the genome itself) in memory. Since the index takes up a
+bit less than a gigabyte of RAM, BLAT can deliver high performance on a
+reasonably priced Linux box.
+
+WWW: http://www.genomeblat.com
