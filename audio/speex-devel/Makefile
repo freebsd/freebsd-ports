@@ -4,11 +4,10 @@
 # Whom:				ijliao
 #
 # $FreeBSD$
-#
+#    $MCom: ports-stable/audio/speex-devel/Makefile,v 1.1 2006/03/04 21:32:25 ahze Exp $
 
 PORTNAME=	speex
-PORTVERSION=	1.1.11.1
-PORTREVISION=	3
+PORTVERSION=	1.1.12
 PORTEPOCH=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.us.xiph.org/releases/speex/
@@ -23,7 +22,6 @@ CONFLICTS=	speex-1.0*
 
 USE_GNOME=	gnomehack
 USE_GETOPT_LONG=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
@@ -48,6 +46,8 @@ post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|doc win32|win32|g ; \
 		s|^mandir =.*$$|mandir = @mandir@|g'
+	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|' \
+		${WRKSRC}/*/*.h
 	@${REINPLACE_CMD} -e 's| in -lgnugetopt||g ; \
 		 s|LIBS="-lgnugetopt|LIBS="|g' ${WRKSRC}/configure
 
