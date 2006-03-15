@@ -484,6 +484,7 @@
     SUBDIR += pysol-music
     SUBDIR += pysycache
     SUBDIR += pysycache-lang
+    SUBDIR += pysycache-themes
     SUBDIR += pythonchess
     SUBDIR += q15
     SUBDIR += linux-quake3
