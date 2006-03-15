@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bash-completion
-PORTVERSION=	20050721
+PORTVERSION=	20060301
 CATEGORIES=	shells
 MASTER_SITES=	http://www.caliban.org/files/bash/
 
@@ -15,7 +15,6 @@ COMMENT=	Programmable completion library for Bash 2.04 and up
 
 WRKSRC=		${WRKDIR}/bash_completion
 NO_BUILD=	yes
-USE_REINPLACE=	yes
 
 SUB_FILES=	pkg-message
 PLIST_FILES=	etc/bash_completion
