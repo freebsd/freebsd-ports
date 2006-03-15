@@ -960,6 +960,7 @@
     SUBDIR += xitami
     SUBDIR += xpath2rss
     SUBDIR += xshttpd
+    SUBDIR += xulrunner
     SUBDIR += yabb
     SUBDIR += yaws
     SUBDIR += zerowait-httpd
