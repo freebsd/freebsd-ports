@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	garlic
-PORTVERSION=	1.4
-PORTREVISION=	2
+PORTVERSION=	1.5
 CATEGORIES=	biology
 MASTER_SITES=	http://garlic.mefos.hr/sources/garlic-${PORTVERSION}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -26,7 +25,7 @@ ALL_TARGET=	# empty
 
 .if defined(WITH_OPTIMIZED_FLAGS)
 CFLAGS+=	-O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations -malign-double
-.if (${MACHINE_ARCH} == "i386")
+.if (${ARCH} == "i386")
 CFLAGS+=	-mfancy-math-387 -mpreferred-stack-boundary=3
 .endif # i386
 .endif
