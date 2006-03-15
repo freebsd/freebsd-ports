@@ -1,7 +1,7 @@
 #!/bin/sh
 #
 # $FreeBSD$
-#    $MCom: ports/www/seamonkey/pkg-deinstall.in,v 1.9 2005/11/11 04:11:02 ahze Exp $
+#    $MCom: ports-stable/www/seamonkey/pkg-deinstall.in,v 1.1 2006/03/09 21:26:46 ahze Exp $
 #
 # Date created:			Mon Nov 29, 2003
 # Whom:				Thierry Thomas (<thierry@pompo.net>)
