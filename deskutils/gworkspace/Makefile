@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gworkspace
-PORTVERSION=	0.7.2
+PORTVERSION=	0.8.0
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.gnustep.it/enrico/gworkspace/ \
 		http://www.imago.ro/gworkspace/
@@ -39,9 +39,5 @@ PLIST_SUB+=	PDFVIEW="@comment "
 PLIST_SUB+=	PDFVIEW=""
 USE_GHOSTSCRIPT=	yes
 .endif
-
-post-patch:
-	${REINPLACE_CMD} -e 's|)/Makefiles|)/Library/Makefiles|' \
-		${WRKSRC}/FSNode/GNUmakefile
 
 .include <bsd.port.mk>
