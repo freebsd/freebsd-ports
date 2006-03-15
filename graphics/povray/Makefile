@@ -23,21 +23,24 @@ BUILD_DEPENDS=	${LOCALBASE}/intel_cc_80/bin/icc:${PORTSDIR}/lang/icc
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		tiff:${PORTSDIR}/graphics/tiff \
 		jpeg:${PORTSDIR}/graphics/jpeg
-.if (${MACHINE_ARCH} == "i386")
-LIB_DEPENDS+=	vga:${PORTSDIR}/graphics/svgalib
-.endif
 
+USE_BZIP2=	yes
 USE_XLIB=	yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf:259
 LATEST_LINK=	${PORTNAME}36
 
+.include <bsd.port.pre.mk>
+
+.if (${ARCH} == "i386")
+LIB_DEPENDS+=	vga:${PORTSDIR}/graphics/svgalib
+.endif
+
 .if defined(WITH_OPTIMIZED_FLAGS)
 CFLAGS+=	-O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations
 CXXFLAGS+=	-O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations -Wno-multichar
-.if (${MACHINE_ARCH} == "i386" && !${MACHINE_ARCH} == "amd64" )
+.if (${ARCH} == "i386" && !${ARCH} == "amd64" )
 CFLAGS+=	-mfancy-math-387 -mpreferred-stack-boundary=3 -malign-double
 CXXFLAGS+=	-mfancy-math-387 -mpreferred-stack-boundary=3 -malign-double
 .endif # i386
@@ -59,10 +62,8 @@ CONFIGURE_ARGS=	--x-includes="${X11BASE}/include" --includedir=${LOCALBASE} \
 
 MAN1=		povray.1
 
-.include <bsd.port.pre.mk>
-
 .if ${OSVERSION} < 500000
-BROKEN=		"Does not build on 4.x"
+BROKEN=		Does not build on 4.x
 .endif
 
 post-patch:
