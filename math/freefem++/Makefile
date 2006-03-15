@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	freefem++
-DISTVERSION=	2.3-1
+DISTVERSION=	2.4-1
 CATEGORIES=	math science
 MASTER_SITES=	http://www.freefem.org/ff++/ftp/
 
@@ -110,7 +110,7 @@ post-install:
 .endif
 
 .if defined(MAINTAINER_MODE)
-test:	install
+regression-test:	install
 	# Gnuplot needed! Click on the picture to end a set.
 .for direx in - -eigen -tutorial
 	(cd ${EXAMPLESDIR}/${direx:S/-//} ;	\
