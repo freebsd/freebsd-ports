@@ -8,6 +8,7 @@
 
 PORTNAME=	feedparser
 PORTVERSION=	4.1
+PORTREVISION=	1
 CATEGORIES=	textproc python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://bsdchat.com/dist/dryice/
@@ -16,6 +17,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dryice@dryice.name
 COMMENT=	An RSS feed parser written in Python
+
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/chardet/__init__.py:${PORTSDIR}/textproc/py-chardet
 
 WRKSRC=		${WRKDIR}
 USE_PYTHON=	2.1+
