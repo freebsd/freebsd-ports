@@ -8,10 +8,11 @@
 PORTNAME=	superlu
 DISTVERSION=	${P_VERSION}.20060201
 CATEGORIES=	math
-MASTER_SITES=	http://crd.lbl.gov/~xiaoye/SuperLU/
+MASTER_SITES=	http://crd.lbl.gov/~xiaoye/SuperLU/ \
+		http://crd.lbl.gov/~xiaoye/:doc
 DISTNAME=	${PORTNAME}_${P_VERSION}
 .ifndef NOPORTDOCS
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} superlu_ug.ps.gz SLU_general.ps.gz simax95.ps.gz
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} superlu_ug.ps.gz SLU_general.ps.gz:doc simax95.ps.gz:doc
 .endif
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
