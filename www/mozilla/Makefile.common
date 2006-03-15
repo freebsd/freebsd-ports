@@ -4,7 +4,7 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/www/mozilla/Makefile.common,v 1.17 2005/11/29 08:40:08 ahze Exp $
+#    $MCom: ports/www/mozilla/Makefile.common,v 1.20 2006/03/09 00:45:43 ahze Exp $
 
 # This file contains some reusable components for mozilla ports. It's of
 # use primarily to apps from the mozilla project itself (such as Firefox,

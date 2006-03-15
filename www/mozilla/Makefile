@@ -3,7 +3,7 @@
 # Whom:			eivind/dima/jseger
 #
 # $FreeBSD$
-#    $MCom: ports/www/mozilla/Makefile,v 1.31 2005/11/24 01:43:42 ahze Exp $
+#    $MCom: ports/www/mozilla/Makefile,v 1.36 2006/03/09 00:45:43 ahze Exp $
 #
 
 PORTNAME=	mozilla
@@ -26,7 +26,6 @@ USE_GMAKE=	yes
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 WANT_GNOME=	yes
-USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
 MAKE_ENV=	LD_LIBRARY_PATH=${WRKSRC}/dist/bin
 ALL_TARGET=	default
@@ -74,7 +73,7 @@ IGNORE=	core dumps on ${ARCH} during post-build
 
 .if defined(WITH_CALENDAR) && (defined(WITHOUT_MAILNEWS) || \
 	defined(WITHOUT_COMPOSER))
-BROKEN=	"Calendar requires Composer and Mailnews support."
+BROKEN=	Calendar requires Composer and Mailnews support.
 .endif
 .if defined(WITHOUT_MAILNEWS)
 MOZ_OPTIONS+=	--disable-ldap --disable-mailnews
