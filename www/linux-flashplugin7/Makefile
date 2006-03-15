@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	flashplugin
-PORTVERSION=	7.0r61
+PORTVERSION=	7.0r63
 CATEGORIES=	www multimedia linux
-MASTER_SITES=	http://fpdownload.macromedia.com/get/shockwave/flash/english/linux/7.0r25/
+MASTER_SITES=	http://fpdownload.macromedia.com/get/flashplayer/current/
 PKGNAMEPREFIX=	linux-
 DISTNAME=	install_flash_player_7_linux
 DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
@@ -16,13 +16,11 @@ DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 MAINTAINER=	jamie@bishopston.net
 COMMENT=	The official Macromedia Flash Player for Linux Mozilla and Netscape 6+
 
-FORBIDDEN=	http://vuxml.FreeBSD.org/83421018-b3ef-11da-a32d-000c6ec775d9.html
-
 ONLY_FOR_ARCHS=	amd64 i386
 USE_LINUX=	yes
 USE_X_PREFIX=	yes
 
-RESTRICTED=	"Redistribution not allowed"
+RESTRICTED=	Redistribution not allowed
 
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/install_flash_player_7_linux
