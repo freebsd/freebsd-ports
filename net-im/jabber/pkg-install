@@ -9,6 +9,7 @@ GROUP=${USER}
 UID=93
 GID=${UID}
 SPOOLDIR="/var/spool/jabber"
+PIDDIR="/var/run/jabberd"
 ETCDIR=${PREFIX:-$PKG_PREFIX}/etc
 
 if ! pw groupshow "${GROUP}" 2>/dev/null 1>&2; then
@@ -41,16 +42,24 @@ echo "Fixing ownerships and modes in \"${SPOOLDIR}\"."
 chown -R ${USER}:${GROUP} ${SPOOLDIR}
 chmod -R go= ${SPOOLDIR}
 
+if [ ! -d ${PIDDIR} ]; then
+	echo "Creating \"${PIDDIR}\"."
+	mkdir -p ${PIDDIR}
+fi
+
+echo "Fixing ownerships and modes in \"${PIDDIR}\"."
+chown -R ${USER}:${GROUP} ${PIDDIR}
+
 if [ ! -f ${ETCDIR}/jabber.xml ]; then
 	echo "Creating \"${ETCDIR}/jabber.xml\"."
-	cp -p ${ETCDIR}/jabber.xml.sample ${ETCDIR}/jabber.xml
+	cp -p ${ETCDIR}/jabber.xml.dist ${ETCDIR}/jabber.xml
 fi
 
 echo "Fixing config files ownerships and modes."
-chown root:${GROUP} ${ETCDIR}/jabber.xml ${ETCDIR}/jabber.xml.sample
-chmod 640 ${ETCDIR}/jabber.xml ${ETCDIR}/jabber.xml.sample
+chown root:${GROUP} ${ETCDIR}/jabber.xml ${ETCDIR}/jabber.xml.dist
+chmod 640 ${ETCDIR}/jabber.xml ${ETCDIR}/jabber.xml.dist
 
 echo "Fixing log files, ownerships and modes."
-touch /var/log/jabber.error /var/log/jabber.record
-chown ${USER}:${GROUP} /var/log/jabber.error /var/log/jabber.record
-chmod 640 /var/log/jabber.error /var/log/jabber.record
+touch /var/log/jabberd/error.log /var/log/jabberd/record.log
+chown ${USER}:${GROUP} /var/log/jabberd/error.log /var/log/jabberd/record.log
+chmod 640 /var/log/jabberd/error.log /var/log/jabberd/record.log

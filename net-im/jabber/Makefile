@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	jabber
-PORTVERSION=	1.4.3.1
-PORTREVISION=	2
+PORTVERSION=	1.4.4
 CATEGORIES=	net-im
-MASTER_SITES=	http://devel.amessage.info/jabberd14/
+MASTER_SITES=	http://download.jabberd.org/jabberd14/ \
+		http://fresh.t-systems-sfr.com/unix/src/privat2/
 DISTNAME=	${PORTNAME}d-${PORTVERSION}
 DIST_SUBDIR=	jabber
 
@@ -17,35 +17,60 @@ MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Online presence and instant messaging server
 
 LIB_DEPENDS=	pth.20:${PORTSDIR}/devel/pth \
-		expat.6:${PORTSDIR}/textproc/expat2
+		expat.6:${PORTSDIR}/textproc/expat2 \
+		idn.16:${PORTSDIR}/dns/libidn
 
 USE_RC_SUBR=	jabberd.sh
-USE_BZIP2=	yes
-GNU_CONFIGURE=	yes
+SUB_FILES=	pkg-message
 USE_GMAKE=	yes
-USE_OPENSSL=	yes
 
-CONFIGURE_ARGS+=	--enable-ssl
+MAN5=		jabber.xml.5
+MAN8=		jabberd.8
+NOMANCOMPRESS=	yes
+
+GNU_CONFIGURE=	yes
+INSTALLS_SHLIB=	yes
+CONFIGURE_ARGS+=	--with-libidn=${LOCALBASE} --with-libpth=${LOCALBASE} --localstatedir=/var
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+
+OPTIONS=	SSL "Build SSL support" on \
+		IPV6 "Use IPV6 code" off \
+		MYSQL "Build mysql support" off \
+		PGSQL "Build PostgreSQL support" off
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_SSL)
+# we can't use USE_OPENSSL=yes after including bsd.port.pre.mk
+WITH_OPENSSL=yes
+.include "${PORTSDIR}/Mk/bsd.openssl.mk"
+CONFIGURE_ARGS+=	--with-ssl-legacy=${OPENSSLBASE}
+.endif
+
 .if defined(WITH_IPV6)
 CONFIGURE_ARGS+=	--enable-ipv6
 .endif
 
-#JABDIR=		${PORTNAME}-${PORTVERSION}
-# Save this data for use later: jabber doesn't have an install target
-# or a sane set of defaults.
-post-patch:
-	${ECHO} "${WRKSRC}" > ${WRKSRC}/.wrksrc-freebsd
-	${ECHO} "${PREFIX}" > ${WRKSRC}/.prefix-freebsd
-	${ECHO} "${INSTALL_DATA}" > ${WRKSRC}/.install_data-freebsd
-	${ECHO} "${INSTALL_SCRIPT}" > ${WRKSRC}/.install_script-freebsd
-	${ECHO} "${INSTALL_PROGRAM}" > ${WRKSRC}/.install_program-freebsd
+.if defined(WITH_MYSQL)
+USE_MYSQL=		yes
+CONFIGURE_ARGS+=	--with-mysql=${LOCALBASE}
+.endif
 
-post-configure:
-	${REINPLACE_CMD} -e "s#-I\. -I\.\. #-I\. -I\.\. -I${LOCALBASE}/include #" \
-			 -e "s#-L/usr/lib#-L/usr/lib -L${LOCALBASE}/lib#" \
-		${WRKSRC}/platform-settings
+.if defined(WITH_PGSQL)
+USE_PGSQL=		yes
+CONFIGURE_ARGS+=	--with-postgresql=${LOCALBASE}
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -E 's,libpth/(lib|include),libpth/\1/pth,g; \
+			      s,(mysql)/(lib|include),\1/\2/\1,g' \
+		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's,postgresql/libpq-fe.h,libpq-fe.h,g' \
+		${WRKSRC}/configure \
+		${WRKSRC}/xdb_sql/xdb_sql.c
 
 post-install:
 	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

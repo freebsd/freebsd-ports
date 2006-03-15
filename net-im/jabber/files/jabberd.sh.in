@@ -21,13 +21,12 @@ load_rc_config $name
 required_files=%%PREFIX%%/etc/${name}.xml
 
 : ${jabber_enable="NO"}
-: ${jabber_pidfile="/var/spool/jabber/${name}.pid"}
+: ${jabber_pidfile="/var/run/jabberd/${name}.pid"}
 : ${jabber_flags="-B -h `/bin/hostname` -c ${required_files}"}
 : ${jabber_user="jabber"}
 : ${jabber_group="jabber"}
 
-command=%%PREFIX%%/sbin/jabberd
-command_args="${jabber_flags}"
 pidfile=${jabber_pidfile}
+command="%%PREFIX%%/bin/jabberd"
 
 run_rc_command "$1"
