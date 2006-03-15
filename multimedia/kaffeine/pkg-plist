@@ -5,10 +5,13 @@ include/kaffeine/kaffeine_part_iface.h
 include/kaffeine/kmediapart.h
 include/kaffeine/mrl.h
 include/kaffeine/playlistimport.h
+%%NOGSTREAMER%%lib/kde3/libgstreamerpart.a
 %%NOGSTREAMER%%lib/kde3/libgstreamerpart.so
 %%NOGSTREAMER%%lib/kde3/libgstreamerpart.la
+lib/kde3/libkaffeinepart.a
 lib/kde3/libkaffeinepart.la
 lib/kde3/libkaffeinepart.so
+lib/libkmediapart.a
 lib/libkmediapart.la
 lib/libkmediapart.so
 lib/libkmediapart.so.0
