@@ -1,23 +1,11 @@
---- extract-xiso.c.orig	Fri Sep 30 15:49:47 2005
-+++ extract-xiso.c	Fri Sep 30 15:50:29 2005
-@@ -215,7 +215,7 @@
- #include <sys/types.h>
+--- extract-xiso.c.orig	Sat Jan 28 09:16:25 2006
++++ extract-xiso.c	Sat Mar  4 12:15:59 2006
+@@ -236,7 +236,7 @@
+ 
  
  #if defined( __FREEBSD__ )
 -	#include <machine/limits.h>
 +	#include <limits.h>
  #endif
  
- #if ! defined( NO_FTP )
-@@ -1345,6 +1345,11 @@
- 	if ( ! err ) {
- 		if ( read( in_xiso, dir->filename, dir->filename_length ) != dir->filename_length ) read_err();
- 		if ( ! err ) dir->filename[ dir->filename_length ] = 0;
-+		if (strstr(dir->filename,"..") || strchr(dir->filename, '/') || strchr(dir->filename, '\\'))
-+		{
-+			printf("Filename contains invalid characters");
-+			exit(1);
-+		}
- 	}
- 	
- 	if ( ! err && in_mode == k_generate_avl ) {
+ 
