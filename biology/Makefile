@@ -18,6 +18,7 @@
     SUBDIR += crimap
     SUBDIR += distribfold
     SUBDIR += dna-qc
+    SUBDIR += dotter
     SUBDIR += embassy
     SUBDIR += emboss
     SUBDIR += fasta
