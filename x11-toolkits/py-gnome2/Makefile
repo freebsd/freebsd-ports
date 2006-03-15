@@ -3,11 +3,11 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/x11-toolkits/py-gnome2/Makefile,v 1.24 2005/10/03 16:28:50 marcus Exp $
+#   $MCom: ports-stable/x11-toolkits/py-gnome2/Makefile,v 1.2 2006/03/14 13:28:11 marcus Exp $
 #
 
 PORTNAME=	gnome
-PORTVERSION=	2.12.3
+PORTVERSION=	2.12.4
 PORTREVISION=	1
 CATEGORIES=	x11-toolkits python gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
@@ -30,7 +30,8 @@ USE_GNOME=	gnomehack libgnomeui pygtk2
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+		LIBS="-L${LOCALBASE}/lib" \
+		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
 EG_SRC_DIR=	${WRKSRC}/examples
 EG_DST_DIR=	${PREFIX}/share/examples/py-gnome
@@ -38,10 +39,6 @@ EG_DST_DIR=	${PREFIX}/share/examples/py-gnome
 CONFLICTS=	py*-gnome-1*
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 503001
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-gnomevfs_Makefile.in
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%X11BASE%%|${X11BASE}|' \
