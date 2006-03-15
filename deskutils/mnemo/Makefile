@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mnemo
-PORTVERSION=	2.0.3
+PORTVERSION=	2.1
 CATEGORIES=	deskutils www
 MASTER_SITES=	ftp://ftp.horde.org/pub/mnemo/				\
 		ftp://ftp.planetmirror.com/pub/horde/mnemo/		\
@@ -25,6 +25,7 @@ RUN_DEPENDS=	${LOCALBASE}/${LHORDEDIR}/rpc.php:${PORTSDIR}/www/horde
 
 NO_BUILD=	yes
 USE_APACHE=	1.3+	# needed to test APACHE_VERSION
+USE_GETTEXT=	yes
 
 PLIST_SUB=	MNEMODIR=${LMNEMODIR} HORDE_INC=${HORDE_INC:S|^${LOCALBASE}/||}
 PKGMESSAGE=	${WRKDIR}/pkg-message
@@ -32,10 +33,11 @@ PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 SUB_FILES=	pkg-message pkg-deinstall
 SUB_LIST=	MNEMODIR=${MNEMODIR}
 
+REINPLACE_ARGS=	-i ""
 DOCS=		LICENSE README docs/CHANGES docs/CREDITS docs/INSTALL	\
 		docs/RELEASE_NOTES  docs/TODO docs/UPGRADING
 CONFFILE=	prefs.php
-SUB_DIRS=	config lib locale po scripts templates themes
+SUB_DIRS=	config js lib locale po scripts templates themes
 
 LHORDEDIR?=	www/horde
 LMNEMODIR?=	${LHORDEDIR}/mnemo
@@ -52,6 +54,9 @@ HORDE_INC=	${LOCALBASE}/etc/horde
 .endif
 
 pre-configure:
+	@(cd ${WRKSRC}/scripts &&	\
+		${FIND} . -name "*.php" -exec	\
+		${REINPLACE_CMD} -e "s:/usr/local/bin/php: ${LOCALBASE}/bin/php:;s:/usr/bin/php: ${LOCALBASE}/bin/php:" {} \; )
 	@${SED} -e "s:/home/httpd/html/horde/mnemo:${MNEMODIR}:g"	\
 		${FILESDIR}/httpd.conf.mnemo > ${WRKDIR}/httpd-mnemo.conf
 
