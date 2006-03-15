@@ -91,6 +91,7 @@
     SUBDIR += cpu
     SUBDIR += cpuburn
     SUBDIR += crashme
+    SUBDIR += cromwell
     SUBDIR += cronolog
     SUBDIR += curly
     SUBDIR += cvsweb-converters
