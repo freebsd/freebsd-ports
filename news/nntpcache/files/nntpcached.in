@@ -1,0 +1,27 @@
+#!/bin/sh
+
+# PROVIDE: nntpcached
+# REQUIRE: NETWORKING SERVERS
+# BEFORE: DAEMON
+# KEYWORD: FreeBSD shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable nntpcached:
+#
+# nntpcached_enable="YES"
+#
+
+. /etc/rc.subr
+
+name=nntpcached
+rcvar=`set_rcvar`
+
+load_rc_config $name
+
+command=%%PREFIX%%/sbin/nntpcached
+required_files="%%PREFIX%%/etc/nntpcache/nntpcache.access %%PREFIX%%/etc/nntpcache/nntpcache.config %%PREFIX%%/etc/nntpcache/nntpcache.servers"
+procname=nntpcached
+
+nntpcached_enable=${nntpcached_enable:-"NO"}
+
+run_rc_command "$1"
