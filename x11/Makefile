@@ -162,6 +162,7 @@
     SUBDIR += renderext
     SUBDIR += resourceext
     SUBDIR += rox-wallpaper
+    SUBDIR += rsibreak
     SUBDIR += ruby-X11
     SUBDIR += ruby-gnome2
     SUBDIR += ruby-gnome2-all
