@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	cairomm
-PORTVERSION=	0.4.0
-PORTREVISION=	1
+PORTVERSION=	0.5.0
 CATEGORIES=	graphics
 MASTER_SITES=	http://cairographics.org/releases/
 
@@ -19,14 +18,22 @@ LIB_DEPENDS=	xml\\+\\+-2.6:${PORTSDIR}/textproc/libxml++26 \
 
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
+USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnometarget
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
 BROKEN="Does not build"
+.endif
+
+.if defined(NOPORTDOCS)
+CONFIGURE_ARGS+=	--disable-docs
+
+post-patch:
+	@${REINPLACE_CMD} -E '/^SUBDIRS = /s/(docs|examples)//g' ${WRKSRC}/Makefile.in
 .endif
 
 .include <bsd.port.post.mk>
