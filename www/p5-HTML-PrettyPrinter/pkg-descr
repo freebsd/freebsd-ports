@@ -1,0 +1,6 @@
+HTML::PrettyPrinter produces nicely formatted HTML code from a HTML syntax
+tree. It is especially usefull if the produced HTML file shall be read or
+edited manually afterwards. Various parameters let you adapt the output to
+different styles and requirements.
+
+WWW: http://search.cpan.org/dist/HTML::PrettyPrinter/
