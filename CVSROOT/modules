@@ -1822,6 +1822,7 @@ dotconf		ports/devel/dotconf
 dotconf++	ports/devel/dotconf++
 dotfile		ports/misc/dotfile
 dotproject	ports/www/dotproject
+dotter		ports/biology/dotter
 dovecot		ports/mail/dovecot
 downloader	ports/ftp/downloader
 doxygen		ports/devel/doxygen
