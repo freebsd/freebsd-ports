@@ -10843,6 +10843,7 @@ pysol		ports/games/pysol
 pysol-cardsets	ports/games/pysol-cardsets
 pysol-music	ports/games/pysol-music
 pysol-sound-server	ports/audio/pysol-sound-server
+pysycache	ports/games/pysycache
 python		ports/lang/python
 python-devel	ports/lang/python-devel
 python-doc-html	ports/lang/python-doc-html
