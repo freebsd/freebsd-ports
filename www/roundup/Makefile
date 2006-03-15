@@ -10,7 +10,7 @@ PORTVERSION=	1.1.1
 CATEGORIES=	www python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://cheeseshop.python.org/packages/source/r/roundup/ \
-		http://bsdchat.com/dist/dryice/
+		http://dryice.name/computer/FreeBSD/distfiles/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	dryice@dryice.name

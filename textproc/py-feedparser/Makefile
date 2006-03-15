@@ -11,7 +11,7 @@ PORTVERSION=	4.1
 PORTREVISION=	1
 CATEGORIES=	textproc python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		http://bsdchat.com/dist/dryice/
+		http://dryice.name/computer/FreeBSD/distfiles/
 MASTER_SITE_SUBDIR=	feedparser
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 

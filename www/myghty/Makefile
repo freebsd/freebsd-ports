@@ -9,7 +9,7 @@ PORTNAME=	myghty
 PORTVERSION=	0.98c
 CATEGORIES=	www python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		http://bsdchat.com/dist/dryice/
+		http://dryice.name/computer/FreeBSD/distfiles/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	Myghty-${PORTVERSION}
 

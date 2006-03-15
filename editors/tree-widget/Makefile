@@ -9,7 +9,7 @@ PORTNAME=	tree-widget
 PORTVERSION=	2.0
 CATEGORIES=	editors elisp
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		http://bsdchat.com/dist/dryice/
+		http://dryice.name/computer/FreeBSD/distfiles/
 MASTER_SITE_SUBDIR=	emhacks
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 

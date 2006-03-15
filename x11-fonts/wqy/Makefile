@@ -9,7 +9,7 @@ PORTNAME=	wqy
 PORTVERSION=	1.1.0
 CATEGORIES=	x11-fonts
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		http://bsdchat.com/dist/dryice/
+		http://dryice.name/computer/FreeBSD/distfiles/
 MASTER_SITE_SUBDIR=	wqy
 DISTNAME=	${PORTNAME}-yhunifont-bdf-${PORTVERSION}
 

@@ -11,7 +11,7 @@ PORTNAME=	kodos
 PORTVERSION=	2.4.7
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		http://bsdchat.com/dist/dryice/
+		http://dryice.name/computer/FreeBSD/distfiles/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	dryice@dryice.name

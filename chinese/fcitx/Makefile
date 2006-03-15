@@ -9,7 +9,7 @@ PORTNAME=	fcitx
 PORTVERSION=	3.1.1
 CATEGORIES=	chinese x11
 MASTER_SITES=	http://www.fcitx.org/download/ \
-		http://bsdchat.com/dist/dryice/
+		http://dryice.name/computer/FreeBSD/distfiles/
 EXTRACT_SUFX=	.tar.bz2
 
 MAINTAINER=	dryice@dryice.name

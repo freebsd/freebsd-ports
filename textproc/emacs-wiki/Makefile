@@ -9,7 +9,7 @@ PORTNAME=	emacs-wiki
 PORTVERSION=	2.70
 CATEGORIES=	textproc elisp
 MASTER_SITES=	http://www.mwolson.org/static/dist/emacs-wiki/ \
-		http://bsdchat.com/dist/dryice/
+		http://dryice.name/computer/FreeBSD/distfiles/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
 MAINTAINER=	dryice@dryice.name

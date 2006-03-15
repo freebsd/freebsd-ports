@@ -9,7 +9,7 @@ PORTNAME=	etask
 PORTVERSION=	0.3.91
 CATEGORIES=	deskutils elisp
 MASTER_SITES=	http://members.chello.at/rene.weichselbaum/ \
-		http://bsdchat.com/dist/dryice/
+		http://dryice.name/computer/FreeBSD/distfiles/
 
 MAINTAINER=	dryice@dryice.name
 COMMENT=	Manage your projects or tasks within GNU Emacs
