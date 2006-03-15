@@ -552,18 +552,18 @@ share/themes/Raleigh/gtk-2.0/gtkrc
 @dirrm etc/gtk-2.0
 @exec /bin/mkdir -p %D/lib/gtk-2.0/modules
 @exec /bin/mkdir -p %D/lib/gtk-2.0/%%GTK_VERSION%%/engines
-@unexec /bin/rmdir %D/share/themes/Default 2>/dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/themes 2>/dev/null || /usr/bin/true
+@dirrmtry share/themes/Default
+@dirrmtry share/themes
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/yi/LC_MESSAGES
 @dirrmtry share/locale/yi
 @dirrmtry share/locale/xh/LC_MESSAGES
 @dirrmtry share/locale/xh
-@dirrmtry share/locale/te/LC_MESSAGES
-@dirrmtry share/locale/te
 @dirrmtry share/locale/uz@Latn/LC_MESSAGES
 @dirrmtry share/locale/uz@Latn
+@dirrmtry share/locale/te/LC_MESSAGES
+@dirrmtry share/locale/te
 @dirrmtry share/locale/sr@ije/LC_MESSAGES
 @dirrmtry share/locale/sr@ije
 @dirrmtry share/locale/rw/LC_MESSAGES
@@ -584,9 +584,9 @@ share/themes/Raleigh/gtk-2.0/gtkrc
 @dirrmtry share/locale/br
 @dirrmtry share/locale/az_IR/LC_MESSAGES
 @dirrmtry share/locale/az_IR
-@unexec /bin/rmdir %D/lib/gtk-2.0/modules 2>/dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/lib/gtk-2.0/%%GTK_VERSION%%/loaders 2>/dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/lib/gtk-2.0/%%GTK_VERSION%%/immodules 2>/dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/lib/gtk-2.0/%%GTK_VERSION%%/engines 2>/dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/lib/gtk-2.0/%%GTK_VERSION%% 2>/dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/lib/gtk-2.0 2>/dev/null || /usr/bin/true
+@dirrmtry lib/gtk-2.0/modules
+@dirrmtry lib/gtk-2.0/%%GTK_VERSION%%/loaders
+@dirrmtry lib/gtk-2.0/%%GTK_VERSION%%/immodules
+@dirrmtry lib/gtk-2.0/%%GTK_VERSION%%/engines
+@dirrmtry lib/gtk-2.0/%%GTK_VERSION%%
+@dirrmtry lib/gtk-2.0
