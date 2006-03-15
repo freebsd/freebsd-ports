@@ -2,7 +2,7 @@
 # ex:ts=4
 #
 # $FreeBSD$
-#    $MCom: ports/www/mozilla/bsd.gecko.mk,v 1.9 2005/11/29 20:30:06 adamw Exp $
+#    $MCom: ports/www/mozilla/bsd.gecko.mk,v 1.17 2006/03/10 12:42:50 ahze Exp $
 #
 # 4 column tabs prevent hair loss and tooth decay!
 
@@ -64,7 +64,7 @@ Gecko_Pre_Include=			bsd.gecko.mk
 #  .endif
 
 .if ${OSVERSION} >= 500000
-_GECKO_ALL=	firefox nvu seamonkey sunbird thunderbird
+_GECKO_ALL=	firefox nvu seamonkey sunbird thunderbird xulrunner
 .endif
 _GECKO_ALL+=	mozilla
 
@@ -127,7 +127,7 @@ XPIDL_INCL?=			`${GECKO_CONFIG} --idlflags`
 BUILD_DEPENDS+=	${${GECKO}_PLIST}:${${GECKO}_DEPENDS}
 RUN_DEPENDS+=	${${GECKO}_PLIST}:${${GECKO}_DEPENDS}
 .else
-BROKEN="Unable to find a supported gecko, please check USE_GECKO"
+BROKEN=Unable to find a supported gecko, please check USE_GECKO
 .endif
 
 pre-everything:: _gecko-pre-everything
