@@ -22,6 +22,8 @@ USE_REINPLACE=	yes
 USE_MOTIF=	yes
 USE_IMAKE=	yes
 PLIST_SUB+=	RELEASE=${OSREL:R:R} ARCH=${ARCH}
+SUB_FILES=	pkg-message
+PKGMESSAGE=	${WRKDIR}/pkg-message
 
 MAN1=		cda.1 xmcd.1
 MANCOMPRESSED=	no

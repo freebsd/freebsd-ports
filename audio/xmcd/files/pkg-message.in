@@ -1,7 +1,7 @@
 *******************************************************
 You will need to run the configuration script for xmcd
 to accurately recognize your cd-rom.  The configure
-script is: ${PREFIX}/lib/X11/xmcd/config/config.sh
+script is: %%PREFIX%%/lib/X11/xmcd/config/config.sh
 
 If you would like to submit data to CDDB you will need
 to install mail/mailx or add something similar to
