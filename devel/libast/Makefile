@@ -8,7 +8,8 @@
 PORTNAME=	libast
 PORTVERSION=	0.7
 CATEGORIES=	devel
-MASTER_SITES=	http://www.eterm.org/download/
+MASTER_SITES=	http://critical.ch/distfiles/ \
+		http://www.eterm.org/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library of assorted spiffy things
