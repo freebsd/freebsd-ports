@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	scientific
-PORTVERSION=	2.4.3
+PORTVERSION=	2.4.9
 CATEGORIES=	math python
 MASTER_SITES=	http://starship.python.net/crew/hinsen/ScientificPython/ \
 		http://dirac.cnrs-orleans.fr/programs/ScientificPython/
