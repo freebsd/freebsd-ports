@@ -846,6 +846,7 @@ boiling-egg	ports/editors/boiling-egg
 boinc-client	ports/net/boinc-client
 boinc-einsteinathome	ports/astro/boinc-einsteinathome
 boinc-setiathome	ports/astro/boinc-setiathome
+boinc-setiathome-naparst	ports/astro/boinc-setiathome-naparst
 bomb		ports/games/bomb
 bomberclone	ports/games/bomberclone
 bomberinstinct	ports/games/bomberinstinct
