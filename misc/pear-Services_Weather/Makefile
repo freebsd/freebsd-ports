@@ -7,6 +7,7 @@
 
 PORTNAME=	Services_Weather
 PORTVERSION=	1.3.2
+PORTREVISION=	1
 CATEGORIES=	misc www pear
 
 MAINTAINER=	ports@FreeBSD.org
@@ -16,7 +17,7 @@ BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 .if !defined (WITHOUT_CACHE)
-BUILD_DEPENDS+=	${PEARDIR}/Cache/Cache.php:${PORTSDIR}/sysutils/pear-Cache
+BUILD_DEPENDS+=	${PEARDIR}/Cache.php:${PORTSDIR}/sysutils/pear-Cache
 .endif
 .if !defined (WITHOUT_DB)
 BUILD_DEPENDS+=	${PEARDIR}/DB.php:${PORTSDIR}/databases/pear-DB
