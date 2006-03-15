@@ -9,9 +9,6 @@ Then, you have to create the table nag_tasks, from the SQL script
 For example, if your database is MySQL, you may run
 mysql --user=root --password=yourpass horde < nag.sql
 
-WARNING! if you are upgrading from Nag v. 1.1.x, you have to alter your
-******** schemas. Please read the doc %%DOCSDIR%%/UPGRADING.
-
 Finally, you must login to Horde as a Horde Administrator to finish the
 configuration.
 
