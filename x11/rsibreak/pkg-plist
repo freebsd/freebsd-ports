@@ -1,0 +1,43 @@
+bin/rsibreak
+share/applications/kde/rsibreak.desktop
+share/autostart/rsibreak.desktop
+share/icons/hicolor/16x16/actions/rsibreak0.png
+share/icons/hicolor/16x16/actions/rsibreak1.png
+share/icons/hicolor/16x16/actions/rsibreak2.png
+share/icons/hicolor/16x16/actions/rsibreak3.png
+share/icons/hicolor/16x16/actions/rsibreak4.png
+share/icons/hicolor/16x16/actions/rsibreakx.png
+share/icons/hicolor/16x16/apps/rsibreak.png
+share/icons/hicolor/32x32/actions/rsibreak0.png
+share/icons/hicolor/32x32/actions/rsibreak1.png
+share/icons/hicolor/32x32/actions/rsibreak2.png
+share/icons/hicolor/32x32/actions/rsibreak3.png
+share/icons/hicolor/32x32/actions/rsibreak4.png
+share/icons/hicolor/32x32/actions/rsibreakx.png
+share/icons/hicolor/32x32/apps/rsibreak.png
+share/locale/bg/LC_MESSAGES/rsibreak.mo
+share/locale/br/LC_MESSAGES/rsibreak.mo
+share/locale/ca/LC_MESSAGES/rsibreak.mo
+share/locale/da/LC_MESSAGES/rsibreak.mo
+share/locale/el/LC_MESSAGES/rsibreak.mo
+share/locale/en_GB/LC_MESSAGES/rsibreak.mo
+share/locale/es/LC_MESSAGES/rsibreak.mo
+share/locale/ga/LC_MESSAGES/rsibreak.mo
+share/locale/gl/LC_MESSAGES/rsibreak.mo
+share/locale/it/LC_MESSAGES/rsibreak.mo
+share/locale/nl/LC_MESSAGES/rsibreak.mo
+share/locale/pt/LC_MESSAGES/rsibreak.mo
+share/locale/sr/LC_MESSAGES/rsibreak.mo
+share/locale/sr@Latn/LC_MESSAGES/rsibreak.mo
+share/locale/sv/LC_MESSAGES/rsibreak.mo
+share/locale/tr/LC_MESSAGES/rsibreak.mo
+@dirrmtry share/locale/ca/LC_MESSAGES
+@dirrmtry share/locale/ca
+@dirrmtry share/locale/el/LC_MESSAGES
+@dirrmtry share/locale/el
+@dirrmtry share/locale/gl/LC_MESSAGES
+@dirrmtry share/locale/gl
+@dirrmtry share/locale/pt/LC_MESSAGES
+@dirrmtry share/locale/pt
+@dirrmtry share/locale/sr/LC_MESSAGES
+@dirrmtry share/locale/sr
