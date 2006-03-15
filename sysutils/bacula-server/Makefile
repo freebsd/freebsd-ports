@@ -17,6 +17,8 @@ UNIQUENAME?=${PORTNAME}${PKGNAMESUFFIX}
 MAINTAINER=	Lars.Koeller@Uni-Bielefeld.DE
 COMMENT?=	The network backup solution (server)
 
+CONFLICTS=	bacula-server-devel-[0-9]* bacula-client-devel-[0-9]*
+
 # The user/group IDs below are registered, see
 # http://www.freebsd.org/doc/en_US.ISO8859-1/books/porters-handbook/book.html#DADS-UID
 #
