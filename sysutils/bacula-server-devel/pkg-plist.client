@@ -1,0 +1,7 @@
+etc/rc.d/z-bacula.sh.sample
+sbin/bacula-fd
+sbin/bconsole
+%%GNOMECONS%%sbin/gnome-console
+%%WXCONS%%sbin/wx-console
+@unexec /usr/bin/killall badula-fd > /dev/null 2>&1 || true
+@exec mkdir -p %%BACULA_DIR%%
