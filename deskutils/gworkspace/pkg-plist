@@ -52,6 +52,8 @@ System/Applications/GWorkspace.app/Resources/English.lproj/LSFolder.gorm/objects
 System/Applications/GWorkspace.app/Resources/English.lproj/Localizable.strings
 System/Applications/GWorkspace.app/Resources/English.lproj/OpenWith.gorm/data.classes
 System/Applications/GWorkspace.app/Resources/English.lproj/OpenWith.gorm/objects.gorm
+System/Applications/GWorkspace.app/Resources/English.lproj/OperationPrefs.gorm/data.classes
+System/Applications/GWorkspace.app/Resources/English.lproj/OperationPrefs.gorm/objects.gorm
 System/Applications/GWorkspace.app/Resources/English.lproj/PrefWindow.gorm/data.classes
 System/Applications/GWorkspace.app/Resources/English.lproj/PrefWindow.gorm/data.info
 System/Applications/GWorkspace.app/Resources/English.lproj/PrefWindow.gorm/objects.gorm
@@ -64,9 +66,6 @@ System/Applications/GWorkspace.app/Resources/English.lproj/ShelfPref.gorm/data.c
 System/Applications/GWorkspace.app/Resources/English.lproj/ShelfPref.gorm/objects.gorm
 System/Applications/GWorkspace.app/Resources/English.lproj/StartAppWin.gorm/data.classes
 System/Applications/GWorkspace.app/Resources/English.lproj/StartAppWin.gorm/objects.gorm
-System/Applications/GWorkspace.app/Resources/English.lproj/VolumesPref.gorm/data.classes
-System/Applications/GWorkspace.app/Resources/English.lproj/VolumesPref.gorm/data.info
-System/Applications/GWorkspace.app/Resources/English.lproj/VolumesPref.gorm/objects.gorm
 System/Applications/GWorkspace.app/Resources/English.lproj/XTermPref.gorm/data.classes
 System/Applications/GWorkspace.app/Resources/English.lproj/XTermPref.gorm/data.info
 System/Applications/GWorkspace.app/Resources/English.lproj/XTermPref.gorm/objects.gorm
@@ -188,19 +187,6 @@ System/Applications/GWorkspace.app/Resources/tiffPboard.tiff
 System/Applications/GWorkspace.app/Resources/watch.tiff
 System/Applications/GWorkspace.app/library_paths.openapp
 System/Applications/GWorkspace.app/stamp.make
-System/Applications/Operation.app/Operation
-System/Applications/Operation.app/Resources/English.lproj/FileOperationWin.gorm/data.classes
-System/Applications/Operation.app/Resources/English.lproj/FileOperationWin.gorm/data.info
-System/Applications/Operation.app/Resources/English.lproj/FileOperationWin.gorm/objects.gorm
-System/Applications/Operation.app/Resources/English.lproj/Localizable.strings
-System/Applications/Operation.app/Resources/English.lproj/OperationPrefs.gorm/data.classes
-System/Applications/Operation.app/Resources/English.lproj/OperationPrefs.gorm/objects.gorm
-System/Applications/Operation.app/Resources/Info-gnustep.plist
-System/Applications/Operation.app/Resources/Operation.desktop
-System/Applications/Operation.app/Resources/Operation.tiff
-System/Applications/Operation.app/Resources/progind.tiff
-System/Applications/Operation.app/library_paths.openapp
-System/Applications/Operation.app/stamp.make
 System/Applications/Recycler.app/Recycler
 System/Applications/Recycler.app/Resources/English.lproj/Localizable.strings
 System/Applications/Recycler.app/Resources/English.lproj/PreferencesWin.gorm/data.classes
@@ -321,6 +307,7 @@ System/Library/Frameworks/FSNode.framework/Versions/A/Headers/FSNFunctions.h
 System/Library/Frameworks/FSNode.framework/Versions/A/Headers/FSNIcon.h
 System/Library/Frameworks/FSNode.framework/Versions/A/Headers/FSNIconsView.h
 System/Library/Frameworks/FSNode.framework/Versions/A/Headers/FSNListView.h
+System/Library/Frameworks/FSNode.framework/Versions/A/Headers/FSNPathComponentsViewer.h
 System/Library/Frameworks/FSNode.framework/Versions/A/Headers/FSNTextCell.h
 System/Library/Frameworks/FSNode.framework/Versions/A/Headers/FSNode.h
 System/Library/Frameworks/FSNode.framework/Versions/A/Headers/FSNodeRep.h
@@ -436,12 +423,29 @@ System/Library/Frameworks/Inspector.framework/Versions/A/libInspector.so
 System/Library/Frameworks/Inspector.framework/Versions/A/libInspector.so.%%MAJORLIBVERSION2%%
 System/Library/Frameworks/Inspector.framework/Versions/A/libInspector.so.%%LIBVERSION2%%
 System/Library/Frameworks/Inspector.framework/Versions/Current
+System/Library/Frameworks/Operation.framework/Headers
+System/Library/Frameworks/Operation.framework/Resources
+System/Library/Frameworks/Operation.framework/Versions/A/Headers/Operation.h
+System/Library/Frameworks/Operation.framework/Versions/A/Operation
+System/Library/Frameworks/Operation.framework/Versions/A/Resources/English.lproj/FileOperationWin.gorm/data.classes
+System/Library/Frameworks/Operation.framework/Versions/A/Resources/English.lproj/FileOperationWin.gorm/data.info
+System/Library/Frameworks/Operation.framework/Versions/A/Resources/English.lproj/FileOperationWin.gorm/objects.gorm
+System/Library/Frameworks/Operation.framework/Versions/A/Resources/English.lproj/Localizable.strings
+System/Library/Frameworks/Operation.framework/Versions/A/Resources/Info-gnustep.plist
+System/Library/Frameworks/Operation.framework/Versions/A/Resources/Operation.tiff
+System/Library/Frameworks/Operation.framework/Versions/A/Resources/progind.tiff
+System/Library/Frameworks/Operation.framework/Versions/A/libOperation.so
+System/Library/Frameworks/Operation.framework/Versions/A/libOperation.so.1
+System/Library/Frameworks/Operation.framework/Versions/A/libOperation.so.1.%%MAJORLIBVERSION2%%.%%MAJORLIBVERSION2%%
+System/Library/Frameworks/Operation.framework/Versions/Current
 System/Library/Headers/DBKit/DBKBTree.h
 System/Library/Headers/DBKit/DBKBTreeNode.h
+System/Library/Headers/DBKit/DBKPathsTree.h
 System/Library/Headers/DBKit/DBKFixLenRecordsFile.h
 System/Library/Headers/DBKit/DBKVarLenRecordsFile.h
 System/Library/Headers/FSNode
 System/Library/Headers/Inspector
+System/Library/Headers/Operation
 System/Library/Libraries/libDBKit.so
 System/Library/Libraries/libDBKit.so.%%MAJORLIBVERSION%%
 System/Library/Libraries/libDBKit.so.%%LIBVERSION%%
@@ -451,6 +455,9 @@ System/Library/Libraries/libFSNode.so.%%LIBVERSION2%%
 System/Library/Libraries/libInspector.so
 System/Library/Libraries/libInspector.so.%%MAJORLIBVERSION2%%
 System/Library/Libraries/libInspector.so.%%LIBVERSION2%%
+System/Library/Libraries/libOperation.so
+System/Library/Libraries/libOperation.so.1
+System/Library/Libraries/libOperation.so.1.0.0
 System/Library/Services/thumbnailer.service/Resources/Info-gnustep.plist
 System/Library/Services/thumbnailer.service/thumbnailer
 System/Tools/ddbd
@@ -462,6 +469,13 @@ System/Tools/wopen
 @dirrm System/Library/Services/thumbnailer.service/Resources
 @dirrm System/Library/Services/thumbnailer.service
 @dirrm System/Library/Headers/DBKit
+@dirrm System/Library/Frameworks/Operation.framework/Versions/A/Resources/English.lproj/FileOperationWin.gorm
+@dirrm System/Library/Frameworks/Operation.framework/Versions/A/Resources/English.lproj
+@dirrm System/Library/Frameworks/Operation.framework/Versions/A/Resources
+@dirrm System/Library/Frameworks/Operation.framework/Versions/A/Headers
+@dirrm System/Library/Frameworks/Operation.framework/Versions/A
+@dirrm System/Library/Frameworks/Operation.framework/Versions
+@dirrm System/Library/Frameworks/Operation.framework
 @dirrm System/Library/Frameworks/Inspector.framework/Versions/A/Resources/English.lproj/Tools.gorm
 @dirrm System/Library/Frameworks/Inspector.framework/Versions/A/Resources/English.lproj/InspectorWin.gorm
 @dirrm System/Library/Frameworks/Inspector.framework/Versions/A/Resources/English.lproj/Contents.gorm
@@ -532,24 +546,19 @@ System/Tools/wopen
 @dirrm System/Applications/Recycler.app/Resources/English.lproj
 @dirrm System/Applications/Recycler.app/Resources
 @dirrm System/Applications/Recycler.app
-@dirrm System/Applications/Operation.app/Resources/English.lproj/OperationPrefs.gorm
-@dirrm System/Applications/Operation.app/Resources/English.lproj/FileOperationWin.gorm
-@dirrm System/Applications/Operation.app/Resources/English.lproj
-@dirrm System/Applications/Operation.app/Resources
-@dirrm System/Applications/Operation.app
 @dirrm System/Applications/GWorkspace.app/Resources/Spanish.lproj
 @dirrm System/Applications/GWorkspace.app/Resources/Romanian.lproj
 @dirrm System/Applications/GWorkspace.app/Resources/Portuguese.lproj
 @dirrm System/Applications/GWorkspace.app/Resources/Italian.lproj
 @dirrm System/Applications/GWorkspace.app/Resources/German.lproj
 @dirrm System/Applications/GWorkspace.app/Resources/French.lproj
-@dirrm System/Applications/GWorkspace.app/Resources/English.lproj/VolumesPref.gorm
 @dirrm System/Applications/GWorkspace.app/Resources/English.lproj/XTermPref.gorm
 @dirrm System/Applications/GWorkspace.app/Resources/English.lproj/StartAppWin.gorm
 @dirrm System/Applications/GWorkspace.app/Resources/English.lproj/ShelfPref.gorm
 @dirrm System/Applications/GWorkspace.app/Resources/English.lproj/SearchResults.gorm
 @dirrm System/Applications/GWorkspace.app/Resources/English.lproj/RunExternal.gorm
 @dirrm System/Applications/GWorkspace.app/Resources/English.lproj/PrefWindow.gorm
+@dirrm System/Applications/GWorkspace.app/Resources/English.lproj/OperationPrefs.gorm
 @dirrm System/Applications/GWorkspace.app/Resources/English.lproj/OpenWith.gorm
 @dirrm System/Applications/GWorkspace.app/Resources/English.lproj/LSFolder.gorm
 @dirrm System/Applications/GWorkspace.app/Resources/English.lproj/LSFEditor.gorm
