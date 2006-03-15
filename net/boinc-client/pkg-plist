@@ -1,11 +1,9 @@
-bin/boinc
-%%BOINC_GUI%%bin/boincmgr
-include/BOINC/acct_mgr_client.h
+bin/boinc_client
+bin/boinc_cmd
+bin/crypt_prog
+%%BOINC_GUI%%bin/boinc_gui
 include/BOINC/app_ipc.h
-include/BOINC/base64.h
-include/BOINC/bmplib.h
 include/BOINC/boinc_api.h
-include/BOINC/boinc_gl.h
 include/BOINC/boinc_win.h
 include/BOINC/boinc_zip.h
 include/BOINC/crypt.h
@@ -14,43 +12,26 @@ include/BOINC/error_numbers.h
 include/BOINC/exception.h
 include/BOINC/filesys.h
 include/BOINC/graphics_api.h
-include/BOINC/graphics_data.h
 include/BOINC/graphics_impl.h
 include/BOINC/graphics_lib.h
-include/BOINC/gui_rpc_client.h
 include/BOINC/gutil.h
 include/BOINC/hostinfo.h
-include/BOINC/language.h
-include/BOINC/md5.h
-include/BOINC/md5_file.h
-include/BOINC/mem_usage.h
 include/BOINC/mfile.h
 include/BOINC/miofile.h
 include/BOINC/msg_log.h
-include/BOINC/msg_queue.h
-include/BOINC/network.h
 include/BOINC/parse.h
 include/BOINC/prefs.h
 include/BOINC/proxy_info.h
-include/BOINC/reduce.h
-include/BOINC/result_state.h
-include/BOINC/shmem.h
-include/BOINC/stackwalker_win.h
 include/BOINC/std_fixes.h
-include/BOINC/synch.h
-include/BOINC/tgalib.h
 include/BOINC/util.h
-include/BOINC/x_opengl.h
-lib/boinc/%%BOINC_BINARY%%
+lib/libbenchmark.a
 lib/libboinc.a
 lib/libboinc_api.a
 %%BOINC_GUI%%lib/libboinc_graphics_api.a
 %%BOINC_GUI%%lib/libboinc_graphics_impl.a
 %%BOINC_GUI%%lib/libboinc_graphics_lib.a
-lib/librsaeuro.a
 lib/libboinc_zip.a
 @dirrm include/BOINC
-@dirrm lib/boinc
 @unexec if [ -d %%BOINC_HOME%% ]; then echo "If you are deinstalling boinc completely, remove the %%BOINC_HOME%% directory."; fi
 @unexec if [ -d %%BOINC_HOME%% ]; then echo -n "Also, d"; else echo -n "D"; fi
 @unexec echo "on't forget to remove the \"%%BOINC_USER%%\" user."

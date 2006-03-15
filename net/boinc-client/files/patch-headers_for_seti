@@ -1,0 +1,11 @@
+--- lib/Makefile.in.orig	Tue Mar  7 15:06:14 2006
++++ lib/Makefile.in	Sat Mar 11 20:15:04 2006
+@@ -403,7 +403,7 @@
+     proxy_info.h 	\
+     util.h 			\
+ 	msg_log.h 		\
+-	crypt.h
++	crypt.h std_fixes.h error_numbers.h
+ 
+ md5_test_SOURCES = md5_test.C md5.c md5_file.C
+ shmem_test_SOURCES = shmem_test.C shmem.C

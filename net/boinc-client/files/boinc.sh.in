@@ -13,8 +13,9 @@ rcvar=`set_rcvar`
 
 boinc_user=%%BOINC_USER%%
 boinc_home=%%BOINC_HOME%%
-program_file=%%BOINC_BINARY%%
-program_path=%%PREFIX%%/lib/boinc/${program_file}
+boinc_flags="-dir ${boinc_home}"
+program_file=boinc_client
+program_path=%%PREFIX%%/bin/${program_file}
 syslog_facility=daemon.err
 
 load_rc_config $name
@@ -38,7 +39,6 @@ boinc_start() {
 			exit 72
 		fi
 		echo "Starting BOINC client."
-		export LD_LIBRARY_PATH=%%LOCALBASE%%/lib/boinc
 		idprio 31 su - ${boinc_user} -c "${program_path} ${boinc_flags} >/dev/null &"
 	fi
 }
