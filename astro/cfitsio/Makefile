@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	cfitsio
-PORTVERSION=	2.510
+PORTVERSION=	3.006
 CATEGORIES=	astro
-MASTER_SITES=	ftp://heasarc.gsfc.nasa.gov/software/fitsio/c/oldvers/
+MASTER_SITES=	ftp://heasarc.gsfc.nasa.gov/software/fitsio/c/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -16,7 +16,6 @@ COMMENT=	Library for reading and writing files in FITS data format
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
@@ -31,8 +30,8 @@ do-install:
 .for file in drvrsmem.h fitsio.h fitsio2.h longnam.h
 	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/include
 .endfor
-.for file in libcfitsio.so.0
-	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/lib
+.for f in libcfitsio.so.0
+	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/lib
 .endfor
 	@${LN} -sf libcfitsio.so.0 ${PREFIX}/lib/libcfitsio.so
 .if !defined(NOPORTDOCS)
