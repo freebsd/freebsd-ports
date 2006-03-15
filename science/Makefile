@@ -19,6 +19,7 @@
     SUBDIR += dft++
     SUBDIR += euler
     SUBDIR += fastcap
+    SUBDIR += fasthenry
     SUBDIR += felt
     SUBDIR += flounder
     SUBDIR += gave
