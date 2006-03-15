@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cpige
-DISTVERSION=	1.4
+DISTVERSION=	1.4-2
 CATEGORIES=	audio
 MASTER_SITES=	http://ed.zehome.com/cpige/
 
@@ -17,8 +17,12 @@ USE_GMAKE=	yes
 
 MAKE_ARGS=	CC="${CC}"
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:S/-1//}
 PLIST_FILES=	bin/cpige
+
+.ifdef(WITH_DEBUG)
+CFLAGS+=	-g -DDEBUG
+STRIP=
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
