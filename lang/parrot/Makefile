@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	parrot
-PORTVERSION=	0.2.2
+PORTVERSION=	0.4.2
 CATEGORIES=	lang perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/L/LT/LTOETSCH
@@ -18,33 +18,36 @@ BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4 \
 		icudata.34:${PORTSDIR}/devel/icu
 
+USE_GCC=	3.4+
 USE_PERL5=	yes
 USE_GMAKE=	yes
 #USE_SDL=	yes
 
+INSTALLS_SHLIB=	yes
+
 CONFIGURE_SCRIPT=	Configure.pl
-CONFIGURE_ARGS=	--cc=${CC} --ld=${LD} --ccflags="${CFLAGS}" \
+CONFIGURE_ARGS=	--cc=${CC} --cxx=${CXX} --ld=${CC} --ccflags="${CFLAGS}" \
 		--ldflags="${LDFLAGS} -L/usr/lib -L${LOCALBASE}/lib" \
 		--icu-config=${LOCALBASE}/bin/icu-config \
-		--optimize --jitcapable --verbose \
-		--prefix=${PREFIX}/parrot
+		--optimize --jitcapable --parrot_is_shared \
+		--verbose \
+		--prefix=${PREFIX}
+#		--verbose
+
+post-patch:
+	${PERL} -pi -e "s=libdir}, 'pkgconfig=prefix}, 'libdata/pkgconfig=" \
+		${WRKSRC}/tools/dev/install_files.pl
 
 do-configure:
 	cd ${WRKSRC} && ${PERL} ${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}
-	@${PERL} -pi -e 's/(?<=nci_test\$$\(O\)) \$$\(C_LIBS\)//' \
-		${WRKSRC}/Makefile
 
 test:
 	cd ${WRKSRC} && ${MAKE} test
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500000
-BROKEN=	"Build is broken."
-.endif
-
 .if ${PERL_LEVEL} < 500800
-IGNORE=	Perl 5.8 or newer required. Install lang/perl5.8 and try again.
+IGNORE=	perl 5.8 or newer required. Install lang/perl5.8 and try again
 .endif
 
 .include <bsd.port.post.mk>
