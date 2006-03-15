@@ -8,6 +8,7 @@
 
 PORTNAME=	abiword
 PORTVERSION=	2.4.2
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	http://www.abisource.com/downloads/%SUBDIR%/${PORTVERSION}/source/
 MASTER_SITE_SUBDIR=	abiword
@@ -21,7 +22,7 @@ COMMENT=	An open-source, cross-platform WYSIWYG word processor
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
 		png.5:${PORTSDIR}/graphics/png \
-		wv-1.0.0:${PORTSDIR}/textproc/wv \
+		wv-1.2.1:${PORTSDIR}/textproc/wv \
 		fribidi.0:${PORTSDIR}/converters/fribidi
 
 USE_BZIP2=	yes
