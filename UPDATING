@@ -7,6 +7,14 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 20060315:
+  AFFECTS: users of www/horde, mail/turba and deskutils/kronolith
+  AUTHOR: thierry@FreeBSD.org
+
+  There are several points to check in your configuration files or
+  in your database after upgrading Horde to 3.1, Turba to 2.1 and
+  IMP to 4.1; please read UPGRADING in their doc directories.
+
+20060315:
   AFFECTS: users of net-im/jabber
   AUTHOR: garga@FreeBSD.org
 
