@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	Number
 PKGNAMEPREFIX=		p5-
 
 MAINTAINER=		ports@FreeBSD.org
-COMMENT=	Perl extension for formatting numbers
+COMMENT=		Perl extension for formatting numbers
 
 PERL_CONFIGURE=		yes
 
