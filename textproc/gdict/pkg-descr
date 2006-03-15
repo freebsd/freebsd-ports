@@ -2,5 +2,3 @@ gdict is a small C/GTK+ program written to find definitions of arbitrary
 words.  It contacts the MIT dictionary server and returns a definition.
 
 Additionally, there is a CLI version named "cdict".
-
-WWW: http://www.psilord.com/code/
