@@ -92,13 +92,16 @@
 # If you do not want mutt to use the flock() function define:
 #  WITHOUT_MUTT_FLOCK
 #
-# If you want to enable reverse_reply option define:
+# If you want to enable the reverse_reply option define:
 #  WITH_MUTT_REVERSE_REPLY_PATCH
+#
+# If you want to enable the assumed_charset option define:
+#  WITH_MUTT_ASSUMED_CHARSET_PATCH
 #
 
 PORTNAME=	mutt-devel
 PORTVERSION=	1.5.11
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES+=	mail ipv6
 .if defined(WITH_MUTT_NNTP)
 CATEGORIES+=	news
@@ -126,7 +129,8 @@ PATCH_SITES+=	http://www.mutt.org.ua/download/mutt-${VVV_PATCH_VERSION}/:vvv \
 		ftp://ftp3.mutt.org.ua/pub/mutt/mutt-${VVV_PATCH_VERSION}/:vvv \
 		http://cedricduval.free.fr/mutt/patches/download/:cd \
 		http://home.woolridge.ca/mutt/patches/:dw \
-		http://www.spinnaker.de/mutt/compressed/:rr
+		http://www.spinnaker.de/mutt/compressed/:rr \
+		http://www.emaillab.org/mutt/${AC_PATCH_VERSION}/:jp
 
 MAINTAINER?=	udo.schweigert@siemens.com
 COMMENT?=	The Mongrel of Mail User Agents (development version)
@@ -158,6 +162,7 @@ SCRIPTS_ENV=	WRKDIR="${WRKDIR}"
 CD_PATCH_VERSION=	1.5.5.1
 CD_IFDEF_PATCH_VERSION=	1.5.4
 DW_PATCH_VERSION=	1.5.6
+AC_PATCH_VERSION=	1.5.9
 .if !defined(VVV_PATCH_VERSION)
 VVV_PATCH_VERSION=	${PORTVERSION}
 .endif
@@ -176,6 +181,9 @@ DW_PATCH_VERSION=	${PORTVERSION}
 .if !defined(DW_MBOX_PATCH_VERSION)
 DW_MBOX_PATCH_VERSION=	${DW_PATCH_VERSION}
 .endif
+.if !defined(AC_PATCH_VERSION)
+AC_PATCH_VERSION=	${PORTVERSION}
+.endif
 .if defined(WITH_MUTT_MAILDIR_HEADER_CACHE)
 WITH_MUTT_IMAP_HEADER_CACHE=	yes
 .endif
@@ -188,6 +196,11 @@ IGNORE=	cannot install: the WITH_MUTT_SIDEBAR_PATCH and WITH_MUTT_NNTP are not c
 .endif
 .if defined(WITH_MUTT_SIGNATURE_MENU)
 IGNORE=	cannot install: the WITH_MUTT_SIDEBAR_PATCH and WITH_MUTT_SIGNATURE_MENU are not compatible
+.endif
+.endif
+.if defined(WITH_MUTT_ASSUMED_CHARSET_PATCH)
+.if defined(WITH_MUTT_NNTP)
+IGNORE=	cannot install: the WITH_MUTT_ASSUMED_CHARSET_PATCH and WITH_MUTT_NNTP are not compatible
 .endif
 .endif
 
@@ -396,7 +409,7 @@ pre-patch::
 PATCHFILES+=	p0-patch-${DW_MBOX_PATCH_VERSION}.dw.mbox-hook.1:dw
 .endif
 .if defined(WITH_MUTT_SIDEBAR_PATCH)
-SIDEBAR_PATCH=	patch-1.5.11.sidebar.20060127.txt
+SIDEBAR_PATCH=	patch-1.5.11.sidebar.20060225.txt
 DISTFILES+=	${SIDEBAR_PATCH}:thomer
 XML_NEEDED=	yes
 pre-patch::
@@ -404,6 +417,9 @@ pre-patch::
 	@${REINPLACE_CMD} -E '/^diff.*\/Makefile.in$$/,/^diff/d' \
 		 ${WRKDIR}/patch-sidebar
 	@${PATCH} ${PATCH_ARGS} -p1 < ${WRKDIR}/patch-sidebar
+.endif
+.if defined(WITH_MUTT_ASSUMED_CHARSET_PATCH)
+PATCHFILES+=	patch-${AC_PATCH_VERSION}.tt.assumed_charset.2.gz:jp
 .endif
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/i$//}
