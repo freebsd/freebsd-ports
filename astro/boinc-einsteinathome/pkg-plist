@@ -1,0 +1,4 @@
+@cwd %%BOINC_HOME%%
+projects/%%EINSTEIN_SITE%%/app_info.xml
+projects/%%EINSTEIN_SITE%%/%%EINSTEIN_BINARY%%
+@unexec rmdir %D/projects/%%EINSTEIN_SITE%% 2>/dev/null || true
