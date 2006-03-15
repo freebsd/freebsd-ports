@@ -15,14 +15,14 @@ MASTER_SITES+=	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/developer/680
 		${MASTER_SITE_APACHE:S,%SUBDIR%/,ant/binaries/:antbin,} \
 		${MASTER_SITE_MOZILLA:S/$/:mozsrc/}
 MASTER_SITE_SUBDIR+=	mozilla/releases/mozilla${MOZILLA_VERSION}/source/:mozsrc
-DISTFILES+=	OOo_2.0.${MILESTONE}_src${EXTRACT_SUFX}
+DISTFILES+=	OOo_SRC680_m${MILESTONE}_source${EXTRACT_SUFX}
 .if defined(WITH_GPC)
 DISTFILES+=     gpc231.tar.Z:gpc
 .endif
 .if defined(WITH_GNUGCJ)
 DISTFILES+=     ${ANT_DISTFILE}:antbin
 .endif
-EXTRACT_ONLY=	OOo_2.0.${MILESTONE}_src${EXTRACT_SUFX}
+EXTRACT_ONLY=	OOo_SRC680_m${MILESTONE}_source${EXTRACT_SUFX}
 
 MAINTAINER=	openoffice@FreeBSD.org
 COMMENT?=	Integrated wordprocessor/dbase/spreadsheet/drawing/chart/browser(developer version)
@@ -43,6 +43,7 @@ USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_PERL5=	yes
 USE_REINPLACE=	yes
+USE_BZIP2=	yes
 WITHOUT_CPU_CFLAGS=	true
 
 ONLY_FOR_ARCHS=	i386
@@ -63,9 +64,9 @@ IGNORE=		install lang/perl5.8 then try again
 
 CODELINE=		680
 RELEASE_NR=		2.0
-MILESTONE?=		156
+MILESTONE?=		159
 OOOTAG?=		SRC680_m${MILESTONE}
-SNAPDATE=		20060211
+SNAPDATE=		20060310
 INSTALLATION_BASEDIR?=	openoffice.org-${OOOTAG}
 EXECBASE?=		openoffice.org-${OOOTAG}
 DIST_SUBDIR=		openoffice.org2.0
@@ -82,8 +83,10 @@ PKGNAMESUFFIX?=         -${LANG_SUFFIX}
 .endif
 
 .if defined(WITH_GNUGCJ)
-#BUILD_DEPENDS+=	${LOCALBASE}/bin/gcc41:${PORTSDIR}/lang/gcc41-wgcj
-BROKEN=	"still work in progress"
+#BUILD_DEPENDS+=	gcj41:${PORTSDIR}/lang/gcc41-with_gcj
+#BUILD_DEPENDS+=	gjdoc:${PORTSDIR}/java/gjdoc
+#RUN_DEPENDS+=	gcj41:${PORTSDIR}/lang/gcc41-with_gcj
+BROKEN=	"Still work in progress"	
 .else
 BUILD_DEPENDS+=	gcc-ooo:${PORTSDIR}/lang/gcc-ooo
 .endif
@@ -92,8 +95,8 @@ BUILD_DEPENDS+=	gcc-ooo:${PORTSDIR}/lang/gcc-ooo
 .if defined(WITH_CCACHE)
 BUILD_DEPENDS+=	ccache:${PORTSDIR}/devel/ccache
 .if defined(WITH_GNUGCJ)
-CC=	ccache ${LOCALBASE}/gcc41/bin/gcc
-CXX=	ccache ${LOCALBASE}/gcc41/bin/g++
+CC=	ccache gcc41
+CXX=	ccache g++41
 .else
 CC=	ccache gcc-ooo
 CXX=	ccache g++-ooo
@@ -101,8 +104,8 @@ CXX=	ccache g++-ooo
 .endif #WITH_CCACHE
 .if !defined(WITH_CCACHE)
 .if defined(WITH_GNUGCJ)
-CC=	${LOCALBASE}/gcc41/bin/gcc
-CXX=	${LOCALBASE}/gcc41/bin/g++
+CC=	gcc41
+CXX=	g++41
 .else
 CC=	gcc-ooo
 CXX=	g++-ooo
@@ -131,20 +134,21 @@ LIB_DEPENDS=	art_lgpl_2:${PORTSDIR}/graphics/libart_lgpl2
 .endif
 
 GNU_CONFIGURE=	yes
-WRKSRC=		${WRKDIR}/${OOOTAG}
+WRKSRC?=		${WRKDIR}
 CONFIGURE_WRKSRC=	${WRKSRC}/config_office
 TCSH?=		/bin/tcsh
 PKGMESSAGE=	${WRKDIR}/pkg-message
 NUMOFPROCESSES?=	1
-USE_AUTOTOOLS=	autoconf:259
 
 CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp --with-gnu-patch=${LOCALBASE}/bin/gpatch --with-epm=internal --with-system-freetype --enable-crashdump=yes --enable-symbols=SMALL
+#workarounds
+CONFIGURE_ARGS+=	--with-system-xrender-headers=yes #i62713#
 
 .if (${OSVERSION} <= 492000)
 EXTRA_PATCHES+=	${FILESDIR}/fbsd4-workaroundpatch
 .endif
 .if defined(WITH_GNUGCJ)
-EXTRA_PATCHES+=	${FILESDIR}/gcj-cws_jaxpapi ${FILESDIR}/gcj-patches
+EXTRA_PATCHES+=	${FILESDIR}/gcj-cws_jaxpapi ${FILESDIR}/gcj-patches ${FILESDIR}/cws-maho1.diff ${FILESDIR}/gcj-fbsdworkaround
 .endif
 #.if defined(WITH_TTF_BYTECODE_ENABLED)
 #EXTRA_PATCHES+=	 ${FILESDIR}/optpatch-freetype
@@ -172,6 +176,8 @@ pre-everything::
 post-extract:
 .if defined(WITH_GNUGCJ)
 	@cd ${WRKDIR} ; ${CAT} ${DISTDIR}/${DIST_SUBDIR}/${ANT_DISTFILE} | ${BZIP2_CMD} -d | ${TAR} xf -
+# #iXXXXX# xmerge doesn't support gjdoc
+	@${LN} -s ${LOCALBASE}/bin/gjdoc ${WRKSRC}/solenv/bin/javadoc
 .endif
 .if defined(WITH_GPC)
 	@cd ${WRKDIR} ; ${CAT} ${DISTDIR}/${DIST_SUBDIR}/gpc231.tar.Z | ${TAR} xfz -

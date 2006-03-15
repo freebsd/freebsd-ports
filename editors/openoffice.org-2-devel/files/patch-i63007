@@ -1,0 +1,48 @@
+--- animations/source/animcore/targetpropertiescreator.cxx	2006-03-10 14:03:10.000000000 +0100
++++ animations/source/animcore/targetpropertiescreator.cxx	2006-03-10 14:03:40.000000000 +0100
+@@ -518,7 +518,7 @@
+                         aCurr->first.mnParagraphIndex ) );
+             }
+                 
+-            rCurrProps.Properties = ::comphelper::containerToSequence< beans::NamedValue >( aCurr->second );
++            rCurrProps.Properties = ::comphelper::containerToSequence( aCurr->second );
+ 
+             ++aCurr;
+         }
+
+--- framework/source/uielement/toolbarmanager.cxx	2006-01-07 09:14:50.000000000 +0100
++++ framework/source/uielement/toolbarmanager.cxx	2006-03-10 16:01:04.000000000 +0100
+@@ -1002,7 +1002,7 @@
+                     aPropertyVector.push_back( makeAny( aPropValue ));
+                 }
+ 
+-                Sequence< Any > aArgs( comphelper::containerToSequence< Any >( aPropertyVector ));
++                Sequence< Any > aArgs( comphelper::containerToSequence( aPropertyVector ));
+                 xController = Reference< XStatusListener >( xToolbarControllerFactory->createInstanceWithArgumentsAndContext(
+                                                                 aCommandURL, aArgs, xComponentContext ),
+                                                             UNO_QUERY );
+@@ -1075,7 +1075,7 @@
+                     aPropertyVector.push_back( makeAny( aPropValue ));
+                 }
+ 
+-                Sequence< Any > aArgs( comphelper::containerToSequence< Any >( aPropertyVector ));
++                Sequence< Any > aArgs( comphelper::containerToSequence( aPropertyVector ));
+                 xInit->initialize( aArgs );
+             }
+ 
+
+--- framework/source/uielement/uicommanddescription.cxx	2005-12-16 09:11:31.000000000 +0100
++++ framework/source/uielement/uicommanddescription.cxx	2006-03-10 16:01:13.000000000 +0100
+@@ -537,9 +537,9 @@
+     }
+ 
+     // Create cached sequences for fast retrieving
+-    m_aCommandImageList       = comphelper::containerToSequence< rtl::OUString >( aImageCommandVector );
+-    m_aCommandRotateImageList = comphelper::containerToSequence< rtl::OUString >( aImageRotateVector );
+-    m_aCommandMirrorImageList = comphelper::containerToSequence< rtl::OUString >( aImageMirrorVector );
++    m_aCommandImageList       = comphelper::containerToSequence( aImageCommandVector );
++    m_aCommandRotateImageList = comphelper::containerToSequence( aImageRotateVector );
++    m_aCommandMirrorImageList = comphelper::containerToSequence( aImageMirrorVector );
+ 
+     m_bCacheFilled = sal_True;
+ 
