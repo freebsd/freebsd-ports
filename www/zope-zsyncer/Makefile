@@ -7,6 +7,7 @@
 
 PORTNAME=	zsyncer
 PORTVERSION=	0.7.0
+PORTREVISION=	1
 CATEGORIES=	www zope
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	zsyncer
@@ -17,26 +18,25 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	x@vex.net
 COMMENT=	Allows multiple Zopes to be synchronized via xmlrpc
 
-BROKEN=		Incomplete pkg-plist
-
 USE_PYTHON=	yes
 USE_ZOPE=	yes
 DIST_SUBDIR=	zope
 
-PLIST=		${WRKDIR}/pkg-plist
-WRKSRC=		${WRKDIR}/ZSyncer
+ZOPEPRODUCTNAME=	ZSyncer
 
-PRODUCTNAME=	ZSyncer
+WRKSRC=		${WRKDIR}/${ZOPEPRODUCTNAME}
 
 do-build:
-	-@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}/
-	@${CHMOD} -R og+rX ${WRKSRC}/
+	-@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
 
 do-install:
-	${MKDIR} ${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/
-	${CP} -R ${WRKSRC} ${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/
+	@${MKDIR} ${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/
+	@${CHMOD} -R og+rX ${WRKSRC}/
+	@${CP} -R ${WRKSRC} ${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/
 
 post-install:
+.if !defined(BATCH)
 	@${CAT} ${PKGMESSAGE}
+.endif
 
 .include <bsd.port.mk>
