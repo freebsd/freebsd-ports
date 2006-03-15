@@ -162,7 +162,6 @@
     SUBDIR += hmap
     SUBDIR += hostapd
     SUBDIR += hostsentry
-    SUBDIR += hpn-ssh
     SUBDIR += hunch
     SUBDIR += hydra
     SUBDIR += idea
