@@ -788,6 +788,7 @@ bladeenc	ports/audio/bladeenc
 blam		ports/net/blam
 blas		ports/math/blas
 blast		ports/x11/blast
+blat		ports/biology/blat
 bld		ports/net/bld
 blender		ports/graphics/blender
 blender-devel	ports/graphics/blender-devel
