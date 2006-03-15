@@ -11220,6 +11220,7 @@ rrdtool		ports/net/rrdtool
 rrdtool10	ports/net/rrdtool10
 rscheme		ports/lang/rscheme
 rshell		ports/net/rshell
+rsibreak	ports/x11/rsibreak
 rsnapshot	ports/sysutils/rsnapshot
 rssh		ports/shells/rssh
 rssowl		ports/www/rssowl
