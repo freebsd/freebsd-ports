@@ -500,7 +500,6 @@
     SUBDIR += quat
     SUBDIR += quat-gui
     SUBDIR += quesa
-    SUBDIR += quickpics
     SUBDIR += qvplay
     SUBDIR += ray++
     SUBDIR += rayshade
@@ -564,7 +563,6 @@
     SUBDIR += telak
     SUBDIR += tgif
     SUBDIR += tgif-nls
-    SUBDIR += threeDS
     SUBDIR += tif22pnm
     SUBDIR += tiff
     SUBDIR += tiff2png

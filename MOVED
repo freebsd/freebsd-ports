@@ -2211,3 +2211,5 @@ japanese/squirrelmail|mail/squirrelmail|2006-03-05|Integrated to mail/squirrelma
 japanese/vje30-trial||2006-03-07|no longer distributed
 security/hpn-ssh|security/openssh-portable|2006-03-15|Now an option in security/openssh-portable
 audio/musicbrainz||2006-03-15|Remove expired port
+graphics/quickpics||2006-03-15|Remove expired port
+graphics/threeDS||2006-03-15|Remove expired port
