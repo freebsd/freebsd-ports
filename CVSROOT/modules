@@ -2269,6 +2269,7 @@ farsifonts	ports/x11-fonts/farsifonts
 fast-user-switch-applet	ports/x11/fast-user-switch-applet
 fasta		ports/biology/fasta
 fasta3		ports/biology/fasta3
+fastcap		ports/science/fastcap
 fastcrc		ports/devel/fastcrc
 fastdb		ports/databases/fastdb
 fastdep		ports/devel/fastdep
