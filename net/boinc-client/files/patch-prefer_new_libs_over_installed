@@ -1,0 +1,22 @@
+--- client/Makefile.in.orig	Tue Mar  7 15:06:10 2006
++++ client/Makefile.in	Wed Mar 15 13:56:33 2006
+@@ -336,7 +336,7 @@
+ 
+ AM_CFLAGS = $(AM_CPPFLAGS)
+ AM_CXXFLAGS = $(AM_CPPFLAGS)
+-AM_LDFLAGS = 
++AM_LDFLAGS = -L$(top_srcdir)/lib -L$(top_srcdir)/api -L$(top_srcdir)/db -L$(top_srcdir)/client -L$(top_srcdir)/tools -L$(top_srcdir)/sched
+ 
+ # dependencies to make sure libs gets compiled before
+ # programs linking to them:
+--- clientgui/Makefile.in.orig	Tue Mar  7 15:06:12 2006
++++ clientgui/Makefile.in	Wed Mar 15 14:27:36 2006
+@@ -354,7 +354,7 @@
+ 
+ AM_CFLAGS = $(AM_CPPFLAGS)
+ AM_CXXFLAGS = $(AM_CPPFLAGS)
+-AM_LDFLAGS = 
++AM_LDFLAGS = -L$(top_srcdir)/lib -L$(top_srcdir)/api -L$(top_srcdir)/db -L$(top_srcdir)/client -L$(top_srcdir)/tools -L$(top_srcdir)/sched
+ 
+ # dependencies to make sure libs gets compiled before
+ # programs linking to them:
