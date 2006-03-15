@@ -7,6 +7,8 @@ bin/mailutime
 bin/mknmz
 bin/namazu
 bin/nmz-config
+bin/nmzcat
+bin/nmzegrep
 bin/nmzgrep
 bin/nmzmerge
 bin/rfnmz
@@ -75,10 +77,12 @@ share/namazu/filter/compress.pl
 share/namazu/filter/deb.pl
 share/namazu/filter/dvi.pl
 share/namazu/filter/excel.pl
+share/namazu/filter/gnumeric.pl
 share/namazu/filter/gzip.pl
 share/namazu/filter/hdml.pl
 share/namazu/filter/hnf.pl
 share/namazu/filter/html.pl
+share/namazu/filter/koffice.pl
 share/namazu/filter/macbinary.pl
 share/namazu/filter/mailnews.pl
 share/namazu/filter/man.pl
@@ -87,6 +91,7 @@ share/namazu/filter/mp3.pl
 share/namazu/filter/msword.pl
 share/namazu/filter/ooo.pl
 share/namazu/filter/pdf.pl
+share/namazu/filter/pipermail.pl
 share/namazu/filter/postscript.pl
 share/namazu/filter/powerpoint.pl
 share/namazu/filter/rfc.pl
@@ -96,14 +101,18 @@ share/namazu/filter/taro.pl
 share/namazu/filter/taro56.pl
 share/namazu/filter/taro7_10.pl
 share/namazu/filter/tex.pl
+share/namazu/filter/zip.pl
 @dirrm share/namazu/filter
 share/namazu/pl/codeconv.pl
 share/namazu/pl/conf.pl
+share/namazu/pl/document.pl
+share/namazu/pl/filter.pl
 share/namazu/pl/gettext.pl
 share/namazu/pl/gfilter.pl
 share/namazu/pl/htmlsplit.pl
 share/namazu/pl/nmzidx.pl
 share/namazu/pl/seed.pl
+share/namazu/pl/time.pl
 share/namazu/pl/usage.pl
 share/namazu/pl/util.pl
 share/namazu/pl/var.pl

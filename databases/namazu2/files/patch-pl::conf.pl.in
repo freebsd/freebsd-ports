@@ -1,27 +1,29 @@
---- pl/conf.pl.in.orig	Thu Aug 23 17:19:52 2001
-+++ pl/conf.pl.in	Sat Oct 13 05:34:48 2001
-@@ -173,17 +173,17 @@
+--- pl/conf.pl.in.orig	Fri Nov 25 15:04:26 2005
++++ pl/conf.pl.in	Mon Mar 13 22:16:41 2006
+@@ -197,19 +197,19 @@
  #
- # Network Kanji Filter nkf v1.62 or later
+ # Network Kanji Filter nkf v1.71 or later
  #
 -$NKF = "@NKF@"; 
 +$NKF = "module_nkf"; 
  
  #
- # KAKASI
+ # KAKASI 2.x or later
+ # Text::Kakasi 1.05 or later
  #
 -$KAKASI = "@DO_KAKASI@";
 +$KAKASI = "module_kakasi";
  
  #
- # ChaSen 1.51 or later (simple wakatigaki)
+ # ChaSen 2.02 or later (simple wakatigaki)
+ # Text::ChaSen 1.03
  #
 -$CHASEN = "@DO_CHASEN@";
 +$CHASEN = "module_chasen";
  
  #
- # ChaSen 1.51 or later (with noun words extraction)
-@@ -193,7 +193,8 @@
+ # ChaSen 2.02 or later (with noun words extraction)
+@@ -224,7 +224,8 @@
  #
  # Default Japanese processer: KAKASI or ChaSen.
  #
