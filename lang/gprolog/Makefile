@@ -7,6 +7,7 @@
 
 PORTNAME=	gprolog
 PORTVERSION=	1.2.18
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_DEBIAN} ftp://ftp.inria.fr/INRIA/Projects/contraintes/gprolog/:doc
 MASTER_SITE_SUBDIR=	pool/main/g/${PORTNAME}
@@ -24,7 +25,7 @@ ONLY_FOR_ARCHS=	i386
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}.orig/src/src
 
-USE_REINPLACE=	yes
+USE_GCC=	2.95
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf:253
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
@@ -36,16 +37,12 @@ PLIST_SUB+=	GPROLOG_VER=${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
-.if (${OSVERSION} >= 600000) || defined(WITHOUT_FD)
+.if defined(WITHOUT_FD)
 CONFIGURE_ARGS+=--disable-fd-solver
 PLIST_SUB+=	FD="@comment "
 PKGNAMESUFFIX=	-nofd
 .else
 PLIST_SUB+=	FD=""
-.endif
-
-.if ${OSVERSION} >= 502126
-CONFIGURE_ARGS+=--disable-fast-call
 .endif
 
 post-extract:
