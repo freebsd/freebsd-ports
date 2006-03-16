@@ -1,0 +1,71 @@
+info/muse
+%%EMACS_SITE_LISPDIR%%/muse/contrib/cgi.el
+%%EMACS_SITE_LISPDIR%%/muse/contrib/httpd.el
+%%EMACS_SITE_LISPDIR%%/muse/contrib/pyblosxom/getstamps.py
+%%EMACS_SITE_LISPDIR%%/muse/contrib/pyblosxom/hardcodedates.py
+%%EMACS_SITE_LISPDIR%%/muse/experimental/Makefile
+%%EMACS_SITE_LISPDIR%%/muse/experimental/muse-cite.el
+%%EMACS_SITE_LISPDIR%%/muse/experimental/muse-message.el
+%%EMACS_SITE_LISPDIR%%/muse/muse-blosxom.el
+%%EMACS_SITE_LISPDIR%%/muse/muse-blosxom.elc
+%%EMACS_SITE_LISPDIR%%/muse/muse-book.el
+%%EMACS_SITE_LISPDIR%%/muse/muse-book.elc
+%%EMACS_SITE_LISPDIR%%/muse/muse-colors.el
+%%EMACS_SITE_LISPDIR%%/muse/muse-colors.elc
+%%EMACS_SITE_LISPDIR%%/muse/muse-convert.el
+%%EMACS_SITE_LISPDIR%%/muse/muse-convert.elc
+%%EMACS_SITE_LISPDIR%%/muse/muse-docbook.el
+%%EMACS_SITE_LISPDIR%%/muse/muse-docbook.elc
+%%EMACS_SITE_LISPDIR%%/muse/muse-html.el
+%%EMACS_SITE_LISPDIR%%/muse/muse-html.elc
+%%EMACS_SITE_LISPDIR%%/muse/muse-http.el
+%%EMACS_SITE_LISPDIR%%/muse/muse-http.elc
+%%EMACS_SITE_LISPDIR%%/muse/muse-journal.el
+%%EMACS_SITE_LISPDIR%%/muse/muse-journal.elc
+%%EMACS_SITE_LISPDIR%%/muse/muse-latex.el
+%%EMACS_SITE_LISPDIR%%/muse/muse-latex.elc
+%%EMACS_SITE_LISPDIR%%/muse/muse-mode.el
+%%EMACS_SITE_LISPDIR%%/muse/muse-mode.elc
+%%EMACS_SITE_LISPDIR%%/muse/muse-poem.el
+%%EMACS_SITE_LISPDIR%%/muse/muse-poem.elc
+%%EMACS_SITE_LISPDIR%%/muse/muse-project.el
+%%EMACS_SITE_LISPDIR%%/muse/muse-project.elc
+%%EMACS_SITE_LISPDIR%%/muse/muse-protocols.el
+%%EMACS_SITE_LISPDIR%%/muse/muse-protocols.elc
+%%EMACS_SITE_LISPDIR%%/muse/muse-publish.el
+%%EMACS_SITE_LISPDIR%%/muse/muse-publish.elc
+%%EMACS_SITE_LISPDIR%%/muse/muse-regexps.el
+%%EMACS_SITE_LISPDIR%%/muse/muse-regexps.elc
+%%EMACS_SITE_LISPDIR%%/muse/muse-texinfo.el
+%%EMACS_SITE_LISPDIR%%/muse/muse-texinfo.elc
+%%EMACS_SITE_LISPDIR%%/muse/muse-wiki.el
+%%EMACS_SITE_LISPDIR%%/muse/muse-wiki.elc
+%%EMACS_SITE_LISPDIR%%/muse/muse-xml.el
+%%EMACS_SITE_LISPDIR%%/muse/muse-xml.elc
+%%EMACS_SITE_LISPDIR%%/muse/muse.el
+%%EMACS_SITE_LISPDIR%%/muse/muse.elc
+%%EXAMPLESDIR%%/Makefile
+%%EXAMPLESDIR%%/QuickStart.muse
+%%EXAMPLESDIR%%/johnw/muse-johnw.el
+%%EXAMPLESDIR%%/johnw/publish-johnw
+%%EXAMPLESDIR%%/muse.rnc
+%%EXAMPLESDIR%%/mwolson/muse-init.el
+%%EXAMPLESDIR%%/mwolson/stylesheets/blog.css
+%%EXAMPLESDIR%%/mwolson/stylesheets/common.css
+%%EXAMPLESDIR%%/mwolson/stylesheets/print.css
+%%EXAMPLESDIR%%/mwolson/stylesheets/screen.css
+%%EXAMPLESDIR%%/mwolson/templates/footer.html
+%%EXAMPLESDIR%%/mwolson/templates/generic-footer.html
+%%EXAMPLESDIR%%/mwolson/templates/generic-header.html
+%%EXAMPLESDIR%%/mwolson/templates/header.html
+%%EXAMPLESDIR%%/mwolson/templates/header.tex
+%%EXAMPLESDIR%%/publish-project
+@dirrm %%EXAMPLESDIR%%/mwolson/templates
+@dirrm %%EXAMPLESDIR%%/mwolson/stylesheets
+@dirrm %%EXAMPLESDIR%%/mwolson
+@dirrm %%EXAMPLESDIR%%/johnw
+@dirrm %%EXAMPLESDIR%%
+@dirrm %%EMACS_SITE_LISPDIR%%/muse/experimental
+@dirrm %%EMACS_SITE_LISPDIR%%/muse/contrib/pyblosxom
+@dirrm %%EMACS_SITE_LISPDIR%%/muse/contrib
+@dirrm %%EMACS_SITE_LISPDIR%%/muse

@@ -267,6 +267,7 @@
     SUBDIR += mr-aspell
     SUBDIR += ms-aspell
     SUBDIR += mt-aspell
+    SUBDIR += muse
     SUBDIR += nb-aspell
     SUBDIR += nds-aspell
     SUBDIR += nfbtrans
