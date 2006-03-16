@@ -1,6 +1,19 @@
---- Gato.py.dist	Thu Dec 18 00:34:01 2003
-+++ Gato.py	Thu Dec 18 00:35:50 2003
-@@ -54,15 +54,15 @@
+--- Gato.py	Fri Jan 20 15:15:55 2006
++++ Gato.py	Wed Mar  8 15:23:21 2006
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python2.3
++#!/usr/bin/env python
+ ################################################################################
+ #
+ #       This file is part of Gato (Graph Animation Toolbox) 
+@@ -48,22 +48,22 @@
+ import tkFont
+ import copy
+ 
+-import Gred
++from Gato import Gred
+ 
+ from Tkinter import *
  from tkFileDialog import askopenfilename, asksaveasfilename
  from tkMessageBox import askokcancel, showerror, askyesno
  from ScrolledText import ScrolledText
@@ -13,6 +26,7 @@
 -from GatoDialogs import AboutBox, SplashScreen, HTMLViewer
 -import GatoIcons
 -import GatoSystemConfiguration
+-from AnimationHistory import AnimationHistory
 +from Gato.GatoConfiguration import GatoConfiguration
 +from Gato.Graph import Graph
 +from Gato.GraphUtil import *
@@ -21,24 +35,25 @@
 +from Gato.GatoGlobals import *
 +from Gato.GatoDialogs import AboutBox, SplashScreen, HTMLViewer
 +from Gato import GatoIcons
-+import Gato.GatoSystemConfiguration
++from Gato import GatoSystemConfiguration
++from Gato.AnimationHistory import AnimationHistory
  
  # put someplace else
  def WMExtrasGeometry(window):
-@@ -1397,11 +1397,11 @@
- 	    self.algoGlobals['A'] = self.GUI.graphDisplay
- 	# XXX
- 	# explictely loading packages we want to make available to the algorithm
--	modules = ['DataStructures', 
--		   'AnimatedDataStructures', 
--		   'AnimatedAlgorithms',
--		   'GraphUtil',
--		   'GatoUtil']
-+	modules = ['Gato.DataStructures', 
-+		   'Gato.AnimatedDataStructures', 
-+		   'Gato.AnimatedAlgorithms',
-+		   'Gato.GraphUtil',
-+		   'Gato.GatoUtil']
- 
- 	for m in modules:
- 	    exec("from %s import *" % m, self.algoGlobals, self.algoGlobals)
+@@ -1419,11 +1419,11 @@
+             self.algoGlobals['A'] = self.GUI.graphDisplay
+             # XXX
+             # explictely loading packages we want to make available to the algorithm
+-        modules = ['DataStructures', 
+-                   'AnimatedDataStructures', 
+-                   'AnimatedAlgorithms',
+-                   'GraphUtil',
+-                   'GatoUtil']
++        modules = ['Gato.DataStructures', 
++                   'Gato.AnimatedDataStructures', 
++                   'Gato.AnimatedAlgorithms',
++                   'Gato.GraphUtil',
++                   'Gato.GatoUtil']
+         
+         for m in modules:
+             exec("from %s import *" % m, self.algoGlobals, self.algoGlobals)
