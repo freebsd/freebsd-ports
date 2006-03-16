@@ -1,16 +1,16 @@
---- yorick/Makefile.orig	Sun May 15 11:30:16 2005
-+++ yorick/Makefile	Sun May 15 11:31:25 2005
-@@ -16,7 +16,8 @@ OBJS = opsv.o task.o yorick.o yinput.o p
+--- yorick/Makefile.orig	Mon Sep 19 00:04:08 2005
++++ yorick/Makefile	Thu Mar  9 14:59:53 2006
+@@ -15,7 +15,8 @@
    array.o range.o ops.o ops0.o ops1.o ops2.o ops3.o nonc.o debug.o \
-   std0.o std1.o std2.o ascio.o defmem.o yhash.o  yrdwr.o bcast.o \
-   binio.o binobj.o binstd.o cache.o convrt.o binpdb.o clog.o ystr.o \
--  graph.o graph0.o style.o list.o pathfun.o autold.o fortrn.o
-+  graph.o graph0.o style.o list.o pathfun.o autold.o fortrn.o \
+   std0.o std1.o std2.o ascio.o defmem.o yhash.o  yrdwr.o bcast.o binio.o \
+   binobj.o binstd.o cache.o convrt.o binpdb.o clog.o ystr.o graph.o \
+-  graph0.o style.o list.o pathfun.o autold.o funcdef.o spawn.o fortrn.o
++  graph0.o style.o list.o pathfun.o autold.o funcdef.o spawn.o fortrn.o \
 +  ywrap.o yinit.o
  
- PKG_CLEAN=libyor main.c prmtyp.h codger lib$(PKG_NAME).a $(PKG_EXENAME) yorapi*
+ PKG_CLEAN=libyor main.* prmtyp.h codger lib$(PKG_NAME).a $(PKG_EXENAME) yorapi*
  
-@@ -60,6 +61,7 @@ libyor: $(BUILTIN_PKGS)
+@@ -59,6 +60,7 @@
  	cd ../matrix; $(MAKE) "COPT=$(COPT)" oinsert
  	cd ../fft; $(MAKE) "COPT=$(COPT)" oinsert
  	touch $@

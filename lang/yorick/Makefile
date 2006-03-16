@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	yorick
-PORTVERSION=	1.6.02
+PORTVERSION=	2.1.01
 CATEGORIES=	lang math
-MASTER_SITES=	ftp://ftp-icf.llnl.gov/pub/Yorick/ \
-		http://www.maumae.net/yorick/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	johans@stack.nl
@@ -23,17 +23,15 @@ MAN1=		yorick.1 gist.1
 INFO=		yorick
 
 PORTDOCS=	FILE_FORMATS README drat.doc graph.doc hex.doc \
-		library.doc math.doc refs.pdf refs.ps refs.tex std.doc \
-		yorick.pdf yorick.ps yorick.tex
+		library.doc math.doc refs.pdf refs.tex std.doc \
+		yorick.pdf yorick.tex
 
 do-configure:
 	@(cd ${CONFIGURE_WRKSRC}; ${SETENV} ${MAKE_ENV} \
 		${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ysite config)
 
 post-build:
-.if !defined(NOPORTDOCS)
 	cd ${WRKSRC}/doc; make yorick.info
-.endif
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/emacs/yorick.el ${WRKSRC}/relocatable
@@ -52,9 +50,9 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${DOCSDIR}
 .endfor
 	@${LN} -sf ${DOCSDIR} ${PREFIX}/lib/${PORTNAME}/doc
-	for f in ${WRKSRC}/doc/yorick.info*; do \
-	  ${INSTALL_DATA} $$f ${PREFIX}/info; \
-	done
 .endif
+	for f in ${WRKSRC}/doc/yorick.info*; do \
+	  ${INSTALL_DATA} $$f ${PREFIX}/${INFO_PATH}; \
+	done
 
 .include <bsd.port.mk>
