@@ -2219,3 +2219,4 @@ misc/globus2||2006-03-15|Remove expired port
 sysutils/prune||2006-03-15|Remove expired port
 www/evg||2006-03-15|Remove expired port
 x11/login.app||2006-03-15|Remove expired port
+sysutils/coaster||2006-03-16|Deleted; broke for months

@@ -1236,7 +1236,6 @@ cnews		ports/news/cnews
 cnslock		ports/x11/cnslock
 cnupm		ports/net/cnupm
 coalesce	ports/biology/coalesce
-coaster		ports/sysutils/coaster
 coccinella	ports/net-im/coccinella
 cocktail	ports/devel/cocktail
 coco		ports/textproc/coco
