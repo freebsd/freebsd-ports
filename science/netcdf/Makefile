@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	netcdf
-PORTVERSION=	3.6.0p1
+PORTVERSION=	3.6.1
 CATEGORIES=	science
 MASTER_SITES=	ftp://ftp.unidata.ucar.edu/pub/netcdf/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. old
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/p/-p/}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for machine-independent, array-oriented data access
