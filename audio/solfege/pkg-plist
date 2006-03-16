@@ -294,6 +294,9 @@ share/gnome/solfege/online-docs/C/translating-solfege.html
 share/gnome/solfege/online-docs/C/twelvetone-help.html
 share/gnome/solfege/online-docs/C/ui.html
 share/gnome/solfege/online-docs/C/welcome.html
+share/gnome/solfege/online-docs/es/theory-intervals.html
+share/gnome/solfege/online-docs/es/toc.html
+share/gnome/solfege/online-docs/es/welcome.html
 share/gnome/solfege/online-docs/es_MX/toc.html
 share/gnome/solfege/online-docs/es_MX/welcome.html
 share/gnome/solfege/online-docs/fr/bug-reporting.html
@@ -496,6 +499,7 @@ share/locale/tr/LC_MESSAGES/solfege.mo
 @dirrm share/gnome/solfege/online-docs/midi
 @dirrm share/gnome/solfege/online-docs/fr
 @dirrm share/gnome/solfege/online-docs/es_MX
+@dirrm share/gnome/solfege/online-docs/es
 @dirrm share/gnome/solfege/online-docs/C
 @dirrm share/gnome/solfege/online-docs
 @dirrm share/gnome/solfege/mpd
