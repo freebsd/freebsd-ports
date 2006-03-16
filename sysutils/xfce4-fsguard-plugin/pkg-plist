@@ -1,5 +1,5 @@
 @comment $FreeBSD$
-lib/xfce4/panel-plugins/libfsguard.so
-lib/xfce4/panel-plugins/libfsguard.la
 lib/xfce4/panel-plugins/libfsguard.a
+lib/xfce4/panel-plugins/libfsguard.la
+lib/xfce4/panel-plugins/libfsguard.so
 @dirrmtry lib/xfce4/panel-plugins
