@@ -110,6 +110,7 @@ post-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/apps/xojpanel/xojpanel ${X11BASE}/bin
 .endif
 	@${MV} ${PREFIX}/etc/rc.d/ptal-init.sh ${PREFIX}/etc/rc.d/020.ptal-init.sh.sample
+	@${ECHO_CMD} >>${PREFIX}/etc/sane.d/dll.conf hpoj
 	@${SED} 's|%%PREFIX%%|${PREFIX}|g' ${PKGDIR}/pkg-message
 
 .include <bsd.port.post.mk>
