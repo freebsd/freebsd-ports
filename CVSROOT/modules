@@ -1925,8 +1925,8 @@ dxpc		ports/x11/dxpc
 dylan		ports/lang/dylan
 dynamag		ports/x11/dynamag
 dynamechs	ports/graphics/dynamechs
-dynamite	ports/archivers/dynamite
 dynamips	ports/emulators/dynamips
+dynamite	ports/archivers/dynamite
 dzip		ports/archivers/dzip
 e		ports/math/e
 e-uae		ports/emulators/e-uae
@@ -7337,7 +7337,6 @@ p4db		ports/devel/p4db
 p4delta		ports/devel/p4delta
 p4genpatch	ports/devel/p4genpatch
 p4v		ports/devel/p4v
-p54u		ports/net/p54u
 p5-AI-Categorizer	ports/textproc/p5-AI-Categorizer
 p5-AI-DecisionTree	ports/math/p5-AI-DecisionTree
 p5-AI-Genetic	ports/math/p5-AI-Genetic
@@ -7760,10 +7759,10 @@ p5-Crypt-DH	ports/security/p5-Crypt-DH
 p5-Crypt-DSA	ports/security/p5-Crypt-DSA
 p5-Crypt-ECB	ports/security/p5-Crypt-ECB
 p5-Crypt-Enigma	ports/security/p5-Crypt-Enigma
-p5-Crypt-GeneratePassword	ports/security/p5-Crypt-GeneratePassword
 p5-Crypt-GOST	ports/security/p5-Crypt-GOST
 p5-Crypt-GOST_PP	ports/security/p5-Crypt-GOST_PP
 p5-Crypt-GPG	ports/security/p5-Crypt-GPG
+p5-Crypt-GeneratePassword	ports/security/p5-Crypt-GeneratePassword
 p5-Crypt-HCE_MD5	ports/security/p5-Crypt-HCE_MD5
 p5-Crypt-HCE_SHA	ports/security/p5-Crypt-HCE_SHA
 p5-Crypt-IDEA	ports/security/p5-Crypt-IDEA
@@ -8206,7 +8205,6 @@ p5-Gtk2-Html2	ports/x11-toolkits/p5-Gtk2-Html2
 p5-Gtk2-PodViewer	ports/x11-toolkits/p5-Gtk2-PodViewer
 p5-Gtk2-TrayIcon	ports/x11-toolkits/p5-Gtk2-TrayIcon
 p5-GtkXmHTML	ports/x11-toolkits/p5-GtkXmHTML
-p5-Handel	ports/www/p5-Handel
 p5-HTML		ports/www/p5-HTML
 p5-HTML-Breadcrumbs	ports/www/p5-HTML-Breadcrumbs
 p5-HTML-CalendarMonthSimple	ports/www/p5-HTML-CalendarMonthSimple
@@ -8277,6 +8275,7 @@ p5-HTTP-Server-Simple-Static	ports/www/p5-HTTP-Server-Simple-Static
 p5-HTTP-WebTest	ports/www/p5-HTTP-WebTest
 p5-HTTPD-Log-Filter	ports/www/p5-HTTPD-Log-Filter
 p5-HTTPD-User-Manage	ports/www/p5-HTTPD-User-Manage
+p5-Handel	ports/www/p5-Handel
 p5-Hash-Merge	ports/textproc/p5-Hash-Merge
 p5-Heap		ports/devel/p5-Heap
 p5-Heap-Simple	ports/devel/p5-Heap-Simple
@@ -9375,6 +9374,7 @@ p5-vpopmail	ports/mail/p5-vpopmail
 p5-webservice-validator-css-w3c		ports/www/p5-webservice-validator-css-w3c
 p5-webservice-validator-html-w3c	ports/www/p5-webservice-validator-html-w3c
 p5-xmltv	ports/textproc/p5-xmltv
+p54u		ports/net/p54u
 p65		ports/devel/p65
 p7zip		ports/archivers/p7zip
 pa-aspell	ports/textproc/pa-aspell
@@ -10502,8 +10502,6 @@ py-MySQLdb-devel	ports/databases/py-MySQLdb-devel
 py-PyGreSQL	ports/databases/py-PyGreSQL
 py-PySQLite10	ports/databases/py-PySQLite10
 py-PySQLite11	ports/databases/py-PySQLite11
-py-pysqlite20	ports/databases/py-pysqlite20
-py-pysqlite21	ports/databases/py-pysqlite21
 py-PyX		ports/graphics/py-PyX
 py-SQLDict	ports/databases/py-SQLDict
 py-SciParam	ports/x11-toolkits/py-SciParam
@@ -10706,6 +10704,8 @@ py-py2play	ports/net-p2p/py-py2play
 py-pyPgSQL	ports/databases/py-pyPgSQL
 py-pycrypto	ports/security/py-pycrypto
 py-pydot	ports/graphics/py-pydot
+py-pysqlite20	ports/databases/py-pysqlite20
+py-pysqlite21	ports/databases/py-pysqlite21
 py-pyx12	ports/textproc/py-pyx12
 py-pyxmpp	ports/net-im/py-pyxmpp
 py-qt		ports/x11-toolkits/py-qt
@@ -11049,6 +11049,7 @@ raqdevil	ports/www/raqdevil
 rar		ports/archivers/rar
 rascal		ports/math/rascal
 rasmol		ports/biology/rasmol
+rast		ports/textproc/rast
 rat		ports/mbone/rat
 rat30		ports/mbone/rat30
 rate		ports/net-mgmt/rate
@@ -12685,6 +12686,8 @@ tr-aspell	ports/textproc/tr-aspell
 tr-ircd		ports/irc/tr-ircd
 tr2latex	ports/print/tr2latex
 trac		ports/www/trac
+trac-accountmanager	ports/www/trac-accountmanager
+trac-webadmin	ports/www/trac-webadmin
 trackballs	ports/games/trackballs
 tracker		ports/audio/tracker
 trackerbt	ports/net-p2p/trackerbt
@@ -14339,6 +14342,3 @@ zthread		ports/devel/zthread
 ztrack		ports/games/ztrack
 zu-aspell	ports/textproc/zu-aspell
 zziplib		ports/devel/zziplib
-rast		ports/textproc/rast
-trac-accountmanager	ports/www/trac-accountmanager
-trac-webadmin	ports/www/trac-webadmin
