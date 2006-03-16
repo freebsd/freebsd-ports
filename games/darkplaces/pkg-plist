@@ -1,5 +1,0 @@
-bin/darkplaces
-%%CLIENT%%bin/darkplaces-glx
-%%SDL_CLIENT%%bin/darkplaces-sdl
-%%SERVER%%bin/darkplaces-dedicated
-@unexec rmdir %D/%%DATADIR%% >/dev/null 2>&1 || echo "If you are permanently removing this port, you should remove the data files and mods left in %D/%%DATADIR%%." | fmt

@@ -17,87 +17,69 @@ COMMENT=	Quake engine modification
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 USE_ZIP=	yes
 
 MAKEFILE=	makefile
 ALL_TARGET=	#
 
 OPTIONS=	CLIENT "Build GLX client" on \
+		DEDICATED "Build dedicated server" on \
 		OPTIMIZED_CFLAGS "Enable compilation optimizations" on \
-		SERVER "Build dedicated server" on \
 		SDL_CLIENT "Build SDL client" on
 
-SUB_FILES=	pkg-message
-PKGMESSAGE=	${WRKDIR}/pkg-message
+PLIST_FILES=	%%DATADIR%%/dummy
+PLIST_DIRS=	%%DATADIR%%
+
+.include "${.CURDIR}/../quake-data/Makefile.include"
 
 .include <bsd.port.pre.mk>
 
 .if !defined(WITH_CLIENT) && !defined(WITH_SDL_CLIENT) && \
     !defined(WITH_DEDICATED)
-IGNORE=		You must choose at least one option of CLIENT, SDL_CLIENT and DEDICATED
+IGNORE=		please select at least one of CLIENT, SDL_CLIENT and DEDICATED
 .endif
 
 .if defined(WITH_CLIENT) || defined(WITH_SDL_CLIENT)
-# Loads libraries on run-time, thus RUN_DEPENDS
-RUN_DEPENDS=	${LOCALBASE}/lib/libvorbis.so:${PORTSDIR}/audio/libvorbis \
-		${LOCALBASE}/lib/libjpeg.so:${PORTSDIR}/graphics/jpeg
+# Loads libraries at run-time, thus RUN_DEPENDS.
+RUN_DEPENDS+=	${LOCALBASE}/lib/libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		${LOCALBASE}/lib/libvorbis.so:${PORTSDIR}/audio/libvorbis
 .endif
 
 .if defined(WITH_CLIENT)
 USE_GL=		yes
 ALL_TARGET+=	cl-release
+EXE_TARGETS+=	${PORTNAME}-glx
 PLIST_SUB+=	CLIENT=""
-.else
-PLIST_SUB+=	CLIENT="@comment "
+PLIST_FILES+=	bin/${PORTNAME}-glx
+.endif
+
+.if defined(WITH_DEDICATED)
+ALL_TARGET+=	sv-release
+EXE_TARGETS+=	${PORTNAME}-dedicated
+PLIST_FILES+=	bin/${PORTNAME}-dedicated
+.endif
+
+.if defined(WITH_OPTIMIZED_CFLAGS)
+MAKE_ENV+=	WITH_OPTIMIZED_CFLAGS=YES
 .endif
 
 .if defined(WITH_SDL_CLIENT)
 USE_SDL=	sdl
 ALL_TARGET+=	sdl-release
-PLIST_SUB+=	SDL_CLIENT=""
-.else
-PLIST_SUB+=	SDL_CLIENT="@comment "
-.endif
-
-.if defined(WITH_SERVER)
-ALL_TARGET+=	sv-release
-PLIST_SUB+=	SERVER=""
-.else
-PLIST_SUB+=	SERVER="@comment "
+EXE_TARGETS+=	${PORTNAME}-sdl
+PLIST_FILES+=	bin/${PORTNAME}-sdl
 .endif
 
 post-extract:
-	@${UNZIP_CMD} -a -q \
+	@${UNZIP_CMD} -aq \
 		-o ${WRKDIR}/${PORTNAME}enginesource${PORTVERSION}.zip \
 		-d ${WRKDIR}
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|sdl-config|${SDL_CONFIG}|g ; \
-			s|/usr/X11R6|${X11BASE}| ; \
-			s|gcc|${CC}| ; \
-			s|\(-MD\)|${CFLAGS} \1|' \
-				${WRKSRC}/${MAKEFILE} ${WRKSRC}/makefile.inc
-	@${REINPLACE_CMD} -e 's,"\.","${DATADIR}",' ${WRKSRC}/fs.c
-.if defined(WITHOUT_OPTIMIZED_CFLAGS)
-	@${REINPLACE_CMD} -e 's|$$(OPTIM_RELEASE)||' ${WRKSRC}/makefile.inc
-.endif
-.if ${ARCH} == "alpha"
-	@${REINPLACE_CMD} -e 's|-ffast-math||' ${WRKSRC}/makefile.inc
-.endif
-
 do-install:
-	@${MKDIR} ${DATADIR}
-.for f in ${PORTNAME}-glx ${PORTNAME}-sdl ${PORTNAME}-dedicated
-	@${TEST} -f ${WRKSRC}/${f} && \
-		${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/bin
-	@${TEST} -L ${PREFIX}/bin/${PORTNAME} || \
-		${LN} -s ${PREFIX}/bin/${f} ${PREFIX}/bin/${PORTNAME}
+.for f in ${EXE_TARGETS}
+	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/bin
 .endfor
-
-post-install:
-	@${ECHO_CMD}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_CMD}
+	@${MKDIR} ${DATADIR}
+	@${TOUCH} ${DATADIR}/dummy
 
 .include <bsd.port.post.mk>
