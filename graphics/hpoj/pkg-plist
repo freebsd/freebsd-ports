@@ -53,3 +53,4 @@ etc/rc.d/020.ptal-init.sh.sample
 %%PORTDOCS%%@dirrm share/doc/hpoj
 %%X11%%@cwd %%X11BASE%%
 %%X11%%bin/xojpanel
+@exec /bin/echo >>%D/etc/sane.d/dll.conf hpoj
