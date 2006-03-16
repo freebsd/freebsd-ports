@@ -122,6 +122,7 @@
     SUBDIR += fi-aspell
     SUBDIR += filepp
     SUBDIR += fist
+    SUBDIR += fixrtf
     SUBDIR += fldiff
     SUBDIR += flip
     SUBDIR += fo-aspell
