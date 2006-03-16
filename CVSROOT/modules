@@ -4100,6 +4100,7 @@ ipv6gen		ports/net-mgmt/ipv6gen
 ipv6socket_scrub	ports/net/ipv6socket_scrub
 ipvs		ports/net/ipvs
 ipw-firmware	ports/net/ipw-firmware
+ipw-firmware-kmod	ports/net/ipw-firmware-kmod
 ipython		ports/devel/ipython
 irc		ports/irc/irc
 ircII		ports/irc/ircII
