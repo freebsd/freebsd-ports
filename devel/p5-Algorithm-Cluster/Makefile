@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Algorithm-Cluster
-PORTVERSION=	1.30
+PORTVERSION=	1.31
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Algorithm
@@ -16,7 +16,6 @@ MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A perl interface to C clustering library
 
 PERL_CONFIGURE=	yes
-USE_REINPLACE=	yes
 
 MAN3=		Algorithm::Cluster.3
 
@@ -27,11 +26,11 @@ post-patch:
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500601
-IGNORE=		This port requires perl 5.6.x or later. Install lang/perl5 then try again
+IGNORE=		requires perl 5.6.x or later. Install lang/perl5 then try again
 .endif
 
 .if ${ARCH} == "amd64"
-BROKEN=		"Does not build on amd64 (needs to build shared libraries with -fPIC)"
+BROKEN=		Does not build on amd64 (needs to build shared libraries with -fPIC)
 .endif
 
 .include <bsd.port.post.mk>
