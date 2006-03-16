@@ -7,7 +7,6 @@
 
 PORTNAME=	xemacs-devel-mule
 PORTVERSION=	${XEMACS_VER:S/-/./}
-PORTREVISION=	4
 CATEGORIES+=	editors
 MASTER_SITES=	${MASTER_SITE_XEMACS}
 MASTER_SITE_SUBDIR=	xemacs-${XEMACS_REL}
@@ -45,10 +44,11 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 
 USE_XLIB=	yes
 USE_XPM=	yes
+CONFIGURE_ARGS=	--with-xpm
 .endif
 
 XEMACS_REL=	21.5
-XEMACS_VER=	${XEMACS_REL}-b24
+XEMACS_VER=	${XEMACS_REL}-b25
 XEMACS_ARCH=	${MACHINE_ARCH}--freebsd
 
 WRKSRC=		${WRKDIR}/xemacs-${XEMACS_VER:S/-b/./}
@@ -56,7 +56,7 @@ STRIP=
 USE_AUTOTOOLS=	autoconf:259
 CONFIGURE_TARGET=--build=${XEMACS_ARCH}
 
-CONFIGURE_ARGS=	--enable-mule \
+CONFIGURE_ARGS+=	--enable-mule \
 		--x-includes=${X11BASE}/include \
 		--x-libraries=${X11BASE}/lib \
 		--with-site-libraries='${SITE_LIBRARIES}' \
@@ -83,8 +83,13 @@ MAN1=		ctags.1 etags.1 gnuattach.1 gnuclient.1 gnudoit.1 \
 		gnuserv.1 xemacs.1
 .endif
 
+# Debugging.
 .if !defined(DEBUG)
-CONFIGURE_ARGS+=--enable-debug=no --enable-error-checking=no
+CONFIGURE_ARGS+=--disable-debug --disable-error-checking
+.endif
+# Experimenal features.
+.if !defined(WITH_EXPERIMENTAL)
+CONFIGURE_ARGS+=--disable-kkcc --disable-mc-alloc --disable-newgc
 .endif
 
 .if defined(WITH_XFT)
