@@ -7,13 +7,13 @@
 
 PORTNAME=	gxmms2
 PORTVERSION=	0.6.1
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://wejp.mooo.com/wejp/xmms2/
 
 MAINTAINER=	alex@foxybanana.com
 COMMENT=	A GTK2 based XMMS2 client, written in C
 
-RUN_DEPENDS=	${LOCALBASE}/bin/xmms2:${PORTSDIR}/audio/xmms2
 BUILD_DEPENDS=	${LOCALBASE}/lib/libxmmsclient.so:${PORTSDIR}/audio/xmms2
 
 USE_X_PREFIX=	yes
