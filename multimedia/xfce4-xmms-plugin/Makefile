@@ -1,4 +1,4 @@
-# New ports collection makefile for:	xfce4-mixer
+# New ports collection makefile for:	xfce4-xmms-plugin
 # Date created:				2004/05/10
 # Whom:					Zahemszky, Gábor <Gabor@Zahemszky.HU>
 #
@@ -6,12 +6,13 @@
 #
 
 PORTNAME=	xfce4-xmms-plugin
-PORTVERSION=	0.1.1
-PORTREVISION=	5
+PORTVERSION=	0.3.1
 CATEGORIES=	multimedia audio xfce
-MASTER_SITES=	http://download.berlios.de/xfce-goodies/
+MASTER_SITES=	http://download.berlios.de/xfce-goodies/ \
+		http://download2.berlios.de/xfce-goodies/
+DIST_SUBDIR=	xfce4
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jfb@minet.net
 COMMENT=	XFce 4 xmms control plugin for xfce4-panel
 
 BUILD_DEPENDS=	xfce4-panel:${PORTSDIR}/x11-wm/xfce4-panel \
