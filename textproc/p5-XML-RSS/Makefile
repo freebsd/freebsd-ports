@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	XML-RSS
-PORTVERSION=	1.05
-PORTREVISION=	1
+PORTVERSION=	1.10
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	XML
@@ -23,4 +22,9 @@ PERL_CONFIGURE=	yes
 
 MAN3=		XML::RSS.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+post-patch:
+	@${RM} ${WRKSRC}/lib/XML/RSS.pm.orig
+
+.include <bsd.port.post.mk>
