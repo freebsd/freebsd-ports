@@ -2,6 +2,7 @@ etc/vpb/vlcmain.out
 etc/vpb/vpbmain_isa.out
 etc/vpb/vpbmain_pci.out
 include/vpbapi.h
+lib/gettext/linker.hints
 lib/libvpb.a
 lib/vpb.ko
 @dirrm etc/vpb
