@@ -1,0 +1,45 @@
+lagan/Readmes/README.mlagan
+lagan/Readmes/README.FIRST
+lagan/Readmes/README.lagan
+lagan/Readmes/README.chaos
+lagan/Readmes/README.tools
+lagan/Readmes/README.shuffle
+lagan/Readmes/LICENSE
+lagan/anchors
+lagan/chaos
+lagan/glocal
+lagan/mlagan
+lagan/order
+lagan/anal_gloc.pl
+lagan/lagan.pl
+lagan/rechaos.pl
+lagan/slagan.pl
+lagan/utils/Glue
+lagan/utils/bin2bl
+lagan/utils/bin2mf
+lagan/utils/cextract
+lagan/utils/contigorder
+lagan/utils/cstat
+lagan/utils/dotplot
+lagan/utils/fa2xfa
+lagan/utils/getbounds
+lagan/utils/getcontigpos
+lagan/utils/getlength
+lagan/utils/getoverlap
+lagan/utils/rc
+lagan/utils/scorealign
+lagan/utils/scorecontigs
+lagan/utils/seqmerge
+lagan/utils/cmerge2.pl
+lagan/utils/draft.pl
+lagan/utils/mextract.pl
+lagan/utils/mf2bin.pl
+lagan/utils/mpretty.pl
+lagan/utils/mproject.pl
+lagan/utils/mrun.pl
+lagan/utils/mrunfile.pl
+lagan/utils/mrunpairs.pl
+lagan/utils/mviz.pl
+@dirrm lagan/Readmes
+@dirrmtry lagan/utils
+@dirrmtry lagan
