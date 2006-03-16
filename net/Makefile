@@ -200,6 +200,7 @@
     SUBDIR += ipv6socket_scrub
     SUBDIR += ipvs
     SUBDIR += ipw-firmware
+    SUBDIR += ipw-firmware-kmod
     SUBDIR += irrd
     SUBDIR += isc-dhcp3-client
     SUBDIR += isc-dhcp3-devel
