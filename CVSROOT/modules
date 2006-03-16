@@ -5965,6 +5965,7 @@ lmbench		ports/benchmarks/lmbench
 lmclock		ports/x11-clocks/lmclock
 lmmon		ports/sysutils/lmmon
 lmon		ports/sysutils/lmon
+lmpc		ports/games/lmpc
 lmtp2nntp	ports/mail/lmtp2nntp
 lmtpd		ports/mail/lmtpd
 localedata	ports/misc/localedata
