@@ -73,7 +73,7 @@ EXTRA_DICT+=	${ITDISTFILE}:it
 .endif
 .if defined(ISPELL_FR)
 FRDISTFILE=	francais-IREQ-1.4.tar.gz
-MASTER_SITES+=	ftp://ftp.robot.ireq.ca/pub/ispell/:fr
+MASTER_SITES+=	ftp://ftp.lip6.fr/pub/ispell/francais/:fr
 EXTRA_DICT+=	${FRDISTFILE}:fr
 .endif
 .if defined(ISPELL_SE)
