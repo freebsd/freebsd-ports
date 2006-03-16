@@ -14,7 +14,8 @@ MASTER_SITES=	http://opencircuitdesign.com/xcircuit/archive/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An X11 drawing program [especially for circuit schematics]
 
-BROKEN=		Incorrect pkg-plist
+BUILD_DEPENDS=	tclsh${TCL_VER}:${PORTSDIR}/lang/tcl${USE_TCL} \
+		wish${TK_VER}:${PORTSDIR}/x11-toolkits/tk${USE_TK}
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
