@@ -1,7 +1,4 @@
 bin/gthumb
-lib/gthumb/libgthumb.a
-lib/gthumb/libgthumb.la
-lib/gthumb/libgthumb.so
 lib/gthumb/modules/libduplicates.a
 lib/gthumb/modules/libduplicates.la
 lib/gthumb/modules/libduplicates.so
@@ -20,6 +17,10 @@ lib/gthumb/modules/libsearch.so
 lib/gthumb/modules/libwebexporter.a
 lib/gthumb/modules/libwebexporter.la
 lib/gthumb/modules/libwebexporter.so
+lib/libgthumb.a
+lib/libgthumb.la
+lib/libgthumb.so
+lib/libgthumb-2.6.9.so
 libdata/bonobo/servers/GNOME_GThumb_CatalogView.server
 libdata/bonobo/servers/GNOME_GThumb_Viewer.server
 libexec/gthumb-catalog-view
