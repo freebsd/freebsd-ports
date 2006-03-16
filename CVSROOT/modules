@@ -12257,6 +12257,7 @@ suck-cnews	ports/news/suck-cnews
 suckblow	ports/net/suckblow
 sud		ports/security/sud
 sudo		ports/security/sudo
+sudoku		ports/games/sudoku
 sudoscript	ports/security/sudoscript
 sudosh		ports/security/sudosh
 sudsol		ports/games/sudsol
