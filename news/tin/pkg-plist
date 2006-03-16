@@ -18,6 +18,7 @@ share/locale/et/LC_MESSAGES/tin.mo
 share/locale/fr/LC_MESSAGES/tin.mo
 share/locale/ru/LC_MESSAGES/tin.mo
 share/locale/rw/LC_MESSAGES/tin.mo
+share/locale/sv/LC_MESSAGES/tin.mo
 share/locale/tr/LC_MESSAGES/tin.mo
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
