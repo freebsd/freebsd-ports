@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	docproj
-PORTVERSION=	1.14
-PORTREVISION=	1
+PORTVERSION=	1.15
 CATEGORIES=	textproc
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -19,7 +18,8 @@ COMMENT=	The "meta-port" for the FreeBSD Documentation Project
 # This dependency list should be kept in sync with the list of
 # required ports in src/release/Makefile.inc.docports.
 
-RUN_DEPENDS=	links:${PORTSDIR}/www/links1 \
+RUN_DEPENDS=	fixrtf:${PORTSDIR}/textproc/fixrtf \
+		links:${PORTSDIR}/www/links1 \
 		pngtopnm:${PORTSDIR}/graphics/netpbm \
 		scr2png:${PORTSDIR}/graphics/scr2png \
 		scr2txt:${PORTSDIR}/textproc/scr2txt \
@@ -53,6 +53,9 @@ IS_INTERACTIVE=	"user must set WITH_JADETEX variable to 'yes' or 'no'"
 .if defined(WITH_JADETEX) && ${WITH_JADETEX} == yes
 RUN_DEPENDS+=	${LOCALBASE}/share/texmf/web2c/jadetex.fmt:${PORTSDIR}/print/jadetex
 RUN_DEPENDS+=	dvips:${PORTSDIR}/print/dvipsk-tetex
+.if !defined(WITHOUT_CJK)
+RUN_DEPENDS+=	cjktexsty:${PORTSDIR}/chinese/docproj
+.endif
 .endif
 
 .if ${PERL_LEVEL} < 500804
