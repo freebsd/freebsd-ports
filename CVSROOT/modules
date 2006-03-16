@@ -4177,6 +4177,7 @@ iw-kde3-i18n	ports/hebrew/kde3-i18n
 iw-koffice-i18n	ports/hebrew/koffice-i18n
 iwebcal		ports/www/iwebcal
 iwi-firmware	ports/net/iwi-firmware
+iwi-firmware-kmod	ports/net/iwi-firmware-kmod
 iwidgets	ports/x11-toolkits/iwidgets
 ixj		ports/comms/ixj
 ixlib		ports/devel/ixlib
