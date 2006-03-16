@@ -6,20 +6,18 @@
 #
 
 PORTNAME=	coq
-PORTVERSION=	8.0p2
-PORTREVISION=	1
+PORTVERSION=	8.0p3
 CATEGORIES=	math
-MASTER_SITES=	ftp://ftp.inria.fr/INRIA/coq/V8.0pl2/
-DISTNAME=	coq-8.0pl2
-PATCHFILES=	patch-coq-8.0pl2-ocaml-3.09
+MASTER_SITES=	ftp://ftp.inria.fr/INRIA/coq/V8.0pl3/
+DISTNAME=	coq-8.0pl3
+
+PATCHFILES=	patch-coq-8.0pl3-ocaml-3.09
 PATCH_SITES=	${MASTER_SITES}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Theorem prover based on lambda-C
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
-
-BROKEN=		Does not build
 
 USE_GMAKE=	yes
 ALL_TARGET=	world
@@ -36,7 +34,7 @@ PORTDOCS=	CHANGES COPYRIGHT CREDITS INSTALL LICENSE README
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64"
-BROKEN=	"OCaml bug prevents compilation"
+BROKEN=	OCaml bug prevents compilation
 .endif
 
 .if defined(WITH_IDE) || exists(${LOCALBASE}/bin/lablgtk2)
