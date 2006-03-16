@@ -34,6 +34,7 @@
     SUBDIR += hmmer
     SUBDIR += jalview
     SUBDIR += kinemage
+    SUBDIR += lagan
     SUBDIR += lamarc
     SUBDIR += libgenome
     SUBDIR += lsysexp
