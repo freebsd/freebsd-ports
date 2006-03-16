@@ -1,0 +1,14 @@
+--- share/defaultsubs.opml.orig	Thu Mar 16 19:37:10 2006
++++ share/defaultsubs.opml	Thu Mar 16 19:36:34 2006
+@@ -1,6 +1,11 @@
+ <opml version="1.1">
+ <head><title>All</title></head>
+ <body>
++	<outline xmlUrl="http://feeds.feedburner.com/Bsdtalk"
++		text="bsdtalk"
++		description="Talking about the BSD family of free operating systems."
++		title="bsdtalk">
++	</outline>
+ 	<outline xmlUrl="http://feeds.feedburner.com/Headsoff" 
+ 	         text="headsoff" 
+ 	         description="This blog is about our exploration of our city, and our society.  Serra is a graduate student studying video and new media at Emerson College, and Mike is a programmer who is inquisitive, motivated and sociable.  Together, this is what you get.  Heads off." 
