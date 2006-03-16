@@ -8,11 +8,9 @@
 PORTNAME=	GnuPG-Interface
 PORTVERSION=	0.34
 CATEGORIES=	security perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:S/$/:cpan/} \
-		${MASTER_SITE_SOURCEFORGE:S/$/:sf/}
-MASTER_SITE_SUBDIR=	GnuPG/:cpan gnupg-interface/:sf
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	gnupg-interface
 PKGNAMEPREFIX=	p5-
-DISTFILES=		${DISTNAME}${EXTRACT_SUFX}:cpan,sf
 
 MAINTAINER=	eol1@yahoo.com
 COMMENT=	Perl module for interfacing with GnuPG
