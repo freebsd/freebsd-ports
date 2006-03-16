@@ -1,5 +1,5 @@
 # $FreeBSD$
 
-SUBDIR=	cjktexsty fixrtf
+SUBDIR=	cjktexsty
 
 .include <bsd.subdir.mk>
