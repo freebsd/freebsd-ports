@@ -8,7 +8,9 @@
 PORTNAME=	openh323-112
 PORTVERSION=	1.12.2
 CATEGORIES=	net
-MASTER_SITES=	http://www.openh323.org/bin/ 
+MASTER_SITES=	http://www.openh323.org/bin/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	fenner
 DISTNAME=	${NAME}_${PORTVERSION}
 
 MAINTAINER=	db@db.net
