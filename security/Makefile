@@ -451,6 +451,7 @@
     SUBDIR += pear-LiveUser_Admin
     SUBDIR += pear-Text_Password
     SUBDIR += pecl-filter
+    SUBDIR += pecl-gnupg
     SUBDIR += pecl-hash
     SUBDIR += pecl-ssh2
     SUBDIR += pft
