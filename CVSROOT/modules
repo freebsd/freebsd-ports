@@ -12510,6 +12510,7 @@ textedit	ports/editors/textedit
 textmaze	ports/games/textmaze
 textpattern	ports/www/textpattern
 textproc-flip	ports/textproc/flip
+textproc-muse	ports/textproc/muse
 tftp-hpa	ports/ftp/tftp-hpa
 tgif		ports/graphics/tgif
 tgif-nls	ports/graphics/tgif-nls
