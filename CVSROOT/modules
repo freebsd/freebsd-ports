@@ -14163,6 +14163,7 @@ zh-cwtexttf	ports/chinese/cwtexttf
 zh-cxterm	ports/chinese/cxterm
 zh-dfsongsd	ports/chinese/dfsongsd
 zh-dictd-database	ports/chinese/dictd-database
+zh-docproj	ports/chinese/docproj
 zh-emacs20	ports/chinese/emacs20
 zh-enscript	ports/chinese/enscript
 zh-eterm	ports/chinese/eterm
