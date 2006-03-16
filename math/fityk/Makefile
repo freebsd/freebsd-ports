@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	fityk
-PORTVERSION=	0.7.0
+PORTVERSION=	0.7.2
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,6 +20,7 @@ LIB_DEPENDS=	boost_thread.3:${PORTSDIR}/devel/boost \
 		wx_gtk2_core-2.6.0:${PORTSDIR}/x11-toolkits/wxgtk26
 RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
 
+USE_BZIP2=	yes
 USE_GNOME=	gnometarget gtk20
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -39,11 +40,12 @@ LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-BROKEN=		"does not compile on 4.x"
+BROKEN=		does not compile on 4.x
 .endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^CPPFLAGS=|#CPPFLAGS=|g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|config 3rdparty|config|g' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|config 3rdparty|config|g ; \
+		 s|^install-data-am:|install-data-am:#|g' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.post.mk>
