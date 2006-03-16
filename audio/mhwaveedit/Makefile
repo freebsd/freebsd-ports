@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	mhwaveedit
-PORTVERSION=	1.4.6
+PORTVERSION=	1.4.7
 CATEGORIES=	audio
 MASTER_SITES=	http://download.gna.org/mhwaveedit/
 
@@ -18,13 +18,13 @@ USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnometarget gtk20
 WANT_GNOME=	yes
 WANT_SDL=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--disable-optimization --without-alsalib
 
 PLIST_FILES=	bin/mhwaveedit \
+		share/locale/es/LC_MESSAGES/mhwaveedit.mo \
 		share/locale/fr/LC_MESSAGES/mhwaveedit.mo \
 		share/locale/ru/LC_MESSAGES/mhwaveedit.mo \
 		share/locale/sv/LC_MESSAGES/mhwaveedit.mo
