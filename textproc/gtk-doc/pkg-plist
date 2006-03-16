@@ -9,21 +9,21 @@ bin/gtkdoc-scanobj
 bin/gtkdocize
 libdata/pkgconfig/gtk-doc.pc
 share/aclocal/gtk-doc.m4
-share/gtk-doc/data/devhelp.xsl
-share/gtk-doc/data/gtk-doc.dcl
-share/gtk-doc/data/gtk-doc.dsl
-share/gtk-doc/data/gtk-doc.make
-share/gtk-doc/data/gtk-doc.xsl
-share/gtk-doc/data/gtkdoc-common.pl
-share/gtk-doc/data/home.png
-share/gtk-doc/data/left.png
-share/gtk-doc/data/right.png
-share/gtk-doc/data/style.css
-share/gtk-doc/data/up.png
-share/gtk-doc/data/version-greater-or-equal.xsl
+%%DATADIR%%/data/devhelp.xsl
+%%DATADIR%%/data/gtk-doc.dcl
+%%DATADIR%%/data/gtk-doc.dsl
+%%DATADIR%%/data/gtk-doc.make
+%%DATADIR%%/data/gtk-doc.xsl
+%%DATADIR%%/data/gtkdoc-common.pl
+%%DATADIR%%/data/home.png
+%%DATADIR%%/data/left.png
+%%DATADIR%%/data/right.png
+%%DATADIR%%/data/style.css
+%%DATADIR%%/data/up.png
+%%DATADIR%%/data/version-greater-or-equal.xsl
 @unexec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% remove CATALOG %%CATALOG_DIR%%/gtk-doc.cat
 share/sgml/gtk-doc/gtk-doc.cat
 @exec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% add CATALOG %%CATALOG_DIR%%/gtk-doc.cat
 @dirrm share/sgml/gtk-doc
-@dirrm share/gtk-doc/data
-@dirrm share/gtk-doc
+@dirrm %%DATADIR%%/data
+@dirrm %%DATADIR%%
