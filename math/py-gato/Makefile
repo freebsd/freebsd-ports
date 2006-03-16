@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	gato
-PORTVERSION=	0.98.J
+PORTVERSION=	0.98.Q
 CATEGORIES=	math python
-MASTER_SITES=	http://www.zpr.uni-koeln.de/~gato/Download/
+MASTER_SITES=	http://gato.sourceforge.net/Download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Gato-${PORTVERSION:U:C|\.([^.]*)$|\1|}
-EXTRACT_SUFX=	.tar
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Python-based toolbox to visualise algorithms on graphs
@@ -22,7 +21,6 @@ USE_PYTHON=	yes
 WRKSRC=		${WRKDIR}/Gato
 GATO_DIR=	${PREFIX}/lib/${PYTHON_VERSION}/site-packages/Gato
 EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME}
-CPIO=		cpio --quiet -pdum -R
 
 pre-build:
 	@ ${TOUCH} ${WRKSRC}/__init__.py
@@ -34,8 +32,8 @@ do-build:
 do-install:
 	@ ${MKDIR} ${GATO_DIR}
 	@ cd ${WRKSRC} && ${FIND} *.py *.pyc *.pyo \
-	  -name Gato.py\* -o -name Gred.py\* -o -print \
-	  | ${CPIO} ${BINOWN}:${BINGRP} ${GATO_DIR}
+	  -name Gato.py\* -o -print \
+	  | ${CPIO} --verbose -pdum -R ${BINOWN}:${BINGRP} ${GATO_DIR}
 .for script in Gato Gred
 	@ ${INSTALL_SCRIPT} ${WRKSRC}/${script}.py ${PREFIX}/bin/${script}
 .endfor

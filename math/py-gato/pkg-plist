@@ -5,6 +5,9 @@
 %%PORTDOCS%%share/examples/gato/sample.cat
 bin/Gato
 bin/Gred
+lib/%%PYTHON_VERSION%%/site-packages/Gato/AnimationHistory.py
+lib/%%PYTHON_VERSION%%/site-packages/Gato/AnimationHistory.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Gato/AnimationHistory.pyo
 lib/%%PYTHON_VERSION%%/site-packages/Gato/AnimatedAlgorithms.py
 lib/%%PYTHON_VERSION%%/site-packages/Gato/AnimatedAlgorithms.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Gato/AnimatedAlgorithms.pyo
@@ -59,6 +62,9 @@ lib/%%PYTHON_VERSION%%/site-packages/Gato/GraphEditor.pyo
 lib/%%PYTHON_VERSION%%/site-packages/Gato/GraphUtil.py
 lib/%%PYTHON_VERSION%%/site-packages/Gato/GraphUtil.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Gato/GraphUtil.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Gato/Gred.py
+lib/%%PYTHON_VERSION%%/site-packages/Gato/Gred.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Gato/Gred.pyo
 lib/%%PYTHON_VERSION%%/site-packages/Gato/PlanarEmbedding.py
 lib/%%PYTHON_VERSION%%/site-packages/Gato/PlanarEmbedding.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Gato/PlanarEmbedding.pyo
