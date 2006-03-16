@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	edje
-PORTVERSION=	0.5.0.023
-PORTREVISION=	1
+PORTVERSION=	0.5.0.024
+PORTREVISION=	0
 CATEGORIES=	graphics
 MASTER_SITES=	http://enlightenment.freedesktop.org/files/
 
