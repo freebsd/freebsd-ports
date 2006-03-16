@@ -19,7 +19,6 @@ MASTER_SITE_SUBDIR=	alpha/gnutls
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	GNU Transport Layer Security library
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/makeinfo:${PORTSDIR}/print/texinfo
 LIB_DEPENDS=	gcrypt.13:${PORTSDIR}/security/libgcrypt \
 		gpg-error.1:${PORTSDIR}/security/libgpg-error
 
@@ -37,7 +36,6 @@ USE_BZIP2=	yes
 USE_ICONV=	yes
 USE_GETTEXT=	yes
 USE_GNOME=	pkgconfig
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -47,6 +45,11 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--with-included-lzo
 MANCOMPRESSED=	no
+
+.include <bsd.port.pre.mk>
+.if ${OSVERSION} < 600000
+BUILD_DEPENDS+=	${LOCALBASE}/bin/makeinfo:${PORTSDIR}/print/texinfo
+.endif
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=		AUTHORS NEWS README THANKS
@@ -68,4 +71,4 @@ post-install:
 .endif
 
 .include "Makefile.man"
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
