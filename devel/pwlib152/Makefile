@@ -8,7 +8,9 @@
 PORTNAME=	pwlib152
 PORTVERSION=	1.5.2
 CATEGORIES=	devel
-MASTER_SITES=	http://www.openh323.org/bin/
+MASTER_SITES=	http://www.openh323.org/bin/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	fenner
 DISTNAME=	${NAME}_${PORTVERSION}
 
 MAINTAINER=	db@db.net
