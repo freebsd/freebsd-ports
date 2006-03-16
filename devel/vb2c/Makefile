@@ -8,7 +8,7 @@
 PORTNAME=	vb2c
 PORTVERSION=	0.02
 CATEGORIES=	devel
-MASTER_SITES=	http://home.i1.net/~naken/vb2c/
+MASTER_SITES=	http://www.mikekohn.com/programs/
 DISTNAME=	vb2c-March-1999
 
 MAINTAINER=	ports@FreeBSD.org
