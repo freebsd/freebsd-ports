@@ -14,7 +14,6 @@ MAINTAINER=	chris@forkin.com
 COMMENT=	Device-driver for the Voicetronix OpenLine4 PCI telephony cards
 
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 USE_RC_SUBR=	vpb.sh
 SUB_FILES+=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
@@ -28,11 +27,11 @@ SED_SCRIPT=	-e 's,%%PREFIX%%,${PREFIX},g' \
 
 .include <bsd.port.pre.mk>
 
-BROKEN=		Incomplete pkg-plist
-
 .if !exists(/usr/src/sys)
 IGNORE=		requires kernel source (/usr/src/sys) to build
 .endif
+
+NOT_FOR_ARCHS=	sparc64
 
 .if ${OSVERSION} < 502000 || ${OSVERSION} >= 600000
 IGNORE=		is not for FreeBSD versions < 502000, or >= 600000
