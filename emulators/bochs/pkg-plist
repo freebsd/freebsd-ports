@@ -2,9 +2,6 @@
 bin/bochs
 bin/bxcommit
 bin/bximage
-%%DATADIR%%/BIOS-bochs-2-processors
-%%DATADIR%%/BIOS-bochs-4-processors
-%%DATADIR%%/BIOS-bochs-8-processors
 %%DATADIR%%/BIOS-bochs-latest
 %%DATADIR%%/VGABIOS-elpin-2.40
 %%DATADIR%%/VGABIOS-elpin-LICENSE
@@ -23,6 +20,7 @@ bin/bximage
 %%DATADIR%%/keymaps/x11-pc-it.map
 %%DATADIR%%/keymaps/x11-pc-ru.map
 %%DATADIR%%/keymaps/x11-pc-se.map
+%%DATADIR%%/keymaps/x11-pc-si.map
 %%DATADIR%%/keymaps/x11-pc-uk.map
 %%DATADIR%%/keymaps/x11-pc-us.map
 %%DOCSDIR%%/CHANGES
@@ -33,7 +31,6 @@ bin/bximage
 %%PORTDOCS%%%%DOCSDIR%%/biossums.txt
 %%PORTDOCS%%%%DOCSDIR%%/cvs-structure.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/Linux.html
-%%PORTDOCS%%%%DOCSDIR%%/html/codingguidelines.html
 %%PORTDOCS%%%%DOCSDIR%%/html/cosimulation.html
 %%PORTDOCS%%%%DOCSDIR%%/html/index.html
 %%PORTDOCS%%%%DOCSDIR%%/html/iodebug.html

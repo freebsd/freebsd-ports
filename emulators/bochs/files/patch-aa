@@ -1,24 +1,28 @@
---- .bochsrc.orig	Fri May 13 20:10:58 2005
-+++ .bochsrc	Sat Jun 18 06:06:15 2005
-@@ -70,7 +70,7 @@
- # You can also use the environment variable $BXSHARE to specify the
- # location of the BIOS.
+--- .bochsrc.orig	Sun Jan 29 07:56:01 2006
++++ .bochsrc	Mon Feb 20 21:10:38 2006
+@@ -74,7 +74,7 @@
+ # now supported, but we still recommend to use the BIOS distributed with
+ # Bochs. Now the start address can be calculated from image size.
  #=======================================================================
 -romimage: file=$BXSHARE/BIOS-bochs-latest, address=0xf0000
-+romimage: file=bios/BIOS-bochs-latest, address=0xf0000
- #romimage: file=bios/BIOS-bochs-2-processors, address=0xf0000
- #romimage: file=bios/BIOS-bochs-4-processors, address=0xf0000
- #romimage: file=bios/rombios.bin, address=0xf0000
-@@ -109,7 +109,7 @@
++romimage: file=/usr/local/share/bochs/BIOS-bochs-latest, address=0xf0000
+ #romimage: file=mybios.bin, address=0xfff80000 # 512k at memory top
+ #romimage: file=mybios.bin # calculate start address from image size
+ 
+@@ -147,9 +147,9 @@
+ # VGAROMIMAGE
  # You now need to load a VGA ROM BIOS into C0000.
  #=======================================================================
- #vgaromimage: file=bios/VGABIOS-elpin-2.40
+-#vgaromimage: file=bios/VGABIOS-elpin-2.40
 -vgaromimage: file=$BXSHARE/VGABIOS-lgpl-latest
-+vgaromimage: file=bios/VGABIOS-lgpl-latest
- #vgaromimage: file=bios/VGABIOS-lgpl-latest-cirrus
+-#vgaromimage: file=bios/VGABIOS-lgpl-latest-cirrus
++#vgaromimage: file=/usr/local/share/bochs/VGABIOS-elpin-2.40
++vgaromimage: file=/usr/local/share/bochs/VGABIOS-lgpl-latest
++#vgaromimage: file=/usr/local/share/bochs/VGABIOS-lgpl-latest-cirrus
  
  #=======================================================================
-@@ -301,7 +301,7 @@
+ # VGA:
+@@ -319,7 +319,7 @@
  # 
  # Default value are sync=none, time0=local
  #=======================================================================
@@ -27,7 +31,7 @@
  
  
  #=======================================================================
-@@ -326,8 +326,8 @@
+@@ -344,8 +344,8 @@
  #   log: ./bochs.out
  #   log: /dev/tty
  #=======================================================================
@@ -38,7 +42,7 @@
  
  #=======================================================================
  # LOGPREFIX:
-@@ -367,7 +367,7 @@
+@@ -385,7 +385,7 @@
  # cause bochs to become unstable.  The panic is a "graceful exit," so
  # if you disable it you may get a spectacular disaster instead.
  #=======================================================================
@@ -47,7 +51,7 @@
  error: action=report
  info: action=report
  debug: action=ignore
-@@ -422,7 +422,7 @@
+@@ -442,7 +442,7 @@
  #   parport2: enabled=1, file="/dev/lp0"
  #   parport1: enabled=0
  #=======================================================================

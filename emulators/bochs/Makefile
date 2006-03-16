@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	bochs
-PORTVERSION=	2.2.1
+PORTVERSION=	2.2.6
 PORTEPOCH=	2
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -20,7 +20,6 @@ BUILD_DEPENDS=	mkfontdir:${X_CLIENTS_PORT}
 RUN_DEPENDS=	mkfontdir:${X_CLIENTS_PORT}
 
 USE_XLIB=	yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 
 GNU_CONFIGURE=	yes
@@ -39,17 +38,14 @@ MANCOMPRESSED=	yes
 MAN1=		bochs.1 bochs-dlx.1 bxcommit.1 bximage.1
 MAN5=		bochsrc.5
 
-.if defined(WITH_BOCHS_PROCESSORS)
-.if ${WITH_BOCHS_PROCESSORS} < 1 || ${WITH_BOCHS_PROCESSORS} > 15
-IGNORE=	Cannot install: WITH_BOCHS_PROCESSORS must be an integer value between 1 and 15
-.endif
-CONFIGURE_ARGS+=	--enable-processors=${WITH_BOCHS_PROCESSORS}
+.if defined(WITH_BOCHS_SMP)
+CONFIGURE_ARGS+=	--enable-smp
 WITH_BOCHS_CPU_LEVEL=	6
 .endif
 
 .if defined(WITH_BOCHS_CPU_LEVEL)
 .if ${WITH_BOCHS_CPU_LEVEL} < 3 || ${WITH_BOCHS_CPU_LEVEL} > 6
-IGNORE=	Cannot install: WITH_BOCHS_CPU_LEVEL must be an integer value between 3 and 6
+IGNORE=	cannot install: WITH_BOCHS_CPU_LEVEL must be an integer value between 3 and 6
 .endif
 CONFIGURE_ARGS+=	--enable-cpu-level=${WITH_BOCHS_CPU_LEVEL}
 .if ${WITH_BOCHS_CPU_LEVEL} < 5
@@ -98,9 +94,9 @@ pre-patch::
 	@${ECHO_MSG} "hit Ctrl-C right now and use \"make WITH_BOCHS_GUI_NOGUI=yes\""
 	@${ECHO_MSG}
 .endif
-.if !defined(WITH_BOCHS_PROCESSORS)
+.if !defined(WITH_BOCHS_SMP)
 	@${ECHO_MSG} "If you want to compile with SMP support (implies WITH_BOCHS_CPU_LEVEL=6),"
-	@${ECHO_MSG} "hit Ctrl-C right now and use \"make WITH_BOCHS_PROCESSORS=<number of processors>\""
+	@${ECHO_MSG} "hit Ctrl-C right now and use \"make WITH_BOCHS_SMP\""
 	@${ECHO_MSG}
 .endif
 .if !defined(WITH_BOCHS_DEBUGGER)
