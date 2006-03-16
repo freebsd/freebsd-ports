@@ -1,0 +1,38 @@
+bin/pawm
+etc/pawm.conf
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/Changelog
+%%PORTDOCS%%%%DOCSDIR%%/GPL
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%DATADIR%%/icons/close_d.xpm
+%%DATADIR%%/icons/close_d_256.xpm
+%%DATADIR%%/icons/close_h.xpm
+%%DATADIR%%/icons/close_h_256.xpm
+%%DATADIR%%/icons/close_o.xpm
+%%DATADIR%%/icons/close_o_256.xpm
+%%DATADIR%%/icons/max_d.xpm
+%%DATADIR%%/icons/max_d_256.xpm
+%%DATADIR%%/icons/max_h.xpm
+%%DATADIR%%/icons/max_h_256.xpm
+%%DATADIR%%/icons/max_o.xpm
+%%DATADIR%%/icons/max_o_256.xpm
+%%DATADIR%%/icons/min_d.xpm
+%%DATADIR%%/icons/min_d_256.xpm
+%%DATADIR%%/icons/min_h.xpm
+%%DATADIR%%/icons/min_h_256.xpm
+%%DATADIR%%/icons/min_o.xpm
+%%DATADIR%%/icons/min_o_256.xpm
+%%DATADIR%%/icons/penguin-gentoo.xpm
+%%DATADIR%%/icons/penguin-gentoo_256.xpm
+%%DATADIR%%/icons/penguin.xpm
+%%DATADIR%%/icons/penguin_256.xpm
+%%DATADIR%%/icons/powerbutton_active.xpm
+%%DATADIR%%/icons/powerbutton_active_256.xpm
+%%DATADIR%%/icons/powerbutton_normal.xpm
+%%DATADIR%%/icons/powerbutton_normal_256.xpm
+%%DATADIR%%/icons/powerbutton_pressed.xpm
+%%DATADIR%%/icons/powerbutton_pressed_256.xpm
+@dirrm %%DATADIR%%/icons
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
