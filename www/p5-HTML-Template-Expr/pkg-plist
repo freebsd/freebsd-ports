@@ -1,7 +1,7 @@
 %%SITE_PERL%%/HTML/Template/Expr.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Template/Expr/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Template/Expr
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Template     
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML              
-@dirrmtry %%SITE_PERL%%/HTML/Template                        
-@dirrmtry %%SITE_PERL%%/HTML                                 
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Template
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
+@dirrmtry %%SITE_PERL%%/HTML/Template
+@dirrmtry %%SITE_PERL%%/HTML
