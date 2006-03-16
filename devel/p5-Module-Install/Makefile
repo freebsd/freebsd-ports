@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Module-Install
-PORTVERSION=	0.56
+PORTVERSION=	0.61
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Module
@@ -29,14 +29,18 @@ CONFIGURE_ARGS+=	--skip
 MAN3=		inc::Module::Install.3 \
 		Module::AutoInstall.3 \
 		Module::Install.3 \
-		Module::Install::Base.3 \
-		Module::Install::Makefile.3 \
 		Module::Install::Admin.3 \
+		Module::Install::Admin::Manifest.3 \
+		Module::Install::Base.3 \
 		Module::Install::Bundle.3 \
 		Module::Install::Build.3 \
-		Module::Install::Share.3 \
-		Module::Install::Admin::Manifest.3 \
-		Module::Install-Philosophy.3
+		Module::Install::Can.3 \
+		Module::Install::Compiler.3 \
+		Module::Install::Deprecated.3 \
+		Module::Install::External.3 \
+		Module::Install::Makefile.3 \
+		Module::Install::Philosophy.3 \
+		Module::Install::Share.3
 
 .include <bsd.port.pre.mk>
 

@@ -1,10 +1,11 @@
 %%SITE_PERL%%/Module/Install.pm
 %%SITE_PERL%%/Module/Install.pod
 %%SITE_PERL%%/Module/AutoInstall.pm
-%%SITE_PERL%%/Module/Install-Philosophy.pod
 %%SITE_PERL%%/Module/Install/Metadata.pm
 %%SITE_PERL%%/Module/Install/Build.pm
 %%SITE_PERL%%/Module/Install/AutoInstall.pm
+%%SITE_PERL%%/Module/Install/Deprecated.pm
+%%SITE_PERL%%/Module/Install/Philosophy.pod
 %%SITE_PERL%%/Module/Install/Compiler.pm
 %%SITE_PERL%%/Module/Install/External.pm
 %%SITE_PERL%%/Module/Install/Makefile.pm
