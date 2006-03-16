@@ -207,6 +207,7 @@
     SUBDIR += isc-dhcp3-relay
     SUBDIR += isc-dhcp3-server
     SUBDIR += iwi-firmware
+    SUBDIR += iwi-firmware-kmod
     SUBDIR += jags
     SUBDIR += java-beepcore
     SUBDIR += jcifs
