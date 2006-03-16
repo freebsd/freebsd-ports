@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	xfce4-fsguard-plugin
-PORTVERSION=	0.2.0
-PORTREVISION=	6
+PORTVERSION=	0.2.1
 CATEGORIES=	sysutils xfce
-MASTER_SITES=	http://download.berlios.de/xfce-goodies/
+MASTER_SITES=	http://download.berlios.de/xfce-goodies/ \
+		http://ftp.lug.udel.edu/pub/NetBSD/packages/distfiles/ \
+		http://ftp.citkit.ru/pub/NetBSD/packages/distfiles/ \
+		${MASTER_SITES_NETBSD}
 DIST_SUBDIR=	xfce4
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jfb@minet.net
 COMMENT=	XFce4 panel plugin to check a mountpoint for free disk space
 
 BUILD_DEPENDS=	xfce4-panel:${PORTSDIR}/x11-wm/xfce4-panel
@@ -26,7 +28,5 @@ USE_GNOME=	gtk20
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
-
-WRKSRC=		${WRKDIR}/${PORTNAME}
 
 .include <bsd.port.mk>
