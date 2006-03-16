@@ -4,8 +4,16 @@ bin/enlightenment_eapp
 bin/enlightenment_eapp_cache_gen
 bin/enlightenment_imc
 bin/enlightenment_remote
+bin/enlightenment_start
 include/E_Lib.h
 include/enlightenment/e.h
+include/enlightenment/e_apps_error.h
+include/enlightenment/e_desklock.h
+include/enlightenment/e_fileman_mime.h
+include/enlightenment/e_gadcon.h
+include/enlightenment/e_shelf.h
+include/enlightenment/e_stolen.h
+include/enlightenment/e_tlist.h
 include/enlightenment/e_about.h
 include/enlightenment/e_actions.h
 include/enlightenment/e_alert.h
@@ -50,21 +58,29 @@ include/enlightenment/e_icon_grid.h
 include/enlightenment/e_ilist.h
 include/enlightenment/e_includes.h
 include/enlightenment/e_init.h
-include/enlightenment/e_int_config_general.h
-include/enlightenment/e_int_config_menus.h
-include/enlightenment/e_int_config_modules.h
-include/enlightenment/e_int_config_performance.h
-include/enlightenment/e_int_config_theme.h
-include/enlightenment/e_int_config_winlist.h
 include/enlightenment/e_int_border_border.h
 include/enlightenment/e_int_border_locks.h
 include/enlightenment/e_int_border_menu.h
 include/enlightenment/e_int_border_remember.h
 include/enlightenment/e_int_config_background.h
+include/enlightenment/e_int_config_background_import.h
+include/enlightenment/e_int_config_cfgdialogs.h
+include/enlightenment/e_int_config_cursor.h
+include/enlightenment/e_int_config_desklock.h
 include/enlightenment/e_int_config_desks.h
+include/enlightenment/e_int_config_display.h
+include/enlightenment/e_int_config_exebuf.h
 include/enlightenment/e_int_config_focus.h
+include/enlightenment/e_int_config_hinting.h
+include/enlightenment/e_int_config_keybindings.h
+include/enlightenment/e_int_config_startup.h
+include/enlightenment/e_int_config_menus.h
+include/enlightenment/e_int_config_modules.h
+include/enlightenment/e_int_config_performance.h
+include/enlightenment/e_int_config_theme.h
 include/enlightenment/e_int_config_window_display.h
 include/enlightenment/e_int_config_window_manipulation.h
+include/enlightenment/e_int_config_winlist.h
 include/enlightenment/e_int_menus.h
 include/enlightenment/e_intl.h
 include/enlightenment/e_ipc.h
@@ -112,9 +128,12 @@ include/enlightenment/e_widget_ilist.h
 include/enlightenment/e_widget_image.h
 include/enlightenment/e_widget_label.h
 include/enlightenment/e_widget_list.h
+include/enlightenment/e_widget_preview.h
 include/enlightenment/e_widget_radio.h
 include/enlightenment/e_widget_slider.h
 include/enlightenment/e_widget_table.h
+include/enlightenment/e_widget_textblock.h
+include/enlightenment/e_widget_tlist.h
 include/enlightenment/e_win.h
 include/enlightenment/e_winlist.h
 include/enlightenment/e_xinerama.h
@@ -149,9 +168,6 @@ lib/enlightenment/modules/dropshadow/module.a
 lib/enlightenment/modules/dropshadow/module.la
 lib/enlightenment/modules/dropshadow/module.so
 lib/enlightenment/modules/dropshadow/module_icon.png
-lib/enlightenment/modules/gadget_test/module.a
-lib/enlightenment/modules/gadget_test/module.la
-lib/enlightenment/modules/gadget_test/module.so
 lib/enlightenment/modules/ibar/module.a
 lib/enlightenment/modules/ibar/module.la
 lib/enlightenment/modules/ibar/module.so
@@ -160,9 +176,6 @@ lib/enlightenment/modules/ibox/module.a
 lib/enlightenment/modules/ibox/module.la
 lib/enlightenment/modules/ibox/module.so
 lib/enlightenment/modules/ibox/module_icon.png
-lib/enlightenment/modules/randr/module.a
-lib/enlightenment/modules/randr/module.la
-lib/enlightenment/modules/randr/module.so
 lib/enlightenment/modules/pager/module.a
 lib/enlightenment/modules/pager/module.la
 lib/enlightenment/modules/pager/module.so
@@ -175,9 +188,6 @@ lib/enlightenment/modules/temperature/module.a
 lib/enlightenment/modules/temperature/module.la
 lib/enlightenment/modules/temperature/module.so
 lib/enlightenment/modules/temperature/module_icon.png
-lib/enlightenment/modules/test/module.a
-lib/enlightenment/modules/test/module.la
-lib/enlightenment/modules/test/module.so
 lib/enlightenment/preload/e_hack.a
 lib/enlightenment/preload/e_hack.la
 lib/enlightenment/preload/e_hack.so
@@ -210,6 +220,10 @@ lib/libe.so.0
 %%DATADIR%%/data/images/button_out.png
 %%DATADIR%%/data/images/e.png
 %%DATADIR%%/data/images/error_bg.png
+%%DATADIR%%/data/images/test.edj
+%%DATADIR%%/data/images/test.jpg
+%%DATADIR%%/data/images/test.png
+%%DATADIR%%/data/input_methods/iiimf.imc
 %%DATADIR%%/data/input_methods/scim.imc
 %%DATADIR%%/data/input_methods/uim.imc
 %%DATADIR%%/data/init/init.edj
@@ -250,14 +264,11 @@ share/xsessions/enlightenment.desktop
 @dirrm %%DATADIR%%
 @dirrm share/xsessions
 @dirrm lib/enlightenment/preload
-@dirrm lib/enlightenment/modules/test
 @dirrm lib/enlightenment/modules/temperature
 @dirrm lib/enlightenment/modules/start
 @dirrm lib/enlightenment/modules/pager
-@dirrm lib/enlightenment/modules/randr
 @dirrm lib/enlightenment/modules/ibox
 @dirrm lib/enlightenment/modules/ibar
-@dirrm lib/enlightenment/modules/gadget_test
 @dirrm lib/enlightenment/modules/dropshadow
 @dirrm lib/enlightenment/modules/cpufreq
 @dirrm lib/enlightenment/modules/clock
