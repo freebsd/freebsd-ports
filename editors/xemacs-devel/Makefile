@@ -7,7 +7,6 @@
 
 PORTNAME=	xemacs-devel
 PORTVERSION=	${XEMACS_VER:S/-/./}
-PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES+=	editors
 MASTER_SITES=	${MASTER_SITE_XEMACS}
@@ -35,7 +34,7 @@ USE_XPM=	yes
 
 XEMACS_MAJOR_VER?=	21
 XEMACS_REL=		${XEMACS_MAJOR_VER}.5
-XEMACS_VER=		${XEMACS_MAJOR_VER}.5-b24
+XEMACS_VER=		${XEMACS_MAJOR_VER}.5-b25
 XEMACS_ARCH=		${CONFIGURE_TARGET}
 
 WRKSRC=		${WRKDIR}/xemacs-${XEMACS_VER:S/-b/./}
@@ -51,6 +50,11 @@ CONFIGURE_ARGS?=--enable-clash-detection \
 		--with-postgresql=no \
 		--with-site-lisp \
 		--enable-database=berkdb \
+		--disable-debug \
+		--disable-error-checking \
+		--disable-kkcc \
+		--disable-mc-alloc \
+		--disable-newgc	\
 		${WITH_XFACE} ${WITH_DIALOGS} ${WITH_OFFIX} ${WITH_GTK}
 MAKE_ARGS=	prefix=${PREFIX}
 MAN1=		ctags.1 etags.1 gnuattach.1 gnuclient.1 gnudoit.1 \
