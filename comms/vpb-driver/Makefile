@@ -7,6 +7,7 @@
 
 PORTNAME=	vpb-driver
 PORTVERSION=	2.4.9
+PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	http://www.voicetronix.com/Downloads/
 
