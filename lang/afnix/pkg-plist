@@ -5,9 +5,6 @@ bin/axl
 bin/axs
 etc/afnix/afnix-gud.el
 etc/afnix/afnix-mode.el
-etc/afnix/license.txt
-etc/afnix/what-long.txt
-etc/afnix/what-short.txt
 include/afnix/eng/Argument.hpp
 include/afnix/eng/Builtin.hpp
 include/afnix/eng/Class.hpp
@@ -60,6 +57,7 @@ include/afnix/plt/ccnv.hpp
 include/afnix/plt/cdir.hpp
 include/afnix/plt/cerr.hpp
 include/afnix/plt/cgen.hpp
+include/afnix/plt/cloc.hpp
 include/afnix/plt/cmem.hpp
 include/afnix/plt/cmth.hpp
 include/afnix/plt/cnet.hpp
@@ -96,9 +94,11 @@ include/afnix/sps/Record.hpp
 include/afnix/sps/Sheet.hpp
 include/afnix/sps/SpsCalls.hpp
 include/afnix/sps/Spssid.hpp
+include/afnix/std/Ascii.hpp
 include/afnix/std/BitSet.hpp
 include/afnix/std/Boolean.hpp
 include/afnix/std/Buffer.hpp
+include/afnix/std/Byte.hpp
 include/afnix/std/Character.hpp
 include/afnix/std/Cilo.hpp
 include/afnix/std/Condvar.hpp
@@ -146,6 +146,7 @@ include/afnix/std/Serial.hpp
 include/afnix/std/Set.hpp
 include/afnix/std/Sorter.hpp
 include/afnix/std/Stack.hpp
+include/afnix/std/Stream.hpp
 include/afnix/std/String.hpp
 include/afnix/std/Strvec.hpp
 include/afnix/std/System.hpp
@@ -153,6 +154,9 @@ include/afnix/std/Terminal.hpp
 include/afnix/std/Thread.hpp
 include/afnix/std/Thrmap.hpp
 include/afnix/std/Time.hpp
+include/afnix/std/UnicodeTable.hpp
+include/afnix/std/UnicodeMapper.hpp
+include/afnix/std/Unicode.hpp
 include/afnix/std/Vector.hpp
 include/afnix/sys/Libsys.hpp
 include/afnix/sys/Predsys.hpp
