@@ -78,7 +78,8 @@ lib/coq/contrib7/romega/ReflOmegaCore.vo
 @dirrm lib/coq/contrib7
 lib/coq/ide/.coqide-gtk2rc
 lib/coq/ide/FAQ
-lib/coq/ide/coq.png
+lib/coq/ide/coq.ico
+lib/coq/ide/coq2.ico
 lib/coq/ide/utf8.v
 lib/coq/ide/utf8.vo
 @dirrm lib/coq/ide
@@ -516,8 +517,4 @@ lib/coq/theories7/ZArith/zarith_aux.vo
 @dirrm lib/coq
 share/emacs/site-lisp/coq-inferior.el
 share/emacs/site-lisp/coq.el
-share/texmf/tex/latex/misc/coqdoc.sty
-@dirrmtry share/texmf/tex/latex/misc
-@dirrmtry share/texmf/tex/latex
-@dirrmtry share/texmf/tex
-@dirrmtry share/texmf
+share/emacs/site-lisp/coqdoc.sty
