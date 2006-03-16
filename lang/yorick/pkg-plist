@@ -53,6 +53,7 @@ lib/yorick/i/roots.i
 lib/yorick/i/romberg.i
 lib/yorick/i/rkutta.i
 lib/yorick/i/rezone.i
+lib/yorick/i/regress.i
 lib/yorick/i/readn.i
 lib/yorick/i/rays.i
 lib/yorick/i/random.i
@@ -71,7 +72,6 @@ lib/yorick/i/mkdoc.i
 lib/yorick/i/md5.i
 lib/yorick/i/make.i
 lib/yorick/i/legndr.i
-lib/yorick/i/legal.i
 lib/yorick/i/kepler.i
 lib/yorick/i/ieee.i
 lib/yorick/i/idlsave.i
@@ -153,7 +153,8 @@ lib/yorick/Makedll
 lib/yorick/Makeexe
 lib/yorick/Makepkg
 lib/yorick/Make.cfg
-lib/yorick/doc
+lib/yorick/LICENSE
+%%PORTDOCS%%lib/yorick/doc
 @dirrm lib/yorick/g
 @dirrm lib/yorick/i0
 @dirrm lib/yorick/i

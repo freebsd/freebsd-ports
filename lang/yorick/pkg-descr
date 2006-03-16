@@ -16,4 +16,4 @@ This package includes an emacs-based development environment, which
 you can launch by typing M-x yorick in emacs, if you load
 .../share/yorick/yorick.el in your ~/.emacs file.
 
-WWW: ftp://ftp-icf.llnl.gov/pub/Yorick/doc/index.html
+WWW: http://yorick.sourceforge.net/
