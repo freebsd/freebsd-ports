@@ -1,11 +1,22 @@
-Welcome to CJK version 4.3.0 (20-Jun-1999), a LaTeX2e macro package which
-enables the use of CJK scripts (Chinese/Japanese/Korean) in various
-encodings.
+Welcome to CJK, a LaTeX2e macro package which enables the use of CJK
+scripts (Chinese/Japanese/Korean) in various encodings.
 
-=====
-This port installs full Chinese BIG5/GB support, including TTF fonts. For
-other Asian languages, you have to supply those TTF fonts, then manually
-modify relative settings.
+Features of this port:
+
+- full Chinese BIG5/GB support, including TTF fonts. For other Asian
+  lauguages, you have to supply those TTF fonts, then manually modify
+  relative settings.
+- basic Type 3 font support and cooperate with DVIPDFMx
+- a package "ccmap" from CCT for PDFTeX's CID support
+- pseudo-italic and pseudo-bold Chinese font support
+- configure PDFTeX to use TrueType fonts directly
+- UTF-8 support for Arphic free fonts
+- Type 1 scalable font support for Arphic free fonts
+
+For more tips of using these features, please run this command
+after installation:
+
+   pkg_info -D zh-CJK-\* | less
 
 WWW: http://cjk.ffii.org/
 Jing-Tang Keith Jang <keith@FreeBSD.org>

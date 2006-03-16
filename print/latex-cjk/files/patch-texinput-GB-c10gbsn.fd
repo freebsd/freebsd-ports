@@ -1,0 +1,16 @@
+--- texinput/GB/c10gbsn.fd.orig	Thu Aug 11 12:41:52 2005
++++ texinput/GB/c10gbsn.fd	Wed Feb 22 07:41:08 2006
+@@ -19,7 +19,11 @@
+ 
+ \DeclareFontFamily{C10}{gbsn}{\hyphenchar \font\m@ne}
+ 
+-\DeclareFontShape{C10}{gbsn}{m}{n}{<-> CJK * gbsnlp}{}
+-\DeclareFontShape{C10}{gbsn}{bx}{n}{<-> CJKb * gbsnlp}{\CJKbold}
++\DeclareFontShape{C10}{gbsn}{m}{n}{<-> CJK * argbsung}{}
++\DeclareFontShape{C10}{gbsn}{bx}{n}{<-> CJKb * argbsung}{\CJKbold}
++\DeclareFontShape{C10}{gbsn}{m}{sl}{<-> CJK * argbsungsl}{}
++\DeclareFontShape{C10}{gbsn}{bx}{sl}{<-> CJKb * argbsungsl}{\CJKbold}
++\DeclareFontShape{C10}{gbsn}{m}{it}{<-> CJK * argbsungsl}{}
++\DeclareFontShape{C10}{gbsn}{bx}{it}{<-> CJKb * argbsungsl}{\CJKbold}
+ 
+ \endinput
