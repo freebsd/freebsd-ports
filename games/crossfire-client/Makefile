@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	crossfire-client
-PORTVERSION=	1.7.0
-PORTREVISION=	1
+PORTVERSION=	1.8.0
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.ifi.uio.no/pub/crossfire/ \
 		ftp://ftp.real-time.com/pub/games/crossfire/
 MASTER_SITE_SUBDIR=	${PORTNAME:S/-client//}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		${PORTNAME}-images-1.5.0${EXTRACT_SUFX} \
+		${PORTNAME}-images-1.7.1${EXTRACT_SUFX} \
 		${PORTNAME}-sounds-1.4.0${EXTRACT_SUFX}
 
 MAINTAINER=	ports@mark.reidel.info
@@ -26,29 +25,67 @@ USE_XPM=	yes
 WANT_GNOME=	yes
 USE_GNOME=	gnometarget
 USE_GMAKE=	yes
+USE_SDL=	image sdl
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 CONFIGURE_ARGS=	--with-sound-dir=${DATADIR}/sounds
 
-OPTIONS=	SDL "Use SDL for images" on
-
-MAN1=		cfclient.1
+MAN6=		cfclient.6
 
 .include <bsd.port.pre.mk>
 
+PLIST_FILES=	bin/cfclient \
+		bin/cfsndserv
+.if ${HAVE_GNOME:Mgtk20}!="" || ${HAVE_GNOME:Mgtk12}!=""
+MAN6+=		gcfclient.6
+.if ${HAVE_GNOME:Mgtk20}!=""
+USE_GNOME+=	gtk20
+PLIST_FILES+=bin/gcfclient2
+.endif
 .if ${HAVE_GNOME:Mgtk12}!=""
 USE_GNOME+=	gtk12
-MAN1+=		gcfclient.1
+PLIST_FILES+=bin/gcfclient
+.endif
 .else
 CONFIGURE_ARGS+=	--disable-gtk
 .endif
 
-.if defined(WITHOUT_SDL)
-CONFIGURE_ARGS+=	--disable-sdl
-.else
-USE_SDL=	image sdl
-.endif
+PLIST_DIRS=	%%DATADIR%%/sounds \
+		%%DATADIR%%
+PLIST_FILES+=	%%DATADIR%%/bmaps.client \
+		%%DATADIR%%/crossfire.base \
+		%%DATADIR%%/crossfire.clsc \
+		%%DATADIR%%/sounds/README \
+		%%DATADIR%%/sounds/Creaky-1.raw \
+		%%DATADIR%%/sounds/Evil_Laugh.raw \
+		%%DATADIR%%/sounds/Explosion.raw \
+		%%DATADIR%%/sounds/FloorTom.raw \
+		%%DATADIR%%/sounds/Gun-5.raw \
+		%%DATADIR%%/sounds/MetalCrash.raw \
+		%%DATADIR%%/sounds/Missed.raw \
+		%%DATADIR%%/sounds/Missle1.raw \
+		%%DATADIR%%/sounds/Puke.raw \
+		%%DATADIR%%/sounds/Tear.raw \
+		%%DATADIR%%/sounds/Teeswing.raw \
+		%%DATADIR%%/sounds/TowerClock.raw \
+		%%DATADIR%%/sounds/Whoosh.raw \
+		%%DATADIR%%/sounds/blip.raw \
+		%%DATADIR%%/sounds/boink2.raw \
+		%%DATADIR%%/sounds/bugle_charge.raw \
+		%%DATADIR%%/sounds/chord.raw \
+		%%DATADIR%%/sounds/click1.raw \
+		%%DATADIR%%/sounds/click2.raw \
+		%%DATADIR%%/sounds/drip.raw \
+		%%DATADIR%%/sounds/first_try.raw \
+		%%DATADIR%%/sounds/gong.raw \
+		%%DATADIR%%/sounds/lightning1.raw \
+		%%DATADIR%%/sounds/magic.raw \
+		%%DATADIR%%/sounds/ouch1.raw \
+		%%DATADIR%%/sounds/phit2.raw \
+		%%DATADIR%%/sounds/sci_fi_gun.raw \
+		%%DATADIR%%/sounds/squish.raw \
+		%%DATADIR%%/sounds/swish.raw \
 
 post-install:
 	@${MKDIR} ${DATADIR}
