@@ -7,6 +7,7 @@
 
 PORTNAME=	slim
 PORTVERSION=	1.2.3
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://download.berlios.de/slim/ \
 		http://depot.fsck.ch/mirror/distfiles/
@@ -22,7 +23,6 @@ BUILD_DEPENDS=	${X11BASE}/include/X11/Xft/Xft.h:${PORTSDIR}/x11-fonts/libXft
 
 USE_X_PREFIX=	yes
 USE_XLIB=	yes
-USE_REINPLACE=	yes
 USE_RC_SUBR=	slim.sh
 
 MAN1=		slim.1
