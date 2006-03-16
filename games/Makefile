@@ -573,6 +573,7 @@
     SUBDIR += stroq
     SUBDIR += stvef-paks
     SUBDIR += stvef-server
+    SUBDIR += sudoku
     SUBDIR += sudsol
     SUBDIR += super_methane_brothers
     SUBDIR += supertux

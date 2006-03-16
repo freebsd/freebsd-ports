@@ -1,0 +1,17 @@
+The sudoku board game is played on a 9x9 grid, divided into rows, columns,
+and 9 blocks of 3x3 squares. The objective is to fill the empty squares with
+the digits 1-9, so that each row, column, and block contains each of the
+digits 1-9 (and hence, it is not possible for any digit to appear twice in
+the same row, column or block).
+
+Features:
+   - character based (curses) interface;
+   - cross-platform (Minix, Unix, Windows) with full source code (ANSI C);
+   - generates hints upon request;
+   - classification of board difficulty (very easy, easy, medium, hard or
+     fiendish);
+   - generation of new boards;
+   - easy entry of boards published in newspapers, internet, etc...;
+   - multiple output formats (text,csv,html,postscript).
+
+WWW: http://www.laurasia.com.au/sudoku/
