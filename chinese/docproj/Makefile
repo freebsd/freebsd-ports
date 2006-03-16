@@ -8,7 +8,7 @@
 #
 
 PORTNAME=	docproj
-PORTVERSION=	0.1.20060226
+PORTVERSION=	0.1.20060303
 CATEGORIES=	chinese
 MASTER_SITES=	# none
 PKGNAMEPREFIX=	zh-
@@ -20,8 +20,9 @@ DISTFILES=	# none
 MAINTAINER=	delphij@FreeBSD.org
 COMMENT=	Supportive tools for Chinese docproj build
 
-LIB_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv \
-		png.5:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv
+RUN_DEPENDS=	gbklatex:${PORTSDIR}/chinese/CJK \
+		html2text:${PORTSDIR}/textproc/html2text
 
 WRKSRC=		${WRKDIR}/src
 
