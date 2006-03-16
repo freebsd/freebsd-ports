@@ -7,4 +7,4 @@ Expression support includes comparisons, math operations, string
 operations and a mechanism to allow you add your own functions at
 runtime.
 
-WWW: http://sourceforge.net/projects/html-template/
+WWW: http://search.cpan.org/dist/HTML-Template-Expr/
