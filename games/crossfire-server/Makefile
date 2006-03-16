@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	crossfire
-PORTVERSION=	1.8.0
+PORTVERSION=	1.9.0
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.real-time.com/pub/games/crossfire/
 MASTER_SITE_SUBDIR=	crossfire
 PKGNAMESUFFIX=	-server
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		${DISTNAME}.maps${EXTRACT_SUFX}
+		${DISTNAME}-1.maps${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Server for multiplayer graphical arcade and adventure game
@@ -22,8 +22,6 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
 USE_XPM=	yes
 USE_PERL5=	yes
-USE_OPENSSL=	yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
@@ -32,14 +30,8 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 MAN6=		crossedit.6 crossfire.6 crossfire-config.6 crossloop.6 \
 		crossloop.web.6
 
-CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include \
-		-I${OPENSSLINC}/openssl
+CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|-ldes|-lcrypto|g ; \
-		 s|des_crypt|DES_crypt|g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|des_crypt|DES_crypt|g' ${WRKSRC}/server/main.c
 
 post-install:
 	@${MKDIR} ${DATADIR}/maps
