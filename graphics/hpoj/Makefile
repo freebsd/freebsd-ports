@@ -21,10 +21,15 @@ NOT_FOR_ARCHS=	sparc64 ia64
 
 LIB_DEPENDS=	sane.1:${PORTSDIR}/graphics/sane-backends \
 		usb:${PORTSDIR}/devel/libusb
+.if defined(WITH_BASH2)
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2
+.else
+RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
+.endif
 
 OPTIONS=	CUPS "CUPS support" on \
-		SNMP "SNMP support (required for JetDirect)" on
+		SNMP "SNMP support (required for JetDirect)" on \
+		BASH2 "Depend on older bash" off
 
 .if defined(WITH_X11)
 USE_QT_VER=	3
