@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	PerlIO-via-dynamic
-PORTVERSION=	0.11
+PORTVERSION=	0.12
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/C/CL/CLKAO
@@ -22,7 +22,7 @@ MAN3=		PerlIO::via::dynamic.3
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500800
-IGNORE=		This module only supports perl 5.8.0 or above
+IGNORE=		this module only supports perl 5.8.0 or above
 .endif
 
 .include <bsd.port.post.mk>
