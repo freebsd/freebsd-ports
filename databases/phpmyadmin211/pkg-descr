@@ -1,24 +1,39 @@
 
-     phpMyAdmin handles the administration of MySQL over the Web. It
-     can manage a whole MySQL server as well as a single database.
+   phpMyAdmin can manage a whole MySQL server (needs a super-user) as
+   well as a single database. To accomplish the latter you'll need a
+   properly set up MySQL user who can read/write only the desired
+   database. It's up to you to look up the appropriate part in the
+   MySQL manual.
 
-       Currently it can:
-         - create, copy, rename and drop databases
-         - create, copy, drop, rename and alter tables
-         - do table maintenance
-         - delete, edit and add fields
-         - execute any SQL-statement, even batch-queries
-         - manage keys on fields
-         - load text files into tables
-         - create and read dumps of tables
-         - export data to CSV, XML and Latex formats
-         - administer multiple servers
-         - manage MySQL users and privileges
-         - check referential integrity
-         - using Query-by-example (QBE), create complex queries automatically
-           connecting required tables
-         - create PDF graphics of your Database layout
-         - search globally in a database or a subset of it
-         - communicate in 50 different languages
+   Currently phpMyAdmin can:
+     - easily browse through databases and tables
+     - create, copy, rename, alter and drop databases
+     - create, copy, rename, alter and drop tables
+     - do table maintenance
+     - add, edit and drop fields
+     - execute any SQL-statement, even multiple queries
+     - create, alter and drop indexes
+     - load text files into tables
+     - create (*) and read dumps of tables or databases
+     - export (*) data to SQL, CSV, XML, Word, Excel, PDF and Latex
+       formats
+     - administer multiple servers
+     - manage MySQL users and privileges
+     - check server settings and runtime information with
+       configuration hints
+     - check referential integrity in MyISAM tables
+     - using Query-by-example (QBE), create complex queries
+       automatically connecting required tables
+     - create PDF graphics of your Database layout
+     - search globally in a database or a subset of it
+     - transform stored data into any format using a set of predefined
+       functions, like displaying BLOB-data as image or download-link
+     - support InnoDB tables and foreign keys (see FAQ 3.6)
+     - support mysqli, the improved MySQL extension (see FAQ 1.17)
+     - communicate in 50 different languages
+
+   (*) phpMyAdmin can compress (Zip, GZip -RFC 1952- or Bzip2 formats)
+   dumps and CSV exports if you use PHP4 >= 4.0.4 with Zlib support
+   (--with-zli b) and/or Bzip2 support (--with-bz2).
 
 WWW: http://www.phpmyadmin.net/
