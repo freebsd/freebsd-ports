@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	tor
-PORTVERSION=	0.1.0.14
+PORTVERSION=	0.1.0.17
 CATEGORIES=	security net
-MASTER_SITES=	http://tor.eff.org/dist/
+MASTER_SITES=	http://tor.eff.org/dist/ \
+	http://mirror.onionland.org/dist/
 
 MAINTAINER=	freebsd-ports@rikrose.net
 COMMENT=	An anonymizing overlay network for TCP
@@ -18,7 +19,6 @@ LIB_DEPENDS=	event-1.1a:${PORTSDIR}/devel/libevent
 
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
-USE_REINPLACE=	yes
 
 MANCOMPRESSED=	no
 MAN1=		tor.1 tor-resolve.1 torify.1
