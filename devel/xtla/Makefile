@@ -7,10 +7,11 @@
 
 PORTNAME=	xtla
 PORTVERSION=	1.2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel elisp
 MASTER_SITES=	http://download.gna.org/xtla-el/ \
-		http://bsdchat.com/dist/dryice/
+		http://dryice.name/computer/FreeBSD/distfiles/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
 MAINTAINER=	dryice@dryice.name
