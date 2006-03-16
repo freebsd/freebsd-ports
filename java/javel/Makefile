@@ -9,14 +9,13 @@
 PORTNAME=	javel
 PORTVERSION=	0.3.2
 CATEGORIES=	java
-MASTER_SITES=	http://www.geocities.com/l.gregoire/
+MASTER_SITES=	http://tnerual.eriogerg.free.fr/javel/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java disassembler
 
 NO_WRKSUBDIR=	yes
-USE_REINPLACE=	yes
 MAKEFILE=	makefile
 USE_GCC=	2.95
 
