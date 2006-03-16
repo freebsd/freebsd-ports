@@ -7,6 +7,7 @@
 
 PORTNAME=	signing-party
 PORTVERSION=	0.4.4.2
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/main/s/signing-party
@@ -24,11 +25,11 @@ RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg \
 		${SITE_PERL}/GnuPG/Interface.pm:${PORTSDIR}/security/p5-GnuPG-Interface \
 		${SITE_PERL}/Mail/Util.pm:${PORTSDIR}/mail/p5-Mail-Tools \
 		${SITE_PERL}/MIME/Tools.pm:${PORTSDIR}/mail/p5-MIME-Tools \
+		${SITE_PERL}/Convert/Recode.pm:${PORTSDIR}/converters/p5-Convert-Recode \
 		${SITE_PERL}/Text/Template.pm:${PORTSDIR}/textproc/p5-Text-Template
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/:S/.orig//}
 
-USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ''
 USE_GMAKE=	yes
 USE_PERL5=	yes
