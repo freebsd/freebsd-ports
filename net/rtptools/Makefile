@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rtptools
-PORTVERSION=	1.17
+PORTVERSION=	1.18
 CATEGORIES=	mbone
 MASTER_SITES=	http://www.cs.columbia.edu/IRT/software/rtptools/download/
 
