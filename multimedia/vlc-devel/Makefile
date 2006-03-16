@@ -228,7 +228,7 @@
 #
 
 PORTNAME=	vlc
-DISTVERSION=	0.8.5.20060114
+DISTVERSION=	0.8.5.20060314
 PORTREVISION=	3
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://nightlies.videolan.org/build/source/
@@ -247,7 +247,7 @@ RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/bitstream-vera/Vera.ttf:${PORTSDIR}/x11-fo
 
 CONFLICTS=	vlc-[0-9]*
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-0.8.5-svn
+WRKSRC=		${WRKDIR}/${PORTNAME}-0.8.5-test1
 
 WITH_VLC_DEFAULT_FONT?=	${X11BASE}/lib/X11/fonts/bitstream-vera/Vera.ttf
 
@@ -258,7 +258,6 @@ USE_GETTEXT=	yes
 USE_GMAKE=	yes
 WANT_GNOME=	yes
 USE_GNOME=	gnometarget libxml2
-USE_REINPLACE=	yes
 WANT_SDL=	yes
 USE_ICONV=	yes
 USE_PERL5_BUILD=yes
@@ -273,6 +272,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${WRKSRC}/include ${CPPFLAGS} -I${LOCALBASE}/include 
 
 CONFIGURE_ARGS+=	--enable-ffmpeg \
 			--with-ffmpeg=${LOCALBASE} \
+			--with-libiconv-prefix=${LOCALBASE} \
 			--with-ffmpeg-zlib \
 			--disable-gnome \
 			--disable-gtk \
@@ -294,7 +294,7 @@ CPPFLAGS+=	-I${X11BASE}/include/wx-2.6/
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500800
-BROKEN=	"Does not compile with perl ${PERL_VERSION}"
+BROKEN=Does not compile with perl ${PERL_VERSION}
 .endif
 
 .if exists(${LOCALBASE}/lib/libavutil-CVS.so) || !exists(${LOCALBASE}/lib/libavformat.a)
@@ -788,6 +788,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/lib/win32|${LOCALBASE}/lib/win32|' \
 		${WRKSRC}/loader/module.c
 .endif
+
+pre-build:
+	@${REINPLACE_CMD} -e 's|/intl/libintl.a|${WRKSRC}/intl/libintl.a|' \
+		${WRKSRC}/vlc-config
 
 pre-install:
 	${RM} -rf ${PLIST} ${FAKEDIR}
