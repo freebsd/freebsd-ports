@@ -1,34 +1,28 @@
 #!/bin/sh
 
-# Run just once.
-if [ "x$2" != "xDEINSTALL" ]; then
-  exit 0
+LOCALBASE=/usr/local
+
+PATH=/bin:/usr/bin:${LOCALBASE}/bin; export PATH
+
+if [ "x$2" = "xDEINSTALL" ]; then
+	TEXMFMAIN=`kpsexpand '$TEXMFMAIN'`
+	TEXMFCNF=${TEXMFMAIN}/web2c/texmf.cnf
+
+	CJKTTFDIR=${TEXMFMAIN}/fonts/truetype/CJK
+	CJKTFMDIR=${TEXMFMAIN}/fonts/tfm/CJK
+
+	# Delete symbolic links of TrueType font files
+	cd ${CJKTTFDIR} && rm -f arb5kai.ttf arb5sung.ttf argbkai.ttf argbsung.ttf
+
+	find ${CJKTFMDIR} -type l -and -name \*.tfm| xargs -n 10 rm -f
+
+	exit 0
 fi
 
-TEXMFMAIN=`kpsexpand '$TEXMFMAIN'`
-TEXMFCNF=${TEXMFMAIN}/web2c/texmf.cnf
-SPECIALMAP=${TEXMFMAIN}-dist/fonts/map/fontname/special.map
+if [ "x$2" = "xPOST-DEINSTALL" ]; then
+	mktexlsr
+	updmap-sys --disable CJK-type1.map
+	# Contents in pdftex.map from CJK-pdftex.map are eliminated by updmap
 
-# Edit web2c/texmf.cnf
-sed -e "/ttf2pk/d" ${TEXMFCNF} > ${TEXMFCNF}.tmp
-sed -e "/ttf2tfm/d" ${TEXMFCNF}.tmp > ${TEXMFCNF}
-rm -f ${TEXMFCNF}.tmp
-
-# Edit fontname/special.map
-sed -e "/Arphic/d" ${SPECIALMAP} > ${SPECIALMAP}.tmp
-sed -e "/^arb5/d" ${SPECIALMAP}.tmp > ${SPECIALMAP}
-sed -e "/^argb/d" ${SPECIALMAP} > ${SPECIALMAP}.tmp
-mv -f ${SPECIALMAP}.tmp ${SPECIALMAP}
-
-# Delete symbolic links
-rm -f ${TEXMFMAIN}/fonts/truetype/arphic/arb5_kai.ttf
-rm -f ${TEXMFMAIN}/fonts/truetype/arphic/arb5_sung.ttf
-rm -f ${TEXMFMAIN}/fonts/truetype/arphic/argb_kai.ttf
-rm -f ${TEXMFMAIN}/fonts/truetype/arphic/argb_sung.ttf
-
-#
-# Update ls-R.  We have to run twice to get correct result.
-# Strange bug of texconfig.
-#
-texconfig rehash
-texconfig rehash
+	exit 0
+fi

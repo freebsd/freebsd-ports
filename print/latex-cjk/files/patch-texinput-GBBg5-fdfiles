@@ -1,6 +1,6 @@
 --- texinput/Bg5/c00kai.fd.orig	Mon Jun  7 06:47:47 1999
 +++ texinput/Bg5/c00kai.fd	Thu Jan  6 22:15:54 2000
-@@ -19,7 +19,7 @@
+@@ -19,7 +19,11 @@
  
  \DeclareFontFamily{C00}{kai}{}
  
@@ -8,11 +8,15 @@
 -\DeclareFontShape{C00}{kai}{bx}{n}{<-> CJKb * b5ka12}{\CJKbold}
 +\DeclareFontShape{C00}{kai}{m}{n}{<-> CJK * arb5kai}{}
 +\DeclareFontShape{C00}{kai}{bx}{n}{<-> CJKb * arb5kai}{\CJKbold}
++\DeclareFontShape{C00}{kai}{m}{sl}{<-> CJK * arb5kaisl}{}
++\DeclareFontShape{C00}{kai}{bx}{sl}{<-> CJKb * arb5kaisl}{\CJKbold}
++\DeclareFontShape{C00}{kai}{m}{it}{<-> CJK * arb5kaisl}{}
++\DeclareFontShape{C00}{kai}{bx}{it}{<-> CJKb * arb5kaisl}{\CJKbold}
  
  \endinput
 --- texinput/Bg5/c00song.fd.orig	Mon Jun  7 06:47:47 1999
 +++ texinput/Bg5/c00song.fd	Thu Jan  6 22:16:09 2000
-@@ -19,7 +19,7 @@
+@@ -19,7 +19,11 @@
  
  \DeclareFontFamily{C00}{song}{}
  
@@ -20,11 +24,15 @@
 -\DeclareFontShape{C00}{song}{bx}{n}{<-> CJKsub * kai/bx/n}{}
 +\DeclareFontShape{C00}{song}{m}{n}{<-> CJK * arb5sung}{}
 +\DeclareFontShape{C00}{song}{bx}{n}{<-> CJKb * arb5sung}{\CJKbold}
++\DeclareFontShape{C00}{song}{m}{sl}{<-> CJK * arb5sungsl}{}
++\DeclareFontShape{C00}{song}{bx}{sl}{<-> CJKb * arb5sungsl}{\CJKbold}
++\DeclareFontShape{C00}{song}{m}{it}{<-> CJK * arb5sungsl}{}
++\DeclareFontShape{C00}{song}{bx}{it}{<-> CJKb * arb5sungsl}{\CJKbold}
  
  \endinput
 --- texinput/GB/c10kai.fd.orig	Fri Jan  7 16:43:14 2000
 +++ texinput/GB/c10kai.fd	Fri Jan  7 16:42:57 2000
-@@ -0,0 +1,23 @@
+@@ -0,0 +1,27 @@
 +% This is the file c10kai.fd of the CJK package
 +%   for using Asian logographs (Chinese/Japanese/Korean) with LaTeX2e
 +%
@@ -46,11 +54,15 @@
 +
 +\DeclareFontShape{C10}{kai}{m}{n}{<-> CJK * argbkai}{}
 +\DeclareFontShape{C10}{kai}{bx}{n}{<-> CJKb * argbkai}{\CJKbold}
++\DeclareFontShape{C10}{kai}{m}{sl}{<-> CJK * argbkaisl}{}
++\DeclareFontShape{C10}{kai}{bx}{sl}{<-> CJKb * argbkaisl}{\CJKbold}
++\DeclareFontShape{C10}{kai}{m}{it}{<-> CJK * argbkaisl}{}
++\DeclareFontShape{C10}{kai}{bx}{it}{<-> CJKb * argbkaisl}{\CJKbold}
 +
 +\endinput
 --- texinput/GB/c10song.fd.orig	Mon Jun  7 06:47:48 1999
 +++ texinput/GB/c10song.fd	Fri Jan  7 16:43:02 2000
-@@ -17,7 +17,7 @@
+@@ -17,7 +17,11 @@
  
  \DeclareFontFamily{C10}{song}{}
  
@@ -58,5 +70,9 @@
 -\DeclareFontShape{C10}{song}{bx}{n}{<-> CJKsub * fs/bx/n}{}
 +\DeclareFontShape{C10}{song}{m}{n}{<-> CJK * argbsung}{}
 +\DeclareFontShape{C10}{song}{bx}{n}{<-> CJKb * argbsung}{\CJKbold}
++\DeclareFontShape{C10}{song}{m}{sl}{<-> CJK * argbsungsl}{}
++\DeclareFontShape{C10}{song}{bx}{sl}{<-> CJKb * argbsungsl}{\CJKbold}
++\DeclareFontShape{C10}{song}{m}{it}{<-> CJK * argbsungsl}{}
++\DeclareFontShape{C10}{song}{bx}{it}{<-> CJKb * argbsungsl}{\CJKbold}
  
  \endinput

@@ -1,0 +1,127 @@
+#!/bin/sh
+
+LOCALBASE=/usr/local
+
+PATH=/bin:/usr/bin:${LOCALBASE}/bin; export PATH
+
+TEXMFMAIN=`kpsexpand '$TEXMFMAIN'`
+
+INSTALL_DIR="/usr/bin/install -d -m 0755 -o root -g wheel"
+
+TEXMFCNF=`kpsewhich -format 'web2c files' texmf.cnf`
+CJKTTFDIR=${TEXMFMAIN}/fonts/truetype/CJK
+CJKTFMDIR=${TEXMFMAIN}/fonts/tfm/CJK
+TTFONTSMAP=${TEXMFMAIN}/ttf2pk/ttfonts.map
+SLANT=0.3
+
+if [ "x$2" = "xPRE-INSTALL" ]; then
+	cleanfile()
+	{
+		# $1: pattern
+		# $2: file
+		RE="^[[:space:]]*${1}"
+		if grep -q -m 1 ${RE} ${2} ; then
+			sed -e "/${RE}/d" ${2} > ${2}.tmp
+			mv -f ${2}.tmp ${2}
+		fi
+	}
+
+	# web2c/texmf.cnf
+	cleanfile "TTF2PKINPUTS" ${TEXMFCNF}
+	echo 'TTF2PKINPUTS = $TEXMF/ttf2pk//' >> ${TEXMFCNF}
+
+	cleanfile "TTF2TFMINPUTS" ${TEXMFCNF}
+	echo 'TTF2TFMINPUTS = $TEXMF/ttf2tfm//' >> ${TEXMFCNF}
+
+	# Install TrueType fonts
+	${INSTALL_DIR}  ${CJKTTFDIR}
+	ln -fs ${LOCALBASE}/share/fonts/TrueType/bkai00mp.ttf ${CJKTTFDIR}/arb5kai.ttf
+	ln -fs ${LOCALBASE}/share/fonts/TrueType/bsmi00lp.ttf ${CJKTTFDIR}/arb5sung.ttf
+	ln -fs ${LOCALBASE}/share/fonts/TrueType/gbsn00lp.ttf ${CJKTTFDIR}/argbsung.ttf
+	ln -fs ${LOCALBASE}/share/fonts/TrueType/gkai00mp.ttf ${CJKTTFDIR}/argbkai.ttf
+
+	# Configure ttf2pk
+	config_ttf2pk()
+	{
+		# $1: TFM name
+		# $2: Subfont definition file name
+		# $3: TrueType file name
+
+		cleanfile "${1}@"   ${TTFONTSMAP}
+		echo "${1}@${2}@    ${3} Pid=3 Eid=1" >> ${TTFONTSMAP}
+
+		cleanfile "${1}sl@" ${TTFONTSMAP}
+		echo "${1}sl@${2}@  ${3} Pid=3 Eid=1 Slant=${SLANT}" >> ${TTFONTSMAP}
+	}
+
+	config_ttf2pk "arb5sung"   "UBig5"     "arb5sung.ttf"
+	config_ttf2pk "arb5kai"    "UBig5"     "arb5kai.ttf"
+	config_ttf2pk "argbsung"   "UGB"       "argbsung.ttf"
+	config_ttf2pk "argbkai"    "UGB"       "argbkai.ttf"
+	config_ttf2pk "arb5sungu"  "Unicode"   "arb5sung.ttf"
+	config_ttf2pk "arb5kaiu"   "Unicode"   "arb5kai.ttf"
+	config_ttf2pk "argbsungu"  "Unicode"   "argbsung.ttf"
+	config_ttf2pk "argbkaiu"   "Unicode"   "argbkai.ttf"
+
+	# Configure DVIPDFMx
+	config_dvipdfmx()
+	{
+		# $1: TFM name
+		# $2: Subfont definition file name
+		# $3: CMap name
+		# $4: TrueType file name
+
+		# "CIDXMAP" is evaluated below
+
+		cleanfile "${1}@" "${CIDXMAP}"
+		echo "${1}@${2}@    ${3}   ${4}" >> ${CIDXMAP}
+
+		cleanfile "${1}sl@" "${CIDXMAP}"
+		echo "${1}sl@${2}@  ${3}   ${4}	-s ${SLANT}" >> ${CIDXMAP}
+
+	}
+
+	if CIDXMAP=`kpsewhich cid-x.map`; then
+		config_dvipdfmx "arb5sung"   "Big5"    "ETen-B5-H"  "arb5sung.ttf"
+		config_dvipdfmx "arb5kai"    "Big5"    "ETen-B5-H"  "arb5kai.ttf"
+		config_dvipdfmx "argbsung"   "EUC"     "GB-EUC-H"   "argbsung.ttf"
+		config_dvipdfmx "argbkai"    "EUC"     "GB-EUC-H"   "argbkai.ttf"
+		config_dvipdfmx "arb5sungu"  "Unicode" "unicode"    "arb5sung.ttf"
+		config_dvipdfmx "arb5kaiu"   "Unicode" "unicode"    "arb5kai.ttf"
+		config_dvipdfmx "argbsungu"  "Unicode" "unicode"    "argbsung.ttf"
+		config_dvipdfmx "argbkaiu"   "Unicode" "unicode"    "argbkai.ttf"
+	fi
+
+	# Make symbolic links for *.sfd
+	${INSTALL_DIR} ${TEXMFMAIN}/fonts/sfd
+	(
+		# Let KPathsea help DVIPDFMx to find them
+		cd ${TEXMFMAIN}/fonts/sfd 
+		find ${TEXMFMAIN}/ttf2pk/ -name \*.sfd | xargs -n 1 ln -sf
+	)
+
+	exit 0
+fi
+
+if [ "x$2" = "xPOST-INSTALL" ]; then
+	find ${CJKTFMDIR} -type f -and -name \*.tfm | \
+	(
+  		IFS='
+'
+		#Create symbolic links for Type 1 font support
+		while read _f; do
+			ln -sf `basename ${_f}` `dirname ${_f}`/t1`basename ${_f}`
+		done
+	)
+
+	mktexlsr
+	updmap-sys --enable Map CJK-type1.map
+
+	# It's so sorry that PDFTeX cannot touch Arphic Big5 TrueType font files
+	# due to PDFTeX's bug against Arphic Big5 TrueType font files' bug.
+	# PDFTeX has been fixed since revision 1.30.0.
+	# See http://sarovar.org/tracker/index.php?func=detail&aid=306&group_id=106&atid=493
+	grep '^argb' `kpsewhich CJK-pdftex.map` >> `kpsewhich pdftex.map`
+
+	exit 0
+fi
