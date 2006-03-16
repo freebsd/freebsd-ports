@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	APC
-PORTVERSION=	3.0.8
-PORTREVISION=	1
+PORTVERSION=	3.0.10
 CATEGORIES=	www
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -72,17 +71,5 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/apc.php ${DOCSDIR}
 .endif
 	@${CAT} ${PKGMESSAGE}
-.if ${PHP_VER} == 5
-	@${ECHO_CMD}
-	@${ECHO_CMD} "*** WARNING *** WARNING *** WARNING ***"
-	@${ECHO_CMD}
-	@${ECHO_CMD} "To APC work with PHP >= 5.0.5 you need add"
-	@${ECHO_CMD} "below option in your php.ini"
-	@${ECHO_CMD}
-	@${ECHO_CMD} "auto_globals_jit = Off"
-	@${ECHO_CMD}
-	@${ECHO_CMD} "*** WARNING *** WARNING *** WARNING ***"
-	@${ECHO_CMD}
-.endif
 
 .include <bsd.port.post.mk>
