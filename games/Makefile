@@ -364,6 +364,7 @@
     SUBDIR += liquidwar
     SUBDIR += lm-solve
     SUBDIR += lmarbles
+    SUBDIR += lmpc
     SUBDIR += ltris
     SUBDIR += lucidlife
     SUBDIR += luola

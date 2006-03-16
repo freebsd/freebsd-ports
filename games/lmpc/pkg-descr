@@ -1,0 +1,9 @@
+LMPC is a tool to manipulate games recordings (demos).  Supported games are
+DOOM, DOOM II, Heretic, Hexen, Strife (LMP files), Duke Nukem 3D, Redneck
+Rampage (DMO files), Quake (DEM), QuakeWorld (QWD), Quake II (DM2, client
+recorded, server recorded, relay files), and Quake III Arena (DM3 files, or
+dm_68 more precisely).  It also includes DEM file cutter tool (DEMcut), DEM
+text file analyser (DEMA), demo broadcasting server (DBS), and DM2 file
+concatenator (DM2cat).
+
+WWW: http://www.planetquake.com/demospecs/lmpc-alpha/
