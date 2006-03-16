@@ -12,6 +12,42 @@ lib/libevas.a
 lib/libevas.la
 lib/libevas.so
 lib/libevas.so.1
+lib/evas/modules/engines/buffer/module.a
+lib/evas/modules/engines/buffer/module.la
+lib/evas/modules/engines/buffer/module.so
+lib/evas/modules/engines/software_generic/module.a
+lib/evas/modules/engines/software_generic/module.la
+lib/evas/modules/engines/software_generic/module.so
+lib/evas/modules/engines/software_x11/module.a
+lib/evas/modules/engines/software_x11/module.la
+lib/evas/modules/engines/software_x11/module.so
+lib/evas/modules/engines/xrender_x11/module.a
+lib/evas/modules/engines/xrender_x11/module.la
+lib/evas/modules/engines/xrender_x11/module.so
+lib/evas/modules/loaders/edb/module.a
+lib/evas/modules/loaders/edb/module.la
+lib/evas/modules/loaders/edb/module.so
+lib/evas/modules/loaders/eet/module.a
+lib/evas/modules/loaders/eet/module.la
+lib/evas/modules/loaders/eet/module.so
+lib/evas/modules/loaders/jpeg/module.a
+lib/evas/modules/loaders/jpeg/module.la
+lib/evas/modules/loaders/jpeg/module.so
+lib/evas/modules/loaders/png/module.a
+lib/evas/modules/loaders/png/module.la
+lib/evas/modules/loaders/png/module.so
+lib/evas/modules/savers/edb/module.a
+lib/evas/modules/savers/edb/module.la
+lib/evas/modules/savers/edb/module.so
+lib/evas/modules/savers/eet/module.a
+lib/evas/modules/savers/eet/module.la
+lib/evas/modules/savers/eet/module.so
+lib/evas/modules/savers/jpeg/module.a
+lib/evas/modules/savers/jpeg/module.la
+lib/evas/modules/savers/jpeg/module.so
+lib/evas/modules/savers/png/module.a
+lib/evas/modules/savers/png/module.la
+lib/evas/modules/savers/png/module.so
 libdata/pkgconfig/evas.pc
 %%DATADIR%%/Vera.ttf
 %%DATADIR%%/VeraBI.ttf
@@ -35,3 +71,20 @@ libdata/pkgconfig/evas.pc
 %%DATADIR%%/t2.png
 %%DATADIR%%/test_pattern.png
 @dirrm %%DATADIR%%
+@dirrm lib/evas/modules/savers/png
+@dirrm lib/evas/modules/savers/jpeg
+@dirrm lib/evas/modules/savers/eet
+@dirrm lib/evas/modules/savers/edb
+@dirrm lib/evas/modules/savers
+@dirrm lib/evas/modules/loaders/png
+@dirrm lib/evas/modules/loaders/jpeg
+@dirrm lib/evas/modules/loaders/eet
+@dirrm lib/evas/modules/loaders/edb
+@dirrm lib/evas/modules/loaders
+@dirrm lib/evas/modules/engines/xrender_x11
+@dirrm lib/evas/modules/engines/software_x11
+@dirrm lib/evas/modules/engines/software_generic
+@dirrm lib/evas/modules/engines/buffer
+@dirrm lib/evas/modules/engines
+@dirrm lib/evas/modules
+@dirrm lib/evas
