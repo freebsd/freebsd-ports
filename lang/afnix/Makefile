@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	afnix
-PORTVERSION=	1.1.2
+PORTVERSION=	1.2.1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.afnix.org/ftp/%SUBDIR%/ \
 		ftp://ftp.stack.nl/pub/users/johans/afnix/
@@ -18,7 +18,6 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	johans@stack.nl
 COMMENT=	A multi-threaded functional programming language
 
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 HAS_CONFIGURE=	yes
