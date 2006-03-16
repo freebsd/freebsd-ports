@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	email
-PORTVERSION=	3.0
+PORTVERSION=	3.0.1
 CATEGORIES=	mail python
-MASTER_SITES=	http://www.python.org/ftp/python/contrib/
+MASTER_SITES=	http://cheeseshop.python.org/packages/source/e/email/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	email-${PORTVERSION}
 
@@ -16,19 +16,9 @@ MAINTAINER=	mnag@FreeBSD.org
 COMMENT=	Email package for Python 2.3 or upper
 
 DIST_SUBDIR=	python
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
+USE_PYTHON=	2.3+
+USE_PYDISTUTILS=	yes
 
 CONFLICTS=	py*-mimelib-2.* py*-email-2.*
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} >= 240
-IGNORE=		Python 2.4 or upper don't need this port
-.else
-.if ${PYTHON_REL} < 230
-IGNORE=		For your Python version use ${PORTSDIR}/mail/${PORTNAME}2
-.endif
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
