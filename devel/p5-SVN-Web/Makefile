@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	SVN-Web
-PORTVERSION=	0.43
+PORTVERSION=	0.46
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/N/NI/NIKC
@@ -50,6 +50,9 @@ MAN3=		SVN::Web.3 \
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/svnweb-install ${PREFIX}/bin
+	@${ECHO}
+	@${CAT} ${PKGMESSAGE}
+	@${ECHO}
 
 .include <bsd.port.pre.mk>
 .if ${PERL_LEVEL} < 500600
