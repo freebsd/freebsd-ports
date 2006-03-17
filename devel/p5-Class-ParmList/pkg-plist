@@ -1,6 +1,3 @@
 %%SITE_PERL%%/Class/ParmList.pm
 %%SITE_PERL%%/Class/ParmList.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/ParmList/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/ParmList
 @dirrmtry %%SITE_PERL%%/Class
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
