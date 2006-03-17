@@ -6,7 +6,6 @@
 #
 
 PORTNAME=	mysql
-PORTREVISION=	1
 PKGNAMESUFFIX=	-scripts
 
 COMMENT=	Multithreaded SQL database (scripts)
@@ -14,6 +13,7 @@ COMMENT=	Multithreaded SQL database (scripts)
 MASTERDIR=	${.CURDIR}/../mysql51-server
 
 PKGINSTALL=	mustnotexist
+PKGMESSAGE=	mustnotexist
 PLIST=		${PKGDIR}/pkg-plist.scripts
 
 SCRIPTS_ONLY=	yes

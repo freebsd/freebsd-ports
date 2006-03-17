@@ -9,6 +9,7 @@ bin/myisampack
 bin/mysql_create_system_tables
 bin/mysql_install_db
 bin/mysql_tzinfo_to_sql
+bin/mysql_upgrade
 bin/mysql_waitpid
 bin/mysqld_safe
 %%NDB%%bin/ndb_config
@@ -68,6 +69,7 @@ lib/mysql/libmyisammrg.a
 lib/mysql/libmystrings.a
 lib/mysql/libmysys.a
 %%NDB%%lib/mysql/libndbclient.a
+%%NDB%%lib/mysql/libndbclient.la
 %%NDB%%lib/mysql/libndbclient.so
 %%NDB%%lib/mysql/libndbclient.so.0
 lib/mysql/libvio.a
