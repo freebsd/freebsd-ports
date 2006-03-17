@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	olsrd
-PORTVERSION=	0.4.9
-PORTREVISION=	2
+PORTVERSION=	0.4.10
 CATEGORIES=	net
 MASTER_SITES=	http://www.olsr.org/releases/0.4/
 
@@ -28,10 +27,14 @@ MAN8=		olsrd.8
 MAN5=		olsrd.conf.5
 MANCOMPRESSED=	yes
 
+ALL_TARGET=	build_all
+INSTALL_TARGET=	install_all
+
 .if defined(WITH_MULTI_IF)
-MAKE_ARGS+=	OS=fbsd-ll
-.else
-MAKE_ARGS+=	OS=fbsd
+MAKE_ARGS+=	LIBNET=1
+.endif
+.if defined(PREFIX)
+MAKE_ARGS+=	INSTALL_PREFIX=${PREFIX}
 .endif
 
 .include <bsd.port.pre.mk>
