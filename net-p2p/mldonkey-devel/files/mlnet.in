@@ -17,7 +17,7 @@
 #mlnet_logfile=""
 #
 
-. /etc/rc.subr
+. %%RC_SUBR%%
 
 name="mlnet"
 rcvar=`set_rcvar`

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mldonkey
-PORTVERSION=	2.7.3
-PORTREVISION=	3
+PORTVERSION=	2.7.4
 CATEGORIES+=	net-p2p
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -23,9 +22,8 @@ CONFLICTS=	mldonkey-[0-9]*
 
 USE_BZIP2=	yes
 USE_ICONV=	yes
-USE_RC_SUBR=	yes
+USE_RC_SUBR=	mlnet
 USE_AUTOTOOLS=	autoconf:259:env
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	opt
@@ -39,6 +37,13 @@ CONFIGURE_ENV+=	\
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
+
+###
+## Library dependency handling
+###
+.if !exists(/usr/lib/libbz2.so)
+LIB_DEPENDS+=	bz2:${PORTSDIR}/archivers/bzip2
+.endif
 
 ###
 ## Options activation
@@ -127,9 +132,14 @@ post-patch:
 	@${REINPLACE_CMD} -E \
 		-e 's|%%AUTOCONF%%|${AUTOCONF}|' \
 		${BUILD_WRKSRC}/config/Makefile.in
-# rc.d
-	@${SED} -e "s|%%PREFIX%%|${PREFIX}|" \
-		${FILESDIR}/mlnet.sh > ${WRKDIR}/mlnet.sh
+# update server.met provider
+.for file in \
+	src/daemon/common/commonOptions.ml \
+	src/networks/donkey/donkeyServers.ml
+	@${REINPLACE_CMD} -E \
+		-e 's|http://www.gruk.org/server.met.gz|http://www.jd2k.com/server.met|' \
+		${WRKSRC}/${file}
+.endfor
 
 pre-configure:
 	cd ${WRKSRC}/config && ${AUTOCONF}
@@ -173,9 +183,6 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/distrib/${file} ${DOCSDIR}
 .endfor
 .endif
-# rc.d
-	@${INSTALL_SCRIPT} ${WRKDIR}/mlnet.sh \
-		${PREFIX}/etc/rc.d
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
