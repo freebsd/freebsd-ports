@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	dparser
-PORTVERSION=	1.13
+PORTVERSION=	1.14
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -38,7 +38,7 @@ LIBDPARSE=	libdparse.a
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64"
-BROKEN=		"Does not build on ia64"
+BROKEN=		Does not build on ia64
 .endif
 
 do-install:
