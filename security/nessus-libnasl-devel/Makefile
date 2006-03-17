@@ -18,6 +18,9 @@ DISTNAME=	libnasl-${PORTVERSION}
 MAINTAINER=	udo.schweigert@siemens.com
 COMMENT=	Nessus Attack Scripting Language
 
+DEPRECATED=	Development version of nessus is no longer available in sources
+EXPIRATION_DATE=	2006-04-17
+
 CONFLICTS=	nessus-libnasl-[0-9]*
 
 LIB_DEPENDS=	nessus.5:${PORTSDIR}/security/nessus-libraries-devel
