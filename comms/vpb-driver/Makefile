@@ -32,7 +32,9 @@ SED_SCRIPT=	-e 's,%%PREFIX%%,${PREFIX},g' \
 IGNORE=		requires kernel source (/usr/src/sys) to build
 .endif
 
-NOT_FOR_ARCHS=	sparc64
+.if ${ARCH} == "sparc64"
+BROKEN=	Does not compile on sparc64
+.endif
 
 .if ${OSVERSION} < 502000 || ${OSVERSION} >= 600000
 IGNORE=		is not for FreeBSD versions < 502000, or >= 600000
