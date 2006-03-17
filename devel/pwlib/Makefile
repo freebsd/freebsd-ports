@@ -7,7 +7,7 @@
 
 PORTNAME=	pwlib
 PORTVERSION=	1.9.2
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.voxgratia.org/releases/
@@ -29,18 +29,20 @@ USE_OPENSSL=	yes
 NO_FILTER_SHLIBS=	yes
 INSTALLS_SHLIB=	yes
 
+.include <bsd.port.pre.mk>
+
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" \
-		SDLLIBDIR="${LOCALBASE}/lib" PTHREAD_LIBS="${PTHREAD_LIBS}"
+		PTHREAD_LIBS="${PTHREAD_LIBS}"
 MAKE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" \
-		SDLLIBDIR="${LOCALBASE}/lib" STDCCFLAGS+="-I${LOCALBASE}"
-
-.include <bsd.port.pre.mk>
+		STDCCFLAGS+="-I${LOCALBASE}"
 
 # if explicitely asked for, depend upon it
 .if defined(WITH_SDL)
 USE_SDL+=	sdl
+CONFIGURE_ENV+=	SDLLIBDIR="${LOCALBASE}/lib"
+MAKE_ENV+=	SDLLIBDIR="${LOCALBASE}/lib"
 .endif
 
 # if explicitely disabled, do not depend upon it
@@ -52,6 +54,8 @@ CONFIGURE_ARGS+=	--disable-sdl
 .if !defined(WITHOUT_SDL) && !defined(WITH_SDL)
 .if ${HAVE_SDL:Msdl}
 USE_SDL+=	sdl
+CONFIGURE_ENV+=	SDLLIBDIR="${LOCALBASE}/lib"
+MAKE_ENV+=	SDLLIBDIR="${LOCALBASE}/lib"
 .else
 CONFIGURE_ARGS+=	--disable-sdl
 .endif
@@ -66,6 +70,8 @@ CONFIGURE_ARGS+=	--enable-plugins
 CONFIGURE_ARGS+=	--disable-openldap
 .else
 USE_OPENLDAP=	yes
+CONFIGURE_ENV+=	OPENLDAPLIBDIR="${LOCALBASE}/lib"
+MAKE_ENV+=	OPENLDAPLIBDIR="${LOCALBASE}/lib"
 .endif
 
 .if (${ARCH} == "amd64") || (${ARCH} == "ia64") || (${ARCH} == "sparc64")
