@@ -1,0 +1,13 @@
+nyello is a command-line XMMS2 client.
+
+It aims at providing a high-level interface to the XMMS2 server, with a concise
+and powerful interaction syntax. It boasts (or soon will boast) advanced
+features, such as rich pattern expressions to efficiently browse your library,
+smart completion of commands and custom song collections to organize your
+library.
+
+It can either run a single command or work like a shell (if started without
+argument). As a command-line program, it is mostly targetted at Unix
+power-users.
+
+WWW: http://sirius.cine7.net/nyello/index.php
