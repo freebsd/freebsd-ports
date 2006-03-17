@@ -34,7 +34,6 @@ CONFIGURE_ARGS?=--with-clash-detection \
 		--with-sound=native,nonas,noesd \
 		--site-includes=${LOCALBASE}/include \
 		--site-libraries=${LOCALBASE}/lib \
-		--with-ldap=no \
 		--with-site-lisp \
 		--with-database=berkdb \
 		${WITH_SCROLLBARS} ${WITH_DIALOGS} ${WITH_WIDGETS} \
@@ -55,6 +54,13 @@ CONFIGURE_ARGS+=	--with-system-malloc --pdump
 PLIST_SUB+=	PDUMP=""
 .else
 PLIST_SUB+=	PDUMP="@comment "
+.endif
+
+.if defined(WITH_LDAP)
+USE_OPENLDAP=	yes
+CONFIGURE_ARGS+=	--with-ldap
+.else
+CONFIGURE_ARGS+=	--with-ldap=no
 .endif
 
 .if !defined(WITHOUT_XEMACS_PACKAGES)
