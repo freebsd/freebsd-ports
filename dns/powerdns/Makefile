@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	powerdns
-PORTVERSION=	2.9.19
-PORTREVISION=	2
+PORTVERSION=	2.9.20
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://downloads.powerdns.com/releases/ \
 		http://mirrors.evolva.ro/powerdns.com/releases/
