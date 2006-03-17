@@ -6,6 +6,20 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20060316:
+  AFFECTS: users of textproc/docproj[-jadetex]
+  AUTHOR: delphij@FreeBSD.org
+
+  docproj now installs a set of CJK (Chinese, Japanese, Korean)
+  related stuff in case that you have choosen to install the
+  jadetex feature.  Because the CJK part could be potentially
+  large for those who do not want it, this feature can be disabled
+  by defining WITHOUT_CJK=yes.
+
+  Please be sure to update to the latest docproj package, as an
+  upcoming doc/share/mk change will make use of the newly added
+  fixrtf utility.
+
 20060315:
   AFFECTS: users of www/horde, mail/turba and deskutils/kronolith
   AUTHOR: thierry@FreeBSD.org
