@@ -6152,6 +6152,7 @@ mathomatic	ports/math/mathomatic
 mathopd		ports/www/mathopd
 matrix		ports/math/matrix
 matrix-kmod	ports/misc/matrix-kmod
+matrixssl	ports/security/matrixssl
 mavbiff		ports/mail/mavbiff
 maven		ports/devel/maven
 maven2		ports/devel/maven2
