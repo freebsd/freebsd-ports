@@ -1,8 +1,8 @@
---- scripts/Makefile.in.orig	Sat Jun 11 03:32:05 2005
-+++ scripts/Makefile.in	Thu Jun 16 23:09:08 2005
-@@ -333,24 +333,7 @@
- uname_prog = @uname_prog@
- yassl_dir = @yassl_dir@
+--- scripts/Makefile.in.orig	Sat Mar  4 21:36:58 2006
++++ scripts/Makefile.in	Thu Mar 16 08:22:23 2006
+@@ -344,25 +344,7 @@
+ yassl_libs_with_path = @yassl_libs_with_path@
+ yassl_taocrypt_extra_cxxflags = @yassl_taocrypt_extra_cxxflags@
  zlib_dir = @zlib_dir@
 -bin_SCRIPTS = @server_scripts@ \
 -			msql2mysql \
@@ -20,13 +20,14 @@
 -			mysqldumpslow \
 -			mysql_explain_log \
 -			mysql_tableinfo \
+-			mysql_upgrade \
 -			mysqld_multi \
 -			mysql_create_system_tables
 +bin_SCRIPTS =
  
- EXTRA_SCRIPTS = make_binary_distribution.sh \
- 			make_sharedlib_distribution.sh \
-@@ -380,7 +363,7 @@
+ noinst_SCRIPTS = make_binary_distribution \
+ 			make_sharedlib_distribution \
+@@ -396,7 +378,7 @@
  			mysqlaccess.conf \
  			mysqlbug
  
