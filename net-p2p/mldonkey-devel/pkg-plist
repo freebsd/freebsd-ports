@@ -1,4 +1,3 @@
-etc/rc.d/mlnet.sh
 %%CORE%%bin/mld_hash
 %%CORE%%bin/mlnet
 %%CORE%%bin/mlnet-real
