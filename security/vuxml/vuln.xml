@@ -34,6 +34,58 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="6779e82f-b60b-11da-913d-000ae42e9b93">
+    <topic>drupal -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>drupal</name>
+	<range><lt>3.6.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Drupal reports:</p>
+	<blockquote cite="http://drupal.org/node/53806">
+	  <p>Mail header injection vulnerability.</p>
+          <p>Linefeeds and carriage returns were not being stripped from
+            email headers, raising the possibility of bogus headers
+            being inserted into outgoing email.</p>
+          <p>This could lead to Drupal sites being used to send unwanted
+            email.</p>
+	</blockquote>
+	<blockquote cite="http://drupal.org/node/53805">
+	  <p>Session fixation vulnerability.</p>
+          <p>If someone creates a clever enough URL and convinces you to
+            click on it, and you later log in but you do not log off
+            then the attacker may be able to impersonate you.</p>
+	</blockquote>
+	<blockquote cite="http://drupal.org/node/53803">
+	  <p>XSS vulnerabilities.</p>
+          <p>Some user input sanity checking was missing. This could
+            lead to possible cross-site scripting (XSS) attacks.</p>
+          <p>XSS can lead to user tracking and theft of accounts and
+            services.</p>
+	</blockquote>
+	<blockquote cite="http://drupal.org/node/53796">
+	  <p>Security bypass in menu.module.</p>
+          <p>If you use menu.module to create a menu item, the page you
+            point to will be accessible to all, even if it is an admin
+            page.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://drupal.org/node/53806</url>
+      <url>http://drupal.org/node/53805</url>
+      <url>http://drupal.org/node/53803</url>
+      <url>http://drupal.org/node/53796</url>
+    </references>
+    <dates>
+      <discovery>2006-03-13</discovery>
+      <entry>2006-03-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c7c09579-b466-11da-82d0-0050bf27ba24">
     <topic>horde -- "url" disclosure of sensitive information
       vulnerability</topic>
