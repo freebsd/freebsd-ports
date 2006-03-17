@@ -17,10 +17,8 @@ COMMENT=	The JGoodies Looks improve the appearance of your Java applications
 
 FETCH_DEPENDS=	${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget
 
-BROKEN=		Unfetchable
-
 DISTDATE=	20050919
-DISTREP=	20506
+DISTREP=	30147
 
 FETCH_CMD=	${LOCALBASE}/bin/wget
 FETCH_BEFORE_ARGS=	--no-check-certificate
