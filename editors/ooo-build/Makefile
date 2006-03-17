@@ -14,8 +14,6 @@ DISTFILES+=	${OOOBUILD_SOURCE} ${OOO_CAIRO} \
 
 MAINTAINER=	maho@FreeBSD.org
 
-BROKEN=		Unfetchable
-
 #DEVELOPER_VER=	yes #you must be an expert or guru to activate this
 .if defined(DEVELOPER_VER)
 OOOBUILD_VERSION=2.0.2.${MILESTONE}
@@ -30,9 +28,9 @@ OOO_CRYSTAL_IMAGES=	ooo_crystal_images-1.tar.gz
 OOO_OPENCLIPART=	openclipart-0.18-full.tar.gz
 OOO_PATCHDIR=src680
 .else
-OOOBUILD_VERSION=2.0.2rc1.1
-OOOBUILD_TAG=oob680-m1
-OOOBUILD=	ooo-build-oob680.1.1
+OOOBUILD_VERSION=2.0.2
+OOOBUILD_TAG=oob680-m5
+OOOBUILD=	ooo-build-${OOOBUILD_VERSION}
 OOOBUILD_SOURCE=${OOOBUILD}.tar.gz
 OOO_CAIRO=	cairo-1.0.2.tar.gz
 OOO_MDBTOOLS=	mdbtools-0.6pre1.tar.gz
@@ -62,15 +60,19 @@ pre-configure:
 	@cd ${WRKDIR}/${OOOBUILD} ; ${PATCH} < ${.CURDIR}/files/ooo-build-patch-devel
 .endif
 	@cd ${WRKDIR}/${OOOBUILD}/patches ; ${PERL} apply.pl ${WRKDIR}/${OOOBUILD}/patches/${OOO_PATCHDIR} ${WRKSRC} --distro=FreeBSD --distro=Binfilter --tag=${OOOBUILD_TAG}
-	@${MKDIR} ${WRKSRC}/cairo/download ; ${CP} ${DISTDIR}/${DIST_SUBDIR}/${OOO_CAIRO} ${WRKSRC}/cairo/download
+	${MKDIR} ${WRKSRC}/cairo/download ; ${CP} ${DISTDIR}/${DIST_SUBDIR}/${OOO_CAIRO} ${WRKSRC}/cairo/download
 	@${MKDIR} ${WRKSRC}/mdbtools/download ; ${CP} ${DISTDIR}/${DIST_SUBDIR}/${OOO_MDBTOOLS} ${WRKSRC}/mdbtools/download
 	@${CP} ${WRKDIR}/${OOOBUILD}/src/evolocal.odb ${WRKSRC}/extras/source/database/
+.if !defined(DEVELOPER_VER)
+	@${CP} ${WRKDIR}/${OOOBUILD}/src/go-oo-team.png ${WRKSRC}/default_images/sw/res
+.endif
 #extract some goodies
 	cd ${WRKSRC} ; ${TAR} xjf ${DISTDIR}/${DIST_SUBDIR}/${OOO_EXTRA_ARTWORK}
 	#cd ${WRKDIR} ; ${TAR} xjf ${DISTDIR}/${DIST_SUBDIR}/${OOO_OPENCLIPART}
 .if defined(DEVELOPER_VER)
 	@${MKDIR} ${WRKSRC}/external_images
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${OOO_CRYSTAL_IMAGES} ${WRKSRC}/external_images
+
 .endif
 #apply FreeBSD specifc (?) patches for ooo-build :(
 #	@cd ${WRKSRC} ; ${PATCH} < ${.CURDIR}/files/cairo-patch

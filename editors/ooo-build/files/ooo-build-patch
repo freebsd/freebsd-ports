@@ -20,9 +20,9 @@ gnu patch is gpatch for FreeBSD.
  	$base_cmd = 'sed \'s/^\(@.*\)\r$/\1/\' | ' . $base_cmd;
      }
 
---- patches/src680/apply.orig	Fri Feb 17 03:20:55 2006
-+++ patches/src680/apply	Sat Feb 18 08:52:04 2006
-@@ -67,6 +67,8 @@
+--- patches/src680/apply.orig	Fri Mar 10 01:33:16 2006
++++ patches/src680/apply	Fri Mar 17 08:49:29 2006
+@@ -70,6 +70,8 @@
  Gentoo64: GentooBase, 64bit
  # Win32
  Win32 : Win32Common, NovellOnly, NovellOnlyWin32, NovellSplash
@@ -31,7 +31,7 @@ gnu patch is gpatch for FreeBSD.
  # translate.org.za
  translate-org-za-linux: translate-org-za-common, translate-org-za-splash, LinuxCommon, Common, Lockdown
  translate-org-za-win32: translate-org-za-common, translate-org-za-splash, Win32Common, Common
-@@ -314,7 +316,7 @@
+@@ -328,7 +330,7 @@
  
  [ Shrink ]
  # strip 450k of .comment sections - i#57063
@@ -40,17 +40,39 @@ gnu patch is gpatch for FreeBSD.
  
  
  [ QuickStarter ]
-@@ -635,11 +637,11 @@
+@@ -341,7 +343,7 @@
+ # Show more steps during startup
+ speed-ooqstart-more-steps.diff
+ # Make it X11+glib-only
+-speed-ooqstart-x11-only.diff
++# speed-ooqstart-x11-only.diff
  
- [ BuildBits <= src680-m156 < oob680-m1 ]
- # do not pack any potential .orig files with ppds
--psprint_config-no-orig-m156.diff
-+# psprint_config-no-orig-m156.diff
  
- [ BuildBits > src680-m156 >= oob680-m1 ]
+ # make the office socket name more predictable for external re-use
+@@ -657,11 +659,11 @@
+ buildfix-connectivity-kab-stdio.diff
+ 
  # do not pack any potential .orig files with ppds
 -psprint_config-no-orig.diff
 +# psprint_config-no-orig.diff
  
- [ BuildBits < oob680-m1 ]
- # add possibility to set ARCH_FLAGS when building portaudio, i#53387
+ [ BuildBits == oob680-m5 != OOO_2_0_2 ]
+ # install ppd and afm again by default, added as master fix to oob680-m5, i#62068
+-buildfix-ppd-afm-check-62068.diff
++# buildfix-ppd-afm-check-62068.diff
+ 
+ [ MandrivaOnly ]
+ mozilla-firefox.diff
+@@ -756,10 +758,10 @@
+ parallel-sysui-makefiles.diff
+ 
+ # Fix/workaround race condition with .REMOVE rule #16752
+-#parallel-dmake-dont-remove.diff
++# parallel-dmake-dont-remove.diff
+ 
+ # Fixes from CWS dmake43p01
+-cws-dmake43p01-20060131.diff
++# cws-dmake43p01-20060131.diff
+ 
+ 
+ [ VCL ]
