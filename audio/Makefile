@@ -349,6 +349,7 @@
     SUBDIR += normalize
     SUBDIR += nosefart
     SUBDIR += nspmod
+    SUBDIR += nyello
     SUBDIR += ocp
     SUBDIR += ogg2mp3
     SUBDIR += oggsplit
