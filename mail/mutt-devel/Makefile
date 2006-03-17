@@ -187,15 +187,9 @@ AC_PATCH_VERSION=	${PORTVERSION}
 .if defined(WITH_MUTT_MAILDIR_HEADER_CACHE)
 WITH_MUTT_IMAP_HEADER_CACHE=	yes
 .endif
-.if defined(WITH_MUTT_SIGNATURE_MENU)
-IGNORE=	cannot install: the WITH_MUTT_SIGNATURE_MENU does not work at the moment
-.endif
 .if defined(WITH_MUTT_SIDEBAR_PATCH)
 .if defined(WITH_MUTT_NNTP)
 IGNORE=	cannot install: the WITH_MUTT_SIDEBAR_PATCH and WITH_MUTT_NNTP are not compatible
-.endif
-.if defined(WITH_MUTT_SIGNATURE_MENU)
-IGNORE=	cannot install: the WITH_MUTT_SIDEBAR_PATCH and WITH_MUTT_SIGNATURE_MENU are not compatible
 .endif
 .endif
 .if defined(WITH_MUTT_ASSUMED_CHARSET_PATCH)
@@ -311,6 +305,11 @@ post-patch::
 post-patch::
 	@${PATCH} ${PATCH_ARGS} -p1 < ${PATCHDIR}/extra-patch-maildir-header-cache
 .endif
+.if defined(WITH_MUTT_SIGNATURE_MENU)
+XML_NEEDED=	yes
+post-patch::
+	@${PATCH} ${PATCH_ARGS} -p1 < ${PATCHDIR}/extra-patch-signature-menu
+.endif
 .if defined(WITH_MUTT_MAILDIR_MTIME_PATCH)
 post-patch::
 .if defined(WITH_MUTT_NNTP)
@@ -390,10 +389,6 @@ pre-patch::
 .if ! defined(WITHOUT_MUTT_QUOTE_PATCH)
 PATCHFILES+=	patch-${VVV_PATCH_VERSION}.vvv.initials.gz:vvv \
 		patch-${VVV_PATCH_VERSION}.vvv.quote.gz:vvv
-XML_NEEDED=	yes
-.endif
-.if defined(WITH_MUTT_SIGNATURE_MENU)
-PATCHFILES+=	patch-${CD_PATCH_VERSION}.cd.signatures_menu.2.1:cd
 XML_NEEDED=	yes
 .endif
 .if defined(WITH_MUTT_IFDEF_PATCH)
