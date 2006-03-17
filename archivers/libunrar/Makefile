@@ -7,6 +7,7 @@
 
 PORTNAME=	libunrar
 PORTVERSION=	3.54
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	http://files2.rarlab.com/rar/ \
 		http://files3.rarlab.com/rar/ \
