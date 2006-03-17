@@ -1,10 +1,10 @@
 bin/wavbreaker
 bin/wavinfo
 bin/wavmerge
-share/wavbreaker/images/break.png
-share/wavbreaker/images/break2.png
-share/wavbreaker/images/del-break.png
-share/wavbreaker/images/play.png
-share/wavbreaker/images/stop.png
+%%DATADIR%%/images/break.png
+%%DATADIR%%/images/break2.png
+%%DATADIR%%/images/del-break.png
+%%DATADIR%%/images/play.png
+%%DATADIR%%/images/stop.png
 @dirrm share/wavbreaker/images
 @dirrm share/wavbreaker
