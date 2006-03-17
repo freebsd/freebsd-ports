@@ -203,7 +203,7 @@ SCRIPTS=
 
 SCRIPTS_DATA=
 
-pre-extract:
+pre-everything::
 	@${ECHO_MSG} ""
 .if defined(WITHOUT_NEON)
 	@${ECHO_MSG} "WebDAV/Delta-V repository access module disabled."
