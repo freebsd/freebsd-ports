@@ -10,6 +10,4 @@ bin/%%GNU_HOST%%-g++%%SUFFIX%%
 bin/%%GNU_HOST%%-gcc-%%GCC_VER%%
 bin/%%GNU_HOST%%-gcc%%SUFFIX%%
 info/gcc%%SUFFIX%%/dir
-%%FORTRAN%%bin/gfortran%%SUFFIX%%
-%%FORTRAN%%bin/%%GNU_HOST%%-gfortran%%SUFFIX%%
 @comment Insert PLIST.lib here
