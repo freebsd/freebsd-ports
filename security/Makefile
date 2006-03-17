@@ -230,6 +230,7 @@
     SUBDIR += mac-robber
     SUBDIR += makepasswd
     SUBDIR += manipulate_data
+    SUBDIR += matrixssl
     SUBDIR += mcrypt
     SUBDIR += md4coll
     SUBDIR += md5coll
