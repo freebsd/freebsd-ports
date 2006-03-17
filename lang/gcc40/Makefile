@@ -7,8 +7,8 @@
 #
 
 PORTNAME=	gcc
-PORTVERSION=	4.0.3
-PORTREVISION=	20060216
+PORTVERSION=	4.0.4
+PORTREVISION=	20060316
 CATEGORIES=	lang
 VERSIONSTRING=	4.0-${PORTREVISION}
 MASTER_SITES=	${MASTER_SITE_GCC}
@@ -17,19 +17,12 @@ DISTFILES=	gcc-core-${VERSIONSTRING}${EXTRACT_SUFX} \
 		gcc-g++-${VERSIONSTRING}${EXTRACT_SUFX} \
 		gcc-objc-${VERSIONSTRING}${EXTRACT_SUFX} \
 		gcc-testsuite-${VERSIONSTRING}${EXTRACT_SUFX}
-.if defined(WITH_FORTRAN)
-DISTFILES+=	gcc-fortran-${VERSIONSTRING}${EXTRACT_SUFX}
-.endif
 
 MAINTAINER=	gerald@FreeBSD.org
 COMMENT=	GNU Compiler Collection 4.0
 
-.if defined(WITH_FORTRAN)
-LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
-BUILD_DEPENDS=	${LOCALBASE}/lib/libmpfr.a:${PORTSDIR}/math/mpfr
-.endif
-
-LATEST_LINK?=	gcc40${PKGNAMESUFFIX}
+SUFFIX=		40
+LATEST_LINK?=	gcc${SUFFIX}${PKGNAMESUFFIX}
 USE_BISON=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -50,7 +43,6 @@ CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 
 SRCDIR=		${WRKDIR}/gcc-${VERSIONSTRING}
 WRKSRC=		${WRKDIR}/build
-SUFFIX=		40
 TARGLIB=	${PREFIX}/lib/gcc/${CONFIGURE_TARGET}/${PORTVERSION}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--disable-nls \
@@ -61,18 +53,10 @@ CONFIGURE_ARGS+=	--disable-nls \
 		--with-gxx-include-dir=${TARGLIB}/include/c++/ \
 		--infodir=${PREFIX}/${INFO_PATH}/gcc${SUFFIX}
 CONFIGURE_ENV=	RANLIB=:
-.if defined(WITH_FORTRAN)
-CONFIGURE_ARGS+=	--with-gmp=${LOCALBASE}
-.endif
 MAKE_ARGS+=	MAKEINFOFLAGS="--no-split"
-.if defined(WANT_SHAREDLIBS)
-CONFIGURE_ARGS+=	--enable-shared
+ALL_TARGET=	bootstrap-lean
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	${TARGLIB}
-.else
-CONFIGURE_ARGS+=	--disable-shared
-.endif
-ALL_TARGET=	bootstrap-lean
 PLIST_SUB=	GCC_VER=${PORTVERSION} GNU_HOST=${CONFIGURE_TARGET} \
 		SUFFIX=${SUFFIX}
 MAN1=		cpp${SUFFIX}.1 \
@@ -84,14 +68,6 @@ INFO=		gcc${SUFFIX}/cpp \
 		gcc${SUFFIX}/gcc \
 		gcc${SUFFIX}/gccinstall \
 		gcc${SUFFIX}/gccint
-
-.if defined(WITH_FORTRAN)
-MAN1+=	gfortran${SUFFIX}.1
-INFO+=	gcc${SUFFIX}/gfortran
-PLIST_SUB+=	FORTRAN=""
-.else
-PLIST_SUB+=	FORTRAN="@comment "
-.endif
 
 pre-everything::
 	@${ECHO_MSG} "Making GCC ${DISTNAME:S/^gcc-//} for ${OPSYS} ${OSREL}  target=${CONFIGURE_TARGET}"
@@ -121,9 +97,6 @@ post-install:
 	done
 .for f in c++ gcc g++ cpp gcov ${CONFIGURE_TARGET}-gcc ${CONFIGURE_TARGET}-g++
 	# gij and jv-convert, for example, are not built on all platforms.
-	if [ -e ${PREFIX}/bin/${f}${SUFFIX} ]; then \
-	  ${STRIP_CMD} ${PREFIX}/bin/${f}${SUFFIX}; \
-	fi
 	if [ -e ${PREFIX}/man/man1/${f}.1 ]; then \
 	  ${MV} -f ${PREFIX}/man/man1/${f}.1 \
 	           ${PREFIX}/man/man1/${f}${SUFFIX}.1; \
