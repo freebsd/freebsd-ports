@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libextractor
-PORTVERSION=	0.5.10
+PORTVERSION=	0.5.11
 CATEGORIES=	textproc
 MASTER_SITES=	http://gnunet.org/libextractor/download/ \
 		${MASTER_SITE_GNU}
