@@ -24,6 +24,9 @@ DISTNAME=	nessus-core-${PORTVERSION}
 MAINTAINER=	udo.schweigert@siemens.com
 COMMENT=	A security scanner: looks for vulnerabilities in a given network
 
+DEPRECATED=	Development version of nessus is no longer available in sources
+EXPIRATION_DATE=	2006-04-17
+
 CONFLICTS=	nessus-[0-9]* nessus-gtk-[0-9]* nessus-gtk2-[0-9]*
 LIB_DEPENDS=	nasl.5:${PORTSDIR}/security/nessus-libnasl-devel
 
@@ -33,7 +36,6 @@ PKGDEINSTALL=	${WRKDIR}/pkg-deinstall.sh
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	YES
 USE_RC_SUBR=	YES
 WANT_GNOME=	yes
 .if defined(WITHOUT_NESSUS_GTK) || defined(WITHOUT_GTK)
@@ -87,7 +89,7 @@ post-install:
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/move_nessus
 .if ! exists(${PREFIX}/var/CA/serverkey.pem)
 	@${ECHO} ""
-	@${ECHO} "**************************************************************************"   
+	@${ECHO} "**************************************************************************"
 	@${ECHO} "To create and install a new certificate, type \"make cert\""
 	@${ECHO} "**************************************************************************"
 	@${ECHO} ""

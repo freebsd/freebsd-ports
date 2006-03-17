@@ -19,6 +19,9 @@ DISTNAME=	nessus-plugins-GPL-${PORTVERSION}
 MAINTAINER=	udo.schweigert@siemens.com
 COMMENT=	Plugins for Nessus, the security scanner
 
+DEPRECATED=	Development version of nessus is no longer available in sources
+EXPIRATION_DATE=	2006-04-17
+
 CONFLICTS=	nessus-plugins-[0-9]*
 
 BUILD_DEPENDS=	${LOCALBASE}/include/nessus/nessus-devel.h:${PORTSDIR}/security/nessus-devel

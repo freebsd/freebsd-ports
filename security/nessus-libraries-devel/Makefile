@@ -21,6 +21,9 @@ DISTNAME=	nessus-libraries-${PORTVERSION}
 MAINTAINER=	udo.schweigert@siemens.com
 COMMENT=	Libraries for Nessus, the security scanner
 
+DEPRECATED=	Development version of nessus is no longer available in sources
+EXPIRATION_DATE=	2006-04-17
+
 CONFLICTS=	nessus-libraries-[0-9]*
 
 DIST_SUBDIR=	nessus
