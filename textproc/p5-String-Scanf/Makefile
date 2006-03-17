@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	String
 PKGNAMEPREFIX=		p5-
 
 MAINTAINER=		perl@FreeBSD.org
-COMMENT=	Emulates the sscanf() of the C stdio library
+COMMENT=		Emulates the sscanf() of the C stdio library
 
 PERL_CONFIGURE=		yes
 
