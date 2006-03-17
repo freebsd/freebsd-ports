@@ -6,27 +6,27 @@
 #
 
 PORTNAME?=	firebird
-PORTVERSION=	1.5.2
-PORTREVISION?=	4
+PORTVERSION=	1.5.3
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=firebird
 PKGNAMESUFFIX?=	-server
-DISTNAME=	firebird-1.5.2.4731
+DISTNAME=	firebird-1.5.3.4870
 
 MAINTAINER=	skv@FreeBSD.org
 COMMENT?=	The open-source InterBase(tm) 6.0 spin-off (Classic version)
 
-USE_REINPLACE=	yes
 USE_BISON=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf:259 libtool:15
+USE_AUTOTOOLS=	autoconf:259 aclocal:19 libtool:15
+ACLOCAL_ARGS=	--acdir=${ACLOCAL_DIR} -I ${LOCALBASE}/share/aclocal
 USE_GCC=	3.4+
 
 LOCALSTATEDIR=	/var/db/firebird
 CONFDIR=	${PREFIX}/etc/firebird
+LIBEXECDIR=	${PREFIX}/libexec/firebird
 PLIST_SUB=	FIREBIRD_VERSION=${PORTVERSION} \
 		LOCALSTATEDIR="var/db/firebird" CONFDIR="etc/firebird"
 
@@ -36,7 +36,7 @@ LD=	${CC}
 # Don't strip binary files
 STRIP=
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
@@ -95,7 +95,7 @@ pre-everything::
 	@${ECHO_MSG} "Cancel this installation now and backup your databases"
 	@${ECHO_MSG} "if you have not already done so."
 .if !defined(BATCH)
-	@sleep 10
+	@sleep 2
 .endif
 .endif
 
@@ -124,6 +124,7 @@ do-configure:
 	@(cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${MAKE_ENV} MAKE=${GMAKE}	\
 	${AUTOTOOLS_VARS} ./autogen.sh --localstatedir=${LOCALSTATEDIR} \
 		--prefix=${LOCALSTATEDIR} --exec-prefix=${PREFIX} \
+		--libexecdir=${LIBEXECDIR} \
 		--sysconfdir=${CONFDIR} --datadir=${DATADIR} ${AUTOGENARGS})
 
 post-configure:
@@ -141,12 +142,12 @@ do-install:
 	@${MKDIR} ${CONFDIR}
 	${INSTALL_DATA} ${WRKDIR}/aliases.conf ${CONFDIR}/aliases.conf.sample
 
-	${MKDIR} ${LOCALSTATEDIR}/UDF ${LOCALSTATEDIR}/help ${LOCALSTATEDIR}/intl
+	${MKDIR} ${LIBEXECDIR}/udf ${LOCALSTATEDIR}/help ${LIBEXECDIR}/intl
 
 	${CHOWN} -R firebird:firebird ${LOCALSTATEDIR}
 
-	${INSTALL_FB} -m 0550 ${UDF_SO:S!^!${WRKSRC}/gen/firebird/UDF/!} ${LOCALSTATEDIR}/UDF
-	${INSTALL_FB} -m 0440 ${UDF_SQL:S!^!${WRKSRC}/!} ${LOCALSTATEDIR}/UDF
+	${INSTALL_FB} -m 0555 ${UDF_SO:S!^!${WRKSRC}/gen/firebird/UDF/!} ${LIBEXECDIR}/udf
+	${INSTALL_FB} -m 0444 ${UDF_SQL:S!^!${WRKSRC}/!} ${LIBEXECDIR}/udf
 
 .if !exists(${LOCALSTATEDIR}/security.fdb)
 	${INSTALL_FB} -m 0660 -o firebird ${WRKSRC}/gen/firebird/security.fdb \
@@ -158,7 +159,7 @@ do-install:
 	${INSTALL_FB} -m 0440 ${WRKSRC}/gen/firebird/help/help.fdb \
 		${LOCALSTATEDIR}/help
 
-	${INSTALL_FB} -m 0550 ${WRKSRC}/gen/firebird/intl/libfbintl.so ${LOCALSTATEDIR}/intl/fbintl
+	${INSTALL_FB} -m 0555 ${WRKSRC}/gen/firebird/intl/libfbintl.so ${LIBEXECDIR}/intl/fbintl
 
 	${INSTALL_DATA} ${FILESDIR}/RELNOTES ${LOCALSTATEDIR}
 .else
@@ -166,11 +167,13 @@ do-install:
 	${INSTALL_PROGRAM} ${CLIENT_BIN:S!^!${WRKSRC}/gen/firebird/bin/!} \
 		${PREFIX}/bin
 
+	${SED} -e "s=%%PREFIX%%=${PREFIX}=g" ${WRKSRC}/gen/firebird/misc/firebird.conf > ${WRKDIR}/firebird.conf
+
 	@${MKDIR} ${CONFDIR}
 .if !exists(${CONFDIR}/firebird.conf)
-	${INSTALL_DATA} ${WRKSRC}/gen/firebird/misc/firebird.conf ${CONFDIR}
+	${INSTALL_DATA} ${WRKDIR}/firebird.conf ${CONFDIR}
 .endif
-	${INSTALL_DATA} ${WRKSRC}/gen/firebird/misc/firebird.conf ${CONFDIR}/firebird.conf.sample
+	${INSTALL_DATA} ${WRKDIR}/firebird.conf ${CONFDIR}/firebird.conf.sample
 
 	${INSTALL_DATA} ${WRKSRC}/gen/firebird/lib/libib_util.so \
 		${WRKSRC}/gen/firebird/lib/libfbclient.so.${PORTVERSION} \

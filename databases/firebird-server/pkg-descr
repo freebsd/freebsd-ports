@@ -1,10 +1,8 @@
-The open-source InterBase(tm) 6.0 spin-off (Classic server version)
-
-InterBase is a world-class DBMS with a history too rich to detail
-here.  Once selling for several thousands of dollars per license,
-some very big players use it worldwide.  Inprise has open-sourced
-InterBase 6.0, and a lively bunch of folks has charged themselves
-with seeing that it lives on through the Firebird project.
+Firebird is a relational database offering many ANSI SQL-99 features
+that runs on Linux, Windows, and a variety of Unix platforms.  Firebird
+offers excellent concurrency, high performance, and powerful language
+support for stored procedures and triggers.  It has been used in
+production systems, under a variety of names since 1981.
 
 For more information on Firebird and InterBase, see:
 
