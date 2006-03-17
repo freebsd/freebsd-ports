@@ -7,7 +7,7 @@
 
 PORTNAME=	nntpcache
 PORTVERSION=	3.0.2
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	news
 MASTER_SITES=	http://www.nntpcache.com/pub/nntpcache/
 

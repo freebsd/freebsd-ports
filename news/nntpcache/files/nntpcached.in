@@ -11,7 +11,7 @@
 # nntpcached_enable="YES"
 #
 
-. /etc/rc.subr
+. %%RC_SUBR%%
 
 name=nntpcached
 rcvar=`set_rcvar`
