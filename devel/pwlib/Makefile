@@ -7,7 +7,7 @@
 
 PORTNAME=	pwlib
 PORTVERSION=	1.9.2
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.voxgratia.org/releases/
@@ -31,12 +31,14 @@ INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>
 
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -O1 -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" \
-		PTHREAD_LIBS="${PTHREAD_LIBS}"
-MAKE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
+		PTHREAD_LIBS="${PTHREAD_LIBS}" \
+		CFLAGS="${CFLAGS} -O1"
+MAKE_ENV=	CPPFLAGS="${CPPFLAGS} -O1 -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" \
-		STDCCFLAGS+="-I${LOCALBASE}"
+		STDCCFLAGS+="-I${LOCALBASE}" \
+		CFLAGS="${CFLAGS} -O1"
 
 # if explicitely asked for, depend upon it
 .if defined(WITH_SDL)
