@@ -2,7 +2,7 @@
 ---------------------------------------------------------
 Firebird is now installed.
 
-To start the server add the following line to /etc/services:
+Before start the server ensure that the following line exists in /etc/services:
 
 gds_db		3050/tcp  #InterBase Database Remote Protocol
 

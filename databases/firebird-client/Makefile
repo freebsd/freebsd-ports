@@ -7,7 +7,6 @@
 
 PORTNAME=	firebird
 PKGNAMESUFFIX=	-client
-PORTREVISION=	3
 
 COMMENT=	The open-source InterBase(tm) 6.0 spin-off (client)
 
