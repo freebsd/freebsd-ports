@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnustep-back
-PORTVERSION=	0.10.2
+PORTVERSION=	0.10.3
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNUSTEP}
 MASTER_SITE_SUBDIR=	core
@@ -66,6 +66,7 @@ PLIST_SUB+=		BACK=cairo-${BACKVERSION}
 PLIST_SUB+=		USE_XLIB="@comment "
 BACK_SUFFIX?=		-cairo
 CONFLICTS?=		gunstep-back-0.* gunstep-back-xdps-0.* gunstep-back-art-0.*
+BROKEN=			needs new cairo
 .else
 CONFIGURE_ARGS+=	--enable-graphics=xlib --with-name=back
 CONFIGURE_ARGS+=	--disable-glitz

@@ -465,6 +465,7 @@ System/Library/Headers/AppKit/NSWindow+Toolbar.h
 System/Library/Headers/AppKit/NSWindowController.h
 System/Library/Headers/AppKit/NSWorkspace.h
 System/Library/Headers/AppKit/PSOperators.h
+System/Library/Headers/Cocoa/Cocoa.h
 System/Library/Headers/GNUstepGUI/GMAppKit.h
 System/Library/Headers/GNUstepGUI/GMArchiver.h
 System/Library/Headers/GNUstepGUI/GSDisplayServer.h
@@ -648,6 +649,7 @@ System/Library/PostScript/PPD/English.lproj/Generic-PostScript_Printer-Postscrip
 System/Library/Services/GSspell.service/GSspell
 System/Library/Services/GSspell.service/Resources/Info-gnustep.plist
 System/Tools/gclose
+System/Tools/gcloseall
 System/Tools/gopen
 System/Tools/make_services
 System/Tools/set_show_service
@@ -664,6 +666,7 @@ System/Tools/set_show_service
 @dirrm System/Library/Libraries/Resources/gnustep-gui
 @dirrm System/Library/Headers/gnustep/gui
 @dirrm System/Library/Headers/GNUstepGUI
+@dirrm System/Library/Headers/Cocoa
 @dirrm System/Library/Headers/AppKit
 %%PORTDOCS%%@dirrm System/Library/Documentation/User/Gui/GuiUser
 %%PORTDOCS%%@dirrm System/Library/Documentation/User/Gui
