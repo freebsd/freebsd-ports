@@ -298,6 +298,7 @@ include/dps_doc.h
 include/dps_efence.h
 include/dps_env.h
 include/dps_execget.h
+include/dps_filence.h
 include/dps_ftp.h
 include/dps_guesser.h
 include/dps_hash.h
