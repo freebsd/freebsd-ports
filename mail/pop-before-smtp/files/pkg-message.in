@@ -5,13 +5,13 @@
 *		 |  _ <  __/ (_| | (_| | |  | |  __/			*
 *		 |_| \_\___|\__,_|\__,_|_|  |_|\___|			*
 *									*
-*	By default, %PREFIX%/etc/rc.d/pop-before-smtp.sh		*
+*	By default, %%PREFIX%%/etc/rc.d/pop-before-smtp.sh		*
 *	will not start the daemon. You need to set			*
 *	'pop_before_smtp_enable=yes' somewhere in your rc.conf		*
 *	chain.								*
 *									*
-*	Please see: 'perldoc %PREFIX%/sbin/pop-before-smtp',		*
-*	'%PREFIX%/etc/pop-before-smtp.conf.pl.sample' and		*
-*	'%PREFIX%/share/docs/pop-before-smtp'.			*
+*	Please see: 'perldoc %%PREFIX%%/sbin/pop-before-smtp',		*
+*	'%%PREFIX%%/etc/pop-before-smtp.conf.pl.sample' and		*
+*	'%%PREFIX%%/share/docs/pop-before-smtp'.			*
 *									*
 *************************************************************************
