@@ -8,14 +8,12 @@
 PORTNAME=	aircrack
 PORTVERSION=	2.41
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://www.cr0.net:8040/code/network/ \
-		http://100h.org/wlan/aircrack/ \
-		http://100h.org/wlan/aircrack/archives/ \
-	        http://mirror.arcticnetwork.ca/pub/gentoo/distfiles/ \
-	        http://gentoo.llarian.net/distfiles/ \
-	        http://gentoo.zie.pg.gda.pl/distfiles/ \
-	        http://www.dvo.ru/pub/distfiles/ \
-	        http://gentoo.nedlinux.nl/distfiles/
+MASTER_SITES=	http://mirror.arcticnetwork.ca/pub/gentoo/distfiles/ \
+		http://gentoo.llarian.net/distfiles/ \
+		http://gentoo.zie.pg.gda.pl/distfiles/ \
+		http://www.dvo.ru/pub/distfiles/ \
+		http://gentoo.nedlinux.nl/distfiles/ \
+		http://bsd-geek.de/FreeBSD/distfiles/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	lars.engels@0x20.net
@@ -25,8 +23,6 @@ ALL_TARGET=	aircrack airdecap arpforge mergeivs pcap2ivs
 
 PLIST_FILES=	bin/aircrack bin/airdecap bin/arpforge bin/mergeivs bin/pcap2ivs
 PORTDOCS=	*
-
-USE_REINPLACE=	yes
 
 pre-fetch:
 	@${CAT} ${PKGMESSAGE}
