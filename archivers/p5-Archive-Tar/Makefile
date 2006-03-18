@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Archive-Tar
-PORTVERSION=	1.28
+PORTVERSION=	1.29
 CATEGORIES=	archivers perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Archive
@@ -35,15 +35,7 @@ RUN_DEPENDS+=	${SITE_PERL}/Text/Diff.pm:${PORTSDIR}/textproc/p5-Text-Diff
 .endif
 
 .if ${PERL_LEVEL} < 500600
-
-post-patch:
-	${PERL} -pi -e "s/'>',/'>'./" ${WRKSRC}/lib/Archive/Tar.pm
-	${PERL} -pi -e 's/seek \$$handle, 0, 0/\$$handle->setpos\(0\)/' ${WRKSRC}/lib/Archive/Tar.pm
-	${PERL} -pi -e 's/my \$$fh;/my \$$fh = IO::File->new;/' ${WRKSRC}/t/02_methods.t
-
-post-configure:
-	${PERL} -pi -e 's/-I\S+PERL\S+ //g if m{PERL_DL_NONLAZY}' ${WRKSRC}/Makefile
-
+IGNORE=		requires perl 5.6.0 or above
 .endif
 
 .include <bsd.port.post.mk>
