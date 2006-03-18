@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dnscheck
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	dns
 MASTER_SITES=	http://www.netleader.com.au/projects/dnscheck/download/
 
