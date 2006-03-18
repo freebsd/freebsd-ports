@@ -1,5 +1,5 @@
---- modules/freeperiod.c.orig	Fri Sep  2 21:30:38 2005
-+++ modules/freeperiod.c	Tue Nov 22 21:55:58 2005
+--- modules/freeperiod.c.orig	Sat Feb 18 11:49:49 2006
++++ modules/freeperiod.c	Sat Feb 18 11:52:43 2006
 @@ -188,25 +188,28 @@
  
  int module_precalc(moduleoption *opt) 
@@ -12,7 +12,7 @@
 +
  	if ( exclnum == 0 && texcl == NULL )
  	{
- 		info(_("module '%s' loaded, but not used"), "freeperiod.so");
+ 		info(_("module '%s' has been loaded, but not used"), "freeperiod.so");
  		return 0;
  	}
  	

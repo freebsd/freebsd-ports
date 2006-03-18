@@ -1,6 +1,6 @@
---- modules/sametime.c.orig	Sun Sep  4 21:20:52 2005
-+++ modules/sametime.c	Tue Nov 22 21:40:47 2005
-@@ -64,9 +64,9 @@
+--- modules/sametime.c.orig	Sat Feb 18 11:58:36 2006
++++ modules/sametime.c	Sat Feb 18 11:59:38 2006
+@@ -90,9 +90,9 @@
  	resource *res2;
  	resourcetype *restype;
  

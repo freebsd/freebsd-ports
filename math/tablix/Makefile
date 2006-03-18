@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	tablix2
-PORTVERSION=	0.3.0
-PORTREVISION=	1
+PORTVERSION=	0.3.1
 CATEGORIES=	math www
-MASTER_SITES=	http://www.tablix.org/releases/stable/
+MASTER_SITES=	http://www.tablix.org/releases/stable/ \
+		http://my.samba.org/
 
 MAINTAINER=	amir.husaini@gmail.com
 COMMENT=	Free software for solving timetabling problems
@@ -23,10 +23,20 @@ USE_GMAKE=	yes
 USE_GNOME=	libxml2
 GNU_CONFIGURE=	yes
 
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+PLIST_SUB=	NLS=""
+.else
+CONFIGURE_ARGS+=--with-included-gettext \
+		--disable-nls
+PLIST_SUB=	NLS="@comment "
+.endif
+
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 CONFIGURE_ENV=		CPPFLAGS=-I${PREFIX}/include LIBS=-L${PREFIX}/lib \
 			PVM_ROOT=${PVM_ROOT} PVM_LIB=${PREFIX}/lib
+
 MAN1=	tablix2.1 tablix2_benchmark.1 tablix2_kernel.1 tablix2_output.1 \
 	tablix2_plot.1 tablix2_test.1
 
