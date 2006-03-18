@@ -7,7 +7,7 @@
 
 PORTNAME=	synaptics
 PORTVERSION=	0.14.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-servers
 MASTER_SITES=	http://web.telia.com/~u89404340/touchpad/files/:synaptics
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:synaptics \
