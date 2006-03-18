@@ -8,7 +8,7 @@ aircrack is a set of tools for auditing wireless networks:
 
 At the moment airodump and aireplay cannot be built on FreeBSD.
 
-WWW: http://www.cr0.net:8040/code/network/aircrack/
+WWW: http://freshmeat.net/projects/aircrack/
 
 - Lars Engels
 lars.engels@0x20.net
