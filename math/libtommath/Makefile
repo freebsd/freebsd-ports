@@ -8,8 +8,7 @@
 PORTNAME=	libtommath
 PORTVERSION=	0.38
 CATEGORIES=	math
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	cperciva/libtom
+MASTER_SITES=	http://math.libtomcrypt.com/files/
 DISTNAME=	ltm-${PORTVERSION}
 
 MAINTAINER=	wxs@csh.rit.edu

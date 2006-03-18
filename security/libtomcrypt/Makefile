@@ -8,12 +8,10 @@
 PORTNAME=	libtomcrypt
 PORTVERSION=	1.09
 CATEGORIES=	security
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	cperciva/libtom
+MASTER_SITES=	http://libtomcrypt.com/files/
 DISTNAME=	crypt-${PORTVERSION}
 
-PATCH_SITES=	${MASTER_SITE_LOCAL}
-PATCH_SITE_SUBDIR=	cperciva/libtom
+PATCH_SITES=	http://libtomcrypt.com/files/patch-1.09/
 PATCHFILES=	lrw_process.c.patch
 
 MAINTAINER=	wxs@csh.rit.edu
