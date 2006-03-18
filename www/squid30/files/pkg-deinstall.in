@@ -13,15 +13,15 @@ DEINSTALL)
 	done
 	;;
 POST-DEINSTALL)
-	echo "===> post-deinstallation information for $1"
+	echo "===> post-deinstallation information for $1:"
 	echo ""
 	echo "     Note:"
 	echo "     squid related user accounts and groups were not removed."
 	echo ""
-	echo "     To remove the 'squid' user and the 'squid' group which were"
+	echo "     To remove the '%%SQUID_UID%%' user and the '%%SQUID_GID%%' group which were"
 	echo "     created by a default installation of this package, run"
 	echo ""
-	echo "     pw userdel -r -n squid -u 100"
+	echo "     pw userdel -r -n %%SQUID_UID%% -u 100"
 	echo ""
 	if  [ -d ${PKG_PREFIX}/squid -o -d ${PKG_PREFIX}/etc/squid ] ; then
 		echo ""

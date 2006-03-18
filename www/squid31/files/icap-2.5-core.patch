@@ -20,8 +20,46 @@ for the "official" auto-generated patchset.
 See http://devel.squid-cache.org/icap/ for further information
 about the ICAP client project.
 
-Patch last updated: 2005-12-17
+Patch last updated: 2006-03-17
 
+Index: errors/Azerbaijani/ERR_ICAP_FAILURE
+===================================================================
+RCS file: errors/Azerbaijani/ERR_ICAP_FAILURE
+diff -N errors/Azerbaijani/ERR_ICAP_FAILURE
+--- /dev/null	1 Jan 1970 00:00:00 -0000
++++ errors/Azerbaijani/ERR_ICAP_FAILURE	8 Dec 2003 12:30:56 -0000	1.1.2.1
+@@ -0,0 +1,31 @@
++<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
++<HTML><HEAD>
++<TITLE>ERROR: The requested URL could not be retrieved</TITLE>
++<STYLE type="text/css"><!--BODY{background-color:#ffffff; font-family:verdana,sans-serif}--></STYLE>
++</HEAD><BODY>
++<H1>ERROR</H1>
++<H2>The requested URL could not be retrieved</H2>
++<HR noshade size="1px">
++<P>
++While attempting to retrieve the URL:
++<A HREF="%U">%U</A>
++<P>
++the following error was encountered:
++<UL>
++<LI>
++<STRONG>
++ICAP protocol error.
++</STRONG>
++</UL>
++
++<P>
++<P>
++Some aspect of the ICAP communication failed. Possible problems:
++<UL>
++<LI>ICAP server is not reachable.
++<LI>Illegal response from ICAP server.
++</UL>
++</P>
++
++<P>Your cache administrator is <A HREF="mailto:%w">%w</A>. 
++
 Index: errors/Bulgarian/ERR_ICAP_FAILURE
 ===================================================================
 RCS file: errors/Bulgarian/ERR_ICAP_FAILURE
@@ -1981,11 +2019,11 @@ diff -p -u -b -r1.14.6.1 -r1.14.32.2
 Index: src/cf.data.pre
 ===================================================================
 RCS file: /cvsroot/squid/squid/src/cf.data.pre,v
-retrieving revision 1.49.2.84
-retrieving revision 1.49.2.33.2.32
-diff -p -u -b -r1.49.2.84 -r1.49.2.33.2.32
---- src/cf.data.pre	21 Oct 2005 02:13:47 -0000	1.49.2.84
-+++ src/cf.data.pre	24 Oct 2005 17:07:42 -0000	1.49.2.33.2.32
+retrieving revision 1.49.2.86
+retrieving revision 1.49.2.33.2.33
+diff -p -u -b -r1.49.2.86 -r1.49.2.33.2.33
+--- src/cf.data.pre	26 Feb 2006 03:13:57 -0000	1.49.2.86
++++ src/cf.data.pre	16 Feb 2006 17:21:45 -0000	1.49.2.33.2.33
 @@ -2397,7 +2397,6 @@ DOC_START
  	ensure correct results it is best to set server_persisten_connections
  	to off when using this directive in such configurations.
@@ -1994,7 +2032,7 @@ diff -p -u -b -r1.49.2.84 -r1.49.2.33.2.32
  NAME: reply_header_max_size
  COMMENT: (KB)
  TYPE: b_size_t
-@@ -2716,6 +2715,177 @@ DOC_START
+@@ -2716,6 +2715,187 @@ DOC_START
  DOC_END
  
  COMMENT_START
@@ -2051,8 +2089,19 @@ diff -p -u -b -r1.49.2.84 -r1.49.2.33.2.32
 +LOC: Config.icapcfg.send_client_ip
 +DEFAULT: off
 +DOC_START
-+	This adds the header "X-Client-IP" to ICAP requests. Can also be
-+	set from the server's response to OPTIONS.
++	Allows Squid to add the "X-Client-IP" header if requested by
++	an ICAP service in it's response to OPTIONS.
++DOC_END
++
++NAME: icap_send_server_ip
++TYPE: onoff
++IFDEF: HS_FEAT_ICAP
++COMMENT: on|off
++LOC: Config.icapcfg.send_server_ip
++DEFAULT: off
++DOC_START
++	Allows Squid to add the "X-Server-IP" header if requested by
++	an ICAP service in it's response to OPTIONS.
 +DOC_END
 +
 +NAME: icap_send_auth_user
@@ -2062,9 +2111,8 @@ diff -p -u -b -r1.49.2.84 -r1.49.2.33.2.32
 +LOC: Config.icapcfg.send_auth_user
 +DEFAULT: off
 +DOC_START
-+	This adds the header "X-Authenticated-User" to ICAP requests 
-+	if proxy access is authentified. Can also be set from the server's
-+	response to OPTIONS.
++	Allows Squid to add the "X-Authenticated-User" header if requested
++	by an ICAP service in it's response to OPTIONS.
 +DOC_END
 +
 +NAME: icap_auth_scheme
@@ -2199,10 +2247,10 @@ diff -p -u -b -r1.5 -r1.5.48.3
 Index: src/client_side.c
 ===================================================================
 RCS file: /cvsroot/squid/squid/src/client_side.c,v
-retrieving revision 1.47.2.71
+retrieving revision 1.47.2.76
 retrieving revision 1.47.2.28.2.40
-diff -p -u -b -r1.47.2.71 -r1.47.2.28.2.40
---- src/client_side.c	19 Oct 2005 02:13:20 -0000	1.47.2.71
+diff -p -u -b -r1.47.2.76 -r1.47.2.28.2.40
+--- src/client_side.c	11 Mar 2006 03:16:31 -0000	1.47.2.76
 +++ src/client_side.c	6 Dec 2005 21:53:44 -0000	1.47.2.28.2.40
 @@ -109,7 +109,7 @@ static const char *const crlf = "\r\n";
  static CWCB clientWriteComplete;
@@ -2277,7 +2325,7 @@ diff -p -u -b -r1.47.2.71 -r1.47.2.28.2.40
  connStateFree(int fd, void *data)
  {
      ConnStateData *connState = data;
-@@ -958,7 +976,6 @@ connStateFree(int fd, void *data)
+@@ -963,7 +976,6 @@ connStateFree(int fd, void *data)
      } else
  	safe_free(connState->in.buf);
      /* XXX account connState->in.buf */
@@ -2285,7 +2333,7 @@ diff -p -u -b -r1.47.2.71 -r1.47.2.28.2.40
      cbdataFree(connState);
  #ifdef _SQUID_LINUX_
      /* prevent those nasty RST packets */
-@@ -1103,7 +1120,7 @@ clientSetKeepaliveFlag(clientHttpRequest
+@@ -1108,7 +1120,7 @@ clientSetKeepaliveFlag(clientHttpRequest
      }
  }
  
@@ -2294,7 +2342,7 @@ diff -p -u -b -r1.47.2.71 -r1.47.2.28.2.40
  clientCheckContentLength(request_t * r)
  {
      switch (r->method) {
-@@ -1122,7 +1139,7 @@ clientCheckContentLength(request_t * r)
+@@ -1127,7 +1139,7 @@ clientCheckContentLength(request_t * r)
      /* NOT REACHED */
  }
  
@@ -2303,7 +2351,7 @@ diff -p -u -b -r1.47.2.71 -r1.47.2.28.2.40
  clientCachable(clientHttpRequest * http)
  {
      request_t *req = http->request;
-@@ -1148,7 +1165,7 @@ clientCachable(clientHttpRequest * http)
+@@ -1153,7 +1165,7 @@ clientCachable(clientHttpRequest * http)
  }
  
  /* Return true if we can query our neighbors for this object */
@@ -2321,7 +2369,7 @@ diff -p -u -b -r1.47.2.71 -r1.47.2.28.2.40
  clientProcessRequest(clientHttpRequest * http)
  {
      char *url = http->uri;
-@@ -2449,6 +2466,11 @@ clientProcessRequest(clientHttpRequest *
+@@ -2457,6 +2466,11 @@ clientProcessRequest(clientHttpRequest *
      debug(33, 4) ("clientProcessRequest: %s '%s'\n",
  	RequestMethodStr[r->method],
  	url);
@@ -2333,7 +2381,7 @@ diff -p -u -b -r1.47.2.71 -r1.47.2.28.2.40
      if (r->method == METHOD_CONNECT && !http->redirect.status) {
  	http->log_type = LOG_TCP_MISS;
  	sslStart(http, &http->out.size, &http->al.http.code);
-@@ -2993,6 +3015,20 @@ clientReadRequest(int fd, void *data)
+@@ -3001,6 +3015,20 @@ clientReadRequest(int fd, void *data)
  	    (long) conn->in.offset, (long) conn->in.size);
  	len = conn->in.size - conn->in.offset - 1;
      }
@@ -2354,7 +2402,7 @@ diff -p -u -b -r1.47.2.71 -r1.47.2.28.2.40
      statCounter.syscalls.sock.reads++;
      size = FD_READ_METHOD(fd, conn->in.buf + conn->in.offset, len);
      if (size > 0) {
-@@ -3096,7 +3132,8 @@ clientReadRequest(int fd, void *data)
+@@ -3104,7 +3132,8 @@ clientReadRequest(int fd, void *data)
  	    /* add to the client request queue */
  	    for (H = &conn->chr; *H; H = &(*H)->next);
  	    *H = http;
@@ -2364,7 +2412,7 @@ diff -p -u -b -r1.47.2.71 -r1.47.2.28.2.40
  	    /*
  	     * I wanted to lock 'http' here since its callback data for 
  	     * clientLifetimeTimeout(), but there's no logical place to
-@@ -3266,7 +3303,7 @@ clientReadRequest(int fd, void *data)
+@@ -3274,7 +3303,7 @@ clientReadRequest(int fd, void *data)
  }
  
  /* file_read like function, for reading body content */
@@ -2373,7 +2421,7 @@ diff -p -u -b -r1.47.2.71 -r1.47.2.28.2.40
  clientReadBody(request_t * request, char *buf, size_t size, CBCB * callback, void *cbdata)
  {
      ConnStateData *conn = request->body_reader_data;
-@@ -3390,7 +3427,7 @@ clientProcessBody(ConnStateData * conn)
+@@ -3398,7 +3427,7 @@ clientProcessBody(ConnStateData * conn)
  }
  
  /* Abort a body request */
@@ -2391,7 +2439,7 @@ diff -p -u -b -r1.47.2.71 -r1.47.2.28.2.40
  	/*
  	 * assume its a persistent connection; just close it
  	 */
-@@ -3948,3 +3985,49 @@ varyEvaluateMatch(StoreEntry * entry, re
+@@ -3956,3 +3985,49 @@ varyEvaluateMatch(StoreEntry * entry, re
  	}
      }
  }
@@ -2586,10 +2634,10 @@ diff -p -u -b -r1.29.2.18 -r1.29.2.8.2.17
 Index: src/forward.c
 ===================================================================
 RCS file: /cvsroot/squid/squid/src/forward.c,v
-retrieving revision 1.13.6.15
+retrieving revision 1.13.6.16
 retrieving revision 1.13.6.3.2.15
-diff -p -u -b -r1.13.6.15 -r1.13.6.3.2.15
---- src/forward.c	2 Sep 2005 02:13:43 -0000	1.13.6.15
+diff -p -u -b -r1.13.6.16 -r1.13.6.3.2.15
+--- src/forward.c	11 Mar 2006 03:16:31 -0000	1.13.6.16
 +++ src/forward.c	30 Nov 2005 21:52:15 -0000	1.13.6.3.2.15
 @@ -262,7 +262,8 @@ fwdConnectDone(int server_fd, int status
  	else
@@ -2653,10 +2701,10 @@ Index: src/http.c
 ===================================================================
 RCS file: /cvsroot/squid/squid/src/http.c,v
 retrieving revision 1.17.6.32
-retrieving revision 1.17.6.3.6.39
-diff -p -u -b -r1.17.6.32 -r1.17.6.3.6.39
+retrieving revision 1.17.6.3.6.40
+diff -p -u -b -r1.17.6.32 -r1.17.6.3.6.40
 --- src/http.c	19 Oct 2005 02:13:21 -0000	1.17.6.32
-+++ src/http.c	23 Nov 2005 20:33:07 -0000	1.17.6.3.6.39
++++ src/http.c	17 Feb 2006 12:45:21 -0000	1.17.6.3.6.40
 @@ -47,7 +47,7 @@ static CWCB httpSendRequestEntry;
  
  static PF httpReadReply;
@@ -2756,7 +2804,7 @@ diff -p -u -b -r1.17.6.32 -r1.17.6.3.6.39
      if (EBIT_TEST(entry->flags, ENTRY_ABORTED)) {
  	comm_close(fd);
  	return;
-@@ -579,6 +605,33 @@ httpReadReply(int fd, void *data)
+@@ -579,6 +605,37 @@ httpReadReply(int fd, void *data)
      else
  	delay_id = delayMostBytesAllowed(entry->mem_obj, &read_sz);
  #endif
@@ -2784,13 +2832,17 @@ diff -p -u -b -r1.17.6.32 -r1.17.6.3.6.39
 +	    commSetSelect(fd, COMM_SELECT_READ, httpReadReply, httpState, 0);
 +	    return;
 +	}
++
++       if(icap->flags.no_content == 1) {
++	 commSetDefer(fd, fwdCheckDeferRead, icap->respmod.entry);
++       }
 +    }
 +#endif
 +
      errno = 0;
      statCounter.syscalls.sock.reads++;
      len = FD_READ_METHOD(fd, buf, read_sz);
-@@ -595,7 +648,13 @@ httpReadReply(int fd, void *data)
+@@ -595,7 +652,13 @@ httpReadReply(int fd, void *data)
  	    clen >>= 1;
  	IOStats.Http.read_hist[bin]++;
      }
@@ -2805,7 +2857,7 @@ diff -p -u -b -r1.17.6.32 -r1.17.6.3.6.39
  	/* Skip whitespace */
  	while (len > 0 && xisspace(*buf))
  	    xmemmove(buf, buf + 1, len--);
-@@ -625,6 +684,12 @@ httpReadReply(int fd, void *data)
+@@ -625,6 +688,12 @@ httpReadReply(int fd, void *data)
      } else if (len == 0) {
  	/* Connection closed; retrieval done. */
  	httpState->eof = 1;
@@ -2818,7 +2870,7 @@ diff -p -u -b -r1.17.6.32 -r1.17.6.3.6.39
  	if (httpState->reply_hdr_state < 2)
  	    /*
  	     * Yes Henrik, there is a point to doing this.  When we
-@@ -677,7 +742,28 @@ httpReadReply(int fd, void *data)
+@@ -677,7 +746,28 @@ httpReadReply(int fd, void *data)
  		    EBIT_CLR(entry->flags, ENTRY_FWD_HDR_WAIT);
  	    }
  	}
@@ -2847,7 +2899,7 @@ diff -p -u -b -r1.17.6.32 -r1.17.6.3.6.39
  	if (EBIT_TEST(entry->flags, ENTRY_ABORTED)) {
  	    /*
  	     * the above storeAppend() call could ABORT this entry,
-@@ -724,10 +810,21 @@ httpReadReply(int fd, void *data)
+@@ -724,10 +814,21 @@ httpReadReply(int fd, void *data)
  			    ("httpReadReply: Excess data from \"%s %s\"\n",
  			    RequestMethodStr[httpState->orig_request->method],
  			    storeUrl(entry));
@@ -2869,7 +2921,7 @@ diff -p -u -b -r1.17.6.32 -r1.17.6.3.6.39
  		if (keep_alive) {
  		    /* yes we have to clear all these! */
  		    commSetDefer(fd, NULL, NULL);
-@@ -766,6 +863,10 @@ httpReadReply(int fd, void *data)
+@@ -766,6 +867,10 @@ httpReadReply(int fd, void *data)
  		("httpReadReply: Excess data from \"%s %s\"\n",
  		RequestMethodStr[httpState->orig_request->method],
  		storeUrl(entry));
@@ -2880,7 +2932,7 @@ diff -p -u -b -r1.17.6.32 -r1.17.6.3.6.39
  	    fwdComplete(httpState->fwd);
  	    comm_close(fd);
  	    return;
-@@ -776,6 +877,34 @@ httpReadReply(int fd, void *data)
+@@ -776,6 +881,34 @@ httpReadReply(int fd, void *data)
      }
  }
  
@@ -2915,7 +2967,7 @@ diff -p -u -b -r1.17.6.32 -r1.17.6.3.6.39
  /* This will be called when request write is complete. Schedule read of
   * reply. */
  static void
-@@ -803,6 +932,63 @@ httpSendComplete(int fd, char *bufnotuse
+@@ -803,6 +936,63 @@ httpSendComplete(int fd, char *bufnotuse
  	comm_close(fd);
  	return;
      } else {
@@ -2979,7 +3031,7 @@ diff -p -u -b -r1.17.6.32 -r1.17.6.3.6.39
  	/*
  	 * Set the read timeout here because it hasn't been set yet.
  	 * We only set the read timeout after the request has been
-@@ -811,8 +997,18 @@ httpSendComplete(int fd, char *bufnotuse
+@@ -811,8 +1001,18 @@ httpSendComplete(int fd, char *bufnotuse
  	 * the timeout for POST/PUT requests that have very large
  	 * request bodies.
  	 */
@@ -2999,7 +3051,7 @@ diff -p -u -b -r1.17.6.32 -r1.17.6.3.6.39
      }
      httpState->flags.request_sent = 1;
  }
-@@ -1010,8 +1206,11 @@ httpBuildRequestHeader(request_t * reque
+@@ -1010,8 +1210,11 @@ httpBuildRequestHeader(request_t * reque
  	if (!EBIT_TEST(cc->mask, CC_MAX_AGE)) {
  	    const char *url = entry ? storeUrl(entry) : urlCanonical(orig_request);
  	    httpHdrCcSetMaxAge(cc, getMaxAge(url));
@@ -3011,7 +3063,7 @@ diff -p -u -b -r1.17.6.32 -r1.17.6.3.6.39
  	}
  	/* Set no-cache if determined needed but not found */
  	if (orig_request->flags.nocache && !httpHeaderHas(hdr_in, HDR_PRAGMA))
-@@ -1119,6 +1318,7 @@ httpStart(FwdState * fwd)
+@@ -1119,6 +1322,7 @@ httpStart(FwdState * fwd)
      int fd = fwd->server_fd;
      HttpStateData *httpState;
      request_t *proxy_req;
@@ -3019,7 +3071,7 @@ diff -p -u -b -r1.17.6.32 -r1.17.6.3.6.39
      request_t *orig_req = fwd->request;
      debug(11, 3) ("httpStart: \"%s %s\"\n",
  	RequestMethodStr[orig_req->method],
-@@ -1156,12 +1356,22 @@ httpStart(FwdState * fwd)
+@@ -1156,12 +1360,22 @@ httpStart(FwdState * fwd)
  	httpState->request = requestLink(orig_req);
  	httpState->orig_request = requestLink(orig_req);
      }
@@ -3047,8 +3099,8 @@ Index: src/icap_common.c
 RCS file: src/icap_common.c
 diff -N src/icap_common.c
 --- /dev/null	1 Jan 1970 00:00:00 -0000
-+++ src/icap_common.c	22 Nov 2005 22:41:48 -0000	1.1.2.39
-@@ -0,0 +1,785 @@
++++ src/icap_common.c	16 Feb 2006 17:21:45 -0000	1.1.2.40
+@@ -0,0 +1,817 @@
 +/*
 + * $Id$
 + *
@@ -3834,13 +3886,45 @@ diff -N src/icap_common.c
 +    memBufPrintf(mb, "X-Authenticated-User: %s\r\n", base64_encode(authuser));
 +    xfree(authuser);
 +}
++
++/*
++ *  icapAddOriginIP
++ *
++ *  Builds and adds the X-Server-IP header to an ICAP request headers.
++ */
++void
++icapAddOriginIP(MemBuf *mb, const char *host)
++{
++  const ipcache_addrs *addrs;
++  struct in_addr s;
++
++  if (host == NULL) {
++    debug(81, 5)("icapAddOriginIP: NULL host\n");
++    return;
++  }
++    
++  addrs = ipcache_gethostbyname(host, IP_LOOKUP_IF_MISS);
++  if (addrs == NULL) {
++    /*
++     * http://www.i-cap.org/spec/draft-stecher-icap-subid-00.txt :
++     *
++     * [...] If the meta information for some header is not available,
++     * the header field MUST be omitted.
++     */
++    debug(81, 5)("icapAddOriginIP: can't tell IP address\n");
++    return;
++  }
++
++  s = addrs->in_addrs[0];
++  memBufPrintf(mb, "X-Server-IP: %s\r\n", inet_ntoa(s));
++}
 Index: src/icap_opt.c
 ===================================================================
 RCS file: src/icap_opt.c
 diff -N src/icap_opt.c
 --- /dev/null	1 Jan 1970 00:00:00 -0000
-+++ src/icap_opt.c	22 Nov 2005 22:41:48 -0000	1.1.2.17
-@@ -0,0 +1,519 @@
++++ src/icap_opt.c	16 Feb 2006 17:21:45 -0000	1.1.2.18
+@@ -0,0 +1,523 @@
 +
 +/*
 + * $Id$
@@ -4278,6 +4362,10 @@ diff -N src/icap_opt.c
 +	    debug(81, 5) ("icapOptParseEntry: X-Include: found X-Client-IP\n");
 +	    s->flags.need_x_client_ip = 1;
 +	}
++	if (strstr(value_start, "X-Server-IP")) {
++	    debug(81, 5) ("icapOptParseEntry: X-Include: found X-Server-IP\n");
++	    s->flags.need_x_server_ip = 1;
++	}
 +	if (strstr(value_start, "X-Authenticated-User")) {
 +	    debug(81, 5) ("icapOptParseEntry: X-Include: found X-Authenticated-User\n");
 +	    s->flags.need_x_authenticated_user = 1;
@@ -4365,8 +4453,8 @@ Index: src/icap_reqmod.c
 RCS file: src/icap_reqmod.c
 diff -N src/icap_reqmod.c
 --- /dev/null	1 Jan 1970 00:00:00 -0000
-+++ src/icap_reqmod.c	6 Dec 2005 21:53:44 -0000	1.1.2.58
-@@ -0,0 +1,976 @@
++++ src/icap_reqmod.c	17 Feb 2006 12:50:52 -0000	1.1.2.60
+@@ -0,0 +1,981 @@
 +
 +/*
 + * $Id$
@@ -5066,10 +5154,15 @@ diff -N src/icap_reqmod.c
 +    else
 +	memBufPrintf(&mb, ", null-body=%d", mb_hdr.size);
 +    memBufAppend(&mb, crlf, 2);
-+    if (Config.icapcfg.send_client_ip || service->flags.need_x_client_ip)
++
++    if (service->flags.need_x_client_ip && Config.icapcfg.send_client_ip)
 +	memBufPrintf(&mb, "X-Client-IP: %s\r\n", client_addr);
-+    if ((Config.icapcfg.send_auth_user
-+	    || service->flags.need_x_authenticated_user)
++
++    if (service->flags.need_x_server_ip && Config.icapcfg.send_server_ip)
++        icapAddOriginIP(&mb, icap->request->host);
++
++    if ((service->flags.need_x_authenticated_user
++	    && Config.icapcfg.send_auth_user)
 +	&& (icap->request->auth_user_request != NULL))
 +	icapAddAuthUserHeader(&mb, icap->request->auth_user_request);
 +    if (service->keep_alive) {
@@ -5348,8 +5441,8 @@ Index: src/icap_respmod.c
 RCS file: src/icap_respmod.c
 diff -N src/icap_respmod.c
 --- /dev/null	1 Jan 1970 00:00:00 -0000
-+++ src/icap_respmod.c	23 Nov 2005 20:34:34 -0000	1.1.2.60
-@@ -0,0 +1,1039 @@
++++ src/icap_respmod.c	17 Feb 2006 12:45:23 -0000	1.1.2.64
+@@ -0,0 +1,1057 @@
 +
 +/*
 + * $Id$
@@ -5410,13 +5503,17 @@ diff -N src/icap_respmod.c
 +	memBufPrintf(mb, ", res-body=%1d", o3);
 +    else
 +	memBufPrintf(mb, ", null-body=%1d", -o3);
-+
 +    memBufPrintf(mb, crlf);
-+    if (Config.icapcfg.send_client_ip || service->flags.need_x_client_ip) {
++
++    if (service->flags.need_x_client_ip && Config.icapcfg.send_client_ip) {
 +	memBufPrintf(mb, "X-Client-IP: %s\r\n", client_addr);
 +    }
-+    if ((Config.icapcfg.send_auth_user
-+	    || service->flags.need_x_authenticated_user)
++
++    if (service->flags.need_x_server_ip && Config.icapcfg.send_server_ip)
++        icapAddOriginIP(mb, icap->request->host);
++
++    if ((service->flags.need_x_authenticated_user
++	    && Config.icapcfg.send_auth_user)
 +	&& (icap->request->auth_user_request != NULL)) {
 +	icapAddAuthUserHeader(mb, icap->request->auth_user_request);
 +    }
@@ -5456,6 +5553,9 @@ diff -N src/icap_respmod.c
 +	consumed = -1;
 +	o2 = -1;
 +	memBufDefInit(&mb_hdr);
++	httpBuildRequestPrefix(icap->request, icap->request,
++			       icap->respmod.entry, &mb_hdr, icap->http_flags);
++	o3 = mb_hdr.size;
 +    } else {
 +
 +	hlen = headersEnd(icap->respmod.req_hdr_copy.buf,
@@ -5484,12 +5584,12 @@ diff -N src/icap_respmod.c
 +	httpBuildRequestPrefix(icap->request, icap->request,
 +	    icap->respmod.entry, &mb_hdr, icap->http_flags);
 +	o2 = mb_hdr.size;
-+    }
 +
-+    /* Copy response header - Append to request header mbuffer */
-+    memBufAppend(&mb_hdr,
-+	icap->respmod.req_hdr_copy.buf, icap->respmod.req_hdr_copy.size);
-+    o3 = mb_hdr.size;
++    	/* Copy response header - Append to request header mbuffer */
++	memBufAppend(&mb_hdr,
++		     icap->respmod.req_hdr_copy.buf, icap->respmod.req_hdr_copy.size);
++	o3 = mb_hdr.size;
++    }
 +
 +    service = icap->current_service;
 +    assert(service);
@@ -5604,6 +5704,16 @@ diff -N src/icap_respmod.c
 +#endif
 +
 +    if (icap->sc == 0) {
++        // http connection has been closed without sending us anything
++        if(len == 0 && theEnd == 1) {
++	    ErrorState *err;
++	    err = errorCon(ERR_INVALID_RESP, HTTP_BAD_GATEWAY);
++	    err->request = requestLink(icap->request);
++	    errorAppendEntry(icap->respmod.entry, err);
++	    comm_close(icap->icap_fd);
++	    return;
++        }
++
 +	/* No data sent yet. Start with headers */
 +	if ((icap->sc = buildRespModHeader(&mb, icap, buf, len, theEnd)) > 0) {
 +	    buf += icap->sc;
@@ -5979,6 +6089,7 @@ diff -N src/icap_respmod.c
 +	commSetSelect(fd, COMM_SELECT_READ, icapRespModReadReply, icap, 0);
 +#if 1
 +	commSetTimeout(fd, Config.Timeout.read, icapReadTimeout, icap);
++	commSetDefer(fd, fwdCheckDeferRead, icap->respmod.entry);
 +#else
 +	if (icap->flags.wait_for_preview_reply || icap->flags.http_server_eof) {
 +	    /*
@@ -6534,11 +6645,11 @@ diff -p -u -b -r1.6.38.2 -r1.6.60.2
 Index: src/protos.h
 ===================================================================
 RCS file: /cvsroot/squid/squid/src/protos.h,v
-retrieving revision 1.41.6.33
-retrieving revision 1.41.6.13.2.37
-diff -p -u -b -r1.41.6.33 -r1.41.6.13.2.37
---- src/protos.h	16 Sep 2005 02:13:25 -0000	1.41.6.33
-+++ src/protos.h	6 Dec 2005 21:53:44 -0000	1.41.6.13.2.37
+retrieving revision 1.41.6.34
+retrieving revision 1.41.6.13.2.38
+diff -p -u -b -r1.41.6.34 -r1.41.6.13.2.38
+--- src/protos.h	26 Feb 2006 03:13:57 -0000	1.41.6.34
++++ src/protos.h	16 Feb 2006 17:21:45 -0000	1.41.6.13.2.38
 @@ -292,6 +292,8 @@ extern void whoisStart(FwdState *);
  /* http.c */
  extern int httpCachable(method_t);
@@ -6556,7 +6667,7 @@ diff -p -u -b -r1.41.6.33 -r1.41.6.13.2.37
  
  extern char *mime_get_header(const char *mime, const char *header);
  extern char *mime_get_header_field(const char *mime, const char *name, const char *prefix);
-@@ -1341,4 +1344,49 @@ extern void externalAclShutdown(void);
+@@ -1341,4 +1344,53 @@ extern void externalAclShutdown(void);
  extern int externalAclRequiresAuth(void *acl_data);
  extern char *strtokFile(void);
  
@@ -6601,6 +6712,10 @@ diff -p -u -b -r1.41.6.33 -r1.41.6.13.2.37
 +void icapOptInit(void);
 +void icapOptShutdown(void);
 +void icapOptSetUnreachable(icap_service * s);
++
++/* X-Server-IP support */
++void icapAddOriginIP(MemBuf *, const char *);
++
 +/* for debugging purposes only */
 +void dump_icap_config(IcapConfig * cfg);
 +#endif
@@ -6609,10 +6724,10 @@ diff -p -u -b -r1.41.6.33 -r1.41.6.13.2.37
 Index: src/squid.h
 ===================================================================
 RCS file: /cvsroot/squid/squid/src/squid.h,v
-retrieving revision 1.13.6.8
+retrieving revision 1.13.6.9
 retrieving revision 1.13.6.6.2.11
-diff -p -u -b -r1.13.6.8 -r1.13.6.6.2.11
---- src/squid.h	26 Mar 2005 03:15:58 -0000	1.13.6.8
+diff -p -u -b -r1.13.6.9 -r1.13.6.6.2.11
+--- src/squid.h	11 Mar 2006 03:16:31 -0000	1.13.6.9
 +++ src/squid.h	15 May 2005 20:10:33 -0000	1.13.6.6.2.11
 @@ -38,6 +38,14 @@
  #include "config.h"
@@ -6711,12 +6826,12 @@ diff -p -u -b -r1.16.6.9 -r1.16.6.2.2.8
 Index: src/structs.h
 ===================================================================
 RCS file: /cvsroot/squid/squid/src/structs.h,v
-retrieving revision 1.48.2.43
-retrieving revision 1.48.2.9.2.48
-diff -p -u -b -r1.48.2.43 -r1.48.2.9.2.48
---- src/structs.h	4 Sep 2005 02:13:28 -0000	1.48.2.43
-+++ src/structs.h	30 Nov 2005 21:52:15 -0000	1.48.2.9.2.48
-@@ -384,6 +384,22 @@ struct _RemovalPolicySettings {
+retrieving revision 1.48.2.46
+retrieving revision 1.48.2.9.2.49
+diff -p -u -b -r1.48.2.46 -r1.48.2.9.2.49
+--- src/structs.h	11 Mar 2006 03:16:31 -0000	1.48.2.46
++++ src/structs.h	16 Feb 2006 17:21:45 -0000	1.48.2.9.2.49
+@@ -384,6 +384,23 @@ struct _RemovalPolicySettings {
      wordlist *args;
  };
  
@@ -6730,6 +6845,7 @@ diff -p -u -b -r1.48.2.43 -r1.48.2.9.2.48
 +    int preview_size;
 +    int check_interval;
 +    int send_client_ip;
++    int send_server_ip;
 +    int send_auth_user;
 +    char *auth_scheme;
 +};
@@ -6749,7 +6865,7 @@ diff -p -u -b -r1.48.2.43 -r1.48.2.9.2.48
  };
  
  struct _SquidConfig2 {
-@@ -787,7 +806,10 @@ struct _fde {
+@@ -788,7 +807,10 @@ struct _fde {
      } flags;
      squid_off_t bytes_read;
      squid_off_t bytes_written;
@@ -6761,7 +6877,7 @@ diff -p -u -b -r1.48.2.43 -r1.48.2.9.2.48
      struct _fde_disk {
  	DWCB *wrt_handle;
  	void *wrt_handle_data;
-@@ -982,6 +1004,130 @@ struct _http_state_flags {
+@@ -983,6 +1005,131 @@ struct _http_state_flags {
      unsigned int request_sent:1;
  };
  
@@ -6846,6 +6962,7 @@ diff -p -u -b -r1.48.2.43 -r1.48.2.9.2.48
 +    struct {
 +	unsigned int allow_204:1;
 +	unsigned int need_x_client_ip:1;
++	unsigned int need_x_server_ip:1;
 +	unsigned int need_x_authenticated_user:1;
 +    } flags;
 +    int preview;
@@ -6892,7 +7009,7 @@ diff -p -u -b -r1.48.2.43 -r1.48.2.9.2.48
  struct _HttpStateData {
      StoreEntry *entry;
      request_t *request;
-@@ -993,10 +1139,14 @@ struct _HttpStateData {
+@@ -994,10 +1141,14 @@ struct _HttpStateData {
      int fd;
      http_state_flags flags;
      FwdState *fwd;
@@ -6915,7 +7032,7 @@ diff -p -u -b -r1.48.2.43 -r1.48.2.9.2.48
  	unsigned int hit:1;
      } flags;
      struct {
-@@ -1100,6 +1251,9 @@ struct _clientHttpRequest {
+@@ -1107,6 +1253,9 @@ struct _clientHttpRequest {
      } redirect;
      dlink_node active;
      squid_off_t maxBodySize;
@@ -6925,7 +7042,7 @@ diff -p -u -b -r1.48.2.43 -r1.48.2.9.2.48
  };
  
  struct _ConnStateData {
-@@ -1127,7 +1281,6 @@ struct _ConnStateData {
+@@ -1134,7 +1283,6 @@ struct _ConnStateData {
      struct sockaddr_in me;
      struct in_addr log_addr;
      char rfc931[USER_IDENT_SZ];
@@ -6933,7 +7050,7 @@ diff -p -u -b -r1.48.2.43 -r1.48.2.9.2.48
      struct {
  	int n;
  	time_t until;
-@@ -1678,6 +1831,9 @@ struct _request_t {
+@@ -1685,6 +1833,9 @@ struct _request_t {
      char *peer_login;		/* Configured peer login:password */
      time_t lastmod;		/* Used on refreshes */
      const char *vary_headers;	/* Used when varying entities are detected. Changes how the store key is calculated */
@@ -6983,10 +7100,10 @@ diff -p -u -b -r1.25.6.8 -r1.25.6.1.6.13
 Index: src/url.c
 ===================================================================
 RCS file: /cvsroot/squid/squid/src/url.c,v
-retrieving revision 1.7.6.6
+retrieving revision 1.7.6.7
 retrieving revision 1.7.6.5.2.2
-diff -p -u -b -r1.7.6.6 -r1.7.6.5.2.2
---- src/url.c	12 Nov 2005 03:13:48 -0000	1.7.6.6
+diff -p -u -b -r1.7.6.7 -r1.7.6.5.2.2
+--- src/url.c	11 Mar 2006 03:16:31 -0000	1.7.6.7
 +++ src/url.c	23 Nov 2005 20:38:56 -0000	1.7.6.5.2.2
 @@ -103,6 +103,9 @@ const char *ProtocolStr[] =
      "whois",
