@@ -5011,6 +5011,7 @@ kiax		ports/net/kiax
 kicad		ports/cad/kicad
 kicker-applets	ports/misc/kicker-applets
 kickpim		ports/deskutils/kickpim
+kiki		ports/games/kiki
 kile		ports/editors/kile
 kiltdown	ports/mail/kiltdown
 kimdaba		ports/graphics/kimdaba
