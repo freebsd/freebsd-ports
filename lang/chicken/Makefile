@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	chicken
-PORTVERSION=	2.0
-PORTREVISION=	2
+PORTVERSION=	2.3
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://www.call-with-current-continuation.org/
 
@@ -15,16 +14,14 @@ MAINTAINER=	alejandro@varnet.biz
 COMMENT=	A Scheme-to-C compiler
 
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
-MAN1=		chicken-config.1 chicken-profile.1 chicken-setup.1 chicken.1 \
-		csc.1 csi.1
+MAN1=		chicken-profile.1 chicken-setup.1 chicken.1 csc.1 csi.1
 INFO=		chicken
 
 .if !defined(NOPORTDOCS)
-PORTDOCS=	README chicken.html format.txt
+PORTDOCS=	ChangeLog INSTALL LICENSE NEWS README TASKS chicken.html chicken.pdf
 .endif
 
 OPTIONS=	PCRE "With PCRE support" off
@@ -32,7 +29,7 @@ OPTIONS=	PCRE "With PCRE support" off
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64"
-BROKEN=		"Coredump during build on ia64"
+BROKEN=		Coredump during build on ia64
 .endif
 
 .if defined(WITH_PCRE)
@@ -51,7 +48,9 @@ post-install:
 	@${MKDIR} ${PREFIX}/lib/${PORTNAME}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@(cd ${WRKSRC}; ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR})
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR})
+	@${MKDIR} ${EXAMPLESDIR}/benchmarks
+	${INSTALL_DATA} ${WRKSRC}/benchmarks/* ${EXAMPLESDIR}/benchmarks
 .endif
 
 .include <bsd.port.post.mk>
