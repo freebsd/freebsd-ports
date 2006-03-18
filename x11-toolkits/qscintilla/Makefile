@@ -8,7 +8,7 @@ PORTNAME=	qscintilla
 PORTVERSION=	1.6
 PORTREVISION=	
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	http://www.river-bank.demon.co.uk/download/QScintilla/ \
+MASTER_SITES=	http://www.riverbankcomputing.com/Downloads/QScintilla1/ \
 		http://freebsd.ricin.com/ports/distfiles/
 DISTNAME=	${PORTNAME}-${PORTVERSION}5-gpl-${PORTVERSION}
 
