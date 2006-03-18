@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libggimisc
-PORTVERSION=	2.2.0
-PORTREVISION=	1
+PORTVERSION=	2.2.1
 CATEGORIES=	graphics devel
 MASTER_SITES=	http://www.ggi-project.org/ftp/ggi/v2.2/ \
 		${MASTER_SITE_SOURCEFORGE}
