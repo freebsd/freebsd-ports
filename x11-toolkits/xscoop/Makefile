@@ -8,12 +8,10 @@
 PORTNAME=	xscoop
 PORTVERSION=	1.0.2
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	ftp://ftp.datazygte.com/ports/x11-toolkits/xscoop/
+MASTER_SITES=	http://people.tecnik93.com/~itetcu/FreeBSD/others_ports/${PORTNAME}/sources/
 
 MAINTAINER=	rscheckelhoff@yahoo.com
 COMMENT=	An X library detective
-
-BROKEN=		"Unfetchable"
 
 MAN7=		xscoop.7
 PLIST_FILES=	bin/xscoop
@@ -26,9 +24,9 @@ ONLY_FOR_ARCHS=	i386
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION}>=600000
-EXEFILE= xscoop6
+EXEFILE=	xscoop6
 .else
-EXEFILE= xscoop5
+EXEFILE=	xscoop5
 .endif
 
 do-install:
