@@ -29,6 +29,6 @@ do-install:
 	cd ${WRKSRC} && ${PYTHON_CMD} setup.py install
 
 post-install:
-	${CAT} ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
