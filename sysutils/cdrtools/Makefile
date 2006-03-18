@@ -7,7 +7,7 @@
 
 PORTNAME=	cdrtools
 PORTVERSION?=	2.01
-PORTREVISION?=	3
+PORTREVISION?=	4
 CATEGORIES?=	sysutils audio
 MASTER_SITES=	ftp://ftp.berlios.de/pub/cdrecord/ \
 		ftp://ftp.cs.tu-berlin.de/pub/misc/cdrecord/
@@ -34,7 +34,6 @@ MKISOFSDOCS=	README README.compression README.eltorito README.graft_dirs \
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 MAKE_ENV=	CCOM=${CC} LANG=C
 #CFLAGS+=	-DSOURCE_MODIFIED
 PKGMESSAGE=	${WRKDIR}/pkg-message
