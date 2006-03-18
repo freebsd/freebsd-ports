@@ -1,0 +1,42 @@
+--- Makefile.orig	Sat Jan 20 21:32:48 2001
++++ Makefile	Sun Apr 14 23:30:36 2002
+@@ -4,6 +4,10 @@
+ include platform-settings
+ 
+ SUBDIRS=pthsock xdb_file dnsrv jsm dialback jabberd
++INSTALL_DATA=`cat .install_data-freebsd`
++INSTALL_DIR=install -d
++INSTALL_PROGRAM=`cat .install_program-freebsd`
++INSTALL_SCRIPT=`cat .install_data-freebsd`
+ 
+ all: all-recursive
+ 
+@@ -13,8 +17,27 @@
+ 
+ single: single-recursive
+ 
++LIBDIR=${PREFIX}/lib/jabber
++INCDIR=${PREFIX}/include/jabber
+ install:
+-	printf "\n\nNo actual make install, you just run it out of the directory!\n"
++	${INSTALL_PROGRAM} jabberd/jabberd ${PREFIX}/sbin
++	${INSTALL_DATA} jabber.xml ${PREFIX}/etc/jabber.xml.sample
++	${INSTALL_DIR} ${LIBDIR}/jsm
++	${INSTALL_DATA} jsm/jsm.so ${LIBDIR}/jsm
++	${INSTALL_DIR} ${LIBDIR}/xdb_file
++	${INSTALL_DATA} xdb_file/xdb_file.so ${LIBDIR}/xdb_file
++	${INSTALL_DIR} ${LIBDIR}/pthsock
++	${INSTALL_DATA} pthsock/pthsock_client.so ${LIBDIR}/pthsock
++	${INSTALL_DIR} ${LIBDIR}/dnsrv
++	${INSTALL_DATA} dnsrv/dnsrv.so ${LIBDIR}/dnsrv
++	${INSTALL_DIR} ${LIBDIR}/dialback
++	${INSTALL_DATA} dialback/dialback.so ${LIBDIR}/dialback
++	${INSTALL_DIR} ${INCDIR}
++	${INSTALL_DATA} platform-settings ${INCDIR}
++	${INSTALL_DATA} jabberd/jabberd.h ${INCDIR}
++	${INSTALL_DIR} ${INCDIR}/lib
++	${INSTALL_DATA} jabberd/lib/lib.h ${INCDIR}/lib
++	
+ 
+ all-local:
+ 
