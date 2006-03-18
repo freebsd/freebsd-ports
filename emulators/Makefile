@@ -64,6 +64,7 @@
     SUBDIR += linux_base
     SUBDIR += linux_base-8
     SUBDIR += linux_base-debian
+    SUBDIR += linux_base-fc3
     SUBDIR += linux_base-gentoo-stage1
     SUBDIR += linux_base-rh-9
     SUBDIR += linux_base-suse-9.1
