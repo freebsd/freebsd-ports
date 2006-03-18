@@ -9650,6 +9650,7 @@ pecl-fribidi	ports/converters/pecl-fribidi
 pecl-gnupg	ports/security/pecl-gnupg
 pecl-hash	ports/security/pecl-hash
 pecl-imagick	ports/graphics/pecl-imagick
+pecl-json	ports/devel/pecl-json
 pecl-mailparse	ports/mail/pecl-mailparse
 pecl-memcache	ports/databases/pecl-memcache
 pecl-operator	ports/devel/pecl-operator
