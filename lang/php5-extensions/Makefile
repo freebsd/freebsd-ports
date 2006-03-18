@@ -26,6 +26,7 @@ WITH_CTYPE=	yes
 WITH_DOM=	yes
 WITH_ICONV=	yes
 WITH_PCRE=	yes
+WITH_PDO=	yes
 WITH_POSIX=	yes
 WITH_SESSION=	yes
 WITH_SIMPLEXML=	yes
@@ -70,6 +71,7 @@ OPTIONS=	BCMATH          "bc style precision math functions" off \
 		PCNTL           "pcntl support (CLI only)" off \
 		PCRE            "Perl Compatible Regular Expression support" on \
 		PDF             "PDFlib support (implies GD)" off \
+		PDO             "PHP Data Objects Interface (PDO)" on \
 		PGSQL           "PostgreSQL database support" off \
 		POSIX           "POSIX-like functions" on \
 		PSPELL          "pspell support" off \
@@ -110,7 +112,7 @@ ALL_OPTIONS=	BCMATH BZ2 CALENDAR CTYPE CURL DBA DBASE \
 		DOM EXIF FILEINFO FILEPRO FRIBIDI FTP GD GETTEXT \
 		GMP ICONV IMAGICK IMAP INTERBASE LDAP MBSTRING MCRYPT \
 		MHASH MIME_MAGIC MING MSSQL MYSQL MYSQLI \
-		NCURSES ODBC OPENSSL PANDA PCNTL PCRE PDF PGSQL POSIX \
+		NCURSES ODBC OPENSSL PANDA PCNTL PCRE PDF PDO PGSQL POSIX \
 		PSPELL READLINE RECODE SESSION SHMOP SIMPLEXML SNMP SOAP \
 		SOCKETS SQLITE SYBASE_CT SYSVMSG SYSVSEM SYSVSHM \
 		TIDY TOKENIZER WDDX XML XMLREADER XMLRPC XMLWRITER XSL \
