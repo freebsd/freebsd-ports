@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	phppgadmin
-PORTVERSION=	4.0
+PORTVERSION=	4.0.1
 CATEGORIES=	databases www
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	phpPgAdmin-${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Web Based Postgres Administration
 
-USE_REINPLACE=	yes
 USE_BZIP2=	yes
 .if !defined(WITHOUT_PHP_DEPENDS)
 USE_PHP=	pgsql pcre session
@@ -32,9 +31,8 @@ do-configure:
 
 do-install:
 	${MKDIR} ${PREFIX}/${PGADMDIR}
-	${CP} -R ${WRKSRC}/* ${PREFIX}/${PGADMDIR}
-	@[ -f ${PREFIX}/${PGADMDIR}/conf/config.inc.php ] || \
-		${CP} -p ${PREFIX}/${PGADMDIR}/conf/config.inc.php-dist \
+	${CP} -Rp ${WRKSRC}/ ${PREFIX}/${PGADMDIR}/
+	${CP} -np ${PREFIX}/${PGADMDIR}/conf/config.inc.php-dist \
 		${PREFIX}/${PGADMDIR}/conf/config.inc.php
 
 .include <bsd.port.mk>

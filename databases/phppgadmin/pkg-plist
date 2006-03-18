@@ -29,7 +29,7 @@
 %%PGADMDIR%%/classes/plugins/Slony.php
 @unexec if cmp -s %D/%%PGADMDIR%%/conf/config.inc.php %D/%%PGADMDIR%%/conf/config.inc.php-dist; then rm -f %D/%%PGADMDIR%%/conf/config.inc.php; fi
 %%PGADMDIR%%/conf/config.inc.php-dist
-@exec [ -f %B/config.inc.php ] || cp %B/%f %B/config.inc.php
+@exec cp -np %B/%f %B/config.inc.php
 %%PGADMDIR%%/constraints.php
 %%PGADMDIR%%/conversions.php
 %%PGADMDIR%%/database.php
@@ -57,13 +57,13 @@
 %%PGADMDIR%%/images/themes/default/Tminus.png
 %%PGADMDIR%%/images/themes/default/Tplus.png
 %%PGADMDIR%%/images/themes/default/blank.png
-%%PGADMDIR%%/images/themes/default/error.png
 %%PGADMDIR%%/images/themes/default/database.png
 %%PGADMDIR%%/images/themes/default/domains.png
+%%PGADMDIR%%/images/themes/default/error.png
 %%PGADMDIR%%/images/themes/default/file.png
-%%PGADMDIR%%/images/themes/default/functions.png
 %%PGADMDIR%%/images/themes/default/folder.png
 %%PGADMDIR%%/images/themes/default/folderOpen.png
+%%PGADMDIR%%/images/themes/default/functions.png
 %%PGADMDIR%%/images/themes/default/group.png
 %%PGADMDIR%%/images/themes/default/loading.gif
 %%PGADMDIR%%/images/themes/default/operators.png
