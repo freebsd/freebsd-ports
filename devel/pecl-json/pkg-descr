@@ -1,0 +1,4 @@
+php-json is an extremely fast PHP C extension for JSON
+(JavaScript Object Notation) serialisation.
+
+WWW: http://pecl.php.net/package/json
