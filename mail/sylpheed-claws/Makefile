@@ -7,7 +7,7 @@
 
 PORTNAME=	sylpheed-claws
 PORTVERSION=	2.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail news ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sylpheed-claws
@@ -19,7 +19,8 @@ MAINTAINER=	netchild@FreeBSD.org
 COMMENT=	A lightweight and very featureful GTK+ based e-mail and news client
 
 LIB_DEPENDS=	etpan:${PORTSDIR}/mail/libetpan
-RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
+RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support \
+		${LOCALBASE}/bin/metamail:${PORTSDIR}/mail/metamail
 
 THEMEVERSION=	20040929
 THEMEFILE=	sylpheed-iconset-${THEMEVERSION}.tar.gz
@@ -59,10 +60,6 @@ OPTIONS=	ALL		"Enable all options."			off \
 		SSL		"Enable OpenSSL support."		on \
 		THEMES		"Install additional themes."		on
 		
-
-.if defined(NOPORTDOCS)
-EXTRA_PATCHES=		${FILESDIR}/extra-doc:Makefile.in
-.endif
 
 .include <bsd.port.pre.mk>
 
