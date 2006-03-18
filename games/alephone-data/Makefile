@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://files3.bungie.org/trilogy/
 DISTNAME=	infinity
 
-MAINTAINER=	malyn@strangeGizmo.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Data files for the alephone port
 
 RUN_DEPENDS=	alephone:${PORTSDIR}/games/alephone
