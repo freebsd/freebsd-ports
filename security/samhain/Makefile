@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	samhain
-PORTVERSION=	2.1.0
+PORTVERSION=	2.1.2
 CATEGORIES=	security
 MASTER_SITES=	http://la-samhna.de/archive/ \
 		http://cold.darkambient.net/
@@ -19,7 +19,8 @@ OPTIONS=	KCHECK "Enable rogue KLD detection" off \
 		MYSQL "Enable MySQL logging" off \
 		POSTGRESQL "Enable PostgreSQL logging" off \
 		XML_LOGS "Enable XML-formatted logs" on \
-		LIBWRAP "Enable TCP wrapper support" on
+		LIBWRAP "Enable TCP wrapper support" on \
+		PRELUDE "Enable Prelude Framework support" off
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
@@ -85,6 +86,10 @@ CONFIGURE_ARGS+=	--with-logserver=${WITH_LOG_SERVER}
 .endif
 .if defined(WITH_ALT_LOG_SERVER)
 CONFIGURE_ARGS+=	--with-altlogserver=${WITH_ALT_LOG_SERVER}
+.endif
+.if defined(WITH_PRELUDE)
+LIB_DEPENDS+=		prelude.7:${PORTSDIR}/security/libprelude
+CONFIGURE_ARGS+=	--with-prelude
 .endif
 
 pre-everything::
