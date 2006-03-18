@@ -21,7 +21,7 @@ share/guile/gtk-1.2/config.scm
 share/guile/gtk-1.2/dynlink.scm
 share/guile/gtk-1.2/gdk-pixbuf.scm
 share/guile/gtk-1.2/gdk.scm
-share/guile/gtk-1.2/glade
+share/guile/gtk-1.2/glade.scm
 share/guile/gtk-1.2/gtk.scm
 share/guile/gtk-1.2/repl.scm
 share/guile/gtk-1.2/threads.scm
