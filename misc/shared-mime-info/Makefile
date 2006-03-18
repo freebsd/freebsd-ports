@@ -6,6 +6,7 @@
 
 PORTNAME=	shared-mime-info
 PORTVERSION=	0.17
+PORTREVISION=	1
 CATEGORIES=	misc gnome
 MASTER_SITES=	http://www.marcuscom.com/downloads/ \
 		http://freedesktop.org/~hadess/
@@ -27,7 +28,7 @@ MIMEDIRS=	${X11BASE}/share/gnome/mime \
 		${X11BASE}/share/mime \
 		${LOCALBASE}/share/mime \
 		/usr/share/mime
-MIMESUBDIRS=	audio image inode message model multipart \
+MIMESUBDIRS=	application audio image inode message model multipart \
 		packages text video
 
 post-patch:

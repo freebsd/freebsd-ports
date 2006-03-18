@@ -455,6 +455,7 @@ share/mime/video/x-theora+ogg.xml
 @dirrmtry share/mime/image
 @dirrmtry share/mime/audio
 @dirrmtry share/mime/application
+@unexec [ -f %D/share/mime/mime.cache ] && rm -f %D/share/mime/mime.cache || true
 @dirrmtry share/mime
 @unexec [ -f %%X11BASE%%/share/mime/XMLnamespaces ] && rm -f %%X11BASE%%/share/mime/XMLnamespaces || true
 @unexec [ -f %%X11BASE%%/share/mime/globs ] && rm -f %%X11BASE%%/share/mime/globs || true
@@ -471,4 +472,5 @@ share/mime/video/x-theora+ogg.xml
 @unexec rmdir %%X11BASE%%/share/mime/image 2>/dev/null || true
 @unexec rmdir %%X11BASE%%/share/mime/audio 2>/dev/null || true
 @unexec rmdir %%X11BASE%%/share/mime/application 2>/dev/null || true
+@unexec [ -f %%X11BASE%%/share/mime/mime.cache ] && rm -f %%X11BASE%%/share/mime/mime.cache || true
 @unexec rmdir %%X11BASE%%/share/mime 2>/dev/null || true
