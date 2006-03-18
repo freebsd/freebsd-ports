@@ -1,0 +1,10 @@
+Index: qemu/hw/usb-uhci.c
+@@ -527,6 +532,8 @@
+ 
+     if (!(s->cmd & UHCI_CMD_RS)) {
+         qemu_del_timer(s->frame_timer);
++        /* set hchalted bit in status - UHCI11D 2.1.2 */
++        s->status |= UHCI_STS_HCHALTED;
+         return;
+     }
+     frame_addr = s->fl_base_addr + ((s->frnum & 0x3ff) << 2);
