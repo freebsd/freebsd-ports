@@ -141,6 +141,7 @@
     SUBDIR += gdk-pixbuf
     SUBDIR += gdtclft
     SUBDIR += geist
+    SUBDIR += geomorph
     SUBDIR += geomview
     SUBDIR += geos
     SUBDIR += gephex
