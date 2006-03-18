@@ -15,7 +15,7 @@ MASTER_SITES=	${LINPHONE_MASTER_SITES}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A web phone that supports SIP protocol
 
-LIB_DEPENDS=	linphone.3:${PORTSDIR}/net/linphone-base
+LIB_DEPENDS=	linphone.4:${PORTSDIR}/net/linphone-base
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomeprefix gnomepanel
