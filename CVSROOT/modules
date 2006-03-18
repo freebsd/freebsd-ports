@@ -7858,6 +7858,7 @@ p5-DBIx-ContextualFetch	ports/databases/p5-DBIx-ContextualFetch
 p5-DBIx-DBSchema	ports/databases/p5-DBIx-DBSchema
 p5-DBIx-DataSource	ports/databases/p5-DBIx-DataSource
 p5-DBIx-Ease	ports/databases/p5-DBIx-Ease
+p5-DBIx-MySQLSequence	ports/databases/p5-DBIx-MySQLSequence
 p5-DBIx-Password	ports/databases/p5-DBIx-Password
 p5-DBIx-Recordset	ports/databases/p5-DBIx-Recordset
 p5-DBIx-SQLEngine	ports/databases/p5-DBIx-SQLEngine
