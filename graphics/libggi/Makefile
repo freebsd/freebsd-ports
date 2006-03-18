@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libggi
-PORTVERSION=	2.2.0
-PORTREVISION=	2
+PORTVERSION=	2.2.1
 PORTEPOCH=	1
 CATEGORIES=	graphics devel
 MASTER_SITES=	http://www.ggi-project.org/ftp/ggi/v2.2/ \
