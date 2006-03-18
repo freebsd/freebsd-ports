@@ -1,0 +1,90 @@
+--- Makefile.orig	Mon Nov  7 00:29:18 2005
++++ Makefile	Sun Mar 19 01:11:07 2006
+@@ -9,11 +9,11 @@
+ 
+ INSTALLED_X = $(DESTDIR)/usr/X11R6
+ LOCAL_X = Xincludes/usr/X11R6
+-BINDIR = $(DESTDIR)/usr/local/bin
+-MANDIR = $(DESTDIR)/usr/local/man
++BINDIR = $(DESTDIR)${PREFIX}/bin
++MANDIR = $(DESTDIR)${PREFIX}/man
+ 
+ ifeq ($(ARCH),)
+-  ARCH = $(shell /bin/arch)
++  ARCH = $(shell uname -m)
+ endif
+ ifeq ($(ARCH),amd64)
+   ARCH = x86_64
+@@ -44,12 +44,16 @@
+ else
+   SERVERSRC = $(TOP)/programs/Xserver
+   ALLINCLUDES = -I. \
++	-I${X11BASE}/include \
++	-I${X11BASE}/include/X11 \
++	-I$(SERVERSRC)/hw/xfree86 \
+ 	-I$(SERVERSRC)/hw/xfree86/common \
+ 	-I$(SERVERSRC)/hw/xfree86/os-support \
++	-I$(SERVERSRC)/hw/xfree86/os-support/bus \
+ 	-I$(SERVERSRC)/mi \
+ 	-I$(SERVERSRC)/include \
+ 	-I$(TOP)/include
+-  X_INCLUDES_ROOT = $(TOP)
++  X_INCLUDES_ROOT = $(X11BASE)
+ endif
+ 
+ MODULE_DEFINES = -DIN_MODULE -DXFree86Module
+@@ -63,11 +67,11 @@
+ CCOPTIONS := -pedantic -Wall -Wpointer-arith
+ CCOPTIONS += $(call check_gcc,-fno-merge-constants,)
+ CCOPTIONS += $(call check_gcc,-fno-pic,)
+-CDEBUGFLAGS = -O2
+-CFLAGS = $(CDEBUGFLAGS) $(CCOPTIONS) $(ALLDEFINES) -DVERSION="\"$(VERSION)\"" -DVERSION_ID="$(VERSION_ID)"
+-CFLAGSCLIENT = $(CDEBUGFLAGS) $(CCOPTIONS) -DVERSION="\"$(VERSION)\""  -DVERSION_ID="$(VERSION_ID)" -I$(X_INCLUDES_ROOT)/include
++#CDEBUGFLAGS = -O2
++CFLAGS += $(CDEBUGFLAGS) $(CCOPTIONS) $(ALLDEFINES) -DVERSION="\"$(VERSION)\"" -DVERSION_ID="$(VERSION_ID)"
++CFLAGSCLIENT += $(CCOPTIONS) -DVERSION="\"$(VERSION)\""  -DVERSION_ID="$(VERSION_ID)" -I$(X_INCLUDES_ROOT)/include
+ 
+-CC = gcc
++#CC = gcc
+ 
+ LDCOMBINEFLAGS = -r
+ 
+@@ -78,29 +82,29 @@
+ 	$(RM) $@
+ 	$(CC) -c $(CFLAGS) $(_NOOP_) $*.c
+ 
+-all:: synaptics_drv.o synclient syndaemon
++all:: synaptics_drv.o synclient
+ 
+-install: $(BINDIR)/synclient $(BINDIR)/syndaemon $(INSTALLED_X)/$(LIBDIR)/modules/input/synaptics_drv.o install-man
++install: $(BINDIR)/synclient $(INSTALLED_X)/$(LIBDIR)/modules/input/synaptics_drv.o install-man
+ 
+-install-man: $(MANDIR)/man1/synclient.1 $(MANDIR)/man1/syndaemon.1 $(MANDIR)/man5/synaptics.5
++install-man: $(MANDIR)/man1/synclient.1 $(MANDIR)/man5/synaptics.5
+ 
+ $(MANDIR)/man1/synclient.1: manpages/synclient.1
+-	install --mode=0644 -D $< $@
++	${BSD_INSTALL_MAN} $< $@
+ 
+ $(MANDIR)/man1/syndaemon.1: manpages/syndaemon.1
+-	install --mode=0644 -D $< $@
++	${BSD_INSTALL_MAN} $< $@
+ 
+ $(MANDIR)/man5/synaptics.5: manpages/synaptics.5
+-	install --mode=0644 -D $< $@
++	${BSD_INSTALL_MAN} $< $@
+ 
+ $(BINDIR)/synclient : synclient
+-	install -D $< $@
++	${BSD_INSTALL_PROGRAM} $< $@
+ 
+ $(BINDIR)/syndaemon : syndaemon
+-	install -D $< $@
++	${BSD_INSTALL_PROGRAM} $< $@
+ 
+ $(INSTALLED_X)/$(LIBDIR)/modules/input/synaptics_drv.o : synaptics_drv.o
+-	install --mode=0644 -D $< $@
++	${BSD_INSTALL_DATA} $< $@
+ 
+ synaptics_drv.o: $(OBJS)
+ 	$(RM) $@
