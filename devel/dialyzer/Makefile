@@ -7,6 +7,7 @@
 
 PORTNAME=	dialyzer
 PORTVERSION=	1.4.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.it.uu.se/research/group/hipe/dialyzer/snapshots/
 
@@ -26,7 +27,7 @@ post-patch:
 	@${FIND} ${WRKSRC} -name .cvsignore | ${XARGS} ${RM}
 
 do-build:
-	@cd ${WRKSRC} && ./setup.sh ${PREFIX}/lib/erlang
+	@cd ${WRKSRC} && ./setup.sh --no_analysis ${PREFIX}/lib/erlang
 
 do-install:
 	@${MKDIR} ${PREFIX}/lib/erlang/lib/${PORTNAME}-${PORTVERSION}
