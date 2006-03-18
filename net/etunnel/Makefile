@@ -8,12 +8,11 @@
 PORTNAME=	etunnel
 PORTVERSION=	0.0.5
 CATEGORIES=	net
-MASTER_SITES=	http://expl.homeunix.org/etunnel/
+MASTER_SITES=	http://www.iem.pw.edu.pl/ftp/distfiles/
 
 MAINTAINER=	expl@punktas.lt
 COMMENT=	TCP/UDP connections tunneling tool via proxy or directly
 
-USE_REINPLACE=	yes
 ALL_TARGET=	${PORTNAME}
 
 MAN1=	etunnel.1
