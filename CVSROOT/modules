@@ -3058,6 +3058,7 @@ global		ports/devel/global
 globus4		ports/net/globus4
 glom		ports/databases/glom
 glpk		ports/math/glpk
+glpng		ports/graphics/glpng
 glpuzzle	ports/games/glpuzzle
 glrparser	ports/devel/glrparser
 gltk		ports/graphics/gltk
