@@ -3,7 +3,7 @@
 # Whom:			michael johnson <ahze@ahze.net>
 #
 # $FreeBSD$
-#    $MCom: ports/www/kazehakase/Makefile,v 1.2 2005/11/29 02:39:04 ahze Exp $
+#    $MCom: ports/www/kazehakase/Makefile,v 1.4 2006/03/10 02:09:53 ahze Exp $
 #
 
 PORTNAME=	kazehakase
@@ -21,8 +21,8 @@ LIB_DEPENDS=	gnutls.15:${PORTSDIR}/security/gnutls
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack intlhack gnomeprefix gtk20
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
-USE_GECKO=	firefox mozilla seamonkey
+USE_GETTEXT=	yes
+USE_GECKO=	firefox mozilla seamonkey xulrunner
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gecko_engine=${GECKO}
@@ -84,6 +84,7 @@ pre-everything::
 	@${ECHO_MSG} ""
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|thunderbird|xulrunner|' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/usr/share/migemo|${LOCALBASE}/share/migemo|; \
 		s|=beginner|=medium|' ${WRKSRC}/etc/kzrc
 .if defined(WITH_MIGEMO)
