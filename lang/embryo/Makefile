@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	embryo
-PORTVERSION=	0.9.1.024
+PORTVERSION=	0.9.1.025
 PORTREVISION=	0
 CATEGORIES=	lang
 MASTER_SITES=	http://enlightenment.freedesktop.org/files/
