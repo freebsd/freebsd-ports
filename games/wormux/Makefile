@@ -6,41 +6,35 @@
 #
 
 PORTNAME=	wormux
-PORTVERSION=	0.5.0
-PORTREVISION=	1
+DISTVERSION=	0.7beta3
 CATEGORIES=	games
 MASTER_SITES=	http://download.gna.org/wormux/
-DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
 MAINTAINER=	toha@toha.org.ua
 COMMENT=	Wormux game
 
+LIB_DEPENDS=	xml\\+\\+-2.6.2:${PORTSDIR}/textproc/libxml++26
+
+GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-USE_SDL=	sdl
-USE_GETTEXT=	yes
-USE_GNOME=	gnomelibs
+USE_SDL=	sdl image mixer ttf gfx
 
-LIB_DEPENDS+=	clanGUI-0.7:${PORTSDIR}/devel/clanlib-devel
-LIB_DEPENDS+=	xml\\+\\+-1.0.1:${PORTSDIR}/textproc/libxml++
-
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -lintl"
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
-PLIST_FILES=	bin/wormux
-
-CONFIGURE_ARGS+=--prefix=${PREFIX}
-GNU_CONFIGURE=yes
+CONFIGURE_ARGS=	--with-datadir-name=${PORTNAME} --program-prefix=""
 
 .include <bsd.port.pre.mk>
 
-post-install:
-.for dir in ${PREFIX}/share/${PORTNAME}
-	@${FIND} ${dir} ! -type d | \
-		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
-	@${FIND} ${dir} -type d | ${SORT} -r | \
-		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
-.endfor
+.if ${OSVERSION} < 500000
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-src-weapon-ninja_rope.cpp
+.endif
+
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+.else
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.endif
 
 .include <bsd.port.post.mk>
