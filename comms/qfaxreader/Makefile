@@ -8,10 +8,10 @@
 #
 
 PORTNAME=	qfaxreader
-DISTVERSION=	0.3RC7
+DISTVERSION=	0.3
 CATEGORIES=	comms graphics print
-MASTER_SITES=	http://oss.thel.ro/${PORTNAME}/ \
-		http://people.tecnik93.com/~itetcu/FreeBSD/ports/${PORTNAME}/sources/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	itetcu@people.tecnik93.com
 COMMENT=	Mono/color multipage tiff/fax files visualisation/printing utility
