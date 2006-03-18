@@ -261,7 +261,7 @@ _USE_PHP_ALL=	bcmath bz2 calendar ctype curl dba dbase \
 # version specific components
 _USE_PHP_VER4=	${_USE_PHP_ALL} crack dbx dio domxml mcal mcve \
 		mnogosearch oracle overload pfpro xslt yp
-_USE_PHP_VER5=	${_USE_PHP_ALL} dom mysqli pdo simplexml soap sqlite \
+_USE_PHP_VER5=	${_USE_PHP_ALL} dom hash mysqli pdo simplexml soap sqlite \
 		tidy xmlreader xmlwriter xsl
 
 bcmath_DEPENDS=	math/php${PHP_VER}-bcmath
@@ -284,6 +284,7 @@ ftp_DEPENDS=	ftp/php${PHP_VER}-ftp
 gd_DEPENDS=	graphics/php${PHP_VER}-gd
 gettext_DEPENDS=devel/php${PHP_VER}-gettext
 gmp_DEPENDS=	math/php${PHP_VER}-gmp
+hash_DEPENDS=	security/pecl-hash
 iconv_DEPENDS=	converters/php${PHP_VER}-iconv
 imagick_DEPENDS=graphics/pecl-imagick
 imap_DEPENDS=	mail/php${PHP_VER}-imap
