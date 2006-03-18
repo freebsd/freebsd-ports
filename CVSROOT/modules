@@ -2431,6 +2431,7 @@ flim113-emacs20	ports/editors/flim113-emacs20
 flip		ports/graphics/flip
 flite		ports/audio/flite
 floatator	ports/misc/floatator
+flobopuyo	ports/games/flobopuyo
 flock		ports/sysutils/flock
 flog		ports/sysutils/flog
 flood		ports/www/flood
