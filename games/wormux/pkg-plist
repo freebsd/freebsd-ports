@@ -1,0 +1,418 @@
+bin/wormux
+%%NLS%%share/locale/ca/LC_MESSAGES/wormux.mo
+%%NLS%%share/locale/de/LC_MESSAGES/wormux.mo
+%%NLS%%share/locale/eo/LC_MESSAGES/wormux.mo
+%%NLS%%share/locale/es/LC_MESSAGES/wormux.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/wormux.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/wormux.mo
+%%NLS%%share/locale/it/LC_MESSAGES/wormux.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/wormux.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/wormux.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/wormux.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/wormux.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/wormux.mo
+%%DATADIR%%/authors.xml
+%%DATADIR%%/font/DejaVuSans.ttf
+%%DATADIR%%/game_mode/classic.xml
+%%DATADIR%%/game_mode/old.xml
+%%DATADIR%%/gfx/arrow.png
+%%DATADIR%%/gfx/pointer.png
+%%DATADIR%%/gfx/rectangle.png
+%%DATADIR%%/gfx/water.png
+%%DATADIR%%/gfx/water_bottom.png
+%%DATADIR%%/graphism.xml
+%%DATADIR%%/interface/Grey-Button.png
+%%DATADIR%%/interface/button1.png
+%%DATADIR%%/interface/button2.png
+%%DATADIR%%/interface/button3.png
+%%DATADIR%%/interface/button4.png
+%%DATADIR%%/interface/button5.png
+%%DATADIR%%/interface/compteur.png
+%%DATADIR%%/interface/game_menu.png
+%%DATADIR%%/interface/weapons_menu.png
+%%DATADIR%%/map/araignee/abeille.png
+%%DATADIR%%/map/araignee/araignee.png
+%%DATADIR%%/map/araignee/config.xml
+%%DATADIR%%/map/araignee/preview.jpg
+%%DATADIR%%/map/arbre/arbre.png
+%%DATADIR%%/map/arbre/config.xml
+%%DATADIR%%/map/arbre/gland-anim.png
+%%DATADIR%%/map/arbre/preview.jpg
+%%DATADIR%%/map/banquise/background.png
+%%DATADIR%%/map/banquise/banquise.png
+%%DATADIR%%/map/banquise/config.xml
+%%DATADIR%%/map/banquise/flocon.png
+%%DATADIR%%/map/banquise/preview.jpg
+%%DATADIR%%/map/cowland/config.xml
+%%DATADIR%%/map/cowland/cowland.png
+%%DATADIR%%/map/cowland/cowland_bg.png
+%%DATADIR%%/map/cowland/nuage.png
+%%DATADIR%%/map/cowland/preview.png
+%%DATADIR%%/map/grenouilles/config.xml
+%%DATADIR%%/map/grenouilles/grenouilles.png
+%%DATADIR%%/map/grenouilles/jungle.png
+%%DATADIR%%/map/grenouilles/nuage.png
+%%DATADIR%%/map/grenouilles/preview.jpg
+%%DATADIR%%/map/halloween/confetis.png
+%%DATADIR%%/map/halloween/config.xml
+%%DATADIR%%/map/halloween/halloween.png
+%%DATADIR%%/map/halloween/noir_lune.png
+%%DATADIR%%/map/halloween/preview.jpg
+%%DATADIR%%/map/hell/bones.png
+%%DATADIR%%/map/hell/config.xml
+%%DATADIR%%/map/hell/hell.png
+%%DATADIR%%/map/hell/hellsky.png
+%%DATADIR%%/map/hell/preview.jpg
+%%DATADIR%%/map/libellule/config.xml
+%%DATADIR%%/map/libellule/libellule-bg.png
+%%DATADIR%%/map/libellule/libellule.png
+%%DATADIR%%/map/libellule/preview.jpg
+%%DATADIR%%/map/mer/config.xml
+%%DATADIR%%/map/mer/mer-ciel.png
+%%DATADIR%%/map/mer/mer.png
+%%DATADIR%%/map/mer/preview.jpg
+%%DATADIR%%/map/noel/config.xml
+%%DATADIR%%/map/noel/nege-anim.png
+%%DATADIR%%/map/noel/noel.png
+%%DATADIR%%/map/noel/preview.jpg
+%%DATADIR%%/map/pirates/config.xml
+%%DATADIR%%/map/pirates/islands.png
+%%DATADIR%%/map/pirates/pirates.png
+%%DATADIR%%/map/pirates/preview.jpg
+%%DATADIR%%/map/prehistorik/config.xml
+%%DATADIR%%/map/prehistorik/prehistorik.png
+%%DATADIR%%/map/prehistorik/preview.jpg
+%%DATADIR%%/map/space/config.xml
+%%DATADIR%%/map/space/lune.png
+%%DATADIR%%/map/space/preview.jpg
+%%DATADIR%%/map/space/space.png
+%%DATADIR%%/menu/img/arrow-left.png
+%%DATADIR%%/menu/img/arrow-right.png
+%%DATADIR%%/menu/img/background.png
+%%DATADIR%%/menu/img/background_options.png
+%%DATADIR%%/menu/img/button.png
+%%DATADIR%%/menu/img/cancel.png
+%%DATADIR%%/menu/img/check.png
+%%DATADIR%%/menu/img/down.png
+%%DATADIR%%/menu/img/loading.png
+%%DATADIR%%/menu/img/minus.png
+%%DATADIR%%/menu/img/plus.png
+%%DATADIR%%/menu/img/up.png
+%%DATADIR%%/menu/img/validate.png
+%%DATADIR%%/object/bonus_box.png
+%%DATADIR%%/object/fire.png
+%%DATADIR%%/object/smoke.png
+%%DATADIR%%/object/smoke2.png
+%%DATADIR%%/object/star.png
+%%DATADIR%%/skin/alien/alien-anim.png
+%%DATADIR%%/skin/alien/alien-helmet.png
+%%DATADIR%%/skin/alien/alien-jet-fly-leftright.png
+%%DATADIR%%/skin/alien/alien-jet-fly-move.png
+%%DATADIR%%/skin/alien/alien-jet-fly.png
+%%DATADIR%%/skin/alien/alien-jet-walk.png
+%%DATADIR%%/skin/alien/alien-jump.png
+%%DATADIR%%/skin/alien/alien.png
+%%DATADIR%%/skin/alien/alien_mort.png
+%%DATADIR%%/skin/alien/config.xml
+%%DATADIR%%/skin/alien/noye.png
+%%DATADIR%%/skin/ecureuil/config.xml
+%%DATADIR%%/skin/ecureuil/ecu-mort.png
+%%DATADIR%%/skin/ecureuil/ecureuil-anim.png
+%%DATADIR%%/skin/ecureuil/ecureuil-helmet.png
+%%DATADIR%%/skin/ecureuil/ecureuil-jetpack-leftright.png
+%%DATADIR%%/skin/ecureuil/ecureuil-jetpack.png
+%%DATADIR%%/skin/ecureuil/ecureuil-jetpackup.png
+%%DATADIR%%/skin/ecureuil/ecureuil-jump.png
+%%DATADIR%%/skin/escargot/clope-anim.png
+%%DATADIR%%/skin/escargot/config.xml
+%%DATADIR%%/skin/escargot/escargot-fly.png
+%%DATADIR%%/skin/escargot/escargot-helmet.png
+%%DATADIR%%/skin/escargot/escargot-jetpack-lr.png
+%%DATADIR%%/skin/escargot/escargot-jetpack-up.png
+%%DATADIR%%/skin/escargot/escargot-jump.png
+%%DATADIR%%/skin/escargot/escargot-mort.png
+%%DATADIR%%/skin/escargot/escargot.png
+%%DATADIR%%/skin/firefoxteam/animation.png
+%%DATADIR%%/skin/firefoxteam/config.xml
+%%DATADIR%%/skin/firefoxteam/dead.png
+%%DATADIR%%/skin/firefoxteam/drowned.png
+%%DATADIR%%/skin/firefoxteam/fall.png
+%%DATADIR%%/skin/firefoxteam/helmet.png
+%%DATADIR%%/skin/firefoxteam/jetpack-fly-move.png
+%%DATADIR%%/skin/firefoxteam/jetpack-fly.png
+%%DATADIR%%/skin/firefoxteam/jetpack-walk.png
+%%DATADIR%%/skin/firefoxteam/jump.png
+%%DATADIR%%/skin/firefoxteam/walking.png
+%%DATADIR%%/skin/flament_rose/config.xml
+%%DATADIR%%/skin/flament_rose/flament-anim-helmet.png
+%%DATADIR%%/skin/flament_rose/flament-anim.png
+%%DATADIR%%/skin/flament_rose/flament-jp-lr.png
+%%DATADIR%%/skin/flament_rose/flament-jp-up.png
+%%DATADIR%%/skin/flament_rose/flament-jp.png
+%%DATADIR%%/skin/flament_rose/flament-jump.png
+%%DATADIR%%/skin/flament_rose/flament-mort.png
+%%DATADIR%%/skin/flament_rose/flament-yeux.png
+%%DATADIR%%/skin/gnuteam/animation.png
+%%DATADIR%%/skin/gnuteam/config.xml
+%%DATADIR%%/skin/gnuteam/dead.png
+%%DATADIR%%/skin/gnuteam/drowned.png
+%%DATADIR%%/skin/gnuteam/fall.png
+%%DATADIR%%/skin/gnuteam/helmet.png
+%%DATADIR%%/skin/gnuteam/jetpack-fly-move.png
+%%DATADIR%%/skin/gnuteam/jetpack-fly.png
+%%DATADIR%%/skin/gnuteam/jetpack-walk.png
+%%DATADIR%%/skin/gnuteam/jump.png
+%%DATADIR%%/skin/gnuteam/walking.png
+%%DATADIR%%/skin/konqiteam/animation.png
+%%DATADIR%%/skin/konqiteam/config.xml
+%%DATADIR%%/skin/konqiteam/dead.png
+%%DATADIR%%/skin/konqiteam/drowned.png
+%%DATADIR%%/skin/konqiteam/fall.png
+%%DATADIR%%/skin/konqiteam/helmet.png
+%%DATADIR%%/skin/konqiteam/jetpack-fly-move.png
+%%DATADIR%%/skin/konqiteam/jetpack-fly.png
+%%DATADIR%%/skin/konqiteam/jetpack-walk.png
+%%DATADIR%%/skin/konqiteam/jump.png
+%%DATADIR%%/skin/konqiteam/walking.png
+%%DATADIR%%/skin/poulpe/breathe.png
+%%DATADIR%%/skin/poulpe/config.xml
+%%DATADIR%%/skin/poulpe/noye.png
+%%DATADIR%%/skin/poulpe/poulpe-anim.png
+%%DATADIR%%/skin/poulpe/poulpe-gratte-anim.png
+%%DATADIR%%/skin/poulpe/poulpe-helmet.png
+%%DATADIR%%/skin/poulpe/poulpe-jp-lr.png
+%%DATADIR%%/skin/poulpe/poulpe-jp-up.png
+%%DATADIR%%/skin/poulpe/poulpe-jp.png
+%%DATADIR%%/skin/poulpe/poulpe-jump.png
+%%DATADIR%%/skin/poulpe/poulpe-mort.png
+%%DATADIR%%/skin/tuxteam/animation.png
+%%DATADIR%%/skin/tuxteam/config.xml
+%%DATADIR%%/skin/tuxteam/dead.png
+%%DATADIR%%/skin/tuxteam/drowned.png
+%%DATADIR%%/skin/tuxteam/fall.png
+%%DATADIR%%/skin/tuxteam/helmet.png
+%%DATADIR%%/skin/tuxteam/jetpack-fly-move.png
+%%DATADIR%%/skin/tuxteam/jetpack-fly.png
+%%DATADIR%%/skin/tuxteam/jetpack-walk.png
+%%DATADIR%%/skin/tuxteam/jump.png
+%%DATADIR%%/skin/tuxteam/walking.png
+%%DATADIR%%/skin/ver/config.xml
+%%DATADIR%%/skin/ver/marche.png
+%%DATADIR%%/skin/ver/mort.png
+%%DATADIR%%/skin/ver/noye.png
+%%DATADIR%%/skin/ver/ver-mort-douce.png
+%%DATADIR%%/skin/ver/ver-mort-mechante.png
+%%DATADIR%%/skin/wilberteam/animation.png
+%%DATADIR%%/skin/wilberteam/config.xml
+%%DATADIR%%/skin/wilberteam/dead.png
+%%DATADIR%%/skin/wilberteam/drowned.png
+%%DATADIR%%/skin/wilberteam/fall.png
+%%DATADIR%%/skin/wilberteam/helmet.png
+%%DATADIR%%/skin/wilberteam/jetpack-fly-move.png
+%%DATADIR%%/skin/wilberteam/jetpack-fly.png
+%%DATADIR%%/skin/wilberteam/jetpack-walk.png
+%%DATADIR%%/skin/wilberteam/jump.png
+%%DATADIR%%/skin/wilberteam/walking.png
+%%DATADIR%%/sky/bleu.png
+%%DATADIR%%/sky/prehistorik.png
+%%DATADIR%%/sound/default/crazy_01.ogg
+%%DATADIR%%/sound/default/crazy_02.ogg
+%%DATADIR%%/sound/default/crazy_03.ogg
+%%DATADIR%%/sound/default/crazy_04.ogg
+%%DATADIR%%/sound/default/crazy_05.ogg
+%%DATADIR%%/sound/default/cuss_01.ogg
+%%DATADIR%%/sound/default/cuss_02.ogg
+%%DATADIR%%/sound/default/cuss_03.ogg
+%%DATADIR%%/sound/default/cuss_04.ogg
+%%DATADIR%%/sound/default/death_01.ogg
+%%DATADIR%%/sound/default/death_02.ogg
+%%DATADIR%%/sound/default/fire_01.ogg
+%%DATADIR%%/sound/default/fire_02.ogg
+%%DATADIR%%/sound/default/hehe.ogg
+%%DATADIR%%/sound/default/hop_01.ogg
+%%DATADIR%%/sound/default/out_01.ogg
+%%DATADIR%%/sound/default/profile.xml
+%%DATADIR%%/sound/default/sink.ogg
+%%DATADIR%%/sound/default/skip_turn.ogg
+%%DATADIR%%/sound/default/step_01.ogg
+%%DATADIR%%/sound/default/step_02.ogg
+%%DATADIR%%/sound/default/suicide_01.ogg
+%%DATADIR%%/sound/default/superjump_01.ogg
+%%DATADIR%%/sound/default/uuh_01.ogg
+%%DATADIR%%/sound/default/uuh_02.ogg
+%%DATADIR%%/sound/default/uuh_03.ogg
+%%DATADIR%%/sound/default/uuh_04.ogg
+%%DATADIR%%/sound/default/uuh_05.ogg
+%%DATADIR%%/sound/default/uuh_06.ogg
+%%DATADIR%%/sound/default/uuh_07.ogg
+%%DATADIR%%/sound/default/uuh_08.ogg
+%%DATADIR%%/sound/flying/flying.ogg
+%%DATADIR%%/sound/flying/profile.xml
+%%DATADIR%%/sound/francais/crazy.ogg
+%%DATADIR%%/sound/francais/fire_01.ogg
+%%DATADIR%%/sound/francais/fire_02.ogg
+%%DATADIR%%/sound/francais/profile.xml
+%%DATADIR%%/sound/share/end_turn.ogg
+%%DATADIR%%/sound/share/explosion.ogg
+%%DATADIR%%/sound/share/frog_music.ogg
+%%DATADIR%%/sound/share/laughing.ogg
+%%DATADIR%%/sound/share/menu/cancel.ogg
+%%DATADIR%%/sound/share/menu/clic.ogg
+%%DATADIR%%/sound/share/menu/ok.ogg
+%%DATADIR%%/sound/share/profile.xml
+%%DATADIR%%/sound/share/step.ogg
+%%DATADIR%%/sound/share/victory.ogg
+%%DATADIR%%/team/alien/flag.png
+%%DATADIR%%/team/alien/team.xml
+%%DATADIR%%/team/escargot/flag.png
+%%DATADIR%%/team/escargot/team.xml
+%%DATADIR%%/team/firefoxteam/flag.png
+%%DATADIR%%/team/firefoxteam/team.xml
+%%DATADIR%%/team/gnuteam/flag.png
+%%DATADIR%%/team/gnuteam/team.xml
+%%DATADIR%%/team/nuts/flag.png
+%%DATADIR%%/team/nuts/team.xml
+%%DATADIR%%/team/pink_floyd/flag.png
+%%DATADIR%%/team/pink_floyd/team.xml
+%%DATADIR%%/team/poulpe/flag.png
+%%DATADIR%%/team/poulpe/team.xml
+%%DATADIR%%/team/ver/flag.png
+%%DATADIR%%/team/ver/team.xml
+%%DATADIR%%/team/wilberteam/flag.png
+%%DATADIR%%/team/wilberteam/team.xml
+%%DATADIR%%/weapon/air_attack.png
+%%DATADIR%%/weapon/air_attack_ico.png
+%%DATADIR%%/weapon/air_attack_plane.png
+%%DATADIR%%/weapon/airhammer_impact.png
+%%DATADIR%%/weapon/baseball.png
+%%DATADIR%%/weapon/baseball_ico.png
+%%DATADIR%%/weapon/baz_cible.png
+%%DATADIR%%/weapon/bazooka.png
+%%DATADIR%%/weapon/bazooka_auto_ico.png
+%%DATADIR%%/weapon/bazooka_explosion.png
+%%DATADIR%%/weapon/bazooka_ico.png
+%%DATADIR%%/weapon/bazooka_impact.png
+%%DATADIR%%/weapon/cluster.png
+%%DATADIR%%/weapon/clusterbomb.png
+%%DATADIR%%/weapon/clusterbomb_ico.png
+%%DATADIR%%/weapon/corde_ninja_ico.png
+%%DATADIR%%/weapon/dynamite/animation.png
+%%DATADIR%%/weapon/dynamite/explosion.png
+%%DATADIR%%/weapon/dynamite/hole.png
+%%DATADIR%%/weapon/dynamite/icon.png
+%%DATADIR%%/weapon/dynamite/weapon.png
+%%DATADIR%%/weapon/gnu.png
+%%DATADIR%%/weapon/gnu_ico.png
+%%DATADIR%%/weapon/gnulauncher.png
+%%DATADIR%%/weapon/grenade.png
+%%DATADIR%%/weapon/grenade_hole.png
+%%DATADIR%%/weapon/grenade_ico.png
+%%DATADIR%%/weapon/gun.png
+%%DATADIR%%/weapon/gun_bullet.png
+%%DATADIR%%/weapon/gun_ico.png
+%%DATADIR%%/weapon/gun_impact.png
+%%DATADIR%%/weapon/holly_grenade.png
+%%DATADIR%%/weapon/holly_grenade_ico.png
+%%DATADIR%%/weapon/jet_pack_ico.png
+%%DATADIR%%/weapon/lowgrav_ico.png
+%%DATADIR%%/weapon/marteau_piqueur.png
+%%DATADIR%%/weapon/marteau_piqueur_ico.png
+%%DATADIR%%/weapon/mine.png
+%%DATADIR%%/weapon/mine_anim.png
+%%DATADIR%%/weapon/mine_ico.png
+%%DATADIR%%/weapon/mine_impact.png
+%%DATADIR%%/weapon/mine_projectile.png
+%%DATADIR%%/weapon/missile.png
+%%DATADIR%%/weapon/ninjahook.png
+%%DATADIR%%/weapon/ninjanode.png
+%%DATADIR%%/weapon/ninjarope_ico.png
+%%DATADIR%%/weapon/obus.png
+%%DATADIR%%/weapon/parachute.png
+%%DATADIR%%/weapon/parachute_ico.png
+%%DATADIR%%/weapon/push_ico.png
+%%DATADIR%%/weapon/skipturn.png
+%%DATADIR%%/weapon/skipturn_ico.png
+%%DATADIR%%/weapon/sound/alleluia.ogg
+%%DATADIR%%/weapon/sound/baseball.ogg
+%%DATADIR%%/weapon/sound/commit_suicide.ogg
+%%DATADIR%%/weapon/sound/dynamite.ogg
+%%DATADIR%%/weapon/sound/dynamite_exp.ogg
+%%DATADIR%%/weapon/sound/dynamite_fuze.ogg
+%%DATADIR%%/weapon/sound/grenade_bounce.ogg
+%%DATADIR%%/weapon/sound/gun.ogg
+%%DATADIR%%/weapon/sound/holly_grenade_bounce.ogg
+%%DATADIR%%/weapon/sound/jetpack.ogg
+%%DATADIR%%/weapon/sound/load.ogg
+%%DATADIR%%/weapon/sound/mine_beep.ogg
+%%DATADIR%%/weapon/sound/pistolet.ogg
+%%DATADIR%%/weapon/sound/teleport_land.ogg
+%%DATADIR%%/weapon/sound/teleport_start.ogg
+%%DATADIR%%/weapon/sound/uzi.ogg
+%%DATADIR%%/weapon/suicide.png
+%%DATADIR%%/weapon/suicide_hole.png
+%%DATADIR%%/weapon/suicide_ico.png
+%%DATADIR%%/weapon/superman.png
+%%DATADIR%%/weapon/supertux.png
+%%DATADIR%%/weapon/supertux_ico.png
+%%DATADIR%%/weapon/teleport_ico.png
+%%DATADIR%%/weapon/teleportation.png
+%%DATADIR%%/weapon/uzi.png
+%%DATADIR%%/weapon/uzi_ico.png
+%%DATADIR%%/weapon/uzi_impact.png
+%%DATADIR%%/weapons.xml
+%%DATADIR%%/wormux-128.xpm
+%%DATADIR%%/wormux-32.xpm
+@dirrm %%DATADIR%%/weapon/sound
+@dirrm %%DATADIR%%/weapon/dynamite
+@dirrm %%DATADIR%%/weapon
+@dirrm %%DATADIR%%/team/wilberteam
+@dirrm %%DATADIR%%/team/ver
+@dirrm %%DATADIR%%/team/poulpe
+@dirrm %%DATADIR%%/team/pink_floyd
+@dirrm %%DATADIR%%/team/nuts
+@dirrm %%DATADIR%%/team/gnuteam
+@dirrm %%DATADIR%%/team/firefoxteam
+@dirrm %%DATADIR%%/team/escargot
+@dirrm %%DATADIR%%/team/alien
+@dirrm %%DATADIR%%/team
+@dirrm %%DATADIR%%/sound/share/menu
+@dirrm %%DATADIR%%/sound/share
+@dirrm %%DATADIR%%/sound/francais
+@dirrm %%DATADIR%%/sound/flying
+@dirrm %%DATADIR%%/sound/default
+@dirrm %%DATADIR%%/sound
+@dirrm %%DATADIR%%/sky
+@dirrm %%DATADIR%%/skin/wilberteam
+@dirrm %%DATADIR%%/skin/ver
+@dirrm %%DATADIR%%/skin/tuxteam
+@dirrm %%DATADIR%%/skin/poulpe
+@dirrm %%DATADIR%%/skin/konqiteam
+@dirrm %%DATADIR%%/skin/gnuteam
+@dirrm %%DATADIR%%/skin/flament_rose
+@dirrm %%DATADIR%%/skin/firefoxteam
+@dirrm %%DATADIR%%/skin/escargot
+@dirrm %%DATADIR%%/skin/ecureuil
+@dirrm %%DATADIR%%/skin/alien
+@dirrm %%DATADIR%%/skin
+@dirrm %%DATADIR%%/object
+@dirrm %%DATADIR%%/menu/img
+@dirrm %%DATADIR%%/menu
+@dirrm %%DATADIR%%/map/space
+@dirrm %%DATADIR%%/map/prehistorik
+@dirrm %%DATADIR%%/map/pirates
+@dirrm %%DATADIR%%/map/noel
+@dirrm %%DATADIR%%/map/mer
+@dirrm %%DATADIR%%/map/libellule
+@dirrm %%DATADIR%%/map/hell
+@dirrm %%DATADIR%%/map/halloween
+@dirrm %%DATADIR%%/map/grenouilles
+@dirrm %%DATADIR%%/map/cowland
+@dirrm %%DATADIR%%/map/banquise
+@dirrm %%DATADIR%%/map/arbre
+@dirrm %%DATADIR%%/map/araignee
+@dirrm %%DATADIR%%/map
+@dirrm %%DATADIR%%/interface
+@dirrm %%DATADIR%%/gfx
+@dirrm %%DATADIR%%/game_mode
+@dirrm %%DATADIR%%/font
+@dirrm %%DATADIR%%
