@@ -1,3 +1,5 @@
+%%SITE_PERL%%/.DS_Store
+%%SITE_PERL%%/DBD/.DS_Store
 %%SITE_PERL%%/DBD/Mock.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/Mock/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/Mock
