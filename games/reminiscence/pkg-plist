@@ -1,0 +1,4 @@
+bin/remin
+@exec mkdir -p %D/share/REminiscence/data
+@dirrm %%DATADIR%%/data
+@dirrm %%DATADIR%%
