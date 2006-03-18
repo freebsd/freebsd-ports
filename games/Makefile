@@ -316,6 +316,7 @@
     SUBDIR += kdegames3
     SUBDIR += kfreerings
     SUBDIR += kgeography
+    SUBDIR += kiki
     SUBDIR += klondike
     SUBDIR += knights
     SUBDIR += kobodeluxe
