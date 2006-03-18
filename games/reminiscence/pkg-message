@@ -1,0 +1,18 @@
+==========================================================================
+
+REminiscence requires original Flashback datafiles. Copy the following
+files to ${PREFIX}/share/REminiscence/data/ directory:
+
+  FB_TXT.FNT GLOBAL.ICN GLOBAL.FIB GLOBAL.SPC *.OFF *.SPR *.MAP *.PAL
+  *.ANI *.CT *.MBK *.OBJ *.PGE *.RP *.TBN *.CMD *.POL *CINE.*
+
+If you have a version distributed by SSI, you'll have to rename some files :
+        
+  logosssi.cmd -> logos.cmd
+  logosssi.pol -> logos.pol
+  menu1ssi.map -> menu1.map
+  menu1ssi.pal -> menu1.pal
+
+See README for details
+
+==========================================================================

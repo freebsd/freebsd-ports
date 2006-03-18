@@ -521,6 +521,7 @@
     SUBDIR += quit
     SUBDIR += qwdtools
     SUBDIR += race
+    SUBDIR += reminiscence
     SUBDIR += rfksay
     SUBDIR += robocode
     SUBDIR += robotfindskitten
