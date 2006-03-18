@@ -4,11 +4,15 @@
 #
 # $FreeBSD$
 #
+# $Tecnik: ports/net/cnet/Makefile,v 1.5 2006/03/18 20:13:12 itetcu Exp $
+#
 
 PORTNAME=	cnet
 PORTVERSION=	2.0.10
 CATEGORIES=	net tcl84 tk84
-MASTER_SITES=	http://www.csse.uwa.edu.au/cnet/
+MASTER_SITES=	http://www.csse.uwa.edu.au/cnet/ \
+		ftp://ftp.giga.net.tw/OS/FreeBSD/distfiles/ \
+		http://people.tecnik93.com/~itetcu/ports/${PORTNAME}/sources/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	itetcu@people.tecnik93.com
@@ -16,7 +20,6 @@ COMMENT=	A networking simulator
 
 LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
 
-USE_REINPLACE=	yes
 USE_XPM=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	# empty
@@ -25,7 +28,7 @@ MAN1=		cnet.1
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64" || ${ARCH} == "amd64"
-BROKEN=		"Does not compile on amd64 or ia64"
+BROKEN=		Does not compile on amd64 or ia64
 .endif
 
 post-patch:
