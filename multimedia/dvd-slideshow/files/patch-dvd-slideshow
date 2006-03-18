@@ -1,5 +1,32 @@
 --- dvd-slideshow.orig	Fri Dec 30 04:21:02 2005
 +++ dvd-slideshow	Fri Dec 30 04:25:22 2005
+@@ -738,7 +738,7 @@
+ 		minutes=`echo $1 | cut -d: -f2`
+ 		seconds=`echo $1 | cut -d: -f3 | cut -d. -f1`
+ 		fraction=`echo $1 | cut -d: -f3 | cut -d. -f2`
+-		characters=`echo "$fraction" | wc --chars`
++		characters=`echo "$fraction" | wc -m`
+ 		if [ "$characters" -eq 1 ] ; then ## no decimal was specified
+ 			duration_ms="0"
+ 		elif [ "$characters" -eq 2 ] ; then ## 1 decimal was specified
+@@ -982,7 +982,7 @@
+ 	duration_sec=`echo $1 | awk -F. '{ print $1 }'`
+ 	if [ -z "$duration_sec" ] ; then duration_sec=0 ; fi
+ 	duration_hu=`echo $1 | awk -F. '{ print $2 }'`
+-	characters=`echo "$duration_hu" | wc --chars`
++	characters=`echo "$duration_hu" | wc -m`
+ 	if [ "$characters" -eq 1 ] ; then
+ 		## no decimal was specified
+ 		duration_hu=0
+@@ -1010,7 +1010,7 @@
+ 	duration_sec=`echo $1 | awk -F. '{ print $1 }'`
+ 	if [ -z "$duration_sec" ] ; then duration_sec=0 ; fi
+ 	duration_ms=`echo $1 | awk -F. '{ print $2 }'`
+-	characters=`echo "$duration_ms" | wc --chars`
++	characters=`echo "$duration_ms" | wc -m`
+ 	if [ "$characters" -eq 1 ] ; then
+ 		## no decimal was specified
+ 		duration_ms=0
 @@ -2051,7 +2051,7 @@
  audio_inside_txtfile=0
  imagefiles=0 ; moviefiles=0 ; audiofiles=0

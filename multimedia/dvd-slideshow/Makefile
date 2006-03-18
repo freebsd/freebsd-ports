@@ -7,7 +7,7 @@
 
 PORTNAME=	dvd-slideshow
 PORTVERSION=	0.7.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,10 +21,10 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		ffmpeg:${PORTSDIR}/multimedia/ffmpeg \
 		sox:${PORTSDIR}/audio/sox \
 		dvdauthor:${PORTSDIR}/multimedia/dvdauthor \
-		mkisofs:${PORTSDIR}/sysutils/cdrtools
+		mkisofs:${PORTSDIR}/sysutils/cdrtools \
+		${X11BASE}/lib/X11/fonts/urwfonts-ttf/README:${PORTSDIR}/x11-fonts/urwfonts-ttf
 
 NO_BUILD=	yes
-USE_REINPLACE=	yes
 
 OPTIONS=	DVDRWTOOLS "Needed to record/burn DVD" off \
 		LAME "Optional support for audio" off \
@@ -76,6 +76,9 @@ RUN_DEPENDS+=	oggdec:${PORTSDIR}/audio/vorbis-tools
 post-patch:
 .for FILE in dvd-slideshow dvd-menu dir2slideshow gallery2slideshow jigl2slideshow
 	@${REINPLACE_CMD} -e 's|!/bin/bash|!${PREFIX}/bin/bash|g' ${WRKSRC}/${FILE}
+.endfor
+.for FILE in dvd-menu dvd-slideshow
+	@${REINPLACE_CMD} -e 's|/usr/share/fonts/|${X11BASE}/lib/X11/fonts/|' ${WRKSRC}/${FILE}
 .endfor
 
 do-build:
