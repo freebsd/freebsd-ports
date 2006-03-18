@@ -3,7 +3,18 @@ $FreeBSD$
 
 --- src/xheader.c.orig
 +++ src/xheader.c
-@@ -783,6 +783,32 @@
+@@ -32,6 +32,10 @@
+ 
+ #include <fnmatch.h>
+ 
++#ifndef SIZE_MAX
++# define SIZE_MAX ((size_t) -1)
++#endif
++
+ static bool xheader_protected_pattern_p (char const *pattern);
+ static bool xheader_protected_keyword_p (char const *keyword);
+ static void xheader_set_single_keyword (char *) __attribute__ ((noreturn));
+@@ -783,6 +787,32 @@
    xheader_print (xhdr, keyword, sbuf);
  }
  
@@ -36,7 +47,7 @@ $FreeBSD$
  static void
  dummy_coder (struct tar_stat_info const *st __attribute__ ((unused)),
  	     char const *keyword __attribute__ ((unused)),
-@@ -821,7 +847,7 @@
+@@ -821,7 +851,7 @@
  gid_decoder (struct tar_stat_info *st, char const *arg)
  {
    uintmax_t u;
@@ -45,7 +56,7 @@ $FreeBSD$
      st->stat.st_gid = u;
  }
  
-@@ -903,7 +929,7 @@
+@@ -903,7 +933,7 @@
  size_decoder (struct tar_stat_info *st, char const *arg)
  {
    uintmax_t u;
@@ -54,7 +65,7 @@ $FreeBSD$
      st->archive_file_size = st->stat.st_size = u;
  }
  
-@@ -918,7 +944,7 @@
+@@ -918,7 +948,7 @@
  uid_decoder (struct tar_stat_info *st, char const *arg)
  {
    uintmax_t u;
@@ -63,7 +74,7 @@ $FreeBSD$
      st->stat.st_uid = u;
  }
  
-@@ -946,7 +972,7 @@
+@@ -946,7 +976,7 @@
  sparse_size_decoder (struct tar_stat_info *st, char const *arg)
  {
    uintmax_t u;
@@ -72,7 +83,7 @@ $FreeBSD$
      st->stat.st_size = u;
  }
  
-@@ -962,10 +988,10 @@
+@@ -962,10 +992,10 @@
  sparse_numblocks_decoder (struct tar_stat_info *st, char const *arg)
  {
    uintmax_t u;
@@ -85,7 +96,7 @@ $FreeBSD$
        st->sparse_map_avail = 0;
      }
  }
-@@ -982,8 +1008,14 @@
+@@ -982,8 +1012,14 @@
  sparse_offset_decoder (struct tar_stat_info *st, char const *arg)
  {
    uintmax_t u;
@@ -101,7 +112,7 @@ $FreeBSD$
  }
  
  static void
-@@ -998,15 +1030,13 @@
+@@ -998,15 +1034,13 @@
  sparse_numbytes_decoder (struct tar_stat_info *st, char const *arg)
  {
    uintmax_t u;
