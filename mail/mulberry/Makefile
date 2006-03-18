@@ -9,7 +9,7 @@ PORTNAME=	mulberry
 PORTVERSION=	3.1.6
 PORTREVISION=	3
 CATEGORIES=	mail
-MASTER_SITES=	ftp://ftp.cyrusoft.com/pub/Mulberry/v${PORTVERSION:S/./_/g}/
+MASTER_SITES=	#
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/g}-rh6
 EXTRACT_SUFX=	.tgz
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -17,6 +17,9 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	girgen@FreeBSD.org
 COMMENT=	A scalable high-performance GUI internet Mail User Agent
+
+DEPRECATED=	mastersite disappeared, no longer maintained by author
+EXPIRATION_DATE=	2006-04-06
 
 NO_WRKSUBDIR=	yes
 USE_LINUX=	yes
