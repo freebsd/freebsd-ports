@@ -6,9 +6,9 @@
 #
 
 PORTNAME=		glob2
-PORTVERSION=		0.8.18
+PORTVERSION=		0.8.19
 CATEGORIES=		games
-MASTER_SITES=		http://epfl.ysagoon.com/~glob2/data/
+MASTER_SITES=		http://globulation2.org/releases/${PORTVERSION}/
 
 MAINTAINER=		thierry@FreeBSD.org
 COMMENT=		Globulation 2 - a free and innovative strategy game
