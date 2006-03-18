@@ -11132,6 +11132,7 @@ relaydb		ports/mail/relaydb
 remarp		ports/net-mgmt/remarp
 remember.el	ports/deskutils/remember.el
 remind		ports/deskutils/remind
+reminiscence	ports/games/reminiscence
 rename		ports/sysutils/rename
 renamedlgplugins	ports/misc/renamedlgplugins
 renattach	ports/mail/renattach
