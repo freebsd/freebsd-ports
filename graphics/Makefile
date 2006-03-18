@@ -350,6 +350,7 @@
     SUBDIR += lodju
     SUBDIR += long-exposure-tools
     SUBDIR += lphoto
+    SUBDIR += makehuman
     SUBDIR += mapserver
     SUBDIR += maverik
     SUBDIR += megapov
