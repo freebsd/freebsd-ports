@@ -1277,6 +1277,7 @@
     SUBDIR += p5-prefork
     SUBDIR += p5-version
     SUBDIR += p65
+    SUBDIR += pas2dox
     SUBDIR += patch
     SUBDIR += pccts
     SUBDIR += pcl-cvs-emacs20
