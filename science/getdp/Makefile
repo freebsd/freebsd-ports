@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	getdp
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.1
 CATEGORIES=	science
 MASTER_SITES=	http://www.geuz.org/getdp/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
@@ -21,7 +21,7 @@ LIB_DEPENDS=	gsl.7:${PORTSDIR}/math/gsl	\
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-gsl-prefix=${LOCALBASE}	\
-		--with-blas-lapack-prefix=${LOCALBASE}/lib
+		--with-blas-lapack-prefix=${LOCALBASE}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
