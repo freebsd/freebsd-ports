@@ -1,0 +1,3 @@
+modules/est.ko
+@unexec MOD_FNR=`ls -1 %D/modules |wc -l`; MOD_L=`ls -1 %D/modules |grep linker.hints|wc -l`; if [ "${MOD_FNR}" -eq "${MOD_L}" ]; then rm -rf %D/modules; fi
+@dirrmtry modules

@@ -7,7 +7,7 @@
 
 PORTNAME=	est
 PORTVERSION=	0.7.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.daemonology.net/freebsd-est/
 
@@ -18,27 +18,22 @@ ONLY_FOR_ARCHS=	i386
 KMODDIR=	${PREFIX}/modules
 MAKE_ARGS=	KMODDIR="${KMODDIR}"
 
-USE_RC_SUBR=	yes
-RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
-
-PLIST_FILES=	modules/est.ko			\
-		etc/rc.d/est.sh
+USE_RC_SUBR=	${PORTNAME}
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} > 600015
-IGNORE=		est now contained in the base system (see cpufreq(4))
+IGNORE=		is now contained in the base system (see cpufreq(4))
 .endif
 
-post-extract:
-	${SED}	${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/}	\
-		${FILESDIR}/est.sh > ${WRKDIR}/est.sh
+.if !exists(${SRC_BASE}/sys/Makefile)
+IGNORE=		needs kernel source files
+.endif
 
 pre-install:
-	${MKDIR} ${KMODDIR}
+	@${MKDIR} ${KMODDIR}
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/est.sh ${PREFIX}/etc/rc.d/est.sh
-	${CAT} ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
