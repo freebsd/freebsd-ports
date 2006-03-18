@@ -77,6 +77,7 @@ etc/rc.d/sa-spamd.sh
 %%SITE_PERL%%/Mail/SpamAssassin/SQLBasedAddrList.pm
 %%SITE_PERL%%/Mail/SpamAssassin/SpamdForkScaling.pm
 %%SITE_PERL%%/Mail/SpamAssassin/SubProcBackChannel.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Timeout.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Util.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Util/DependencyInfo.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Util/Progress.pm
@@ -126,6 +127,7 @@ etc/rc.d/sa-spamd.sh
 %%DATADIR%%/60_whitelist_subject.cf
 %%DATADIR%%/languages
 %%DATADIR%%/triplets.txt
+%%DATADIR%%/sa-update-pubkey.txt
 %%DATADIR%%/user_prefs.template
 %%TOOLS%%%%DATADIR%%/tools/README.speedtest
 %%TOOLS%%%%DATADIR%%/tools/bayes_dump_to_trusted_networks
@@ -136,6 +138,7 @@ etc/rc.d/sa-spamd.sh
 %%TOOLS%%%%DATADIR%%/tools/sa-stats.pl
 %%TOOLS%%%%DATADIR%%/tools/speedtest
 %%TOOLS%%%%DATADIR%%/tools/split_corpora
+%%TOOLS%%%%DATADIR%%/tools/sysreport
 %%TOOLS%%%%DATADIR%%/tools/test_extract
 %%TOOLS%%%%DATADIR%%/tools/triplets.pl
 %%TOOLS%%@dirrm %%DATADIR%%/tools
@@ -155,4 +158,4 @@ etc/rc.d/sa-spamd.sh
 @dirrmtry %%SITE_PERL%%/Mail
 @dirrmtry etc/mail/spamassassin
 @dirrmtry etc/mail
-@unexec rmdir /var/run/spamd 2>/dev/null || true
+@dirrmtry /var/run/spamd
