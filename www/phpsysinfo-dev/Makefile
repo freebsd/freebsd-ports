@@ -11,7 +11,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME:L}
 DISTNAME=	${PORTNAME:L}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	shaun@inerd.com
 COMMENT=	A php script that displays info about the host being accessed
 
 USE_PHP=	pcre xml
@@ -20,26 +20,24 @@ WANT_PHP_WEB=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME:L}
 WWWOWN?=	www
 WWWGRP?=	www
-APACHEDIR=	${PREFIX}/www/data
-INSTALLDIR=	${APACHEDIR}/phpSysInfo
+WWWDIR?=	www/data/${PORTNAME}
+DATADIR=	${PREFIX}/${WWWDIR}
 NO_BUILD=	yes
 PLIST=		${WRKDIR}/plist
-
-PLIST_SUB=	INSTALLDIR=${INSTALLDIR:S,^${PREFIX}/,,}
 
 post-patch:
 	${RM} -f ${PLIST}
 	cd ${WRKSRC};\
-	${FIND} . ! -type d | ${SORT} | ${SED} "s|^.|%%INSTALLDIR%%|"\
+	${FIND} . ! -type d | ${SORT} | ${SED} "s|^\.|${WWWDIR}|"\
 		>${PLIST};\
-	${FIND} . -type d | ${SORT} -r | ${SED} "s|^.|@dirrm %%INSTALLDIR%%|"\
+	${FIND} . -type d | ${SORT} -r | ${SED} "s|^\.|@dirrm ${WWWDIR}|"\
 		>>${PLIST}
 
 do-install:
-	${MKDIR} ${INSTALLDIR}
+	${MKDIR} ${DATADIR}
 	cd ${WRKSRC}; ${FIND} . \
-		| ${CPIO} -pdm -R ${WWWOWN}:${WWWGRP} ${INSTALLDIR}
-	${CHMOD} -R ${BINMODE} ${INSTALLDIR}
-	${FIND} ${INSTALLDIR} ! -type d | ${XARGS} ${CHMOD} ${NOBINMODE}
+		| ${CPIO} -pdm -R ${WWWOWN}:${WWWGRP} ${DATADIR}
+	${CHMOD} -R ${BINMODE} ${DATADIR}
+	${FIND} ${DATADIR} ! -type d | ${XARGS} ${CHMOD} ${NOBINMODE}
 
 .include <bsd.port.mk>
