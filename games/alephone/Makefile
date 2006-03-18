@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	marathon
 DISTNAME=	AlephOne-${PORTVERSION}
 
-MAINTAINER=	malyn@strangeGizmo.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The open source version of Bungie's Marathon game
 
 USE_SDL=	image net sdl sound
