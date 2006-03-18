@@ -12340,6 +12340,7 @@ sympa		ports/mail/sympa
 sympa-elixus	ports/mail/sympa-elixus
 sympa5		ports/mail/sympa5
 synaesthesia	ports/graphics/synaesthesia
+synaptics	ports/x11-servers/synaptics
 syncal		ports/palm/syncal
 synce-dccm	ports/palm/synce-dccm
 synce-gnomevfs	ports/palm/synce-gnomevfs
