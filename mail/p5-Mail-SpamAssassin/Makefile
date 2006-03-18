@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Mail-SpamAssassin
-PORTVERSION=	3.1.0
-PORTREVISION=	6
+PORTVERSION=	3.1.1
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_APACHE:S/$/:apache/} ${MASTER_SITE_PERL_CPAN:S/$/:cpan/}
 MASTER_SITE_SUBDIR=	spamassassin/source/:apache Mail/:cpan
@@ -25,8 +24,11 @@ RUN_DEPENDS=	${BUILD_DEPENDS} \
 
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS=	SYSCONFDIR="${PREFIX}/etc" \
-	       	CONTACT_ADDRESS="the administrator of that system" \
-		BUILD_SPAMC=yes RUN_NET_TESTS=yes
+	       	CONTACT_ADDRESS="${CONTACT_ADDRESS}" \
+		BUILD_SPAMC=yes
+
+# You can override it if you like
+CONTACT_ADDRESS?=	The administrator of that system
 
 OPTIONS=	AS_ROOT "Run spamd as root (recommended)" on \
 		DOMAINKEYS "DomainKeys support" off \
@@ -130,6 +132,7 @@ MAN3=		Mail::SpamAssassin.3 \
 		Mail::SpamAssassin::PluginHandler.3 \
 		Mail::SpamAssassin::SQLBasedAddrList.3 \
 		Mail::SpamAssassin::SubProcBackChannel.3 \
+		Mail::SpamAssassin::Timeout.3 \
 		Mail::SpamAssassin::Util.3 \
 		Mail::SpamAssassin::Util::Progress.3 \
 		spamassassin-run.3
