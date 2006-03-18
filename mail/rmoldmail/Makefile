@@ -8,12 +8,15 @@
 PORTNAME=	rmoldmail
 PORTVERSION=	0.1.0
 CATEGORIES=	mail
-MASTER_SITES=	http://probiers.net/projects/rmoldmail/
+MASTER_SITES=	#
 
 MAINTAINER=	petef@FreeBSD.org
 COMMENT=	Prune a mailbox of messages older than a set number of days
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Date/Calc.pm:${PORTSDIR}/devel/p5-Date-Calc
+
+DEPRECATED=	mastersite disappeared, no longer maintained by author
+EXPIRATION_DATE=	2006-04-07
 
 NO_BUILD=	yes
 
