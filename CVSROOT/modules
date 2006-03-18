@@ -9431,6 +9431,7 @@ pari		ports/math/pari
 pari-devel	ports/math/pari-devel
 parmetis	ports/math/parmetis
 party		ports/irc/party
+pas2dox		ports/devel/pas2dox
 pash		ports/shells/pash
 passepartout	ports/graphics/passepartout
 passivetex	ports/print/passivetex
