@@ -6109,6 +6109,7 @@ make++		ports/devel/make++
 makedepend	ports/devel/makedepend
 makefaq		ports/textproc/makefaq
 makefs		ports/sysutils/makefs
+makehuman	ports/graphics/makehuman
 makeindex	ports/print/makeindex
 makepasswd	ports/security/makepasswd
 makepatch	ports/textproc/makepatch
