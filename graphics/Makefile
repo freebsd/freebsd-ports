@@ -171,6 +171,7 @@
     SUBDIR += glide3
     SUBDIR += glitz
     SUBDIR += gliv
+    SUBDIR += glpng
     SUBDIR += gltk
     SUBDIR += gltt
     SUBDIR += gmt
