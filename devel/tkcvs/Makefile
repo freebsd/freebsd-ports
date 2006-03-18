@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	tkcvs
-PORTVERSION=	7.2.4
+PORTVERSION=	8.0.2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.twobarleycorns.net/
 DISTNAME=	${PORTNAME}_${PORTVERSION:S/./_/g}
 
 MAINTAINER=	andrew.nau.ua@gmail.com
-COMMENT=	Tcl/Tk frontends to CVS and diff
+COMMENT=	Tcl/Tk frontends to CVS, Subversion and diff
 
 LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
 
