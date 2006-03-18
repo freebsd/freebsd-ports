@@ -24,7 +24,9 @@ reload_cmd="${command} -k reconfigure"
 # --end rcng
 stop_cmd="squid_stop"
 squid_chdir=${squid_chdir:-%%PREFIX%%/squid/logs}
+# --begin rcng
 squid_enable=${squid_enable:-"NO"}
+# --end rcng
 squid_flags=${squid_flags-"-D"}
 squid_user=${squid_user:-%%SQUID_UID%%}
 default_config=%%PREFIX%%/etc/squid/squid.conf

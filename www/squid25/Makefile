@@ -72,8 +72,7 @@
 #
 
 PORTNAME=	squid
-PORTVERSION=	2.5.12
-PORTREVISION=	4
+PORTVERSION=	2.5.13
 CATEGORIES=	www
 MASTER_SITES=	\
 		ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
@@ -82,13 +81,11 @@ MASTER_SITES=	\
 		ftp://ftp.mirrorservice.org/sites/ftp.squid-cache.org/pub/%SUBDIR%/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/squid/&,}
 MASTER_SITE_SUBDIR=	squid-2/STABLE
-DISTNAME=	squid-2.5.STABLE12
+DISTNAME=	squid-2.5.STABLE13
 DIST_SUBDIR=	squid2.5
 
 PATCH_SITES=	http://www.squid-cache.org/Versions/v2/2.5/bugs/
-PATCHFILES=	squid-2.5.STABLE12-SMB_BadFetch.patch \
-		squid-2.5.STABLE12-wbinfo_group.patch \
-		squid-2.5.STABLE12-asyncio_counters.patch
+PATCHFILES=
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	tmseck@netcologne.de
@@ -98,7 +95,6 @@ CONFLICTS=	squid-2.[^5]*
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_PERL5=	yes
-USE_REINPLACE=	yes
 
 SQUID_UID?=	squid
 SQUID_GID?=	squid
@@ -106,8 +102,11 @@ SQUID_GID?=	squid
 MAN8=		cachemgr.cgi.8 squid.8
 docs=		QUICKSTART README RELEASENOTES.html doc/debug-sections.txt
 PORTDOCS=	${docs:T}
+SUB_FILES+=	pkg-deinstall pkg-install pkg-message
+SUB_LIST+=	SQUID_UID=${SQUID_UID} SQUID_GID=${SQUID_GID}
 
 OPTIONS=	SQUID_LDAP_AUTH "Install LDAP authentication helpers" off \
+		SQUID_SASL_AUTH "Install SASL authentication helpers" off \
 		SQUID_DELAY_POOLS "Enable delay pools" off \
 		SQUID_SNMP "Enable SNMP support" off \
 		SQUID_CARP "Enable CARP support" off \
@@ -133,9 +132,9 @@ OPTIONS=	SQUID_LDAP_AUTH "Install LDAP authentication helpers" off \
 		SQUID_COSS "Enable the COSS storage scheme" off \
 		SQUID_LARGEFILE "Support log and cache files >2GB" off \
 		SQUID_STACKTRACES "Create backtraces on fatal errors" off \
-		SQUID_RCNG "Install an rcNG startup script" on
+		SQUID_RCNG "Install an rc.d style startup script" on
 
-etc_files=	rc.d/squid.sh squid/cachemgr.conf.default \
+etc_files=	squid/cachemgr.conf.default \
 		squid/mib.txt squid/mime.conf.default \
 		squid/msntauth.conf.default squid/squid.conf.default
 
@@ -192,6 +191,14 @@ MAN8+=		squid_ldap_auth.8 squid_ldap_group.8
 basic_auth+=	LDAP
 external_acl+=	ldap_group
 libexec+=	squid_ldap_auth squid_ldap_group
+.endif
+.if defined(WITH_SQUID_SASL_AUTH)
+LIB_DEPENDS+=	sasl2.2:${PORTSDIR}/security/cyrus-sasl2
+CFLAGS+=	-I${LOCALBASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+basic_auth+=	SASL
+libexec+=	sasl_auth
 .endif
 .if !defined(NO_NIS)
 basic_auth+=	YP
@@ -320,10 +327,12 @@ CFLAGS+=	-g
 STRIP=			""
 .endif
 .if !defined(WITHOUT_SQUID_RCNG)
-USE_RC_SUBR=	yes
+USE_RC_SUBR=	squid.sh
 rc_del=		rcold
 rc_state=	rcng
 .else
+SUB_FILES+=	squid.sh
+etc_files+=	rc.d/squid.sh
 rc_del=		rcng
 rc_state=	rcold
 .endif
@@ -334,7 +343,7 @@ rc_state=	rcold
 # will be installed; the default language will be English.
 
 SQUID_LANGUAGES?=	\
-	Bulgarian Catalan Czech Danish Dutch English Estonian Finnish      \
+	Azerbaijani Bulgarian Catalan Czech Danish Dutch English Estonian Finnish      \
 	French German Greek Hebrew Hungarian Italian Japanese Korean Lithuanian \
 	Polish Portuguese Romanian Russian-1251 Russian-koi8-r Serbian     \
 	Simplify_Chinese Slovak Spanish Swedish Traditional_Chinese Turkish
@@ -346,6 +355,7 @@ CONFIGURE_ARGS+=	--enable-err-languages="${SQUID_LANGUAGES}" \
 CONFIGURE_ARGS+=	${SQUID_CONFIGURE_ARGS}
 
 CONFIGURE_ENV+=		CFLAGS="${CFLAGS}" \
+			CPPFLAGS="${CPPFLAGS}"\
 			LDFLAGS="${LDFLAGS}"
 
 PLIST_DIRS=	etc/squid/icons libexec/squid
@@ -371,16 +381,16 @@ pre-install:
 	@${FIND} ${WRKSRC} -name '*.bak' -delete
 	@${FIND} ${WRKSRC} -name '*.orig' -delete
 # create the start script:
-	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g' \
-	    -e 's|%%SQUID_UID%%|${SQUID_UID}|g' \
-	    -e 's|%%RC_SUBR%%|${RC_SUBR}|g' \
+	@${REINPLACE_CMD} \
 	    -e '/--begin ${rc_del}/,/--end ${rc_del}/d' \
-	    -e '/--.*${rc_state}/d' ${FILESDIR}/squid.sh \
-	    >${WRKDIR}/squid.sh
+	    -e '/--.*${rc_state}/d' ${WRKDIR}/squid.sh
+# create variable information in pkg-message:
+	@${REINPLACE_CMD} \
+	    -e '/--begin ${rc_del}/,/--end ${rc_del}/d' \
+	    -e '/--.*${rc_state}/d' ${PKGMESSAGE}
 
 pre-su-install:
 	@${SETENV} ${SCRIPTS_ENV} PKG_PREFIX=${PREFIX} \
-	    squid_user=${SQUID_UID} squid_group=${SQUID_GID} \
 	    ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
@@ -392,7 +402,9 @@ post-install:
 	${CHMOD} 4510 ${PREFIX}/libexec/squid/pinger; \
 	${CHGRP} ${SQUID_GID} ${PREFIX}/libexec/squid/pinger
 .endif
+.if defined(WITHOUT_SQUID_RCNG)
 	${INSTALL_SCRIPT} ${WRKDIR}/squid.sh ${PREFIX}/etc/rc.d/
+.endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${docs} ${DOCSDIR}
@@ -400,6 +412,10 @@ post-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} \
 	    ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
+	@${ECHO_CMD} "===> post-installation information for ${PKGNAME}:"
+	@${ECHO_CMD} ""
+	@${CAT} ${PKGMESSAGE}
+	@${ECHO_CMD} ""
 changeuser:
 # Recover from the problem that earlier versions of this port created the
 # squid pseudo-user with an id greater than 999 which is not allowed in

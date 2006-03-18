@@ -5,15 +5,15 @@
 
 PATH=/bin:/usr/bin:/usr/sbin
 pkgname=$1
-squid_base=${PKG_PREFIX:-/usr/local}/squid
-squid_confdir=${PKG_PREFIX:-/usr/local}/etc/squid
+squid_base="${PKG_PREFIX:-%%PREFIX%%}/squid"
+squid_confdir="${PKG_PREFIX:-%%PREFIX%%}/etc/squid"
 if [ -x /usr/sbin/nologin ]; then
 	nologin=/usr/sbin/nologin
 else
 	nologin=/sbin/nologin
 fi
-squid_user=${squid_user:-squid}
-squid_group=${squid_group:-squid}
+squid_user="%%SQUID_UID%%"
+squid_group="%%SQUID_GID%%"
 squid_gid=100
 squid_uid=100
 # Try to catch the case where the $squid_user might have been created with an
@@ -130,36 +130,6 @@ POST-INSTALL)
 			    ${squid_confdir}/${file}
 		fi
 	done
-
-	echo "===> Post-installation informations for ${pkgname}"
-	echo ""
-	echo "     o You can find the configuration files for this package"
-	echo "       in the directory ${squid_confdir}."
-	echo ""
-	echo "     o A cache directory has been created in ${squid_base}/cache."
-	echo "       Log files will be written to ${squid_base}/logs."
-	echo ""
-	echo "     o The default configuration will deny everyone access to the"
-	echo "       proxy service. Edit the \"http_access\" directives in"
-	echo "       ${squid_confdir}/squid.conf to suit your needs."
-	echo ""
-	echo "     o If you never ran squid on this system before, you need to"
-	echo "       initialize the cache directory by running \"squid -z\""
-	echo "       as 'root' or '${squid_user}' before starting squid."
-	echo ""
-	echo "     Please note that ${PKG_PREFIX}/etc/rc.d/squid.sh is a"
-	echo "     new style rc script. This means that squid will not"
-	echo "     start automatically at boot time."
-	echo ""
-	echo "     To enable squid, set squid_enable=yes in either"
-	echo "     /etc/rc.conf, /etc/rc.conf.local or /etc/rc.conf.d/squid"
-	echo "     See ${PKG_PREFIX}/etc/rc.d/squid.sh for more"
-	echo "     configuration options."
-	echo ""
-	echo "     If you want the port to install an old style rc script, run"
-	echo "     'make config' and deselect the option to install an"
-	echo "     rcNG script."
-	echo ""
 	;;
 *)
 	exit 64
