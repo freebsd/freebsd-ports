@@ -3,17 +3,21 @@
 			* SETUP NOTE * SETUP NOTE *
 
 o Don't run moused(8) daemon.
-
-  Do kill moused.
-  # killall moused
-    and
   Dont' set moused_enable="YES" in /etc/rc.conf.
 
 /etc/rc.conf --------------------------------------
 moused_enable="NO"
 ---------------------------------------------------
 
+o Add boot time tunable to /boot/loader.conf.
+  Set hw.psm.synaptics_support=1 and shutdown -r now!
+
+/boot/loader.conf ---------------------------------
+hw.psm.synaptics_support=1
+---------------------------------------------------
+
 o Set your /etc/xorg.conf (or /etc/XF86Config)
+  Adopt your environment.  This is a sample configration.
 
 /etc/xorg.conf (/etc/XF86Config) ------------------
 	:
@@ -46,8 +50,8 @@ Section "InputDevice"
 	Option		"MaxSpeed"		"0.06"
 	Option		"AccelFactor"		"0.0010"
 
-	# I didn't test, yet.  So I recommended "off".
-	Option		"SHMConfig"		"off"
+	# Humm.. This seems good works with synclient(1).
+	Option		"SHMConfig"		"on"
 
 	# If you use circular touchpad, uncomment them.
 #	Option		"CircularScrolling"	"on"
