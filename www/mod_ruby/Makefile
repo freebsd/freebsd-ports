@@ -18,7 +18,6 @@ LIB_DEPENDS=	eruby.10:${PORTSDIR}/textproc/eruby
 
 USE_APACHE=	yes
 USE_RUBY=	yes
-USE_REINPLACE=	yes
 
 CONFIGURE_ARGS=	--with-apxs="${APXS}" \
 		--enable-eruby=yes \
@@ -34,6 +33,11 @@ DOCS_EN=	COPYING ChangeLog LEGAL LICENSE.apreq NOTICE \
 DOCS_JA=	README.ja doc/default.css doc/*.ja.*
 
 .include <bsd.port.pre.mk>
+
+AP_CUR_VERSION!=	${ECHO_CMD} ${APACHE_PORT} | ${SED} -ne 's,.*/apache\([0-9]*\).*,\1,p'
+.if ${AP_CUR_VERSION} > 20
+CONFIGURE_ARGS+=	--with-apr-includes="`${LOCALBASE}/bin/apr-1-config --includedir`"
+.endif
 
 do-configure:
 	@cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${RUBY} ${RUBY_FLAGS} configure.rb ${CONFIGURE_ARGS}
