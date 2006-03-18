@@ -1,0 +1,5 @@
+This is a library for OpenGL to load PNG graphics files as an
+OpenGL texture as easily as possible. It also has a number of
+options for generating the alpha channel and mipmaps.
+
+WWW: http://www.wyatt100.freeserve.co.uk/download.htm

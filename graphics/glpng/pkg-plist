@@ -1,0 +1,4 @@
+include/GL/glpng.h
+lib/libglpng.a
+lib/libglpng.so
+lib/libglpng.so.1
