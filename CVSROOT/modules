@@ -5927,6 +5927,7 @@ linux-ymessenger	ports/net-im/linux-ymessenger
 linux_base	ports/emulators/linux_base
 linux_base-8	ports/emulators/linux_base-8
 linux_base-debian	ports/emulators/linux_base-debian
+linux_base-fc3	ports/emulators/linux_base-fc3
 linux_base-gentoo-stage1	ports/emulators/linux_base-gentoo-stage1
 linux_base-rh-9	ports/emulators/linux_base-rh-9
 linux_base-suse-9.1	ports/emulators/linux_base-suse-9.1
