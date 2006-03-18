@@ -8,8 +8,7 @@
 PORTNAME=	tomsfastmath
 PORTVERSION=	0.08
 CATEGORIES=	math
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	cperciva/libtom
+MASTER_SITES=	http://libtomcrypt.com/tfm/files/
 DISTNAME=	tfm-${PORTVERSION}
 
 MAINTAINER=	wxs@csh.rit.edu
