@@ -6,20 +6,18 @@
 #
 
 PORTNAME=	smarteiffel
-PORTVERSION=	1.1
-PORTREVISION=	1
+DISTVERSION=	1.2r6
 CATEGORIES=	lang
-MASTER_SITES=	ftp://ftp.loria.fr/pub/loria/SmartEiffel/Oldies/ \
-		ftp://ftp.cs.rit.edu/pub/mirrors/SmartEiffel/Oldies
-DISTNAME=	SmartEiffel-${PORTVERSION}
+MASTER_SITES=	http://except.com.ar/downloads/smarteiffel/
+DISTNAME=	SmartEiffel-${DISTVERSION}
 
 MAINTAINER=	berend@pobox.com
 COMMENT=	SmartEiffel, the GNU compiler for the object-oriented language Eiffel
 
-WRKSRC=		${WRKDIR}/SmartEiffel
+WRKSRC=		${WRKDIR}/SmartEiffel12
 
 # We install in this directory
-SEDIR=		${PREFIX}/${PORTNAME}-${PORTVERSION}
+SEDIR=		${PREFIX}/${PORTNAME}-${DISTVERSION}
 
 # We alias a directory to the installation directory
 # so it is possible to easily switch between different builds
@@ -28,11 +26,9 @@ ALIASDIR=	${PREFIX}/SmartEiffel
 # SmartEiffel needs this to find system.se
 MAKE_ENV+=	SmartEiffel=${WRKSRC}/sys/system.se
 ALL_TARGET=
-USE_BZIP2=	yes
-PLIST_SUB+=	PORTVERSION=${PORTVERSION}
+PLIST_SUB+=	PORTVERSION=${DISTVERSION}
 
-PKGMESSAGE=	${WRKDIR}/MESSAGE
-PKGINSTALL=	${WRKDIR}/INSTALL
+SUB_FILES=	pkg-install pkg-message
 
 # Make sure we can set the symbolic link SmartEiffel
 # to the actual release directory.
@@ -59,10 +55,6 @@ do-install:
 	@${SED} -i .orig -e "s,${WRKSRC},${SEDIR},g" ${SEDIR}/tutorial/loadpath.se
 	@${RM} ${SEDIR}/tutorial/loadpath.se.orig
 
-	@${SED} -e "s,%%PREFIX%%,${PREFIX},g" ${PKGDIR}/pkg-message \
-		> ${PKGMESSAGE}
-	@${SED} -e "s,%%PREFIX%%,${PREFIX},g" ${PKGDIR}/pkg-install \
-		> ${PKGINSTALL}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
