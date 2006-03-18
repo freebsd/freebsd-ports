@@ -11836,6 +11836,7 @@ shapelib	ports/devel/shapelib
 shared-mime-info	ports/misc/shared-mime-info
 sharefonts	ports/x11-fonts/sharefonts
 sharity-light	ports/net/sharity-light
+sharpconstruct	ports/graphics/sharpconstruct
 sharutils	ports/archivers/sharutils
 shc		ports/misc/shc
 sheerdns	ports/dns/sheerdns
