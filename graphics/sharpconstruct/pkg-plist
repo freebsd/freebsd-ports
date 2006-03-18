@@ -1,0 +1,18 @@
+bin/sharpconstruct
+%%DATADIR%%/brushes/Default.png
+%%DATADIR%%/brushes/Flat.png
+%%DATADIR%%/brushes/HollowCircle.png
+%%DATADIR%%/brushes/LargeBumps.png
+%%DATADIR%%/brushes/Rectangle.png
+%%DATADIR%%/interface/SharpConstruct.glade
+%%DATADIR%%/interface/center.png
+%%DATADIR%%/interface/double.png
+%%DATADIR%%/interface/icon.png
+%%DATADIR%%/interface/logo.png
+%%DATADIR%%/interface/pressure.png
+%%DATADIR%%/interface/smoothed.png
+%%DATADIR%%/interface/speed.png
+%%DATADIR%%/interface/wire.png
+@dirrm %%DATADIR%%/brushes
+@dirrm %%DATADIR%%/interface
+@dirrm %%DATADIR%%
