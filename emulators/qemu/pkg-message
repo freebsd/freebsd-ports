@@ -33,4 +33,16 @@ in this message: http://docs.freebsd.org/cgi/mid.cgi?200510131428.21211.jkim
 (not included in the port since the used VIA VT86C926 PCI ID does not
 really match the emulated nic exactly, it just `happens' to work with
 6.0-RC1's driver.)
+- if you want to use usb devices connected to the host in the guest
+(usb_add host:... monitor command) you need to make sure the host isn't
+claiming them, e.g. for umass devices (like memory sticks or external
+harddrives) make sure umass isn't in the kernel (you can then still load it
+as a kld when needed), also unless you are running qemu as root you then
+need to fix permissions for /dev/ugen* device nodes: if you are on 5.x or
+later (devfs) put a rule in /etc/devfs.rules, activate it in /etc/rc.conf
+and run /etc/rc.d/devfs restart.  example devfs.rules:
+	[ugen_ruleset=20]
+	add path 'ugen*' mode 660 group operator
+corresponding rc.conf line:
+	devfs_system_ruleset="ugen_ruleset"
 ====
