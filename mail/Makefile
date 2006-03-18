@@ -359,7 +359,6 @@
     SUBDIR += pflogsumm
     SUBDIR += pfqueue
     SUBDIR += pgen
-    SUBDIR += pgp4pine
     SUBDIR += pgpsendmail
     SUBDIR += php4-imap
     SUBDIR += php5-imap

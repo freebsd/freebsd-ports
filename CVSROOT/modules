@@ -9723,7 +9723,6 @@ pgcluster	ports/databases/pgcluster
 pgen		ports/mail/pgen
 pglogd		ports/www/pglogd
 pgp		ports/security/pgp
-pgp4pine	ports/mail/pgp4pine
 pgp6		ports/security/pgp6
 pgpdump		ports/security/pgpdump
 pgperl		ports/graphics/pgperl
