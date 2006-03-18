@@ -6,9 +6,11 @@
 #
 
 PORTNAME=	aMule
-PORTVERSION=	2.1.0
+PORTVERSION=	2.1.1
 CATEGORIES=	net-p2p
-MASTER_SITES=	http://download.berlios.de/amule/
+#MASTER_SITES=	http://download.berlios.de/amule/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	amule
 
 MAINTAINER=	ganael.laplanche@martymac.com
 COMMENT=	The all-platform eMule p2p client
@@ -21,6 +23,7 @@ LIB_DEPENDS=	wx_gtk2u_core-2.6:${PORTSDIR}/x11-toolkits/wxgtk26-unicode \
 LATEST_LINK=	aMule2
 CONFLICTS=	aMule-1.* aMule-devel-[0-9]*
 
+USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehier gnomehack gnomeprefix
 USE_GMAKE=	yes
@@ -54,7 +57,7 @@ CURL_CONFIG?=	${LOCALBASE}/bin/curl-config
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-BROKEN=		"Won't compile on FreeBSD 4.x - See net-p2p/amule1 for 4.x compatibility."
+BROKEN=		Will not compile on FreeBSD 4.x - See net-p2p/amule1 for 4.x compatibility
 .endif
 
 # Configure options
@@ -107,8 +110,7 @@ PLIST_SUB+=		PL_ALC="@comment "
 .if defined(WITH_AMULEDAEMON)
 CONFIGURE_ARGS+=	--enable-amule-daemon --enable-amule-gui
 PLIST_SUB+=		PL_AMULEDAEMON=""
-USE_RC_SUBR=		yes
-RCSCRIPT=		${PREFIX}/etc/rc.d/amuled.sh
+USE_RC_SUBR=		amuled.sh
 .else
 CONFIGURE_ARGS+=	--disable-amule-daemon --disable-amule-gui
 PLIST_SUB+=		PL_AMULEDAEMON="@comment "
@@ -117,13 +119,7 @@ PLIST_SUB+=		PL_AMULEDAEMON="@comment "
 # Man pages management
 .include "Makefile.man"
 
-# Copy startup script if needed (amuledaemon compiled)
 post-install:
-.if defined(WITH_AMULEDAEMON)
-	${ECHO} "Installing ${RCSCRIPT} startup file."
-	${INSTALL_SCRIPT} ${FILESDIR}/amuled.sh ${RCSCRIPT}
-.endif
-
 # fr manpages are still incomplete and can't be managed
 # by MANLANG. Will be done when pages are complete.
 .if defined(WITH_AMULECMD)
