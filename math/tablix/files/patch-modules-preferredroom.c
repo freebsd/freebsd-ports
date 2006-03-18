@@ -1,5 +1,5 @@
---- modules/preferredroom.c.orig	Fri Sep  2 21:30:38 2005
-+++ modules/preferredroom.c	Tue Nov 22 22:19:51 2005
+--- modules/preferredroom.c.orig	Sat Feb 18 11:56:01 2006
++++ modules/preferredroom.c	Sat Feb 18 11:57:00 2006
 @@ -182,6 +182,8 @@
  int module_init(moduleoption *opt) 
  {

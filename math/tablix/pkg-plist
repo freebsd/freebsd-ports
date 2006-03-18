@@ -9,12 +9,16 @@ lib/pvm/bin/FREEBSD/tablix2_kernel
 lib/pvm/bin/FREEBSD/tablix2_output
 lib/tablix2/consecutive.la
 lib/tablix2/consecutive.so
+lib/tablix2/events_sameday.la
+lib/tablix2/events_sameday.so
 lib/tablix2/export_csv.la
 lib/tablix2/export_csv.so
 lib/tablix2/export_htmlcss.la
 lib/tablix2/export_htmlcss.so
 lib/tablix2/export_ttf.la
 lib/tablix2/export_ttf.so
+lib/tablix2/export_vcal.la
+lib/tablix2/export_vcal.so
 lib/tablix2/fixedtime.la
 lib/tablix2/fixedtime.so
 lib/tablix2/freemorning.la
@@ -37,11 +41,15 @@ lib/tablix2/sametime.la
 lib/tablix2/sametime.so
 lib/tablix2/sametimeas.la
 lib/tablix2/sametimeas.so
+lib/tablix2/timeblocks.la
+lib/tablix2/timeblocks.so
+lib/tablix2/timeblocks_sameday.la
+lib/tablix2/timeblocks_sameday.so
 lib/tablix2/timeplace.la
 lib/tablix2/timeplace.so
 lib/tablix2/walk.la
 lib/tablix2/walk.so
-share/locale/sl/LC_MESSAGES/tablix2.mo
+%%NLS%%share/locale/sl/LC_MESSAGES/tablix2.mo
 share/tablix2/modulesref.xml
 @dirrm lib/tablix2
 @dirrm share/tablix2
