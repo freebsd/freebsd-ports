@@ -1,0 +1,3 @@
+bin/synclient
+@comment bin/syndaemon
+lib/modules/input/synaptics_drv.o
