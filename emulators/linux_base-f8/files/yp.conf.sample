@@ -1,0 +1,15 @@
+# sample yp.conf file
+#
+# Legal entries are:
+#
+#	domainname <domain>		Override the default YP domain
+#					(If not set uses the one from
+#					the getdomainname() syscall)
+#
+#	ypserver <grape> [<domain>]	Define which host to contact
+#					for YP service. If the <domain>
+#					argument is included then this
+#					host service the specified YP
+#					domain.
+#domainname	my.domain
+#ypserver	localhost

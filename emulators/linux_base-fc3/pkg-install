@@ -1,0 +1,43 @@
+#!/bin/sh
+# an installation script for linux_base
+
+case "$2" in
+PRE-INSTALL)
+	if [ -z "`kldstat -v | grep -E 'linux(aout|elf)'`" ]; then
+		echo 'Linux mode is not enabled.'
+		echo 'Loading linux kernel module now...'
+		if ! kldload linux; then
+			echo 'The linux kernel module could not be loaded.'
+			echo 'Please enable linux mode manually and retry.'
+			exit 1
+		fi
+	fi
+	;;
+POST-INSTALL)
+	if [ -z "`grep ^linproc /etc/fstab`" ]; then
+		echo ''
+		echo '+++ Some programs may need the linprocfs, please add it to /etc/fstab! +++'
+	else
+		if [ -z "`mount | grep -w ^linprocfs`" ]; then
+			echo ''
+			echo '+++ Please mount linprocfs manually! +++'
+		fi
+	fi
+	if [ ! -f ${PKG_PREFIX}/etc/nsswitch.conf ]; then
+		cp ${PKG_PREFIX}/etc/nsswitch.conf.dist \
+			${PKG_PREFIX}/etc/nsswitch.conf
+	fi
+	if [ ! -f ${PKG_PREFIX}/etc/yp.conf ]; then
+		cp ${PKG_PREFIX}/etc/yp.conf.sample ${PKG_PREFIX}/etc/yp.conf
+	fi
+#
+# This is needed for updating to ensure that
+# already installed libraries get to ${PKG_PREFIX}/etc/ld.so.cache
+#
+	echo ''
+	echo 'Running linux ldconfig...'
+	${PKG_PREFIX}/sbin/ldconfig -r ${PKG_PREFIX}
+	;;
+esac
+
+exit 0
