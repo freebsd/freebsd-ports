@@ -5,3 +5,4 @@ lib/libepeg.a
 lib/libepeg.la
 lib/libepeg.so
 lib/libepeg.so.9
+libdata/pkgconfig/epeg.pc
