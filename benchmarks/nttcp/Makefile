@@ -13,7 +13,7 @@ MASTER_SITES=	http://fresh.t-systems-sfr.com/unix/src/privat2/ \
 		http://freeware.sgi.com/source/nttcp/ \
 		http://reality.sgiweb.org/freeware/source/nttcp/
 
-MAINTAINER=	billf@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A client/server program for testing network performance
 
 ALL_TARGET=	nttcp

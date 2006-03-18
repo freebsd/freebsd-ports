@@ -11,7 +11,7 @@ CATEGORIES=	irc
 MASTER_SITES=	http://www.gotbnc.com/files/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	billf@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple IRC relay proxy with support for virtual hosting
 
 GNU_CONFIGURE=	YES

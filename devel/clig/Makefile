@@ -10,7 +10,7 @@ PORTVERSION=	1.1.3
 CATEGORIES=	devel tcl82
 MASTER_SITES=	http://wsd.iitb.fhg.de/~geg/clighome/
 
-MAINTAINER=	billf@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Auto-generate an (argc, argv) processor, usage message, and manpage
 
 # This should work with any version of tcl.  See also ${MAKE_ENV}.
