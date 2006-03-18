@@ -114,7 +114,6 @@ pre-patch::
 	@${ECHO_MSG} "hit Ctrl-C right now and use \"make WITH_BOCHS_AMD64=yes\""
 	@${ECHO_MSG}
 .endif
-	@${ECHO_MSG}
 
 post-patch:
 	@${REINPLACE_CMD} -E ' \
@@ -131,9 +130,6 @@ post-patch:
 		' ${WRKSRC}/doc/docbook/user/user.dbk ${WRKSRC}/doc/man/*.1 \
 		${WRKSRC}/doc/man/*.5
 	@${SED} 's|%%DOCSDIR%%|${DOCSDIR}|g' ${MSG_FILE} > ${PKGMESSAGE}
-
-# Post-install
-#
 
 post-install:
 .if !defined(NOPORTDOCS)

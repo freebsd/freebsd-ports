@@ -1,6 +1,6 @@
---- iodev/eth_vde.cc.orig	Sat Dec 10 12:37:35 2005
-+++ iodev/eth_vde.cc	Thu Mar 16 13:02:15 2006
-@@ -41,13 +41,17 @@
+--- iodev/eth_vde.cc.orig	Sat Dec 10 16:37:35 2005
++++ iodev/eth_vde.cc	Sat Mar 18 00:25:18 2006
+@@ -41,18 +41,22 @@
  #include <sys/poll.h>
  #include <sys/time.h>
  #include <sys/resource.h>
@@ -19,3 +19,9 @@
  #include <assert.h>
  #include <fcntl.h>
  #include <errno.h>
+ #include <unistd.h>
+-#include <stdint.h>
++#include <inttypes.h>
+ 
+ #define SWITCH_MAGIC 0xfeedface
+ 
