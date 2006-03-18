@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_PACKETSTORM}
 MASTER_SITE_SUBDIR=	UNIX/scanners
 DISTNAME=	PortScanner-${PORTVERSION}
 
-MAINTAINER=	billf@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple and easy to use TCP port scanner
 
 PLIST_FILES=	bin/portscanner

@@ -12,7 +12,7 @@ MASTER_SITES=	http://dave.plonka.us/Altoids/%SUBDIR%/
 PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	billf@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SNMP get/walk functionality with built-in name to OID translation
 
 BUILD_DEPENDS=	${SITE_PERL}/SNMP_Session.pm:${PORTSDIR}/net-mgmt/p5-SNMP_Session
