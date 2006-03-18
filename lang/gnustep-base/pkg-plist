@@ -52,6 +52,7 @@ System/Library/Headers/Foundation/NSFormatter.h
 System/Library/Headers/Foundation/NSGeometry.h
 System/Library/Headers/Foundation/NSHashTable.h
 System/Library/Headers/Foundation/NSHost.h
+System/Library/Headers/Foundation/NSIndexPath.h
 System/Library/Headers/Foundation/NSIndexSet.h
 System/Library/Headers/Foundation/NSInvocation.h
 System/Library/Headers/Foundation/NSKeyValueCoding.h
@@ -81,6 +82,7 @@ System/Library/Headers/Foundation/NSScanner.h
 System/Library/Headers/Foundation/NSSerialization.h
 System/Library/Headers/Foundation/NSSet.h
 System/Library/Headers/Foundation/NSSortDescriptor.h
+System/Library/Headers/Foundation/NSStream.h
 System/Library/Headers/Foundation/NSString.h
 System/Library/Headers/Foundation/NSTask.h
 System/Library/Headers/Foundation/NSThread.h
@@ -256,6 +258,7 @@ System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Cayenn
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Cayman
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Chicago
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Chihuahua
+System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Coral_Harbour
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Cordoba
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Costa_Rica
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Cuiaba
@@ -287,6 +290,8 @@ System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Hermos
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Indiana/Indianapolis
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Indiana/Knox
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Indiana/Marengo
+System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Indiana/Petersburg
+System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Indiana/Vincennes
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Indiana/Vevay
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Indianapolis
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Inuvik
@@ -311,6 +316,7 @@ System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Menomi
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Merida
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Mexico_City
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Miquelon
+System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Moncton
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Monterrey
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Montevideo
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Montreal
@@ -473,6 +479,7 @@ System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/Australia/Adel
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/Australia/Brisbane
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/Australia/Broken_Hill
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/Australia/Canberra
+System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/Australia/Currie
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/Australia/Darwin
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/Australia/Hobart
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/Australia/LHI
@@ -714,19 +721,6 @@ System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/Portugal
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/ROC
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/ROK
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/Singapore
-System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/SystemV/AST4
-System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/SystemV/AST4ADT
-System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/SystemV/CST6
-System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/SystemV/CST6CDT
-System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/SystemV/EST5
-System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/SystemV/EST5EDT
-System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/SystemV/HST10
-System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/SystemV/MST7
-System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/SystemV/MST7MDT
-System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/SystemV/PST8
-System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/SystemV/PST8PDT
-System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/SystemV/YST9
-System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/SystemV/YST9YDT
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/Turkey
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/UCT
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/US/Alaska
@@ -763,6 +757,7 @@ System/Tools/make_strings
 System/Tools/pl
 System/Tools/pl2link
 System/Tools/pldes
+System/Tools/plget
 System/Tools/plmerge
 System/Tools/plparse
 System/Tools/plser
@@ -771,7 +766,6 @@ System/Tools/xmlparse
 @dirrm System/Library/Libraries/Resources/gnustep-base/TraditionalChinese.lproj
 @dirrm System/Library/Libraries/Resources/gnustep-base/Spanish.lproj
 @dirrm System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/US
-@dirrm System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/SystemV
 @dirrm System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/Pacific
 @dirrm System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/Mideast
 @dirrm System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/Mexico
