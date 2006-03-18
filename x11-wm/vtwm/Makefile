@@ -13,11 +13,23 @@ MASTER_SITES=	http://www.vtwm.org/downloads/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Twm with a virtual desktop and optional Motif-like features
 
-LIB_DEPENDS=	rplay.1:${PORTSDIR}/audio/rplay
-
 USE_IMAKE=	yes
 USE_XPM=	yes
 
 MAN1=		vtwm.1
 
-.include <bsd.port.mk>
+OPTIONS=	SOUND "Sound support" on
+
+.include <bsd.port.pre.mk>
+
+post-patch:
+.if defined(WITHOUT_SOUND)
+	@${REINPLACE_CMD} -i "" -e \
+		's:^XCOMM NO_SOUND_SUPPORT: NO_SOUND_SUPPORT:; \
+		s:^SOUNDLIB:XCOMM SOUNDLIB:; \
+		s:^SOUNDINC:XCOMM SOUNDINC: ' ${WRKSRC}/Imakefile
+.else
+LIB_DEPENDS+=	rplay.1:${PORTSDIR}/audio/rplay
+.endif
+
+.include <bsd.port.post.mk>
