@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	drupal
-PORTVERSION=	4.6.5
-PORTREVISION=	2006010503
+PORTVERSION=	4.6.6
+PORTREVISION=	2006031700
 CATEGORIES=	www
 MASTER_SITES=   ${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=     brooks
@@ -15,8 +15,6 @@ DIST_SUBDIR=    drupal
 
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	CMS that supports pgsql and mysql
-
-FORBIDDEN=	Multiple (generally minor) vulnerabilities
 
 DRUPAL_PORT=	yes
 
