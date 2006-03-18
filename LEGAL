@@ -510,6 +510,7 @@ sharefonts-*		x11-fonts/sharefonts	Shareware.  Cannot be
 						authorization
 shorten-*		audio/shorten		May not be sold.  May not be
 						distributed if modified
+shoutcast-*		audio/shoutcast		No redistribution allowed
 sid-milter-*		mail/sid-milter		May incorporate intellectual
 						property, possible patent issues
 sim*.zip		emulators/sim		No commercial use
