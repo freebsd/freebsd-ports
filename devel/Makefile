@@ -1195,6 +1195,7 @@
     SUBDIR += p5-Test-Class
     SUBDIR += p5-Test-ClassAPI
     SUBDIR += p5-Test-Cmd
+    SUBDIR += p5-Test-Data
     SUBDIR += p5-Test-Deep
     SUBDIR += p5-Test-Differences
     SUBDIR += p5-Test-Exception
