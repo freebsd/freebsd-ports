@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gsasl
-PORTVERSION=	0.2.10
+PORTVERSION=	0.2.12
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNU_ALPHA} \
 		http://josefsson.org/${PORTNAME}/releases/
@@ -39,6 +39,13 @@ PLIST_SUB+=	NLS=""
 
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
+
+post-patch:
+.for file in \
+	lib/po/LINGUAS \
+	po/LINGUAS
+	@${REINPLACE_CMD} -e '1,2d' ${WRKSRC}/${file}
+.endfor
 
 .include <bsd.port.pre.mk>
 

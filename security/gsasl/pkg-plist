@@ -11,10 +11,9 @@ libdata/pkgconfig/libgsasl.pc
 %%PORTDOCS%%%%DOCSDIR%%/reference/ch01.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/controlflow.png
 %%PORTDOCS%%%%DOCSDIR%%/reference/controlflow2.png
-%%PORTDOCS%%%%DOCSDIR%%/reference/gsasl-gsasl-compat.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/gsasl-gsasl-mech.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/gsasl-gsasl.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/gsasl.devhelp
+%%PORTDOCS%%%%DOCSDIR%%/reference/gsasl.devhelp2
 %%PORTDOCS%%%%DOCSDIR%%/reference/home.png
 %%PORTDOCS%%%%DOCSDIR%%/reference/index.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/index.sgml
@@ -37,8 +36,6 @@ libdata/pkgconfig/libgsasl.pc
 %%NLS%%share/locale/pl/LC_MESSAGES/libgsasl.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/gsasl.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/libgsasl.mo
-%%NLS%%share/locale/rw/LC_MESSAGES/gsasl.mo
-%%NLS%%share/locale/rw/LC_MESSAGES/libgsasl.mo
 %%NLS%%share/locale/sq/LC_MESSAGES/gsasl.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/gsasl.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/libgsasl.mo
