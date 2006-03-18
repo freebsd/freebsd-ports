@@ -1,9 +1,0 @@
-
-************** WARNING !!! *****************
-
-If you are upgrading from a version < 1.4.4
-please review your %%PREFIX%%/etc/jabber.xml
-based on new %%PREFIX%%/etc/jabber.xml.dist
-because it's *NOT* backward compatible
-
-********************************************

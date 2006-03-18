@@ -1,0 +1,49 @@
+--- jabber.xml.orig	Thu Nov 13 22:53:46 2003
++++ jabber.xml	Thu May  6 04:19:22 2004
+@@ -49,6 +49,10 @@
+     separate virtual server. Note that each host entry must 
+     be on one line, the server doesn't like it otherwise! :)
+     Use lowercase for the hostname.
++
++    Currently on FreeBSD jabberd is started with the -h option
++    from /usr/local/etc/rc.d/jabberd.sh.  You'll need to modify
++    it before the below applies.
+     -->
+ 
+     <host><jabberd:cmdline flag="h">localhost</jabberd:cmdline></host>
+@@ -356,7 +360,7 @@
+       <xdb_file>./xdb_file/xdb_file.so</xdb_file>
+     </load>
+     <xdb_file xmlns="jabber:config:xdb_file">
+-      <spool><jabberd:cmdline flag='s'>./spool</jabberd:cmdline></spool>
++      <spool><jabberd:cmdline flag='s'>/var/spool/jabber</jabberd:cmdline></spool>
+     </xdb_file>
+   </xdb>
+ 
+@@ -430,7 +434,7 @@
+     <host/>
+     <logtype/>
+     <format>%d: [%t] (%h): %s</format>
+-    <file>error.log</file>
++    <file>/var/log/jabber.error</file>
+     <stderr/>
+   </log>
+ 
+@@ -443,7 +447,7 @@
+     <host/>
+     <logtype>record</logtype>
+     <format>%d %h %s</format>
+-    <file>record.log</file>
++    <file>/var/log/jabber.record</file>
+   </log>
+ 
+   <!-- The following two services are for handling server-to-server traffic. -->
+@@ -668,7 +672,7 @@
+   <!--
+   This specifies the file to store the pid of the process in.
+   -->
+-  <pidfile>./jabber.pid</pidfile>
++  <pidfile>/var/spool/jabber/jabber.pid</pidfile>
+ 
+ 
+ </jabber>

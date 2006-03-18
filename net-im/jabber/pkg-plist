@@ -1,28 +1,20 @@
-bin/jabberd
-bin/xdbfiletool
-@unexec if cmp -s %D/etc/jabber.xml.dist %D/etc/jabber.xml; then rm -f %D/etc/jabber.xml; fi
-etc/jabber.xml.dist
-include/jabberd.h
-include/jabberdlib.h
-lib/libjabberd.la
-lib/libjabberd.so
-lib/libjabberd.so.0
-lib/libjabberddialback.la
-lib/libjabberddialback.so
-lib/libjabberddialback.so.0
-lib/libjabberddnsrv.la
-lib/libjabberddnsrv.so
-lib/libjabberddnsrv.so.0
-lib/libjabberdpthsock.la
-lib/libjabberdpthsock.so
-lib/libjabberdpthsock.so.0
-lib/libjabberdsm.la
-lib/libjabberdsm.so
-lib/libjabberdsm.so.0
-lib/libjabberdxdbfile.la
-lib/libjabberdxdbfile.so
-lib/libjabberdxdbfile.so.0
-lib/libjabberdxdbsql.la
-lib/libjabberdxdbsql.so
-lib/libjabberdxdbsql.so.0
+sbin/jabberd
+@unexec if cmp -s %D/etc/jabber.xml.sample %D/etc/jabber.xml; then rm -f %D/etc/jabber.xml; fi
+etc/jabber.xml.sample
+include/jabber/lib/lib.h
+include/jabber/platform-settings
+include/jabber/jabberd.h
+lib/jabber/dialback/dialback.so
+lib/jabber/dnsrv/dnsrv.so
+lib/jabber/jsm/jsm.so
+lib/jabber/pthsock/pthsock_client.so
+lib/jabber/xdb_file/xdb_file.so
+@dirrm include/jabber/lib
+@dirrm include/jabber
+@dirrm lib/jabber/dialback
+@dirrm lib/jabber/dnsrv
+@dirrm lib/jabber/jsm
+@dirrm lib/jabber/pthsock
+@dirrm lib/jabber/xdb_file
+@dirrm lib/jabber
 @unexec rmdir /var/spool/jabber 2>/dev/null || true
