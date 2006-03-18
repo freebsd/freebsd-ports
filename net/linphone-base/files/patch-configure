@@ -1,22 +1,9 @@
---- configure.orig	Thu Aug 25 07:37:04 2005
-+++ configure	Thu Aug 25 23:31:24 2005
-@@ -23818,10 +23818,6 @@
- 		;;
- esac
- 
--if test "$GCC" = "yes" ; then
--	STRICT_OPTIONS="-Wall -Werror"
--fi
--
- 
- 
- # Check whether --with-realprefix or --without-realprefix was given.
-@@ -23930,23 +23926,6 @@
- if test "x${realprefix}" = "xnone"; then
- 	realprefix=${prefix}
+--- configure.orig	Sat Mar  4 01:55:47 2006
++++ configure	Sat Mar 11 01:28:23 2006
+@@ -23532,23 +23532,6 @@
  fi
--
--
+ 
+ 
 -cat >>confdefs.h <<_ACEOF
 -#define PACKAGE_LOCALE_DIR "${realprefix}/${DATADIRNAME}/locale"
 -_ACEOF
@@ -32,6 +19,8 @@
 -cat >>confdefs.h <<_ACEOF
 -#define PACKAGE_SOUND_DIR "${realprefix}/${DATADIRNAME}/sounds/linphone"
 -_ACEOF
- 
- 
+-
+-
  found_sound=no
+ 
+ 
