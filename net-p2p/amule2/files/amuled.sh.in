@@ -19,7 +19,7 @@
 # amuled_home (str): Set to home directory of user running amuled
 #                    (default /home/${amuled_user})
 #
-. /etc/rc.subr
+. %%RC_SUBR%%
 
 name="amuled"
 rcvar=`set_rcvar`

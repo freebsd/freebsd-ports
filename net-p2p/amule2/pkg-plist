@@ -1,5 +1,3 @@
-%%PL_AMULEDAEMON%%@unexec %D/etc/rc.d/amuled.sh stop > /dev/null 2>&1 || true
-%%PL_AMULEDAEMON%%etc/rc.d/amuled.sh
 %%PL_ALC%%man/fr/man1/alcc.1.gz
 %%PL_AMULEWEBSRV%%man/fr/man1/amuleweb.1.gz
 %%PL_AMULECMD%%man/fr/man1/amulecmd.1.gz
@@ -41,19 +39,19 @@ share/locale/sl/LC_MESSAGES/amule.mo
 @dirrmtry share/locale/it_CH
 @dirrmtry share/locale/ko_KR/LC_MESSAGES
 @dirrmtry share/locale/ko_KR
-share/gnome/doc/aMule-2.1.0/ABOUT-NLS
-share/gnome/doc/aMule-2.1.0/amulesig.txt
-share/gnome/doc/aMule-2.1.0/amule-win32.HOWTO.txt
-share/gnome/doc/aMule-2.1.0/Changelog
-share/gnome/doc/aMule-2.1.0/Doxyfile
-share/gnome/doc/aMule-2.1.0/ED2K-Links.HOWTO
-share/gnome/doc/aMule-2.1.0/INSTALL
-share/gnome/doc/aMule-2.1.0/license.txt
-share/gnome/doc/aMule-2.1.0/README
-share/gnome/doc/aMule-2.1.0/TODO
-share/gnome/doc/aMule-2.1.0/EC_Protocol.txt
-share/gnome/doc/aMule-2.1.0/socks4.protocol
-@dirrmtry share/gnome/doc/aMule-2.1.0
+share/gnome/doc/aMule-2.1.1/ABOUT-NLS
+share/gnome/doc/aMule-2.1.1/amulesig.txt
+share/gnome/doc/aMule-2.1.1/amule-win32.HOWTO.txt
+share/gnome/doc/aMule-2.1.1/Changelog
+share/gnome/doc/aMule-2.1.1/Doxyfile
+share/gnome/doc/aMule-2.1.1/ED2K-Links.HOWTO
+share/gnome/doc/aMule-2.1.1/INSTALL
+share/gnome/doc/aMule-2.1.1/license.txt
+share/gnome/doc/aMule-2.1.1/README
+share/gnome/doc/aMule-2.1.1/TODO
+share/gnome/doc/aMule-2.1.1/EC_Protocol.txt
+share/gnome/doc/aMule-2.1.1/socks4.protocol
+@dirrmtry share/gnome/doc/aMule-2.1.1
 @dirrmtry share/gnome/doc
 %%PL_CAS%%share/gnome/cas/tmp.html
 %%PL_CAS%%share/gnome/cas/stat.png
