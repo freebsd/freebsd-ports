@@ -539,6 +539,7 @@
     SUBDIR += sdl_image
     SUBDIR += sdl_ttf
     SUBDIR += seejpeg
+    SUBDIR += sharpconstruct
     SUBDIR += show
     SUBDIR += showimg
     SUBDIR += simage
