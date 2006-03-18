@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	osiris
-PORTVERSION=	4.1.9
+PORTVERSION=	4.2.0
 CATEGORIES=	security
 MASTER_SITES=	http://www.hostintegrity.com/osiris/data/ \
 		http://darkambient.net/
