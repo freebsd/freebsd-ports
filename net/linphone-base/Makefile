@@ -24,14 +24,12 @@ LIB_DEPENDS=	gsm.1:${PORTSDIR}/audio/gsm \
 		osip2.3:${PORTSDIR}/net/libosip2
 
 USE_GNOME=	glib20 gnomehack gnometarget intlhack pkgconfig
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 LIBTOOLFILES=	configure oRTP/configure
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
-		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--disable-ipv6 --disable-gtk-doc --enable-gnome_ui=no \
-		--disable-ewarning --without-ilbc \
+		--disable-ewarning --without-ilbc --disable-strict \
 		--with-speex=${LOCALBASE} --with-osip=${LOCALBASE} \
 		--with-html-dir=${DOCSDIR}
 INSTALLS_SHLIB=	yes
@@ -41,6 +39,8 @@ MAN1=		linphonec.1 sipomatic.1
 CFLAGS+=	-DPACKAGE_LOCALE_DIR='\"${PREFIX}/share/locale\"' \
 		-DPACKAGE_DATA_DIR='\"${PREFIX}/share\"' \
 		-DPACKAGE_SOUND_DIR='\"${DATADIR}/sounds\"'
+CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 .include "Makefile.common"
 .include <bsd.port.pre.mk>
