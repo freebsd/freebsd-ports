@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	epsilon
-PORTVERSION=	0.3.0.005
-PORTREVISION=	1
+PORTVERSION=	0.3.0.006
+PORTREVISION=	0
 CATEGORIES=	graphics
 MASTER_SITES=	http://enlightenment.freedesktop.org/files/
 
