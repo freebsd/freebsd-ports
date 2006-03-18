@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD$
+# $FreeBSD: /tmp/pcvs/ports/sysutils/est/files/Attic/est.in,v 1.1 2006-03-18 00:32:05 cperciva Exp $
 #
 
 # PROVIDE: est
