@@ -1,0 +1,10 @@
+
+**********************************************************
+
+ A sample configuration file for libbirdb has been copied
+ to %%PREFIX%%/etc/birdb.conf.sample
+ You need to create a birdb.conf file before pam_bsdbioapi
+ can run properly. 
+ 
+**********************************************************
+
