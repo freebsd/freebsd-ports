@@ -11877,6 +11877,7 @@ sigslot		ports/devel/sigslot
 silc-client	ports/net/silc-client
 silc-server	ports/net/silc-server
 silc-toolkit	ports/devel/silc-toolkit
+silktools	ports/security/silktools
 silky		ports/net/silky
 silkymail	ports/mail/silkymail
 silo		ports/x11/silo
