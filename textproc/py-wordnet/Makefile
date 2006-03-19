@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	textproc python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}:pywn \
 		ftp://ftp.cogsci.princeton.edu/pub/wordnet/${WN_VERSION}/:wn \
-                http://www.cogsci.princeton.edu/${WN_VERSION}/:wn \
+		http://www.cogsci.princeton.edu/${WN_VERSION}/:wn \
 		ftp://ftp.ims.uni-stuttgart.de/pub/WordNet/${WN_VERSION}/:wn
 MASTER_SITE_SUBDIR=	pywordnet
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -41,7 +41,7 @@ post-patch:
 		> ${WRKSRC}/wordnet.py
 
 post-install:
-	${MKDIR} -p ${PREFIX}/${WORDNETDATA}
+	${MKDIR} ${PREFIX}/${WORDNETDATA}
 .for f in ${WN_DICTFILES}
 	${INSTALL_DATA} ${WN_WRKSRC}/dict/${f} ${PREFIX}/${WORDNETDATA}/
 .endfor
