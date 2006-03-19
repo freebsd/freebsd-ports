@@ -1,5 +1,5 @@
 bin/%%BROWSER_NAME%%
-lib/%%BROWSER_NAME%%/%%BROWSER_NAME%%-bin
+share/applications/%%BROWSER_NAME%%.desktop
 lib/%%BROWSER_NAME%%/LICENSE
 lib/%%BROWSER_NAME%%/README
 lib/%%BROWSER_NAME%%/chrome/US.jar
@@ -501,3 +501,4 @@ lib/%%BROWSER_NAME%%/linkfarm
 @dirrm lib/%%BROWSER_NAME%%/init.d
 @dirrm lib/%%BROWSER_NAME%%/plugins
 @dirrm lib/%%BROWSER_NAME%%
+@dirrmtry share/applications
