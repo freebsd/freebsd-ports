@@ -3,4 +3,4 @@ and lexical relationships.  (A lexical relationship is a relationship
 between words, such as synonym, antonym, hypernym ("poodle" -> "dog"),
 and hyponym ("poodle" -> "dog").
 
-WWW: http://pywordnet.sourceforge.net/
+WWW: http://osteele.com/projects/pywordnet/
