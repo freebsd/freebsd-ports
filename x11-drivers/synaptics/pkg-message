@@ -6,18 +6,18 @@ o Please remove ${X11BASE}/lib/modules/input/synaptics_drv.so
   manually, If you have installed synaptics-0.14.4_1.  I forgot
   to chase pkg-plist on 0.14.4_1.
 
-o Don't run moused(8) daemon.
-  Dont' set moused_enable="YES" in /etc/rc.conf.
-
-/etc/rc.conf --------------------------------------
-moused_enable="NO"
----------------------------------------------------
-
 o Add boot time tunable to /boot/loader.conf.
   Set hw.psm.synaptics_support=1 and shutdown -r now!
 
 /boot/loader.conf ---------------------------------
 hw.psm.synaptics_support=1
+---------------------------------------------------
+
+o Don't run moused(8) daemon.
+  Dont' set moused_enable="YES" in /etc/rc.conf.
+
+/etc/rc.conf --------------------------------------
+moused_enable="NO"
 ---------------------------------------------------
 
 o Set your /etc/xorg.conf (or /etc/XF86Config)
@@ -43,26 +43,39 @@ Section "InputDevice"
 
 	Option		"Device"		"/dev/psm0"
 	Option		"Protocol"		"psm"
+
 	Option		"LeftEdge"		"1700"
 	Option		"RightEdge"		"5300"
 	Option		"TopEdge"		"1700"
 	Option		"BottomEdge"		"4200"
+
 	Option		"FingerLow"		"25"
 	Option		"FingerHigh"		"30"
+
 	Option		"MaxTapTime"		"180"
 	Option		"MaxTapMove"		"220"
+
 	Option		"VertScrollDelta"	"100"
+	Option		"HorizScrollDelta"	"100"
+
 	Option		"MinSpeed"		"0.06"
 	Option		"MaxSpeed"		"0.06"
 	Option		"AccelFactor"		"0.0010"
 
-	# Humm.. This seems good works with synclient(1).
-	Option		"SHMConfig"		"on"
+	Option		"ScrollButtonRepeat"	"on"
+	Option		"UpDownScrolling"	"on"
+	Option		"UpDownRepeat"		"on"
+	Option		"LeftRightScrolling"	"on"
+	Option		"LeftRightRepeat"	"on"
+
+	# "SHMConfig on" seems good works with synclient(1).  But this
+	# options is insecure.  I recommended "off" as default.
+	Option		"SHMConfig"		"off"
 
 	# If you use circular touchpad, uncomment them.
+#	Option		"CircularPad"		"on"
 #	Option		"CircularScrolling"	"on"
 #	Option		"CircScrollDelta"	"0.5"
-#	Option		"CircularPad"		"on"
 EndSection
 	:
 /etc/xorg.conf (/etc/XF86Config) ------------------
