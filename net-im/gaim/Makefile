@@ -7,7 +7,7 @@
 
 PORTNAME=	gaim
 PORTVERSION=	1.5.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES?=	net-im
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,7 +21,6 @@ CONFLICTS?=	ja-gaim-[0-9]*
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 USE_GNOME=	gnomeprefix gnomehack gtk20
 WANT_GNOME=	yes
 USE_BZIP2=	yes
@@ -67,7 +66,7 @@ PLIST_SUB+=		SILC=""
 PLIST_SUB+=		SILC="@comment "
 .endif
 
-.if defined(WITH_NSS)
+.if !defined(WITHOUT_NSS)
 LIB_DEPENDS+=		nss3:${PORTSDIR}/security/nss
 CONFIGURE_ARGS+=	--with-nspr-includes=${LOCALBASE}/include/nspr \
 			--with-nspr-libs=${LOCALBASE}/lib \
@@ -86,7 +85,7 @@ CONFIGURE_ARGS+=	--disable-perl
 PLIST_SUB+=		PERL:="@comment "
 .endif
 
-.if defined(WITH_GTKSPELL)
+.if !defined(WITHOUT_GTKSPELL)
 LIB_DEPENDS+=	gtkspell.0:${PORTSDIR}/textproc/gtkspell2
 .else
 CONFIGURE_ARGS+=	--disable-gtkspell
@@ -107,7 +106,7 @@ PLIST_SUB+=	TCL:=""
 PLIST_SUB+=	TCL:="@comment "
 .endif
 
-.if defined(WITH_AUDIO)
+.if !defined(WITHOUT_AUDIO)
 LIB_DEPENDS+=	ao.3:${PORTSDIR}/audio/libao \
 		audiofile.0:${PORTSDIR}/audio/libaudiofile
 .else
