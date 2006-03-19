@@ -19,7 +19,6 @@ COMMENT=	Fast validating XML parser for Python
 NO_WRKSUBDIR=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-USE_REINPLACE=	yes
 
 EXAMPLESDIR=	${PREFIX}/share/examples/py-rxp
 DOCSDIR=	${PREFIX}/share/doc/py-rxp
