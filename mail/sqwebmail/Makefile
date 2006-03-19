@@ -207,7 +207,9 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|mkdir -p|${MKDIR}|g' ${WRKSRC}/pcp/configure
 
 	@${REINPLACE_CMD} -e 's|@LIBTOOL@|${LIBTOOL}| ; \
-		s|$$(SHELL) $$(MKINSTALLDIRS)|$$(MKINSTALLDIRS)|' \
+		s|$$(SHELL) $$(MKINSTALLDIRS)|$$(MKINSTALLDIRS)| ; \
+		s|$$(libdir)/charset|$$(prefix)/libdata/charset|g ; \
+		s|$$(libdir)/t-charset|$$(prefix)/libdata/t-charset|g' \
 		${WRKSRC}/pcp/intl/Makefile.in
 
 post-install:
