@@ -1230,10 +1230,9 @@ diff -u src/cf.data.pre:1.49.2.77 src/cf.data.pre:1.49.2.40.2.17
   ADMINISTRATIVE PARAMETERS
   -----------------------------------------------------------------------------
 Index: src/client_side.c
-diff -u src/client_side.c:1.47.2.61 src/client_side.c:1.47.2.31.2.10
---- src/client_side.c:1.47.2.61	Wed Apr 20 19:14:36 2005
-+++ src/client_side.c	Thu May 26 21:34:14 2005
-@@ -850,14 +850,18 @@
+--- src/client_side.c.orig	Fri Mar 10 23:58:35 2006
++++ src/client_side.c	Sat Mar 18 23:53:25 2006
+@@ -871,14 +871,18 @@
  	http->al.cache.code = http->log_type;
  	http->al.cache.msec = tvSubMsec(http->start, current_time);
  	if (request) {
@@ -1258,7 +1257,7 @@ diff -u src/client_side.c:1.47.2.61 src/client_side.c:1.47.2.31.2.10
  	    http->al.hier = request->hier;
  	    if (request->auth_user_request) {
  		if (authenticateUserRequestUsername(request->auth_user_request))
-@@ -867,12 +871,15 @@
+@@ -888,12 +892,17 @@
  	    }
  	    if (conn->rfc931[0])
  		http->al.cache.rfc931 = conn->rfc931;
@@ -1271,7 +1270,9 @@ diff -u src/client_side.c:1.47.2.61 src/client_side.c:1.47.2.31.2.10
 +	http->al.request = request;
 +	if (!http->acl_checklist)
 +	    http->acl_checklist = clientAclChecklistCreate(Config.accessList.http, http);
++	http->acl_checklist->reply = http->reply;
 +	if (!Config.accessList.log || aclCheckFast(Config.accessList.log, http->acl_checklist)) {
++	    http->al.reply = http->reply;
 +	    accessLogLog(&http->al, http->acl_checklist);
 +	    clientUpdateCounters(http);
 +	    clientdbUpdate(conn->peer.sin_addr, http->log_type, PROTO_HTTP, http->out.size);
@@ -1279,50 +1280,32 @@ diff -u src/client_side.c:1.47.2.61 src/client_side.c:1.47.2.31.2.10
      }
      if (http->acl_checklist)
  	aclChecklistFree(http->acl_checklist);
-@@ -883,6 +890,11 @@
+@@ -904,6 +913,7 @@
      safe_free(http->al.headers.request);
      safe_free(http->al.headers.reply);
      safe_free(http->al.cache.authuser);
-+    if (http->al.reply) {
-+	httpReplyDestroy(http->al.reply);
-+	http->al.reply = NULL;
-+    }
 +    http->al.request = NULL;
      safe_free(http->redirect.location);
      stringClean(&http->range_iter.boundary);
      if ((e = http->entry)) {
-@@ -1981,6 +1993,7 @@
-     }
-     if (http->out.offset == 0) {
- 	rep = clientBuildReply(http, buf, size);
-+	http->al.reply = rep;
- 	if (rep) {
- 	    aclCheck_t *ch;
- 	    int rv;
-@@ -2003,7 +2016,6 @@
+@@ -2031,8 +2041,6 @@
  		http->entry = clientCreateStoreEntry(http, http->request->method,
  		    null_request_flags);
  		errorAppendEntry(http->entry, err);
--		httpReplyDestroy(rep);
+-		httpReplyDestroy(http->reply);
+-		http->reply = NULL;
  		memFree(buf, MEM_CLIENT_SOCK_BUF);
  		return;
  	    }
-@@ -2038,7 +2050,6 @@
+@@ -2067,8 +2075,6 @@
  		    http->entry = clientCreateStoreEntry(http, http->request->method,
  			null_request_flags);
  		    errorAppendEntry(http->entry, err);
--		    httpReplyDestroy(rep);
+-		    httpReplyDestroy(http->reply);
+-		    http->reply = NULL;
  		    memFree(buf, MEM_CLIENT_SOCK_BUF);
  		    return;
  		}
-@@ -2086,7 +2097,6 @@
- #if HEADERS_LOG
- 	headersLog(0, 0, http->request->method, rep);
- #endif
--	httpReplyDestroy(rep);
- 	rep = NULL;
-     } else {
- 	memBufDefInit(&mb);
 Index: src/icp_v2.c
 diff -u src/icp_v2.c:1.5 src/icp_v2.c:1.5.60.1
 --- src/icp_v2.c:1.5	Fri May  4 06:39:12 2001
