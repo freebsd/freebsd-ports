@@ -1,16 +1,9 @@
---- src/liferea.orig	Wed Jul  6 07:02:55 2005
-+++ src/liferea	Fri Jul  8 10:17:39 2005
-@@ -18,21 +18,24 @@
- 
- 		MOZILLA_FIVE_HOME=$MOZILLA_HOME
- 		export MOZILLA_FIVE_HOME
-+		echo Using mozilla from $MOZILLA_FIVE_HOME
- 		exec "$dist_bin/liferea-bin" $params
- 	fi
- }
+--- src/liferea.orig	Fri Mar  3 23:18:13 2006
++++ src/liferea	Thu Mar 16 17:18:19 2006
+@@ -22,15 +22,17 @@
  
  look_for_mozilla() {
--
+ 
 -	results=`ls -1d $1 2>/dev/null | sort -n`
 -	while [ -n "$results" ]
 -	do
@@ -19,7 +12,7 @@
 -		path=`dirname $path` 	# strip comm.jar
 -		path=`dirname $path`	# strip chrome
 -		run_with_mozilla $path
-+	
+-		
 +	for p in $1; do
 +		results=`ls -1d $p 2>/dev/null | sort -n`
 +		while [ -n "$results" ]
@@ -29,12 +22,12 @@
 +			path=`dirname $path` 	# strip comm.jar
 +			path=`dirname $path`	# strip chrome
 +			run_with_mozilla $path
- 		
++			
 +		done
  	done
  }
  
-@@ -40,6 +43,7 @@
+@@ -38,6 +40,7 @@
  	run_with_mozilla $MOZILLA_FIVE_HOME
  fi
  
