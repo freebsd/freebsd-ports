@@ -16,5 +16,7 @@ following AVR devices has been added by a private patch:
   AT90PWM2/3
   ATmega164/324/644
   ATmega329/3290/649/6490
+  ATmega406
   ATmega640/1280/1281
   AT90CAN32/64
+  AT90USB646/647/1286/1287
