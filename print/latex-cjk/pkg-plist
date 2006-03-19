@@ -89,6 +89,16 @@ share/emacs/site-lisp/CJK/mule-2.3/cjk-enc.el
 %%EXAMPLESDIR%%/py_test.tex
 %%EXAMPLESDIR%%/rubytest.tex
 %%EXAMPLESDIR%%/thai.tex
+share/texmf/fonts/sfd/Big5.sfd
+share/texmf/fonts/sfd/EUC.sfd
+share/texmf/fonts/sfd/SJIS.sfd
+share/texmf/fonts/sfd/UBg5plus.sfd
+share/texmf/fonts/sfd/UBig5.sfd
+share/texmf/fonts/sfd/UGB.sfd
+share/texmf/fonts/sfd/UGBK.sfd
+share/texmf/fonts/sfd/UJIS.sfd
+share/texmf/fonts/sfd/UKS.sfd
+share/texmf/fonts/sfd/Unicode.sfd
 share/texmf/fonts/tfm/CJK/arb5kai/arb5kai01.tfm
 share/texmf/fonts/tfm/CJK/arb5kai/arb5kai02.tfm
 share/texmf/fonts/tfm/CJK/arb5kai/arb5kai03.tfm
