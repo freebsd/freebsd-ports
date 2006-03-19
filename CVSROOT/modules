@@ -3435,6 +3435,7 @@ gsi		ports/audio/gsi
 gsk		ports/net/gsk
 gsl		ports/math/gsl
 gsm		ports/audio/gsm
+gsmc		ports/science/gsmc
 gsmlib		ports/comms/gsmlib
 gsnes9x		ports/emulators/gsnes9x
 gsoap		ports/devel/gsoap
