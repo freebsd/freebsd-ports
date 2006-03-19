@@ -1,0 +1,21 @@
+--- Makefile.orig	Fri Dec 27 23:23:23 2002
++++ Makefile	Fri Mar 17 17:59:24 2006
+@@ -4,14 +4,14 @@
+ 
+ 
+ CC	= gcc
+-CFLAGS	= -O2 -g -Wall `gtk-config --cflags`
++CFLAGS	= -O2 -g -Wall `pkg-config --cflags gtk+-2.0`
+ 
+ LD	= $(CC)
+-LDFLAGS	= `gtk-config --libs` -lm
++LDFLAGS	= `pkg-config --libs gtk+-2.0` -lm
+ 
+ ifeq ($(PNG),yes)
+-CFLAGS	+= -DHAVE_LIBPNG
+-LDFLAGS	+= -lpng
++CFLAGS	+= `pkg-config --cflags ${LOCALBASE}/libdata/pkgconfig/libpng12.pc`
++LDFLAGS	+= `pkg-config --libs ${LOCALBASE}/libdata/pkgconfig/libpng12.pc`
+ endif
+ 
+ SRCS	= xnecview.c xwin.c parse_input.c parse_output.c draw.c draw_opaque.c freqplot.c postscript.c icon.xbm

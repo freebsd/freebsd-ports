@@ -1,0 +1,5 @@
+Xnecview is a program for visualizing the input and output files of the NEC
+antenna simulation software. It runs on Linux/Unix systems with the X window
+system.
+
+WWW: http://wwwhome.cs.utwente.nl/%7Eptdeboer/ham/xnecview/
