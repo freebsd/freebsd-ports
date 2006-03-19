@@ -20,6 +20,7 @@ libdata/pkgconfig/anthy.pc
 share/anthy/anthy.dep
 share/anthy/anthy.dic
 share/anthy/dic-tool-usage.txt
+share/anthy/matrix
 share/anthy/typetab
 share/anthy/zipcode.t
 %%PORTDOCS%%%%DOCSDIR%%/ELISP
