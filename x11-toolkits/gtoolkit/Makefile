@@ -14,12 +14,10 @@ MASTER_SITES=	ftp://ftp.inf.uos.de/pub/elmar/gtk/objc-gtoolkit/
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Obj-C wrapper for gtk, a x11 graphics library
 
-GNUSTEP_PREFIX?=	${LOCALBASE}/GNUstep
-PREFIX=		${GNUSTEP_PREFIX}
-NO_MTREE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
 USE_GNUSTEP=	yes
+USE_GNUSTEP_PREFIX=	yes
 USE_GNUSTEP_BASE=	yes
 USE_GNUSTEP_CONFIGURE=	yes
 USE_GNUSTEP_BUILD=	yes
