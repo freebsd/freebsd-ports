@@ -7,6 +7,7 @@
 
 PORTNAME=	exif
 PORTVERSION=	0.9
+PORTREVISION=	1
 CATEGORIES=	graphics python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pyexif
@@ -15,8 +16,6 @@ DISTNAME=	pyexif-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python library to extract EXIF metadata from JPEG and TIFF image files
-
-CONFLICTS=	p5-Image-ExifTool-[0-9]*
 
 USE_PYTHON=	yes
 WRKSRC=		${WRKDIR}/pyexif
@@ -39,7 +38,7 @@ do-install:
 	@ ${MKDIR} ${PREFIX}/bin
 	@ cd ${WRKSRC}/lib && ${INSTALL_DATA} *.py *.pyc *.pyo \
 	  ${INSTALL_SITELIBDIR}
-	@ ${INSTALL_SCRIPT} ${WRKSRC}/bin/exiftool ${PREFIX}/bin
+	@ ${INSTALL_SCRIPT} ${WRKSRC}/bin/exiftool ${PREFIX}/bin/py-exiftool
 	@ ${MKDIR} ${DATADIR}
 	@ cd ${WRKSRC}/share/exiftool && ${INSTALL_DATA} *.html *.txt \
 	  ${DATADIR}
