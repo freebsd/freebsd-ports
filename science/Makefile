@@ -32,6 +32,7 @@
     SUBDIR += gnudatalanguage
     SUBDIR += gramps
     SUBDIR += gromacs
+    SUBDIR += gsmc
     SUBDIR += gsystem
     SUBDIR += hdf
     SUBDIR += hdf5
