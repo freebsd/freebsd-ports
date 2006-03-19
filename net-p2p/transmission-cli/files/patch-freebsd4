@@ -1,0 +1,27 @@
+--- configure.orig	Sat Mar 18 23:21:44 2006
++++ configure	Sat Mar 18 23:29:04 2006
+@@ -223,6 +223,13 @@
+   FreeBSD)
+     DEFINES="$DEFINES SYS_FREEBSD"
+     LINKLIBS="$LINKLIBS -pthread -lm"
++
++    RELEASE=`uname -r`
++    case $RELEASE in
++      4.*)
++        DEFINES="$DEFINES SYS_FREEBSD_4"
++        ;;
++    esac
+     ;;
+ 
+   NetBSD)
+--- libtransmission/choking.c.orig	Sat Mar 18 23:30:46 2006
++++ libtransmission/choking.c	Sat Mar 18 23:31:15 2006
+@@ -23,7 +23,7 @@
+ #include <math.h>
+ #include "transmission.h"
+ 
+-#ifdef SYS_BEOS
++#if defined(SYS_BEOS) || defined(SYS_FREEBSD_4)
+ #define lrintf(a) ((int)(0.5+(a)))
+ #endif
+ 
