@@ -1,13 +1,23 @@
 bin/xdx
+share/applications/Xdx.desktop
 share/xdx/MANUAL
 share/xdx/MANUAL.es
+share/xdx/MANUAL.nl
+share/xdx/MANUAL.pl
 share/xdx/pixmaps/bigsmile.png
 share/xdx/pixmaps/cry.png
 share/xdx/pixmaps/sad.png
 share/xdx/pixmaps/smile.png
 share/xdx/pixmaps/wink.png
+share/xdx/pixmaps/xdx-logo.png
+share/xdx/pixmaps/xdx-logo.xcf
 share/xdx/pixmaps/xdx.png
 share/xdx/pixmaps/xdx.xcf
 share/xdx/pixmaps/xdx.xpm
+share/xdx/sounds/attention.wav
+share/xdx/wwv.gnuplot
+share/xdx/wwv.gnuplot~
+@dirrm share/xdx/sounds
 @dirrm share/xdx/pixmaps
 @dirrm share/xdx
+@dirrmtry share/applications
