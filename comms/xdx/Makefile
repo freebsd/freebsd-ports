@@ -5,12 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	xdx
-PORTVERSION=	1.2
-PORTREVISION=	3
+PORTVERSION=	2.0
 CATEGORIES=	comms hamradio
-MASTER_SITES=	http://www.qsl.net/pg4i/download/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	pav
+MASTER_SITES=	http://pg4i.mattsnetwork.co.uk/download/ \
+		http://www.qsl.net/pg4i/download/
 
 MAINTAINER=	matt@mattsnetwork.co.uk
 COMMENT=	Amateur Radio DX cluster monitor
