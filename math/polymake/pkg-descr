@@ -1,6 +1,7 @@
-Polymake is a versatile framework for experimental discrete mathematics.
+Polymake is a versatile framework for experimental discrete geometry.
 The standard distribution contains tool collections for the algorithmic
-treatment of polytopes and polyhedra, and finite simplicial complexes.
+treatment of polytopes and polyhedra, polyhedral surfaces,
+and finite simplicial complexes.
 It offers an unified interface to a wide variety of algorithms
 and free software packages from the computational geometry field,
 such as convex hull computation or visualization tools.
