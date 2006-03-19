@@ -1,6 +1,5 @@
 empty - run applications under pseudo-terminal (PTY) sessions and replace
-TCL/Expect with a simple tool and use your favorite shell (sh, bash, csh,
-tcsh,Xksh, zsh, etc)
+TCL/Expect with a simple tool.
 
 WWW: http://empty.sourceforge.net/
 
