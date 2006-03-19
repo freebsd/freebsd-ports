@@ -1,209 +1,211 @@
-bin/%%FIREFOX_NAME%%
-lib/%%FIREFOX_NAME%%/%%FIREFOX_NAME%%-bin
-lib/%%FIREFOX_NAME%%/.autoreg
-lib/%%FIREFOX_NAME%%/browserconfig.properties
-lib/%%FIREFOX_NAME%%/chrome/browser.jar
-lib/%%FIREFOX_NAME%%/chrome/browser.manifest
-lib/%%FIREFOX_NAME%%/chrome/classic.jar
-lib/%%FIREFOX_NAME%%/chrome/classic.manifest
-lib/%%FIREFOX_NAME%%/chrome/comm.jar
-lib/%%FIREFOX_NAME%%/chrome/comm.manifest
-lib/%%FIREFOX_NAME%%/chrome/en-US.jar
-lib/%%FIREFOX_NAME%%/chrome/en-US.manifest
-lib/%%FIREFOX_NAME%%/chrome/icons/default/default.xpm
-lib/%%FIREFOX_NAME%%/chrome/pippki.jar
-lib/%%FIREFOX_NAME%%/chrome/pippki.manifest
-lib/%%FIREFOX_NAME%%/chrome/reporter.jar
-lib/%%FIREFOX_NAME%%/chrome/reporter.manifest
-lib/%%FIREFOX_NAME%%/chrome/toolkit.jar
-lib/%%FIREFOX_NAME%%/chrome/toolkit.manifest
-lib/%%FIREFOX_NAME%%/components/browser.xpt
-lib/%%FIREFOX_NAME%%/components/jsconsole-clhandler.js
-lib/%%FIREFOX_NAME%%/components/libjar50.so
-lib/%%FIREFOX_NAME%%/components/libjsd.so
-lib/%%FIREFOX_NAME%%/components/libmozgnome.so
-lib/%%FIREFOX_NAME%%/components/libnkgnomevfs.so
-lib/%%FIREFOX_NAME%%/components/libxpinstall.so
-lib/%%FIREFOX_NAME%%/components/nsBrowserContentHandler.js
-lib/%%FIREFOX_NAME%%/components/nsBrowserGlue.js
-lib/%%FIREFOX_NAME%%/components/nsCloseAllWindows.js
-lib/%%FIREFOX_NAME%%/components/nsDictionary.js
-lib/%%FIREFOX_NAME%%/components/nsExtensionManager.js
-lib/%%FIREFOX_NAME%%/components/nsFilePicker.js
-lib/%%FIREFOX_NAME%%/components/nsHelperAppDlg.js
-lib/%%FIREFOX_NAME%%/components/nsInterfaceInfoToIDL.js
-lib/%%FIREFOX_NAME%%/components/nsProxyAutoConfig.js
-lib/%%FIREFOX_NAME%%/components/nsSetDefaultBrowser.js
-lib/%%FIREFOX_NAME%%/components/nsSidebar.js
-lib/%%FIREFOX_NAME%%/components/nsUpdateService.js
-lib/%%FIREFOX_NAME%%/components/nsXmlRpcClient.js
-lib/%%FIREFOX_NAME%%/defaults/autoconfig/platform.js
-lib/%%FIREFOX_NAME%%/defaults/autoconfig/prefcalls.js
-lib/%%FIREFOX_NAME%%/defaults/pref/channel-prefs.js
-lib/%%FIREFOX_NAME%%/defaults/pref/firefox-l10n.js
-lib/%%FIREFOX_NAME%%/defaults/pref/firefox.js
-lib/%%FIREFOX_NAME%%/defaults/pref/reporter.js
-lib/%%FIREFOX_NAME%%/defaults/profile/bookmarks.html
-lib/%%FIREFOX_NAME%%/defaults/profile/chrome/userChrome-example.css
-lib/%%FIREFOX_NAME%%/defaults/profile/chrome/userContent-example.css
-lib/%%FIREFOX_NAME%%/defaults/profile/localstore.rdf
-lib/%%FIREFOX_NAME%%/defaults/profile/mimeTypes.rdf
-lib/%%FIREFOX_NAME%%/defaults/profile/prefs.js
-lib/%%FIREFOX_NAME%%/defaults/profile/search.rdf
-lib/%%FIREFOX_NAME%%/extensions/inspector@mozilla.org/chrome.manifest
-lib/%%FIREFOX_NAME%%/extensions/inspector@mozilla.org/chrome/inspector.jar
-lib/%%FIREFOX_NAME%%/extensions/inspector@mozilla.org/components/inspector-cmdline.js
-lib/%%FIREFOX_NAME%%/extensions/inspector@mozilla.org/components/inspector.xpt
-lib/%%FIREFOX_NAME%%/extensions/inspector@mozilla.org/components/libinspector.so
-lib/%%FIREFOX_NAME%%/extensions/inspector@mozilla.org/defaults/preferences/inspector.js
-lib/%%FIREFOX_NAME%%/extensions/inspector@mozilla.org/install.rdf
-lib/%%FIREFOX_NAME%%/extensions/talkback@mozilla.org/components/libqfaservices.so
-lib/%%FIREFOX_NAME%%/extensions/talkback@mozilla.org/components/qfaservices.xpt
-lib/%%FIREFOX_NAME%%/extensions/talkback@mozilla.org/components/talkback/XTalkback.ad
-lib/%%FIREFOX_NAME%%/extensions/talkback@mozilla.org/components/talkback/master.ini
-lib/%%FIREFOX_NAME%%/extensions/talkback@mozilla.org/components/talkback/talkback
-lib/%%FIREFOX_NAME%%/extensions/talkback@mozilla.org/components/talkback/talkback.so
-lib/%%FIREFOX_NAME%%/extensions/talkback@mozilla.org/install.rdf
-lib/%%FIREFOX_NAME%%/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/install.rdf
-lib/%%FIREFOX_NAME%%/firefox
-lib/%%FIREFOX_NAME%%/firefox-bin
-lib/%%FIREFOX_NAME%%/greprefs/all.js
-lib/%%FIREFOX_NAME%%/greprefs/security-prefs.js
-lib/%%FIREFOX_NAME%%/greprefs/xpinstall.js
-lib/%%FIREFOX_NAME%%/icons/document.png
-lib/%%FIREFOX_NAME%%/icons/mozicon128.png
-lib/%%FIREFOX_NAME%%/icons/mozicon16.xpm
-lib/%%FIREFOX_NAME%%/icons/mozicon50.xpm
-lib/%%FIREFOX_NAME%%/libmozjs.so
-lib/%%FIREFOX_NAME%%/libnspr4.so
-lib/%%FIREFOX_NAME%%/libnss3.so
-lib/%%FIREFOX_NAME%%/libnssckbi.so
-lib/%%FIREFOX_NAME%%/libplc4.so
-lib/%%FIREFOX_NAME%%/libplds4.so
-lib/%%FIREFOX_NAME%%/libsmime3.so
-lib/%%FIREFOX_NAME%%/libsoftokn3.chk
-lib/%%FIREFOX_NAME%%/libsoftokn3.so
-lib/%%FIREFOX_NAME%%/libssl3.so
-lib/%%FIREFOX_NAME%%/libxpcom.so
-lib/%%FIREFOX_NAME%%/libxpcom_compat.so
-lib/%%FIREFOX_NAME%%/libxpcom_core.so
-lib/%%FIREFOX_NAME%%/libxpistub.so
-lib/%%FIREFOX_NAME%%/mozilla-xremote-client
-lib/%%FIREFOX_NAME%%/plugins/libnullplugin.so
-lib/%%FIREFOX_NAME%%/readme.txt
-lib/%%FIREFOX_NAME%%/removed-files
-lib/%%FIREFOX_NAME%%/res/EditorOverride.css
-lib/%%FIREFOX_NAME%%/res/arrow.gif
-lib/%%FIREFOX_NAME%%/res/arrowd.gif
-lib/%%FIREFOX_NAME%%/res/broken-image.gif
-lib/%%FIREFOX_NAME%%/res/charsetData.properties
-lib/%%FIREFOX_NAME%%/res/charsetalias.properties
-lib/%%FIREFOX_NAME%%/res/cmessage.txt
-lib/%%FIREFOX_NAME%%/res/dtd/mathml.dtd
-lib/%%FIREFOX_NAME%%/res/dtd/xhtml11.dtd
-lib/%%FIREFOX_NAME%%/res/entityTables/html40Latin1.properties
-lib/%%FIREFOX_NAME%%/res/entityTables/html40Special.properties
-lib/%%FIREFOX_NAME%%/res/entityTables/html40Symbols.properties
-lib/%%FIREFOX_NAME%%/res/entityTables/htmlEntityVersions.properties
-lib/%%FIREFOX_NAME%%/res/entityTables/mathml20.properties
-lib/%%FIREFOX_NAME%%/res/entityTables/transliterate.properties
-lib/%%FIREFOX_NAME%%/res/fonts/fontEncoding.properties
-lib/%%FIREFOX_NAME%%/res/fonts/mathfont.properties
-lib/%%FIREFOX_NAME%%/res/fonts/mathfontCMEX10.properties
-lib/%%FIREFOX_NAME%%/res/fonts/mathfontCMSY10.properties
-lib/%%FIREFOX_NAME%%/res/fonts/mathfontMTExtra.properties
-lib/%%FIREFOX_NAME%%/res/fonts/mathfontMath1.properties
-lib/%%FIREFOX_NAME%%/res/fonts/mathfontMath2.properties
-lib/%%FIREFOX_NAME%%/res/fonts/mathfontMath4.properties
-lib/%%FIREFOX_NAME%%/res/fonts/mathfontPUA.properties
-lib/%%FIREFOX_NAME%%/res/fonts/mathfontSymbol.properties
-lib/%%FIREFOX_NAME%%/res/fonts/pangoFontEncoding.properties
-lib/%%FIREFOX_NAME%%/res/forms.css
-lib/%%FIREFOX_NAME%%/res/grabber.gif
-lib/%%FIREFOX_NAME%%/res/hiddenWindow.html
-lib/%%FIREFOX_NAME%%/res/html.css
-lib/%%FIREFOX_NAME%%/res/html/gopher-audio.gif
-lib/%%FIREFOX_NAME%%/res/html/gopher-binary.gif
-lib/%%FIREFOX_NAME%%/res/html/gopher-find.gif
-lib/%%FIREFOX_NAME%%/res/html/gopher-image.gif
-lib/%%FIREFOX_NAME%%/res/html/gopher-menu.gif
-lib/%%FIREFOX_NAME%%/res/html/gopher-movie.gif
-lib/%%FIREFOX_NAME%%/res/html/gopher-sound.gif
-lib/%%FIREFOX_NAME%%/res/html/gopher-telnet.gif
-lib/%%FIREFOX_NAME%%/res/html/gopher-text.gif
-lib/%%FIREFOX_NAME%%/res/html/gopher-unknown.gif
-lib/%%FIREFOX_NAME%%/res/langGroups.properties
-lib/%%FIREFOX_NAME%%/res/language.properties
-lib/%%FIREFOX_NAME%%/res/loading-image.gif
-lib/%%FIREFOX_NAME%%/res/mathml.css
-lib/%%FIREFOX_NAME%%/res/quirk.css
-lib/%%FIREFOX_NAME%%/res/svg.css
-lib/%%FIREFOX_NAME%%/res/table-add-column-after-active.gif
-lib/%%FIREFOX_NAME%%/res/table-add-column-after-hover.gif
-lib/%%FIREFOX_NAME%%/res/table-add-column-after.gif
-lib/%%FIREFOX_NAME%%/res/table-add-column-before-active.gif
-lib/%%FIREFOX_NAME%%/res/table-add-column-before-hover.gif
-lib/%%FIREFOX_NAME%%/res/table-add-column-before.gif
-lib/%%FIREFOX_NAME%%/res/table-add-row-after-active.gif
-lib/%%FIREFOX_NAME%%/res/table-add-row-after-hover.gif
-lib/%%FIREFOX_NAME%%/res/table-add-row-after.gif
-lib/%%FIREFOX_NAME%%/res/table-add-row-before-active.gif
-lib/%%FIREFOX_NAME%%/res/table-add-row-before-hover.gif
-lib/%%FIREFOX_NAME%%/res/table-add-row-before.gif
-lib/%%FIREFOX_NAME%%/res/table-remove-column-active.gif
-lib/%%FIREFOX_NAME%%/res/table-remove-column-hover.gif
-lib/%%FIREFOX_NAME%%/res/table-remove-column.gif
-lib/%%FIREFOX_NAME%%/res/table-remove-row-active.gif
-lib/%%FIREFOX_NAME%%/res/table-remove-row-hover.gif
-lib/%%FIREFOX_NAME%%/res/table-remove-row.gif
-lib/%%FIREFOX_NAME%%/res/ua.css
-lib/%%FIREFOX_NAME%%/res/unixcharset.properties
-lib/%%FIREFOX_NAME%%/res/viewsource.css
-lib/%%FIREFOX_NAME%%/run-mozilla.sh
-lib/%%FIREFOX_NAME%%/searchplugins/amazondotcom.png
-lib/%%FIREFOX_NAME%%/searchplugins/amazondotcom.src
-lib/%%FIREFOX_NAME%%/searchplugins/answers.png
-lib/%%FIREFOX_NAME%%/searchplugins/answers.src
-lib/%%FIREFOX_NAME%%/searchplugins/creativecommons.png
-lib/%%FIREFOX_NAME%%/searchplugins/creativecommons.src
-lib/%%FIREFOX_NAME%%/searchplugins/eBay.gif
-lib/%%FIREFOX_NAME%%/searchplugins/eBay.src
-lib/%%FIREFOX_NAME%%/searchplugins/google.gif
-lib/%%FIREFOX_NAME%%/searchplugins/google.src
-lib/%%FIREFOX_NAME%%/searchplugins/yahoo.gif
-lib/%%FIREFOX_NAME%%/searchplugins/yahoo.src
-lib/%%FIREFOX_NAME%%/updater
-lib/%%FIREFOX_NAME%%/updater.ini
-lib/%%FIREFOX_NAME%%/xpicleanup
-lib/%%FIREFOX_NAME%%/linkfarm
-@exec %%PREFIX%%/lib/%%FIREFOX_NAME%%/linkfarm
-@unexec find %%PREFIX%%/lib/%%FIREFOX_NAME%%/plugins -type l -delete
-@dirrm lib/%%FIREFOX_NAME%%/chrome/icons/default
-@dirrm lib/%%FIREFOX_NAME%%/chrome/icons
-@dirrm lib/%%FIREFOX_NAME%%/chrome
-@dirrm lib/%%FIREFOX_NAME%%/defaults/pref
-@dirrm lib/%%FIREFOX_NAME%%/defaults/profile/chrome
-@dirrm lib/%%FIREFOX_NAME%%/defaults/profile
-@dirrm lib/%%FIREFOX_NAME%%/defaults/autoconfig
-@dirrm lib/%%FIREFOX_NAME%%/defaults
-@dirrm lib/%%FIREFOX_NAME%%/searchplugins
-@dirrm lib/%%FIREFOX_NAME%%/components
-@dirrm lib/%%FIREFOX_NAME%%/plugins
-@dirrm lib/%%FIREFOX_NAME%%/res/fonts
-@dirrm lib/%%FIREFOX_NAME%%/res/dtd
-@dirrm lib/%%FIREFOX_NAME%%/res/html
-@dirrm lib/%%FIREFOX_NAME%%/res/entityTables
-@dirrm lib/%%FIREFOX_NAME%%/res
-@dirrm lib/%%FIREFOX_NAME%%/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}
-@dirrm lib/%%FIREFOX_NAME%%/extensions/inspector@mozilla.org/components
-@dirrm lib/%%FIREFOX_NAME%%/extensions/inspector@mozilla.org/chrome
-@dirrm lib/%%FIREFOX_NAME%%/extensions/inspector@mozilla.org/defaults/preferences
-@dirrm lib/%%FIREFOX_NAME%%/extensions/inspector@mozilla.org/defaults
-@dirrm lib/%%FIREFOX_NAME%%/extensions/inspector@mozilla.org
-@dirrm lib/%%FIREFOX_NAME%%/extensions/talkback@mozilla.org/components/talkback
-@dirrm lib/%%FIREFOX_NAME%%/extensions/talkback@mozilla.org/components
-@dirrm lib/%%FIREFOX_NAME%%/extensions/talkback@mozilla.org
-@dirrm lib/%%FIREFOX_NAME%%/extensions
-@dirrm lib/%%FIREFOX_NAME%%/icons
-@dirrm lib/%%FIREFOX_NAME%%/greprefs
-@dirrm lib/%%FIREFOX_NAME%%
+bin/%%BROWSER_NAME%%
+share/applications/%%BROWSER_NAME%%.desktop
+lib/%%BROWSER_NAME%%/.autoreg
+lib/%%BROWSER_NAME%%/browserconfig.properties
+lib/%%BROWSER_NAME%%/chrome/browser.jar
+lib/%%BROWSER_NAME%%/chrome/browser.manifest
+lib/%%BROWSER_NAME%%/chrome/classic.jar
+lib/%%BROWSER_NAME%%/chrome/classic.manifest
+lib/%%BROWSER_NAME%%/chrome/comm.jar
+lib/%%BROWSER_NAME%%/chrome/comm.manifest
+lib/%%BROWSER_NAME%%/chrome/en-US.jar
+lib/%%BROWSER_NAME%%/chrome/en-US.manifest
+lib/%%BROWSER_NAME%%/chrome/icons/default/default.xpm
+lib/%%BROWSER_NAME%%/chrome/pippki.jar
+lib/%%BROWSER_NAME%%/chrome/pippki.manifest
+lib/%%BROWSER_NAME%%/chrome/reporter.jar
+lib/%%BROWSER_NAME%%/chrome/reporter.manifest
+lib/%%BROWSER_NAME%%/chrome/toolkit.jar
+lib/%%BROWSER_NAME%%/chrome/toolkit.manifest
+lib/%%BROWSER_NAME%%/components/browser.xpt
+lib/%%BROWSER_NAME%%/components/jsconsole-clhandler.js
+lib/%%BROWSER_NAME%%/components/libjar50.so
+lib/%%BROWSER_NAME%%/components/libjsd.so
+lib/%%BROWSER_NAME%%/components/libmozgnome.so
+lib/%%BROWSER_NAME%%/components/libnkgnomevfs.so
+lib/%%BROWSER_NAME%%/components/libxpinstall.so
+lib/%%BROWSER_NAME%%/components/nsBrowserContentHandler.js
+lib/%%BROWSER_NAME%%/components/nsBrowserGlue.js
+lib/%%BROWSER_NAME%%/components/nsCloseAllWindows.js
+lib/%%BROWSER_NAME%%/components/nsDictionary.js
+lib/%%BROWSER_NAME%%/components/nsExtensionManager.js
+lib/%%BROWSER_NAME%%/components/nsFilePicker.js
+lib/%%BROWSER_NAME%%/components/nsHelperAppDlg.js
+lib/%%BROWSER_NAME%%/components/nsInterfaceInfoToIDL.js
+lib/%%BROWSER_NAME%%/components/nsProxyAutoConfig.js
+lib/%%BROWSER_NAME%%/components/nsSetDefaultBrowser.js
+lib/%%BROWSER_NAME%%/components/nsSidebar.js
+lib/%%BROWSER_NAME%%/components/nsUpdateService.js
+lib/%%BROWSER_NAME%%/components/nsXmlRpcClient.js
+lib/%%BROWSER_NAME%%/defaults/autoconfig/platform.js
+lib/%%BROWSER_NAME%%/defaults/autoconfig/prefcalls.js
+lib/%%BROWSER_NAME%%/defaults/pref/channel-prefs.js
+lib/%%BROWSER_NAME%%/defaults/pref/firefox-l10n.js
+lib/%%BROWSER_NAME%%/defaults/pref/firefox.js
+lib/%%BROWSER_NAME%%/defaults/pref/reporter.js
+lib/%%BROWSER_NAME%%/defaults/profile/bookmarks.html
+lib/%%BROWSER_NAME%%/defaults/profile/chrome/userChrome-example.css
+lib/%%BROWSER_NAME%%/defaults/profile/chrome/userContent-example.css
+lib/%%BROWSER_NAME%%/defaults/profile/localstore.rdf
+lib/%%BROWSER_NAME%%/defaults/profile/mimeTypes.rdf
+lib/%%BROWSER_NAME%%/defaults/profile/prefs.js
+lib/%%BROWSER_NAME%%/defaults/profile/search.rdf
+lib/%%BROWSER_NAME%%/extensions/inspector@mozilla.org/chrome.manifest
+lib/%%BROWSER_NAME%%/extensions/inspector@mozilla.org/chrome/inspector.jar
+lib/%%BROWSER_NAME%%/extensions/inspector@mozilla.org/components/inspector-cmdline.js
+lib/%%BROWSER_NAME%%/extensions/inspector@mozilla.org/components/inspector.xpt
+lib/%%BROWSER_NAME%%/extensions/inspector@mozilla.org/components/libinspector.so
+lib/%%BROWSER_NAME%%/extensions/inspector@mozilla.org/defaults/preferences/inspector.js
+lib/%%BROWSER_NAME%%/extensions/inspector@mozilla.org/install.rdf
+lib/%%BROWSER_NAME%%/extensions/talkback@mozilla.org/chrome.manifest
+lib/%%BROWSER_NAME%%/extensions/talkback@mozilla.org/components/libqfaservices.so
+lib/%%BROWSER_NAME%%/extensions/talkback@mozilla.org/components/qfaservices.xpt
+lib/%%BROWSER_NAME%%/extensions/talkback@mozilla.org/components/talkback/XTalkback.ad
+lib/%%BROWSER_NAME%%/extensions/talkback@mozilla.org/components/talkback/master.ini
+lib/%%BROWSER_NAME%%/extensions/talkback@mozilla.org/components/talkback/talkback
+lib/%%BROWSER_NAME%%/extensions/talkback@mozilla.org/components/talkback/talkback.so
+lib/%%BROWSER_NAME%%/extensions/talkback@mozilla.org/install.rdf
+lib/%%BROWSER_NAME%%/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/install.rdf
+lib/%%BROWSER_NAME%%/firefox
+lib/%%BROWSER_NAME%%/firefox-bin
+lib/%%BROWSER_NAME%%/greprefs/all.js
+lib/%%BROWSER_NAME%%/greprefs/security-prefs.js
+lib/%%BROWSER_NAME%%/greprefs/xpinstall.js
+lib/%%BROWSER_NAME%%/icons/document.png
+lib/%%BROWSER_NAME%%/icons/mozicon128.png
+lib/%%BROWSER_NAME%%/icons/mozicon16.xpm
+lib/%%BROWSER_NAME%%/icons/mozicon50.xpm
+lib/%%BROWSER_NAME%%/libmozjs.so
+lib/%%BROWSER_NAME%%/libnspr4.so
+lib/%%BROWSER_NAME%%/libnss3.so
+lib/%%BROWSER_NAME%%/libnssckbi.so
+lib/%%BROWSER_NAME%%/libplc4.so
+lib/%%BROWSER_NAME%%/libplds4.so
+lib/%%BROWSER_NAME%%/libsmime3.so
+lib/%%BROWSER_NAME%%/libsoftokn3.chk
+lib/%%BROWSER_NAME%%/libsoftokn3.so
+lib/%%BROWSER_NAME%%/libssl3.so
+lib/%%BROWSER_NAME%%/libxpcom.so
+lib/%%BROWSER_NAME%%/libxpcom_compat.so
+lib/%%BROWSER_NAME%%/libxpcom_core.so
+lib/%%BROWSER_NAME%%/libxpistub.so
+lib/%%BROWSER_NAME%%/mozilla-xremote-client
+lib/%%BROWSER_NAME%%/plugins/libnullplugin.so
+lib/%%BROWSER_NAME%%/readme.txt
+lib/%%BROWSER_NAME%%/removed-files
+lib/%%BROWSER_NAME%%/res/EditorOverride.css
+lib/%%BROWSER_NAME%%/res/arrow.gif
+lib/%%BROWSER_NAME%%/res/arrowd.gif
+lib/%%BROWSER_NAME%%/res/broken-image.gif
+lib/%%BROWSER_NAME%%/res/charsetData.properties
+lib/%%BROWSER_NAME%%/res/charsetalias.properties
+lib/%%BROWSER_NAME%%/res/cmessage.txt
+lib/%%BROWSER_NAME%%/res/dtd/mathml.dtd
+lib/%%BROWSER_NAME%%/res/dtd/xhtml11.dtd
+lib/%%BROWSER_NAME%%/res/entityTables/html40Latin1.properties
+lib/%%BROWSER_NAME%%/res/entityTables/html40Special.properties
+lib/%%BROWSER_NAME%%/res/entityTables/html40Symbols.properties
+lib/%%BROWSER_NAME%%/res/entityTables/htmlEntityVersions.properties
+lib/%%BROWSER_NAME%%/res/entityTables/mathml20.properties
+lib/%%BROWSER_NAME%%/res/entityTables/transliterate.properties
+lib/%%BROWSER_NAME%%/res/fonts/fontEncoding.properties
+lib/%%BROWSER_NAME%%/res/fonts/mathfont.properties
+lib/%%BROWSER_NAME%%/res/fonts/mathfontCMEX10.properties
+lib/%%BROWSER_NAME%%/res/fonts/mathfontCMSY10.properties
+lib/%%BROWSER_NAME%%/res/fonts/mathfontMTExtra.properties
+lib/%%BROWSER_NAME%%/res/fonts/mathfontMath1.properties
+lib/%%BROWSER_NAME%%/res/fonts/mathfontMath2.properties
+lib/%%BROWSER_NAME%%/res/fonts/mathfontMath4.properties
+lib/%%BROWSER_NAME%%/res/fonts/mathfontPUA.properties
+lib/%%BROWSER_NAME%%/res/fonts/mathfontSymbol.properties
+lib/%%BROWSER_NAME%%/res/fonts/pangoFontEncoding.properties
+lib/%%BROWSER_NAME%%/res/forms.css
+lib/%%BROWSER_NAME%%/res/grabber.gif
+lib/%%BROWSER_NAME%%/res/hiddenWindow.html
+lib/%%BROWSER_NAME%%/res/html.css
+lib/%%BROWSER_NAME%%/res/html/gopher-audio.gif
+lib/%%BROWSER_NAME%%/res/html/gopher-binary.gif
+lib/%%BROWSER_NAME%%/res/html/gopher-find.gif
+lib/%%BROWSER_NAME%%/res/html/gopher-image.gif
+lib/%%BROWSER_NAME%%/res/html/gopher-menu.gif
+lib/%%BROWSER_NAME%%/res/html/gopher-movie.gif
+lib/%%BROWSER_NAME%%/res/html/gopher-sound.gif
+lib/%%BROWSER_NAME%%/res/html/gopher-telnet.gif
+lib/%%BROWSER_NAME%%/res/html/gopher-text.gif
+lib/%%BROWSER_NAME%%/res/html/gopher-unknown.gif
+lib/%%BROWSER_NAME%%/res/langGroups.properties
+lib/%%BROWSER_NAME%%/res/language.properties
+lib/%%BROWSER_NAME%%/res/loading-image.gif
+lib/%%BROWSER_NAME%%/res/mathml.css
+lib/%%BROWSER_NAME%%/res/quirk.css
+lib/%%BROWSER_NAME%%/res/svg.css
+lib/%%BROWSER_NAME%%/res/table-add-column-after-active.gif
+lib/%%BROWSER_NAME%%/res/table-add-column-after-hover.gif
+lib/%%BROWSER_NAME%%/res/table-add-column-after.gif
+lib/%%BROWSER_NAME%%/res/table-add-column-before-active.gif
+lib/%%BROWSER_NAME%%/res/table-add-column-before-hover.gif
+lib/%%BROWSER_NAME%%/res/table-add-column-before.gif
+lib/%%BROWSER_NAME%%/res/table-add-row-after-active.gif
+lib/%%BROWSER_NAME%%/res/table-add-row-after-hover.gif
+lib/%%BROWSER_NAME%%/res/table-add-row-after.gif
+lib/%%BROWSER_NAME%%/res/table-add-row-before-active.gif
+lib/%%BROWSER_NAME%%/res/table-add-row-before-hover.gif
+lib/%%BROWSER_NAME%%/res/table-add-row-before.gif
+lib/%%BROWSER_NAME%%/res/table-remove-column-active.gif
+lib/%%BROWSER_NAME%%/res/table-remove-column-hover.gif
+lib/%%BROWSER_NAME%%/res/table-remove-column.gif
+lib/%%BROWSER_NAME%%/res/table-remove-row-active.gif
+lib/%%BROWSER_NAME%%/res/table-remove-row-hover.gif
+lib/%%BROWSER_NAME%%/res/table-remove-row.gif
+lib/%%BROWSER_NAME%%/res/ua.css
+lib/%%BROWSER_NAME%%/res/unixcharset.properties
+lib/%%BROWSER_NAME%%/res/viewsource.css
+lib/%%BROWSER_NAME%%/run-mozilla.sh
+lib/%%BROWSER_NAME%%/searchplugins/amazondotcom.png
+lib/%%BROWSER_NAME%%/searchplugins/amazondotcom.src
+lib/%%BROWSER_NAME%%/searchplugins/answers.png
+lib/%%BROWSER_NAME%%/searchplugins/answers.src
+lib/%%BROWSER_NAME%%/searchplugins/creativecommons.png
+lib/%%BROWSER_NAME%%/searchplugins/creativecommons.src
+lib/%%BROWSER_NAME%%/searchplugins/eBay.gif
+lib/%%BROWSER_NAME%%/searchplugins/eBay.src
+lib/%%BROWSER_NAME%%/searchplugins/google.gif
+lib/%%BROWSER_NAME%%/searchplugins/google.src
+lib/%%BROWSER_NAME%%/searchplugins/yahoo.gif
+lib/%%BROWSER_NAME%%/searchplugins/yahoo.src
+lib/%%BROWSER_NAME%%/updater
+lib/%%BROWSER_NAME%%/updater.ini
+lib/%%BROWSER_NAME%%/xpicleanup
+lib/%%BROWSER_NAME%%/linkfarm
+@exec %%PREFIX%%/lib/%%BROWSER_NAME%%/linkfarm
+@unexec /usr/bin/find %%PREFIX%%/lib/%%BROWSER_NAME%%/plugins -type l -delete
+@dirrm lib/%%BROWSER_NAME%%/chrome/icons/default
+@dirrm lib/%%BROWSER_NAME%%/chrome/icons
+@dirrm lib/%%BROWSER_NAME%%/chrome
+@dirrm lib/%%BROWSER_NAME%%/defaults/pref
+@dirrm lib/%%BROWSER_NAME%%/defaults/profile/chrome
+@dirrm lib/%%BROWSER_NAME%%/defaults/profile
+@dirrm lib/%%BROWSER_NAME%%/defaults/autoconfig
+@dirrm lib/%%BROWSER_NAME%%/defaults
+@dirrm lib/%%BROWSER_NAME%%/searchplugins
+@dirrm lib/%%BROWSER_NAME%%/components
+@dirrm lib/%%BROWSER_NAME%%/plugins
+@dirrm lib/%%BROWSER_NAME%%/res/fonts
+@dirrm lib/%%BROWSER_NAME%%/res/dtd
+@dirrm lib/%%BROWSER_NAME%%/res/html
+@dirrm lib/%%BROWSER_NAME%%/res/entityTables
+@dirrm lib/%%BROWSER_NAME%%/res
+@dirrm lib/%%BROWSER_NAME%%/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}
+@dirrm lib/%%BROWSER_NAME%%/extensions/inspector@mozilla.org/components
+@dirrm lib/%%BROWSER_NAME%%/extensions/inspector@mozilla.org/chrome
+@dirrm lib/%%BROWSER_NAME%%/extensions/inspector@mozilla.org/defaults/preferences
+@dirrm lib/%%BROWSER_NAME%%/extensions/inspector@mozilla.org/defaults
+@dirrm lib/%%BROWSER_NAME%%/extensions/inspector@mozilla.org
+@dirrm lib/%%BROWSER_NAME%%/extensions/talkback@mozilla.org/components/talkback
+@dirrm lib/%%BROWSER_NAME%%/extensions/talkback@mozilla.org/components
+@dirrm lib/%%BROWSER_NAME%%/extensions/talkback@mozilla.org
+@dirrm lib/%%BROWSER_NAME%%/extensions
+@dirrm lib/%%BROWSER_NAME%%/icons
+@dirrm lib/%%BROWSER_NAME%%/greprefs
+@dirrm lib/%%BROWSER_NAME%%
+@dirrmtry share/applications

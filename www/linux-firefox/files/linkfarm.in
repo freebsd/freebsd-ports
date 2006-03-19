@@ -1,6 +1,6 @@
 #!/bin/sh
 # Run this after installing Beonex, Mozilla or Netscape plugins
-cd	%%PREFIX%%/lib/%%FIREFOX_NAME%%/plugins
+cd	%%PREFIX%%/lib/%%BROWSER_NAME%%/plugins
 find -L . -type l -delete
 find	%%X11BASE%%/lib/linux-beonex/plugins \
 	%%X11BASE%%/lib/netscape-linux/plugins \
