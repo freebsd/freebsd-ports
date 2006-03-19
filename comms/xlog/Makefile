@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	xlog
-PORTVERSION=	1.3
+PORTVERSION=	1.3.1
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://pg4i.mattsnetwork.co.uk/download/ \
 		http://www.qsl.net/pg4i/download/
