@@ -26,10 +26,16 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 PLIST_FILES=	bin/k3dsurf
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500035
+BROKEN=		Does not compile with gcc-2.95
+.endif
+
 pre-build:
 	cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} qmake
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/k3dsurf ${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
