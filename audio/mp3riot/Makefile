@@ -10,7 +10,7 @@ PORTVERSION=	1.3
 CATEGORIES=	audio
 MASTER_SITES=	http://www.linuxsecure.de/f2html/
 
-MAINTAINER=	francisco@gomezmarin.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mp3riot creates mp3 playlists, HTML files, etc
 
 RUN_DEPENDS=	${SITE_PERL}/MP3/Info.pm:${PORTSDIR}/audio/p5-MP3-Info

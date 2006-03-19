@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_APACHE_JAKARTA}
 MASTER_SITE_SUBDIR=jetspeed/binaries
 DISTFILES=	${PORTNAME}-${PORTVERSION}-war${EXTRACT_SUFX}
 
-MAINTAINER=	francisco@gomezmarin.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Jetspeed is an Open Source Portal, written in Java and XML
 
 RUN_DEPENDS=	${LOCALBASE}/bin/ant:${PORTSDIR}/devel/apache-ant \
