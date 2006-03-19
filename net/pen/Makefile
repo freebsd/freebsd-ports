@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	pen
-PORTVERSION=	0.15.0
+PORTVERSION=	0.17.0
 CATEGORIES=	net
 MASTER_SITES=	ftp://siag.nu/pub/pen/ \
 		http://siag.nu/pub/pen/
@@ -18,7 +18,7 @@ COMMENT=	A load balancer for simple tcp based protocols
 GNU_CONFIGURE=		yes
 USE_OPENSSL=		yes
 CONFIGURE_ARGS=		--with-daemon --with-docdir=${DOCSDIR} \
-			--with-ssl=${OPENSSLBASE}
+			--with-ssl=${OPENSSLBASE} --with-kqueue
 
 PORTDOCS=		penstats HOWTO AUTHORS README ChangeLog COPYING
 PLIST_FILES=		bin/mergelogs bin/pen bin/penctl bin/penlog \
