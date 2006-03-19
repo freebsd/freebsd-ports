@@ -105,9 +105,9 @@ INSTALL_TARGET=	install-strip install-configure
 .endif
 
 .if defined(WITH_RCORDER)
-USE_RCORDER=	sqwebmail-sqwebmaild.sh
+USE_RCORDER=	sqwebmail-sqwebmaild
 .else   
-USE_RC_SUBR=	sqwebmail-sqwebmaild.sh
+USE_RC_SUBR=	sqwebmail-sqwebmaild
 .endif
 
 .if defined(WITHOUT_CACHEDIR)
