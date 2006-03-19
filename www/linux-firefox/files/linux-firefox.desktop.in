@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Firefox (Linux binary)
+Exec=linux-firefox %U
+Icon=firefox
+StartupNotify=false
+Type=Application
+Categories=Application;Network;
+MimeType=text/html;text/xml;application/xthml+xml;
