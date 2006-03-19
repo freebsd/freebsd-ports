@@ -23,7 +23,13 @@ MANCOMPRESSED=	maybe
 
 USE_OPENSSL=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+IGNORE=		does not compile on FreeBSD 4.x; use net/mpd instead
+.endif
+
 post-install:
 	@${INSTALL_SCRIPT} -m 751 ${FILESDIR}/mpd4.sh ${PREFIX}/etc/rc.d/mpd4.sh.sample
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
