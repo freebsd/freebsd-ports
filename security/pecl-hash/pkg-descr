@@ -2,7 +2,7 @@ Extension provides native implementations of common message digest algorithms
 using a generic factory method.
 At the moment it supports the following hashing algorithms:
 
- * md4, md5
+ * md2, md4, md5
  * sha1, sha256, sha384, sha512
  * ripemd128, ripemd160
  * tiger128, tiger160, tiger192 (3 and 4 passes)
