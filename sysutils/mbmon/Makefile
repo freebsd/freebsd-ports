@@ -7,7 +7,7 @@
 
 PORTNAME?=	mbmon
 PORTVERSION=	205
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.nt.phys.kyushu-u.ac.jp/shimizu/download/xmbmon/
 DISTNAME=	xmbmon${PORTVERSION}
@@ -25,6 +25,10 @@ MAN1?=		mbmon.1
 PORTDOCS=	ChangeLog ChangeLog.jp ReadMe ReadMe.jp ReadMe.tech
 
 OPTIONS=	SMB "enable smb(4) support" on
+
+.if ${PORTNAME} == "mbmon"
+USE_RC_SUBR=	mbmon.sh
+.endif
 
 .include <bsd.port.pre.mk>
 

@@ -1,0 +1,32 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: mbmon
+# REQUIRE: LOGIN
+# BEFORE:  securelevel
+# KEYWORD: FreeBSD shutdown
+
+# Add the following line to /etc/rc.conf to enable the mbmon daemon:
+#
+#	mbmon_enable="YES"
+#
+# See mbmon(1) for mbmon_flags
+# Set mbmon_port to the TCP port to listen to, default is 12999
+
+. %%RC_SUBR%%
+
+name="mbmon"
+rcvar=`set_rcvar`
+
+# read configuration and set defaults
+load_rc_config "$name"
+: ${mbmon_enable="NO"}
+: ${mbmon_flags=""}
+: ${mbmon_port="12999"}
+
+command="%%PREFIX%%/bin/${name}"
+command_args="-P ${mbmon_port}"
+
+run_rc_command "$1"
