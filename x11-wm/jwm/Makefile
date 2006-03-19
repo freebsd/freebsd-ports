@@ -26,6 +26,12 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 
 MAN1=		jwm.1
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		Does not compile
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2||' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/example.jwmrc
@@ -38,4 +44,4 @@ do-install:
 	fi
 	${INSTALL_MAN} ${WRKSRC}/jwm.1 ${MANPREFIX}/man/man1/
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
