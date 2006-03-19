@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	mod_auth_pgsql
-PORTVERSION=	2.0.2b1
-PORTREVISION=	3
+PORTVERSION=	2.0.3
 CATEGORIES=	www
 MASTER_SITES=	http://www.giuseppetanzilli.it/mod_auth_pgsql2/dist/
 
@@ -14,7 +13,7 @@ MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Allows users to use PostgreSQL databases for user authentication
 
 USE_PGSQL=	yes
-USE_APACHE=	20
+USE_APACHE=	20+
 
 LATEST_LINK=	mod_auth_pgsql2
 
