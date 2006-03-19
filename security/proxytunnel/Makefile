@@ -7,6 +7,7 @@
 
 PORTNAME=	proxytunnel
 PORTVERSION=	1.6.0
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,8 +23,16 @@ ALL_TARGET=	${PORTNAME}
 PLIST_FILES=	bin/proxytunnel
 PORTDOCS=	CHANGES CREDITS README
 
+CFLAGS+=	-DUSE_SSL -DSETPROCTITLE -DSPT_TYPE=1
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500000
+CFLAGS+=	-DHAVE_GETOPT_LONG
+.endif
+
 post-patch:
-	@${REINPLACE_CMD} -e '/^CFLAGS*/d; /^CC*/d' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e '/^CFLAGS/d' ${WRKSRC}/${MAKEFILE}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
@@ -35,4 +44,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
