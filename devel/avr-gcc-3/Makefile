@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gcc
-PORTVERSION=	3.4.5
-PORTREVISION=	2
+PORTVERSION=	3.4.6
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITES+=	http://people.freebsd.org/~joerg/:local
@@ -35,6 +34,8 @@ USE_GMAKE=	yes
 USE_BISON=	yes
 GNU_CONFIGURE=	yes
 
+CONFLICTS=	avr-gcc-devel-4*
+
 CONFIGURE_ARGS=	--target=avr --disable-nls
 
 MAKE_FLAGS=	LANGUAGES="c c++"
@@ -45,7 +46,7 @@ MAN1=		avr-cpp.1 avr-gcc.1 avr-g++.1 avr-gcov.1
 MAN7=		fsf-funding.7 gfdl.7 gpl.7
 INFO=		cpp gcc gccint cppinternals gccinstall
 
-# As files/patch-binary-constants updates the documentation, we need to
+# As ${FILESDIR}/patch-binary-constants updates the documentation, we need to
 # recreate it.
 pre-build:
 	cd ${WRKSRC}/gcc &&\
@@ -54,8 +55,8 @@ pre-build:
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500600
-BROKEN=		"System's Pod::Man too old to generate the documentation."
-IGNORE=		"you need a newer version of Perl to build the documentation"
+BROKEN=		System's Pod::Man too old to generate the documentation.
+IGNORE=		you need a newer version of Perl to build the documentation
 .endif
 
 .include <bsd.port.post.mk>
