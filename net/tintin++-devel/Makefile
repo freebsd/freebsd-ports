@@ -32,6 +32,9 @@ CFLAGS+=	-I ${LOCALBASE}/include
 MAKE_ENV+=	LIBS="-L${LOCALBASE}/lib"
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|' ${WRKSRC}/Makefile.in
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tt++ ${PREFIX}/bin
 .ifndef NOPORTDOCS
