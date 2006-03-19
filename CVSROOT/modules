@@ -13882,6 +13882,7 @@ xmx		ports/x11/xmx
 xmysqladmin	ports/databases/xmysqladmin
 xnap		ports/net-p2p/xnap
 xnc		ports/x11-fm/xnc
+xnecview	ports/comms/xnecview
 xnee		ports/x11/xnee
 xneko		ports/games/xneko
 xnodecor	ports/x11/xnodecor
