@@ -1,0 +1,8 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Seamonkey (Linux binary)
+Exec=linux-seamonkey %U
+StartupNotify=false
+Type=Application
+Categories=Application;Network;
+MimeType=text/html;text/xml;application/xthml+xml;
