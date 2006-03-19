@@ -24,6 +24,7 @@ NO_BUILD=	yes
 
 WITH_CTYPE=	yes
 WITH_DOM=	yes
+WITH_HASH=	yes
 WITH_ICONV=	yes
 WITH_PCRE=	yes
 WITH_PDO=	yes
@@ -52,6 +53,7 @@ OPTIONS=	BCMATH          "bc style precision math functions" off \
 		GD              "GD library support" off \
 		GETTEXT         "gettext library support" off \
 		GMP             "GNU MP support" off \
+		HASH            "HASH Message Digest Framework" on \
 		ICONV           "iconv support" on \
 		IMAGICK         "ImageMagick support" off \
 		IMAP            "IMAP support" off \
