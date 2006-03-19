@@ -112,6 +112,7 @@
     SUBDIR += xcept
     SUBDIR += xdx
     SUBDIR += xlog
+    SUBDIR += xnecview
     SUBDIR += yagiuda
     SUBDIR += yaps
     SUBDIR += yawmppp
