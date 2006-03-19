@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	anthy
-PORTVERSION=	7100b
-PORTREVISION=	1
+PORTVERSION=	7500
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
-MASTER_SITE_SUBDIR=	${PORTNAME}/17231
+MASTER_SITE_SUBDIR=	${PORTNAME}/19158
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 DIST_SUBDIR=	anthy
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
@@ -49,22 +48,22 @@ GSKK_VERS=	gskk-20041208
 
 post-extract:
 .if defined(WITH_2CHDIC)
-	${CP} ${DISTDIR}/${DIST_SUBDIR}/2ch.t ${WRKSRC}/mkanthydic
-	${PRINTF} "/mkanthydic\\\\/placename.t/a\\\\\\nread @top_srcdir@/mkanthydic/2ch.t\\n" | \
-	${REINPLACE_CMD} -f /dev/stdin ${WRKSRC}/mkanthydic/dict.args.in
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/2ch.t ${WRKSRC}/mkworddic
+	${PRINTF} "/mkworddic\\\\/placename.t/a\\\\\\nread @top_srcdir@/mkworddic/2ch.t\\n" | \
+	${REINPLACE_CMD} -f /dev/stdin ${WRKSRC}/mkworddic/dict.args.in
 .endif
 
 .if defined(WITH_ODIC)
-	${CP} ${WRKDIR}/${ODIC_VERS}/okinawa.t ${WRKSRC}/mkanthydic
-	${PRINTF} "/mkanthydic\\\\/placename.t/a\\\\\\nread @top_srcdir@/mkanthydic/okinawa.t\\n" | \
-	${REINPLACE_CMD} -f /dev/stdin ${WRKSRC}/mkanthydic/dict.args.in
+	${CP} ${WRKDIR}/${ODIC_VERS}/okinawa.t ${WRKSRC}/mkworddic
+	${PRINTF} "/mkworddic\\\\/placename.t/a\\\\\\nread @top_srcdir@/mkworddic/okinawa.t\\n" | \
+	${REINPLACE_CMD} -f /dev/stdin ${WRKSRC}/mkworddic/dict.args.in
 .endif
 
 .if defined(WITH_GSKKDIC)
-	${CP} ${DISTDIR}/${DIST_SUBDIR}/${GSKK_SRCS} ${WRKSRC}/mkanthydic
-	${GUNZIP_CMD} ${WRKSRC}/mkanthydic/${GSKK_SRCS}
-	${PRINTF} "/mkanthydic\\\\/placename.t/a\\\\\\nread @top_srcdir@/mkanthydic/${GSKK_VERS}.t\\n" | \
-	${REINPLACE_CMD} -f /dev/stdin ${WRKSRC}/mkanthydic/dict.args.in
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/${GSKK_SRCS} ${WRKSRC}/mkworddic
+	${GUNZIP_CMD} ${WRKSRC}/mkworddic/${GSKK_SRCS}
+	${PRINTF} "/mkworddic\\\\/placename.t/a\\\\\\nread @top_srcdir@/mkworddic/${GSKK_VERS}.t\\n" | \
+	${REINPLACE_CMD} -f /dev/stdin ${WRKSRC}/mkworddic/dict.args.in
 .endif
 
 post-patch:
