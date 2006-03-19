@@ -62,7 +62,7 @@ Section "InputDevice"
 	Option		"MaxSpeed"		"0.06"
 	Option		"AccelFactor"		"0.0010"
 
-	Option		"ScrollButtonRepeat"	"on"
+	Option		"ScrollButtonRepeat"	"100"
 	Option		"UpDownScrolling"	"on"
 	Option		"UpDownRepeat"		"on"
 	Option		"LeftRightScrolling"	"on"
