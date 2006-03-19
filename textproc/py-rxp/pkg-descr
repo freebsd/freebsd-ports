@@ -8,4 +8,4 @@ entirely in C code, resulting in unprecedented speed. It is a core
 part of ReportLab's forthcoming XML toolkit, which aims to offer
 simple, fast and pythonic tools for common XML processing tasks. 
 
-WWW: http://www.reportlab.com/xml/pyrxp.html
+WWW: http://www.reportlab.org/pyrxp.html
