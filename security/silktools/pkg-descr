@@ -1,0 +1,8 @@
+SiLK, the System for Internet-Level Knowledge, is a collection of
+netflow tools developed by the CERT/NetSA (Network Situational
+Awareness) Team to facilitate security analysis in large networks.
+
+SiLK consists of a suite of tools which collect and examine netflow
+data, allowing analysts to rapidly query large sets of data. 
+
+WWW: http://silktools.sourceforge.net
