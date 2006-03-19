@@ -1,4 +1,4 @@
-@unexec [ ! -f %D/var/sqwebmail/run/sqwebmail.pid ] && %D/etc/rc.d/sqwebmail-sqwebmaild.sh stop || true
+@unexec [ ! -f %D/var/sqwebmail/run/sqwebmail.pid ] && %D/etc/rc.d/sqwebmail-sqwebmaild stop || true
 @unexec if cmp -s %D/etc/sqwebmail/ldapaddressbook.dist %D/etc/sqwebmail/ldapaddressbook; then rm -f %D/etc/sqwebmail/ldapaddressbook; fi
 etc/sqwebmail/ldapaddressbook.dist
 @unexec if cmp -s %D/etc/sqwebmail/sqwebmaild.dist %D/etc/sqwebmail/sqwebmaild; then rm -f %D/etc/sqwebmail/sqwebmaild; fi
