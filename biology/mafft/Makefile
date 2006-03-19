@@ -7,9 +7,10 @@
 #
 
 PORTNAME=	mafft
-PORTVERSION=	5.734
+PORTVERSION=	5.743
 CATEGORIES=	biology
-MASTER_SITES=	http://www.biophys.kyoto-u.ac.jp/~katoh/programs/align/mafft/
+MASTER_SITES=	http://www.biophys.kyoto-u.ac.jp/~katoh/programs/align/mafft/ \
+		http://genoma.unsam.edu.ar/~fernan/freebsd/distfiles/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 EXTRACT_SUFX=	.tgz
 
@@ -22,6 +23,10 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 BUILD_WRKSRC=	${WRKSRC}/src
 
 MAKE_ENV+=	CFLAG="${CFLAGS}"
+
+post-patch:
+	@${REINPLACE_CMD} -E 's,^(CC|PREFIX) =,\1 ?=,' \
+		${WRKSRC}/src/Makefile
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/mafft ${PREFIX}/bin

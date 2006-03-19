@@ -1,3 +1,4 @@
+bin/dummy
 bin/mafft
 bin/disttbfast
 bin/dndblast
@@ -8,6 +9,8 @@ bin/dvtditr
 bin/f2cl
 bin/getlag
 bin/mafft-profile
+bin/multi2hat3s
+bin/pair2hat3s
 bin/pairalign
 bin/pairlocalalign
 bin/score
