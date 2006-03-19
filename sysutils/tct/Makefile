@@ -10,7 +10,7 @@ PORTVERSION=	1.14
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.porcupine.org/forensics/
 
-MAINTAINER=	francisco@gomezmarin.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Analyzer for forensic data
 
 USE_PERL5=	yes
