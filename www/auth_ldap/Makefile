@@ -6,20 +6,15 @@
 #
 
 PORTNAME=	auth_ldap
-PORTVERSION=	1.6.0
-PORTREVISION=	4
+PORTVERSION=	1.6.1
 CATEGORIES=	www
 MASTER_SITES=	http://www.rudedog.org/auth_ldap/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache module to authenticate against an LDAP directory
 
-FORBIDDEN=	Contains multiple format strings vulnerabilities
-DEPRECATED=	${FORBIDDEN}
-EXPIRATION_DATE=2006-04-08
-
 USE_OPENLDAP=	yes
-USE_APACHE=	yes
+USE_APACHE=	13
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	LIBS="-llber"
 CONFIGURE_ARGS=	--with-sdk-headers=${LOCALBASE}/include \
