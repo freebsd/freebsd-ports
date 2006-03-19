@@ -25,7 +25,11 @@ o Set your /etc/xorg.conf (or /etc/XF86Config)
   following setting is mine.   You may want to change the
   values of *Edge and *Delta.
 
-/etc/xorg.conf (/etc/XF86Config) ------------------
+  *NOTE*
+  Please disable your existing "CorePointer" in "ServerLayout"
+  section, only use "Synaptics_Touchpad" CorePointer.
+
+/etc/xorg.conf (or /etc/XF86Config) ---------------
 	:
 Section "Module"
 		:
@@ -34,6 +38,7 @@ EndSection
 
 Section "ServerLayout"
 		:
+#	InputDevice	"Standard_PS/2_Mouse"	"CorePointer"
 	InputDevice	"Synaptics_Touchpad"	"CorePointer"
 EndSection
 
@@ -78,6 +83,6 @@ Section "InputDevice"
 #	Option		"CircScrollDelta"	"0.5"
 EndSection
 	:
-/etc/xorg.conf (/etc/XF86Config) ------------------
+/etc/xorg.conf (or /etc/XF86Config) ---------------
 
 ===============================================================================
