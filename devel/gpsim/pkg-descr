@@ -1,0 +1,24 @@
+gpsim is a full-featured software simulator for Microchip PIC microcontrollers
+distributed under the GNU General Public License.
+
+gpsim has been designed to be as accurate as possible. Accuracy includes the
+entire PIC - from the core to the I/O pins and including ALL of the internal
+peripherals. Thus it's possible to create stimuli and tie them to the I/O pins
+and test the PIC the same PIC the same way you would in the real world.
+
+gpsim has been designed to be as fast as possible. Real time simulation speeds
+of 20Mhz pics are possible. A 'goto $' program runs at the same speed as a
+25Mhz pic when simulated on my 400Mhz PII Linux Box. Of course, as you add
+stimuli and begin interacting with peripherals, the performance drops. But
+it's still fast!
+
+gpsim has been designed to be as useful as possible (at least that's the
+intent - honest). The standard simulation paradigm including breakpoints,
+single stepping, disassembling, memory inspect & change, and so on has been
+implemented. In addition, gpsim supports many debugging features that are only
+available with in-circuit emulators. For example, a continuous trace buffer
+tracks every action of the simulator (whether you want it or not). Also, it's
+possible to set read and write break points on values (e.g. break if a
+specific value is read from or written to a register).
+
+WWW: http://www.dattalo.com/gnupic/gpsim.html

@@ -349,6 +349,7 @@
     SUBDIR += gorm
     SUBDIR += gpc
     SUBDIR += gperf
+    SUBDIR += gpsim
     SUBDIR += gputils
     SUBDIR += gsoap
     SUBDIR += gstreamer-plugins-gconf
