@@ -64,9 +64,9 @@ IGNORE=		install lang/perl5.8 then try again
 
 CODELINE=		680
 RELEASE_NR=		2.0
-MILESTONE?=		159
+MILESTONE?=		160
 OOOTAG?=		SRC680_m${MILESTONE}
-SNAPDATE=		20060310
+SNAPDATE=		20060317
 INSTALLATION_BASEDIR?=	openoffice.org-${OOOTAG}
 EXECBASE?=		openoffice.org-${OOOTAG}
 DIST_SUBDIR=		openoffice.org2.0
@@ -140,7 +140,7 @@ TCSH?=		/bin/tcsh
 PKGMESSAGE=	${WRKDIR}/pkg-message
 NUMOFPROCESSES?=	1
 
-CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp --with-gnu-patch=${LOCALBASE}/bin/gpatch --with-epm=internal --with-system-freetype --enable-crashdump=yes --enable-symbols=SMALL
+CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp --with-gnu-patch=${LOCALBASE}/bin/gpatch --with-epm=internal --enable-crashdump=yes --enable-symbols=SMALL --with-system-freetype 
 #workarounds
 CONFIGURE_ARGS+=	--with-system-xrender-headers=yes #i62713#
 
@@ -148,7 +148,7 @@ CONFIGURE_ARGS+=	--with-system-xrender-headers=yes #i62713#
 EXTRA_PATCHES+=	${FILESDIR}/fbsd4-workaroundpatch
 .endif
 .if defined(WITH_GNUGCJ)
-EXTRA_PATCHES+=	${FILESDIR}/gcj-cws_jaxpapi ${FILESDIR}/gcj-patches ${FILESDIR}/cws-maho1.diff ${FILESDIR}/gcj-fbsdworkaround
+EXTRA_PATCHES+=	${FILESDIR}/gcj-patches ${FILESDIR}/cws-maho1.diff ${FILESDIR}/gcj-fbsdworkaround
 .endif
 #.if defined(WITH_TTF_BYTECODE_ENABLED)
 #EXTRA_PATCHES+=	 ${FILESDIR}/optpatch-freetype
