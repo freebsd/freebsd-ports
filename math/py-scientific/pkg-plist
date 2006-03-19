@@ -1,3 +1,4 @@
+bin/bsp_virtual
 %%PYTHON_INCLUDEDIR%%/Scientific/PyBSP_API.h
 %%PYTHON_INCLUDEDIR%%/Scientific/PyMPI_API.h
 %%PYTHON_INCLUDEDIR%%/Scientific/bspmodule.h
