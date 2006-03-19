@@ -3353,6 +3353,7 @@ gprolog		ports/lang/gprolog
 gps		ports/net-mgmt/gps
 gpsd		ports/astro/gpsd
 gpsdrive	ports/astro/gpsdrive
+gpsim		ports/devel/gpsim
 gpsk31		ports/comms/gpsk31
 gpsman		ports/astro/gpsman
 gpsmanshp	ports/graphics/gpsmanshp
