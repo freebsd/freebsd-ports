@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zip
-PORTVERSION=	1.0
+PORTVERSION=	1.2.1
 CATEGORIES=	archivers pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -14,13 +14,11 @@ EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
 MAINTAINER=	ale@FreeBSD.org
-COMMENT=	A PECL extension to read zip files
-
-LIB_DEPENDS=	zzip.10:${PORTSDIR}/devel/zziplib
+COMMENT=	A PECL extension to create and read zip files
 
 USE_PHP=	yes
 USE_PHPEXT=	yes
 
-CONFIGURE_ARGS=	--with-zip=${LOCALBASE}
+CONFIGURE_ARGS=	--enable-zip --with-zlib-dir=/usr
 
 .include <bsd.port.mk>
