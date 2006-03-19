@@ -8,7 +8,8 @@
 PORTNAME=	xscoop
 PORTVERSION=	1.0.2
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	http://people.tecnik93.com/~itetcu/FreeBSD/others_ports/${PORTNAME}/sources/
+MASTER_SITES=	ftp://datazygte.com/ports/x11-toolkits/xscoop/ \
+		http://people.tecnik93.com/~itetcu/FreeBSD/others_ports/${PORTNAME}/sources/
 
 MAINTAINER=	rscheckelhoff@yahoo.com
 COMMENT=	An X library detective
