@@ -5216,6 +5216,7 @@ kssh		ports/security/kssh
 kst		ports/science/kst
 ksubeditor	ports/multimedia/ksubeditor
 ksudoku		ports/games/ksudoku
+ksynaptics	ports/sysutils/ksynaptics
 ktagebuch	ports/deskutils/ktagebuch
 ktextdecode	ports/converters/ktextdecode
 ktoblzcheck	ports/finance/ktoblzcheck
