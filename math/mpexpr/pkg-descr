@@ -12,4 +12,4 @@ Mpexpr also includes most math functions provided by 'expr', as well
 as several new functions.  Mpexpr also supports Tcl variables and
 nested evaluation, just like 'expr':
 
-WWW: http://www.neosoft.com/tcl/ftparchive/sorted/math/mpexpr-1.0
+WWW: http://mpexpr.sourceforge.net

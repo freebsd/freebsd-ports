@@ -8,20 +8,21 @@
 PORTNAME=	mpexpr
 PORTVERSION=	1.0
 CATEGORIES=	math tcl83
-MASTER_SITES=	http://www.neosoft.com/tcl/ftparchive/sorted/math/Mpexpr-1.0/1.0/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	mpexpr
 
 MAINTAINER=	geekdude@pacbell.net
 COMMENT=	Multiple precision math for Tcl
 
-LIB_DEPENDS=	tcl83.1:${PORTSDIR}/lang/tcl83
-
 WRKSRC=		${WRKDIR}/mpexpr-1.0/unix
 
-CONFIGURE_ARGS= --prefix=${PREFIX} \
+CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--exec-prefix=${PREFIX}
 
+USE_TCL=	83
+USE_TCL_BUILD=	83
 GNU_CONFIGURE=	yes
-#INSTALLS_SHLIB= yes
+INSTALLS_SHLIB=	yes
 
 MANN=		mpexpr.n
 
