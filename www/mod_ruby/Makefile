@@ -16,7 +16,7 @@ COMMENT=	An Apache module that embeds Ruby interpreter within
 
 LIB_DEPENDS=	eruby.10:${PORTSDIR}/textproc/eruby
 
-USE_APACHE=	yes
+USE_APACHE=	1.3+
 USE_RUBY=	yes
 
 CONFIGURE_ARGS=	--with-apxs="${APXS}" \
@@ -34,8 +34,7 @@ DOCS_JA=	README.ja doc/default.css doc/*.ja.*
 
 .include <bsd.port.pre.mk>
 
-AP_CUR_VERSION!=	${ECHO_CMD} ${APACHE_PORT} | ${SED} -ne 's,.*/apache\([0-9]*\).*,\1,p'
-.if ${AP_CUR_VERSION} > 20
+.if ${APACHE_VERSION} > 20
 CONFIGURE_ARGS+=	--with-apr-includes="`${LOCALBASE}/bin/apr-1-config --includedir`"
 .endif
 
