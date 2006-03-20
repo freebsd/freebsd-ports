@@ -1882,7 +1882,6 @@ du2ps		ports/sysutils/du2ps
 dualserver	ports/dns/dualserver
 duel		ports/games/duel
 duhdraw		ports/graphics/duhdraw
-duke3d		ports/games/duke3d
 dumb		ports/devel/dumb
 dummyflash	ports/www/dummyflash
 dump9660	ports/sysutils/dump9660
@@ -10261,7 +10260,6 @@ ports_security	ports/security
 ports_sendmail	ports/mail/sendmail
 ports_shells	ports/shells
 ports_smbfs	ports/net/smbfs
-ports_stat	ports/sysutils/stat
 ports_sysutils	ports/sysutils
 ports_tcpdump	ports/net/tcpdump
 ports_texinfo		ports/print/texinfo

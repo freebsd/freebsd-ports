@@ -2221,3 +2221,5 @@ www/evg||2006-03-15|Remove expired port
 x11/login.app||2006-03-15|Remove expired port
 sysutils/coaster||2006-03-16|Deleted; broke for months
 mail/pgp4pine||2006-03-18|Project is gone
+games/duke3d||2006-03-20|Remove expired port
+sysutils/stat||2006-03-20|Remove expired port

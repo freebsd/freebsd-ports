@@ -137,7 +137,6 @@
     SUBDIR += drm
     SUBDIR += dsnake
     SUBDIR += duel
-    SUBDIR += duke3d
     SUBDIR += dungeon
     SUBDIR += dungeoncrawl
     SUBDIR += easysok
