@@ -1,0 +1,45 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: cherokee
+# REQUIRE: %%REQUIRE%%
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable cherokee:
+#
+# cherokee_enable (bool):	Set it to "YES" to enable cherokee
+#				Default is "NO".
+# cherokee_conf (path):		Set full path to config file.
+#				Default is "%%PREFIX%%/etc/cherokee.conf".
+#
+
+. %%RC_SUBR%%
+
+name="cherokee"
+rcvar=`set_rcvar`
+
+load_rc_config $name
+
+: ${cherokee_enable="NO"}
+: ${cherokee_conf="%%PREFIX%%/etc/cherokee/cherokee.conf"}
+
+command=%%PREFIX%%/sbin/cherokee
+command_args="-C ${cherokee_conf} -b"
+pidfile=/var/run/cherokee.pid
+required_files=${cherokee_conf}
+stop_postcmd=stop_postcmd
+restart_precmd="checkconfig"
+
+checkconfig()
+{
+	echo "Performing sanity check on ${name} configuration:"
+	eval "${command} ${command_args} -t"
+}
+
+stop_postcmd()
+{
+	rm -f ${pidfile}
+}
+
+run_rc_command "$1"
