@@ -28,14 +28,13 @@ OPTIONS=	VSCAN_ANTIVIR "for use with AntiVir" off \
 		VSCAN_OAV "for use with OpenAntiVirus.org ScannerDaemon" off \
 		VSCAN_SOPHOS "for use with Sophos" off \
 		VSCAN_TREND "for use with Trend Micro FileScanner" off
-.if !defined(NOPORTDOCS)
+
 PORTDOCS=	AUTHORS COPYING ChangeLog FAQ INSTALL NEWS README
-.endif
 
 USE_AUTOTOOLS=	autoconf:259
 USE_BZIP2=	yes
 VSCAN_SAMBA_PORT?=	samba3
-SAMBA_WRKSRC!=	${MAKE} -C ${.CURDIR}/../../net/${VSCAN_SAMBA_PORT} -V WRKSRC
+SAMBA_WRKSRC!=	cd ${.CURDIR}/../../net/${VSCAN_SAMBA_PORT}; ${MAKE} -V WRKSRC
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--with-samba-source=${SAMBA_WRKSRC}
