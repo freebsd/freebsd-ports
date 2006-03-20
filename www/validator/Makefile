@@ -7,6 +7,7 @@
 
 PORTNAME=	validator
 PORTVERSION=	0.7.2
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://validator.w3.org/dist/ \
 		http://www.cyberbotx.com/w3c-validator/
@@ -16,7 +17,6 @@ MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	Markup Validation Service from the World Wide Web Consortium (W3C)
 
 RUN_DEPENDS=	onsgmls:${PORTSDIR}/textproc/opensp \
-		${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm \
 		${SITE_PERL}/Config/General.pm:${PORTSDIR}/devel/p5-Config-General \
 		${SITE_PERL}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser \
 		${SITE_PERL}/HTML/Template.pm:${PORTSDIR}/www/p5-HTML-Template \
@@ -108,6 +108,10 @@ post-install:
 
 .if ${PERL_LEVEL} < 500600
 IGNORE=		requires Perl 5.6.0 or better to run
+.endif
+
+.if ${PERL_LEVEL} < 500800
+RUN_DEPENDS+=	${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm
 .endif
 
 .include <bsd.port.post.mk>
