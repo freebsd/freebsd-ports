@@ -16,18 +16,6 @@ case $2 in
 	PRE-INSTALL)
 		;;
 	POST-INSTALL)
-		# create the empty dirs if necessary (the port creates them
-		# but pkg_add does not)
-		if [ ! -d "${TWIKIDIR}/pub/Main" ]; then
-			mkdir ${TWIKIDIR}/pub/Main
-		fi
-		if [ ! -d "${TWIKIDIR}/pub/Sandbox" ]; then
-			mkdir ${TWIKIDIR}/pub/Sandbox
-		fi
-		if [ ! -d "${TWIKIDIR}/pub/Trash" ]; then
-			mkdir ${TWIKIDIR}/pub/Trash
-		fi
-
 		# hmmm, if we modify this here, the file fails md5sum when deinstalling
 		# but if we do this in Makefile, then we have a hardcoded PREFIX. What to
 		# do?
