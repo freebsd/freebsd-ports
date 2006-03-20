@@ -19,7 +19,6 @@ COMMENT=	NVidia graphics card binary drivers for hardware OpenGL rendering
 
 ONLY_FOR_ARCHS=	i386
 
-USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 NO_PACKAGE=	should be recompiled for a particular FreeBSD kernel
 INSTALLS_SHLIB=	yes
@@ -80,10 +79,11 @@ EXTRA_PATCHES+=	${FILESDIR}/${NVVERSION}-*
 .else
 .if defined(WITH_LEGACY_GPU_SUPPORT)
 NVVERSION=	7174
-PORTREVISION=	2
+PORTREVISION=	3
 EXTRA_PATCHES+=	${FILESDIR}/6113-patch-lib::Makefile
 .else
 NVVERSION=	8178
+PORTREVISION=	1
 EXTRA_PATCHES+=	${FILESDIR}/7667-*
 .endif
 .if ${OSVERSION} >= 600033

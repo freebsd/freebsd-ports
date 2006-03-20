@@ -1,12 +1,12 @@
 @comment I can't add the below files to the package because pkg_delete
 @comment will complain when removing this package:
-@comment     lib/modules/extensions/XXX-libglx.a.%%XLIBVERSION%%
-@comment     lib/modules/extensions/XXX-libGLcore.a.%%XLIBVERSION%%
+@comment     lib/modules/extensions/XXX-libglx.so.%%XLIBVERSION%%
+@comment     lib/modules/extensions/XXX-libGLcore.so.%%XLIBVERSION%%
 @comment     lib/XXX-libGL.a.%%XLIBVERSION%%
 @comment     lib/XXX-libGL.so.1.%%XLIBVERSION%%
 @comment They are however restored when this package is removed:
-@unexec mv -f %D/lib/modules/extensions/XXX-libglx.a.%%%%.%%XSERVVERSION%% %D/lib/modules/extensions/libglx.a
-@unexec mv -f %D/lib/modules/extensions/XXX-libGLcore.a.%%%%.%%XSERVVERSION%% %D/lib/modules/extensions/libGLcore.a
+@unexec mv -f %D/lib/modules/extensions/XXX-libglx.so.%%%%.%%XSERVVERSION%% %D/lib/modules/extensions/libglx.so
+@unexec mv -f %D/lib/modules/extensions/XXX-libGLcore.so.%%%%.%%XSERVVERSION%% %D/lib/modules/extensions/libGLcore.so
 @unexec mv -f %D/lib/XXX-libGL.a.%%%%.%%XLIBVERSION%% %D/lib/libGL.a
 lib/libGL.so.1
 @unexec mv -f %D/lib/XXX-libGL.so.1.%%%%.%%XLIBVERSION%% %D/lib/libGL.so.1
