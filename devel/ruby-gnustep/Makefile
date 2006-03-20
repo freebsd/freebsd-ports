@@ -11,7 +11,7 @@ CATEGORIES=	devel ruby
 MASTER_SITES=	${MASTER_SITE_GNUSTEP}
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	rigs-${PORTVERSION}
-DIST_SUBDIR=	ruby
+DIST_SUBDIR=	libs
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A Ruby interface to the GNUstep development environment
