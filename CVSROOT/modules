@@ -6840,6 +6840,7 @@ nb-aspell	ports/textproc/nb-aspell
 nbaudit		ports/security/nbaudit
 nbd-server	ports/net/nbd-server
 nbench		ports/benchmarks/nbench
+nbosd		ports/sysutils/nbosd
 nbsmtp		ports/mail/nbsmtp
 nbtscan		ports/net-mgmt/nbtscan
 nc		ports/net/nc
