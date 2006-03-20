@@ -6,13 +6,10 @@
 #
 
 PORTNAME=	libtomcrypt
-PORTVERSION=	1.09
+PORTVERSION=	1.10
 CATEGORIES=	security
 MASTER_SITES=	http://libtomcrypt.com/files/
 DISTNAME=	crypt-${PORTVERSION}
-
-PATCH_SITES=	http://libtomcrypt.com/files/patch-1.09/
-PATCHFILES=	lrw_process.c.patch
 
 MAINTAINER=	wxs@csh.rit.edu
 COMMENT=	Comprehensive, modular and portable cryptographic toolkit
