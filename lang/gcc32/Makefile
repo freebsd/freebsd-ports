@@ -68,6 +68,10 @@ CONFIGURE_ARGS+=	--enable-shared
 INSTALLS_SHLIB=		yes
 LDCONFIG_DIRS=	%%PREFIX%%/lib ${TARGLIB}
 EXTRA_SHLIB=	libgcc_s
+SUB_LIST=	TARGLIB="${TARGLIB}"
+SUB_FILES=	gcc.sh
+RC_D_SH=	etc/rc.d/gcc${SUFFIX}.sh
+PLIST_FILES+=	${RC_D_SH}
 .else
 CONFIGURE_ARGS+=	--disable-shared
 .endif
@@ -91,6 +95,9 @@ pre-configure:
 
 pre-install:
 	${MKDIR} ${PREFIX}/info
+.if defined(WANT_SHAREDLIBS)
+	${INSTALL_SCRIPT} ${WRKDIR}/gcc.sh ${PREFIX}/${RC_D_SH}
+.endif
 
 post-install:
 	@${RM} -f ${PREFIX}/bin/c++ ${PREFIX}/bin/${CONFIGURE_TARGET}-c++
