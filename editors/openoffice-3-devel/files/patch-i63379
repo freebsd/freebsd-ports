@@ -1,0 +1,16 @@
+Index: codemaker/source/cppumaker/cpputype.hxx
+===================================================================
+RCS file: /cvs/udk/codemaker/source/cppumaker/cpputype.hxx,v
+retrieving revision 1.10
+diff -u -r1.10 cpputype.hxx
+--- codemaker/source/cppumaker/cpputype.hxx	15 Mar 2006 09:14:04 -0000	1.10
++++ codemaker/source/cppumaker/cpputype.hxx	19 Mar 2006 22:01:41 -0000
+@@ -190,7 +190,7 @@
+ 	sal_Bool	dumpHFile(FileStream& o, codemaker::cppumaker::Includes & includes) throw( CannotDumpException );
+ 	sal_Bool	dumpHxxFile(FileStream& o, codemaker::cppumaker::Includes & includes) throw( CannotDumpException );
+ 
+-    void InterfaceType::dumpAmbiguousBaseInterfaces(FileStream& o);
++    void dumpAmbiguousBaseInterfaces(FileStream& o);
+ 
+ 	void		dumpAttributes(FileStream& o);
+ 	void		dumpMethods(FileStream& o);
