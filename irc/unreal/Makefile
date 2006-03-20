@@ -6,16 +6,9 @@
 #
 
 PORTNAME=	Unreal
-PORTVERSION=	3.2.3
+PORTVERSION=	3.2.4
 CATEGORIES=	irc
-MASTER_SITES=	http://unreal.atlanti-ka.org/ \
-		http://unreal.stfu-n00b.net/ \
-		http://unrealircd.funny-chat.net/ \
-		http://unrealircd.fyrebird.net/ \
-		http://unrealircd.chaosteam.hu/ \
-		http://64.84.10.70/download/ \
-		http://www.gower.net/unrealircd/ \
-		http://www.ilmarinen.us/unreal/ \
+MASTER_SITES=	http://www.ilmarinen.us/unreal/ \
 		http://unrealircd.alert-net.com/ \
 		http://www1.dnwt.net/unreal/
 #		http://www.tiefighter.org/~unreal/downloads/ \  # file missing
@@ -54,8 +47,8 @@ OPTIONS=	HUB "Configure as a hub (otherwise configure as a leaf)" on \
 		ZIPLINKS "Enable ziplinks support" off \
 		SSL "Support SSL connecions" off \
 		IPV6 "Enable ipv6 support" off \
-		PREFIXAQ "Enable prefixes for chanadmin and chanowner" off
-#		REMOTE "Enable remote includes" off \ # this does not work at the moment
+		PREFIXAQ "Enable prefixes for chanadmin and chanowner" off \
+		REMOTE "Enable remote includes" off
 
 .include <bsd.port.pre.mk>
 
@@ -91,6 +84,7 @@ CONFIGURE_ARGS+=	--enable-ssl
 .endif
 
 .if defined(WITH_REMOTE)
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libares.a:${PORTSDIR}/dns/ares
 LIB_DEPENDS+=	curl.3:${PORTSDIR}/ftp/curl
 CONFIGURE_ARGS+=	--enable-libcurl=${LOCALBASE}
 .endif
@@ -129,7 +123,7 @@ post-patch:
 	@${REINPLACE_CMD} -e "s,%%RUNDIR%%,${RUNDIR}," ${WRKSRC}/src/s_conf.c
 	@${REINPLACE_CMD} -e "s,%%RUNDIR%%,${RUNDIR}," ${WRKSRC}/src/url.c
 .if defined(WITH_SQLMOD)
-	@${PATCH} -d ${WRKSRC} < ${WRKSRC}/SQLMod/patch.old
+	@${PATCH} -d ${WRKSRC} < ${WRKSRC}/SQLMod/patch
 .endif
 
 do-install:
