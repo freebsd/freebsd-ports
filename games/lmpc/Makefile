@@ -14,8 +14,9 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	A tool to manipulate games demo recordings
 
-GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+GNU_CONFIGURE=		yes
+USE_GMAKE=		yes
+USE_PERL5_BUILD=	yes
 
 SCRIPTS=	dema dm2cat procdm2.pl
 PROGRAMS=	dbs demcut lmpc
@@ -31,8 +32,7 @@ IGNORE=		assumes sizeof(long) == 4
 pre-patch: .SILENT
 	${REINPLACE_CMD} -e 's,bin doc src spec,bin src,' ${WRKSRC}/Makefile.in
 	# Include <sys/types.h> before <sys/shm.h>, at least alpha needs it
-	( ${ECHO_CMD} 37t33 ; ${ECHO_CMD} 38d ; ${ECHO_CMD} wq ) | \
-		${ED} -s ${WRKSRC}/src/dbs.c
+	${ECHO_CMD} -e '37t30\n38d\nwq' | ${ED} -s ${WRKSRC}/src/dbs.c
 
 do-install:
 .for s in ${SCRIPTS}
