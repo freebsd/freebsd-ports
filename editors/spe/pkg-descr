@@ -5,5 +5,5 @@ context help, Blender support, ... Spe ships with Python debugger
 (remote & encrypted), wxGlade (gui designer), PyChecker (source code doctor)
 and Kiki (regex console)
 
-Author:	Stani Michiels
-WWW:	http://www.stani.be/python/spe/blog/
+Author:	Stani <spe.stani.be@gmail.it>
+WWW:	http://pythonide.stani.be
