@@ -22,7 +22,7 @@ load_rc_config $name
 : ${jabber_pymsn_enable="NO"}
 : ${jabber_pymsn_dir="%%PREFIX%%/lib/jabber/pymsn"}
 : ${jabber_pymsn_piddir="/var/jabberd/pid"}
-: ${jabber_pymsn_user="jabber"}
+: ${jabber_pymsn_user="%%JABBER_USER%%"}
 
 pidfile="${jabber_pymsn_piddir}/PyMSNt.pid"
 command_interpreter="%%PYTHON_CMD%%"
