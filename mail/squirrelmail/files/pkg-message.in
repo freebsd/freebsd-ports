@@ -15,3 +15,4 @@ session.auto_start = 1
 In order to do your administrative configuration you need to 
 cd %%SQUIRRELDIR%% && ./configure
 SquirrelMail will not work until this has been done.
+

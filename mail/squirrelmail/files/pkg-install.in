@@ -47,6 +47,7 @@ POST-INSTALL)
 			cp -rp ${SQUIRRELDIR}/data/default_pref \
 				/var/spool/squirrelmail/pref/default_pref
 		else
+			echo ""
 			echo "An older version of default_pref exists in"
 			echo "/var/spool/squirrelmail/pref, you may want to"
 			echo "compare it with the one in ${SQUIRRELDIR}/data"

@@ -1,71 +1,4 @@
 etc/periodic/daily/111.clean-squirrelmail
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/Development/addressbook.txt
-%%PORTDOCS%%%%DOCSDIR%%/Development/index.html
-%%PORTDOCS%%%%DOCSDIR%%/Development/mime.txt
-%%PORTDOCS%%%%DOCSDIR%%/Development/plugin.txt
-%%PORTDOCS%%%%DOCSDIR%%/Development/rfc_documents.txt
-%%PORTDOCS%%%%DOCSDIR%%/Development/tree.txt
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/README.themes
-%%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes-%%PORTVERSION%%.txt
-%%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes/1.2/Notes-1.2.0.txt
-%%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes/1.2/Notes-1.2.1.txt
-%%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes/1.2/Notes-1.2.2.txt
-%%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes/1.2/Notes-1.2.3.txt
-%%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes/1.2/Notes-1.2.4.txt
-%%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes/1.2/Notes-1.2.5.txt
-%%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes/1.2/Notes-1.2.6.txt
-%%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes/1.3/Notes-1.3.0.txt
-%%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes/1.3/Notes-1.3.1.txt
-%%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes/1.3/Notes-1.3.2.txt
-%%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes/1.4/Notes-1.4.0.txt
-%%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes/1.4/Notes-1.4.1.txt
-%%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes/1.4/Notes-1.4.2.txt
-%%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes/1.4/Notes-1.4.3.txt
-%%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes/1.4/Notes-1.4.3a.txt
-%%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes/1.4/Notes-1.4.4.txt
-%%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes/1.4/Notes-1.4.5.txt
-%%PORTDOCS%%%%DOCSDIR%%/UPGRADE
-%%PORTDOCS%%%%DOCSDIR%%/authentication.txt
-%%PORTDOCS%%%%DOCSDIR%%/db-backend.txt
-%%PORTDOCS%%%%DOCSDIR%%/ie_ssl.txt
-%%PORTDOCS%%%%DOCSDIR%%/index.html
-%%PORTDOCS%%%%DOCSDIR%%/plugins/README.plugins
-%%PORTDOCS%%%%DOCSDIR%%/plugins/abook_take/README
-%%PORTDOCS%%%%DOCSDIR%%/plugins/administrator/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/plugins/bug_report/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/plugins/bug_report/README
-%%PORTDOCS%%%%DOCSDIR%%/plugins/calendar/README
-%%PORTDOCS%%%%DOCSDIR%%/plugins/delete_move_next/README
-%%PORTDOCS%%%%DOCSDIR%%/plugins/filters/CHANGES
-%%PORTDOCS%%%%DOCSDIR%%/plugins/filters/README
-%%PORTDOCS%%%%DOCSDIR%%/plugins/filters/bulkquery/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/plugins/filters/bulkquery/README
-%%PORTDOCS%%%%DOCSDIR%%/plugins/fortune/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/plugins/info/README
-%%PORTDOCS%%%%DOCSDIR%%/plugins/listcommands/README
-%%PORTDOCS%%%%DOCSDIR%%/plugins/mail_fetch/README
-%%PORTDOCS%%%%DOCSDIR%%/plugins/newmail/HISTORY
-%%PORTDOCS%%%%DOCSDIR%%/plugins/newmail/README
-%%PORTDOCS%%%%DOCSDIR%%/plugins/spamcop/README
-%%PORTDOCS%%%%DOCSDIR%%/plugins/squirrelspell/CRYPTO
-%%PORTDOCS%%%%DOCSDIR%%/plugins/squirrelspell/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/plugins/squirrelspell/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/plugins/squirrelspell/PRIVACY
-%%PORTDOCS%%%%DOCSDIR%%/plugins/squirrelspell/README
-%%PORTDOCS%%%%DOCSDIR%%/plugins/squirrelspell/UPGRADING
-%%PORTDOCS%%%%DOCSDIR%%/plugins/translate/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/plugins/translate/README
-%%PORTDOCS%%%%DOCSDIR%%/presets.txt
-%%PORTDOCS%%%%DOCSDIR%%/russian_apache.txt
-%%PORTDOCS%%%%DOCSDIR%%/security.txt
-%%PORTDOCS%%%%DOCSDIR%%/themes.txt
-%%PORTDOCS%%%%DOCSDIR%%/translating.txt
-%%PORTDOCS%%%%DOCSDIR%%/translating_help.txt
 %%SQUIRRELDIR%%/class/deliver/Deliver.class.php
 %%SQUIRRELDIR%%/class/deliver/Deliver_IMAP.class.php
 %%SQUIRRELDIR%%/class/deliver/Deliver_SMTP.class.php
@@ -1153,28 +1086,6 @@ etc/periodic/daily/111.clean-squirrelmail
 %%SQUIRRELDIR%%/themes/wood_theme.php
 @dirrmtry etc/periodic/daily
 @dirrmtry etc/periodic
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/plugins/abook_take
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/plugins/administrator
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/plugins/bug_report
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/plugins/calendar
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/plugins/delete_move_next
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/plugins/filters/bulkquery
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/plugins/filters
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/plugins/fortune
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/plugins/info
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/plugins/listcommands
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/plugins/mail_fetch
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/plugins/newmail
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/plugins/spamcop
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/plugins/squirrelspell
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/plugins/translate
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/plugins
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/Development
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ReleaseNotes/1.4
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ReleaseNotes/1.3
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ReleaseNotes/1.2
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ReleaseNotes
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%SQUIRRELDIR%%/themes/css
 @dirrm %%SQUIRRELDIR%%/themes
 @dirrm %%SQUIRRELDIR%%/src
