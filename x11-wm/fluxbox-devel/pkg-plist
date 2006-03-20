@@ -7,7 +7,6 @@ bin/startfluxbox
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
@@ -82,7 +81,9 @@ bin/startfluxbox
 %%NLS:%%%%DATADIR%%/nls/ja_JP/fluxbox.cat
 %%NLS:%%%%DATADIR%%/nls/ko_KR/fluxbox.cat
 %%NLS:%%%%DATADIR%%/nls/lv_LV/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/nb_NO/fluxbox.cat
 %%NLS:%%%%DATADIR%%/nls/nl_NL/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/no_NO/fluxbox.cat
 %%NLS:%%%%DATADIR%%/nls/pl_PL/fluxbox.cat
 %%NLS:%%%%DATADIR%%/nls/pt_BR/fluxbox.cat
 %%NLS:%%%%DATADIR%%/nls/pt_PT/fluxbox.cat
@@ -92,6 +93,7 @@ bin/startfluxbox
 %%NLS:%%%%DATADIR%%/nls/tr_TR/fluxbox.cat
 %%NLS:%%%%DATADIR%%/nls/uk_UA/fluxbox.cat
 %%NLS:%%%%DATADIR%%/nls/vi_VN/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/zh_CN/fluxbox.cat
 %%DATADIR%%/styles/Artwiz
 %%DATADIR%%/styles/BlueFlux/pixmaps/button_close_active.xpm
 %%DATADIR%%/styles/BlueFlux/pixmaps/button_close_pressed.xpm
@@ -158,6 +160,7 @@ bin/startfluxbox
 @dirrm %%DATADIR%%/styles/BlueFlux/pixmaps
 @dirrm %%DATADIR%%/styles/BlueFlux
 @dirrm %%DATADIR%%/styles
+%%NLS:%%@dirrm %%DATADIR%%/nls/zh_CN
 %%NLS:%%@dirrm %%DATADIR%%/nls/vi_VN
 %%NLS:%%@dirrm %%DATADIR%%/nls/uk_UA
 %%NLS:%%@dirrm %%DATADIR%%/nls/tr_TR
@@ -167,7 +170,9 @@ bin/startfluxbox
 %%NLS:%%@dirrm %%DATADIR%%/nls/pt_PT
 %%NLS:%%@dirrm %%DATADIR%%/nls/pt_BR
 %%NLS:%%@dirrm %%DATADIR%%/nls/pl_PL
+%%NLS:%%@dirrm %%DATADIR%%/nls/no_NO
 %%NLS:%%@dirrm %%DATADIR%%/nls/nl_NL
+%%NLS:%%@dirrm %%DATADIR%%/nls/nb_NO
 %%NLS:%%@dirrm %%DATADIR%%/nls/lv_LV
 %%NLS:%%@dirrm %%DATADIR%%/nls/ko_KR
 %%NLS:%%@dirrm %%DATADIR%%/nls/ja_JP
