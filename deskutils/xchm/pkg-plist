@@ -1,5 +1,6 @@
 bin/xchm
 share/locale/bg/LC_MESSAGES/xchm.mo
+share/locale/cs/LC_MESSAGES/xchm.mo
 share/locale/de/LC_MESSAGES/xchm.mo
 share/locale/es/LC_MESSAGES/xchm.mo
 share/locale/fr/LC_MESSAGES/xchm.mo
@@ -10,6 +11,7 @@ share/locale/pl/LC_MESSAGES/xchm.mo
 share/locale/pt/LC_MESSAGES/xchm.mo
 share/locale/ro/LC_MESSAGES/xchm.mo
 share/locale/ru/LC_MESSAGES/xchm.mo
+share/locale/sk/LC_MESSAGES/xchm.mo
 share/locale/zh_CN/LC_MESSAGES/xchm.mo
 share/locale/zh_TW/LC_MESSAGES/xchm.mo
 share/pixmaps/xchmdoc-128.xpm
