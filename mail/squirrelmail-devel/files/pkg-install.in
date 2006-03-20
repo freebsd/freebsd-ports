@@ -1,0 +1,55 @@
+#!/bin/sh
+#
+#	$FreeBSD$
+#
+
+PKG_BATCH=${BATCH:=NO}
+PKG_PREFIX=${PKG_PREFIX:=/usr/local}
+
+case $2 in
+PRE-INSTALL)
+	USER=www
+	GROUP=${USER}
+	UID=80
+	GID=${UID}
+
+	if ! pw groupshow "${GROUP}" 2>/dev/null 1>&2; then
+		if pw groupadd ${GROUP} -g ${GID}; then
+			echo "Added group \"${GROUP}\"."
+		else
+			echo "Adding group \"${GROUP}\" failed..."
+			exit 1
+		fi
+	fi
+
+	if ! pw usershow "${USER}" 2>/dev/null 1>&2; then
+		if pw useradd ${USER} -u ${UID} -g ${GROUP} -h - \
+			-s "/sbin/nologin" -d "/nonexistent" \
+			-c "World Wide Web Owner"; \
+		then
+			echo "Added user \"${USER}\"."
+		else
+			echo "Adding user \"${USER}\" failed..."
+			exit 1
+		fi
+	fi
+
+	exit 0
+	;;
+POST-INSTALL)
+	if [ "${PKG_BATCH}" = "NO" ]; then
+		install -d -o www -g www -m 0755 /var/spool/squirrelmail
+		install -d -o www -g www -m 0730 /var/spool/squirrelmail/attach
+		install -d -o www -g www -m 0750 /var/spool/squirrelmail/pref
+		if [ ! -f /var/spool/squirrelmail/pref/default_pref ]; then
+			cp -rp %%SQUIRRELDEVELDIR%%/config/default_pref \
+				/var/spool/squirrelmail/pref/default_pref
+		else
+			echo ""
+			echo "An older version of default_pref exists in"
+			echo "/var/spool/squirrelmail/pref, you may want to"
+			echo "compare it with the one in %%SQUIRRELDEVELDIR%%/config"
+		fi
+	fi
+	;;
+esac
