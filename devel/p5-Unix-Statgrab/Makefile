@@ -7,6 +7,7 @@
 
 PORTNAME=	Unix-Statgrab
 PORTVERSION=	0.04
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Unix
@@ -15,7 +16,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tdb@FreeBSD.org
 COMMENT=	Perl extension for collecting information about the machine
 
-LIB_DEPENDS=	statgrab.7:${PORTSDIR}/devel/libstatgrab
+LIB_DEPENDS=	statgrab.8:${PORTSDIR}/devel/libstatgrab
 
 USE_GNOME=	pkgconfig
 

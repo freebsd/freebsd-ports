@@ -7,6 +7,7 @@
 
 PORTNAME=	bwm-ng
 PORTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.gropp.org/bwm-ng/
 
@@ -14,7 +15,7 @@ MAINTAINER=	tdb@FreeBSD.org
 COMMENT=	A small and simple bandwidth monitor
 
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
-LIB_DEPENDS=	statgrab.7:${PORTSDIR}/devel/libstatgrab
+LIB_DEPENDS=	statgrab.8:${PORTSDIR}/devel/libstatgrab
 
 GNU_CONFIGURE=	yes
 MAN1=		bwm-ng.1
