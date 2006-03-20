@@ -1,0 +1,10 @@
+@unexec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --remove-plugin login_notes; fi
+%%SQUIRRELDIR%%/plugins/login_notes/COPYING
+%%SQUIRRELDIR%%/plugins/login_notes/INSTALL
+%%SQUIRRELDIR%%/plugins/login_notes/README
+%%SQUIRRELDIR%%/plugins/login_notes/config.php.sample
+%%SQUIRRELDIR%%/plugins/login_notes/functions.php
+%%SQUIRRELDIR%%/plugins/login_notes/index.php
+%%SQUIRRELDIR%%/plugins/login_notes/setup.php
+@dirrm %%SQUIRRELDIR%%/plugins/login_notes/
+@exec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --install-plugin login_notes; fi
