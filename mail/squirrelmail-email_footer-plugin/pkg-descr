@@ -1,7 +1,5 @@
-If you have an IMAP server with QUOTA Extension capability, you can use
-this plugin to view the current quota usage (both size and message count),
-which is displayed just above the folders list.
-A warning message can also be displayed to users upon login if desired.
-If no quota is set, nothing is displayed.
+This automatically tacks a message onto the end of messages as they're being
+sent from SquirrelMail.  It functions just like the Hotmail/Yahoo/etc.  mail
+services, with all of their little 'get your own free hoojamajiggy' messages.
 
 WWW: http://www.squirrelmail.org
