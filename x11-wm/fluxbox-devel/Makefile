@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	fluxbox
-PORTVERSION=	0.9.14
-PORTREVISION=	1
+PORTVERSION=	0.9.15
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	fluxbox
@@ -26,15 +25,16 @@ USE_GMAKE=	yes
 USE_GNOME=	gnometarget
 WANT_GNOME=	yes
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
-DOCS=		AUTHORS COPYING ChangeLog INSTALL NEWS README TODO
+DOCS=		AUTHORS COPYING ChangeLog NEWS README TODO
 MAN1=		fbrun.1 fbsetbg.1 fbsetroot.1 fluxbox.1 fluxstyle.1 \
 		startfluxbox.1
 
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-debug
+CFLAGS+=		-g
+STRIP=
 .endif
 
 .if defined(WITH_DOCHTML)
@@ -163,8 +163,6 @@ post-patch:
 			${WRKSRC}/util/fluxbox-generate_menu.in
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g ; \
 		s|/usr/X11R6|${X11BASE}|g' ${WRKSRC}/util/fbsetbg
-	@${FIND} ${WRKSRC}/data/styles -type f | ${XARGS} ${REINPLACE_CMD} -e \
-		's|bsetroot|fbsetroot|g'
 .if defined(WITHOUT_NLS)
 	@${REINPLACE_CMD} -e 's|HAVE_ICONV=yes|HAVE_ICONV=no|g' \
 		${WRKSRC}/configure
