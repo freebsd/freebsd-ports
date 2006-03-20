@@ -24,15 +24,15 @@ NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PKGNAMEPREFIX}${PORTNAME}
 DATADIR=	${PREFIX}/share/${DIST_SUBDIR}
 
-OPTIONS=	FRENCH	"French language support"	off \
-		GERMAN	"German language support"	off \
-		ITALIAN	"Italian language support"	off \
-		PORTUGUESE	"Portuguese language support"	off \
-		SPANISH	"Spanish language support"	off
+OPTIONS=	FRENCH	"French language support"	on \
+		GERMAN	"German language support"	on \
+		ITALIAN	"Italian language support"	on \
+		PORTUGUESE	"Portuguese language support"	on \
+		SPANISH	"Spanish language support"	on
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_FRENCH)
+.if !defined(WITHOUT_FRENCH)
 DISTFILES+=	pysycache-lang-fr-${PORTVERSION}.zip
 PLIST_SUB+=	FRENCH=""
 FLAG_LANG=	true
@@ -41,7 +41,7 @@ HAVE_LANG+=	fr
 PLIST_SUB+=	FRENCH="@comment "
 .endif
 
-.if defined(WITH_GERMAN)
+.if !defined(WITHOUT_GERMAN)
 DISTFILES+=	pysycache-lang-de-${PORTVERSION}.zip
 PLIST_SUB+=	GERMAN=""
 FLAG_LANG=	true
@@ -50,7 +50,7 @@ HAVE_LANG+=	de
 PLIST_SUB+=	GERMAN="@comment "
 .endif
 
-.if defined(WITH_ITALIAN)
+.if !defined(WITHOUT_ITALIAN)
 DISTFILES+=	pysycache-lang-it-${PORTVERSION}.zip
 PLIST_SUB+=	ITALIAN=""
 FLAG_LANG=	true
@@ -59,7 +59,7 @@ HAVE_LANG+=	it
 PLIST_SUB+=	ITALIAN="@comment "
 .endif
 
-.if defined(WITH_PORTUGUESE)
+.if !defined(WITHOUT_PORTUGUESE)
 DISTFILES+=	pysycache-lang-pt-${PORTVERSION}.zip
 PLIST_SUB+=	PORTUGUESE=""
 FLAG_LANG=	true
@@ -68,7 +68,7 @@ HAVE_LANG+=	pt
 PLIST_SUB+=	PORTUGUESE="@comment "
 .endif
 
-.if defined(WITH_SPANISH)
+.if !defined(WITHOUT_SPANISH)
 DISTFILES+=	pysycache-lang-es-${PORTVERSION}.zip
 PLIST_SUB+=	SPANISH=""
 FLAG_LANG=	true
