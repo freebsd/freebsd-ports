@@ -123,6 +123,7 @@
     SUBDIR += ttfm
     SUBDIR += unrar
     SUBDIR += unzip
+    SUBDIR += ve
     SUBDIR += vflib
     SUBDIR += vim-scdoc
     SUBDIR += wenju
