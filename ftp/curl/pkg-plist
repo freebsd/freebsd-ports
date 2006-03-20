@@ -83,6 +83,7 @@ libdata/pkgconfig/libcurl.pc
 %%PORTDOCS%%%%DOCSDIR%%/examples/simple.c
 %%PORTDOCS%%%%DOCSDIR%%/examples/simplepost.c
 %%PORTDOCS%%%%DOCSDIR%%/examples/simplessl.c
+%%PORTDOCS%%%%DOCSDIR%%/examples/synctime.c
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/Makefile
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/Makefile.am
