@@ -365,6 +365,7 @@
     SUBDIR += openmcu
     SUBDIR += openmpi
     SUBDIR += openntpd
+    SUBDIR += openospfd-devel
     SUBDIR += openradius
     SUBDIR += openser
     SUBDIR += openslp
