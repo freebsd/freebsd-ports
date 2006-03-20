@@ -1,0 +1,10 @@
+@unexec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --remove-plugin email_footer; fi
+%%SQUIRRELDIR%%/plugins/email_footer/INSTALL
+%%SQUIRRELDIR%%/plugins/email_footer/README
+%%SQUIRRELDIR%%/plugins/email_footer/config.php.sample
+%%SQUIRRELDIR%%/plugins/email_footer/functions.php
+%%SQUIRRELDIR%%/plugins/email_footer/index.php
+%%SQUIRRELDIR%%/plugins/email_footer/setup.php
+%%SQUIRRELDIR%%/plugins/email_footer/version
+@dirrm %%SQUIRRELDIR%%/plugins/email_footer/
+@exec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --install-plugin email_footer; fi
