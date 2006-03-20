@@ -14296,6 +14296,7 @@ zh-ttf2pt1	ports/chinese/ttf2pt1
 zh-ttfm		ports/chinese/ttfm
 zh-unrar	ports/chinese/unrar
 zh-unzip	ports/chinese/unzip
+zh-ve		ports/chinese/ve
 zh-vflib	ports/chinese/vflib
 zh-vim-scdoc	ports/chinese/vim-scdoc
 zh-wenju	ports/chinese/wenju
