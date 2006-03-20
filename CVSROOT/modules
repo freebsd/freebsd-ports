@@ -912,6 +912,7 @@ bsp		ports/games/bsp
 bsvc		ports/emulators/bsvc
 btc		ports/audio/btc
 btoa		ports/converters/btoa
+btparse		ports/textproc/btparse
 btpeer		ports/net-p2p/btpeer
 btqueue		ports/net-p2p/btqueue
 bubblegum	ports/security/bubblegum
