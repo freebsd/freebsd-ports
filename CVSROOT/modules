@@ -12132,6 +12132,7 @@ spike-proxy	ports/security/spike-proxy
 spim		ports/emulators/spim
 spin		ports/devel/spin
 spinner		ports/sysutils/spinner
+spip		ports/www/spip
 spiralloops	ports/audio/spiralloops
 spiralsynth	ports/audio/spiralsynth
 spiralsynthmodular	ports/audio/spiralsynthmodular
