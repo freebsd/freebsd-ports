@@ -175,7 +175,8 @@ SITE_LIBRARIES+=	${LOCALBASE}/lib
 
 .if defined(PKGNAMEPREFIX)
 .if ${PKGNAMEPREFIX} == "ja-"
-PLIST_FILES+=		man/ja/man1/xemacs.1
+PLIST_FILES+=		man/ja/man1/xemacs.1 \
+			lib/xemacs/mule-packages/etc/app-defaults/ja_JP.eucJP
 .endif
 .endif
 

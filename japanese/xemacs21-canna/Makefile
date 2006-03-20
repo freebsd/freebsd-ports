@@ -12,8 +12,6 @@ COMMENT=	XEmacs(stable version) text editor(SJ3, SKK and Canna)
 
 MASTERDIR=	${.CURDIR}/../../editors/xemacs21-mule
 
-BROKEN=		Incomplete pkg-plist
-
 CANNA=		yes
 
 DESCR=		${.CURDIR}/pkg-descr
