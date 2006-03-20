@@ -3723,6 +3723,7 @@ heroes		ports/games/heroes
 hesiod		ports/dns/hesiod
 hevea		ports/textproc/hevea
 hex		ports/games/hex
+hex-a-hop	ports/games/hex-a-hop
 hexcalc		ports/math/hexcalc
 hexcurse	ports/editors/hexcurse
 hexedit		ports/editors/hexedit
