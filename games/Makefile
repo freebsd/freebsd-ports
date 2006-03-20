@@ -92,6 +92,7 @@
     SUBDIR += chromium
     SUBDIR += circuslinux
     SUBDIR += clanbomber
+    SUBDIR += cleanq3
     SUBDIR += columns
     SUBDIR += concentration
     SUBDIR += connect4
