@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Spreadsheet_Excel_Writer
-PORTVERSION=	0.8
+PORTVERSION=	0.9.0
 CATEGORIES=	textproc www pear
 
 MAINTAINER=	pav@FreeBSD.org
