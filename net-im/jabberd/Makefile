@@ -24,6 +24,7 @@ OPTIONS=	POSTGRESQL "Use PostgreSQL for storage and authentication" off \
 		SQLITE "Use SQLITE3 for storage" off \
 		PAM "Use PAM for authentication" off \
 		PIPE "Enable pipe auth/reg support" off \
+		AVATAR "Enable avatar support in vCard" off \
 		DEBUG "Compile with debug information" on
 
 GNU_CONFIGURE=	yes
@@ -89,6 +90,11 @@ CONFIGURE_ARGS+=--disable-pam
 
 .if defined(WITH_PIPE)
 CONFIGURE_ARGS+=--enable-pipe
+.endif
+
+.if defined(WITH_AVATAR)
+PATCH_SITES+=	http://www.deepdarc.com/
+PATCHFILES+=	vcard-avatar.diff
 .endif
 
 MAN8=		c2s.8 jabberd.8 resolver.8 router.8 s2s.8 sm.8
