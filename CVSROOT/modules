@@ -7216,6 +7216,7 @@ openal		ports/audio/openal
 openam		ports/net/openam
 openbabel	ports/science/openbabel
 openbgpd	ports/net/openbgpd
+openbgpd-devel	ports/net/openbgpd-devel
 openbox		ports/x11-wm/openbox
 openbox-themes	ports/x11-themes/openbox-themes
 opencdk		ports/security/opencdk
