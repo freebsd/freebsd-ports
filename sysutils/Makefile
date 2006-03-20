@@ -342,6 +342,7 @@
     SUBDIR += muse
     SUBDIR += nagios-statd
     SUBDIR += nautilus-cd-burner
+    SUBDIR += nbosd
     SUBDIR += nctop
     SUBDIR += ndir
     SUBDIR += netdump-server
