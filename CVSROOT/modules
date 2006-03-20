@@ -3324,6 +3324,7 @@ goose		ports/www/goose
 gopchop		ports/multimedia/gopchop
 gopher		ports/net/gopher
 gopod		ports/misc/gopod
+gorilla		ports/security/gorilla
 gorm		ports/devel/gorm
 gossip		ports/net-im/gossip
 gotmail		ports/mail/gotmail
