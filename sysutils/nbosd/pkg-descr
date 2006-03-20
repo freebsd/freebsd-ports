@@ -1,0 +1,2 @@
+nbosd (notebook OSD) is an on screen display application, that can display
+a machine's battery status and CPU frequency on a FreeBSD system.
