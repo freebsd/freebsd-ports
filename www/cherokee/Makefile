@@ -7,7 +7,7 @@
 
 PORTNAME=	cherokee
 PORTVERSION=	0.4.30
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://www.0x50.org/download/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTVERSION:R}/${PORTVERSION}
@@ -18,9 +18,9 @@ COMMENT=	An extremely fast and flexible web server
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
 USE_GNOME=	gnomehack gnometarget pkgconfig
+USE_RC_SUBR=	cherokee.sh
 USE_GCC=	3.4+
 USE_GETOPT_LONG=	yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
