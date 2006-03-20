@@ -1,4 +1,4 @@
-@unexec %D/%%SQUIRRELDIR%%/config/conf.pl --remove-plugin compatibility
+@unexec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --remove-plugin compatibility; fi
 @unexec mv -f %D/%%SQUIRRELDIR%%/functions/strings.php.orig %D/%%SQUIRRELDIR%%/functions/strings.php
 @exec mkdir -p %D/%%SQUIRRELDIR%%/plugins/compatibility/includes/1.5.1
 %%SQUIRRELDIR%%/plugins/compatibility/compatibility.pot
@@ -54,4 +54,4 @@
 @dirrm %%SQUIRRELDIR%%/plugins/compatibility/patches.old
 @dirrm %%SQUIRRELDIR%%/plugins/compatibility
 @exec patch -sN -p0 -d %D/%%SQUIRRELDIR%%/plugins < %D/%%SQUIRRELDIR%%/plugins/compatibility/patches/compatibility_patch-1.4.5.diff
-@exec %D/%%SQUIRRELDIR%%/config/conf.pl --install-plugin compatibility
+@exec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --install-plugin compatibility; fi
