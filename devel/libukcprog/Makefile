@@ -11,8 +11,8 @@ PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.uk.i-scream.org/pub/i-scream/%SUBDIR%/ \
 		http://ftp.uk.i-scream.org/pub/i-scream/%SUBDIR%/ \
-		ftp://ftp2.uk.i-scream.org/sites/ftp.i-scream.org/pub/i-scream/%SUBDIR%/ \
-		http://ftp2.uk.i-scream.org/sites/ftp.i-scream.org/pub/i-scream/%SUBDIR%/ \
+		ftp://ftp2.uk.i-scream.org/mirror/ftp.i-scream.org/pub/i-scream/%SUBDIR%/ \
+		http://ftp2.uk.i-scream.org/mirror/ftp.i-scream.org/pub/i-scream/%SUBDIR%/ \
 		ftp://ftp.i-scream.org/pub/i-scream/%SUBDIR%/ \
 		http://ftp.i-scream.org/pub/i-scream/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}
