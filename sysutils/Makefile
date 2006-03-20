@@ -179,6 +179,7 @@
     SUBDIR += fusefs-kmod
     SUBDIR += fusefs-libs
     SUBDIR += fusefs-sshfs
+    SUBDIR += fuser
     SUBDIR += fvcool
     SUBDIR += gag
     SUBDIR += ganglia-monitor-core

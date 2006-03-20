@@ -1,0 +1,9 @@
+=============================================================================
+
+Since fuser requires root privilegies to access /dev/mem file, ordinary
+users can't use it. If you want to give non-priveleged users access to this
+utility you must set setuid bit on fuser executable:
+
+# chmod +s %%PREFIX%%/bin/fuser
+	
+=============================================================================

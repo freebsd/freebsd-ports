@@ -1,0 +1,11 @@
+The fuser utility shall write to stdout the process IDs of processes that
+have one or more named files open. For block and character special
+devices, all processes using files on that device are listed.  A file is
+considered open by a process if it was explicitly opened, is the working
+directory, root directory, jail root directory, active executable text,
+kernel trace file for that process or controlling tty of the process.
+
+The fuser(1) utility is defined in IEEE Std 1003.1-2004 standard, but
+doesn't included in standard FreeBSD distribution.
+
+WWW: http://mbsd.msk.ru/fuser.html
