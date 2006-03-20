@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dansguardian
-PORTVERSION=	2.9.5.0
+PORTVERSION=	2.9.6.1
 CATEGORIES=	www
 MASTER_SITES=	# empty, see below
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -32,12 +32,12 @@ CONFIGURE_ARGS=	--localstatedir=/var \
 
 MAN8=		dansguardian.8
 
-OPTIONS=	DG_APACHE  "Enable Apache support" on \
-		DG_CLAMAV  "Enable ClamAV support (libclamav)" off \
+OPTIONS=	DG_APACHE  "Enable Apache support for access denied page" on \
+		DG_DMGR    "Enable the fancy download manager" on \
 		DG_CLAMD   "Enable ClamAV daemon support (clamd)" off \
-		DG_ICAP    "Enable ICAP AV content scanner support" off \
-		DG_KASP    "Enable Kaspersky AV support" off \
-		DG_DMGR    "Enable the fancy download manager" off
+		DG_CLAMAV  "Enable ClamAV support (libclamav) (broken)" off \
+		DG_ICAP    "Enable ICAP AV content scanner support (broken)" off \
+		DG_KASP    "Enable Kaspersky AV support (broken)" off
 
 DG_URL=		http://dansguardian.org/index.php?page=copyright2
 CONFDIR=	${PREFIX}/etc/dansguardian
@@ -53,13 +53,23 @@ USE_APACHE=	1.3+
 .endif
 
 .if defined(WITH_DG_CLAMAV)
-CONFIGURE_ARGS+=	--enable-clamav=yes
-LIB_DEPENDS+=		clamav.1:${PORTSDIR}/security/clamav
+#.if defined(WITH_DG_FORCE_CLAMAV)
+#CONFIGURE_ARGS+=	--enable-clamav=yes
+#LIB_DEPENDS+=		clamav.1:${PORTSDIR}/security/clamav
+#PLIST_SUB+=		CLAMAVCONF=""
+#.else
+#PLIST_SUB+=		CLAMAVCONF="@comment "
+#.endif
+#.else
+BROKEN=	Please use the clamd plugin support.  It's much more flexible, usable, tested, and just generally better
 .endif
 
 .if defined(WITH_DG_CLAMD)
 CONFIGURE_ARGS+=	--enable-clamd=yes
-RUN_DEPENDS+=		${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache13
+RUN_DEPENDS+=		${LOCALBASE}/sbin/clamd:${PORTSDIR}/security/clamav
+PLIST_SUB+=		CLAMDCONF=""
+.else
+PLIST_SUB+=		CLAMDCONF="@comment "
 .endif
 
 .if defined(WITH_DG_ICAP)
@@ -72,6 +82,9 @@ BROKEN=	I don't have access to Kaspersky AV, so I can't test this.  If you have 
 
 .if defined(WITH_DG_DMGR)
 CONFIGURE_ARGS+=	--enable-fancydm
+#PLIST_SUB+=		DMGR=""
+#.else
+#PLIST_SUB+=		DMGR="@comment "
 .endif
 
 # User needs to manually download the distfile
