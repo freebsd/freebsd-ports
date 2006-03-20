@@ -16,6 +16,7 @@ lib/libptal.so
 lib/libptal.so.0
 lib/libsane-hpoj.so
 lib/libsane-hpoj.so.1
+lib/sane/libsane-hpoj.so.1
 include/hpojip.h
 include/ptal.h
 etc/rc.d/020.ptal-init.sh.sample
@@ -54,3 +55,4 @@ etc/rc.d/020.ptal-init.sh.sample
 %%X11%%@cwd %%X11BASE%%
 %%X11%%bin/xojpanel
 @exec /bin/echo >>%D/etc/sane.d/dll.conf hpoj
+@unexec /usr/bin/sed -i '' -e '/^hpoj$/d' %D/etc/sane.d/dll.conf
