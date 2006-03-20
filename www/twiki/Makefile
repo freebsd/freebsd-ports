@@ -6,18 +6,17 @@
 #
 
 PORTNAME=	twiki
-PORTVERSION=	20040904
+PORTVERSION=	4.0.1
+PORTEPOCH=	1
 CATEGORIES=	www
-MASTER_SITES=	http://twiki.org/swd/ \
-		http://www.thoeny.com/peter/twiki/
-DISTNAME=	TWiki${PORTVERSION}
+MASTER_SITES=	http://twiki.org/p/pub/Codev/Release/
+DISTNAME=	TWiki-${PORTVERSION}
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	justin@hawkins.id.au
 COMMENT=	A flexible, powerful, and easy to use Web-based collaboration platform
 
-USE_REINPLACE=	yes
-
-WRKSRC=		${WRKDIR}/${PORTNAME}
+NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
 WWW_ROOT?=	${WWWOWN}
@@ -43,7 +42,7 @@ post-extract:
 
 do-install:
 	${INSTALL} -d -m 0755 ${TWIKIDIR}
-	(cd ${WRKSRC} && ${FIND} . | \
+	(cd ${WRKSRC} && ${FIND} . -not -name .PLIST.mktmp -not -name '.*_done.*' -not -name pkg-install | \
 		${CPIO} -pdmu -R${SHAREOWN}:${SHAREGRP} ${TWIKIDIR})
 
 post-install:
