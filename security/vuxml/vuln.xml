@@ -34,6 +34,41 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="b8e361b8-b7ff-11da-8414-0013d4a4a40e">
+    <topic>curl -- TFTP packet buffer overflow vulnerability</topic>
+    <affects>
+      <package>
+	<name>curl</name>
+	<range><ge>7.15.0</ge><lt>7.15.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A Project cURL Security Advisory reports:</p>
+	<blockquote cite="http://curl.haxx.se/docs/adv_20060320.html">
+	  <p>libcurl uses the given file part of a TFTP URL in a manner that allows a
+	    malicious user to overflow a heap-based memory buffer due to the lack of
+	    boundary check.</p>
+	  <p>This overflow happens if you pass in a URL with a TFTP
+	    protocol prefix ("tftp://"), using a valid host and a path
+	    part that is longer than 512 bytes.</p>
+	  <p>The affected flaw can be triggered by a redirect, if
+	    curl/libcurl is told to follow redirects and an HTTP
+	    server points the client to a tftp URL with the
+	    characteristics described above.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-1061</cvename>
+      <url>http://curl.haxx.se/docs/adv_20060320.html</url>
+    </references>
+    <dates>
+      <discovery>2006-03-20</discovery>
+      <entry>2006-03-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6779e82f-b60b-11da-913d-000ae42e9b93">
     <topic>drupal -- multiple vulnerabilities</topic>
     <affects>
