@@ -1,7 +1,7 @@
 diff -ur ../binutils-2.16.1.orig/gas/config/tc-avr.c ./gas/config/tc-avr.c
 --- ../binutils-2.16.1.orig/gas/config/tc-avr.c	Wed Feb 23 13:28:04 2005
 +++ ./gas/config/tc-avr.c	Sat Mar 18 23:45:13 2006
-@@ -88,34 +88,61 @@
+@@ -88,34 +88,62 @@
    {"at86rf401", AVR_ISA_2xxx,     bfd_mach_avr2},
    {"attiny13",  AVR_ISA_TINY2,    bfd_mach_avr2},
    {"attiny2313",AVR_ISA_TINY2,    bfd_mach_avr2},
@@ -60,6 +60,7 @@ diff -ur ../binutils-2.16.1.orig/gas/config/tc-avr.c ./gas/config/tc-avr.c
 +  {"at90can64" ,AVR_ISA_M323,     bfd_mach_avr5},
    {"at90can128",AVR_ISA_M128,     bfd_mach_avr5},
 +  {"at90usb647", AVR_ISA_M323,    bfd_mach_avr5},
++  {"at90usb648", AVR_ISA_M323,    bfd_mach_avr5},
 +  {"at90usb1286",AVR_ISA_M128,    bfd_mach_avr5},
 +  {"at90usb1287",AVR_ISA_M128,    bfd_mach_avr5},
    {"at94k",     AVR_ISA_94K,      bfd_mach_avr5},
