@@ -8,7 +8,8 @@
 PORTNAME=	minirsyslogd
 PORTVERSION=	1.02
 CATEGORIES=	sysutils net
-MASTER_SITES=	http://www.clueby4.org/minirsyslogd/
+MASTER_SITES=	http://www.clueby4.org/minirsyslogd/ \
+		http://redundancy.redundancy.org/mirror/
 
 MAINTAINER=	lx@redundancy.redundancy.org
 COMMENT=	Minimal, fast and secure syslog receiver
