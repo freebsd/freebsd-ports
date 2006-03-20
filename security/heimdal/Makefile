@@ -5,55 +5,59 @@
 # $FreeBSD$
 #
 
-PORTNAME=		heimdal
-PORTVERSION=	0.6.3
-PORTREVISION=	3
-CATEGORIES=		security ipv6
+PORTNAME=	heimdal
+PORTVERSION=	0.6.6
+CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.pdc.kth.se/pub/heimdal/src/ \
 		ftp://ftp.sunet.se/pub/unix/admin/mirror-pdc/pub/heimdal/src/ \
 		ftp://ftp.ayamura.org/pub/heimdal/
-DISTNAME=		heimdal-${PORTVERSION}
+DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=		nectar@FreeBSD.ORG
-COMMENT=		A re-implementation of Kerberos V
+MAINTAINER=	nectar@FreeBSD.ORG
+COMMENT=	A re-implementation of Kerberos V
 
-CONFLICTS=		krb4-[0-9]* krb5-[0-9]*
+CONFLICTS=	krb4-[0-9]* krb5-[0-9]*
 
-OPTIONS+=		LDAP     "Use OpenLDAP as the KDC backend" off
-OPTIONS+=		CRACKLIB "Use CrackLib for password quality checking" off
-OPTIONS+=		X11      "Build X11 utilies" off
+OPTIONS+=	LDAP     "Use OpenLDAP as the KDC backend" off
+OPTIONS+=	CRACKLIB "Use CrackLib for password quality checking" off
+OPTIONS+=	X11      "Build X11 utilies" off
 
-USE_REINPLACE=		yes
-USE_OPENSSL=		yes
-GNU_CONFIGURE=		yes
-INSTALLS_SHLIB=		yes
-CONFIGURE_ENV+=		CFLAGS="${CFLAGS}"
+USE_OPENSSL=	yes
+GNU_CONFIGURE=	yes
+INSTALLS_SHLIB=	yes
+CONFIGURE_ENV+=	CFLAGS="${CFLAGS}"
 CONFIGURE_ARGS+=	--enable-shared --without-krb4
 
+INFO=		heimdal
+PLIST=		${WRKDIR}/PLIST
+
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+CFLAGS+=	-fPIC
+.endif
 
 .if defined(WITH_LDAP)
 USE_OPENLDAP=		yes
 CONFIGURE_ARGS+=	--with-openldap=${LOCALBASE}
 .endif
+
 .if defined(WITH_CRACKLIB)
 BUILD_DEPENDS+=		${LOCALBASE}/lib/libcrack.a:${PORTSDIR}/security/cracklib
 .endif
+
 .if defined(WITH_X11)
-USE_XLIB=			yes
+USE_XLIB=		yes
 CONFIGURE_ARGS+=	--with-x
 .else
 CONFIGURE_ARGS+=	--without-x
 .endif
 
 .if defined(HEIMDAL_HOME)
-PREFIX=				${HEIMDAL_HOME}
+PREFIX=		${HEIMDAL_HOME}
 .else
-CONFLICTS+=			wu-ftpd-[0-9]* wu-ftpd+ipv6-[0-9]*
+CONFLICTS+=	wu-ftpd-[0-9]* wu-ftpd+ipv6-[0-9]*
 .endif
-
-INFO=				heimdal
-PLIST:=				${WRKDIR}/PLIST
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$ac_cv_header_fnmatch_h|yes|' \
@@ -62,10 +66,10 @@ post-patch:
 post-build:
 .if defined(WITH_CRACKLIB)
 	${SED} -e "s;%%LOCALBASE%%;${LOCALBASE};g" \
-	${FILESDIR}/kpasswdd-cracklib.c.in > ${WRKSRC}/kpasswdd-cracklib.c
+		${FILESDIR}/kpasswdd-cracklib.c.in > ${WRKSRC}/kpasswdd-cracklib.c
 	(cd ${WRKSRC} && \
-	${CC} ${CFLAGS} -fPIC -shared -I${LOCALBASE}/include -I./include \
-	-L${LOCALBASE}/lib -o ./kpasswdd-cracklib.so ./kpasswdd-cracklib.c -lcrack)
+		${CC} ${CFLAGS} -fPIC -shared -I${LOCALBASE}/include -I./include \
+		-L${LOCALBASE}/lib -o ./kpasswdd-cracklib.so ./kpasswdd-cracklib.c -lcrack)
 .endif
 
 pre-install:
@@ -90,7 +94,4 @@ post-install:
 	${SED} 's;%%PREFIX%%;${PREFIX};g' ${FILESDIR}/kdc.sh > \
 		${PREFIX}/etc/rc.d/kdc.sh.sample
 
-.if ${ARCH} == "amd64"
-CFLAGS+=	-fPIC
-.endif
 .include <bsd.port.post.mk>
