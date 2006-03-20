@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	musicextras
-PORTVERSION=	0.6.6
-PORTREVISION=	1
+PORTVERSION=	0.6.8
 CATEGORIES=	audio ruby
-MASTER_SITES=	http://kapheine.hypa.net/musicextras/
+MASTER_SITES=	http://www.divineinvasion.net/musicextras/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 
 MAINTAINER=	kay_lehmann@web.de
