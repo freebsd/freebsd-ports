@@ -352,6 +352,7 @@
     SUBDIR += onenetd
     SUBDIR += openam
     SUBDIR += openbgpd
+    SUBDIR += openbgpd-devel
     SUBDIR += opengk
     SUBDIR += openh323
     SUBDIR += openh323-112
