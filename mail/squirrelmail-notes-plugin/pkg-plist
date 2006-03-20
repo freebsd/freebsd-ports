@@ -1,0 +1,21 @@
+@unexec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --remove-plugin notes; fi
+%%SQUIRRELDIR%%/plugins/notes/images/X.gif
+%%SQUIRRELDIR%%/plugins/notes/images/_.gif
+%%SQUIRRELDIR%%/plugins/notes/images/max.gif
+%%SQUIRRELDIR%%/plugins/notes/images/index.php
+%%SQUIRRELDIR%%/plugins/notes/locale/create_po.php
+%%SQUIRRELDIR%%/plugins/notes/locale/index.php
+%%SQUIRRELDIR%%/plugins/notes/locale/notes.po
+%%SQUIRRELDIR%%/plugins/notes/LICENSE
+%%SQUIRRELDIR%%/plugins/notes/README
+%%SQUIRRELDIR%%/plugins/notes/config.php.sample
+%%SQUIRRELDIR%%/plugins/notes/functions.php
+%%SQUIRRELDIR%%/plugins/notes/index.php
+%%SQUIRRELDIR%%/plugins/notes/notes.class.php
+%%SQUIRRELDIR%%/plugins/notes/notes.php
+%%SQUIRRELDIR%%/plugins/notes/setup.php
+%%SQUIRRELDIR%%/plugins/notes/version
+@dirrm %%SQUIRRELDIR%%/plugins/notes/images/
+@dirrm %%SQUIRRELDIR%%/plugins/notes/locale/
+@dirrm %%SQUIRRELDIR%%/plugins/notes/
+@exec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --install-plugin notes; fi
