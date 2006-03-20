@@ -7258,6 +7258,7 @@ openoffice.org-1.1-devel	ports/editors/openoffice.org-1.1-devel
 openoffice.org-2.0	ports/editors/openoffice.org-2.0
 openoffice.org-2.0-devel	ports/editors/openoffice.org-2.0-devel
 openorb		ports/devel/openorb
+openospfd	ports/net/openospfd-devel
 openproducer	ports/graphics/openproducer
 openquicktime	ports/multimedia/openquicktime
 openradius	ports/net/openradius
