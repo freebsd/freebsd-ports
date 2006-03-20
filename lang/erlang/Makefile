@@ -67,11 +67,14 @@ ERLANG_PLIST=	${WRKDIR}/pkg-plist
 USE_GMAKE=	yes
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 REINPLACE_ARGS=	-i
 
 CONFIGURE_TARGET=	# Empty
-CONFIGURE_ARGS+=	--enable-threads --enable-hipe --enable-kernel-poll
+CONFIGURE_ARGS+=	--enable-threads --enable-kernel-poll
+.if ${ARCH} == "i386"
+CONFIGURE_ARGS+=	--enable-hipe
+.endif
 NOPRECIOUSMAKEVARS=	yes # Prevent exporting of "ARCH"
 
 CFLAGS+=        -I${LOCALBASE}/include
