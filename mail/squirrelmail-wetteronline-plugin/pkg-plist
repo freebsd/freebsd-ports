@@ -1,0 +1,5 @@
+@unexec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --remove-plugin wetteronline; fi
+%%SQUIRRELDIR%%/plugins/wetteronline/README
+%%SQUIRRELDIR%%/plugins/wetteronline/setup.php
+@dirrm %%SQUIRRELDIR%%/plugins/wetteronline/
+@exec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --install-plugin wetteronline; fi
