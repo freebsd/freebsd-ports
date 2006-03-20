@@ -12172,7 +12172,12 @@ squirrelmail-change_ldappass-plugin	ports/mail/squirrelmail-change_ldappass-plug
 squirrelmail-compatibility-plugin	ports/mail/squirrelmail-compatibility-plugin
 squirrelmail-devel	ports/mail/squirrelmail-devel
 squirrelmail-email_footer-plugin	ports/mail/squirrelmail-email_footer-plugin
+squirrelmail-login_notes-plugin	ports/mail/squirrelmail-login_notes-plugin
+squirrelmail-notes-plugin	ports/mail/squirrelmail-notes-plugin
+squirrelmail-notify-plugin	ports/mail/squirrelmail-notify-plugin
+squirrelmail-quota_usage-plugin	ports/mail/squirrelmail-quota_usage-plugin
 squirrelmail-vlogin-plugin	ports/mail/squirrelmail-vlogin-plugin
+squirrelmail-wetteronline-plugin	ports/mail/squirrelmail-wetteronline-plugin
 squishdot	ports/www/squishdot
 squsq		ports/archivers/squsq
 sqwebmail	ports/mail/sqwebmail
