@@ -2673,6 +2673,7 @@ fusefs-kmod	ports/sysutils/fusefs-kmod
 fusefs-libs	ports/sysutils/fusefs-libs
 fusefs-sshfs	ports/sysutils/fusefs-sshfs
 fusenshi	ports/deskutils/fusenshi
+fuser		ports/sysutils/fuser
 fuzz		ports/security/fuzz
 fv		ports/graphics/fv
 fvcool		ports/sysutils/fvcool
