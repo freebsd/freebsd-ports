@@ -23,7 +23,6 @@ USE_GMAKE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 CONFIGURE_ARGS+=	--program-prefix=''
-USE_REINPLACE=	yes
 
 MAN1=		lineak_defaultplugin.1
 PLIST_FILES=	lib/lineakd/plugins/defaultplugin.la \
@@ -34,8 +33,9 @@ PLIST_FILES=	lib/lineakd/plugins/defaultplugin.la \
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
+BROKEN=		Configure fails to find lineakd
 # lineakd is compiled with 3.4 on FreeBSD 4.x, so plugins must be too
-USE_GCC=	3.4
+# USE_GCC=	3.4
 .endif
 
 post-patch:
