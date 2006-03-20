@@ -266,6 +266,7 @@
     SUBDIR += komparator
     SUBDIR += krename
     SUBDIR += kshutdown
+    SUBDIR += ksynaptics
     SUBDIR += lavaps
     SUBDIR += lcdproc
     SUBDIR += ldap-account-manager
