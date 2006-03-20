@@ -1,0 +1,7 @@
+libsynaptics is a library to access the Xorg/XFree86 Synaptics TouchPad
+Driver. Programs that want to access the touchpad should make use of this
+library and will thereby not interfere with each other. Available parameters
+can be read and written and the version of the installed driver can be
+determined.
+
+WWW: http://qsynaptics.sourceforge.net/

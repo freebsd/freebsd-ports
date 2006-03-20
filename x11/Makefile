@@ -124,6 +124,7 @@
     SUBDIR += libgnomemm
     SUBDIR += libgnomemm26
     SUBDIR += libsx
+    SUBDIR += libsynaptics
     SUBDIR += libxfce4mcs
     SUBDIR += libxfce4util
     SUBDIR += libxkbfile
