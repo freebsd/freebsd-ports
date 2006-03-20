@@ -33,7 +33,7 @@
 #	configure, deinstall,
 #	depend, depends, describe, extract, fetch, fetch-list, ignorelist,
 #	install, maintainer, makesum, package, readmes, realinstall, reinstall,
-#	tags
+#	status, tags
 #
 #	search:
 #		Search for ports using either 'make search key=<keyword>'
@@ -110,6 +110,7 @@ TARGETS+=	package
 TARGETS+=	package-recursive
 TARGETS+=	realinstall
 TARGETS+=	reinstall
+TARGETS+=	status
 TARGETS+=	tags
 
 .for __target in ${TARGETS}

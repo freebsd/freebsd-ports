@@ -257,18 +257,6 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  package depends on.  "lib" is the name of a shared library.
 #				  make will use "ldconfig -r" to search for the library.
 #				  lib can contain extended regular expressions.
-# PERL_BUILD_DEPENDS
-#				- A list of "module:dir" tuples of Perl modules this
-#				  package depends to build. "module" is the name of the Perl
-#				  module which should be "use"d. make will use
-#				  "perl -e 'use module'" to check if the module is
-#				  available.
-# PERL_RUN_DEPENDS
-#				- A list of "module:dir" tuples of Perl modules this
-#				  package depends to run. "module" is the name of the Perl
-#				  module which should be "use"d. make will use
-#				  "perl -e 'use module'" to check if the module is
-#				  available.
 # DEPENDS		- A list of "dir[:target]" tuples of other ports this
 #				  package depends on being made first.  Use this only for
 #				  things that don't fall into the above four categories.
@@ -1276,7 +1264,7 @@ PREFIX?=		${LOCALBASE}
 .endif
 
 .if defined(USE_LINUX_PREFIX)
-LDCONFIG_CMD?=				${LINUXBASE}/sbin/ldconfig
+LDCONFIG_CMD?=			${LINUXBASE}/sbin/ldconfig -r ${LINUXBASE}
 LDCONFIG_PLIST_EXEC_CMD?=	${LDCONFIG_CMD}
 LDCONFIG_PLIST_UNEXEC_CMD?=	${LDCONFIG_CMD}
 .else
@@ -1288,8 +1276,8 @@ LDCONFIG_PLIST_UNEXEC_CMD?=	${LDCONFIG} -R
 PKGCOMPATDIR?=		${LOCALBASE}/lib/compat/pkg
 
 .if ${OSVERSION} >= 500036
-PERL_VERSION?=	5.8.7
-PERL_VER?=	5.8.7
+PERL_VERSION?=	5.8.8
+PERL_VER?=	5.8.8
 .else
 .if ${OSVERSION} >= 500032
 PERL_VERSION?=	5.6.1
@@ -1587,7 +1575,7 @@ _OPENLDAP_FLAVOUR=
 .if ${WANT_OPENLDAP_VER} == 22
 LIB_DEPENDS+=		ldap-2.2.7:${PORTSDIR}/net/openldap22${_OPENLDAP_FLAVOUR}-client
 .elif ${WANT_OPENLDAP_VER} == 23
-LIB_DEPENDS+=		ldap-2.3.1:${PORTSDIR}/net/openldap23${_OPENLDAP_FLAVOUR}-client
+LIB_DEPENDS+=		ldap-2.3.2:${PORTSDIR}/net/openldap23${_OPENLDAP_FLAVOUR}-client
 .else
 BROKEN=				unknown OpenLDAP version: ${WANT_OPENLDAP_VER}
 .endif
@@ -1599,6 +1587,12 @@ DEFAULT_FAM_SYSTEM=	gamin
 FAM_SYSTEM_FAM=		fam.0:${PORTSDIR}/devel/fam
 FAM_SYSTEM_GAMIN=	fam.0:${PORTSDIR}/devel/gamin
 
+.if exists(${LOCALBASE}/libexec/gam_server)
+_HAVE_FAM_SYSTEM=	gamin
+.elif exists(${LOCALBASE}/bin/fam)
+_HAVE_FAM_SYSTEM=	fam
+.endif
+
 .if defined(WANT_FAM_SYSTEM)
 .if defined(WITH_FAM_SYSTEM) && ${WITH_FAM_SYSTEM}!=${WANT_FAM_SYSTEM}
 BROKEN=	The port wants to use ${WANT_FAM_SYSTEM} as its FAM system and you wish to use ${WITH_FAM_SYSTEM}
@@ -1607,8 +1601,18 @@ FAM_SYSTEM=	${WANT_FAM_SYSTEM}
 .elif defined(WITH_FAM_SYSTEM)
 FAM_SYSTEM=	${WITH_FAM_SYSTEM}
 .else
+.if defined(_HAVE_FAM_SYSTEM)
+FAM_SYSTEM=	${_HAVE_FAM_SYSTEM}
+.else
 FAM_SYSTEM=	${DEFAULT_FAM_SYSTEM}
+.endif
 .endif # WANT_FAM_SYSTEM
+
+.if defined(_HAVE_FAM_SYSTEM)
+.if ${_HAVE_FAM_SYSTEM}!= ${FAM_SYSTEM}
+BROKEN=	FAM system mismatch: ${_HAVE_FAM_SYSTEM} is installed and desired FAM system is ${FAM_SYSTEM}
+.endif
+.endif
 
 .if defined(FAM_SYSTEM_${FAM_SYSTEM:U})
 LIB_DEPENDS+=	${FAM_SYSTEM_${FAM_SYSTEM:U}}
@@ -1762,7 +1766,7 @@ X_FONTS_TTF_PORT=	${PORTSDIR}/x11/XFree86
 X_FONTS_TYPE1_PORT=	${PORTSDIR}/x11/XFree86
 X_MANUALS_PORT=		${PORTSDIR}/x11/XFree86
 .else
-.error Bad X_WINDOW_SYSTEM setting
+IGNORE=	cannot install: bad X_WINDOW_SYSTEM setting; valid values are 'xfree86-3', 'xfree86-4', 'xorg'
 .endif
 
 .if defined(USE_IMAKE)
@@ -1829,10 +1833,6 @@ CONFIGURE_ARGS+=	INSTALLDIRS="site"
 
 .if defined(PERL_CONFIGURE)
 USE_PERL5=	yes
-.endif
-
-.if defined(PERL_RUN_DEPENDS) || defined(PERL_BUILD_DEPENDS)
-USE_PERL5_BUILD=	yes
 .endif
 
 .if ${PERL_LEVEL} >= 500600
@@ -1912,14 +1912,13 @@ RUN_DEPENDS+=	${PERL5}:${PORTSDIR}/lang/${PERL_PORT}
 .endif
 .endif
 
-# XXX
-#.if defined(USE_AUTOTOOLS)
+.if defined(USE_AUTOTOOLS)
 .if exists(${DEVELPORTSDIR}/Mk/bsd.autotools.mk)
 .include "${DEVELPORTSDIR}/Mk/bsd.autotools.mk"
 .else
 .include "${PORTSDIR}/Mk/bsd.autotools.mk"
 .endif
-#.endif
+.endif
 
 .if defined(WANT_GNOME) || defined(USE_GNOME) || defined(USE_GTK)
 .if exists(${DEVELPORTSDIR}/Mk/bsd.gnome.mk)
@@ -3339,12 +3338,12 @@ patch-dos2unix:
 .if defined(USE_DOS2UNIX)
 .if ${USE_DOS2UNIX:U}=="YES"
 	@${ECHO_MSG} "===>   Converting DOS text files to UNIX text files"
-	@${FIND} -E ${WRKSRC} -type f -print0 | \
-			${XARGS} -0 ${REINPLACE_CMD} -i"" -e 's/[[:cntrl:]]*$$//'
+	@${FIND} ${WRKSRC} -type f -print0 | \
+			${XARGS} -0 ${REINPLACE_CMD} -i '' -e 's/$$//'
 .else
 .for f in ${USE_DOS2UNIX}
 	@${ECHO_MSG} "===>   Converting DOS text file to UNIX text file: ${f}"
-	@${REINPLACE_CMD} -i"" -e 's/[[:cntrl:]]*$$//' ${WRKSRC}/${f}
+	@${REINPLACE_CMD} -i '' -e 's/$$//' ${WRKSRC}/${f}
 .endfor
 .endif
 .else
@@ -3409,11 +3408,10 @@ do-patch:
 	fi
 .endif
 
-# XXX - To be tested later
-#.if !target(run-autotools) && !defined(USE_AUTOTOOLS)
-#run-autotools:
-#	${DO_NADA}
-#.endif
+.if !target(run-autotools)
+run-autotools:
+	@${DO_NADA}
+.endif
 
 # Configure
 
@@ -3876,17 +3874,16 @@ _PATCH_DEP=		extract
 _PATCH_SEQ=		patch-message patch-depends patch-dos2unix pre-patch \
 				pre-patch-script do-patch post-patch post-patch-script
 _CONFIGURE_DEP=	patch
-_CONFIGURE_SEQ=	build-depends lib-depends perl-build-depends misc-depends \
-				configure-message pre-configure pre-configure-script \
+_CONFIGURE_SEQ=	build-depends lib-depends misc-depends configure-message \
+				pre-configure pre-configure-script \
 				run-autotools do-configure post-configure post-configure-script
 _BUILD_DEP=		configure
 _BUILD_SEQ=		build-message pre-build pre-build-script do-build \
 				post-build post-build-script
 _INSTALL_DEP=	build
 _INSTALL_SEQ=	install-message check-conflicts \
-			    run-depends lib-depends perl-run-depends apply-slist \
-				pre-install pre-install-script generate-plist \
-				check-already-installed
+				run-depends lib-depends apply-slist pre-install \
+				pre-install-script generate-plist check-already-installed
 _INSTALL_SUSEQ= check-umask install-mtree pre-su-install \
 				pre-su-install-script do-install install-desktop-entries \
 				post-install post-install-script add-plist-info \
@@ -4477,7 +4474,7 @@ package-noinstall:
 ################################################################
 
 .if !target(depends)
-depends: extract-depends patch-depends lib-depends perl-build-depends perl-run-depends misc-depends fetch-depends build-depends run-depends
+depends: extract-depends patch-depends lib-depends misc-depends fetch-depends build-depends run-depends
 
 .if defined(ALWAYS_BUILD_DEPENDS)
 _DEPEND_ALWAYS=	1
@@ -4633,35 +4630,6 @@ lib-depends:
 	done
 .endif
 
-.for deptype in BUILD RUN
-perl-${deptype:L}-depends:
-.if defined(PERL_${deptype}_DEPENDS)
-	@for tupple in ${PERL_${deptype}_DEPENDS}; do \
-		mod=$${tupple%:*}; \
-		mod=`${ECHO_CMD} $${mod} | sed -e 's/\-/::/g'`; \
-		dir=$${tupple##*:}; \
-		${ECHO_MSG} -n "===>   ${PKGNAME} depends on Perl module: $$mod"; \
-		if ${PERL} -M$${mod} -e 1 2>/dev/null; then \
-			${ECHO_MSG} " - found"; \
-		else \
-			${ECHO_MSG} " - not found"; \
-			${ECHO_MSG} "===>    Verifying install for $$mod in $$dir"; \
-			if [ ! -d "$$dir" ]; then \
-				${ECHO_MSG} "     => No directory for $$mod.  Skipping.."; \
-			else \
-				${_INSTALL_DEPENDS} \
-				if ! ${PERL} -M$${mod} -e 1 2>/dev/null; then \
-					${ECHO_MSG} "Error: Perl module \"$${mod}\" does not exist"; \
-					${FALSE}; \
-				fi; \
-			fi; \
-		fi; \
-    done
-.else
-	@${DO_NADA}
-.endif
-.endfor
-
 misc-depends:
 .if defined(DEPENDS)
 .if !defined(NO_DEPENDS)
@@ -4691,8 +4659,8 @@ misc-depends:
 
 # Dependency lists: both build and runtime, recursive.  Print out directory names.
 
-_UNIFIED_DEPENDS=${EXTRACT_DEPENDS} ${PATCH_DEPENDS} ${FETCH_DEPENDS} ${BUILD_DEPENDS} ${LIB_DEPENDS} ${RUN_DEPENDS} ${PERL_BUILD_DEPENDS} ${PERL_RUN_DEPENDS}
-_DEPEND_DIRS=	${_UNIFIED_DEPENDS:C,^[^:]*:([^:]*),\1,} ${DEPENDS:C,:.*,,}
+_UNIFIED_DEPENDS=${EXTRACT_DEPENDS} ${PATCH_DEPENDS} ${FETCH_DEPENDS} ${BUILD_DEPENDS} ${LIB_DEPENDS} ${RUN_DEPENDS}
+_DEPEND_DIRS=	${_UNIFIED_DEPENDS:C,^[^:]*:([^:]*).*$,\1,} ${DEPENDS:C,:.*,,}
 
 all-depends-list:
 	@${ALL-DEPENDS-LIST}
@@ -4760,7 +4728,7 @@ fetch-recursive-list:
 .if !target(fetch-required)
 fetch-required: fetch
 	@${ECHO_MSG} "===> Fetching all required distfiles for ${PKGNAME} and dependencies"
-.for deptype in EXTRACT PATCH FETCH BUILD RUN PERL_BUILD PERL_RUN
+.for deptype in EXTRACT PATCH FETCH BUILD RUN
 .if defined(${deptype}_DEPENDS)
 .if !defined(NO_DEPENDS)
 	@for i in ${${deptype}_DEPENDS}; do \
@@ -4788,7 +4756,7 @@ fetch-required: fetch
 
 .if !target(fetch-required-list)
 fetch-required-list: fetch-list
-.for deptype in EXTRACT PATCH FETCH BUILD RUN PERL_BUILD PERL_RUN
+.for deptype in EXTRACT PATCH FETCH BUILD RUN
 .if defined(${deptype}_DEPENDS)
 .if !defined(NO_DEPENDS)
 	@for i in ${${deptype}_DEPENDS}; do \
@@ -4825,12 +4793,12 @@ checksum-recursive:
 # Dependency lists: build and runtime.  Print out directory names.
 
 build-depends-list:
-.if defined(EXTRACT_DEPENDS) || defined(PATCH_DEPENDS) || defined(FETCH_DEPENDS) || defined(BUILD_DEPENDS) || defined(LIB_DEPENDS) || defined(DEPENDS) || defined(PERL_BUILD_DEPENDS)
+.if defined(EXTRACT_DEPENDS) || defined(PATCH_DEPENDS) || defined(FETCH_DEPENDS) || defined(BUILD_DEPENDS) || defined(LIB_DEPENDS) || defined(DEPENDS)
 	@${BUILD-DEPENDS-LIST}
 .endif
 
 BUILD-DEPENDS-LIST= \
-	for dir in $$(${ECHO_CMD} "${EXTRACT_DEPENDS} ${PATCH_DEPENDS} ${FETCH_DEPENDS} ${BUILD_DEPENDS} ${LIB_DEPENDS} ${PERL_BUILD_DEPENDS}" | ${TR} '\040' '\012' | ${SED} -e 's/^[^:]*://' -e 's/:.*//' | ${SORT} -u) $$(${ECHO_CMD} ${DEPENDS} | ${TR} '\040' '\012' | ${SED} -e 's/:.*//' | ${SORT} -u); do \
+	for dir in $$(${ECHO_CMD} "${EXTRACT_DEPENDS} ${PATCH_DEPENDS} ${FETCH_DEPENDS} ${BUILD_DEPENDS} ${LIB_DEPENDS}" | ${TR} '\040' '\012' | ${SED} -e 's/^[^:]*://' -e 's/:.*//' | ${SORT} -u) $$(${ECHO_CMD} ${DEPENDS} | ${TR} '\040' '\012' | ${SED} -e 's/:.*//' | ${SORT} -u); do \
 		if [ -d $$dir ]; then \
 			${ECHO_CMD} $$dir; \
 		else \
@@ -4839,12 +4807,12 @@ BUILD-DEPENDS-LIST= \
 	done | ${SORT} -u
 
 run-depends-list:
-.if defined(LIB_DEPENDS) || defined(RUN_DEPENDS) || defined(DEPENDS) || defined(PERL_RUN_DEPENDS)
+.if defined(LIB_DEPENDS) || defined(RUN_DEPENDS) || defined(DEPENDS)
 	@${RUN-DEPENDS-LIST}
 .endif
 
 RUN-DEPENDS-LIST= \
-	for dir in $$(${ECHO_CMD} "${LIB_DEPENDS} ${RUN_DEPENDS} ${PERL_RUN_DEPENDS}" | ${SED} -e 'y/ /\n/' | ${CUT} -f 2 -d ':' | ${SORT} -u) $$(${ECHO_CMD} ${DEPENDS} | ${SED} -e 'y/ /\n/' | ${CUT} -f 1 -d ':' | ${SORT} -u); do \
+	for dir in $$(${ECHO_CMD} "${LIB_DEPENDS} ${RUN_DEPENDS}" | ${SED} -e 'y/ /\n/' | ${CUT} -f 2 -d ':' | ${SORT} -u) $$(${ECHO_CMD} ${DEPENDS} | ${SED} -e 'y/ /\n/' | ${CUT} -f 1 -d ':' | ${SORT} -u); do \
 		if [ -d $$dir ]; then \
 			${ECHO_CMD} $$dir; \
 		else \
@@ -4856,7 +4824,7 @@ RUN-DEPENDS-LIST= \
 # and package names.
 
 package-depends-list:
-.if defined(CHILD_DEPENDS) || defined(LIB_DEPENDS) || defined(RUN_DEPENDS) || defined(DEPENDS) || defined(PERL_RUN_DEPENDS)
+.if defined(CHILD_DEPENDS) || defined(LIB_DEPENDS) || defined(RUN_DEPENDS) || defined(DEPENDS)
 	@${PACKAGE-DEPENDS-LIST}
 .endif
 
@@ -4875,7 +4843,7 @@ PACKAGE-DEPENDS-LIST?= \
 		done; \
 	fi; \
 	checked="${PARENT_CHECKED}"; \
-	for dir in $$(${ECHO_CMD} "${LIB_DEPENDS} ${RUN_DEPENDS} ${PERL_RUN_DEPENDS}" | ${SED} -e 'y/ /\n/' | ${CUT} -f 2 -d ':') $$(${ECHO_CMD} ${DEPENDS} | ${SED} -e 'y/ /\n/' | ${CUT} -f 1 -d ':'); do \
+	for dir in $$(${ECHO_CMD} "${LIB_DEPENDS} ${RUN_DEPENDS}" | ${SED} -e 'y/ /\n/' | ${CUT} -f 2 -d ':') $$(${ECHO_CMD} ${DEPENDS} | ${SED} -e 'y/ /\n/' | ${CUT} -f 1 -d ':'); do \
 		dir=$$(${REALPATH} $$dir); \
 		if [ -d $$dir ]; then \
 			if (${ECHO_CMD} $$checked | ${GREP} -qwv "$$dir"); then \
@@ -4943,9 +4911,7 @@ describe:
 		@rdirs = map((split /:/)[1], split(q{ }, q{${RUN_DEPENDS}})); \
 		@ddirs = map((split /:/)[0], split(q{ }, q{${DEPENDS}})); \
 		@ldirs = map((split /:/)[1], split(q{ }, q{${LIB_DEPENDS}})); \
-		@prdirs = map((split /:/)[1], split(q{ }, q{${PERL_RUN_DEPENDS}})); \
-		@pbdirs = map((split /:/)[1], split(q{ }, q{${PERL_BUILD_DEPENDS}})); \
-		for my $$i (\@edirs, \@pdirs, \@fdirs, \@bdirs, \@rdirs, \@ddirs, \@ldirs, \@prdirs, \@pbdirs) { \
+		for my $$i (\@edirs, \@pdirs, \@fdirs, \@bdirs, \@rdirs, \@ddirs, \@ldirs) { \
 			my @dirs = @$$i; \
 			@$$i = (); \
 			for (@dirs) { \
@@ -4969,11 +4935,11 @@ describe:
 			$$xf{$$_} = 1; \
 		} \
 		print join(q{ }, sort keys %xf), q{|}; \
-		for (@bdirs, @ddirs, @ldirs, @pbdirs) { \
+		for (@bdirs, @ddirs, @ldirs) { \
 			$$xb{$$_} = 1; \
 		} \
 		print join(q{ }, sort keys %xb), q{|}; \
-		for (@rdirs, @ddirs, @ldirs, @prdirs) { \
+		for (@rdirs, @ddirs, @ldirs) { \
 			$$xr{$$_} = 1; \
 		} \
 		print join(q{ }, sort keys %xr), q{|}; \
@@ -5044,8 +5010,7 @@ _PRETTY_PRINT_DEPENDS_LIST=\
 pretty-print-build-depends-list:
 .if defined(EXTRACT_DEPENDS) || defined(PATCH_DEPENDS) || \
 	defined(FETCH_DEPENDS) || defined(BUILD_DEPENDS) || \
-	defined(LIB_DEPENDS) || defined(DEPENDS) || \
-	defined(PERL_BUILD_DEPENDS)
+	defined(LIB_DEPENDS) || defined(DEPENDS)
 	@${_PRETTY_PRINT_DEPENDS_LIST}
 .endif
 .endif
@@ -5053,7 +5018,7 @@ pretty-print-build-depends-list:
 .if !target(pretty-print-run-depends-list)
 pretty-print-run-depends-list:
 .if defined(RUN_DEPENDS) || defined(LIB_DEPENDS) || \
-	defined(DEPENDS) || defined(PERL_RUN_DEPENDS)
+	defined(DEPENDS)
 	@${_PRETTY_PRINT_DEPENDS_LIST}
 .endif
 .endif
@@ -5176,6 +5141,9 @@ add-plist-info:
 	@${LS} ${PREFIX}/${INFO_PATH}/$i.info* | ${SED} -e s:${PREFIX}/::g >> ${TMPPLIST}
 	@${ECHO_CMD} "@exec install-info %D/${INFO_PATH}/$i.info %D/${INFO_PATH}/dir" \
 		>> ${TMPPLIST}
+	if [ "`${DIRNAME} $i`" != "." ]; then \
+		${ECHO_CMD} "@unexec ${RMDIR} %D/info/`${DIRNAME} $i` 2> /dev/null || true" >> ${TMPPLIST}; \
+	fi
 .endfor
 .if (${PREFIX} != "/usr")
 	@${ECHO_CMD} "@unexec if [ -f %D/${INFO_PATH}/dir ]; then if sed -e '1,/Menu:/d' %D/${INFO_PATH}/dir | grep -q '^[*] '; then true; else rm %D/${INFO_PATH}/dir; fi; fi" >> ${TMPPLIST}
@@ -5212,7 +5180,7 @@ install-rc-script:
 .if defined(USE_RC_SUBR) && ${USE_RC_SUBR:U} != "YES"
 	@${ECHO_CMD} "===> Installing rc.d startup script(s)"
 	@${ECHO_CMD} "@cwd ${PREFIX}" >> ${TMPPLIST}
-.if ${OSVERSION} >= 700007
+.if (${OSVERSION} >= 700007 || (${OSVERSION} < 700000 && ${OSVERSION} >= 600101))
 	@for i in ${USE_RC_SUBR}; do \
 		${INSTALL_SCRIPT} ${WRKDIR}/$${i} ${PREFIX}/etc/rc.d/$${i%.sh}; \
 		${ECHO_CMD} "etc/rc.d/$${i%.sh}" >> ${TMPPLIST}; \
