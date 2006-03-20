@@ -15,8 +15,13 @@ MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	A library to provide abstract access to various archives
 
 USE_GNOME=	gnometarget
-GNU_CONFIGURE=	yes
+#GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
 NO_LATEST_LINK=	yes
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|g ; \
+		s|-D_REENTRANT -D_THREAD_SAFE|${PTHREAD_CFLAGS}|g' \
+		${WRKSRC}/configure
 .include <bsd.port.mk>
