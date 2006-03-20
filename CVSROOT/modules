@@ -11626,6 +11626,7 @@ s5		ports/textproc/s5
 sabbu		ports/multimedia/sabbu
 sablevm		ports/java/sablevm
 sablotron	ports/textproc/sablotron
+sabnzbd		ports/news/sabnzbd
 safecat		ports/sysutils/safecat
 saferpay	ports/security/saferpay
 safesh		ports/security/safesh
