@@ -1,0 +1,17 @@
+@unexec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --remove-plugin quota_usage; fi
+%%SQUIRRELDIR%%/plugins/quota_usage/locale/quota_usage.pot
+%%SQUIRRELDIR%%/plugins/quota_usage/COPYING
+%%SQUIRRELDIR%%/plugins/quota_usage/FAQ
+%%SQUIRRELDIR%%/plugins/quota_usage/INSTALL
+%%SQUIRRELDIR%%/plugins/quota_usage/README
+%%SQUIRRELDIR%%/plugins/quota_usage/getpot
+%%SQUIRRELDIR%%/plugins/quota_usage/bar.php
+%%SQUIRRELDIR%%/plugins/quota_usage/config.php.sample
+%%SQUIRRELDIR%%/plugins/quota_usage/functions.php
+%%SQUIRRELDIR%%/plugins/quota_usage/index.php
+%%SQUIRRELDIR%%/plugins/quota_usage/setup.php
+%%SQUIRRELDIR%%/plugins/quota_usage/screenshot.jpg
+%%SQUIRRELDIR%%/plugins/quota_usage/version
+@dirrm %%SQUIRRELDIR%%/plugins/quota_usage/locale
+@dirrm %%SQUIRRELDIR%%/plugins/quota_usage/
+@exec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --install-plugin quota_usage; fi
