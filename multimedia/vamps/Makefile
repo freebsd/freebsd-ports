@@ -18,8 +18,11 @@ LIB_DEPENDS=	dvdread.3:${PORTSDIR}/multimedia/libdvdread
 
 CONFLICTS=	lxdvdrip-{{0.,1.[0-3],1.4[0-7]}*
 
+USE_GETOPT_LONG=	yes
 USE_GMAKE=	yes
-MAKE_ENV=	LDFLAGS="${LDFLAGS}"
+MAKE_ENV=	\
+		CC="${CC}" \
+		LDFLAGS="${LDFLAGS}"
 
 CFLAGS+=	-DHAVE_BUILTIN_EXPECT \
 		-I${LOCALBASE}/include \
