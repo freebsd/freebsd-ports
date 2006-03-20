@@ -1,0 +1,76 @@
+This set of patches allows Azureus to build against the 3.1.x version
+of SWT. When the 3.2.x is _released_ by Eclipse, and our x11-toolkits/swt31
+port is updated, this file can be removed from the Azureus port.
+
+	-mi
+
+--- org/gudy/azureus2/ui/swt/Messages.java	Fri Feb 10 00:08:06 2006
++++ org/gudy/azureus2/ui/swt/Messages.java	Tue Mar 14 11:00:05 2006
+@@ -218,5 +218,5 @@
+         }
+       }
+-    } else if (widget instanceof TableColumn) {
++    } /* else if (widget instanceof TableColumn) {
+       String key = (String) widget.getData();
+ 			if (key != null) {
+@@ -236,4 +236,5 @@
+ 			}
+     }
++*/
+   }
+   
+--- org/gudy/azureus2/ui/swt/views/TableView.java	Fri Feb 10 00:07:52 2006
++++ org/gudy/azureus2/ui/swt/views/TableView.java	Tue Mar 14 11:03:38 2006
+@@ -2714,5 +2714,5 @@
+ 		if (table == null || table.isDisposed())
+ 			return;
+-
++/*
+ 		try {
+ 			// can't use TableColumnCore.getPosition, because user may have moved
+@@ -2733,4 +2733,5 @@
+ 			// sWT < 3.2 doesn't have column indicaters
+ 		}
++*/
+ 	}
+ 
+--- org/gudy/azureus2/ui/swt/views/configsections/ConfigSectionPlugins.java	Fri Feb 10 00:08:06 2006
++++ org/gudy/azureus2/ui/swt/views/configsections/ConfigSectionPlugins.java	Tue Mar 14 11:06:20 2006
+@@ -374,4 +374,5 @@
+ 				public void widgetSelected(SelectionEvent e) {
+ 					boolean ascending = comparator.setField(table.indexOf(tc));
++/*
+ 					try {
+ 						table.setSortColumn(tc);
+@@ -380,4 +381,5 @@
+ 						// Ignore Pre 3.0
+ 					}
++*/
+ 					Collections.sort(pluginIFs, comparator);
+ 					table.clearAll();
+--- org/gudy/azureus2/ui/swt/shells/MessageSlideShell.java	Thu Mar 16 14:04:50 2006
++++ org/gudy/azureus2/ui/swt/shells/MessageSlideShell.java	Fri Mar 17 08:16:49 2006
+@@ -208,4 +208,5 @@
+ 		// Create shell & widgets
+ 		shell = new Shell(display, SWT.ON_TOP);
++/*
+ 		if (USE_SWT32_BG_SET) {
+ 			try {
+@@ -215,4 +216,5 @@
+ 			}
+ 		}
++*/
+ 		Utils.setShellIcon(shell);
+ 
+@@ -435,4 +437,5 @@
+ 
+ 			boolean bAlternateDrawing = true;
++/*
+ 			if (USE_SWT32_BG_SET) {
+ 				try {
+@@ -442,4 +445,5 @@
+ 				}
+ 			}
++*/
+ 
+ 			if (bAlternateDrawing) {

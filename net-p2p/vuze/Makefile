@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	azureus
-PORTVERSION=	2.3.0.6
-PORTREVISION=	1
+PORTVERSION=	2.4.0.2
 CATEGORIES=	net-p2p java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -30,13 +29,17 @@ ONLY_FOR_ARCHS=	i386 amd64
 USE_JAVA=	yes
 JAVA_BUILD=	jdk
 JAVA_RUN=	jdk
-JAVA_VERSION=	1.4
+JAVA_VERSION=	1.4+
 JAVA_OS=	native
 USE_ANT=	yes
 USE_JIKES=	no
 
 USE_ZIP=	yes
-USE_DOS2UNIX=	org/gudy/azureus2/ui/swt/test/PrintTransferTypes.java
+USE_DOS2UNIX=	org/gudy/azureus2/ui/swt/test/PrintTransferTypes.java \
+		org/gudy/azureus2/ui/swt/Messages.java \
+		org/gudy/azureus2/ui/swt/views/configsections/ConfigSectionPlugins.java \
+		org/gudy/azureus2/ui/swt/shells/MessageSlideShell.java \
+		org/gudy/azureus2/ui/swt/views/TableView.java
 NO_WRKSUBDIR=	yes
 
 JARFILE=	${PORTNAME}.jar
@@ -63,6 +66,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/dist/lib/${JARFILE} \
 		${JAVAJARDIR}/
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.pre.mk>
 
