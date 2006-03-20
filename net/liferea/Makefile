@@ -6,18 +6,17 @@
 #
 
 PORTNAME=	liferea
-PORTVERSION=	1.0.7
+PORTVERSION=	1.0.8
 CATEGORIES=	net gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	liferea
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pav@FreeBSD.org
 COMMENT=	Simple RSS/RDF feed reader
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomeprefix gnomehack libgtkhtml
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
@@ -38,7 +37,6 @@ MOZILLA=	mozilla-devel
 MOZ_BUILD=	mozilla
 MOZ_SUFFIX=	-devel
 .elif ${WITH_MOZILLA}=="firefox"
-# Firefox build is broken in liferea-1.0 with firefox-1.5
 MOZILLA=	firefox
 MOZ_BUILD=	firefox
 .else
@@ -47,8 +45,8 @@ IGNORE=		: Available options for WITH_MOZILLA are: mozilla mozilla-devel firefox
 .endif # WITH_MOZILLA
 
 .ifdef MOZILLA
-BUILD_DEPENDS=	${X11BASE}/lib/${MOZILLA}/components/libwidget_gtk2.so:${PORTSDIR}/www/${MOZILLA}
-RUN_DEPENDS=	${X11BASE}/lib/${MOZILLA}/components/libwidget_gtk2.so:${PORTSDIR}/www/${MOZILLA} 
+BUILD_DEPENDS+=	${X11BASE}/lib/${MOZILLA}/components/libwidget_gtk2.so:${PORTSDIR}/www/${MOZILLA}
+RUN_DEPENDS+=	${X11BASE}/lib/${MOZILLA}/components/libwidget_gtk2.so:${PORTSDIR}/www/${MOZILLA}
 PLIST_SUB=	MOZ=""
 .else
 PLIST_SUB=	MOZ="@comment "
