@@ -110,10 +110,12 @@ bin/sketchy
 %%DATADIR%%/src/count.l
 %%DATADIR%%/src/date.l
 %%DATADIR%%/src/depth.l
+%%DATADIR%%/src/draw-tree.l
 %%DATADIR%%/src/evaluate.l
 %%DATADIR%%/src/everyp.l
 %%DATADIR%%/src/explode.l
 %%DATADIR%%/src/fact.l
+%%DATADIR%%/src/factors.l
 %%DATADIR%%/src/filter.l
 %%DATADIR%%/src/gen-bottles.l
 %%DATADIR%%/src/hanoi.l

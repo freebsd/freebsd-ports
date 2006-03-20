@@ -1,10 +1,10 @@
-Sketchy is an interpreter for a purely applicative dialect of
-Scheme. It may be considered an implementation of pure LISP
-plus global definitions (DEFINE), first-class continuations
-(CALL/CC) and input/output functions (READ, WRITE, etc).
+Sketchy is an interpreter for a purely applicative dialect
+of Scheme. It may be considered an implementation of pure
+LISP plus global definitions, first-class continuations and
+input/output functions.
 
-This package contains the Sketchy interpreter and library, the
-manual, and example programs.
+This package contains the Sketchy interpreter and library,
+the manual, and example programs.
 
 WWW: http://www.t3x.org/sketchy/
 
