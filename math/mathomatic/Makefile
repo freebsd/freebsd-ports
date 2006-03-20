@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	mathomatic
-PORTVERSION=	12.5.8
+PORTVERSION=	12.5.11
 CATEGORIES=	math
 MASTER_SITES=	http://www.panix.com/~gesslein/
 
