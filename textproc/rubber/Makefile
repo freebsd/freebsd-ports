@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	rubber
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	textproc
 MASTER_SITES=	http://ebeffara.free.fr/pub/
 
@@ -25,5 +25,11 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} --infodir=${PREFIX}/${INFO_PATH} \
 MANLANG=	"" fr
 MAN1=		rubber.1 rubber-info.1 rubber-pipe.1
 INFO=		rubber
+
+post-install:
+	@${FIND} ${PYTHON_SITELIBDIR}/rubber ! -type d | ${SED} \
+		's,${PREFIX}/,,' >> ${TMPPLIST}
+	@${FIND} ${PYTHON_SITELIBDIR}/rubber -type d | ${SORT} -r | ${SED} \
+		's,${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 
 .include <bsd.port.mk>
