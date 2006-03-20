@@ -1,0 +1,9 @@
+
+             **** INFORMATION ****
+
+First, Add the following line to your httpd.conf:
+
+	Alias /spip/ "%%PREFIX%%/%%SPIPDIR%%"
+
+For first use and configuration of the CMS, please visit the ecrire directory
+with your web browser.

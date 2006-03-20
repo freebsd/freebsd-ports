@@ -864,6 +864,7 @@
     SUBDIR += smb_auth
     SUBDIR += snarf
     SUBDIR += snownews
+    SUBDIR += spip
     SUBDIR += spreadlogd
     SUBDIR += squid
     SUBDIR += squid_radius_auth
