@@ -1,3 +1,5 @@
-Heimdal is a re-implementation of Kerberos V.
+Heimdal is an implementation of Kerberos 5. It
+is freely available under a three clause BSD
+style license.
 
-WWW: http://www.pdc.kth.se/heimdal/
+WWW:	http://www.pdc.kth.se/heimdal/
