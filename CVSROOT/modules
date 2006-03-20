@@ -1186,6 +1186,7 @@ classpath	ports/java/classpath
 clean		ports/sysutils/clean
 clean-theme-gtk	ports/x11-themes/clean-theme-gtk
 cleanfeed	ports/news/cleanfeed
+cleanq3		ports/games/cleanq3
 cleanscore	ports/news/cleanscore
 clearlooks	ports/x11-themes/clearlooks
 clearlooks-metacity	ports/x11-themes/clearlooks-metacity
