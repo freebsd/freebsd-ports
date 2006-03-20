@@ -12165,6 +12165,7 @@ squirm		ports/www/squirm
 squirrelmail	ports/mail/squirrelmail
 squirrelmail-change_ldappass-plugin	ports/mail/squirrelmail-change_ldappass-plugin
 squirrelmail-compatibility-plugin	ports/mail/squirrelmail-compatibility-plugin
+squirrelmail-devel	ports/mail/squirrelmail-devel
 squirrelmail-vlogin-plugin	ports/mail/squirrelmail-vlogin-plugin
 squishdot	ports/www/squishdot
 squsq		ports/archivers/squsq
