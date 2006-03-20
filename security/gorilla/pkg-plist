@@ -1,0 +1,29 @@
+@comment $FreeBSD$
+bin/gorilla
+lib/gorilla/gorilla.tcl
+lib/gorilla/isaac.tcl
+lib/gorilla/blowfish/LICENSE.txt
+lib/gorilla/blowfish/blowfish.tcl
+lib/gorilla/blowfish/blowtest.tcl
+lib/gorilla/blowfish/pkgIndex.tcl
+lib/gorilla/pics/gorilla-16x16.gif
+lib/gorilla/pics/gorilla-32x32.gif
+lib/gorilla/pics/gorilla-48x48.gif
+lib/gorilla/pics/gorilla-logo.jpg
+lib/gorilla/pics/gorilla-splash.gif
+lib/gorilla/pics/gorilla.ico
+lib/gorilla/pwsafe/LICENSE.txt
+lib/gorilla/pwsafe/pkgIndex.tcl
+lib/gorilla/pwsafe/pwsafe-db.tcl
+lib/gorilla/pwsafe/pwsafe-int.tcl
+lib/gorilla/pwsafe/pwsafe-io.tcl
+lib/gorilla/pwsafe/pwsafe.dat
+lib/gorilla/pwsafe/pwsafe.tcl
+lib/gorilla/pwsafe/pwtest.tcl
+lib/gorilla/twofish/twofish.tcl
+lib/gorilla/twofish/twotest.tcl
+@dirrm lib/gorilla/blowfish
+@dirrm lib/gorilla/pics
+@dirrm lib/gorilla/twofish
+@dirrm lib/gorilla/pwsafe
+@dirrm lib/gorilla
