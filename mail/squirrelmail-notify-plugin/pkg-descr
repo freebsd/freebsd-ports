@@ -1,0 +1,6 @@
+A small browser window is displayed to show the number of unread message
+in a users inbox. The page is refreshed at user defined intervals, and will
+restore itself from minimized if there are unread messages,
+optionally playing a sound file. Requires Javascript on the browser.
+
+WWW: http://www.squirrelmail.org

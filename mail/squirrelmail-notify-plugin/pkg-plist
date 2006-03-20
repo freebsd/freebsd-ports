@@ -1,0 +1,10 @@
+@unexec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --remove-plugin notify; fi
+%%SQUIRRELDIR%%/plugins/notify/copying
+%%SQUIRRELDIR%%/plugins/notify/readme
+%%SQUIRRELDIR%%/plugins/notify/notify.wav
+%%SQUIRRELDIR%%/plugins/notify/focus.php
+%%SQUIRRELDIR%%/plugins/notify/index.php
+%%SQUIRRELDIR%%/plugins/notify/notify.php
+%%SQUIRRELDIR%%/plugins/notify/setup.php
+@dirrm %%SQUIRRELDIR%%/plugins/notify/
+@exec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --install-plugin notify; fi
