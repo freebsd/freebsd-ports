@@ -32,6 +32,7 @@
     SUBDIR += bn-aspell
     SUBDIR += br-aspell
     SUBDIR += british-ispell
+    SUBDIR += btparse
     SUBDIR += c2html
     SUBDIR += ca-aspell
     SUBDIR += carthage

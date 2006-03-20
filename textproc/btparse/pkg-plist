@@ -1,0 +1,8 @@
+@comment $FreeBSD$
+bin/bibparse
+include/btparse.h
+lib/libbtparse.so.0
+lib/libbtparse.so
+lib/libbtparse.la
+lib/libbtparse.a
+libdata/pkgconfig/btparse.pc
