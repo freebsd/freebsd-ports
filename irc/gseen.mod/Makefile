@@ -9,10 +9,10 @@ PORTNAME=	gseen.mod
 PORTVERSION=	1.1.1.p3
 PORTREVISION=	1
 CATEGORIES=	irc
-MASTER_SITES=	http://www.visions-of-fantasy.de/gseen.mod/
+MASTER_SITES=	http://www.kreativrauschen.de/gseen.mod/
 DISTNAME=	${PORTNAME}.${PORTVERSION:S/p/dev/}
 
-MAINTAINER=	tux@pinguru.net
+MAINTAINER=	gerrit.beine@gmx.de
 COMMENT=	A seen-module for the eggdrop IRC bot
 
 EXTRACT_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/irc/eggdrop:extract
