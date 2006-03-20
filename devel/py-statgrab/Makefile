@@ -7,11 +7,12 @@
 
 PORTNAME=	statgrab
 PORTVERSION=	0.4
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	ftp://ftp.uk.i-scream.org/pub/i-scream/%SUBDIR%/ \
 		http://ftp.uk.i-scream.org/pub/i-scream/%SUBDIR%/ \
-		ftp://ftp2.uk.i-scream.org/sites/ftp.i-scream.org/pub/i-scream/%SUBDIR%/ \
-		http://ftp2.uk.i-scream.org/sites/ftp.i-scream.org/pub/i-scream/%SUBDIR%/ \
+		ftp://ftp2.uk.i-scream.org/mirror/ftp.i-scream.org/pub/i-scream/%SUBDIR%/ \
+		http://ftp2.uk.i-scream.org/mirror/ftp.i-scream.org/pub/i-scream/%SUBDIR%/ \
 		ftp://ftp.i-scream.org/pub/i-scream/%SUBDIR%/ \
 		http://ftp.i-scream.org/pub/i-scream/%SUBDIR%/
 MASTER_SITE_SUBDIR=	py${PORTNAME}
@@ -21,7 +22,7 @@ DISTNAME=	py${PORTNAME}-${PORTVERSION}
 MAINTAINER=	tdb@FreeBSD.org
 COMMENT=	A set of Python bindings for libstatgrab
 
-LIB_DEPENDS=	statgrab.7:${PORTSDIR}/devel/libstatgrab
+LIB_DEPENDS=	statgrab.8:${PORTSDIR}/devel/libstatgrab
 
 DIST_SUBDIR=	i-scream
 USE_PYTHON=	yes
