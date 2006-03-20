@@ -26,6 +26,8 @@ bin/musicextras-web
 %%RUBY_SITELIBDIR%%/musicextras/musicsites/atame.rb
 %%RUBY_SITELIBDIR%%/musicextras/musicsites/allmusic.rb
 %%RUBY_SITELIBDIR%%/musicextras/musicsites/lyricsnet.rb
+%%RUBY_SITELIBDIR%%/musicextras/musicsites/lyricsdomain.rb
+%%RUBY_SITELIBDIR%%/musicextras/musicsites/lrcdb.rb
 share/musicextras/no_image.png
 share/musicextras/musicextras.glade
 share/musicextras/html/index.html
