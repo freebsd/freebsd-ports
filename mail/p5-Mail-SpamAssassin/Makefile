@@ -150,18 +150,17 @@ DOCSCONTRIB=	mbox-to-check run-corpora run-masses
 DOCSLDAP=	README README.testing sa_test.ldif
 PORTDOCS=	${DOCS} sql contrib ldap
 
-USE_RC_SUBR=	yes
-SED_SCRIPT=	-e 's|%%PREFIX%%|${PREFIX}|g' \
-		-e 's|%%RC_SUBR%%|${RC_SUBR}|g'
+USE_RC_SUBR=	sa-spamd.sh
+
 .if defined(WITH_MYSQL) || defined(WITH_PGSQL)
-SED_SCRIPT+=	-e 's|%%SQL_FLAG%%|-Q|g'
+SUB_LIST+=	SQL_FLAG="-Q"
 .else
-SED_SCRIPT+=	-e 's|%%SQL_FLAG%%||g'
+SUB_LIST+=	SQL_FLAG=""
 .endif
 .if !defined(WITH_AS_ROOT)
-SED_SCRIPT+=	-e 's|%%RUN_AS_USER%%|-u spamd -H /var/spool/spamd|g'
+SUB_LIST+=	RUN_AS_USER="-u spamd -H /var/spool/spamd"
 .else
-SED_SCRIPT+=	-e 's|%%RUN_AS_USER%%||g'
+SUB_LIST+=	RUN_AS_USER=""
 .endif
 
 post-patch:
@@ -180,9 +179,6 @@ post-patch:
 .if defined(WITH_RELAY_COUNTRY)
 	${REINPLACE_CMD} -e '/RelayCountry/s/^#loadplugin/loadplugin/' ${WRKSRC}/rules/init.pre
 .endif
-
-post-build:
-	@${SED} ${SED_SCRIPT} ${FILESDIR}/spamd.sh > ${WRKDIR}/sa-spamd.sh
 
 pre-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
