@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Data-UUID
-PORTVERSION=	0.11
+PORTVERSION=	0.14
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Data
@@ -22,11 +22,8 @@ MAN3=		Data::UUID.3
 
 .include <bsd.port.pre.mk>
 
-post-patch:
-.if ${PERL_LEVEL} < 500601
-	@${PERL} -pi -e '$$_="" if $$.==31' ${WRKSRC}/UUID.pm
-	@${PERL} -pi -e '$$_=~s/INT2PTR\(\$$type,/(\$$type)(/ if $$.==8' \
-		${WRKSRC}/typemap
+.if ${PERL_LEVEL} < 500600
+IGNORE=	perl 5.6 or newer required. Install lang/perl5.8 or lang/perl5 and try again
 .endif
 
 .include <bsd.port.post.mk>
