@@ -1,0 +1,26 @@
+--- code/unix/Conscript-client.orig	Fri Mar 17 13:50:18 2006
++++ code/unix/Conscript-client	Fri Mar 17 13:50:40 2006
+@@ -147,13 +147,13 @@
+   LINK => $LINK,
+ 	ENV => { PATH => $ENV{PATH}, HOME => $ENV{HOME} },
+   CFLAGS => $BASE_CFLAGS,
+-  LIBS => ' ' . $BUILD_DIR . '/unix/splines.a ' 
++  LIBS => ' '
+   . $BUILD_DIR . '/unix/botlib.a ' 
+   . $BUILD_DIR . '/unix/jpeglib.a '
+   . $BUILD_DIR . '/unix/asmlib.a '
+   . $BUILD_DIR . '/unix/inlinelib.a '
+ 	. $BASE_LDFLAGS
+-  . '-L/usr/X11R6/lib -lX11 -lXext -lXxf86dga -lXxf86vm -ldl -lm'
++  . '-L%%X11BASE%%/lib -lX11 -lXext -lXxf86dga -lXxf86vm -lm'
+ );
+ 
+ @RENDERER_FILES = qw(
+@@ -231,7 +231,6 @@
+   ../unix/linux_common.c
+   ../unix/linux_qgl.c   
+   ../unix/linux_glimp.c   
+-  ../unix/linux_joystick.c  
+   ../unix/linux_snd.c 
+ 	../unix/linux_signals.c
+   );

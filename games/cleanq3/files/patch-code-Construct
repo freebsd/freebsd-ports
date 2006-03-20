@@ -1,0 +1,68 @@
+--- code/Construct.orig	Mon Mar 20 18:19:09 2006
++++ code/Construct	Mon Mar 20 18:37:12 2006
+@@ -19,8 +19,8 @@
+ use Cons_gcc;
+ 
+ # defaults
+-$config = 'debug';
+-$do_smp = 1;
++$config = 'release';
++$do_smp = 0;
+ $do_masterserver = 0;
+ $do_authserver = 0;
+ $do_authport = 0;
+@@ -30,10 +30,10 @@
+ $do_pk3 = 0;
+ # those are exported
+ $DO_WIN32 = 0;
+-$NO_VM = 0;
++$NO_VM = 1;
+ $NO_SO = 0;
+-$CC='gcc';
+-$CXX='g++';
++$CC=$ENV{CC};
++$CXX=$ENV{CXX};
+ 
+ # detect an sdk build (don't attempt client build and other things)
+ if ( -r 'unix/Conscript-client' )
+@@ -63,9 +63,6 @@
+ else
+ {
+ 	# libc .. do the little magic!
+-	$libc_cmd = '/lib/libc.so.6 |grep "GNU C "|grep version|awk -F "version " \'{ print $2 }\'|cut -b -3';
+-	$libc = `$libc_cmd`;
+-	chop ($libc);
+ }
+ 
+ if ($DO_WIN32 eq 1)
+@@ -227,7 +224,7 @@
+ # build the config directory
+ $CONFIG_DIR = $config . '-' . $cpu . '-' . $OS . '-' . $libc;
+ 
+-$COMMON_CFLAGS = '-pipe -fsigned-char ';
++$COMMON_CFLAGS = '-pipe -fsigned-char -I%%LOCALBASE%%/include -L%%LOCALBASE%%/lib -I%%X11BASE%%/include -L%%X11BASE%%/lib ';
+ 
+ if ($config eq 'debug')
+ {
+@@ -237,7 +234,7 @@
+ }
+ else
+ {
+-  $BASE_CFLAGS = $COMMON_CFLAGS . '-DNDEBUG -O6 -mcpu=pentiumpro -march=pentium -fomit-frame-pointer -ffast-math -malign-loops=2 -malign-jumps=2 -malign-functions=2 -fno-strict-aliasing -fstrength-reduce ';
++  $BASE_CFLAGS = $COMMON_CFLAGS . '-DNDEBUG %%CFLAGS%% ';
+ 	$BSPC_BASE_CFLAGS = $BASE_CFLAGS . '-DLINUX -DBSPC -Dstricmp=strcasecmp ';
+ }
+ 
+@@ -302,9 +299,9 @@
+ }
+ 
+ # build tools
+-$env_tools = new cons();
+-Command $env_tools 'qvmtools/q3lcc', '[perl] &build_tools(\'q3lcc\')';
+-Command $env_tools 'qvmtools/q3asm', '[perl] &build_tools(\'q3asm\')';
++#$env_tools = new cons();
++#Command $env_tools 'qvmtools/q3lcc', '[perl] &build_tools(\'q3lcc\')';
++#Command $env_tools 'qvmtools/q3asm', '[perl] &build_tools(\'q3asm\')';
+ 
+ if ($do_bspc eq 1)
+ {
