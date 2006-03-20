@@ -5699,6 +5699,7 @@ libsvg-cairo	ports/graphics/libsvg-cairo
 libsvm		ports/science/libsvm
 libsvm-python	ports/science/libsvm-python
 libsx		ports/x11/libsx
+libsynaptics	ports/x11/libsynaptics
 libtai		ports/devel/libtai
 libtap		ports/devel/libtap
 libtar		ports/devel/libtar
