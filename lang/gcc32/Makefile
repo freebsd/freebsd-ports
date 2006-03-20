@@ -70,7 +70,7 @@ LDCONFIG_DIRS=	%%PREFIX%%/lib ${TARGLIB}
 EXTRA_SHLIB=	libgcc_s
 SUB_LIST=	TARGLIB="${TARGLIB}"
 SUB_FILES=	gcc.sh
-RC_D_SH=	etc/rc.d/gcc${SUFFIX}.sh
+RC_D_SH=	etc/rc.d/gcc32.sh
 PLIST_FILES+=	${RC_D_SH}
 .else
 CONFIGURE_ARGS+=	--disable-shared
