@@ -7,6 +7,7 @@
 @exec mkdir -p etc/dansguardian/lists/blacklists
 @exec mkdir -p etc/dansguardian/lists/blacklists/ads
 @exec mkdir -p etc/dansguardian/lists/contentscanners
+@exec mkdir -p etc/dansguardian/lists/downloadmanagers
 @exec mkdir -p etc/dansguardian/lists/phraselists
 @exec mkdir -p etc/dansguardian/lists/phraselists/badwords
 @exec mkdir -p etc/dansguardian/lists/phraselists/chat
@@ -138,8 +139,13 @@ etc/dansguardian/authplugins/ident.conf
 etc/dansguardian/authplugins/ip.conf
 etc/dansguardian/authplugins/proxy-basic.conf
 etc/dansguardian/lists/authplugins/ipgroups
+etc/dansguardian/lists/exceptionextensionlist
+etc/dansguardian/lists/exceptionfilesitelist
+etc/dansguardian/lists/exceptionmimetypelist
 etc/dansguardian/lists/blacklists/ads/domains
 etc/dansguardian/lists/blacklists/ads/urls
+etc/dansguardian/lists/downloadmanagers/managedextensionlist
+etc/dansguardian/lists/downloadmanagers/managedmimetypelist
 etc/dansguardian/lists/phraselists/badwords/weighted_dutch
 etc/dansguardian/lists/phraselists/badwords/weighted_french
 etc/dansguardian/lists/phraselists/badwords/weighted_german
@@ -220,8 +226,7 @@ etc/dansguardian/lists/contentscanners/exceptionvirussitelist
 etc/dansguardian/lists/contentscanners/exceptionvirusurllist
 etc/dansguardian/downloadmanagers/default.conf
 etc/dansguardian/downloadmanagers/fancy.conf
-etc/dansguardian/contentscanners/clamav.conf
-etc/dansguardian/contentscanners/clamdscan.conf
+%%CLAMDCONF%%etc/dansguardian/contentscanners/clamdscan.conf
 etc/dansguardian/dansguardian.conf
 etc/dansguardian/dansguardianf1.conf
 @dirrm %%DATADIR%%/scripts
@@ -251,6 +256,7 @@ etc/dansguardian/dansguardianf1.conf
 @dirrm %%DATADIR%%/languages
 @dirrm %%DATADIR%%
 @dirrm etc/dansguardian/lists/contentscanners
+@dirrm etc/dansguardian/lists/downloadmanagers
 @dirrm etc/dansguardian/lists/phraselists/badwords
 @dirrm etc/dansguardian/lists/phraselists/chat
 @dirrm etc/dansguardian/lists/phraselists/drugadvocacy
