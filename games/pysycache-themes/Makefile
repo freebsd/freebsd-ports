@@ -24,19 +24,19 @@ NO_BUILD=	yes
 WRKSRC=	${WRKDIR}/${PKGNAMEPREFIX}${PORTNAME}
 DATADIR=	${PREFIX}/share/${DIST_SUBDIR}
 
-OPTIONS=	ANIMALS_MOVE	"Animals move mouse theme"	off \
-		EARTH_MOVE	"Earth move mouse theme"	off \
-		FOOD_MOVE	"Food move mouse theme"	off \
-		PLANTS_MOVE	"Plants move mouse theme"	off \
-		SKY_MOVE	"Sky move mouse theme"	off \
-		SPORTS_MOVE	"Sports move mouse theme"	off \
-		VEHICLE_MOVE	"Vehicle move mouse theme"	off \
-		WORLD_MOVE	"World move mouse theme"	off \
-		AFRICA_ACTIVITY	"Africa activity theme"	off
+OPTIONS=	ANIMALS_MOVE	"Animals move mouse theme"	on \
+		EARTH_MOVE	"Earth move mouse theme"	on \
+		FOOD_MOVE	"Food move mouse theme"	on \
+		PLANTS_MOVE	"Plants move mouse theme"	on \
+		SKY_MOVE	"Sky move mouse theme"	on \
+		SPORTS_MOVE	"Sports move mouse theme"	on \
+		VEHICLE_MOVE	"Vehicle move mouse theme"	on \
+		WORLD_MOVE	"World move mouse theme"	on \
+		AFRICA_ACTIVITY	"Africa activity theme"	on
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_ANIMALS_MOVE)
+.if !defined(WITHOUT_ANIMALS_MOVE)
 DISTFILES+=	animals-${PORTVERSION}.zip
 PLIST_SUB+=	ANIMALS=""
 FLAG_THEME=	true
@@ -45,7 +45,7 @@ HAVE_THEME+=	animals
 PLIST_SUB+=	ANIMALS="@comment "
 .endif
 
-.if defined(WITH_EARTH_MOVE)
+.if !defined(WITHOUT_EARTH_MOVE)
 DISTFILES+=	earth-${PORTVERSION}.zip
 PLIST_SUB+=	EARTH=""
 FLAG_THEME=	true
@@ -54,7 +54,7 @@ HAVE_THEME+=	earth
 PLIST_SUB+=	EARTH="@comment "
 .endif
 
-.if defined(WITH_FOOD_MOVE)
+.if !defined(WITHOUT_FOOD_MOVE)
 DISTFILES+=	food-${PORTVERSION}.zip
 PLIST_SUB+=	FOOD=""
 FLAG_THEME=	true
@@ -63,7 +63,7 @@ HAVE_THEME+=	food
 PLIST_SUB+=	FOOD="@comment "
 .endif
 
-.if defined(WITH_PLANTS_MOVE)
+.if !defined(WITHOUT_PLANTS_MOVE)
 DISTFILES+=	plants-${PORTVERSION}.zip
 PLIST_SUB+=	PLANTS=""
 FLAG_THEME=	true
@@ -72,7 +72,7 @@ HAVE_THEME+=	plants
 PLIST_SUB+=	PLANTS="@comment "
 .endif
 
-.if defined(WITH_SKY_MOVE)
+.if !defined(WITHOUT_SKY_MOVE)
 DISTFILES+=	sky-${PORTVERSION}.zip
 PLIST_SUB+=	SKY=""
 FLAG_THEME=	true
@@ -81,7 +81,7 @@ HAVE_THEME+=	sky
 PLIST_SUB+=	SKY="@comment "
 .endif
 
-.if defined(WITH_SPORTS_MOVE)
+.if !defined(WITHOUT_SPORTS_MOVE)
 DISTFILES+=	sports-${PORTVERSION}.zip
 PLIST_SUB+=	SPORTS=""
 FLAG_THEME=	true
@@ -90,7 +90,7 @@ HAVE_THEME+=	sports
 PLIST_SUB+=	SPORTS="@comment "
 .endif
 
-.if defined(WITH_VEHICLE_MOVE)
+.if !defined(WITHOUT_VEHICLE_MOVE)
 DISTFILES+=	vehicle-${PORTVERSION}.zip
 PLIST_SUB+=	VEHICLE=""
 FLAG_THEME=	true
@@ -99,7 +99,7 @@ HAVE_THEME+=	vehicle
 PLIST_SUB+=	VEHICLE="@comment "
 .endif
 
-.if defined(WITH_WORLD_MOVE)
+.if !defined(WITHOUT_WORLD_MOVE)
 DISTFILES+=	world-${PORTVERSION}.zip
 PLIST_SUB+=	WORLD=""
 FLAG_THEME=	true
@@ -108,7 +108,7 @@ HAVE_THEME+=	world
 PLIST_SUB+=	WORLD="@comment "
 .endif
 
-.if defined(WITH_AFRICA_ACTIVITY)
+.if !defined(WITHOUT_AFRICA_ACTIVITY)
 DISTFILES+=	africa-${PORTVERSION}.zip
 PLIST_SUB+=	AFRICA=""
 FLAG_THEME=	true
