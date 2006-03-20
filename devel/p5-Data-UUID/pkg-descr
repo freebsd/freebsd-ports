@@ -14,7 +14,4 @@ short-lived and very persistent objects on a given system as well as
 across the network.
 
 WWW: http://search.cpan.org/dist/Data-UUID/
-WWW: http://www.globecom.net/ietf/draft/draft-leach-uuids-guids-01.txt
-
--- Sergey Skvortsov
-skv@FreeBSD.org
+WWW: http://www.opengroup.org/dce/info/draft-leach-uuids-guids-01.txt
