@@ -511,6 +511,7 @@
     SUBDIR += squirrelmail-change_ldappass-plugin
     SUBDIR += squirrelmail-compatibility-plugin
     SUBDIR += squirrelmail-devel
+    SUBDIR += squirrelmail-email_footer-plugin
     SUBDIR += squirrelmail-vlogin-plugin
     SUBDIR += sqwebmail
     SUBDIR += ssmtp
