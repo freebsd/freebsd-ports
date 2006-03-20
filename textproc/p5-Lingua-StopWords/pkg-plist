@@ -8,8 +8,8 @@
 %%SITE_PERL%%/Lingua/StopWords/NL.pm
 %%SITE_PERL%%/Lingua/StopWords/NO.pm
 %%SITE_PERL%%/Lingua/StopWords/PT.pm
+%%SITE_PERL%%/Lingua/StopWords/RU.pm
 %%SITE_PERL%%/Lingua/StopWords/SV.pm
-%%SITE_PERL%%/Lingua/parse.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/StopWords/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/StopWords
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua
