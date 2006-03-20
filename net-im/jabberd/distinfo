@@ -1,3 +1,6 @@
 MD5 (jabber/jabberd-2.0s11.tar.gz) = 67d1663ed97a5ba707d5d145b1d19c55
 SHA256 (jabber/jabberd-2.0s11.tar.gz) = 0ef0f668f5d86b8c22ce0ae2366bff0be9d4c961d6f48b7b849ebe749bdb213a
 SIZE (jabber/jabberd-2.0s11.tar.gz) = 777466
+MD5 (jabber/vcard-avatar.diff) = adf9078a9c68c40a8fbe37cf282d37a4
+SHA256 (jabber/vcard-avatar.diff) = 5e42dc7e31e6c222c3cabc3e8916c8989b37723c800e9afc69e28d2731d4ca9b
+SIZE (jabber/vcard-avatar.diff) = 5463
