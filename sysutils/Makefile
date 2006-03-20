@@ -518,7 +518,6 @@
     SUBDIR += srmt
     SUBDIR += ssync
     SUBDIR += stalepid
-    SUBDIR += stat
     SUBDIR += stmpclean
     SUBDIR += stow
     SUBDIR += stowES
