@@ -22,6 +22,8 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/OpenSSL/__init__.py:${PORTSDIR}/security/py-op
 
 WRKSRC=		${WRKDIR}/${PORTNAME}t-0.11
 
+OPTIONS=	EJABBERD "Use transport with ejabberd" off
+
 NO_BUILD=	yes
 USE_PYTHON=	yes
 USE_RC_SUBR=	jabber-pymsn-transport.sh
@@ -32,6 +34,16 @@ SUB_LIST=	PYTHON_CMD=${PYTHON_CMD}
 INST_DIR=	${PREFIX}/lib/jabber/${PORTNAME}
 
 PORTDOCS=	COPYING README TODO
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_EJABBERD)
+JABBER_USER?=	ejabberd
+.else
+JABBER_USER?=	jabber
+.endif
+
+SUB_LIST+=	JABBER_USER=${JABBER_USER}
 
 post-extract:
 	@${FIND} ${WRKSRC}/ -type d \( -name CVS -or -name .svn \) | ${XARGS} ${RM} -rf
@@ -72,4 +84,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
