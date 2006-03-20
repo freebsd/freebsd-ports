@@ -23,7 +23,6 @@ USE_GMAKE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--program-prefix=''
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
@@ -34,7 +33,8 @@ PLIST_FILES=	lib/lineakd/plugins/xosdplugin.la \
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-USE_GCC=	3.4
+BROKEN=		Configure fails to find lineakd
+#USE_GCC=	3.4
 .endif
 
 post-patch:
