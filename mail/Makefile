@@ -512,6 +512,7 @@
     SUBDIR += squirrelmail-compatibility-plugin
     SUBDIR += squirrelmail-devel
     SUBDIR += squirrelmail-email_footer-plugin
+    SUBDIR += squirrelmail-login_notes-plugin
     SUBDIR += squirrelmail-notes-plugin
     SUBDIR += squirrelmail-notify-plugin
     SUBDIR += squirrelmail-quota_usage-plugin
