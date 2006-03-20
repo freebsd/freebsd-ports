@@ -34,6 +34,50 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="b62c80c2-b81a-11da-bec5-00123ffe8333">
+    <topic>heimdal -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>heimdal</name>
+	<range><lt>0.6.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A Project heimdal Security Advisory reports:</p>
+	<blockquote cite="http://www.pdc.kth.se/heimdal/advisory/2005-04-20/">
+	  <p>The telnet client program in Heimdal has buffer overflows
+	    in the functions slc_add_reply() and env_opt_add(), which
+	    may lead to remote code execution.</p>
+	</blockquote>
+	<blockquote cite="http://www.pdc.kth.se/heimdal/advisory/2005-06-20/">
+	  <p>The telnetd server program in Heimdal has buffer overflows
+	    in the function getterminaltype, which may lead to remote code
+	    execution.</p>
+	</blockquote>
+	<blockquote cite="http://www.pdc.kth.se/heimdal/advisory/2006-02-06/">
+	  <p>The rshd server in Heimdal has a privilege escalation bug
+	    when storing forwarded credentials. The code allowes a user
+	    to overwrite a file with its credential cache, and get ownership
+	    of the file.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2005-0469</cvename>
+      <cvename>CVE-2005-2040</cvename>
+      <cvename>CVE-2006-0582</cvename>
+      <cvename>CVE-2006-0677</cvename>
+      <url>http://www.pdc.kth.se/heimdal/advisory/2005-04-20</url>
+      <url>http://www.pdc.kth.se/heimdal/advisory/2005-06-20</url>
+      <url>http://www.pdc.kth.se/heimdal/advisory/2006-02-06</url>
+    </references>
+    <dates>
+      <discovery>2006-02-06</discovery>
+      <entry>2006-03-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b8e361b8-b7ff-11da-8414-0013d4a4a40e">
     <topic>curl -- TFTP packet buffer overflow vulnerability</topic>
     <affects>
