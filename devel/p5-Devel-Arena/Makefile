@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Devel-Arena
-PORTVERSION=	0.22
+PORTVERSION=	0.23
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Devel
@@ -19,4 +19,10 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Devel::Arena.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+IGNORE=	perl 5.6 or newer required. Install lang/perl5.8 or lang/perl5 and try again
+.endif
+
+.include <bsd.port.post.mk>
