@@ -9872,6 +9872,7 @@ php5-posix	ports/sysutils/php5-posix
 php5-pspell	ports/textproc/php5-pspell
 php5-readline	ports/devel/php5-readline
 php5-recode	ports/converters/php5-recode
+php5-rrdtool	ports/net/php5-rrdtool
 php5-session	ports/www/php5-session
 php5-shmop	ports/devel/php5-shmop
 php5-simplexml	ports/textproc/php5-simplexml
