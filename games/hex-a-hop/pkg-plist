@@ -1,0 +1,14 @@
+bin/hex-a-hop
+games/hex-a-hop/graphics/emi.dat
+games/hex-a-hop/graphics/font.dat
+games/hex-a-hop/graphics/gradient.dat
+games/hex-a-hop/graphics/icon.bmp
+games/hex-a-hop/graphics/map.dat
+games/hex-a-hop/graphics/map_top.dat
+games/hex-a-hop/graphics/tiles.dat
+games/hex-a-hop/graphics/tiles_reflect.dat
+games/hex-a-hop/graphics/title.dat
+games/hex-a-hop/levels.dat
+@dirrm games/hex-a-hop/graphics/
+@dirrm games/hex-a-hop/
+@dirrmtry games/
