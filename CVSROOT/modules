@@ -12616,6 +12616,7 @@ tinybsd		ports/sysutils/tinybsd
 tinyca		ports/security/tinyca
 tinycdb		ports/databases/tinycdb
 tinycobol	ports/lang/tinycobol
+tinyerp-server	ports/finance/tinyerp-server
 tinyfugue	ports/net/tinyfugue
 tinylaf		ports/devel/tinylaf
 tinyldap	ports/net/tinyldap
