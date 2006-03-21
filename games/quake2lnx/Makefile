@@ -166,8 +166,6 @@ PLIST_SUB+=	CTF="@comment "
 
 .if defined(WITH_ROGUE)
 DISTFILES+=	roguesrc320.shar.Z:id
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src_rogue_g__local.h \
-		${FILESDIR}/extra-patch-src_rogue_q__shared.c
 MAKE_ARGS+=	BUILD_ROGUE=YES
 Q2MP+=		rogue
 ROGUE_OFF=	454
@@ -178,7 +176,6 @@ PLIST_SUB+=	ROGUE="@comment "
 
 .if defined(WITH_XATRIX)
 DISTFILES+=	xatrixsrc320.shar.Z:id
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src_xatrix_q__shared.c
 MAKE_ARGS+=	BUILD_XATRIX=YES
 Q2MP+=		xatrix
 XATRIX_OFF=	441
@@ -230,13 +227,17 @@ MAKE_ARGS+=	NO_X86_ASM=YES
 ## END OF CONFIGURATION KNOBS ##
 #                            ###
 
-post-extract:
+post-extract: .SILENT
 .for mp in ${Q2MP}
-	@${MKDIR} ${WRKSRC}/src/${mp}
-	@(cd ${WRKSRC}/src/${mp} && ${GUNZIP_CMD} -c \
+	${MKDIR} ${WRKSRC}/src/${mp}
+	cd ${WRKSRC}/src/${mp} && ${GUNZIP_CMD} -c \
 		${DISTDIR}/${DIST_SUBDIR}/${mp}src320.shar.Z > \
 		${mp}src320.shar && \
-		${TAIL} +${${mp:U}_OFF} ${mp}src320.shar | ${SH})
+		${TAIL} +${${mp:U}_OFF} ${mp}src320.shar | ${SH} > /dev/null
+.   if defined(WITH_XATRIX) || defined(WITH_ROGUE)
+	${REINPLACE_CMD} -e 's/__ $$/&|| defined __FreeBSD__/' \
+		${WRKSRC}/src/${mp}/q_shared.c
+.   endif
 .endfor
 
 post-patch: .SILENT
@@ -245,6 +246,10 @@ post-patch: .SILENT
 		${WRKSRC}/src/linux/vid_so.c
 	${REINPLACE_CMD} -e 's|dllname, RTLD_LAZY|& \| RTLD_GLOBAL|' \
 		${WRKSRC}/src/linux/qgl_linux.c
+.if defined(WITH_ROGUE)
+	${REINPLACE_CMD} -e '/^#include <nan.h>/d' ${WRKSRC}/src/rogue/g_local.h
+.endif
+	${REINPLACE_CMD} -e 's|/dev/js|/dev/joy|' ${WRKSRC}/src/linux/joystick.c
 
 do-install:
 .for tgt in ${EXE_TARGETS}
