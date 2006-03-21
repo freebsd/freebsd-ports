@@ -19,12 +19,14 @@
 %%SITE_PERL%%/Graph/Easy/Node/Cell.pm
 %%SITE_PERL%%/Graph/Easy/Node/Empty.pm
 %%SITE_PERL%%/Graph/Easy/Parser.pm
+%%SITE_PERL%%/Graph/Easy/Parser/Graphviz.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Graph/Easy/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Graph/Easy
+@dirrmtry %%SITE_PERL%%/Graph/Easy/Parser
+@dirrmtry %%SITE_PERL%%/Graph/Easy/Node
 @dirrmtry %%SITE_PERL%%/Graph/Easy/Layout
 @dirrmtry %%SITE_PERL%%/Graph/Easy/Group
-@dirrmtry %%SITE_PERL%%/Graph/Easy/Node
 @dirrmtry %%SITE_PERL%%/Graph/Easy/Edge
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Graph
 @dirrmtry %%SITE_PERL%%/Graph/Easy
 @dirrmtry %%SITE_PERL%%/Graph
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Graph/Easy
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Graph
