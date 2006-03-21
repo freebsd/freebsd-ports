@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	scipy
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	SciPy_complete-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	db@db.net
 COMMENT=	Scientific tools for Python
 
 BUILD_DEPENDS=	${PYNUMERIC} \
@@ -25,7 +25,6 @@ BUILD_DEPENDS=	${PYNUMERIC} \
 LIB_DEPENDS=	fftw.2:${PORTSDIR}/math/fftw \
 		atlas.1:${PORTSDIR}/math/atlas
 
-USE_REINPLACE=	yes
 USE_PYTHON=	2.3+
 USE_PYDISTUTILS=	yes
 
