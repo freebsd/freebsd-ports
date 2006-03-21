@@ -14,8 +14,6 @@ MASTER_SITES=	http://www.ijs.si/~lesi/waimea/ \
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	A mini pager for the waimea window manager
 
-BROKEN=		Patch fails
-
 PLIST_FILES=	bin/wampager
 
 USE_BZIP2=	yes
