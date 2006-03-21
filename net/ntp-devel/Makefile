@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	ntp
-PORTVERSION=	4.2.0b
+PORTVERSION=	4.2.0b.r1
 CATEGORIES=	net ipv6
 YEAR=		2006
-MONTH=		02
-DAY=		01
+MONTH=		03
+DAY=		21
 SNAPSHOT_DIR=	snapshots/ntp-dev/${YEAR}/${MONTH}
 MASTER_SITES=	ftp://ftp.udel.edu/pub/ntp/ntp4/${SNAPSHOT_DIR}/ \
 		http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/${SNAPSHOT_DIR}/ \
