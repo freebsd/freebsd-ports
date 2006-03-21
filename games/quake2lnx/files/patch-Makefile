@@ -1,5 +1,5 @@
---- Makefile.orig	Fri Sep 24 19:06:52 2004
-+++ Makefile	Fri Oct  7 17:37:25 2005
+--- Makefile.orig	Sat Sep 25 05:06:52 2004
++++ Makefile	Tue Mar 21 19:18:24 2006
 @@ -12,30 +12,30 @@
  # (Note: not all options are available for all platforms).
  # quake2 (uses OSS for sound, cdrom ioctls for cd audio) is automatically built.
@@ -122,7 +122,7 @@
  NULL_DIR=$(MOUNT_DIR)/null
  
 -BASE_CFLAGS=-Wall -pipe -Dstricmp=strcasecmp
-+BASE_CFLAGS=-pipe -Dstricmp=strcasecmp -DDATADIR='\"${DATADIR}\"' -DLIBDIR='\"${LIBDIR}\"' $(CFLAGS)
++BASE_CFLAGS=-pipe -Dstricmp=strcasecmp $(CFLAGS)
  ifeq ($(HAVE_IPV6),YES)
  BASE_CFLAGS+= -DHAVE_IPV6
  ifeq ($(OSTYPE),FreeBSD)
@@ -419,6 +419,15 @@
  endif
  
  $(BUILDDIR)/quake2 : $(QUAKE2_OBJS) $(QUAKE2_LNX_OBJS) $(QUAKE2_AS_OBJS)
+@@ -719,7 +571,7 @@
+ 	$(DO_DED_CC)
+ 
+ $(BUILDDIR)/ded/q_shared.o :   $(GAME_DIR)/q_shared.c
+-	$(DO_DED_DEBUG_CC)
++	$(DO_DED_CC)
+ 
+ $(BUILDDIR)/ded/pmove.o :      $(COMMON_DIR)/pmove.c
+ 	$(DO_DED_CC)
 @@ -821,7 +673,7 @@
  	$(BUILDDIR)/game/q_shared.o \
  	$(BUILDDIR)/game/m_flash.o

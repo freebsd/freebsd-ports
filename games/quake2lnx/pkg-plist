@@ -1,6 +1,8 @@
+@comment === EXECUTABLES ===
 %%SERVER%%bin/q2ded
 %%CLIENT%%bin/quake2
 %%SDLCLIENT%%bin/sdlquake2
+@comment === RENDERERS ===
 %%GAME%%%%LIBDIR%%/baseq2/game.so
 %%CTF%%%%LIBDIR%%/ctf/game.so
 %%ROGUE%%%%LIBDIR%%/rogue/game.so
@@ -11,10 +13,12 @@
 %%AA%%%%LIBDIR%%/ref_softaa.so
 %%SDL%%%%LIBDIR%%/ref_softsdl.so
 %%X11%%%%LIBDIR%%/ref_softx.so
+@comment === DOCS ===
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.320
 %%PORTDOCS%%%%DOCSDIR%%/joystick.txt
 %%PORTDOCS%%%%DOCSDIR%%/quake2.3dfxgl
+@comment === DATA ===
 %%QMAX%%%%DATADIR%%/baseq2/maxpak.pak
 %%RETEX%%%%DATADIR%%/baseq2/pak10.pak
 %%RETEX%%%%DATADIR%%/baseq2/pak11.pak
@@ -24,6 +28,7 @@
 %%RETEX%%%%DATADIR%%/baseq2/pak16.pak
 %%RETEX%%%%DATADIR%%/baseq2/pak17.pak
 %%RETEX%%%%DATADIR%%/baseq2/pak19.pak
+@comment === CLEANUP ===
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%CTF%%@dirrm %%LIBDIR%%/ctf
 %%GAME%%@dirrm %%LIBDIR%%/baseq2
