@@ -34,6 +34,36 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="61534682-b8f4-11da-8e62-000e0c33c2dc">
+    <topic>xorg-server -- privilege escalation</topic>
+    <affects>
+      <package>
+	<name>xorg-server</name>
+	<range><eq>6.9.0</eq></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Daniel Stone of X.Org reports:</p>
+	<blockquote cite="http://lists.freedesktop.org/archives/xorg/2006-March/013992.html">
+	  <p>During the analysis of results from the Coverity code review
+	    of X.Org, we discovered a flaw in the server that allows local
+	    users to execute arbitrary code with root privileges, or cause
+	    a denial of service by overwriting files on the system, again
+	    with root privileges.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-0745</cvename>
+      <url>https://bugs.freedesktop.org/show_bug.cgi?id=6213</url>
+    </references>
+    <dates>
+      <discovery>2006-03-20</discovery>
+      <entry>2006-03-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b62c80c2-b81a-11da-bec5-00123ffe8333">
     <topic>heimdal -- Multiple vulnerabilities</topic>
     <affects>
