@@ -31,4 +31,10 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 # up with our port.  For now, use included but patch out glitz manually.
 #CONFIGURE_ARGS+= --with-cairo=installed
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 503000
+IGNORE= does not build and is useless without working Mono
+.endif
+
+.include <bsd.port.post.mk>
