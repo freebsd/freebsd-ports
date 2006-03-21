@@ -638,6 +638,7 @@
     SUBDIR += sendsnpp
     SUBDIR += ser
     SUBDIR += serveez
+    SUBDIR += sflowtool
     SUBDIR += sharity-light
     SUBDIR += shmux
     SUBDIR += silc-client

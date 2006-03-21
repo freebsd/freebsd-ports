@@ -1,0 +1,3 @@
+This tool receives sFlow data, and generates either a simple-to-parse
+tagged-ASCII output, or binary output in tcpdump(1) format. It can also generate
+Cisco NetFlow version 5 datagrams and send them to a destination UDP host:port.
