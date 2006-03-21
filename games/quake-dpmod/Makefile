@@ -13,15 +13,15 @@ PKGNAMEPREFIX=	${Q1PKGNAMEPREFIX}
 DISTNAME=	darkplacesmod${PORTVERSION}
 
 MAINTAINER=	alejandro@varnet.biz
-COMMENT=	Quake 1 modification
+COMMENT=	Quake 1 modification (for DarkPlaces)
 
-RUN_DEPENDS=	darkplaces:${PORTSDIR}/games/darkplaces
+RUN_DEPENDS=	${LOCALBASE}/share/darkplaces/dummy:${PORTSDIR}/games/darkplaces
 
 USE_ZIP=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
-DATDAIR=	${Q1DIR}/${PORTNAME}
+DATADIR=	${Q1DIR}/${PORTNAME}
 
 post-extract:
 # Remove CVS directories
@@ -32,7 +32,7 @@ post-extract:
 	@${CHMOD} go-w ${WRKDIR}/dpmod/progs.dat
 
 do-install:
-	@${CP} -Rp ${WRKSRC}/dpmod ${DATADIR}
+	${CP} -R ${WRKSRC}/dpmod ${DATADIR}
 
 .include "${.CURDIR}/../quake-data/Makefile.include"
 
