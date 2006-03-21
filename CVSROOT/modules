@@ -9915,6 +9915,7 @@ phpgedview	ports/www/phpgedview
 phpgroupware	ports/deskutils/phpgroupware
 phpicalendar	ports/deskutils/phpicalendar
 phpldapadmin	ports/net/phpldapadmin
+phpldapadmin098	ports/net/phpldapadmin098
 phplot		ports/graphics/phplot
 phpmyadmin	ports/databases/phpmyadmin
 phpmyfaq	ports/www/phpmyfaq
