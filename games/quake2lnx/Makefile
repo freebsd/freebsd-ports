@@ -7,7 +7,7 @@
 
 PORTNAME=	quake2lnx
 PORTVERSION=	0.16.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://offload1.icculus.org/quake2/files/:icc \
 		http://www.icculus.org/quake2/files/:icc \
@@ -48,7 +48,6 @@ OPTIONS=	X11		"Build X11 software driver" on \
 DATADIR=	${Q2DIR}
 
 ALL_TARGET=	build_release
-MAKE_ENV=	LIBDIR="${LIBDIR}"
 
 PLIST_SUB+=	LIBDIR="${LIBDIR:S/${PREFIX}\///}"
 
@@ -239,6 +238,13 @@ post-extract:
 		${mp}src320.shar && \
 		${TAIL} +${${mp:U}_OFF} ${mp}src320.shar | ${SH})
 .endfor
+
+post-patch: .SILENT
+	${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}| ; \
+		s|%%LIBDIR%%|${LIBDIR}|' ${WRKSRC}/src/qcommon/files.c \
+		${WRKSRC}/src/linux/vid_so.c
+	${REINPLACE_CMD} -e 's|dllname, RTLD_LAZY|& \| RTLD_GLOBAL|' \
+		${WRKSRC}/src/linux/qgl_linux.c
 
 do-install:
 .for tgt in ${EXE_TARGETS}
