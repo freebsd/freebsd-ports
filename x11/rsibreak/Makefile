@@ -19,8 +19,14 @@ USE_KDELIBS_VER=3
 USE_AUTOTOOLS=	libtool:15
 USE_GETTEXT=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		Doesn't compile on FreeBSD 4.X
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} 's/install-data-local: install-apidox/install-data-local:/' \
 		${WRKSRC}/rsibreak/Makefile.in ${WRKSRC}/rsibreak/src/Makefile.in
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
