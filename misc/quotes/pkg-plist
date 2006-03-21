@@ -1,6 +1,6 @@
 bin/quotes
 bin/quotesmailer
 etc/quotesrc.sample
-share/doc/quotes/quotes.txt
-share/doc/quotes/QuExample.pm
-@dirrm share/doc/quotes
+%%DOCSDIR%%/quotes.txt
+%%DOCSDIR%%/QuExample.pm
+@dirrm %%DOCSDIR%%

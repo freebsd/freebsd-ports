@@ -8,7 +8,8 @@
 PORTNAME=	quotes
 PORTVERSION=	1.7.2
 CATEGORIES=	misc
-MASTER_SITES=	ftp://ftp.coralys.com/pub/free/
+MASTER_SITES=	ftp://ftp.externet.hu/.lib/disk6/linuxberg/files/console/office/ \
+		ftp://ftp.waseda.ac.jp/.u7/ports/distfiles/
 DISTNAME=	${PORTNAME}-1.7-2
 
 MAINTAINER=	ports@FreeBSD.org
