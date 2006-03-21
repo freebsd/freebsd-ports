@@ -15,7 +15,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Writes any log live onto the background
 
 USE_XLIB=	yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 
 MAN1=		xrootconsole.1
