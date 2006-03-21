@@ -9,8 +9,9 @@ PORTNAME=	xcut
 PORTVERSION=	0.2
 PORTREVISION=	1
 CATEGORIES=	x11
-MASTER_SITES=	http://download.sourceforge.net/xcut/ \
-		http://acsys.anu.edu.au/~tpot/xcut/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+		http://acsys.anu.edu.au/~tpot/%SUBDIR%/
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Manipulate X cut buffers from the commandline
