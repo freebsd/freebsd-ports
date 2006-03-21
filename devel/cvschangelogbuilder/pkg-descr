@@ -1,0 +1,10 @@
+cvschangelogbuilder is an Perl utility to generate ChangeLogs or CVS reports
+for a project hosted on a CVS server.
+
+Features include the ability to work with a remote cvs repository, detailed
+reporting, graphical HTML reports and building changelogs.
+
+WWW: http://cvschangelogb.sourceforge.net/
+Author: Laurent Destailleur
+
+- Matthew Will <mwill@spingen.com>

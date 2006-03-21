@@ -181,6 +181,7 @@
     SUBDIR += cvs2svn
     SUBDIR += cvsadmin
     SUBDIR += cvsbook
+    SUBDIR += cvschangelogbuilder
     SUBDIR += cvschk
     SUBDIR += cvsd
     SUBDIR += cvsdadm
