@@ -1,6 +1,6 @@
 #! /bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/net/dhcprelay/files/Attic/dhcprelay.sh.in,v 1.2 2006-02-20 20:47:22 dougb Exp $
+# $FreeBSD: /tmp/pcvs/ports/net/dhcprelay/files/Attic/dhcprelay.sh.in,v 1.3 2006-03-21 02:48:21 edwin Exp $
 #
 # PROVIDE: dhcprelay
 # REQUIRE: DAEMON
@@ -17,7 +17,7 @@ dhcprelay_ifaces=${dhcprelay_ifaces:-}		# ethernet interface(s)
 
 dhcprelay_precmd ()
 {
-    rc_flags="${rc_flags} ${dhcprelay_ifaces} ${dhcprelay_servers}"
+    rc_flags="${rc_flags} ${dhcprelay_ifaces} ${dhcprelay_server}"
 }
 
 . %%RC_SUBR%%

@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	dhcprelay
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	net
 MASTER_SITES=	http://www.mavetju.org/download/
 
 MAINTAINER=	edwin@mavetju.org
-COMMENT=	Light weight DHCP Relay Agent with GIF tunnel support
+COMMENT=	Lightweight DHCP Relay Agent with GIF tunnel support
 
 LIB_DEPENDS=	dnet.1:${PORTSDIR}/net/libdnet
 
