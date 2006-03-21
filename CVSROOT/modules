@@ -5774,6 +5774,7 @@ libxode		ports/textproc/libxode
 libxslt		ports/textproc/libxslt
 libyahoo2	ports/net-im/libyahoo2
 libytnef	ports/devel/libytnef
+libzip		ports/archivers/libzip
 libzvbi		ports/devel/libzvbi
 libzvt		ports/x11-toolkits/libzvt
 licq		ports/net-im/licq
