@@ -7,7 +7,7 @@
 
 PORTNAME=	ccache
 PORTVERSION=	2.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	http://samba.org/ftp/ccache/
 
@@ -26,9 +26,9 @@ PORTDOCS=	index.html \
 
 .if !defined(WITHOUT_COMPILER_LINKS)
 HOWTO=		ccache-howto-freebsd.txt
-PKGMESSAGE=	${WRKDIR}/pkg-message
 CCLINKDIR=	libexec/ccache
 PLIST_DIRS=	${CCLINKDIR}
+SUB_FILES=	${HOWTO} pkg-message
 .endif
 
 .include <bsd.port.pre.mk>
@@ -42,7 +42,14 @@ CCACHE_COMPILERS+=	icc icpc
 .if defined(EXTRA_COMPILERS)
 CCACHE_COMPILERS+=	${EXTRA_COMPILERS}
 .endif
-PLIST_FILES+=	${CCACHE_COMPILERS:S|^|${CCLINKDIR}/|}
+WORLD_COMPILERS=	world-cc world-c++
+PLIST_FILES+=	${CCACHE_COMPILERS:S|^|${CCLINKDIR}/|} \
+		${WORLD_COMPILERS:S|^|${CCLINKDIR}/|}
+SUB_FILES+=	${WORLD_COMPILERS}
+SUB_LIST+=	CCACHE_COMPILERS="${CCACHE_COMPILERS}" \
+		CCLINKDIR="${CCLINKDIR}" \
+		ICCPREFIX="${LOCALBASE}/intel_cc_80/bin" \
+		HOWTO="${HOWTO}"
 .endif
 
 pre-everything::
@@ -58,18 +65,6 @@ pre-everything::
 	@${ECHO_MSG} "===>"
 .endif
 
-post-extract:
-.if !defined(WITHOUT_COMPILER_LINKS)
-	@${SED} -e 's|%%CCACHE_COMPILERS%%|${CCACHE_COMPILERS}|; \
-		s|%%PREFIX%%|${PREFIX}|; s|%%CCLINKDIR%%|${CCLINKDIR}|; \
-		s|%%LOCALBASE%%|${LOCALBASE}|; \
-		s|%%ICCPREFIX%%|${LOCALBASE}/intel_cc_80/bin|' \
-		${FILESDIR}/${HOWTO}.in > ${WRKDIR}/${HOWTO}
-	@${SED} -e 's|%%HOWTO%%|${HOWTO}|; \
-		s|%%DOCSDIR%%|${DOCSDIR}|' \
-		${FILESDIR}/pkg-message.in >${PKGMESSAGE}
-.endif
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ccache ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${PREFIX}/man/man1
@@ -77,6 +72,9 @@ do-install:
 	@${MKDIR} ${PREFIX}/${CCLINKDIR}
 .for link in ${CCACHE_COMPILERS}
 	${LN} -sf ${PREFIX}/bin/ccache ${PREFIX}/${CCLINKDIR}/${link}
+.endfor
+.for script in ${WORLD_COMPILERS}
+	${INSTALL_SCRIPT} ${WRKDIR}/${script} ${PREFIX}/${CCLINKDIR}
 .endfor
 .endif
 .if !defined(NOPORTDOCS)
