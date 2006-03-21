@@ -9,8 +9,8 @@ PORTNAME=	ntp
 PORTVERSION=	4.2.0a
 CATEGORIES=	net ipv6
 YEAR=		2006
-MONTH=		01
-DAY=		27
+MONTH=		02
+DAY=		24
 SNAPSHOT_DIR=	snapshots/ntp-stable/${YEAR}/${MONTH}
 MASTER_SITES=	ftp://ftp.udel.edu/pub/ntp/ntp4/${SNAPSHOT_DIR}/ \
 		http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/${SNAPSHOT_DIR}/ \
