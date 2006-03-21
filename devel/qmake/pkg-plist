@@ -53,6 +53,8 @@ linux-cxx/qmake.conf
 linux-cxx/qplatformdefs.h
 linux-ecc-64/qmake.conf
 linux-ecc-64/qplatformdefs.h
+linux-g++-32/qmake.conf
+linux-g++-32/qplatformdefs.h
 linux-g++-64/qmake.conf
 linux-g++-64/qplatformdefs.h
 linux-g++/qmake.conf
@@ -70,6 +72,7 @@ lynxos-g++/qplatformdefs.h
 macx-g++/Info.plist.app
 macx-g++/qmake.conf
 macx-g++/qplatformdefs.h
+macx-mwerks/README
 macx-mwerks/mwerkstmpl.xml
 macx-mwerks/qmake.conf
 macx-mwerks/qplatformdefs.h
@@ -155,6 +158,7 @@ win32-watcom/qmake.conf
 @dirrm linux-cxx
 @dirrm linux-ecc-64
 @dirrm linux-g++
+@dirrm linux-g++-32
 @dirrm linux-g++-64
 @dirrm linux-icc
 @dirrm linux-kcc
