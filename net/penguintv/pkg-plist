@@ -99,3 +99,5 @@ share/penguintv/penguintvicon.png
 share/pixmaps/penguintvicon.png
 share/applications/penguintv.desktop
 @dirrm share/penguintv
+@dirrmtry share/pixmaps
+@dirrmtry share/applications
