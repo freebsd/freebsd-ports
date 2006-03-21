@@ -1,0 +1,4 @@
+#!/bin/sh
+unset CCACHE_PATH
+export CCACHE_HASH_COMPILER
+exec %%PREFIX%%/%%CCLINKDIR%%/cc "$@"

@@ -4,25 +4,17 @@
 
 To use ccache add the following to /etc/make.conf
 
-.if !defined(NOCCACHE)
-.if ${.CURDIR:M/usr/src*} && exists(%%LOCALBASE%%/libexec/ccache/cc)
-CC=%%LOCALBASE%%/libexec/ccache/cc
-CXX=%%LOCALBASE%%/libexec/ccache/c++
-.else
-CC=cc
-CXX=c++
-.endif
-.else
-CC=/usr/bin/cc
-CXX=/usr/bin/c++
+.if (!empty(.CURDIR:M/usr/src*) || !empty(.CURDIR:M/usr/obj*)) && !defined(NOCCACHE)
+CC=%%PREFIX%%/%%CCLINKDIR%%/world-cc
+CXX=%%PREFIX%%/%%CCLINKDIR%%/world-c++
 .endif
 
 For Korn/Bourne shells Add the following to /etc/profile:
- export PATH=%%PREFIX%%/libexec/ccache/:$PATH
+ export PATH=%%PREFIX%%/%%CCLINKDIR%%:$PATH
  export CCACHE_PATH=/usr/bin:%%LOCALBASE%%/bin
 
 For csh/tcsh Add the following to /etc/csh.cshrc:
- setenv PATH %%PREFIX%%/libexec/ccache/:$PATH
+ setenv PATH %%PREFIX%%/%%CCLINKDIR%%:$PATH
  setenv CCACHE_PATH /usr/bin:%%LOCALBASE%%/bin
 
 For icc users:
@@ -42,8 +34,11 @@ For csh/tcsh Add the following to /etc/csh.cshrc:
 
 --
 
-If you have a problem building a port
+If you have a problem building world
 define NOCCACHE and try again.
+
+If you have a problem building a port
+reset PATH=$CCACHE_PATH and try again.
 
 --
 
