@@ -1,7 +1,7 @@
 #!/bin/sh
 # File:		pop-before-smtp.sh
 # Date:		Fri Mar  7 11:20:43 2003
-# Time-stamp:	<2006-01-26 11:54:41 ericx>
+# Time-stamp:	<2006-03-17 15:29:06 ericx>
 # Description:	start/stop script for pop-before-smtp daemon
 #
 # $FreeBSD$
@@ -35,8 +35,6 @@
 
 . %%RC_SUBR%%
 
-PREFIX=%PREFIX%
-
 # sh interprets dash chars as the numeric minus operator...
 name="pop_before_smtp"
 filename="pop-before-smtp"
@@ -44,15 +42,15 @@ rcvar=`set_rcvar`
 
 load_rc_config $name
 
-command=${pop_before_smtp_program:-"${PREFIX}/sbin/${filename}"}
+command=${pop_before_smtp_program:-"%%PREFIX%%/sbin/${filename}"}
 pidfile=${pop_before_smtp_pid:-"/var/run/${filename}.pid"}
-config=${pop_before_smtp_config:-"${PREFIX}/etc/${filename}-conf.pl"}
+config=${pop_before_smtp_config:-"%%PREFIX%%/etc/${filename}-conf.pl"}
 
 command_args="--config=${config}"
 command_args="${command_args} ${pop_before_smtp_flags:-''}"
 command_args="${command_args} --daemon=${pidfile}"
 
-command_interpreter=%PERL%
+command_interpreter=%%PERL%%
 required_files=${config}
 
 run_rc_command "$1"
