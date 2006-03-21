@@ -9,7 +9,7 @@ PORTNAME=	xshttpd
 DISTVERSION=	3.4b06
 CATEGORIES=	www ipv6
 MASTER_SITES=	ftp://ftp.stack.nl/pub/xs-httpd/release/ \
-	ftp://mud.stack.nl/pub/xs-httpd/release/
+		ftp://mud.stack.nl/pub/xs-httpd/release/
 PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME}-${DISTVERSION:S/.//}
 
@@ -34,10 +34,12 @@ OPTIONS=	SSL "Enable https support" On \
 		PCRE "Enable pcre rewriting support" Off \
 		PERSISTENT_PERL "Enable persistent perl interpreter" Off
 
+PORTDOCS=	README BUGS COPYING ChangeLog
+
 # By default XS-HTTPD stores its data in ${PREFIX}/lib/httpd
-DATADIR=	${PREFIX}/www
-PLIST_SUB=	WWWDIR=${DATADIR}
-CONFIGURE_ARGS+=--with-rootdir=${DATADIR}
+WWWDIR?=	${PREFIX}/www
+PLIST_SUB=	WWWDIR=${WWWDIR:S,^${PREFIX}/,,}
+CONFIGURE_ARGS+=--with-rootdir=${WWWDIR}
 
 .include <bsd.port.pre.mk>
 
@@ -74,20 +76,23 @@ post-patch:
 .for i in man/httpd.1 man/httpd.conf.5 config/httpd.conf.sample \
 	contrib/SSL-Makefile contrib/logrotate.sh
 	@${REINPLACE_CMD} \
-		-e 's|/wwwsys|${DATADIR}|g' \
-		-e 's|/usr/local/lib/httpd|${DATADIR}|g' \
+		-e 's|/wwwsys|${WWWDIR}|g' \
+		-e 's|/usr/local/lib/httpd|${WWWDIR}|g' \
 		-e 's|nobody|${WWWOWN}|g' \
 		-e 's|nogroup|${WWWGRP}|g' \
 		${WRKSRC}/$i
 .endfor
 	@${REINPLACE_CMD} -e 's|\(MIMETYPESFILE\ "\).*|\1${LOCALBASE}/etc/mime.types"|' \
 		${WRKSRC}/src/confuser.h
+	@${REINPLACE_CMD} -e 's|mime.types ||g' \
+		${WRKSRC}/config/Makefile.in
 
 post-install:
-	@${RM} ${DATADIR}/mime.types
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} README BUGS COPYING ChangeLog ${DOCSDIR}
+. for f in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+. endfor
 .endif
 
 .include <bsd.port.post.mk>
