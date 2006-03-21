@@ -6,16 +6,17 @@
 #
 
 PORTNAME=	tinybsd
-PORTVERSION=	0.7
+PORTVERSION=	0.8
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.tinybsd.org/download/
+MASTER_SITES=	http://www.tinybsd.org/download/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	garga/${PORTNAME}
 
 MAINTAINER=	jmelo@freebsdbrasil.com.br
 COMMENT=	Shell script to build embedded systems based on FreeBSD
 
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
-USE_REINPLACE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' ${WRKSRC}/tinybsd
