@@ -10,8 +10,8 @@
 PORTNAME=		vbidecode
 PORTVERSION=		1.1.3
 CATEGORIES=		misc
-MASTER_SITES=		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	roger
+MASTER_SITES=		ftp://ftp.vip.server.pl/pub/linux/hardware/video4linux/ \
+			ftp://ftp.waseda.ac.jp/.u7/ports/distfiles/
 DISTNAME=		bttv-0.6.4
 
 MAINTAINER=		ports@FreeBSD.org
