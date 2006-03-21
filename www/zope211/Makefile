@@ -6,19 +6,16 @@
 #
 
 PORTNAME=	zope
-PORTVERSION=	2.9.0
-PORTREVISION=	1
+PORTVERSION=	2.9.1
 CATEGORIES=	www python zope
 MASTER_SITES=	http://www.zope.org/Products/Zope/${PORTVERSION}/
 DISTNAME=	Zope-${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	zope
 
 MAINTAINER=	yasi@yasi.to
 COMMENT=	An object-based web application platform
 
 USE_PYTHON=	yes
-USE_GETTEXT=	yes
 USE_RC_SUBR=	${PORTNAME}29.sh zeo29.sh
 LATEST_LINK=	zope29
 
