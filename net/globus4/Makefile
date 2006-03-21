@@ -62,6 +62,7 @@ CONFLICTS?=	globus-2*
 HAS_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_PERL5=	yes
 TAR=		gtar
 
 GLOBUS_BASE?=	globus
