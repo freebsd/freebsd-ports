@@ -1,0 +1,13 @@
+--- man/Makefile.in.orig	Tue Mar 21 17:21:15 2006
++++ man/Makefile.in	Tue Mar 21 17:21:45 2006
+@@ -149,8 +149,8 @@
+ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+-man1_MANS = ${MAN1:.mdoc=.${MANFMT}}
+-man3_MANS = ${MAN3:.mdoc=.${MANFMT}}
++man1_MANS = ${MAN1}
++man3_MANS = ${MAN3}
+ DISTCLEANFILES = ${HTML}
+ EXTRA_DIST = ${MANDOC} ${MAN}
+ MAN1 = zipcmp.mdoc zipmerge.mdoc
