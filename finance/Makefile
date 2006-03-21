@@ -56,6 +56,7 @@
     SUBDIR += qtstalker
     SUBDIR += quantlib
     SUBDIR += sql-ledger
+    SUBDIR += tinyerp-server
     SUBDIR += venice
     SUBDIR += wmstock
     SUBDIR += xinvest

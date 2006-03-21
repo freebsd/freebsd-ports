@@ -1,0 +1,1350 @@
+bin/tinyerp-server
+%%PYTHON_SITELIBDIR%%/tinyerp-server/__init__.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/__init__.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/__init__.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/__init__.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/__init__.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/__init__.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/__init__.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/__init__.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/__init__.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/__terp__.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/__terp__.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/__terp__.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/account.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/account.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/account.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/account_demo.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/account_invoice_view.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/account_invoice_workflow.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/account_report.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/account_sequence.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/account_view.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/account_view_transfer.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/account_wizard.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/data/account_bas_swedish_draft.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/data/account_currency.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/data/account_data.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/data/account_data2.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/data/account_invoice.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/data/account_journal.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/data/account_pcg_france.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/data/account_pcmn_belgium.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/invoice.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/invoice.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/invoice.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/partner.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/partner.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/partner.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/project/__init__.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/project/__init__.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/project/__init__.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/project/project.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/project/project.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/project/project.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/project/project_demo.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/report/__init__.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/report/__init__.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/report/__init__.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/report/account_balance.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/report/account_balance.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/report/account_balance.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/report/account_journal.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/report/account_journal.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/report/account_journal.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/report/budget_report.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/report/budget_report.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/report/budget_report.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/report/central_journal.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/report/central_journal.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/report/central_journal.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/report/general_journal.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/report/general_journal.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/report/general_journal.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/report/grand_livre.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/report/grand_livre.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/report/grand_livre.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/report/grand_livre_tiers.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/report/grand_livre_tiers.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/report/grand_livre_tiers.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/report/invoice.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/report/invoice.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/report/invoice.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/report/invoice.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/report/invoice.xsl
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/report/invoice_list.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/report/invoice_list.xsl
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/report/partner_balance.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/report/partner_balance.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/report/partner_balance.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/report/transfer.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/report/transfer.xsl
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/transfer.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/transfer.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/transfer.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/wizard/__init__.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/wizard/__init__.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/wizard/__init__.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/wizard/wizard_account_balance_report.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/wizard/wizard_account_balance_report.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/wizard/wizard_account_balance_report.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/wizard/wizard_bank_reconcile.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/wizard/wizard_bank_reconcile.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/wizard/wizard_bank_reconcile.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/wizard/wizard_budget_report.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/wizard/wizard_budget_report.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/wizard/wizard_budget_report.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/wizard/wizard_budget_spread.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/wizard/wizard_budget_spread.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/wizard/wizard_budget_spread.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/wizard/wizard_grand_livre_report.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/wizard/wizard_grand_livre_report.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/wizard/wizard_grand_livre_report.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/wizard/wizard_grand_livre_tiers_report.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/wizard/wizard_grand_livre_tiers_report.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/wizard/wizard_grand_livre_tiers_report.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/wizard/wizard_journal.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/wizard/wizard_journal.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/wizard/wizard_journal.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/wizard/wizard_journal_select.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/wizard/wizard_journal_select.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/wizard/wizard_journal_select.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/wizard/wizard_partner_balance_report.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/wizard/wizard_partner_balance_report.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/wizard/wizard_partner_balance_report.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/wizard/wizard_reconcile.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/wizard/wizard_reconcile.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/wizard/wizard_reconcile.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/wizard/wizard_reconcile_select.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/wizard/wizard_reconcile_select.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/wizard/wizard_reconcile_select.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/wizard/wizard_refund.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/wizard/wizard_refund.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/wizard/wizard_refund.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/wizard/wizard_subscription_generate.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/wizard/wizard_subscription_generate.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/wizard/wizard_subscription_generate.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/wizard_reconcile.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/wizard_reconcile.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/wizard_reconcile.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/__init__.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/__init__.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/__init__.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/__terp__.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/__terp__.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/__terp__.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/base.sql
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/base_datas.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/base_menu.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/base_update.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/ir/__init__.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/ir/__init__.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/ir/__init__.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/ir/ir.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/ir/ir_actions.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/ir/ir_actions.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/ir/ir_actions.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/ir/ir_attachment.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/ir/ir_attachment.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/ir/ir_attachment.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/ir/ir_cron.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/ir/ir_cron.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/ir/ir_cron.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/ir/ir_default.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/ir/ir_default.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/ir/ir_default.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/ir/ir_fields_description.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/ir/ir_fields_description.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/ir/ir_fields_description.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/ir/ir_model.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/ir/ir_model.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/ir/ir_model.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/ir/ir_report_custom.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/ir/ir_report_custom.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/ir/ir_report_custom.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/ir/ir_sequence.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/ir/ir_sequence.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/ir/ir_sequence.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/ir/ir_translation.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/ir/ir_translation.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/ir/ir_translation.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/ir/ir_ui_menu.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/ir/ir_ui_menu.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/ir/ir_ui_menu.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/ir/ir_ui_view.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/ir/ir_ui_view.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/ir/ir_ui_view.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/ir/ir_values.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/ir/ir_values.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/ir/ir_values.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/ir/workflow/__init__.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/ir/workflow/__init__.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/ir/workflow/__init__.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/ir/workflow/instance_print.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/ir/workflow/instance_print.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/ir/workflow/instance_print.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/ir/workflow/print_instance.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/ir/workflow/print_instance.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/ir/workflow/print_instance.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/ir/workflow/pydot/__init__.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/ir/workflow/pydot/__init__.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/ir/workflow/pydot/__init__.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/ir/workflow/pydot/dot_parser.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/ir/workflow/pydot/dot_parser.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/ir/workflow/pydot/dot_parser.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/ir/workflow/pydot/pydot.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/ir/workflow/pydot/pydot.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/ir/workflow/pydot/pydot.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/ir/workflow/pydot/setup.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/ir/workflow/pydot/setup.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/ir/workflow/pydot/setup.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/ir/workflow/workflow.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/ir/workflow/workflow.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/ir/workflow/workflow.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/ir/workflow/workflow_print.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/ir/workflow/workflow_print.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/ir/workflow/workflow_print.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/module/__init__.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/module/__init__.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/module/__init__.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/module/module.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/module/module.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/module/module.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/module/module_data.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/module/module_view.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/module/module_wizard.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/module/wizard/__init__.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/module/wizard/__init__.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/module/wizard/__init__.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/module/wizard/wizard_install_module.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/module/wizard/wizard_install_module.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/module/wizard/wizard_install_module.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/module/wizard/wizard_module_info_get.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/module/wizard/wizard_module_info_get.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/module/wizard/wizard_module_info_get.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/module/wizard/wizard_module_upgrade.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/module/wizard/wizard_module_upgrade.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/module/wizard/wizard_module_upgrade.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/module/wizard/wizard_update_module.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/module/wizard/wizard_update_module.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/module/wizard/wizard_update_module.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/report/custom.xsl
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/report/custom_default.xsl
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/report/custom_new.xsl
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/report/custom_rml.xsl
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/report/rml_template.xsl
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/res/__init__.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/res/__init__.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/res/__init__.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/res/partner/__init__.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/res/partner/__init__.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/res/partner/__init__.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/res/partner/crm.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/res/partner/crm.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/res/partner/crm.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/res/partner/crm_demo.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/res/partner/crm_view.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/res/partner/partner.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/res/partner/partner.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/res/partner/partner.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/res/partner/partner_data.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/res/partner/partner_demo.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/res/partner/partner_report.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/res/partner/partner_view.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/res/partner/partner_wizard.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/res/partner/report/__init__.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/res/partner/report/__init__.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/res/partner/report/__init__.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/res/partner/report/business_card.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/res/partner/report/business_card.xsl
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/res/partner/report/ids.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/res/partner/report/ids.xsl
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/res/partner/report/partner_address.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/res/partner/report/partner_address.xsl
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/res/partner/wizard/__init__.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/res/partner/wizard/__init__.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/res/partner/wizard/__init__.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/res/partner/wizard/wizard_clear_ids.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/res/partner/wizard/wizard_clear_ids.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/res/partner/wizard/wizard_clear_ids.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/res/partner/wizard/wizard_ean_check.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/res/partner/wizard/wizard_ean_check.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/res/partner/wizard/wizard_ean_check.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/res/partner/wizard/wizard_sms.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/res/partner/wizard/wizard_sms.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/res/partner/wizard/wizard_sms.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/res/partner/wizard/wizard_spam.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/res/partner/wizard/wizard_spam.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/res/partner/wizard/wizard_spam.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/res/res_request.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/res/res_request.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/res/res_request.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/res/res_request_view.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/res/res_user.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/res/res_user.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/res/res_user.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/crm/__init__.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/crm/__init__.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/crm/__init__.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/crm/__terp__.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/crm/__terp__.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/crm/__terp__.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/crm/crm.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/crm/crm.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/crm/crm.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/crm/crm_data.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/crm/crm_demo.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/crm/crm_operators.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/crm/crm_operators.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/crm/crm_operators.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/crm/crm_report.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/crm/crm_view.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/crm/report/__init__.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/crm/report/__init__.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/crm/report/__init__.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/crm/report/report_businessopp.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/crm/report/report_businessopp.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/crm/report/report_businessopp.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/custom/__init__.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/custom/__init__.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/custom/__init__.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/custom/__terp__.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/custom/__terp__.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/custom/__terp__.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/custom/corporate_defaults.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/custom/corporate_defaults.xsl
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/custom/custom.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/custom/custom.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/custom/custom.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/custom/custom_report.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/custom/custom_view.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/hr/__init__.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/hr/__init__.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/hr/__init__.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/hr/__terp__.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/hr/__terp__.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/hr/__terp__.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/hr/hr.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/hr/hr.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/hr/hr.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/hr/hr_bel_holidays_2005.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/hr/hr_init.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/hr/hr_report.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/hr/hr_view.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/hr/hr_wizard.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/hr/hr_workflow.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/hr/report/__init__.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/hr/report/__init__.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/hr/report/__init__.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/hr/report/bymonth.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/hr/report/bymonth.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/hr/report/bymonth.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/hr/report/bymonth.xsl
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/hr/report/siso.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/hr/report/siso.xsl
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/hr/report/timesheet.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/hr/report/timesheet.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/hr/report/timesheet.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/hr/report/timesheet.xsl
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/hr/wizard/__init__.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/hr/wizard/__init__.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/hr/wizard/__init__.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/hr/wizard/print_bymonth.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/hr/wizard/print_bymonth.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/hr/wizard/print_bymonth.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/hr/wizard/print_byweek.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/hr/wizard/print_byweek.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/hr/wizard/print_byweek.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/hr/wizard/sign_in_out.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/hr/wizard/sign_in_out.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/hr/wizard/sign_in_out.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/letter/__init__.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/letter/__init__.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/letter/__init__.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/letter/__terp__.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/letter/__terp__.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/letter/__terp__.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/letter/letter.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/letter/letter.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/letter/letter.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/letter/letter_data.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/letter/letter_report.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/letter/letter_view.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/letter/report/__init__.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/letter/report/__init__.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/letter/report/__init__.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/letter/report/custom_default.xsl
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/letter/report/custom_rml.xsl
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/letter/report/letter.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/letter/report/letter.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/letter/report/letter.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/letter/report/letter.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/letter/report/letter.xsl
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/letter/wizard/__init__.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/letter/wizard/__init__.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/letter/wizard/__init__.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/letter/wizard/wizard_paragraph_load.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/letter/wizard/wizard_paragraph_load.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/letter/wizard/wizard_paragraph_load.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/marketing/__init__.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/marketing/__init__.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/marketing/__init__.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/marketing/__terp__.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/marketing/__terp__.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/marketing/__terp__.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/marketing/campaign/__init__.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/marketing/campaign/__init__.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/marketing/campaign/__init__.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/marketing/campaign/campaign.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/marketing/campaign/campaign.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/marketing/campaign/campaign.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/marketing/campaign/campaign_demo.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/marketing/campaign/campaign_view.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/marketing/campaign/campaign_wizard.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/marketing/campaign/wizard/__init__.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/marketing/campaign/wizard/__init__.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/marketing/campaign/wizard/__init__.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/marketing/campaign/wizard/wizard_campaign_email.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/marketing/campaign/wizard/wizard_campaign_email.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/marketing/campaign/wizard/wizard_campaign_email.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/marketing/campaign/wizard/wizard_campaign_partner_add.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/marketing/campaign/wizard/wizard_campaign_partner_add.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/marketing/campaign/wizard/wizard_campaign_partner_add.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/marketing/campaign/wizard/wizard_campaign_sms.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/marketing/campaign/wizard/wizard_campaign_sms.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/marketing/campaign/wizard/wizard_campaign_sms.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/module_graph.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/module_graph.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/module_graph.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/mrp/__init__.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/mrp/__init__.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/mrp/__init__.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/mrp/__terp__.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/mrp/__terp__.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/mrp/__terp__.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/mrp/mrp.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/mrp/mrp.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/mrp/mrp.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/mrp/mrp_data.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/mrp/mrp_demo.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/mrp/mrp_order_point.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/mrp/mrp_report.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/mrp/mrp_view.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/mrp/mrp_wizard.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/mrp/mrp_workflow.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/mrp/report/__init__.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/mrp/report/__init__.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/mrp/report/__init__.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/mrp/report/bom.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/mrp/report/bom.xsl
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/mrp/report/custom_default.xsl
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/mrp/report/custom_rml.xsl
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/mrp/report/price.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/mrp/report/price.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/mrp/report/price.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/mrp/report/price.xsl
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/mrp/report/product_explosion.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/mrp/report/product_explosion.xsl
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/mrp/wizard/__init__.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/mrp/wizard/__init__.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/mrp/wizard/__init__.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/mrp/wizard/schedulers.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/mrp/wizard/schedulers.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/mrp/wizard/schedulers.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/mrp/wizard/wizard_orderpoint_procurement.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/mrp/wizard/wizard_orderpoint_procurement.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/mrp/wizard/wizard_orderpoint_procurement.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/mrp/wizard/wizard_price.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/mrp/wizard/wizard_price.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/mrp/wizard/wizard_price.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/mrp/wizard/wizard_procurement.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/mrp/wizard/wizard_procurement.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/mrp/wizard/wizard_procurement.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/mrp/wizard/wizard_schedulers_all.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/mrp/wizard/wizard_schedulers_all.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/mrp/wizard/wizard_schedulers_all.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/network/__init__.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/network/__init__.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/network/__init__.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/network/__terp__.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/network/__terp__.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/network/__terp__.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/network/network.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/network/network.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/network/network.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/network/network_demo.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/network/network_report.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/network/network_view.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/network/report/material.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/network/report/material.xsl
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/network/report/network.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/network/report/network.xsl
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/network/report/network_list.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/network/report/network_list.xsl
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/product/__init__.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/product/__init__.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/product/__init__.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/product/__terp__.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/product/__terp__.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/product/__terp__.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/product/product.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/product/product.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/product/product.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/product/product_data.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/product/product_demo.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/product/product_report.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/product/product_view.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/product/product_wizard.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/product/report/__init__.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/product/report/__init__.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/product/report/__init__.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/product/report/product_label.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/product/report/product_label.xsl
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/product/wizard/__init__.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/product/wizard/__init__.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/product/wizard/__init__.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/product/wizard/wizard_ean_check.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/product/wizard/wizard_ean_check.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/product/wizard/wizard_ean_check.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/product/wizard/wizard_product_price.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/product/wizard/wizard_product_price.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/product/wizard/wizard_product_price.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/project/__init__.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/project/__init__.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/project/__init__.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/project/__terp__.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/project/__terp__.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/project/__terp__.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/project/project.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/project/project.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/project/project.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/project/project_demo.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/project/project_report.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/project/project_view.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/project/project_wizard.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/project/report/__init__.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/project/report/__init__.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/project/report/__init__.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/project/report/_date_compute.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/project/report/_date_compute.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/project/report/_date_compute.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/project/report/gantt.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/project/report/gantt.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/project/report/gantt.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/project/report/gantt_report.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/project/report/gantt_report.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/project/report/gantt_report.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/project/report/project_report.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/project/report/project_report.xsl
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/project/wizard/__init__.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/project/wizard/__init__.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/project/wizard/__init__.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/project/wizard/billing.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/project/wizard/billing.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/project/wizard/billing.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/project/wizard/proj_copy.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/project/wizard/proj_copy.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/project/wizard/proj_copy.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/project/wizard/proj_inactivate.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/project/wizard/proj_inactivate.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/project/wizard/proj_inactivate.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/purchase/__init__.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/purchase/__init__.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/purchase/__init__.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/purchase/__terp__.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/purchase/__terp__.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/purchase/__terp__.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/purchase/purchase.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/purchase/purchase.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/purchase/purchase.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/purchase/purchase_data.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/purchase/purchase_report.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/purchase/purchase_sequence.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/purchase/purchase_view.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/purchase/purchase_workflow.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/purchase/report/order.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/purchase/report/order.xsl
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/sale/__init__.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/sale/__init__.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/sale/__init__.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/sale/__terp__.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/sale/__terp__.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/sale/__terp__.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/sale/report/order.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/sale/report/order.xsl
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/sale/sale.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/sale/sale.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/sale/sale.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/sale/sale_data.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/sale/sale_demo.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/sale/sale_report.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/sale/sale_sequence.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/sale/sale_shortcut.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/sale/sale_view.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/sale/sale_wizard.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/sale/sale_workflow.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/sale/stock.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/sale/stock.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/sale/stock.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/sale/wizard/__init__.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/sale/wizard/__init__.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/sale/wizard/__init__.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/sale/wizard/make_invoice.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/sale/wizard/make_invoice.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/sale/wizard/make_invoice.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/sale/wizard/makesale.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/sale/wizard/makesale.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/sale/wizard/makesale.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/sale/wizard/sale_partner_shortcut.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/sale/wizard/sale_partner_shortcut.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/sale/wizard/sale_partner_shortcut.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/stock/__init__.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/stock/__init__.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/stock/__init__.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/stock/__terp__.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/stock/__terp__.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/stock/__terp__.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/stock/report/UPS.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/stock/report/__init__.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/stock/report/__init__.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/stock/report/__init__.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/stock/report/lot_move_label.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/stock/report/lot_move_label.xsl
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/stock/report/lot_overview.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/stock/report/lot_overview.xsl
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/stock/report/lot_overview_all.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/stock/report/picking.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/stock/report/picking.xsl
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/stock/report/product_location.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/stock/report/product_location.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/stock/report/product_location.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/stock/report/product_location.xsl
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/stock/report/product_stock.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/stock/report/product_stock.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/stock/report/product_stock.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/stock/report/shipping.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/stock/report/shipping.xsl
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/stock/report/stock_by_location.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/stock/report/stock_by_location.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/stock/report/stock_by_location.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/stock/report/stock_by_location.xsl
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/stock/report/stock_graph.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/stock/report/stock_graph.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/stock/report/stock_graph.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/stock/report/ups.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/stock/report/ups.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/stock/report/ups.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/stock/stock.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/stock/stock.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/stock/stock.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/stock/stock2.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/stock/stock2.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/stock/stock2.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/stock/stock_data.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/stock/stock_demo.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/stock/stock_incoterms.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/stock/stock_report.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/stock/stock_view.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/stock/stock_wizard.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/stock/stock_workflow.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/stock/wizard/__init__.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/stock/wizard/__init__.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/stock/wizard/__init__.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/stock/wizard/stock_traceability.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/stock/wizard/stock_traceability.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/stock/wizard/stock_traceability.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/stock/wizard/wizard_partial_picking.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/stock/wizard/wizard_partial_picking.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/stock/wizard/wizard_partial_picking.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/stock/wizard/wizard_picking_make.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/stock/wizard/wizard_picking_make.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/stock/wizard/wizard_picking_make.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/stock/wizard/wizard_split_lot_line.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/stock/wizard/wizard_split_lot_line.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/stock/wizard/wizard_split_lot_line.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/stock/wizard/wizard_ups.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/stock/wizard/wizard_ups.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/stock/wizard/wizard_ups.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/subscription/__init__.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/subscription/__init__.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/subscription/__init__.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/subscription/__terp__.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/subscription/__terp__.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/subscription/__terp__.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/subscription/subscription.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/subscription/subscription.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/subscription/subscription.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/subscription/subscription_view.xml
+%%PYTHON_SITELIBDIR%%/tinyerp-server/ir/__init__.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/ir/__init__.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/ir/__init__.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/ir/ir.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/ir/ir.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/ir/ir.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/netsvc.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/netsvc.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/netsvc.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/osv/__init__.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/osv/__init__.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/osv/__init__.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/osv/fields.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/osv/fields.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/osv/fields.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/osv/orm.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/osv/orm.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/osv/orm.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/osv/osv.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/osv/osv.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/osv/osv.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/__init__.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/__init__.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/__init__.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/AvantGarde_Book.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/AvantGarde_Book.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/AvantGarde_Book.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/AvantGarde_BookOblique.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/AvantGarde_BookOblique.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/AvantGarde_BookOblique.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/AvantGarde_Demi.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/AvantGarde_Demi.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/AvantGarde_Demi.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/AvantGarde_DemiOblique.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/AvantGarde_DemiOblique.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/AvantGarde_DemiOblique.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Bookman_Demi.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Bookman_Demi.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Bookman_Demi.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Bookman_DemiItalic.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Bookman_DemiItalic.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Bookman_DemiItalic.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Bookman_Light.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Bookman_Light.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Bookman_Light.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Bookman_LightItalic.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Bookman_LightItalic.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Bookman_LightItalic.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Courier.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Courier.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Courier.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Courier_Bold.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Courier_Bold.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Courier_Bold.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Courier_BoldOblique.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Courier_BoldOblique.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Courier_BoldOblique.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Courier_Oblique.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Courier_Oblique.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Courier_Oblique.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Helvetica.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Helvetica.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Helvetica.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Helvetica_Bold.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Helvetica_Bold.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Helvetica_Bold.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Helvetica_BoldOblique.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Helvetica_BoldOblique.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Helvetica_BoldOblique.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Helvetica_Light.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Helvetica_Light.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Helvetica_Light.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Helvetica_LightOblique.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Helvetica_LightOblique.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Helvetica_LightOblique.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Helvetica_Narrow.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Helvetica_Narrow.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Helvetica_Narrow.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Helvetica_Narrow_Bold.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Helvetica_Narrow_Bold.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Helvetica_Narrow_Bold.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Helvetica_Narrow_BoldOblique.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Helvetica_Narrow_BoldOblique.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Helvetica_Narrow_BoldOblique.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Helvetica_Narrow_Oblique.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Helvetica_Narrow_Oblique.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Helvetica_Narrow_Oblique.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Helvetica_Oblique.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Helvetica_Oblique.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Helvetica_Oblique.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/NewCenturySchlbk_Bold.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/NewCenturySchlbk_Bold.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/NewCenturySchlbk_Bold.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/NewCenturySchlbk_BoldItalic.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/NewCenturySchlbk_BoldItalic.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/NewCenturySchlbk_BoldItalic.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/NewCenturySchlbk_Italic.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/NewCenturySchlbk_Italic.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/NewCenturySchlbk_Italic.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/NewCenturySchlbk_Roman.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/NewCenturySchlbk_Roman.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/NewCenturySchlbk_Roman.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Palatino_Bold.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Palatino_Bold.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Palatino_Bold.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Palatino_BoldItalic.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Palatino_BoldItalic.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Palatino_BoldItalic.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Palatino_Italic.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Palatino_Italic.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Palatino_Italic.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Palatino_Roman.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Palatino_Roman.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Palatino_Roman.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Symbol.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Symbol.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Symbol.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Times_Bold.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Times_Bold.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Times_Bold.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Times_BoldItalic.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Times_BoldItalic.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Times_BoldItalic.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Times_Italic.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Times_Italic.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Times_Italic.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Times_Roman.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Times_Roman.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Times_Roman.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Utopia_Bold.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Utopia_Bold.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Utopia_Bold.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Utopia_BoldItalic.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Utopia_BoldItalic.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Utopia_BoldItalic.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Utopia_Italic.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Utopia_Italic.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Utopia_Italic.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Utopia_Regular.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Utopia_Regular.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/Utopia_Regular.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/ZapfChancery_MediumItalic.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/ZapfChancery_MediumItalic.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/ZapfChancery_MediumItalic.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/ZapfDingbats.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/ZapfDingbats.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/ZapfDingbats.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/__init__.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/__init__.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/__init__.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/dir.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/dir.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm/dir.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/area.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/area.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/area.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/area_doc.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/area_doc.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/area_doc.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/arrow.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/arrow.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/arrow.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/arrow_doc.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/arrow_doc.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/arrow_doc.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/axis.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/axis.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/axis.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/axis_doc.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/axis_doc.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/axis_doc.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/axis_x_doc.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/axis_x_doc.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/axis_x_doc.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/axis_y_doc.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/axis_y_doc.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/axis_y_doc.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/bar_plot.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/bar_plot.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/bar_plot.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/bar_plot_doc.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/bar_plot_doc.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/bar_plot_doc.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/basecanvas.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/basecanvas.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/basecanvas.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/canvas.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/canvas.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/canvas.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/category_coord.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/category_coord.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/category_coord.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/chart_data.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/chart_data.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/chart_data.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/chart_object.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/chart_object.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/chart_object.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/color.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/color.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/color.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/color_doc.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/color_doc.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/color_doc.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/coord.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/coord.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/coord.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/doc_support.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/doc_support.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/doc_support.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/empty_docs.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/empty_docs.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/empty_docs.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/error_bar.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/error_bar.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/error_bar.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/error_bar_doc.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/error_bar_doc.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/error_bar_doc.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/fill_style.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/fill_style.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/fill_style.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/fill_style_doc.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/fill_style_doc.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/fill_style_doc.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/font.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/font.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/font.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/generate_docs.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/generate_docs.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/generate_docs.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/gs_frontend.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/gs_frontend.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/gs_frontend.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/interval_bar_plot.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/interval_bar_plot.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/interval_bar_plot.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/legend.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/legend.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/legend.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/legend_doc.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/legend_doc.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/legend_doc.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/line_plot.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/line_plot.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/line_plot.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/line_plot_doc.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/line_plot_doc.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/line_plot_doc.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/line_style.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/line_style.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/line_style.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/line_style_doc.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/line_style_doc.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/line_style_doc.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/linear_coord.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/linear_coord.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/linear_coord.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/log_coord.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/log_coord.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/log_coord.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/object_set.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/object_set.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/object_set.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/pdfcanvas.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/pdfcanvas.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/pdfcanvas.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/pie_plot.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/pie_plot.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/pie_plot.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/pie_plot_doc.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/pie_plot_doc.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/pie_plot_doc.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/pngcanvas.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/pngcanvas.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/pngcanvas.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/pscanvas.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/pscanvas.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/pscanvas.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/pychart_types.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/pychart_types.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/pychart_types.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/pychart_util.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/pychart_util.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/pychart_util.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/range_plot.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/range_plot.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/range_plot.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/range_plot_doc.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/range_plot_doc.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/range_plot_doc.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/rose_plot.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/rose_plot.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/rose_plot.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/scaling.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/scaling.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/scaling.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/svgcanvas.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/svgcanvas.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/svgcanvas.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/text_box.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/text_box.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/text_box.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/text_box_doc.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/text_box_doc.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/text_box_doc.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/theme.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/theme.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/theme.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/tick_mark.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/tick_mark.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/tick_mark.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/tick_mark_doc.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/tick_mark_doc.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/tick_mark_doc.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/typechecker.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/typechecker.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/typechecker.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/version.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/version.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/version.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/x11canvas.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/x11canvas.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/x11canvas.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/zap.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/zap.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/zap.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/report/__init__.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/report/__init__.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/report/__init__.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/report/common.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/report/common.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/report/common.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/report/custom.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/report/custom.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/report/custom.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/report/int_to_text.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/report/int_to_text.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/report/int_to_text.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/report/interface.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/report/interface.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/report/interface.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/report/misc.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/report/misc.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/report/misc.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/report/print_fnc.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/report/print_fnc.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/report/print_fnc.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/report/print_xml.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/report/print_xml.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/report/print_xml.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/report/render/__init__.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/report/render/__init__.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/report/render/__init__.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/report/render/render.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/report/render/render.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/report/render/render.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/report/render/rml.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/report/render/rml.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/report/render/rml.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/report/render/rml2html/__init__.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/report/render/rml2html/__init__.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/report/render/rml2html/__init__.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/report/render/rml2html/rml2html.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/report/render/rml2html/rml2html.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/report/render/rml2html/rml2html.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/report/render/rml2html/utils.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/report/render/rml2html/utils.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/report/render/rml2html/utils.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/report/render/rml2pdf/__init__.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/report/render/rml2pdf/__init__.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/report/render/rml2pdf/__init__.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/report/render/rml2pdf/color.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/report/render/rml2pdf/color.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/report/render/rml2pdf/color.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/report/render/rml2pdf/trml2pdf.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/report/render/rml2pdf/trml2pdf.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/report/render/rml2pdf/trml2pdf.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/report/render/rml2pdf/utils.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/report/render/rml2pdf/utils.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/report/render/rml2pdf/utils.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/report/render/simple.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/report/render/simple.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/report/render/simple.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/report/report_sxw.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/report/report_sxw.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/report/report_sxw.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/service/__init__.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/service/__init__.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/service/__init__.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/service/security.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/service/security.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/service/security.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/service/web_services.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/service/web_services.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/service/web_services.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/sql_db.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/sql_db.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/sql_db.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/tinyerp-server.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/tinyerp-server.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/tinyerp-server.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/tools/__init__.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/tools/__init__.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/tools/__init__.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/tools/amount_to_text.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/tools/amount_to_text.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/tools/amount_to_text.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/tools/config.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/tools/config.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/tools/config.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/tools/convert.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/tools/convert.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/tools/convert.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/tools/misc.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/tools/misc.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/tools/misc.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/tools/translate.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/tools/translate.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/tools/translate.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/tools/upgrade.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/tools/upgrade.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/tools/upgrade.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/wizard/__init__.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/wizard/__init__.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/wizard/__init__.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/workflow/__init__.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/workflow/__init__.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/workflow/__init__.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/workflow/common.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/workflow/common.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/workflow/common.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/workflow/instance.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/workflow/instance.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/workflow/instance.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/workflow/wkf_expr.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/workflow/wkf_expr.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/workflow/wkf_expr.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/workflow/wkf_logs.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/workflow/wkf_logs.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/workflow/wkf_logs.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/workflow/wkf_service.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/workflow/wkf_service.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/workflow/wkf_service.pyo
+%%PYTHON_SITELIBDIR%%/tinyerp-server/workflow/workitem.py
+%%PYTHON_SITELIBDIR%%/tinyerp-server/workflow/workitem.pyc
+%%PYTHON_SITELIBDIR%%/tinyerp-server/workflow/workitem.pyo
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.pychart
+%%PORTDOCS%%%%DOCSDIR%%/i18n/Chinese_zh-CN-2.1.2.csv
+%%PORTDOCS%%%%DOCSDIR%%/i18n/chinese_zi-2_1_0.csv
+%%PORTDOCS%%%%DOCSDIR%%/i18n/czech-cz-2_0_2.csv
+%%PORTDOCS%%%%DOCSDIR%%/i18n/french_fr-3.1.2-0.csv
+%%PORTDOCS%%%%DOCSDIR%%/i18n/german_de-2_0_2.csv
+%%PORTDOCS%%%%DOCSDIR%%/i18n/hungarian.csv
+%%PORTDOCS%%%%DOCSDIR%%/i18n/italian.csv
+%%PORTDOCS%%%%DOCSDIR%%/i18n/neederlands_nl-1_97.csv
+%%PORTDOCS%%%%DOCSDIR%%/i18n/pt_BR.csv
+%%PORTDOCS%%%%DOCSDIR%%/i18n/pt_PT-3_2_0.csv
+%%PORTDOCS%%%%DOCSDIR%%/i18n/romanian_ro-2_1.csv
+%%PORTDOCS%%%%DOCSDIR%%/i18n/russian_ru-3_1_1.csv
+%%PORTDOCS%%%%DOCSDIR%%/i18n/spanish_es-2_0_8.csv
+%%PORTDOCS%%%%DOCSDIR%%/i18n/spanish_es-3_2_0.csv
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/i18n
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/workflow
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/wizard
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/tools
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/service
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/report/render/rml2pdf
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/report/render/rml2html
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/report/render
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/report
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/pychart/afm
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/pychart
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/osv
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/ir
+@exec mkdir -p %D/%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/subscription/report
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/subscription/report
+@exec mkdir -p %D/%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/subscription/data
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/subscription/data
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/subscription
+@exec mkdir -p %D/%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/stock/wizard/report
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/stock/wizard/report
+@exec mkdir -p %D/%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/stock/wizard/data
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/stock/wizard/data
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/stock/wizard
+@exec mkdir -p %D/%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/stock/report/report
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/stock/report/report
+@exec mkdir -p %D/%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/stock/report/data
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/stock/report/data
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/stock/report
+@exec mkdir -p %D/%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/stock/data
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/stock/data
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/stock
+@exec mkdir -p %D/%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/sale/wizard/report
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/sale/wizard/report
+@exec mkdir -p %D/%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/sale/wizard/data
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/sale/wizard/data
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/sale/wizard
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/sale/report
+@exec mkdir -p %D/%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/sale/data
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/sale/data
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/sale
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/purchase/report
+@exec mkdir -p %D/%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/purchase/data
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/purchase/data
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/purchase
+@exec mkdir -p %D/%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/project/wizard/report
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/project/wizard/report
+@exec mkdir -p %D/%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/project/wizard/data
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/project/wizard/data
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/project/wizard
+@exec mkdir -p %D/%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/project/report/report
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/project/report/report
+@exec mkdir -p %D/%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/project/report/data
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/project/report/data
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/project/report
+@exec mkdir -p %D/%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/project/data
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/project/data
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/project
+@exec mkdir -p %D/%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/product/wizard/report
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/product/wizard/report
+@exec mkdir -p %D/%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/product/wizard/data
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/product/wizard/data
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/product/wizard
+@exec mkdir -p %D/%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/product/report/report
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/product/report/report
+@exec mkdir -p %D/%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/product/report/data
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/product/report/data
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/product/report
+@exec mkdir -p %D/%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/product/data
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/product/data
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/product
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/network/report
+@exec mkdir -p %D/%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/network/data
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/network/data
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/network
+@exec mkdir -p %D/%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/mrp/wizard/report
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/mrp/wizard/report
+@exec mkdir -p %D/%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/mrp/wizard/data
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/mrp/wizard/data
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/mrp/wizard
+@exec mkdir -p %D/%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/mrp/report/report
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/mrp/report/report
+@exec mkdir -p %D/%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/mrp/report/data
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/mrp/report/data
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/mrp/report
+@exec mkdir -p %D/%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/mrp/data
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/mrp/data
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/mrp
+@exec mkdir -p %D/%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/marketing/report
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/marketing/report
+@exec mkdir -p %D/%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/marketing/data
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/marketing/data
+@exec mkdir -p %D/%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/marketing/campaign/wizard/report
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/marketing/campaign/wizard/report
+@exec mkdir -p %D/%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/marketing/campaign/wizard/data
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/marketing/campaign/wizard/data
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/marketing/campaign/wizard
+@exec mkdir -p %D/%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/marketing/campaign/report
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/marketing/campaign/report
+@exec mkdir -p %D/%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/marketing/campaign/data
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/marketing/campaign/data
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/marketing/campaign
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/marketing
+@exec mkdir -p %D/%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/letter/wizard/report
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/letter/wizard/report
+@exec mkdir -p %D/%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/letter/wizard/data
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/letter/wizard/data
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/letter/wizard
+@exec mkdir -p %D/%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/letter/report/report
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/letter/report/report
+@exec mkdir -p %D/%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/letter/report/data
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/letter/report/data
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/letter/report
+@exec mkdir -p %D/%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/letter/data
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/letter/data
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/letter
+@exec mkdir -p %D/%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/hr/wizard/report
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/hr/wizard/report
+@exec mkdir -p %D/%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/hr/wizard/data
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/hr/wizard/data
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/hr/wizard
+@exec mkdir -p %D/%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/hr/report/report
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/hr/report/report
+@exec mkdir -p %D/%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/hr/report/data
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/hr/report/data
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/hr/report
+@exec mkdir -p %D/%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/hr/data
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/hr/data
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/hr
+@exec mkdir -p %D/%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/custom/report
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/custom/report
+@exec mkdir -p %D/%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/custom/data
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/custom/data
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/custom
+@exec mkdir -p %D/%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/crm/report/report
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/crm/report/report
+@exec mkdir -p %D/%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/crm/report/data
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/crm/report/data
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/crm/report
+@exec mkdir -p %D/%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/crm/data
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/crm/data
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/crm
+@exec mkdir -p %D/%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/res/report
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/res/report
+@exec mkdir -p %D/%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/res/partner/wizard/report
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/res/partner/wizard/report
+@exec mkdir -p %D/%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/res/partner/wizard/data
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/res/partner/wizard/data
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/res/partner/wizard
+@exec mkdir -p %D/%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/res/partner/report/report
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/res/partner/report/report
+@exec mkdir -p %D/%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/res/partner/report/data
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/res/partner/report/data
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/res/partner/report
+@exec mkdir -p %D/%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/res/partner/data
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/res/partner/data
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/res/partner
+@exec mkdir -p %D/%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/res/data
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/res/data
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/res
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/report
+@exec mkdir -p %D/%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/module/wizard/report
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/module/wizard/report
+@exec mkdir -p %D/%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/module/wizard/data
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/module/wizard/data
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/module/wizard
+@exec mkdir -p %D/%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/module/report
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/module/report
+@exec mkdir -p %D/%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/module/data
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/module/data
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/module
+@exec mkdir -p %D/%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/ir/workflow/report
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/ir/workflow/report
+@exec mkdir -p %D/%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/ir/workflow/pydot/report
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/ir/workflow/pydot/report
+@exec mkdir -p %D/%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/ir/workflow/pydot/data
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/ir/workflow/pydot/data
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/ir/workflow/pydot
+@exec mkdir -p %D/%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/ir/workflow/data
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/ir/workflow/data
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/ir/workflow
+@exec mkdir -p %D/%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/ir/report
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/ir/report
+@exec mkdir -p %D/%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/ir/data
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/ir/data
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/ir
+@exec mkdir -p %D/%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/data
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base/data
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/base
+@exec mkdir -p %D/%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/wizard/report
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/wizard/report
+@exec mkdir -p %D/%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/wizard/data
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/wizard/data
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/wizard
+@exec mkdir -p %D/%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/report/report
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/report/report
+@exec mkdir -p %D/%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/report/data
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/report/data
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/report
+@exec mkdir -p %D/%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/project/report
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/project/report
+@exec mkdir -p %D/%%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/project/data
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/project/data
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/project
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account/data
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons/account
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server/addons
+@dirrm %%PYTHON_SITELIBDIR%%/tinyerp-server
