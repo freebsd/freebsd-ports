@@ -11822,6 +11822,7 @@ sex		ports/games/sex
 seyon		ports/comms/seyon
 sfbol		ports/games/sfbol
 sfio		ports/devel/sfio
+sflowtool	ports/net/sflowtool
 sformat		ports/sysutils/sformat
 sfront		ports/audio/sfront
 sfs		ports/security/sfs
