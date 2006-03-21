@@ -5,26 +5,40 @@
 # $FreeBSD$
 
 PORTNAME=	dazuko
-PORTVERSION=	2.1.0
+PORTVERSION=	2.2.0
 CATEGORIES=	security
 MASTER_SITES=	http://dazuko.org/files/
 
-MAINTAINER=	rob@debank.tv
+MAINTAINER=	acardenas@bsd.org.pe
 COMMENT=	A common interface for 3rd party file access control
 
 HAS_CONFIGURE=	yes
+SUB_FILES=	pkg-message
+
+OPTIONS=	EXAMPLEC	"Install C example programs"	on
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 600000
-IGNORE=		"Only supports FreeBSD 4.X and 5.X"
+.if defined(WITH_EXAMPLEC)
+PLIST_FILES=	%%EXAMPLESDIR%%/example %%EXAMPLESDIR%%/example_mt
+PLIST_DIRS=	%%EXAMPLESDIR%%
 .endif
 
+post-configure:
+	${REINPLACE_CMD} -e 's|^NOMAN|NO_MAN|g' ${WRKSRC}/library/Makefile
+
 do-install:
-	${MKDIR} ${PREFIX}/modules/
-	${INSTALL_DATA} ${WRKSRC}/dazuko.ko ${PREFIX}/modules/dazuko.ko
+.if defined(WITH_EXAMPLEC)
+	@cd ${WRKSRC}/example_c && \
+		${MAKE}
+	@${MKDIR} ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/example_c/example ${WRKSRC}/example_c/example_mt ${EXAMPLESDIR}
+.endif
+
+	@${SETENV} ${MAKE_ENV} ${MAKE} -C ${WRKSRC} -DMODULES_WITH_WORLD install
 
 post-install:
-	${SH} ${PKGINSTALL} ${PREFIX} POST-INSTALL
+	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

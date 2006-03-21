@@ -1,0 +1,16 @@
+#########################################################################################
+
+1) Create device /dev/dazuko
+
+   * FreeBSD 4.x
+    
+     # mknod /dev/dazuko c 33 0
+
+   * FreeBSD >= 5.x
+
+     It's not neccesary on modern FreeBSD systems
+
+2) If you selected WITH_EXAMPLEC, you can test module using example and example_mt files
+   from %%EXAMPLESDIR%% directory.
+
+#########################################################################################
