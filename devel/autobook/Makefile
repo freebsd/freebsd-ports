@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	autobook
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 CATEGORIES=	devel
 MASTER_SITES=	http://sources.redhat.com/autobook/
 
