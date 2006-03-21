@@ -8,7 +8,8 @@
 PORTNAME=	cmail
 PORTVERSION=	4.02
 CATEGORIES=	mail
-MASTER_SITES=	ftp://ftp.eboai.org/pub/users/chip/
+MASTER_SITES=	ftp://ftp.eboai.org/pub/users/chip/ \
+		http://www.franksworld.org/dist/cmail/
 
 MAINTAINER=	laszlof@vonostingroup.com
 COMMENT=	A simple mail counter, useful for multiple mailfiles
