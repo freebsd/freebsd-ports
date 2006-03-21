@@ -55,5 +55,12 @@ bin/tinybsd
 %%DATADIR%%/conf/wireless/etc/rc.firewall
 @dirrm %%DATADIR%%/conf/wireless/etc
 @dirrm %%DATADIR%%/conf/wireless
+%%DATADIR%%/conf/wrap/TINYBSD
+%%DATADIR%%/conf/wrap/tinybsd.basefiles
+%%DATADIR%%/conf/wrap/etc/fstab
+%%DATADIR%%/conf/wrap/etc/rc.conf
+%%DATADIR%%/conf/wrap/etc/ttys
+@dirrm %%DATADIR%%/conf/wrap/etc
+@dirrm %%DATADIR%%/conf/wrap
 @dirrm %%DATADIR%%/conf
 @dirrm %%DATADIR%%
