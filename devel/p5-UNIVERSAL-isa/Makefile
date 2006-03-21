@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	UNIVERSAL-isa
-PORTVERSION=	0.05
+PORTVERSION=	0.06
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	../../authors/id/N/NU/NUFFIN
+MASTER_SITE_SUBDIR=	../../authors/id/C/CH/CHROMATIC
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	lars@balker.dk
-COMMENT=	Hack around people calling UNIVERSAL::isa() as a function
+COMMENT=	Try to recover from people calling UNIVERSAL::isa as a function
 
 BUILD_DEPENDS=	p5-Scalar-List-Utils>=0:${PORTSDIR}/lang/p5-Scalar-List-Utils
 RUN_DEPENDS=	${BUILD_DEPENDS}
@@ -23,7 +23,9 @@ PERL_MODBUILD=	yes
 MAN3=		UNIVERSAL::isa.3
 
 .include <bsd.port.pre.mk>
-.if ${PERL_LEVEL} < 500800
-IGNORE=	requires Perl 5.8 or newer. Install lang/perl5.8 and try again
+
+.if ${PERL_LEVEL} < 500600
+IGNORE=	requires Perl 5.6 or newer. Install lang/perl5 and try again
 .endif
+
 .include <bsd.port.post.mk>
