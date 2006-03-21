@@ -1445,6 +1445,7 @@ cvs2p4		ports/devel/cvs2p4
 cvs2svn		ports/devel/cvs2svn
 cvsadmin	ports/devel/cvsadmin
 cvsbook		ports/devel/cvsbook
+cvschangelogbuilder	ports/devel/cvschangelogbuilder
 cvschk		ports/devel/cvschk
 cvsd		ports/devel/cvsd
 cvsdadm		ports/devel/cvsdadm
