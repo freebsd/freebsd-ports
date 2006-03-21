@@ -961,6 +961,7 @@
     SUBDIR += xitami
     SUBDIR += xpath2rss
     SUBDIR += xshttpd
+    SUBDIR += xshttpd-devel
     SUBDIR += xulrunner
     SUBDIR += yabb
     SUBDIR += yaws
