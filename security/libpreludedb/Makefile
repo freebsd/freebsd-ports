@@ -4,7 +4,7 @@
 # $FreeBSD$
 
 PORTNAME=	libpreludedb
-PORTVERSION=	0.9.5.1
+PORTVERSION=	0.9.6
 CATEGORIES=	security
 MASTER_SITES=	http://www.prelude-ids.org/download/releases/ \
 		http://www.prelude-ids.org/download/releases/old/
@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.prelude-ids.org/download/releases/ \
 MAINTAINER=	r.gruyters@yirdis.nl
 COMMENT=	Framework library for access to Prelude NIDS database
 
-LIB_DEPENDS=	prelude.6:${PORTSDIR}/security/libprelude
+LIB_DEPENDS=	prelude.7:${PORTSDIR}/security/libprelude
 
 USE_GPG=		yes
 SIG_SUFFIX=		.sig

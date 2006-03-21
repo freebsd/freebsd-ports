@@ -1,0 +1,27 @@
+#!/bin/sh
+
+# PROVIDE: prelude_lml
+# REQUIRE: NETWORKING SERVERS
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# prelude_lml_enable (bool):   Set to NO by default.
+#                              Set it to YES to enable Prelude LML.
+# prelude_lml_flags  (flags):  Set arguments to use with Prelude LML
+#
+
+. %%RC_SUBR%%
+
+name="prelude_lml"
+rcvar=${name}_enable
+
+command=%%PREFIX%%/bin/prelude-lml
+pidfile=/var/run/prelude-lml.pid
+
+load_rc_config $name
+
+: ${prelude_lml_enable="NO"}
+: ${prelude_lml_flags:-"-d -P ${pidfile}"}
+
+run_rc_command "$1"
