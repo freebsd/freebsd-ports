@@ -23,26 +23,26 @@ COMMENT=	Cleaned up copy of the original Quake II source code
 USE_GMAKE=	yes
 WANT_SDL=	yes
 
-OPTIONS=	AA		"Build ASCII software renderer" off \
-		ARTS		"Enable support for aRts sound daemon" off \
-		CLIENT		"Build client executable" on \
-		CTF		"Build Capture The Flag mod" off \
-		EYECANDY	"Build executable with fancier GL graphics" off \
-		GAME		"Build a main game .so file" on \
+OPTIONS=	X11		"Build X11 software driver" on \
 		GLX		"Build GLX driver" on \
-		IPV6		"Enable experimental IPv6 support" off \
-		JOYSTICK	"Enable joystick support" off \
-		OPTIMIZED_CFLAGS "Enable extra optimization options" off \
-		REDBLUE		"Enable 3D glasses rendering" off \
-		RETEXTURE	"Enable support of retextured graphics" off \
-		ROGUE		"Build Ground Zero (Rogue) mission pack" off \
+		EYECANDY	"Build executable with fancier GL graphics" off \
 		SDL		"Build SDL software driver" off \
-		SDLCLIENT	"Build executable that uses SDL" off \
 		SDLGL		"Build SDL OpenGL driver" off \
+		SDLCLIENT	"Build executable that uses SDL" off \
+		SVGA		"Build SVGA driver (i386 only)" off \
+		AA		"Build ASCII software renderer" off \
+		CLIENT		"Build client executable" on \
 		SERVER		"Build dedicated server executable" on \
-		SVGA		"Build SVGA driver" off \
+		GAME		"Build a main game .so file" on \
+		CTF		"Build Capture The Flag mod" off \
+		ROGUE		"Build Ground Zero (Rogue) mission pack" off \
 		XATRIX		"Build The Reckoning (Xatrix) mission pack" off \
-		X11		"Build X11 software driver" on \
+		RETEXTURE	"Enable support of retextured graphics" off \
+		JOYSTICK	"Enable joystick support" off \
+		REDBLUE		"Enable 3D glasses rendering" off \
+		IPV6		"Enable experimental IPv6 support" off \
+		ARTS		"Enable support for aRts sound daemon" off \
+		OPTIMIZED_CFLAGS "Enable extra optimization options" off \
 		X86_ASM		"Enable use of x86 assembly code" on
 
 DATADIR=	${Q2DIR}
@@ -55,53 +55,19 @@ PLIST_SUB+=	LIBDIR="${LIBDIR:S/${PREFIX}\///}"
 TGTDIR=		${WRKSRC}/release
 LIBDIR=		${PREFIX}/lib/${PORTNAME}
 
-.include "${.CURDIR}/../quake2-data/Makefile.include"
-
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_AA) || exists(${LOCALBASE}/lib/libaa.so.1)
-LIB_DEPENDS+=	aa.1:${PORTSDIR}/graphics/aalib
-MAKE_ARGS+=	BUILD_AA=YES
-REF_TARGETS+=	softaa
-PLIST_SUB+=	AA=""
-.else
-PLIST_SUB+=	AA="@comment "
-.endif
+###                       #
+## CLIENTS AND RENDERERS ##
+#                       ###
 
-.if defined(WITH_ARTS) || exists (${LOCALBASE}/lib/libartsc.so.0)
-LIB_DEPENDS+=	artsc.0:${PORTSDIR}/audio/arts
-MAKE_ARGS+=	BUILD_ARTS=YES
-.endif
-
-.if defined(WITH_CLIENT)
-MAKE_ARGS+=	BUILD_CLIENT=YES
-EXE_TARGETS+=	quake2
-PLIST_SUB+=	CLIENT=""
+.if defined(WITH_X11)
+USE_XLIB=	yes
+MAKE_ARGS+=	BUILD_X11=YES
+REF_TARGETS+=	softx
+PLIST_SUB+=	X11=""
 .else
-PLIST_SUB+=	CLIENT="@comment "
-.endif
-
-.if defined(WITH_CTF)
-MAKE_ARGS+=	BUILD_CTFDLL=YES
-PLIST_SUB+=	CTF=""
-.else
-PLIST_SUB+=	CTF="@comment "
-.endif
-
-.if defined(WITH_EYECANDY)
-DISTFILES+=	maxpak.pak:icc
-LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg
-MAKE_ARGS+=	BUILD_QMAX=YES
-PLIST_SUB+=	QMAX=""
-.else
-PLIST_SUB+=	QMAX="@comment "
-.endif
-
-.if defined(WITH_GAME)
-MAKE_ARGS+=	BUILD_GAME=YES
-PLIST_SUB+=	GAME=""
-.else
-PLIST_SUB+=	GAME="@comment "
+PLIST_SUB+=	X11="@comment "
 .endif
 
 .if defined(WITH_GLX) || defined(WITH_EYECANDY)
@@ -113,30 +79,90 @@ PLIST_SUB+=	GLX=""
 PLIST_SUB+=	GLX="@comment "
 .endif
 
-.if defined(WITH_IPV6)
-MAKE_ARGS+=	HAVE_IPV6=YES
-.endif
-
-.if defined(WITH_JOYSTICK)
-MAKE_ARGS+=	BUILD_JOYSTICK=YES
-.endif
-
-.if defined(WITH_OPTIMIZED_CFLAGS)
-MAKE_ARGS+=	OPTIMIZED_CFLAGS="-O3 -s -ffast-math -funroll-loops -fomit-frame-pointer -fexpensive-optimizations"
-.endif
-
-.if defined(WITH_REDBLUE)
-MAKE_ARGS+=	BUILD_REDBLUE=YES
-.endif
-
-.if defined(WITH_RETEXTURE)
-.   for i in 10 11 12 13 14 16 17 19
-DISTFILES+=	pak${i}.pak:icc
-.   endfor
-MAKE_ARGS+=	BUILD_RETEXTURE=YES
-PLIST_SUB+=	RETEX=""
+.if defined(WITH_EYECANDY)
+DISTFILES+=	maxpak.pak:icc
+LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg
+MAKE_ARGS+=	BUILD_QMAX=YES
+PLIST_SUB+=	QMAX=""
 .else
-PLIST_SUB+=	RETEX="@comment "
+PLIST_SUB+=	QMAX="@comment "
+.endif
+
+.if defined(WITH_SDL) || ${HAVE_SDL:Msdl} != ""
+USE_SDL=	sdl
+MAKE_ARGS+=	BUILD_SDL=YES
+REF_TARGETS+=	softsdl
+PLIST_SUB+=	SDL=""
+.else
+PLIST_SUB+=	SDL="@comment "
+.endif
+
+.if defined(WITH_SDLGL) && (defined(WITH_SDL) || ${HAVE_SDL:Msdl} != "")
+MAKE_ARGS+=	BUILD_SDLGL=YES
+REF_TARGETS+=	sdlgl
+PLIST_SUB+=	SDLGL=""
+.else
+PLIST_SUB+=	SDLGL="@comment "
+.endif
+
+.if defined(WITH_SDLCLIENT) && (defined(WITH_SDL) || ${HAVE_SDL:Msdl} != "")
+MAKE_ARGS+=	BUILD_SDLQUAKE2=YES
+EXE_TARGETS+=	sdlquake2
+PLIST_SUB+=	SDLCLIENT=""
+.else
+PLIST_SUB+=	SDLCLIENT="@comment "
+.endif
+
+.if ${ARCH} != "i386" && (defined(WITH_SVGA) || exists(${LOCALBASE}/lib/libvga.so.1))
+LIB_DEPENDS+=	vga.1:${PORTSDIR}/graphics/svgalib
+MAKE_ARGS+=	BUILD_SVGA=YES
+REF_TARGETS+=	soft
+PLIST_SUB+=	SVGA=""
+.else
+PLIST_SUB+=	SVGA="@comment "
+.endif
+
+.if defined(WITH_AA) || exists(${LOCALBASE}/lib/libaa.so.1)
+LIB_DEPENDS+=	aa.1:${PORTSDIR}/graphics/aalib
+MAKE_ARGS+=	BUILD_AA=YES
+REF_TARGETS+=	softaa
+PLIST_SUB+=	AA=""
+.else
+PLIST_SUB+=	AA="@comment "
+.endif
+
+.if defined(WITH_CLIENT)
+MAKE_ARGS+=	BUILD_CLIENT=YES
+EXE_TARGETS+=	quake2
+PLIST_SUB+=	CLIENT=""
+.else
+PLIST_SUB+=	CLIENT="@comment "
+.endif
+
+.if defined(WITH_SERVER)
+MAKE_ARGS+=	BUILD_DEDICATED=YES
+PLIST_SUB+=	SERVER=""
+EXE_TARGETS+=	q2ded
+.else
+PLIST_SUB+=	SERVER="@comment "
+.endif
+
+###                                #
+## GAME, MISSION ADDONS, AND MODS ##
+#                                ###
+
+.if defined(WITH_GAME)
+MAKE_ARGS+=	BUILD_GAME=YES
+PLIST_SUB+=	GAME=""
+.else
+PLIST_SUB+=	GAME="@comment "
+.endif
+
+.if defined(WITH_CTF)
+MAKE_ARGS+=	BUILD_CTFDLL=YES
+PLIST_SUB+=	CTF=""
+.else
+PLIST_SUB+=	CTF="@comment "
 .endif
 
 .if defined(WITH_ROGUE)
@@ -151,48 +177,6 @@ PLIST_SUB+=	ROGUE=""
 PLIST_SUB+=	ROGUE="@comment "
 .endif
 
-.if defined(WITH_SDL) || ${HAVE_SDL:Msdl} != ""
-USE_SDL=	sdl
-MAKE_ARGS+=	BUILD_SDL=YES
-REF_TARGETS+=	softsdl
-PLIST_SUB+=	SDL=""
-.else
-PLIST_SUB+=	SDL="@comment "
-.endif
-
-.if defined(WITH_SDLCLIENT) && (defined(WITH_SDL) || ${HAVE_SDL:Msdl} != "")
-MAKE_ARGS+=	BUILD_SDLQUAKE2=YES
-EXE_TARGETS+=	sdlquake2
-PLIST_SUB+=	SDLCLIENT=""
-.else
-PLIST_SUB+=	SDLCLIENT="@comment "
-.endif
-
-.if defined(WITH_SDLGL) && (defined(WITH_SDL) || ${HAVE_SDL:Msdl} != "")
-MAKE_ARGS+=	BUILD_SDLGL=YES
-REF_TARGETS+=	sdlgl
-PLIST_SUB+=	SDLGL=""
-.else
-PLIST_SUB+=	SDLGL="@comment "
-.endif
-
-.if defined(WITH_SERVER)
-MAKE_ARGS+=	BUILD_DEDICATED=YES
-PLIST_SUB+=	SERVER=""
-EXE_TARGETS+=	q2ded
-.else
-PLIST_SUB+=	SERVER="@comment "
-.endif
-
-.if defined(WITH_SVGA) || exists(${LOCALBASE}/lib/libvga.so.1)
-LIB_DEPENDS+=	vga.1:${PORTSDIR}/graphics/svgalib
-MAKE_ARGS+=	BUILD_SVGA=YES
-REF_TARGETS+=	soft
-PLIST_SUB+=	SVGA=""
-.else
-PLIST_SUB+=	SVGA="@comment "
-.endif
-
 .if defined(WITH_XATRIX)
 DISTFILES+=	xatrixsrc320.shar.Z:id
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src_xatrix_q__shared.c
@@ -204,18 +188,48 @@ PLIST_SUB+=	XATRIX=""
 PLIST_SUB+=	XATRIX="@comment "
 .endif
 
-.if defined(WITH_X11)
-USE_XLIB=	yes
-MAKE_ARGS+=	BUILD_X11=YES
-REF_TARGETS+=	softx
-PLIST_SUB+=	X11=""
+###                        #
+## MISCELLANEOUS TUNABLES ##
+#                        ###
+
+.if defined(WITH_RETEXTURE)
+.   for i in 10 11 12 13 14 16 17 19
+DISTFILES+=	pak${i}.pak:icc
+.   endfor
+MAKE_ARGS+=	BUILD_RETEXTURE=YES
+PLIST_SUB+=	RETEX=""
 .else
-PLIST_SUB+=	X11="@comment "
+PLIST_SUB+=	RETEX="@comment "
+.endif
+
+.if defined(WITH_JOYSTICK)
+MAKE_ARGS+=	BUILD_JOYSTICK=YES
+.endif
+
+.if defined(WITH_REDBLUE)
+MAKE_ARGS+=	BUILD_REDBLUE=YES
+.endif
+
+.if defined(WITH_IPV6)
+MAKE_ARGS+=	HAVE_IPV6=YES
+.endif
+
+.if defined(WITH_ARTS) || exists (${LOCALBASE}/lib/libartsc.so.0)
+LIB_DEPENDS+=	artsc.0:${PORTSDIR}/audio/arts
+MAKE_ARGS+=	BUILD_ARTS=YES
+.endif
+
+.if defined(WITH_OPTIMIZED_CFLAGS)
+MAKE_ARGS+=	OPTIMIZED_CFLAGS="-O3 -s -ffast-math -funroll-loops -fomit-frame-pointer -fexpensive-optimizations"
 .endif
 
 .if ${ARCH} != "i386" || defined(WITHOUT_X86_ASM)
 MAKE_ARGS+=	NO_X86_ASM=YES
 .endif
+
+###                            #
+## END OF CONFIGURATION KNOBS ##
+#                            ###
 
 post-extract:
 .for mp in ${Q2MP}
@@ -261,5 +275,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/src/docs/joystick.txt ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/src/docs/quake2.3dfxgl ${DOCSDIR}
 .endif
+
+.include "${.CURDIR}/../quake2-data/Makefile.include"
 
 .include <bsd.port.post.mk>
