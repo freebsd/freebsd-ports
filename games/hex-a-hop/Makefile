@@ -9,7 +9,8 @@ PORTNAME=	hex-a-hop
 PORTVERSION=	1.0.0
 CATEGORIES=	games
 MASTER_SITES=	http://ftp.bishopston.net/freebsd/distfiles/ \
-		ftp://ftp.bishopston.net/freebsd/distfiles/
+		ftp://ftp.bishopston.net/freebsd/distfiles/ \
+		http://critical.ch/distfiles/
 
 MAINTAINER=	jamie@bishopston.net
 COMMENT=	A puzzle game based on hexagonal tiles
