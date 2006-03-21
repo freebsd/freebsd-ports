@@ -7,6 +7,7 @@
 
 PORTNAME=	pop-before-smtp
 PORTVERSION=	1.41
+PORTREVISION=	1
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	popbsmtp
@@ -14,27 +15,24 @@ MASTER_SITE_SUBDIR=	popbsmtp
 MAINTAINER=	ericx@vineyard.net
 COMMENT=	A log parser to identify valid POP/IMAP logins for later smtp
 
-RUN_DEPENDS=	${SITE_PERL}/File/Tail.pm:${PORTSDIR}/devel/p5-File-Tail \
-		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
-		${SITE_PERL}/Net/Netmask.pm:${PORTSDIR}/net-mgmt/p5-Net-Netmask \
+RUN_DEPENDS=	${SITE_PERL}/Net/Netmask.pm:${PORTSDIR}/net-mgmt/p5-Net-Netmask \
 		${SITE_PERL}/Date/Parse.pm:${PORTSDIR}/devel/p5-TimeDate \
 		${SITE_PERL}/Date/Format.pm:${PORTSDIR}/devel/p5-TimeDate
 
 NO_BUILD=	yes
-USE_PERL5=	yes
+USE_PERL5_RUN=	yes
 USE_RC_SUBR=	pop-before-smtp.sh
 SUB_FILES=	pkg-message
-POD2MAN?=	pod2man
-DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
+SUB_LIST=	PERL=${PERL}
+
 MAN8=		${PORTNAME}.8
 
 post-patch:
 	@${REINPLACE_CMD} 's|^#!/usr/bin/perl|#!${PERL}|; \
 		s|/etc/postfix/pop-before-smtp|${PREFIX}/etc/postfix/pop-before-smtp|g;' \
 		${WRKSRC}/pop-before-smtp
-
 pre-install:
-	@${POD2MAN} ${WRKSRC}/${PORTNAME} > ${PREFIX}/man/man8/${PORTNAME}.8
+	@pod2man ${WRKSRC}/${PORTNAME} > ${MANPREFIX}/man/man8/${PORTNAME}.8
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/pop-before-smtp ${PREFIX}/sbin
