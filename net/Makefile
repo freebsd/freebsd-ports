@@ -522,6 +522,7 @@
     SUBDIR += php5-sockets
     SUBDIR += php5-xmlrpc
     SUBDIR += phpldapadmin
+    SUBDIR += phpldapadmin098
     SUBDIR += pipsecd
     SUBDIR += plb
     SUBDIR += pload
