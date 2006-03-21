@@ -9,7 +9,8 @@ PORTNAME=	xstroke
 PORTVERSION=	0.5.12
 PORTREVISION=	4
 CATEGORIES=	x11
-MASTER_SITES=	http://xstroke.org/releases/
+MASTER_SITES=	ftp://ftp.handhelds.org/projects/xstroke/release-0.5/ \
+		http://www.handhelds.org/download/projects/xstroke/release-0.5/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fullscreen gesture recognition
@@ -17,7 +18,6 @@ COMMENT=	Fullscreen gesture recognition
 LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/libXft
 
 USE_GETOPT_LONG=yes
-USE_REINPLACE=	yes
 USE_BISON=	yes
 USE_IMAKE=	yes
 CFLAGS+=	${PTHREAD_CFLAGS}

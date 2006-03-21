@@ -6,5 +6,3 @@ gestures and performs actions based on the gestures.
 xstroke is most commonly configured to "type" characters in response to
 gestures, but it can also emulate mouse button "clicks", launch programs,
 and other fun things.
-
-WWW: http://www.xstroke.org/
