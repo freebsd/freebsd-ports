@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	testdisk
-PORTVERSION=	6.1
+PORTVERSION=	6.3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.cgsecurity.org/
 
