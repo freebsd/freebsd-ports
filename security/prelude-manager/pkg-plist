@@ -4,6 +4,8 @@ etc/prelude-manager/prelude-manager.conf-dist
 include/prelude-manager/prelude-manager.h
 lib/prelude-manager/filters/idmef-criteria.la
 lib/prelude-manager/filters/idmef-criteria.so
+lib/prelude-manager/decodes/normalize.so
+lib/prelude-manager/decodes/normalize.la
 %%WITH_DB%%lib/prelude-manager/reports/db.la
 %%WITH_DB%%lib/prelude-manager/reports/db.so
 lib/prelude-manager/reports/debug.la
@@ -15,12 +17,13 @@ lib/prelude-manager/reports/textmod.so
 lib/prelude-manager/reports/xmlmod.la
 lib/prelude-manager/reports/xmlmod.so
 %%DATADIR%%/xmlmod/idmef-message.dtd
-@dirrm %%DATADIR%%/xmlmod
-@dirrm %%DATADIR%%
-@dirrm lib/prelude-manager/reports
-@dirrm lib/prelude-manager/filters
-@dirrm lib/prelude-manager
-@dirrm include/prelude-manager
+@dirrmtry %%DATADIR%%/xmlmod
+@dirrmtry %%DATADIR%%
+@dirrmtry lib/prelude-manager/decodes
+@dirrmtry lib/prelude-manager/reports
+@dirrmtry lib/prelude-manager/filters
+@dirrmtry lib/prelude-manager
+@dirrmtry include/prelude-manager
 @dirrmtry etc/prelude-manager
 @dirrmtry /var/run/prelude-manager
 @dirrmtry /var/spool/prelude-manager
