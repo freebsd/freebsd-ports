@@ -8,7 +8,9 @@
 PORTNAME=	awele
 PORTVERSION=	1.0
 CATEGORIES=	games tk82
-MASTER_SITES=	http://www-air.inria.fr/ftp/Jean-Paul/
+MASTER_SITES=	http://www-air.inria.fr/ftp/Jean-Paul/ \
+		${MASTER_SITE_XCONTRIB}
+MASTER_SITE_SUBDIR=	games
 DISTFILES=	${PORTNAME}1.0.tgz
 
 MAINTAINER=	tg@FreeBSD.org
