@@ -45,6 +45,9 @@
 # If you want mutt to use the idn library define:
 #  WITH_MUTT_IDN
 #
+# If you want to make use of the gpgme interface define:
+#  WITH_MUTT_GPGME
+#
 # If you want to enable extended quoting functions define:
 #  WITH_MUTT_QUOTE_PATCH
 #  This is a default knob and can be disabled by WITHOUT_MUTT_QUOTE_PATCH
@@ -297,6 +300,9 @@ WITH_MUTT_IDN=	yes
 .if defined(WITH_MUTT_IDN)
 LIB_DEPENDS+=	idn:${PORTSDIR}/dns/libidn
 .endif
+.if defined(WITH_MUTT_GPGME)
+LIB_DEPENDS+=	gpgme:${PORTSDIR}/security/gpgme
+.endif
 .if ! defined(WITHOUT_MUTT_SMIME_OUTLOOK_COMPAT)
 post-patch::
 	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-smime-outlook
@@ -362,6 +368,11 @@ CONFIGURE_ARGS+=	--with-libiconv-prefix=${LOCALBASE}
 CONFIGURE_ARGS+=	--with-idn
 .else
 CONFIGURE_ARGS+=	--without-idn
+.endif
+.if defined(WITH_MUTT_GPGME)
+CONFIGURE_ARGS+=	--enable-gpgme
+.else
+CONFIGURE_ARGS+=	--disable-gpgme
 .endif
 
 PATCH_DIST_STRIP=	-p1
