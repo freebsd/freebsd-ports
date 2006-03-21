@@ -114,3 +114,5 @@ share/pixmaps/penguintvicon.png
 share/applications/penguintv.desktop
 share/locale/pt_BR/LC_MESSAGES/penguintv.mo
 @dirrm share/penguintv
+@dirrmtry share/pixmaps
+@dirrmtry share/applications
