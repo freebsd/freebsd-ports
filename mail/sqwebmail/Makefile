@@ -14,13 +14,15 @@ MASTER_SITE_SUBDIR=	courier
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	CGI Webmail client for Maildirs
 
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib" \
+		CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include"
 
 BUILD_DEPENDS=	courierauthconfig:${PORTSDIR}/security/courier-authlib-base
 RUN_DEPENDS=	courierauthconfig:${PORTSDIR}/security/courier-authlib-base
 LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
 
 OPTIONS=	CACHEDIR	"Cache logins"					on \
+		GDBM		"Use gdbm db instead of system bdb"		off \
 		GZIP		"Compress messages with gzip"			on \
 		HTTPS		"Generate https:// URLs for all accesses"	off \
 		HTTPS_LOGIN	"Generate https:// URLs only for login"		off \
@@ -81,7 +83,8 @@ CONFIGURE_ARGS=	--enable-cgibindir=${PREFIX}/${CGIBINDIR}/${CGIBINSUBDIR} \
 		--enable-imageurl=/${IMAGEURL} \
 		--with-locking-method=fcntl \
 		--with-libintl-prefix=${LOCALBASE} \
-		--with-libiconv-prefix=${LOCALBASE}
+		--with-libiconv-prefix=${LOCALBASE} \
+		--cache-file=${WRKDIR}/sqwebmail.cache
 
 PLIST_SUB+=	CGIBINDIR=${CGIBINDIR} \
 		CGIBINSUBDIR=${CGIBINSUBDIR} \
@@ -186,6 +189,13 @@ CONFIGURE_ARGS+=        --enable-autopurge=${WITH_AUTOPURGE}
 
 .if defined(WITH_MAXPURGE)
 CONFIGURE_ARGS+=        --enable-maxpurge=${WITH_MAXPURGE}
+.endif
+
+.if defined(WITH_GDBM)
+CONFIGURE_ARGS+=--with-db=gdbm
+LIB_DEPENDS+=   gdbm.3:${PORTSDIR}/databases/gdbm
+.else
+CONFIGURE_ARGS+=--with-db=db
 .endif
 
 post-patch:
