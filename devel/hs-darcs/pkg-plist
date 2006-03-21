@@ -1,7 +1,6 @@
 bin/darcs
 etc/bash_completion.d/darcs
 %%SERVER%%%%CGIDIR%%/darcs.cgi
-%%SERVER%%sbin/darcs-createrepo
 %%SERVER%%etc/cgi.conf.sample
 %%SERVER%%share/darcs/xslt/annotate.xslt
 %%SERVER%%share/darcs/xslt/browse.xslt

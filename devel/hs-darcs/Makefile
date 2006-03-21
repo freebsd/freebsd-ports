@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	darcs
-PORTVERSION=	1.0.5
-PORTREVISION=	1
+PORTVERSION=	1.0.6
 CATEGORIES=	devel
 MASTER_SITES=	http://darcs.net/
 
@@ -34,7 +33,6 @@ INSTALL_TARGET=	installbin
 .if defined(WITH_SERVER)
 BUILD_DEPENDS+=	xsltproc:${PORTSDIR}/textproc/libxslt
 RUN_DEPENDS+=	xsltproc:${PORTSDIR}/textproc/libxslt
-ALL_TARGET+=	darcs-createrepo
 INSTALL_TARGET+=	installserver
 .if !exists(${PREFIX}/www) && exists(${PREFIX}/share/apache)
 CGIDIR?=	share/apache/cgi-bin
