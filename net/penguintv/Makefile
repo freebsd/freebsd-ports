@@ -14,7 +14,12 @@ MAINTAINER=	edwin@mavetju.org
 COMMENT=	Graphical RSS feed reader with incorperated playback functions
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/pysqlite2/_sqlite.so:${PORTSDIR}/databases/py-pysqlite21 \
-		${PYTHON_SITELIBDIR}/pycurl.so:${PORTSDIR}/ftp/py-curl
+		${PYTHON_SITELIBDIR}/pycurl.so:${PORTSDIR}/ftp/py-curl \
+		${PYXML}
+.if defined(PACKAGE_BUILDING)
+BUILD_DEPENDS+= Xvfb:${X_VFBSERVER_PORT} \
+		${X11BASE}/lib/X11/fonts/misc/8x13O.pcf.gz:${X_FONTS_MISC_PORT}
+.endif
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_GNOME=	pygnomeextras pygnome2
