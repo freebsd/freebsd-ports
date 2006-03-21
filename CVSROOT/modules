@@ -12934,6 +12934,7 @@ updatedd	ports/dns/updatedd
 uplog		ports/net/uplog
 upnp		ports/devel/upnp
 upnp104		ports/devel/upnp104
+upp602		ports/devel/upp602
 uppaal		ports/devel/uppaal
 uppc-kmod	ports/palm/uppc-kmod
 ups-debug	ports/devel/ups-debug
