@@ -9,10 +9,12 @@ bin/xspasswd
 %%DATADIR%%/cgi-bin/imagemap
 %%DATADIR%%/cgi-bin/xschpass
 %%DATADIR%%/contrib/SSL-Makefile
+%%DATADIR%%/contrib/agentstats.pl
+%%DATADIR%%/contrib/caroot.pem
 %%DATADIR%%/contrib/logrotate.sh
 %%DATADIR%%/contrib/persistent.pl
+%%DATADIR%%/contrib/powered-by-xs.gif
 %%DATADIR%%/contrib/wwwstats.pl
-%%DATADIR%%/contrib/agentstats.pl
 %%DATADIR%%/compress.methods.sample
 %%DATADIR%%/gfxcount/digital0.ppm
 %%DATADIR%%/gfxcount/digital1.ppm
@@ -65,6 +67,11 @@ bin/xspasswd
 @dirrm %%DATADIR%%/contrib
 @dirrm %%DATADIR%%/gfxcount
 @dirrm %%DATADIR%%/icons
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/BUGS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @cwd %%WWWDIR%%
 @dirrmtry cgi-bin
 @dirrmtry htdocs

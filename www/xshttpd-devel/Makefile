@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	xshttpd
-DISTVERSION=	3.3g01
-CATEGORIES=	www
+DISTVERSION=	3.4b06
+CATEGORIES=	www ipv6
 MASTER_SITES=	ftp://ftp.stack.nl/pub/xs-httpd/release/ \
 	ftp://mud.stack.nl/pub/xs-httpd/release/
+PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME}-${DISTVERSION:S/.//}
 
 MAINTAINER=	johans@stack.nl
@@ -17,15 +18,15 @@ COMMENT=	A webserver with CGI as own user and SSL suport
 
 RUN_DEPENDS=	run-mailcap:${PORTSDIR}/misc/mime-support
 
-CONFLICTS+=	apache-[0-9]*
+CONFLICTS+=	apache-[0-9]* xshttpd-[0-9]*
 
 MAN1=		clearxs.1 gfxcount.1 httpd.1 httpdc.1 imagemap.1 \
 		readxs.1 xsindex.1 xspasswd.1
 MAN5=		httpd.conf.5 xsauth.5 xsscripts.5
+USE_BZIP2=	yes
 USE_RC_SUBR=	xshttpd.sh
 
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 OPTIONS=	SSL "Enable https support" On \
@@ -84,5 +85,9 @@ post-patch:
 
 post-install:
 	@${RM} ${DATADIR}/mime.types
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} README BUGS COPYING ChangeLog ${DOCSDIR}
+.endif
 
 .include <bsd.port.post.mk>

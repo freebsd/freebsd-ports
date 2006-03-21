@@ -17,7 +17,7 @@ COMMENT=	A webserver with CGI as own user and SSL suport
 
 RUN_DEPENDS=	run-mailcap:${PORTSDIR}/misc/mime-support
 
-CONFLICTS+=	apache-[0-9]*
+CONFLICTS+=	apache-[0-9]* xshttpd-devel-[0-9]*
 
 MAN1=		clearxs.1 gfxcount.1 httpd.1 httpdc.1 imagemap.1 \
 		readxs.1 xsindex.1 xspasswd.1
