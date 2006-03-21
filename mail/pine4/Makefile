@@ -62,8 +62,11 @@ pre-fetch:
 	${SH} pkg-install
 .endif
 .if defined(WITH_MAILDIR)
-PATCH_SITES=	http://www.math.washington.edu/~chappa/pine/patches/pine${PORTVERSION}/
-PATCHFILES=	maildir.patch.gz
+PATCH_SITES=	http://www.math.washington.edu/~chappa/pine/patches/pine${PORTVERSION}/ \
+		http://dougbarton.us/Downloads/ \
+		${MASTER_SITE_LOCAL}
+PATCH_SITE_SUBDIR=	dougb
+PATCHFILES=		maildir.patch.gz
 PATCH_DIST_ARGS+=	-E --quiet -d ${PATCH_WRKSRC} -p1
 .endif
 
