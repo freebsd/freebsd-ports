@@ -8,7 +8,8 @@
 PORTNAME=	geki3
 PORTVERSION=	1.0.3
 CATEGORIES=	games
-MASTER_SITES=	http://kxl.hn.org/download/
+MASTER_SITES=	http://kxl.hn.org/download/ \
+		http://www.mavetju.org/download/adopted/
 DISTNAME=	${PORTNAME}-KXL-${PORTVERSION}
 
 MAINTAINER=	edwin@mavetju.org
