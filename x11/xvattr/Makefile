@@ -15,11 +15,11 @@ MASTER_SITES=	http://www.dtek.chalmers.se/groups/dvd/dist/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Getting and setting Xv attributes
 
-USE_X_PREFIX=	yes
+USE_X_PREFIX=		yes
 USE_PERL5_BUILD=	yes
 USE_GETOPT_LONG=	yes
-USE_GNOME=	gtk12
-GNU_CONFIGURE=	yes
+USE_GNOME=		gtk12
+GNU_CONFIGURE=		yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		xvattr.1
@@ -27,7 +27,7 @@ MAN1=		xvattr.1
 .include <bsd.port.pre.mk>
 
 .if ${X_WINDOW_SYSTEM:L} == xfree86-3
-IGNORE=		"Requires Xv Extension"
+IGNORE=		requires Xv Extension
 .endif
 
 .include <bsd.port.post.mk>
