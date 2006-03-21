@@ -14019,6 +14019,7 @@ xsel		ports/x11/xsel
 xshisen		ports/games/xshisen
 xshogi		ports/games/xshogi
 xshttpd		ports/www/xshttpd
+xshttpd-devel		ports/www/xshttpd-devel
 xsidplay	ports/audio/xsidplay
 xskat		ports/games/xskat
 xskewb		ports/games/xskewb
