@@ -1,0 +1,11 @@
+--- uppsrc/Core/Core.upp.orig	Sat Mar  4 19:46:59 2006
++++ uppsrc/Core/Core.upp	Sat Mar  4 19:47:05 2006
+@@ -13,6 +13,8 @@
+ 
+ library(WIN32 GCC) "ole32 oleaut32 uuid";
+ 
++library(FREEBSD) pthread;
++
+ options(XGNU) -O0;
+ 
+ options(XGNU) -ffunction-sections;

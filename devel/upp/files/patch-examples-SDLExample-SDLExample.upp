@@ -1,0 +1,13 @@
+--- examples/SDLExample/SDLExample.upp.orig	Sat Mar  4 19:46:31 2006
++++ examples/SDLExample/SDLExample.upp	Sat Mar  4 19:46:38 2006
+@@ -7,6 +7,10 @@
+ 
+ library(LINUX) "SDL SDLmain";
+ 
++library(FREEBSD) "SDL-1.1 vgl X11 Xext vga aa usbhid ncurses";
++
++options(FREEBSD) -I/usr/local/include/SDL11;
++
+ file
+ 	main.cpp;
+ 
