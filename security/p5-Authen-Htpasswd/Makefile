@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Authen-Htpasswd
-PORTVERSION=	0.13
+PORTVERSION=	0.14
 CATEGORIES=	security perl5 www
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Authen
@@ -27,6 +27,13 @@ PERL_CONFIGURE=	yes
 MAN3=	Authen::Htpasswd.3 \
 	Authen::Htpasswd::User.3 \
 	Authen::Htpasswd::Util.3
+
+post-extract:
+	rm \
+	${WRKSRC}/.DS_Store \
+	${WRKSRC}/lib/.DS_Store \
+	${WRKSRC}/lib/Authen/.DS_Store \
+	${WRKSRC}/t/.DS_Store
 
 .include <bsd.port.pre.mk>
 
