@@ -6,17 +6,16 @@
 #
 
 PORTNAME=	catdoc
-PORTVERSION=	0.94
+PORTVERSION=	0.94.2
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.45.free.net/pub/catdoc/
 #		${MASTER_SITE_TEX_CTAN:S/$/support\/catdoc\//}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Convert MS Word/Excel documents to plain ASCII or TeX.  TK viewer included
+COMMENT=	MS Word/Excel converter to plain ASCII or TeX. TK viewer included
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 MAN1=		catdoc.1 wordview.1 xls2csv.1 catppt.1
 
 .if !defined(LANG) || ${LANG} != ru_RU.KOI8-R
