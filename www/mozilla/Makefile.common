@@ -378,7 +378,7 @@ gecko-moz-pis-pre-install:
 post-install: gecko-post-install
 
 gecko-post-install:
-.if !defined(PAKCAGE_BUILDING)
+.if !defined(PACKAGE_BUILDING)
 	@if [ -e ${PKGINSTALL} ] ; then \
 		${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL; \
 	fi
