@@ -16,7 +16,6 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	FreeBSD-modified Taylor UUCP (unix-to-unix copy program)
 
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 
 MAN1=	cu.1 uuconv.1 uucp.1 uulog.1 uuname.1 uupick.1 uustat.1 \
 	uuto.1 uux.1
@@ -24,6 +23,7 @@ MAN8=	uuchk.8 uucico.8 uusched.8 uuxqt.8 uucpd.8
 INFO=	uucp
 VARLOG=	uucp/common_sources/policy.h uucp/uucico/uucico.8 \
 	uucp/uucp/uucp.1 uucp/uux/uux.1 uucp/uuxqt/uuxqt.8
+POLICY=	uucp/common_sources/policy.h
 FIXME=	etc/periodic/daily/340.uucp etc/periodic/daily/410.status-uucp \
 	etc/periodic/weekly/300.uucp
 BPKGNAME=	base-uucp-1.06.1
@@ -39,6 +39,10 @@ CONFLICTS?=	freebsd-uucp-1.*
 CONFLICTS?=	freebsd-uucp-pam-1.*
 .endif
 
+.if defined(WITH_UUCP_ENCRYPTED_PASSWORDS)
+MAKE_ENV+=	WITH_ENCRYPTED_PASSWORDS=1
+.endif
+
 post-extract:
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} \
 		${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} extract)
@@ -47,17 +51,16 @@ post-extract:
 
 do-configure:
 .for i in ${FIXME}
-	@${MV} ${WRKSRC}/${i} ${WRKSRC}/${i}.sed
-	${SED} -e "s=/usr/local/=${PREFIX}/=" \
-		${WRKSRC}/${i}.sed > ${WRKSRC}/${i}
+	${REINPLACE_CMD} -e "s=/usr/local/=${PREFIX}/=" \
+		${WRKSRC}/${i}
 .endfor
-.if defined(UUCP_WITH_VAR_LOG)
+.if defined(WITH_UUCP_VAR_LOG) || defined(UUCP_WITH_VAR_LOG)
 .for i in ${VARLOG}
-	@${MV} ${WRKSRC}/${i} ${WRKSRC}/${i}.sed
-	${SED} -e "s=/var/spool/uucp/Log=/var/log/uucp/Log=" \
+	${REINPLACE_CMD} \
+		-e "s=/var/spool/uucp/Log=/var/log/uucp/Log=" \
 		-e "s=/var/spool/uucp/Debug=/var/log/uucp/Debug=" \
 		-e "s=/var/spool/uucp/Stats=/var/log/uucp/Stats=" \
-		${WRKSRC}/${i}.sed > ${WRKSRC}/${i}
+		${WRKSRC}/${i}
 .endfor
 	@${ECHO_CMD} "   .." >> ${WRKSRC}/uucp.mtree
 	@${ECHO_CMD} "/set uname=root gname=wheel mode=0755" \
@@ -67,6 +70,11 @@ do-configure:
 		>> ${WRKSRC}/uucp.mtree
 	@${ECHO_CMD} "       uucp" >> ${WRKSRC}/uucp.mtree
 	@${ECHO_CMD} "       .." >> ${WRKSRC}/uucp.mtree
+.endif
+.if defined(WITH_UUCP_ENCRYPTED_PASSWORDS)
+	${REINPLACE_CMD} \
+		-e "s=HAVE_ENCRYPTED_PASSWORDS.*=HAVE_ENCRYPTED_PASSWORDS 1=" \
+		${WRKSRC}/${POLICY}
 .endif
 	@(cd ${CONFIGURE_WRKSRC}; ${SETENV} ${MAKE_ENV} \
 		${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} configure)

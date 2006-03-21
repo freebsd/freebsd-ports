@@ -1,0 +1,13 @@
+--- uucp/uucico/Makefile.orig  Mon Jul 22 05:02:08 2002
++++ uucp/uucico/Makefile       Mon Mar 20 15:57:12 2006
+@@ -18,5 +18,10 @@
+ MAN=          uucico.8
+ MAN8=         uucico.8
+ 
++.if defined(WITH_ENCRYPTED_PASSWORDS)
++LDADD+=       -lcrypt
++DPADD+=       ${LIBCRYPT}
++.endif
++
+ .include <bsd.prog.mk>
+ .PATH: $(.CURDIR)/../common_sources
