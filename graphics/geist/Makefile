@@ -9,7 +9,7 @@ PORTNAME=	geist
 PORTVERSION=	0.0.3
 PORTREVISION=	4
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.linuxbrit.co.uk/downloads/
+MASTER_SITES=	http://linuxbrit.co.uk/downloads/
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	An object-based image creation/layout application
