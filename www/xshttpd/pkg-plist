@@ -4,68 +4,67 @@ bin/httpdc
 bin/readxs
 bin/xsindex
 bin/xspasswd
-%%DATADIR%%/cgi-bin/error
-%%DATADIR%%/cgi-bin/gfxcount
-%%DATADIR%%/cgi-bin/imagemap
-%%DATADIR%%/cgi-bin/xschpass
-%%DATADIR%%/contrib/SSL-Makefile
-%%DATADIR%%/contrib/logrotate.sh
-%%DATADIR%%/contrib/persistent.pl
-%%DATADIR%%/contrib/wwwstats.pl
-%%DATADIR%%/contrib/agentstats.pl
-%%DATADIR%%/compress.methods.sample
-%%DATADIR%%/gfxcount/digital0.ppm
-%%DATADIR%%/gfxcount/digital1.ppm
-%%DATADIR%%/gfxcount/digital2.ppm
-%%DATADIR%%/gfxcount/digital3.ppm
-%%DATADIR%%/gfxcount/digital4.ppm
-%%DATADIR%%/gfxcount/digital5.ppm
-%%DATADIR%%/gfxcount/digital6.ppm
-%%DATADIR%%/gfxcount/digital7.ppm
-%%DATADIR%%/gfxcount/digital8.ppm
-%%DATADIR%%/gfxcount/digital9.ppm
-%%DATADIR%%/gfxcount/large0.ppm
-%%DATADIR%%/gfxcount/large1.ppm
-%%DATADIR%%/gfxcount/large2.ppm
-%%DATADIR%%/gfxcount/large3.ppm
-%%DATADIR%%/gfxcount/large4.ppm
-%%DATADIR%%/gfxcount/large5.ppm
-%%DATADIR%%/gfxcount/large6.ppm
-%%DATADIR%%/gfxcount/large7.ppm
-%%DATADIR%%/gfxcount/large8.ppm
-%%DATADIR%%/gfxcount/large9.ppm
-%%DATADIR%%/gfxcount/largecol0.ppm
-%%DATADIR%%/gfxcount/largecol1.ppm
-%%DATADIR%%/gfxcount/largecol2.ppm
-%%DATADIR%%/gfxcount/largecol3.ppm
-%%DATADIR%%/gfxcount/largecol4.ppm
-%%DATADIR%%/gfxcount/largecol5.ppm
-%%DATADIR%%/gfxcount/largecol6.ppm
-%%DATADIR%%/gfxcount/largecol7.ppm
-%%DATADIR%%/gfxcount/largecol8.ppm
-%%DATADIR%%/gfxcount/largecol9.ppm
-%%DATADIR%%/httpd.conf.sample
-%%DATADIR%%/icons/xs-audio.gif
-%%DATADIR%%/icons/xs-back.gif
-%%DATADIR%%/icons/xs-base.gif
-%%DATADIR%%/icons/xs-bin.gif
-%%DATADIR%%/icons/xs-dir.gif
-%%DATADIR%%/icons/xs-gif.gif
-%%DATADIR%%/icons/xs-html.gif
-%%DATADIR%%/icons/xs-image.gif
-%%DATADIR%%/icons/xs-jpeg.gif
-%%DATADIR%%/icons/xs-ps.gif
-%%DATADIR%%/icons/xs-tar.gif
-%%DATADIR%%/icons/xs-txt.gif
-%%DATADIR%%/icons/xs-unknown.gif
-%%DATADIR%%/icons/xs-video.gif
-%%DATADIR%%/icons/xs-zip.gif
-%%DATADIR%%/mime.index
-%%DATADIR%%/script.methods.sample
-@dirrm %%DATADIR%%/contrib
-@dirrm %%DATADIR%%/gfxcount
-@dirrm %%DATADIR%%/icons
-@cwd %%WWWDIR%%
-@dirrmtry cgi-bin
-@dirrmtry htdocs
-@dirrmtry logs
+%%WWWDIR%%/cgi-bin/error
+%%WWWDIR%%/cgi-bin/gfxcount
+%%WWWDIR%%/cgi-bin/imagemap
+%%WWWDIR%%/cgi-bin/xschpass
+%%WWWDIR%%/contrib/SSL-Makefile
+%%WWWDIR%%/contrib/logrotate.sh
+%%WWWDIR%%/contrib/persistent.pl
+%%WWWDIR%%/contrib/wwwstats.pl
+%%WWWDIR%%/contrib/agentstats.pl
+%%WWWDIR%%/compress.methods.sample
+%%WWWDIR%%/gfxcount/digital0.ppm
+%%WWWDIR%%/gfxcount/digital1.ppm
+%%WWWDIR%%/gfxcount/digital2.ppm
+%%WWWDIR%%/gfxcount/digital3.ppm
+%%WWWDIR%%/gfxcount/digital4.ppm
+%%WWWDIR%%/gfxcount/digital5.ppm
+%%WWWDIR%%/gfxcount/digital6.ppm
+%%WWWDIR%%/gfxcount/digital7.ppm
+%%WWWDIR%%/gfxcount/digital8.ppm
+%%WWWDIR%%/gfxcount/digital9.ppm
+%%WWWDIR%%/gfxcount/large0.ppm
+%%WWWDIR%%/gfxcount/large1.ppm
+%%WWWDIR%%/gfxcount/large2.ppm
+%%WWWDIR%%/gfxcount/large3.ppm
+%%WWWDIR%%/gfxcount/large4.ppm
+%%WWWDIR%%/gfxcount/large5.ppm
+%%WWWDIR%%/gfxcount/large6.ppm
+%%WWWDIR%%/gfxcount/large7.ppm
+%%WWWDIR%%/gfxcount/large8.ppm
+%%WWWDIR%%/gfxcount/large9.ppm
+%%WWWDIR%%/gfxcount/largecol0.ppm
+%%WWWDIR%%/gfxcount/largecol1.ppm
+%%WWWDIR%%/gfxcount/largecol2.ppm
+%%WWWDIR%%/gfxcount/largecol3.ppm
+%%WWWDIR%%/gfxcount/largecol4.ppm
+%%WWWDIR%%/gfxcount/largecol5.ppm
+%%WWWDIR%%/gfxcount/largecol6.ppm
+%%WWWDIR%%/gfxcount/largecol7.ppm
+%%WWWDIR%%/gfxcount/largecol8.ppm
+%%WWWDIR%%/gfxcount/largecol9.ppm
+%%WWWDIR%%/httpd.conf.sample
+%%WWWDIR%%/icons/xs-audio.gif
+%%WWWDIR%%/icons/xs-back.gif
+%%WWWDIR%%/icons/xs-base.gif
+%%WWWDIR%%/icons/xs-bin.gif
+%%WWWDIR%%/icons/xs-dir.gif
+%%WWWDIR%%/icons/xs-gif.gif
+%%WWWDIR%%/icons/xs-html.gif
+%%WWWDIR%%/icons/xs-image.gif
+%%WWWDIR%%/icons/xs-jpeg.gif
+%%WWWDIR%%/icons/xs-ps.gif
+%%WWWDIR%%/icons/xs-tar.gif
+%%WWWDIR%%/icons/xs-txt.gif
+%%WWWDIR%%/icons/xs-unknown.gif
+%%WWWDIR%%/icons/xs-video.gif
+%%WWWDIR%%/icons/xs-zip.gif
+%%WWWDIR%%/mime.index
+%%WWWDIR%%/script.methods.sample
+@dirrm %%WWWDIR%%/contrib
+@dirrm %%WWWDIR%%/gfxcount
+@dirrm %%WWWDIR%%/icons
+@dirrmtry %%WWWDIR%%/cgi-bin
+@dirrmtry %%WWWDIR%%/htdocs
+@dirrmtry %%WWWDIR%%/logs
