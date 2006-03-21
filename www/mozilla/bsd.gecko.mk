@@ -59,7 +59,7 @@ Gecko_Pre_Include=			bsd.gecko.mk
 #  .include "${.CURDIR}/../../www/mozilla/bsd.gecko.mk"
 #  post-patch:
 #  .if ${GECKO}=="seamonkey"
-#	@${REINPALCE_CMD} -e 's|mozilla-|seamonkey-|' \
+#	@${REINPLACE_CMD} -e 's|mozilla-|seamonkey-|' \
 #		${WRKSRC}/configure
 #  .endif
 
