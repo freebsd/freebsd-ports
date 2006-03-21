@@ -12,11 +12,12 @@ CATEGORIES=	sysutils parallel
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	brooks
 
-MAINTAINER=	brooks@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	Sun Grid Engine, a batch queueing system
 
 DEPRECATED=	SGE 5.3 is no longer maintained. \
 		Please consider sysutils/sge instead
+EXPIRATION_DATE=	2006-05-01
 
 NO_LATEST_LINK=	yes
 
@@ -25,7 +26,6 @@ USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_MOTIF=	yes
 USE_OPENSSL=	yes
-USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	${SGE_ROOT}/lib/${SGE_ARCH}
 
@@ -65,8 +65,11 @@ MAN8=		sge_commd.8 sge_execd.8 sge_qmaster.8 sge_schedd.8 \
 EXCEPTFILES=	arc_depend_irix.asc arc_depend_solaris.asc man
 
 .include <bsd.port.pre.mk>
+.if ${OSVERSION} > 700013
+BROKEN=		Does not compile with jemalloc
+.endif
 .if ${ARCH} == "alpha"
-BROKEN=		"Does not compile on alpha"
+BROKEN=		Does not compile on alpha
 .endif
 
 post-patch:
