@@ -1,11 +1,32 @@
 #!/bin/sh
 
 if [ "$2" = "POST-INSTALL" ]; then
-	if ! [ -c /dev/dazuko ]; then
-		mknod /dev/dazuko c 33 0
+
+MODULENAME=dazuko
+
+echo -n "Do you want load ${MODULENAME}.ko? [ y/n ]: "
+read LOADMOD
+echo
+
+	if [ x"${LOADMOD}" = x"y" ]; then
+		kldstat -n ${MODULENAME} > /dev/null 2>&1; RESULT=$?
+		if [ ${RESULT} -eq 0 ]; then
+			kldunload -f -n ${MODULENAME}
+		fi
+		kldload ${MODULENAME}
 	fi
-	echo ""
-	echo "To load the module do kldload $1/modules/dazuko.ko"
-	echo ""
+
+echo -n "Do you want load ${MODULENAME}.ko on boot time? [ y/n ]: "
+read BOOTMOD
+echo
+
+	if [ x"${BOOTMOD}" = x"y" ]; then
+		cat /boot/loader.conf | grep ${MODULENAME} > /dev/null 2>&1; RESULT=$?
+		if [ ${RESULT} -eq 0 ]; then
+			sed -i '' -e 's/^${MODULENAME}_load.*/${MODULENAME}_load="YES"/g' /boot/loader.conf
+		else
+		echo "${MODULENAME}_load=\"YES\"" >> /boot/loader.conf
+		fi
+        fi
 fi
 exit 0

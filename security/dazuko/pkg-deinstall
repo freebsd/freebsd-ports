@@ -1,8 +1,27 @@
 if [ ! "$2" = "POST-DEINSTALL" ]; then
-	exit 0
-fi
+	MODULENAME=dazuko
+	FREEBSDVER=`uname -r | cut -f 1 -d .`
 
-echo ""
-echo "If you want to completely remove this package"
-echo "remove /dev/dazuko"
-echo ""
+	kldstat -n ${MODULENAME} > /dev/null 2>&1; RESULT=$?
+	if [ ${RESULT} -eq 0 ]; then
+		kldunload -f -n ${MODULENAME}
+	fi
+
+	if [ "${FREEBSDVER}" = "4" ]; then
+		rm /modules/${MODULENAME}.ko
+	else
+		rm /boot/modules/${MODULENAME}.ko		
+	fi
+	
+	if [ -f /boot/modules/linker.hints ]; then
+		rm /boot/modules/linker.hints
+	fi
+	
+	if [ -f /boot/loader.conf ]; then
+		cat /boot/loader.conf | grep ${MODULENAME} > /dev/null 2>&1; RESULT=$?
+        	if [ ${RESULT} -eq 0 ]; then
+			sed -i '' -e "/^${MODULENAME}_load.*/d" /boot/loader.conf
+		fi
+	fi
+fi
+exit 0
