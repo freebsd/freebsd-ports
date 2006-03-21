@@ -1,25 +1,28 @@
 ===============================================================================
 
-The linux_js kernel module supports analog joysticks through the
-joy(4) driver, which must be loaded as a module or compiled into the
-kernel. USB joysticks are not yet supported.
+To load the linux_js kernel module immediately, type the following commands:
 
-To load the kernel module immediately, type the following command:
-
+	kldload joy		(if PC joystick support is desired)
+	kldload uhid		(if USB joystick support is desired)
 	kldload linux_js
 
-To load the kernel module at boot, add the following line to
+To load the linux_js kernel module at boot, add the following lines to
 /boot/loader.conf:
 
-	linux_js_load="YES"
+	joy_load="YES"		(if PC joystick support is desired)
+	uhid_load="YES"		(if USB joystick support is desired)
 
-To test your joystick(s), type the following command:
+and add the following line to /etc/rc.conf:
 
-	jstest /dev/input/js0
+	linux_js_enable="YES"
 
-To calibrate your joystick(s), type the following command:
+To test a joystick, type the following command:
 
-	jscal -c /dev/input/js0
+	jstest /dev/input/jsXXX
+
+To calibrate a joystick, type the following command:
+
+	jscal -c /dev/input/jsXXX
 
 To save the calibration data at system shutdown and restore it at
 boot, add the following line to /etc/rc.conf:

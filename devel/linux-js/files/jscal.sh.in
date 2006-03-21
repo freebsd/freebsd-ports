@@ -2,10 +2,11 @@
 # $FreeBSD$
 
 # PROVIDE: jscal
+# REQUIRE: linux_js
 # KEYWORD: shutdown
 
 jscal_enable=${jscal_enable-"NO"}
-jscal_device="/dev/input/js0"
+jscal_devices="${jscal_devices:-/dev/input/js*}"
 jscal_state="${jscal_state:-/var/db/jscal-state}"
 
 . %%RC_SUBR%%
@@ -18,13 +19,23 @@ stop_cmd="jscal_stop"
 
 jscal_start()
 {
-	[ -f "$jscal_state" ] && . "$jscal_state" 2>/dev/null
+	echo "Starting ${name}."
+	for d in $jscal_devices; do
+		[ "x$d" = "x$jscal_devices" ] && break
+		statefile="$jscal_state-`basename $d`"
+		[ -f "$statefile" ] && . "$statefile" 2>/dev/null
+	done
 }
 
 jscal_stop()
 {
-	cal=`"$command" -p "$jscal_device" 2>/dev/null` && \
-	echo "$cal" | sed -e "s|^jscal|$command|" > $jscal_state
+	echo "Stopping ${name}."
+	for d in $jscal_devices; do
+		[ "x$d" = "x$jscal_devices" ] && break
+		statefile="$jscal_state-`basename $d`"
+		cal=`"$command" -p "$d" 2>/dev/null` && \
+		echo "$cal" | sed -e "s|^jscal|$command|" > "$statefile"
+	done
 }
 
 load_rc_config $name

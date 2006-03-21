@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	linux-js
-PORTVERSION=	1.0
+PORTVERSION=	2.0
 CATEGORIES=	devel emulators
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	jylefort
@@ -17,8 +17,14 @@ COMMENT=	The Linux joystick interface ported to FreeBSD
 PROGRAMS=	jscal jstest
 
 MAN1=		${PROGRAMS:S|$|.1|}
+MAN4=		linux_js.4
 PORTDOCS=	joystick-api.txt
-USE_RC_SUBR=	jscal.sh
+USE_RCORDER=	jscal.sh linux_js.sh
+
+OPTIONS=	JOY "PC joystick support" on \
+		UHID "USB joystick support" on
+
+MAKE_ENV=	WITHOUT_DEBUG=yes
 
 .include <bsd.port.pre.mk>
 
@@ -30,11 +36,24 @@ IGNORE=		requires FreeBSD 5.3 or superior
 IGNORE=		requires kernel source files
 .endif
 
+.if defined(WITHOUT_JOY)
+MAKE_ENV+=	WITHOUT_JOY=yes
+.endif
+
+.if defined(WITHOUT_UHID)
+MAKE_ENV+=	WITHOUT_UHID=yes
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' ${WRKSRC}/linux_js.4
+
 post-install:
 	${MKDIR} ${PREFIX}/include/linux
 	${INSTALL_DATA} ${WRKSRC}/joystick.h ${PREFIX}/include/linux
 	${INSTALL_PROGRAM} ${PROGRAMS:S|^|${WRKSRC}/|} ${PREFIX}/bin
-	${INSTALL_MAN} ${MAN1:S|^|${WRKSRC}/|} ${PREFIX}/man/man1
+.for s in 1 4
+	${INSTALL_MAN} ${MAN${s}:S|^|${WRKSRC}/|} ${PREFIX}/man/man${s}
+.endfor
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/joystick-api.txt ${DOCSDIR}
