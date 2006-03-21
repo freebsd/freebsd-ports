@@ -56,6 +56,7 @@ OPTIONS=	BZ2	 "bzip2 library support" on \
 		MCRYPT   "MCrypt library support" on \
 		MBSTRING "Multi-byte character-set string support" on
 
+PORT_DBDIR?=	/var/db/ports
 LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
 OPTIONSFILE?=	${PORT_DBDIR}/${LATEST_LINK}/options
 
