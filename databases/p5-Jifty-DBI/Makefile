@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Jifty-DBI
-PORTVERSION=	0.11
+PORTVERSION=	0.16
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Jifty
@@ -30,7 +30,8 @@ BUILD_DEPENDS=	\
 		p5-DateTime-Format-Strptime>0:${PORTSDIR}/devel/p5-DateTime-Format-Strptime \
 		p5-Test-Simple>=0.52:${PORTSDIR}/devel/p5-Test-Simple \
 		p5-DBD-SQLite>0:${PORTSDIR}/databases/p5-DBD-SQLite \
-		p5-DBIx-DBSchema>0:${PORTSDIR}/databases/p5-DBIx-DBSchema
+		p5-DBIx-DBSchema>=0.28:${PORTSDIR}/databases/p5-DBIx-DBSchema \
+		p5-Cache-Memcached>0:${PORTSDIR}/databases/p5-Cache-Memcached
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
@@ -54,6 +55,8 @@ MAN3=	Jifty::DBI.3 \
 	Jifty::DBI::HasFilters.3 \
 	Jifty::DBI::Record.3 \
 	Jifty::DBI::Record::Cachable.3 \
+	Jifty::DBI::Record::Memcached.3 \
+	Jifty::DBI::Schema.3 \
 	Jifty::DBI::SchemaGenerator.3
 
 .include <bsd.port.pre.mk>
