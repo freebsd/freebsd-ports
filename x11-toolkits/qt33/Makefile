@@ -132,16 +132,10 @@ EXTRA_PATCHES=	${PATCHDIR}/0001-dnd_optimization.patch \
 		${PATCHDIR}/0047-fix-kmenu-width.diff \
 		${PATCHDIR}/0048-qclipboard_hack_80072.patch \
 		${PATCHDIR}/0049-qiconview-rubber_on_move.diff \
-		${PATCHDIR}/0051-qtoolbar_77047.patch \
-		${PATCHDIR}/0053-png-gamma-fix.diff \
 		${PATCHDIR}/0056-khotkeys_input_84434.patch \
 		${PATCHDIR}/0059-qpopup_has_mouse.patch \
 		${PATCHDIR}/0060-qpopup_ignore_mousepos.patch \
-		${PATCHDIR}/0061-qscrollview-propagate-horizontal-wheelevent.patch \
-		${PATCHDIR}/0064-fix_gcc4.patch \
-		${PATCHDIR}/0065-fix_werror_with_gcc4.patch \
-		${PATCHDIR}/0066-fcsort2fcmatch.patch \
-		${PATCHDIR}/0067-nofclist.patch
+		${PATCHDIR}/0061-qscrollview-propagate-horizontal-wheelevent.patch
 PKGNAMESUFFIX=	-copy
 COMMENT+=	(+ KDE patches)
 CONFLICTS+=	qt-3.3.*
