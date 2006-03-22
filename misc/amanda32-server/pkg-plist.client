@@ -1,9 +1,9 @@
 @unexec if cmp -s /etc/amandates /dev/null; then rm -f /etc/amandates; fi
-lib/libamanda-2.4.5.so
+lib/libamanda-%%SHLIBVER%%.so
 lib/libamanda.so
 lib/libamanda.la
 lib/libamanda.a
-lib/libamclient-2.4.5.so
+lib/libamclient-%%SHLIBVER%%.so
 lib/libamclient.so
 lib/libamclient.la
 lib/libamclient.a
@@ -19,11 +19,13 @@ libexec/amanda/sendbackup
 libexec/amanda/sendsize
 libexec/amanda/versionsuffix
 sbin/amrecover
+share/amanda/Appendix.txt
 share/amanda/COPYRIGHT
 share/amanda/COPYRIGHT-APACHE
 share/amanda/COPYRIGHT-REGEX
 share/amanda/amadmin.8.txt
 share/amanda/amanda.8.txt
+share/amanda/amanda.conf.5.txt
 share/amanda/amcheck.8.txt
 share/amanda/amcheckdb.8.txt
 share/amanda/amcleanup.8.txt
@@ -54,6 +56,7 @@ share/amanda/historical.txt
 share/amanda/howto-afs.txt
 share/amanda/howto-cygwin.txt
 share/amanda/howto-filedriver.txt
+share/amanda/howto-wrapper.txt
 share/amanda/howtos.txt
 share/amanda/index.txt
 share/amanda/indexing.txt

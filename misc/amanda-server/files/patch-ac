@@ -1,9 +1,9 @@
---- tape-src/Makefile.in.orig	Fri Oct 22 09:12:42 2004
-+++ tape-src/Makefile.in	Mon Nov  8 06:27:54 2004
-@@ -41,7 +41,7 @@
- PRE_UNINSTALL = :
- POST_UNINSTALL = :
+--- tape-src/Makefile.in.orig	Tue Oct 25 06:23:42 2005
++++ tape-src/Makefile.in	Wed Mar 22 12:10:00 2006
+@@ -43,7 +43,7 @@
+ build_triplet = @build@
  host_triplet = @host@
+ target_triplet = @target@
 -sbin_PROGRAMS = ammt$(EXEEXT) amdd$(EXEEXT) amtapetype$(EXEEXT)
 +@WANT_SERVER_TRUE@sbin_PROGRAMS = ammt$(EXEEXT) amdd$(EXEEXT) amtapetype$(EXEEXT)
  EXTRA_PROGRAMS = $(am__EXEEXT_1)
