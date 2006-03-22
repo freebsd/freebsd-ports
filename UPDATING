@@ -6,6 +6,18 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20060322:
+  AFFECTS: users of security/dazuko
+  AUTHOR: ehaupt@FreeBSD.org
+
+  Do not load the module using /boot/loader.conf. It generates a page fault due
+  to a possible dazuko bug.
+
+  You could use /etc/rc.local for loading the module. For example, add the
+  following line to /etc/rc.local:
+
+    /sbin/kldload dazuko
+
 20060319:
   AFFECTS: users of graphics/py-exif
   AUTHOR: lawrance@FreeBSD.org
