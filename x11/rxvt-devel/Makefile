@@ -12,8 +12,8 @@ PORTNAME=	rxvt
 PORTVERSION=	2.7.10
 PORTREVISION=	1
 CATEGORIES+=	x11
-MASTER_SITES=	ftp://ftp.rxvt.org/pub/rxvt/%SUBDIR%/ \
-		ftp://ftp.ics.es.osaka-u.ac.jp/pub/mirrors/rxvt/%SUBDIR%/ \
+MASTER_SITES=	\
+		http://slackware.osuosl.org/slackware_source/xap/rxvt/ \
 		ftp://ftp.fu-berlin.de/unix/X11/terms/rxvt/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. old devel
 PKGNAMESUFFIX=	-devel
