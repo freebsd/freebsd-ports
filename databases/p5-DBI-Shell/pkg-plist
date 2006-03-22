@@ -7,9 +7,9 @@ bin/dbish
 %%SITE_PERL%%/DBI/Shell/FindSqlFile.pm
 %%SITE_PERL%%/DBI/Format/SQLMinus.pm
 %%SITE_PERL%%/DBI/Shell.pm
-@dirrmtry %%SITE_PERL%%/DBI/Shell  
-@dirrmtry %%SITE_PERL%%/DBI/Format 
-@dirrmtry %%SITE_PERL%%/DBI        
-@unexec rm %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBI/Shell/.packlist  2> /dev/null || true
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBI/Shell 
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBI 
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBI/Shell/.packlist
+@dirrmtry %%SITE_PERL%%/DBI/Shell
+@dirrmtry %%SITE_PERL%%/DBI/Format
+@dirrmtry %%SITE_PERL%%/DBI
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBI/Shell
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBI
