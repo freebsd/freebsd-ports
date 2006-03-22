@@ -14,7 +14,7 @@ lib/scilab/README_Unix
 lib/scilab/Version.incl
 lib/scilab/X11_defaults/.cvsignore
 lib/scilab/X11_defaults/README
-lib/scilab/X11_defaults/Xscilab
+%%NOGTK2%%lib/scilab/X11_defaults/Xscilab
 lib/scilab/X11_defaults/scilab.xpm
 lib/scilab/bin/.cvsignore
 lib/scilab/bin/.scicos_pal
@@ -43,6 +43,7 @@ lib/scilab/bin/wgscilabE.mnu
 lib/scilab/bin/wgscilabF.mnu
 lib/scilab/bin/wscilabE.mnu
 lib/scilab/bin/wscilabF.mnu
+%%GTK2%%lib/scilab/bin/zterm
 lib/scilab/config/.cvsignore
 lib/scilab/config/Makecygdll.incl
 lib/scilab/config/Makedll.incl
@@ -10763,7 +10764,7 @@ lib/scilab/routines/xsci/All-extern-x.h
 lib/scilab/routines/xsci/All-extern-x1.h
 lib/scilab/routines/xsci/All-extern.h
 lib/scilab/routines/xsci/All-static.h
-lib/scilab/routines/xsci/Xscilab.ad.h
+%%NOGTK2%%lib/scilab/routines/xsci/Xscilab.ad.h
 lib/scilab/routines/xsci/h_display.h
 lib/scilab/routines/xsci/h_help.ad.h
 lib/scilab/routines/xsci/jpc_defs.h
