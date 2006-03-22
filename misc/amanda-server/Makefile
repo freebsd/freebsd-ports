@@ -6,25 +6,35 @@
 #
 
 PORTNAME?=	${MASTERPORTNAME}
-PORTVERSION=	2.4.5
-PORTREVISION?=	2
+PORTVERSION=	2.4.5p1
+PORTREVISION?=	0
 PORTEPOCH=	1
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	amanda
-DISTFILES=	amanda-${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT?=	The Advanced Maryland Automatic Network Disk Archiver (server)
 
 WRKSRC=		${WRKDIR}/amanda-${PORTVERSION}
 SLAVEDIRS=	misc/amanda-client
 MASTERPORTNAME=	amanda-server
 
+BUILD_DEPENDS=	${LOCALBASE}/bin/gtar:${PORTSDIR}/archivers/gtar
+RUN_DEPENDS=	${LOCALBASE}/bin/gtar:${PORTSDIR}/archivers/gtar
+
 NO_LATEST_LINK=	yes
 USE_AUTOTOOLS=	autoconf:259
 USE_GMAKE=	yes
 PATCH_STRIP=
+CONFIGURE_ARGS=	--libexecdir=${PREFIX}/libexec/amanda \
+		--with-amandahosts --with-fqdn \
+		--with-dump-honor-nodump --with-buffered-dump \
+		--disable-libtool --prefix=${PREFIX} \
+		--with-user=${AMANDA_USER} --with-group=${AMANDA_GROUP} \
+		--with-gnutar-listdir=${AMANDA_GNUTAR_LISTDIR} \
+		--with-gnutar=${LOCALBASE}/bin/gtar
+INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>
 
@@ -33,6 +43,25 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 AMANDA_USER?=		operator
 AMANDA_GROUP?=		operator
 AMANDA_GNUTAR_LISTDIR?=	${PREFIX}/var/amanda/gnutar-lists
+PLIST_SUB=		SHLIBVER=${PORTVERSION}
+
+# amanda-server/amanda-client common part
+.if defined (AMANDA_SERVER)
+CONFIGURE_ARGS+=	--with-index-server=${AMANDA_SERVER}
+CONFIGURE_ARGS+=	--with-tape-server=${AMANDA_SERVER}
+.endif
+
+.if defined (AMANDA_CONFIG)
+CONFIGURE_ARGS+=	--with-config=${AMANDA_CONFIG}
+.endif
+
+.if defined (AMANDA_UDPPORTRANGE)
+CONFIGURE_ARGS+=	--with-udpportrange=${AMANDA_UDPPORTRANGE}
+.endif
+
+.if defined (AMANDA_PORTRANGE)
+CONFIGURE_ARGS+=	--with-portrange=${AMANDA_PORTRANGE}
+.endif
 
 # amanda-server part
 .if !defined(CLIENT_ONLY)
@@ -66,18 +95,10 @@ pre-fetch:
 
 USE_PERL5=	yes
 
-BUILD_DEPENDS+=	${LOCALBASE}/sbin/amrecover:${PORTSDIR}/misc/amanda-client \
-		${LOCALBASE}/bin/gtar:${PORTSDIR}/archivers/gtar
-RUN_DEPENDS+=	${LOCALBASE}/sbin/amrecover:${PORTSDIR}/misc/amanda-client \
-		${LOCALBASE}/bin/gtar:${PORTSDIR}/archivers/gtar
+BUILD_DEPENDS+=	${LOCALBASE}/sbin/amrecover:${PORTSDIR}/misc/amanda-client
+RUN_DEPENDS+=	${LOCALBASE}/sbin/amrecover:${PORTSDIR}/misc/amanda-client
 
-CONFIGURE_ARGS=	--libexecdir=${PREFIX}/libexec/amanda \
-		--with-amandahosts --with-fqdn \
-		--with-dump-honor-nodump --with-buffered-dump \
-		--without-client --disable-libtool --prefix=${PREFIX} \
-		--with-user=${AMANDA_USER} --with-group=${AMANDA_GROUP} \
-		--with-gnutar-listdir=${AMANDA_GNUTAR_LISTDIR} \
-		--with-gnutar=${LOCALBASE}/bin/gtar
+CONFIGURE_ARGS+=--without-client
 
 MAN8=		amadmin.8 amcheck.8 amcheckdb.8 amcleanup.8 amdd.8 \
 		amdump.8 amflush.8 amgetconf.8 amlabel.8 ammt.8 \
@@ -104,25 +125,8 @@ BUILD_DEPENDS+=	mtx:${PORTSDIR}/misc/mtx
 RUN_DEPENDS+=	mtx:${PORTSDIR}/misc/mtx
 .endif
 
-.if defined (AMANDA_SERVER)
-CONFIGURE_ARGS+=	--with-index-server=${AMANDA_SERVER}
-CONFIGURE_ARGS+=	--with-tape-server=${AMANDA_SERVER}
-.endif
-
 .if defined (AMANDA_TAPE)
 CONFIGURE_ARGS+=	--with-tape-device=${AMANDA_TAPE}
-.endif
-
-.if defined (AMANDA_CONFIG)
-CONFIGURE_ARGS+=	--with-config=${AMANDA_CONFIG}
-.endif
-
-.if defined (AMANDA_UDPPORTRANGE)
-CONFIGURE_ARGS+=	--with-udpportrange=${AMANDA_UDPPORTRANGE}
-.endif
-
-.if defined (AMANDA_PORTRANGE)
-CONFIGURE_ARGS+=	--with-portrange=${AMANDA_PORTRANGE}
 .endif
 
 #
@@ -148,6 +152,8 @@ pre-fetch:
 	@${ECHO} ""
 	@${ECHO} "You may use the following build options:"
 	@${ECHO} ""
+	@${ECHO} "    -DWITH_AMANDA_DUMP_SNAPSHOT"
+	@${ECHO} "        Use dump -L to use snapshot"
 	@${ECHO} "    AMANDA_SERVER=server to specify a server name"
 	@${ECHO} "        The default is `uname -n`"
 	@${ECHO} "    AMANDA_CONFIG=config to specify the default configuation"
@@ -169,17 +175,9 @@ pre-fetch:
 	@${ECHO} "        The default is no restriction on UDP ports."
 	@${ECHO} ""
 
-BUILD_DEPENDS+=	${LOCALBASE}/bin/gtar:${PORTSDIR}/archivers/gtar
-RUN_DEPENDS+=	${LOCALBASE}/bin/gtar:${PORTSDIR}/archivers/gtar
+CONFIGURE_ARGS+=--without-server
 
-CONFIGURE_ARGS=	--libexecdir=${PREFIX}/libexec/amanda \
-		--with-amandahosts --with-fqdn \
-		--with-dump-honor-nodump --with-buffered-dump \
-		--without-server --disable-libtool --prefix=${PREFIX} \
-		--with-user=${AMANDA_USER} --with-group=${AMANDA_GROUP} \
-		--with-gnutar-listdir=${AMANDA_GNUTAR_LISTDIR} \
-		--with-gnutar=${LOCALBASE}/bin/gtar
-
+MAN5=		amanda.conf.5
 MAN8=		amanda.8 amrecover.8 amrestore.8
 
 post-install:
@@ -194,21 +192,8 @@ post-install:
 	${TOUCH} /etc/amandates
 	${CHOWN} ${AMANDA_USER}:${AMANDA_GROUP} /etc/amandates
 
-.if defined (AMANDA_SERVER)
-CONFIGURE_ARGS+=	--with-index-server=${AMANDA_SERVER}
-CONFIGURE_ARGS+=	--with-tape-server=${AMANDA_SERVER}
-.endif
-
-.if defined (AMANDA_CONFIG)
-CONFIGURE_ARGS+=	--with-config=${AMANDA_CONFIG}
-.endif
-
-.if defined (AMANDA_UDPPORTRANGE)
-CONFIGURE_ARGS+=	--with-udpportrange=${AMANDA_UDPPORTRANGE}
-.endif
-
-.if defined (AMANDA_PORTRANGE)
-CONFIGURE_ARGS+=	--with-portrange=${AMANDA_PORTRANGE}
+.if defined (WITH_AMANDA_DUMP_SNAPSHOT)
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-sendbackup-dump.c
 .endif
 
 .endif
