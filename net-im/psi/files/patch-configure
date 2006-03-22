@@ -1,6 +1,6 @@
---- configure.orig	Sat Nov 20 16:05:03 2004
-+++ configure	Mon Mar 28 02:12:08 2005
-@@ -94,6 +94,8 @@
+--- configure.orig	Sun Jan  8 05:19:01 2006
++++ configure	Sat Feb  4 14:06:18 2006
+@@ -192,6 +192,8 @@
  			shift
  			;;
  		--help) show_usage; exit ;;
@@ -9,22 +9,21 @@
  		*) show_usage; exit ;;
  	esac
  done
-@@ -882,9 +884,14 @@
+@@ -1055,9 +1057,13 @@
  			"}\n";
  
  		QString extra;
 +		QString pthread_cflags = getenv("PTHREAD_CFLAGS");
 +		QString pthread_ldflags = getenv("PTHREAD_LDFLAGS");
-+
  		if(!path.isEmpty())
  			extra += QString("-L") + path + ' ';
  		extra += QString("-l") + name;
 +		extra += ' ' + pthread_cflags + ' ' + pthread_ldflags + ' ';
-+
++		
  		if(!doCompileAndLink(str, extra))
  			return false;
  		return true;
-@@ -1110,14 +1117,6 @@
+@@ -1287,14 +1293,6 @@
  	echo
  	exit 1;
  fi
@@ -38,4 +37,4 @@
 -rm -f Makefile.tmp
  
  echo
- echo Good, your configure finished.  Now run \'make\'.
+ echo "Good, your configure finished.  Now run 'make'."

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	psi
-PORTVERSION=	0.9.3
-PORTREVISION=	3
+PORTVERSION=	0.10
 CATEGORIES=	net-im
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -30,31 +29,20 @@ CONFIGURE_ENV=	QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++ \
 		KDEDIR=${LOCALBASE}
 CONFIGURE_ARGS=	--prefix=${PREFIX} --qtdir=${X11BASE} \
 		--with-qca-inc=${X11BASE}/include/plugins/qca \
-		--with-qca-lib=${X11BASE}/lib
+		--with-qca-lib=${X11BASE}/lib \
+		--disable-growl --disable-dnotify --disable-ghbnr
 MAKE_ARGS+=	QTDIR=${X11BASE} \
 		QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++
 
-OPTIONS=	KDE "Enable KDE tray support" off
-
-.include <bsd.port.pre.mk>
-
-.if defined(WITH_KDE)
-LIB_DEPENDS+=	kdecore:${PORTSDIR}/x11/kdelibs3
-_NO_KDE_CONFTARGET_HACK=	yes
-PLIST_SUB+=	KDE=""
-.else
-CONFIGURE_ARGS+=	--disable-kde
-PLIST_SUB+=	KDE="@comment "
-.endif
-
-pre-install:
-.if defined(WITH_KDE)
-	@for size in 16x16 32x32 48x48; do \
-	${MKDIR} ${LOCALBASE}/share/icons/hicolor/${size}/apps; \
-	done
-.endif
+PORTDOCS=	README ChangeLog
 
 post-install:
 	${STRIP_CMD} ${PREFIX}/bin/psi
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for i in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+.endfor
+.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
