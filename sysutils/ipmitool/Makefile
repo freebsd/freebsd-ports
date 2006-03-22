@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ipmitool
-PORTVERSION=	1.8.6
-PORTREVISION=	1
+PORTVERSION=	1.8.7
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,9 +16,6 @@ COMMENT=	CLI to manage IPMI systems
 
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
-USE_AUTOTOOLS=	autoconf:259 libtool:15 aclocal:19 automake:19
-# libtool15 installs it's aclocal macros into ${LOCALBASE}/share/aclocal
-ACLOCAL_ARGS=	--acdir=${ACLOCAL_DIR} -I ${LOCALBASE}/share/aclocal
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--enable-intf-lan --enable-intf-lanplus \
@@ -33,16 +29,13 @@ MAN8+=		ipmievd.8
 
 DATAFILES=	bmclanconf ipmi.init.basic ipmi.init.redhat README \
 		collect_data.sh create_rrds.sh create_webpage_compact.sh \
-		create_webpage.sh
+		create_webpage.sh oem_ibm_sel_map ipmievd.init.redhat \
+		ipmievd.init.suse ipmievd.init.debian
 .for f in ${DATAFILES}
 PLIST_FILES+=	share/${PORTNAME}/${f}
 .endfor
 
 .include <bsd.port.pre.mk>
-
-# Silence automake about missing files
-pre-configure:
-	@${TOUCH} ${WRKSRC}/NEWS ${WRKSRC}/INSTALL
 
 # FreeBSD has OpenIPMI-compatible driver, ipmi(4),
 # in 7-current after 2006-02-12. On older systems
