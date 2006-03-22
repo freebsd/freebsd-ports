@@ -1,0 +1,141 @@
+--- configure.orig	Mon Feb 20 19:17:43 2006
++++ configure	Mon Mar  6 21:56:08 2006
+@@ -24315,39 +24315,13 @@
+ fi
+ 
+ 
+-
+-  echo "$as_me:$LINENO: checking have kde" >&5
+-echo $ECHO_N "checking have kde... $ECHO_C" >&6
+-  have_kde=yes
+-
+-# Check whether --with-kde or --without-kde was given.
+-if test "${with_kde+set}" = set; then
+-  withval="$with_kde"
+-
+-     have_kde=$withval
+-
+-fi;
+-
+-  echo "$as_me:$LINENO: result: $have_kde" >&5
+-echo "${ECHO_T}$have_kde" >&6
+-  if test $have_kde != yes; then
+-    kde_qtver=0
+-  else
+-
+-
+-   ac_ext=c
+-ac_cpp='$CPP $CPPFLAGS'
+-ac_compile='$CC -c $CFLAGS $CPPFLAGS conftest.$ac_ext >&5'
+-ac_link='$CC -o conftest$ac_exeext $CFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
+-ac_compiler_gnu=$ac_cv_c_compiler_gnu
+-
+-      echo "$as_me:$LINENO: checking for main in -lutil" >&5
+-echo $ECHO_N "checking for main in -lutil... $ECHO_C" >&6
+-if test "${ac_cv_lib_util_main+set}" = set; then
++   echo "$as_me:$LINENO: checking for main in -lcompat" >&5
++echo $ECHO_N "checking for main in -lcompat... $ECHO_C" >&6
++if test "${ac_cv_lib_compat_main+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lutil  $LIBS"
++LIBS="-lcompat  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -24386,30 +24360,56 @@
+   ac_status=$?
+   echo "$as_me:$LINENO: \$? = $ac_status" >&5
+   (exit $ac_status); }; }; then
+-  ac_cv_lib_util_main=yes
++  ac_cv_lib_compat_main=yes
+ else
+   echo "$as_me: failed program was:" >&5
+ sed 's/^/| /' conftest.$ac_ext >&5
+ 
+-ac_cv_lib_util_main=no
++ac_cv_lib_compat_main=no
+ fi
+ rm -f conftest.err conftest.$ac_objext \
+       conftest$ac_exeext conftest.$ac_ext
+ LIBS=$ac_check_lib_save_LIBS
+ fi
+-echo "$as_me:$LINENO: result: $ac_cv_lib_util_main" >&5
+-echo "${ECHO_T}$ac_cv_lib_util_main" >&6
+-if test $ac_cv_lib_util_main = yes; then
+-  LIBUTIL="-lutil"
++echo "$as_me:$LINENO: result: $ac_cv_lib_compat_main" >&5
++echo "${ECHO_T}$ac_cv_lib_compat_main" >&6
++if test $ac_cv_lib_compat_main = yes; then
++  LIBCOMPAT="-lcompat"
+ fi
+ 
+-   echo "$as_me:$LINENO: checking for main in -lcompat" >&5
+-echo $ECHO_N "checking for main in -lcompat... $ECHO_C" >&6
+-if test "${ac_cv_lib_compat_main+set}" = set; then
++
++  echo "$as_me:$LINENO: checking have kde" >&5
++echo $ECHO_N "checking have kde... $ECHO_C" >&6
++  have_kde=yes
++
++# Check whether --with-kde or --without-kde was given.
++if test "${with_kde+set}" = set; then
++  withval="$with_kde"
++
++     have_kde=$withval
++
++fi;
++
++  echo "$as_me:$LINENO: result: $have_kde" >&5
++echo "${ECHO_T}$have_kde" >&6
++  if test $have_kde != yes; then
++    kde_qtver=0
++  else
++
++
++   ac_ext=c
++ac_cpp='$CPP $CPPFLAGS'
++ac_compile='$CC -c $CFLAGS $CPPFLAGS conftest.$ac_ext >&5'
++ac_link='$CC -o conftest$ac_exeext $CFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
++ac_compiler_gnu=$ac_cv_c_compiler_gnu
++
++      echo "$as_me:$LINENO: checking for main in -lutil" >&5
++echo $ECHO_N "checking for main in -lutil... $ECHO_C" >&6
++if test "${ac_cv_lib_util_main+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lcompat  $LIBS"
++LIBS="-lutil  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -24448,21 +24448,21 @@
+   ac_status=$?
+   echo "$as_me:$LINENO: \$? = $ac_status" >&5
+   (exit $ac_status); }; }; then
+-  ac_cv_lib_compat_main=yes
++  ac_cv_lib_util_main=yes
+ else
+   echo "$as_me: failed program was:" >&5
+ sed 's/^/| /' conftest.$ac_ext >&5
+ 
+-ac_cv_lib_compat_main=no
++ac_cv_lib_util_main=no
+ fi
+ rm -f conftest.err conftest.$ac_objext \
+       conftest$ac_exeext conftest.$ac_ext
+ LIBS=$ac_check_lib_save_LIBS
+ fi
+-echo "$as_me:$LINENO: result: $ac_cv_lib_compat_main" >&5
+-echo "${ECHO_T}$ac_cv_lib_compat_main" >&6
+-if test $ac_cv_lib_compat_main = yes; then
+-  LIBCOMPAT="-lcompat"
++echo "$as_me:$LINENO: result: $ac_cv_lib_util_main" >&5
++echo "${ECHO_T}$ac_cv_lib_util_main" >&6
++if test $ac_cv_lib_util_main = yes; then
++  LIBUTIL="-lutil"
+ fi
+ 
+    kde_have_crypt=

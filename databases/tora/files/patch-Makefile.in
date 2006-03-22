@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Fri Feb 24 00:20:06 2006
++++ Makefile.in	Wed Mar  1 22:32:40 2006
+@@ -786,7 +786,7 @@
+ 
+ # fix for annoying automake naming problems.
+ tora_CXXFLAGS = $(AM_CXXFLAGS)
+-tora_LDADD = $(ORACLE_LIBS) $(@TORA_LINK_OTHERS@)
++tora_LDADD = $(ORACLE_LIBS) $(@TORA_LINK_OTHERS@) $(LIBCOMPAT)
+ @HAVE_ORACLE_TRUE@EXTRA_ORACLE_MONO_SOURCE = tooracleconnection.cpp \
+ @HAVE_ORACLE_TRUE@	tooracleextract.cpp \
+ @HAVE_ORACLE_TRUE@	tooraclesettingui.cpp tooraclesettingui.h

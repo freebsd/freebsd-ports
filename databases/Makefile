@@ -420,6 +420,7 @@
     SUBDIR += tcl-Mysql
     SUBDIR += tdb
     SUBDIR += tinycdb
+    SUBDIR += tora
     SUBDIR += typhoon
     SUBDIR += unixODBC
     SUBDIR += useracc
