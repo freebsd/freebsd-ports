@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nux
-PORTVERSION=	1.4
+PORTVERSION=	1.4.1
 PORTEPOCH=	1
 CATEGORIES=	textproc java
 MASTER_SITES=	http://dsd.lbl.gov/nux-download/releases/
