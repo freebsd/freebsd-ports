@@ -18,7 +18,6 @@ COMMENT=	X utility to translate rgb values into X color names
 LIB_DEPENDS=	Xaw3d:${PORTSDIR}/x11-toolkits/Xaw3d
 
 WRKSRC=		$(WRKDIR)/xcolorsel
-USE_REINPLACE=	yes
 USE_IMAKE=	yes
 USE_XPM=	yes
 MAN1=		xcolorsel.1
