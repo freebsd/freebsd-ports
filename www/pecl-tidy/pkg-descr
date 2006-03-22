@@ -1,0 +1,8 @@
+Tidy HTML Repairing and Parsing.
+
+Tidy is a binding for the Tidy HTML clean and repair utility which
+allows you to clean and manipluate HTML documents.
+
+NOTE: This is the PHP4 version!
+
+WWW: http://pecl.php.net/package/tidy
