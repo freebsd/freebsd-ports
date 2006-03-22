@@ -16,7 +16,7 @@ COMMENT=	Implementation of the SFTP client protocol
 RUN_DEPENDS=	${LOCALBASE}/${SPEC_DIR}/net-ssh-1.0.8.gemspec:${PORTSDIR}/security/rubygem-net-ssh
 
 post-install:
-	@${ECHO} "You may safely ignore any 'Skipping require of dynamic string' messages."
+	@${ECHO_MSG} "You may safely ignore any 'Skipping require of dynamic string' messages."
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/ruby-gems/Makefile.common"
