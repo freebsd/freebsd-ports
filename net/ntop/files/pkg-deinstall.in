@@ -1,0 +1,23 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+case $2 in
+	DEINSTALL)
+		;;
+	POST-DEINSTALL)
+		echo "===> post-deinstallation information for $1"
+		echo ""
+		echo "     Please note that ntop was not completely removed"
+		echo "     from this system:"
+		echo ""
+		echo "     %%DBDIR%%/ntop can be removed if this port will not be"
+		echo "     reinstalled."
+		echo ""
+		;;
+	*)
+		exit 64
+		;;
+esac
+exit 0
