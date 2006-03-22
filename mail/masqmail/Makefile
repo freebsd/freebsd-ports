@@ -9,7 +9,8 @@ PORTNAME=	masqmail
 PORTVERSION=	0.2.20
 PORTREVISION=	1
 CATEGORIES=	mail
-MASTER_SITES=	http://innominate.org/kurth/masqmail/download/
+MASTER_SITES=	http://santinel.bas-net.by/ports/
+#		http://innominate.org/kurth/masqmail/download/
 
 MAINTAINER=	anray@FreeBSD.org
 COMMENT=	Mail server for hosts, not permanently connected to the internet
