@@ -29,13 +29,11 @@ LIB_DEPENDS=	netcdf.1:${PORTSDIR}/science/netcdf
 
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"	\
+USE_GCC=	3.2+
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--enable-static=yes --enable-shared=yes
-
-# Build parameters
-#WRKSRC=		${WRKDIR}/minc-${PORTVERSION}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=	dcm2mnc.1 \
 	ecattominc.1 \
@@ -75,6 +73,6 @@ MAN1=	dcm2mnc.1 \
 MAN3=	ParseArgv.3
 
 post-install:
-	${CAT} ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
