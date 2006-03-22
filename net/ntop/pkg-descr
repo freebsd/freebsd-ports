@@ -2,8 +2,5 @@ ntop is a flexible and feature-rich tool for monitoring and troubleshooting
 local area networks.  It provides command line and web interfaces, the latter
 via an embedded web server.  ntop is based on libpcap.
 
-Author: Luca Deri <deri@ntop.org>
-WWW:    http://www.ntop.org/
-
--- Bill Fumerola  <billf@FreeBSD.org> (original port)
--- Johann Visagie <wjv@FreeBSD.org>   (maintainer since 2.0)
+Author:	Luca Deri <deri@ntop.org>
+WWW:	http://www.ntop.org/

@@ -1,5 +1,6 @@
 @exec mkdir -p %%DBDIR%%/ntop
 bin/ntop
+%%ASDATA%%etc/ntop/AS-list.txt.gz
 etc/ntop/etter.finger.os.gz
 etc/ntop/ntop-cert.pem
 etc/ntop/oui.txt.gz
@@ -15,14 +16,17 @@ lib/liblastSeenPlugin.so
 lib/libmyrrd.so
 lib/libmyrrd-%%SHLIB%%.so
 lib/libmyrrd.a
+lib/libmyrrd.la
 lib/libnetflowPlugin-%%SHLIB%%.so
 lib/libnetflowPlugin.a
 lib/libnetflowPlugin.so
 lib/libntop-%%SHLIB%%.so
 lib/libntop.a
+lib/libntop.la
 lib/libntop.so
 lib/libntopreport-%%SHLIB%%.so
 lib/libntopreport.a
+lib/libntopreport.la
 lib/libntopreport.so
 lib/libpdaPlugin-%%SHLIB%%.so
 lib/libpdaPlugin.a
