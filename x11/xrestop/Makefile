@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	xrestop
-PORTVERSION=	0.3
+PORTVERSION=	0.4
 CATEGORIES=	x11
-MASTER_SITES=	http://www.freedesktop.org/software/${PORTNAME}/
+MASTER_SITES=	http://projects.o-hand.com/sources/${PORTNAME}/
 
 MAINTAINER=	bland@FreeBSD.org
 COMMENT=	X11 server side resource usage statistics monitor
