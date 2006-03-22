@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	${MASTERPORTNAME:S/-server/-client/g}
+PKGNAMESUFFIX=	-client
 PORTREVISION=	1
 
 COMMENT=	The Advanced Maryland Automatic Network Disk Archiver (client)
