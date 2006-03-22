@@ -8,7 +8,7 @@
 PORTNAME=	bonk
 PORTVERSION=	0.6
 CATEGORIES=	audio
-MASTER_SITES=	http://yoyo.cc.monash.edu.au/~pfh/bonk/
+MASTER_SITES=	http://www.logarithmic.net/pfh-files/bonk/
 
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	Lossy/lossless audio compressor
