@@ -6,18 +6,22 @@
 #
 
 PORTNAME=	saxon
-PORTVERSION=	8.6.1
+PORTVERSION=	8.7
 PORTEPOCH=	1
 CATEGORIES=	textproc java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	saxon
 PKGNAMESUFFIX=	-devel
-DISTNAME=	${PORTNAME}b${PORTVERSION:S,.,-,g}
+DISTNAME=	${PORTNAME}b${PORTVERSION:S,.,-,g}j \
+		${PORTNAME}-resources${PORTVERSION:S,.,-,g}
 
 MAINTAINER=	hq@FreeBSD.org
 COMMENT=	An XSLT 2.0 / XPath 2.0 / XQuery 1.0 processor for Java
 
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
+
+OPTIONS=	JDOM "Install Jdom support" off \
+		XOM "Install XOM support" off
 
 USE_ZIP=	yes
 USE_JAVA=	yes
@@ -27,10 +31,22 @@ NO_BUILD=	yes
 
 CONFLICTS=	saxon-6.*
 
-JARFILES=	saxon8-sql.jar saxon8.jar
+JARFILES=	saxon8-sql.jar saxon8.jar saxon8-xpath.jar saxon8-dom.jar
 PLIST_FILES+=	${JARFILES:S,^,%%JAVAJARDIR%%/,} bin/saxon bin/saxon-xquery
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_JDOM)
+JARFILES+=	saxon8-jdom.jar
+RUN_DEPENDS+=	${JAVALIBDIR}/jdom.jar:${PORTSDIR}/java/jdom
+.endif
+
+.if defined(WITH_XOM)
+JARFILES+=	saxon8-xom.jar
+RUN_DEPENDS+=	${JAVALIBDIR}/xom.jar:${PORTSDIR}/textproc/xom
 .endif
 
 SUB_FILES=	saxon.sh
@@ -71,4 +87,4 @@ post-install:
 		${SED} -ne 's,^${WRKSRC}/samples,@dirrm ${EXAMPLESDIR:S,${PREFIX}/,,},p' >> ${TMPPLIST}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
