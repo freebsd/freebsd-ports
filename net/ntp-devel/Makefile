@@ -11,7 +11,7 @@ PORTREVISION=	${YEAR}${MONTH}${DAY}
 CATEGORIES=	net ipv6
 YEAR=		2006
 MONTH=		03
-DAY=		21
+DAY=		22
 SNAPSHOT_DIR=	snapshots/ntp-dev/${YEAR}/${MONTH}
 MASTER_SITES=	ftp://ftp.udel.edu/pub/ntp/ntp4/${SNAPSHOT_DIR}/ \
 		http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/${SNAPSHOT_DIR}/ \
