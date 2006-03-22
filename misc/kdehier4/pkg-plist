@@ -165,7 +165,7 @@ share/icons/crystalsvg/scalable/actions/.keep_me
 share/icons/crystalsvg/scalable/apps/.keep_me
 share/icons/crystalsvg/scalable/devices/.keep_me
 share/icons/crystalsvg/scalable/filesystems/.keep_me
-share/icons/crystalsvg/scalable/mimetype/.keep_me
+share/icons/crystalsvg/scalable/mimetypes/.keep_me
 share/icons/hicolor/.keep_me
 share/icons/hicolor/128x128/.keep_me
 share/icons/hicolor/128x128/actions/.keep_me
@@ -208,7 +208,7 @@ share/icons/hicolor/scalable/actions/.keep_me
 share/icons/hicolor/scalable/apps/.keep_me
 share/icons/hicolor/scalable/devices/.keep_me
 share/icons/hicolor/scalable/filesystems/.keep_me
-share/icons/hicolor/scalable/mimetype/.keep_me
+share/icons/hicolor/scalable/mimetypes/.keep_me
 share/icons/locolor/.keep_me
 share/icons/locolor/128x128/.keep_me
 share/icons/locolor/128x128/actions/.keep_me
@@ -321,7 +321,7 @@ share/wallpapers/.keep_me
 @dirrm share/icons/locolor/128x128/actions
 @dirrm share/icons/locolor/128x128
 @dirrm share/icons/locolor
-@dirrm share/icons/hicolor/scalable/mimetype
+@dirrm share/icons/hicolor/scalable/mimetypes
 @dirrm share/icons/hicolor/scalable/filesystems
 @dirrm share/icons/hicolor/scalable/devices
 @dirrm share/icons/hicolor/scalable/apps
@@ -364,7 +364,7 @@ share/wallpapers/.keep_me
 @dirrm share/icons/hicolor/128x128/actions
 @dirrm share/icons/hicolor/128x128
 @dirrm share/icons/hicolor
-@dirrm share/icons/crystalsvg/scalable/mimetype
+@dirrm share/icons/crystalsvg/scalable/mimetypes
 @dirrm share/icons/crystalsvg/scalable/filesystems
 @dirrm share/icons/crystalsvg/scalable/devices
 @dirrm share/icons/crystalsvg/scalable/apps

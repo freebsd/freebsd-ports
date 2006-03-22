@@ -506,7 +506,7 @@ share/icons/crystalsvg/scalable/actions
 share/icons/crystalsvg/scalable/apps
 share/icons/crystalsvg/scalable/devices
 share/icons/crystalsvg/scalable/filesystems
-share/icons/crystalsvg/scalable/mimetype
+share/icons/crystalsvg/scalable/mimetypes
 share/icons/hicolor
 share/icons/hicolor/128x128
 share/icons/hicolor/128x128/actions
@@ -549,7 +549,7 @@ share/icons/hicolor/scalable/actions
 share/icons/hicolor/scalable/apps
 share/icons/hicolor/scalable/devices
 share/icons/hicolor/scalable/filesystems
-share/icons/hicolor/scalable/mimetype
+share/icons/hicolor/scalable/mimetypes
 share/icons/locolor
 share/icons/locolor/128x128
 share/icons/locolor/128x128/actions
