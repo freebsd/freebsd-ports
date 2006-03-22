@@ -3,7 +3,6 @@ bin/psi
 %%DATADIR%%/README
 %%DATADIR%%/certs/README
 %%DATADIR%%/certs/rootcert.xml
-%%DATADIR%%/designer/libpsiwidgets.so
 %%DATADIR%%/iconsets/emoticons/README
 %%DATADIR%%/iconsets/emoticons/default/angry.png
 %%DATADIR%%/iconsets/emoticons/default/bat.png
@@ -44,18 +43,14 @@ bin/psi
 %%DATADIR%%/iconsets/emoticons/default/wink.png
 %%DATADIR%%/iconsets/emoticons/default/yes.png
 %%DATADIR%%/iconsets/roster/README
-%%DATADIR%%/iconsets/roster/crystal_aim.jisp
-%%DATADIR%%/iconsets/roster/crystal_icq.jisp
-%%DATADIR%%/iconsets/roster/crystal_msn.jisp
-%%DATADIR%%/iconsets/roster/crystal_roster.jisp
-%%DATADIR%%/iconsets/roster/crystal_transport.jisp
-%%DATADIR%%/iconsets/roster/crystal_yahoo.jisp
-%%DATADIR%%/iconsets/roster/aim/away.png
-%%DATADIR%%/iconsets/roster/aim/dnd.png
-%%DATADIR%%/iconsets/roster/aim/icondef.xml
-%%DATADIR%%/iconsets/roster/aim/offline.png
-%%DATADIR%%/iconsets/roster/aim/online.png
-%%DATADIR%%/iconsets/roster/aim/xa.png
+%%DATADIR%%/iconsets/roster/crystal-aim.jisp
+%%DATADIR%%/iconsets/roster/crystal-gadu.jisp
+%%DATADIR%%/iconsets/roster/crystal-icq.jisp
+%%DATADIR%%/iconsets/roster/crystal-msn.jisp
+%%DATADIR%%/iconsets/roster/crystal-roster.jisp
+%%DATADIR%%/iconsets/roster/crystal-service.jisp
+%%DATADIR%%/iconsets/roster/crystal-sms.jisp
+%%DATADIR%%/iconsets/roster/crystal-yahoo.jisp
 %%DATADIR%%/iconsets/roster/default/ask.png
 %%DATADIR%%/iconsets/roster/default/away.png
 %%DATADIR%%/iconsets/roster/default/chat.png
@@ -76,69 +71,10 @@ bin/psi
 %%DATADIR%%/iconsets/roster/default/perr.png
 %%DATADIR%%/iconsets/roster/default/system.png
 %%DATADIR%%/iconsets/roster/default/xa.png
-%%DATADIR%%/iconsets/roster/gadugadu/away.png
-%%DATADIR%%/iconsets/roster/gadugadu/icondef.xml
-%%DATADIR%%/iconsets/roster/gadugadu/invisible.png
-%%DATADIR%%/iconsets/roster/gadugadu/offline.png
-%%DATADIR%%/iconsets/roster/gadugadu/online.png
-%%DATADIR%%/iconsets/roster/icq/away.png
-%%DATADIR%%/iconsets/roster/icq/chat.png
-%%DATADIR%%/iconsets/roster/icq/dnd.png
-%%DATADIR%%/iconsets/roster/icq/icondef.xml
-%%DATADIR%%/iconsets/roster/icq/invisible.png
-%%DATADIR%%/iconsets/roster/icq/offline.png
-%%DATADIR%%/iconsets/roster/icq/online.png
-%%DATADIR%%/iconsets/roster/icq/xa.png
-%%DATADIR%%/iconsets/roster/lightbulb/away.png
-%%DATADIR%%/iconsets/roster/lightbulb/chat.png
-%%DATADIR%%/iconsets/roster/lightbulb/dnd.png
-%%DATADIR%%/iconsets/roster/lightbulb/ffc.png
-%%DATADIR%%/iconsets/roster/lightbulb/groupclose.png
-%%DATADIR%%/iconsets/roster/lightbulb/groupempty.png
-%%DATADIR%%/iconsets/roster/lightbulb/groupopen.png
-%%DATADIR%%/iconsets/roster/lightbulb/icondef.xml
-%%DATADIR%%/iconsets/roster/lightbulb/invisible.png
-%%DATADIR%%/iconsets/roster/lightbulb/message.png
-%%DATADIR%%/iconsets/roster/lightbulb/offline.png
-%%DATADIR%%/iconsets/roster/lightbulb/online.png
-%%DATADIR%%/iconsets/roster/lightbulb/system.png
-%%DATADIR%%/iconsets/roster/lightbulb/xa.png
-%%DATADIR%%/iconsets/roster/msn/away.png
-%%DATADIR%%/iconsets/roster/msn/dnd.png
-%%DATADIR%%/iconsets/roster/msn/icondef.xml
-%%DATADIR%%/iconsets/roster/msn/offline.png
-%%DATADIR%%/iconsets/roster/msn/online.png
-%%DATADIR%%/iconsets/roster/sms/away.png
-%%DATADIR%%/iconsets/roster/sms/dnd.png
-%%DATADIR%%/iconsets/roster/sms/icondef.xml
-%%DATADIR%%/iconsets/roster/sms/offline.png
-%%DATADIR%%/iconsets/roster/sms/online.png
-%%DATADIR%%/iconsets/roster/sms/xa.png
-%%DATADIR%%/iconsets/roster/stellar-icq/ask.png
-%%DATADIR%%/iconsets/roster/stellar-icq/away.png
-%%DATADIR%%/iconsets/roster/stellar-icq/dnd.png
-%%DATADIR%%/iconsets/roster/stellar-icq/ffc.png
-%%DATADIR%%/iconsets/roster/stellar-icq/icondef.xml
-%%DATADIR%%/iconsets/roster/stellar-icq/invisible.png
-%%DATADIR%%/iconsets/roster/stellar-icq/noauth.png
-%%DATADIR%%/iconsets/roster/stellar-icq/offline.png
-%%DATADIR%%/iconsets/roster/stellar-icq/online.png
-%%DATADIR%%/iconsets/roster/stellar-icq/xa.png
-%%DATADIR%%/iconsets/roster/transport/away.png
-%%DATADIR%%/iconsets/roster/transport/dnd.png
-%%DATADIR%%/iconsets/roster/transport/icondef.xml
-%%DATADIR%%/iconsets/roster/transport/offline.png
-%%DATADIR%%/iconsets/roster/transport/online.png
-%%DATADIR%%/iconsets/roster/transport/xa.png
-%%DATADIR%%/iconsets/roster/yahoo/away.png
-%%DATADIR%%/iconsets/roster/yahoo/dnd.png
-%%DATADIR%%/iconsets/roster/yahoo/icondef.xml
-%%DATADIR%%/iconsets/roster/yahoo/offline.png
-%%DATADIR%%/iconsets/roster/yahoo/online.png
-%%DATADIR%%/iconsets/roster/yahoo/xa.png
 %%DATADIR%%/iconsets/system/README
-%%DATADIR%%/iconsets/system/crystal_system.jisp
 %%DATADIR%%/iconsets/system/default/account.png
+%%DATADIR%%/iconsets/system/default/advanced.png
+%%DATADIR%%/iconsets/system/default/appearance.png
 %%DATADIR%%/iconsets/system/default/add.png
 %%DATADIR%%/iconsets/system/default/arrow_down.png
 %%DATADIR%%/iconsets/system/default/arrow_left.png
@@ -149,16 +85,12 @@ bin/psi
 %%DATADIR%%/iconsets/system/default/changeacc.png
 %%DATADIR%%/iconsets/system/default/chatclear.png
 %%DATADIR%%/iconsets/system/default/close.png
+%%DATADIR%%/iconsets/system/default/closetab.png
 %%DATADIR%%/iconsets/system/default/configure_toolbars.png
 %%DATADIR%%/iconsets/system/default/download.png
-%%DATADIR%%/iconsets/system/default/edit.png
-%%DATADIR%%/iconsets/system/default/editclear.png
-%%DATADIR%%/iconsets/system/default/editcopy.png
-%%DATADIR%%/iconsets/system/default/editcut.png
-%%DATADIR%%/iconsets/system/default/editdelete.png
-%%DATADIR%%/iconsets/system/default/editpaste.png
-%%DATADIR%%/iconsets/system/default/edittrash.png
+%%DATADIR%%/iconsets/system/default/disco.png
 %%DATADIR%%/iconsets/system/default/eye_blue.png
+%%DATADIR%%/iconsets/system/default/events.png
 %%DATADIR%%/iconsets/system/default/filemanager.png
 %%DATADIR%%/iconsets/system/default/groupchat.png
 %%DATADIR%%/iconsets/system/default/help.png
@@ -171,7 +103,6 @@ bin/psi
 %%DATADIR%%/iconsets/system/default/info.png
 %%DATADIR%%/iconsets/system/default/jabber.png
 %%DATADIR%%/iconsets/system/default/key.png
-%%DATADIR%%/iconsets/system/default/key2.png
 %%DATADIR%%/iconsets/system/default/key_bad.png
 %%DATADIR%%/iconsets/system/default/key_unknown.png
 %%DATADIR%%/iconsets/system/default/ok.png
@@ -187,6 +118,12 @@ bin/psi
 %%DATADIR%%/iconsets/system/default/remove.png
 %%DATADIR%%/iconsets/system/default/search.png
 %%DATADIR%%/iconsets/system/default/send.png
+%%DATADIR%%/iconsets/system/default/self.png
+%%DATADIR%%/iconsets/system/default/show_away.png
+%%DATADIR%%/iconsets/system/default/show_hidden.png
+%%DATADIR%%/iconsets/system/default/show_offline.png
+%%DATADIR%%/iconsets/system/default/start-chat.png
+%%DATADIR%%/iconsets/system/default/status.png
 %%DATADIR%%/iconsets/system/default/smile.png
 %%DATADIR%%/iconsets/system/default/ssl_no.png
 %%DATADIR%%/iconsets/system/default/ssl_yes.png
@@ -220,39 +157,27 @@ bin/psi
 %%DATADIR%%/sound/offline.wav
 %%DATADIR%%/sound/online.wav
 %%DATADIR%%/sound/send.wav
+share/applications/psi.desktop
+share/icons/hicolor/16x16/apps/psi.png
+share/icons/hicolor/32x32/apps/psi.png
+share/icons/hicolor/48x48/apps/psi.png
 @dirrm %%DATADIR%%/sound
 @dirrm %%DATADIR%%/iconsets/system/default/clients
 @dirrm %%DATADIR%%/iconsets/system/default
 @dirrm %%DATADIR%%/iconsets/system
-@dirrm %%DATADIR%%/iconsets/roster/yahoo
-@dirrm %%DATADIR%%/iconsets/roster/transport
-@dirrm %%DATADIR%%/iconsets/roster/stellar-icq
-@dirrm %%DATADIR%%/iconsets/roster/sms
-@dirrm %%DATADIR%%/iconsets/roster/msn
-@dirrm %%DATADIR%%/iconsets/roster/lightbulb
-@dirrm %%DATADIR%%/iconsets/roster/icq
-@dirrm %%DATADIR%%/iconsets/roster/gadugadu
 @dirrm %%DATADIR%%/iconsets/roster/default
-@dirrm %%DATADIR%%/iconsets/roster/aim
 @dirrm %%DATADIR%%/iconsets/roster
 @dirrm %%DATADIR%%/iconsets/emoticons/default
 @dirrm %%DATADIR%%/iconsets/emoticons
 @dirrm %%DATADIR%%/iconsets
-@dirrm %%DATADIR%%/designer
 @dirrm %%DATADIR%%/certs
 @dirrm %%DATADIR%%
-%%KDE%%@cwd %%LOCALBASE%%
-%%KDE%%share/applnk/Internet/psi.desktop
-%%KDE%%share/icons/hicolor/16x16/apps/psi.png
-%%KDE%%share/icons/hicolor/32x32/apps/psi.png
-%%KDE%%share/icons/hicolor/48x48/apps/psi.png
-%%KDE%%@dirrmtry share/applnk/Internet
-%%KDE%%@dirrmtry share/applnk
-%%KDE%%@dirrmtry share/icons/hicolor/16x16/apps
-%%KDE%%@dirrmtry share/icons/hicolor/16x16
-%%KDE%%@dirrmtry share/icons/hicolor/32x32/apps
-%%KDE%%@dirrmtry share/icons/hicolor/32x32
-%%KDE%%@dirrmtry share/icons/hicolor/48x48/apps
-%%KDE%%@dirrmtry share/icons/hicolor/48x48
-%%KDE%%@dirrmtry share/icons/hicolor
-%%KDE%%@dirrmtry share/icons
+@dirrmtry share/applications
+@dirrmtry share/icons/hicolor/16x16/apps
+@dirrmtry share/icons/hicolor/16x16
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
