@@ -7,6 +7,7 @@
 
 PORTNAME=	liferea
 PORTVERSION=	1.0.8
+PORTREVISION=	1
 CATEGORIES=	net gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	liferea
@@ -15,6 +16,7 @@ MAINTAINER=	pav@FreeBSD.org
 COMMENT=	Simple RSS/RDF feed reader
 
 USE_X_PREFIX=	yes
+USE_GECKO=	mozilla firefox
 USE_GNOME=	gnomeprefix gnomehack libgtkhtml
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -24,31 +26,17 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 MAN1=		liferea.1
 GCONF_SCHEMAS=	liferea.schemas
 
-OPTIONS=	DBUS "Enable dbus support" on
+OPTIONS=	DBUS "Enable dbus support" on \
+		MOZILLA "Use Mozilla for rendering" off
 
 .include <bsd.port.pre.mk>
 
 .ifdef WITH_MOZILLA
-.if ${WITH_MOZILLA}=="mozilla" || ${WITH_MOZILLA}=="yes"
-MOZILLA=	mozilla
-MOZ_BUILD=	mozilla
-.elif ${WITH_MOZILLA}=="mozilla-devel"
-MOZILLA=	mozilla-devel
-MOZ_BUILD=	mozilla
-MOZ_SUFFIX=	-devel
-.elif ${WITH_MOZILLA}=="firefox"
-MOZILLA=	firefox
-MOZ_BUILD=	firefox
-.else
-IGNORE=		: Available options for WITH_MOZILLA are: mozilla mozilla-devel firefox
-.endif
-.endif # WITH_MOZILLA
-
-.ifdef MOZILLA
-BUILD_DEPENDS+=	${X11BASE}/lib/${MOZILLA}/components/libwidget_gtk2.so:${PORTSDIR}/www/${MOZILLA}
-RUN_DEPENDS+=	${X11BASE}/lib/${MOZILLA}/components/libwidget_gtk2.so:${PORTSDIR}/www/${MOZILLA}
+.include "${PORTSDIR}/www/mozilla/bsd.gecko.mk"
+CONFIGURE_ARGS+=--enable-gecko=${GECKO}
 PLIST_SUB=	MOZ=""
 .else
+CONFIGURE_ARGS+=--disable-gecko
 PLIST_SUB=	MOZ="@comment "
 .endif
 
@@ -59,14 +47,16 @@ LIB_DEPENDS+=	dbus-1.2:${PORTSDIR}/devel/dbus
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e 's,/usr/lib/mozilla,${X11BASE}/lib/${MOZ_BUILD},g' \
-		${WRKSRC}/src/liferea
+.ifdef WITH_MOZILLA
+	${REINPLACE_CMD} -e 's,/usr/lib/mozilla,${X11BASE}/lib/${GECKO},g ; \
+		s,%FREEBSD_MOZILLA_HOME%,${X11BASE}/lib/${GECKO},' \
+		${WRKSRC}/src/liferea.in
 	${REINPLACE_CMD} -e 's,firefox-,$$gecko_provider-,g' \
-		-e 's,\(gecko_provider=\).*$$,\1${MOZ_BUILD},' \
-		-e 's,-gtkmozembed,-gtkmozembed${MOZ_SUFFIX},' \
+		-e 's,\(gecko_provider=\).*$$,\1${GECKO},' \
 		-e 's,{print $$1},{print $$2},g' \
 		${WRKSRC}/configure
-	${REINPLACE_CMD} -e 's,%FREEBSD_MOZILLA_HOME%,${X11BASE}/lib/${MOZILLA},' \
-		${WRKSRC}/src/liferea
+	${REINPLACE_CMD} -e 's|gtk_moz_embed_set_comp_path(NULL)|gtk_moz_embed_set_comp_path("${X11BASE}/lib/${GECKO}")|' \
+		${WRKSRC}/src/mozilla/mozembed.c
+.endif
 
 .include <bsd.port.post.mk>

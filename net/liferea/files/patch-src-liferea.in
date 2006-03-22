@@ -1,5 +1,5 @@
---- src/liferea.orig	Fri Mar  3 23:18:13 2006
-+++ src/liferea	Thu Mar 16 17:18:19 2006
+--- src/liferea.in.orig	Sun Mar 19 03:50:55 2006
++++ src/liferea.in	Tue Mar 21 09:56:50 2006
 @@ -22,15 +22,17 @@
  
  look_for_mozilla() {
@@ -27,11 +27,11 @@
  	done
  }
  
-@@ -38,6 +40,7 @@
- 	run_with_mozilla $MOZILLA_FIVE_HOME
+@@ -39,6 +41,7 @@
  fi
  
+ @MOZILLA_LIB_DIR_SEARCH@
 +look_for_mozilla "%FREEBSD_MOZILLA_HOME%/chrome/comm.jar"
- look_for_mozilla "/usr/lib/mozilla"
  look_for_mozilla "/usr/lib/mozilla*/chrome/comm.jar"
+ look_for_mozilla "/usr/lib64/mozilla*/chrome/comm.jar"
  look_for_mozilla "/usr/local/mozilla*/chrome/comm.jar"
