@@ -1,0 +1,11 @@
+--- Makefile.OBJ.in.orig	Tue Mar 21 15:35:41 2006
++++ Makefile.OBJ.in	Tue Mar 21 15:37:45 2006
+@@ -2,7 +2,7 @@
+ ATLASDIR=@ATLAS_DIR@
+ 
+ STD_BLAS=$(SCIDIR)/libs/blas.a  
+-ATLAS_LAPACKBLAS= $(ATLASDIR)/liblapack.a $(ATLASDIR)/libcblas.a $(ATLASDIR)/libf77blas.a $(ATLASDIR)/libatlas.a
++ATLAS_LAPACKBLAS= -L$(ATLASDIR) -lalapack -lcblas -lf77blas -latlas
+ 
+ BLAS=$(@WHICH_BLAS@) 
+ 
