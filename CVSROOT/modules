@@ -12704,6 +12704,7 @@ topless		ports/sysutils/topless
 toppler		ports/games/toppler
 tor		ports/security/tor
 tor-devel		ports/security/tor-devel
+tora		ports/databases/tora
 torcs		ports/games/torcs
 tornado		ports/games/tornado
 torrent		ports/games/torrent
