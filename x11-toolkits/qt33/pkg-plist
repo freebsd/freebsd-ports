@@ -2380,8 +2380,14 @@ translations/qt_de.qm
 translations/qt_es.qm
 translations/qt_fr.qm
 translations/qt_he.qm
+translations/qt_it.qm
+translations/qt_ja.qm
+translations/qt_nb.qm
+translations/qt_pt-br.qm
 translations/qt_ru.qm
 translations/qt_sk.qm
+translations/qt_zh-cn.qm
+translations/qt_zh-tw.qm
 @dirrm translations
 @dirrm share/qt/templates
 @dirrm share/qt/phrasebooks
