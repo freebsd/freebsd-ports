@@ -1,0 +1,5 @@
+TOra is a Toolkit for Oracle which aims to help the DBA or developer of
+database application. Features PL/SQL debugger, SQL worksheet with syntax
+highlighting, DB browser and a comprehensive set of DBA tools.
+
+WWW: http://tora.sourceforge.net/
