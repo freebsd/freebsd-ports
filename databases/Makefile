@@ -305,6 +305,7 @@
     SUBDIR += php4-oracle
     SUBDIR += php4-pgsql
     SUBDIR += php4-sybase_ct
+    SUBDIR += php5-creole
     SUBDIR += php5-dba
     SUBDIR += php5-dbase
     SUBDIR += php5-filepro
