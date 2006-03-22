@@ -18,10 +18,7 @@ COMMENT=	Small, fast malloc library by Doug Lea
 NO_WRKSUBDIR=	yes
 INSTALLS_SHLIB=	yes
 
-USE_DOS2UNIX=${DISTFILES}
-
 do-extract:
-	@${RM} -rf ${WRKDIR}
 	@${MKDIR} ${WRKDIR}
 .for f in ${DISTFILES}
 	${CP} -p ${DISTDIR}/${f} ${WRKDIR}
