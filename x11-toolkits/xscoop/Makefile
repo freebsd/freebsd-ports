@@ -8,7 +8,7 @@
 PORTNAME=	xscoop
 PORTVERSION=	1.0.2
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	ftp://datazygte.com/ports/x11-toolkits/xscoop/ \
+MASTER_SITES=	ftp://ftp.datazygte.com/ports/x11-toolkits/xscoop/ \
 		http://people.tecnik93.com/~itetcu/FreeBSD/others_ports/${PORTNAME}/sources/
 
 MAINTAINER=	rscheckelhoff@yahoo.com
@@ -33,7 +33,7 @@ EXEFILE=	xscoop5
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${EXEFILE} ${PREFIX}/bin/xscoop
 	${INSTALL_MAN} ${WRKSRC}/xscoop.7 ${MAN7PREFIX}/man/man7/xscoop.7
-	${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/xscoop.pdf ${DOCSDIR}/xscoop.pdf
 
 .include <bsd.port.post.mk>
