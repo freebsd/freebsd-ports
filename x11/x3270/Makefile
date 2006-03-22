@@ -42,8 +42,8 @@ pre-install:
 .endif
 
 post-install:
-	gzip -n ${MAN1PREFIX}/man/man1/x3270if.1
-	gzip -n ${MAN1PREFIX}/man/man1/x3270-script.1
-	gzip -n ${MAN5PREFIX}/man/man5/ibm_hosts.5
+	${GZIP_CMD} ${MAN1PREFIX}/man/man1/x3270if.1
+	${GZIP_CMD} ${MAN1PREFIX}/man/man1/x3270-script.1
+	${GZIP_CMD} ${MAN5PREFIX}/man/man5/ibm_hosts.5
 
 .include <bsd.port.mk>
