@@ -482,7 +482,7 @@
     SUBDIR += rtty
     SUBDIR += ruby-log4r
     SUBDIR += ruby-quota
-    SUBDIR += rubygem-switchtower
+    SUBDIR += rubygem-capistrano
     SUBDIR += runit
     SUBDIR += runwhen
     SUBDIR += safecat

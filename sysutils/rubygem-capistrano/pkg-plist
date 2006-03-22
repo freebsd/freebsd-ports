@@ -1,54 +1,54 @@
-bin/switchtower
-%%CACHE_DIR%%/switchtower-%%PORTVERSION%%.gem
-%%GEMS_DIR%%/switchtower-%%PORTVERSION%%/bin/switchtower
-%%GEMS_DIR%%/switchtower-%%PORTVERSION%%/examples/sample.rb
-%%GEMS_DIR%%/switchtower-%%PORTVERSION%%/lib/switchtower.rb
-%%GEMS_DIR%%/switchtower-%%PORTVERSION%%/lib/switchtower/actor.rb
-%%GEMS_DIR%%/switchtower-%%PORTVERSION%%/lib/switchtower/cli.rb
-%%GEMS_DIR%%/switchtower-%%PORTVERSION%%/lib/switchtower/command.rb
-%%GEMS_DIR%%/switchtower-%%PORTVERSION%%/lib/switchtower/configuration.rb
-%%GEMS_DIR%%/switchtower-%%PORTVERSION%%/lib/switchtower/extensions.rb
-%%GEMS_DIR%%/switchtower-%%PORTVERSION%%/lib/switchtower/gateway.rb
-%%GEMS_DIR%%/switchtower-%%PORTVERSION%%/lib/switchtower/generators/rails/deployment/deployment_generator.rb
-%%GEMS_DIR%%/switchtower-%%PORTVERSION%%/lib/switchtower/generators/rails/deployment/templates/deploy.rb
-%%GEMS_DIR%%/switchtower-%%PORTVERSION%%/lib/switchtower/generators/rails/deployment/templates/switchtower.rake
-%%GEMS_DIR%%/switchtower-%%PORTVERSION%%/lib/switchtower/generators/rails/loader.rb
-%%GEMS_DIR%%/switchtower-%%PORTVERSION%%/lib/switchtower/logger.rb
-%%GEMS_DIR%%/switchtower-%%PORTVERSION%%/lib/switchtower/recipes/standard.rb
-%%GEMS_DIR%%/switchtower-%%PORTVERSION%%/lib/switchtower/recipes/templates/maintenance.rhtml
-%%GEMS_DIR%%/switchtower-%%PORTVERSION%%/lib/switchtower/scm/base.rb
-%%GEMS_DIR%%/switchtower-%%PORTVERSION%%/lib/switchtower/scm/baz.rb
-%%GEMS_DIR%%/switchtower-%%PORTVERSION%%/lib/switchtower/scm/bzr.rb
-%%GEMS_DIR%%/switchtower-%%PORTVERSION%%/lib/switchtower/scm/cvs.rb
-%%GEMS_DIR%%/switchtower-%%PORTVERSION%%/lib/switchtower/scm/darcs.rb
-%%GEMS_DIR%%/switchtower-%%PORTVERSION%%/lib/switchtower/scm/perforce.rb
-%%GEMS_DIR%%/switchtower-%%PORTVERSION%%/lib/switchtower/scm/subversion.rb
-%%GEMS_DIR%%/switchtower-%%PORTVERSION%%/lib/switchtower/ssh.rb
-%%GEMS_DIR%%/switchtower-%%PORTVERSION%%/lib/switchtower/transfer.rb
-%%GEMS_DIR%%/switchtower-%%PORTVERSION%%/lib/switchtower/utils.rb
-%%GEMS_DIR%%/switchtower-%%PORTVERSION%%/lib/switchtower/version.rb
-%%GEMS_DIR%%/switchtower-%%PORTVERSION%%/test/actor_test.rb
-%%GEMS_DIR%%/switchtower-%%PORTVERSION%%/test/command_test.rb
-%%GEMS_DIR%%/switchtower-%%PORTVERSION%%/test/configuration_test.rb
-%%GEMS_DIR%%/switchtower-%%PORTVERSION%%/test/fixtures/config.rb
-%%GEMS_DIR%%/switchtower-%%PORTVERSION%%/test/fixtures/custom.rb
-%%GEMS_DIR%%/switchtower-%%PORTVERSION%%/test/scm/cvs_test.rb
-%%GEMS_DIR%%/switchtower-%%PORTVERSION%%/test/scm/subversion_test.rb
-%%GEMS_DIR%%/switchtower-%%PORTVERSION%%/test/ssh_test.rb
-%%GEMS_DIR%%/switchtower-%%PORTVERSION%%/test/utils.rb
-%%SPEC_DIR%%/switchtower-%%PORTVERSION%%.gemspec
-@dirrm %%GEMS_DIR%%/switchtower-%%PORTVERSION%%/test/scm
-@dirrm %%GEMS_DIR%%/switchtower-%%PORTVERSION%%/test/fixtures
-@dirrm %%GEMS_DIR%%/switchtower-%%PORTVERSION%%/test
-@dirrm %%GEMS_DIR%%/switchtower-%%PORTVERSION%%/lib/switchtower/scm
-@dirrm %%GEMS_DIR%%/switchtower-%%PORTVERSION%%/lib/switchtower/recipes/templates
-@dirrm %%GEMS_DIR%%/switchtower-%%PORTVERSION%%/lib/switchtower/recipes
-@dirrm %%GEMS_DIR%%/switchtower-%%PORTVERSION%%/lib/switchtower/generators/rails/deployment/templates
-@dirrm %%GEMS_DIR%%/switchtower-%%PORTVERSION%%/lib/switchtower/generators/rails/deployment
-@dirrm %%GEMS_DIR%%/switchtower-%%PORTVERSION%%/lib/switchtower/generators/rails
-@dirrm %%GEMS_DIR%%/switchtower-%%PORTVERSION%%/lib/switchtower/generators
-@dirrm %%GEMS_DIR%%/switchtower-%%PORTVERSION%%/lib/switchtower
-@dirrm %%GEMS_DIR%%/switchtower-%%PORTVERSION%%/lib
-@dirrm %%GEMS_DIR%%/switchtower-%%PORTVERSION%%/examples
-@dirrm %%GEMS_DIR%%/switchtower-%%PORTVERSION%%/bin
-@dirrm %%GEMS_DIR%%/switchtower-%%PORTVERSION%%
+bin/cap
+%%CACHE_DIR%%/capistrano-%%PORTVERSION%%.gem
+%%GEMS_DIR%%/capistrano-%%PORTVERSION%%/bin/cap
+%%GEMS_DIR%%/capistrano-%%PORTVERSION%%/examples/sample.rb
+%%GEMS_DIR%%/capistrano-%%PORTVERSION%%/lib/capistrano.rb
+%%GEMS_DIR%%/capistrano-%%PORTVERSION%%/lib/capistrano/actor.rb
+%%GEMS_DIR%%/capistrano-%%PORTVERSION%%/lib/capistrano/cli.rb
+%%GEMS_DIR%%/capistrano-%%PORTVERSION%%/lib/capistrano/command.rb
+%%GEMS_DIR%%/capistrano-%%PORTVERSION%%/lib/capistrano/configuration.rb
+%%GEMS_DIR%%/capistrano-%%PORTVERSION%%/lib/capistrano/extensions.rb
+%%GEMS_DIR%%/capistrano-%%PORTVERSION%%/lib/capistrano/gateway.rb
+%%GEMS_DIR%%/capistrano-%%PORTVERSION%%/lib/capistrano/generators/rails/deployment/deployment_generator.rb
+%%GEMS_DIR%%/capistrano-%%PORTVERSION%%/lib/capistrano/generators/rails/deployment/templates/deploy.rb
+%%GEMS_DIR%%/capistrano-%%PORTVERSION%%/lib/capistrano/generators/rails/deployment/templates/capistrano.rake
+%%GEMS_DIR%%/capistrano-%%PORTVERSION%%/lib/capistrano/generators/rails/loader.rb
+%%GEMS_DIR%%/capistrano-%%PORTVERSION%%/lib/capistrano/logger.rb
+%%GEMS_DIR%%/capistrano-%%PORTVERSION%%/lib/capistrano/recipes/standard.rb
+%%GEMS_DIR%%/capistrano-%%PORTVERSION%%/lib/capistrano/recipes/templates/maintenance.rhtml
+%%GEMS_DIR%%/capistrano-%%PORTVERSION%%/lib/capistrano/scm/base.rb
+%%GEMS_DIR%%/capistrano-%%PORTVERSION%%/lib/capistrano/scm/baz.rb
+%%GEMS_DIR%%/capistrano-%%PORTVERSION%%/lib/capistrano/scm/bzr.rb
+%%GEMS_DIR%%/capistrano-%%PORTVERSION%%/lib/capistrano/scm/cvs.rb
+%%GEMS_DIR%%/capistrano-%%PORTVERSION%%/lib/capistrano/scm/darcs.rb
+%%GEMS_DIR%%/capistrano-%%PORTVERSION%%/lib/capistrano/scm/perforce.rb
+%%GEMS_DIR%%/capistrano-%%PORTVERSION%%/lib/capistrano/scm/subversion.rb
+%%GEMS_DIR%%/capistrano-%%PORTVERSION%%/lib/capistrano/ssh.rb
+%%GEMS_DIR%%/capistrano-%%PORTVERSION%%/lib/capistrano/transfer.rb
+%%GEMS_DIR%%/capistrano-%%PORTVERSION%%/lib/capistrano/utils.rb
+%%GEMS_DIR%%/capistrano-%%PORTVERSION%%/lib/capistrano/version.rb
+%%GEMS_DIR%%/capistrano-%%PORTVERSION%%/test/actor_test.rb
+%%GEMS_DIR%%/capistrano-%%PORTVERSION%%/test/command_test.rb
+%%GEMS_DIR%%/capistrano-%%PORTVERSION%%/test/configuration_test.rb
+%%GEMS_DIR%%/capistrano-%%PORTVERSION%%/test/fixtures/config.rb
+%%GEMS_DIR%%/capistrano-%%PORTVERSION%%/test/fixtures/custom.rb
+%%GEMS_DIR%%/capistrano-%%PORTVERSION%%/test/scm/cvs_test.rb
+%%GEMS_DIR%%/capistrano-%%PORTVERSION%%/test/scm/subversion_test.rb
+%%GEMS_DIR%%/capistrano-%%PORTVERSION%%/test/ssh_test.rb
+%%GEMS_DIR%%/capistrano-%%PORTVERSION%%/test/utils.rb
+%%SPEC_DIR%%/capistrano-%%PORTVERSION%%.gemspec
+@dirrm %%GEMS_DIR%%/capistrano-%%PORTVERSION%%/test/scm
+@dirrm %%GEMS_DIR%%/capistrano-%%PORTVERSION%%/test/fixtures
+@dirrm %%GEMS_DIR%%/capistrano-%%PORTVERSION%%/test
+@dirrm %%GEMS_DIR%%/capistrano-%%PORTVERSION%%/lib/capistrano/scm
+@dirrm %%GEMS_DIR%%/capistrano-%%PORTVERSION%%/lib/capistrano/recipes/templates
+@dirrm %%GEMS_DIR%%/capistrano-%%PORTVERSION%%/lib/capistrano/recipes
+@dirrm %%GEMS_DIR%%/capistrano-%%PORTVERSION%%/lib/capistrano/generators/rails/deployment/templates
+@dirrm %%GEMS_DIR%%/capistrano-%%PORTVERSION%%/lib/capistrano/generators/rails/deployment
+@dirrm %%GEMS_DIR%%/capistrano-%%PORTVERSION%%/lib/capistrano/generators/rails
+@dirrm %%GEMS_DIR%%/capistrano-%%PORTVERSION%%/lib/capistrano/generators
+@dirrm %%GEMS_DIR%%/capistrano-%%PORTVERSION%%/lib/capistrano
+@dirrm %%GEMS_DIR%%/capistrano-%%PORTVERSION%%/lib
+@dirrm %%GEMS_DIR%%/capistrano-%%PORTVERSION%%/examples
+@dirrm %%GEMS_DIR%%/capistrano-%%PORTVERSION%%/bin
+@dirrm %%GEMS_DIR%%/capistrano-%%PORTVERSION%%
