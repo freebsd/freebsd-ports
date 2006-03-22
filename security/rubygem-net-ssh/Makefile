@@ -28,7 +28,7 @@ RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/termios.so:${PORTSDIR}/comms/ruby-termios
 .endif
 
 post-install:
-	@${ECHO} "You may safely ignore any 'Skipping require of dynamic string' messages."
+	@${ECHO_MSG} "You may safely ignore any 'Skipping require of dynamic string' messages."
 
 .include "${PORTSDIR}/devel/ruby-gems/Makefile.common"
 .include <bsd.port.post.mk>
