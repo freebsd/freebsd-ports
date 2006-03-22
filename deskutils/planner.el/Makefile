@@ -6,27 +6,30 @@
 #
 
 PORTNAME=	planner.el
-PORTVERSION=	3.31
+PORTVERSION=	3.40
 CATEGORIES=	deskutils elisp
-MASTER_SITES=	http://sacha.free.net.ph/notebook/emacs/planner/ \
+MASTER_SITES=	http://download.gna.org/planner-el/ \
 		http://dryice.name/computer/FreeBSD/distfiles/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
-DISTNAME=	planner-el-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
+DISTNAME=	planner-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 
 MAINTAINER=	dryice@dryice.name
 COMMENT=	PlannerMode is an organizer and day planner for Emacs
 
 USE_EMACS=	yes
+USE_GMAKE=	yes
 EMACS_PORT_NAME?=	emacs21
 
 .if ${EMACS_PORT_NAME} != "emacs21"
 PORTNAMESUFFIX=	${PKGNAMESUFFIX}
 .endif
 
-RUN_DEPENDS+=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/emacs-wiki/emacs-wiki.el:${PORTSDIR}/textproc/emacs-wiki
+BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_SITE_LISPDIR}/muse/muse.el:${PORTSDIR}/textproc/muse
 
 OPTIONS=	BBDB "BBDB support" off
 OPTIONS+=	ERC "ERC support" off
+OPTIONS+=	GNATS "GNATS support" off
+OPTIONS+=	PSVN "PSVN support" off
 OPTIONS+=	VM "View Mail support" off
 OPTIONS+=	W3M "W3M support" off
 OPTIONS+=	WL "Wanderlust support" off
@@ -35,40 +38,79 @@ OPTIONS+=	XTLA "XTLA support" off
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_BBDB)
-RUN_DEPENDS+=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/bbdb/bbdb-com.el:${PORTSDIR}/databases/bbdb
+BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/bbdb/bbdb-com.el:${PORTSDIR}/databases/bbdb
+PLIST_SUB+=	HAS_BBDB=""
+.else
+PLIST_SUB+=	HAS_BBDB="@comment "
 .endif
 
 .if defined(WITH_ERC)
-RUN_DEPENDS+=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/erc/erc.el:${PORTSDIR}/irc/erc
+BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/erc/erc.el:${PORTSDIR}/irc/erc
+PLIST_SUB+=	HAS_ERC=""
+.else
+PLIST_SUB+=	HAS_ERC="@comment "
+.endif
+
+.if defined(WITH_GNATS)
+BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_SITE_LISPDIR}/gnats.el:${PORTSDIR}/databases/gnats4
+PLIST_SUB+=	HAS_GNATS=""
+.else
+PLIST_SUB+=	HAS_GNATS="@comment "
+.endif
+
+.if defined(WITH_PSVN)
+BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/psvn/psvn.el:${PORTSDIR}/devel/psvn
+PLIST_SUB+=	HAS_PSVN=""
+.else
+PLIST_SUB+=	HAS_PSVN="@comment "
 .endif
 
 .if defined(WITH_VM)
-RUN_DEPENDS+=	qp-decode:${PORTSDIR}/mail/vm
+BUILD_DEPENDS+=	qp-decode:${PORTSDIR}/mail/vm
+PLIST_SUB+=	HAS_VM=""
+.else
+PLIST_SUB+=	HAS_VM="@comment "
 .endif
 
 .if defined(WITH_W3M)
-RUN_DEPENDS+=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/w3m/w3m.el:${PORTSDIR}/www/emacs-w3m
+BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/w3m/w3m.el:${PORTSDIR}/www/emacs-w3m
+PLIST_SUB+=	HAS_W3M=""
+.else
+PLIST_SUB+=	HAS_W3M="@comment "
 .endif
 
 .if defined(WITH_WL)
-RUN_DEPENDS+=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/wl/wl.el:${PORTSDIR}/mail/wanderlust
+BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/wl/wl.el:${PORTSDIR}/mail/wanderlust
+PLIST_SUB+=	HAS_WL=""
+.else
+PLIST_SUB+=	HAS_WL="@comment "
 .endif
 
 .if defined(WITH_XTLA)
-RUN_DEPENDS+=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/xtla/xtla.el:${PORTSDIR}/devel/xtla
+BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/xtla/xtla.el:${PORTSDIR}/devel/xtla
+PLIST_SUB+=	HAS_XTLA=""
+.else
+PLIST_SUB+=	HAS_XTLA="@comment "
 .endif
 
-INFO=		planner-el
+RUN_DEPENDS+=	${BUILD_DEPENDS}
+
 LISPDIR=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/planner
 
-do-build:
-	cd ${WRKSRC}; makeinfo --no-split planner-el.texi
+.if !defined(NOPORTDOCS)
+PORTDOCS=	AUTHORS ChangeLog.2004 ChangeLog.2005 ChangeLog.2006 \
+		COMMENTARY NEWS README
+.endif
 
-do-install:
-	${MKDIR} ${LISPDIR}
-.for i in *.el
-	${INSTALL_DATA} ${WRKSRC}/${i} ${LISPDIR}
+pre-build:
+	${CP} ${WRKSRC}/contrib/schedule.el ${WRKSRC}/schedule.el
+
+post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+.for i in ${PORTDOCS}
+	${CP} -R ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/planner-el.info ${PREFIX}/info
+.endif
 
 .include <bsd.port.post.mk>
