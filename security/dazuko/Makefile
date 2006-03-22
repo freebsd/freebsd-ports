@@ -6,6 +6,7 @@
 
 PORTNAME=	dazuko
 PORTVERSION=	2.2.0
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://dazuko.org/files/
 
@@ -18,6 +19,10 @@ SUB_FILES=	pkg-message
 OPTIONS=	EXAMPLEC	"Install C example programs"	on
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700000
+BROKEN=		Currently does not support -CURRENT
+.endif
 
 .if defined(WITH_EXAMPLEC)
 PLIST_FILES=	%%EXAMPLESDIR%%/example %%EXAMPLESDIR%%/example_mt
