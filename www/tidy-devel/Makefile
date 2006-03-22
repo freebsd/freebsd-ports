@@ -7,7 +7,7 @@
 
 PORTNAME?=	tidy
 PORTVERSION=	051026
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://tidy.sourceforge.net/src/%SUBDIR%/	\
 		http://tidy.sourceforge.net/docs/:docs
