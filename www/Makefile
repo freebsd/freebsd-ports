@@ -740,6 +740,7 @@
     SUBDIR += pear-Text_Wiki
     SUBDIR += pecl-APC
     SUBDIR += pecl-pecl_http
+    SUBDIR += pecl-tidy
     SUBDIR += perlbal
     SUBDIR += pglogd
     SUBDIR += photo_gallery
