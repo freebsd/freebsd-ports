@@ -7,24 +7,29 @@
 #  A version of malloc/free/realloc written by Doug Lea and released to the 
 #  public domain. 
 #
-#  preliminary VERSION 2.6.5
+#  preliminary VERSION 2.8.3
 #
 #  working version; unreleased.
 #
+# $FreeBSD$
+#
+
+VER=2.8.3
 
 LIBDIR=${PREFIX}/lib
+INCDIR=${PREFIX}/include/dlmalloc
 
 # for the shared lib stuff
 .if ${PORTOBJFORMAT} == "elf"
-VERSION=2
+VERSION=${VER:R:R}
 .else
-VERSION=2.6
+VERSION=${VER:R}
 .endif
 
 LIBMALLOC=libdlmalloc.a
 LIBSMALLOC=libdlmalloc.so.${VERSION}
 
-SRCS = malloc-2.6.5.c
+SRCS = malloc-${VER}.c
 
 OBJS = $(SRCS:.c=.o)
 SOBJS = $(SRCS:.c=.so)
@@ -61,8 +66,10 @@ clean:
 install:
 	install -c -m 644 ${LIBMALLOC} $(LIBDIR)
 	-$(RANLIB) $(LIBDIR)/${LIBMALLOC}
-	install -c -m 555 ${LIBSMALLOC} $(LIBDIR)
+	install -c -m 444 ${LIBSMALLOC} $(LIBDIR)
 	ln -sf ${LIBSMALLOC} $(LIBDIR)/libdlmalloc.so
+	mkdir -p ${INCDIR}
+	install -c -m 444 malloc-${VER}.h ${INCDIR}/malloc.h
 
 $(OBJS): $(SRCS)
 $(SOBJS): $(SRCS)

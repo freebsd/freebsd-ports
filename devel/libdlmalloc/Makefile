@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	dlmalloc
-PORTVERSION=	2.6.5
+PORTVERSION=	2.8.3
 CATEGORIES=	devel
 MASTER_SITES=	ftp://gee.cs.oswego.edu/pub/misc/  \
 		ftp://ftp.netsw.org/system/libs/memory/optimize/
-DISTFILES=	malloc-2.6.5.c
+DISTFILES=	malloc-${PORTVERSION}.c malloc-${PORTVERSION}.h
 
 MAINTAINER=	roberto@FreeBSD.org
 COMMENT=	Small, fast malloc library by Doug Lea
@@ -18,10 +18,14 @@ COMMENT=	Small, fast malloc library by Doug Lea
 NO_WRKSUBDIR=	yes
 INSTALLS_SHLIB=	yes
 
+USE_DOS2UNIX=${DISTFILES}
+
 do-extract:
 	@${RM} -rf ${WRKDIR}
 	@${MKDIR} ${WRKDIR}
-	${CP} -p ${DISTDIR}/${DISTFILES} ${WRKDIR}
+.for f in ${DISTFILES}
+	${CP} -p ${DISTDIR}/${f} ${WRKDIR}
+.endfor
 	${CP} -p ${FILESDIR}/Makefile ${WRKDIR}
 
 .include <bsd.port.mk>

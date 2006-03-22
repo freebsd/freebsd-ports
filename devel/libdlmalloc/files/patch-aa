@@ -1,15 +1,6 @@
---- malloc-2.6.5.c.orig	Thu Nov 28 06:07:12 1996
-+++ malloc-2.6.5.c	Sun Apr 20 17:25:42 1997
-@@ -221,6 +221,8 @@
- 
- /* Preliminaries */
- 
-+#include <sys/param.h>
-+
- #ifndef __STD_C
- #ifdef __STDC__
- #define __STD_C     1
-@@ -495,7 +497,7 @@
+--- malloc-2.8.3.c.orig	Tue Mar 21 18:15:49 2006
++++ malloc-2.8.3.c	Tue Mar 21 18:19:15 2006
+@@ -1200,7 +1200,7 @@
  #  ifdef _SC_PAGE_SIZE
  #    define malloc_getpagesize sysconf(_SC_PAGE_SIZE)
  #  else
@@ -18,13 +9,3 @@
         extern size_t getpagesize();
  #      define malloc_getpagesize getpagesize()
  #    else
-@@ -789,7 +791,9 @@
- #else /* INTERNAL_LINUX_C_LIB */
- 
- #if __STD_C
-+#    if !(defined(BSD) && (BSD >= 199306))
- extern Void_t*     sbrk(ptrdiff_t);
-+#    endif
- #else
- extern Void_t*     sbrk();
- #endif
