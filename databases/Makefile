@@ -314,6 +314,7 @@
     SUBDIR += php5-mysqli
     SUBDIR += php5-odbc
     SUBDIR += php5-pgsql
+    SUBDIR += php5-propel
     SUBDIR += php5-sqlite
     SUBDIR += php5-sybase_ct
     SUBDIR += phpmyadmin
