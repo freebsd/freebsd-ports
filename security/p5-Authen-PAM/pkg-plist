@@ -5,4 +5,5 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen/PAM/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen/PAM
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Authen/PAM
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Authen
