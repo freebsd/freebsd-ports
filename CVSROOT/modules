@@ -14395,3 +14395,4 @@ ztrack		ports/games/ztrack
 zu-aspell	ports/textproc/zu-aspell
 zziplib		ports/devel/zziplib
 php5-propel	ports/databases/php5-propel
+php5-creole	ports/databases/php5-creole
