@@ -73,7 +73,6 @@ SV_OBJS = \
 .if ${MACHINE_ARCH} == "i386" && !defined(WITHOUT_X86_ASM)
 SV_AS_OBJS = \
 		math.o \
-		sys_x86.o \
 		worlda.o
 .endif
 
