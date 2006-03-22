@@ -1,0 +1,11 @@
+%%SITE_PERL%%/Class/DBI/Plugin/Iterator.pm
+%%SITE_PERL%%/Class/DBI/Plugin/Iterator/Nihongo.pod
+%%SITE_PERL%%/Class/DBI/Plugin/Iterator/mysql.pm
+%%SITE_PERL%%/Class/DBI/Plugin/Iterator/mysql3.pm
+%%SITE_PERL%%/Class/DBI/Plugin/Iterator/mysql4.pm
+%%SITE_PERL%%/Class/DBI/Plugin/Iterator/subquery.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/DBI/Plugin/Iterator/.packlist
+@dirrm %%SITE_PERL%%/Class/DBI/Plugin/Iterator
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/DBI/Plugin/Iterator
+@dirrmtry %%SITE_PERL%%/Class/DBI/Plugin
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/DBI/Plugin
