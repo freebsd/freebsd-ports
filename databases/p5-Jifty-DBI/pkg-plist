@@ -1,29 +1,30 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Jifty/DBI/.packlist
 %%SITE_PERL%%/Jifty/DBI.pm
-%%SITE_PERL%%/Jifty/DBI/Column.pm
-%%SITE_PERL%%/Jifty/DBI/Handle.pm
-%%SITE_PERL%%/Jifty/DBI/Filter.pm
-%%SITE_PERL%%/Jifty/DBI/Record.pm
-%%SITE_PERL%%/Jifty/DBI/HasFilters.pm
-%%SITE_PERL%%/Jifty/DBI/Schema.pm
-%%SITE_PERL%%/Jifty/DBI/SchemaGenerator.pm
 %%SITE_PERL%%/Jifty/DBI/Collection.pm
-%%SITE_PERL%%/Jifty/DBI/Record/Cachable.pm
+%%SITE_PERL%%/Jifty/DBI/Collection/Union.pm
+%%SITE_PERL%%/Jifty/DBI/Collection/Unique.pm
+%%SITE_PERL%%/Jifty/DBI/Column.pm
+%%SITE_PERL%%/Jifty/DBI/Filter.pm
 %%SITE_PERL%%/Jifty/DBI/Filter/DateTime.pm
+%%SITE_PERL%%/Jifty/DBI/Filter/JiftyRecord.pm
 %%SITE_PERL%%/Jifty/DBI/Filter/Truncate.pm
 %%SITE_PERL%%/Jifty/DBI/Filter/base64.pm
 %%SITE_PERL%%/Jifty/DBI/Filter/utf8.pm
-%%SITE_PERL%%/Jifty/DBI/Filter/JiftyRecord.pm
-%%SITE_PERL%%/Jifty/DBI/Collection/Unique.pm
-%%SITE_PERL%%/Jifty/DBI/Collection/Union.pm
-%%SITE_PERL%%/Jifty/DBI/Handle/mysql.pm
+%%SITE_PERL%%/Jifty/DBI/Handle.pm
 %%SITE_PERL%%/Jifty/DBI/Handle/Informix.pm
+%%SITE_PERL%%/Jifty/DBI/Handle/ODBC.pm
+%%SITE_PERL%%/Jifty/DBI/Handle/Oracle.pm
 %%SITE_PERL%%/Jifty/DBI/Handle/Pg.pm
 %%SITE_PERL%%/Jifty/DBI/Handle/SQLite.pm
-%%SITE_PERL%%/Jifty/DBI/Handle/ODBC.pm
 %%SITE_PERL%%/Jifty/DBI/Handle/Sybase.pm
+%%SITE_PERL%%/Jifty/DBI/Handle/mysql.pm
 %%SITE_PERL%%/Jifty/DBI/Handle/mysqlPP.pm
-%%SITE_PERL%%/Jifty/DBI/Handle/Oracle.pm
+%%SITE_PERL%%/Jifty/DBI/HasFilters.pm
+%%SITE_PERL%%/Jifty/DBI/Record.pm
+%%SITE_PERL%%/Jifty/DBI/Record/Cachable.pm
+%%SITE_PERL%%/Jifty/DBI/Record/Memcached.pm
+%%SITE_PERL%%/Jifty/DBI/Schema.pm
+%%SITE_PERL%%/Jifty/DBI/SchemaGenerator.pm
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Jifty/DBI
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Jifty
 @dirrmtry %%SITE_PERL%%/Jifty/DBI/Record
