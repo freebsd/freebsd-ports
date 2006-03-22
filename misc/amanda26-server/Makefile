@@ -5,9 +5,10 @@
 # $FreeBSD$
 #
 
-PORTNAME?=	${MASTERPORTNAME}
+PORTNAME=	amanda
 PORTVERSION=	2.4.5p1
 PORTREVISION?=	0
+PKGNAMESUFFIX?=	-server
 PORTEPOCH=	1
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -18,7 +19,6 @@ COMMENT?=	The Advanced Maryland Automatic Network Disk Archiver (server)
 
 WRKSRC=		${WRKDIR}/amanda-${PORTVERSION}
 SLAVEDIRS=	misc/amanda-client
-MASTERPORTNAME=	amanda-server
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/gtar:${PORTSDIR}/archivers/gtar
 RUN_DEPENDS=	${LOCALBASE}/bin/gtar:${PORTSDIR}/archivers/gtar
