@@ -11598,6 +11598,7 @@ rubygem-memcache-client	ports/databases/rubygem-memcache-client
 rubygem-needle	ports/devel/rubygem-needle
 rubygem-net-sftp	ports/security/rubygem-net-sftp
 rubygem-net-ssh	ports/security/rubygem-net-ssh
+rubygem-capistrano	ports/sysutils/rubygem-capistrano
 rubygem-pdfwriter	ports/print/rubygem-pdfwriter
 rubygem-rails	ports/www/rubygem-rails
 rubygem-rake	ports/devel/rubygem-rake
@@ -11606,7 +11607,6 @@ rubygem-rgl	ports/devel/rubygem-rgl
 rubygem-rscm	ports/devel/rubygem-rscm
 rubygem-snmp	ports/net-mgmt/rubygem-snmp
 rubygem-stream	ports/devel/rubygem-stream
-rubygem-switchtower	ports/sysutils/rubygem-switchtower
 rubygem-syntax	ports/textproc/rubygem-syntax
 rubygem-transactionsimple	ports/devel/rubygem-transactionsimple
 rubyphoto	ports/graphics/rubyphoto
