@@ -21,11 +21,12 @@ read BOOTMOD
 echo
 
 	if [ x"${BOOTMOD}" = x"y" ]; then
-		cat /boot/loader.conf | grep ${MODULENAME} > /dev/null 2>&1; RESULT=$?
+		cat /etc/rc.local | grep ${MODULENAME} > /dev/null 2>&1; RESULT=$?
 		if [ ${RESULT} -eq 0 ]; then
-			sed -i '' -e 's/^${MODULENAME}_load.*/${MODULENAME}_load="YES"/g' /boot/loader.conf
+			sed -i '' -e '/kldload ${MODULENAME}.*/d' /etc/rc.local
+			echo `which kldload` ${MODULENAME} >> /etc/rc.local
 		else
-		echo "${MODULENAME}_load=\"YES\"" >> /boot/loader.conf
+			echo `which kldload` ${MODULENAME} >> /etc/rc.local
 		fi
         fi
 fi
