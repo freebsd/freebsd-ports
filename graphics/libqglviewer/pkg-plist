@@ -15,5 +15,5 @@ include/QGLViewer/vec.h
 lib/libQGLViewer.prl
 lib/libQGLViewer.so
 lib/libQGLViewer.so.2
-lib/libQGLViewer.so.2.1
-lib/libQGLViewer.so.2.1.1
+lib/libQGLViewer.so.2.2
+lib/libQGLViewer.so.2.2.1
