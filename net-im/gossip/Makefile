@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gossip
-PORTVERSION=	0.10.1
+PORTVERSION=	0.10.2
 CATEGORIES=	net-im gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.10
@@ -24,11 +24,20 @@ USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix intlhack gnomehack libgnomeui
 INSTALLS_OMF=	yes
-CONFIGURE_ARGS=	--enable-dbus=yes \
-		--enable-libnotify=no
+CONFIGURE_ARGS=	--enable-dbus=yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 GCONF_SCHEMAS=	gossip.schemas
 
-.include <bsd.port.mk>
+OPTIONS=	NOTIFY "Enable libnotify support" on
+
+.include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_NOTIFY)
+LIB_DEPENDS+=		notify.1:${PORTSDIR}/devel/libnotify
+.else
+CONFIGURE_ARGS+=	--enable-libnotify=no
+.endif
+
+.include <bsd.port.post.mk>
