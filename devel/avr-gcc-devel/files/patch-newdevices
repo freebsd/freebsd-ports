@@ -77,7 +77,7 @@ diff -ur ../gcc-4.1.0.orig/gcc/config/avr/avr.h ./gcc/config/avr/avr.h
 -%{mmcu=atmega16*|mmcu=atmega32*|mmcu=atmega64*|mmcu=atmega128|mmcu=at90can128|mmcu=at94k:-m avr5}\
 -%{mmcu=atmega325|mmcu=atmega3250|mmcu=atmega48|mmcu=atmega88|mmcu=atmega64|mmcu=atmega645|mmcu=atmega6450|mmcu=atmega128|mmcu=at90can128|mmcu=at90can128|mmcu=atmega162|mmcu=atmega165|mmcu=atmega168|mmcu=atmega169: -Tdata 0x800100} "
 +%{mmcu=atmega8*|mmcu=atmega48|mmcu=at90pwm*:-m avr4}\
-+%{mmcu=atmega16*|mmcu=atmega32*|mmcu=atmega406|mmcu=atmega64*|mmcu=atmega128|mmcu=at90can*|mmcu=at90usb*|mmcu=at94k:-m avr5}\
++%{mmcu=atmega16*|mmcu=atmega32*|mmcu=atmega406|mmcu=atmega64*|mmcu=atmega128*|mmcu=at90can*|mmcu=at90usb*|mmcu=at94k:-m avr5}\
 +%{mmcu=atmega324|mmcu=atmega325|mmcu=atmega3250|mmcu=atmega329|mmcu=atmega3290|mmcu=atmega406|mmcu=atmega48|mmcu=atmega88|mmcu=atmega64|mmcu=atmega644|mmcu=atmega645|mmcu=atmega6450|mmcu=atmega649|mmcu=atmega6490|mmcu=atmega128|mmcu=at90can*|mmcu=atmega162|mmcu=atmega164|mmcu=atmega165|mmcu=atmega168|mmcu=atmega169|mmcu=at90pwm*|mmcu=at90usb*: -Tdata 0x800100}\
 +%{mmcu=atmega640|mmcu=atmega1280|mmcu=atmega1281: -Tdata 0x800200} "
  
