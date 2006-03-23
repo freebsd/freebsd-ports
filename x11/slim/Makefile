@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	slim
-PORTVERSION=	1.2.3
-PORTREVISION=	1
+PORTVERSION=	1.2.4
 CATEGORIES=	x11
 MASTER_SITES=	http://download.berlios.de/slim/ \
 		http://depot.fsck.ch/mirror/distfiles/
