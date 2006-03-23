@@ -8,7 +8,8 @@
 PORTNAME=	xkbctrl
 PORTVERSION=	1.0
 CATEGORIES=	x11
-MASTER_SITES=	ftp://ftp.x.org/pub/unsupported/test/Xkb/programs/
+MASTER_SITES=	${MASTER_SITE_XORG}
+MASTER_SITE_SUBDIR=	pub/unsupported/test/Xkb/programs
 DISTFILES=	Imakefile xkbctrl.c
 
 MAINTAINER=	sanpei@FreeBSD.org
@@ -22,8 +23,8 @@ NO_WRKSUBDIR=	yes
 do-extract:
 		@${RM} -rf ${WRKDIR}
 		@${MKDIR} ${WRKDIR}
-		@for file in ${DISTFILES}; do \
-			${CP} ${DISTDIR}/${DIST_SUBDIR}/$${file} ${WRKSRC}; \
+		@for _file in ${DISTFILES}; do \
+			${CP} ${DISTDIR}/${DIST_SUBDIR}/$${_file} ${WRKSRC}; \
 		done
 
 do-install:
