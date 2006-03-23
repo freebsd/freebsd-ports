@@ -20,7 +20,7 @@ dracd_flags=${dracd_flags-""}
 
 name="dracd"
 rcvar=`set_rcvar`
-command="%%PREFIX%%/sbin/rpc.dracd ${dracd_flags}"
+command="%%PREFIX%%/sbin/rpc.dracd"
 
 load_rc_config $name
 run_rc_command "$1"
