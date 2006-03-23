@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	openvanilla-modules
-PORTVERSION=	0.7.1.20050902
-PORTREVISION=	1
+PORTVERSION=	0.7.2.b20060214
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.csie.org/~llwang/	\
 		http://www.infor.org/~llwang/
@@ -30,15 +29,12 @@ OPTIONS=	OVIMArray		"Array Input Module"		on \
 		OVIMPOJ_Holo		"POJ-Holo Input Module"		on \
 		OVIMPhonetic		"Phonetic Input Module"		on \
 		OVIMRoman		"Roman Input Module"		off \
-		OVIMTibetan		"Tibetan Input Module"		on \
+		OVIMTibetan		"Tibetan Input Module"		off \
 		OVIMUnicode		"Unicode Input Module"		off
 
-.include <bsd.port.pre.mk>
+MAKE_ARGS+=	INSTALL_PREFIX=${PREFIX} OV_INCLUDE=${X11BASE}/include
 
-post-patch:
-	@${REINPLACE_CMD} -e  \
-		's|LIBTOOL=.*|LIBTOOL=${LIBTOOL}|;' \
-		${WRKSRC}/Mk/ov.vars.mk
+.include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_OVIMArray)
 PLIST_SUB+=	OVIMArray=""
@@ -70,7 +66,7 @@ PLIST_SUB+=	OVIMRoman=""
 .else
 PLIST_SUB+=	OVIMRoman="@comment "
 .endif
-.if !defined(WITHOUT_OVIMTibetan)
+.if defined(WITH_OVIMTibetan)
 PLIST_SUB+=	OVIMTibetan=""
 .else
 PLIST_SUB+=	OVIMTibetan="@comment "
@@ -83,54 +79,54 @@ PLIST_SUB+=	OVIMUnicode="@comment "
 
 do-build:
 .if !defined(WITHOUT_OVIMArray)
-	@(cd ${WRKSRC}/Modules/OVIMArray; ${SETENV} ${MAKE_ENV} ${GMAKE} all)
+	@(cd ${WRKSRC}/Modules/OVIMArray; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} all)
 .endif
 .if defined(WITH_OVIMBig5)
-	@(cd ${WRKSRC}/Modules/OVIMBig5; ${SETENV} ${MAKE_ENV} ${GMAKE} all)
+	@(cd ${WRKSRC}/Modules/OVIMBig5; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} all)
 .endif
 .if !defined(WITHOUT_OVIMGeneric)
-	@(cd ${WRKSRC}/Modules/OVIMGeneric; ${SETENV} ${MAKE_ENV} ${GMAKE} all)
+	@(cd ${WRKSRC}/Modules/OVIMGeneric; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} all)
 .endif
 .if !defined(WITHOUT_OVIMPOJ_Holo)
-	@(cd ${WRKSRC}/Modules/OVIMPOJ-Holo; ${SETENV} ${MAKE_ENV} ${GMAKE} all)
+	@(cd ${WRKSRC}/Modules/OVIMPOJ-Holo; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} all)
 .endif
 .if !defined(WITHOUT_OVIMPhonetic)
-	@(cd ${WRKSRC}/Modules/OVIMPhonetic; ${SETENV} ${MAKE_ENV} ${GMAKE} all)
+	@(cd ${WRKSRC}/Modules/OVIMPhonetic; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} all)
 .endif
 .if defined(WITH_OVIMRoman)
-	@(cd ${WRKSRC}/Modules/OVIMRoman; ${SETENV} ${MAKE_ENV} ${GMAKE} all)
+	@(cd ${WRKSRC}/Modules/OVIMRoman; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} all)
 .endif
 .if !defined(WITHOUT_OVIMTibetan)
-	@(cd ${WRKSRC}/Modules/OVIMTibetan; ${SETENV} ${MAKE_ENV} ${GMAKE} all)
+	@(cd ${WRKSRC}/Modules/OVIMTibetan; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} all)
 .endif
 .if defined(WITH_OVIMUnicode)
-	@(cd ${WRKSRC}/Modules/OVIMUnicode; ${SETENV} ${MAKE_ENV} ${GMAKE} all)
+	@(cd ${WRKSRC}/Modules/OVIMUnicode; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} all)
 .endif
 
 do-install:
 .if !defined(WITHOUT_OVIMArray)
-	@(cd ${WRKSRC}/Modules/OVIMArray; ${SETENV} ${MAKE_ENV} ${GMAKE} install)
+	@(cd ${WRKSRC}/Modules/OVIMArray; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} install)
 .endif
 .if defined(WITH_OVIMBig5)
-	@(cd ${WRKSRC}/Modules/OVIMBig5; ${SETENV} ${MAKE_ENV} ${GMAKE} install)
+	@(cd ${WRKSRC}/Modules/OVIMBig5; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} install)
 .endif
 .if !defined(WITHOUT_OVIMGeneric)
-	@(cd ${WRKSRC}/Modules/OVIMGeneric; ${SETENV} ${MAKE_ENV} ${GMAKE} install)
+	@(cd ${WRKSRC}/Modules/OVIMGeneric; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} install)
 .endif
 .if !defined(WITHOUT_OVIMPOJ_Holo)
-	@(cd ${WRKSRC}/Modules/OVIMPOJ-Holo; ${SETENV} ${MAKE_ENV} ${GMAKE} install)
+	@(cd ${WRKSRC}/Modules/OVIMPOJ-Holo; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} install)
 .endif
 .if !defined(WITHOUT_OVIMPhonetic)
-	@(cd ${WRKSRC}/Modules/OVIMPhonetic; ${SETENV} ${MAKE_ENV} ${GMAKE} install)
+	@(cd ${WRKSRC}/Modules/OVIMPhonetic; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} install)
 .endif
 .if defined(WITH_OVIMRoman)
-	@(cd ${WRKSRC}/Modules/OVIMRoman; ${SETENV} ${MAKE_ENV} ${GMAKE} install)
+	@(cd ${WRKSRC}/Modules/OVIMRoman; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} install)
 .endif
 .if !defined(WITHOUT_OVIMTibetan)
-	@(cd ${WRKSRC}/Modules/OVIMTibetan; ${SETENV} ${MAKE_ENV} ${GMAKE} install)
+	@(cd ${WRKSRC}/Modules/OVIMTibetan; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} install)
 .endif
 .if defined(WITH_OVIMUnicode)
-	@(cd ${WRKSRC}/Modules/OVIMUnicode; ${SETENV} ${MAKE_ENV} ${GMAKE} install)
+	@(cd ${WRKSRC}/Modules/OVIMUnicode; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} install)
 .endif
 
 .include <bsd.port.post.mk>

@@ -1,8 +1,8 @@
 %%OVIMArray%%lib/openvanilla/OVIMArray.a
 %%OVIMArray%%lib/openvanilla/OVIMArray.la
 %%OVIMArray%%lib/openvanilla/OVIMArray.so
-%%OVIMArray%%lib/openvanilla/OVIMArray/ArrayShortCode.cin
-%%OVIMArray%%lib/openvanilla/OVIMArray/ArraySpecial.cin
+%%OVIMArray%%lib/openvanilla/OVIMArray/array-shortcode.cin
+%%OVIMArray%%lib/openvanilla/OVIMArray/array-special.cin
 %%OVIMArray%%lib/openvanilla/OVIMArray/array30.cin
 %%OVIMBig5%%lib/openvanilla/OVIMBig5.a
 %%OVIMBig5%%lib/openvanilla/OVIMBig5.la
@@ -11,8 +11,11 @@
 %%OVIMGeneric%%lib/openvanilla/OVIMGeneric.la
 %%OVIMGeneric%%lib/openvanilla/OVIMGeneric.so
 %%OVIMGeneric%%lib/openvanilla/OVIMGeneric/cj.cin
-%%OVIMGeneric%%lib/openvanilla/OVIMGeneric/ehq.cin
-%%OVIMGeneric%%lib/openvanilla/OVIMGeneric/iroha.cin
+%%OVIMGeneric%%lib/openvanilla/OVIMGeneric/dayi3.cin
+%%OVIMGeneric%%lib/openvanilla/OVIMGeneric/ehq-symbols.cin
+%%OVIMGeneric%%lib/openvanilla/OVIMGeneric/pinyin.cin
+%%OVIMGeneric%%lib/openvanilla/OVIMGeneric/simplex.cin
+%%OVIMGeneric%%lib/openvanilla/OVIMGeneric/wubizixing.cin
 %%OVIMPOJ_Holo%%lib/openvanilla/OVIMPOJ-Holo.a
 %%OVIMPOJ_Holo%%lib/openvanilla/OVIMPOJ-Holo.la
 %%OVIMPOJ_Holo%%lib/openvanilla/OVIMPOJ-Holo.so
