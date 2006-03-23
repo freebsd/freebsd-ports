@@ -517,7 +517,7 @@
     SUBDIR += squirrelmail-notify-plugin
     SUBDIR += squirrelmail-quota_usage-plugin
     SUBDIR += squirrelmail-vlogin-plugin
-    SUBDIR += squiirelmail-wetteronline-plugin
+    SUBDIR += squirrelmail-wetteronline-plugin
     SUBDIR += sqwebmail
     SUBDIR += ssmtp
     SUBDIR += svnmailer
