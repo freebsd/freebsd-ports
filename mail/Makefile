@@ -167,6 +167,7 @@
     SUBDIR += libspf2-10
     SUBDIR += libsrs
     SUBDIR += libsrs2
+    SUBDIR += libsrs_alt
     SUBDIR += libvmime
     SUBDIR += listmanager
     SUBDIR += lmtp2nntp
