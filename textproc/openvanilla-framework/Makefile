@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openvanilla-framework
-PORTVERSION=	0.7.1.20050902
+PORTVERSION=	0.7.2.b20060214
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.csie.org/~llwang/	\
 		http://www.infor.org/~llwang/
@@ -20,6 +20,6 @@ NO_BUILD=	yes
 
 do-install:
 	@${MKDIR} ${PREFIX}/include/OpenVanilla
-	@${INSTALL_DATA} ${WRKSRC}/Headers/* ${PREFIX}/include/OpenVanilla
+	@${INSTALL_DATA} ${WRKSRC}/Framework/Headers/* ${PREFIX}/include/OpenVanilla
 
 .include <bsd.port.mk>
