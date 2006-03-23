@@ -1,0 +1,6 @@
+This is a complete standalone C implementation of the SRS (Sender
+Rewriting Scheme) and includes a command line utility and daemon,
+test utility and static and dynamic libraries. SRS is a stop-gap
+for users of SPF (Sender Policy Framework).
+
+WWW: http://srs.mirtol.com
