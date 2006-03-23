@@ -1,5 +1,6 @@
+@comment $FreeBSD$
 bin/spegla
-share/examples/spegla/freebsd.org
-share/examples/spegla/spegla.conf
-share/examples/spegla/spegla.sh
-@dirrm share/examples/spegla
+%%EXAMPLESDIR%%/freebsd.org
+%%EXAMPLESDIR%%/spegla.conf
+%%EXAMPLESDIR%%/spegla.sh
+@dirrm %%EXAMPLESDIR%%
