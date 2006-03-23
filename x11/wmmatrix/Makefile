@@ -9,8 +9,7 @@ PORTNAME=	wmmatrix
 PORTVERSION=	0.2
 PORTREVISION=	1
 CATEGORIES=	x11 windowmaker
-MASTER_SITES=	http://nis-www.lanl.gov/~mgh/WindowMaker/ \
-		http://www.cs.mun.ca/~gstarkes/wmaker/dockapps/files/
+MASTER_SITES=	http://www.cs.mun.ca/~gstarkes/wmaker/dockapps/files/
 DISTNAME=	wmMatrix-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
