@@ -13,8 +13,6 @@
     SUBDIR += cgiirc
     SUBDIR += ctrlproxy
     SUBDIR += dancer
-    SUBDIR += dancer-ircd
-    SUBDIR += dancer-services
     SUBDIR += darkbot
     SUBDIR += dcc
     SUBDIR += dircproxy

@@ -1517,8 +1517,6 @@ dalbum		ports/www/dalbum
 damageext	ports/x11/damageext
 danamics	ports/net/danamics
 dancer		ports/irc/dancer
-dancer-ircd	ports/irc/dancer-ircd
-dancer-services	ports/irc/dancer-services
 dangerdeep	ports/games/dangerdeep
 danpei		ports/graphics/danpei
 dansguardian	ports/www/dansguardian
