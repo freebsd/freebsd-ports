@@ -36,8 +36,8 @@ PLIST_DIRS=	lib/bbconf/plugins lib/bbconf
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64"
-BROKEN=		Does not compile on amd64
+.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
+CFLAGS+=	-fPIC -DPIC
 .endif
 
 post-patch:
