@@ -1,4 +1,4 @@
 bin/qrash
-share/qrash/README
-share/qrash/qrash.dat
-@dirrm share/qrash
+%%DATADIR%%/README
+%%DATADIR%%/qrash.dat
+@dirrm %%DATADIR%%
