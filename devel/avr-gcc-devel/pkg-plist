@@ -1,0 +1,88 @@
+avr/bin/c++
+avr/bin/g++
+avr/bin/gcc
+bin/avr-c++
+bin/avr-cpp
+bin/avr-g++
+bin/avr-gcc
+bin/avr-gcc-4.1.0
+bin/avr-gccbug
+lib/gcc/avr/4.1.0/avr3/libgcc.a
+lib/gcc/avr/4.1.0/avr3/libgcov.a
+lib/gcc/avr/4.1.0/avr4/libgcc.a
+lib/gcc/avr/4.1.0/avr4/libgcov.a
+lib/gcc/avr/4.1.0/avr5/libgcc.a
+lib/gcc/avr/4.1.0/avr5/libgcov.a
+lib/gcc/avr/4.1.0/include/README
+lib/gcc/avr/4.1.0/include/fixed
+lib/gcc/avr/4.1.0/include/float.h
+lib/gcc/avr/4.1.0/include/iso646.h
+lib/gcc/avr/4.1.0/include/limits.h
+lib/gcc/avr/4.1.0/include/stdarg.h
+lib/gcc/avr/4.1.0/include/stdbool.h
+lib/gcc/avr/4.1.0/include/stddef.h
+lib/gcc/avr/4.1.0/include/syslimits.h
+lib/gcc/avr/4.1.0/include/unwind.h
+lib/gcc/avr/4.1.0/include/varargs.h
+lib/gcc/avr/4.1.0/install-tools/gsyslimits.h
+lib/gcc/avr/4.1.0/install-tools/include/README
+lib/gcc/avr/4.1.0/install-tools/include/float.h
+lib/gcc/avr/4.1.0/install-tools/include/iso646.h
+lib/gcc/avr/4.1.0/install-tools/include/limits.h
+lib/gcc/avr/4.1.0/install-tools/include/stdarg.h
+lib/gcc/avr/4.1.0/install-tools/include/stdbool.h
+lib/gcc/avr/4.1.0/install-tools/include/stddef.h
+lib/gcc/avr/4.1.0/install-tools/include/unwind.h
+lib/gcc/avr/4.1.0/install-tools/include/varargs.h
+lib/gcc/avr/4.1.0/install-tools/macro_list
+lib/gcc/avr/4.1.0/install-tools/mkheaders.conf
+lib/gcc/avr/4.1.0/libgcc.a
+lib/gcc/avr/4.1.0/libgcov.a
+libexec/gcc/avr/4.1.0/cc1
+libexec/gcc/avr/4.1.0/cc1plus
+libexec/gcc/avr/4.1.0/collect2
+libexec/gcc/avr/4.1.0/install-tools/fix-header
+libexec/gcc/avr/4.1.0/install-tools/fixinc.sh
+libexec/gcc/avr/4.1.0/install-tools/fixincl
+libexec/gcc/avr/4.1.0/install-tools/fixproto
+libexec/gcc/avr/4.1.0/install-tools/mkheaders
+share/locale/be/LC_MESSAGES/cpplib.mo
+share/locale/be/LC_MESSAGES/gcc.mo
+share/locale/ca/LC_MESSAGES/cpplib.mo
+share/locale/ca/LC_MESSAGES/gcc.mo
+share/locale/da/LC_MESSAGES/cpplib.mo
+share/locale/da/LC_MESSAGES/gcc.mo
+share/locale/de/LC_MESSAGES/cpplib.mo
+share/locale/de/LC_MESSAGES/gcc.mo
+share/locale/el/LC_MESSAGES/cpplib.mo
+share/locale/el/LC_MESSAGES/gcc.mo
+share/locale/es/LC_MESSAGES/cpplib.mo
+share/locale/es/LC_MESSAGES/gcc.mo
+share/locale/fr/LC_MESSAGES/cpplib.mo
+share/locale/fr/LC_MESSAGES/gcc.mo
+share/locale/ja/LC_MESSAGES/cpplib.mo
+share/locale/ja/LC_MESSAGES/gcc.mo
+share/locale/nl/LC_MESSAGES/cpplib.mo
+share/locale/nl/LC_MESSAGES/gcc.mo
+share/locale/rw/LC_MESSAGES/cpplib.mo
+share/locale/rw/LC_MESSAGES/gcc.mo
+share/locale/sv/LC_MESSAGES/cpplib.mo
+share/locale/sv/LC_MESSAGES/gcc.mo
+share/locale/tr/LC_MESSAGES/cpplib.mo
+share/locale/tr/LC_MESSAGES/gcc.mo
+share/locale/vi/LC_MESSAGES/cpplib.mo
+share/locale/zh_CN/LC_MESSAGES/cpplib.mo
+share/locale/zh_CN/LC_MESSAGES/gcc.mo
+@dirrm lib/gcc/avr/4.1.0/avr3
+@dirrm lib/gcc/avr/4.1.0/avr4
+@dirrm lib/gcc/avr/4.1.0/avr5
+@dirrm lib/gcc/avr/4.1.0/include
+@dirrm lib/gcc/avr/4.1.0/install-tools/include
+@dirrm lib/gcc/avr/4.1.0/install-tools
+@dirrm lib/gcc/avr/4.1.0
+@dirrm lib/gcc/avr
+@dirrm lib/gcc
+@dirrm libexec/gcc/avr/4.1.0/install-tools
+@dirrm libexec/gcc/avr/4.1.0
+@dirrm libexec/gcc/avr
+@dirrm libexec/gcc

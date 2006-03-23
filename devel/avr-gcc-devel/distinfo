@@ -1,0 +1,6 @@
+MD5 (gcc-core-4.1.0.tar.bz2) = 15efa164579c7cf4a48859ee87d2a1fa
+SHA256 (gcc-core-4.1.0.tar.bz2) = 14d3056034cc7e7f2627f9b911e57041d135fe75b54aa20f9ab40737d5f13f21
+SIZE (gcc-core-4.1.0.tar.bz2) = 16634582
+MD5 (gcc-g++-4.1.0.tar.bz2) = 8b7006a73d62b43f2add695fbbe0584c
+SHA256 (gcc-g++-4.1.0.tar.bz2) = 4fde8de2c03a6af0f712b3f58a96bb32cb6877bcdcfb630cd005b0878ff030d7
+SIZE (gcc-g++-4.1.0.tar.bz2) = 3808683

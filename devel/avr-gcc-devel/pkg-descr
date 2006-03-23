@@ -1,0 +1,21 @@
+FSF gcc-4.x for Atmel AVR cross-development
+
+Included is the basic C++ compiler, although this is only of limited
+use without a libstdc++, and it is little tested.
+
+Supported debugging formats: -gstabs (DWARF-2 not yet working)
+Locally hack added: recognizes 0bXXX binary constants
+
+Locally added support for the following AVR devices:
+
+  ATtiny24/ATtiny44/ATtiny84
+  ATtiny25/ATtiny45/ATtiny85      ATtiny261/ATtiny461/ATtiny861
+  ATmega164/ATmega324/ATmega644
+  ATmega329/ATmega3290/ATmega649/ATmega6490
+  ATmega406
+  ATmega640/ATmega1280/ATmega1281
+  AT90PWM2/AT90PWM3               AT90CAN32/64
+  AT90USB646/647/1286/1287
+
+WWW: http://gcc.gnu.org/
+WWW: http://www.nongnu.org/avr-libc/
