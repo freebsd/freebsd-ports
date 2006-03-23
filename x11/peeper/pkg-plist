@@ -1,3 +1,3 @@
 bin/peeper
-%%PORTDOCS%%share/doc/peeper/README
-%%PORTDOCS%%@dirrm share/doc/peeper
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
