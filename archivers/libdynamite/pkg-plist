@@ -1,7 +1,0 @@
-bin/dynamite
-include/libdynamite.h
-lib/libdynamite.a
-lib/libdynamite.la
-lib/libdynamite.so
-lib/libdynamite.so.0
-share/aclocal/dynamite.m4

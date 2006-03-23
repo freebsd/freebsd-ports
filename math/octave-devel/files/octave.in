@@ -1,8 +1,0 @@
-#!/bin/sh
-#
-# $FreeBSD: /tmp/pcvs/ports/math/octave-devel/files/octave.in,v 1.1 2005-05-26 17:32:40 jylefort Exp $
-
-OCTAVE_EXEC=%%PREFIX%%/bin/octave-%%OCTAVE_VERSION%%
-LD_LIBRARY_PATH=%%PREFIX%%/lib/octave-%%OCTAVE_VERSION%%; export LD_LIBRARY_PATH
-
-exec $OCTAVE_EXEC "$@"

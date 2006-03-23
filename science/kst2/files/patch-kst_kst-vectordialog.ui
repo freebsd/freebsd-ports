@@ -1,9 +1,0 @@
---- kst/kst/vectordialog.ui.orig	Wed Sep 28 10:49:25 2005
-+++ kst/kst/vectordialog.ui	Wed Sep 28 10:49:37 2005
-@@ -248,6 +248,5 @@
-     <includehint>kpushbutton.h</includehint>
-     <includehint>kcombobox.h</includehint>
-     <includehint>klineedit.h</includehint>
--    <includehint>kstdatarange.h</includehint>
- </includehints>
- </UI>

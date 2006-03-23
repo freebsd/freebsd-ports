@@ -1,3 +1,0 @@
-This is a tiny script that gets executed by startkde and sets the XDG_DATA_DIRS
-and XDG_CONFIG_DIRS variables so KDE can pick up GNOME and XFCE-4 applications
-and menus.

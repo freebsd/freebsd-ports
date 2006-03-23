@@ -1,0 +1,20 @@
+--- programs/Xserver/hw/xfree86/common/xf86Init.c.orig	2006-03-17 23:30:10.000000000 +0200
++++ programs/Xserver/hw/xfree86/common/xf86Init.c	2006-03-17 23:29:35.000000000 +0200
+@@ -1376,7 +1376,7 @@
+     }
+   
+   /* First the options that are only allowed for root */
+-  if (getuid() == 0 || geteuid != 0)
++  if (getuid() == 0 || geteuid() != 0)
+   {
+     if (!strcmp(argv[i], "-modulepath"))
+     {
+@@ -1679,7 +1679,7 @@
+   }
+   if (!strcmp(argv[i], "-configure"))
+   {
+-    if (getuid() != 0 && geteuid == 0) {
++    if (getuid() != 0 && geteuid() == 0) {
+ 	ErrorF("The '-configure' option can only be used by root.\n");
+ 	exit(1);
+     }

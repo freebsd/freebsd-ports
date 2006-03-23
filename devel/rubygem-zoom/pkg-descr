@@ -1,6 +1,0 @@
-Ruby/ZOOM provides a Ruby binding to the Z39.50 Object-Orientation Model (ZOOM),
-an abstract object-oriented programming interface to a subset of the services
-specified by the Z39.50 standard, also known as the international standard
-ISO 23950.
-
-WWW: http://ruby-zoom.rubyforge.org/

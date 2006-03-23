@@ -1,9 +1,0 @@
-bin/synce-in-computer-folder
-etc/gnome-vfs-2.0/modules/synce-module.conf
-share/gnome/pixmaps/synce/synce-color.png
-share/gnome/synce/synce-in-computer-folder.sh
-lib/gnome-vfs-2.0/modules/libsyncevfs.a
-lib/gnome-vfs-2.0/modules/libsyncevfs.la
-lib/gnome-vfs-2.0/modules/libsyncevfs.so
-@dirrmtry share/gnome/pixmaps/synce
-@dirrmtry share/gnome/synce

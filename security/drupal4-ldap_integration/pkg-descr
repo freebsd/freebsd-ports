@@ -1,5 +1,0 @@
-The ldap_integration Drupal module allows users to authenticate against
-a LDAP directory.  Additionally, users can read and modify their data in
-the LDAP directory subject to administrative restrictions.
-
-WWW: http://drupal.org/node/15109

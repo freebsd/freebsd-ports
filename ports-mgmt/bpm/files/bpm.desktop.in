@@ -1,9 +1,0 @@
-[Desktop Entry]
-Comment=The BSD Ports Manipulator
-Name=BPM
-Exec=gnomesu %%PREFIX%%/bin/bpm
-Encoding=UTF-8
-Terminal=false
-Type=Application
-Icon=%%PREFIX%%/share/bpm/pixmaps/pkg_48.png
-Categories=Application;System;
