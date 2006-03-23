@@ -1,6 +1,6 @@
 This package contains X11 extension headers and pkgconfig file.
 
-WWW: http://www.freedesktop.org/Software/xlibs
+WWW: http://www.freedesktop.org/wiki/Software/xlibs
 
 - Eric Anholt
 anholt@FreeBSD.org
