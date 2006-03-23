@@ -1,11 +1,4 @@
-include/OpenVanilla/OVCIN.h
-include/OpenVanilla/OVCandidateList.h
-include/OpenVanilla/OVFileHandler.h
-include/OpenVanilla/OVKeySequence.h
 include/OpenVanilla/OVLibrary.h
-include/OpenVanilla/OVPhoneticLib.h
-include/OpenVanilla/OVSQLite3.h
-include/OpenVanilla/OVStringToolKit.h
 include/OpenVanilla/OVUtility.h
 include/OpenVanilla/OpenVanilla.h
 @dirrm include/OpenVanilla
