@@ -6,5 +6,6 @@ bin/sendack2
 bin/sendsyn
 etc/p0f/p0f.fp
 etc/p0f/p0fa.fp
+etc/p0f/p0fo.fp
 etc/p0f/p0fr.fp
 @dirrm etc/p0f
