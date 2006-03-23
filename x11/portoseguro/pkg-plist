@@ -1,4 +1,4 @@
 bin/portoseguro
 bin/portoseguro.conf
-share/doc/portoseguro/README
-@dirrm share/doc/portoseguro
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
