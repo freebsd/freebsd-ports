@@ -10,7 +10,7 @@ PORTREVISION=	5
 CATEGORIES=	x11
 MASTER_SITES=	http://download.berlios.de/segfaultskde/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	itetcu@people.tecnik93.com
 COMMENT=	Quick launcher for Open Office
 
 USE_AUTOTOOLS=	libtool:15
