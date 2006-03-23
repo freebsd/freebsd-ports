@@ -18,7 +18,6 @@ LIB_DEPENDS=	lzxcomp.1:${PORTSDIR}/archivers/liblzxcomp
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAKE_ENV=	PREFIX=${PREFIX}
-USE_REINPLACE=	yes
 
 PLIST_FILES=	bin/hhm
 
