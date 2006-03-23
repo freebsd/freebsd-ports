@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Mail-Sender
-PORTVERSION=	0.8.10
+PORTVERSION=	0.8.13
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Mail
@@ -21,15 +21,16 @@ MAN3=		Mail::Sender.3
 
 .include <bsd.port.pre.mk>
 
+.if ${PERL_LEVEL} < 500600
+IGNORE=		requires perl 5.6.0 or later. Install lang/perl5.8 and try again
+.endif
+
 .if ${PERL_LEVEL} < 500800
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
 RUN_DEPENDS=	${BUILD_DEPENDS}
 .endif
 
 post-patch:
-.if ${PERL_LEVEL} < 500600
-	@${PERL} -pi -e '$$_="" if /\bwarnings\b/' ${WRKSRC}/Sender.pm
-.endif
 .if defined(BATCH)
 	@${PERL} -pi -e 's/res = <STDIN>;/res = "N";/' ${WRKSRC}/Config.PL
 .endif
