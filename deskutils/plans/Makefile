@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	plans
-PORTVERSION=	7.6.2
+PORTVERSION=	7.6.3
 CATEGORIES=	deskutils www
 MASTER_SITES=	http://www.planscalendar.com/release/:plans \
 		http://www.planscalendar.com/addons/:addons \
@@ -16,6 +16,7 @@ DISTFILES=	${PORTNAME}_${PORTVERSION}${EXTRACT_SUFX}:plans \
 		nl_dutch.pl:addons \
 		fr_french.pl:addons \
 		de_german.pl:addons \
+		it_italian.pl:addons \
 		zh_tw.pl:addons \
 		powerani.gif:logo
 DIST_SUBDIR=	${PORTNAME}
