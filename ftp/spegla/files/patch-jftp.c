@@ -1,5 +1,5 @@
---- jftp.c.orig	Fri Mar 19 03:47:12 2004
-+++ jftp.c	Fri Mar 19 03:47:57 2004
+--- jftp.c.orig	Thu Mar 23 17:34:21 2006
++++ jftp.c	Thu Mar 23 17:39:39 2006
 @@ -40,6 +40,7 @@
  #include <netinet/in.h>
  #include <arpa/inet.h>
@@ -50,7 +50,36 @@
  			}
  			if(islongtext) {
  				size = sizeof(c->ftp_buf);
-@@ -980,7 +998,7 @@
+@@ -455,17 +473,22 @@
+ 		c->ftp_resp = JFTP_ERR;
+ 		return -1;
+ 	}
+-	if (ftp_req(c, "user %s", c->ftp_user_name) < 0 || c->ftp_resp != 331) {
++	if (ftp_req(c, "user %s", c->ftp_user_name) < 0 
++		|| (c->ftp_resp != 331 && c->ftp_resp != 230)) {
+ 		E_LOGX_1(0, "Username %s: failed", c->ftp_user_name);
+ 		FD_CLOSE(c->ftp_com);
+ 		c->ftp_resp = JFTP_ERR;
+ 		return -1;
+ 	}
+-	if (ftp_req(c, "pass %s", c->ftp_password) < 0 || c->ftp_resp != 230) {
+-		E_LOGX(0, "Password xxxxx: failed");
+-		FD_CLOSE(c->ftp_com);
+-		c->ftp_resp = JFTP_ERR;
+-		return -1;
++	/* USER command can respond 230 immediately in some cases */
++	if (c->ftp_resp != 230) {
++		if (ftp_req(c, "pass %s", c->ftp_password) < 0
++			|| c->ftp_resp != 230) {
++			E_LOGX(0, "Password xxxxx: failed");
++			FD_CLOSE(c->ftp_com);
++			c->ftp_resp = JFTP_ERR;
++			return -1;
++		}
+ 	}
+ 	c->ftp_resp = 0;
+ 	if (ftp_req(c, "TYPE I") < 0 || c->ftp_resp != 200) {
+@@ -980,7 +1003,7 @@
  	/* Late versions of wu-ftpd does some kind of recursive
  	 * listing if only a '.' is given as directory.
  	 */

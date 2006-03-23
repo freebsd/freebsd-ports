@@ -8,15 +8,15 @@
 
 PORTNAME=	spegla
 PORTVERSION=	1.1p4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	ftp ipv6
-MASTER_SITES=  ftp://subzero.campus.luth.se/pub/spegla/
-#              ftp://ftp.luth.se/pub/unix/mirror/
+MASTER_SITES=	ftp://subzero.campus.luth.se/pub/spegla/ \
+		ftp://ftp.luth.se/pub/unix/mirror/
 
 PATCH_SITES=	http://www.imasy.or.jp/~ume/ipv6/
 PATCHFILES=	${DISTNAME}-ipv6-20020129-3.diff.gz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A mirror program for FTP sites (written in C)
 
 MAKE_ARGS=	MANDIR=${MAN1PREFIX}/man/man
@@ -30,11 +30,11 @@ post-extract:
 .endfor
 
 pre-install:
-	@${MKDIR} ${PREFIX}/share/examples/spegla
+	@${MKDIR} ${EXAMPLESDIR}
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/freebsd.org ${PREFIX}/share/examples/spegla
-	${INSTALL_DATA} ${WRKSRC}/spegla.conf ${PREFIX}/share/examples/spegla
-	${INSTALL_SCRIPT} ${WRKSRC}/spegla.sh ${PREFIX}/share/examples/spegla
+	${INSTALL_DATA} ${WRKSRC}/freebsd.org ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/spegla.conf ${EXAMPLESDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/spegla.sh ${EXAMPLESDIR}
 
 .include <bsd.port.mk>
