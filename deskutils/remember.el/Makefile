@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	remember.el
-PORTVERSION=	1.6
+PORTVERSION=	1.8
 CATEGORIES=	deskutils elisp
 MASTER_SITES=	http://sacha.free.net.ph/notebook/emacs/planner/ \
 		http://dryice.name/computer/FreeBSD/distfiles/
