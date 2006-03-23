@@ -1,0 +1,19 @@
+--- mk/FreeBSD.orig	Thu Mar 16 07:43:17 2006
++++ mk/FreeBSD	Thu Mar 23 10:54:37 2006
+@@ -7,12 +7,12 @@
+ # (C) Copyright 2000-2006 by Michal Zalewski <lcamtuf@coredump.cx>
+ #
+ 
+-CC      = gcc
++LOCALBASE	?= /usr/local
++CC      ?= gcc
+ LIBS	= -lpcap
+ STRIP   = strip
+-CFLAGS  = -O3 -Wall -fomit-frame-pointer -funroll-loops \
+-          -DUSE_BPF=\"${USE_BPF}\" \
+-	  -I/usr/include/pcap -I/usr/local/include/pcap -I/usr/local/include
++CFLAGS	+= -DUSE_BPF=\"${USE_BPF}\" \
++	  -I/usr/include/pcap -I${LOCALBASE}/include/pcap -I${LOCALBASE}/include
+ FILE	= p0f
+ TOOLS   = test/sendack test/sendack2 test/sendsyn
+ 
