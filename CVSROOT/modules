@@ -5693,6 +5693,7 @@ libspf2		ports/mail/libspf2
 libspf2-10	ports/mail/libspf2-10
 libsrs		ports/mail/libsrs
 libsrs2		ports/mail/libsrs2
+libsrs_alt	ports/mail/libsrs_alt
 libssh2		ports/security/libssh2
 libstatgrab	ports/devel/libstatgrab
 libstocks	ports/finance/libstocks
