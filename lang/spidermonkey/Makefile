@@ -19,7 +19,7 @@ COMMENT=	A standalone JavaScript interpreter from the Mozilla project
 
 CONFLICTS=	njs-[0-9]*
 
-.if !defined(WITHOUT_TEST)
+.if defined(WITH_TEST)
 USE_PERL5_BUILD=test harness
 PATCHFILES=	spidermonkey-patch-tests-ecma.bz2	\
 		spidermonkey-patch-tests-timezone.bz2	\
