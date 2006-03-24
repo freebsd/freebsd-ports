@@ -10,7 +10,7 @@ PORTVERSION=	0.2.1
 CATEGORIES=	security textproc
 MASTER_SITES=	http://www.vuxml.org/files/
 
-MAINTAINER=	nectar@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	VuXML Query Tool
 
 USE_BZIP2=	YES
