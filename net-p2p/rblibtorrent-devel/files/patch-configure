@@ -1,0 +1,32 @@
+--- configure.orig	Sun Feb  5 22:01:29 2006
++++ configure	Sun Feb  5 22:03:10 2006
+@@ -20398,7 +20398,8 @@
+ echo "$as_me:$LINENO: result: `eval echo '${'$as_ac_Lib'}'`" >&5
+ echo "${ECHO_T}`eval echo '${'$as_ac_Lib'}'`" >&6
+ if test `eval echo '${'$as_ac_Lib'}'` = yes; then
+-  BOOST_DATE_TIME_LIB=$ax_lib break
++  BOOST_DATE_TIME_LIB=$ax_lib
++  break
+ fi
+ 
+   done
+@@ -20558,7 +20559,8 @@
+ echo "$as_me:$LINENO: result: `eval echo '${'$as_ac_Lib'}'`" >&5
+ echo "${ECHO_T}`eval echo '${'$as_ac_Lib'}'`" >&6
+ if test `eval echo '${'$as_ac_Lib'}'` = yes; then
+-  BOOST_FILESYSTEM_LIB=$ax_lib break
++  BOOST_FILESYSTEM_LIB=$ax_lib
++  break
+ fi
+ 
+   done
+@@ -20719,7 +20721,8 @@
+ echo "$as_me:$LINENO: result: `eval echo '${'$as_ac_Lib'}'`" >&5
+ echo "${ECHO_T}`eval echo '${'$as_ac_Lib'}'`" >&6
+ if test `eval echo '${'$as_ac_Lib'}'` = yes; then
+-  BOOST_THREAD_LIB=$ax_lib break
++  BOOST_THREAD_LIB=$ax_lib
++  break
+ fi
+ 
+   done
