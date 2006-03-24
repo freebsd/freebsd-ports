@@ -6,6 +6,7 @@
 
 PORTNAME=	prelude-manager
 PORTVERSION=	0.9.4
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.prelude-ids.org/download/releases/ \
 MASTER_SITES=	http://www.prelude-ids.org/download/releases/old/
