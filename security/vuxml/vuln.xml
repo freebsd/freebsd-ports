@@ -4554,6 +4554,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <bid>14532</bid>
       <cvename>CVE-2005-2549</cvename>
       <cvename>CVE-2005-2550</cvename>
       <url>http://www.sitic.se/eng/advisories_and_recommendations/sa05-001.html</url>
@@ -4561,7 +4562,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2005-08-10</discovery>
       <entry>2005-08-27</entry>
-      <modified>2005-08-29</modified>
+      <modified>2006-03-24</modified>
     </dates>
   </vuln>
 
