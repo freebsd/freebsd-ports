@@ -24,6 +24,8 @@ HAS_CONFIGURE=	yes
 INSTALL_TARGET=	install install-devel
 NO_INSTALL_MANPAGES=	yes
 
+PLIST=		${WRKDIR}/pkg-plist
+
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500800
@@ -49,16 +51,17 @@ do-configure:
 
 pre-install:
 	${RM} -f `find ${WRKSRC} -name '*.orig'`
-	${ECHO_CMD} libexec/polymake/perlx/%%PERL_VERSION%%/`${PERL} -e 'use Config; print $$Config{archname}'`/auto/Poly/Ext/.packlist >> ${TMPPLIST}
-	${ECHO_CMD} libexec/polymake/perlx/%%PERL_VERSION%%/`${PERL} -e 'use Config; print $$Config{archname}'`/auto/Poly/Ext/Ext.bs >> ${TMPPLIST}
-	${ECHO_CMD} libexec/polymake/perlx/%%PERL_VERSION%%/`${PERL} -e 'use Config; print $$Config{archname}'`/auto/Poly/Ext/Ext.so >> ${TMPPLIST}
-	${ECHO_CMD} @dirrm libexec/polymake/perlx/%%PERL_VERSION%%/`${PERL} -e 'use Config; print $$Config{archname}'`/auto/Poly/Ext >> ${TMPPLIST}
-	${ECHO_CMD} @dirrm libexec/polymake/perlx/%%PERL_VERSION%%/`${PERL} -e 'use Config; print $$Config{archname}'`/auto/Poly >> ${TMPPLIST}
-	${ECHO_CMD} @dirrm libexec/polymake/perlx/%%PERL_VERSION%%/`${PERL} -e 'use Config; print $$Config{archname}'`/auto >> ${TMPPLIST}
-	${ECHO_CMD} @dirrm libexec/polymake/perlx/%%PERL_VERSION%%/`${PERL} -e 'use Config; print $$Config{archname}'` >> ${TMPPLIST}
-	${ECHO_CMD} @dirrm libexec/polymake/perlx/%%PERL_VERSION%% >> ${TMPPLIST}
-	${ECHO_CMD} @dirrm libexec/polymake/perlx >> ${TMPPLIST}
-	${ECHO_CMD} @dirrm libexec/polymake >> ${TMPPLIST}
+	${CAT} ${.CURDIR}/pkg-plist > ${PLIST}
+	${ECHO_CMD} libexec/polymake/perlx/%%PERL_VERSION%%/`${PERL} -e 'use Config; print $$Config{archname}'`/auto/Poly/Ext/.packlist >> ${PLIST}
+	${ECHO_CMD} libexec/polymake/perlx/%%PERL_VERSION%%/`${PERL} -e 'use Config; print $$Config{archname}'`/auto/Poly/Ext/Ext.bs >> ${PLIST}
+	${ECHO_CMD} libexec/polymake/perlx/%%PERL_VERSION%%/`${PERL} -e 'use Config; print $$Config{archname}'`/auto/Poly/Ext/Ext.so >> ${PLIST}
+	${ECHO_CMD} @dirrm libexec/polymake/perlx/%%PERL_VERSION%%/`${PERL} -e 'use Config; print $$Config{archname}'`/auto/Poly/Ext >> ${PLIST}
+	${ECHO_CMD} @dirrm libexec/polymake/perlx/%%PERL_VERSION%%/`${PERL} -e 'use Config; print $$Config{archname}'`/auto/Poly >> ${PLIST}
+	${ECHO_CMD} @dirrm libexec/polymake/perlx/%%PERL_VERSION%%/`${PERL} -e 'use Config; print $$Config{archname}'`/auto >> ${PLIST}
+	${ECHO_CMD} @dirrm libexec/polymake/perlx/%%PERL_VERSION%%/`${PERL} -e 'use Config; print $$Config{archname}'` >> ${PLIST}
+	${ECHO_CMD} @dirrm libexec/polymake/perlx/%%PERL_VERSION%% >> ${PLIST}
+	${ECHO_CMD} @dirrm libexec/polymake/perlx >> ${PLIST}
+	${ECHO_CMD} @dirrm libexec/polymake >> ${PLIST}
 
 post-install:
 	${CP} -p ${PREFIX}/libexec/polymake/Makefile ${PREFIX}/libexec/polymake/Makefile.devel
