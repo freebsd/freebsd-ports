@@ -203,12 +203,6 @@ ALL_TARGET+=	${EXTRA_MAN8}
 MAN8+=		${EXTRA_MAN8}
 .endif
 
-.if defined(SLAVE_SPAMCONTROL)
-PLIST_SUB+=	README_AUTH=""
-.else
-PLIST_SUB+=	README_AUTH="@comment "
-.endif
-
 .if defined(SLAVE_LDAP)
 PKGMESSAGE_SUFFIX=	ldap
 PLIST_SUB+=	LDAP="" NOT_LDAP="@comment "
@@ -224,9 +218,6 @@ PLIST_SUB+=	SPAMCONTROL="@comment "
 
 .if defined(SLAVE_TLS)
 PKGMESSAGE_SUFFIX=	tls
-PLIST_SUB+=	TLS=""
-.else
-PLIST_SUB+=	TLS="@comment "
 .endif
 
 .if defined(PKGMESSAGE_SUFFIX)
@@ -247,6 +238,8 @@ SUB_FILES+=	pkg-message
 .endif
 
 CSH?=	/bin/csh
+
+PORTDOCS=	*
 
 DOCFILES+=	${WRKSRC}/BLURB ${WRKSRC}/BLURB2 ${WRKSRC}/BLURB3 \
 		${WRKSRC}/BLURB4 ${WRKSRC}/INTERNALS ${WRKSRC}/SECURITY \
@@ -612,7 +605,7 @@ do-install:
 		${SED} -f ${WRKDIR}/bootfiles.sed ${FILESDIR}/$i > ${WRKDIR}/${i} ; \
 	fi
 .endfor
-	@${MKDIR} ${DOCSDIR} ${PREFIX}/configure
+	@${MKDIR} ${PREFIX}/configure
 	@cd ${WRKSRC} ; ./install
 	${INSTALL_PROGRAM} ${CONFIGUREPROGS} ${PREFIX}/configure
 	${INSTALL_SCRIPT} ${CONFIGUREFILES} ${PREFIX}/configure
@@ -626,7 +619,18 @@ do-install:
 . endfor
 .endfor
 .if !defined(NOPORTDOCS)
-	${INSTALL_DATA} ${DOCFILES} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
+	@for doc in ${DOCFILES}; do \
+		${ECHO_CMD} "${INSTALL_DATA} $${doc} ${DOCSDIR}"; \
+		${INSTALL_DATA} $${doc} ${DOCSDIR}; \
+	done
+. if defined(PACKAGE_BUILDING)
+	@${ECHO_CMD} "FreeBSD Binary package qmail installation" \
+		> ${DOCSDIR}/SYSDEPS
+. else
+	@cd ${WRKSRC} && ${CAT} `${CAT} SYSDEPS` \
+		> ${DOCSDIR}/SYSDEPS
+. endif
 .endif
 	@${MKDIR} ${PREFIX}/scripts
 	${INSTALL_SCRIPT} ${FILESDIR}/mkaliasdir ${PREFIX}/scripts
@@ -634,13 +638,6 @@ do-install:
 .for script in ${SCRIPTS}
 	${INSTALL_SCRIPT} ${WRKDIR}/scripts/${script} ${PREFIX}/scripts
 .endfor
-.if defined(PACKAGE_BUILDING)
-	@${ECHO_CMD} "FreeBSD Binary package qmail installation" \
-		> ${DOCSDIR}/SYSDEPS
-.else
-	@cd ${WRKSRC} && ${CAT} `${CAT} SYSDEPS` \
-		> ${DOCSDIR}/SYSDEPS
-.endif
 	@${SETENV} PKG_PREFIX="${PREFIX}" ${CSH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${ECHO_CMD}
 	@${CAT} ${PKGMESSAGE}
