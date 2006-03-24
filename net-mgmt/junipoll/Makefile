@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	junipoll
-PORTVERSION=	1.017
+PORTVERSION=	1.018
 CATEGORIES=	net-mgmt perl5
 MASTER_SITES=	http://net.doit.wisc.edu/~plonka/junipoll/
 MASTER_SITE_SUBDIR=	. old
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	babak@farrokhi.net
 COMMENT=	JUNIper router snmp POLLer for firewall filter counters
 
 RUN_DEPENDS=	rrdtool:${PORTSDIR}/net/rrdtool \
