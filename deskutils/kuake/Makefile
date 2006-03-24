@@ -10,7 +10,7 @@ PORTREVISION=	3
 CATEGORIES=	deskutils kde
 MASTER_SITES=	http://199.231.140.154/software/${PORTNAME}/
 
-MAINTAINER=	markus@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	KDE konsole application acting like the Quake-console
 
 USE_KDELIBS_VER=3

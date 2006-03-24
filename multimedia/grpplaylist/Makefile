@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	groupplaylist-${PORTVERSION}
 
-MAINTAINER=	markus@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A playlist for Noatun
 
 LIB_DEPENDS=	noatun:${PORTSDIR}/multimedia/kdemultimedia3

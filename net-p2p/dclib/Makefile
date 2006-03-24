@@ -12,7 +12,7 @@ CATEGORIES=	net-p2p
 MASTER_SITES=	http://download.berlios.de/dcgui/ \
 		http://www.hitnet.rwth-aachen.de/~brueffer/distfiles/
 
-MAINTAINER=	markus@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Direct connect interface library for dcgui
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \

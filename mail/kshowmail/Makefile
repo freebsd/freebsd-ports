@@ -11,7 +11,7 @@ CATEGORIES=		mail kde
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=		markus@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		POP3 mail checker for KDE
 
 LIB_DEPENDS=		mimelib.1:${PORTSDIR}/deskutils/kdepim3
