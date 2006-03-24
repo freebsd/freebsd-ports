@@ -6,4 +6,4 @@ communication is done with the NV-CONTROL X extension.
 Values such as brightness and gamma, XVideo attributes, temperature,
 and OpenGL settings can be queried and configured via nvidia-settings.
 
-WWW: http://www.nvidia.com/object/linux.html
+WWW: http://www.nvidia.com/object/unix.html
