@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	DBD
 PKGNAMEPREFIX=	p5-
 DISTNAME=	Msql-Mysql-modules-${PORTVERSION}
 
-MAINTAINER=	jedgar@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl5 modules for accessing MySQL databases
 
 BUILD_DEPENDS=	${SITE_PERL}/Data/ShowTable.pm:${PORTSDIR}/devel/p5-Data-ShowTable

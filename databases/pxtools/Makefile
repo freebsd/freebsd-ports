@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	databases
 MASTER_SITES=	http://jan.kneschke.de/projects/pxtools/download/
 
-MAINTAINER=	jedgar@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of tools to work with Paradox databases
 
 USE_GETOPT_LONG=yes

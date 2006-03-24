@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= bvi
 EXTRACT_SUFX=	.src.tar.gz
 
-MAINTAINER=	jedgar@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A vi-like binary file (hex)editor
 
 GNU_CONFIGURE=	yes

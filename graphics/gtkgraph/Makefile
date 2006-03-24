@@ -12,7 +12,7 @@ CATEGORIES=	graphics math
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR= jedgar
 
-MAINTAINER=	jedgar@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphing calculator using GTK+
 
 USE_X_PREFIX=	yes

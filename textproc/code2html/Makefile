@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.palfrader.org/code2html/all/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	jedgar@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sourcecode to HTML converter
 
 NO_BUILD=	yes

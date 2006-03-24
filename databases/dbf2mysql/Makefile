@@ -12,7 +12,7 @@ CATEGORIES=	databases
 MASTER_SITES=	http://mirror.etf.bg.ac.yu/mysql/Downloads/Contrib/ \
 		ftp://ftp.ciril.fr/pub/sgbd/mysql/Downloads/Contrib
 
-MAINTAINER=	jedgar@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Programs to convert .dbf files to MySQL tables and vice versa
 
 LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client

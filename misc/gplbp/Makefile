@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.stampede.org/skibum/gplbp/
 
-MAINTAINER=	jedgar@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNOME Pilot Logbook application
 
 USE_X_PREFIX=	yes

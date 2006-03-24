@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	http://lashwhip.com/grpn/
 
-MAINTAINER=	jedgar@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK+-based reverse polish notation (RPN) calculator
 
 USE_X_PREFIX=	yes

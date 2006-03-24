@@ -12,7 +12,7 @@ CATEGORIES=	devel kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= kdbg/
 
-MAINTAINER=	jedgar@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A graphical user interface around gdb using KDE
 
 USE_QT_VER=	3

@@ -12,7 +12,7 @@ MASTER_SITES= 	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= ${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
-MAINTAINER=	jedgar@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	3D Vector-graphics Space Invaders clone for X
 
 PLIST_FILES=	bin/xinv3d

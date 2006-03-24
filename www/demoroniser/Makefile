@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.fourmilab.ch/webtools/demoroniser/ \
 MASTER_SITE_SUBDIR=jedgar
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	jedgar@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Correct moronic and gratuitously incompatible HTML from MS applications
 
 USE_ZIP=	yes
