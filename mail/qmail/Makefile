@@ -228,6 +228,7 @@ SLAVEPORT_LINE=	spamcontrol
 
 SUB_FILES+=	mailer.conf.sample bootfiles.sed enable-qmail
 SUB_LIST+=	ECHO_CMD=${ECHO_CMD}
+# pkg-install could not be added to SUB_FILES because it's executed on do-configure:
 PKGINSTALL?=	${WRKDIR}/pkg-install
 
 .if defined(PKGMESSAGE_SUFFIX)
@@ -237,51 +238,39 @@ PKGMESSAGE?=	${WRKDIR}/pkg-message-${PKGMESSAGE_SUFFIX}
 SUB_FILES+=	pkg-message
 .endif
 
-CSH?=	/bin/csh
+CSH?=		/bin/csh
+WRKDIR_doc=	${WRKDIR}/doc
 
 PORTDOCS=	*
 
-DOCFILES+=	${WRKSRC}/BLURB ${WRKSRC}/BLURB2 ${WRKSRC}/BLURB3 \
-		${WRKSRC}/BLURB4 ${WRKSRC}/INTERNALS ${WRKSRC}/SECURITY \
-		${WRKSRC}/THOUGHTS ${FILESDIR}/PORT_NOTES \
-		${FILESDIR}/PORT_NOTES_FreeBSD_40-RELEASE \
-		${WRKDIR}/mailer.conf.sample \
-		${WRKSRC}/FAQ ${WRKSRC}/UPGRADE ${WRKSRC}/SENDMAIL \
-		${WRKSRC}/INSTALL ${WRKSRC}/INSTALL.alias \
-		${WRKSRC}/INSTALL.ctl ${WRKSRC}/INSTALL.ids \
-		${WRKSRC}/INSTALL.maildir ${WRKSRC}/INSTALL.mbox \
-		${WRKSRC}/INSTALL.vsm ${WRKSRC}/TEST.deliver \
-		${WRKSRC}/TEST.receive ${WRKSRC}/REMOVE.sendmail \
-		${WRKSRC}/REMOVE.binmail ${WRKSRC}/PIC.local2alias \
-		${WRKSRC}/PIC.local2ext ${WRKSRC}/PIC.local2local \
-		${WRKSRC}/PIC.local2rem ${WRKSRC}/PIC.local2virt \
-		${WRKSRC}/PIC.nullclient ${WRKSRC}/PIC.relaybad \
-		${WRKSRC}/PIC.relaygood ${WRKSRC}/PIC.rem2local
+DOCFILES_FILESDIR+=	PORT_NOTES PORT_NOTES_FreeBSD_40-RELEASE
+DOCFILES_WRKSRC+=	BLURB BLURB2 BLURB3 BLURB4 INTERNALS SECURITY \
+			THOUGHTS FAQ UPGRADE SENDMAIL INSTALL INSTALL.alias \
+			INSTALL.ctl INSTALL.ids INSTALL.maildir INSTALL.mbox \
+			INSTALL.vsm TEST.deliver TEST.receive REMOVE.sendmail \
+			REMOVE.binmail PIC.local2alias PIC.local2ext \
+			PIC.local2local PIC.local2rem PIC.local2virt \
+			PIC.nullclient PIC.relaybad PIC.relaygood PIC.rem2local
+DOCFILES_WRKDIR+=	mailer.conf.sample
 
 .if defined(SLAVE_LDAP)
-DOCFILES+=	${WRKSRC}/QLDAPINSTALL ${WRKSRC}/QLDAPNEWS \
-		${WRKSRC}/POPBEFORESMTP ${WRKSRC}/QLDAPTODO \
-		${WRKSRC}/QLDAPPICTURE ${WRKSRC}/QLDAPGROUP \
-		${WRKSRC}/EXTTODO ${WRKSRC}/qmail.schema
+DOCFILES_WRKSRC+=	QLDAPINSTALL QLDAPNEWS POPBEFORESMTP QLDAPTODO \
+			QLDAPPICTURE QLDAPGROUP EXTTODO qmail.schema
 .elif defined(SLAVE_TLS)
-DOCFILES+=	${WRKDIR}/TLS.readme
+DOCFILES_WRKDIR+=	TLS.readme
 .elif defined(SLAVE_SPAMCONTROL)
-DOCFILES+=	${WRKDIR}/doc/FILES.spamcontrol ${WRKDIR}/doc/HISTORY.spamcontrol \
-		${WRKDIR}/doc/INSTALL.spamcontrol ${WRKDIR}/doc/LICENSE.spamcontrol \
-		${WRKDIR}/doc/LOGGING.spamcontrol ${WRKDIR}/doc/Makefile.djbdns \
-		${WRKDIR}/doc/README.auth ${WRKDIR}/doc/README.bigtodo \
-		${WRKDIR}/doc/README.bouncemaxbytes ${WRKDIR}/doc/README.djbdns \
-		${WRKDIR}/doc/README.doublebouncetrim ${WRKDIR}/doc/README.moreipme \
-		${WRKDIR}/doc/README.qmailqueue ${WRKDIR}/doc/README.recipients \
-		${WRKDIR}/doc/README.spamcontrol ${WRKDIR}/doc/README.wildmat \
-		${WRKDIR}/doc/README_spamcontrol.html \
-		${WRKDIR}/doc/RELEASE_22.spamcontrol \
-		${WRKDIR}/doc/RELEASE_23.spamcontrol \
-		${WRKDIR}/doc/SMTPREPLY.spamcontrol ${WRKDIR}/doc/TESTING.spamcontrol \
-		${WRKDIR}/doc/TODO.spamcontrol ${WRKDIR}/doc/badloadertypes \
-		${WRKDIR}/doc/badmailfrom ${WRKDIR}/doc/badmimetypes \
-		${WRKDIR}/doc/badrcptto ${WRKDIR}/doc/conf-spamcontrol \
-		${WRKDIR}/doc/install_spamcontrol.sh ${WRKDIR}/doc/tarpitcount
+DOCFILES_WRKDIR_doc+=	FILES.spamcontrol HISTORY.spamcontrol \
+			INSTALL.spamcontrol LICENSE.spamcontrol \
+			LOGGING.spamcontrol Makefile.djbdns README.auth \
+			README.bigtodo README.bouncemaxbytes README.djbdns \
+			README.doublebouncetrim README.moreipme \
+			README.qmailqueue README.recipients README.spamcontrol \
+			README.wildmat README_spamcontrol.html \
+			RELEASE_22.spamcontrol RELEASE_23.spamcontrol \
+			SMTPREPLY.spamcontrol TESTING.spamcontrol \
+			TODO.spamcontrol badloadertypes badmailfrom \
+			badmimetypes badrcptto conf-spamcontrol \
+			install_spamcontrol.sh tarpitcount
 SCRIPTS+=	qmail-alias2recipients qmail-pwd2recipients \
 		qmail-users2recipients qmail-vpopmail2recipients
 .endif
@@ -291,9 +280,8 @@ BOOTFILES=	home home+df proc proc+df binm1 binm1+df \
 		binm2 binm2+df binm3 binm3+df maildir
 .endif
 
-CONFIGUREPROGS=	${WRKSRC}/install ${WRKSRC}/dnsfq ${WRKSRC}/hostname \
-		${WRKSRC}/dnsip ${WRKSRC}/ipmeprint ${WRKSRC}/dnsptr
-CONFIGUREFILES=	${WRKSRC}/config ${WRKSRC}/config-fast
+CONFIGUREPROGRAMS=	install dnsfq hostname dnsip ipmeprint dnsptr
+CONFIGURESCRIPTS=	config config-fast
 
 .include "${.CURDIR}/../../Mk/bsd.mail.mk"
 
@@ -607,8 +595,12 @@ do-install:
 .endfor
 	@${MKDIR} ${PREFIX}/configure
 	@cd ${WRKSRC} ; ./install
-	${INSTALL_PROGRAM} ${CONFIGUREPROGS} ${PREFIX}/configure
-	${INSTALL_SCRIPT} ${CONFIGUREFILES} ${PREFIX}/configure
+.for f in ${CONFIGUREPROGRAMS}
+	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/configure
+.endfor
+.for f in ${CONFIGURESCRIPTS}
+	${INSTALL_SCRIPT} ${WRKSRC}/${f} ${PREFIX}/configure
+.endfor
 .for i in ${BOOTFILES}
 	${INSTALL_SCRIPT} ${WRKDIR}/${i:T} ${PREFIX}/boot
 .endfor
@@ -620,10 +612,11 @@ do-install:
 .endfor
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@for doc in ${DOCFILES}; do \
-		${ECHO_CMD} "${INSTALL_DATA} $${doc} ${DOCSDIR}"; \
-		${INSTALL_DATA} $${doc} ${DOCSDIR}; \
-	done
+. for sub in FILESDIR WRKSRC WRKDIR WRKDIR_doc
+.  for doc in ${DOCFILES_${sub}}
+	${INSTALL_DATA} ${${sub}}/${doc} ${DOCSDIR}
+.  endfor
+. endfor
 . if defined(PACKAGE_BUILDING)
 	@${ECHO_CMD} "FreeBSD Binary package qmail installation" \
 		> ${DOCSDIR}/SYSDEPS
