@@ -1,6 +1,6 @@
---- lib/common/BoxPortsAndFiles.h.orig	Sat Jan  8 13:30:04 2005
-+++ lib/common/BoxPortsAndFiles.h	Sat Jan  8 13:31:40 2005
-@@ -54,16 +54,16 @@
+--- lib/common/BoxPortsAndFiles.h.orig	Thu Mar 16 19:28:09 2006
++++ lib/common/BoxPortsAndFiles.h	Thu Mar 16 19:28:38 2006
+@@ -53,7 +53,7 @@
  
  // Backup store daemon
  #define BOX_PORT_BBSTORED					(BOX_PORT_BASE+1)
@@ -9,14 +9,17 @@
  // directory within the RAIDFILE root for the backup store daemon
  #define BOX_RAIDFILE_ROOT_BBSTORED			"backup"
  
- // Backup client daemon
+@@ -61,11 +61,11 @@
+ #ifdef WIN32
+ #define BOX_FILE_BBACKUPD_DEFAULT_CONFIG	"C:\\Program Files\\Box Backup\\bbackupd.conf"
+ #else
 -#define BOX_FILE_BBACKUPD_DEFAULT_CONFIG	"/etc/box/bbackupd.conf"
 +#define BOX_FILE_BBACKUPD_DEFAULT_CONFIG	"%%PREFIX%%/etc/box/bbackupd.conf"
+ #endif
  
- 
- // RaidFile conf location efault
+ // RaidFile conf location default
 -#define BOX_FILE_RAIDFILE_DEFAULT_CONFIG	"/etc/box/raidfile.conf"
 +#define BOX_FILE_RAIDFILE_DEFAULT_CONFIG	"%%PREFIX%%/etc/box/raidfile.conf"
  
- 
- #endif // BOXPORTSANDFILES__H
+ // Default name of the named pipe
+ #define BOX_NAMED_PIPE_NAME L"\\\\.\\pipe\\boxbackup"

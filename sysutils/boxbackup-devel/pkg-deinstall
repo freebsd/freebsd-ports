@@ -1,0 +1,69 @@
+#! /bin/sh
+#
+# ex:ts=4
+
+ask() {
+	local question default answer
+
+	question=$1
+	default=$2
+	if [ -z "${PACKAGE_BUILDING}" -a -z "${BATCH}" ]; then
+		read -p "${question} [${default}]? " answer
+	fi
+	echo ${answer:-${default}}
+}
+
+yesno() {
+	local question default answer
+
+	question=$1
+	default=$2
+	while :; do
+		answer=$(ask "${question}" "${default}")
+		case "${answer}" in
+		[Yy]*)	return 0;;
+		[Nn]*)	return 1;;
+		esac
+		echo "Please answer yes or no."
+	done
+}
+
+delete_account() {
+	local u pw
+
+	u=$1
+	pw=`pw usershow ${u} >/dev/null 2>&1`
+	if [ $? -eq 0 ]; then
+		if yesno "Do you want me to remove user \"${u}\"" n; then
+			pw userdel -n ${u}
+			echo "Done."
+		fi
+	fi
+}
+
+case $2 in
+
+DEINSTALL)
+	if ps -axc | grep -qw bbstored; then
+		if yesno "bbstored is still running. Shall I stop it?" y; then
+			killall bbstored
+			sleep 2
+		else
+			echo "OK ... I hope you know what you are doing."
+		fi
+	fi
+
+	if ps -axc | grep -qw bbackupd; then
+		if yesno "bbackupd is still running. Shall I stop it?" y; then
+			killall bbackupd
+			sleep 2
+		else
+			echo "OK ... I hope you know what you are doing."
+		fi
+	fi
+
+	delete_account _bbstored
+
+	;;
+
+esac
