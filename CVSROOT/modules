@@ -11008,6 +11008,7 @@ quake-dpmod	ports/games/quake-dpmod
 quake-reaper	ports/games/quake-reaper
 quake-source	ports/games/quake-source
 quake2-data	ports/games/quake2-data
+quake2-relay	ports/games/quake2-relay
 quake2-source	ports/games/quake2-source
 quake2forge	ports/games/quake2forge
 quake2lnx	ports/games/quake2lnx
