@@ -24,4 +24,8 @@ CONFIGURE_ARGS+=--with-gtk2 \
 pre-fetch:
 	@${CAT} pkg-message
 
+post-patch:
+	@${REINPLACE_CMD} -e "s|-lpthread|${PTHREAD_LIBS}|g" \
+		${WRKSRC}/configure ${WRKSRC}/src/Makefile
+
 .include <bsd.port.mk>
