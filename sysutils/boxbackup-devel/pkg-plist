@@ -9,6 +9,6 @@
 %%SERVER%%bin/raidfile-config
 %%CLIENT%%@exec mkdir -p -m 0700 %D/etc/box/bbackupd
 %%SERVER%%@exec mkdir -p -m 0700 %D/etc/box/bbstored
-%%CLIENT%%@dirrm etc/box/bbackupd
-%%SERVER%%@dirrm etc/box/bbstored
-@dirrm etc/box
+%%CLIENT%%@dirrmtry etc/box/bbackupd
+%%SERVER%%@dirrmtry etc/box/bbstored
+@dirrmtry etc/box
