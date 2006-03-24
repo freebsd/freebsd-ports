@@ -1,0 +1,23 @@
+This is a port of G-Cows, a software project consisting in:
+- definition of a scripting language designed for creation of web sites (Cows);
+- interpreter for the scripting language (cows);
+- a makefile generator (cows-mkgen).
+
+Cows is a scripting language whose main goal is to make the creation
+and updating of a web site faster, more flexible and less prone to
+errors without relying on server-side technologies.
+
+Cows allows to use your Unix background and your favorite tools while
+creating a site: you can traverse the whole directory tree with
+`find', extract informations with `grep', build complex pipelines,
+include external scripts and programs written in every language whose
+interpreter or compiler is installed on your system.
+
+Even if you use server side technology, you can still appreciate Cows
+for every task not relying on dynamic change of your site's contents
+mixing Cows, PHP, custom Apache modules, application servers etc.
+
+Cows gives the best results when used in conjunction with the Make
+utility, available on all Unix systems.
+
+WWW: http://www.g-cows.org/

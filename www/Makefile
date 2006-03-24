@@ -142,6 +142,7 @@
     SUBDIR += frontpage-zh
     SUBDIR += fswiki
     SUBDIR += fxhtml
+    SUBDIR += g-cows
     SUBDIR += g-gcl
     SUBDIR += galeon
     SUBDIR += gallery
