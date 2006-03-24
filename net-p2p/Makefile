@@ -93,6 +93,7 @@
     SUBDIR += p5-pdonkey
     SUBDIR += qtella
     SUBDIR += qtorrent
+    SUBDIR += rblibtorrent
     SUBDIR += rtorrent
     SUBDIR += squall
     SUBDIR += torrentflux

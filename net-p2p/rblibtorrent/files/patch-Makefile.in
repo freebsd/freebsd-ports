@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Fri Mar 24 21:28:28 2006
++++ Makefile.in	Fri Mar 24 21:28:52 2006
+@@ -206,7 +206,7 @@
+ m4/ac_cxx_namespaces.m4 m4/acx_pthread.m4 m4/ax_boost_date-time.m4 \
+ m4/ax_boost_filesystem.m4 m4/ax_boost_thread.m4 src/file_win.cpp libtorrent.pc
+ 
+-pkgconfigdir = $(libdir)/pkgconfig
++pkgconfigdir = $(prefix)/libdata/pkgconfig
+ pkgconfig_DATA = libtorrent.pc
+ all: config.h
+ 	$(MAKE) $(AM_MAKEFLAGS) all-recursive
