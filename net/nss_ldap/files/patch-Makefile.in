@@ -1,83 +1,133 @@
---- Makefile.in.orig	Mon Dec  5 08:52:20 2005
-+++ Makefile.in	Mon Dec  5 08:56:32 2005
-@@ -82,7 +82,7 @@
+--- Makefile.in.orig	Fri Feb 24 08:02:50 2006
++++ Makefile.in	Thu Mar  2 01:53:39 2006
+@@ -98,16 +98,13 @@
  
  man_MANS = nss_ldap.5
  
--nss_ldap_so_SOURCES = ldap-nss.c ldap-pwd.c ldap-grp.c ldap-netgrp.c ldap-rpc.c 	ldap-hosts.c ldap-network.c ldap-proto.c ldap-spwd.c 	ldap-alias.c ldap-service.c ldap-schema.c ldap-ethers.c 	ldap-bp.c ldap-automount.c util.c ltf.c snprintf.c resolve.c 	dnsconfig.c irs-nss.c pagectrl.c
-+nss_ldap_so_SOURCES = ldap-nss.c ldap-pwd.c ldap-grp.c ldap-schema.c util.c ltf.c snprintf.c resolve.c 	dnsconfig.c irs-nss.c pagectrl.c bsdnss.c
+-nss_ldap_so_SOURCES = ldap-nss.c ldap-pwd.c ldap-grp.c ldap-netgrp.c ldap-rpc.c \
+-	ldap-hosts.c ldap-network.c ldap-proto.c ldap-spwd.c \
+-	ldap-alias.c ldap-service.c ldap-schema.c ldap-ethers.c \
+-	ldap-bp.c ldap-automount.c util.c ltf.c snprintf.c resolve.c \
+-	dnsconfig.c irs-nss.c pagectrl.c ldap-sldap.c
+-
++nss_ldap_so_SOURCES = ldap-nss.c ldap-pwd.c ldap-grp.c \
++	ldap-schema.c utils.c ltf.c snprintf.c resolve.c \
++	dnsconfig.c irs-nss.c pagectrl.c bsdnss.c
  
+ NSS_LDAP_SOURCES = ldap-nss.c ldap-grp.c ldap-pwd.c ldap-netgrp.c ldap-schema.c \
+ 	util.c ltf.c snprintf.c resolve.c dnsconfig.c \
+-	irs-nss.c pagectrl.c aix_authmeth.c
++	irs-nss.c pagectrl.c aix_authmeth.c bsdnss.c
  
- nss_ldap_so_LDFLAGS = @nss_ldap_so_LDFLAGS@
-@@ -90,7 +90,7 @@
- NSS_LDAP_PATH_CONF = @NSS_LDAP_PATH_CONF@
- NSS_LDAP_PATH_ROOTPASSWD = @NSS_LDAP_PATH_ROOTPASSWD@
+ DEFS = @DEFS@
  
--NSS_LDAP_SOURCES = ldap-nss.c ldap-grp.c ldap-pwd.c ldap-netgrp.c ldap-schema.c 	util.c ltf.c snprintf.c resolve.c dnsconfig.c 	irs-nss.c pagectrl.c aix_authmeth.c
-+NSS_LDAP_SOURCES = ldap-nss.c ldap-grp.c ldap-pwd.c ldap-schema.c 	util.c ltf.c snprintf.c resolve.c dnsconfig.c 	irs-nss.c pagectrl.c aix_authmeth.c bsdnss.c
- 
- 
- NSS_LDAP_LDFLAGS = @NSS_LDAP_LDFLAGS@
-@@ -118,16 +118,16 @@
- CPPFLAGS = @CPPFLAGS@
- LDFLAGS = @LDFLAGS@
- LIBS = @LIBS@
--nss_ldap_so_OBJECTS =  ldap-nss.o ldap-pwd.o ldap-grp.o ldap-netgrp.o \
--ldap-rpc.o ldap-hosts.o ldap-network.o ldap-proto.o ldap-spwd.o \
--ldap-alias.o ldap-service.o ldap-schema.o ldap-ethers.o ldap-bp.o \
--ldap-automount.o util.o ltf.o snprintf.o resolve.o dnsconfig.o \
--irs-nss.o pagectrl.o
-+nss_ldap_so_OBJECTS =  ldap-nss.o ldap-pwd.o ldap-grp.o \
-+	\
-+	ldap-schema.o \
-+	util.o ltf.o snprintf.o resolve.o dnsconfig.o \
-+	irs-nss.o pagectrl.o bsdnss.o
- nss_ldap_so_LDADD = $(LDADD)
- nss_ldap_so_DEPENDENCIES = 
--NSS_LDAP_OBJECTS =  ldap-nss.o ldap-grp.o ldap-pwd.o ldap-netgrp.o \
-+NSS_LDAP_OBJECTS =  ldap-nss.o ldap-grp.o ldap-pwd.o \
- ldap-schema.o util.o ltf.o snprintf.o resolve.o dnsconfig.o irs-nss.o \
--pagectrl.o aix_authmeth.o
-+pagectrl.o aix_authmeth.o bsdnss.o
+@@ -137,19 +134,15 @@
+ 	ldap-pwd.$(OBJEXT) ldap-netgrp.$(OBJEXT) ldap-schema.$(OBJEXT) \
+ 	util.$(OBJEXT) ltf.$(OBJEXT) snprintf.$(OBJEXT) \
+ 	resolve.$(OBJEXT) dnsconfig.$(OBJEXT) irs-nss.$(OBJEXT) \
+-	pagectrl.$(OBJEXT) aix_authmeth.$(OBJEXT)
++	pagectrl.$(OBJEXT) aix_authmeth.$(OBJEXT) bsdnss.${OBJEXT}
+ NSS_LDAP_OBJECTS = $(am_NSS_LDAP_OBJECTS)
  NSS_LDAP_LDADD = $(LDADD)
- NSS_LDAP_DEPENDENCIES = 
- CFLAGS = @CFLAGS@
-@@ -148,32 +148,18 @@
- TAR = tar
- GZIP_ENV = --best
- DEP_FILES =  .deps/aix_authmeth.P .deps/dnsconfig.P .deps/irs-nss.P \
--.deps/ldap-alias.P .deps/ldap-automount.P .deps/ldap-bp.P \
--.deps/ldap-ethers.P .deps/ldap-grp.P .deps/ldap-hosts.P \
--.deps/ldap-netgrp.P .deps/ldap-network.P .deps/ldap-nss.P \
--.deps/ldap-proto.P .deps/ldap-pwd.P .deps/ldap-rpc.P \
--.deps/ldap-schema.P .deps/ldap-service.P .deps/ldap-spwd.P .deps/ltf.P \
--.deps/pagectrl.P .deps/resolve.P .deps/snprintf.P .deps/util.P
-+.deps/ldap-grp.P \
-+.deps/ldap-nss.P \
-+.deps/ldap-pwd.P \
-+.deps/ldap-schema.P .deps/ltf.P \
-+.deps/pagectrl.P .deps/resolve.P .deps/snprintf.P .deps/util.P \
-+.deps/bsdnss.P
- SOURCES = $(nss_ldap_so_SOURCES) $(NSS_LDAP_SOURCES)
- OBJECTS = $(nss_ldap_so_OBJECTS) $(NSS_LDAP_OBJECTS)
+ NSS_LDAP_DEPENDENCIES =
+ am_nss_ldap_so_OBJECTS = ldap-nss.$(OBJEXT) ldap-pwd.$(OBJEXT) \
+-	ldap-grp.$(OBJEXT) ldap-netgrp.$(OBJEXT) ldap-rpc.$(OBJEXT) \
+-	ldap-hosts.$(OBJEXT) ldap-network.$(OBJEXT) \
+-	ldap-proto.$(OBJEXT) ldap-spwd.$(OBJEXT) ldap-alias.$(OBJEXT) \
+-	ldap-service.$(OBJEXT) ldap-schema.$(OBJEXT) \
+-	ldap-ethers.$(OBJEXT) ldap-bp.$(OBJEXT) \
+-	ldap-automount.$(OBJEXT) util.$(OBJEXT) ltf.$(OBJEXT) \
++	ldap-grp.$(OBJEXT) ldap-schema.$(OBJEXT) \
++	util.$(OBJEXT) ltf.$(OBJEXT) \
+ 	snprintf.$(OBJEXT) resolve.$(OBJEXT) dnsconfig.$(OBJEXT) \
+-	irs-nss.$(OBJEXT) pagectrl.$(OBJEXT) ldap-sldap.$(OBJEXT)
++	irs-nss.$(OBJEXT) pagectrl.$(OBJEXT) bsdnss.$(OBJEXT)
+ nss_ldap_so_OBJECTS = $(am_nss_ldap_so_OBJECTS)
+ nss_ldap_so_LDADD = $(LDADD)
+ nss_ldap_so_DEPENDENCIES =
+@@ -159,17 +152,16 @@
+ LIBS = @LIBS@
+ depcomp = $(SHELL) $(top_srcdir)/depcomp
+ @AMDEP_TRUE@DEP_FILES = $(DEPDIR)/aix_authmeth.Po $(DEPDIR)/dnsconfig.Po \
+-@AMDEP_TRUE@	$(DEPDIR)/irs-nss.Po $(DEPDIR)/ldap-alias.Po \
+-@AMDEP_TRUE@	$(DEPDIR)/ldap-automount.Po $(DEPDIR)/ldap-bp.Po \
+-@AMDEP_TRUE@	$(DEPDIR)/ldap-ethers.Po $(DEPDIR)/ldap-grp.Po \
+-@AMDEP_TRUE@	$(DEPDIR)/ldap-hosts.Po $(DEPDIR)/ldap-netgrp.Po \
+-@AMDEP_TRUE@	$(DEPDIR)/ldap-network.Po $(DEPDIR)/ldap-nss.Po \
+-@AMDEP_TRUE@	$(DEPDIR)/ldap-proto.Po $(DEPDIR)/ldap-pwd.Po \
+-@AMDEP_TRUE@	$(DEPDIR)/ldap-rpc.Po $(DEPDIR)/ldap-schema.Po \
+-@AMDEP_TRUE@	$(DEPDIR)/ldap-service.Po $(DEPDIR)/ldap-sldap.Po \
+-@AMDEP_TRUE@	$(DEPDIR)/ldap-spwd.Po $(DEPDIR)/ltf.Po \
++@AMDEP_TRUE@	$(DEPDIR)/irs-nss.Po \
++@AMDEP_TRUE@	$(DEPDIR)/ldap-grp.Po \
++@AMDEP_TRUE@	$(DEPDIR)/ldap-nss.Po \
++@AMDEP_TRUE@	$(DEPDIR)/ldap-pwd.Po \
++@AMDEP_TRUE@	$(DEPDIR)/ldap-schema.Po \
++@AMDEP_TRUE@	$(DEPDIR)/ldap-sldap.Po \
++@AMDEP_TRUE@	$(DEPDIR)/ltf.Po \
+ @AMDEP_TRUE@	$(DEPDIR)/pagectrl.Po $(DEPDIR)/resolve.Po \
+-@AMDEP_TRUE@	$(DEPDIR)/snprintf.Po $(DEPDIR)/util.Po
++@AMDEP_TRUE@	$(DEPDIR)/snprintf.Po $(DEPDIR)/util.Po \
++@AMDEP_TRUE@	$(DEPDIR)/bsdnss.Po	
+ COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
+ 	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+ CCLD = $(CC)
+@@ -189,21 +181,21 @@
  
- all: all-redirect
  .SUFFIXES:
- .SUFFIXES: .S .c .o .s
--$(srcdir)/Makefile.in: Makefile.am $(top_srcdir)/configure.in $(ACLOCAL_M4) 
--	cd $(top_srcdir) && $(AUTOMAKE) --gnu Makefile
+ .SUFFIXES: .c .o .obj
+-$(srcdir)/Makefile.in:  Makefile.am  $(top_srcdir)/configure.in $(ACLOCAL_M4)
+-	cd $(top_srcdir) && \
+-	  $(AUTOMAKE) --gnu  Makefile
+-Makefile:  $(srcdir)/Makefile.in  $(top_builddir)/config.status
+-	cd $(top_builddir) && \
+-	  CONFIG_HEADERS= CONFIG_LINKS= \
+-	  CONFIG_FILES=$@ $(SHELL) ./config.status
 -
--Makefile: $(srcdir)/Makefile.in  $(top_builddir)/config.status $(BUILT_SOURCES)
--	cd $(top_builddir) \
--	  && CONFIG_FILES=$@ CONFIG_HEADERS= $(SHELL) ./config.status
--
--$(ACLOCAL_M4):  configure.in 
--	cd $(srcdir) && $(ACLOCAL)
--
--config.status: $(srcdir)/configure $(CONFIG_STATUS_DEPENDENCIES)
+-$(top_builddir)/config.status: $(srcdir)/configure $(CONFIG_STATUS_DEPENDENCIES)
 -	$(SHELL) ./config.status --recheck
--$(srcdir)/configure: $(srcdir)/configure.in $(ACLOCAL_M4) $(CONFIGURE_DEPENDENCIES)
+-$(srcdir)/configure:  $(srcdir)/configure.in $(ACLOCAL_M4) $(CONFIGURE_DEPENDENCIES)
 -	cd $(srcdir) && $(AUTOCONF)
++#$(srcdir)/Makefile.in:  Makefile.am  $(top_srcdir)/configure.in $(ACLOCAL_M4)
++#	cd $(top_srcdir) && \
++#	  $(AUTOMAKE) --gnu  Makefile
++#Makefile:  $(srcdir)/Makefile.in  $(top_builddir)/config.status
++#	cd $(top_builddir) && \
++#	  CONFIG_HEADERS= CONFIG_LINKS= \
++#	  CONFIG_FILES=$@ $(SHELL) ./config.status
++#
++#$(top_builddir)/config.status: $(srcdir)/configure $(CONFIG_STATUS_DEPENDENCIES)
++#	$(SHELL) ./config.status --recheck
++#$(srcdir)/configure:  $(srcdir)/configure.in $(ACLOCAL_M4) $(CONFIGURE_DEPENDENCIES)
++#	cd $(srcdir) && $(AUTOCONF)
  
+-$(ACLOCAL_M4):  configure.in 
+-	cd $(srcdir) && $(ACLOCAL) $(ACLOCAL_AMFLAGS)
++#$(ACLOCAL_M4):  configure.in 
++#	cd $(srcdir) && $(ACLOCAL) $(ACLOCAL_AMFLAGS)
  config.h: stamp-h
  	@if test ! -f $@; then \
+ 		rm -f stamp-h; \
+@@ -248,22 +240,11 @@
+ @AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/aix_authmeth.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/dnsconfig.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/irs-nss.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/ldap-alias.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/ldap-automount.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/ldap-bp.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/ldap-ethers.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/ldap-grp.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/ldap-hosts.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/ldap-netgrp.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/ldap-network.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/ldap-nss.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/ldap-proto.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/ldap-pwd.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/ldap-rpc.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/ldap-schema.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/ldap-service.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/ldap-sldap.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/ldap-spwd.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/ltf.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/pagectrl.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/resolve.Po@am__quote@

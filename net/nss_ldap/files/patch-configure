@@ -1,49 +1,123 @@
---- configure.orig	Thu Jun 30 21:33:41 2005
-+++ configure	Thu Jun 30 21:49:20 2005
-@@ -1695,6 +1695,46 @@
- fi
+--- configure.orig	Fri Feb 24 08:02:50 2006
++++ configure	Thu Mar  2 02:34:29 2006
+@@ -3884,120 +3884,6 @@
  done
-  ;;
-+  freebsd*) for ac_hdr in nss.h
-+do
-+ac_safe=`echo "$ac_hdr" | sed 'y%./+-%__p_%'`
-+echo $ac_n "checking for $ac_hdr""... $ac_c" 1>&6
-+echo "configure:1663: checking for $ac_hdr" >&5
-+if eval "test \"`echo '$''{'ac_cv_header_$ac_safe'+set}'`\" = set"; then
-+  echo $ac_n "(cached) $ac_c" 1>&6
-+else
-+  cat > conftest.$ac_ext <<EOF
-+#line 1668 "configure"
-+#include "confdefs.h"
-+#include <$ac_hdr>
-+EOF
-+ac_try="$ac_cpp conftest.$ac_ext >/dev/null 2>conftest.out"
-+{ (eval echo configure:1673: \"$ac_try\") 1>&5; (eval $ac_try) 2>&5; }
-+ac_err=`grep -v '^ *+' conftest.out | grep -v "^conftest.${ac_ext}\$"`
-+if test -z "$ac_err"; then
-+  rm -rf conftest*
-+  eval "ac_cv_header_$ac_safe=yes"
-+else
-+  echo "$ac_err" >&5
-+  echo "configure: failed program was:" >&5
-+  cat conftest.$ac_ext >&5
-+  rm -rf conftest*
-+  eval "ac_cv_header_$ac_safe=no"
-+fi
-+rm -f conftest*
-+fi
-+if eval "test \"`echo '$ac_cv_header_'$ac_safe`\" = yes"; then
-+  echo "$ac_t""yes" 1>&6
-+    ac_tr_hdr=HAVE_`echo $ac_hdr | sed 'y%abcdefghijklmnopqrstuvwxyz./-%ABCDEFGHIJKLMNOPQRSTUVWXYZ___%'`
-+  cat >> confdefs.h <<EOF
-+#define $ac_tr_hdr 1
-+EOF
-+ 
-+else
-+  echo "$ac_t""no" 1>&6
-+fi
-+done
-+ ;;
-   *) for ac_hdr in nss.h
+ 
+ 
+-for ac_header in nsswitch.h
+-do
+-as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`
+-if eval "test \"\${$as_ac_Header+set}\" = set"; then
+-  echo "$as_me:$LINENO: checking for $ac_header" >&5
+-echo $ECHO_N "checking for $ac_header... $ECHO_C" >&6
+-if eval "test \"\${$as_ac_Header+set}\" = set"; then
+-  echo $ECHO_N "(cached) $ECHO_C" >&6
+-fi
+-echo "$as_me:$LINENO: result: `eval echo '${'$as_ac_Header'}'`" >&5
+-echo "${ECHO_T}`eval echo '${'$as_ac_Header'}'`" >&6
+-else
+-  # Is the header compilable?
+-echo "$as_me:$LINENO: checking $ac_header usability" >&5
+-echo $ECHO_N "checking $ac_header usability... $ECHO_C" >&6
+-cat >conftest.$ac_ext <<_ACEOF
+-#line $LINENO "configure"
+-#include "confdefs.h"
+-$ac_includes_default
+-#include <$ac_header>
+-_ACEOF
+-rm -f conftest.$ac_objext
+-if { (eval echo "$as_me:$LINENO: \"$ac_compile\"") >&5
+-  (eval $ac_compile) 2>&5
+-  ac_status=$?
+-  echo "$as_me:$LINENO: \$? = $ac_status" >&5
+-  (exit $ac_status); } &&
+-         { ac_try='test -s conftest.$ac_objext'
+-  { (eval echo "$as_me:$LINENO: \"$ac_try\"") >&5
+-  (eval $ac_try) 2>&5
+-  ac_status=$?
+-  echo "$as_me:$LINENO: \$? = $ac_status" >&5
+-  (exit $ac_status); }; }; then
+-  ac_header_compiler=yes
+-else
+-  echo "$as_me: failed program was:" >&5
+-cat conftest.$ac_ext >&5
+-ac_header_compiler=no
+-fi
+-rm -f conftest.$ac_objext conftest.$ac_ext
+-echo "$as_me:$LINENO: result: $ac_header_compiler" >&5
+-echo "${ECHO_T}$ac_header_compiler" >&6
+-
+-# Is the header present?
+-echo "$as_me:$LINENO: checking $ac_header presence" >&5
+-echo $ECHO_N "checking $ac_header presence... $ECHO_C" >&6
+-cat >conftest.$ac_ext <<_ACEOF
+-#line $LINENO "configure"
+-#include "confdefs.h"
+-#include <$ac_header>
+-_ACEOF
+-if { (eval echo "$as_me:$LINENO: \"$ac_cpp conftest.$ac_ext\"") >&5
+-  (eval $ac_cpp conftest.$ac_ext) 2>conftest.er1
+-  ac_status=$?
+-  egrep -v '^ *\+' conftest.er1 >conftest.err
+-  rm -f conftest.er1
+-  cat conftest.err >&5
+-  echo "$as_me:$LINENO: \$? = $ac_status" >&5
+-  (exit $ac_status); } >/dev/null; then
+-  if test -s conftest.err; then
+-    ac_cpp_err=$ac_c_preproc_warn_flag
+-  else
+-    ac_cpp_err=
+-  fi
+-else
+-  ac_cpp_err=yes
+-fi
+-if test -z "$ac_cpp_err"; then
+-  ac_header_preproc=yes
+-else
+-  echo "$as_me: failed program was:" >&5
+-  cat conftest.$ac_ext >&5
+-  ac_header_preproc=no
+-fi
+-rm -f conftest.err conftest.$ac_ext
+-echo "$as_me:$LINENO: result: $ac_header_preproc" >&5
+-echo "${ECHO_T}$ac_header_preproc" >&6
+-
+-# So?  What about this header?
+-case $ac_header_compiler:$ac_header_preproc in
+-  yes:no )
+-    { echo "$as_me:$LINENO: WARNING: $ac_header: accepted by the compiler, rejected by the preprocessor!" >&5
+-echo "$as_me: WARNING: $ac_header: accepted by the compiler, rejected by the preprocessor!" >&2;}
+-    { echo "$as_me:$LINENO: WARNING: $ac_header: proceeding with the preprocessor's result" >&5
+-echo "$as_me: WARNING: $ac_header: proceeding with the preprocessor's result" >&2;};;
+-  no:yes )
+-    { echo "$as_me:$LINENO: WARNING: $ac_header: present but cannot be compiled" >&5
+-echo "$as_me: WARNING: $ac_header: present but cannot be compiled" >&2;}
+-    { echo "$as_me:$LINENO: WARNING: $ac_header: check for missing prerequisite headers?" >&5
+-echo "$as_me: WARNING: $ac_header: check for missing prerequisite headers?" >&2;}
+-    { echo "$as_me:$LINENO: WARNING: $ac_header: proceeding with the preprocessor's result" >&5
+-echo "$as_me: WARNING: $ac_header: proceeding with the preprocessor's result" >&2;};;
+-esac
+-echo "$as_me:$LINENO: checking for $ac_header" >&5
+-echo $ECHO_N "checking for $ac_header... $ECHO_C" >&6
+-if eval "test \"\${$as_ac_Header+set}\" = set"; then
+-  echo $ECHO_N "(cached) $ECHO_C" >&6
+-else
+-  eval "$as_ac_Header=$ac_header_preproc"
+-fi
+-echo "$as_me:$LINENO: result: `eval echo '${'$as_ac_Header'}'`" >&5
+-echo "${ECHO_T}`eval echo '${'$as_ac_Header'}'`" >&6
+-
+-fi
+-if test `eval echo '${'$as_ac_Header'}'` = yes; then
+-  cat >>confdefs.h <<_ACEOF
+-#define `echo "HAVE_$ac_header" | $as_tr_cpp` 1
+-_ACEOF
+-
+-fi
+-
+-done
+-
+-
+ for ac_header in irs.h
  do
- ac_safe=`echo "$ac_hdr" | sed 'y%./+-%__p_%'`
+ as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`
