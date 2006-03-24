@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	WebService-Bloglines
-PORTVERSION=	0.10
-PORTREVISION=	1
+PORTVERSION=	0.11
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	WebService
@@ -29,9 +28,8 @@ MAN3=	WebService::Bloglines.3
 
 .include <bsd.port.pre.mk>
 
-# XML::RSS -> XML::Parser -> Test::Manifest which needs 5.6
-.if ${PERL_LEVEL} < 500601
-IGNORE=		requires perl 5.6.x or later. Install lang/perl5.8 then try again
+.if ${PERL_LEVEL} < 500801
+IGNORE=		requires perl 5.8.1 or later. Install lang/perl5.8 then try again
 .endif
 
 .include <bsd.port.post.mk>
