@@ -1,24 +1,11 @@
---- libavcodec/libpostproc/Makefile.orig	Mon Nov 28 22:37:54 2005
-+++ libavcodec/libpostproc/Makefile	Mon Nov 28 22:47:35 2005
-@@ -62,16 +62,14 @@
- 	install $(INSTALLSTRIP) -m 755 $(SPPLIBNAME) "$(prefix)"
- else
- 	install -d $(libdir)
--	install $(INSTALLSTRIP) -m 755 $(SPPLIBNAME) $(libdir)/$(SPPLIB)
--	ln -sf $(SPPLIB) $(libdir)/$(SPPLIBNAME)
--	ln -sf $(SPPLIB) $(libdir)/$(SPPLIBMAJOR)
--	install -d $(libdir)/pkgconfig
--	install -m 644 ../../libpostproc.pc $(libdir)/pkgconfig
-+	${BSD_INSTALL_DATA} $(SPPLIBNAME) $(libdir)/libpostproc.so
-+	install -d $(prefix)/libdata/pkgconfig
-+	${BSD_INSTALL_DATA} ../../libpostproc.pc $(prefix)/libdata/pkgconfig
- 	$(LDCONFIG) || true
- endif
- endif
--	mkdir -p $(prefix)/include/postproc
--	install -m 644 $(SRC_PATH)/libavcodec/libpostproc/postprocess.h $(prefix)/include/postproc/postprocess.h
-+	mkdir -p $(prefix)/include/ffmpeg/postproc
-+	${BSD_INSTALL_DATA} $(SRC_PATH)/libavcodec/libpostproc/postprocess.h $(prefix)/include/ffmpeg/postproc/postprocess.h
+--- libavcodec/libpostproc/Makefile.orig	Thu Mar 23 15:07:08 2006
++++ libavcodec/libpostproc/Makefile	Thu Mar 23 15:07:13 2006
+@@ -2,7 +2,7 @@
+ include ../../config.mak
  
+ # Overload incdir, postproc include files go in a different directory.
+-incdir=$(prefix)/include/postproc
++incdir=$(prefix)/include/ffmpeg/postproc
  
- #
+ NAME=postproc
+ SUBDIR=libavcodec/libpostproc

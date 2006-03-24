@@ -18,10 +18,9 @@ lib/libavcodec.so.%%SHLIB_VERSION%%
 lib/libavformat.a
 lib/libavformat.so
 lib/libavformat.so.%%SHLIB_VERSION%%
-lib/libavutil-CVS.so
 lib/libavutil.a
 lib/libavutil.so
 lib/libavutil.so.%%SHLIB_VERSION%%
-libdata/pkgconfig/libavutil.pc
 libdata/pkgconfig/libavcodec.pc
 libdata/pkgconfig/libavformat.pc
+libdata/pkgconfig/libavutil.pc
