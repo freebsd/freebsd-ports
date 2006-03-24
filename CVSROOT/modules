@@ -11101,6 +11101,7 @@ razor-agents	ports/mail/razor-agents
 rbl-milter	ports/mail/rbl-milter
 rblcheck	ports/mail/rblcheck
 rbldnsd		ports/dns/rbldnsd
+rblibtorrent	ports/net-p2p/rblibtorrent
 rbllookup	ports/dns/rbllookup
 rboot		ports/net/rboot
 rbot		ports/irc/rbot
