@@ -20,7 +20,7 @@ diff -ur ../gcc-4.1.0.orig/gcc/config/avr/avr.c ./gcc/config/avr/avr.c
      /* Classic, > 8K.  */
    { "avr3",      3, NULL },
    { "atmega103", 3, "__AVR_ATmega103__" },
-@@ -187,24 +196,42 @@
+@@ -187,24 +196,43 @@
    { "atmega88",   4, "__AVR_ATmega88__" },
    { "atmega8515", 4, "__AVR_ATmega8515__" },
    { "atmega8535", 4, "__AVR_ATmega8535__" },
@@ -43,6 +43,7 @@ diff -ur ../gcc-4.1.0.orig/gcc/config/avr/avr.c ./gcc/config/avr/avr.c
    { "atmega3250", 5, "__AVR_ATmega3250__" },
 +  { "atmega329", 5, "__AVR_ATmega329__" },
 +  { "atmega3290", 5, "__AVR_ATmega3290__" },
++  { "atmega406", 5, "__AVR_ATmega406__" },
    { "atmega64",  5, "__AVR_ATmega64__" },
 +  { "atmega640", 5, "__AVR_ATmega640__" },
 +  { "atmega644", 5, "__AVR_ATmega644__" },
