@@ -37,6 +37,10 @@ Note:  Please add new entries to the beginning of this file.
   <vuln vid="08ac7b8b-bb30-11da-b2fb-000e0c2e438a">
     <topic>sendmail -- race condition vulnerability</topic>
     <affects>
+      <package>
+        <name>sendmail</name>
+	<range><gt>8.13</gt><lt>8.13.6</lt></range>
+      </package>
       <system>
 	<name>FreeBSD</name>
 	<range><ge>6.0</ge><lt>6.0_6</lt></range>
@@ -67,6 +71,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2006-03-22</discovery>
       <entry>2006-03-24</entry>
+      <modified>2006-03-24</modified>
     </dates>
   </vuln>
 
