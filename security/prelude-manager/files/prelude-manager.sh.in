@@ -22,6 +22,6 @@ pidfile=/var/run/prelude-manager.pid
 load_rc_config $name
 
 : ${prelude_manager_enable="NO"}
-: ${prelude_manager_flags:-"-d -P ${pidfile}"}
+: ${prelude_manager_flags="-d -P ${pidfile}"}
 
 run_rc_command "$1"
