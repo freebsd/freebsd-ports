@@ -173,6 +173,10 @@ share/locale/et/LC_MESSAGES/k3b.mo
 share/locale/et/LC_MESSAGES/k3bsetup.mo
 share/locale/et/LC_MESSAGES/libk3b.mo
 share/locale/et/LC_MESSAGES/libk3bdevice.mo
+share/locale/eu/LC_MESSAGES/k3b.mo
+share/locale/eu/LC_MESSAGES/k3bsetup.mo
+share/locale/eu/LC_MESSAGES/libk3b.mo
+share/locale/eu/LC_MESSAGES/libk3bdevice.mo
 share/locale/fr/LC_MESSAGES/k3b.mo
 share/locale/fr/LC_MESSAGES/k3bsetup.mo
 share/locale/fr/LC_MESSAGES/libk3b.mo
@@ -201,6 +205,10 @@ share/locale/it/LC_MESSAGES/k3b.mo
 share/locale/it/LC_MESSAGES/k3bsetup.mo
 share/locale/it/LC_MESSAGES/libk3b.mo
 share/locale/it/LC_MESSAGES/libk3bdevice.mo
+share/locale/ja/LC_MESSAGES/k3b.mo
+share/locale/ja/LC_MESSAGES/k3bsetup.mo
+share/locale/ja/LC_MESSAGES/libk3b.mo
+share/locale/ja/LC_MESSAGES/libk3bdevice.mo
 share/locale/lt/LC_MESSAGES/k3b.mo
 share/locale/lt/LC_MESSAGES/k3bsetup.mo
 share/locale/lt/LC_MESSAGES/libk3b.mo
