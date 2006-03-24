@@ -38,7 +38,7 @@ Note:  Please add new entries to the beginning of this file.
     <topic>sendmail -- race condition vulnerability</topic>
     <affects>
       <package>
-        <name>sendmail</name>
+	<name>sendmail</name>
 	<range><gt>8.13</gt><lt>8.13.6</lt></range>
       </package>
       <system>
