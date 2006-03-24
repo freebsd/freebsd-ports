@@ -1,0 +1,13 @@
+--- src/include/mod_python.h.in.orig	Fri Mar 24 20:30:57 2006
++++ src/include/mod_python.h.in	Fri Mar 24 20:31:35 2006
+@@ -117,6 +117,10 @@
+ #define LONG_LONG PY_LONG_LONG
+ #endif
+ 
++#ifndef APR_STATUS_IS_SUCCESS
++#define APR_STATUS_IS_SUCCESS(s) ((s) == APR_SUCCESS )
++#endif
++
+ /* structure to hold interpreter data */
+ typedef struct {
+     PyInterpreterState *istate;

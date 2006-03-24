@@ -1,4 +1,4 @@
-libexec/apache2/mod_python.so
+%%APACHEMODDIR%%/mod_python.so
 @exec %D/sbin/apxs -e -a -n python %f
 @unexec %D/sbin/apxs -e -A -n python %f
 %%PYTHON_SITELIBDIR%%/mod_python/Cookie.py
@@ -14,6 +14,9 @@ libexec/apache2/mod_python.so
 %%PYTHON_SITELIBDIR%%/mod_python/apache.py
 %%PYTHON_SITELIBDIR%%/mod_python/apache.pyc
 %%PYTHON_SITELIBDIR%%/mod_python/apache.pyo
+%%PYTHON_SITELIBDIR%%/mod_python/cache.py
+%%PYTHON_SITELIBDIR%%/mod_python/cache.pyc
+%%PYTHON_SITELIBDIR%%/mod_python/cache.pyo
 %%PYTHON_SITELIBDIR%%/mod_python/cgihandler.py
 %%PYTHON_SITELIBDIR%%/mod_python/cgihandler.pyc
 %%PYTHON_SITELIBDIR%%/mod_python/cgihandler.pyo
@@ -23,6 +26,12 @@ libexec/apache2/mod_python.so
 %%PYTHON_SITELIBDIR%%/mod_python/publisher.py
 %%PYTHON_SITELIBDIR%%/mod_python/publisher.pyc
 %%PYTHON_SITELIBDIR%%/mod_python/publisher.pyo
+%%PYTHON_SITELIBDIR%%/mod_python/python22.py
+%%PYTHON_SITELIBDIR%%/mod_python/python22.pyc
+%%PYTHON_SITELIBDIR%%/mod_python/python22.pyo
+%%PYTHON_SITELIBDIR%%/mod_python/testhandler.py
+%%PYTHON_SITELIBDIR%%/mod_python/testhandler.pyc
+%%PYTHON_SITELIBDIR%%/mod_python/testhandler.pyo
 %%PYTHON_SITELIBDIR%%/mod_python/util.py
 %%PYTHON_SITELIBDIR%%/mod_python/util.pyc
 %%PYTHON_SITELIBDIR%%/mod_python/util.pyo
