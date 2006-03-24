@@ -36,14 +36,14 @@ PLIST_DIRS=	lib/bbconf/plugins lib/bbconf
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
-CFLAGS+=	-fPIC -DPIC
-.endif
-
 post-patch:
-	@${PERL} -pi -e 's|: install-docDATA|:|g' ${WRKSRC}/Makefile.in
-	@${PERL} -pi -e 's|-O2 ||g ; \
+	@${REINPLACE_CMD} -e 's|: install-docDATA|:|g' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|-O2 ||g ; \
 		 s|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
+.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
+	@${REINPLACE_CMD} -e '/^CXXFLAGS =/s/$$/ -fPIC/' \
+	    ${WRKSRC}/bbconf/plugins/*/Makefile.in
+.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
