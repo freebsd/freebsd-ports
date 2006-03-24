@@ -6,11 +6,12 @@
 
 PORTNAME=	pftpx
 PORTVERSION=	0.8
+PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.sentia.org/downloads/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	geekgod@geekgod.com
+MAINTAINER=	sullrich@gmail.com
 COMMENT=	Much enhanced ftp proxy for pf that supports most ftp protocols
 
 LIB_DEPENDS=	event-1.1a:${PORTSDIR}/devel/libevent
@@ -18,11 +19,12 @@ LIB_DEPENDS=	event-1.1a:${PORTSDIR}/devel/libevent
 MAN8=		pftpx.8
 
 PLIST_FILES=	sbin/pftpx
+USE_RC_SUBR=	pftpx
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-IGNORE=	only for 5.0 and above
+IGNORE=		only for 5.0 and above
 .endif
 
 .if ${OSVERSION} < 502116
