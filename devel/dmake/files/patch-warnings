@@ -126,18 +126,3 @@ most common.
 +      /* char *newtmp; */
  
        /* This call to Get_temp sets TMPFILE for subsequent expansion of file.
---- configure	Fri Oct 22 05:36:37 2004 -- fix warnings, so configure does
-+++ configure	Sun Jan  2 19:07:52 2005 -- not conclude, our utime is bad.
-@@ -6207,4 +6207,5 @@
- /* end confdefs.h.  */
- $ac_includes_default
-+#include <utime.h>
- int
- main ()
-@@ -6212,5 +6213,5 @@
- struct stat s, t;
-   exit (!(stat ("conftest.data", &s) == 0
--	  && utime ("conftest.data", (long *)0) == 0
-+	  && utime ("conftest.data", (void *)0) == 0
- 	  && stat ("conftest.data", &t) == 0
- 	  && t.st_mtime >= s.st_mtime
