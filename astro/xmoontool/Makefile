@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	xmoontool
-PORTVERSION=	3.0.2
+PORTVERSION=	3.0.3
 CATEGORIES=	astro
 MASTER_SITES=	http://www.senax.net/xmoontool/
 
 MAINTAINER=	frank@dynamical-systems.org
 COMMENT=	A version of John Walker's classical moontool for X11/Motif
 
-USE_REINPLACE=	yes
 USE_MOTIF=	yes
 USE_X_PREFIX=	yes
 
@@ -22,6 +21,21 @@ PORTDOCS=	NOTES
 PLIST_FILES=	bin/xmoontool
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 503000	# libnova currently not available here!
+WITHOUT_LIBNOVA=	yes
+.endif
+
+.if defined(WITHOUT_LIBNOVA)
+MAKE_ENV+=	WITHOUT_LIBNOVA=yes
+.else
+LIB_DEPENDS+=	nova:${PORTSDIR}/astro/libnova
+.endif
+
+pre-everything::
+.if !defined(WITHOUT_LIBNOVA)
+	@${ECHO_MSG} "You can disable libnova support by defining WITHOUT_LIBNOVA"
+.endif
 
 pre-configure:
 .if !defined(WITHOUT_DEFAULT_COLOR)
