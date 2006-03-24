@@ -2696,6 +2696,7 @@ fxscintilla-fox12	ports/x11-toolkits/fxscintilla-fox12
 fxt		ports/math/fxt
 fxtv		ports/multimedia/fxtv
 fyre		ports/graphics/fyre
+g-cows		ports/www/g-cows
 g-gcl		ports/www/g-gcl
 g-wrap		ports/devel/g-wrap
 g2		ports/graphics/g2
