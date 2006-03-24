@@ -18,7 +18,7 @@ PATCHFILES=	roottail-1.2+xfce.diff
 PATCH_DIST_STRIP=	-p1
 .endif
 
-MAINTAINER=	jedgar@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Print text directly to X11 root window
 
 MAN1=		root-tail.1

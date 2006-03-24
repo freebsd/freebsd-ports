@@ -10,7 +10,7 @@ PORTVERSION=	1.2.0
 CATEGORIES=	games
 MASTER_SITES=	http://okb-1.org/speyes/
 
-MAINTAINER=	jedgar@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	WindowMaker dockapp/xeyes clone using SouthPark characters
 
 PLIST_FILES=	bin/speyes

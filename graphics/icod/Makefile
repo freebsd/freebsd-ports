@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR= jedgar
 DISTNAME=	${PORTNAME}.${PORTVERSION}
 
-MAINTAINER=	jedgar@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility to convert Windows icon files to xpm format
 
 PLIST_FILES=	bin/icod

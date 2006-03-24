@@ -11,8 +11,8 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.erikyyy.de/invaders/
 DISTNAME=	invaders-${PORTVERSION}
 
-MAINTAINER=	jedgar@FreeBSD.org
-COMMENT=	This is grubinvaders, a multi boot compliant game for i386
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A multi boot compliant game for i386
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/grub:${PORTSDIR}/sysutils/grub
 

@@ -12,7 +12,7 @@ MASTER_SITES=	http://members.cox.net/ehf_dockapps/wmcalc/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR= jedgar
 
-MAINTAINER=	jedgar@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple dockable calculator
 
 ALL_TARGET=	clean wmcalc

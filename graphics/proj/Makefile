@@ -11,7 +11,7 @@ MASTER_SITES=	ftp://ftp.remotesensing.org/pub/proj/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${NADFILES}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	jedgar@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cartographic Projections library
 
 NADFILES=	proj-nad27-1.2.tar.gz

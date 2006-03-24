@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR= jedgar
 DISTNAME=	wmfire-0.0.3.9pre4
 
-MAINTAINER=	jedgar@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Window Maker dock app showing load average as a flame
 
 USE_X_PREFIX=	yes

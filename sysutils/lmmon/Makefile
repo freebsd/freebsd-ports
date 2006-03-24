@@ -10,7 +10,7 @@ PORTVERSION=	0.65
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.fxp.org/~jedgar/lmmon/
 
-MAINTAINER=	jedgar@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Display information gathered from MB power management controller
 
 ONLY_FOR_ARCHS=	i386 amd64
