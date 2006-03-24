@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	misc kde
 MASTER_SITES=	http://salvaste.altervista.org/
 
-MAINTAINER=	markus@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CD organizer for KDE
 
 USE_KDEBASE_VER=3

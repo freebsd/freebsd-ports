@@ -11,7 +11,7 @@ CATEGORIES=		deskutils kde
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=		markus@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Panel applet for editing and accessing the KDE addressbook
 
 USE_KDEBASE_VER=	3

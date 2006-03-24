@@ -10,7 +10,7 @@ PORTREVISION=	4
 CATEGORIES=	converters kde
 MASTER_SITES=	http://zavolzhsky.dax.ru/download/
 
-MAINTAINER=	markus@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The simple text conversion utility for KDE 3
 
 USE_BZIP2=	yes

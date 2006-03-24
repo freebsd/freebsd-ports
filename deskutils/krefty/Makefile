@@ -10,7 +10,7 @@ PORTREVISION=	5
 CATEGORIES=	deskutils kde
 MASTER_SITES=	http://codeworks.gnomedia.com/krefty/
 
-MAINTAINER=	markus@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quick Reference sheets for KDE
 
 USE_KDELIBS_VER=3

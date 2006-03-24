@@ -10,7 +10,7 @@ PORTREVISION=		3
 CATEGORIES=		deskutils kde
 MASTER_SITES=		http://www.theblessing.net/programming/${PORTNAME}/
 
-MAINTAINER=		markus@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		A diary program for KDE 3
 
 LIB_DEPENDS=		sqlite3:${PORTSDIR}/databases/sqlite3
