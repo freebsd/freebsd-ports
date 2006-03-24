@@ -8,7 +8,9 @@
 PORTNAME=	tinyerp-server
 PORTVERSION=	3.2.1
 CATEGORIES=	finance
-MASTER_SITES=	http://tinyerp.org/download/sources/
+MASTER_SITES=	${MASTER_SITE_LOCAL}			\
+		http://tinyerp.org/download/sources/
+MASTER_SITE_SUBDIR=	thierry
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
