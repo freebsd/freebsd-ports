@@ -22,6 +22,6 @@ pidfile=/var/run/prelude-lml.pid
 load_rc_config $name
 
 : ${prelude_lml_enable="NO"}
-: ${prelude_lml_flags:-"-d -P ${pidfile}"}
+: ${prelude_lml_flags="-d -P ${pidfile}"}
 
 run_rc_command "$1"
