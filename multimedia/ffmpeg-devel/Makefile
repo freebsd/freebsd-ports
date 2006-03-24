@@ -7,7 +7,6 @@
 
 PORTNAME=	ffmpeg
 DISTVERSION=	0.4.9.cvs.${RELEASE_DATE}
-PORTREVISION=	2
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 #		http://mplayerhq.hu/MPlayer/cvs/
@@ -21,7 +20,6 @@ COMMENT=	Hyper fast realtime audio/video encoder/converter, streaming server
 HAS_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 WANT_SDL=	yes
 CONFIGURE_ARGS=	--cc="${CC}" --prefix="${PREFIX}" \
 		--make="${GMAKE}" \
@@ -29,11 +27,13 @@ CONFIGURE_ARGS=	--cc="${CC}" --prefix="${PREFIX}" \
 		--enable-memalign-hack \
 		--enable-shared \
 		--source-path=${WRKSRC}
+MAKE_ENV=	INSTALL="${INSTALL}"
 
 FFMPEG_CFLAGS=	\
 		-I${WRKSRC}/libavcodec \
 		-I${WRKSRC}/libavcodec/i386 \
 		-I${WRKSRC}/libavformat \
+		-I${WRKSRC}/libavutil \
 		-I${LOCALBASE}/include \
 		-I${X11BASE}/include \
 		-I. -I.. \
@@ -44,6 +44,7 @@ FFMPEG_LDFLAGS=	\
 		-L${WRKSRC}/libavcodec/libpostproc \
 		-L${WRKSRC}/libavcodec \
 		-L${WRKSRC}/libavformat \
+		-L${WRKSRC}/libavutil \
 		-L${LOCALBASE}/lib \
 		-L${X11BASE}/lib \
 		${LDFLAGS} \
@@ -57,7 +58,7 @@ INSTALLS_SHLIB=	yes
 NO_LATEST_LINK=	yes
 CONFLICTS=      ffmpeg-[0-9]*-*
 
-RELEASE_DATE=	2005122600
+RELEASE_DATE=	2006032300
 SHLIB_VERSION=	1
 
 MAN1=		ffmpeg.1
@@ -84,7 +85,7 @@ LIB_FILES=	libavcodec/libavcodec.a \
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64" || ${ARCH} == "amd64"
-BROKEN=		"Does not compile on ${ARCH}"
+BROKEN=		Does not compile on ${ARCH}
 .endif
 
 ##
@@ -108,7 +109,7 @@ WITHOUT_MMX=	yes
 .else
 #EXTRA_PATCHES+=	${FILESDIR}/extra-bktr-patch-libavformat::Makefile
 .endif
-## sse hardware vector support 
+## sse hardware vector support
 .if (defined(MACHINE_CPU) && ${MACHINE_CPU:Msse} == "sse")
 WITH_BUILTIN_VECTOR=	yes
 .endif
@@ -227,13 +228,12 @@ CONFIGURE_ARGS+=	--enable-faad \
 .ifdef(WITHOUT_FFMPEG_FFSERVER)
 CONFIGURE_ARGS+=	--disable-ffserver
 .else
-USE_RC_SUBR=		yes
+USE_RC_SUBR=		ffserver
 
 MAN1+=			ffserver.1
 
 PLIST_FILES+=		bin/ffserver \
-			etc/ffserver.conf.sample \
-			etc/rc.d/ffserver.sh
+			etc/ffserver.conf.sample
 .endif
 ## gpl libs
 .ifdef(GPLLIBS)
@@ -265,8 +265,7 @@ CONFIGURE_ARGS+=	--enable-libogg
 .endif
 ## post processing
 .ifndef(WITHOUT_POSTPROCESS)
-CONFIGURE_ARGS+=	--enable-pp \
-			--enable-shared-pp
+CONFIGURE_ARGS+=	--enable-pp
 
 LIB_FILES+=		libavcodec/libpostproc/libpostproc.a
 PLIST_DIRS+=		include/ffmpeg/postproc
@@ -523,8 +522,6 @@ post-patch:
 		${WRKSRC}/libavcodec/liba52/a52.h
 .endif
 .ifndef(WITHOUT_FFMPEG_FFSERVER)
-	@${SED} -e 's|%%PREFIX%%|${PREFIX}|; s|%%RC_SUBR%%|${RC_SUBR}|' \
-		${FILESDIR}/ffserver.sh >${WRKDIR}/ffserver.sh
 	@${REINPLACE_CMD} -e "s!/etc/ffserver.conf!${PREFIX}/etc/ffserver.conf!g" \
 		${WRKSRC}/ffserver.c ${WRKSRC}/doc/ffserver-doc.texi
 	@${REINPLACE_CMD} -e 's!NoDaemon!# NoDaemon!g' \
@@ -599,7 +596,6 @@ post-install:
 .ifndef(WITHOUT_FFMPEG_FFSERVER)
 	@${INSTALL_DATA} ${WRKSRC}/doc/ffserver.conf \
 		${PREFIX}/etc/ffserver.conf.sample
-	@${INSTALL_SCRIPT} ${WRKDIR}/ffserver.sh ${PREFIX}/etc/rc.d
 .endif
 .for file in ${HEADER_FILES}
 # fix header references prior to installation

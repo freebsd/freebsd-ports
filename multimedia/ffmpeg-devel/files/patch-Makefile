@@ -1,0 +1,31 @@
+--- Makefile.orig	Wed Mar 15 21:15:07 2006
++++ Makefile	Thu Mar 23 14:49:50 2006
+@@ -59,7 +59,7 @@
+ 
+ OBJS = ffmpeg.o ffserver.o cmdutils.o $(FFPLAY_O)
+ SRCS = $(OBJS:.o=.c) $(ASM_OBJS:.o=.s)
+-FFLIBS = -L./libavformat -lavformat$(BUILDSUF) -L./libavcodec -lavcodec$(BUILDSUF) -L./libavutil -lavutil$(BUILDSUF)
++FFLIBS = -L./libavutil -lavutil$(BUILDSUF) -L./libavformat -lavformat$(BUILDSUF) -L./libavcodec -lavcodec$(BUILDSUF)
+ 
+ all: lib $(PROG_G) $(PROG) $(PROGTEST) $(VHOOK) $(QTFASTSTART) $(DOC)
+ 
+@@ -118,8 +118,7 @@
+ else
+ install-progs: $(PROG)
+ endif
+-	install -d "$(bindir)"
+-	install -c $(INSTALLSTRIP) -m 755 $(PROG) "$(bindir)"
++	${BSD_INSTALL_PROGRAM} $(PROG) "$(bindir)"
+ 
+ # create the window installer
+ wininstaller: all install
+@@ -129,8 +128,7 @@
+ install-man:
+ ifneq ($(CONFIG_WIN32),yes)
+ 	if [ -f doc/ffmpeg.1 ] ; then \
+-	    install -d "$(mandir)/man1" ; \
+-	    install -m 644 $(MANPAGE) "$(mandir)/man1" ; \
++	    ${BSD_INSTALL_MAN} $(MANPAGE) "${MANPREFIX}/man/man1" ; \
+ 	fi
+ endif
+ 

@@ -1,0 +1,13 @@
+--- vhook/Makefile.orig	Thu Mar 23 14:34:08 2006
++++ vhook/Makefile	Thu Mar 23 14:35:12 2006
+@@ -27,8 +27,8 @@
+ 	$(CC) -MM $(CFLAGS) $^ 1>.depend
+ 
+ install:
+-	install -d "$(libdir)/vhook"
+-	install -m 755 $(HOOKS) "$(libdir)/vhook"
++	${INSTALL} -d "$(libdir)/vhook"
++	${BSD_INSTALL_DATA} $(HOOKS) "$(libdir)/vhook"
+ 
+ imlib2$(SLIBSUF): imlib2.o
+ 	$(CC) $(LDFLAGS) -g -o $@ $(SHFLAGS) $< -L /usr/local/lib -lImlib2

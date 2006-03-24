@@ -1,6 +1,6 @@
---- configure.orig	Sat Dec 17 16:14:03 2005
-+++ configure	Tue Dec 20 03:13:45 2005
-@@ -1021,6 +1021,8 @@
+--- configure.orig	Sun Mar 19 03:31:32 2006
++++ configure	Thu Mar 23 15:15:34 2006
+@@ -1107,6 +1107,8 @@
  builtin_vector=no
  if $cc -msse -o $TMPO $TMPC 2> /dev/null ; then
    builtin_vector=yes
@@ -8,23 +8,32 @@
 +  builtin_vector=no
  fi
  
- # dlopen/dlfcn.h probing
-@@ -1457,13 +1459,13 @@
- if test "$lshared" = "yes" ; then
+ # test for mm3dnow.h
+@@ -1597,13 +1599,13 @@
+   echo "#define BUILD_SHARED_AV 1" >> $TMPH
    echo "BUILD_SHARED=yes" >> config.mak
    echo "PIC=-fPIC -DPIC" >> config.mak
--  echo "SPPMAJOR=${lavc_version/.*/}" >> config.mak
+-  echo "SPPMAJOR=${lavc_version%%.*}" >> config.mak
 -  echo "SPPVERSION=$lavc_version" >> config.mak
--  echo "LAVCMAJOR=${lavc_version/.*/}" >> config.mak
+-  echo "LAVCMAJOR=${lavc_version%%.*}" >> config.mak
 +  echo "SPPMAJOR=1" >> config.mak
 +  echo "SPPVERSION=1" >> config.mak
 +  echo "LAVCMAJOR=1" >> config.mak
    echo "LAVCVERSION=$lavc_version" >> config.mak
--  echo "LAVFMAJOR=${lavf_version/.*/}" >> config.mak
+-  echo "LAVFMAJOR=${lavf_version%%.*}" >> config.mak
 +  echo "LAVFMAJOR=1" >> config.mak
    echo "LAVFVERSION=$lavf_version" >> config.mak
--  echo "LAVUMAJOR=${lavu_version/.*/}" >> config.mak
+-  echo "LAVUMAJOR=${lavu_version%%.*}" >> config.mak
 +  echo "LAVUMAJOR=1" >> config.mak
    echo "LAVUVERSION=$lavu_version" >> config.mak
- fi
- echo "EXTRALIBS=$extralibs" >> config.mak
+   echo "SLIBNAME=${SLIBNAME}" >> config.mak
+   echo "SLIBNAME_WITH_VERSION=${SLIBNAME_WITH_VERSION}" >> config.mak
+@@ -2075,7 +2077,7 @@
+ Requires:
+ Conflicts:
+ Libs: -L\${libdir} -lpostproc
+-Cflags: -I\${includedir} -I\${includedir}/postproc
++Cflags: -I\${includedir} -I\${includedir}/ffmpeg/postproc
+ EOF
+ 
+ cat <<EOF >libpostproc-uninstalled.pc
