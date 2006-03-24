@@ -6,17 +6,18 @@
 #
 
 PORTNAME=	bvi
-PORTVERSION=	1.3.1
+PORTVERSION=	1.3.2
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= bvi
 EXTRACT_SUFX=	.src.tar.gz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	vd@FreeBSD.org
 COMMENT=	A vi-like binary file (hex)editor
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--datadir=${PREFIX}/share/bvi
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS=	--datadir=${DATADIR}
 
 MAN1=		bvi.1 bmore.1
 MLINKS=		bvi.1 bview.1 \
