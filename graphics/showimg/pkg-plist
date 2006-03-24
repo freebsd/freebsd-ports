@@ -1,24 +1,41 @@
 bin/showimg
-bin/sidbtest
+%%KEXIDB%%bin/sidbtest
+lib/kde3/libshowimgpart.a
+lib/kde3/libshowimgpart.la
+lib/kde3/libshowimgpart.so
+%%MYSQL%%lib/kde3/showimg_kexidb_mysqldriver.a
+%%MYSQL%%lib/kde3/showimg_kexidb_mysqldriver.la
+%%MYSQL%%lib/kde3/showimg_kexidb_mysqldriver.so
+%%KEXIDB%%lib/kde3/showimg_kexidb_sqlite2driver.a
+%%KEXIDB%%lib/kde3/showimg_kexidb_sqlite2driver.la
+%%KEXIDB%%lib/kde3/showimg_kexidb_sqlite2driver.so
+%%KEXIDB%%lib/kde3/showimg_kexidb_sqlite3driver.a
+%%KEXIDB%%lib/kde3/showimg_kexidb_sqlite3driver.la
+%%KEXIDB%%lib/kde3/showimg_kexidb_sqlite3driver.so
+lib/libshowimgcore.a
 lib/libshowimgcore.la
 lib/libshowimgcore.so
 lib/libshowimgcore.so.0
-lib/libshowimgkexisql3.la
-lib/libshowimgkexisql3.so.3
-lib/libshowimgkexisql2.la
-lib/libshowimgkexisql2.so.2
-lib/libshowimgkexidb.la
-lib/libshowimgkexidb.so.0
-lib/libshowimgkexidbparser.la
-lib/libshowimgkexidbparser.so.1
-lib/libshowimgkexiutils.la
-lib/libshowimgkexiutils.so.1
-lib/kde3/libshowimgpart.la
-lib/kde3/libshowimgpart.so
-lib/kde3/showimg_kexidb_sqlite3driver.la
-lib/kde3/showimg_kexidb_sqlite3driver.so
-lib/kde3/showimg_kexidb_sqlite2driver.la
-lib/kde3/showimg_kexidb_sqlite2driver.so
+%%KEXIDB%%lib/libshowimgkexidb.a
+%%KEXIDB%%lib/libshowimgkexidb.la
+%%KEXIDB%%lib/libshowimgkexidb.so
+%%KEXIDB%%lib/libshowimgkexidb.so.0
+%%KEXIDB%%lib/libshowimgkexidbparser.a
+%%KEXIDB%%lib/libshowimgkexidbparser.la
+%%KEXIDB%%lib/libshowimgkexidbparser.so
+%%KEXIDB%%lib/libshowimgkexidbparser.so.1
+%%KEXIDB%%lib/libshowimgkexisql2.a
+%%KEXIDB%%lib/libshowimgkexisql2.la
+%%KEXIDB%%lib/libshowimgkexisql2.so
+%%KEXIDB%%lib/libshowimgkexisql2.so.2
+%%KEXIDB%%lib/libshowimgkexisql3.a
+%%KEXIDB%%lib/libshowimgkexisql3.la
+%%KEXIDB%%lib/libshowimgkexisql3.so
+%%KEXIDB%%lib/libshowimgkexisql3.so.3
+%%KEXIDB%%lib/libshowimgkexiutils.a
+%%KEXIDB%%lib/libshowimgkexiutils.la
+%%KEXIDB%%lib/libshowimgkexiutils.so
+%%KEXIDB%%lib/libshowimgkexiutils.so.1
 share/applnk/Graphics/showimg.desktop
 share/apps/konqueror/servicemenus/konqshowimg.desktop
 share/apps/showimg/convert2png.pl
@@ -90,6 +107,7 @@ share/apps/showimg/pics/layout2.png
 share/apps/showimg/pics/layout3.png
 share/apps/showimg/pics/layout4.png
 share/apps/showimg/pics/logo.png
+share/apps/showimg/showimgsimpleui.rc
 share/apps/showimg/showimgui.rc
 share/apps/showimg/tips
 share/apps/showimgpart/showimgpart.rc
@@ -137,9 +155,47 @@ share/doc/HTML/en/showimg/comparison.png
 share/doc/HTML/en/showimg/index.cache.bz2
 share/doc/HTML/en/showimg/index.docbook
 share/doc/HTML/en/showimg/main-window.png
+share/doc/HTML/es/showimg/but-back.png
+share/doc/HTML/es/showimg/but-copy.png
+share/doc/HTML/es/showimg/but-cut.png
+share/doc/HTML/es/showimg/but-forward.png
+share/doc/HTML/es/showimg/but-fullscreen.png
+share/doc/HTML/es/showimg/but-go_up.png
+share/doc/HTML/es/showimg/but-home.png
+share/doc/HTML/es/showimg/but-horiz-flip.png
+share/doc/HTML/es/showimg/but-horizontal_flip.png
+share/doc/HTML/es/showimg/but-next-image.png
+share/doc/HTML/es/showimg/but-next_image.png
+share/doc/HTML/es/showimg/but-original_size.png
+share/doc/HTML/es/showimg/but-paste.png
+share/doc/HTML/es/showimg/but-prev-image.png
+share/doc/HTML/es/showimg/but-previous_image.png
+share/doc/HTML/es/showimg/but-refresh.png
+share/doc/HTML/es/showimg/but-reload.png
+share/doc/HTML/es/showimg/but-rotate-left.png
+share/doc/HTML/es/showimg/but-rotate-right.png
+share/doc/HTML/es/showimg/but-rotate_left.png
+share/doc/HTML/es/showimg/but-rotate_right.png
+share/doc/HTML/es/showimg/but-slide-show.png
+share/doc/HTML/es/showimg/but-slide_show.png
+share/doc/HTML/es/showimg/but-stop-thumbs.png
+share/doc/HTML/es/showimg/but-stop.png
+share/doc/HTML/es/showimg/but-toggle-thumbs.png
+share/doc/HTML/es/showimg/but-toggle_thumbnails.png
+share/doc/HTML/es/showimg/but-vert-flip.png
+share/doc/HTML/es/showimg/but-vertical_flip.png
+share/doc/HTML/es/showimg/but-zoom-fit-screen.png
+share/doc/HTML/es/showimg/but-zoom-in.png
+share/doc/HTML/es/showimg/but-zoom-original.png
+share/doc/HTML/es/showimg/but-zoom-out.png
+share/doc/HTML/es/showimg/but-zoom_in.png
+share/doc/HTML/es/showimg/but-zoom_out.png
+share/doc/HTML/es/showimg/but-zoom_to_fit.png
 share/doc/HTML/es/showimg/common
+share/doc/HTML/es/showimg/comparison.png
 share/doc/HTML/es/showimg/index.cache.bz2
 share/doc/HTML/es/showimg/index.docbook
+share/doc/HTML/es/showimg/main-window.png
 share/doc/HTML/et/showimg/common
 share/doc/HTML/et/showimg/index.cache.bz2
 share/doc/HTML/et/showimg/index.docbook
@@ -147,9 +203,9 @@ share/doc/HTML/fr/showimg/common
 share/doc/HTML/fr/showimg/index.cache.bz2
 share/doc/HTML/fr/showimg/index.docbook
 share/doc/HTML/it/showimg/common
+share/doc/HTML/it/showimg/comparison.png
 share/doc/HTML/it/showimg/index.cache.bz2
 share/doc/HTML/it/showimg/index.docbook
-share/doc/HTML/it/showimg/comparison.png
 share/doc/HTML/it/showimg/main-window.png
 share/doc/HTML/pt/showimg/common
 share/doc/HTML/pt/showimg/index.cache.bz2
@@ -158,13 +214,14 @@ share/doc/HTML/ru/showimg/common
 share/doc/HTML/ru/showimg/index.cache.bz2
 share/doc/HTML/ru/showimg/index.docbook
 share/doc/HTML/sv/showimg/common
+share/doc/HTML/sv/showimg/comparison.png
 share/doc/HTML/sv/showimg/index.cache.bz2
 share/doc/HTML/sv/showimg/index.docbook
-share/doc/HTML/sv/showimg/comparison.png
 share/doc/HTML/sv/showimg/main-window.png
 share/icons/hicolor/32x32/apps/showimg.png
 share/icons/hicolor/48x48/apps/showimg.png
 share/icons/hicolor/64x64/apps/showimg.png
+share/locale/bg/LC_MESSAGES/showimg.mo
 share/locale/br/LC_MESSAGES/showimg.mo
 share/locale/bs/LC_MESSAGES/showimg.mo
 share/locale/ca/LC_MESSAGES/showimg.mo
@@ -172,8 +229,8 @@ share/locale/cs/LC_MESSAGES/showimg.mo
 share/locale/cy/LC_MESSAGES/showimg.mo
 share/locale/da/LC_MESSAGES/showimg.mo
 share/locale/de/LC_MESSAGES/showimg.mo
-share/locale/en_GB/LC_MESSAGES/showimg.mo
 share/locale/el/LC_MESSAGES/showimg.mo
+share/locale/en_GB/LC_MESSAGES/showimg.mo
 share/locale/es/LC_MESSAGES/showimg.mo
 share/locale/et/LC_MESSAGES/showimg.mo
 share/locale/fr/LC_MESSAGES/showimg.mo
@@ -188,7 +245,6 @@ share/locale/nl/LC_MESSAGES/showimg.mo
 share/locale/pl/LC_MESSAGES/showimg.mo
 share/locale/pt/LC_MESSAGES/showimg.mo
 share/locale/pt_BR/LC_MESSAGES/showimg.mo
-share/locale/ro/LC_MESSAGES/showimg.mo
 share/locale/ru/LC_MESSAGES/showimg.mo
 share/locale/sk/LC_MESSAGES/showimg.mo
 share/locale/sr/LC_MESSAGES/showimg.mo
@@ -198,39 +254,37 @@ share/locale/tr/LC_MESSAGES/showimg.mo
 share/locale/zh_CN/LC_MESSAGES/showimg.mo
 share/mimelnk/image/x-psd.desktop
 share/mimelnk/image/x-sia.desktop
+%%MYSQL%%share/services/showimg_kexidb_mysqldriver.desktop
+%%KEXIDB%%share/services/showimg_kexidb_sqlite2driver.desktop
+%%KEXIDB%%share/services/showimg_kexidb_sqlite3driver.desktop
 share/services/showimgpart.desktop
-share/services/showimg_kexidb_sqlite3driver.desktop
-share/services/showimg_kexidb_sqlite2driver.desktop
-share/servicetypes/showimg_kexidb_driver.desktop
-@dirrmtry share/mimelnk/image
-@dirrmtry share/mimelnk
-@dirrmtry share/icons/hicolor/64x64/apps
-@dirrmtry share/icons/hicolor/64x64
-@dirrmtry share/icons/hicolor/48x48/apps
-@dirrmtry share/icons/hicolor/48x48
-@dirrmtry share/icons/hicolor/32x32/apps
-@dirrmtry share/icons/hicolor/32x32
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
-@dirrm share/doc/HTML/en/showimg
-@dirrmtry share/doc/HTML/en
-@dirrm share/doc/HTML/da/showimg
-@dirrmtry share/doc/HTML/da
-@dirrm share/doc/HTML/es/showimg
-@dirrmtry share/doc/HTML/es
-@dirrm share/doc/HTML/et/showimg
-@dirrmtry share/doc/HTML/et
-@dirrm share/doc/HTML/fr/showimg
-@dirrmtry share/doc/HTML/fr
-@dirrm share/doc/HTML/it/showimg
-@dirrmtry share/doc/HTML/it
-@dirrm share/doc/HTML/pt/showimg
-@dirrmtry share/doc/HTML/pt
-@dirrm share/doc/HTML/ru/showimg
-@dirrmtry share/doc/HTML/ru
+%%KEXIDB%%share/servicetypes/showimg_kexidb_driver.desktop
+@dirrmtry share/locale/zh_CN/LC_MESSAGES
+@dirrmtry share/locale/zh_CN
+@dirrmtry share/locale/sr/LC_MESSAGES
+@dirrmtry share/locale/sr
+@dirrmtry share/locale/sk/LC_MESSAGES
+@dirrmtry share/locale/sk
+@dirrmtry share/locale/pt/LC_MESSAGES
+@dirrmtry share/locale/pt
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/el/LC_MESSAGES
+@dirrmtry share/locale/el
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs
+@dirrmtry share/locale/ca/LC_MESSAGES
+@dirrmtry share/locale/ca
 @dirrm share/doc/HTML/sv/showimg
-@dirrmtry share/doc/HTML/sv
-@dirrmtry share/doc/HTML
+@dirrm share/doc/HTML/ru/showimg
+@dirrm share/doc/HTML/pt/showimg
+@dirrm share/doc/HTML/it/showimg
+@dirrm share/doc/HTML/fr/showimg
+@dirrm share/doc/HTML/et/showimg
+@dirrm share/doc/HTML/es/showimg
+@dirrm share/doc/HTML/en/showimg
+@dirrm share/doc/HTML/da/showimg
+@dirrm share/apps/showimgpart
 @dirrm share/apps/showimg/pics
 @dirrm share/apps/showimg/icons/hicolor/64x64/mimetypes
 @dirrm share/apps/showimg/icons/hicolor/64x64
@@ -254,9 +308,3 @@ share/servicetypes/showimg_kexidb_driver.desktop
 @dirrm share/apps/showimg/icons/crystalsvg
 @dirrm share/apps/showimg/icons
 @dirrm share/apps/showimg
-@dirrmtry share/apps/konqueror/servicemenus
-@dirrmtry share/apps/konqueror
-@dirrmtry share/apps/showimgpart
-@dirrmtry share/apps
-@dirrmtry share/applnk/Graphics
-@dirrmtry share/applnk
