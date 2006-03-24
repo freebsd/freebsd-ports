@@ -16,7 +16,7 @@ COMMENT=	RFC 2307 NSS module
 
 USE_OPENLDAP=	yes
 
-NSS_LDAP_VERSION=244
+NSS_LDAP_VERSION=249
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -44,6 +44,7 @@ do-install:
 	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.pre.mk>
+
 .if ${OSVERSION} < 500112
 IGNORE=		NSS modules only supported on FreeBSD 5.1 or later
 .endif
