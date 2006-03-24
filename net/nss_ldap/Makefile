@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.padl.com/download/
 DISTNAME=	${PORTNAME}-${NSS_LDAP_VERSION}
 
-MAINTAINER=	nectar@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	RFC 2307 NSS module
 
 USE_OPENLDAP=	yes

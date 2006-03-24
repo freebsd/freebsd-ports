@@ -10,7 +10,7 @@ PORTVERSION=		3.0.2
 CATEGORIES=		dns
 MASTER_SITES=		ftp://athena-dist.mit.edu/pub/ATHENA/hesiod/
 
-MAINTAINER=		nectar@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		A directory service built on DNS and BIND
 
 MAN1=			hesinfo.1

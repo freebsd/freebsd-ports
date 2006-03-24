@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.pdc.kth.se/pub/heimdal/src/ \
 		ftp://ftp.ayamura.org/pub/heimdal/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	nectar@FreeBSD.ORG
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A re-implementation of Kerberos V
 
 CONFLICTS=	krb4-[0-9]* krb5-[0-9]*

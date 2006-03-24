@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	japanese x11-toolkits
 MASTER_SITES=	http://im-ja.sourceforge.net/
 
-MAINTAINER=	nectar@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Japanese input module for GTK2
 
 OPTIONS+=	ANTHY	"Use Anthy" on
