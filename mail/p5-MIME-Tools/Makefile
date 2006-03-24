@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	p5-MIME-Tools
-PORTVERSION=	5.419
+PORTVERSION=	5.420
 PORTEPOCH=	2
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
@@ -63,6 +63,10 @@ post-install:
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+IGNORE=		requires perl 5.6.0 or later. Install lang/perl5.8 and try again
+.endif
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "*.orig" | ${XARGS} ${RM} -f
