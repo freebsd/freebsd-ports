@@ -7,8 +7,8 @@
 #
 
 PORTNAME=	libetpan
-PORTVERSION=	0.42
-PORTREVISION=	1
+PORTVERSION=	0.44
+PORTREVISION=	0
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -38,5 +38,11 @@ LIB_DEPENDS+=	sasl2.2:${PORTSDIR}/security/cyrus-sasl2
 .else
 CONFIGURE_ARGS+=	--without-sasl
 .endif
+
+post-install:
+	@${FIND} ${PREFIX}/include/libetpan* ! -type d | ${SED} \
+		's,^${PREFIX}/,,' >> ${TMPPLIST}
+	@${FIND} ${PREFIX}/include/libetpan -type d | ${SORT} | ${SED} \
+		's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 
 .include <bsd.port.mk>
