@@ -1,0 +1,10 @@
+include/hvdi.h
+lib/libHVDI.a
+lib/libHVDI.so
+lib/libHVDI.so.0
+lib/libHVDI.so.0.9.1
+%%PORTDOCS%%%%DOCSDIR%%/api.txt
+%%PORTDOCS%%%%DOCSDIR%%/HVDIchanges.txt
+%%PORTDOCS%%%%DOCSDIR%%/readme.txt
+%%PORTDOCS%%%%DOCSDIR%%/cryptapi.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

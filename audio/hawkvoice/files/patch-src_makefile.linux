@@ -1,0 +1,55 @@
+--- makefile.linux	Sun Mar  5 17:05:02 2006
++++ makefile.linux	Sun Mar  5 17:05:37 2006
+@@ -1,19 +1,18 @@
+-CC = gcc
++CC? = ${CC}
+ AR = ar cru
+ RANLIB = ranlib
+ MAJOR_VERSION = 0
+ MINOR_VERSION = 9
+ PATCH_LEVEL = 1
+ VERSION = $(MAJOR_VERSION).$(MINOR_VERSION).$(PATCH_LEVEL)
+-LIBDIR = /usr/lib
+-INCDIR = /usr/include
++LIBDIR = ${PREFIX}/lib
++INCDIR = ${PREFIX}/include
+ INCLUDE = -I../include
+ OUTPUT = libHVDI.so.$(VERSION)
+ LIBNAME = HVDI
+ STATIC = libHVDI.a
+-OPTFLAGS = -funroll-all-loops -ffast-math -fomit-frame-pointer -O2 -D_GNU_SOURCE
+-CFLAGS = -Wall -fPIC $(INCLUDE) $(OPTFLAGS)
+-LIBFLAGS = -shared -Wl,-soname,HVDI.so.$(MAJOR_VERSION).$(MINOR_VERSION) -rdynamic
++CFLAGS? = ${CFLAGS} -Wall -fPIC $(INCLUDE)
++LIBFLAGS = -shared -Wl,-soname,HVDI.so.$(MAJOR_VERSION).$(MINOR_VERSION) -rdynamic ${LDFLAGS}
+ 
+ HVDI_SOURCE = decpacket.c encpacket.c hvdi.c rate.c hcrypt.c
+ 
+@@ -55,25 +54,14 @@
+ 	$(AR) $(STATIC) $(OBJECTS)
+ 	$(RANLIB) $(STATIC)
+ 
+-include depend
+-
+ install:
+ 	cp $(OUTPUT) $(LIBDIR)
+ 	cp $(STATIC) $(LIBDIR)
+ 	chmod 755 $(LIBDIR)/$(OUTPUT)
+-	ln -s $(LIBDIR)/$(OUTPUT) lib$(LIBNAME).so.$(MAJOR_VERSION).$(MINOR_VERSION)
+-	ln -s $(LIBDIR)/$(OUTPUT) lib$(LIBNAME).so.$(MAJOR_VERSION)
+-	ln -s $(LIBDIR)/$(OUTPUT) lib$(LIBNAME).so
++	ln -s $(LIBDIR)/$(OUTPUT) $(LIBDIR)/lib$(LIBNAME).so.$(MAJOR_VERSION)
++	ln -s $(LIBDIR)/$(OUTPUT) $(LIBDIR)/lib$(LIBNAME).so
+ 	cp hvdi.h $(INCDIR)/hvdi.h
+ 	chmod 644 $(INCDIR)/hvdi.h
+-	@echo ""
+-	@echo "*************************************************"
+-	@echo "* Installed HawkVoiceDI.                             *"
+-	@echo "* Remember to run /sbin/ldconfig before using   *"
+-	@echo "* the library, you may also want to check that  *"
+-	@echo "* $(LIBDIR) is included in /etc/ld.so.conf      *"
+-	@echo "* You must be root to run ldconfig.             *"
+-	@echo "*************************************************"
+ 
+ uninstall:
+ 	rm -f $(LIBDIR)/$(OUTPUT) $(LIBDIR)/lib$(LIBNAME).so.$(MAJOR_VERSION).$(MINOR_VERSION)
