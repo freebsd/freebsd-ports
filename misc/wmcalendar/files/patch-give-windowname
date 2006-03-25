@@ -1,0 +1,19 @@
+*** wmCalendar.c.org	Sat Mar 25 10:30:07 2006
+--- wmCalendar.c	Sat Mar 25 10:30:19 2006
+***************
+*** 19,25 ****
+      ParseCMDLine(argc, argv);
+      if(get_debug())printf("debugging mode:\nstarting wmCalendar version %s\n", getVersion());
+      if(get_debug())printf("using libical version %s\n", ICAL_VERSION);
+!     dockapp_open_window("", "", 64, 64, argc, argv);
+      initValues();
+      gtk_init(&argc, &argv);
+      checkicalversion();
+--- 19,25 ----
+      ParseCMDLine(argc, argv);
+      if(get_debug())printf("debugging mode:\nstarting wmCalendar version %s\n", getVersion());
+      if(get_debug())printf("using libical version %s\n", ICAL_VERSION);
+!     dockapp_open_window("", "wmCalendar", 64, 64, argc, argv);
+      initValues();
+      gtk_init(&argc, &argv);
+      checkicalversion();
