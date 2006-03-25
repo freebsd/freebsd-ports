@@ -33,6 +33,7 @@
     SUBDIR += gift-gnutella
     SUBDIR += gift-openft
     SUBDIR += gkrellm-gift
+    SUBDIR += gkremldk
     SUBDIR += gnewtellium
     SUBDIR += gnome-btdownload
     SUBDIR += gnunet
