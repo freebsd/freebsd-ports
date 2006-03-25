@@ -22,6 +22,8 @@ RUN_DEPENDS=	\
 ${LOCALBASE}/share/festival/lib/dicts/wsj.wp39.poslexR:${PORTSDIR}/audio/festlex-poslex \
 ${LOCALBASE}/share/festival/lib/dicts/oald/oaldlex.scm:${PORTSDIR}/audio/festlex-oald
 
+BROKEN=		Incomplete pkg-plist
+
 WRKSRC=		${WRKDIR}/festival
 
 NO_BUILD=	yes
