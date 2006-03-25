@@ -19,14 +19,16 @@ COMMENT=	Provide uniform access to data sources for the GNOME 2 environment
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
+USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix intlhack gnomehack libgnomedb libgnomeprintui
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_OMF=	yes
 INSTALLS_SHLIB=	yes
-USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+BROKEN=	does not build with new libgnomedb
 
 .include <bsd.port.mk>
