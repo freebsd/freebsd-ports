@@ -169,6 +169,7 @@
     SUBDIR += gutenfetch
     SUBDIR += happystats
     SUBDIR += haproxy
+    SUBDIR += hawknl
     SUBDIR += hf6to4
     SUBDIR += hidentd
     SUBDIR += hinfo
