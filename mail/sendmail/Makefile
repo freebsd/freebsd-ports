@@ -41,6 +41,7 @@ MILTER_SOVER?=	3
 # SENDMAIL_WITHOUT_MILTER=yes
 # SENDMAIL_WITHOUT_NIS=yes
 # SENDMAIL_WITHOUT_SHMEM=yes
+# SENDMAIL_WITHOUT_SEM=yes
 # SENDMAIL_WITH_TLS=yes
 # SENDMAIL_WITH_SMTPS=yes
 # SENDMAIL_WITH_SASL=yes
@@ -115,7 +116,7 @@ CONFLICTS+=	sendmail+tls-8.* \
 		sendmail+sasl2-8.* \
 		sendmail+sasl2+ldap-8.* \
 		sendmail+ldap-8.*
-CONFLICTS+=	sendmail-ldap-8.* sendmail-sasl-8.* sendmail-sasl2-8.* sendmail-tls-8.* 
+CONFLICTS+=	sendmail-ldap-8.* sendmail-sasl-8.* sendmail-sasl2-8.* sendmail-tls-8.*
 .else
 CONFLICTS+=	sendmail*+db*-8.*
 .endif
@@ -266,7 +267,7 @@ post-extract:
 .if !defined(SENDMAIL_WITHOUT_MILTER) && defined(SENDMAIL_WITH_SHARED_MILTER)
 	@${CP} -pR ${WRKSRC}/libmilter ${WRKSRC}/libsharedmilter
 	${CP} ${FILESDIR}/sharedlibrary.m4 \
-		${WRKSRC}/devtools/M4/UNIX/sharedlibrary.m4 
+		${WRKSRC}/devtools/M4/UNIX/sharedlibrary.m4
 	@${MV} ${WRKSRC}/libsharedmilter/Makefile.m4 \
 		${WRKSRC}/libsharedmilter/Makefile.m4.sed
 	@${SED} -e 's=`library=`sharedlibrary=' \
@@ -315,6 +316,11 @@ do-configure:
 .if defined(SENDMAIL_WITHOUT_SHMEM)
 	${ECHO_CMD} \
 	 'APPENDDEF(`confENVDEF'\'', `-DSM_CONF_SHM=0'\'')' \
+		>> ${WCONF}/site.config.m4
+.endif
+.if defined(SENDMAIL_WITHOUT_SEM)
+	${ECHO_CMD} \
+	'APPENDDEF(`confENVDEF'\'', `-DSM_CONF_SEM=0'\'')' \
 		>> ${WCONF}/site.config.m4
 .endif
 
