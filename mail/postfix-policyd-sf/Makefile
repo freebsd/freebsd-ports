@@ -17,6 +17,8 @@ DISTNAME=	policyd-v${PORTVERSION}
 MAINTAINER=	kiwi@oav.net
 COMMENT=	Anti-spam plugin for Postfix (written in C)
 
+BROKEN=		Size mismatch
+
 USE_MYSQL=	yes
 USE_GMAKE=	yes
 USE_RC_SUBR=	policyd.sh
