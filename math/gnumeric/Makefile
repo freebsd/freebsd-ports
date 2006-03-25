@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	gnumeric
-PORTVERSION=	1.6.2
-PORTREVISION=	1
+PORTVERSION=	1.6.3
 CATEGORIES=	math gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R}
@@ -51,8 +50,6 @@ PLIST_SUB+=	PERL=""
 .endif
 
 post-patch:
-	@${FIND} ${WRKSRC}/plugins -name "plugin.xml.in" | ${XARGS} \
-		${REINPLACE_CMD} -e 's|\.la|.so|g'
 	@${RM} -f ${WRKSRC}/GNOME_Gnumeric.server.in
 
 post-install:
