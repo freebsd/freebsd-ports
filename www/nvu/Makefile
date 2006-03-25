@@ -29,8 +29,8 @@ CFLAGS+=	-I${X11BASE}/include
 .include <bsd.port.pre.mk>
 .include "${.CURDIR}/../mozilla/Makefile.common"
 
-.if ${ARCH} == "alpha" || ${ARCH} == "ia64"
-IGNORE= Does no build
+.if ${ARCH} == "sparc64" || ${ARCH} == "ia64"
+BROKEN= Does no build
 .endif
 
 .if ${PERL_LEVEL} < 500600
