@@ -30,7 +30,7 @@ WITH_MYSQL=	yes
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
 .elif (${WITH_SQL_BACKEND} == "postgresql")
 WITH_POSTGRESQL=	yes
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/pg.pm:${PORTSDIR}/databases/p5-DBD-pg
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
 .else
 BROKEN=	"You should specify sql backend using WITH_SQL_BACKEND"
 .endif
