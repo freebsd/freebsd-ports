@@ -6,7 +6,7 @@
 #   $MCom: ports/editors/gnome2-office/Makefile,v 1.39 2005/08/11 02:55:29 marcus Exp $
 #
 
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	editors gnome
 PKGNAMESUFFIX=	-office
 
@@ -16,8 +16,8 @@ RUN_DEPENDS=	gnumeric:${PORTSDIR}/math/gnumeric \
 		planner:${PORTSDIR}/deskutils/planner \
 		dia:${PORTSDIR}/graphics/dia \
 		glabels:${PORTSDIR}/deskutils/glabels \
-		abiword:${PORTSDIR}/editors/abiword \
-		mergeant:${PORTSDIR}/databases/mergeant
+		abiword:${PORTSDIR}/editors/abiword
+#		mergeant:${PORTSDIR}/databases/mergeant
 
 MASTERDIR=	${.CURDIR}/../../x11/gnome2
 GNOME_SLAVE=	yes
