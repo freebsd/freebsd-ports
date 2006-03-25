@@ -8,7 +8,8 @@
 PORTNAME=	pdfmerge
 PORTVERSION=	1.0
 CATEGORIES=	print
-MASTER_SITES=	http://web.hku.hk/cgi-bin/cgiwrap/kangsg/freeware/
+MASTER_SITES=	http://nivi.interfree.it/distfiles/${PORTNAME}/${PORTVERSION}/ \
+		http://web.hku.hk/cgi-bin/cgiwrap/kangsg/freeware/
 DISTNAME=	PDFMerge
 EXTRACT_SUFX=	.zip
 
