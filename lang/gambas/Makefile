@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=		gambas
-PORTVERSION=		1.0.14
-PORTREVISION=		1
+PORTVERSION=		1.0.15
 CATEGORIES=		lang
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -34,7 +33,6 @@ CONFIGURE_ARGS=		--with-conv-includes=${LOCALBASE}/include	\
 CONFIGURE_ENV+=		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"		\
 			PTHREAD_LIBS="${PTHREAD_LIBS}"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-USE_REINPLACE=		yes
 
 LIBS2FIX=		libqt-mt libkdecore libkdeui libDCOP libkio
 SRC2FIX1=		configure src/comp/gbi.c src/exec/gbx_library.c
@@ -85,11 +83,11 @@ PLIST_SUB+=		XML="@comment "
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-BROKEN=	"Does not compile with gcc-2.95"
+BROKEN=			Does not compile with gcc-2.95
 .endif
 
 .if ${ARCH} == "sparc64" || ${ARCH} == "ia64"
-BROKEN=			"Segfault during build on ${ARCH}"
+BROKEN=			Segfault during build on ${ARCH}
 .endif
 
 .if ${OSVERSION} < 502110
