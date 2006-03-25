@@ -3016,6 +3016,7 @@ gkrellshoot2	ports/misc/gkrellshoot2
 gkrellsun	ports/astro/gkrellsun
 gkrelltop	ports/sysutils/gkrelltop
 gkrellweather2	ports/misc/gkrellweather2
+gkremldk	ports/net-p2p/gkremldk
 gksu		ports/sysutils/gksu
 gkx86info	ports/misc/gkx86info
 gkx86info2	ports/misc/gkx86info2
