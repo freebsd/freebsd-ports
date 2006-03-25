@@ -59,6 +59,10 @@ MAKE_ARGS+=	MAKEINFOFLAGS="--no-split"
 CONFIGURE_ARGS+=	--enable-shared
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	${TARGLIB}
+SUB_LIST=	TARGLIB="${TARGLIB}"
+SUB_FILES=	gcc.sh
+RC_D_SH=	etc/rc.d/gcc${SUFFIX}.sh
+PLIST_FILES+=	${RC_D_SH}
 .else
 CONFIGURE_ARGS+=	--disable-shared
 .endif
@@ -93,6 +97,9 @@ check: build
 	cd ${WRKSRC}; export RUNTESTFLAGS='--target_board ''unix{-pthread}'''; ${GMAKE} -sk check
 
 post-install:
+.if defined(WANT_SHAREDLIBS)
+	${INSTALL_SCRIPT} ${WRKDIR}/gcc.sh ${PREFIX}/${RC_D_SH}
+.endif
 	# man pages can only be generated if Perl >= 5.6 is installed;
 	# fake them otherwise.
 	for mp in ${_MANPAGES}; do \
