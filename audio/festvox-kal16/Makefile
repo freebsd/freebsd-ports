@@ -22,6 +22,8 @@ RUN_DEPENDS=	\
 ${LOCALBASE}/share/festival/lib/dicts/wsj.wp39.poslexR:${PORTSDIR}/audio/festlex-poslex \
 ${LOCALBASE}/share/festival/lib/dicts/cmu/cmulex.scm:${PORTSDIR}/audio/festlex-cmu
 
+BROKEN=		Incomplete pkg-plist
+
 WRKSRC=		${WRKDIR}/festival
 
 CONFLICTS=	festvox-kal8-*
