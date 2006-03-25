@@ -29,6 +29,10 @@ CFLAGS+=	-I${X11BASE}/include
 .include <bsd.port.pre.mk>
 .include "${.CURDIR}/../mozilla/Makefile.common"
 
+.if ${ARCH} == "alpha" || ${ARCH} == "ia64"
+IGNORE= Does no build
+.endif
+
 .if ${PERL_LEVEL} < 500600
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-config_make-jars.pl
 .endif
