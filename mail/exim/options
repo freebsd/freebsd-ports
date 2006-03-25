@@ -131,6 +131,9 @@
 # srs_recipient       (string*)     SRS recipient
 # srs_status          (string*)     SRS status
 
+#WITHOUT_SRS_ALT
+# Enable Sender Rewriting Scheme (SRS)
+
 #WITHOUT_DOMAINKEYS
 # Enable Yahoo DomainKeys support.
 # DomainKeys support depends on exiscan.
@@ -265,6 +268,9 @@ WITHOUT_SPF?=yes
 .endif
 .ifndef WITH_SRS
 WITHOUT_SRS?=yes
+.endif
+.ifndef WITH_SRS_ALT
+WITHOUT_SRS_ALT?=yes
 .endif
 .ifndef WITH_DOMAINKEYS
 WITHOUT_DOMAINKEYS?=yes

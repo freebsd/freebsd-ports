@@ -56,4 +56,4 @@ etc/exim/configure.default
 @unexec rmdir %B 2>/dev/null || true
 %%DAEMON%%%%RCORDER%%@cwd /
 %%DAEMON%%etc/rc.d/exim%%RC_SUFX%%
-@unexec rmdir %%LOGDIR%% 2>/dev/null || true
+@dirrmtry %%LOGDIR%%

@@ -54,7 +54,6 @@ USE_XLIB=	yes
 .endif
 
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 
 .if !defined(EXIMON_ONLY)
 MAN8=		exim.8
@@ -235,6 +234,9 @@ WITH_DEFAULT_CHARSET?=	ISO-8859-1
 # Enable Sender Rewriting Scheme (SRS)
 #WITH_SRS=		yes
 #
+# Enable Sender Rewriting Scheme alternative library (SRS_ALT)
+#WITH_SRS_ALT=		yes
+#
 # Use the readline(3) library for the test expansion option
 #WITH_READLINE=		yes
 #
@@ -300,7 +302,7 @@ SEDLIST+=	-e 's,XX_ICONV_LIBS_XX,,'
 .if defined(WITH_LDAP) || defined(LDAP_LIB_TYPE) \
 	|| defined(WITH_OPENLDAP1) || defined(WITH_OPENLDAP2) \
 	|| defined(WITH_OPENLDAP20) || defined(WITH_OPENLDAP21)
-BROKEN=		"deprecated LDAP option defined, use WITH_OPENLDAP or WITH_OPENLDAP_VER"
+BROKEN=		deprecated LDAP option defined, use WITH_OPENLDAP or WITH_OPENLDAP_VER
 .endif
 
 .if defined(WITH_OPENLDAP_VER) && ${WITH_OPENLDAP_VER:L} != "auto"
@@ -320,7 +322,7 @@ SEDLIST+=	-e 's,XX_LDAP_[^ ]*_XX,,' \
 .endif
 
 .if defined(DB_LIB_VERSION)
-BROKEN=		"deprecated option DB_LIB_VERSION used, use WITH_BDB_VER"
+BROKEN=		deprecated option DB_LIB_VERSION used, use WITH_BDB_VER
 .endif
 
 .if ${WITH_BDB_VER} == 1
@@ -348,7 +350,7 @@ DB_LIBS=	-L${LOCALBASE}/lib -ldb-4.4
 DB_INCLUDES=	-I${LOCALBASE}/include/db44
 LIB_DEPENDS+=	db-4.4.0:${PORTSDIR}/databases/db44
 .else
-BROKEN=		"WITH_BDB_VER must be either 1, 4, 41, 42, 43 or 44"
+BROKEN=		WITH_BDB_VER must be either 1, 4, 41, 42, 43 or 44
 .endif
 SEDLIST+=	-e 's,XX_DB_LIBS_XX,${DB_LIBS},' \
 		-e 's,XX_DB_INCLUDES_XX,${DB_INCLUDES},'
@@ -417,7 +419,7 @@ SEDLIST+=	-e 's,XX_RADIUS_LIBS_XX,-L${LOCALBASE}/lib -lradiusclient,' \
 		-e 's,^\# (RADIUS_CONFIG_FILE=).*,\1${LOCALBASE}/etc/radiusclient.conf,' \
 		-e 's,^\# (RADIUS_LIB_TYPE=).*,\1RADIUSCLIENT,'
 .else
-IGNORE=		WITH_RADIUS_TYPE must be either RADLIB or RADIUSCLIENT
+IGNORE=		the variable WITH_RADIUS_TYPE must be either RADLIB or RADIUSCLIENT
 .endif
 .else
 SEDLIST+=	-e 's,XX_RADIUS_LIBS_XX,,'
@@ -514,6 +516,10 @@ SEDLIST+=	-e 's,XX_DOMAINKEYS_LIBS_XX,,'
 LIB_DEPENDS+=	srs2.0:${PORTSDIR}/mail/libsrs2
 SEDLIST+=	-e 's,XX_SRS_FLAGS_XX,-DSRS,' \
 		-e 's,XX_SRS_LIBS_XX,-lsrs2,'
+.elif defined(WITH_SRS_ALT)
+LIB_DEPENDS+=	srs_alt.1:${PORTSDIR}/mail/libsrs_alt
+SEDLIST+=	-e 's,XX_SRS_FLAGS_XX,-DEXPERIMENTAL_SRS,' \
+		-e 's,XX_SRS_LIBS_XX,-lsrs_alt,'
 .else
 SEDLIST+=	-e 's,XX_SRS_FLAGS_XX,,' \
 		-e 's,XX_SRS_LIBS_XX,,'
