@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jude-community
-PORTVERSION=	2.4.4
+PORTVERSION=	2.5.1
 CATEGORIES=	devel java
 MASTER_SITES=	# you have to register yourself as a member to download
 DISTNAME=	${PORTNAME}-${PORTVERSION:S!.!_!g}
@@ -24,14 +24,14 @@ JAVA_OS=	native
 NO_BUILD=	yes
 USE_REINPLACE=	yes
 
-RESTRICTED=	"See http://www.esm.jp/jude-web/notes/ProductLicenseAgreement.html"
+RESTRICTED=	"See http://jude.change-vision.com/jude-web/notes/ProductLicenseAgreement.html"
 NO_CDROM=	${RESTRICTED}
 
 PLIST_SUB+=	PORTNAME=${PORTNAME}
 
 WRKSRC=		${WRKDIR}/${PORTNAME:S!-!_!}
 
-DOWNLOAD_URL=	https://www.esm.jp/jude-web/serviceDownloadLink.do
+DOWNLOAD_URL=	http://jude.change-vision.com/jude-web/download/index.html
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	README-e.txt README.txt ReleaseNote-e.html ReleaseNote.html
