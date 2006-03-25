@@ -218,6 +218,7 @@
     SUBDIR += gtkpod
     SUBDIR += guspat
     SUBDIR += gxmms2
+    SUBDIR += hawkvoice
     SUBDIR += holyshout
     SUBDIR += hydrogen
     SUBDIR += icecast
