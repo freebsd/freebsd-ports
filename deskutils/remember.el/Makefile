@@ -33,7 +33,7 @@ RUN_DEPENDS+=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/bbdb/bbdb-com.el:${PORTSDI
 .endif
 
 .if !defined(WITHOUT_PLANNER)
-RUN_DEPENDS+=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/planner/planner.el:${PORTSDIR}/deskutils/planner.el
+RUN_DEPENDS+=	${PREFIX}/${EMACS_SITE_LISPDIR}/planner/planner.el:${PORTSDIR}/deskutils/planner.el
 .endif
 
 INFO=		remember-el
