@@ -31,6 +31,10 @@ MAKE_ENV+=	CXX=${CXX}
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 600000 && ${OSVERSION} >= 504105
+BROKEN=		Does not compile on FreeBSD 5.x
+.endif
+
 post-extract:
 	@unzip -q -o ${DISTDIR}/leocad-pieces-20030330.zip -d ${WRKDIR}/pieces
 
