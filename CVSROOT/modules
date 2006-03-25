@@ -3702,6 +3702,7 @@ haskell-mode.el	ports/lang/haskell-mode.el
 hatari		ports/emulators/hatari
 hattrickorganizer	ports/games/hattrickorganizer
 hawknl		ports/net/hawknl
+hawkvoice	ports/audio/hawkvoice
 hayes		ports/multimedia/hayes
 hb		ports/misc/hb
 hbiff		ports/mail/hbiff
