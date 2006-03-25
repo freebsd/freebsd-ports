@@ -36,7 +36,7 @@ CONFIGURE_ARGS+=	--without-package
 CONFIGURE_ARGS+=	--debug=yes
 .endif
 
-MAN1= bmf.1 bmfconv.1
+MAN1=	bmf.1 bmfconv.1
 
 pre-everything::
 	@${ECHO} ""
