@@ -22,6 +22,8 @@ BUILD_DEPENDS=	${LOCALBASE}/avr/include/avr/io.h:${PORTSDIR}/devel/avr-libc \
 		doxygen:${PORTSDIR}/devel/doxygen \
 		latex:${PORTSDIR}/print/teTeX
 
+BROKEN=		Incomplete pkg-plist
+
 #USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
