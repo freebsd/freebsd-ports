@@ -1,5 +1,13 @@
 Index: qemu/hw/usb-uhci.c
-@@ -527,6 +532,8 @@
+@@ -174,6 +177,7 @@
+         if ((val & UHCI_CMD_RS) && !(s->cmd & UHCI_CMD_RS)) {
+             /* start frame processing */
+             qemu_mod_timer(s->frame_timer, qemu_get_clock(vm_clock));
++            s->status &= ~UHCI_STS_HCHALTED;
+         }
+         if (val & UHCI_CMD_GRESET) {
+             UHCIPort *port;
+@@ -528,6 +534,8 @@
  
      if (!(s->cmd & UHCI_CMD_RS)) {
          qemu_del_timer(s->frame_timer);

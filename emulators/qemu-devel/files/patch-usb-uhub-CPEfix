@@ -1,0 +1,9 @@
+Index: qemu/hw/usb.c
+@@ -508,7 +518,6 @@
+                                        USB_MSG_RESET, 0, 0, NULL, 0);
+                     port->wPortChange |= PORT_STAT_C_RESET;
+                     /* set enable bit */
+-                    port->wPortChange |= PORT_STAT_C_ENABLE;
+                     port->wPortStatus |= PORT_STAT_ENABLE;
+                 }
+                 break;
