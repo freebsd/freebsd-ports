@@ -1,8 +1,6 @@
 @comment $FreeBSD$
 bin/bison
 bin/bison2
-bin/yacc
-lib/liby.a
 share/aclocal/bison-i18n.m4
 %%DATADIR%%/c.m4
 %%DATADIR%%/c++.m4
