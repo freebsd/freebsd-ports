@@ -10,7 +10,7 @@ PORTVERSION=	1.4.0.5
 CATEGORIES=	mail
 MASTER_SITES=	http://www.pldaniels.com/ripmime/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Extracts attached files out of a MIME encoded email package
 
 PLIST_FILES=	bin/ripmime
