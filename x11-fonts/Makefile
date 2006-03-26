@@ -56,6 +56,7 @@
     SUBDIR += proggy_fonts
     SUBDIR += sgifonts
     SUBDIR += sharefonts
+    SUBDIR += suxus
     SUBDIR += terminus-font
     SUBDIR += texcm-ttf
     SUBDIR += tkfont

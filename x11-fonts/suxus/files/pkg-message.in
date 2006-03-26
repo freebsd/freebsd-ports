@@ -1,0 +1,8 @@
+============================================================
+You'll have to add %%PREFIX%%/lib/X11/fonts/local/suxus
+to your X font path:
+
+$ xset fp+ %%PREFIX%%/lib/X11/fonts/local/suxus
+$ xset fp rehash
+
+============================================================
