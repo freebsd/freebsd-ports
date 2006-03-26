@@ -1,6 +1,3 @@
-NOTE: This is the first public release, there's probably a higher than
-average chance of random bugs and shortcomings: you've been warned.
-
 This is a Catalyst Model for DBIx::Class::Schema-based Models. See the
 documentation for Catalyst::Helper::Model::DBIC::Schema and
 Catalyst::Helper::Model::DBIC::SchemaLoader for information on
