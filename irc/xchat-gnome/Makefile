@@ -17,10 +17,10 @@ MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	An IRC client for GNOME 2 (development version)
 
 USE_X_PREFIX=	yes
+USE_GETTEXT=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack libgnomeui
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
@@ -62,6 +62,10 @@ PLIST_SUB+=	TCL="@comment "
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=	does not build on 4.X
+.endif
 
 .if ${PERL_LEVEL} < 500600 || defined(WITHOUT_PERL)
 CONFIGURE_ARGS+=--disable-perl
