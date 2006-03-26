@@ -2225,3 +2225,4 @@ sysutils/stat||2006-03-20|Remove expired port
 sysutils/rubygem-switchtower|sysutils/rubygem-capistrano|2006-03-22|Project renamed
 irc/dancer-ircd||2006-03-23|Has expired: mastersite disappeared, no longer maintained by author
 irc/dancer-services||2006-03-23|Has expired: mastersite disappeared, no longer maintained by author
+databases/libgda2|databases/libgda3|Port has renamed to accommodate legacy libgda2
