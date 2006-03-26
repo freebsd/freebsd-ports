@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	cinepaint
-PORTVERSION=	0.18
-PORTREVISION=	4
+PORTVERSION=	0.20
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,6 +17,7 @@ COMMENT=	An editing tool used for painting and retouching of movies
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
+		lcms.1:${PORTSDIR}/graphics/lcms \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
 USE_X_PREFIX=	yes
@@ -26,15 +26,18 @@ USE_PYTHON=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
 INSTALLS_SHLIB=	yes
-USE_REINPLACE=	yes
 
 MAN1=		cinepaint.1 cinepainttool.1
 
 PLIST_SUB=	VER=${PORTVERSION}-1
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-1
+
 .if !defined(WITHOUT_OPENEXR)
-LIB_DEPENDS+=	IlmImf.2:${PORTSDIR}/graphics/OpenEXR
+LIB_DEPENDS+=	IlmImf.2:${PORTSDIR}/graphics/OpenEXR \
+		fltk.1:${PORTSDIR}/x11-toolkits/fltk-threads
 CONFIGURE_ARGS+=	--with-openexr-prefix=${LOCALBASE}
+CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include/OpenEXR"
 PLIST_SUB+=	OPENEXR:=""
 .else
 PLIST_SUB+=	OPENEXR:="@comment "
@@ -46,7 +49,7 @@ post-patch:
 		${WRKSRC}/configure
 
 	@${REINPLACE_CMD} -E -e \
-		's|-LINUX.+$$||' \
+		's|-LINUX.+$$|| ; s|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|' \
 		${WRKSRC}/Makefile.in
 
 	@${REINPLACE_CMD} -e \
