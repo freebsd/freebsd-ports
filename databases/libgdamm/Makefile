@@ -29,13 +29,8 @@ GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--enable-static
 
-BROKEN=	"Does not build with libgda-1.3.91"
-
 post-patch:
 	@${REINPLACE_CMD} -e "s|\(-lglibmm\)|-L\$$(GMM_PROCDIR)/../.. \1|" \
 		${WRKSRC}/tools/extra_defs_gen/Makefile.in
-# remove after next update!!
-	@${REINPLACE_CMD} -e "s|libgda >=|libgda-2.0 >=|g" \
-		${WRKSRC}/configure
 
 .include <bsd.port.mk>
