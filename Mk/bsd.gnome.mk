@@ -55,11 +55,11 @@ _USE_GNOME_ALL+= atk atspi desktopfileutils eel2 evolutiondataserver \
 		gail gal2 gconf2 glib20 gnomecontrolcenter2 gnomedesktop \
 		gnomedocutils gnomemenus gnomepanel gnomespeech gnomevfs2 \
 		gtk20 gtkhtml3 gtksourceview libartlgpl2 libbonobo \
-		libbonoboui libgailgnome libgda2 libglade2 libgnome libgnomecanvas \
-		libgnomedb libgnomeprint libgnomeprintui libgnomeui libgsf \
-		libgsf_gnome libgtkhtml libidl librsvg2 libwnck libxml2 libxslt \
-		libzvt linc metacity nautilus2 nautiluscdburner orbit2 pango pygnome2 \
-		pygnomeextras pygtk2 vte
+		libbonoboui libgailgnome libgda2 libgda3 libglade2 libgnome \
+		libgnomecanvas libgnomedb libgnomeprint libgnomeprintui \
+		libgnomeui libgsf libgsf_gnome libgtkhtml libidl librsvg2 libwnck \
+		libxml2 libxslt libzvt linc metacity nautilus2 nautiluscdburner \
+		orbit2 pango pygnome2 pygnomeextras pygtk2 vte
 
 SCROLLKEEPER_DIR=	/var/db/scrollkeeper
 gnomehack_PRE_PATCH=	${FIND} ${WRKSRC} -name "Makefile.in*" -type f | ${XARGS} ${REINPLACE_CMD} -e \
@@ -394,13 +394,17 @@ gnomecontrolcenter2_LIB_DEPENDS=gnome-window-settings.1:${PORTSDIR}/sysutils/gno
 gnomecontrolcenter2_DETECT=${X11BASE}/libdata/pkgconfig/gnome-window-settings-2.0.pc
 gnomecontrolcenter2_USE_GNOME_IMPL=gnomedesktop metacity nautilus2
 
-libgda2_LIB_DEPENDS=	gda-3.3:${PORTSDIR}/databases/libgda2
+libgda2_LIB_DEPENDS=	gda-2.3:${PORTSDIR}/databases/libgda2
 libgda2_DETECT=			${X11BASE}/libdata/pkgconfig/libgda.pc
 libgda2_USE_GNOME_IMPL=	glib20 libxslt
 
+libgda3_LIB_DEPENDS=	gda-3.3:${PORTSDIR}/databases/libgda3
+libgda3_DETECT=			${X11BASE}/libdata/pkgconfig/libgda-2.0.pc
+libgda3_USE_GNOME_IMPL=	glib20 libxslt
+
 libgnomedb_LIB_DEPENDS=	gnomedb-3.4:${PORTSDIR}/databases/libgnomedb
 libgnomedb_DETECT=		${X11BASE}/libdata/pkgconfig/libgnomedb.pc
-libgnomedb_USE_GNOME_IMPL=libgnomeui libgda2
+libgnomedb_USE_GNOME_IMPL=libgnomeui libgda3
 
 gtksourceview_LIB_DEPENDS=	gtksourceview-1.0.0:${PORTSDIR}/x11-toolkits/gtksourceview
 gtksourceview_DETECT=	${X11BASE}/libdata/pkgconfig/gtksourceview-1.0.pc
