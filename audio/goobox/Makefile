@@ -7,7 +7,7 @@
 
 PORTNAME=	goobox
 PORTVERSION=	0.9.93
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R}
@@ -19,6 +19,7 @@ COMMENT=	CD player and ripper for GNOME Desktop environment
 RUN_DEPENDS=	cddb-slave2-properties:${PORTSDIR}/audio/gnomemedia2
 
 USE_X_PREFIX=	yes
+USE_GETTEXT=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeui libglade2 libbonobo \
@@ -31,4 +32,13 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 
 GCONF_SCHEMAS=	goobox.schemas
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_NOTIFY)
+LIB_DEPENDS+=		notify.1:${PORTSDIR}/devel/libnotify
+CONFIGURE_ARGS+=	--enable-notification
+.else
+CONFIGURE_ARGS+=	--disable-notification
+.endif
+
+.include <bsd.port.post.mk>
