@@ -1,6 +1,6 @@
 --- Makefile.orig	Fri Dec 27 23:23:23 2002
-+++ Makefile	Fri Mar 17 17:59:24 2006
-@@ -4,14 +4,14 @@
++++ Makefile	Sun Mar 19 06:56:59 2006
+@@ -4,14 +4,15 @@
  
  
  CC	= gcc
@@ -12,7 +12,7 @@
 +LDFLAGS	= `pkg-config --libs gtk+-2.0` -lm
  
  ifeq ($(PNG),yes)
--CFLAGS	+= -DHAVE_LIBPNG
+ CFLAGS	+= -DHAVE_LIBPNG
 -LDFLAGS	+= -lpng
 +CFLAGS	+= `pkg-config --cflags ${LOCALBASE}/libdata/pkgconfig/libpng12.pc`
 +LDFLAGS	+= `pkg-config --libs ${LOCALBASE}/libdata/pkgconfig/libpng12.pc`
