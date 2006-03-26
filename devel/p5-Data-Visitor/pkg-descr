@@ -1,0 +1,6 @@
+This module is a simple visitor implementation for Perl values.
+
+It has a main dispatcher method, visit, which takes a single perl
+value and then calls the methods appropriate for that value.
+
+WWW: http://search.cpan.org/dist/Data-Visitor/
