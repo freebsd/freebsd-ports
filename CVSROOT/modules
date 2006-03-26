@@ -7382,6 +7382,7 @@ p5-Agent	ports/devel/p5-Agent
 p5-Algorithm-Accounting	ports/devel/p5-Algorithm-Accounting
 p5-Algorithm-Annotate	ports/devel/p5-Algorithm-Annotate
 p5-Algorithm-Bucketizer	ports/devel/p5-Algorithm-Bucketizer
+p5-Algorithm-C3	ports/devel/p5-Algorithm-C3
 p5-Algorithm-ChooseSubsets	ports/devel/p5-Algorithm-ChooseSubsets
 p5-Algorithm-Cluster	ports/devel/p5-Algorithm-Cluster
 p5-Algorithm-Combinatorics	ports/math/p5-Algorithm-Combinatorics
