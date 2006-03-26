@@ -23,6 +23,7 @@ USE_GNOME=	gnometarget gnomehack
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=  yes
+CONFIGURE_ENV=	JW=false
 USE_GETOPT_LONG=yes
 
 CONFLICTS=	py*-ro-[0-9]*

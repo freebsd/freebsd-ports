@@ -28,6 +28,7 @@ CONFIGURE_ARGS=	--with-confdir=${PREFIX}/etc/fonts \
 		--with-expat-includes=${LOCALBASE}/include \
 		--with-expat-lib=${LOCALBASE}/lib \
 		--with-default-fonts=${X11BASE}/lib/X11/fonts
+CONFIGURE_ENV=	HASDOCBOOK=no
 MAKE_ENV=	LC_ALL=C
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${PKGINSTALL}
