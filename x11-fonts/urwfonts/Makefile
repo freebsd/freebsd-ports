@@ -19,6 +19,9 @@ NO_WRKSUBDIR=	yes
 USE_X_PREFIX=	yes
 NO_BUILD=	yes
 
+post-extract:
+	@${CHMOD} ${SHAREMODE} ${WRKDIR}/URW/*
+
 post-install:
 	@command fc-cache -v ${PREFIX}/lib/X11/fonts/URW || true
 	@${CAT} ${PKGMESSAGE}
