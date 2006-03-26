@@ -38,6 +38,8 @@ DOCSDIR=	${PREFIX}/share/doc/${PORTNAME:S/2$//}
 
 PLIST_SUB=	VERSION=${PORTVERSION:R}
 
+CONFLICTS=	libgda2-[0-9]*
+
 post-patch:
 	@${REINPLACE_CMD} -e "/^SUBDIRS =/s/testing//" \
 		${WRKSRC}/Makefile.in
