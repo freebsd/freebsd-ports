@@ -1,5 +1,5 @@
---- xwin.c.orig	Fri Mar 17 20:50:07 2006
-+++ xwin.c	Fri Mar 17 20:50:52 2006
+--- xwin.c.orig	Wed Sep 10 22:55:30 2003
++++ xwin.c	Tue Mar 21 07:05:23 2006
 @@ -13,6 +13,7 @@
  #include <math.h>
  #include <stdio.h>
@@ -8,6 +8,15 @@
  #include <gtk/gtk.h>
  #include <gdk/gdkx.h>
  #include <gdk/gdkkeysyms.h>
+@@ -261,7 +262,7 @@
+    f=fopen(filename,"w");
+    if (!f) return 1;
+ 
+-   image = gdk_image_get(gbackg, 0, 0, width, height);
++   image = gdk_image_get(w, 0, 0, width, height);
+    if (!image) {
+       fclose(f);
+       return 1;
 @@ -1378,7 +1379,7 @@
  
        gtk_widget_grab_focus(gdraw1);
