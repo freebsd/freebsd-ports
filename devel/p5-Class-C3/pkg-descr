@@ -1,5 +1,5 @@
-This is currently an experimental pragma to change Perl 5's standard
-method resolution order from depth-first left-to-right (a.k.a -
-pre-order) to the more sophisticated C3 method resolution order.
+This is a pragma to change Perl 5's standard method resolution order
+from depth-first left-to-right (a.k.a - pre-order) to the more
+sophisticated C3 method resolution order.
 
-WWW: http://search.cpan.org/dist/Module-Find/
+WWW: http://search.cpan.org/dist/Class-C3/
