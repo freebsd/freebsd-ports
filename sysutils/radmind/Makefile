@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	radmind
-PORTVERSION=	1.5.1
+PORTVERSION=	1.6.1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://rsug.itd.umich.edu/software/radmind/files/
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	paul@aps.org
 COMMENT=	Utility for administering filesystem changes
