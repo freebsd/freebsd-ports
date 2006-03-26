@@ -7,7 +7,7 @@
 
 PORTNAME=	gmencoder
 PORTVERSION=	0.1.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -24,9 +24,12 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomeprefix libgnomeui
-USE_REINPLACE=	yes
+USE_GETTEXT=	yes
 
 MAN1=		gmencoder.1
+
+DESKTOP_ENTRIES=	"Gmencoder" "Gnome2 front-end to mplayer/mencoder" \
+		"" "gmencoder" "GNOME;Application;AudioVideo;" false
 
 .include <bsd.port.pre.mk>
 
