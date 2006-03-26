@@ -9422,6 +9422,7 @@ palmos-sdk	ports/palm/palmos-sdk
 palmpower	ports/palm/palmpower
 pam-mysql	ports/security/pam-mysql
 pam-pgsql	ports/security/pam-pgsql
+pam_af		ports/security/pam_af
 pam_alreadyloggedin	ports/security/pam_alreadyloggedin
 pam_bsdbioapi	ports/security/pam_bsdbioapi
 pam_ldap	ports/security/pam_ldap
