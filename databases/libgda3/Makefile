@@ -6,11 +6,11 @@
 #   $MCom: ports/databases/libgda2/Makefile,v 1.32 2005/10/29 04:20:53 mezz Exp $
 #
 
-PORTNAME=	libgda2
+PORTNAME=	libgda3
 PORTVERSION=	1.9.102
 CATEGORIES=	databases gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/${PORTVERSION:R}
+MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/3$//}/${PORTVERSION:R}
 DISTNAME=	libgda-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
