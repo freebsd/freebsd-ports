@@ -16,11 +16,8 @@ MASTER_SITE_SUBDIR=	system/fido
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Fido-Internet Gateway and Tosser
 
-# you may commet out this line if you have another transfer-agent
+.if !defined(WITHOUT_IFCICO)
 RUN_DEPENDS=	${LOCALBASE}/libexec/ifmail/ifcico:${PORTSDIR}/news/ifmail
-
-.if defined(PARALLEL_PACKAGE_BUILD)
-IGNORE=	indefinite hang
 .endif
 
 USE_GMAKE=	yes
@@ -38,6 +35,7 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-perl
 .endif
 
 pre-configure:
+	${RM} -f ${WORKSRC}/doc/fidogate.info-?
 	@${PERL5} -pi -e "s=.{PREFIX}=${PREFIX}=g" ${WRKSRC}/config.make
 .if defined(FIDOGATE_RUNAS)
 	@${PERL5} -pi -e "s/OWNER.*= news/OWNER		= ${FIDOGATE_RUNAS}/" \

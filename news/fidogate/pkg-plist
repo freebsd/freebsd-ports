@@ -128,9 +128,6 @@ libexec/fidogate/sumcrc
 %%PORTDOCS%%%%DOCSDIR%%/html/msgid.html
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/info/fidogate.info
-%%PORTDOCS%%%%DOCSDIR%%/info/fidogate.info-1
-%%PORTDOCS%%%%DOCSDIR%%/info/fidogate.info-2
-%%PORTDOCS%%%%DOCSDIR%%/info/fidogate.info-3
 %%PORTDOCS%%%%DOCSDIR%%/kludge-rfc.doc
 %%PORTDOCS%%%%DOCSDIR%%/misc/ifmail-and-fidogate.doc
 %%PORTDOCS%%%%DOCSDIR%%/misc/roland.doc
