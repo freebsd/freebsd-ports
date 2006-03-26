@@ -68,7 +68,7 @@ IGNORE=		requires perl 5.6.0 or later. Install lang/perl5.8 and try again
 
 .if defined(WITH_MOD_PERL)
 .if defined(WITH_APACHE2)
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Apache2/Apache/Request.pm:${PORTSDIR}/www/p5-libapreq2
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Apache2/Request.pm:${PORTSDIR}/www/p5-libapreq2
 .else
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Apache/libapreq.pm:${PORTSDIR}/www/p5-libapreq
 .endif
