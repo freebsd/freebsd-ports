@@ -1,0 +1,23 @@
+According to the Test::More documentation, it is recommended to run
+use_ok() inside a BEGIN block, so functions are exported at
+compile-time and prototypes are properly honored.
+
+That is, instead of writing this:
+
+    use_ok( 'Some::Module' );
+    use_ok( 'Other::Module' );
+
+One should write this:
+
+    BEGIN { use_ok( 'Some::Module' ); }
+    BEGIN { use_ok( 'Other::Module' ); }
+
+However, people often either forget to add BEGIN, or mistakenly group
+use_ok with other tests in a single BEGIN block, which can create subtle
+differences in execution order.
+
+With this module, simply change all use_ok in test scripts to use ok,
+and they will be executed at BEGIN time.  The explicit space after use
+makes it clear that this is a single compile-time action.
+
+WWW: http://search.cpan.org/dist/Test-use-ok/

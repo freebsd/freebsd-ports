@@ -1227,6 +1227,7 @@
     SUBDIR += p5-Test-WWW-Mechanize-Catalyst
     SUBDIR += p5-Test-Warn
     SUBDIR += p5-Test-XML
+    SUBDIR += p5-Test-use-ok
     SUBDIR += p5-Text-LevenshteinXS
     SUBDIR += p5-Text-vFile-asData
     SUBDIR += p5-Tie-Array-Sorted
