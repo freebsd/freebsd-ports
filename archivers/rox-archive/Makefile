@@ -5,22 +5,22 @@
 # $FreeBSD$
 #
 
-PORTNAME=		rox-archive
-PORTVERSION=		2.0
+PORTNAME=	rox-archive
+PORTVERSION=	2.0
 PORTREVISION=	1
-CATEGORIES=		archivers
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
+CATEGORIES=	archivers
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	rox
-DISTNAME=		archive-${PORTVERSION}
-EXTRACT_SUFX=		.tgz
+DISTNAME=	archive-${PORTVERSION}
+EXTRACT_SUFX=	.tgz
 
-MAINTAINER=		olgeni@FreeBSD.org
-COMMENT=		Archive management tool for the ROX desktop
+MAINTAINER=	olgeni@FreeBSD.org
+COMMENT=	Archive management tool for the ROX desktop
 
-RUN_DEPENDS=		${LOCALBASE}/bin/rox:${PORTSDIR}/x11-fm/rox-filer \
-			${LOCALBASE}/lib/ROX-Lib2/python/rox/__init__.py:${PORTSDIR}/devel/py-roxlib
+RUN_DEPENDS=	${LOCALBASE}/bin/rox:${PORTSDIR}/x11-fm/rox-filer \
+		${LOCALBASE}/lib/ROX-Lib2/python/rox/__init__.py:${PORTSDIR}/devel/py-roxlib
 
-USE_PYTHON=		yes
+USE_PYTHON=	yes
 
 post-patch:
 	@${FIND} ${WRKSRC} -name CVS | ${XARGS} ${RM} -r
