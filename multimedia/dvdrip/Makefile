@@ -7,7 +7,7 @@
 
 PORTNAME=	dvdrip
 PORTVERSION=	0.52.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.exit1.org/dvdrip/dist/
 DISTNAME=	Video-DVDRip-${PORTVERSION}
@@ -55,7 +55,7 @@ RUN_DEPENDS+=	subtitle2pgm:${PORTSDIR}/multimedia/subtitleripper
 .endif
 
 .if ${OSVERSION} < 500000
-BROKEN=	"Broken dependencies"
+BROKEN=		Broken dependencies
 .endif
 
 pre-everything::
