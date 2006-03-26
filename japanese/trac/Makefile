@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	trac
-PORTVERSION=	0.9.3
+PORTVERSION=	0.9.4
 CATEGORIES=	japanese www devel python
 MASTER_SITES=	http://dist.bsdlab.org/ \
 		http://www.i-act.co.jp/project/products/downloads/
@@ -23,7 +23,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 OPTIONS=	SILVERCITY "Use Silvercity for syntax highlighting" On \
 		DOCUTILS   "Allow additional text markup" On
-CONFLICTS=	trac-*
+CONFLICTS=	trac-0.*
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-ja-1
 
 USE_ZIP=	yes
