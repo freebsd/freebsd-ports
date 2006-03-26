@@ -1,0 +1,4 @@
+lib/pam_af.so
+sbin/pam_af_tool
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
