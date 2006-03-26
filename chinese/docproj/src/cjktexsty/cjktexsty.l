@@ -38,6 +38,7 @@ __FBSDID("$FreeBSD$");
 #include <stdio.h>
 #include <string.h>
 #include <unistd.h>
+#include <ctype.h>
 #include <iconv.h>
 
 char texencoding[128]="",*cjkencoding=NULL,cjkfont[128]="";
@@ -307,6 +308,7 @@ int
 main(int argc, char *argv[])
 {
 	int ch;
+	char *p;
 
 	while ((ch = getopt(argc, argv, "ce:f:")) != -1)
 	{
@@ -316,15 +318,19 @@ main(int argc, char *argv[])
 			ccmap_enable=1;
 			break;
 		case 'e':
-			if(strcmp(optarg,"GB2312")==0) cjkencoding="GB";
-			else if(strcmp(optarg,"GBK")==0) cjkencoding="GBK";
-			else if(strcmp(optarg,"GB18030")==0) cjkencoding="GBK"; /* Not supported by CJK yet */
-			else if(strcmp(optarg,"BIG5")==0) cjkencoding="Bg5";
-			else if(strcmp(optarg,"EUCJP")==0) cjkencoding="JIS";
-			else if(strcmp(optarg,"EUCKR")==0) cjkencoding="KS";
-			else if(strcmp(optarg,"UTF-8")==0) cjkencoding="UTF8";
+			if(strcasecmp(optarg,"GB2312")==0) cjkencoding="GB";
+			else if(strcasecmp(optarg,"GBK")==0) cjkencoding="GBK";
+			else if(strcasecmp(optarg,"GB18030")==0) cjkencoding="GBK"; /* Not supported by CJK yet */
+			else if(strcasecmp(optarg,"BIG5")==0) cjkencoding="Bg5";
+			else if(strcasecmp(optarg,"EUCJP")==0) cjkencoding="JIS";
+			else if(strcasecmp(optarg,"EUCKR")==0) cjkencoding="KS";
+			else if(strcasecmp(optarg,"UTF-8")==0) cjkencoding="UTF8";
 			else cjkencoding=NULL;
-			if(cjkencoding!=NULL) strlcpy(texencoding,optarg,sizeof(texencoding));
+			if(cjkencoding!=NULL) {
+				strlcpy(texencoding,optarg,sizeof(texencoding));
+				for(p=texencoding;*p!=0;p++)
+				    *p=toupper((int)((unsigned char)*p));
+			}
 			break;
 		case 'f':
 			strlcpy(cjkfont,optarg,sizeof(cjkfont));
