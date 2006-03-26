@@ -343,6 +343,7 @@
 %%DIR%%/danish.pl
 %%DIR%%/de_german.pl
 %%DIR%%/fr_french.pl
+%%DIR%%/it_italian.pl
 %%DIR%%/nl_dutch.pl
 %%DIR%%/zh_tw.pl
 @dirrm %%DIR%%/theme/icons
