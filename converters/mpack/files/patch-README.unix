@@ -1,0 +1,9 @@
+--- README.unix.orig	Tue Feb 28 21:37:10 2006
++++ README.unix	Tue Feb 28 21:37:28 2006
+@@ -188,7 +188,7 @@
+ 
+      TMPDIR
+           Root of directory to store partial messages awaiting 
+-          reassembly.  Default is "/usr/tmp".   Partial messages
++          reassembly.  Default is "/tmp".   Partial messages
+ 	  are stored in subdirectories of $TMPDIR/m-prts-$USER/
