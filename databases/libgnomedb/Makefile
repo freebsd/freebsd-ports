@@ -8,6 +8,7 @@
 
 PORTNAME=	libgnomedb
 PORTVERSION=	1.9.102
+PORTREVISION=	1
 CATEGORIES=	databases gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R}
@@ -19,7 +20,7 @@ COMMENT=	Library components for the GNOME database frontend
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack libgnomeui libgda2 gtksourceview \
+USE_GNOME=	gnomeprefix gnomehack libgnomeui libgda3 gtksourceview \
 		intlhack
 GNU_CONFIGURE=	yes
 INSTALLS_OMF=	yes
