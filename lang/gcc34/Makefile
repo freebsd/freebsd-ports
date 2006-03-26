@@ -8,11 +8,11 @@
 
 PORTNAME=	gcc
 PORTVERSION=	3.4.6
-PORTREVISION=	20060221
+PORTEPOCH=	1
 CATEGORIES=	lang
-VERSIONSTRING=	3.4-${PORTREVISION}
+VERSIONSTRING=	${PORTVERSION}
 MASTER_SITES=	${MASTER_SITE_GCC}
-MASTER_SITE_SUBDIR=	snapshots/${VERSIONSTRING}
+MASTER_SITE_SUBDIR=	releases/gcc-${VERSIONSTRING}
 DISTFILES=	gcc-core-${VERSIONSTRING}${EXTRACT_SUFX} \
 		gcc-g++-${VERSIONSTRING}${EXTRACT_SUFX} \
 		gcc-g77-${VERSIONSTRING}${EXTRACT_SUFX} \
@@ -22,7 +22,8 @@ DISTFILES=	gcc-core-${VERSIONSTRING}${EXTRACT_SUFX} \
 MAINTAINER?=	gerald@FreeBSD.org
 COMMENT?=	GNU Compiler Collection 3.4
 
-LATEST_LINK?=	gcc34${PKGNAMESUFFIX}
+SUFFIX=		34
+LATEST_LINK?=	gcc${SUFFIX}${PKGNAMESUFFIX}
 USE_BISON=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -46,7 +47,6 @@ USE_GCC=	3.3+
 
 SRCDIR=		${WRKDIR}/gcc-${VERSIONSTRING}
 WRKSRC=		${WRKDIR}/build
-SUFFIX=		34
 TARGLIB=	${PREFIX}/lib/gcc/${CONFIGURE_TARGET}/${PORTVERSION}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-nls \
@@ -58,21 +58,15 @@ CONFIGURE_ARGS=	--disable-nls \
 		--infodir=${PREFIX}/${INFO_PATH}/gcc${SUFFIX}
 CONFIGURE_ENV=	RANLIB=:
 MAKE_ARGS+=	MAKEINFOFLAGS="--no-split"
-.if defined(WANT_SHAREDLIBS)
-CONFIGURE_ARGS+=	--enable-shared
+ALL_TARGET=	bootstrap-lean
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	${TARGLIB}
 SUB_LIST=	TARGLIB="${TARGLIB}"
 SUB_FILES=	gcc.sh
 RC_D_SH=	etc/rc.d/gcc${SUFFIX}.sh
-PLIST_FILES+=	${RC_D_SH}
-.else
-CONFIGURE_ARGS+=	--disable-shared
 .if ${OSVERSION} < 500000 && ${ARCH} == alpha
 CXXFLAGS+=	-fPIC
 .endif
-.endif
-ALL_TARGET=	bootstrap-lean
 PLIST_SUB=	GCC_VER=${PORTVERSION} GNU_HOST=${CONFIGURE_TARGET} \
 		SUFFIX=${SUFFIX}
 MAN1=		cpp${SUFFIX}.1 \
@@ -108,9 +102,8 @@ check: build
 	cd ${WRKSRC}; export RUNTESTFLAGS='--target_board ''unix{-pthread}'''; ${GMAKE} -sk check
 
 post-install:
-.if defined(WANT_SHAREDLIBS)
+	-@${MKDIR} ${PREFIX}/etc/rc.d
 	${INSTALL_SCRIPT} ${WRKDIR}/gcc.sh ${PREFIX}/${RC_D_SH}
-.endif
 	# man pages can only be generated if Perl >= 5.6 is installed;
 	# fake them otherwise.
 	for mp in ${_MANPAGES}; do \
@@ -118,9 +111,6 @@ post-install:
 	done
 .for f in c++ g77 gcc g++ cpp gcov ${CONFIGURE_TARGET}-gcc ${CONFIGURE_TARGET}-g++
 	# gij and jv-convert, for example, are not built on all platforms.
-	if [ -e ${PREFIX}/bin/${f}${SUFFIX} ]; then \
-	  ${STRIP_CMD} ${PREFIX}/bin/${f}${SUFFIX}; \
-	fi
 	if [ -e ${PREFIX}/man/man1/${f}.1 ]; then \
 	  ${MV} -f ${PREFIX}/man/man1/${f}.1 \
 	           ${PREFIX}/man/man1/${f}${SUFFIX}.1; \
@@ -143,10 +133,5 @@ post-install:
 	${ECHO_CMD} "@unexec ${RMDIR} %D/lib/gcc/${CONFIGURE_TARGET} 2>&1 || true" >> ${WRKDIR}/PLIST.lib
 	${ECHO_CMD} "@unexec ${RMDIR} %D/lib/gcc 2>&1 || true" >> ${WRKDIR}/PLIST.lib
 	cd ${WRKDIR} ; ${SED} -i -e "/PLIST.lib/ r PLIST.lib" ${TMPPLIST}
-
-cklatest:
-.for SITE in ftp://gcc.gnu.org/pub/gcc/snapshots/
-	@-ncftpls -l ${SITE} | ${GREP} 'LATEST.*3\.4'
-.endfor
 
 .include <bsd.port.post.mk>

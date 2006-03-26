@@ -10,6 +10,7 @@ bin/%%GNU_HOST%%-c++%%SUFFIX%%
 bin/%%GNU_HOST%%-g++%%SUFFIX%%
 bin/%%GNU_HOST%%-gcc-%%GCC_VER%%
 bin/%%GNU_HOST%%-gcc%%SUFFIX%%
+etc/rc.d/gcc%%SUFFIX%%.sh
 libexec/gcc/%%GNU_HOST%%/%%GCC_VER%%/cc1
 libexec/gcc/%%GNU_HOST%%/%%GCC_VER%%/cc1plus
 libexec/gcc/%%GNU_HOST%%/%%GCC_VER%%/f771
