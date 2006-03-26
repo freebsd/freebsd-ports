@@ -1,13 +1,15 @@
 @comment $FreeBSD$
-bin/c++33
-bin/cpp33
-bin/g++33
-bin/g77-33
-bin/gcc33
-bin/gcov33
-bin/%%GNU_HOST%%-c++33
+bin/c++%%SUFFIX%%
+bin/cpp%%SUFFIX%%
+bin/g++%%SUFFIX%%
+bin/g77-%%SUFFIX%%
+bin/gcc%%SUFFIX%%
+bin/gccbug%%SUFFIX%%
+bin/gcov%%SUFFIX%%
+bin/%%GNU_HOST%%-c++%%SUFFIX%%
+bin/%%GNU_HOST%%-g++%%SUFFIX%%
 bin/%%GNU_HOST%%-gcc-%%GCC_VER%%
-bin/%%GNU_HOST%%-gcc33
-bin/%%GNU_HOST%%-g++33
-bin/gccbug33
+bin/%%GNU_HOST%%-gcc%%SUFFIX%%
+etc/rc.d/gcc%%SUFFIX%%.sh
+info/gcc%%SUFFIX%%/dir
 @comment Insert PLIST.lib here
