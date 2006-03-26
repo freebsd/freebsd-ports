@@ -9,6 +9,7 @@ bin/%%GNU_HOST%%-c++%%SUFFIX%%
 bin/%%GNU_HOST%%-g++%%SUFFIX%%
 bin/%%GNU_HOST%%-gcc-%%GCC_VER%%
 bin/%%GNU_HOST%%-gcc%%SUFFIX%%
+etc/rc.d/gcc%%SUFFIX%%.sh
 include/omp.h
 info/gcc%%SUFFIX%%/dir
 %%FORTRAN%%bin/gfortran%%SUFFIX%%
