@@ -7,6 +7,7 @@
 
 PORTNAME=	isakmpd
 PORTVERSION=	20041207
+PORTREVISION=	1
 CATEGORIES=	security net
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	simon
@@ -16,7 +17,7 @@ COMMENT=	OpenBSD IKE daemon
 
 # this is not compatible with cross build - there's no other way
 .if !exists(/usr/include/netinet6/ipsec.h)
-BROKEN=		"requires IPsec support"
+BROKEN=		requires IPsec support
 .endif
 
 # If keynote is in use, bring the dependency
@@ -24,8 +25,8 @@ BROKEN=		"requires IPsec support"
 BUILD_DEPENDS+=	keynote:${PORTSDIR}/security/keynote
 .endif
 
+USE_RC_SUBR=	isakmpd.sh
 USE_OPENSSL=	yes
-USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/isakmpd
 MAKE_ENV+=	BINDIR=${PREFIX}/sbin MANDIR=${PREFIX}/man/man LC_ALL=C
 

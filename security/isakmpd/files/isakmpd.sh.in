@@ -1,0 +1,21 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: ike isakmpd
+# REQUIRE: root mountcritlocal
+# BEFORE:  DAEMON
+# KEYWORD: nojail
+
+isakmpd_enable="${isakmpd_enable:-NO}"
+
+. /etc/rc.subr
+
+name="isakmpd"
+rcvar=`set_rcvar`
+command="%%PREFIX%%/sbin/${name}"
+extra_commands="reload"
+
+load_rc_config $name
+run_rc_command "$1"
