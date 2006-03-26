@@ -15,6 +15,10 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Splits an ISO 11172-1 into its components
 
+BROKEN=			mastersite disappeared, no longer maintained by author
+DEPRECATED=		${BROKEN}
+EXPIRATION_DATE=	2006-05-25
+
 NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile
 MAN1=		splitmpeg.1
