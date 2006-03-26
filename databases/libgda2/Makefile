@@ -3,29 +3,31 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/databases/libgda2/Makefile,v 1.32 2005/10/29 04:20:53 mezz Exp $
 #
 
 PORTNAME=	libgda2
-PORTVERSION=	1.9.102
+PORTVERSION=	1.2.3
+PORTEPOCH=	1
 CATEGORIES=	databases gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/${PORTVERSION:R}
+MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/1.2
 DISTNAME=	libgda-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Provides uniform access to different kinds of data sources
 
+BUILD_DEPENDS=	scrollkeeper-config:${PORTSDIR}/textproc/scrollkeeper
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
+RUN_DEPENDS=	scrollkeeper-config:${PORTSDIR}/textproc/scrollkeeper
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack glib20 libxslt intlhack
+USE_GNOME=	gnomeprefix gnomehack glib20 libxslt
+INSTALLS_OMF=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--without-bdb
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -lintl"
@@ -36,6 +38,8 @@ MAN5=		gda-config.5
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME:S/2$//}
 
 PLIST_SUB=	VERSION=${PORTVERSION:R}
+
+CONFLICTS=	libgda3-[0-9]*
 
 post-patch:
 	@${REINPLACE_CMD} -e "/^SUBDIRS =/s/testing//" \
@@ -71,7 +75,7 @@ WITH_MDB=	yes
 WITH_ODBC=	yes
 .endif
 
-.if exists(${LOCALBASE}/lib/libsqlite.so.2)
+.if exists(${LOCALBASE}/lib/libsqlite3.so.8)
 WITH_SQLITE=	yes
 .endif
 
@@ -148,7 +152,7 @@ PLIST_SUB+=		ODBC:="@comment "
 .endif
 
 .if !defined(WITHOUT_SQLITE) && defined(WITH_SQLITE)
-LIB_DEPENDS+=		sqlite.2:${PORTSDIR}/databases/sqlite2
+LIB_DEPENDS+=		sqlite3.8:${PORTSDIR}/databases/sqlite3
 CONFIGURE_ARGS+=	--with-sqlite=${LOCALBASE}
 PLIST_SUB+=		SQLITE:=""
 .else

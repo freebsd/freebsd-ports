@@ -1,9 +1,9 @@
---- Makefile.in.orig	Thu Oct 13 15:37:21 2005
-+++ Makefile.in	Thu Oct 13 15:37:38 2005
-@@ -345,7 +345,6 @@
+--- Makefile.in.orig	Fri Jan 16 23:06:50 2004
++++ Makefile.in	Fri Jan 16 23:07:18 2004
+@@ -276,7 +276,6 @@
+ 	providers \
  	report \
  	tools \
- 	gda-sharp \
 -	testing \
  	data \
  	doc
