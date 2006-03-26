@@ -18,6 +18,10 @@ bin/quake4
 %%Q4DIR%%q4base/mapcycle.scriptcfg
 %%Q4DIR%%q4base/teamdm.cfg
 %%Q4DIR%%q4base/tourney.cfg
+%%Q4DIR%%q4base/zpak_english_01.pk4
+%%Q4DIR%%q4base/zpak_french_01.pk4
+%%Q4DIR%%q4base/zpak_italian_01.pk4
+%%Q4DIR%%q4base/zpak_spanish_01.pk4
 %%Q4DIR%%q4ded.x86
 %%Q4DIR%%quake4.x86
 %%PORTDOCS%%%%DOCSDIR%%/ENG/License.txt
