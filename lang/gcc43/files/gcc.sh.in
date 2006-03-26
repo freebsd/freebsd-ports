@@ -1,0 +1,14 @@
+#!/bin/sh
+
+case "$1" in
+start)
+	ldconfig -m %%TARGLIB%%
+	;;
+stop)
+	;;
+*)
+	echo "Usage: ${0##*/} { start | stop }" >&2
+	exit 64
+	;;
+esac
+exit 0

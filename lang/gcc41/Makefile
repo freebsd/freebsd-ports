@@ -76,6 +76,9 @@ MAKE_ARGS+=	MAKEINFOFLAGS="--no-split"
 ALL_TARGET=	bootstrap-lean
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	${TARGLIB}
+SUB_LIST=	TARGLIB="${TARGLIB}"
+SUB_FILES=	gcc.sh
+RC_D_SH=	etc/rc.d/gcc${SUFFIX}.sh
 PLIST_SUB=	GCC_VER=${PORTVERSION} GNU_HOST=${CONFIGURE_TARGET} \
 		SUFFIX=${SUFFIX}
 MAN1=		cpp${SUFFIX}.1 \
@@ -146,6 +149,7 @@ check: build
 	cd ${WRKSRC}; export RUNTESTFLAGS='--target_board ''unix{-pthread}'''; ${GMAKE} -sk check
 
 post-install:
+	${INSTALL_SCRIPT} ${WRKDIR}/gcc.sh ${PREFIX}/${RC_D_SH}
 	# man pages can only be generated if Perl >= 5.6 is installed;
 	# fake them otherwise.
 	for mp in ${_MANPAGES}; do \
