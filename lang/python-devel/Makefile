@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	python
-PORTVERSION=	2.5.a0.20050728
+PORTVERSION=	2.5.a0.20060326
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	${PYTHON_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
@@ -15,11 +15,13 @@ MAINTAINER=	perky@FreeBSD.org
 COMMENT?=	An interpreted object-oriented programming language
 
 DIST_SUBDIR=	python
-WRKSRC=		${PYTHON_WRKSRC}
+WRKSRC=		${PYTHON_WRKSRC}/portbld.static
+PATCH_WRKSRC=	${PYTHON_WRKSRC}
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	OPT="${CFLAGS}"
-MAKE_ENV=	VPATH="${WRKSRC}"
+CONFIGURE_SCRIPT=	../configure # must be relative
+CONFIGURE_ENV=	OPT="${CFLAGS}" SVNVERSION="echo freebsd"
+MAKE_ENV=	VPATH="${PYTHON_WRKSRC}"
 INSTALLS_SHLIB=	yes
 INSTALL_TARGET=	altinstall
 MAN1=		${PYTHON_VERSION}.1
@@ -30,10 +32,13 @@ PYTHON_VERSION=	python2.5
 PYTHON_NO_DEPENDS=	yes
 LATEST_LINK=	${PYTHON_VERSION:S/.//}
 
-SHARED_WRKSRC=	${WRKSRC}/build.shared
+SHARED_WRKSRC=	${PYTHON_WRKSRC}/portbld.shared
 PLIST_SUB=	PYVER=${PYTHON_VERSION:S/python//}
 DEMODIR=	${PREFIX}/share/examples/${PYTHON_VERSION}
 TOOLSDIR=	${PREFIX}/share/${PYTHON_VERSION}
+
+PLIST=		${WRKDIR}/PLIST
+PLIST_TEMPLATE=	${PKGDIR}/pkg-plist
 
 OPTIONS=	THREADS "Enable thread support" on \
 		HUGE_STACK_SIZE "Use a larger thread stack" off \
@@ -43,6 +48,9 @@ OPTIONS=	THREADS "Enable thread support" on \
 		FPECTL "Enable floating point exception handling" off
 
 .include <bsd.port.pre.mk>
+
+# workaround for a bug in base curses.h.
+CFLAGS+=	-D__wchar_t=wchar_t
 
 .if !defined(WITHOUT_THREADS)
 CONFIGURE_ARGS+=	--with-threads
@@ -108,27 +116,24 @@ PLATFORMS=plat-freebsd4 plat-freebsd6 plat-freebsd7
 PLATFORMS=plat-freebsd5 plat-freebsd6 plat-freebsd7
 .endif
 
-post-extract:
-	${SED} -e '1s,^.*$$,#!${PREFIX}/bin/${PYTHON_VERSION},' \
-		${WRKSRC}/Tools/scripts/pydoc > ${WRKDIR}/pydoc2.5
-	${SED} -e '1s,^.*$$,#!${PREFIX}/bin/${PYTHON_VERSION},' \
-		${WRKSRC}/Tools/scripts/idle > ${WRKDIR}/idle2.5
-	${SED} -e '1s,^.*$$,#!${PREFIX}/bin/${PYTHON_VERSION},' \
-		${WRKSRC}/Lib/smtpd.py > ${WRKDIR}/smtpd2.5.py
-
 pre-patch:
+	${MKDIR} ${WRKSRC} ${SHARED_WRKSRC}/Modules
+	${SED} -e '1s,^.*$$,#!${PREFIX}/bin/${PYTHON_VERSION},' \
+		${PATCH_WRKSRC}/Tools/scripts/pydoc > ${WRKDIR}/pydoc2.5
+	${SED} -e '1s,^.*$$,#!${PREFIX}/bin/${PYTHON_VERSION},' \
+		${PATCH_WRKSRC}/Tools/scripts/idle > ${WRKDIR}/idle2.5
+	${SED} -e '1s,^.*$$,#!${PREFIX}/bin/${PYTHON_VERSION},' \
+		${PATCH_WRKSRC}/Lib/smtpd.py > ${WRKDIR}/smtpd2.5.py
 	${REINPLACE_CMD} -e \
 		's,/usr/doc/python-docs-,${PREFIX}/share/doc/python,g' \
-		${WRKSRC}/Lib/pydoc.py
+		${PATCH_WRKSRC}/Lib/pydoc.py
 	${REINPLACE_CMD} -e \
 		's|^\( *prefixes = .*\)\]$$|\1, "${X11BASE}"]|g' \
-		${WRKSRC}/Lib/site.py
+		${PATCH_WRKSRC}/Lib/site.py
 
 post-configure:
-	@# prepare a subdir for shared build
-.for subdir in Modules Parser Python Objects
-	${MKDIR} ${SHARED_WRKSRC}/${subdir}
-.endfor
+	${TAR} -C ${WRKSRC} -cf - . | ${TAR} -C ${SHARED_WRKSRC} -xf -
+	${LN} -sf ${PYTHON_WRKSRC}/Lib ${WRKSRC}/Lib
 	${SED} -e 's,^\(LDLIBRARY=\).*$$,\1libpython$$(VERSION).so,' \
 		-e 's,^\(BLDLIBRARY=\).*$$,\1-L. -lpython$$(VERSION),' \
 		-e 's,^\(CFLAGSFORSHARED=\).*$$,\1$$(CCSHARED),' \
@@ -136,16 +141,8 @@ post-configure:
 		-e 's,^\(.(BUILDPYTHON)\: .*\).(LIBRARY),\1,' \
 		-e 's,^\(.(BUILDPYTHON):.*\).(LIBRARY),\1,' \
 		${WRKSRC}/Makefile > ${SHARED_WRKSRC}/Makefile
-	${LN} -sf ${WRKSRC}/pyconfig.h ${WRKSRC}/Include ${WRKSRC}/Grammar \
-		${SHARED_WRKSRC}/
-	${LN} -sf ${WRKSRC}/Python/getplatform.c ${WRKSRC}/Python/importdl.c \
-		${WRKSRC}/Python/importdl.h \
-		${SHARED_WRKSRC}/Python/
-	${LN} -sf ${WRKSRC}/Modules/makesetup ${WRKSRC}/Modules/Setup* \
-		${WRKSRC}/Modules/*.c ${WRKSRC}/Modules/*.h \
-		${SHARED_WRKSRC}/Modules/
 
-post-build:
+pre-build:
 	cd ${SHARED_WRKSRC}; \
 	${SETENV} ${MAKE_ENV} ${MAKE} lib${PYTHON_VERSION}.so python; \
 	${LN} -f lib${PYTHON_VERSION}.so lib${PYTHON_VERSION}.so.1; \
@@ -159,6 +156,11 @@ pre-su-install:
 		${PYTHONPREFIX_LIBDIR}/${platform}/
 .endfor
 .endfor
+
+pre-install:
+	${AWK} '{ print $$0; }						\
+	/LIBDIR.*\.py$$/ && !/\/bad/ { print $$0 "o"; print $$0 "c"; }'	\
+	${PLIST_TEMPLATE} > ${PLIST}
 
 post-install:
 	@# shared version of executable and library
@@ -175,16 +177,16 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/pydoc2.5 ${WRKDIR}/idle2.5 \
 		${WRKDIR}/smtpd2.5.py ${PREFIX}/bin
 	@${MKDIR} ${MANPREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/Misc/python.man \
+	${INSTALL_MAN} ${PYTHON_WRKSRC}/Misc/python.man \
 		${MANPREFIX}/man/man1/${PYTHON_VERSION}.1
 
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${TOOLSDIR}
-	@cd ${WRKSRC}; tar -c --exclude='*CVS*' -f - Tools | \
-		(cd ${TOOLSDIR}; tar xf -)
+	@cd ${PYTHON_WRKSRC}; ${TAR} -cf - Tools | \
+		(cd ${TOOLSDIR}; ${TAR} -xf -)
 	@${MKDIR} ${DEMODIR}
-	@cd ${WRKSRC}/Demo; tar -c --exclude='*CVS*' -f - * | \
-		(cd ${DEMODIR}; tar xf -)
+	@cd ${PYTHON_WRKSRC}/Demo; ${TAR} -cf - * | \
+		(cd ${DEMODIR}; ${TAR} -xf -)
 .endif
 
 .include <bsd.port.post.mk>
