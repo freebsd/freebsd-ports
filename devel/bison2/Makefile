@@ -7,7 +7,7 @@
 
 PORTNAME=	bison
 PORTVERSION=	2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -31,8 +31,9 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 MAN1=		bison.1
 INFO=		bison
 
+CONFIGURE_ARGS+=--disable-yacc
 .if defined(WITHOUT_NLS)
-CONFIGURE_ARGS+=	--disable-nls
+CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .else
 USE_GETTEXT=	yes
