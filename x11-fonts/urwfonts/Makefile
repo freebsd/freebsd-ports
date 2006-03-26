@@ -17,6 +17,7 @@ COMMENT=	Another font package for X
 
 NO_WRKSUBDIR=	yes
 USE_X_PREFIX=	yes
+NO_BUILD=	yes
 
 post-install:
 	@command fc-cache -v ${PREFIX}/lib/X11/fonts/URW || true
