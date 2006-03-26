@@ -1,6 +1,6 @@
 # New ports collection makefile for:	gorilla
 # Date created:				2006-02-11
-# Whom:					Kay Lehmann <kay@bippes.finkenkrug.ev>
+# Whom:					Kay Lehmann <kay_lehmann@web.de>
 #
 # $FreeBSD$
 #
