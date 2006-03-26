@@ -8,7 +8,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	4.2.0
-PORTREVISION=	20060318
+PORTREVISION=	20060325
 CATEGORIES=	lang java
 VERSIONSTRING=	4.2-${PORTREVISION}
 MASTER_SITES=	${MASTER_SITE_GCC}
@@ -70,7 +70,7 @@ CONFIGURE_ARGS+=	--disable-nls \
 		--infodir=${PREFIX}/${INFO_PATH}/gcc${SUFFIX}
 CONFIGURE_ENV=	RANLIB=:
 .if defined(WITH_JAVA_AWT)
-CONFIGURE_ARGS+=	--enable-java-awt=xlib,gtk #--enable-gtk-cairo=yes
+CONFIGURE_ARGS+=	--enable-java-awt=xlib,gtk
 .endif
 MAKE_ARGS+=	MAKEINFOFLAGS="--no-split"
 ALL_TARGET=	bootstrap
@@ -130,9 +130,6 @@ PLIST_SUB+=	JAVA="@comment "
 
 pre-everything::
 	@${ECHO_MSG} "Making GCC ${DISTNAME:S/^gcc-//} for ${OPSYS} ${OSREL}  target=${CONFIGURE_TARGET}"
-.if ! defined(WITHOUT_JAVA)
-	@${ECHO_MSG} "(with Java)"
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|\(const char version_string.*\)";|\1 [FreeBSD]";|' \
