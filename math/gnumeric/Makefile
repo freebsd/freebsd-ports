@@ -8,6 +8,7 @@
 
 PORTNAME=	gnumeric
 PORTVERSION=	1.6.3
+PORTREVISION=	1
 CATEGORIES=	math gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R}
@@ -20,11 +21,13 @@ LIB_DEPENDS=	goffice-1.2:${PORTSDIR}/devel/goffice \
 		psiconv.10:${PORTSDIR}/converters/psiconv
 
 USE_BZIP2=	yes
+USE_GETTEXT=	yes
 USE_X_PREFIX=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix intlhack gnomehack gnomehier libgnomeprintui \
-		libgsf_gnome pygtk2 desktopfileutils libgnomedb
+		libgsf_gnome pygtk2 desktopfileutils
+WANT_GNOME=	yes
 USE_PYTHON=	yes
 INSTALLS_OMF=	yes
 INSTALLS_SHLIB=	yes
@@ -47,6 +50,15 @@ PLIST_SUB=	VERSION=${PORTVERSION}
 PLIST_SUB+=	PERL="@comment "
 .else
 PLIST_SUB+=	PERL=""
+.endif
+
+.if ${HAVE_GNOME:Mlibgnomedb}!=""
+USE_GNOME+=		libgnomedb
+CONFIGURE_ARGS+=	--with-gda
+PLIST_SUB+=		GNOMEDB=""
+.else
+CONFIGURE_ARGS+=	--without-gda
+PLIST_SUB+=		GNOMEDB="@comment "
 .endif
 
 post-patch:
