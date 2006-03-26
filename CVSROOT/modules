@@ -8929,6 +8929,7 @@ p5-Search-InvertedIndex	ports/databases/p5-Search-InvertedIndex
 p5-Search-Namazu	ports/databases/p5-Search-Namazu
 p5-Search-Saryer	ports/textproc/p5-Search-Saryer
 p5-Search-VectorSpace	ports/textproc/p5-Search-VectorSpace
+p5-Search-Xapian	ports/databases/p5-Search-Xapian
 p5-Sendmail-AccessDB	ports/mail/p5-Sendmail-AccessDB
 p5-Sendmail-Milter	ports/mail/p5-Sendmail-Milter
 p5-Senna	ports/textproc/p5-Senna
