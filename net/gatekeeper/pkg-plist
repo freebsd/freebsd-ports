@@ -1,21 +1,30 @@
 @unexec %D/etc/rc.d/gnugk.sh forcestop 2>/dev/null || true
-bin/gnugk
 bin/addpasswd
-etc/rc.d/gnugk.sh
+bin/gnugk
 etc/gnugk.ini.default
-share/examples/gatekeeper/child.ini
-share/examples/gatekeeper/clirw.ini
-share/examples/gatekeeper/complete.ini
-share/examples/gatekeeper/fileacct.ini
-share/examples/gatekeeper/mysql.ini
-share/examples/gatekeeper/neighbor.ini
-share/examples/gatekeeper/proxy.ini
-share/examples/gatekeeper/radacct.ini
-share/examples/gatekeeper/radaliasauth.ini
-share/examples/gatekeeper/radauth.ini
-share/examples/gatekeeper/routed.ini
-share/examples/gatekeeper/rrqauth.ini
-share/examples/gatekeeper/sql.ini
-share/examples/gatekeeper/status.ini
-share/examples/gatekeeper/vqueue.ini
-@dirrm share/examples/gatekeeper
+%%EXAMPLESDIR%%/%%PORTNAME%%/child.ini
+%%EXAMPLESDIR%%/%%PORTNAME%%/clirw.ini
+%%EXAMPLESDIR%%/%%PORTNAME%%/complete.ini
+%%EXAMPLESDIR%%/%%PORTNAME%%/fileacct.ini
+%%EXAMPLESDIR%%/%%PORTNAME%%/gnugk.ini
+%%EXAMPLESDIR%%/%%PORTNAME%%/ipauth.ini
+%%EXAMPLESDIR%%/%%PORTNAME%%/mysql.ini
+%%EXAMPLESDIR%%/%%PORTNAME%%/neighbor.ini
+%%EXAMPLESDIR%%/%%PORTNAME%%/proxy.ini
+%%EXAMPLESDIR%%/%%PORTNAME%%/radacct.ini
+%%EXAMPLESDIR%%/%%PORTNAME%%/radaliasauth.ini
+%%EXAMPLESDIR%%/%%PORTNAME%%/radauth.ini
+%%EXAMPLESDIR%%/%%PORTNAME%%/routed.ini
+%%EXAMPLESDIR%%/%%PORTNAME%%/rrqauth.ini
+%%EXAMPLESDIR%%/%%PORTNAME%%/sql.ini
+%%EXAMPLESDIR%%/%%PORTNAME%%/status.ini
+%%EXAMPLESDIR%%/%%PORTNAME%%/vqueue.ini
+@dirrm %%EXAMPLESDIR%%/%%PORTNAME%%
+@dirrmtry %%EXAMPLESDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/%%PORTNAME%%/keepalive.txt
+%%PORTDOCS%%%%DOCSDIR%%/%%PORTNAME%%/known_bugs.txt
+%%PORTDOCS%%%%DOCSDIR%%/%%PORTNAME%%/performance.txt
+%%PORTDOCS%%%%DOCSDIR%%/%%PORTNAME%%/radauth.txt
+%%PORTDOCS%%%%DOCSDIR%%/%%PORTNAME%%/trace_levels.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/%%PORTNAME%%
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%

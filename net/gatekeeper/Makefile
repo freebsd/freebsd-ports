@@ -6,76 +6,112 @@
 #
 
 PORTNAME=	gatekeeper
-PORTVERSION=	2.2.2
-PORTREVISION=	4
+#PORTVERSION=	2.2.3
+DISTVERSION=	2.2.3-2
+PORTREVISION=	0
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	openh323gk
-DISTNAME=	gnugk-${PORTVERSION}
+MASTER_SITE_SUBDIR= openh323gk
+DISTNAME=	gnugk-${DISTVERSION}
 
 MAINTAINER=	Joerg.Pulz@frm2.tum.de
 COMMENT=	GnuGK is GPL Gate Keeper for OhPhone, GnomeMeeting, NetMeeting and H323
 
-BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/net/openh323-112:build
+LIB_DEPENDS=	h323_r.1:${PORTSDIR}/net/openh323
 
-USE_RC_SUBR=	yes
-RC_DIR=		${PREFIX}/etc/rc.d
+WRKSRC=		${WRKDIR}/${MASTER_SITE_SUBDIR}-${DISTVERSION:C/-[0-9]$//}
+
+USE_RC_SUBR=	gnugk.sh
 
 USE_AUTOTOOLS=	autoconf:259
-CONFIGURE_ENV=	${MAKE_ENV}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
-NOCLEANDEPENDS=	yes
-
-USE_BISON=	yes
 USE_GMAKE=	yes
-ALL_TARGET=	optnoshared addpasswd
-MAKE_ENV=	PWLIBDIR=${WRKDIRPREFIX}${.CURDIR}/../../devel/pwlib152/work/pwlib \
-		OPENH323DIR=${WRKDIRPREFIX}${.CURDIR}/../openh323-112/work/openh323
-THE_MACHTYPE=	${ARCH:S/i386/x86/}
-MAKE_ARGS=	OSTYPE=${OPSYS} MACHTYPE=${THE_MACHTYPE} OSRELEASE=${OSVERSION} CPLUS=${CXX} HAS_RADACCT=1
+ALL_TARGET=	optshared addpasswd
+MAKE_ENV=	PWLIBDIR=${LOCALBASE}/share/pwlib \
+		OPENH323DIR=${LOCALBASE}/share/openh323 \
+		SYSLIBDIR=${LOCALBASE}/lib
+MAKE_ARGS=	OSTYPE=${OPSYS} MACHTYPE=${ARCH:S/i386/x86/} \
+		OSRELEASE=${OSVERSION} CPLUS=${CXX}
+
+PLIST_SUB=	PORTNAME=${PORTNAME}
+DOCSDIR=	${PREFIX}/share/doc/openh323
+EXAMPLESDIR=	${PREFIX}/share/examples/openh323
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500000
-CONFIGURE_ARGS+=	--enable-radius
-.else
-CONFIGURE_ARGS+=	--disable-radius
+.if ${OSVERSION} < 500000
+BROKEN=		does not build
 .endif
 
-#.if defined(WITH_MYSQL)
-#USE_MYSQL=	41
-#CONFIGURE_ARGS+=	--enable-mysql \
-#			--with-mysql-dir=${LOCALBASE}
-#.else
+.if defined(WITH_FDSET)
+CONFIGURE_ARGS+=	--with-large-fdset=${WITH_FDSET}
+.endif
+
+.if ${OSVERSION} >= 500000
+. if defined(WITH_RADIUS)
+CONFIGURE_ARGS+=	--enable-radius
+. else
+CONFIGURE_ARGS+=	--disable-radius
+. endif
+.endif
+
+.if defined(WITH_MYSQL)
+USE_MYSQL=	yes
+CONFIGURE_ARGS+=	--enable-mysql \
+			--with-mysql-dir=${LOCALBASE}
+.else
 CONFIGURE_ARGS+=	--disable-mysql
-#.endif
+.endif
 
-#.if defined(WITH_PGSQL)
-#USE_PGSQL=	yes
-#CONFIGURE_ARGS+=	--enable-pgsql \
-#			--with-pgsql-dir=${LOCALBASE}
-#.else
+.if defined(WITH_PGSQL)
+USE_PGSQL=	yes
+CONFIGURE_ARGS+=	--enable-pgsql
+.else
 CONFIGURE_ARGS+=	--disable-pgsql
-#.endif
+.endif
 
-pre-install:
-	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g' \
-	    -e 's|%%RC_SUBR%%|${RC_SUBR}|g' \
-	    ${FILESDIR}/gnugk.sh.sample > ${WRKDIR}/gnugk.sh
+pre-everything::
+.if !defined(WITH_RADIUS) || !defined(WITH_MYSQL) || !defined(WITH_PGSQL) || !defined(WITH_FDSET)
+	@${ECHO_MSG} "Additional build options are:"
+	@${ECHO_MSG} ""
+.endif
+.if ${OSVERSION} >= 500000
+. ifndef(WITH_RADIUS)
+	@${ECHO_MSG} "WITH_RADIUS=yes - enable Radius support"
+	@${ECHO_MSG} ""
+. endif
+.endif
+.ifndef(WITH_MYSQL)
+	@${ECHO_MSG} "WITH_MYSQL=yes - enable the MySQL backend"
+	@${ECHO_MSG} ""
+.endif
+.ifndef(WITH_PGSQL)
+	@${ECHO_MSG} "WITH_PGSQL=yes - enable the PostgreSQL backend"
+	@${ECHO_MSG} ""
+.endif
+.ifndef(WITH_FDSET)
+	@${ECHO_MSG} "WITH_FDSET=<some number> - expand the 'Maximum number of sockets'"
+	@${ECHO_MSG} "Default is: 1024"
+	@${ECHO_MSG} ""
+.endif
 
 pre-su-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} \
 	    ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/obj_${OPSYS}_${THE_MACHTYPE}_r/gnugk ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/obj_${OPSYS}_${THE_MACHTYPE}_r/addpasswd ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/obj_r/gnugk ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/obj_r/addpasswd ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/etc/complete.ini ${PREFIX}/etc/gnugk.ini.default
-	@${MKDIR} ${EXAMPLESDIR}
-	@${CP} -Rp ${WRKSRC}/etc/*.ini ${EXAMPLESDIR}
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}/${PORTNAME}
+	@${CP} -Rp ${WRKSRC}/docs/*.txt ${DOCSDIR}/${PORTNAME}
+.endif
+	@${MKDIR} ${EXAMPLESDIR}/${PORTNAME}
+	@${CP} -Rp ${WRKSRC}/etc/*.ini ${EXAMPLESDIR}/${PORTNAME}
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/gnugk.sh ${RC_DIR}
 	@${SETENV} PKG_PREFIX=${PREFIX} \
 	    ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
