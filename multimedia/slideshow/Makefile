@@ -9,8 +9,7 @@ PORTNAME=	slideshow
 PORTVERSION=	0.8.0.p5
 PORTREVISION=	2
 CATEGORIES=	multimedia
-MASTER_SITES=	${MASTER_SITE_SAVANNAH}
-MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}.pkg/${PORTVERSION:S/.p/-pre/}
+MASTER_SITES=	http://ftp.osuosl.org/pub/FreeBSD/distfiles/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p/-pre/}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -24,7 +23,6 @@ INSTALLS_SHLIB=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_PYTHON=	yes
-USE_REINPLACE=	yes
 USE_SDL=	image ttf
 CONFIGURE_ARGS+=	--disable-gtk-gui
 CONFIGURE_ENV+=	LDFLAGS="-lstdc++"
