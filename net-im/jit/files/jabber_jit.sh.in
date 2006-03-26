@@ -1,0 +1,34 @@
+#!/bin/sh
+#
+# Startup script for JIT ICQ transport.
+#
+# $FreeBSD$
+#
+
+# PROVIDE: jabber_jit
+# REQUIRE: DAEMON
+
+# Define these jabber_jit_* variables in one of these files:
+#       /etc/rc.conf
+#       /etc/rc.conf.local
+#       /etc/rc.conf.d/jabber_jit
+#
+# jabber_jit_enable : bool
+#   Enable the transport ("YES") or not ("NO", the default).
+#
+
+. %%RC_SUBR%%
+
+name="jabber_jit"
+rcvar=`set_rcvar`
+
+command="%%PREFIX%%/sbin/jit"
+command_args="-c %%PREFIX%%/etc/jabber-icq.xml -d"
+required_files="%%PREFIX%%/etc/jabber-icq.xml"
+
+load_rc_config "$name"
+
+: ${jabber_jit_enable="NO"}
+: ${jabber_jit_user="jabber"}
+
+run_rc_command "$1"
