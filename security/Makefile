@@ -425,6 +425,7 @@
     SUBDIR += pad
     SUBDIR += pam-mysql
     SUBDIR += pam-pgsql
+    SUBDIR += pam_af
     SUBDIR += pam_alreadyloggedin
     SUBDIR += pam_bsdbioapi
     SUBDIR += pam_krb5
