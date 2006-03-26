@@ -12334,6 +12334,7 @@ surf		ports/math/surf
 surfraw		ports/www/surfraw
 susv2		ports/misc/susv2
 susv3		ports/misc/susv3
+suxus		ports/x11-fonts/suxus
 sv-aspell	ports/textproc/sv-aspell
 svg2pdf		ports/graphics/svg2pdf
 svg2png		ports/graphics/svg2png
