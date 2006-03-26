@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pyweblib
-PORTVERSION=	1.3.3
-PORTREVISION=	1
+PORTVERSION=	1.3.4
 CATEGORIES=	www
 MASTER_SITES=	http://www.stroeder.com/pylib/PyWebLib/download/ \
 		ftp://ftp.ipt.ru/pub/download/
@@ -19,8 +18,7 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME:S=-src==}
 
-DOCS=		PyWebLib.html \
-		pydoc/pyweblib.forms.html \
+DOCS=		pydoc/pyweblib.forms.html \
 		pydoc/pyweblib.helper.html \
 		pydoc/pyweblib.html \
 		pydoc/pyweblib.httphelper.html \

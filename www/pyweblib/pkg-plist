@@ -25,7 +25,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/pydoc/pyweblib.httphelper.html
 %%PORTDOCS%%%%DOCSDIR%%/pydoc/pyweblib.session.html
 %%PORTDOCS%%%%DOCSDIR%%/pydoc/pyweblib.sslenv.html
-%%PORTDOCS%%%%DOCSDIR%%/PyWebLib.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/pydoc
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @comment -
