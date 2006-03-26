@@ -10,7 +10,7 @@ PORTVERSION=	0.10
 CATEGORIES=	x11-fonts
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gimp/fonts/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	A collection of shareware ATM fonts from the CICA archives
 
 RESTRICTED=	"Shareware.  Cannot be distributed w/o prior authorization."
