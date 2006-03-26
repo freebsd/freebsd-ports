@@ -7,6 +7,7 @@
 
 PORTNAME=	jit
 PORTVERSION=	1.1.7
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.penza-gsm.ru/snake/xmpp/
 DIST_SUBDIR=	jabber
@@ -15,20 +16,15 @@ MAINTAINER=	alexander.timoshenko@gmail.com
 COMMENT=	Jabber ICQ Transport
 
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
+USE_RC_SUBR=	jabber_jit.sh
 HAS_CONFIGURE=	yes
+CFLAGS+=	-fPIC
 MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "ia64" || ${ARCH} == "amd64"
-BROKEN=		"Does not build on amd64 or ia64"
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
-		${WRKSRC}/jit/jabber-icq.example ${WRKSRC}/jit/jit.sh
+		${WRKSRC}/jit/jabber-icq.example
 
 do-install:
 	@${MKDIR} ${PREFIX}/lib/jabber/jit
@@ -36,9 +32,8 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/xdb_file/xdb_file.so ${PREFIX}/lib/jabber/jit
 	@${INSTALL_PROGRAM} ${WRKSRC}/jabberd/jabberd-jit  ${PREFIX}/sbin/jit
 	@${INSTALL_DATA} ${WRKSRC}/jit/jabber-icq.example ${PREFIX}/etc
-	@${INSTALL_SCRIPT} ${WRKSRC}/jit/jit.sh  ${PREFIX}/etc/rc.d
 
 post-install:
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
