@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ode
-DISTVERSION=	${ODEVER}-051009
+DISTVERSION=	${ODEVER}-060223
 CATEGORIES=	devel
 MASTER_SITES=	http://opende.sourceforge.net/snapshots/
 PKGNAMESUFFIX=	-devel
@@ -22,7 +22,6 @@ CONFLICTS=	ode-[0-9].*
 USE_X_PREFIX=	yes
 USE_GL=		yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 
 OPTIONS=	OPCODE "Enable code required by TriList (trimesh) class" on
 
