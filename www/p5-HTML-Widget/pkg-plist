@@ -8,6 +8,7 @@
 %%SITE_PERL%%/HTML/Widget/Constraint/Callback.pm
 %%SITE_PERL%%/HTML/Widget/Constraint/Date.pm
 %%SITE_PERL%%/HTML/Widget/Constraint/DateTime.pm
+%%SITE_PERL%%/HTML/Widget/Constraint/DependOn.pm
 %%SITE_PERL%%/HTML/Widget/Constraint/Email.pm
 %%SITE_PERL%%/HTML/Widget/Constraint/Equal.pm
 %%SITE_PERL%%/HTML/Widget/Constraint/HTTP.pm

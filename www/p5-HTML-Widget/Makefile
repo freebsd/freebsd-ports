@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTML-Widget
-PORTVERSION=	1.04
+PORTVERSION=	1.05
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/J/JR/JROBINSON
@@ -37,6 +37,7 @@ MAN3=	HTML::Widget.3 \
 	HTML::Widget::Constraint::Callback.3 \
 	HTML::Widget::Constraint::Date.3 \
 	HTML::Widget::Constraint::DateTime.3 \
+	HTML::Widget::Constraint::DependOn.3 \
 	HTML::Widget::Constraint::Email.3 \
 	HTML::Widget::Constraint::Equal.3 \
 	HTML::Widget::Constraint::HTTP.3 \
