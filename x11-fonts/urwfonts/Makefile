@@ -7,6 +7,7 @@
 
 PORTNAME=	urwfonts
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://www.gimp.org/
 DISTNAME=	urw-fonts
@@ -18,6 +19,7 @@ NO_WRKSUBDIR=	yes
 USE_X_PREFIX=	yes
 
 post-install:
+	@command fc-cache -v ${PREFIX}/lib/X11/fonts/URW || true
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
