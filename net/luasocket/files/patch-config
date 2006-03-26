@@ -1,0 +1,54 @@
+--- config.orig	Fri Nov 25 09:29:38 2005
++++ config	Mon Mar  6 19:46:29 2006
+@@ -15,8 +15,8 @@
+ #------
+ # Lua includes and libraries
+ #
+-LUAINC=-Ilua-5.0.2/include
+-LUALIB=-Llua-5.0.2/lib
++LUAINC=-I$(PREFIX)/include
++LUALIB=-L$(PREFIX)/lib
+ 
+ #------
+ # Compat-5.1 directory
+@@ -27,8 +27,8 @@
+ # Top of your Lua installation
+ # Relative paths will be inside the src tree
+ #
+-INSTALL_TOP_SHARE=share
+-INSTALL_TOP_LIB=lib
++INSTALL_TOP_SHARE=${PREFIX}/share/lua/5.0
++INSTALL_TOP_LIB=${PREFIX}/lib/lua/5.0
+ 
+ INSTALL_DATA=cp
+ INSTALL_EXEC=cp
+@@ -37,20 +37,20 @@
+ # Compiler and linker settings
+ # for Mac OS X
+ #
+-CC=gcc
+-DEF=-DLUASOCKET_DEBUG -DUNIX_HAS_SUN_LEN
+-CFLAGS= $(LUAINC) -I$(COMPAT) $(DEF) -pedantic -Wall -O2 -fno-common
+-LDFLAGS=-bundle -undefined dynamic_lookup
+-LD=export MACOSX_DEPLOYMENT_TARGET="10.3"; gcc
++#CC=gcc
++#DEF=-DLUASOCKET_DEBUG -DUNIX_HAS_SUN_LEN
++#CFLAGS= $(LUAINC) -I$(COMPAT) $(DEF) -pedantic -Wall -O2 -fno-common
++#LDFLAGS=-bundle -undefined dynamic_lookup
++#LD=export MACOSX_DEPLOYMENT_TARGET="10.3"; gcc
+ 
+ #------
+ # Compiler and linker settings
+ # for Linux
+-#CC=gcc
++CC?=gcc
+ #DEF=-DLUASOCKET_DEBUG 
+-#CFLAGS= $(LUAINC) -I$(COMPAT) $(DEF) -pedantic -Wall -O2 -fpic
+-#LDFLAGS=-O -shared
+-#LD=gcc 
++CFLAGS+= $(LUAINC) -I$(COMPAT) $(DEF) -pedantic -Wall -fpic
++LDFLAGS=-O -shared
++LD=gcc 
+ 
+ #------
+ # End of makefile configuration

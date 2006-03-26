@@ -6,42 +6,40 @@
 #
 
 PORTNAME=	luasocket
-PORTVERSION=	1.4
+PORTVERSION=	2.0
 CATEGORIES=	net
-MASTER_SITES=	http://www.cs.princeton.edu/~diego/professional/luasocket/old/luasocket-1.4/
+MASTER_SITES=	http://luaforge.net/frs/download.php/1097/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	andrew+ports@fubar.geek.nz
 COMMENT=	IPv4 Sockets support for the Lua language
 
-BUILD_DEPENDS=	${LOCALBASE}/include/lua.h:${PORTSDIR}/lang/lua4
+BUILD_DEPENDS=	${LOCALBASE}/include/lua.h:${PORTSDIR}/lang/lua
+
+USE_GMAKE=	yes
 
 post-extract:
 	@ ${MV} ${WRKSRC}/makefile ${WRKSRC}/Makefile
-
-do-install:
-	@ ${INSTALL_PROGRAM} ${WRKSRC}/luasocket ${PREFIX}/bin
-	@ ${MKDIR} ${PREFIX}/lib/lua
-	@ ${MKDIR} ${PREFIX}/lib/lua/luasocket
-	@ ${INSTALL_DATA} ${WRKSRC}/lua/cl-compat.lua ${PREFIX}/lib/lua/luasocket
-	@ ${INSTALL_DATA} ${WRKSRC}/lua/code.lua ${PREFIX}/lib/lua/luasocket
-	@ ${INSTALL_DATA} ${WRKSRC}/lua/concat.lua ${PREFIX}/lib/lua/luasocket
-	@ ${INSTALL_DATA} ${WRKSRC}/lua/ftp.lua ${PREFIX}/lib/lua/luasocket
-	@ ${INSTALL_DATA} ${WRKSRC}/lua/http.lua ${PREFIX}/lib/lua/luasocket
-	@ ${INSTALL_DATA} ${WRKSRC}/lua/README ${PREFIX}/lib/lua/luasocket
-	@ ${INSTALL_DATA} ${WRKSRC}/lua/smtp.lua ${PREFIX}/lib/lua/luasocket
-	@ ${INSTALL_DATA} ${WRKSRC}/lua/url.lua ${PREFIX}/lib/lua/luasocket
+	@ ${RM} ${WRKSRC}/src/compat-5.1r4/compat-5.1.o
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@ ${MKDIR} ${PREFIX}/share/doc/luasocket
-	@ ${INSTALL_DATA} ${WRKSRC}/html/anybrowser.png ${PREFIX}/share/doc/luasocket
-	@ ${INSTALL_DATA} ${WRKSRC}/html/func.html ${PREFIX}/share/doc/luasocket
-	@ ${INSTALL_DATA} ${WRKSRC}/html/home.html ${PREFIX}/share/doc/luasocket
-	@ ${INSTALL_DATA} ${WRKSRC}/html/idx.html ${PREFIX}/share/doc/luasocket
-	@ ${INSTALL_DATA} ${WRKSRC}/html/intro.html ${PREFIX}/share/doc/luasocket
-	@ ${INSTALL_DATA} ${WRKSRC}/html/luasocket.png ${PREFIX}/share/doc/luasocket
-	@ ${INSTALL_DATA} ${WRKSRC}/html/mod.html ${PREFIX}/share/doc/luasocket
-	@ ${INSTALL_DATA} ${WRKSRC}/html/vim.png ${PREFIX}/share/doc/luasocket
+	@${MKDIR} ${PREFIX}/share/doc/luasocket
+	@${INSTALL_DATA} ${WRKSRC}/doc/dns.html ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/ftp.html ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/home.html ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/http.html ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/installation.html ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/introduction.html ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/ltn12.html ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/luasocket.png ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/mime.html ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/reference.css ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/reference.html ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/smtp.html ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/socket.html ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/tcp.html ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/udp.html ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/url.html ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

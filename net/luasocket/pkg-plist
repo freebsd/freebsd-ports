@@ -1,20 +1,35 @@
-bin/luasocket
-lib/lua/luasocket/cl-compat.lua
-lib/lua/luasocket/code.lua
-lib/lua/luasocket/concat.lua
-lib/lua/luasocket/ftp.lua
-lib/lua/luasocket/http.lua
-lib/lua/luasocket/README
-lib/lua/luasocket/smtp.lua
-lib/lua/luasocket/url.lua
-%%PORTDOCS%%share/doc/luasocket/anybrowser.png
-%%PORTDOCS%%share/doc/luasocket/func.html
-%%PORTDOCS%%share/doc/luasocket/home.html
-%%PORTDOCS%%share/doc/luasocket/idx.html
-%%PORTDOCS%%share/doc/luasocket/intro.html
-%%PORTDOCS%%share/doc/luasocket/luasocket.png
-%%PORTDOCS%%share/doc/luasocket/mod.html
-%%PORTDOCS%%share/doc/luasocket/vim.png
-%%PORTDOCS%%@dirrm share/doc/luasocket
-@dirrm lib/lua/luasocket
-@dirrm lib/lua
+share/lua/5.0/mime.lua
+share/lua/5.0/socket.lua
+share/lua/5.0/ltn12.lua
+share/lua/5.0/compat-5.1.lua
+share/lua/5.0/socket/smtp.lua
+share/lua/5.0/socket/ftp.lua
+share/lua/5.0/socket/tp.lua
+share/lua/5.0/socket/url.lua
+share/lua/5.0/socket/http.lua
+lib/lua/5.0/socket/core.so
+lib/lua/5.0/mime/core.so
+%%PORTDOCS%%%%DOCSDIR%%/dns.html
+%%PORTDOCS%%%%DOCSDIR%%/ftp.html
+%%PORTDOCS%%%%DOCSDIR%%/home.html
+%%PORTDOCS%%%%DOCSDIR%%/http.html
+%%PORTDOCS%%%%DOCSDIR%%/installation.html
+%%PORTDOCS%%%%DOCSDIR%%/introduction.html
+%%PORTDOCS%%%%DOCSDIR%%/ltn12.html
+%%PORTDOCS%%%%DOCSDIR%%/luasocket.png
+%%PORTDOCS%%%%DOCSDIR%%/mime.html
+%%PORTDOCS%%%%DOCSDIR%%/reference.css
+%%PORTDOCS%%%%DOCSDIR%%/reference.html
+%%PORTDOCS%%%%DOCSDIR%%/smtp.html
+%%PORTDOCS%%%%DOCSDIR%%/socket.html
+%%PORTDOCS%%%%DOCSDIR%%/tcp.html
+%%PORTDOCS%%%%DOCSDIR%%/udp.html
+%%PORTDOCS%%%%DOCSDIR%%/url.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm share/lua/5.0/socket
+@dirrmtry share/lua/5.0
+@dirrmtry share/lua
+@dirrm lib/lua/5.0/socket
+@dirrm lib/lua/5.0/mime
+@dirrmtry lib/lua/5.0
+@dirrmtry lib/lua
