@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBIx-Class
-PORTVERSION=	0.05006
+PORTVERSION=	0.05007
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DBIx
@@ -19,7 +19,7 @@ BUILD_DEPENDS=	p5-Data-Page>=2.00:${PORTSDIR}/databases/p5-Data-Page \
 		p5-Scalar-List-Utils>=0:${PORTSDIR}/lang/p5-Scalar-List-Utils \
 		p5-SQL-Abstract>=1.20:${PORTSDIR}/databases/p5-SQL-Abstract \
 		p5-SQL-Abstract-Limit>=0.101:${PORTSDIR}/databases/p5-SQL-Abstract-Limit \
-		p5-Class-C3>=0.07:${PORTSDIR}/devel/p5-Class-C3 \
+		p5-Class-C3>=0.11:${PORTSDIR}/devel/p5-Class-C3 \
 		p5-Storable>=0:${PORTSDIR}/devel/p5-Storable \
 		p5-Class-Data-Accessor>=0.01:${PORTSDIR}/devel/p5-Class-Data-Accessor \
 		p5-Carp-Clan>=0:${PORTSDIR}/devel/p5-Carp-Clan \
