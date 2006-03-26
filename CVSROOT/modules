@@ -7935,6 +7935,7 @@ p5-Data-TreeDumper-Renderer-DHTML	ports/www/p5-Data-TreeDumper-Renderer-DHTML
 p5-Data-Types	ports/devel/p5-Data-Types
 p5-Data-UUID	ports/devel/p5-Data-UUID
 p5-Data-Validate-Domain	ports/dns/p5-Data-Validate-Domain
+p5-Data-Visitor	ports/devel/p5-Data-Visitor
 p5-Date-Calc	ports/devel/p5-Date-Calc
 p5-Date-DayOfWeek	ports/devel/p5-Date-DayOfWeek
 p5-Date-Easter	ports/devel/p5-Date-Easter
