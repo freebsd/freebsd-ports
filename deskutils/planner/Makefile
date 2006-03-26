@@ -38,13 +38,13 @@ GCONF_SCHEMAS=	planner.schemas
 
 .include <bsd.port.pre.mk>
 
-#.if ${HAVE_GNOME:Mlibgda2}!=""
-#USE_GNOME+=	libgda2
-#CONFIGURE_ARGS+=--enable-database=yes
-#PLIST_SUB+=	GDA=""
-#.else
+.if ${HAVE_GNOME:Mlibgda2}!=""
+USE_GNOME+=	libgda2
+CONFIGURE_ARGS+=--enable-database=yes
+PLIST_SUB+=	GDA=""
+.else
 PLIST_SUB+=	GDA="@comment "
-#.endif
+.endif
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
