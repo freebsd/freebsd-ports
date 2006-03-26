@@ -8,6 +8,7 @@
 
 PORTNAME=	glade
 PORTVERSION=	2.12.1
+PORTREVISION=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R}
@@ -20,13 +21,23 @@ COMMENT=	A user interface builder for GTK+/GNOME
 RUN_DEPENDS=	${X11BASE}/lib/gtk-2.0/modules/libgail-gnome.so:${PORTSDIR}/x11-toolkits/libgail-gnome
 
 USE_BZIP2=	yes
+USE_GETTEXT=	yes
 USE_X_PREFIX=	yes
 INSTALLS_OMF=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomeprefix intlhack gnomehack libgnomedb libgnomeui
+USE_GNOME=	gnomeprefix intlhack gnomehack libgnomeui
+WANT_GNOME=	yes
 USE_GMAKE=	yes
-CONFIGURE_ARGS=	--enable-gnome-db
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${HAVE_GNOME:Mlibgnomedb}!=""
+USE_GNOME+=		libgnomedb
+CONFIGURE_ARGS+=	--enable-gnome-db
+.else
+CONFIGURE_ARGS+=	--disable-gnome-db
+.endif
+
+.include <bsd.port.post.mk>

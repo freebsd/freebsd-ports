@@ -58,13 +58,13 @@ lib/gnumeric/%%VERSION%%/plugins/fn-stat/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/fn-string/plugin.la
 lib/gnumeric/%%VERSION%%/plugins/fn-string/plugin.so
 lib/gnumeric/%%VERSION%%/plugins/fn-string/plugin.xml
-lib/gnumeric/%%VERSION%%/plugins/gdaif/gdaif.la
-lib/gnumeric/%%VERSION%%/plugins/gdaif/gdaif.so
-lib/gnumeric/%%VERSION%%/plugins/gdaif/plugin.xml
-lib/gnumeric/%%VERSION%%/plugins/gnome-db/gnomedb.la
-lib/gnumeric/%%VERSION%%/plugins/gnome-db/gnomedb.so
-lib/gnumeric/%%VERSION%%/plugins/gnome-db/plugin.xml
-lib/gnumeric/%%VERSION%%/plugins/gnome-db/ui.xml
+%%GNOMEDB%%lib/gnumeric/%%VERSION%%/plugins/gdaif/gdaif.la
+%%GNOMEDB%%lib/gnumeric/%%VERSION%%/plugins/gdaif/gdaif.so
+%%GNOMEDB%%lib/gnumeric/%%VERSION%%/plugins/gdaif/plugin.xml
+%%GNOMEDB%%lib/gnumeric/%%VERSION%%/plugins/gnome-db/gnomedb.la
+%%GNOMEDB%%lib/gnumeric/%%VERSION%%/plugins/gnome-db/gnomedb.so
+%%GNOMEDB%%lib/gnumeric/%%VERSION%%/plugins/gnome-db/plugin.xml
+%%GNOMEDB%%lib/gnumeric/%%VERSION%%/plugins/gnome-db/ui.xml
 lib/gnumeric/%%VERSION%%/plugins/gnome-glossary/glossary-po-header
 lib/gnumeric/%%VERSION%%/plugins/gnome-glossary/gnome_glossary.py
 lib/gnumeric/%%VERSION%%/plugins/gnome-glossary/gnome_glossary.pyc
@@ -784,8 +784,8 @@ share/locale/zh_TW/LC_MESSAGES/gnumeric.mo
 @dirrm lib/gnumeric/%%VERSION%%/plugins/lotus
 @dirrm lib/gnumeric/%%VERSION%%/plugins/html
 @dirrm lib/gnumeric/%%VERSION%%/plugins/gnome-glossary
-@dirrm lib/gnumeric/%%VERSION%%/plugins/gnome-db
-@dirrm lib/gnumeric/%%VERSION%%/plugins/gdaif
+%%GNOMEDB%%@dirrm lib/gnumeric/%%VERSION%%/plugins/gnome-db
+%%GNOMEDB%%@dirrm lib/gnumeric/%%VERSION%%/plugins/gdaif
 @dirrm lib/gnumeric/%%VERSION%%/plugins/fn-string
 @dirrm lib/gnumeric/%%VERSION%%/plugins/fn-stat
 @dirrm lib/gnumeric/%%VERSION%%/plugins/fn-random
