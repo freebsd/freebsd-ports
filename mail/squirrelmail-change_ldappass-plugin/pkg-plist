@@ -1,4 +1,4 @@
-@unexec %D/%%SQUIRRELDIR%%/config/conf.pl --remove-plugin change_ldappass
+@unexec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --remove-plugin change_ldappass; fi
 %%SQUIRRELDIR%%/plugins/change_ldappass/locale/fr_FR/LC_MESSAGES/change_ldappass.mo
 %%SQUIRRELDIR%%/plugins/change_ldappass/locale/fr_FR/LC_MESSAGES/change_ldappass.po
 %%SQUIRRELDIR%%/plugins/change_ldappass/locale/pl/LC_MESSAGES/change_ldappass.mo
@@ -42,4 +42,4 @@
 @dirrm %%SQUIRRELDIR%%/plugins/change_ldappass/locale/el_GR
 @dirrm %%SQUIRRELDIR%%/plugins/change_ldappass/locale
 @dirrm %%SQUIRRELDIR%%/plugins/change_ldappass/
-@exec %D/%%SQUIRRELDIR%%/config/conf.pl --install-plugin change_ldappass
+@exec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --install-plugin change_ldappass; fi
