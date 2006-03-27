@@ -34,7 +34,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 MAN1=		gda-config-tool.1
 MAN5=		gda-config.5
 
-DOCSDIR=	${PREFIX}/share/doc/${PORTNAME:S/2$//}
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME:S/3$//}
 
 PLIST_SUB=	VERSION=${PORTVERSION:R}
 
