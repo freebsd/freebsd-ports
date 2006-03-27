@@ -93,6 +93,7 @@ check: build
 	cd ${WRKSRC}; export RUNTESTFLAGS='--target_board ''unix{-pthread}'''; ${GMAKE} -sk check
 
 post-install:
+	-@${MKDIR} ${PREFIX}/etc/rc.d
 	${INSTALL_SCRIPT} ${WRKDIR}/gcc.sh ${PREFIX}/${RC_D_SH}
 	# man pages can only be generated if Perl >= 5.6 is installed;
 	# fake them otherwise.
