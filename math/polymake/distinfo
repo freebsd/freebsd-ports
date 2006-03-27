@@ -1,3 +1,6 @@
 MD5 (polymake-2.2.tar.bz2) = a57baa722c654eed799047d1def4559e
 SHA256 (polymake-2.2.tar.bz2) = 9c60285dd2de23c2c5f7629855d9ecfcc06b54f4abab4869853679e57dc2b0b5
 SIZE (polymake-2.2.tar.bz2) = 4626898
+MD5 (polymake-2.2-p1.diff) = 17466aabc080d8ccc3724bc79bfb87f0
+SHA256 (polymake-2.2-p1.diff) = d1916cc6f6e5832bf5557f1efc929e14176c6668717d0d8ba4984aff17dda5af
+SIZE (polymake-2.2-p1.diff) = 2852
