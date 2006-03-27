@@ -12,11 +12,7 @@ PKGNAMESUFFIX=		-objc
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	GNU Compiler Collection ${COMMENT2} with threads and shared libs
 
-WANT_SHAREDLIBS=	yes
-WITHOUT_LIBJAVA=	yes
-INSTALLS_SHLIB=		yes
-LDCONFIG_DIRS=		${TARGLIB}
-LDFLAGS+=		-L${LOCALBASE}/lib
+WITHOUT_JAVA=		yes
 
 .if !defined(GNUSTEP_WITH_GCC32) && !defined(GNUSTEP_WITH_GCC33) && !defined(GNUSTEP_WITH_GCC34)
 .if !defined(GNUSTEP_WITH_GCC40) && !defined(GNUSTEP_WITH_GCC41) && !defined(GNUSTEP_WITH_GCC42)
@@ -28,6 +24,7 @@ GNUSTEP_WITH_GCC34=	yes
 MASTERDIR?=		${.CURDIR}/../gcc32
 CONFLICTS?=		gcc-3.2*
 COMMENT2=		3.2.x
+WANT_SHAREDLIBS=	yes
 WANT_THREADS_SUPPORT=	yes
 .endif
 .if defined(GNUSTEP_WITH_GCC33)
@@ -59,7 +56,5 @@ COMMENT2=		4.2.x
 .if exists(${.CURDIR}/Makefile.local)
 .include "${.CURDIR}/Makefile.local"
 .endif
-
-MAKE_ENV+=		LD_LIBRARY_PATH=.:${WRKSRC}/gcc
 
 .include "${MASTERDIR}/Makefile"
