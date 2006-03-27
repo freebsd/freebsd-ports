@@ -19,12 +19,17 @@ RUN_DEPENDS=	${WX_CONFIG}:${PORTSDIR}/x11-toolkits/wxgtk26
 
 INSTALLS_SHLIB=	yes
 WX_CONFIG=	wxgtk2-2.6-config
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	libartlgpl2
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=	does not build
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|wx-config|${WX_CONFIG}|' \
 		${WRKSRC}/configure
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
