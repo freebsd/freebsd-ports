@@ -1,0 +1,13 @@
+
+$FreeBSD$
+
+--- po/Makefile.in.in.orig
++++ po/Makefile.in.in
+@@ -71,6 +71,7 @@
+ 
+ POTFILES = \
+ 
++#
+ CATALOGS = @CATALOGS@
+ CATOBJEXT = @CATOBJEXT@
+ INSTOBJEXT = @INSTOBJEXT@
