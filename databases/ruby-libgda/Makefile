@@ -24,8 +24,6 @@ USE_RUBY=	yes
 USE_GNOME=	libgda2
 USE_RUBY_EXTCONF=	yes
 
-BROKEN="Doesn't build with newer libgda-2.0"
-
 .include "${.CURDIR}/../../x11/ruby-gnome2/Makefile.common"
 
 WRKSRC=		${RUBY_GNOME_WRKSRC}/libgda
