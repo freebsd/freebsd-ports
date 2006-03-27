@@ -8,6 +8,7 @@
 %%SITE_PERL%%/Authen/SASL/Perl/CRAM_MD5.pm
 %%SITE_PERL%%/Authen/SASL/Perl/DIGEST_MD5.pm
 %%SITE_PERL%%/Authen/SASL/Perl/EXTERNAL.pm
+%%SITE_PERL%%/Authen/SASL/Perl/GSSAPI.pm
 %%SITE_PERL%%/Authen/SASL/Perl/LOGIN.pm
 %%SITE_PERL%%/Authen/SASL/Perl/PLAIN.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen/SASL/.packlist
