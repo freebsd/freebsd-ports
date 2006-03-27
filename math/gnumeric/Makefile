@@ -27,7 +27,6 @@ USE_PERL5=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix intlhack gnomehack gnomehier libgnomeprintui \
 		libgsf_gnome pygtk2 desktopfileutils
-WANT_GNOME=	yes
 USE_PYTHON=	yes
 INSTALLS_OMF=	yes
 INSTALLS_SHLIB=	yes
@@ -44,6 +43,8 @@ MAN1=		gnumeric.1 ssconvert.1 ssindex.1
 
 PLIST_SUB=	VERSION=${PORTVERSION}
 
+OPTIONS		GNOMEDB "Enable libgnomedb support" off
+
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500600
@@ -52,7 +53,7 @@ PLIST_SUB+=	PERL="@comment "
 PLIST_SUB+=	PERL=""
 .endif
 
-.if ${HAVE_GNOME:Mlibgnomedb}!=""
+.if defined(WITH_GNOMEDB)
 USE_GNOME+=		libgnomedb
 CONFIGURE_ARGS+=	--with-gda
 PLIST_SUB+=		GNOMEDB=""
