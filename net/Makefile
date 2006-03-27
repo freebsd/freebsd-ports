@@ -28,6 +28,7 @@
     SUBDIR += asfrecorder
     SUBDIR += aslookup
     SUBDIR += asterisk
+    SUBDIR += asterisk-addons
     SUBDIR += asterisk-devel
     SUBDIR += asterisk-oh323
     SUBDIR += atmsupport
