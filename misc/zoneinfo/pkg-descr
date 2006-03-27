@@ -1,0 +1,2 @@
+Updates to /usr/share/zoneinfo.
+Note that this port overwrites system files in /usr/share/zoneinfo.

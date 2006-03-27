@@ -475,5 +475,6 @@
     SUBDIR += yaunc
     SUBDIR += ytree
     SUBDIR += zaptel
+    SUBDIR += zoneinfo
 
 .include <bsd.port.subdir.mk>
