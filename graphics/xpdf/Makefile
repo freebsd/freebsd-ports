@@ -7,14 +7,14 @@
 
 PORTNAME=	xpdf
 PORTVERSION=	3.01
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics print
 MASTER_SITES=	ftp://ftp.foolabs.com/pub/xpdf/ \
 		${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR=	support/xpdf
 
 PATCH_SITES=	ftp://ftp.foolabs.com/pub/xpdf/
-PATCHFILES=	xpdf-3.01pl1.patch
+PATCHFILES=	xpdf-3.01pl2.patch
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	nork@FreeBSD.org
@@ -50,13 +50,13 @@ MAN5=		xpdfrc.5
 .if defined(WITHOUT_X11)
 PKGNAMESUFFIX+=		-nox11
 CONFIGURE_ARGS+=	--without-x
-PLIST_SUB+=             X11='@comment '
+PLIST_SUB+=		X11="@comment "
 .else
 CONFIGURE_ARGS+=	--with-x
-USE_X_PREFIX=	yes
-USE_MOTIF=	yes
+USE_X_PREFIX=		yes
+USE_MOTIF=		yes
 MAN1+=			xpdf.1
-PLIST_SUB+=             X11=''
+PLIST_SUB+=		X11=""
 .endif
 
 post-install:
