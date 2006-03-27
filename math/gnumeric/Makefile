@@ -43,7 +43,7 @@ MAN1=		gnumeric.1 ssconvert.1 ssindex.1
 
 PLIST_SUB=	VERSION=${PORTVERSION}
 
-OPTIONS		GNOMEDB "Enable libgnomedb support" off
+OPTIONS=	GNOMEDB "Enable libgnomedb support" off
 
 .include <bsd.port.pre.mk>
 
