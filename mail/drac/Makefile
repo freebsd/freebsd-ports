@@ -21,6 +21,9 @@ COMMENT=	Dynamic Relay Authorization Control, a pop-before-smtp implementation
 .if defined(WITH_POSTFIX_DB3)
 LIB_DEPENDS+=	db3.3:${PORTSDIR}/databases/db3
 .endif
+.if defined(WITH_POSTFIX_DB41)
+LIB_DEPENDS+=	db41.1:${PORTSDIR}/databases/db41
+.endif
 
 NO_WRKSUBDIR=	yes
 USE_REINPLACE=	yes
@@ -40,6 +43,7 @@ pre-everything::
 	@${ECHO_MSG}
 	@${ECHO_MSG} "WITH_POSTFIX=yes        (Postfix)"
 	@${ECHO_MSG} "WITH_POSTFIX_DB3=yes    (Postfix with DB3 database maps)"
+	@${ECHO_MSG} "WITH_POSTFIX_DB41=yes   (Postfix with DB41 database maps)"
 	@${ECHO_MSG} "WITH_EXIM=yes           (Exim)"
 	@${ECHO_MSG}
 	@${ECHO_MSG} "Define WITH_FOREGROUND to make the rpc.dracd daemon stay in"

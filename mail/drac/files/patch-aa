@@ -1,5 +1,5 @@
 --- Makefile.orig	Mon Jan 13 05:45:12 2003
-+++ Makefile	Wed Mar 26 08:58:22 2003
++++ Makefile	Wed Mar  1 10:27:04 2006
 @@ -5,9 +5,10 @@
  
  # Paths
@@ -14,7 +14,7 @@
  
  # OS-Dependant settings
  
-@@ -33,22 +34,42 @@
+@@ -33,22 +34,46 @@
  # -DCIDR_KEY	# keys in CIDR format
  # -DTERM_KD	# keys and data nul-terminated
  
@@ -25,7 +25,7 @@
 +DEFS+=	-DSOCK_RPC
 +.endif
 +
-+.if defined(WITH_POSTFIX) || defined(WITH_POSTFIX_DB3)
++.if defined(WITH_POSTFIX) || defined(WITH_POSTFIX_DB3) || defined(WITH_POSTFIX_DB41)
 +DEFS+=	-DFLOCK_LOCK -DGETHOST -DDASH_C -DTERM_KD
 +.elif defined(WITH_EXIM)
 +DEFS+=	-DFLOCK_LOCK -DGETHOST -DDASH_C -DTERM_KD -DREQ_HASH -DCIDR_KEY
@@ -60,6 +60,10 @@
 +.if defined(WITH_POSTFIX_DB3)
 +CFLAGS+=	-I${LOCALBASE}/include/db3
 +LDLIBS+=	-L${LOCALBASE}/lib -ldb3
++.endif
++.if defined(WITH_POSTFIX_DB41)
++CFLAGS+=	-I${LOCALBASE}/include/db41
++LDLIBS+=	-L${LOCALBASE}/lib -ldb41
 +.endif
  
  # Man sections
