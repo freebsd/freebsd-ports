@@ -105,11 +105,11 @@ pre-fetch:
 #	@${ECHO} "make -DWITH_GNUGCJ"
 #.endif
 #XXX currently broken
-#.if !defined(WITH_CUPS)
-#	@${ECHO}
-#	@${ECHO} "You can compile OOo with CUPS support with"
-#	@${ECHO} "make -DWITH_CUPS"
-#.endif
+.if !defined(WITH_CUPS)
+	@${ECHO}
+	@${ECHO} "You can compile OOo with CUPS support with"
+	@${ECHO} "make -DWITH_CUPS"
+.endif
 .if !defined(WITH_KDE)
 	@${ECHO}
 	@${ECHO} "You can compile OOo to use Qt/KDE vclplug with"
