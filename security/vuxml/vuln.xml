@@ -34,6 +34,75 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="25858c37-bdab-11da-b7d4-00123ffe8333">
+    <topic>linux-realplayer -- buffer overrun</topic>
+    <affects>
+      <package>
+	<name>linux-realplayer</name>
+	<range><ge>10.0.1</ge><lt>10.0.7.785.20060201</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia Advisories Reports:</p>
+	<blockquote cite="http://secunia.com/advisories/19358/">
+	  <p>A boundary error when processing SWF files can be exploited to
+	    cause a buffer overflow. This may allow execution of arbitrary
+	    code on the user's system.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-0323</cvename>
+      <url>http://service.real.com/realplayer/security/03162006_player/en/</url>
+      <url>http://secunia.com/advisories/19358/</url>
+    </references>
+    <dates>
+      <discovery>2006-03-23</discovery>
+      <entry>2006-03-27</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="fe4c84fc-bdb5-11da-b7d4-00123ffe8333">
+    <topic>linux-realplayer -- heap overflow</topic>
+    <affects>
+      <package>
+	<name>linux-realplayer</name>
+	<range><ge>10.0.1</ge><lt>10.0.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>iDefense Reports:</p>
+	<blockquote cite="http://www.idefense.com/intelligence/vulnerabilities/display.php?id=404">
+	  <p>Remote exploitation of a heap-based buffer overflow in
+	    RealNetwork Inc's RealPlayer could allow the execution of
+	    arbitrary code in the context of the currently logged in
+	    user.</p>
+	  <p>In order to exploit this vulnerability, an attacker would
+	    need to entice a user to follow a link to a malicious server.
+	    Once the user visits a website under the control of an
+	    attacker, it is possible in a default install of RealPlayer
+	    to force a web-browser to use RealPlayer to connect to an
+	    arbitrary server, even when it is not the default application
+	    for handling those types, by the use of embedded object tags
+	    in a webpage. This may allow automated exploitation when the
+	    page is viewed.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2005-2922</cvename>
+      <url>http://service.real.com/realplayer/security/03162006_player/en/</url>
+      <url>http://www.idefense.com/intelligence/vulnerabilities/display.php?id=404</url>
+      <url>http://secunia.com/advisories/19358/</url>
+    </references>
+    <dates>
+      <discovery>2006-03-23</discovery>
+      <entry>2006-03-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="08ac7b8b-bb30-11da-b2fb-000e0c2e438a">
     <topic>sendmail -- race condition vulnerability</topic>
     <affects>
