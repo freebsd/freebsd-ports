@@ -15,12 +15,11 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight java-based GIS data viewer
 
-USE_JAVA=	1.2+
+USE_JAVA=	yes
+JAVA_VERSION=	1.2+
 
 DOWNLOAD_URL=	http://www.esri.com/software/arcexplorer/download4.html
 NO_BUILD=	yes
-NO_BUILD_DEPENDS_JAVA= yes
-USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/ArcExplorer${PORTVERSION}
 
 .include <bsd.port.pre.mk>
