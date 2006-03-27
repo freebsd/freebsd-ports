@@ -4214,7 +4214,6 @@ ja-aterm	ports/japanese/aterm
 ja-bible_names-fpw	ports/japanese/bible_names-fpw
 ja-bookview	ports/japanese/bookview
 ja-bugzilla	ports/japanese/bugzilla
-ja-cal.rb	ports/japanese/cal.rb
 ja-cannadic	ports/japanese/cannadic
 ja-cdrom2	ports/japanese/cdrom2
 ja-celrw	ports/japanese/celrw
@@ -11749,7 +11748,6 @@ script4rss	ports/www/script4rss
 scrobbler	ports/audio/scrobbler
 scrollkeeper	ports/textproc/scrollkeeper
 scrollz		ports/irc/scrollz
-scrollz-doc	ports/irc/scrollz-doc
 scrot		ports/graphics/scrot
 scsh		ports/lang/scsh
 scsh-install-lib	ports/devel/scsh-install-lib

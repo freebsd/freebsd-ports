@@ -93,7 +93,6 @@
     SUBDIR += ruby-rica
     SUBDIR += ruby-rice
     SUBDIR += scrollz
-    SUBDIR += scrollz-doc
     SUBDIR += sic
     SUBDIR += sirc
     SUBDIR += sircd

@@ -23,7 +23,6 @@
     SUBDIR += bible_names-fpw
     SUBDIR += bookview
     SUBDIR += bugzilla
-    SUBDIR += cal.rb
     SUBDIR += cannadic
     SUBDIR += cdrom2
     SUBDIR += celrw
