@@ -25,12 +25,14 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeui libglade2 libbonobo \
 		gnomedocutils
 USE_GSTREAMER=	cdparanoia gconf
-GNU_CONFIGURE=  yes
+GNU_CONFIGURE=	yes
 INSTALLS_OMF=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 GCONF_SCHEMAS=	goobox.schemas
+
+OPTIONS=	NOTIFY "Enable libnotify support" on
 
 .include <bsd.port.pre.mk>
 
