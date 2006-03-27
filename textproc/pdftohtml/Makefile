@@ -8,7 +8,7 @@
 
 PORTNAME=	pdftohtml
 PORTVERSION=	0.36
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,11 +22,11 @@ GSPORT?=	print/ghostscript-afpl
 GSPORT?=	print/ghostscript-gnu
 .endif
 
-RUN_DEPENDS=	${LOCALBASE}/bin/gs:${PORTSDIR}/${GSPORT}
+RUN_DEPENDS+=	${LOCALBASE}/bin/gs:${PORTSDIR}/${GSPORT}
 
 PLIST_FILES=	bin/pdftohtml
+
 WRKSRC=		${WRKDIR}/${DISTNAME}
-USE_REINPLACE=	yes
 
 pre-fetch:
 .if !defined(WITH_GHOSTSCRIPT_AFPL) || ${WITH_GHOSTSCRIPT_AFPL} != yes
@@ -37,11 +37,10 @@ pre-fetch:
 .endif
 
 pre-patch:
-.for file in goo/Makefile xpdf/Makefile
-	${REINPLACE_CMD} -e "s|-O2||; s|-g||" ${WRKSRC}/${file}
-.endfor
+	@${FIND} ${WRKSRC} -name Makefile | ${XARGS} \
+		${REINPLACE_CMD} -e "s|-O[0-9]||" -e "s|-g||"
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/pdftohtml ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/pdftohtml ${PREFIX}/bin
 
 .include <bsd.port.mk>
