@@ -31,4 +31,9 @@ OPTIONS=	# Empty, used for generic gecko OPTIONS
 
 .include <bsd.port.pre.mk>
 .include "${.CURDIR}/../../www/mozilla/Makefile.common"
+
+.if ${OSVERSION} < 500000
+BROKEN=	does not build
+.endif
+
 .include <bsd.port.post.mk>
