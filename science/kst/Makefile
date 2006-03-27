@@ -5,14 +5,13 @@
 # $FreeBSD$
 
 PORTNAME=	kst
-PORTVERSION=	0.99
-PORTREVISION=	5
+PORTVERSION=	1.2.0
 CATEGORIES=	science kde
 MASTER_SITES=	${MASTER_SITE_KDE} \
 		http://omega.astro.utoronto.ca/${PORTNAME}/
 MASTER_SITE_SUBDIR=	stable/apps/KDE3.x/scientific
 
-MAINTAINER=	markus@FreeBSD.org
+MAINTAINER=	kay_lehmann@web.de
 COMMENT=	Data viewing program for KDE
 
 LIB_DEPENDS=	cfitsio.0:${PORTSDIR}/astro/cfitsio \
@@ -21,10 +20,39 @@ LIB_DEPENDS=	cfitsio.0:${PORTSDIR}/astro/cfitsio \
 USE_KDELIBS_VER=3
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
-USE_REINPLACE=	yes
+INSTALLS_SHLIB=	yes
+USE_GETTEXT=	yes
+
+OPTIONS=	NETCDF "Enable netcdf file support" off \
+		CDF "Enable cdf file support" off
+
+MAN1=		kst.1
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_NETCDF)
+LIB_DEPENDS+=	netcdf.1:${PORTSDIR}/science/netcdf
+PLIST_SUB+=	NETCDF=""
+.else
+CONFIGURE_ARGS+=	--without-netcdf
+PLIST_SUB+=	NETCDF="@comment "
+.endif
+
+.if defined(WITH_CDF)
+LIB_DEPENDS+=	cdf.0:${PORTSDIR}/science/cdf
+PLIST_SUB+=	CDF=""
+.else
+CONFIGURE_ARGS+=	--without-cdf
+PLIST_SUB+=	CDF="@comment "
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2||g' ${WRKSRC}/${CONFIGURE_SCRIPT}
-	@${REINPLACE_CMD} -e 's|xx||g' ${WRKSRC}/po/Makefile.in
+.if !defined(WITH_NETCDF)
+	@${REINPLACE_CMD} -e 's| netcdf||g' ${WRKSRC}/kst/kst/datasources/Makefile.in
+.endif
+.if !defined(WITH_CDF)
+	@${REINPLACE_CMD} -e 's| cdf||g' ${WRKSRC}/kst/kst/datasources/Makefile.in
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
