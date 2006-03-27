@@ -7,7 +7,7 @@
 
 PORTNAME=	freenx
 PORTVERSION=	0.4.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://download.berlios.de/freenx/ \
 		http://debian.tu-bs.de/knoppix/nx/
