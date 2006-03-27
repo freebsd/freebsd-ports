@@ -74,7 +74,7 @@ CONFIGURE_ARGS=	--sysconfdir=${CONFDIR} \
 .if defined(WITH_DRAC)
 # move me below .include <bsd.port.pre.mk> when re-enabling
 PATCH_SITES=	http://www.smalltown.ne.jp/~usata/pub/patch/
-PATCHFILES=	courier-imap-4.0.6-drac.patch
+PATCHFILES=	courier-imap-4.1.0-drac.patch
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libdrac.a:${PORTSDIR}/mail/drac
 .endif
 
