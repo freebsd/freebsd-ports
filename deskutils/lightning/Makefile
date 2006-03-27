@@ -38,6 +38,10 @@ MOZ_MK_OPTIONS=	MOZ_CO_PROJECT=calendar
 .include <bsd.port.pre.mk>
 .include "${.CURDIR}/../../www/mozilla/Makefile.common"
 
+.if ${OSVERSION} < 500000
+BROKEN=	does not build
+.endif
+
 .if ${PERL_LEVEL} < 500600
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-config_make-jars.pl
 .endif
