@@ -26,14 +26,15 @@ USE_X_PREFIX=	yes
 INSTALLS_OMF=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomeprefix intlhack gnomehack libgnomeui
-WANT_GNOME=	yes
 USE_GMAKE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
+OPTIONS=	GNOMEDB "Enable libgnomedb support" off
+
 .include <bsd.port.pre.mk>
 
-.if ${HAVE_GNOME:Mlibgnomedb}!=""
+.if defined(WITH_GNOMEDB)
 USE_GNOME+=		libgnomedb
 CONFIGURE_ARGS+=	--enable-gnome-db
 .else
