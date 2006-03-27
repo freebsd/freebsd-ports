@@ -7,8 +7,12 @@
 
 PORTNAME=	polymake
 PORTVERSION=	2.2
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.math.tu-berlin.de/pub/combi/polymake/
+
+PATCH_SITES=	${MASTER_SITES}
+PATCHFILES=	${PORTNAME}-${PORTVERSION}-p1.diff
 
 MAINTAINER=	gawrilow@math.tu-berlin.de
 COMMENT=	A framework for experimental discrete geometry
