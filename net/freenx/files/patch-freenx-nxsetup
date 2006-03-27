@@ -1,5 +1,5 @@
---- freenx-0.4.4/nxsetup.orig	Tue Aug  2 13:29:59 2005
-+++ freenx-0.4.4/nxsetup	Tue Aug  9 17:04:45 2005
+--- freenx-0.4.4/nxsetup.unported	Fri Feb  3 20:52:09 2006
++++ freenx-0.4.4/nxsetup	Fri Dec 30 18:29:50 2005
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!/usr/local/bin/bash
@@ -32,18 +32,28 @@
  	# no, its a "normal" useradd
  	else
  		USERADD_OPTIONS="-d $NX_HOME_DIR -s $PATH_BIN/nxserver"
-@@ -143,7 +153,9 @@
+@@ -142,15 +152,16 @@
+ install_nx()
  {
  	set -e
- 	
+-	
 -	if [ "$(pidof sshd 2>/dev/null)" = "" ]
-+	MAYBE_PID=`cat /var/run/sshd.pid 2>/dev/null`
++
++	[ -f /var/run/sshd.pid ] && MAYBE_PID=`cat /var/run/sshd.pid 2>/dev/null`
 +	if test -z "$MAYBE_PID"
 +
  	then 
  		echo -n "Starting ssh service ..."
  		# Generate Host keys if they are not available, yet
-@@ -248,13 +260,12 @@
+ 		[ -e /etc/ssh/ssh_host_rsa_key ] || $COMMAND_SSH_KEYGEN -q -t rsa -f /etc/ssh/ssh_host_rsa_key -C '' -N ''
+ 		[ -e /etc/ssh/ssh_host_dsa_key ] || $COMMAND_SSH_KEYGEN -q -t dsa -f /etc/ssh/ssh_host_dsa_key -C '' -N ''
+-		[ -x /etc/init.d/sshd ] && /etc/init.d/sshd start
+-		[ -x /etc/init.d/ssh ] && /etc/init.d/ssh start
++		[ -x /etc/rc.d/sshd ] && /etc/rc.d/sshd forcestart
+ 		echo "done"
+ 	fi
+ 	
+@@ -248,13 +259,12 @@
  		cat /etc/ssh/ssh_host_rsa_key.pub >> $NX_HOME_DIR/.ssh/known_hosts
  	fi
  	
@@ -62,7 +72,7 @@
  	echo "done"
  }
  
-@@ -268,7 +279,7 @@
+@@ -268,7 +278,7 @@
  		then
  			luserdel nx
  		else
