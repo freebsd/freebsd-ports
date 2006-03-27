@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	postfix
-DISTVERSION=	2.3-20060315
+DISTVERSION=	2.3-20060325
 PORTEPOCH=	2
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/experimental/ \
@@ -255,54 +255,51 @@ READMEDIR=${PREFIX}/share/doc/postfix
 SUB_LIST+=	REQUIRE="${_REQUIRE}"
 
 pre-patch:
-.	if defined(POSTFIX_OPTIONS)
-		@${ECHO_MSG}
-		@${ECHO_MSG}
-		@${ECHO_MSG}
-		@${ECHO_MSG} "***** ALERT *****"
-		@${ECHO_MSG} "POSTFIX_OPTIONS don't work anymore, now"
-		@${ECHO_MSG} "${PORTNAME} use OPTIONS, consider use:"
-		@${ECHO_MSG} "# make config"
-		@${ECHO_MSG}
-		@${ECHO_MSG}
-		@${ECHO_MSG}
-		@sleep 10
-.	endif
+.if defined(POSTFIX_OPTIONS)
+	@${ECHO_MSG}
+	@${ECHO_MSG}
+	@${ECHO_MSG}
+	@${ECHO_MSG} "***** ALERT *****"
+	@${ECHO_MSG} "POSTFIX_OPTIONS don't work anymore, now"
+	@${ECHO_MSG} "${PORTNAME} use OPTIONS, consider use:"
+	@${ECHO_MSG} "# make config"
+	@${ECHO_MSG}
+	@${ECHO_MSG}
+	@${ECHO_MSG}
+	@sleep 10
+.endif
 
-.	if defined(WITH_SASL) && !defined(WITH_MYSQL) && exists(${LOCALBASE}/lib/libsasl.a)
-		@if /usr/bin/nm ${LOCALBASE}/lib/libsasl.a | ${GREP} -wq "mysql_init"; then \
-			${ECHO_MSG}; \
-			${ECHO_MSG} "Your SASL library it's compiled with MYSQL"; \
-			${ECHO_MSG} "If you use MYSQL in ${PORTNAME} consider CTRL+C and"; \
-			${ECHO_MSG} "select MYSQL OPTION in config menu."; \
-			${ECHO_MSG} "# make clean config"; \
-			${ECHO_MSG}; \
-			sleep 5; \
-		fi
-.	endif
-.	if defined(WITH_SASL2) && !defined(WITH_MYSQL) && exists(${LOCALBASE}/lib/libsasl2.a)
-		@if /usr/bin/nm ${LOCALBASE}/lib/libsasl2.a | ${GREP} -wq "mysql_init"; then \
-			${ECHO_MSG}; \
-			${ECHO_MSG} "Your SASL2 library it's compiled with MYSQL"; \
-			${ECHO_MSG} "If you use MYSQL in ${PORTNAME} consider CTRL+C and"; \
-			${ECHO_MSG} "select MYSQL OPTION in config menu."; \
-			${ECHO_MSG} "# make clean config"; \
-			${ECHO_MSG}; \
-			sleep 5; \
-		fi
-.	endif
+.if defined(WITH_SASL) && !defined(WITH_MYSQL) && exists(${LOCALBASE}/lib/libsasl.a)
+	@if /usr/bin/nm ${LOCALBASE}/lib/libsasl.a | ${GREP} -wq "mysql_init"; then \
+		${ECHO_MSG}; \
+		${ECHO_MSG} "Your SASL library it's compiled with MYSQL"; \
+		${ECHO_MSG} "If you use MYSQL in ${PORTNAME} consider CTRL+C and"; \
+		${ECHO_MSG} "select MYSQL OPTION in config menu."; \
+		${ECHO_MSG} "# make clean config"; \
+		${ECHO_MSG}; \
+		sleep 5; \
+	fi
+.endif
+.if defined(WITH_SASL2) && !defined(WITH_MYSQL) && exists(${LOCALBASE}/lib/libsasl2.a)
+	@if /usr/bin/nm ${LOCALBASE}/lib/libsasl2.a | ${GREP} -wq "mysql_init"; then \
+		${ECHO_MSG}; \
+		${ECHO_MSG} "Your SASL2 library it's compiled with MYSQL"; \
+		${ECHO_MSG} "If you use MYSQL in ${PORTNAME} consider CTRL+C and"; \
+		${ECHO_MSG} "select MYSQL OPTION in config menu."; \
+		${ECHO_MSG} "# make clean config"; \
+		${ECHO_MSG}; \
+		sleep 5; \
+	fi
+.endif
 
 	@${ECHO} "<HTML><BODY>See <A HREF="header_checks.5.html">header_checks.5.html</A></BODY></HTML>" \
 		> ${WRKSRC}/html/body_checks.5.html
-	@for f in `${FIND} -P ${WRKSRC}/man -type f`; do \
-		${REINPLACE_CMD} -e "s|/etc/postfix|${PREFIX}/etc/postfix|g" $${f}; \
-	done
-	@for f in `${FIND} -P ${WRKSRC}/README_FILES -type f`; do \
-		${REINPLACE_CMD} -e "s|/etc/postfix|${PREFIX}/etc/postfix|g" $${f}; \
-	done
-	@for f in `${FIND} -P ${WRKSRC}/conf -type f`; do \
-		${REINPLACE_CMD} -e "s|/etc/postfix|${PREFIX}/etc/postfix|g" $${f}; \
-	done
+	@${FIND} -P ${WRKSRC}/man -type f | ${XARGS} \
+		${REINPLACE_CMD} -e "s|/etc/postfix|${PREFIX}/etc/postfix|g"
+	@${FIND} -P ${WRKSRC}/README_FILES -type f | ${XARGS} \
+		${REINPLACE_CMD} -e "s|/etc/postfix|${PREFIX}/etc/postfix|g"
+	@${FIND} -P ${WRKSRC}/conf -type f | ${XARGS} \
+		${REINPLACE_CMD} -e "s|/etc/postfix|${PREFIX}/etc/postfix|g"
 
 post-patch:
 # All files modified with ${FILESDIR}/patch-* to use !!PREFIX!! need REINPLACE. Put below.
@@ -320,38 +317,38 @@ pre-install:
 
 do-install:
 	cd ${WRKSRC}; ${SH} postfix-install -non-interactive install_root=/ tempdir=/tmp \
-	config_directory=${PREFIX}/etc/postfix \
-	daemon_directory=${PREFIX}/libexec/postfix \
-	command_directory=${PREFIX}/sbin \
-	queue_directory=/var/spool/postfix \
-	sendmail_path=${PREFIX}/sbin/sendmail \
-	newaliases_path=${PREFIX}/bin/newaliases \
-	mailq_path=${PREFIX}/bin/mailq \
-	mail_owner=postfix \
-	setgid_group=maildrop \
-	manpage_directory=${MANPREFIX}/man \
-	sample_directory=${PREFIX}/etc/postfix \
-	readme_directory=${READMEDIR}
+		config_directory=${PREFIX}/etc/postfix \
+		daemon_directory=${PREFIX}/libexec/postfix \
+		command_directory=${PREFIX}/sbin \
+		queue_directory=/var/spool/postfix \
+		sendmail_path=${PREFIX}/sbin/sendmail \
+		newaliases_path=${PREFIX}/bin/newaliases \
+		mailq_path=${PREFIX}/bin/mailq \
+		mail_owner=postfix \
+		setgid_group=maildrop \
+		manpage_directory=${MANPREFIX}/man \
+		sample_directory=${PREFIX}/etc/postfix \
+		readme_directory=${READMEDIR}
 
-	@${INSTALL_SCRIPT} ${WRKSRC}/auxiliary/rmail/rmail ${PREFIX}/bin/rmail
+	${INSTALL_SCRIPT} ${WRKSRC}/auxiliary/rmail/rmail ${PREFIX}/bin/rmail
 
-.	for f in ${BINTEST}
-		@${INSTALL_PROGRAM} ${WRKSRC}/bin/${f} ${PREFIX}/sbin
-.	endfor
-.	for f in ${MANTEST}
-		@${INSTALL_MAN} ${WRKSRC}/man/man1/${f} ${MANPREFIX}/man/man1
-.	endfor
+.for f in ${BINTEST}
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/${f} ${PREFIX}/sbin
+.endfor
+.for f in ${MANTEST}
+	${INSTALL_MAN} ${WRKSRC}/man/man1/${f} ${MANPREFIX}/man/man1
+.endfor
 
 	@${MKDIR} ${PREFIX}/etc/postfix/dist
-.	for f in ${CONF1}
-		${INSTALL_DATA} ${WRKSRC}/conf/${f} ${PREFIX}/etc/postfix/dist
-.	endfor
+.for f in ${CONF1}
+	${INSTALL_DATA} ${WRKSRC}/conf/${f} ${PREFIX}/etc/postfix/dist
+.endfor
 
-.	if !defined(NOPORTDOCS)
-		@${INSTALL} -d -o ${DOCOWN} -g ${DOCGRP} -m 555 ${DOCSDIR}
-		@cd ${WRKSRC}/html && ${INSTALL_DATA} *.html *.jpg *.png ${DOCSDIR} && \
-			${ECHO_MSG} "Installed HTML documentation in ${DOCSDIR}"
-.	endif
+.if !defined(NOPORTDOCS)
+	${INSTALL} -d -o ${DOCOWN} -g ${DOCGRP} -m 555 ${DOCSDIR}
+	@cd ${WRKSRC}/html && ${INSTALL_DATA} *.html *.jpg *.png ${DOCSDIR} && \
+		${ECHO_MSG} "Installed HTML documentation in ${DOCSDIR}"
+.endif
 
 post-install:
 	@${SETENV} ${SCRIPTS_ENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
