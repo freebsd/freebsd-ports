@@ -16,7 +16,7 @@ DISTNAME=	tutorial.zip tut-examples.zip tut-swing.zip tut-bookstore-21.zip \
 DISTNAME=	tutorial
 .endif
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	itetcu@people.tecnik93.com
 COMMENT=	Official Java 2 SDK tutorial
 
 NO_WRKSUBDIR=	yes
