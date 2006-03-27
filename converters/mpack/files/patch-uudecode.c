@@ -1,5 +1,5 @@
---- uudecode.c.orig	Sun Mar 26 23:09:32 2006
-+++ uudecode.c	Sun Mar 26 23:11:17 2006
+--- uudecode.c.orig	Mon Jul 21 23:46:37 2003
++++ uudecode.c	Mon Mar 27 17:27:52 2006
 @@ -23,8 +23,10 @@
   * SOFTWARE.
   */
@@ -55,6 +55,18 @@
  	    if (fgets(buf, sizeof(buf), partfile)) {
  		nparts = atoi(buf);
  		if (nparts < 0) nparts = 0;
+@@ -487,9 +505,9 @@
+  * split-uuencoded data.
+  */
+ int
+-parseSubject(char *subject, char **fnamep, int *partp, int *npartsp)
++parseSubject(unsigned char *subject, char **fnamep, int *partp, int *npartsp)
+ {
+-    char *scan, *bak, *start;
++    unsigned char *scan, *bak, *start;
+     int part = -1, nparts = 0, hasdot = 0;
+ 
+     /* No subject header */
 @@ -722,7 +740,7 @@
  		if (!*fname) return 1;
  
