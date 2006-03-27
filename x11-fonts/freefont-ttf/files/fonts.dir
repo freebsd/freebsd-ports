@@ -1,4 +1,4 @@
-229
+232
 FreeMono.ttf -misc-freemono-medium-r-normal--0-0-0-0-p-0-adobe-standard
 FreeMono.ttf -misc-freemono-medium-r-normal--0-0-0-0-p-0-ascii-0
 FreeMono.ttf -misc-freemono-medium-r-normal--0-0-0-0-p-0-ibm-cp850
@@ -149,14 +149,15 @@ FreeSansOblique.ttf -misc-freesans-medium-o-normal--0-0-0-0-p-0-koi8-r
 FreeSansOblique.ttf -misc-freesans-medium-o-normal--0-0-0-0-p-0-koi8-u
 FreeSansOblique.ttf -misc-freesans-medium-o-normal--0-0-0-0-p-0-microsoft-cp1252
 FreeSerif.ttf -misc-freeserif-medium-r-normal--0-0-0-0-p-0-adobe-standard
+FreeSerif.ttf -misc-freeserif-medium-r-normal--0-0-0-0-p-0-adobe-symbol
 FreeSerif.ttf -misc-freeserif-medium-r-normal--0-0-0-0-p-0-ascii-0
 FreeSerif.ttf -misc-freeserif-medium-r-normal--0-0-0-0-p-0-iso10646-1
 FreeSerif.ttf -misc-freeserif-medium-r-normal--0-0-0-0-p-0-iso8859-10
 FreeSerif.ttf -misc-freeserif-medium-r-normal--0-0-0-0-p-0-iso8859-11
 FreeSerif.ttf -misc-freeserif-medium-r-normal--0-0-0-0-p-0-iso8859-13
 FreeSerif.ttf -misc-freeserif-medium-r-normal--0-0-0-0-p-0-iso8859-15
-FreeSerif.ttf -misc-freeserif-medium-r-normal--0-0-0-0-p-0-iso8859-1
 FreeSerif.ttf -misc-freeserif-medium-r-normal--0-0-0-0-p-0-iso8859-16
+FreeSerif.ttf -misc-freeserif-medium-r-normal--0-0-0-0-p-0-iso8859-1
 FreeSerif.ttf -misc-freeserif-medium-r-normal--0-0-0-0-p-0-iso8859-2
 FreeSerif.ttf -misc-freeserif-medium-r-normal--0-0-0-0-p-0-iso8859-3
 FreeSerif.ttf -misc-freeserif-medium-r-normal--0-0-0-0-p-0-iso8859-4
@@ -166,16 +167,18 @@ FreeSerif.ttf -misc-freeserif-medium-r-normal--0-0-0-0-p-0-iso8859-9
 FreeSerif.ttf -misc-freeserif-medium-r-normal--0-0-0-0-p-0-koi8-e
 FreeSerif.ttf -misc-freeserif-medium-r-normal--0-0-0-0-p-0-koi8-ru
 FreeSerif.ttf -misc-freeserif-medium-r-normal--0-0-0-0-p-0-koi8-r
-FreeSerif.ttf -misc-freeserif-medium-r-normal--0-0-0-0-p-0-koi8-uni
 FreeSerif.ttf -misc-freeserif-medium-r-normal--0-0-0-0-p-0-koi8-u
+FreeSerif.ttf -misc-freeserif-medium-r-normal--0-0-0-0-p-0-koi8-uni
 FreeSerif.ttf -misc-freeserif-medium-r-normal--0-0-0-0-p-0-microsoft-cp1252
 FreeSerif.ttf -misc-freeserif-medium-r-normal--0-0-0-0-p-0-suneu-greek
 FreeSerifBold.ttf -misc-freeserif-bold-r-normal--0-0-0-0-p-0-adobe-standard
 FreeSerifBold.ttf -misc-freeserif-bold-r-normal--0-0-0-0-p-0-ascii-0
+FreeSerifBold.ttf -misc-freeserif-bold-r-normal--0-0-0-0-p-0-ibm-cp852
+FreeSerifBold.ttf -misc-freeserif-bold-r-normal--0-0-0-0-p-0-ibm-cp866
 FreeSerifBold.ttf -misc-freeserif-bold-r-normal--0-0-0-0-p-0-iso10646-1
 FreeSerifBold.ttf -misc-freeserif-bold-r-normal--0-0-0-0-p-0-iso8859-10
-FreeSerifBold.ttf -misc-freeserif-bold-r-normal--0-0-0-0-p-0-iso8859-1
 FreeSerifBold.ttf -misc-freeserif-bold-r-normal--0-0-0-0-p-0-iso8859-13
+FreeSerifBold.ttf -misc-freeserif-bold-r-normal--0-0-0-0-p-0-iso8859-1
 FreeSerifBold.ttf -misc-freeserif-bold-r-normal--0-0-0-0-p-0-iso8859-15
 FreeSerifBold.ttf -misc-freeserif-bold-r-normal--0-0-0-0-p-0-iso8859-16
 FreeSerifBold.ttf -misc-freeserif-bold-r-normal--0-0-0-0-p-0-iso8859-2
