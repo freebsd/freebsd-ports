@@ -1,0 +1,20 @@
+--- configure.bak	Thu Feb  2 10:46:33 2006
++++ configure	Thu Feb  2 10:47:13 2006
+@@ -20614,7 +20614,7 @@
+ fi
+ 
+ 
+-                                                                      ac_config_files="$ac_config_files Makefile c-icap.conf services/Makefile services/echo/Makefile services/sguard/Makefile services/clamav/Makefile modules/Makefile"
++                                                                      ac_config_files="$ac_config_files Makefile c-icap.conf.default services/Makefile services/echo/Makefile services/sguard/Makefile services/clamav/Makefile modules/Makefile"
+ cat >confcache <<\_ACEOF
+ # This file is a shell script that caches the results of configure
+ # tests run on this system so they can be shared between configure
+@@ -21200,7 +21200,7 @@
+   case "$ac_config_target" in
+   # Handling of arguments.
+   "Makefile" ) CONFIG_FILES="$CONFIG_FILES Makefile" ;;
+-  "c-icap.conf" ) CONFIG_FILES="$CONFIG_FILES c-icap.conf" ;;
++  "c-icap.conf.default" ) CONFIG_FILES="$CONFIG_FILES c-icap.conf.default" ;;
+   "services/Makefile" ) CONFIG_FILES="$CONFIG_FILES services/Makefile" ;;
+   "services/echo/Makefile" ) CONFIG_FILES="$CONFIG_FILES services/echo/Makefile" ;;
+   "services/sguard/Makefile" ) CONFIG_FILES="$CONFIG_FILES services/sguard/Makefile" ;;

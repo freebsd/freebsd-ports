@@ -1,0 +1,8 @@
+--- configure.in.bak	Thu Feb  2 10:45:50 2006
++++ configure.in	Thu Feb  2 10:46:13 2006
+@@ -198,4 +198,4 @@
+ AM_CONDITIONAL(USEPERL,[test a"$perlcore" != a])
+ AM_CONDITIONAL(USECLAMAV,[test a"$clamav" != ano])
+ 
+-AC_OUTPUT([Makefile c-icap.conf services/Makefile services/echo/Makefile services/sguard/Makefile services/clamav/Makefile modules/Makefile])
++AC_OUTPUT([Makefile c-icap.conf.default services/Makefile services/echo/Makefile services/sguard/Makefile services/clamav/Makefile modules/Makefile])

@@ -1,0 +1,67 @@
+--- Makefile.in.bak	Fri Feb  3 13:14:20 2006
++++ Makefile.in	Fri Feb  3 13:16:43 2006
+@@ -44,7 +44,7 @@
+ 	icap-stretch$(EXEEXT)
+ DIST_COMMON = README $(am__configure_deps) $(pkginclude_HEADERS) \
+ 	$(srcdir)/Makefile.am $(srcdir)/Makefile.in \
+-	$(srcdir)/c-icap.conf.in $(srcdir)/config.h.in \
++	$(srcdir)/c-icap.conf.default.in $(srcdir)/config.h.in \
+ 	$(top_srcdir)/configure AUTHORS COPYING ChangeLog INSTALL NEWS \
+ 	TODO compile config.guess config.sub depcomp install-sh \
+ 	ltmain.sh missing
+@@ -57,7 +57,7 @@
+  configure.lineno configure.status.lineno
+ mkinstalldirs = $(mkdir_p)
+ CONFIG_HEADER = config.h
+-CONFIG_CLEAN_FILES = c-icap.conf
++CONFIG_CLEAN_FILES = c-icap.conf.default
+ am__installdirs = "$(DESTDIR)$(libdir)" "$(DESTDIR)$(bindir)" "$(DESTDIR)$(sysconfdir)" "$(DESTDIR)$(pkgincludedir)"
+ libLTLIBRARIES_INSTALL = $(INSTALL)
+ LTLIBRARIES = $(lib_LTLIBRARIES)
+@@ -313,8 +313,8 @@
+ 
+ ALL_INCS = $(INCS:%.h=include/%.h)
+ pkginclude_HEADERS = $(ALL_INCS)
+-sysconf_DATA = c-icap.conf c-icap.magic
+-EXTRA_DIST = RECONF INSTALL.txt config-w32.h makefile.w32 c-icap.conf c_icap_dll.mak c-icap.conf.in c-icap.magic  c_icap.mak c_icap.def contrib/get_file.pl \
++sysconf_DATA = c-icap.conf.default c-icap.magic.default
++EXTRA_DIST = RECONF INSTALL.txt config-w32.h makefile.w32 c-icap.conf.default c_icap_dll.mak c-icap.conf.default.in c-icap.magic.default  c_icap.mak c_icap.def contrib/get_file.pl \
+              winnt_server.c  os/win32/dll_entry.c os/win32/makefile.w32 os/win32/net_io.c os/win32/proc_mutex.c\
+              os/win32/shared_mem.c os/win32/threads.c os/win32/utilfunc.c
+ 
+@@ -373,7 +373,7 @@
+ 
+ distclean-hdr:
+ 	-rm -f config.h stamp-h1
+-c-icap.conf: $(top_builddir)/config.status $(srcdir)/c-icap.conf.in
++c-icap.conf: $(top_builddir)/config.status $(srcdir)/c-icap.conf.default.in
+ 	cd $(top_builddir) && $(SHELL) ./config.status $@
+ install-libLTLIBRARIES: $(lib_LTLIBRARIES)
+ 	@$(NORMAL_INSTALL)
+@@ -1484,7 +1484,7 @@
+ 
+ info-am:
+ 
+-install-data-am: install-data-local install-pkgincludeHEADERS
++install-data-am: install-pkgincludeHEADERS
+ 
+ install-exec-am: install-binPROGRAMS install-libLTLIBRARIES \
+ 	install-sysconfDATA
+@@ -1530,7 +1530,7 @@
+ 	distclean-recursive distclean-tags distcleancheck distdir \
+ 	distuninstallcheck dvi dvi-am html html-am info info-am \
+ 	install install-am install-binPROGRAMS install-data \
+-	install-data-am install-data-local install-exec \
++	install-data-am install-exec \
+ 	install-exec-am install-info install-info-am \
+ 	install-libLTLIBRARIES install-man install-pkgincludeHEADERS \
+ 	install-strip install-sysconfDATA installcheck installcheck-am \
+@@ -1544,8 +1544,6 @@
+ 	uninstall-sysconfDATA
+ 
+ 
+-install-data-local:
+-	$(mkinstalldirs) $(LOGDIR); chgrp nobody $(LOGDIR);chmod 775 $(LOGDIR)
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:

@@ -1,0 +1,36 @@
+#!/bin/sh
+# $FreeBSD$
+
+CICAP_USER=cicap
+CICAP_GROUP=cicap
+
+LOG_PATH=/var/log
+TMP_PATH=/var/tmp
+
+if [ "$2" = "PRE-INSTALL" ]; then
+	if ! pw groupshow "$CICAP_USER" 2>/dev/null 1>&2; then
+		if pw groupadd $CICAP_GROUP; then
+			echo "=> Added group \"$CICAP_GROUP\"."
+		else
+			echo "=> Adding group \"$CICAP_GROUP\" failed..."
+			exit 1
+		fi
+	fi
+
+	if ! pw usershow "$CICAP_USER" 2>/dev/null 1>&2; then
+		if pw useradd $CICAP_USER -g $CICAP_GROUP -h - \
+			-s "/sbin/nologin" -d "/nonexistent" \
+			-c "c-icap daemon"; \
+		then
+			echo "=> Added user \"$CICAP_USER\"."
+		else
+			echo "=> Adding user \"$CICAP_USER\" failed..."
+			exit 1
+		fi
+	fi
+elif [ "$2" = "POST-INSTALL" ]; then
+	touch "$LOG_PATH/access.log" "$LOG_PATH/server.log" || exit 1
+	chown -R "$CICAP_USER:$CICAP_GROUP" "$LOG_PATH" || exit 1
+fi
+
+exit 0

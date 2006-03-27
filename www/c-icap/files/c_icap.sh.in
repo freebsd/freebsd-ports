@@ -1,0 +1,32 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: c-icap
+# REQUIRE: DAEMON cleanvar
+# BEFORE: LOGIN
+
+#
+# Add the following lines to /etc/rc.conf to enable c-icap:
+#
+# c_icap_enable="YES"
+#
+# See '%%PREFIX%%/bin/c-icap --help' for flags
+#
+
+. %%RC_SUBR%%
+
+name="c_icap"
+rcvar=`set_rcvar`
+command="%%PREFIX%%/bin/c-icap"
+
+required_dirs="/var/tmp"
+required_files="%%PREFIX%%/etc/c-icap.conf"
+stop_postcmd="rm -f /var/run/c-icap.pid"
+
+# set default
+c_icap_enable=${c_icap_enable:-"NO"}
+
+load_rc_config "$name"
+run_rc_command "$1"

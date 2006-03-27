@@ -1,0 +1,53 @@
+@comment $FreeBSD$
+bin/c-icap
+bin/icap-client
+bin/icap-stretch
+@unexec if cmp -s %D/etc/c-icap.conf %D/etc/c-icap.conf.default; then rm -f %D/etc/c-icap.conf; fi
+etc/c-icap.conf.default
+@exec [ -f %B/c-icap.conf ] || cp -p %%PREFIX%%/%F %B/c-icap.conf
+@unexec if cmp -s %D/etc/c-icap.magic %D/etc/c-icap.magic.default; then rm -f %D/etc/c-icap.magic; fi
+etc/c-icap.magic.default
+@exec [ -f %B/c-icap.magic ] || cp -p %%PREFIX%%/%F %B/c-icap.magic
+@unexec %D/etc/rc.d/c_icap.sh stop; fi
+include/c_icap/access.h
+include/c_icap/body.h
+include/c_icap/c-icap.h
+include/c_icap/cfg_param.h
+include/c_icap/ci_threads.h
+include/c_icap/debug.h
+include/c_icap/filetype.h
+include/c_icap/header.h
+include/c_icap/log.h
+include/c_icap/module.h
+include/c_icap/net_io.h
+include/c_icap/proc_mutex.h
+include/c_icap/proc_threads_queues.h
+include/c_icap/request.h
+include/c_icap/service.h
+include/c_icap/shared_mem.h
+include/c_icap/simple_api.h
+include/c_icap/util.h
+@dirrm include/c_icap
+%%PERL%%lib/c_icap/perl_handler.a
+%%PERL%%lib/c_icap/perl_handler.la
+%%PERL%%lib/c_icap/perl_handler.so
+%%CLAMAV%%lib/c_icap/srv_clamav.a
+%%CLAMAV%%lib/c_icap/srv_clamav.la
+%%CLAMAV%%lib/c_icap/srv_clamav.so
+lib/c_icap/srv_echo.a
+lib/c_icap/srv_echo.la
+lib/c_icap/srv_echo.so
+lib/c_icap/srv_sguard.a
+lib/c_icap/srv_sguard.la
+lib/c_icap/srv_sguard.so
+lib/c_icap/sys_logger.a
+lib/c_icap/sys_logger.la
+lib/c_icap/sys_logger.so
+@dirrm lib/c_icap
+lib/libicapapi.a
+lib/libicapapi.la
+lib/libicapapi.so.0
+lib/libicapapi.so
+@cwd /
+var/log/access.log
+var/log/server.log
