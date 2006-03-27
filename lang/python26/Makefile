@@ -130,6 +130,9 @@ pre-patch:
 	${REINPLACE_CMD} -e \
 		's|^\( *prefixes = .*\)\]$$|\1, "${X11BASE}"]|g' \
 		${PATCH_WRKSRC}/Lib/site.py
+	${REINPLACE_CMD} -e \
+		's|^	\(..ASDLGEN.*\)$$|	${TRUE}|g' \
+		${PATCH_WRKSRC}/Makefile.pre.in
 
 post-configure:
 	${TAR} -C ${WRKSRC} -cf - . | ${TAR} -C ${SHARED_WRKSRC} -xf -
