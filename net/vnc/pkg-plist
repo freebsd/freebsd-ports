@@ -1,0 +1,11 @@
+bin/vncviewer
+bin/vncpasswd
+bin/vncconfig
+bin/x0vncserver
+%%SERVER%%bin/Xvnc
+%%SERVER%%bin/vncserver
+%%SERVER%%%%DATADIR%%/classes/index.vnc
+%%SERVER%%%%DATADIR%%/classes/logo150x150.gif
+%%SERVER%%%%DATADIR%%/classes/vncviewer.jar
+%%SERVER%%@dirrm %%DATADIR%%/classes
+%%SERVER%%@dirrm %%DATADIR%%
