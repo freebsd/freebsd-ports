@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBIx-Class
-PORTVERSION=	0.05007
+PORTVERSION=	0.06000
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DBIx
@@ -36,13 +36,15 @@ MAN3=	DBIx::Class.3 \
 	DBIx::Class::AccessorGroup.3 \
 	DBIx::Class::CDBICompat.3 \
 	DBIx::Class::Core.3 \
+	DBIx::Class::Cursor.3 \
 	DBIx::Class::DB.3 \
 	DBIx::Class::InflateColumn.3 \
 	DBIx::Class::Manual.3 \
+	DBIx::Class::Manual::Component.3 \
 	DBIx::Class::Manual::Cookbook.3 \
-	DBIx::Class::Manual::FAQ.3 \
+	DBIx::Class::Manual::Example.3 \
+	DBIx::Class::Manual::Glossary.3 \
 	DBIx::Class::Manual::Intro.3 \
-	DBIx::Class::Manual::SchemaIntro.3 \
 	DBIx::Class::Manual::Troubleshooting.3 \
 	DBIx::Class::PK.3 \
 	DBIx::Class::PK::Auto.3 \
@@ -62,10 +64,25 @@ MAN3=	DBIx::Class.3 \
 	DBIx::Class::ResultSourceProxy::Table.3 \
 	DBIx::Class::Row.3 \
 	DBIx::Class::Schema.3 \
-	DBIx::Class::Serialize.3 \
+	DBIx::Class::Serialize::Storable.3 \
 	DBIx::Class::Storage::DBI.3 \
+	DBIx::Class::Storage::DBI::Cursor.3 \
+	DBIx::Class::Storage::DBI::DB2.3 \
+	DBIx::Class::Storage::DBI::MSSQL.3 \
+	DBIx::Class::Storage::DBI::Oracle.3 \
+	DBIx::Class::Storage::DBI::Pg.3 \
+	DBIx::Class::Storage::DBI::SQLite.3 \
+	DBIx::Class::Storage::DBI::mysql.3 \
 	DBIx::Class::Test::SQLite.3 \
+	DBIx::Class::UTF8Columns.3 \
 	DBIx::Class::UUIDColumns.3 \
+	DBIx::Class::UUIDMaker.3 \
+	DBIx::Class::UUIDMaker::APR::UUID.3 \
+	DBIx::Class::UUIDMaker::Data::UUID.3 \
+	DBIx::Class::UUIDMaker::Data::Uniqid.3 \
+	DBIx::Class::UUIDMaker::UUID.3 \
+	DBIx::Class::UUIDMaker::Win32::Guidgen.3 \
+	DBIx::Class::UUIDMaker::Win32API::GUID.3 \
 	DBIx::Class::Validation.3 \
 	SQL::Translator::Producer::DBIx::Class::File.3
 

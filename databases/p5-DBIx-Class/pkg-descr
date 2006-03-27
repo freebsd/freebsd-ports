@@ -1,13 +1,24 @@
-This is an SQL to OO mapper, inspired by the Class::DBI framework, and
-meant to support compability with it, while restructuring the internals
-and making it possible to support some new features like self-joins,
-distinct, group bys and more.
+This is an SQL to OO mapper with an object API inspired by Class::DBI (and a
+compatibility layer as a springboard for porting) and a resultset API that
+allows abstract encapsulation of database operations. It aims to make
+representing queries in your code as perl-ish as possible while still providing
+access to as many of the capabilities of the database as possible, including
+retrieving related records from multiple tables in a single query, JOIN, LEFT
+JOIN, COUNT, DISTINCT, GROUP BY and HAVING support. 
 
-This project is still at an early stage, so the maintainers don't make
-any absolute promise that full backwards-compatibility will be
-supported; however, if we can without compromising the improvements
-we're trying to make, we will, and any non-compatible changes will merit
-a full justification on the mailing list and a CPAN developer release
-for people to test against.
+DBIx::Class can handle multi-column primary and foreign keys, complex queries
+and database-level paging, and does its best to only query the database when it
+actually needs to in order to return something you've directly asked for. If a
+resultset is used as an iterator it only fetches rows off the statement handle
+as requested in order to minimise memory usage. It has auto-increment support
+for SQLite, MySQL, PostgreSQL, Oracle, SQL Server and DB2 and is known to be
+used in production on at least the first four, and is fork- and thread-safe
+out of the box (although your DBD may not be).
+
+This project is still under rapid development, so features added in the latest
+major release may not work 100% yet - check the Changes if you run into
+trouble, and beware of anything explicitly marked EXPERIMENTAL. Failing test
+cases are *always* welcome and point releases are put out rapidly as bugs are
+found and fixed.
 
 WWW: http://search.cpan.org/dist/DBIx-Class/

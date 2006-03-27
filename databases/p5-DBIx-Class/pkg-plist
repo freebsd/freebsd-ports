@@ -30,11 +30,12 @@
 %%SITE_PERL%%/DBIx/Class/DB.pm
 %%SITE_PERL%%/DBIx/Class/InflateColumn.pm
 %%SITE_PERL%%/DBIx/Class/Manual.pod
-%%SITE_PERL%%/DBIx/Class/Manual/Troubleshooting.pod
-%%SITE_PERL%%/DBIx/Class/Manual/FAQ.pod
-%%SITE_PERL%%/DBIx/Class/Manual/Intro.pod
-%%SITE_PERL%%/DBIx/Class/Manual/SchemaIntro.pod
+%%SITE_PERL%%/DBIx/Class/Manual/Component.pod
 %%SITE_PERL%%/DBIx/Class/Manual/Cookbook.pod
+%%SITE_PERL%%/DBIx/Class/Manual/Example.pod
+%%SITE_PERL%%/DBIx/Class/Manual/Glossary.pod
+%%SITE_PERL%%/DBIx/Class/Manual/Intro.pod
+%%SITE_PERL%%/DBIx/Class/Manual/Troubleshooting.pod
 %%SITE_PERL%%/DBIx/Class/PK.pm
 %%SITE_PERL%%/DBIx/Class/PK/Auto.pm
 %%SITE_PERL%%/DBIx/Class/PK/Auto/DB2.pm
@@ -62,11 +63,26 @@
 %%SITE_PERL%%/DBIx/Class/ResultSourceProxy/Table.pm
 %%SITE_PERL%%/DBIx/Class/Row.pm
 %%SITE_PERL%%/DBIx/Class/Schema.pm
-%%SITE_PERL%%/DBIx/Class/Serialize.pm
+%%SITE_PERL%%/DBIx/Class/Serialize/Storable.pm
+%%SITE_PERL%%/DBIx/Class/Storage.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/Cursor.pm
+%%SITE_PERL%%/DBIx/Class/Storage/DBI/DB2.pm
+%%SITE_PERL%%/DBIx/Class/Storage/DBI/MSSQL.pm
+%%SITE_PERL%%/DBIx/Class/Storage/DBI/Oracle.pm
+%%SITE_PERL%%/DBIx/Class/Storage/DBI/Pg.pm
+%%SITE_PERL%%/DBIx/Class/Storage/DBI/SQLite.pm
+%%SITE_PERL%%/DBIx/Class/Storage/DBI/mysql.pm
 %%SITE_PERL%%/DBIx/Class/Test/SQLite.pm
+%%SITE_PERL%%/DBIx/Class/UTF8Columns.pm
 %%SITE_PERL%%/DBIx/Class/UUIDColumns.pm
+%%SITE_PERL%%/DBIx/Class/UUIDMaker.pm
+%%SITE_PERL%%/DBIx/Class/UUIDMaker/APR/UUID.pm
+%%SITE_PERL%%/DBIx/Class/UUIDMaker/Data/UUID.pm
+%%SITE_PERL%%/DBIx/Class/UUIDMaker/Data/Uniqid.pm
+%%SITE_PERL%%/DBIx/Class/UUIDMaker/UUID.pm
+%%SITE_PERL%%/DBIx/Class/UUIDMaker/Win32/Guidgen.pm
+%%SITE_PERL%%/DBIx/Class/UUIDMaker/Win32API/GUID.pm
 %%SITE_PERL%%/DBIx/Class/Validation.pm
 %%SITE_PERL%%/SQL/Translator/Parser/DBIx/Class.pm
 %%SITE_PERL%%/SQL/Translator/Producer/DBIx/Class/File.pm
@@ -77,9 +93,15 @@
 @dirrmtry %%SITE_PERL%%/SQL/Translator/Parser
 @dirrmtry %%SITE_PERL%%/SQL/Translator
 @dirrmtry %%SITE_PERL%%/SQL
+@dirrmtry %%SITE_PERL%%/DBIx/Class/UUIDMaker/Win32API
+@dirrmtry %%SITE_PERL%%/DBIx/Class/UUIDMaker/Win32
+@dirrmtry %%SITE_PERL%%/DBIx/Class/UUIDMaker/Data
+@dirrmtry %%SITE_PERL%%/DBIx/Class/UUIDMaker/APR
+@dirrmtry %%SITE_PERL%%/DBIx/Class/UUIDMaker
 @dirrmtry %%SITE_PERL%%/DBIx/Class/Test
 @dirrmtry %%SITE_PERL%%/DBIx/Class/Storage/DBI
 @dirrmtry %%SITE_PERL%%/DBIx/Class/Storage
+@dirrmtry %%SITE_PERL%%/DBIx/Class/Serialize
 @dirrmtry %%SITE_PERL%%/DBIx/Class/ResultSourceProxy
 @dirrmtry %%SITE_PERL%%/DBIx/Class/ResultSource
 @dirrmtry %%SITE_PERL%%/DBIx/Class/Relationship
