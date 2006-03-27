@@ -8,7 +8,8 @@
 PORTNAME=	cmospwd
 PORTVERSION=	4.8
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.cgsecurity.org/
+MASTER_SITES=	http://www.cgsecurity.org/ \
+		http://critical.ch/distfiles/
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A BIOS password recovery tool
