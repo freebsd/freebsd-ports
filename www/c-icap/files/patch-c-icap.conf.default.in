@@ -1,0 +1,26 @@
+--- c-icap.conf.default.in.bak	Fri Feb  3 10:18:30 2006
++++ c-icap.conf.default.in	Fri Feb  3 10:20:15 2006
+@@ -3,7 +3,7 @@
+ #
+ 
+ 
+-PidFile /var/run/c-icap.pid
++PidFile @prefix@/var/run/c-icap.pid
+ Timeout 300
+ KeepAlive On
+ MaxKeepAliveRequests 100
+@@ -25,11 +25,11 @@
+ #ServerAdmin you@your.address # Not implemented yet
+ #ServerName localhost:1344 # Not implemented yet
+ 
+-TmpDir /var/tmp
++TmpDir @prefix@/var/tmp
+ MaxMemObject 131072
+ 
+-ServerLog @prefix@/var/log/server.log
+-AccessLog @prefix@/var/log/access.log
++ServerLog @prefix@/var/log/c_icap/server.log
++AccessLog @prefix@/var/log/c_icap/access.log
+ #DebugLevel 3
+ 
+ ModulesDir @prefix@/lib/c_icap

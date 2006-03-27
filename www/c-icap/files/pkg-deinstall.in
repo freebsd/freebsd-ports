@@ -1,0 +1,16 @@
+#!/bin/sh
+# $FreeBSD$
+
+if [ "$2" != "POST-DEINSTALL" ]; then
+	exit 0
+fi
+
+CICAP_USER=cicap
+
+if pw usershow "$CICAP_USER" 2>/dev/null 1>&2; then
+	echo "==============================================================================="
+	echo "To delete $CICAP_USER user permanently, use 'pw userdel \"$CICAP_USER\"'"
+	echo "==============================================================================="
+fi
+
+exit 0

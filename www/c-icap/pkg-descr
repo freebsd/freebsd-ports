@@ -1,0 +1,10 @@
+c-icap is an implementation of an ICAP server. It can be used with HTTP proxies
+that support the ICAP protocol such as the Shweby or Squid proxy server.
+c-icap allows the addition of modules, which can extend its functionality and
+services. For instance, such modules can be loggers, authenticators and
+authentication methods or access controlers.
+
+WWW: http://www.chtsanti.net/c-icap
+
+- Elisey Savateev
+b3k@mail.ru

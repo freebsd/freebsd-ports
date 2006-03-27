@@ -52,6 +52,7 @@
     SUBDIR += bricolage
     SUBDIR += bugmenot
     SUBDIR += bugmenot-firefox
+    SUBDIR += c-icap
     SUBDIR += cadaver
     SUBDIR += calamaris
     SUBDIR += campsite
