@@ -15,7 +15,7 @@
 #i2p_user=""
 #
 
-. /etc/rc.subr
+. %%RC_SUBR%%
 
 name="i2p"
 rcvar=`set_rcvar`
