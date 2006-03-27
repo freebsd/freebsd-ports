@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Sort-Key
-PORTVERSION=	0.14
+PORTVERSION=	1.15
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Sort
@@ -19,6 +19,7 @@ PERL_CONFIGURE=	yes
 
 MAN3=	Sort::Key.3 \
 	Sort::Key::Maker.3 \
+	Sort::Key::Multi.3 \
 	Sort::Key::Register.3
 
 .include <bsd.port.pre.mk>
