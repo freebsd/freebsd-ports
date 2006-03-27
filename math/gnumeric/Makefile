@@ -26,7 +26,7 @@ USE_X_PREFIX=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix intlhack gnomehack gnomehier libgnomeprintui \
-		libgsf_gnome pygtk2 desktopfileutils
+		libgsf_gnome pygtk2 desktopfileutils libgnomeui
 USE_PYTHON=	yes
 INSTALLS_OMF=	yes
 INSTALLS_SHLIB=	yes
