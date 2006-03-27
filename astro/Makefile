@@ -6,6 +6,7 @@
     SUBDIR += accrete
     SUBDIR += boinc-einsteinathome
     SUBDIR += boinc-setiathome
+    SUBDIR += boinc-setiathome-enhanced
     SUBDIR += boinc-setiathome-naparst
     SUBDIR += celestia
     SUBDIR += cfitsio
