@@ -1,0 +1,296 @@
+Index: libs/xpdf/xpdf/JPXStream.cc
+===================================================================
+--- libs/xpdf/xpdf/JPXStream.cc
++++ libs/xpdf/xpdf/JPXStream.cc
+@@ -7,6 +7,7 @@
+ //========================================================================
+ 
+ #include <aconf.h>
++#include <limits.h>
+ 
+ #ifdef USE_GCC_PRAGMAS
+ #pragma implementation
+@@ -666,7 +667,7 @@ GBool JPXStream::readCodestream(Guint le
+   int segType;
+   GBool haveSIZ, haveCOD, haveQCD, haveSOT;
+   Guint precinctSize, style;
+-  Guint segLen, capabilities, comp, i, j, r;
++  Guint segLen, capabilities, nTiles, comp, i, j, r;
+ 
+   //----- main header
+   haveSIZ = haveCOD = haveQCD = haveSOT = gFalse;
+@@ -701,8 +702,19 @@ GBool JPXStream::readCodestream(Guint le
+ 	            / img.xTileSize;
+       img.nYTiles = (img.ySize - img.yTileOffset + img.yTileSize - 1)
+ 	            / img.yTileSize;
+-      img.tiles = (JPXTile *)gmalloc(img.nXTiles * img.nYTiles *
+-				     sizeof(JPXTile));
++      // check for overflow before allocating memory
++      if (img.nXTiles <= 0 || img.nYTiles <= 0 || 
++              img.nXTiles >= INT_MAX/img.nYTiles) {
++          error(getPos(), "Bad tile count in JPX SIZ marker segment");
++          return gFalse;
++      }
++      nTiles = img.nXTiles * img.nYTiles;
++      if (nTiles >= INT_MAX/sizeof(JPXTile)) {
++	error(getPos(), "Bad tile count in JPX SIZ marker segment");
++	return gFalse;
++      }
++      img.tiles = (JPXTile *)gmalloc(nTiles * sizeof(JPXTile));
++
+       for (i = 0; i < img.nXTiles * img.nYTiles; ++i) {
+ 	img.tiles[i].tileComps = (JPXTileComp *)gmalloc(img.nComps *
+ 							sizeof(JPXTileComp));
+Index: libs/xpdf/xpdf/Stream.h
+===================================================================
+--- libs/xpdf/xpdf/Stream.h
++++ libs/xpdf/xpdf/Stream.h
+@@ -233,6 +233,8 @@ public:
+ 
+   ~StreamPredictor();
+ 
++  GBool isOk() { return ok; }
++
+   int lookChar();
+   int getChar();
+ 
+@@ -250,6 +252,7 @@ private:
+   int rowBytes;			// bytes per line
+   Guchar *predLine;		// line buffer
+   int predIdx;			// current index in predLine
++  GBool ok;
+ };
+ 
+ //------------------------------------------------------------------------
+Index: libs/xpdf/xpdf/Stream.cc
+===================================================================
+--- libs/xpdf/xpdf/Stream.cc
++++ libs/xpdf/xpdf/Stream.cc
+@@ -15,6 +15,7 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <stddef.h>
++#include <limits.h>
+ #ifndef WIN32
+ #include <unistd.h>
+ #endif
+@@ -412,13 +413,28 @@ StreamPredictor::StreamPredictor(Stream 
+   width = widthA;
+   nComps = nCompsA;
+   nBits = nBitsA;
++  predLine = NULL;
++  ok = gFalse;
+ 
++  if (width <= 0 || nComps <= 0 || nBits <= 0 ||
++      nComps >= INT_MAX/nBits ||
++      width >= INT_MAX/nComps/nBits) {
++    return;
++  }
+   nVals = width * nComps;
++  if (nVals * nBits + 7 <= 0) {
++    return;
++  }
+   pixBytes = (nComps * nBits + 7) >> 3;
+   rowBytes = ((nVals * nBits + 7) >> 3) + pixBytes;
++  if (rowBytes < 0) {
++    return;
++  }
+   predLine = (Guchar *)gmalloc(rowBytes);
+   memset(predLine, 0, rowBytes);
+   predIdx = rowBytes;
++
++  ok = gTrue;
+ }
+ 
+ StreamPredictor::~StreamPredictor() {
+@@ -1012,6 +1028,10 @@ LZWStream::LZWStream(Stream *strA, int p
+     FilterStream(strA) {
+   if (predictor != 1) {
+     pred = new StreamPredictor(this, predictor, columns, colors, bits);
++    if (!pred->isOk()) {
++      delete pred;
++      pred = NULL;
++    }
+   } else {
+     pred = NULL;
+   }
+@@ -1260,6 +1280,10 @@ CCITTFaxStream::CCITTFaxStream(Stream *s
+   endOfLine = endOfLineA;
+   byteAlign = byteAlignA;
+   columns = columnsA;
++  if (columns < 1 || columns >= INT_MAX / sizeof(short)) {
++    error(-1, "invalid number of columns: %d", columns);
++    exit(1);
++  }
+   rows = rowsA;
+   endOfBlock = endOfBlockA;
+   black = blackA;
+@@ -2897,6 +2921,11 @@ GBool DCTStream::readBaselineSOF() {
+   height = read16();
+   width = read16();
+   numComps = str->getChar();
++  if (numComps <= 0 || numComps > 4) {
++    numComps = 0;
++    error(getPos(), "Bad number of components in DCT stream");
++    return gFalse;
++  }
+   if (prec != 8) {
+     error(getPos(), "Bad DCT precision %d", prec);
+     return gFalse;
+@@ -2923,6 +2952,11 @@ GBool DCTStream::readProgressiveSOF() {
+   height = read16();
+   width = read16();
+   numComps = str->getChar();
++  if (numComps <= 0 || numComps > 4) {
++    numComps = 0;
++    error(getPos(), "Bad number of components in DCT stream");
++    return gFalse;
++  }
+   if (prec != 8) {
+     error(getPos(), "Bad DCT precision %d", prec);
+     return gFalse;
+@@ -2945,6 +2979,11 @@ GBool DCTStream::readScanInfo() {
+ 
+   length = read16() - 2;
+   scanInfo.numComps = str->getChar();
++  if (scanInfo.numComps <= 0 || scanInfo.numComps > 4) {
++    scanInfo.numComps = 0;
++    error(getPos(), "Bad number of components in DCT stream");
++    return gFalse;
++  }
+   --length;
+   if (length != 2 * scanInfo.numComps + 3) {
+     error(getPos(), "Bad DCT scan info block");
+@@ -3019,12 +3058,12 @@ GBool DCTStream::readHuffmanTables() {
+   while (length > 0) {
+     index = str->getChar();
+     --length;
+-    if ((index & 0x0f) >= 4) {
++    if ((index & ~0x10) >= 4 || (index & ~0x10) < 0) {
+       error(getPos(), "Bad DCT Huffman table");
+       return gFalse;
+     }
+     if (index & 0x10) {
+-      index &= 0x0f;
++      index &= 0x03;
+       if (index >= numACHuffTables)
+ 	numACHuffTables = index+1;
+       tbl = &acHuffTables[index];
+@@ -3142,9 +3181,11 @@ int DCTStream::readMarker() {
+   do {
+     do {
+       c = str->getChar();
++      if(c == EOF) return EOF;
+     } while (c != 0xff);
+     do {
+       c = str->getChar();
++      if(c == EOF) return EOF;
+     } while (c == 0xff);
+   } while (c == 0x00);
+   return c;
+@@ -3255,6 +3296,10 @@ FlateStream::FlateStream(Stream *strA, i
+     FilterStream(strA) {
+   if (predictor != 1) {
+     pred = new StreamPredictor(this, predictor, columns, colors, bits);
++    if (!pred->isOk()) {
++      delete pred;
++      pred = NULL;
++    }
+   } else {
+     pred = NULL;
+   }
+Index: libs/xpdf/xpdf/JBIG2Stream.cc
+===================================================================
+--- libs/xpdf/xpdf/JBIG2Stream.cc
++++ libs/xpdf/xpdf/JBIG2Stream.cc
+@@ -7,6 +7,7 @@
+ //========================================================================
+ 
+ #include <aconf.h>
++#include <limits.h>
+ 
+ #ifdef USE_GCC_PRAGMAS
+ #pragma implementation
+@@ -681,7 +682,16 @@ JBIG2Bitmap::JBIG2Bitmap(Guint segNumA, 
+   w = wA;
+   h = hA;
+   line = (wA + 7) >> 3;
+-  data = (Guchar *)gmalloc(h * line);
++
++  if (h < 0 || line <= 0 || h >= (INT_MAX - 1) / line) {
++    error(-1, "invalid width/height");
++    data = NULL;
++    return;
++  }
++
++  // need to allocate one extra guard byte for use in combine()
++  data = (Guchar *)gmalloc(h * line + 1);
++  data[h * line] = 0;
+ }
+ 
+ JBIG2Bitmap::JBIG2Bitmap(Guint segNumA, JBIG2Bitmap *bitmap):
+@@ -690,8 +700,17 @@ JBIG2Bitmap::JBIG2Bitmap(Guint segNumA, 
+   w = bitmap->w;
+   h = bitmap->h;
+   line = bitmap->line;
+-  data = (Guchar *)gmalloc(h * line);
++
++  if (h < 0 || line <= 0 || h >= (INT_MAX - 1) / line) {
++    error(-1, "invalid width/height");
++    data = NULL;
++    return;
++  }
++
++  // need to allocate one extra guard byte for use in combine()
++  data = (Guchar *)gmalloc(h * line + 1);
+   memcpy(data, bitmap->data, h * line);
++  data[h * line] = 0;
+ }
+ 
+ JBIG2Bitmap::~JBIG2Bitmap() {
+@@ -716,10 +735,14 @@ JBIG2Bitmap *JBIG2Bitmap::getSlice(Guint
+ }
+ 
+ void JBIG2Bitmap::expand(int newH, Guint pixel) {
+-  if (newH <= h) {
++  if (newH <= h || line <= 0 || newH >= (INT_MAX - 1) / line) {
++    error(-1, "invalid width/height");
++    gfree(data);
++    data = NULL;
+     return;
+   }
+-  data = (Guchar *)grealloc(data, newH * line);
++  // need to allocate one extra guard byte for use in combine()
++  data = (Guchar *)grealloc(data, newH * line + 1);
+   if (pixel) {
+     memset(data + h * line, 0xff, (newH - h) * line);
+   } else {
+@@ -2256,6 +2279,15 @@ void JBIG2Stream::readHalftoneRegionSeg(
+     error(getPos(), "Bad symbol dictionary reference in JBIG2 halftone segment");
+     return;
+   }
++  if (gridH == 0 || gridW >= INT_MAX / gridH) {
++    error(getPos(), "Bad size in JBIG2 halftone segment");
++    return;
++  }
++  if (w == 0 || h >= INT_MAX / w) {
++     error(getPos(), "Bad size in JBIG2 bitmap segment");
++    return;
++  }
++
+   patternDict = (JBIG2PatternDict *)seg;
+   bpp = 0;
+   i = 1;
+@@ -2887,6 +2919,11 @@ JBIG2Bitmap *JBIG2Stream::readGenericRef
+   JBIG2BitmapPtr tpgrCXPtr0, tpgrCXPtr1, tpgrCXPtr2;
+   int x, y, pix;
+ 
++  if (w < 0 || h <= 0 || w >= INT_MAX / h) {
++    error(-1, "invalid width/height");
++    return NULL;
++  }
++
+   bitmap = new JBIG2Bitmap(0, w, h);
+   bitmap->clearToZero();
+ 
+# vim: syntax=diff
