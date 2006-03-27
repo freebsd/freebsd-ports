@@ -73,6 +73,8 @@ share/locale/tr/LC_MESSAGES/gcc.mo
 share/locale/vi/LC_MESSAGES/cpplib.mo
 share/locale/zh_CN/LC_MESSAGES/cpplib.mo
 share/locale/zh_CN/LC_MESSAGES/gcc.mo
+@unexec /bin/rmdir %D/share/locale/rw/LC_MESSAGES 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/locale/rw 2>/dev/null || /usr/bin/true
 @dirrm lib/gcc/avr/4.1.0/avr3
 @dirrm lib/gcc/avr/4.1.0/avr4
 @dirrm lib/gcc/avr/4.1.0/avr5
