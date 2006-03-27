@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		freefont-ttf
-PORTVERSION=		20051206
+PORTVERSION=		20060126
 CATEGORIES=		x11-fonts
 MASTER_SITES=		${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	freefont
@@ -24,10 +24,14 @@ PKGMESSAGE=		${WRKDIR}/pkg-message
 INSTALLDIR=		${PREFIX}/lib/X11/fonts/${PORTNAME}
 
 do-install:
+.if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/AUTHORS ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/CREDITS ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/COPYING ${DOCSDIR}
+.endif
 	${MKDIR} ${INSTALLDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.ttf ${INSTALLDIR}
 	# Use these pregenerated files instead of using mkfontscale and mkfontdir
