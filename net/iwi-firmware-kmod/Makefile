@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	iwi-firmware
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	net sysutils
 
 MAINTAINER=	flz@FreeBSD.org
