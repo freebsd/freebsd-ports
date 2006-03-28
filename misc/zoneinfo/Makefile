@@ -22,6 +22,12 @@ TZFILES=	africa antarctica asia australasia etcetera europe \
 		factory northamerica southamerica systemv
 POSIXRULES=	America/New_York
 
+# Prevent packages if on the FreeBSD building cluster. This because
+# it overwrite system files and directories.
+.if defined(PACKAGE_BUILDING)
+NO_PACKAGE=	yes
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
