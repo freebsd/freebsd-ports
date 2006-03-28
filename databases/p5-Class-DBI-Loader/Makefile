@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Class-DBI-Loader
-PORTVERSION=	0.29
+PORTVERSION=	0.32
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Class
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	mat@FreeBSD.org
+MAINTAINER=	lars@balker.dk
 COMMENT=	Dynamic definition of Class::DBI sub classes
 
 BUILD_DEPENDS=	${RUN_DEPENDS} \
