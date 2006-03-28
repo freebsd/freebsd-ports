@@ -5720,6 +5720,7 @@ libtcp4u	ports/net/libtcp4u
 libtecla	ports/devel/libtecla
 libtext-charwidth-perl	ports/textproc/libtext-charwidth-perl
 libtext-wrapi18n-perl	ports/textproc/libtext-wrapi18n-perl
+libthai		ports/devel/libthai
 libtheora	ports/multimedia/libtheora
 libticables	ports/comms/libticables
 libticalcs	ports/devel/libticalcs
