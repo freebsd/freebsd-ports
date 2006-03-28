@@ -7,19 +7,21 @@
 #
 
 PORTNAME=	Algorithm-Evolutionary
-PORTVERSION=	0.53
+PORTVERSION=	0.54
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Algorithm
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A library for doing evolutionary computation in Perl
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Algorithm/Permute.pm:${PORTSDIR}/devel/p5-Algorithm-Permute \
 		${SITE_PERL}/Test/Simple.pm:${PORTSDIR}/devel/p5-Test-Simple \
 		${SITE_PERL}/Tree/DAG_Node.pm:${PORTSDIR}/devel/p5-Tree-DAG_Node \
-		${SITE_PERL}/XML/Parser/EasyTree.pm:${PORTSDIR}/textproc/p5-XML-Parser-EasyTree
+		${SITE_PERL}/XML/Parser/EasyTree.pm:${PORTSDIR}/textproc/p5-XML-Parser-EasyTree \
+		p5-XML-LibXML>=1.5:${PORTSDIR}/textproc/p5-XML-LibXML \
+		p5-Math-Random>=0.63:${PORTSDIR}/math/p5-Math-Random
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
