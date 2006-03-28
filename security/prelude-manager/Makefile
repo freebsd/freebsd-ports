@@ -6,7 +6,7 @@
 
 PORTNAME=	prelude-manager
 PORTVERSION=	0.9.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://www.prelude-ids.org/download/releases/ \
 MASTER_SITES=	http://www.prelude-ids.org/download/releases/old/
@@ -30,7 +30,7 @@ CONFIGURE_ARGS=		--with-html-dir=${PREFIX}/share/doc \
 .if defined(WITHOUT_DB)
 PLIST_SUB+=	WITH_DB="@comment "
 .else
-LIB_DEPENDS+=	preludedb.2:${PORTSDIR}/security/libpreludedb
+LIB_DEPENDS+=	preludedb.3:${PORTSDIR}/security/libpreludedb
 PLIST_SUB+=	WITH_DB=""
 .endif
 
