@@ -1,0 +1,12 @@
+UPEK TouchChip TFM/ESS Fingerprint BSP is a (binary only) BioAPI BSP which
+provides support for UPEKs fingerprint sensors.
+
+UPEK manufactures both embedded and stand-alone USB-readers, and
+their sensors can be found for example in several notebooks such
+as IBM ThinkPads, ASUS notebooks, Samsung P10, P30, and T10 series,
+NEC Versa and several others.
+
+Installation and configuration instructions are available at
+http://shapeshifter.se/articles/upek_touchchip_freebsd/
+
+WWW: http://www.upek.com
