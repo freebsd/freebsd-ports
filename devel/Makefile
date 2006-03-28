@@ -533,6 +533,7 @@
     SUBDIR += libtap
     SUBDIR += libtar
     SUBDIR += libtecla
+    SUBDIR += libthai
     SUBDIR += libticalcs
     SUBDIR += libtifiles
     SUBDIR += libtool15
