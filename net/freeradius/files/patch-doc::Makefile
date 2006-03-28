@@ -1,21 +1,18 @@
---- doc/Makefile.orig	Sat Aug 13 00:41:24 2005
-+++ doc/Makefile	Wed Oct  5 10:57:06 2005
-@@ -17,14 +17,16 @@
+--- doc/Makefile.orig	Mon Mar 27 15:12:40 2006
++++ doc/Makefile	Mon Mar 27 15:13:06 2006
+@@ -17,6 +17,7 @@
  	@rm -f *~
  
  install:
 +ifndef NOPORTDOCS
  	$(INSTALL) -d -m 755 $(R)$(datadir)/doc
--	$(INSTALL) -d -m 755 $(R)$(datadir)/doc/freeradius-$(RADIUSD_VERSION)
-+	$(INSTALL) -d -m 755 $(R)$(datadir)/doc/freeradius
+ 	$(INSTALL) -d -m 755 $(R)$(datadir)/doc/freeradius
  	for file in *[!~]; do \
- 		if [ -f $$file -a $$file != Makefile ]; then \
--			$(INSTALL) -m 644 $$file $(R)$(datadir)/doc/freeradius-$(RADIUSD_VERSION); \
-+			$(INSTALL) -m 644 $$file $(R)$(datadir)/doc/freeradius; \
+@@ -25,6 +26,7 @@
  		fi; \
  	done
  	@$(MAKE) $(MFLAGS) WHAT_TO_MAKE=$@ common
 +endif
  
- common:
- 	@for dir in $(SUBDIRS); do \
+ common: $(SUBDIRS)
+ 

@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	freeradius
-PORTVERSION=	1.1.0
-PORTREVISION=	2
+PORTVERSION=	1.1.1
+PORTREVISION=	0
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.freeradius.org/pub/radius/ \
 		http://freeradius.portal-to-web.de/
@@ -22,8 +22,7 @@ LOGDIR?=	/var/log
 CONFLICTS=	gnu-radius-1.* openradius-0.* radiusd-cistron-1.*
 
 USE_RC_SUBR=	radiusd.sh
-USE_AUTOTOOLS=	libltdl:15
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libltdl:15 libtool:15
 USE_GMAKE=	yes
 USE_PERL5=	yes
 USE_OPENSSL=	yes
@@ -35,7 +34,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} --quiet --with-logdir=${LOGDIR} \
 		--with-large-files --without-rlm_sql_unixodbc \
 		--without-rlm_sql_oracle --without-rlm_sql_iodbc \
 		--without-rlm_sql_db2
-MAKE_ARGS+=	LDFLAGS=-L${LOCALBASE}/lib
+MAKE_ARGS+=	LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
@@ -50,7 +49,7 @@ OPTIONS=	KERBEROS	"With Kerberos support" off \
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == amd64
-CFLAGS+=	-fPIC
+CONFIGURE_ARGS+=	--with-pic
 .endif
 
 .if defined(WITH_HEIMDAL) && !defined(WITH_KERBEROS)
@@ -127,11 +126,6 @@ PLIST_SUB+=	RLMPERL="@comment "
 PLIST_SUB+=	RLMPERL=""
 .endif
 
-.if ${ARCH} == "amd64"
-CONFIGURE_ARGS+=	--with-pic
-CFLAGS+=	-fPIC
-.endif
-
 INSTALLS_SHLIB=	yes
 
 MAN1=		radclient.1 radeapclient.1 radlast.1 radtest.1 radwho.1 \
@@ -173,22 +167,14 @@ DICTS=		dictionary.3com dictionary.3gpp dictionary.3gpp2 dictionary.acc \
 
 post-patch:
 	@${RM} ${WRKSRC}/doc/Makefile.orig
+.if ${OSVERSION} < 500000
+	@${REINPLACE_CMD} -e 's/-DNO_OPENSSL//' ${WRKSRC}/configure
+.endif
 
 post-install:
 	@${MKDIR} ${PREFIX}/etc/raddb ${DATADIR} ${EXAMPLESDIR}
 .for dict in ${DICTS}
 	${INSTALL_DATA} ${WRKSRC}/share/${dict} ${DATADIR}/${dict}
 .endfor
-.ifdef(WITH_MYSQL)
-	${INSTALL_DATA} \
-	${WRKSRC}/src/modules/rlm_sql/drivers/rlm_sql_mysql/db_mysql.sql \
-	${EXAMPLESDIR}/db_mysql.sql
-.endif
-
-.ifdef(WITH_PGSQL)
-	${INSTALL_DATA} \
-	${WRKSRC}/src/modules/rlm_sql/drivers/rlm_sql_postgresql/db_postgresql.sql \
-	${EXAMPLESDIR}/db_postgresql.sql
-.endif
 
 .include <bsd.port.post.mk>
