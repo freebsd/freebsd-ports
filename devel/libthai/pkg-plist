@@ -20,8 +20,8 @@ lib/libthai.a
 lib/libthai.la
 lib/libthai.so
 lib/libthai.so.0
-lib/pkgconfig/libthai.pc
+libdata/pkgconfig/libthai.pc
 share/nls/en_US.US-ASCII
 share/nls/POSIX
-@dirrm lib/pkgconfig
+@dirrm libdata/pkgconfig
 @dirrm include/thai
