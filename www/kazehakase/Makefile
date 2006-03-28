@@ -7,11 +7,10 @@
 #
 
 PORTNAME=	kazehakase
-PORTVERSION=	0.3.5
-PORTREVISION=	1
+PORTVERSION=	0.3.6
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
-MASTER_SITE_SUBDIR=	${PORTNAME}/18847
+MASTER_SITE_SUBDIR=	${PORTNAME}/19521
 
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Kazehakase is a browser with gecko engine like Epiphany or Galeon
@@ -57,10 +56,6 @@ CONFIGURE_ARGS+=--enable-gtk-webcore
 USE_GHOSTSCRIPT=yes
 .endif
 
-.if exists(${LOCALBASE}/bin/estxview)
-WITH_ESTRAIER=	yes
-.endif
-
 .if defined(WITH_MIGEMO)
 .if ${ARCH} == "i386" || ${ARCH} == "sparc64"
 RUN_DEPENDS+=	migemo:${PORTSDIR}/japanese/migemo
@@ -69,8 +64,13 @@ CONFIGURE_ARGS+=	--enable-migemo
 .endif
 .endif
 
-.if !defined(WITHOUT_ESTRAIER)
-RUN_DEPENDS+=	estxview:${PORTSDIR}/textproc/estraier
+WITH_SEARCH?=	hyperestraier
+.if ${WITH_SEARCH:L}=="rast"
+LIB_DEPENDS+=	rast.1:${PORTSDIR}/textproc/rast
+CONFIGURE_ARGS+=	--with-search-engine=rast
+.else
+LIB_DEPENDS+=	estraier.8:${PORTSDIR}/textproc/hyperestraier
+CONFIGURE_ARGS+=	--with-search-engine=hyperestraier
 .endif
 
 pre-everything::
@@ -79,8 +79,8 @@ pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "Enable Thumbnail support by defining WITH_THUMBNAIL"
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Disable Estraier, A full-text search engine for searching your history"
-	@${ECHO_MSG} " by defining WITHOUT_ESTRAIER"
+	@${ECHO_MSG} "By default the search uses hyperestraier but you can"
+	@${ECHO_MSG} "use rast by using WITH_SEARCH=rast"
 	@${ECHO_MSG} ""
 
 post-patch:
