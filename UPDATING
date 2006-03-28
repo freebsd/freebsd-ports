@@ -2747,7 +2747,7 @@ Option "XkbRules" "xfree86"
     portupgrade -o x11-fonts/xorg-fonts-truetype  XFree86-fontScalable
     portupgrade -o x11-fonts/xorg-fonts-100dpi  XFree86-font100dpi
     portupgrade -o x11-fonts/xorg-fonts-75dpi  XFree86-font75dpi
-    portupgrade -o x11-fonts/xorg-fonts-type1  XFree86-fontDefaultBitmaps
+    portupgrade -o x11-fonts/xorg-fonts-miscbitmaps  XFree86-fontDefaultBitmaps
     portupgrade -o x11-fonts/xorg-fonts-cyrillic  XFree86-fontCyrillic
     portupgrade -o x11-fonts/xorg-fonts-encodings  XFree86-fontEncodings
     portupgrade -o x11-servers/xorg-server  XFree86-Server
