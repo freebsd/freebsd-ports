@@ -22,6 +22,12 @@ TZFILES=	africa antarctica asia australasia etcetera europe \
 		factory northamerica southamerica systemv
 POSIXRULES=	America/New_York
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+EXTRA_PATCHES=	${FILESDIR}/patch4-zone.tab
+.endif
+
 do-build:
 	umask 022; \
 	cd ${WRKSRC}; \
@@ -36,4 +42,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
