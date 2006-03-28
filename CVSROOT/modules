@@ -911,6 +911,7 @@ bsh		ports/java/bsh
 bsmtp		ports/mail/bsmtp
 bsnmpd		ports/net-mgmt/bsnmpd
 bsp		ports/games/bsp
+bsp_upektfmess	ports/security/bsp_upektfmess
 bsvc		ports/emulators/bsvc
 btc		ports/audio/btc
 btoa		ports/converters/btoa
