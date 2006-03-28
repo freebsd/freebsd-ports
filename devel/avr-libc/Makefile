@@ -7,7 +7,7 @@
 
 PORTNAME=	avr-libc
 PORTVERSION=	1.4.3
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
@@ -26,7 +26,8 @@ RUN_DEPENDS=	avr-as:${PORTSDIR}/devel/avr-binutils \
 BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen \
 		latex:${PORTSDIR}/print/teTeX \
 		pdflatex:${PORTSDIR}/print/teTeX \
-		fig2dev:${PORTSDIR}/print/transfig
+		fig2dev:${PORTSDIR}/print/transfig \
+		jpegtopnm:${PORTSDIR}/graphics/netpbm
 .endif
 
 USE_BZIP2=	yes
