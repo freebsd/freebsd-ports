@@ -30,15 +30,15 @@ USE_GMAKE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-OPTIONS=	GNOMEDB "Enable libgnomedb support" off
+#OPTIONS=	GNOMEDB "Enable libgnomedb support" off
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_GNOMEDB)
-USE_GNOME+=		libgnomedb
-CONFIGURE_ARGS+=	--enable-gnome-db
-.else
+#.if defined(WITH_GNOMEDB)
+#USE_GNOME+=		libgnomedb
+#CONFIGURE_ARGS+=	--enable-gnome-db
+#.else
 CONFIGURE_ARGS+=	--disable-gnome-db
-.endif
+#.endif
 
 .include <bsd.port.post.mk>
