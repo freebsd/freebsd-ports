@@ -31,9 +31,9 @@ IGNORE=		you must manually fetch the source distribution (${DISTFILES}) from ${D
 .endif
 
 do-install:
-	@${MKDIR} ${PREFIX}/netbeans
-	@${CP} -r ${WRKSRC}/* ${PREFIX}/netbeans
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/netbeans
-	@${LN} -sf ${PREFIX}/netbeans/bin/netbeans ${PREFIX}/bin/netbeans
+	@${MKDIR} ${PREFIX}/netbeans4
+	@${CP} -r ${WRKSRC}/* ${PREFIX}/netbeans4
+	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/netbeans4
+	@${LN} -sf ${PREFIX}/netbeans4/bin/netbeans ${PREFIX}/bin/netbeans4
 
 .include <bsd.port.post.mk>
