@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Net/IP/Resolver.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/IP/Resolver/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/IP/Resolver
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/IP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
+@dirrmtry %%SITE_PERL%%/Net/IP
+@dirrmtry %%SITE_PERL%%/Net
