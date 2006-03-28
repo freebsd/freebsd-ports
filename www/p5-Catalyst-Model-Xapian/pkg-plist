@@ -1,0 +1,6 @@
+%%SITE_PERL%%/Catalyst/Helper/Model/Xapian.pm
+%%SITE_PERL%%/Catalyst/Model/Xapian.pm
+@dirrmtry %%SITE_PERL%%/Catalyst/Helper/Model
+@dirrmtry %%SITE_PERL%%/Catalyst/Helper
+@dirrmtry %%SITE_PERL%%/Catalyst/Model
+@dirrmtry %%SITE_PERL%%/Catalyst
