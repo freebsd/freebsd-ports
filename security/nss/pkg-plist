@@ -113,6 +113,7 @@ include/nss/nss/sslerr.h
 include/nss/nss/sslproto.h
 include/nss/nss/sslt.h
 include/nss/nss/watcomfx.h
+lib/libcrmf.a
 lib/libfreebl3.so
 lib/libfreebl3.so.1
 lib/libnss3.so

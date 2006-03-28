@@ -7,6 +7,7 @@
 
 PORTNAME=	nss
 PORTVERSION=	3.11
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	security/nss/releases/NSS_${PORTVERSION:S/./_/g}_RTM/src
@@ -22,7 +23,6 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/mozilla/security/nss
 INSTALLS_SHLIB=	yes
 USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
-USE_REINPLACE=	yes
 MAKE_ENV=	BSD_LDOPTS="${PTHREAD_LIBS} -L${LOCALBASE}/lib" \
 		BUILD_OPT=1
 ALL_TARGET=	nss_build_all
@@ -74,6 +74,8 @@ do-install:
 	${TAR} -C ${DIST}/public --dereference -cf - . | \
 		${TAR} -C ${PREFIX}/include/nss -xf -
 	${INSTALL_PROGRAM} ${DIST}/FreeBSD${OSREL:C/.$/*/}_OPT.OBJ/lib/*.so.1 \
+		${PREFIX}/lib
+	${INSTALL_PROGRAM} ${DIST}/FreeBSD${OSREL:C/.$/*/}_OPT.OBJ/lib/libcrmf.a \
 		${PREFIX}/lib
 	${INSTALL_PROGRAM} `${SED}	\
 	    -e 's|^bin/|${DIST}/FreeBSD${OSREL:C/.$/*/}_OPT.OBJ/bin/|' \
