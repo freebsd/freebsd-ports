@@ -510,6 +510,7 @@
     SUBDIR += p5-Catalyst-Model-DBIC
     SUBDIR += p5-Catalyst-Model-DBIC-Plain
     SUBDIR += p5-Catalyst-Model-DBIC-Schema
+    SUBDIR += p5-Catalyst-Model-Xapian
     SUBDIR += p5-Catalyst-Plugin-Authentication
     SUBDIR += p5-Catalyst-Plugin-Authentication-CDBI
     SUBDIR += p5-Catalyst-Plugin-Authentication-Store-DBIC
