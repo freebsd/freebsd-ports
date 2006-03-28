@@ -8422,6 +8422,7 @@ p5-LJ-TextMessage	ports/sysutils/p5-LJ-TextMessage
 p5-LWP-Authen-Wsse	ports/www/p5-LWP-Authen-Wsse
 p5-Lingua-Conjunction	ports/textproc/p5-Lingua-Conjunction
 p5-Lingua-EN-AddressParse	ports/textproc/p5-Lingua-EN-AddressParse
+p5-Lingua-EN-Fathom	ports/textproc/p5-Lingua-EN-Fathom
 p5-Lingua-EN-Gender	ports/textproc/p5-Lingua-EN-Gender
 p5-Lingua-EN-Infinitive	ports/textproc/p5-Lingua-EN-Infinitive
 p5-Lingua-EN-Inflect	ports/textproc/p5-Lingua-EN-Inflect
@@ -8652,6 +8653,7 @@ p5-Net-ICQ2000	ports/net-im/p5-Net-ICQ2000
 p5-Net-IMAP-Simple	ports/mail/p5-Net-IMAP-Simple
 p5-Net-IMAP-Simple-SSL	ports/mail/p5-Net-IMAP-Simple-SSL
 p5-Net-IP	ports/net-mgmt/p5-Net-IP
+p5-Net-IP-Match-XS	ports/net-mgmt/p5-Net-IP-Match-XS
 p5-Net-IP-Resolver	ports/net-mgmt/p5-Net-IP-Resolver
 p5-Net-IPv4Addr	ports/net-mgmt/p5-Net-IPv4Addr
 p5-Net-IPv6Addr	ports/net-mgmt/p5-Net-IPv6Addr
