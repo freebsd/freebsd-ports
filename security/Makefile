@@ -41,6 +41,7 @@
     SUBDIR += bro
     SUBDIR += bruteforceblocker
     SUBDIR += bsdsfv
+    SUBDIR += bsp_upektfmess
     SUBDIR += bubblegum
     SUBDIR += bugs
     SUBDIR += ca-roots

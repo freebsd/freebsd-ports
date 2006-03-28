@@ -1,0 +1,10 @@
+#/bin/sh
+#
+# This will physically remove the file aswell.
+#
+
+if [ "$2" != "DEINSTALL" ]; then
+	exit 0
+fi
+
+mod_install -u libtfmessbsp.so
