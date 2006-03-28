@@ -31,6 +31,7 @@ include/libgdamm-2.0/libgdamm/transaction.h
 include/libgdamm-2.0/libgdamm/value.h
 include/libgdamm-2.0/libgdamm/wrap_init.h
 lib/libgdamm-1.3.a
+lib/libgdamm-1.3.la
 lib/libgdamm-1.3.so
 lib/libgdamm-1.3.so.7
 lib/libgdamm-2.0/include/libgdammconfig.h
