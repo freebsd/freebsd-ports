@@ -22,7 +22,7 @@ USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix intlhack gnomehack libgnomeui
+USE_GNOME=	gnomeprefix intlhack gnomehack libgnomeui gnomedocutils
 INSTALLS_OMF=	yes
 CONFIGURE_ARGS=	--enable-dbus=yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
