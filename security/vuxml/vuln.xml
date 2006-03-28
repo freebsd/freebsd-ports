@@ -34,6 +34,37 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="2db97aa6-be81-11da-9b82-0050bf27ba24">
+    <topic>horde -- remote code execution vulnerability in the help
+      viewer</topic>
+    <affects>
+      <package>
+	<name>horde</name>
+	<name>horde-php5</name>
+	<range><lt>3.1.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Horde 3.1.1 release announcement:</p>
+	<blockquote cite="http://lists.horde.org/archives/announce/2006/000271.html">
+	  <p>Major changes compared to Horde 3.1 are:</p>
+	    <ul><li>Security Fixes</li>
+	    <li>Fix for remote code execution vulnerability in the help
+	    viewer, discovered by Jan Schneider from the Horde team.</li>
+            </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://lists.horde.org/archives/announce/2006/000271.html</url>
+    </references>
+    <dates>
+      <discovery>2006-03-28</discovery>
+      <entry>2006-03-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="25858c37-bdab-11da-b7d4-00123ffe8333">
     <topic>linux-realplayer -- buffer overrun</topic>
     <affects>
