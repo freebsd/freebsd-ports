@@ -80,7 +80,6 @@ RUN_DEPENDS+=	${COMBOLIBDIR}/libobjc.so:${PORTSDIR}/${GNUSTEP_OBJC_PORT}
 .endif
 .endif
 
-GNUSTEP_GCC_PORT?=	lang/gcc-objc
 GNUSTEP_MAKE_PORT?=	devel/gnustep-make
 GNUSTEP_OBJC_PORT?=	lang/gnustep-objc
 GNUSTEP_BASE_PORT?=	lang/gnustep-base
@@ -129,30 +128,30 @@ PLIST_SUB+=	MAJORLIBVERSION=${DEFAULT_LIBVERSION:C/([0-9]).*/\1/1}
 GNUSTEP_WITH_GCC34=	yes
 .endif
 .endif
+
 .if defined(GNUSTEP_WITH_GCC32)
-CC=		gcc32
-CXX=		g++32
+GCCSUFFIX=32
+GNUSTEP_GCC_PORT?=	lang/gcc-objc
 .endif
 .if defined(GNUSTEP_WITH_GCC33)
-CC=		gcc33
-CXX=		g++33
+GCCSUFFIX=33
 .endif
 .if defined(GNUSTEP_WITH_GCC34)
-CC=		gcc34
-CXX=		g++34
+GCCSUFFIX=34
 .endif
 .if defined(GNUSTEP_WITH_GCC40)
-CC=		gcc40
-CXX=		g++40
+GCCSUFFIX=40
 .endif
 .if defined(GNUSTEP_WITH_GCC41)
-CC=		gcc41
-CXX=		g++41
+GCCSUFFIX=41
 .endif
 .if defined(GNUSTEP_WITH_GCC42)
-CC=		gcc42
-CXX=		g++42
+GCCSUFFIX=42
 .endif
+CC=		gcc${GCCSUFFIX}
+CXX=		g++${GCCSUFFIX}
+GNUSTEP_GCC_PORT?=	lang/gcc${GCCSUFFIX}
+
 .endif
 
 # ---------------------------------------------------------------------------
