@@ -31,11 +31,13 @@ WANT_THREADS_SUPPORT=	yes
 MASTERDIR?=		${.CURDIR}/../gcc33
 CONFLICTS?=		gcc-3.3*
 COMMENT2=		3.3.x
+BROKEN=			libobjc.so missing
 .endif
 .if defined(GNUSTEP_WITH_GCC34)
 MASTERDIR?=		${.CURDIR}/../gcc34
 CONFLICTS?=		gcc-3.4*
 COMMENT2=		3.4.x
+BROKEN=			libobjc.so missing
 .endif
 .if defined(GNUSTEP_WITH_GCC40)
 MASTERDIR?=		${.CURDIR}/../gcc40
