@@ -25,4 +25,8 @@ MAN3=	libthai.3 thctype.3 wtt.3
 pre-configure:
 	${SH} ${WRKSRC}/autogen.sh
 
+post-patch:
+	@${REINPLACE_CMD} -E 's,^(pkgconfigdir = ).*$$,\1$$(prefix)/libdata/pkgconfig,' \
+		${WRKSRC}/Makefile.am
+
 .include <bsd.port.mk>
