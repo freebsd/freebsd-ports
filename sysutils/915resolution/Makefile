@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	915resolution
-PORTVERSION=	0.5
+PORTVERSION=	0.5.2
 PORTEPOCH=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.geocities.com/stomljen/ \
