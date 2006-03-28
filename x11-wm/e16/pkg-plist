@@ -377,6 +377,10 @@ bin/starte16
 %%DATADIR%%/themes/winter/ttfonts/VeraBd.ttf
 share/xsessions/e16.desktop
 @dirrm %%DATADIR%%/E-docs
+@dirrm %%DATADIR%%/config/pix
+@dirrm %%DATADIR%%/config
+@dirrm %%DATADIR%%/misc
+@dirrm %%DATADIR%%/scripts
 @dirrm %%DATADIR%%/themes/winter/ABOUT
 @dirrm %%DATADIR%%/themes/winter/backgrounds/images
 @dirrm %%DATADIR%%/themes/winter/backgrounds
@@ -433,11 +437,9 @@ share/xsessions/e16.desktop
 @dirrm %%DATADIR%%/themes/winter/ttfonts
 @dirrm %%DATADIR%%/themes/winter
 @dirrm %%DATADIR%%/themes
-@dirrm %%DATADIR%%/scripts
-@dirrm %%DATADIR%%/misc
-@dirrm %%DATADIR%%/config/pix
-@dirrm %%DATADIR%%/config
 @dirrm %%DATADIR%%
+@dirrmtry share/locale/en_US/LC_MESSAGS
+@dirrmtry share/locale/en_US
 @dirrmtry etc/X11/dm/Sessions
 @dirrmtry etc/X11/dm
 @dirrmtry etc/X11
