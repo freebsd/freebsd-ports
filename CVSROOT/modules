@@ -10310,6 +10310,7 @@ ports_x11_servers	ports/x11-servers
 ports_x11_themes	ports/x11-themes
 ports_x11_toolkits	ports/x11-toolkits
 ports_x11_wm	ports/x11-wm
+ports_zoneinfo	ports/misc/zoneinfo
 portscanner	ports/security/portscanner
 portsearch	ports/sysutils/portsearch
 portsentry	ports/security/portsentry
@@ -14355,7 +14356,6 @@ zoidberg	ports/shells/zoidberg
 zoinks		ports/editors/zoinks
 zombiezapper	ports/security/zombiezapper
 zonecheck	ports/dns/zonecheck
-zoneinfo	ports/misc/zoneinfo
 zonenotify	ports/dns/zonenotify
 zoo		ports/archivers/zoo
 zoom		ports/games/zoom
