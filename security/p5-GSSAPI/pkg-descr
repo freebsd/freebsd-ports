@@ -1,0 +1,5 @@
+This module gives access to the routines of the GSSAPI library,
+as described in rfc2743 and rfc2744 and implemented by the
+Kerberos-1.2 distribution from MIT.
+
+WWW: http://search.cpan.org/dist/GSSAPI/
