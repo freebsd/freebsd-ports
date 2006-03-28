@@ -609,6 +609,7 @@
 %%HORDEDIR%%/scripts/sql/horde_prefs.mssql.sql
 %%HORDEDIR%%/scripts/sql/horde_prefs.sql
 %%HORDEDIR%%/scripts/sql/horde_sessionhandler.mssql.sql
+%%HORDEDIR%%/scripts/sql/horde_sessionhandler.mysql.sql
 %%HORDEDIR%%/scripts/sql/horde_sessionhandler.oci8.sql
 %%HORDEDIR%%/scripts/sql/horde_sessionhandler.pgsql.sql
 %%HORDEDIR%%/scripts/sql/horde_sessionhandler.sapdb.sql
@@ -1417,8 +1418,8 @@
 %%HORDEDIR%%/themes/ideas/graphics/menu_top.png
 %%HORDEDIR%%/themes/ideas/info.php
 %%HORDEDIR%%/themes/ideas/screen.css
-%%HORDEDIR%%/themes/ie.css
 %%HORDEDIR%%/themes/ie5mac.css
+%%HORDEDIR%%/themes/ie6_or_less.css
 %%HORDEDIR%%/themes/kolab/graphics/bg.png
 %%HORDEDIR%%/themes/kolab/graphics/kolab.png
 %%HORDEDIR%%/themes/kolab/graphics/kolablogo.png

@@ -5,6 +5,9 @@ merge your files %%HORDEDIR%%/config/conf.php.new
 and %%HORDEDIR%%/config/conf.php.previous
 into %%HORDEDIR%%/config/conf.php .
 
+WARNING! the first user will get logged in as an administrator!
+********
+
 If you want Horde to access a database, you have to run the
 appropriate scripts located in %%HORDEDIR%%/scripts/sql.
 It is recommended that you change the password of the 'hordemgr'
@@ -18,6 +21,7 @@ You can now access Horde without a password at <http://localhost/horde/>,
 and you will be logged in as an administrator. You should first configure
 a real authentication backend.  Click on "Setup" in the "Administration"
 menu and configure Horde. Start in the "Authentication" tab.
+
 See the doc in %%DOCSDIR%% for details.
 (tip: if you plan to install IMP, just keep "Automatic authentication as
 a certain user", add your login to be treated as administrator, and once
