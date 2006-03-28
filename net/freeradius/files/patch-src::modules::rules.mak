@@ -1,11 +1,11 @@
---- src/modules/rules.mak.orig	Sun Jul 31 22:48:01 2005
-+++ src/modules/rules.mak	Wed Oct  5 10:57:50 2005
-@@ -96,7 +96,7 @@
+--- src/modules/rules.mak.orig	Mon Mar 27 15:43:04 2006
++++ src/modules/rules.mak	Mon Mar 27 15:44:11 2006
+@@ -112,7 +112,7 @@
  
- $(TARGET).la: $(DYNAMIC_OBJS)
+ $(TARGET).la: $(LT_OBJS)
  	$(LIBTOOL) --mode=link $(CC) -release $(RADIUSD_VERSION) \
--	-module $(LINK_MODE) $(LDFLAGS) $(RLM_LDFLAGS) \
-+	-module $(LINK_MODE) $(CFLAGS) $(RLM_CFLAGS) $(LDFLAGS) $(RLM_LDFLAGS) \
- 	-o $@ -rpath $(libdir) $^ $(RLM_LIBS) $(LIBS)
+-	-module $(LINK_MODE) $(LDFLAGS) $(RLM_LDFLAGS) -o $@     \
++	-module $(LINK_MODE) $(CFLAGS) $(RLM_CFLAGS) $(LDFLAGS) $(RLM_LDFLAGS) -o $@ \
+ 	-rpath $(libdir) $^ $(top_builddir)/src/lib/libradius.la \
+ 	$(RLM_LIBS) $(LIBS)
  
- #######################################################################

@@ -11,33 +11,33 @@ bin/rlm_dbm_cat
 bin/rlm_dbm_parser
 bin/rlm_ippool_tool
 bin/smbencrypt
-etc/raddb/certs/demoCA/serial.old
-etc/raddb/certs/demoCA/serial
-etc/raddb/certs/demoCA/index.txt.old
-etc/raddb/certs/demoCA/index.txt
-etc/raddb/certs/demoCA/cacert.pem
-etc/raddb/certs/root.p12
-etc/raddb/certs/root.der
-etc/raddb/certs/random
-etc/raddb/certs/newreq.pem
-etc/raddb/certs/newcert.pem
-etc/raddb/certs/dh
-etc/raddb/certs/cert-srv.pem
-etc/raddb/certs/cert-srv.p12
-etc/raddb/certs/cert-srv.der
-etc/raddb/certs/cert-clt.pem
-etc/raddb/certs/cert-clt.p12
-etc/raddb/certs/cert-clt.der
-etc/raddb/certs/root.pem
-etc/raddb/certs/README
 etc/raddb/acct_users.sample
 etc/raddb/attrs.sample
-etc/raddb/clients.sample
+etc/raddb/certs/README
+etc/raddb/certs/cert-clt.der
+etc/raddb/certs/cert-clt.p12
+etc/raddb/certs/cert-clt.pem
+etc/raddb/certs/cert-srv.der
+etc/raddb/certs/cert-srv.p12
+etc/raddb/certs/cert-srv.pem
+etc/raddb/certs/demoCA/cacert.pem
+etc/raddb/certs/demoCA/index.txt
+etc/raddb/certs/demoCA/index.txt.old
+etc/raddb/certs/demoCA/serial
+etc/raddb/certs/demoCA/serial.old
+etc/raddb/certs/dh
+etc/raddb/certs/newcert.pem
+etc/raddb/certs/newreq.pem
+etc/raddb/certs/random
+etc/raddb/certs/root.der
+etc/raddb/certs/root.p12
+etc/raddb/certs/root.pem
 etc/raddb/clients.conf.sample
+etc/raddb/clients.sample
 etc/raddb/dictionary.sample
+etc/raddb/eap.conf.sample
 etc/raddb/example.pl
 etc/raddb/experimental.conf.sample
-etc/raddb/eap.conf.sample
 etc/raddb/hints.sample
 etc/raddb/huntgroups.sample
 etc/raddb/ldap.attrmap.sample
@@ -280,11 +280,6 @@ lib/rlm_sql_log-%%PORTVERSION%%.so
 lib/rlm_sql_log.a
 lib/rlm_sql_log.la
 lib/rlm_sql_log.so
-lib/rlm_sqlcounter-%%PORTVERSION%%.la
-lib/rlm_sqlcounter-%%PORTVERSION%%.so
-lib/rlm_sqlcounter.a
-lib/rlm_sqlcounter.la
-lib/rlm_sqlcounter.so
 %%MYSQL%%lib/rlm_sql_mysql-%%PORTVERSION%%.so
 %%MYSQL%%lib/rlm_sql_mysql.a
 %%MYSQL%%lib/rlm_sql_mysql.la
@@ -293,6 +288,11 @@ lib/rlm_sqlcounter.so
 %%PGSQL%%lib/rlm_sql_postgresql.a
 %%PGSQL%%lib/rlm_sql_postgresql.la
 %%PGSQL%%lib/rlm_sql_postgresql.so
+lib/rlm_sqlcounter-%%PORTVERSION%%.la
+lib/rlm_sqlcounter-%%PORTVERSION%%.so
+lib/rlm_sqlcounter.a
+lib/rlm_sqlcounter.la
+lib/rlm_sqlcounter.so
 lib/rlm_unix-%%PORTVERSION%%.la
 lib/rlm_unix-%%PORTVERSION%%.so
 lib/rlm_unix.a
@@ -303,16 +303,15 @@ sbin/checkrad
 sbin/radiusd
 sbin/radwatch
 sbin/rc.radiusd
-%%PORTDOCS%%%%DOCSDIR%%/Autz-Type
 %%PORTDOCS%%%%DOCSDIR%%/Acct-Type
+%%PORTDOCS%%%%DOCSDIR%%/Autz-Type
 %%PORTDOCS%%%%DOCSDIR%%/CYGWIN
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/DIFFS
 %%PORTDOCS%%%%DOCSDIR%%/MACOSX
 %%PORTDOCS%%%%DOCSDIR%%/OS2
 %%PORTDOCS%%%%DOCSDIR%%/Post-Auth-Type
-%%PORTDOCS%%%%DOCSDIR%%/RADIUS-LDAP.schema
-%%PORTDOCS%%%%DOCSDIR%%/RADIUS-LDAPv3.schema
+%%PORTDOCS%%%%DOCSDIR%%/RADIUS-LDAP-eDirectory
 %%PORTDOCS%%%%DOCSDIR%%/RADIUS-SQL.schema
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/Session-Type
@@ -325,10 +324,18 @@ sbin/rc.radiusd
 %%PORTDOCS%%%%DOCSDIR%%/coding-methods.txt
 %%PORTDOCS%%%%DOCSDIR%%/configurable_failover
 %%PORTDOCS%%%%DOCSDIR%%/duplicate-users
+%%PORTDOCS%%%%DOCSDIR%%/examples/iplanet.ldif
+%%PORTDOCS%%%%DOCSDIR%%/examples/iplanet.schema
+%%PORTDOCS%%%%DOCSDIR%%/examples/mssql.sql
+%%PORTDOCS%%%%DOCSDIR%%/examples/mysql.sql
+%%PORTDOCS%%%%DOCSDIR%%/examples/openldap.schema
+%%PORTDOCS%%%%DOCSDIR%%/examples/oracle.sql
+%%PORTDOCS%%%%DOCSDIR%%/examples/postgresql.sql
 %%PORTDOCS%%%%DOCSDIR%%/ldap_howto.txt
 %%PORTDOCS%%%%DOCSDIR%%/load-balance.txt
 %%PORTDOCS%%%%DOCSDIR%%/misc-nas
 %%PORTDOCS%%%%DOCSDIR%%/module_interface
+%%PORTDOCS%%%%DOCSDIR%%/mssql
 %%PORTDOCS%%%%DOCSDIR%%/performance-testing
 %%PORTDOCS%%%%DOCSDIR%%/processing_users_file
 %%PORTDOCS%%%%DOCSDIR%%/proxy
@@ -426,6 +433,7 @@ sbin/rc.radiusd
 %%DATADIR%%/dictionary.gandalf
 %%DATADIR%%/dictionary.garderos
 %%DATADIR%%/dictionary.gemtek
+%%DATADIR%%/dictionary.hp
 %%DATADIR%%/dictionary.ipunplugged
 %%DATADIR%%/dictionary.issanni
 %%DATADIR%%/dictionary.itk
@@ -442,6 +450,7 @@ sbin/rc.radiusd
 %%DATADIR%%/dictionary.netscreen
 %%DATADIR%%/dictionary.nokia
 %%DATADIR%%/dictionary.nomadix
+%%DATADIR%%/dictionary.nortel
 %%DATADIR%%/dictionary.ntua
 %%DATADIR%%/dictionary.packeteer
 %%DATADIR%%/dictionary.propel
@@ -474,16 +483,16 @@ sbin/rc.radiusd
 %%DATADIR%%/dictionary.xedia
 %%DATADIR%%/dictionary.xylan
 %%DATADIR%%/dictionary.zyxel
-%%MYSQL%%%%EXAMPLESDIR%%/db_mysql.sql
-%%PGSQL%%%%EXAMPLESDIR%%/db_postgresql.sql
-@dirrm %%DATADIR%%
 @dirrm %%EXAMPLESDIR%%
+@dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/rfc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm etc/raddb/certs/demoCA
+@dirrm etc/raddb/certs/demoCA   
 @dirrm etc/raddb/certs
-@exec mkdir -p /var/log/raddb
+@exec mkdir -p /var/log/raddb 
 @exec chmod -R og= /var/log/raddb
 @exec mkdir -p /var/run/radiusd
 @unexec rm -fr /var/run/radiusd
 @unexec rmdir %D/etc/raddb 2> /dev/null || echo "You should remove %D/etc/raddb if you don't need it anymore."
+
