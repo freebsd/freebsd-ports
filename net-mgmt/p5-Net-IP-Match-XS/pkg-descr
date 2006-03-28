@@ -1,0 +1,7 @@
+The Net::IP::Match::XS module efficiently matches IP addresses against
+IP ranges.  The unconditionally exported subroutine 'match_ip'
+determines if the ip to match ( first argument ) matches any of the
+subsequent ip arguments.  Match arguments may be absolute quads, as
+'127.0.0.1', or contain mask bits as '111.245.76.248/29'.
+
+WWW: http://search.cpan.org/dist/Net-IP-Match-XS/
