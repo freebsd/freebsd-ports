@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Module-Build
-PORTVERSION=	0.26.11
-PORTREVISION=	1
+PORTVERSION=	0.26.12
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Module/KWILLIAMS
@@ -18,8 +17,6 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Build and install Perl modules
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathTools \
-		${SITE_PERL}/Archive/Tar.pm:${PORTSDIR}/archivers/p5-Archive-Tar \
-		${SITE_PERL}/YAML.pm:${PORTSDIR}/textproc/p5-YAML \
 		${SITE_PERL}/ExtUtils/CBuilder.pm:${PORTSDIR}/devel/p5-ExtUtils-CBuilder
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
@@ -38,6 +35,8 @@ post-install:
 
 .if ${PERL_LEVEL} > 500600
 BUILD_DEPENDS+=	${SITE_PERL}/ExtUtils/ParseXS.pm:${PORTSDIR}/devel/p5-ExtUtils-ParseXS
+BUILD_DEPENDS+=	${SITE_PERL}/Archive/Tar.pm:${PORTSDIR}/archivers/p5-Archive-Tar
+BUILD_DEPENDS+=	${SITE_PERL}/YAML.pm:${PORTSDIR}/textproc/p5-YAML
 
 MAN3=		Module::Build.3 \
 		Module::Build::Base.3 \
