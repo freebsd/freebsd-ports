@@ -213,6 +213,7 @@
 %%RCUBEDIR%%/program/steps/mail/mark.inc
 %%RCUBEDIR%%/program/steps/mail/move_del.inc
 %%RCUBEDIR%%/program/steps/mail/rss.inc
+%%RCUBEDIR%%/program/steps/mail/search.inc
 %%RCUBEDIR%%/program/steps/mail/sendmail.inc
 %%RCUBEDIR%%/program/steps/mail/show.inc
 %%RCUBEDIR%%/program/steps/mail/upload.inc
@@ -295,6 +296,7 @@
 %%RCUBEDIR%%/skins/default/images/icons/forwarded.png
 %%RCUBEDIR%%/skins/default/images/icons/plus.gif
 %%RCUBEDIR%%/skins/default/images/icons/replied.png
+%%RCUBEDIR%%/skins/default/images/icons/reset.gif
 %%RCUBEDIR%%/skins/default/images/icons/silhouette.png
 %%RCUBEDIR%%/skins/default/images/icons/unread.png
 %%RCUBEDIR%%/skins/default/images/listheader_aqua.gif
