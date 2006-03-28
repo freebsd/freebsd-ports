@@ -58,3 +58,5 @@ COMMENT2=		4.2.x
 .endif
 
 .include "${MASTERDIR}/Makefile"
+
+PORTEPOCH=		2
