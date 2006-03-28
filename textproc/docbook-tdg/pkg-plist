@@ -232,6 +232,7 @@
 %%DOCSDIR%%/html/lotentry.html
 %%DOCSDIR%%/html/manvolnum.html
 %%DOCSDIR%%/html/markup.html
+%%DOCSDIR%%/html/mathphrase.html
 %%DOCSDIR%%/html/medialabel.html
 %%DOCSDIR%%/html/mediaobject.html
 %%DOCSDIR%%/html/mediaobjectco.html
@@ -440,6 +441,7 @@
 %%DOCSDIR%%/html/tbody.html
 %%DOCSDIR%%/html/td.html
 %%DOCSDIR%%/html/term.html
+%%DOCSDIR%%/html/termdef.html
 %%DOCSDIR%%/html/tertiary.html
 %%DOCSDIR%%/html/tertiaryie.html
 %%DOCSDIR%%/html/textdata.html
@@ -521,6 +523,7 @@
 %%DOCSDIR%%/html/figures/rev_4.2.png
 %%DOCSDIR%%/html/figures/rev_4.3.png
 %%DOCSDIR%%/html/figures/rev_4.4.png
+%%DOCSDIR%%/html/figures/rev_4.5.png
 %%DOCSDIR%%/html/figures/rev_5.0.gif
 %%DOCSDIR%%/html/figures/rev_5.0.png
 %%DOCSDIR%%/html/figures/rev_ebnf.gif
