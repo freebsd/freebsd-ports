@@ -7,7 +7,7 @@
 
 PORTNAME?=	ipw-firmware
 PORTVERSION=	${FWVERSION}
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	flz/ipw
@@ -26,6 +26,7 @@ FIRMWARES?=	${FWNAME:C/fw-//}-i.fw:${DRIVERNAME}_ibss \
 
 WRKSRC=		${WRKDIR}
 KMODDIR=	/boot/modules
+KMODVERSION=	${FWVERSION:C/^(...)$/\1.0/:S/.//g}
 PLIST_SUB=	DRIVERNAME="${DRIVERNAME}" \
 		KMODDIR="${KMODDIR}"
 MAKE_ENV=	KMODDIR="${KMODDIR}"
@@ -45,7 +46,7 @@ post-patch:
 	@${MKDIR} ${WRKSRC}/${i:C/.*://}
 	@${MV} ${WRKSRC}/${i:C/:.*//} ${WRKSRC}/${i:C/.*://}/${i:C/.*://:S/$/.fw/}
 	@${ECHO_CMD} "KMOD= ${i:C/.*://}" > ${WRKSRC}/${i:C/.*://}/Makefile
-	@${ECHO_CMD} "FIRMWS= ${i:C/.*://:S/$/.fw/}:${i:C/.*://}" >> \
+	@${ECHO_CMD} "FIRMWS= ${i:C/.*://:S/$/.fw/}:${i:C/.*://}:${KMODVERSION}" >> \
 		${WRKSRC}/${i:C/.*://}/Makefile
 	@${ECHO_CMD} ".include <bsd.kmod.mk>" >> ${WRKSRC}/${i:C/.*://}/Makefile
 .endfor
