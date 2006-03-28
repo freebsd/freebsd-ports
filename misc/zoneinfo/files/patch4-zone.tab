@@ -1,0 +1,11 @@
+--- zone.tab.orig	Tue Mar 28 13:09:09 2006
++++ zone.tab	Tue Mar 28 13:09:18 2006
+@@ -65,7 +65,7 @@
+ AU	-1228+13050	Australia/Darwin	Northern Territory
+ AU	-3157+11551	Australia/Perth	Western Australia
+ AW	+1230-06858	America/Aruba
+-AX	+6006+01957	Europe/Mariehamn
++#AX	+6006+01957	Europe/Mariehamn
+ AZ	+4023+04951	Asia/Baku
+ BA	+4352+01825	Europe/Sarajevo
+ BB	+1306-05937	America/Barbados
