@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	masqmail
-PORTVERSION=	0.2.20
-PORTREVISION=	1
+PORTVERSION=	0.2.21
 CATEGORIES=	mail
-MASTER_SITES=	http://santinel.bas-net.by/ports/
-#		http://innominate.org/kurth/masqmail/download/
+MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
+DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
 MAINTAINER=	anray@FreeBSD.org
 COMMENT=	Mail server for hosts, not permanently connected to the internet
@@ -23,6 +22,7 @@ CFLAGS+=	-Wno-trigraphs
 CONFIGURE_ARGS+=	--mandir=${PREFIX}/man --with-user=mailnull --with-group=mail \
 		--with-confdir=${PREFIX}/etc/masqmail --with-logdir=/var/log/masqmail
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 .if defined(WITH_LIBCRYPTO)
 CONFIGURE_ARGS+=	--with-libcrypto
