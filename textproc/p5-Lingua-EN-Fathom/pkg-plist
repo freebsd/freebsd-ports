@@ -1,0 +1,9 @@
+%%SITE_PERL%%/Lingua/EN/Fathom.pm
+%%SITE_PERL%%/Lingua/EN/demo.pl
+%%SITE_PERL%%/Lingua/EN/demo_recurse.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/EN/Fathom/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/EN/Fathom
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/EN
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua
+@dirrmtry %%SITE_PERL%%/Lingua/EN
+@dirrmtry %%SITE_PERL%%/Lingua
