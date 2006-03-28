@@ -127,6 +127,7 @@
     SUBDIR += p5-Net-CIDR
     SUBDIR += p5-Net-IP
     SUBDIR += p5-Net-IP-Match-XS
+    SUBDIR += p5-Net-IP-Resolver
     SUBDIR += p5-Net-IPv4Addr
     SUBDIR += p5-Net-IPv6Addr
     SUBDIR += p5-Net-Netmask

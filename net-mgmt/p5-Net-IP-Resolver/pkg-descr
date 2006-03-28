@@ -1,0 +1,5 @@
+Net::IP::Resolver provides a mechanism for registering a number of
+different networks (specified by a set of ip ranges), and then finding
+the network for a given IP based on this specification.
+
+WWW: http://search.cpan.org/dist/Net-IP-Resolver/
