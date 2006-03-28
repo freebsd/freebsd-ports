@@ -7,6 +7,7 @@
 
 PORTNAME=	Authen-SASL
 PORTVERSION=	2.10
+PORTREVISION=	1
 CATEGORIES=	security perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Authen
@@ -17,7 +18,8 @@ COMMENT=	Perl5 module for SASL authentication
 
 BUILD_DEPENDS=	\
 	p5-Digest-MD5>0:${PORTSDIR}/security/p5-Digest-MD5 \
-	p5-Digest-HMAC>0:${PORTSDIR}/security/p5-Digest-HMAC
+	p5-Digest-HMAC>0:${PORTSDIR}/security/p5-Digest-HMAC \
+	p5-GSSAPI>0:${PORTSDIR}/security/p5-GSSAPI
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
