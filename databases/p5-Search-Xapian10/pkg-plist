@@ -12,11 +12,13 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Search/Xapian/MSet.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Search/Xapian/MSet/Tied.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Search/Xapian/MSetIterator.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Search/Xapian/PerlStopper.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Search/Xapian/PositionIterator.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Search/Xapian/PostingIterator.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Search/Xapian/Query.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Search/Xapian/QueryParser.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Search/Xapian/RSet.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Search/Xapian/SimpleStopper.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Search/Xapian/Stem.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Search/Xapian/Stopper.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Search/Xapian/TermIterator.pm
