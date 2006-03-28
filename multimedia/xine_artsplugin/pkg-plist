@@ -1,5 +1,7 @@
+lib/kde3/videothumbnail.a
 lib/kde3/videothumbnail.la
 lib/kde3/videothumbnail.so
+lib/libarts_xine.a
 lib/libarts_xine.la
 lib/libarts_xine.so
 lib/mcop/xineAudioPlayObject.mcopclass
