@@ -8,6 +8,7 @@
 
 PORTNAME=	sudoku
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.laurasia.com.au/downloads/
 EXTRACT_SUFX=	.tgz
