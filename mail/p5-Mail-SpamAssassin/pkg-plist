@@ -1,4 +1,5 @@
 @unexec %D/etc/rc.d/sa-spamd.sh stop > /dev/null 2>&1 || true
+@unexec %D/etc/rc.d/sa-spamd stop > /dev/null 2>&1 || true
 bin/sa-learn
 bin/sa-update
 bin/spamassassin
@@ -11,7 +12,6 @@ etc/mail/spamassassin/init.pre.sample
 @unexec if cmp -s %B/v310.pre.sample %B/v310.pre; then rm -f %B/v310.pre; fi
 etc/mail/spamassassin/v310.pre.sample
 @exec [ -f %B/v310.pre ] || cp %B/%f %B/v310.pre
-etc/rc.d/sa-spamd.sh
 %%SITE_PERL%%/Mail/SpamAssassin.pm
 %%SITE_PERL%%/Mail/SpamAssassin/ArchiveIterator.pm
 %%SITE_PERL%%/Mail/SpamAssassin/AutoWhitelist.pm
