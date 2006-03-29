@@ -14,6 +14,7 @@ PATH=/bin:/usr/bin
 [ "x$2" != "xPOST-INSTALL" ] && exit 0
 
 MOZDIR=%%MOZDIR%%
+MOZBIN=${MOZDIR}/%%MOZILLA%%-bin
 REGXPCOM=${MOZDIR}/regxpcom
 REGCHROME=${MOZDIR}/regchrome
 
@@ -22,11 +23,18 @@ rm -rf ${MOZDIR}/chrome/overlayinfo
 rm -f ${MOZDIR}/chrome/*.rdf
 mkdir -p ${MOZDIR}/chrome/overlayinfo
 rm -f ${MOZDIR}/component.reg
+rm -rf ${MOZDIR}/extensions
 
 cd ${MOZDIR} || exit 1
-./run-mozilla.sh ${REGXPCOM} || true
-./run-mozilla.sh ${REGCHROME} || true
-
+if [ -f ${REGXPCOM} ]; then
+	./run-mozilla.sh ${REGXPCOM} || true
+fi
+if [ -f ${REGCHROME} ]; then
+	./run-mozilla.sh ${REGCHROME} || true
+fi
+if [ -f ${MOZBIN} ]; then
+	./run-mozilla.sh ${MOZBIN} -register > /dev/null 2>&1
+fi
 if [ ! -d %%PREFIX%%/lib/browser_plugins ]; then
     mkdir -p %%PREFIX%%/lib/browser_plugins
 fi
