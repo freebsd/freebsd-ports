@@ -6,6 +6,19 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20060328:
+  AFFECTS: users of sysutils/nut
+  AUTHOR: Joerg.Pulz@frm2.tum.de
+
+  Beginning with nut-2.0.3 the nut rcNG script only starts the ups driver and
+  the ups daemon 'upsd'.
+
+  The ups monitor 'upsmon' and the ups logger 'upslog' are now handled by
+  seperate scripts to get more control over the different services.
+  Please take a look into the nut, nut_upslog and nut_upsmon scripts
+  installed in ${PREFIX}/etc/rc.d/ for possible rc.conf values and their
+  defaults.
+
 20060322:
   AFFECTS: users of security/dazuko
   AUTHOR: ehaupt@FreeBSD.org
