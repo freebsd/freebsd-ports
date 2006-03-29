@@ -1,0 +1,26 @@
+#!/bin/sh
+
+# PROVIDE: webredirect
+# REQUIRE: DAEMON
+
+#
+# Add the following lines to /etc/rc.conf to enable webredirect:
+#
+# webredirect_enable="YES"    # YES or NO (default)
+# webredirect_flags=""        # webredirect command line flags
+#
+
+. %%RC_SUBR%%
+
+name="webredirect"
+rcvar=`set_rcvar`
+command_args="&"
+
+load_rc_config $name
+
+: ${webredirect_enable="NO"}
+: ${webredirect_flags="-t http://www.freebsd.org -n"}
+
+command="%%PREFIX%%/bin/${name}"
+
+run_rc_command "$1"

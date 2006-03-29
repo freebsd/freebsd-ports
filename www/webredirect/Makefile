@@ -7,6 +7,7 @@
 
 PORTNAME=	webredirect
 PORTVERSION=	0.3
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.stacken.kth.se/pub/projects/webredirect/
 
@@ -17,8 +18,7 @@ ALL_TARGET=	depend all
 
 MAN1=		webredirect.1
 PLIST_FILES=	bin/webredirect
-
-.include <bsd.port.pre.mk>
+USE_RC_SUBR=	webredirect.sh
 
 pre-build:
 	@${TOUCH} ${WRKSRC}/incu/depend.mk
@@ -28,7 +28,4 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/webredirect ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/webredirect.1 ${PREFIX}/man/man1
 
-post-install:
-	@${SETENV} ${MAKE_ENV} ${CAT} ${PKGMESSAGE}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
