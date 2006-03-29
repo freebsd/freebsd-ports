@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tumgreyspf
-PORTVERSION=	1.16
+PORTVERSION=	1.17
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.tummy.com/pub/tummy/tumgreyspf/ \
 		ftp://ftp.tummy.com/pub/tummy/tumgreyspf/old-releases/
