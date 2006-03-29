@@ -64,7 +64,7 @@ Gecko_Pre_Include=			bsd.gecko.mk
 #  .endif
 
 .if ${OSVERSION} >= 500000
-_GECKO_ALL=	firefox nvu seamonkey sunbird thunderbird xulrunner
+_GECKO_ALL=	firefox nvu seamonkey sunbird thunderbird xulrunner firefox-devel
 .endif
 _GECKO_ALL+=	mozilla
 

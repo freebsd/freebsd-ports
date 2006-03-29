@@ -74,6 +74,7 @@ USE_PERL5_BUILD=yes
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 
+MOZILLA_SUFX?=	none
 WRKSRC?=	${WRKDIR}/mozilla
 FAKEDIR?=	${WRKDIR}/fake
 PLIST?=		${WRKDIR}/plist
@@ -238,10 +239,10 @@ MOZCONFIG_SED?= ${SED} ${MOZ_SED_ARGS}
 post-patch: gecko-post-patch gecko-moz-pis-patch
 
 gecko-post-patch:
-.if exists(${.CURDIR}/pkg-install.in)
+.if exists(${MASTER_DIR}/pkg-install.in)
 	@${MOZCONFIG_SED} < ${MASTER_DIR}/pkg-install.in > ${PKGINSTALL}
 .endif
-.if exists(${.CURDIR}/pkg-deinstall.in)
+.if exists(${MASTER_DIR}/pkg-deinstall.in)
 	@${MOZCONFIG_SED} < ${MASTER_DIR}/pkg-deinstall.in > ${PKGDEINSTALL}
 .endif
 	@${RM} -f ${MOZCONFIG}
@@ -316,6 +317,17 @@ gecko-create-plist:
 	@${TOUCH} -f ${PLIST}
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
 		${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET}
+.if defined(MOZILLA_SUFX) && ${MOZILLA_SUFX}!="none"
+	${MV} ${FAKEDIR}/bin/${MOZILLA:S/${MOZILLA_SUFX}//} ${FAKEDIR}/bin/${MOZILLA}
+	${MV} ${FAKEDIR}/bin/${MOZILLA:S/${MOZILLA_SUFX}//}-config ${FAKEDIR}/bin/${MOZILLA}-config
+.for pc in ${PKGCONFIG_FILES:S|${MOZILLA_SUFX}||}
+	${MV} ${FAKEDIR}/lib/pkgconfig/${pc}.pc ${FAKEDIR}/lib/pkgconfig/${pc:S/${MOZILLA:S,${MOZILLA_SUFX},,}/${MOZILLA}/}.pc
+.endfor
+	@${REINPLACE_CMD} -e 's|${MOZILLA}-bin|${MOZILLA:S/${MOZILLA_SUFX}//}|; \
+		s|$${progbase}-bin|${MOZILLA:S/${MOZILLA_SUFX}//}-bin|' \
+		${FAKEDIR}/bin/${MOZILLA} \
+		${FAKEDIR}/bin/${MOZILLA}-config
+.endif
 	@${REINPLACE_CMD} -e 's|${FAKEDIR}|${PREFIX}|g' \
 		${FAKEDIR}/bin/${MOZILLA}	\
 		${FAKEDIR}/bin/${MOZILLA}-config
