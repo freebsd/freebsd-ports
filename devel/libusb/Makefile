@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libusb
-PORTVERSION=	0.1.10a
-PORTREVISION=	2
+PORTVERSION=	0.1.12
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,5 +17,8 @@ COMMENT=	Library giving userland programs access to USB devices
 CONFIGURE_ARGS=	--disable-build-docs
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|{libdir}/pkgconfig|{prefix}/libdata/pkgconfig|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>

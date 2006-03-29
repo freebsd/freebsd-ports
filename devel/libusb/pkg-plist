@@ -11,3 +11,4 @@ lib/libusbpp-0.1.so.8
 lib/libusbpp.a
 lib/libusbpp.la
 lib/libusbpp.so
+libdata/pkgconfig/libusb.pc
