@@ -7,16 +7,17 @@
 
 PORTNAME=	podlators
 PORTVERSION=	2.0.4
+PORTREVISION=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Pod
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Modules to convert and parse POD (Plain Old Documentation)
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathTools \
-		${SITE_PERL}/Pod/Simple.pm:${PORTSDIR}/textproc/p5-Pod-Simple \
+		p5-Pod-Simple>=3.04:${PORTSDIR}/textproc/p5-Pod-Simple \
 		${SITE_PERL}/Pod/Parser.pm:${PORTSDIR}/textproc/p5-Pod-Parser
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
