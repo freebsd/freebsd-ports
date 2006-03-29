@@ -1,4 +1,5 @@
 @unexec %D/etc/rc.d/radiusd.sh forcestop 2>/dev/null || true
+@unexec %D/etc/rc.d/radiusd forcestop 2>/dev/null || true
 bin/radclient
 bin/radeapclient
 bin/radlast
