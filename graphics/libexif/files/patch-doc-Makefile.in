@@ -1,0 +1,11 @@
+--- doc/Makefile.in.orig	Mon Mar 20 14:27:05 2006
++++ doc/Makefile.in	Mon Mar 20 14:27:41 2006
+@@ -444,7 +444,7 @@
+ 
+ all-local: $(DOXYGEN_STAMPS)
+ 
+-install-data-local: install-apidocs install-apidocs-internals
++install-data-local:
+ 
+ uninstall-local: uninstall-apidocs uninstall-apidocs-internals
+ 
