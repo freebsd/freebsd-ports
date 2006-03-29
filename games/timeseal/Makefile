@@ -8,8 +8,8 @@
 PORTNAME=	timeseal
 PORTVERSION=	1.0
 CATEGORIES=	games
-MASTER_SITES=	http://ftp3.ru.freebsd.org/.3/games/freechess/timeseal/ \
-		ftp://ftp3.ru.freebsd.org/.3/games/freechess/timeseal/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	jylefort
 DISTFILES=	timeseal.BSD386-1.0-i386
 EXTRACT_ONLY=
 
