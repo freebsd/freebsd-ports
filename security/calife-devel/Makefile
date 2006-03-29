@@ -25,6 +25,9 @@ CONFIGURE_ARGS=	--with-etcdir=${PREFIX}/etc
 
 .if ${OSVERSION} >= 500000
 CONFIGURE_ARGS+=	--with-pam
+PLIST_SUB+=	WITH_PAM=""
+.else
+PLIST_SUB+=	WITH_PAM="@comment "
 .endif
 
 CONFLICTS?=	calife-2.*
@@ -35,7 +38,7 @@ MAN5=		calife.auth.5
 post-install:
 .if ${OSVERSION} >= 500000
 	@${INSTALL_DATA} ${WRKSRC}/calife.pam ${PREFIX}/etc/pam.d/calife.sample
-.endif
 	@${CAT} ${PKGMESSAGE}
+.endif
 
 .include <bsd.port.post.mk>
