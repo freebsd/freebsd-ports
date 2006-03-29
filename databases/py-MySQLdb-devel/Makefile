@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MySQLdb
-DISTVERSION=	1.2.1c7
+DISTVERSION=	1.2.1c8
 CATEGORIES=	databases python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mysql-python
@@ -23,6 +23,8 @@ USE_MYSQL=		yes
 
 CONFLICTS=	py*-MySQLdb-[0-9]*
 
+PORTDOCS=	*
+
 pre-fetch:
 	@${ECHO} ""
 	@${ECHO} "You may use the following build options:"
@@ -37,15 +39,11 @@ pre-fetch:
 MAKE_ENV+=	mysqlclient="mysqlclient"
 .endif
 
-.if !defined(NOPORTDOCS)
-PORTDOCS=	*
-.endif
-
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/doc/MySQLdb.txt ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
