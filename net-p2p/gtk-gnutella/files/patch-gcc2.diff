@@ -1,12 +1,12 @@
---- src/lib/override.hoverride.h	Mon Feb  6 14:44:46 2006
-+++ src/lib/override.h	Tue Jan 24 22:18:42 2006
-@@ -91,8 +91,8 @@
- 		eject_("\nAssertion failure \"" STRINGIFY(x) "\" in " G_STRLOC "\n"); \
- } G_STMT_END
+--- src/ui/gtk/misc.c	Wed Feb 22 17:50:25 2006
++++ src/ui/gtk/misc.c	Sun Feb 26 16:00:59 2006
+@@ -645,9 +645,6 @@
  
-+#define g_assert_not_reached()												\
-+	eject_("\nCode should not have been reached in " G_STRLOC "\n");		\
--#define g_assert_not_reached(x)												\
--	eject_("\nCode should not be reached in " G_STRLOC "\n");				\
+ 	gui_prop_get_guint32_val(prop, &pos);
+ 	gtk_paned_set_position(paned, pos);
+-
+-guint32 after = gtk_paned_get_position(paned);
+-printf("paned_restore_position: pos=%d, after=%d\n", pos, after);
+ }
  
- #endif /* FAST_ASSERTIONS */
+ #ifdef USE_GTK2
