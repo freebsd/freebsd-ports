@@ -1,0 +1,11 @@
+--- drivers/Makefile.in.orig	Thu Feb 23 19:38:14 2006
++++ drivers/Makefile.in	Thu Feb 23 19:38:43 2006
+@@ -8,7 +8,7 @@
+ 
+ # other definitions
+ CC	= @CC@
+-CFLAGS	= -I../include @CFLAGS@
++CFLAGS	= -I../include @CFLAGS@ @LIBUSB_CFLAGS@
+ PROGS	= bestups fentonups apcsmart everups belkin masterguard powercom \
+ 	  cyberpower tripplite victronups genericups mge-utalk bestuferrups \
+ 	  isbmex etapro liebert sms esupssmart tripplitesu blazer safenet \

@@ -1,4 +1,9 @@
+@unexec %D/etc/rc.d/nut_upslog.sh forcestop 2>/dev/null || true
+@unexec %D/etc/rc.d/nut_upsmon.sh forcestop 2>/dev/null || true
 @unexec %D/etc/rc.d/nut.sh forcestop 2>/dev/null || true
+@unexec %D/etc/rc.d/nut_upslog forcestop 2>/dev/null || true
+@unexec %D/etc/rc.d/nut_upsmon forcestop 2>/dev/null || true
+@unexec %D/etc/rc.d/nut forcestop 2>/dev/null || true
 bin/upsc
 bin/upscmd
 bin/upslog
@@ -10,8 +15,6 @@ etc/nut/upsd.conf.sample
 etc/nut/upsd.users.sample
 etc/nut/upsmon.conf.sample
 etc/nut/upssched.conf.sample
-@dirrmtry etc/nut
-etc/rc.d/nut.sh
 libexec/nut/apcsmart
 libexec/nut/bcmxcp
 libexec/nut/belkin
@@ -26,6 +29,7 @@ libexec/nut/esupssmart
 libexec/nut/etapro
 libexec/nut/everups
 libexec/nut/fentonups
+libexec/nut/gamatronic
 libexec/nut/genericups
 libexec/nut/ippon
 libexec/nut/isbmex
@@ -84,6 +88,7 @@ sbin/upssched
 %%PORTDOCS%%%%DOCSDIR%%/design.txt
 %%PORTDOCS%%%%DOCSDIR%%/developers.txt
 %%PORTDOCS%%%%DOCSDIR%%/ideas.txt
+%%PORTDOCS%%%%DOCSDIR%%/hid-subdrivers.txt
 %%PORTDOCS%%%%DOCSDIR%%/new-drivers.txt
 %%PORTDOCS%%%%DOCSDIR%%/new-names.txt
 %%PORTDOCS%%%%DOCSDIR%%/osd-notify.txt
@@ -96,8 +101,8 @@ sbin/upssched
 %%PORTDOCS%%%%DOCSDIR%%/ssl.txt
 %%PORTDOCS%%%%DOCSDIR%%/upssched.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/cables
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/drivers
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry etc/nut
 @dirrmtry libexec/nut
-@unexec rmdir /var/db/nut 2>/dev/null || true
+@dirrmtry %%STATEDIR%%
 %%CGIDIRRM%%
