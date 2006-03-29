@@ -1,0 +1,8 @@
+oxim is a common input method server, which focuses mainly on Chinese.
+It is mainly developed by Firefly <firefly@ossii.com.tw>, and is a
+fork from xcin 2.5.3 (pre-release version). In addition to the
+original Root and OverTheSpot input style inherited from xcin, it
+also supports OnTheSpot and OnTheSpotQT. You can easily use oxim in
+GTK and QT based software.
+
+WWW: http://opendesktop.org.tw/

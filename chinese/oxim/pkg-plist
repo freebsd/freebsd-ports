@@ -1,0 +1,31 @@
+bin/oxim
+bin/oxim2tab
+etc/oxim/locale.list
+etc/oxim/oxim.conf
+lib/liboxim.la
+lib/liboxim.so
+lib/liboxim.so.0
+%%GTK2%%lib/gtk-2.0/immodules/gtk-im-oxim.la
+%%GTK2%%lib/gtk-2.0/immodules/gtk-im-oxim.so
+lib/oxim/modules/chewing.la
+lib/oxim/modules/chewing.so
+lib/oxim/modules/gen-inp.la
+lib/oxim/modules/gen-inp.so
+lib/oxim/modules/unicode.la
+lib/oxim/modules/unicode.so
+lib/oxim/tables/array30.tab
+lib/oxim/tables/cns11643.tab
+lib/oxim/tables/cnscj.tab
+lib/oxim/tables/cnsimplex.tab
+lib/oxim/tables/cnsphone.tab
+lib/oxim/tables/default.phr
+lib/oxim/tables/ez.tab
+lib/oxim/tables/sys.tab
+@dirrm etc/oxim
+@dirrm lib/oxim/tables
+@dirrm lib/oxim/modules
+@dirrm lib/oxim
+%%GTK2%%@dirrmtry lib/gtk-2.0/immodules
+%%GTK2%%@dirrmtry lib/gtk-2.0
+%%GTK2%%@exec gtk-query-immodules-2.0 > %D/etc/gtk-2.0/gtk.immodules
+%%GTK2%%@unexec gtk-query-immodules-2.0 > %D/etc/gtk-2.0/gtk.immodules
