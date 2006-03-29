@@ -20,12 +20,14 @@
 %%INSTDIR%%/demos/electric/electric.cache.lib
 %%INSTDIR%%/demos/electric/electric.pro
 %%INSTDIR%%/demos/electric/electric.sch
+%%INSTDIR%%/demos/interf_u/interf_u.000
 %%INSTDIR%%/demos/interf_u/interf_u.brd
 %%INSTDIR%%/demos/interf_u/interf_u.cache.lib
 %%INSTDIR%%/demos/interf_u/interf_u.cmp
 %%INSTDIR%%/demos/interf_u/interf_u.net
 %%INSTDIR%%/demos/interf_u/interf_u.pro
 %%INSTDIR%%/demos/interf_u/interf_u.sch
+%%INSTDIR%%/demos/interf_u/interf_u.tmp
 %%INSTDIR%%/demos/microwave/microwave.brd
 %%INSTDIR%%/demos/microwave/microwave.pro
 %%INSTDIR%%/demos/microwave/shape1.txt
@@ -39,12 +41,6 @@
 %%INSTDIR%%/demos/sonde xilinx/sonde xilinx.net
 %%INSTDIR%%/demos/sonde xilinx/sonde xilinx.pro
 %%INSTDIR%%/demos/sonde xilinx/sonde xilinx.sch
-%%INSTDIR%%/demos/sonde xilinx/sonde.brd
-%%INSTDIR%%/demos/sonde xilinx/sonde.cache.lib
-%%INSTDIR%%/demos/sonde xilinx/sonde.cmp
-%%INSTDIR%%/demos/sonde xilinx/sonde.net
-%%INSTDIR%%/demos/sonde xilinx/sonde.pro
-%%INSTDIR%%/demos/sonde xilinx/sonde.sch
 %%INSTDIR%%/demos/test_xil_95108/carte_test.brd
 %%INSTDIR%%/demos/test_xil_95108/carte_test.cache.lib
 %%INSTDIR%%/demos/test_xil_95108/carte_test.cmp
@@ -66,6 +62,7 @@
 %%INSTDIR%%/demos/video/video.sch
 %%INSTDIR%%/doc_conv_orcad_to_kicad.txt
 %%INSTDIR%%/doc_conv_orcad_to_kicad_spanish.txt
+%%INSTDIR%%/gpl.txt
 %%INSTDIR%%/help/GUI_comment_traduire.sxw
 %%INSTDIR%%/help/de/docs_src/eeschema/Eeschema_Teil_01_DE.sxw
 %%INSTDIR%%/help/de/docs_src/eeschema/Eeschema_Teil_02_DE.sxw
@@ -121,6 +118,7 @@
 %%INSTDIR%%/help/en/docs_src/eeschema/Eeschema_Chapter7_EN.sxw
 %%INSTDIR%%/help/en/docs_src/eeschema/Eeschema_Chapter8_EN.sxw
 %%INSTDIR%%/help/en/docs_src/eeschema/Eeschema_Chapter9_EN.sxw
+%%INSTDIR%%/help/en/docs_src/eeschema/Eeschema_covers_EN.sxw
 %%INSTDIR%%/help/en/docs_src/eeschema/eeschema.html
 %%INSTDIR%%/help/en/docs_src/file_formats/board_file_format_EN.sxw
 %%INSTDIR%%/help/en/docs_src/file_formats/file_formats.html
@@ -131,6 +129,7 @@
 %%INSTDIR%%/help/en/docs_src/gerbview/rs274x.sxw
 %%INSTDIR%%/help/en/docs_src/kicad/kicad_EN.sxw
 %%INSTDIR%%/help/en/docs_src/pcbnew/pcbnew.html
+%%INSTDIR%%/help/en/docs_src/pcbnew/pcbnew_EN.sxg
 %%INSTDIR%%/help/en/docs_src/pcbnew/pcbnew_chap10_EN.sxw
 %%INSTDIR%%/help/en/docs_src/pcbnew/pcbnew_chap11_EN.sxw
 %%INSTDIR%%/help/en/docs_src/pcbnew/pcbnew_chap1_EN.sxw
@@ -142,6 +141,7 @@
 %%INSTDIR%%/help/en/docs_src/pcbnew/pcbnew_chap7_EN.sxw
 %%INSTDIR%%/help/en/docs_src/pcbnew/pcbnew_chap8_EN.sxw
 %%INSTDIR%%/help/en/docs_src/pcbnew/pcbnew_chap9_EN.sxw
+%%INSTDIR%%/help/en/docs_src/pcbnew/pcbnew_covers_EN.sxw
 %%INSTDIR%%/help/en/eeschema/doc_eeschema.zip
 %%INSTDIR%%/help/en/eeschema/eeschema.html
 %%INSTDIR%%/help/en/file_formats/file_formats.html
@@ -168,30 +168,30 @@
 %%INSTDIR%%/help/en/pcbnew/pcbnew.html
 %%INSTDIR%%/help/es/contents.hhc
 %%INSTDIR%%/help/es/cvpcb/cvpcb-es.html
-%%INSTDIR%%/help/es/cvpcb/cvpcb-es_html_10907a97.png
-%%INSTDIR%%/help/es/cvpcb/cvpcb-es_html_16d1daed.png
+%%INSTDIR%%/help/es/cvpcb/cvpcb-es_html_163859f5.png
 %%INSTDIR%%/help/es/cvpcb/cvpcb-es_html_1de2e523.gif
-%%INSTDIR%%/help/es/cvpcb/cvpcb-es_html_5c0e6601.png
+%%INSTDIR%%/help/es/cvpcb/cvpcb-es_html_1ed7ac6f.png
+%%INSTDIR%%/help/es/cvpcb/cvpcb-es_html_445df7ae.gif
+%%INSTDIR%%/help/es/cvpcb/cvpcb-es_html_4604a6d9.png
+%%INSTDIR%%/help/es/cvpcb/cvpcb-es_html_5810ed21.png
 %%INSTDIR%%/help/es/cvpcb/cvpcb-es_html_5e042dbf.gif
-%%INSTDIR%%/help/es/cvpcb/cvpcb-es_html_5ec697a9.png
-%%INSTDIR%%/help/es/cvpcb/cvpcb-es_html_6818c805.png
-%%INSTDIR%%/help/es/cvpcb/cvpcb-es_html_6a9e06be.png
-%%INSTDIR%%/help/es/cvpcb/cvpcb-es_html_6eae571a.png
+%%INSTDIR%%/help/es/cvpcb/cvpcb-es_html_676c5f75.png
 %%INSTDIR%%/help/es/cvpcb/cvpcb-es_html_712a8f63.gif
-%%INSTDIR%%/help/es/cvpcb/cvpcb-es_html_753ddb29.png
+%%INSTDIR%%/help/es/cvpcb/cvpcb-es_html_77adc12a.png
 %%INSTDIR%%/help/es/cvpcb/cvpcb-es_html_m11acf4e8.png
-%%INSTDIR%%/help/es/cvpcb/cvpcb-es_html_m1f2a82d2.png
-%%INSTDIR%%/help/es/cvpcb/cvpcb-es_html_m34e24679.png
-%%INSTDIR%%/help/es/cvpcb/cvpcb-es_html_m577c9b2d.png
-%%INSTDIR%%/help/es/cvpcb/cvpcb-es_html_m5f3db414.gif
-%%INSTDIR%%/help/es/cvpcb/cvpcb-es_html_m64f95031.gif
-%%INSTDIR%%/help/es/cvpcb/cvpcb-es_html_m663ffeae.png
-%%INSTDIR%%/help/es/cvpcb/cvpcb-es_html_m710c0eda.png
-%%INSTDIR%%/help/es/cvpcb/cvpcb-es_html_m7211a9fc.png
-%%INSTDIR%%/help/es/cvpcb/cvpcb-es_html_m7ad16255.png
-%%INSTDIR%%/help/es/cvpcb/cvpcb-es_html_m7e427ed3.png
-%%INSTDIR%%/help/es/cvpcb/cvpcb-es_html_m82f5dce.gif
-%%INSTDIR%%/help/es/cvpcb/cvpcb-es_html_m8b3bfa3.png
+%%INSTDIR%%/help/es/cvpcb/cvpcb-es_html_m1253cc2c.png
+%%INSTDIR%%/help/es/cvpcb/cvpcb-es_html_m1d2ff954.png
+%%INSTDIR%%/help/es/cvpcb/cvpcb-es_html_m1e94d17.png
+%%INSTDIR%%/help/es/cvpcb/cvpcb-es_html_m214299f.png
+%%INSTDIR%%/help/es/cvpcb/cvpcb-es_html_m25ec8043.png
+%%INSTDIR%%/help/es/cvpcb/cvpcb-es_html_m336f54e7.png
+%%INSTDIR%%/help/es/cvpcb/cvpcb-es_html_m35847702.png
+%%INSTDIR%%/help/es/cvpcb/cvpcb-es_html_m3721a797.png
+%%INSTDIR%%/help/es/cvpcb/cvpcb-es_html_m446f2400.gif
+%%INSTDIR%%/help/es/cvpcb/cvpcb-es_html_m56c39fcf.png
+%%INSTDIR%%/help/es/cvpcb/cvpcb-es_html_m56ca91e1.gif
+%%INSTDIR%%/help/es/cvpcb/cvpcb-es_html_m632ae088.png
+%%INSTDIR%%/help/es/cvpcb/cvpcb-es_html_m660c105b.png
 %%INSTDIR%%/help/es/docs_src/cvpcb/cvpcb-es.sxw
 %%INSTDIR%%/help/es/docs_src/eeschema/Eeschema_Chapter10_ES.sxw
 %%INSTDIR%%/help/es/docs_src/eeschema/Eeschema_Chapter11_ES.sxw
@@ -226,6 +226,7 @@
 %%INSTDIR%%/help/es/docs_src/pcbnew/cap9.sxw
 %%INSTDIR%%/help/es/docs_src/pcbnew/pcbnew-es.html
 %%INSTDIR%%/help/es/docs_src/pcbnew/pcbnew.sxg
+%%INSTDIR%%/help/es/eeschema/Eeschema_Chapter1_ES.html
 %%INSTDIR%%/help/es/eeschema/doc_eeschema-es.zip
 %%INSTDIR%%/help/es/eeschema/eeschema-es.html
 %%INSTDIR%%/help/es/file_formats/file_formats-es.html
@@ -493,13 +494,12 @@
 %%INSTDIR%%/library/buffer.sym
 %%INSTDIR%%/library/cmos4000.dcm
 %%INSTDIR%%/library/cmos4000.lib
+%%INSTDIR%%/library/cmos_ieee.lib
 %%INSTDIR%%/library/conn.dcm
 %%INSTDIR%%/library/conn.lib
 %%INSTDIR%%/library/contrib.dcm
 %%INSTDIR%%/library/contrib.lib
 %%INSTDIR%%/library/cypress.lib
-%%INSTDIR%%/library/device.bak
-%%INSTDIR%%/library/device.bck
 %%INSTDIR%%/library/device.dcm
 %%INSTDIR%%/library/device.lib
 %%INSTDIR%%/library/digital-audio.dcm
@@ -549,9 +549,11 @@
 %%INSTDIR%%/library/smalland.sym
 %%INSTDIR%%/library/special.dcm
 %%INSTDIR%%/library/special.lib
+%%INSTDIR%%/library/ttl_ieee.lib
 %%INSTDIR%%/library/xilinx.dcm
 %%INSTDIR%%/library/xilinx.lib
 %%INSTDIR%%/library/xor.sym
+%%INSTDIR%%/licendoc.txt
 %%INSTDIR%%/lisezmoi.txt
 %%INSTDIR%%/modules/affich.brd
 %%INSTDIR%%/modules/ci.equ
@@ -838,7 +840,6 @@
 %%INSTDIR%%/modules/packages3d/support/supp_plcc84.wrl
 %%INSTDIR%%/modules/packages3d/support/support_so8_zif.wings
 %%INSTDIR%%/modules/packages3d/support/support_so8_zif.wrl
-%%INSTDIR%%/modules/packages3d/test.wrl
 %%INSTDIR%%/modules/pin_array.brd
 %%INSTDIR%%/modules/pin_array.mdc
 %%INSTDIR%%/modules/pin_array.mod
@@ -849,6 +850,7 @@
 %%INSTDIR%%/news.txt
 %%INSTDIR%%/readme.txt
 %%INSTDIR%%/template/kicad.pro
+%%INSTDIR%%/template/kicad.pro~
 %%INSTDIR%%/version.txt
 %%PORTDOCS%%%%INSTDIR%%/library/doc/74xx/74f181.pdf
 %%PORTDOCS%%%%INSTDIR%%/library/doc/74xx/74hc573.pdf
@@ -918,6 +920,7 @@
 %%PORTDOCS%%%%INSTDIR%%/library/doc/linear-tec/lt3430f.pdf
 %%PORTDOCS%%%%INSTDIR%%/library/doc/linear-tec/ltc1594-8.pdf
 %%PORTDOCS%%%%INSTDIR%%/library/doc/linear-tec/ltc1624.pdf
+%%PORTDOCS%%%%INSTDIR%%/library/doc/linear-tec/ltc1878.pdf
 %%PORTDOCS%%%%INSTDIR%%/library/doc/maxim/MAX1647-MAX1648.pdf
 %%PORTDOCS%%%%INSTDIR%%/library/doc/maxim/MAX220-MAX249.pdf
 %%PORTDOCS%%%%INSTDIR%%/library/doc/maxim/MAX5436-MAX5439.pdf
@@ -946,6 +949,7 @@
 %%PORTDOCS%%%%INSTDIR%%/library/doc/ns/pc16550d.pdf
 %%PORTDOCS%%%%INSTDIR%%/library/doc/onsemi/mc33178.pdf
 %%PORTDOCS%%%%INSTDIR%%/library/doc/onsemi/mc34064.pdf
+%%PORTDOCS%%%%INSTDIR%%/library/doc/op_amps/lm324.pdf
 %%PORTDOCS%%%%INSTDIR%%/library/doc/op_amps/lm358.pdf
 %%PORTDOCS%%%%INSTDIR%%/library/doc/op_amps/lmc6062.pdf
 %%PORTDOCS%%%%INSTDIR%%/library/doc/op_amps/lmc6082.pdf
@@ -967,6 +971,7 @@
 %%PORTDOCS%%%%INSTDIR%%/library/doc/regulator/lm79lxx.pdf
 %%PORTDOCS%%%%INSTDIR%%/library/doc/regulator/lm79xx.pdf
 %%PORTDOCS%%%%INSTDIR%%/library/doc/regulator/lp3963.pdf
+%%PORTDOCS%%%%INSTDIR%%/library/doc/regulator/lt3472.pdf
 %%PORTDOCS%%%%INSTDIR%%/library/doc/siliconix/si9986.pdf
 %%PORTDOCS%%%%INSTDIR%%/library/doc/temic/tk5550.pdf
 %%PORTDOCS%%%%INSTDIR%%/library/doc/temic/u2770B.pdf

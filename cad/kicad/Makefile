@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		kicad
-DISTVERSION=		2006-01-19
+DISTVERSION=		2006-03-28
 CATEGORIES=		cad
 MASTER_SITES=		ftp://iut-tice.ujf-grenoble.fr/cao/:dat		\
 			ftp://ftp.lis.inpg.fr/uploads/kicad/:dat	\
@@ -26,7 +26,7 @@ LIB_DEPENDS=	wx_gtk2_core-2.6.0:${PORTSDIR}/x11-toolkits/wxgtk26
 
 .if !defined(NOPORTDOCS)
 DISTFILES+=	doc_components-${DOCVERSION}${EXTRACT_SUFX}:dat
-DOCVERSION=	2005-12-21
+DOCVERSION=	2006-03-07
 . if defined(PACKAGE_BUILDING)	# unzip is used during post-install:
 RUN_DEPENDS+=	${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
 . endif
@@ -36,8 +36,8 @@ WRKSRC=		${WRKDIR}/kicad-dev
 MAKEFILE=	makefile.gtk
 
 USE_ZIP=	yes
+USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 USE_GL=		yes
 
 MAKE_ENV=	WX_CONFIG=${WX_CONFIG}
@@ -58,7 +58,7 @@ RUN_DEPENDS+=	xpdf:${PORTSDIR}/graphics/xpdf
 .endif
 
 .if ${OSVERSION} < 500000
-BROKEN=	"Does not compile on ${OSVERSION}"
+BROKEN=	Does not compile on ${OSVERSION}
 .endif
 
 post-extract:
@@ -103,6 +103,7 @@ post-install:
 .else
 	${RM} -rf ${PREFIX}/${INSTDIR}/library/doc
 .endif
+	${RMDIR} ${PREFIX}/${INSTDIR}/internat/pl	# Prune empty dir
 	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}
