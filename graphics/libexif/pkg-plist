@@ -2,6 +2,7 @@ include/libexif/_stdint.h
 include/libexif/exif-byte-order.h
 include/libexif/exif-content.h
 include/libexif/exif-data.h
+include/libexif/exif-data-type.h
 include/libexif/exif-entry.h
 include/libexif/exif-format.h
 include/libexif/exif-ifd.h
@@ -19,4 +20,13 @@ libdata/pkgconfig/libexif.pc
 %%NLS%%share/locale/de/LC_MESSAGES/libexif-12.mo
 %%NLS%%share/locale/es/LC_MESSAGES/libexif-12.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/libexif-12.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/libexif-12.mo
+%%DOCSDIR%%/ABOUT-NLS
+%%DOCSDIR%%/AUTHORS
+%%DOCSDIR%%/COPYING
+%%DOCSDIR%%/ChangeLog
+%%DOCSDIR%%/NEWS
+%%DOCSDIR%%/README
+%%DOCSDIR%%/README.apidocs
+@dirrm %%DOCSDIR%%
 @dirrm include/libexif
