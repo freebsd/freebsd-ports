@@ -4,8 +4,8 @@
                        View/libbakery_view.la \
                        $(BAKERY_LIBS)
  
--libbakery_2_3_la_LDFLAGS = -version-info $(GENERIC_LIBRARY_VERSION) -release $(GENERIC_RELEASE)
-+libbakery_2_3_la_LDFLAGS = -version-info $(GENERIC_LIBRARY_VERSION)
+-libbakery_2_4_la_LDFLAGS = -version-info $(GENERIC_LIBRARY_VERSION) -release $(GENERIC_RELEASE)
++libbakery_2_4_la_LDFLAGS = -version-info $(GENERIC_LIBRARY_VERSION)
  all: all-recursive
  
  .SUFFIXES:
