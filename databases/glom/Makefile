@@ -8,6 +8,7 @@
 
 PORTNAME=	glom
 PORTVERSION=	0.8.30
+PORTREVISION=	1
 CATEGORIES=	databases gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.8
@@ -15,7 +16,7 @@ MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.8
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME database designed
 
-LIB_DEPENDS=	bakery-2.3:${PORTSDIR}/x11-toolkits/bakery \
+LIB_DEPENDS=	bakery-2.4:${PORTSDIR}/x11-toolkits/bakery \
 		gdamm-1.3:${PORTSDIR}/databases/libgdamm
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
