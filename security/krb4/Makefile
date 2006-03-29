@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.pdc.kth.se/pub/krb/src/
 
-MAINTAINER=	nectar@FreeBSD.ORG
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	KTH Kerberos 4
 
 CONFLICTS=	krb5-[0-9]* heimdal-[0-9]*
