@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	syslog-ng
-PORTVERSION=	1.6.8
+PORTVERSION=	1.6.9
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.balabit.com/downloads/syslog-ng/1.6/src/ \
 		http://www.balabit.com/downloads/syslog-ng/1.6/src/old/
@@ -14,13 +14,11 @@ MASTER_SITES=	http://www.balabit.com/downloads/syslog-ng/1.6/src/ \
 MAINTAINER=	vince@blue-box.net
 COMMENT=	A powerful syslogd replacement
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libol.a:${PORTSDIR}/devel/libol
-
 MAN5=		syslog-ng.conf.5
 MAN8=		syslog-ng.8
 
+USE_RC_SUBR=	syslog-ng.sh
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 USE_GCC=	3.3+
 
 PKGMESSAGE=	${WRKDIR}/MESSAGE
@@ -56,10 +54,6 @@ post-install:
 	@if [ ! -f ${PREFIX}/etc/syslog-ng/syslog-ng.conf.sample ]; then \
 		${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} ${PREFIX}/etc/syslog-ng; \
 		${INSTALL_DATA} ${FILESDIR}/syslog-ng.conf.sample ${PREFIX}/etc/syslog-ng; \
-	fi
-	@if [ ! -f ${PREFIX}/etc/rc.d/syslog-ng.sh.sample ]; then \
-		${ECHO} "Installing ${PREFIX}/etc/rc.d/syslog-ng.sh.sample startup file."; \
-		${INSTALL_SCRIPT} ${FILESDIR}/syslog-ng.sh.sample ${PREFIX}/etc/rc.d/syslog-ng.sh.sample; \
 	fi
 	@${CAT} ${PKGMESSAGE}
 
