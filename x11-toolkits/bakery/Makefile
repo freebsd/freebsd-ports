@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	bakery
-PORTVERSION=	2.3.18
+PORTVERSION=	2.4.0
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/2.3
+MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/2.4
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A C++ Application Framework for use with Gtkmm
@@ -29,7 +29,7 @@ INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-PLIST_SUB=	VERSION="2.3" API_VERSION="2.4"
+PLIST_SUB=	VERSION="2.4" API_VERSION="2.4"
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS =/s/examples//' \
