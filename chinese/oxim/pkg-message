@@ -1,0 +1,16 @@
+--------------------------------------------------------------------
+Remember to set environment variables:
+
+  (csh/tcsh) 				(sh/bash)
+  setenv XMODIFIERS @im=oxim		export XMODIFIERS='@im=oxim'
+  setenv GTK_IM_MODULE oxim		export GTK_IM_MODULE=oxim
+  setenv QT_IM_MODULE xim		export QT_IM_MODULE=xim
+
+If you have disabled GTK2 support, you may want to use ``xim'' for
+GTK_IM_MODULE (GTK2 support is enabled by default).
+
+Finally, to start the oxim input method daemon, use command:
+
+  exec oxim &
+
+--------------------------------------------------------------------

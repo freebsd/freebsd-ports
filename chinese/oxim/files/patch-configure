@@ -1,0 +1,21 @@
+--- configure.orig	Sat Mar 18 10:57:51 2006
++++ configure	Sat Mar 18 11:02:32 2006
+@@ -29642,6 +29642,7 @@
+         test $found = y && break
+     done
+ fi
++if  test "$enable_bimsphone_module" = "yes" ; then
+ if test $found = n; then
+     echo "$as_me:$LINENO: result: You need Berkeley DB to compile bimsphone module." >&5
+ echo "${ECHO_T}You need Berkeley DB to compile bimsphone module." >&6
+@@ -29652,6 +29653,10 @@
+ DB_INC=${db_include}
+ 
+ DB_LIBS=${db_lib}
++else
++DB_INC=
++DB_LIBS=
++fi
+ 
+ 
+ #-----------------------------------------------------------------------

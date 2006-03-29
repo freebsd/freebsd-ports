@@ -87,6 +87,7 @@
     SUBDIR += oicq
     SUBDIR += oto
     SUBDIR += oxford
+    SUBDIR += oxim
     SUBDIR += p5-Date-Chinese
     SUBDIR += p5-Encode-HanConvert
     SUBDIR += p5-Encode-HanExtra
