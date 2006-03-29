@@ -34,6 +34,38 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="37a5c10f-bf56-11da-b0e9-00123ffe8333">
+    <topic>freeradius -- EAP-MSCHAPv2 Authentication Bypass</topic>
+    <affects>
+      <package>
+	<name>freeradius</name>
+	<range><ge>1.0.0</ge><lt>1.1.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Freeradius Security Contact reports:</p>
+	<blockquote cite="http://www.freeradius.org/security.html#1.1.0">
+	  <p>Insufficient input validation was being done in the
+	    EAP-MSCHAPv2 state machine. A malicious attacker could
+	    manipulate their EAP-MSCHAPv2 client state machine to
+	    potentially convince the server to bypass authentication
+	    checks. This bypassing could also result in the server
+	    crashing.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-1354</cvename>
+      <url>http://www.freeradius.org/security.html#1.1.0</url>
+      <url>http://secunia.com/advisories/19300/</url>
+    </references>
+    <dates>
+      <discovery>2006-03-21</discovery>
+      <entry>2006-03-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2db97aa6-be81-11da-9b82-0050bf27ba24">
     <topic>horde -- remote code execution vulnerability in the help
       viewer</topic>
