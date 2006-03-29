@@ -8,6 +8,7 @@
 
 PORTNAME=	thunderbird
 DISTVERSION=	1.5
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	thunderbird/releases/${DISTVERSION}/source
@@ -83,11 +84,12 @@ pre-install:
 	@${ECHO_CMD} "@unexec ${RMDIR} %D/lib/${PORTNAME}/ 2>/dev/null || ${TRUE}" >> ${PLIST}
 	@${ECHO_CMD} 'share/applications/${PORTNAME}.desktop' >> ${PLIST}
 	@${ECHO_CMD} "@unexec ${RMDIR} %D/share/applications 2>/dev/null || ${TRUE}" >> ${PLIST}
+	@${ECHO_CMD} '${PORTNAME_ICON:S|${PREFIX}/||}' >> ${PLIST}
 
 post-install:
 	${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}.desktop ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/other-licenses/branding/${PORTNAME}/default.xpm \
-		${PREFIX}/lib/${PORTNAME}/chrome/icons/default/default.xpm
+		${PORTNAME_ICON}
 
 .include <bsd.port.post.mk>
