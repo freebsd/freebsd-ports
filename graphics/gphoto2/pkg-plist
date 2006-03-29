@@ -16,14 +16,19 @@ bin/gphoto2
 %%NLS%%share/locale/ja/LC_MESSAGES/gphoto2.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/gphoto2.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/gphoto2.mo
+%%NLS%%share/locale/pa/LC_MESSAGES/gphoto2.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/gphoto2.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/gphoto2.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/gphoto2.mo
+%%NLS%%share/locale/rw/LC_MESSAGES/gphoto2.mo
+%%NLS%%@dirrmtry share/locale/rw/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/rw
 %%NLS%%share/locale/sk/LC_MESSAGES/gphoto2.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/gphoto2.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/gphoto2.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/gphoto2.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/gphoto2.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/gphoto2.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/gphoto2.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/gphoto2.mo
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
