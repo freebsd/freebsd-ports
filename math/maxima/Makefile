@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	maxima
-PORTVERSION=	5.9.2
-PORTREVISION=	0
+PORTVERSION=	5.9.3
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=${PORTNAME}
@@ -19,11 +18,11 @@ BUILD_DEPENDS=	${LISPPORT}
 LIB_DEPENDS=	tk84:${PORTSDIR}/x11-toolkits/tk84
 RUN_DEPENDS=	${LOCALBASE}/bin/${LISPPORT} \
 		${LOCALBASE}/bin/gnuplot:${PORTSDIR}/math/gnuplot \
-		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash2
+		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
 
 USE_XLIB=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	automake:14 autoconf:259
+USE_AUTOTOOLS=	automake:19 autoconf:259
 CONFIGURE_ARGS+=	--prefix=${PREFIX} \
 			--with-posix-shell=${LOCALBASE}/bin/bash \
 			--with-wish=${LOCALBASE}/bin/wish8.4 \
@@ -31,8 +30,8 @@ CONFIGURE_ARGS+=	--prefix=${PREFIX} \
 # don't pass "-s" to install to avoid trying to strip a shell script
 CONFIGURE_ENV=	INSTALL_PROGRAM="${INSTALL} ${COPY} -o ${BINOWN} -g ${BINGRP} -m ${BINMODE}"
 
-MAN1=		maxima.1
-INFO=		maxima
+MAN1=	maxima.1
+INFO=	maxima
 
 PLIST_SUB=	BINDIR=${BINDIRECTORY}
 PLIST_SUB+=	LISPBIN=${LISPBINARY}
@@ -92,7 +91,16 @@ pre-everything::
 	@${ECHO} "  WITH_SBCL    Build with Steel Bank Common Lisp (default)"
 	@${ECHO} ""
 
-post-extract:
-		@${RM} -f ${WRKSRC}/doc/info/*.info*
+post-install:
+	@${RM} -f ${PREFIX}/info/contrib.info
+	@${RM} -f ${PREFIX}/info/descriptive.info
+	@${RM} -f ${PREFIX}/info/distrib.info
+	@${RM} -f ${PREFIX}/info/numericalio.info
+	@${RM} -f ${PREFIX}/info/simplex.info
+	@${RM} -f ${PREFIX}/info/solve_rec.info
+	@${RM} -f ${PREFIX}/info/stringproc.info
+	@${RM} -f ${PREFIX}/info/linearalgebra.info
+	@${RM} -f ${PREFIX}/info/orthopoly.info
+	@${RM} -f ${PREFIX}/info/simplification.info
 
 .include <bsd.port.post.mk>
