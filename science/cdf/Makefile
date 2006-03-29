@@ -7,7 +7,7 @@
 
 PORTNAME=	cdf3
 PORTVERSION=	3.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	science
 MASTER_SITES=	ftp://nssdcftp.gsfc.nasa.gov/standards/cdf/dist/cdf${VER}/unix/	\
 		http://windsor.gsfc.nasa.gov/standards/cdf/dist/cdf${VER}/unix/
@@ -31,6 +31,12 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 DEFS=		B C K
 PORTDOCS=	CDF_copyright.txt CHANGES.txt Release.notes Welcome.txt
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile on ${ARCH}
+.endif
 
 pre-configure:
 .for def in ${DEFS}
@@ -58,4 +64,4 @@ regression-test:	build
 	${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} test)
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
