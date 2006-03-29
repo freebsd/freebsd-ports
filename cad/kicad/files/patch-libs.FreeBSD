@@ -1,13 +1,14 @@
---- libs.FreeBSD.orig	Tue Oct  4 10:54:26 2005
-+++ libs.FreeBSD	Thu Dec  1 23:43:58 2005
-@@ -1,5 +1,5 @@
+--- libs.FreeBSD.orig	Tue Mar 28 23:00:35 2006
++++ libs.FreeBSD	Tue Mar 28 23:01:27 2006
+@@ -1,6 +1,6 @@
+ 
  #Configuration for build kicad
 -KICAD_BIN = /usr/local/kicad/FreeBSD
 +KICAD_BIN = ${PREFIX}/kicad/FreeBSD
  
  
  SRCSUFF = .cpp
-@@ -13,11 +13,16 @@
+@@ -14,11 +14,16 @@
  # KICAD_STATIC_LINK = 1
  
  # path and version definition for wxWidgets and mesa libs
@@ -28,7 +29,7 @@
  
  # Use static link for libstdc++.a (sometimes also libsupc++.a)
  # locate libstdc++.a and copy it in kicad_dev/syslibs
-@@ -29,13 +34,13 @@
+@@ -30,33 +35,33 @@
  LIBSTDC = -lstdc++
  endif
  
@@ -37,7 +38,37 @@
  
  # use link static for wxWidgets
  ifdef KICAD_STATIC_LINK
+ LIBS3D = $(WXPATH)/$(PREFIX_WX_LIBS)$(SUFFIX_WX_LIBGL)\
+ 	 $(MESALIBSPATH)/libGL.a $(MESALIBSPATH)/libGLU.a
+-	
++
  WXSYSLIB= $(WXPATH)/$(PREFIX_WX_LIBS)-$(LIBVERSION).a \
+-	$(WXPATH)/libwxpng-$(LIBVERSION).a\
+-	$(WXPATH)/libwxjpeg-$(LIBVERSION).a\
+-	$(WXPATH)/libwxzlib-$(LIBVERSION).a\
+-        /usr/X11R6/lib/libXinerama.a \
+-        /usr/X11R6/lib/libXxf86vm.a \
++	-lpng\
++	-ljpeg\
++	-lz\
++        ${X11BASE}/lib/libXinerama.a \
++        ${X11BASE}/lib/libXxf86vm.a \
+ 		-lgtk-x11-2.0 -lgdk-x11-2.0 \
+         -latk-1.0 -lgdk_pixbuf-2.0 -lm -lpangoxft-1.0 -lpangox-1.0 -lgthread-2.0\
+         -lpango-1.0 -lgobject-2.0 -lgmodule-2.0 -ldl\
+         -lglib-2.0 -lpangoft2-1.0 \
+         -L/usr/lib
+ 
+-	
++
+ WXSYSLIB_WITH_GL= $(WXPATH)/$(PREFIX_WX_LIBS)-$(LIBVERSION).a \
+-	$(WXPATH)/libwxpng-$(LIBVERSION).a\
+-	$(WXPATH)/libwxjpeg-$(LIBVERSION).a\
+-	$(WXPATH)/libwxzlib-$(LIBVERSION).a\
++	-lpng\
++	-ljpeg\
++	-lz\
+ 	$(LIBS3D)\
 -        /usr/X11R6/lib/libXinerama.a \
 -        /usr/X11R6/lib/libXxf86vm.a \
 +        ${X11BASE}/lib/libXinerama.a \
@@ -45,12 +76,14 @@
  		-lgtk-x11-2.0 -lgdk-x11-2.0 \
          -latk-1.0 -lgdk_pixbuf-2.0 -lm -lpangoxft-1.0 -lpangox-1.0 -lgthread-2.0\
          -lpango-1.0 -lgobject-2.0 -lgmodule-2.0 -ldl\
-@@ -44,20 +49,20 @@
- 
+@@ -64,16 +69,16 @@
+         -L/usr/lib
  else
  #or use "standard command" for wxWidgets
 -WXSYSLIB= `wx-config --libs`
+-WXSYSLIB_WITH_GL= `wx-config --libs gl`
 +WXSYSLIB= `${WX_CONFIG} --libs`
++WXSYSLIB_WITH_GL= `${WX_CONFIG} --libs std,gl`
  endif
  
  
@@ -58,17 +91,9 @@
 -LIBS = -L/usr/local/lib -L/usr/X11R6/lib\
 +LIBS = -L${LOCALBASE}/lib -L${X11BASE}/lib\
  	$(EXTRALIBS) $(WXSYSLIB)\
--	$(WXPATH)/libwxpng-$(LIBVERSION).a\
--	$(WXPATH)/libwxjpeg-$(LIBVERSION).a\
--	$(WXPATH)/libwxzlib-$(LIBVERSION).a\
-+	-lpng\
-+	-ljpeg\
-+	-lz\
  	$(LIBSTDC)
  
- ifdef KICAD_STATIC_LINK
- LIBS3D = $(WXPATH)/$(PREFIX_WX_LIBS)$(SUFFIX_WX_LIBGL) $(MESALIBSPATH)/libGL.a $(MESALIBSPATH)/libGLU.a
- else
--LIBS3D = $(WXPATH)/$(PREFIX_WX_LIBS)$(SUFFIX_WX_LIBGL) -lGL -lGLU
-+LIBS3D = -l$(PREFIX_WX_LIBS)$(SUFFIX_WX_LIBGL) -lGL -lGLU
- endif
+-LIBS_WITH_GL = -L/usr/local/lib -L/usr/X11R6/lib\
++LIBS_WITH_GL = -L${LOCALBASE}/lib -L${X11BASE}/lib\
+ 	$(EXTRALIBS) $(WXSYSLIB_WITH_GL)\
+ 	$(LIBSTDC)
