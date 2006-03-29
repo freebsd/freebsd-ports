@@ -1,0 +1,459 @@
+--- xpcom/reflect/xptcall/src/md/unix/xptcinvoke_freebsd_alpha.cpp.orig	Tue May 27 01:37:25 2003
++++ xpcom/reflect/xptcall/src/md/unix/xptcinvoke_freebsd_alpha.cpp	Tue May 27 01:37:00 2003
+@@ -0,0 +1,184 @@
++/* -*- Mode: C; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 4 -*- */
++/* ***** BEGIN LICENSE BLOCK *****
++ * Version: NPL 1.1/GPL 2.0/LGPL 2.1
++ *
++ * The contents of this file are subject to the Netscape Public License
++ * Version 1.1 (the "License"); you may not use this file except in
++ * compliance with the License. You may obtain a copy of the License at
++ * http://www.mozilla.org/NPL/
++ *
++ * Software distributed under the License is distributed on an "AS IS" basis,
++ * WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
++ * for the specific language governing rights and limitations under the
++ * License.
++ *
++ * The Original Code is mozilla.org code.
++ *
++ * The Initial Developer of the Original Code is 
++ * Netscape Communications Corporation.
++ * Portions created by the Initial Developer are Copyright (C) 1998
++ * the Initial Developer. All Rights Reserved.
++ *
++ * Contributor(s):
++ *
++ * Alternatively, the contents of this file may be used under the terms of
++ * either the GNU General Public License Version 2 or later (the "GPL"), or 
++ * the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
++ * in which case the provisions of the GPL or the LGPL are applicable instead
++ * of those above. If you wish to allow use of your version of this file only
++ * under the terms of either the GPL or the LGPL, and not to allow others to
++ * use your version of this file under the terms of the NPL, indicate your
++ * decision by deleting the provisions above and replace them with the notice
++ * and other provisions required by the GPL or the LGPL. If you do not delete
++ * the provisions above, a recipient may use your version of this file under
++ * the terms of any one of the NPL, the GPL or the LGPL.
++ *
++ * ***** END LICENSE BLOCK ***** */
++
++/* Platform specific code to invoke XPCOM methods on native objects */
++
++/* contributed by Glen Nakamura <glen.nakamura@usa.net> */
++
++#include "xptcprivate.h"
++
++/* Prototype specifies unmangled function name and disables unused warning */
++static void
++invoke_copy_to_stack(PRUint64* d, PRUint32 paramCount, nsXPTCVariant* s)
++__asm__("invoke_copy_to_stack") __attribute__((unused));
++
++static void
++invoke_copy_to_stack(PRUint64* d, PRUint32 paramCount, nsXPTCVariant* s)
++{
++    const PRUint8 NUM_ARG_REGS = 6-1;        // -1 for "this" pointer
++
++    for(PRUint32 i = 0; i < paramCount; i++, d++, s++)
++    {
++        if(s->IsPtrData())
++        {
++            *d = (PRUint64)s->ptr;
++            continue;
++        }
++        switch(s->type)
++        {
++        case nsXPTType::T_I8     : *d = (PRUint64)s->val.i8;     break;
++        case nsXPTType::T_I16    : *d = (PRUint64)s->val.i16;    break;
++        case nsXPTType::T_I32    : *d = (PRUint64)s->val.i32;    break;
++        case nsXPTType::T_I64    : *d = (PRUint64)s->val.i64;    break;
++        case nsXPTType::T_U8     : *d = (PRUint64)s->val.u8;     break;
++        case nsXPTType::T_U16    : *d = (PRUint64)s->val.u16;    break;
++        case nsXPTType::T_U32    : *d = (PRUint64)s->val.u32;    break;
++        case nsXPTType::T_U64    : *d = (PRUint64)s->val.u64;    break;
++        case nsXPTType::T_FLOAT  :
++            if(i < NUM_ARG_REGS)
++            {
++                // convert floats to doubles if they are to be passed
++                // via registers so we can just deal with doubles later
++                union { PRUint64 u64; double d; } t;
++                t.d = (double)s->val.f;
++                *d = t.u64;
++            }
++            else
++                // otherwise copy to stack normally
++                *d = (PRUint64)s->val.u32;
++            break;
++        case nsXPTType::T_DOUBLE : *d = (PRUint64)s->val.u64;    break;
++        case nsXPTType::T_BOOL   : *d = (PRUint64)s->val.b;      break;
++        case nsXPTType::T_CHAR   : *d = (PRUint64)s->val.c;      break;
++        case nsXPTType::T_WCHAR  : *d = (PRUint64)s->val.wc;     break;
++        default:
++            // all the others are plain pointer types
++            *d = (PRUint64)s->val.p;
++            break;
++        }
++    }
++}
++
++/*
++ * XPTC_PUBLIC_API(nsresult)
++ * XPTC_InvokeByIndex(nsISupports* that, PRUint32 methodIndex,
++ *                    PRUint32 paramCount, nsXPTCVariant* params, void* vt)
++ */
++__asm__(
++    "#### XPTC_InvokeByIndex ####\n"
++".text\n\t"
++    ".align 5\n\t"
++    ".globl XPTC_InvokeByIndex\n\t"
++    ".ent XPTC_InvokeByIndex\n"
++"XPTC_InvokeByIndex:\n\t"
++    ".frame $15,32,$26,0\n\t"
++    ".mask 0x4008000,-32\n\t"
++    "ldgp $29,0($27)\n"
++"$XPTC_InvokeByIndex..ng:\n\t"
++    "subq $30,32,$30\n\t"
++    "stq $26,0($30)\n\t"
++    "stq $15,8($30)\n\t"
++    "bis $30,$30,$15\n\t"
++    ".prologue 1\n\t"
++
++    /*
++     * Allocate enough stack space to hold the greater of 6 or "paramCount"+1
++     * parameters. (+1 for "this" pointer)  Room for at least 6 parameters
++     * is required for storage of those passed via registers.
++     */
++
++    "bis $31,5,$2\n\t"      /* count = MAX(5, "paramCount") */
++    "cmplt $2,$18,$1\n\t"
++    "cmovne $1,$18,$2\n\t"
++    "s8addq $2,16,$1\n\t"   /* room for count+1 params (8 bytes each) */
++    "bic $1,15,$1\n\t"      /* stack space is rounded up to 0 % 16 */
++    "subq $30,$1,$30\n\t"
++
++    "stq $16,0($30)\n\t"    /* save "that" (as "this" pointer) */
++    "stq $17,16($15)\n\t"   /* save "methodIndex" */
++
++    "addq $30,8,$16\n\t"    /* pass stack pointer */
++    "bis $18,$18,$17\n\t"   /* pass "paramCount" */
++    "bis $19,$19,$18\n\t"   /* pass "params" */
++    "bsr $26,$invoke_copy_to_stack..ng\n\t"     /* call invoke_copy_to_stack */
++
++    /*
++     * Copy the first 6 parameters to registers and remove from stack frame.
++     * Both the integer and floating point registers are set for each parameter
++     * except the first which is the "this" pointer.  (integer only)
++     * The floating point registers are all set as doubles since the
++     * invoke_copy_to_stack function should have converted the floats.
++     */
++    "ldq $16,0($30)\n\t"    /* integer registers */
++    "ldq $17,8($30)\n\t"
++    "ldq $18,16($30)\n\t"
++    "ldq $19,24($30)\n\t"
++    "ldq $20,32($30)\n\t"
++    "ldq $21,40($30)\n\t"
++    "ldt $f17,8($30)\n\t"   /* floating point registers */
++    "ldt $f18,16($30)\n\t"
++    "ldt $f19,24($30)\n\t"
++    "ldt $f20,32($30)\n\t"
++    "ldt $f21,40($30)\n\t"
++
++    "addq $30,48,$30\n\t"   /* remove params from stack */
++
++    /*
++     * Call the virtual function with the constructed stack frame.
++     */
++    "bis $16,$16,$1\n\t"    /* load "this" */
++    "ldq $2,16($15)\n\t"    /* load "methodIndex" */
++    "ldq $1,0($1)\n\t"      /* load vtable */
++#if 0
++    "s8addq $2,16,$2\n\t"   /* vtable index = "methodIndex" * 8 + 16 */
++#else
++    "mulq $2, 8, $2\n\t"
++    "addq $2, 0, $2\n\t"   /* vtable index = "methodIndex" * 16 + 24 */
++#endif
++    "addq $1,$2,$1\n\t"
++    "ldq $27,0($1)\n\t"     /* load address of function */
++    "jsr $26,($27),0\n\t"   /* call virtual function */
++    "ldgp $29,0($26)\n\t"
++
++    "bis $15,$15,$30\n\t"
++    "ldq $26,0($30)\n\t"
++    "ldq $15,8($30)\n\t"
++    "addq $30,32,$30\n\t"
++    "ret $31,($26),1\n\t"
++    ".end XPTC_InvokeByIndex"
++    );
++
+--- xpcom/reflect/xptcall/src/md/unix/xptcstubs_freebsd_alpha.cpp.orig	Tue May 27 01:37:30 2003
++++ xpcom/reflect/xptcall/src/md/unix/xptcstubs_freebsd_alpha.cpp	Tue May 27 01:37:04 2003
+@@ -0,0 +1,269 @@
++/* -*- Mode: C; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 4 -*- */
++/* ***** BEGIN LICENSE BLOCK *****
++ * Version: NPL 1.1/GPL 2.0/LGPL 2.1
++ *
++ * The contents of this file are subject to the Netscape Public License
++ * Version 1.1 (the "License"); you may not use this file except in
++ * compliance with the License. You may obtain a copy of the License at
++ * http://www.mozilla.org/NPL/
++ *
++ * Software distributed under the License is distributed on an "AS IS" basis,
++ * WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
++ * for the specific language governing rights and limitations under the
++ * License.
++ *
++ * The Original Code is mozilla.org code.
++ *
++ * The Initial Developer of the Original Code is 
++ * Netscape Communications Corporation.
++ * Portions created by the Initial Developer are Copyright (C) 1999
++ * the Initial Developer. All Rights Reserved.
++ *
++ * Contributor(s):
++ *
++ * Alternatively, the contents of this file may be used under the terms of
++ * either the GNU General Public License Version 2 or later (the "GPL"), or 
++ * the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
++ * in which case the provisions of the GPL or the LGPL are applicable instead
++ * of those above. If you wish to allow use of your version of this file only
++ * under the terms of either the GPL or the LGPL, and not to allow others to
++ * use your version of this file under the terms of the NPL, indicate your
++ * decision by deleting the provisions above and replace them with the notice
++ * and other provisions required by the GPL or the LGPL. If you do not delete
++ * the provisions above, a recipient may use your version of this file under
++ * the terms of any one of the NPL, the GPL or the LGPL.
++ *
++ * ***** END LICENSE BLOCK ***** */
++
++/* Implement shared vtbl methods. */
++
++/* contributed by Glen Nakamura <glen.nakamura@usa.net> */
++
++#include <sys/types.h>
++#include <machine/cpu.h>
++#include "xptcprivate.h"
++
++/* Prototype specifies unmangled function name and disables unused warning */
++static nsresult
++PrepareAndDispatch(nsXPTCStubBase* self, uint32 methodIndex, PRUint64* args)
++__asm__("PrepareAndDispatch") __attribute__((unused));
++
++static nsresult
++PrepareAndDispatch(nsXPTCStubBase* self, uint32 methodIndex, PRUint64* args)
++{
++    const PRUint8 PARAM_BUFFER_COUNT = 16;
++    const PRUint8 NUM_ARG_REGS = 6-1;        // -1 for "this" pointer
++
++    nsXPTCMiniVariant paramBuffer[PARAM_BUFFER_COUNT];
++    nsXPTCMiniVariant* dispatchParams = NULL;
++    nsIInterfaceInfo* iface_info = NULL;
++    const nsXPTMethodInfo* info;
++    PRUint8 paramCount;
++    PRUint8 i;
++    nsresult result = NS_ERROR_FAILURE;
++
++    NS_ASSERTION(self,"no self");
++
++    self->GetInterfaceInfo(&iface_info);
++    NS_ASSERTION(iface_info,"no interface info");
++
++    iface_info->GetMethodInfo(PRUint16(methodIndex), &info);
++    NS_ASSERTION(info,"no interface info");
++
++    paramCount = info->GetParamCount();
++
++    // setup variant array pointer
++    if(paramCount > PARAM_BUFFER_COUNT)
++        dispatchParams = new nsXPTCMiniVariant[paramCount];
++    else
++        dispatchParams = paramBuffer;
++    NS_ASSERTION(dispatchParams,"no place for params");
++
++    // args[0] to args[NUM_ARG_REGS] hold floating point register values
++    PRUint64* ap = args + NUM_ARG_REGS;
++    for(i = 0; i < paramCount; i++, ap++)
++    {
++        const nsXPTParamInfo& param = info->GetParam(i);
++        const nsXPTType& type = param.GetType();
++        nsXPTCMiniVariant* dp = &dispatchParams[i];
++
++        if(param.IsOut() || !type.IsArithmetic())
++        {
++            dp->val.p = (void*) *ap;
++            continue;
++        }
++        // else
++        switch(type)
++        {
++        case nsXPTType::T_I8     : dp->val.i8  = (PRInt8)    *ap;    break;
++        case nsXPTType::T_I16    : dp->val.i16 = (PRInt16)   *ap;    break;
++        case nsXPTType::T_I32    : dp->val.i32 = (PRInt32)   *ap;    break;
++        case nsXPTType::T_I64    : dp->val.i64 = (PRInt64)   *ap;    break;
++        case nsXPTType::T_U8     : dp->val.u8  = (PRUint8)   *ap;    break;
++        case nsXPTType::T_U16    : dp->val.u16 = (PRUint16)  *ap;    break;
++        case nsXPTType::T_U32    : dp->val.u32 = (PRUint32)  *ap;    break;
++        case nsXPTType::T_U64    : dp->val.u64 = (PRUint64)  *ap;    break;
++        case nsXPTType::T_FLOAT  :
++            if(i < NUM_ARG_REGS)
++            {
++                // floats passed via registers are stored as doubles
++                // in the first NUM_ARG_REGS entries in args
++                dp->val.u64 = (PRUint64) args[i];
++                dp->val.f = (float) dp->val.d;    // convert double to float
++            }
++            else
++                dp->val.u32 = (PRUint32) *ap;
++            break;
++        case nsXPTType::T_DOUBLE :
++            // doubles passed via registers are also stored
++            // in the first NUM_ARG_REGS entries in args
++            dp->val.u64 = (i < NUM_ARG_REGS) ? args[i] : *ap;
++            break;
++        case nsXPTType::T_BOOL   : dp->val.b   = (PRBool)    *ap;    break;
++        case nsXPTType::T_CHAR   : dp->val.c   = (char)      *ap;    break;
++        case nsXPTType::T_WCHAR  : dp->val.wc  = (PRUnichar) *ap;    break;
++        default:
++            NS_ASSERTION(0, "bad type");
++            break;
++        }
++    }
++
++    result = self->CallMethod((PRUint16)methodIndex, info, dispatchParams);
++
++    NS_RELEASE(iface_info);
++
++    if(dispatchParams != paramBuffer)
++        delete [] dispatchParams;
++
++    return result;
++}
++
++/*
++ * SharedStub()
++ *  Collects arguments and calls PrepareAndDispatch.  The "methodIndex" is
++ *  passed to this function via $1 to preserve the argument registers.
++ */
++__asm__(
++    "#### SharedStub ####\n"
++".text\n\t"
++    ".align 5\n\t"
++    ".ent SharedStub\n"
++"SharedStub:\n\t"
++    ".frame $30,96,$26,0\n\t"
++    ".mask 0x4000000,-96\n\t"
++    "ldgp $29,0($27)\n"
++"$SharedStub..ng:\n\t"
++    "subq $30,96,$30\n\t"
++    "stq $26,0($30)\n\t"
++    ".prologue 1\n\t"
++
++    /*
++     * Store arguments passed via registers to the stack.
++     * Floating point registers are stored as doubles and converted
++     * to floats in PrepareAndDispatch if necessary.
++     */
++    "stt $f17,16($30)\n\t"   /* floating point registers */
++    "stt $f18,24($30)\n\t"
++    "stt $f19,32($30)\n\t"
++    "stt $f20,40($30)\n\t"
++    "stt $f21,48($30)\n\t"
++    "stq $17,56($30)\n\t"    /* integer registers */
++    "stq $18,64($30)\n\t"
++    "stq $19,72($30)\n\t"
++    "stq $20,80($30)\n\t"
++    "stq $21,88($30)\n\t"
++
++    /*
++     * Call PrepareAndDispatch function.
++     */
++    "bis $1,$1,$17\n\t"      /* pass "methodIndex" */
++    "addq $30,16,$18\n\t"    /* pass "args" */
++    "bsr $26,$PrepareAndDispatch..ng\n\t"
++
++    "ldq $26,0($30)\n\t"
++    "addq $30,96,$30\n\t"
++    "ret $31,($26),1\n\t"
++    ".end SharedStub"
++    );
++
++#if defined(__GXX_ABI_VERSION) && __GXX_ABI_VERSION >= 100 /* G++ V3 ABI */
++/*
++ * nsresult nsXPTCStubBase::Stub##n()
++ *  Sets register $1 to "methodIndex" and jumps to SharedStub.
++ */
++#define STUB_ENTRY(n) \
++__asm__( \
++    "#### Stub"#n" ####\n" \
++".text\n\t" \
++    ".align 5\n\t" \
++    ".globl _ZN14nsXPTCStubBase5Stub"#n"Ev\n\t" \
++    ".ent _ZN14nsXPTCStubBase5Stub"#n"Ev\n" \
++"_ZN14nsXPTCStubBase5Stub"#n"Ev:\n\t" \
++    ".frame $30,0,$26,0\n\t" \
++    "ldgp $29,0($27)\n" \
++"$_ZN14nsXPTCStubBase5Stub"#n"Ev..ng:\n\t" \
++    ".prologue 1\n\t" \
++    "lda $1,"#n"\n\t" \
++    "br $31,$SharedStub..ng\n\t" \
++    ".end _ZN14nsXPTCStubBase5Stub"#n"Ev" \
++    ); \
++__asm__( \
++    "#### Stub"#n" ####\n" \
++".text\n\t" \
++    ".align 5\n\t" \
++    ".globl _ZN14nsXPTCStubBase6Stub"#n"Ev\n\t" \
++    ".ent _ZN14nsXPTCStubBase6Stub"#n"Ev\n" \
++"_ZN14nsXPTCStubBase6Stub"#n"Ev:\n\t" \
++    ".frame $30,0,$26,0\n\t" \
++    "ldgp $29,0($27)\n" \
++"$_ZN14nsXPTCStubBase6Stub"#n"Ev..ng:\n\t" \
++    ".prologue 1\n\t" \
++    "lda $1,"#n"\n\t" \
++    "br $31,$SharedStub..ng\n\t" \
++    ".end _ZN14nsXPTCStubBase6Stub"#n"Ev" \
++    ); \
++__asm__( \
++    "#### Stub"#n" ####\n" \
++".text\n\t" \
++    ".align 5\n\t" \
++    ".globl _ZN14nsXPTCStubBase7Stub"#n"Ev\n\t" \
++    ".ent _ZN14nsXPTCStubBase7Stub"#n"Ev\n" \
++"_ZN14nsXPTCStubBase7Stub"#n"Ev:\n\t" \
++    ".frame $30,0,$26,0\n\t" \
++    "ldgp $29,0($27)\n" \
++"$_ZN14nsXPTCStubBase7Stub"#n"Ev..ng:\n\t" \
++    ".prologue 1\n\t" \
++    "lda $1,"#n"\n\t" \
++    "br $31,$SharedStub..ng\n\t" \
++    ".end _ZN14nsXPTCStubBase7Stub"#n"Ev" \
++    );
++#else
++/*
++ * nsresult nsXPTCStubBase::Stub##n()
++ *  Sets register $1 to "methodIndex" and jumps to SharedStub.
++ */
++#define STUB_ENTRY(n) \
++nsresult nsXPTCStubBase::Stub##n() \
++{ \
++    nsresult result; \
++__asm__ __volatile__( \
++    "ldah    $29,0($27)\n\t" \
++    "lda     $29,0($29)\n\t" \
++    "lda $1, "#n"\n\t" \
++    "br $31, $SharedStub..ng\n\t" \
++    "mov $0, %0\n\t" \
++    : "=r" (result) \
++    ); \
++    return result; \
++}
++#endif
++
++#define SENTINEL_ENTRY(n) \
++nsresult nsXPTCStubBase::Sentinel##n() \
++{ \
++    NS_ASSERTION(0,"nsXPTCStubBase::Sentinel called"); \
++    return NS_ERROR_NOT_IMPLEMENTED; \
++}
++
++#include "xptcstubsdef.inc"
++

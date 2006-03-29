@@ -1952,7 +1952,6 @@ print/lcdf-typetools|print/typetools|2005-11-24|Port has already existed
 x11/xscoop|x11-toolkits/xscoop|2005-11-24|Port readded in proper category
 misc/compat22||2005-11-25|Forbidden, unfetchable, unneeded
 net/doc|dns/doc|2005-11-25|Moved to a better category
-www/firefox-devel|www/firefox|2005-11-29|Firefox 1.5 is now stable
 japanese/uim|textproc/uim|2005-11-30|new category
 www/p5-HTML-Chuncks|www/p5-HTML-Chunks|2005-12-01|corrected directory
 devel/p5-Test-Builder-Tester|devel/p5-Test-Simple|2005-12-02|Included in Test::Simple package
