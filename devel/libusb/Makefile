@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	johnjen@reynoldsnet.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library giving userland programs access to USB devices
 
 CONFIGURE_ARGS=	--disable-build-docs
