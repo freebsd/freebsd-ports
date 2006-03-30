@@ -1,6 +1,5 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/GD/SecurityImage/.packlist
 %%SITE_PERL%%/GD/SecurityImage.pm
-%%SITE_PERL%%/GD/SecurityImage/AC.pm
 %%SITE_PERL%%/GD/SecurityImage/GD.pm
 %%SITE_PERL%%/GD/SecurityImage/Magick.pm
 %%SITE_PERL%%/GD/SecurityImage/Styles.pm
