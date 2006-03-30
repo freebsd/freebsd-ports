@@ -321,7 +321,9 @@ gecko-create-plist:
 	${MV} ${FAKEDIR}/bin/${MOZILLA:S/${MOZILLA_SUFX}//} ${FAKEDIR}/bin/${MOZILLA}
 	${MV} ${FAKEDIR}/bin/${MOZILLA:S/${MOZILLA_SUFX}//}-config ${FAKEDIR}/bin/${MOZILLA}-config
 .for pc in ${PKGCONFIG_FILES:S|${MOZILLA_SUFX}||}
-	${MV} ${FAKEDIR}/lib/pkgconfig/${pc}.pc ${FAKEDIR}/lib/pkgconfig/${pc:S/${MOZILLA:S,${MOZILLA_SUFX},,}/${MOZILLA}/}.pc
+	${SED} -e 's|${MOZILLA:S/${MOZILLA_SUFX}//}|${MOZILLA}|' \
+		${FAKEDIR}/lib/pkgconfig/${pc}.pc \
+		> ${FAKEDIR}/lib/pkgconfig/${pc:S/${MOZILLA:S,${MOZILLA_SUFX},,}/${MOZILLA}/}.pc
 .endfor
 	@${REINPLACE_CMD} -e 's|${MOZILLA}-bin|${MOZILLA:S/${MOZILLA_SUFX}//}|; \
 		s|$${progbase}-bin|${MOZILLA:S/${MOZILLA_SUFX}//}-bin|' \
