@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ingo
-PORTVERSION=	1.0.2
+PORTVERSION=	1.1
 CATEGORIES=	mail www
 MASTER_SITES=	ftp://ftp.horde.org/pub/ingo/				\
 		ftp://ftp.planetmirror.com/pub/horde/ingo/		\
@@ -33,6 +33,7 @@ RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/rpc.php:${PORTSDIR}/www/horde
 
 NO_BUILD=	yes
 USE_PHP=	imap
+USE_GETTEXT=	yes
 USE_APACHE=	1.3+	# needed to test APACHE_VERSION
 
 PLIST_SUB=	INGODIR=${LINGODIR}  HORDE_INC=${HORDE_INC:S|^${LOCALBASE}/||}
