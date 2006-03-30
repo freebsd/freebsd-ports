@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gpsd
-PORTVERSION=	2.30
+PORTVERSION=	2.32
 CATEGORIES=	astro
 MASTER_SITES=	http://download.berlios.de/${PORTNAME}/
 
@@ -16,7 +16,7 @@ COMMENT=	Daemon that monitors one or more GPSes attached to a host computer
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" \
 		LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}"
-MAN1=	gpsfake.1 gpsflash.1 gpspipe.1 gpsprof.1 rtcmdecode.1 sirfmon.1 xgps.1
+MAN1=	gps.1 gpsfake.1 gpsflash.1 gpspipe.1 gpsprof.1 rtcmdecode.1 sirfmon.1
 MAN3=	libgps.3 libgpsd.3 libgpsmm.3
 MAN5=	rtcm-104.5 srec.5
 MAN8=	gpsd.8
@@ -109,6 +109,9 @@ CONFIGURE_ARGS+=--enable-pps
 .if defined(WITH_DBUS)
 CONFIGURE_ARGS+=--enable-dbus
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e '/XMLTO/d' ${WRKSRC}/Makefile.in
 
 post-install:
 	@${CAT} ${PKGMESSAGE}

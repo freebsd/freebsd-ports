@@ -2,6 +2,7 @@
 %%X11%%bin/xgps
 sbin/gpsd
 bin/cgps
+bin/cgpxlogger
 bin/gpsflash
 bin/gpsprof
 bin/sirfmon
