@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bacula
-DISTVERSION=	1.38.6-beta3-20060304
+DISTVERSION=	1.38.6
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	bacula
@@ -16,6 +16,10 @@ MAINTAINER=	dan@langille.org
 COMMENT?=	The network backup solution (server) - DEVELOPMENT Version
 
 CONFLICTS=	bacula-server-[0-9]* bacula-client-[0-9]*
+
+UNIQUENAME?=${PORTNAME}${PKGNAMESUFFIX}
+
+USE_RC_SUBR?=	z-bacula-dir.sh z-bacula-sd.sh
 
 # The user/group IDs below are registered, see
 # http://www.freebsd.org/doc/en_US.ISO8859-1/books/porters-handbook/book.html#DADS-UID
@@ -28,21 +32,25 @@ CONFIGURE_ARGS=	--with-tcp-wrappers=/usr/lib \
 		--with-working-dir=${BACULA_DIR} \
 		--with-scriptdir=${PREFIX}/share/${PORTNAME} \
 		--mandir=${PREFIX}/man \
-		--with-fd-user=root \
-		--with-fd-group=wheel \
-		--with-dir-user=bacula \
-		--with-dir-group=bacula \
-		--with-sd-user=bacula \
-		--with-sd-group=operator \
 		--with-readline=yes \
 		--disable-conio
+
+.if defined(WITH_CLIENT_ONLY)
+CONFIGURE_ARGS+=		--with-fd-user=root \
+		--with-fd-group=wheel
+.else
+CONFIGURE_ARGS+=--with-dir-user=bacula \
+		--with-dir-group=bacula \
+		--with-sd-user=bacula \
+		--with-sd-group=operator
+.endif
 
 CONFIGURE_ENV+=	CPPFLAGS="-I/usr/include/readline -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
-ALL_OPTIONS=	CLIENT_ONLY WXCONSOLE GNOMECONSOLE SQLITE3 MYSQL POSTGRESQL MTX OPENSSL
+ALL_OPTIONS=	CLIENT_ONLY WXCONSOLE GNOMECONSOLE SQLITE3 MYSQL POSTGRESQL MTX OPENSSL DOCS
 
 .for opt in ${ALL_OPTIONS}
 .if defined(WITH_${opt})
@@ -57,6 +65,7 @@ IS_INTERACTIVE=	yes
 .if defined(WITH_CLIENT_ONLY)
 OPTIONS+=	WXCONSOLE "Build with wxGTK based GUI console" off
 OPTIONS+=	GNOMECONSOLE "Build with GNOME based GUI console" off
+OPTIONS+=	DOCS "Install documention" off
 .else
 OPTIONS=	SQLITE3 "Use SqLite-3 database instead of SqLite-2" off
 OPTIONS+=	MYSQL "Use MySQL database instead of SqLite" off
@@ -78,6 +87,15 @@ PLIST_SUB+=	BACULA_DIR=${BACULA_DIR}
 MAN8=		bacula.8
 
 .include <bsd.port.pre.mk>
+
+DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz
+.if defined(WITH_DOCS)
+DISTFILES+=	${PORTNAME}-docs-${PORTVERSION}.tar.gz
+.endif
+
+.if defined(WITH_DOCS)
+PORTDOCS=	ReleaseNotes bacula.pdf developers.pdf kernstodo manual bacula-web
+.endif
 
 # Client only or full server version
 .if defined(WITH_CLIENT_ONLY)
@@ -163,6 +181,8 @@ pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "The default DB is SQLite-2!"
 .endif
+	@${ECHO_MSG} "  WITH_DOCS=yes  		if you want the documentation installed."
+	@${ECHO_MSG} "  WITH_OPENSSL=yes  	Enable OpenSSL for encrypted communication."
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "===> Using ${DBTYPE} as the bacula database."
 	@${ECHO_MSG} ""
@@ -175,7 +195,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|./bconsole.conf|${PREFIX}/etc/bconsole.conf|g' ${WRKSRC}/src/console/console.c
 .if defined(WITH_CLIENT_ONLY)
 # 	In client port only install startup script out of script dir (see below post-install)
-# 	Dont mkdir ${PREFIX}/share/bacule cause it's empty
+# 	Dont mkdir ${PREFIX}/share/bacula cause it's empty
 	@${REINPLACE_CMD} -e 's|^\(fd_subdirs = .*\)scripts\(.*\)|\1\2|g' ${WRKSRC}/Makefile.in
 	${REINPLACE_CMD} -e 's|\(.*$$(MKDIR) $$(DESTDIR)$$(scriptdir)\)|#\1|g' ${WRKSRC}/Makefile.in
 .else
@@ -183,17 +203,22 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|^all_subdirs = .*|all_subdirs = scripts src\/lib src\/findlib $${subdirs}|g' ${WRKSRC}/Makefile.in
 .endif
 
+pre-install:
+	if [ ! -d "${BACULA_DIR}" ]; then \
+		${ECHO_CMD} "creating ${BACULA_DIR}" ; \
+		${MKDIR} ${BACULA_DIR}; \
+	else \
+		${ECHO_CMD} "${BACULA_DIR} already exists"; \
+	fi
+
+.if !defined(WITH_CLIENT_ONLY)
+# 	Extend /etc/services and install UID/GID
+	@ ${SETENV} PKG_PREFIX=${PREFIX} \
+		${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
+.endif
+
 post-install:
-#	Migration: move existing bacula.sh to z-bacula.sh to start bacula AFTER DB start
-	if [ -f ${PREFIX}/etc/rc.d/bacula.sh ]; then \
-		${MV} ${PREFIX}/etc/rc.d/bacula.sh ${PREFIX}/etc/rc.d/z-bacula.sh; \
-	fi
-	if [ -f ${PREFIX}/etc/rc.d/bacula.sh.sample ]; then \
-		${MV} ${PREFIX}/etc/rc.d/bacula.sh.sample ${PREFIX}/etc/rc.d/z-bacula.sh.sample; \
-	fi
 .if defined(WITH_CLIENT_ONLY)
-# 	Install start script
-	${INSTALL_SCRIPT} ${WRKSRC}/scripts/bacula ${PREFIX}/etc/rc.d/z-bacula.sh.sample
 # 	Extend only /etc/services
 	@ ${SETENV} PKG_PREFIX=${PREFIX} \
 		${SH} ${PKGINSTALL} ${PORTNAME}
@@ -221,14 +246,24 @@ post-install:
 	fi
 .endif
 
-#	@${CHMOD} a+x ${WRKSRC}/scripts/bacula.man
 .if defined(WITH_CLIENT_ONLY)
 	${INSTALL_MAN} ${WRKSRC}/scripts/bacula.man ${PREFIX}/man/man8/bacula.8
 .endif
+
+# Documentation is only installed in -client port
+.if defined(WITH_DOCS)
+	for na in manual bacula-web; do \
+		${MKDIR} ${DOCSDIR}/$$na ;\
+		cd ${WRKDIR}/${PORTNAME}-docs-${PORTVERSION} && ${FIND} $$na | \
+			${CPIO} -pdm -L -R root:wheel ${DOCSDIR}; \
+	done
+	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}-${PORTVERSION}/ReleaseNotes ${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}-docs-${PORTVERSION}/manual/bacula.pdf ${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}-docs-${PORTVERSION}/developers/developers.pdf ${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}-${PORTVERSION}/kernstodo ${DOCSDIR}
+.endif
+
 .else
-# 	Extend /etc/services and install UID/GID
-	@ ${SETENV} PKG_PREFIX=${PREFIX} \
-		${SH} ${PKGINSTALL} ${PORTNAME} POST-INSTALL
 # 	Install config files and preserve existing ones
 	${INSTALL_SCRIPT} ${FILESDIR}/chio-bacula ${PREFIX}/sbin
 	if [ -f ${PREFIX}/etc/bacula-barcodes ]; then \

@@ -1,0 +1,30 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: utility
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# bacula_sd_enable  (bool):  Set to NO by default.
+#               Set it to YES to enable bacula_sd.
+# bacula_sd_flags (params):  Set params used to start bacula_sd.
+#
+
+. %%RC_SUBR%%
+
+name="bacula_sd"
+rcvar=`set_rcvar`
+command=/usr/local/sbin/bacula-sd
+pidfile="${bacula_sd_pidfile}"
+
+load_rc_config $name
+
+: ${bacula_sd_enable="NO"}
+: ${bacula_sd_flags=" -u bacula -g bacula -v -c /usr/local/etc/bacula-sd.conf"}
+: ${bacula_sd_pidfile="/var/run/bacula-sd.9103.pid"}
+
+run_rc_command "$1"
