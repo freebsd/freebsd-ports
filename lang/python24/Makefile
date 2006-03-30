@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	python
-PORTVERSION=	2.4.2
+PORTVERSION=	2.4.3
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	${PYTHON_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
@@ -36,6 +36,12 @@ PLIST=		${WRKDIR}/pkg-plist
 PLIST_SUB=	PYVER=${PYTHON_VERSION:S/python//}
 DEMODIR=	${PREFIX}/share/examples/${PYTHON_VERSION}
 TOOLSDIR=	${PREFIX}/share/${PYTHON_VERSION}
+
+.if !exists(/usr/bin/ypcat) # the world with NO_NIS
+PLISTCAT=	${GREP} -v 'nis.so$$' ${PKGDIR}/pkg-plist
+.else
+PLISTCAT=	${CAT} ${PKGDIR}/pkg-plist
+.endif
 
 OPTIONS=	THREADS "Enable thread support" on \
 		HUGE_STACK_SIZE "Use a larger thread stack" off \
@@ -151,11 +157,6 @@ post-build:
 	${SETENV} ${MAKE_ENV} ${MAKE} lib${PYTHON_VERSION}.so python; \
 	${LN} -f lib${PYTHON_VERSION}.so lib${PYTHON_VERSION}.so.1; \
 	${LN} -f python ${PYTHON_VERSION:S/thon/thon-shared/}
-.if !exists(/usr/bin/rpcgen) # the world with NO_NIS
-	${GREP} -v 'nis.so$$' ${PKGDIR}/pkg-plist > ${PLIST}
-.else
-	${CP} ${PKGDIR}/pkg-plist ${PLIST}
-.endif
 
 pre-su-install:
 .for platform in ${PLATFORMS}
@@ -165,6 +166,11 @@ pre-su-install:
 		${PYTHONPREFIX_LIBDIR}/${platform}/
 .endfor
 .endfor
+
+pre-install:
+	${PLISTCAT} | ${AWK} '{ print $$0; }				\
+	/LIBDIR.*\.py$$/ && !/\/bad/ { print $$0 "o"; print $$0 "c"; }'	\
+	> ${PLIST}
 
 post-install:
 	@# shared version of executable and library
