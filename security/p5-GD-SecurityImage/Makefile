@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	GD-SecurityImage
-PORTVERSION=	1.583
-PORTREVISION=	1
+PORTVERSION=	1.60
 CATEGORIES=	security perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	GD/BURAK
@@ -22,9 +21,10 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN3=		GD::SecurityImage::AC.3 GD::SecurityImage::Magick.3 \
-		GD::SecurityImage::Styles.3 GD::SecurityImage.3 \
-		GD::SecurityImage::GD.3
+MAN3=		GD::SecurityImage.3 \
+		GD::SecurityImage::GD.3 \
+		GD::SecurityImage::Magick.3 \
+		GD::SecurityImage::Styles.3
 
 .include <bsd.port.pre.mk>
 
