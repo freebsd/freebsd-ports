@@ -1,24 +1,35 @@
 bin/mined
-%%DATADIR%%/CHANGES
-%%DATADIR%%/README
-%%DATADIR%%/Xdefaults.mined
-%%DATADIR%%/bdf18to20
-%%DATADIR%%/bdf18to20.sed
-%%DATADIR%%/configure-xterm
-%%DATADIR%%/installfonts
-%%DATADIR%%/lmined
-%%DATADIR%%/makeprint
-%%DATADIR%%/mined.desktop
-%%DATADIR%%/mined.hlp
-%%DATADIR%%/minedmar
-%%DATADIR%%/mlterm_key
-%%DATADIR%%/mlterm_main
-%%DATADIR%%/mterm
-%%DATADIR%%/profile.mined
-%%DATADIR%%/umined
-%%DATADIR%%/uprint
-%%DATADIR%%/uterm
-%%DATADIR%%/wmined
-%%DATADIR%%/xinitrc.mined
-%%DATADIR%%/xmined
+bin/xmined
+bin/mstar
+bin/mpico
+bin/minmacs
+bin/uterm
+bin/umined
+share/applications/mined.desktop
+%%DATADIR%%/bin/minedmar
+%%DATADIR%%/bin/mterm
+%%DATADIR%%/bin/umined
+%%DATADIR%%/bin/uprint
+%%DATADIR%%/bin/uterm
+%%DATADIR%%/bin/wmined
+%%DATADIR%%/bin/xmined
+%%DATADIR%%/conf_user/Xdefaults.mined
+%%DATADIR%%/conf_user/mlterm/key
+%%DATADIR%%/conf_user/mlterm/main
+%%DATADIR%%/conf_user/profile.mined
+%%DATADIR%%/conf_user/xinitrc.mined
+%%DATADIR%%/help/mined.hlp
+%%DATADIR%%/setup_install/bin/bdf18to20
+%%DATADIR%%/setup_install/bin/configure-xterm
+%%DATADIR%%/setup_install/bin/installfonts
+%%DATADIR%%/setup_install/bin/makeprint
+%%DATADIR%%/setup_install/bin/mkicon
+%%DATADIR%%/setup_install/mined.desktop
+%%DATADIR%%/setup_install/mined.ico
+@dirrm %%DATADIR%%/setup_install/bin
+@dirrm %%DATADIR%%/setup_install
+@dirrm %%DATADIR%%/help
+@dirrm %%DATADIR%%/conf_user/mlterm
+@dirrm %%DATADIR%%/conf_user
+@dirrm %%DATADIR%%/bin
 @dirrm %%DATADIR%%

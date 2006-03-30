@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mined
-PORTVERSION=	2000.11
+PORTVERSION=	2000.12
 CATEGORIES=	editors
 MASTER_SITES=	http://towo.net/mined/
 
@@ -22,15 +22,15 @@ PORTDOCS=	*
 .endif
 
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ""
 MAKE_ARGS=	GMAKE=${GMAKE} CC=${CC:T} OPT="${CFLAGS}"
 INSTALL_TARGET=	localinstall
 
 MAN1=		mined.1
 
-PRFX2FIX=	src/makefile.bsd src/makefile.gcc usrshare/xinitrc.mined	\
-		usrshare/mined.desktop src/mined1.c
+PRFX2FIX=	src/makefile.bsd usrshare/conf_user/xinitrc.mined	\
+		src/makefile.curses src/mined1.c man/mined.1		\
+		usrshare/setup_install/mined.desktop src/makefile.gcc
 
 pre-configure:
 .for FILE in ${PRFX2FIX}
@@ -48,10 +48,15 @@ pre-build:
 	@${ECHO_MSG}
 
 post-install:
-	@${RM} ${DATADIR}/LICENSE.GNU ${DATADIR}/*.bat
+	${INSTALL_DATA} ${WRKSRC}/usrshare/setup_install/mined.desktop	\
+		${DESKTOPDIR}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC}/doc && ${INSTALL_DATA} * ${DOCSDIR}
+	cd ${WRKSRC}/usrshare/package_doc && ${INSTALL_DATA} * ${DOCSDIR}
+	@${RM} ${DOCSDIR}/CHANGES ${DOCSDIR}/LICENSE.GNU
 .endif
+	@${RM} ${DATADIR}/bin/*.bat
+	@${RM} -rf ${DATADIR}/doc_user ${DATADIR}/package_doc
 
 .include <bsd.port.mk>
