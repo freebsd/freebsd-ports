@@ -18,13 +18,17 @@
 %%INGODIR%%/filters.php
 %%INGODIR%%/forward.php
 %%INGODIR%%/index.php
+%%INGODIR%%/lib/Block/overview.php
 %%INGODIR%%/lib/Driver.php
+%%INGODIR%%/lib/Driver/ldap.php
 %%INGODIR%%/lib/Driver/null.php
 %%INGODIR%%/lib/Driver/timsieved.php
 %%INGODIR%%/lib/Driver/vfs.php
+%%INGODIR%%/lib/IMAP/Search.php
 %%INGODIR%%/lib/Ingo.php
 %%INGODIR%%/lib/Script.php
 %%INGODIR%%/lib/Script/imap.php
+%%INGODIR%%/lib/Script/maildrop.php
 %%INGODIR%%/lib/Script/procmail.php
 %%INGODIR%%/lib/Script/sieve.php
 %%INGODIR%%/lib/Session.php
@@ -34,6 +38,7 @@
 %%INGODIR%%/lib/base.php
 %%INGODIR%%/lib/version.php
 %%INGODIR%%/locale/cs_CZ/LC_MESSAGES/ingo.mo
+%%INGODIR%%/locale/da_DK/LC_MESSAGES/ingo.mo
 %%INGODIR%%/locale/de_DE/LC_MESSAGES/ingo.mo
 %%INGODIR%%/locale/de_DE/help.xml
 %%INGODIR%%/locale/en_US/help.xml
@@ -52,11 +57,14 @@
 %%INGODIR%%/locale/nl_NL/LC_MESSAGES/ingo.mo
 %%INGODIR%%/locale/pl_PL/LC_MESSAGES/ingo.mo
 %%INGODIR%%/locale/pt_BR/LC_MESSAGES/ingo.mo
+%%INGODIR%%/locale/pt_PT/LC_MESSAGES/ingo.mo
 %%INGODIR%%/locale/ro_RO/LC_MESSAGES/ingo.mo
 %%INGODIR%%/locale/sv_SE/LC_MESSAGES/ingo.mo
+%%INGODIR%%/locale/tr_TR/LC_MESSAGES/ingo.mo
 %%INGODIR%%/locale/zh_TW/LC_MESSAGES/ingo.mo
 %%INGODIR%%/po/README
 %%INGODIR%%/po/cs_CZ.po
+%%INGODIR%%/po/da_DK.po
 %%INGODIR%%/po/de_DE.po
 %%INGODIR%%/po/es_ES.po
 %%INGODIR%%/po/fi_FI.po
@@ -71,8 +79,10 @@
 %%INGODIR%%/po/nl_NL.po
 %%INGODIR%%/po/pl_PL.po
 %%INGODIR%%/po/pt_BR.po
+%%INGODIR%%/po/pt_PT.po
 %%INGODIR%%/po/ro_RO.po
 %%INGODIR%%/po/sv_SE.po
+%%INGODIR%%/po/tr_TR.po
 %%INGODIR%%/po/zh_TW.po
 %%INGODIR%%/rule.php
 %%INGODIR%%/script.php
@@ -84,6 +94,7 @@
 %%INGODIR%%/templates/filters/filter.html
 %%INGODIR%%/templates/filters/footer.inc
 %%INGODIR%%/templates/filters/header.inc
+%%INGODIR%%/templates/filters/javascript.inc
 %%INGODIR%%/templates/filters/settings.inc
 %%INGODIR%%/templates/forward/forward.inc
 %%INGODIR%%/templates/javascript/new_folder.js
@@ -108,6 +119,7 @@
 %%INGODIR%%/themes/graphics/script.png
 %%INGODIR%%/themes/graphics/vacation.png
 %%INGODIR%%/themes/graphics/whitelist.png
+%%INGODIR%%/themes/screen.css
 %%INGODIR%%/vacation.php
 %%INGODIR%%/whitelist.php
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
@@ -126,10 +138,14 @@
 @dirrm %%INGODIR%%/po
 @dirrm %%INGODIR%%/locale/zh_TW/LC_MESSAGES
 @dirrm %%INGODIR%%/locale/zh_TW
+@dirrm %%INGODIR%%/locale/tr_TR/LC_MESSAGES
+@dirrm %%INGODIR%%/locale/tr_TR
 @dirrm %%INGODIR%%/locale/sv_SE/LC_MESSAGES
 @dirrm %%INGODIR%%/locale/sv_SE
 @dirrm %%INGODIR%%/locale/ro_RO/LC_MESSAGES
 @dirrm %%INGODIR%%/locale/ro_RO
+@dirrm %%INGODIR%%/locale/pt_PT/LC_MESSAGES
+@dirrm %%INGODIR%%/locale/pt_PT
 @dirrm %%INGODIR%%/locale/pt_BR/LC_MESSAGES
 @dirrm %%INGODIR%%/locale/pt_BR
 @dirrm %%INGODIR%%/locale/pl_PL/LC_MESSAGES
@@ -157,12 +173,16 @@
 @dirrm %%INGODIR%%/locale/en_US
 @dirrm %%INGODIR%%/locale/de_DE/LC_MESSAGES
 @dirrm %%INGODIR%%/locale/de_DE
+@dirrm %%INGODIR%%/locale/da_DK/LC_MESSAGES
+@dirrm %%INGODIR%%/locale/da_DK
 @dirrm %%INGODIR%%/locale/cs_CZ/LC_MESSAGES
 @dirrm %%INGODIR%%/locale/cs_CZ
 @dirrm %%INGODIR%%/locale
 @dirrm %%INGODIR%%/lib/Storage
 @dirrm %%INGODIR%%/lib/Script
+@dirrm %%INGODIR%%/lib/IMAP
 @dirrm %%INGODIR%%/lib/Driver
+@dirrm %%INGODIR%%/lib/Block
 @dirrm %%INGODIR%%/lib
 @dirrmtry %%INGODIR%%/config
 @dirrmtry %%INGODIR%%
