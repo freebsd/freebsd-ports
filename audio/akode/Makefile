@@ -32,7 +32,7 @@ OPTIONS=	JACK "Jack output plugin" off \
 
 USE_AUTOTOOLS=	libltdl
 USE_REINPLACE=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=  libtool:15
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-2.0
 INSTALLS_SHLIB=	yes

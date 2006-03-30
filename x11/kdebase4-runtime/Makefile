@@ -8,7 +8,6 @@
 
 PORTNAME=	kdebase
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	2
 CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
@@ -36,12 +35,12 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_XPM=	yes
 USE_REINPLACE=	yes
-SUB_FILES=	genkdmconf.sh pkg-deinstall pkg-install pkg-message
+SUB_FILES=	kdm pkg-deinstall pkg-install pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=  libtool:15
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS+=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
 
@@ -84,7 +83,10 @@ post-install:
 	${CHMOD} u+s ${PREFIX}/bin/kcheckpass
 	${CHGRP} kmem ${PREFIX}/bin/ksysguardd && \
 		${CHMOD} g+s ${PREFIX}/bin/ksysguardd
-	${INSTALL_SCRIPT} ${WRKDIR}/genkdmconf.sh ${PREFIX}/etc/rc.d/
+	@${MV} ${PREFIX}/bin/kdm ${PREFIX}/bin/kdm-bin
+	@${MV} ${PREFIX}/bin/kdm_config ${PREFIX}/bin/kdm-bin_config
+	@${MV} ${PREFIX}/bin/kdm_greet ${PREFIX}/bin/kdm-bin_greet
+	@${INSTALL_SCRIPT} ${WRKDIR}/kdm ${PREFIX}/bin
 .if !defined(PACKAGE_BUILDING)
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .endif

@@ -28,12 +28,13 @@ PLUGIN=		jack_sink
 PORTNAMESUFX=	${PLUGIN:S/_sink//:S/_decoder//:S/src_//}
 
 USE_AUTOTOOLS=	libltdl
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=  libtool:15
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/akode-2.0
 INSTALLS_SHLIB=	yes
 
+CONFIGURE_ENV+=	LDFLAGS=-L${WRKSRC}/akode/lib/.libs
 CONFIGURE_ARGS+=--with-extra-libs=${LOCALBASE}/lib \
 		--with-extra-includes=${LOCALBASE}/include
 

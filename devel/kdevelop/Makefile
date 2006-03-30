@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	kdevelop
-PORTVERSION=	3.3.1
-PORTREVISION=	1
+PORTVERSION=	3.3.2
 CATEGORIES?=	devel kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${KDE_VERSION:S/.0//}/src
@@ -40,7 +39,7 @@ INSTALLS_SHLIB=	yes
 USE_KDELIBS_VER=3
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=  libtool:15
 CONFIGURE_ARGS+=--with-qtdoc-dir=${X11BASE}/share/doc/qt/html \
 		--with-db-includedir=${LOCALBASE}/include/db4 \
 		--with-db-libdir=${LOCALBASE}/lib --with-db-lib=db4 \

@@ -25,6 +25,7 @@ include/akode/sink.h
 include/akode/void_sink.h
 include/akode/volumefilter.h
 include/akode/wav_decoder.h
+lib/libakode.a
 lib/libakode.la
 lib/libakode.so
 lib/libakode.so.2

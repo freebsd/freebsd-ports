@@ -7,7 +7,6 @@
 
 PORTNAME=	kdewebdev
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	www kde
 MASTER_SITES=	${MASTER_SITE_KDE}
@@ -28,7 +27,7 @@ USE_BZIP2=	yes
 USE_XPM=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=  libtool:15
 
 .include <${.CURDIR}/../../x11/kde3/Makefile.kde>
 .include <bsd.port.mk>

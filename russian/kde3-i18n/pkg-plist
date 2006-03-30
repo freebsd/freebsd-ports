@@ -45,65 +45,6 @@ share/doc/HTML/ru/atlantik/index.docbook
 share/doc/HTML/ru/cervisia/common
 share/doc/HTML/ru/cervisia/index.cache.bz2
 share/doc/HTML/ru/cervisia/index.docbook
-share/doc/HTML/ru/common/1.png
-share/doc/HTML/ru/common/10.png
-share/doc/HTML/ru/common/2.png
-share/doc/HTML/ru/common/3.png
-share/doc/HTML/ru/common/4.png
-share/doc/HTML/ru/common/5.png
-share/doc/HTML/ru/common/6.png
-share/doc/HTML/ru/common/7.png
-share/doc/HTML/ru/common/8.png
-share/doc/HTML/ru/common/9.png
-share/doc/HTML/ru/common/appheader.html
-share/doc/HTML/ru/common/artistic-license.html
-share/doc/HTML/ru/common/bottom-left.png
-share/doc/HTML/ru/common/bottom-middle.png
-share/doc/HTML/ru/common/bottom-right.png
-share/doc/HTML/ru/common/bottom1.png
-share/doc/HTML/ru/common/bottom2.png
-share/doc/HTML/ru/common/bsd-license.html
-share/doc/HTML/ru/common/docheadergears.png
-share/doc/HTML/ru/common/doctop1.png
-share/doc/HTML/ru/common/doctop1a.png
-share/doc/HTML/ru/common/doctop1b.png
-share/doc/HTML/ru/common/doctop2.png
-share/doc/HTML/ru/common/doxygen.css
-share/doc/HTML/ru/common/favicon.ico
-share/doc/HTML/ru/common/fdl-license
-share/doc/HTML/ru/common/fdl-license.html
-share/doc/HTML/ru/common/fdl-notice.html
-share/doc/HTML/ru/common/fdl-translated.html
-share/doc/HTML/ru/common/footer.html
-share/doc/HTML/ru/common/gpl-license
-share/doc/HTML/ru/common/gpl-license.html
-share/doc/HTML/ru/common/gpl-translated.html
-share/doc/HTML/ru/common/grad.png
-share/doc/HTML/ru/common/header.html
-share/doc/HTML/ru/common/headerbg.png
-share/doc/HTML/ru/common/kde-common.css
-share/doc/HTML/ru/common/kde-default.css
-share/doc/HTML/ru/common/kde-localised.css
-share/doc/HTML/ru/common/kde-localised.css.template
-share/doc/HTML/ru/common/kde-web.css
-share/doc/HTML/ru/common/kde_gear_64.png
-share/doc/HTML/ru/common/kde_logo.png
-share/doc/HTML/ru/common/kde_logo_bg.png
-share/doc/HTML/ru/common/kmenu.png
-share/doc/HTML/ru/common/lgpl-license
-share/doc/HTML/ru/common/lgpl-license.html
-share/doc/HTML/ru/common/logotp3.png
-share/doc/HTML/ru/common/mainfooter.html
-share/doc/HTML/ru/common/mainheader.html
-share/doc/HTML/ru/common/qpl-license.html
-share/doc/HTML/ru/common/shadow.png
-share/doc/HTML/ru/common/top-left.png
-share/doc/HTML/ru/common/top-middle.png
-share/doc/HTML/ru/common/top-right-konqueror.png
-share/doc/HTML/ru/common/web-docbottom.png
-share/doc/HTML/ru/common/web-doctop.png
-share/doc/HTML/ru/common/x11-license.html
-share/doc/HTML/ru/common/xml.dcl
 share/doc/HTML/ru/juk/common
 share/doc/HTML/ru/juk/index.cache.bz2
 share/doc/HTML/ru/juk/index.docbook
@@ -1275,6 +1216,10 @@ share/doc/HTML/ru/quanta/quanta-projects.docbook
 share/doc/HTML/ru/quanta/taginputex.png
 share/doc/HTML/ru/quanta/toolbars.png
 share/doc/HTML/ru/quanta/working-with-quanta.docbook
+share/doc/HTML/ru/ru/docs/common/fdl-translated.html
+share/doc/HTML/ru/ru/docs/common/gpl-translated.html
+share/doc/HTML/ru/ru/docs/common/kde-localised.css
+share/doc/HTML/ru/ru/docs/common/logotp3.png
 share/doc/HTML/ru/scripts/man-po2xml.1.docbook
 share/doc/HTML/ru/scripts/man-split2po.1.docbook
 share/doc/HTML/ru/scripts/man-swappo.1.docbook
@@ -1661,7 +1606,9 @@ share/locale/ru/LC_MESSAGES/konnector_kcal.mo
 share/locale/ru/LC_MESSAGES/konnector_local.mo
 share/locale/ru/LC_MESSAGES/konnector_qtopia.mo
 share/locale/ru/LC_MESSAGES/konnector_remote.mo
+share/locale/ru/LC_MESSAGES/konqsidebar_delicious.mo
 share/locale/ru/LC_MESSAGES/konqsidebar_mediaplayer.mo
+share/locale/ru/LC_MESSAGES/konqsidebar_metabar.mo
 share/locale/ru/LC_MESSAGES/konqsidebar_news.mo
 share/locale/ru/LC_MESSAGES/konqueror.mo
 share/locale/ru/LC_MESSAGES/konquest.mo
@@ -1821,6 +1768,7 @@ share/locale/ru/LC_MESSAGES/lskat.mo
 share/locale/ru/LC_MESSAGES/lyrics.mo
 share/locale/ru/LC_MESSAGES/mediaapplet.mo
 share/locale/ru/LC_MESSAGES/mediacontrol.mo
+share/locale/ru/LC_MESSAGES/mf_konqplugin.mo
 share/locale/ru/LC_MESSAGES/minitoolsplugin.mo
 share/locale/ru/LC_MESSAGES/multisynk.mo
 share/locale/ru/LC_MESSAGES/naughtyapplet.mo
@@ -1856,6 +1804,9 @@ share/locale/ru/flag.png
 @dirrm share/doc/HTML/ru/umbrello
 @dirrm share/doc/HTML/ru/superkaramba
 @dirrm share/doc/HTML/ru/scripts
+@dirrm share/doc/HTML/ru/ru/docs/common
+@dirrm share/doc/HTML/ru/ru/docs
+@dirrm share/doc/HTML/ru/ru
 @dirrm share/doc/HTML/ru/quanta
 @dirrm share/doc/HTML/ru/noatun
 @dirrm share/doc/HTML/ru/multisynk
@@ -2103,7 +2054,6 @@ share/locale/ru/flag.png
 @dirrm share/doc/HTML/ru/kaddressbook
 @dirrm share/doc/HTML/ru/kaboodle
 @dirrm share/doc/HTML/ru/juk
-@dirrm share/doc/HTML/ru/common
 @dirrm share/doc/HTML/ru/cervisia
 @dirrm share/doc/HTML/ru/atlantik
 @dirrm share/doc/HTML/ru/artsbuilder

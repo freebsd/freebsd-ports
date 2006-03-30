@@ -26,8 +26,9 @@ bin/kdesu
 bin/kdesud
 bin/kdialog
 bin/kdm
-bin/kdm_config
-bin/kdm_greet
+bin/kdm-bin
+bin/kdm-bin_config
+bin/kdm-bin_greet
 bin/kdmctl
 bin/keditbookmarks
 bin/keditfiletype
@@ -82,7 +83,6 @@ bin/nspluginscan
 bin/nspluginviewer
 bin/startkde
 etc/ksysguarddrc
-etc/rc.d/genkdmconf.sh
 etc/xdg/menus/applications-merged/kde-essential.menu
 etc/xdg/menus/kde-information.menu
 etc/xdg/menus/kde-screensavers.menu
@@ -149,6 +149,7 @@ include/kwin/workspace.h
 include/libkonq_export.h
 lib/kconf_update_bin/khotkeys_update
 lib/kconf_update_bin/kicker-3.4-reverseLayout
+lib/kconf_update_bin/kwin_update_default_rules
 lib/kconf_update_bin/kwin_update_window_settings
 lib/kde3/appletproxy.a
 lib/kde3/appletproxy.la
@@ -757,8 +758,8 @@ lib/libkdecorations.so.1
 lib/libkdeinit_appletproxy.a
 lib/libkdeinit_appletproxy.la
 lib/libkdeinit_appletproxy.so
-lib/libkdeinit_extensionproxy.la
 lib/libkdeinit_extensionproxy.a
+lib/libkdeinit_extensionproxy.la
 lib/libkdeinit_extensionproxy.so
 lib/libkdeinit_kaccess.a
 lib/libkdeinit_kaccess.la
@@ -1301,6 +1302,7 @@ share/apps/kconf_update/kwin_focus1.sh
 share/apps/kconf_update/kwin_focus1.upd
 share/apps/kconf_update/kwin_focus2.sh
 share/apps/kconf_update/kwin_focus2.upd
+share/apps/kconf_update/kwin_fsp_workarounds_1.upd
 share/apps/kconf_update/kwiniconify.upd
 share/apps/kconf_update/kwinsticky.upd
 share/apps/kconf_update/kwinupdatewindowsettings.upd
@@ -1998,6 +2000,7 @@ share/apps/kthememanager/themes/YellowOnBlue-big/YellowOnBlue-big.xml
 share/apps/kthememanager/themes/YellowOnBlue/YellowOnBlue.preview.png
 share/apps/kthememanager/themes/YellowOnBlue/YellowOnBlue.xml
 share/apps/kwin/b2.desktop
+share/apps/kwin/default_rules/fsp_workarounds_1
 share/apps/kwin/eventsrc
 share/apps/kwin/keramik.desktop
 share/apps/kwin/laptop.desktop
@@ -2682,6 +2685,9 @@ share/doc/HTML/en/kwrite/index.docbook
 share/doc/HTML/en/kxkb/common
 share/doc/HTML/en/kxkb/index.cache.bz2
 share/doc/HTML/en/kxkb/index.docbook
+share/doc/HTML/en/kxkb/layout.png
+share/doc/HTML/en/kxkb/switching.png
+share/doc/HTML/en/kxkb/xkb.png
 share/doc/kdm/README
 share/fonts/override/fonts.dir
 share/icons/crystalsvg/128x128/apps/access.png
@@ -4785,6 +4791,7 @@ share/wallpapers/triplegears.jpg.desktop
 @dirrm share/apps/naughtyapplet/pics
 @dirrm share/apps/naughtyapplet
 @dirrm share/apps/kwrite
+@dirrm share/apps/kwin/default_rules
 @dirrm share/apps/kthememanager/themes/YellowOnBlue-big
 @dirrm share/apps/kthememanager/themes/YellowOnBlue
 @dirrm share/apps/kthememanager/themes/Sunshine

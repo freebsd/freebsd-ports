@@ -1304,7 +1304,10 @@ share/apps/kppp/Rules/Jamaica/CWJ_InterParish.rst
 share/apps/kppp/Rules/Jamaica/CWJ_Local.rst
 share/apps/kppp/Rules/Japan/NTT_Local.rst
 share/apps/kppp/Rules/Kazakhstan/Akparat_Sprint.rst
-share/apps/kppp/Rules/Luxembourg/Local.rst
+share/apps/kppp/Rules/Luxembourg/CMD_InternetGratuit.rst
+share/apps/kppp/Rules/Luxembourg/LuxembourgOnline_FreeInternet.rst
+share/apps/kppp/Rules/Luxembourg/PetT_ClassicSurf.rst
+share/apps/kppp/Rules/Luxembourg/PetT_KioskSurf.rst
 share/apps/kppp/Rules/Macedonia/Macedonia_GenericISP_interurban.rst
 share/apps/kppp/Rules/Macedonia/Macedonia_GenericISP_local.rst
 share/apps/kppp/Rules/Macedonia/Macedonia_MTnet.rst

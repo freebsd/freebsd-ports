@@ -1,3 +1,3 @@
-aKode is a simple audio-decoding frame-work that provides a uniform interface
-to decode the most common audio-formats. It also has a direct playback option
+aKode is a simple audio-decoding frame-work that provides a uniform interface   
+to decode the most common audio-formats. It also has a direct playback option   
 for a number of audio-outputs.

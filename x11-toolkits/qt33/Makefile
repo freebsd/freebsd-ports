@@ -35,6 +35,10 @@ HAS_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 NO_FILTER_SHLIBS=yes
 
+.if defined(PACKAGE_BUILDING)
+TMPDIR?=	/tmp
+.endif
+
 CONFIGURE_ARGS+=	-system-libpng -system-libjpeg -system-libmng	\
 		-qt-imgfmt-png -qt-imgfmt-jpeg -qt-imgfmt-mng	\
 		-system-zlib -sm -qt-gif -thread \
@@ -44,7 +48,8 @@ CONFIGURE_ARGS+=	-system-libpng -system-libjpeg -system-libmng	\
 		-plugindir ${PREFIX}/lib/plugins
 
 CONFIGURE_ENV?=	QTDIR=${WRKSRC} PATH=${WRKSRC}/bin:$$PATH
-MAKE_ENV?=	QTDIR=${WRKSRC} \
+MAKE_ENV?=	TMPDIR=${TMPDIR} \
+		QTDIR=${WRKSRC} \
 		LD_LIBRARY_PATH=${WRKSRC}/lib \
 		PATH=${WRKSRC}/bin:$$PATH
 ALL_TARGET=	sub-tools

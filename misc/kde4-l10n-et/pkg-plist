@@ -11,6 +11,7 @@ share/doc/HTML/et/amor/man-amor.6.docbook
 share/doc/HTML/et/ark/common
 share/doc/HTML/et/ark/index.cache.bz2
 share/doc/HTML/et/ark/index.docbook
+share/doc/HTML/et/ark/man-ark.1.docbook
 share/doc/HTML/et/atlantik/common
 share/doc/HTML/et/atlantik/index.cache.bz2
 share/doc/HTML/et/atlantik/index.docbook
@@ -21,66 +22,11 @@ share/doc/HTML/et/blinken/index.docbook
 share/doc/HTML/et/cervisia/common
 share/doc/HTML/et/cervisia/index.cache.bz2
 share/doc/HTML/et/cervisia/index.docbook
-share/doc/HTML/et/common/1.png
-share/doc/HTML/et/common/10.png
-share/doc/HTML/et/common/2.png
-share/doc/HTML/et/common/3.png
-share/doc/HTML/et/common/4.png
-share/doc/HTML/et/common/5.png
-share/doc/HTML/et/common/6.png
-share/doc/HTML/et/common/7.png
-share/doc/HTML/et/common/8.png
-share/doc/HTML/et/common/9.png
-share/doc/HTML/et/common/appheader.html
-share/doc/HTML/et/common/artistic-license.html
-share/doc/HTML/et/common/bottom-left.png
-share/doc/HTML/et/common/bottom-middle.png
-share/doc/HTML/et/common/bottom-right.png
-share/doc/HTML/et/common/bottom1.png
-share/doc/HTML/et/common/bottom2.png
-share/doc/HTML/et/common/bsd-license.html
-share/doc/HTML/et/common/docheadergears.png
-share/doc/HTML/et/common/doctop1.png
-share/doc/HTML/et/common/doctop1a.png
-share/doc/HTML/et/common/doctop1b.png
-share/doc/HTML/et/common/doctop2.png
-share/doc/HTML/et/common/doxygen.css
-share/doc/HTML/et/common/favicon.ico
-share/doc/HTML/et/common/fdl-license
-share/doc/HTML/et/common/fdl-license.html
-share/doc/HTML/et/common/fdl-notice.html
-share/doc/HTML/et/common/fdl-translated.html
-share/doc/HTML/et/common/footer.html
-share/doc/HTML/et/common/gpl-license
-share/doc/HTML/et/common/gpl-license.html
-share/doc/HTML/et/common/gpl-translated.html
-share/doc/HTML/et/common/grad.png
-share/doc/HTML/et/common/header.html
-share/doc/HTML/et/common/headerbg.png
-share/doc/HTML/et/common/kde-common.css
-share/doc/HTML/et/common/kde-default.css
-share/doc/HTML/et/common/kde-localised.css
-share/doc/HTML/et/common/kde-localised.css.template
-share/doc/HTML/et/common/kde-web.css
-share/doc/HTML/et/common/kde_gear_64.png
-share/doc/HTML/et/common/kde_logo.png
-share/doc/HTML/et/common/kde_logo_bg.png
-share/doc/HTML/et/common/kmenu.png
-share/doc/HTML/et/common/lgpl-license
-share/doc/HTML/et/common/lgpl-license.html
-share/doc/HTML/et/common/lgpl-translated.html
-share/doc/HTML/et/common/logotp3.png
-share/doc/HTML/et/common/mainfooter.html
-share/doc/HTML/et/common/mainheader.html
-share/doc/HTML/et/common/qpl-license.html
-share/doc/HTML/et/common/shadow.png
-share/doc/HTML/et/common/top-left.png
-share/doc/HTML/et/common/top-middle.png
-share/doc/HTML/et/common/top-right-konqueror.png
-share/doc/HTML/et/common/web-docbottom.png
-share/doc/HTML/et/common/web-doctop.png
-share/doc/HTML/et/common/x11-license.html
-share/doc/HTML/et/common/xml.dcl
+share/doc/HTML/et/et/docs/common/fdl-translated.html
+share/doc/HTML/et/et/docs/common/gpl-translated.html
+share/doc/HTML/et/et/docs/common/kde-localised.css
+share/doc/HTML/et/et/docs/common/lgpl-translated.html
+share/doc/HTML/et/et/docs/common/logotp3.png
 share/doc/HTML/et/flashkard/common
 share/doc/HTML/et/flashkard/index.cache.bz2
 share/doc/HTML/et/flashkard/index.docbook
@@ -110,6 +56,7 @@ share/doc/HTML/et/kandy/common
 share/doc/HTML/et/kandy/index.cache.bz2
 share/doc/HTML/et/kandy/index.docbook
 share/doc/HTML/et/kappfinder/man-kappfinder.1.docbook
+share/doc/HTML/et/kapptemplate/man-kapptemplate.1.docbook
 share/doc/HTML/et/karm/common
 share/doc/HTML/et/karm/index.cache.bz2
 share/doc/HTML/et/karm/index.docbook
@@ -147,6 +94,9 @@ share/doc/HTML/et/kate/regular-expressions.docbook
 share/doc/HTML/et/katomic/common
 share/doc/HTML/et/katomic/index.cache.bz2
 share/doc/HTML/et/katomic/index.docbook
+share/doc/HTML/et/kaudiocreator/common
+share/doc/HTML/et/kaudiocreator/index.cache.bz2
+share/doc/HTML/et/kaudiocreator/index.docbook
 share/doc/HTML/et/kbabel/catman.docbook
 share/doc/HTML/et/kbabel/common
 share/doc/HTML/et/kbabel/dictionaries.docbook
@@ -181,6 +131,7 @@ share/doc/HTML/et/kbugbuster/index.docbook
 share/doc/HTML/et/kcachegrind/common
 share/doc/HTML/et/kcachegrind/index.cache.bz2
 share/doc/HTML/et/kcachegrind/index.docbook
+share/doc/HTML/et/kcalc/commands.docbook
 share/doc/HTML/et/kcalc/common
 share/doc/HTML/et/kcalc/index.cache.bz2
 share/doc/HTML/et/kcalc/index.docbook
@@ -379,6 +330,7 @@ share/doc/HTML/et/kdebugdialog/index.docbook
 share/doc/HTML/et/kdelibs/man-artsmessage.1.docbook
 share/doc/HTML/et/kdelibs/man-checkXML.1.docbook
 share/doc/HTML/et/kdelibs/man-dcop.1.docbook
+share/doc/HTML/et/kdelibs/man-kbuildsycoca.8.docbook
 share/doc/HTML/et/kdelibs/man-kdeoptions.7.docbook
 share/doc/HTML/et/kdelibs/man-qtoptions.7.docbook
 share/doc/HTML/et/kdelirc/irkick/common
@@ -408,6 +360,9 @@ share/doc/HTML/et/kdesu/common
 share/doc/HTML/et/kdesu/index.cache.bz2
 share/doc/HTML/et/kdesu/index.docbook
 share/doc/HTML/et/kdesu/man-kdesu.1.docbook
+share/doc/HTML/et/kdesvn-build/common
+share/doc/HTML/et/kdesvn-build/index.cache.bz2
+share/doc/HTML/et/kdesvn-build/index.docbook
 share/doc/HTML/et/kdevelop/adv-build-management.docbook
 share/doc/HTML/et/kdevelop/app-changelog.docbook
 share/doc/HTML/et/kdevelop/app-files.docbook
@@ -783,6 +738,7 @@ share/doc/HTML/et/klipper/index.docbook
 share/doc/HTML/et/kmag/common
 share/doc/HTML/et/kmag/index.cache.bz2
 share/doc/HTML/et/kmag/index.docbook
+share/doc/HTML/et/kmag/man-kmag.1.docbook
 share/doc/HTML/et/kmahjongg/common
 share/doc/HTML/et/kmahjongg/index.cache.bz2
 share/doc/HTML/et/kmahjongg/index.docbook
@@ -821,9 +777,11 @@ share/doc/HTML/et/kmoon/index.docbook
 share/doc/HTML/et/kmousetool/common
 share/doc/HTML/et/kmousetool/index.cache.bz2
 share/doc/HTML/et/kmousetool/index.docbook
+share/doc/HTML/et/kmousetool/man-kmousetool.1.docbook
 share/doc/HTML/et/kmouth/common
 share/doc/HTML/et/kmouth/index.cache.bz2
 share/doc/HTML/et/kmouth/index.docbook
+share/doc/HTML/et/kmouth/man-kmouth.1.docbook
 share/doc/HTML/et/kmplot/commands.docbook
 share/doc/HTML/et/kmplot/common
 share/doc/HTML/et/kmplot/configuration.docbook
@@ -1332,6 +1290,29 @@ share/doc/HTML/et/quanta/q-and-a.docbook
 share/doc/HTML/et/quanta/quanta-menus.docbook
 share/doc/HTML/et/quanta/quanta-projects.docbook
 share/doc/HTML/et/quanta/working-with-quanta.docbook
+share/doc/HTML/et/scripts/man-adddebug.1.docbook
+share/doc/HTML/et/scripts/man-cheatmake.1.docbook
+share/doc/HTML/et/scripts/man-create_cvsignore.1.docbook
+share/doc/HTML/et/scripts/man-create_makefile.1.docbook
+share/doc/HTML/et/scripts/man-create_makefiles.1.docbook
+share/doc/HTML/et/scripts/man-cvscheck.1.docbook
+share/doc/HTML/et/scripts/man-cvslastchange.1.docbook
+share/doc/HTML/et/scripts/man-cvslastlog.1.docbook
+share/doc/HTML/et/scripts/man-cvsrevertlast.1.docbook
+share/doc/HTML/et/scripts/man-cxxmetric.1.docbook
+share/doc/HTML/et/scripts/man-demangle.1.docbook
+share/doc/HTML/et/scripts/man-extend_dmalloc.1.docbook
+share/doc/HTML/et/scripts/man-extractrc.1.docbook
+share/doc/HTML/et/scripts/man-fixincludes.1.docbook
+share/doc/HTML/et/scripts/man-po2xml.1.docbook
+share/doc/HTML/et/scripts/man-pruneemptydirs.1.docbook
+share/doc/HTML/et/scripts/man-qtdoc.1.docbook
+share/doc/HTML/et/scripts/man-reportview.1.docbook
+share/doc/HTML/et/scripts/man-split2po.1.docbook
+share/doc/HTML/et/scripts/man-swappo.1.docbook
+share/doc/HTML/et/scripts/man-transxx.1.docbook
+share/doc/HTML/et/scripts/man-xml2pot.1.docbook
+share/doc/HTML/et/scripts/man-zonetab2pot.1.docbook
 share/doc/HTML/et/superkaramba/common
 share/doc/HTML/et/superkaramba/index.cache.bz2
 share/doc/HTML/et/superkaramba/index.docbook
@@ -1919,6 +1900,7 @@ share/locale/et/flag.png
 @dirrm share/doc/HTML/et/xsldbg
 @dirrm share/doc/HTML/et/umbrello
 @dirrm share/doc/HTML/et/superkaramba
+@dirrm share/doc/HTML/et/scripts
 @dirrm share/doc/HTML/et/quanta
 @dirrm share/doc/HTML/et/noatun
 @dirrm share/doc/HTML/et/multisynk
@@ -2087,6 +2069,7 @@ share/locale/et/flag.png
 @dirrm share/doc/HTML/et/kdict
 @dirrm share/doc/HTML/et/kdf
 @dirrm share/doc/HTML/et/kdevelop
+@dirrm share/doc/HTML/et/kdesvn-build
 @dirrm share/doc/HTML/et/kdesu
 @dirrm share/doc/HTML/et/kdeprint
 @dirrm share/doc/HTML/et/kdelirc/kcmlirc
@@ -2165,11 +2148,13 @@ share/locale/et/flag.png
 @dirrm share/doc/HTML/et/kbattleship
 @dirrm share/doc/HTML/et/kbackgammon
 @dirrm share/doc/HTML/et/kbabel
+@dirrm share/doc/HTML/et/kaudiocreator
 @dirrm share/doc/HTML/et/katomic
 @dirrm share/doc/HTML/et/kate-plugins
 @dirrm share/doc/HTML/et/kate
 @dirrm share/doc/HTML/et/kasteroids
 @dirrm share/doc/HTML/et/karm
+@dirrm share/doc/HTML/et/kapptemplate
 @dirrm share/doc/HTML/et/kappfinder
 @dirrm share/doc/HTML/et/kandy
 @dirrm share/doc/HTML/et/kanagram
@@ -2180,7 +2165,9 @@ share/locale/et/flag.png
 @dirrm share/doc/HTML/et/kaboodle
 @dirrm share/doc/HTML/et/juk
 @dirrm share/doc/HTML/et/flashkard
-@dirrm share/doc/HTML/et/common
+@dirrm share/doc/HTML/et/et/docs/common
+@dirrm share/doc/HTML/et/et/docs
+@dirrm share/doc/HTML/et/et
 @dirrm share/doc/HTML/et/cervisia
 @dirrm share/doc/HTML/et/blinken
 @dirrm share/doc/HTML/et/atlantik

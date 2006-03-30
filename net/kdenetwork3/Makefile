@@ -31,7 +31,7 @@ USE_GMAKE=	yes
 USE_OPENSSL=	yes
 USE_REINPLACE=	yes
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=  libtool:15
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS+=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
 DO_NOT_COMPILE+=lanbrowsing

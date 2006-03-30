@@ -1,0 +1,11 @@
+--- klinkstatus/src/utils/Makefile.in.orig	Sat Mar 25 04:33:00 2006
++++ klinkstatus/src/utils/Makefile.in	Sat Mar 25 04:34:16 2006
+@@ -380,7 +380,7 @@
+ xdg_appsdir = @xdg_appsdir@
+ xdg_directorydir = @xdg_directorydir@
+ xdg_menudir = @xdg_menudir@
+-INCLUDES = -I/usr/include/libxml2 $(all_includes)
++AM_CPPFLAGS = $(all_includes) $(LIBXML_CFLAGS)
+ #>- METASOURCES = AUTO
+ libutils_la_LDFLAGS = $(all_libraries)
+ noinst_LTLIBRARIES = libutils.la

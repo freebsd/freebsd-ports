@@ -944,7 +944,6 @@ share/config.kcfg/kdvi.kcfg
 share/config.kcfg/kghostview.kcfg
 share/config.kcfg/kpdf.kcfg
 share/config.kcfg/kviewshell.kcfg
-share/config/magic/x-image-raw.magic
 share/doc/HTML/en/kcoloredit/common
 share/doc/HTML/en/kcoloredit/index.cache.bz2
 share/doc/HTML/en/kcoloredit/index.docbook
@@ -1159,7 +1158,6 @@ share/icons/hicolor/scalable/apps/kfaxview.svgz
 share/icons/hicolor/scalable/apps/kolourpaint.svgz
 share/icons/hicolor/scalable/apps/kpdf.svgz
 share/icons/hicolor/scalable/apps/ksnapshot.svgz
-share/mimelnk/image/x-image-raw.desktop
 share/mimelnk/text/mrml.desktop
 share/services/djvumultipage.desktop
 share/services/emptymultipage.desktop
@@ -1225,7 +1223,6 @@ share/servicetypes/ksvgrenderer.desktop
 @dirrm share/doc/HTML/en/kgamma
 @dirrm share/doc/HTML/en/kdvi
 @dirrm share/doc/HTML/en/kcoloredit
-@dirrm share/config/magic
 @dirrm share/apps/kviewviewer/kpartplugins
 @dirrm share/apps/kviewviewer
 @dirrm share/apps/kviewshell

@@ -1,63 +1,8 @@
-share/doc/HTML/ja/common/1.png
-share/doc/HTML/ja/common/10.png
-share/doc/HTML/ja/common/2.png
-share/doc/HTML/ja/common/3.png
-share/doc/HTML/ja/common/4.png
-share/doc/HTML/ja/common/5.png
-share/doc/HTML/ja/common/6.png
-share/doc/HTML/ja/common/7.png
-share/doc/HTML/ja/common/8.png
-share/doc/HTML/ja/common/9.png
-share/doc/HTML/ja/common/appheader.html
-share/doc/HTML/ja/common/artistic-license.html
-share/doc/HTML/ja/common/bottom-left.png
-share/doc/HTML/ja/common/bottom-middle.png
-share/doc/HTML/ja/common/bottom-right.png
-share/doc/HTML/ja/common/bottom1.png
-share/doc/HTML/ja/common/bottom2.png
-share/doc/HTML/ja/common/bsd-license.html
-share/doc/HTML/ja/common/docheadergears.png
-share/doc/HTML/ja/common/doctop1.png
-share/doc/HTML/ja/common/doctop1a.png
-share/doc/HTML/ja/common/doctop1b.png
-share/doc/HTML/ja/common/doctop2.png
-share/doc/HTML/ja/common/doxygen.css
-share/doc/HTML/ja/common/favicon.ico
-share/doc/HTML/ja/common/fdl-license
-share/doc/HTML/ja/common/fdl-license.html
-share/doc/HTML/ja/common/fdl-notice.html
-share/doc/HTML/ja/common/fdl-translated.html
-share/doc/HTML/ja/common/footer.html
-share/doc/HTML/ja/common/gpl-license
-share/doc/HTML/ja/common/gpl-license.html
-share/doc/HTML/ja/common/gpl-translated.html
-share/doc/HTML/ja/common/grad.png
-share/doc/HTML/ja/common/header.html
-share/doc/HTML/ja/common/headerbg.png
-share/doc/HTML/ja/common/kde-common.css
-share/doc/HTML/ja/common/kde-default.css
-share/doc/HTML/ja/common/kde-localised.css
-share/doc/HTML/ja/common/kde-localised.css.template
-share/doc/HTML/ja/common/kde-web.css
-share/doc/HTML/ja/common/kde_gear_64.png
-share/doc/HTML/ja/common/kde_logo.png
-share/doc/HTML/ja/common/kde_logo_bg.png
-share/doc/HTML/ja/common/kmenu.png
-share/doc/HTML/ja/common/lgpl-license
-share/doc/HTML/ja/common/lgpl-license.html
-share/doc/HTML/ja/common/lgpl-translated.html
-share/doc/HTML/ja/common/logotp3.png
-share/doc/HTML/ja/common/mainfooter.html
-share/doc/HTML/ja/common/mainheader.html
-share/doc/HTML/ja/common/qpl-license.html
-share/doc/HTML/ja/common/shadow.png
-share/doc/HTML/ja/common/top-left.png
-share/doc/HTML/ja/common/top-middle.png
-share/doc/HTML/ja/common/top-right-konqueror.png
-share/doc/HTML/ja/common/web-docbottom.png
-share/doc/HTML/ja/common/web-doctop.png
-share/doc/HTML/ja/common/x11-license.html
-share/doc/HTML/ja/common/xml.dcl
+share/doc/HTML/ja/ja/docs/common/fdl-translated.html
+share/doc/HTML/ja/ja/docs/common/gpl-translated.html
+share/doc/HTML/ja/ja/docs/common/kde-localised.css
+share/doc/HTML/ja/ja/docs/common/lgpl-translated.html
+share/doc/HTML/ja/ja/docs/common/logotp3.png
 share/doc/HTML/ja/kcontrol/arts/common
 share/doc/HTML/ja/kcontrol/arts/index.cache.bz2
 share/doc/HTML/ja/kcontrol/arts/index.docbook
@@ -246,7 +191,6 @@ share/locale/ja/LC_MESSAGES/audiorename_plugin.mo
 share/locale/ja/LC_MESSAGES/autorefresh.mo
 share/locale/ja/LC_MESSAGES/babelfish.mo
 share/locale/ja/LC_MESSAGES/blinken.mo
-share/locale/ja/LC_MESSAGES/cervisia-elf.mo
 share/locale/ja/LC_MESSAGES/cervisia.mo
 share/locale/ja/LC_MESSAGES/charlatanui.mo
 share/locale/ja/LC_MESSAGES/childpanelextension.mo
@@ -255,7 +199,6 @@ share/locale/ja/LC_MESSAGES/crashesplugin.mo
 share/locale/ja/LC_MESSAGES/cupsdconf.mo
 share/locale/ja/LC_MESSAGES/cvsservice.mo
 share/locale/ja/LC_MESSAGES/dcoprss.mo
-share/locale/ja/LC_MESSAGES/devicesapplet.mo
 share/locale/ja/LC_MESSAGES/dirfilterplugin.mo
 share/locale/ja/LC_MESSAGES/display.mo
 share/locale/ja/LC_MESSAGES/dockbarextension.mo
@@ -325,7 +268,6 @@ share/locale/ja/LC_MESSAGES/kblackbox.mo
 share/locale/ja/LC_MESSAGES/kbounce.mo
 share/locale/ja/LC_MESSAGES/kbruch.mo
 share/locale/ja/LC_MESSAGES/kbstateapplet.mo
-share/locale/ja/LC_MESSAGES/kbugbuster-elf.mo
 share/locale/ja/LC_MESSAGES/kbugbuster.mo
 share/locale/ja/LC_MESSAGES/kcalc.mo
 share/locale/ja/LC_MESSAGES/kcharselect.mo
@@ -382,6 +324,7 @@ share/locale/ja/LC_MESSAGES/kcmlayout.mo
 share/locale/ja/LC_MESSAGES/kcmlilo.mo
 share/locale/ja/LC_MESSAGES/kcmlirc.mo
 share/locale/ja/LC_MESSAGES/kcmlocale.mo
+share/locale/ja/LC_MESSAGES/kcmmedia.mo
 share/locale/ja/LC_MESSAGES/kcmnic.mo
 share/locale/ja/LC_MESSAGES/kcmnotify.mo
 share/locale/ja/LC_MESSAGES/kcmperformance.mo
@@ -516,7 +459,6 @@ share/locale/ja/LC_MESSAGES/kimagemapeditor.mo
 share/locale/ja/LC_MESSAGES/kinetd.mo
 share/locale/ja/LC_MESSAGES/kio.mo
 share/locale/ja/LC_MESSAGES/kio_audiocd.mo
-share/locale/ja/LC_MESSAGES/kio_devices.mo
 share/locale/ja/LC_MESSAGES/kio_finger.mo
 share/locale/ja/LC_MESSAGES/kio_fish.mo
 share/locale/ja/LC_MESSAGES/kio_floppy.mo
@@ -532,7 +474,6 @@ share/locale/ja/LC_MESSAGES/kio_man-elf.mo
 share/locale/ja/LC_MESSAGES/kio_man.mo
 share/locale/ja/LC_MESSAGES/kio_media.mo
 share/locale/ja/LC_MESSAGES/kio_mobile.mo
-share/locale/ja/LC_MESSAGES/kio_newimap4.mo
 share/locale/ja/LC_MESSAGES/kio_nfs.mo
 share/locale/ja/LC_MESSAGES/kio_nntp-elf.mo
 share/locale/ja/LC_MESSAGES/kio_nntp.mo
@@ -546,6 +487,7 @@ share/locale/ja/LC_MESSAGES/kio_sieve.mo
 share/locale/ja/LC_MESSAGES/kio_smb-elf.mo
 share/locale/ja/LC_MESSAGES/kio_smb.mo
 share/locale/ja/LC_MESSAGES/kio_smtp.mo
+share/locale/ja/LC_MESSAGES/kio_svn.mo
 share/locale/ja/LC_MESSAGES/kio_system-elf.mo
 share/locale/ja/LC_MESSAGES/kio_system.mo
 share/locale/ja/LC_MESSAGES/kio_tar-elf.mo
@@ -597,6 +539,7 @@ share/locale/ja/LC_MESSAGES/kmplot.mo
 share/locale/ja/LC_MESSAGES/kmrml.mo
 share/locale/ja/LC_MESSAGES/knetattach.mo
 share/locale/ja/LC_MESSAGES/knetwalk.mo
+share/locale/ja/LC_MESSAGES/knetworkconf.mo
 share/locale/ja/LC_MESSAGES/knewsticker.mo
 share/locale/ja/LC_MESSAGES/knode.mo
 share/locale/ja/LC_MESSAGES/knotes.mo
@@ -606,7 +549,6 @@ share/locale/ja/LC_MESSAGES/kolf.mo
 share/locale/ja/LC_MESSAGES/kolourpaint.mo
 share/locale/ja/LC_MESSAGES/kolourpicker.mo
 share/locale/ja/LC_MESSAGES/kommander.mo
-share/locale/ja/LC_MESSAGES/kompare-elf.mo
 share/locale/ja/LC_MESSAGES/kompare.mo
 share/locale/ja/LC_MESSAGES/konnector_dummy.mo
 share/locale/ja/LC_MESSAGES/konnector_kabc.mo
@@ -685,6 +627,7 @@ share/locale/ja/LC_MESSAGES/ksplashthemes.mo
 share/locale/ja/LC_MESSAGES/kstars.mo
 share/locale/ja/LC_MESSAGES/kstart.mo
 share/locale/ja/LC_MESSAGES/kstartperf.mo
+share/locale/ja/LC_MESSAGES/kstyle_highcontrast_config.mo
 share/locale/ja/LC_MESSAGES/kstyle_keramik_config.mo
 share/locale/ja/LC_MESSAGES/kstyle_phase_config.mo
 share/locale/ja/LC_MESSAGES/kstyle_plastik_config.mo
@@ -875,4 +818,6 @@ share/locale/ja/flag.png
 @dirrm share/doc/HTML/ja/kcontrol/bell
 @dirrm share/doc/HTML/ja/kcontrol/arts
 @dirrm share/doc/HTML/ja/kcontrol
-@dirrm share/doc/HTML/ja/common
+@dirrm share/doc/HTML/ja/ja/docs/common
+@dirrm share/doc/HTML/ja/ja/docs
+@dirrm share/doc/HTML/ja/ja

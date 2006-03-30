@@ -8,7 +8,6 @@
 
 PORTNAME=	kdelibs
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	1
 CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
@@ -59,7 +58,7 @@ PREFIX=		${KDE_PREFIX}
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS+=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=  libtool:15
 CONFIGURE_TARGET=# empty
 CONFIGURE_ARGS+=--disable-ltdl-install	\
 		--disable-as-needed \

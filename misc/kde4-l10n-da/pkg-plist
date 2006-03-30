@@ -134,66 +134,11 @@ share/doc/HTML/da/blinken/index.docbook
 share/doc/HTML/da/cervisia/common
 share/doc/HTML/da/cervisia/index.cache.bz2
 share/doc/HTML/da/cervisia/index.docbook
-share/doc/HTML/da/common/1.png
-share/doc/HTML/da/common/10.png
-share/doc/HTML/da/common/2.png
-share/doc/HTML/da/common/3.png
-share/doc/HTML/da/common/4.png
-share/doc/HTML/da/common/5.png
-share/doc/HTML/da/common/6.png
-share/doc/HTML/da/common/7.png
-share/doc/HTML/da/common/8.png
-share/doc/HTML/da/common/9.png
-share/doc/HTML/da/common/appheader.html
-share/doc/HTML/da/common/artistic-license.html
-share/doc/HTML/da/common/bottom-left.png
-share/doc/HTML/da/common/bottom-middle.png
-share/doc/HTML/da/common/bottom-right.png
-share/doc/HTML/da/common/bottom1.png
-share/doc/HTML/da/common/bottom2.png
-share/doc/HTML/da/common/bsd-license.html
-share/doc/HTML/da/common/docheadergears.png
-share/doc/HTML/da/common/doctop1.png
-share/doc/HTML/da/common/doctop1a.png
-share/doc/HTML/da/common/doctop1b.png
-share/doc/HTML/da/common/doctop2.png
-share/doc/HTML/da/common/doxygen.css
-share/doc/HTML/da/common/favicon.ico
-share/doc/HTML/da/common/fdl-license
-share/doc/HTML/da/common/fdl-license.html
-share/doc/HTML/da/common/fdl-notice.html
-share/doc/HTML/da/common/fdl-translated.html
-share/doc/HTML/da/common/footer.html
-share/doc/HTML/da/common/gpl-license
-share/doc/HTML/da/common/gpl-license.html
-share/doc/HTML/da/common/gpl-translated.html
-share/doc/HTML/da/common/grad.png
-share/doc/HTML/da/common/header.html
-share/doc/HTML/da/common/headerbg.png
-share/doc/HTML/da/common/kde-common.css
-share/doc/HTML/da/common/kde-default.css
-share/doc/HTML/da/common/kde-localised.css
-share/doc/HTML/da/common/kde-localised.css.template
-share/doc/HTML/da/common/kde-web.css
-share/doc/HTML/da/common/kde_gear_64.png
-share/doc/HTML/da/common/kde_logo.png
-share/doc/HTML/da/common/kde_logo_bg.png
-share/doc/HTML/da/common/kmenu.png
-share/doc/HTML/da/common/lgpl-license
-share/doc/HTML/da/common/lgpl-license.html
-share/doc/HTML/da/common/lgpl-translated.html
-share/doc/HTML/da/common/logotp3.png
-share/doc/HTML/da/common/mainfooter.html
-share/doc/HTML/da/common/mainheader.html
-share/doc/HTML/da/common/qpl-license.html
-share/doc/HTML/da/common/shadow.png
-share/doc/HTML/da/common/top-left.png
-share/doc/HTML/da/common/top-middle.png
-share/doc/HTML/da/common/top-right-konqueror.png
-share/doc/HTML/da/common/web-docbottom.png
-share/doc/HTML/da/common/web-doctop.png
-share/doc/HTML/da/common/x11-license.html
-share/doc/HTML/da/common/xml.dcl
+share/doc/HTML/da/da/docs/common/fdl-translated.html
+share/doc/HTML/da/da/docs/common/gpl-translated.html
+share/doc/HTML/da/da/docs/common/kde-localised.css
+share/doc/HTML/da/da/docs/common/lgpl-translated.html
+share/doc/HTML/da/da/docs/common/logotp3.png
 share/doc/HTML/da/juk/common
 share/doc/HTML/da/juk/index.cache.bz2
 share/doc/HTML/da/juk/index.docbook
@@ -263,6 +208,9 @@ share/doc/HTML/da/kate/unhighlighted.png
 share/doc/HTML/da/katomic/common
 share/doc/HTML/da/katomic/index.cache.bz2
 share/doc/HTML/da/katomic/index.docbook
+share/doc/HTML/da/kaudiocreator/common
+share/doc/HTML/da/kaudiocreator/index.cache.bz2
+share/doc/HTML/da/kaudiocreator/index.docbook
 share/doc/HTML/da/kbabel/catman.docbook
 share/doc/HTML/da/kbabel/common
 share/doc/HTML/da/kbabel/dictionaries.docbook
@@ -300,6 +248,7 @@ share/doc/HTML/da/kbugbuster/index.docbook
 share/doc/HTML/da/kcachegrind/common
 share/doc/HTML/da/kcachegrind/index.cache.bz2
 share/doc/HTML/da/kcachegrind/index.docbook
+share/doc/HTML/da/kcalc/commands.docbook
 share/doc/HTML/da/kcalc/common
 share/doc/HTML/da/kcalc/index.cache.bz2
 share/doc/HTML/da/kcalc/index.docbook
@@ -1068,9 +1017,6 @@ share/doc/HTML/da/konq-plugins/kuick/index.docbook
 share/doc/HTML/da/konq-plugins/mediaplayer/common
 share/doc/HTML/da/konq-plugins/mediaplayer/index.cache.bz2
 share/doc/HTML/da/konq-plugins/mediaplayer/index.docbook
-share/doc/HTML/da/konq-plugins/smbmounter/common
-share/doc/HTML/da/konq-plugins/smbmounter/index.cache.bz2
-share/doc/HTML/da/konq-plugins/smbmounter/index.docbook
 share/doc/HTML/da/konq-plugins/uachanger/common
 share/doc/HTML/da/konq-plugins/uachanger/index.cache.bz2
 share/doc/HTML/da/konq-plugins/uachanger/index.docbook
@@ -2180,7 +2126,6 @@ share/locale/da/flag.png
 @dirrm share/doc/HTML/da/konq-plugins/webarchiver
 @dirrm share/doc/HTML/da/konq-plugins/validators
 @dirrm share/doc/HTML/da/konq-plugins/uachanger
-@dirrm share/doc/HTML/da/konq-plugins/smbmounter
 @dirrm share/doc/HTML/da/konq-plugins/mediaplayer
 @dirrm share/doc/HTML/da/konq-plugins/kuick
 @dirrm share/doc/HTML/da/konq-plugins/khtmlsettings
@@ -2349,6 +2294,7 @@ share/locale/da/flag.png
 @dirrm share/doc/HTML/da/kbattleship
 @dirrm share/doc/HTML/da/kbackgammon
 @dirrm share/doc/HTML/da/kbabel
+@dirrm share/doc/HTML/da/kaudiocreator
 @dirrm share/doc/HTML/da/katomic
 @dirrm share/doc/HTML/da/kate-plugins
 @dirrm share/doc/HTML/da/kate
@@ -2364,7 +2310,9 @@ share/locale/da/flag.png
 @dirrm share/doc/HTML/da/kaddressbook
 @dirrm share/doc/HTML/da/kaboodle
 @dirrm share/doc/HTML/da/juk
-@dirrm share/doc/HTML/da/common
+@dirrm share/doc/HTML/da/da/docs/common
+@dirrm share/doc/HTML/da/da/docs
+@dirrm share/doc/HTML/da/da
 @dirrm share/doc/HTML/da/cervisia
 @dirrm share/doc/HTML/da/blinken
 @dirrm share/doc/HTML/da/atlantik

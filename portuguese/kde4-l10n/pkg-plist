@@ -67,66 +67,6 @@ share/doc/HTML/pt/blinken/index.docbook
 share/doc/HTML/pt/cervisia/common
 share/doc/HTML/pt/cervisia/index.cache.bz2
 share/doc/HTML/pt/cervisia/index.docbook
-share/doc/HTML/pt/common/1.png
-share/doc/HTML/pt/common/10.png
-share/doc/HTML/pt/common/2.png
-share/doc/HTML/pt/common/3.png
-share/doc/HTML/pt/common/4.png
-share/doc/HTML/pt/common/5.png
-share/doc/HTML/pt/common/6.png
-share/doc/HTML/pt/common/7.png
-share/doc/HTML/pt/common/8.png
-share/doc/HTML/pt/common/9.png
-share/doc/HTML/pt/common/appheader.html
-share/doc/HTML/pt/common/artistic-license.html
-share/doc/HTML/pt/common/bottom-left.png
-share/doc/HTML/pt/common/bottom-middle.png
-share/doc/HTML/pt/common/bottom-right.png
-share/doc/HTML/pt/common/bottom1.png
-share/doc/HTML/pt/common/bottom2.png
-share/doc/HTML/pt/common/bsd-license.html
-share/doc/HTML/pt/common/docheadergears.png
-share/doc/HTML/pt/common/doctop1.png
-share/doc/HTML/pt/common/doctop1a.png
-share/doc/HTML/pt/common/doctop1b.png
-share/doc/HTML/pt/common/doctop2.png
-share/doc/HTML/pt/common/doxygen.css
-share/doc/HTML/pt/common/favicon.ico
-share/doc/HTML/pt/common/fdl-license
-share/doc/HTML/pt/common/fdl-license.html
-share/doc/HTML/pt/common/fdl-notice.html
-share/doc/HTML/pt/common/fdl-translated.html
-share/doc/HTML/pt/common/footer.html
-share/doc/HTML/pt/common/gpl-license
-share/doc/HTML/pt/common/gpl-license.html
-share/doc/HTML/pt/common/gpl-translated.html
-share/doc/HTML/pt/common/grad.png
-share/doc/HTML/pt/common/header.html
-share/doc/HTML/pt/common/headerbg.png
-share/doc/HTML/pt/common/kde-common.css
-share/doc/HTML/pt/common/kde-default.css
-share/doc/HTML/pt/common/kde-localised.css
-share/doc/HTML/pt/common/kde-localised.css.template
-share/doc/HTML/pt/common/kde-web.css
-share/doc/HTML/pt/common/kde_gear_64.png
-share/doc/HTML/pt/common/kde_logo.png
-share/doc/HTML/pt/common/kde_logo_bg.png
-share/doc/HTML/pt/common/kmenu.png
-share/doc/HTML/pt/common/lgpl-license
-share/doc/HTML/pt/common/lgpl-license.html
-share/doc/HTML/pt/common/lgpl-translated.html
-share/doc/HTML/pt/common/logotp3.png
-share/doc/HTML/pt/common/mainfooter.html
-share/doc/HTML/pt/common/mainheader.html
-share/doc/HTML/pt/common/qpl-license.html
-share/doc/HTML/pt/common/shadow.png
-share/doc/HTML/pt/common/top-left.png
-share/doc/HTML/pt/common/top-middle.png
-share/doc/HTML/pt/common/top-right-konqueror.png
-share/doc/HTML/pt/common/web-docbottom.png
-share/doc/HTML/pt/common/web-doctop.png
-share/doc/HTML/pt/common/x11-license.html
-share/doc/HTML/pt/common/xml.dcl
 share/doc/HTML/pt/juk/common
 share/doc/HTML/pt/juk/index.cache.bz2
 share/doc/HTML/pt/juk/index.docbook
@@ -173,12 +113,9 @@ share/doc/HTML/pt/kate-plugins/textfilter.docbook
 share/doc/HTML/pt/kate-plugins/xmlcheck.docbook
 share/doc/HTML/pt/kate-plugins/xmltools.docbook
 share/doc/HTML/pt/kate/advanced.docbook
-share/doc/HTML/pt/kate/common
 share/doc/HTML/pt/kate/configuring.docbook
 share/doc/HTML/pt/kate/fundamentals.docbook
 share/doc/HTML/pt/kate/highlighting.docbook
-share/doc/HTML/pt/kate/index.cache.bz2
-share/doc/HTML/pt/kate/index.docbook
 share/doc/HTML/pt/kate/man-kate.1.docbook
 share/doc/HTML/pt/kate/mdi.docbook
 share/doc/HTML/pt/kate/menus.docbook
@@ -428,6 +365,7 @@ share/doc/HTML/pt/kdebugdialog/index.docbook
 share/doc/HTML/pt/kdelibs/man-artsmessage.1.docbook
 share/doc/HTML/pt/kdelibs/man-checkXML.1.docbook
 share/doc/HTML/pt/kdelibs/man-dcop.1.docbook
+share/doc/HTML/pt/kdelibs/man-kbuildsycoca.8.docbook
 share/doc/HTML/pt/kdelibs/man-kdeoptions.7.docbook
 share/doc/HTML/pt/kdelibs/man-qtoptions.7.docbook
 share/doc/HTML/pt/kdelirc/irkick/common
@@ -1104,9 +1042,6 @@ share/doc/HTML/pt/kshisen/index.docbook
 share/doc/HTML/pt/ksim/common
 share/doc/HTML/pt/ksim/index.cache.bz2
 share/doc/HTML/pt/ksim/index.docbook
-share/doc/HTML/pt/ksirc/common
-share/doc/HTML/pt/ksirc/index.cache.bz2
-share/doc/HTML/pt/ksirc/index.docbook
 share/doc/HTML/pt/ksirtet/common
 share/doc/HTML/pt/ksirtet/index.cache.bz2
 share/doc/HTML/pt/ksirtet/index.docbook
@@ -1327,6 +1262,11 @@ share/doc/HTML/pt/multisynk/konnectors-chapter.docbook
 share/doc/HTML/pt/noatun/common
 share/doc/HTML/pt/noatun/index.cache.bz2
 share/doc/HTML/pt/noatun/index.docbook
+share/doc/HTML/pt/pt/docs/common/fdl-translated.html
+share/doc/HTML/pt/pt/docs/common/gpl-translated.html
+share/doc/HTML/pt/pt/docs/common/kde-localised.css
+share/doc/HTML/pt/pt/docs/common/lgpl-translated.html
+share/doc/HTML/pt/pt/docs/common/logotp3.png
 share/doc/HTML/pt/quanta/adv-quanta.docbook
 share/doc/HTML/pt/quanta/common
 share/doc/HTML/pt/quanta/config-quanta.docbook
@@ -1956,6 +1896,9 @@ share/locale/pt/flag.png
 @dirrm share/doc/HTML/pt/superkaramba
 @dirrm share/doc/HTML/pt/scripts
 @dirrm share/doc/HTML/pt/quanta
+@dirrm share/doc/HTML/pt/pt/docs/common
+@dirrm share/doc/HTML/pt/pt/docs
+@dirrm share/doc/HTML/pt/pt
 @dirrm share/doc/HTML/pt/noatun
 @dirrm share/doc/HTML/pt/multisynk
 @dirrm share/doc/HTML/pt/lskat
@@ -1998,7 +1941,6 @@ share/locale/pt/flag.png
 @dirrm share/doc/HTML/pt/ksnake
 @dirrm share/doc/HTML/pt/ksmiletris
 @dirrm share/doc/HTML/pt/ksirtet
-@dirrm share/doc/HTML/pt/ksirc
 @dirrm share/doc/HTML/pt/ksim
 @dirrm share/doc/HTML/pt/kshisen
 @dirrm share/doc/HTML/pt/kscd
@@ -2221,7 +2163,6 @@ share/locale/pt/flag.png
 @dirrm share/doc/HTML/pt/kaddressbook
 @dirrm share/doc/HTML/pt/kaboodle
 @dirrm share/doc/HTML/pt/juk
-@dirrm share/doc/HTML/pt/common
 @dirrm share/doc/HTML/pt/cervisia
 @dirrm share/doc/HTML/pt/blinken
 @dirrm share/doc/HTML/pt/atlantik

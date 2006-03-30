@@ -331,9 +331,6 @@ lib/kde3/kabc_slox.so
 lib/kde3/kabc_xmlrpc.a
 lib/kde3/kabc_xmlrpc.la
 lib/kde3/kabc_xmlrpc.so
-lib/kde3/kcal_blogging.a
-lib/kde3/kcal_blogging.la
-lib/kde3/kcal_blogging.so
 lib/kde3/kcal_groupdav.a
 lib/kde3/kcal_groupdav.la
 lib/kde3/kcal_groupdav.so
@@ -684,10 +681,6 @@ lib/libkcal.a
 lib/libkcal.la
 lib/libkcal.so
 lib/libkcal.so.2
-lib/libkcal_blogging.a
-lib/libkcal_blogging.la
-lib/libkcal_blogging.so
-lib/libkcal_blogging.so.1
 lib/libkcal_groupdav.a
 lib/libkcal_groupdav.la
 lib/libkcal_groupdav.so
@@ -2260,7 +2253,6 @@ share/services/kresources/kabc/kabc_ox.desktop
 share/services/kresources/kabc/kabc_slox.desktop
 share/services/kresources/kabc/kabc_xmlrpc.desktop
 share/services/kresources/kabc/kolab.desktop
-share/services/kresources/kcal/blogging.desktop
 share/services/kresources/kcal/exchange.desktop
 share/services/kresources/kcal/imap.desktop
 share/services/kresources/kcal/kabc.desktop

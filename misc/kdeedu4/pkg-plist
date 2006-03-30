@@ -2080,6 +2080,7 @@ share/doc/HTML/en/klatin/adjectives.docbook
 share/doc/HTML/en/klatin/common
 share/doc/HTML/en/klatin/index.cache.bz2
 share/doc/HTML/en/klatin/index.docbook
+share/doc/HTML/en/klatin/klatin-configuration.png
 share/doc/HTML/en/klatin/klatin1.png
 share/doc/HTML/en/klatin/klatin2.png
 share/doc/HTML/en/klatin/klatin3.png
@@ -2098,8 +2099,6 @@ share/doc/HTML/en/klettres/klettres3.png
 share/doc/HTML/en/klettres/klettres4.png
 share/doc/HTML/en/klettres/klettres5.png
 share/doc/HTML/en/klettres/klettres6.png
-share/doc/HTML/en/kmplot/axesdlg.png
-share/doc/HTML/en/kmplot/axesopt.png
 share/doc/HTML/en/kmplot/commands.docbook
 share/doc/HTML/en/kmplot/common
 share/doc/HTML/en/kmplot/configuration.docbook
@@ -2108,8 +2107,6 @@ share/doc/HTML/en/kmplot/dcop.docbook
 share/doc/HTML/en/kmplot/developer.docbook
 share/doc/HTML/en/kmplot/edu-logo.png
 share/doc/HTML/en/kmplot/firststeps.docbook
-share/doc/HTML/en/kmplot/functionsdlg.png
-share/doc/HTML/en/kmplot/griddlg.png
 share/doc/HTML/en/kmplot/index.cache.bz2
 share/doc/HTML/en/kmplot/index.docbook
 share/doc/HTML/en/kmplot/install.docbook
@@ -2118,16 +2115,14 @@ share/doc/HTML/en/kmplot/kfkt.png
 share/doc/HTML/en/kmplot/ksys1.png
 share/doc/HTML/en/kmplot/ksys2.png
 share/doc/HTML/en/kmplot/ksys3.png
-share/doc/HTML/en/kmplot/lo32-app-kmplot.png
 share/doc/HTML/en/kmplot/main.png
 share/doc/HTML/en/kmplot/man-kmplot.1.docbook
-share/doc/HTML/en/kmplot/namesdlg.png
 share/doc/HTML/en/kmplot/reference.docbook
-share/doc/HTML/en/kmplot/scaledlg.png
+share/doc/HTML/en/kmplot/settings-colors.png
+share/doc/HTML/en/kmplot/settings-fonts.png
+share/doc/HTML/en/kmplot/settings-scaling.png
 share/doc/HTML/en/kmplot/settingsdlg.png
-share/doc/HTML/en/kmplot/stepdlg.png
 share/doc/HTML/en/kmplot/threeplots.png
-share/doc/HTML/en/kmplot/toolbar.png
 share/doc/HTML/en/kmplot/using.docbook
 share/doc/HTML/en/kpercentage/answer.png
 share/doc/HTML/en/kpercentage/commands.docbook
@@ -2361,6 +2356,7 @@ share/doc/HTML/en/kwordquiz/common
 share/doc/HTML/en/kwordquiz/index.cache.bz2
 share/doc/HTML/en/kwordquiz/index.docbook
 share/doc/HTML/en/kwordquiz/kwq-dlg-characters.png
+share/doc/HTML/en/kwordquiz/kwq-dlg-configure-appearance.png
 share/doc/HTML/en/kwordquiz/kwq-dlg-configure-characters.png
 share/doc/HTML/en/kwordquiz/kwq-dlg-configure-editor.png
 share/doc/HTML/en/kwordquiz/kwq-dlg-configure-quiz.png
