@@ -31,6 +31,10 @@ OPTIONS=	OPTIMIZATION	"Enable optimization"	off
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
+CFLAGS+=	-fPIC -DPIC
+.endif
+
 .if ${OSVERSION} < 500000
 BROKEN=	Doesn't build on < 5.x
 .endif
