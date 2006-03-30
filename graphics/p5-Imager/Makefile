@@ -7,20 +7,22 @@
 #
 
 PORTNAME=	Imager
-PORTVERSION=	0.47
+PORTVERSION=	0.50
 CATEGORIES=	graphics perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
 		http://www.eecs.umich.edu/~addi/perl/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	perl@FreeBSD.org
+MAINTAINER=	lars@balker.dk
 COMMENT=	A Perl module for manipulating gray, color and rgba format images
 
-LIB_DEPENDS=	t1:${PORTSDIR}/devel/t1lib \
-		tiff:${PORTSDIR}/graphics/tiff \
+LIB_DEPENDS=	\
+		jpeg:${PORTSDIR}/graphics/jpeg \
 		png:${PORTSDIR}/graphics/png \
-		jpeg:${PORTSDIR}/graphics/jpeg
+		t1:${PORTSDIR}/devel/t1lib \
+		tiff:${PORTSDIR}/graphics/tiff \
+		ungif:${PORTSDIR}/graphics/libungif
 
 USE_FREETYPE=	yes
 PERL_CONFIGURE=	yes
@@ -28,23 +30,12 @@ CONFIGURE_ENV=	IM_LIBPATH="${LOCALBASE}/lib" \
 		IM_CFLAGS="${CFLAGS}" \
 		IM_INCPATH="${LOCALBASE}/include/freetype1/freetype"
 
-MAN3=	Imager.3 Imager::Color.3 Imager::Color::Float.3 Imager::Expr.3 \
-	Imager::Expr::Assem.3 Imager::Fill.3 Imager::Font.3 \
-	Imager::Font::FreeType2.3 Imager::Font::Truetype.3 \
-	Imager::Font::Type1.3 Imager::Font::Win32.3 Imager::Fountain.3 \
-	Imager::Matrix2d.3 Imager::Regops.3 Imager::Transform.3 \
-	Imager::interface.3 Imager::regmach.3 Imager::Engines.3 \
-	Imager::Transformations.3 Imager::Draw.3 Imager::Files.3 \
-	Imager::ImageTypes.3 Imager::Filters.3 Imager::Font::BBox.3 \
-	Imager::Color::Table.3 Imager::Font::Wrap.3 Imager::Cookbook.3 \
-	Imager::Tutorial.3
+.include "Makefile.man"
 
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500600
-post-configure:
-	@perl -pi.bak -e 's/^PASTHRU =/$$& INC="\$$(INC)" CCFLAGS="\$$(CCFLAGS)" /' \
-		${WRKSRC}/Makefile
+IGNORE=		requires perl 5.6.0 or later. Install lang/perl5.8 and try again
 .endif
 
 .include <bsd.port.post.mk>

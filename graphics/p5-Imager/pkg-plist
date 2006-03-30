@@ -1,38 +1,83 @@
 @comment $FreeBSD$
-%%SITE_PERL%%/%%PERL_ARCH%%/Imager/Color/Float.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Imager/Expr/Assem.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Imager/Font/BBox.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Imager/Font/FreeType2.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Imager/Font/Image.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Imager/Font/Type1.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Imager/Font/Win32.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Imager/Font/Wrap.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Imager/Font/Truetype.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Imager.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Imager/API.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Imager/APIRef.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Color.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Imager/Color/Float.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Color/Table.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Cookbook.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Imager/CountColor.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Draw.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Engines.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Expr.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Imager/Expr/Assem.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Imager/ExtUtils.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Files.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Fill.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Imager/Filter/DynTest.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Imager/Filter/Flines.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Imager/Filter/Mandelbrot.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Filters.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Font.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Imager/Font/BBox.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Imager/Font/FreeType2.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Imager/Font/Image.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Imager/Font/Truetype.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Imager/Font/Type1.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Imager/Font/Win32.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Imager/Font/Wrap.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Fountain.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/ImageTypes.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Imager/Inline.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Matrix2d.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Regops.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Transform.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Transformations.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Tutorial.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Imager/include/draw.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Imager/include/dynaload.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Imager/include/ext.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Imager/include/feat.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Imager/include/imager.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Imager/include/imageri.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Imager/include/imconfig.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Imager/include/imdatatypes.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Imager/include/imerror.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Imager/include/imexif.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Imager/include/imext.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Imager/include/imextdef.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Imager/include/imexttypes.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Imager/include/imio.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Imager/include/imperl.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Imager/include/iolayer.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Imager/include/log.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Imager/include/plug.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Imager/include/ppport.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Imager/include/regmach.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Imager/include/stackmach.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/interface.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/regmach.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Imager/typemap
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/CountColor/CountColor.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/CountColor/CountColor.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/Filter/DynTest/DynTest.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/Filter/DynTest/DynTest.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/Filter/Flines/Flines.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/Filter/Flines/Flines.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/Filter/Mandelbrot/Mandelbrot.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/Filter/Mandelbrot/Mandelbrot.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/Imager.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/Imager.so
-%%SITE_PERL%%/%%PERL_ARCH%%/Imager.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Color
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Expr
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Font
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Imager
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/Filter/Mandelbrot
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/Filter/Flines
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/Filter/DynTest
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/Filter
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/CountColor
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Imager/include
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Font
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Filter
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Expr
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Color
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Imager
