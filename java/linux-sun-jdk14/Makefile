@@ -31,7 +31,7 @@ NO_BUILD=	yes
 USE_LINUX=	yes
 USE_XLIB=	yes
 JDK_VERSION=	1.4.2
-JDK_REVISION=	10
+JDK_REVISION=	11
 DL_JDK_VERSION=	${JDK_VERSION}_${JDK_REVISION}
 INSTALL_JDK_VERSION=	${DL_JDK_VERSION:S/_/./g}
 ONLY_FOR_ARCHS=	i386 amd64
@@ -53,7 +53,7 @@ pre-everything::
 do-extract:
 	@${MKDIR} ${WRKDIR}
 	@cd ${WRKDIR} \
-	&& ${TAIL} -n 138580 ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} > ${WRKDIR}/install.sfx \
+	&& ${TAIL} -n 138456 ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} > ${WRKDIR}/install.sfx \
 	&& ${CHMOD} +x ${WRKDIR}/install.sfx \
 	&& ${WRKDIR}/install.sfx > /dev/null
 
