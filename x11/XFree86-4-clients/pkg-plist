@@ -763,6 +763,9 @@ lib/X11/xsm/system.xsm
 @unexec if [ -L %D/lib/X11/app-defaults/UXTerm ]; then rm %D/lib/X11/app-defaults/UXTerm; fi
 @unexec if [ -L %D/lib/X11/app-defaults/XTerm-color ]; then rm %D/lib/X11/app-defaults/XTerm-color; fi
 @unexec if [ -L %D/lib/X11/app-defaults/XTerm ]; then rm %D/lib/X11/app-defaults/XTerm; fi
+@unexec rm %D/lib/X11/fonts/util/fonts.cache-1 2>/dev/null || true
+@unexec command fc-cache -v %D/lib/X11/fonts/util 2>/dev/null || true
+@unexec if [ -e %D/lib/X11/fonts/util/fonts.cache-1 -a ! -s %D/lib/X11/fonts/util/fonts.cache-1 ]; then rm %D/lib/X11/fonts/util/fonts.cache-1; fi
 @dirrm lib/X11/fonts/util
 @dirrm lib/X11/icons/default
 @dirrm lib/X11/icons/handhelds/cursors
