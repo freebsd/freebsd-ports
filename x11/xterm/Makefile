@@ -22,7 +22,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
 		LIBS="-L${X11BASE}/lib"
-CONFIGURE_ARGS+=	--enable-wide-chars --enable-luit --with-utempter
+CONFIGURE_ARGS+=--enable-wide-chars --enable-luit --with-utempter \
+		--enable-narrowproto
 
 MAN1=		resize.1 xterm.1
 
