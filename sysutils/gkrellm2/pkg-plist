@@ -17,6 +17,7 @@ sbin/gkrellmd
 %%CLIENT%%@unexec rm -f %D/man/cat1/gkrellm.1 %D/man/cat1/gkrellm.1.gz
 %%CLIENT%%bin/gkrellm
 %%CLIENT%%libdata/pkgconfig/gkrellm.pc
+%%NLS%%share/locale/bg/LC_MESSAGES/gkrellm.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/gkrellm.mo
 %%NLS%%share/locale/da/LC_MESSAGES/gkrellm.mo
 %%NLS%%share/locale/de/LC_MESSAGES/gkrellm.mo
