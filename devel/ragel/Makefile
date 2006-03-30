@@ -7,9 +7,9 @@
 #
 
 PORTNAME=	ragel
-PORTVERSION=	5.1
+PORTVERSION=	5.5
 CATEGORIES=	devel
-MASTER_SITES=	http://www.elude.ca/ragel/
+MASTER_SITES=	http://www.cs.queensu.ca/home/thurston/ragel/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Compile regular languages into executable C/C++ code
