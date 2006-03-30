@@ -1,5 +1,4 @@
 %%DATADIR%%/query.sql
-etc/rc.d/z-bacula.sh.sample
 sbin/chio-bacula
 sbin/bacula-dir
 sbin/bacula-sd
@@ -33,6 +32,7 @@ sbin/bsmtp
 %%DATADIR%%/disk-changer
 
 @dirrm %%DATADIR%%
-@unexec /usr/bin/killall badula-sd > /dev/null 2>&1 || true
+@unexec /usr/bin/killall bacula-sd  > /dev/null 2>&1 || true
 @unexec /usr/bin/killall bacula-dir > /dev/null 2>&1 || true
 @exec mkdir -p %%BACULA_DIR%%
+@dirrmtry %%BACULA_DIR%%

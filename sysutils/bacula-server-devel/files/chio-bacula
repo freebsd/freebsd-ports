@@ -2,7 +2,7 @@
 #
 # Bacula interface to FreeBSD chio autoloader command with
 # multiple drive support
-# (By Lars K.ller, lars+bacula@koellers.net, 2004)
+# (By Lars Köller, lars+bacula@koellers.net, 2004)
 #
 #  If you set in your Device resource
 #
@@ -90,7 +90,7 @@ fi
 # The slot number
 if [ ! -z "$3" ]; then
     SLOT=$3
-    # btape fill says "... slot 1 drive 0"  :-( 
+    # btape fill says "... slot 1 drive 0" :-(
     if [ "$SLOT" = "slot" ]; then
 	shift
 	SLOT=$3

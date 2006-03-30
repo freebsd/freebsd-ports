@@ -16,12 +16,16 @@ bacula-sd       9103/tcp   #Bacula storage daemon
 fi
 
 case $2 in
-POST-INSTALL)
+PRE-INSTALL)
 	# Install UID/GID
 	USER=bacula
 	GROUP=${USER}
 	UID=910
 	GID=${UID}
+
+	if [ ! -d ${BACULA_DIR} ]; then
+		mkdir -p ${BACULA_DIR}
+	fi
 
 	if pw group show "${GROUP}" 2>/dev/null; then
 		echo "You already have a group \"${GROUP}\", so I will use it."

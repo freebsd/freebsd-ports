@@ -1,23 +1,21 @@
---- scripts/Makefile.in.org	Thu Feb 23 14:56:12 2006
-+++ scripts/Makefile.in		Mon Mar  6 11:20:05 2006
-@@ -33,11 +33,11 @@
+--- scripts/Makefile.in.orig	Sat Mar 25 10:37:41 2006
++++ scripts/Makefile.in	Thu Mar 30 13:01:21 2006
+@@ -33,14 +33,6 @@
  	$(MKDIR) $(DESTDIR)$(mandir)
-
+ 
  install: installdirs
 -	$(INSTALL_SCRIPT) startmysql $(DESTDIR)$(scriptdir)/startmysql
 -	$(INSTALL_SCRIPT) stopmysql $(DESTDIR)$(scriptdir)/stopmysql
 -	$(INSTALL_SCRIPT) bconsole $(DESTDIR)$(scriptdir)/bconsole
 -	$(INSTALL_SCRIPT) gconsole $(DESTDIR)$(scriptdir)/gconsole
 -	$(INSTALL_SCRIPT) bacula $(DESTDIR)$(scriptdir)/bacula
-+#	$(INSTALL_SCRIPT) startmysql $(DESTDIR)$(scriptdir)/startmysql
-+#	$(INSTALL_SCRIPT) stopmysql $(DESTDIR)$(scriptdir)/stopmysql
-+#	$(INSTALL_SCRIPT) bconsole $(DESTDIR)$(scriptdir)/bconsole
-+#	$(INSTALL_SCRIPT) gconsole $(DESTDIR)$(scriptdir)/gconsole
-+	$(INSTALL_SCRIPT) bacula $(DESTDIR)$(sysconfdir)/rc.d/z-bacula.sh.sample
+-	$(INSTALL_SCRIPT) bacula-ctl-dir $(DESTDIR)$(scriptdir)/bacula-ctl-dir
+-	$(INSTALL_SCRIPT) bacula-ctl-fd $(DESTDIR)$(scriptdir)/bacula-ctl-fd
+-	$(INSTALL_SCRIPT) bacula-ctl-sd $(DESTDIR)$(scriptdir)/bacula-ctl-sd
  	@if  test -f ${DESTDIR}${scriptdir}/mtx-changer; then \
  	   echo "  ==> Saving existing mtx-changer to mtx-changer.old"; \
  	   $(MV) -f ${DESTDIR}${scriptdir}/mtx-changer ${DESTDIR}${scriptdir}/mtx-changer.old; \
-@@ -53,14 +53,14 @@
+@@ -56,14 +48,7 @@
  	   $(MV) -f ${DESTDIR}${scriptdir}/dvd-handler ${DESTDIR}${scriptdir}/dvd-handler.old; \
  	fi
  	$(INSTALL_SCRIPT) dvd-handler $(DESTDIR)$(scriptdir)/dvd-handler
@@ -29,23 +27,7 @@
 -	gzip <bacula.man >bacula.8.gz
 -	$(INSTALL_DATA)   bacula.8.gz $(DESTDIR)$(mandir)/bacula.8.gz
 -	@rm -f bacula.8.gz
-+#	$(INSTALL_DATA)   btraceback.gdb $(DESTDIR)$(scriptdir)/btraceback.gdb
-+#	$(INSTALL_DATA)   btraceback.dbx $(DESTDIR)$(scriptdir)/btraceback.dbx
-+#	chmod 0644 $(DESTDIR)$(scriptdir)/btraceback.gdb \
-+#		   $(DESTDIR)$(scriptdir)/btraceback.dbx
-+#	$(INSTALL_SCRIPT) btraceback $(DESTDIR)$(sbindir)/btraceback
-+#	gzip <bacula.man >bacula.8.gz
 +	$(INSTALL_DATA)   bacula.man $(DESTDIR)$(mandir)/bacula.8
-+#	@rm -f bacula.8.gz
-
-
+ 
+ 
  uninstall:
-@@ -68,7 +68,7 @@
- 	(cd $(DESTDIR)$(scriptdir); $(RMF) stopmysql)
- 	(cd $(DESTDIR)$(scriptdir); $(RMF) bconsole)
- 	(cd $(DESTDIR)$(scriptdir); $(RMF) gconsole)
--	(cd $(DESTDIR)$(scriptdir); $(RMF) bacula)
-+	(cd $(DESTDIR)$(scriptdir); $(RMF) z-bacula.sh)
- 	(cd $(DESTDIR)$(scriptdir); $(RMF) fd)
- 	(cd $(DESTDIR)$(scriptdir); $(RMF) mtx-changer)
- 	(cd $(DESTDIR)$(scriptdir); $(RMF) disk-changer)
