@@ -31,7 +31,7 @@ NO_BUILD=	yes
 USE_LINUX=	yes
 USE_XLIB=	yes
 JDK_VERSION=	1.3.1
-JDK_REVISION=	16
+JDK_REVISION=	18
 ONLY_FOR_ARCHS=	i386 amd64
 TARGET_DIR?=	${PREFIX}/${PKGBASE}${JDK_VERSION}
 DOWNLOAD_URL?=	http://javashoplm.sun.com/ECom/docs/Welcome.jsp?StoreId=22&PartDetailId=j2sdk-${JDK_VERSION}_${JDK_REVISION}-oth-JPR&SiteId=JSC&TransactionId=noreg
