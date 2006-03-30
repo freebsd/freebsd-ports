@@ -56,66 +56,6 @@ share/doc/HTML/pt_BR/cervisia/index.cache.bz2
 share/doc/HTML/pt_BR/cervisia/index.docbook
 share/doc/HTML/pt_BR/cervisia/mainview.png
 share/doc/HTML/pt_BR/cervisia/popup.png
-share/doc/HTML/pt_BR/common/1.png
-share/doc/HTML/pt_BR/common/10.png
-share/doc/HTML/pt_BR/common/2.png
-share/doc/HTML/pt_BR/common/3.png
-share/doc/HTML/pt_BR/common/4.png
-share/doc/HTML/pt_BR/common/5.png
-share/doc/HTML/pt_BR/common/6.png
-share/doc/HTML/pt_BR/common/7.png
-share/doc/HTML/pt_BR/common/8.png
-share/doc/HTML/pt_BR/common/9.png
-share/doc/HTML/pt_BR/common/appheader.html
-share/doc/HTML/pt_BR/common/artistic-license.html
-share/doc/HTML/pt_BR/common/bottom-left.png
-share/doc/HTML/pt_BR/common/bottom-middle.png
-share/doc/HTML/pt_BR/common/bottom-right.png
-share/doc/HTML/pt_BR/common/bottom1.png
-share/doc/HTML/pt_BR/common/bottom2.png
-share/doc/HTML/pt_BR/common/bsd-license.html
-share/doc/HTML/pt_BR/common/docheadergears.png
-share/doc/HTML/pt_BR/common/doctop1.png
-share/doc/HTML/pt_BR/common/doctop1a.png
-share/doc/HTML/pt_BR/common/doctop1b.png
-share/doc/HTML/pt_BR/common/doctop2.png
-share/doc/HTML/pt_BR/common/doxygen.css
-share/doc/HTML/pt_BR/common/favicon.ico
-share/doc/HTML/pt_BR/common/fdl-license
-share/doc/HTML/pt_BR/common/fdl-license.html
-share/doc/HTML/pt_BR/common/fdl-notice.html
-share/doc/HTML/pt_BR/common/fdl-translated.html
-share/doc/HTML/pt_BR/common/footer.html
-share/doc/HTML/pt_BR/common/gpl-license
-share/doc/HTML/pt_BR/common/gpl-license.html
-share/doc/HTML/pt_BR/common/gpl-translated.html
-share/doc/HTML/pt_BR/common/grad.png
-share/doc/HTML/pt_BR/common/header.html
-share/doc/HTML/pt_BR/common/headerbg.png
-share/doc/HTML/pt_BR/common/kde-common.css
-share/doc/HTML/pt_BR/common/kde-default.css
-share/doc/HTML/pt_BR/common/kde-localised.css
-share/doc/HTML/pt_BR/common/kde-localised.css.template
-share/doc/HTML/pt_BR/common/kde-web.css
-share/doc/HTML/pt_BR/common/kde_gear_64.png
-share/doc/HTML/pt_BR/common/kde_logo.png
-share/doc/HTML/pt_BR/common/kde_logo_bg.png
-share/doc/HTML/pt_BR/common/kmenu.png
-share/doc/HTML/pt_BR/common/lgpl-license
-share/doc/HTML/pt_BR/common/lgpl-license.html
-share/doc/HTML/pt_BR/common/lgpl-translated.html
-share/doc/HTML/pt_BR/common/logotp3.png
-share/doc/HTML/pt_BR/common/mainfooter.html
-share/doc/HTML/pt_BR/common/mainheader.html
-share/doc/HTML/pt_BR/common/qpl-license.html
-share/doc/HTML/pt_BR/common/shadow.png
-share/doc/HTML/pt_BR/common/top-left.png
-share/doc/HTML/pt_BR/common/top-middle.png
-share/doc/HTML/pt_BR/common/top-right-konqueror.png
-share/doc/HTML/pt_BR/common/web-docbottom.png
-share/doc/HTML/pt_BR/common/web-doctop.png
-share/doc/HTML/pt_BR/common/x11-license.html
-share/doc/HTML/pt_BR/common/xml.dcl
 share/doc/HTML/pt_BR/juk/common
 share/doc/HTML/pt_BR/juk/index.cache.bz2
 share/doc/HTML/pt_BR/juk/index.docbook
@@ -1294,6 +1234,11 @@ share/doc/HTML/pt_BR/multisynk/konnectors-chapter.docbook
 share/doc/HTML/pt_BR/noatun/common
 share/doc/HTML/pt_BR/noatun/index.cache.bz2
 share/doc/HTML/pt_BR/noatun/index.docbook
+share/doc/HTML/pt_BR/pt_BR/docs/common/fdl-translated.html
+share/doc/HTML/pt_BR/pt_BR/docs/common/gpl-translated.html
+share/doc/HTML/pt_BR/pt_BR/docs/common/kde-localised.css
+share/doc/HTML/pt_BR/pt_BR/docs/common/lgpl-translated.html
+share/doc/HTML/pt_BR/pt_BR/docs/common/logotp3.png
 share/doc/HTML/pt_BR/quanta/adv-quanta.docbook
 share/doc/HTML/pt_BR/quanta/attribute_tree.png
 share/doc/HTML/pt_BR/quanta/common
@@ -1940,6 +1885,9 @@ share/locale/pt_BR/flag.png
 @dirrm share/doc/HTML/pt_BR/umbrello
 @dirrm share/doc/HTML/pt_BR/scripts
 @dirrm share/doc/HTML/pt_BR/quanta
+@dirrm share/doc/HTML/pt_BR/pt_BR/docs/common
+@dirrm share/doc/HTML/pt_BR/pt_BR/docs
+@dirrm share/doc/HTML/pt_BR/pt_BR
 @dirrm share/doc/HTML/pt_BR/noatun
 @dirrm share/doc/HTML/pt_BR/multisynk
 @dirrm share/doc/HTML/pt_BR/lskat
@@ -2189,7 +2137,6 @@ share/locale/pt_BR/flag.png
 @dirrm share/doc/HTML/pt_BR/kaddressbook
 @dirrm share/doc/HTML/pt_BR/kaboodle
 @dirrm share/doc/HTML/pt_BR/juk
-@dirrm share/doc/HTML/pt_BR/common
 @dirrm share/doc/HTML/pt_BR/cervisia
 @dirrm share/doc/HTML/pt_BR/atlantik
 @dirrm share/doc/HTML/pt_BR/artsbuilder

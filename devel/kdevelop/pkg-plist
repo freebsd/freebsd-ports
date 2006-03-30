@@ -688,6 +688,8 @@ share/apps/kdevappwizard/qtruby.png
 share/apps/kdevappwizard/qtruby.tar.gz
 share/apps/kdevappwizard/qtrubyapp.png
 share/apps/kdevappwizard/qtrubyapp.tar.gz
+share/apps/kdevappwizard/rails.png
+share/apps/kdevappwizard/rails.tar.gz
 share/apps/kdevappwizard/rubyhello.png
 share/apps/kdevappwizard/rubyhello.tar.gz
 share/apps/kdevappwizard/sqlsimple.png
@@ -800,6 +802,7 @@ share/apps/kdevappwizard/templates/qmakesimple.kdevtemplate
 share/apps/kdevappwizard/templates/qtopiaapp.kdevtemplate
 share/apps/kdevappwizard/templates/qtruby.kdevtemplate
 share/apps/kdevappwizard/templates/qtrubyapp.kdevtemplate
+share/apps/kdevappwizard/templates/rails.kdevtemplate
 share/apps/kdevappwizard/templates/rubyhello.kdevtemplate
 share/apps/kdevappwizard/templates/sqlsimple.kdevtemplate
 share/apps/kdevappwizard/templates/superwaba.kdevtemplate
@@ -1137,6 +1140,7 @@ share/apps/kdevdocumentation/tocs/python.toc
 share/apps/kdevdocumentation/tocs/python_bugs.toc
 share/apps/kdevdocumentation/tocs/qt-kdev3.toc
 share/apps/kdevdocumentation/tocs/qtruby.toc
+share/apps/kdevdocumentation/tocs/rails.toc
 share/apps/kdevdocumentation/tocs/ruby.toc
 share/apps/kdevdocumentation/tocs/ruby_bugs.toc
 share/apps/kdevdocumentation/tocs/sdl.toc
@@ -1273,6 +1277,7 @@ share/apps/kdevfilecreate/file-templates/pp-program
 share/apps/kdevfilecreate/file-templates/pp-unit
 share/apps/kdevfilecreate/file-templates/py
 share/apps/kdevfilecreate/file-templates/rb
+share/apps/kdevfilecreate/file-templates/rhtml
 share/apps/kdevfilecreate/file-templates/ts
 share/apps/kdevfilecreate/file-templates/ui
 share/apps/kdevfilecreate/file-templates/ui-confdialog

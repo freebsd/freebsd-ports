@@ -14,66 +14,15 @@ share/apps/kturtle/examples/ca/quadrat.logo
 share/apps/kturtle/examples/ca/rinxol.logo
 share/apps/kturtle/examples/ca/taulamultiplicar.logo
 share/apps/kturtle/examples/ca/triangle.logo
-share/doc/HTML/ca/common/1.png
-share/doc/HTML/ca/common/10.png
-share/doc/HTML/ca/common/2.png
-share/doc/HTML/ca/common/3.png
-share/doc/HTML/ca/common/4.png
-share/doc/HTML/ca/common/5.png
-share/doc/HTML/ca/common/6.png
-share/doc/HTML/ca/common/7.png
-share/doc/HTML/ca/common/8.png
-share/doc/HTML/ca/common/9.png
-share/doc/HTML/ca/common/appheader.html
-share/doc/HTML/ca/common/artistic-license.html
-share/doc/HTML/ca/common/bottom-left.png
-share/doc/HTML/ca/common/bottom-middle.png
-share/doc/HTML/ca/common/bottom-right.png
-share/doc/HTML/ca/common/bottom1.png
-share/doc/HTML/ca/common/bottom2.png
-share/doc/HTML/ca/common/bsd-license.html
-share/doc/HTML/ca/common/docheadergears.png
-share/doc/HTML/ca/common/doctop1.png
-share/doc/HTML/ca/common/doctop1a.png
-share/doc/HTML/ca/common/doctop1b.png
-share/doc/HTML/ca/common/doctop2.png
-share/doc/HTML/ca/common/doxygen.css
-share/doc/HTML/ca/common/favicon.ico
-share/doc/HTML/ca/common/fdl-license
-share/doc/HTML/ca/common/fdl-license.html
-share/doc/HTML/ca/common/fdl-notice.html
-share/doc/HTML/ca/common/fdl-translated.html
-share/doc/HTML/ca/common/footer.html
-share/doc/HTML/ca/common/gpl-license
-share/doc/HTML/ca/common/gpl-license.html
-share/doc/HTML/ca/common/gpl-translated.html
-share/doc/HTML/ca/common/grad.png
-share/doc/HTML/ca/common/header.html
-share/doc/HTML/ca/common/headerbg.png
-share/doc/HTML/ca/common/kde-common.css
-share/doc/HTML/ca/common/kde-default.css
-share/doc/HTML/ca/common/kde-localised.css
-share/doc/HTML/ca/common/kde-localised.css.template
-share/doc/HTML/ca/common/kde-web.css
-share/doc/HTML/ca/common/kde_gear_64.png
-share/doc/HTML/ca/common/kde_logo.png
-share/doc/HTML/ca/common/kde_logo_bg.png
-share/doc/HTML/ca/common/kmenu.png
-share/doc/HTML/ca/common/lgpl-license
-share/doc/HTML/ca/common/lgpl-license.html
-share/doc/HTML/ca/common/lgpl-translated.html
-share/doc/HTML/ca/common/logotp3.png
-share/doc/HTML/ca/common/mainfooter.html
-share/doc/HTML/ca/common/mainheader.html
-share/doc/HTML/ca/common/qpl-license.html
-share/doc/HTML/ca/common/shadow.png
-share/doc/HTML/ca/common/top-left.png
-share/doc/HTML/ca/common/top-middle.png
-share/doc/HTML/ca/common/top-right-konqueror.png
-share/doc/HTML/ca/common/web-docbottom.png
-share/doc/HTML/ca/common/web-doctop.png
-share/doc/HTML/ca/common/x11-license.html
-share/doc/HTML/ca/common/xml.dcl
+share/doc/HTML/ca/amor/common
+share/doc/HTML/ca/amor/index.cache.bz2
+share/doc/HTML/ca/amor/index.docbook
+share/doc/HTML/ca/amor/man-amor.6.docbook
+share/doc/HTML/ca/ca/docs/common/fdl-translated.html
+share/doc/HTML/ca/ca/docs/common/gpl-translated.html
+share/doc/HTML/ca/ca/docs/common/kde-localised.css
+share/doc/HTML/ca/ca/docs/common/lgpl-translated.html
+share/doc/HTML/ca/ca/docs/common/logotp3.png
 share/doc/HTML/ca/kappfinder/man-kappfinder.1.docbook
 share/doc/HTML/ca/kapptemplate/man-kapptemplate.1.docbook
 share/doc/HTML/ca/kate-plugins/common
@@ -87,12 +36,9 @@ share/doc/HTML/ca/kate-plugins/textfilter.docbook
 share/doc/HTML/ca/kate-plugins/xmlcheck.docbook
 share/doc/HTML/ca/kate-plugins/xmltools.docbook
 share/doc/HTML/ca/kate/advanced.docbook
-share/doc/HTML/ca/kate/common
 share/doc/HTML/ca/kate/configuring.docbook
 share/doc/HTML/ca/kate/fundamentals.docbook
 share/doc/HTML/ca/kate/highlighting.docbook
-share/doc/HTML/ca/kate/index.cache.bz2
-share/doc/HTML/ca/kate/index.docbook
 share/doc/HTML/ca/kate/man-kate.1.docbook
 share/doc/HTML/ca/kate/mdi.docbook
 share/doc/HTML/ca/kate/menus.docbook
@@ -289,6 +235,7 @@ share/doc/HTML/ca/kdebugdialog/index.docbook
 share/doc/HTML/ca/kdelibs/man-artsmessage.1.docbook
 share/doc/HTML/ca/kdelibs/man-checkXML.1.docbook
 share/doc/HTML/ca/kdelibs/man-dcop.1.docbook
+share/doc/HTML/ca/kdelibs/man-kbuildsycoca.8.docbook
 share/doc/HTML/ca/kdelibs/man-kdeoptions.7.docbook
 share/doc/HTML/ca/kdelibs/man-qtoptions.7.docbook
 share/doc/HTML/ca/kdesu/common
@@ -360,6 +307,7 @@ share/doc/HTML/ca/khelpcenter/userguide/control-center.docbook
 share/doc/HTML/ca/khelpcenter/userguide/creating-graphics.docbook
 share/doc/HTML/ca/khelpcenter/userguide/credits-and-license.docbook
 share/doc/HTML/ca/khelpcenter/userguide/email.docbook
+share/doc/HTML/ca/khelpcenter/userguide/extragear-applications.docbook
 share/doc/HTML/ca/khelpcenter/userguide/file-sharing.docbook
 share/doc/HTML/ca/khelpcenter/userguide/first-impressions.docbook
 share/doc/HTML/ca/khelpcenter/userguide/font-installation.docbook
@@ -379,6 +327,7 @@ share/doc/HTML/ca/khelpcenter/userguide/kde-for-admins.docbook
 share/doc/HTML/ca/khelpcenter/userguide/kde-office.docbook
 share/doc/HTML/ca/khelpcenter/userguide/konsole-intro.docbook
 share/doc/HTML/ca/khelpcenter/userguide/messaging-intro.docbook
+share/doc/HTML/ca/khelpcenter/userguide/migrator-applications.docbook
 share/doc/HTML/ca/khelpcenter/userguide/migrator-dictionary.docbook
 share/doc/HTML/ca/khelpcenter/userguide/more-help.docbook
 share/doc/HTML/ca/khelpcenter/userguide/net-connection-setup.docbook
@@ -427,6 +376,60 @@ share/doc/HTML/ca/kicker/man-kicker.1.docbook
 share/doc/HTML/ca/kinfocenter/blockdevices/common
 share/doc/HTML/ca/kinfocenter/blockdevices/index.cache.bz2
 share/doc/HTML/ca/kinfocenter/blockdevices/index.docbook
+share/doc/HTML/ca/kinfocenter/common
+share/doc/HTML/ca/kinfocenter/devices/common
+share/doc/HTML/ca/kinfocenter/devices/index.cache.bz2
+share/doc/HTML/ca/kinfocenter/devices/index.docbook
+share/doc/HTML/ca/kinfocenter/dma/common
+share/doc/HTML/ca/kinfocenter/dma/index.cache.bz2
+share/doc/HTML/ca/kinfocenter/dma/index.docbook
+share/doc/HTML/ca/kinfocenter/index.cache.bz2
+share/doc/HTML/ca/kinfocenter/index.docbook
+share/doc/HTML/ca/kinfocenter/interrupts/common
+share/doc/HTML/ca/kinfocenter/interrupts/index.cache.bz2
+share/doc/HTML/ca/kinfocenter/interrupts/index.docbook
+share/doc/HTML/ca/kinfocenter/ioports/common
+share/doc/HTML/ca/kinfocenter/ioports/index.cache.bz2
+share/doc/HTML/ca/kinfocenter/ioports/index.docbook
+share/doc/HTML/ca/kinfocenter/memory/common
+share/doc/HTML/ca/kinfocenter/memory/index.cache.bz2
+share/doc/HTML/ca/kinfocenter/memory/index.docbook
+share/doc/HTML/ca/kinfocenter/nics/common
+share/doc/HTML/ca/kinfocenter/nics/index.cache.bz2
+share/doc/HTML/ca/kinfocenter/nics/index.docbook
+share/doc/HTML/ca/kinfocenter/opengl/common
+share/doc/HTML/ca/kinfocenter/opengl/index.cache.bz2
+share/doc/HTML/ca/kinfocenter/opengl/index.docbook
+share/doc/HTML/ca/kinfocenter/partitions/common
+share/doc/HTML/ca/kinfocenter/partitions/index.cache.bz2
+share/doc/HTML/ca/kinfocenter/partitions/index.docbook
+share/doc/HTML/ca/kinfocenter/pci/common
+share/doc/HTML/ca/kinfocenter/pci/index.cache.bz2
+share/doc/HTML/ca/kinfocenter/pci/index.docbook
+share/doc/HTML/ca/kinfocenter/pcmcia/common
+share/doc/HTML/ca/kinfocenter/pcmcia/index.cache.bz2
+share/doc/HTML/ca/kinfocenter/pcmcia/index.docbook
+share/doc/HTML/ca/kinfocenter/processor/common
+share/doc/HTML/ca/kinfocenter/processor/index.cache.bz2
+share/doc/HTML/ca/kinfocenter/processor/index.docbook
+share/doc/HTML/ca/kinfocenter/protocols/common
+share/doc/HTML/ca/kinfocenter/protocols/index.cache.bz2
+share/doc/HTML/ca/kinfocenter/protocols/index.docbook
+share/doc/HTML/ca/kinfocenter/samba/common
+share/doc/HTML/ca/kinfocenter/samba/index.cache.bz2
+share/doc/HTML/ca/kinfocenter/samba/index.docbook
+share/doc/HTML/ca/kinfocenter/scsi/common
+share/doc/HTML/ca/kinfocenter/scsi/index.cache.bz2
+share/doc/HTML/ca/kinfocenter/scsi/index.docbook
+share/doc/HTML/ca/kinfocenter/sound/common
+share/doc/HTML/ca/kinfocenter/sound/index.cache.bz2
+share/doc/HTML/ca/kinfocenter/sound/index.docbook
+share/doc/HTML/ca/kinfocenter/usb/common
+share/doc/HTML/ca/kinfocenter/usb/index.cache.bz2
+share/doc/HTML/ca/kinfocenter/usb/index.docbook
+share/doc/HTML/ca/kinfocenter/xserver/common
+share/doc/HTML/ca/kinfocenter/xserver/index.cache.bz2
+share/doc/HTML/ca/kinfocenter/xserver/index.docbook
 share/doc/HTML/ca/kioslave/audiocd.docbook
 share/doc/HTML/ca/kioslave/bzip.docbook
 share/doc/HTML/ca/kioslave/bzip2.docbook
@@ -514,6 +517,12 @@ share/doc/HTML/ca/kmouth/common
 share/doc/HTML/ca/kmouth/index.cache.bz2
 share/doc/HTML/ca/kmouth/index.docbook
 share/doc/HTML/ca/kmouth/man-kmouth.1.docbook
+share/doc/HTML/ca/knetattach/common
+share/doc/HTML/ca/knetattach/index.cache.bz2
+share/doc/HTML/ca/knetattach/index.docbook
+share/doc/HTML/ca/kodo/common
+share/doc/HTML/ca/kodo/index.cache.bz2
+share/doc/HTML/ca/kodo/index.docbook
 share/doc/HTML/ca/kompare/common
 share/doc/HTML/ca/kompare/index.cache.bz2
 share/doc/HTML/ca/kompare/index.docbook
@@ -576,6 +585,9 @@ share/doc/HTML/ca/konqueror/path-complete.docbook
 share/doc/HTML/ca/konqueror/plugins.docbook
 share/doc/HTML/ca/konqueror/save-settings.docbook
 share/doc/HTML/ca/konqueror/sidebar.docbook
+share/doc/HTML/ca/kontact/common
+share/doc/HTML/ca/kontact/index.cache.bz2
+share/doc/HTML/ca/kontact/index.docbook
 share/doc/HTML/ca/kpackage/common
 share/doc/HTML/ca/kpackage/index.cache.bz2
 share/doc/HTML/ca/kpackage/index.docbook
@@ -679,6 +691,9 @@ share/doc/HTML/ca/ksysguard/index.docbook
 share/doc/HTML/ca/ksysv/common
 share/doc/HTML/ca/ksysv/index.cache.bz2
 share/doc/HTML/ca/ksysv/index.docbook
+share/doc/HTML/ca/kteatime/common
+share/doc/HTML/ca/kteatime/index.cache.bz2
+share/doc/HTML/ca/kteatime/index.docbook
 share/doc/HTML/ca/ktimer/common
 share/doc/HTML/ca/ktimer/index.cache.bz2
 share/doc/HTML/ca/ktimer/index.docbook
@@ -704,9 +719,27 @@ share/doc/HTML/ca/kwordquiz/index.docbook
 share/doc/HTML/ca/kworldclock/common
 share/doc/HTML/ca/kworldclock/index.cache.bz2
 share/doc/HTML/ca/kworldclock/index.docbook
+share/doc/HTML/ca/kworldclock/man-kworldclock.1.docbook
 share/doc/HTML/ca/kxkb/common
 share/doc/HTML/ca/kxkb/index.cache.bz2
 share/doc/HTML/ca/kxkb/index.docbook
+share/doc/HTML/ca/quanta/adv-quanta.docbook
+share/doc/HTML/ca/quanta/common
+share/doc/HTML/ca/quanta/config-quanta.docbook
+share/doc/HTML/ca/quanta/credits-license.docbook
+share/doc/HTML/ca/quanta/debugging-quanta.docbook
+share/doc/HTML/ca/quanta/extending-quanta.docbook
+share/doc/HTML/ca/quanta/fundamentals.docbook
+share/doc/HTML/ca/quanta/glossary.docbook
+share/doc/HTML/ca/quanta/index.cache.bz2
+share/doc/HTML/ca/quanta/index.docbook
+share/doc/HTML/ca/quanta/installation.docbook
+share/doc/HTML/ca/quanta/introduction.docbook
+share/doc/HTML/ca/quanta/man-quanta.1.docbook
+share/doc/HTML/ca/quanta/q-and-a.docbook
+share/doc/HTML/ca/quanta/quanta-menus.docbook
+share/doc/HTML/ca/quanta/quanta-projects.docbook
+share/doc/HTML/ca/quanta/working-with-quanta.docbook
 share/doc/HTML/ca/scripts/man-adddebug.1.docbook
 share/doc/HTML/ca/scripts/man-cheatmake.1.docbook
 share/doc/HTML/ca/scripts/man-create_cvsignore.1.docbook
@@ -1295,6 +1328,7 @@ share/locale/ca/charset
 share/locale/ca/entry.desktop
 share/locale/ca/flag.png
 @dirrm share/doc/HTML/ca/scripts
+@dirrm share/doc/HTML/ca/quanta
 @dirrm share/doc/HTML/ca/kxkb
 @dirrm share/doc/HTML/ca/kworldclock
 @dirrm share/doc/HTML/ca/kwordquiz
@@ -1305,6 +1339,7 @@ share/locale/ca/flag.png
 @dirrm share/doc/HTML/ca/kttsd
 @dirrm share/doc/HTML/ca/ktouch
 @dirrm share/doc/HTML/ca/ktimer
+@dirrm share/doc/HTML/ca/kteatime
 @dirrm share/doc/HTML/ca/ksysv
 @dirrm share/doc/HTML/ca/ksysguard
 @dirrm share/doc/HTML/ca/kstars
@@ -1318,6 +1353,7 @@ share/locale/ca/flag.png
 @dirrm share/doc/HTML/ca/kpercentage
 @dirrm share/doc/HTML/ca/kpager
 @dirrm share/doc/HTML/ca/kpackage
+@dirrm share/doc/HTML/ca/kontact
 @dirrm share/doc/HTML/ca/konqueror
 @dirrm share/doc/HTML/ca/konq-plugins/webarchiver
 @dirrm share/doc/HTML/ca/konq-plugins/validators
@@ -1334,6 +1370,8 @@ share/locale/ca/flag.png
 @dirrm share/doc/HTML/ca/konq-plugins/babel
 @dirrm share/doc/HTML/ca/konq-plugins
 @dirrm share/doc/HTML/ca/kompare
+@dirrm share/doc/HTML/ca/kodo
+@dirrm share/doc/HTML/ca/knetattach
 @dirrm share/doc/HTML/ca/kmouth
 @dirrm share/doc/HTML/ca/kmousetool
 @dirrm share/doc/HTML/ca/kmoon
@@ -1346,6 +1384,23 @@ share/locale/ca/flag.png
 @dirrm share/doc/HTML/ca/klettres
 @dirrm share/doc/HTML/ca/kleopatra
 @dirrm share/doc/HTML/ca/kioslave
+@dirrm share/doc/HTML/ca/kinfocenter/xserver
+@dirrm share/doc/HTML/ca/kinfocenter/usb
+@dirrm share/doc/HTML/ca/kinfocenter/sound
+@dirrm share/doc/HTML/ca/kinfocenter/scsi
+@dirrm share/doc/HTML/ca/kinfocenter/samba
+@dirrm share/doc/HTML/ca/kinfocenter/protocols
+@dirrm share/doc/HTML/ca/kinfocenter/processor
+@dirrm share/doc/HTML/ca/kinfocenter/pcmcia
+@dirrm share/doc/HTML/ca/kinfocenter/pci
+@dirrm share/doc/HTML/ca/kinfocenter/partitions
+@dirrm share/doc/HTML/ca/kinfocenter/opengl
+@dirrm share/doc/HTML/ca/kinfocenter/nics
+@dirrm share/doc/HTML/ca/kinfocenter/memory
+@dirrm share/doc/HTML/ca/kinfocenter/ioports
+@dirrm share/doc/HTML/ca/kinfocenter/interrupts
+@dirrm share/doc/HTML/ca/kinfocenter/dma
+@dirrm share/doc/HTML/ca/kinfocenter/devices
 @dirrm share/doc/HTML/ca/kinfocenter/blockdevices
 @dirrm share/doc/HTML/ca/kinfocenter
 @dirrm share/doc/HTML/ca/kicker-applets
@@ -1429,7 +1484,10 @@ share/locale/ca/flag.png
 @dirrm share/doc/HTML/ca/kate
 @dirrm share/doc/HTML/ca/kapptemplate
 @dirrm share/doc/HTML/ca/kappfinder
-@dirrm share/doc/HTML/ca/common
+@dirrm share/doc/HTML/ca/ca/docs/common
+@dirrm share/doc/HTML/ca/ca/docs
+@dirrm share/doc/HTML/ca/ca
+@dirrm share/doc/HTML/ca/amor
 @dirrm share/doc/HTML/ca
 @dirrm share/apps/kturtle/examples/ca
 @dirrm share/apps/kturtle/examples

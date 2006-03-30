@@ -78,7 +78,7 @@ lib/kde3/libwebarchiverplugin.so
 lib/kde3/webarchivethumbnail.a
 lib/kde3/webarchivethumbnail.la
 lib/kde3/webarchivethumbnail.so
-share/applications/kdeaddons-konq-plugins-3.5.1
+share/applications/kdeaddons-konq-plugins-3.5.2
 share/applnk/.hidden/arkplugin.desktop
 share/applnk/.hidden/kcmkuick.desktop
 share/applnk/.hidden/kuickplugin.desktop
@@ -141,7 +141,6 @@ share/apps/microformat/pics/microformat.png
 share/config.kcfg/konq_sidebarnews.kcfg
 share/config/translaterc
 share/doc/HTML/en/konq-plugins/babel/common
-share/doc/HTML/en/konq-plugins/babel/cr16-action-babelfish.png
 share/doc/HTML/en/konq-plugins/babel/index.cache.bz2
 share/doc/HTML/en/konq-plugins/babel/index.docbook
 share/doc/HTML/en/konq-plugins/common
@@ -174,9 +173,6 @@ share/doc/HTML/en/konq-plugins/kuick/index.docbook
 share/doc/HTML/en/konq-plugins/mediaplayer/common
 share/doc/HTML/en/konq-plugins/mediaplayer/index.cache.bz2
 share/doc/HTML/en/konq-plugins/mediaplayer/index.docbook
-share/doc/HTML/en/konq-plugins/smbmounter/common
-share/doc/HTML/en/konq-plugins/smbmounter/index.cache.bz2
-share/doc/HTML/en/konq-plugins/smbmounter/index.docbook
 share/doc/HTML/en/konq-plugins/uachanger/common
 share/doc/HTML/en/konq-plugins/uachanger/index.cache.bz2
 share/doc/HTML/en/konq-plugins/uachanger/index.docbook
@@ -228,7 +224,6 @@ share/services/webarchivethumbnail.desktop
 @dirrm share/doc/HTML/en/konq-plugins/webarchiver
 @dirrm share/doc/HTML/en/konq-plugins/validators
 @dirrm share/doc/HTML/en/konq-plugins/uachanger
-@dirrm share/doc/HTML/en/konq-plugins/smbmounter
 @dirrm share/doc/HTML/en/konq-plugins/mediaplayer
 @dirrm share/doc/HTML/en/konq-plugins/kuick
 @dirrm share/doc/HTML/en/konq-plugins/khtmlsettings

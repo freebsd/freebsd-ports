@@ -3,66 +3,11 @@ share/apps/khangman/data/fi/easy.kvtml
 share/apps/khangman/data/fi/hard.kvtml
 share/apps/khangman/data/fi/medium.kvtml
 share/apps/khangman/fi.txt
-share/doc/HTML/fi/common/1.png
-share/doc/HTML/fi/common/10.png
-share/doc/HTML/fi/common/2.png
-share/doc/HTML/fi/common/3.png
-share/doc/HTML/fi/common/4.png
-share/doc/HTML/fi/common/5.png
-share/doc/HTML/fi/common/6.png
-share/doc/HTML/fi/common/7.png
-share/doc/HTML/fi/common/8.png
-share/doc/HTML/fi/common/9.png
-share/doc/HTML/fi/common/appheader.html
-share/doc/HTML/fi/common/artistic-license.html
-share/doc/HTML/fi/common/bottom-left.png
-share/doc/HTML/fi/common/bottom-middle.png
-share/doc/HTML/fi/common/bottom-right.png
-share/doc/HTML/fi/common/bottom1.png
-share/doc/HTML/fi/common/bottom2.png
-share/doc/HTML/fi/common/bsd-license.html
-share/doc/HTML/fi/common/docheadergears.png
-share/doc/HTML/fi/common/doctop1.png
-share/doc/HTML/fi/common/doctop1a.png
-share/doc/HTML/fi/common/doctop1b.png
-share/doc/HTML/fi/common/doctop2.png
-share/doc/HTML/fi/common/doxygen.css
-share/doc/HTML/fi/common/favicon.ico
-share/doc/HTML/fi/common/fdl-license
-share/doc/HTML/fi/common/fdl-license.html
-share/doc/HTML/fi/common/fdl-notice.html
-share/doc/HTML/fi/common/fdl-translated.html
-share/doc/HTML/fi/common/footer.html
-share/doc/HTML/fi/common/gpl-license
-share/doc/HTML/fi/common/gpl-license.html
-share/doc/HTML/fi/common/gpl-translated.html
-share/doc/HTML/fi/common/grad.png
-share/doc/HTML/fi/common/header.html
-share/doc/HTML/fi/common/headerbg.png
-share/doc/HTML/fi/common/kde-common.css
-share/doc/HTML/fi/common/kde-default.css
-share/doc/HTML/fi/common/kde-localised.css
-share/doc/HTML/fi/common/kde-localised.css.template
-share/doc/HTML/fi/common/kde-web.css
-share/doc/HTML/fi/common/kde_gear_64.png
-share/doc/HTML/fi/common/kde_logo.png
-share/doc/HTML/fi/common/kde_logo_bg.png
-share/doc/HTML/fi/common/kmenu.png
-share/doc/HTML/fi/common/lgpl-license
-share/doc/HTML/fi/common/lgpl-license.html
-share/doc/HTML/fi/common/lgpl-translated.html
-share/doc/HTML/fi/common/logotp3.png
-share/doc/HTML/fi/common/mainfooter.html
-share/doc/HTML/fi/common/mainheader.html
-share/doc/HTML/fi/common/qpl-license.html
-share/doc/HTML/fi/common/shadow.png
-share/doc/HTML/fi/common/top-left.png
-share/doc/HTML/fi/common/top-middle.png
-share/doc/HTML/fi/common/top-right-konqueror.png
-share/doc/HTML/fi/common/web-docbottom.png
-share/doc/HTML/fi/common/web-doctop.png
-share/doc/HTML/fi/common/x11-license.html
-share/doc/HTML/fi/common/xml.dcl
+share/doc/HTML/fi/fi/docs/common/fdl-translated.html
+share/doc/HTML/fi/fi/docs/common/gpl-translated.html
+share/doc/HTML/fi/fi/docs/common/kde-localised.css
+share/doc/HTML/fi/fi/docs/common/lgpl-translated.html
+share/doc/HTML/fi/fi/docs/common/logotp3.png
 share/doc/HTML/fi/kfind/common
 share/doc/HTML/fi/kfind/index.cache.bz2
 share/doc/HTML/fi/kfind/index.docbook
@@ -90,6 +35,8 @@ share/locale/fi/LC_MESSAGES/artscontrol.mo
 share/locale/fi/LC_MESSAGES/artsmodules.mo
 share/locale/fi/LC_MESSAGES/atlantik.mo
 share/locale/fi/LC_MESSAGES/atlantikdesigner.mo
+share/locale/fi/LC_MESSAGES/audiocd_encoder_lame.mo
+share/locale/fi/LC_MESSAGES/audiocd_encoder_vorbis.mo
 share/locale/fi/LC_MESSAGES/audiorename_plugin.mo
 share/locale/fi/LC_MESSAGES/autorefresh.mo
 share/locale/fi/LC_MESSAGES/babelfish.mo
@@ -632,7 +579,9 @@ share/locale/fi/flag.png
 @dirrm share/doc/HTML/fi/khelpcenter/glossary
 @dirrm share/doc/HTML/fi/khelpcenter
 @dirrm share/doc/HTML/fi/kfind
-@dirrm share/doc/HTML/fi/common
+@dirrm share/doc/HTML/fi/fi/docs/common
+@dirrm share/doc/HTML/fi/fi/docs
+@dirrm share/doc/HTML/fi/fi
 @dirrm share/apps/khangman/data/fi
 @dirrm share/apps/khangman/data
 @dirrm share/apps/khangman

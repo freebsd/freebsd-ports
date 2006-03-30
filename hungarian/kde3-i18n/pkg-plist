@@ -12,69 +12,14 @@ share/doc/HTML/hu/ark/index.docbook
 share/doc/HTML/hu/atlantik/common
 share/doc/HTML/hu/atlantik/index.cache.bz2
 share/doc/HTML/hu/atlantik/index.docbook
-share/doc/HTML/hu/common/1.png
-share/doc/HTML/hu/common/10.png
-share/doc/HTML/hu/common/2.png
-share/doc/HTML/hu/common/3.png
-share/doc/HTML/hu/common/4.png
-share/doc/HTML/hu/common/5.png
-share/doc/HTML/hu/common/6.png
-share/doc/HTML/hu/common/7.png
-share/doc/HTML/hu/common/8.png
-share/doc/HTML/hu/common/9.png
-share/doc/HTML/hu/common/appheader.html
-share/doc/HTML/hu/common/artistic-license.html
-share/doc/HTML/hu/common/bottom-left.png
-share/doc/HTML/hu/common/bottom-middle.png
-share/doc/HTML/hu/common/bottom-right.png
-share/doc/HTML/hu/common/bottom1.png
-share/doc/HTML/hu/common/bottom2.png
-share/doc/HTML/hu/common/bsd-license.html
-share/doc/HTML/hu/common/docheadergears.png
-share/doc/HTML/hu/common/doctop1.png
-share/doc/HTML/hu/common/doctop1a.png
-share/doc/HTML/hu/common/doctop1b.png
-share/doc/HTML/hu/common/doctop2.png
-share/doc/HTML/hu/common/doxygen.css
-share/doc/HTML/hu/common/favicon.ico
-share/doc/HTML/hu/common/fdl-license
-share/doc/HTML/hu/common/fdl-license.html
-share/doc/HTML/hu/common/fdl-notice.html
-share/doc/HTML/hu/common/fdl-translated.html
-share/doc/HTML/hu/common/footer.html
-share/doc/HTML/hu/common/gpl-license
-share/doc/HTML/hu/common/gpl-license.html
-share/doc/HTML/hu/common/gpl-translated.html
-share/doc/HTML/hu/common/grad.png
-share/doc/HTML/hu/common/header.html
-share/doc/HTML/hu/common/headerbg.png
-share/doc/HTML/hu/common/kde-common.css
-share/doc/HTML/hu/common/kde-default.css
-share/doc/HTML/hu/common/kde-localised.css
-share/doc/HTML/hu/common/kde-localised.css.template
-share/doc/HTML/hu/common/kde-web.css
-share/doc/HTML/hu/common/kde_gear_64.png
-share/doc/HTML/hu/common/kde_logo.png
-share/doc/HTML/hu/common/kde_logo_bg.png
-share/doc/HTML/hu/common/kmenu.png
-share/doc/HTML/hu/common/lgpl-license
-share/doc/HTML/hu/common/lgpl-license.html
-share/doc/HTML/hu/common/lgpl-translated.html
-share/doc/HTML/hu/common/logotp3.png
-share/doc/HTML/hu/common/mainfooter.html
-share/doc/HTML/hu/common/mainheader.html
-share/doc/HTML/hu/common/qpl-license.html
-share/doc/HTML/hu/common/shadow.png
-share/doc/HTML/hu/common/top-left.png
-share/doc/HTML/hu/common/top-middle.png
-share/doc/HTML/hu/common/top-right-konqueror.png
-share/doc/HTML/hu/common/web-docbottom.png
-share/doc/HTML/hu/common/web-doctop.png
-share/doc/HTML/hu/common/x11-license.html
-share/doc/HTML/hu/common/xml.dcl
 share/doc/HTML/hu/flashkard/common
 share/doc/HTML/hu/flashkard/index.cache.bz2
 share/doc/HTML/hu/flashkard/index.docbook
+share/doc/HTML/hu/hu/docs/common/fdl-translated.html
+share/doc/HTML/hu/hu/docs/common/gpl-translated.html
+share/doc/HTML/hu/hu/docs/common/kde-localised.css
+share/doc/HTML/hu/hu/docs/common/lgpl-translated.html
+share/doc/HTML/hu/hu/docs/common/logotp3.png
 share/doc/HTML/hu/kaboodle/common
 share/doc/HTML/hu/kaboodle/index.cache.bz2
 share/doc/HTML/hu/kaboodle/index.docbook
@@ -1093,8 +1038,10 @@ share/locale/hu/flag.png
 @dirrm share/doc/HTML/hu/kalzium
 @dirrm share/doc/HTML/hu/kaddressbook
 @dirrm share/doc/HTML/hu/kaboodle
+@dirrm share/doc/HTML/hu/hu/docs/common
+@dirrm share/doc/HTML/hu/hu/docs
+@dirrm share/doc/HTML/hu/hu
 @dirrm share/doc/HTML/hu/flashkard
-@dirrm share/doc/HTML/hu/common
 @dirrm share/doc/HTML/hu/atlantik
 @dirrm share/doc/HTML/hu/ark
 @dirrm share/doc/HTML/hu/amor

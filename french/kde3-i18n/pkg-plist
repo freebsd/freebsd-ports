@@ -67,66 +67,11 @@ share/doc/HTML/fr/cervisia/logtree.png
 share/doc/HTML/fr/cervisia/mainview.png
 share/doc/HTML/fr/cervisia/resolve.png
 share/doc/HTML/fr/cervisia/updatetag.png
-share/doc/HTML/fr/common/1.png
-share/doc/HTML/fr/common/10.png
-share/doc/HTML/fr/common/2.png
-share/doc/HTML/fr/common/3.png
-share/doc/HTML/fr/common/4.png
-share/doc/HTML/fr/common/5.png
-share/doc/HTML/fr/common/6.png
-share/doc/HTML/fr/common/7.png
-share/doc/HTML/fr/common/8.png
-share/doc/HTML/fr/common/9.png
-share/doc/HTML/fr/common/appheader.html
-share/doc/HTML/fr/common/artistic-license.html
-share/doc/HTML/fr/common/bottom-left.png
-share/doc/HTML/fr/common/bottom-middle.png
-share/doc/HTML/fr/common/bottom-right.png
-share/doc/HTML/fr/common/bottom1.png
-share/doc/HTML/fr/common/bottom2.png
-share/doc/HTML/fr/common/bsd-license.html
-share/doc/HTML/fr/common/docheadergears.png
-share/doc/HTML/fr/common/doctop1.png
-share/doc/HTML/fr/common/doctop1a.png
-share/doc/HTML/fr/common/doctop1b.png
-share/doc/HTML/fr/common/doctop2.png
-share/doc/HTML/fr/common/doxygen.css
-share/doc/HTML/fr/common/favicon.ico
-share/doc/HTML/fr/common/fdl-license
-share/doc/HTML/fr/common/fdl-license.html
-share/doc/HTML/fr/common/fdl-notice.html
-share/doc/HTML/fr/common/fdl-translated.html
-share/doc/HTML/fr/common/footer.html
-share/doc/HTML/fr/common/gpl-license
-share/doc/HTML/fr/common/gpl-license.html
-share/doc/HTML/fr/common/gpl-translated.html
-share/doc/HTML/fr/common/grad.png
-share/doc/HTML/fr/common/header.html
-share/doc/HTML/fr/common/headerbg.png
-share/doc/HTML/fr/common/kde-common.css
-share/doc/HTML/fr/common/kde-default.css
-share/doc/HTML/fr/common/kde-localised.css
-share/doc/HTML/fr/common/kde-localised.css.template
-share/doc/HTML/fr/common/kde-web.css
-share/doc/HTML/fr/common/kde_gear_64.png
-share/doc/HTML/fr/common/kde_logo.png
-share/doc/HTML/fr/common/kde_logo_bg.png
-share/doc/HTML/fr/common/kmenu.png
-share/doc/HTML/fr/common/lgpl-license
-share/doc/HTML/fr/common/lgpl-license.html
-share/doc/HTML/fr/common/lgpl-translated.html
-share/doc/HTML/fr/common/logotp3.png
-share/doc/HTML/fr/common/mainfooter.html
-share/doc/HTML/fr/common/mainheader.html
-share/doc/HTML/fr/common/qpl-license.html
-share/doc/HTML/fr/common/shadow.png
-share/doc/HTML/fr/common/top-left.png
-share/doc/HTML/fr/common/top-middle.png
-share/doc/HTML/fr/common/top-right-konqueror.png
-share/doc/HTML/fr/common/web-docbottom.png
-share/doc/HTML/fr/common/web-doctop.png
-share/doc/HTML/fr/common/x11-license.html
-share/doc/HTML/fr/common/xml.dcl
+share/doc/HTML/fr/fr/docs/common/fdl-translated.html
+share/doc/HTML/fr/fr/docs/common/gpl-translated.html
+share/doc/HTML/fr/fr/docs/common/kde-localised.css
+share/doc/HTML/fr/fr/docs/common/lgpl-translated.html
+share/doc/HTML/fr/fr/docs/common/logotp3.png
 share/doc/HTML/fr/juk/common
 share/doc/HTML/fr/juk/index.cache.bz2
 share/doc/HTML/fr/juk/index.docbook
@@ -1368,12 +1313,17 @@ share/doc/HTML/fr/ktimer/index.docbook
 share/doc/HTML/fr/ktnef/common
 share/doc/HTML/fr/ktnef/index.cache.bz2
 share/doc/HTML/fr/ktnef/index.docbook
+share/doc/HTML/fr/ktouch/color_options.png
 share/doc/HTML/fr/ktouch/common
+share/doc/HTML/fr/ktouch/general_options.png
 share/doc/HTML/fr/ktouch/index.cache.bz2
 share/doc/HTML/fr/ktouch/index.docbook
-share/doc/HTML/fr/ktouch/screenshot1.png
-share/doc/HTML/fr/ktouch/screenshot2.png
-share/doc/HTML/fr/ktouch/screenshot3.png
+share/doc/HTML/fr/ktouch/keyboard_options.png
+share/doc/HTML/fr/ktouch/main_screen_default_color.png
+share/doc/HTML/fr/ktouch/main_window_german.png
+share/doc/HTML/fr/ktouch/statistics_dialog.png
+share/doc/HTML/fr/ktouch/statistics_dialog_chart.png
+share/doc/HTML/fr/ktouch/training_options.png
 share/doc/HTML/fr/ktron/common
 share/doc/HTML/fr/ktron/index.cache.bz2
 share/doc/HTML/fr/ktron/index.docbook
@@ -2376,7 +2326,9 @@ share/locale/fr/relecture_gui
 @dirrm share/doc/HTML/fr/kaddressbook
 @dirrm share/doc/HTML/fr/kaboodle
 @dirrm share/doc/HTML/fr/juk
-@dirrm share/doc/HTML/fr/common
+@dirrm share/doc/HTML/fr/fr/docs/common
+@dirrm share/doc/HTML/fr/fr/docs
+@dirrm share/doc/HTML/fr/fr
 @dirrm share/doc/HTML/fr/cervisia
 @dirrm share/doc/HTML/fr/atlantik
 @dirrm share/doc/HTML/fr/artsbuilder/images

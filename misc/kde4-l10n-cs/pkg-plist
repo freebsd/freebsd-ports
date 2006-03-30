@@ -54,66 +54,11 @@ share/apps/klettres/cs/syllab/ad-6.ogg
 share/apps/klettres/cs/syllab/ad-7.ogg
 share/apps/klettres/cs/syllab/ad-8.ogg
 share/apps/klettres/cs/syllab/ad-9.ogg
-share/doc/HTML/cs/common/1.png
-share/doc/HTML/cs/common/10.png
-share/doc/HTML/cs/common/2.png
-share/doc/HTML/cs/common/3.png
-share/doc/HTML/cs/common/4.png
-share/doc/HTML/cs/common/5.png
-share/doc/HTML/cs/common/6.png
-share/doc/HTML/cs/common/7.png
-share/doc/HTML/cs/common/8.png
-share/doc/HTML/cs/common/9.png
-share/doc/HTML/cs/common/appheader.html
-share/doc/HTML/cs/common/artistic-license.html
-share/doc/HTML/cs/common/bottom-left.png
-share/doc/HTML/cs/common/bottom-middle.png
-share/doc/HTML/cs/common/bottom-right.png
-share/doc/HTML/cs/common/bottom1.png
-share/doc/HTML/cs/common/bottom2.png
-share/doc/HTML/cs/common/bsd-license.html
-share/doc/HTML/cs/common/docheadergears.png
-share/doc/HTML/cs/common/doctop1.png
-share/doc/HTML/cs/common/doctop1a.png
-share/doc/HTML/cs/common/doctop1b.png
-share/doc/HTML/cs/common/doctop2.png
-share/doc/HTML/cs/common/doxygen.css
-share/doc/HTML/cs/common/favicon.ico
-share/doc/HTML/cs/common/fdl-license
-share/doc/HTML/cs/common/fdl-license.html
-share/doc/HTML/cs/common/fdl-notice.html
-share/doc/HTML/cs/common/fdl-translated.html
-share/doc/HTML/cs/common/footer.html
-share/doc/HTML/cs/common/gpl-license
-share/doc/HTML/cs/common/gpl-license.html
-share/doc/HTML/cs/common/gpl-translated.html
-share/doc/HTML/cs/common/grad.png
-share/doc/HTML/cs/common/header.html
-share/doc/HTML/cs/common/headerbg.png
-share/doc/HTML/cs/common/kde-common.css
-share/doc/HTML/cs/common/kde-default.css
-share/doc/HTML/cs/common/kde-localised.css
-share/doc/HTML/cs/common/kde-localised.css.template
-share/doc/HTML/cs/common/kde-web.css
-share/doc/HTML/cs/common/kde_gear_64.png
-share/doc/HTML/cs/common/kde_logo.png
-share/doc/HTML/cs/common/kde_logo_bg.png
-share/doc/HTML/cs/common/kmenu.png
-share/doc/HTML/cs/common/lgpl-license
-share/doc/HTML/cs/common/lgpl-license.html
-share/doc/HTML/cs/common/lgpl-translated.html
-share/doc/HTML/cs/common/logotp3.png
-share/doc/HTML/cs/common/mainfooter.html
-share/doc/HTML/cs/common/mainheader.html
-share/doc/HTML/cs/common/qpl-license.html
-share/doc/HTML/cs/common/shadow.png
-share/doc/HTML/cs/common/top-left.png
-share/doc/HTML/cs/common/top-middle.png
-share/doc/HTML/cs/common/top-right-konqueror.png
-share/doc/HTML/cs/common/web-docbottom.png
-share/doc/HTML/cs/common/web-doctop.png
-share/doc/HTML/cs/common/x11-license.html
-share/doc/HTML/cs/common/xml.dcl
+share/doc/HTML/cs/cs/docs/common/fdl-translated.html
+share/doc/HTML/cs/cs/docs/common/gpl-translated.html
+share/doc/HTML/cs/cs/docs/common/kde-localised.css
+share/doc/HTML/cs/cs/docs/common/lgpl-translated.html
+share/doc/HTML/cs/cs/docs/common/logotp3.png
 share/doc/HTML/cs/kcontrol/arts/midi.docbook
 share/doc/HTML/cs/kcontrol/bell/common
 share/doc/HTML/cs/kcontrol/bell/index.cache.bz2
@@ -844,7 +789,9 @@ share/locale/cs/flag.png
 @dirrm share/doc/HTML/cs/kcontrol/bell
 @dirrm share/doc/HTML/cs/kcontrol/arts
 @dirrm share/doc/HTML/cs/kcontrol
-@dirrm share/doc/HTML/cs/common
+@dirrm share/doc/HTML/cs/cs/docs/common
+@dirrm share/doc/HTML/cs/cs/docs
+@dirrm share/doc/HTML/cs/cs
 @dirrm share/apps/klettres/cs/syllab
 @dirrm share/apps/klettres/cs/alpha
 @dirrm share/apps/klettres/cs

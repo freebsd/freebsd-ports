@@ -19,66 +19,6 @@ share/apps/ktuberling/sounds/ro/pinguin.wav
 share/apps/ktuberling/sounds/ro/sprinceana.wav
 share/apps/ktuberling/sounds/ro/tigara.wav
 share/apps/ktuberling/sounds/ro/ureche.wav
-share/doc/HTML/ro/common/1.png
-share/doc/HTML/ro/common/10.png
-share/doc/HTML/ro/common/2.png
-share/doc/HTML/ro/common/3.png
-share/doc/HTML/ro/common/4.png
-share/doc/HTML/ro/common/5.png
-share/doc/HTML/ro/common/6.png
-share/doc/HTML/ro/common/7.png
-share/doc/HTML/ro/common/8.png
-share/doc/HTML/ro/common/9.png
-share/doc/HTML/ro/common/appheader.html
-share/doc/HTML/ro/common/artistic-license.html
-share/doc/HTML/ro/common/bottom-left.png
-share/doc/HTML/ro/common/bottom-middle.png
-share/doc/HTML/ro/common/bottom-right.png
-share/doc/HTML/ro/common/bottom1.png
-share/doc/HTML/ro/common/bottom2.png
-share/doc/HTML/ro/common/bsd-license.html
-share/doc/HTML/ro/common/docheadergears.png
-share/doc/HTML/ro/common/doctop1.png
-share/doc/HTML/ro/common/doctop1a.png
-share/doc/HTML/ro/common/doctop1b.png
-share/doc/HTML/ro/common/doctop2.png
-share/doc/HTML/ro/common/doxygen.css
-share/doc/HTML/ro/common/favicon.ico
-share/doc/HTML/ro/common/fdl-license
-share/doc/HTML/ro/common/fdl-license.html
-share/doc/HTML/ro/common/fdl-notice.html
-share/doc/HTML/ro/common/fdl-translated.html
-share/doc/HTML/ro/common/footer.html
-share/doc/HTML/ro/common/gpl-license
-share/doc/HTML/ro/common/gpl-license.html
-share/doc/HTML/ro/common/gpl-translated.html
-share/doc/HTML/ro/common/grad.png
-share/doc/HTML/ro/common/header.html
-share/doc/HTML/ro/common/headerbg.png
-share/doc/HTML/ro/common/kde-common.css
-share/doc/HTML/ro/common/kde-default.css
-share/doc/HTML/ro/common/kde-localised.css
-share/doc/HTML/ro/common/kde-localised.css.template
-share/doc/HTML/ro/common/kde-web.css
-share/doc/HTML/ro/common/kde_gear_64.png
-share/doc/HTML/ro/common/kde_logo.png
-share/doc/HTML/ro/common/kde_logo_bg.png
-share/doc/HTML/ro/common/kmenu.png
-share/doc/HTML/ro/common/lgpl-license
-share/doc/HTML/ro/common/lgpl-license.html
-share/doc/HTML/ro/common/lgpl-translated.html
-share/doc/HTML/ro/common/logotp3.png
-share/doc/HTML/ro/common/mainfooter.html
-share/doc/HTML/ro/common/mainheader.html
-share/doc/HTML/ro/common/qpl-license.html
-share/doc/HTML/ro/common/shadow.png
-share/doc/HTML/ro/common/top-left.png
-share/doc/HTML/ro/common/top-middle.png
-share/doc/HTML/ro/common/top-right-konqueror.png
-share/doc/HTML/ro/common/web-docbottom.png
-share/doc/HTML/ro/common/web-doctop.png
-share/doc/HTML/ro/common/x11-license.html
-share/doc/HTML/ro/common/xml.dcl
 share/doc/HTML/ro/khelpcenter/common
 share/doc/HTML/ro/khelpcenter/contact.docbook
 share/doc/HTML/ro/khelpcenter/glossary/common
@@ -211,6 +151,11 @@ share/doc/HTML/ro/kioslave/telnet.docbook
 share/doc/HTML/ro/kioslave/thumbnail.docbook
 share/doc/HTML/ro/kioslave/webdav.docbook
 share/doc/HTML/ro/kioslave/webdavs.docbook
+share/doc/HTML/ro/ro/docs/common/fdl-translated.html
+share/doc/HTML/ro/ro/docs/common/gpl-translated.html
+share/doc/HTML/ro/ro/docs/common/kde-localised.css
+share/doc/HTML/ro/ro/docs/common/lgpl-translated.html
+share/doc/HTML/ro/ro/docs/common/logotp3.png
 share/locale/ro/LC_MESSAGES/akregator.mo
 share/locale/ro/LC_MESSAGES/alsaplayerui.mo
 share/locale/ro/LC_MESSAGES/amor.mo
@@ -250,6 +195,7 @@ share/locale/ro/LC_MESSAGES/juk.mo
 share/locale/ro/LC_MESSAGES/kabc2mutt.mo
 share/locale/ro/LC_MESSAGES/kabc_dir.mo
 share/locale/ro/LC_MESSAGES/kabc_file.mo
+share/locale/ro/LC_MESSAGES/kabc_ldap.mo
 share/locale/ro/LC_MESSAGES/kabc_ldapkio.mo
 share/locale/ro/LC_MESSAGES/kabc_net.mo
 share/locale/ro/LC_MESSAGES/kabc_sql.mo
@@ -624,6 +570,7 @@ share/locale/ro/LC_MESSAGES/kvieweffectsplugin.mo
 share/locale/ro/LC_MESSAGES/kviewpresenterplugin.mo
 share/locale/ro/LC_MESSAGES/kviewscannerplugin.mo
 share/locale/ro/LC_MESSAGES/kviewshell.mo
+share/locale/ro/LC_MESSAGES/kviewtemplateplugin.mo
 share/locale/ro/LC_MESSAGES/kviewviewer.mo
 share/locale/ro/LC_MESSAGES/kvoctrain.mo
 share/locale/ro/LC_MESSAGES/kwalletmanager.mo
@@ -695,6 +642,9 @@ share/locale/ro/LC_MESSAGES/webarchiver.mo
 share/locale/ro/charset
 share/locale/ro/entry.desktop
 share/locale/ro/flag.png
+@dirrm share/doc/HTML/ro/ro/docs/common
+@dirrm share/doc/HTML/ro/ro/docs
+@dirrm share/doc/HTML/ro/ro
 @dirrm share/doc/HTML/ro/kioslave
 @dirrm share/doc/HTML/ro/kinfocenter/xserver
 @dirrm share/doc/HTML/ro/kinfocenter/usb
@@ -717,7 +667,6 @@ share/locale/ro/flag.png
 @dirrm share/doc/HTML/ro/khelpcenter/visualdict
 @dirrm share/doc/HTML/ro/khelpcenter/glossary
 @dirrm share/doc/HTML/ro/khelpcenter
-@dirrm share/doc/HTML/ro/common
 @dirrm share/apps/ktuberling/sounds/ro
 @dirrm share/apps/ktuberling/sounds
 @dirrm share/apps/ktuberling

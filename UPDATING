@@ -6,6 +6,19 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20060330:
+  AFFECTS: users of x11/kdebase3
+  AUTHOR: kde@freebsd.org
+
+  The genkdmconf.sh rc-script has been removed in favour of a kdm wrapper
+  script, which now handles both launching kdm and automatically updating or
+  generating kdm's configuration files. The actual kdm binaries have been
+  renamed to 'kdm-bin', 'kdm-bin_config' and 'kdm-bin_greet' respectively.
+
+  These changes should be mostly transparent to kdm users and require no
+  changes to existing configurations or setups, however: The actual kdm process
+  is now also named 'kdm-bin', so 'killall kdm' will no longer work.
+
 20060328:
   AFFECTS: users of sysutils/nut
   AUTHOR: Joerg.Pulz@frm2.tum.de

@@ -7,9 +7,18 @@ lib/kde3/katefiletemplates.so
 lib/kde3/katefll_plugin.a
 lib/kde3/katefll_plugin.la
 lib/kde3/katefll_plugin.so
+lib/kde3/katehelloworldplugin.a
+lib/kde3/katehelloworldplugin.la
+lib/kde3/katehelloworldplugin.so
 lib/kde3/katehtmltoolsplugin.a
 lib/kde3/katehtmltoolsplugin.la
 lib/kde3/katehtmltoolsplugin.so
+lib/kde3/kateinsertcommandplugin.a
+lib/kde3/kateinsertcommandplugin.la
+lib/kde3/kateinsertcommandplugin.so
+lib/kde3/katemakeplugin.a
+lib/kde3/katemakeplugin.la
+lib/kde3/katemakeplugin.so
 lib/kde3/katemodelineplugin.a
 lib/kde3/katemodelineplugin.la
 lib/kde3/katemodelineplugin.so
@@ -34,7 +43,7 @@ lib/kde3/katexmltoolsplugin.so
 lib/kde3/libkatetabbarextensionplugin.a
 lib/kde3/libkatetabbarextensionplugin.la
 lib/kde3/libkatetabbarextensionplugin.so
-share/applications/kdeaddons-kate-plugins-3.5.1
+share/applications/kdeaddons-kate-plugins-3.5.2
 share/applnk/.hidden/katefll.desktop
 share/apps/kate/plugins/katecppsymbolviewer/ui.rc
 share/apps/kate/plugins/katefiletemplates/templates/cppgpl.cpp.katetemplate
@@ -46,7 +55,10 @@ share/apps/kate/plugins/katefiletemplates/templates/html.katetemplate
 share/apps/kate/plugins/katefiletemplates/templates/language.xml.katetemplate
 share/apps/kate/plugins/katefiletemplates/ui.rc
 share/apps/kate/plugins/katefll/ui.rc
+share/apps/kate/plugins/katehelloworld/ui.rc
 share/apps/kate/plugins/katehtmltools/ui.rc
+share/apps/kate/plugins/kateinsertcommand/ui.rc
+share/apps/kate/plugins/katemake/ui.rc
 share/apps/kate/plugins/katemodeline/ui.rc
 share/apps/kate/plugins/kateopenheader/ui.rc
 share/apps/kate/plugins/katepybrowse/ui.rc
@@ -71,11 +83,13 @@ share/apps/katexmltools/xhtml1-strict.dtd.xml
 share/apps/katexmltools/xhtml1-transitional.dtd.xml
 share/apps/katexmltools/xslt-1.0.dtd.xml
 share/doc/HTML/en/kate-plugins/common
+share/doc/HTML/en/kate-plugins/configure_insertcommand.png
 share/doc/HTML/en/kate-plugins/filetemplates.docbook
 share/doc/HTML/en/kate-plugins/htmltools.docbook
 share/doc/HTML/en/kate-plugins/index.cache.bz2
 share/doc/HTML/en/kate-plugins/index.docbook
 share/doc/HTML/en/kate-plugins/insertcommand.docbook
+share/doc/HTML/en/kate-plugins/insertcommand.png
 share/doc/HTML/en/kate-plugins/openheader.docbook
 share/doc/HTML/en/kate-plugins/textfilter.docbook
 share/doc/HTML/en/kate-plugins/xmlcheck.docbook
@@ -83,7 +97,10 @@ share/doc/HTML/en/kate-plugins/xmltools.docbook
 share/services/katecppsymbolviewer.desktop
 share/services/katefiletemplates.desktop
 share/services/katefll_plugin.desktop
+share/services/katehelloworld.desktop
 share/services/katehtmltools.desktop
+share/services/kateinsertcommand.desktop
+share/services/katemake.desktop
 share/services/katemodeline.desktop
 share/services/kateopenheader.desktop
 share/services/katepybrowse.desktop
@@ -102,7 +119,10 @@ share/services/katexmltools.desktop
 @dirrm share/apps/kate/plugins/katepybrowse
 @dirrm share/apps/kate/plugins/kateopenheader
 @dirrm share/apps/kate/plugins/katemodeline
+@dirrm share/apps/kate/plugins/katemake
+@dirrm share/apps/kate/plugins/kateinsertcommand
 @dirrm share/apps/kate/plugins/katehtmltools
+@dirrm share/apps/kate/plugins/katehelloworld
 @dirrm share/apps/kate/plugins/katefll
 @dirrm share/apps/kate/plugins/katefiletemplates/templates
 @dirrm share/apps/kate/plugins/katefiletemplates

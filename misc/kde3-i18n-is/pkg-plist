@@ -400,10 +400,12 @@ share/locale/is/LC_MESSAGES/krdc.mo
 share/locale/is/LC_MESSAGES/kreadconfig.mo
 share/locale/is/LC_MESSAGES/krec.mo
 share/locale/is/LC_MESSAGES/kregexpeditor.mo
+share/locale/is/LC_MESSAGES/kres_birthday.mo
 share/locale/is/LC_MESSAGES/kres_blogging.mo
 share/locale/is/LC_MESSAGES/kres_bugzilla.mo
 share/locale/is/LC_MESSAGES/kres_exchange.mo
 share/locale/is/LC_MESSAGES/kres_featureplan.mo
+share/locale/is/LC_MESSAGES/kres_groupware.mo
 share/locale/is/LC_MESSAGES/kres_groupwise.mo
 share/locale/is/LC_MESSAGES/kres_kolab.mo
 share/locale/is/LC_MESSAGES/kres_remote.mo

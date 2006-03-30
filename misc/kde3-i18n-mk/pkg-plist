@@ -190,6 +190,7 @@ share/locale/mk/LC_MESSAGES/kfile_tga.mo
 share/locale/mk/LC_MESSAGES/kfile_theora.mo
 share/locale/mk/LC_MESSAGES/kfile_tiff.mo
 share/locale/mk/LC_MESSAGES/kfile_torrent.mo
+share/locale/mk/LC_MESSAGES/kfile_ts.mo
 share/locale/mk/LC_MESSAGES/kfile_txt.mo
 share/locale/mk/LC_MESSAGES/kfile_vcf.mo
 share/locale/mk/LC_MESSAGES/kfile_wav.mo
@@ -285,6 +286,7 @@ share/locale/mk/LC_MESSAGES/knotify.mo
 share/locale/mk/LC_MESSAGES/kodo.mo
 share/locale/mk/LC_MESSAGES/kolf.mo
 share/locale/mk/LC_MESSAGES/kolourpaint.mo
+share/locale/mk/LC_MESSAGES/kolourpicker.mo
 share/locale/mk/LC_MESSAGES/kompare.mo
 share/locale/mk/LC_MESSAGES/konqueror.mo
 share/locale/mk/LC_MESSAGES/konquest.mo
@@ -312,6 +314,7 @@ share/locale/mk/LC_MESSAGES/krdc.mo
 share/locale/mk/LC_MESSAGES/kreadconfig.mo
 share/locale/mk/LC_MESSAGES/krec.mo
 share/locale/mk/LC_MESSAGES/kregexpeditor.mo
+share/locale/mk/LC_MESSAGES/kres_bugzilla.mo
 share/locale/mk/LC_MESSAGES/kres_exchange.mo
 share/locale/mk/LC_MESSAGES/kres_remote.mo
 share/locale/mk/LC_MESSAGES/kres_xmlrpc.mo
@@ -336,6 +339,7 @@ share/locale/mk/LC_MESSAGES/ksplash.mo
 share/locale/mk/LC_MESSAGES/ksplashthemes.mo
 share/locale/mk/LC_MESSAGES/kstars.mo
 share/locale/mk/LC_MESSAGES/kstart.mo
+share/locale/mk/LC_MESSAGES/kstartperf.mo
 share/locale/mk/LC_MESSAGES/kstyle_keramik_config.mo
 share/locale/mk/LC_MESSAGES/kstyle_plastik_config.mo
 share/locale/mk/LC_MESSAGES/ksvgplugin.mo
@@ -356,7 +360,9 @@ share/locale/mk/LC_MESSAGES/ktouch.mo
 share/locale/mk/LC_MESSAGES/ktron.mo
 share/locale/mk/LC_MESSAGES/ktuberling.mo
 share/locale/mk/LC_MESSAGES/ktux.mo
+share/locale/mk/LC_MESSAGES/kuick_plugin.mo
 share/locale/mk/LC_MESSAGES/kuickshow.mo
+share/locale/mk/LC_MESSAGES/kuiviewer.mo
 share/locale/mk/LC_MESSAGES/kuser.mo
 share/locale/mk/LC_MESSAGES/kverbos.mo
 share/locale/mk/LC_MESSAGES/kview.mo
@@ -386,6 +392,7 @@ share/locale/mk/LC_MESSAGES/libkcalsystem.mo
 share/locale/mk/LC_MESSAGES/libkcddb.mo
 share/locale/mk/LC_MESSAGES/libkdegames.mo
 share/locale/mk/LC_MESSAGES/libkdepim.mo
+share/locale/mk/LC_MESSAGES/libkfaximgage.mo
 share/locale/mk/LC_MESSAGES/libkicker.mo
 share/locale/mk/LC_MESSAGES/libkickermenu_kdeprint.mo
 share/locale/mk/LC_MESSAGES/libkickermenu_konsole.mo
@@ -405,6 +412,7 @@ share/locale/mk/LC_MESSAGES/libtaskmanager.mo
 share/locale/mk/LC_MESSAGES/lockout.mo
 share/locale/mk/LC_MESSAGES/lskat.mo
 share/locale/mk/LC_MESSAGES/mediaapplet.mo
+share/locale/mk/LC_MESSAGES/mf_konqplugin.mo
 share/locale/mk/LC_MESSAGES/naughtyapplet.mo
 share/locale/mk/LC_MESSAGES/noatun.mo
 share/locale/mk/LC_MESSAGES/nsplugin.mo
@@ -414,6 +422,7 @@ share/locale/mk/LC_MESSAGES/quicklauncher.mo
 share/locale/mk/LC_MESSAGES/secpolicy.mo
 share/locale/mk/LC_MESSAGES/timezones.mo
 share/locale/mk/LC_MESSAGES/trashapplet.mo
+share/locale/mk/LC_MESSAGES/uachangerplugin.mo
 share/locale/mk/LC_MESSAGES/useraccount.mo
 share/locale/mk/charset
 share/locale/mk/entry.desktop

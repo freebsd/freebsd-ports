@@ -138,62 +138,6 @@ share/doc/HTML/sk/amor/index.docbook
 share/doc/HTML/sk/atlantik/common
 share/doc/HTML/sk/atlantik/index.cache.bz2
 share/doc/HTML/sk/atlantik/index.docbook
-share/doc/HTML/sk/common/1.png
-share/doc/HTML/sk/common/10.png
-share/doc/HTML/sk/common/2.png
-share/doc/HTML/sk/common/3.png
-share/doc/HTML/sk/common/4.png
-share/doc/HTML/sk/common/5.png
-share/doc/HTML/sk/common/6.png
-share/doc/HTML/sk/common/7.png
-share/doc/HTML/sk/common/8.png
-share/doc/HTML/sk/common/9.png
-share/doc/HTML/sk/common/appheader.html
-share/doc/HTML/sk/common/artistic-license.html
-share/doc/HTML/sk/common/bottom-left.png
-share/doc/HTML/sk/common/bottom-middle.png
-share/doc/HTML/sk/common/bottom-right.png
-share/doc/HTML/sk/common/bottom1.png
-share/doc/HTML/sk/common/bottom2.png
-share/doc/HTML/sk/common/bsd-license.html
-share/doc/HTML/sk/common/docheadergears.png
-share/doc/HTML/sk/common/doctop1.png
-share/doc/HTML/sk/common/doctop1a.png
-share/doc/HTML/sk/common/doctop1b.png
-share/doc/HTML/sk/common/doctop2.png
-share/doc/HTML/sk/common/doxygen.css
-share/doc/HTML/sk/common/favicon.ico
-share/doc/HTML/sk/common/fdl-license
-share/doc/HTML/sk/common/fdl-license.html
-share/doc/HTML/sk/common/fdl-notice.html
-share/doc/HTML/sk/common/footer.html
-share/doc/HTML/sk/common/gpl-license
-share/doc/HTML/sk/common/gpl-license.html
-share/doc/HTML/sk/common/gpl-translated.html
-share/doc/HTML/sk/common/grad.png
-share/doc/HTML/sk/common/header.html
-share/doc/HTML/sk/common/headerbg.png
-share/doc/HTML/sk/common/kde-common.css
-share/doc/HTML/sk/common/kde-default.css
-share/doc/HTML/sk/common/kde-localised.css.template
-share/doc/HTML/sk/common/kde-web.css
-share/doc/HTML/sk/common/kde_gear_64.png
-share/doc/HTML/sk/common/kde_logo.png
-share/doc/HTML/sk/common/kde_logo_bg.png
-share/doc/HTML/sk/common/kmenu.png
-share/doc/HTML/sk/common/lgpl-license
-share/doc/HTML/sk/common/lgpl-license.html
-share/doc/HTML/sk/common/mainfooter.html
-share/doc/HTML/sk/common/mainheader.html
-share/doc/HTML/sk/common/qpl-license.html
-share/doc/HTML/sk/common/shadow.png
-share/doc/HTML/sk/common/top-left.png
-share/doc/HTML/sk/common/top-middle.png
-share/doc/HTML/sk/common/top-right-konqueror.png
-share/doc/HTML/sk/common/web-docbottom.png
-share/doc/HTML/sk/common/web-doctop.png
-share/doc/HTML/sk/common/x11-license.html
-share/doc/HTML/sk/common/xml.dcl
 share/doc/HTML/sk/kaboodle/common
 share/doc/HTML/sk/kaboodle/index.cache.bz2
 share/doc/HTML/sk/kaboodle/index.docbook
@@ -807,6 +751,7 @@ share/doc/HTML/sk/kworldclock/index.docbook
 share/doc/HTML/sk/lskat/common
 share/doc/HTML/sk/lskat/index.cache.bz2
 share/doc/HTML/sk/lskat/index.docbook
+share/doc/HTML/sk/sk/docs/common/gpl-translated.html
 share/doc/HTML/sk/umbrello/asf.xmi
 share/doc/HTML/sk/umbrello/authors.docbook
 share/doc/HTML/sk/umbrello/code_import_and_generation.docbook
@@ -1325,6 +1270,9 @@ share/locale/sk/entry.desktop
 share/locale/sk/flag.png
 @dirrm share/doc/HTML/sk/umbrello/pics
 @dirrm share/doc/HTML/sk/umbrello
+@dirrm share/doc/HTML/sk/sk/docs/common
+@dirrm share/doc/HTML/sk/sk/docs
+@dirrm share/doc/HTML/sk/sk
 @dirrm share/doc/HTML/sk/lskat
 @dirrm share/doc/HTML/sk/kworldclock
 @dirrm share/doc/HTML/sk/kwin4
@@ -1473,7 +1421,6 @@ share/locale/sk/flag.png
 @dirrm share/doc/HTML/sk/kamera
 @dirrm share/doc/HTML/sk/kaddressbook
 @dirrm share/doc/HTML/sk/kaboodle
-@dirrm share/doc/HTML/sk/common
 @dirrm share/doc/HTML/sk/atlantik
 @dirrm share/doc/HTML/sk/amor
 @dirrm share/apps/ktuberling/sounds/sk

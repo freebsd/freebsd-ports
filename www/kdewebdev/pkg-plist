@@ -76,6 +76,7 @@ share/apps/kimagemapeditor/kimagemapeditorui.rc
 share/apps/kimagemapeditor/polygoncursor.png
 share/apps/kimagemapeditor/removepointcursor.png
 share/apps/klinkstatus/klinkstatus_shell.rc
+share/apps/klinkstatus/styles/results_stylesheet.xsl
 share/apps/klinkstatuspart/klinkstatus_part.rc
 share/apps/klinkstatuspart/pics/304.png
 share/apps/kmdr-editor/pics/kommandersplash.png
@@ -1726,6 +1727,7 @@ share/servicetypes/quantadebugger.desktop
 @dirrm share/apps/kmdr-editor
 @dirrm share/apps/klinkstatuspart/pics
 @dirrm share/apps/klinkstatuspart
+@dirrm share/apps/klinkstatus/styles
 @dirrm share/apps/klinkstatus
 @dirrm share/apps/kimagemapeditor
 @dirrm share/apps/kfilereplacepart/icons/crystalsvg/22x22/actions

@@ -99,66 +99,6 @@ share/doc/HTML/nl/artsbuilder/gui.docbook
 share/doc/HTML/nl/atlantik/common
 share/doc/HTML/nl/atlantik/index.cache.bz2
 share/doc/HTML/nl/atlantik/index.docbook
-share/doc/HTML/nl/common/1.png
-share/doc/HTML/nl/common/10.png
-share/doc/HTML/nl/common/2.png
-share/doc/HTML/nl/common/3.png
-share/doc/HTML/nl/common/4.png
-share/doc/HTML/nl/common/5.png
-share/doc/HTML/nl/common/6.png
-share/doc/HTML/nl/common/7.png
-share/doc/HTML/nl/common/8.png
-share/doc/HTML/nl/common/9.png
-share/doc/HTML/nl/common/appheader.html
-share/doc/HTML/nl/common/artistic-license.html
-share/doc/HTML/nl/common/bottom-left.png
-share/doc/HTML/nl/common/bottom-middle.png
-share/doc/HTML/nl/common/bottom-right.png
-share/doc/HTML/nl/common/bottom1.png
-share/doc/HTML/nl/common/bottom2.png
-share/doc/HTML/nl/common/bsd-license.html
-share/doc/HTML/nl/common/docheadergears.png
-share/doc/HTML/nl/common/doctop1.png
-share/doc/HTML/nl/common/doctop1a.png
-share/doc/HTML/nl/common/doctop1b.png
-share/doc/HTML/nl/common/doctop2.png
-share/doc/HTML/nl/common/doxygen.css
-share/doc/HTML/nl/common/favicon.ico
-share/doc/HTML/nl/common/fdl-license
-share/doc/HTML/nl/common/fdl-license.html
-share/doc/HTML/nl/common/fdl-notice.html
-share/doc/HTML/nl/common/fdl-translated.html
-share/doc/HTML/nl/common/footer.html
-share/doc/HTML/nl/common/gpl-license
-share/doc/HTML/nl/common/gpl-license.html
-share/doc/HTML/nl/common/gpl-translated.html
-share/doc/HTML/nl/common/grad.png
-share/doc/HTML/nl/common/header.html
-share/doc/HTML/nl/common/headerbg.png
-share/doc/HTML/nl/common/kde-common.css
-share/doc/HTML/nl/common/kde-default.css
-share/doc/HTML/nl/common/kde-localised.css
-share/doc/HTML/nl/common/kde-localised.css.template
-share/doc/HTML/nl/common/kde-web.css
-share/doc/HTML/nl/common/kde_gear_64.png
-share/doc/HTML/nl/common/kde_logo.png
-share/doc/HTML/nl/common/kde_logo_bg.png
-share/doc/HTML/nl/common/kmenu.png
-share/doc/HTML/nl/common/lgpl-license
-share/doc/HTML/nl/common/lgpl-license.html
-share/doc/HTML/nl/common/lgpl-translated.html
-share/doc/HTML/nl/common/logotp3.png
-share/doc/HTML/nl/common/mainfooter.html
-share/doc/HTML/nl/common/mainheader.html
-share/doc/HTML/nl/common/qpl-license.html
-share/doc/HTML/nl/common/shadow.png
-share/doc/HTML/nl/common/top-left.png
-share/doc/HTML/nl/common/top-middle.png
-share/doc/HTML/nl/common/top-right-konqueror.png
-share/doc/HTML/nl/common/web-docbottom.png
-share/doc/HTML/nl/common/web-doctop.png
-share/doc/HTML/nl/common/x11-license.html
-share/doc/HTML/nl/common/xml.dcl
 share/doc/HTML/nl/juk/common
 share/doc/HTML/nl/juk/index.cache.bz2
 share/doc/HTML/nl/juk/index.docbook
@@ -208,6 +148,7 @@ share/doc/HTML/nl/kate/fundamentals.docbook
 share/doc/HTML/nl/kate/highlighting.docbook
 share/doc/HTML/nl/kate/index.cache.bz2
 share/doc/HTML/nl/kate/index.docbook
+share/doc/HTML/nl/kate/kate.png
 share/doc/HTML/nl/kate/mdi.docbook
 share/doc/HTML/nl/kate/menus.docbook
 share/doc/HTML/nl/kate/part.docbook
@@ -1284,6 +1225,11 @@ share/doc/HTML/nl/multisynk/common
 share/doc/HTML/nl/multisynk/index.cache.bz2
 share/doc/HTML/nl/multisynk/index.docbook
 share/doc/HTML/nl/multisynk/konnectors-chapter.docbook
+share/doc/HTML/nl/nl/docs/common/fdl-translated.html
+share/doc/HTML/nl/nl/docs/common/gpl-translated.html
+share/doc/HTML/nl/nl/docs/common/kde-localised.css
+share/doc/HTML/nl/nl/docs/common/lgpl-translated.html
+share/doc/HTML/nl/nl/docs/common/logotp3.png
 share/doc/HTML/nl/noatun/common
 share/doc/HTML/nl/noatun/index.cache.bz2
 share/doc/HTML/nl/noatun/index.docbook
@@ -1896,6 +1842,9 @@ share/locale/nl/flag.png
 @dirrm share/doc/HTML/nl/scripts
 @dirrm share/doc/HTML/nl/quanta
 @dirrm share/doc/HTML/nl/noatun
+@dirrm share/doc/HTML/nl/nl/docs/common
+@dirrm share/doc/HTML/nl/nl/docs
+@dirrm share/doc/HTML/nl/nl
 @dirrm share/doc/HTML/nl/multisynk
 @dirrm share/doc/HTML/nl/lskat
 @dirrm share/doc/HTML/nl/kxsldbg
@@ -2116,7 +2065,6 @@ share/locale/nl/flag.png
 @dirrm share/doc/HTML/nl/kaddressbook
 @dirrm share/doc/HTML/nl/kaboodle
 @dirrm share/doc/HTML/nl/juk
-@dirrm share/doc/HTML/nl/common
 @dirrm share/doc/HTML/nl/atlantik
 @dirrm share/doc/HTML/nl/artsbuilder
 @dirrm share/doc/HTML/nl/ark

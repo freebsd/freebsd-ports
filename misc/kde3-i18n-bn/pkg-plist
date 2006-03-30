@@ -1,6 +1,7 @@
 share/locale/bn/LC_MESSAGES/appletproxy.mo
 share/locale/bn/LC_MESSAGES/atlantik.mo
 share/locale/bn/LC_MESSAGES/clockapplet.mo
+share/locale/bn/LC_MESSAGES/dcoprss.mo
 share/locale/bn/LC_MESSAGES/display.mo
 share/locale/bn/LC_MESSAGES/dockbarextension.mo
 share/locale/bn/LC_MESSAGES/drkonqi.mo
@@ -66,6 +67,9 @@ share/locale/bn/LC_MESSAGES/kdeprint_part.mo
 share/locale/bn/LC_MESSAGES/kdeprintfax.mo
 share/locale/bn/LC_MESSAGES/kdesktop.mo
 share/locale/bn/LC_MESSAGES/kdesud.mo
+share/locale/bn/LC_MESSAGES/kdialog.mo
+share/locale/bn/LC_MESSAGES/kdict.mo
+share/locale/bn/LC_MESSAGES/kdictapplet.mo
 share/locale/bn/LC_MESSAGES/kdmconfig.mo
 share/locale/bn/LC_MESSAGES/kdmgreet.mo
 share/locale/bn/LC_MESSAGES/keduca.mo
@@ -76,6 +80,7 @@ share/locale/bn/LC_MESSAGES/kfile_kig.mo
 share/locale/bn/LC_MESSAGES/kfile_m3u.mo
 share/locale/bn/LC_MESSAGES/kfile_mp3.mo
 share/locale/bn/LC_MESSAGES/kfile_ogg.mo
+share/locale/bn/LC_MESSAGES/kfile_torrent.mo
 share/locale/bn/LC_MESSAGES/kfile_wav.mo
 share/locale/bn/LC_MESSAGES/kfileaudiopreview.mo
 share/locale/bn/LC_MESSAGES/kfindpart.mo
@@ -88,6 +93,7 @@ share/locale/bn/LC_MESSAGES/khangman.mo
 share/locale/bn/LC_MESSAGES/khelpcenter.mo
 share/locale/bn/LC_MESSAGES/kicker.mo
 share/locale/bn/LC_MESSAGES/kig.mo
+share/locale/bn/LC_MESSAGES/kinetd.mo
 share/locale/bn/LC_MESSAGES/kio.mo
 share/locale/bn/LC_MESSAGES/kio_audiocd.mo
 share/locale/bn/LC_MESSAGES/kio_finger.mo
@@ -95,6 +101,7 @@ share/locale/bn/LC_MESSAGES/kio_fish.mo
 share/locale/bn/LC_MESSAGES/kio_floppy.mo
 share/locale/bn/LC_MESSAGES/kio_help.mo
 share/locale/bn/LC_MESSAGES/kio_imap4.mo
+share/locale/bn/LC_MESSAGES/kio_jabberdisco.mo
 share/locale/bn/LC_MESSAGES/kio_lan.mo
 share/locale/bn/LC_MESSAGES/kio_ldap.mo
 share/locale/bn/LC_MESSAGES/kio_mac.mo
@@ -103,6 +110,7 @@ share/locale/bn/LC_MESSAGES/kio_media.mo
 share/locale/bn/LC_MESSAGES/kio_nfs.mo
 share/locale/bn/LC_MESSAGES/kio_pop3.mo
 share/locale/bn/LC_MESSAGES/kio_print.mo
+share/locale/bn/LC_MESSAGES/kio_zeroconf.mo
 share/locale/bn/LC_MESSAGES/kioexec.mo
 share/locale/bn/LC_MESSAGES/klettres.mo
 share/locale/bn/LC_MESSAGES/klipper.mo
@@ -111,7 +119,6 @@ share/locale/bn/LC_MESSAGES/kmail.mo
 share/locale/bn/LC_MESSAGES/kmcop.mo
 share/locale/bn/LC_MESSAGES/kmenuapplet.mo
 share/locale/bn/LC_MESSAGES/kmenuedit.mo
-share/locale/bn/LC_MESSAGES/kmessedwords.mo
 share/locale/bn/LC_MESSAGES/kmines.mo
 share/locale/bn/LC_MESSAGES/kminipagerapplet.mo
 share/locale/bn/LC_MESSAGES/kmplot.mo
@@ -120,10 +127,12 @@ share/locale/bn/LC_MESSAGES/knotify.mo
 share/locale/bn/LC_MESSAGES/konqueror.mo
 share/locale/bn/LC_MESSAGES/konsole.mo
 share/locale/bn/LC_MESSAGES/kpersonalizer.mo
+share/locale/bn/LC_MESSAGES/kppp.mo
 share/locale/bn/LC_MESSAGES/kppplogview.mo
 share/locale/bn/LC_MESSAGES/kreadconfig.mo
 share/locale/bn/LC_MESSAGES/kreversi.mo
 share/locale/bn/LC_MESSAGES/krunapplet.mo
+share/locale/bn/LC_MESSAGES/kscd.mo
 share/locale/bn/LC_MESSAGES/kscreensaver.mo
 share/locale/bn/LC_MESSAGES/kshisen.mo
 share/locale/bn/LC_MESSAGES/ksmserver.mo
@@ -145,6 +154,7 @@ share/locale/bn/LC_MESSAGES/ktip.mo
 share/locale/bn/LC_MESSAGES/ktouch.mo
 share/locale/bn/LC_MESSAGES/ktron.mo
 share/locale/bn/LC_MESSAGES/kturtle.mo
+share/locale/bn/LC_MESSAGES/kuickshow.mo
 share/locale/bn/LC_MESSAGES/kverbos.mo
 share/locale/bn/LC_MESSAGES/kvoctrain.mo
 share/locale/bn/LC_MESSAGES/kwifimanager.mo

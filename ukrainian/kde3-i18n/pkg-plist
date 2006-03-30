@@ -1,60 +1,3 @@
-share/doc/HTML/uk/common/1.png
-share/doc/HTML/uk/common/10.png
-share/doc/HTML/uk/common/2.png
-share/doc/HTML/uk/common/3.png
-share/doc/HTML/uk/common/4.png
-share/doc/HTML/uk/common/5.png
-share/doc/HTML/uk/common/6.png
-share/doc/HTML/uk/common/7.png
-share/doc/HTML/uk/common/8.png
-share/doc/HTML/uk/common/9.png
-share/doc/HTML/uk/common/appheader.html
-share/doc/HTML/uk/common/artistic-license.html
-share/doc/HTML/uk/common/bottom-left.png
-share/doc/HTML/uk/common/bottom-middle.png
-share/doc/HTML/uk/common/bottom-right.png
-share/doc/HTML/uk/common/bottom1.png
-share/doc/HTML/uk/common/bottom2.png
-share/doc/HTML/uk/common/bsd-license.html
-share/doc/HTML/uk/common/docheadergears.png
-share/doc/HTML/uk/common/doctop1.png
-share/doc/HTML/uk/common/doctop1a.png
-share/doc/HTML/uk/common/doctop1b.png
-share/doc/HTML/uk/common/doctop2.png
-share/doc/HTML/uk/common/doxygen.css
-share/doc/HTML/uk/common/favicon.ico
-share/doc/HTML/uk/common/fdl-license
-share/doc/HTML/uk/common/fdl-license.html
-share/doc/HTML/uk/common/fdl-notice.html
-share/doc/HTML/uk/common/footer.html
-share/doc/HTML/uk/common/gpl-license
-share/doc/HTML/uk/common/gpl-license.html
-share/doc/HTML/uk/common/grad.png
-share/doc/HTML/uk/common/header.html
-share/doc/HTML/uk/common/headerbg.png
-share/doc/HTML/uk/common/kde-common.css
-share/doc/HTML/uk/common/kde-default.css
-share/doc/HTML/uk/common/kde-localised.css
-share/doc/HTML/uk/common/kde-localised.css.template
-share/doc/HTML/uk/common/kde-web.css
-share/doc/HTML/uk/common/kde_gear_64.png
-share/doc/HTML/uk/common/kde_logo.png
-share/doc/HTML/uk/common/kde_logo_bg.png
-share/doc/HTML/uk/common/kmenu.png
-share/doc/HTML/uk/common/lgpl-license
-share/doc/HTML/uk/common/lgpl-license.html
-share/doc/HTML/uk/common/logotp3.png
-share/doc/HTML/uk/common/mainfooter.html
-share/doc/HTML/uk/common/mainheader.html
-share/doc/HTML/uk/common/qpl-license.html
-share/doc/HTML/uk/common/shadow.png
-share/doc/HTML/uk/common/top-left.png
-share/doc/HTML/uk/common/top-middle.png
-share/doc/HTML/uk/common/top-right-konqueror.png
-share/doc/HTML/uk/common/web-docbottom.png
-share/doc/HTML/uk/common/web-doctop.png
-share/doc/HTML/uk/common/x11-license.html
-share/doc/HTML/uk/common/xml.dcl
 share/doc/HTML/uk/kbabel/catman.docbook
 share/doc/HTML/uk/kbabel/faq.docbook
 share/doc/HTML/uk/kbabel/glossary.docbook
@@ -75,6 +18,8 @@ share/doc/HTML/uk/knotes/index.docbook
 share/doc/HTML/uk/kspell/common
 share/doc/HTML/uk/kspell/index.cache.bz2
 share/doc/HTML/uk/kspell/index.docbook
+share/doc/HTML/uk/uk/docs/common/kde-localised.css
+share/doc/HTML/uk/uk/docs/common/logotp3.png
 share/locale/uk/LC_MESSAGES/akregator.mo
 share/locale/uk/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/uk/LC_MESSAGES/alsaplayerui.mo
@@ -629,6 +574,9 @@ share/locale/uk/LC_MESSAGES/webarchiver.mo
 share/locale/uk/charset
 share/locale/uk/entry.desktop
 share/locale/uk/flag.png
+@dirrm share/doc/HTML/uk/uk/docs/common
+@dirrm share/doc/HTML/uk/uk/docs
+@dirrm share/doc/HTML/uk/uk
 @dirrm share/doc/HTML/uk/kspell
 @dirrm share/doc/HTML/uk/knotes
 @dirrm share/doc/HTML/uk/kioslave
@@ -637,4 +585,3 @@ share/locale/uk/flag.png
 @dirrm share/doc/HTML/uk/khelpcenter/faq
 @dirrm share/doc/HTML/uk/khelpcenter
 @dirrm share/doc/HTML/uk/kbabel
-@dirrm share/doc/HTML/uk/common

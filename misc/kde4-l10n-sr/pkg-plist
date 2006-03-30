@@ -23,68 +23,13 @@ share/apps/kturtle/examples/sr/curly.logo
 share/apps/kturtle/examples/sr/example1.logo
 share/apps/kturtle/examples/sr/square.logo
 share/apps/kturtle/examples/sr/triangle.logo
-share/doc/HTML/sr/common/1.png
-share/doc/HTML/sr/common/10.png
-share/doc/HTML/sr/common/2.png
-share/doc/HTML/sr/common/3.png
-share/doc/HTML/sr/common/4.png
-share/doc/HTML/sr/common/5.png
-share/doc/HTML/sr/common/6.png
-share/doc/HTML/sr/common/7.png
-share/doc/HTML/sr/common/8.png
-share/doc/HTML/sr/common/9.png
-share/doc/HTML/sr/common/appheader.html
-share/doc/HTML/sr/common/artistic-license.html
-share/doc/HTML/sr/common/bottom-left.png
-share/doc/HTML/sr/common/bottom-middle.png
-share/doc/HTML/sr/common/bottom-right.png
-share/doc/HTML/sr/common/bottom1.png
-share/doc/HTML/sr/common/bottom2.png
-share/doc/HTML/sr/common/bsd-license.html
-share/doc/HTML/sr/common/docheadergears.png
-share/doc/HTML/sr/common/doctop1.png
-share/doc/HTML/sr/common/doctop1a.png
-share/doc/HTML/sr/common/doctop1b.png
-share/doc/HTML/sr/common/doctop2.png
-share/doc/HTML/sr/common/doxygen.css
-share/doc/HTML/sr/common/favicon.ico
-share/doc/HTML/sr/common/fdl-license
-share/doc/HTML/sr/common/fdl-license.html
-share/doc/HTML/sr/common/fdl-notice.html
-share/doc/HTML/sr/common/fdl-translated.html
-share/doc/HTML/sr/common/footer.html
-share/doc/HTML/sr/common/gpl-license
-share/doc/HTML/sr/common/gpl-license.html
-share/doc/HTML/sr/common/gpl-translated.html
-share/doc/HTML/sr/common/grad.png
-share/doc/HTML/sr/common/header.html
-share/doc/HTML/sr/common/headerbg.png
-share/doc/HTML/sr/common/kde-common.css
-share/doc/HTML/sr/common/kde-default.css
-share/doc/HTML/sr/common/kde-localised.css
-share/doc/HTML/sr/common/kde-localised.css.template
-share/doc/HTML/sr/common/kde-web.css
-share/doc/HTML/sr/common/kde_gear_64.png
-share/doc/HTML/sr/common/kde_logo.png
-share/doc/HTML/sr/common/kde_logo_bg.png
-share/doc/HTML/sr/common/kmenu.png
-share/doc/HTML/sr/common/lgpl-license
-share/doc/HTML/sr/common/lgpl-license.html
-share/doc/HTML/sr/common/lgpl-translated.html
-share/doc/HTML/sr/common/logotp3.png
-share/doc/HTML/sr/common/mainfooter.html
-share/doc/HTML/sr/common/mainheader.html
-share/doc/HTML/sr/common/qpl-license.html
-share/doc/HTML/sr/common/shadow.png
-share/doc/HTML/sr/common/top-left.png
-share/doc/HTML/sr/common/top-middle.png
-share/doc/HTML/sr/common/top-right-konqueror.png
-share/doc/HTML/sr/common/web-docbottom.png
-share/doc/HTML/sr/common/web-doctop.png
-share/doc/HTML/sr/common/x11-license.html
-share/doc/HTML/sr/common/xml.dcl
 share/doc/HTML/sr/khelpcenter/welcome.docbook
 share/doc/HTML/sr/khelpcenter/whatiskde.docbook
+share/doc/HTML/sr/sr/docs/common/fdl-translated.html
+share/doc/HTML/sr/sr/docs/common/gpl-translated.html
+share/doc/HTML/sr/sr/docs/common/kde-localised.css
+share/doc/HTML/sr/sr/docs/common/lgpl-translated.html
+share/doc/HTML/sr/sr/docs/common/logotp3.png
 share/locale/sr/LC_MESSAGES/akregator.mo
 share/locale/sr/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/sr/LC_MESSAGES/alsaplayerui.mo
@@ -649,8 +594,10 @@ share/locale/sr/LC_MESSAGES/webarchiver.mo
 share/locale/sr/charset
 share/locale/sr/entry.desktop
 share/locale/sr/flag.png
+@dirrm share/doc/HTML/sr/sr/docs/common
+@dirrm share/doc/HTML/sr/sr/docs
+@dirrm share/doc/HTML/sr/sr
 @dirrm share/doc/HTML/sr/khelpcenter
-@dirrm share/doc/HTML/sr/common
 @dirrm share/apps/kturtle/examples/sr
 @dirrm share/apps/kturtle/examples
 @dirrm share/apps/kturtle/data

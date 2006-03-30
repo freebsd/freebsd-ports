@@ -28,66 +28,6 @@ share/apps/kturtle/examples/sl/curly.logo
 share/apps/kturtle/examples/sl/example1.logo
 share/apps/kturtle/examples/sl/square.logo
 share/apps/kturtle/examples/sl/triangle.logo
-share/doc/HTML/sl/common/1.png
-share/doc/HTML/sl/common/10.png
-share/doc/HTML/sl/common/2.png
-share/doc/HTML/sl/common/3.png
-share/doc/HTML/sl/common/4.png
-share/doc/HTML/sl/common/5.png
-share/doc/HTML/sl/common/6.png
-share/doc/HTML/sl/common/7.png
-share/doc/HTML/sl/common/8.png
-share/doc/HTML/sl/common/9.png
-share/doc/HTML/sl/common/appheader.html
-share/doc/HTML/sl/common/artistic-license.html
-share/doc/HTML/sl/common/bottom-left.png
-share/doc/HTML/sl/common/bottom-middle.png
-share/doc/HTML/sl/common/bottom-right.png
-share/doc/HTML/sl/common/bottom1.png
-share/doc/HTML/sl/common/bottom2.png
-share/doc/HTML/sl/common/bsd-license.html
-share/doc/HTML/sl/common/docheadergears.png
-share/doc/HTML/sl/common/doctop1.png
-share/doc/HTML/sl/common/doctop1a.png
-share/doc/HTML/sl/common/doctop1b.png
-share/doc/HTML/sl/common/doctop2.png
-share/doc/HTML/sl/common/doxygen.css
-share/doc/HTML/sl/common/favicon.ico
-share/doc/HTML/sl/common/fdl-license
-share/doc/HTML/sl/common/fdl-license.html
-share/doc/HTML/sl/common/fdl-notice.html
-share/doc/HTML/sl/common/fdl-translated.html
-share/doc/HTML/sl/common/footer.html
-share/doc/HTML/sl/common/gpl-license
-share/doc/HTML/sl/common/gpl-license.html
-share/doc/HTML/sl/common/gpl-translated.html
-share/doc/HTML/sl/common/grad.png
-share/doc/HTML/sl/common/header.html
-share/doc/HTML/sl/common/headerbg.png
-share/doc/HTML/sl/common/kde-common.css
-share/doc/HTML/sl/common/kde-default.css
-share/doc/HTML/sl/common/kde-localised.css
-share/doc/HTML/sl/common/kde-localised.css.template
-share/doc/HTML/sl/common/kde-web.css
-share/doc/HTML/sl/common/kde_gear_64.png
-share/doc/HTML/sl/common/kde_logo.png
-share/doc/HTML/sl/common/kde_logo_bg.png
-share/doc/HTML/sl/common/kmenu.png
-share/doc/HTML/sl/common/lgpl-license
-share/doc/HTML/sl/common/lgpl-license.html
-share/doc/HTML/sl/common/lgpl-translated.html
-share/doc/HTML/sl/common/logotp3.png
-share/doc/HTML/sl/common/mainfooter.html
-share/doc/HTML/sl/common/mainheader.html
-share/doc/HTML/sl/common/qpl-license.html
-share/doc/HTML/sl/common/shadow.png
-share/doc/HTML/sl/common/top-left.png
-share/doc/HTML/sl/common/top-middle.png
-share/doc/HTML/sl/common/top-right-konqueror.png
-share/doc/HTML/sl/common/web-docbottom.png
-share/doc/HTML/sl/common/web-doctop.png
-share/doc/HTML/sl/common/x11-license.html
-share/doc/HTML/sl/common/xml.dcl
 share/doc/HTML/sl/kaddressbook/common
 share/doc/HTML/sl/kaddressbook/index.cache.bz2
 share/doc/HTML/sl/kaddressbook/index.docbook
@@ -351,6 +291,11 @@ share/doc/HTML/sl/kppp/kppp-faq.docbook
 share/doc/HTML/sl/kppp/security.docbook
 share/doc/HTML/sl/kppp/tricks.docbook
 share/doc/HTML/sl/kppp/wizard.docbook
+share/doc/HTML/sl/sl/docs/common/fdl-translated.html
+share/doc/HTML/sl/sl/docs/common/gpl-translated.html
+share/doc/HTML/sl/sl/docs/common/kde-localised.css
+share/doc/HTML/sl/sl/docs/common/lgpl-translated.html
+share/doc/HTML/sl/sl/docs/common/logotp3.png
 share/locale/sl/LC_MESSAGES/akregator.mo
 share/locale/sl/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/sl/LC_MESSAGES/alsaplayerui.mo
@@ -908,6 +853,9 @@ share/locale/sl/LC_MESSAGES/webarchiver.mo
 share/locale/sl/charset
 share/locale/sl/entry.desktop
 share/locale/sl/flag.png
+@dirrm share/doc/HTML/sl/sl/docs/common
+@dirrm share/doc/HTML/sl/sl/docs
+@dirrm share/doc/HTML/sl/sl
 @dirrm share/doc/HTML/sl/kppp
 @dirrm share/doc/HTML/sl/kpackage
 @dirrm share/doc/HTML/sl/konsole
@@ -958,7 +906,6 @@ share/locale/sl/flag.png
 @dirrm share/doc/HTML/sl/kcontrol/arts
 @dirrm share/doc/HTML/sl/kcontrol
 @dirrm share/doc/HTML/sl/kaddressbook
-@dirrm share/doc/HTML/sl/common
 @dirrm share/apps/kturtle/examples/sl
 @dirrm share/apps/kturtle/examples
 @dirrm share/apps/kturtle/data

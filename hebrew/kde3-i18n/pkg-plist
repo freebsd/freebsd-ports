@@ -1,63 +1,8 @@
-share/doc/HTML/he/common/1.png
-share/doc/HTML/he/common/10.png
-share/doc/HTML/he/common/2.png
-share/doc/HTML/he/common/3.png
-share/doc/HTML/he/common/4.png
-share/doc/HTML/he/common/5.png
-share/doc/HTML/he/common/6.png
-share/doc/HTML/he/common/7.png
-share/doc/HTML/he/common/8.png
-share/doc/HTML/he/common/9.png
-share/doc/HTML/he/common/appheader.html
-share/doc/HTML/he/common/artistic-license.html
-share/doc/HTML/he/common/bottom-left.png
-share/doc/HTML/he/common/bottom-middle.png
-share/doc/HTML/he/common/bottom-right.png
-share/doc/HTML/he/common/bottom1.png
-share/doc/HTML/he/common/bottom2.png
-share/doc/HTML/he/common/bsd-license.html
-share/doc/HTML/he/common/docheadergears.png
-share/doc/HTML/he/common/doctop1.png
-share/doc/HTML/he/common/doctop1a.png
-share/doc/HTML/he/common/doctop1b.png
-share/doc/HTML/he/common/doctop2.png
-share/doc/HTML/he/common/doxygen.css
-share/doc/HTML/he/common/favicon.ico
-share/doc/HTML/he/common/fdl-license
-share/doc/HTML/he/common/fdl-license.html
-share/doc/HTML/he/common/fdl-notice.html
-share/doc/HTML/he/common/fdl-translated.html
-share/doc/HTML/he/common/footer.html
-share/doc/HTML/he/common/gpl-license
-share/doc/HTML/he/common/gpl-license.html
-share/doc/HTML/he/common/gpl-translated.html
-share/doc/HTML/he/common/grad.png
-share/doc/HTML/he/common/header.html
-share/doc/HTML/he/common/headerbg.png
-share/doc/HTML/he/common/kde-common.css
-share/doc/HTML/he/common/kde-default.css
-share/doc/HTML/he/common/kde-localised.css
-share/doc/HTML/he/common/kde-localised.css.template
-share/doc/HTML/he/common/kde-web.css
-share/doc/HTML/he/common/kde_gear_64.png
-share/doc/HTML/he/common/kde_logo.png
-share/doc/HTML/he/common/kde_logo_bg.png
-share/doc/HTML/he/common/kmenu.png
-share/doc/HTML/he/common/lgpl-license
-share/doc/HTML/he/common/lgpl-license.html
-share/doc/HTML/he/common/lgpl-translated.html
-share/doc/HTML/he/common/logotp3.png
-share/doc/HTML/he/common/mainfooter.html
-share/doc/HTML/he/common/mainheader.html
-share/doc/HTML/he/common/qpl-license.html
-share/doc/HTML/he/common/shadow.png
-share/doc/HTML/he/common/top-left.png
-share/doc/HTML/he/common/top-middle.png
-share/doc/HTML/he/common/top-right-konqueror.png
-share/doc/HTML/he/common/web-docbottom.png
-share/doc/HTML/he/common/web-doctop.png
-share/doc/HTML/he/common/x11-license.html
-share/doc/HTML/he/common/xml.dcl
+share/doc/HTML/he/he/docs/common/fdl-translated.html
+share/doc/HTML/he/he/docs/common/gpl-translated.html
+share/doc/HTML/he/he/docs/common/kde-localised.css
+share/doc/HTML/he/he/docs/common/lgpl-translated.html
+share/doc/HTML/he/he/docs/common/logotp3.png
 share/doc/HTML/he/khelpcenter/khelpcenter.png
 share/doc/HTML/he/khelpcenter/konq.css
 share/doc/HTML/he/khelpcenter/main.html
@@ -550,4 +495,6 @@ share/locale/he/charset
 share/locale/he/entry.desktop
 share/locale/he/flag.png
 @dirrm share/doc/HTML/he/khelpcenter
-@dirrm share/doc/HTML/he/common
+@dirrm share/doc/HTML/he/he/docs/common
+@dirrm share/doc/HTML/he/he/docs
+@dirrm share/doc/HTML/he/he

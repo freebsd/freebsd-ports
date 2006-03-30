@@ -128,6 +128,8 @@ share/locale/nds/LC_MESSAGES/kdelibs.mo
 share/locale/nds/LC_MESSAGES/kdelibs_colors.mo
 share/locale/nds/LC_MESSAGES/kdelirc.mo
 share/locale/nds/LC_MESSAGES/kdepasswd.mo
+share/locale/nds/LC_MESSAGES/kdepimresources.mo
+share/locale/nds/LC_MESSAGES/kdepimwizards.mo
 share/locale/nds/LC_MESSAGES/kdeprint.mo
 share/locale/nds/LC_MESSAGES/kdeprint_part.mo
 share/locale/nds/LC_MESSAGES/kdeprintfax.mo
@@ -147,6 +149,8 @@ share/locale/nds/LC_MESSAGES/kfile_deb.mo
 share/locale/nds/LC_MESSAGES/kfile_desktop.mo
 share/locale/nds/LC_MESSAGES/kfile_folder.mo
 share/locale/nds/LC_MESSAGES/kfile_html.mo
+share/locale/nds/LC_MESSAGES/kfile_ics.mo
+share/locale/nds/LC_MESSAGES/kfile_palm.mo
 share/locale/nds/LC_MESSAGES/kfile_rfc822.mo
 share/locale/nds/LC_MESSAGES/kfile_rpm.mo
 share/locale/nds/LC_MESSAGES/kfile_txt.mo
@@ -172,6 +176,7 @@ share/locale/nds/LC_MESSAGES/kio.mo
 share/locale/nds/LC_MESSAGES/kio_finger.mo
 share/locale/nds/LC_MESSAGES/kio_fish.mo
 share/locale/nds/LC_MESSAGES/kio_floppy.mo
+share/locale/nds/LC_MESSAGES/kio_groupwise.mo
 share/locale/nds/LC_MESSAGES/kio_help.mo
 share/locale/nds/LC_MESSAGES/kio_home.mo
 share/locale/nds/LC_MESSAGES/kio_imap4.mo

@@ -968,6 +968,28 @@ share/doc/HTML/en/juk/toolbar.png
 share/doc/HTML/en/kaboodle/common
 share/doc/HTML/en/kaboodle/index.cache.bz2
 share/doc/HTML/en/kaboodle/index.docbook
+share/doc/HTML/en/kaudiocreator/cdconfiguration.png
+share/doc/HTML/en/kaudiocreator/cddbconfigurationlookup.png
+share/doc/HTML/en/kaudiocreator/cddbconfigurationsubmit.png
+share/doc/HTML/en/kaudiocreator/cdinserted.png
+share/doc/HTML/en/kaudiocreator/common
+share/doc/HTML/en/kaudiocreator/confirmartistcarryover.png
+share/doc/HTML/en/kaudiocreator/encoderconfiguration.png
+share/doc/HTML/en/kaudiocreator/encodernotfound.png
+share/doc/HTML/en/kaudiocreator/entersong1.png
+share/doc/HTML/en/kaudiocreator/generalconfiguration.png
+share/doc/HTML/en/kaudiocreator/index.cache.bz2
+share/doc/HTML/en/kaudiocreator/index.docbook
+share/doc/HTML/en/kaudiocreator/jobcontrol.png
+share/doc/HTML/en/kaudiocreator/jobshavestarted.png
+share/doc/HTML/en/kaudiocreator/kaudiocreatormainwindow800.png
+share/doc/HTML/en/kaudiocreator/lameconfiguration.png
+share/doc/HTML/en/kaudiocreator/readytorip.png
+share/doc/HTML/en/kaudiocreator/ripperconfiguration.png
+share/doc/HTML/en/kaudiocreator/rippingandencoding.png
+share/doc/HTML/en/kaudiocreator/rippingandencoding2.png
+share/doc/HTML/en/kaudiocreator/setalbumcategory.png
+share/doc/HTML/en/kaudiocreator/startalbumeditor.png
 share/doc/HTML/en/kioslave/audiocd.docbook
 share/doc/HTML/en/kmid/common
 share/doc/HTML/en/kmid/index.cache.bz2
@@ -1124,6 +1146,7 @@ share/servicetypes/krec_exportitem.desktop
 @dirrm share/doc/HTML/en/kdemultimedia-apidocs/libkcddb/html
 @dirrm share/doc/HTML/en/kdemultimedia-apidocs/libkcddb
 @dirrm share/doc/HTML/en/kdemultimedia-apidocs
+@dirrm share/doc/HTML/en/kaudiocreator
 @dirrm share/doc/HTML/en/kaboodle
 @dirrm share/doc/HTML/en/juk
 @dirrm share/doc/HTML/en/artsbuilder/images

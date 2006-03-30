@@ -1284,6 +1284,7 @@ share/apps/katepart/syntax/purebasic.xml
 share/apps/katepart/syntax/python.xml
 share/apps/katepart/syntax/r.xml
 share/apps/katepart/syntax/rexx.xml
+share/apps/katepart/syntax/rhtml.xml
 share/apps/katepart/syntax/rib.xml
 share/apps/katepart/syntax/rpmspec.xml
 share/apps/katepart/syntax/rsiidl.xml
@@ -1719,6 +1720,7 @@ share/apps/ksgmltools2/customization/et/entities/underArtisticLicense.docbook
 share/apps/ksgmltools2/customization/et/entities/underBSDLicense.docbook
 share/apps/ksgmltools2/customization/et/entities/underFDL.docbook
 share/apps/ksgmltools2/customization/et/entities/underGPL.docbook
+share/apps/ksgmltools2/customization/et/entities/underLGPL.docbook
 share/apps/ksgmltools2/customization/et/entities/underX11License.docbook
 share/apps/ksgmltools2/customization/et/entities/update-doc.docbook
 share/apps/ksgmltools2/customization/et/lang.entities
@@ -3103,6 +3105,7 @@ share/emoticons/Default/unhappy.png
 share/emoticons/Default/unlove.png
 share/emoticons/Default/wilted_rose.png
 share/emoticons/Default/wink.png
+share/icons/crystalsvg/128x128/actions/fileopen.png
 share/icons/crystalsvg/128x128/actions/launch.png
 share/icons/crystalsvg/128x128/actions/share.png
 share/icons/crystalsvg/128x128/apps/kmenu.png
@@ -4628,6 +4631,7 @@ share/icons/crystalsvg/48x48/mimetypes/widget_doc.png
 share/icons/crystalsvg/48x48/mimetypes/wordprocessing.png
 share/icons/crystalsvg/48x48/mimetypes/zip.png
 share/icons/crystalsvg/64x64/actions/favorites.png
+share/icons/crystalsvg/64x64/actions/fileopen.png
 share/icons/crystalsvg/64x64/actions/knewstuff.png
 share/icons/crystalsvg/64x64/actions/player_play.png
 share/icons/crystalsvg/64x64/actions/share.png
@@ -4819,6 +4823,7 @@ share/icons/crystalsvg/scalable/actions/eraser.svgz
 share/icons/crystalsvg/scalable/actions/exit.svgz
 share/icons/crystalsvg/scalable/actions/fileclose.svgz
 share/icons/crystalsvg/scalable/actions/filenew.svgz
+share/icons/crystalsvg/scalable/actions/fileopen.svgz
 share/icons/crystalsvg/scalable/actions/fileprint.svgz
 share/icons/crystalsvg/scalable/actions/filequickprint.svgz
 share/icons/crystalsvg/scalable/actions/finish.svgz
@@ -5282,6 +5287,7 @@ share/mimelnk/image/x-photo-cd.desktop
 share/mimelnk/image/x-portable-bitmap.desktop
 share/mimelnk/image/x-portable-greymap.desktop
 share/mimelnk/image/x-portable-pixmap.desktop
+share/mimelnk/image/x-raw.desktop
 share/mimelnk/image/x-rgb.desktop
 share/mimelnk/image/x-targa.desktop
 share/mimelnk/image/x-vnd.adobe.photoshop.desktop
@@ -5616,7 +5622,6 @@ share/servicetypes/scriptinterface.desktop
 @dirrm share/services/kresources
 @dirrm share/services/kded
 @dirrm share/mimelnk/uri
-@dirrm share/icons/crystalsvg/scalable/mimetypes
 @dirrm share/emoticons/Default
 @dirrm share/emoticons
 @dirrm share/doc/HTML/en/kspell

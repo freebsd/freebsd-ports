@@ -1,62 +1,7 @@
-share/doc/HTML/eu/common/1.png
-share/doc/HTML/eu/common/10.png
-share/doc/HTML/eu/common/2.png
-share/doc/HTML/eu/common/3.png
-share/doc/HTML/eu/common/4.png
-share/doc/HTML/eu/common/5.png
-share/doc/HTML/eu/common/6.png
-share/doc/HTML/eu/common/7.png
-share/doc/HTML/eu/common/8.png
-share/doc/HTML/eu/common/9.png
-share/doc/HTML/eu/common/appheader.html
-share/doc/HTML/eu/common/artistic-license.html
-share/doc/HTML/eu/common/bottom-left.png
-share/doc/HTML/eu/common/bottom-middle.png
-share/doc/HTML/eu/common/bottom-right.png
-share/doc/HTML/eu/common/bottom1.png
-share/doc/HTML/eu/common/bottom2.png
-share/doc/HTML/eu/common/bsd-license.html
-share/doc/HTML/eu/common/docheadergears.png
-share/doc/HTML/eu/common/doctop1.png
-share/doc/HTML/eu/common/doctop1a.png
-share/doc/HTML/eu/common/doctop1b.png
-share/doc/HTML/eu/common/doctop2.png
-share/doc/HTML/eu/common/doxygen.css
-share/doc/HTML/eu/common/favicon.ico
-share/doc/HTML/eu/common/fdl-license
-share/doc/HTML/eu/common/fdl-license.html
-share/doc/HTML/eu/common/fdl-notice.html
-share/doc/HTML/eu/common/fdl-translated.html
-share/doc/HTML/eu/common/footer.html
-share/doc/HTML/eu/common/gpl-license
-share/doc/HTML/eu/common/gpl-license.html
-share/doc/HTML/eu/common/gpl-translated.html
-share/doc/HTML/eu/common/grad.png
-share/doc/HTML/eu/common/header.html
-share/doc/HTML/eu/common/headerbg.png
-share/doc/HTML/eu/common/kde-common.css
-share/doc/HTML/eu/common/kde-default.css
-share/doc/HTML/eu/common/kde-localised.css
-share/doc/HTML/eu/common/kde-localised.css.template
-share/doc/HTML/eu/common/kde-web.css
-share/doc/HTML/eu/common/kde_gear_64.png
-share/doc/HTML/eu/common/kde_logo.png
-share/doc/HTML/eu/common/kde_logo_bg.png
-share/doc/HTML/eu/common/kmenu.png
-share/doc/HTML/eu/common/lgpl-license
-share/doc/HTML/eu/common/lgpl-license.html
-share/doc/HTML/eu/common/logotp3.png
-share/doc/HTML/eu/common/mainfooter.html
-share/doc/HTML/eu/common/mainheader.html
-share/doc/HTML/eu/common/qpl-license.html
-share/doc/HTML/eu/common/shadow.png
-share/doc/HTML/eu/common/top-left.png
-share/doc/HTML/eu/common/top-middle.png
-share/doc/HTML/eu/common/top-right-konqueror.png
-share/doc/HTML/eu/common/web-docbottom.png
-share/doc/HTML/eu/common/web-doctop.png
-share/doc/HTML/eu/common/x11-license.html
-share/doc/HTML/eu/common/xml.dcl
+share/doc/HTML/eu/eu/docs/common/fdl-translated.html
+share/doc/HTML/eu/eu/docs/common/gpl-translated.html
+share/doc/HTML/eu/eu/docs/common/kde-localised.css
+share/doc/HTML/eu/eu/docs/common/logotp3.png
 share/doc/HTML/eu/kbabel/catman.docbook
 share/doc/HTML/eu/kbabel/dictionaries.docbook
 share/doc/HTML/eu/kbabel/faq.docbook
@@ -630,4 +575,6 @@ share/locale/eu/charset
 share/locale/eu/entry.desktop
 share/locale/eu/flag.png
 @dirrm share/doc/HTML/eu/kbabel
-@dirrm share/doc/HTML/eu/common
+@dirrm share/doc/HTML/eu/eu/docs/common
+@dirrm share/doc/HTML/eu/eu/docs
+@dirrm share/doc/HTML/eu/eu

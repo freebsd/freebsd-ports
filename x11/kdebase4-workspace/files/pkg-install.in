@@ -8,11 +8,6 @@ if [ "$2" != "POST-INSTALL" ]; then
 fi
 
 boguscreatenewentry=%%PREFIX%%/share/templates/.keep_me
-kdmrcscript=%%PREFIX%%/etc/rc.d/genkdmconf.sh
-
-if [ -f $kdmrcscript ]; then
-	sh -c "$kdmrcscript"
-fi
 
 if [ -f $boguscreatenewentry ]; then
 	rm -f $boguscreatenewentry

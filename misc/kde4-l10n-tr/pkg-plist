@@ -3,63 +3,6 @@ share/apps/khangman/data/tr/easy.kvtml
 share/apps/khangman/data/tr/hard.kvtml
 share/apps/khangman/data/tr/medium.kvtml
 share/apps/khangman/tr.txt
-share/doc/HTML/tr/common/1.png
-share/doc/HTML/tr/common/10.png
-share/doc/HTML/tr/common/2.png
-share/doc/HTML/tr/common/3.png
-share/doc/HTML/tr/common/4.png
-share/doc/HTML/tr/common/5.png
-share/doc/HTML/tr/common/6.png
-share/doc/HTML/tr/common/7.png
-share/doc/HTML/tr/common/8.png
-share/doc/HTML/tr/common/9.png
-share/doc/HTML/tr/common/appheader.html
-share/doc/HTML/tr/common/artistic-license.html
-share/doc/HTML/tr/common/bottom-left.png
-share/doc/HTML/tr/common/bottom-middle.png
-share/doc/HTML/tr/common/bottom-right.png
-share/doc/HTML/tr/common/bottom1.png
-share/doc/HTML/tr/common/bottom2.png
-share/doc/HTML/tr/common/bsd-license.html
-share/doc/HTML/tr/common/docheadergears.png
-share/doc/HTML/tr/common/doctop1.png
-share/doc/HTML/tr/common/doctop1a.png
-share/doc/HTML/tr/common/doctop1b.png
-share/doc/HTML/tr/common/doctop2.png
-share/doc/HTML/tr/common/doxygen.css
-share/doc/HTML/tr/common/favicon.ico
-share/doc/HTML/tr/common/fdl-license
-share/doc/HTML/tr/common/fdl-license.html
-share/doc/HTML/tr/common/fdl-notice.html
-share/doc/HTML/tr/common/footer.html
-share/doc/HTML/tr/common/gpl-license
-share/doc/HTML/tr/common/gpl-license.html
-share/doc/HTML/tr/common/gpl-translated.html
-share/doc/HTML/tr/common/grad.png
-share/doc/HTML/tr/common/header.html
-share/doc/HTML/tr/common/headerbg.png
-share/doc/HTML/tr/common/kde-common.css
-share/doc/HTML/tr/common/kde-default.css
-share/doc/HTML/tr/common/kde-localised.css
-share/doc/HTML/tr/common/kde-localised.css.template
-share/doc/HTML/tr/common/kde-web.css
-share/doc/HTML/tr/common/kde_gear_64.png
-share/doc/HTML/tr/common/kde_logo.png
-share/doc/HTML/tr/common/kde_logo_bg.png
-share/doc/HTML/tr/common/kmenu.png
-share/doc/HTML/tr/common/lgpl-license
-share/doc/HTML/tr/common/lgpl-license.html
-share/doc/HTML/tr/common/mainfooter.html
-share/doc/HTML/tr/common/mainheader.html
-share/doc/HTML/tr/common/qpl-license.html
-share/doc/HTML/tr/common/shadow.png
-share/doc/HTML/tr/common/top-left.png
-share/doc/HTML/tr/common/top-middle.png
-share/doc/HTML/tr/common/top-right-konqueror.png
-share/doc/HTML/tr/common/web-docbottom.png
-share/doc/HTML/tr/common/web-doctop.png
-share/doc/HTML/tr/common/x11-license.html
-share/doc/HTML/tr/common/xml.dcl
 share/doc/HTML/tr/khelpcenter/common
 share/doc/HTML/tr/khelpcenter/contact.docbook
 share/doc/HTML/tr/khelpcenter/faq/about.docbook
@@ -113,6 +56,8 @@ share/doc/HTML/tr/kioslave/telnet.docbook
 share/doc/HTML/tr/kioslave/thumbnail.docbook
 share/doc/HTML/tr/kioslave/webdav.docbook
 share/doc/HTML/tr/kioslave/webdavs.docbook
+share/doc/HTML/tr/tr/docs/common/gpl-translated.html
+share/doc/HTML/tr/tr/docs/common/kde-localised.css
 share/locale/tr/LC_MESSAGES/akregator.mo
 share/locale/tr/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/tr/LC_MESSAGES/alsaplayerui.mo
@@ -677,12 +622,14 @@ share/locale/tr/LC_MESSAGES/webarchiver.mo
 share/locale/tr/charset
 share/locale/tr/entry.desktop
 share/locale/tr/flag.png
+@dirrm share/doc/HTML/tr/tr/docs/common
+@dirrm share/doc/HTML/tr/tr/docs
+@dirrm share/doc/HTML/tr/tr
 @dirrm share/doc/HTML/tr/kioslave
 @dirrm share/doc/HTML/tr/kinfocenter/protocols
 @dirrm share/doc/HTML/tr/kinfocenter
 @dirrm share/doc/HTML/tr/khelpcenter/faq
 @dirrm share/doc/HTML/tr/khelpcenter
-@dirrm share/doc/HTML/tr/common
 @dirrm share/apps/khangman/data/tr
 @dirrm share/apps/khangman/data
 @dirrm share/apps/khangman

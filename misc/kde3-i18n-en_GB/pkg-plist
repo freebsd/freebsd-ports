@@ -7,66 +7,11 @@ share/apps/kturtle/examples/en_GB/triangle.logo
 share/doc/HTML/en_GB/cervisia/common
 share/doc/HTML/en_GB/cervisia/index.cache.bz2
 share/doc/HTML/en_GB/cervisia/index.docbook
-share/doc/HTML/en_GB/common/1.png
-share/doc/HTML/en_GB/common/10.png
-share/doc/HTML/en_GB/common/2.png
-share/doc/HTML/en_GB/common/3.png
-share/doc/HTML/en_GB/common/4.png
-share/doc/HTML/en_GB/common/5.png
-share/doc/HTML/en_GB/common/6.png
-share/doc/HTML/en_GB/common/7.png
-share/doc/HTML/en_GB/common/8.png
-share/doc/HTML/en_GB/common/9.png
-share/doc/HTML/en_GB/common/appheader.html
-share/doc/HTML/en_GB/common/artistic-license.html
-share/doc/HTML/en_GB/common/bottom-left.png
-share/doc/HTML/en_GB/common/bottom-middle.png
-share/doc/HTML/en_GB/common/bottom-right.png
-share/doc/HTML/en_GB/common/bottom1.png
-share/doc/HTML/en_GB/common/bottom2.png
-share/doc/HTML/en_GB/common/bsd-license.html
-share/doc/HTML/en_GB/common/docheadergears.png
-share/doc/HTML/en_GB/common/doctop1.png
-share/doc/HTML/en_GB/common/doctop1a.png
-share/doc/HTML/en_GB/common/doctop1b.png
-share/doc/HTML/en_GB/common/doctop2.png
-share/doc/HTML/en_GB/common/doxygen.css
-share/doc/HTML/en_GB/common/favicon.ico
-share/doc/HTML/en_GB/common/fdl-license
-share/doc/HTML/en_GB/common/fdl-license.html
-share/doc/HTML/en_GB/common/fdl-notice.html
-share/doc/HTML/en_GB/common/fdl-translated.html
-share/doc/HTML/en_GB/common/footer.html
-share/doc/HTML/en_GB/common/gpl-license
-share/doc/HTML/en_GB/common/gpl-license.html
-share/doc/HTML/en_GB/common/gpl-translated.html
-share/doc/HTML/en_GB/common/grad.png
-share/doc/HTML/en_GB/common/header.html
-share/doc/HTML/en_GB/common/headerbg.png
-share/doc/HTML/en_GB/common/kde-common.css
-share/doc/HTML/en_GB/common/kde-default.css
-share/doc/HTML/en_GB/common/kde-localised.css
-share/doc/HTML/en_GB/common/kde-localised.css.template
-share/doc/HTML/en_GB/common/kde-web.css
-share/doc/HTML/en_GB/common/kde_gear_64.png
-share/doc/HTML/en_GB/common/kde_logo.png
-share/doc/HTML/en_GB/common/kde_logo_bg.png
-share/doc/HTML/en_GB/common/kmenu.png
-share/doc/HTML/en_GB/common/lgpl-license
-share/doc/HTML/en_GB/common/lgpl-license.html
-share/doc/HTML/en_GB/common/lgpl-translated.html
-share/doc/HTML/en_GB/common/logotp3.png
-share/doc/HTML/en_GB/common/mainfooter.html
-share/doc/HTML/en_GB/common/mainheader.html
-share/doc/HTML/en_GB/common/qpl-license.html
-share/doc/HTML/en_GB/common/shadow.png
-share/doc/HTML/en_GB/common/top-left.png
-share/doc/HTML/en_GB/common/top-middle.png
-share/doc/HTML/en_GB/common/top-right-konqueror.png
-share/doc/HTML/en_GB/common/web-docbottom.png
-share/doc/HTML/en_GB/common/web-doctop.png
-share/doc/HTML/en_GB/common/x11-license.html
-share/doc/HTML/en_GB/common/xml.dcl
+share/doc/HTML/en_GB/en_GB/docs/common/fdl-translated.html
+share/doc/HTML/en_GB/en_GB/docs/common/gpl-translated.html
+share/doc/HTML/en_GB/en_GB/docs/common/kde-localised.css
+share/doc/HTML/en_GB/en_GB/docs/common/lgpl-translated.html
+share/doc/HTML/en_GB/en_GB/docs/common/logotp3.png
 share/doc/HTML/en_GB/kaddressbook/common
 share/doc/HTML/en_GB/kaddressbook/index.cache.bz2
 share/doc/HTML/en_GB/kaddressbook/index.docbook
@@ -1305,7 +1250,9 @@ share/locale/en_GB/flag.png
 @dirrm share/doc/HTML/en_GB/kate
 @dirrm share/doc/HTML/en_GB/kalarm
 @dirrm share/doc/HTML/en_GB/kaddressbook
-@dirrm share/doc/HTML/en_GB/common
+@dirrm share/doc/HTML/en_GB/en_GB/docs/common
+@dirrm share/doc/HTML/en_GB/en_GB/docs
+@dirrm share/doc/HTML/en_GB/en_GB
 @dirrm share/doc/HTML/en_GB/cervisia
 @dirrm share/apps/kturtle/examples/en_GB
 @dirrm share/apps/kturtle/examples

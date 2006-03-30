@@ -236,8 +236,8 @@ lib/libkbabeldictplugin.so.3
 lib/libkdeinit_cervisia.a
 lib/libkdeinit_cervisia.la
 lib/libkdeinit_cervisia.so
-lib/libkdeinit_cvsaskpass.la
 lib/libkdeinit_cvsaskpass.a
+lib/libkdeinit_cvsaskpass.la
 lib/libkdeinit_cvsaskpass.so
 lib/libkdeinit_cvsservice.a
 lib/libkdeinit_cvsservice.la
