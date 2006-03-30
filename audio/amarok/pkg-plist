@@ -234,6 +234,36 @@ share/doc/HTML/en/amarok/script_manager.png
 share/doc/HTML/en/amarok/status_bar.png
 share/doc/HTML/en/amarok/using.docbook
 share/doc/HTML/en/amarok/vis_window.png
+share/doc/HTML/es/amarok/media_device.png
+share/doc/HTML/es/amarok/buttons.png
+share/doc/HTML/es/amarok/config_collection.png
+share/doc/HTML/es/amarok/script_manager.png
+share/doc/HTML/es/amarok/logo.png
+share/doc/HTML/es/amarok/play_list.png
+share/doc/HTML/es/amarok/equalizer.png
+share/doc/HTML/es/amarok/config_scrobbler.png
+share/doc/HTML/es/amarok/config_general.png
+share/doc/HTML/es/amarok/rmb_menu.png
+share/doc/HTML/es/amarok/status_bar.png
+share/doc/HTML/es/amarok/pl_tip1.png
+share/doc/HTML/es/amarok/dynamic_mode1.png
+share/doc/HTML/es/amarok/dynamic_mode2.png
+share/doc/HTML/es/amarok/coverman.png
+share/doc/HTML/es/amarok/config_osd.png
+share/doc/HTML/es/amarok/config_playback.png
+share/doc/HTML/es/amarok/pl_browser.png
+share/doc/HTML/es/amarok/queue_manager.png
+share/doc/HTML/es/amarok/player_window.png
+share/doc/HTML/es/amarok/file_browser.png
+share/doc/HTML/es/amarok/musicbrainz.png
+share/doc/HTML/es/amarok/context.png
+share/doc/HTML/es/amarok/analyzer.png
+share/doc/HTML/es/amarok/config_appearance.png
+share/doc/HTML/es/amarok/playlist_window.png
+share/doc/HTML/es/amarok/vis_window.png
+share/doc/HTML/es/amarok/menubar.png
+share/doc/HTML/es/amarok/config_engine.png
+share/doc/HTML/es/amarok/collection.png
 share/doc/HTML/et/amarok/advanced.docbook
 share/doc/HTML/et/amarok/common
 share/doc/HTML/et/amarok/config.docbook
@@ -411,9 +441,11 @@ share/icons/hicolor/22x22/apps/amarok.png
 share/icons/hicolor/32x32/apps/amarok.png
 share/icons/hicolor/48x48/apps/amarok.png
 share/icons/hicolor/64x64/apps/amarok.png
+share/locale/af/LC_MESSAGES/amarok.mo
 share/locale/az/LC_MESSAGES/amarok.mo
 share/locale/be/LC_MESSAGES/amarok.mo
 share/locale/bg/LC_MESSAGES/amarok.mo
+share/locale/bn/LC_MESSAGES/amarok.mo
 share/locale/br/LC_MESSAGES/amarok.mo
 share/locale/ca/LC_MESSAGES/amarok.mo
 share/locale/cs/LC_MESSAGES/amarok.mo
@@ -425,6 +457,7 @@ share/locale/en_GB/LC_MESSAGES/amarok.mo
 share/locale/eo/LC_MESSAGES/amarok.mo
 share/locale/es/LC_MESSAGES/amarok.mo
 share/locale/et/LC_MESSAGES/amarok.mo
+share/locale/eu/LC_MESSAGES/amarok.mo
 share/locale/fi/LC_MESSAGES/amarok.mo
 share/locale/fr/LC_MESSAGES/amarok.mo
 share/locale/ga/LC_MESSAGES/amarok.mo
@@ -437,6 +470,7 @@ share/locale/id/LC_MESSAGES/amarok.mo
 share/locale/is/LC_MESSAGES/amarok.mo
 share/locale/it/LC_MESSAGES/amarok.mo
 share/locale/ja/LC_MESSAGES/amarok.mo
+share/locale/km/LC_MESSAGES/amarok.mo
 share/locale/ko/LC_MESSAGES/amarok.mo
 share/locale/ku/LC_MESSAGES/amarok.mo
 share/locale/lo/LC_MESSAGES/amarok.mo
@@ -471,18 +505,20 @@ share/locale/zh_TW/LC_MESSAGES/amarok.mo
 %%XINE%%share/services/amarok_xine-engine.desktop
 share/services/amarok_void-engine_plugin.desktop
 share/servicetypes/amarok_plugin.desktop
-@dirrm share/locale/ku/LC_MESSAGES
-@dirrm share/locale/ku
-@dirrm share/locale/lo/LC_MESSAGES
-@dirrm share/locale/lo
-@dirrm share/locale/nds/LC_MESSAGES
-@dirrm share/locale/nds
-@dirrm share/locale/se/LC_MESSAGES
-@dirrm share/locale/se
-@dirrm share/locale/ss/LC_MESSAGES
-@dirrm share/locale/ss
-@dirrm share/locale/uz/LC_MESSAGES
-@dirrm share/locale/uz
+@dirrmtry share/locale/km/LC_MESSAGES
+@dirrmtry share/locale/km
+@dirrmtry share/locale/ku/LC_MESSAGES
+@dirrmtry share/locale/ku
+@dirrmtry share/locale/lo/LC_MESSAGES
+@dirrmtry share/locale/lo
+@dirrmtry share/locale/nds/LC_MESSAGES
+@dirrmtry share/locale/nds
+@dirrmtry share/locale/se/LC_MESSAGES
+@dirrmtry share/locale/se
+@dirrmtry share/locale/ss/LC_MESSAGES
+@dirrmtry share/locale/ss
+@dirrmtry share/locale/uz/LC_MESSAGES
+@dirrmtry share/locale/uz
 @dirrm share/doc/HTML/sv/amarok
 @dirrm share/doc/HTML/ru/amarok
 @dirrm share/doc/HTML/pt_BR/amarok
@@ -491,6 +527,7 @@ share/servicetypes/amarok_plugin.desktop
 @dirrm share/doc/HTML/it/amarok
 @dirrm share/doc/HTML/fr/amarok
 @dirrm share/doc/HTML/et/amarok
+@dirrm share/doc/HTML/es/amarok
 @dirrm share/doc/HTML/en/amarok
 @dirrm share/doc/HTML/de/amarok
 @dirrm share/doc/HTML/da/amarok
