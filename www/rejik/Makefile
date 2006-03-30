@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	rejik
-PORTVERSION=	3.2.0
-PORTREVISION=	1
+PORTVERSION=	3.2.1
 CATEGORIES=	www
 MASTER_SITES=	http://www.rejik.ru/download/ \
 				http://bio3k.softboard.ru/uploads/arch/
 DISTNAME=	redirector-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+DISTFILES=		${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	b3k@mail.ru
@@ -22,21 +21,8 @@ COMMENT=	A squid redirector used for blocking unwanted content
 LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
 RUN_DEPENDS=	squid:${PORTSDIR}/www/squid
 
-USE_REINPLACE=	yes
-WRKSRC=		${WRKDIR}/redirector
-
-# Redifine this if you need
-SQUID_USER?=	squid
-SQUID_GROUP?=	squid
-WWW_USER?=	www
-WWW_GROUP?=	www
-WWW_DIR?=	www
-WWW_PATH?=	${PREFIX}/${WWW_DIR}
-INSTALL_DIR?=	${PORTNAME}
-INSTALL_PATH?=	${PREFIX}/${INSTALL_DIR}
-
-PLIST_SUB=	WWW_DIR=${WWW_DIR} INSTALL_DIR=${INSTALL_DIR}
-SUB_LIST=	WWW_DIR=${WWW_DIR} INSTALL_DIR=${INSTALL_DIR} SQUID_USER=${SQUID_USER} SQUID_GROUP=${SQUID_GROUP}
+PLIST_SUB=	INSTALL_DIR=${INSTALL_DIR}
+SUB_LIST=	INSTALL_PATH=${INSTALL_PATH} SQUID_USER=${SQUID_USER} SQUID_GROUP=${SQUID_GROUP}
 SUB_FILES=	pkg-message
 
 OPTIONS=	BAN	"With banlists"	on \
@@ -44,6 +30,12 @@ OPTIONS=	BAN	"With banlists"	on \
 		WWW	"With error pages"	on \
 
 .include <bsd.port.pre.mk>
+
+# Redifine this if you need
+SQUID_USER?=	squid
+SQUID_GROUP?=	squid
+INSTALL_DIR?=	${PORTNAME}
+INSTALL_PATH?=	${PREFIX}/${INSTALL_DIR}
 
 .if !defined(WITHOUT_BAN)
 DISTFILES+=	banlists-2.x.x.tgz
@@ -78,28 +70,34 @@ post-extract:
 	@${ECHO_MSG} "===>  ----------------------------------------------"
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|SQUID_USER=nobody|SQUID_USER=${SQUID_USER}|; \
-		s|SQUID_GROUP=nogroup|SQUID_GROUP=${SQUID_GROUP}|; \
-		s|INSTALL_PATH=/usr/local/rejik3|INSTALL_PATH=${INSTALL_PATH}|' \
+	@${REINPLACE_CMD} -e 's|nobody|${SQUID_USER}|g; s|nogroup|${SQUID_GROUP}|g; \
+		s|/usr/local/rejik3|${INSTALL_PATH}|g' \
 		${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|/usr/local/rejik3|${INSTALL_PATH}|g' \
+		${WRKSRC}/vars.h ${WRKSRC}/redirector.conf.dist
 
 post-install:
+	@[ -f ${INSTALL_PATH}/redirector.conf ] || \
+		${CP} -p ${INSTALL_PATH}/redirector.conf.dist ${INSTALL_PATH}/redirector.conf
 .if !defined(WITHOUT_BAN)
-	@${TAR} -xzf ${DISTDIR}/banlists-2.x.x.tgz -C ${INSTALL_PATH}
-	@${CHOWN} -R ${SQUID_USER}:${SQUID_GROUP} ${INSTALL_PATH}/banlists
+.if !exists(${EXAMPLESDIR})
+	@${MKDIR} ${EXAMPLESDIR}
+.endif
+	@${TAR} -xf ${DISTDIR}/banlists-2.x.x.tgz -C ${EXAMPLESDIR}
 .endif
 .if defined(WITH_DBL)
-	@${TAR} -xzf ${DISTDIR}/dbl-2.0.tgz -C ${INSTALL_PATH}
+	@${TAR} -xf ${DISTDIR}/dbl-2.0.tgz -C ${INSTALL_PATH}
 	@${CHOWN} -R ${SQUID_USER}:${SQUID_GROUP} ${INSTALL_PATH}/dbl
-	@${REINPLACE_CMD} -e 's|$WGET="/usr/bin/wget";|$WGET="${LOCALBASE}/wget";| ; \
-		s|$dir="/usr/local/rejik3/dbl";|$dir="${INSTALL_PATH}/dbl";|' \
+	@${REINPLACE_CMD} -e 's|/usr/bin/wget|${LOCALBASE}/bin/wget|g ; \
+		s|/usr/local/rejik3|${INSTALL_PATH}|g' \
 		${INSTALL_PATH}/dbl/Update ${INSTALL_PATH}/dbl/Update.Fast ${INSTALL_PATH}/dbl/dbl_expand
 	@${RM} ${INSTALL_PATH}/dbl/*.bak
 .endif
 .if !defined(WITHOUT_WWW)
-	@${TAR} -xzf ${DISTDIR}/squid-like-www-en.tgz -C ${WWW_PATH}
-	@${MV} ${WWW_PATH}/squid-like-www-en ${WWW_PATH}/ban
-	@${CHOWN} -R ${WWW_USER}:${WWW_GROUP} ${WWW_PATH}/ban
+.if !exists(${EXAMPLESDIR})
+	@${MKDIR} ${EXAMPLESDIR}
+.endif
+	@${TAR} -xf ${DISTDIR}/squid-like-www-en.tgz -C ${EXAMPLESDIR}
 .endif
 
 	@${CAT} ${PKGMESSAGE}
