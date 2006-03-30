@@ -81,19 +81,23 @@ Note:  Please add new entries to the beginning of this file.
 	<p>Horde 3.1.1 release announcement:</p>
 	<blockquote cite="http://lists.horde.org/archives/announce/2006/000271.html">
 	  <p>Major changes compared to Horde 3.1 are:</p>
-	    <ul><li>Security Fixes</li>
-	    <li>Fix for remote code execution vulnerability in the help
-	    viewer, discovered by Jan Schneider from the Horde team.</li>
-            </ul>
+	  <ul>
+	    <li>Fix for remote code execution vulnerability in the
+	      help viewer, discovered by Jan Schneider from the Horde
+	      team.</li>
+	  </ul>
 	</blockquote>
       </body>
     </description>
     <references>
+      <bid>17292</bid>
+      <cvename>CVE-2006-1491</cvename>
       <url>http://lists.horde.org/archives/announce/2006/000271.html</url>
     </references>
     <dates>
       <discovery>2006-03-28</discovery>
       <entry>2006-03-28</entry>
+      <modified>2006-03-30</modified>
     </dates>
   </vuln>
 
