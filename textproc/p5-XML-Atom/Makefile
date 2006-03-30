@@ -21,10 +21,9 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-X
 	${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
 	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
 	${SITE_PERL}/LWP/Authen/Wsse.pm:${PORTSDIR}/www/p5-LWP-Authen-Wsse \
+	${SITE_PERL}/XML/XPath.pm:${PORTSDIR}/textproc/p5-XML-XPath \
 	${SITE_PERL}/${PERL_ARCH}/DateTime.pm:${PORTSDIR}/devel/p5-DateTime
 RUN_DEPENDS=	${BUILD_DEPENDS}
-
-IS_INTERACTIVE=	yes
 
 PERL_MODBUILD=	yes
 
