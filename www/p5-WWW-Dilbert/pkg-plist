@@ -1,5 +1,2 @@
 %%SITE_PERL%%/WWW/Dilbert.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Dilbert/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Dilbert
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW
 @dirrmtry %%SITE_PERL%%/WWW
