@@ -1,12 +1,10 @@
 ===============================================================================
 1. Make sure that squid runs under user %%SQUID_USER%% and group %%SQUID_GROUP%%.
 
-2. Copy %%PREFIX%%/%%INSTALL_DIR%%/redirector.conf.dist to
-	%%PREFIX%%/%%INSTALL_DIR%%/redirector.conf and edit it.
+2. See %%INSTALL_PATH%%/redirector.conf.dist for default configuration. Edit %%INSTALL_PATH%%/redirector.conf if you need.
 
 3. Add line
-   redirect_program %%PREFIX%%/%%INSTALL_DIR%%/redirector %%PREFIX%%/%%INSTALL_DIR%%/redirector.conf
-   to squid.conf.
+   redirect_program %%INSTALL_PATH%%/redirector to squid.conf.
 
 4. See http://www.rejik.ru/ for detailed instructions.
 ===============================================================================

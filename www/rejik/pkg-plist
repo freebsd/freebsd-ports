@@ -1,25 +1,18 @@
-%%BAN%%%%INSTALL_DIR%%/banlists/banners/pcre
-%%BAN%%%%INSTALL_DIR%%/banlists/banners/urls
-%%BAN%%@dirrm %%INSTALL_DIR%%/banlists/banners
-%%BAN%%%%INSTALL_DIR%%/banlists/js/urls
-%%BAN%%@dirrm %%INSTALL_DIR%%/banlists/js
-%%BAN%%%%INSTALL_DIR%%/banlists/mp3/pcre
-%%BAN%%@dirrm %%INSTALL_DIR%%/banlists/mp3
-%%BAN%%%%INSTALL_DIR%%/banlists/porno/urls
-%%BAN%%@dirrm %%INSTALL_DIR%%/banlists/porno
-%%BAN%%@dirrm %%INSTALL_DIR%%/banlists
+@comment $FreeBSD$
 %%DBL%%%%INSTALL_DIR%%/dbl/FAST
 %%DBL%%%%INSTALL_DIR%%/dbl/FULL
-%%DBL%%@dirrm %%INSTALL_DIR%%/dbl/NEW
+%%DBL%%@dirrmtry %%INSTALL_DIR%%/dbl/NEW
 %%DBL%%%%INSTALL_DIR%%/dbl/Update
 %%DBL%%%%INSTALL_DIR%%/dbl/Update.Fast
 %%DBL%%%%INSTALL_DIR%%/dbl/dbl_expand
 %%DBL%%%%INSTALL_DIR%%/dbl/dbl_stat
-%%DBL%%@dirrm %%INSTALL_DIR%%/dbl/lists
+%%DBL%%@dirrmtry %%INSTALL_DIR%%/dbl/lists
 %%DBL%%@dirrm %%INSTALL_DIR%%/dbl
 %%INSTALL_DIR%%/make-cache
 %%INSTALL_DIR%%/redirector
+@unexec if cmp -s %%PREFIX%%/%%INSTALL_DIR%%/redirector.conf %%PREFIX%%/%%INSTALL_DIR%%/redirector.conf.dist; then rm -f %%PREFIX%%/%%INSTALL_DIR%%/redirector.conf; fi
 %%INSTALL_DIR%%/redirector.conf.dist
+@exec [ -f %%PREFIX%%/%%INSTALL_DIR%%/redirector.conf ] || cp -p %%PREFIX%%/%%INSTALL_DIR%%/redirector.conf.dist %%PREFIX%%/%%INSTALL_DIR%%/redirector.conf
 %%INSTALL_DIR%%/tools/IN.gz
 %%INSTALL_DIR%%/tools/benchmark
 %%INSTALL_DIR%%/tools/check-redirector
@@ -27,10 +20,21 @@
 %%INSTALL_DIR%%/tools/set-permissions
 @dirrm %%INSTALL_DIR%%/tools
 @dirrm %%INSTALL_DIR%%
-%%WWW%%%%WWW_DIR%%/ban/1x1.gif
-%%WWW%%%%WWW_DIR%%/ban/access_denied.html
-%%WWW%%%%WWW_DIR%%/ban/audio-video.html
-%%WWW%%%%WWW_DIR%%/ban/js.js
-%%WWW%%%%WWW_DIR%%/ban/porno.html
-%%WWW%%%%WWW_DIR%%/ban/spyware.html
-%%WWW%%@dirrm %%WWW_DIR%%/ban
+%%BAN%%share/examples/%%INSTALL_DIR%%/banlists/banners/pcre
+%%BAN%%share/examples/%%INSTALL_DIR%%/banlists/banners/urls
+%%BAN%%@dirrm share/examples/%%INSTALL_DIR%%/banlists/banners
+%%BAN%%share/examples/%%INSTALL_DIR%%/banlists/js/urls
+%%BAN%%@dirrm share/examples/%%INSTALL_DIR%%/banlists/js
+%%BAN%%share/examples/%%INSTALL_DIR%%/banlists/mp3/pcre
+%%BAN%%@dirrm share/examples/%%INSTALL_DIR%%/banlists/mp3
+%%BAN%%share/examples/%%INSTALL_DIR%%/banlists/porno/urls
+%%BAN%%@dirrm share/examples/%%INSTALL_DIR%%/banlists/porno
+%%BAN%%@dirrm share/examples/%%INSTALL_DIR%%/banlists
+%%WWW%%share/examples/%%INSTALL_DIR%%/squid-like-www-en/1x1.gif
+%%WWW%%share/examples/%%INSTALL_DIR%%/squid-like-www-en/access_denied.html
+%%WWW%%share/examples/%%INSTALL_DIR%%/squid-like-www-en/audio-video.html
+%%WWW%%share/examples/%%INSTALL_DIR%%/squid-like-www-en/js.js
+%%WWW%%share/examples/%%INSTALL_DIR%%/squid-like-www-en/porno.html
+%%WWW%%share/examples/%%INSTALL_DIR%%/squid-like-www-en/spyware.html
+%%WWW%%@dirrm share/examples/%%INSTALL_DIR%%/squid-like-www-en
+@dirrmtry share/examples/%%INSTALL_DIR%%
