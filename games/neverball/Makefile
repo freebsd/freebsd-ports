@@ -8,7 +8,7 @@
 PORTNAME=	neverball
 PORTVERSION=	1.4.0
 CATEGORIES=	games
-MASTER_SITES=	http://icculus.org/neverball/
+MASTER_SITES=	http://offload1.icculus.org/neverball/
 
 MAINTAINER=	mezz@FreeBSD.org
 COMMENT=	Tilt the floor to guide a ball through an obstacle course
@@ -19,7 +19,6 @@ FREETYPE_CONFIG?=	${LOCALBASE}/bin/freetype-config
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
 USE_SDL=	image mixer ttf
 
 DOCS=		CHANGES COPYING README
