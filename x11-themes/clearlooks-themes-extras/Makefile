@@ -17,7 +17,6 @@ COMMENT=	Extras colour schemes for Clearlooks engine theme
 
 NO_BUILD=	yes
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
 
 THEME_DIR=	${PREFIX}/share/themes
 

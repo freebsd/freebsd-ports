@@ -25,7 +25,6 @@ BUILD_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm \
 		bzip2:${PORTSDIR}/archivers/bzip2
 
 NO_BUILD=		yes
-USE_REINPLACE=		yes
 ONLY_FOR_ARCHS=		i386 amd64
 USE_LINUX=		yes
 USE_LINUX_PREFIX=	yes
