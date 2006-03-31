@@ -25,7 +25,6 @@ RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/atk.so:${PORTSDIR}/accessibility/ruby-atk \
 
 USE_RUBY=	yes
 USE_GNOME=	gtk20
-USE_REINPLACE=	yes
 USE_RUBY_EXTCONF=	yes
 
 .include "${.CURDIR}/../../x11/ruby-gnome2/Makefile.common"

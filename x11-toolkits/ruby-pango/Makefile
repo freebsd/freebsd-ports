@@ -24,7 +24,6 @@ RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/glib2.so:${PORTSDIR}/devel/ruby-glib2 \
 
 USE_RUBY=	yes
 USE_GNOME=	pango
-USE_REINPLACE=	yes
 USE_RUBY_EXTCONF=	yes
 
 .include "${.CURDIR}/../../x11/ruby-gnome2/Makefile.common"

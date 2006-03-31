@@ -22,7 +22,6 @@ RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/gnome2.so:${PORTSDIR}/x11/ruby-gnome2
 
 USE_RUBY=	yes
 USE_GNOME=	gnomepanel
-USE_REINPLACE=	yes
 USE_RUBY_EXTCONF=	yes
 
 .include "${.CURDIR}/../../x11/ruby-gnome2/Makefile.common"

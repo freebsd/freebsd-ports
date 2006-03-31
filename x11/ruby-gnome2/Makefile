@@ -22,7 +22,6 @@ RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/gnomecanvas2.so:${PORTSDIR}/graphics/ruby-gn
 
 USE_RUBY=	yes
 USE_GNOME=	libgnomeui
-USE_REINPLACE=	yes
 USE_RUBY_EXTCONF=	yes
 
 .include "${.CURDIR}/Makefile.common"
