@@ -23,7 +23,6 @@ rm -rf ${MOZDIR}/chrome/overlayinfo
 rm -f ${MOZDIR}/chrome/*.rdf
 mkdir -p ${MOZDIR}/chrome/overlayinfo
 rm -f ${MOZDIR}/component.reg
-rm -rf ${MOZDIR}/extensions
 
 cd ${MOZDIR} || exit 1
 if [ -f ${REGXPCOM} ]; then
