@@ -21,8 +21,8 @@ NO_BUILD=	yes
 USE_GNOME=	desktopfileutils pygtk2
 WANT_GNOME=	yes
 USE_PYTHON=	yes
+USE_GETTEXT=	yes
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
 
 DOCS=		COPYING ChangeLog README
 MAN1=		comix.1 comicthumb.1
