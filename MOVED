@@ -2230,3 +2230,5 @@ japanese/cal.rb||2006-03-27|Has expired: mastersite disappeared, no longer maint
 mail/glacier||2006-03-31|Has expired: mastersite disappeared, no longer maintained by author
 math/xwpl||2006-03-31|Has expired: source not available and no recent binary
 databases/mantis||2006-03-31|Removed due to security problems
+sysutils/nwclient||2006-03-31|Removed due to security problems
+sysutils/nwclient602||2006-03-31|Removed due to security problems
