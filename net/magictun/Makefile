@@ -13,6 +13,8 @@ MASTER_SITES=	http://anight.org/magictun/dist/
 MAINTAINER=	roam@FreeBSD.org
 COMMENT=	An LD_PRELOAD module for transparent HTTPS proxy redirection
 
+DEPRECATED=	Mastersite disappeared
+
 PLIST_FILES=	lib/magictun.so
 
 do-install:
