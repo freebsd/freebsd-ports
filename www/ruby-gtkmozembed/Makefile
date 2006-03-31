@@ -16,13 +16,12 @@ DISTNAME=	${RUBY_GNOME_DISTNAME}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	mezz@FreeBSD.org
-COMMENT=	Ruby binding for GtkMozEmbed a widget embedding a Mozilla Gecko renderer
+COMMENT=	Ruby binding for GtkMozEmbed a widget embedding a Gecko renderer
 
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/gtk2.so:${PORTSDIR}/x11-toolkits/ruby-gtk2
 
 USE_RUBY=	yes
 USE_GECKO=	mozilla
-USE_REINPLACE=	yes
 USE_RUBY_EXTCONF=	yes
 
 .include "${.CURDIR}/../../x11/ruby-gnome2/Makefile.common"
