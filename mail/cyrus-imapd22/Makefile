@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	cyrus-imapd
-PORTVERSION=	2.2.12
-PORTREVISION=	2
+PORTVERSION=	2.2.13
+PORTREVISION=	0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
 		ftp://ftp.hanse.de/sites/transit/mirror/ftp.andrew.cmu.edu/pub/cyrus-mail/ \
@@ -173,8 +173,10 @@ CONFIGURE_ARGS+=--enable-netscapehack
 .endif
 
 .if defined(WITH_DRAC)
-EXTRA_PATCHES+=	${WRKSRC}/contrib/drac_auth.patch
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-aclocal.m4 \
+#EXTRA_PATCHES+=	${WRKSRC}/contrib/drac_auth.patch
+EXTRA_PATCHES+=	${FILESDIR}/drac_auth.patch
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-cmulocal::berkdb.m4 \
+		${FILESDIR}/extra-patch-cmulocal::ucdsnmp.m4 \
 		${FILESDIR}/extra-patch-configure.in
 USE_AUTOTOOLS=	autoconf:259 autoheader:259
 CONFIGURE_ARGS+=--with-drac=${LOCALBASE}
