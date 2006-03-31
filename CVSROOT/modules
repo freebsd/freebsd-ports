@@ -8525,6 +8525,7 @@ p5-Mail-IMAPClient	ports/mail/p5-Mail-IMAPClient
 p5-Mail-ListDetector	ports/mail/p5-Mail-ListDetector
 p5-Mail-MailStats	ports/mail/p5-Mail-MailStats
 p5-Mail-Mbox-MessageParser	ports/mail/p5-Mail-Mbox-MessageParser
+p5-Mail-MboxParser	ports/mail/p5-Mail-MboxParser
 p5-Mail-POP3Client	ports/mail/p5-Mail-POP3Client
 p5-Mail-Procmail	ports/mail/p5-Mail-Procmail
 p5-Mail-Procmailrc	ports/mail/p5-Mail-Procmailrc
