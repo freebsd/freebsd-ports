@@ -1881,6 +1881,7 @@ dtd2relax	ports/textproc/dtd2relax
 dtdinst		ports/textproc/dtdinst
 dtdparse	ports/textproc/dtdparse
 dte		ports/editors/dte
+dtmfdial	ports/audio/dtmfdial
 dtse		ports/www/dtse
 dtv		ports/multimedia/dtv
 du2ps		ports/sysutils/du2ps
