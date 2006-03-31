@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	highmoon
-PORTVERSION=	1.2.3
+PORTVERSION=	1.2.4
 CATEGORIES=	games
 MASTER_SITES=	http://highmoon.gerdsmeier.net/
 
@@ -16,8 +16,7 @@ COMMENT=	Duel in the universe
 WRKSRC=		${WRKDIR}/HighMoon
 
 USE_SDL=	image sdl
-USE_GCC=	3.4
-USE_REINPLACE=	yes
+USE_GCC=	3.4+
 USE_GMAKE=	yes
 MAKE_ARGS=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" LIBS="${LDFLAGS}"
 
