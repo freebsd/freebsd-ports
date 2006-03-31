@@ -11609,7 +11609,6 @@ ruby16		ports/lang/ruby16
 ruby16-shim-ruby18	ports/lang/ruby16-shim-ruby18
 ruby16_static	ports/lang/ruby16_static
 ruby18		ports/lang/ruby18
-ruby18-nopthreads	ports/lang/ruby18-nopthreads
 ruby18_static	ports/lang/ruby18_static
 rubygem-actionmailer	ports/mail/rubygem-actionmailer
 rubygem-actionpack	ports/www/rubygem-actionpack

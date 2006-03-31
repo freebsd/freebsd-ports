@@ -246,7 +246,6 @@
     SUBDIR += ruby16-shim-ruby18
     SUBDIR += ruby16_static
     SUBDIR += ruby18
-    SUBDIR += ruby18-nopthreads
     SUBDIR += ruby18_static
     SUBDIR += sbcl
     SUBDIR += scheme48
