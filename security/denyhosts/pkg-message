@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+In order to proper working of denyhosts
+1. edit your /etc/hosts.allow file and add:
+sshd : /etc/hosts.deniedssh : deny
+sshd : ALL : allow
+2. issue the following command if /etc/hosts.deniedssh does not exist yet
+touch /etc/hosts.deniedssh 
+-------------------------------------------------------------------------------

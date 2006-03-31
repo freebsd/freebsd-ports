@@ -2,6 +2,12 @@ bin/denyhosts.py
 %%DATADIR%%/denyhosts.cfg-dist
 %%DATADIR%%/setup.py
 %%DATADIR%%/daemon-control-dist
+%%DATADIR%%/scripts/restricted_from_invalid.py
+%%DATADIR%%/scripts/restricted_from_passwd.py
+%%DATADIR%%/plugins/README.contrib
+%%DATADIR%%/plugins/shorewall_allow.sh
+%%DATADIR%%/plugins/shorewall_deny.sh
+%%DATADIR%%/plugins/test_deny.py
 %%PYTHON_SITELIBDIR%%/DenyHosts/loginattempt.py
 %%PYTHON_SITELIBDIR%%/DenyHosts/loginattempt.pyc
 %%PYTHON_SITELIBDIR%%/DenyHosts/loginattempt.pyo
@@ -56,9 +62,17 @@ bin/denyhosts.py
 %%PYTHON_SITELIBDIR%%/DenyHosts/regex.py
 %%PYTHON_SITELIBDIR%%/DenyHosts/regex.pyc
 %%PYTHON_SITELIBDIR%%/DenyHosts/regex.pyo
+%%PYTHON_SITELIBDIR%%/DenyHosts/sync.py
+%%PYTHON_SITELIBDIR%%/DenyHosts/sync.pyc
+%%PYTHON_SITELIBDIR%%/DenyHosts/sync.pyo
+%%PYTHON_SITELIBDIR%%/DenyHosts/restricted.py
+%%PYTHON_SITELIBDIR%%/DenyHosts/restricted.pyc
+%%PYTHON_SITELIBDIR%%/DenyHosts/restricted.pyo
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG.txt
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE.txt
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/DenyHosts
+@dirrm %%DATADIR%%/scripts
+@dirrm %%DATADIR%%/plugins
 @dirrm %%DATADIR%%
