@@ -51,6 +51,10 @@ CONFIGURE_ARGS+=	--with-popauth
 CONFIGURE_ARGS+=	--with-pam
 .endif
 
+.if ${OSVERSION} >= 700014
+CONFIGURE_ARGS+=	--have-resn
+.endif
+
 PLIST_FILES+=	bin/dnsblchk bin/dnsblupd bin/ipfwmtad bin/mxlookup \
 		bin/spamilter \
 		bin/spamilter-system-report bin/spamilter-user-report \
