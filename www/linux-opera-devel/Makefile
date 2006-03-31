@@ -28,12 +28,11 @@ RUN_DEPENDS=	\
 		${LINUXBASE}/usr/lib/libaspell.so.15:${PORTSDIR}/textproc/linux-aspell \
 		${LINUXBASE}/usr/X11R6/lib/libXm.so.3.0.3:${PORTSDIR}/x11-toolkits/linux-openmotif
 
-RESTRICTED=	"not redistributable; commercial software"
+RESTRICTED=	not redistributable; commercial software
 
 USE_BZIP2=	yes
 WANT_GNOME=	yes
 USE_LINUX=	yes
-USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 ONLY_FOR_ARCHS=	i386 amd64
 
