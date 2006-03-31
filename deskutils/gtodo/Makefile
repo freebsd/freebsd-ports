@@ -12,12 +12,11 @@ CATEGORIES=	deskutils gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gtodo
 
-MAINTAINER=	mezz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An Gtk2 Todo list manager
 
-BUILD_DEPENDS=	intltool-extract:${PORTSDIR}/textproc/intltool
-
 USE_GMAKE=	yes
+USE_GETTEXT=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomeprefix gnomehack gnometarget gnomevfs2
 GNU_CONFIGURE=	yes
