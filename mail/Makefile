@@ -119,7 +119,6 @@
     SUBDIR += getmail
     SUBDIR += gkrellmmailwatch
     SUBDIR += gkrellmmailwatch2
-    SUBDIR += glacier
     SUBDIR += glbiff
     SUBDIR += gld
     SUBDIR += gmail-notify

@@ -3032,7 +3032,6 @@ gl-117		ports/games/gl-117
 gl-aspell	ports/textproc/gl-aspell
 gl2ps		ports/print/gl2ps
 glabels		ports/deskutils/glabels
-glacier		ports/mail/glacier
 glade2		ports/devel/glade2
 glademm		ports/devel/glademm
 glame		ports/audio/glame
@@ -14136,7 +14135,6 @@ xworld		ports/astro/xworld
 xworm		ports/games/xworm
 xwpe		ports/devel/xwpe
 xwpick		ports/graphics/xwpick
-xwpl		ports/math/xwpl
 xwrits		ports/deskutils/xwrits
 xxdiff		ports/textproc/xxdiff
 xxe		ports/editors/xxe
