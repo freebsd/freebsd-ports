@@ -7,6 +7,7 @@
 
 PORTNAME=	libthai
 PORTVERSION=	0.1.5
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.usablelabs.com/download/
 

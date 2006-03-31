@@ -23,5 +23,4 @@ lib/libthai.so.0
 libdata/pkgconfig/libthai.pc
 share/nls/en_US.US-ASCII
 share/nls/POSIX
-@dirrm libdata/pkgconfig
 @dirrm include/thai
