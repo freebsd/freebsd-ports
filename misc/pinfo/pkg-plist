@@ -2,7 +2,12 @@ bin/pinfo
 etc/pinforc
 %%NLS%%share/locale/cs/LC_MESSAGES/pinfo.mo
 %%NLS%%share/locale/de/LC_MESSAGES/pinfo.mo
+%%NLS%%share/locale/eu/LC_MESSAGES/pinfo.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/pinfo.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/pinfo.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/pinfo.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/pinfo.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/pinfo.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/pinfo.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/pinfo.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/pinfo.mo
