@@ -1,73 +1,73 @@
 bin/fbrun
 bin/fluxbox
 bin/fluxbox-generate_menu
-share/fluxbox/init
-share/fluxbox/keys
-share/fluxbox/menu
-share/fluxbox/nls/C/fluxbox.cat
-share/fluxbox/nls/bg_BG/fluxbox.cat
-share/fluxbox/nls/da_DK/fluxbox.cat
-share/fluxbox/nls/es_ES/fluxbox.cat
-share/fluxbox/nls/et_EE/fluxbox.cat
-share/fluxbox/nls/fr_FR/fluxbox.cat
-share/fluxbox/nls/it_IT/fluxbox.cat
-share/fluxbox/nls/ja_JP/fluxbox.cat
-share/fluxbox/nls/lv_LV/fluxbox.cat
-share/fluxbox/nls/pt_BR/fluxbox.cat
-share/fluxbox/nls/pt_PT/fluxbox.cat
-share/fluxbox/nls/ru_RU/fluxbox.cat
-share/fluxbox/nls/sv_SE/fluxbox.cat
-share/fluxbox/nls/tr_TR/fluxbox.cat
-share/fluxbox/styles/Artwiz
-share/fluxbox/styles/Blue
-share/fluxbox/styles/BlueNight
-share/fluxbox/styles/Carbondioxide
-share/fluxbox/styles/Clean
-share/fluxbox/styles/CleanColor
-share/fluxbox/styles/Cthulhain
-share/fluxbox/styles/Flux
-share/fluxbox/styles/LemonSpace
-share/fluxbox/styles/Makro
-share/fluxbox/styles/MerleyKay
-share/fluxbox/styles/Minimal
-share/fluxbox/styles/Nyz
-share/fluxbox/styles/Operation
-share/fluxbox/styles/Outcomes
-share/fluxbox/styles/Rampage
-share/fluxbox/styles/Rancor
-share/fluxbox/styles/Results
-share/fluxbox/styles/Shade
-share/fluxbox/styles/Spiff
-share/fluxbox/styles/Twice
-share/fluxbox/styles/qnx-photon
-@unexec rm %D/share/fluxbox/nls/lv 2>&1 >/dev/null || true
-@unexec rm %D/share/fluxbox/nls/fr 2>&1 >/dev/null || true
-@unexec rm %D/share/fluxbox/nls/es 2>&1 >/dev/null || true
-@unexec rm %D/share/fluxbox/nls/en_US 2>&1 >/dev/null || true
-@unexec rm %D/share/fluxbox/nls/en 2>&1 >/dev/null || true
-@unexec rm %D/share/fluxbox/nls/US_ASCII 2>&1 >/dev/null || true
-@unexec rm %D/share/fluxbox/nls/POSIX 2>&1 >/dev/null || true
-@exec ln -s lv_LV %D/share/fluxbox/nls/lv
-@exec ln -s fr_FR %D/share/fluxbox/nls/fr
-@exec ln -s es_ES %D/share/fluxbox/nls/es
-@exec ln -s C %D/share/fluxbox/nls/en_US
-@exec ln -s C %D/share/fluxbox/nls/en
-@exec ln -s C %D/share/fluxbox/nls/US_ASCII
-@exec ln -s C %D/share/fluxbox/nls/POSIX
-@dirrm share/fluxbox/styles
-@dirrm share/fluxbox/nls/tr_TR
-@dirrm share/fluxbox/nls/sv_SE
-@dirrm share/fluxbox/nls/ru_RU
-@dirrm share/fluxbox/nls/pt_PT
-@dirrm share/fluxbox/nls/pt_BR
-@dirrm share/fluxbox/nls/lv_LV
-@dirrm share/fluxbox/nls/ja_JP
-@dirrm share/fluxbox/nls/it_IT
-@dirrm share/fluxbox/nls/fr_FR
-@dirrm share/fluxbox/nls/et_EE
-@dirrm share/fluxbox/nls/es_ES
-@dirrm share/fluxbox/nls/da_DK
-@dirrm share/fluxbox/nls/bg_BG
-@dirrm share/fluxbox/nls/C
-@dirrm share/fluxbox/nls
-@dirrm share/fluxbox
+%%DATADIR%%/init
+%%DATADIR%%/keys
+%%DATADIR%%/menu
+%%DATADIR%%/nls/C/fluxbox.cat
+%%DATADIR%%/nls/bg_BG/fluxbox.cat
+%%DATADIR%%/nls/da_DK/fluxbox.cat
+%%DATADIR%%/nls/es_ES/fluxbox.cat
+%%DATADIR%%/nls/et_EE/fluxbox.cat
+%%DATADIR%%/nls/fr_FR/fluxbox.cat
+%%DATADIR%%/nls/it_IT/fluxbox.cat
+%%DATADIR%%/nls/ja_JP/fluxbox.cat
+%%DATADIR%%/nls/lv_LV/fluxbox.cat
+%%DATADIR%%/nls/pt_BR/fluxbox.cat
+%%DATADIR%%/nls/pt_PT/fluxbox.cat
+%%DATADIR%%/nls/ru_RU/fluxbox.cat
+%%DATADIR%%/nls/sv_SE/fluxbox.cat
+%%DATADIR%%/nls/tr_TR/fluxbox.cat
+%%DATADIR%%/styles/Artwiz
+%%DATADIR%%/styles/Blue
+%%DATADIR%%/styles/BlueNight
+%%DATADIR%%/styles/Carbondioxide
+%%DATADIR%%/styles/Clean
+%%DATADIR%%/styles/CleanColor
+%%DATADIR%%/styles/Cthulhain
+%%DATADIR%%/styles/Flux
+%%DATADIR%%/styles/LemonSpace
+%%DATADIR%%/styles/Makro
+%%DATADIR%%/styles/MerleyKay
+%%DATADIR%%/styles/Minimal
+%%DATADIR%%/styles/Nyz
+%%DATADIR%%/styles/Operation
+%%DATADIR%%/styles/Outcomes
+%%DATADIR%%/styles/Rampage
+%%DATADIR%%/styles/Rancor
+%%DATADIR%%/styles/Results
+%%DATADIR%%/styles/Shade
+%%DATADIR%%/styles/Spiff
+%%DATADIR%%/styles/Twice
+%%DATADIR%%/styles/qnx-photon
+@unexec rm %D/%%DATADIR%%/nls/lv 2>&1 >/dev/null || true
+@unexec rm %D/%%DATADIR%%/nls/fr 2>&1 >/dev/null || true
+@unexec rm %D/%%DATADIR%%/nls/es 2>&1 >/dev/null || true
+@unexec rm %D/%%DATADIR%%/nls/en_US 2>&1 >/dev/null || true
+@unexec rm %D/%%DATADIR%%/nls/en 2>&1 >/dev/null || true
+@unexec rm %D/%%DATADIR%%/nls/US_ASCII 2>&1 >/dev/null || true
+@unexec rm %D/%%DATADIR%%/nls/POSIX 2>&1 >/dev/null || true
+@exec ln -s lv_LV %D/%%DATADIR%%/nls/lv
+@exec ln -s fr_FR %D/%%DATADIR%%/nls/fr
+@exec ln -s es_ES %D/%%DATADIR%%/nls/es
+@exec ln -s C %D/%%DATADIR%%/nls/en_US
+@exec ln -s C %D/%%DATADIR%%/nls/en
+@exec ln -s C %D/%%DATADIR%%/nls/US_ASCII
+@exec ln -s C %D/%%DATADIR%%/nls/POSIX
+@dirrm %%DATADIR%%/styles
+@dirrm %%DATADIR%%/nls/tr_TR
+@dirrm %%DATADIR%%/nls/sv_SE
+@dirrm %%DATADIR%%/nls/ru_RU
+@dirrm %%DATADIR%%/nls/pt_PT
+@dirrm %%DATADIR%%/nls/pt_BR
+@dirrm %%DATADIR%%/nls/lv_LV
+@dirrm %%DATADIR%%/nls/ja_JP
+@dirrm %%DATADIR%%/nls/it_IT
+@dirrm %%DATADIR%%/nls/fr_FR
+@dirrm %%DATADIR%%/nls/et_EE
+@dirrm %%DATADIR%%/nls/es_ES
+@dirrm %%DATADIR%%/nls/da_DK
+@dirrm %%DATADIR%%/nls/bg_BG
+@dirrm %%DATADIR%%/nls/C
+@dirrm %%DATADIR%%/nls
+@dirrm %%DATADIR%%
