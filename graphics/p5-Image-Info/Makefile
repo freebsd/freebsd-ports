@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Image-Info
-PORTVERSION=	1.17
+PORTVERSION=	1.20
 CATEGORIES=	graphics perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Image
@@ -23,6 +23,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	yes
 
 MAN3=		Image::Info.3 Image::Info::BMP.3 Image::Info::SVG.3 \
+		Image::Info::TIFF.3 Image::Info::PPM.3 \
 		Image::Info::XBM.3 Image::Info::XPM.3
 
 .include <bsd.port.pre.mk>
