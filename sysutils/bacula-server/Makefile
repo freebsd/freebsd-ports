@@ -6,18 +6,21 @@
 #
 
 PORTNAME=	bacula
-PORTVERSION=	1.38.5
-PORTREVISION=	1
+DISTVERSION=	1.38.6
+#PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	bacula
 PKGNAMESUFFIX?=	-server
-UNIQUENAME?=${PORTNAME}${PKGNAMESUFFIX}
 
-MAINTAINER=	Lars.Koeller@Uni-Bielefeld.DE
+MAINTAINER=	dan@langille.org
 COMMENT?=	The network backup solution (server)
 
 CONFLICTS=	bacula-server-devel-[0-9]* bacula-client-devel-[0-9]*
+
+UNIQUENAME?=${PORTNAME}${PKGNAMESUFFIX}
+
+USE_RC_SUBR?=	z-bacula-dir.sh z-bacula-sd.sh
 
 # The user/group IDs below are registered, see
 # http://www.freebsd.org/doc/en_US.ISO8859-1/books/porters-handbook/book.html#DADS-UID
@@ -28,16 +31,20 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-tcp-wrappers=/usr/lib \
 		--enable-smartalloc \
 		--with-working-dir=${BACULA_DIR} \
-		--with-scriptdir=${PREFIX}/share/bacula \
+		--with-scriptdir=${PREFIX}/share/${PORTNAME} \
 		--mandir=${PREFIX}/man \
-		--with-fd-user=root \
-		--with-fd-group=wheel \
-		--with-dir-user=bacula \
-		--with-dir-group=bacula \
-		--with-sd-user=bacula \
-		--with-sd-group=operator \
 		--with-readline=yes \
 		--disable-conio
+
+.if defined(WITH_CLIENT_ONLY)
+CONFIGURE_ARGS+=		--with-fd-user=root \
+		--with-fd-group=wheel
+.else
+CONFIGURE_ARGS+=--with-dir-user=bacula \
+		--with-dir-group=bacula \
+		--with-sd-user=bacula \
+		--with-sd-group=operator
+.endif
 
 CONFIGURE_ENV+=	CPPFLAGS="-I/usr/include/readline -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
@@ -66,6 +73,7 @@ OPTIONS+=	MYSQL "Use MySQL database instead of SqLite" off
 OPTIONS+=	POSTGRESQL "Use PostgreSQL database instead of SqLite" off
 OPTIONS+=	MTX "Install mtx for control of autochanger devices" off
 .endif
+
 OPTIONS+=	OPENSSL "Enable OpenSSL for encrypted communication" off
 
 # Prepare if gnome-console is selected this must be happen before
@@ -77,7 +85,7 @@ USE_GNOME=	libgnome
 
 PLIST_SUB+=	BACULA_DIR=${BACULA_DIR}
 
-MAN8=           bacula.8
+MAN8=		bacula.8
 
 .include <bsd.port.pre.mk>
 
@@ -94,6 +102,7 @@ PORTDOCS=	ReleaseNotes bacula.pdf developers.pdf kernstodo manual bacula-web
 .if defined(WITH_CLIENT_ONLY)
 CONFFILES=	fd
 CONFIGURE_ARGS+=	--enable-client-only
+
 PKGDEINSTALL=	${PKGDIR}/pkg-deinstall.client
 PKGINSTALL=	${PKGDIR}/pkg-install.client
 # Build gnome-console
@@ -195,17 +204,22 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|^all_subdirs = .*|all_subdirs = scripts src\/lib src\/findlib $${subdirs}|g' ${WRKSRC}/Makefile.in
 .endif
 
+pre-install:
+	if [ ! -d "${BACULA_DIR}" ]; then \
+		${ECHO_CMD} "creating ${BACULA_DIR}" ; \
+		${MKDIR} ${BACULA_DIR}; \
+	else \
+		${ECHO_CMD} "${BACULA_DIR} already exists"; \
+	fi
+
+.if !defined(WITH_CLIENT_ONLY)
+# 	Extend /etc/services and install UID/GID
+	@ ${SETENV} PKG_PREFIX=${PREFIX} \
+		${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
+.endif
+
 post-install:
-#	Migration: move existing bacula.sh to z-bacula.sh to start bacula AFTER DB start
-	if [ -f ${PREFIX}/etc/rc.d/bacula.sh ]; then \
-		${MV} ${PREFIX}/etc/rc.d/bacula.sh ${PREFIX}/etc/rc.d/z-bacula.sh; \
-	fi
-	if [ -f ${PREFIX}/etc/rc.d/bacula.sh.sample ]; then \
-		${MV} ${PREFIX}/etc/rc.d/bacula.sh.sample ${PREFIX}/etc/rc.d/z-bacula.sh.sample; \
-	fi
 .if defined(WITH_CLIENT_ONLY)
-# 	Install start script
-	${INSTALL_SCRIPT} ${WRKSRC}/scripts/bacula ${PREFIX}/etc/rc.d/z-bacula.sh.sample
 # 	Extend only /etc/services
 	@ ${SETENV} PKG_PREFIX=${PREFIX} \
 		${SH} ${PKGINSTALL} ${PORTNAME}
@@ -233,7 +247,6 @@ post-install:
 	fi
 .endif
 
-#	@${CHMOD} a+x ${WRKSRC}/scripts/bacula.man
 .if defined(WITH_CLIENT_ONLY)
 	${INSTALL_MAN} ${WRKSRC}/scripts/bacula.man ${PREFIX}/man/man8/bacula.8
 .endif
@@ -250,10 +263,8 @@ post-install:
 	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}-docs-${PORTVERSION}/developers/developers.pdf ${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}-${PORTVERSION}/kernstodo ${DOCSDIR}
 .endif
+
 .else
-# 	Extend /etc/services and install UID/GID
-	@ ${SETENV} PKG_PREFIX=${PREFIX} \
-		${SH} ${PKGINSTALL} ${PORTNAME} POST-INSTALL
 # 	Install config files and preserve existing ones
 	${INSTALL_SCRIPT} ${FILESDIR}/chio-bacula ${PREFIX}/sbin
 	if [ -f ${PREFIX}/etc/bacula-barcodes ]; then \
@@ -327,7 +338,7 @@ post-install:
 	@${ECHO_MSG} "For USB support read the bacula manual!! It could be necessary"
 	@${ECHO_MSG} "to configure/compile a new kernel!"
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Look at ${PREFIX}/share/bacula/update_bacula_tables for"
+	@${ECHO_MSG} "Look at $PREFIX/share/bacula/update_bacula_tables for"
 	@${ECHO_MSG} "database update procedure. Details can be found in the"
 	@${ECHO_MSG} "ReleaseNotes"
 .endif

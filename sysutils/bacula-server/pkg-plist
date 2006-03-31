@@ -1,5 +1,4 @@
 %%DATADIR%%/query.sql
-etc/rc.d/z-bacula.sh.sample
 sbin/chio-bacula
 sbin/bacula-dir
 sbin/bacula-sd
@@ -13,6 +12,7 @@ sbin/btape
 sbin/dbcheck
 sbin/bsmtp
 @unexec if cmp -s %D/share/bacula/mtx-changer.old %D/share/bacula/mtx-changer; then rm -f %D/share/bacula/mtx-changer.old; fi
+@unexec if cmp -s %D/share/bacula/disk-changer.old %D/share/bacula/disk-changer; then rm -f %D/share/bacula/disk-changer.old; fi
 %%DATADIR%%/mtx-changer
 %%DATADIR%%/create_bacula_database
 %%DATADIR%%/create_%%DBTYPE%%_database
@@ -29,8 +29,10 @@ sbin/bsmtp
 %%DATADIR%%/delete_catalog_backup
 %%DATADIR%%/make_catalog_backup
 %%DATADIR%%/dvd-handler
+%%DATADIR%%/disk-changer
 
 @dirrm %%DATADIR%%
-@unexec /usr/bin/killall badula-sd > /dev/null 2>&1 || true
+@unexec /usr/bin/killall bacula-sd  > /dev/null 2>&1 || true
 @unexec /usr/bin/killall bacula-dir > /dev/null 2>&1 || true
 @exec mkdir -p %%BACULA_DIR%%
+@dirrmtry %%BACULA_DIR%%
