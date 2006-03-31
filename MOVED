@@ -2227,3 +2227,5 @@ irc/dancer-services||2006-03-23|Has expired: mastersite disappeared, no longer m
 databases/libgda2|databases/libgda3|Port has renamed to accommodate legacy libgda2
 irc/scrollz-doc||2006-03-27|Has expired: Mastersite disappeared, no longer maintained by author
 japanese/cal.rb||2006-03-27|Has expired: mastersite disappeared, no longer maintained by author
+mail/glacier||2006-03-31|Has expired: mastersite disappeared, no longer maintained by author
+math/xwpl||2006-03-31|Has expired: source not available and no recent binary

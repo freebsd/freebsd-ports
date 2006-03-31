@@ -303,7 +303,6 @@
     SUBDIR += xplot
     SUBDIR += xppaut
     SUBDIR += xspread
-    SUBDIR += xwpl
     SUBDIR += yacas
 
 .include <bsd.port.subdir.mk>
