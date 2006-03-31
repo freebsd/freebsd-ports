@@ -23,9 +23,9 @@ lib/audacious/Input/libtonegen.so
 lib/audacious/Input/libaac.so
 lib/audacious/Input/libtimidity.so
 %%VORBISPLUGIN%%lib/audacious/Input/libvorbis.so
-lib/audacious/Input/libflac.so
 %%MODPLUG%%lib/audacious/Input/libmodplug.so
 %%MPCPLUGIN%%lib/audacious/Input/libmpc.so
+%%SIDPLUGIN%%lib/audacious/Input/libsid.so
 lib/audacious/Input/libwav.so
 lib/audacious/Input/libwma.so
 lib/audacious/Output/libOSS.so
