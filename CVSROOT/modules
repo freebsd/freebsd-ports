@@ -7117,8 +7117,6 @@ nvidia-xconfig	ports/x11/nvidia-xconfig
 nvnet		ports/net/nvnet
 nvtv		ports/sysutils/nvtv
 nvu		ports/www/nvu
-nwclient	ports/sysutils/nwclient
-nwclient602	ports/sysutils/nwclient602
 nwndata		ports/games/nwndata
 nwnusers	ports/games/nwnusers
 nwreckdum	ports/archivers/nwreckdum
