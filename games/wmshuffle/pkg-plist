@@ -1,4 +1,4 @@
 bin/wmshuffle
-share/wmshuffle/skin-feiticeira.xpm
-share/wmshuffle/skin-lucyenne.xpm
+%%DATADIR%%/skin-feiticeira.xpm
+%%DATADIR%%/skin-lucyenne.xpm
 @dirrm share/wmshuffle

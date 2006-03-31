@@ -10,7 +10,7 @@ PORTVERSION=	0.6
 PORTREVISION=	1
 CATEGORIES=	games windowmaker afterstep
 MASTER_SITES=	http://www.linuks.mine.nu/dockapp/ \
-		ftp://regency.nsu.ru/tmp/
+		http://freebsd.nsu.ru/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A dockable Shuffle game for WindowMaker and AfterStep
@@ -21,7 +21,7 @@ USE_XPM=	yes
 
 post-install:
 	@${MKDIR} ${DATADIR}
-	@${CP} ${WRKSRC}/skin-*.xpm ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/skin-*.xpm ${DATADIR}
 	@${ECHO_MSG} "===>   Run 'wmshuffle --help' for the available options"
 
 .include <bsd.port.mk>
