@@ -357,8 +357,6 @@
     SUBDIR += nut-usb
     SUBDIR += nvclock
     SUBDIR += nvtv
-    SUBDIR += nwclient
-    SUBDIR += nwclient602
     SUBDIR += oak
     SUBDIR += obliterate
     SUBDIR += ods2
