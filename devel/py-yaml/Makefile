@@ -9,7 +9,7 @@
 PORTNAME=	yaml
 PORTVERSION=	0.32
 CATEGORIES=	devel python
-MASTER_SITES=	http://python.yaml.org/dist/
+MASTER_SITES=	http://pyyaml.org/download/pyyaml-legacy/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	PyYaml-SHowell-${PORTVERSION}
 EXTRACT_SUFX=	.tar.gz
