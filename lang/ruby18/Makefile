@@ -7,7 +7,7 @@
 
 PORTNAME=	ruby
 PORTVERSION=	${RUBY_PORTVERSION}
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	lang ruby ipv6
 MASTER_SITES=		${MASTER_SITE_RUBY}
@@ -41,11 +41,11 @@ WRKSRC=		${RUBY_WRKSRC}
 CONFIGURE_ARGS=	${RUBY_CONFIGURE_ARGS} \
 		--enable-shared --with-openssl-include=${OPENSSLINC}
 
-.if defined(WITHOUT_PTHREADS)
-CONFIGURE_ARGS+=--disable-pthread
-PKGNAMESUFFIX=	-nopthreads
-.else
+.if defined(WITH_PTHREADS)
 CONFIGURE_ARGS+=--enable-pthread
+PKGNAMESUFFIX=	-pthreads
+.else
+CONFIGURE_ARGS+=--disable-pthread
 .endif
 
 .if defined(DEBUG)
@@ -70,6 +70,9 @@ EXTRA_PATCHES=	${PATCHDIR}/extrapatch-eval.c
 .if ${OSVERSION} >= 400014
 CONFIGURE_ARGS+=	--enable-ipv6
 .endif
+
+CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" \
+		LIBS="${LIBS} ${PTHREAD_LIBS}"
 
 .if ${RUBY_VER} == ${RUBY_DEFAULT_VER}
 MLINKS=		${RUBY_NAME}.1 ruby.1
@@ -120,6 +123,13 @@ OBSOLETED_MODULES=	bigfloat \
 			xmlrpc \
 			yaml \
 			zlib
+
+pre-everything::
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "NOTE:"
+	@${ECHO_MSG} "You can enable pthread support by defining WITH_PTHREADS variable,"
+	@${ECHO_MSG} "but not recommended since this might break some ruby apps."
+	@${ECHO_MSG} ""
 
 post-extract:
 	${MV} ${WRKSRC}/ext/dl/h2rb ${WRKSRC}/bin/
