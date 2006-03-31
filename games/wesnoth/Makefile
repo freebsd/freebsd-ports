@@ -24,7 +24,6 @@ USE_GMAKE=	yes
 WANT_GNOME=	yes
 USE_GETTEXT=	yes
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var \
 		--with-libiconv-prefix=${LOCALBASE} \
