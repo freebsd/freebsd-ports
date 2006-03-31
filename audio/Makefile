@@ -93,6 +93,7 @@
     SUBDIR += denemo
     SUBDIR += discid
     SUBDIR += drumpiler
+    SUBDIR += dtmfdial
     SUBDIR += easytag
     SUBDIR += easytag-devel
     SUBDIR += eawpats
