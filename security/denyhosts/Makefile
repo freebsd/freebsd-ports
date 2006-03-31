@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	denyhosts
-PORTVERSION=	1.1.2
+PORTVERSION=	2.2
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -34,5 +34,6 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
+	 @${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

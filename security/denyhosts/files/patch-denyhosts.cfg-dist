@@ -6,30 +6,53 @@ $FreeBSD$
 @@ -9,10 +9,10 @@
  # argument
  #
- # Redhat:
+ # Redhat or Fedora Core:
 -SECURE_LOG = /var/log/secure
 +#SECURE_LOG = /var/log/secure
  #
- # Mandrake or FreeBSD: 
+ # Mandrake, FreeBSD or OpenBSD: 
 -#SECURE_LOG = /var/log/auth.log
 +SECURE_LOG = /var/log/auth.log
  #
  # SuSE:
  #SECURE_LOG = /var/log/messages
-@@ -23,10 +23,10 @@
+@@ -23,7 +23,7 @@
  # HOSTS_DENY: the file which contains restricted host access information
  #
  # Most operating systems:
 -HOSTS_DENY = /etc/hosts.deny
-+#HOSTS_DENY = /etc/hosts.deny
++HOSTS_DENY = /etc/hosts.deniedssh
  #
  # Some BSD (FreeBSD) Unixes:
--#HOSTS_DENY = /etc/hosts.allow
-+HOSTS_DENY = /etc/hosts.allow
+ #HOSTS_DENY = /etc/hosts.allow
+@@ -66,7 +66,7 @@
+ # To block all services for the offending host:
+ #BLOCK_SERVICE = ALL
+ # To block only sshd:
+-BLOCK_SERVICE  = sshd
++#BLOCK_SERVICE  = sshd
+ # To only record the offending host and nothing else (if using
+ # an auxilary file to list the hosts).  Refer to: 
+ # http://denyhosts.sourceforge.net/faq.html#aux
+@@ -126,7 +126,7 @@
+ # Note: it is recommended that you use an absolute pathname
+ # for this value (eg. /home/foo/denyhosts/data)
  #
- # Another possibility (also see the next option):
- #HOSTS_DENY = /etc/hosts.evil
-@@ -157,10 +157,10 @@
+-WORK_DIR = /usr/share/denyhosts/data
++WORK_DIR = %%PREFIX%%/share/denyhosts/data
+ #
+ #######################################################################
+ 
+@@ -152,7 +152,7 @@
+ # the corresponding hostname will be looked up and reported as well
+ # (if available).
+ #
+-HOSTNAME_LOOKUP=YES
++HOSTNAME_LOOKUP=NO
+ #
+ ######################################################################
+ 
+@@ -168,10 +168,10 @@
  # running at a time.
  #
  # Redhat/Fedora:
