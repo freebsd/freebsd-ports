@@ -8,7 +8,7 @@
 PORTNAME=	picasm
 PORTVERSION=	1.14
 CATEGORIES=	devel
-MASTER_SITES=	http://www.co.jyu.fi/~trossi/pic/
+MASTER_SITES=	http://www.jmp.fi/~trossi/pic/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 
 MAINTAINER=	ports@FreeBSD.org
