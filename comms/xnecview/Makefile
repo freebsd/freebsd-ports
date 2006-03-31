@@ -17,6 +17,7 @@ COMMENT=	A X viewer of nec2c data
 LIB_DEPENDS=	png:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	nec2c:${PORTSDIR}/comms/nec2c
 
+USE_GETOPT_LONG=yes
 USE_GNOME=	gtk20
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
