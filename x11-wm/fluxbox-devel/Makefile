@@ -110,6 +110,10 @@ CONFIGURE_ARGS+=	--disable-xrender
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 500000
+BROKEN=	Does not build on 4.X
+.endif
+
 .if ${HAVE_GNOME:Mlibgnome}!="" || defined(PACKAGE_BUILDING)
 CONFIGURE_ARGS+=	--enable-gnome
 .else
