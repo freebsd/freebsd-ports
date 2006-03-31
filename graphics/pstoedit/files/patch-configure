@@ -1,0 +1,10 @@
+--- configure.orig	Sat Mar 11 07:38:16 2006
++++ configure	Sun Mar 26 18:50:43 2006
+@@ -21280,6 +21280,7 @@
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
+ #include <stdlib.h>
++#include <unistd.h>
+ 		 char buffer[] = "aaaXXXXXX";
+ 	 	 int i = mkstemp(buffer);
+ int
