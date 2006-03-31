@@ -7,6 +7,7 @@
 
 PORTNAME=	audacious
 PORTVERSION=	0.2.2
+PORTREVISION=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://audacious-media-player.org/release/ \
 		${MASTER_SITE_LOCAL}
@@ -19,13 +20,11 @@ COMMENT=	A media player based on BMP and XMMS
 
 LIB_DEPENDS=	sndfile:${PORTSDIR}/audio/libsndfile \
 		musicbrainz.4:${PORTSDIR}/audio/libmusicbrainz \
-		curl.3:${PORTSDIR}/ftp/curl \
-		FLAC:${PORTSDIR}/audio/flac
+		curl.3:${PORTSDIR}/ftp/curl
 
 USE_GNOME=	gtk20 libglade2
-WANT_GNOME=	yes
+USE_GETTEXT=	yes
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
@@ -34,18 +33,21 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		INPUT_PLUGINS="${INPUT_PLUGINS}" \
 		OUTPUT_PLUGINS="${OUTPUT_PLUGINS}" \
 		VISUALIZATION_PLUGINS="${VISUALIZATION_PLUGINS}"
+CONFIGURE_ARGS=	--disable-jack --disable-flc --disable-adplug \
+	--disable-lirc --disable-alsa --disable-amidiplug
 
 MAN1=		audacious.1
 
 PORTDOCS=	README AUTHORS ChangeLog NEWS
 
 INPUT_PLUGINS=	cdaudio mpg123 wav tonegen wma console \
-		sexypsf aac timidity flac
+		sexypsf aac timidity
 OUTPUT_PLUGINS=	OSS disk_writer
 VISUALIZATION_PLUGINS=	blur_scope
 
 OPTIONS=	VORBIS	"Enable Ogg Vorbis input" on \
 		MODPLUG	"Enable modplug input" off \
+		SID	"Enable sid input" off \
 		MPC	"Enable mpc input" off \
 		ESOUND	"Enable Esound output"  off \
 		ID3V2	"Enable id3v2 editing" off \
@@ -54,6 +56,10 @@ OPTIONS=	VORBIS	"Enable Ogg Vorbis input" on \
 		GNOME   "Build with gnomevfs/gconf support" off
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN="Does not build"
+.endif
 
 .if !defined(WITHOUT_VORBIS)
 LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
@@ -71,6 +77,15 @@ LIB_DEPENDS+=	modplug.0:${PORTSDIR}/audio/libmodplug
 .else
 PLIST_SUB+=	MODPLUG="@comment "
 CONFIGURE_ARGS+=	--disable-modplug
+.endif
+
+.if !defined(WITHOUT_SID)
+INPUT_PLUGINS+=	sid
+PLIST_SUB+=	SIDPLUGIN=""
+LIB_DEPENDS+=	sidplay.1:${PORTSDIR}/audio/libsidplay
+.else
+PLIST_SUB+=	SIDPLUGIN="@comment "
+CONFIGURE_ARGS+=	--disable-sid
 .endif
 
 .if !defined(WITHOUT_MPC)
