@@ -39,10 +39,10 @@ share/locale/es/LC_MESSAGES/rbbr.mo
 share/locale/it/LC_MESSAGES/rbbr.mo
 share/locale/ko/LC_MESSAGES/rbbr.mo
 share/locale/pt_BR/LC_MESSAGES/rbbr.mo
-share/rbbr/icon.png
-share/rbbr/rd/README
-@dirrm share/rbbr/rd
-@dirrm share/rbbr
+%%DATADIR%%/icon.png
+%%DATADIR%%/rd/README
+@dirrm %%DATADIR%%/rd
+@dirrm %%DATADIR%%
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/AUTHORS
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/COPYING
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
