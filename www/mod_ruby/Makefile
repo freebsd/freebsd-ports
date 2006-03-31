@@ -7,6 +7,7 @@
 
 PORTNAME=	mod_ruby
 PORTVERSION=	1.2.5
+PORTREVISION=	1
 CATEGORIES=	www ruby
 MASTER_SITES=	http://www.modruby.net/archive/
 DIST_SUBDIR=	ruby
@@ -40,14 +41,13 @@ CONFIGURE_ARGS+=	--with-apr-includes="`${LOCALBASE}/bin/apr-1-config --includedi
 
 do-configure:
 	@cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${RUBY} ${RUBY_FLAGS} configure.rb ${CONFIGURE_ARGS}
-.if !defined(WITHOUT_PTHREADS)
+.if !defined(WITHOUT_PTHREADS) && defined(WITH_PTHREADS)
 # dirty hack to force mod_ruby.so linked with lpthread.so, otherwise unresolved
 # symbols happen
 .if ${OSVERSION} >= 502102
 	@${REINPLACE_CMD} -e 's|-pthread|-pthread -lpthread|' ${WRKSRC}/Makefile
 .endif
-.else
-PKGNAMESUFFIX=	-nopthreads
+PKGNAMESUFFIX=	-pthreads
 .endif
 
 post-install: doc-install
