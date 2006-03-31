@@ -11,7 +11,7 @@ CATEGORIES=	emulators
 MASTER_SITES=	http://www.lysator.liu.se/snes9x/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	green@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Super Nintendo Entertainment System(SNES) Emulator
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}

@@ -11,7 +11,7 @@ PORTREVISION=	4
 CATEGORIES=	security
 MASTER_SITES=	http://www.crypto.com/software/
 
-MAINTAINER=	green@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A cryptographic file system implemented as a user-space NFS server
 
 USE_REINPLACE=	yes

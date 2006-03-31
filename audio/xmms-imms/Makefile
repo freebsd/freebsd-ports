@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=	xmms-
 
-MAINTAINER=	green@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Automatic, weight-based playlist ordering plugin for XMMS
 
 BUILD_DEPENDS=	sox:${PORTSDIR}/audio/sox \

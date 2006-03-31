@@ -19,7 +19,7 @@ PATCHFILES=	olvwm4.Patch01.Z \
 		olvwm4.Patch02.Z
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	green@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenLook Virtual Window manager
 
 LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
