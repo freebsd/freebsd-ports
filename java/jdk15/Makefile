@@ -16,7 +16,7 @@ SCSL_BINFILE=	jdk-${JDK_VERSION:S/./_/g}-bin-scsl.zip
 PATCHSETFILE=	bsd-jdk15-patches-${JDK_PATCHSET_VERSION}.tar.bz2
 DISTFILES=	${SCSL_SRCFILE} ${SCSL_BINFILE} ${PATCHSETFILE}
 
-MAINTAINER=	phantom@FreeBSD.org
+MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	Java Development Kit 1.5.0
 
 EXTRACT_DEPENDS=zip:${PORTSDIR}/archivers/zip

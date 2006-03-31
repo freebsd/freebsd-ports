@@ -16,7 +16,7 @@ SCSL_BINFILE=	j2sdk-${JDK_VERSION:S/./_/g}-bin-scsl.zip
 PATCHSETFILE=	bsd-jdk14-patches-${JDK_PATCHSET_VERSION}.tar.gz
 DISTFILES=	${SCSL_SRCFILE} ${SCSL_BINFILE} ${PATCHSETFILE}
 
-MAINTAINER=	phantom@FreeBSD.org
+MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	Java Development Kit 1.4.2
 
 EXTRACT_DEPENDS=zip:${PORTSDIR}/archivers/zip
