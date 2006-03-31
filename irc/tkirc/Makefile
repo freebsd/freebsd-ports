@@ -11,7 +11,7 @@ CATEGORIES=	irc tk83
 MASTER_SITES=	ftp://ftp.netsplit.de/pub/tcltk/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	green@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GUI for the ircII Internet Relay Chat client
 
 RUN_DEPENDS=	irc:${PORTSDIR}/irc/ircII \

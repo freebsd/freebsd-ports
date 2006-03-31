@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}					\
 		http://green.homeunix.org/~green/
 MASTER_SITE_SUBDIR=	green
 
-MAINTAINER=	green@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PAM module based on whether a user is already logged in
 
 MANCOMPRESSED=	yes
