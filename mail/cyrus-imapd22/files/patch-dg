@@ -1,18 +1,18 @@
 Index: tools/mkimap
 diff -u tools/mkimap.orig tools/mkimap
---- tools/mkimap.orig	Wed Jun 30 03:16:54 2004
-+++ tools/mkimap	Tue Jul 27 04:47:43 2004
-@@ -61,6 +61,9 @@
+--- tools/mkimap.orig	Fri Dec  2 04:12:34 2005
++++ tools/mkimap	Sat Apr  1 01:13:06 2006
+@@ -90,6 +90,9 @@
  
  $imapdconf = shift || "/etc/imapd.conf";
  
 +$cyrus_user = $ENV{CYRUS_USER} || "%%CYRUS_USER%%";
 +$cyrus_group = $ENV{CYRUS_GROUP} || "%%CYRUS_GROUP%%";
 +
- open CONF, $imapdconf or die "can't open $imapdconf";
- print "reading configure file...\n";
- while (<CONF>) {
-@@ -86,6 +89,7 @@
+ push @configs, $imapdconf;
+ 
+ while ($conf = shift @configs) {
+@@ -100,6 +103,7 @@
  
  print "configuring $d...\n";
  
@@ -20,7 +20,7 @@ diff -u tools/mkimap.orig tools/mkimap
  chdir $d or die "couldn't change to $d";
  
  mkdir "proc", 0755 || warn "can't create $d/proc: $!";
-@@ -95,11 +99,14 @@
+@@ -109,11 +113,14 @@
  mkdir "msg", 0755 || warn "can't create $d/msg: $!";
  mkdir "ptclient", 0755 || warn "can't create $d/ptclient: $!";
  

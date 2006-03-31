@@ -1,10 +1,10 @@
 Index: perl/sieve/managesieve/Makefile.PL
 diff -u perl/sieve/managesieve/Makefile.PL.orig perl/sieve/managesieve/Makefile.PL
---- perl/sieve/managesieve/Makefile.PL.orig	Thu Oct 23 03:50:27 2003
-+++ perl/sieve/managesieve/Makefile.PL	Sun Dec 12 04:21:55 2004
-@@ -64,3 +64,10 @@
-     'DEFINE'	=> '-DPERL_POLLUTE',     # e.g., '-DHAVE_SOMETHING' 
-     'INC'	=> "-I../lib/ -I../../../lib/ $SASL_INC $OPENSSL_INC",
+--- perl/sieve/managesieve/Makefile.PL.orig	Fri Oct 14 05:30:03 2005
++++ perl/sieve/managesieve/Makefile.PL	Sat Apr  1 01:22:10 2006
+@@ -66,3 +66,10 @@
+     'CC'	=> $ENV{CC},
+     'LD'	=> $ENV{CC}
  );
 +
 +package MY;

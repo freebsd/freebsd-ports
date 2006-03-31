@@ -77,6 +77,8 @@ include/cyrus/stristr.h
 include/cyrus/sysexits.h
 include/cyrus/util.h
 include/cyrus/xmalloc.h
+include/cyrus/xstrlcat.h
+include/cyrus/xstrlcpy.h
 lib/libcyrus_min.a
 lib/libcyrus.a
 %%SITE_PERL%%/%%PERL_ARCH%%/Cyrus/IMAP/Admin.pm

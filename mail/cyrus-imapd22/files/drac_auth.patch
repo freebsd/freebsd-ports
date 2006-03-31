@@ -1,0 +1,378 @@
+$Id: drac_auth.patch,v 1.18 2003/12/19 20:01:58 ken3 Exp $
+
+Patch to add support for Dynamic Relay Authorization Control
+
+For more information about DRAC, see:
+	http://mail.cc.umanitoba.ca/drac/index.html
+
+
+Installation
+------------
+
+1.  Apply this patch in the toplevel directory using the following command:
+
+	# patch -p0 < contrib/drac_auth.patch
+
+2.  Cleanup any previous builds:
+
+	# make distclean
+
+3a. If you DO NOT have 'smake' and 'autoconf' installed on your system, goto
+    step 3b.
+
+    Perform the following to reconfigure your build:
+
+	# rm configure
+	# sh SMakefile
+	# ./configure ... --with-drac=<location of libdrac>
+
+    NOTE: you can find your original configure command in config.status
+
+    Proceed to step 4.
+
+3b. Edit imap/Makefile and modify the following three variables:
+
+	DEFS = ... -DDRAC_AUTH
+	LIBS = ... -ldrac
+	LDFLAGS = ... -L<location of libdrac>
+
+4.  Build and install the software:
+
+	# make
+	# make install
+
+5.  If dracd is not running on the same system as Cyrus (localhost),
+    use the 'drachost' option in imapd.conf(5) to specify the hostname of
+    the dracd server.
+
+6.  Installation is complete!
+
+
+Operation
+---------
+
+The behavior of DRAC is controlled by the value of the 'dracinterval' option
+in imapd.conf(5).  If 'dracinterval' is 0 (zero), DRAC support is disabled.
+Otherwise, DRAC support is enabled and has the following behavior:
+
+pop3d: Whenever a client opens a user's INBOX, drac_auth() is called.
+
+imapd: Once a client is logged in (via LOGIN or AUTHENTICATE),
+       drac_send() will be called once every 'dracinterval' minutes.
+
+
+
+
+
+Index: configure.in
+===================================================================
+RCS file: /afs/andrew/system/cvs/src/cyrus/configure.in,v
+retrieving revision 1.273
+diff -u -r1.273 configure.in
+--- configure.in	15 Dec 2003 20:00:35 -0000	1.273
++++ configure.in	19 Dec 2003 19:56:16 -0000
+@@ -945,6 +945,19 @@
+ SNMP_SUBDIRS=""
+ AC_SUBST(SNMP_SUBDIRS)
+ 
++dnl
++dnl Test for DRAC
++dnl
++DRACLIBS=
++AC_ARG_WITH(drac, [  --with-drac=DIR         use DRAC library in <DIR> [no] ],
++	if test -d "$withval"; then
++		LDFLAGS="$LDFLAGS -L${withval}"
++		AC_CHECK_LIB(drac, dracauth,
++			AC_DEFINE(DRAC_AUTH,[],[Build DRAC support?])
++			DRACLIBS="-ldrac")
++	fi)
++AC_SUBST(DRACLIBS)
++
+ CMU_LIBWRAP
+ CMU_UCDSNMP
+ 
+Index: imap/Makefile.in
+===================================================================
+RCS file: /afs/andrew/system/cvs/src/cyrus/imap/Makefile.in,v
+retrieving revision 1.179
+diff -u -r1.179 Makefile.in
+--- imap/Makefile.in	12 Nov 2003 04:02:01 -0000	1.179
++++ imap/Makefile.in	19 Dec 2003 19:56:19 -0000
+@@ -67,6 +67,7 @@
+ SIEVE_LIBS = @SIEVE_LIBS@
+ IMAP_COM_ERR_LIBS = @IMAP_COM_ERR_LIBS@
+ LIB_WRAP = @LIB_WRAP@
++DRAC_LIBS = @DRACLIBS@
+ LIBS = $(IMAP_LIBS) $(IMAP_COM_ERR_LIBS)
+ DEPLIBS = ../lib/libcyrus.a ../lib/libcyrus_min.a @DEPLIBS@
+ 
+@@ -215,17 +216,17 @@
+ imapd: xversion $(IMAPDOBJS) mutex_fake.o libimap.a $(DEPLIBS) $(SERVICE)
+ 	$(CC) $(LDFLAGS) -o imapd \
+ 	 $(SERVICE) $(IMAPDOBJS) mutex_fake.o \
+-	libimap.a $(DEPLIBS) $(LIBS) $(LIB_WRAP)
++	libimap.a $(DEPLIBS) $(LIBS) $(LIB_WRAP) $(DRAC_LIBS)
+ 
+ imapd.pure: $(IMAPDOBJS) mutex_fake.o libimap.a $(DEPLIBS) $(SERVICE)
+ 	$(PURIFY) $(PUREOPT) $(CC) $(LDFLAGS) -o imapd.pure \
+ 	 $(SERVICE) $(IMAPDOBJS) mutex_fake.o libimap.a \
+-	$(DEPLIBS) $(LIBS) $(LIB_WRAP)
++	$(DEPLIBS) $(LIBS) $(LIB_WRAP) $(DRAC_LIBS)
+ 
+ imapd.quant: $(IMAPDOBJS) mutex_fake.o libimap.a $(DEPLIBS) $(SERVICE)
+ 	$(QUANTIFY) $(QUANTOPT) $(CC) $(LDFLAGS) -o imapd.quant \
+ 	 $(SERVICE) $(IMAPDOBJS) mutex_fake.o libimap.a \
+-	$(DEPLIBS) $(LIBS) $(LIB_WRAP)
++	$(DEPLIBS) $(LIBS) $(LIB_WRAP) $(DRAC_LIBS) $(DRAC_LIBS)
+ 
+ proxyd: $(PROXYDOBJS) mutex_fake.o libimap.a $(DEPLIBS) $(SERVICE)
+ 	$(CC) $(LDFLAGS) -o proxyd \
+@@ -252,7 +253,7 @@
+ 
+ pop3d: pop3d.o backend.o tls.o mutex_fake.o libimap.a $(DEPLIBS) $(SERVICE)
+ 	$(CC) $(LDFLAGS) -o pop3d pop3d.o backend.o tls.o $(SERVICE) \
+-	 mutex_fake.o libimap.a $(DEPLIBS) $(LIBS) $(LIB_WRAP)
++	 mutex_fake.o libimap.a $(DEPLIBS) $(LIBS) $(LIB_WRAP) $(DRAC_LIBS)
+ 
+ nntpd: nntpd.o backend.o index.o smtpclient.o spool.o tls.o \
+ 	 mutex_fake.o nntp_err.o libimap.a $(DEPLIBS) $(SERVICE)
+Index: imap/imapd.c
+===================================================================
+RCS file: /afs/andrew/system/cvs/src/cyrus/imap/imapd.c,v
+retrieving revision 1.448
+diff -u -r1.448 imapd.c
+--- imap/imapd.c	5 Dec 2003 21:33:07 -0000	1.448
++++ imap/imapd.c	19 Dec 2003 19:56:19 -0000
+@@ -126,6 +126,18 @@
+     1, 1, &imapd_authstate, &imapd_userisadmin, &imapd_userisproxyadmin
+ };
+ 
++#ifdef DRAC_AUTH
++static struct {
++    int interval;		/* dracd "ping" interval; 0 = disabled */
++    unsigned long clientaddr;
++    struct prot_waitevent *event;
++} drac;
++
++extern int dracconn(char *server, char **errmsg);
++extern int dracsend(unsigned long userip, char **errmsg);
++extern int dracdisc(char **errmsg);
++#endif /* DRAC_AUTH */
++
+ /* current sub-user state */
+ static struct mailbox mboxstruct;
+ static struct mailbox *imapd_mailbox;
+@@ -446,6 +458,23 @@
+     /* setup for sending IMAP IDLE notifications */
+     idle_enabled();
+ 
++#ifdef DRAC_AUTH
++    /* setup for sending DRAC "pings" */
++    drac.event = NULL;
++    drac.interval = config_getint(IMAPOPT_DRACINTERVAL);
++    if (drac.interval < 0) drac.interval = 0;
++    if (drac.interval) {
++	char *err;
++
++	if (dracconn((char*) config_getstring(IMAPOPT_DRACHOST), &err) != 0) {
++	    /* disable DRAC */
++	    drac.interval = 0;
++	    syslog(LOG_ERR, "dracconn: %s", err);
++	    syslog(LOG_ERR, "DRAC notifications disabled");
++	}
++    }
++#endif /* DRAC_AUTH */
++
+     /* create connection to the SNMP listener, if available. */
+     snmp_connect(); /* ignore return code */
+     snmp_set_str(SERVER_NAME_VERSION,CYRUS_VERSION);
+@@ -531,6 +560,15 @@
+ 		imapd_haveaddr = 1;
+ 	    }
+ 	}
++
++#ifdef DRAC_AUTH
++	if (((struct sockaddr *)&imapd_remoteaddr)->sa_family == AF_INET)
++	    drac.clientaddr = ((struct sockaddr_in *)&imapd_remoteaddr)->sin_addr.s_addr;
++	else
++	    drac.clientaddr = 0;
++    } else {
++	drac.clientaddr = 0;
++#endif /* DRAC_AUTH */
+     }
+ 
+     /* create the SASL connection */
+@@ -573,6 +611,11 @@
+     prot_flush(imapd_out);
+     snmp_increment(ACTIVE_CONNECTIONS, -1);
+ 
++#ifdef DRAC_AUTH
++    if (drac.event) prot_removewaitevent(imapd_in, drac.event);
++    drac.event = NULL;
++#endif /* DRAC_AUTH */
++
+     /* cleanup */
+     imapd_reset();
+ 
+@@ -646,6 +689,10 @@
+ 
+     cyrus_done();
+ 
++#ifdef DRAC_AUTH
++    if (drac.interval) (void) dracdisc((char **)NULL);
++#endif /* DRAC_AUTH */
++
+     exit(code);
+ }
+ 
+@@ -668,6 +715,35 @@
+     shut_down(code);
+ }
+ 
++#ifdef DRAC_AUTH
++/*
++ * Ping dracd every 'drac.interval' minutes
++ * to let it know that we are still connected
++ */
++struct prot_waitevent *drac_ping(struct protstream *s,
++				 struct prot_waitevent *ev, void *rock)
++{
++    char *err;
++    static int nfailure = 0;
++
++    if (dracsend(drac.clientaddr, &err) != 0) {
++	syslog(LOG_ERR, "dracsend: %s", err);
++	if (++nfailure >= 3) {
++	    /* can't contact dracd for 3 consecutive tries - disable DRAC */
++	    prot_removewaitevent(s, ev);
++	    drac.event = NULL;
++	    syslog(LOG_ERR, "DRAC notifications disabled");
++	    return NULL;
++	}
++    }
++    else
++	nfailure = 0;
++
++    ev->mark = time(NULL) + (drac.interval * 60);
++    return ev;
++}
++#endif /* DRAC_AUTH */
++
+ /*
+  * Top-level command loop parsing
+  */
+@@ -1680,6 +1756,11 @@
+ 
+     prot_printf(imapd_out, "%s OK %s\r\n", tag, reply);
+ 
++#ifdef DRAC_AUTH
++    if (drac.interval && drac.clientaddr)
++	drac.event = prot_addwaitevent(imapd_in, 0 /* now */, drac_ping, NULL);
++#endif /* DRAC_AUTH */
++
+     /* Create telemetry log */
+     imapd_logfd = telemetry_log(imapd_userid, imapd_in, imapd_out, 0);
+ 
+@@ -1803,6 +1884,11 @@
+ 
+     prot_setsasl(imapd_in,  imapd_saslconn);
+     prot_setsasl(imapd_out, imapd_saslconn);
++
++#ifdef DRAC_AUTH
++    if (drac.interval && drac.clientaddr)
++	drac.event = prot_addwaitevent(imapd_in, 0 /* now */, drac_ping, NULL);
++#endif /* DRAC_AUTH */
+ 
+     /* Create telemetry log */
+     imapd_logfd = telemetry_log(imapd_userid, imapd_in, imapd_out, 0);
+Index: imap/pop3d.c
+===================================================================
+RCS file: /afs/andrew/system/cvs/src/cyrus/imap/pop3d.c,v
+retrieving revision 1.147
+diff -u -r1.147 pop3d.c
+--- imap/pop3d.c	24 Oct 2003 18:24:07 -0000	1.147
++++ imap/pop3d.c	19 Dec 2003 19:56:19 -0000
+@@ -101,6 +101,10 @@
+ extern int opterr;
+ 
+ 
++#ifdef DRAC_AUTH
++static int drac_enabled;
++extern int dracauth(char *server, unsigned long userip, char **errmsg);
++#endif /* DRAC_AUTH */
+ 
+ #ifdef HAVE_SSL
+ static SSL *tls_conn;
+@@ -394,6 +398,10 @@
+     prot_settimeout(popd_in, timeout*60);
+     prot_setflushonread(popd_in, popd_out);
+ 
++#ifdef DRAC_AUTH
++    drac_enabled = (config_getint(IMAPOPT_DRACINTERVAL) > 0);
++#endif /* DRAC_AUTH */
++
+     if (kflag) kpop();
+ 
+     /* we were connected on pop3s port so we should do 
+@@ -1415,6 +1423,21 @@
+ 	popd_mailbox = &mboxstruct;
+ 	proc_register("pop3d", popd_clienthost, popd_userid,
+ 		      popd_mailbox->name);
++
++#ifdef DRAC_AUTH
++	if (drac_enabled &&
++	    ((struct sockaddr *)&popd_remoteaddr)->sa_family == AF_INET) {
++	    char *err;
++
++	    if (dracauth((char*) config_getstring(IMAPOPT_DRACHOST),
++			 ((struct sockaddr_in *)&popd_remoteaddr)->sin_addr.s_addr, &err) != 0) {
++		/* disable DRAC */
++		drac_enabled = 0;
++		syslog(LOG_ERR, "dracauth: %s", err);
++		syslog(LOG_ERR, "DRAC notifications disabled");
++	    }
++	}
++#endif /* DRAC_AUTH */
+     }
+ 
+     /* Create telemetry log */
+Index: imap/version.c
+===================================================================
+RCS file: /afs/andrew/system/cvs/src/cyrus/imap/version.c,v
+retrieving revision 1.15
+diff -u -r1.15 version.c
+--- imap/version.c	15 Dec 2003 20:00:41 -0000	1.15
++++ imap/version.c	19 Dec 2003 19:56:19 -0000
+@@ -145,6 +145,10 @@
+     snprintf(env_buf + strlen(env_buf), MAXIDVALUELEN - strlen(env_buf),
+ 	     "; %s", SIEVE_VERSION);
+ #endif
++#ifdef DRAC_AUTH
++    snprintf(env_buf + strlen(env_buf), MAXIDVALUELEN - strlen(env_buf),
++	     "; DRAC");
++#endif
+ #ifdef HAVE_LIBWRAP
+     snprintf(env_buf + strlen(env_buf), MAXIDVALUELEN - strlen(env_buf),
+ 	     "; TCP Wrappers");
+Index: lib/imapoptions
+===================================================================
+RCS file: /afs/andrew/system/cvs/src/cyrus/lib/imapoptions,v
+retrieving revision 1.8
+diff -u -r1.8 imapoptions
+--- lib/imapoptions	15 Dec 2003 20:00:42 -0000	1.8
++++ lib/imapoptions	19 Dec 2003 19:56:19 -0000
+@@ -195,6 +195,14 @@
+ { "deleteright", "c", STRING }
+ /* The right that a user needs to delete a mailbox. */
+ 
++{ "dracinterval", 5, INT }
++/* If nonzero, enables the use of DRAC (Dynamic Relay Authorization
++   Control) by the pop3d and imapd daemons.  Also sets the interval
++   (in minutes) between re-authorization requests made by imapd. */
++
++{ "drachost", "localhost", STRING }
++/* Hostname of the RPC dracd server. */
++
+ { "duplicate_db", "berkeley-nosync", STRINGLIST("berkeley", "berkeley-nosync", "berkeley-hash", "berkeley-hash-nosync", "skiplist")}
+ /* The cyrusdb backend to use for the duplicate delivery suppression
+    and sieve. */

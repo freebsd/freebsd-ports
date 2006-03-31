@@ -1,16 +1,16 @@
 Index: configure
 diff -u configure.orig configure
---- configure.orig	Tue Feb 15 02:59:46 2005
-+++ configure	Thu Feb 24 04:45:06 2005
-@@ -309,6 +309,7 @@
+--- configure.orig	Sat Apr  1 00:25:50 2006
++++ configure	Sat Apr  1 01:08:23 2006
+@@ -310,6 +310,7 @@
  #endif"
  
- ac_subst_vars='SHELL PATH_SEPARATOR PACKAGE_NAME PACKAGE_TARNAME PACKAGE_VERSION PACKAGE_STRING PACKAGE_BUGREPORT exec_prefix prefix program_transform_name bindir sbindir libexecdir datadir sysconfdir sharedstatedir localstatedir libdir includedir oldincludedir infodir mandir build_alias host_alias target_alias DEFS ECHO_C ECHO_N ECHO_T LIBS build build_cpu build_vendor build_os host host_cpu host_vendor host_os MAKEDEPEND cyrus_prefix service_path cyrus_user cyrus_group CC CFLAGS LDFLAGS CPPFLAGS ac_ct_CC EXEEXT OBJEXT RANLIB ac_ct_RANLIB SET_MAKE INSTALL_PROGRAM INSTALL_SCRIPT INSTALL_DATA CPP EGREP AWK LIBOBJS LIB_SOCKET IPV6_OBJS PRE_SUBDIRS EXTRA_SUBDIRS DEPLIBS LOCALDEFS WITH_AUTH BDB_INC BDB_LIB CYRUSDB_OBJS SIEVE_OBJS SIEVE_LIBS SIEVE_CPPFLAGS YACC LEX LEXLIB LEX_OUTPUT_ROOT SIEVE_SUBDIRS WITH_NONBLOCK WITH_GMTOFF WITH_MAP WITH_LOCK cyrus_sigveclib WITH_PTS AFS_LIBS AFS_LDFLAGS LDAP_CPPFLAGS LDAP_LDFLAGS LDAP_LIBS SERVER_SUBDIRS OPENSSL_INC OPENSSL_LIB ZEPHYR_LIBS ZEPHYR_CPPFLAGS WITH_IDLE IMAP_PROGS COMPILE_ET COM_ERR_LIBS COM_ERR_LDFLAGS COM_ERR_CPPFLAGS LIB_CRYPT GSSAPI_LIBS GSSAPIBASE_LIBS LIB_DYN_SASL DYNSASLFLAGS LIB_SASL SASLFLAGS PERL PERL_CCCDLFLAGS MD5OBJ SNMP_SUBDIRS LIB_WRAP SNMP_CONFIG LIB_UCDSNMP LIB_RT IMAP_COM_ERR_LIBS IMAP_LIBS PERL_SUBDIRS PERL_DEPSUBDIRS LTLIBOBJS'
+ ac_subst_vars='SHELL PATH_SEPARATOR PACKAGE_NAME PACKAGE_TARNAME PACKAGE_VERSION PACKAGE_STRING PACKAGE_BUGREPORT exec_prefix prefix program_transform_name bindir sbindir libexecdir datadir sysconfdir sharedstatedir localstatedir libdir includedir oldincludedir infodir mandir build_alias host_alias target_alias DEFS ECHO_C ECHO_N ECHO_T LIBS build build_cpu build_vendor build_os host host_cpu host_vendor host_os MAKEDEPEND cyrus_prefix service_path cyrus_user cyrus_group CC CFLAGS LDFLAGS CPPFLAGS ac_ct_CC EXEEXT OBJEXT RANLIB ac_ct_RANLIB SET_MAKE INSTALL_PROGRAM INSTALL_SCRIPT INSTALL_DATA CPP EGREP AWK LIBOBJS LIB_SOCKET IPV6_OBJS PRE_SUBDIRS EXTRA_SUBDIRS DEPLIBS LOCALDEFS BDB_INC BDB_LIB CYRUSDB_OBJS SIEVE_OBJS SIEVE_LIBS SIEVE_CPPFLAGS YACC LEX LEXLIB LEX_OUTPUT_ROOT SIEVE_SUBDIRS WITH_NONBLOCK WITH_GMTOFF WITH_MAP WITH_LOCK cyrus_sigveclib AFS_LIBS AFS_LDFLAGS LDAP_CPPFLAGS LDAP_LDFLAGS LDAP_LIBS SERVER_SUBDIRS OPENSSL_INC OPENSSL_LIB ZEPHYR_LIBS ZEPHYR_CPPFLAGS WITH_IDLE IMAP_PROGS COMPILE_ET COM_ERR_LIBS COM_ERR_LDFLAGS COM_ERR_CPPFLAGS LIB_CRYPT GSSAPI_LIBS GSSAPIBASE_LIBS LIB_DYN_SASL DYNSASLFLAGS LIB_SASL SASLFLAGS PERL PERL_CCCDLFLAGS MD5OBJ SNMP_SUBDIRS CMU_LIB_SUBDIR LIB_WRAP SNMP_CONFIG LIB_UCDSNMP LIB_RT IMAP_COM_ERR_LIBS IMAP_LIBS PERL_SUBDIRS PERL_DEPSUBDIRS LTLIBOBJS'
 +ac_subst_vars="${ac_subst_vars} LDFLAGS_UCDSNMP"
  ac_subst_files=''
  
  # Initialize some variables set by options.
-@@ -6612,7 +6613,7 @@
+@@ -7701,7 +7702,7 @@
  	fi
  
  	saved_LIBS=$LIBS
@@ -19,7 +19,7 @@ diff -u configure.orig configure
            do
  	    LIBS="$saved_LIBS -l$dbname"
  	    cat >conftest.$ac_ext <<_ACEOF
-@@ -6622,6 +6623,7 @@
+@@ -7710,6 +7711,7 @@
  cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
@@ -27,7 +27,7 @@ diff -u configure.orig configure
  #include <db.h>
  int
  main ()
-@@ -13549,6 +13551,7 @@
+@@ -15337,6 +15339,7 @@
      EXTRA_SUBDIRS="${EXTRA_SUBDIRS} perl"
      PERL_SUBDIRS="imap"
      PERL="${with_perl}"
@@ -35,7 +35,7 @@ diff -u configure.orig configure
      PERL_CCCDLFLAGS="$cccdlflags"
  
  fi
-@@ -14067,7 +14070,9 @@
+@@ -16357,7 +16360,9 @@
  
      if test -n "$SNMP_LIBS" && test -n "$SNMP_PREFIX"; then
        CPPFLAGS="$CPPFLAGS -I${SNMP_PREFIX}/include"
@@ -46,7 +46,7 @@ diff -u configure.orig configure
  
  cat >>confdefs.h <<\_ACEOF
  #define HAVE_NETSNMP 1
-@@ -14298,7 +14303,7 @@
+@@ -16606,7 +16611,7 @@
  #define HAVE_UCDSNMP 1
  _ACEOF
  
@@ -55,7 +55,7 @@ diff -u configure.orig configure
        echo "$as_me:$LINENO: checking for rpmdbOpen in -lrpm" >&5
  echo $ECHO_N "checking for rpmdbOpen in -lrpm... $ECHO_C" >&6
  if test "${ac_cv_lib_rpm_rpmdbOpen+set}" = set; then
-@@ -15114,6 +15119,7 @@
+@@ -17432,6 +17437,7 @@
  s,@LIB_WRAP@,$LIB_WRAP,;t t
  s,@SNMP_CONFIG@,$SNMP_CONFIG,;t t
  s,@LIB_UCDSNMP@,$LIB_UCDSNMP,;t t
