@@ -20,12 +20,6 @@ USE_GETOPT_LONG=	yes
 
 MAKE_ENV=	CPPFLAGS="${CPPFLAGS}" LFLAGS="${LDFLAGS}"
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700000
-BROKEN=		"Coredumps on FreeBSD >= 7.0"
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|\(/etc\)|${PREFIX}\1|' \
 		${WRKSRC}/typespeed.h
@@ -33,4 +27,4 @@ post-patch:
 post-install:
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
