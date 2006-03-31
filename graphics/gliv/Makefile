@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gliv
-PORTVERSION=	1.9.4
+PORTVERSION=	1.9.5
 CATEGORIES=	graphics
 MASTER_SITES=	http://guichaz.free.fr/gliv/
 
@@ -17,10 +17,9 @@ LIB_DEPENDS=	gtkglext-x11-1.0.2:${PORTSDIR}/x11-toolkits/gtkglext
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
+USE_GNOME=	gnomehack gnomeprefix gnometarget gtk20
 USE_GL=		yes
 USE_GETOPT_LONG=	yes
-USE_GNOME=	gnomehack gnomeprefix gnometarget gtk20
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
@@ -32,10 +31,6 @@ MANLANG=	"" de fr ru
 
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|"stdio\.h"|<getdelim.h>|g ; \
-		 s|"stdlib\.h"|<stdlib.h>|g' ${WRKSRC}/lib/getdelim.c
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/gliv.desktop \
