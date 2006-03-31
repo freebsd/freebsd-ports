@@ -49,7 +49,7 @@ CONFIGURE_ARGS+=	--enable-auth
 CONFIGURE_ARGS+=	--enable-ident
 .endif
 
-USE_GNOME=	glib12
+USE_GNOME=	glib20
 USE_RC_SUBR=	yes
 
 post-build:
