@@ -51,8 +51,8 @@ OPTIONS=	NEWTAB "Open external links in a new tab" on \
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "alpha" && ${OSVERSION} < 500035
-IGNORE=	core dumps on alpha during post-build
+.if ${OSVERSION} < 500000
+BROKEN=	does not build
 .endif
 
 .if ${OSVERSION} >= 600000
