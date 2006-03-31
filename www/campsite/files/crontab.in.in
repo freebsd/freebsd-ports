@@ -1,14 +1,14 @@
 
 #Campsite job sending expiration message to subscribers
-0 */8 * * * %%PREFIX%%/campsite/sbin/notifyendsubs
+0 */8 * * * %%PREFIX%%/campsite/sbin/capsite_notifyendsubs
 
 # Campsite job takes care about notifying editors/authors about changes
 # of their articles
-*/2 * * * * %%PREFIX%%/campsite/sbin/notifyevents
+*/2 * * * * %%PREFIX%%/campsite/sbin/campsite_notifyevents
 
 # Campsite job indexing database of articles.
 # it is used for both, search in site and in admin interface
-0 */4 * * * %%PREFIX%%/campsite/sbin/gather
+0 */4 * * * %%PREFIX%%/campsite/sbin/campsite_indexer
 
 # Campsite job takes care about scheduled publishing of articles
-* * * * * %%PREFIX%%/campsite/sbin/autopublish
+* * * * * %%PREFIX%%/campsite/sbin/campsite_autopublish

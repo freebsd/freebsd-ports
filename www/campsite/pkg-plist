@@ -28,6 +28,9 @@ campsite/instance/database/upgrade/2.2.x/tables.sql
 campsite/instance/database/upgrade/2.2.x/update_article_types.php
 campsite/instance/database/upgrade/2.3.x/tables.sql
 campsite/instance/database/upgrade/2.3.x/upgrade_user_perms.php
+campsite/instance/database/upgrade/2.4.x/create_idimage_index.php
+campsite/instance/database/upgrade/2.4.x/tables.sql
+campsite/instance/database/upgrade/2.4.x/upgrade_user_perms.php
 campsite/sbin/campsite_autopublish
 campsite/sbin/campsite_autopublish.php
 campsite/sbin/campsite_config
@@ -71,6 +74,7 @@ campsite/www-common/html/classes/SimplePager.php
 campsite/www-common/html/classes/Subscription.php
 campsite/www-common/html/classes/SubscriptionDefaultTime.php
 campsite/www-common/html/classes/SubscriptionSection.php
+campsite/www-common/html/classes/SystemPref.php
 campsite/www-common/html/classes/Template.php
 campsite/www-common/html/classes/TimeUnit.php
 campsite/www-common/html/classes/Topic.php
@@ -88,6 +92,7 @@ campsite/www-common/html/css/add_article_type.png
 campsite/www-common/html/css/add_country.png
 campsite/www-common/html/css/add_language.png
 campsite/www-common/html/css/add_publication.png
+campsite/www-common/html/css/add_subtopic.png
 campsite/www-common/html/css/add_topic_to_article.png
 campsite/www-common/html/css/add_user.png
 campsite/www-common/html/css/add_user_type.png
@@ -133,6 +138,7 @@ campsite/www-common/html/css/lock.png
 campsite/www-common/html/css/logout.png
 campsite/www-common/html/css/logs.png
 campsite/www-common/html/css/obsolete.png
+campsite/www-common/html/css/preferences.png
 campsite/www-common/html/css/preview-16x16.png
 campsite/www-common/html/css/preview.png
 campsite/www-common/html/css/publication.png
@@ -167,9 +173,6 @@ campsite/www-common/html/css/viewmag+.png
 campsite/www-common/html/css/viewmag-.png
 campsite/www-common/html/css/x.gif
 campsite/www-common/html/db_connect.php
-campsite/www-common/html/include/XML_Serializer/Serializer.php
-campsite/www-common/html/include/XML_Serializer/Unserializer.php
-campsite/www-common/html/include/XML_Serializer/VERSION.txt
 campsite/www-common/html/include/adodb/VERSION.txt
 campsite/www-common/html/include/adodb/adodb-csvlib.inc.php
 campsite/www-common/html/include/adodb/adodb-datadict.inc.php
@@ -341,6 +344,114 @@ campsite/www-common/html/include/adodb/xmlschema.dtd
 campsite/www-common/html/include/adodb/xsl/convert-0.1-0.2.xsl
 campsite/www-common/html/include/adodb/xsl/convert-0.2-0.1.xsl
 campsite/www-common/html/include/adodb/xsl/remove-0.2.xsl
+campsite/www-common/html/include/pear/Archive/Tar.php
+campsite/www-common/html/include/pear/Console/Getopt.php
+campsite/www-common/html/include/pear/File.php
+campsite/www-common/html/include/pear/File/CSV.php
+campsite/www-common/html/include/pear/File/Find.php
+campsite/www-common/html/include/pear/File/Util.php
+campsite/www-common/html/include/pear/HTTP/Client.php
+campsite/www-common/html/include/pear/HTTP/Client/CookieManager.php
+campsite/www-common/html/include/pear/HTTP/Request.php
+campsite/www-common/html/include/pear/HTTP/Request/Listener.php
+campsite/www-common/html/include/pear/Net/Socket.php
+campsite/www-common/html/include/pear/Net/URL.php
+campsite/www-common/html/include/pear/OS/Guess.php
+campsite/www-common/html/include/pear/PEAR.php
+campsite/www-common/html/include/pear/PEAR/Autoloader.php
+campsite/www-common/html/include/pear/PEAR/Builder.php
+campsite/www-common/html/include/pear/PEAR/ChannelFile.php
+campsite/www-common/html/include/pear/PEAR/ChannelFile/Parser.php
+campsite/www-common/html/include/pear/PEAR/Command.php
+campsite/www-common/html/include/pear/PEAR/Command/Auth.php
+campsite/www-common/html/include/pear/PEAR/Command/Auth.xml
+campsite/www-common/html/include/pear/PEAR/Command/Build.php
+campsite/www-common/html/include/pear/PEAR/Command/Build.xml
+campsite/www-common/html/include/pear/PEAR/Command/Channels.php
+campsite/www-common/html/include/pear/PEAR/Command/Channels.xml
+campsite/www-common/html/include/pear/PEAR/Command/Common.php
+campsite/www-common/html/include/pear/PEAR/Command/Config.php
+campsite/www-common/html/include/pear/PEAR/Command/Config.xml
+campsite/www-common/html/include/pear/PEAR/Command/Install.php
+campsite/www-common/html/include/pear/PEAR/Command/Install.xml
+campsite/www-common/html/include/pear/PEAR/Command/Mirror.php
+campsite/www-common/html/include/pear/PEAR/Command/Mirror.xml
+campsite/www-common/html/include/pear/PEAR/Command/Package.php
+campsite/www-common/html/include/pear/PEAR/Command/Package.xml
+campsite/www-common/html/include/pear/PEAR/Command/Pickle.php
+campsite/www-common/html/include/pear/PEAR/Command/Pickle.xml
+campsite/www-common/html/include/pear/PEAR/Command/Registry.php
+campsite/www-common/html/include/pear/PEAR/Command/Registry.xml
+campsite/www-common/html/include/pear/PEAR/Command/Remote.php
+campsite/www-common/html/include/pear/PEAR/Command/Remote.xml
+campsite/www-common/html/include/pear/PEAR/Command/Test.php
+campsite/www-common/html/include/pear/PEAR/Command/Test.xml
+campsite/www-common/html/include/pear/PEAR/Common.php
+campsite/www-common/html/include/pear/PEAR/Config.php
+campsite/www-common/html/include/pear/PEAR/Dependency.php
+campsite/www-common/html/include/pear/PEAR/Dependency2.php
+campsite/www-common/html/include/pear/PEAR/DependencyDB.php
+campsite/www-common/html/include/pear/PEAR/Downloader.php
+campsite/www-common/html/include/pear/PEAR/Downloader/Package.php
+campsite/www-common/html/include/pear/PEAR/ErrorStack.php
+campsite/www-common/html/include/pear/PEAR/Exception.php
+campsite/www-common/html/include/pear/PEAR/Frontend.php
+campsite/www-common/html/include/pear/PEAR/Frontend/CLI.php
+campsite/www-common/html/include/pear/PEAR/Installer.php
+campsite/www-common/html/include/pear/PEAR/Installer/Role.php
+campsite/www-common/html/include/pear/PEAR/Installer/Role/Common.php
+campsite/www-common/html/include/pear/PEAR/Installer/Role/Data.php
+campsite/www-common/html/include/pear/PEAR/Installer/Role/Data.xml
+campsite/www-common/html/include/pear/PEAR/Installer/Role/Doc.php
+campsite/www-common/html/include/pear/PEAR/Installer/Role/Doc.xml
+campsite/www-common/html/include/pear/PEAR/Installer/Role/Ext.php
+campsite/www-common/html/include/pear/PEAR/Installer/Role/Ext.xml
+campsite/www-common/html/include/pear/PEAR/Installer/Role/Php.php
+campsite/www-common/html/include/pear/PEAR/Installer/Role/Php.xml
+campsite/www-common/html/include/pear/PEAR/Installer/Role/Script.php
+campsite/www-common/html/include/pear/PEAR/Installer/Role/Script.xml
+campsite/www-common/html/include/pear/PEAR/Installer/Role/Src.php
+campsite/www-common/html/include/pear/PEAR/Installer/Role/Src.xml
+campsite/www-common/html/include/pear/PEAR/Installer/Role/Test.php
+campsite/www-common/html/include/pear/PEAR/Installer/Role/Test.xml
+campsite/www-common/html/include/pear/PEAR/PackageFile.php
+campsite/www-common/html/include/pear/PEAR/PackageFile/Generator/v1.php
+campsite/www-common/html/include/pear/PEAR/PackageFile/Generator/v2.php
+campsite/www-common/html/include/pear/PEAR/PackageFile/Parser/v1.php
+campsite/www-common/html/include/pear/PEAR/PackageFile/Parser/v2.php
+campsite/www-common/html/include/pear/PEAR/PackageFile/v1.php
+campsite/www-common/html/include/pear/PEAR/PackageFile/v2.php
+campsite/www-common/html/include/pear/PEAR/PackageFile/v2/Validator.php
+campsite/www-common/html/include/pear/PEAR/PackageFile/v2/rw.php
+campsite/www-common/html/include/pear/PEAR/Packager.php
+campsite/www-common/html/include/pear/PEAR/REST.php
+campsite/www-common/html/include/pear/PEAR/REST/10.php
+campsite/www-common/html/include/pear/PEAR/REST/11.php
+campsite/www-common/html/include/pear/PEAR/Registry.php
+campsite/www-common/html/include/pear/PEAR/Remote.php
+campsite/www-common/html/include/pear/PEAR/RunTest.php
+campsite/www-common/html/include/pear/PEAR/Task/Common.php
+campsite/www-common/html/include/pear/PEAR/Task/Postinstallscript.php
+campsite/www-common/html/include/pear/PEAR/Task/Postinstallscript/rw.php
+campsite/www-common/html/include/pear/PEAR/Task/Replace.php
+campsite/www-common/html/include/pear/PEAR/Task/Replace/rw.php
+campsite/www-common/html/include/pear/PEAR/Task/Unixeol.php
+campsite/www-common/html/include/pear/PEAR/Task/Unixeol/rw.php
+campsite/www-common/html/include/pear/PEAR/Task/Windowseol.php
+campsite/www-common/html/include/pear/PEAR/Task/Windowseol/rw.php
+campsite/www-common/html/include/pear/PEAR/Validate.php
+campsite/www-common/html/include/pear/PEAR/Validator/PECL.php
+campsite/www-common/html/include/pear/PEAR/XMLParser.php
+campsite/www-common/html/include/pear/System.php
+campsite/www-common/html/include/pear/XML/Parser.php
+campsite/www-common/html/include/pear/XML/Parser/Simple.php
+campsite/www-common/html/include/pear/XML/RPC.php
+campsite/www-common/html/include/pear/XML/RPC/Dump.php
+campsite/www-common/html/include/pear/XML/RPC/Server.php
+campsite/www-common/html/include/pear/XML/Serializer/Serializer.php
+campsite/www-common/html/include/pear/XML/Serializer/Unserializer.php
+campsite/www-common/html/include/pear/XML/Util.php
+campsite/www-common/html/include/pear/versions.txt
 campsite/www-common/html/include/smarty/BUGS
 campsite/www-common/html/include/smarty/COPYING.lib
 campsite/www-common/html/include/smarty/ChangeLog
@@ -444,6 +555,7 @@ campsite/www-common/html/javascript/JSCookMenu/ThemeOffice/spacer.gif
 campsite/www-common/html/javascript/JSCookMenu/ThemeOffice/theme.css
 campsite/www-common/html/javascript/JSCookMenu/ThemeOffice/theme.js
 campsite/www-common/html/javascript/JSCookMenu/ThemeOffice/vertical_bar.gif
+campsite/www-common/html/javascript/campsite.js
 campsite/www-common/html/javascript/fValidate/fValidate.basic.js
 campsite/www-common/html/javascript/fValidate/fValidate.config.js
 campsite/www-common/html/javascript/fValidate/fValidate.controls.js
@@ -522,9 +634,11 @@ campsite/www-common/html/javascript/jscalendar/lang/calendar-pt.js
 campsite/www-common/html/javascript/jscalendar/lang/calendar-ro.js
 campsite/www-common/html/javascript/jscalendar/lang/calendar-ru.js
 campsite/www-common/html/javascript/jscalendar/lang/calendar-ru_win_.js
+campsite/www-common/html/javascript/jscalendar/lang/calendar-sh.js
 campsite/www-common/html/javascript/jscalendar/lang/calendar-si.js
 campsite/www-common/html/javascript/jscalendar/lang/calendar-sk.js
 campsite/www-common/html/javascript/jscalendar/lang/calendar-sp.js
+campsite/www-common/html/javascript/jscalendar/lang/calendar-sr.js
 campsite/www-common/html/javascript/jscalendar/lang/calendar-sv.js
 campsite/www-common/html/javascript/jscalendar/lang/calendar-tr.js
 campsite/www-common/html/javascript/jscalendar/lang/calendar-zh.js
@@ -657,10 +771,10 @@ campsite/www-common/html/javascript/xinha/lang/pl.js
 campsite/www-common/html/javascript/xinha/lang/pt_br.js
 campsite/www-common/html/javascript/xinha/lang/ro.js
 campsite/www-common/html/javascript/xinha/lang/ru.js
-campsite/www-common/html/javascript/xinha/lang/se.js
 campsite/www-common/html/javascript/xinha/lang/sh.js
 campsite/www-common/html/javascript/xinha/lang/si.js
 campsite/www-common/html/javascript/xinha/lang/sr.js
+campsite/www-common/html/javascript/xinha/lang/sv.js
 campsite/www-common/html/javascript/xinha/lang/vn.js
 campsite/www-common/html/javascript/xinha/license.txt
 campsite/www-common/html/javascript/xinha/panel-dialog.js
@@ -690,6 +804,7 @@ campsite/www-common/html/javascript/xinha/plugins/BackgroundImage/popups/bgimage
 campsite/www-common/html/javascript/xinha/plugins/CSS/css.js
 campsite/www-common/html/javascript/xinha/plugins/Campsite/lang/ar.js
 campsite/www-common/html/javascript/xinha/plugins/Campsite/lang/ru.js
+campsite/www-common/html/javascript/xinha/plugins/Campsite/lang/sv.js
 campsite/www-common/html/javascript/xinha/plugins/CharCounter/char-counter.js
 campsite/www-common/html/javascript/xinha/plugins/CharCounter/lang/de.js
 campsite/www-common/html/javascript/xinha/plugins/CharCounter/lang/fr.js
@@ -703,6 +818,7 @@ campsite/www-common/html/javascript/xinha/plugins/CharacterMap/lang/it.js
 campsite/www-common/html/javascript/xinha/plugins/CharacterMap/lang/nl.js
 campsite/www-common/html/javascript/xinha/plugins/CharacterMap/lang/no.js
 campsite/www-common/html/javascript/xinha/plugins/CharacterMap/lang/ru.js
+campsite/www-common/html/javascript/xinha/plugins/CharacterMap/lang/sv.js
 campsite/www-common/html/javascript/xinha/plugins/CharacterMap/popups/select_character.html
 campsite/www-common/html/javascript/xinha/plugins/ClientsideSpellcheck/clientside-spellcheck.js
 campsite/www-common/html/javascript/xinha/plugins/ClientsideSpellcheck/img/clientside-spellcheck.gif
@@ -765,6 +881,7 @@ campsite/www-common/html/javascript/xinha/plugins/FindReplace/lang/no.js
 campsite/www-common/html/javascript/xinha/plugins/FindReplace/lang/pl.js
 campsite/www-common/html/javascript/xinha/plugins/FindReplace/lang/pt_br.js
 campsite/www-common/html/javascript/xinha/plugins/FindReplace/lang/ru.js
+campsite/www-common/html/javascript/xinha/plugins/FindReplace/lang/sv.js
 campsite/www-common/html/javascript/xinha/plugins/FindReplace/popups/find_replace.html
 campsite/www-common/html/javascript/xinha/plugins/FormOperations/README
 campsite/www-common/html/javascript/xinha/plugins/FormOperations/default_form.html
@@ -816,6 +933,7 @@ campsite/www-common/html/javascript/xinha/plugins/FullScreen/lang/fr.js
 campsite/www-common/html/javascript/xinha/plugins/FullScreen/lang/no.js
 campsite/www-common/html/javascript/xinha/plugins/FullScreen/lang/pl.js
 campsite/www-common/html/javascript/xinha/plugins/FullScreen/lang/ru.js
+campsite/www-common/html/javascript/xinha/plugins/FullScreen/lang/sv.js
 campsite/www-common/html/javascript/xinha/plugins/GetHtml/get-html.js
 campsite/www-common/html/javascript/xinha/plugins/HorizontalRule/horizontal-rule.js
 campsite/www-common/html/javascript/xinha/plugins/HorizontalRule/lang/de.js
@@ -963,6 +1081,7 @@ campsite/www-common/html/javascript/xinha/plugins/ImageManager/lang/fr.js
 campsite/www-common/html/javascript/xinha/plugins/ImageManager/lang/no.js
 campsite/www-common/html/javascript/xinha/plugins/ImageManager/lang/pl.js
 campsite/www-common/html/javascript/xinha/plugins/ImageManager/lang/ru.js
+campsite/www-common/html/javascript/xinha/plugins/ImageManager/lang/sv.js
 campsite/www-common/html/javascript/xinha/plugins/ImageManager/manager.php
 campsite/www-common/html/javascript/xinha/plugins/ImageManager/newFolder.html
 campsite/www-common/html/javascript/xinha/plugins/ImageManager/resizer.php
@@ -1648,6 +1767,7 @@ campsite/www-common/html/javascript/xinha/plugins/ListType/lang/pl.js
 campsite/www-common/html/javascript/xinha/plugins/ListType/lang/ru.js
 campsite/www-common/html/javascript/xinha/plugins/ListType/lang/sh.js
 campsite/www-common/html/javascript/xinha/plugins/ListType/lang/sr.js
+campsite/www-common/html/javascript/xinha/plugins/ListType/lang/sv.js
 campsite/www-common/html/javascript/xinha/plugins/ListType/list-type.js
 campsite/www-common/html/javascript/xinha/plugins/NoteServer/img/note.gif
 campsite/www-common/html/javascript/xinha/plugins/NoteServer/lang/de.js
@@ -1742,6 +1862,7 @@ campsite/www-common/html/javascript/xinha/plugins/TableOperations/lang/ro.js
 campsite/www-common/html/javascript/xinha/plugins/TableOperations/lang/ru.js
 campsite/www-common/html/javascript/xinha/plugins/TableOperations/lang/sh.js
 campsite/www-common/html/javascript/xinha/plugins/TableOperations/lang/sr.js
+campsite/www-common/html/javascript/xinha/plugins/TableOperations/lang/sv.js
 campsite/www-common/html/javascript/xinha/plugins/TableOperations/table-operations.js
 campsite/www-common/html/javascript/xinha/plugins/Template/img/ed_template.gif
 campsite/www-common/html/javascript/xinha/plugins/Template/img/layout_01.gif
@@ -1840,6 +1961,7 @@ campsite/www-common/html/priv/article_types/fields/do_del.php
 campsite/www-common/html/priv/article_types/fields/index.php
 campsite/www-common/html/priv/article_types/index.php
 campsite/www-common/html/priv/articles/add.php
+campsite/www-common/html/priv/articles/add_move.php
 campsite/www-common/html/priv/articles/article_common.php
 campsite/www-common/html/priv/articles/article_stylesheet.css
 campsite/www-common/html/priv/articles/autopublish.php
@@ -1850,7 +1972,7 @@ campsite/www-common/html/priv/articles/do_article_action.php
 campsite/www-common/html/priv/articles/do_article_list_action.php
 campsite/www-common/html/priv/articles/do_del.php
 campsite/www-common/html/priv/articles/do_edit.php
-campsite/www-common/html/priv/articles/do_move.php
+campsite/www-common/html/priv/articles/do_position.php
 campsite/www-common/html/priv/articles/do_translate.php
 campsite/www-common/html/priv/articles/do_unlock.php
 campsite/www-common/html/priv/articles/duplicate.php
@@ -1898,7 +2020,7 @@ campsite/www-common/html/priv/imagearchive/do_edit.php
 campsite/www-common/html/priv/imagearchive/edit.php
 campsite/www-common/html/priv/imagearchive/index.php
 campsite/www-common/html/priv/index.php
-campsite/www-common/html/priv/issues/add_article.php
+campsite/www-common/html/priv/init_content.php
 campsite/www-common/html/priv/issues/add_new.php
 campsite/www-common/html/priv/issues/add_prev.php
 campsite/www-common/html/priv/issues/autopublish.php
@@ -2217,6 +2339,29 @@ campsite/www-common/html/priv/lang/sr/user_subscription_sections.php
 campsite/www-common/html/priv/lang/sr/user_subscriptions.php
 campsite/www-common/html/priv/lang/sr/user_types.php
 campsite/www-common/html/priv/lang/sr/users.php
+campsite/www-common/html/priv/lang/sv/api.php
+campsite/www-common/html/priv/lang/sv/article_files.php
+campsite/www-common/html/priv/lang/sv/article_images.php
+campsite/www-common/html/priv/lang/sv/article_topics.php
+campsite/www-common/html/priv/lang/sv/article_type_fields.php
+campsite/www-common/html/priv/lang/sv/article_types.php
+campsite/www-common/html/priv/lang/sv/articles.php
+campsite/www-common/html/priv/lang/sv/country.php
+campsite/www-common/html/priv/lang/sv/globals.php
+campsite/www-common/html/priv/lang/sv/home.php
+campsite/www-common/html/priv/lang/sv/imagearchive.php
+campsite/www-common/html/priv/lang/sv/issues.php
+campsite/www-common/html/priv/lang/sv/languages.php
+campsite/www-common/html/priv/lang/sv/localizer.php
+campsite/www-common/html/priv/lang/sv/logs.php
+campsite/www-common/html/priv/lang/sv/pub.php
+campsite/www-common/html/priv/lang/sv/sections.php
+campsite/www-common/html/priv/lang/sv/templates.php
+campsite/www-common/html/priv/lang/sv/topics.php
+campsite/www-common/html/priv/lang/sv/user_subscription_sections.php
+campsite/www-common/html/priv/lang/sv/user_subscriptions.php
+campsite/www-common/html/priv/lang/sv/user_types.php
+campsite/www-common/html/priv/lang/sv/users.php
 campsite/www-common/html/priv/lang/zh/api.php
 campsite/www-common/html/priv/lang/zh/article_files.php
 campsite/www-common/html/priv/lang/zh/article_images.php
@@ -2267,7 +2412,6 @@ campsite/www-common/html/priv/logs/index.php
 campsite/www-common/html/priv/menu.php
 campsite/www-common/html/priv/pub/add.php
 campsite/www-common/html/priv/pub/add_alias.php
-campsite/www-common/html/priv/pub/add_article.php
 campsite/www-common/html/priv/pub/aliases.php
 campsite/www-common/html/priv/pub/countryadd.php
 campsite/www-common/html/priv/pub/deftime.php
@@ -2286,16 +2430,18 @@ campsite/www-common/html/priv/pub/editdeftime.php
 campsite/www-common/html/priv/pub/index.php
 campsite/www-common/html/priv/pub/pub_common.php
 campsite/www-common/html/priv/sections/add.php
-campsite/www-common/html/priv/sections/add_article.php
 campsite/www-common/html/priv/sections/del.php
 campsite/www-common/html/priv/sections/do_add.php
 campsite/www-common/html/priv/sections/do_del.php
 campsite/www-common/html/priv/sections/do_duplicate.php
 campsite/www-common/html/priv/sections/do_edit.php
 campsite/www-common/html/priv/sections/duplicate.php
+campsite/www-common/html/priv/sections/duplicate_complete.php
 campsite/www-common/html/priv/sections/edit.php
 campsite/www-common/html/priv/sections/index.php
 campsite/www-common/html/priv/sections/section_common.php
+campsite/www-common/html/priv/system_pref/do_edit.php
+campsite/www-common/html/priv/system_pref/index.php
 campsite/www-common/html/priv/templates/do_del.php
 campsite/www-common/html/priv/templates/do_dup.php
 campsite/www-common/html/priv/templates/do_edit.php
@@ -2310,7 +2456,6 @@ campsite/www-common/html/priv/templates/new_dir.php
 campsite/www-common/html/priv/templates/new_template.php
 campsite/www-common/html/priv/templates/template_common.php
 campsite/www-common/html/priv/templates/upload_templ.php
-campsite/www-common/html/priv/topics/add.php
 campsite/www-common/html/priv/topics/do_add.php
 campsite/www-common/html/priv/topics/do_del.php
 campsite/www-common/html/priv/topics/do_edit.php
@@ -2356,12 +2501,14 @@ campsite/www-common/html/priv/users/users_common.php
 @dirrm campsite/www-common/html/priv/user_types
 @dirrm campsite/www-common/html/priv/topics
 @dirrm campsite/www-common/html/priv/templates
+@dirrm campsite/www-common/html/priv/system_pref
 @dirrm campsite/www-common/html/priv/sections
 @dirrm campsite/www-common/html/priv/pub
 @dirrm campsite/www-common/html/priv/logs
 @dirrm campsite/www-common/html/priv/localizer
 @dirrm campsite/www-common/html/priv/languages
 @dirrm campsite/www-common/html/priv/lang/zh
+@dirrm campsite/www-common/html/priv/lang/sv
 @dirrm campsite/www-common/html/priv/lang/sr
 @dirrm campsite/www-common/html/priv/lang/sh
 @dirrm campsite/www-common/html/priv/lang/ru
@@ -2568,6 +2715,37 @@ campsite/www-common/html/priv/users/users_common.php
 @dirrm campsite/www-common/html/include/smarty/libs/internals
 @dirrm campsite/www-common/html/include/smarty/libs
 @dirrm campsite/www-common/html/include/smarty
+@dirrm campsite/www-common/html/include/pear/XML/Serializer
+@dirrm campsite/www-common/html/include/pear/XML/RPC
+@dirrm campsite/www-common/html/include/pear/XML/Parser
+@dirrm campsite/www-common/html/include/pear/XML
+@dirrm campsite/www-common/html/include/pear/PEAR/Validator
+@dirrm campsite/www-common/html/include/pear/PEAR/Task/Windowseol
+@dirrm campsite/www-common/html/include/pear/PEAR/Task/Unixeol
+@dirrm campsite/www-common/html/include/pear/PEAR/Task/Replace
+@dirrm campsite/www-common/html/include/pear/PEAR/Task/Postinstallscript
+@dirrm campsite/www-common/html/include/pear/PEAR/Task
+@dirrm campsite/www-common/html/include/pear/PEAR/REST
+@dirrm campsite/www-common/html/include/pear/PEAR/PackageFile/v2
+@dirrm campsite/www-common/html/include/pear/PEAR/PackageFile/Parser
+@dirrm campsite/www-common/html/include/pear/PEAR/PackageFile/Generator
+@dirrm campsite/www-common/html/include/pear/PEAR/PackageFile
+@dirrm campsite/www-common/html/include/pear/PEAR/Installer/Role
+@dirrm campsite/www-common/html/include/pear/PEAR/Installer
+@dirrm campsite/www-common/html/include/pear/PEAR/Frontend
+@dirrm campsite/www-common/html/include/pear/PEAR/Downloader
+@dirrm campsite/www-common/html/include/pear/PEAR/Command
+@dirrm campsite/www-common/html/include/pear/PEAR/ChannelFile
+@dirrm campsite/www-common/html/include/pear/PEAR
+@dirrm campsite/www-common/html/include/pear/OS
+@dirrm campsite/www-common/html/include/pear/Net
+@dirrm campsite/www-common/html/include/pear/HTTP/Request
+@dirrm campsite/www-common/html/include/pear/HTTP/Client
+@dirrm campsite/www-common/html/include/pear/HTTP
+@dirrm campsite/www-common/html/include/pear/File
+@dirrm campsite/www-common/html/include/pear/Console
+@dirrm campsite/www-common/html/include/pear/Archive
+@dirrm campsite/www-common/html/include/pear
 @dirrm campsite/www-common/html/include/adodb/xsl
 @dirrm campsite/www-common/html/include/adodb/tests
 @dirrm campsite/www-common/html/include/adodb/session/old
@@ -2582,7 +2760,6 @@ campsite/www-common/html/priv/users/users_common.php
 @dirrm campsite/www-common/html/include/adodb/datadict
 @dirrm campsite/www-common/html/include/adodb/contrib
 @dirrm campsite/www-common/html/include/adodb
-@dirrm campsite/www-common/html/include/XML_Serializer
 @dirrm campsite/www-common/html/include
 @dirrm campsite/www-common/html/css
 @dirrm campsite/www-common/html/classes
@@ -2591,6 +2768,7 @@ campsite/www-common/html/priv/users/users_common.php
 @dirrm campsite/www-common
 @dirrm campsite/www
 @dirrm campsite/sbin
+@dirrm campsite/instance/database/upgrade/2.4.x
 @dirrm campsite/instance/database/upgrade/2.3.x
 @dirrm campsite/instance/database/upgrade/2.2.x
 @dirrm campsite/instance/database/upgrade/2.1.x

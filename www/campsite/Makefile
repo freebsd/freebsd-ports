@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	campsite
-PORTVERSION=	2.4.1
+PORTVERSION=	2.5.0
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -41,14 +41,12 @@ CONFIGURE_ARGS=	--apache_user www --apache_group www --prefix ${PREFIX}
 
 USE_GMAKE=	yes
 
-USE_REINPLACE=	yes
-
 SUB_FILES=	pkg-message pkg-install pkg-deinstall crontab.in
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-BROKEN=		"does not compile"
+BROKEN=		does not compile
 .endif
 
 post-patch:
