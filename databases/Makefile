@@ -102,7 +102,6 @@
     SUBDIR += linux-oracle-instantclient-sqlplus
     SUBDIR += lsdb
     SUBDIR += lsdb-emacs20
-    SUBDIR += mantis
     SUBDIR += mdbtools
     SUBDIR += memcached
     SUBDIR += mergeant
