@@ -20,7 +20,6 @@ COMMENT=	Ruby binding for GLib2
 
 USE_RUBY=	yes
 USE_GNOME=	glib20
-USE_REINPLACE=	yes
 USE_RUBY_EXTCONF=	yes
 
 .include "${.CURDIR}/../../x11/ruby-gnome2/Makefile.common"
