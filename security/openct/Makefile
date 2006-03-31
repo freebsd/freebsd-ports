@@ -9,8 +9,7 @@ PORTNAME=	openct
 PORTVERSION=	0.6.6
 PORTREVISION=	1
 CATEGORIES=	security
-MASTER_SITES=	http://www.opensc.org/files/ \
-		http://www.opensc.org/files/old/
+MASTER_SITES=	http://www.opensc-project.org/files/openct/
 
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	A middleware framework for smart card terminals
