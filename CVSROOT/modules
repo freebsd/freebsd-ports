@@ -2339,6 +2339,9 @@ festvox-pc	ports/audio/festvox-pc
 festvox-rab16	ports/audio/festvox-rab16
 festvox-rab8	ports/audio/festvox-rab8
 festvox-tll	ports/audio/festvox-tll
+festvox-us1-mbrola	ports/audio/festvox-us1-mbrola
+festvox-us2-mbrola	ports/audio/festvox-us2-mbrola
+festvox-us3-mbrola	ports/audio/festvox-us3-mbrola
 fetchlog	ports/sysutils/fetchlog
 fetchmail	ports/mail/fetchmail
 fetchyahoo	ports/mail/fetchyahoo
