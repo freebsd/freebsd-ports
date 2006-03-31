@@ -177,6 +177,12 @@ bin/ctest
 %%DATADIR%%/Modules/Platform/Xenix.cmake
 %%DATADIR%%/Modules/Platform/g77.cmake
 %%DATADIR%%/Modules/Platform/gcc.cmake
+%%DATADIR%%/Modules/Platform/Linux-icpc.cmake
+%%DATADIR%%/Modules/Platform/UnixPaths.cmake
+%%DATADIR%%/Modules/Platform/Windows-g++.cmake
+%%DATADIR%%/Modules/Platform/Windows-wcl386.cmake
+%%DATADIR%%/Modules/Platform/WindowsPaths.cmake
+%%DATADIR%%/Modules/Platform/kFreeBSD.cmake
 %%DATADIR%%/Modules/TestBigEndian.c
 %%DATADIR%%/Modules/TestBigEndian.cmake
 %%DATADIR%%/Modules/TestCXXAcceptsFlag.cmake
@@ -195,6 +201,23 @@ bin/ctest
 %%DATADIR%%/Modules/UsewxWidgets.cmake
 %%DATADIR%%/Modules/VTKCompatibility.cmake
 %%DATADIR%%/Modules/readme.txt
+%%DATADIR%%/Modules/CMakeConfigurableFile.in
+%%DATADIR%%/Modules/CMakeFindWMake.cmake
+%%DATADIR%%/Modules/CMakeMSYSFindMake.cmake
+%%DATADIR%%/Modules/CMakeMinGWFindMake.cmake
+%%DATADIR%%/Modules/CPack.Description.plist.in
+%%DATADIR%%/Modules/CPack.Info.plist.in
+%%DATADIR%%/Modules/CPack.cmake
+%%DATADIR%%/Modules/FindKDE3.cmake
+%%DATADIR%%/Modules/FindKDE4.cmake
+%%DATADIR%%/Modules/InstallRequiredSystemLibraries.cmake
+%%DATADIR%%/Modules/KDE3Macros.cmake
+%%DATADIR%%/Modules/NSIS.template.in
+%%DATADIR%%/Modules/TestForSSTREAM.cmake
+%%DATADIR%%/Modules/TestForSSTREAM.cxx
+%%DATADIR%%/Modules/UsePkgConfig.cmake
+%%DATADIR%%/Modules/kde3init_dummy.cpp.in
+%%DATADIR%%/Modules/kde3uic.cmake
 %%DATADIR%%/Templates/CMakeVisualStudio6Configurations.cmake
 %%DATADIR%%/Templates/CMakeWindowsSystemConfig.cmake
 %%DATADIR%%/Templates/DLLFooter.dsptemplate
@@ -207,6 +230,11 @@ bin/ctest
 %%DATADIR%%/Templates/UtilityHeader.dsptemplate
 %%DATADIR%%/Templates/staticLibFooter.dsptemplate
 %%DATADIR%%/Templates/staticLibHeader.dsptemplate
+%%DATADIR%%/Templates/CMakeLists.txt
+%%DATADIR%%/Templates/CPack.GenericDescription.txt
+%%DATADIR%%/Templates/CPack.GenericLicense.txt
+%%DATADIR%%/Templates/CPack.GenericWelcome.txt
+%%DATADIR%%/Templates/CPackConfig.cmake.in
 %%DATADIR%%/include/cmCPluginAPI.h
 @dirrm %%DATADIR%%/include
 @dirrm %%DATADIR%%/Templates

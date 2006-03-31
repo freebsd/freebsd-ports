@@ -6,18 +6,21 @@
 #
 
 PORTNAME=	cmake
-PORTVERSION=	2.2.3
+PORTVERSION=	2.3.4
 CATEGORIES=	devel
-MASTER_SITES=	http://www.cmake.org/files/v${PORTVERSION:C/\.[[:digit:]]+$//}/
+MASTER_SITES=	http://www.cmake.org/files/v${PORTVERSION:C/\.[[:digit:]]+$//}/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=lofi
+DISTNAME=	${PORTNAME}-${PORTVERSION}-20060317
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	kde@FreeBSD.org
 COMMENT=	A cross-platform make
 
-USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--datadir=${DATADIR:S|^${PREFIX}||} \
 		--docdir=${DOCSDIR:S|^${PREFIX}||}
+CONFIGURE_ENV=	MAKE=make
 
 MAN1=		ccmake.1 cmake.1 ctest.1
 
