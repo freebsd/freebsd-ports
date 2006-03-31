@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	pstoedit
-PORTVERSION=	3.42
-PORTREVISION=	2
+PORTVERSION=	3.44
 CATEGORIES=	graphics print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert PostScript to other vector graphic formats
+
+LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
 
 OPTIONS=	IMAGEMAGICK "Enable magick++ interface" on \
 		EMF "Enable emf interface" on \
@@ -22,12 +23,11 @@ OPTIONS=	IMAGEMAGICK "Enable magick++ interface" on \
 
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_GHOSTSCRIPT=	yes
-USE_REINPLACE=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 INSTALLS_SHLIB=	yes
 
-MAN1=	pstoedit.1
+MAN1=		pstoedit.1
 
 CPPFLAGS=	-I${LOCALBASE}/include/ming -I${LOCALBASE}/include \
 		-I${X11BASE}/include
@@ -36,7 +36,12 @@ LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500035
-CFLAGS+=	-DHAVESTL -DHAVETYPENAME -DUSE_NEWSTRSTREAM
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
+RUN_DEPENDS+=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
+CFLAGS+=	-DHAVESTL -DHAVETYPENAME -DUSE_NEWSTRSTREAM -DHAVEAUTOPTR 
+CPPFLAGS+=	-I${LOCALBASE}/include/stlport ${PTHREAD_CFLAGS}
+LDFLAGS+=	-lstlport_gcc ${PTHREAD_LIBS}
+
 .endif
 
 .if defined(WITHOUT_IMAGEMAGICK)
