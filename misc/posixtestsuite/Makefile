@@ -12,7 +12,7 @@ CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	posixtest
 
-MAINTAINER=	phantom@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open POSIX Test Suite
 
 WRKSRC=		${WRKDIR}/posixtestsuite
