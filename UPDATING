@@ -6,6 +6,22 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20060331:
+  AFFECTS: users of biology/emboss and biology/embassy
+  AUTHOR: fernan@iib.unsam.edu.ar
+
+  Since EMBOSS-3.0.0 both EMBOSS and EMBASSY install by default into
+  $LOCALBASE/emboss to avoid conflicts with other ports.
+
+  Users upgrading to 3.0.0 should take this into consideration when
+  planning the upgrade, because it will involve moving data not
+  installed by the port (databases) and tweaking the emboss.defaults
+  config file.
+
+  If you want to install the ports into $LOCALBASE (/usr/local, the old
+  behaviour), you can still do so by setting PREFIX manually. But you
+  will have to take care of conflicting ports yourself.
+
 20060330:
   AFFECTS: users of x11/kdebase3
   AUTHOR: kde@freebsd.org

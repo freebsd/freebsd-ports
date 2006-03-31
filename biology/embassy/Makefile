@@ -7,18 +7,21 @@
 #
 
 PORTNAME=	embassy
-PORTVERSION=	2.10.0
+PORTVERSION=	3.0.0
 CATEGORIES=	biology
-MASTER_SITES=	ftp://ftp.uk.embnet.org/pub/EMBOSS/ \
+MASTER_SITES=	ftp://emboss.open-bio.org/pub/EMBOSS/ \
+		ftp://ftp.uk.embnet.org/pub/EMBOSS/ \
 		ftp://ftp.es.embnet.org/pub/software/emboss/EMBOSS/ \
 		ftp://ftp.ebi.ac.uk/pub/software/unix/EMBOSS/
-DIST_SUBDIR=	${PORTNAME}
+DIST_SUBDIR=	emboss
 
 MAINTAINER=	fernan@iib.unsam.edu.ar
 COMMENT=	A collection of contributed EMBOSS applications
 
-LIB_DEPENDS=	nucleus.1:${PORTSDIR}/biology/emboss
+LIB_DEPENDS=	nucleus.3:${PORTSDIR}/biology/emboss
 
+PREFIX?=	${LOCALBASE}/emboss
+NO_MTREE=	yes
 USE_SUBMAKE=	yes
 USE_ICONV=	yes
 USE_GMAKE=	yes
@@ -26,12 +29,17 @@ GNU_CONFIGURE=	yes
 USE_XLIB=	yes
 USE_MOTIF=	yes
 
-OPTIONS=	DOMAINATRIX	"Protein structure and domain apps" on \
+OPTIONS=	DOMAINATRIX	"Protein domain apps" on \
+		DOMALIGN	"Protein domain apps" on \
+		DOMSEARCH	"Protein domain apps" on \
+		SIGNATURE	"Protein domain apps" on \
+		STRUCTURE	"Protein domain apps" on \
 		EMNU		"EMBOSS simple menu" on \
 		ESIM4		"Align cDNA/EST to genome" on \
 		HMMER		"HMM alignment and searches" on \
 		MEME		"Motif detection" on \
 		MSE		"A multiple sequence screen editor" on \
+		MYEMBOSS	"Examples for developers of EMBOSS apps" on \
 		PHYLIP		"Phylogeny inference" on \
 		TOPO		"Transmembrane display" on
 
@@ -39,15 +47,21 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${PREFIX}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${PREFIX}/lib -L${LOCALBASE}/lib"
 
 EMBASSY_WRKDIR=		${WRKSRC}/EMBASSY
-DOMAINATRIX_VERSION=	1.0.0
+DOMAINATRIX_VERSION=	0.1.0
 EMNU_VERSION=		1.05
 ESIM4_VERSION=		1.0.0
 HMMER_VERSION=		2.1.1
 MEME_VERSION=		2.3.1
 MSE_VERSION=		1.0.0
 TOPO_VERSION=		1.0.0
-PHYLIP_VERSION=		3.57c
-EMBASSY_APPS=		DOMAINATRIX EMNU ESIM4 HMMER MEME MSE PHYLIP TOPO
+PHYLIP_VERSION=		3.6b
+DOMALIGN_VERSION=	0.1.0
+DOMSEARCH_VERSION=	0.1.0
+SIGNATURE_VERSION=	0.1.0
+STRUCTURE_VERSION=	0.1.0
+MYEMBOSS_VERSION=	3.0.0
+EMBASSY_APPS=		DOMAINATRIX EMNU ESIM4 HMMER MEME MSE PHYLIP TOPO \
+			DOMALIGN DOMSEARCH SIGNATURE STRUCTURE MYEMBOSS
 
 .include <bsd.port.pre.mk>
 
@@ -74,16 +88,6 @@ do-extract:
 	    ${CHOWN} -R 0:0 ${${app}_WRKSRC}; \
 	  fi
 .endfor
-
-.if !defined(WITHOUT_DOMAINATRIX)
-pre-configure::
-	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/domainatrix-patch-Makefile.in
-.endif
-
-.if !defined(WITHOUT_EMNU)
-pre-configure::
-	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/emnu-patch-Makefile.in
-.endif
 
 do-configure:
 .for app in ${APPLIST}

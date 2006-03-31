@@ -1,0 +1,20 @@
+--- emboss/emboss.default.template.orig	Wed Feb  8 00:43:42 2006
++++ emboss/emboss.default.template	Wed Feb  8 00:40:34 2006
+@@ -4,7 +4,7 @@
+ # By default this is /usr/local/share/EMBOSS/test but the directory can
+ # be changed with --prefix when you configure EMBOSS.
+ 
+-# SET emboss_tempdata path_to_directory_$EMBOSS/test
++# SET emboss_tempdata %%DATADIR%%/test
+ 
+ # Proxy - set this if any databases are accessed through a proxy web server.
+ # Turn off in the DB definition with proxy: ":" for any
+@@ -15,7 +15,7 @@
+ # Logfile - set this to a file that any user can append to
+ # and EMBOSS applications will automatically write log information
+ 
+-# SET emboss_logfile /packages/emboss/emboss/log
++# SET emboss_logfile /var/log/emboss.log
+ 
+ # Pagesize - this is the size of disc page blocks and is
+ # required by the 'dbx' indexing programs and 'method: emboss'
