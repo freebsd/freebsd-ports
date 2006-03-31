@@ -6,28 +6,28 @@
 #
 
 PORTNAME=	XML-Feed
-PORTVERSION=	0.07
+PORTVERSION=	0.08
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	XML
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 modules for Syndication feed parser and auto-discovery
 
-BUILD_DEPENDS=	${SITE_PERL}/XML/RSS.pm:${PORTSDIR}/textproc/p5-XML-RSS \
+RUN_DEPENDS=	${SITE_PERL}/Class/ErrorHandler.pm:${PORTSDIR}/devel/p5-Class-ErrorHandler \
+		${SITE_PERL}/Feed/Find.pm:${PORTSDIR}/www/p5-Feed-Find \
+		${SITE_PERL}/URI/Fetch.pm:${PORTSDIR}/www/p5-URI-Fetch \
+		${SITE_PERL}/XML/RSS.pm:${PORTSDIR}/textproc/p5-XML-RSS \
 		${SITE_PERL}/XML/Atom.pm:${PORTSDIR}/textproc/p5-XML-Atom \
-		${SITE_PERL}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser \
-		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
+		${SITE_PERL}/${PERL_ARCH}/DateTime.pm:${PORTSDIR}/devel/p5-DateTime \
 		${SITE_PERL}/DateTime/Format/Mail.pm:${PORTSDIR}/devel/p5-DateTime-Format-Mail \
 		${SITE_PERL}/DateTime/Format/W3CDTF.pm:${PORTSDIR}/devel/p5-DateTime-Format-W3CDTF \
-		${SITE_PERL}/${PERL_ARCH}/DateTime.pm:${PORTSDIR}/devel/p5-DateTime \
-		${SITE_PERL}/${PERL_ARCH}/Scalar/Util.pm:${PORTSDIR}/lang/p5-Scalar-List-Utils \
-		${SITE_PERL}/Class/ErrorHandler.pm:${PORTSDIR}/devel/p5-Class-ErrorHandler \
-		${SITE_PERL}/Feed/Find.pm:${PORTSDIR}/www/p5-Feed-Find \
-		${SITE_PERL}/URI/Fetch.pm:${PORTSDIR}/www/p5-URI-Fetch
-RUN_DEPENDS=	${BUILD_DEPENDS}
+		${SITE_PERL}/${PERL_ARCH}/List/Util.pm:${PORTSDIR}/lang/p5-Scalar-List-Utils
+BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS+=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple \
+		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
+		${SITE_PERL}/${PERL_ARCH}/HTML/TokeParser.pm:${PORTSDIR}/www/p5-HTML-Parser
 
 PERL_MODBUILD=	yes
 
@@ -40,8 +40,9 @@ post-patch:
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500601
-IGNORE=		This port requires perl 5.6.x or later. Install lang/perl5. then try again
+# p5-XML-Atom needs 5.8.5
+.if ${PERL_LEVEL} < 500805
+IGNORE=		requires perl 5.8.5 or later. Install lang/perl5. then try again
 .endif
 
 .include <bsd.port.post.mk>
