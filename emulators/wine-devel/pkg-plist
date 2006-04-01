@@ -327,6 +327,7 @@ include/wine/windows/shtypes.h
 include/wine/windows/shtypes.idl
 include/wine/windows/sipbase.h
 include/wine/windows/snmp.h
+include/wine/windows/softpub.h
 include/wine/windows/sql.h
 include/wine/windows/sqlext.h
 include/wine/windows/sqltypes.h
@@ -414,8 +415,6 @@ lib/wine/atl.dll.so
 lib/wine/avicap32.dll.so
 lib/wine/avifil32.dll.so
 lib/wine/avifile.dll16
-lib/wine/aviinfo.exe.so
-lib/wine/aviplay.exe.so
 lib/wine/bug_report.pl
 lib/wine/cabinet.dll.so
 lib/wine/capi2032.dll.so
@@ -697,6 +696,7 @@ lib/wine/shfolder.dll.so
 lib/wine/shlwapi.dll.so
 lib/wine/snmpapi.dll.so
 lib/wine/sound.drv16
+lib/wine/spoolss.dll.so
 lib/wine/start.exe.so
 lib/wine/stdole2.tlb.so
 lib/wine/stdole32.tlb.so
