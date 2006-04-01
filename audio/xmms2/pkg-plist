@@ -2,6 +2,7 @@ bin/xmms2
 bin/xmms2-et
 bin/xmms2-launcher
 %%FAM%%bin/xmms2-mlib-updater
+%%MDNS%%bin/xmms2-mdns-avahi
 bin/xmms2d
 include/xmms2/xmms/xmms_config.h
 include/xmms2/xmms/xmms_decoder.h
@@ -74,6 +75,7 @@ libdata/pkgconfig/xmms2-client.pc
 libdata/pkgconfig/xmms2-plugin.pc
 %%DATADIR%%/mind.in.a.box-lament_snipplet.ogg
 %%DATADIR%%/scripts/startup.d/xmms2-et-launcher.sh
+%%DATADIR%%/scripts/startup.d/xmms2-mdns-launcher.sh
 @dirrm %%DATADIR%%/scripts/startup.d
 @dirrm %%DATADIR%%/scripts
 @dirrm %%DATADIR%%
