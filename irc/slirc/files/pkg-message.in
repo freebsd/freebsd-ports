@@ -4,8 +4,8 @@ Quickstart:
 - Copy config.sl and colours.sl to ~/.slirc/scripts
 
   mkdir -p ~/.slirc/scripts
-  cp ${PREFIX}/lib/slirc/scripts/config.sl  ~/.slirc/scripts
-  cp ${PREFIX}/lib/slirc/scripts/colours.sl ~/.slirc/scripts
+  cp %%PREFIX%%/lib/slirc/scripts/config.sl  ~/.slirc/scripts
+  cp %%PREFIX%%/lib/slirc/scripts/colours.sl ~/.slirc/scripts
 
 - Edit ~/.slirc/scripts/config.sl
 

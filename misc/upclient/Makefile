@@ -26,8 +26,8 @@ USE_RC_SUBR=	yes
 ALL_TARGET=	bsd
 BUILD_WRKSRC=	${WRKSRC}/src
 
-MSG_FILE=	${PKGDIR}/pkg-message
-PKGMESSAGE=	${WRKDIR}/pkg-message
+SUB_FILES=	pkg-message 
+PKGMESSAGE=	${WRKDIR}/pkg-message upclient.sh
 
 MAN8=		upclient.8
 
@@ -35,8 +35,6 @@ MAN8=		upclient.8
 #
 
 REINPLACE_SUB=	PREFIX=${PREFIX} LOCALBASE=${LOCALBASE}
-RCSCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
-PKGMESSAGE_SUB=	PREFIX=${PREFIX}
 
 DOC_FILES=	AUTHORS COPYING FAQ HISTORY INSTALL README TODO
 DOC_FILES+=	doc/UptimesProtocol5
@@ -55,20 +53,10 @@ rename-doc:
 # Post-patch
 #
 
-post-patch: patch-inplace patch-startup patch-pkgmessage
-
-patch-inplace:
+post-patch:
 	@${REINPLACE_CMD} ${REINPLACE_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${WRKSRC}/scripts/upchk ${WRKSRC}/scripts/clientchk \
 		${WRKSRC}/src/Makefile
-
-patch-startup:
-	@${SED} ${RCSCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${FILESDIR}/upclient.sh > ${WRKDIR}/upclient.sh
-
-patch-pkgmessage:
-	@${SED} ${PKGMESSAGE_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${MSG_FILE} > ${PKGMESSAGE}
 
 # Install
 #
