@@ -17,6 +17,8 @@ COMMENT=	The OpenNAP open-source Napster server
 
 USE_GMAKE=	YES
 GNU_CONFIGURE=	YES
+PKGMESSAGE=	${WRKDIR}/pkg-message
+SUB_FILES=	pkg-message
 
 post-install:
 	(${ECHO_CMD} "" ; ${ECHO_CMD} "admin" ; ${ECHO_CMD} "opennap" ; ${ECHO_CMD} "") | ${WRKSRC}/setup
