@@ -1,9 +1,6 @@
-
-$FreeBSD$
-
---- Makefile.defs.orig
-+++ Makefile.defs
-@@ -151,10 +151,11 @@
+--- Makefile.defs.orig	Wed Jan 11 03:55:58 2006
++++ Makefile.defs	Thu Mar  2 19:08:17 2006
+@@ -169,10 +169,11 @@
  INSTALL-TOUCH = touch          # used to create the file first (good to 
                                 #  make solaris install work)
  INSTALL-CFG = $(INSTALL) -m 644
@@ -19,7 +16,7 @@ $FreeBSD$
  
  #set some vars from the environment (and not make builtins)
  CC   := $(shell echo "$${CC}")
-@@ -444,8 +445,8 @@
+@@ -464,8 +465,8 @@
  	found_lock_method=yes
  endif
  
@@ -30,24 +27,25 @@ $FreeBSD$
  # setting CFLAGS
  ifeq ($(mode), release)
  	#if i386
-@@ -453,14 +454,13 @@
+@@ -473,15 +474,14 @@
  		# if gcc 
  ifeq		($(CC_NAME), gcc)
  				#common stuff
 -				CFLAGS=-g -O9 -funroll-loops  -Wcast-align $(PROFILE) \
-+				CFLAGS+=-funroll-loops  -Wcast-align $(PROFILE) \
++				CFLAGS=-funroll-loops  -Wcast-align $(PROFILE) \
  					-Wall  
+ 			#if gcc 4.0+
+ ifeq			($(CC_SHORTVER), 4.x)
+ 					CPU ?= athlon64
+ 					CFLAGS+=-minline-all-stringops -malign-double \
+ 							-falign-loops \
+-							-ftree-vectorize \
+-							-mtune=$(CPU) 
++							-ftree-vectorize
+ else
  			#if gcc 3.4+
  ifeq			($(CC_SHORTVER), 3.4)
- 					CPU ?= athlon
- 					CFLAGS+=-minline-all-stringops -malign-double \
--							-falign-loops \
--							-mtune=$(CPU) 
-+							-falign-loops
- else
- 			#if gcc 3.0+
- ifeq			($(CC_SHORTVER), 3.0)
-@@ -486,7 +486,7 @@
+@@ -515,7 +515,7 @@
  
  else		# CC_NAME, gcc
  ifeq		($(CC_NAME), icc)
@@ -56,16 +54,16 @@ $FreeBSD$
  					 -tpp6 -xK  #-openmp  #optimize for PIII 
  				# -prefetch doesn't seem to work
  				#( ty to inline acroos files, unroll loops,prefetch,
-@@ -504,7 +504,7 @@
+@@ -533,7 +533,7 @@
  		# if gcc 
  ifeq		($(CC_NAME), gcc)
  				#common stuff
 -				CFLAGS=-g -O9 -funroll-loops  -Wcast-align $(PROFILE) \
 +				CFLAGS+=-funroll-loops  -Wcast-align $(PROFILE) \
  					-Wall 
- 			#if gcc 3.4
- ifeq			($(CC_SHORTVER), 3.4)
-@@ -537,7 +537,7 @@
+ 			#if gcc 4.0+
+ ifeq			($(CC_SHORTVER), 4.x)
+@@ -575,7 +575,7 @@
  
  else		# CC_NAME, gcc
  ifeq		($(CC_NAME), icc)
@@ -74,7 +72,7 @@ $FreeBSD$
  					 -tpp6 -xK  #-openmp  #optimize for PIII 
  				# -prefetch doesn't seem to work
  				#( ty to inline acroos files, unroll loops,prefetch,
-@@ -555,7 +555,7 @@
+@@ -593,7 +593,7 @@
  			#if gcc
  ifeq		($(CC_NAME), gcc)
  				#common stuff
@@ -83,34 +81,34 @@ $FreeBSD$
  					-Wall\
  					#-Wcast-align \
  					#-Wmissing-prototypes 
-@@ -620,7 +620,7 @@
+@@ -667,7 +667,7 @@
  		# if gcc 
  ifeq		($(CC_NAME), gcc)
  				#common stuff
 -				CFLAGS=-O9 -funroll-loops  -Wcast-align $(PROFILE) \
 +				CFLAGS+=-funroll-loops  -Wcast-align $(PROFILE) \
  					-Wall   
- 			#if gcc 3.4+
- ifeq			($(CC_SHORTVER), 3.4)
-@@ -656,7 +656,7 @@
+ 			#if gcc 4.x+
+ ifeq			($(CC_SHORTVER), 4.x)
+@@ -709,7 +709,7 @@
  		# if gcc 
  ifeq		($(CC_NAME), gcc)
  				#common stuff
 -				CFLAGS=-O9 -funroll-loops  -Wcast-align $(PROFILE) \
 +				CFLAGS+=-funroll-loops  -Wcast-align $(PROFILE) \
  					-Wall 
- 			#if gcc 3.4+
- ifeq			($(CC_SHORTVER), 3.4)
-@@ -692,7 +692,7 @@
+ 			#if gcc 4.0+
+ ifeq			($(CC_SHORTVER), 4.x)
+@@ -751,7 +751,7 @@
  		# if gcc 
  ifeq		($(CC_NAME), gcc)
  				#common stuff
 -				CFLAGS= -mips2 -O9 -funroll-loops $(PROFILE) \
 +				CFLAGS+= -mips2 -funroll-loops $(PROFILE) \
  					-Wall 
- 			#if gcc 3.4+
- ifeq			($(CC_SHORTVER), 3.4)
-@@ -856,7 +856,7 @@
+ 			#if gcc 4.0+
+ ifeq			($(CC_SHORTVER), 4.x)
+@@ -932,7 +932,7 @@
  	# -andrei
  else	#mode,release
  ifeq	($(CC_NAME), gcc)
@@ -119,7 +117,7 @@ $FreeBSD$
  ifeq		($(ARCH), sparc64)
  			CFLAGS+= -mcpu=ultrasparc 
  endif
-@@ -871,12 +871,12 @@
+@@ -947,12 +947,12 @@
  endif
  endif
  ifeq	($(CC_NAME), icc)
@@ -134,7 +132,7 @@ $FreeBSD$
  		LDFLAGS+=-g $(PROFILE)
  		MOD_LDFLAGS=-G $(LDFLAGS)
  endif
-@@ -958,7 +958,7 @@
+@@ -1034,7 +1034,7 @@
  		found_lock_method=yes
  		LIBS= -pthread -lfl  #dlopen is in libc
  	else
