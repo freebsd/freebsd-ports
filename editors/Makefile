@@ -39,6 +39,7 @@
     SUBDIR += elvis
     SUBDIR += em
     SUBDIR += emacs
+    SUBDIR += emacs-devel
     SUBDIR += emacs19
     SUBDIR += emacs20
     SUBDIR += emacs20-dl

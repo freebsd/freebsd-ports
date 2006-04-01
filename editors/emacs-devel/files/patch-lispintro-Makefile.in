@@ -1,0 +1,24 @@
+--- lispintro/Makefile.in.orig	Fri Jun 11 04:39:50 2004
++++ lispintro/Makefile.in	Tue Apr 12 23:22:24 2005
+@@ -30,10 +30,10 @@
+ INFO_SOURCES = ${srcdir}/emacs-lisp-intro.texi
+ # The file name eintr must fit within 5 characters, to allow for
+ # -NN extensions to fit into DOS 8+3 limits without clashing
+-INFO_TARGETS = ${infodir}/eintr
++INFO_TARGETS = ${infodir}/eintr.info
+ DVI_TARGETS = emacs-lisp-intro.dvi
+ 
+-MAKEINFO = makeinfo
++MAKEINFO = makeinfo --no-split
+ TEXI2DVI = texi2dvi
+ DVIPS = dvips
+ ENVADD = TEXINPUTS="$(srcdir):$(TEXINPUTS)" MAKEINFO="$(MAKEINFO) -I$(srcdir)"
+@@ -44,7 +44,7 @@
+ 
+ dvi: $(DVI_TARGETS)
+ 
+-${infodir}/eintr: ${INFO_SOURCES}
++${infodir}/eintr.info: ${INFO_SOURCES}
+ 	$(MAKEINFO) -o $@ $(srcdir)/emacs-lisp-intro.texi
+ 
+ emacs-lisp-intro.dvi: ${INFO_SOURCES}
