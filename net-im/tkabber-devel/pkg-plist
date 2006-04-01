@@ -46,6 +46,7 @@ bin/tkabber
 %%DATADIR%%/jabberlib-tclxml/jlibauth.tcl
 %%DATADIR%%/jabberlib-tclxml/jlibcomponent.tcl
 %%DATADIR%%/jabberlib-tclxml/jlibcompress.tcl
+%%DATADIR%%/jabberlib-tclxml/jlibdns.tcl
 %%DATADIR%%/jabberlib-tclxml/jlibsasl.tcl
 %%DATADIR%%/jabberlib-tclxml/jlibtls.tcl
 %%DATADIR%%/jabberlib-tclxml/namespaces.tcl
