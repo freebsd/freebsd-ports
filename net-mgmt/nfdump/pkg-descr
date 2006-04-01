@@ -1,4 +1,4 @@
-NFDUMP tools support netflow v5 and v7 capturing and processing.
+NFDUMP tools support netflow v5,  v7  and v9 capturing and processing.
 
 nfcapd - netflow capture daemon.
 Reads the netflow data from the network and stores the data into files.
@@ -16,6 +16,7 @@ nfreplay - netflow replay
 Reads the netflow data from the files stored by nfcapd and sends it over 
 the network to another host.
 
+ft2nfdump - flow-tools to nfdump - optional component
 
 WWW: http://nfdump.sourceforge.net
 
