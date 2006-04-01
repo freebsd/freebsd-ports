@@ -1,9 +1,12 @@
---- wmake/rules/FreeBSD/general.orig	Mon Apr 18 20:22:21 2005
-+++ wmake/rules/FreeBSD/general	Sat Dec 24 00:40:11 2005
-@@ -1,5 +1,4 @@
+--- wmake/rules/FreeBSD/general.orig	Wed Feb 15 10:53:20 2006
++++ wmake/rules/FreeBSD/general	Sat Apr  1 00:19:08 2006
+@@ -1,7 +1,6 @@
 -CPP        = /lib/cpp -D$(WM_ARCH)
 -LD         = ld -melf_i386
-+CPP 	+= -D$(WM_ARCH)
++CPP        += -D$(WM_ARCH)
+ 
+-GLIBS      = -liberty
++GLIBS      = -liberty -lexecinfo
  
  include $(RULES)/X
  

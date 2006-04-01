@@ -1,6 +1,6 @@
 --- wmake/rules/FreeBSD/c++.orig	Sun Apr 24 00:36:58 2005
-+++ wmake/rules/FreeBSD/c++	Fri Jan  6 13:50:58 2006
-@@ -1,8 +1,6 @@
++++ wmake/rules/FreeBSD/c++	Sat Apr  1 00:25:06 2006
+@@ -1,21 +1,19 @@
  .SUFFIXES: .C .cxx .cc .cpp
  
 -c++WARN     = -Wall -W -Wno-unused-parameter -Wold-style-cast
@@ -10,12 +10,18 @@
  
  include $(RULES)/c++$(WM_COMPILE_OPTION)
  
-@@ -15,7 +13,7 @@
+ ptFLAGS     = -DNoRepository -ftemplate-depth-30
+ 
+-c++FLAGS    = $(GFLAGS) $(c++WARN) $(c++OPT) $(c++DBUG) $(ptFLAGS) $(LIB_HEADER_DIRS) -fPIC -pthread
++c++FLAGS    = $(GFLAGS) $(c++WARN) $(c++OPT) $(c++DBUG) $(ptFLAGS) $(LIB_HEADER_DIRS) -fPIC $(PTHREAD_CFLAGS)
+ 
+ Ctoo        = $(WM_CC_DRIVER) $(CC) $(c++FLAGS) -c $$SOURCE -o $@
+ cxxtoo      = $(Ctoo)
  cctoo       = $(Ctoo)
  cpptoo      = $(Ctoo)
  
 -LINK_LIBS   = $(c++DBUG)
-+LINK_LIBS   = $(c++DBUG) -lstdc++
++LINK_LIBS   = $(c++DBUG) -lstdc++ $(PTHREAD_LIBS)
  
  LINKLIBSO   = $(CC) $(c++FLAGS) -shared
  LINKEXE     = $(CC) $(c++FLAGS)

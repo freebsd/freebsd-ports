@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	${REALNAME:L}
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	science math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	foam
@@ -21,9 +21,12 @@ BUILD_DEPENDS=	micod:${PORTSDIR}/devel/mico						\
 		${X11BASE}/lib/libode.a:${PORTSDIR}/devel/ode				\
 		${PARAVIEW_LIB}/ParaViewConfig.cmake:${PORTSDIR}/science/paraview	\
 		${LOCALBASE}/share/java/java3d/jar/j3dutils.jar:${PORTSDIR}/java/java3d	\
+		${LOCALBASE}/include/libiberty/demangle.h:${PORTSDIR}/devel/gnulibiberty\
 		${LOCALBASE}/include/vtk/vtkDataSetSource.h:${PORTSDIR}/math/vtk-headers
+LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo
 RUN_DEPENDS=	micod:${PORTSDIR}/devel/mico						\
 		dx:${PORTSDIR}/graphics/opendx						\
+		${LOCALBASE}/lib/libiberty.a:${PORTSDIR}/devel/gnulibiberty		\
 		${LOCALBASE}/share/java/java3d/jar/j3dutils.jar:${PORTSDIR}/java/java3d	\
 		paraview:${PORTSDIR}/science/paraview
 
@@ -40,7 +43,7 @@ REINPLACE_ARGS=	-i ""
 WRKSRC=		${WRKDIR}/${REALNAME}-${PORTVERSION}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
-SUB_LIST=	REALNAME=${REALNAME} VER=${PORTVERSION}
+SUB_LIST=	REALNAME=${REALNAME} VER=${PORTVERSION} APPSUBDIR=${APPSUBDIR}
 PLIST_SUB=	${SUB_LIST}
 
 #MAKE_SHELL=	${CSH}
@@ -48,13 +51,17 @@ MAKE_ENV=	WM_PROJECT_DIR=${BUILD_WRKSRC} WM_ARCH=${OPSYS}			\
 		WM_PROJECT_INST_DIR=${PREFIX}/${REALNAME} WM_COMPILER=""	\
 		WM_COMPILER_ARCH=${ARCH} WM_COMPILER_LIB_ARCH=${ARCH}		\
 		WM_PROJECT_VERSION=${PORTVERSION} WM_PROJECT=${REALNAME}	\
-		LD_LIBRARY_PATH="" WM_JAVAC_OPTION=Opt WM_COMPILE_OPTION=Opt	\
+		LD_LIBRARY_PATH="" WM_JAVAC_OPTION=${COMPOPT}			\
 		WM_PROJECT_USER_DIR=${HOME}/${REALNAME}				\
-		MICO_VERSION=${MICO_VER} MICO_ARCH_PATH=${LOCALBASE}
+		MICO_VERSION=${MICO_VER} MICO_ARCH_PATH=${LOCALBASE}		\
+		WM_PRECISION_OPTION=${PRECISION} WM_COMPILE_OPTION=${COMPOPT}	\
+		PTHREAD_CFLAGS=${PTHREAD_CFLAGS} PTHREAD_LIBS=${PTHREAD_LIBS}
 
 CSH=		/bin/csh
 REALNAME=	OpenFOAM
-PARAVIEW_VER=	2.4.1
+PRECISION?=	DP
+COMPOPT?=	Opt
+PARAVIEW_VER?=	2.4.2
 PARAVIEW_LIB=	${LOCALBASE}/lib/paraview-${PARAVIEW_VER:R}
 GCC_VER=	${_GCCVERSION:S/0/-/:S/0/./g}
 
@@ -63,7 +70,6 @@ SHELLRC=	bashrc cshrc
 DIR2CLEAN=	.${REALNAME}-${PORTVERSION} bin wmake applications
 DIR2INST=	.${REALNAME}-${PORTVERSION} bin lib wmake
 APP2INST=	solvers test utilities
-ZLIB2FIX=	std/std_zfstream.H c++2/zfstream2.H
 THRD2FIX=	c++ mplibLAM
 VER2FIX=	applications/utilities/mesh/manipulation/patchTool/C++/PatchToolServer/Make/omniOptions	\
 		applications/utilities/mesh/manipulation/patchTool/C++/FoamXServer/Make/omniOptions	\
@@ -71,9 +77,13 @@ VER2FIX=	applications/utilities/mesh/manipulation/patchTool/C++/PatchToolServer/
 GL2FIX=		applications/utilities/miscellaneous/foamDebugSwitches/Make/options
 PARARC=		bashrc cshrc
 PS2FIX=		runFoamXHB patchTool foamJob killFoamX foamEndJob
+BASH2FIX=	wmake/bashScripts/makeFiles wmake/bashScripts/makeOptions wmake/bashScripts/addCompile	\
+		wmake/bashScripts/mkObjectDir .OpenFOAM-${PORTVERSION}/apps/ensightFoam/bashrc
 DIR2PRUNE=	applications/utilities/mesh/manipulation/setSet/readline-5.0/platforms
+APPSUBDIR=	${OPSYS}${PRECISION}${COMPOPT}
+APPDIR=		applications/bin/${APPSUBDIR}
 
-DOCS=		README ReleaseNotes-${PORTVERSION} doc/Guides-a4 doc/Guides-usletter
+DOCS=		README doc/Guides-a4 doc/Guides-usletter
 
 .if defined(WITH_LAM)
 BUILD_DEPENDS+=	${LOCALBASE}/bin/mpicc:${PORTSDIR}/net/lam7
@@ -84,7 +94,7 @@ LAM_VER=	`${GREP} LAM_VERSION ${LOCALBASE}/include/lam_config.h | ${AWK} '{print
 MPI_LIB=	LAM
 PLIST_SUB+=	MPI="@comment " LAM="" LAM_VER=7.1.1
 IGNORE=		does not run with lam7 at the moment
-.else
+.else	# TODO: add support for OpenMPI
 BUILD_DEPENDS+=	${LOCALBASE}/mpich/bin/mpicc:${PORTSDIR}/net/mpich
 RUN_DEPENDS+=	${LOCALBASE}/mpich/bin/mpirun:${PORTSDIR}/net/mpich
 MAKE_ENV+=	WM_MPLIB=MPICH MPICH_ARCH_PATH=${LOCALBASE}/mpich
@@ -136,15 +146,15 @@ pre-configure:
 		${BATCHRC:S|^|${WRKSRC}/|}
 	${REINPLACE_CMD} -e "s|-lGL|-L${X11BASE}/lib -lGL|"	\
 		${GL2FIX:S|^|${WRKSRC}/|}
+	${REINPLACE_CMD} -e "s|GCC_VERSION=4.1.0|GCC_VERSION=${GCC_VER:S/_//}|"	\
+		-e "s|JAVA_VERSION=1.4.2+|JAVA_VERSION=${JAVA_PORT_VERSION}|"	\
+		${WRKSRC}/bin/foamInstallationTest
+	${REINPLACE_CMD} -e "s|#!/bin/bash|#! ${LOCALBASE}/bin/bash|"	\
+		${BASH2FIX:S|^|${WRKSRC}/|}
 .for f in ${THRD2FIX}
 	${REINPLACE_CMD} -e "s|-pthread|${PTHREAD_LIBS}|"	\
 		-e "s|-lpthread|${PTHREAD_LIBS}|"		\
 		${WRKSRC}/wmake/rules/${OPSYS}/${f}
-.endfor
-.for f in ${ZLIB2FIX}
-	# Use system zlib
-	${REINPLACE_CMD} -e 's|"zlib.h"|<zlib.h>|'		\
-		${WRKSRC}/src/OpenFOAM/db/IOstreams/zfstream/${f}
 .endfor
 	${REINPLACE_CMD} -e "s|/usr/X11R6|${X11BASE}|"		\
 		${WRKSRC}/wmake/rules/${OPSYS}/X
@@ -160,8 +170,8 @@ pre-configure:
 .for f in ${PARARC}
 	${REINPLACE_CMD} -e "s|/usr/local|${LOCALBASE}|"		\
 		-e "s|#!/bin/bash|#!${LOCALBASE}/bin/bash|"		\
-		-e "s|2.2.0|${PARAVIEW_VER}|"				\
-		-e "s|paraview-2.2|paraview-${PARAVIEW_VER:R}|"		\
+		-e "s|2.4.2|${PARAVIEW_VER}|"				\
+		-e "s|paraview-2.4|paraview-${PARAVIEW_VER:R}|"		\
 		${WRKSRC}/.${REALNAME}-${PORTVERSION}/apps/paraview/${f}
 .endfor
 
@@ -182,13 +192,15 @@ do-install:
 	${CP} -R ${DIR2INST:S|^|${WRKSRC}/|} ${PREFIX}/${REALNAME}
 	${CP} -R ${APP2INST:S|^|${WRKSRC}/applications/|} ${PREFIX}/${REALNAME}/applications
 	${FIND} ${PREFIX}/${REALNAME}/applications -type d			\
-		\( -name ${OPSYS}Opt -o -name linuxDebug -o -name linuxOpt \)	\
+		\( -name ${APPSUBDIR} -o -name linuxDebug -o -name linuxOpt \)	\
 		-exec ${RM} -rf {} \; 2>/dev/null || ${TRUE}
-	${MKDIR} ${PREFIX}/${REALNAME}/applications/bin/${OPSYS}Opt
-	cd ${WRKSRC}/applications/bin/${OPSYS}Opt			\
-	&& ${FIND} . -type f -exec ${INSTALL_PROGRAM} {}		\
-		${PREFIX}/${REALNAME}/applications/bin/${OPSYS}Opt/{} \;
+	${MKDIR} ${PREFIX}/${REALNAME}/${APPDIR} ${PREFIX}/${REALNAME}/jobControl
+	cd ${WRKSRC}/${APPDIR}					\
+	&& ${FIND} . -type f -exec ${INSTALL_PROGRAM} {}	\
+		${PREFIX}/${REALNAME}/${APPDIR}/{} \;
 	@${RMDIR} ${DIR2PRUNE:S|^|${PREFIX}/${REALNAME}/|}
+	${TOUCH} ${PREFIX}/${REALNAME}/jobControl/.keepme
+
 .if !defined(NOPORTDOCS)
 	${CP} -R ${DOCS:S|^|${WRKSRC}/|} ${PREFIX}/${REALNAME}
 	${CP} -R ${WRKSRC}/tutorials ${PREFIX}/${REALNAME}

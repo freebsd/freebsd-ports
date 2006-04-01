@@ -1,10 +1,10 @@
---- bin/foamSystemCheck.orig	Tue Jun 21 18:07:04 2005
-+++ bin/foamSystemCheck	Mon Dec 26 16:03:08 2005
-@@ -119,6 +119,20 @@
+--- bin/foamSystemCheck.orig	Fri Mar 24 16:44:29 2006
++++ bin/foamSystemCheck	Thu Mar 30 23:09:31 2006
+@@ -119,6 +119,21 @@
              RESULT="Ping_not_installed_in_usual_path"
          fi
          ;;
-+    FreeBSD) 
++    FreeBSD)
 +        if [ -x '/sbin/ping' ] ; then
 +            PINGTEST=`/sbin/ping -c 1 $1 2>&1`
 +            if [ -n "`echo $PINGTEST | grep '1 packets received'`" ] ; then
@@ -18,6 +18,7 @@
 +            RESULT="Ping_not_installed_in_usual_path"
 +        fi
 +        ;;
- #    OSF*) 
- #        if [ -x '/usr/sbin/ping' ] ; then
- #            PINGTEST=`ping -t 3 -c 1 $1 2>&1`
++
+     *) 
+         if [ -x '/bin/ping' ] ; then
+             PINGTEST=`/bin/ping -w 3 -c 1 $1 2>&1`
