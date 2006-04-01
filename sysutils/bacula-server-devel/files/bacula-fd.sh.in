@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD$
+# $FreeBSD: /tmp/pcvs/ports/sysutils/bacula-server-devel/files/Attic/bacula-fd.sh.in,v 1.1 2006-04-01 23:06:24 garga Exp $
 #
 # PROVIDE: utility
 # REQUIRE: DAEMON
