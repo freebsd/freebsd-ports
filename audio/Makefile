@@ -444,6 +444,7 @@
     SUBDIR += ruby-smf
     SUBDIR += ruby-vorbisfile
     SUBDIR += ruby-xmms
+    SUBDIR += ruby-xmms2
     SUBDIR += s3mod
     SUBDIR += sbagen
     SUBDIR += schism
