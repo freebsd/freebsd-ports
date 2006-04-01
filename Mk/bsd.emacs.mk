@@ -1,5 +1,5 @@
 #
-#	$FreeBSD: /tmp/pcvs/ports/Mk/bsd.emacs.mk,v 1.54 2006-04-01 17:31:34 anray Exp $
+#	$FreeBSD: /tmp/pcvs/ports/Mk/bsd.emacs.mk,v 1.55 2006-04-01 21:04:33 anray Exp $
 #
 #	bsd.emacs.mk - 19990829 Shigeyuki Fukushima.
 #
@@ -112,6 +112,23 @@ DESCR?=                 ${PKGDIR}/pkg-descr.${EMACS_PORT_NAME}
 PLIST?=                 ${PKGDIR}/pkg-plist.${EMACS_PORT_NAME}
 .endif
 
+# Emacs-22.x
+.elif (${EMACS_PORT_NAME} == "emacs22")
+EMACS_NAME=		emacs
+EMACS_VER=		22.0.50
+EMACS_MAJOR_VER=	22
+EMACS_LIBDIR?=		share/${EMACS_NAME}
+EMACS_LIBDIR_WITH_VER?=	share/${EMACS_NAME}/${EMACS_VER}
+EMACS_PORTSDIR=		${PORTSDIR}/editors/emacs-devel
+EMACS_COMMON_PORT=	NO
+EMACS_HAS_MULE=		YES
+EMACS_NO_SUBDIRSEL=	NO
+.if (${EMACS_MASTERDIR_PKGFILES} == "YES")
+COMMENTFILE?=		${PKGDIR}/pkg-comment.${EMACS_PORT_NAME}
+DESCR?=			${PKGDIR}/pkg-descr.${EMACS_PORT_NAME}
+PLIST?=			${PKGDIR}/pkg-plist.${EMACS_PORT_NAME}
+.endif
+
 # Mule-19.x
 .elif (${EMACS_PORT_NAME} == "mule")
 EMACS_NAME=		mule
@@ -201,7 +218,7 @@ PLIST?=                 ${PKGDIR}/pkg-plist.${EMACS_PORT_NAME}
 check-makevars::
 	@${ECHO} "Makefile error: Bad value of EMACS_PORT_NAME: ${EMACS_PORT_NAME}."
 	@${ECHO} "Valid values are:"
-	@${ECHO} "	Emacs  family: emacs19 mule emacs20 emacs21"
+	@${ECHO} "	Emacs  family: emacs19 mule emacs20 emacs21 emacs22"
 	@${ECHO} "	XEmacs family: xemacs xemacs20 xemacs21 xemacs21-mule"
 	@${ECHO} "	                xemacs-devel xemacs-devel-mule"
 	@${FALSE}
