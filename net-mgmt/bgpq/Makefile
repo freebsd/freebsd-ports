@@ -5,10 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	bgpq
-PORTVERSION=	1.0.7.6
-PORTREVISION=	1
+PORTVERSION=	1.0.9.1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.lexa.ru/pub/domestic/snar/
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	snar@paranoia.ru
 COMMENT=	Bgpq - lightweight access-list generator for cisco routers
