@@ -6,32 +6,42 @@
 #
 
 PORTNAME=	xmms2
-PORTVERSION=	0.2.d.3
+PORTVERSION=	0.2.d.4
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-0.2DrCox
+DISTNAME=	${PORTNAME}-0.2DrDolittle
 
 MAINTAINER=	alex@foxybanana.com
 COMMENT=	Rewrite of xmms as a client/server system (developer release)
 
 BUILD_DEPENDS=	scons:${PORTSDIR}/devel/scons
+.if !defined(XMMS2_SLAVE)
 LIB_DEPENDS=	mad.2:${PORTSDIR}/audio/libmad \
 		vorbis.3:${PORTSDIR}/audio/libvorbis
+.endif
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
 USE_PYTHON_BUILD=	yes
 USE_BZIP2=	yes
+
+.if !defined(XMMS2_SLAVE)
 USE_GNOME=	glib20
 USE_SQLITE=	3
-INSTALLS_SHLIB=	yes
 
+INSTALLS_SHLIB=	yes
+.endif
+
+.if !defined(XMMS2_SLAVE)
 MAN1=		xmms2.1
 MAN8=		xmms2d.8
 MANCOMPRESSED=	yes
+.endif
 
 DATADIR=	share/xmms2
+
+SCONS_TARGET?=
 
 .if defined(WITH_CURL)
 LIB_DEPENDS+=	curl.3:${PORTSDIR}/ftp/curl
@@ -50,21 +60,14 @@ EXCLUDE+=	sid
 PLIST_SUB+=	SID="@comment "
 .endif
 
-.if defined(WITH_PYTHON_BINDINGS)
-BUILD_DEPENDS+=	pyrex:${PORTSDIR}/devel/pyrex
-USE_PYTHON_RUN=	yes
-PLIST_SUB+=	PYTHON=""
-.else
-EXCLUDE+=	python
-PLIST_SUB+=	PYTHON="@comment "
-.endif
-
-.if defined(WITH_RUBY_BINDINGS)
-USE_RUBY=	yes
-PLIST_SUB+=	RUBY=""
-.else
-EXCLUDE+=	ruby
-PLIST_SUB+=	RUBY="@comment "
+.if defined(XMMS2_SLAVE) && ${XMMS2_SLAVE} == "python"
+EXCLUDE+=	ruby java
+.elif defined(XMMS2_SLAVE) && ${XMMS2_SLAVE} == "ruby"
+EXCLUDE+=	python java
+.elif defined(XMMS2_SLAVE) && ${XMMS2_SLAVE} == "java"
+EXCLUDE+=	ruby python
+.elif !defined(XMMS2_SLAVE)
+EXCLUDE+=	python ruby java
 .endif
 
 .if defined(WITH_ECORE)
@@ -150,6 +153,14 @@ EXCLUDE+=	medialib-updater
 PLIST_SUB+=	FAM="@comment "
 .endif
 
+.if defined(WITH_MDNS)
+LIB_DEPENDS+=	avahi-core:${PORTSDIR}/net/avahi
+PLIST_SUB+=	MDNS=""
+.else
+EXCLUDE+=	mdns
+PLIST_SUB+=	MDNS="@comment "
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
@@ -170,14 +181,19 @@ pre-everything::
 	@${ECHO_MSG} ""
 .endif
 
+# Nasty fulhack here to deal with java port. We're dealing with this issue
+# in xmms2 upstream land, so it hopefully won't be a problem next release.
+
 do-build:
 	cd ${WRKSRC} && \
-		scons CC=${CC} LINKFLAGS="${LDFLAGS}" CCFLAGS="${CFLAGS}" \
+		${SETENV} JAVA_HOME=${JAVA_HOME} scons CC=${CC} LINKFLAGS="${LDFLAGS}" CCFLAGS="${CFLAGS}" \
 		LIBPATH=${LOCALBASE}/lib CPPPATH=${LOCALBASE}/include \
 		PKGCONFIGDIR=${PREFIX}/libdata/pkgconfig EXCLUDE="${EXCLUDE}" \
-		PREFIX="${PREFIX}"
+		PREFIX="${PREFIX}" ${SCONS_TARGET}
 
+.if !defined(XMMS2_SLAVE)
 do-install:
 	@cd ${WRKSRC} && scons install
+.endif
 
 .include <bsd.port.post.mk>
