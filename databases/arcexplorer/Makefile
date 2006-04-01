@@ -21,6 +21,8 @@ JAVA_VERSION=	1.2+
 DOWNLOAD_URL=	http://www.esri.com/software/arcexplorer/download4.html
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/ArcExplorer${PORTVERSION}
+SUB_FILES=	pkg-message
+PKGMESSAGE=	${WRKDIR}/pkg-message
 
 .include <bsd.port.pre.mk>
 
@@ -37,7 +39,7 @@ do-install:
 
 post-install:
 	@${ECHO_CMD}
-	@${CAT} ${PKGMESSAGE} | ${SED} -e 's|%%PREFIX%%|${PREFIX}|'
+	@${CAT} ${PKGMESSAGE}
 	@${ECHO_CMD}
 
 .include <bsd.port.post.mk>

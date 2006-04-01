@@ -1,0 +1,4 @@
+You should add %%PREFIX%%/clip/bin to your $PATH.
+Please set CLIPROOT to %%PREFIX%%/clip in your environment.
+
+Remark: unset LANG / LC_ALL for better results.

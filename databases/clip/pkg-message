@@ -1,4 +1,0 @@
-You should add /usr/local/clip/bin to your $PATH.
-Please set CLIPROOT to /usr/local/clip in your environment.
-
-Remark: unset LANG / LC_ALL for better results.
