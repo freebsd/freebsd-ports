@@ -18,4 +18,4 @@ Please see "${PREFIX}/share/doc/sasl/sysadmin.html".
 using the library, as well as making it easy to test a mechanism on the command
 line.  See "${PREFIX}/share/doc/sasl/programming.html" for more information.
 
-WWW: http://asg.web.cmu.edu/sasl/
+WWW: http://cyrusimap.web.cmu.edu/

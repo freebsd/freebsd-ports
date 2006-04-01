@@ -8,4 +8,4 @@ protection of subsequent protocol interactions. If its use is
 negotiated, a security layer is inserted between the protocol
 and the connection.
 
-WWW: http://asg.web.cmu.edu/sasl/
+WWW: http://cyrusimap.web.cmu.edu/
