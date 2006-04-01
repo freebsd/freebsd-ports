@@ -240,6 +240,7 @@
     SUBDIR += ifp-line
     SUBDIR += jack
     SUBDIR += jamboree
+    SUBDIR += java-xmms2
     SUBDIR += juk
     SUBDIR += juke
     SUBDIR += jxm
