@@ -1,6 +1,6 @@
---- configure.in.orig	Mon Apr 11 23:49:25 2005
-+++ configure.in	Fri Dec 16 23:06:05 2005
-@@ -111,6 +111,23 @@
+--- configure.orig	Sun Feb 26 23:35:41 2006
++++ configure	Sun Feb 26 23:34:39 2006
+@@ -3309,6 +3309,25 @@
  	AS=as
          QT_ARCH="sparc-os2"
          ;;
@@ -15,7 +15,9 @@
 +        	CFLAGS="$EXTRA_CXXFLAGS $OPT_CXXFLAGS"
 +                ;;
 +            *)
-+                AC_MSG_ERROR("sorry...compiler not supported")
++                { { echo "$as_me:$LINENO: error: \"sorry...compiler not supported\"" >&5
++echo "$as_me: error: \"sorry...compiler not supported\"" >&2;}
++   { (exit 1); exit 1; }; }
 +		;;
 +        esac
 +	AS=as
@@ -24,12 +26,11 @@
      *linux*)
          case "$CXX_COMP" in
              c++ | g++)
-@@ -187,7 +204,7 @@
- dnl
-
+@@ -3387,7 +3406,6 @@
+ 
+ 
  test "x$prefix" = xNONE && prefix=$srcdir
 -current_dir=`pwd`; cd $prefix; prefix=`pwd`; cd $current_dir
-+dnl current_dir=`pwd`; cd $prefix; prefix=`pwd`; cd $current_dir
-
- dnl
- dnl Substitution variables.
+ 
+ 
+ 

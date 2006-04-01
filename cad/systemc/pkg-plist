@@ -280,10 +280,10 @@ systemc/include/systemc
 systemc/include/systemc.h
 systemc/lib-freebsd/libsystemc.a
 @dirrmtry systemc/docs
-@dirrm systemc/examples/sysc/2.1
-@dirrm systemc/examples/sysc/fft
-@dirrm systemc/examples/sysc
-@dirrm systemc/examples/systemc
+@dirrmtry systemc/examples/sysc/2.1
+@dirrmtry systemc/examples/sysc/fft
+@dirrmtry systemc/examples/sysc
+@dirrmtry systemc/examples/systemc
 @dirrmtry systemc/examples
 @dirrm systemc/include/sysc/communication
 @dirrm systemc/include/sysc/datatypes/bit
