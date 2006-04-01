@@ -2054,6 +2054,7 @@ em		ports/editors/em
 emacs		ports/editors/emacs
 emacs-calc	ports/math/emacs-calc
 emacs-chess	ports/games/emacs-chess
+emacs-devel	ports/editors/emacs-devel
 emacs-lisp-intro	ports/lang/emacs-lisp-intro
 emacs-w3m		ports/www/emacs-w3m
 emacs-w3m-emacs20	ports/www/emacs-w3m-emacs20
