@@ -1,4 +1,6 @@
 bin/epsilon
+bin/epsilon_thumb_test
+bin/epsilon_thumbd
 bin/epsilon-config
 include/Epsilon.h
 lib/libepsilon.a
