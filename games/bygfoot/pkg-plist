@@ -4,6 +4,14 @@ share/bygfoot/support_files/bygfoot.conf
 share/bygfoot/support_files/bygfoot_app
 share/bygfoot/support_files/bygfoot_constants
 share/bygfoot/support_files/bygfoot_help
+share/bygfoot/support_files/bygfoot_hints_bg
+share/bygfoot/support_files/bygfoot_hints_de
+share/bygfoot/support_files/bygfoot_hints_en
+share/bygfoot/support_files/bygfoot_hints_es
+share/bygfoot/support_files/bygfoot_hints_nl
+share/bygfoot/support_files/bygfoot_hints_sv
+share/bygfoot/support_files/bygfoot_hints_zh
+share/bygfoot/support_files/bygfoot_hints_zh.bak
 share/bygfoot/support_files/bygfoot_tokens
 share/bygfoot/support_files/bygfoot_user.conf
 share/bygfoot/support_files/definitions/argentina/league_argentina1.xml
@@ -89,6 +97,9 @@ share/bygfoot/support_files/definitions/england/league_england2.xml
 share/bygfoot/support_files/definitions/england/league_england3.xml
 share/bygfoot/support_files/definitions/england/league_england4.xml
 share/bygfoot/support_files/definitions/england/league_england5.xml
+share/bygfoot/support_files/definitions/euro08/country_euro08.xml
+share/bygfoot/support_files/definitions/euro08/cup_euro08_cup.xml
+share/bygfoot/support_files/definitions/euro08/league_euro08_europe_teams.xml
 share/bygfoot/support_files/definitions/europe/cup_europe_cwc.xml
 share/bygfoot/support_files/definitions/europe/cup_europe_champ_league.xml
 share/bygfoot/support_files/definitions/europe/cup_europe_uefa.xml
@@ -201,6 +212,35 @@ share/bygfoot/support_files/definitions/spain/league_spain3a.xml
 share/bygfoot/support_files/definitions/spain/league_spain3b.xml
 share/bygfoot/support_files/definitions/spain/league_spain3c.xml
 share/bygfoot/support_files/definitions/spain/league_spain3d.xml
+share/bygfoot/support_files/definitions/sweden/country_sweden.xml
+share/bygfoot/support_files/definitions/sweden/cup_sweden_cupen.xml
+share/bygfoot/support_files/definitions/sweden/cup_sweden_fa.xml
+share/bygfoot/support_files/definitions/sweden/cup_sweden_league.xml
+share/bygfoot/support_files/definitions/sweden/cup_sweden_prom_games_allsvenskan.xml
+share/bygfoot/support_files/definitions/sweden/cup_sweden_prom_games_div3_2.xml
+share/bygfoot/support_files/definitions/sweden/cup_sweden_prom_games_superettan.xml
+share/bygfoot/support_files/definitions/sweden/league_sweden_allsvenskan.xml
+share/bygfoot/support_files/definitions/sweden/league_sweden_division_1_norra.xml
+share/bygfoot/support_files/definitions/sweden/league_sweden_division_1_sodra.xml
+share/bygfoot/support_files/definitions/sweden/league_sweden_division_2_mellerstagotaland.xml
+share/bygfoot/support_files/definitions/sweden/league_sweden_division_2_norrasvealand.xml
+share/bygfoot/support_files/definitions/sweden/league_sweden_division_2_norrland.xml
+share/bygfoot/support_files/definitions/sweden/league_sweden_division_2_ostrasvealand.xml
+share/bygfoot/support_files/definitions/sweden/league_sweden_division_2_sodragotaland.xml
+share/bygfoot/support_files/definitions/sweden/league_sweden_division_2_vastragotaland.xml
+share/bygfoot/support_files/definitions/sweden/league_sweden_division_3_mellerstagotaland.xml
+share/bygfoot/support_files/definitions/sweden/league_sweden_division_3_mellerstanorrland.xml
+share/bygfoot/support_files/definitions/sweden/league_sweden_division_3_nordostrasvealand.xml
+share/bygfoot/support_files/definitions/sweden/league_sweden_division_3_nordvastragotaland.xml
+share/bygfoot/support_files/definitions/sweden/league_sweden_division_3_norranorrland.xml
+share/bygfoot/support_files/definitions/sweden/league_sweden_division_3_norrasvealand.xml
+share/bygfoot/support_files/definitions/sweden/league_sweden_division_3_ostrasvealand.xml
+share/bygfoot/support_files/definitions/sweden/league_sweden_division_3_sodragotaland.xml
+share/bygfoot/support_files/definitions/sweden/league_sweden_division_3_sodranorrland.xml
+share/bygfoot/support_files/definitions/sweden/league_sweden_division_3_sydostragotaland.xml
+share/bygfoot/support_files/definitions/sweden/league_sweden_division_3_sydvastragotaland.xml
+share/bygfoot/support_files/definitions/sweden/league_sweden_division_3_vastrasvealand.xml
+share/bygfoot/support_files/definitions/sweden/league_sweden_superettan.xml
 share/bygfoot/support_files/definitions/usa/country_usa.xml
 share/bygfoot/support_files/definitions/usa/cup_usa_eplayoff.xml
 share/bygfoot/support_files/definitions/usa/cup_usa_mls_cup.xml
@@ -243,6 +283,7 @@ share/bygfoot/support_files/lg_commentary/lg_commentary_de.xml
 share/bygfoot/support_files/lg_commentary/lg_commentary_en.xml
 share/bygfoot/support_files/lg_commentary/lg_commentary_nl.xml
 share/bygfoot/support_files/lg_commentary/lg_commentary_pl.xml
+share/bygfoot/support_files/lg_commentary/lg_commentary_sv.xml
 share/bygfoot/support_files/names/player_names_australia.xml
 share/bygfoot/support_files/names/player_names_belgium.xml
 share/bygfoot/support_files/names/player_names_brazil.xml
@@ -360,6 +401,7 @@ share/bygfoot/support_files/strategy/strategy_defend.xml
 share/bygfoot/support_files/strategy/strategy_fit.xml
 share/bygfoot/support_files/strategy/strategy_gy.xml
 share/bygfoot/support_files/strategy/strategy_normal2.xml
+share/bygfoot/support_files/pixmaps/bygfoot_splash.png
 share/bygfoot/support_files/pixmaps/style_all_atk.png
 share/bygfoot/support_files/pixmaps/style_all_def.png
 share/bygfoot/support_files/pixmaps/style_atk.png
@@ -404,6 +446,8 @@ share/bygfoot/support_files/pixmaps/symbols/flag_england.png
 share/bygfoot/support_files/pixmaps/symbols/flag_estonia.png
 share/bygfoot/support_files/pixmaps/symbols/flag_es.png
 share/bygfoot/support_files/pixmaps/symbols/flag_eu.png
+share/bygfoot/support_files/pixmaps/symbols/flag_euro08.jpg
+share/bygfoot/support_files/pixmaps/symbols/flag_euro08.png
 share/bygfoot/support_files/pixmaps/symbols/flag_fiji.png
 share/bygfoot/support_files/pixmaps/symbols/flag_finland.png
 share/bygfoot/support_files/pixmaps/symbols/flag_fi.png
@@ -530,6 +574,7 @@ share/locale/fr/LC_MESSAGES/bygfoot.mo
 share/locale/nl/LC_MESSAGES/bygfoot.mo
 share/locale/pl/LC_MESSAGES/bygfoot.mo
 share/locale/ro/LC_MESSAGES/bygfoot.mo
+share/locale/sv/LC_MESSAGES/bygfoot.mo
 share/locale/zh/LC_MESSAGES/bygfoot.mo
 @dirrm share/bygfoot/support_files/strategy
 @dirrm share/bygfoot/support_files/pixmaps/symbols
@@ -543,6 +588,7 @@ share/locale/zh/LC_MESSAGES/bygfoot.mo
 @dirrm share/bygfoot/support_files/definitions/wc06
 @dirrm share/bygfoot/support_files/definitions/wales
 @dirrm share/bygfoot/support_files/definitions/usa
+@dirrm share/bygfoot/support_files/definitions/sweden
 @dirrm share/bygfoot/support_files/definitions/spain
 @dirrm share/bygfoot/support_files/definitions/short_leagues_south_america
 @dirrm share/bygfoot/support_files/definitions/short_leagues
@@ -558,6 +604,7 @@ share/locale/zh/LC_MESSAGES/bygfoot.mo
 @dirrm share/bygfoot/support_files/definitions/germany
 @dirrm share/bygfoot/support_files/definitions/france
 @dirrm share/bygfoot/support_files/definitions/europe
+@dirrm share/bygfoot/support_files/definitions/euro08
 @dirrm share/bygfoot/support_files/definitions/england
 @dirrm share/bygfoot/support_files/definitions/bulgaria
 @dirrm share/bygfoot/support_files/definitions/brazil
