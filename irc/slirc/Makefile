@@ -19,6 +19,8 @@ COMMENT=	A SLang-based IRC client
 LIB_DEPENDS=	${LIB_DEPENDS_LIBSLANG}
 
 USE_GMAKE=	yes
+SUB_FILES=	pkg-message
+PKGMESSAGE=	${WRKDIR}/pkg-message
 
 SLANG_INCDIR?=	${PREFIX}/include
 SLANG_LIBDIR?=	${PREFIX}/lib

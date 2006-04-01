@@ -9,7 +9,7 @@ try this.
      See `installmgr --help` for details.
   2. Download raw zip-archives from
        http://www.crosswire.org/sword/modules/
-     and unpack them in PREFIX/share/sword.
+     and unpack them in %%PREFIX%%/share/sword.
 
 You probabely want to install a bible-application that uses sword, like
 cheatah, bibletime or gnomesword.

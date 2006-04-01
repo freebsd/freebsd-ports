@@ -26,6 +26,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--without-conf
 INSTALLS_SHLIB=	yes
+SUB_FILES=	pkg-message
+PKGMESSAGE=	${WRKDIR}/pkg-message
 
 .if defined(WITHOUT_CURL)
 CONFIGURE_ARGS+=	--without-curl
