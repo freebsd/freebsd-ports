@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ewl
-PORTVERSION=	0.0.4.006
+PORTVERSION=	0.0.4.007
 PORTREVISION=	0
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://enlightenment.freedesktop.org/files/
