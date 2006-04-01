@@ -7,4 +7,4 @@ provide proxy authentication services to clients that do not
 understand SASL based authentication.
 
 
-WWW: http://asg.web.cmu.edu/sasl/
+WWW: http://cyrusimap.web.cmu.edu/

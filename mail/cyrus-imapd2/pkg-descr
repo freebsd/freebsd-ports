@@ -18,4 +18,4 @@ read/write connections to the same mailbox are permitted.  The server
 supports access control lists on mailboxes and storage quotas on mailbox
 hierarchies.
 
-WWW: http://asg.web.cmu.edu/cyrus/
+WWW: http://cyrusimap.web.cmu.edu/
