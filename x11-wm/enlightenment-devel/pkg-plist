@@ -208,14 +208,8 @@ lib/libe.so.0
 %%DATADIR%%/data/fonts/VeraMono.ttf
 %%DATADIR%%/data/fonts/VeraSe.ttf
 %%DATADIR%%/data/fonts/VeraSeBd.ttf
-%%DATADIR%%/data/fonts/baekmuk.COPYING
-%%DATADIR%%/data/fonts/dotum.ttf
-%%DATADIR%%/data/fonts/fireflysung.COPYING
-%%DATADIR%%/data/fonts/fireflysung.ttf
 %%DATADIR%%/data/fonts/fonts.alias
 %%DATADIR%%/data/fonts/fonts.dir
-%%DATADIR%%/data/fonts/kochi-gothic.ttf
-%%DATADIR%%/data/fonts/kochi.COPYING
 %%DATADIR%%/data/images/button_in.png
 %%DATADIR%%/data/images/button_out.png
 %%DATADIR%%/data/images/e.png
