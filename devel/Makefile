@@ -462,6 +462,7 @@
     SUBDIR += libcoro
     SUBDIR += libcwd
     SUBDIR += libdaemon
+    SUBDIR += libdasm
     SUBDIR += libdict
     SUBDIR += libdlmalloc
     SUBDIR += libdnsres
