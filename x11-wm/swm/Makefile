@@ -7,10 +7,10 @@
 
 PORTNAME=	swm
 PORTVERSION=	1.3.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://www.informatik.hu-berlin.de/~sperling/prog/
-EXTRACT_SUFX=	a-src.tgz
+MASTER_SITES=	http://www2.informatik.hu-berlin.de/~sperling/prog/
+EXTRACT_SUFX=	c-src.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=Window manager for low-memory systems, with title bars and shading
