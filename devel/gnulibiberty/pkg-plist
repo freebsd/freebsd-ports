@@ -1,3 +1,15 @@
+include/libiberty/ansidecl.h
+include/libiberty/demangle.h
+include/libiberty/dyn-string.h
+include/libiberty/fibheap.h
+include/libiberty/floatformat.h
+include/libiberty/hashtab.h
+include/libiberty/libiberty.h
+include/libiberty/objalloc.h
+include/libiberty/partition.h
+include/libiberty/safe-ctype.h
+include/libiberty/sort.h
+include/libiberty/splay-tree.h
+include/libiberty/ternary.h
 lib/libiberty.a
-share/nls/POSIX
-share/nls/en_US.US-ASCII
+@dirrm include/libiberty

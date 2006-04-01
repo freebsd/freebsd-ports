@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnulibiberty
-PORTVERSION=	2.16
+PORTVERSION=	2.16.1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
 MASTER_SITE_SUBDIR=	binutils/releases
@@ -21,7 +21,8 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--enable-install-libiberty
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
-CONFLICTS=	freelibiberty-*
+CONFLICTS=	freelibiberty-[0-9]*
 
 .include <bsd.port.mk>
