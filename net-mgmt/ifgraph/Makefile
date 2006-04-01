@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	ifgraph
-PORTVERSION=	0.4.9
-PORTREVISION=	1
+PORTVERSION=	0.4.10
 CATEGORIES=	net-mgmt www
-MASTER_SITES=	http://ifgraph.sourceforge.net/stable/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Simple grapher of SNMP data with RRD
