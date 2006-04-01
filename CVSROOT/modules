@@ -5451,6 +5451,7 @@ libctl		ports/science/libctl
 libcwd		ports/devel/libcwd
 libcyrillic	ports/russian/libcyrillic
 libdaemon	ports/devel/libdaemon
+libdasm		ports/devel/libdasm
 libdbi		ports/databases/libdbi
 libdbi-drivers	ports/databases/libdbi-drivers
 libdict		ports/devel/libdict
