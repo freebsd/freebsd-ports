@@ -24,6 +24,7 @@ MAN8=		tspc.8
 MAN5=		tspc.conf.5
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
+SUB_FILES=	freenet6.sh pkg-message
 
 .include <bsd.port.pre.mk>
 
@@ -51,18 +52,6 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 
 post-patch:
-	@${CP} ${FILESDIR}/freenet6.sh.in ${WRKDIR}/freenet6.sh
-	@${REINPLACE_CMD} \
-		-e "s,%%PREFIX%%,${PREFIX},g" \
-		-e "s,%%RC_SUBR%%,${RC_SUBR},g" \
-		${WRKDIR}/freenet6.sh
-
-	@${CP} ${FILESDIR}/pkg-message.in ${WRKDIR}/pkg-message
-	@${REINPLACE_CMD} \
-		-e "s|@@PREFIX@@|${PREFIX}|g" \
-		-e "s|@@EXAMPLESDIR@@|${EXAMPLESDIR}|g" \
-		${WRKDIR}/pkg-message
-
 	@${REINPLACE_CMD} \
 		-e "s|/installdir/bin|${PREFIX}/etc|g" \
 		${WRKSRC}/man/man8/tspc.8
