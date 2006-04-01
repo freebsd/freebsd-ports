@@ -1,11 +1,11 @@
 ##
 To view the installed applets:
 
-	ls ${PREFIX}/share/gnome/gdesklets/Displays
+	ls %%PREFIX%%/share/gnome/gdesklets/Displays
 
 To use those applets:
 
-	gdesklets open ${PREFIX}/share/gnome/gdesklets/Displays/${name}/${name}.display
+	gdesklets open %%PREFIX%%/share/gnome/gdesklets/Displays/${name}/${name}.display
 
 Replace ${name} with the correct name of the applets you want to use.
 

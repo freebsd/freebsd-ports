@@ -10,7 +10,7 @@ PORTVERSION=	0.6
 PORTREVISION=	4
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://gdesklets.gnomedesktop.org/files/
-PKGNAMEPREFIX= gdesklets-
+PKGNAMEPREFIX=	gdesklets-
 DISTNAME=	recently-used-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -20,6 +20,9 @@ RUN_DEPENDS=	gdesklets:${PORTSDIR}/deskutils/gdesklets
 
 USE_PYTHON=	yes
 USE_X_PREFIX=	yes
+SUB_FILES=	pkg-message
+PKGMESSAGE=	${WRKDIR}/pkg-message
+
 NAME=		RecentlyUsed
 DATADIR=	${PREFIX}/share/gnome
 

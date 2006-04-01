@@ -23,6 +23,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 USE_GMAKE=	yes
+PKGMESSAGE=	${WRKDIR}/pkg-message
+SUB_FILES=	pkg-message
 
 post-patch:
 .for file in de es fr pt_BR
@@ -33,6 +35,6 @@ post-patch:
 post-install:
 	@${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/config-file/dictionary ${DATADIR}
-	@${CAT} ${PKGMESSAGE} | ${SED} "s|%%DATADIR%%|${DATADIR}|"
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
