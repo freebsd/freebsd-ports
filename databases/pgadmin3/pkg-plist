@@ -474,6 +474,8 @@ share/pgadmin3/docs/en_US/pg/release-7-3-1.html
 share/pgadmin3/docs/en_US/pg/release-7-3-10.html
 share/pgadmin3/docs/en_US/pg/release-7-3-11.html
 share/pgadmin3/docs/en_US/pg/release-7-3-12.html
+share/pgadmin3/docs/en_US/pg/release-7-3-13.html
+share/pgadmin3/docs/en_US/pg/release-7-3-14.html
 share/pgadmin3/docs/en_US/pg/release-7-3-2.html
 share/pgadmin3/docs/en_US/pg/release-7-3-3.html
 share/pgadmin3/docs/en_US/pg/release-7-3-4.html
@@ -485,6 +487,8 @@ share/pgadmin3/docs/en_US/pg/release-7-3-9.html
 share/pgadmin3/docs/en_US/pg/release-7-3.html
 share/pgadmin3/docs/en_US/pg/release-7-4-1.html
 share/pgadmin3/docs/en_US/pg/release-7-4-10.html
+share/pgadmin3/docs/en_US/pg/release-7-4-11.html
+share/pgadmin3/docs/en_US/pg/release-7-4-12.html
 share/pgadmin3/docs/en_US/pg/release-7-4-2.html
 share/pgadmin3/docs/en_US/pg/release-7-4-3.html
 share/pgadmin3/docs/en_US/pg/release-7-4-4.html
@@ -499,7 +503,11 @@ share/pgadmin3/docs/en_US/pg/release-8-0-2.html
 share/pgadmin3/docs/en_US/pg/release-8-0-3.html
 share/pgadmin3/docs/en_US/pg/release-8-0-4.html
 share/pgadmin3/docs/en_US/pg/release-8-0-5.html
+share/pgadmin3/docs/en_US/pg/release-8-0-6.html
+share/pgadmin3/docs/en_US/pg/release-8-0-7.html
 share/pgadmin3/docs/en_US/pg/release-8-0.html
+share/pgadmin3/docs/en_US/pg/release-8-1-1.html
+share/pgadmin3/docs/en_US/pg/release-8-1-2.html
 share/pgadmin3/docs/en_US/pg/release-8-1.html
 share/pgadmin3/docs/en_US/pg/release.html
 share/pgadmin3/docs/en_US/pg/resources.html
