@@ -20,6 +20,8 @@ USE_GMAKE=	yes
 USE_GETOPT_LONG=yes
 MAKE_ENV=	_LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" GMAKE=${GMAKE}
 SCRIPTS_ENV=	PKG_PREFIX=${PREFIX} NONEXISTENT=${NONEXISTENT} PASSWD=/etc/passwd
+SUB_FILES=	pkg-message
+PKGMESSAGE=	${WRKDIR}/pkg-message
 
 OPTIONS=	UVSCAN "Use UVSCAN" on
 
@@ -51,6 +53,6 @@ do-install:
 
 post-install:
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-	@${SED} -e 's,PREFIX,${PREFIX},g' ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

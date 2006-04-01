@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD$
+# $FreeBSD: /tmp/pcvs/ports/databases/postgresql-relay/files/Attic/postgresql-relay.sh.in,v 1.1 2006-04-01 11:57:25 edwin Exp $
 #
 
 # PROVIDE: postgresql-relay
