@@ -22,7 +22,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN3=		Mail::MboxParser.3 \ Mail::MboxParser::Base.3 \
+MAN3=		Mail::MboxParser.3 Mail::MboxParser::Base.3 \
 		Mail::MboxParser::Mail.3 \
 		Mail::MboxParser::Mail::Body.3 \
 		Mail::MboxParser::Mail::Convertable.3
