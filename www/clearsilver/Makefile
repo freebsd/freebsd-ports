@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	clearsilver
-PORTVERSION=	0.10.2
+PORTVERSION=	0.10.3
 CATEGORIES=	www
 MASTER_SITES=	http://www.clearsilver.net/downloads/
 
@@ -63,7 +63,7 @@ MAN3=	cBroadcast.3 cCreate.3 cDestroy.3 cSignal.3 cWait.3 \
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"
-BROKEN=		"Does not compile completely on sparc64"
+BROKEN=		Does not compile completely on sparc64
 .endif
 
 post-patch:
