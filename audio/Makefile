@@ -266,6 +266,7 @@
     SUBDIR += libmodplug
     SUBDIR += libmpcdec
     SUBDIR += libmusicbrainz
+    SUBDIR += libofa
     SUBDIR += libogg
     SUBDIR += libsamplerate
     SUBDIR += libshout
