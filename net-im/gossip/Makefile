@@ -34,6 +34,10 @@ OPTIONS=	NOTIFY "Enable libnotify support" on
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 500000
+BROKEN=	does not build on 4.X
+.endif
+
 .if !defined(WITHOUT_NOTIFY)
 LIB_DEPENDS+=		notify.1:${PORTSDIR}/devel/libnotify
 .else
