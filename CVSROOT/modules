@@ -514,6 +514,7 @@ asr-utils	ports/sysutils/asr-utils
 asr10		ports/converters/asr10
 assp		ports/mail/assp
 asterisk	ports/net/asterisk
+asterisk-addons	ports/net/asterisk-addons
 asterisk-devel	ports/net/asterisk-devel
 asterisk-oh323	ports/net/asterisk-oh323
 astime		ports/x11-clocks/astime
