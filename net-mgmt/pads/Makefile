@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pads
-PORTVERSION=	1.1.3
+PORTVERSION=	1.2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	passive
@@ -18,6 +18,6 @@ LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
 GNU_CONFIGURE=	yes
 
-MAN8=		pads.8 pads-report.8
+MAN8=		pads.8 pads-report.8 pads.conf.8
 
 .include <bsd.port.mk>
