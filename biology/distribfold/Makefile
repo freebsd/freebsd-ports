@@ -22,6 +22,8 @@ USE_SIZE=	yes
 NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/distribfold
+PKGMESSAGE=	${WRKDIR}/pkg-message
+SUB_FILES=	pkg-message
 
 # files to install
 SCRIPT_FILES=	distrib-update foldit

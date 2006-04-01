@@ -18,6 +18,7 @@ COMMENT=	A collection of programs for searching DNA and protein databases
 NO_CDROM=	May not be sold or incorporated into a commercial product
 WRKSRC=		${WRKDIR}/fasta
 PKGMESSAGE=	${WRKDIR}/pkg-message
+SUB_FILES=	pkg-message
 FASTA_DOCS=	COPYRIGHT README.versions fasta20.doc fasta20.me format.doc \
 		readme.*
 
