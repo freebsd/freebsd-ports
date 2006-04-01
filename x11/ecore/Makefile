@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ecore
-PORTVERSION=	0.9.9.025
+PORTVERSION=	0.9.9.026
 PORTREVISION=	0
 CATEGORIES=	x11
 MASTER_SITES=	http://enlightenment.freedesktop.org/files/
