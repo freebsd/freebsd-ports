@@ -7,13 +7,14 @@
 
 PORTNAME=	mined
 PORTVERSION=	2000.12
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	http://towo.net/mined/
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Text mode editor with Unicode support
 
-MAKEFILE=	makefile
+BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 .if defined(NOPORTDOCS)
 ALL_TARGET=	mined manual
@@ -22,6 +23,8 @@ PORTDOCS=	*
 .endif
 
 USE_GMAKE=	yes
+MAKEFILE=	makefile
+MAKE_SHELL=	${LOCALBASE}/bin/bash	# To avoid "shift: can't shift that many"
 REINPLACE_ARGS=	-i ""
 MAKE_ARGS=	GMAKE=${GMAKE} CC=${CC:T} OPT="${CFLAGS}"
 INSTALL_TARGET=	localinstall
@@ -36,6 +39,7 @@ pre-configure:
 .for FILE in ${PRFX2FIX}
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' ${WRKSRC}/${FILE}
 .endfor
+	${REINPLACE_CMD} -e 's|#! ${SH}|#! ${MAKE_SHELL}|' ${WRKSRC}/makemined
 
 pre-build:
 	${MV} ${WRKSRC}/src/mkinclud.cc ${WRKSRC}/src/mkinclud.cc.bak
