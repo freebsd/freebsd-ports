@@ -1,11 +1,11 @@
 **********************************************************************
 
 By default, P3Scan is configured to work with McAfee UVSCAN.
-Please copy PREFIX/etc/p3scan.conf.sample to p3scan.conf and modify
-PREFIX/etc/p3scan.conf and/or PREFIX/etc/rc.d/p3scan.sh to
+Please copy %%PREFIX%%/etc/p3scan.conf.sample to p3scan.conf and modify
+%%PREFIX%%/etc/p3scan.conf and/or %%PREFIX%%/etc/rc.d/p3scan.sh to
 fit your environment.
 
-Don't forget to copy PREFIX/etc/p3scan.mail.sample to p3scan.mail
+Don't forget to copy %%PREFIX%%/etc/p3scan.mail.sample to p3scan.mail
 and edit your own template for virus notifications.
 
 By the way, you need to enable IPFIREWALL and IPFIREWALL_FORWARD options

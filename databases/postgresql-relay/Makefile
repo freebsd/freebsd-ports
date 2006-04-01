@@ -21,15 +21,7 @@ PLIST_FILES=	bin/postgresql-relay \
 USE_REINPLACE=	yes
 USE_RC_SUBR=	yes
 USE_PERL5_BUILD=yes
-
-post-extract:
-	${CP} ${FILESDIR}/postgresql-relay.sh ${WRKDIR}
-
-post-patch:
-	${REINPLACE_CMD} \
-		-e 's,%%PREFIX%%,${PREFIX},g' \
-		-e 's,%%RC_SUBR%%,${RC_SUBR},g' \
-		${WRKDIR}/postgresql-relay.sh
+SUB_FILES=	postgresql-relay.sh
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/postgresql-relay ${PREFIX}/bin
