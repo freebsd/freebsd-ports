@@ -22,6 +22,8 @@ USE_REINPLACE=	yes
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-cn-locale=eucCN
+PKGMESSAGE=	${WRKDIR}/pkg-message
+SUB_FILES=	pkg-message xsim.sh
 
 .include <bsd.port.pre.mk>
 
@@ -39,10 +41,9 @@ post-patch:
 	@${REINPLACE_CMD} "s/-O2/${CFLAGS}/g" ${WRKSRC}/configure
 
 post-install:
-	@${SED} "s|%%PREFIX%%|${PREFIX}|g" <${FILESDIR}/xsim.sh \
-		>${PREFIX}/bin/xsim && ${CHMOD} 555 ${PREFIX}/bin/xsim
+	${INSTALL_DATA} ${WRKDIR}/xsim.sh ${PREFIX}/bin/xsim
 	@${MKDIR} ${DATADIR}/dat
 	@${CP} -R ${WRKDIR}/usr/local/xsim/dat/* ${DATADIR}/dat
-	@${SED} -e 's,%%X11BASE%%,${X11BASE},g' < ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

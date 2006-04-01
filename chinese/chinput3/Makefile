@@ -20,8 +20,8 @@ USE_GETTEXT=	yes
 USE_GNOME=	gtk12 imlib
 USE_REINPLACE=	yes
 
-MSG_FILE=	${.CURDIR}/pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
+SUB_FILES=	pkg-message
 
 .include <bsd.port.pre.mk>
 
@@ -40,7 +40,6 @@ pre-build:
 		-e 's|-lc_r|${PTHREAD_CFLAGS} ${PTHREAD_LIBS}|'
 
 post-install:
-	@${SED} -e 's,%%X11BASE%%,${X11BASE},g' ${MSG_FILE} > ${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
