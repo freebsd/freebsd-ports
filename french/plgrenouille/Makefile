@@ -36,8 +36,6 @@ USE_REINPLACE=	yes
 USE_RC_SUBR=	yes
 SCRIPTS_ENV=	PKG_PREFIX=${PREFIX}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
-MSG_FILE=	${PKGDIR}/pkg-message
-PKGMESSAGE=	${WRKDIR}/pkg-message
 PKGDEINSTALL=	${PKGINSTALL}
 PLIST_SUB=	LBIN_DIR="${LBIN_DIR:S,^${PREFIX}/,,}" \
 		CONF_DIR="${CONF_DIR:S,^${PREFIX}/,,}" \
@@ -46,8 +44,9 @@ REINPLACE_SUB=	PREFIX=${PREFIX} PERL=${PERL} \
 		LBIN_DIR=${LBIN_DIR} CONF_DIR=${CONF_DIR} \
 		RUN_DIR=${RUN_DIR} LOG_DIR=${LOG_DIR} \
 		SPOOL_DIR=${SPOOL_DIR} SPOOL_USER=${SPOOL_USER}
-RCSCRIPTS_SUB=	${REINPLACE_SUB} RC_SUBR=${RC_SUBR}
-PKGMESSAGE_SUB=	PREFIX=${PREFIX}
+SUB_FILES=	pkg-message plgrenouille.sh
+SUB_LIST=	LBIN_DIR=${LBIN_DIR} RUN_DIR=${RUN_DIR} LOG_DIR=${LOG_DIR}
+PKGMESSAGE=	${WRKDIR}/pkg-message
 
 MAN1=		plgrenouille.1
 DOC_FILES=	FAQ README
@@ -60,7 +59,7 @@ LOG_DIR=	/var/log
 SPOOL_DIR=	/var/spool/${PORTNAME}
 SPOOL_USER=	daemon
 
-post-patch: patch-script patch-lib patch-rc patch-pkgmessage
+post-patch: patch-script patch-lib
 
 patch-script:
 	@${REINPLACE_CMD} ${REINPLACE_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
@@ -69,14 +68,6 @@ patch-script:
 patch-lib:
 	@${REINPLACE_CMD} 's!swap_privileges!Grenouille::System::&!g' \
 		${WRKSRC}/Grenouille/Log.pm ${WRKSRC}/Grenouille/Preferences.pm
-
-patch-rc:
-	@${SED} ${RCSCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${FILESDIR}/plgrenouille.sh > ${WRKDIR}/plgrenouille.sh
-
-patch-pkgmessage:
-	@${SED} ${PKGMESSAGE_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${MSG_FILE} > ${PKGMESSAGE}
 
 do-install: install-script install-lib install-man \
 		install-data install-doc install-rc
