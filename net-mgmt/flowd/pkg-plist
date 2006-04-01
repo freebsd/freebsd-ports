@@ -4,6 +4,10 @@ lib/libflowd.a
 include/flowd/addr.h
 include/flowd/crc32.h
 include/flowd/store.h
+include/flowd/store-v2.h
+include/flowd/flowd-pytypes.h
+include/flowd/flowd-config.h
+include/flowd/flowd-common.h
 sbin/flowd
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Flowd/Flowd.so
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Flowd/Flowd.bs
@@ -11,7 +15,5 @@ sbin/flowd
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/Flowd.pm
 %%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Flowd
 %%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/flowd_serialiser.so
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/flowd.pyc
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/flowd.py
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/flowd.so
 @dirrm include/flowd
