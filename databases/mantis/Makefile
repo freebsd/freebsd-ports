@@ -11,7 +11,7 @@ CATEGORIES=	databases www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mantisbt
 
-MAINTAINER=	gioria@FreeBSD.org
+MAINTAINER=	dan@langille.org
 COMMENT=	A bug tracking system written in PHP
 
 NO_BUILD=	yes
