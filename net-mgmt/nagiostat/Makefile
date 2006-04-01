@@ -16,10 +16,7 @@ MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Nagiostat parses performance-data from Nagios and generates graphs
 
 RUN_DEPENDS=	rrdtool:${PORTSDIR}/net/rrdtool \
-		nagios:${PORTSDIR}/net-mgmt/nagios \
-		${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm
-
-BROKEN=		Does not install
+		nagios:${PORTSDIR}/net-mgmt/nagios
 
 USE_PERL5=	yes
 NO_BUILD=	yes
@@ -27,6 +24,9 @@ USE_REINPLACE=	yes
 NO_WRKSUBDIR=	yes
 NAGIOSDIR?=	/var/spool/nagios
 DOC_FILES=	README GPL.txt
+
+NAGIOSWWWDIR?=	www/nagios
+PLIST_SUB+=	NAGIOSWWWDIR=${NAGIOSWWWDIR}
 
 post-patch:
 	@${REINPLACE_CMD} \
@@ -39,9 +39,9 @@ do-install:
 	@${MKDIR} ${PREFIX}/libexec/${PORTNAME}
 	@${MKDIR} ${NAGIOSDIR}/${PORTNAME}rrd
 	@${INSTALL_SCRIPT} ${WRKSRC}/nagiostat ${PREFIX}/libexec/${PORTNAME}/
-	@${LN} -fs ${PREFIX}/libexec/${PORTNAME}/nagiostat ${PREFIX}/share/nagios/cgi-bin/nagiostat.cgi
+	@${LN} -fs ${PREFIX}/libexec/${PORTNAME}/nagiostat ${PREFIX}/${NAGIOSWWWDIR}/cgi-bin/nagiostat.cgi
 	@${INSTALL_DATA} ${WRKSRC}/nagiostat.conf ${PREFIX}/etc/nagiostat.conf-sample
-	@${INSTALL_DATA} ${WRKSRC}/graph.gif ${PREFIX}/share/nagios/images/logos
+	@${INSTALL_DATA} ${WRKSRC}/graph.gif ${PREFIX}/${NAGIOSWWWDIR}/images/logos
 	@${MKDIR} ${PREFIX}/libexec/${PORTNAME}/html-templates/
 	@${INSTALL_DATA} ${WRKSRC}/html-templates/default.html ${PREFIX}/libexec/${PORTNAME}/html-templates/
 	@${INSTALL_DATA} ${WRKSRC}/html-templates/graphindex.html ${PREFIX}/libexec/${PORTNAME}/html-templates/
@@ -54,4 +54,10 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500800
+RUN_DEPENDS+=	${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm
+.endif
+
+.include <bsd.port.post.mk>
