@@ -1,5 +1,5 @@
 Mantis is a web-based bugtracking system. It is in active development
-and is considered beta.
+and is no longer considered beta.
 
 It is written in the PHP scripting language and requires the MySQL
 database and a webserver. Mantis has been installed on Windows,
