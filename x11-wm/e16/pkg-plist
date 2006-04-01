@@ -438,7 +438,7 @@ share/xsessions/e16.desktop
 @dirrm %%DATADIR%%/themes/winter
 @dirrm %%DATADIR%%/themes
 @dirrm %%DATADIR%%
-@dirrmtry share/locale/en_US/LC_MESSAGS
+@dirrmtry share/locale/en_US/LC_MESSAGES
 @dirrmtry share/locale/en_US
 @dirrmtry etc/X11/dm/Sessions
 @dirrmtry etc/X11/dm
