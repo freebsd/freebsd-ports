@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	edb
-PORTVERSION=	1.0.5.006
+PORTVERSION=	1.0.5.007
 PORTREVISION=	0
 CATEGORIES=	databases
 MASTER_SITES=	http://enlightenment.freedesktop.org/files/
