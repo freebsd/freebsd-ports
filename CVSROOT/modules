@@ -4694,6 +4694,7 @@ java-getopt	ports/java/java-getopt
 java-sqlrelay	ports/databases/java-sqlrelay
 java-tutorial	ports/java/java-tutorial
 java-util-concurrent	ports/devel/java-util-concurrent
+java-xmms2	ports/audio/java-xmms2
 java2html	ports/textproc/java2html
 java3d		ports/java/java3d
 java_jgraph	ports/java/jgraph
