@@ -1,10 +1,10 @@
 ************************************************************************
-To launch your p4db site, edit /usr/local/perforce/p4db/P4DB.conf and
-configure the web server to make /usr/local/perforce/p4db/www
+To launch your p4db site, edit %%LOCALBASE%%/perforce/p4db/P4DB.conf and
+configure the web server to make %%LOCALBASE%%/perforce/p4db/www
 viewable.  For example:
 
-    Alias /p4db/ "/usr/local/perforce/p4db/www/"
-    <Directory "/usr/local/perforce/p4db/www">
+    Alias /p4db/ "%%LOCALBASE%%/perforce/p4db/www/"
+    <Directory "%%LOCALBASE%%/perforce/p4db/www">
         AddHandler cgi-script .cgi
         DirectoryIndex index.cgi
         Options ExecCGI
@@ -13,5 +13,4 @@ viewable.  For example:
         Allow from all
     </Directory>
 
-(Replace /usr/local with your ${PREFIX} as appropriate)
 ************************************************************************

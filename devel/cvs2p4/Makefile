@@ -17,6 +17,8 @@ COMMENT=	CVS to Perforce Converter
 USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ""
 NO_BUILD=	yes
+SUB_FILES=	pkg-message
+PKGMESSAGE=	${WRKDIR}/pkg-message
 
 PERFORCE_PORT?=	1666
 
