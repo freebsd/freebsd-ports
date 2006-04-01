@@ -3,6 +3,6 @@
 
    unicode=1
 
- and make a symbolic link of $PREFIX/share/mplayer/fonts/chinese/${FONT}
+ and make a symbolic link of %%PREFIX%%/share/mplayer/fonts/chinese/${FONT}
  as $HOME/.mplayer/font
 ===========================================================================

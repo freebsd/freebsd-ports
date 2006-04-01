@@ -16,6 +16,8 @@ COMMENT=	Convert Chinese-Big5/GB encoded files to Postscript, using TTF fonts
 
 USE_FREETYPE=	yes
 USE_PYTHON=	yes
+PKGMESSAGE=	${WRKDIR}/pkg-message
+SUB_FILES=	pkg-message
 
 do-install:
 	@${MKDIR} ${PREFIX}/share/doc/bg5ps

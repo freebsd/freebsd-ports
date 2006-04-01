@@ -23,6 +23,8 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libiconv.so.3:${PORTSDIR}/converters/libiconv \
 USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/${SUBFONT_DISTNAME}
 PLIST_SUB+=	MF=${MPLAYER_FONTDIR:S,${LOCALBASE}/,,g}
+PKGMESSAGE=	${WRKDIR}/pkg-message
+SUB_FILES=	pkg-message
 
 SUBFONT_DISTNAME=	subfont-c-0.90pre6
 MPLAYER_FONTDIR=	${LOCALBASE}/share/mplayer/fonts/chinese
