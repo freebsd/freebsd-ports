@@ -19,11 +19,9 @@ USE_PHP=	yes
 USE_PHPIZE=	yes
 CONFIGURE_ARGS=	--enable-xdebug --with-php-config=${PREFIX}/bin/php-config
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
+SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
-
-post-build:
-	@${SED} "s|%%PREFIX%%|${PREFIX}|g;s|%%PHP_EXT_DIR%%|${PHP_EXT_DIR}|g" \
-		< ${.CURDIR}/pkg-message > ${PKGMESSAGE}
+SUB_LIST=	PHP_EXT_DIR=${PHP_EXT_DIR}
 
 do-install:
 	@${MKDIR} ${PREFIX}/lib/php/${PHP_EXT_DIR}

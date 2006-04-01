@@ -17,13 +17,14 @@ COMMENT=	Web/Perforce Browser
 RUN_DEPENDS=	p4:${.CURDIR}/../perforce
 
 USE_PERL5=	yes
-
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 PATCH_WRKSRC=	${WRKSRC}/${PORTNAME}
+SUB_FILES=	pkg-message
+PKGMESSAGE=	${WRKDIR}/pkg-message
 
 FQDN!=		hostname
-P4DB_HOME=	${LOCALBASE}/perforce/${PORTNAME}
+P4DB_HOME=	${PREFIX}/perforce/${PORTNAME}
 
 # These variables are all configurable.
 PERFORCE_USER?=		p4admin
