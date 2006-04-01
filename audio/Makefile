@@ -413,6 +413,7 @@
     SUBDIR += py-sdl_mixer
     SUBDIR += py-vorbis
     SUBDIR += py-xmms
+    SUBDIR += py-xmms2
     SUBDIR += pysol-sound-server
     SUBDIR += q-audio
     SUBDIR += quelcom
