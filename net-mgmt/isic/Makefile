@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	isic
-PORTVERSION=	0.05
-PORTREVISION=	1
+PORTVERSION=	0.06
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://www.packetfactory.net/Projects/ISIC/
+MASTER_SITES=	http://www.packetfactory.net/Projects/ISIC/ \
+		http://www.packetstormsecurity.org/UNIX/misc/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	bradh@uunet.co.za
 COMMENT=	IP Stack Integrity Checker
 
-BUILD_DEPENDS=	libnet*<=1.1.0,1:${PORTSDIR}/net/libnet10
+BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet
 
 GNU_CONFIGURE=	yes
 
