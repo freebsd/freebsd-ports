@@ -38,6 +38,8 @@ BROKEN=		Incomplete pkg-plist
 WRKSRC=		${WRKDIR}/${PORTNAME}-prg-${PORTVERSION:R}-${PORTVERSION:E}
 USE_GETTEXT=	yes
 WANT_GNOME=	yes
+SUB_FILES=	pkg-message
+PKGMESSAGE=	${WRKDIR}/pkg-message
 
 OPTIONS=	IODBC		"iODBC support"				on \
 		UNIXODBC	"unixODBC support (not with iODBC)"	off \
@@ -115,8 +117,6 @@ MAKE_ENV=		HOME="${WRKDIR}" \
 			WITH_IODBC="${WITH_IODBC}" \
 			CLIP_CONFIGURE_FLAGS="-l"
 
-PKGMESSAGE=	${WRKDIR}/pkg-message
-
 FIREBIRD_PORT?=	databases/firebird-client
 
 BIN2STRIP=	bdbf clip clip_bl clip_blank clip_cld clip_conv clip_dbf2txt	\
@@ -165,7 +165,6 @@ do-install:
 	done
 
 post-install:
-	@${SED} 's+/usr/local+${PREFIX}+' <${.CURDIR}/pkg-message >${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

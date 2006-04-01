@@ -15,6 +15,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	No-IP.com's dynamic DNS update client
 
 ALL_TARGET=	noip2
+SUB_FILES=	pkg-message
+PKGMESSAGE=	${WRKDIR}/pkg-message
 
 post-build:
 	${SED} "s|%%PREFIX%%|${PREFIX}|g" < ${FILESDIR}/noip.sh > ${WRKSRC}/noip.sh
@@ -31,7 +33,9 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/README.FIRST ${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/COPYING ${DOCSDIR}
 .endif
-	@${SED} "s|%%PREFIX%%|${PREFIX}|g" ${PKGMESSAGE} | ${SED} "s|%%WRKSRC%%|${WRKSRC}|g"
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 conf:
 	(cd ${PREFIX}/etc && ${PREFIX}/bin/noip2 -C)
