@@ -2240,7 +2240,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>mantis</name>
-	<range><gt>0</gt></range>
+	<range><lt>1.0.0rc3</lt></range>
       </package>
     </affects>
     <description>
@@ -2271,7 +2271,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>mantis</name>
-	<range><gt>0</gt></range>
+	<range><lt>1.0.0rc4</lt></range>
       </package>
     </affects>
     <description>
