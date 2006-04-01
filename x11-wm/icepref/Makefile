@@ -23,13 +23,16 @@ USE_GNOME=	gtk12
 NO_BUILD=	yes
 MAN1=		icepref.1
 
+PORTDOCS=	README FAQ LICENSE
+PLIST_FILES=	bin/icepref
+
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/icepref ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/icepref.1 ${PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/icepref
-.for DOC in README FAQ LICENSE
-	${INSTALL_DATA} ${WRKSRC}/${DOC} ${PREFIX}/share/doc/icepref
+	${MKDIR} ${DOCSDIR}
+.for DOC in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${DOC} ${DOCSDIR}
 .endfor
 .endif
 
