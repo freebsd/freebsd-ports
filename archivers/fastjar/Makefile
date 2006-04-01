@@ -20,6 +20,8 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 PORTDOCS=	CHANGES README
 PLIST_FILES=	bin/fastjar bin/grepjar
+SUB_FILES=	pkg-message
+PKGMESSAGE=	${WRKDIR}/pkg-message
 
 post-install:
 .if !defined(NOPORTDOCS)
