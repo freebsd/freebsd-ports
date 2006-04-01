@@ -22,7 +22,6 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_PERL5_BUILD=	yes
 USE_QT_VER=	3
-USE_REINPLACE=	yes
 
 CONFIGURE_ENV+=	QTDIR=${X11BASE} \
       QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++ \
@@ -31,6 +30,10 @@ MAKE_ARGS+=	QTDIR=${X11BASE} \
       QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		does not compile
+.endif
 
 post-patch:
 .if ${OSVERSION} < 500000
