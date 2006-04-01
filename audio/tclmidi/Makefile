@@ -20,6 +20,8 @@ LIB_DEPENDS=	tcl82.1:${PORTSDIR}/lang/tcl82
 MAKE_ENV=	TCL_GENERIC_DIR=${LOCALBASE}/include/tcl8.2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-tclsh=${LOCALBASE}/bin/tclsh8.2
+PKGMESSAGE=	${WRKDIR}/pkg-message
+SUB_FILES=	pkg-message
 
 MAN1=		mplay.1 mrec.1 tclmidi.1 minfo.1 midtotcl.1
 MANN=		midiconf.n midievnt.n midifree.n midiget.n midigrep.n \
@@ -42,6 +44,6 @@ post-extract:
 .endif
 
 post-install:
-	@${CAT} ${PKGMESSAGE} | ${SED} s#/usr/local#${PREFIX}#g
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
