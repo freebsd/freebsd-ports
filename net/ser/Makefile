@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	ser
-PORTVERSION=	0.9.3
-PORTREVISION=	1
+PORTVERSION=	0.9.6
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.berlios.de/pub/ser/${PORTVERSION}/src/
+MASTER_SITES=	http://download.berlios.de/ser/ \
+		http://download2.berlios.de/ser/
 DISTNAME=	${PORTNAME}-${PORTVERSION}_src
 
 MAINTAINER=	sobomax@FreeBSD.org
@@ -47,7 +47,7 @@ MAKE_ENV+=	POSTGRESQL=postgres
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64" || ${ARCH} == "ia64"
-BROKEN=		"Does not compile completely on sparc64 or ia64"
+BROKEN=		Does not compile completely on sparc64 or ia64
 .endif
 
 post-install:
