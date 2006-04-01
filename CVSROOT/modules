@@ -6146,6 +6146,7 @@ malsync		ports/palm/malsync
 mambo		ports/www/mambo
 man.el		ports/misc/man.el
 man2html	ports/textproc/man2html
+mantis		ports/databases/mantis
 man2web		ports/www/man2web
 managepkg	ports/sysutils/managepkg
 manck		ports/sysutils/manck
