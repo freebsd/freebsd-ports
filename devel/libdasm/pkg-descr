@@ -1,0 +1,5 @@
+libdasm is a C-library that tries to provide simple and convenient
+way to disassemble Intel x86 raw opcode bytes (machine code). It
+can parse and print out opcodes in AT&T and Intel syntax.
+
+WWW: http://www.nologin.net/main.pl?action=codeView&codeId=49&

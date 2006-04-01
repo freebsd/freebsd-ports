@@ -1,0 +1,11 @@
+include/libdasm.h
+lib/libdasm.a
+lib/libdasm.so
+lib/libdasm.so.1
+%%EXAMPLES%%%%EXAMPLESDIR%%/README.txt
+%%EXAMPLES%%%%EXAMPLESDIR%%/das.c
+%%EXAMPLES%%%%EXAMPLESDIR%%/simple.c
+%%EXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/HISTORY.txt
+%%PORTDOCS%%%%DOCSDIR%%/README.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
