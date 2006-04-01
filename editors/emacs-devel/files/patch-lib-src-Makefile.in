@@ -1,0 +1,27 @@
+--- lib-src/Makefile.in.orig    Fri Jun 11 04:39:49 2004
++++ lib-src/Makefile.in Tue Apr 12 23:08:49 2005
+@@ -94,6 +94,7 @@
+ INSTALL = @INSTALL@
+ INSTALL_PROGRAM = @INSTALL_PROGRAM@
+ INSTALL_DATA = @INSTALL_DATA@
++INSTALL_SCRIPT = @INSTALL_SCRIPT@
+ # By default, we uphold the dignity of our programs.
+ INSTALL_STRIP =
+ 
+@@ -319,7 +320,7 @@
+         if [ `(cd ${archlibdir} && /bin/pwd)` \
+              != `(cd ${srcdir} && /bin/pwd)` ]; then \
+ 	  for file in ${SCRIPTS}; do \
+-	    $(INSTALL_PROGRAM) ${srcdir}/$$file ${archlibdir}/$$file; \
++	    $(INSTALL_SCRIPT) ${srcdir}/$$file ${archlibdir}/$$file; \
+ 	  done ; \
+ 	fi
+ 
+@@ -331,7 +332,7 @@
+ 	  chmod a+rx ${bindir}/`echo $${file} | sed '$(TRANSFORM)'`; \
+ 	done
+ 	for file in ${INSTALLABLE_SCRIPTS} ; do \
+-	  $(INSTALL_PROGRAM) ${srcdir}/$${file} ${bindir}/`echo $${file} | sed '$(TRANSFORM)'`  ; \
++	  $(INSTALL_SCRIPT) ${srcdir}/$${file} ${bindir}/`echo $${file} | sed '$(TRANSFORM)'`  ; \
+ 	  chmod a+rx ${bindir}/`echo $${file} | sed '$(TRANSFORM)'`; \
+ 	done

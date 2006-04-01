@@ -1,0 +1,12 @@
+--- configure.in.orig	Sat Apr  1 23:17:28 2006
++++ configure.in	Sat Apr  1 23:28:18 2006
+@@ -237,6 +237,9 @@
+     opsys=freebsd
+     case "${canonical}" in
+       alpha*-*-freebsd*)	machine=alpha ;;
++      ia64-*-freebsd*)		machine=ia64 ;;
++      sparc64-*-freebsd*)	machine=sparc ;;
++      powerpc-*-freebsd*)	machine=macppc ;;
+       i[3456]86-*-freebsd*)	machine=intel386 ;;
+       amd64-*-freebsd*|x86_64-*-freebsd*) machine=amdx86-64 ;;
+     esac
