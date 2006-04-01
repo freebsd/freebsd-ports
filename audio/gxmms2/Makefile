@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gxmms2
-PORTVERSION=	0.6.1
-PORTREVISION=	1
+PORTVERSION=	0.6.2
 CATEGORIES=	audio
 MASTER_SITES=	http://wejp.mooo.com/wejp/xmms2/
 
