@@ -6,21 +6,28 @@ bin/ifgraph.pl
 bin/makegraph.pl
 etc/ifgraph.conf.sample
 ifgraph/crontab.in
-ifgraph/templates/ifgraph-logo.jpg
-ifgraph/templates/en/main-header.html
 ifgraph/templates/en/if-data.html
 ifgraph/templates/en/if-header.html
 ifgraph/templates/en/if-trailer.html
 ifgraph/templates/en/main-data.html
+ifgraph/templates/en/main-header.html
 ifgraph/templates/en/main-trailer.html
-ifgraph/templates/pt-br/main-header.html
+ifgraph/templates/es/if-data.html
+ifgraph/templates/es/if-header.html
+ifgraph/templates/es/if-trailer.html
+ifgraph/templates/es/main-data.html
+ifgraph/templates/es/main-header.html
+ifgraph/templates/es/main-trailer.html
+ifgraph/templates/ifgraph-logo.jpg
 ifgraph/templates/pt-br/if-data.html
 ifgraph/templates/pt-br/if-header.html
 ifgraph/templates/pt-br/if-trailer.html
 ifgraph/templates/pt-br/main-data.html
+ifgraph/templates/pt-br/main-header.html
 ifgraph/templates/pt-br/main-trailer.html
-@dirrm ifgraph/templates/en/
-@dirrm ifgraph/templates/pt-br/
+@dirrm ifgraph/templates/en
+@dirrm ifgraph/templates/es
+@dirrm ifgraph/templates/pt-br
 @dirrm ifgraph/templates
 @dirrm ifgraph/htdocs
 @dirrmtry ifgraph

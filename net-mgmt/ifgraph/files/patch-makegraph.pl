@@ -1,15 +1,15 @@
---- makegraph.pl.orig	Sun Sep 21 12:30:49 2003
-+++ makegraph.pl	Sun Sep 21 12:32:08 2003
+--- makegraph.pl.orig	Sat Jan  3 16:44:21 2004
++++ makegraph.pl	Tue Feb  7 12:48:07 2006
 @@ -19,8 +19,6 @@
- #Sugestoes e criticas (sem flames!!) mailto:sartori@ifgraph.org
- #Visite: http://www.ifgraph.org
+ #Sugestoes e criticas (sem flames!!) mailto:sartori@ifgraph.lrv.ufsc.br
+ #Visite: http://ifgraph.lrv.ufsc.br
  
 -use FindBin;
 -use lib "$FindBin::Bin/lib";
  use strict;
  use Getopt::Std;
- use vars qw($opt_d $opt_c $opt_B $opt_b $opt_h $opt_g $opt_t $opt_T $targetindex
-@@ -30,14 +28,7 @@
+ use Color::Rgb;
+@@ -31,14 +29,7 @@
  getopt('ctT');
  getopts('Bbgdh');
  
@@ -18,7 +18,7 @@
 -	&debug("Warning: Older perl version $], we will use Net::SNMP 3.65\n");
 -	require Net::SNMP_365; 
 -} else {
--	&debug("Starting ifgraph 0.4.9 with perl $[, Net::SNMP 4.3\n");
+-	&debug("Starting ifgraph 0.4.10 with perl $[, Net::SNMP 4.3\n");
 -	require Net::SNMP;
 -}
 +use Net::SNMP;
