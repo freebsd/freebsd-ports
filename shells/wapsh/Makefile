@@ -16,6 +16,8 @@ MAINTAINER=		ports@FreeBSD.org
 COMMENT=		A system to allow remote shell logins via a WAP phone or web browser
 
 WRKSRC=			${WRKDIR}/${DISTNAME:S/_/-/}
+SUB_FILES=		pkg-message
+PKGMESSAGE=		${WRKDIR}/pkg-message
 
 USERGUIDEDOCS=		Image10.jpg Image11.jpg Image12.jpg Image13.jpg \
 			Image14.jpg Image15.jpg Image16.jpg Image17.jpg \
@@ -91,6 +93,6 @@ post-install:
 		${ECHO} "===>   Installing ${PREFIX}/etc/rc.d/htshd.sh startup file."; \
 		${INSTALL_SCRIPT} ${FILESDIR}/htshd.sh ${PREFIX}/etc/rc.d/htshd.sh; \
 	fi
-	@${SED} -e 's,%%PREFIX%%,${PREFIX},g' ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
