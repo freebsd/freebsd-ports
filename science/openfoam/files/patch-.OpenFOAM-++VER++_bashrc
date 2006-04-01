@@ -1,5 +1,5 @@
---- .OpenFOAM-1.2/bashrc.orig	Fri Aug 12 18:59:28 2005
-+++ .OpenFOAM-1.2/bashrc	Mon Dec 26 12:23:12 2005
+--- .OpenFOAM-1.3/bashrc.orig	Wed Mar 29 08:57:06 2006
++++ .OpenFOAM-1.3/bashrc	Thu Mar 30 21:55:18 2006
 @@ -41,15 +41,15 @@
  #
  # Location of FOAM installation
@@ -23,25 +23,16 @@
  
  # Compiler (if set to "" use the system compiler)
  # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
--export WM_COMPILER=Gcc
-+#export WM_COMPILER=Gcc
+-export WM_COMPILER=Gcc4
++#export WM_COMPILER=Gcc4
 +export WM_COMPILER=
  export WM_COMPILER_ARCH=
  export WM_COMPILER_LIB_ARCH=
  
-@@ -66,7 +67,7 @@
- # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
- export WM_COMPILE_OPTION=Opt
- #export WM_COMPILE_OPTION=Debug
--#setenv WM_COMPILE_OPTION Prof
-+#export WM_COMPILE_OPTION=Prof
- 
- export WM_JAVAC_OPTION=Opt
- #export WM_JAVAC_OPTION=Debug
 @@ -120,6 +121,16 @@
-     #export WM_MPLIB=
+     #export WM_MPLIB=OPENMPI
      export WM_MPLIB=LAM
-     #export WM_MPLIB=MPI
+     #export WM_MPLIB=MPICH
 +
 +# FreeBSD workstation
 +# ~~~~~~~~~~~~~~~~~~~

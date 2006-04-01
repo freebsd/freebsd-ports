@@ -23,6 +23,7 @@
 %%REALNAME%%/.%%REALNAME%%-%%VER%%/apps/FoamX/dictionaries/combustionProperties/MKCoeffs/MKCoeffsEntries.cfg
 %%REALNAME%%/.%%REALNAME%%-%%VER%%/apps/FoamX/dictionaries/combustionProperties/MKCoeffs/Propane.cfg
 %%REALNAME%%/.%%REALNAME%%-%%VER%%/apps/FoamX/dictionaries/combustionProperties/MKCoeffs/defaults/Propane.def
+%%REALNAME%%/.%%REALNAME%%-%%VER%%/apps/FoamX/dictionaries/combustionProperties/StCorr.cfg
 %%REALNAME%%/.%%REALNAME%%-%%VER%%/apps/FoamX/dictionaries/combustionProperties/SuModel.cfg
 %%REALNAME%%/.%%REALNAME%%-%%VER%%/apps/FoamX/dictionaries/combustionProperties/XiModel.cfg
 %%REALNAME%%/.%%REALNAME%%-%%VER%%/apps/FoamX/dictionaries/combustionProperties/combustionProperties.cfg
@@ -37,6 +38,14 @@
 %%REALNAME%%/.%%REALNAME%%-%%VER%%/apps/FoamX/dictionaries/controlDict/maxCo.cfg
 %%REALNAME%%/.%%REALNAME%%-%%VER%%/apps/FoamX/dictionaries/controlDict/maxDeltaT.cfg
 %%REALNAME%%/.%%REALNAME%%-%%VER%%/apps/FoamX/dictionaries/controlDict/standardEntries.cfg
+%%REALNAME%%/.%%REALNAME%%-%%VER%%/apps/FoamX/dictionaries/dynamicMeshDict/diffusion.cfg
+%%REALNAME%%/.%%REALNAME%%-%%VER%%/apps/FoamX/dictionaries/dynamicMeshDict/distancePatches.cfg
+%%REALNAME%%/.%%REALNAME%%-%%VER%%/apps/FoamX/dictionaries/dynamicMeshDict/dynamicMeshDict.cfg
+%%REALNAME%%/.%%REALNAME%%-%%VER%%/apps/FoamX/dictionaries/dynamicMeshDict/frozenDiffusion.cfg
+%%REALNAME%%/.%%REALNAME%%-%%VER%%/apps/FoamX/dictionaries/dynamicMeshDict/movingFvMesh.cfg
+%%REALNAME%%/.%%REALNAME%%-%%VER%%/apps/FoamX/dictionaries/dynamicMeshDict/movingInkJetFvMeshCoeffs.cfg
+%%REALNAME%%/.%%REALNAME%%-%%VER%%/apps/FoamX/dictionaries/dynamicMeshDict/solver.cfg
+%%REALNAME%%/.%%REALNAME%%-%%VER%%/apps/FoamX/dictionaries/dynamicMeshDict/staticFvMesh.cfg
 %%REALNAME%%/.%%REALNAME%%-%%VER%%/apps/FoamX/dictionaries/environmentalProperties/environmentalPropertiesg.cfg
 %%REALNAME%%/.%%REALNAME%%-%%VER%%/apps/FoamX/dictionaries/fvSchemes/d2dt2/allSchemes.cfg
 %%REALNAME%%/.%%REALNAME%%-%%VER%%/apps/FoamX/dictionaries/fvSchemes/d2dt2/schemes.cfg
@@ -249,14 +258,6 @@
 %%REALNAME%%/.%%REALNAME%%-%%VER%%/apps/FoamX/dictionaries/injectorProperties/injector.cfg
 %%REALNAME%%/.%%REALNAME%%-%%VER%%/apps/FoamX/dictionaries/injectorProperties/injectorProperties.cfg
 %%REALNAME%%/.%%REALNAME%%-%%VER%%/apps/FoamX/dictionaries/injectorProperties/timeDistance.cfg
-%%REALNAME%%/.%%REALNAME%%-%%VER%%/apps/FoamX/dictionaries/motionProperties/diffusion.cfg
-%%REALNAME%%/.%%REALNAME%%-%%VER%%/apps/FoamX/dictionaries/motionProperties/distancePatches.cfg
-%%REALNAME%%/.%%REALNAME%%-%%VER%%/apps/FoamX/dictionaries/motionProperties/frozenDiffusion.cfg
-%%REALNAME%%/.%%REALNAME%%-%%VER%%/apps/FoamX/dictionaries/motionProperties/motionProperties.cfg
-%%REALNAME%%/.%%REALNAME%%-%%VER%%/apps/FoamX/dictionaries/motionProperties/movingFvMesh.cfg
-%%REALNAME%%/.%%REALNAME%%-%%VER%%/apps/FoamX/dictionaries/motionProperties/movingInkJetFvMeshCoeffs.cfg
-%%REALNAME%%/.%%REALNAME%%-%%VER%%/apps/FoamX/dictionaries/motionProperties/solver.cfg
-%%REALNAME%%/.%%REALNAME%%-%%VER%%/apps/FoamX/dictionaries/motionProperties/staticFvMesh.cfg
 %%REALNAME%%/.%%REALNAME%%-%%VER%%/apps/FoamX/dictionaries/physicalProperties/physicalProperties.cfg
 %%REALNAME%%/.%%REALNAME%%-%%VER%%/apps/FoamX/dictionaries/probeLocations/probeLocations.cfg
 %%REALNAME%%/.%%REALNAME%%-%%VER%%/apps/FoamX/dictionaries/sprayProperties/RanzMarshallCoeffs.cfg
@@ -537,6 +538,7 @@
 %%REALNAME%%/.%%REALNAME%%-%%VER%%/apps/FoamX/entries/dimensionedScalar/Ctau3.cfg
 %%REALNAME%%/.%%REALNAME%%-%%VER%%/apps/FoamX/entries/dimensionedScalar/Cv.cfg
 %%REALNAME%%/.%%REALNAME%%-%%VER%%/apps/FoamX/entries/dimensionedScalar/Cv1.cfg
+%%REALNAME%%/.%%REALNAME%%-%%VER%%/apps/FoamX/entries/dimensionedScalar/Cv2.cfg
 %%REALNAME%%/.%%REALNAME%%-%%VER%%/apps/FoamX/entries/dimensionedScalar/Cvm.cfg
 %%REALNAME%%/.%%REALNAME%%-%%VER%%/apps/FoamX/entries/dimensionedScalar/Cw1.cfg
 %%REALNAME%%/.%%REALNAME%%-%%VER%%/apps/FoamX/entries/dimensionedScalar/Cw2.cfg
@@ -644,6 +646,7 @@
 %%REALNAME%%/.%%REALNAME%%-%%VER%%/apps/FoamX/entries/dimensionedVector/V0.cfg
 %%REALNAME%%/.%%REALNAME%%-%%VER%%/apps/FoamX/entries/dimensionedVector/createDimensionedVector
 %%REALNAME%%/.%%REALNAME%%-%%VER%%/apps/FoamX/entries/dimensionedVector/g.cfg
+%%REALNAME%%/.%%REALNAME%%-%%VER%%/apps/FoamX/entries/engineMesh/engineMesh.cfg
 %%REALNAME%%/.%%REALNAME%%-%%VER%%/apps/FoamX/entries/fieldValues/fieldValue.cfg
 %%REALNAME%%/.%%REALNAME%%-%%VER%%/apps/FoamX/entries/fieldValues/fieldValues.cfg
 %%REALNAME%%/.%%REALNAME%%-%%VER%%/apps/FoamX/entries/fieldValues/volScalarFieldValue.cfg
@@ -977,183 +980,190 @@
 %%REALNAME%%/.%%REALNAME%%-%%VER%%/bashrc
 %%REALNAME%%/.%%REALNAME%%-%%VER%%/cellModels
 %%REALNAME%%/.%%REALNAME%%-%%VER%%/controlDict
-%%REALNAME%%/.%%REALNAME%%-%%VER%%/controlDict.save
 %%REALNAME%%/.%%REALNAME%%-%%VER%%/cshrc
 %%REALNAME%%/.%%REALNAME%%-%%VER%%/thermoData/BurcatCpData
 %%REALNAME%%/.%%REALNAME%%-%%VER%%/thermoData/therm.dat
 %%REALNAME%%/.bashrc
 %%REALNAME%%/.cshrc
-%%REALNAME%%/applications/bin/FreeBSDOpt/Co
-%%REALNAME%%/applications/bin/FreeBSDOpt/FoamXCaseBrowser
-%%REALNAME%%/applications/bin/FreeBSDOpt/FoamXCaseServer
-%%REALNAME%%/applications/bin/FreeBSDOpt/FoamXHostBrowser
-%%REALNAME%%/applications/bin/FreeBSDOpt/Lambda2
-%%REALNAME%%/applications/bin/FreeBSDOpt/Mach
-%%REALNAME%%/applications/bin/FreeBSDOpt/PatchToolServer
-%%REALNAME%%/applications/bin/FreeBSDOpt/Pe
-%%REALNAME%%/applications/bin/FreeBSDOpt/Q
-%%REALNAME%%/applications/bin/FreeBSDOpt/R
-%%REALNAME%%/applications/bin/FreeBSDOpt/Rcomponents
-%%REALNAME%%/applications/bin/FreeBSDOpt/Ucomponents
-%%REALNAME%%/applications/bin/FreeBSDOpt/XiFoam
-%%REALNAME%%/applications/bin/FreeBSDOpt/Xoodles
-%%REALNAME%%/applications/bin/FreeBSDOpt/adiabaticFlameT
-%%REALNAME%%/applications/bin/FreeBSDOpt/attachMesh
-%%REALNAME%%/applications/bin/FreeBSDOpt/autoPatch
-%%REALNAME%%/applications/bin/FreeBSDOpt/autoRefineMesh
-%%REALNAME%%/applications/bin/FreeBSDOpt/blockMesh
-%%REALNAME%%/applications/bin/FreeBSDOpt/boundaryFoam
-%%REALNAME%%/applications/bin/FreeBSDOpt/boxTurb
-%%REALNAME%%/applications/bin/FreeBSDOpt/bubbleFoam
-%%REALNAME%%/applications/bin/FreeBSDOpt/buoyantFoam
-%%REALNAME%%/applications/bin/FreeBSDOpt/buoyantSimpleFoam
-%%REALNAME%%/applications/bin/FreeBSDOpt/ccm24ToFoam
-%%REALNAME%%/applications/bin/FreeBSDOpt/cellSet
-%%REALNAME%%/applications/bin/FreeBSDOpt/cfxToFoam
-%%REALNAME%%/applications/bin/FreeBSDOpt/channelOodles
-%%REALNAME%%/applications/bin/FreeBSDOpt/checkMesh
-%%REALNAME%%/applications/bin/FreeBSDOpt/checkYPlus
-%%REALNAME%%/applications/bin/FreeBSDOpt/chemkinToFoam
-%%REALNAME%%/applications/bin/FreeBSDOpt/coldEngineFoam
-%%REALNAME%%/applications/bin/FreeBSDOpt/collapseEdges
-%%REALNAME%%/applications/bin/FreeBSDOpt/collapseFaces
-%%REALNAME%%/applications/bin/FreeBSDOpt/combinePatchFaces
-%%REALNAME%%/applications/bin/FreeBSDOpt/contactStressFoam
-%%REALNAME%%/applications/bin/FreeBSDOpt/coodles
-%%REALNAME%%/applications/bin/FreeBSDOpt/couplePatches
-%%REALNAME%%/applications/bin/FreeBSDOpt/createPatch
-%%REALNAME%%/applications/bin/FreeBSDOpt/decomposePar
-%%REALNAME%%/applications/bin/FreeBSDOpt/deformedGeom
-%%REALNAME%%/applications/bin/FreeBSDOpt/dieselEngineFoam
-%%REALNAME%%/applications/bin/FreeBSDOpt/dieselFoam
-%%REALNAME%%/applications/bin/FreeBSDOpt/divU
-%%REALNAME%%/applications/bin/FreeBSDOpt/dnsFoam
-%%REALNAME%%/applications/bin/FreeBSDOpt/electrostaticFoam
-%%REALNAME%%/applications/bin/FreeBSDOpt/engineCompRatio
-%%REALNAME%%/applications/bin/FreeBSDOpt/engineFoam
-%%REALNAME%%/applications/bin/FreeBSDOpt/engineSwirl
-%%REALNAME%%/applications/bin/FreeBSDOpt/enstrophy
-%%REALNAME%%/applications/bin/FreeBSDOpt/equilibriumCO
-%%REALNAME%%/applications/bin/FreeBSDOpt/equilibriumFlameT
-%%REALNAME%%/applications/bin/FreeBSDOpt/estimateScalarError
-%%REALNAME%%/applications/bin/FreeBSDOpt/extrudeMesh
-%%REALNAME%%/applications/bin/FreeBSDOpt/faceSet
-%%REALNAME%%/applications/bin/FreeBSDOpt/financialFoam
-%%REALNAME%%/applications/bin/FreeBSDOpt/flattenMesh
-%%REALNAME%%/applications/bin/FreeBSDOpt/flowType
-%%REALNAME%%/applications/bin/FreeBSDOpt/fluentMeshToFoam
-%%REALNAME%%/applications/bin/FreeBSDOpt/foamDataToFluent
-%%REALNAME%%/applications/bin/FreeBSDOpt/foamDebugSwitches
-%%REALNAME%%/applications/bin/FreeBSDOpt/foamFlex++
-%%REALNAME%%/applications/bin/FreeBSDOpt/foamInfoExec
-%%REALNAME%%/applications/bin/FreeBSDOpt/foamMeshToFluent
-%%REALNAME%%/applications/bin/FreeBSDOpt/foamToEnsight
-%%REALNAME%%/applications/bin/FreeBSDOpt/foamToFieldview9
-%%REALNAME%%/applications/bin/FreeBSDOpt/foamToGMV
-%%REALNAME%%/applications/bin/FreeBSDOpt/foamToVTK
-%%REALNAME%%/applications/bin/FreeBSDOpt/gambitToFoam
-%%REALNAME%%/applications/bin/FreeBSDOpt/gmshToFoam
-%%REALNAME%%/applications/bin/FreeBSDOpt/icoErrorEstimate
-%%REALNAME%%/applications/bin/FreeBSDOpt/icoFoam
-%%REALNAME%%/applications/bin/FreeBSDOpt/icoFoamAutoMotion
-%%REALNAME%%/applications/bin/FreeBSDOpt/icoMomentError
-%%REALNAME%%/applications/bin/FreeBSDOpt/icoTopoFoam
-%%REALNAME%%/applications/bin/FreeBSDOpt/ideasToFoam
-%%REALNAME%%/applications/bin/FreeBSDOpt/insideCells
-%%REALNAME%%/applications/bin/FreeBSDOpt/interFoam
-%%REALNAME%%/applications/bin/FreeBSDOpt/kivaToFoam
-%%REALNAME%%/applications/bin/FreeBSDOpt/laplacianFoam
-%%REALNAME%%/applications/bin/FreeBSDOpt/lesInterFoam
-%%REALNAME%%/applications/bin/FreeBSDOpt/liftDrag
-%%REALNAME%%/applications/bin/FreeBSDOpt/magGradU
-%%REALNAME%%/applications/bin/FreeBSDOpt/magU
-%%REALNAME%%/applications/bin/FreeBSDOpt/mapFields
-%%REALNAME%%/applications/bin/FreeBSDOpt/mergeMeshes
-%%REALNAME%%/applications/bin/FreeBSDOpt/mhdFoam
-%%REALNAME%%/applications/bin/FreeBSDOpt/mirrorMesh
-%%REALNAME%%/applications/bin/FreeBSDOpt/mixtureAdiabaticFlameT
-%%REALNAME%%/applications/bin/FreeBSDOpt/modifyMesh
-%%REALNAME%%/applications/bin/FreeBSDOpt/momentScalarError
-%%REALNAME%%/applications/bin/FreeBSDOpt/moveEngineMesh
-%%REALNAME%%/applications/bin/FreeBSDOpt/moveMesh
-%%REALNAME%%/applications/bin/FreeBSDOpt/moveTopoMesh
-%%REALNAME%%/applications/bin/FreeBSDOpt/mshToFoam
-%%REALNAME%%/applications/bin/FreeBSDOpt/netgenNeutralToFoam
-%%REALNAME%%/applications/bin/FreeBSDOpt/nonNewtonianIcoFoam
-%%REALNAME%%/applications/bin/FreeBSDOpt/objToVTK
-%%REALNAME%%/applications/bin/FreeBSDOpt/oodles
-%%REALNAME%%/applications/bin/FreeBSDOpt/pPrime2
-%%REALNAME%%/applications/bin/FreeBSDOpt/plot3dToFoam
-%%REALNAME%%/applications/bin/FreeBSDOpt/pointSet
-%%REALNAME%%/applications/bin/FreeBSDOpt/postChannel
-%%REALNAME%%/applications/bin/FreeBSDOpt/potentialFoam
-%%REALNAME%%/applications/bin/FreeBSDOpt/ptot
-%%REALNAME%%/applications/bin/FreeBSDOpt/rasInterFoam
-%%REALNAME%%/applications/bin/FreeBSDOpt/reactingFoam
-%%REALNAME%%/applications/bin/FreeBSDOpt/reconstructPar
-%%REALNAME%%/applications/bin/FreeBSDOpt/reconstructParMesh
-%%REALNAME%%/applications/bin/FreeBSDOpt/refineMesh
-%%REALNAME%%/applications/bin/FreeBSDOpt/refineWallLayer
-%%REALNAME%%/applications/bin/FreeBSDOpt/refinementLevel
-%%REALNAME%%/applications/bin/FreeBSDOpt/removeFaces
-%%REALNAME%%/applications/bin/FreeBSDOpt/renumberMesh
-%%REALNAME%%/applications/bin/FreeBSDOpt/rhoSimpleFoam
-%%REALNAME%%/applications/bin/FreeBSDOpt/rhoSonicFoam
-%%REALNAME%%/applications/bin/FreeBSDOpt/rhoTurbFoam
-%%REALNAME%%/applications/bin/FreeBSDOpt/rhopSonicFoam
-%%REALNAME%%/applications/bin/FreeBSDOpt/rotateMesh
-%%REALNAME%%/applications/bin/FreeBSDOpt/sammToFoam
-%%REALNAME%%/applications/bin/FreeBSDOpt/sample
-%%REALNAME%%/applications/bin/FreeBSDOpt/sampleSurface
-%%REALNAME%%/applications/bin/FreeBSDOpt/scalarTransportFoam
-%%REALNAME%%/applications/bin/FreeBSDOpt/selectCells
-%%REALNAME%%/applications/bin/FreeBSDOpt/setFields
-%%REALNAME%%/applications/bin/FreeBSDOpt/settlingFoam
-%%REALNAME%%/applications/bin/FreeBSDOpt/simpleFoam
-%%REALNAME%%/applications/bin/FreeBSDOpt/smapToFoam
-%%REALNAME%%/applications/bin/FreeBSDOpt/sonicFoam
-%%REALNAME%%/applications/bin/FreeBSDOpt/sonicFoamAutoMotion
-%%REALNAME%%/applications/bin/FreeBSDOpt/sonicLiquidFoam
-%%REALNAME%%/applications/bin/FreeBSDOpt/sonicTurbFoam
-%%REALNAME%%/applications/bin/FreeBSDOpt/splitCells
-%%REALNAME%%/applications/bin/FreeBSDOpt/splitMesh
-%%REALNAME%%/applications/bin/FreeBSDOpt/splitMeshRegions
-%%REALNAME%%/applications/bin/FreeBSDOpt/starToFoam
-%%REALNAME%%/applications/bin/FreeBSDOpt/stitchMesh
-%%REALNAME%%/applications/bin/FreeBSDOpt/streamFunction
-%%REALNAME%%/applications/bin/FreeBSDOpt/stressComponents
-%%REALNAME%%/applications/bin/FreeBSDOpt/stressFemFoam
-%%REALNAME%%/applications/bin/FreeBSDOpt/stressedFoam
-%%REALNAME%%/applications/bin/FreeBSDOpt/subsetMesh
-%%REALNAME%%/applications/bin/FreeBSDOpt/surfaceAdd
-%%REALNAME%%/applications/bin/FreeBSDOpt/surfaceCheck
-%%REALNAME%%/applications/bin/FreeBSDOpt/surfaceCoarsen
-%%REALNAME%%/applications/bin/FreeBSDOpt/surfaceConvert
-%%REALNAME%%/applications/bin/FreeBSDOpt/surfaceFind
-%%REALNAME%%/applications/bin/FreeBSDOpt/surfaceMeshTriangulate
-%%REALNAME%%/applications/bin/FreeBSDOpt/surfacePointMerge
-%%REALNAME%%/applications/bin/FreeBSDOpt/surfaceScale
-%%REALNAME%%/applications/bin/FreeBSDOpt/surfaceSetOutside
-%%REALNAME%%/applications/bin/FreeBSDOpt/surfaceSmooth
-%%REALNAME%%/applications/bin/FreeBSDOpt/surfaceSplitByPatch
-%%REALNAME%%/applications/bin/FreeBSDOpt/surfaceSplitNonManifolds
-%%REALNAME%%/applications/bin/FreeBSDOpt/surfaceSubset
-%%REALNAME%%/applications/bin/FreeBSDOpt/surfaceToPatch
-%%REALNAME%%/applications/bin/FreeBSDOpt/tetDecomposition
-%%REALNAME%%/applications/bin/FreeBSDOpt/tetgenToFoam
-%%REALNAME%%/applications/bin/FreeBSDOpt/transformPoints
-%%REALNAME%%/applications/bin/FreeBSDOpt/turbFoam
-%%REALNAME%%/applications/bin/FreeBSDOpt/twoLiquidMixingFoam
-%%REALNAME%%/applications/bin/FreeBSDOpt/uprime
-%%REALNAME%%/applications/bin/FreeBSDOpt/vorticity
-%%REALNAME%%/applications/bin/FreeBSDOpt/wallGradU
-%%REALNAME%%/applications/bin/FreeBSDOpt/wallHeatFlux
-%%REALNAME%%/applications/bin/FreeBSDOpt/wallShearStress
-%%REALNAME%%/applications/bin/FreeBSDOpt/wdot
-%%REALNAME%%/applications/bin/FreeBSDOpt/writeCellCentres
-%%REALNAME%%/applications/bin/FreeBSDOpt/writeMeshObj
-%%REALNAME%%/applications/bin/FreeBSDOpt/yPlusLES
-%%REALNAME%%/applications/bin/FreeBSDOpt/zipUpMesh
+%%PORTDOCS%%%%REALNAME%%/Guides-a4/ProgrammersGuide-2p.pdf
+%%PORTDOCS%%%%REALNAME%%/Guides-a4/ProgrammersGuide.pdf
+%%PORTDOCS%%%%REALNAME%%/Guides-a4/UserGuide-2p.pdf
+%%PORTDOCS%%%%REALNAME%%/Guides-a4/UserGuide.pdf
+%%PORTDOCS%%%%REALNAME%%/Guides-usletter/ProgrammersGuide-2p.pdf
+%%PORTDOCS%%%%REALNAME%%/Guides-usletter/ProgrammersGuide.pdf
+%%PORTDOCS%%%%REALNAME%%/Guides-usletter/UserGuide-2p.pdf
+%%PORTDOCS%%%%REALNAME%%/Guides-usletter/UserGuide.pdf
+%%PORTDOCS%%%%REALNAME%%/README
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/Co
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/FoamXCaseBrowser
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/FoamXCaseServer
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/FoamXHostBrowser
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/Lambda2
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/Mach
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/PatchToolServer
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/Pe
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/Q
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/R
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/Rcomponents
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/Ucomponents
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/XiFoam
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/Xoodles
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/adiabaticFlameT
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/ansysToFoam
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/attachMesh
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/autoPatch
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/autoRefineMesh
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/blockMesh
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/boundaryFoam
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/boxTurb
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/bubbleFoam
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/buoyantFoam
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/buoyantSimpleFoam
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/ccm24ToFoam
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/cellSet
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/cfxToFoam
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/channelOodles
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/checkMesh
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/checkYPlus
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/chemkinToFoam
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/coldEngineFoam
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/collapseEdges
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/combinePatchFaces
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/contactStressFoam
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/coodles
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/couplePatches
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/createPatch
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/decomposePar
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/deformedGeom
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/dieselEngineFoam
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/dieselFoam
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/divU
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/dnsFoam
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/electrostaticFoam
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/engineCompRatio
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/engineFoam
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/engineSwirl
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/enstrophy
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/equilibriumCO
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/equilibriumFlameT
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/estimateScalarError
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/extrudeMesh
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/faceSet
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/financialFoam
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/flattenMesh
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/flowType
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/fluentMeshToFoam
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/foamDataToFluent
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/foamDebugSwitches
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/foamFlex++
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/foamInfoExec
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/foamMeshToFluent
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/foamToEnsight
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/foamToFieldview9
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/foamToGMV
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/foamToVTK
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/gambitToFoam
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/gmshToFoam
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/icoDyMFoam
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/icoErrorEstimate
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/icoFoam
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/icoMomentError
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/insideCells
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/interFoam
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/kivaToFoam
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/laplacianFoam
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/lesInterFoam
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/magGradU
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/magU
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/mapFields
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/mergeMeshes
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/mhdFoam
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/mirrorMesh
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/mixtureAdiabaticFlameT
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/modifyMesh
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/momentScalarError
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/moveDynamicMesh
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/moveEngineMesh
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/moveMesh
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/mshToFoam
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/netgenNeutralToFoam
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/nonNewtonianIcoFoam
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/objToVTK
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/oodles
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/pPrime2
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/plot3dToFoam
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/pointSet
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/polyDualMesh
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/postChannel
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/potentialFoam
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/ptot
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/rasInterFoam
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/reactingFoam
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/reconstructPar
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/reconstructParMesh
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/refineMesh
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/refineWallLayer
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/refinementLevel
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/removeFaces
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/renumberMesh
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/rhoSimpleFoam
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/rhoSonicFoam
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/rhoTurbFoam
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/rotateMesh
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/sammToFoam
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/sample
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/sampleSurface
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/scalarTransportFoam
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/selectCells
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/setFields
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/settlingFoam
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/simpleFoam
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/smapToFoam
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/sonicFoam
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/sonicFoamAutoMotion
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/sonicLiquidFoam
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/sonicTurbFoam
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/splitCells
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/splitMesh
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/splitMeshRegions
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/starToFoam
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/stitchMesh
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/streamFunction
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/stressComponents
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/stressFemFoam
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/stressedFoam
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/subsetMesh
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/surfaceAdd
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/surfaceCheck
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/surfaceClean
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/surfaceCoarsen
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/surfaceConvert
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/surfaceFind
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/surfaceMeshTriangulate
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/surfacePointMerge
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/surfaceSetOutside
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/surfaceSmooth
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/surfaceSplitByPatch
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/surfaceSplitNonManifolds
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/surfaceSubset
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/surfaceToPatch
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/surfaceTransformPoints
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/tetDecomposition
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/tetgenToFoam
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/transformPoints
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/turbFoam
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/twoLiquidMixingFoam
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/twoPhaseEulerFoam
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/uprime
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/vorticity
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/wallGradU
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/wallHeatFlux
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/wallShearStress
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/wdot
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/writeCellCentres
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/writeMeshObj
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/yPlusLES
+%%REALNAME%%/applications/bin/%%APPSUBDIR%%/zipUpMesh
 %%REALNAME%%/applications/solvers/Allwmake
 %%REALNAME%%/applications/solvers/DNSandLES/Allwmake
 %%REALNAME%%/applications/solvers/DNSandLES/channelOodles/FoamX/channelOodles.cfg
@@ -1369,7 +1379,7 @@
 %%REALNAME%%/applications/solvers/compressible/rhoSonicFoam/FoamX/rhoSonicFoam.cfg
 %%REALNAME%%/applications/solvers/compressible/rhoSonicFoam/Make/files
 %%REALNAME%%/applications/solvers/compressible/rhoSonicFoam/Make/options
-%%REALNAME%%/applications/solvers/compressible/rhoSonicFoam/continuityErrs.H
+%%REALNAME%%/applications/solvers/compressible/rhoSonicFoam/compressibleContinuityErrs.H
 %%REALNAME%%/applications/solvers/compressible/rhoSonicFoam/createFields.H
 %%REALNAME%%/applications/solvers/compressible/rhoSonicFoam/readThermodynamicProperties.H
 %%REALNAME%%/applications/solvers/compressible/rhoSonicFoam/rhoSonicFoam.C
@@ -1390,19 +1400,45 @@
 %%REALNAME%%/applications/solvers/compressible/rhoTurbFoam/pEqn.H
 %%REALNAME%%/applications/solvers/compressible/rhoTurbFoam/rhoTurbFoam.C
 %%REALNAME%%/applications/solvers/compressible/rhoTurbFoam/rhoTurbFoam.dep
-%%REALNAME%%/applications/solvers/compressible/rhopSonicFoam/BCs/adiabaticRhoE/adiabaticRhoEFvPatchScalarField.C
-%%REALNAME%%/applications/solvers/compressible/rhopSonicFoam/BCs/adiabaticRhoE/adiabaticRhoEFvPatchScalarField.H
-%%REALNAME%%/applications/solvers/compressible/rhopSonicFoam/BCs/adiabaticRhoE/adiabaticRhoEFvPatchScalarField.dep
-%%REALNAME%%/applications/solvers/compressible/rhopSonicFoam/BCs/fixedTempRhoE/fixedTempRhoEFvPatchScalarField.C
-%%REALNAME%%/applications/solvers/compressible/rhopSonicFoam/BCs/fixedTempRhoE/fixedTempRhoEFvPatchScalarField.H
-%%REALNAME%%/applications/solvers/compressible/rhopSonicFoam/BCs/fixedTempRhoE/fixedTempRhoEFvPatchScalarField.dep
+%%REALNAME%%/applications/solvers/compressible/rhopSonicFoam/Allwmake
+%%REALNAME%%/applications/solvers/compressible/rhopSonicFoam/BCs/Make/files
+%%REALNAME%%/applications/solvers/compressible/rhopSonicFoam/BCs/Make/options
+%%REALNAME%%/applications/solvers/compressible/rhopSonicFoam/BCs/lnInclude/fixedRhoEFvPatchScalarField.C
+%%REALNAME%%/applications/solvers/compressible/rhopSonicFoam/BCs/lnInclude/fixedRhoEFvPatchScalarField.H
+%%REALNAME%%/applications/solvers/compressible/rhopSonicFoam/BCs/lnInclude/fixedRhoFvPatchScalarField.C
+%%REALNAME%%/applications/solvers/compressible/rhopSonicFoam/BCs/lnInclude/fixedRhoFvPatchScalarField.H
+%%REALNAME%%/applications/solvers/compressible/rhopSonicFoam/BCs/lnInclude/fixedRhoUFvPatchVectorField.C
+%%REALNAME%%/applications/solvers/compressible/rhopSonicFoam/BCs/lnInclude/fixedRhoUFvPatchVectorField.H
+%%REALNAME%%/applications/solvers/compressible/rhopSonicFoam/BCs/lnInclude/gradientRhoFvPatchScalarField.C
+%%REALNAME%%/applications/solvers/compressible/rhopSonicFoam/BCs/lnInclude/gradientRhoFvPatchScalarField.H
+%%REALNAME%%/applications/solvers/compressible/rhopSonicFoam/BCs/lnInclude/inviscidWallPFvPatchScalarField.C
+%%REALNAME%%/applications/solvers/compressible/rhopSonicFoam/BCs/lnInclude/inviscidWallPFvPatchScalarField.H
+%%REALNAME%%/applications/solvers/compressible/rhopSonicFoam/BCs/lnInclude/mixedRhoEFvPatchScalarField.C
+%%REALNAME%%/applications/solvers/compressible/rhopSonicFoam/BCs/lnInclude/mixedRhoEFvPatchScalarField.H
+%%REALNAME%%/applications/solvers/compressible/rhopSonicFoam/BCs/lnInclude/uptodate
+%%REALNAME%%/applications/solvers/compressible/rhopSonicFoam/BCs/p/inviscidWallPFvPatchScalarField.C
+%%REALNAME%%/applications/solvers/compressible/rhopSonicFoam/BCs/p/inviscidWallPFvPatchScalarField.H
+%%REALNAME%%/applications/solvers/compressible/rhopSonicFoam/BCs/rho/fixedRhoFvPatchScalarField.C
+%%REALNAME%%/applications/solvers/compressible/rhopSonicFoam/BCs/rho/fixedRhoFvPatchScalarField.H
+%%REALNAME%%/applications/solvers/compressible/rhopSonicFoam/BCs/rho/gradientRhoFvPatchScalarField.C
+%%REALNAME%%/applications/solvers/compressible/rhopSonicFoam/BCs/rho/gradientRhoFvPatchScalarField.H
+%%REALNAME%%/applications/solvers/compressible/rhopSonicFoam/BCs/rhoE/fixedRhoEFvPatchScalarField.C
+%%REALNAME%%/applications/solvers/compressible/rhopSonicFoam/BCs/rhoE/fixedRhoEFvPatchScalarField.H
+%%REALNAME%%/applications/solvers/compressible/rhopSonicFoam/BCs/rhoE/mixedRhoEFvPatchScalarField.C
+%%REALNAME%%/applications/solvers/compressible/rhopSonicFoam/BCs/rhoE/mixedRhoEFvPatchScalarField.H
+%%REALNAME%%/applications/solvers/compressible/rhopSonicFoam/BCs/rhoU/fixedRhoUFvPatchVectorField.C
+%%REALNAME%%/applications/solvers/compressible/rhopSonicFoam/BCs/rhoU/fixedRhoUFvPatchVectorField.H
 %%REALNAME%%/applications/solvers/compressible/rhopSonicFoam/Make/files
 %%REALNAME%%/applications/solvers/compressible/rhopSonicFoam/Make/options
+%%REALNAME%%/applications/solvers/compressible/rhopSonicFoam/boundaryTypes.H
+%%REALNAME%%/applications/solvers/compressible/rhopSonicFoam/compressibleCreatePhi.H
 %%REALNAME%%/applications/solvers/compressible/rhopSonicFoam/createFields.H
-%%REALNAME%%/applications/solvers/compressible/rhopSonicFoam/createPhi.H
 %%REALNAME%%/applications/solvers/compressible/rhopSonicFoam/readThermodynamicProperties.H
+%%REALNAME%%/applications/solvers/compressible/rhopSonicFoam/resetPhiPatches.H
+%%REALNAME%%/applications/solvers/compressible/rhopSonicFoam/rhoBoundaryTypes.H
+%%REALNAME%%/applications/solvers/compressible/rhopSonicFoam/rhoEboundaryTypes.H
+%%REALNAME%%/applications/solvers/compressible/rhopSonicFoam/rhoUboundaryTypes.H
 %%REALNAME%%/applications/solvers/compressible/rhopSonicFoam/rhopSonicFoam.C
-%%REALNAME%%/applications/solvers/compressible/rhopSonicFoam/rhopSonicFoam.dep
 %%REALNAME%%/applications/solvers/compressible/sonicFoam/FoamX/defaults/system/fvSchemes
 %%REALNAME%%/applications/solvers/compressible/sonicFoam/FoamX/defaults/system/fvSolution
 %%REALNAME%%/applications/solvers/compressible/sonicFoam/FoamX/fvSchemes.cfg
@@ -1414,7 +1450,7 @@
 %%REALNAME%%/applications/solvers/compressible/sonicFoam/FoamX/transportProperties.cfg
 %%REALNAME%%/applications/solvers/compressible/sonicFoam/Make/files
 %%REALNAME%%/applications/solvers/compressible/sonicFoam/Make/options
-%%REALNAME%%/applications/solvers/compressible/sonicFoam/continuityErrs.H
+%%REALNAME%%/applications/solvers/compressible/sonicFoam/compressibleContinuityErrs.H
 %%REALNAME%%/applications/solvers/compressible/sonicFoam/createFields.H
 %%REALNAME%%/applications/solvers/compressible/sonicFoam/readThermodynamicProperties.H
 %%REALNAME%%/applications/solvers/compressible/sonicFoam/readTransportProperties.H
@@ -1422,7 +1458,7 @@
 %%REALNAME%%/applications/solvers/compressible/sonicFoam/sonicFoam.dep
 %%REALNAME%%/applications/solvers/compressible/sonicFoamAutoMotion/Make/files
 %%REALNAME%%/applications/solvers/compressible/sonicFoamAutoMotion/Make/options
-%%REALNAME%%/applications/solvers/compressible/sonicFoamAutoMotion/continuityErrs.H
+%%REALNAME%%/applications/solvers/compressible/sonicFoamAutoMotion/compressibleContinuityErrs.H
 %%REALNAME%%/applications/solvers/compressible/sonicFoamAutoMotion/createFields.H
 %%REALNAME%%/applications/solvers/compressible/sonicFoamAutoMotion/readThermodynamicProperties.H
 %%REALNAME%%/applications/solvers/compressible/sonicFoamAutoMotion/readTransportProperties.H
@@ -1440,7 +1476,7 @@
 %%REALNAME%%/applications/solvers/compressible/sonicLiquidFoam/FoamX/transportProperties.cfg
 %%REALNAME%%/applications/solvers/compressible/sonicLiquidFoam/Make/files
 %%REALNAME%%/applications/solvers/compressible/sonicLiquidFoam/Make/options
-%%REALNAME%%/applications/solvers/compressible/sonicLiquidFoam/continuityErrs.H
+%%REALNAME%%/applications/solvers/compressible/sonicLiquidFoam/compressibleContinuityErrs.H
 %%REALNAME%%/applications/solvers/compressible/sonicLiquidFoam/createFields.H
 %%REALNAME%%/applications/solvers/compressible/sonicLiquidFoam/readThermodynamicProperties.H
 %%REALNAME%%/applications/solvers/compressible/sonicLiquidFoam/readTransportProperties.H
@@ -1534,6 +1570,14 @@
 %%REALNAME%%/applications/solvers/incompressible/boundaryFoam/boundaryFoam.C
 %%REALNAME%%/applications/solvers/incompressible/boundaryFoam/boundaryFoam.dep
 %%REALNAME%%/applications/solvers/incompressible/boundaryFoam/createFields.H
+%%REALNAME%%/applications/solvers/incompressible/icoDyMFoam/Make/files
+%%REALNAME%%/applications/solvers/incompressible/icoDyMFoam/Make/options
+%%REALNAME%%/applications/solvers/incompressible/icoDyMFoam/UEqn.H
+%%REALNAME%%/applications/solvers/incompressible/icoDyMFoam/checkTotalVolume.H
+%%REALNAME%%/applications/solvers/incompressible/icoDyMFoam/correctPhi.H
+%%REALNAME%%/applications/solvers/incompressible/icoDyMFoam/createFields.H
+%%REALNAME%%/applications/solvers/incompressible/icoDyMFoam/icoDyMFoam.C
+%%REALNAME%%/applications/solvers/incompressible/icoDyMFoam/icoDyMFoam.dep
 %%REALNAME%%/applications/solvers/incompressible/icoFoam/FoamX/defaults/system/fvSchemes
 %%REALNAME%%/applications/solvers/incompressible/icoFoam/FoamX/defaults/system/fvSolution
 %%REALNAME%%/applications/solvers/incompressible/icoFoam/FoamX/fvSchemes.cfg
@@ -1548,31 +1592,6 @@
 %%REALNAME%%/applications/solvers/incompressible/icoFoam/createFields.H
 %%REALNAME%%/applications/solvers/incompressible/icoFoam/icoFoam.C
 %%REALNAME%%/applications/solvers/incompressible/icoFoam/icoFoam.dep
-%%REALNAME%%/applications/solvers/incompressible/icoFoamAutoMotion/FoamX/defaults/constant/motionProperties
-%%REALNAME%%/applications/solvers/incompressible/icoFoamAutoMotion/FoamX/defaults/system/fvSchemes
-%%REALNAME%%/applications/solvers/incompressible/icoFoamAutoMotion/FoamX/defaults/system/fvSolution
-%%REALNAME%%/applications/solvers/incompressible/icoFoamAutoMotion/FoamX/defaults/system/tetFemSolution
-%%REALNAME%%/applications/solvers/incompressible/icoFoamAutoMotion/FoamX/fvSchemes.cfg
-%%REALNAME%%/applications/solvers/incompressible/icoFoamAutoMotion/FoamX/fvSchemes/divSchemes.cfg
-%%REALNAME%%/applications/solvers/incompressible/icoFoamAutoMotion/FoamX/fvSchemes/gradSchemes.cfg
-%%REALNAME%%/applications/solvers/incompressible/icoFoamAutoMotion/FoamX/fvSchemes/interpolationSchemes.cfg
-%%REALNAME%%/applications/solvers/incompressible/icoFoamAutoMotion/FoamX/fvSchemes/laplacianSchemes.cfg
-%%REALNAME%%/applications/solvers/incompressible/icoFoamAutoMotion/FoamX/fvSchemes/snGradSchemes.cfg
-%%REALNAME%%/applications/solvers/incompressible/icoFoamAutoMotion/FoamX/fvSolution.cfg
-%%REALNAME%%/applications/solvers/incompressible/icoFoamAutoMotion/FoamX/icoFoamAutoMotion.cfg
-%%REALNAME%%/applications/solvers/incompressible/icoFoamAutoMotion/FoamX/motionProperties.cfg
-%%REALNAME%%/applications/solvers/incompressible/icoFoamAutoMotion/FoamX/tetFemSolution.cfg
-%%REALNAME%%/applications/solvers/incompressible/icoFoamAutoMotion/Make/files
-%%REALNAME%%/applications/solvers/incompressible/icoFoamAutoMotion/Make/options
-%%REALNAME%%/applications/solvers/incompressible/icoFoamAutoMotion/createFields.H
-%%REALNAME%%/applications/solvers/incompressible/icoFoamAutoMotion/icoFoamAutoMotion.C
-%%REALNAME%%/applications/solvers/incompressible/icoFoamAutoMotion/icoFoamAutoMotion.dep
-%%REALNAME%%/applications/solvers/incompressible/icoTopoFoam/Make/files
-%%REALNAME%%/applications/solvers/incompressible/icoTopoFoam/Make/options
-%%REALNAME%%/applications/solvers/incompressible/icoTopoFoam/checkTotalVolume.H
-%%REALNAME%%/applications/solvers/incompressible/icoTopoFoam/createFields.H
-%%REALNAME%%/applications/solvers/incompressible/icoTopoFoam/icoTopoFoam.C
-%%REALNAME%%/applications/solvers/incompressible/icoTopoFoam/icoTopoFoam.dep
 %%REALNAME%%/applications/solvers/incompressible/nonNewtonianIcoFoam/Make/files
 %%REALNAME%%/applications/solvers/incompressible/nonNewtonianIcoFoam/Make/options
 %%REALNAME%%/applications/solvers/incompressible/nonNewtonianIcoFoam/createFields.H
@@ -1624,13 +1643,16 @@
 %%REALNAME%%/applications/solvers/multiphase/bubbleFoam/createFields.H
 %%REALNAME%%/applications/solvers/multiphase/bubbleFoam/createPhia.H
 %%REALNAME%%/applications/solvers/multiphase/bubbleFoam/createPhib.H
+%%REALNAME%%/applications/solvers/multiphase/bubbleFoam/createTurbulence.H
 %%REALNAME%%/applications/solvers/multiphase/bubbleFoam/kEpsilon.H
 %%REALNAME%%/applications/solvers/multiphase/bubbleFoam/liftDragCoeffs.H
 %%REALNAME%%/applications/solvers/multiphase/bubbleFoam/pEqn.H
 %%REALNAME%%/applications/solvers/multiphase/bubbleFoam/readBubbleFoamControls.H
 %%REALNAME%%/applications/solvers/multiphase/bubbleFoam/wallDissipation.H
+%%REALNAME%%/applications/solvers/multiphase/bubbleFoam/wallFunctions.H
 %%REALNAME%%/applications/solvers/multiphase/bubbleFoam/wallViscosity.H
 %%REALNAME%%/applications/solvers/multiphase/bubbleFoam/write.H
+%%REALNAME%%/applications/solvers/multiphase/interFoam/Allwmake
 %%REALNAME%%/applications/solvers/multiphase/interFoam/FoamX/defaults/system/fvSchemes
 %%REALNAME%%/applications/solvers/multiphase/interFoam/FoamX/defaults/system/fvSolution
 %%REALNAME%%/applications/solvers/multiphase/interFoam/FoamX/fvSchemes.cfg
@@ -1643,7 +1665,6 @@
 %%REALNAME%%/applications/solvers/multiphase/interFoam/UEqn.H
 %%REALNAME%%/applications/solvers/multiphase/interFoam/correctPhi.H
 %%REALNAME%%/applications/solvers/multiphase/interFoam/createFields.H
-%%REALNAME%%/applications/solvers/multiphase/interFoam/createMovingMesh.H
 %%REALNAME%%/applications/solvers/multiphase/interFoam/gammaEqn.H
 %%REALNAME%%/applications/solvers/multiphase/interFoam/gammaEqnSubCycle.H
 %%REALNAME%%/applications/solvers/multiphase/interFoam/incompressibleTwoPhaseMixture/twoPhaseMixture.C
@@ -1651,15 +1672,39 @@
 %%REALNAME%%/applications/solvers/multiphase/interFoam/incompressibleTwoPhaseMixture/twoPhaseMixture.dep
 %%REALNAME%%/applications/solvers/multiphase/interFoam/interFoam.C
 %%REALNAME%%/applications/solvers/multiphase/interFoam/interFoam.dep
+%%REALNAME%%/applications/solvers/multiphase/interFoam/interfaceProperties/Make/files
+%%REALNAME%%/applications/solvers/multiphase/interFoam/interfaceProperties/Make/options
 %%REALNAME%%/applications/solvers/multiphase/interFoam/interfaceProperties/gammaCompression/gammaCompression.C
 %%REALNAME%%/applications/solvers/multiphase/interFoam/interfaceProperties/gammaCompression/gammaCompression.H
 %%REALNAME%%/applications/solvers/multiphase/interFoam/interfaceProperties/gammaCompression/gammaCompression.dep
-%%REALNAME%%/applications/solvers/multiphase/interFoam/interfaceProperties/gammaContactAngle/gammaContactAngleFvPatchScalarField.C
-%%REALNAME%%/applications/solvers/multiphase/interFoam/interfaceProperties/gammaContactAngle/gammaContactAngleFvPatchScalarField.H
-%%REALNAME%%/applications/solvers/multiphase/interFoam/interfaceProperties/gammaContactAngle/gammaContactAngleFvPatchScalarField.dep
+%%REALNAME%%/applications/solvers/multiphase/interFoam/interfaceProperties/gammaContactAngle/constantGammaContactAngle/constantGammaContactAngleFvPatchScalarField.C
+%%REALNAME%%/applications/solvers/multiphase/interFoam/interfaceProperties/gammaContactAngle/constantGammaContactAngle/constantGammaContactAngleFvPatchScalarField.H
+%%REALNAME%%/applications/solvers/multiphase/interFoam/interfaceProperties/gammaContactAngle/constantGammaContactAngle/constantGammaContactAngleFvPatchScalarField.dep
+%%REALNAME%%/applications/solvers/multiphase/interFoam/interfaceProperties/gammaContactAngle/dynamicGammaContactAngle/dynamicGammaContactAngleFvPatchScalarField.C
+%%REALNAME%%/applications/solvers/multiphase/interFoam/interfaceProperties/gammaContactAngle/dynamicGammaContactAngle/dynamicGammaContactAngleFvPatchScalarField.H
+%%REALNAME%%/applications/solvers/multiphase/interFoam/interfaceProperties/gammaContactAngle/dynamicGammaContactAngle/dynamicGammaContactAngleFvPatchScalarField.dep
+%%REALNAME%%/applications/solvers/multiphase/interFoam/interfaceProperties/gammaContactAngle/gammaContactAngle/gammaContactAngleFvPatchScalarField.C
+%%REALNAME%%/applications/solvers/multiphase/interFoam/interfaceProperties/gammaContactAngle/gammaContactAngle/gammaContactAngleFvPatchScalarField.H
+%%REALNAME%%/applications/solvers/multiphase/interFoam/interfaceProperties/gammaContactAngle/gammaContactAngle/gammaContactAngleFvPatchScalarField.dep
+%%REALNAME%%/applications/solvers/multiphase/interFoam/interfaceProperties/gammaContactAngle/timeVaryingGammaContactAngle/timeVaryingGammaContactAngleFvPatchScalarField.C
+%%REALNAME%%/applications/solvers/multiphase/interFoam/interfaceProperties/gammaContactAngle/timeVaryingGammaContactAngle/timeVaryingGammaContactAngleFvPatchScalarField.H
+%%REALNAME%%/applications/solvers/multiphase/interFoam/interfaceProperties/gammaContactAngle/timeVaryingGammaContactAngle/timeVaryingGammaContactAngleFvPatchScalarField.dep
 %%REALNAME%%/applications/solvers/multiphase/interFoam/interfaceProperties/interfaceProperties.C
 %%REALNAME%%/applications/solvers/multiphase/interFoam/interfaceProperties/interfaceProperties.H
 %%REALNAME%%/applications/solvers/multiphase/interFoam/interfaceProperties/interfaceProperties.dep
+%%REALNAME%%/applications/solvers/multiphase/interFoam/interfaceProperties/lnInclude/constantGammaContactAngleFvPatchScalarField.C
+%%REALNAME%%/applications/solvers/multiphase/interFoam/interfaceProperties/lnInclude/constantGammaContactAngleFvPatchScalarField.H
+%%REALNAME%%/applications/solvers/multiphase/interFoam/interfaceProperties/lnInclude/dynamicGammaContactAngleFvPatchScalarField.C
+%%REALNAME%%/applications/solvers/multiphase/interFoam/interfaceProperties/lnInclude/dynamicGammaContactAngleFvPatchScalarField.H
+%%REALNAME%%/applications/solvers/multiphase/interFoam/interfaceProperties/lnInclude/gammaCompression.C
+%%REALNAME%%/applications/solvers/multiphase/interFoam/interfaceProperties/lnInclude/gammaCompression.H
+%%REALNAME%%/applications/solvers/multiphase/interFoam/interfaceProperties/lnInclude/gammaContactAngleFvPatchScalarField.C
+%%REALNAME%%/applications/solvers/multiphase/interFoam/interfaceProperties/lnInclude/gammaContactAngleFvPatchScalarField.H
+%%REALNAME%%/applications/solvers/multiphase/interFoam/interfaceProperties/lnInclude/interfaceProperties.C
+%%REALNAME%%/applications/solvers/multiphase/interFoam/interfaceProperties/lnInclude/interfaceProperties.H
+%%REALNAME%%/applications/solvers/multiphase/interFoam/interfaceProperties/lnInclude/timeVaryingGammaContactAngleFvPatchScalarField.C
+%%REALNAME%%/applications/solvers/multiphase/interFoam/interfaceProperties/lnInclude/timeVaryingGammaContactAngleFvPatchScalarField.H
+%%REALNAME%%/applications/solvers/multiphase/interFoam/interfaceProperties/lnInclude/uptodate
 %%REALNAME%%/applications/solvers/multiphase/interFoam/pEqn.H
 %%REALNAME%%/applications/solvers/multiphase/lesInterFoam/FoamX/defaults/system/fvSchemes
 %%REALNAME%%/applications/solvers/multiphase/lesInterFoam/FoamX/defaults/system/fvSolution
@@ -1707,7 +1752,7 @@
 %%REALNAME%%/applications/solvers/multiphase/settlingFoam/UEqn.H
 %%REALNAME%%/applications/solvers/multiphase/settlingFoam/alphaEqn.H
 %%REALNAME%%/applications/solvers/multiphase/settlingFoam/calcVdj.H
-%%REALNAME%%/applications/solvers/multiphase/settlingFoam/continuityErrs.H
+%%REALNAME%%/applications/solvers/multiphase/settlingFoam/compressibleContinuityErrs.H
 %%REALNAME%%/applications/solvers/multiphase/settlingFoam/correctViscosity.H
 %%REALNAME%%/applications/solvers/multiphase/settlingFoam/createFields.H
 %%REALNAME%%/applications/solvers/multiphase/settlingFoam/kEpsilon.H
@@ -1716,6 +1761,7 @@
 %%REALNAME%%/applications/solvers/multiphase/settlingFoam/settlingFoam.C
 %%REALNAME%%/applications/solvers/multiphase/settlingFoam/settlingFoam.dep
 %%REALNAME%%/applications/solvers/multiphase/settlingFoam/wallDissipation.H
+%%REALNAME%%/applications/solvers/multiphase/settlingFoam/wallFunctions.H
 %%REALNAME%%/applications/solvers/multiphase/settlingFoam/wallViscosity.H
 %%REALNAME%%/applications/solvers/multiphase/settlingFoam/yieldStress.H
 %%REALNAME%%/applications/solvers/multiphase/twoLiquidMixingFoam/Make/files
@@ -1781,23 +1827,31 @@
 %%REALNAME%%/applications/solvers/multiphase/twoPhaseEulerFoam/Make/files
 %%REALNAME%%/applications/solvers/multiphase/twoPhaseEulerFoam/Make/options
 %%REALNAME%%/applications/solvers/multiphase/twoPhaseEulerFoam/UEqns.H
+%%REALNAME%%/applications/solvers/multiphase/twoPhaseEulerFoam/UEqns.H.new
 %%REALNAME%%/applications/solvers/multiphase/twoPhaseEulerFoam/alphaEqn.H
 %%REALNAME%%/applications/solvers/multiphase/twoPhaseEulerFoam/createFields.H
 %%REALNAME%%/applications/solvers/multiphase/twoPhaseEulerFoam/interfacialModels/Make/files
 %%REALNAME%%/applications/solvers/multiphase/twoPhaseEulerFoam/interfacialModels/Make/options
 %%REALNAME%%/applications/solvers/multiphase/twoPhaseEulerFoam/interfacialModels/dragModels/Ergun/Ergun.C
 %%REALNAME%%/applications/solvers/multiphase/twoPhaseEulerFoam/interfacialModels/dragModels/Ergun/Ergun.H
+%%REALNAME%%/applications/solvers/multiphase/twoPhaseEulerFoam/interfacialModels/dragModels/Ergun/Ergun.dep
 %%REALNAME%%/applications/solvers/multiphase/twoPhaseEulerFoam/interfacialModels/dragModels/Gibilaro/Gibilaro.C
 %%REALNAME%%/applications/solvers/multiphase/twoPhaseEulerFoam/interfacialModels/dragModels/Gibilaro/Gibilaro.H
+%%REALNAME%%/applications/solvers/multiphase/twoPhaseEulerFoam/interfacialModels/dragModels/Gibilaro/Gibilaro.dep
 %%REALNAME%%/applications/solvers/multiphase/twoPhaseEulerFoam/interfacialModels/dragModels/GidaspowSchillerNaumann/GidaspowSchillerNaumann.C
 %%REALNAME%%/applications/solvers/multiphase/twoPhaseEulerFoam/interfacialModels/dragModels/GidaspowSchillerNaumann/GidaspowSchillerNaumann.H
+%%REALNAME%%/applications/solvers/multiphase/twoPhaseEulerFoam/interfacialModels/dragModels/GidaspowSchillerNaumann/GidaspowSchillerNaumann.dep
 %%REALNAME%%/applications/solvers/multiphase/twoPhaseEulerFoam/interfacialModels/dragModels/SchillerNaumann/SchillerNaumann.C
 %%REALNAME%%/applications/solvers/multiphase/twoPhaseEulerFoam/interfacialModels/dragModels/SchillerNaumann/SchillerNaumann.H
+%%REALNAME%%/applications/solvers/multiphase/twoPhaseEulerFoam/interfacialModels/dragModels/SchillerNaumann/SchillerNaumann.dep
 %%REALNAME%%/applications/solvers/multiphase/twoPhaseEulerFoam/interfacialModels/dragModels/WenYu/WenYu.C
 %%REALNAME%%/applications/solvers/multiphase/twoPhaseEulerFoam/interfacialModels/dragModels/WenYu/WenYu.H
+%%REALNAME%%/applications/solvers/multiphase/twoPhaseEulerFoam/interfacialModels/dragModels/WenYu/WenYu.dep
 %%REALNAME%%/applications/solvers/multiphase/twoPhaseEulerFoam/interfacialModels/dragModels/dragModel/dragModel.C
 %%REALNAME%%/applications/solvers/multiphase/twoPhaseEulerFoam/interfacialModels/dragModels/dragModel/dragModel.H
+%%REALNAME%%/applications/solvers/multiphase/twoPhaseEulerFoam/interfacialModels/dragModels/dragModel/dragModel.dep
 %%REALNAME%%/applications/solvers/multiphase/twoPhaseEulerFoam/interfacialModels/dragModels/dragModel/newDragModel.C
+%%REALNAME%%/applications/solvers/multiphase/twoPhaseEulerFoam/interfacialModels/dragModels/dragModel/newDragModel.dep
 %%REALNAME%%/applications/solvers/multiphase/twoPhaseEulerFoam/interfacialModels/lnInclude/Ergun.C
 %%REALNAME%%/applications/solvers/multiphase/twoPhaseEulerFoam/interfacialModels/lnInclude/Ergun.H
 %%REALNAME%%/applications/solvers/multiphase/twoPhaseEulerFoam/interfacialModels/lnInclude/Gibilaro.C
@@ -1816,15 +1870,21 @@
 %%REALNAME%%/applications/solvers/multiphase/twoPhaseEulerFoam/kineticTheoryModel/Make/options
 %%REALNAME%%/applications/solvers/multiphase/twoPhaseEulerFoam/kineticTheoryModel/conductivityModel/Gidaspow/GidaspowConductivity.C
 %%REALNAME%%/applications/solvers/multiphase/twoPhaseEulerFoam/kineticTheoryModel/conductivityModel/Gidaspow/GidaspowConductivity.H
+%%REALNAME%%/applications/solvers/multiphase/twoPhaseEulerFoam/kineticTheoryModel/conductivityModel/Gidaspow/GidaspowConductivity.dep
 %%REALNAME%%/applications/solvers/multiphase/twoPhaseEulerFoam/kineticTheoryModel/conductivityModel/HrenyaSinclair/HrenyaSinclairConductivity.C
 %%REALNAME%%/applications/solvers/multiphase/twoPhaseEulerFoam/kineticTheoryModel/conductivityModel/HrenyaSinclair/HrenyaSinclairConductivity.H
+%%REALNAME%%/applications/solvers/multiphase/twoPhaseEulerFoam/kineticTheoryModel/conductivityModel/HrenyaSinclair/HrenyaSinclairConductivity.dep
 %%REALNAME%%/applications/solvers/multiphase/twoPhaseEulerFoam/kineticTheoryModel/conductivityModel/Syamlal/SyamlalConductivity.C
 %%REALNAME%%/applications/solvers/multiphase/twoPhaseEulerFoam/kineticTheoryModel/conductivityModel/Syamlal/SyamlalConductivity.H
+%%REALNAME%%/applications/solvers/multiphase/twoPhaseEulerFoam/kineticTheoryModel/conductivityModel/Syamlal/SyamlalConductivity.dep
 %%REALNAME%%/applications/solvers/multiphase/twoPhaseEulerFoam/kineticTheoryModel/conductivityModel/conductivityModel/conductivityModel.C
 %%REALNAME%%/applications/solvers/multiphase/twoPhaseEulerFoam/kineticTheoryModel/conductivityModel/conductivityModel/conductivityModel.H
+%%REALNAME%%/applications/solvers/multiphase/twoPhaseEulerFoam/kineticTheoryModel/conductivityModel/conductivityModel/conductivityModel.dep
 %%REALNAME%%/applications/solvers/multiphase/twoPhaseEulerFoam/kineticTheoryModel/conductivityModel/conductivityModel/newConductivityModel.C
+%%REALNAME%%/applications/solvers/multiphase/twoPhaseEulerFoam/kineticTheoryModel/conductivityModel/conductivityModel/newConductivityModel.dep
 %%REALNAME%%/applications/solvers/multiphase/twoPhaseEulerFoam/kineticTheoryModel/kineticTheoryModel/kineticTheoryModel.C
 %%REALNAME%%/applications/solvers/multiphase/twoPhaseEulerFoam/kineticTheoryModel/kineticTheoryModel/kineticTheoryModel.H
+%%REALNAME%%/applications/solvers/multiphase/twoPhaseEulerFoam/kineticTheoryModel/kineticTheoryModel/kineticTheoryModel.dep
 %%REALNAME%%/applications/solvers/multiphase/twoPhaseEulerFoam/kineticTheoryModel/lnInclude/GidaspowConductivity.C
 %%REALNAME%%/applications/solvers/multiphase/twoPhaseEulerFoam/kineticTheoryModel/lnInclude/GidaspowConductivity.H
 %%REALNAME%%/applications/solvers/multiphase/twoPhaseEulerFoam/kineticTheoryModel/lnInclude/GidaspowViscosity.C
@@ -1850,15 +1910,21 @@
 %%REALNAME%%/applications/solvers/multiphase/twoPhaseEulerFoam/kineticTheoryModel/lnInclude/viscosityModel.H
 %%REALNAME%%/applications/solvers/multiphase/twoPhaseEulerFoam/kineticTheoryModel/viscosityModel/Gidaspow/GidaspowViscosity.C
 %%REALNAME%%/applications/solvers/multiphase/twoPhaseEulerFoam/kineticTheoryModel/viscosityModel/Gidaspow/GidaspowViscosity.H
+%%REALNAME%%/applications/solvers/multiphase/twoPhaseEulerFoam/kineticTheoryModel/viscosityModel/Gidaspow/GidaspowViscosity.dep
 %%REALNAME%%/applications/solvers/multiphase/twoPhaseEulerFoam/kineticTheoryModel/viscosityModel/HrenyaSinclair/HrenyaSinclairViscosity.C
 %%REALNAME%%/applications/solvers/multiphase/twoPhaseEulerFoam/kineticTheoryModel/viscosityModel/HrenyaSinclair/HrenyaSinclairViscosity.H
+%%REALNAME%%/applications/solvers/multiphase/twoPhaseEulerFoam/kineticTheoryModel/viscosityModel/HrenyaSinclair/HrenyaSinclairViscosity.dep
 %%REALNAME%%/applications/solvers/multiphase/twoPhaseEulerFoam/kineticTheoryModel/viscosityModel/Syamlal/SyamlalViscosity.C
 %%REALNAME%%/applications/solvers/multiphase/twoPhaseEulerFoam/kineticTheoryModel/viscosityModel/Syamlal/SyamlalViscosity.H
+%%REALNAME%%/applications/solvers/multiphase/twoPhaseEulerFoam/kineticTheoryModel/viscosityModel/Syamlal/SyamlalViscosity.dep
 %%REALNAME%%/applications/solvers/multiphase/twoPhaseEulerFoam/kineticTheoryModel/viscosityModel/none/noneViscosity.C
 %%REALNAME%%/applications/solvers/multiphase/twoPhaseEulerFoam/kineticTheoryModel/viscosityModel/none/noneViscosity.H
+%%REALNAME%%/applications/solvers/multiphase/twoPhaseEulerFoam/kineticTheoryModel/viscosityModel/none/noneViscosity.dep
 %%REALNAME%%/applications/solvers/multiphase/twoPhaseEulerFoam/kineticTheoryModel/viscosityModel/viscosityModel/newViscosityModel.C
+%%REALNAME%%/applications/solvers/multiphase/twoPhaseEulerFoam/kineticTheoryModel/viscosityModel/viscosityModel/newViscosityModel.dep
 %%REALNAME%%/applications/solvers/multiphase/twoPhaseEulerFoam/kineticTheoryModel/viscosityModel/viscosityModel/viscosityModel.C
 %%REALNAME%%/applications/solvers/multiphase/twoPhaseEulerFoam/kineticTheoryModel/viscosityModel/viscosityModel/viscosityModel.H
+%%REALNAME%%/applications/solvers/multiphase/twoPhaseEulerFoam/kineticTheoryModel/viscosityModel/viscosityModel/viscosityModel.dep
 %%REALNAME%%/applications/solvers/multiphase/twoPhaseEulerFoam/liftDragCoeffs.H
 %%REALNAME%%/applications/solvers/multiphase/twoPhaseEulerFoam/pEqn.H
 %%REALNAME%%/applications/solvers/multiphase/twoPhaseEulerFoam/phaseModel/Make/files
@@ -1868,12 +1934,15 @@
 %%REALNAME%%/applications/solvers/multiphase/twoPhaseEulerFoam/phaseModel/lnInclude/uptodate
 %%REALNAME%%/applications/solvers/multiphase/twoPhaseEulerFoam/phaseModel/phaseModel/phaseModel.C
 %%REALNAME%%/applications/solvers/multiphase/twoPhaseEulerFoam/phaseModel/phaseModel/phaseModel.H
+%%REALNAME%%/applications/solvers/multiphase/twoPhaseEulerFoam/phaseModel/phaseModel/phaseModel.dep
 %%REALNAME%%/applications/solvers/multiphase/twoPhaseEulerFoam/readPPProperties.H
 %%REALNAME%%/applications/solvers/multiphase/twoPhaseEulerFoam/readTwoPhaseEulerFoamControls.H
 %%REALNAME%%/applications/solvers/multiphase/twoPhaseEulerFoam/turbulenceModel/kEpsilon.H
 %%REALNAME%%/applications/solvers/multiphase/twoPhaseEulerFoam/turbulenceModel/wallDissipation.H
+%%REALNAME%%/applications/solvers/multiphase/twoPhaseEulerFoam/turbulenceModel/wallFunctions.H
 %%REALNAME%%/applications/solvers/multiphase/twoPhaseEulerFoam/turbulenceModel/wallViscosity.H
 %%REALNAME%%/applications/solvers/multiphase/twoPhaseEulerFoam/twoPhaseEulerFoam.C
+%%REALNAME%%/applications/solvers/multiphase/twoPhaseEulerFoam/twoPhaseEulerFoam.dep
 %%REALNAME%%/applications/solvers/multiphase/twoPhaseEulerFoam/write.H
 %%REALNAME%%/applications/solvers/stressAnalysis/Allwmake
 %%REALNAME%%/applications/solvers/stressAnalysis/contactStressFoam/Make/files
@@ -1899,8 +1968,8 @@
 %%REALNAME%%/applications/solvers/stressAnalysis/stressFemFoam/createFemFields.H
 %%REALNAME%%/applications/solvers/stressAnalysis/stressFemFoam/createFemMesh.H
 %%REALNAME%%/applications/solvers/stressAnalysis/stressFemFoam/createFields.H
-%%REALNAME%%/applications/solvers/stressAnalysis/stressFemFoam/femStress/Traction/TractionPointPatchVectorField.C
-%%REALNAME%%/applications/solvers/stressAnalysis/stressFemFoam/femStress/Traction/TractionPointPatchVectorField.H
+%%REALNAME%%/applications/solvers/stressAnalysis/stressFemFoam/femStress/Traction/TractionTetPointPatchVectorField.C
+%%REALNAME%%/applications/solvers/stressAnalysis/stressFemFoam/femStress/Traction/TractionTetPointPatchVectorField.H
 %%REALNAME%%/applications/solvers/stressAnalysis/stressFemFoam/femStress/tractionTetPolyPatchVectorField.C
 %%REALNAME%%/applications/solvers/stressAnalysis/stressFemFoam/femStress/tractionTetPolyPatchVectorField.H
 %%REALNAME%%/applications/solvers/stressAnalysis/stressFemFoam/femStress/tractionTetPolyPatchVectorField.dep
@@ -1940,10 +2009,6 @@
 %%REALNAME%%/applications/test/Dictionary/DictionaryTest.C
 %%REALNAME%%/applications/test/Dictionary/Make/files
 %%REALNAME%%/applications/test/Dictionary/Make/options
-%%REALNAME%%/applications/test/DimensionedField/DimensionedField.C
-%%REALNAME%%/applications/test/DimensionedField/DimensionedField.H
-%%REALNAME%%/applications/test/DimensionedField/DimensionedFieldI.H
-%%REALNAME%%/applications/test/DimensionedField/DimensionedFieldIO.C
 %%REALNAME%%/applications/test/DimensionedField/DimensionedFieldTest.C
 %%REALNAME%%/applications/test/DimensionedField/Make/files
 %%REALNAME%%/applications/test/DimensionedField/Make/options
@@ -1981,6 +2046,9 @@
 %%REALNAME%%/applications/test/IndirectList/IndirectListTest.C
 %%REALNAME%%/applications/test/IndirectList/Make/files
 %%REALNAME%%/applications/test/IndirectList/Make/options
+%%REALNAME%%/applications/test/LduMatrix/LduMatrixTest.C
+%%REALNAME%%/applications/test/LduMatrix/Make/files
+%%REALNAME%%/applications/test/LduMatrix/Make/options
 %%REALNAME%%/applications/test/List/ListTest.C
 %%REALNAME%%/applications/test/List/Make/files
 %%REALNAME%%/applications/test/List/Make/options
@@ -2002,6 +2070,7 @@
 %%REALNAME%%/applications/test/SLList/Make/files
 %%REALNAME%%/applications/test/SLList/Make/options
 %%REALNAME%%/applications/test/SLList/SLListTest.C
+%%REALNAME%%/applications/test/StaticHashTable/staticHashTableTest.C
 %%REALNAME%%/applications/test/Unix/Make/files
 %%REALNAME%%/applications/test/Unix/Make/options
 %%REALNAME%%/applications/test/Unix/UnixTest.C
@@ -2074,9 +2143,6 @@
 %%REALNAME%%/applications/test/graphXi/r.gplt
 %%REALNAME%%/applications/test/graphXi/r.ps
 %%REALNAME%%/applications/test/graphXi/r.xy
-%%REALNAME%%/applications/test/gzstream/Make/files
-%%REALNAME%%/applications/test/gzstream/Make/options
-%%REALNAME%%/applications/test/gzstream/gzstreamTest.C
 %%REALNAME%%/applications/test/io/Make/files
 %%REALNAME%%/applications/test/io/Make/options
 %%REALNAME%%/applications/test/io/ioTest.C
@@ -2155,6 +2221,9 @@
 %%REALNAME%%/applications/test/speed/Make/files
 %%REALNAME%%/applications/test/speed/Make/options
 %%REALNAME%%/applications/test/speed/speedTest.C
+%%REALNAME%%/applications/test/sphericalTensorField/Make/files
+%%REALNAME%%/applications/test/sphericalTensorField/Make/options
+%%REALNAME%%/applications/test/sphericalTensorField/sphericalTensorFieldTest.C
 %%REALNAME%%/applications/test/string/Make/files
 %%REALNAME%%/applications/test/string/Make/options
 %%REALNAME%%/applications/test/string/stringTest.C
@@ -2215,27 +2284,17 @@
 %%REALNAME%%/applications/utilities/mesh/advanced/collapseEdges/edgeCollapser.C
 %%REALNAME%%/applications/utilities/mesh/advanced/collapseEdges/edgeCollapser.H
 %%REALNAME%%/applications/utilities/mesh/advanced/collapseEdges/edgeCollapser.dep
-%%REALNAME%%/applications/utilities/mesh/advanced/collapseFaces/FoamX/collapseFaces.cfg
-%%REALNAME%%/applications/utilities/mesh/advanced/collapseFaces/Make/files
-%%REALNAME%%/applications/utilities/mesh/advanced/collapseFaces/Make/options
-%%REALNAME%%/applications/utilities/mesh/advanced/collapseFaces/collapseFaces.C
-%%REALNAME%%/applications/utilities/mesh/advanced/collapseFaces/collapseFaces.dep
-%%REALNAME%%/applications/utilities/mesh/advanced/collapseFaces/faceCollapser.C
-%%REALNAME%%/applications/utilities/mesh/advanced/collapseFaces/faceCollapser.H
-%%REALNAME%%/applications/utilities/mesh/advanced/collapseFaces/faceCollapser.dep
-%%REALNAME%%/applications/utilities/mesh/advanced/collapseFaces/scalarLabel.H
 %%REALNAME%%/applications/utilities/mesh/advanced/combinePatchFaces/FoamX/combinePatchFaces.cfg
 %%REALNAME%%/applications/utilities/mesh/advanced/combinePatchFaces/Make/files
 %%REALNAME%%/applications/utilities/mesh/advanced/combinePatchFaces/Make/options
 %%REALNAME%%/applications/utilities/mesh/advanced/combinePatchFaces/combinePatchFaces.C
 %%REALNAME%%/applications/utilities/mesh/advanced/combinePatchFaces/combinePatchFaces.dep
-%%REALNAME%%/applications/utilities/mesh/advanced/modifyMesh/FoamX/modifyMesh.cfg
-%%REALNAME%%/applications/utilities/mesh/advanced/modifyMesh/FoamX/pointPair.cfg
 %%REALNAME%%/applications/utilities/mesh/advanced/modifyMesh/Make/files
 %%REALNAME%%/applications/utilities/mesh/advanced/modifyMesh/Make/options
-%%REALNAME%%/applications/utilities/mesh/advanced/modifyMesh/boundaryCutter.C
-%%REALNAME%%/applications/utilities/mesh/advanced/modifyMesh/boundaryCutter.H
-%%REALNAME%%/applications/utilities/mesh/advanced/modifyMesh/boundaryCutter.dep
+%%REALNAME%%/applications/utilities/mesh/advanced/modifyMesh/Tuple.H
+%%REALNAME%%/applications/utilities/mesh/advanced/modifyMesh/cellSplitter.C
+%%REALNAME%%/applications/utilities/mesh/advanced/modifyMesh/cellSplitter.H
+%%REALNAME%%/applications/utilities/mesh/advanced/modifyMesh/cellSplitter.dep
 %%REALNAME%%/applications/utilities/mesh/advanced/modifyMesh/modifyMesh.C
 %%REALNAME%%/applications/utilities/mesh/advanced/modifyMesh/modifyMesh.dep
 %%REALNAME%%/applications/utilities/mesh/advanced/modifyMesh/modifyMeshDict
@@ -2266,6 +2325,11 @@
 %%REALNAME%%/applications/utilities/mesh/advanced/splitCells/splitCells.C
 %%REALNAME%%/applications/utilities/mesh/advanced/splitCells/splitCells.dep
 %%REALNAME%%/applications/utilities/mesh/conversion/Allwmake
+%%REALNAME%%/applications/utilities/mesh/conversion/ansysToFoam/FoamX/ansysToFoam.cfg
+%%REALNAME%%/applications/utilities/mesh/conversion/ansysToFoam/Make/files
+%%REALNAME%%/applications/utilities/mesh/conversion/ansysToFoam/Make/options
+%%REALNAME%%/applications/utilities/mesh/conversion/ansysToFoam/ansysToFoam.L
+%%REALNAME%%/applications/utilities/mesh/conversion/ansysToFoam/ansysToFoam.dep
 %%REALNAME%%/applications/utilities/mesh/conversion/ccm24ToFoam/Allwmake
 %%REALNAME%%/applications/utilities/mesh/conversion/ccm24ToFoam/FoamX/ccm24ToFoam.cfg
 %%REALNAME%%/applications/utilities/mesh/conversion/ccm24ToFoam/README
@@ -2525,11 +2589,6 @@
 %%REALNAME%%/applications/utilities/mesh/conversion/gmshToFoam/Make/options
 %%REALNAME%%/applications/utilities/mesh/conversion/gmshToFoam/gmshToFoam.C
 %%REALNAME%%/applications/utilities/mesh/conversion/gmshToFoam/gmshToFoam.dep
-%%REALNAME%%/applications/utilities/mesh/conversion/ideasToFoam/FoamX/ideasToFoam.cfg
-%%REALNAME%%/applications/utilities/mesh/conversion/ideasToFoam/Make/files
-%%REALNAME%%/applications/utilities/mesh/conversion/ideasToFoam/Make/options
-%%REALNAME%%/applications/utilities/mesh/conversion/ideasToFoam/ideasToFoam.L
-%%REALNAME%%/applications/utilities/mesh/conversion/ideasToFoam/ideasToFoam.dep
 %%REALNAME%%/applications/utilities/mesh/conversion/kivaToFoam/FoamX/kivaToFoam.cfg
 %%REALNAME%%/applications/utilities/mesh/conversion/kivaToFoam/Make/files
 %%REALNAME%%/applications/utilities/mesh/conversion/kivaToFoam/Make/options
@@ -2560,6 +2619,13 @@
 %%REALNAME%%/applications/utilities/mesh/conversion/plot3dToFoam/hexBlock.dep
 %%REALNAME%%/applications/utilities/mesh/conversion/plot3dToFoam/plot3dToFoam.C
 %%REALNAME%%/applications/utilities/mesh/conversion/plot3dToFoam/plot3dToFoam.dep
+%%REALNAME%%/applications/utilities/mesh/conversion/polyDualMesh/Make/files
+%%REALNAME%%/applications/utilities/mesh/conversion/polyDualMesh/Make/options
+%%REALNAME%%/applications/utilities/mesh/conversion/polyDualMesh/makePolyDualMesh.C
+%%REALNAME%%/applications/utilities/mesh/conversion/polyDualMesh/makePolyDualMesh.dep
+%%REALNAME%%/applications/utilities/mesh/conversion/polyDualMesh/polyDualMesh.C
+%%REALNAME%%/applications/utilities/mesh/conversion/polyDualMesh/polyDualMesh.H
+%%REALNAME%%/applications/utilities/mesh/conversion/polyDualMesh/polyDualMesh.dep
 %%REALNAME%%/applications/utilities/mesh/conversion/sammToFoam/FoamX/sammToFoam.cfg
 %%REALNAME%%/applications/utilities/mesh/conversion/sammToFoam/Make/files
 %%REALNAME%%/applications/utilities/mesh/conversion/sammToFoam/Make/options
@@ -2851,6 +2917,11 @@
 %%REALNAME%%/applications/utilities/mesh/manipulation/mirrorMesh/mirrorMesh.dep
 %%REALNAME%%/applications/utilities/mesh/manipulation/mirrorMesh/mirrorMeshDict
 %%REALNAME%%/applications/utilities/mesh/manipulation/mirrorMesh/readMirrorDict.H
+%%REALNAME%%/applications/utilities/mesh/manipulation/moveDynamicMesh/FoamX/moveDynamicMesh.cfg
+%%REALNAME%%/applications/utilities/mesh/manipulation/moveDynamicMesh/Make/files
+%%REALNAME%%/applications/utilities/mesh/manipulation/moveDynamicMesh/Make/options
+%%REALNAME%%/applications/utilities/mesh/manipulation/moveDynamicMesh/moveDynamicMesh.C
+%%REALNAME%%/applications/utilities/mesh/manipulation/moveDynamicMesh/moveDynamicMesh.dep
 %%REALNAME%%/applications/utilities/mesh/manipulation/moveEngineMesh/FoamX/moveEngineMesh.cfg
 %%REALNAME%%/applications/utilities/mesh/manipulation/moveEngineMesh/Make/files
 %%REALNAME%%/applications/utilities/mesh/manipulation/moveEngineMesh/Make/options
@@ -2861,11 +2932,6 @@
 %%REALNAME%%/applications/utilities/mesh/manipulation/moveMesh/Make/options
 %%REALNAME%%/applications/utilities/mesh/manipulation/moveMesh/moveMesh.C
 %%REALNAME%%/applications/utilities/mesh/manipulation/moveMesh/moveMesh.dep
-%%REALNAME%%/applications/utilities/mesh/manipulation/moveTopoMesh/FoamX/moveTopoMesh.cfg
-%%REALNAME%%/applications/utilities/mesh/manipulation/moveTopoMesh/Make/files
-%%REALNAME%%/applications/utilities/mesh/manipulation/moveTopoMesh/Make/options
-%%REALNAME%%/applications/utilities/mesh/manipulation/moveTopoMesh/moveTopoMesh.C
-%%REALNAME%%/applications/utilities/mesh/manipulation/moveTopoMesh/moveTopoMesh.dep
 %%REALNAME%%/applications/utilities/mesh/manipulation/objToVTK/FoamX/objToVTK.cfg
 %%REALNAME%%/applications/utilities/mesh/manipulation/objToVTK/Make/files
 %%REALNAME%%/applications/utilities/mesh/manipulation/objToVTK/Make/options
@@ -3382,13 +3448,15 @@
 %%REALNAME%%/applications/utilities/mesh/manipulation/setSet/readline-5.0/xmalloc.h
 %%REALNAME%%/applications/utilities/mesh/manipulation/setSet/setSet/Make/files
 %%REALNAME%%/applications/utilities/mesh/manipulation/setSet/setSet/Make/options
+%%REALNAME%%/applications/utilities/mesh/manipulation/setSet/setSet/fieldToCell.C
+%%REALNAME%%/applications/utilities/mesh/manipulation/setSet/setSet/fieldToCell.H
 %%REALNAME%%/applications/utilities/mesh/manipulation/setSet/setSet/floatScalar.C
 %%REALNAME%%/applications/utilities/mesh/manipulation/setSet/setSet/floatScalar.H
 %%REALNAME%%/applications/utilities/mesh/manipulation/setSet/setSet/setSet.C
-%%REALNAME%%/applications/utilities/mesh/manipulation/setSet/setSet/writeFaceSet.C
-%%REALNAME%%/applications/utilities/mesh/manipulation/setSet/setSet/writeFaceSet.H
 %%REALNAME%%/applications/utilities/mesh/manipulation/setSet/setSet/writeFuns.C
 %%REALNAME%%/applications/utilities/mesh/manipulation/setSet/setSet/writeFuns.H
+%%REALNAME%%/applications/utilities/mesh/manipulation/setSet/setSet/writePatch.C
+%%REALNAME%%/applications/utilities/mesh/manipulation/setSet/setSet/writePatch.H
 %%REALNAME%%/applications/utilities/mesh/manipulation/setSet/setSet/writePointSet.C
 %%REALNAME%%/applications/utilities/mesh/manipulation/setSet/setSet/writePointSet.H
 %%REALNAME%%/applications/utilities/mesh/manipulation/splitMesh/FoamX/splitMesh.cfg
@@ -3439,8 +3507,6 @@
 %%REALNAME%%/applications/utilities/miscellaneous/foamFlex/FlexLexer.h
 %%REALNAME%%/applications/utilities/miscellaneous/foamFlex/INSTALL
 %%REALNAME%%/applications/utilities/miscellaneous/foamFlex/MISC/Atari/Atari.patches
-%%REALNAME%%/applications/utilities/miscellaneous/foamFlex/MISC/Borland.old/Borland-2.4
-%%REALNAME%%/applications/utilities/miscellaneous/foamFlex/MISC/Borland.old/Turbo-C
 %%REALNAME%%/applications/utilities/miscellaneous/foamFlex/MISC/Borland/Makefile
 %%REALNAME%%/applications/utilities/miscellaneous/foamFlex/MISC/Borland/config.h
 %%REALNAME%%/applications/utilities/miscellaneous/foamFlex/MISC/EBCDIC
@@ -3574,6 +3640,10 @@
 %%REALNAME%%/applications/utilities/parallelProcessing/decomposePar/lagrangianFieldDecomposer.H
 %%REALNAME%%/applications/utilities/parallelProcessing/decomposePar/lagrangianFieldDecomposer.dep
 %%REALNAME%%/applications/utilities/parallelProcessing/decomposePar/lagrangianFieldDecomposerDecomposeFields.C
+%%REALNAME%%/applications/utilities/parallelProcessing/decomposePar/old/decomposeMesh.C
+%%REALNAME%%/applications/utilities/parallelProcessing/decomposePar/old/decomposePar.C
+%%REALNAME%%/applications/utilities/parallelProcessing/decomposePar/old/domainDecomposition.C
+%%REALNAME%%/applications/utilities/parallelProcessing/decomposePar/old/domainDecomposition.H
 %%REALNAME%%/applications/utilities/parallelProcessing/decompositionMethods/Allwmake
 %%REALNAME%%/applications/utilities/parallelProcessing/decompositionMethods/Make/files
 %%REALNAME%%/applications/utilities/parallelProcessing/decompositionMethods/Make/options
@@ -3934,6 +4004,7 @@
 %%REALNAME%%/applications/utilities/postProcessing/dataConversion/foamToEnsight/Make/options
 %%REALNAME%%/applications/utilities/postProcessing/dataConversion/foamToEnsight/cellSets.H
 %%REALNAME%%/applications/utilities/postProcessing/dataConversion/foamToEnsight/checkData.H
+%%REALNAME%%/applications/utilities/postProcessing/dataConversion/foamToEnsight/checkMeshMoving.H
 %%REALNAME%%/applications/utilities/postProcessing/dataConversion/foamToEnsight/checkSprayData.H
 %%REALNAME%%/applications/utilities/postProcessing/dataConversion/foamToEnsight/ensightCaseHeader.H
 %%REALNAME%%/applications/utilities/postProcessing/dataConversion/foamToEnsight/ensightCaseTail.H
@@ -3994,7 +4065,6 @@
 %%REALNAME%%/applications/utilities/postProcessing/dataConversion/foamToGMV/itoa.dep
 %%REALNAME%%/applications/utilities/postProcessing/dataConversion/foamToGMV/moveMesh.H
 %%REALNAME%%/applications/utilities/postProcessing/dataConversion/foamToGMV/readConversionProperties.H
-%%REALNAME%%/applications/utilities/postProcessing/dataConversion/foamToVTK/FoamX/foamToVTK.cfg
 %%REALNAME%%/applications/utilities/postProcessing/dataConversion/foamToVTK/Make/files
 %%REALNAME%%/applications/utilities/postProcessing/dataConversion/foamToVTK/Make/options
 %%REALNAME%%/applications/utilities/postProcessing/dataConversion/foamToVTK/floatScalar.C
@@ -4030,6 +4100,9 @@
 %%REALNAME%%/applications/utilities/postProcessing/dataConversion/foamToVTK/writePatchGeom.C
 %%REALNAME%%/applications/utilities/postProcessing/dataConversion/foamToVTK/writePatchGeom.H
 %%REALNAME%%/applications/utilities/postProcessing/dataConversion/foamToVTK/writePatchGeom.dep
+%%REALNAME%%/applications/utilities/postProcessing/dataConversion/foamToVTK/writePatches.C
+%%REALNAME%%/applications/utilities/postProcessing/dataConversion/foamToVTK/writePatches.H
+%%REALNAME%%/applications/utilities/postProcessing/dataConversion/foamToVTK/writePatches.dep
 %%REALNAME%%/applications/utilities/postProcessing/dataConversion/foamToVTK/writeSurfFields.C
 %%REALNAME%%/applications/utilities/postProcessing/dataConversion/foamToVTK/writeSurfFields.H
 %%REALNAME%%/applications/utilities/postProcessing/dataConversion/foamToVTK/writeSurfFields.dep
@@ -4075,12 +4148,9 @@
 %%REALNAME%%/applications/utilities/postProcessing/graphics/PVFoamReader/vtkFoam/lnInclude/vtkFoamInsertNextPoint.H
 %%REALNAME%%/applications/utilities/postProcessing/graphics/PVFoamReader/vtkFoam/vtkFoam.C
 %%REALNAME%%/applications/utilities/postProcessing/graphics/PVFoamReader/vtkFoam/vtkFoam.H
-%%REALNAME%%/applications/utilities/postProcessing/graphics/PVFoamReader/vtkFoam/vtkFoam.dep
 %%REALNAME%%/applications/utilities/postProcessing/graphics/PVFoamReader/vtkFoam/vtkFoamAddFields.H
 %%REALNAME%%/applications/utilities/postProcessing/graphics/PVFoamReader/vtkFoam/vtkFoamAddInternalMesh.C
-%%REALNAME%%/applications/utilities/postProcessing/graphics/PVFoamReader/vtkFoam/vtkFoamAddInternalMesh.dep
 %%REALNAME%%/applications/utilities/postProcessing/graphics/PVFoamReader/vtkFoam/vtkFoamAddPatch.C
-%%REALNAME%%/applications/utilities/postProcessing/graphics/PVFoamReader/vtkFoam/vtkFoamAddPatch.dep
 %%REALNAME%%/applications/utilities/postProcessing/graphics/PVFoamReader/vtkFoam/vtkFoamConvertFields.H
 %%REALNAME%%/applications/utilities/postProcessing/graphics/PVFoamReader/vtkFoam/vtkFoamConvertPatchFaceField.H
 %%REALNAME%%/applications/utilities/postProcessing/graphics/PVFoamReader/vtkFoam/vtkFoamConvertPatchPointField.H
@@ -4228,12 +4298,6 @@
 %%REALNAME%%/applications/utilities/postProcessing/miscellaneous/engineCompRatio/Make/options
 %%REALNAME%%/applications/utilities/postProcessing/miscellaneous/engineCompRatio/engineCompRatio.C
 %%REALNAME%%/applications/utilities/postProcessing/miscellaneous/engineCompRatio/engineCompRatio.dep
-%%REALNAME%%/applications/utilities/postProcessing/miscellaneous/liftDrag/FoamX/liftDrag.cfg
-%%REALNAME%%/applications/utilities/postProcessing/miscellaneous/liftDrag/Make/files
-%%REALNAME%%/applications/utilities/postProcessing/miscellaneous/liftDrag/Make/options
-%%REALNAME%%/applications/utilities/postProcessing/miscellaneous/liftDrag/createNu.H
-%%REALNAME%%/applications/utilities/postProcessing/miscellaneous/liftDrag/liftDrag.C
-%%REALNAME%%/applications/utilities/postProcessing/miscellaneous/liftDrag/liftDrag.dep
 %%REALNAME%%/applications/utilities/postProcessing/miscellaneous/pdfPlot/Make/files
 %%REALNAME%%/applications/utilities/postProcessing/miscellaneous/pdfPlot/Make/options
 %%REALNAME%%/applications/utilities/postProcessing/miscellaneous/pdfPlot/createFields.H
@@ -5112,6 +5176,7 @@
 %%REALNAME%%/applications/utilities/preProcessing/FoamX/Java/FoamX/icons/small/maths/Ctau3.gif
 %%REALNAME%%/applications/utilities/preProcessing/FoamX/Java/FoamX/icons/small/maths/Cv.gif
 %%REALNAME%%/applications/utilities/preProcessing/FoamX/Java/FoamX/icons/small/maths/Cv1.gif
+%%REALNAME%%/applications/utilities/preProcessing/FoamX/Java/FoamX/icons/small/maths/Cv2.gif
 %%REALNAME%%/applications/utilities/preProcessing/FoamX/Java/FoamX/icons/small/maths/Cvm.gif
 %%REALNAME%%/applications/utilities/preProcessing/FoamX/Java/FoamX/icons/small/maths/Cw1.gif
 %%REALNAME%%/applications/utilities/preProcessing/FoamX/Java/FoamX/icons/small/maths/Cw2.gif
@@ -6095,6 +6160,7 @@
 %%REALNAME%%/applications/utilities/preProcessing/setFields/Make/files
 %%REALNAME%%/applications/utilities/preProcessing/setFields/Make/options
 %%REALNAME%%/applications/utilities/preProcessing/setFields/setFields.C
+%%REALNAME%%/applications/utilities/preProcessing/setFields/setFields.C.new
 %%REALNAME%%/applications/utilities/preProcessing/setFields/setFields.dep
 %%REALNAME%%/applications/utilities/preProcessing/setFields/setFieldsDict
 %%REALNAME%%/applications/utilities/surface/Allwmake
@@ -6103,6 +6169,7 @@
 %%REALNAME%%/applications/utilities/surface/surfaceAdd/Make/options
 %%REALNAME%%/applications/utilities/surface/surfaceAdd/surfaceAdd.C
 %%REALNAME%%/applications/utilities/surface/surfaceAdd/surfaceAdd.dep
+%%REALNAME%%/applications/utilities/surface/surfaceCheck.C
 %%REALNAME%%/applications/utilities/surface/surfaceCheck/Make/files
 %%REALNAME%%/applications/utilities/surface/surfaceCheck/Make/options
 %%REALNAME%%/applications/utilities/surface/surfaceCheck/surfaceCheck.C
@@ -6154,10 +6221,6 @@
 %%REALNAME%%/applications/utilities/surface/surfacePointMerge/Make/options
 %%REALNAME%%/applications/utilities/surface/surfacePointMerge/surfacePointMerge.C
 %%REALNAME%%/applications/utilities/surface/surfacePointMerge/surfacePointMerge.dep
-%%REALNAME%%/applications/utilities/surface/surfaceScale/Make/files
-%%REALNAME%%/applications/utilities/surface/surfaceScale/Make/options
-%%REALNAME%%/applications/utilities/surface/surfaceScale/surfaceScale.C
-%%REALNAME%%/applications/utilities/surface/surfaceScale/surfaceScale.dep
 %%REALNAME%%/applications/utilities/surface/surfaceSetOutside/Make/files
 %%REALNAME%%/applications/utilities/surface/surfaceSetOutside/Make/options
 %%REALNAME%%/applications/utilities/surface/surfaceSetOutside/surfaceSetOutside.C
@@ -6184,6 +6247,11 @@
 %%REALNAME%%/applications/utilities/surface/surfaceToPatch/Make/options
 %%REALNAME%%/applications/utilities/surface/surfaceToPatch/surfaceToPatch.C
 %%REALNAME%%/applications/utilities/surface/surfaceToPatch/surfaceToPatch.dep
+%%REALNAME%%/applications/utilities/surface/surfaceTransformPoints/Make/files
+%%REALNAME%%/applications/utilities/surface/surfaceTransformPoints/Make/files_bak
+%%REALNAME%%/applications/utilities/surface/surfaceTransformPoints/Make/options
+%%REALNAME%%/applications/utilities/surface/surfaceTransformPoints/surfaceTransformPoints.C
+%%REALNAME%%/applications/utilities/surface/surfaceTransformPoints/surfaceTransformPoints.dep
 %%REALNAME%%/applications/utilities/thermophysical/Allwmake
 %%REALNAME%%/applications/utilities/thermophysical/Sl/FoamX/Sl.cfg
 %%REALNAME%%/applications/utilities/thermophysical/Sl/Make/files
@@ -6192,6 +6260,7 @@
 %%REALNAME%%/applications/utilities/thermophysical/adiabaticFlameT/FoamX/adiabaticFlameT.cfg
 %%REALNAME%%/applications/utilities/thermophysical/adiabaticFlameT/Make/files
 %%REALNAME%%/applications/utilities/thermophysical/adiabaticFlameT/Make/options
+%%REALNAME%%/applications/utilities/thermophysical/adiabaticFlameT/Methane.log
 %%REALNAME%%/applications/utilities/thermophysical/adiabaticFlameT/Propane.log
 %%REALNAME%%/applications/utilities/thermophysical/adiabaticFlameT/adiabaticFlameT.C
 %%REALNAME%%/applications/utilities/thermophysical/adiabaticFlameT/adiabaticFlameT.dep
@@ -6221,19 +6290,15 @@
 %%REALNAME%%/applications/utilities/thermophysical/mixtureAdiabaticFlameT/mixtureAdiabaticFlameT.dep
 %%REALNAME%%/applications/utilities/thermophysical/mixtureAdiabaticFlameT/substance.H
 %%REALNAME%%/bin/FoamX
-%%REALNAME%%/bin/changeFSFaddress
 %%REALNAME%%/bin/doxyAwk
 %%REALNAME%%/bin/doxyFilt
 %%REALNAME%%/bin/doxyScr
-%%REALNAME%%/bin/dxFoam
 %%REALNAME%%/bin/foamAllHC
 %%REALNAME%%/bin/foamCheckJobs
 %%REALNAME%%/bin/foamCleanPath
 %%REALNAME%%/bin/foamClearPolyMesh
 %%REALNAME%%/bin/foamDistccd
 %%REALNAME%%/bin/foamEndJob
-%%REALNAME%%/bin/foamFormat
-%%REALNAME%%/bin/foamFormatScr
 %%REALNAME%%/bin/foamGraphExecTime
 %%REALNAME%%/bin/foamGraphResKE
 %%REALNAME%%/bin/foamGraphResUVWP
@@ -6265,7 +6330,6 @@
 %%REALNAME%%/bin/killFoamX
 %%REALNAME%%/bin/paraFoam
 %%REALNAME%%/bin/paraFoam.pvs
-%%REALNAME%%/bin/paraFoam1.pvs
 %%REALNAME%%/bin/patchTool
 %%REALNAME%%/bin/rmclassall
 %%REALNAME%%/bin/rmcore
@@ -6278,65 +6342,58 @@
 %%REALNAME%%/bin/touchdep
 %%REALNAME%%/bin/touchlib
 %%REALNAME%%/bin/toucho
-%%REALNAME%%/lib/FreeBSDOpt/dummy/libPstream.so
-%%REALNAME%%/lib/FreeBSDOpt/libFoamX.so
-%%REALNAME%%/lib/FreeBSDOpt/libFoamXServer.so
-%%REALNAME%%/lib/FreeBSDOpt/libGstream.so
-%%REALNAME%%/lib/FreeBSDOpt/libLESdeltas.so
-%%REALNAME%%/lib/FreeBSDOpt/libLESfilters.so
-%%REALNAME%%/lib/FreeBSDOpt/libODE.so
-%%REALNAME%%/lib/FreeBSDOpt/libOpenFOAM.so
-%%REALNAME%%/lib/FreeBSDOpt/libPatchToolServer.so
-%%REALNAME%%/lib/FreeBSDOpt/libadf.so
-%%REALNAME%%/lib/FreeBSDOpt/libbasicThermophysicalModels.so
-%%REALNAME%%/lib/FreeBSDOpt/libccmio.so
-%%REALNAME%%/lib/FreeBSDOpt/libcellDecompFiniteElement.so
-%%REALNAME%%/lib/FreeBSDOpt/libcfdTools.so
-%%REALNAME%%/lib/FreeBSDOpt/libchemistryModel.so
-%%REALNAME%%/lib/FreeBSDOpt/libcombustionThermophysicalModels.so
-%%REALNAME%%/lib/FreeBSDOpt/libcompressibleLESmodels.so
-%%REALNAME%%/lib/FreeBSDOpt/libcompressibleTurbulenceModels.so
-%%REALNAME%%/lib/FreeBSDOpt/libdecompositionMethods.so
-%%REALNAME%%/lib/FreeBSDOpt/libdieselSpray.so
-%%REALNAME%%/lib/FreeBSDOpt/libdynamicMesh.so
-%%REALNAME%%/lib/FreeBSDOpt/libedgeMesh.so
-%%REALNAME%%/lib/FreeBSDOpt/libengine.so
-%%REALNAME%%/lib/FreeBSDOpt/liberrorEstimation.so
-%%REALNAME%%/lib/FreeBSDOpt/libfaceDecompFiniteElement.so
-%%REALNAME%%/lib/FreeBSDOpt/libfiniteArea.so
-%%REALNAME%%/lib/FreeBSDOpt/libfoamUser.so
-%%REALNAME%%/lib/FreeBSDOpt/libfoamUtil.so
-%%REALNAME%%/lib/FreeBSDOpt/libincompressibleLESmodels.so
-%%REALNAME%%/lib/FreeBSDOpt/libincompressiblePostProcessing.so
-%%REALNAME%%/lib/FreeBSDOpt/libincompressibleTransportModels.so
-%%REALNAME%%/lib/FreeBSDOpt/libincompressibleTurbulenceModels.so
-%%REALNAME%%/lib/FreeBSDOpt/liblagrangian.so
-%%REALNAME%%/lib/FreeBSDOpt/liblaminarFlameSpeedModels.so
-%%REALNAME%%/lib/FreeBSDOpt/libliquidMixture.so
-%%REALNAME%%/lib/FreeBSDOpt/libliquids.so
-%%REALNAME%%/lib/FreeBSDOpt/libmeshTools.so
-%%REALNAME%%/lib/FreeBSDOpt/libmetis.so
-%%REALNAME%%/lib/FreeBSDOpt/libmovingFvMesh.so
-%%REALNAME%%/lib/FreeBSDOpt/libpdf.so
-%%REALNAME%%/lib/FreeBSDOpt/librandomProcesses.so
-%%REALNAME%%/lib/FreeBSDOpt/libsampling.so
-%%REALNAME%%/lib/FreeBSDOpt/libspecie.so
-%%REALNAME%%/lib/FreeBSDOpt/libthermophysicalFunctions.so
-%%REALNAME%%/lib/FreeBSDOpt/libtopoFvMesh.so
-%%REALNAME%%/lib/FreeBSDOpt/libtriSurface.so
-%%REALNAME%%/lib/FreeBSDOpt/libuserd-foam.so
-%%REALNAME%%/lib/FreeBSDOpt/libvtkFoam.so
-%%MPI%%%%REALNAME%%/lib/FreeBSDOpt/mpich-%%MPICH_VER%%/libPstream.so
-%%PORTDOCS%%%%REALNAME%%/Guides-a4/ProgrammersGuide-2p.pdf
-%%PORTDOCS%%%%REALNAME%%/Guides-a4/ProgrammersGuide.pdf
-%%PORTDOCS%%%%REALNAME%%/Guides-a4/UserGuide-2p.pdf
-%%PORTDOCS%%%%REALNAME%%/Guides-a4/UserGuide.pdf
-%%PORTDOCS%%%%REALNAME%%/Guides-usletter/ProgrammersGuide-2p.pdf
-%%PORTDOCS%%%%REALNAME%%/Guides-usletter/ProgrammersGuide.pdf
-%%PORTDOCS%%%%REALNAME%%/Guides-usletter/UserGuide-2p.pdf
-%%PORTDOCS%%%%REALNAME%%/Guides-usletter/UserGuide.pdf
-%%PORTDOCS%%%%REALNAME%%/README
-%%PORTDOCS%%%%REALNAME%%/ReleaseNotes-1.2
+%%REALNAME%%/jobControl/.keepme
+%%REALNAME%%/lib/%%APPSUBDIR%%/dummy/libPstream.so
+%%REALNAME%%/lib/%%APPSUBDIR%%/libEulerianInterfacialModels.so
+%%REALNAME%%/lib/%%APPSUBDIR%%/libFoamX.so
+%%REALNAME%%/lib/%%APPSUBDIR%%/libFoamXServer.so
+%%REALNAME%%/lib/%%APPSUBDIR%%/libGstream.so
+%%REALNAME%%/lib/%%APPSUBDIR%%/libLESdeltas.so
+%%REALNAME%%/lib/%%APPSUBDIR%%/libLESfilters.so
+%%REALNAME%%/lib/%%APPSUBDIR%%/libODE.so
+%%REALNAME%%/lib/%%APPSUBDIR%%/libOpenFOAM.so
+%%REALNAME%%/lib/%%APPSUBDIR%%/libPatchToolServer.so
+%%REALNAME%%/lib/%%APPSUBDIR%%/libadf.so
+%%REALNAME%%/lib/%%APPSUBDIR%%/libbasicThermophysicalModels.so
+%%REALNAME%%/lib/%%APPSUBDIR%%/libccmio.so
+%%REALNAME%%/lib/%%APPSUBDIR%%/libchemistryModel.so
+%%REALNAME%%/lib/%%APPSUBDIR%%/libcombustionThermophysicalModels.so
+%%REALNAME%%/lib/%%APPSUBDIR%%/libcompressibleLESmodels.so
+%%REALNAME%%/lib/%%APPSUBDIR%%/libcompressibleTurbulenceModels.so
+%%REALNAME%%/lib/%%APPSUBDIR%%/libdecompositionMethods.so
+%%REALNAME%%/lib/%%APPSUBDIR%%/libdieselSpray.so
+%%REALNAME%%/lib/%%APPSUBDIR%%/libdynamicFvMesh.so
+%%REALNAME%%/lib/%%APPSUBDIR%%/libdynamicMesh.so
+%%REALNAME%%/lib/%%APPSUBDIR%%/libedgeMesh.so
+%%REALNAME%%/lib/%%APPSUBDIR%%/libengine.so
+%%REALNAME%%/lib/%%APPSUBDIR%%/liberrorEstimation.so
+%%REALNAME%%/lib/%%APPSUBDIR%%/libfaceDecompFiniteElement.so
+%%REALNAME%%/lib/%%APPSUBDIR%%/libfiniteArea.so
+%%REALNAME%%/lib/%%APPSUBDIR%%/libfiniteVolume.so
+%%REALNAME%%/lib/%%APPSUBDIR%%/libfoamUser.so
+%%REALNAME%%/lib/%%APPSUBDIR%%/libfoamUtil.so
+%%REALNAME%%/lib/%%APPSUBDIR%%/libincompressibleLESmodels.so
+%%REALNAME%%/lib/%%APPSUBDIR%%/libincompressibleTransportModels.so
+%%REALNAME%%/lib/%%APPSUBDIR%%/libincompressibleTurbulenceModels.so
+%%REALNAME%%/lib/%%APPSUBDIR%%/libinterfaceProperties.so
+%%REALNAME%%/lib/%%APPSUBDIR%%/libkineticTheoryModel.so
+%%REALNAME%%/lib/%%APPSUBDIR%%/liblagrangian.so
+%%REALNAME%%/lib/%%APPSUBDIR%%/liblaminarFlameSpeedModels.so
+%%REALNAME%%/lib/%%APPSUBDIR%%/libliquidMixture.so
+%%REALNAME%%/lib/%%APPSUBDIR%%/libliquids.so
+%%REALNAME%%/lib/%%APPSUBDIR%%/libmeshTools.so
+%%REALNAME%%/lib/%%APPSUBDIR%%/libmetis.so
+%%REALNAME%%/lib/%%APPSUBDIR%%/libpdf.so
+%%REALNAME%%/lib/%%APPSUBDIR%%/libphaseModel.so
+%%REALNAME%%/lib/%%APPSUBDIR%%/librandomProcesses.so
+%%REALNAME%%/lib/%%APPSUBDIR%%/libsampling.so
+%%REALNAME%%/lib/%%APPSUBDIR%%/libspecie.so
+%%REALNAME%%/lib/%%APPSUBDIR%%/libtetDecompositionMotionSolvers.so
+%%REALNAME%%/lib/%%APPSUBDIR%%/libthermophysicalFunctions.so
+%%REALNAME%%/lib/%%APPSUBDIR%%/libtopoChangerFvMesh.so
+%%REALNAME%%/lib/%%APPSUBDIR%%/libtriSurface.so
+%%REALNAME%%/lib/%%APPSUBDIR%%/libuserd-foam.so
+%%MPI%%%%REALNAME%%/lib/%%APPSUBDIR%%/mpich-%%MPICH_VER%%/libPstream.so
 %%PORTDOCS%%%%REALNAME%%/tutorials/Allclean
 %%PORTDOCS%%%%REALNAME%%/tutorials/Allrun
 %%PORTDOCS%%%%REALNAME%%/tutorials/Alltest
@@ -6355,14 +6412,10 @@
 %%PORTDOCS%%%%REALNAME%%/tutorials/XiFoam/moriyoshiHomogeneous/0/fu
 %%PORTDOCS%%%%REALNAME%%/tutorials/XiFoam/moriyoshiHomogeneous/0/k
 %%PORTDOCS%%%%REALNAME%%/tutorials/XiFoam/moriyoshiHomogeneous/0/p
-%%PORTDOCS%%%%REALNAME%%/tutorials/XiFoam/moriyoshiHomogeneous/ParaViewTrace0.pvs
 %%PORTDOCS%%%%REALNAME%%/tutorials/XiFoam/moriyoshiHomogeneous/constant/combustionProperties
 %%PORTDOCS%%%%REALNAME%%/tutorials/XiFoam/moriyoshiHomogeneous/constant/environmentalProperties
 %%PORTDOCS%%%%REALNAME%%/tutorials/XiFoam/moriyoshiHomogeneous/constant/polyMesh/blockMeshDict
 %%PORTDOCS%%%%REALNAME%%/tutorials/XiFoam/moriyoshiHomogeneous/constant/polyMesh/boundary
-%%PORTDOCS%%%%REALNAME%%/tutorials/XiFoam/moriyoshiHomogeneous/constant/polyMesh/cells
-%%PORTDOCS%%%%REALNAME%%/tutorials/XiFoam/moriyoshiHomogeneous/constant/polyMesh/faces
-%%PORTDOCS%%%%REALNAME%%/tutorials/XiFoam/moriyoshiHomogeneous/constant/polyMesh/points
 %%PORTDOCS%%%%REALNAME%%/tutorials/XiFoam/moriyoshiHomogeneous/constant/thermophysicalProperties
 %%PORTDOCS%%%%REALNAME%%/tutorials/XiFoam/moriyoshiHomogeneous/constant/turbulenceProperties
 %%PORTDOCS%%%%REALNAME%%/tutorials/XiFoam/moriyoshiHomogeneous/system/controlDict
@@ -6385,9 +6438,6 @@
 %%PORTDOCS%%%%REALNAME%%/tutorials/Xoodles/pitzDaily/constant/environmentalProperties
 %%PORTDOCS%%%%REALNAME%%/tutorials/Xoodles/pitzDaily/constant/polyMesh/blockMeshDict
 %%PORTDOCS%%%%REALNAME%%/tutorials/Xoodles/pitzDaily/constant/polyMesh/boundary
-%%PORTDOCS%%%%REALNAME%%/tutorials/Xoodles/pitzDaily/constant/polyMesh/cells
-%%PORTDOCS%%%%REALNAME%%/tutorials/Xoodles/pitzDaily/constant/polyMesh/faces
-%%PORTDOCS%%%%REALNAME%%/tutorials/Xoodles/pitzDaily/constant/polyMesh/points
 %%PORTDOCS%%%%REALNAME%%/tutorials/Xoodles/pitzDaily/constant/thermophysicalProperties
 %%PORTDOCS%%%%REALNAME%%/tutorials/Xoodles/pitzDaily/constant/turbulenceProperties
 %%PORTDOCS%%%%REALNAME%%/tutorials/Xoodles/pitzDaily/system/controlDict
@@ -6422,21 +6472,6 @@
 %%PORTDOCS%%%%REALNAME%%/tutorials/boundaryFoam/boundaryLaunderSharma/0/magU
 %%PORTDOCS%%%%REALNAME%%/tutorials/boundaryFoam/boundaryLaunderSharma/0/nu.xy
 %%PORTDOCS%%%%REALNAME%%/tutorials/boundaryFoam/boundaryLaunderSharma/0/nuTilda
-%%PORTDOCS%%%%REALNAME%%/tutorials/boundaryFoam/boundaryLaunderSharma/EnSight/boundaryLaunderSharma.000.U
-%%PORTDOCS%%%%REALNAME%%/tutorials/boundaryFoam/boundaryLaunderSharma/EnSight/boundaryLaunderSharma.000.epsilon
-%%PORTDOCS%%%%REALNAME%%/tutorials/boundaryFoam/boundaryLaunderSharma/EnSight/boundaryLaunderSharma.000.k
-%%PORTDOCS%%%%REALNAME%%/tutorials/boundaryFoam/boundaryLaunderSharma/EnSight/boundaryLaunderSharma.000.magU
-%%PORTDOCS%%%%REALNAME%%/tutorials/boundaryFoam/boundaryLaunderSharma/EnSight/boundaryLaunderSharma.000.nuTilda
-%%PORTDOCS%%%%REALNAME%%/tutorials/boundaryFoam/boundaryLaunderSharma/EnSight/boundaryLaunderSharma.case
-%%PORTDOCS%%%%REALNAME%%/tutorials/boundaryFoam/boundaryLaunderSharma/EnSight/boundaryLaunderSharma.mesh
-%%PORTDOCS%%%%REALNAME%%/tutorials/boundaryFoam/boundaryLaunderSharma/VTK/boundaryLaunderSharma_0.vtk
-%%PORTDOCS%%%%REALNAME%%/tutorials/boundaryFoam/boundaryLaunderSharma/VTK/boundaryLaunderSharma_1.vtk
-%%PORTDOCS%%%%REALNAME%%/tutorials/boundaryFoam/boundaryLaunderSharma/VTK/defaultFaces/defaultFaces_0.vtk
-%%PORTDOCS%%%%REALNAME%%/tutorials/boundaryFoam/boundaryLaunderSharma/VTK/defaultFaces/defaultFaces_1.vtk
-%%PORTDOCS%%%%REALNAME%%/tutorials/boundaryFoam/boundaryLaunderSharma/VTK/lowerWall/lowerWall_0.vtk
-%%PORTDOCS%%%%REALNAME%%/tutorials/boundaryFoam/boundaryLaunderSharma/VTK/lowerWall/lowerWall_1.vtk
-%%PORTDOCS%%%%REALNAME%%/tutorials/boundaryFoam/boundaryLaunderSharma/VTK/upperWall/upperWall_0.vtk
-%%PORTDOCS%%%%REALNAME%%/tutorials/boundaryFoam/boundaryLaunderSharma/VTK/upperWall/upperWall_1.vtk
 %%PORTDOCS%%%%REALNAME%%/tutorials/boundaryFoam/boundaryLaunderSharma/constant/gammaDot.xy
 %%PORTDOCS%%%%REALNAME%%/tutorials/boundaryFoam/boundaryLaunderSharma/constant/polyMesh/blockMeshDict
 %%PORTDOCS%%%%REALNAME%%/tutorials/boundaryFoam/boundaryLaunderSharma/constant/polyMesh/boundary
@@ -6563,12 +6598,6 @@
 %%PORTDOCS%%%%REALNAME%%/tutorials/coodles/pitzDaily/0/muSgs
 %%PORTDOCS%%%%REALNAME%%/tutorials/coodles/pitzDaily/0/muTilda
 %%PORTDOCS%%%%REALNAME%%/tutorials/coodles/pitzDaily/0/p
-%%PORTDOCS%%%%REALNAME%%/tutorials/coodles/pitzDaily/VTK/frontAndBack/frontAndBack_1.vtk
-%%PORTDOCS%%%%REALNAME%%/tutorials/coodles/pitzDaily/VTK/inlet/inlet_1.vtk
-%%PORTDOCS%%%%REALNAME%%/tutorials/coodles/pitzDaily/VTK/lowerWall/lowerWall_1.vtk
-%%PORTDOCS%%%%REALNAME%%/tutorials/coodles/pitzDaily/VTK/outlet/outlet_1.vtk
-%%PORTDOCS%%%%REALNAME%%/tutorials/coodles/pitzDaily/VTK/pitzDaily_1.vtk
-%%PORTDOCS%%%%REALNAME%%/tutorials/coodles/pitzDaily/VTK/upperWall/upperWall_1.vtk
 %%PORTDOCS%%%%REALNAME%%/tutorials/coodles/pitzDaily/constant/polyMesh/blockMeshDict
 %%PORTDOCS%%%%REALNAME%%/tutorials/coodles/pitzDaily/constant/polyMesh/boundary
 %%PORTDOCS%%%%REALNAME%%/tutorials/coodles/pitzDaily/constant/probeLocations
@@ -6579,7 +6608,6 @@
 %%PORTDOCS%%%%REALNAME%%/tutorials/coodles/pitzDaily/system/fvSolution
 %%PORTDOCS%%%%REALNAME%%/tutorials/dieselFoam/Allclean
 %%PORTDOCS%%%%REALNAME%%/tutorials/dieselFoam/Allrun
-%%PORTDOCS%%%%REALNAME%%/tutorials/dieselFoam/aachenBomb/.fxLock
 %%PORTDOCS%%%%REALNAME%%/tutorials/dieselFoam/aachenBomb/0/N2
 %%PORTDOCS%%%%REALNAME%%/tutorials/dieselFoam/aachenBomb/0/O2
 %%PORTDOCS%%%%REALNAME%%/tutorials/dieselFoam/aachenBomb/0/T
@@ -6632,13 +6660,6 @@
 %%PORTDOCS%%%%REALNAME%%/tutorials/electrostaticFoam/Allrun
 %%PORTDOCS%%%%REALNAME%%/tutorials/electrostaticFoam/chargedWire/0/phi
 %%PORTDOCS%%%%REALNAME%%/tutorials/electrostaticFoam/chargedWire/0/rho
-%%PORTDOCS%%%%REALNAME%%/tutorials/electrostaticFoam/chargedWire/VTK/chargedWire_1.vtk
-%%PORTDOCS%%%%REALNAME%%/tutorials/electrostaticFoam/chargedWire/VTK/defaultFaces/defaultFaces_1.vtk
-%%PORTDOCS%%%%REALNAME%%/tutorials/electrostaticFoam/chargedWire/VTK/down/down_1.vtk
-%%PORTDOCS%%%%REALNAME%%/tutorials/electrostaticFoam/chargedWire/VTK/hole/hole_1.vtk
-%%PORTDOCS%%%%REALNAME%%/tutorials/electrostaticFoam/chargedWire/VTK/left/left_1.vtk
-%%PORTDOCS%%%%REALNAME%%/tutorials/electrostaticFoam/chargedWire/VTK/right/right_1.vtk
-%%PORTDOCS%%%%REALNAME%%/tutorials/electrostaticFoam/chargedWire/VTK/up/up_1.vtk
 %%PORTDOCS%%%%REALNAME%%/tutorials/electrostaticFoam/chargedWire/constant/physicalProperties
 %%PORTDOCS%%%%REALNAME%%/tutorials/electrostaticFoam/chargedWire/constant/polyMesh/blockMeshDict
 %%PORTDOCS%%%%REALNAME%%/tutorials/electrostaticFoam/chargedWire/constant/polyMesh/boundary
@@ -6663,14 +6684,8 @@
 %%PORTDOCS%%%%REALNAME%%/tutorials/engineFoam/kivaTest/constant/environmentalProperties
 %%PORTDOCS%%%%REALNAME%%/tutorials/engineFoam/kivaTest/constant/polyMesh/boundary
 %%PORTDOCS%%%%REALNAME%%/tutorials/engineFoam/kivaTest/constant/polyMesh/boundary.org
-%%PORTDOCS%%%%REALNAME%%/tutorials/engineFoam/kivaTest/constant/polyMesh/cells
-%%PORTDOCS%%%%REALNAME%%/tutorials/engineFoam/kivaTest/constant/polyMesh/faces
-%%PORTDOCS%%%%REALNAME%%/tutorials/engineFoam/kivaTest/constant/polyMesh/points
 %%PORTDOCS%%%%REALNAME%%/tutorials/engineFoam/kivaTest/constant/thermophysicalProperties
 %%PORTDOCS%%%%REALNAME%%/tutorials/engineFoam/kivaTest/constant/turbulenceProperties
-%%PORTDOCS%%%%REALNAME%%/tutorials/engineFoam/kivaTest/log.engineFoam
-%%PORTDOCS%%%%REALNAME%%/tutorials/engineFoam/kivaTest/log.kivaToFoam
-%%PORTDOCS%%%%REALNAME%%/tutorials/engineFoam/kivaTest/logSummary.-180.dat
 %%PORTDOCS%%%%REALNAME%%/tutorials/engineFoam/kivaTest/otape17
 %%PORTDOCS%%%%REALNAME%%/tutorials/engineFoam/kivaTest/system/controlDict
 %%PORTDOCS%%%%REALNAME%%/tutorials/engineFoam/kivaTest/system/controlDict.1st
@@ -6699,10 +6714,10 @@
 %%PORTDOCS%%%%REALNAME%%/tutorials/finiteAreaFoam/surfactantsTransport/0/faMesh/faceLabels
 %%PORTDOCS%%%%REALNAME%%/tutorials/finiteAreaFoam/surfactantsTransport/0/motionU
 %%PORTDOCS%%%%REALNAME%%/tutorials/finiteAreaFoam/surfactantsTransport/0/polyMesh/points.gz
+%%PORTDOCS%%%%REALNAME%%/tutorials/finiteAreaFoam/surfactantsTransport/constant/dynamicMeshDict
 %%PORTDOCS%%%%REALNAME%%/tutorials/finiteAreaFoam/surfactantsTransport/constant/environmentalProperties
 %%PORTDOCS%%%%REALNAME%%/tutorials/finiteAreaFoam/surfactantsTransport/constant/faMesh/faMeshDefinition
 %%PORTDOCS%%%%REALNAME%%/tutorials/finiteAreaFoam/surfactantsTransport/constant/meshMotionProperties
-%%PORTDOCS%%%%REALNAME%%/tutorials/finiteAreaFoam/surfactantsTransport/constant/motionProperties
 %%PORTDOCS%%%%REALNAME%%/tutorials/finiteAreaFoam/surfactantsTransport/constant/multiphaseProperties
 %%PORTDOCS%%%%REALNAME%%/tutorials/finiteAreaFoam/surfactantsTransport/constant/polyMesh/boundary
 %%PORTDOCS%%%%REALNAME%%/tutorials/finiteAreaFoam/surfactantsTransport/constant/transportProperties
@@ -6716,6 +6731,44 @@
 %%PORTDOCS%%%%REALNAME%%/tutorials/finiteAreaFoam/surfactantsTransport/system/fvSolution
 %%PORTDOCS%%%%REALNAME%%/tutorials/finiteAreaFoam/surfactantsTransport/system/tetFemSolution
 %%PORTDOCS%%%%REALNAME%%/tutorials/finiteAreaFoam/surfactantsTransport/system/tetFemTolerances
+%%PORTDOCS%%%%REALNAME%%/tutorials/icoDyMFoam/Allclean
+%%PORTDOCS%%%%REALNAME%%/tutorials/icoDyMFoam/Allrun
+%%PORTDOCS%%%%REALNAME%%/tutorials/icoDyMFoam/mixer2D/0/U
+%%PORTDOCS%%%%REALNAME%%/tutorials/icoDyMFoam/mixer2D/0/cellToRegion
+%%PORTDOCS%%%%REALNAME%%/tutorials/icoDyMFoam/mixer2D/0/p
+%%PORTDOCS%%%%REALNAME%%/tutorials/icoDyMFoam/mixer2D/constant/dynamicMeshDict
+%%PORTDOCS%%%%REALNAME%%/tutorials/icoDyMFoam/mixer2D/constant/polyMesh/blockMeshDict
+%%PORTDOCS%%%%REALNAME%%/tutorials/icoDyMFoam/mixer2D/constant/polyMesh/boundary
+%%PORTDOCS%%%%REALNAME%%/tutorials/icoDyMFoam/mixer2D/constant/transportProperties
+%%PORTDOCS%%%%REALNAME%%/tutorials/icoDyMFoam/mixer2D/system/controlDict
+%%PORTDOCS%%%%REALNAME%%/tutorials/icoDyMFoam/mixer2D/system/fvSchemes
+%%PORTDOCS%%%%REALNAME%%/tutorials/icoDyMFoam/mixer2D/system/fvSolution
+%%PORTDOCS%%%%REALNAME%%/tutorials/icoDyMFoam/movingCone/0/U
+%%PORTDOCS%%%%REALNAME%%/tutorials/icoDyMFoam/movingCone/0/motionU
+%%PORTDOCS%%%%REALNAME%%/tutorials/icoDyMFoam/movingCone/0/p
+%%PORTDOCS%%%%REALNAME%%/tutorials/icoDyMFoam/movingCone/constant/dynamicMeshDict
+%%PORTDOCS%%%%REALNAME%%/tutorials/icoDyMFoam/movingCone/constant/polyMesh/blockMeshDict
+%%PORTDOCS%%%%REALNAME%%/tutorials/icoDyMFoam/movingCone/constant/polyMesh/boundary
+%%PORTDOCS%%%%REALNAME%%/tutorials/icoDyMFoam/movingCone/constant/transportProperties
+%%PORTDOCS%%%%REALNAME%%/tutorials/icoDyMFoam/movingCone/system/controlDict
+%%PORTDOCS%%%%REALNAME%%/tutorials/icoDyMFoam/movingCone/system/fvSchemes
+%%PORTDOCS%%%%REALNAME%%/tutorials/icoDyMFoam/movingCone/system/fvSolution
+%%PORTDOCS%%%%REALNAME%%/tutorials/icoDyMFoam/movingCone/system/tetFemSolution
+%%PORTDOCS%%%%REALNAME%%/tutorials/icoDyMFoam/newMovingCone/0/U
+%%PORTDOCS%%%%REALNAME%%/tutorials/icoDyMFoam/newMovingCone/0/motionDiff
+%%PORTDOCS%%%%REALNAME%%/tutorials/icoDyMFoam/newMovingCone/0/motionU
+%%PORTDOCS%%%%REALNAME%%/tutorials/icoDyMFoam/newMovingCone/0/p
+%%PORTDOCS%%%%REALNAME%%/tutorials/icoDyMFoam/newMovingCone/constant/dynamicMeshDict
+%%PORTDOCS%%%%REALNAME%%/tutorials/icoDyMFoam/newMovingCone/constant/polyMesh/blockMeshDict
+%%PORTDOCS%%%%REALNAME%%/tutorials/icoDyMFoam/newMovingCone/constant/transportProperties
+%%PORTDOCS%%%%REALNAME%%/tutorials/icoDyMFoam/newMovingCone/setMotionMovingCone/Make/files
+%%PORTDOCS%%%%REALNAME%%/tutorials/icoDyMFoam/newMovingCone/setMotionMovingCone/Make/options
+%%PORTDOCS%%%%REALNAME%%/tutorials/icoDyMFoam/newMovingCone/setMotionMovingCone/createFields.H
+%%PORTDOCS%%%%REALNAME%%/tutorials/icoDyMFoam/newMovingCone/setMotionMovingCone/setMotionMovingCone.C
+%%PORTDOCS%%%%REALNAME%%/tutorials/icoDyMFoam/newMovingCone/system/controlDict
+%%PORTDOCS%%%%REALNAME%%/tutorials/icoDyMFoam/newMovingCone/system/fvSchemes
+%%PORTDOCS%%%%REALNAME%%/tutorials/icoDyMFoam/newMovingCone/system/fvSolution
+%%PORTDOCS%%%%REALNAME%%/tutorials/icoDyMFoam/newMovingCone/system/tetFemSolution
 %%PORTDOCS%%%%REALNAME%%/tutorials/icoFoam/Allclean
 %%PORTDOCS%%%%REALNAME%%/tutorials/icoFoam/Allrun
 %%PORTDOCS%%%%REALNAME%%/tutorials/icoFoam/cavity/0/U
@@ -6756,63 +6809,69 @@
 %%PORTDOCS%%%%REALNAME%%/tutorials/icoFoam/elbow/system/fvSchemes
 %%PORTDOCS%%%%REALNAME%%/tutorials/icoFoam/elbow/system/fvSolution
 %%PORTDOCS%%%%REALNAME%%/tutorials/icoFoam/resetFixedWallsScr
-%%PORTDOCS%%%%REALNAME%%/tutorials/icoFoamAutoMotion/Allclean
-%%PORTDOCS%%%%REALNAME%%/tutorials/icoFoamAutoMotion/Allrun
-%%PORTDOCS%%%%REALNAME%%/tutorials/icoFoamAutoMotion/movingCone/0/U
-%%PORTDOCS%%%%REALNAME%%/tutorials/icoFoamAutoMotion/movingCone/0/motionU
-%%PORTDOCS%%%%REALNAME%%/tutorials/icoFoamAutoMotion/movingCone/0/p
-%%PORTDOCS%%%%REALNAME%%/tutorials/icoFoamAutoMotion/movingCone/constant/motionProperties
-%%PORTDOCS%%%%REALNAME%%/tutorials/icoFoamAutoMotion/movingCone/constant/polyMesh/blockMeshDict
-%%PORTDOCS%%%%REALNAME%%/tutorials/icoFoamAutoMotion/movingCone/constant/polyMesh/boundary
-%%PORTDOCS%%%%REALNAME%%/tutorials/icoFoamAutoMotion/movingCone/constant/transportProperties
-%%PORTDOCS%%%%REALNAME%%/tutorials/icoFoamAutoMotion/movingCone/system/controlDict
-%%PORTDOCS%%%%REALNAME%%/tutorials/icoFoamAutoMotion/movingCone/system/fvSchemes
-%%PORTDOCS%%%%REALNAME%%/tutorials/icoFoamAutoMotion/movingCone/system/fvSolution
-%%PORTDOCS%%%%REALNAME%%/tutorials/icoFoamAutoMotion/movingCone/system/tetFemSolution
-%%PORTDOCS%%%%REALNAME%%/tutorials/icoFoamAutoMotion/newMovingCone/0/U
-%%PORTDOCS%%%%REALNAME%%/tutorials/icoFoamAutoMotion/newMovingCone/0/motionDiff
-%%PORTDOCS%%%%REALNAME%%/tutorials/icoFoamAutoMotion/newMovingCone/0/motionU
-%%PORTDOCS%%%%REALNAME%%/tutorials/icoFoamAutoMotion/newMovingCone/0/p
-%%PORTDOCS%%%%REALNAME%%/tutorials/icoFoamAutoMotion/newMovingCone/constant/motionProperties
-%%PORTDOCS%%%%REALNAME%%/tutorials/icoFoamAutoMotion/newMovingCone/constant/polyMesh/blockMeshDict
-%%PORTDOCS%%%%REALNAME%%/tutorials/icoFoamAutoMotion/newMovingCone/constant/transportProperties
-%%PORTDOCS%%%%REALNAME%%/tutorials/icoFoamAutoMotion/newMovingCone/setMotionMovingCone/Make/files
-%%PORTDOCS%%%%REALNAME%%/tutorials/icoFoamAutoMotion/newMovingCone/setMotionMovingCone/Make/options
-%%PORTDOCS%%%%REALNAME%%/tutorials/icoFoamAutoMotion/newMovingCone/setMotionMovingCone/createFields.H
-%%PORTDOCS%%%%REALNAME%%/tutorials/icoFoamAutoMotion/newMovingCone/setMotionMovingCone/setMotionMovingCone.C
-%%PORTDOCS%%%%REALNAME%%/tutorials/icoFoamAutoMotion/newMovingCone/system/controlDict
-%%PORTDOCS%%%%REALNAME%%/tutorials/icoFoamAutoMotion/newMovingCone/system/fvSchemes
-%%PORTDOCS%%%%REALNAME%%/tutorials/icoFoamAutoMotion/newMovingCone/system/fvSolution
-%%PORTDOCS%%%%REALNAME%%/tutorials/icoFoamAutoMotion/newMovingCone/system/tetFemSolution
-%%PORTDOCS%%%%REALNAME%%/tutorials/icoTopoFoam/Allclean
-%%PORTDOCS%%%%REALNAME%%/tutorials/icoTopoFoam/Allrun
-%%PORTDOCS%%%%REALNAME%%/tutorials/icoTopoFoam/mixer2D/0/U
-%%PORTDOCS%%%%REALNAME%%/tutorials/icoTopoFoam/mixer2D/0/cellToRegion
-%%PORTDOCS%%%%REALNAME%%/tutorials/icoTopoFoam/mixer2D/0/p
-%%PORTDOCS%%%%REALNAME%%/tutorials/icoTopoFoam/mixer2D/constant/meshMotionDict
-%%PORTDOCS%%%%REALNAME%%/tutorials/icoTopoFoam/mixer2D/constant/polyMesh/blockMeshDict
-%%PORTDOCS%%%%REALNAME%%/tutorials/icoTopoFoam/mixer2D/constant/polyMesh/boundary
-%%PORTDOCS%%%%REALNAME%%/tutorials/icoTopoFoam/mixer2D/constant/transportProperties
-%%PORTDOCS%%%%REALNAME%%/tutorials/icoTopoFoam/mixer2D/system/controlDict
-%%PORTDOCS%%%%REALNAME%%/tutorials/icoTopoFoam/mixer2D/system/fvSchemes
-%%PORTDOCS%%%%REALNAME%%/tutorials/icoTopoFoam/mixer2D/system/fvSolution
 %%PORTDOCS%%%%REALNAME%%/tutorials/interFoam/Allclean
 %%PORTDOCS%%%%REALNAME%%/tutorials/interFoam/Allrun
 %%PORTDOCS%%%%REALNAME%%/tutorials/interFoam/damBreak/0/U
 %%PORTDOCS%%%%REALNAME%%/tutorials/interFoam/damBreak/0/gamma
 %%PORTDOCS%%%%REALNAME%%/tutorials/interFoam/damBreak/0/gamma.org
 %%PORTDOCS%%%%REALNAME%%/tutorials/interFoam/damBreak/0/pd
-%%PORTDOCS%%%%REALNAME%%/tutorials/interFoam/damBreak/VTK/atmosphere/atmosphere_1.vtk
-%%PORTDOCS%%%%REALNAME%%/tutorials/interFoam/damBreak/VTK/damBreak_1.vtk
-%%PORTDOCS%%%%REALNAME%%/tutorials/interFoam/damBreak/VTK/defaultFaces/defaultFaces_1.vtk
-%%PORTDOCS%%%%REALNAME%%/tutorials/interFoam/damBreak/VTK/leftWall/leftWall_1.vtk
-%%PORTDOCS%%%%REALNAME%%/tutorials/interFoam/damBreak/VTK/lowerWall/lowerWall_1.vtk
-%%PORTDOCS%%%%REALNAME%%/tutorials/interFoam/damBreak/VTK/rightWall/rightWall_1.vtk
+%%PORTDOCS%%%%REALNAME%%/tutorials/interFoam/damBreak/constant/dynamicMeshDict
 %%PORTDOCS%%%%REALNAME%%/tutorials/interFoam/damBreak/constant/environmentalProperties
-%%PORTDOCS%%%%REALNAME%%/tutorials/interFoam/damBreak/constant/motionProperties
 %%PORTDOCS%%%%REALNAME%%/tutorials/interFoam/damBreak/constant/polyMesh/blockMeshDict
 %%PORTDOCS%%%%REALNAME%%/tutorials/interFoam/damBreak/constant/polyMesh/boundary
 %%PORTDOCS%%%%REALNAME%%/tutorials/interFoam/damBreak/constant/transportProperties
+%%PORTDOCS%%%%REALNAME%%/tutorials/interFoam/damBreak/processor0/0/U
+%%PORTDOCS%%%%REALNAME%%/tutorials/interFoam/damBreak/processor0/0/gamma
+%%PORTDOCS%%%%REALNAME%%/tutorials/interFoam/damBreak/processor0/0/gamma.org
+%%PORTDOCS%%%%REALNAME%%/tutorials/interFoam/damBreak/processor0/0/pd
+%%PORTDOCS%%%%REALNAME%%/tutorials/interFoam/damBreak/processor0/constant/polyMesh/boundary
+%%PORTDOCS%%%%REALNAME%%/tutorials/interFoam/damBreak/processor0/constant/polyMesh/boundaryProcAddressing
+%%PORTDOCS%%%%REALNAME%%/tutorials/interFoam/damBreak/processor0/constant/polyMesh/cellProcAddressing
+%%PORTDOCS%%%%REALNAME%%/tutorials/interFoam/damBreak/processor0/constant/polyMesh/cells
+%%PORTDOCS%%%%REALNAME%%/tutorials/interFoam/damBreak/processor0/constant/polyMesh/faceProcAddressing
+%%PORTDOCS%%%%REALNAME%%/tutorials/interFoam/damBreak/processor0/constant/polyMesh/faces
+%%PORTDOCS%%%%REALNAME%%/tutorials/interFoam/damBreak/processor0/constant/polyMesh/parallelData
+%%PORTDOCS%%%%REALNAME%%/tutorials/interFoam/damBreak/processor0/constant/polyMesh/pointProcAddressing
+%%PORTDOCS%%%%REALNAME%%/tutorials/interFoam/damBreak/processor0/constant/polyMesh/points
+%%PORTDOCS%%%%REALNAME%%/tutorials/interFoam/damBreak/processor1/0/U
+%%PORTDOCS%%%%REALNAME%%/tutorials/interFoam/damBreak/processor1/0/gamma
+%%PORTDOCS%%%%REALNAME%%/tutorials/interFoam/damBreak/processor1/0/gamma.org
+%%PORTDOCS%%%%REALNAME%%/tutorials/interFoam/damBreak/processor1/0/pd
+%%PORTDOCS%%%%REALNAME%%/tutorials/interFoam/damBreak/processor1/constant/polyMesh/boundary
+%%PORTDOCS%%%%REALNAME%%/tutorials/interFoam/damBreak/processor1/constant/polyMesh/boundaryProcAddressing
+%%PORTDOCS%%%%REALNAME%%/tutorials/interFoam/damBreak/processor1/constant/polyMesh/cellProcAddressing
+%%PORTDOCS%%%%REALNAME%%/tutorials/interFoam/damBreak/processor1/constant/polyMesh/cells
+%%PORTDOCS%%%%REALNAME%%/tutorials/interFoam/damBreak/processor1/constant/polyMesh/faceProcAddressing
+%%PORTDOCS%%%%REALNAME%%/tutorials/interFoam/damBreak/processor1/constant/polyMesh/faces
+%%PORTDOCS%%%%REALNAME%%/tutorials/interFoam/damBreak/processor1/constant/polyMesh/parallelData
+%%PORTDOCS%%%%REALNAME%%/tutorials/interFoam/damBreak/processor1/constant/polyMesh/pointProcAddressing
+%%PORTDOCS%%%%REALNAME%%/tutorials/interFoam/damBreak/processor1/constant/polyMesh/points
+%%PORTDOCS%%%%REALNAME%%/tutorials/interFoam/damBreak/processor2/0/U
+%%PORTDOCS%%%%REALNAME%%/tutorials/interFoam/damBreak/processor2/0/gamma
+%%PORTDOCS%%%%REALNAME%%/tutorials/interFoam/damBreak/processor2/0/gamma.org
+%%PORTDOCS%%%%REALNAME%%/tutorials/interFoam/damBreak/processor2/0/pd
+%%PORTDOCS%%%%REALNAME%%/tutorials/interFoam/damBreak/processor2/constant/polyMesh/boundary
+%%PORTDOCS%%%%REALNAME%%/tutorials/interFoam/damBreak/processor2/constant/polyMesh/boundaryProcAddressing
+%%PORTDOCS%%%%REALNAME%%/tutorials/interFoam/damBreak/processor2/constant/polyMesh/cellProcAddressing
+%%PORTDOCS%%%%REALNAME%%/tutorials/interFoam/damBreak/processor2/constant/polyMesh/cells
+%%PORTDOCS%%%%REALNAME%%/tutorials/interFoam/damBreak/processor2/constant/polyMesh/faceProcAddressing
+%%PORTDOCS%%%%REALNAME%%/tutorials/interFoam/damBreak/processor2/constant/polyMesh/faces
+%%PORTDOCS%%%%REALNAME%%/tutorials/interFoam/damBreak/processor2/constant/polyMesh/parallelData
+%%PORTDOCS%%%%REALNAME%%/tutorials/interFoam/damBreak/processor2/constant/polyMesh/pointProcAddressing
+%%PORTDOCS%%%%REALNAME%%/tutorials/interFoam/damBreak/processor2/constant/polyMesh/points
+%%PORTDOCS%%%%REALNAME%%/tutorials/interFoam/damBreak/processor3/0/U
+%%PORTDOCS%%%%REALNAME%%/tutorials/interFoam/damBreak/processor3/0/gamma
+%%PORTDOCS%%%%REALNAME%%/tutorials/interFoam/damBreak/processor3/0/gamma.org
+%%PORTDOCS%%%%REALNAME%%/tutorials/interFoam/damBreak/processor3/0/pd
+%%PORTDOCS%%%%REALNAME%%/tutorials/interFoam/damBreak/processor3/constant/polyMesh/boundary
+%%PORTDOCS%%%%REALNAME%%/tutorials/interFoam/damBreak/processor3/constant/polyMesh/boundaryProcAddressing
+%%PORTDOCS%%%%REALNAME%%/tutorials/interFoam/damBreak/processor3/constant/polyMesh/cellProcAddressing
+%%PORTDOCS%%%%REALNAME%%/tutorials/interFoam/damBreak/processor3/constant/polyMesh/cells
+%%PORTDOCS%%%%REALNAME%%/tutorials/interFoam/damBreak/processor3/constant/polyMesh/faceProcAddressing
+%%PORTDOCS%%%%REALNAME%%/tutorials/interFoam/damBreak/processor3/constant/polyMesh/faces
+%%PORTDOCS%%%%REALNAME%%/tutorials/interFoam/damBreak/processor3/constant/polyMesh/parallelData
+%%PORTDOCS%%%%REALNAME%%/tutorials/interFoam/damBreak/processor3/constant/polyMesh/pointProcAddressing
+%%PORTDOCS%%%%REALNAME%%/tutorials/interFoam/damBreak/processor3/constant/polyMesh/points
 %%PORTDOCS%%%%REALNAME%%/tutorials/interFoam/damBreak/system/controlDict
 %%PORTDOCS%%%%REALNAME%%/tutorials/interFoam/damBreak/system/decomposeParDict
 %%PORTDOCS%%%%REALNAME%%/tutorials/interFoam/damBreak/system/fvSchemes
@@ -6839,13 +6898,6 @@
 %%PORTDOCS%%%%REALNAME%%/tutorials/lesInterFoam/nozzleFlow2D/0/nuSgs
 %%PORTDOCS%%%%REALNAME%%/tutorials/lesInterFoam/nozzleFlow2D/0/nuTilda
 %%PORTDOCS%%%%REALNAME%%/tutorials/lesInterFoam/nozzleFlow2D/0/pd
-%%PORTDOCS%%%%REALNAME%%/tutorials/lesInterFoam/nozzleFlow2D/VTK/atmosphere/atmosphere_1.vtk
-%%PORTDOCS%%%%REALNAME%%/tutorials/lesInterFoam/nozzleFlow2D/VTK/axis/axis_1.vtk
-%%PORTDOCS%%%%REALNAME%%/tutorials/lesInterFoam/nozzleFlow2D/VTK/back/back_1.vtk
-%%PORTDOCS%%%%REALNAME%%/tutorials/lesInterFoam/nozzleFlow2D/VTK/front/front_1.vtk
-%%PORTDOCS%%%%REALNAME%%/tutorials/lesInterFoam/nozzleFlow2D/VTK/inlet/inlet_1.vtk
-%%PORTDOCS%%%%REALNAME%%/tutorials/lesInterFoam/nozzleFlow2D/VTK/nozzleFlow2D_1.vtk
-%%PORTDOCS%%%%REALNAME%%/tutorials/lesInterFoam/nozzleFlow2D/VTK/wall/wall_1.vtk
 %%PORTDOCS%%%%REALNAME%%/tutorials/lesInterFoam/nozzleFlow2D/constant/environmentalProperties
 %%PORTDOCS%%%%REALNAME%%/tutorials/lesInterFoam/nozzleFlow2D/constant/polyMesh/blockMeshDict
 %%PORTDOCS%%%%REALNAME%%/tutorials/lesInterFoam/nozzleFlow2D/constant/polyMesh/boundary
@@ -6895,12 +6947,6 @@
 %%PORTDOCS%%%%REALNAME%%/tutorials/oodles/pitzDaily/0/nuSgs
 %%PORTDOCS%%%%REALNAME%%/tutorials/oodles/pitzDaily/0/nuTilda
 %%PORTDOCS%%%%REALNAME%%/tutorials/oodles/pitzDaily/0/p
-%%PORTDOCS%%%%REALNAME%%/tutorials/oodles/pitzDaily/VTK/frontAndBack/frontAndBack_1.vtk
-%%PORTDOCS%%%%REALNAME%%/tutorials/oodles/pitzDaily/VTK/inlet/inlet_1.vtk
-%%PORTDOCS%%%%REALNAME%%/tutorials/oodles/pitzDaily/VTK/lowerWall/lowerWall_1.vtk
-%%PORTDOCS%%%%REALNAME%%/tutorials/oodles/pitzDaily/VTK/outlet/outlet_1.vtk
-%%PORTDOCS%%%%REALNAME%%/tutorials/oodles/pitzDaily/VTK/pitzDaily_1.vtk
-%%PORTDOCS%%%%REALNAME%%/tutorials/oodles/pitzDaily/VTK/upperWall/upperWall_1.vtk
 %%PORTDOCS%%%%REALNAME%%/tutorials/oodles/pitzDaily/constant/polyMesh/blockMeshDict
 %%PORTDOCS%%%%REALNAME%%/tutorials/oodles/pitzDaily/constant/polyMesh/boundary
 %%PORTDOCS%%%%REALNAME%%/tutorials/oodles/pitzDaily/constant/probeLocations
@@ -6915,13 +6961,6 @@
 %%PORTDOCS%%%%REALNAME%%/tutorials/potentialFoam/cylinder/0.org/p
 %%PORTDOCS%%%%REALNAME%%/tutorials/potentialFoam/cylinder/0/U
 %%PORTDOCS%%%%REALNAME%%/tutorials/potentialFoam/cylinder/0/p
-%%PORTDOCS%%%%REALNAME%%/tutorials/potentialFoam/cylinder/VTK/cylinder/cylinder_1.vtk
-%%PORTDOCS%%%%REALNAME%%/tutorials/potentialFoam/cylinder/VTK/cylinder_1.vtk
-%%PORTDOCS%%%%REALNAME%%/tutorials/potentialFoam/cylinder/VTK/defaultFaces/defaultFaces_1.vtk
-%%PORTDOCS%%%%REALNAME%%/tutorials/potentialFoam/cylinder/VTK/down/down_1.vtk
-%%PORTDOCS%%%%REALNAME%%/tutorials/potentialFoam/cylinder/VTK/left/left_1.vtk
-%%PORTDOCS%%%%REALNAME%%/tutorials/potentialFoam/cylinder/VTK/right/right_1.vtk
-%%PORTDOCS%%%%REALNAME%%/tutorials/potentialFoam/cylinder/VTK/up/up_1.vtk
 %%PORTDOCS%%%%REALNAME%%/tutorials/potentialFoam/cylinder/analyticalCylinder/Make/files
 %%PORTDOCS%%%%REALNAME%%/tutorials/potentialFoam/cylinder/analyticalCylinder/Make/options
 %%PORTDOCS%%%%REALNAME%%/tutorials/potentialFoam/cylinder/analyticalCylinder/analyticalCylinder.C
@@ -6950,12 +6989,6 @@
 %%PORTDOCS%%%%REALNAME%%/tutorials/rasInterFoam/damBreak/0/k
 %%PORTDOCS%%%%REALNAME%%/tutorials/rasInterFoam/damBreak/0/nuTilda
 %%PORTDOCS%%%%REALNAME%%/tutorials/rasInterFoam/damBreak/0/pd
-%%PORTDOCS%%%%REALNAME%%/tutorials/rasInterFoam/damBreak/VTK/atmosphere/atmosphere_1.vtk
-%%PORTDOCS%%%%REALNAME%%/tutorials/rasInterFoam/damBreak/VTK/damBreak_1.vtk
-%%PORTDOCS%%%%REALNAME%%/tutorials/rasInterFoam/damBreak/VTK/defaultFaces/defaultFaces_1.vtk
-%%PORTDOCS%%%%REALNAME%%/tutorials/rasInterFoam/damBreak/VTK/leftWall/leftWall_1.vtk
-%%PORTDOCS%%%%REALNAME%%/tutorials/rasInterFoam/damBreak/VTK/lowerWall/lowerWall_1.vtk
-%%PORTDOCS%%%%REALNAME%%/tutorials/rasInterFoam/damBreak/VTK/rightWall/rightWall_1.vtk
 %%PORTDOCS%%%%REALNAME%%/tutorials/rasInterFoam/damBreak/constant/environmentalProperties
 %%PORTDOCS%%%%REALNAME%%/tutorials/rasInterFoam/damBreak/constant/polyMesh/blockMeshDict
 %%PORTDOCS%%%%REALNAME%%/tutorials/rasInterFoam/damBreak/constant/polyMesh/boundary
@@ -7001,10 +7034,6 @@
 %%PORTDOCS%%%%REALNAME%%/tutorials/rhoTurbFoam/cavity/0/epsilon
 %%PORTDOCS%%%%REALNAME%%/tutorials/rhoTurbFoam/cavity/0/k
 %%PORTDOCS%%%%REALNAME%%/tutorials/rhoTurbFoam/cavity/0/p
-%%PORTDOCS%%%%REALNAME%%/tutorials/rhoTurbFoam/cavity/VTK/cavity_1.vtk
-%%PORTDOCS%%%%REALNAME%%/tutorials/rhoTurbFoam/cavity/VTK/fixedWalls/fixedWalls_1.vtk
-%%PORTDOCS%%%%REALNAME%%/tutorials/rhoTurbFoam/cavity/VTK/frontAndBack/frontAndBack_1.vtk
-%%PORTDOCS%%%%REALNAME%%/tutorials/rhoTurbFoam/cavity/VTK/movingWall/movingWall_1.vtk
 %%PORTDOCS%%%%REALNAME%%/tutorials/rhoTurbFoam/cavity/constant/polyMesh/blockMeshDict
 %%PORTDOCS%%%%REALNAME%%/tutorials/rhoTurbFoam/cavity/constant/polyMesh/boundary
 %%PORTDOCS%%%%REALNAME%%/tutorials/rhoTurbFoam/cavity/constant/thermophysicalProperties
@@ -7017,18 +7046,9 @@
 %%PORTDOCS%%%%REALNAME%%/tutorials/rhopSonicFoam/shockTube/0.org/T
 %%PORTDOCS%%%%REALNAME%%/tutorials/rhopSonicFoam/shockTube/0.org/U
 %%PORTDOCS%%%%REALNAME%%/tutorials/rhopSonicFoam/shockTube/0.org/p
-%%PORTDOCS%%%%REALNAME%%/tutorials/rhopSonicFoam/shockTube/0.org/rho
-%%PORTDOCS%%%%REALNAME%%/tutorials/rhopSonicFoam/shockTube/0.org/rhoE
-%%PORTDOCS%%%%REALNAME%%/tutorials/rhopSonicFoam/shockTube/0.org/rhoU
 %%PORTDOCS%%%%REALNAME%%/tutorials/rhopSonicFoam/shockTube/0/T
 %%PORTDOCS%%%%REALNAME%%/tutorials/rhopSonicFoam/shockTube/0/U
 %%PORTDOCS%%%%REALNAME%%/tutorials/rhopSonicFoam/shockTube/0/p
-%%PORTDOCS%%%%REALNAME%%/tutorials/rhopSonicFoam/shockTube/0/rho
-%%PORTDOCS%%%%REALNAME%%/tutorials/rhopSonicFoam/shockTube/0/rhoE
-%%PORTDOCS%%%%REALNAME%%/tutorials/rhopSonicFoam/shockTube/0/rhoU
-%%PORTDOCS%%%%REALNAME%%/tutorials/rhopSonicFoam/shockTube/VTK/empty/empty_1.vtk
-%%PORTDOCS%%%%REALNAME%%/tutorials/rhopSonicFoam/shockTube/VTK/shockTube_1.vtk
-%%PORTDOCS%%%%REALNAME%%/tutorials/rhopSonicFoam/shockTube/VTK/sides/sides_1.vtk
 %%PORTDOCS%%%%REALNAME%%/tutorials/rhopSonicFoam/shockTube/constant/polyMesh/blockMeshDict
 %%PORTDOCS%%%%REALNAME%%/tutorials/rhopSonicFoam/shockTube/constant/polyMesh/boundary
 %%PORTDOCS%%%%REALNAME%%/tutorials/rhopSonicFoam/shockTube/constant/thermodynamicProperties
@@ -7039,16 +7059,6 @@
 %%PORTDOCS%%%%REALNAME%%/tutorials/rhopSonicFoam/wedge15Ma5/0/T
 %%PORTDOCS%%%%REALNAME%%/tutorials/rhopSonicFoam/wedge15Ma5/0/U
 %%PORTDOCS%%%%REALNAME%%/tutorials/rhopSonicFoam/wedge15Ma5/0/p
-%%PORTDOCS%%%%REALNAME%%/tutorials/rhopSonicFoam/wedge15Ma5/0/rho
-%%PORTDOCS%%%%REALNAME%%/tutorials/rhopSonicFoam/wedge15Ma5/0/rhoE
-%%PORTDOCS%%%%REALNAME%%/tutorials/rhopSonicFoam/wedge15Ma5/0/rhoU
-%%PORTDOCS%%%%REALNAME%%/tutorials/rhopSonicFoam/wedge15Ma5/VTK/bottom/bottom_1.vtk
-%%PORTDOCS%%%%REALNAME%%/tutorials/rhopSonicFoam/wedge15Ma5/VTK/defaultFaces/defaultFaces_1.vtk
-%%PORTDOCS%%%%REALNAME%%/tutorials/rhopSonicFoam/wedge15Ma5/VTK/inlet/inlet_1.vtk
-%%PORTDOCS%%%%REALNAME%%/tutorials/rhopSonicFoam/wedge15Ma5/VTK/obstacle/obstacle_1.vtk
-%%PORTDOCS%%%%REALNAME%%/tutorials/rhopSonicFoam/wedge15Ma5/VTK/outlet/outlet_1.vtk
-%%PORTDOCS%%%%REALNAME%%/tutorials/rhopSonicFoam/wedge15Ma5/VTK/top/top_1.vtk
-%%PORTDOCS%%%%REALNAME%%/tutorials/rhopSonicFoam/wedge15Ma5/VTK/wedge15Ma5_1.vtk
 %%PORTDOCS%%%%REALNAME%%/tutorials/rhopSonicFoam/wedge15Ma5/constant/polyMesh/blockMeshDict
 %%PORTDOCS%%%%REALNAME%%/tutorials/rhopSonicFoam/wedge15Ma5/constant/polyMesh/boundary
 %%PORTDOCS%%%%REALNAME%%/tutorials/rhopSonicFoam/wedge15Ma5/constant/thermodynamicProperties
@@ -7085,7 +7095,6 @@
 %%PORTDOCS%%%%REALNAME%%/tutorials/settlingFoam/tank3D/0/epsilon
 %%PORTDOCS%%%%REALNAME%%/tutorials/settlingFoam/tank3D/0/k
 %%PORTDOCS%%%%REALNAME%%/tutorials/settlingFoam/tank3D/0/p
-%%PORTDOCS%%%%REALNAME%%/tutorials/settlingFoam/tank3D/VTK/tank3D_1.vtk
 %%PORTDOCS%%%%REALNAME%%/tutorials/settlingFoam/tank3D/constant/environmentalProperties
 %%PORTDOCS%%%%REALNAME%%/tutorials/settlingFoam/tank3D/constant/polyMesh/boundary
 %%PORTDOCS%%%%REALNAME%%/tutorials/settlingFoam/tank3D/constant/polyMesh/cells.gz
@@ -7318,6 +7327,7 @@
 %%REALNAME%%/wmake/rules/FreeBSD/mplib
 %%REALNAME%%/wmake/rules/FreeBSD/mplibLAM
 %%REALNAME%%/wmake/rules/FreeBSD/mplibMPICH
+%%REALNAME%%/wmake/rules/FreeBSD/mplibOPENMPI
 %%REALNAME%%/wmake/rules/FreeBSD/wmkdep
 %%REALNAME%%/wmake/rules/General/bison
 %%REALNAME%%/wmake/rules/General/btyacc
@@ -7348,7 +7358,7 @@
 %%REALNAME%%/wmake/rules/linux/mplib
 %%REALNAME%%/wmake/rules/linux/mplibLAM
 %%REALNAME%%/wmake/rules/linux/mplibMPICH
-%%REALNAME%%/wmake/rules/linux/wmkdep
+%%REALNAME%%/wmake/rules/linux/mplibOPENMPI
 %%REALNAME%%/wmake/rules/linuxAMD64/X
 %%REALNAME%%/wmake/rules/linuxAMD64/c
 %%REALNAME%%/wmake/rules/linuxAMD64/c++
@@ -7363,6 +7373,7 @@
 %%REALNAME%%/wmake/rules/linuxAMD64/mplib
 %%REALNAME%%/wmake/rules/linuxAMD64/mplibLAM
 %%REALNAME%%/wmake/rules/linuxAMD64/mplibMPICH
+%%REALNAME%%/wmake/rules/linuxAMD64/mplibOPENMPI
 %%REALNAME%%/wmake/rules/linuxAMD64/wmkdep
 %%REALNAME%%/wmake/rules/linuxAMD64Gcc4/X
 %%REALNAME%%/wmake/rules/linuxAMD64Gcc4/c
@@ -7378,6 +7389,7 @@
 %%REALNAME%%/wmake/rules/linuxAMD64Gcc4/mplib
 %%REALNAME%%/wmake/rules/linuxAMD64Gcc4/mplibLAM
 %%REALNAME%%/wmake/rules/linuxAMD64Gcc4/mplibMPICH
+%%REALNAME%%/wmake/rules/linuxAMD64Gcc4/mplibOPENMPI
 %%REALNAME%%/wmake/rules/linuxAMD64Gcc4/wmkdep
 %%REALNAME%%/wmake/rules/linuxGcc4/X
 %%REALNAME%%/wmake/rules/linuxGcc4/c
@@ -7393,6 +7405,7 @@
 %%REALNAME%%/wmake/rules/linuxGcc4/mplib
 %%REALNAME%%/wmake/rules/linuxGcc4/mplibLAM
 %%REALNAME%%/wmake/rules/linuxGcc4/mplibMPICH
+%%REALNAME%%/wmake/rules/linuxGcc4/mplibOPENMPI
 %%REALNAME%%/wmake/rules/linuxGcc4/wmkdep
 %%REALNAME%%/wmake/rules/linuxI32/X
 %%REALNAME%%/wmake/rules/linuxI32/c
@@ -7409,6 +7422,22 @@
 %%REALNAME%%/wmake/rules/linuxI32/mplibLAM
 %%REALNAME%%/wmake/rules/linuxI32/mplibMPICH
 %%REALNAME%%/wmake/rules/linuxI32/wmkdep
+%%REALNAME%%/wmake/rules/linuxIA64Gcc4/X
+%%REALNAME%%/wmake/rules/linuxIA64Gcc4/c
+%%REALNAME%%/wmake/rules/linuxIA64Gcc4/c++
+%%REALNAME%%/wmake/rules/linuxIA64Gcc4/c++Debug
+%%REALNAME%%/wmake/rules/linuxIA64Gcc4/c++Opt
+%%REALNAME%%/wmake/rules/linuxIA64Gcc4/c++Prof
+%%REALNAME%%/wmake/rules/linuxIA64Gcc4/cDebug
+%%REALNAME%%/wmake/rules/linuxIA64Gcc4/cOpt
+%%REALNAME%%/wmake/rules/linuxIA64Gcc4/cProf
+%%REALNAME%%/wmake/rules/linuxIA64Gcc4/dirToString
+%%REALNAME%%/wmake/rules/linuxIA64Gcc4/general
+%%REALNAME%%/wmake/rules/linuxIA64Gcc4/mplib
+%%REALNAME%%/wmake/rules/linuxIA64Gcc4/mplibLAM
+%%REALNAME%%/wmake/rules/linuxIA64Gcc4/mplibMPI
+%%REALNAME%%/wmake/rules/linuxIA64Gcc4/mplibMPICH
+%%REALNAME%%/wmake/rules/linuxIA64Gcc4/wmkdep
 %%REALNAME%%/wmake/rules/linuxIA64I64/c
 %%REALNAME%%/wmake/rules/linuxIA64I64/c++
 %%REALNAME%%/wmake/rules/linuxIA64I64/c++Debug
@@ -7424,6 +7453,21 @@
 %%REALNAME%%/wmake/rules/linuxIA64I64/mplibMPI
 %%REALNAME%%/wmake/rules/linuxIA64I64/mplibMPICH
 %%REALNAME%%/wmake/rules/linuxIA64I64/wmkdep
+%%REALNAME%%/wmake/rules/linuxP4Gcc4/X
+%%REALNAME%%/wmake/rules/linuxP4Gcc4/c
+%%REALNAME%%/wmake/rules/linuxP4Gcc4/c++
+%%REALNAME%%/wmake/rules/linuxP4Gcc4/c++Debug
+%%REALNAME%%/wmake/rules/linuxP4Gcc4/c++Opt
+%%REALNAME%%/wmake/rules/linuxP4Gcc4/c++Prof
+%%REALNAME%%/wmake/rules/linuxP4Gcc4/cDebug
+%%REALNAME%%/wmake/rules/linuxP4Gcc4/cOpt
+%%REALNAME%%/wmake/rules/linuxP4Gcc4/cProf
+%%REALNAME%%/wmake/rules/linuxP4Gcc4/dirToString
+%%REALNAME%%/wmake/rules/linuxP4Gcc4/general
+%%REALNAME%%/wmake/rules/linuxP4Gcc4/mplib
+%%REALNAME%%/wmake/rules/linuxP4Gcc4/mplibLAM
+%%REALNAME%%/wmake/rules/linuxP4Gcc4/mplibMPICH
+%%REALNAME%%/wmake/rules/linuxP4Gcc4/wmkdep
 %%REALNAME%%/wmake/rules/sgi64Gcc/X
 %%REALNAME%%/wmake/rules/sgi64Gcc/c
 %%REALNAME%%/wmake/rules/sgi64Gcc/c++
@@ -7467,6 +7511,23 @@
 %%REALNAME%%/wmake/rules/solarisGcc/mplibMPICH
 %%REALNAME%%/wmake/rules/solarisGcc/mplibPVM
 %%REALNAME%%/wmake/rules/solarisGcc/wmkdep
+%%REALNAME%%/wmake/rules/solarisGcc4/X
+%%REALNAME%%/wmake/rules/solarisGcc4/c
+%%REALNAME%%/wmake/rules/solarisGcc4/c++
+%%REALNAME%%/wmake/rules/solarisGcc4/c++Debug
+%%REALNAME%%/wmake/rules/solarisGcc4/c++Opt
+%%REALNAME%%/wmake/rules/solarisGcc4/c++Prof
+%%REALNAME%%/wmake/rules/solarisGcc4/cDebug
+%%REALNAME%%/wmake/rules/solarisGcc4/cOpt
+%%REALNAME%%/wmake/rules/solarisGcc4/cProf
+%%REALNAME%%/wmake/rules/solarisGcc4/dirToString
+%%REALNAME%%/wmake/rules/solarisGcc4/general
+%%REALNAME%%/wmake/rules/solarisGcc4/mplib
+%%REALNAME%%/wmake/rules/solarisGcc4/mplibLAM
+%%REALNAME%%/wmake/rules/solarisGcc4/mplibMPI
+%%REALNAME%%/wmake/rules/solarisGcc4/mplibMPICH
+%%REALNAME%%/wmake/rules/solarisGcc4/mplibPVM
+%%REALNAME%%/wmake/rules/solarisGcc4/wmkdep
 %%REALNAME%%/wmake/shScripts/addCompile
 %%REALNAME%%/wmake/shScripts/makeFiles
 %%REALNAME%%/wmake/shScripts/makeOptions
@@ -7493,10 +7554,13 @@
 @dirrm %%REALNAME%%/wmake/tcshScripts
 @dirrm %%REALNAME%%/wmake/src
 @dirrm %%REALNAME%%/wmake/shScripts
+@dirrm %%REALNAME%%/wmake/rules/solarisGcc4
 @dirrm %%REALNAME%%/wmake/rules/solarisGcc
 @dirrm %%REALNAME%%/wmake/rules/sgiN32Gcc
 @dirrm %%REALNAME%%/wmake/rules/sgi64Gcc
+@dirrm %%REALNAME%%/wmake/rules/linuxP4Gcc4
 @dirrm %%REALNAME%%/wmake/rules/linuxIA64I64
+@dirrm %%REALNAME%%/wmake/rules/linuxIA64Gcc4
 @dirrm %%REALNAME%%/wmake/rules/linuxI32
 @dirrm %%REALNAME%%/wmake/rules/linuxGcc4
 @dirrm %%REALNAME%%/wmake/rules/linuxAMD64Gcc4
@@ -7586,7 +7650,6 @@
 %%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/settlingFoam/tank3D/system
 %%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/settlingFoam/tank3D/constant/polyMesh
 %%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/settlingFoam/tank3D/constant
-%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/settlingFoam/tank3D/VTK
 %%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/settlingFoam/tank3D/0
 %%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/settlingFoam/tank3D
 %%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/settlingFoam/dahl/system
@@ -7604,21 +7667,11 @@
 %%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/rhopSonicFoam/wedge15Ma5/system
 %%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/rhopSonicFoam/wedge15Ma5/constant/polyMesh
 %%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/rhopSonicFoam/wedge15Ma5/constant
-%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/rhopSonicFoam/wedge15Ma5/VTK/top
-%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/rhopSonicFoam/wedge15Ma5/VTK/outlet
-%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/rhopSonicFoam/wedge15Ma5/VTK/obstacle
-%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/rhopSonicFoam/wedge15Ma5/VTK/inlet
-%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/rhopSonicFoam/wedge15Ma5/VTK/defaultFaces
-%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/rhopSonicFoam/wedge15Ma5/VTK/bottom
-%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/rhopSonicFoam/wedge15Ma5/VTK
 %%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/rhopSonicFoam/wedge15Ma5/0
 %%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/rhopSonicFoam/wedge15Ma5
 %%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/rhopSonicFoam/shockTube/system
 %%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/rhopSonicFoam/shockTube/constant/polyMesh
 %%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/rhopSonicFoam/shockTube/constant
-%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/rhopSonicFoam/shockTube/VTK/sides
-%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/rhopSonicFoam/shockTube/VTK/empty
-%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/rhopSonicFoam/shockTube/VTK
 %%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/rhopSonicFoam/shockTube/0.org
 %%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/rhopSonicFoam/shockTube/0
 %%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/rhopSonicFoam/shockTube
@@ -7626,10 +7679,6 @@
 %%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/rhoTurbFoam/cavity/system
 %%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/rhoTurbFoam/cavity/constant/polyMesh
 %%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/rhoTurbFoam/cavity/constant
-%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/rhoTurbFoam/cavity/VTK/movingWall
-%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/rhoTurbFoam/cavity/VTK/frontAndBack
-%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/rhoTurbFoam/cavity/VTK/fixedWalls
-%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/rhoTurbFoam/cavity/VTK
 %%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/rhoTurbFoam/cavity/0
 %%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/rhoTurbFoam/cavity
 %%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/rhoTurbFoam
@@ -7648,12 +7697,6 @@
 %%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/rasInterFoam/damBreak/system
 %%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/rasInterFoam/damBreak/constant/polyMesh
 %%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/rasInterFoam/damBreak/constant
-%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/rasInterFoam/damBreak/VTK/rightWall
-%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/rasInterFoam/damBreak/VTK/lowerWall
-%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/rasInterFoam/damBreak/VTK/leftWall
-%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/rasInterFoam/damBreak/VTK/defaultFaces
-%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/rasInterFoam/damBreak/VTK/atmosphere
-%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/rasInterFoam/damBreak/VTK
 %%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/rasInterFoam/damBreak/0
 %%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/rasInterFoam/damBreak
 %%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/rasInterFoam
@@ -7668,13 +7711,6 @@
 %%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/potentialFoam/cylinder/constant
 %%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/potentialFoam/cylinder/analyticalCylinder/Make
 %%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/potentialFoam/cylinder/analyticalCylinder
-%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/potentialFoam/cylinder/VTK/up
-%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/potentialFoam/cylinder/VTK/right
-%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/potentialFoam/cylinder/VTK/left
-%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/potentialFoam/cylinder/VTK/down
-%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/potentialFoam/cylinder/VTK/defaultFaces
-%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/potentialFoam/cylinder/VTK/cylinder
-%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/potentialFoam/cylinder/VTK
 %%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/potentialFoam/cylinder/0.org
 %%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/potentialFoam/cylinder/0
 %%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/potentialFoam/cylinder
@@ -7682,12 +7718,6 @@
 %%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/oodles/pitzDaily/system
 %%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/oodles/pitzDaily/constant/polyMesh
 %%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/oodles/pitzDaily/constant
-%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/oodles/pitzDaily/VTK/upperWall
-%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/oodles/pitzDaily/VTK/outlet
-%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/oodles/pitzDaily/VTK/lowerWall
-%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/oodles/pitzDaily/VTK/inlet
-%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/oodles/pitzDaily/VTK/frontAndBack
-%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/oodles/pitzDaily/VTK
 %%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/oodles/pitzDaily/0
 %%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/oodles/pitzDaily
 %%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/oodles
@@ -7707,13 +7737,6 @@
 %%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/lesInterFoam/nozzleFlow2D/constant/polyMesh/sets
 %%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/lesInterFoam/nozzleFlow2D/constant/polyMesh
 %%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/lesInterFoam/nozzleFlow2D/constant
-%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/lesInterFoam/nozzleFlow2D/VTK/wall
-%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/lesInterFoam/nozzleFlow2D/VTK/inlet
-%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/lesInterFoam/nozzleFlow2D/VTK/front
-%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/lesInterFoam/nozzleFlow2D/VTK/back
-%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/lesInterFoam/nozzleFlow2D/VTK/axis
-%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/lesInterFoam/nozzleFlow2D/VTK/atmosphere
-%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/lesInterFoam/nozzleFlow2D/VTK
 %%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/lesInterFoam/nozzleFlow2D/0/data
 %%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/lesInterFoam/nozzleFlow2D/0
 %%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/lesInterFoam/nozzleFlow2D
@@ -7725,36 +7748,27 @@
 %%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/laplacianFoam/flange
 %%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/laplacianFoam
 %%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/interFoam/damBreak/system
+%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/interFoam/damBreak/processor3/constant/polyMesh
+%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/interFoam/damBreak/processor3/constant
+%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/interFoam/damBreak/processor3/0
+%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/interFoam/damBreak/processor3
+%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/interFoam/damBreak/processor2/constant/polyMesh
+%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/interFoam/damBreak/processor2/constant
+%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/interFoam/damBreak/processor2/0
+%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/interFoam/damBreak/processor2
+%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/interFoam/damBreak/processor1/constant/polyMesh
+%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/interFoam/damBreak/processor1/constant
+%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/interFoam/damBreak/processor1/0
+%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/interFoam/damBreak/processor1
+%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/interFoam/damBreak/processor0/constant/polyMesh
+%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/interFoam/damBreak/processor0/constant
+%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/interFoam/damBreak/processor0/0
+%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/interFoam/damBreak/processor0
 %%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/interFoam/damBreak/constant/polyMesh
 %%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/interFoam/damBreak/constant
-%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/interFoam/damBreak/VTK/rightWall
-%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/interFoam/damBreak/VTK/lowerWall
-%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/interFoam/damBreak/VTK/leftWall
-%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/interFoam/damBreak/VTK/defaultFaces
-%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/interFoam/damBreak/VTK/atmosphere
-%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/interFoam/damBreak/VTK
 %%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/interFoam/damBreak/0
 %%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/interFoam/damBreak
 %%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/interFoam
-%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/icoTopoFoam/mixer2D/system
-%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/icoTopoFoam/mixer2D/constant/polyMesh
-%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/icoTopoFoam/mixer2D/constant
-%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/icoTopoFoam/mixer2D/0
-%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/icoTopoFoam/mixer2D
-%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/icoTopoFoam
-%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/icoFoamAutoMotion/newMovingCone/system
-%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/icoFoamAutoMotion/newMovingCone/setMotionMovingCone/Make
-%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/icoFoamAutoMotion/newMovingCone/setMotionMovingCone
-%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/icoFoamAutoMotion/newMovingCone/constant/polyMesh
-%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/icoFoamAutoMotion/newMovingCone/constant
-%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/icoFoamAutoMotion/newMovingCone/0
-%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/icoFoamAutoMotion/newMovingCone
-%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/icoFoamAutoMotion/movingCone/system
-%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/icoFoamAutoMotion/movingCone/constant/polyMesh
-%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/icoFoamAutoMotion/movingCone/constant
-%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/icoFoamAutoMotion/movingCone/0
-%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/icoFoamAutoMotion/movingCone
-%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/icoFoamAutoMotion
 %%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/icoFoam/elbow/system
 %%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/icoFoam/elbow/constant/polyMesh/sets
 %%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/icoFoam/elbow/constant/polyMesh
@@ -7777,6 +7791,24 @@
 %%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/icoFoam/cavity/0
 %%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/icoFoam/cavity
 %%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/icoFoam
+%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/icoDyMFoam/newMovingCone/system
+%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/icoDyMFoam/newMovingCone/setMotionMovingCone/Make
+%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/icoDyMFoam/newMovingCone/setMotionMovingCone
+%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/icoDyMFoam/newMovingCone/constant/polyMesh
+%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/icoDyMFoam/newMovingCone/constant
+%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/icoDyMFoam/newMovingCone/0
+%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/icoDyMFoam/newMovingCone
+%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/icoDyMFoam/movingCone/system
+%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/icoDyMFoam/movingCone/constant/polyMesh
+%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/icoDyMFoam/movingCone/constant
+%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/icoDyMFoam/movingCone/0
+%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/icoDyMFoam/movingCone
+%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/icoDyMFoam/mixer2D/system
+%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/icoDyMFoam/mixer2D/constant/polyMesh
+%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/icoDyMFoam/mixer2D/constant
+%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/icoDyMFoam/mixer2D/0
+%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/icoDyMFoam/mixer2D
+%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/icoDyMFoam
 %%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/finiteAreaFoam/surfactantsTransport/system
 %%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/finiteAreaFoam/surfactantsTransport/makeFaMesh/Make
 %%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/finiteAreaFoam/surfactantsTransport/makeFaMesh
@@ -7805,13 +7837,6 @@
 %%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/electrostaticFoam/chargedWire/system
 %%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/electrostaticFoam/chargedWire/constant/polyMesh
 %%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/electrostaticFoam/chargedWire/constant
-%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/electrostaticFoam/chargedWire/VTK/up
-%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/electrostaticFoam/chargedWire/VTK/right
-%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/electrostaticFoam/chargedWire/VTK/left
-%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/electrostaticFoam/chargedWire/VTK/hole
-%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/electrostaticFoam/chargedWire/VTK/down
-%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/electrostaticFoam/chargedWire/VTK/defaultFaces
-%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/electrostaticFoam/chargedWire/VTK
 %%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/electrostaticFoam/chargedWire/0
 %%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/electrostaticFoam/chargedWire
 %%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/electrostaticFoam
@@ -7832,12 +7857,6 @@
 %%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/coodles/pitzDaily/system
 %%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/coodles/pitzDaily/constant/polyMesh
 %%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/coodles/pitzDaily/constant
-%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/coodles/pitzDaily/VTK/upperWall
-%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/coodles/pitzDaily/VTK/outlet
-%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/coodles/pitzDaily/VTK/lowerWall
-%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/coodles/pitzDaily/VTK/inlet
-%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/coodles/pitzDaily/VTK/frontAndBack
-%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/coodles/pitzDaily/VTK
 %%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/coodles/pitzDaily/0
 %%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/coodles/pitzDaily
 %%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/coodles
@@ -7885,11 +7904,6 @@
 %%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/boundaryFoam/boundaryLaunderSharma/system
 %%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/boundaryFoam/boundaryLaunderSharma/constant/polyMesh
 %%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/boundaryFoam/boundaryLaunderSharma/constant
-%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/boundaryFoam/boundaryLaunderSharma/VTK/upperWall
-%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/boundaryFoam/boundaryLaunderSharma/VTK/lowerWall
-%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/boundaryFoam/boundaryLaunderSharma/VTK/defaultFaces
-%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/boundaryFoam/boundaryLaunderSharma/VTK
-%%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/boundaryFoam/boundaryLaunderSharma/EnSight
 %%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/boundaryFoam/boundaryLaunderSharma/0
 %%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/boundaryFoam/boundaryLaunderSharma
 %%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/boundaryFoam
@@ -7911,12 +7925,11 @@
 %%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/XiFoam/moriyoshiHomogeneous
 %%PORTDOCS%%@dirrm %%REALNAME%%/tutorials/XiFoam
 %%PORTDOCS%%@dirrm %%REALNAME%%/tutorials
-%%PORTDOCS%%@dirrm %%REALNAME%%/Guides-usletter
-%%PORTDOCS%%@dirrm %%REALNAME%%/Guides-a4
-%%MPI%%@dirrm %%REALNAME%%/lib/FreeBSDOpt/mpich-%%MPICH_VER%%
-@dirrm %%REALNAME%%/lib/FreeBSDOpt/dummy
-@dirrm %%REALNAME%%/lib/FreeBSDOpt
+@dirrm %%REALNAME%%/lib/%%APPSUBDIR%%/mpich-%%MPICH_VER%%
+@dirrm %%REALNAME%%/lib/%%APPSUBDIR%%/dummy
+@dirrm %%REALNAME%%/lib/%%APPSUBDIR%%
 @dirrm %%REALNAME%%/lib
+@dirrm %%REALNAME%%/jobControl
 @dirrm %%REALNAME%%/bin/foamTemplates
 @dirrm %%REALNAME%%/bin
 @dirrm %%REALNAME%%/applications/utilities/thermophysical/mixtureAdiabaticFlameT/Make
@@ -7938,6 +7951,8 @@
 @dirrm %%REALNAME%%/applications/utilities/thermophysical/Sl/FoamX
 @dirrm %%REALNAME%%/applications/utilities/thermophysical/Sl
 @dirrm %%REALNAME%%/applications/utilities/thermophysical
+@dirrm %%REALNAME%%/applications/utilities/surface/surfaceTransformPoints/Make
+@dirrm %%REALNAME%%/applications/utilities/surface/surfaceTransformPoints
 @dirrm %%REALNAME%%/applications/utilities/surface/surfaceToPatch/Make
 @dirrm %%REALNAME%%/applications/utilities/surface/surfaceToPatch
 @dirrm %%REALNAME%%/applications/utilities/surface/surfaceSubset/Make
@@ -7951,8 +7966,6 @@
 @dirrm %%REALNAME%%/applications/utilities/surface/surfaceSmooth
 @dirrm %%REALNAME%%/applications/utilities/surface/surfaceSetOutside/Make
 @dirrm %%REALNAME%%/applications/utilities/surface/surfaceSetOutside
-@dirrm %%REALNAME%%/applications/utilities/surface/surfaceScale/Make
-@dirrm %%REALNAME%%/applications/utilities/surface/surfaceScale
 @dirrm %%REALNAME%%/applications/utilities/surface/surfacePointMerge/Make
 @dirrm %%REALNAME%%/applications/utilities/surface/surfacePointMerge
 @dirrm %%REALNAME%%/applications/utilities/surface/surfaceMeshTriangulate/Make
@@ -8193,9 +8206,6 @@
 @dirrm %%REALNAME%%/applications/utilities/postProcessing/miscellaneous/postChannel
 @dirrm %%REALNAME%%/applications/utilities/postProcessing/miscellaneous/pdfPlot/Make
 @dirrm %%REALNAME%%/applications/utilities/postProcessing/miscellaneous/pdfPlot
-@dirrm %%REALNAME%%/applications/utilities/postProcessing/miscellaneous/liftDrag/Make
-@dirrm %%REALNAME%%/applications/utilities/postProcessing/miscellaneous/liftDrag/FoamX
-@dirrm %%REALNAME%%/applications/utilities/postProcessing/miscellaneous/liftDrag
 @dirrm %%REALNAME%%/applications/utilities/postProcessing/miscellaneous/engineCompRatio/Make
 @dirrm %%REALNAME%%/applications/utilities/postProcessing/miscellaneous/engineCompRatio/FoamX
 @dirrm %%REALNAME%%/applications/utilities/postProcessing/miscellaneous/engineCompRatio
@@ -8218,7 +8228,6 @@
 @dirrm %%REALNAME%%/applications/utilities/postProcessing/dataConversion/smapToFoam/FoamX
 @dirrm %%REALNAME%%/applications/utilities/postProcessing/dataConversion/smapToFoam
 @dirrm %%REALNAME%%/applications/utilities/postProcessing/dataConversion/foamToVTK/Make
-@dirrm %%REALNAME%%/applications/utilities/postProcessing/dataConversion/foamToVTK/FoamX
 @dirrm %%REALNAME%%/applications/utilities/postProcessing/dataConversion/foamToVTK
 @dirrm %%REALNAME%%/applications/utilities/postProcessing/dataConversion/foamToGMV/Make
 @dirrm %%REALNAME%%/applications/utilities/postProcessing/dataConversion/foamToGMV/FoamX
@@ -8257,6 +8266,7 @@
 @dirrm %%REALNAME%%/applications/utilities/parallelProcessing/decompositionMethods/decompositionMethod
 @dirrm %%REALNAME%%/applications/utilities/parallelProcessing/decompositionMethods/Make
 @dirrm %%REALNAME%%/applications/utilities/parallelProcessing/decompositionMethods
+@dirrm %%REALNAME%%/applications/utilities/parallelProcessing/decomposePar/old
 @dirrm %%REALNAME%%/applications/utilities/parallelProcessing/decomposePar/Make
 @dirrm %%REALNAME%%/applications/utilities/parallelProcessing/decomposePar/FoamX
 @dirrm %%REALNAME%%/applications/utilities/parallelProcessing/decomposePar
@@ -8273,7 +8283,6 @@
 @dirrm %%REALNAME%%/applications/utilities/miscellaneous/foamFlex/MISC/Macintosh
 @dirrm %%REALNAME%%/applications/utilities/miscellaneous/foamFlex/MISC/MVS
 @dirrm %%REALNAME%%/applications/utilities/miscellaneous/foamFlex/MISC/MSDOS
-@dirrm %%REALNAME%%/applications/utilities/miscellaneous/foamFlex/MISC/Borland.old
 @dirrm %%REALNAME%%/applications/utilities/miscellaneous/foamFlex/MISC/Borland
 @dirrm %%REALNAME%%/applications/utilities/miscellaneous/foamFlex/MISC/Atari
 @dirrm %%REALNAME%%/applications/utilities/miscellaneous/foamFlex/MISC
@@ -8361,15 +8370,15 @@
 @dirrm %%REALNAME%%/applications/utilities/mesh/manipulation/objToVTK/Make
 @dirrm %%REALNAME%%/applications/utilities/mesh/manipulation/objToVTK/FoamX
 @dirrm %%REALNAME%%/applications/utilities/mesh/manipulation/objToVTK
-@dirrm %%REALNAME%%/applications/utilities/mesh/manipulation/moveTopoMesh/Make
-@dirrm %%REALNAME%%/applications/utilities/mesh/manipulation/moveTopoMesh/FoamX
-@dirrm %%REALNAME%%/applications/utilities/mesh/manipulation/moveTopoMesh
 @dirrm %%REALNAME%%/applications/utilities/mesh/manipulation/moveMesh/Make
 @dirrm %%REALNAME%%/applications/utilities/mesh/manipulation/moveMesh/FoamX
 @dirrm %%REALNAME%%/applications/utilities/mesh/manipulation/moveMesh
 @dirrm %%REALNAME%%/applications/utilities/mesh/manipulation/moveEngineMesh/Make
 @dirrm %%REALNAME%%/applications/utilities/mesh/manipulation/moveEngineMesh/FoamX
 @dirrm %%REALNAME%%/applications/utilities/mesh/manipulation/moveEngineMesh
+@dirrm %%REALNAME%%/applications/utilities/mesh/manipulation/moveDynamicMesh/Make
+@dirrm %%REALNAME%%/applications/utilities/mesh/manipulation/moveDynamicMesh/FoamX
+@dirrm %%REALNAME%%/applications/utilities/mesh/manipulation/moveDynamicMesh
 @dirrm %%REALNAME%%/applications/utilities/mesh/manipulation/mirrorMesh/Make
 @dirrm %%REALNAME%%/applications/utilities/mesh/manipulation/mirrorMesh/FoamX
 @dirrm %%REALNAME%%/applications/utilities/mesh/manipulation/mirrorMesh
@@ -8427,6 +8436,8 @@
 @dirrm %%REALNAME%%/applications/utilities/mesh/conversion/sammToFoam/Make
 @dirrm %%REALNAME%%/applications/utilities/mesh/conversion/sammToFoam/FoamX
 @dirrm %%REALNAME%%/applications/utilities/mesh/conversion/sammToFoam
+@dirrm %%REALNAME%%/applications/utilities/mesh/conversion/polyDualMesh/Make
+@dirrm %%REALNAME%%/applications/utilities/mesh/conversion/polyDualMesh
 @dirrm %%REALNAME%%/applications/utilities/mesh/conversion/plot3dToFoam/Make
 @dirrm %%REALNAME%%/applications/utilities/mesh/conversion/plot3dToFoam/FoamX
 @dirrm %%REALNAME%%/applications/utilities/mesh/conversion/plot3dToFoam
@@ -8440,9 +8451,6 @@
 @dirrm %%REALNAME%%/applications/utilities/mesh/conversion/kivaToFoam/Make
 @dirrm %%REALNAME%%/applications/utilities/mesh/conversion/kivaToFoam/FoamX
 @dirrm %%REALNAME%%/applications/utilities/mesh/conversion/kivaToFoam
-@dirrm %%REALNAME%%/applications/utilities/mesh/conversion/ideasToFoam/Make
-@dirrm %%REALNAME%%/applications/utilities/mesh/conversion/ideasToFoam/FoamX
-@dirrm %%REALNAME%%/applications/utilities/mesh/conversion/ideasToFoam
 @dirrm %%REALNAME%%/applications/utilities/mesh/conversion/gmshToFoam/Make
 @dirrm %%REALNAME%%/applications/utilities/mesh/conversion/gmshToFoam/FoamX
 @dirrm %%REALNAME%%/applications/utilities/mesh/conversion/gmshToFoam
@@ -8483,6 +8491,9 @@
 @dirrm %%REALNAME%%/applications/utilities/mesh/conversion/ccm24ToFoam/ccm24ToFoam
 @dirrm %%REALNAME%%/applications/utilities/mesh/conversion/ccm24ToFoam/FoamX
 @dirrm %%REALNAME%%/applications/utilities/mesh/conversion/ccm24ToFoam
+@dirrm %%REALNAME%%/applications/utilities/mesh/conversion/ansysToFoam/Make
+@dirrm %%REALNAME%%/applications/utilities/mesh/conversion/ansysToFoam/FoamX
+@dirrm %%REALNAME%%/applications/utilities/mesh/conversion/ansysToFoam
 @dirrm %%REALNAME%%/applications/utilities/mesh/conversion
 @dirrm %%REALNAME%%/applications/utilities/mesh/advanced/splitCells/Make
 @dirrm %%REALNAME%%/applications/utilities/mesh/advanced/splitCells
@@ -8497,14 +8508,10 @@
 @dirrm %%REALNAME%%/applications/utilities/mesh/advanced/refineWallLayer/Make
 @dirrm %%REALNAME%%/applications/utilities/mesh/advanced/refineWallLayer
 @dirrm %%REALNAME%%/applications/utilities/mesh/advanced/modifyMesh/Make
-@dirrm %%REALNAME%%/applications/utilities/mesh/advanced/modifyMesh/FoamX
 @dirrm %%REALNAME%%/applications/utilities/mesh/advanced/modifyMesh
 @dirrm %%REALNAME%%/applications/utilities/mesh/advanced/combinePatchFaces/Make
 @dirrm %%REALNAME%%/applications/utilities/mesh/advanced/combinePatchFaces/FoamX
 @dirrm %%REALNAME%%/applications/utilities/mesh/advanced/combinePatchFaces
-@dirrm %%REALNAME%%/applications/utilities/mesh/advanced/collapseFaces/Make
-@dirrm %%REALNAME%%/applications/utilities/mesh/advanced/collapseFaces/FoamX
-@dirrm %%REALNAME%%/applications/utilities/mesh/advanced/collapseFaces
 @dirrm %%REALNAME%%/applications/utilities/mesh/advanced/collapseEdges/Make
 @dirrm %%REALNAME%%/applications/utilities/mesh/advanced/collapseEdges/FoamX
 @dirrm %%REALNAME%%/applications/utilities/mesh/advanced/collapseEdges
@@ -8541,6 +8548,8 @@
 @dirrm %%REALNAME%%/applications/test/tensor
 @dirrm %%REALNAME%%/applications/test/string/Make
 @dirrm %%REALNAME%%/applications/test/string
+@dirrm %%REALNAME%%/applications/test/sphericalTensorField/Make
+@dirrm %%REALNAME%%/applications/test/sphericalTensorField
 @dirrm %%REALNAME%%/applications/test/speed/Make
 @dirrm %%REALNAME%%/applications/test/speed
 @dirrm %%REALNAME%%/applications/test/sort/Make
@@ -8579,8 +8588,6 @@
 @dirrm %%REALNAME%%/applications/test/liquid
 @dirrm %%REALNAME%%/applications/test/io/Make
 @dirrm %%REALNAME%%/applications/test/io
-@dirrm %%REALNAME%%/applications/test/gzstream/Make
-@dirrm %%REALNAME%%/applications/test/gzstream
 @dirrm %%REALNAME%%/applications/test/graphXi/Make
 @dirrm %%REALNAME%%/applications/test/graphXi
 @dirrm %%REALNAME%%/applications/test/graph/Make
@@ -8609,6 +8616,7 @@
 @dirrm %%REALNAME%%/applications/test/alloc
 @dirrm %%REALNAME%%/applications/test/Unix/Make
 @dirrm %%REALNAME%%/applications/test/Unix
+@dirrm %%REALNAME%%/applications/test/StaticHashTable
 @dirrm %%REALNAME%%/applications/test/SLList/Make
 @dirrm %%REALNAME%%/applications/test/SLList
 @dirrm %%REALNAME%%/applications/test/OStringStream/Make
@@ -8623,6 +8631,8 @@
 @dirrm %%REALNAME%%/applications/test/Map
 @dirrm %%REALNAME%%/applications/test/List/Make
 @dirrm %%REALNAME%%/applications/test/List
+@dirrm %%REALNAME%%/applications/test/LduMatrix/Make
+@dirrm %%REALNAME%%/applications/test/LduMatrix
 @dirrm %%REALNAME%%/applications/test/IndirectList/Make
 @dirrm %%REALNAME%%/applications/test/IndirectList
 @dirrm %%REALNAME%%/applications/test/IStringStream/Make
@@ -8738,8 +8748,14 @@
 @dirrm %%REALNAME%%/applications/solvers/multiphase/lesInterFoam/FoamX/defaults
 @dirrm %%REALNAME%%/applications/solvers/multiphase/lesInterFoam/FoamX
 @dirrm %%REALNAME%%/applications/solvers/multiphase/lesInterFoam
+@dirrm %%REALNAME%%/applications/solvers/multiphase/interFoam/interfaceProperties/lnInclude
+@dirrm %%REALNAME%%/applications/solvers/multiphase/interFoam/interfaceProperties/gammaContactAngle/timeVaryingGammaContactAngle
+@dirrm %%REALNAME%%/applications/solvers/multiphase/interFoam/interfaceProperties/gammaContactAngle/gammaContactAngle
+@dirrm %%REALNAME%%/applications/solvers/multiphase/interFoam/interfaceProperties/gammaContactAngle/dynamicGammaContactAngle
+@dirrm %%REALNAME%%/applications/solvers/multiphase/interFoam/interfaceProperties/gammaContactAngle/constantGammaContactAngle
 @dirrm %%REALNAME%%/applications/solvers/multiphase/interFoam/interfaceProperties/gammaContactAngle
 @dirrm %%REALNAME%%/applications/solvers/multiphase/interFoam/interfaceProperties/gammaCompression
+@dirrm %%REALNAME%%/applications/solvers/multiphase/interFoam/interfaceProperties/Make
 @dirrm %%REALNAME%%/applications/solvers/multiphase/interFoam/interfaceProperties
 @dirrm %%REALNAME%%/applications/solvers/multiphase/interFoam/incompressibleTwoPhaseMixture
 @dirrm %%REALNAME%%/applications/solvers/multiphase/interFoam/Make
@@ -8769,21 +8785,14 @@
 @dirrm %%REALNAME%%/applications/solvers/incompressible/simpleFoam
 @dirrm %%REALNAME%%/applications/solvers/incompressible/nonNewtonianIcoFoam/Make
 @dirrm %%REALNAME%%/applications/solvers/incompressible/nonNewtonianIcoFoam
-@dirrm %%REALNAME%%/applications/solvers/incompressible/icoTopoFoam/Make
-@dirrm %%REALNAME%%/applications/solvers/incompressible/icoTopoFoam
-@dirrm %%REALNAME%%/applications/solvers/incompressible/icoFoamAutoMotion/Make
-@dirrm %%REALNAME%%/applications/solvers/incompressible/icoFoamAutoMotion/FoamX/fvSchemes
-@dirrm %%REALNAME%%/applications/solvers/incompressible/icoFoamAutoMotion/FoamX/defaults/system
-@dirrm %%REALNAME%%/applications/solvers/incompressible/icoFoamAutoMotion/FoamX/defaults/constant
-@dirrm %%REALNAME%%/applications/solvers/incompressible/icoFoamAutoMotion/FoamX/defaults
-@dirrm %%REALNAME%%/applications/solvers/incompressible/icoFoamAutoMotion/FoamX
-@dirrm %%REALNAME%%/applications/solvers/incompressible/icoFoamAutoMotion
 @dirrm %%REALNAME%%/applications/solvers/incompressible/icoFoam/Make
 @dirrm %%REALNAME%%/applications/solvers/incompressible/icoFoam/FoamX/fvSchemes
 @dirrm %%REALNAME%%/applications/solvers/incompressible/icoFoam/FoamX/defaults/system
 @dirrm %%REALNAME%%/applications/solvers/incompressible/icoFoam/FoamX/defaults
 @dirrm %%REALNAME%%/applications/solvers/incompressible/icoFoam/FoamX
 @dirrm %%REALNAME%%/applications/solvers/incompressible/icoFoam
+@dirrm %%REALNAME%%/applications/solvers/incompressible/icoDyMFoam/Make
+@dirrm %%REALNAME%%/applications/solvers/incompressible/icoDyMFoam
 @dirrm %%REALNAME%%/applications/solvers/incompressible/boundaryFoam/Make
 @dirrm %%REALNAME%%/applications/solvers/incompressible/boundaryFoam
 @dirrm %%REALNAME%%/applications/solvers/incompressible
@@ -8836,8 +8845,12 @@
 @dirrm %%REALNAME%%/applications/solvers/compressible/sonicFoam/FoamX
 @dirrm %%REALNAME%%/applications/solvers/compressible/sonicFoam
 @dirrm %%REALNAME%%/applications/solvers/compressible/rhopSonicFoam/Make
-@dirrm %%REALNAME%%/applications/solvers/compressible/rhopSonicFoam/BCs/fixedTempRhoE
-@dirrm %%REALNAME%%/applications/solvers/compressible/rhopSonicFoam/BCs/adiabaticRhoE
+@dirrm %%REALNAME%%/applications/solvers/compressible/rhopSonicFoam/BCs/rhoU
+@dirrm %%REALNAME%%/applications/solvers/compressible/rhopSonicFoam/BCs/rhoE
+@dirrm %%REALNAME%%/applications/solvers/compressible/rhopSonicFoam/BCs/rho
+@dirrm %%REALNAME%%/applications/solvers/compressible/rhopSonicFoam/BCs/p
+@dirrm %%REALNAME%%/applications/solvers/compressible/rhopSonicFoam/BCs/lnInclude
+@dirrm %%REALNAME%%/applications/solvers/compressible/rhopSonicFoam/BCs/Make
 @dirrm %%REALNAME%%/applications/solvers/compressible/rhopSonicFoam/BCs
 @dirrm %%REALNAME%%/applications/solvers/compressible/rhopSonicFoam
 @dirrm %%REALNAME%%/applications/solvers/compressible/rhoTurbFoam/Make
@@ -8928,9 +8941,11 @@
 @dirrm %%REALNAME%%/applications/solvers/DNSandLES/channelOodles
 @dirrm %%REALNAME%%/applications/solvers/DNSandLES
 @dirrm %%REALNAME%%/applications/solvers
-@dirrm %%REALNAME%%/applications/bin/FreeBSDOpt
+@dirrm %%REALNAME%%/applications/bin/%%APPSUBDIR%%
 @dirrm %%REALNAME%%/applications/bin
 @dirrm %%REALNAME%%/applications
+%%PORTDOCS%%@dirrm %%REALNAME%%/Guides-usletter
+%%PORTDOCS%%@dirrm %%REALNAME%%/Guides-a4
 @dirrm %%REALNAME%%/.%%REALNAME%%-%%VER%%/thermoData
 @dirrm %%REALNAME%%/.%%REALNAME%%-%%VER%%/apps/paraview
 @dirrm %%REALNAME%%/.%%REALNAME%%-%%VER%%/apps/ensightFoam
@@ -8965,6 +8980,7 @@
 @dirrm %%REALNAME%%/.%%REALNAME%%-%%VER%%/apps/FoamX/entries/geometricFields/electromagnetics
 @dirrm %%REALNAME%%/.%%REALNAME%%-%%VER%%/apps/FoamX/entries/geometricFields
 @dirrm %%REALNAME%%/.%%REALNAME%%-%%VER%%/apps/FoamX/entries/fieldValues
+@dirrm %%REALNAME%%/.%%REALNAME%%-%%VER%%/apps/FoamX/entries/engineMesh
 @dirrm %%REALNAME%%/.%%REALNAME%%-%%VER%%/apps/FoamX/entries/dimensionedVector
 @dirrm %%REALNAME%%/.%%REALNAME%%-%%VER%%/apps/FoamX/entries/dimensionedScalar/stress
 @dirrm %%REALNAME%%/.%%REALNAME%%-%%VER%%/apps/FoamX/entries/dimensionedScalar/electromagnetics
@@ -8989,7 +9005,6 @@
 @dirrm %%REALNAME%%/.%%REALNAME%%-%%VER%%/apps/FoamX/dictionaries/sprayProperties
 @dirrm %%REALNAME%%/.%%REALNAME%%-%%VER%%/apps/FoamX/dictionaries/probeLocations
 @dirrm %%REALNAME%%/.%%REALNAME%%-%%VER%%/apps/FoamX/dictionaries/physicalProperties
-@dirrm %%REALNAME%%/.%%REALNAME%%-%%VER%%/apps/FoamX/dictionaries/motionProperties
 @dirrm %%REALNAME%%/.%%REALNAME%%-%%VER%%/apps/FoamX/dictionaries/injectorProperties
 @dirrm %%REALNAME%%/.%%REALNAME%%-%%VER%%/apps/FoamX/dictionaries/fvTolerances
 @dirrm %%REALNAME%%/.%%REALNAME%%-%%VER%%/apps/FoamX/dictionaries/fvSolution/solvers
@@ -9006,6 +9021,7 @@
 @dirrm %%REALNAME%%/.%%REALNAME%%-%%VER%%/apps/FoamX/dictionaries/fvSchemes/d2dt2
 @dirrm %%REALNAME%%/.%%REALNAME%%-%%VER%%/apps/FoamX/dictionaries/fvSchemes
 @dirrm %%REALNAME%%/.%%REALNAME%%-%%VER%%/apps/FoamX/dictionaries/environmentalProperties
+@dirrm %%REALNAME%%/.%%REALNAME%%-%%VER%%/apps/FoamX/dictionaries/dynamicMeshDict
 @dirrm %%REALNAME%%/.%%REALNAME%%-%%VER%%/apps/FoamX/dictionaries/controlDict
 @dirrm %%REALNAME%%/.%%REALNAME%%-%%VER%%/apps/FoamX/dictionaries/combustionProperties/MKCoeffs/defaults
 @dirrm %%REALNAME%%/.%%REALNAME%%-%%VER%%/apps/FoamX/dictionaries/combustionProperties/MKCoeffs
