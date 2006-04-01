@@ -1,10 +1,11 @@
---- gtk2-java.pc.in.orig	Sun Jun 19 11:53:03 2005
-+++ gtk2-java.pc.in	Sun Jun 19 11:54:14 2005
-@@ -10,6 +10,6 @@
+--- gtk2-java.pc.in.orig	Sat Apr  1 01:08:55 2006
++++ gtk2-java.pc.in	Sat Apr  1 01:09:08 2006
+@@ -11,6 +11,6 @@ Version: @VERSION@
  api_version=@gtkapiversion@
  classpath=@INSTALLED_CLASSPATH@
  macro_dir=@INSTALLED_MACRO_DIR@
 -jnilibs=-L@libdir@ -lgtkjni
+-Libs: -L@libdir@ -lgtkjava
 +jnilibs=-L@libdir@ -lgtkjni-@gtkapiversion@
- Libs: -L@libdir@ -lgtkjava
++Libs: -L@libdir@ -lgtkjava-@gtkapiversion@
  Cflags: -I@includedir@/libgtk-java

@@ -148,6 +148,7 @@ libdata/pkgconfig/gtk2-java.pc
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/glib/Fireable.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/glib/GListString.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/glib/GObject.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/glib/Idle.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/glib/JGException.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/glib/List.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/glib/MainLoop.html
@@ -177,6 +178,7 @@ libdata/pkgconfig/gtk2-java.pc
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/ActionGroup.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/Adjustment.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/Alignment.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/Allocation.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/AnchorType.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/Arrow.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/ArrowType.html
@@ -263,6 +265,7 @@ libdata/pkgconfig/gtk2-java.pc
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/Frame.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/GammaCurve.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/Gtk.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/GtkInitException.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/GtkObject.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/GtkStockItem.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/HBox.html
