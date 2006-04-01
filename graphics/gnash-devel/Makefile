@@ -59,6 +59,7 @@ CPPFLAGS+=		`firefox-config --cflags`
 LDFLAGS+=		`firefox-config --libs`
 PLIST_SUB=		PLUGIN:=""
 .else
+CONFIGURE_ARGS+=	--disable-reader
 PLIST_SUB=		PLUGIN:="@comment "
 .endif
 
