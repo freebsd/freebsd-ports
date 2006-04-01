@@ -19,6 +19,8 @@ USE_IMAKE=	yes
 INSTALLS_SHLIB=	yes
 CFLAGS+=	-Werror
 MAKE_ENV+=	COMPRESS_CMD="${COMPRESS_CMD:S/c//}"
+PKGMESSAGE=	${WRKDIR}/pkg-message
+SUB_FILES=	pkg-message
 
 .include <bsd.port.pre.mk>
 post-patch:
@@ -33,7 +35,7 @@ post-configure:
 		${WRKSRC}/lib/audio/Makefile
 
 post-install:
-	@${SED} -e 's:/usr/X11R6:${PREFIX}:g' ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include "Makefile.man"
 
