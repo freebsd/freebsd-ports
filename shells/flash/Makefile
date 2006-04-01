@@ -26,6 +26,8 @@ GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -rdynamic" \
 		LDFLAGS="${LDFLAGS} -rdynamic"
+SUB_FILES=	pkg-message
+PKGMESSAGE=	${WRKDIR}/pkg-message
 
 MAN1=		flash.1
 
@@ -69,6 +71,6 @@ post-install:
 	@(${GREP} -v ${PREFIX}/bin/flash /etc/shells.bak; \
 	${ECHO_CMD} ${PREFIX}/bin/flash) > /etc/shells
 	@${RM} /etc/shells.bak
-	@${SED} -e "s:/usr/local:${PREFIX}:g" ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
