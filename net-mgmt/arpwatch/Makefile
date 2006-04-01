@@ -24,6 +24,10 @@ MAN8=		arpwatch.8 arpsnmp.8
 
 USE_RC_SUBR=	arpwatch.sh
 
+.ifdef ARPDIR
+MAKE_ARGS=	ARPDIR=${ARPDIR}
+.endif
+
 post-install:
 	if [ ! -d ${PREFIX}/arpwatch ]; then				\
 		${MKDIR} ${PREFIX}/arpwatch;				\
