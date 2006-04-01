@@ -20,7 +20,9 @@ USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
+
+PORTDOCS=	AUTHORS ChangeLog README
+PLIST_FILES=	bin/wmthemeinstall
 
 pre-build:
 	@${REINPLACE_CMD} -e "s|/usr/local|${PREFIX}|g" ${WRKSRC}/wmOptions.c
@@ -29,9 +31,9 @@ do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/wmthemeinstall ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/ChangeLog ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/AUTHORS ${DOCSDIR}
+. for f in ${PORTDOCS}
+	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+. endfor
 	@${ECHO}
 	@${ECHO} "Documentation was installed in ${DOCSDIR}."
 	@${ECHO}
