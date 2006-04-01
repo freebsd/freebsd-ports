@@ -5631,6 +5631,7 @@ libnova		ports/astro/libnova
 libnss-mysql	ports/net/libnss-mysql
 libntlm		ports/security/libntlm
 libodbc++	ports/databases/libodbc++
+libofa		ports/audio/libofa
 libofx		ports/finance/libofx
 libogg		ports/audio/libogg
 liboil		ports/devel/liboil
