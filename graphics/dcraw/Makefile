@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dcraw
-PORTVERSION=	8.05
+PORTVERSION=	8.10
 CATEGORIES=	graphics
 MASTER_SITES=	http://bsd.gubkin.ru/myports/ \
 		http://www.piwebs.com/distfiles/${PORTNAME}/
