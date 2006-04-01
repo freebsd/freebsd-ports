@@ -9,7 +9,7 @@ PORTNAME=	qvwm
 PORTVERSION=	1.1.12
 PORTREVISION=	2
 CATEGORIES=	x11-wm
-MASTER_SITES=	ftp://www.qvwm.org/pub/qvwm/ \
+MASTER_SITES=	http://www.csg.is.titech.ac.jp/~kourai/qvwm/archive/qvwm/ \
 		ftp://ftp.chg.ru/pub/X11/windowmanagers/qvwm/
 
 MAINTAINER=	ports@FreeBSD.org
