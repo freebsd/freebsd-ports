@@ -278,6 +278,6 @@ BUILD_DEPENDS+=	${SITE_PERL}/Spreadsheet/WriteExcel.pm:${PORTSDIR}/textproc/p5-S
 RUN_DEPENDS+=	${BUILD_DEPENDS}
 
 post-install:
-	@${CAT} pkg-message
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
