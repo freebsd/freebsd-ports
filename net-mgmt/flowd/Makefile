@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	flowd
-PORTVERSION=	0.8.5
+PORTVERSION=	0.9
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	http://www2.mindrot.org/files/flowd/
 
@@ -16,12 +16,10 @@ COMMENT=	The flowd is a small, fast and secure NetFlow collector
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 MAN8=		flowd.8 flowd-reader.8
 MAN5=		flowd.conf.5
 PORTDOCS=	README INSTALL
 FLOWD_USER?=	_flowd
-PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 
 .if defined(WITH_PERL)
 USE_PERL5=	yes
@@ -54,8 +52,6 @@ pre-extract:
 .endif
 
 post-patch:
-	@${SED} -e "s;%%FLOWD_USER%%;${FLOWD_USER};g" \
-		${.CURDIR}/pkg-deinstall > ${PKGDEINSTALL}
 	@${REINPLACE_CMD} -e "s;%%FLOWD_USER%%;${FLOWD_USER};g" \
 		${WRKSRC}/flowd.h
 
