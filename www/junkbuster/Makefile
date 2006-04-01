@@ -21,8 +21,9 @@ USE_REINPLACE=	yes
 ALL_TARGET=	# yes, an empty target.
 JDIR=		${PREFIX}/etc/junkbuster
 MAN1=		junkbuster.1
-SUB_FILES=	junkbuster.sh
+SUB_FILES=	junkbuster.sh pkg-message
 USE_RC_SUBR=	yes
+PKGMESSAGE=	${WRKDIR}/pkg-message
 
 .include <bsd.port.pre.mk>
 
