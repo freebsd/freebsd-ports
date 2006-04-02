@@ -7,6 +7,7 @@
 
 PORTNAME=	enlightenment-theme-ShinyMetal
 PORTVERSION=	0.16.8
+PORTREVISION=	1
 CATEGORIES=	x11-themes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	enlightenment
@@ -15,7 +16,7 @@ DISTNAME=	${PORTNAME:S/enlightenment/e16/}-${PORTVERSION}
 MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	A themes of enlightenment window menager
 
-RUN_DEPENDS=	${X11BASE}/bin/enlightenment:${PORTSDIR}/x11-wm/enlightenment
+RUN_DEPENDS=	${X11BASE}/bin/e16:${PORTSDIR}/x11-wm/enlightenment
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
