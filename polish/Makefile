@@ -5,6 +5,7 @@
 
     SUBDIR += aspell
     SUBDIR += ekg
+    SUBDIR += ekg2
     SUBDIR += fortunepl
     SUBDIR += gnugadu
     SUBDIR += gnugadu2
