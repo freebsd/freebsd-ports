@@ -26,7 +26,7 @@ DICTDIR=	${PREFIX}/lib/X11/pyDict
 DOCDIR=		${PREFIX}/share/doc/pyDict
 USE_REINPLACE=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
-USE_SUBFILES=	pkg-message
+SUB_FILES=	pkg-message
 
 .include <bsd.port.pre.mk>
 
