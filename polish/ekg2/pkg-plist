@@ -1,0 +1,90 @@
+bin/ekg2
+bin/ekg2-config
+lib/ekg2/plugins/logs.so
+lib/ekg2/plugins/logs.la
+lib/ekg2/plugins/mail.so
+lib/ekg2/plugins/mail.la
+lib/ekg2/plugins/rc.so
+lib/ekg2/plugins/rc.la
+lib/ekg2/plugins/sms.so
+lib/ekg2/plugins/sms.la
+lib/ekg2/plugins/pcm.so
+lib/ekg2/plugins/pcm.la
+lib/ekg2/plugins/irc.so
+lib/ekg2/plugins/irc.la
+lib/ekg2/plugins/ioctld.so
+lib/ekg2/plugins/ioctld.la
+lib/ekg2/plugins/gg.so
+lib/ekg2/plugins/gg.la
+lib/ekg2/plugins/sim.so
+lib/ekg2/plugins/sim.la
+lib/ekg2/plugins/jabber.so
+lib/ekg2/plugins/jabber.la
+lib/ekg2/plugins/ncurses.so
+lib/ekg2/plugins/ncurses.la
+libexec/ioctld
+include/ekg2/audio.h
+include/ekg2/char.h
+include/ekg2/configfile.h
+include/ekg2/dynstuff.h
+include/ekg2/events.h
+include/ekg2/metacontacts.h
+include/ekg2/objects.h
+include/ekg2/protocol.h
+include/ekg2/sessions.h
+include/ekg2/themes.h
+include/ekg2/vars.h
+include/ekg2/xmalloc.h
+include/ekg2/commands.h
+include/ekg2/debug.h
+include/ekg2/emoticons.h
+include/ekg2/log.h
+include/ekg2/msgqueue.h
+include/ekg2/plugins.h
+include/ekg2/scripts.h
+include/ekg2/stuff.h
+include/ekg2/userlist.h
+include/ekg2/windows.h
+include/ekg2/gettext.h
+include/ekg2/ekg2-config.h
+share/locale/pl/LC_MESSAGES/ekg2.mo
+share/ekg2/plugins/logs/vars-pl.txt
+share/ekg2/plugins/rc/vars-pl.txt
+share/ekg2/plugins/sms/commands-pl.txt
+share/ekg2/plugins/sms/vars-pl.txt
+share/ekg2/plugins/irc/commands-pl.txt
+share/ekg2/plugins/irc/session-pl.txt
+share/ekg2/plugins/ioctld/commands-pl.txt
+share/ekg2/plugins/gg/vars-pl.txt
+share/ekg2/plugins/gg/vars-en.txt
+share/ekg2/plugins/gg/commands-pl.txt
+share/ekg2/plugins/gg/commands-en.txt
+share/ekg2/plugins/gg/session-pl.txt
+share/ekg2/plugins/gg/session-en.txt
+share/ekg2/plugins/sim/commands-pl.txt
+share/ekg2/plugins/sim/vars-pl.txt
+share/ekg2/plugins/jabber/commands-pl.txt
+share/ekg2/plugins/jabber/session-pl.txt
+share/ekg2/plugins/jabber/vars-pl.txt
+share/ekg2/plugins/jabber/commands-en.txt
+share/ekg2/plugins/jabber/session-en.txt
+share/ekg2/plugins/jabber/vars-en.txt
+share/ekg2/plugins/ncurses/vars-pl.txt
+share/ekg2/vars-pl.txt
+share/ekg2/commands-pl.txt
+@dirrm include/ekg2
+@dirrm share/ekg2/plugins/logs
+@dirrm share/ekg2/plugins/sms
+@dirrm share/ekg2/plugins/irc
+@dirrm share/ekg2/plugins/ioctld
+@dirrm share/ekg2/plugins/rc
+@dirrm share/ekg2/plugins/gg
+@dirrm share/ekg2/plugins/sim
+@dirrm share/ekg2/plugins/jabber
+@dirrm share/ekg2/plugins/ncurses
+@dirrm share/ekg2/plugins
+@dirrm share/ekg2
+@dirrm lib/ekg2/plugins
+@dirrm lib/ekg2
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
