@@ -1442,6 +1442,7 @@ cursor-polar-theme	ports/x11-themes/cursor-polar-theme
 cutecom		ports/comms/cutecom
 cutils		ports/devel/cutils
 cutlass		ports/security/cutlass
+cuttlefish	ports/graphics/cuttlefish
 cvm		ports/security/cvm
 cvs+ipv6		ports/devel/cvs+ipv6
 cvs2cl		ports/devel/cvs2cl
