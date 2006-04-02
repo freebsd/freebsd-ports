@@ -28,7 +28,6 @@ USE_X_PREFIX=	yes
 USE_GL=		yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
-#USE_GCC=	3.4+
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libpng=sys\
