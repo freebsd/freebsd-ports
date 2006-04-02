@@ -17,6 +17,8 @@ MASTER_SITE_SUBDIR=	fenner
 MAINTAINER=		tonymaher@optusnet.com.au
 COMMENT=		Generic Network Queuing System
 
+BROKEN=			Does not compile
+
 USE_BZIP2=		yes
 IS_INTERACTIVE=	yes
 NO_PACKAGE=		have to build on site due to the descriptors created in\
