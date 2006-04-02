@@ -26,6 +26,12 @@ MAN1=		heyu.1 heyuhelper.1
 MAN5=		x10config.5 \
 		x10sched.5
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 600105
+BROKEN=		Does not compile
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -E 's|/usr/local|${PREFIX}|g; \
 			      s,(CC|CFLAGS) =,\1 ?=,g' \
@@ -40,4 +46,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/x10config ${EXAMPLESDIR}/x10config.sample
 	${INSTALL_DATA} ${WRKSRC}/x10sched.conf.sample ${EXAMPLESDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
