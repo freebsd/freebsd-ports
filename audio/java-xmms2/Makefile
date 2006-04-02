@@ -11,14 +11,16 @@ PKGNAMEPREFIX=	java-
 MAINTAINER=	alex@foxybanana.com
 COMMENT=	Java Bindings for XMMS2
 
-BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13
+BUILD_DEPENDS+=	swig:${PORTSDIR}/devel/swig13 \
+		${LOCALBASE}/lib/libxmmsclient.so:${PORTSDIR}/audio/xmms2
+RUN_DEPENDS+=	${LOCALBASE}/lib/libxmmsclient.so:${PORTSDIR}/audio/xmms2
 
 MASTERDIR=	${.CURDIR}/../xmms2
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.4+
 
-PLIST_FILES=	${JAVAJARDIR}/xmms2java.jar
+PLIST=		${.CURDIR}/pkg-plist
 
 SCONS_TARGET=	src/clients/lib/java/libxmms2java.so src/clients/lib/java/xmms2java.jar
 
