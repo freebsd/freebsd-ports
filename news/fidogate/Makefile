@@ -35,7 +35,9 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-perl
 .endif
 
 pre-configure:
-	${RM} -f ${WORKSRC}/doc/fidogate.info-?
+	${TOUCH} ${WRKSRC}/doc/fidogate.info
+	${RM} -f ${WRKSRC}/doc/fidogate.info-?
+	${RM} -f ${WRKSRC}/doc/fidogate.txt
 	@${PERL5} -pi -e "s=.{PREFIX}=${PREFIX}=g" ${WRKSRC}/config.make
 .if defined(FIDOGATE_RUNAS)
 	@${PERL5} -pi -e "s/OWNER.*= news/OWNER		= ${FIDOGATE_RUNAS}/" \
