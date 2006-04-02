@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	nagios-silfreed-plugins
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.silfreed.net/download/progs/nagios/
-DISTFILES=	check_snmp_counter-0.5.0.tar.gz \
+DISTFILES=	check_snmp_counter-0.6.tar.gz \
 		check_snmp_gauge-0.3.0.tar.gz \
-		check_snmp_if-0.3.5.tar.gz \
+		check_snmp_if-0.6.tar.gz \
 		check_snmp_if_max-0.3.0.tar.gz \
 		check_tcping-0.1.5.tar.gz \
 		dns_delegation-0.1.0.tar.gz
@@ -53,9 +53,9 @@ do-build:
 
 # Documentation
 PLUGIN_README_DIRS=	\
-	check_snmp_counter-0.5.0 \
+	check_snmp_counter-0.6 \
 	check_snmp_gauge-0.3.0 \
-	check_snmp_if-0.3.5 \
+	check_snmp_if-0.6 \
 	check_snmp_if_max-0.3.0 \
 	check_tcping-0.1.5 \
 	dns_delegation-0.1.0
@@ -77,11 +77,11 @@ PLIST_SUB+=	EXPECTTOOLS="@comment "
 do-install:
 	${MKDIR} ${NAGIOS_PLUGIN_DIR}
 	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/check_snmp_counter-0.5.0/check_snmp_counter ${NAGIOS_PLUGIN_DIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/check_snmp_counter-0.6/check_snmp_counter ${NAGIOS_PLUGIN_DIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/check_snmp_gauge-0.3.0/check_snmp_gauge ${NAGIOS_PLUGIN_DIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/check_snmp_if-0.3.5/check_snmp_if ${NAGIOS_PLUGIN_DIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/check_snmp_if-0.3.5/gen_check_snmp_if_services ${NAGIOS_PLUGIN_DIR}
-	${INSTALL_DATA} ${WRKSRC}/check_snmp_if-0.3.5/services-check_snmp_if.template ${EXAMPLESDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/check_snmp_if-0.6/check_snmp_if ${NAGIOS_PLUGIN_DIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/check_snmp_if-0.6/gen_check_snmp_if_services ${NAGIOS_PLUGIN_DIR}
+	${INSTALL_DATA} ${WRKSRC}/check_snmp_if-0.6/services-check_snmp_if.template ${EXAMPLESDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/check_snmp_if_max-0.3.0/check_snmp_if_max ${NAGIOS_PLUGIN_DIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/check_snmp_if_max-0.3.0/gen_check_snmp_if_max_services ${NAGIOS_PLUGIN_DIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/check_tcping-0.1.5/check_tcping ${NAGIOS_PLUGIN_DIR}
