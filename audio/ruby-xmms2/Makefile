@@ -11,13 +11,15 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 MAINTAINER=	alex@foxybanana.com
 COMMENT=	Ruby Bindings for XMMS2
 
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libxmmsclient.so:${PORTSDIR}/audio/xmms2
+RUN_DEPENDS+=	${LOCALBASE}/lib/libxmmsclient.so:${PORTSDIR}/audio/xmms2
+
 MASTERDIR=	${.CURDIR}/../xmms2
 
 USE_RUBY=	yes
 USE_GNOME=	glib20
 
-PLIST_FILES=	${RUBY_SITEARCHLIBDIR}/xmmsclient.so \
-		${RUBY_SITEARCHLIBDIR}/xmmsclient_glib.so
+PLIST=		${.CURDIR}/pkg-plist
 
 SCONS_TARGET=	src/clients/lib/ruby/xmmsclient.so \
 		src/clients/lib/ruby/xmmsclient_glib.so
