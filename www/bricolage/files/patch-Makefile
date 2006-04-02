@@ -1,7 +1,7 @@
-*** Makefile.orig	Tue Jan 17 19:09:49 2006
---- Makefile	Tue Jan 31 23:12:14 2006
+*** Makefile.orig	Fri Mar 17 19:26:34 2006
+--- Makefile	Fri Mar 31 18:35:33 2006
 ***************
-*** 18,24 ****
+*** 19,25 ****
   #
   
   # Set the location of Perl.
@@ -9,7 +9,7 @@
   
   # Blank by default, but set to QUIET to ask essential questions only
   INSTALL_VERBOSITY?= STANDARD
---- 18,24 ----
+--- 19,25 ----
   #
   
   # Set the location of Perl.
@@ -18,24 +18,7 @@
   # Blank by default, but set to QUIET to ask essential questions only
   INSTALL_VERBOSITY?= STANDARD
 ***************
-*** 161,167 ****
-  # installation rules     #
-  ##########################
-  
-! install 	: all is_root cpan lib bin files db db_grant done
-  
-  is_root         : inst/is_root.pl
-  	$(PERL) inst/is_root.pl
---- 161,167 ----
-  # installation rules     #
-  ##########################
-  
-! install 	: all is_root cpan lib bin files done
-  
-  is_root         : inst/is_root.pl
-  	$(PERL) inst/is_root.pl
-***************
-*** 171,190 ****
+*** 184,203 ****
   
   lib 		: 
   	-rm -f lib/Makefile
@@ -56,7 +39,7 @@
   
   done		: bconf/bricolage.conf db files bin lib cpan
   	$(PERL) inst/done.pl
---- 171,190 ----
+--- 184,203 ----
   
   lib 		: 
   	-rm -f lib/Makefile

@@ -12,7 +12,7 @@ fi
 
 # Ensure the old version exists at the end of the argument list
 OLDVERSION=`echo "$*" | sed -e "s/^.* \([^ ]*\)/\1/"`
-VTEST=`echo "$OLDVERSION" | sed -e "s/^1\.8\.[01234678]$/OKAY/"`
+VTEST=`echo "$OLDVERSION" | sed -e 's/^1\.8\.[01234678]$/OKAY/' -e 's/^1\.10\.[0]$/OKAY/'`
 if [ "${VTEST}" != "OKAY" ]
 then
 	echo "Version $OLDVERSION unknown."

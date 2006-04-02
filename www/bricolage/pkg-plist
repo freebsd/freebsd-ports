@@ -91,6 +91,9 @@ bricolage/upgrade/1.9.1/ze_job_iz_versioned.pl
 bricolage/upgrade/1.10.0/delete_old_stuff.pl
 bricolage/upgrade/1.10.0/rm_old_sort_prefs.pl
 bricolage/upgrade/1.10.0/update_publish_status_check.pl
+bricolage/upgrade/1.10.1/fix_media_related_story_fk.pl
+bricolage/upgrade/1.10.1/fix_reverted_docs.pl
+bricolage/upgrade/1.10.1/textify_field_type.pl
 bricolage/comp/admin/alerts/dhandler
 bricolage/comp/admin/alerts/recip
 bricolage/comp/admin/control/publish/category.html
@@ -2612,13 +2615,16 @@ bricolage/data/burn/comp/oc_1/story.mc
 %%SITE_PERL%%/Bric/SOAP/ATType.pm
 %%SITE_PERL%%/Bric/SOAP/Auth.pm
 %%SITE_PERL%%/Bric/SOAP/Category.pm
+%%SITE_PERL%%/Bric/SOAP/ContribType.pm
 %%SITE_PERL%%/Bric/SOAP/Desk.pm
+%%SITE_PERL%%/Bric/SOAP/Destination.pm
 %%SITE_PERL%%/Bric/SOAP/ElementType.pm
 %%SITE_PERL%%/Bric/SOAP/Handler.pm
 %%SITE_PERL%%/Bric/SOAP/Keyword.pm
 %%SITE_PERL%%/Bric/SOAP/Media.pm
 %%SITE_PERL%%/Bric/SOAP/MediaType.pm
 %%SITE_PERL%%/Bric/SOAP/OutputChannel.pm
+%%SITE_PERL%%/Bric/SOAP/Preference.pm
 %%SITE_PERL%%/Bric/SOAP/Site.pm
 %%SITE_PERL%%/Bric/SOAP/Story.pm
 %%SITE_PERL%%/Bric/SOAP/Template.pm
@@ -2795,6 +2801,7 @@ share/bricolage/Pg.sql
 @dirrm %%SITE_PERL%%/Bric
 @dirrm %%SITE_PERL%%/mach/auto/Bric
 @dirrm %%SITE_PERL%%/mach/auto/bric_bin
+@dirrm bricolage/upgrade/1.10.1
 @dirrm bricolage/upgrade/1.10.0
 @dirrm bricolage/upgrade/1.9.1
 @dirrm bricolage/upgrade/1.9.0

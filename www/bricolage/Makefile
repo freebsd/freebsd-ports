@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bricolage
-PORTVERSION=	1.10.0
+PORTVERSION=	1.10.1
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	bricolage
@@ -64,11 +64,12 @@ MAKE_ENV+=	USE_DEFAULTS=freebsd
 # in the same order as found within inst/versions.txt
 #
 # Skip 1.8.5
-PREVIOUS_VERSIONS=	1.8.0 1.8.1 1.8.2 1.8.3 1.8.4 1.8.6 1.8.7 1.8.8 1.8.9 1.9.0 1.9.1 1.10.0
+PREVIOUS_VERSIONS=	1.8.0 1.8.1 1.8.2 1.8.3 1.8.4 1.8.6 1.8.7 1.8.8 1.8.9 1.9.0 1.9.1 1.10.0 1.10.1
 
-USE_REINPLACE=	yes
 PERL_CONFIGURE=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
+
+INSTALL_TARGET=	install_files
 
 .include <bsd.port.pre.mk>
 
@@ -167,10 +168,11 @@ MAN3=		Bric.3 Bric::Admin.3 Bric::AdvTemplates.3 Bric::Alert.3 \
 		Bric::Dist::Resource.3 Bric::Dist::Server.3 Bric::Dist::ServerType.3 \
 		Bric::ElementAdmin.3 Bric::FAQ.3 Bric::HTMLTemplate.3 Bric::Hacker.3 \
 		Bric::License.3 Bric::SOAP.3 Bric::SOAP::Asset.3 Bric::SOAP::Auth.3 \
-		Bric::SOAP::ATType.3 Bric::SOAP::Category.3 Bric::SOAP::Desk.3 \
+		Bric::SOAP::ATType.3 Bric::SOAP::Category.3 Bric::SOAP::ContribType.3 \
+		Bric::SOAP::Destination.3 Bric::SOAP::Desk.3 \
 		Bric::SOAP::ElementType.3 Bric::SOAP::Handler.3 Bric::SOAP::Keyword.3 \
 		Bric::SOAP::Media.3 Bric::SOAP::MediaType.3 Bric::SOAP::OutputChannel.3 \
-		Bric::SOAP::Site.3 Bric::SOAP::Story.3 Bric::SOAP::Template.3 \
+		Bric::SOAP::Preference.3 Bric::SOAP::Site.3 Bric::SOAP::Story.3 Bric::SOAP::Template.3 \
 		Bric::SOAP::User.3 Bric::SOAP::Util.3 Bric::SOAP::Workflow.3 \
 		Bric::Security.3 Bric::Templates.3 Bric::ToDo.3 \
 		Bric::Util::Alert.3 Bric::Util::AlertType.3 \
