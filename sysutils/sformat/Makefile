@@ -7,7 +7,7 @@
 
 PORTNAME=	sformat
 PORTVERSION=	3.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.zeist.de/pub/distfiles/ \
 		ftp://ftp.berlios.de/pub/sformat/
@@ -16,7 +16,6 @@ MAINTAINER=	marius@FreeBSD.org
 COMMENT=	Allows formatting/partitioning/analysis/repairing of SCSI disks
 
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 
 MAN1=		sformat.1
 

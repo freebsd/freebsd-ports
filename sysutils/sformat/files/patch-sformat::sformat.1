@@ -1,6 +1,123 @@
 --- sformat/sformat.1.orig	Mon Dec 16 19:18:21 2002
 +++ sformat/sformat.1	Mon Dec 16 19:20:33 2002
-@@ -143,7 +143,7 @@
+@@ -13,7 +13,7 @@
+ .if n .ds o oe
+ .if n .ds u ue
+ .if n .ds s sz
+-.TH "SFORMAT draft" 1L "01/04/25" "J\*org Schilling" "Schily\'s USER COMMANDS"
++.TH "SFORMAT draft" 1 "01/04/25" "J\*org Schilling" "Schily\'s USER COMMANDS"
+ .SH NAME
+ sformat \- SCSI disk formatting/partitioning/analysis/repair utility
+ .SH SYNOPSIS
+@@ -25,37 +25,37 @@
+ 
+ .PP
+ The first form will select the named disk directly.
+-Have a look at the chapter about 
++Have a look at the chapter about
+ .B "Following The Main Thread
+ for more details.
+ .PP
+ The second form will scan all SCSI busses and enter a selection menu.
+-Have a look at the chapter about 
++Have a look at the chapter about
+ .B "The SCSI Selection Menu
+ for more details.
+ .PP
+ .B Sformat
+ will never destroy or modify any data unless explicitly confirmed
+ just before the (possibly) destructive action.
+-Have a look at the chapter about 
+-.B "How To Answer Questions 
++Have a look at the chapter about
++.B "How To Answer Questions
+ first.
+ 
+ .SH DESCRIPTION
+ .B Sformat
+-is the first SCSI disk formatting utility that runs under 
++is the first SCSI disk formatting utility that runs under
+ .IR SunOS .
+ Long before Sun decided that formatting and partitioning a disk
+ from a stand alone program is less convenient than doing this job
+-from a running UNIX, 
+-.B sformat 
++from a running UNIX,
++.B sformat
+ has been available.
+ .PP
+ .B Sformat
+ leads the beginner through a thread menu and allows the experienced
+ user to do more things than he could do with other disk maintenance
+ programs. All partitioning jobs can be done without the need for
+-a desc calculator.
++a desk calculator.
+ .PP
+ If you want to do more than simple things, you should carefully read the whole
+ manual. It contains many tips and tricks that will help you to recover
+@@ -68,11 +68,11 @@
+ 
+ .SH "Disk Database Entries
+ .PP
+-Be nice to other users of 
++Be nice to other users of
+ .BR sformat .
+ Create database (sformat.dat) entries for disks that are not in the data base
+-using the 
+-.B \-Proto 
++using the
++.B \-Proto
+ flag and mail them to the author.
+ This helps other users and you too.
+ See section on
+@@ -82,15 +82,15 @@
+ .SH OPTIONS
+ .TP 18
+ .BR  \-help ", " \-h
+-Print a summary of the most important options for 
++Print a summary of the most important options for
+ .BR sformat .
+ .TP
+ .B \-xhelp
+-Print a summary of less frequently used options for 
++Print a summary of less frequently used options for
+ .BR sformat .
+ .TP
+ .B \-version
+-Prints the 
++Prints the
+ .B sformat
+ version number string and exists.
+ .TP
+@@ -100,7 +100,7 @@
+ .TP
+ .BR \-auto ", " \-a
+ autoformat mode (for production systems).
+-When this option is in effect, 
++When this option is in effect,
+ .B sformat
+ will not ask whether to modify the format and partition parameters
+ and will only format disks that are known in the data base.
+@@ -127,33 +127,33 @@
+ .TP
+ .BI CWveri= "#, " CW= #
+ Number of blocks/write-verify.
+-The limitation noted with the 
++The limitation noted with the
+ .B Cveri
+ option applies here again and even on newer disks.
+ .TP
+ .BI data= name
+ Name of disk database file (default: 'sformat.dat').
+-Use this option to force 
++Use this option to force
+ .B sformat
+ to use a different disk database than the default.
+-In any case, 
++In any case,
+ .B sformat
+ will search in the current directory first.
+ If no file of the appropriate name was found in the current directory,
  .B sformat
  looks in the following path:
  .br
@@ -9,3 +126,1000 @@
  .TP
  .BI debug= "#, " -d
  Set the misc debug value to # (with debug=#) or increment
+ the misc debug level by one (with -d). If you specify
+ .I -dd,
+-this equals to 
++this equals to
+ .BR debug=2.
+ .TP
+ .BI kdebug= "#, " kd= "#
+-Tell the 
++Tell the
+ .BR scg -driver
+ to modify the kernel debug value while SCSI commands are running.
+ .TP
+@@ -161,12 +161,12 @@
+ Set the debug level for the parser of the external disk database.
+ .TP
+ .B \-defmodes
+-Get default mode parameters from disk. Normally 
+-.B sformat 
++Get default mode parameters from disk. Normally
++.B sformat
+ retrieves the default modes parameters from the disk by default
+ when the disk is unformatted or has no sun label and the
+ current mode parameter if the disk has a valid sun label.
+-This option tells 
++This option tells
+ .B sformat
+ retrieve the default mode parameters in any case.
+ .TP
+@@ -189,30 +189,30 @@
+ .B \-greassign
+ Reassign blocks.
+ This is the guru mode, don't use this. Read the description
+-for the 
++for the
+ .I \-reassign
+ option for more details.
+-This option will simply prompt for block numbers 
++This option will simply prompt for block numbers
+ and then reassign them regardless of if they need to be
+-reassigned or not. On some disks the block may seem to be 
++reassigned or not. On some disks the block may seem to be
+ defective even after reassigning it because the old data
+ is copied to the new location without recomputing the CRC.
+ On other disk the old data will be lost. These problems
+-will not arise if you use the 
+-.I \-reassign 
++will not arise if you use the
++.I \-reassign
+ option instead.
+ .TP
+ .B \-ign_not_found
+ Ignore record not found errors while verifying the disk.
+ This option is useful when trying to repair disks with
+-many defects (see 
++many defects (see
+ .I maxbad
+ option). Some disk errors may cause the whole track
+ to appear bad. If the reported error in these cases
+-is 
++is
+ .BR "record not found" ,
+ You should first try to repair as many blocks as possible
+-with this option in effect and then repair the remaining 
++with this option in effect and then repair the remaining
+ blocks without this option.
+ .TP
+ .B \-inq
+@@ -236,7 +236,7 @@
+ one bad block (maxbad=1), this problem will go away.
+ .TP
+ .B \-modes
+-Intercative modesense/modeselect. 
++Interactive modesense/modeselect.
+ Each mode page exists in 4 versions:
+ .br
+ default (PROM), current (RAM), saved (DISK) and changeable (BITMASK).
+@@ -245,23 +245,23 @@
+ .B "This is currently under construction.
+ .TP
+ .B \-noformat
+-Force not to format disk even when formatting of the 
+-disk has been confirmed. 
+-This option may be used to 
++Force not to format disk even when formatting of the
++disk has been confirmed.
++This option may be used to
+ modify mode parameters without formatting the disk.
+ .TP
+ .B \-nomap
+ Do not map SCSI address to logical disk name. WARNING:
+-If you use this option, 
++If you use this option,
+ .B sformat
+ is not able to check whether the disk has mounted
+ partitions. This may damage mounted file systems.
+ .TP
+ .B \-noparity
+ Try to disable parity checking on all SCSI commands that are
+-sent by 
++sent by
+ .B sformat.
+-This may not be possible in all implementations of the 
++This may not be possible in all implementations of the
+ .IR scg -driver.
+ .TP
+ .B \-nowait
+@@ -269,7 +269,7 @@
+ .B sformat
+ will prompt for a modification of the disk label and
+ partition table before starting to verify the disk.
+-If this option is in effect, 
++If this option is in effect,
+ .B sformat
+ will immediately start to verify the disk after formatting.
+ .TP
+@@ -284,27 +284,27 @@
+ disk.
+ .TP
+ .B \-prgeom
+-Get and print geometry data. This is an old option but it 
+-is useful to get all mode pages that are supported 
++Get and print geometry data. This is an old option but it
++is useful to get all mode pages that are supported
+ by this disk.
+ .TP
+ .B \-prcurgeom
+ Get and print geometry data. This is basically the same as
+ .I \-prgeom
+-except that \-prgeom will obtain the default mode pages, 
++except that \-prgeom will obtain the default mode pages,
+ \-prcurgeom will report the current values.
+ .TP
+ .B \-Proto
+ This option will cause
+-.B sformat 
++.B sformat
+ to generate a data base entry for the current disk.
+ Make sure that this data base entry will be generated with
+-the correct format time. 
++the correct format time.
+ .B Sformat
+ is able to compute a format time from the disk geometry,
+ but newer disks seem to need more time than computed.
+ If the format time is too short, the formatting may be
+-aborted and the disk will not be accessible until formatted 
++aborted and the disk will not be accessible until formatted
+ again completely.
+ .TP
+ .B \-r
+@@ -312,8 +312,8 @@
+ .TP
+ .B \-randrw
+ The random read/write test is a method to find problems that
+-may be a result of first seeking to a new place on disk 
+-and then writing data to it as it is frequently done by the unix file system.
++may be a result of first seeking to a new place on disk
++and then writing data to it as it is frequently done by the Unix file system.
+ This is usually caused by an inode or super block update.
+ The above problems may be a result of bad bearings in the disk.
+ If the disk does not produce errors while this test is running,
+@@ -321,16 +321,16 @@
+ that the disk is bad, the data on disk may get corrupted.
+ To minimize the risk of data loss, the first block containing
+ the disk label (partition) and the last block containing the
+-sinfo data (a 
+-.B sformat 
++sinfo data (a
++.B sformat
+ specific area) will never be written to.
+ .TP
+ .B \-reassign
+-Reassign a list of blocks 
+-.B sformat 
++Reassign a list of blocks
++.B sformat
+ will prompt for.
+ This is the preferred command when trying to repair
+-a block or a list of blocks with already known 
++a block or a list of blocks with already known
+ block addresses.
+ If you don't know the address of a defective block, use the
+ .I \-repair
+@@ -338,8 +338,8 @@
+ .B Sformat
+ will first try to read the old content of the defective block
+ and then try to refresh the data by writing the old data to the block.
+-If it fails to write to the block, 
+-.B sformat 
++If it fails to write to the block,
++.B sformat
+ will reassign the defective block.
+ If the block does not cause errors after rewriting the data in it,
+ .B sformat
+@@ -348,14 +348,14 @@
+ but actually is not.
+ If for any reason, the disk will be powered off during writing or if
+ there is electro magnetic noise the CRC for a block may get corrupted
+-without any physical harm to the magnetic media. These cases can be 
++without any physical harm to the magnetic media. These cases can be
+ repaired by writing again to the block.
+ .TP
+ .B \-refresh_only
+ .B Sformat
+ will not try to reassign a block that still fails
+ after rewriting (refreshing) the data in it.
+-This option is useful in conjunction with the 
++This option is useful in conjunction with the
+ .I \-reassign
+ and the
+ .I \-repair
+@@ -363,7 +363,7 @@
+ .TP
+ .B \-repair
+ This is a combination of the
+-.I \-verify 
++.I \-verify
+ and
+ .I \-reassign
+ option.
+@@ -373,7 +373,7 @@
+ .TP
+ .BI RW= #
+ Number of random R/W loops that is used with the
+-.I \-randrw 
++.I \-randrw
+ option.
+ The default is the number of physical sectors / 100.
+ This will not last too long and is enough to cover every
+@@ -385,9 +385,9 @@
+ see if a disk has these problems.
+ .TP
+ .B \-seek
+-Do 
++Do
+ .I random
+-or 
++or
+ .I "full stroke
+ seek tests on the disk. This is done by reading data; trying to
+ do
+@@ -398,7 +398,7 @@
+ Do a SCSI modeselect with all parameters, that would have been
+ necessary for a format, but do not format the disk.
+ This allows to modify the mode pages of a disk without reformatting it.
+-If the 
++If the
+ .B \-smp
+ option is used in conjunction with
+ .B \-setmodes
+@@ -413,7 +413,7 @@
+ Do not try to save mode parameters when setting them.
+ This option is useful if a nearly totally damaged disk
+ must be reformatted. Some disk controllers, in this case will
+-reject to format the disk if the area on disk where this data 
++reject to format the disk if the area on disk where this data
+ will be stored is not accessible before formatting the disk.
+ .TP
+ .B \-start
+@@ -432,8 +432,8 @@
+ command.
+ .TP
+ .BR \-tr ", " \-t
+-This is an option that is only useful with old 
+-.B Adaptec 
++This is an option that is only useful with old
++.B Adaptec
+ SCSI bridge controllers.
+ These controllers are not able to deal with
+ logical sector numbers in some cases. Therefore
+@@ -444,9 +444,9 @@
+ sector header. It may fail if the block has a bad sector header.
+ .TP
+ .BI VL= #
+-Set the number of verify passes that are done 
++Set the number of verify passes that are done
+ after formatting a disk to #. The default value is 5.
+-In write verify mode, this number is doubled because 
++In write verify mode, this number is doubled because
+ .B sformat
+ will alternate write verify and read verify passes
+ in this case.
+@@ -457,7 +457,7 @@
+ .B \-V
+ Increment the verbose level in respect of SCSI command transport by one.
+ This helps to debug problems
+-with SCSI commands. 
++with SCSI commands.
+ If you get incomprehensible error messages you should use this flag
+ to get more detailed output.
+ .B \-VV
+@@ -469,17 +469,17 @@
+ slows down the process and may be the reason for a buffer underrun.
+ .TP
+ .B \-verify
+-This options starts 
++This options starts
+ .B sformat
+ in verify disk (surface analysis) mode.
+ Verifying a disk is a method that allows to scan for
+ defects without modifying data on the disk.
+-In this mode, the controller will read the disks without 
++In this mode, the controller will read the disks without
+ transferring data to the computer while all error recovery is
+ disabled.
+ .TP
+ .BI Vstart= #
+-Set the first block for the 
++Set the first block for the
+ .IR \-verify ,
+ .IR \-repair ,
+ .I \-randrw
+@@ -491,7 +491,7 @@
+ is near the end of the disk.
+ .TP
+ .BI Vend= #
+-Set the last block for the 
++Set the last block for the
+ .IR \-verify ,
+ .IR \-repair ,
+ .I \-randrw
+@@ -504,13 +504,13 @@
+ .TP
+ .B \-wrveri
+ If this option is used in while formatting a disk,
+-it tells 
++it tells
+ .B sformat
+ to write verify the disk instead of only read verifying it
+ after formatting.
+-If it is used in combination with the 
++If it is used in combination with the
+ .I \-verify
+-option, 
++option,
+ .B sformat
+ will write verify the disk without prior formatting.
+ In both cases, the old data on disk will be damaged.
+@@ -523,30 +523,30 @@
+ There are four types of questions.
+ .TP
+ \(bu
+-Questions that can be answered with 
++Questions that can be answered with
+ .I yes
+ or
+ .I no.
+ Yes may be abbreviated with 'y' or 'Y'.
+-These questions are always assumed to be answered with 
++These questions are always assumed to be answered with
+ .I no
+ if you simply enter
+ .I "carriage return.
+-NOTE: the latter is always a 
++NOTE: the latter is always a
+ .I safe
+-answer. 
+-All questions that request confirmation for actions that may damage or modify 
++answer.
++All questions that request confirmation for actions that may damage or modify
+ data on disk are formed in such a way that answering them with
+ .I no
+-or 
++or
+ .I "carriage return
+ will not harm any data.
+ All answers to this type of questions
+ except
+ .I "[y]es
+-or 
++or
+ .I "[Y]ES
+-are interpreted as if 
++are interpreted as if
+ .I no
+ has been entered.
+ .TP
+@@ -560,16 +560,16 @@
+ \(bu
+ Questions that need a word selected from a list of valid words as input.
+ If you enter '?', you will get a list of possible input to that question.
+-Each word is on a separate line an (in some cases) is followed by a 
++Each word is on a separate line an (in some cases) is followed by a
+ explanation how to use it.
+ .TP
+ \(bu
+ Questions that need a number within a certain range.
+-For this type of questions, 
++For this type of questions,
+ .B sformat
+ displays the current value and the valid range in parenthesis.
+ The default radix for numbers is ten. If you need to enter
+-a hexadecimal number precede it with 
++a hexadecimal number precede it with
+ .I 0x
+ if you need to enter an octal number, precede it with
+ .I 0.
+@@ -582,20 +582,20 @@
+ Entering an dollar sign '$' will set the value to the greatest possible
+ .TP
+ +
+-Entering a 
++Entering a
+ .I "plus sign
+ will increment the current value by one.
+ .TP
+ -
+-Entering a 
++Entering a
+ .I "minus sign
+ will decrement the current value by one.
+ .TP
+ <CR>
+-Entering a 
++Entering a
+ .I "carriage return
+ will not modify the current value.
+-If the default value is -1, you need to supply a valid 
++If the default value is -1, you need to supply a valid
+ value to be allowed to leave the question menu.
+ .RE
+ .PP
+@@ -604,7 +604,7 @@
+ 
+ .SH "The SCSI Selection Menu
+ .PP
+-When 
++When
+ .B Sformat
+ is started without or with insufficient parameters,
+ the SCSI menu mode is entered.
+@@ -612,7 +612,7 @@
+ .PP
+ .nf
+ .na
+-.cs R 4*\w'x'/\n(.s
++.ft C
+ \s-2sparky joerg > sformat
+ sformat SCSI format/analysis/repair utilities
+ Release 3.1, Copyright J. Schilling
+@@ -638,7 +638,7 @@
+                 16) *
+                 17) HOST ADAPTOR
+ Select target -1 (0 - 12)/<cr>: \s+2
+-.cs R
++.ft
+ .ad
+ .fi
+ .PP
+@@ -646,17 +646,17 @@
+ .PP
+ .nf
+ .na
+-.cs R 4*\w'x'/\n(.s
++.ft C
+ c0t0d0           0) 'Quantum ' 'XP34300         ' 'F76D' Disk
+-.cs R
++.ft
+ .ad
+ .fi
+ .PP
+-shows the canonical logical disk name (in this case 
++shows the canonical logical disk name (in this case
+ .BR c0t0d0 ),
+ the menu number, the SCSI inquiry string and a description of the device type
+ that was found on this SCSI target.
+-The menu number is directly related to the SCSI target id of the device and the 
++The menu number is directly related to the SCSI target id of the device and the
+ SCSI bus number.
+ Number 3 is SCSI target # 3 on SCSI bus # 0.
+ Number 12 is SCSI target # 2 on SCSI bus # 1.
+@@ -668,7 +668,7 @@
+ .PP
+ .nf
+ .na
+-.cs R 4*\w'x'/\n(.s
++.ft C
+ Select target -1 (0 - 6)/<cr>:0
+ scsibus0 target 0:
+ c0t0d0           0) 'Quantum ' 'XP34300         ' 'F76D' Disk
+@@ -680,7 +680,7 @@
+                  6) 'Quantum ' 'XP34300         ' 'F76D' unsupported
+                  7) 'Quantum ' 'XP34300         ' 'F76D' unsupported
+ Select lun -1 (0 - 7)/<cr>:
+-.cs R
++.ft
+ .ad
+ .fi
+ .PP
+@@ -694,26 +694,26 @@
+ there is actually no device connected.
+ .PP
+ When selecting a specific logical unit, the main thread is entered as if
+-a complete SCSI target specification has been entered from the command 
++a complete SCSI target specification has been entered from the command
+ line.
+ 
+ .SH "Following The Main Thread
+ .PP
+-If the main formatting thread is entered, the following 
++If the main formatting thread is entered, the following
+ stages are encountered:
+ .PP
+ .TP 20
+ Mapping and checking
+-The first thing 
+-.B sformat 
++The first thing
++.B sformat
+ does, is to map the SCSI target/lun/busid triplet into
+ a logical disk name and to check if some
+ part of the disk is currently mounted.
+-This mapping will be skipped if the 
++This mapping will be skipped if the
+ .I \-nomap
+ options is specified.
+-If the disk is mounted, the user will be asked if 
+-it is ok to continue. 
++If the disk is mounted, the user will be asked if
++it is ok to continue.
+ .br
+ Note: this is currently the one and only question.
+ .TP
+@@ -734,12 +734,12 @@
+ Read sinfo data
+ When the device is a disk,
+ .B sformat
+-tries to read the 
++tries to read the
+ .B sinfo
+ data from the disk.
+-This allows the user to see if the device has been formatted with 
+-.B sformat 
+-before. If so, 
++This allows the user to see if the device has been formatted with
++.B sformat
++before. If so,
+ .B sformat
+ will print out the number of reformats and the date of the first and last
+ format.
+@@ -750,9 +750,9 @@
+ .TP
+ Process special commands
+ If options tell
+-.B sformat 
+-to take special actions (like 
+-.IR \-start " or " \-prdefect ), 
++.B sformat
++to take special actions (like
++.IR \-start " or " \-prdefect ),
+ they are done here.
+ .B Sformat
+ terminates after processing them.
+@@ -762,23 +762,23 @@
+ Several other things can be done from this thread.
+ Modifying the disk label will be one example.
+ You need not to be in fear that following this thread will modify or harm
+-data on the disk. 
++data on the disk.
+ There will be extra questions that secure this case.
+ .TP
+ Test whether the disk is formatted
+-Several procedures differ if the disk is already formatted and has a 
++Several procedures differ if the disk is already formatted and has a
+ valid label.
+ .PP
+ The next parts of the main thread will give you some questions to answer.
+ You may skip most of the questions if you do not want to modify anything.
+ .PP
+-If some data that is definitely needed by 
++If some data that is definitely needed by
++.B sformat
++can not be determined from the disk or the data base,
+ .B sformat
+-can not be determined from the disk or the data base, 
+-.B sformat 
+ will force you to answer all questions of a group.
+-.B Sformat 
+-will only ask question for parameters that are definitely needed or 
++.B Sformat
++will only ask question for parameters that are definitely needed or
+ may be changed on the current disk. The content of the menus differ from disk
+ to disk.
+ .TP
+@@ -786,12 +786,12 @@
+ Several mode pages of the disk are read.
+ This data and the inquiry data is used to search in the disk data base.
+ .br
+-.B Sformat 
++.B Sformat
+ asks:
+ .br
+ .I "Ignore database disk parameters from 'sformat.dat'?
+ .br
+-If you don't want the data from the data base to be used, negotiate the 
++If you don't want the data from the data base to be used, negotiate the
+ appropriate question.
+ Some disks cannot be determined from the fetchable data.
+ This are mainly disks that are connected to a bridge controller e.g.
+@@ -802,7 +802,7 @@
+ capacity and geometry.
+ If there is more than one possible entry for this disk in the data base,
+ .br
+-.B sformat 
++.B sformat
+ asks:
+ .br
+ .I "Select alternate disk type?
+@@ -810,7 +810,7 @@
+ If the disk type menu is entered, all possible data base entries are displayed.
+ The current entry is marked with '*', the default entry is marked with '+'
+ and the entry most similar to the current disk is marked with '~'.
+-A matching factor is displayed in parenthesis. Higher values 
++A matching factor is displayed in parenthesis. Higher values
+ are indicating a better match.
+ .TP
+ Read in label data
+@@ -818,18 +818,18 @@
+ .B sformat
+ reads in the label and ask whether to remember this data.
+ .br
+-.B Sformat 
++.B Sformat
+ asks:
+ .br
+ .I "Ignore old disk Label?
+ .br
+-I you confirm this question and reformat the disk, the old partitioning 
++I you confirm this question and reformat the disk, the old partitioning
+ information will be lost.
+ .TP
+ Disk Parameters Menu
+ If you want to modify some disk parameters answer the next question with 'y'.
+ .br
+-.B Sformat 
++.B Sformat
+ asks:
+ .br
+ .I "Modify Disk Geometry Parameters?
+@@ -841,7 +841,7 @@
+ Error Recovery
+ Error recovery parameters include read/write retry count and similar.
+ .br
+-.B Sformat 
++.B Sformat
+ asks:
+ .br
+ .I "Modify Error recovery Parameters?
+@@ -850,7 +850,7 @@
+ Disconnect Parameter
+ Disconnect parameters are buffer full/empty ratio and bus inactivity limit.
+ .br
+-.B Sformat 
++.B Sformat
+ asks:
+ .br
+ .I "Modify Disconnect Parameters
+@@ -860,7 +860,7 @@
+ If you want to use an alternate label that may be in the data base
+ go into the next menu.
+ .br
+-.B Sformat 
++.B Sformat
+ asks:
+ .br
+ .I "Select alternate Label?
+@@ -868,24 +868,24 @@
+ The current entry is marked with '*', the default entry is marked with '+'.
+ .TP
+ Logical Label Geometry
+-.B Sformat 
+-uses an abstract geometry in the label. This allows to have 
++.B Sformat
++uses an abstract geometry in the label. This allows to have
+ one label for a group of disks. The label geometry menu allows to modify
+ this abstract geometry.
+ .br
+-.B Sformat 
++.B Sformat
+ asks:
+ .br
+ .I "Modify Label Geometry Parameters?
+ .br
+ .TP
+ SCSI Parameters
+-This menu contains questions about command queuing, defect list format and 
++This menu contains questions about command queuing, defect list format and
+ similar.
+-Some disks do not support the default block defect list format. Specify 
+-another format in this case here. If the disk does not support the 
+-SCSI write-verify command, 
+-.B sformat 
++Some disks do not support the default block defect list format. Specify
++another format in this case here. If the disk does not support the
++SCSI write-verify command,
++.B sformat
+ allows to split this into a SCSI write and a SCSI verify command.
+ The data cannot be compared in this case.
+ If the disk type is generally flaky a data base entry can be set up to do
+@@ -893,22 +893,22 @@
+ If the disk will not handle 1000 blocks per verify command because
+ of a firmware bug, a smaller value may be specified here.
+ .br
+-.B Sformat 
++.B Sformat
+ asks:
+ .br
+ .I "Modify SCSI Parameters?
+ .br
+ .TP
+ Grown Defect List
+-If a disk has not been formatted before or has been refurbished, you should 
++If a disk has not been formatted before or has been refurbished, you should
+ clear the old grown defect list to get a clean start. If the disk
+-has bad blocks, 
++has bad blocks,
+ .B sformat
+ will find them after formatting while doing the surface analysis.
+ If the disk has known defects you should negotiate the next question to
+ keep the defect list.
+ .br
+-.B Sformat 
++.B Sformat
+ asks:
+ .br
+ .I "Clear old grown defect list?
+@@ -917,12 +917,12 @@
+ Mode pages
+ If you want to format the disk, you need to set the mode pages before.
+ .br
+-.B Sformat 
++.B Sformat
+ asks:
+ .br
+ .I "Set mode pages (needed for format)?
+ .br
+-However, if you do not want to format the disk, you may negotiate this 
++However, if you do not want to format the disk, you may negotiate this
+ question and will be lead to the label modification menu.
+ .TP
+ Formatting the disk
+@@ -930,7 +930,7 @@
+ If formatting has started, you will see the progress of this process
+ indicated in the used up percentage of the estimated time.
+ .br
+-.B Sformat 
++.B Sformat
+ asks:
+ .br
+ .I "Format Disk destroys all Data. Really?
+@@ -941,14 +941,14 @@
+ After the disk has been formatted or if the formatting has been denied,
+ the label menu is entered.
+ .br
+-.B Sformat 
++.B Sformat
+ asks:
+ .br
+ .I "Print disk label?
+ .br
+ If you want to see the current layout of the disk label, enter 'y'.
+ .br
+-.B Sformat 
++.B Sformat
+ asks:
+ .br
+ .I "Modify disk label?
+@@ -957,42 +957,42 @@
+ .TP
+ Inside the label modification menu
+ .br
+-.B Sformat 
++.B Sformat
+ asks:
+ .br
+ .I "Label: <Quantum XP34300> change ?
+ .br
+ If you want to retain the old label name, enter <CR>, else
+-enter 'y'. 
++enter 'y'.
+ .B Sformat
+ will ask for the new Label name.
+ .br
+-.B Sformat 
++.B Sformat
+ asks:
+ .br
+ .I "Enter disk label: Quantum XP34300
+ .br
+ You are left in the tty line edit mode and may modify the input line (see
+-termio(7) manual page).
++termios(4) manual page).
+ .br
+-.B Sformat 
++.B Sformat
+ asks:
+ .br
+ .I "Volume Name: <> change ?
+ .br
+ If you want to retain the old label name, enter <CR>, else
+-enter 'y'. 
++enter 'y'.
+ .B Sformat
+ will ask for the new Volume name.
+ .br
+-.B Sformat 
++.B Sformat
+ asks:
+ .br
+ .I "Change partition table?
+ .br
+ If you want to change the partition table enter 'y'.
+ .br
+-.B Sformat 
++.B Sformat
+ asks:
+ .br
+ .I "Part     Tag Flag  Cylinders Startsec # of Sec      Size    Blocks
+@@ -1002,29 +1002,29 @@
+ .I "Change ?
+ .br
+ If you want to modify this partition enter 'y', otherwise
+-enter <CR> until 
+-.B sformat 
++enter <CR> until
++.B sformat
+ asks for the partition you want to change.
+ .br
+-.B Sformat 
++.B Sformat
+ asks:
+ .br
+ .I "Enter partition id Tag [root]:
+ .br
+-Enter <CR> if the partition tag is ok for this partition, otherwise 
+-enter '?' to get a list of valid partition tags or enter the new 
++Enter <CR> if the partition tag is ok for this partition, otherwise
++enter '?' to get a list of valid partition tags or enter the new
+ partition tag.
+ .br
+-.B Sformat 
++.B Sformat
+ asks:
+ .br
+ .I "Enter partition permission Flags [wm]:
+ .br
+-Enter <CR> if the partition flag is ok for this partition, otherwise 
+-enter '?' to get a list of valid partition flags or enter the new 
++Enter <CR> if the partition flag is ok for this partition, otherwise
++enter '?' to get a list of valid partition flags or enter the new
+ partition flag.
+ .br
+-.B Sformat 
++.B Sformat
+ asks:
+ .br
+ .I "Enter starting cylinder 0 (0 - 3851)/<cr>:
+@@ -1033,7 +1033,7 @@
+ enter '?' to get a list of possible input.
+ XXX
+ .br
+-.B Sformat 
++.B Sformat
+ asks:
+ .br
+ .I "Enter number of blocks 67580, 31/0/0 (0 - 8395180)/<cr>:
+@@ -1042,7 +1042,7 @@
+ enter '?' to get a list of possible input.
+ XXX
+ .br
+-.B Sformat 
++.B Sformat
+ asks:
+ .br
+ .I "Part     Tag Flag  Cylinders Startsec # of Sec      Size    Blocks
+@@ -1055,17 +1055,17 @@
+ You then will be asked again for all parameters of this partition.
+ Enter 'y' if this partition is now ok.
+ .sp
+-If all partitions are cycled through, 
++If all partitions are cycled through,
+ .B sformat
+ will display the current label.
+ .br
+-.B Sformat 
++.B Sformat
+ asks:
+ .br
+ .I "Use this label?
+ .br
+-If you enter 'y', 
+-.B sformat 
++If you enter 'y',
++.B sformat
+ will update the label on disk and go into the verify mode.
+ Anything else will put you into the label modification mode again.
+ .TP
+@@ -1073,7 +1073,7 @@
+ In disk verification mode,
+ .B sformat
+ will do a surface analysis.
+-If a bad block is encountered, 
++If a bad block is encountered,
+ .B sformat
+ will reassign this bad block.
+ XXX
+@@ -1083,7 +1083,7 @@
+ The number of defects that SCSI disks can handle depends on the defect
+ mapping system they use. There are several possible systems:
+ .PP
+-The mapping system depends on the # of tracks per zone in the 
++The mapping system depends on the # of tracks per zone in the
+ SCSI disk parameters.
+ Mapping area in this table means spare location.
+ .PP
+@@ -1104,20 +1104,20 @@
+ there still may be an additional mapping area at the end of the disk.
+ This is controlled by the alternate tracks per volume parameter.
+ .PP
+-If your disk says 
++If your disk says
+ .I "no defect spare location,
+ you may be able to
+ get extra space by going into the disk parameter menu of sformat
+-and change a value. Note: some disks tell you that some of the 
++and change a value. Note: some disks tell you that some of the
+ values are changeable (there is a range in parenthesis) but
+ actually ignore the new value. You will have to read the values
+ after formatting to see if the new parameters are in effect.
+ 
+ .SH "How To Modify A Label
+-Remember, don't panic. You need no desc calculator to create or modify
++Remember, don't panic. You need no desk calculator to create or modify
+ a partition table.
+ .PP
+-The alternate cylinders are historic relics. In good old days (1982) when 
++The alternate cylinders are historic relics. In good old days (1982) when
+ SMD disks that were not able to do defect mapping have been used,
+ these alternates were added to do the defect mapping in the driver.
+ In these days the space occupied by these spare cylinders really has been
+@@ -1127,17 +1127,17 @@
+ an outdated copy of the defect list is only able to hold 127 defects :-(.
+ 
+ .PP
+-The label geometry cannot be changed in the partition menu. It must be set 
+-before from the 
++The label geometry cannot be changed in the partition menu. It must be set
++before from the
+ .B "Label Parameters
+ menu.
+ .TP 30
+ Print disk label?
+-If this question is answered with 'y', the label and partitioning info 
++If this question is answered with 'y', the label and partitioning info
+ will be displayed.
+ .TP
+ Modify disk label?
+-If this question is answered with 'y', the label modification menu will 
++If this question is answered with 'y', the label modification menu will
+ be entered.
+ .TP
+ Label: <Toshiba 1015MB> change ?
+@@ -1153,7 +1153,7 @@
+ 
+ .SH "Graphical Label Display
+ .PP
+-When printing the label or partition data, 
++When printing the label or partition data,
+ .B sformat
+ uses a simple ASCII graphical display to visualize the layout of the partitions.
+ The symbols used in this graphic display are described below.
+@@ -1162,7 +1162,7 @@
+ .PP
+ .nf
+ .na
+-.cs R 4*\w'x'/\n(.s
++.ft C
+ a I--/
+ b    /-----------/
+ c I----------------------------------------------------------------------I
+@@ -1174,7 +1174,7 @@
+ WARNING:
+ part 'e' has unaligned start.
+ part 'g' has unaligned start.
+-.cs R
++.ft
+ .ad
+ .fi
+ .fi
+@@ -1188,7 +1188,7 @@
+ Partition starts before zero or exceeds end of disk.
+ .TP
+ /
+-Partition has an adjacent start or end with another 
++Partition has an adjacent start or end with another
+ partition (no error).
+ .TP
+ +
