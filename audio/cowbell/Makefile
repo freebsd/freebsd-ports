@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	cowbell
-PORTVERSION=	0.2.5.1
-PORTREVISION=	1
+PORTVERSION=	0.2.6.2
 CATEGORIES=	audio gnome
 MASTER_SITES=	http://more-cowbell.org/releases/
 
@@ -24,7 +23,9 @@ USE_GNOME=	gnomehack gnomeprefix gnometarget intltool
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
+USE_GETTEXT=	yes
+USE_ICONV=	yes
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.pre.mk>
 
