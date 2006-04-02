@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.djvuzone.org/open/
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	AT&T's DjVu: The Technology for Scanned Documents on the Web
 
+BROKEN=		Does not compile
+
 INSTALLS_SHLIB=	yes
 IS_INTERACTIVE=	some think, the AT&T license needs to be acked by the user
 HAS_CONFIGURE=	yes
