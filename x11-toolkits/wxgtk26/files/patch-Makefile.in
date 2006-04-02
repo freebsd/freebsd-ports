@@ -1,6 +1,6 @@
---- Makefile.in.orig	Tue Sep 20 22:03:25 2005
-+++ Makefile.in	Wed Oct 12 23:21:27 2005
-@@ -23,6 +23,7 @@
+--- Makefile.in.orig	Tue Mar 21 11:39:27 2006
++++ Makefile.in	Tue Mar 21 11:54:48 2006
+@@ -24,6 +24,7 @@
  SONAME_FLAG = @SONAME_FLAG@
  STRIP = @STRIP@
  INSTALL_PROGRAM = @INSTALL_PROGRAM@
@@ -8,7 +8,7 @@
  INSTALL_DATA = @INSTALL_DATA@
  INSTALL_DIR = @INSTALL_DIR@
  srcdir = @srcdir@
-@@ -9153,13 +9154,15 @@
+@@ -9387,18 +9388,15 @@
  
  all: $(__wxregex___depname) $(__wxzlib___depname) $(__wxpng___depname) $(__wxjpeg___depname) $(__wxtiff___depname) $(__wxodbc___depname) $(__wxexpat___depname) $(__monodll___depname) $(__monolib___depname) $(__basedll___depname) $(__baselib___depname) $(__netdll___depname) $(__netlib___depname) $(__coredll___depname) $(__corelib___depname) $(__advdll___depname) $(__advlib___depname) $(__mediadll___depname) $(__medialib___depname) $(__odbcdll___depname) $(__odbclib___depname) $(__dbgriddll___depname) $(__dbgridlib___depname) $(__htmldll___depname) $(__htmllib___depname) $(__qadll___depname) $(__qalib___depname) $(__xmldll___depname) $(__xmllib___depname) $(__xrcdll___depname) $(__xrclib___depname) $(__gldll___depname) $(__gllib___depname) $(__sound_sdl___depname) $(__wxrc___depname) $(__cocoa_res___depname)
  
@@ -23,11 +23,16 @@
  	$(INSTALL_DIR) $(DESTDIR)$(datadir)/bakefile/presets
  	(cd $(srcdir)/build/bakefiles/wxpresets/presets/ ; $(INSTALL_DATA)  wx.bkl wx_unix.bkl wx_win32.bkl $(DESTDIR)$(datadir)/bakefile/presets)
 -	$(INSTALL_DIR) $(DESTDIR)$(libdir)/wx/include/$(TOOLCHAIN_FULLNAME)/wx
--	(cd ./ ; $(INSTALL_DATA)  lib/wx/include/$(TOOLCHAIN_FULLNAME)/wx/setup.h $(DESTDIR)$(libdir)/wx/include/$(TOOLCHAIN_FULLNAME)/wx)
+-	for f in setup.h $(RCDEFS_H); do \
+-	if test ! -d $(DESTDIR)$(libdir)/wx/include/$(TOOLCHAIN_FULLNAME)/wx/`dirname $$f` ; then \
+-	$(INSTALL_DIR) $(DESTDIR)$(libdir)/wx/include/$(TOOLCHAIN_FULLNAME)/wx/`dirname $$f`; \
+-	fi; \
+-	$(INSTALL_DATA) ./lib/wx/include/$(TOOLCHAIN_FULLNAME)/wx//$$f $(DESTDIR)$(libdir)/wx/include/$(TOOLCHAIN_FULLNAME)/wx/$$f; \
+-	done
  	$(INSTALL_DIR) $(DESTDIR)$(includedir)/wx-$(WX_RELEASE)$(WX_FLAVOUR)
  	for f in $(ALL_HEADERS); do \
  	if test ! -d $(DESTDIR)$(includedir)/wx-$(WX_RELEASE)$(WX_FLAVOUR)/`dirname $$f` ; then \
-@@ -9692,9 +9695,7 @@
+@@ -9931,9 +9929,7 @@
  
  install-wxconfig: 
  	$(INSTALL_DIR) $(DESTDIR)$(bindir)
