@@ -13,6 +13,8 @@ MASTER_SITES=	http://rbp.chat.ru/pub/nwlib/
 MAINTAINER=	bp@FreeBSD.org
 COMMENT=	Client for Novell NetWare servers
 
+BROKEN=		Incorrect pkg-plist
+
 .if !exists(/usr/src/sys/kern/vnode_if.src)
 IGNORE=		requires kernel source
 .endif
