@@ -1,0 +1,32 @@
+--- configure.orig	Sun Mar  6 19:48:16 2005
++++ configure	Fri Mar 31 13:44:10 2006
+@@ -5103,6 +5103,14 @@
+ 
+   fi
+ 
++
++else
++
++   # Not a target library, so we set things up to run the test suite.
++   CHECK=check-cplus-dem
++
++fi
++
+   # We may wish to install the target headers somewhere.
+   # Check whether --enable-install-libiberty or --disable-install-libiberty was given.
+ if test "${enable_install_libiberty+set}" = set; then
+@@ -5124,14 +5132,6 @@
+       target_header_dir="${enable_install_libiberty}"
+       ;;
+   esac
+-
+-
+-else
+-
+-   # Not a target library, so we set things up to run the test suite.
+-   CHECK=check-cplus-dem
+-
+-fi
+ 
+ 
+ 
