@@ -19,6 +19,8 @@ COMMENT=	Citadel/UX Communications Server
 
 LIB_DEPENDS=    gdbm:${PORTSDIR}/databases/gdbm
 
+FORBIDDEN=	http://www.FreeBSD.org/ports/portaudit/4c005a5e-2541-4d95-80a0-00c76919aa66.html
+
 WRKSRC=		${WRKDIR}/citadel
 GNU_CONFIGURE=  yes
 USE_GMAKE=      yes
