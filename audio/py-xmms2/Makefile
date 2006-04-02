@@ -11,13 +11,15 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	alex@foxybanana.com
 COMMENT=	Python Bindings for XMMS2
 
-BUILD_DEPENDS=	pyrex:${PORTSDIR}/devel/pyrex
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/Pyrex/__init__.py:${PORTSDIR}/devel/pyrex \
+		${LOCALBASE}/lib/libxmmsclient.so:${PORTSDIR}/audio/xmms2
+RUN_DEPENDS=	${LOCALBASE}/lib/libxmmsclient.so:${PORTSDIR}/audio/xmms2
 
 MASTERDIR=	${.CURDIR}/../xmms2
 
 USE_PYTHON=	yes
 
-PLIST_FILES=	${PYTHONPREFIX_SITELIBDIR}/xmmsclient.so
+PLIST=		${.CURDIR}/pkg-plist
 
 SCONS_TARGET=	src/clients/lib/python/xmmsclient.so
 XMMS2_SLAVE=	python
