@@ -61,6 +61,7 @@
     SUBDIR += crystalspace
     SUBDIR += cthumb
     SUBDIR += curator
+    SUBDIR += cuttlefish
     SUBDIR += danpei
     SUBDIR += dataplot
     SUBDIR += dc20ctrl
