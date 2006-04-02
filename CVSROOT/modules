@@ -10069,7 +10069,7 @@ pkg_rmleaves	ports/sysutils/pkg_rmleaves
 pkg_trackinst	ports/sysutils/pkg_trackinst
 pkg_tree	ports/sysutils/pkg_tree
 pkgconfig	ports/devel/pkgconfig
-pkgfe           ports/sysutils/pkgfe
+pkgfe		ports/sysutils/pkgfe
 pks		ports/security/pks
 pktsuckers	ports/security/pktsuckers
 pl-aspell	ports/polish/aspell
