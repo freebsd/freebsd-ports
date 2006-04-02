@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bruteforceblocker
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.3
 CATEGORIES=	security
 MASTER_SITES=	http://danger.rulez.sk/projects/bruteforceblocker/ \
 		${MASTER_SITE_LOCAL}
@@ -17,7 +17,8 @@ COMMENT=	Checks for SSH bruteforce and blocks given IPs
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Unix/Syslog.pm:${PORTSDIR}/sysutils/p5-Unix-Syslog \
 		${SITE_PERL}/Sys/Hostname/Long.pm:${PORTSDIR}/sysutils/p5-Sys-Hostname-Long \
-		${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww
+		${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
+		${SITE_PERL}/${PERL_ARCH}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS
 
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
