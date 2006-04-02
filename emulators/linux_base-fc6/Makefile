@@ -8,6 +8,7 @@
 
 PORTNAME=		fc
 PORTVERSION=		3
+PORTREVISION=		1
 CATEGORIES=		emulators linux
 MASTER_SITES=		${MASTER_SITE_FEDORA_LINUX}
 MASTER_SITE_SUBDIR=	${PORTVERSION}/${LINUX_RPM_ARCH}/os/Fedora/RPMS \
@@ -41,9 +42,11 @@ BIN_DISTFILES=	basesystem-8.0-4.noarch.rpm \
 		libacl-2.2.23-5.${LINUX_RPM_ARCH}.rpm \
 		libattr-2.4.16-3.${LINUX_RPM_ARCH}.rpm \
 		libgcc-3.4.2-6.fc3.${LINUX_RPM_ARCH}.rpm \
+		libselinux-1.17.14-1.${LINUX_RPM_ARCH}.rpm \
 		libstdc++-3.4.2-6.fc3.${LINUX_RPM_ARCH}.rpm \
 		libtermcap-2.0.8-39.${LINUX_RPM_ARCH}.rpm \
 		ncurses-5.4-13.${LINUX_RPM_ARCH}.rpm \
+		pcre-4.5-3.${LINUX_RPM_ARCH}.rpm \
 		popt-1.9.1-21.${LINUX_RPM_ARCH}.rpm \
 		readline-4.3-13.${LINUX_RPM_ARCH}.rpm \
 		rpm-4.3.2-21.${LINUX_RPM_ARCH}.rpm \
@@ -68,8 +71,10 @@ SRC_DISTFILES+= basesystem-8.0-4.src.rpm \
 		glib-1.2.10-15.src.rpm \
 		glibc-2.3.3-74.src.rpm \
 		grep-2.5.1-31.src.rpm \
+		libselinux-1.17.14-1.src.rpm \
 		libtermcap-2.0.8-39.src.rpm \
 		ncurses-5.4-13.src.rpm \
+		pcre-4.5-3.src.rpm \
 		readline-4.3-13.src.rpm \
 		rpm-4.3.2-21.src.rpm \
 		setserial-2.17-17.src.rpm \
@@ -86,7 +91,6 @@ CONFLICTS=		linux_base-7* linux_base-deb* linux_base-gentoo* \
 ONLY_FOR_ARCHS=		i386 amd64
 LINUX_RPM_ARCH=		i386
 PREFIX?=		${LINUXBASE}
-NO_BUILD=		yes
 NO_FILTER_SHLIBS=	yes
 NO_MTREE=		yes
 NO_WRKSUBDIR=		yes
@@ -129,7 +133,7 @@ LATEST_LINK:=		${LATEST_LINK:C/linux/linux32/}
 ARCH=			i386
 .endif
 
-post-extract:
+do-build:
 	@for D in ${REMOVE_DIRS}; do \
 		${RM} -rf ${WRKSRC}/$$D; \
 	done
