@@ -6,6 +6,7 @@
 
 PORTNAME=	libgadu
 PORTVERSION=	20051229
+PORTREVISION=	1
 CATEGORIES=	polish net
 MASTER_SITES=	http://bsdguru.org/distfiles/
 
@@ -18,7 +19,7 @@ USE_GNOME=		gnomehack pkgconfig
 USE_AUTOTOOLS=		aclocal:15 autoheader:259 autoconf:259
 ACLOCAL_ARGS=		-I ${WRKSRC}/m4
 
-CONFIGURE_ARGS=		--enable-shared --disable-static
+CONFIGURE_ARGS=		--enable-shared --disable-static --without-openssl
 
 INSTALLS_SHLIB=		yes
 
