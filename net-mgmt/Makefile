@@ -78,6 +78,7 @@
     SUBDIR += libsmi
     SUBDIR += mbrowse
     SUBDIR += mrtg
+    SUBDIR += nagcon
     SUBDIR += nagios
     SUBDIR += nagios-plugins
     SUBDIR += nagios-radauth-plugin
