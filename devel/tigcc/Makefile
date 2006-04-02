@@ -19,6 +19,8 @@ COMMENT=	C compiler for the TI89, 92, and 92+ calculators
 BUILD_DEPENDS=	cdialog:${PORTSDIR}/devel/cdialog \
 		bash:${PORTSDIR}/shells/bash2
 
+BROKEN=		Size mismatch
+
 IS_INTERACTIVE=	yes
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
