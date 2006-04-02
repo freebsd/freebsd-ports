@@ -8,7 +8,7 @@
 
 PORTNAME=	libetpan
 PORTVERSION=	0.44
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -38,6 +38,9 @@ LIB_DEPENDS+=	sasl2.2:${PORTSDIR}/security/cyrus-sasl2
 .else
 CONFIGURE_ARGS+=	--without-sasl
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's:libetpan-config.h:libetpan/libetpan-config.h:' ${WRKSRC}/src/data-types/mailstream_types.h
 
 post-install:
 	@${FIND} ${PREFIX}/include/libetpan* ! -type d | ${SED} \
