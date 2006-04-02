@@ -33,3 +33,4 @@ share/applications/mined.desktop
 @dirrm %%DATADIR%%/conf_user
 @dirrm %%DATADIR%%/bin
 @dirrm %%DATADIR%%
+@dirrmtry share/applications
