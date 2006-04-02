@@ -1,3 +1,6 @@
 MD5 (bacula-1.38.6.tar.gz) = 219382ae85671c8ff13f375b6d9aa079
 SHA256 (bacula-1.38.6.tar.gz) = e671f3ff20c97e8392908920ae9ca38f814359c5b85b89625d43df9ad7349ed3
 SIZE (bacula-1.38.6.tar.gz) = 1952827
+MD5 (bacula-docs-1.38.6.tar.gz) = 1d62608a1a0d2fa7776277f80fa29c61
+SHA256 (bacula-docs-1.38.6.tar.gz) = 18d536368898a6dc74f8e782396dbe7b5d08e1724d7e26a2a4bb61a6795cf01a
+SIZE (bacula-docs-1.38.6.tar.gz) = 22696381
