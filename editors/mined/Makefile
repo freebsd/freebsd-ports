@@ -52,6 +52,7 @@ pre-build:
 	@${ECHO_MSG}
 
 post-install:
+	${MKDIR} ${DESKTOPDIR}
 	${INSTALL_DATA} ${WRKSRC}/usrshare/setup_install/mined.desktop	\
 		${DESKTOPDIR}
 .if !defined(NOPORTDOCS)
