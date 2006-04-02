@@ -6817,6 +6817,7 @@ nInvaders	ports/games/nInvaders
 nab		ports/biology/nab
 nadar		ports/games/nadar
 nag		ports/deskutils/nag
+nagcon		ports/net-mgmt/nagcon
 nagios		ports/net-mgmt/nagios
 nagios-base-logos	ports/misc/nagios-base-logos
 nagios-plugins	ports/net-mgmt/nagios-plugins
