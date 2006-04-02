@@ -45,9 +45,6 @@ lib/libxmmsclient-glib.a
 lib/libxmmsclient-glib.so
 lib/libxmmsclient.a
 lib/libxmmsclient.so
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/xmmsclient.so
-%%RUBY%%%%RUBY_SITELIBDIR%%/xmmsclient_glib.so
-%%RUBY%%%%RUBY_SITELIBDIR%%/xmmsclient.so
 %%CURL%%lib/xmms2/libxmms_curl_http.so
 lib/xmms2/libxmms_diskwrite.so
 lib/xmms2/libxmms_eq.so
