@@ -7,7 +7,7 @@
 
 PORTNAME=	sylpheed-claws
 PORTVERSION=	2.0.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail news ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sylpheed-claws
@@ -52,6 +52,7 @@ OPTIONS=	ALL		"Enable all options."			off \
 		ASPELL		"Enable spell checking support."	on \
 		CLAMAV		"Enable virus-checking support."	off \
 		COMPFACE	"Enable X-Face support."		on \
+		DEBUG		"Enable debug support."			off \
 		GNOMEPRINT	"Enable extended print support (GNOME)."	off \
 		GPGME		"Enable PGP/GnuPG support using GPGME."	off \
 		JPILOT		"Enable JPilot support."		off \
@@ -152,6 +153,9 @@ CONFIGURE_ARGS+=	--disable-pgpmime-plugin --disable-pgpcore-plugin \
 PLIST_SUB+=	THEMES="@comment "
 .else
 PLIST_SUB+=	THEMES=""
+.endif
+.if defined(WITH_DEBUG) || defined(WITH_ALL)
+CONFIGURE_ARGS+=	--enable-maintainer-mode --enable-crash-dialog
 .endif
 
 post-extract:
