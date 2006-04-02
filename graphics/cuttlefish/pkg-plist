@@ -1,0 +1,22 @@
+bin/cuttlefish.pl
+lib/cuttlefish/Canvas.pm
+lib/cuttlefish/Control.pm
+lib/cuttlefish/Histogram.pm
+lib/cuttlefish/Image.pm
+lib/cuttlefish/Legend.pm
+lib/cuttlefish/Map.pm
+lib/cuttlefish/Util.pm
+%%DATADIR%%/caida_logo.gif
+%%DATADIR%%/caida_logo_gray.gif
+%%DATADIR%%/japan-water-okinawa.jpg
+%%DATADIR%%/japan-water.jpg
+%%DATADIR%%/world-day.jpg
+%%DATADIR%%/world-water.jpg
+%%EXAMPLESDIR%%/japan-traces-small.config
+%%EXAMPLESDIR%%/japan-traces.config
+%%EXAMPLESDIR%%/nyxem-hosts-both.config
+%%EXAMPLESDIR%%/witty-combined-small.config
+%%EXAMPLESDIR%%/witty-combined.config
+@dirrm %%EXAMPLESDIR%%
+@dirrm %%DATADIR%%
+@dirrm lib/cuttlefish
