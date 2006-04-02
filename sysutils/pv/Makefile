@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	pv
-PORTVERSION=	0.9.2
+PORTVERSION=	0.9.6
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		http://dragon.roe.ch/mirrors/distfiles/pv/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pipeviewer
 
 MAINTAINER=	daniel@roe.ch
