@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	krusader
-PORTVERSION=	1.60.0
-PORTREVISION=	2
+PORTVERSION=	1.70.0
 CATEGORIES=	x11-fm kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=krusader
@@ -18,6 +17,7 @@ COMMENT=	A two window file-manager for KDE, like midnight or norton commander
 USE_KDELIBS_VER=3
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
+USE_GETTEXT=	yes
 
 QTDIR?=${X11BASE}/bin
 KDEDIR?=${LOCALBASE}/bin

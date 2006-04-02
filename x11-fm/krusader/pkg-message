@@ -1,4 +1,5 @@
-Krusder supports the following additional archivers:
+
+Krusader supports the following additional archivers:
 
 archivers/zip
 archivers/unzip
@@ -15,3 +16,4 @@ Dependencies and write '/usr/libexec/locate.updatedb' into the field 'updatedb'.
 Krusader allows to diff file with kdiff3 (textproc/kdiff3) or kompare (devel/kdesdk).
 
 Krusader supports krename (sysutils/krename) for renaming operations.
+

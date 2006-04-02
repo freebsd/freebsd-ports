@@ -1,6 +1,6 @@
-Krusader is an advanced twin panel (commander style) file manager for KDE 3.1
-or later, similar to Midnight or Total Commander, with many extras. It 
-provides all the file-management features you could possibly want.
+Krusader is an advanced twin panel (commander style) file manager for KDE,
+similar to Midnight or Total Commander, with many extras. It provides all
+the file management features you could possibly want.
 
 Plus: extensive archive handling, mounted filesystem support, FTP, advanced 
 search module, viewer/editor, directory synchronisation, file content 
