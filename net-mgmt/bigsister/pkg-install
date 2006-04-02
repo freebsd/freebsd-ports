@@ -2,7 +2,7 @@
 
 PATH=/bin:/usr/sbin
 
-SANDBOX_DIR="${PKG_PREFIX}/bigsister"
+SANDBOX_DIR="${PKG_PREFIX}"
 
 if [ -z "${BS_USER}" ]; then
     BS_USER=bs

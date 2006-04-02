@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	bigsister
-PORTVERSION=	0.98c8
+PORTVERSION=	1.02
 CATEGORIES=	net-mgmt
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=		big-sister-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	freebsd@troback.com
 COMMENT=	SNMP-based network and system monitor with web interface
 
 RUN_DEPENDS=	\
@@ -31,41 +31,26 @@ RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/SNMP.pm:${PORTSDIR}/net-mgmt/p5-SNMP
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/SNMP.pm:${PORTSDIR}/net-mgmt/net-snmp
 .endif
 
-GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_PERL5=	yes
-USE_RC_SUBR=	yes
-USE_REINPLACE=	yes
+USE_RC_SUBR=	${PORTNAME}.sh
 NO_BUILD=	yes
+HAS_CONFIGURE=	yes
 
-WRKSRC=		${WRKDIR}/bs-${PORTVERSION}
+WRKSRC=		${WRKDIR}/big-sister-${PORTVERSION}
 
-BS_USER?=		bs
-BS_PERL_EXT?=		pl
-BS_URL?=		/bs
-BS_CGI_PATH?=		/cgi-bin
-
-SED_SCRIPT=	-e 's,%%PREFIX%%,${PREFIX},g' \
-		-e 's,%%RC_SUBR%%,${RC_SUBR},g'
-
-post-configure:
-	@${SED} ${SED_SCRIPT} < ${FILESDIR}/${PORTNAME}.sh > ${WRKDIR}/${PORTNAME}.sh
+BS_USER?=	bs
+BS_PERL_EXT?=	pl
+BS_URL?=	/bs
+BS_CGI_PATH?=	/cgi-bin
+CONFIGURE_ARGS=	\
+	--prefix=${PREFIX}/${PORTNAME} \
+	--with-cgi=${BS_CGI_PATH} \
+	--with-perlext=${BS_PERL_EXT} \
+	--with-url=${BS_URL} \
+	--with-user=${BS_USER}
 
 pre-install:
-	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-
-post-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${PREFIX}/etc/rc.d
-	${RM} -f ${PREFIX}/bigsister/bin/Statusmon/DisplayCFG.pm.orig \
-		 ${PREFIX}/bigsister/bin/Statusmon/bs_evgen.pm.orig
+	@${SETENV} PKG_PREFIX=${PREFIX}/${PORTNAME} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 .include <bsd.port.mk>
-
-#
-# XXX: Override default prefix behaviour for GNU_CONFIGURE.
-#
-CONFIGURE_ARGS=		--prefix=${PREFIX}/bigsister ${CONFIGURE_TARGET}
-CONFIGURE_ARGS+=	--with-cgi=${BS_CGI_PATH}
-CONFIGURE_ARGS+=	--with-perlext=${BS_PERL_EXT}
-CONFIGURE_ARGS+=	--with-url=${BS_URL}
-CONFIGURE_ARGS+=	--with-user=${BS_USER}
