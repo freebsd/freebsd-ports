@@ -481,6 +481,7 @@ bin/swig%%VER%%
 %%EXAMPLESDIR%%/%%PORTVERSION%%/modula3/typemap/Makefile
 %%EXAMPLESDIR%%/%%PORTVERSION%%/modula3/typemap/example.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/mzscheme/check.list
+%%EXAMPLESDIR%%/%%PORTVERSION%%/mzscheme/integers_runme.scm
 %%EXAMPLESDIR%%/%%PORTVERSION%%/mzscheme/multimap/Makefile
 %%EXAMPLESDIR%%/%%PORTVERSION%%/mzscheme/multimap/example.c
 %%EXAMPLESDIR%%/%%PORTVERSION%%/mzscheme/multimap/example.i
@@ -1160,6 +1161,8 @@ bin/swig%%VER%%
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/bools.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/cast_operator.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/casts.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/li_factory.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/integers.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/cffi/Makefile
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/cffi/Makefile.in
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/char_constant.i
@@ -1182,6 +1185,7 @@ bin/swig%%VER%%
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/chicken/import_nomodule_runme.ss
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/chicken/imports_runme.ss
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/chicken/inherit_missing_runme.ss
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/chicken/integers_runme.ss
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/chicken/li_std_string_runme.ss
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/chicken/li_std_string_runme_proxy.ss
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/chicken/li_typemaps_runme.ss
@@ -1411,6 +1415,7 @@ bin/swig%%VER%%
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/guile/import_nomodule_runme.scm
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/guile/imports_runme.scm
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/guile/inherit_missing_runme.scm
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/guile/integers_runme.scm
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/guile/li_std_string_runme.scm
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/guile/li_typemaps_runme.scm
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/guile/list_vector_runme.scm
@@ -1783,6 +1788,7 @@ bin/swig%%VER%%
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/li_cpointer_runme.py
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/li_cstring_runme.py
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/li_cwstring_runme.py
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/li_factory_runme.py
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/li_implicit_runme.py
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/li_std_carray.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/li_std_carray_runme.py
@@ -1803,6 +1809,7 @@ bin/swig%%VER%%
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/li_std_wstream_runme.py
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/li_std_wstring.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/li_std_wstring_runme.py
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/hugemod.pl
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/minherit_runme.py
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/mod_runme.py
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/namespace_class_runme.py
@@ -1952,6 +1959,7 @@ bin/swig%%VER%%
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/li_std_pair_runme.rb
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/li_std_string_runme.rb
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/li_std_vector_runme.rb
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/li_factory_runme.rb
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/minherit_runme.rb
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/namespace_typemap_runme.rb
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/naming.i
@@ -2029,6 +2037,7 @@ bin/swig%%VER%%
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/schemerunme/import_nomodule.scm
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/schemerunme/imports.scm
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/schemerunme/inherit_missing.scm
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/schemerunme/integers.scm
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/schemerunme/li_std_string.scm
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/schemerunme/li_typemaps.scm
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/schemerunme/li_typemaps_proxy.scm
@@ -2090,6 +2099,8 @@ bin/swig%%VER%%
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/tcl/primitive_types_runme.tcl
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/tcl/profiletest_runme.tcl
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/tcl/reference_global_vars_runme.tcl
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/tcl/union.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/tcl/union_runme.tcl
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/tcl/unions_runme.tcl
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/template.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/template_arg_replace.i
@@ -2236,6 +2247,7 @@ bin/swig%%VER%%
 %%EXAMPLESDIR%%/%%PORTVERSION%%/xml/gnarly.i
 %%DATADIR%%/%%PORTVERSION%%/allegrocl/allegrocl.swg
 %%DATADIR%%/%%PORTVERSION%%/allegrocl/longlongs.i
+%DATADIR%%/%%PORTVERSION%%/allegrocl/inout_typemaps.i
 %%DATADIR%%/%%PORTVERSION%%/allegrocl/typemaps.i
 %%DATADIR%%/%%PORTVERSION%%/allkw.swg
 %%DATADIR%%/%%PORTVERSION%%/attribute.i
@@ -2319,6 +2331,7 @@ bin/swig%%VER%%
 %%DATADIR%%/%%PORTVERSION%%/java/stl.i
 %%DATADIR%%/%%PORTVERSION%%/java/typemaps.i
 %%DATADIR%%/%%PORTVERSION%%/java/various.i
+%%DATADIR%%/%%PORTVERSION%%/lua/_std_common.i
 %%DATADIR%%/%%PORTVERSION%%/lua/lua.swg
 %%DATADIR%%/%%PORTVERSION%%/lua/luarun.swg
 %%DATADIR%%/%%PORTVERSION%%/lua/std_deque.i
@@ -2374,6 +2387,7 @@ bin/swig%%VER%%
 %%DATADIR%%/%%PORTVERSION%%/perl5/cpointer.i
 %%DATADIR%%/%%PORTVERSION%%/perl5/cstring.i
 %%DATADIR%%/%%PORTVERSION%%/perl5/exception.i
+%%DATADIR%%/%%PORTVERSION%%/perl5/factory.i
 %%DATADIR%%/%%PORTVERSION%%/perl5/jstring.i
 %%DATADIR%%/%%PORTVERSION%%/perl5/noembed.h
 %%DATADIR%%/%%PORTVERSION%%/perl5/perl5.swg
@@ -2440,6 +2454,7 @@ bin/swig%%VER%%
 %%DATADIR%%/%%PORTVERSION%%/python/embed.i
 %%DATADIR%%/%%PORTVERSION%%/python/embed15.i
 %%DATADIR%%/%%PORTVERSION%%/python/exception.i
+%%DATADIR%%/%%PORTVERSION%%/python/factory.i
 %%DATADIR%%/%%PORTVERSION%%/python/file.i
 %%DATADIR%%/%%PORTVERSION%%/python/implicit.i
 %%DATADIR%%/%%PORTVERSION%%/python/jstring.i
@@ -2499,6 +2514,7 @@ bin/swig%%VER%%
 %%DATADIR%%/%%PORTVERSION%%/python/typemaps.i
 %%DATADIR%%/%%PORTVERSION%%/python/wchar.i
 %%DATADIR%%/%%PORTVERSION%%/ruby/Makefile.swig
+%%DATADIR%%/%%PORTVERSION%%/ruby/argcargv.i
 %%DATADIR%%/%%PORTVERSION%%/ruby/attribute.i
 %%DATADIR%%/%%PORTVERSION%%/ruby/carrays.i
 %%DATADIR%%/%%PORTVERSION%%/ruby/cdata.i
@@ -2510,6 +2526,7 @@ bin/swig%%VER%%
 %%DATADIR%%/%%PORTVERSION%%/ruby/embed.i
 %%DATADIR%%/%%PORTVERSION%%/ruby/exception.i
 %%DATADIR%%/%%PORTVERSION%%/ruby/extconf.rb
+%%DATADIR%%/%%PORTVERSION%%/ruby/factory.i
 %%DATADIR%%/%%PORTVERSION%%/ruby/file.i
 %%DATADIR%%/%%PORTVERSION%%/ruby/jstring.i
 %%DATADIR%%/%%PORTVERSION%%/ruby/progargcargv.i
@@ -2589,6 +2606,7 @@ bin/swig%%VER%%
 %%DATADIR%%/%%PORTVERSION%%/tcl/cstring.i
 %%DATADIR%%/%%PORTVERSION%%/tcl/cwstring.i
 %%DATADIR%%/%%PORTVERSION%%/tcl/exception.i
+%%DATADIR%%/%%PORTVERSION%%/tcl/factory.i
 %%DATADIR%%/%%PORTVERSION%%/tcl/jstring.i
 %%DATADIR%%/%%PORTVERSION%%/tcl/std_common.i
 %%DATADIR%%/%%PORTVERSION%%/tcl/std_deque.i
@@ -2629,6 +2647,7 @@ bin/swig%%VER%%
 %%DATADIR%%/%%PORTVERSION%%/typemaps/cwstring.swg
 %%DATADIR%%/%%PORTVERSION%%/typemaps/enumint.swg
 %%DATADIR%%/%%PORTVERSION%%/typemaps/exception.swg
+%%DATADIR%%/%%PORTVERSION%%/typemaps/factory.swg
 %%DATADIR%%/%%PORTVERSION%%/typemaps/fragments.swg
 %%DATADIR%%/%%PORTVERSION%%/typemaps/implicit.swg
 %%DATADIR%%/%%PORTVERSION%%/typemaps/inoutlist.swg
