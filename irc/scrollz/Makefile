@@ -14,6 +14,8 @@ DISTNAME=	ScrollZ-${PORTVERSION}
 MAINTAINER=	damm@yazzy.org
 COMMENT=	Enhanced ircII client that supports scripts, colors, and more
 
+BROKEN=		Unfetchable
+
 USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
 IS_INTERACTIVE=	yes
