@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	gioria@FreeBSD.org
 COMMENT=	General purpose TCP/IP proxy system
 
+BROKEN=		Unfetchable
+
 USE_BZIP2=	yes
 IS_INTERACTIVE=	YES
 PORTDOCS=	Manual.htm tutor-jp.htm tutor-en.htm
