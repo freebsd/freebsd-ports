@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	metapixel
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.complang.tuwien.ac.at/~schani/metapixel/ \
 		http://dragon.roe.ch/mirrors/distfiles/metapixel/
@@ -18,7 +18,6 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 
 USE_GETOPT_LONG=yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 MAKE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -I." \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
@@ -31,9 +30,6 @@ MAN1=		metapixel.1
 
 post-patch:
 	@${RM} ${WRKSRC}/getopt.h
-	@${MV} ${WRKSRC}/sizesort ${WRKSRC}/metapixel-sizesort
-	@${REINPLACE_CMD} -e 's/imagesize/metapixel-imagesize/' \
-				  ${WRKSRC}/metapixel-sizesort
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/metapixel ${PREFIX}/bin
