@@ -13,7 +13,7 @@ CATEGORIES=	databases gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.8
 
-MAINTAINER=	gnome@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNOME database designed
 
 LIB_DEPENDS=	bakery-2.4:${PORTSDIR}/x11-toolkits/bakery \
@@ -32,6 +32,8 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 INSTALLS_OMF=	yes
+
+BROKEN=	needs an update to 1.0
 
 .include <bsd.port.pre.mk>
 
