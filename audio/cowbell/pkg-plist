@@ -3,4 +3,16 @@ lib/cowbell/cowbell.exe
 lib/cowbell/cowbell.exe.config
 share/gnome/applications/cowbell.desktop
 share/gnome/pixmaps/cowbell.png
+share/locale/de/LC_MESSAGES/cowbell.mo
+share/locale/en_CA/LC_MESSAGES/cowbell.mo
+share/locale/es/LC_MESSAGES/cowbell.mo
+share/locale/fi/LC_MESSAGES/cowbell.mo
+share/locale/fr/LC_MESSAGES/cowbell.mo
+share/locale/hu/LC_MESSAGES/cowbell.mo
+share/locale/ja/LC_MESSAGES/cowbell.mo
+share/locale/nb/LC_MESSAGES/cowbell.mo
+share/locale/no/LC_MESSAGES/cowbell.mo
+share/locale/pt_BR/LC_MESSAGES/cowbell.mo
+share/locale/sv/LC_MESSAGES/cowbell.mo
+share/locale/tr/LC_MESSAGES/cowbell.mo
 @dirrm lib/cowbell
