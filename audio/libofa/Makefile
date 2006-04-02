@@ -19,6 +19,8 @@ LIB_DEPENDS=	fftw3.3:${PORTSDIR}/math/fftw3 \
 
 USE_GNOME=	pkgconfig
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 INSTALLS_SHLIB=	yes
 
 post-configure:
