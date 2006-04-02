@@ -7,15 +7,18 @@
 
 PORTNAME=	xmms2
 PORTVERSION=	0.2.d.4
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-0.2DrDolittle
 
 MAINTAINER=	alex@foxybanana.com
+.if !defined(XMMS2_SLAVE)
 COMMENT=	Rewrite of xmms as a client/server system (developer release)
+.endif
 
-BUILD_DEPENDS=	scons:${PORTSDIR}/devel/scons
+BUILD_DEPENDS+=	scons:${PORTSDIR}/devel/scons
 .if !defined(XMMS2_SLAVE)
 LIB_DEPENDS=	mad.2:${PORTSDIR}/audio/libmad \
 		vorbis.3:${PORTSDIR}/audio/libvorbis

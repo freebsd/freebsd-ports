@@ -1,0 +1,17 @@
+--- src/xmms/Program.orig	Sat Apr  1 17:55:42 2006
++++ src/xmms/Program	Sat Apr  1 17:55:56 2006
+@@ -29,10 +29,10 @@
+ 	env.Append(LIBS=['xmmsipc'])
+ 	env.Append(LIBS=["xmmssocket"])
+ 	env.Append(CPPPATH=["#src/includepriv"])
+-	env.pkgconfig("glib-2.0 >= 2.6.0", fail=True)
+-	env.pkgconfig("gmodule-2.0", fail=True)
+-	env.pkgconfig("gthread-2.0", fail=True)
+-	env.pkgconfig("sqlite3", fail=True)
++	env.pkgconfig("glib-2.0 >= 2.6.0")
++	env.pkgconfig("gmodule-2.0")
++	env.pkgconfig("gthread-2.0")
++	env.pkgconfig("sqlite3")
+ 	
+ 	if env.platform != 'win32':
+ 		env.checklib("m", "sin", fail=True)
