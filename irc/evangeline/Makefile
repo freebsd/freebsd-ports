@@ -15,6 +15,8 @@ COMMENT=	IRC Bot based on Eggdrop
 
 LIB_DEPENDS=	tcl84.1:${PORTSDIR}/lang/tcl84
 
+BROKEN=		Size mismatch
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_GMAKE=	yes
