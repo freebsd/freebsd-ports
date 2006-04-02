@@ -1,5 +1,5 @@
---- Makefile.orig	Sun May  8 18:25:51 2005
-+++ Makefile	Sun Jul 31 13:55:22 2005
+--- Makefile.orig	Sun Feb 19 22:30:56 2006
++++ Makefile	Sun Apr  2 15:57:00 2006
 @@ -1,5 +1,5 @@
 -PREFIX = /usr/local
 -INSTALL = install
@@ -9,17 +9,15 @@
  
  BINDIR = $(PREFIX)/bin
 @@ -8,24 +8,24 @@
- VERSION = 1.0.0
+ VERSION = 1.0.1
  
  #DEBUG = -g
 -OPTIMIZE = -O2
 +#OPTIMIZE = -O2
  #PROFILE = -pg
  
--MACOS_LDOPTS = -L/sw/lib
--MACOS_CCOPTS = -I/sw/include
-+#MACOS_LDOPTS = -L/sw/lib
-+#MACOS_CCOPTS = -I/sw/include
+ MACOS_LDOPTS = -L/sw/lib
+ MACOS_CCOPTS = -I/sw/include
  
 -LDOPTS = $(MACOS_LDOPTS) -L/usr/X11R6/lib $(PROFILE) $(DEBUG)
 -CCOPTS = $(MACOS_CCOPTS) -I/usr/X11R6/include -I/usr/X11R6/include/X11 -I. -Wall $(OPTIMIZE) $(DEBUG) $(PROFILE) -DMETAPIXEL_VERSION=\"$(VERSION)\"
@@ -37,7 +35,7 @@
 +CONVERT_OBJS = convert.o $(LISPREADER_OBJS)
  IMAGESIZE_OBJS = imagesize.o rwpng.o rwjpeg.o readimage.o
  
--all : metapixel metapixel.1 convert imagesize
+-all : metapixel metapixel.1 convert metapixel-imagesize
 +all : metapixel metapixel.1 metapixel-convert metapixel-imagesize metapixel-zoom
  
  metapixel : $(OBJS)
@@ -51,15 +49,13 @@
 +metapixel-convert : $(CONVERT_OBJS)
 +	$(CC) $(LDOPTS) -o $@ $(CONVERT_OBJS)
  
--imagesize : $(IMAGESIZE_OBJS)
--	$(CC) $(LDOPTS) -o imagesize $(IMAGESIZE_OBJS) -lpng -ljpeg -lm -lz
-+metapixel-imagesize : $(IMAGESIZE_OBJS)
-+	$(CC) $(LDOPTS) -o $@ $(IMAGESIZE_OBJS) -lpng -ljpeg -lm -lz
+ metapixel-imagesize : $(IMAGESIZE_OBJS)
+ 	$(CC) $(LDOPTS) -o metapixel-imagesize $(IMAGESIZE_OBJS) -lpng -ljpeg -lm -lz
  
 -zoom : zoom.c rwjpeg.c rwpng.c readimage.c writeimage.c
 -	$(CC) -o zoom $(OPTIMIZE) $(PROFILE) $(MACOS_CCOPTS) -DTEST_ZOOM zoom.c rwjpeg.c rwpng.c readimage.c writeimage.c $(MACOS_LDOPTS) -lpng -ljpeg -lm -lz
 +metapixel-zoom : zoom.c rwjpeg.c rwpng.c readimage.c writeimage.c
-+	$(CC) $(CCOPTS) $(LDFLAGS) -o $@ -DTEST_ZOOM zoom.c rwjpeg.c rwpng.c readimage.c writeimage.c -lpng -ljpeg -lm -lz
++	$(CC) $(CCOPTS) $(LDOPTS) -o $@ -DTEST_ZOOM zoom.c rwjpeg.c rwpng.c readimage.c writeimage.c -lpng -ljpeg -lm -lz
  
  %.o : %.c
  	$(CC) $(CCOPTS) -c $<
