@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	jed
-PORTVERSION=	0.99.16
-PORTREVISION=	1
+PORTVERSION=	0.99.18
 CATEGORIES=	editors
 MASTER_SITES=	ftp://space.mit.edu/pub/davis/jed/v${PORTVERSION:R}/ \
 		ftp://ftp.uni-stuttgart.de/pub/unix/misc/slang/jed/v${PORTVERSION:R}/ \
@@ -18,14 +17,13 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	A SLang-based text editor
 
-LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang
-
 CONFLICTS=	jed-devel-[0-9]*
 
-OPTIONS=	X11 "Build xjed (depends of X11)" on
+OPTIONS=	X11 "Build xjed (depends of X11)" on \
+		SLANG2 "Build using libslang-2.x" off
 
+USE_BZIP2=	yes
 DIST_SUBDIR=	jed
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	JED_ROOT=${PREFIX}/lib/jed
 MAKE_ENV+=	DEST_DOC_DIR=${DOCSDIR}
@@ -43,6 +41,12 @@ MAN1=		jed.1 rgrep.1
 
 .include <bsd.port.pre.mk>
 
+.if defined(WITH_SLANG2)
+LIB_DEPENDS+=	slang.2:${PORTSDIR}/devel/libslang2
+.else
+LIB_DEPENDS+=	slang.1:${PORTSDIR}/devel/libslang
+.endif
+
 .if defined(WITHOUT_X11)
 PLIST_SUB+=	XJED="@comment "
 .else
@@ -52,18 +56,9 @@ PLIST_SUB+=	XJED=""
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,0777,07777,g' \
-		${WRKSRC}/src/file.c \
-		${WRKSRC}/src/unix.c
-	@${REINPLACE_CMD} -e 's,<malloc.h>,<stdlib.h>,' \
-		${WRKSRC}/src/jdmacros.h \
-		${WRKSRC}/src/ledit.c
-	@${REINPLACE_CMD} -e 's,__linux__,__FreeBSD__,g' \
-		${WRKSRC}/src/pty.c
 	@${REINPLACE_CMD} -e 's,(DEST_JED_ROOT)/doc,(DEST_DOC_DIR),g' \
 			  -e 's,\.\./info/\*,,' \
 			  -e 's,^\(JED_DOC_.*FILES\) =,\1 \?=,g' \
-			  -e 's,-lslang$$,-lslang -ltermcap,' \
 		${WRKSRC}/src/Makefile.in
 
 post-configure:
