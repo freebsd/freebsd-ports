@@ -876,7 +876,7 @@ share/servicetypes/kst/kstplugin.desktop
 @dirrmtry share/locale/cs/LC_MESSAGES
 @dirrmtry share/locale/cs
 @dirrmtry share/locale/ca/LC_MESSAGES
-@dirrmtrx share/locale/ca
+@dirrmtry share/locale/ca
 @dirrm share/doc/HTML/sv/kst
 @dirrm share/doc/HTML/pt/kst
 @dirrm share/doc/HTML/nl/kst
