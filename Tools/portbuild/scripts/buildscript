@@ -6,7 +6,7 @@
 mountprocfs() {
   arch=$1
 
-  if [ ${arch} = "i386" ]; then
+  if [ ${arch} = "i386" -o ${arch} = "amd64" ]; then
     # JDK ports need linprocfs :(
     mkdir -p /compat/linux/proc
     mount_linprocfs linprocfs /compat/linux/proc
@@ -16,7 +16,7 @@ mountprocfs() {
 umountprocfs() {
   arch=$1
 
-  if [ ${arch} = "i386" ]; then
+  if [ ${arch} = "i386" -o ${arch} = "amd64" ]; then
     umount -f /compat/linux/proc 2> /dev/null > /dev/null
   fi
 }
