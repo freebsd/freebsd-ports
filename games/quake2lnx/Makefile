@@ -18,7 +18,7 @@ DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	danfe@FreeBSD.org
-COMMENT=	Cleaned up copy of the original Quake II source code
+COMMENT=	Icculus.org version of the original Quake II
 
 USE_GMAKE=	yes
 WANT_SDL=	yes
@@ -112,7 +112,7 @@ PLIST_SUB+=	SDLCLIENT=""
 PLIST_SUB+=	SDLCLIENT="@comment "
 .endif
 
-.if ${ARCH} != "i386" && (defined(WITH_SVGA) || exists(${LOCALBASE}/lib/libvga.so.1))
+.if ${ARCH} == "i386" && (defined(WITH_SVGA) || exists(${LOCALBASE}/lib/libvga.so.1))
 LIB_DEPENDS+=	vga.1:${PORTSDIR}/graphics/svgalib
 MAKE_ARGS+=	BUILD_SVGA=YES
 REF_TARGETS+=	soft
