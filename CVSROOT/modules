@@ -10410,6 +10410,7 @@ ppptraf		ports/net/ppptraf
 ppracer		ports/games/ppracer
 pptpclient	ports/net/pptpclient
 ppunpack	ports/archivers/ppunpack
+praat		ports/audio/praat
 prayer		ports/mail/prayer
 prboom		ports/games/prboom
 prc-tools	ports/palm/prc-tools
