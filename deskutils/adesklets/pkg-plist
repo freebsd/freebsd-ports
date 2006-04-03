@@ -7,6 +7,11 @@ bin/adesklets_submit
 %%DATADIR%%/Vera.ttf
 %%DATADIR%%/adesklets_debug.sh
 %%DATADIR%%/adesklets_frontend.sh
+%%PERL%%%%SITE_PERL%%/adesklets.pm
+%%PERL%%%%SITE_PERL%%/updateproto.pl
+%%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/adesklets/.packlist
+%%PERL%%lib/perl5/%%PERL_VER%%/mach/perllocal.pod
+%%PERL%%lib/perl5/%%PERL_VER%%/man/man3/adesklets.3
 %%PYTHON_SITELIBDIR%%/posix_signal.so
 %%PYTHON_SITELIBDIR%%/adesklets/__init__.py
 %%PYTHON_SITELIBDIR%%/adesklets/__init__.pyc
@@ -36,5 +41,6 @@ bin/adesklets_submit
 %%PYTHON_SITELIBDIR%%/adesklets/utils.pyc
 %%PYTHON_SITELIBDIR%%/adesklets/which.py
 %%PYTHON_SITELIBDIR%%/adesklets/which.pyc
+%%PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/adesklets
 @dirrm %%DATADIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/adesklets
