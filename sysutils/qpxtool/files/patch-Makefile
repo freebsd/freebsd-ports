@@ -1,0 +1,37 @@
+--- Makefile.orig	Sun Mar 19 16:50:26 2006
++++ Makefile	Thu Mar 23 05:26:07 2006
+@@ -8,18 +8,18 @@
+ 
+ ####### Compiler, tools and options
+ 
+-CC       = gcc
+-CXX      = g++
++CC       ?= gcc
++CXX      ?= g++
+ LEX      = flex
+ YACC     = yacc
+-CFLAGS   = -pipe -Wall -W -O2  -DQT_NO_DEBUG -DQT_SHARED -DQT_THREAD_SUPPORT
+-CXXFLAGS = -pipe -Wall -W -O2  -DQT_NO_DEBUG -DQT_SHARED -DQT_THREAD_SUPPORT
++CFLAGS   += -Wall -W -DQT_NO_DEBUG -DQT_SHARED -DQT_THREAD_SUPPORT
++CXXFLAGS += -Wall -W -DQT_NO_DEBUG -DQT_SHARED -DQT_THREAD_SUPPORT
+ LEXFLAGS = 
+ YACCFLAGS= -d
+-INCPATH  = -I/usr/lib/qt/mkspecs/default -I. -I. -I$(QTDIR)/include
+-LINK     = g++
++INCPATH  = -I. -I$(QTDIR)/include
++LINK     = $(CXX)
+ LFLAGS   =  -Wl,-rpath,$(QTDIR)/lib
+-LIBS     = $(SUBLIBS) -L$(QTDIR)/lib -L/usr/X11R6/lib -lqt-mt -lXext -lX11 -lm
++LIBS     = $(SUBLIBS) -L$(QTDIR)/lib -L/usr/X11R6/lib -lqt-mt -lXext -lX11 -lm -lcam -pthread
+ AR       = ar cqs
+ RANLIB   = 
+ MOC      = $(QTDIR)/bin/moc
+@@ -181,7 +181,7 @@
+ $(MOC): 
+ 	( cd $(QTDIR)/src/moc && $(MAKE) )
+ 
+-Makefile: qpxtool.pro  /usr/lib/qt/mkspecs/default/qmake.conf /usr/lib/qt/lib/libqt-mt.prl
++Makefile: qpxtool.pro
+ 	$(QMAKE) -o Makefile qpxtool.pro
+ qmake: 
+ 	@$(QMAKE) -o Makefile qpxtool.pro
