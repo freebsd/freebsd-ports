@@ -37,6 +37,12 @@ PLIST_SUB+=	WITH_PYTHON=""
 PLIST_SUB+=	WITH_PYTHON="@comment "
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		Does not compile
+.endif
+
 pre-extract:
 	@${ECHO_MSG} ""
 .if defined(WITH_PERL)
@@ -76,4 +82,4 @@ post-install:
 
 	FLOWD_USER=${FLOWD_USER} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
