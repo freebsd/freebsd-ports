@@ -20,6 +20,8 @@ COMMENT=	A dynamic programming language with a syntax similar to C++
 
 BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison/
 
+BROKEN=		Incorrect pkg-plist
+
 WRKSRC=		${WRKDIR}/${DISTNAME}/src/
 
 IS_INTERACTIVE=	yes
