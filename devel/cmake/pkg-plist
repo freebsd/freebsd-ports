@@ -1,5 +1,6 @@
 bin/ccmake
 bin/cmake
+bin/cpack
 bin/ctest
 %%DOCSDIR%%/Copyright.txt
 %%DOCSDIR%%/ccmake.html
