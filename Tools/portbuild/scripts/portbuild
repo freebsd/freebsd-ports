@@ -257,7 +257,7 @@ else
     >/dev/null 2>&1
 fi
 
-if [ ${arch} = "i386" ]; then
+if [ ${arch} = "i386" -o ${arch} = "amd64" ]; then
   # JDK ports need linprocfs :(
   mkdir -p ${chroot}/compat/linux/proc
   chroot ${chroot} mount_linprocfs linprocfs /compat/linux/proc
