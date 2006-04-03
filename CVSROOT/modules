@@ -11012,6 +11012,7 @@ qnxstyle	ports/x11-themes/qnxstyle
 qonk		ports/games/qonk
 qpage		ports/comms/qpage
 qpopper		ports/mail/qpopper
+qpxtool		ports/sysutils/qpxtool
 qrash		ports/x11/qrash
 qsa		ports/devel/qsa
 qscan		ports/mail/qscan
