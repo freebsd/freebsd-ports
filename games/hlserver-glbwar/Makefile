@@ -8,14 +8,12 @@
 PORTNAME=	glbwar
 PORTVERSION=	1.0.0b.1.2
 PORTREVISION=	1
-MASTER_SITES=	ftp://ftp2.extreme-players.de/hl/mod/gw/ \
-                ftp://ftp.clanserver4u.de/exp/hl/mod/gw/
+MASTER_SITES=	http://bsd.gubkin.ru/myports/ \
+		http://mirror.isp.net.au/ftp/pub/FreeBSD/distfiles/
 DISTNAME=	globalwarfare_beta1.2.linux
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Half-Life mod Global Warfare full server package for Linux
-
-BROKEN=		"Unfetchable"
 
 WRKSRC=		${WRKDIR}/globalwarfare
 

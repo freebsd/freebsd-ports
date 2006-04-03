@@ -8,13 +8,12 @@
 PORTNAME=	ts
 PORTVERSION=	2.0
 PORTREVISION=	1
-MASTER_SITES=	http://dl1.giga.de/mods/half_life/the_specialists/
+MASTER_SITES=	http://bsd.gubkin.ru/myports/ \
+		http://mirror.isp.net.au/ftp/pub/FreeBSD/distfiles/
 DISTNAME=	ts${PORTVERSION}-linux_server
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Half-Life mod The Specialists full server package for Linux
-
-BROKEN=		"Unfetchable"
 
 USE_BZIP2=	yes
 
