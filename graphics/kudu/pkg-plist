@@ -1,0 +1,17 @@
+bin/kudu
+%%DATADIR%%/examples/claw.kudu
+%%DATADIR%%/examples/claw.rwx
+%%DATADIR%%/examples/figure.kudu
+%%DATADIR%%/examples/figure.rwx
+%%DATADIR%%/images/bone.png
+%%DATADIR%%/images/edge.png
+%%DATADIR%%/images/face.png
+%%DATADIR%%/images/logo.png
+%%DATADIR%%/images/object.png
+%%DATADIR%%/images/shape.png
+%%DATADIR%%/images/vertex.png
+%%DATADIR%%/scripts/Axle-Spinner.py
+@dirrm %%DATADIR%%/examples
+@dirrm %%DATADIR%%/images
+@dirrm %%DATADIR%%/scripts
+@dirrm %%DATADIR%%
