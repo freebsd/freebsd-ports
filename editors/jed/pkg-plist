@@ -1,7 +1,6 @@
 @comment $FreeBSD$
 bin/jed
 bin/jed-script
-bin/rgrep
 %%XJED%%bin/xjed
 lib/jed/bin/getmail
 lib/jed/lib/README
@@ -24,11 +23,15 @@ lib/jed/lib/chglog.sl
 lib/jed/lib/cmisc.sl
 lib/jed/lib/cmode.sl
 lib/jed/lib/colors/README
+lib/jed/lib/colors/Xjed/black4.sl
 lib/jed/lib/colors/Xjed/elegant.sl
+lib/jed/lib/colors/Xjed/modern.sl
+lib/jed/lib/colors/Xjed/night.sl
 lib/jed/lib/colors/Xjed/pastel0.sl
 lib/jed/lib/colors/black1.sl
 lib/jed/lib/colors/black2.sl
 lib/jed/lib/colors/black3.sl
+lib/jed/lib/colors/black4.sl
 lib/jed/lib/colors/blue1.sl
 lib/jed/lib/colors/blue2.sl
 lib/jed/lib/colors/blue3.sl
@@ -40,7 +43,9 @@ lib/jed/lib/compile.sl
 lib/jed/lib/compress.sl
 lib/jed/lib/cpright.hlp
 lib/jed/lib/ctags.sl
+lib/jed/lib/cua.hlp
 lib/jed/lib/cua.sl
+lib/jed/lib/cuamisc.sl
 lib/jed/lib/dabbrev.sl
 lib/jed/lib/dcl.sl
 lib/jed/lib/digraph.sl
@@ -60,6 +65,7 @@ lib/jed/lib/ff90.sl
 lib/jed/lib/filter.sl
 lib/jed/lib/folding.sl
 lib/jed/lib/fortran.sl
+lib/jed/lib/gpg.sl
 lib/jed/lib/generic.hlp
 lib/jed/lib/help.sl
 lib/jed/lib/history.sl
@@ -91,9 +97,12 @@ lib/jed/lib/linux.sl
 lib/jed/lib/lisp.sl
 lib/jed/lib/ltx-comp.dat
 lib/jed/lib/ltx-math.sl
+lib/jed/lib/lua.sl
 lib/jed/lib/macro.sl
 lib/jed/lib/mail.sl
 lib/jed/lib/mailalias.sl
+lib/jed/lib/mailedit.sl
+lib/jed/lib/mailutils.sl
 lib/jed/lib/man.sl
 lib/jed/lib/maple.sl
 lib/jed/lib/matlab.sl
@@ -113,6 +122,7 @@ lib/jed/lib/mutekeys.sl
 lib/jed/lib/nroff.sl
 lib/jed/lib/occur.sl
 lib/jed/lib/os.sl
+lib/jed/lib/paste.sl
 lib/jed/lib/perl.sl
 lib/jed/lib/php.sl
 lib/jed/lib/pipe.sl
@@ -142,6 +152,7 @@ lib/jed/lib/sort.sl
 lib/jed/lib/sortmisc.sl
 lib/jed/lib/spicemod.sl
 lib/jed/lib/srchmisc.sl
+lib/jed/lib/syncproc.sl
 lib/jed/lib/syntax.sl
 lib/jed/lib/tabs.sl
 lib/jed/lib/tclmode.sl
@@ -163,11 +174,11 @@ lib/jed/lib/wmark.sl
 lib/jed/lib/wmenu.sl
 lib/jed/lib/wordstar.hlp
 lib/jed/lib/wordstar.sl
+lib/jed/lib/xformreg.sl
 lib/jed/lib/yankpop.sl
 @dirrm lib/jed/bin
 @dirrm lib/jed/lib/colors/Xjed
 @dirrm lib/jed/lib/colors
-@dirrm lib/jed/lib/tm
 @dirrm lib/jed/lib
 @dirrm lib/jed/info
 @dirrm lib/jed
