@@ -5241,6 +5241,7 @@ ktoblzcheck	ports/finance/ktoblzcheck
 ktorrent	ports/net-p2p/ktorrent
 ktritoc		ports/games/ktritoc
 kuake		ports/deskutils/kuake
+kudu		ports/graphics/kudu
 kuickshow	ports/graphics/kuickshow
 kvirc		ports/irc/kvirc
 kwappen		ports/games/kwappen
