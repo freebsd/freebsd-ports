@@ -1,0 +1,611 @@
+@comment $FreeBSD$
+bin/ganttproject
+%%DATADIR%%/eclipsito.jar
+%%DATADIR%%/ganttproject-eclipsito-config.xml
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/calendar/i18n_de.calendar
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/calendar/i18n_en_canada.calendar
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/calendar/i18n_en_england.calendar
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/calendar/i18n_es.calendar
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/calendar/i18n_fr.calendar
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/calendar/i18n_it.calendar
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/calendar/i18n_no.calendar
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/calendar/i18n_pl.calendar
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/calendar/i18n_pt_brazil.calendar
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/calendar/i18n_sk.calendar
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help/contacts/contributions.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help/contacts/links.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help/contacts/mails.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help/file/htmlpdf.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help/file/pngjpg.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help/file/webserver.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help/file/xml.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help/firststep/cvs.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help/firststep/overview.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help/firststep/releases.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help/firststep/run.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help/ganttchart/create.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help/ganttchart/properties.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help/ganttchart/relationships.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help/history/1.0.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help/history/1.10.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help/history/1.3.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help/history/1.4.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help/history/1.5.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help/history/1.6.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help/history/1.7.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help/history/1.8.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help/history/1.9.1.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help/history/1.9.10.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help/history/1.9.11.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help/history/1.9.2.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help/history/1.9.3.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help/history/1.9.4.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help/history/1.9.5.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help/history/1.9.6.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help/history/1.9.7.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help/history/1.9.8.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help/history/1.9.9.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help/history/1.9.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help/images/first_chart.png
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help/images/new_task.png
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help/images/propertiesdialogbox.png
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help/images/second_chart.png
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help/images/third_chart.png
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help/images/urldialog.png
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help/license.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help/misc/commandline.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help/misc/options.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help/resources/assign.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help/resources/chart.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help/resources/create.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help/style.css
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help/toc.xml
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_bg/contacts/contributions.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_bg/contacts/links.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_bg/contacts/mails.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_bg/file/htmlpdf.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_bg/file/pngjpg.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_bg/file/webserver.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_bg/file/xml.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_bg/firststep/cvs.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_bg/firststep/overview.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_bg/firststep/releases.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_bg/firststep/run.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_bg/ganttchart/create.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_bg/ganttchart/properties.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_bg/ganttchart/relationships.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_bg/images/first_chart.png
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_bg/images/new_task.png
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_bg/images/propertiesdialogbox.jpg
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_bg/images/propertiesdialogbox.png
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_bg/images/second_chart.png
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_bg/images/third_chart.png
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_bg/images/urldialog.jpg
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_bg/images/urldialog.png
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_bg/license.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_bg/misc/commandline.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_bg/misc/options.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_bg/resources/assign.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_bg/resources/chart.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_bg/resources/create.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_bg/style.css
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_bg/toc.xml
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_bg/toc2.xml
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/contacts/contributions_fr.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/contacts/links_fr.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/contacts/mails_fr.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/developers_fr.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/file/htmlpdf_fr.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/file/impex_fr.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/file/pngjpg_fr.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/file/webserver_fr.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/file/xml_fr.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/firststep/cvs_fr.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/firststep/overview_fr.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/firststep/releases_fr.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/firststep/run_fr.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/ganttchart/create_fr.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/ganttchart/properties_fr.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/ganttchart/relationships_fr.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/history/1.0_fr.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/history/1.10.1.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/history/1.10.2.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/history/1.10.3.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/history/1.10.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/history/1.11.1.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/history/1.11.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/history/1.3.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/history/1.4.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/history/1.5.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/history/1.6.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/history/1.7.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/history/1.8.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/history/1.9.1.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/history/1.9.10.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/history/1.9.11.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/history/1.9.2.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/history/1.9.3.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/history/1.9.4.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/history/1.9.5.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/history/1.9.6.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/history/1.9.7.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/history/1.9.8.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/history/1.9.9.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/history/1.9.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/history/2.0.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/images/alert1_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/images/alert2_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/images/appearance.png
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/images/assign.png
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/images/assignDetail.png
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/images/calendar_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/images/chartOptions1.png
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/images/chartOptions2.png
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/images/compareEarly.png
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/images/compareLate.png
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/images/comparePrev_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/images/compareRect.png
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/images/compareState1.png
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/images/compareState2.png
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/images/copy_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/images/criticalPath.png
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/images/criticalPathOff_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/images/criticalPathOff_24.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/images/cursorpercent.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/images/cursorpercent.png
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/images/cut_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/images/daysOff.png
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/images/daysOffChart.png
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/images/delete_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/images/down_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/images/exportChooserMS.png
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/images/export_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/images/first_chart.png
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/images/import_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/images/indent_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/images/insert_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/images/landscape_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/images/light_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/images/link_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/images/new_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/images/next_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/images/open_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/images/paste_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/images/pert.png
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/images/pertCritical.png
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/images/pertMilestone.png
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/images/pertMotherTask.png
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/images/pertNormalTask.png
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/images/portrait_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/images/prev_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/images/preview_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/images/printPreview.png
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/images/print_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/images/progress.png
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/images/project_1.png
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/images/project_properties.png
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/images/propertiesCustomCol.png
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/images/propertiesGeneral.png
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/images/propertiesPredecessors.png
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/images/propertiesResources.png
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/images/propertiesResources1.png
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/images/properties_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/images/rectBlue.png
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/images/rectGreen.png
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/images/rectRed.png
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/images/redLine.png
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/images/redo.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/images/redo_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/images/rel1.png
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/images/rel2.png
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/images/resourceChart.png
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/images/resourceTreeTable.png
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/images/resourceTreeTable2.png
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/images/saveCurrentAsPrev_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/images/saveState1.png
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/images/saveState2.png
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/images/save_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/images/saveas_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/images/scrollcenter_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/images/second_chart.png
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/images/treetable1.png
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/images/undo.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/images/undo_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/images/unindent_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/images/unlink_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/images/up_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/images/urldialog.png
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/images/zoomm_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/images/zoomp_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/license_fr.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/misc/commandline_fr.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/misc/options_fr.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/misc/print_fr.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/misc/toolBar_fr.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/resourcemanagement/addDel_fr.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/resourcemanagement/assign_fr.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/resourcemanagement/misc_fr.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/resourcemanagement/resourceChart_fr.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/resourcemanagement/resourceTreeTable_fr.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/resources/assign_fr.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/resources/chart_fr.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/resources/create_fr.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/style.css
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/taskmanagement/addDelHier_fr.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/taskmanagement/chart1_fr.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/taskmanagement/chart2_fr.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/taskmanagement/copyPaste_fr.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/taskmanagement/followup_fr.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/taskmanagement/ganttTreeTable_fr.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/taskmanagement/misc_fr.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/taskmanagement/multiProject_fr.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/taskmanagement/pert_fr.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/taskmanagement/properties_fr.html
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/toc.xml
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/dtd/ganttproject.dtd
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/about_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/addCol_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/addCol_24.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/add_bkmrk_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/aknowlegement.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/alert1_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/alert2_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/big.png
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/blank.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/blank_big.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/bookmark_rem_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/bookmarks_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/calendar_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/chartOptions_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/chartOptions_24.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/clear_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/clock_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/comparePrev_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/comparePrev_24.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/copy_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/copy_24.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/copy_32.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/criticalPathOff_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/criticalPathOff_24.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/criticalPathOn_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/criticalPathOn_24.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/cursorpercent.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/custom.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/cut_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/cut_24.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/cut_32.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/default_calendar_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/delete_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/delete_24.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/delete_32.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/document.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/document.ico
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/document.png
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/down_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/down_24.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/down_32.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/error.png
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/exit_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/exit_24.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/exit_32.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/export_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/export_24.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/export_32.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/fromto.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/ganttproject.png
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/ganttproject_16.ico
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/ganttproject_32.ico
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/ganttproject_32_2.ico
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/help_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/hide_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/hide_24.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/holidays_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/holidays_24.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/home_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/import_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/import_24.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/import_32.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/impres_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/indent_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/indent_24.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/indent_32.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/info.png
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/insert_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/insert_24.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/insert_32.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/landscape_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/light_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/link_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/link_24.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/link_32.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/manual_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/manual_24.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/manual_32.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/meeting.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/minus.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/mproject.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/mtask.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/new_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/new_24.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/new_32.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/next_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/next_24.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/next_32.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/nextmonth.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/nextyear.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/non_working_day_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/note_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/open_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/open_24.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/open_32.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/paste_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/paste_24.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/paste_32.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/plus.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/portrait_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/prev_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/prev_24.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/prev_32.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/preview_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/preview_24.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/prevmonth.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/prevyear.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/print_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/print_24.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/print_32.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/project_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/properties_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/properties_24.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/properties_32.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/publish.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/question.png
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/recent_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/redo_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/redo_24.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/redo_32.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/refresh_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/refresh_24.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/relashion.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/removeCol_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/removeCol_24.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/res_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/saveCurrentAsPrev_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/saveCurrentAsPrev_24.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/save_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/save_24.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/save_32.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/saveas_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/saveas_24.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/saveas_32.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/scrollcenter_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/scrollcenter_24.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/search_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/send_mail_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/sepH_16.png
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/sepV_16.png
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/separator_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/separator_24.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/server_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/settings_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/showHiddens.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/show_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/show_24.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/simple_task.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/skip_task.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/splash.png
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/task.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/task1.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/task2.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/tasks2.png
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/tasks_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/top.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/undo_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/undo_24.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/undo_32.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/unindent_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/unindent_24.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/unindent_32.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/unlink_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/unlink_24.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/unlink_32.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/up_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/up_24.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/up_32.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/warning.png
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/web_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/working_day_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/zoomm_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/zoomm_24.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/zoomm_32.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/zoomp_16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/zoomp_24.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/zoomp_32.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/language/i18n.properties
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/language/i18n_bg.properties
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/language/i18n_cz.properties
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/language/i18n_da.properties
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/language/i18n_de.properties
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/language/i18n_el.properties
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/language/i18n_en.properties
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/language/i18n_en_GB.properties
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/language/i18n_es.properties
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/language/i18n_et.properties
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/language/i18n_fr.properties
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/language/i18n_hu.properties
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/language/i18n_it.properties
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/language/i18n_iw.properties
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/language/i18n_iw_IW.properties
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/language/i18n_ja.properties
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/language/i18n_ja_JP.properties
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/language/i18n_ko.properties
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/language/i18n_ko_KR.properties
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/language/i18n_nl.properties
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/language/i18n_no.properties
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/language/i18n_pl.properties
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/language/i18n_pt.properties
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/language/i18n_pt_BR.properties
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/language/i18n_ro_RO.properties
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/language/i18n_ru.properties
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/language/i18n_sk.properties
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/language/i18n_sv.properties
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/language/i18n_tr.properties
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/language/i18n_zh.properties
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/language/i18n_zh_CN.properties
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/language/i18n_zh_TW.properties
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/logos/bee-element-01.png
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/logos/bee-element-01.svg
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/logos/bee-element-01.svg-g1576-231.png
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/logos/bee-element-01.svg-g1576-691.png
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/logos/bee-element-02.svg
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/logos/bee-element.svg
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/logos/cell01.png
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/logos/cell02.png
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/logos/cell03.png
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/logos/concepts-icons.svg
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/logos/concepts-logo.svg
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/logos/g1576.png
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/logos/g2418.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/logos/g2418.png
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/logos/icon16.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/logos/icon16.ico
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/logos/icon16.png
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/logos/icon24.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/logos/icon24.ico
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/logos/icon24.png
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/logos/icon32.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/logos/icon32.ico
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/logos/icon32.png
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/logos/icon48.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/logos/icon48.ico
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/logos/icon48.png
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/logos/icon64.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/logos/icon64.ico
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/logos/icon64.png
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/logos/label01.png
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/logos/label02.png
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/logos/splash.png
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/xslfo/ganttproject.xsl
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/xslt/gantt-chart.xsl
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/xslt/gantt-resources.xsl
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/xslt/gantt-tasks.xsl
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/xslt/gantt-utils.xsl
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/xslt/gantt.xsl
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/ganttproject.jar
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/lib/core/commons-httpclient-contrib.jar
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/lib/core/commons-httpclient.jar
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/lib/core/commons-logging.jar
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/lib/core/commons-transaction-1.0.jar
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/lib/core/helpgui-1.1.jar
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/lib/core/jakarta-poi-2.5.jar
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/lib/core/jakarta-slide-webdavlib-2.1.jar
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/lib/core/jdnc-modifBen.jar
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/lib/core/jdom-1.0.jar
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/lib/core/jgoodies-looks-1.2.2.jar
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/lib/core/licenses/commons-httpclient.LICENSE
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/lib/core/licenses/commons-logging.LICENSE
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/lib/core/licenses/helpgui.LICENSE
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/lib/core/licenses/jakarta-slide-webdavlib.LICENSE
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/lib/core/licenses/jdnc.LICENSE
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/lib/core/licenses/jdom.LICENSE
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/lib/core/licenses/jgoodies-looks.LICENSE
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/lib/core/licenses/xml-im-exporter.LICENSE
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/lib/core/xml-im-exporter1.1.jar
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/plugin.xml
+%%DATADIR%%/plugins/org.ganttproject.chart.pert_2.0.0/org.ganttproject.chart.pert.jar
+%%DATADIR%%/plugins/org.ganttproject.chart.pert_2.0.0/plugin.xml
+%%DATADIR%%/plugins/org.ganttproject.chart.pert_2.0.0/resources/icons/pert_16.gif
+%%DATADIR%%/plugins/org.ganttproject.chart.pert_2.0.0/resources/icons/pert_24.gif
+%%DATADIR%%/plugins/org.ganttproject.impex.htmlpdf_2.0.0/ganttproject-htmlpdf.jar
+%%DATADIR%%/plugins/org.ganttproject.impex.htmlpdf_2.0.0/lib/fop-font-metrics.jar
+%%DATADIR%%/plugins/org.ganttproject.impex.htmlpdf_2.0.0/lib/fop.jar
+%%DATADIR%%/plugins/org.ganttproject.impex.htmlpdf_2.0.0/lib/ganttproject-avalon.jar
+%%DATADIR%%/plugins/org.ganttproject.impex.htmlpdf_2.0.0/lib/ganttproject-batik.jar
+%%DATADIR%%/plugins/org.ganttproject.impex.htmlpdf_2.0.0/plugin.xml
+%%DATADIR%%/plugins/org.ganttproject.impex.htmlpdf_2.0.0/resource/html-export-themes/default/gantt-chart.xsl
+%%DATADIR%%/plugins/org.ganttproject.impex.htmlpdf_2.0.0/resource/html-export-themes/default/gantt-resources.xsl
+%%DATADIR%%/plugins/org.ganttproject.impex.htmlpdf_2.0.0/resource/html-export-themes/default/gantt-tasks.xsl
+%%DATADIR%%/plugins/org.ganttproject.impex.htmlpdf_2.0.0/resource/html-export-themes/default/gantt-utils.xsl
+%%DATADIR%%/plugins/org.ganttproject.impex.htmlpdf_2.0.0/resource/html-export-themes/default/gantt.xsl
+%%DATADIR%%/plugins/org.ganttproject.impex.htmlpdf_2.0.0/resource/html-export-themes/striped_blue/COPYING
+%%DATADIR%%/plugins/org.ganttproject.impex.htmlpdf_2.0.0/resource/html-export-themes/striped_blue/README
+%%DATADIR%%/plugins/org.ganttproject.impex.htmlpdf_2.0.0/resource/html-export-themes/striped_blue/gantt-chart.xsl
+%%DATADIR%%/plugins/org.ganttproject.impex.htmlpdf_2.0.0/resource/html-export-themes/striped_blue/gantt-resources.xsl
+%%DATADIR%%/plugins/org.ganttproject.impex.htmlpdf_2.0.0/resource/html-export-themes/striped_blue/gantt-tasks.xsl
+%%DATADIR%%/plugins/org.ganttproject.impex.htmlpdf_2.0.0/resource/html-export-themes/striped_blue/gantt-utils.xsl
+%%DATADIR%%/plugins/org.ganttproject.impex.htmlpdf_2.0.0/resource/html-export-themes/striped_blue/gantt.xsl
+%%DATADIR%%/plugins/org.ganttproject.impex.htmlpdf_2.0.0/resource/html-export-themes/striped_blue/images/backg.png
+%%DATADIR%%/plugins/org.ganttproject.impex.htmlpdf_2.0.0/resource/html-export-themes/striped_blue/images/menu.jpg
+%%DATADIR%%/plugins/org.ganttproject.impex.htmlpdf_2.0.0/resource/html-export-themes/striped_blue/images/top.jpg
+%%DATADIR%%/plugins/org.ganttproject.impex.htmlpdf_2.0.0/resource/pdf-export-themes/basic_landscape/ganttproject.xsl
+%%DATADIR%%/plugins/org.ganttproject.impex.htmlpdf_2.0.0/resource/pdf-export-themes/basic_landscape/ganttproject.xsl.bak
+%%DATADIR%%/plugins/org.ganttproject.impex.htmlpdf_2.0.0/resource/pdf-export-themes/ganttproject.xsl
+%%DATADIR%%/plugins/org.ganttproject.impex.msproject_2.0.0/ganttproject-msproject.jar
+%%DATADIR%%/plugins/org.ganttproject.impex.msproject_2.0.0/lib/mpxj/jakarta-poi-2.5.jar
+%%DATADIR%%/plugins/org.ganttproject.impex.msproject_2.0.0/lib/mpxj/jax-qname.jar
+%%DATADIR%%/plugins/org.ganttproject.impex.msproject_2.0.0/lib/mpxj/jaxb-api.jar
+%%DATADIR%%/plugins/org.ganttproject.impex.msproject_2.0.0/lib/mpxj/jaxb-impl.jar
+%%DATADIR%%/plugins/org.ganttproject.impex.msproject_2.0.0/lib/mpxj/jaxb-libs.jar
+%%DATADIR%%/plugins/org.ganttproject.impex.msproject_2.0.0/lib/mpxj/mpxj.jar
+%%DATADIR%%/plugins/org.ganttproject.impex.msproject_2.0.0/lib/mpxj/namespace.jar
+%%DATADIR%%/plugins/org.ganttproject.impex.msproject_2.0.0/lib/mpxj/relaxngDatatype.jar
+%%DATADIR%%/plugins/org.ganttproject.impex.msproject_2.0.0/lib/mpxj/xsdlib.jar
+%%DATADIR%%/plugins/org.ganttproject.impex.msproject_2.0.0/plugin.xml
+@dirrm %%DATADIR%%/plugins/org.ganttproject.impex.msproject_2.0.0/lib/mpxj
+@dirrm %%DATADIR%%/plugins/org.ganttproject.impex.msproject_2.0.0/lib
+@dirrm %%DATADIR%%/plugins/org.ganttproject.impex.msproject_2.0.0
+@dirrm %%DATADIR%%/plugins/org.ganttproject.impex.htmlpdf_2.0.0/resource/pdf-export-themes/basic_landscape
+@dirrm %%DATADIR%%/plugins/org.ganttproject.impex.htmlpdf_2.0.0/resource/pdf-export-themes
+@dirrm %%DATADIR%%/plugins/org.ganttproject.impex.htmlpdf_2.0.0/resource/html-export-themes/striped_blue/images
+@dirrm %%DATADIR%%/plugins/org.ganttproject.impex.htmlpdf_2.0.0/resource/html-export-themes/striped_blue
+@dirrm %%DATADIR%%/plugins/org.ganttproject.impex.htmlpdf_2.0.0/resource/html-export-themes/default
+@dirrm %%DATADIR%%/plugins/org.ganttproject.impex.htmlpdf_2.0.0/resource/html-export-themes
+@dirrm %%DATADIR%%/plugins/org.ganttproject.impex.htmlpdf_2.0.0/resource
+@dirrm %%DATADIR%%/plugins/org.ganttproject.impex.htmlpdf_2.0.0/lib
+@dirrm %%DATADIR%%/plugins/org.ganttproject.impex.htmlpdf_2.0.0
+@dirrm %%DATADIR%%/plugins/org.ganttproject.chart.pert_2.0.0/resources/icons
+@dirrm %%DATADIR%%/plugins/org.ganttproject.chart.pert_2.0.0/resources
+@dirrm %%DATADIR%%/plugins/org.ganttproject.chart.pert_2.0.0
+@dirrm %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/lib/core/licenses
+@dirrm %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/lib/core
+@dirrm %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/lib
+@dirrm %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/xslt
+@dirrm %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/xslfo
+@dirrm %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/logos
+@dirrm %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/language
+@dirrm %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons
+@dirrm %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/dtd
+@dirrm %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/taskmanagement
+@dirrm %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/resources
+@dirrm %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/resourcemanagement
+@dirrm %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/misc
+@dirrm %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/images
+@dirrm %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/history
+@dirrm %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/ganttchart
+@dirrm %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/firststep
+@dirrm %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/file
+@dirrm %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr/contacts
+@dirrm %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_fr
+@dirrm %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_bg/resources
+@dirrm %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_bg/misc
+@dirrm %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_bg/images
+@dirrm %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_bg/ganttchart
+@dirrm %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_bg/firststep
+@dirrm %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_bg/file
+@dirrm %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_bg/contacts
+@dirrm %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help_bg
+@dirrm %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help/resources
+@dirrm %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help/misc
+@dirrm %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help/images
+@dirrm %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help/history
+@dirrm %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help/ganttchart
+@dirrm %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help/firststep
+@dirrm %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help/file
+@dirrm %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help/contacts
+@dirrm %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs/help
+@dirrm %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/docs
+@dirrm %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/calendar
+@dirrm %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources
+@dirrm %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data
+@dirrm %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0
+@dirrm %%DATADIR%%/plugins
+@dirrmtry %%DATADIR%%
