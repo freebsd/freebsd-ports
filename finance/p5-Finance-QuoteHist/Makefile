@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Finance-QuoteHist
-PORTVERSION=	1.04
+PORTVERSION=	1.07
 CATEGORIES=	finance perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Finance
@@ -18,7 +18,7 @@ COMMENT=	Perl module for fetching historical stock quotes
 RUN_DEPENDS=	${SITE_PERL}/Date/Manip.pm:${PORTSDIR}/devel/p5-Date-Manip \
 		${SITE_PERL}/HTTP/Request.pm:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/${PERL_ARCH}/Text/CSV_XS.pm:${PORTSDIR}/textproc/p5-Text-CSV_XS \
-		${SITE_PERL}/HTML/TableExtract.pm:${PORTSDIR}/www/p5-HTML-TableExtract
+		p5-HTML-TableExtract>=2.07:${PORTSDIR}/www/p5-HTML-TableExtract
 BUILD_DEPENDS=	${RUN_DEPENDS}
 BUILD_DEPENDS+=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple \
 		${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathTools
@@ -26,15 +26,9 @@ BUILD_DEPENDS+=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple \
 PERL_CONFIGURE=	yes
 
 MAN3=		Finance::QuoteHist.3 \
-		Finance::QuoteHist::QuoteMedia.3 \
 		Finance::QuoteHist::Generic.3 \
+		Finance::QuoteHist::MSN.3 \
+		Finance::QuoteHist::QuoteMedia.3 \
 		Finance::QuoteHist::Yahoo.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-post-configure:
-	${PERL} -pi -e 's/-I\S+PERL\S+ //g if m{PERL_DL_NONLAZY}' ${WRKSRC}/Makefile
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
