@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Date/Japanese/Holiday.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Date/Japanese/Holiday/.packlist
+@dirrmtry %%SITE_PERL%%/Date/Japanese
+@dirrmtry %%SITE_PERL%%/Date
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date/Japanese/Holiday
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date/Japanese
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date

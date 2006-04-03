@@ -270,6 +270,7 @@
     SUBDIR += onew-wnn7
     SUBDIR += otojiro-fpw
     SUBDIR += p5-Date-Japanese-Era
+    SUBDIR += p5-Date-Japanese-Holiday
     SUBDIR += p5-Jcode
     SUBDIR += p5-MeCab
     SUBDIR += p5-Number-Phone-JP
