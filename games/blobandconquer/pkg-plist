@@ -1,0 +1,369 @@
+bin/blobAndConquer
+%%DATADIR%%/data/bsp/caves1.bak
+%%DATADIR%%/data/bsp/caves1.bsp
+%%DATADIR%%/data/bsp/caves1.map
+%%DATADIR%%/data/bsp/caves2.bak
+%%DATADIR%%/data/bsp/caves2.bsp
+%%DATADIR%%/data/bsp/caves2.map
+%%DATADIR%%/data/bsp/enemyTest.bak
+%%DATADIR%%/data/bsp/enemyTest.bsp
+%%DATADIR%%/data/bsp/enemyTest.map
+%%DATADIR%%/data/bsp/grasslands2.bak
+%%DATADIR%%/data/bsp/grasslands2.bsp
+%%DATADIR%%/data/bsp/grasslands2.map
+%%DATADIR%%/data/bsp/ground.bsp
+%%DATADIR%%/data/bsp/ground.map
+%%DATADIR%%/data/bsp/hub.bak
+%%DATADIR%%/data/bsp/hub.bsp
+%%DATADIR%%/data/bsp/hub.map
+%%DATADIR%%/data/bsp/sewers1.bak
+%%DATADIR%%/data/bsp/sewers1.bsp
+%%DATADIR%%/data/bsp/sewers1.map
+%%DATADIR%%/data/bsp/start.bak
+%%DATADIR%%/data/bsp/start.bsp
+%%DATADIR%%/data/bsp/start.map
+%%DATADIR%%/data/bsp/test.bak
+%%DATADIR%%/data/bsp/test.bsp
+%%DATADIR%%/data/bsp/test.map
+%%DATADIR%%/data/bsp/training.bak
+%%DATADIR%%/data/bsp/training.bsp
+%%DATADIR%%/data/bsp/training.map
+%%DATADIR%%/data/bsp/waste.bak
+%%DATADIR%%/data/bsp/waste.bsp
+%%DATADIR%%/data/bsp/waste.map
+%%DATADIR%%/data/combatResources/models
+%%DATADIR%%/data/combatResources/sounds
+%%DATADIR%%/data/combatResources/textures
+%%DATADIR%%/data/fonts/909.ttf
+%%DATADIR%%/data/fonts/tele.ttf
+%%DATADIR%%/data/fonts/tycho.ttf
+%%DATADIR%%/data/fonts/vera.ttf
+%%DATADIR%%/data/gameDefs/blobs
+%%DATADIR%%/data/gameDefs/defines.h
+%%DATADIR%%/data/gameDefs/enemies
+%%DATADIR%%/data/gameDefs/features
+%%DATADIR%%/data/gameDefs/items
+%%DATADIR%%/data/gameDefs/weapons
+%%DATADIR%%/data/locale/battle
+%%DATADIR%%/data/locale/controls
+%%DATADIR%%/data/locale/enemies
+%%DATADIR%%/data/locale/index
+%%DATADIR%%/data/locale/init
+%%DATADIR%%/data/locale/items
+%%DATADIR%%/data/locale/loadSave
+%%DATADIR%%/data/locale/options
+%%DATADIR%%/data/locale/status
+%%DATADIR%%/data/locale/system
+%%DATADIR%%/data/locale/weapons
+%%DATADIR%%/data/misc/letterFrequencyTable
+%%DATADIR%%/data/missions/enemytest
+%%DATADIR%%/data/missions/hub
+%%DATADIR%%/data/missions/hubLocale
+%%DATADIR%%/data/missions/mission1
+%%DATADIR%%/data/missions/mission1Locale
+%%DATADIR%%/data/missions/mission2
+%%DATADIR%%/data/missions/mission2Locale
+%%DATADIR%%/data/missions/mission3
+%%DATADIR%%/data/missions/mission3Locale
+%%DATADIR%%/data/missions/mission4
+%%DATADIR%%/data/missions/mission4Locale
+%%DATADIR%%/data/missions/mission5
+%%DATADIR%%/data/missions/mission5Locale
+%%DATADIR%%/data/missions/mission7
+%%DATADIR%%/data/missions/mission7Locale
+%%DATADIR%%/data/missions/test
+%%DATADIR%%/data/missions/training
+%%DATADIR%%/data/missions/trainingLocale
+%%DATADIR%%/data/texturespecs/common
+%%DATADIR%%/data/texturespecs/liquid
+%%DATADIR%%/data/texturespecs/list
+%%DATADIR%%/data/texturespecs/mech
+%%DATADIR%%/data/widgets/controlOptions
+%%DATADIR%%/data/widgets/gameover
+%%DATADIR%%/data/widgets/generalOptions
+%%DATADIR%%/data/widgets/inGameOptions
+%%DATADIR%%/data/widgets/loadSave
+%%DATADIR%%/data/widgets/status
+%%DATADIR%%/data/widgets/title
+%%DATADIR%%/gfx/game/episode2.png
+%%DATADIR%%/gfx/game/missionFailed.png
+%%DATADIR%%/gfx/game/orderIcon1.png
+%%DATADIR%%/gfx/game/orderIcon2.png
+%%DATADIR%%/gfx/game/orderIcon3.png
+%%DATADIR%%/gfx/game/orderIcon4.png
+%%DATADIR%%/gfx/game/targetter.png
+%%DATADIR%%/gfx/game/title.png
+%%DATADIR%%/gfx/game/titleBack.png
+%%DATADIR%%/gfx/game/violenceWarning.jpg
+%%DATADIR%%/gfx/gui/checked.png
+%%DATADIR%%/gfx/gui/downArrow.png
+%%DATADIR%%/gfx/gui/minus.png
+%%DATADIR%%/gfx/gui/plus.png
+%%DATADIR%%/gfx/gui/unchecked.png
+%%DATADIR%%/gfx/gui/upArrow.png
+%%DATADIR%%/gfx/md2/.keep_me
+%%DATADIR%%/gfx/primitive/blob.primitive
+%%DATADIR%%/gfx/primitive/bob.primitive
+%%DATADIR%%/gfx/primitive/c4.primitive
+%%DATADIR%%/gfx/primitive/eyedroid.primitive
+%%DATADIR%%/gfx/primitive/item.primitive
+%%DATADIR%%/gfx/primitive/keycard.primitive
+%%DATADIR%%/gfx/primitive/medipack.primitive
+%%DATADIR%%/gfx/primitive/weapon.primitive
+%%DATADIR%%/gfx/rw2/bullet.blend.raw
+%%DATADIR%%/gfx/rw2/cherry.blend.raw
+%%DATADIR%%/gfx/rw2/clip.blend.raw
+%%DATADIR%%/gfx/rw2/grenade.blend.raw
+%%DATADIR%%/gfx/rw2/gun.blend.raw
+%%DATADIR%%/gfx/rw2/pointer.blend.raw
+%%DATADIR%%/gfx/rw2/rifle.blend.raw
+%%DATADIR%%/gfx/rw2/uzi.blend.raw
+%%DATADIR%%/music/Dark Club.s3m
+%%DATADIR%%/music/Dragon Cave.xm
+%%DATADIR%%/music/Helmet Shake.mod
+%%DATADIR%%/music/Liquid Crystal.xm
+%%DATADIR%%/music/Neutral Zone.xm
+%%DATADIR%%/music/Sodom of Evil.xm
+%%DATADIR%%/music/Super Robot Fighter.xm
+%%DATADIR%%/music/Tales Untold.xm
+%%DATADIR%%/music/Temple.xm
+%%DATADIR%%/music/War Tales 3.xm
+%%DATADIR%%/music/Warlord Theme.s3m
+%%DATADIR%%/music/Zenith.s3m
+%%DATADIR%%/sound/ambience/general/rain.ogg
+%%DATADIR%%/sound/ambience/grasslands/birdsong.ogg
+%%DATADIR%%/sound/ambience/grasslands/cardinal.ogg
+%%DATADIR%%/sound/ambience/grasslands/falsebird.ogg
+%%DATADIR%%/sound/ambience/grasslands/lapwing.ogg
+%%DATADIR%%/sound/ambience/grasslands/robin.ogg
+%%DATADIR%%/sound/ambience/mech/commplus.ogg
+%%DATADIR%%/sound/ambience/mech/data_1.ogg
+%%DATADIR%%/sound/ambience/mech/dial.ogg
+%%DATADIR%%/sound/ambience/ruins/soulWail1.ogg
+%%DATADIR%%/sound/ambience/ruins/soulWail2.ogg
+%%DATADIR%%/sound/ambience/ruins/wolfHowl.ogg
+%%DATADIR%%/sound/combat/arm1.ogg
+%%DATADIR%%/sound/combat/arm2.ogg
+%%DATADIR%%/sound/combat/arm3.ogg
+%%DATADIR%%/sound/combat/barrierShutDown.ogg
+%%DATADIR%%/sound/combat/boom.ogg
+%%DATADIR%%/sound/combat/bulletHitWater.ogg
+%%DATADIR%%/sound/combat/clang.ogg
+%%DATADIR%%/sound/combat/command.ogg
+%%DATADIR%%/sound/combat/computer_write.ogg
+%%DATADIR%%/sound/combat/death1.ogg
+%%DATADIR%%/sound/combat/death2.ogg
+%%DATADIR%%/sound/combat/death3.ogg
+%%DATADIR%%/sound/combat/death4.ogg
+%%DATADIR%%/sound/combat/doorOpened.ogg
+%%DATADIR%%/sound/combat/doorStart.ogg
+%%DATADIR%%/sound/combat/drowning.ogg
+%%DATADIR%%/sound/combat/elecDeath1.ogg
+%%DATADIR%%/sound/combat/elecDeath2.ogg
+%%DATADIR%%/sound/combat/elecDeath3.ogg
+%%DATADIR%%/sound/combat/electricSparks01.ogg
+%%DATADIR%%/sound/combat/electricSparks02.ogg
+%%DATADIR%%/sound/combat/electricSparks03.ogg
+%%DATADIR%%/sound/combat/electricSparks04.ogg
+%%DATADIR%%/sound/combat/electricSparks05.ogg
+%%DATADIR%%/sound/combat/empty.ogg
+%%DATADIR%%/sound/combat/explode.ogg
+%%DATADIR%%/sound/combat/glassShatter1.ogg
+%%DATADIR%%/sound/combat/glassShatter2.ogg
+%%DATADIR%%/sound/combat/glassShatter3.ogg
+%%DATADIR%%/sound/combat/grenadeBounce.ogg
+%%DATADIR%%/sound/combat/gulp.ogg
+%%DATADIR%%/sound/combat/heavyPlasma.ogg
+%%DATADIR%%/sound/combat/hit.ogg
+%%DATADIR%%/sound/combat/ice.ogg
+%%DATADIR%%/sound/combat/item.ogg
+%%DATADIR%%/sound/combat/laser.ogg
+%%DATADIR%%/sound/combat/machineGun.ogg
+%%DATADIR%%/sound/combat/pain1.ogg
+%%DATADIR%%/sound/combat/pistol.ogg
+%%DATADIR%%/sound/combat/pistolReload.ogg
+%%DATADIR%%/sound/combat/plasma1.ogg
+%%DATADIR%%/sound/combat/rico1.ogg
+%%DATADIR%%/sound/combat/rico2.ogg
+%%DATADIR%%/sound/combat/rifle.ogg
+%%DATADIR%%/sound/combat/rocketLauncher.ogg
+%%DATADIR%%/sound/combat/silencedPistol.ogg
+%%DATADIR%%/sound/combat/sizzle.ogg
+%%DATADIR%%/sound/combat/smallExplode.ogg
+%%DATADIR%%/sound/combat/splat.ogg
+%%DATADIR%%/sound/combat/splatUnderwater.ogg
+%%DATADIR%%/sound/combat/switch1.ogg
+%%DATADIR%%/sound/combat/switch2.ogg
+%%DATADIR%%/sound/combat/switch3.ogg
+%%DATADIR%%/sound/combat/switchBleep.ogg
+%%DATADIR%%/sound/combat/teleport1.ogg
+%%DATADIR%%/sound/combat/teleport2.ogg
+%%DATADIR%%/sound/combat/teleport3.ogg
+%%DATADIR%%/sound/combat/throw1.ogg
+%%DATADIR%%/sound/combat/throw2.ogg
+%%DATADIR%%/sound/combat/waterIn.ogg
+%%DATADIR%%/sound/combat/waterOut.ogg
+%%DATADIR%%/sound/combat/weaponPickup.ogg
+%%DATADIR%%/sound/gui/buttonClick.ogg
+%%DATADIR%%/textures/arctic/snow01.jpg
+%%DATADIR%%/textures/common/blank.jpg
+%%DATADIR%%/textures/desert/.keep_me
+%%DATADIR%%/textures/game/arrow.png
+%%DATADIR%%/textures/game/black.png
+%%DATADIR%%/textures/game/blood01.png
+%%DATADIR%%/textures/game/bullet.png
+%%DATADIR%%/textures/game/c4.png
+%%DATADIR%%/textures/game/cherry.png
+%%DATADIR%%/textures/game/dawn.jpg
+%%DATADIR%%/textures/game/day.jpg
+%%DATADIR%%/textures/game/dusk.jpg
+%%DATADIR%%/textures/game/explosion.png
+%%DATADIR%%/textures/game/fire.png
+%%DATADIR%%/textures/game/goodBlob.png
+%%DATADIR%%/textures/game/goodBlobInjured.png
+%%DATADIR%%/textures/game/grad.png
+%%DATADIR%%/textures/game/grenade.png
+%%DATADIR%%/textures/game/grenadeBlob.png
+%%DATADIR%%/textures/game/grenadeDroid.png
+%%DATADIR%%/textures/game/grey.png
+%%DATADIR%%/textures/game/iceBlock.jpg
+%%DATADIR%%/textures/game/keycard.png
+%%DATADIR%%/textures/game/laserBlob.png
+%%DATADIR%%/textures/game/machineGunBlob.png
+%%DATADIR%%/textures/game/machineGunDroid.png
+%%DATADIR%%/textures/game/medipack.png
+%%DATADIR%%/textures/game/overcast.png
+%%DATADIR%%/textures/game/pistolBlob.png
+%%DATADIR%%/textures/game/pistolDroid.png
+%%DATADIR%%/textures/game/shotGunDroid.png
+%%DATADIR%%/textures/game/spotLightMap.png
+%%DATADIR%%/textures/game/sunset.png
+%%DATADIR%%/textures/game/teekaWeapon.png
+%%DATADIR%%/textures/game/weapon.png
+%%DATADIR%%/textures/game/white.png
+%%DATADIR%%/textures/grasslands/american_cherry.jpg
+%%DATADIR%%/textures/grasslands/brick01.jpg
+%%DATADIR%%/textures/grasslands/brick30.jpg
+%%DATADIR%%/textures/grasslands/dirt01.jpg
+%%DATADIR%%/textures/grasslands/dirt02.jpg
+%%DATADIR%%/textures/grasslands/drygrass.jpg
+%%DATADIR%%/textures/grasslands/grass.jpg
+%%DATADIR%%/textures/grasslands/grass02.jpg
+%%DATADIR%%/textures/grasslands/grass03.jpg
+%%DATADIR%%/textures/grasslands/grass04.jpg
+%%DATADIR%%/textures/grasslands/grass15.jpg
+%%DATADIR%%/textures/grasslands/grass42.jpg
+%%DATADIR%%/textures/grasslands/grass5.jpg
+%%DATADIR%%/textures/grasslands/gx_03_grass_01_patchy2.jpg
+%%DATADIR%%/textures/grasslands/gx_03_rock_01.jpg
+%%DATADIR%%/textures/grasslands/gx_04_grass_01_patchy3.jpg
+%%DATADIR%%/textures/grasslands/gx_05_grass_02.jpg
+%%DATADIR%%/textures/grasslands/kbtexture6.jpg
+%%DATADIR%%/textures/grasslands/rimu_coloured.jpg
+%%DATADIR%%/textures/grasslands/rock01.jpg
+%%DATADIR%%/textures/grasslands/rock43.jpg
+%%DATADIR%%/textures/grasslands/rusticblk.jpg
+%%DATADIR%%/textures/grasslands/sapele_cross_cut.jpg
+%%DATADIR%%/textures/grasslands/stonetile15.jpg
+%%DATADIR%%/textures/grasslands/stonetile4.jpg
+%%DATADIR%%/textures/grasslands/stonetile6.jpg
+%%DATADIR%%/textures/grasslands/stonewall03.jpg
+%%DATADIR%%/textures/liquid/lava01.jpg
+%%DATADIR%%/textures/liquid/lava02.jpg
+%%DATADIR%%/textures/liquid/slime.jpg
+%%DATADIR%%/textures/liquid/waste01.jpg
+%%DATADIR%%/textures/liquid/water01.jpg
+%%DATADIR%%/textures/liquid/water2.jpg
+%%DATADIR%%/textures/mech/basefloor01.jpg
+%%DATADIR%%/textures/mech/basefloor02.jpg
+%%DATADIR%%/textures/mech/basemetal.jpg
+%%DATADIR%%/textures/mech/biohazard.jpg
+%%DATADIR%%/textures/mech/box-metal01.jpg
+%%DATADIR%%/textures/mech/caution01.jpg
+%%DATADIR%%/textures/mech/computerscreen01.jpg
+%%DATADIR%%/textures/mech/computerscreen02.jpg
+%%DATADIR%%/textures/mech/computerscreen03.jpg
+%%DATADIR%%/textures/mech/computerscreen04.jpg
+%%DATADIR%%/textures/mech/computerscreen05.jpg
+%%DATADIR%%/textures/mech/computerscreen06.jpg
+%%DATADIR%%/textures/mech/computerscreen07.jpg
+%%DATADIR%%/textures/mech/computerscreen08.jpg
+%%DATADIR%%/textures/mech/computerscreen09.jpg
+%%DATADIR%%/textures/mech/crate.jpg
+%%DATADIR%%/textures/mech/e8_jumppad02.jpg
+%%DATADIR%%/textures/mech/e8_launchpad1.jpg
+%%DATADIR%%/textures/mech/energybarrier01.jpg
+%%DATADIR%%/textures/mech/floor-concrete06.jpg
+%%DATADIR%%/textures/mech/glass01.jpg
+%%DATADIR%%/textures/mech/glass02.jpg
+%%DATADIR%%/textures/mech/light01.jpg
+%%DATADIR%%/textures/mech/metal01.jpg
+%%DATADIR%%/textures/mech/metal02.jpg
+%%DATADIR%%/textures/mech/metal03.jpg
+%%DATADIR%%/textures/mech/metal04.jpg
+%%DATADIR%%/textures/mech/metal05.jpg
+%%DATADIR%%/textures/mech/metal06.jpg
+%%DATADIR%%/textures/mech/metal07.jpg
+%%DATADIR%%/textures/mech/metalbox.jpg
+%%DATADIR%%/textures/mech/pipe.jpg
+%%DATADIR%%/textures/mech/plasmapipe.jpg
+%%DATADIR%%/textures/mech/rollup.jpg
+%%DATADIR%%/textures/mech/rustedmetal07.jpg
+%%DATADIR%%/textures/mech/taillight.jpg
+%%DATADIR%%/textures/mech/wallpaintgrey01.jpg
+%%DATADIR%%/textures/radiant/notex.tga
+%%DATADIR%%/textures/radiant/shadernotex.tga
+%%DATADIR%%/textures/ruins/granite01.jpg
+%%DATADIR%%/textures/ruins/stone01.jpg
+%%DATADIR%%/textures/tools/nospawn.tga
+%%DATADIR%%/textures/tunnels/dkstone.jpg
+%%DATADIR%%/textures/tunnels/grate1.jpg
+%%DATADIR%%/textures/tunnels/metal04.jpg
+%%DATADIR%%/textures/tunnels/metalrust2.jpg
+%%DATADIR%%/textures/tunnels/metc1.jpg
+%%DATADIR%%/textures/tunnels/metc2.jpg
+%%DATADIR%%/textures/tunnels/ramp.jpg
+%%DATADIR%%/textures/tunnels/sewer.jpg
+%%DATADIR%%/textures/tunnels/sewerbricks1.jpg
+%%DATADIR%%/textures/tunnels/sewerbricks2.jpg
+%%DATADIR%%/textures/tunnels/sewerwall1.jpg
+%%DATADIR%%/textures/virtual/virtual.jpg
+@dirrm %%DATADIR%%/textures/virtual
+@dirrm %%DATADIR%%/textures/tunnels
+@dirrm %%DATADIR%%/textures/tools
+@dirrm %%DATADIR%%/textures/ruins
+@dirrm %%DATADIR%%/textures/radiant
+@dirrm %%DATADIR%%/textures/mech
+@dirrm %%DATADIR%%/textures/liquid
+@dirrm %%DATADIR%%/textures/grasslands
+@dirrm %%DATADIR%%/textures/game
+@dirrm %%DATADIR%%/textures/desert
+@dirrm %%DATADIR%%/textures/common
+@dirrm %%DATADIR%%/textures/arctic
+@dirrm %%DATADIR%%/textures
+@dirrm %%DATADIR%%/sound/gui
+@dirrm %%DATADIR%%/sound/combat
+@dirrm %%DATADIR%%/sound/ambience/ruins
+@dirrm %%DATADIR%%/sound/ambience/mech
+@dirrm %%DATADIR%%/sound/ambience/grasslands
+@dirrm %%DATADIR%%/sound/ambience/general
+@dirrm %%DATADIR%%/sound/ambience
+@dirrm %%DATADIR%%/sound
+@dirrm %%DATADIR%%/music
+@dirrm %%DATADIR%%/gfx/rw2
+@dirrm %%DATADIR%%/gfx/primitive
+@dirrm %%DATADIR%%/gfx/md2
+@dirrm %%DATADIR%%/gfx/gui
+@dirrm %%DATADIR%%/gfx/game
+@dirrm %%DATADIR%%/gfx
+@dirrm %%DATADIR%%/data/widgets
+@dirrm %%DATADIR%%/data/texturespecs
+@dirrm %%DATADIR%%/data/missions
+@dirrm %%DATADIR%%/data/misc
+@dirrm %%DATADIR%%/data/locale
+@dirrm %%DATADIR%%/data/gameDefs
+@dirrm %%DATADIR%%/data/fonts
+@dirrm %%DATADIR%%/data/combatResources
+@dirrm %%DATADIR%%/data/bsp
+@dirrm %%DATADIR%%/data
+@dirrm %%DATADIR%%

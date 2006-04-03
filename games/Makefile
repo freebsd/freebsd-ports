@@ -58,6 +58,7 @@
     SUBDIR += biloba
     SUBDIR += biorythm
     SUBDIR += blackjack
+    SUBDIR += blobandconquer
     SUBDIR += blobwars
     SUBDIR += block
     SUBDIR += blockade
