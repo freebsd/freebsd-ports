@@ -400,6 +400,7 @@
     SUBDIR += playmidi
     SUBDIR += polypaudio
     SUBDIR += portaudio
+    SUBDIR += praat
     SUBDIR += prokyon3
     SUBDIR += py-ao
     SUBDIR += py-cddb
