@@ -63,7 +63,7 @@ fi
 
 #umount ${chroot}/proc
 
-if [ ${arch} = "i386" ]; then
+if [ ${arch} = "i386" -o ${arch} = "amd64" ]; then
   cleanup_mount ${chroot} /compat/linux/proc
 fi
 
