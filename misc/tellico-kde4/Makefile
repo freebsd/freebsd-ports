@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tellico
-PORTVERSION=	1.0.3
+PORTVERSION=	1.1.4
 CATEGORIES=	misc kde
 MASTER_SITES=	http://www.periapsis.org/tellico/download/
 
@@ -16,12 +16,11 @@ COMMENT=	Collection manager for KDE
 LIB_DEPENDS=	tag:${PORTSDIR}/audio/taglib \
 		yaz.2:${PORTSDIR}/net/yaz
 
-EXTRA_PATCHES=	${.CURDIR}/../../x11/kde3/files/extrapatch-old_configure
-
 USE_KDELIBS_VER=3
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
-USE_REINPLACE=	yes
+
+CONFIGURE_ARGS+=	--disable-cdtext
 
 OPTIONS=	CDDB "CDDB support" on \
 		KCAL "KOrganizer support" on \
@@ -31,7 +30,7 @@ OPTIONS=	CDDB "CDDB support" on \
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-BROKEN=		"Does not compile on FreeBSD 4.x"
+BROKEN=		Does not compile on FreeBSD 4.x
 .endif
 
 .if defined(WITHOUT_CDDB)

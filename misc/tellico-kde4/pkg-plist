@@ -1,5 +1,5 @@
 bin/tellico
-share/applnk/Applications/tellico.desktop
+share/applications/kde/tellico.desktop
 share/apps/kconf_update/tellico-rename.upd
 share/apps/kconf_update/tellico.upd
 share/apps/tellico/MARC21slim2MODS3.xsl
@@ -25,7 +25,14 @@ share/apps/tellico/pics/card.png
 share/apps/tellico/pics/checkmark.png
 share/apps/tellico/pics/coin.png
 share/apps/tellico/pics/comic.png
+share/apps/tellico/pics/file.png
 share/apps/tellico/pics/game.png
+share/apps/tellico/pics/nocover_album.png
+share/apps/tellico/pics/nocover_bibtex.png
+share/apps/tellico/pics/nocover_book.png
+share/apps/tellico/pics/nocover_comic.png
+share/apps/tellico/pics/nocover_game.png
+share/apps/tellico/pics/nocover_video.png
 share/apps/tellico/pics/person-open.png
 share/apps/tellico/pics/person.png
 share/apps/tellico/pics/stamp.png
@@ -55,6 +62,7 @@ share/apps/tellico/report-templates/Image_List.xsl
 share/apps/tellico/report-templates/Loan_View.xsl
 share/apps/tellico/report-templates/Title_Listing_(Horizontal).xsl
 share/apps/tellico/report-templates/Title_Listing_(Vertical).xsl
+share/apps/tellico/report-templates/Tri-Column.xsl
 share/apps/tellico/shadowAlpha.png
 share/apps/tellico/tellico-by-author.xsl
 share/apps/tellico/tellico-by-title.xsl
@@ -67,6 +75,7 @@ share/apps/tellico/tellico2html.xsl
 share/apps/tellico/tellico2onix.xsl
 share/apps/tellico/tellicoui.rc
 share/apps/tellico/vhs-logo.png
+share/apps/tellico/yahoo2tellico.xsl
 share/doc/HTML/en/tellico/advanced.docbook
 share/doc/HTML/en/tellico/amazon-options.png
 share/doc/HTML/en/tellico/common
@@ -88,9 +97,11 @@ share/doc/HTML/en/tellico/fetch-dialog.png
 share/doc/HTML/en/tellico/fields-dialog.png
 share/doc/HTML/en/tellico/filter-dialog.png
 share/doc/HTML/en/tellico/filter-view.png
+share/doc/HTML/en/tellico/freebsd-doc-license.html
 share/doc/HTML/en/tellico/fundamentals.docbook
 share/doc/HTML/en/tellico/general-options.png
 share/doc/HTML/en/tellico/hacking.docbook
+share/doc/HTML/en/tellico/imdb-options.png
 share/doc/HTML/en/tellico/importing-exporting.docbook
 share/doc/HTML/en/tellico/index.cache.bz2
 share/doc/HTML/en/tellico/index.docbook
@@ -98,9 +109,11 @@ share/doc/HTML/en/tellico/loan-dialog.png
 share/doc/HTML/en/tellico/loan-view.png
 share/doc/HTML/en/tellico/main-window.png
 share/doc/HTML/en/tellico/menus.docbook
+share/doc/HTML/en/tellico/openoffice-dialog.png
 share/doc/HTML/en/tellico/print-options.png
 share/doc/HTML/en/tellico/report-dialog.png
 share/doc/HTML/en/tellico/source-options.png
+share/doc/HTML/en/tellico/sru-options.png
 share/doc/HTML/en/tellico/template-options.png
 share/doc/HTML/en/tellico/z3950-options.png
 share/icons/hicolor/128x128/apps/tellico.png
@@ -120,6 +133,7 @@ share/locale/ca/LC_MESSAGES/tellico.mo
 share/locale/cs/LC_MESSAGES/tellico.mo
 share/locale/de/LC_MESSAGES/tellico.mo
 share/locale/ee/LC_MESSAGES/tellico.mo
+share/locale/en_GB/LC_MESSAGES/tellico.mo
 share/locale/es/LC_MESSAGES/tellico.mo
 share/locale/fi/LC_MESSAGES/tellico.mo
 share/locale/fr/LC_MESSAGES/tellico.mo
@@ -130,7 +144,9 @@ share/locale/nl/LC_MESSAGES/tellico.mo
 share/locale/nn/LC_MESSAGES/tellico.mo
 share/locale/pl/LC_MESSAGES/tellico.mo
 share/locale/pt/LC_MESSAGES/tellico.mo
+share/locale/pt_BR/LC_MESSAGES/tellico.mo
 share/locale/ro/LC_MESSAGES/tellico.mo
+share/locale/ru/LC_MESSAGES/tellico.mo
 share/locale/sv/LC_MESSAGES/tellico.mo
 share/mimelnk/application/x-tellico.desktop
 @dirrmtry share/locale/ro/LC_MESSAGES
@@ -153,3 +169,4 @@ share/mimelnk/application/x-tellico.desktop
 @dirrm share/apps/tellico/entry-templates
 @dirrm share/apps/tellico
 @dirrmtry share/apps/kconf_update
+@dirrmtry share/applications/kde
