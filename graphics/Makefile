@@ -282,6 +282,7 @@
     SUBDIR += kix-kmod
     SUBDIR += kludge3d
     SUBDIR += kooka
+    SUBDIR += kudu
     SUBDIR += kuickshow
     SUBDIR += landscape
     SUBDIR += lcms
