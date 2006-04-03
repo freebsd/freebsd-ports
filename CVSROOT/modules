@@ -14436,3 +14436,4 @@ ztrack		ports/games/ztrack
 zu-aspell	ports/textproc/zu-aspell
 zziplib		ports/devel/zziplib
 p5-Devel-CoreStack	ports/devel/p5-Devel-CoreStack
+ja-p5-Date-Japanese-Holiday	ports/japanese/p5-Date-Japanese-Holiday
