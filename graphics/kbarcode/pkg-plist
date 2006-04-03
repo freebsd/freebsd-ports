@@ -2,11 +2,12 @@ bin/kbarcode
 lib/kde3/kfile_kbarcode.a
 lib/kde3/kfile_kbarcode.la
 lib/kde3/kfile_kbarcode.so
-share/applnk/Applications/KBarcode/kbarcode-batch.desktop
-share/applnk/Applications/KBarcode/kbarcode-editor.desktop
-share/applnk/Applications/KBarcode/kbarcode-label.desktop
-share/applnk/Applications/KBarcode/kbarcode-single.desktop
-share/applnk/Applications/KBarcode/kbarcode.desktop
+share/applications/kde/kbarcode-batch.desktop
+share/applications/kde/kbarcode-editor.desktop
+share/applications/kde/kbarcode-label.desktop
+share/applications/kde/kbarcode-single.desktop
+share/applications/kde/kbarcode.desktop
+share/apps/kbarcode/barcode.ps
 share/apps/kbarcode/barcodes.html
 share/apps/kbarcode/exampledata.sql
 share/apps/kbarcode/labeldefinitions.sql
@@ -32,16 +33,11 @@ share/locale/nl/LC_MESSAGES/kbarcode.mo
 share/locale/pl/LC_MESSAGES/kbarcode.mo
 share/locale/sv/LC_MESSAGES/kbarcode.mo
 share/services/kfile_kbarcode.desktop
-@dirrmtry share/icons/hicolor/64x64/apps
-@dirrmtry share/icons/hicolor/32x32/apps
-@dirrmtry share/icons/hicolor/32x32/actions
-@dirrmtry share/icons/hicolor/22x22/actions
-@dirrmtry share/icons/hicolor/16x16/apps
-@dirrmtry share/icons/hicolor/16x16/actions
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/fi/LC_MESSAGES
+@dirrmtry share/locale/fi
+@dirrmtry share/locale/el/LC_MESSAGES
+@dirrmtry share/locale/el
 @dirrm share/apps/kbarcode
-@dirrmtry share/apps
-@dirrm share/applnk/Applications/KBarcode
-@dirrmtry share/applnk/Applications
-@dirrmtry share/applnk
+@dirrmtry share/applications/kde
