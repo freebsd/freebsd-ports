@@ -1,14 +1,14 @@
---- knemod/data.h.orig	Sat Jan 22 00:10:05 2005
-+++ knemod/data.h	Fri Jan 21 17:38:50 2005
+--- src/knemod/global.h.orig	Sat Apr  1 21:44:22 2006
++++ src/knemod/global.h	Sun Apr  2 21:33:36 2006
 @@ -22,6 +22,7 @@
  
  #include <qpair.h>
  #include <qcolor.h>
 +#include <qdict.h>
  #include <qstring.h>
- #include <qvaluevector.h>
  
-@@ -41,6 +42,11 @@
+ /**
+@@ -36,6 +37,11 @@
      int toolTipContent;
  };
  
@@ -19,8 +19,8 @@
 +    
  struct InterfaceData
  {
-     InterfaceData::InterfaceData()
-@@ -64,11 +70,9 @@
+     InterfaceData()
+@@ -59,11 +65,9 @@
      unsigned long prevTxBytes;
      unsigned long incomingBytes;
      unsigned long outgoingBytes;

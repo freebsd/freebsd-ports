@@ -1,6 +1,6 @@
---- knemod/interfacetooltip.cpp.orig	Fri Jan 21 17:51:13 2005
-+++ knemod/interfacetooltip.cpp	Fri Jan 21 17:59:47 2005
-@@ -99,6 +99,23 @@
+--- src/knemod/interfacetooltip.cpp.orig	Sat Apr  1 21:44:22 2006
++++ src/knemod/interfacetooltip.cpp	Sun Apr  2 21:30:52 2006
+@@ -101,6 +101,23 @@
  
      if ( data.available )
      {
@@ -24,7 +24,7 @@
          if ( toolTipContent & IP_ADDRESS )
              text += "<tr><td>" + mToolTips[4].first + "</td><td>" + data.ipAddress + "</td></tr>";
          if ( toolTipContent & SUBNET_MASK )
-@@ -107,6 +124,7 @@
+@@ -109,6 +126,7 @@
          {
              if ( toolTipContent & BCAST_ADDRESS )
                  text += "<tr><td>" + mToolTips[18].first + "</td><td>" + data.broadcastAddress + "</td></tr>";

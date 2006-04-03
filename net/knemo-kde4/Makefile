@@ -5,15 +5,13 @@
 # $FreeBSD$
 
 PORTNAME=	knemo
-PORTVERSION=	0.3.1
-PORTREVISION=	4
+PORTVERSION=	0.4.0
 CATEGORIES=	net kde
-MASTER_SITES=	http://www.eris23.de/knemo/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	markus
 
 MAINTAINER=	markus@FreeBSD.org
 COMMENT=	Network monitor for KDE
-
-EXTRA_PATCHES=  ${.CURDIR}/../../x11/kde3/files/extrapatch-old_configure
 
 USE_BZIP2=	yes
 USE_KDELIBS_VER=3

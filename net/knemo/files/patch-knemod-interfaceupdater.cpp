@@ -1,7 +1,7 @@
---- knemod/interfaceupdater.cpp.orig	Fri Aug 20 20:26:41 2004
-+++ knemod/interfaceupdater.cpp	Sat Jan 22 13:34:49 2005
+--- src/knemod/interfaceupdater.cpp.orig	Sat Apr  1 21:44:22 2006
++++ src/knemod/interfaceupdater.cpp	Sun Apr  2 21:29:24 2006
 @@ -17,6 +17,24 @@
-    Boston, MA 02111-1307, USA.
+    Boston, MA 02110-1301, USA.
  */
  
 +#ifdef __FreeBSD__
@@ -25,7 +25,7 @@
  #include <qmap.h>
  #include <qtimer.h>
  #include <qregexp.h>
-@@ -48,6 +66,7 @@
+@@ -49,6 +67,7 @@
      mTimer->stop();
      delete mTimer;
  
@@ -33,7 +33,7 @@
      if ( mRouteProcess )
      {
          mRouteProcess->kill();
-@@ -63,10 +82,12 @@
+@@ -64,10 +83,12 @@
          mIwconfigProcess->kill();
          delete mIwconfigProcess;
      }
@@ -46,7 +46,7 @@
      if ( !mIfconfigProcess )
      {
          mIfconfigStdout = QString::null;
-@@ -108,6 +129,7 @@
+@@ -109,6 +130,7 @@
          }
      }
  #endif
@@ -54,7 +54,7 @@
  
  #ifdef PATH_ROUTE
      if ( !mRouteProcess )
-@@ -116,7 +138,11 @@
+@@ -117,7 +139,11 @@
          mRouteProcess = new KProcess();
          mRouteProcess->setEnvironment( "LANG", "C" );
          mRouteProcess->setEnvironment( "LC_ALL", "C" );
@@ -66,7 +66,7 @@
          connect( mRouteProcess,  SIGNAL( receivedStdout( KProcess*, char*, int ) ),
                   this, SLOT( routeProcessStdout( KProcess*, char*, int ) ) );
          connect( mRouteProcess,  SIGNAL( receivedStderr( KProcess*, char*, int ) ),
-@@ -131,6 +157,140 @@
+@@ -132,6 +158,140 @@
          }
      }
  #endif
@@ -207,7 +207,7 @@
  }
  
  void InterfaceUpdater::routeProcessExited( KProcess* process )
-@@ -180,6 +340,7 @@
+@@ -181,6 +341,7 @@
  
  void InterfaceUpdater::parseIfconfigOutput()
  {
@@ -215,7 +215,7 @@
      /* mIfconfigStdout contains the complete output of 'ifconfig' which we
       * are going to parse here.
       */
-@@ -235,10 +396,12 @@
+@@ -237,10 +398,12 @@
          }
          interface->activateMonitor();
      }
@@ -228,7 +228,7 @@
      QRegExp regExp( ".*RX.*:(\\d+).*:\\d+.*:\\d+.*:\\d+" );
      if ( regExp.search( config ) > -1 )
          data.rxPackets = regExp.cap( 1 ).toULong();
-@@ -318,10 +481,12 @@
+@@ -330,10 +493,12 @@
          if ( regExp.search( config ) > -1 )
              data.ptpAddress = regExp.cap( 2 );
      }
@@ -241,7 +241,7 @@
      /* mIwconfigStdout contains the complete output of 'iwconfig' which we
       * are going to parse here.
       */
-@@ -364,10 +529,12 @@
+@@ -376,10 +541,12 @@
              updateWirelessData( configs[key], interface->getWirelessData() );
          }
      }
@@ -254,15 +254,15 @@
      QRegExp regExp( "ESSID:\"?([^\"]*)\"?" );
      if ( regExp.search( config ) > -1 )
          data.essid = regExp.cap( 1 );
-@@ -401,6 +568,7 @@
-     regExp.setPattern( "Link Quality:([\\d/]*)" );
+@@ -413,6 +580,7 @@
+     regExp.setPattern( "Link Quality[=:]([\\d/]*)" );
      if ( regExp.search( config ) > -1 )
          data.linkQuality = regExp.cap( 1 );
 +#endif
  }
  
  void InterfaceUpdater::parseRouteOutput()
-@@ -409,16 +577,25 @@
+@@ -421,16 +589,25 @@
       * are going to parse here.
       */
      QMap<QString, QStringList> configs;
