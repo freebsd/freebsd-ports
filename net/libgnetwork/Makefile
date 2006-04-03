@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libgnetwork
-PORTVERSION=	0.0.6
-PORTREVISION=	1
+PORTVERSION=	0.0.9
 CATEGORIES=	net gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.0
@@ -17,6 +16,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A GLib-based networking wrapper
 
 USE_BZIP2=	yes
+USE_GETTEXT=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack gconf2
 INSTALLS_SHLIB=	yes
