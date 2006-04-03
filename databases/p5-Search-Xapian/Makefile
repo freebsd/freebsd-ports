@@ -35,4 +35,8 @@ MAN3=	Search::Xapian.3 \
 	Search::Xapian::Weight.3 \
 	Search::Xapian::WritableDatabase.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.if ${PERL_LEVEL} < 500600
+IGNORE=	requires at least Perl 5.6. Install lang/perl5 or perl5.8 and try again
+.endif
+.include <bsd.port.post.mk>
