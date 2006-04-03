@@ -1,4 +1,7 @@
 bin/wwwoffle
+bin/wwwoffle-fsck
+bin/wwwoffle-gunzip
+bin/wwwoffle-gzip
 bin/wwwoffle-hash
 bin/wwwoffle-ls
 bin/wwwoffle-mv
@@ -10,7 +13,6 @@ bin/wwwoffle-write
 etc/wwwoffle.conf.install
 sbin/wwwoffled
 share/doc/wwwoffle/CHANGES.CONF
-share/doc/wwwoffle/CONVERT
 share/doc/wwwoffle/COPYING
 share/doc/wwwoffle/FAQ
 share/doc/wwwoffle/INSTALL
@@ -22,6 +24,8 @@ share/doc/wwwoffle/README.PWD
 share/doc/wwwoffle/README.URL
 share/doc/wwwoffle/README.compress
 share/doc/wwwoffle/README.htdig
+share/doc/wwwoffle/README.https
+share/doc/wwwoffle/README.hyperestraier
 share/doc/wwwoffle/README.lang
 share/doc/wwwoffle/README.mnogosearch
 share/doc/wwwoffle/README.namazu
@@ -31,10 +35,9 @@ share/doc/wwwoffle/de/INSTALL
 share/doc/wwwoffle/de/LSM
 share/doc/wwwoffle/de/NEWS
 share/doc/wwwoffle/de/README.1st
-share/doc/wwwoffle/de/README.CONF.html
 share/doc/wwwoffle/de/README.CONF
+share/doc/wwwoffle/de/README.CONF.html
 share/doc/wwwoffle/de/README.html
-share/doc/wwwoffle/es/CONVERT
 share/doc/wwwoffle/es/INSTALL
 share/doc/wwwoffle/es/LSM
 share/doc/wwwoffle/es/README
@@ -161,6 +164,13 @@ html/en/local/dontget/replacement.png
 html/en/local/index.html
 html/en/messages/AddCacheInfo.html
 html/en/messages/CantRefreshPosted.html
+html/en/messages/CertIllegal.html
+html/en/messages/CertIndex-Body.html
+html/en/messages/CertIndex-Head.html
+html/en/messages/CertIndex-Tail.html
+html/en/messages/CertInfo-Body.html
+html/en/messages/CertInfo-Head.html
+html/en/messages/CertInfo-Tail.html
 html/en/messages/ConfigurationAuthFail.html
 html/en/messages/ConfigurationChange.html
 html/en/messages/ConfigurationIllegal.html
@@ -270,6 +280,8 @@ html/en/search/htdig/index.html
 html/en/search/htdig/search.html
 html/en/search/htdig/star.gif
 html/en/search/htdig/star_blank.gif
+html/en/search/hyperestraier/index.html
+html/en/search/hyperestraier/search.html
 html/en/search/mnogosearch/index.html
 html/en/search/mnogosearch/m-search.gif
 html/en/search/mnogosearch/result.html
@@ -285,6 +297,7 @@ html/en/search/start3.html
 html/en/search/start4.html
 html/en/search/udmsearch
 html/en/wwwoffle.css
+html/en/wwwoffle.js
 html/en/wwwoffle.pac
 html/es/FAQ.html
 html/es/README.CONF.html
@@ -799,6 +812,11 @@ search/htdig/scripts/wwwoffle-htdig-incr
 search/htdig/scripts/wwwoffle-htdig-lasttime
 search/htdig/scripts/wwwoffle-htfuzzy
 search/htdig/scripts/wwwoffle-htsearch
+search/hyperestraier/conf/estseek.conf
+search/hyperestraier/conf/estseek.tmpl
+search/hyperestraier/conf/estseek.top
+search/hyperestraier/scripts/wwwoffle-estcmd-full
+search/hyperestraier/scripts/wwwoffle-estseek
 search/mnogosearch/conf/indexer-full.conf
 search/mnogosearch/conf/indexer-full.old.conf
 search/mnogosearch/conf/indexer-incr.conf
@@ -819,72 +837,75 @@ search/namazu/scripts/wwwoffle-mknmz-full
 search/namazu/scripts/wwwoffle-mknmz-lasttime
 search/namazu/scripts/wwwoffle-namazu
 search/udmsearch
-upgrade-config-2.5-2.6.pl
-upgrade-config-2.x-2.5.pl
 upgrade-config.pl
-@dirrm lastout
-@dirrm local
-@dirrm html/de/local
-@dirrm html/de/messages
-@dirrm html/de/search/htdig
-@dirrm html/de/search
-@dirrm html/de
-@dirrm html/en/local/dontget
-@dirrm html/en/local
-@dirrm html/en/messages
-@dirrm html/en/search/htdig
-@dirrm html/en/search/mnogosearch
-@dirrm html/en/search/namazu
-@dirrm html/en/search
-@dirrm html/en
-@dirrm html/es/messages
-@dirrm html/es/search/htdig
-@dirrm html/es/search/mnogosearch
-@dirrm html/es/search
-@dirrm html/es
-@dirrm html/fr/messages
-@dirrm html/fr/search/mnogosearch
-@dirrm html/fr/search/namazu
-@dirrm html/fr/search/htdig
-@dirrm html/fr/search
-@dirrm html/fr
-@dirrm html/it/messages
-@dirrm html/it/search/htdig
-@dirrm html/it/search/mnogosearch
-@dirrm html/it/search
-@dirrm html/it
-@dirrm html/nl/messages
-@dirrm html/nl
-@dirrm html/pl/local
-@dirrm html/pl/messages
-@dirrm html/pl/search/htdig
-@dirrm html/pl/search/namazu
-@dirrm html/pl/search/mnogosearch
-@dirrm html/pl/search
-@dirrm html/pl
-@dirrm html/ru/local
-@dirrm html/ru/messages
-@dirrm html/ru
-@dirrm html
-@dirrm http
-@dirrm lasttime
-@dirrm monitor
-@dirrm outgoing
-@dirrm prevtime1
-@dirrm search/htdig/conf
-@dirrm search/htdig/db
-@dirrm search/htdig/db-lasttime
-@dirrm search/htdig/scripts
-@dirrm search/htdig/tmp
-@dirrm search/htdig
-@dirrm search/mnogosearch/conf
-@dirrm search/mnogosearch/scripts
-@dirrm search/mnogosearch/db
-@dirrm search/mnogosearch
 @dirrm search/namazu/scripts
 @dirrm search/namazu/db
 @dirrm search/namazu/conf
 @dirrm search/namazu
+@dirrm search/mnogosearch/scripts
+@dirrm search/mnogosearch/db
+@dirrm search/mnogosearch/conf
+@dirrm search/mnogosearch
+@dirrm search/hyperestraier/scripts
+@dirrm search/hyperestraier/db
+@dirrm search/hyperestraier/conf
+@dirrm search/hyperestraier
+@dirrm search/htdig/tmp
+@dirrm search/htdig/scripts
+@dirrm search/htdig/db-lasttime
+@dirrm search/htdig/db
+@dirrm search/htdig/conf
+@dirrm search/htdig
 @dirrm search
+@dirrm prevtime1
+@dirrm outgoing
+@dirrm monitor
+@dirrm local
+@dirrm lasttime
+@dirrm lastout
+@dirrm http
+@dirrm html/ru/messages
+@dirrm html/ru/local
+@dirrm html/ru
+@dirrm html/pl/search/namazu
+@dirrm html/pl/search/mnogosearch
+@dirrm html/pl/search/htdig
+@dirrm html/pl/search
+@dirrm html/pl/messages
+@dirrm html/pl/local
+@dirrm html/pl
+@dirrm html/nl/messages
+@dirrm html/nl
+@dirrm html/it/search/mnogosearch
+@dirrm html/it/search/htdig
+@dirrm html/it/search
+@dirrm html/it/messages
+@dirrm html/it
+@dirrm html/fr/search/namazu
+@dirrm html/fr/search/mnogosearch
+@dirrm html/fr/search/htdig
+@dirrm html/fr/search
+@dirrm html/fr/messages
+@dirrm html/fr
+@dirrm html/es/search/mnogosearch
+@dirrm html/es/search/htdig
+@dirrm html/es/search
+@dirrm html/es/messages
+@dirrm html/es
+@dirrm html/en/search/namazu
+@dirrm html/en/search/mnogosearch
+@dirrm html/en/search/hyperestraier
+@dirrm html/en/search/htdig
+@dirrm html/en/search
+@dirrm html/en/messages
+@dirrm html/en/local/dontget
+@dirrm html/en/local
+@dirrm html/en
+@dirrm html/de/search/htdig
+@dirrm html/de/search
+@dirrm html/de/messages
+@dirrm html/de/local
+@dirrm html/de
+@dirrm html
 @cwd /
 @dirrm %%WWWOFFLE_SPOOL%%

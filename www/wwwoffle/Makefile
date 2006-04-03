@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	wwwoffle
-PORTVERSION=	2.8e
-PORTREVISION=	1
+PORTVERSION=	2.9
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.gedanken.freeserve.co.uk/download-wwwoffle/
 EXTRACT_SUFX=	.tgz
@@ -28,6 +27,7 @@ PLIST_SUB+=	WWWOFFLE_SPOOL=${WWWOFFLE_SPOOL}
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS=-lmd
 CONFIGURE_ARGS=	--with-confdir=${PREFIX}/etc --with-ipv6 \
+		--with-gnutls=${PREFIX} \
 		--with-spooldir=${WWWOFFLE_SPOOL}
 
 RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
@@ -48,8 +48,6 @@ post-configure:
 .endif
 
 post-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/conf/upgrade-config-2.5-2.6.pl ${WWWOFFLE_SPOOL}
-	@${INSTALL_SCRIPT} ${WRKSRC}/conf/upgrade-config-2.x-2.5.pl ${WWWOFFLE_SPOOL}
 	@${INSTALL_SCRIPT} ${WRKSRC}/conf/upgrade-config.pl ${WWWOFFLE_SPOOL}
 	@${CAT} ${PKGMESSAGE}
 
