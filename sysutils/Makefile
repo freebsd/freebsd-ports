@@ -455,6 +455,7 @@
     SUBDIR += pwgen2
     SUBDIR += pwsafe
     SUBDIR += qlogtools
+    SUBDIR += qpxtool
     SUBDIR += qtpkg
     SUBDIR += radeontool
     SUBDIR += radmind
