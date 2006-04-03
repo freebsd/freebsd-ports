@@ -1,0 +1,14 @@
+--- makefiles/makefile.defs.freebsd.dynamic.orig	Thu May 19 14:12:01 2005
++++ makefiles/makefile.defs.freebsd.dynamic	Mon Apr  3 04:24:51 2006
+@@ -4,9 +4,9 @@
+ # Jason W. Bacon (jbacon@mcw.edu), December 6, 2003 
+ # Paul Boersma, May 19, 2005
+ 
+-CC = gcc -DUNIX -Dlinux -I /usr/X11R6/include -Wimplicit -Wreturn-type -Wunused -Wunused-parameter -Wuninitialized -O
++CC += -DUNIX -Dlinux -I${X11BASE}/include -trigraphs
+ 
+-LIBS = /usr/X11R6/lib/libXm.a -L /usr/X11R6/lib -lXmu -lXp -lXt -lSM -lICE -lXext -lX11 -lm 
++LIBS = ${X11BASE}/lib/libXm.a -L${X11BASE}/lib -lXmu -lXp -lXt -lSM -lICE -lXext -lX11 -lm 
+ 
+ RANLIB = ls
+ ICON =
