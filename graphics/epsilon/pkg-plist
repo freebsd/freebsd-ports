@@ -3,6 +3,7 @@ bin/epsilon_thumb_test
 bin/epsilon_thumbd
 bin/epsilon-config
 include/Epsilon.h
+include/Epsilon_Request.h
 lib/libepsilon.a
 lib/libepsilon.la
 lib/libepsilon.so
