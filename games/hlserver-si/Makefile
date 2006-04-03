@@ -8,14 +8,12 @@
 PORTNAME=	si
 PORTVERSION=	0.97.0ra
 PORTREVISION=	1
-MASTER_SITES=	ftp://ftp2.extreme-players.de/hl/mod/si/ \
-		ftp://ftp.clanserver4u.de/exp/hl/mod/si/
+MASTER_SITES=	http://bsd.gubkin.ru/myports/ \
+		http://mirror.isp.net.au/ftp/pub/FreeBSD/distfiles/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g:S/0r//}-linux
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Half-Life mod Science and Industry full server package for Linux
-
-BROKEN=		"Unfetchable"
 
 _DONT_INCLUDE_MK_=yes
 
