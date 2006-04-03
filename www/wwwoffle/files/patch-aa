@@ -1,55 +1,37 @@
---- src/Makefile.in.orig	Tue Sep  2 19:24:28 2003
-+++ src/Makefile.in	Tue Oct  7 13:49:09 2003
-@@ -136,7 +136,7 @@
+--- src/Makefile.in~	Wed Feb  1 04:02:32 2006
++++ src/Makefile.in	Mon Apr  3 10:21:07 2006
+@@ -140,7 +140,7 @@
  	     document.o html.o css.o xml.o vrml.o javaclass.o \
  	     configrdwr.o configmisc.o configdata.o configfunc.o \
- 	     io.o iopriv.o iozlib.o iochunk.o \
--	     errors.o miscurl.o miscencdec.o headbody.o proto.o sockets.o md5.o
-+	     errors.o miscurl.o miscencdec.o headbody.o proto.o sockets.o
+ 	     io.o iopriv.o iozlib.o iognutls.o iochunk.o \
+-	     errors.o miscurl.o miscencdec.o headbody.o proto.o certificates.o sockets.o md5.o
++	     errors.o miscurl.o miscencdec.o headbody.o proto.o certificates.o sockets.o
  
  wwwoffle : $(WWWOFFLE_OBJ)
  	$(LINK) $(WWWOFFLE_OBJ) -o $@ $(LIBRARY)
-@@ -152,7 +152,7 @@
-               parse.o purge.o refresh.o spool.o \
+@@ -156,7 +156,7 @@
+ 	      parse.o purge.o refresh.o spool.o \
  	      configrdwr.o configmisc.o configdata.o configfunc.o configedit.o \
- 	      io.o iopriv.o iozlib.o iochunk.o \
--	      errors.o miscurl.o miscencdec.o headbody.o proto.o sockets.o md5.o
-+	      errors.o miscurl.o miscencdec.o headbody.o proto.o sockets.o
+ 	      io.o iopriv.o iozlib.o iognutls.o iochunk.o \
+-	      errors.o miscurl.o miscencdec.o headbody.o proto.o certificates.o sockets.o md5.o
++	      errors.o miscurl.o miscencdec.o headbody.o proto.o certificates.o sockets.o
  
  wwwoffled : $(WWWOFFLED_OBJ)
  	$(LINK) $(WWWOFFLED_OBJ) -o $@ $(LIBRARY)
-@@ -166,7 +166,7 @@
+@@ -170,7 +170,7 @@
  	           parse.o \
  	           configrdwr.o configmisc.o configdata.o configfunc.o \
- 	           io.o iopriv.o iozlib.o iochunk.o \
--	           errors.o miscurl.o miscencdec.o headbody.o proto.o sockets.o md5.o
-+	           errors.o miscurl.o miscencdec.o headbody.o proto.o sockets.o
+ 	           io.o iopriv.o iozlib.o iognutls.o iochunk.o \
+-	           errors.o miscurl.o miscencdec.o headbody.o proto.o certificates.o sockets.o md5.o
++	           errors.o miscurl.o miscencdec.o headbody.o proto.o certificates.o sockets.o
  
  wwwoffle-tools : $(WWWOFFLE_TOOLS_OBJ)
  	$(LINK) $(WWWOFFLE_TOOLS_OBJ) -o $@ $(LIBRARY)
-@@ -179,7 +179,7 @@
- 	    parse.o \
- 	    configrdwr.o configmisc.o configdata.o configfunc.o \
- 	    io.o iopriv.o iozlib.o iochunk.o \
--	    errors.o miscurl.o miscencdec.o headbody.o proto.o sockets.o spool.o md5.o
-+	    errors.o miscurl.o miscencdec.o headbody.o proto.o sockets.o spool.o
- 
- convert-cache : $(CONVERT_OBJ)
- 	$(LINK) $(CONVERT_OBJ) -o $@ $(LIBRARY)
-@@ -192,7 +192,7 @@
- 	       parse.o \
- 	       configrdwr.o configmisc.o configdata.o configfunc.o \
- 	       io.o iopriv.o iozlib.o iochunk.o \
--	       errors.o miscurl.o miscencdec.o headbody.o proto.o sockets.o spool.o md5.o
-+	       errors.o miscurl.o miscencdec.o headbody.o proto.o sockets.o spool.o
- 
- uncompress-cache : $(UNCOMPRESS_OBJ)
- 	$(LINK) $(UNCOMPRESS_OBJ) -o $@ $(LIBRARY)
-@@ -269,7 +269,6 @@
- sockets.o          : sockets.c          autoconfig.h                        errors.h          sockets.h                                                         \
+@@ -249,7 +249,6 @@
+ sockets.o          : sockets.c          autoconfig.h                        errors.h          sockets.h                                                                        \
                       sockets4.c sockets6.c
  
--md5.o              : md5.c                                                                                                                                 md5.h
+-md5.o              : md5.c                                                                                                                                                md5.h
  
  ######## SOURCE FILES ########
  
