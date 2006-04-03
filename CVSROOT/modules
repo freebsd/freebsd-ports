@@ -6153,7 +6153,6 @@ malsync		ports/palm/malsync
 mambo		ports/www/mambo
 man.el		ports/misc/man.el
 man2html	ports/textproc/man2html
-mantis		ports/databases/mantis
 man2web		ports/www/man2web
 managepkg	ports/sysutils/managepkg
 manck		ports/sysutils/manck
@@ -6161,6 +6160,7 @@ manedit		ports/editors/manedit
 mangband	ports/games/mangband
 mango		ports/misc/mango
 manipulate_data	ports/security/manipulate_data
+mantis		ports/databases/mantis
 manued.el	ports/textproc/manued.el
 mapagi		ports/print/mapagi
 mapchan		ports/sysutils/mapchan
@@ -7707,6 +7707,7 @@ p5-Class-DBI-Pager	ports/databases/p5-Class-DBI-Pager
 p5-Class-DBI-Pg		ports/databases/p5-Class-DBI-Pg
 p5-Class-DBI-Plugin	ports/databases/p5-Class-DBI-Plugin
 p5-Class-DBI-Plugin-AbstractCount	ports/databases/p5-Class-DBI-Plugin-AbstractCount
+p5-Class-DBI-Plugin-Iterator	ports/databases/p5-Class-DBI-Plugin-Iterator
 p5-Class-DBI-Plugin-RetrieveAll	ports/databases/p5-Class-DBI-Plugin-RetrieveAll
 p5-Class-DBI-Plugin-Type	ports/databases/p5-Class-DBI-Plugin-Type
 p5-Class-DBI-Replication	ports/databases/p5-Class-DBI-Replication
@@ -9872,6 +9873,7 @@ php5-bz2	ports/archivers/php5-bz2
 php5-calendar	ports/misc/php5-calendar
 php5-cgi	ports/www/php5-cgi
 php5-cli	ports/lang/php5-cli
+php5-creole	ports/databases/php5-creole
 php5-ctype	ports/textproc/php5-ctype
 php5-curl	ports/ftp/php5-curl
 php5-dba	ports/databases/php5-dba
@@ -9902,6 +9904,7 @@ php5-pcntl	ports/devel/php5-pcntl
 php5-pcre	ports/devel/php5-pcre
 php5-pgsql	ports/databases/php5-pgsql
 php5-posix	ports/sysutils/php5-posix
+php5-propel	ports/databases/php5-propel
 php5-pspell	ports/textproc/php5-pspell
 php5-readline	ports/devel/php5-readline
 php5-recode	ports/converters/php5-recode
@@ -11629,12 +11632,12 @@ rubygem-actionpack	ports/www/rubygem-actionpack
 rubygem-actionwebservice	ports/www/rubygem-actionwebservice
 rubygem-activerecord	ports/databases/rubygem-activerecord
 rubygem-activesupport	ports/devel/rubygem-activesupport
+rubygem-capistrano	ports/sysutils/rubygem-capistrano
 rubygem-colortools	ports/print/rubygem-colortools
 rubygem-memcache-client	ports/databases/rubygem-memcache-client
 rubygem-needle	ports/devel/rubygem-needle
 rubygem-net-sftp	ports/security/rubygem-net-sftp
 rubygem-net-ssh	ports/security/rubygem-net-ssh
-rubygem-capistrano	ports/sysutils/rubygem-capistrano
 rubygem-pdfwriter	ports/print/rubygem-pdfwriter
 rubygem-rails	ports/www/rubygem-rails
 rubygem-rake	ports/devel/rubygem-rake
@@ -14431,6 +14434,3 @@ zthread		ports/devel/zthread
 ztrack		ports/games/ztrack
 zu-aspell	ports/textproc/zu-aspell
 zziplib		ports/devel/zziplib
-php5-propel	ports/databases/php5-propel
-php5-creole	ports/databases/php5-creole
-p5-Class-DBI-Plugin-Iterator	ports/databases/p5-Class-DBI-Plugin-Iterator
