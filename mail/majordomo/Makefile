@@ -16,6 +16,8 @@ EXTRACT_SUFX=   .tgz
 MAINTAINER=	anders@FreeBSD.org
 COMMENT=	A mailing list manager
 
+BROKEN=		Unfetchable
+
 .if defined(WITH_SHA1_COOKIES)
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1
 .else
