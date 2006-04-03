@@ -1,7 +1,7 @@
 ***********************************************************************
 
   Freevo is now installed.  It might be a good idea to read the docs
-  in %%PREFIX%%/share/doc/freevo-1.5.4
+  in %%PREFIX%%/share/doc/freevo-%%PORTVERSION%%
 
   By default Freevo is configured with a single VFS in /var/db/cache.
   You can use this by adding users to the freevo group.
