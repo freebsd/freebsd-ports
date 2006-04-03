@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnupg
-PORTVERSION=	1.4.2.2
+PORTVERSION=	1.4.3
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	gnupg
@@ -39,6 +39,12 @@ INFO=		gpg gpgv
 
 .if defined(WITH_LIBICONV) || exists(${PREFIX}/lib/libiconv.so)
 USE_ICONV=	yes
+.endif
+.if defined(WITH_LIBUSB)
+CONFIGURE_ARGS+=	--with-libusb=${LOCALBASE}
+LIB_DEPENDS+=	usb-0.1.8:${PORTSDIR}/devel/libusb
+.else
+CONFIGURE_ARGS+=	--without-libusb
 .endif
 .if defined(WITH_LDAP)
 USE_OPENLDAP=	yes
