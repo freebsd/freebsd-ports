@@ -19,6 +19,8 @@ COMMENT=	Perl module to allow object methods for ezmlm-idx mailing lists
 
 BUILD_DEPENDS=	${EZMLM_DIR}/bin/ezmlm-idx:${PORTSDIR}/mail/ezmlm-idx
 
+BROKEN=		Incorrect pkg-plist
+
 IS_INTERACTIVE=	YES
 
 EZMLM_DIR?=	${LOCALBASE}
