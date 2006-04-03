@@ -6,20 +6,17 @@
 #
 
 PORTNAME=		resin
-PORTVERSION=		3.0.17
+PORTVERSION=		3.0.18
 CATEGORIES=		www java
 MASTER_SITES=		http://www.caucho.com/download/
 
 MAINTAINER=		jb.quenot@caraldi.com
 COMMENT=		Resin, a Java-based Application Server, 3.x branch
 
-BROKEN=			Hard-codes libc_r linkage
-
 USE_JAVA=		yes
 JAVA_VERSION=		1.2+
 HAS_CONFIGURE=		yes
 USE_PYTHON=		yes
-USE_REINPLACE=		yes
 USE_OPENSSL=		yes
 
 # Customizable settings
@@ -62,6 +59,9 @@ CONFIGURE_ARGS+=	--with-java-home=${JAVA_HOME} \
 			--with-openssl-lib=${OPENSSLLIB} \
 			--with-openssl-include=${OPENSSLINC}
 LDFLAGS+=		-L${OPENSSLLIB} -lcrypto -lssl
+# We need to link with cc instead of ld for the FreeBSD specific options used
+# by threading libraries
+CONFIGURE_ENV=		LD=${CC} PTHREAD_LIBS=${PTHREAD_LIBS}
 
 # Install the Apache plugin if needed
 .if defined(WITH_APACHE) && (${WITH_APACHE} == yes || ${WITH_APACHE} == YES)
@@ -96,16 +96,16 @@ SUBSTITUTIONS=		-e "s|%%APP_HOME%%|${APP_HOME}|g" \
 			-e "s|%%APXS%%|${APXS}|g" \
 			-e "s|%%COPYDIRS%%|${COPYDIRS}|g" \
 			-e "s|%%FILESDIR%%|${FILESDIR}|g" \
-			-e "s|%%GROUP%%|${GROUP}|g" \
 			-e "s|%%GID%%|${GID}|g" \
-			-e "s|%%JAVA_HOME%%|${JAVA_HOME}|g" \
+			-e "s|%%GROUP%%|${GROUP}|g" \
 			-e "s|%%JAVA%%|${JAVA}|g" \
+			-e "s|%%JAVA_HOME%%|${JAVA_HOME}|g" \
 			-e "s|%%LOG_FILE%%|${LOG_FILE}|g" \
-			-e "s|%%PYTHON_CMD%%|${PYTHON_CMD}|g" \
 			-e "s|%%PID_FILE%%|${PID_FILE}|g" \
 			-e "s|%%PORT%%|${PORT}|g" \
 			-e "s|%%PORTNAME%%|${PORTNAME}|g" \
 			-e "s|%%PREFIX%%|${PREFIX}|g" \
+			-e "s|%%PYTHON_CMD%%|${PYTHON_CMD}|g" \
 			-e "s|%%RUNASUID%%|${RUNASUID}|g" \
 			-e "s|%%RUNASUSER%%|${RUNASUSER}|g" \
 			-e "s|%%WRKDIR%%|${WRKDIR}|g" \
