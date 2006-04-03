@@ -6,6 +6,36 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20060403:
+  AFFECTS: users of databases/db*
+  AUTHOR: swhetzel@gmail.com
+
+  Most of the ports that depend on Berkeley DB have been updated to use
+  Mk/bsd.database.mk.  Mk/bsd.database.mk is used to include MySQL, PostgreSQL,
+  Berkeley DB, and SQLite in a port.
+
+  The Berkeley DB support in Mk/bsd.database.mk is used to return the proper
+  db* library name and location of the include and library directories of the
+  requested version.
+
+  To select a version of Berkeley DB, you can use either WITH_BDB_VER=<version>
+  or ${UNIQUENAME}_WITH_BDB_VER=<version> (version is one of 3, 40, 41, 42, 43,
+  or 44).
+
+  When a port has USE_BDB defined as either 'USE_BDB=41+' or 'USE_BDB=yes', the
+  port will use the oldest installed version of Berkeley DB. For example if
+  both db41 and db43 are installed, the port would end up compling with db41.
+  If you add -DWITH_BDB_HIGHEST to your make command, the port will use highest
+  db* instead. If no Berkeley DB is installed then the port will default to the
+  version specified or the default Berkeley DB version (currently db41).
+
+  NOTE: If a port was using a different variable to select Berkeley DB or a
+  version, you will get an IGNORE message when you build the port.  This
+  message will tell you what you need to do.
+
+  Port Maintainers please review the comments in Mk/bsd.database.mk on what
+  variables are available for you use in your own ports.
+
 20060331:
   AFFECTS: users of biology/emboss and biology/embassy
   AUTHOR: fernan@iib.unsam.edu.ar
