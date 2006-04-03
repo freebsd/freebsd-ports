@@ -115,3 +115,9 @@ share/applications/penguintv.desktop
 @dirrm share/penguintv
 @dirrmtry share/pixmaps
 @dirrmtry share/applications
+
+@cwd %%X11BASE%%
+etc/gconf/gconf.xml.defaults/schemas/apps/penguintv/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/penguintv/%gconf.xml
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/penguintv/
+@dirrm etc/gconf/gconf.xml.defaults/apps/penguintv
