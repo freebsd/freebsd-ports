@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	kst
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.1
 CATEGORIES=	science kde
 MASTER_SITES=	${MASTER_SITE_KDE} \
 		http://omega.astro.utoronto.ca/${PORTNAME}/
