@@ -8,8 +8,8 @@ host=$(hostname)
 test -f ${pb}/${arch}/portbuild.${host} && . ${pb}/${arch}/portbuild.${host}
 
 if [ ! -z "${squid_dir}" ] ; then
-	/usr/local/etc/rc.d/squid.sh stop 
-	/usr/local/etc/rc.d/squid.sh poll
+	/usr/local/etc/rc.d/squid stop 
+	/usr/local/etc/rc.d/squid poll
 	echo "" > ${squid_dir}/cache/swap.state
-	/usr/local/etc/rc.d/squid.sh start
+	/usr/local/etc/rc.d/squid start
 fi

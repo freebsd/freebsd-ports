@@ -36,7 +36,7 @@ if [ ! -z "${squid_dir}" ]; then
   status=$?
   if [ "${status}" != "0" ]; then
     touch ${scratchdir}/.squid
-    /usr/local/etc/rc.d/squid.sh start > /dev/null &
+    /usr/local/etc/rc.d/squid start > /dev/null &
     exit 1
   else
     rm -f ${scratchdir}/.squid
