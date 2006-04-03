@@ -13,6 +13,8 @@ DISTNAME=	3.0-RELEASE
 MAINTAINER=	edwardchuang@gmail.com
 COMMENT=	A Common BBS Server with its own customized INN News Server
 
+BROKEN=		Incomplete pkg-plist
+
 WRKSRC=		${WRKDIR}/bbs/bbssrc
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
