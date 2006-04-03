@@ -8,7 +8,9 @@
 PORTNAME=	nss_ldap
 PORTVERSION=	1.${NSS_LDAP_VERSION}
 CATEGORIES=	net
-MASTER_SITES=	http://www.padl.com/download/
+MASTER_SITES=	http://www.padl.com/download/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	sem
 DISTNAME=	${PORTNAME}-${NSS_LDAP_VERSION}
 
 MAINTAINER=	ports@FreeBSD.org
