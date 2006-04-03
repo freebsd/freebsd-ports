@@ -1,0 +1,37 @@
+--- configure.orig	Thu Feb 23 00:59:58 2006
++++ configure	Mon Apr  3 10:55:28 2006
+@@ -9026,33 +9026,8 @@
+ 	PROXY_LIBS='-lnsl -lsocket -lthread'
+ 	;;
+ 
+-  *freebsd*5*)
+-	PROXY_LIBS='-lpthread'
+-        jni_os=freebsd
+-
+-	tmp=`ldd $JAVA_HOME/bin/java | sed 's/.*=>//' | grep -c libc_r`
+-	tmp=$tmp `ldd $JAVA_HOME/bin/java | sed 's/.*=>//' | grep -c libpthread`
+-	tmp=$tmp `ldd $JAVA_HOME/bin/java | sed 's/.*=>//' | grep -c libthr`
+-
+-	case "$tmp" in
+-	100)
+-		PROXY_LIBS='-lc_r';
+-		;;
+-	010)
+-		PROXY_LIBS='-lpthread';
+-		;;
+-	001)
+-		PROXY_LIBS='-lthr';
+-		;;
+-	*)
+-		PROXY_LIBS='-lpthread'
+-		echo "Using -lpthread as default"
+-		;;
+-	esac
+-	;;
+-
+   *freebsd*)
+-	PROXY_LIBS='-lc_r'
++	PROXY_LIBS="${PTHREAD_LIBS}"
+         jni_os=freebsd
+ 	;;
+ 
