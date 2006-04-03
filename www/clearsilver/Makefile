@@ -66,6 +66,10 @@ MAN3=	cBroadcast.3 cCreate.3 cDestroy.3 cSignal.3 cWait.3 \
 BROKEN=		Does not compile completely on sparc64
 .endif
 
+.if ${OSVERSION} < 500000
+BROKEN=		Does not compile
+.endif
+
 post-patch:
 	@# Remove CFLAGS when building the python module, pydistfile is used
 	@# and will do the right thing.
