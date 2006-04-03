@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	UNIVERSAL-can
-PORTVERSION=	1.11
+PORTVERSION=	1.12
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/C/CH/CHROMATIC
@@ -16,8 +16,7 @@ MAINTAINER=	lars@balker.dk
 COMMENT=	Hack around people calling UNIVERSAL::can() as a function
 
 BUILD_DEPENDS=	p5-Scalar-List-Utils>=0:${PORTSDIR}/lang/p5-Scalar-List-Utils \
-		p5-Test-Simple>=0.60:${PORTSDIR}/devel/p5-Test-Simple \
-		p5-Test-Warn>=0.08:${PORTSDIR}/devel/p5-Test-Warn
+		p5-Test-Simple>=0.60:${PORTSDIR}/devel/p5-Test-Simple
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_MODBUILD=	yes
