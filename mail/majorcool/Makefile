@@ -13,6 +13,8 @@ MASTER_SITES=	ftp://ftp.nuug.no/pub/anders/distfiles/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Web Interface to Majordomo
 
+BROKEN=		Missing dependency
+
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 IS_INTERACTIVE=	yes
