@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	jbootstrap
-PORTVERSION=	1.2
-PORTREVISION=	1
+PORTVERSION=	1.2.1
 CATEGORIES=	java
 MASTER_SITES=	# http://www.eyesbeyond.com/freebsddom/java/jbootstrap.html
 
