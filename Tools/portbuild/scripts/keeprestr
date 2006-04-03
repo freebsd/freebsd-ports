@@ -1,0 +1,11 @@
+#!/bin/sh
+
+arch=$1
+branch=$2
+
+cd /var/portbuild/${arch}/${branch}
+
+rm -rf bak/restricted
+mkdir -p bak/restricted
+
+tar cvf - `tr ';' '\n' < restricted.sh | grep "/bin/rm -f" | awk '{print $3}' | grep packages/ | sed -e "s,/var/portbuild/${arch}/${branch}/,," -e 's,)$,,' ` | tar xfCP - bak/restricted/
