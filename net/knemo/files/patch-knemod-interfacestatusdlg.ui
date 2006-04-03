@@ -1,14 +1,5 @@
---- knemod/interfacestatusdlg.ui.orig	Fri Jan 21 16:57:24 2005
-+++ knemod/interfacestatusdlg.ui	Fri Jan 21 20:02:50 2005
-@@ -9,7 +9,7 @@
-             <x>0</x>
-             <y>0</y>
-             <width>272</width>
--            <height>258</height>
-+            <height>237</height>
-         </rect>
-     </property>
-     <property name="caption">
+--- src/knemod/interfacestatusdlg.ui.orig	Sat Apr  1 21:44:22 2006
++++ src/knemod/interfacestatusdlg.ui	Sun Apr  2 21:28:01 2006
 @@ -145,7 +145,7 @@
                      </property>
                      <widget class="QLayoutWidget">
@@ -248,7 +239,7 @@
                              </widget>
                          </hbox>
                      </widget>
-@@ -728,8 +676,6 @@
+@@ -893,8 +841,6 @@
          </widget>
      </vbox>
  </widget>
@@ -257,7 +248,7 @@
  <connections>
      <connection>
          <sender>buttonClose</sender>
-@@ -740,10 +686,6 @@
+@@ -905,10 +851,6 @@
  </connections>
  <layoutdefaults spacing="6" margin="11"/>
  <includehints>

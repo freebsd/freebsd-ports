@@ -4,7 +4,7 @@ lib/kde3/kcm_knemo.so
 lib/kde3/kded_knemod.a
 lib/kde3/kded_knemod.la
 lib/kde3/kded_knemod.so
-share/applnk/Settings/Network/kcm_knemo.desktop
+share/applications/kde/kcm_knemo.desktop
 share/apps/knemo/eventsrc
 share/icons/crystalsvg/16x16/apps/knemo.png
 share/icons/crystalsvg/22x22/actions/network_connected.png
@@ -30,35 +30,67 @@ share/icons/crystalsvg/22x22/actions/network_traffic_wlan.png
 share/icons/crystalsvg/32x32/apps/knemo.png
 share/locale/bg/LC_MESSAGES/kcm_knemo.mo
 share/locale/bg/LC_MESSAGES/knemod.mo
+share/locale/br/LC_MESSAGES/kcm_knemo.mo
+share/locale/br/LC_MESSAGES/knemod.mo
 share/locale/cs/LC_MESSAGES/kcm_knemo.mo
 share/locale/cs/LC_MESSAGES/knemod.mo
+share/locale/cy/LC_MESSAGES/kcm_knemo.mo
+share/locale/cy/LC_MESSAGES/knemod.mo
+share/locale/da/LC_MESSAGES/kcm_knemo.mo
+share/locale/da/LC_MESSAGES/knemod.mo
 share/locale/de/LC_MESSAGES/kcm_knemo.mo
 share/locale/de/LC_MESSAGES/knemod.mo
+share/locale/el/LC_MESSAGES/kcm_knemo.mo
+share/locale/el/LC_MESSAGES/knemod.mo
+share/locale/en_GB/LC_MESSAGES/kcm_knemo.mo
+share/locale/en_GB/LC_MESSAGES/knemod.mo
 share/locale/es/LC_MESSAGES/kcm_knemo.mo
 share/locale/es/LC_MESSAGES/knemod.mo
+share/locale/et/LC_MESSAGES/kcm_knemo.mo
+share/locale/et/LC_MESSAGES/knemod.mo
 share/locale/fr/LC_MESSAGES/kcm_knemo.mo
 share/locale/fr/LC_MESSAGES/knemod.mo
+share/locale/ga/LC_MESSAGES/kcm_knemo.mo
+share/locale/ga/LC_MESSAGES/knemod.mo
 share/locale/it/LC_MESSAGES/kcm_knemo.mo
 share/locale/it/LC_MESSAGES/knemod.mo
+share/locale/ka/LC_MESSAGES/kcm_knemo.mo
+share/locale/ka/LC_MESSAGES/knemod.mo
+share/locale/lt/LC_MESSAGES/kcm_knemo.mo
+share/locale/lt/LC_MESSAGES/knemod.mo
 share/locale/nl/LC_MESSAGES/kcm_knemo.mo
 share/locale/nl/LC_MESSAGES/knemod.mo
+share/locale/pl/LC_MESSAGES/kcm_knemo.mo
+share/locale/pl/LC_MESSAGES/knemod.mo
+share/locale/pt/LC_MESSAGES/kcm_knemo.mo
+share/locale/pt/LC_MESSAGES/knemod.mo
 share/locale/pt_BR/LC_MESSAGES/kcm_knemo.mo
 share/locale/pt_BR/LC_MESSAGES/knemod.mo
 share/locale/ru/LC_MESSAGES/kcm_knemo.mo
 share/locale/ru/LC_MESSAGES/knemod.mo
+share/locale/rw/LC_MESSAGES/kcm_knemo.mo
+share/locale/rw/LC_MESSAGES/knemod.mo
+share/locale/sr/LC_MESSAGES/kcm_knemo.mo
+share/locale/sr/LC_MESSAGES/knemod.mo
+share/locale/sr@Latn/LC_MESSAGES/kcm_knemo.mo
+share/locale/sr@Latn/LC_MESSAGES/knemod.mo
+share/locale/sv/LC_MESSAGES/kcm_knemo.mo
+share/locale/sv/LC_MESSAGES/knemod.mo
+share/locale/tr/LC_MESSAGES/kcm_knemo.mo
+share/locale/tr/LC_MESSAGES/knemod.mo
 share/services/kded/knemod.desktop
-@dirrmtry share/services/kded
-@dirrmtry share/services
-@dirrmtry share/icons/crystalsvg/32x32/apps
-@dirrmtry share/icons/crystalsvg/32x32
-@dirrmtry share/icons/crystalsvg/22x22/actions
-@dirrmtry share/icons/crystalsvg/22x22
-@dirrmtry share/icons/crystalsvg/16x16/apps
-@dirrmtry share/icons/crystalsvg/16x16
-@dirrmtry share/icons/crystalsvg
-@dirrmtry share/icons
+@dirrm share/services/kded
+@dirrmtry share/locale/sr/LC_MESSAGES
+@dirrmtry share/locale/sr
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
+@dirrmtry share/locale/pt/LC_MESSAGES
+@dirrmtry share/locale/pt
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/el/LC_MESSAGES
+@dirrmtry share/locale/el
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs
 @dirrm share/apps/knemo
-@dirrmtry share/apps
-@dirrmtry share/applnk/Settings/Network
-@dirrmtry share/applnk/Settings
-@dirrmtry share/applnk
+@dirrmtry share/applications/kde

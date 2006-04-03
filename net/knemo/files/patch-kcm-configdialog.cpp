@@ -1,7 +1,7 @@
---- kcm/configdialog.cpp.orig	Wed Sep 15 18:24:37 2004
-+++ kcm/configdialog.cpp	Wed Jan 19 15:23:57 2005
+--- src/kcm/configdialog.cpp.orig	Sat Apr  1 21:44:21 2006
++++ src/kcm/configdialog.cpp	Sun Apr  2 19:14:11 2006
 @@ -17,6 +17,16 @@
-    Boston, MA 02111-1307, USA.
+    Boston, MA 02110-1301, USA.
  */
  
 +#ifdef __FreeBSD__
@@ -17,7 +17,7 @@
  #include <qfile.h>
  #include <qdict.h>
  #include <qlabel.h>
-@@ -355,6 +365,39 @@
+@@ -363,6 +373,39 @@
  void ConfigDialog::defaults()
  {
      // Default interfaces
@@ -57,7 +57,7 @@
      QFile proc( "/proc/net/dev" );
      if ( proc.open( IO_ReadOnly ) )
      {
-@@ -372,6 +415,7 @@
+@@ -380,6 +423,7 @@
                  if ( interface == "lo" )
                      continue;
  
@@ -65,8 +65,8 @@
                  InterfaceSettings* settings = new InterfaceSettings();
                  settings->customCommands = false;
                  settings->hideWhenNotAvailable = false;
-@@ -391,8 +435,10 @@
-                 mDlg->checkBoxNotExisting->setChecked( false );
+@@ -401,8 +445,10 @@
+                 mDlg->checkBoxStatistics->setChecked( false );
                  mDlg->checkBoxCustom->setChecked( false );
              }
 +#ifndef __FreeBSD__

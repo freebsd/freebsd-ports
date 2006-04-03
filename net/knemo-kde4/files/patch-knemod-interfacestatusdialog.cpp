@@ -1,5 +1,5 @@
---- knemod/interfacestatusdialog.cpp.orig	Sat Jan 22 00:11:02 2005
-+++ knemod/interfacestatusdialog.cpp	Sat Jan 22 00:15:24 2005
+--- src/knemod/interfacestatusdialog.cpp.orig	Sat Apr  1 21:44:22 2006
++++ src/knemod/interfacestatusdialog.cpp	Sun Apr  2 21:34:55 2006
 @@ -24,6 +24,7 @@
  #include <qtabwidget.h>
  
@@ -8,7 +8,7 @@
  #include <kconfig.h>
  #include <klocale.h>
  #include <kglobal.h>
-@@ -69,6 +70,10 @@
+@@ -92,6 +93,10 @@
      mTimer = new QTimer();
      connect( mTimer, SIGNAL( timeout() ), this, SLOT( updateDialog() ) );
      mTimer->start( 1000 );
@@ -19,7 +19,7 @@
  }
  
  InterfaceStatusDialog::~InterfaceStatusDialog()
-@@ -152,12 +157,28 @@
+@@ -201,12 +206,28 @@
      if ( data.available )
      {
          // ip tab
