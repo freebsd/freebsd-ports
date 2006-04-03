@@ -2,7 +2,7 @@ include/gpod-1.0/gpod/itdb.h
 include/gpod-1.0/gpod/ipod-device.h
 @dirrm include/gpod-1.0/gpod
 @dirrm include/gpod-1.0
-lib/libgpod.so.300
+lib/libgpod.so.302
 lib/libgpod.so
 lib/libgpod.la
 lib/libgpod.a
