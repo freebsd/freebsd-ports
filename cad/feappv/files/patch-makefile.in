@@ -1,0 +1,38 @@
+--- makefile.in.orig	Thu Apr  7 10:34:22 2005
++++ makefile.in	Sat Apr  1 16:26:47 2006
+@@ -1,11 +1,11 @@
+ 
+ # Which compilers to use
+-FF = g77
+-CC = gcc
++FF ?= %%FC%%
++CC ?= %%CC%%
+ 
+ # What optimization level to use
+-FFOPTFLAG = -O2
+-CCOPTFLAG = -O2
++FFOPTFLAG += %%FFLAGS%%
++CCOPTFLAG += %%CFLAGS%% -I/usr/X11R6/include
+ 
+ # Source Types
+ FSOURCE = 
+@@ -17,16 +17,15 @@
+ 
+ # What options to be used by the compiler
+ FOPTIONS =
+-COPTIONS =
+-
++COPTIONS = 
+ # What options to be used by the loader
+ LDOPTIONS = -L/usr/X11R6/lib -lX11 -lm
+ 
+ # Location of feap include files
+-FINCLUDE = /home/rlt/Feappv/ver20/include
++FINCLUDE = %%WRKSRC%%/include
+ 
+ # What archiving to use
+ AR = ar rv
+ 
+ # Archive name
+-ARFEAP = /home/rlt/Feappv/ver20/Feappv.a
++ARFEAP = %%WRKSRC%%/Feappv.a

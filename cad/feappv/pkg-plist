@@ -1,0 +1,4 @@
+bin/feappv
+lib/libfeappv.a
+%%PORTDOCS%%%%DOCSDIR%%/manual.pdf
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
