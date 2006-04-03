@@ -438,6 +438,7 @@
     SUBDIR += pgplot
     SUBDIR += pho
     SUBDIR += photopc
+    SUBDIR += php-magickwand
     SUBDIR += php4-exif
     SUBDIR += php4-gd
     SUBDIR += php4-ming
