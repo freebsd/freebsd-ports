@@ -18,6 +18,7 @@
     SUBDIR += dxf2fig
     SUBDIR += electric
     SUBDIR += fandango
+    SUBDIR += feappv
     SUBDIR += geda
     SUBDIR += geda-symbols
     SUBDIR += geda-symcheck

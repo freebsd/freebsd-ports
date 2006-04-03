@@ -1,0 +1,13 @@
+FEAPpv is a general purpose finite element analysis program which is
+designed for research and educational use. The program is described in the
+references:
+
+The Finite Element Method, 6th ed., Vols. 1 and 2, by O.C. Zienkiewicz and
+R.L. Taylor, Elsevier, Oxford, 2005.
+
+FEAPpv is designed to be compatible for compilation in UNIX/LINUX and 
+Windows PC environments.
+
+WWW:  http://www.ce.berkeley.edu/~rlt/feappv/
+
+No support on use of the program will be provided.
