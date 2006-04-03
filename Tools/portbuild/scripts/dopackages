@@ -362,7 +362,7 @@ if [ "$skipstart" = 0 ]; then
 
   if [ "$incremental" = 1 ]; then
     # need to preserve symlinks for packages
-    tar cf - packages | tar xfC - bak
+    #tar cf - packages | tar xfC - bak
 
     cd ${PORTSDIR}
 
@@ -389,7 +389,7 @@ if [ "$skipstart" = 0 ]; then
     find . -name \*.log.bz2 | xargs bunzip2 -f
   else
     # need to preserve symlinks for packages
-    mv -f packages bak
+    #mv -f packages bak
 
     # Already copied the logs above
     rm -rf errors logs old-errors
