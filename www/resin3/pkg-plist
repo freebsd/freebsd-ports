@@ -1,6 +1,5 @@
 @comment $FreeBSD$
 %%APP_NAME%%/lib/aopalliance.jar
-%%APP_NAME%%/lib/eclipse-compiler.jar
 %%APP_NAME%%/lib/ejb-20.jar
 %%APP_NAME%%/lib/ejb-30.jar
 %%APP_NAME%%/lib/j2eedeploy.jar
@@ -15,6 +14,7 @@
 %%APP_NAME%%/lib/resin-jdk15.jar
 %%APP_NAME%%/lib/resin.jar
 %%APP_NAME%%/lib/resinboot.jar
+%%APP_NAME%%/lib/saaj.jar
 %%APP_NAME%%/lib/script-10.jar
 %%APP_NAME%%/lib/webutil.jar
 %%APP_NAME%%/webapps/ROOT/index.jsp
