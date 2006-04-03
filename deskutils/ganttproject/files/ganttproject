@@ -1,3 +1,0 @@
-#!/bin/sh
-
-%%JAVA%% -jar %%JAVAJARDIR%%/ganttproject.jar $@

@@ -1,0 +1,11 @@
+#!/bin/sh
+#
+# $FreeBSD$
+
+LOCAL_CLASSPATH="%%DATADIR%%/eclipsito.jar"
+CONFIGURATION_FILE="%%DATADIR%%/ganttproject-eclipsito-config.xml"
+
+JAVA_VERSION="%%JAVA_VERSION%%" \
+	exec "%%LOCALBASE%%/bin/java" \
+	-Xmx256m -classpath ${LOCAL_CLASSPATH} \
+	org.bardsoftware.eclipsito.Boot ${CONFIGURATION_FILE} "$@"

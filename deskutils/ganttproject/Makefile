@@ -1,4 +1,3 @@
-# ex:ts=8
 # Ports collection makefile for:	ganttproject
 # Date created:			Jul 6, 2004
 # Whom:				ijliao
@@ -7,29 +6,34 @@
 #
 
 PORTNAME=	ganttproject
-PORTVERSION=	1.10.1
-CATEGORIES=	deskutils
+PORTVERSION=	2.0
+CATEGORIES=	deskutils java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=	-src.zip
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rainer.alves@gmail.com
 COMMENT=	Plan projects using a Gantt chart
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/${PORTNAME}-builder
 
 USE_ZIP=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.4+
 USE_ANT=	yes
-JAVA_RUN=	yes
 
-PLIST_FILES=	bin/ganttproject %%JAVAJARDIR%%/ganttproject.jar
+DATADIR=	${JAVASHAREDIR}/${PORTNAME}
+CPIOARGS=	--quiet -pdum -R
 
-post-patch:
-	@${SED} 's,%%JAVAJARDIR%%,${JAVAJARDIR},; \
-		 s,%%JAVA%%,${JAVA},' ${FILESDIR}/${PORTNAME} > ${WRKSRC}/${PORTNAME}
+SUB_FILES=	${PORTNAME}.sh
+
+.include <bsd.port.pre.mk>
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/build/${PORTNAME}-${PORTVERSION}.jar ${JAVAJARDIR}/${PORTNAME}.jar
-	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	@${MKDIR} -m 0755 -p ${DATADIR}
+	(cd ${WRKSRC}/dist-bin && \
+	    ${FIND} . | ${GREP} -v './.*\.\(sh\|bat\)' | \
+	    ${CPIO} ${CPIOARGS} ${LIBOWN}:${LIBGRP} ${DATADIR})
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${PREFIX}/bin/${PORTNAME}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
