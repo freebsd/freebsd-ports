@@ -15,7 +15,7 @@ layout of the %%PKGNAME%% files has been completely reworked. You
 will need to modify your apache configuration and merge the settings
 from your original configuration file:
 
-    %%PREFIX%%/%%PLADIR%%/config.php
+    %%PREFIX%%/%%PLADIRX%%/config.php
 
  to
 
