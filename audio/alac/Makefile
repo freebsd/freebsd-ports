@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	alac
-PORTVERSION=	0.1.1
+PORTVERSION=	0.1.2
 CATEGORIES=	audio
 MASTER_SITES=	http://crazney.net/programs/itunes/files/
 DISTNAME=	${PORTNAME}_decoder-${PORTVERSION}
