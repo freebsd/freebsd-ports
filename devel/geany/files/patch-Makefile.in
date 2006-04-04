@@ -1,0 +1,10 @@
+--- Makefile.in.orig	Tue Apr  4 13:17:33 2006
++++ Makefile.in	Tue Apr  4 13:17:41 2006
+@@ -418,7 +418,6 @@
+ 	fi
+ 	$(mkinstalldirs) $(DESTDIR)$(pkgdatadir); \
+ 	$(INSTALL_DATA) global.tags $(DESTDIR)$(pkgdatadir); \
+-	$(INSTALL_DATA) COPYING $(DESTDIR)$(pkgdatadir)/GPL-2; \
+ 	for file in $(srcdir)/data/*; do \
+ 	  if test -f $$file; then \
+ 	    $(INSTALL_DATA) $$file $(DESTDIR)$(pkgdatadir)/; \

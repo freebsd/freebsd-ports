@@ -313,6 +313,7 @@
     SUBDIR += gdb53-act
     SUBDIR += gdb6
     SUBDIR += gdbmods
+    SUBDIR += geany
     SUBDIR += gengameng
     SUBDIR += gengetopt
     SUBDIR += genproto
