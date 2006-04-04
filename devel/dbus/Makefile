@@ -14,14 +14,12 @@ MASTER_SITES=	http://dbus.freedesktop.org/releases/
 MAINTAINER?=	gnome@FreeBSD.org
 COMMENT?=	A message bus system for inter-application communication
 
-BUILD_DEPENDS?=	bash:${PORTSDIR}/shells/bash
 LIB_DEPENDS?=	expat.6:${PORTSDIR}/textproc/expat2
 
 USE_GNOME?=	gnomehack glib20 libxml2
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
-USE_REINPLACE=	yes
 CONFIGURE_ARGS?=--disable-gtk \
 		--disable-python \
 		--disable-gcj \
@@ -60,8 +58,6 @@ PLIST_SUB+=	QT="@comment "
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
-		${WRKSRC}/tools/run-with-tmp-session-bus.sh
 	@${REINPLACE_CMD} -e 's|%%X11BASE%%|${X11BASE}|' \
 		${WRKSRC}/bus/session.conf.in
 
