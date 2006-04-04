@@ -32,6 +32,7 @@ BUILD_WRKSRC=		${WRKDIR}/build
 CONFIGURE_WRKSRC=	${BUILD_WRKSRC}
 INSTALL_WRKSRC=		${BUILD_WRKSRC}
 CONFIGURE_SCRIPT=	../gcc-${PORTVERSION}/configure
+NO_LATEST_LINK=	Use devel/avr-gcc for a stable version.
 
 USE_PERL5_BUILD=	yes
 USE_BZIP2=	yes
