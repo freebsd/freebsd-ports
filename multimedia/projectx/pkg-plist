@@ -1,8 +1,8 @@
 @comment $FreeBSD$
 bin/project-x
 %%DATADIR%%/ReadMe.txt
-%%DATADIR%%/ReleaseNotes_0.90.2.00.txt
-%%DATADIR%%/ReleaseNotes_0.90.2.txt
+%%DATADIR%%/ReleaseNotes_0.90.3.01.txt
+%%DATADIR%%/ReleaseNotes_0.90.3.txt
 %%DATADIR%%/htmls/cli.html
 %%DATADIR%%/htmls/faq.html
 %%DATADIR%%/htmls/index.html

@@ -1,10 +1,12 @@
+$FreeBSD$
+
 Index: htmls/index.html
 @@ -15,7 +15,7 @@
    <h3>Table of Contents:</h3>
    <ul>
      <li> <a href="../ReadMe.txt">Readme</a></li>
 -    <li> <a href="../ReleaseNotes_0.90.1.txt">What's new</a></li>
-+    <li> <a href="../ReleaseNotes_0.90.2.txt">What's new</a></li>
++    <li> <a href="../ReleaseNotes_0.90.3.txt">What's new</a></li>
      <li> <a href="faq.html">NAQs &amp; FAQs<br> </a> </li>
      <li> <a href="cli.html">CL-Interface</a></li>
    </ul>
@@ -14,7 +16,7 @@ Index: htmls/de/index.html
    <ul>
      <li> <a href="../../ReadMe.txt">Readme</a></li>
 -    <li> <a href="../../ReleaseNotes_0.90.1.txt">Was ist neu</a></li>
-+    <li> <a href="../../ReleaseNotes_0.90.2.txt">Was ist neu</a></li>
++    <li> <a href="../../ReleaseNotes_0.90.3.txt">Was ist neu</a></li>
      <li> <a href="faq.html">NAQs &amp; FAQs<br></a></li>
      <li> <a href="cli.html">CL-Interface</a></li>
    </ul>
