@@ -2860,6 +2860,7 @@ gdome2		ports/textproc/gdome2
 gdrdao		ports/audio/gdrdao
 gdtclft		ports/graphics/gdtclft
 gdvrecv		ports/multimedia/gdvrecv
+geany		ports/devel/geany
 gecko-sharp10	ports/www/gecko-sharp10
 gecko-sharp20	ports/www/gecko-sharp20
 geda		ports/cad/geda
