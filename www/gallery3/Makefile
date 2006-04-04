@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	gallery2
-PORTVERSION=	2.0.2
+PORTVERSION=	2.1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gallery
-DISTNAME=	gallery-2.0.2-full
+DISTNAME=	gallery-2.1-full
 DIST_SUBDIR=	gallery2
 
 MAINTAINER=	freebsd-ports@varju.ca
