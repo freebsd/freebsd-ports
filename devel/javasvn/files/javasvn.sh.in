@@ -10,7 +10,7 @@ if [ ! -d ${JAVASVN_LOGDIR} ]; then
 	mkdir ${JAVASVN_LOGDIR}
 fi
 
-JAVA_VERSION="%%JAVA_VERSION%%" "%%LOCALBASE%%/bin/java" \
+JAVA_VERSION="%%JAVA_VERSION%%" exec "%%LOCALBASE%%/bin/java" \
 	${JAVASVN_OPTS} \
 	-Djava.util.logging.config.file="${JAVASVN_HOME}/logging.properties" \
 	-cp "${JAVASVN_CP}" \
