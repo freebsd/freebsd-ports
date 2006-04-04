@@ -144,5 +144,3 @@ share/mime/packages/kino.xml
 @dirrm share/gnome/kino/scripts/publish
 @dirrm share/gnome/kino/scripts
 @dirrm share/gnome/kino
-@dirrmtry share/gnome/applications
-@dirrmtry share/gnome/pixmaps
