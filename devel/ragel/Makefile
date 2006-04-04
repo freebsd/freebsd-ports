@@ -7,16 +7,15 @@
 #
 
 PORTNAME=	ragel
-PORTVERSION=	5.5
+PORTVERSION=	5.6
 CATEGORIES=	devel
 MASTER_SITES=	http://www.cs.queensu.ca/home/thurston/ragel/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	shaun@inerd.com
 COMMENT=	Compile regular languages into executable C/C++ code
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf
 
-USE_REINPLACE=	yes
 USE_BISON=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
