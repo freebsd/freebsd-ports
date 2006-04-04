@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	ekg2
-PORTVERSION=	20060318
+PORTVERSION=	20060403
 CATEGORIES=	polish net-im
 MASTER_SITES=	http://www.ekg2.org/archive/
 
@@ -19,6 +19,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack pkgconfig
 USE_GETTEXT=	yes
+USE_GCC=	3.2+
 
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--enable-shared \
