@@ -134,7 +134,7 @@ EXTRA_DOCS=	AUTHORS INSTALL NEWS imap/ChangeLog imap/README \
 		maildir/README.sharedfolders.txt tcpd/README.couriertls \
 
 post-patch:
-.if defined(WITHOUT_FAM)
+.if !defined(WITH_FAM)
 	@${REINPLACE_CMD} -e 's|$$LIBFAM||g; s|HAVE_FAM|DO_NOT_HAVE_FAM|g' \
 		${WRKSRC}/maildir/configure
 .endif
