@@ -7,10 +7,10 @@ case "$#" in
 	mkdir -p "${HOME}/.projectx"
 	cd "${HOME}/.projectx"
 	ln -sf %%DATADIR%%/*.txt %%DATADIR%%/htmls .
-	if ! grep '^# ProjectX 0.90.2.00' X.ini >/dev/null; then
+	if ! grep '^# ProjectX 0.90.3.01' X.ini >/dev/null 2>&1; then
 		rm -f X.ini
 	fi
 	;;
 esac
 
-JAVA_VERSION="%%JAVA_VERSION%%" "%%LOCALBASE%%/bin/java" -jar "%%DATADIR%%/ProjectX.jar" "$@"
+JAVA_VERSION="%%JAVA_VERSION%%" exec "%%LOCALBASE%%/bin/java" -jar "%%DATADIR%%/ProjectX.jar" "$@"
