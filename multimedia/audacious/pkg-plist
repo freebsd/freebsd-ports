@@ -13,6 +13,7 @@ include/audacious/input.h
 include/audacious/output.h
 include/audacious/xml_document.h
 lib/audacious/Effect/libladspa.so
+lib/audacious/Effect/libvoice_removal.so
 lib/audacious/General/libsong_change.so
 lib/audacious/General/libscrobbler.so
 lib/audacious/Input/libcdaudio.so
