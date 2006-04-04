@@ -300,6 +300,8 @@ www/joomla/administrator/images/back_f2.png
 www/joomla/administrator/images/backup.png
 www/joomla/administrator/images/blank.png
 www/joomla/administrator/images/browser.png
+www/joomla/administrator/images/calendar.png
+www/joomla/administrator/images/calendar_f2.png
 www/joomla/administrator/images/cancel.png
 www/joomla/administrator/images/cancel_f2.png
 www/joomla/administrator/images/categories.png
@@ -313,6 +315,10 @@ www/joomla/administrator/images/cpanel.png
 www/joomla/administrator/images/credits.png
 www/joomla/administrator/images/css.png
 www/joomla/administrator/images/css_f2.png
+www/joomla/administrator/images/cut.png
+www/joomla/administrator/images/cut_f2.png
+www/joomla/administrator/images/day.png
+www/joomla/administrator/images/day_f2.png
 www/joomla/administrator/images/dbrestore.png
 www/joomla/administrator/images/delete.png
 www/joomla/administrator/images/delete_f2.png
@@ -326,12 +332,24 @@ www/joomla/administrator/images/downloads.png
 www/joomla/administrator/images/downloads_f2.png
 www/joomla/administrator/images/edit.png
 www/joomla/administrator/images/edit_f2.png
+www/joomla/administrator/images/edittime.png
+www/joomla/administrator/images/edittime_f2.png
 www/joomla/administrator/images/expandall.png
+www/joomla/administrator/images/extensions.png
+www/joomla/administrator/images/extensions_f2.png
+www/joomla/administrator/images/file.png
+www/joomla/administrator/images/file_f2.png
 www/joomla/administrator/images/filesave.png
+www/joomla/administrator/images/folder_add.png
+www/joomla/administrator/images/folder_add_f2.png
 www/joomla/administrator/images/forward.png
 www/joomla/administrator/images/forward_f2.png
 www/joomla/administrator/images/frontpage.png
 www/joomla/administrator/images/generic.png
+www/joomla/administrator/images/go.png
+www/joomla/administrator/images/go_f2.png
+www/joomla/administrator/images/groups.png
+www/joomla/administrator/images/groups_f2.png
 www/joomla/administrator/images/help.png
 www/joomla/administrator/images/help_f2.png
 www/joomla/administrator/images/html.png
@@ -349,6 +367,8 @@ www/joomla/administrator/images/menu_divider.png
 www/joomla/administrator/images/message_config.png
 www/joomla/administrator/images/messaging.png
 www/joomla/administrator/images/module.png
+www/joomla/administrator/images/month.png
+www/joomla/administrator/images/month_f2.png
 www/joomla/administrator/images/move.png
 www/joomla/administrator/images/move_f2.png
 www/joomla/administrator/images/new.png
@@ -356,8 +376,16 @@ www/joomla/administrator/images/new_f2.png
 www/joomla/administrator/images/next.png
 www/joomla/administrator/images/next_f2.png
 www/joomla/administrator/images/nomail.png
+www/joomla/administrator/images/note.png
+www/joomla/administrator/images/note_f2.png
+www/joomla/administrator/images/paste.png
+www/joomla/administrator/images/paste_f2.png
 www/joomla/administrator/images/preview.png
 www/joomla/administrator/images/preview_f2.png
+www/joomla/administrator/images/print.png
+www/joomla/administrator/images/print_f2.png
+www/joomla/administrator/images/properties.png
+www/joomla/administrator/images/properties_f2.png
 www/joomla/administrator/images/publish.png
 www/joomla/administrator/images/publish_f2.png
 www/joomla/administrator/images/publish_g.png
@@ -365,6 +393,10 @@ www/joomla/administrator/images/publish_r.png
 www/joomla/administrator/images/publish_x.png
 www/joomla/administrator/images/publish_y.png
 www/joomla/administrator/images/query.png
+www/joomla/administrator/images/reload.png
+www/joomla/administrator/images/reload_f2.png
+www/joomla/administrator/images/rename.png
+www/joomla/administrator/images/rename_f2.png
 www/joomla/administrator/images/restore.png
 www/joomla/administrator/images/restore_f2.png
 www/joomla/administrator/images/restoredb.png
@@ -377,9 +409,17 @@ www/joomla/administrator/images/sections.png
 www/joomla/administrator/images/security.png
 www/joomla/administrator/images/security_f2.png
 www/joomla/administrator/images/support.png
+www/joomla/administrator/images/switch.png
+www/joomla/administrator/images/switch_f2.png
 www/joomla/administrator/images/systeminfo.png
+www/joomla/administrator/images/task.png
+www/joomla/administrator/images/task_f2.png
 www/joomla/administrator/images/templatemanager.png
+www/joomla/administrator/images/themes.png
+www/joomla/administrator/images/themes_f2.png
 www/joomla/administrator/images/tick.png
+www/joomla/administrator/images/tool.png
+www/joomla/administrator/images/tool_f2.png
 www/joomla/administrator/images/trash.png
 www/joomla/administrator/images/unarchive.png
 www/joomla/administrator/images/unarchive_f2.png
@@ -392,6 +432,8 @@ www/joomla/administrator/images/upload.png
 www/joomla/administrator/images/upload_f2.png
 www/joomla/administrator/images/user.png
 www/joomla/administrator/images/users.png
+www/joomla/administrator/images/week.png
+www/joomla/administrator/images/week_f2.png
 www/joomla/administrator/images/xml.png
 www/joomla/administrator/images/xml_f2.png
 www/joomla/administrator/includes/admin.php
@@ -1027,6 +1069,7 @@ www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advhr/jscripts/rule
 www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advhr/langs/en.js
 www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advhr/langs/index.html
 www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advhr/rule.htm
+www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advhr/css/advhr.css
 www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advimage/css/advimage.css
 www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advimage/css/index.html
 www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advimage/editor_plugin.js
@@ -1061,6 +1104,9 @@ www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/contextmenu/editor_
 www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/contextmenu/images/index.html
 www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/contextmenu/images/spacer.gif
 www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/contextmenu/index.html
+www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/cleanup/editor_plugin.js
+www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/cleanup/editor_plugin_src.js
+www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/cleanup/index.html
 www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/directionality/editor_plugin.js
 www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/directionality/editor_plugin_src.js
 www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/directionality/images/index.html
@@ -1303,6 +1349,7 @@ www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/past
 www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/redo.gif
 www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/removeformat.gif
 www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/right.gif
+www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/separator.gif
 www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/spacer.gif
 www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/statusbar_resize.gif
 www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/strikethrough.gif
@@ -1355,6 +1402,7 @@ www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/themes/simple/images/bold_f
 www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/themes/simple/images/bold_ru.gif
 www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/themes/simple/images/bold_tw.gif
 www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/themes/simple/images/bullist.gif
+www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/themes/simple/images/buttons.gif
 www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/themes/simple/images/cleanup.gif
 www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/themes/simple/images/index.html
 www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/themes/simple/images/italic.gif
@@ -1363,6 +1411,7 @@ www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/themes/simple/images/italic
 www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/themes/simple/images/italic_tw.gif
 www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/themes/simple/images/numlist.gif
 www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/themes/simple/images/redo.gif
+www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/themes/simple/images/separator.gif
 www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/themes/simple/images/spacer.gif
 www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/themes/simple/images/strikethrough.gif
 www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/themes/simple/images/underline.gif
@@ -1378,6 +1427,7 @@ www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/tiny_mce_src.js
 www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/utils/form_utils.js
 www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/utils/index.html
 www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/utils/mctabs.js
+www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/utils/mclayer.js
 www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/utils/validate.js
 www/joomla/mambots/index.html
 www/joomla/mambots/search/categories.searchbot.php
@@ -1583,6 +1633,7 @@ www/joomla/templates/rhuk_solarflare_ii/template_thumbnail.png
 @dirrm www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/contextmenu/images
 @dirrm www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/contextmenu/css
 @dirrm www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/contextmenu
+@dirrm www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/cleanup
 @dirrm www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/autosave/langs
 @dirrm www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/autosave
 @dirrm www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advlink/langs
@@ -1597,6 +1648,7 @@ www/joomla/templates/rhuk_solarflare_ii/template_thumbnail.png
 @dirrm www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advhr/langs
 @dirrm www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advhr/jscripts
 @dirrm www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advhr/images
+@dirrm www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advhr/css
 @dirrm www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advhr
 @dirrm www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/_template/langs
 @dirrm www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/_template/images

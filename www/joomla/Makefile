@@ -5,9 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	joomla
-PORTVERSION=	1.0.7
+PORTVERSION=	1.0.8
 CATEGORIES=	www
-MASTER_SITES=	http://developer.joomla.org/sf/frs/do/downloadFile/projects.joomla/frs.joomla_1_0.1_0_7/frs3338?dl=1/:source1
+MASTER_SITES=	http://forge.joomla.org/sf/frs/do/downloadFile/projects.joomla/frs.joomla_1_0.1_0_8/frs3902?dl=1/:source1
 DISTFILES=	${JOOMLA_SRC}:source1
 
 MAINTAINER=	include@npf.pt.freebsd.org
