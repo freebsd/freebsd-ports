@@ -12,7 +12,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://www.openwall.com/john/d/ \
 		ftp://ftp.ru.openwall.com/pub/projects/john/
 
-MAINTAINER=	ehaupt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Featureful Unix password cracker
 
 DATAFILES=	all.chr alnum.chr alpha.chr digits.chr lanman.chr password.lst
