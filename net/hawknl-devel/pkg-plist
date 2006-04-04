@@ -1,9 +1,9 @@
 include/nl.h
 lib/libNL.a
-lib/libNL.so.1.6.8
+lib/libNL.so.1.7.0
 lib/libNL.so.1
 lib/libNL.so
 lib/NL.so
 %%PORTDOCS%%%%DOCSDIR%%/readme.txt
-%%PORTDOCS%%%%DOCSDIR%%/nlchanges.txt
+%%PORTDOCS%%%%DOCSDIR%%/NLchanges.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

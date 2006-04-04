@@ -171,6 +171,7 @@
     SUBDIR += happystats
     SUBDIR += haproxy
     SUBDIR += hawknl
+    SUBDIR += hawknl-devel
     SUBDIR += hf6to4
     SUBDIR += hidentd
     SUBDIR += hinfo

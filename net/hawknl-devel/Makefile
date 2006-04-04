@@ -6,15 +6,19 @@
 #
 
 PORTNAME=	hawknl
-PORTVERSION=	1.68
+PORTVERSION=	1.70
 CATEGORIES=	net devel
 MASTER_SITES=	http://www.hawksoft.com/download/files/
-DISTNAME=	HawkNL168src
+PKGNAMESUFFIX=	-devel
+DISTNAME=	HawkNL17b1src
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	acardenas@bsd.org.pe
-COMMENT=	Portable networking library
+COMMENT=	Portable networking library (devel)
 
+CONFLICTS=	hawknl-[0-9]*
+
+USE_ZIP=	yes
 USE_DOS2UNIX=	yes
 USE_GMAKE=	yes
 MAKEFILE=	makefile.linux
@@ -25,15 +29,11 @@ CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include
 MAKE_ENV=	CC="${CC}" CFLAGS="${CFLAGS} ${OPTFLAGS}" \
 		LDFLAGS="${LDFLAGS}" CPPFLAGS="${CPPFLAGS}"
 
-WRKSRC=	${WRKDIR}/${PORTNAME}${PORTVERSION}
+WRKSRC=	${WRKDIR}/HawkNL1.70
 
 OPTIONS=	OPTIMIZATION	"Enable optimization"	off
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=	Doesn't build on < 5.x
-.endif
 
 .if defined(WITH_OPTIMIZATION)
 CFLAGS+=	-funroll-all-loops -ffast-math -fomit-frame-pointer -D_GNU_SOURCE -D_REENTRANT
@@ -41,13 +41,13 @@ CFLAGS+=	-funroll-all-loops -ffast-math -fomit-frame-pointer -D_GNU_SOURCE -D_RE
 
 post-patch:
 	${REINPLACE_CMD} -e 's|make -f|${GMAKE} -f|g' ${WRKSRC}/${MAKEFILE}
-	${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|g' ${WRKSRC}/src/nlinternal.h
+	${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|g' ${WRKSRC}/src/nlinternal.h ${WRKSRC}/src/htinternal.h
 
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for FILE in readme.txt nlchanges.txt
-	${INSTALL_DATA} ${WRKSRC}/src/${FILE} ${DOCSDIR}
+.for FILE in readme.txt NLchanges.txt
+	@${INSTALL_DATA} ${WRKSRC}/src/${FILE} ${DOCSDIR}
 .endfor
 .endif
 
