@@ -1,0 +1,49 @@
+# New ports collection makefile for:	XaraLX
+# Date created:				22 Mar 2006
+# Whom:					Vasil Dimov <vd@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	XaraLX
+PORTVERSION=	0.4r762
+CATEGORIES=	graphics
+MASTER_SITES=	http://downloads.xara.com/opensource/
+
+MAINTAINER=	vd@FreeBSD.org
+COMMENT=	A top-tier vector and general purpose graphics program
+
+#WXDEP=	${X11BASE}/libwx_baseu-2.6.so.0.3.1
+WXDEP=	wxgtk2-unicode>=2.6.3
+BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig \
+		${WXDEP}:${PORTSDIR}/x11-toolkits/wxgtk26-unicode \
+		${LOCALBASE}/bin/md5sum:${PORTSDIR}/archivers/dpkg \
+		${LOCALBASE}/bin/zip:${PORTSDIR}/archivers/zip
+RUN_DEPENDS=	${BUILD_DEPENDS}
+LIB_DEPENDS=	dlmalloc.2:${PORTSDIR}/devel/libdlmalloc
+
+USE_AUTOTOOLS=	autoconf:259:env aclocal:19:env automake:19:env
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS=	--with-wx-config=wxgtk2u-2.6-config
+PKGCONFIGS=atk fontconfig gdk-2.0 pango
+CONFIGURE_ENV=	CPPFLAGS_APPEND="`pkg-config --cflags ${PKGCONFIGS}` \
+		-I${LOCALBASE}/include/atk-1.0/atk \
+		-I${X11BASE}/include/gtk-2.0/gtk"
+
+USE_GMAKE=	yes
+USE_GCC=	3.4+
+
+PROG=	XaraLX
+
+PLIST_FILES=	bin/${PROG}
+
+pre-configure:
+	cd ${WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${AUTORECONF} -f -s -i
+
+# the stock install target installs include/camtypes.h in addition which
+# is absolutely completely not necessary
+#do-install:
+#	${INSTALL_PROGRAM} ${WRKSRC}/${PROG} ${PREFIX}/bin
+
+.include <bsd.port.mk>
