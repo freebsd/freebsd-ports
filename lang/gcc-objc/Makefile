@@ -16,7 +16,7 @@ WITHOUT_JAVA=		yes
 
 .if !defined(GNUSTEP_WITH_GCC32) && !defined(GNUSTEP_WITH_GCC33) && !defined(GNUSTEP_WITH_GCC34)
 .if !defined(GNUSTEP_WITH_GCC40) && !defined(GNUSTEP_WITH_GCC41) && !defined(GNUSTEP_WITH_GCC42)
-GNUSTEP_WITH_GCC34=	yes
+GNUSTEP_WITH_GCC41=	yes
 .endif
 .endif
 
