@@ -7,23 +7,20 @@
 #
 
 PORTNAME=	gnome-menu-editor
-PORTVERSION=	0.5
-PORTREVISION=	1
+PORTVERSION=	0.6
 CATEGORIES=	deskutils
 MASTER_SITES=	http://manny.cluecoder.org/packages/gnome-menu-editor/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Simple menu editor for Gnome
 
-USE_REINPLACE=	yes
-GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_X_PREFIX=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomemenus intlhack
-
-PLIST_FILES=	bin/gnome-menu-editor \
-		bin/gmenu-simple-editor \
-		share/gnome/applications/gnome-menu-editor.desktop
+USE_GETTEXT=	yes
+USE_X_PREFIX=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 post-patch:
 # Make .desktop file valid to desktop-file-validate
