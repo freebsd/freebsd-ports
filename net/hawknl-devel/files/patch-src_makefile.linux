@@ -1,13 +1,13 @@
---- src/makefile.linux	Sun Mar  5 03:46:18 2006
-+++ src/makefile.linux	Sun Mar  5 03:51:02 2006
+--- src/makefile.linux	Sun Mar  5 13:36:41 2006
++++ src/makefile.linux	Sun Mar  5 13:38:06 2006
 @@ -1,19 +1,18 @@
 -CC = gcc
 +CC? = ${CC}
  AR = ar cru
  RANLIB = ranlib
  MAJOR_VERSION = 1
- MINOR_VERSION = 6
- PATCH_LEVEL = 8
+ MINOR_VERSION = 7
+ PATCH_LEVEL = 0
  VERSION = $(MAJOR_VERSION).$(MINOR_VERSION).$(PATCH_LEVEL)
 -LIBDIR = /usr/local/lib
 -INCDIR = /usr/local/include
@@ -22,10 +22,10 @@
 -LIBFLAGS = -shared -Wl,-soname,NL.so.$(MAJOR_VERSION).$(MINOR_VERSION) -rdynamic -lpthread
 +CFLAGS? = ${CFLAGS} -Wall -fPIC $(INCLUDE)
 +LIBFLAGS = -shared -Wl,-soname,NL.so.$(MAJOR_VERSION).$(MINOR_VERSION) -rdynamic ${LDFLAGS}
- OBJECTS = crc.o errorstr.o nl.o sock.o group.o loopback.o err.o thread.o mutex.o condition.o nltime.o
+ OBJECTS = crc.o errorstr.o nl.o sock.o group.o loopback.o err.o hthread.o htmutex.o htcondition.o nltime.o
  
  all: $(OBJECTS)
-@@ -37,20 +36,11 @@
+@@ -38,20 +37,11 @@
  	cp $(OUTPUT) $(LIBDIR)
  	cp $(STATIC) $(LIBDIR)
  	chmod 755 $(LIBDIR)/$(OUTPUT)
