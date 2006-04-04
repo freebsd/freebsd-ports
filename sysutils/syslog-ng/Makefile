@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	syslog-ng
-PORTVERSION=	1.6.9
+PORTVERSION=	1.6.10
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.balabit.com/downloads/syslog-ng/1.6/src/ \
 		http://www.balabit.com/downloads/syslog-ng/1.6/src/old/
@@ -45,10 +45,8 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/NEWS ${PREFIX}/share/doc/syslog-ng
 	${INSTALL_DATA} ${WRKSRC}/PORTS ${PREFIX}/share/doc/syslog-ng
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/syslog-ng
-	${INSTALL_DATA} ${WRKSRC}/doc/sgml/syslog-ng.dvi ${PREFIX}/share/doc/syslog-ng/sgml
+	${INSTALL_DATA} ${WRKSRC}/doc/sgml/syslog-ng.xml ${PREFIX}/share/doc/syslog-ng/sgml
 	${INSTALL_DATA} ${WRKSRC}/doc/sgml/syslog-ng.html.tar.gz ${PREFIX}/share/doc/syslog-ng/sgml
-	${INSTALL_DATA} ${WRKSRC}/doc/sgml/syslog-ng.ps ${PREFIX}/share/doc/syslog-ng/sgml
-	${INSTALL_DATA} ${WRKSRC}/doc/sgml/syslog-ng.sgml ${PREFIX}/share/doc/syslog-ng/sgml
 	${INSTALL_DATA} ${WRKSRC}/doc/sgml/syslog-ng.txt ${PREFIX}/share/doc/syslog-ng/sgml
 .endif
 	@if [ ! -f ${PREFIX}/etc/syslog-ng/syslog-ng.conf.sample ]; then \
