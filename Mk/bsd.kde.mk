@@ -116,7 +116,8 @@ QTCFGLIBS+=		-Wl,-export-dynamic -L${LOCALBASE}/lib -L${X11BASE}/lib -ljpeg \
 				-L${QT_PREFIX}/lib
 .if defined(PACKAGE_BUILDING)
 TMPDIR?=	/tmp
-MAKE_ENV+=	TMPDIR=${TMPDIR}
+MAKE_ENV+=	TMPDIR="${TMPDIR}"
+CONFIGURE_ENV+=	TMPDIR="${TMPDIR}"
 .endif
 
 .if !defined(QT_NONSTANDARD)
