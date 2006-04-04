@@ -27,6 +27,12 @@ BUILD_WRKSRC=	${WRKSRC}/uppsrc/ide
 
 INSTALL_DIRS=	Common examples reference uppsrc
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		Ultimate++ is not supported on FreeBSD 4.x
+.endif
+
 post-extract:
 	@${MKDIR} ${WRKDIR}/${DISTNAME}
 	@for d in ${INSTALL_DIRS}; do ${MV} ${WRKDIR}/$$d ${WRKSRC}; done;
@@ -83,4 +89,4 @@ post-install:
 	@${RM} ${WRKSRC}/*.txt
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
