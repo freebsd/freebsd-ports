@@ -594,6 +594,7 @@
     SUBDIR += wmicons
     SUBDIR += wxsvg
     SUBDIR += xaos
+    SUBDIR += xaralx
     SUBDIR += xbmbrowser
     SUBDIR += xd3d
     SUBDIR += xdgagrab

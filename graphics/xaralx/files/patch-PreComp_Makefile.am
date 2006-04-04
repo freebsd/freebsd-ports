@@ -1,0 +1,17 @@
+--- PreComp/Makefile.am.orig	Mon Mar 27 09:58:41 2006
++++ PreComp/Makefile.am	Mon Mar 27 09:58:52 2006
+@@ -13,10 +13,10 @@
+ camtypes.h.gch: camtypes.h
+ 	if $(CXXCOMPILE) -x c++-header -MT $@ -MD -MP -MF "$(DEPDIR)/camtypes.h.Tpo" -c -o $@ $<; \
+ 	then mv -f "$(DEPDIR)/camtypes.h.Tpo" "$(DEPDIR)/camtypes.h.Po"; else rm -f "$(DEPDIR)/camtypes.h.Tpo"; exit 1; fi
+-	make -C ../Kernel clean
+-	make -C ../wxXtra clean
+-	make -C ../tools clean
+-	make -C ../wxOil clean
++	$(MAKE) -C ../Kernel clean
++	$(MAKE) -C ../wxXtra clean
++	$(MAKE) -C ../tools clean
++	$(MAKE) -C ../wxOil clean
+ 	
+ 
+ 

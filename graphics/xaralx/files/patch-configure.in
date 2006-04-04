@@ -1,0 +1,94 @@
+--- configure.in.orig	Mon Apr  3 18:50:40 2006
++++ configure.in	Tue Apr  4 16:01:33 2006
+@@ -8,7 +8,7 @@
+ AC_ARG_ENABLE(debug,
+ [[  --enable-debug          Add more debug information and checks to executable]],
+ [
+-	if test $enableval == "yes"; then
++	if test $enableval = "yes"; then
+ 		DEBUG_FLAGS="-ggdb -D_DEBUG"
+ 		OPT_FLAGS="-O0"
+ 		DebugEnable="yes"
+@@ -19,7 +19,7 @@
+ AC_ARG_ENABLE(static-exec,
+ [[  --enable-static-exec    Build a statically linked version of the executable]],
+ [
+-	if test $enableval == "yes"; then
++	if test $enableval = "yes"; then
+ 		StaticEnable="yes"
+ 		DebugEnable="no"
+ 	fi
+@@ -47,7 +47,7 @@
+ AC_PROG_INSTALL
+ # We don't need dlopen right now and it's not supported on Darwin
+ # AC_LIBTOOL_DLOPEN
+-AC_PROG_LIBTOOL
++AC_PROG_RANLIB
+ 
+ AC_C_BIGENDIAN
+ AC_CHECK_SIZEOF(void*)
+@@ -72,7 +72,7 @@
+ PrecompileEnable="yes"
+ 
+ AC_MSG_CHECKING([Compiler])
+-if test $ac_compiler_gnu == "yes"; then
++if test $ac_compiler_gnu = "yes"; then
+ 	GccVersion=`$CXX -v 2>&1 | $AWK '{ if ($2 ~ /version/) print $3 }'`
+ 	GccVersion=`echo $GccVersion | $AWK 'BEGIN { FS = "."; } { printf "% d", ($1 * 1000 + $2) * 1000 + $3;}'`
+ 
+@@ -141,7 +141,6 @@
+ 	if echo $WX_CPPFLAGS | grep -q '__WXGTK__' ; then 
+ 		WX_GTK="yes"
+ 		AC_MSG_RESULT([found])
+-		PKG_CHECK_MODULES(GTK, [gtk+-2.0])
+ 	else
+ 		AC_MSG_RESULT([not found])
+ 	fi
+@@ -173,24 +172,15 @@
+ 		AC_MSG_ERROR([freetype is required. Try --with-freetype-config.])
+ 	fi])
+ 
+-if test $WX_GTK == "yes"; then
++if test $WX_GTK = "yes"; then
+ 	# GTK build, so call FTTEST function to test for FreeType
+ 	FTTEST
+ 	FT_CFLAGS="`$FTCONFIG --cflags`"
+-
+-	# check for the Pango package
+-	PKG_CHECK_MODULES(PANGOX, pangox,
+-			  [
+-				PANGO_CFLAGS="$PANGOX_CFLAGS"
+-			  ],
+-			  [
+-				AC_MSG_ERROR([pangox library not found])
+-			  ]
+-			  )
++	PANGO_CFLAGS=""
+ else
+ 	# non-GTK build, i.e., MacOS, so Pango and FreeType are not required
+-	FT_CFLAGS = ""
+-	PANGO_CFLAGS = ""
++	FT_CFLAGS=""
++	PANGO_CFLAGS=""
+ fi
+ 
+ TOPDIR=$srcdir;
+@@ -204,8 +194,8 @@
+ fi
+ 
+ # pass the Pango, FreeType and GTK flags (required for wxGTK font rendering)
+-CPPFLAGS="$CPPFLAGS $WX_CPPFLAGS $PANGO_CFLAGS $FT_CFLAGS $GTK_CFLAGS"
+-CXXFLAGS="$CXXFLAGS $WX_CPPFLAGS $PANGO_CFLAGS $FT_CFLAGS $GTK_CFLAGS"
++CPPFLAGS="$CPPFLAGS $WX_CPPFLAGS $PANGO_CFLAGS $FT_CFLAGS $GTK_CFLAGS $CPPFLAGS_APPEND"
++CXXFLAGS="$CXXFLAGS $WX_CPPFLAGS $PANGO_CFLAGS $FT_CFLAGS $GTK_CFLAGS $CPPFLAGS_APPEND"
+ 
+ AC_MSG_CHECKING([Linker])
+ case $host in
+@@ -244,6 +234,7 @@
+ AM_CONDITIONAL(DARWIN_LINK, [test "$DarwinLink" = "yes"])
+ 
+ AC_SUBST(TOPDIR)
++AC_SUBST(WX_CPPFLAGS)
+ AC_SUBST(WX_LIBS)
+ AC_SUBST(XRCINCLUDE)
+ AC_SUBST(XARALANGUAGE)
