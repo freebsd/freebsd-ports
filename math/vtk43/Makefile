@@ -14,34 +14,34 @@
 #
 
 PORTNAME=	vtk
-PORTVERSION=	4.4
-PORTREVISION=	1
+PORTVERSION=	4.3.0
+PORTREVISION=	3
 CATEGORIES=	math graphics
 MASTER_SITES=	http://ovt.irfu.se/vtk/files/
-DISTFILES?=	VTK-${PORTVERSION}-LatestRelease.tar.gz
+DISTFILES?=	VTK-${PORTVERSION}-cvs${CVSDATE}.tar.gz
 
 MAINTAINER=	ko@irfu.se
 COMMENT?=	The Visualization Toolkit shared libs
 
 USE_REINPLACE=	yes
 
+PREFIX=		${LOCALBASE}/vtk43
+
 LIBVER=		1
+CVSDATE=	20031006
 VTKSRCDIR=	${WRKDIR}/VTK
 TESTINGDIR=	${EXAMPLESDIR}/Testing
 VTKDATAROOT=	${EXAMPLESDIR}/VTKData
-DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
+DOCSDIR=	${PREFIX}/share/doc/${PKGNAME}
 PLIST=		${.CURDIR}/pkg-plist
 FILESDIR=	${.CURDIR}/files
+RESTRICTED=	yes
 
 VTK_KITS=	Common Filtering Graphics Hybrid IO Imaging Rendering Parallel Patented
 
 PLIST_SUB+=	LIBVER=${LIBVER} PKGNAME=${PKGNAME}
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64"
-BROKEN=		"does not compile on amd64"
-.endif
 
 .if defined(WRAP) || !defined(PKGNAMESUFFIX) || ${PKGNAMESUFFIX}=="-headers"
 
@@ -50,7 +50,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}${PKGNAMESUFFIX}-build
 
 BUILD_DEPENDS+=	${CMAKE}:${PORTSDIR}/devel/cmake
 
-LIB_DEPENDS+=	expat.6:${PORTSDIR}/textproc/expat2 \
+LIB_DEPENDS+=	expat.5:${PORTSDIR}/textproc/expat2 \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
@@ -60,9 +60,25 @@ RUN_DEPENDS+=	${VTKDATAROOT}/VTKData.readme:${PORTSDIR}/math/vtk-data
 BUILD_DEPENDS+=	${VTKDATAROOT}/VTKData.readme:${PORTSDIR}/math/vtk-data
 .endif
 
+ONLY_FOR_ARCHS=	i386 # was not tested on other ARCHS
 USE_GMAKE=	yes
 USE_GL=		yes
 INSTALLS_SHLIB=	yes
+
+# if optimization flag -O2 or -O3 is present - use g++33
+# There is a problem compiling Imaging/vtkImageEuclideanDistance.o by gcc 3.2.2
+# with -02 -march=pentium3
+.if defined(CXXFLAGS)
+TTT=	"${CXXFLAGS}"	# this quotes are VERY important!
+OPTFLAGPRESENT=	${TTT:C/^.*-O[23].*$/yes/}
+.if ${OPTFLAGPRESENT} == "yes"
+USE_GCC=	3.3
+.endif
+.endif
+
+.if ${OSVERSION} < 500016
+ADDITIONAL_EXE_LINKER_FLAGS=	${PTHREAD_LIBS}
+.endif
 
 CMAKE?=		${LOCALBASE}/bin/cmake
 CXXFLAGS+=	-Wno-deprecated
@@ -70,7 +86,7 @@ CMAKE_DEFS+=	-DCMAKE_INSTALL_PREFIX:PATH=${PREFIX} \
 		-DBUILD_SHARED_LIBS:BOOL=ON \
 		-DCMAKE_BUILD_TYPE:STRING=Release \
 		-DCMAKE_SHARED_LINKER_FLAGS:STRING="${LINKERFLAGS}" \
-		-DCMAKE_EXE_LINKER_FLAGS:STRING="${LINKERFLAGS} ${PTHREAD_LIBS}" \
+		-DCMAKE_EXE_LINKER_FLAGS:STRING="${LINKERFLAGS} ${ADDITIONAL_EXE_LINKER_FLAGS}" \
 		-DCMAKE_THREAD_LIBS:STRING="${PTHREAD_LIBS}"\
 		-DCMAKE_USE_PTHREADS:BOOL=ON \
 		-DCMAKE_C_COMPILER:STRING='${CC}' \

@@ -284,6 +284,7 @@
     SUBDIR += unixstat
     SUBDIR += vecfem
     SUBDIR += vtk
+    SUBDIR += vtk43
     SUBDIR += vtk-data
     SUBDIR += vtk-examples
     SUBDIR += vtk-headers
