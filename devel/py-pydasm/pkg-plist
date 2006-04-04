@@ -1,0 +1,5 @@
+%%PYTHON_SITELIBDIR%%/pydasm.so
+%%EXAMPLES%%%%EXAMPLESDIR%%/das.py
+%%EXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/README.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
