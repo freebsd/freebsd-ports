@@ -8,9 +8,7 @@
 PORTNAME=	unlzx
 PORTVERSION=	1.1
 CATEGORIES=	archivers
-MASTER_SITES=	ftp://de.aminet.net/pub/aminet/misc/unix/ \
-		ftp://us.aminet.net/pub/aminet/misc/unix/ \
-		http://critical.ch/distfiles/
+MASTER_SITES=	http://critical.ch/distfiles/
 DISTNAME=	${PORTNAME}.c
 EXTRACT_SUFX=	.gz
 
