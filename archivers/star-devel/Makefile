@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	star
-DISTVERSION=	1.5a70
+DISTVERSION=	1.5a73
 CATEGORIES=	archivers
 MASTER_SITES=	ftp://ftp.berlios.de/pub/star/alpha/
 
@@ -30,7 +30,7 @@ do-build:
 	@cd ${WRKSRC} && ${MAKE_ENV} ${LOCALBASE}/bin/smake
 
 do-install:
-	@cd ${WRKSRC}/star && ${MAKE_ENV} ${LOCALBASE}/bin/smake install INS_BASE=${PREFIX}
+	@cd ${WRKSRC}/star && ${MAKE_ENV} ${LOCALBASE}/bin/smake ${INSTALL_TARGET} INS_BASE=${PREFIX}
 	@${STRIP_CMD} ${PREFIX}/bin/star_fat
 
 .include <bsd.port.mk>
