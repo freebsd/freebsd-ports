@@ -10775,6 +10775,7 @@ py-px		ports/devel/py-px
 py-py2play	ports/net-p2p/py-py2play
 py-pyPgSQL	ports/databases/py-pyPgSQL
 py-pycrypto	ports/security/py-pycrypto
+py-pydasm	ports/devel/py-pydasm
 py-pydot	ports/graphics/py-pydot
 py-pysqlite20	ports/databases/py-pysqlite20
 py-pysqlite21	ports/databases/py-pysqlite21
