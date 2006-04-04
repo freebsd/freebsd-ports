@@ -1,0 +1,11 @@
+--- configure.orig	Fri Dec  9 00:09:15 2005
++++ configure	Mon Apr  3 11:06:18 2006
+@@ -3671,7 +3671,7 @@
+ 	;;
+ 
+   *freebsd*)
+-	PROXY_LIBS='-lc_r'
++	PROXY_LIBS="${PTHREAD_LIBS}"
+         jni_os=freebsd
+ 	;;
+ 
