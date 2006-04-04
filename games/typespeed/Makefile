@@ -7,6 +7,7 @@
 
 PORTNAME=	typespeed
 PORTVERSION=	0.4.4
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://ls.purkki.org/typespeed/
 DISTNAME=	typespeed-${PORTVERSION}
