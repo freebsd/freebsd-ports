@@ -14,6 +14,9 @@ DISTNAME=	XML4J-bin.${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XML for Java parser
 
+DEPRECATED=	it has been replaced by textproc/xerces-j 8 years ago
+EXPIRATION_DATE=2006-07-01
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/./_/g}
 USE_JAVA=	yes
 JAVA_VERSION=	1.2+
