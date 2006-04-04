@@ -11,7 +11,7 @@ CATEGORIES=	devel java
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	${PORTNAME}/binaries
 
-MAINTAINER=	rui@ruilopes.com
+MAINTAINER=	jbq@caraldi.com
 COMMENT=	Java project management and project comprehension tool
 
 USE_BZIP2=	yes
@@ -20,9 +20,12 @@ JAVA_VERSION=	1.3+
 NO_BUILD=	yes
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 PKGMESSAGE=	${WRKDIR}/pkg-message
+SUBSTITUTIONS=	-e 's,%%DATADIR%%,${DATADIR},g'
+REINPLACE_FILES=	${WRKSRC}/bin/maven
 
 post-configure:
-	@${SED} -e 's,%%DATADIR%%,${DATADIR},g' pkg-message > ${PKGMESSAGE}
+	@${SED} ${SUBSTITUTIONS} pkg-message > ${PKGMESSAGE}
+	@${REINPLACE_CMD} ${SUBSTITUTIONS} ${REINPLACE_FILES}
 
 BINFILES=	install_repo.sh maven
 DIRECTORIES=	lib lib/endorsed plugins
