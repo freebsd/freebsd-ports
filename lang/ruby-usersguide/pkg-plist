@@ -1,8 +1,5 @@
 %%RUBY_MODDOCDIR%%/README.txt
-%%RUBY_MODDOCDIR%%/a2l.gif
-%%RUBY_MODDOCDIR%%/a2r.gif
-%%RUBY_MODDOCDIR%%/a2u.gif
-%%RUBY_MODDOCDIR%%/eval.rb
+%%RUBY_MODDOCDIR%%/about.html
 %%RUBY_MODDOCDIR%%/accesscontrol.html
 %%RUBY_MODDOCDIR%%/accessors.html
 %%RUBY_MODDOCDIR%%/arrays.html
@@ -28,10 +25,12 @@
 %%RUBY_MODDOCDIR%%/redefinemethods.html
 %%RUBY_MODDOCDIR%%/regexp.html
 %%RUBY_MODDOCDIR%%/rescue.html
-%%RUBY_MODDOCDIR%%/rubyguide.html
 %%RUBY_MODDOCDIR%%/singletonmethods.html
 %%RUBY_MODDOCDIR%%/strings.html
 %%RUBY_MODDOCDIR%%/variables.html
-%%RUBY_MODDOCDIR%%/whatisruby.html
+%%RUBY_MODDOCDIR%%/eval.txt
+%%RUBY_MODDOCDIR%%/la-plexi.png
+%%RUBY_MODDOCDIR%%/ra-plexi.png
+%%RUBY_MODDOCDIR%%/ug.css
 @dirrm %%RUBY_MODDOCDIR%%
 @dirrmtry %%RUBY_DOCDIR%%
