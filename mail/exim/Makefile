@@ -28,7 +28,7 @@ MASTER_SITE_SUBDIR+=	sa-exim/:sa_exim
 DISTFILES+=	sa-exim-${SA_EXIM_VERSION}.tar.gz:sa_exim
 .endif
 
-EXIM_VERSION=	4.60
+EXIM_VERSION=	4.61
 SA_EXIM_VERSION=4.2
 
 IGNOREFILES=	FAQ.txt.bz2

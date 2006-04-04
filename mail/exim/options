@@ -142,7 +142,7 @@
 # Link against libwrap to support /etc/hosts.allow access control.
 
 #WITHOUT_EXIMON
-# The eximon monitor, which requires X, will be made a dependency.  
+# The eximon monitor, which requires X, will be made a dependency.
 # Note that using EXIMON will cause XFree86 to be installed
 # if it is not present.
 
