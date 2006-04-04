@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dosage
-PORTVERSION=	1.5.6
+PORTVERSION=	1.5.7
 CATEGORIES=	deskutils python
 MASTER_SITES=	http://slipgate.za.net/dosage/downloads/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,6 @@ COMMENT=	An application to keep a local mirror of web comics
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
-USE_REINPLACE=	yes
 
 MAN1=		mainline.1
 
