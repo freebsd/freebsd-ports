@@ -1,0 +1,10 @@
+--- bin/maven.orig	Tue Dec  7 12:13:46 2004
++++ bin/maven	Sat Apr  1 00:07:23 2006
+@@ -19,6 +19,7 @@
+ #   reserved.
+ 
+ FOREHEAD_VERSION=1.0-beta-5
++MAVEN_HOME=%%DATADIR%%
+ 
+ if [ -z "$MAVEN_OPTS" ] ; then
+   MAVEN_OPTS="-Xmx256m"
