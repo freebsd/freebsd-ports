@@ -481,7 +481,6 @@ bin/swig%%VER%%
 %%EXAMPLESDIR%%/%%PORTVERSION%%/modula3/typemap/Makefile
 %%EXAMPLESDIR%%/%%PORTVERSION%%/modula3/typemap/example.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/mzscheme/check.list
-%%EXAMPLESDIR%%/%%PORTVERSION%%/mzscheme/integers_runme.scm
 %%EXAMPLESDIR%%/%%PORTVERSION%%/mzscheme/multimap/Makefile
 %%EXAMPLESDIR%%/%%PORTVERSION%%/mzscheme/multimap/example.c
 %%EXAMPLESDIR%%/%%PORTVERSION%%/mzscheme/multimap/example.i
@@ -1580,6 +1579,7 @@ bin/swig%%VER%%
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/mzscheme/casts_runme.scm
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/mzscheme/char_constant_runme.scm
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/mzscheme/imports_runme.scm
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/mzscheme/integers_runme.scm
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/mzscheme/name_runme.scm
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/mzscheme/unions_runme.scm
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/name.i
@@ -2247,7 +2247,7 @@ bin/swig%%VER%%
 %%EXAMPLESDIR%%/%%PORTVERSION%%/xml/gnarly.i
 %%DATADIR%%/%%PORTVERSION%%/allegrocl/allegrocl.swg
 %%DATADIR%%/%%PORTVERSION%%/allegrocl/longlongs.i
-%DATADIR%%/%%PORTVERSION%%/allegrocl/inout_typemaps.i
+%%DATADIR%%/%%PORTVERSION%%/allegrocl/inout_typemaps.i
 %%DATADIR%%/%%PORTVERSION%%/allegrocl/typemaps.i
 %%DATADIR%%/%%PORTVERSION%%/allkw.swg
 %%DATADIR%%/%%PORTVERSION%%/attribute.i
