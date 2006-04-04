@@ -42,4 +42,4 @@ lib/libvtkftgl.so.%%LIBVER%%
 %%DOCSDIR%%/README.html
 %%DOCSDIR%%/README.patented-classes
 %%DOCSDIR%%/vtkLogo.jpg
-@dirrmtry %%DOCSDIR%%
+@unexec rmdir %D/%%DOCSDIR%% 2>/dev/null || true
