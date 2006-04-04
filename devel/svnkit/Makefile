@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	javasvn
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	devel java
 MASTER_SITES=	http://tmate.org/svn/
 DISTNAME=	org.tmatesoft.svn_${PORTVERSION}.standalone
@@ -18,7 +18,6 @@ RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 
 NO_BUILD=	yes
 USE_ZIP=	yes
-USE_REINPLACE=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.3+
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
