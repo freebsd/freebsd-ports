@@ -7,6 +7,7 @@
 
 PORTNAME=	isaac
 PORTVERSION=	4.2
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	isaac-cfd
@@ -24,17 +25,18 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Integrated Solution Algorithm for Arbitrary Configuration
 
 NO_WRKSUBDIR=	yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 MAKEFILE=	makefile
-MAKE_FLAGS=	CPPFLAGS=-I.
-
-FFLAGS?=	-O2
+MAKE_FLAGS+=	CPPFLAGS=-I.
 
 .if !defined(WITH_EXAMPLES)
 PLIST_SUB=	WITH_EXAMPLES="@comment "
 .else
 PLIST_SUB=	WITH_EXAMPLES=""
+.endif
+
+.if defined(WITH_OPTIMIZED_FLAGS)
+FFLAGS+=	-O2 -ffast-math -funroll-loops -fexpensive-optimizations
 .endif
 
 pre-configure:
