@@ -2,12 +2,18 @@
 %%DBL%%%%INSTALL_DIR%%/dbl/FAST
 %%DBL%%%%INSTALL_DIR%%/dbl/FULL
 %%DBL%%@dirrmtry %%INSTALL_DIR%%/dbl/NEW
-%%DBL%%%%INSTALL_DIR%%/dbl/Update
-%%DBL%%%%INSTALL_DIR%%/dbl/Update.Fast
-%%DBL%%%%INSTALL_DIR%%/dbl/dbl_expand
+%%DBL%%@unexec if cmp -s %%PREFIX%%/%%INSTALL_DIR%%/dbl/Update %%PREFIX%%/%%INSTALL_DIR%%/dbl/Update.dist; then rm -f %%PREFIX%%/%%INSTALL_DIR%%/dbl/Update; fi
+%%DBL%%%%INSTALL_DIR%%/dbl/Update.dist
+%%DBL%%@exec [ -f %%PREFIX%%/%%INSTALL_DIR%%/dbl/Update ] || cp -p %%PREFIX%%/%%INSTALL_DIR%%/dbl/Update.dist %%PREFIX%%/%%INSTALL_DIR%%/dbl/Update
+%%DBL%%@unexec if cmp -s %%PREFIX%%/%%INSTALL_DIR%%/dbl/Update.Fast %%PREFIX%%/%%INSTALL_DIR%%/dbl/Update.Fast.dist; then rm -f %%PREFIX%%/%%INSTALL_DIR%%/dbl/Update.Fast; fi
+%%DBL%%%%INSTALL_DIR%%/dbl/Update.Fast.dist
+%%DBL%%@exec [ -f %%PREFIX%%/%%INSTALL_DIR%%/dbl/Update.Fast ] || cp -p %%PREFIX%%/%%INSTALL_DIR%%/dbl/Update.Fast.dist %%PREFIX%%/%%INSTALL_DIR%%/dbl/Update.Fast
+%%DBL%%@unexec if cmp -s %%PREFIX%%/%%INSTALL_DIR%%/dbl/dbl_expand %%PREFIX%%/%%INSTALL_DIR%%/dbl/dbl_expand.dist; then rm -f %%PREFIX%%/%%INSTALL_DIR%%/dbl/dbl_expand; fi
+%%DBL%%%%INSTALL_DIR%%/dbl/dbl_expand.dist
+%%DBL%%@exec [ -f %%PREFIX%%/%%INSTALL_DIR%%/dbl/dbl_expand ] || cp -p %%PREFIX%%/%%INSTALL_DIR%%/dbl/dbl_expand.dist %%PREFIX%%/%%INSTALL_DIR%%/dbl/dbl_expand
 %%DBL%%%%INSTALL_DIR%%/dbl/dbl_stat
 %%DBL%%@dirrmtry %%INSTALL_DIR%%/dbl/lists
-%%DBL%%@dirrm %%INSTALL_DIR%%/dbl
+%%DBL%%@dirrmtry %%INSTALL_DIR%%/dbl
 %%INSTALL_DIR%%/make-cache
 %%INSTALL_DIR%%/redirector
 @unexec if cmp -s %%PREFIX%%/%%INSTALL_DIR%%/redirector.conf %%PREFIX%%/%%INSTALL_DIR%%/redirector.conf.dist; then rm -f %%PREFIX%%/%%INSTALL_DIR%%/redirector.conf; fi
@@ -19,7 +25,7 @@
 %%INSTALL_DIR%%/tools/kill-cache
 %%INSTALL_DIR%%/tools/set-permissions
 @dirrm %%INSTALL_DIR%%/tools
-@dirrm %%INSTALL_DIR%%
+@dirrmtry %%INSTALL_DIR%%
 %%BAN%%share/examples/%%INSTALL_DIR%%/banlists/banners/pcre
 %%BAN%%share/examples/%%INSTALL_DIR%%/banlists/banners/urls
 %%BAN%%@dirrm share/examples/%%INSTALL_DIR%%/banlists/banners
