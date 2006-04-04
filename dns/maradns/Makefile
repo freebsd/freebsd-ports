@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	maradns
-PORTVERSION=	1.2.03.1
+PORTVERSION=	1.2.07.1
 CATEGORIES=	dns
 MASTER_SITES=	http://www.maradns.org/download/1.2/${PORTVERSION}/ \
 		http://kapranoff.ru/~kappa/files/
