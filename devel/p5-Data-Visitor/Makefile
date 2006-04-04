@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Data-Visitor
-PORTVERSION=	0.03
+PORTVERSION=	0.04
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Data
@@ -17,7 +17,7 @@ COMMENT=	Visitor style traversal of Perl data structures
 
 BUILD_DEPENDS=	p5-Test-Simple>=0:${PORTSDIR}/devel/p5-Test-Simple \
 		p5-Test-use-ok>=0:${PORTSDIR}/devel/p5-Test-use-ok \
-		p5-Test-MockObject>=0:${PORTSDIR}/devel/p5-Test-MockObject \
+		p5-Test-MockObject>=1.04:${PORTSDIR}/devel/p5-Test-MockObject \
 		p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
