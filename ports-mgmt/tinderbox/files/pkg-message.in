@@ -30,7 +30,8 @@ The following walkthrough is the tinderbox environment setup:
   - $SERVER_HOST should be the name your machine is known as. If
     it is your own machine and your access it directory, try localhost
     here if nothing else sounds reasonable.
-  - Comment out the lines after "for www", and uncomment the lines 
+  - $TINDERBOX_URI should be "/tb".
+  - Comment out the lines after "for www", and uncomment the lines "for www-exp".
 
 - Edit the file %%PREFIX%%/tinderbox/scripts/www-exp/inc_ds.php
   (copy from inc_ds.php.dist)
