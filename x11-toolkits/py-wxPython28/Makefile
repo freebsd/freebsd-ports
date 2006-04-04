@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	wxPython
-PORTVERSION=	2.6.1.0
-PORTREVISION=	3
+PORTVERSION=	2.6.3.0
+PORTREVISION=	0
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	wxpython
@@ -24,7 +24,6 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/wxPython
 USE_GMAKE=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
-USE_REINPLACE=	yes
 PYDISTUTILS_BUILDARGS=	\
 			WX_CONFIG="${WX_CONFIG}" \
 			WXPORT="${WXPORT}"
@@ -66,7 +65,7 @@ post-build:
 # are we ready for unicode?
 .if defined(WITH_UNICODE)
 . if ${OSVERSION} < 500000
-IGNORE=	Systems prior to FreeBSD 5.0 do not support Unicode
+IGNORE=	systems prior to FreeBSD 5.0 do not support Unicode
 . endif
 .endif
 

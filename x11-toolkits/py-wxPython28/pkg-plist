@@ -74,12 +74,33 @@
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/activexwrapper.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/activexwrapper.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/activexwrapper.pyo
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/analogclock.py
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/analogclock.pyc
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/analogclock.pyo
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/analogclockopts.py
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/analogclockopts.pyc
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/analogclockopts.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/analogclock/__init__.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/analogclock/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/analogclock/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/analogclock/analogclock.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/analogclock/analogclock.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/analogclock/analogclock.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/analogclock/helpers.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/analogclock/helpers.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/analogclock/helpers.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/analogclock/lib_setup/__init__.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/analogclock/lib_setup/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/analogclock/lib_setup/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/analogclock/lib_setup/buttontreectrlpanel.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/analogclock/lib_setup/buttontreectrlpanel.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/analogclock/lib_setup/buttontreectrlpanel.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/analogclock/lib_setup/colourselect.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/analogclock/lib_setup/colourselect.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/analogclock/lib_setup/colourselect.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/analogclock/lib_setup/fontselect.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/analogclock/lib_setup/fontselect.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/analogclock/lib_setup/fontselect.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/analogclock/setup.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/analogclock/setup.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/analogclock/setup.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/analogclock/styles.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/analogclock/styles.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/analogclock/styles.pyo
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/anchors.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/anchors.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/anchors.pyo
@@ -318,6 +339,9 @@
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/splashscreen.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/splashscreen.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/splashscreen.pyo
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/splitter.py
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/splitter.pyc
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/splitter.pyo
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/statbmp.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/statbmp.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/statbmp.pyo
@@ -792,6 +816,8 @@
 @dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/floatcanvas
 @dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/editor
 @dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/colourchooser
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/analogclock/lib_setup
+@dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib/analogclock
 @dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/lib
 @dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/build
 @dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx
