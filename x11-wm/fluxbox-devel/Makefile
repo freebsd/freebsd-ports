@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fluxbox
-PORTVERSION=	0.9.15
+PORTVERSION=	0.9.15.1
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	fluxbox
@@ -109,10 +109,6 @@ CONFIGURE_ARGS+=	--disable-xrender
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=	Does not build on 4.X
-.endif
 
 .if ${HAVE_GNOME:Mlibgnome}!="" || defined(PACKAGE_BUILDING)
 CONFIGURE_ARGS+=	--enable-gnome
