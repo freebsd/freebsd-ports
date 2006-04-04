@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	audacious
-PORTVERSION=	0.2.2
-PORTREVISION=	1
+PORTVERSION=	0.2.3
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://audacious-media-player.org/release/ \
 		${MASTER_SITE_LOCAL}
@@ -34,7 +33,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		OUTPUT_PLUGINS="${OUTPUT_PLUGINS}" \
 		VISUALIZATION_PLUGINS="${VISUALIZATION_PLUGINS}"
 CONFIGURE_ARGS=	--disable-jack --disable-flc --disable-adplug \
-	--disable-lirc --disable-alsa --disable-amidiplug
+	--disable-lirc --disable-alsa --disable-amidiplug --disable-arts
 
 MAN1=		audacious.1
 
