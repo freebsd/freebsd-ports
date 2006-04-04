@@ -5,14 +5,14 @@
 # $FreeBSD$
 #
 
-PORTNAME=	phpldapadmin
-PORTVERSION=	0.9.8
+PORTNAME=	phpldapadmin098
+PORTVERSION=	0.9.8.2
 PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	phpldapadmin
-DISTNAME=	${PORTNAME}-${PORTVERSION}
+DISTNAME=	${PORTNAME:S/098//}-${PORTVERSION}
 
 MAINTAINER=	m.seaman@infracaninophile.co.uk
 COMMENT=	A set of PHP-scripts to administer LDAP servers over the web
@@ -40,12 +40,14 @@ WANT_PHP_WEB=	yes
 
 # PLAUSR is only used WITH_SUPHP
 PLADIR?=	www/${PORTNAME}
+PLADIRX?=	${PLADIR:S/098//}
 PLAGRP?=	${WWWGRP}
 CFGDIR=		config
 CFGFILE=	config.php
 
 SUB_LIST+=	PKGNAME=${PKGNAME} \
-		PLADIR=${PLADIR}
+		PLADIR=${PLADIR}   \
+		PLADIRX=${PLADIRX}
 SUB_FILES+=	pkg-message
 
 PLIST=		${WRKDIR}/plist
