@@ -6,7 +6,7 @@
 -FC = f77
 +MAKE?=gmake
  
-+F77 =	%%FC%%
++FC =	%%FC%%
  #SRC=  $(HOME)/CFD/ISAAC/src
  SRC=  $(CURDIR)
  SRCTARFILE= isaacsrc.tar
