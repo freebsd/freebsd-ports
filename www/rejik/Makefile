@@ -7,13 +7,13 @@
 
 PORTNAME=	rejik
 PORTVERSION=	3.2.1
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.rejik.ru/download/ \
 				http://bio3k.softboard.ru/uploads/arch/
 DISTNAME=	redirector-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX}
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	b3k@mail.ru
 COMMENT=	A squid redirector used for blocking unwanted content
@@ -83,21 +83,30 @@ post-install:
 .if !exists(${EXAMPLESDIR})
 	@${MKDIR} ${EXAMPLESDIR}
 .endif
-	@${TAR} -xf ${DISTDIR}/banlists-2.x.x.tgz -C ${EXAMPLESDIR}
+	@${CP} -R ${WRKDIR}/banlists ${EXAMPLESDIR}
 .endif
 .if defined(WITH_DBL)
-	@${TAR} -xf ${DISTDIR}/dbl-2.0.tgz -C ${INSTALL_PATH}
-	@${CHOWN} -R ${SQUID_USER}:${SQUID_GROUP} ${INSTALL_PATH}/dbl
 	@${REINPLACE_CMD} -e 's|/usr/bin/wget|${LOCALBASE}/bin/wget|g ; \
 		s|/usr/local/rejik3|${INSTALL_PATH}|g' \
-		${INSTALL_PATH}/dbl/Update ${INSTALL_PATH}/dbl/Update.Fast ${INSTALL_PATH}/dbl/dbl_expand
-	@${RM} ${INSTALL_PATH}/dbl/*.bak
+		${WRKDIR}/dbl/Update ${WRKDIR}/dbl/Update.Fast ${WRKDIR}/dbl/dbl_expand
+	@${RM} ${WRKDIR}/dbl/*.bak
+	@${CP} ${WRKDIR}/dbl/Update ${WRKDIR}/dbl/Update.dist
+	@${CP} ${WRKDIR}/dbl/Update.Fast ${WRKDIR}/dbl/Update.Fast.dist
+	@${CP} ${WRKDIR}/dbl/dbl_expand ${WRKDIR}/dbl/dbl_expand.dist
+	@${CP} -Rn ${WRKDIR}/dbl ${INSTALL_PATH}
+	@${CHOWN} -R ${SQUID_USER}:${SQUID_GROUP} ${INSTALL_PATH}/dbl
+	@[ -f ${INSTALL_PATH}/dbl/Update ] || \
+		${CP} -p ${INSTALL_PATH}/dbl/Update.dist ${INSTALL_PATH}/dbl/Update
+	@[ -f ${INSTALL_PATH}/dbl/Update.Fast ] || \
+		${CP} -p ${INSTALL_PATH}/dbl/Update.Fast.dist ${INSTALL_PATH}/dbl/Update.Fast
+	@[ -f ${INSTALL_PATH}/dbl/dbl_expand ] || \
+		${CP} -p ${INSTALL_PATH}/dbl/dbl_expand.dist ${INSTALL_PATH}/dbl/dbl_expand
 .endif
 .if !defined(WITHOUT_WWW)
 .if !exists(${EXAMPLESDIR})
 	@${MKDIR} ${EXAMPLESDIR}
 .endif
-	@${TAR} -xf ${DISTDIR}/squid-like-www-en.tgz -C ${EXAMPLESDIR}
+	@${CP} -R ${WRKDIR}/squid-like-www-en ${EXAMPLESDIR}
 .endif
 
 	@${CAT} ${PKGMESSAGE}
