@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	libgmp
-PORTVERSION=	4.1.4
-PORTREVISION=	2
+PORTVERSION=	4.2
 CATEGORIES=	math devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gmp
@@ -25,6 +24,6 @@ INSTALLS_SHLIB=	yes
 INFO=		gmp
 
 post-extract:
-	@${RM} -f ${WRKSRC}/gmp.info*
+	@${RM} -f ${WRKSRC}/doc/gmp.info*
 
 .include <bsd.port.mk>
