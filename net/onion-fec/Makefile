@@ -20,7 +20,8 @@ BUILD_DEPENDS=	\
 USE_ZIP=	yes
 USE_ANT=	yes
 JAVA_BUILD=	jdk
-USE_JAVA=	1.4+
+USE_JAVA=	yes
+JAVA_VERSION=	1.4+
 JAVA_OS=	native
 ALL_TARGET=	jars
 
