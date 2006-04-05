@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	pubcookie
-DISTVERSION=	3.3.0-beta2
+PORTVERSION=	3.3.0
 CATEGORIES=	www security
 MASTER_SITES=	http://pubcookie.org/downloads/
 PKGNAMESUFFIX=	-login-server
+DISTNAME=	${PORTNAME}-3.3.0a
 
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	A single sign-on system for websites (login server)

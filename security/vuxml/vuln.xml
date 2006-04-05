@@ -34,6 +34,99 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="91afa94c-c452-11da-8bff-000ae42e9b93">
+    <topic>mod_pubcookie -- cross site scripting vulnerability</topic>
+    <affects>
+      <package>
+	<name>mod_pubcookie</name>
+	<range><lt>3.3.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Nathan Dors of the Pubcookie Project reports:</p>
+	<blockquote cite="http://www.pubcookie.org/news/20060306-apps-secadv.html">
+	  <p>Non-persistent XSS vulnerabilities were found in the
+            Pubcookie Apache module (mod_pubcookie) and ISAPI
+            filter. These components mishandle untrusted data when
+            printing responses to the browser. This makes them
+            vulnerable to carefully crafted requests containing script
+            or HTML. If an attacker can lure an unsuspecting user to
+            visit carefully staged content, the attacker can use it to
+            redirect the user to a vulnerable Pubcookie application
+            server and attempt to exploit the XSS vulnerabilities.</p>
+	  <p>These vulnerabilities are classified as *high* due to the
+            nature and purpose of Pubcookie application servers for user
+            authentication and Web Single Sign-on (SSO). An attacker
+            who injects malicious script through the vulnerabilities
+            might steal private Pubcookie data including a user's
+            authentication assertion ("granting") cookies and
+            application session cookies.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <certvu>314540</certvu>
+    </references>
+    <dates>
+      <discovery>2006-03-06</discovery>
+      <entry>2006-04-05</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="855cd9fa-c452-11da-8bff-000ae42e9b93">
+    <topic>pubcookie-login-server -- cross site scripting vulnerability</topic>
+    <affects>
+      <package>
+	<name>pubcookie-login-server</name>
+	<range><lt>3.3.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Nathan Dors of the Pubcookie Project reports:</p>
+	<blockquote cite="">
+	  <p> Multiple non-persistent XSS vulnerabilities were found
+            in the Pubcookie login server's compiled binary "index.cgi"
+            CGI program. The CGI program mishandles untrusted data when
+            printing responses to the browser. This makes the program
+            vulnerable to carefully crafted requests containing script
+            or HTML. If an attacker can lure an unsuspecting user to
+            visit carefully staged content, the attacker can use it to
+            redirect the user to his or her local Pubcookie login page
+            and attempt to exploit the XSS vulnerabilities.</p>
+	  <p> These vulnerabilities are classified as *critical* due
+            to the nature and purpose of the Pubcookie login server for
+            user authentication and Web Single Sign-on (SSO). Specific
+            threats include:</p>
+	  <ul>
+	    <li>An attacker who injects malicious script through the
+              vulnerabilities might steal senstive user data including
+              a user's authentication credentials (usernames and
+              passwords);</li>
+	    <li>An attacker who injects malicious script through the
+              vulnerabilities might steal private Pubcookie data
+              including a user's authentication assertion ("granting")
+              cookies and SSO ("login") session cookies;</li>
+	    <li>An attacker who injects HTML tags through the
+              vulnerabilities might deface a site's Pubcookie login page
+              for a single visit by a single user (i.e. a non-persistent
+              defacement).</li>
+	  </ul>
+	  <p>At the heart of these threats lies a violation of the
+	    user's trust in the Pubcookie login server.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <certvu>337585</certvu>
+    </references>
+    <dates>
+      <discovery>2006-03-06</discovery>
+      <entry>2006-04-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="37a5c10f-bf56-11da-b0e9-00123ffe8333">
     <topic>freeradius -- EAP-MSCHAPv2 Authentication Bypass</topic>
     <affects>
