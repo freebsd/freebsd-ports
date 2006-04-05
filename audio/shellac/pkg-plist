@@ -1,0 +1,66 @@
+bin/shellac.py
+%%PYTHON_SITELIBDIR%%/Shellac/__init__.py
+%%PYTHON_SITELIBDIR%%/Shellac/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Shellac/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Shellac/equalizer.py
+%%PYTHON_SITELIBDIR%%/Shellac/equalizer.pyc
+%%PYTHON_SITELIBDIR%%/Shellac/equalizer.pyo
+%%PYTHON_SITELIBDIR%%/Shellac/find.py
+%%PYTHON_SITELIBDIR%%/Shellac/find.pyc
+%%PYTHON_SITELIBDIR%%/Shellac/find.pyo
+%%PYTHON_SITELIBDIR%%/Shellac/format.py
+%%PYTHON_SITELIBDIR%%/Shellac/format.pyc
+%%PYTHON_SITELIBDIR%%/Shellac/format.pyo
+%%PYTHON_SITELIBDIR%%/Shellac/functions.py
+%%PYTHON_SITELIBDIR%%/Shellac/functions.pyc
+%%PYTHON_SITELIBDIR%%/Shellac/functions.pyo
+%%PYTHON_SITELIBDIR%%/Shellac/guiwidgets.py
+%%PYTHON_SITELIBDIR%%/Shellac/guiwidgets.pyc
+%%PYTHON_SITELIBDIR%%/Shellac/guiwidgets.pyo
+%%PYTHON_SITELIBDIR%%/Shellac/jux_glib.py
+%%PYTHON_SITELIBDIR%%/Shellac/jux_glib.pyc
+%%PYTHON_SITELIBDIR%%/Shellac/jux_glib.pyo
+%%PYTHON_SITELIBDIR%%/Shellac/library.py
+%%PYTHON_SITELIBDIR%%/Shellac/library.pyc
+%%PYTHON_SITELIBDIR%%/Shellac/library.pyo
+%%PYTHON_SITELIBDIR%%/Shellac/playlist.py
+%%PYTHON_SITELIBDIR%%/Shellac/playlist.pyc
+%%PYTHON_SITELIBDIR%%/Shellac/playlist.pyo
+%%PYTHON_SITELIBDIR%%/Shellac/playlists.py
+%%PYTHON_SITELIBDIR%%/Shellac/playlists.pyc
+%%PYTHON_SITELIBDIR%%/Shellac/playlists.pyo
+%%PYTHON_SITELIBDIR%%/Shellac/settings.py
+%%PYTHON_SITELIBDIR%%/Shellac/settings.pyc
+%%PYTHON_SITELIBDIR%%/Shellac/settings.pyo
+%%PYTHON_SITELIBDIR%%/Shellac/settingseditor.py
+%%PYTHON_SITELIBDIR%%/Shellac/settingseditor.pyc
+%%PYTHON_SITELIBDIR%%/Shellac/settingseditor.pyo
+%%PYTHON_SITELIBDIR%%/Shellac/song_tree_view.py
+%%PYTHON_SITELIBDIR%%/Shellac/song_tree_view.pyc
+%%PYTHON_SITELIBDIR%%/Shellac/song_tree_view.pyo
+%%PYTHON_SITELIBDIR%%/Shellac/streambrowser.py
+%%PYTHON_SITELIBDIR%%/Shellac/streambrowser.pyc
+%%PYTHON_SITELIBDIR%%/Shellac/streambrowser.pyo
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%DATADIR%%/defaults.conf
+%%DATADIR%%/glade/connect.glade
+%%DATADIR%%/glade/find.glade
+%%DATADIR%%/glade/gui.glade
+%%DATADIR%%/glade/library.glade
+%%DATADIR%%/glade/playlist.glade
+%%DATADIR%%/glade/playlists.glade
+%%DATADIR%%/glade/settings.glade
+%%DATADIR%%/glade/streambrowser.glade
+%%DATADIR%%/glade/tag_info.glade
+%%DATADIR%%/images/next.png
+%%DATADIR%%/images/pause.png
+%%DATADIR%%/images/play.png
+%%DATADIR%%/images/prev.png
+%%DATADIR%%/images/repeat.png
+%%DATADIR%%/images/stop.png
+@dirrm %%PYTHON_SITELIBDIR%%/Shellac
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%/glade
+@dirrm %%DATADIR%%/images
+@dirrm %%DATADIR%%

@@ -1,0 +1,8 @@
+Shellac is an XMMS2 client written in Python with Pygtk.
+
+Goals:
+        * Configurable
+        * Easy to use
+        * No excessive eye candy
+
+WWW:	http://hem.bredband.net/b298027/
