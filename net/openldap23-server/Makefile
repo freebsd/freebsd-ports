@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		openldap
-DISTVERSION=		2.3.19
+DISTVERSION=		2.3.20
 PORTREVISION=		${OPENLDAP_PORTREVISION}
 CATEGORIES=		net databases
 MASTER_SITES=		ftp://ftp.OpenLDAP.org/pub/OpenLDAP/%SUBDIR%/ \
@@ -220,7 +220,7 @@ CONFIGURE_ARGS+=	--enable-rwm
 .if defined(WITHOUT_BDB)
 CONFIGURE_ARGS+=	--disable-bdb \
 			--disable-hdb \
-			--with-ldbm-api=bcompat
+			--enable-ldbm-api=bcompat
 PLIST_SUB+=		BACK_BDB="@comment " \
 			BACK_HDB="@comment "
 .else
