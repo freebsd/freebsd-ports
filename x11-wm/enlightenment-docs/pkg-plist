@@ -48,12 +48,4 @@
 %%DATADIR%%/E-docs/MAIN.pl
 %%DATADIR%%/E-docs/Verah___.ttf
 %%DATADIR%%/E-docs/aircut3.ttf
-%%DATADIR%%/E-docs/exit1.png
-%%DATADIR%%/E-docs/exit2.png
-%%DATADIR%%/E-docs/next1.png
-%%DATADIR%%/E-docs/next2.png
-%%DATADIR%%/E-docs/prev1.png
-%%DATADIR%%/E-docs/prev2.png
 %%DATADIR%%/E-docs/rothwell.ttf
-%%DATADIR%%/E-docs/title.png
-@dirrm %%DATADIR%%/E-docs
