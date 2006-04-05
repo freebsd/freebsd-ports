@@ -12,7 +12,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://download.bestpractical.com/pub/rt/release/
 DISTNAME=	rt-${PORTVERSION:S/./-/g}
 
-MAINTAINER=	jmelo@freebsdbrasil.com.br
+MAINTAINER=	jmelo@FreeBSD.org
 COMMENT=	RT is an industrial-grade ticketing system written in Perl
 
 BUILD_DEPENDS=	${LOCALBASE}/libexec/apache/libperl.so:${PORTSDIR}/www/mod_perl \

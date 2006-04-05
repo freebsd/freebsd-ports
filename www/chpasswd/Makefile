@@ -1,6 +1,6 @@
 # New ports collection makefile for:	chpasswd
 # Date created:		18 December 2003
-# Whom:			Jean Milanez Melo <jmelo@freebsdbrasil.com.br>
+# Whom:			Jean Milanez Melo <jmelo@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	orsochpasswd
 
-MAINTAINER=	jmelo@freebsdbrasil.com.br
+MAINTAINER=	jmelo@FreeBSD.org
 COMMENT=	Allow users to change their Squid or Web password using the browser
 
 HAS_CONFIGURE=	yes

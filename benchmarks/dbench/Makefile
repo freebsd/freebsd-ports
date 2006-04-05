@@ -10,7 +10,7 @@ PORTVERSION=	3.04
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://samba.org/ftp/tridge/dbench/
 
-MAINTAINER=	jmelo@freebsdbrasil.com.br
+MAINTAINER=	jmelo@FreeBSD.org
 COMMENT=	A simulation of the Ziff-Davis netbench benchmark
 
 GNU_CONFIGURE=	yes

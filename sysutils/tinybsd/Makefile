@@ -1,6 +1,6 @@
 # New ports collection makefile for:	tinybsd
 # Date created:		11 July 2005
-# Whom:			Jean Milanez Melo <jmelo@freebsdbrasil.com.br>
+# Whom:			Jean Milanez Melo <jmelo@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.tinybsd.org/download/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	garga/${PORTNAME}
 
-MAINTAINER=	jmelo@freebsdbrasil.com.br
+MAINTAINER=	jmelo@FreeBSD.org
 COMMENT=	Shell script to build embedded systems based on FreeBSD
 
 NO_BUILD=	yes
