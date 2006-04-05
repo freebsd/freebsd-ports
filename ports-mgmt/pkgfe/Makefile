@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	pkgfe
-PORTVERSION=	20060207
+PORTVERSION=	20060403
 CATEGORIES=	sysutils
-MASTER_SITES=	http://ketas.life.ee/ports/ \
-		http://ketas.si.pri.ee/ports/
+MASTER_SITES=	http://ketas.life.ee/pkgfe/releases/ \
+		http://ketas.si.pri.ee/pkgfe/releases/
 
 MAINTAINER=	madis555@hot.ee
 COMMENT=	Ncurses front-end to manage the ports collection
@@ -23,7 +23,7 @@ NO_BUILD=	yes
 PLIST_FILES=	sbin/pkgfe etc/pkgfe.conf
 
 do-install:
-	${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' ${WRKSRC}/pkgfe
+	${REINPLACE_CMD} -e 's|%PREFIX%|${PREFIX}|g' ${WRKSRC}/pkgfe
 	${INSTALL_SCRIPT} ${WRKSRC}/pkgfe ${PREFIX}/sbin/pkgfe
 	${INSTALL_DATA} ${WRKSRC}/pkgfe.conf ${PREFIX}/etc/pkgfe.conf
 
