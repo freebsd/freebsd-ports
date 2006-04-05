@@ -7,21 +7,19 @@
 #
 
 PORTNAME=	chmlib
-PORTVERSION=	0.3.7
-PORTREVISION=	0
+PORTVERSION=	0.37.4
 CATEGORIES=	misc
 MASTER_SITES=	http://66.93.236.84/~jedwin/projects/chmlib/
-DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	vsevolod@FreeBSD.org
 COMMENT=	A library for dealing with Microsoft ITSS/CHM format files
 
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-io64 --disable-pread --exec-prefix=${PREFIX}
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}-0.37
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,-lpthread,${PTHREAD_LIBS}," ${WRKSRC}/configure

@@ -1,3 +1,5 @@
 include/chm_lib.h
+lib/libchm.a
+lib/libchm.la
 lib/libchm.so
 lib/libchm.so.0
