@@ -34,6 +34,50 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="92fd40eb-c458-11da-9c79-00123ffe8333">
+    <topic>samba -- Exposure of machine account credentials in winbind log files</topic>
+    <affects>
+      <package>
+	<name>samba</name>
+	<range><ge>3.0.21a,1</ge><lt>3.0.22,1</lt></range>
+      </package>
+      <package>
+	<name>ja-samba</name>
+	<range><ge>3.0.21a,1</ge><lt>3.0.22,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Samba Security Advisory:</p>
+	<blockquote cite="http://us1.samba.org/samba/security/CAN-2006-1059.html">
+	  <p>The machine trust account password is the secret
+	    shared between a domain controller and a specific
+	    member server. Access to the member server machine
+	    credentials allows an attacker to impersonate the
+	    server in the domain and gain access to additional
+	    information regarding domain users and groups.</p>
+	  <p>The winbindd daemon writes the clear text of server's
+	    machine credentials to its log file at level 5.
+	    The winbindd log files are world readable by default
+	    and often log files are requested on open mailing
+	    lists as tools used to debug server misconfigurations.</p>
+	  <p>This affects servers configured to use domain or
+	    ads security and possibly Samba domain controllers
+	    as well (if configured to use winbindd).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-1059</cvename>
+      <url>http://us1.samba.org/samba/security/CAN-2006-1059.html</url>
+      <url>http://secunia.com/advisories/19455/</url>
+    </references>
+    <dates>
+      <discovery>2006-03-30</discovery>
+      <entry>2006-04-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="91afa94c-c452-11da-8bff-000ae42e9b93">
     <topic>mod_pubcookie -- cross site scripting vulnerability</topic>
     <affects>
