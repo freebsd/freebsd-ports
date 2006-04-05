@@ -6,9 +6,10 @@
 
 PORTNAME=	mambo
 PORTVERSION=	4.5.3
+PORTREVISION=	1
 CATEGORIES=	www
-MASTER_SITES=	http://mamboforge.net/frs/download.php/6151/:source1 \
-		http://mamboforge.net/frs/download.php/7636/:source2
+MASTER_SITES=	http://www.mamboserver.com/:source1 \
+		http://www.mamboserver.com/:source2
 DISTFILES=	${MAMBO_SRC}:source1 \
 		${MAMBO_PATCH1}:source2
 
@@ -29,14 +30,14 @@ PLIST_SUB+=	MAMBO_DIR=${MAMBO_DIR}
 MAMBO_DIR?=	www/${PORTNAME}
 DIST_SUBDIR=	${PORTNAME}
 
-MAMBO_SRC=	MamboV4.5.3-stable.tar.gz
-MAMBO_PATCH1=	Mambo4523.security_fix.zip
+MAMBO_SRC=	MamboV4.5.3.zip
+MAMBO_PATCH1=	Patch_4.5.3_to_4.5.3h.zip
 
 do-extract:
 		@${MKDIR} ${WRKSRC}
-		@${TAR} -zxf ${DISTDIR}/${DIST_SUBDIR}/${MAMBO_SRC} -C ${WRKSRC}
+		@${UNZIP_CMD} -qo ${DISTDIR}/${DIST_SUBDIR}/${MAMBO_SRC} -d ${WRKSRC}
 		@${UNZIP_CMD} -qo ${DISTDIR}/${DIST_SUBDIR}/${MAMBO_PATCH1} -d ${WRKSRC}
-		@${RM} -rf ${WRKSRC}/templates/rhuk_solarflare # remove empty
+#		@${RM} -rf ${WRKSRC}/templates/rhuk_solarflare # remove empty
 
 do-install:
 		@${MKDIR} ${PREFIX}/${MAMBO_DIR}
