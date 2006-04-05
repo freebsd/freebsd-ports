@@ -1690,7 +1690,7 @@
     SUBDIR += ucpp
     SUBDIR += upnp
     SUBDIR += upnp104
-    SUBDIR += upp602
+    SUBDIR += upp
     SUBDIR += uppaal
     SUBDIR += ups-debug
     SUBDIR += ustl
