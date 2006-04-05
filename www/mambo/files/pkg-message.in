@@ -4,4 +4,8 @@
 		
   %%PREFIX%%/%%MAMBO_DIR%%/INSTALL
 
+ NOTE: If you are UPGRADING, please read:
+
+  %%PREFIX%%/%%MAMBO_DIR%%/453_to_453h_patch_instructions.txt
+
 *******************************************************************

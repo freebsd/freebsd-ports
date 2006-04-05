@@ -1,7 +1,8 @@
-@exec mkdir -p %D/%%MAMBO_DIR%%/cache/com_banners
-%%MAMBO_DIR%%/read_me.txt
-%%MAMBO_DIR%%/INSTALL
+%%MAMBO_DIR%%/453_to_453h_patch_instructions.txt
+%%MAMBO_DIR%%/CHANGELOG.php
+%%MAMBO_DIR%%/INSTALL.php
 %%MAMBO_DIR%%/LICENSE
+%%MAMBO_DIR%%/README
 %%MAMBO_DIR%%/administrator/backups/index.html
 %%MAMBO_DIR%%/administrator/components/com_admin/admin.admin.html.php
 %%MAMBO_DIR%%/administrator/components/com_admin/admin.admin.php
@@ -507,67 +508,69 @@
 %%MAMBO_DIR%%/editor/editor.xstandard.php
 %%MAMBO_DIR%%/editor/index.html
 %%MAMBO_DIR%%/globals.php
+%%MAMBO_DIR%%/help/453.mambo.credits.html
+%%MAMBO_DIR%%/help/453.mambo.glossary.html
+%%MAMBO_DIR%%/help/453.mambo.support.html
+%%MAMBO_DIR%%/help/453.mambo.whatsnew.html
+%%MAMBO_DIR%%/help/453.screen.banners.client.edit.html
+%%MAMBO_DIR%%/help/453.screen.banners.client.html
+%%MAMBO_DIR%%/help/453.screen.banners.edit.html
+%%MAMBO_DIR%%/help/453.screen.banners.html
+%%MAMBO_DIR%%/help/453.screen.categories.edit.html
+%%MAMBO_DIR%%/help/453.screen.categories.html
+%%MAMBO_DIR%%/help/453.screen.checkin.html
+%%MAMBO_DIR%%/help/453.screen.config.html
+%%MAMBO_DIR%%/help/453.screen.contactmanager.edit.html
+%%MAMBO_DIR%%/help/453.screen.contactmanager.html
+%%MAMBO_DIR%%/help/453.screen.content.archive.html
+%%MAMBO_DIR%%/help/453.screen.content.edit.html
+%%MAMBO_DIR%%/help/453.screen.content.html
+%%MAMBO_DIR%%/help/453.screen.cpanel.html
+%%MAMBO_DIR%%/help/453.screen.frontpage.html
+%%MAMBO_DIR%%/help/453.screen.installer.cmm.html
+%%MAMBO_DIR%%/help/453.screen.installer.html
+%%MAMBO_DIR%%/help/453.screen.installer.lang.html
+%%MAMBO_DIR%%/help/453.screen.installer2.html
+%%MAMBO_DIR%%/help/453.screen.languages.html
+%%MAMBO_DIR%%/help/453.screen.mambots.edit.html
+%%MAMBO_DIR%%/help/453.screen.mambots.html
+%%MAMBO_DIR%%/help/453.screen.mediamanager.html
+%%MAMBO_DIR%%/help/453.screen.menumanager.copy.html
+%%MAMBO_DIR%%/help/453.screen.menumanager.html
+%%MAMBO_DIR%%/help/453.screen.menumanager.new.html
+%%MAMBO_DIR%%/help/453.screen.menus.copy.html
+%%MAMBO_DIR%%/help/453.screen.menus.edit.html
+%%MAMBO_DIR%%/help/453.screen.menus.html
+%%MAMBO_DIR%%/help/453.screen.menus.move.html
+%%MAMBO_DIR%%/help/453.screen.menus.new.html
+%%MAMBO_DIR%%/help/453.screen.messages.conf.html
+%%MAMBO_DIR%%/help/453.screen.messages.inbox.html
+%%MAMBO_DIR%%/help/453.screen.modules.edit.html
+%%MAMBO_DIR%%/help/453.screen.modules.html
+%%MAMBO_DIR%%/help/453.screen.modules.new.html
+%%MAMBO_DIR%%/help/453.screen.newsfeeds.edit.html
+%%MAMBO_DIR%%/help/453.screen.newsfeeds.html
+%%MAMBO_DIR%%/help/453.screen.polls.edit.html
+%%MAMBO_DIR%%/help/453.screen.polls.html
+%%MAMBO_DIR%%/help/453.screen.sections.edit.html
+%%MAMBO_DIR%%/help/453.screen.sections.html
+%%MAMBO_DIR%%/help/453.screen.staticcontent.edit.html
+%%MAMBO_DIR%%/help/453.screen.staticcontent.html
+%%MAMBO_DIR%%/help/453.screen.stats.searches.html
+%%MAMBO_DIR%%/help/453.screen.syndicate.html
+%%MAMBO_DIR%%/help/453.screen.system.info.html
+%%MAMBO_DIR%%/help/453.screen.templates.assign.html
+%%MAMBO_DIR%%/help/453.screen.templates.html
+%%MAMBO_DIR%%/help/453.screen.templates.modules.html
+%%MAMBO_DIR%%/help/453.screen.trashmanager.html
+%%MAMBO_DIR%%/help/453.screen.users.edit.html
+%%MAMBO_DIR%%/help/453.screen.users.massmail.html
+%%MAMBO_DIR%%/help/453.screen.weblink.edit.html
+%%MAMBO_DIR%%/help/453.screen.weblink.html
 %%MAMBO_DIR%%/help/css/docbook.css
 %%MAMBO_DIR%%/help/css/help.css
 %%MAMBO_DIR%%/help/css/index.html
 %%MAMBO_DIR%%/help/index.html
-%%MAMBO_DIR%%/help/mambo.credits.html
-%%MAMBO_DIR%%/help/mambo.glossary.html
-%%MAMBO_DIR%%/help/mambo.support.html
-%%MAMBO_DIR%%/help/mambo.whatsnew452.html
-%%MAMBO_DIR%%/help/screen.banners.client.edit.html
-%%MAMBO_DIR%%/help/screen.banners.client.html
-%%MAMBO_DIR%%/help/screen.banners.edit.html
-%%MAMBO_DIR%%/help/screen.banners.html
-%%MAMBO_DIR%%/help/screen.categories.edit.html
-%%MAMBO_DIR%%/help/screen.categories.html
-%%MAMBO_DIR%%/help/screen.checkin.html
-%%MAMBO_DIR%%/help/screen.config.html
-%%MAMBO_DIR%%/help/screen.contactmanager.edit.html
-%%MAMBO_DIR%%/help/screen.contactmanager.html
-%%MAMBO_DIR%%/help/screen.content.archive.html
-%%MAMBO_DIR%%/help/screen.content.edit.html
-%%MAMBO_DIR%%/help/screen.content.html
-%%MAMBO_DIR%%/help/screen.cpanel.html
-%%MAMBO_DIR%%/help/screen.frontpage.html
-%%MAMBO_DIR%%/help/screen.installer.html
-%%MAMBO_DIR%%/help/screen.installer2.html
-%%MAMBO_DIR%%/help/screen.languages.html
-%%MAMBO_DIR%%/help/screen.mambots.edit.html
-%%MAMBO_DIR%%/help/screen.mambots.html
-%%MAMBO_DIR%%/help/screen.mediamanager.html
-%%MAMBO_DIR%%/help/screen.menumanager.copy.html
-%%MAMBO_DIR%%/help/screen.menumanager.html
-%%MAMBO_DIR%%/help/screen.menumanager.new.html
-%%MAMBO_DIR%%/help/screen.menus.copy.html
-%%MAMBO_DIR%%/help/screen.menus.edit.html
-%%MAMBO_DIR%%/help/screen.menus.html
-%%MAMBO_DIR%%/help/screen.menus.move.html
-%%MAMBO_DIR%%/help/screen.menus.new.html
-%%MAMBO_DIR%%/help/screen.messages.conf.html
-%%MAMBO_DIR%%/help/screen.messages.inbox.html
-%%MAMBO_DIR%%/help/screen.modules.edit.html
-%%MAMBO_DIR%%/help/screen.modules.html
-%%MAMBO_DIR%%/help/screen.modules.new.html
-%%MAMBO_DIR%%/help/screen.newsfeeds.edit.html
-%%MAMBO_DIR%%/help/screen.newsfeeds.html
-%%MAMBO_DIR%%/help/screen.polls.edit.html
-%%MAMBO_DIR%%/help/screen.polls.html
-%%MAMBO_DIR%%/help/screen.sections.edit.html
-%%MAMBO_DIR%%/help/screen.sections.html
-%%MAMBO_DIR%%/help/screen.staticcontent.edit.html
-%%MAMBO_DIR%%/help/screen.staticcontent.html
-%%MAMBO_DIR%%/help/screen.stats.searches.html
-%%MAMBO_DIR%%/help/screen.syndicate.html
-%%MAMBO_DIR%%/help/screen.system.info.html
-%%MAMBO_DIR%%/help/screen.templates.assign.html
-%%MAMBO_DIR%%/help/screen.templates.html
-%%MAMBO_DIR%%/help/screen.templates.modules.html
-%%MAMBO_DIR%%/help/screen.trashmanager.html
-%%MAMBO_DIR%%/help/screen.users.edit.html
-%%MAMBO_DIR%%/help/screen.users.massmail.html
-%%MAMBO_DIR%%/help/screen.weblink.edit.html
-%%MAMBO_DIR%%/help/screen.weblink.html
 %%MAMBO_DIR%%/htaccess.txt
 %%MAMBO_DIR%%/images/M_images/arrow.png
 %%MAMBO_DIR%%/images/M_images/atom03.gif
@@ -602,9 +605,11 @@
 %%MAMBO_DIR%%/images/M_images/sort_desc.png
 %%MAMBO_DIR%%/images/M_images/sort_none.png
 %%MAMBO_DIR%%/images/M_images/weblink.png
-%%MAMBO_DIR%%/images/banners/OiBanner.gif
+%%MAMBO_DIR%%/images/banners/RecruitmentBanner.gif
+%%MAMBO_DIR%%/images/banners/SupportMFBanner.gif
 %%MAMBO_DIR%%/images/banners/index.html
-%%MAMBO_DIR%%/images/banners/ka-chingBanner.gif
+%%MAMBO_DIR%%/images/banners/mamboFoundation_468_60.gif
+%%MAMBO_DIR%%/images/banners/mambolove1.jpg
 %%MAMBO_DIR%%/images/blank.png
 %%MAMBO_DIR%%/images/cancel.png
 %%MAMBO_DIR%%/images/cancel_f2.png
@@ -623,18 +628,9 @@
 %%MAMBO_DIR%%/images/stories/articles.jpg
 %%MAMBO_DIR%%/images/stories/asterisk.png
 %%MAMBO_DIR%%/images/stories/clock.jpg
-%%MAMBO_DIR%%/images/stories/food/bread.jpg
-%%MAMBO_DIR%%/images/stories/food/bun.jpg
-%%MAMBO_DIR%%/images/stories/food/coffee.jpg
-%%MAMBO_DIR%%/images/stories/food/index.html
-%%MAMBO_DIR%%/images/stories/food/milk.jpg
-%%MAMBO_DIR%%/images/stories/fruit/cherry.jpg
-%%MAMBO_DIR%%/images/stories/fruit/index.html
-%%MAMBO_DIR%%/images/stories/fruit/pears.jpg
-%%MAMBO_DIR%%/images/stories/fruit/peas.jpg
-%%MAMBO_DIR%%/images/stories/fruit/strawberry.jpg
 %%MAMBO_DIR%%/images/stories/index.html
 %%MAMBO_DIR%%/images/stories/key.jpg
+%%MAMBO_DIR%%/images/stories/opensource-110x95.png
 %%MAMBO_DIR%%/images/stories/pastarchives.jpg
 %%MAMBO_DIR%%/images/stories/taking_notes.jpg
 %%MAMBO_DIR%%/images/stories/web_links.jpg
@@ -830,8 +826,8 @@
 %%MAMBO_DIR%%/includes/patTemplate/tmpl/page.html
 %%MAMBO_DIR%%/includes/pathway.php
 %%MAMBO_DIR%%/includes/pdf.php
-%%MAMBO_DIR%%/includes/phpInputFilter/index.html
 %%MAMBO_DIR%%/includes/phpInputFilter/class.inputfilter.php
+%%MAMBO_DIR%%/includes/phpInputFilter/index.html
 %%MAMBO_DIR%%/includes/phpmailer/LICENSE
 %%MAMBO_DIR%%/includes/phpmailer/class.phpmailer.php
 %%MAMBO_DIR%%/includes/phpmailer/class.smtp.php
@@ -844,7 +840,7 @@
 %%MAMBO_DIR%%/index.php
 %%MAMBO_DIR%%/index2.php
 %%MAMBO_DIR%%/installation/common.php
-%%MAMBO_DIR%%/installation/gpl.html
+%%MAMBO_DIR%%/installation/gpl.txt
 %%MAMBO_DIR%%/installation/header_blue.jpg
 %%MAMBO_DIR%%/installation/header_install.png
 %%MAMBO_DIR%%/installation/index.php
@@ -855,6 +851,7 @@
 %%MAMBO_DIR%%/installation/install3.php
 %%MAMBO_DIR%%/installation/install4.php
 %%MAMBO_DIR%%/installation/install_logo.png
+%%MAMBO_DIR%%/installation/osi_certified.png
 %%MAMBO_DIR%%/installation/sql/drop_table.sql
 %%MAMBO_DIR%%/installation/sql/mambo.sql
 %%MAMBO_DIR%%/installation/sql/sample_data.sql
@@ -907,16 +904,705 @@
 %%MAMBO_DIR%%/mambots/editors/tinymce.xml
 %%MAMBO_DIR%%/mambots/editors/tinymce/docs/index.html
 %%MAMBO_DIR%%/mambots/editors/tinymce/docs/license.htm
+%%MAMBO_DIR%%/mambots/editors/tinymce/docs/license.html
 %%MAMBO_DIR%%/mambots/editors/tinymce/docs/style.css
 %%MAMBO_DIR%%/mambots/editors/tinymce/index.html
 %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/index.html
 %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/blank.htm
 %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/index.html
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/langs/en.js
 %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/langs/index.html
 %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/langs/uk.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/_template/editor_plugin.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/_template/editor_plugin_src.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/_template/images/index.html
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/_template/images/template.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/_template/index.html
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/_template/langs/da.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/_template/langs/de.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/_template/langs/en.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/_template/langs/es.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/_template/langs/fr.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/_template/langs/fr_ca.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/_template/langs/he.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/_template/langs/hu.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/_template/langs/index.html
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/_template/langs/is.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/_template/langs/nb.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/_template/langs/nl.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/_template/langs/nn.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/_template/langs/pl.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/_template/langs/pt_br.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/_template/langs/ru.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/_template/langs/ru_KOI8-R.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/_template/langs/ru_UTF-8.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/_template/langs/zh_cn.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/_template/langs/zh_tw.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/_template/langs/zh_tw_utf8.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/_template/popup.htm
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advhr/editor_plugin.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advhr/editor_plugin_src.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advhr/images/advhr.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advhr/images/index.html
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advhr/index.html
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advhr/jscripts/index.html
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advhr/jscripts/rule.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advhr/langs/cs.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advhr/langs/cy.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advhr/langs/da.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advhr/langs/de.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advhr/langs/en.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advhr/langs/es.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advhr/langs/fa.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advhr/langs/fi.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advhr/langs/fr.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advhr/langs/fr_ca.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advhr/langs/he.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advhr/langs/hu.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advhr/langs/index.html
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advhr/langs/is.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advhr/langs/nb.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advhr/langs/nl.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advhr/langs/nn.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advhr/langs/pl.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advhr/langs/pt_br.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advhr/langs/ru.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advhr/langs/ru_KOI8-R.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advhr/langs/ru_UTF-8.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advhr/langs/sk.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advhr/langs/sv.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advhr/langs/zh_cn.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advhr/langs/zh_tw.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advhr/langs/zh_tw_utf8.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advhr/rule.htm
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advimage/css/advimage.css
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advimage/css/index.html
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advimage/editor_plugin.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advimage/editor_plugin_src.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advimage/image.htm
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advimage/images/index.html
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advimage/images/sample.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advimage/index.html
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advimage/jscripts/functions.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advimage/jscripts/index.html
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advimage/langs/cs.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advimage/langs/cy.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advimage/langs/da.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advimage/langs/de.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advimage/langs/en.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advimage/langs/es.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advimage/langs/fa.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advimage/langs/fa_ca.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advimage/langs/fr.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advimage/langs/fr_ca.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advimage/langs/he.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advimage/langs/hu.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advimage/langs/index.html
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advimage/langs/is.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advimage/langs/ko.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advimage/langs/nb.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advimage/langs/nl.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advimage/langs/nn.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advimage/langs/pl.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advimage/langs/pt_br.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advimage/langs/ru.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advimage/langs/ru_KOI8-R.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advimage/langs/ru_UTF-8.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advimage/langs/sk.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advimage/langs/sv.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advimage/langs/zh_cn.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advimage/langs/zh_tw.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advimage/langs/zh_tw_utf8.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advlink/css/advlink.css
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advlink/css/index.html
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advlink/editor_plugin.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advlink/editor_plugin_src.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advlink/index.html
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advlink/jscripts/functions.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advlink/jscripts/index.html
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advlink/langs/cs.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advlink/langs/cy.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advlink/langs/da.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advlink/langs/de.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advlink/langs/en.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advlink/langs/es.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advlink/langs/fa.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advlink/langs/fr.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advlink/langs/fr_ca.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advlink/langs/he.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advlink/langs/hu.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advlink/langs/index.html
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advlink/langs/is.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advlink/langs/ko.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advlink/langs/nb.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advlink/langs/nl.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advlink/langs/nn.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advlink/langs/pl.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advlink/langs/pt_br.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advlink/langs/ru.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advlink/langs/ru_KOI8-R.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advlink/langs/ru_UTF-8.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advlink/langs/sk.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advlink/langs/sv.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advlink/langs/zh_cn.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advlink/langs/zh_tw.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advlink/langs/zh_tw_utf8.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advlink/link.htm
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/autosave/editor_plugin.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/autosave/editor_plugin_src.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/autosave/index.html
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/autosave/langs/cs.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/autosave/langs/cy.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/autosave/langs/da.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/autosave/langs/de.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/autosave/langs/en.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/autosave/langs/es.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/autosave/langs/fr.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/autosave/langs/he.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/autosave/langs/hu.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/autosave/langs/index.html
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/autosave/langs/is.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/autosave/langs/nb.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/autosave/langs/nl.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/autosave/langs/nn.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/autosave/langs/pl.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/autosave/langs/pt_br.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/autosave/langs/ru.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/autosave/langs/ru_KOI8-R.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/autosave/langs/ru_UTF-8.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/autosave/langs/sk.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/autosave/langs/sv.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/autosave/langs/zh_cn.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/autosave/langs/zh_tw.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/autosave/langs/zh_tw_utf8.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/contextmenu/css/contextmenu.css
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/contextmenu/css/index.html
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/contextmenu/editor_plugin.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/contextmenu/editor_plugin_src.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/contextmenu/images/index.html
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/contextmenu/images/spacer.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/contextmenu/index.html
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/directionality/editor_plugin.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/directionality/editor_plugin_src.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/directionality/images/index.html
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/directionality/images/ltr.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/directionality/images/rtl.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/directionality/index.html
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/directionality/langs/cs.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/directionality/langs/cy.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/directionality/langs/da.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/directionality/langs/de.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/directionality/langs/en.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/directionality/langs/es.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/directionality/langs/fr.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/directionality/langs/fr_ca.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/directionality/langs/he.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/directionality/langs/hu.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/directionality/langs/index.html
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/directionality/langs/is.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/directionality/langs/nb.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/directionality/langs/nl.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/directionality/langs/nn.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/directionality/langs/pl.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/directionality/langs/pt_br.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/directionality/langs/ru.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/directionality/langs/ru_KOI8-R.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/directionality/langs/ru_UTF-8.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/directionality/langs/sk.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/directionality/langs/sv.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/directionality/langs/zh_cn.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/directionality/langs/zh_tw.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/directionality/langs/zh_tw_utf8.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/emotions/editor_plugin.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/emotions/editor_plugin_src.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/emotions/emotions.htm
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/emotions/images/emotions.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/emotions/images/index.html
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/emotions/images/smiley-cool.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/emotions/images/smiley-cry.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/emotions/images/smiley-embarassed.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/emotions/images/smiley-foot-in-mouth.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/emotions/images/smiley-frown.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/emotions/images/smiley-innocent.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/emotions/images/smiley-kiss.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/emotions/images/smiley-laughing.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/emotions/images/smiley-money-mouth.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/emotions/images/smiley-sealed.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/emotions/images/smiley-smile.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/emotions/images/smiley-surprised.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/emotions/images/smiley-tongue-out.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/emotions/images/smiley-undecided.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/emotions/images/smiley-wink.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/emotions/images/smiley-yell.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/emotions/index.html
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/emotions/jscripts/functions.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/emotions/jscripts/index.html
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/emotions/langs/cs.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/emotions/langs/cy.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/emotions/langs/da.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/emotions/langs/de.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/emotions/langs/el.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/emotions/langs/en.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/emotions/langs/es.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/emotions/langs/fa.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/emotions/langs/fr.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/emotions/langs/fr_ca.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/emotions/langs/he.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/emotions/langs/hu.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/emotions/langs/index.html
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/emotions/langs/is.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/emotions/langs/it.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/emotions/langs/ko.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/emotions/langs/nb.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/emotions/langs/nl.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/emotions/langs/nn.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/emotions/langs/pl.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/emotions/langs/pt_br.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/emotions/langs/ru.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/emotions/langs/ru_KOI8-R.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/emotions/langs/ru_UTF-8.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/emotions/langs/sk.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/emotions/langs/sv.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/emotions/langs/zh_cn.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/emotions/langs/zh_tw.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/emotions/langs/zh_tw_utf8.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/flash/css/content.css
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/flash/css/flash.css
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/flash/css/index.html
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/flash/editor_plugin.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/flash/editor_plugin_src.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/flash/flash.htm
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/flash/images/flash.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/flash/images/index.html
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/flash/index.html
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/flash/jscripts/flash.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/flash/jscripts/index.html
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/flash/langs/cs.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/flash/langs/cy.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/flash/langs/da.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/flash/langs/de.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/flash/langs/en.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/flash/langs/es.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/flash/langs/fa.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/flash/langs/fr.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/flash/langs/fr_ca.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/flash/langs/he.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/flash/langs/hu.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/flash/langs/index.html
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/flash/langs/is.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/flash/langs/nb.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/flash/langs/nl.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/flash/langs/nn.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/flash/langs/pl.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/flash/langs/pt_br.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/flash/langs/ru.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/flash/langs/ru_KOI8-R.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/flash/langs/ru_UTF-8.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/flash/langs/sk.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/flash/langs/sv.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/flash/langs/zh_cn.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/flash/langs/zh_tw.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/flash/langs/zh_tw_utf8.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/fullscreen/editor_plugin.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/fullscreen/editor_plugin_src.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/fullscreen/fullscreen.htm
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/fullscreen/images/fullscreen.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/fullscreen/images/index.html
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/fullscreen/index.html
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/fullscreen/langs/cs.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/fullscreen/langs/cy.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/fullscreen/langs/da.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/fullscreen/langs/de.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/fullscreen/langs/en.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/fullscreen/langs/es.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/fullscreen/langs/fr.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/fullscreen/langs/fr_ca.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/fullscreen/langs/he.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/fullscreen/langs/hu.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/fullscreen/langs/index.html
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/fullscreen/langs/is.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/fullscreen/langs/nb.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/fullscreen/langs/nl.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/fullscreen/langs/nn.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/fullscreen/langs/pl.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/fullscreen/langs/pt_br.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/fullscreen/langs/ru.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/fullscreen/langs/ru_KOI8-R.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/fullscreen/langs/ru_UTF-8.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/fullscreen/langs/sk.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/fullscreen/langs/sv.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/fullscreen/langs/zh_cn.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/fullscreen/langs/zh_tw.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/fullscreen/langs/zh_tw_utf8.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/iespell/editor_plugin.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/iespell/editor_plugin_src.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/iespell/images/iespell.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/iespell/images/index.html
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/iespell/index.html
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/iespell/langs/cs.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/iespell/langs/cy.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/iespell/langs/da.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/iespell/langs/de.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/iespell/langs/el.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/iespell/langs/en.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/iespell/langs/es.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/iespell/langs/fr.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/iespell/langs/fr_ca.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/iespell/langs/he.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/iespell/langs/hu.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/iespell/langs/index.html
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/iespell/langs/is.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/iespell/langs/it.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/iespell/langs/ko.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/iespell/langs/nb.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/iespell/langs/nl.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/iespell/langs/nn.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/iespell/langs/pl.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/iespell/langs/pt_br.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/iespell/langs/ru.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/iespell/langs/ru_KOI8-R.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/iespell/langs/ru_UTF-8.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/iespell/langs/sk.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/iespell/langs/sv.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/iespell/langs/zh_cn.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/iespell/langs/zh_tw.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/iespell/langs/zh_tw_utf8.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/index.html
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/inlinepopups/css/index.html
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/inlinepopups/css/inlinepopup.css
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/inlinepopups/editor_plugin.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/inlinepopups/editor_plugin_src.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/inlinepopups/images/index.html
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/inlinepopups/images/spacer.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/inlinepopups/images/window_close.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/inlinepopups/images/window_maximize.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/inlinepopups/images/window_minimize.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/inlinepopups/images/window_resize.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/inlinepopups/index.html
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/inlinepopups/jscripts/index.html
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/inlinepopups/jscripts/mcwindows.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/insertdatetime/editor_plugin.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/insertdatetime/editor_plugin_src.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/insertdatetime/images/index.html
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/insertdatetime/images/insertdate.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/insertdatetime/images/inserttime.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/insertdatetime/index.html
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/insertdatetime/langs/cs.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/insertdatetime/langs/cy.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/insertdatetime/langs/da.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/insertdatetime/langs/de.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/insertdatetime/langs/el.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/insertdatetime/langs/en.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/insertdatetime/langs/es.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/insertdatetime/langs/fa.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/insertdatetime/langs/fi.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/insertdatetime/langs/fr.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/insertdatetime/langs/fr_ca.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/insertdatetime/langs/he.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/insertdatetime/langs/hu.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/insertdatetime/langs/index.html
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/insertdatetime/langs/is.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/insertdatetime/langs/it.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/insertdatetime/langs/ko.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/insertdatetime/langs/nb.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/insertdatetime/langs/nl.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/insertdatetime/langs/nn.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/insertdatetime/langs/pl.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/insertdatetime/langs/pt_br.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/insertdatetime/langs/ru.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/insertdatetime/langs/ru_KOI8-R.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/insertdatetime/langs/ru_UTF-8.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/insertdatetime/langs/sk.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/insertdatetime/langs/sv.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/insertdatetime/langs/zh_cn.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/insertdatetime/langs/zh_tw.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/insertdatetime/langs/zh_tw_utf8.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/noneditable/css/index.html
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/noneditable/css/noneditable.css
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/noneditable/editor_plugin.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/noneditable/editor_plugin_src.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/noneditable/index.html
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/paste/blank.htm
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/paste/css/blank.css
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/paste/css/index.html
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/paste/css/pasteword.css
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/paste/editor_plugin.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/paste/editor_plugin_src.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/paste/images/index.html
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/paste/images/pastetext.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/paste/images/pasteword.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/paste/images/selectall.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/paste/index.html
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/paste/jscripts/index.html
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/paste/jscripts/pastetext.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/paste/jscripts/pasteword.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/paste/langs/cs.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/paste/langs/cy.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/paste/langs/da.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/paste/langs/de.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/paste/langs/en.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/paste/langs/es.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/paste/langs/fi.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/paste/langs/fr.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/paste/langs/fr_ca.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/paste/langs/he.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/paste/langs/hu.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/paste/langs/index.html
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/paste/langs/is.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/paste/langs/nb.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/paste/langs/nl.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/paste/langs/nn.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/paste/langs/pl.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/paste/langs/pt_br.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/paste/langs/ru.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/paste/langs/ru_KOI8-R.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/paste/langs/ru_UTF-8.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/paste/langs/sk.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/paste/langs/sv.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/paste/langs/zh_cn.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/paste/langs/zh_tw.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/paste/langs/zh_tw_utf8.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/paste/pastetext.htm
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/paste/pasteword.htm
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/preview/editor_plugin.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/preview/editor_plugin_src.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/preview/example.html
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/preview/images/index.html
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/preview/images/preview.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/preview/index.html
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/preview/langs/cs.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/preview/langs/cy.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/preview/langs/da.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/preview/langs/de.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/preview/langs/el.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/preview/langs/en.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/preview/langs/es.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/preview/langs/fa.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/preview/langs/fr.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/preview/langs/fr_ca.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/preview/langs/he.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/preview/langs/hu.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/preview/langs/index.html
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/preview/langs/is.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/preview/langs/it.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/preview/langs/ko.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/preview/langs/nb.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/preview/langs/nl.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/preview/langs/nn.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/preview/langs/pl.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/preview/langs/pt.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/preview/langs/pt_br.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/preview/langs/ru.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/preview/langs/ru_KOI8-R.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/preview/langs/ru_UTF-8.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/preview/langs/sk.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/preview/langs/sv.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/preview/langs/zh_cn.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/preview/langs/zh_tw.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/preview/langs/zh_tw_utf8.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/print/editor_plugin.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/print/editor_plugin_src.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/print/images/index.html
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/print/images/print.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/print/index.html
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/print/langs/cs.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/print/langs/cy.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/print/langs/da.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/print/langs/de.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/print/langs/en.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/print/langs/es.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/print/langs/fa.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/print/langs/fi.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/print/langs/fr.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/print/langs/fr_ca.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/print/langs/he.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/print/langs/hu.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/print/langs/index.html
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/print/langs/is.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/print/langs/nb.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/print/langs/nl.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/print/langs/nn.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/print/langs/pl.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/print/langs/pt_br.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/print/langs/ru.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/print/langs/ru_KOI8-R.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/print/langs/ru_UTF-8.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/print/langs/sk.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/print/langs/sv.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/print/langs/zh_cn.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/print/langs/zh_tw.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/print/langs/zh_tw_utf8.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/save/editor_plugin.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/save/editor_plugin_src.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/save/images/index.html
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/save/images/save.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/save/index.html
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/save/langs/cs.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/save/langs/cy.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/save/langs/da.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/save/langs/de.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/save/langs/en.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/save/langs/es.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/save/langs/fa.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/save/langs/fi.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/save/langs/fr.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/save/langs/fr_ca.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/save/langs/he.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/save/langs/hu.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/save/langs/index.html
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/save/langs/is.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/save/langs/nb.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/save/langs/nl.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/save/langs/nn.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/save/langs/pl.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/save/langs/pt_br.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/save/langs/ru.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/save/langs/ru_KOI8-R.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/save/langs/ru_UTF-8.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/save/langs/sk.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/save/langs/sv.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/save/langs/zh_cn.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/save/langs/zh_tw.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/save/langs/zh_tw_utf8.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/searchreplace/editor_plugin.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/searchreplace/editor_plugin_src.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/searchreplace/images/index.html
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/searchreplace/images/replace.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/searchreplace/images/search.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/searchreplace/index.html
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/searchreplace/jscripts/index.html
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/searchreplace/jscripts/replace.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/searchreplace/jscripts/search.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/searchreplace/langs/cs.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/searchreplace/langs/cy.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/searchreplace/langs/da.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/searchreplace/langs/de.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/searchreplace/langs/en.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/searchreplace/langs/es.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/searchreplace/langs/fa.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/searchreplace/langs/fi.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/searchreplace/langs/fr.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/searchreplace/langs/fr_ca.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/searchreplace/langs/he.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/searchreplace/langs/hu.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/searchreplace/langs/index.html
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/searchreplace/langs/is.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/searchreplace/langs/nb.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/searchreplace/langs/nl.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/searchreplace/langs/nn.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/searchreplace/langs/pl.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/searchreplace/langs/pt_br.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/searchreplace/langs/ru.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/searchreplace/langs/ru_KOI8-R.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/searchreplace/langs/ru_UTF-8.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/searchreplace/langs/sk.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/searchreplace/langs/sv.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/searchreplace/langs/zh_cn.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/searchreplace/langs/zh_tw.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/searchreplace/langs/zh_tw_utf8.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/searchreplace/replace.htm
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/searchreplace/search.htm
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/table/cell.htm
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/table/css/cell.css
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/table/css/index.html
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/table/css/row.css
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/table/css/table.css
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/table/editor_plugin.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/table/editor_plugin_src.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/table/images/buttons.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/table/images/index.html
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/table/images/table.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/table/images/table_cell_props.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/table/images/table_delete.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/table/images/table_delete_col.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/table/images/table_delete_row.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/table/images/table_insert_col_after.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/table/images/table_insert_col_before.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/table/images/table_insert_row_after.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/table/images/table_insert_row_before.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/table/images/table_merge_cells.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/table/images/table_row_props.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/table/images/table_split_cells.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/table/index.html
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/table/jscripts/cell.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/table/jscripts/index.html
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/table/jscripts/merge_cells.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/table/jscripts/row.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/table/jscripts/table.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/table/langs/ar.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/table/langs/cs.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/table/langs/cy.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/table/langs/da.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/table/langs/de.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/table/langs/el.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/table/langs/en.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/table/langs/es.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/table/langs/fa.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/table/langs/fi.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/table/langs/fr.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/table/langs/fr_ca.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/table/langs/he.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/table/langs/hu.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/table/langs/index.html
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/table/langs/is.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/table/langs/it.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/table/langs/ja.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/table/langs/ko.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/table/langs/nb.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/table/langs/nl.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/table/langs/nn.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/table/langs/pl.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/table/langs/pt.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/table/langs/pt_br.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/table/langs/readme.txt
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/table/langs/ru.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/table/langs/ru_KOI8-R.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/table/langs/ru_UTF-8.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/table/langs/sk.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/table/langs/sv.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/table/langs/tw.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/table/langs/zh_cn.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/table/langs/zh_tw.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/table/langs/zh_tw_utf8.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/table/merge_cells.htm
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/table/row.htm
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/table/table.htm
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/zoom/editor_plugin.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/zoom/editor_plugin_src.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/zoom/index.html
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/zoom/langs/es.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/zoom/langs/fr.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/zoom/langs/he.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/zoom/langs/index.html
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/zoom/langs/pt_br.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/zoom/langs/ru.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/zoom/langs/ru_KOI8-R.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/zoom/langs/ru_UTF-8.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/zoom/langs/zh_tw.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/zoom/langs/zh_tw_utf8.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/about.htm
 %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/anchor.htm
 %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/charmap.htm
 %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/color_picker.htm
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/css/editor_content.css
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/css/editor_popup.css
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/css/editor_ui.css
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/css/index.html
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/docs/en/about.htm
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/docs/en/common_buttons.htm
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/docs/en/create_accessible_content.htm
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/docs/en/images/index.html
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/docs/en/images/insert_anchor_window.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/docs/en/images/insert_image_window.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/docs/en/images/insert_link_window.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/docs/en/images/insert_table_window.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/docs/en/index.htm
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/docs/en/index.html
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/docs/en/insert_anchor_button.htm
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/docs/en/insert_image_button.htm
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/docs/en/insert_link_button.htm
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/docs/en/insert_table_button.htm
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/docs/en/style.css
 %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/docs/index.html
 %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/docs/uk/about.htm
 %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/docs/uk/common_buttons.htm
@@ -939,14 +1625,24 @@
 %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/editor_ui.css
 %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/image.htm
 %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/anchor.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/anchor_symbol.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/backcolor.gif
 %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/bold.gif
 %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/bold_de_se.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/bold_es.gif
 %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/bold_fr.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/bold_ru.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/bold_tw.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/browse.gif
 %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/bullist.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/buttons.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/cancel_button_bg.gif
 %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/center.gif
 %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/charmap.gif
 %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/cleanup.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/close.gif
 %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/code.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/color.gif
 %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/copy.gif
 %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/custom_1.gif
 %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/cut.gif
@@ -957,17 +1653,28 @@
 %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/image.gif
 %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/indent.gif
 %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/index.html
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/insert_button_bg.gif
 %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/italic.gif
 %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/italic_de_se.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/italic_es.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/italic_ru.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/italic_tw.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/justifycenter.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/justifyfull.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/justifyleft.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/justifyright.gif
 %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/left.gif
 %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/link.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/newdocument.gif
 %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/numlist.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/opacity.png
 %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/outdent.gif
 %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/paste.gif
 %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/redo.gif
 %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/removeformat.gif
 %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/right.gif
 %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/spacer.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/statusbar_resize.gif
 %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/strikethrough.gif
 %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/sub.gif
 %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/sup.gif
@@ -979,10 +1686,29 @@
 %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/table_insert_row_after.gif
 %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/table_insert_row_before.gif
 %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/underline.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/underline_es.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/underline_fr.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/underline_ru.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/underline_tw.gif
 %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/undo.gif
 %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/unlink.gif
 %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/visualaid.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/xp/index.html
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/xp/tab_bg.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/xp/tab_end.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/xp/tab_sel_bg.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/xp/tab_sel_end.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/xp/tabs_bg.gif
 %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/index.html
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/jscripts/about.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/jscripts/anchor.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/jscripts/charmap.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/jscripts/color_picker.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/jscripts/image.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/jscripts/index.html
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/jscripts/link.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/jscripts/source_editor.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/langs/en.js
 %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/langs/index.html
 %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/langs/uk.js
 %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/link.htm
@@ -1037,8 +1763,41 @@
 %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/default/index.html
 %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/default/link.htm
 %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/index.html
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/simple/css/editor_content.css
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/simple/css/editor_popup.css
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/simple/css/editor_ui.css
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/simple/css/index.html
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/simple/editor_template.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/simple/editor_template_src.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/simple/images/bold.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/simple/images/bold_de_se.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/simple/images/bold_fr.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/simple/images/bold_ru.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/simple/images/bold_tw.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/simple/images/bullist.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/simple/images/cleanup.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/simple/images/index.html
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/simple/images/italic.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/simple/images/italic_de_se.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/simple/images/italic_ru.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/simple/images/italic_tw.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/simple/images/numlist.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/simple/images/redo.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/simple/images/spacer.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/simple/images/strikethrough.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/simple/images/underline.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/simple/images/underline_fr.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/simple/images/underline_ru.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/simple/images/underline_tw.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/simple/images/undo.gif
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/simple/index.html
 %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/tiny_mce.js
 %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/tiny_mce_popup.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/tiny_mce_src.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/utils/form_utils.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/utils/index.html
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/utils/mctabs.js
+%%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/utils/validate.js
 %%MAMBO_DIR%%/mambots/index.html
 %%MAMBO_DIR%%/mambots/search/categories.searchbot.php
 %%MAMBO_DIR%%/mambots/search/categories.searchbot.xml
@@ -1094,93 +1853,158 @@
 %%MAMBO_DIR%%/offline.php
 %%MAMBO_DIR%%/pathway.php
 %%MAMBO_DIR%%/robots.txt
-%%MAMBO_DIR%%/templates/JavaBean/css/index.html
-%%MAMBO_DIR%%/templates/JavaBean/css/template_css.css
-%%MAMBO_DIR%%/templates/JavaBean/images/arrow.png
-%%MAMBO_DIR%%/templates/JavaBean/images/bgr.png
-%%MAMBO_DIR%%/templates/JavaBean/images/image_01.jpg
-%%MAMBO_DIR%%/templates/JavaBean/images/index.html
-%%MAMBO_DIR%%/templates/JavaBean/images/lineborder.png
-%%MAMBO_DIR%%/templates/JavaBean/images/menu_bgr.png
-%%MAMBO_DIR%%/templates/JavaBean/images/pixel.png
-%%MAMBO_DIR%%/templates/JavaBean/images/search_01.png
-%%MAMBO_DIR%%/templates/JavaBean/images/search_02.png
-%%MAMBO_DIR%%/templates/JavaBean/images/vmenu_bgr.png
-%%MAMBO_DIR%%/templates/JavaBean/index.html
-%%MAMBO_DIR%%/templates/JavaBean/index.php
-%%MAMBO_DIR%%/templates/JavaBean/templateDetails.xml
-%%MAMBO_DIR%%/templates/JavaBean/template_thumbnail.png
 %%MAMBO_DIR%%/templates/index.html
-%%MAMBO_DIR%%/templates/rhuk_planetfall/css/index.html
-%%MAMBO_DIR%%/templates/rhuk_planetfall/css/template_css.css
-%%MAMBO_DIR%%/templates/rhuk_planetfall/images/arrow.png
-%%MAMBO_DIR%%/templates/rhuk_planetfall/images/back_fade.jpg
-%%MAMBO_DIR%%/templates/rhuk_planetfall/images/bottom_bar.jpg
-%%MAMBO_DIR%%/templates/rhuk_planetfall/images/indent1.png
-%%MAMBO_DIR%%/templates/rhuk_planetfall/images/indent2.png
-%%MAMBO_DIR%%/templates/rhuk_planetfall/images/indent3.png
-%%MAMBO_DIR%%/templates/rhuk_planetfall/images/indent4.png
-%%MAMBO_DIR%%/templates/rhuk_planetfall/images/index.html
-%%MAMBO_DIR%%/templates/rhuk_planetfall/images/mambo_header.jpg
-%%MAMBO_DIR%%/templates/rhuk_planetfall/images/menu1_fade.jpg
-%%MAMBO_DIR%%/templates/rhuk_planetfall/images/menu2_fade.jpg
-%%MAMBO_DIR%%/templates/rhuk_planetfall/images/menu_bullet.png
-%%MAMBO_DIR%%/templates/rhuk_planetfall/images/silver_background.jpg
-%%MAMBO_DIR%%/templates/rhuk_planetfall/images/spacer.png
-%%MAMBO_DIR%%/templates/rhuk_planetfall/images/title_background.png
-%%MAMBO_DIR%%/templates/rhuk_planetfall/images/top_bar.jpg
-%%MAMBO_DIR%%/templates/rhuk_planetfall/index.html
-%%MAMBO_DIR%%/templates/rhuk_planetfall/index.php
-%%MAMBO_DIR%%/templates/rhuk_planetfall/templateDetails.xml
-%%MAMBO_DIR%%/templates/rhuk_planetfall/template_thumbnail.png
-%%MAMBO_DIR%%/templates/rhuk_solarflare_ii/css/index.html
-%%MAMBO_DIR%%/templates/rhuk_solarflare_ii/css/template_css.css
-%%MAMBO_DIR%%/templates/rhuk_solarflare_ii/images/advertisement.png
-%%MAMBO_DIR%%/templates/rhuk_solarflare_ii/images/arrow.png
-%%MAMBO_DIR%%/templates/rhuk_solarflare_ii/images/button_bg.png
-%%MAMBO_DIR%%/templates/rhuk_solarflare_ii/images/contenthead.png
-%%MAMBO_DIR%%/templates/rhuk_solarflare_ii/images/header_short.jpg
-%%MAMBO_DIR%%/templates/rhuk_solarflare_ii/images/indent1.png
-%%MAMBO_DIR%%/templates/rhuk_solarflare_ii/images/indent2.png
-%%MAMBO_DIR%%/templates/rhuk_solarflare_ii/images/indent3.png
-%%MAMBO_DIR%%/templates/rhuk_solarflare_ii/images/indent4.png
-%%MAMBO_DIR%%/templates/rhuk_solarflare_ii/images/index.html
-%%MAMBO_DIR%%/templates/rhuk_solarflare_ii/images/menu_bg.png
-%%MAMBO_DIR%%/templates/rhuk_solarflare_ii/images/powered_by.png
-%%MAMBO_DIR%%/templates/rhuk_solarflare_ii/images/rating_star.png
-%%MAMBO_DIR%%/templates/rhuk_solarflare_ii/images/rating_star_blank.png
-%%MAMBO_DIR%%/templates/rhuk_solarflare_ii/images/spacer.png
-%%MAMBO_DIR%%/templates/rhuk_solarflare_ii/images/subhead_bg.png
-%%MAMBO_DIR%%/templates/rhuk_solarflare_ii/images/title_back.png
-%%MAMBO_DIR%%/templates/rhuk_solarflare_ii/index.html
-%%MAMBO_DIR%%/templates/rhuk_solarflare_ii/index.php
-%%MAMBO_DIR%%/templates/rhuk_solarflare_ii/templateDetails.xml
-%%MAMBO_DIR%%/templates/rhuk_solarflare_ii/template_thumbnail.png
-@dirrm %%MAMBO_DIR%%/templates/rhuk_solarflare_ii/images
-@dirrm %%MAMBO_DIR%%/templates/rhuk_solarflare_ii/css
-@dirrm %%MAMBO_DIR%%/templates/rhuk_solarflare_ii
-@dirrm %%MAMBO_DIR%%/templates/rhuk_planetfall/images
-@dirrm %%MAMBO_DIR%%/templates/rhuk_planetfall/css
-@dirrm %%MAMBO_DIR%%/templates/rhuk_planetfall
-@dirrm %%MAMBO_DIR%%/templates/JavaBean/images
-@dirrm %%MAMBO_DIR%%/templates/JavaBean/css
-@dirrm %%MAMBO_DIR%%/templates/JavaBean
+%%MAMBO_DIR%%/templates/waterandstone/css/template_css.css
+%%MAMBO_DIR%%/templates/waterandstone/images/bg_body.jpg
+%%MAMBO_DIR%%/templates/waterandstone/images/bg_header.jpg
+%%MAMBO_DIR%%/templates/waterandstone/images/bg_inside.jpg
+%%MAMBO_DIR%%/templates/waterandstone/images/bg_leftcol.jpg
+%%MAMBO_DIR%%/templates/waterandstone/images/bg_mainlevel.gif
+%%MAMBO_DIR%%/templates/waterandstone/images/bg_mainlevel_right.gif
+%%MAMBO_DIR%%/templates/waterandstone/images/bg_module.jpg
+%%MAMBO_DIR%%/templates/waterandstone/images/bg_module_contenttop.jpg
+%%MAMBO_DIR%%/templates/waterandstone/images/bg_pagenav.jpg
+%%MAMBO_DIR%%/templates/waterandstone/images/bg_spacer.gif
+%%MAMBO_DIR%%/templates/waterandstone/images/bg_topright.jpg
+%%MAMBO_DIR%%/templates/waterandstone/images/img_header.jpg
+%%MAMBO_DIR%%/templates/waterandstone/images/indent1.png
+%%MAMBO_DIR%%/templates/waterandstone/images/indent2.png
+%%MAMBO_DIR%%/templates/waterandstone/images/indent3.png
+%%MAMBO_DIR%%/templates/waterandstone/images/indent4.png
+%%MAMBO_DIR%%/templates/waterandstone/images/indent5.png
+%%MAMBO_DIR%%/templates/waterandstone/images/indent6.png
+%%MAMBO_DIR%%/templates/waterandstone/images/logo.gif
+%%MAMBO_DIR%%/templates/waterandstone/index.php
+%%MAMBO_DIR%%/templates/waterandstone/templateDetails.xml
+%%MAMBO_DIR%%/templates/waterandstone/template_thumbnail.png
+%%MAMBO_DIR%%/templates/waterandstone800/css/template_css.css
+%%MAMBO_DIR%%/templates/waterandstone800/images/bg_body.jpg
+%%MAMBO_DIR%%/templates/waterandstone800/images/bg_header.jpg
+%%MAMBO_DIR%%/templates/waterandstone800/images/bg_inside.jpg
+%%MAMBO_DIR%%/templates/waterandstone800/images/bg_leftcol.jpg
+%%MAMBO_DIR%%/templates/waterandstone800/images/bg_mainlevel.gif
+%%MAMBO_DIR%%/templates/waterandstone800/images/bg_mainlevel_right.gif
+%%MAMBO_DIR%%/templates/waterandstone800/images/bg_module.jpg
+%%MAMBO_DIR%%/templates/waterandstone800/images/bg_module_contenttop.jpg
+%%MAMBO_DIR%%/templates/waterandstone800/images/bg_pagenav.jpg
+%%MAMBO_DIR%%/templates/waterandstone800/images/bg_spacer.gif
+%%MAMBO_DIR%%/templates/waterandstone800/images/bg_topright.jpg
+%%MAMBO_DIR%%/templates/waterandstone800/images/img_header.jpg
+%%MAMBO_DIR%%/templates/waterandstone800/images/indent1.png
+%%MAMBO_DIR%%/templates/waterandstone800/images/indent2.png
+%%MAMBO_DIR%%/templates/waterandstone800/images/indent3.png
+%%MAMBO_DIR%%/templates/waterandstone800/images/indent4.png
+%%MAMBO_DIR%%/templates/waterandstone800/images/indent5.png
+%%MAMBO_DIR%%/templates/waterandstone800/images/indent6.png
+%%MAMBO_DIR%%/templates/waterandstone800/images/logo.gif
+%%MAMBO_DIR%%/templates/waterandstone800/index.php
+%%MAMBO_DIR%%/templates/waterandstone800/templateDetails.xml
+%%MAMBO_DIR%%/templates/waterandstone800/template_thumbnail.png
+@dirrm %%MAMBO_DIR%%/templates/waterandstone800/images
+@dirrm %%MAMBO_DIR%%/templates/waterandstone800/css
+@dirrm %%MAMBO_DIR%%/templates/waterandstone800
+@dirrm %%MAMBO_DIR%%/templates/waterandstone/images
+@dirrm %%MAMBO_DIR%%/templates/waterandstone/css
+@dirrm %%MAMBO_DIR%%/templates/waterandstone
 @dirrm %%MAMBO_DIR%%/templates
 @dirrm %%MAMBO_DIR%%/modules
 @dirrm %%MAMBO_DIR%%/media
 @dirrm %%MAMBO_DIR%%/mambots/search
+@dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/utils
+@dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/simple/images
+@dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/simple/css
+@dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/simple
 @dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/default/images
 @dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/default/docs/uk/images
 @dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/default/docs/uk
 @dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/default/docs
 @dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/default
 @dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/langs
+@dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/jscripts
+@dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/xp
 @dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images
 @dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/docs/uk/images
 @dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/docs/uk
+@dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/docs/en/images
+@dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/docs/en
 @dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/docs
+@dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/css
 @dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced
 @dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/themes
+@dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/zoom/langs
+@dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/zoom
+@dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/table/langs
+@dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/table/jscripts
+@dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/table/images
+@dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/table/css
+@dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/table
+@dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/searchreplace/langs
+@dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/searchreplace/jscripts
+@dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/searchreplace/images
+@dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/searchreplace
+@dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/save/langs
+@dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/save/images
+@dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/save
+@dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/print/langs
+@dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/print/images
+@dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/print
+@dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/preview/langs
+@dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/preview/images
+@dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/preview
+@dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/paste/langs
+@dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/paste/jscripts
+@dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/paste/images
+@dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/paste/css
+@dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/paste
+@dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/noneditable/css
+@dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/noneditable
+@dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/insertdatetime/langs
+@dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/insertdatetime/images
+@dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/insertdatetime
+@dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/inlinepopups/jscripts
+@dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/inlinepopups/images
+@dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/inlinepopups/css
+@dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/inlinepopups
+@dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/iespell/langs
+@dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/iespell/images
+@dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/iespell
+@dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/fullscreen/langs
+@dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/fullscreen/images
+@dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/fullscreen
+@dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/flash/langs
+@dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/flash/jscripts
+@dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/flash/images
+@dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/flash/css
+@dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/flash
+@dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/emotions/langs
+@dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/emotions/jscripts
+@dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/emotions/images
+@dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/emotions
+@dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/directionality/langs
+@dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/directionality/images
+@dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/directionality
+@dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/contextmenu/images
+@dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/contextmenu/css
+@dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/contextmenu
+@dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/autosave/langs
+@dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/autosave
+@dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advlink/langs
+@dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advlink/jscripts
+@dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advlink/css
+@dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advlink
+@dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advimage/langs
+@dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advimage/jscripts
+@dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advimage/images
+@dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advimage/css
+@dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advimage
+@dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advhr/langs
+@dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advhr/jscripts
+@dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advhr/images
+@dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advhr
+@dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/_template/langs
+@dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/_template/images
+@dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins/_template
+@dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/plugins
 @dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce/langs
 @dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts/tiny_mce
 @dirrm %%MAMBO_DIR%%/mambots/editors/tinymce/jscripts
@@ -1195,9 +2019,9 @@
 @dirrm %%MAMBO_DIR%%/language
 @dirrm %%MAMBO_DIR%%/installation/sql
 @dirrm %%MAMBO_DIR%%/installation
-@dirrm %%MAMBO_DIR%%/includes/phpInputFilter/
 @dirrm %%MAMBO_DIR%%/includes/phpmailer/language
 @dirrm %%MAMBO_DIR%%/includes/phpmailer
+@dirrm %%MAMBO_DIR%%/includes/phpInputFilter
 @dirrm %%MAMBO_DIR%%/includes/patTemplate/tmpl
 @dirrm %%MAMBO_DIR%%/includes/patTemplate/patTemplate/TemplateCache
 @dirrm %%MAMBO_DIR%%/includes/patTemplate/patTemplate/Stat
@@ -1221,8 +2045,6 @@
 @dirrm %%MAMBO_DIR%%/includes/Cache
 @dirrm %%MAMBO_DIR%%/includes/Archive
 @dirrm %%MAMBO_DIR%%/includes
-@dirrm %%MAMBO_DIR%%/images/stories/fruit
-@dirrm %%MAMBO_DIR%%/images/stories/food
 @dirrm %%MAMBO_DIR%%/images/stories
 @dirrm %%MAMBO_DIR%%/images/smilies
 @dirrm %%MAMBO_DIR%%/images/banners
