@@ -11,7 +11,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	dTemplate
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	jeremy@external.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A powerful template handling logic with advanced features
 
 PERL_CONFIGURE=	yes

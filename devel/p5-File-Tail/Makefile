@@ -11,7 +11,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	File
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	jeremy@external.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl Module to read the end of a file as it\'s appended to
 
 PERL_CONFIGURE=	YES

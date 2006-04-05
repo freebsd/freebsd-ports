@@ -11,7 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://ipsc.sourceforge.net/dist/prips/
 DISTNAME=	${PKGNAME}-src
 
-MAINTAINER=	jeremy@external.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Prints IP subnet ranges by list or CIDR
 
 WRKSRC=		${WRKDIR}/prips

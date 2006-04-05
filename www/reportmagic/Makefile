@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.reportmagic.org/	\
 		http://be.reportmagic.org/
 DISTNAME=	rmagic-${PORTVERSION}
 
-MAINTAINER=	jeremy@external.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A web site statistics post-processor for Analog
 
 RUN_DEPENDS=	analog:${PORTSDIR}/www/analog \

@@ -11,7 +11,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	dmalloc
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	jeremy@external.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portable debug memory allocation library
 
 GNU_CONFIGURE=	yes

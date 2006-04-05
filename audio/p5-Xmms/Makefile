@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	Xmms
 PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-Perl-${PORTVERSION}
 
-MAINTAINER=	jeremy@external.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interactive remote control shell for xmms
 
 BUILD_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms \
