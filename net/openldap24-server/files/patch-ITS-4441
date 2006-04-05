@@ -1,0 +1,22 @@
+===================================================================
+RCS file: /repo/OpenLDAP/pkg/ldap/libraries/libldap/unbind.c,v
+retrieving revision 1.54
+retrieving revision 1.55
+diff -u -r1.54 -r1.55
+--- libraries/libldap/unbind.c	2006/01/03 22:12:09	1.54
++++ libraries/libldap/unbind.c	2006/03/20 10:14:43	1.55
+@@ -1,4 +1,4 @@
+-/* $OpenLDAP: libraries/libldap/unbind.c,v 1.54 2006/01/03 22:12:09 kurt Exp $ */
++/* $OpenLDAP: libraries/libldap/unbind.c,v 1.55 2006/03/20 10:14:43 ando Exp $ */
+ /* This work is part of OpenLDAP Software <http://www.openldap.org/>.
+  *
+  * Copyright 1998-2006 The OpenLDAP Foundation.
+@@ -194,6 +194,7 @@
+ #ifdef LDAP_R_COMPILE
+ 	ldap_pvt_thread_mutex_destroy( &ld->ld_req_mutex );
+ 	ldap_pvt_thread_mutex_destroy( &ld->ld_res_mutex );
++	ldap_pvt_thread_mutex_destroy( &ld->ld_conn_mutex );
+ #endif
+ #ifndef NDEBUG
+ 	LDAP_TRASH(ld);
+
