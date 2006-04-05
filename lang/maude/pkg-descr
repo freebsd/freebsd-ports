@@ -1,0 +1,25 @@
+Maude is a high-performance reflective language and system supporting both
+equational and rewriting logic specification and programming for a wide range
+of applications. Maude has been influenced in important ways by the OBJ3
+language, which can be regarded as an equational logic sublanguage. Besides
+supporting equational specification and programming, Maude also supports
+rewriting logic computation.
+
+Rewriting logic is a logic of concurrent change that can naturally deal with
+state and with concurrent computations. It has good properties as a general
+semantic framework for giving executable semantics to a wide range of
+languages and models of concurrency. In particular, it supports very well
+concurrent object-oriented computation. The same reasons making rewriting
+logic a good semantic framework make it also a good logical framework, that
+is, a metalogic in which many other logics can be naturally represented and
+executed.
+
+Maude supports in a systematic and efficient way logical reflection. This
+makes Maude remarkably extensible and powerful, supports an extensible algebra
+of module composition operations, and allows many advanced metaprogramming and
+metalanguage applications. Indeed, some of the most interesting applications
+of Maude are metalanguage applications, in which Maude is used to create
+executable environments for different logics, theorem provers, languages, and
+models of computation.
+
+WWW: http://maude.cs.uiuc.edu/

@@ -135,6 +135,7 @@
     SUBDIR += lua-mode.el
     SUBDIR += lua4
     SUBDIR += lush
+    SUBDIR += maude
     SUBDIR += mawk
     SUBDIR += mdk
     SUBDIR += metaocaml

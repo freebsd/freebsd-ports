@@ -1,0 +1,6 @@
+bin/maude
+%%DATADIR%%/linear.maude
+%%DATADIR%%/model-checker.maude
+%%DATADIR%%/prelude.maude
+%%DATADIR%%/socket.maude
+@dirrm %%DATADIR%%
