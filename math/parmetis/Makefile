@@ -9,7 +9,7 @@ PORTNAME=	ParMetis
 PORTVERSION=	3.1
 PORTREVISION=	1
 CATEGORIES=	math parallel
-MASTER_SITES=	http://www-users.cs.umn.edu/~karypis/metis/parmetis/files/
+MASTER_SITES=	http://glaros.dtc.umn.edu/gkhome/fetch/sw/parmetis/
 
 MAINTAINER=	eoin@maths.tcd.ie
 COMMENT=	A package for parallel (mpi) unstructured graph partitioning
@@ -20,15 +20,15 @@ BUILD_DEPENDS=	$(PREFIX)/mpich/bin/mpicc:${PORTSDIR}/net/mpich
 ALL_TARGET=
 
 do-install:
-	${MKDIR} $(PREFIX)/lib/parmetis
+	@${MKDIR} $(PREFIX)/lib/parmetis
 	$(INSTALL_DATA) $(WRKSRC)/libmetis.a $(PREFIX)/lib/parmetis
 	$(INSTALL_DATA) $(WRKSRC)/libparmetis.a $(PREFIX)/lib/parmetis
-	${MKDIR} $(PREFIX)/include/parmetis
+	@${MKDIR} $(PREFIX)/include/parmetis
 	$(INSTALL_DATA) $(WRKSRC)/parmetis.h    $(PREFIX)/include/parmetis
 .if !defined(NOPORTDOCS)
-	${MKDIR} $(PREFIX)/share/doc/ParMETIS
-	$(INSTALL_DATA) ${WRKSRC}/Manual/manual.ps $(PREFIX)/share/doc/ParMETIS
-	$(INSTALL_DATA) ${WRKSRC}/Manual/manual.pdf $(PREFIX)/share/doc/ParMETIS
+	@${MKDIR} ${DOCSDIR}
+	$(INSTALL_DATA) ${WRKSRC}/Manual/manual.ps ${DOCSDIR}
+	$(INSTALL_DATA) ${WRKSRC}/Manual/manual.pdf ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
