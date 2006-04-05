@@ -9,7 +9,7 @@ PORTNAME=	nogger
 PORTVERSION=	0.8.6
 PORTREVISION=	6
 CATEGORIES=	audio
-MASTER_SITES=	http://www.efd.lth.se/~d00jkr/nogger/
+MASTER_SITES=	http://www.bsd-geek.de/FreeBSD/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	No-frills, GTK-based Ogg Vorbis player
@@ -31,7 +31,7 @@ PLIST_FILES+=	share/doc/nogger/${ii}
 .endfor
 PLIST_DIRS=	share/doc/nogger
 .endif
-USE_GMAKE=	y
+USE_GMAKE=	yes
 ALL_TARGET=	nogger
 
 do-install:
