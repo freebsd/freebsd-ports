@@ -1,7 +1,7 @@
 lib/libh323_r.so
 lib/libh323_r.so.1
-lib/libh323_r.so.1.17
-lib/libh323_r.so.1.17.3
+lib/libh323_r.so.1.18
+lib/libh323_r.so.1.18.0
 lib/libopenh323.so
 include/openh323/QTIoctl.h
 include/openh323/channels.h
