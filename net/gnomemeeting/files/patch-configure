@@ -1,0 +1,70 @@
+--- configure.orig	Thu Mar 16 13:29:08 2006
++++ configure	Thu Mar 16 13:30:44 2006
+@@ -19165,10 +19165,10 @@
+ 
+ 
+ # This can be used to rebuild libtool when needed
+-LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
++LIBTOOL_DEPS=" /usr/local/share/libtool/ltmain.sh"
+ 
+ # Always use our own libtool.
+-LIBTOOL='$(SHELL) $(top_builddir)/libtool'
++LIBTOOL='$(SHELL) /usr/local/bin/libtool'
+ 
+ # Prevent multiple expansion
+ 
+@@ -21283,8 +21283,8 @@
+ GNOMEMEETING_LIBS="$GNOMEMEETING_LIBS $EDS_LIBS"
+ fi
+ 
+-PWLIB_REC_VERSION="1.8.4"
+-OPENH323_REC_VERSION="1.15.3"
++PWLIB_REC_VERSION="1.10.0"
++OPENH323_REC_VERSION="1.18.0"
+ 
+ 
+ if test x"${disable_gnome}" = xno ; then
+@@ -21353,7 +21353,7 @@
+ 
+   FreeBSD* | freebsd* )
+     ARCH_OPENH323_CFLAGS="-Os -Wall -DPTRACING -DNDEBUG -DSTATIC_LIBS_USED"
+-    ARCH_OPENH323_LIBS="-lh323_FreeBSD_x86_r_s -lpt_FreeBSD_x86_r_s -pthread -lssl -lcrypto"
++    ARCH_OPENH323_LIBS="-lh323_FreeBSD_x86_r -lpt_FreeBSD_x86_r -pthread -lssl -lcrypto"
+     echo "$as_me:$LINENO: result: yes" >&5
+ echo "${ECHO_T}yes" >&6
+     gm_platform="freebsd"
+@@ -21900,20 +21900,20 @@
+    { (exit 1); exit 1; }; };
+ fi
+ 
+-echo "$as_me:$LINENO: checking for Quicknet support in OpenH323" >&5
+-echo $ECHO_N "checking for Quicknet support in OpenH323... $ECHO_C" >&6;
+-OPENH323_IXJ_SUPPORT=`cat ${with_openh323_dir}/include/openh323/openh323buildopts.h | grep "HAS_IXJ 1" | cut -f2  -d ' '`
+-if test "x${OPENH323_IXJ_SUPPORT}" != "x1"; then
+-	echo "$as_me:$LINENO: result: no" >&5
+-echo "${ECHO_T}no" >&6;
+-	{ { echo "$as_me:$LINENO: error: Sorry but the OpenH323 version you are using doesn't support Quicknet devices" >&5
+-echo "$as_me: error: Sorry but the OpenH323 version you are using doesn't support Quicknet devices" >&2;}
+-   { (exit 1); exit 1; }; };
+-else
+-	echo "$as_me:$LINENO: result: yes" >&5
+-echo "${ECHO_T}yes" >&6;
+-        HAS_IXJ="enabled";
+-fi
++#echo "$as_me:$LINENO: checking for Quicknet support in OpenH323" >&5
++#echo $ECHO_N "checking for Quicknet support in OpenH323... $ECHO_C" >&6;
++#OPENH323_IXJ_SUPPORT=`cat ${with_openh323_dir}/include/openh323/openh323buildopts.h | grep "HAS_IXJ 1" | cut -f2  -d ' '`
++#if test "x${OPENH323_IXJ_SUPPORT}" != "x1"; then
++#	echo "$as_me:$LINENO: result: no" >&5
++#echo "${ECHO_T}no" >&6;
++#	{ { echo "$as_me:$LINENO: error: Sorry but the OpenH323 version you are using doesn't support Quicknet devices" >&5
++#echo "$as_me: error: Sorry but the OpenH323 version you are using doesn't support Quicknet devices" >&2;}
++#  { (exit 1); exit 1; }; };
++#else
++#	echo "$as_me:$LINENO: result: yes" >&5
++#echo "${ECHO_T}yes" >&6;
++#        HAS_IXJ="enabled";
++#fi
+ 
+ 
+ 
