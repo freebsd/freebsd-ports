@@ -17,7 +17,7 @@ PATCHFILES=	bx-korean-aa.patch\
 		bx-korean-ac.patch
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	hollywar@mail.holywar.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An alternative ircII color client support patched for korean
 
 WRKSRC=		${WRKDIR}/BitchX

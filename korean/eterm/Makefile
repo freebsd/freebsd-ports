@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.holywar.net/pub/FreeBSD/ \
 		ftp://ftp.kr.freebsd.org/pub/FreeBSD-kr/distfiles/
 DISTNAME=	Eterm-${PORTVERSION}
 
-MAINTAINER=	hollywar@mail.holywar.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11 terminal emulator based on rxvt/xterm that supports korean
 
 RUN_DEPENDS=	${PREFIX}/lib/X11/fonts/local/hmm12.pcf.gz:${PORTSDIR}/korean/hanyangfonts

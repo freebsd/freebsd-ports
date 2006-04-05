@@ -12,7 +12,7 @@ CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.holywar.net/pub/FreeBSD/ \
 		http://www.fastcgi.com/dist/
 
-MAINTAINER=	hollywar@mail.holywar.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A fast-cgi module for Apache
 
 CONFLICTS=	apache-contrib-1.*
