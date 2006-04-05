@@ -354,6 +354,7 @@
     SUBDIR += olsrd
     SUBDIR += onenetd
     SUBDIR += onion-fec
+    SUBDIR += opal
     SUBDIR += openam
     SUBDIR += openbgpd
     SUBDIR += openbgpd-devel
