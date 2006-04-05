@@ -19,6 +19,7 @@ bin/starte16
 %%DATADIR%%/config/backup-tooltips.cfg
 %%DATADIR%%/config/bindings.cfg
 %%DATADIR%%/config/definitions
+%%DATADIR%%/config/e16keyedit.db
 %%DATADIR%%/config/matches.cfg
 %%DATADIR%%/config/menus.cfg
 %%DATADIR%%/config/pix/about.png
