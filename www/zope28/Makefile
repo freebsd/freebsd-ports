@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zope
-PORTVERSION=	2.8.5
+PORTVERSION=	2.8.6
 CATEGORIES=	www python zope
 MASTER_SITES=	http://www.zope.org/Products/Zope/${PORTVERSION}/
 DISTNAME=	Zope-${PORTVERSION}-final
@@ -16,9 +16,8 @@ DIST_SUBDIR=	zope
 MAINTAINER=	dsh@vlink.ru
 COMMENT=	An object-based web application platform
 
-USE_PYTHON=	yes
+USE_PYTHON?=	2.3.5
 USE_RC_SUBR=	${PORTNAME}28.sh zeo28.sh
-USE_REINPLACE=	yes
 LATEST_LINK=	zope28
 
 # Note: the notes that follow reflect the decisions of prior maintainers

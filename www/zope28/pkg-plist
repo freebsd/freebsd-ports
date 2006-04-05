@@ -6713,6 +6713,7 @@
 %%ZOPEBASEDIR%%/skel/bin/zopeservice.py.in
 %%ZOPEBASEDIR%%/skel/etc/zope.conf.sample.in
 %%ZOPEBASEDIR%%/skel/import/README.txt
+%%ZOPEBASEDIR%%/skel/lib/python/README.txt.in
 %%ZOPEBASEDIR%%/skel/log/README.txt
 %%ZOPEBASEDIR%%/skel/var/README.txt
 @dirrm %%ZOPEBASEDIR%%/lib/python/ZConfig/components/basic/tests
@@ -7258,6 +7259,8 @@
 @dirrm %%ZOPEBASEDIR%%/skel/etc
 @dirrm %%ZOPEBASEDIR%%/skel/Extensions
 @dirrm %%ZOPEBASEDIR%%/skel/bin
+@dirrm %%ZOPEBASEDIR%%/skel/lib/python
+@dirrm %%ZOPEBASEDIR%%/skel/lib
 @dirrm %%ZOPEBASEDIR%%/skel/log
 @dirrm %%ZOPEBASEDIR%%/skel/var
 @dirrm %%ZOPEBASEDIR%%/skel
