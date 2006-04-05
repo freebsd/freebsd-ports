@@ -17,12 +17,9 @@ COMMENT=	Convert Visual Basic forms to GTK C code
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MAKEFILE=	${FILESDIR}/Makefile
 
-NO_MAN=
 PLIST_FILES=	bin/vb2c
-
-.include <bsd.port.pre.mk>
 
 post-extract:
 	@${RM} -f ${WRKSRC}/*.o
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
