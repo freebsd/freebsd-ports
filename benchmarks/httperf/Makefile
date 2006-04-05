@@ -10,7 +10,7 @@ PORTVERSION=	0.8
 CATEGORIES=	benchmarks www
 MASTER_SITES=	ftp://ftp.hpl.hp.com/pub/httperf/
 
-MAINTAINER=	jmelo@freebsdbrasil.com.br
+MAINTAINER=	jmelo@FreeBSD.org
 COMMENT=	A tool for measuring webserver performance
 
 USE_OPENSSL=	yes

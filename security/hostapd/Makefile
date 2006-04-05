@@ -11,7 +11,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://hostap.epitest.fi/releases/ \
 		http://www.freebsdbrasil.com.br/~jmelo/
 
-MAINTAINER=	jmelo@freebsdbrasil.com.br
+MAINTAINER=	jmelo@FreeBSD.org
 COMMENT=	Authenticator (server) for WPA/802.1x protocols
 
 LIB_DEPENDS=	dnet.1:${PORTSDIR}/net/libdnet

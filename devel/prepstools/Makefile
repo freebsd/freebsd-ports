@@ -1,6 +1,6 @@
 # New ports collection makefile for:	prepstools
 # Date created:		2005-08-02
-# Whom:			jmelo@freebsdbrasil.com.br
+# Whom:			jmelo@FreeBSD.org
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://webpages.charter.net/stuffle/preps/download/files/
 
-MAINTAINER=	jmelo@freebsdbrasil.com.br
+MAINTAINER=	jmelo@FreeBSD.org
 COMMENT=	Problem reporting system
 
 RUN_DEPENDS=	postgres:${PORTSDIR}/databases/postgresql${DEFAULT_PGSQL_VER}-server

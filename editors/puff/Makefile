@@ -10,7 +10,7 @@ PORTVERSION=	0.42
 CATEGORIES=	editors
 MASTER_SITES=	http://www.freebsdbrasil.com.br/~jmelo/
 
-MAINTAINER=	jmelo@freebsdbrasil.com.br
+MAINTAINER=	jmelo@FreeBSD.org
 COMMENT=	Simple and efficient text editor
 
 WRKSRC=		${WRKDIR}/puff

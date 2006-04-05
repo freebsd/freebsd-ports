@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}13
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	jmelo@freebsdbrasil.com.br
+MAINTAINER=	jmelo@FreeBSD.org
 COMMENT=	San Le's Free Finite Element Analysis
 
 LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut

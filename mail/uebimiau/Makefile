@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.uebimiau.org/downloads/ \
 		http://my.so-net.net.tw/jliang/uebimiau/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-any
 
-MAINTAINER=	jmelo@freebsdbrasil.com.br
+MAINTAINER=	jmelo@FreeBSD.org
 COMMENT=	UebiMiau is a simple yet efficient WebMail written in PHP
 
 WRKSRC=		${WRKDIR}/webmail

@@ -1,6 +1,6 @@
 # New ports collection makefile for:	samba-vscan
 # Date created:		27 February 2004
-# Whom:			Jean Milanez Melo <jmelo@freebsdbrasil.com.br>
+# Whom:			Jean Milanez Melo <jmelo@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	openantivirus
 
-MAINTAINER=	jmelo@freebsdbrasil.com.br
+MAINTAINER=	jmelo@FreeBSD.org
 COMMENT=	On-access virus scanning with Samba
 
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/net/${VSCAN_SAMBA_PORT}:configure
