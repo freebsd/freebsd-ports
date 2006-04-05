@@ -8,13 +8,14 @@
 PORTNAME=	wmrecord
 PORTVERSION=	1.0.5
 CATEGORIES=	audio windowmaker
-MASTER_SITES=	http://linuxberg.matrix.com.br/files/x11/dock/
+MASTER_SITES=	http://linkinnovations.linux.tucows.com/files/x11/dock/ \
+		http://www.bsd-geek.de/FreeBSD/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	General purpose audio recording utility for the WindowMaker dock
 
-USE_XPM=	YES
-USE_X_PREFIX=	YES
+USE_XPM=	yes
+USE_X_PREFIX=	yes
 MAKE_ARGS=	LIBS="-L${X11BASE}/lib -lXpm -lX11 -lXext" \
 		CFLAGS="${CFLAGS} -I${X11BASE}/include" LIBDIR=""
 
