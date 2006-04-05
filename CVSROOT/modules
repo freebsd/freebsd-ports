@@ -13200,6 +13200,7 @@ vtk-headers	ports/math/vtk-headers
 vtk-java	ports/math/vtk-java
 vtk-python	ports/math/vtk-python
 vtk-tcl		ports/math/vtk-tcl
+vtk43		ports/math/vtk43
 vttest		ports/sysutils/vttest
 vtun		ports/net/vtun
 vtwm		ports/x11-wm/vtwm
