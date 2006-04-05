@@ -5618,6 +5618,7 @@ libmodplug	ports/audio/libmodplug
 libmorph	ports/graphics/libmorph
 libmovtar	ports/multimedia/libmovtar
 libmpcdec	ports/audio/libmpcdec
+libmpd		ports/audio/libmpd
 libmpeg2	ports/multimedia/libmpeg2
 libmpeg3	ports/multimedia/libmpeg3
 libmsn		ports/net-im/libmsn
