@@ -6,18 +6,16 @@
 #
 
 PORTNAME=	hns
-PORTVERSION=	2.10.3
+PORTVERSION=	2.19.8
 CATEGORIES=	japanese www perl5
-MASTER_SITES=	http://downloads.sourceforge.jp/h14m/3249/
-DISTNAME=	${PORTNAME}-${PORTVERSION:R}-pl${PORTVERSION:E}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
+MASTER_SITE_SUBDIR=	h14m/19205
 
 MAINTAINER=	hnsmaster@h14m.org
 COMMENT=	Hyper NIKKI System, a CGI system for Electric Diary Interchange
 
 USE_PERL5=	yes
 NO_BUILD=	yes
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}-pl${PORTVERSION:E}
 
 do-install:
 	@if [ -d ${DATADIR} ]; then ${RM} -rf ${DATADIR}; fi
@@ -29,9 +27,9 @@ do-install:
 
 post-install:
 	@cd ${WRKSRC} && ${FIND} . -type f -o -type l | \
-		sed 's,^\.,share/${PORTNAME},' | ${SORT} >> ${TMPPLIST}
+		${SED} 's,^\.,share/${PORTNAME},' | ${SORT} >> ${TMPPLIST}
 	@cd ${WRKSRC} && ${FIND} . -type d | \
-		sed 's,^\.,@dirrm share/${PORTNAME},' | ${SORT} -r \
+		${SED} 's,^\.,@dirrm share/${PORTNAME},' | ${SORT} -r \
 			>> ${TMPPLIST}
 	@${CAT} ${PKGMESSAGE}
 
