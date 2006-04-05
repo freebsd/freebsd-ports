@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Spreadsheet
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	unfurl@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create an Excel Spreadsheet from XML
 
 BUILD_DEPENDS=	${SITE_PERL}/OLE/Storage_Lite.pm:${PORTSDIR}/devel/p5-OLE-Storage_Lite \
