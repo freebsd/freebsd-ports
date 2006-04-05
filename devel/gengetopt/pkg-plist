@@ -17,7 +17,6 @@ bin/gengetopt
 %%PORTDOCS%%%%DOCSDIR%%/examples/sample2.ggo
 %%PORTDOCS%%%%DOCSDIR%%/gengetopt.html
 %%PORTDOCS%%%%DOCSDIR%%/index.html
-%%PORTDOCS%%%%DOCSDIR%%/NEWSold
 %%DATADIR%%/getopt.c
 %%DATADIR%%/getopt1.c
 %%DATADIR%%/gnugetopt.h
