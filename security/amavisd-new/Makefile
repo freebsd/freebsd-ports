@@ -7,8 +7,7 @@
 # Based on amavisd ports makefile.
 
 PORTNAME=	amavisd-new
-PORTVERSION=	2.3.3
-PORTREVISION=	1
+PORTVERSION=	2.4.0
 PORTEPOCH=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.ijs.si/software/amavisd/ \
@@ -21,11 +20,14 @@ COMMENT=	Performance-enhanced daemonized version of amavis-perl
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Unix/Syslog.pm:${PORTSDIR}/sysutils/p5-Unix-Syslog \
 		${SITE_PERL}/MIME/Words.pm:${PORTSDIR}/mail/p5-MIME-Tools \
+		${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
 		${SITE_PERL}/Convert/TNEF.pm:${PORTSDIR}/converters/p5-Convert-TNEF \
 		${SITE_PERL}/${PERL_ARCH}/Convert/UUlib.pm:${PORTSDIR}/converters/p5-Convert-UUlib \
 		${SITE_PERL}/${PERL_ARCH}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib \
 		${SITE_PERL}/Archive/Tar.pm:${PORTSDIR}/archivers/p5-Archive-Tar \
 		${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip \
+		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
+		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
 		${SITE_PERL}/Net/Server.pm:${PORTSDIR}/net/p5-Net-Server \
 		${SITE_PERL}/Mail/SpamAssassin.pm:${PORTSDIR}/mail/p5-Mail-SpamAssassin \
 		${SITE_PERL}/${PERL_ARCH}/BerkeleyDB.pm:${PORTSDIR}/databases/p5-BerkeleyDB \
@@ -63,26 +65,14 @@ SUB_LIST=	AMAVISUSER=${AMAVISUSER} \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500037
-USE_RCORDER=	amavisd.sh
-RC_DIR=		/etc/rc.d
-RC_SUFX=
-.else
 USE_RC_SUBR+=	amavisd.sh
-RC_DIR=		${PREFIX}/etc/rc.d
-RC_SUFX=	.sh
-.endif
 
 .if !defined(WITH_MILTER) || (!exists(/usr/lib/libmilter.a) && !exists(${PREFIX}/lib/libmilter.a))
 AMAVIS_NOAMAVIS="@comment "
 .endif
 
 .if defined(WITH_MILTER) && !defined(AMAVIS_NOAMAVIS)
-.if ${OSVERSION} >= 500037
-USE_RCORDER+=	amavis-milter.sh
-.else
 USE_RC_SUBR+=	amavis-milter.sh
-.endif
 .else
 AMAVIS_NOMILTER="@comment "
 .endif

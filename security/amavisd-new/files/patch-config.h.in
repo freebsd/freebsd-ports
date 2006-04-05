@@ -1,15 +1,11 @@
---- helper-progs/config.h.in.orig	Fri Mar  7 22:56:50 2003
-+++ helper-progs/config.h.in	Tue Nov 11 22:54:33 2003
-@@ -14,10 +14,10 @@
- #define X_HEADER_LINE "by-amavisd-new-via-milter"
- 
- /* Define if you have the mkdtemp function, undefine otherwise */
--#undef HAVE_MKDTEMP
-+#define HAVE_MKDTEMP
+--- helper-progs/config.h.in.orig	Mon Mar  6 00:26:08 2006
++++ helper-progs/config.h.in		Tue Apr  4 08:21:29 2006
+@@ -17,7 +17,7 @@
+ #define HAVE_MKDTEMP
  
  /* Define if you have the mktemp function, undefine otherwise */
 -#define HAVE_MKTEMP
 +#undef HAVE_MKTEMP
  
  /* Define if we have the snprintf function, undefine otherwise */
- #undef HAVE_SNPRINTF
+ #define HAVE_SNPRINTF
