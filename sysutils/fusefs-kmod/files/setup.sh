@@ -45,7 +45,7 @@ else
 	echo 'fusefs_enable="YES"' >> ${LOADER_CONFIG}
 fi
 
-@@PREFIX@@/etc/rc.d/fuse.sh start > /dev/null 2>&1 ; RESULT=$?
+@@PREFIX@@/etc/rc.d/fusefs start > /dev/null 2>&1 ; RESULT=$?
 if [ ${RESULT} -ne 0 ]; then
 	echo 'NOTICE: Failed to load the Fuse module!'
 	echo 'NOTICE: Unload and load Fuse module manually, or reboot.'

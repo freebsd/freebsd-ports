@@ -7,6 +7,7 @@
 
 PORTNAME=	fusefs
 PORTVERSION=	0.3.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://fuse4bsd.creo.hu/downloads/ \
 		http://am-productions.biz/docs/
@@ -18,15 +19,16 @@ COMMENT=	Kernel module for fuse
 
 BUILD_DEPENDS=	fusefs-libs>2.4.1:${PORTSDIR}/sysutils/fusefs-libs
 
-OPTIONS=	AUTOSETUP "Automatic global config file setup" off
-MAKE_ENV+=	BINDIR="${PREFIX}/sbin" MANDIR="${PREFIX}/man/man"
-MAN8=		mount_fusefs.8
+MAKE_ENV=	BINDIR="${PREFIX}/sbin" MANDIR="${PREFIX}/man/man"
+
+SRC_BASE?=	/usr/src
 KMODDIR=	${PREFIX}/modules
 MAKE_ARGS=	KMODDIR=${KMODDIR}
-SRC_BASE?=	/usr/src
-STARTUP=	fuse.sh
-SETUP=		setup.sh
 MODULE_PATH=	`sysctl -n kern.module_path`;${KMODDIR}
+USE_RC_SUBR=	fusefs
+SETUP=		setup.sh
+
+MAN8=		mount_fusefs.8
 TXT_DOCS=	doc.txt
 HTML_DOCS=	Faq.html \
 		Implementation.html \
@@ -44,6 +46,8 @@ HTML_DOCS=	Faq.html \
 		serif.css \
 		tabbar-right.css
 
+OPTIONS=	AUTOSETUP "Automatic global config file setup" off
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 600000
@@ -55,13 +59,12 @@ IGNORE=		requires the Kernel source to be installed. Set SRC_BASE if it is not i
 .endif
 
 post-configure:
-	${CP} ${LOCALBASE}/include/fuse/fuse_kernel.h ${WRKSRC}/fuse_module
+	@${CP} ${LOCALBASE}/include/fuse/fuse_kernel.h ${WRKSRC}/fuse_module
 
 pre-install:
-	${MKDIR} ${KMODDIR}
+	@${MKDIR} ${KMODDIR}
 
 post-install:
-	${INSTALL_SCRIPT} ${FILESDIR}/${STARTUP} ${PREFIX}/etc/rc.d/
 .if (defined(WITH_AUTOSETUP) && !defined(BATCH) && !defined(PACKAGE_BUILDING)) \
 	|| (defined(WITH_AUTOSETUP) && defined(BATCH) && !defined(PACKAGE_BUILDING))
 	@${SED} -e 's|@@PREFIX@@|${PREFIX}|g' \

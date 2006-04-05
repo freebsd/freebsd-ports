@@ -1,0 +1,40 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: fusefs
+# REQUIRE: sysctl
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# fusefs_enable (bool):		Set to NO by default.
+#				Set it to YES to enable fusefs.
+#
+
+. %%RC_SUBR%%
+
+kmod="fuse.ko"
+name="fusefs"
+rcvar=${name}_enable
+
+start_cmd="fusefs_start"
+stop_cmd="fusefs_stop"
+
+fusefs_start()
+{
+	echo "Starting ${name}."
+	kldload $kmod
+}
+
+fusefs_stop()
+{
+	echo "Stopping ${name}."
+	kldunload $kmod
+}
+load_rc_config $name
+
+: ${fusefs_enable="NO"}
+
+run_rc_command "$1"
