@@ -1,39 +1,90 @@
 bin/gnomemeeting
 bin/gnomemeeting-config-tool
-etc/sound/events/gnomemeeting.soundlist
 libdata/bonobo/servers/gnomemeeting.server
 share/gnome/applications/gnomemeeting.desktop
 share/gnome/gnomemeeting/xdap/ils_nm_mod.xml
 share/gnome/gnomemeeting/xdap/ils_nm_reg.xml
 share/gnome/gnomemeeting/xdap/ils_nm_unreg.xml
+share/gnome/help/gnomemeeting/C/figures/audio_codecs.png
+share/gnome/help/gnomemeeting/C/figures/call_d1.png
+share/gnome/help/gnomemeeting/C/figures/config_d1.png
+share/gnome/help/gnomemeeting/C/figures/config_d10.png
+share/gnome/help/gnomemeeting/C/figures/config_d2.png
+share/gnome/help/gnomemeeting/C/figures/config_d3.png
+share/gnome/help/gnomemeeting/C/figures/config_d4.png
+share/gnome/help/gnomemeeting/C/figures/config_d5.png
+share/gnome/help/gnomemeeting/C/figures/config_d6.png
+share/gnome/help/gnomemeeting/C/figures/config_d7.png
+share/gnome/help/gnomemeeting/C/figures/config_d8.png
+share/gnome/help/gnomemeeting/C/figures/config_d9.png
+share/gnome/help/gnomemeeting/C/figures/lumi.png
+share/gnome/help/gnomemeeting/C/figures/stats.png
+share/gnome/help/gnomemeeting/C/gnomemeeting.xml
+share/gnome/help/gnomemeeting/fr/figures/audio_codecs.png
+share/gnome/help/gnomemeeting/fr/figures/call_d1.png
+share/gnome/help/gnomemeeting/fr/figures/config_d1.png
+share/gnome/help/gnomemeeting/fr/figures/config_d10.png
+share/gnome/help/gnomemeeting/fr/figures/config_d2.png
+share/gnome/help/gnomemeeting/fr/figures/config_d3.png
+share/gnome/help/gnomemeeting/fr/figures/config_d4.png
+share/gnome/help/gnomemeeting/fr/figures/config_d5.png
+share/gnome/help/gnomemeeting/fr/figures/config_d6.png
+share/gnome/help/gnomemeeting/fr/figures/config_d7.png
+share/gnome/help/gnomemeeting/fr/figures/config_d8.png
+share/gnome/help/gnomemeeting/fr/figures/config_d9.png
+share/gnome/help/gnomemeeting/fr/figures/lumi.png
+share/gnome/help/gnomemeeting/fr/figures/stats.png
+share/gnome/help/gnomemeeting/fr/gnomemeeting.xml
+share/gnome/omf/gnomemeeting/gnomemeeting-C.omf
+share/gnome/omf/gnomemeeting/gnomemeeting-fr.omf
 share/gnome/pixmaps/gnomemeeting-logo-icon.png
 share/gnome/pixmaps/gnomemeeting-logo.png
 share/gnome/pixmaps/gnomemeeting-splash.png
+share/gnome/sounds/gnomemeeting/busytone.wav
 share/gnome/sounds/gnomemeeting/gnomemeeting.wav
+share/gnome/sounds/gnomemeeting/ringtone.wav
 share/locale/am/LC_MESSAGES/gnomemeeting.mo
+share/locale/ar/LC_MESSAGES/gnomemeeting.mo
 share/locale/az/LC_MESSAGES/gnomemeeting.mo
 share/locale/be/LC_MESSAGES/gnomemeeting.mo
+share/locale/bg/LC_MESSAGES/gnomemeeting.mo
+share/locale/bn/LC_MESSAGES/gnomemeeting.mo
+share/locale/bs/LC_MESSAGES/gnomemeeting.mo
 share/locale/ca/LC_MESSAGES/gnomemeeting.mo
 share/locale/cs/LC_MESSAGES/gnomemeeting.mo
 share/locale/cy/LC_MESSAGES/gnomemeeting.mo
 share/locale/da/LC_MESSAGES/gnomemeeting.mo
 share/locale/de/LC_MESSAGES/gnomemeeting.mo
 share/locale/el/LC_MESSAGES/gnomemeeting.mo
+share/locale/en_CA/LC_MESSAGES/gnomemeeting.mo
+share/locale/en_GB/LC_MESSAGES/gnomemeeting.mo
 share/locale/es/LC_MESSAGES/gnomemeeting.mo
+share/locale/eu/LC_MESSAGES/gnomemeeting.mo
 share/locale/fi/LC_MESSAGES/gnomemeeting.mo
 share/locale/fr/LC_MESSAGES/gnomemeeting.mo
 share/locale/ga/LC_MESSAGES/gnomemeeting.mo
 share/locale/gl/LC_MESSAGES/gnomemeeting.mo
+share/locale/gu/LC_MESSAGES/gnomemeeting.mo
 share/locale/hi/LC_MESSAGES/gnomemeeting.mo
+share/locale/hr/LC_MESSAGES/gnomemeeting.mo
 share/locale/hu/LC_MESSAGES/gnomemeeting.mo
+share/locale/id/LC_MESSAGES/gnomemeeting.mo
+share/locale/is/LC_MESSAGES/gnomemeeting.mo
 share/locale/it/LC_MESSAGES/gnomemeeting.mo
 share/locale/ja/LC_MESSAGES/gnomemeeting.mo
 share/locale/ko/LC_MESSAGES/gnomemeeting.mo
+share/locale/lt/LC_MESSAGES/gnomemeeting.mo
 share/locale/lv/LC_MESSAGES/gnomemeeting.mo
+share/locale/mk/LC_MESSAGES/gnomemeeting.mo
 share/locale/ml/LC_MESSAGES/gnomemeeting.mo
+share/locale/mn/LC_MESSAGES/gnomemeeting.mo
+share/locale/mr/LC_MESSAGES/gnomemeeting.mo
 share/locale/ms/LC_MESSAGES/gnomemeeting.mo
+share/locale/nb/LC_MESSAGES/gnomemeeting.mo
+share/locale/ne/LC_MESSAGES/gnomemeeting.mo
 share/locale/nl/LC_MESSAGES/gnomemeeting.mo
 share/locale/no/LC_MESSAGES/gnomemeeting.mo
+share/locale/pa/LC_MESSAGES/gnomemeeting.mo
 share/locale/pl/LC_MESSAGES/gnomemeeting.mo
 share/locale/pt/LC_MESSAGES/gnomemeeting.mo
 share/locale/pt_BR/LC_MESSAGES/gnomemeeting.mo
@@ -51,6 +102,11 @@ share/locale/vi/LC_MESSAGES/gnomemeeting.mo
 share/locale/wa/LC_MESSAGES/gnomemeeting.mo
 share/locale/zh_CN/LC_MESSAGES/gnomemeeting.mo
 share/locale/zh_TW/LC_MESSAGES/gnomemeeting.mo
+@dirrm share/gnome/help/gnomemeeting/C/figures
+@dirrm share/gnome/help/gnomemeeting/C
+@dirrm share/gnome/help/gnomemeeting/fr/figures
+@dirrm share/gnome/help/gnomemeeting/fr
+@dirrm share/gnome/help/gnomemeeting
 @dirrm share/gnome/sounds/gnomemeeting
 @dirrm share/gnome/gnomemeeting/xdap
 @dirrm share/gnome/gnomemeeting

@@ -6,62 +6,48 @@
 #
 
 PORTNAME=	gnomemeeting
-PORTVERSION=	0.98.5
-PORTREVISION=	7
+PORTVERSION=	1.2.1
 CATEGORIES=	net gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.98
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R}
 
-MAINTAINER=	kwm@FreeBSD.org
+MAINTAINER=	netchild@FreeBSD.org
 COMMENT=	GNOME H323 Video Conferencing program, similar to NetMeeting
 
-BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/net/openh323-112:build
-
-BROKEN=		Incomplete dependency list
-
-# note, we do not want to clean openh323, otherwise it has to build
-# it all over again which can take several hours.
-NOCLEANDEPENDS=	yes
+LIB_DEPENDS=	h323_r:${PORTSDIR}/net/openh323 \
+		howl:${PORTSDIR}/net/howl
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	libgnomeui libbonobo gnomeprefix gnomehack
-USE_REINPLACE=	yes
+USE_GNOME=	libgnomeui libbonobo gnomeprefix gnomehack evolutiondataserver \
+		intlhack
 USE_OPENLDAP=	yes
+GCONF_SCHEMAS=	gnomemeeting.schemas
+USE_SDL=	yes
 USE_BISON=	yes
 # Clear configure target so we stop getting binaries prefixed with i386-portbld-freebsd46
 CONFIGURE_TARGET=
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	OSTYPE=${OPSYS} \
-		LIBS="-L${PREFIX}/lib -L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
-		PTLIBDIR=${PWLIBDIR} \
-		OPENH323DIR=${OPENH323DIR} \
+		CXXFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${PREFIX}/lib -L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
 		SDL_CONFIG=${LOCALBASE}/bin/sdl11-config \
-		CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}"
+		CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
+		PTLIBDIR=${PREFIX}
 
-CONFIGURE_ARGS=	--with-ptlib-includes=${PWLIBDIR}/include/ptlib \
-		--with-ptlib-libs=${PWLIBDIR}/lib \
-		--with-openh323-includes=${OPENH323DIR}/include \
-		--with-openh323-libs=${OPENH323DIR}/lib \
- 		--with-ldap-includes=${LOCALBASE}/include \
- 		--with-openldap-libs=${LOCALBASE}/lib
+CONFIGURE_ARGS=	--with-pwlib-dir=${LOCALBASE} \
+		--with-openh323-dir=${LOCALBASE} \
+ 		--with-ldap-dir=${LOCALBASE}
 
-GCONF_SCHEMAS=	gnomemeeting.schemas
-MAN1=		gnomemeeting.1
-
-.include <bsd.port.pre.mk>
-
-PWLIBDIR!=	cd ${PORTSDIR}/devel/pwlib152 && make -V WRKSRC
-OPENH323DIR!=	cd ${PORTSDIR}/net/openh323-112 && make -V WRKSRC
-
-.if ${ARCH} != "i386"
-BROKEN=		"Configure fails on !i386"
-.endif
+MAN1=	gnomemeeting.1
 
 post-patch:
-	${REINPLACE_CMD} -E -e 's=-D[[:punct:][:alnum:]]+_DISABLE_DEPRECATED==g' \
-		${WRKSRC}/src/Makefile.am \
-		${WRKSRC}/src/Makefile.in
+	${REINPLACE_CMD} -e 's:-lh323_FreeBSD_x86_r_s:-lh323_r:g; \
+		s:-lpt_FreeBSD_x86_r_s:-lpt_r:g; \
+		s:-lh323_FreeBSD_x86_r:-lh323_r:g; \
+		s:-lpt_FreeBSD_x86_r:-lpt_r:g; \
+		s: -DSTATIC_LIBS_USED::g' \
+		${WRKSRC}/configure
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
