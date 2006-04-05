@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		tenshi
-PORTVERSION=		0.3.4
+PORTVERSION=		0.4
 CATEGORIES=		sysutils
 MASTER_SITES=		http://dev.gentoo.org/~lcars/%SUBDIR%/
 MASTER_SITE_SUBDIR=	tenshi
@@ -20,11 +20,10 @@ MAN8=			tenshi.8
 
 USE_PERL5=		yes
 NO_BUILD=		yes
-USE_RC_SUBR=		yes
+USE_RC_SUBR=		tenshi.sh
+SUB_LIST=		PERL=${PERL}
 
-SED_SCRIPT=		-e 's,%%RC_SUBR%%,${RC_SUBR},g' \
-			-e 's,%%PREFIX%%,${PREFIX},g' \
-			-e 's,%%PERL%%,${PERL},g'
+PLIST_FILES=		bin/tenshi etc/tenshi.conf.sample
 
 PORTDOCS=		README Changelog
 
@@ -55,9 +54,5 @@ do-install:
 		${INSTALL_DATA} ${WRKSRC}/$$doc ${DESTDIR}${DOCSDIR}; \
 	done
 .endif
-
-post-install:
-	@${SED} ${SED_SCRIPT} ${FILESDIR}/tenshi.sh >${WRKDIR}/tenshi.sh
-	@${INSTALL_SCRIPT} ${WRKDIR}/tenshi.sh ${PREFIX}/etc/rc.d
 
 .include <bsd.port.post.mk>
