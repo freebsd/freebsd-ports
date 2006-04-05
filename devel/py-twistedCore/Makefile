@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	twistedCore
-PORTVERSION=	2.1.0
-PORTREVISION=	1
+PORTVERSION=	2.2.0
 CATEGORIES=	devel net python
 MASTER_SITES=	http://twistedmatrix.com/downloads/Twisted/${PORTVERSION:R}/ \
 		http://tmrc.mit.edu/mirror/twisted/Twisted/${PORTVERSION:R}/

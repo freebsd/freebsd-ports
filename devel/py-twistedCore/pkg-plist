@@ -90,6 +90,27 @@ bin/twistd
 %%S%%/twisted/internet/__init__.py
 %%S%%/twisted/internet/__init__.pyc
 %%S%%/twisted/internet/__init__.pyo
+%%S%%/twisted/internet/_dumbwin32proc.py
+%%S%%/twisted/internet/_dumbwin32proc.pyc
+%%S%%/twisted/internet/_dumbwin32proc.pyo
+%%S%%/twisted/internet/_javaserialport.py
+%%S%%/twisted/internet/_javaserialport.pyc
+%%S%%/twisted/internet/_javaserialport.pyo
+%%S%%/twisted/internet/_pollingfile.py
+%%S%%/twisted/internet/_pollingfile.pyc
+%%S%%/twisted/internet/_pollingfile.pyo
+%%S%%/twisted/internet/_posixserialport.py
+%%S%%/twisted/internet/_posixserialport.pyc
+%%S%%/twisted/internet/_posixserialport.pyo
+%%S%%/twisted/internet/_posixstdio.py
+%%S%%/twisted/internet/_posixstdio.pyc
+%%S%%/twisted/internet/_posixstdio.pyo
+%%S%%/twisted/internet/_win32serialport.py
+%%S%%/twisted/internet/_win32serialport.pyc
+%%S%%/twisted/internet/_win32serialport.pyo
+%%S%%/twisted/internet/_win32stdio.py
+%%S%%/twisted/internet/_win32stdio.pyc
+%%S%%/twisted/internet/_win32stdio.pyo
 %%S%%/twisted/internet/abstract.py
 %%S%%/twisted/internet/abstract.pyc
 %%S%%/twisted/internet/abstract.pyo
@@ -155,6 +176,12 @@ bin/twistd
 %%S%%/twisted/internet/iocpreactor/proactor.py
 %%S%%/twisted/internet/iocpreactor/proactor.pyc
 %%S%%/twisted/internet/iocpreactor/proactor.pyo
+%%S%%/twisted/internet/iocpreactor/process.py
+%%S%%/twisted/internet/iocpreactor/process.pyc
+%%S%%/twisted/internet/iocpreactor/process.pyo
+%%S%%/twisted/internet/iocpreactor/process_waiter.py
+%%S%%/twisted/internet/iocpreactor/process_waiter.pyc
+%%S%%/twisted/internet/iocpreactor/process_waiter.pyo
 %%S%%/twisted/internet/iocpreactor/server.py
 %%S%%/twisted/internet/iocpreactor/server.pyc
 %%S%%/twisted/internet/iocpreactor/server.pyo
@@ -197,21 +224,9 @@ bin/twistd
 %%S%%/twisted/internet/selectreactor.py
 %%S%%/twisted/internet/selectreactor.pyc
 %%S%%/twisted/internet/selectreactor.pyo
-%%S%%/twisted/internet/serialport/__init__.py
-%%S%%/twisted/internet/serialport/__init__.pyc
-%%S%%/twisted/internet/serialport/__init__.pyo
-%%S%%/twisted/internet/serialport/javaserialport.py
-%%S%%/twisted/internet/serialport/javaserialport.pyc
-%%S%%/twisted/internet/serialport/javaserialport.pyo
-%%S%%/twisted/internet/serialport/posixserialport.py
-%%S%%/twisted/internet/serialport/posixserialport.pyc
-%%S%%/twisted/internet/serialport/posixserialport.pyo
-%%S%%/twisted/internet/serialport/serialport.py
-%%S%%/twisted/internet/serialport/serialport.pyc
-%%S%%/twisted/internet/serialport/serialport.pyo
-%%S%%/twisted/internet/serialport/win32serialport.py
-%%S%%/twisted/internet/serialport/win32serialport.pyc
-%%S%%/twisted/internet/serialport/win32serialport.pyo
+%%S%%/twisted/internet/serialport.py
+%%S%%/twisted/internet/serialport.pyc
+%%S%%/twisted/internet/serialport.pyo
 %%S%%/twisted/internet/ssl.py
 %%S%%/twisted/internet/ssl.pyc
 %%S%%/twisted/internet/ssl.pyo
@@ -289,6 +304,93 @@ bin/twistd
 %%S%%/twisted/manhole/ui/spelunk_gnome.py
 %%S%%/twisted/manhole/ui/spelunk_gnome.pyc
 %%S%%/twisted/manhole/ui/spelunk_gnome.pyo
+%%S%%/twisted/pb/__init__.py
+%%S%%/twisted/pb/__init__.pyc
+%%S%%/twisted/pb/__init__.pyo
+%%S%%/twisted/pb/banana.py
+%%S%%/twisted/pb/banana.pyc
+%%S%%/twisted/pb/banana.pyo
+%%S%%/twisted/pb/base32.py
+%%S%%/twisted/pb/base32.pyc
+%%S%%/twisted/pb/base32.pyo
+%%S%%/twisted/pb/broker.py
+%%S%%/twisted/pb/broker.pyc
+%%S%%/twisted/pb/broker.pyo
+%%S%%/twisted/pb/call.py
+%%S%%/twisted/pb/call.pyc
+%%S%%/twisted/pb/call.pyo
+%%S%%/twisted/pb/copyable.py
+%%S%%/twisted/pb/copyable.pyc
+%%S%%/twisted/pb/copyable.pyo
+%%S%%/twisted/pb/crypto.py
+%%S%%/twisted/pb/crypto.pyc
+%%S%%/twisted/pb/crypto.pyo
+%%S%%/twisted/pb/debug.py
+%%S%%/twisted/pb/debug.pyc
+%%S%%/twisted/pb/debug.pyo
+%%S%%/twisted/pb/ipb.py
+%%S%%/twisted/pb/ipb.pyc
+%%S%%/twisted/pb/ipb.pyo
+%%S%%/twisted/pb/negotiate.py
+%%S%%/twisted/pb/negotiate.pyc
+%%S%%/twisted/pb/negotiate.pyo
+%%S%%/twisted/pb/pb.py
+%%S%%/twisted/pb/pb.pyc
+%%S%%/twisted/pb/pb.pyo
+%%S%%/twisted/pb/promise.py
+%%S%%/twisted/pb/promise.pyc
+%%S%%/twisted/pb/promise.pyo
+%%S%%/twisted/pb/referenceable.py
+%%S%%/twisted/pb/referenceable.pyc
+%%S%%/twisted/pb/referenceable.pyo
+%%S%%/twisted/pb/remoteinterface.py
+%%S%%/twisted/pb/remoteinterface.pyc
+%%S%%/twisted/pb/remoteinterface.pyo
+%%S%%/twisted/pb/schema.py
+%%S%%/twisted/pb/schema.pyc
+%%S%%/twisted/pb/schema.pyo
+%%S%%/twisted/pb/slicer.py
+%%S%%/twisted/pb/slicer.pyc
+%%S%%/twisted/pb/slicer.pyo
+%%S%%/twisted/pb/sslverify.py
+%%S%%/twisted/pb/sslverify.pyc
+%%S%%/twisted/pb/sslverify.pyo
+%%S%%/twisted/pb/storage.py
+%%S%%/twisted/pb/storage.pyc
+%%S%%/twisted/pb/storage.pyo
+%%S%%/twisted/pb/test/__init__.py
+%%S%%/twisted/pb/test/__init__.pyc
+%%S%%/twisted/pb/test/__init__.pyo
+%%S%%/twisted/pb/test/common.py
+%%S%%/twisted/pb/test/common.pyc
+%%S%%/twisted/pb/test/common.pyo
+%%S%%/twisted/pb/test/test_banana.py
+%%S%%/twisted/pb/test/test_banana.pyc
+%%S%%/twisted/pb/test/test_banana.pyo
+%%S%%/twisted/pb/test/test_copyable.py
+%%S%%/twisted/pb/test/test_copyable.pyc
+%%S%%/twisted/pb/test/test_copyable.pyo
+%%S%%/twisted/pb/test/test_crypto.py
+%%S%%/twisted/pb/test/test_crypto.pyc
+%%S%%/twisted/pb/test/test_crypto.pyo
+%%S%%/twisted/pb/test/test_negotiate.py
+%%S%%/twisted/pb/test/test_negotiate.pyc
+%%S%%/twisted/pb/test/test_negotiate.pyo
+%%S%%/twisted/pb/test/test_pb.py
+%%S%%/twisted/pb/test/test_pb.pyc
+%%S%%/twisted/pb/test/test_pb.pyo
+%%S%%/twisted/pb/test/test_promise.py
+%%S%%/twisted/pb/test/test_promise.pyc
+%%S%%/twisted/pb/test/test_promise.pyo
+%%S%%/twisted/pb/test/test_schema.py
+%%S%%/twisted/pb/test/test_schema.pyc
+%%S%%/twisted/pb/test/test_schema.pyo
+%%S%%/twisted/pb/test/test_sturdyref.py
+%%S%%/twisted/pb/test/test_sturdyref.pyc
+%%S%%/twisted/pb/test/test_sturdyref.pyo
+%%S%%/twisted/pb/tokens.py
+%%S%%/twisted/pb/tokens.pyc
+%%S%%/twisted/pb/tokens.pyo
 %%S%%/twisted/persisted/__init__.py
 %%S%%/twisted/persisted/__init__.pyc
 %%S%%/twisted/persisted/__init__.pyo
@@ -536,16 +638,6 @@ bin/twistd
 %%S%%/twisted/python/procutils.py
 %%S%%/twisted/python/procutils.pyc
 %%S%%/twisted/python/procutils.pyo
-%%S%%/twisted/python/pymodules/LICENSE-python.txt
-%%S%%/twisted/python/pymodules/UserDictExtras.py
-%%S%%/twisted/python/pymodules/UserDictExtras.pyc
-%%S%%/twisted/python/pymodules/UserDictExtras.pyo
-%%S%%/twisted/python/pymodules/__init__.py
-%%S%%/twisted/python/pymodules/__init__.pyc
-%%S%%/twisted/python/pymodules/__init__.pyo
-%%S%%/twisted/python/pymodules/heapq.py
-%%S%%/twisted/python/pymodules/heapq.pyc
-%%S%%/twisted/python/pymodules/heapq.pyo
 %%S%%/twisted/python/rebuild.py
 %%S%%/twisted/python/rebuild.pyc
 %%S%%/twisted/python/rebuild.pyo
@@ -1007,6 +1099,9 @@ bin/twistd
 %%S%%/twisted/test/threading_latency.py
 %%S%%/twisted/test/threading_latency.pyc
 %%S%%/twisted/test/threading_latency.pyo
+%%S%%/twisted/test/time_helpers.py
+%%S%%/twisted/test/time_helpers.pyc
+%%S%%/twisted/test/time_helpers.pyo
 %%S%%/twisted/trial/NOTES
 %%S%%/twisted/trial/__init__.py
 %%S%%/twisted/trial/__init__.pyc
@@ -1026,18 +1121,15 @@ bin/twistd
 %%S%%/twisted/trial/test/__init__.py
 %%S%%/twisted/trial/test/__init__.pyc
 %%S%%/twisted/trial/test/__init__.pyo
-%%S%%/twisted/trial/test/common.py
-%%S%%/twisted/trial/test/common.pyc
-%%S%%/twisted/trial/test/common.pyo
 %%S%%/twisted/trial/test/detests.py
 %%S%%/twisted/trial/test/detests.pyc
 %%S%%/twisted/trial/test/detests.pyo
 %%S%%/twisted/trial/test/erroneous.py
 %%S%%/twisted/trial/test/erroneous.pyc
 %%S%%/twisted/trial/test/erroneous.pyo
-%%S%%/twisted/trial/test/importErrors.py
-%%S%%/twisted/trial/test/importErrors.pyc
-%%S%%/twisted/trial/test/importErrors.pyo
+%%S%%/twisted/trial/test/mockdoctest.py
+%%S%%/twisted/trial/test/mockdoctest.pyc
+%%S%%/twisted/trial/test/mockdoctest.pyo
 %%S%%/twisted/trial/test/moduletest.py
 %%S%%/twisted/trial/test/moduletest.pyc
 %%S%%/twisted/trial/test/moduletest.pyo
@@ -1045,12 +1137,9 @@ bin/twistd
 %%S%%/twisted/trial/test/novars.py
 %%S%%/twisted/trial/test/novars.pyc
 %%S%%/twisted/trial/test/novars.pyo
-%%S%%/twisted/trial/test/numOfTests.py
-%%S%%/twisted/trial/test/numOfTests.pyc
-%%S%%/twisted/trial/test/numOfTests.pyo
-%%S%%/twisted/trial/test/pyunit.py
-%%S%%/twisted/trial/test/pyunit.pyc
-%%S%%/twisted/trial/test/pyunit.pyo
+%%S%%/twisted/trial/test/packages.py
+%%S%%/twisted/trial/test/packages.pyc
+%%S%%/twisted/trial/test/packages.pyo
 %%S%%/twisted/trial/test/sample.py
 %%S%%/twisted/trial/test/sample.pyc
 %%S%%/twisted/trial/test/sample.pyo
@@ -1060,15 +1149,18 @@ bin/twistd
 %%S%%/twisted/trial/test/suppression.py
 %%S%%/twisted/trial/test/suppression.pyc
 %%S%%/twisted/trial/test/suppression.pyo
+%%S%%/twisted/trial/test/test_assertions.py
+%%S%%/twisted/trial/test/test_assertions.pyc
+%%S%%/twisted/trial/test/test_assertions.pyo
+%%S%%/twisted/trial/test/test_class.py
+%%S%%/twisted/trial/test/test_class.pyc
+%%S%%/twisted/trial/test/test_class.pyo
 %%S%%/twisted/trial/test/test_deferred.py
 %%S%%/twisted/trial/test/test_deferred.pyc
 %%S%%/twisted/trial/test/test_deferred.pyo
 %%S%%/twisted/trial/test/test_doctest.py
 %%S%%/twisted/trial/test/test_doctest.pyc
 %%S%%/twisted/trial/test/test_doctest.pyo
-%%S%%/twisted/trial/test/test_failure_formatting.py
-%%S%%/twisted/trial/test/test_failure_formatting.pyc
-%%S%%/twisted/trial/test/test_failure_formatting.pyo
 %%S%%/twisted/trial/test/test_keyboard.py
 %%S%%/twisted/trial/test/test_keyboard.pyc
 %%S%%/twisted/trial/test/test_keyboard.pyo
@@ -1081,6 +1173,9 @@ bin/twistd
 %%S%%/twisted/trial/test/test_reporter.py
 %%S%%/twisted/trial/test/test_reporter.pyc
 %%S%%/twisted/trial/test/test_reporter.pyo
+%%S%%/twisted/trial/test/test_runner.py
+%%S%%/twisted/trial/test/test_runner.pyc
+%%S%%/twisted/trial/test/test_runner.pyo
 %%S%%/twisted/trial/test/test_script.py
 %%S%%/twisted/trial/test/test_script.pyc
 %%S%%/twisted/trial/test/test_script.pyo
@@ -1090,21 +1185,9 @@ bin/twistd
 %%S%%/twisted/trial/test/test_tests.py
 %%S%%/twisted/trial/test/test_tests.pyc
 %%S%%/twisted/trial/test/test_tests.pyo
-%%S%%/twisted/trial/test/test_trial.py
-%%S%%/twisted/trial/test/test_trial.pyc
-%%S%%/twisted/trial/test/test_trial.pyo
 %%S%%/twisted/trial/test/test_util.py
 %%S%%/twisted/trial/test/test_util.pyc
 %%S%%/twisted/trial/test/test_util.pyo
-%%S%%/twisted/trial/test/timeoutAttr.py
-%%S%%/twisted/trial/test/timeoutAttr.pyc
-%%S%%/twisted/trial/test/timeoutAttr.pyo
-%%S%%/twisted/trial/test/trialdoctest1.py
-%%S%%/twisted/trial/test/trialdoctest1.pyc
-%%S%%/twisted/trial/test/trialdoctest1.pyo
-%%S%%/twisted/trial/test/trialdoctest2.py
-%%S%%/twisted/trial/test/trialdoctest2.pyc
-%%S%%/twisted/trial/test/trialdoctest2.pyo
 %%S%%/twisted/trial/unittest.py
 %%S%%/twisted/trial/unittest.pyc
 %%S%%/twisted/trial/unittest.pyo
@@ -1119,7 +1202,6 @@ bin/twistd
 @dirrm %%S%%/twisted/spread
 @dirrm %%S%%/twisted/scripts
 @dirrm %%S%%/twisted/python/zsh
-@dirrm %%S%%/twisted/python/pymodules
 @dirrm %%S%%/twisted/python
 @dirrm %%S%%/twisted/protocols/mice
 @dirrm %%S%%/twisted/protocols/gps
@@ -1127,9 +1209,10 @@ bin/twistd
 @dirrm %%S%%/twisted/plugins
 @dirrm %%S%%/twisted/persisted/journal
 @dirrm %%S%%/twisted/persisted
+@dirrm %%S%%/twisted/pb/test
+@dirrm %%S%%/twisted/pb
 @dirrm %%S%%/twisted/manhole/ui
 @dirrm %%S%%/twisted/manhole
-@dirrm %%S%%/twisted/internet/serialport
 @dirrm %%S%%/twisted/internet/iocpreactor
 @dirrm %%S%%/twisted/internet/cfsupport
 @dirrm %%S%%/twisted/internet
