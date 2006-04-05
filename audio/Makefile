@@ -265,6 +265,7 @@
     SUBDIR += libmikmod
     SUBDIR += libmodplug
     SUBDIR += libmpcdec
+    SUBDIR += libmpd
     SUBDIR += libmusicbrainz
     SUBDIR += libofa
     SUBDIR += libogg
