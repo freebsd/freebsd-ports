@@ -34,6 +34,37 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ae9fb0d7-c4dc-11da-b2fb-000e0c2e438a">
+    <topic>netpbm -- buffer overflow in pnmtopng</topic>
+    <affects>
+      <package>
+	<name>netpbm</name>
+	<range><lt>10.26</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Ubuntu reports:</p>
+	<blockquote cite="http://www.ubuntulinux.org/support/documentation/usn/usn-210-1">
+	  <p>A buffer overflow was found in the "pnmtopng" conversion
+	    program.  By tricking an user (or automated system) to
+	    process a specially crafted PNM image with pnmtopng, this
+	    could be exploited to execute arbitrary code with the
+	    privileges of the user running pnmtopng.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>15128</bid>
+      <cvename>CAN-2005-2978</cvename>
+      <url>http://www.ubuntulinux.org/support/documentation/usn/usn-210-1</url>
+    </references>
+    <dates>
+      <discovery>2005-10-18</discovery>
+      <entry>2006-04-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d9307a41-c4d7-11da-b2fb-000e0c2e438a">
     <topic>zoo -- stack based buffer overflow</topic>
     <affects>
