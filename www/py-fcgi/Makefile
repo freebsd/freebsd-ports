@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.py
 EXTRACT_ONLY=	#
 
-MAINTAINER=	hollywar@mail.holywar.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python FastCGI interface library
 
 USE_PYTHON=	yes
