@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Compress
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	unfurl@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl class to compress leading blank spaces in web content
 
 PERL_CONFIGURE=	yes
