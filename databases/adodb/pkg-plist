@@ -1,3 +1,4 @@
+%%ADODB_DIR%%/adodb-active-record.inc.php
 %%ADODB_DIR%%/adodb-csvlib.inc.php
 %%ADODB_DIR%%/adodb-datadict.inc.php
 %%ADODB_DIR%%/adodb-error.inc.php
@@ -12,6 +13,7 @@
 %%ADODB_DIR%%/adodb-php4.inc.php
 %%ADODB_DIR%%/adodb-time.inc.php
 %%ADODB_DIR%%/adodb-xmlschema.inc.php
+%%ADODB_DIR%%/adodb-xmlschema03.inc.php
 %%ADODB_DIR%%/adodb.inc.php
 %%ADODB_DIR%%/pivottable.inc.php
 %%ADODB_DIR%%/rsfilter.inc.php
@@ -19,6 +21,7 @@
 %%ADODB_DIR%%/toexport.inc.php
 %%ADODB_DIR%%/tohtml.inc.php
 %%ADODB_DIR%%/xmlschema.dtd
+%%ADODB_DIR%%/xmlschema03.dtd
 %%ADODB_DIR%%/contrib/toxmlrpc.inc.php
 %%ADODB_DIR%%/datadict/datadict-access.inc.php
 %%ADODB_DIR%%/datadict/datadict-db2.inc.php
@@ -56,6 +59,7 @@
 %%ADODB_DIR%%/drivers/adodb-oci805.inc.php
 %%ADODB_DIR%%/drivers/adodb-oci8po.inc.php
 %%ADODB_DIR%%/drivers/adodb-odbc.inc.php
+%%ADODB_DIR%%/drivers/adodb-odbc_db2.inc.php
 %%ADODB_DIR%%/drivers/adodb-odbc_mssql.inc.php
 %%ADODB_DIR%%/drivers/adodb-odbc_oracle.inc.php
 %%ADODB_DIR%%/drivers/adodb-odbtp.inc.php
@@ -127,8 +131,11 @@
 %%ADODB_DIR%%/session/old/crypt.inc.php
 %%ADODB_DIR%%/session/session_schema.xml
 %%ADODB_DIR%%/xsl/convert-0.1-0.2.xsl
+%%ADODB_DIR%%/xsl/convert-0.1-0.3.xsl
 %%ADODB_DIR%%/xsl/convert-0.2-0.1.xsl
+%%ADODB_DIR%%/xsl/convert-0.2-0.3.xsl
 %%ADODB_DIR%%/xsl/remove-0.2.xsl
+%%ADODB_DIR%%/xsl/remove-0.3.xsl
 %%TESTS%%%%ADODB_DIR%%/tests/benchmark.php
 %%TESTS%%%%ADODB_DIR%%/tests/cf~testsessions.php
 %%TESTS%%%%ADODB_DIR%%/tests/client.php
@@ -158,6 +165,7 @@
 %%TESTS%%%%ADODB_DIR%%/tests/tmssql.php
 %%TESTS%%%%ADODB_DIR%%/tests/xmlschema.xml
 %%TESTS%%%%ADODB_DIR%%/tests/xmlschema-mssql.xml
+%%PORTDOCS%%%%DOCSDIR%%/docs-active-record.htm
 %%PORTDOCS%%%%DOCSDIR%%/docs-adodb.htm
 %%PORTDOCS%%%%DOCSDIR%%/docs-datadict.htm
 %%PORTDOCS%%%%DOCSDIR%%/docs-oracle.htm
