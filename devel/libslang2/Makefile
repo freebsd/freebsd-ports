@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libslang2
-PORTVERSION=	2.0.5
+PORTVERSION=	2.0.6
 CATEGORIES=	devel
 MASTER_SITES=	ftp://space.mit.edu/pub/davis/slang/v2.0/ \
 		ftp://ftp.fu-berlin.de/pub/unix/misc/slang/v2.0/ \
@@ -18,7 +18,6 @@ MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Routines for rapid alpha-numeric terminal applications development
 
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
