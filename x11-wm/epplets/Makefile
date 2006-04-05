@@ -7,7 +7,7 @@
 
 PORTNAME=	epplets
 PORTVERSION=	0.7
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	enlightenment
@@ -15,11 +15,11 @@ MASTER_SITE_SUBDIR=	enlightenment
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A collection of Enlightenment dock applications
 
-BUILD_DEPENDS=	enlightenment:${PORTSDIR}/x11-wm/enlightenment
+BUILD_DEPENDS=	e16:${PORTSDIR}/x11-wm/enlightenment
 LIB_DEPENDS=	cdaudio.1:${PORTSDIR}/audio/libcdaudio \
 		epplet.1:${PORTSDIR}/x11-wm/libepplet
 RUN_DEPENDS=	import:${PORTSDIR}/graphics/ImageMagick \
-		enlightenment:${PORTSDIR}/x11-wm/enlightenment
+		e16:${PORTSDIR}/x11-wm/enlightenment
 
 USE_X_PREFIX=	yes
 USE_GNOME=	esound lthack
