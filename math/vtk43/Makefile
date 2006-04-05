@@ -50,7 +50,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}${PKGNAMESUFFIX}-build
 
 BUILD_DEPENDS+=	${CMAKE}:${PORTSDIR}/devel/cmake
 
-LIB_DEPENDS+=	expat.5:${PORTSDIR}/textproc/expat2 \
+LIB_DEPENDS+=	expat.[5-6]:${PORTSDIR}/textproc/expat2 \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
