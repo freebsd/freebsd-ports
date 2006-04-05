@@ -7,6 +7,7 @@
 
 PORTNAME=	Text-Aspell
 PORTVERSION=	0.05
+PORTREVISION=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Text
@@ -24,4 +25,10 @@ CONFIGURE_ARGS+=INC=-I${LOCALBASE}/include \
 
 MAN3=		Text::Aspell.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500601
+IGNORE=		requires perl 5.6.1 or later
+.endif
+
+.include <bsd.port.post.mk>

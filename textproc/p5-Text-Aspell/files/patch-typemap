@@ -1,0 +1,10 @@
+--- typemap.orig	Thu Feb  2 21:07:25 2006
++++ typemap	Thu Feb  2 21:07:31 2006
+@@ -17,7 +17,6 @@
+ 
+ O_OBJECT
+         if( sv_isobject($arg) && (SvTYPE(SvRV($arg)) == SVt_PVMG) )
+-#               $var = ($type)SvIV((SV*)SvRV( $arg ));
+                 $var = INT2PTR ($type, SvIV (SvRV ($arg)));
+         else{
+                 warn( \"${Package}::$func_name() -- $var is not a blessed SV reference\" );
