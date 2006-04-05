@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.cse.cuhk.edu.hk/pub/gnu/gnu/which/ \
 		http://voodoo.bawue.com/download/
 DISTNAME=	which-${PORTVERSION}
 
-MAINTAINER=	jeremy@external.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU Which - Everything you never wanted in a which
 
 GNU_CONFIGURE=	yes

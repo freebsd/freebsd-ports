@@ -12,7 +12,7 @@ MASTER_SITE_SUBDIR=	perl-gps
 PKGNAMEPREFIX=	p5-
 DISTNAME=	perl-GPS-${PORTVERSION}
 
-MAINTAINER=	jeremy@external.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl interface to GPS receivers
 
 PERL_CONFIGURE=	YES

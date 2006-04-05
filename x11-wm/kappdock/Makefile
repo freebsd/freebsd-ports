@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.Informatik.Uni-Oldenburg.DE/~bigboss/kappdock/
 DISTNAME=	${PORTNAME}-0.46-1
 WRKSRC=		${WRKDIR}/${PORTNAME}-0.46
 
-MAINTAINER=	jeremy@external.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A dock-like applet for KDE3
 
 USE_GETTEXT=	yes

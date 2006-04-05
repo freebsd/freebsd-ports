@@ -12,7 +12,7 @@ CATEGORIES=	sysutils gnome
 MASTER_SITES=	http://ipsc.sourceforge.net/dist/ipsc/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	jeremy@external.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An IP Subnet Calculator
 
 BUILD_DEPENDS=	${PRIPS_WRKSRC}/prips.o:${.CURDIR}/../prips:build

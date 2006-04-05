@@ -17,7 +17,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	will
 DISTNAME=	mage-001120
 
-MAINTAINER=	jeremy@external.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A molecular visualization program with special functions
 
 USE_MOTIF=	YES

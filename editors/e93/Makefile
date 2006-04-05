@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	editors
 DISTNAME=	${PORTNAME}-1.3r2X
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	jeremy@external.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A nifty editor based on Tcl/Tk
 
 LIB_DEPENDS=	tcl82.1:${PORTSDIR}/lang/tcl82 \

@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/G/GC/GCARLS
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	jeremy@external.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl5 module for reading .ini-style configuration files
 
 PERL_CONFIGURE=	YES
