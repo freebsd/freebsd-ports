@@ -9,22 +9,23 @@ PORTNAME=	beonex
 PORTVERSION=	0.8.2
 PORTREVISION=	2
 CATEGORIES=	www linux
-MASTER_SITES=	\
-http://ftp.ibiblio.org/pub/packages/infosystems/WWW/clients/beonex/communicator/0.8/\
-ftp://ftp.ibiblio.org/pub/packages/infosystems/WWW/clients/beonex/communicator/0.8/
+MASTER_SITES=	http://ftp.ibiblio.org/pub/packages/infosystems/WWW/clients/beonex/communicator/0.8/ \
+		ftp://ftp.ibiblio.org/pub/packages/infosystems/WWW/clients/beonex/communicator/0.8/
 PKGNAMEPREFIX=	linux-
 DISTNAME=	beonex-comm-${PORTVERSION}-stable-1-linux-i686
+
+FORBIDDEN=	Security issues. From http://www.beonex.com/ 'The currently available Beonex\
+		Communicator 0.8 builds have several known security bugs'
 
 PATCH_SITES=	${MASTER_SITE_LOCAL}
 PATCH_SITE_SUBDIR=trevor
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=Browser, HTML editor, mail and news client for use with Linux plugins
+COMMENT=	Browser, HTML editor, mail and news client for use with Linux plugins
 
-RUN_DEPENDS=	\
-	${LINUXBASE}/usr/lib/libjpeg.so.62.0.0:${PORTSDIR}/graphics/linux-jpeg \
-	${LINUXBASE}/usr/lib/libpng.so.2.1.0.16:${PORTSDIR}/graphics/linux-png10 \
-	${LINUXBASE}/usr/lib/libgtk-1.2.so.0:${PORTSDIR}/x11-toolkits/linux-gtk
+RUN_DEPENDS=	${LINUXBASE}/usr/lib/libjpeg.so.62.0.0:${PORTSDIR}/graphics/linux-jpeg \
+		${LINUXBASE}/usr/lib/libpng.so.2.1.0.16:${PORTSDIR}/graphics/linux-png10 \
+		${LINUXBASE}/usr/lib/libgtk-1.2.so.0:${PORTSDIR}/x11-toolkits/linux-gtk
 
 NO_BUILD=	yes
 ONLY_FOR_ARCHS=	i386
