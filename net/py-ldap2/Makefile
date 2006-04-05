@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	ldap2
-PORTVERSION=	2.0.10
+PORTVERSION=	2.0.11
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	python-ldap
@@ -19,18 +19,17 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 USE_OPENLDAP=	yes
 USE_REINPLACE=	yes
-WANT_OPENLDAP_VER=	22
 
-REPLACE_ARGS=	-e 's=/opt/openldap-OPENLDAP_REL_ENG_2_3/include=${LOCALBASE}/include='
+REPLACE_ARGS=	-e 's=/usr/local/openldap-REL_ENG_2_1/lib=${LOCALBASE}/lib=' \
+		-e 's=/usr/local/openldap-REL_ENG_2_1/include=${LOCALBASE}/include='
 
 .if defined(WITH_SASL)
 WANT_OPENLDAP_SASL=	yes
-REPLACE_ARGS+=	-e 's=/opt/sasl/include/sasl=${LOCALBASE}/include/sasl=' \
-		-e 's=/opt/openldap-OPENLDAP_REL_ENG_2_3/lib=${LOCALBASE}/lib ${LOCALBASE}/lib/sasl2='
-CONFLICTS+=	openldap22-client-2.*
+REPLACE_ARGS+=	-e 's=/usr/local/cyrus-sasl/lib=${LOCALBASE}/lib/sasl2=' \
+		-e 's=/usr/local/cyrus-sasl/include=${LOCALBASE}/include/sasl2='
+CONFLICTS+=	openldap2[23]-client-2.*
 .else
-REPLACE_ARGS+=	-e 's=ldap_r lber ssl crypto sasl2=ldap_r lber ssl crypto=' \
-		-e 's=/opt/openldap-OPENLDAP_REL_ENG_2_3/lib=${LOCALBASE}/lib='
+REPLACE_ARGS+=	-e 's=ldap_r lber sasl2 ssl crypto=ldap_r lber ssl crypto='
 .endif
 
 pre-everything::
