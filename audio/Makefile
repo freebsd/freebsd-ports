@@ -413,6 +413,7 @@
     SUBDIR += py-ogg
     SUBDIR += py-openal
     SUBDIR += py-sdl_mixer
+    SUBDIR += py-shellac
     SUBDIR += py-vorbis
     SUBDIR += py-xmms
     SUBDIR += py-xmms2
