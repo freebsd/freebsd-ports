@@ -16,7 +16,7 @@ MASTER_SITES=	ftp://ftp.lprng.com/pub/%SUBDIR%/ \
 MASTER_SITE_SUBDIR=	LPRng/LPRng
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	papowell@astart.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An Enhanced Printer Spooler
 
 LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm

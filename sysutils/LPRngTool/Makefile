@@ -16,7 +16,7 @@ MASTER_SITES=	ftp://ftp.lprng.com/pub/%SUBDIR%/ \
 MASTER_SITE_SUBDIR=	LPRng/LPRngTool
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	papowell@astart.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Configuration Tool for LPRng
 
 USE_GHOSTSCRIPT_AFPL=	yes
