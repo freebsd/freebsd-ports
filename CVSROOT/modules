@@ -10857,7 +10857,6 @@ py-twistedRunner	ports/devel/py-twistedRunner
 py-twistedWeb	ports/www/py-twistedWeb
 py-twistedWeb2	ports/www/py-twistedWeb2
 py-twistedWords	ports/net-im/py-twistedWords
-py-twistedXish	ports/devel/py-twistedXish
 py-twofish	ports/security/py-twofish
 py-ui		ports/devel/py-ui
 py-unit		ports/devel/py-unit
