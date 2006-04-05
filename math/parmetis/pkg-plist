@@ -1,8 +1,8 @@
 include/parmetis/parmetis.h
 lib/parmetis/libmetis.a
 lib/parmetis/libparmetis.a
-share/doc/ParMETIS/manual.ps
-share/doc/ParMETIS/manual.pdf
+%%DOCSDIR%%/manual.ps
+%%DOCSDIR%%/manual.pdf
 @dirrm include/parmetis
 @dirrm lib/parmetis
-@dirrm share/doc/ParMETIS
+@dirrm %%DOCSDIR%%

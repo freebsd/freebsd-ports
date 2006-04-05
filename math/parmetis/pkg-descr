@@ -7,3 +7,5 @@ numerical simulations. The algorithms implemented in ParMETIS are
 based on the parallel multilevel k-way graph-partitioning algorithms
 described in [KK95d], [KK96], [KK97], and the adaptive repartitioning
 algorithms described in [SKK97a], [SKK97b], [SK+98], and [SKK98].
+
+WWW: http://glaros.dtc.umn.edu/gkhome/metis/parmetis/overview
