@@ -34,6 +34,36 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="99015cf5-c4dd-11da-b2fb-000e0c2e438a">
+    <topic>mediawiki -- hardcoded placeholder string security bypass
+      vulnerability</topic>
+    <affects>
+      <package>
+	<name>mediawiki</name>
+	<range><lt>1.5.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The mediawiki development team reports a vulnerability
+	 within the mediawiki application.  The vulnerability is
+	 caused by improper checking of inline style attributes.  This
+	 could result in the execution of arbitrary javascript code in
+	 Microsoft Internet Explorer.  It appears that other browsers
+	 are not affected by this vulnerability.</p>
+      </body>
+    </description>
+    <references>
+      <bid>16032</bid>
+      <cvename>CAN-2005-4501</cvename>
+      <url>http://sourceforge.net/project/shownotes.php?release_id=379951</url>
+    </references>
+    <dates>
+      <discovery>2005-12-22</discovery>
+      <entry>2006-04-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ae9fb0d7-c4dc-11da-b2fb-000e0c2e438a">
     <topic>netpbm -- buffer overflow in pnmtopng</topic>
     <affects>
