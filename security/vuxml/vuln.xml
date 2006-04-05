@@ -34,6 +34,40 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="b5fc63ad-c4c3-11da-9699-00123ffe8333">
+    <topic>dia -- XFig Import Plugin Buffer Overflow</topic>
+    <affects>
+      <package>
+	<name>dia</name>
+	<name>dia-gnome</name>
+	<range><gt>0.86_1</gt><lt>0.94_6,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/19469/">
+	  <p>Some vulnerabilities have been reported in Dia, which
+	    potentially can be exploited by malicious people to
+	    compromise a user's system.</p>
+	  <p>The vulnerabilities are caused due to boundary errors
+	    within the XFig import plugin. This can be exploited to
+	    cause buffer overflows and may allow arbitrary code
+	    execution when a specially-crafted FIG file is imported.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-1550</cvename>
+      <url>http://secunia.com/advisories/19469/</url>
+      <mlist msgid="1143662924.6460.60.camel@linux.site">http://mail.gnome.org/archives/dia-list/2006-March/msg00149.html</mlist>
+    </references>
+    <dates>
+      <discovery>2006-03-31</discovery>
+      <entry>2006-04-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="be4ccb7b-c48b-11da-ae12-0002b3b60e4c">
     <topic>openvpn -- LD_PRELOAD code execution on client through malicious or compromised server</topic>
     <affects>
