@@ -1,13 +1,9 @@
-OpenH323 is a multi-platform H323 Video Conferencing library.
+OPAL is the "next generation" of OpenH323 that has a new architecture. Not only
+does it support H.323 and SIP, but new VoIP protocols or devices can be added
+very easily. It is being actively developed and is used by several projects
+such as Ekiga (http://www.ekiga.org)
 
-This is used to make H323 Video Conferencing applications
-like GnomeMeeting and ohphone. (both in the FreeBSD ports tree)
+BTW: OPAL is an acronym for Open Phone Abstraction Library, but that is not
+really important :)
 
-The library includes a sample program called simph323.
-
-The OpenH323 library makes use of PWLib. http://www.equival.com
-PWLib is a multi-platform code library that can be used to write
-applications that will compile and run on the BSD Unixes, Windows, Linux
-and a few other Unix variants. It was developed by Equivalence Ltd Pty.
-
-WWW: http://www.openh323.org/
+WWW: http://www.voxgratia.org/
