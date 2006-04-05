@@ -11641,6 +11641,7 @@ rubygem-activerecord	ports/databases/rubygem-activerecord
 rubygem-activesupport	ports/devel/rubygem-activesupport
 rubygem-capistrano	ports/sysutils/rubygem-capistrano
 rubygem-colortools	ports/print/rubygem-colortools
+rubygem-event-loop	ports/devel/rubygem-event-loop
 rubygem-memcache-client	ports/databases/rubygem-memcache-client
 rubygem-needle	ports/devel/rubygem-needle
 rubygem-net-sftp	ports/security/rubygem-net-sftp
