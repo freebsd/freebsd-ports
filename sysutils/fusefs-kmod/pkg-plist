@@ -1,4 +1,3 @@
-etc/rc.d/fuse.sh
 modules/fuse.ko
 sbin/mount_fusefs
 @unexec kldxref %D/modules
