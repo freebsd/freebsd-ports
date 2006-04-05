@@ -1,5 +1,7 @@
+%%DATADIR%%/cdrom.iso
 %%DATADIR%%/disk.dsk
-%%DATADIR%%/gag.iso
 %%PORTDOCS%%%%DOCSDIR%%/install.txt
+%%PORTDOCS%%%%DOCSDIR%%/keyboard.txt
+%%PORTDOCS%%%%DOCSDIR%%/uninstal.txt
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
