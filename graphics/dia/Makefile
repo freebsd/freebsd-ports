@@ -7,7 +7,7 @@
 
 PORTNAME=	dia
 PORTVERSION=	0.94
-PORTREVISION=	5
+PORTREVISION=	6
 PORTEPOCH=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
@@ -47,7 +47,7 @@ USE_GNOME+=		libgnomeui
 CONFIGURE_ARGS+=	--enable-gnome --enable-bonobo
 PKGNAMESUFFIX=		-gnome
 .else
-USE_REINPLACE=	yes
+
 post-patch:
 	@${FIND} ${WRKSRC} -name Makefile.in | \
 		${XARGS} ${REINPLACE_CMD} -e \
