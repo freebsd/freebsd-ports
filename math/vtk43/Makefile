@@ -20,7 +20,7 @@ CATEGORIES=	math graphics
 MASTER_SITES=	http://ovt.irfu.se/vtk/files/
 DISTFILES?=	VTK-${PORTVERSION}-cvs${CVSDATE}.tar.gz
 
-MAINTAINER=	ko@irfu.se
+MAINTAINER=	bacon@smithers.neuro.mcw.edu
 COMMENT?=	The Visualization Toolkit shared libs
 
 USE_REINPLACE=	yes
