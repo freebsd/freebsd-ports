@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	utilities
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	papowell@astart.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pic format to fig format converter
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

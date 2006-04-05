@@ -16,7 +16,7 @@ MASTER_SITES=	ftp://ftp.lprng.com/pub/%SUBDIR%/ \
 MASTER_SITE_SUBDIR=	LPRng/ifhp
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	papowell@astart.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IFHP - A highly configurable print filter for LPRng
 
 GNU_CONFIGURE=	yes
