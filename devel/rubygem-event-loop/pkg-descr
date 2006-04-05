@@ -1,0 +1,4 @@
+event-loop is a simple signal system and an event loop that uses
+said simple signal system.
+
+WWW: http://www.brockman.se/software/ruby-event-loop/

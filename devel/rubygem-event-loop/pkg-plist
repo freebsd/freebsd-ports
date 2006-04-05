@@ -1,0 +1,17 @@
+%%CACHE_DIR%%/event-loop-%%PORTVERSION%%.gem
+%%GEMS_DIR%%/event-loop-%%PORTVERSION%%/AUTHORS
+%%GEMS_DIR%%/event-loop-%%PORTVERSION%%/COPYING
+%%GEMS_DIR%%/event-loop-%%PORTVERSION%%/ChangeLog
+%%GEMS_DIR%%/event-loop-%%PORTVERSION%%/GFDL
+%%GEMS_DIR%%/event-loop-%%PORTVERSION%%/README
+%%GEMS_DIR%%/event-loop-%%PORTVERSION%%/README.utf-8
+%%GEMS_DIR%%/event-loop-%%PORTVERSION%%/Rakefile
+%%GEMS_DIR%%/event-loop-%%PORTVERSION%%/gemspec.rb
+%%GEMS_DIR%%/event-loop-%%PORTVERSION%%/lib/event-loop.rb
+%%GEMS_DIR%%/event-loop-%%PORTVERSION%%/lib/event-loop/better-definers.rb
+%%GEMS_DIR%%/event-loop-%%PORTVERSION%%/lib/event-loop/event-loop.rb
+%%GEMS_DIR%%/event-loop-%%PORTVERSION%%/lib/event-loop/signal-system.rb
+%%SPEC_DIR%%/event-loop-%%PORTVERSION%%.gemspec
+@dirrm %%GEMS_DIR%%/event-loop-%%PORTVERSION%%/lib/event-loop
+@dirrm %%GEMS_DIR%%/event-loop-%%PORTVERSION%%/lib
+@dirrm %%GEMS_DIR%%/event-loop-%%PORTVERSION%%
