@@ -9,9 +9,8 @@ PORTNAME=	xv
 PORTVERSION=	3.10a
 PORTREVISION=	5
 CATEGORIES+=	graphics
-MASTER_SITES=	ftp://ftp.cis.upenn.edu/pub/xv/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	shige/xv
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	../distfiles/xv
 # Workaround: pdf.patch, mp-tiff-patch, and xv-png-1.2d.patch must be fetched
 #		from MASTER_SITE_LOCAL.
 #		These are modified for applying after jp-extension-patch.
@@ -22,7 +21,6 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTFILES:N*patch}
 
-PATCH_SITES=	ftp://ftp.cis.upenn.edu/pub/xv/
 # Note: xpm.patch appears to already be in xvdir.c
 PATCHFILES=	${DISTNAME}.JPEG-patch ${DISTNAME}.TIFF-patch \
 		croppad.patch grabpatch vispatch \
@@ -63,7 +61,6 @@ post-patch:
 .if defined(NOMAN)
 	${PERL} -pi.orig -e 's,^InstallManPage.*$$,/\* $$& \*/,' ${WRKSRC}/Imakefile
 .endif
-
 
 post-install:
 .if !defined(NOPORTDOCS)
