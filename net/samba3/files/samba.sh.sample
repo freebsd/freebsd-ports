@@ -88,6 +88,7 @@ command_args="-s ${samba_config}"
 
 load_rc_config $name
 run_rc_command "$1"
+_rc_restart_done=false
 
 # smbd
 name=smbd
@@ -103,6 +104,7 @@ command_args="-s ${samba_config}"
 
 load_rc_config $name
 run_rc_command "$1"
+%%WINBIND%%_rc_restart_done=false
 %%WINBIND%%
 %%WINBIND%%# winbindd
 %%WINBIND%%name=winbindd

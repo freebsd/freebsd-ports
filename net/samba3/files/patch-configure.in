@@ -1,6 +1,6 @@
---- configure.in.orig	Mon Jan 30 15:45:07 2006
-+++ configure.in	Sun Feb 19 07:00:42 2006
-@@ -967,6 +967,21 @@
+--- configure.in.orig	Mon Feb 20 21:33:23 2006
++++ configure.in	Sat Feb 25 05:34:56 2006
+@@ -968,6 +968,21 @@
     AC_DEFINE(HAVE_SIG_ATOMIC_T_TYPE,1,[Whether we have the atomic_t variable type])
  fi
  
@@ -22,3 +22,25 @@
  AC_CACHE_CHECK([for struct timespec type],samba_cv_struct_timespec, [
      AC_TRY_COMPILE([
  #include <sys/types.h>
+@@ -1408,7 +1423,6 @@
+ 			DYNEXP="-Wl,--export-dynamic"
+ 			PICFLAGS="-fPIC"
+ 			SONAMEFLAG="-Wl,-soname="
+-			SONAMEVERSIONSUFFIX=".2"
+ 			AC_DEFINE(STAT_ST_BLOCKSIZE,512)
+ 			;;
+ 		*solaris*) AC_DEFINE(SUNOS5,1,[Whether the host os is solaris])
+@@ -4911,11 +4925,13 @@
+ 
+ case "$host_os" in
+ 	*linux*)
++		SONAMEVERSIONSUFFIX=".2"
+ 		WINBIND_NSS_EXTRA_OBJS="nsswitch/winbind_nss_linux.o"
+ 		;;
+ 	*freebsd[[5-9]]*)
+ 		# FreeBSD winbind client is implemented as a wrapper around
+ 		# the Linux version.
++		SONAMEVERSIONSUFFIX=".1"
+ 		WINBIND_NSS_EXTRA_OBJS="nsswitch/winbind_nss_freebsd.o \
+ 		    nsswitch/winbind_nss_linux.o"
+ 		WINBIND_NSS="nsswitch/nss_winbind.$SHLIBEXT"
