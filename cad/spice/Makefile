@@ -7,20 +7,19 @@
 
 PORTNAME=	spice
 PORTVERSION=	3f5.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	cad
-MASTER_SITES=	ftp://ic.eecs.berkeley.edu/pub/Spice3/:sources	\
+MASTER_SITES=	http://embedded.eecs.berkeley.edu/pubs/downloads/spice/:sources	 \
 		ftp://ic.eecs.berkeley.edu/pub/Spice3/um.3f3.ps/:docs
-DISTFILES=	sp3f4.kit${EXTRACT_SUFX}:sources	\
+DISTFILES=	spice3f5${EXTRACT_SUFX}:sources	\
 		cp.ps:docs toc.ps:docs doc.ps:docs
 DIST_SUBDIR=	spice
-EXTRACT_ONLY=	sp3f4.kit${EXTRACT_SUFX}
+EXTRACT_ONLY=	spice3f5${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A general-purpose circuit simulation program
 
-USE_REINPLACE=	yes
-NO_WRKSUBDIR=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}3f5
 MAN1=		sconvert.1 nutmeg.1 spice.1
 MAN3=		mfb.3
 MAN5=		mfbcap.5
@@ -29,8 +28,8 @@ MAKEFILE=	${FILESDIR}/Makefile
 MAKE_ENV+=	STRIP_CMD=${STRIP_CMD}
 
 .ifdef WITHOUT_X11
-COMMENT=	A general-purpose circuit simulation program (non-X11 version)
 PKGNAMESUFFIX=	-without-x11
+COMMENT=	A general-purpose circuit simulation program (non-X11 version)
 MAKE_ARGS+=	-DWITHOUT_X11
 .else
 USE_XLIB=	yes

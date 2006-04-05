@@ -4,15 +4,15 @@ bin/sconvert
 bin/help
 bin/proc2mod
 bin/multidec
-share/spice/helpdir/spice.txt
-share/spice/helpdir/spice.idx
-share/spice/scripts/setplot
-share/spice/scripts/spinit
-share/spice/mfbcap
-share/spice/news
-@dirrm share/spice/helpdir
-@dirrm share/spice/scripts
-@dirrm share/spice
+%%DATADIR%%/helpdir/spice.txt
+%%DATADIR%%/helpdir/spice.idx
+%%DATADIR%%/scripts/setplot
+%%DATADIR%%/scripts/spinit
+%%DATADIR%%/mfbcap
+%%DATADIR%%/news
+@dirrm %%DATADIR%%/helpdir
+@dirrm %%DATADIR%%/scripts
+@dirrm %%DATADIR%%
 %%PORTDOCS%%%%DOCSDIR%%/spice3f3.ps.gz
 %%PORTDOCS%%%%EXAMPLESDIR%%/bjtnoise.cir
 %%PORTDOCS%%%%EXAMPLESDIR%%/bsim1tst.cir

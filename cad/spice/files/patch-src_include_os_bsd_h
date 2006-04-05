@@ -1,18 +1,20 @@
 --- src/include/os_bsd.h.orig	Sat Apr 24 18:09:46 1993
-+++ src/include/os_bsd.h	Thu Jul 17 01:26:36 2003
-@@ -8,18 +8,31 @@
++++ src/include/os_bsd.h	Mon Apr  3 21:27:21 2006
+@@ -8,18 +8,32 @@
  
  #include "os_unix.h"
  
 +#ifdef __FreeBSD__
++#define HAS_STDLIB		/* #include <stdlib.h> for libc defs	*/
 +#define HAS_SYSVDIRS		/* <sys/dirent.h>			*/
 +#define HAS_INTWAITSTATUS	/* wait(3)  takes an int *, not a union */
++#define HAS_STRINGS		/* use <strings.h> instead of <string.h> */
++#define HAS_STRCHR		/* strchr( ) instead of index( )	*/
 +#else
  #define HAS_NO_ATRIGH_DECL	/* if asinh( ) is not in math.h		*/
 -#define HAS_ATRIGH		/* acosh( ), asinh( ), atanh( )         */
  #define HAS_FTIME		/* ftime( ), <times.h>			*/
 +#define HAS_INDEX		/* index( ) instead of strchr( )	*/
-+#define HAS_STRINGS		/* use <strings.h> instead of <string.h> */
 +#define HAS_BSDDIRS		/* <sys/dir.h>				*/
 +#endif
 +
@@ -34,5 +36,4 @@
 +#define HAS_BSDSOCKETS		/* <net/inet.h>, socket( ), etc.	*/
 +#define HAS_BSDTIME		/* gettimeofday( ) return time		*/
 +#define HAS_FLOAT_H		/* float.h				*/
-+#define HAS_STRCHR		/* strchr( ) instead of index( )	*/
 +#endif
