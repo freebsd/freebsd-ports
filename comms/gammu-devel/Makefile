@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	http://www.mwiacek.com/zips/gsm/gammu/stable/1_0x/
 
-MAINTAINER=	kirill@solaris.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU All Mobile Management Utilities
 
 MAN1=		gammu.1
