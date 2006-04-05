@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	openh323
-PORTVERSION=	1.17.3
-PORTREVISION=	2
+PORTVERSION=	1.18.0
 CATEGORIES=	net
 MASTER_SITES=	http://www.voxgratia.org/releases/
 DISTNAME=	${PORTNAME}-v${PORTVERSION:S/./_/g}-src-
