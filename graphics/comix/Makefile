@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	comix
-PORTVERSION=	2.9
+PORTVERSION=	3.0
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -57,7 +57,8 @@ do-install:
 		${PREFIX}/etc/gconf/schemas/
 .else
 	@(cd ${WRKSRC} ; \
-		${PYTHON_CMD} install.py install --installdir ${PREFIX} --no-mime)
+		${PYTHON_CMD} install.py install \
+			--installdir ${PREFIX} --no-mime)
 .endif
 
 post-install:

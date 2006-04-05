@@ -5,8 +5,10 @@ share/applications/comix.desktop
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/README
 share/icons/hicolor/48x48/apps/comix.png
+share/icons/hicolor/scalable/apps/comix.svg
 share/locale/de/LC_MESSAGES/comix.mo
 share/locale/es/LC_MESSAGES/comix.mo
+share/locale/it/LC_MESSAGES/comix.mo
 share/locale/pt_BR/LC_MESSAGES/comix.mo
 share/locale/sv/LC_MESSAGES/comix.mo
 share/locale/zh_CN/LC_MESSAGES/comix.mo
