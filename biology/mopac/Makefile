@@ -17,7 +17,7 @@ PATCH_SITES=	http://www.ccl.net/cca/software/LINUX/mopac7/old-version-95.06.21/
 PATCHFILES=	mopac7-linux.diff.Z
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	rmiya@cc.hirosaki-u.ac.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Semi-empirical (MNDO, etc.) molecular orbital calculation
 
 USE_GMAKE=	yes

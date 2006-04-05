@@ -19,7 +19,7 @@ MASTER_SITES=	ftp://ftp.ifarchive.org/if-archive/games/source/ \
 		http://www.vaxdungeon.com/Archive/dungeon/
 DISTFILES=	dungn27s.zip dungn32b.zip
 
-MAINTAINER=	rmiya@cc.hirosaki-u.ac.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Text adventure game of ZORK
 
 EXTRACT_ONLY=	dungn27s.zip

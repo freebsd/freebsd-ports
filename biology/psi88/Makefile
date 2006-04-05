@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.ccl.net/cca/software/SOURCES/FORTRAN/psi88/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	rmiya@cc.hirosaki-u.ac.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plotting wavefunctions (molecular orbitals) in 3D
 
 pre-patch:

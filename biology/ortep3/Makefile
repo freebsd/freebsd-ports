@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.ccl.net/cca/software/SOURCES/FORTRAN/ortep/:Z \
 DISTFILES=	ortep.tar.Z:Z ortep.f:f
 EXTRACT_ONLY=	ortep.tar.Z
 
-MAINTAINER=	rmiya@cc.hirosaki-u.ac.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Oak Ridge Thermal Ellipsoid Plot Program for Crystal Structure
 
 .if defined(WITH_PGPLOT)
