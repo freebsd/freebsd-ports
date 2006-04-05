@@ -1,4 +1,5 @@
 Package Frontend is a ncurses based, graphical front-end to manage
 the FreeBSD ports collection.
 
-Author: Sulev-Madis Silber <madis555@hot.ee>
+Author:	Sulev-Madis Silber <madis555@hot.ee>
+WWW:	http://ketas.life.ee/pkgfe
