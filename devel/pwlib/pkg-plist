@@ -155,8 +155,8 @@ include/ptlib/videoio1394dc.h
 lib/libpt.so
 lib/libpt_r.so
 lib/libpt_r.so.1
-lib/libpt_r.so.1.9
-lib/libpt_r.so.1.9.2
+lib/libpt_r.so.1.10
+lib/libpt_r.so.1.10.0
 lib/pwlib/devices/sound/oss_pwplugin.so
 %%BSDVIDEO%%lib/pwlib/devices/videoinput/bsdvideo_pwplugin.so
 @dirrm lib/pwlib/devices/sound

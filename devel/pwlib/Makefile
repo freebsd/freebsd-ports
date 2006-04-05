@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pwlib
-PORTVERSION=	1.9.2
-PORTREVISION=	4
+PORTVERSION=	1.10.0
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.voxgratia.org/releases/
@@ -31,11 +30,11 @@ INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>
 
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -O1 -I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -O1 -I${WRKSRC}/include -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}" \
 		CFLAGS="${CFLAGS} -O1"
-MAKE_ENV=	CPPFLAGS="${CPPFLAGS} -O1 -I${LOCALBASE}/include" \
+MAKE_ENV=	CPPFLAGS="${CPPFLAGS} -O1 -I${WRKSRC}/include -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" \
 		STDCCFLAGS+="-I${LOCALBASE}" \
 		CFLAGS="${CFLAGS} -O1"
@@ -84,6 +83,13 @@ CFLAGS+=	-fPIC
 PLIST_SUB+=	BSDVIDEO=""
 .else
 PLIST_SUB+=	BSDVIDEO="@comment "
+.endif
+
+post-patch:
+.if ${OSVERSION} < 500000
+	@${REINPLACE_CMD} -e 's|<stdint.h>|<inttypes.h>|' \
+		${WRKSRC}/src/ptlib/common/tinyjpeg.cxx \
+		${WRKSRC}/src/ptlib/common/jidctflt.cxx
 .endif
 
 .include <bsd.port.post.mk>
