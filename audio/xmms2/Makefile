@@ -7,7 +7,7 @@
 
 PORTNAME=	xmms2
 PORTVERSION=	0.2.d.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -165,10 +165,6 @@ PLIST_SUB+=	MDNS="@comment "
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=	Does not build on FreeBSD < 5.x
-.endif
 
 pre-everything::
 .if defined(WITH_SAMBA)

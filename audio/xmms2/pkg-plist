@@ -66,6 +66,7 @@ lib/xmms2/libxmms_replaygain.so
 %%SID%%lib/xmms2/libxmms_sid.so
 lib/xmms2/libxmms_vorbisfile.so
 lib/xmms2/libxmms_wave.so
+libdata/pkgconfig/xmms2-client-cpp.pc
 libdata/pkgconfig/xmms2-client-ecore.pc
 libdata/pkgconfig/xmms2-client-glib.pc
 libdata/pkgconfig/xmms2-client.pc
