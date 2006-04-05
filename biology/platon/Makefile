@@ -11,7 +11,7 @@ CATEGORIES=	biology
 MASTER_SITES=	ftp://xraysoft.chem.uu.nl/pub/unix/
 DISTNAME=	platon
 
-MAINTAINER=	rmiya@cc.hirosaki-u.ac.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for viewing molecular/crystallographic structures
 
 # PLATON may be used free of charge by the academic community under
