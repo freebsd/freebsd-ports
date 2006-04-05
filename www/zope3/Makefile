@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	zope
-PORTVERSION=	3.2.0
+PORTVERSION=	3.2.1
 CATEGORIES=	www python zope
-MASTER_SITES=	http://www.zope.org/Products/Zope3/${PORTVERSION}final/
+MASTER_SITES=	http://www.zope.org/Products/Zope3/${PORTVERSION}/
 DISTNAME=	Zope-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	zope
@@ -30,11 +30,12 @@ SZOPEBASEDIR?=		${WEBBASEDIR}/Zope3
 
 # Do not change anything below this line.
 
-ZOPEBASEDIR=		${PREFIX}/${SZOPEBASEDIR}
+ZOPEBASEDIR=	${PREFIX}/${SZOPEBASEDIR}
 
-ALL_TARGET=
+ALL_TARGET=	# empty
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${ZOPEBASEDIR} --force
+CONFIGURE_ARGS=	--force --prefix=${ZOPEBASEDIR} \
+		--with-python=${PYTHON_CMD}
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 PLIST_SUB=	ZOPEBASEDIR=${SZOPEBASEDIR}
@@ -43,12 +44,11 @@ SUB_LIST=	ZOPEBASEDIR=${ZOPEBASEDIR}
 
 post-patch:
 .for i in zdaemon zope
-	${RM} -f ${WRKSRC}/Zope/zopeskel/etc/${i}.conf.in.orig
+	@${RM} -f ${WRKSRC}/Zope/zopeskel/etc/${i}.conf.in.orig
 .endfor
 
 post-install:
-	${FIND} ${ZOPEBASEDIR} -type f -print0 | ${XARGS} -0 -- ${CHMOD} a-w
-
+	@${FIND} ${ZOPEBASEDIR} -type f -print0 | ${XARGS} -0 -- ${CHMOD} a-w
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}
 

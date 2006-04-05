@@ -110,6 +110,9 @@
 %%ZOPEBASEDIR%%/lib/python/ClientCookie/_urllib2_support.py
 %%ZOPEBASEDIR%%/lib/python/ClientCookie/_urllib2_support.pyc
 %%ZOPEBASEDIR%%/lib/python/ClientCookie/_urllib2_support.pyo
+%%ZOPEBASEDIR%%/lib/python/ClientForm.py
+%%ZOPEBASEDIR%%/lib/python/ClientForm.pyc
+%%ZOPEBASEDIR%%/lib/python/ClientForm.pyo
 %%ZOPEBASEDIR%%/lib/python/RestrictedPython/Eval.py
 %%ZOPEBASEDIR%%/lib/python/RestrictedPython/Eval.pyc
 %%ZOPEBASEDIR%%/lib/python/RestrictedPython/Eval.pyo
@@ -1045,6 +1048,9 @@
 %%ZOPEBASEDIR%%/lib/python/persistent/wref.py
 %%ZOPEBASEDIR%%/lib/python/persistent/wref.pyc
 %%ZOPEBASEDIR%%/lib/python/persistent/wref.pyo
+%%ZOPEBASEDIR%%/lib/python/pullparser.py
+%%ZOPEBASEDIR%%/lib/python/pullparser.pyc
+%%ZOPEBASEDIR%%/lib/python/pullparser.pyo
 %%ZOPEBASEDIR%%/lib/python/pytz/LICENSE.txt
 %%ZOPEBASEDIR%%/lib/python/pytz/README.txt
 %%ZOPEBASEDIR%%/lib/python/pytz/__init__.py
@@ -8740,7 +8746,6 @@
 %%ZOPEBASEDIR%%/lib/python/zope/app/utility/vocabulary.py
 %%ZOPEBASEDIR%%/lib/python/zope/app/utility/vocabulary.pyc
 %%ZOPEBASEDIR%%/lib/python/zope/app/utility/vocabulary.pyo
-%%ZOPEBASEDIR%%/lib/python/zope/app/version.txt
 %%ZOPEBASEDIR%%/lib/python/zope/app/wsgi/README.txt
 %%ZOPEBASEDIR%%/lib/python/zope/app/wsgi/__init__.py
 %%ZOPEBASEDIR%%/lib/python/zope/app/wsgi/__init__.pyc
@@ -9151,6 +9156,9 @@
 %%ZOPEBASEDIR%%/lib/python/zope/formlib/interfaces.py
 %%ZOPEBASEDIR%%/lib/python/zope/formlib/interfaces.pyc
 %%ZOPEBASEDIR%%/lib/python/zope/formlib/interfaces.pyo
+%%ZOPEBASEDIR%%/lib/python/zope/formlib/locales/de/LC_MESSAGES/zope.formlib.mo
+%%ZOPEBASEDIR%%/lib/python/zope/formlib/locales/de/LC_MESSAGES/zope.formlib.po
+%%ZOPEBASEDIR%%/lib/python/zope/formlib/locales/zope.formlib.pot
 %%ZOPEBASEDIR%%/lib/python/zope/formlib/namedtemplate.py
 %%ZOPEBASEDIR%%/lib/python/zope/formlib/namedtemplate.pyc
 %%ZOPEBASEDIR%%/lib/python/zope/formlib/namedtemplate.pyo
@@ -10711,9 +10719,6 @@
 %%ZOPEBASEDIR%%/lib/python/zope/tales/tests/test_traverser.py
 %%ZOPEBASEDIR%%/lib/python/zope/tales/tests/test_traverser.pyc
 %%ZOPEBASEDIR%%/lib/python/zope/tales/tests/test_traverser.pyo
-%%ZOPEBASEDIR%%/lib/python/zope/testbrowser/ClientForm.py
-%%ZOPEBASEDIR%%/lib/python/zope/testbrowser/ClientForm.pyc
-%%ZOPEBASEDIR%%/lib/python/zope/testbrowser/ClientForm.pyo
 %%ZOPEBASEDIR%%/lib/python/zope/testbrowser/DEPENDENCIES.cfg
 %%ZOPEBASEDIR%%/lib/python/zope/testbrowser/README.txt
 %%ZOPEBASEDIR%%/lib/python/zope/testbrowser/SETUP.cfg
@@ -10743,9 +10748,6 @@
 %%ZOPEBASEDIR%%/lib/python/zope/testbrowser/interfaces.pyc
 %%ZOPEBASEDIR%%/lib/python/zope/testbrowser/interfaces.pyo
 %%ZOPEBASEDIR%%/lib/python/zope/testbrowser/over_the_wire.txt
-%%ZOPEBASEDIR%%/lib/python/zope/testbrowser/pullparser.py
-%%ZOPEBASEDIR%%/lib/python/zope/testbrowser/pullparser.pyc
-%%ZOPEBASEDIR%%/lib/python/zope/testbrowser/pullparser.pyo
 %%ZOPEBASEDIR%%/lib/python/zope/testbrowser/testing.py
 %%ZOPEBASEDIR%%/lib/python/zope/testbrowser/testing.pyc
 %%ZOPEBASEDIR%%/lib/python/zope/testbrowser/testing.pyo
@@ -11144,7 +11146,6 @@
 %%ZOPEBASEDIR%%/zopeskel/lib/python/README.txt.in
 %%ZOPEBASEDIR%%/zopeskel/log/README.txt
 %%ZOPEBASEDIR%%/zopeskel/var/README.txt
-
 @dirrm %%ZOPEBASEDIR%%/lib/python/zope/testing/testrunner-ex-pp-products/more
 @dirrm %%ZOPEBASEDIR%%/lib/python/zope/testing/testrunner-ex-pp-products
 @dirrm %%ZOPEBASEDIR%%/lib/python/zope/testing/testrunner-ex/sample1/sample11
@@ -11451,6 +11452,9 @@
 @dirrm %%ZOPEBASEDIR%%/lib/python/zope/configuration/tests/samplepackage
 @dirrm %%ZOPEBASEDIR%%/lib/python/zope/configuration/tests
 @dirrm %%ZOPEBASEDIR%%/lib/python/zope/configuration
+@dirrm %%ZOPEBASEDIR%%/lib/python/zope/formlib/locales/de/LC_MESSAGES
+@dirrm %%ZOPEBASEDIR%%/lib/python/zope/formlib/locales/de
+@dirrm %%ZOPEBASEDIR%%/lib/python/zope/formlib/locales
 @dirrm %%ZOPEBASEDIR%%/lib/python/zope/formlib
 @dirrm %%ZOPEBASEDIR%%/lib/python/zope/documenttemplate/untrusted
 @dirrm %%ZOPEBASEDIR%%/lib/python/zope/documenttemplate/tests
