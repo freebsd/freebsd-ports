@@ -11,7 +11,7 @@ CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.sra.co.jp/pub/net/ndtp/bookview/ \
 		ftp://ftp.eos.hokudai.ac.jp/pub/net/ndtp/bookview/
 
-MAINTAINER=	takamune2004@yahoo.co.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NDTP client written in Tcl/Tk
 
 RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
