@@ -1,6 +1,27 @@
 --- src/lib/fte/resource.c.orig	Wed Apr 28 17:39:03 1993
-+++ src/lib/fte/resource.c	Thu Jul 17 00:47:50 2003
-@@ -369,7 +369,9 @@
++++ src/lib/fte/resource.c	Mon Apr  3 22:47:57 2006
+@@ -12,6 +12,7 @@
+ #include "ftedefs.h"
+ 
+ #include <sys/types.h>
++#include <unistd.h>
+ 
+ #ifdef HAS_BSDRLIMIT
+ #  include <sys/time.h>
+@@ -144,7 +145,7 @@
+ 
+ #    endif
+ 
+-    usage = sbrk(0) - enddata;
++    usage = (char *)sbrk(0) - enddata;
+ 
+ #  endif
+ 
+@@ -365,11 +366,12 @@
+ baseaddr( )
+ {
+ 	char *low, *high, *at;
+-	char *sbrk( );
  	long x;
  	SIGNAL_TYPE	(*orig_signal)( );
  

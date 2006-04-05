@@ -1,31 +1,24 @@
-*** src/include/misc.h.orig	Thu Dec  1 09:17:02 1994
---- src/include/misc.h	Sun Mar 31 12:32:58 1996
-***************
-*** 86,92 ****
---- 86,94 ----
-  extern char *realloc();
-  extern char *getenv();
-  extern int errno;
-+ #ifndef __FreeBSD__
-  extern char *sys_errlist[];
-+ #endif
-  extern char *getenv();
-  extern char *getwd();
-  extern int rand();
-***************
-*** 111,122 ****
---- 111,124 ----
-  #    endif /* clearerr */
-  #  endif /* HAS_CLEARERR */
-  
-+ #ifndef __FreeBSD__
-  #  ifndef bzero
-  extern int bzero();
-  #  endif
-  #  ifndef bcopy
-  extern void bcopy();
-  #  endif
-+ #endif /* __FreeBSD__ */
-  
-  #  ifndef index
-  #    ifdef HAS_INDEX
+--- src/include/misc.h.orig	Sun Apr 25 16:37:48 1993
++++ src/include/misc.h	Mon Apr  3 23:04:51 2006
+@@ -86,8 +86,10 @@
+ extern char *realloc();
+ extern char *getenv();
+ extern int errno;
++#ifndef __FreeBSD__
+ extern char *sys_errlist[];
+ extern char *getenv();
++#endif
+ extern char *getwd();
+ extern int rand();
+ extern int srand();
+@@ -154,7 +156,9 @@
+ 
+ #ifndef HAS_MEMAVL
+ #  ifdef HAS_RLIMIT_
+-extern char *sbrk();
++#include <sys/types.h>
++#include <sys/time.h>
++#include <sys/resource.h>
+ #  endif
+ #endif
+ 
