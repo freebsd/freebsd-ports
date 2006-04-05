@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.remotesensing.org/pub/gdal/ \
 		http://dl.maptools.org/dl/gdal/
 
 MAINTAINER=	lawrance@FreeBSD.org
-COMMENT=	A translator library for raster geospatial data formats
+COMMENT=	A translator library for geospatial data formats
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/doxygen:${PORTSDIR}/devel/doxygen
 LIB_DEPENDS=	jasper.4:${PORTSDIR}/graphics/jasper \
@@ -25,7 +25,6 @@ LIB_DEPENDS=	jasper.4:${PORTSDIR}/graphics/jasper \
 
 USE_PYTHON=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libz=/usr \
 		--with-png=${LOCALBASE} \
