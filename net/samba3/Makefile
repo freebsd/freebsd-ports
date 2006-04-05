@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		samba
-PORTVERSION?=		3.0.21b
+PORTVERSION?=		3.0.22
 PORTREVISION?=		0
 PORTEPOCH?=		1
 CATEGORIES?=		net
@@ -70,10 +70,11 @@ OPTIONS=	LDAP		"With LDAP support" on \
 		SAM_XML		"With XML smbpasswd backend" off \
 		SAM_MYSQL	"With MYSQL smbpasswd backend" off \
 		SAM_PGSQL	"With PostgreSQL smbpasswd backend" off \
-		SAM_OLD_LDAP	"With Samba2.x LDAP smbpasswd backend" off \
+		SAM_OLD_LDAP	"With Samba2.x LDAP legacy smbpasswd backend" off \
+		SMBSH		"With SMBSH wrapper for UNIX commands" off \
 		PAM_SMBPASS	"With SMB PAM module" off \
 		EXP_MODULES	"With experimental module(s)" off \
-		POPT		"With installed POPT library" on
+		POPT		"With system-wide POPT library" on
 .endif
 
 .include <bsd.port.pre.mk>
@@ -82,7 +83,8 @@ OPTIONS=	LDAP		"With LDAP support" on \
 # Switch off all extra functionality
 CONFIGURE_ARGS+=	--disable-cups --without-winbind --without-syslog \
 			--without-quotas --without-utmp --without-ldapsam \
-			--without-pam --without-pam_smbpass --without-aio-support
+			--without-pam --without-pam_smbpass \
+			--without-aio-support
 
 # Dirty hack to work around usage of OPTIONS in slave ports
 .if exists(${.CURDIR}/Makefile.inc)
@@ -204,14 +206,22 @@ PLIST_SUB+=		SMBPASS="@comment "
 
 .if defined(WITH_ACL_SUPPORT)
 .if ${OSVERSION} < 500018
-BROKEN=			"ACL support requires FreeBSD 5.x at least after 20010326"
+BROKEN=			ACL support requires FreeBSD 5.x at least after 20010326
 .else
 CONFIGURE_ARGS+=	--with-acl-support
 .endif
 .endif
 
+.if defined(WITH_SMBSH)
+IGNORE=			broken IPC and code
+CONFIGURE_ARGS+=	 --with-smbwrapper
+PLIST_SUB+=		SMBSH=""
+.else
+PLIST_SUB+=		SMBSH="@comment "
+.endif
+
 .if defined(WITH_AIO_SUPPORT)
-# Yes, it doesn't work for now
+IGNORE=			broken kernel API until now (7-CURRENT)
 CONFIGURE_ARGS+=	--without-aio-support
 .endif
 
@@ -269,12 +279,14 @@ CONFIGURE_ARGS+=	--without-ldap
 # Samba server itself
 MAN1=		findsmb.1 log2pcap.1 nmblookup.1 ntlm_auth.1 profiles.1 \
 		rpcclient.1 smbcacls.1 smbclient.1 smbcontrol.1 smbcquotas.1 \
-		smbget.1 smbsh.1 smbstatus.1 smbtar.1 smbtree.1 testparm.1 \
-		vfstest.1
+		smbget.1 smbstatus.1 smbtar.1 smbtree.1 testparm.1 vfstest.1
 MAN5=		lmhosts.5 smb.conf.5 smbgetrc.5 smbpasswd.5
 MAN7=		samba.7
 MAN8=		net.8 nmbd.8 pdbedit.8 smbd.8 smbpasswd.8 smbspool.8 \
 		swat.8 tdbbackup.8 tdbdump.8
+.if defined(WITH_SMBSH)
+MAN1+=		smbsh.1
+.endif
 .if !defined(WITHOUT_WINBIND)
 MAN1+=		wbinfo.1
 MAN7+=		pam_winbind.7
@@ -351,8 +363,13 @@ post-install:
 	${ECHO_CMD} "${SAMBA_LIB}/pam_winbind.so" >> ${TMPPLIST};
 .endif
 .if defined(WITH_PAM_SMBPASS)
-	@${INSTALL_PROGRAM} ${WRKSRC}/bin/pam_smbpass.so ${SAMBA_LIBDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/pam_smbpass.so ${SAMBA_LIBDIR}
 	${ECHO_CMD} "${SAMBA_LIB}/pam_smbpass.so" >> ${TMPPLIST};
+.endif
+# smbwrapper.so
+.if defined(WITH_SMBSH)
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/smbsh ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/smbwrapper.so ${SAMBA_LIBDIR}/samba
 .endif
 # Lib
 	@${FIND} ${SAMBA_LIBDIR}/samba -type f | ${SED} -E 's|^${PREFIX}/?||;' | ${EGREP} -F -v -f ${WRKDIR}/.PLIST.exclude | ${SORT} >> ${TMPPLIST}

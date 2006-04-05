@@ -1,30 +1,6 @@
---- Makefile.in.orig	Wed Dec 14 13:45:49 2005
-+++ Makefile.in	Sun Jan  1 03:35:30 2006
-@@ -676,6 +676,7 @@
- 
- CAC_PICOBJS = $(CAC_OBJ:.o=.@PICSUFFIX@)
- 
-+NSS_VERSION=1
- 
- PAM_SMBPASS_OBJ_0 = pam_smbpass/pam_smb_auth.o pam_smbpass/pam_smb_passwd.o \
-                pam_smbpass/pam_smb_acct.o pam_smbpass/support.o \
-@@ -1172,13 +1173,13 @@
- @WINBIND_NSS@: $(WINBIND_NSS_PICOBJS)
- 	@echo "Linking $@"
- 	@$(SHLD) $(WINBIND_NSS_LDSHFLAGS) -o $@ $(WINBIND_NSS_PICOBJS) \
--		@WINBIND_NSS_EXTRA_LIBS@ @SONAMEFLAG@`basename $@`
-+		@WINBIND_NSS_EXTRA_LIBS@ @SONAMEFLAG@`basename $@`.$(NSS_VERSION)
- 
- @WINBIND_WINS_NSS@: $(WINBIND_WINS_NSS_PICOBJS)
- 	@echo "Linking $@"
- 	@$(SHLD) $(LDSHFLAGS) -o $@ $(WINBIND_WINS_NSS_PICOBJS) \
- 		$(LDAP_LIBS) $(KRB5LIBS) -lc \
--		@SONAMEFLAG@`basename $@`
-+		@SONAMEFLAG@`basename $@`.$(NSS_VERSION)
- 
- nsswitch/pam_winbind.@SHLIBEXT@: $(PAM_WINBIND_PICOBJ) bin/.dummy
- 	@echo "Linking $@"
-@@ -1389,7 +1390,7 @@
+--- Makefile.in.orig	Mon Feb 20 21:33:23 2006
++++ Makefile.in	Sat Feb 25 05:30:42 2006
+@@ -1390,7 +1390,7 @@
  
  bin/t_snprintf@EXEEXT@: lib/snprintf.c
  	$(CC) $(FLAGS) @PIE_LDFLAGS@ -o $@ $(DYNEXP) -DTEST_SNPRINTF lib/snprintf.c -lm

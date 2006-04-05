@@ -21,6 +21,7 @@ bin/tdbbackup
 bin/tdbdump
 bin/tdbtool
 bin/testparm
+%%SMBSH%%bin/smbsh
 %%WINBIND%%bin/wbinfo
 @unexec %D/etc/rc.d/samba.sh forcestop 2>/dev/null || true
 etc/rc.d/samba.sh
@@ -592,6 +593,7 @@ share/swat/help/using_samba/inx.html
 share/swat/help/using_samba/samba2_s.gif
 share/swat/help/using_samba/samba2_xs.gif
 share/swat/help/using_samba/toc.html
+share/swat/help/welcome-no-samba-doc.html
 share/swat/help/welcome.html
 share/swat/images/globals.gif
 share/swat/images/home.gif
