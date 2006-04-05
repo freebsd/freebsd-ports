@@ -1487,7 +1487,6 @@
     SUBDIR += py-twistedCore
     SUBDIR += py-twistedFlow
     SUBDIR += py-twistedRunner
-    SUBDIR += py-twistedXish
     SUBDIR += py-ui
     SUBDIR += py-unit
     SUBDIR += py-urwid
