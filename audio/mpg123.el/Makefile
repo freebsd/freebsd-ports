@@ -9,7 +9,7 @@ PORTNAME=	mpg123.el
 PORTVERSION=	1.40
 CATEGORIES=	audio elisp
 MASTER_SITES=	http://www.gentei.org/~yuuji/software/mpg123el/
-DISTNAME =	${PORTNAME}-${PORTVERSION}
+DISTNAME=	${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	# empty
 EXTRACT_ONLY=	# empty
 
@@ -25,7 +25,7 @@ NO_BUILD=	yes
 ELISPDIR=	${PREFIX}/share/emacs/site-lisp
 XELISPDIR=	${PREFIX}/lib/xemacs/site-lisp
 
-myFETCH_CMD=	/usr/bin/fetch -AR
+myFETCH_CMD=	${FETCH_CMD} -AR
 
 do-fetch:
 	${myFETCH_CMD} ${FETCH_BEFORE_ARGS} ${MASTER_SITES}/mpg123el.cgi?${PORTVERSION}
@@ -36,5 +36,8 @@ do-install:
 # For XEmacs
 	${MKDIR} ${XELISPDIR}
 	${LN} -sf ${ELISPDIR}/${PORTNAME} ${XELISPDIR}/${PORTNAME}
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
