@@ -34,6 +34,36 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="d9307a41-c4d7-11da-b2fb-000e0c2e438a">
+    <topic>zoo -- stack based buffer overflow</topic>
+    <affects>
+      <package>
+	<name>zoo</name>
+	<range><ge>0</ge></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jean-Sébastien Guay-Leroux report a vulnerability
+	  within the zoo archiver.  The vulnerability which is present
+	  in the fullpath() function (from the misc.c file) is caused by
+	  improper checking of user supplied data.  The data returned
+	  to the buffer can be up to 512 bytes, while the buffer is
+	  created to hold 256 bytes.  This could result in a buffer
+	  overflow which could allow remote code execution.</p>
+      </body>
+    </description>
+    <references>
+      <bid>16790</bid>
+      <cvename>CVE-2006-0855</cvename>
+      <url>http://www.guay-leroux.com/projects/zoo-advisory.txt</url>
+    </references>
+    <dates>
+      <discovery>2006-02-22</discovery>
+      <entry>2006-04-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="74b7403c-c4d5-11da-b2fb-000e0c2e438a">
     <topic>mediawiki -- cross site scripting vulnerability</topic>
     <affects>
