@@ -1,6 +1,5 @@
 %%SITE_PERL%%/Catalyst/Example/Controller/templates/destroy.tt
 %%SITE_PERL%%/Catalyst/Example/Controller/templates/edit.tt
-%%SITE_PERL%%/Catalyst/Example/Controller/templates/wrapper.tt
 %%SITE_PERL%%/Catalyst/Example/Controller/templates/list.tt
 %%SITE_PERL%%/Catalyst/Example/Controller/templates/view.tt
 %%SITE_PERL%%/Catalyst/Example/Controller/InstantCRUD.pm
