@@ -1,0 +1,12 @@
+[ excerpt from developer's web site with modifications ]
+
+Forward Error Correction (FEC) is an essential building block of
+any satellite or IP multicast based content distribution system.
+Our library is the fastest and most mature Java FEC library available.
+It features:
+
+o Fast multi-threaded I/O routines for encoding and decoding files
+o FEC codec plugin interface 
+o Cryptograhic hashes can be used for checking file integrity
+
+WWW: http://onionnetworks.com/developers/

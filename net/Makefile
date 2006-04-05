@@ -353,6 +353,7 @@
     SUBDIR += ohphone
     SUBDIR += olsrd
     SUBDIR += onenetd
+    SUBDIR += onion-fec
     SUBDIR += openam
     SUBDIR += openbgpd
     SUBDIR += openbgpd-devel
