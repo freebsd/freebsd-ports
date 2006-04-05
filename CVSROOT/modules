@@ -7224,6 +7224,7 @@ oneko		ports/games/oneko
 oneko-sakura	ports/games/oneko-sakura
 onenetd		ports/net/onenetd
 oniguruma	ports/devel/oniguruma
+onion-fec	ports/net/onion-fec
 onis		ports/irc/onis
 onyx		ports/lang/onyx
 oo2c		ports/lang/oo2c
