@@ -458,6 +458,21 @@ MASTER_SITE_GNU_ALPHA+=	\
 	http://public.planetmirror.com/pub/gnu-alpha/%SUBDIR%/
 .endif
 
+.if !defined(IGNORE_MASTER_SITE_IDSOFTWARE)
+MASTER_SITE_IDSOFTWARE+=	\
+	ftp://ftp.chg.ru/.3/games/idgames/idstuff/%SUBDIR%/ \
+	ftp://ftp.fasta.fh-dortmund.de/mirror/idstuff/%SUBDIR%/ \
+	ftp://ftp.fu-berlin.de/pc/games/idgames/idstuff/%SUBDIR%/ \
+	http://www.gamers.org/pub/idgames/idstuff/%%SUBDIR%%/ \
+	ftp://ftp.games.skynet.be/spool1/games/ftp.idsoftware.com/%SUBDIR%/ \
+	ftp://ftp.mirror.nl/disk2/idsoftware/idstuff/%SUBDIR%/ \
+	ftp://ftp.nsu.ru/mirrors/ftp.idsoftware.com/idstuff/%SUBDIR%/ \
+	ftp://ftp.ntua.gr/pub/vendors/idgames/idstuff/%SUBDIR%/ \
+	ftp://ftp.omen.net.au/games/idstuff/%SUBDIR%/ \
+	ftp://ftp.sunsite.org.uk/sites/ftp.idsoftware.com/idstuff/%SUBDIR%/ \
+	ftp://ftp.idsoftware.com/idstuff/%SUBDIR%/
+.endif
+
 .if !defined(IGNORE_MASTER_SITE_ISC)
 MASTER_SITE_ISC+=	\
 	ftp://ftp.isc.org/isc/%SUBDIR%/ \
