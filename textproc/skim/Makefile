@@ -55,7 +55,7 @@ post-configure:
 		-e s,lib/pkgconfig,libdata/pkgconfig,g \
 		${WRKSRC}/cache/pkg.cache.py
 do-build:
-	@cd ${WRKSRC} && ./scons
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./scons
 
 do-install:
 	@cd ${WRKSRC} && ./scons install
