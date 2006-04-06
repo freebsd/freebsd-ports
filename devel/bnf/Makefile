@@ -9,8 +9,11 @@ PORTNAME=	bnf
 PORTVERSION=	1.6.9
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SAVANNAH}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	http://ftp.dkuug.dk/gnu/ftp/savannah/files/bnf/ \
+		http://gnu.rtin.bz/ftp/savannah/files/bnf/ \
+		http://ftp.azc.uam.mx/mirrors/gnu/savannah/files/bnf/ \
+		http://mirrors.dotsrc.org/ftp.gnu.org/savannah/files/bnf/ \
+		http://mirrors.ibiblio.org/pub/mirrors/gnu/ftp/savannah/files/bnf/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generate C parser given a grammar in BNF notation
