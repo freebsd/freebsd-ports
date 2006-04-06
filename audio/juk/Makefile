@@ -61,11 +61,11 @@ pre-everything::
 .endif
 
 do-build:
-	cd ${WRKSRC}/arts/runtime && ${GMAKE}
-	cd ${WRKSRC}/juk && ${GMAKE}
+	cd ${WRKSRC}/arts/runtime && ${SETENV} ${MAKE_ENV} ${GMAKE}
+	cd ${WRKSRC}/juk && ${SETENV} ${MAKE_ENV} ${GMAKE}
 
 do-install:
-	cd ${WRKSRC}/juk && ${GMAKE} install
+	cd ${WRKSRC}/juk && ${SETENV} ${MAKE_ENV} ${GMAKE} install
 
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 .include <bsd.port.post.mk>

@@ -40,7 +40,7 @@ do-configure:
 		QTDIR="${QT_PREFIX}" KDEDIR="${KDE_PREFIX}" scons configure
 
 do-build:
-	@cd ${WRKSRC} && scons
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} scons
 
 do-install:
 	@cd ${WRKSRC} && scons install
