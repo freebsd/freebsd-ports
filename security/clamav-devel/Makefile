@@ -17,6 +17,8 @@ DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 MAINTAINER=	rob@debank.tv
 COMMENT=	Command line virus scanner written entirely in C
 
+FORBIDDEN=	Security issues. http://www.vuxml.org/freebsd/6a5174bd-c580-11da-9110-00123ffe8333.html
+
 LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
 RUN_DEPENDS=	lha:${PORTSDIR}/archivers/lha \
 		unarj:${PORTSDIR}/archivers/unarj \
