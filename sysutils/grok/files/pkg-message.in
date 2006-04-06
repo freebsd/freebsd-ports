@@ -3,7 +3,7 @@ You'll have to edit %%PREFIX%%/etc/grok.conf to your
 liking.  Examples and documentation are available at
 grok(1) and at:
 
-http://www.csh.rit.edu/~psionic/projects/grok/
+http://www.semicomplete.com/projects/grok/
 
 Also, modifications to syslog.conf may be necessary.
 Usually "user.info /var/log/messages" is enough.
