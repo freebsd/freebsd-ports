@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	Myghty-${PORTVERSION}
 
-MAINTAINER=	dryice@dryice.name
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Myghty is a Python based templating framework
 
 USE_PYTHON=	2.3+
