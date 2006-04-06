@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	i2p
-PORTVERSION=	0.6.1.13
+PORTVERSION=	0.6.1.14
 CATEGORIES=	net-p2p java security
 MASTER_SITES=	http://dev.i2p.net/i2p/
 
@@ -19,6 +19,7 @@ RUN_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 USE_BZIP2=	yes
 USE_RC_SUBR=	i2p.sh
 
+JAVA_BUILD=	jdk
 USE_JAVA=	yes
 JAVA_VERSION=	1.4
 JAVA_OS=	native
