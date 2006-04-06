@@ -174,8 +174,6 @@ lib/mcop/soundserver.mcopclass
 lib/mcop/soundserver.mcoptype
 lib/mcop/x11globalcomm.mcopclass
 lib/mcop/x11globalcomm.mcoptype
-share/nls/POSIX
-share/nls/en_US.US-ASCII
 @dirrm lib/mcop/Arts
 @dirrm lib/mcop
 @dirrm include/artsc
