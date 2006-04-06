@@ -8,13 +8,11 @@
 PORTNAME=	scrollz
 PORTVERSION=	1.9.5
 CATEGORIES=	irc ipv6
-MASTER_SITES=	ftp://ftp.scrollz.com/pub/ScrollZ/source/
+MASTER_SITES=	ftp://ftp.du.se/pub/mirrors/ScrollZ/source/
 DISTNAME=	ScrollZ-${PORTVERSION}
 
 MAINTAINER=	damm@yazzy.org
 COMMENT=	Enhanced ircII client that supports scripts, colors, and more
-
-BROKEN=		Unfetchable
 
 USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
