@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTEPOCH?=		2
+PORTEPOCH?=		3
 CATEGORIES=		lang
 PKGNAMESUFFIX=		-objc
 
@@ -16,7 +16,7 @@ WITHOUT_JAVA=		yes
 
 .if !defined(GNUSTEP_WITH_GCC32) && !defined(GNUSTEP_WITH_GCC33) && !defined(GNUSTEP_WITH_GCC34)
 .if !defined(GNUSTEP_WITH_GCC40) && !defined(GNUSTEP_WITH_GCC41) && !defined(GNUSTEP_WITH_GCC42)
-GNUSTEP_WITH_GCC41=	yes
+GNUSTEP_WITH_GCC32=	yes
 .endif
 .endif
 
@@ -60,5 +60,3 @@ COMMENT2=		4.2.x
 .endif
 
 .include "${MASTERDIR}/Makefile"
-
-PORTEPOCH=		2
