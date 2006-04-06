@@ -7238,6 +7238,7 @@ oooqs		ports/x11/oooqs
 oops		ports/www/oops
 oorexx		ports/lang/oorexx
 op		ports/security/op
+opal		ports/net/opal
 open		ports/sysutils/open
 open-beagle	ports/devel/open-beagle
 open-cobol	ports/lang/open-cobol
