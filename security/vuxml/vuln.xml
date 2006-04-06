@@ -214,6 +214,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <cvename>CVE-2006-1629</cvename>
       <url>http://www.osreviews.net/reviews/security/openvpn-print</url>
       <url>http://openvpn.net/changelog.html</url>
       <mlist msgid="4431F7C4.4030804@yonan.net">http://sourceforge.net/mailarchive/message.php?msg_id=15298074</mlist>
@@ -221,6 +222,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2006-04-03</discovery>
       <entry>2006-04-05</entry>
+      <modified>2006-04-06</modified>
     </dates>
   </vuln>
 
