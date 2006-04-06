@@ -8,7 +8,7 @@
 PORTNAME=	libcabinet
 PORTVERSION=	0.30
 CATEGORIES=	archivers
-MASTER_SITES=	http://www.pbxpress.com/~sobomax/
+MASTER_SITES=	http://www.bsd-geek.de/FreeBSD/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A portable library and utility to use Microsoft cabinet files (.cab)
