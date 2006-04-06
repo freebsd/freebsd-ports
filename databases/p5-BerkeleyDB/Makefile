@@ -14,48 +14,17 @@ MASTER_SITE_SUBDIR=	BerkeleyDB
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	clsung@FreeBSD.org
-COMMENT=	Perl5 interface to the Berkeley DB package revision 2, 3, 4 or 4.*
+COMMENT=	Perl5 interface to the Berkeley DB package
 
-# Default to db3
-WITH_BDB_VER?=	3
-
-.if ${WITH_BDB_VER} == 2
-LIB_DEPENDS=	db2.0:${PORTSDIR}/databases/db2
-BDB_LIB_VER=	db2
-.elif ${WITH_BDB_VER} == 3
-LIB_DEPENDS=	db3.3:${PORTSDIR}/databases/db3
-BDB_LIB_VER=	db3
-.elif ${WITH_BDB_VER} == 4
-LIB_DEPENDS=	db4.0:${PORTSDIR}/databases/db4
-BDB_LIB_VER=	db4
-.elif ${WITH_BDB_VER} == 41
-LIB_DEPENDS=	db41.1:${PORTSDIR}/databases/db41
-BDB_LIB_VER=	db41
-.elif ${WITH_BDB_VER} == 42
-LIB_DEPENDS=	db-4.2.2:${PORTSDIR}/databases/db42
-BDB_LIB_VER=	db-4.2
-.elif ${WITH_BDB_VER} == 43
-LIB_DEPENDS=	db-4.3.0:${PORTSDIR}/databases/db43
-BDB_LIB_VER=	db-4.3
-.elif ${WITH_BDB_VER} == 44
-LIB_DEPENDS=	db-4.4.0:${PORTSDIR}/databases/db44
-BDB_LIB_VER=	db-4.4
-.else
-IGNORE=	"WITH_BDB_VER must be one between 2, 3, 4, 41, 42, 43 and 44"
-.endif
+USE_BDB=	yes
 
 PERL_CONFIGURE=	yes
 
 MAN3=		BerkeleyDB.3
 
-pre-everything::
-	@${ECHO} "This port defaults to use Berkeley DB 3, but you can change it"
-	@${ECHO} "by setting WITH_BDB_VER to either 2, 3, 4, 41, 42, 43 or 44"
-
 post-patch:
-	@${ECHO} "INCLUDE = ${LOCALBASE}/include/db${WITH_BDB_VER}" > ${WRKSRC}/config.in
+	@${ECHO} "INCLUDE = ${BDB_INCLUDE_DIR}" > ${WRKSRC}/config.in
 	@${ECHO} "LIB = ${LOCALBASE}/lib" >> ${WRKSRC}/config.in
-	@${ECHO} "DBNAME = -l${BDB_LIB_VER}" >> ${WRKSRC}/config.in
-	${PERL} -pi -e '$$_="" if /MAN3PODS/' ${WRKSRC}/Makefile.PL
+	@${ECHO} "DBNAME = -l${BDB_LIB_NAME}" >> ${WRKSRC}/config.in
 
 .include <bsd.port.mk>
