@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	clamav
-PORTVERSION=	0.88
-PORTREVISION=	1
+PORTVERSION=	0.88.1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	clamav
@@ -26,11 +25,10 @@ OPTIONS=	MILTER "Compile the milter interface" Off \
 		CURL "Support URL downloading" Off \
 		LIBUNRAR "Support for external Unrar library" Off
 
-USE_REINPLACE=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
-USE_RC_SUBR=	yes
+USE_RC_SUBR=	clamav-clamd clamav-freshclam
 
 PORTDOCS=	NEWS ChangeLog html
 
@@ -66,7 +64,7 @@ CLAMAVGROUP?=	clamav
 CLAMAV_CLAMD_SOCKET?=	${RUNDIR}/clamd
 CLAMAV_MILTER_SOCKET?=	${RUNDIR}/clmilter.sock
 
-SUB_FILES=	pkg-install pkg-deinstall clamav-clamd.sh clamav-freshclam.sh
+SUB_FILES=	pkg-install pkg-deinstall
 SUB_LIST=	DBDIR=${DBDIR} \
 		LOGDIR=${LOGDIR} \
 		RUNDIR=${RUNDIR} \
@@ -90,11 +88,6 @@ SED_CONF=	-E -e 's|^\#?(Example)$$|\#\1|' \
 PLIST_SUB+=	CLAMAVUSER=${CLAMAVUSER} \
 		CLAMAVGROUP=${CLAMAVGROUP}
 
-RC_DIR=		${PREFIX}/etc/rc.d
-RC_SUFX=	.sh
-SUB_LIST+=	RC_DIR=${RC_DIR} RC_SUFX=${RC_SUFX}
-PLIST_SUB+=	RC_DIR=${RC_DIR} RC_SUFX=${RC_SUFX}
-
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} == 502010
@@ -102,7 +95,7 @@ PTHREAD_LIBS=	-pthread
 .endif
 
 .if defined(WITH_MILTER)
-SUB_FILES+=	clamav-milter.sh
+USE_RC_SUBR+=	clamav-milter
 .if !defined(WITHOUT_LDAP) && exists(${LOCALBASE}/lib/libldap.so)
 USE_OPENLDAP=	yes
 LDFLAGS+=	-lldap
@@ -156,19 +149,11 @@ pre-install:
 		${SH} ${PKGINSTALL} ${PREFIX} PRE-INSTALL
 
 post-install:
-	@${INSTALL_SCRIPT} ${WRKDIR}/clamav-clamd.sh \
-		${DESTDIR}${RC_DIR}/clamav-clamd${RC_SUFX}
-	@${INSTALL_SCRIPT} ${WRKDIR}/clamav-freshclam.sh \
-		${DESTDIR}${RC_DIR}/clamav-freshclam${RC_SUFX}
 	@${CHOWN} -R ${CLAMAVUSER}:${CLAMAVGROUP} ${DESTDIR}${DBDIR}
 .for c in clamd freshclam
 	@[ -f ${DESTDIR}${PREFIX}/etc/${c}.conf ] || \
 		${CP} ${DESTDIR}${PREFIX}/etc/${c}.conf.default ${DESTDIR}${PREFIX}/etc/${c}.conf
 .endfor
-.if defined(WITH_MILTER)
-	@${INSTALL_SCRIPT} ${WRKDIR}/clamav-milter.sh \
-		${DESTDIR}${RC_DIR}/clamav-milter${RC_SUFX}
-.endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DESTDIR}${DOCSDIR}
 	@${INSTALL_DATA} ${INSTALL_WRKSRC}/NEWS ${INSTALL_WRKSRC}/ChangeLog \
