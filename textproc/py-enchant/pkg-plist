@@ -1,4 +1,4 @@
-@comment $FreeBSD$
+@comment $FreeBSD: /tmp/pcvs/ports/textproc/py-enchant/pkg-plist,v 1.1 2006-04-06 15:05:08 garga Exp $
 %%PYTHON_SITELIBDIR%%/enchant/__init__.py
 %%PYTHON_SITELIBDIR%%/enchant/__init__.pyc
 %%PYTHON_SITELIBDIR%%/enchant/_enchant.so

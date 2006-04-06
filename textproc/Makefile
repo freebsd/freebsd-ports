@@ -621,6 +621,7 @@
     SUBDIR += py-docutils
     SUBDIR += py-dsv
     SUBDIR += py-empy
+    SUBDIR += py-enchant
     SUBDIR += py-excelerator
     SUBDIR += py-expat
     SUBDIR += py-feedparser
@@ -645,7 +646,6 @@
     SUBDIR += py2html
     SUBDIR += pybook
     SUBDIR += pychm
-    SUBDIR += pyenchant
     SUBDIR += qu-aspell
     SUBDIR += queequeg
     SUBDIR += rand
