@@ -9,7 +9,7 @@ PORTNAME=	TclExpat
 PORTVERSION=	1.1
 PORTREVISION=	4
 CATEGORIES=	textproc tcl83
-MASTER_SITES=	http://www.zveno.com/in-tclxml/
+MASTER_SITES=	http://people.tecnik93.com/~itetcu/FreeBSD/others_ports/${PORTNAME}/sources/
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	The TCL interface to Expat library
@@ -18,7 +18,6 @@ LIB_DEPENDS=	tcl${TCL_DVER}:${PORTSDIR}/lang/tcl${TCL_DVER} \
 		expat.6:${PORTSDIR}/textproc/expat2
 
 INSTALLS_SHLIB=	yes
-USE_REINPLACE=	yes
 
 TCL_VERSION=	8.3
 TCL_DVER=	${TCL_VERSION:S/.//}
