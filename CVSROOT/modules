@@ -2790,6 +2790,7 @@ gbsplay		ports/audio/gbsplay
 gbuffy		ports/mail/gbuffy
 gcal		ports/deskutils/gcal
 gcalctool	ports/math/gcalctool
+gcb		ports/x11/gcb
 gcc-objc	ports/lang/gcc-objc
 gcc-ooo		ports/lang/gcc-ooo
 gcc28		ports/lang/gcc28
