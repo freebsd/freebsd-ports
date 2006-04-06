@@ -1,12 +1,16 @@
 bin/recoll
 bin/recollindex
+share/applications/recoll.desktop
 %%DATADIR%%/doc/docbook.css
 %%DATADIR%%/doc/usermanual.html
 %%DATADIR%%/examples/mimeconf
 %%DATADIR%%/examples/mimemap
 %%DATADIR%%/examples/recoll.conf
+%%DATADIR%%/filters/rcldjvu
 %%DATADIR%%/filters/rcldoc
+%%DATADIR%%/filters/rcldvi
 %%DATADIR%%/filters/rclgaim
+%%DATADIR%%/filters/rclmedia
 %%DATADIR%%/filters/rclpdf
 %%DATADIR%%/filters/rclps
 %%DATADIR%%/filters/rclrtf
@@ -20,14 +24,18 @@ bin/recollindex
 %%DATADIR%%/images/pdf.png
 %%DATADIR%%/images/postscript.png
 %%DATADIR%%/images/presentation.png
+%%DATADIR%%/images/sownd.png
 %%DATADIR%%/images/soffice.png
 %%DATADIR%%/images/spreadsheet.png
 %%DATADIR%%/images/txt.png
 %%DATADIR%%/images/wordprocessing.png
 %%DATADIR%%/translations/recoll_fr.qm
+%%DATADIR%%/translations/recoll_ru.qm
+%%DATADIR%%/translations/recoll_uk.qm
 @dirrm %%DATADIR%%/doc
 @dirrm %%DATADIR%%/examples
 @dirrm %%DATADIR%%/filters
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%/translations
 @dirrm %%DATADIR%%
+@dirrmtry share/applications
