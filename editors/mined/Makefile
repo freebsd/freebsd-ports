@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mined
-PORTVERSION=	2000.12
-PORTREVISION=	1
+PORTVERSION=	2000.12.2
 CATEGORIES=	editors
 MASTER_SITES=	http://towo.net/mined/
 
@@ -29,7 +28,8 @@ REINPLACE_ARGS=	-i ""
 MAKE_ARGS=	GMAKE=${GMAKE} CC=${CC:T} OPT="${CFLAGS}"
 INSTALL_TARGET=	localinstall
 
-MAN1=		mined.1
+NOMANCOMPRESS=	yes
+MAN1=		mined.1 minmacs.1 mpico.1 mstar.1 umined.1 uterm.1 xmined.1
 
 PRFX2FIX=	src/makefile.bsd usrshare/conf_user/xinitrc.mined	\
 		src/makefile.curses src/mined1.c man/mined.1		\
