@@ -1,15 +1,17 @@
-# New ports collection makefile for:	pyenchant
+# New ports collection makefile for:	py-enchant
 # Date created:		2006-04-03
 # Whom:			Nicola Vitale	<nivit@email.it>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	pyenchant
+PORTNAME=	enchant
 PORTVERSION=	1.1.5
 CATEGORIES=	textproc devel python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITE_SUBDIR=	py${PORTNAME}
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	${MASTER_SITE_SUBDIR}-${PORTVERSION}
 
 MAINTAINER=	nivit@email.it
 COMMENT=	A spellchecking library for Python based on the Enchant library
