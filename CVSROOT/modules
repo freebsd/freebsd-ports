@@ -1684,7 +1684,9 @@ dia		ports/graphics/dia
 dia2code	ports/devel/dia2code
 diablo		ports/news/diablo
 diablo-jdk13	ports/java/diablo-jdk13
+diablo-jdk15	ports/java/diablo-jdk15
 diablo-jre13	ports/java/diablo-jre13
+diablo-jre15	ports/java/diablo-jre15
 diacanvas2	ports/graphics/diacanvas2
 dialyzer	ports/devel/dialyzer
 dice		ports/lang/dice
