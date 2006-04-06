@@ -12,4 +12,4 @@ NOTE: You need APM driver in your kernel. And enable it to edit
 NOTE2: You should add your acount name to operetor in /etc/group, if
 you resume or suspend your PC by clicking the button in wmapm.
 
-WWW: http://nis-www.lanl.gov/~mgh/WindowMaker/DockApps.shtml
+WWW: http://dockapps.org/file.php/id/18/
