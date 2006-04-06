@@ -1,9 +1,7 @@
-Gnomemeeting is a Video Conferencing application which uses the H323
-protocol and the OpenH323 libraries.
+Ekiga is a free Voice over IP phone allowing you to do free calls over the
+Internet.
 
-It can connect to a variety of other H323 applications including
-Microsoft NetMeeting, OpenMCU, OpenAM, OhPhone and CPhone.
+Ekiga is the first Open Source application to support both H.323 and SIP, as
+well as audio and video. Ekiga was formerly known as GnomeMeeting. 
 
-WWW: http://www.gnomemeeting.org/
-
-Roger Hardiman <roger@freebsd.org>
+WWW: http://www.ekiga.org/
