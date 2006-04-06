@@ -8,7 +8,7 @@
 PORTNAME=	cd-console
 PORTVERSION=	2.4
 CATEGORIES=	audio
-MASTER_SITES=	http://www.cs.helsinki.fi/u/salerma/cd-console/
+MASTER_SITES=	http://www.oskusoft.com/osku/cd-console/
 
 MAINTAINER=	jdunn@aquezada.com
 COMMENT=	A curses-based console CD player
