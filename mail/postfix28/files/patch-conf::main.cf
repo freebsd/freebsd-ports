@@ -1,5 +1,5 @@
---- conf/main.cf.orig	Sat Mar  5 11:53:42 2005
-+++ conf/main.cf	Sat Mar  5 11:53:42 2005
+--- conf/main.cf.orig	Thu Apr  6 18:26:05 2006
++++ conf/main.cf	Thu Apr  6 18:27:10 2006
 @@ -32,13 +32,13 @@
  # The command_directory parameter specifies the location of all
  # postXXX commands.
@@ -16,6 +16,15 @@
  
  # QUEUE AND PROCESS OWNERSHIP
  #
+@@ -237,7 +237,7 @@
+ # 
+ #mynetworks_style = class
+ #mynetworks_style = subnet
+-#mynetworks_style = host
++mynetworks_style = host
+ 
+ # Alternatively, you can specify the mynetworks list by hand, in
+ # which case Postfix ignores the mynetworks_style setting.
 @@ -608,37 +608,37 @@
  # sendmail_path: The full pathname of the Postfix sendmail command.
  # This is the Sendmail-compatible mail posting interface.
