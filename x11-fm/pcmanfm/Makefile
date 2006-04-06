@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pcmanfm
-PORTVERSION=	0.2.1
+PORTVERSION=	0.2.4
 CATEGORIES=	x11-fm deskutils gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,7 +19,6 @@ USE_GCC=	3.3+
 USE_AUTOTOOLS=	libtool:15
 USE_X_PREFIX=	yes
 USE_FAM=	yes
-WANT_FAM_SYSTEM=fam		# Note: broken compilation with gamin
 INSTALLS_SHLIB=	yes
 
 .if !defined(WITHOUT_NLS)
