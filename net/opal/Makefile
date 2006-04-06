@@ -19,6 +19,7 @@ LIB_DEPENDS=	pt_r.1:${PORTSDIR}/devel/pwlib
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_v${PORTVERSION:S/./_/g}
 
+ALL_TARGET=	optshared
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf:259
 GNU_CONFIGURE=	yes
