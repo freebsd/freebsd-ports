@@ -8,7 +8,11 @@
 PORTNAME=	gsm
 PORTVERSION=	1.0.10
 CATEGORIES=	audio
-MASTER_SITES=	ftp://ftp.cs.tu-berlin.de/pub/local/kbs/tubmik/gsm/
+MASTER_SITES=	ftp://ftp.dvo.ru/pub/Gentoo/distfiles/ \
+		ftp://ftp.gbnet.net/pub/digium/telephony/gnophone/ \
+		ftp://216.27.40.102/pub/gnophone/ \
+		ftp://ftp.gin.cz/pub/mirrors/ftp.digium.com/pub/telephony/gnophone/ \
+		ftp://ftp.ip.pt/.disk1/finkmirrors/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Audio converter and library for converting u-law to gsm encoding

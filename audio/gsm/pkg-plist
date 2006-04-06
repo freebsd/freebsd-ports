@@ -1,8 +1,8 @@
 bin/toast
 @exec ln -sf %F %B/tcat
 @exec ln -sf %F %B/untoast
-@unexec rm %D/bin/tcat
-@unexec rm %D/bin/untoast
+@unexec rm %D/bin/tcat 2>&1 >/dev/null || true
+@unexec rm %D/bin/untoast 2>&1 >/dev/null || true
 include/gsm.h
 lib/libgsm.a
 lib/libgsm.so
