@@ -1,3 +1,14 @@
+------------------------------------------------------------------------
+wapsh/htsh is now installed.
+
+Sample configuration files can be found in %%PREFIX%%/etc/wapsh
+
+PHP scripts for both HTTP and WAP access have been installed in
+%%DATADIR%%
+
+Please read the installed documentation for information on how to create
+the configuration files.
+------------------------------------------------------------------------
 
 wapsh/htsh is now installed.
 

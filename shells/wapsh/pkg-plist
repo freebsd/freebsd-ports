@@ -1,5 +1,4 @@
 sbin/htshd
-etc/rc.d/htshd.sh
 @unexec if cmp -s %D/etc/wapsh/htsh_profile %D/etc/wapsh/htsh_profile.dist; then rm -f %D/etc/wapsh/htsh_profile; fi
 etc/wapsh/htsh_profile.dist
 @exec [ -f %B/htsh_profile ] || cp %B/%f %B/htsh_profile
@@ -9,22 +8,23 @@ etc/wapsh/htshd.conf.dist
 @unexec if cmp -s %D/etc/wapsh/loginhosts %D/etc/wapsh/loginhosts.dist; then rm -f %D/etc/wapsh/loginhosts; fi
 etc/wapsh/loginhosts.dist
 @exec [ -f %B/loginhosts ] || cp %B/%f %B/loginhosts
-%%DATADIR%%/htdocs/command.php
-%%DATADIR%%/htdocs/command_html.inc
-%%DATADIR%%/htdocs/command_wml.inc
-%%DATADIR%%/htdocs/common.inc
-%%DATADIR%%/htdocs/common_html.inc
-%%DATADIR%%/htdocs/common_wml.inc
-%%DATADIR%%/htdocs/controls_wml.php
-%%DATADIR%%/htdocs/displayfuncs.inc
-%%DATADIR%%/htdocs/getloginhosts.inc
-%%DATADIR%%/htdocs/history_edit_wml.php
-%%DATADIR%%/htdocs/history_html.php
-%%DATADIR%%/htdocs/history_wml.php
-%%DATADIR%%/htdocs/login_html.php
-%%DATADIR%%/htdocs/login_wml.php
-%%DATADIR%%/htdocs/scroll_wml.php
-%%DATADIR%%/htdocs/shortcuts_wml.php
+%%DATADIR%%/command.php
+%%DATADIR%%/command_html.inc
+%%DATADIR%%/command_wml.inc
+%%DATADIR%%/common.inc
+%%DATADIR%%/common_html.inc
+%%DATADIR%%/common_wml.inc
+%%DATADIR%%/controls_wml.php
+%%DATADIR%%/displayfuncs.inc
+%%DATADIR%%/getloginhosts.inc
+%%DATADIR%%/history_edit_wml.php
+%%DATADIR%%/history_html.php
+%%DATADIR%%/history_wml.php
+%%DATADIR%%/index.html
+%%DATADIR%%/login_html.php
+%%DATADIR%%/login_wml.php
+%%DATADIR%%/scroll_wml.php
+%%DATADIR%%/shortcuts_wml.php
 %%PORTDOCS%%%%DOCSDIR%%/Image1.jpg
 %%PORTDOCS%%%%DOCSDIR%%/Image2.jpg
 %%PORTDOCS%%%%DOCSDIR%%/Image3.jpg
@@ -94,5 +94,4 @@ etc/wapsh/loginhosts.dist
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/implementation_notes
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/user_guide
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/htdocs
 @dirrm %%DATADIR%%
