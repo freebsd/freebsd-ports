@@ -23,6 +23,7 @@ A52			ATSC A/52 audio decoding (used in most DVDs)
 ARTS			aRts support via the KDE sound daemon
 APACHE2			Use www/apache2 port
 AVIFILE			Adds support for AVI multimedia
+BDB			Adds Berkeley DB Support
 CACA			Libcaca colored ASCII graphics
 CDDB			CDDB support
 CDPARANOIA		Support for cdparanoia CD extraction
