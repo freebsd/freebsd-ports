@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/\./_/g}-src
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A tool to normalize the gain of MP3 files
 
 PLIST_FILES=	bin/mp3gain
