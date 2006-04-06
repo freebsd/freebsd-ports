@@ -6,10 +6,15 @@ lib/cmus/ip/mad.so
 %%MPC%%lib/cmus/ip/mpc.so
 %%VORBIS%%lib/cmus/ip/vorbis.so
 lib/cmus/ip/wav.so
+%%AO%%lib/cmus/op/ao.so
 %%ARTS%%lib/cmus/op/arts.so
 lib/cmus/op/oss.so
-%%DATADIR%%/keybindings
-%%DOCSDIR%%/cmus.html
+%%DATADIR%%/cyan.theme
+%%DATADIR%%/cyan.theme.bak
+%%DATADIR%%/default.theme
+%%DATADIR%%/default.theme.bak
+%%DATADIR%%/rc
+%%DATADIR%%/rc.bak
 %%DOCSDIR%%/examples/cmus-status-display
 @dirrm %%DOCSDIR%%/examples
 @dirrm %%DOCSDIR%%

@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	cmus
-PORTVERSION=	1.6.8
+PORTVERSION=	2.0.0
 CATEGORIES=	audio
-MASTER_SITES=	http://onion.dynserv.net/~timo/files/
+MASTER_SITES=	http://onion.dynserv.net/~timo/files/ \
+		http://mirror.greaterscope.net/cmus/
 
 MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	Console-based music player with really cool features
@@ -39,6 +40,9 @@ WITH_TREMOR=	yes
 .endif
 .if exists(${LOCALBASE}/lib/libmpcdec.so)
 WITH_MUSEPACK=	yes
+.endif
+.if exists(${LOCALBASE}/lib/libao.so)
+WITH_LIBAO=	yes
 .endif
 .if exists(${LOCALBASE}/lib/libartsc.so)
 WITH_ARTS=	yes
@@ -75,6 +79,14 @@ PLIST_SUB+=	MPC=""
 .else
 PLIST_SUB+=	MPC="@comment "
 PREMSG+=	Define WITH_MUSEPACK=yes to enable musepack support.\n
+.endif
+
+.if defined(WITH_LIBAO)
+LIB_DEPENDS+=	ao:${PORTSDIR}/audio/libao
+PLIST_SUB+=	AO=""
+.else
+PLIST_SUB+=	AO="@comment "
+PREMSG+=	Define WITH_LIBAO=yes to enable the libao output library.\n
 .endif
 
 .if defined(WITH_ARTS)
