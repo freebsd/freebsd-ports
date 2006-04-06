@@ -1,0 +1,31 @@
+--- src/gui/addressbook.cpp.orig	Sun Mar 12 20:11:33 2006
++++ src/gui/addressbook.cpp	Tue Apr  4 12:17:23 2006
+@@ -38,6 +38,7 @@
+ 
+ #include "../../config.h"
+ 
++#include <libintl.h>
+ #include "addressbook.h"
+ #include "main.h"
+ #include "chat.h"
+--- src/gui/main.cpp.orig	Sun Mar 12 20:11:34 2006
++++ src/gui/main.cpp	Tue Apr  4 12:17:27 2006
+@@ -38,6 +38,7 @@
+ 
+ #include "../../config.h"
+ 
++#include <libintl.h>
+ #include "main.h"
+ #include "callshistory.h"
+ 
+@@ -78,10 +79,6 @@
+ #include <gdk/gdkx.h>
+ #else
+ #include "winpaths.h"
+-#endif
+-
+-#if defined(P_FREEBSD) || defined (P_MACOSX)
+-#include <libintl.h>
+ #endif
+ 
+ #include <libxml/parser.h>

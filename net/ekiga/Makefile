@@ -5,49 +5,32 @@
 # $FreeBSD$
 #
 
-PORTNAME=	gnomemeeting
-PORTVERSION=	1.2.1
+PORTNAME=	ekiga
+PORTVERSION=	2.0.1
 CATEGORIES=	net gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R}
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.0
 
-MAINTAINER=	netchild@FreeBSD.org
-COMMENT=	GNOME H323 Video Conferencing program, similar to NetMeeting
+MAINTAINER=	jbq@caraldi.com
+COMMENT=	VoIP phone for Gnome
 
-LIB_DEPENDS=	h323_r:${PORTSDIR}/net/openh323 \
-		howl:${PORTSDIR}/net/howl
+LIB_DEPENDS=	opal__r.2:${PORTSDIR}/net/opal \
+		avahi-core.4:${PORTSDIR}/net/avahi \
+		ebook-1.2.5:${PORTSDIR}/databases/evolution-data-server
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	libgnomeui libbonobo gnomeprefix gnomehack evolutiondataserver \
-		intlhack
-USE_OPENLDAP=	yes
-GCONF_SCHEMAS=	gnomemeeting.schemas
-USE_SDL=	yes
-USE_BISON=	yes
-# Clear configure target so we stop getting binaries prefixed with i386-portbld-freebsd46
-CONFIGURE_TARGET=
+USE_SDL=	sdl
+USE_GNOME=	libgnomeui libbonobo gnomeprefix gnomehack gnomelibs gnomedocutils
 USE_AUTOTOOLS=	libtool:15
-CONFIGURE_ENV=	OSTYPE=${OPSYS} \
-		CXXFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${PREFIX}/lib -L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
-		SDL_CONFIG=${LOCALBASE}/bin/sdl11-config \
-		CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
-		PTLIBDIR=${PREFIX}
+LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+CONFIGURE_ENV=	SDL_CONFIG=${LOCALBASE}/bin/sdl11-config LDFLAGS="${LDFLAGS}"
 
 CONFIGURE_ARGS=	--with-pwlib-dir=${LOCALBASE} \
-		--with-openh323-dir=${LOCALBASE} \
- 		--with-ldap-dir=${LOCALBASE}
+		--with-opal-dir=${LOCALBASE}
 
-MAN1=	gnomemeeting.1
-
-post-patch:
-	${REINPLACE_CMD} -e 's:-lh323_FreeBSD_x86_r_s:-lh323_r:g; \
-		s:-lpt_FreeBSD_x86_r_s:-lpt_r:g; \
-		s:-lh323_FreeBSD_x86_r:-lh323_r:g; \
-		s:-lpt_FreeBSD_x86_r:-lpt_r:g; \
-		s: -DSTATIC_LIBS_USED::g' \
-		${WRKSRC}/configure
+GCONF_SCHEMAS=	ekiga.schemas
+MAN1=		ekiga.1
 
 .include <bsd.port.mk>

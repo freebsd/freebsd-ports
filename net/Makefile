@@ -106,6 +106,7 @@
     SUBDIR += dtcpclient
     SUBDIR += easysoap
     SUBDIR += echoping
+    SUBDIR += ekiga
     SUBDIR += empty
     SUBDIR += entitymib
     SUBDIR += erlang_xmlrpc
