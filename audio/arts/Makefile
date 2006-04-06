@@ -20,7 +20,7 @@ COMMENT=	Audio system for the KDE integrated X11 desktop
 LIB_DEPENDS+=	audiofile:${PORTSDIR}/audio/libaudiofile \
 		mad:${PORTSDIR}/audio/libmad \
 		ogg:${PORTSDIR}/audio/libogg \
-		glib:${PORTSDIR}/devel/glib20 \
+		glib-2.0:${PORTSDIR}/devel/glib20 \
 		vorbis:${PORTSDIR}/audio/libvorbis
 
 WANT_GNOME=	yes
