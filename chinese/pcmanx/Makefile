@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	pcmanx
-PORTVERSION=	0.3.3
-PORTREVISION=	3
+PORTVERSION=	0.3.4
 CATEGORIES=	chinese net gnome
 MASTER_SITES=	http://pcmanx.csie.net/release/
-DISTNAME=	pcmanx-pure-gtk2-${PORTVERSION}
+DISTNAME=	${PORTNAME}-gtk2-${PORTVERSION}
 
 MAINTAINER=	chinsan.tw@gmail.com
 COMMENT=	BBS client using GTK+ 2.x
@@ -33,5 +32,8 @@ CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
+
+post-extract:
+	@${REINPLACE_CMD} -e 's/wget/fetch/' ${WRKSRC}/po/zh_TW.po
 
 .include <bsd.port.mk>
