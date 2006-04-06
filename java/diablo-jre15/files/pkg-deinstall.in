@@ -1,0 +1,35 @@
+#!/bin/sh
+# $FreeBSD$
+
+# Set up a standard path
+PATH=/usr/bin:/bin
+
+# Don't do anything during post-deinstall
+if [ "$2" = "POST-DEINSTALL" ]; then
+	exit 0
+fi
+
+# Remove the plugin
+
+# Plugin location variables
+BROWSERPLUGINDIR=%%X11BASE%%/lib/browser_plugins
+if [ `echo "$1" | grep jdk` ]; then
+	DIABLOPLUGINDIR=${PKG_PREFIX}/diablo-jdk1.5.0/jre/plugin/i386/ns7
+else
+	DIABLOPLUGINDIR=${PKG_PREFIX}/diablo-jre1.5.0/plugin/i386/ns7
+fi
+PLUGIN=libjavaplugin_oji.so
+
+# Check if the package includes the plugin
+if [ ! -e "${DIABLOPLUGINDIR}/${PLUGIN}" ]; then
+	exit 0
+fi
+
+# See if the browser plugin is a link to the package plugin and remove it if so.
+if [ -e "${BROWSERPLUGINDIR}/${PLUGIN}" -a \
+     -L "${BROWSERPLUGINDIR}/${PLUGIN}" -a \
+     x`ls -l "${BROWSERPLUGINDIR}/${PLUGIN}" 2>/dev/null | awk '/->/{print $NF;exit 0}END{exit 1}'` = x"${DIABLOPLUGINDIR}/${PLUGIN}" ]; then
+	rm -f "${BROWSERPLUGINDIR}/${PLUGIN}" 
+fi
+
+exit 0

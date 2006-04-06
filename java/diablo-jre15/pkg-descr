@@ -1,0 +1,5 @@
+The Java Runtime Environment (JRE) implements the Java Virtual
+machine and base classes, and permits the execution of Java
+applications on FreeBSD.
+
+WWW: http://www.FreeBSDFoundation.org/downloads/java.shtml
