@@ -51,6 +51,7 @@
     SUBDIR += fbsd-icons
     SUBDIR += fixesext
     SUBDIR += fluxbg
+    SUBDIR += gcb
     SUBDIR += gcursor
     SUBDIR += gdesklets-tasklist
     SUBDIR += gdkxft
