@@ -3,3 +3,5 @@ share/festival/lib/dicts/wsj.wp39.poslexR
 share/festival/lib/dicts/wsj.wp39.tri.ngrambin
 share/festival/lib/dicts/COPYING.poslex
 @dirrmtry share/festival/lib/dicts
+@dirrmtry share/festival/lib
+@dirrmtry share/festival

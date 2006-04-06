@@ -1,5 +1,3 @@
-$NetBSD: md5,v 1.2 1999/10/11 16:30:53 proff Exp $
-
-MD5 (festival/festlex_CMU.tar.gz) = a3ffcd09dcbf1306fdef3c84c1c521d6
-SIZE (festival/festlex_CMU.tar.gz) = 1697709
-SHA256 (festival/festlex_CMU.tar.gz) = b485c1e8e8e265e335aa99f083963496fa64b34a314050b10d589e942e10c963
+MD5 (festival/festlex_CMU.tar.gz) = 86a765c48d6b64134b28af45affec1bf
+SHA256 (festival/festlex_CMU.tar.gz) = 507295934b4e205bcd242e0d56c15ee9b8a9401ad4ee6796d998ba2e40be4693
+SIZE (festival/festlex_CMU.tar.gz) = 1749300

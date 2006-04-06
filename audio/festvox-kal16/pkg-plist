@@ -6,3 +6,7 @@ share/festival/lib/voices/english/kal_diphone/festvox/kal_diphone.scm
 share/festival/lib/voices/english/kal_diphone/festvox/kaldurtreeZ.scm
 @dirrm share/festival/lib/voices/english/kal_diphone/festvox
 @dirrm share/festival/lib/voices/english/kal_diphone
+@dirrmtry share/festival/lib/voices/english
+@dirrmtry share/festival/lib/voices
+@dirrmtry share/festival/lib
+@dirrmtry share/festival
