@@ -1,12 +1,21 @@
 bin/tp_tagger
 bin/trm
 include/tunepimp/context.h
+include/tunepimp/decode_plugin.h
 include/tunepimp/defs.h
+include/tunepimp/fileio.h
+include/tunepimp/metadata_plugin.h
 include/tunepimp/tp_c.h
 include/tunepimp/track.h
 include/tunepimp/tunepimp.h
 lib/libtunepimp.a
 lib/libtunepimp.la
 lib/libtunepimp.so
-lib/libtunepimp.so.2
+lib/libtunepimp.so.3
+lib/tunepimp/plugins/flac.tpp
+lib/tunepimp/plugins/mp3.tpp
+lib/tunepimp/plugins/vorbis.tpp
+lib/tunepimp/plugins/wav.tpp
 @dirrm include/tunepimp
+@dirrm lib/tunepimp/plugins
+@dirrm lib/tunepimp
