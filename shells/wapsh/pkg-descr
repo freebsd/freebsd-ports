@@ -6,9 +6,14 @@ The following phones and emulators have been successfully tested with
 htsh:
   * Nokia 6210
   * Nokia 7110
-  * Siemens C35 and S35
+  * Motorola Timeport P7389
+  * Siemens C35 and S35, S45, S55
+  * Samsung SCH-20
+  * Sony CMD-J5
   * Nokia WAP Toolkit 2.0 "Blueprint" phone emulator
   * UP.Simulator 4.0 from Phone.com
 
 We welcome feedback (at wapsh@exolution.de) from users about their
 experiences using other phone types.
+
+WWW: http://www.exolution.de/geschaeft/produkte/wapsh.en.htm
