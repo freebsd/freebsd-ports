@@ -34,6 +34,49 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="6a5174bd-c580-11da-9110-00123ffe8333">
+    <topic>clamav -- Multiple Vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>clamav</name>
+	<range><lt>0.88.1</lt></range>
+      </package>
+      <package>
+	<name>clamav-devel</name>
+	<range><le>20051104_1</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/19534/">
+	  <p>Some vulnerabilities have been reported in ClamAV, which
+	    potentially can be exploited by malicious people to cause a
+	    DoS (Denial of Service) and compromise a vulnerable system.</p>
+	  <p>An unspecified integer overflow error exists in the PE header
+	    parser in "libclamav/pe.c". Successful exploitation requires that
+	    the ArchiveMaxFileSize option is disabled.</p>
+	  <p>Some format string errors in the logging handling in
+	    "shared/output.c" may be exploited to execute arbitrary code.</p>
+	  <p>An out-of-bounds memory access error in the "cli_bitset_test()"
+	    function in "ibclamav/others.c" may be exploited to cause a
+	    crash.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-1614</cvename>
+      <cvename>CVE-2006-1615</cvename>
+      <cvename>CVE-2006-1630</cvename>
+      <url>http://secunia.com/advisories/19534/</url>
+      <url>http://www.us.debian.org/security/2006/dsa-1024</url>
+    </references>
+    <dates>
+      <discovery>2006-04-06</discovery>
+      <entry>2006-04-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="99015cf5-c4dd-11da-b2fb-000e0c2e438a">
     <topic>mediawiki -- hardcoded placeholder string security bypass
       vulnerability</topic>
