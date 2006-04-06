@@ -34,6 +34,64 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="fba75b43-c588-11da-9110-00123ffe8333">
+    <topic>phpmyadmin -- XSS vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>phpMyAdmin</name>
+	<range><lt>2.8.0.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>phpMyAdmin security announcement:</p>
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security.php?issue=PMASA-2006-1">
+	  <p>It was possible to conduct an XSS attack with a direct call
+	    to some scripts under the themes directory.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.phpmyadmin.net/home_page/security.php?issue=PMASA-2006-1</url>
+    </references>
+    <dates>
+      <discovery>2006-04-06</discovery>
+      <entry>2006-04-06</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="7b55f5c2-c58b-11da-9110-00123ffe8333">
+    <topic>phpmyadmin -- 'set_theme' Cross-Site Scripting</topic>
+    <affects>
+      <package>
+	<name>phpMyAdmin</name>
+	<range><lt>2.8.0.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/19277">
+	  <p>A vulnerability has been reported in phpMyAdmin, which can be
+	    exploited by malicious people to conduct cross-site scripting
+	    attacks.</p>
+	  <p>Input passed to the "set_theme" parameter isn't properly
+	    sanitised before being returned to the user. This can be exploited
+	    to execute arbitrary HTML and script code in a user's browser
+	    session in context of an affected site.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-1258</cvename>
+      <url>http://secunia.com/advisories/19277</url>
+    </references>
+    <dates>
+      <discovery>2006-03-17</discovery>
+      <entry>2006-04-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6a5174bd-c580-11da-9110-00123ffe8333">
     <topic>clamav -- Multiple Vulnerabilities</topic>
     <affects>
