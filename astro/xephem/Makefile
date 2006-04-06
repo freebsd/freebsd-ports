@@ -54,6 +54,7 @@ pre-build:
 
 pre-install:
 	@${FIND} ${WRKSRC}/../.. -name Makefile.bak -type f | ${XARGS} ${RM} -f
+	@${CP} ${WRKSRC}/xephem.man ${WRKSRC}/xephem.1
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xephem ${PREFIX}/bin
