@@ -6,6 +6,8 @@
 %%DATADIR%%/html/add_mailinglist-idx.html
 %%DATADIR%%/html/add_mailinglist-no-idx.html
 %%DATADIR%%/html/add_user.html
+%%DATADIR%%/html/change_password.html
+%%DATADIR%%/html/change_password_success.html
 %%DATADIR%%/html/colortable
 %%DATADIR%%/html/del_autorespond_confirm.html
 %%DATADIR%%/html/del_forward_confirm.html
@@ -31,6 +33,7 @@
 %%DATADIR%%/html/show_subscribers.html
 %%DATADIR%%/html/show_users.html
 %%DATADIR%%/lang/bg
+%%DATADIR%%/lang/cs
 %%DATADIR%%/lang/da
 %%DATADIR%%/lang/de
 %%DATADIR%%/lang/en
