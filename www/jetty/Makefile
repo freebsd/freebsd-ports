@@ -6,19 +6,21 @@
 #
 
 PORTNAME=	jetty
-PORTVERSION=	4.2.20
+DISTVERSION=	5.1.11RC0
 CATEGORIES=	www java
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		ftp://jetty.mortbay.com/pub/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	jetty
-DISTFILES=	${PORTNAME}-${PORTVERSION}-all${EXTRACT_SUFX}
+DISTNAME=	${PORTNAME}-${DISTVERSION}-all
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extensible Java HTTP Server
 
-USE_JAVA=	1.2+
-
-NO_BUILD=	yes
+USE_ZIP=	yes
+JAVA_BUILD=	jdk
+USE_JAVA=	yes
+JAVA_VERSION=	1.4+
+USE_ANT=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 PLIST_SUB=	JETTY_VERSION=${PORTVERSION}
 
@@ -35,9 +37,9 @@ post-install:
 	@${SED} 's|%%PREFIX%%|${PREFIX}|g' ${PKGMESSAGE} \
 		| ${SED} 's|%%PORTVERSION%%|${PORTVERSION}|g'
 	@${CHMOD} a+rx \
-		${PREFIX}/share/java/${PORTNAME}-${PORTVERSION}/bin/jetty.sh
+		${PREFIX}/share/java/${PORTNAME}-${PORTVERSION}/extra/unix/bin/jetty.sh
 	@${LN} -sf \
-		${PREFIX}/share/java/${PORTNAME}-${PORTVERSION}/bin/jetty.sh \
+		${PREFIX}/share/java/${PORTNAME}-${PORTVERSION}/extra/unix/bin/jetty.sh \
 		${PREFIX}/sbin/jetty
 
 .include <bsd.port.mk>
