@@ -11995,7 +11995,6 @@ sketchy		ports/lang/sketchy
 ski		ports/emulators/ski
 skill		ports/sysutils/skill
 skim		ports/textproc/skim
-skip		ports/security/skip
 skippy		ports/x11-wm/skippy
 skippy-xd	ports/x11-wm/skippy-xd
 skribe		ports/textproc/skribe
