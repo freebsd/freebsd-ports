@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/security/clamav/files/Attic/clamav-freshclam.sh.in,v 1.2 2006-02-20 20:47:37 dougb Exp $
+# $FreeBSD$
 #
 
 # PROVIDE: freshclam
@@ -23,7 +23,7 @@ rcvar=`set_rcvar`
 
 command=%%PREFIX%%/bin/freshclam
 pidfile=%%RUNDIR%%/freshclam.pid
-command_args="--daemon"
+command_args="--daemon -p ${pidfile}"
 required_dirs=%%DBDIR%%
 required_files=%%PREFIX%%/etc/freshclam.conf
 
