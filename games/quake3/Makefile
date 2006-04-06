@@ -9,7 +9,7 @@ PORTNAME=	quake3
 PORTVERSION=	1.32b
 PORTREVISION=	4
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.idsoftware.com/idstuff/source/ \
+MASTER_SITES=	${MASTER_SITE_IDSOFTWARE:S|$|source/|} \
 		http://www.proarena.com/p/ftpx/x8524/quake_3_arena/ \
 		http://www.planetgargoyle.com/ \
 		http://www.teamdarkside.net/ \

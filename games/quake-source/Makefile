@@ -8,11 +8,11 @@
 PORTNAME=	source
 PORTVERSION=	1.01
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.idsoftware.com/idstuff/source/:s \
-		ftp://ftp.fasta.fh-dortmund.de/mirror/idstuff/source/:s
+MASTER_SITES=	${MASTER_SITE_IDSOFTWARE}
+MASTER_SITE_SUBDIR=	source
 PKGNAMEPREFIX=	quake-
 DISTNAME=	qcc
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:s
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	alejandro@varnet.biz
 COMMENT=	Quake and QuakeWorld source
@@ -29,8 +29,7 @@ LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_QUAKEWORLD)
-MASTER_SITES+=	ftp://ftp.idsoftware.com/idstuff/quakeworld/unix/:qw \
-		ftp://ftp.fasta.fh-dortmund.de/mirror/idstuff/quakeworld/unix/:qw
+MASTER_SITES+=	${MASTER_SITE_IDSOFTWARE:S|$|quakeworld/unix/:qw|}
 DISTFILES+=	qwsv-2.30-glibc-i386-unknown-linux2.0${EXTRACT_SUFX}:qw
 USE_REINPLACE=	yes
 PLIST_SUB+=	QUAKEWORLD=""

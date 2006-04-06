@@ -8,8 +8,8 @@
 PORTNAME=	quake3
 DISTVERSION=	1.32b-3
 CATEGORIES=	games linux
-MASTER_SITES=	ftp://ftp.idsoftware.com/idstuff/quake3/linux/ \
-		http://3dgamers.iinet.net.au/pub/3dgamers/games/quake3arena/
+MASTER_SITES=	${MASTER_SITE_IDSOFTWARE}
+MASTER_SITE_SUBDIR=	quake3/linux
 PKGNAMEPREFIX=	linux-
 DISTNAME=	linuxq3apoint-${DISTVERSION}.x86
 EXTRACT_SUFX=	.run

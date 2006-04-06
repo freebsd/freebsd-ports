@@ -8,7 +8,8 @@
 PORTNAME=	qcc
 PORTVERSION=	1.01
 CATEGORIES=	games devel
-MASTER_SITES=	ftp://ftp.idsoftware.com/idstuff/source/
+MASTER_SITES=	${MASTER_SITE_IDSOFTWARE}
+MASTER_SITE_SUBDIR=	source
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	danfe@FreeBSD.org

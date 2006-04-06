@@ -10,8 +10,7 @@ PORTVERSION=	0.3
 PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.galgenberg.net/distfiles/:qf \
-		ftp://ftp.idsoftware.com/idstuff/quake2/source/:id \
-		ftp://ftp.fasta.fh-dortmund.de/mirror/idstuff/quake2/source/:id
+		${MASTER_SITE_IDSOFTWARE:S|$|quake2/source/:id|}
 DISTNAME=	quake2-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:qf
 DIST_SUBDIR=	${PORTNAME}

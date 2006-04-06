@@ -9,8 +9,7 @@ PORTNAME=	source
 PORTVERSION=	3.21
 CATEGORIES=	games
 MASTER_SITES=	http://www.icculus.org/quake2/files/:icc \
-		ftp://ftp.idsoftware.com/idstuff/quake2/source/:id \
-		ftp://ftp.fasta.fh-dortmund.de/mirror/idstuff/quake2/source/:id
+		${MASTER_SITE_IDSOFTWARE:S|$|quake2/source/:id|}
 PKGNAMEPREFIX=	quake2-
 DISTNAME=	quake2-r0.16.2
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:icc

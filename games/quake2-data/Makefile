@@ -9,8 +9,8 @@ PORTNAME=	data
 PORTVERSION=	3.20
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.idsoftware.com/idstuff/quake2/ \
-		ftp://ftp.fasta.fh-dortmund.de/mirror/idstuff/quake2/
+MASTER_SITES=	${MASTER_SITE_IDSOFTWARE}
+MASTER_SITE_SUBDIR=	quake2
 PKGNAMEPREFIX=	${Q2PKGNAMEPREFIX}
 DISTFILES=	${Q2FULL}
 DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}

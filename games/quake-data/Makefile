@@ -44,15 +44,13 @@ PLIST_SUB+=	FULL="@comment "
 .endif
 
 .if defined(WITH_QUAKEWORLD)
-MASTER_SITES+=	ftp://ftp.idsoftware.com/idstuff/quakeworld/unix/:qw \
-		ftp://ftp.fasta.fh-dortmund.de/mirror/idstuff/quakeworld/unix/:qw
+MASTER_SITES+=	${MASTER_SITE_IDSOFTWARE:S|$|quakeworld/unix/:qw|}
 DISTFILES+=	${PROGFILE}:qw
 EXTRACT_ONLY+=	${PROGFILE}
 PLIST_SUB+=	QUAKEWORLD=""
 
 .if defined(WITH_QUAKEWORLD_SKINS)
-MASTER_SITES+=	ftp://ftp.idsoftware.com/idstuff/quakeworld/skins/:skins \
-		ftp://ftp.fasta.fh-dortmund.de/mirror/idstuff/quakeworld/skins/:skins
+MASTER_SITES+=	${MASTER_SITE_IDSOFTWARE:S|$|quakeworld/skins/:skins|}
 DISTFILES+=	${SKINFILES:S/$/:skins/}
 EXTRACT_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
 PLIST_SUB+=	QUAKEWORLD_SKINS=""

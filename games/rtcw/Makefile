@@ -8,9 +8,8 @@
 PORTNAME=	rtcw
 DISTVERSION=	1.41-3
 CATEGORIES=	games linux
-MASTER_SITES=	ftp://ftp.chg.ru/.3/games/idgames/idstuff/wolf/linux/ \
-		ftp://ftp.idsoftware.com/idstuff/wolf/linux/ \
-		http://downloads-3dg.planetmirror.com/pub/3dgamers/games/returnwolfenstein/
+MASTER_SITES=	${MASTER_SITE_IDSOFTWARE}
+MASTER_SITE_SUBDIR=	wolf/linux
 DISTNAME=	wolf-linux-${DISTVERSION}.x86
 EXTRACT_SUFX=	.run
 

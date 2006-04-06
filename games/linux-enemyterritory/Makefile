@@ -15,7 +15,8 @@ MASTER_SITES=	http://mirrors.xmission.com/idsoftware/et/linux/ \
 		http://ftp4.3dgamers.com/pub/3dgamers/games/wolfensteinet/ \
 		http://3dgamers.gameservers.net/pub/3dgamers/games/wolfensteinet/ \
 		http://downloads-3dg.planetmirror.com/pub/3dgamers/games/wolfensteinet/ \
-		http://3dgamers.iinet.net.au/pub/3dgamers/games/wolfensteinet/
+		http://3dgamers.iinet.net.au/pub/3dgamers/games/wolfensteinet/ \
+		${MASTER_SITE_IDSOFTWARE:S|$|et/linux/|}
 PKGNAMEPREFIX=	linux-
 DISTNAME=	et-linux-2.60.x86
 EXTRACT_SUFX=	.run
