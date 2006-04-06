@@ -2234,3 +2234,4 @@ lang/ruby18-nopthreads||2006-03-31|Removed since pthread support of ruby18 is di
 net-mgmt/nfdump-devel|net-mgmt/nfdump|2006-04-02|Development port no longer needed
 devel/py-twistedXish|net-im/py-twistedWords|2006-04-05|Incorporated into net-im/py-twistedWords
 devel/upp602|devel/upp|2006-04-05|Was created in a bad directory
+mail/mulberry||2006-04-06|Has expired: mastersite disappeared, no longer maintained by author

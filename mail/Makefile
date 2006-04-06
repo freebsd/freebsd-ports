@@ -233,7 +233,6 @@
     SUBDIR += msgconvert
     SUBDIR += msmtp
     SUBDIR += msmtpqueue
-    SUBDIR += mulberry
     SUBDIR += mutt
     SUBDIR += mutt-devel
     SUBDIR += mutt-devel-lite
