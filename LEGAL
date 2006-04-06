@@ -147,10 +147,14 @@ dgd/* 			net/dgd-lpmud		No monetary gain.  No point in
 						restrictions on distribution
 						Source tarball may go on CD-ROM
 dgd/*			net/dgd-net		Same as dgd
-diablo-caffe-*.tar.bz2	java/diablo-jdk13	License does not allow distribution
-						with fee
-diablo-latte-*.tar.bz2	java/diablo-jre13	License does not allow distribution
-						with fee
+diablo-caffe-1.3*.tar.bz2	java/diablo-jdk13	License does not allow distribution
+							with fee
+diablo-caffe-1.5*.tar.bz2	java/diablo-jdk15	License does not allow distribution
+							with fee
+diablo-latte-1.3*.tar.bz2	java/diablo-jre13	License does not allow distribution
+							with fee
+diablo-latte-1.5*.tar.bz2	java/diablo-jre15	License does not allow distribution
+							with fee
 dist10.tar.gz		audio/mp3encode		Condition is not clear
 divx4linux-*.tgz	multimedia/linux-divx4linux4 Unsure of licensing issues
 divx4linux-*.tar.gz	multimedia/linux-divx4linux Unsure of licensing issues
