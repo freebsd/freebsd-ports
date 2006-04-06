@@ -8,11 +8,8 @@
 PORTNAME=	doom
 PORTVERSION=	1.10
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.idsoftware.com/idstuff/source/ \
-		http://ftp.sunet.se/pub/pc/games/idgames/idstuff/source/ \
-		http://www.gamers.org/pub/idgames/idstuff/source/ \
-		ftp://ftp.ntua.gr/pub/vendors/idgames/idstuff/source/
-		
+MASTER_SITES=	${MASTER_SITE_IDSOFTWARE}
+MASTER_SITE_SUBDIR=	source
 DISTNAME=	doomsrc
 
 MAINTAINER=	jmz@FreeBSD.org

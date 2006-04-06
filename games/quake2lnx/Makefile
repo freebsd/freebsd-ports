@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://offload1.icculus.org/quake2/files/:icc \
 		http://www.icculus.org/quake2/files/:icc \
-		ftp://ftp.idsoftware.com/idstuff/quake2/source/:id
+		${MASTER_SITE_IDSOFTWARE:S|$|quake2/source/:id|}
 DISTNAME=	quake2-r${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:icc
 DIST_SUBDIR=	${PORTNAME}

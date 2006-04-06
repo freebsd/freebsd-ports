@@ -9,7 +9,7 @@ PORTNAME=	quake4
 PORTVERSION=	1.0.6
 PORTEPOCH=	1
 CATEGORIES=	games linux
-MASTER_SITES=	ftp://ftp.idsoftware.com/idstuff/quake4/linux/old/ \
+MASTER_SITES=	${MASTER_SITE_IDSOFTWARE:S|$|quake4/linux/old/|} \
 		${MASTER_SITE_GENTOO}
 MASTER_SITE_SUBDIR=	distfiles
 PKGNAMEPREFIX=	linux-
