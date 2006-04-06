@@ -1,8 +1,10 @@
 bin/lisa
 bin/reslisa
 etc/rc.d/lisa.sh
+lib/kde3/kcm_lanbrowser.a
 lib/kde3/kcm_lanbrowser.la
 lib/kde3/kcm_lanbrowser.so
+lib/kde3/kio_lan.a
 lib/kde3/kio_lan.la
 lib/kde3/kio_lan.so
 share/applnk/.hidden/kcmkiolan.desktop
