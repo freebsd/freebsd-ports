@@ -1,0 +1,5 @@
+bin/gcb
+share/icons/gcb.png
+share/applications/gcb.desktop
+share/pixmaps/gcb.png
+@dirrmtry share/applications
