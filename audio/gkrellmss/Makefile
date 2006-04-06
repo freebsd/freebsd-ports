@@ -9,17 +9,17 @@ PORTNAME=	gkrellmss
 PORTVERSION=	0.5
 PORTREVISION=	2
 CATEGORIES=	audio
-MASTER_SITES=	http://members.dslextreme.com/users/billw/gkrellmss/
+MASTER_SITES=	http://www.bsd-geek.de/FreeBSD/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A plugin for GKrellM with a VU meter showing left/right channel audio
-
-NO_LATEST_LINK=	yes
 
 BUILD_DEPENDS=	${X11BASE}/include/gkrellm/gkrellm.h:${PORTSDIR}/sysutils/gkrellm
 LIB_DEPENDS=	gdk_pixbuf_xlib.2:${PORTSDIR}/graphics/gdk-pixbuf
 LIB_DEPENDS=	fftw.2:${PORTSDIR}/math/fftw
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm
+
+NO_LATEST_LINK=	yes
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
