@@ -1,0 +1,288 @@
+#!/bin/sh
+# $FreeBSD$
+
+# Set up a standard path
+PATH=/usr/bin:/bin
+
+# Hack to prevent licensing from breaking bento.
+if [ "x${PACKAGE_BUILDING}" != "x" ]; then
+	exit 0
+fi
+
+# Attempt to install a link for the browser plugin during post-install
+if [ "$2" = "POST-INSTALL" ]; then
+	# Plugin location variables
+	BROWSERPLUGINDIR=%%X11BASE%%/lib/browser_plugins
+	if [ `echo "$1" | grep jdk` ]; then
+		DIABLOPLUGINDIR=${PKG_PREFIX}/diablo-jdk1.5.0/jre/plugin/i386/ns7
+	else
+		DIABLOPLUGINDIR=${PKG_PREFIX}/diablo-jre1.5.0/plugin/i386/ns7
+	fi
+	PLUGIN=libjavaplugin_oji.so
+
+	# Check if the browser plugin exists
+	if [ ! -e "${DIABLOPLUGINDIR}/${PLUGIN}" ]; then
+		exit 0
+	fi
+
+	# Check if the plugin directory exists.
+	if [ ! -d "${BROWSERPLUGINDIR}" ]; then
+		exit 0
+	fi
+
+	# Check if the browser plugin currently exists
+	if [ ! -e "${BROWSERPLUGINDIR}/${PLUGIN}" ]; then
+		# Create symbolic link
+		ln -sf "${DIABLOPLUGINDIR}/${PLUGIN}" \
+			"${BROWSERPLUGINDIR}/${PLUGIN}"
+		exit 0
+	fi
+
+	# If the browser plugin exists and is a symlink, but the link
+	# doesn't exist, then overwrite with the diablo plugin.
+	if [ -L "${BROWSERPLUGINDIR}/${PLUGIN}" ]; then
+		# Check if the linked to file exists.
+		if [ ! -e `ls -l "${BROWSERPLUGINDIR}/${PLUGIN}" 2>/dev/null | awk '/->/{print $NF;exit 0}END{exit 1}'` ]; then
+			ln -sf "${DIABLOPLUGINDIR}/${PLUGIN}" \
+				"${BROWSERPLUGINDIR}/${PLUGIN}"
+			exit 0
+		fi
+	fi
+
+	# The browser plugin exists and appears real.  Ask if they want it
+	# replaced.
+	echo "You appear to already have a Java browser plugin installed."
+	echo "Would you like to replace it with the Diablo 1.5.0 plugin? [yes or no]"
+	read ANSWER
+	: ${ANSWER:=no}
+	case $ANSWER in
+		[yY]|[yY][eE][sS])
+			ln -sf "${DIABLOPLUGINDIR}/${PLUGIN}" \
+				"${BROWSERPLUGINDIR}/${PLUGIN}"
+			;;
+		*)
+			;;
+	esac
+
+	# Done with post-install.
+	exit 0	
+fi
+
+# Pre-install section
+
+# License agreement
+more << EOF_LICENSE
+FREEBSD FOUNDATION
+
+Diablo Latte Version 1.5.0-0 ("Software")
+
+END USER LICENSE AGREEMENT
+
+You may install this Software only if you are currently a licensee
+of FreeBSD (including substantially similar versions of FreeBSD) for
+your own internal use only with your copy(ies) of FreeBSD (including
+substantially similar versions of FreeBSD).  If you are an OEM - a person
+who will bundle the Software with other software before distributing the
+bundled product to end users - you must read and "accept" the provisions
+of the OEM License Agreement.  You must read the License Agreement and
+enter "YES" below to continue your install.  By doing so, you agree to
+be bound by all of the terms of this License Agreement.
+
+IMPORTANT - READ CAREFULLY: This End User License Agreement ("Agreement")
+is a legal agreement between you (in your capacity as an individual
+and as an agent for your company, institution, or other entity) and the
+FreeBSD Foundation ("Foundation").  Accessing, downloading, installing,
+using or copying of the Software (as hereafter defined) by you or a third
+party on your behalf indicates your agreement to be bound by the terms
+and conditions of this Agreement.  If you do not agree to these terms and
+conditions, do not access, download, install, use or copy the Software.
+In the absence of this Agreement, you have no rights in the Software.
+1.	LICENSE GRANT.
+
+	(a)	Subject to all third party intellectual property claims
+	and without warranty of any nature, Foundation hereby grants to
+	you, and you hereby accept, a non-exclusive license for use in
+	(x) general purpose servers and (y) general purpose desktop and
+	laptop personal computers ("License") to:  (i) download, install
+	and use the Software in binary executable form on one or more
+	computers for use by a total number of end users not to exceed
+	the number of your end users who are authorized to use FreeBSD;
+	provided that you agree to implement reasonable controls to ensure
+	that your use of the Software does not exceed such maximum number
+	of end users; and (ii) download and/or use one or more copies of
+	any related materials provided by Foundation ("Related Materials")
+	in electronic format and/or one copies of the Related Materials
+	in hard copy format subject to the following terms and conditions:
+
+		(i)	other than as set forth in paragraph 1(a) above,
+		you may not make or distribute copies of the Software,
+		or electronically transfer the Software from one computer
+		to another or over a network;
+
+		(ii)	 you may not decompile, reverse engineer,
+		disassemble or otherwise reduce the Software to a
+		human-perceivable form;
+
+		(iii)	you may not rent, lease or sublease the Software;
+
+		(iv)	you may not modify the Software or create
+		derivative works based upon the Software; and
+
+		(v)	in the event that you breach any of the terms
+		of this Agreement, Foundation may terminate the License
+		and you must destroy all copies of the Software and
+		Related Materials.
+
+	(b)	you may make one copy of the Software in machine-readable
+	form solely for back-up purposes; provided, however, that you
+	must reproduce on such copy all copyright notices and proprietary
+	legends on the original copy of the software.
+
+	(c)	Subject to the terms and conditions of this Agreement,
+	you may create a hyperlink between an Internet website owned and
+	controlled by you and the Foundation's website, which hyperlink
+	describes in a fair and accurate manner where the Software
+	may be obtained, provided that you do not frame the Website or
+	otherwise give the false impression that Foundation is somehow
+	associated with, or otherwise endorses or sponsors your website.
+	Any goodwill associated with such hyperlink shall inure to
+	the sole and exclusive benefit of Foundation.  Other than the
+	creation of such hyperlink, nothing in this Agreement shall be
+	construed as conferring upon you any right to make any reference
+	to Foundation or to its trademarks, service marks or any other
+	indicia of origin owned by Foundation, or to indicate in any
+	way that your products or services are in any way sponsored,
+	approved, endorsed by or affiliated with Foundation.
+
+2.	RIGHTS RESERVED.
+
+	(a)	This License does not grant you any right to enhancements
+	or updates to, or support or maintenance for, the Software or
+	any modifications made by Foundation;
+
+	(b)	Foundation is free to license the Software on terms
+	different from those contained herein;
+
+	(c)	Foundation and its licensors hereby expressly reserve
+	all rights in the Software which are not expressly granted to
+	you under the License; and, without limiting the generality of
+	the foregoing, Foundation and its licensors retain all title,
+	copyright, and other intellectual property and proprietary rights
+	in the Software and any copies thereof, and you do not acquire
+	any rights, express or implied, other than those expressly set
+	forth in this Agreement.
+
+3.	COPYRIGHT.  You hereby acknowledge and agree that the Software
+is protected by United States copyright law and international treaty
+provisions.  You must reproduce all copyright notices, trademark notices
+and other proprietary notices of Foundation and its licensors on any
+copies of the Software and Related Materials and you must not remove
+such notices;
+
+4.	MAINTENANCE AND SUPPORT.  Foundation is under no obligation
+whatsoever to provide maintenance or support for the Software or
+to notify you of bug fixes, patches, or upgrades to the features,
+functionality or performance of the Software ("Enhancements") (if any),
+whether developed by Foundation or others.  If, in its sole discretion,
+Foundation makes an Enhancement available to you and does not enter into a
+separate written license agreement with you relating to such Enhancement,
+then that Enhancement will be deemed incorporated into the Software and
+subject to this Agreement.
+
+5.	WARRANTY DISCLAIMER.  THE SOFTWARE IS PROVIDED TO YOU "AS IS"
+WITHOUT WARRANTY OF ANY TYPE OR NATURE, AND FOUNDATION AND ITS LICENSORS
+HEREBY EXPRESSLY DISCLAIM ANY WARRANTIES, EXPRESS OR IMPLIED, INCLUDING,
+BUT NOT LIMITED TO, ANY IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE, TITLE OR NON-INFRINGEMENT OR ANY WARRANTIES
+ARISING BY USAGE OF TRADE, COURSE OF DEALING OR COURSE OF PERFORMANCE.
+IN ADDITION, FOUNDATION AND ITS LICENSORS EXPRESSLY DISCLAIM ANY LIABILITY
+FOR THE ACCURACY, COMPLETENESS OR USEFULNESS OF THE SOFTWARE AND DO
+NOT WARRANT THAT THE SOFTWARE WILL FUNCTION UNINTERRUPTED, THAT IT
+IS ERROR-FREE OR THAT ANY ERRORS WILL BE CORRECTED.  YOU ASSUME TOTAL
+RESPONSIBILITY AND RISK FOR YOUR USE OF THE SOFTWARE, INCLUDING, BUT
+NOT LIMITED TO ANY DEFECTS OR INACCURACIES THEREIN.
+6.	LIMITATION OF LIABILITY.  IN NO EVENT SHALL FOUNDATION OR ITS
+LICENSORS BE LIABLE FOR ANY INDIRECT, INCIDENTAL, CONSEQUENTIAL, SPECIAL
+OR PUNITIVE DAMAGES OF ANY KIND OR NATURE, INCLUDING, BUT NOT LIMITED
+TO, LOSS OF PROFITS OR LOSS OF DATA, FOR ANY REASON WHATSOEVER, WHETHER
+SUCH LIABILITY IS ASSERTED ON THE BASIS OF CONTRACT, TORT (INCLUDING
+NEGLIGENCE OR STRICT LIABILITY), OR OTHERWISE, EVEN IF FOUNDATION HAS
+BEEN ADVISED OF THE POSSIBILITY OF SUCH LOSS OR DAMAGES.  IN NO EVENT
+SHALL FOUNDATION'S LIABILITY FOR DAMAGES ARISING FROM OR IN CONNECTION
+WITH THIS AGREEMENT EXCEED THE GREATER OF $500 OR THE AMOUNT PAID BY
+YOU FOR THE SOFTWARE.  BECAUSE SOME STATES DO NOT ALLOW THE EXCLUSION
+OR LIMITATION OF LIABILITY FOR CONSEQUENTIAL OR INCIDENTAL DAMAGES, THE
+ABOVE LIMITATIONS MAY NOT APPLY TO YOU.  IN THE EVENT THAT APPLICABLE
+LAW DOES NOT ALLOW THE COMPLETE EXCLUSION OR LIMITATION OF LIABILITY OF
+CLAIMS AND DAMAGES AS SET FORTH IN THIS AGREEMENT, FOUNDATION'S LIABILITY
+IS LIMITED TO THE GREATEST EXTENT PERMITTED BY LAW.
+
+7.	INDEMNIFICATION.  You shall defend, indemnify and hold harmless
+Foundation and its licensors and their respective directors, officers,
+agents, employees and volunteers from and against any and all claims,
+suits, losses, damages, costs, fees and expenses arising out of or in
+connection with this Agreement.  You shall pay all costs incurred by
+Foundation in enforcing this provision, including reasonable attorneys'
+fees and court costs.  You agree that under no circumstances will
+Foundation indemnify you or any other person.
+
+8.	TERM AND TERMINATION.  The License will continue perpetually
+unless terminated by Foundation in accordance with this Agreement.  If you
+breach any term of this Agreement and failure to cure such breach within
+thirty (30) days after receipt of written notice specifying the breach,
+this Agreement shall automatically terminate.  Upon the termination
+of this Agreement, you shall immediately cease using the Software and
+provide Foundation with written certification of your compliance with
+the foregoing.	The termination of this Agreement shall not relieve you of
+your obligations arising prior to such termination.  Notwithstanding any
+provision in this Agreement to the contrary, Sections 5 through 7 shall
+survive the termination of this Agreement.
+
+9.	EXPORT CONTROLS.  You shall observe all applicable United States
+and foreign laws and regulations (if any) with respect to the export,
+re-export, diversion or transfer of the Software, related technical data
+and direct products thereof, including, but not limited to the Export
+Administration Regulations.
+
+10.	THIRD PARTY SOFTWARE.  You acknowledge and agree that the Software
+includes Java2 Standard Edition (the "Technology") pursuant to Sun
+Community Source License Copyright 1994-2003 Sun Microsystems, Inc.
+All rights reserved.  You also agree to install and use the Software
+on a product which (i) has a principle purpose that is substantially
+different from that of the stand-alone Technology; (ii) represents a
+significant functional and value enhancement to the Technology; (iii)
+operates in conjunction with the Technology; and (iv) is not marketed
+as a technology which replaces or substitutes for the Technology.
+
+11.	GENERAL.  You shall not assert against Foundation or its licensors
+any claim for infringement or misappropriation of any intellectual
+property rights in any way relating to the Software.  This Agreement shall
+be governed by, construed and enforced in accordance with the laws of the
+State of California, excluding its rules governing conflicts of laws.
+In the event that any provision of this Agreement is deemed illegal
+or unenforceable, Foundation may, but is not obligated to, post on the
+Website a new version of this Agreement which, in Foundation's opinion,
+reasonably preserves the intent of this Agreement.  This Agreement
+is binding upon and shall inure to the benefit of Foundation and
+its successors and assigns.  This Agreement represents the entire
+understanding of the parties, and superceded all previous communications,
+written or oral, relating to the subject of this Agreement.
+
+EOF_LICENSE
+
+agreed=
+while [ x$agreed = x ]; do
+	echo
+	echo "Do you agree to the above license terms? [yes or no] "
+	read reply leftover
+	case $reply in
+		y* | Y*)
+			agreed=1
+			;;
+		n* | n*)
+			echo
+			echo "If you don't agree to the license you can't install this software"
+			exit 1
+			;;
+	esac
+done

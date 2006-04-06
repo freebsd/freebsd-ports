@@ -1,0 +1,673 @@
+@unexec %%LOCALBASE%%/bin/unregistervm "%D/diablo-jre%%JRE_VERSION%%/bin/java"
+diablo-jre%%JRE_VERSION%%/CHANGES
+diablo-jre%%JRE_VERSION%%/COPYRIGHT
+diablo-jre%%JRE_VERSION%%/LICENSE
+diablo-jre%%JRE_VERSION%%/README
+diablo-jre%%JRE_VERSION%%/THIRDPARTYLICENSEREADME.txt
+diablo-jre%%JRE_VERSION%%/Welcome.html
+diablo-jre%%JRE_VERSION%%/bin/ControlPanel
+diablo-jre%%JRE_VERSION%%/bin/java
+diablo-jre%%JRE_VERSION%%/bin/java_vm
+diablo-jre%%JRE_VERSION%%/bin/javaws
+diablo-jre%%JRE_VERSION%%/bin/keytool
+diablo-jre%%JRE_VERSION%%/bin/kinit
+diablo-jre%%JRE_VERSION%%/bin/klist
+diablo-jre%%JRE_VERSION%%/bin/ktab
+diablo-jre%%JRE_VERSION%%/bin/orbd
+diablo-jre%%JRE_VERSION%%/bin/pack200
+diablo-jre%%JRE_VERSION%%/bin/policytool
+diablo-jre%%JRE_VERSION%%/bin/rmid
+diablo-jre%%JRE_VERSION%%/bin/rmiregistry
+diablo-jre%%JRE_VERSION%%/bin/servertool
+diablo-jre%%JRE_VERSION%%/bin/tnameserv
+diablo-jre%%JRE_VERSION%%/bin/unpack200
+diablo-jre%%JRE_VERSION%%/javaws/javaws
+diablo-jre%%JRE_VERSION%%/lib/audio/soundbank.gm
+diablo-jre%%JRE_VERSION%%/lib/charsets.jar
+diablo-jre%%JRE_VERSION%%/lib/classlist
+diablo-jre%%JRE_VERSION%%/lib/cmm/CIEXYZ.pf
+diablo-jre%%JRE_VERSION%%/lib/cmm/GRAY.pf
+diablo-jre%%JRE_VERSION%%/lib/cmm/LINEAR_RGB.pf
+diablo-jre%%JRE_VERSION%%/lib/cmm/PYCC.pf
+diablo-jre%%JRE_VERSION%%/lib/cmm/sRGB.pf
+diablo-jre%%JRE_VERSION%%/lib/content-types.properties
+diablo-jre%%JRE_VERSION%%/lib/deploy.jar
+diablo-jre%%JRE_VERSION%%/lib/ext/dnsns.jar
+diablo-jre%%JRE_VERSION%%/lib/ext/localedata.jar
+diablo-jre%%JRE_VERSION%%/lib/ext/sunjce_provider.jar
+diablo-jre%%JRE_VERSION%%/lib/flavormap.properties
+diablo-jre%%JRE_VERSION%%/lib/fontconfig.bfc
+diablo-jre%%JRE_VERSION%%/lib/fontconfig.properties.src
+diablo-jre%%JRE_VERSION%%/lib/fonts/LucidaBrightDemiBold.ttf
+diablo-jre%%JRE_VERSION%%/lib/fonts/LucidaBrightDemiItalic.ttf
+diablo-jre%%JRE_VERSION%%/lib/fonts/LucidaBrightItalic.ttf
+diablo-jre%%JRE_VERSION%%/lib/fonts/LucidaBrightRegular.ttf
+diablo-jre%%JRE_VERSION%%/lib/fonts/LucidaSansDemiBold.ttf
+diablo-jre%%JRE_VERSION%%/lib/fonts/LucidaSansRegular.ttf
+diablo-jre%%JRE_VERSION%%/lib/fonts/LucidaTypewriterBold.ttf
+diablo-jre%%JRE_VERSION%%/lib/fonts/LucidaTypewriterRegular.ttf
+diablo-jre%%JRE_VERSION%%/lib/fonts/fonts.dir
+diablo-jre%%JRE_VERSION%%/lib/i386/awt_robot
+diablo-jre%%JRE_VERSION%%/lib/i386/client/Xusage.txt
+diablo-jre%%JRE_VERSION%%/lib/i386/client/libjsig.so
+diablo-jre%%JRE_VERSION%%/lib/i386/client/libjvm.so
+diablo-jre%%JRE_VERSION%%/lib/i386/gtkhelper
+diablo-jre%%JRE_VERSION%%/lib/i386/headless/libmawt.so
+diablo-jre%%JRE_VERSION%%/lib/i386/jvm.cfg
+diablo-jre%%JRE_VERSION%%/lib/i386/libJdbcOdbc.so
+diablo-jre%%JRE_VERSION%%/lib/i386/libawt.so
+diablo-jre%%JRE_VERSION%%/lib/i386/libcmm.so
+diablo-jre%%JRE_VERSION%%/lib/i386/libdcpr.so
+diablo-jre%%JRE_VERSION%%/lib/i386/libdeploy.so
+diablo-jre%%JRE_VERSION%%/lib/i386/libdt_socket.so
+diablo-jre%%JRE_VERSION%%/lib/i386/libfontmanager.so
+diablo-jre%%JRE_VERSION%%/lib/i386/libhprof.so
+diablo-jre%%JRE_VERSION%%/lib/i386/libinstrument.so
+diablo-jre%%JRE_VERSION%%/lib/i386/libioser12.so
+diablo-jre%%JRE_VERSION%%/lib/i386/libjaas_unix.so
+diablo-jre%%JRE_VERSION%%/lib/i386/libjava.so
+diablo-jre%%JRE_VERSION%%/lib/i386/libjava_crw_demo.so
+diablo-jre%%JRE_VERSION%%/lib/i386/libjavaplugin_jni.so
+diablo-jre%%JRE_VERSION%%/lib/i386/libjavaplugin_nscp.so
+diablo-jre%%JRE_VERSION%%/lib/i386/libjawt.so
+diablo-jre%%JRE_VERSION%%/lib/i386/libjdwp.so
+diablo-jre%%JRE_VERSION%%/lib/i386/libjpeg.so
+diablo-jre%%JRE_VERSION%%/lib/i386/libjsig.so
+diablo-jre%%JRE_VERSION%%/lib/i386/libjsound.so
+diablo-jre%%JRE_VERSION%%/lib/i386/libmanagement.so
+diablo-jre%%JRE_VERSION%%/lib/i386/libmlib_image.so
+diablo-jre%%JRE_VERSION%%/lib/i386/libnative_chmod.so
+diablo-jre%%JRE_VERSION%%/lib/i386/libnet.so
+diablo-jre%%JRE_VERSION%%/lib/i386/libnio.so
+diablo-jre%%JRE_VERSION%%/lib/i386/librmi.so
+diablo-jre%%JRE_VERSION%%/lib/i386/libunpack.so
+diablo-jre%%JRE_VERSION%%/lib/i386/libverify.so
+diablo-jre%%JRE_VERSION%%/lib/i386/libzip.so
+diablo-jre%%JRE_VERSION%%/lib/i386/motif21/libmawt.so
+diablo-jre%%JRE_VERSION%%/lib/i386/native_threads/libhpi.so
+diablo-jre%%JRE_VERSION%%/lib/i386/server/Xusage.txt
+diablo-jre%%JRE_VERSION%%/lib/i386/server/libjsig.so
+diablo-jre%%JRE_VERSION%%/lib/i386/server/libjvm.so
+diablo-jre%%JRE_VERSION%%/lib/i386/xawt/libmawt.so
+diablo-jre%%JRE_VERSION%%/lib/im/indicim.jar
+diablo-jre%%JRE_VERSION%%/lib/im/thaiim.jar
+diablo-jre%%JRE_VERSION%%/lib/images/cursors/cursors.properties
+diablo-jre%%JRE_VERSION%%/lib/images/cursors/invalid32x32.gif
+diablo-jre%%JRE_VERSION%%/lib/images/cursors/motif_CopyDrop32x32.gif
+diablo-jre%%JRE_VERSION%%/lib/images/cursors/motif_CopyNoDrop32x32.gif
+diablo-jre%%JRE_VERSION%%/lib/images/cursors/motif_LinkDrop32x32.gif
+diablo-jre%%JRE_VERSION%%/lib/images/cursors/motif_LinkNoDrop32x32.gif
+diablo-jre%%JRE_VERSION%%/lib/images/cursors/motif_MoveDrop32x32.gif
+diablo-jre%%JRE_VERSION%%/lib/images/cursors/motif_MoveNoDrop32x32.gif
+diablo-jre%%JRE_VERSION%%/lib/images/icons/sun-java.png
+diablo-jre%%JRE_VERSION%%/lib/images/icons/sun-java_HighContrast.png
+diablo-jre%%JRE_VERSION%%/lib/images/icons/sun-java_HighContrastInverse.png
+diablo-jre%%JRE_VERSION%%/lib/images/icons/sun-java_LowContrast.png
+diablo-jre%%JRE_VERSION%%/lib/javaws.jar
+diablo-jre%%JRE_VERSION%%/lib/javaws/Java1.5.ico
+diablo-jre%%JRE_VERSION%%/lib/javaws/messages.properties
+diablo-jre%%JRE_VERSION%%/lib/javaws/messages_de.properties
+diablo-jre%%JRE_VERSION%%/lib/javaws/messages_es.properties
+diablo-jre%%JRE_VERSION%%/lib/javaws/messages_fr.properties
+diablo-jre%%JRE_VERSION%%/lib/javaws/messages_it.properties
+diablo-jre%%JRE_VERSION%%/lib/javaws/messages_ja.properties
+diablo-jre%%JRE_VERSION%%/lib/javaws/messages_ko.properties
+diablo-jre%%JRE_VERSION%%/lib/javaws/messages_sv.properties
+diablo-jre%%JRE_VERSION%%/lib/javaws/messages_zh_CN.properties
+diablo-jre%%JRE_VERSION%%/lib/javaws/messages_zh_HK.properties
+diablo-jre%%JRE_VERSION%%/lib/javaws/messages_zh_TW.properties
+diablo-jre%%JRE_VERSION%%/lib/javaws/miniSplash.jpg
+diablo-jre%%JRE_VERSION%%/lib/jce.jar
+diablo-jre%%JRE_VERSION%%/lib/jsse.jar
+diablo-jre%%JRE_VERSION%%/lib/jvm.hprof.txt
+diablo-jre%%JRE_VERSION%%/lib/locale/de/LC_MESSAGES/sunw_java_plugin.mo
+diablo-jre%%JRE_VERSION%%/lib/locale/es/LC_MESSAGES/sunw_java_plugin.mo
+diablo-jre%%JRE_VERSION%%/lib/locale/fr/LC_MESSAGES/sunw_java_plugin.mo
+diablo-jre%%JRE_VERSION%%/lib/locale/it/LC_MESSAGES/sunw_java_plugin.mo
+diablo-jre%%JRE_VERSION%%/lib/locale/ja/LC_MESSAGES/sunw_java_plugin.mo
+diablo-jre%%JRE_VERSION%%/lib/locale/ko.UTF-8/LC_MESSAGES/sunw_java_plugin.mo
+diablo-jre%%JRE_VERSION%%/lib/locale/ko/LC_MESSAGES/sunw_java_plugin.mo
+diablo-jre%%JRE_VERSION%%/lib/locale/sv/LC_MESSAGES/sunw_java_plugin.mo
+diablo-jre%%JRE_VERSION%%/lib/locale/zh.GBK/LC_MESSAGES/sunw_java_plugin.mo
+diablo-jre%%JRE_VERSION%%/lib/locale/zh/LC_MESSAGES/sunw_java_plugin.mo
+diablo-jre%%JRE_VERSION%%/lib/locale/zh_HK.BIG5HK/LC_MESSAGES/sunw_java_plugin.mo
+diablo-jre%%JRE_VERSION%%/lib/locale/zh_TW.BIG5/LC_MESSAGES/sunw_java_plugin.mo
+diablo-jre%%JRE_VERSION%%/lib/locale/zh_TW/LC_MESSAGES/sunw_java_plugin.mo
+diablo-jre%%JRE_VERSION%%/lib/logging.properties
+diablo-jre%%JRE_VERSION%%/lib/management/jmxremote.access
+diablo-jre%%JRE_VERSION%%/lib/management/jmxremote.password.template
+diablo-jre%%JRE_VERSION%%/lib/management/management.properties
+diablo-jre%%JRE_VERSION%%/lib/management/snmp.acl.template
+diablo-jre%%JRE_VERSION%%/lib/net.properties
+diablo-jre%%JRE_VERSION%%/lib/oblique-fonts/LucidaSansDemiOblique.ttf
+diablo-jre%%JRE_VERSION%%/lib/oblique-fonts/LucidaSansOblique.ttf
+diablo-jre%%JRE_VERSION%%/lib/oblique-fonts/LucidaTypewriterBoldOblique.ttf
+diablo-jre%%JRE_VERSION%%/lib/oblique-fonts/LucidaTypewriterOblique.ttf
+diablo-jre%%JRE_VERSION%%/lib/oblique-fonts/fonts.dir
+diablo-jre%%JRE_VERSION%%/lib/plugin.jar
+diablo-jre%%JRE_VERSION%%/lib/psfont.properties.ja
+diablo-jre%%JRE_VERSION%%/lib/psfontj2d.properties
+diablo-jre%%JRE_VERSION%%/lib/rt.jar
+diablo-jre%%JRE_VERSION%%/lib/security/US_export_policy.jar
+diablo-jre%%JRE_VERSION%%/lib/security/cacerts
+diablo-jre%%JRE_VERSION%%/lib/security/java.policy
+diablo-jre%%JRE_VERSION%%/lib/security/java.security
+diablo-jre%%JRE_VERSION%%/lib/security/javaws.policy
+diablo-jre%%JRE_VERSION%%/lib/security/local_policy.jar
+diablo-jre%%JRE_VERSION%%/lib/sound.properties
+diablo-jre%%JRE_VERSION%%/lib/zi/Africa/Abidjan
+diablo-jre%%JRE_VERSION%%/lib/zi/Africa/Accra
+diablo-jre%%JRE_VERSION%%/lib/zi/Africa/Addis_Ababa
+diablo-jre%%JRE_VERSION%%/lib/zi/Africa/Algiers
+diablo-jre%%JRE_VERSION%%/lib/zi/Africa/Asmera
+diablo-jre%%JRE_VERSION%%/lib/zi/Africa/Bamako
+diablo-jre%%JRE_VERSION%%/lib/zi/Africa/Bangui
+diablo-jre%%JRE_VERSION%%/lib/zi/Africa/Banjul
+diablo-jre%%JRE_VERSION%%/lib/zi/Africa/Bissau
+diablo-jre%%JRE_VERSION%%/lib/zi/Africa/Blantyre
+diablo-jre%%JRE_VERSION%%/lib/zi/Africa/Brazzaville
+diablo-jre%%JRE_VERSION%%/lib/zi/Africa/Bujumbura
+diablo-jre%%JRE_VERSION%%/lib/zi/Africa/Cairo
+diablo-jre%%JRE_VERSION%%/lib/zi/Africa/Casablanca
+diablo-jre%%JRE_VERSION%%/lib/zi/Africa/Ceuta
+diablo-jre%%JRE_VERSION%%/lib/zi/Africa/Conakry
+diablo-jre%%JRE_VERSION%%/lib/zi/Africa/Dakar
+diablo-jre%%JRE_VERSION%%/lib/zi/Africa/Dar_es_Salaam
+diablo-jre%%JRE_VERSION%%/lib/zi/Africa/Djibouti
+diablo-jre%%JRE_VERSION%%/lib/zi/Africa/Douala
+diablo-jre%%JRE_VERSION%%/lib/zi/Africa/El_Aaiun
+diablo-jre%%JRE_VERSION%%/lib/zi/Africa/Freetown
+diablo-jre%%JRE_VERSION%%/lib/zi/Africa/Gaborone
+diablo-jre%%JRE_VERSION%%/lib/zi/Africa/Harare
+diablo-jre%%JRE_VERSION%%/lib/zi/Africa/Johannesburg
+diablo-jre%%JRE_VERSION%%/lib/zi/Africa/Kampala
+diablo-jre%%JRE_VERSION%%/lib/zi/Africa/Khartoum
+diablo-jre%%JRE_VERSION%%/lib/zi/Africa/Kigali
+diablo-jre%%JRE_VERSION%%/lib/zi/Africa/Kinshasa
+diablo-jre%%JRE_VERSION%%/lib/zi/Africa/Lagos
+diablo-jre%%JRE_VERSION%%/lib/zi/Africa/Libreville
+diablo-jre%%JRE_VERSION%%/lib/zi/Africa/Lome
+diablo-jre%%JRE_VERSION%%/lib/zi/Africa/Luanda
+diablo-jre%%JRE_VERSION%%/lib/zi/Africa/Lubumbashi
+diablo-jre%%JRE_VERSION%%/lib/zi/Africa/Lusaka
+diablo-jre%%JRE_VERSION%%/lib/zi/Africa/Malabo
+diablo-jre%%JRE_VERSION%%/lib/zi/Africa/Maputo
+diablo-jre%%JRE_VERSION%%/lib/zi/Africa/Maseru
+diablo-jre%%JRE_VERSION%%/lib/zi/Africa/Mbabane
+diablo-jre%%JRE_VERSION%%/lib/zi/Africa/Mogadishu
+diablo-jre%%JRE_VERSION%%/lib/zi/Africa/Monrovia
+diablo-jre%%JRE_VERSION%%/lib/zi/Africa/Nairobi
+diablo-jre%%JRE_VERSION%%/lib/zi/Africa/Ndjamena
+diablo-jre%%JRE_VERSION%%/lib/zi/Africa/Niamey
+diablo-jre%%JRE_VERSION%%/lib/zi/Africa/Nouakchott
+diablo-jre%%JRE_VERSION%%/lib/zi/Africa/Ouagadougou
+diablo-jre%%JRE_VERSION%%/lib/zi/Africa/Porto-Novo
+diablo-jre%%JRE_VERSION%%/lib/zi/Africa/Sao_Tome
+diablo-jre%%JRE_VERSION%%/lib/zi/Africa/Tripoli
+diablo-jre%%JRE_VERSION%%/lib/zi/Africa/Tunis
+diablo-jre%%JRE_VERSION%%/lib/zi/Africa/Windhoek
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Adak
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Anchorage
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Anguilla
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Antigua
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Araguaina
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Argentina/Buenos_Aires
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Argentina/Catamarca
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Argentina/Cordoba
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Argentina/Jujuy
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Argentina/La_Rioja
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Argentina/Mendoza
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Argentina/Rio_Gallegos
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Argentina/San_Juan
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Argentina/Tucuman
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Argentina/Ushuaia
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Aruba
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Asuncion
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Bahia
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Barbados
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Belem
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Belize
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Boa_Vista
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Bogota
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Boise
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Cambridge_Bay
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Campo_Grande
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Cancun
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Caracas
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Cayenne
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Cayman
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Chicago
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Chihuahua
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Coral_Harbour
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Costa_Rica
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Cuiaba
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Curacao
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Danmarkshavn
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Dawson
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Dawson_Creek
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Denver
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Detroit
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Dominica
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Edmonton
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Eirunepe
+diablo-jre%%JRE_VERSION%%/lib/zi/America/El_Salvador
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Fortaleza
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Glace_Bay
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Godthab
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Goose_Bay
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Grand_Turk
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Grenada
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Guadeloupe
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Guatemala
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Guayaquil
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Guyana
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Halifax
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Havana
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Hermosillo
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Indiana/Indianapolis
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Indiana/Knox
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Indiana/Marengo
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Indiana/Vevay
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Inuvik
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Iqaluit
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Jamaica
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Juneau
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Kentucky/Louisville
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Kentucky/Monticello
+diablo-jre%%JRE_VERSION%%/lib/zi/America/La_Paz
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Lima
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Los_Angeles
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Maceio
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Managua
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Manaus
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Martinique
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Mazatlan
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Menominee
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Merida
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Mexico_City
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Miquelon
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Monterrey
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Montevideo
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Montreal
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Montserrat
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Nassau
+diablo-jre%%JRE_VERSION%%/lib/zi/America/New_York
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Nipigon
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Nome
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Noronha
+diablo-jre%%JRE_VERSION%%/lib/zi/America/North_Dakota/Center
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Panama
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Pangnirtung
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Paramaribo
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Phoenix
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Port-au-Prince
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Port_of_Spain
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Porto_Velho
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Puerto_Rico
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Rainy_River
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Rankin_Inlet
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Recife
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Regina
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Rio_Branco
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Santiago
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Santo_Domingo
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Sao_Paulo
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Scoresbysund
+diablo-jre%%JRE_VERSION%%/lib/zi/America/St_Johns
+diablo-jre%%JRE_VERSION%%/lib/zi/America/St_Kitts
+diablo-jre%%JRE_VERSION%%/lib/zi/America/St_Lucia
+diablo-jre%%JRE_VERSION%%/lib/zi/America/St_Thomas
+diablo-jre%%JRE_VERSION%%/lib/zi/America/St_Vincent
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Swift_Current
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Tegucigalpa
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Thule
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Thunder_Bay
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Tijuana
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Toronto
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Tortola
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Vancouver
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Whitehorse
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Winnipeg
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Yakutat
+diablo-jre%%JRE_VERSION%%/lib/zi/America/Yellowknife
+diablo-jre%%JRE_VERSION%%/lib/zi/Antarctica/Casey
+diablo-jre%%JRE_VERSION%%/lib/zi/Antarctica/Davis
+diablo-jre%%JRE_VERSION%%/lib/zi/Antarctica/DumontDUrville
+diablo-jre%%JRE_VERSION%%/lib/zi/Antarctica/Mawson
+diablo-jre%%JRE_VERSION%%/lib/zi/Antarctica/McMurdo
+diablo-jre%%JRE_VERSION%%/lib/zi/Antarctica/Palmer
+diablo-jre%%JRE_VERSION%%/lib/zi/Antarctica/Rothera
+diablo-jre%%JRE_VERSION%%/lib/zi/Antarctica/Syowa
+diablo-jre%%JRE_VERSION%%/lib/zi/Antarctica/Vostok
+diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Aden
+diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Almaty
+diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Amman
+diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Anadyr
+diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Aqtau
+diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Aqtobe
+diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Ashgabat
+diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Baghdad
+diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Bahrain
+diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Baku
+diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Bangkok
+diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Beirut
+diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Bishkek
+diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Brunei
+diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Calcutta
+diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Choibalsan
+diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Chongqing
+diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Colombo
+diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Damascus
+diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Dhaka
+diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Dili
+diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Dubai
+diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Dushanbe
+diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Gaza
+diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Harbin
+diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Hong_Kong
+diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Hovd
+diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Irkutsk
+diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Jakarta
+diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Jayapura
+diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Jerusalem
+diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Kabul
+diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Kamchatka
+diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Karachi
+diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Kashgar
+diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Katmandu
+diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Krasnoyarsk
+diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Kuala_Lumpur
+diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Kuching
+diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Kuwait
+diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Macau
+diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Magadan
+diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Makassar
+diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Manila
+diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Muscat
+diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Nicosia
+diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Novosibirsk
+diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Omsk
+diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Oral
+diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Phnom_Penh
+diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Pontianak
+diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Pyongyang
+diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Qatar
+diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Qyzylorda
+diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Rangoon
+diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Riyadh
+diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Riyadh87
+diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Riyadh88
+diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Riyadh89
+diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Saigon
+diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Sakhalin
+diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Samarkand
+diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Seoul
+diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Shanghai
+diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Singapore
+diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Taipei
+diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Tashkent
+diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Tbilisi
+diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Tehran
+diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Thimphu
+diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Tokyo
+diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Ulaanbaatar
+diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Urumqi
+diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Vientiane
+diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Vladivostok
+diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Yakutsk
+diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Yekaterinburg
+diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Yerevan
+diablo-jre%%JRE_VERSION%%/lib/zi/Atlantic/Azores
+diablo-jre%%JRE_VERSION%%/lib/zi/Atlantic/Bermuda
+diablo-jre%%JRE_VERSION%%/lib/zi/Atlantic/Canary
+diablo-jre%%JRE_VERSION%%/lib/zi/Atlantic/Cape_Verde
+diablo-jre%%JRE_VERSION%%/lib/zi/Atlantic/Faeroe
+diablo-jre%%JRE_VERSION%%/lib/zi/Atlantic/Madeira
+diablo-jre%%JRE_VERSION%%/lib/zi/Atlantic/Reykjavik
+diablo-jre%%JRE_VERSION%%/lib/zi/Atlantic/South_Georgia
+diablo-jre%%JRE_VERSION%%/lib/zi/Atlantic/St_Helena
+diablo-jre%%JRE_VERSION%%/lib/zi/Atlantic/Stanley
+diablo-jre%%JRE_VERSION%%/lib/zi/Australia/Adelaide
+diablo-jre%%JRE_VERSION%%/lib/zi/Australia/Brisbane
+diablo-jre%%JRE_VERSION%%/lib/zi/Australia/Broken_Hill
+diablo-jre%%JRE_VERSION%%/lib/zi/Australia/Currie
+diablo-jre%%JRE_VERSION%%/lib/zi/Australia/Darwin
+diablo-jre%%JRE_VERSION%%/lib/zi/Australia/Hobart
+diablo-jre%%JRE_VERSION%%/lib/zi/Australia/Lindeman
+diablo-jre%%JRE_VERSION%%/lib/zi/Australia/Lord_Howe
+diablo-jre%%JRE_VERSION%%/lib/zi/Australia/Melbourne
+diablo-jre%%JRE_VERSION%%/lib/zi/Australia/Perth
+diablo-jre%%JRE_VERSION%%/lib/zi/Australia/Sydney
+diablo-jre%%JRE_VERSION%%/lib/zi/CET
+diablo-jre%%JRE_VERSION%%/lib/zi/EET
+diablo-jre%%JRE_VERSION%%/lib/zi/Etc/GMT
+diablo-jre%%JRE_VERSION%%/lib/zi/Etc/GMT+1
+diablo-jre%%JRE_VERSION%%/lib/zi/Etc/GMT+10
+diablo-jre%%JRE_VERSION%%/lib/zi/Etc/GMT+11
+diablo-jre%%JRE_VERSION%%/lib/zi/Etc/GMT+12
+diablo-jre%%JRE_VERSION%%/lib/zi/Etc/GMT+2
+diablo-jre%%JRE_VERSION%%/lib/zi/Etc/GMT+3
+diablo-jre%%JRE_VERSION%%/lib/zi/Etc/GMT+4
+diablo-jre%%JRE_VERSION%%/lib/zi/Etc/GMT+5
+diablo-jre%%JRE_VERSION%%/lib/zi/Etc/GMT+6
+diablo-jre%%JRE_VERSION%%/lib/zi/Etc/GMT+7
+diablo-jre%%JRE_VERSION%%/lib/zi/Etc/GMT+8
+diablo-jre%%JRE_VERSION%%/lib/zi/Etc/GMT+9
+diablo-jre%%JRE_VERSION%%/lib/zi/Etc/GMT-1
+diablo-jre%%JRE_VERSION%%/lib/zi/Etc/GMT-10
+diablo-jre%%JRE_VERSION%%/lib/zi/Etc/GMT-11
+diablo-jre%%JRE_VERSION%%/lib/zi/Etc/GMT-12
+diablo-jre%%JRE_VERSION%%/lib/zi/Etc/GMT-13
+diablo-jre%%JRE_VERSION%%/lib/zi/Etc/GMT-14
+diablo-jre%%JRE_VERSION%%/lib/zi/Etc/GMT-2
+diablo-jre%%JRE_VERSION%%/lib/zi/Etc/GMT-3
+diablo-jre%%JRE_VERSION%%/lib/zi/Etc/GMT-4
+diablo-jre%%JRE_VERSION%%/lib/zi/Etc/GMT-5
+diablo-jre%%JRE_VERSION%%/lib/zi/Etc/GMT-6
+diablo-jre%%JRE_VERSION%%/lib/zi/Etc/GMT-7
+diablo-jre%%JRE_VERSION%%/lib/zi/Etc/GMT-8
+diablo-jre%%JRE_VERSION%%/lib/zi/Etc/GMT-9
+diablo-jre%%JRE_VERSION%%/lib/zi/Etc/UCT
+diablo-jre%%JRE_VERSION%%/lib/zi/Etc/UTC
+diablo-jre%%JRE_VERSION%%/lib/zi/Europe/Amsterdam
+diablo-jre%%JRE_VERSION%%/lib/zi/Europe/Andorra
+diablo-jre%%JRE_VERSION%%/lib/zi/Europe/Athens
+diablo-jre%%JRE_VERSION%%/lib/zi/Europe/Belgrade
+diablo-jre%%JRE_VERSION%%/lib/zi/Europe/Berlin
+diablo-jre%%JRE_VERSION%%/lib/zi/Europe/Brussels
+diablo-jre%%JRE_VERSION%%/lib/zi/Europe/Bucharest
+diablo-jre%%JRE_VERSION%%/lib/zi/Europe/Budapest
+diablo-jre%%JRE_VERSION%%/lib/zi/Europe/Chisinau
+diablo-jre%%JRE_VERSION%%/lib/zi/Europe/Copenhagen
+diablo-jre%%JRE_VERSION%%/lib/zi/Europe/Dublin
+diablo-jre%%JRE_VERSION%%/lib/zi/Europe/Gibraltar
+diablo-jre%%JRE_VERSION%%/lib/zi/Europe/Helsinki
+diablo-jre%%JRE_VERSION%%/lib/zi/Europe/Istanbul
+diablo-jre%%JRE_VERSION%%/lib/zi/Europe/Kaliningrad
+diablo-jre%%JRE_VERSION%%/lib/zi/Europe/Kiev
+diablo-jre%%JRE_VERSION%%/lib/zi/Europe/Lisbon
+diablo-jre%%JRE_VERSION%%/lib/zi/Europe/London
+diablo-jre%%JRE_VERSION%%/lib/zi/Europe/Luxembourg
+diablo-jre%%JRE_VERSION%%/lib/zi/Europe/Madrid
+diablo-jre%%JRE_VERSION%%/lib/zi/Europe/Malta
+diablo-jre%%JRE_VERSION%%/lib/zi/Europe/Minsk
+diablo-jre%%JRE_VERSION%%/lib/zi/Europe/Monaco
+diablo-jre%%JRE_VERSION%%/lib/zi/Europe/Moscow
+diablo-jre%%JRE_VERSION%%/lib/zi/Europe/Oslo
+diablo-jre%%JRE_VERSION%%/lib/zi/Europe/Paris
+diablo-jre%%JRE_VERSION%%/lib/zi/Europe/Prague
+diablo-jre%%JRE_VERSION%%/lib/zi/Europe/Riga
+diablo-jre%%JRE_VERSION%%/lib/zi/Europe/Rome
+diablo-jre%%JRE_VERSION%%/lib/zi/Europe/Samara
+diablo-jre%%JRE_VERSION%%/lib/zi/Europe/Simferopol
+diablo-jre%%JRE_VERSION%%/lib/zi/Europe/Sofia
+diablo-jre%%JRE_VERSION%%/lib/zi/Europe/Stockholm
+diablo-jre%%JRE_VERSION%%/lib/zi/Europe/Tallinn
+diablo-jre%%JRE_VERSION%%/lib/zi/Europe/Tirane
+diablo-jre%%JRE_VERSION%%/lib/zi/Europe/Uzhgorod
+diablo-jre%%JRE_VERSION%%/lib/zi/Europe/Vaduz
+diablo-jre%%JRE_VERSION%%/lib/zi/Europe/Vienna
+diablo-jre%%JRE_VERSION%%/lib/zi/Europe/Vilnius
+diablo-jre%%JRE_VERSION%%/lib/zi/Europe/Warsaw
+diablo-jre%%JRE_VERSION%%/lib/zi/Europe/Zaporozhye
+diablo-jre%%JRE_VERSION%%/lib/zi/Europe/Zurich
+diablo-jre%%JRE_VERSION%%/lib/zi/GMT
+diablo-jre%%JRE_VERSION%%/lib/zi/Indian/Antananarivo
+diablo-jre%%JRE_VERSION%%/lib/zi/Indian/Chagos
+diablo-jre%%JRE_VERSION%%/lib/zi/Indian/Christmas
+diablo-jre%%JRE_VERSION%%/lib/zi/Indian/Cocos
+diablo-jre%%JRE_VERSION%%/lib/zi/Indian/Comoro
+diablo-jre%%JRE_VERSION%%/lib/zi/Indian/Kerguelen
+diablo-jre%%JRE_VERSION%%/lib/zi/Indian/Mahe
+diablo-jre%%JRE_VERSION%%/lib/zi/Indian/Maldives
+diablo-jre%%JRE_VERSION%%/lib/zi/Indian/Mauritius
+diablo-jre%%JRE_VERSION%%/lib/zi/Indian/Mayotte
+diablo-jre%%JRE_VERSION%%/lib/zi/Indian/Reunion
+diablo-jre%%JRE_VERSION%%/lib/zi/MET
+diablo-jre%%JRE_VERSION%%/lib/zi/Pacific/Apia
+diablo-jre%%JRE_VERSION%%/lib/zi/Pacific/Auckland
+diablo-jre%%JRE_VERSION%%/lib/zi/Pacific/Chatham
+diablo-jre%%JRE_VERSION%%/lib/zi/Pacific/Easter
+diablo-jre%%JRE_VERSION%%/lib/zi/Pacific/Efate
+diablo-jre%%JRE_VERSION%%/lib/zi/Pacific/Enderbury
+diablo-jre%%JRE_VERSION%%/lib/zi/Pacific/Fakaofo
+diablo-jre%%JRE_VERSION%%/lib/zi/Pacific/Fiji
+diablo-jre%%JRE_VERSION%%/lib/zi/Pacific/Funafuti
+diablo-jre%%JRE_VERSION%%/lib/zi/Pacific/Galapagos
+diablo-jre%%JRE_VERSION%%/lib/zi/Pacific/Gambier
+diablo-jre%%JRE_VERSION%%/lib/zi/Pacific/Guadalcanal
+diablo-jre%%JRE_VERSION%%/lib/zi/Pacific/Guam
+diablo-jre%%JRE_VERSION%%/lib/zi/Pacific/Honolulu
+diablo-jre%%JRE_VERSION%%/lib/zi/Pacific/Johnston
+diablo-jre%%JRE_VERSION%%/lib/zi/Pacific/Kiritimati
+diablo-jre%%JRE_VERSION%%/lib/zi/Pacific/Kosrae
+diablo-jre%%JRE_VERSION%%/lib/zi/Pacific/Kwajalein
+diablo-jre%%JRE_VERSION%%/lib/zi/Pacific/Majuro
+diablo-jre%%JRE_VERSION%%/lib/zi/Pacific/Marquesas
+diablo-jre%%JRE_VERSION%%/lib/zi/Pacific/Midway
+diablo-jre%%JRE_VERSION%%/lib/zi/Pacific/Nauru
+diablo-jre%%JRE_VERSION%%/lib/zi/Pacific/Niue
+diablo-jre%%JRE_VERSION%%/lib/zi/Pacific/Norfolk
+diablo-jre%%JRE_VERSION%%/lib/zi/Pacific/Noumea
+diablo-jre%%JRE_VERSION%%/lib/zi/Pacific/Pago_Pago
+diablo-jre%%JRE_VERSION%%/lib/zi/Pacific/Palau
+diablo-jre%%JRE_VERSION%%/lib/zi/Pacific/Pitcairn
+diablo-jre%%JRE_VERSION%%/lib/zi/Pacific/Ponape
+diablo-jre%%JRE_VERSION%%/lib/zi/Pacific/Port_Moresby
+diablo-jre%%JRE_VERSION%%/lib/zi/Pacific/Rarotonga
+diablo-jre%%JRE_VERSION%%/lib/zi/Pacific/Saipan
+diablo-jre%%JRE_VERSION%%/lib/zi/Pacific/Tahiti
+diablo-jre%%JRE_VERSION%%/lib/zi/Pacific/Tarawa
+diablo-jre%%JRE_VERSION%%/lib/zi/Pacific/Tongatapu
+diablo-jre%%JRE_VERSION%%/lib/zi/Pacific/Truk
+diablo-jre%%JRE_VERSION%%/lib/zi/Pacific/Wake
+diablo-jre%%JRE_VERSION%%/lib/zi/Pacific/Wallis
+diablo-jre%%JRE_VERSION%%/lib/zi/WET
+diablo-jre%%JRE_VERSION%%/lib/zi/ZoneInfoMappings
+diablo-jre%%JRE_VERSION%%/man/ja
+diablo-jre%%JRE_VERSION%%/man/ja_JP.eucJP/man1/java.1
+diablo-jre%%JRE_VERSION%%/man/ja_JP.eucJP/man1/javaws.1
+diablo-jre%%JRE_VERSION%%/man/ja_JP.eucJP/man1/keytool.1
+diablo-jre%%JRE_VERSION%%/man/ja_JP.eucJP/man1/kinit.1
+diablo-jre%%JRE_VERSION%%/man/ja_JP.eucJP/man1/klist.1
+diablo-jre%%JRE_VERSION%%/man/ja_JP.eucJP/man1/ktab.1
+diablo-jre%%JRE_VERSION%%/man/ja_JP.eucJP/man1/orbd.1
+diablo-jre%%JRE_VERSION%%/man/ja_JP.eucJP/man1/pack200.1
+diablo-jre%%JRE_VERSION%%/man/ja_JP.eucJP/man1/policytool.1
+diablo-jre%%JRE_VERSION%%/man/ja_JP.eucJP/man1/rmid.1
+diablo-jre%%JRE_VERSION%%/man/ja_JP.eucJP/man1/rmiregistry.1
+diablo-jre%%JRE_VERSION%%/man/ja_JP.eucJP/man1/servertool.1
+diablo-jre%%JRE_VERSION%%/man/ja_JP.eucJP/man1/tnameserv.1
+diablo-jre%%JRE_VERSION%%/man/ja_JP.eucJP/man1/unpack200.1
+diablo-jre%%JRE_VERSION%%/man/man1/java.1
+diablo-jre%%JRE_VERSION%%/man/man1/javaws.1
+diablo-jre%%JRE_VERSION%%/man/man1/keytool.1
+diablo-jre%%JRE_VERSION%%/man/man1/kinit.1
+diablo-jre%%JRE_VERSION%%/man/man1/klist.1
+diablo-jre%%JRE_VERSION%%/man/man1/ktab.1
+diablo-jre%%JRE_VERSION%%/man/man1/orbd.1
+diablo-jre%%JRE_VERSION%%/man/man1/pack200.1
+diablo-jre%%JRE_VERSION%%/man/man1/policytool.1
+diablo-jre%%JRE_VERSION%%/man/man1/rmid.1
+diablo-jre%%JRE_VERSION%%/man/man1/rmiregistry.1
+diablo-jre%%JRE_VERSION%%/man/man1/servertool.1
+diablo-jre%%JRE_VERSION%%/man/man1/tnameserv.1
+diablo-jre%%JRE_VERSION%%/man/man1/unpack200.1
+diablo-jre%%JRE_VERSION%%/plugin/desktop/sun_java.desktop
+diablo-jre%%JRE_VERSION%%/plugin/desktop/sun_java.png
+diablo-jre%%JRE_VERSION%%/plugin/i386/ns7/libjavaplugin_oji.so
+@exec %%LOCALBASE%%/bin/registervm "%D/diablo-jre%%JRE_VERSION%%/bin/java # DiabloLatte${JRE_VERSION}"
+@dirrm diablo-jre%%JRE_VERSION%%/plugin/i386/ns7
+@dirrm diablo-jre%%JRE_VERSION%%/plugin/i386
+@dirrm diablo-jre%%JRE_VERSION%%/plugin/desktop
+@dirrm diablo-jre%%JRE_VERSION%%/plugin
+@dirrm diablo-jre%%JRE_VERSION%%/man/man1
+@dirrm diablo-jre%%JRE_VERSION%%/man/ja_JP.eucJP/man1
+@dirrm diablo-jre%%JRE_VERSION%%/man/ja_JP.eucJP
+@dirrm diablo-jre%%JRE_VERSION%%/man
+@dirrm diablo-jre%%JRE_VERSION%%/lib/zi/Pacific
+@dirrm diablo-jre%%JRE_VERSION%%/lib/zi/Indian
+@dirrm diablo-jre%%JRE_VERSION%%/lib/zi/Europe
+@dirrm diablo-jre%%JRE_VERSION%%/lib/zi/Etc
+@dirrm diablo-jre%%JRE_VERSION%%/lib/zi/Australia
+@dirrm diablo-jre%%JRE_VERSION%%/lib/zi/Atlantic
+@dirrm diablo-jre%%JRE_VERSION%%/lib/zi/Asia
+@dirrm diablo-jre%%JRE_VERSION%%/lib/zi/Antarctica
+@dirrm diablo-jre%%JRE_VERSION%%/lib/zi/America/North_Dakota
+@dirrm diablo-jre%%JRE_VERSION%%/lib/zi/America/Kentucky
+@dirrm diablo-jre%%JRE_VERSION%%/lib/zi/America/Indiana
+@dirrm diablo-jre%%JRE_VERSION%%/lib/zi/America/Argentina
+@dirrm diablo-jre%%JRE_VERSION%%/lib/zi/America
+@dirrm diablo-jre%%JRE_VERSION%%/lib/zi/Africa
+@dirrm diablo-jre%%JRE_VERSION%%/lib/zi
+@dirrm diablo-jre%%JRE_VERSION%%/lib/security
+@dirrm diablo-jre%%JRE_VERSION%%/lib/oblique-fonts
+@dirrm diablo-jre%%JRE_VERSION%%/lib/management
+@dirrm diablo-jre%%JRE_VERSION%%/lib/locale/zh_TW/LC_MESSAGES
+@dirrm diablo-jre%%JRE_VERSION%%/lib/locale/zh_TW.BIG5/LC_MESSAGES
+@dirrm diablo-jre%%JRE_VERSION%%/lib/locale/zh_TW.BIG5
+@dirrm diablo-jre%%JRE_VERSION%%/lib/locale/zh_TW
+@dirrm diablo-jre%%JRE_VERSION%%/lib/locale/zh_HK.BIG5HK/LC_MESSAGES
+@dirrm diablo-jre%%JRE_VERSION%%/lib/locale/zh_HK.BIG5HK
+@dirrm diablo-jre%%JRE_VERSION%%/lib/locale/zh/LC_MESSAGES
+@dirrm diablo-jre%%JRE_VERSION%%/lib/locale/zh.GBK/LC_MESSAGES
+@dirrm diablo-jre%%JRE_VERSION%%/lib/locale/zh.GBK
+@dirrm diablo-jre%%JRE_VERSION%%/lib/locale/zh
+@dirrm diablo-jre%%JRE_VERSION%%/lib/locale/sv/LC_MESSAGES
+@dirrm diablo-jre%%JRE_VERSION%%/lib/locale/sv
+@dirrm diablo-jre%%JRE_VERSION%%/lib/locale/ko/LC_MESSAGES
+@dirrm diablo-jre%%JRE_VERSION%%/lib/locale/ko.UTF-8/LC_MESSAGES
+@dirrm diablo-jre%%JRE_VERSION%%/lib/locale/ko.UTF-8
+@dirrm diablo-jre%%JRE_VERSION%%/lib/locale/ko
+@dirrm diablo-jre%%JRE_VERSION%%/lib/locale/ja/LC_MESSAGES
+@dirrm diablo-jre%%JRE_VERSION%%/lib/locale/ja
+@dirrm diablo-jre%%JRE_VERSION%%/lib/locale/it/LC_MESSAGES
+@dirrm diablo-jre%%JRE_VERSION%%/lib/locale/it
+@dirrm diablo-jre%%JRE_VERSION%%/lib/locale/fr/LC_MESSAGES
+@dirrm diablo-jre%%JRE_VERSION%%/lib/locale/fr
+@dirrm diablo-jre%%JRE_VERSION%%/lib/locale/es/LC_MESSAGES
+@dirrm diablo-jre%%JRE_VERSION%%/lib/locale/es
+@dirrm diablo-jre%%JRE_VERSION%%/lib/locale/de/LC_MESSAGES
+@dirrm diablo-jre%%JRE_VERSION%%/lib/locale/de
+@dirrm diablo-jre%%JRE_VERSION%%/lib/locale
+@dirrm diablo-jre%%JRE_VERSION%%/lib/javaws
+@dirrm diablo-jre%%JRE_VERSION%%/lib/images/icons
+@dirrm diablo-jre%%JRE_VERSION%%/lib/images/cursors
+@dirrm diablo-jre%%JRE_VERSION%%/lib/images
+@dirrm diablo-jre%%JRE_VERSION%%/lib/im
+@dirrm diablo-jre%%JRE_VERSION%%/lib/i386/xawt
+@dirrm diablo-jre%%JRE_VERSION%%/lib/i386/server
+@dirrm diablo-jre%%JRE_VERSION%%/lib/i386/native_threads
+@dirrm diablo-jre%%JRE_VERSION%%/lib/i386/motif21
+@dirrm diablo-jre%%JRE_VERSION%%/lib/i386/headless
+@dirrm diablo-jre%%JRE_VERSION%%/lib/i386/client
+@dirrm diablo-jre%%JRE_VERSION%%/lib/i386
+@dirrm diablo-jre%%JRE_VERSION%%/lib/fonts
+@dirrm diablo-jre%%JRE_VERSION%%/lib/ext
+@dirrm diablo-jre%%JRE_VERSION%%/lib/cmm
+@dirrm diablo-jre%%JRE_VERSION%%/lib/audio
+@dirrmtry diablo-jre%%JRE_VERSION%%/lib/applet
+@dirrm diablo-jre%%JRE_VERSION%%/lib
+@dirrm diablo-jre%%JRE_VERSION%%/javaws
+@dirrm diablo-jre%%JRE_VERSION%%/bin
+@dirrm diablo-jre%%JRE_VERSION%%
