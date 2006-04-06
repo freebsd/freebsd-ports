@@ -29,7 +29,6 @@ LIB_DEPENDS+=	expat.6:${PORTSDIR}/textproc/expat2
 
 USE_ICONV=		yes
 USE_AUTOTOOLS=	automake:19 autoconf:259 libtool:15:env
-USE_REINPLACE=		yes
 USE_PERL5=		yes
 USE_GMAKE=		yes
 USE_PYTHON_BUILD=	yes
@@ -63,22 +62,29 @@ CONFIGURE_ARGS+=	--enable-threads
 APR_UTIL_CONF_ARGS+=	--without-gdbm
 .elif defined(APR_UTIL_WITH_GDBM) || exists(${LOCALBASE}/lib/libgdbm.so.3)
 LIB_DEPENDS+=	gdbm.3:${PORTSDIR}/databases/gdbm
+APR_UTIL_CONF_ARGS+=	--with-gdbm=${LOCALBASE}
 .if defined(PKGNAMESUFFIX)
 PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-gdbm
 .else
 PKGNAMESUFFIX=	-gdbm
 .endif
+.else
+APR_UTIL_CONF_ARGS+=	--without-gdbm
+.endif
+
+.if defined(WITH_BDB)
+APR_UTIL_WITH_BERKELEY_DB=	yes
 .endif
 
 .if defined(APR_UTIL_WITHOUT_BERKELEY_DB)
 APR_UTIL_CONF_ARGS+=	--without-berkeley-db
 .elif defined(APR_UTIL_WITH_BERKELEY_DB) || exists(${LOCALBASE}/lib/libdb-4.2.so.2)
-LIB_DEPENDS+=	db-4.2.2:${PORTSDIR}/databases/db42
-APR_UTIL_CONF_ARGS+=	--with-berkeley-db=${PREFIX}
+USE_BDB=	42+
+APR_UTIL_CONF_ARGS+=	--with-berkeley-db=${BDB_INCLUDE_DIR}:${BDB_LIB_DIR}
 .if defined(PKGNAMESUFFIX)
-PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-db4
+PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-${BDB_INCLUDE_DIR:S,^${LOCALBASE}/include/,,}
 .else
-PKGNAMESUFFIX=	-db4
+PKGNAMESUFFIX=	-${BDB_INCLUDE_DIR:S,^${LOCALBASE}/include/,,}
 .endif
 .endif
 
@@ -116,15 +122,15 @@ pre-extract:
 .endif
 	@${ECHO_MSG} ""
 .if defined(APR_UTIL_WITHOUT_BERKELEY_DB)
-	@${ECHO_MSG} "Berkeley db4.2 support is disabled."
+	@${ECHO_MSG} "Berkeley DB support is disabled."
 .elif defined(APR_UTIL_WITH_BERKELEY_DB)
-	@${ECHO_MSG} "Berkeley db4.2 support forced."
+	@${ECHO_MSG} "Berkeley DB support forced."
 .elif exists(${LOCALBASE}/lib/libdb-4.2.so.2)
 	@${ECHO_MSG} "Berkeley db4.2 support is enabled."
 	@${ECHO_MSG} "You can disable Berkeley db4.2 support by defining APR_UTIL_WITHOUT_BERKELEY_DB."
 .else
-	@${ECHO_MSG} "Berkeley db4.2 was not found."
-	@${ECHO_MSG} "You can force Berkeley db4.2 support by defining APR_UTIL_WITH_BERKELEY_DB."
+	@${ECHO_MSG} "Berkeley DB was not found."
+	@${ECHO_MSG} "You can force Berkeley DB support by defining APR_UTIL_WITH_BERKELEY_DB."
 .endif
 	@${ECHO_MSG} ""
 
@@ -164,8 +170,8 @@ do-build:
 	cd ${WRKDIR}/apr-util-${PORTVERSION}; ${SETENV} ${MAKE_ENV} ${GMAKE}
 
 do-install:
-	cd ${WRKDIR}/apr-${PORTVERSION}; ${SETENV} ${MAKE_ENV} ${GMAKE} install
-	cd ${WRKDIR}/apr-util-${PORTVERSION}; ${SETENV} ${MAKE_ENV} ${GMAKE} install
+	cd ${WRKDIR}/apr-${PORTVERSION}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${INSTALL_TARGET}
+	cd ${WRKDIR}/apr-util-${PORTVERSION}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${INSTALL_TARGET}
 
 debug_autoconf:
 	@echo "LIBTOOL: ${LIBTOOL_VERSION}"
