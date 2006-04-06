@@ -74,10 +74,7 @@ share/festival/lib/duration.scm
 share/festival/lib/email-mode.scm
 share/festival/lib/engmorph.scm
 share/festival/lib/engmorphsyn.scm
-share/festival/lib/etc/Makefile
 share/festival/lib/etc/email_filter
-share/festival/lib/etc/ix86_FreeBSD/.made
-share/festival/lib/etc/ix86_FreeBSD/audsp
 share/festival/lib/f2bdurtreeZ.scm
 share/festival/lib/f2bf0lr.scm
 share/festival/lib/festdoc.scm
@@ -136,14 +133,13 @@ share/festival/lib/tokenpos.scm
 share/festival/lib/tts.scm
 share/festival/lib/voices.scm
 share/festival/lib/web.scm
-@dirrm share/festival/lib/voices/spanish
-@dirrm share/festival/lib/voices/english
-@dirrm share/festival/lib/voices
+@dirrmtry share/festival/lib/voices/spanish
+@dirrmtry share/festival/lib/voices/english
+@dirrmtry share/festival/lib/voices
 @dirrm share/festival/lib/multisyn
-@dirrm share/festival/lib/etc/ix86_FreeBSD
 @dirrm share/festival/lib/etc
-@dirrm share/festival/lib/dicts
-@dirrm share/festival/lib
+@dirrmtry share/festival/lib/dicts
+@dirrmtry share/festival/lib
 @dirrm share/festival/examples/songs
 @dirrm share/festival/examples
-@dirrm share/festival
+@dirrmtry share/festival
