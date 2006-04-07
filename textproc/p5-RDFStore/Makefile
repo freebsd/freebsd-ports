@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	RDFStore
-PORTVERSION=	0.42
+PORTVERSION=	0.50
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	RDF
+MASTER_SITE_SUBDIR=	RDF/AREGGIORI
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skv@FreeBSD.org
@@ -21,27 +21,34 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-X
 		${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+USE_BDB=	yes
+
 PERL_CONFIGURE=	yes
 
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
-MAN3=		Data::MagicTie.3 RDFStore.3 RDFStore::Literal.3 \
-		RDFStore::Model.3 RDFStore::NodeFactory.3 \
-		RDFStore::Parser::OpenHealth.3 RDFStore::Parser::SiRPAC.3 \
-		RDFStore::Parser::Styles::MagicTie.3 RDFStore::RDFNode.3 \
+MAN3=		DBD::RDFStore.3 DBMS.3 RDFStore.3 \
+		RDFStore::Digest::Digestable.3 RDFStore::Literal.3 \
+		RDFStore::Model.3 RDFStore::NodeFactory.3 RDFStore::Object.3 \
+		RDFStore::Parser.3 RDFStore::Parser::NTriples.3 \
+		RDFStore::Parser::SiRPAC.3 \
+		RDFStore::Parser::Styles::RDFStore::Model.3 RDFStore::RDFNode.3 \
 		RDFStore::Resource.3 RDFStore::SchemaModel.3 \
-		RDFStore::SetModel.3 RDFStore::Stanford::Digest.3 \
-		RDFStore::Stanford::Digest::Abstract.3 \
-		RDFStore::Stanford::Digest::Digestable.3 \
-		RDFStore::Stanford::Digest::Generic.3 \
-		RDFStore::Stanford::Digest::MD5.3 \
-		RDFStore::Stanford::Digest::SHA1.3 \
-		RDFStore::Stanford::Digest::Util.3 \
-		RDFStore::Stanford::Literal.3 RDFStore::Stanford::Model.3 \
-		RDFStore::Stanford::NodeFactory.3 RDFStore::Stanford::RDFNode.3 \
-		RDFStore::Stanford::Resource.3 RDFStore::Stanford::SetModel.3 \
-		RDFStore::Stanford::Statement.3 \
-		RDFStore::Stanford::VirtualModel.3 \
-		RDFStore::Stanford::Vocabulary::Generator.3 \
-		RDFStore::Statement.3 RDFStore::VirtualModel.3
+		RDFStore::Serializer.3 RDFStore::Serializer::NTriples.3 \
+		RDFStore::Serializer::RDFXML.3 RDFStore::Serializer::RSS.3 \
+		RDFStore::Statement.3 RDFStore::Util::Digest.3 \
+		RDFStore::Util::UTF8.3 RDFStore::VirtualModel.3 \
+		RDFStore::Vocabulary::Generator.3 RDQL::Parser.3 Util::BLOB.3
 
-.include <bsd.port.mk>
+pre-configure:
+	@${ECHO} "INCLUDE=${BDB_INCLUDE_DIR}" > ${WRKSRC}/arch_conf.in
+	@${ECHO} "LIB=${BDB_LIB_DIR}" >> ${WRKSRC}/arch_conf.in
+	@${ECHO} "DBNAME=-l${BDB_LIB_NAME}" >> ${WRKSRC}/arch_conf.in
+
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI-137
+.else
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
+.endif
+
+.include <bsd.port.post.mk>

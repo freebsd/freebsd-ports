@@ -8,6 +8,3 @@ Data::MagicTie(3) the suite allow a user to fetch, parse, process, store
 and query RDF models.
 
 WWW: http://search.cpan.org/dist/RDFStore/
-
--- Sergey Skvortsov
-skv@FreeBSD.org
