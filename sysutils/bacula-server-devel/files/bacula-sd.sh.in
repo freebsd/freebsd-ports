@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/sysutils/bacula-server-devel/files/Attic/bacula-sd.sh.in,v 1.1 2006-04-01 23:06:24 garga Exp $
+# $FreeBSD: /tmp/pcvs/ports/sysutils/bacula-server-devel/files/Attic/bacula-sd.sh.in,v 1.2 2006-04-07 16:34:48 garga Exp $
 #
 # PROVIDE: utility
 # REQUIRE: DAEMON
@@ -24,7 +24,7 @@ pidfile="${bacula_sd_pidfile}"
 load_rc_config $name
 
 : ${bacula_sd_enable="NO"}
-: ${bacula_sd_flags=" -u bacula -g bacula -v -c /usr/local/etc/bacula-sd.conf"}
+: ${bacula_sd_flags=" -u bacula -g operator -v -c /usr/local/etc/bacula-sd.conf"}
 : ${bacula_sd_pidfile="/var/run/bacula-sd.9103.pid"}
 
 run_rc_command "$1"
