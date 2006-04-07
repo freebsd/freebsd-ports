@@ -409,6 +409,7 @@
     SUBDIR += py-flac
     SUBDIR += py-id3
     SUBDIR += py-libmpdclient
+    SUBDIR += py-libtunepimp
     SUBDIR += py-mad
     SUBDIR += py-musicbrainz
     SUBDIR += py-ogg
