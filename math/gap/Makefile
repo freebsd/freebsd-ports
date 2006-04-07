@@ -19,10 +19,22 @@ DIST_SUBDIR=	gap
 MAINTAINER=	johans@stack.nl
 COMMENT=	GAP is a system for computational discrete algebra
 
+OPTIONS=	COMPRESSED_TOMLIB	"Compress tomlib files"		On \
+		ACE			"Build binaries for ace"	Off \
+		COHOMOLO		"Build binaries for cohomolo"	Off \
+		EDIM			"Build binaries for edim"	Off \
+		EXAMPLE			"Build binaries for example"	Off \
+		GRAPE			"Build binaries for grape"	Off \
+		KBMAG			"Build binaries for kbmag"	Off \
+		PARGAP			"Build binaries for pargap"	Off \
+		XGAP			"Build binaries for xgap"	Off
+
+#todo anupq fplsa/guava/nq (malloc.h build error) qaos
+
 .include <bsd.port.pre.mk>
 
 GAP_VERSION=	gap4r4
-GAP_PKGTIME=	2006_03_07-23_10_UTC
+GAP_PKGTIME=	2006_03_30-15_12_UTC
 GAP_PKGDATE=	${GAP_PKGTIME:C/-.*//:S/_//g}
 GAP_WRKSRC=	${WRKSRC}/${GAP_VERSION}
 GAP_LIBDIR=	${PREFIX}/lib/${GAP_VERSION}
@@ -44,6 +56,35 @@ do-configure:
 
 do-build:
 	(cd ${GAP_WRKSRC}; make COPTS="${CFLAGS}")
+
+post-build:
+.if defined(WITH_COMPRESSED_TOMLIB)
+	(cd ${GAP_WRKSRC}/pkg/tomlib/data; ${SH} -c 'for i in *; do ${GZIP_CMD} $${i};done' )
+.endif
+.if defined(WITH_ACE)
+	(cd ${GAP_WRKSRC}/pkg/ace; ./configure ../..; make )
+.endif
+.if defined(WITH_COHOMOLO)
+	(cd ${GAP_WRKSRC}/pkg/cohomolo; ./configure ../..; make )
+.endif
+.if defined(WITH_EDIM)
+	(cd ${GAP_WRKSRC}/pkg/edim; ./configure ../..; make )
+.endif
+.if defined(WITH_EXAMPLE)
+	(cd ${GAP_WRKSRC}/pkg/example; ./configure ../..; make )
+.endif
+.if defined(WITH_GRAPE)
+	(cd ${GAP_WRKSRC}/pkg/grape; ./configure ../..; make linux-gcc )
+.endif
+.if defined(WITH_KBMAG)
+	(cd ${GAP_WRKSRC}/pkg/kbmag; ./configure ../..; make )
+.endif
+.if defined(WITH_PARGAP)
+	(cd ${GAP_WRKSRC}/pkg/pargap; ./configure ../..; make )
+.endif
+.if defined(WITH_XGAP)
+	(cd ${GAP_WRKSRC}/pkg/xgap; ./configure ; make )
+.endif
 
 do-install:
 	(${SED} -e "s:GAP_DIR=.*:GAP_DIR=${GAP_LIBDIR}:g" -e "s:GAP_PRG=.*:GAP_PRG=gap:g" ${GAP_WRKSRC}/bin/gap.sh > ${PREFIX}/bin/gap; \
