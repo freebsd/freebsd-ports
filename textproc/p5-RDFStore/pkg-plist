@@ -1,45 +1,57 @@
+bin/rdf.pl
+bin/rdfdump.pl
+bin/rdfquery.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/DBD/RDFStore.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/DBMS.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/RDFStore.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/RDFStore/Digest/Digestable.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/RDFStore/Literal.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/RDFStore/Model.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/RDFStore/NodeFactory.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/RDFStore/Object.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/RDFStore/Parser.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/RDFStore/Parser/NTriples.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/RDFStore/Parser/SiRPAC.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/RDFStore/Parser/Styles/RDFStore/Model.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/RDFStore/RDFNode.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/RDFStore/Resource.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/RDFStore/SchemaModel.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/RDFStore/Serializer.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/RDFStore/Serializer/NTriples.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/RDFStore/Serializer/RDFXML.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/RDFStore/Serializer/RSS.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/RDFStore/Statement.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/RDFStore/Util/Digest.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/RDFStore/Util/UTF8.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/RDFStore/VirtualModel.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/RDFStore/Vocabulary/DAML.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/RDFStore/Vocabulary/DC.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/RDFStore/Vocabulary/DCQ.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/RDFStore/Vocabulary/DCT.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/RDFStore/Vocabulary/FOAF.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/RDFStore/Vocabulary/Generator.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/RDFStore/Vocabulary/OWL.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/RDFStore/Vocabulary/RDF.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/RDFStore/Vocabulary/RDFS.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/RDFStore/Vocabulary/RDFStoreContext.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/RDFStore/Vocabulary/RSS.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/RDQL/Parser.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Util/BLOB.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBMS/autosplit.ix
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/RDFStore/.packlist
-%%SITE_PERL%%/Data/MagicTie.pm
-%%SITE_PERL%%/RDFStore.pm
-%%SITE_PERL%%/RDFStore/Literal.pm
-%%SITE_PERL%%/RDFStore/Model.pm
-%%SITE_PERL%%/RDFStore/NodeFactory.pm
-%%SITE_PERL%%/RDFStore/Parser/OpenHealth.pm
-%%SITE_PERL%%/RDFStore/Parser/SiRPAC.pm
-%%SITE_PERL%%/RDFStore/Parser/Styles/MagicTie.pm
-%%SITE_PERL%%/RDFStore/RDFNode.pm
-%%SITE_PERL%%/RDFStore/Resource.pm
-%%SITE_PERL%%/RDFStore/SchemaModel.pm
-%%SITE_PERL%%/RDFStore/SetModel.pm
-%%SITE_PERL%%/RDFStore/Stanford/Digest.pm
-%%SITE_PERL%%/RDFStore/Stanford/Digest/Abstract.pm
-%%SITE_PERL%%/RDFStore/Stanford/Digest/Digestable.pm
-%%SITE_PERL%%/RDFStore/Stanford/Digest/Generic.pm
-%%SITE_PERL%%/RDFStore/Stanford/Digest/MD5.pm
-%%SITE_PERL%%/RDFStore/Stanford/Digest/SHA1.pm
-%%SITE_PERL%%/RDFStore/Stanford/Digest/Util.pm
-%%SITE_PERL%%/RDFStore/Stanford/Literal.pm
-%%SITE_PERL%%/RDFStore/Stanford/Model.pm
-%%SITE_PERL%%/RDFStore/Stanford/NodeFactory.pm
-%%SITE_PERL%%/RDFStore/Stanford/RDFNode.pm
-%%SITE_PERL%%/RDFStore/Stanford/Resource.pm
-%%SITE_PERL%%/RDFStore/Stanford/SetModel.pm
-%%SITE_PERL%%/RDFStore/Stanford/Statement.pm
-%%SITE_PERL%%/RDFStore/Stanford/VirtualModel.pm
-%%SITE_PERL%%/RDFStore/Stanford/Vocabulary/Generator.pm
-%%SITE_PERL%%/RDFStore/Statement.pm
-%%SITE_PERL%%/RDFStore/VirtualModel.pm
-%%SITE_PERL%%/RDFStore/Vocabulary/DAML.pm
-%%SITE_PERL%%/RDFStore/Vocabulary/DC.pm
-%%SITE_PERL%%/RDFStore/Vocabulary/DCQ.pm
-%%SITE_PERL%%/RDFStore/Vocabulary/RDF.pm
-%%SITE_PERL%%/RDFStore/Vocabulary/RDFS.pm
-@dirrm %%SITE_PERL%%/RDFStore/Parser/Styles
-@dirrm %%SITE_PERL%%/RDFStore/Parser
-@dirrm %%SITE_PERL%%/RDFStore/Stanford/Digest
-@dirrm %%SITE_PERL%%/RDFStore/Stanford/Vocabulary
-@dirrm %%SITE_PERL%%/RDFStore/Stanford
-@dirrm %%SITE_PERL%%/RDFStore/Vocabulary
-@dirrm %%SITE_PERL%%/RDFStore
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/RDFStore/RDFStore.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/RDFStore/RDFStore.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/RDFStore/autosplit.ix
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/RDFStore/Digest
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/RDFStore/Parser/Styles/RDFStore
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/RDFStore/Parser/Styles
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/RDFStore/Parser
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/RDFStore/Serializer
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/RDFStore/Util
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/RDFStore/Vocabulary
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/RDFStore
+@dirrmtry %%SITE_PERL%%/DBD
+@dirrmtry %%SITE_PERL%%/RDQL
+@dirrmtry %%SITE_PERL%%/Util
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/RDFStore
-@dirrmtry %%SITE_PERL%%/Data
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBMS
