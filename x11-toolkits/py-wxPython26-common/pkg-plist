@@ -86,6 +86,7 @@ include/wx-%%WX_VERSION%%/wx/wxPython/i_files/_pycontrol.i
 include/wx-%%WX_VERSION%%/wx/wxPython/i_files/_pywindows.i
 include/wx-%%WX_VERSION%%/wx/wxPython/i_files/_radio.i
 include/wx-%%WX_VERSION%%/wx/wxPython/i_files/_region.i
+include/wx-%%WX_VERSION%%/wx/wxPython/i_files/_renderer.i
 include/wx-%%WX_VERSION%%/wx/wxPython/i_files/_sashwin.i
 include/wx-%%WX_VERSION%%/wx/wxPython/i_files/_scrolbar.i
 include/wx-%%WX_VERSION%%/wx/wxPython/i_files/_settings.i
@@ -138,6 +139,7 @@ include/wx-%%WX_VERSION%%/wx/wxPython/pyclasses.h
 include/wx-%%WX_VERSION%%/wx/wxPython/pydrawxxx.h
 include/wx-%%WX_VERSION%%/wx/wxPython/pyistream.h
 include/wx-%%WX_VERSION%%/wx/wxPython/pytree.h
+include/wx-%%WX_VERSION%%/wx/wxPython/swigver.h
 include/wx-%%WX_VERSION%%/wx/wxPython/wxPython.h
 include/wx-%%WX_VERSION%%/wx/wxPython/wxPython_int.h
 %%PYTHON_SITELIBDIR%%/wx.pth
@@ -156,9 +158,9 @@ include/wx-%%WX_VERSION%%/wx/wxPython/wxPython_int.h
 %%PYTHON_SITELIBDIR%%/wxPython/demo/ActiveX_PDFWindow.py
 %%PYTHON_SITELIBDIR%%/wxPython/demo/ActiveX_PDFWindow.pyc
 %%PYTHON_SITELIBDIR%%/wxPython/demo/ActiveX_PDFWindow.pyo
-%%PYTHON_SITELIBDIR%%/wxPython/demo/AnalogClockWindow.py
-%%PYTHON_SITELIBDIR%%/wxPython/demo/AnalogClockWindow.pyc
-%%PYTHON_SITELIBDIR%%/wxPython/demo/AnalogClockWindow.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/AnalogClock.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/AnalogClock.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/AnalogClock.pyo
 %%PYTHON_SITELIBDIR%%/wxPython/demo/ArtProvider.py
 %%PYTHON_SITELIBDIR%%/wxPython/demo/ArtProvider.pyc
 %%PYTHON_SITELIBDIR%%/wxPython/demo/ArtProvider.pyo
@@ -180,6 +182,9 @@ include/wx-%%WX_VERSION%%/wx/wxPython/wxPython_int.h
 %%PYTHON_SITELIBDIR%%/wxPython/demo/CheckListBox.py
 %%PYTHON_SITELIBDIR%%/wxPython/demo/CheckListBox.pyc
 %%PYTHON_SITELIBDIR%%/wxPython/demo/CheckListBox.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/CheckListCtrlMixin.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/CheckListCtrlMixin.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/CheckListCtrlMixin.pyo
 %%PYTHON_SITELIBDIR%%/wxPython/demo/Choice.py
 %%PYTHON_SITELIBDIR%%/wxPython/demo/Choice.pyc
 %%PYTHON_SITELIBDIR%%/wxPython/demo/Choice.pyo
@@ -291,6 +296,9 @@ include/wx-%%WX_VERSION%%/wx/wxPython/wxPython_int.h
 %%PYTHON_SITELIBDIR%%/wxPython/demo/GenericDirCtrl.py
 %%PYTHON_SITELIBDIR%%/wxPython/demo/GenericDirCtrl.pyc
 %%PYTHON_SITELIBDIR%%/wxPython/demo/GenericDirCtrl.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/GetMouseState.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/GetMouseState.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/GetMouseState.pyo
 %%PYTHON_SITELIBDIR%%/wxPython/demo/Grid.py
 %%PYTHON_SITELIBDIR%%/wxPython/demo/Grid.pyc
 %%PYTHON_SITELIBDIR%%/wxPython/demo/Grid.pyo
@@ -426,6 +434,9 @@ include/wx-%%WX_VERSION%%/wx/wxPython/wxPython_int.h
 %%PYTHON_SITELIBDIR%%/wxPython/demo/MultiSash.py
 %%PYTHON_SITELIBDIR%%/wxPython/demo/MultiSash.pyc
 %%PYTHON_SITELIBDIR%%/wxPython/demo/MultiSash.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/MultiSplitterWindow.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/MultiSplitterWindow.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/MultiSplitterWindow.pyo
 %%PYTHON_SITELIBDIR%%/wxPython/demo/MultipleChoiceDialog.py
 %%PYTHON_SITELIBDIR%%/wxPython/demo/MultipleChoiceDialog.pyc
 %%PYTHON_SITELIBDIR%%/wxPython/demo/MultipleChoiceDialog.pyo
@@ -707,6 +718,7 @@ include/wx-%%WX_VERSION%%/wx/wxPython/wxPython_int.h
 %%PYTHON_SITELIBDIR%%/wxPython/demo/data/pic.png
 %%PYTHON_SITELIBDIR%%/wxPython/demo/data/pic2.bmp
 %%PYTHON_SITELIBDIR%%/wxPython/demo/data/plan.wav
+%%PYTHON_SITELIBDIR%%/wxPython/demo/data/proclamation.txt
 %%PYTHON_SITELIBDIR%%/wxPython/demo/data/resource.wdr
 %%PYTHON_SITELIBDIR%%/wxPython/demo/data/resource_wdr.xrc
 %%PYTHON_SITELIBDIR%%/wxPython/demo/data/showTips
