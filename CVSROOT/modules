@@ -10467,7 +10467,6 @@ projectcenter.app	ports/devel/projectcenter.app
 projectionlib	ports/misc/projectionlib
 projectx	ports/multimedia/projectx
 prokyon3	ports/audio/prokyon3
-prom-mew	ports/mail/prom-mew
 prom-wl		ports/mail/prom-wl
 proma		ports/ftp/proma
 pronto		ports/mail/pronto
@@ -11268,7 +11267,6 @@ rlytest		ports/mail/rlytest
 rman		ports/textproc/rman
 rmap		ports/astro/rmap
 rmime		ports/mail/rmime
-rmoldmail	ports/mail/rmoldmail
 rmonitor	ports/sysutils/rmonitor
 rmsg		ports/net/rmsg
 rname		ports/misc/rname
@@ -11522,7 +11520,6 @@ ruby-man	ports/lang/ruby-man
 ruby-mcrypt	ports/security/ruby-mcrypt
 ruby-memcache	ports/databases/ruby-memcache
 ruby-metaruby	ports/devel/ruby-metaruby
-ruby-mime-types	ports/mail/ruby-mime-types
 ruby-ming	ports/graphics/ruby-ming
 ruby-mmap	ports/devel/ruby-mmap
 ruby-mnogosearch	ports/www/ruby-mnogosearch

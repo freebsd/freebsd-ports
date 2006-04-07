@@ -1,3 +1,0 @@
-sbin/rmoldmail
-%%PORTDOCS%%share/doc/rmoldmail/README
-%%PORTDOCS%%@dirrm share/doc/rmoldmail
