@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Data-Serializer
-PORTVERSION=	0.34
+PORTVERSION=	0.36
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Data
@@ -27,10 +27,12 @@ PERL_CONFIGURE=	yes
 MAN3=		Data::Serializer.3 Data::Serializer::Config::General.3 \
 		Data::Serializer::Cookbook.3 Data::Serializer::Data::Denter.3 \
 		Data::Serializer::Data::Dumper.3 Data::Serializer::Data::Taxi.3 \
-		Data::Serializer::FreezeThaw.3 \
+		Data::Serializer::FreezeThaw.3 Data::Serializer::JSON.3 \
+		Data::Serializer::JSON::Syck.3 \
 		Data::Serializer::PHP::Serialization.3 \
 		Data::Serializer::Storable.3 Data::Serializer::XML::Dumper.3 \
-		Data::Serializer::XML::Simple.3 Data::Serializer::YAML.3
+		Data::Serializer::XML::Simple.3 Data::Serializer::YAML.3 \
+		Data::Serializer::YAML::Syck.3
 
 .include <bsd.port.pre.mk>
 
