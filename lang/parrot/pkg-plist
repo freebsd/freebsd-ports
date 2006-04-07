@@ -90,7 +90,7 @@ include/parrot/oplib/core_ops_switch.h
 include/parrot/oplib/ops.h
 lib/libparrot.a
 lib/libparrot.so
-lib/libparrot.so.0.4.2
+lib/libparrot.so.0.4.3
 lib/parrot/dynext/dynlexpad.so
 lib/parrot/dynext/libnci_test.so
 lib/parrot/dynext/match_group.so
@@ -102,6 +102,7 @@ lib/parrot/include/datatypes.pasm
 lib/parrot/include/errors.pasm
 lib/parrot/include/except_severity.pasm
 lib/parrot/include/except_types.pasm
+lib/parrot/include/hllmacros.pir
 lib/parrot/include/iglobals.pasm
 lib/parrot/include/interpcores.pasm
 lib/parrot/include/interpdebug.pasm
@@ -136,6 +137,7 @@ lib/parrot/library/ncurses.pasm
 lib/parrot/library/ncurses.pbc
 lib/parrot/library/ncurses.pir
 lib/parrot/library/parrotlib.pbc
+lib/parrot/library/parrotlib.pir
 lib/parrot/library/pcore.pir
 lib/parrot/library/pcre.pbc
 lib/parrot/library/pcre.pir
@@ -164,8 +166,8 @@ lib/parrot/library/JSON/Parser.pir
 lib/parrot/library/PGE/Dumper.pir
 lib/parrot/library/PGE/Glob.pir
 lib/parrot/library/PGE/Hs.pir
+lib/parrot/library/PGE/P6Grammar.pir
 lib/parrot/library/PGE/Text.pir
-lib/parrot/library/PGE/Util.pir
 lib/parrot/library/SDL/App.pir
 lib/parrot/library/SDL/Button.pir
 lib/parrot/library/SDL/Color.pir
@@ -287,6 +289,8 @@ libdata/pkgconfig/parrot.pc
 %%DOCSDIR%%/docs/pdds/clip/pdd17_basic_types.pod
 %%DOCSDIR%%/docs/pdds/clip/pdd18_security.pod
 %%DOCSDIR%%/docs/pdds/clip/pdd19_pir.pod
+%%DOCSDIR%%/docs/pdds/clip/pddXX_exceptions.pod
+%%DOCSDIR%%/docs/pdds/clip/pddXX_io.pod
 %%DOCSDIR%%/docs/pmc/array.pod
 %%DOCSDIR%%/docs/pmc/iterator.pod
 %%DOCSDIR%%/docs/pmc/perlarray.pod
@@ -427,6 +431,7 @@ libdata/pkgconfig/parrot.pc
 %%DOCSDIR%%/examples/mops/mops.py
 %%DOCSDIR%%/examples/mops/mops.rb
 %%DOCSDIR%%/examples/mops/mops.scheme
+%%DOCSDIR%%/examples/namespace/namespace_dump.pir
 %%DOCSDIR%%/examples/nci/PQt.C
 %%DOCSDIR%%/examples/nci/QtHelloWorld.pasm
 %%DOCSDIR%%/examples/nci/ls.pir
@@ -500,6 +505,8 @@ libdata/pkgconfig/parrot.pc
 %%DOCSDIR%%/examples/shootout/pidigits.py
 %%DOCSDIR%%/examples/shootout/random.pasm
 %%DOCSDIR%%/examples/shootout/random.pir
+%%DOCSDIR%%/examples/shootout/recursive-2.pir
+%%DOCSDIR%%/examples/shootout/recursive.pir
 %%DOCSDIR%%/examples/shootout/regexdna.pir
 %%DOCSDIR%%/examples/shootout/revcomp.pir
 %%DOCSDIR%%/examples/shootout/sumcol.pir
@@ -534,6 +541,7 @@ libdata/pkgconfig/parrot.pc
 @dirrm %%DOCSDIR%%/examples/past
 @dirrm %%DOCSDIR%%/examples/pasm
 @dirrm %%DOCSDIR%%/examples/nci
+@dirrm %%DOCSDIR%%/examples/namespace
 @dirrm %%DOCSDIR%%/examples/mops
 @dirrm %%DOCSDIR%%/examples/library
 @dirrm %%DOCSDIR%%/examples/japh
