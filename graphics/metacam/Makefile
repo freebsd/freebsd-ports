@@ -8,7 +8,9 @@
 PORTNAME=	metacam
 PORTVERSION=	1.2
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.cheeseplant.org/pub/
+MASTER_SITES=	http://critical.ch/distfiles/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A digital camera EXIF meta-information reader
