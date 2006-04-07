@@ -11,7 +11,7 @@ CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	clamav
 
-MAINTAINER=	rob@debank.tv
+MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Command line virus scanner written entirely in C
 
 LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
