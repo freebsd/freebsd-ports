@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bacula
-DISTVERSION=	1.38.6
+DISTVERSION=	1.38.7
 #PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -20,7 +20,7 @@ CONFLICTS=	bacula-server-devel-[0-9]* bacula-client-devel-[0-9]*
 
 UNIQUENAME?=${PORTNAME}${PKGNAMESUFFIX}
 
-USE_RC_SUBR?=	z-bacula-dir.sh z-bacula-sd.sh
+USE_RC_SUBR?=	bacula-dir bacula-sd
 
 # The user/group IDs below are registered, see
 # http://www.freebsd.org/doc/en_US.ISO8859-1/books/porters-handbook/book.html#DADS-UID
@@ -134,10 +134,12 @@ CONFFILES=		sd dir
 CONFIGURE_ARGS+=	--with-mysql=yes
 USE_MYSQL=		yes
 DBTYPE=			mysql
+SUB_LIST+=		REQ_MYSQL=mysql REQ_PGSQL=""
 .elif defined(WITH_POSTGRESQL)
 USE_PGSQL=		yes
 CONFIGURE_ARGS+=	--with-postgresql=yes
 DBTYPE=			postgresql
+SUB_LIST+=		REQ_MYSQL="" REQ_PGSQL=postgresql
 .elif defined(WITH_SQLITE3)
 CONFIGURE_ARGS+=	--with-sqlite3=yes
 LIB_DEPENDS+=		sqlite3:${PORTSDIR}/databases/sqlite3

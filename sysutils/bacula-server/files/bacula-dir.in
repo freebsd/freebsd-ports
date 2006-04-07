@@ -3,7 +3,7 @@
 # $FreeBSD$
 #
 # PROVIDE: utility
-# REQUIRE: DAEMON
+# REQUIRE: DAEMON %%REQ_MYSQL%% %%REQ_PGSQL%%
 # KEYWORD: shutdown
 #
 # Add the following lines to /etc/rc.conf.local or /etc/rc.conf
