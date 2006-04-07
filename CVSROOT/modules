@@ -10717,6 +10717,7 @@ py-libdnet	ports/net/py-libdnet
 py-libgmail	ports/mail/py-libgmail
 py-libmpdclient	ports/audio/py-libmpdclient
 py-libnet	ports/net/py-libnet
+py-libtunepimp	ports/audio/py-libtunepimp
 py-libxml2	ports/textproc/py-libxml2
 py-libxslt	ports/textproc/py-libxslt
 py-lirc		ports/comms/py-lirc
