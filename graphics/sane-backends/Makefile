@@ -7,7 +7,7 @@
 
 PORTNAME=	sane-backends
 PORTVERSION=	1.0.17
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://alioth.debian.org/download.php/1347/ \
 		ftp://ftp.sane-project.org/pub/sane/%SUBDIR%/ \
@@ -64,8 +64,8 @@ pre-fetch:
 	@${ECHO} ""
 	@${ECHO} "*** ATTENTION ***"
 	@${ECHO} ""
-	@${ECHO} "Old versions then 1.0.17_1 do not check if you change config files."
-	@${ECHO} "If it's your case, press CTRL+C and copy your config files."
+	@${ECHO} "Older versions than 1.0.17_1 do not check if you change config files."
+	@${ECHO} "If that's the case for you, press CTRL+C and backup your config files."
 	@${ECHO} ""
 
 post-patch:
