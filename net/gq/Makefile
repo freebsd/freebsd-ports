@@ -32,15 +32,15 @@ OPTIONS=	JPEG	"Enable jpegPhoto attr. handling" On \
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_JPEG)
+.if !defined(WITHOUT_JPEG)
 USE_GNOME+=	gdkpixbuf
 .endif
 
-.if defined(WITH_DND)
+.if !defined(WITHOUT_DND)
 CONFIGURE_ARGS+=	--enable-browser-dnd
 .endif
 
-.if defined(WITH_CACHE)
+.if !defined(WITHOUT_CACHE)
 CONFIGURE_ARGS+=	--enable-cache
 .endif
 
