@@ -2,8 +2,7 @@
 Remember to set environment varible:
 
   (csh/tcsh) 				(sh/bash)
-  setenv XMODIFIERS @im=xcin		export XMODIFIERS='@im=xcin'
-  setenv GTK_IM_MODULE xim		export GTK_IM_MODULE=xim
+  setenv XMODIFIERS @im=gcin		export XMODIFIERS='@im=gcin'
 
 Finally, to start the GCIN input method daemon, use command:
 
