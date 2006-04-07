@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gcin
-PORTVERSION=	1.1.7
+PORTVERSION=	1.1.8
 CATEGORIES=	chinese textproc gnome
 MASTER_SITES=	http://www.csie.nctu.edu.tw/~cp76/gcin/download/ \
 		http://edt1023.sayya.org/misc/
@@ -64,6 +64,16 @@ PLIST_SUB+=	BOSHIAMY="@comment "
 pre-configure:
 	@${REINPLACE_CMD} -e 's,gcin.png,${PREFIX}/share/icons/gcin.png,' \
 		${WRKSRC}/menu/gcin-setup.desktop
+	@${REINPLACE_CMD} -e 's/&//; s/bash/sh/; \
+		s/QT_IM_DIR=\/usr/QT_IM_DIR=$$prefix/; \
+		s/mandir=$$datadir/mandir=$$prefix/; \
+		s/\/usr\/share/$$prefix\/share/; \
+		109,110 s/control-center-2\.0/gnome\/control-center-2\.0/; \
+		s/gcc/$$CC/; s/gcin-$$GCIN_VERSION/gcin/' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's/modify-XIM //; 8,10 d' ${WRKSRC}/scripts/Makefile
+	@${REINPLACE_CMD} -e 's/bash/sh/;' ${WRKSRC}/scripts/gcin-user-setup
+	@${REINPLACE_CMD} -e 's/bash/sh/; s/&//; s/opt\/gnome/usr\/X11R6/;' \
+		${WRKSRC}/scripts/utf8-edit
 
 post-install:
 .if !defined(NOPORTDOCS)
