@@ -10,8 +10,8 @@ PORTVERSION=	20030623
 PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.cs.stanford.edu/pub/sgb/ \
-		${MASTER_SITE_GENTOO}                                          
-MASTER_SITE_SUBDIR=    distfiles
+		${MASTER_SITE_GENTOO}
+MASTER_SITE_SUBDIR=	distfiles
 DISTNAME=	sgb-2003-06-23
 
 MAINTAINER=	gerald@FreeBSD.org
