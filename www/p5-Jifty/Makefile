@@ -43,7 +43,6 @@ BUILD_DEPENDS=	\
 		p5-Hash-Merge>0:${PORTSDIR}/textproc/p5-Hash-Merge \
 		p5-Hook-LexWrap>0:${PORTSDIR}/devel/p5-Hook-LexWrap \
 		p5-Jifty-DBI>0.06:${PORTSDIR}/databases/p5-Jifty-DBI \
-		p5-JSON-Syck>=0.05:${PORTSDIR}/textproc/p5-JSON-Syck \
 		p5-Log-Log4perl>0:${PORTSDIR}/devel/p5-Log-Log4perl \
 		p5-Module-Install>=0.50:${PORTSDIR}/devel/p5-Module-Install \
 		p5-Locale-Maketext-Simple>0:${PORTSDIR}/devel/p5-Locale-Maketext-Simple \
