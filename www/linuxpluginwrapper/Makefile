@@ -7,7 +7,7 @@
 
 PORTNAME=	linuxpluginwrapper
 PORTVERSION=	20051113
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	www linux emulators
 MASTER_SITES=	http://people.FreeBSD.org/~nork/distfiles/ \
 		${MASTER_SITE_LOCAL}
@@ -16,6 +16,10 @@ MASTER_SITE_SUBDIR=	nork
 MAINTAINER=	nork@FreeBSD.org
 COMMENT=	A wrapper allowing use of linux-plugins with native applications
 
+OPTIONS=	FLASH	"install linux-flashplugin"	off \
+		REALPLAYER	"install linux-realplayer"	off \
+		ACROREAD	"install acroread7"	off
+
 .include <bsd.port.pre.mk>
 
 .if		 ${OSVERSION} >= 700009
@@ -23,10 +27,20 @@ IGNORE=		doesn't support ELF symbol versioning, yet.
 .endif
 
 # I will remove WITH_PLUGINS knob.
-.if		defined(WITH_PLUGINS)
+.if		defined(WITH_FLASH)
 RUN_DEPENDS=	${X11BASE}/lib/linux-flashplugin6/libflashplayer.so:${PORTSDIR}/www/linux-flashplugin6
+WITH_PLUGINS=	1
+.endif
+.if		defined(WITH_REALPLAYER)
 RUN_DEPENDS+=	${X11BASE}/lib/linux-mozilla/plugins/nphelix.so:${PORTSDIR}/multimedia/linux-realplayer
-RUN_DEPENDS+=	${LINUXBASE}/usr/local/Adobe/Acrobat7.0/Browser/intellinux/nppdf.so:${PORTSDIR}/print/acroread7
+WITH_PLUGINS=	1
+.endif
+.if		defined(WITH_ACROREAD)
+RUN_DEPENDS+=	${X11BASE}/Adobe/Acrobat7.0/ENU/Browser/intellinux/nppdf.so:${PORTSDIR}/print/acroread7
+WITH_PLUGINS=	1
+.endif
+
+.if		defined(WITH_PLUGINS)
 .if		${OSVERSION} < 500000
 USE_MOTIF=	yes
 .endif
@@ -37,7 +51,6 @@ MAKE_ENV=	EXAMPLESDIR=${EXAMPLESDIR} INSTALL_DATA="${INSTALL_DATA}" INSTALL_PROG
 
 CONFLICTS=	flashpluginwrapper-*
 USE_XLIB=	yes
-USE_REINPLACE=	yes
 PLIST_SUB=	LINUXBASE=${LINUXBASE}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 .if		!defined(WITH_PLUGINS) || ${OSVERSION} < 500000
@@ -98,16 +111,22 @@ post-build:
 .if		defined(WITH_PLUGINS)
 pre-install:
 	@${MKDIR} ${X11BASE}/lib/browser_linux_plugins
-	@${LN} -sf ${LINUXBASE}/usr/local/Adobe/Acrobat7.0/Browser/intellinux/nppdf.so \
+.if		defined(WITH_ACROREAD)
+	@${LN} -sf ${X11BASE}/Adobe/Acrobat7.0/ENU/Browser/intellinux/nppdf.so \
 		${X11BASE}/lib/browser_linux_plugins/
+.endif
+.if		defined(WITH_FLASH)
 	@${LN} -sf ${X11BASE}/lib/linux-flashplugin6/flashplayer.xpt \
 		${X11BASE}/lib/browser_linux_plugins/
 	@${LN} -sf ${X11BASE}/lib/linux-flashplugin6/libflashplayer.so \
 		${X11BASE}/lib/browser_linux_plugins/
+.endif
+.if		defined(WITH_REALPLAYER)
 	@${LN} -sf ${X11BASE}/lib/linux-mozilla/plugins/nphelix.so \
 		${X11BASE}/lib/browser_linux_plugins/
 	@${LN} -sf ${X11BASE}/lib/linux-mozilla/plugins/nphelix.xpt \
 		${X11BASE}/lib/browser_linux_plugins/
+.endif
 .endif
 
 post-install:

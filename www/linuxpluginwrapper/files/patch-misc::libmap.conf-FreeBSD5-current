@@ -1,0 +1,20 @@
+--- misc/libmap.conf-FreeBSD5-current.old	Fri Apr  7 15:48:13 2006
++++ misc/libmap.conf-FreeBSD5-current	Fri Apr  7 15:50:32 2006
+@@ -23,7 +23,7 @@
+ # Acrobat with Opera is not available.
+ 
+ # Acrobat7 with Mozilla/Firebird/Galeon/Epiphany/Konqueror/Kazehakase
+-[/usr/compat/linux/usr/local/Adobe/Acrobat7.0/Browser/intellinux/nppdf.so]
++[/usr/X11R6/Adobe/Acrobat7.0/ENU/Browser/intellinux/nppdf.so]
+ libc.so.6			pluginwrapper/acrobat.so
+ 
+ # Japanese Acrobat7 with Mozilla/Firebird/Galeon/Epiphany/Konqueror/Kazehakase
+@@ -36,6 +36,8 @@
+ [/usr/X11R6/lib/linux-mozilla/plugins/nphelix.so]
+ libstdc++.so.5			libstdc++.so.4
+ libc.so.6			pluginwrapper/realplayer.so
++libm.so.6			libm.so.2
++libgcc_s.so.1			pluginwrapper/realplayer.so
+ 
+ 
+ #######################################################
