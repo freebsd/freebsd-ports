@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	SimGear
-PORTVERSION=	0.3.9
-PORTREVISION=	1
+PORTVERSION=	0.3.10
 CATEGORIES=	devel games
 MASTER_SITES=	ftp://ftp.simgear.org/pub/simgear/Source/ \
 		ftp://ftp.de.flightgear.org/pub/simgear/Source/
@@ -21,7 +20,6 @@ LIB_DEPENDS=	openal.0:${PORTSDIR}/audio/openal \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
 USE_GL=		yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
@@ -31,7 +29,7 @@ CONFIGURE_ARGS=	--with-jpeg-factory
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-CFLAGS+=	-O0	# optimizations cause a build failure
+IGNORE=		does not build on FreeBSD 4.x
 .endif
 
 post-patch:
