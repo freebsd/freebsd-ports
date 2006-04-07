@@ -29,6 +29,7 @@ include/kmymoney/mymoneytransactionfilter.h
 include/kmymoney/mymoneyutils.h
 include/kmymoney/statementinterface.h
 include/kmymoney/viewinterface.h
+%%OFXPLUGIN%%lib/kde3/kmm_ofximport.so
 lib/libkmm_mymoney.a
 lib/libkmm_mymoney.la
 lib/libkmm_mymoney.so
@@ -210,6 +211,8 @@ share/applications/kde/kmymoney2.desktop
 %%DOCSDIR%%/common
 %%DOCSDIR%%/confirmenter.png
 %%DOCSDIR%%/credits.docbook
+%%DOCSDIR%%/currency_newpriceentry.png
+%%DOCSDIR%%/currency_priceeditor.png
 %%DOCSDIR%%/date_widget.png
 %%DOCSDIR%%/default_prompt.png
 %%DOCSDIR%%/details-accounts.docbook
@@ -256,6 +259,7 @@ share/applications/kde/kmymoney2.desktop
 %%DOCSDIR%%/investment-onlineupdate.png
 %%DOCSDIR%%/investment-currencywarning.png
 %%DOCSDIR%%/investment-exchangerateeditor.png
+%%DOCSDIR%%/investments_summarytab.png
 %%DOCSDIR%%/investments_view.png
 %%DOCSDIR%%/kmt.png
 %%DOCSDIR%%/ledger_more.png
@@ -275,6 +279,9 @@ share/applications/kde/kmymoney2.desktop
 %%DOCSDIR%%/payees_view.png
 %%DOCSDIR%%/payeeview.png
 %%DOCSDIR%%/qif_report.png
+%%DOCSDIR%%/qifimport-export.png
+%%DOCSDIR%%/qifimport-qifprofiledate.png
+%%DOCSDIR%%/qifimport-qifprofileeditor.png
 %%DOCSDIR%%/qifimportverify.png
 %%DOCSDIR%%/qifopen.png
 %%DOCSDIR%%/reconcile.png
@@ -284,7 +291,10 @@ share/applications/kde/kmymoney2.desktop
 %%DOCSDIR%%/reconcile4.png
 %%DOCSDIR%%/reference.docbook
 %%DOCSDIR%%/register.png
+%%DOCSDIR%%/report_configuration-reporttab.png
+%%DOCSDIR%%/report_configuration-rowscolumns.png
 %%DOCSDIR%%/reports_view.png
+%%DOCSDIR%%/reports_view-all.png
 %%DOCSDIR%%/schedcaltypes.png
 %%DOCSDIR%%/schedmonthday.png
 %%DOCSDIR%%/schedpopup.png
@@ -317,10 +327,12 @@ share/icons/hicolor/16x16/mimetypes/kmy.png
 share/icons/hicolor/32x32/apps/kmymoney2.png
 share/icons/hicolor/32x32/mimetypes/kmy.png
 share/icons/hicolor/48x48/mimetypes/kmy.png
+share/icons/hicolor/48x48/apps/kmymoney2.png
 share/icons/hicolor/64x64/apps/kmymoney2.png
 share/icons/hicolor/64x64/mimetypes/kmy.png
 share/icons/locolor/16x16/apps/kmymoney2.png
 share/icons/locolor/32x32/apps/kmymoney2.png
+share/locale/da/LC_MESSAGES/kmymoney2.mo
 share/locale/de/LC_MESSAGES/kmymoney2.mo
 share/locale/en_GB/LC_MESSAGES/kmymoney2.mo
 share/locale/es/LC_MESSAGES/kmymoney2.mo
@@ -331,6 +343,7 @@ share/locale/pt_BR/LC_MESSAGES/kmymoney2.mo
 share/locale/pt_PT/LC_MESSAGES/kmymoney2.mo
 share/locale/ru/LC_MESSAGES/kmymoney2.mo
 share/mimelnk/application/x-kmymoney2.desktop
+%%OFXPLUGIN%%share/services/kmm_ofximport.desktop
 share/servicetypes/kmymoneyimporterplugin.desktop
 share/servicetypes/kmymoneyplugin.desktop
 @dirrm include/kmymoney
@@ -360,3 +373,4 @@ share/servicetypes/kmymoneyplugin.desktop
 @dirrm %%DATADIR%%/html/images
 @dirrm %%DATADIR%%/html
 @dirrm %%DATADIR%%
+@dirrm %%DOCSDIR%%
