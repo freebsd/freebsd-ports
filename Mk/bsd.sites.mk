@@ -832,24 +832,18 @@ MASTER_SITE_QMAIL+= \
 	http://qmail.palomine.net/%SUBDIR%/ \
 	http://qmail.mirrors.summersault.com/%SUBDIR%/ \
 	http://qmail.cdsinet.net/%SUBDIR%/ \
-	http://qmail.fidnet.com/%SUBDIR%/ \
-	http://qmail.mscnetworks.com/%SUBDIR%/ \
 	http://qmail.teleglobe.net/%SUBDIR%/ \
 	http://qmail.glasswings.com.au/%SUBDIR%/ \
 	http://qmail.planetmirror.com/%SUBDIR%/ \
 	http://qmail.hostlink.com.hk/%SUBDIR%/ \
 	http://qmail.cbn.net.id/%SUBDIR%/ \
-	http://qmailorg.data-hotel.net/%SUBDIR%/ \
 	http://qmail.manic.co.kr/%SUBDIR%/ \
 	http://qmail.psshee.com/%SUBDIR%/ \
 	http://mirrors.kangaroot.net/qmail/%SUBDIR%/ \
 	http://mirrors.sunsite.dk/qmailwww/%SUBDIR%/ \
-	http://qmail.xinus.net/%SUBDIR%/ \
-	http://qmail.lightwerk.com/%SUBDIR%/ \
 	http://qmail.mirrors.Space.Net/%SUBDIR%/ \
 	http://qmail-mirror.hoermann-rawema.de/%SUBDIR%/ \
 	http://www.agria.hu/qmail/%SUBDIR%/ \
-	http://qmail-mirror.naplopok.hu/%SUBDIR%/ \
 	http://qmail.hu/%SUBDIR%/ \
 	http://qmail.rhnet.is/%SUBDIR%/ \
 	http://qmail.netsoc.ucd.ie/%SUBDIR%/ \
@@ -864,7 +858,6 @@ MASTER_SITE_QMAIL+= \
 	http://qmail.netrogenic.com/%SUBDIR%/ \
 	http://qmail.omnis.ch/%SUBDIR%/ \
 	http://qmail.asylog.net/%SUBDIR%/ \
-	http://qmail.humourengine.com/%SUBDIR%/ \
 	http://qmail.softflare.com/%SUBDIR%/ \
 	http://qmail.blueyonder.co.uk/%SUBDIR%/ \
 	http://qmail.usp.br/%SUBDIR%/ \
