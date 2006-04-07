@@ -24,6 +24,8 @@ lib/libsigcx-0.6.so.2
 lib/libsigcx-gtk-0.6.a
 lib/libsigcx-gtk-0.6.so
 lib/libsigcx-gtk-0.6.so.1
+lib/libsigcx-0.6.la
+lib/libsigcx-gtk-0.6.la
 lib/sigcx-0.6/include/sigcxconfig.h
 libdata/pkgconfig/sigcx-0.6-gtk+.pc
 libdata/pkgconfig/sigcx-0.6.pc
