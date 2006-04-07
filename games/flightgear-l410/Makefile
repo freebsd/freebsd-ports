@@ -26,6 +26,8 @@ PKGMESSAGE=	${WRKDIR}/.pkg-message
 PLIST=		${WRKDIR}/.plist
 PLIST_FILES=	bin/fgfs-l410
 
+IGNORE=		is incompatible with the latest FlightGear release
+
 post-extract:
 	@cd ${WRKSRC} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${SRCDIST} ${EXTRACT_AFTER_ARGS}
 	@${CAT} ${MASTERDIR}/pkg-message ${.CURDIR}/pkg-message > ${PKGMESSAGE}
