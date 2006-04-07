@@ -20,6 +20,7 @@ USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomeprefix gnometarget gtk20
 USE_GL=		yes
 USE_GETOPT_LONG=	yes
+USE_GETTEXT=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
