@@ -397,7 +397,6 @@
     SUBDIR += prayer
     SUBDIR += premail
     SUBDIR += procmail
-    SUBDIR += prom-mew
     SUBDIR += prom-wl
     SUBDIR += pronto
     SUBDIR += proxsmtp
@@ -457,10 +456,8 @@
     SUBDIR += ripmime
     SUBDIR += rlytest
     SUBDIR += rmime
-    SUBDIR += rmoldmail
     SUBDIR += roundcube
     SUBDIR += rssyl
-    SUBDIR += ruby-mime-types
     SUBDIR += ruby-rfilter
     SUBDIR += ruby-rmail
     SUBDIR += ruby-tmail

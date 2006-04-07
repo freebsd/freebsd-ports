@@ -1,6 +1,0 @@
-%%RUBY_SITELIBDIR%%/mime/type.rb
-%%RUBY_SITELIBDIR%%/mime/types.rb
-@dirrm %%RUBY_SITELIBDIR%%/mime
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/Readme
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%

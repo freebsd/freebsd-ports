@@ -2237,3 +2237,6 @@ devel/upp602|devel/upp|2006-04-05|Was created in a bad directory
 mail/mulberry||2006-04-06|Has expired: mastersite disappeared, no longer maintained by author
 textproc/pyenchant|textproc/py-enchant|2006-04-06|Rename to consistency with other Python ports
 security/skip||2006-04-06|Port has become obsolete
+mail/prom-mew||2006-04-07|Has expired: mastersite disappeared, no longer maintained by author
+mail/rmoldmail||2006-04-07|Has expired: mastersite disappeared, no longer maintained by author
+mail/ruby-mime-types||2006-04-07|Has expired: mastersite disappeared, no longer maintained by author
