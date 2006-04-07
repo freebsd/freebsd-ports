@@ -15,7 +15,7 @@ MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	CGI Webmail client for Maildirs
 
 CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include -L${LOCALBASE}/lib ${CFLAGS}" \
-		CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include"
+		CXXFLAGS="-I${LOCALBASE}/include ${CXXFLAGS}"
 
 BUILD_DEPENDS=	courierauthconfig:${PORTSDIR}/security/courier-authlib-base
 RUN_DEPENDS=	courierauthconfig:${PORTSDIR}/security/courier-authlib-base
