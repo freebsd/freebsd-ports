@@ -13292,7 +13292,6 @@ wesnoth		ports/games/wesnoth
 westhawksnmp	ports/java/westhawksnmp
 wfb2sql		ports/databases/wfb2sql
 wfmath		ports/math/wfmath
-wftk		ports/devel/wftk
 wfut		ports/devel/wfut
 wget		ports/ftp/wget
 wget4web	ports/www/wget4web

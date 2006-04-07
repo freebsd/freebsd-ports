@@ -1702,7 +1702,6 @@
     SUBDIR += vstr
     SUBDIR += vtcl
     SUBDIR += websvn
-    SUBDIR += wftk
     SUBDIR += wfut
     SUBDIR += wininfo
     SUBDIR += wxGlade
