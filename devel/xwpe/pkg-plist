@@ -2,7 +2,7 @@ bin/we
 bin/wpe
 bin/xwe
 bin/xwpe
-share/xwpe/help.key
-share/xwpe/help.xwpe
-share/xwpe/syntax_def
-@dirrm share/xwpe
+%%DATADIR%%/help.key
+%%DATADIR%%/help.xwpe
+%%DATADIR%%/syntax_def
+@dirrm %%DATADIR%%

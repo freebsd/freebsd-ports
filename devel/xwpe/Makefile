@@ -19,7 +19,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Borland-like IDE programming environment
 
 USE_XLIB=	yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=
