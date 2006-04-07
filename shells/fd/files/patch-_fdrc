@@ -1,5 +1,5 @@
---- _fdrc.orig	Wed Sep 14 00:00:00 2005
-+++ _fdrc	Tue Nov  8 22:25:52 2005
+--- _fdrc.orig	Thu Mar 30 00:00:00 2006
++++ _fdrc	Fri Apr  7 13:20:15 2006
 @@ -13,2 +13,3 @@
  #SORTTYPE=0
 +FD_SORTTYPE=101
@@ -24,15 +24,19 @@
  #ANSICOLOR=0
 +FD_ANSICOLOR=1
  
-@@ -212,2 +218,3 @@
+@@ -226,2 +232,3 @@
+ #THRUARGS=0
++FD_THRUARGS=1
+ 
+@@ -246,2 +253,3 @@
  #LANGUAGE=""
 +FD_LANGUAGE=$LANG
  
-@@ -306,2 +313,3 @@
+@@ -356,2 +364,3 @@
  #PAGER=more%K
 +FD_PAGER=${PAGER:-/usr/bin/more}%K
  #EDITOR=vi
-@@ -313,2 +321,38 @@
+@@ -363,2 +372,38 @@
  # launcher definition
 +tar="tar"
 +tar_format="%a %u/%g %s %m %d %t %y %f"
@@ -71,7 +75,7 @@
 +arch	"/.aa"	"echo ERROR"			"cat %X.?? | $tar zxf - %TA"
 +
  #(Default)
-@@ -426,2 +470,39 @@
+@@ -476,2 +521,39 @@
  # archiver definition
 +
 +for ext in /.tar; do
@@ -111,7 +115,7 @@
 +arch	".uu"  "_uuencode %C %TA"		"uudecode -ic < %C"
 +
  #(Default)
-@@ -519 +600,5 @@
+@@ -569 +651,5 @@
  #keymap DEL	"\033[3~"
 +
 +if [ -f /etc/fd2rc.local ]; then
