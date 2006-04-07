@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.clamav.net/snapshot/ \
 PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
-MAINTAINER=	rob@debank.tv
+MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Command line virus scanner written entirely in C
 
 FORBIDDEN=	Security issues. http://www.vuxml.org/freebsd/6a5174bd-c580-11da-9110-00123ffe8333.html
