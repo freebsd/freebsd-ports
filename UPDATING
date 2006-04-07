@@ -6,6 +6,27 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20060407:
+  AFFECTS: users of sysutils/bacula*
+  AUTHOR: dan@langille.org
+
+  bacula-server now installs two rc.d scripts, one for the Director
+  and one for the Storage Daemon. To enable the Director at boot time,
+  set the following in /etc/rc.conf[.local]:
+
+  bacula_dir_enable="YES"
+
+  To enable the Storage Daemon, set the following in rc.conf(5):
+
+  bacula_sd_enable="YES"
+
+  Similarly, bacula-client also installs a rcNG script. To enable
+  the File Daemon at boot time, set the following in rc.conf(5):
+
+  bacula_fd_enable="YES"
+
+  The old z-bacula.sh script in PREFIX/etc/rc.d should be removed.
+
 20060403:
   AFFECTS: users of databases/db*
   AUTHOR: swhetzel@gmail.com
