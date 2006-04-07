@@ -34,6 +34,35 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="61349f77-c620-11da-b2fb-000e0c2e438a">
+    <topic>thunderbird -- javascript execution</topic>
+    <affects>
+      <package>
+	<name>thunderbird</name>
+	<name>mozilla-thunderbird</name>
+	<range><le>1.0.7</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Renaud Lifchitz reports a vulnerability within thunderbird.
+	  The vulnerability is caused by improper checking of javascript
+	  scripts.  This could lead to javascript code execution which
+	  can lead to information disclosure or a denial of service
+	  (application crash).  This vulnerability is present even if
+	  javascript had been disabled in the preferences.</p>
+      </body>
+    </description>
+    <references>
+      <bid>16770</bid>
+      <cvename>CAN-2006-0884</cvename>
+    </references>
+    <dates>
+      <discovery>2006-02-22</discovery>
+      <entry>2006-04-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="fba75b43-c588-11da-9110-00123ffe8333">
     <topic>phpmyadmin -- XSS vulnerabilities</topic>
     <affects>
