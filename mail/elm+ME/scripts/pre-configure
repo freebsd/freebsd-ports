@@ -5,6 +5,7 @@
 # $FreeBSD$
 
 [ -r /usr/include/inttypes.h ] && has_inttypes=define || has_inttypes=undef
+cpp /usr/include/wchar.h | grep mbrlen && has_wchar=define || has_wchar=undef
 
 d_shared_rev=${SO_REV:-$(awk '/SHAREDTAG:/{print $2}' ${WRKSRC}/hdrs/patchlevel.h)}
 
@@ -47,6 +48,8 @@ n='-n'
 c=''
 orderlib='false'
 ranlib=':'
+ar='ar'
+nm='nm'
 package='elm2.4me+'
 pager='builtin++'
 use_builtin_pager='define'
@@ -349,6 +352,8 @@ gpg_path='${LOCALBASE}/bin/gpg'
 special_path='/usr/bin'
 special_path2='${PREFIX}/bin'
 locale_dir='/usr/share/locale'
+d_wchar='${has_wchar}'
+d_wcwidth='${has_wchar}'
 CONFIG=true
 EOF
 

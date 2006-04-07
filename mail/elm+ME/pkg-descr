@@ -1,5 +1,5 @@
 An interactive screen-oriented mailer program that supersedes mail
-and mailx. This version is an unofficial clone with enhanced MIME
-and character set support.  others new features include PGP, IMAP.
+and mailx. This version is a branch from ELM with enhanced MIME
+and character set support. Others features include PGP and IMAP.
 
-WWW: http://www.ozone.fmi.fi/KEH/
+WWW: http://www.elmme-mailer.org/

@@ -62,6 +62,7 @@ bin/readmsg
 %%LIB_DIR%%/elm.map.txt/CP437.TXT
 %%LIB_DIR%%/elm.map.txt/dec-mcs.txt
 %%LIB_DIR%%/elm.map.txt/hp-roman8.txt
+%%LIB_DIR%%/elm.map.txt/koi8-e.txt
 %%LIB_DIR%%/elm.map.txt/viscii.txt
 %%LIB_DIR%%/elmbindata
 %%LIB_DIR%%/elmcharset
@@ -75,26 +76,21 @@ bin/readmsg
 %%LIB_DIR%%/elmunidata
 %%LIB_DIR%%/prlong
 %%SHLIB_DIR%%/libelmme-base.so%%SO_REV%%
+%%SHLIB_DIR%%/libelmme-mailer.so%%SO_REV%%
 %%ELM_ICONV%%%%SHLIB_DIR%%/libelmme-iconv.so%%SO_REV%%
 %%ELM_SMTP%%%%SHLIB_DIR%%/libelmme-smtp.so%%SO_REV%%
 %%ELM_TLS%%%%SHLIB_DIR%%/libelmme-tls.so%%SO_REV%%
-%%PORTDOCS%%%%DOCSDIR%%/Alias.fmtd.gz
-%%PORTDOCS%%%%DOCSDIR%%/Config.fmtd.gz
-%%PORTDOCS%%%%DOCSDIR%%/Cover.fmtd.gz
-%%PORTDOCS%%%%DOCSDIR%%/Form.fmtd.gz
 %%PORTDOCS%%%%DOCSDIR%%/MIME.txt.gz
 %%ELM_ICONV%%%%PORTDOCS%%%%DOCSDIR%%/README.ICONV.gz
 %%PORTDOCS%%%%DOCSDIR%%/README.ME+.gz
 %%ELM_SMTP%%%%PORTDOCS%%%%DOCSDIR%%/README.SMTP.gz
 %%ELM_TLS%%%%PORTDOCS%%%%DOCSDIR%%/README.TLS.gz
-%%PORTDOCS%%%%DOCSDIR%%/Ref.fmtd.gz
-%%PORTDOCS%%%%DOCSDIR%%/Users.fmtd.gz
 share/nls/C/elm2.4me+.cat
 @exec %D/%%LIB_DIR%%/elmrc-write -G -I
 @exec %D/%%LIB_DIR%%/elmlibregister -G -I %%ELM_SHLIBS%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%LIB_DIR%%/elm.map.txt
 @dirrm %%LIB_DIR%%/elm.map.bin
-@unexec rmdir %D/%%LIB_DIR%% 2> /dev/null || :
-@unexec rmdir %D/%%CONF_DIR%% 2> /dev/null || :
-@unexec rmdir %D/%%MAIL_DIR%% 2> /dev/null || :
+@dirrmtry %%LIB_DIR%%
+@dirrmtry %%CONF_DIR%%
+@dirrmtry %%MAIL_DIR%%
