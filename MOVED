@@ -2016,7 +2016,7 @@ chinese/cdict5||2005-12-31|Unfetchable
 devel/py-ansistyle||2005-12-31|Replaced by py-ll-core
 devel/py-ll-url||2005-12-31|Replaced by py-ll-core
 misc/gkrellmaflag||2005-12-31|Unfetchable
-devel/libmusclecard|devel/pcsc-lite|2006-01-02|Reintegrated into pcsc-lite port
+devel/libmusclecard||2006-01-02|Temporary integrated into pcsc-lite port
 deskutils/gdesklets-ltvariations||2006-01-04|Deleted; dead and unfetchable
 editors/vimpart||2006-01-08|As of 3.5.0, vimpart is no longer part of KDE.
 sysutils/linneighborhood|net/linneighborhood|2006-01-10|Move to a more appropriate category
