@@ -31,9 +31,9 @@ lib/zinf/plugins/xingmp3.lmc
 lib/zinf/plugins/zinf.ui
 share/locale/ca_ES/LC_MESSAGES/zinf.mo
 share/locale/ru/LC_MESSAGES/zinf.mo
-share/zinf/themes/Aquatica.fat
-share/zinf/themes/Zinf.fat
-share/zinf/themes/ZinfClassic.fat
+%%DATADIR%%/themes/Aquatica.fat
+%%DATADIR%%/themes/Zinf.fat
+%%DATADIR%%/themes/ZinfClassic.fat
 @dirrm share/zinf/themes
 @dirrm share/zinf
 @dirrm lib/zinf/plugins
