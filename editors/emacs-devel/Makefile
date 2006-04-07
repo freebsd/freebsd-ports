@@ -69,7 +69,13 @@ INFO=		ada-mode autotype calc ccmode cl dired-x ebrowse ediff \
 
 LATEST_LINK=	emacs22
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 600000
+EXTRA_PATCHES+=	${FILESDIR}/extrapatch-texinfo
+.endif
+
 pre-build:
 	(cd ${WRKSRC} ; make bootstrap)
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
