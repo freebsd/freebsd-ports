@@ -73,6 +73,7 @@ etc/sane.d/dist/dc210.conf
 etc/sane.d/dist/dc240.conf
 etc/sane.d/dist/dc25.conf
 etc/sane.d/dist/dll.conf
+@exec if test ! -e %D/etc/sane.d/dll.conf; then cp %D/etc/sane.d/dist/dll.conf %D/etc/sane.d/dll.conf; fi
 etc/sane.d/dist/dmc.conf
 etc/sane.d/dist/epson.conf
 etc/sane.d/dist/fujitsu.conf
