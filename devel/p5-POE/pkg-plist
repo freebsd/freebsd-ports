@@ -27,12 +27,10 @@
 %%SITE_PERL%%/POE/Loop/Tk.pm
 %%SITE_PERL%%/POE/Loop/TkActiveState.pm
 %%SITE_PERL%%/POE/Loop/TkCommon.pm
-%%SITE_PERL%%/POE/Macro/UseBytes.pm
 %%SITE_PERL%%/POE/NFA.pm
 %%SITE_PERL%%/POE/Pipe.pm
 %%SITE_PERL%%/POE/Pipe/OneWay.pm
 %%SITE_PERL%%/POE/Pipe/TwoWay.pm
-%%SITE_PERL%%/POE/Preprocessor.pm
 %%SITE_PERL%%/POE/Queue.pm
 %%SITE_PERL%%/POE/Queue/Array.pm
 %%SITE_PERL%%/POE/Resource.pm
@@ -62,7 +60,6 @@
 @dirrm %%SITE_PERL%%/POE/Driver
 @dirrmtry %%SITE_PERL%%/POE/Filter
 @dirrmtry %%SITE_PERL%%/POE/Loop
-@dirrm %%SITE_PERL%%/POE/Macro
 @dirrm %%SITE_PERL%%/POE/Pipe
 @dirrm %%SITE_PERL%%/POE/Queue
 @dirrm %%SITE_PERL%%/POE/Resource
