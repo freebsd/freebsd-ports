@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	clamav
-PORTVERSION=	20051104
-PORTREVISION=	1
+PORTVERSION=	20060406
 CATEGORIES=	security
 MASTER_SITES=	http://www.clamav.net/snapshot/ \
 		http://www.galle.com.br/~garga/clamav-devel/
@@ -16,8 +15,6 @@ DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Command line virus scanner written entirely in C
-
-FORBIDDEN=	Security issues. http://www.vuxml.org/freebsd/6a5174bd-c580-11da-9110-00123ffe8333.html
 
 LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
 RUN_DEPENDS=	lha:${PORTSDIR}/archivers/lha \
@@ -30,16 +27,10 @@ RUN_DEPENDS=	lha:${PORTSDIR}/archivers/lha \
 OPTIONS=	MILTER "Compile the milter interface" Off \
 		CURL "Support URL downloading" Off
 
-USE_REINPLACE=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-USE_AUTOTOOLS=	automake:19 autoconf:259 libtool:15
-LIBTOOLFILES=	acinclude.m4
 INSTALLS_SHLIB=	yes
-USE_RC_SUBR=	yes
-
-PKGINSTALL=	${WRKDIR}/pkg-install
-PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
+USE_RC_SUBR=	clamav-clamd clamav-freshclam
 
 PORTDOCS=	NEWS ChangeLog html
 
@@ -57,10 +48,13 @@ CONFIGURE_ARGS=	--with-dbdir=${DBDIR} \
 		--disable-gethostbyname_r \
 		--enable-readdir_r \
 		--disable-dependency-tracking
-CPPFLAGS+=	-I${LOCALBASE}/include
-CFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include
-LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib
-CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}" CPPFLAGS="${CPPFLAGS}"
+CPPFLAGS+=	-I${LOCALBASE}/include \
+		${PTHREAD_CFLAGS}
+LDFLAGS+=	-L${LOCALBASE}/lib \
+		${PTHREAD_LIBS}
+
+CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" \
+		LDFLAGS="${LDFLAGS}"
 
 MAN1=		clamscan.1 freshclam.1 sigtool.1 clamdscan.1
 MAN5=		clamd.conf.5 freshclam.conf.5
@@ -73,14 +67,14 @@ CLAMAVGROUP?=	clamav
 CLAMAV_CLAMD_SOCKET?=	${RUNDIR}/clamd
 CLAMAV_MILTER_SOCKET?=	${RUNDIR}/clmilter.sock
 
-SED_SCRIPT=	-e 's|%%PREFIX%%|${PREFIX}|g' \
-		-e 's|%%DBDIR%%|${DBDIR}|g' \
-		-e 's|%%LOGDIR%%|${LOGDIR}|g' \
-		-e 's|%%RUNDIR%%|${RUNDIR}|g' \
-		-e 's|%%CLAMAVUSER%%|${CLAMAVUSER}|g' \
-		-e 's|%%CLAMAVGROUP%%|${CLAMAVGROUP}|g' \
-		-e 's|%%CLAMAV_CLAMD_SOCKET%%|${CLAMAV_CLAMD_SOCKET}|g' \
-		-e 's|%%CLAMAV_MILTER_SOCKET%%|${CLAMAV_MILTER_SOCKET}|g'
+SUB_FILES=	pkg-install pkg-deinstall
+SUB_LIST=	DBDIR=${DBDIR} \
+		LOGDIR=${LOGDIR} \
+		RUNDIR=${RUNDIR} \
+		CLAMAVUSER=${CLAMAVUSER} \
+		CLAMAVGROUP=${CLAMAVGROUP} \
+		CLAMAV_CLAMD_SOCKET=${CLAMAV_CLAMD_SOCKET} \
+		CLAMAV_MILTER_SOCKET=${CLAMAV_MILTER_SOCKET}
 
 SED_CONF=	-E -e 's|^\#?(Example)$$|\#\1|' \
 		-e 's|^\#?((Update)?LogFile) .*/([a-z]+\.log)$$|\1 ${LOGDIR}/\3|' \
@@ -90,7 +84,6 @@ SED_CONF=	-E -e 's|^\#?(Example)$$|\#\1|' \
 		-e 's|^\#?(AllowSupplementaryGroups)$$|\1|' \
 		-e 's|^\#?(ScanMail)$$|\1|' \
 		-e 's|^\#?(NotifyClamd)$$|\1|' \
-		-e 's|^\#?(Checks)$$|\#\1|' \
 		-e 's|^\#?(DatabaseDirectory) .*$$|\1 ${DBDIR}|' \
 		-e 's|^\#?(DatabaseOwner) .*$$|\1 ${CLAMAVUSER}|' \
 		-e 's|^\#?(FixStaleSocket)$$|\1|'
@@ -98,23 +91,26 @@ SED_CONF=	-E -e 's|^\#?(Example)$$|\#\1|' \
 PLIST_SUB+=	CLAMAVUSER=${CLAMAVUSER} \
 		CLAMAVGROUP=${CLAMAVGROUP}
 
-RC_DIR=		${PREFIX}/etc/rc.d
-RC_SUFX=	.sh
-SED_SCRIPT+=	-e 's|%%RC_SUBR%%|${RC_SUBR}|g' \
-		-e 's|%%RC_DIR%%|${RC_DIR}|g' \
-		-e 's|%%RC_SUFX%%|${RC_SUFX}|g'
-PLIST_SUB+=	RC_DIR=${RC_DIR} \
-		RC_SUFX=${RC_SUFX}
-
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} == 502010
+PTHREAD_LIBS=	-pthread
+.endif
+
 .if defined(WITH_MILTER)
-.if !exists(/usr/lib/libmilter.a)
+USE_RC_SUBR+=	clamav-milter
+. if !defined(WITHOUT_LDAP) && exists(${LOCALBASE}/lib/libldap.so)
+USE_OPENLDAP=	yes
+LDFLAGS+=	-lldap
+. endif
+
+. if !exists(/usr/lib/libmilter.a)
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libmilter.a:${PORTSDIR}/mail/sendmail
 CONFIGURE_ENV+=	SENDMAIL="${LOCALBASE}/sbin/sendmail"
-.else
+. else
 CONFIGURE_ENV+=	SENDMAIL="/usr/sbin/sendmail"
-.endif
+. endif
+
 CONFIGURE_ARGS+=	--enable-milter
 PLIST_SUB+=	CLAMAV-MILTER=""
 .else
@@ -128,8 +124,11 @@ CONFIGURE_ARGS+=	--with-libcurl
 CONFIGURE_ARGS+=	--without-libcurl
 .endif
 
-pre-configure:
-	@cd ${WRKSRC} && ${ACLOCAL}
+post-patch:
+	@${REINPLACE_CMD} -e 's,$$(libdir)/pkgconfig,$$(prefix)/libdata/pkgconfig,' \
+		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|-pthread -lc_r|${PTHREAD_LIBS}|g' \
+		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
 pre-build:
 	@if ${LDCONFIG} -r | ${GREP} -qw -e -lclamav; then \
@@ -141,44 +140,25 @@ pre-build:
 post-build:
 	@${REINPLACE_CMD} ${SED_CONF} ${BUILD_WRKSRC}/etc/clamd.conf
 	@${REINPLACE_CMD} ${SED_CONF} ${BUILD_WRKSRC}/etc/freshclam.conf
-	@${SED} ${SED_SCRIPT} ${PKGDIR}/pkg-install >${PKGINSTALL}
-	@${SED} ${SED_SCRIPT} ${PKGDIR}/pkg-deinstall >${PKGDEINSTALL}
-	@${SED} ${SED_SCRIPT} ${FILESDIR}/clamav-clamd.sh \
-		>${WRKDIR}/clamav-clamd.sh
-	@${SED} ${SED_SCRIPT} ${FILESDIR}/clamav-freshclam.sh \
-		>${WRKDIR}/clamav-freshclam.sh
-.	if defined(WITH_MILTER)
-		@${SED} ${SED_SCRIPT} ${FILESDIR}/clamav-milter.sh \
-			>${WRKDIR}/clamav-milter.sh
-.	endif
 
 pre-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} PKG_DESTDIR=${DESTDIR} \
 		${SH} ${PKGINSTALL} ${PREFIX} PRE-INSTALL
 
 post-install:
-	@${INSTALL_SCRIPT} ${WRKDIR}/clamav-clamd.sh \
-		${DESTDIR}${RC_DIR}/clamav-clamd${RC_SUFX}
-	@${INSTALL_SCRIPT} ${WRKDIR}/clamav-freshclam.sh \
-		${DESTDIR}${RC_DIR}/clamav-freshclam${RC_SUFX}
 	@${CHOWN} -R ${CLAMAVUSER}:${CLAMAVGROUP} ${DESTDIR}${DBDIR}
-.	for c in clamd freshclam
-		@[ -f ${DESTDIR}${PREFIX}/etc/${c}.conf ] || \
-			${CP} ${DESTDIR}${PREFIX}/etc/${c}.conf.default \
-				${DESTDIR}${PREFIX}/etc/${c}.conf
-.	endfor
-.	if defined(WITH_MILTER)
-		@${INSTALL_SCRIPT} ${WRKDIR}/clamav-milter.sh \
-			${DESTDIR}${RC_DIR}/clamav-milter${RC_SUFX}
-.	endif
-.	if !defined(NOPORTDOCS)
-		@${MKDIR} ${DESTDIR}${DOCSDIR}
-		@${INSTALL_DATA} ${INSTALL_WRKSRC}/NEWS ${INSTALL_WRKSRC}/ChangeLog \
-			${DESTDIR}${DOCSDIR}
-		@${MKDIR} ${DESTDIR}${DOCSDIR}/html
-		@${INSTALL_DATA} ${INSTALL_WRKSRC}/docs/html/*.* \
-			${DESTDIR}${DOCSDIR}/html
-.	endif
+.for c in clamd freshclam
+	@[ -f ${DESTDIR}${PREFIX}/etc/${c}.conf ] || \
+		${CP} ${DESTDIR}${PREFIX}/etc/${c}.conf.default ${DESTDIR}${PREFIX}/etc/${c}.conf
+.endfor
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DESTDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${INSTALL_WRKSRC}/NEWS ${INSTALL_WRKSRC}/ChangeLog \
+		${DESTDIR}${DOCSDIR}
+	@${MKDIR} ${DESTDIR}${DOCSDIR}/html
+	@${INSTALL_DATA} ${INSTALL_WRKSRC}/docs/html/*.* \
+		${DESTDIR}${DOCSDIR}/html
+.endif
 	@${SETENV} PKG_PREFIX=${PREFIX} PKG_DESTDIR=${DESTDIR} \
 		${SH} ${PKGINSTALL} ${PREFIX} POST-INSTALL
 

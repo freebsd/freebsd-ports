@@ -1,0 +1,48 @@
+--- configure.orig	Thu Jun 23 23:12:00 2005
++++ configure	Tue Jun 28 20:53:10 2005
+@@ -10914,6 +10914,9 @@
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
+ $ac_includes_default
++#include <sys/types.h>
++#include <netinet/in.h>
++#include <arpa/nameser.h>
+ #include <resolv.h>
+ _ACEOF
+ rm -f conftest.$ac_objext
+@@ -10957,6 +10960,9 @@
+ cat confdefs.h >>conftest.$ac_ext
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
++#include <sys/types.h>
++#include <netinet/in.h>
++#include <arpa/nameser.h>
+ #include <resolv.h>
+ _ACEOF
+ if { (eval echo "$as_me:$LINENO: \"$ac_cpp conftest.$ac_ext\"") >&5
+@@ -11195,19 +11201,25 @@
+     sendmailver_c=`echo $sendmailver | awk -F. '{printf $3}'`
+ 
+ 
++if echo "$sendmailver_a" | egrep -q '^[0-9]+$'; then
+ cat >>confdefs.h <<_ACEOF
+ #define SENDMAIL_VERSION_A $sendmailver_a
+ _ACEOF
++fi
+ 
+ 
++if echo "$sendmailver_b" | egrep -q '^[0-9]+$'; then
+ cat >>confdefs.h <<_ACEOF
+ #define SENDMAIL_VERSION_B $sendmailver_b
+ _ACEOF
++fi
+ 
+ 
++if echo "$sendmailver_c" | egrep -q '^[0-9]+$'; then
+ cat >>confdefs.h <<_ACEOF
+ #define SENDMAIL_VERSION_C $sendmailver_c
+ _ACEOF
++fi
+ 
+   fi
+ fi
