@@ -17,6 +17,7 @@ COMMENT=	Setiathome for boinc
 
 BUILD_DEPENDS=	boinc_client:${PORTSDIR}/net/boinc-client
 RUN_DEPENDS=	boinc_client:${PORTSDIR}/net/boinc-client
+LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg
 
 .if !defined(WITHOUT_FFTW)
 LIB_DEPENDS+=	fftw.2:${PORTSDIR}/math/fftw
