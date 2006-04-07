@@ -2030,6 +2030,7 @@ einstein	ports/games/einstein
 eispack		ports/math/eispack
 ejabberd	ports/net-im/ejabberd
 eject		ports/sysutils/eject
+ekiga		ports/net/ekiga
 el		ports/games/el
 el-aspell	ports/textproc/el-aspell
 elan		ports/lang/elan
