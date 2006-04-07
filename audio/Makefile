@@ -395,6 +395,7 @@
     SUBDIR += pd
     SUBDIR += penguinsap
     SUBDIR += phatbeat
+    SUBDIR += picard
     SUBDIR += pimp3
     SUBDIR += play
     SUBDIR += playgsf

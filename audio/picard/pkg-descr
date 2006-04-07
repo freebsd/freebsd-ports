@@ -1,0 +1,15 @@
+[ excerpt from developer's www site with modifications ]
+
+The PicardTagger is the next generation MusicBrainzTagger. This
+version of the tagging application is album oriented, as opposed
+to track oriented as the old tagger was. This new application is
+also cross platform, which means the same code runs on Windows as
+well as Unix.
+
+The PicardTagger will implement most of the MBTaggerImprovements.
+See also the project page https://musicbrainz.helixcommunity.org/
+for more details on Picard.
+
+WWW: http://wiki.musicbrainz.org/PicardTagger
+
+-- lioux@FreeBSD.org
