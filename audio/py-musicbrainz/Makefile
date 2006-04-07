@@ -17,7 +17,7 @@ DISTNAME=	libmusicbrainz-${PORTVERSION}
 MAINTAINER=	bsdkaffee@gmail.com
 COMMENT=	MusicBrainz bindings for Python
 
-BUILD_DEPENDS=	${PYTHONPREFIX_SITELIBDIR}/ctypes/__init__.py:${PORTSDIR}/devel/py-ctypes
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/ctypes/__init__.py:${PORTSDIR}/devel/py-ctypes
 RUN_DEPENDS=	${BUILD_DEPENDS}
 LIB_DEPENDS=	musicbrainz.4:${PORTSDIR}/audio/libmusicbrainz
 
