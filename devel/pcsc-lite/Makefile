@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	pcsc-lite
-PORTVERSION=	1.2.9.b.9
+PORTVERSION=	1.3.0
 PORTEPOCH=	2
-PORTREVISION=	3
 CATEGORIES=	devel security
-MASTER_SITES=	http://alioth.debian.org/download.php/1289/
+MASTER_SITES=	http://alioth.debian.org/download.php/1472/
 DISTNAME=	pcsc-lite-${PORTVERSION:S/.b./-beta/}
 
 MAINTAINER=	arved@FreeBSD.org
@@ -20,9 +19,9 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack pkgconfig
 
-WRKSRC=		${WRKDIR}/pcsc-lite-1.2.9-beta9
 INSTALLS_SHLIB=	yes
-CONFIGURE_ENV+=	PTHREAD_LIBS="${PTHREAD_LIBS}"
+CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}" \
+		CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}"
 CONFIGURE_ARGS+=--prefix=${PREFIX} \
 		--enable-debug \
 		--enable-syslog \
@@ -32,13 +31,12 @@ CONFIGURE_ARGS+=--prefix=${PREFIX} \
 		--enable-usbdropdir=${PREFIX}/lib/pcsc/drivers/ \
 		--enable-muscledropdir=${PREFIX}/lib/pcsc/services/ \
 		--enable-threadsafe
-USE_REINPLACE=	yes
 USE_GETOPT_LONG=yes
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 MAN1=		formaticc.1
 MAN5=		reader.conf.5
-MAN8=		pcscd.8 bundleTool.8
+MAN8=		pcscd.8
 
 .if !defined(WITHOUT_USB)
 LIB_DEPENDS+=	usb-0.1.8:${PORTSDIR}/devel/libusb
