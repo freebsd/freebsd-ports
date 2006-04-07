@@ -23,6 +23,8 @@ NO_BUILD=	yes
 RESTRICTED=	"Redistribution prohibited"
 PLIST=		${WRKDIR}/.plist
 
+IGNORE=		is incompatible with the latest FlightGear release
+
 pre-install:
 	@${RM} -f ${PLIST}
 	@cd ${WRKSRC} && \
