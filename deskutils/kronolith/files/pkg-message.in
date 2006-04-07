@@ -4,24 +4,11 @@ blank configuration files.
 
 Horde must be configured; if not, see `pkg_info -D -x horde'.
 
-With PHP4:
-If you choosed the mcal backend, libmcal must be configured with the driver
-mstore for the user www:
+Then you have to create some tables from the SQL scripts in
+%%KRONOLITHDIR%%/scripts/sql.
 
-- mkdir /var/calendar
-- chmod 1777 /var/calendar
-- htpasswd -c %%LOCALBASE%%/etc/mpasswd www
-
-(this port has tried to make it for you, perhaps you'll just have to
-check - see `pkg_info -D -x libmcal')
-
-If you choose a database backend, you have to create some tables from the
-SQL scripts in %%KRONOLITHDIR%%/scripts/sql.
-
-WARNING! if you are upgrading from Kronolith v. 1.1.x, you have to alter
-******** your schemas.
-         Please read the doc %%DOCSDIR%%/UPGRADING.
-         Please note that the MCAL back-end is deprecated!
+WARNING! Please note that the MCAL back-end has been deprecated!
+********
          To migrate from MCAL to SQL, you can use the provided script
          %%KRONOLITHDIR%%/scripts/migrate_to_sql_driver.php
 

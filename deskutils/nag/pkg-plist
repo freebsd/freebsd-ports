@@ -1,6 +1,5 @@
 %%HORDE_INC%%/httpd-nag.conf
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/README
@@ -14,11 +13,13 @@
 %%NAGDIR%%/config/prefs.php
 %%NAGDIR%%/config/prefs.php.dist
 %%NAGDIR%%/data.php
+%%NAGDIR%%/ics.php
 %%NAGDIR%%/index.php
+%%NAGDIR%%/js/fixUnstyledOptions.js
+%%NAGDIR%%/js/tables.js
 %%NAGDIR%%/lib/.htaccess
 %%NAGDIR%%/lib/Block/summary.php
 %%NAGDIR%%/lib/Driver.php
-%%NAGDIR%%/lib/Driver/datatree.php
 %%NAGDIR%%/lib/Driver/kolab.php
 %%NAGDIR%%/lib/Driver/sql.php
 %%NAGDIR%%/lib/Nag.php
@@ -33,8 +34,8 @@
 %%NAGDIR%%/locale/bg_BG/LC_MESSAGES/nag.mo
 %%NAGDIR%%/locale/cs_CZ/LC_MESSAGES/nag.mo
 %%NAGDIR%%/locale/da_DK/LC_MESSAGES/nag.mo
-%%NAGDIR%%/locale/de_DE/help.xml
 %%NAGDIR%%/locale/de_DE/LC_MESSAGES/nag.mo
+%%NAGDIR%%/locale/de_DE/help.xml
 %%NAGDIR%%/locale/el_GR/LC_MESSAGES/nag.mo
 %%NAGDIR%%/locale/en_US/help.xml
 %%NAGDIR%%/locale/es_ES/LC_MESSAGES/nag.mo
@@ -57,11 +58,13 @@
 %%NAGDIR%%/locale/nn_NO/LC_MESSAGES/nag.mo
 %%NAGDIR%%/locale/pl_PL/LC_MESSAGES/nag.mo
 %%NAGDIR%%/locale/pt_BR/LC_MESSAGES/nag.mo
+%%NAGDIR%%/locale/pt_PT/LC_MESSAGES/nag.mo
 %%NAGDIR%%/locale/ro_RO/LC_MESSAGES/nag.mo
 %%NAGDIR%%/locale/ru_RU/LC_MESSAGES/nag.mo
 %%NAGDIR%%/locale/sk_SK/LC_MESSAGES/nag.mo
 %%NAGDIR%%/locale/sk_SK/help.xml
 %%NAGDIR%%/locale/sv_SE/LC_MESSAGES/nag.mo
+%%NAGDIR%%/locale/tr_TR/help.xml
 %%NAGDIR%%/locale/zh_CN/LC_MESSAGES/nag.mo
 %%NAGDIR%%/locale/zh_TW/LC_MESSAGES/nag.mo
 %%NAGDIR%%/po/README
@@ -87,6 +90,7 @@
 %%NAGDIR%%/po/nn_NO.po
 %%NAGDIR%%/po/pl_PL.po
 %%NAGDIR%%/po/pt_BR.po
+%%NAGDIR%%/po/pt_PT.po
 %%NAGDIR%%/po/ro_RO.po
 %%NAGDIR%%/po/ru_RU.po
 %%NAGDIR%%/po/sk_SK.po
@@ -94,7 +98,9 @@
 %%NAGDIR%%/po/zh_CN.po
 %%NAGDIR%%/po/zh_TW.po
 %%NAGDIR%%/scripts/.htaccess
-%%NAGDIR%%/scripts/migrate_to_datatree_driver.php
+%%NAGDIR%%/scripts/import_vtodos.php
+%%NAGDIR%%/scripts/sql/nag.mssql.sql
+%%NAGDIR%%/scripts/sql/nag.oci8.sql
 %%NAGDIR%%/scripts/sql/nag.sql
 %%NAGDIR%%/scripts/upgrades/1.1_to_2.0.mysql.sql
 %%NAGDIR%%/scripts/upgrades/1.1_to_2.0.pgsql.sql
@@ -116,9 +122,11 @@
 %%NAGDIR%%/templates/task/task.inc
 %%NAGDIR%%/templates/tasklists/tasklists.inc
 %%NAGDIR%%/templates/view/task.inc
+%%NAGDIR%%/themes/categoryCSS.php
 %%NAGDIR%%/themes/graphics/add.png
 %%NAGDIR%%/themes/graphics/alarm.png
 %%NAGDIR%%/themes/graphics/alarm_small.png
+%%NAGDIR%%/themes/graphics/az.png
 %%NAGDIR%%/themes/graphics/checkbox.png
 %%NAGDIR%%/themes/graphics/checked.png
 %%NAGDIR%%/themes/graphics/favicon.ico
@@ -126,6 +134,7 @@
 %%NAGDIR%%/themes/graphics/note.png
 %%NAGDIR%%/themes/graphics/tasklists.png
 %%NAGDIR%%/themes/graphics/unchecked.png
+%%NAGDIR%%/themes/graphics/za.png
 %%NAGDIR%%/themes/screen.css
 %%NAGDIR%%/view.php
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
@@ -147,6 +156,7 @@
 @dirrm %%NAGDIR%%/locale/zh_TW
 @dirrm %%NAGDIR%%/locale/zh_CN/LC_MESSAGES
 @dirrm %%NAGDIR%%/locale/zh_CN
+@dirrm %%NAGDIR%%/locale/tr_TR
 @dirrm %%NAGDIR%%/locale/sv_SE/LC_MESSAGES
 @dirrm %%NAGDIR%%/locale/sv_SE
 @dirrm %%NAGDIR%%/locale/sk_SK/LC_MESSAGES
@@ -155,6 +165,8 @@
 @dirrm %%NAGDIR%%/locale/ru_RU
 @dirrm %%NAGDIR%%/locale/ro_RO/LC_MESSAGES
 @dirrm %%NAGDIR%%/locale/ro_RO
+@dirrm %%NAGDIR%%/locale/pt_PT/LC_MESSAGES
+@dirrm %%NAGDIR%%/locale/pt_PT
 @dirrm %%NAGDIR%%/locale/pt_BR/LC_MESSAGES
 @dirrm %%NAGDIR%%/locale/pt_BR
 @dirrm %%NAGDIR%%/locale/pl_PL/LC_MESSAGES
@@ -204,5 +216,6 @@
 @dirrm %%NAGDIR%%/lib/Driver
 @dirrm %%NAGDIR%%/lib/Block
 @dirrm %%NAGDIR%%/lib
+@dirrm %%NAGDIR%%/js
 @dirrmtry %%NAGDIR%%/config
 @dirrmtry %%NAGDIR%%

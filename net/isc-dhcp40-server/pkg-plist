@@ -1,8 +1,0 @@
-@comment $FreeBSD$
-bin/omshell
-%%LDAP%%bin/dhcpd-conf-to-ldap.pl
-etc/dhcpd.conf.sample
-etc/rc.d/isc-dhcpd.sh
-sbin/dhcpd
-%%LDAP%%%%SCHEMA_DIR%%/dhcp.schema
-%%LDAP%%@dirrm %%SCHEMA_DIR%%

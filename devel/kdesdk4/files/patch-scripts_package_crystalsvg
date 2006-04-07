@@ -1,8 +1,0 @@
---- scripts/package_crystalsvg.orig	Mon Oct  3 17:30:16 2005
-+++ scripts/package_crystalsvg	Mon Oct  3 17:30:35 2005
-@@ -1,4 +1,4 @@
--#!/bin/bash
-+#!/usr/bin/env bash
- echo -n "Starting up..."
- #
- # Copyright (C) 2004 Frans Englich <frans.englich@telia.com>

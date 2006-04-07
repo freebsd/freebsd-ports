@@ -1,7 +1,0 @@
---- libgnome/Makefile.in.orig	Sun Jan 21 16:37:20 2001
-+++ libgnome/Makefile.in	Mon Jan 22 13:45:00 2001
-@@ -170,3 +170,3 @@
- 
--libgnome_la_LDFLAGS = -version-info 36:3:4 #-rpath $(libdir)
-+libgnome_la_LDFLAGS = -version-info 5:0:0 #-rpath $(libdir)
- libgnome_la_LIBADD = $(GLIB_LIBS) -lm $(DL_LIB)

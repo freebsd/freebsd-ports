@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nag
-PORTVERSION=	2.0.4
+PORTVERSION=	2.1
 CATEGORIES=	deskutils www
 MASTER_SITES=	ftp://ftp.horde.org/pub/nag/				\
 		ftp://ftp.planetmirror.com/pub/horde/nag/		\
@@ -26,6 +26,7 @@ RUN_DEPENDS=	${LOCALBASE}/${LHORDEDIR}/rpc.php:${PORTSDIR}/www/horde
 
 NO_BUILD=	yes
 USE_APACHE=	1.3+	# needed to test APACHE_VERSION
+USE_GETTEXT=	yes
 
 PLIST_SUB=	NAGDIR=${LNAGDIR} HORDE_INC=${HORDE_INC:S|^${LOCALBASE}/||}
 PKGMESSAGE=	${WRKDIR}/pkg-message
@@ -33,10 +34,11 @@ PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 SUB_FILES=	pkg-message pkg-deinstall
 SUB_LIST=	NAGDIR=${NAGDIR}
 
-DOCS=		COPYING README docs/CHANGES docs/CREDITS docs/INSTALL	\
+REINPLACE_ARGS=	-i ""
+DOCS=		README docs/CHANGES docs/CREDITS docs/INSTALL	\
 		docs/RELEASE_NOTES docs/TODO docs/UPGRADING
 CONFFILE=	menu.php prefs.php
-SUB_DIRS=	config lib locale po scripts templates themes
+SUB_DIRS=	config js lib locale po scripts templates themes
 
 LHORDEDIR?=	www/horde
 LNAGDIR?=	${LHORDEDIR}/nag
@@ -53,6 +55,9 @@ HORDE_INC=	${LOCALBASE}/etc/horde
 .endif
 
 pre-configure:
+	@(cd ${WRKSRC}/scripts &&	\
+		${FIND} . -name "*.php" -exec	\
+		${REINPLACE_CMD} -e "s:/usr/local/bin/php: ${LOCALBASE}/bin/php:;s:/usr/bin/php: ${LOCALBASE}/bin/php:" {} \; )
 	@${SED} -e "s:/home/httpd/html/horde/nag:${NAGDIR}:g"		\
 		${FILESDIR}/httpd.conf.nag > ${WRKDIR}/httpd-nag.conf
 

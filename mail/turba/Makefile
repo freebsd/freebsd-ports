@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	turba
-PORTVERSION=	2.0.5
+PORTVERSION=	2.1
 CATEGORIES=	mail www
 MASTER_SITES=	ftp://ftp.horde.org/pub/turba/				\
 		ftp://ftp.planetmirror.com/pub/horde/turba/		\
@@ -39,12 +39,12 @@ USE_PHP=	ldap
 
 NO_BUILD=	yes
 USE_APACHE=	1.3+	# needed to test APACHE_VERSION
-USE_REINPLACE=	yes
+USE_GETTEXT=	yes
 
 REINPLACE_ARGS=	-i ""
 DOCS=		README docs/CHANGES docs/CREDITS docs/INSTALL	\
 		docs/LDAP docs/RELEASE_NOTES docs/TODO docs/UPGRADING
-CONFFILE=	attributes.php menu.php prefs.php sources.php
+CONFFILE=	attributes.php menu.php mime_drivers.php prefs.php sources.php
 SUB_DIRS=	config lib locale po scripts templates themes
 
 LHORDEDIR?=	www/horde

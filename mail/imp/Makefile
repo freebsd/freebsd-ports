@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	imp
-PORTVERSION=	4.0.4
-PORTREVISION=	1
+PORTVERSION=	4.1
 CATEGORIES=	mail www
 MASTER_SITES=	ftp://ftp.horde.org/pub/imp/				\
 		ftp://ftp.planetmirror.com/pub/horde/imp/		\
@@ -110,7 +109,7 @@ REINPLACE_ARGS=	-i.beforeIMP
 
 DOCS=		COPYING README docs/CHANGES docs/CREDITS docs/INSTALL	\
 		docs/RELEASE_NOTES  docs/TODO  docs/UPGRADING
-CONFFILE=	filter.txt header.txt menu.php mime_drivers.php motd.php \
+CONFFILE=	filter.txt header.php menu.php mime_drivers.php motd.php \
 		prefs.php servers.php trailer.txt
 SUB_DIRS=	config js lib locale po scripts templates themes
 

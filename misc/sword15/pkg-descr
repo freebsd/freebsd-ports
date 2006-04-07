@@ -1,9 +1,0 @@
-The SWORD Project is an effort to create an ever expanding software package
-for research and study of God and His Word. The SWORD Bible Framework allows
-easy manipulation of Bible texts, commentaries, lexicons, dictionaries, etc.
-Many frontends are build using this framework. An installed module set may be
-shared between any frontend using the framework.
-
-WWW: http://www.crosswire.org/
-
-- Willem van Engen <wvengen@stack.nl>

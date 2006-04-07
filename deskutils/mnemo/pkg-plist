@@ -13,6 +13,8 @@
 %%MNEMODIR%%/config/prefs.php.dist
 %%MNEMODIR%%/data.php
 %%MNEMODIR%%/index.php
+%%MNEMODIR%%/js/fixUnstyledOptions.js
+%%MNEMODIR%%/js/tables.js
 %%MNEMODIR%%/lib/Block/summary.php
 %%MNEMODIR%%/lib/Driver.php
 %%MNEMODIR%%/lib/Driver/kolab.php
@@ -51,6 +53,7 @@
 %%MNEMODIR%%/locale/pt_BR/LC_MESSAGES/mnemo.mo
 %%MNEMODIR%%/locale/pt_PT/LC_MESSAGES/mnemo.mo
 %%MNEMODIR%%/locale/ro_RO/LC_MESSAGES/mnemo.mo
+%%MNEMODIR%%/locale/ru_RU/LC_MESSAGES/mnemo.mo
 %%MNEMODIR%%/locale/sk_SK/LC_MESSAGES/mnemo.mo
 %%MNEMODIR%%/locale/sk_SK/help.xml
 %%MNEMODIR%%/locale/sv_SE/LC_MESSAGES/mnemo.mo
@@ -81,14 +84,16 @@
 %%MNEMODIR%%/po/pt_BR.po
 %%MNEMODIR%%/po/pt_PT.po
 %%MNEMODIR%%/po/ro_RO.po
+%%MNEMODIR%%/po/ru_RU.po
 %%MNEMODIR%%/po/sk_SK.po
 %%MNEMODIR%%/po/sv_SE.po
 %%MNEMODIR%%/po/zh_CN.po
 %%MNEMODIR%%/po/zh_TW.po
 %%MNEMODIR%%/scripts/.htaccess
 %%MNEMODIR%%/scripts/import_vnotes.php
-%%MNEMODIR%%/scripts/sql/mnemo.sql
+%%MNEMODIR%%/scripts/sql/mnemo.mssql.sql
 %%MNEMODIR%%/scripts/sql/mnemo.oci8.sql
+%%MNEMODIR%%/scripts/sql/mnemo.sql
 %%MNEMODIR%%/scripts/upgrades/1.1_to_2.0.mysql.sql
 %%MNEMODIR%%/scripts/upgrades/1.1_to_2.0.pgsq.sql
 %%MNEMODIR%%/scripts/upgrades/2004-12-21_add_memo_uid.sql
@@ -140,6 +145,8 @@
 @dirrm %%MNEMODIR%%/locale/sv_SE
 @dirrm %%MNEMODIR%%/locale/sk_SK/LC_MESSAGES
 @dirrm %%MNEMODIR%%/locale/sk_SK
+@dirrm %%MNEMODIR%%/locale/ru_RU/LC_MESSAGES
+@dirrm %%MNEMODIR%%/locale/ru_RU
 @dirrm %%MNEMODIR%%/locale/ro_RO/LC_MESSAGES
 @dirrm %%MNEMODIR%%/locale/ro_RO
 @dirrm %%MNEMODIR%%/locale/pt_PT/LC_MESSAGES
@@ -185,5 +192,6 @@
 @dirrm %%MNEMODIR%%/lib/Driver
 @dirrm %%MNEMODIR%%/lib/Block
 @dirrm %%MNEMODIR%%/lib
+@dirrm %%MNEMODIR%%/js
 @dirrmtry %%MNEMODIR%%/config
 @dirrmtry %%MNEMODIR%%

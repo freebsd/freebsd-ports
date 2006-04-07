@@ -13,8 +13,8 @@
 %%IMPDIR%%/config/conf.xml
 %%IMPDIR%%/config/filter.txt
 %%IMPDIR%%/config/filter.txt.dist
-%%IMPDIR%%/config/header.txt
-%%IMPDIR%%/config/header.txt.dist
+%%IMPDIR%%/config/header.php
+%%IMPDIR%%/config/header.php.dist
 %%IMPDIR%%/config/menu.php
 %%IMPDIR%%/config/menu.php.dist
 %%IMPDIR%%/config/mime_drivers.php
@@ -47,6 +47,10 @@
 %%IMPDIR%%/lib/Filter.php
 %%IMPDIR%%/lib/Folder.php
 %%IMPDIR%%/lib/IMAP.php
+%%IMPDIR%%/lib/IMAP/Client.php
+%%IMPDIR%%/lib/IMAP/Search.php
+%%IMPDIR%%/lib/IMAP/Sort.php
+%%IMPDIR%%/lib/IMAP/Thread.php
 %%IMPDIR%%/lib/IMAP/Tree.php
 %%IMPDIR%%/lib/IMP.php
 %%IMPDIR%%/lib/Identity/imp.php
@@ -90,7 +94,6 @@
 %%IMPDIR%%/lib/Search.php
 %%IMPDIR%%/lib/Session.php
 %%IMPDIR%%/lib/Spam.php
-%%IMPDIR%%/lib/VFolder.php
 %%IMPDIR%%/lib/api.php
 %%IMPDIR%%/lib/base.php
 %%IMPDIR%%/lib/prefs.php
@@ -122,6 +125,7 @@
 %%IMPDIR%%/locale/fr_FR/LC_MESSAGES/imp.mo
 %%IMPDIR%%/locale/fr_FR/help.xml
 %%IMPDIR%%/locale/gl_ES/LC_MESSAGES/imp.mo
+%%IMPDIR%%/locale/he_IL/LC_MESSAGES/imp.mo
 %%IMPDIR%%/locale/hu_HU/LC_MESSAGES/imp.mo
 %%IMPDIR%%/locale/hu_HU/help.xml
 %%IMPDIR%%/locale/id_ID/LC_MESSAGES/imp.mo
@@ -129,6 +133,7 @@
 %%IMPDIR%%/locale/it_IT/LC_MESSAGES/imp.mo
 %%IMPDIR%%/locale/it_IT/help.xml
 %%IMPDIR%%/locale/ja_JP/LC_MESSAGES/imp.mo
+%%IMPDIR%%/locale/km_KH/LC_MESSAGES/imp.mo
 %%IMPDIR%%/locale/ko_KR/LC_MESSAGES/imp.mo
 %%IMPDIR%%/locale/ko_KR/help.xml
 %%IMPDIR%%/locale/lt_LT/LC_MESSAGES/imp.mo
@@ -155,6 +160,7 @@
 %%IMPDIR%%/locale/sv_SE/help.xml
 %%IMPDIR%%/locale/th_TH/LC_MESSAGES/imp.mo
 %%IMPDIR%%/locale/tr_TR/LC_MESSAGES/imp.mo
+%%IMPDIR%%/locale/tr_TR/help.xml
 %%IMPDIR%%/locale/uk_UA/LC_MESSAGES/imp.mo
 %%IMPDIR%%/locale/uk_UA/help.xml
 %%IMPDIR%%/locale/zh_CN/LC_MESSAGES/imp.mo
@@ -182,12 +188,14 @@
 %%IMPDIR%%/po/fi_FI.po
 %%IMPDIR%%/po/fr_FR.po
 %%IMPDIR%%/po/gl_ES.po
+%%IMPDIR%%/po/he_IL.po
 %%IMPDIR%%/po/hu_HU.po
 %%IMPDIR%%/po/id_ID.po
 %%IMPDIR%%/po/imp.pot
 %%IMPDIR%%/po/is_IS.po
 %%IMPDIR%%/po/it_IT.po
 %%IMPDIR%%/po/ja_JP.po
+%%IMPDIR%%/po/km_KH.po
 %%IMPDIR%%/po/ko_KR.po
 %%IMPDIR%%/po/lt_LT.po
 %%IMPDIR%%/po/lv_LV.po
@@ -210,13 +218,14 @@
 %%IMPDIR%%/po/zh_TW.po
 %%IMPDIR%%/recompose.php
 %%IMPDIR%%/redirect.php
+%%IMPDIR%%/saveimage.php
 %%IMPDIR%%/scripts/.htaccess
 %%IMPDIR%%/scripts/Imp.reg
 %%IMPDIR%%/scripts/custom_login.php
-%%IMPDIR%%/scripts/singlescript.php
 %%IMPDIR%%/search.php
 %%IMPDIR%%/smime.php
 %%IMPDIR%%/spelling.php
+%%IMPDIR%%/stationery.php
 %%IMPDIR%%/templates/.htaccess
 %%IMPDIR%%/templates/acl/acl.inc
 %%IMPDIR%%/templates/common-header.inc
@@ -246,9 +255,9 @@
 %%IMPDIR%%/templates/folders/foot.inc
 %%IMPDIR%%/templates/folders/head.inc
 %%IMPDIR%%/templates/folders/import.inc
-%%IMPDIR%%/templates/folders/javascript.inc
-%%IMPDIR%%/templates/javascript/open_compose_win.js
-%%IMPDIR%%/templates/javascript/open_print_win.js
+%%IMPDIR%%/templates/javascript/addressesBlocks.js
+%%IMPDIR%%/templates/javascript/folders.js
+%%IMPDIR%%/templates/javascript/popup.js
 %%IMPDIR%%/templates/login/login.inc
 %%IMPDIR%%/templates/mailbox/actions.inc
 %%IMPDIR%%/templates/mailbox/actions_deleted.inc
@@ -272,10 +281,9 @@
 %%IMPDIR%%/templates/message/navbar_top.inc
 %%IMPDIR%%/templates/pgp/import_key.inc
 %%IMPDIR%%/templates/pgp/notactive.inc
-%%IMPDIR%%/templates/pgp/open_pgp_import.js
-%%IMPDIR%%/templates/pgp/open_pgp_win.js
 %%IMPDIR%%/templates/pgp/passphrase.inc
 %%IMPDIR%%/templates/pgp/pgp.inc
+%%IMPDIR%%/templates/prefs/defaultsearchselect.inc
 %%IMPDIR%%/templates/prefs/encryptselect.inc
 %%IMPDIR%%/templates/prefs/folderselect.inc
 %%IMPDIR%%/templates/prefs/initialpageselect.inc
@@ -284,19 +292,17 @@
 %%IMPDIR%%/templates/prefs/spamselect.inc
 %%IMPDIR%%/templates/prefs/trashselect.inc
 %%IMPDIR%%/templates/quota/quota.inc
+%%IMPDIR%%/templates/saveimage/saveimage.inc
 %%IMPDIR%%/templates/search/fields.inc
 %%IMPDIR%%/templates/search/header.inc
 %%IMPDIR%%/templates/search/javascript.inc
 %%IMPDIR%%/templates/search/main.inc
 %%IMPDIR%%/templates/smime/import_key.inc
 %%IMPDIR%%/templates/smime/notactive.inc
-%%IMPDIR%%/templates/smime/open_smime_import.js
-%%IMPDIR%%/templates/smime/open_smime_win.js
 %%IMPDIR%%/templates/smime/passphrase.inc
 %%IMPDIR%%/templates/smime/smime.inc
-%%IMPDIR%%/templates/thread/bottom.inc
+%%IMPDIR%%/templates/stationery/prefs.inc
 %%IMPDIR%%/templates/thread/thread.html
-%%IMPDIR%%/templates/thread/top.inc
 %%IMPDIR%%/test.php
 %%IMPDIR%%/themes/azur/screen.css
 %%IMPDIR%%/themes/bluemoon/screen.css
@@ -306,11 +312,13 @@
 %%IMPDIR%%/themes/cherry/screen.css
 %%IMPDIR%%/themes/cornflower/screen.css
 %%IMPDIR%%/themes/gennevilliers/screen.css
-%%IMPDIR%%/themes/graphics/addressbook-blue.png
-%%IMPDIR%%/themes/graphics/addressbook-red.png
+%%IMPDIR%%/themes/graphics/addressbook_add.png
+%%IMPDIR%%/themes/graphics/addressbook_browse.png
 %%IMPDIR%%/themes/graphics/apple.png
 %%IMPDIR%%/themes/graphics/attachment.png
+%%IMPDIR%%/themes/graphics/audio/theetone.wav
 %%IMPDIR%%/themes/graphics/compose.png
+%%IMPDIR%%/themes/graphics/empty_spam.png
 %%IMPDIR%%/themes/graphics/empty_trash.png
 %%IMPDIR%%/themes/graphics/encrypted.png
 %%IMPDIR%%/themes/graphics/expand.png
@@ -322,14 +330,13 @@
 %%IMPDIR%%/themes/graphics/folders/folder_open.png
 %%IMPDIR%%/themes/graphics/folders/inbox.png
 %%IMPDIR%%/themes/graphics/folders/sent.png
-%%IMPDIR%%/themes/graphics/folders/templates.png
 %%IMPDIR%%/themes/graphics/folders/trash.png
-%%IMPDIR%%/themes/graphics/forward.png
 %%IMPDIR%%/themes/graphics/imp.png
 %%IMPDIR%%/themes/graphics/mail_answered.png
 %%IMPDIR%%/themes/graphics/mail_deleted.png
 %%IMPDIR%%/themes/graphics/mail_draft.png
 %%IMPDIR%%/themes/graphics/mail_flagged.png
+%%IMPDIR%%/themes/graphics/mail_forwarded.png
 %%IMPDIR%%/themes/graphics/mail_personal.png
 %%IMPDIR%%/themes/graphics/mail_priority_high.png
 %%IMPDIR%%/themes/graphics/mail_priority_low.png
@@ -344,7 +351,6 @@
 %%IMPDIR%%/themes/graphics/mime/mail.png
 %%IMPDIR%%/themes/graphics/mime/text.png
 %%IMPDIR%%/themes/graphics/newmail.png
-%%IMPDIR%%/themes/graphics/reply.png
 %%IMPDIR%%/themes/graphics/shared.png
 %%IMPDIR%%/themes/graphics/signed.png
 %%IMPDIR%%/themes/graphics/spacer_red.png
@@ -355,6 +361,7 @@
 %%IMPDIR%%/themes/luc/screen.css
 %%IMPDIR%%/themes/lucblue/screen.css
 %%IMPDIR%%/themes/postnuke/screen.css
+%%IMPDIR%%/themes/rtl/screen.css
 %%IMPDIR%%/themes/screen.css
 %%IMPDIR%%/themes/simplex/screen.css
 %%IMPDIR%%/themes/sun/screen.css
@@ -364,12 +371,14 @@
 %%HORDE_INC%%httpd-imp.conf
 @dirrm %%IMPDIR%%/themes/sun
 @dirrm %%IMPDIR%%/themes/simplex
+@dirrm %%IMPDIR%%/themes/rtl
 @dirrm %%IMPDIR%%/themes/postnuke
 @dirrm %%IMPDIR%%/themes/lucblue
 @dirrm %%IMPDIR%%/themes/luc
 @dirrm %%IMPDIR%%/themes/lavander
 @dirrm %%IMPDIR%%/themes/graphics/mime
 @dirrm %%IMPDIR%%/themes/graphics/folders
+@dirrm %%IMPDIR%%/themes/graphics/audio
 @dirrm %%IMPDIR%%/themes/graphics
 @dirrm %%IMPDIR%%/themes/grey
 @dirrm %%IMPDIR%%/themes/green
@@ -383,8 +392,10 @@
 @dirrm %%IMPDIR%%/themes/azur
 @dirrm %%IMPDIR%%/themes
 @dirrm %%IMPDIR%%/templates/thread
+@dirrm %%IMPDIR%%/templates/stationery
 @dirrm %%IMPDIR%%/templates/smime
 @dirrm %%IMPDIR%%/templates/search
+@dirrm %%IMPDIR%%/templates/saveimage
 @dirrm %%IMPDIR%%/templates/quota
 @dirrm %%IMPDIR%%/templates/prefs
 @dirrm %%IMPDIR%%/templates/pgp
@@ -441,6 +452,8 @@
 @dirrm %%IMPDIR%%/locale/lt_LT
 @dirrm %%IMPDIR%%/locale/ko_KR/LC_MESSAGES
 @dirrm %%IMPDIR%%/locale/ko_KR
+@dirrm %%IMPDIR%%/locale/km_KH/LC_MESSAGES
+@dirrm %%IMPDIR%%/locale/km_KH
 @dirrm %%IMPDIR%%/locale/ja_JP/LC_MESSAGES
 @dirrm %%IMPDIR%%/locale/ja_JP
 @dirrm %%IMPDIR%%/locale/it_IT/LC_MESSAGES
@@ -451,6 +464,8 @@
 @dirrm %%IMPDIR%%/locale/id_ID
 @dirrm %%IMPDIR%%/locale/hu_HU/LC_MESSAGES
 @dirrm %%IMPDIR%%/locale/hu_HU
+@dirrm %%IMPDIR%%/locale/he_IL/LC_MESSAGES
+@dirrm %%IMPDIR%%/locale/he_IL
 @dirrm %%IMPDIR%%/locale/gl_ES/LC_MESSAGES
 @dirrm %%IMPDIR%%/locale/gl_ES
 @dirrm %%IMPDIR%%/locale/fr_FR/LC_MESSAGES

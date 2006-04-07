@@ -1,5 +1,5 @@
---- config/mime_drivers.php.dist.orig	Fri Sep 30 22:52:16 2005
-+++ config/mime_drivers.php.dist	Fri Oct 28 23:01:17 2005
+--- config/mime_drivers.php.dist.orig	Tue Oct 18 13:33:37 2005
++++ config/mime_drivers.php.dist	Tue Mar  7 22:10:50 2006
 @@ -37,10 +37,21 @@
   * zip            Zip files
   */
@@ -144,7 +144,7 @@
  
  
  /**
-@@ -272,14 +283,14 @@
+@@ -272,15 +283,15 @@
   * The 'location' entry should point to the 'wvHtml' program, NOT the
   * 'wvWare' program.
   */
@@ -155,7 +155,8 @@
 -    'application/msword',
 -);
 -$mime_drivers['horde']['msword']['icons'] = array(
--    'default' => 'msword.png');
+-    'default' => 'msword.png',
+-);
 +//UNCOMMENTIFWV$mime_drivers['horde']['msword']['location'] = '%%LOCALBASE%%/bin/wvHtml';
 +//UNCOMMENTIFWV$mime_drivers['horde']['msword']['inline'] = false;
 +//UNCOMMENTIFWV$mime_drivers['horde']['msword']['handles'] = array(
@@ -163,11 +164,12 @@
 +//UNCOMMENTIFWV    'application/msword',
 +//UNCOMMENTIFWV);
 +//UNCOMMENTIFWV$mime_drivers['horde']['msword']['icons'] = array(
-+//UNCOMMENTIFWV    'default' => 'msword.png');
++//UNCOMMENTIFWV    'default' => 'msword.png',
++//UNCOMMENTIFWV);
  
  
  /**
-@@ -287,14 +298,14 @@
+@@ -288,14 +299,14 @@
   * This driver requires xlhtml to be installed.
   * xlhtml homepage: http://chicago.sourceforge.net/xlhtml/
   */
@@ -190,7 +192,7 @@
  
  
  /**
-@@ -302,13 +313,13 @@
+@@ -303,13 +314,13 @@
   * This driver requires ppthtml, included with xlhtml, to be installed.
   * xlhtml homepage: http://chicago.sourceforge.net/xlhtml/
   */
@@ -211,7 +213,7 @@
  
  
  /**
-@@ -324,24 +335,24 @@
+@@ -325,24 +336,24 @@
  /**
   * RPM driver settings
   */

@@ -1,5 +1,0 @@
-The GNOME Doc Utils is a collection of documentation utilities for the GNOME
-project. Notably, it contains utilities for building documentation and all
-auxiliary files in the source tree, and it contains the DocBook XSLT
-stylesheets that were once distributed with Yelp. Starting with GNOME 2.8, Yelp
-require GNOME Doc Utils for the XSLT.

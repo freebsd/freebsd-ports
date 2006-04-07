@@ -1,3 +1,0 @@
-pkg_rmleaves finds packages that are not requested by any other installed
-package and lets you decide (in a beauty dialog interface) for each one
-if you want to keep it or delete it.

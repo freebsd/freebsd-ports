@@ -11,10 +11,8 @@ Then, you might have to tune the configuration files located in
 Then, you must login to Horde as a Horde Administrator to finish the
 configuration. Please read %%DOCSDIR%%/INSTALL.
 
-Warning: the filter system of IMP 3.x has been replaced by a separate
-******** application => check the port mail/ingo. Ingo provides a script
-         to migrate the existing filter rules from IMP 3.x, see Ingo's
-         documentation.
+Warning: if you are upgrading from IMP 4.0.x, please read
+%%DOCSDIR%%/UPGRADING.
 
 To protect your configuration files, you have to restart Apache.
 
