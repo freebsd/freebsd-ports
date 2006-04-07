@@ -1,8 +1,10 @@
+bin/al-info
 bin/est-epsilon
 bin/fgfs
 bin/fgjs
 bin/gl-info
 bin/js_demo
+bin/js_server
 bin/metar
 bin/terrasync
 bin/yasim
