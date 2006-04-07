@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fgfs-base
-PORTVERSION=	0.9.9
+PORTVERSION=	0.9.10
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.flightgear.org/pub/fgfs/Shared/ \
 		ftp://ftp.de.flightgear.org/pub/fgfs/Shared/
@@ -23,9 +23,14 @@ DATADIR=	${PREFIX}/share/FlightGear
 PLIST=		${WRKDIR}/pkg-plist
 PLIST_DIRS=	%%DATADIR%%
 
+post-patch:
+	@${RM} -f ${WRKSRC}/Aircraft/A-10/COPYING ${WRKSRC}/COPYING
+
 pre-install:
 	@${RM} -f ${PLIST}
 	@cd ${WRKSRC} && \
+	${FIND} * -type d -empty | ${SORT} \
+		| ${SED} -e 's|^|@exec ${MKDIR} %%DATADIR%%/|' >> ${PLIST} && \
 	${FIND} * -type f | ${SORT} \
 		| ${SED} -e 's|^|%%DATADIR%%/|' >> ${PLIST} && \
 	${FIND} * -type d | ${SORT} -r \
