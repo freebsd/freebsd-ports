@@ -1,0 +1,16 @@
+--- FLU/Makefile.orig	Fri Apr  7 15:05:59 2006
++++ FLU/Makefile	Fri Apr  7 15:06:33 2006
+@@ -4,12 +4,8 @@
+ 
+ install:
+ 	@ echo "Installing include files in $(IPREFIX)..."
+-	@ mkdir -p $(IPREFIX)
+-	@ rm -rf $(IPREFIX)/FLU
+ 	@ mkdir -p $(IPREFIX)/FLU
+-	@ chmod 755 $(IPREFIX)/FLU
+-	@ cp *.h $(IPREFIX)/FLU
+-	@ chmod 644 $(IPREFIX)/FLU/*.h
++	@ $(BSD_INSTALL_DATA) *.h $(IPREFIX)/FLU
+ 
+ uninstall:
+ 	@ echo "Uninstalling include files from $(IPREFIX)..."

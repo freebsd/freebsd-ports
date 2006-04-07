@@ -1,0 +1,24 @@
+--- src/Makefile.orig	Thu Sep 23 21:24:39 2004
++++ src/Makefile	Fri Apr  7 15:21:24 2006
+@@ -89,15 +89,15 @@
+ install:	$(LIBS)
+ 	@ echo "Installing libraries in $(LPREFIX)..."
+ 	@ mkdir -p $(LPREFIX)
+-	@ rm -f $(LPREFIX)/$(STATIC_LIB) $(LPREFIX)/$(GL_STATIC_LIB) $(LPREFIX)/$(SHARED_LINK) $(LPREFIX)/$(GL_SHARED_LINK) $(LPREFIX)/$(SHARED_LIB) $(LPREFIX)/$(GL_SHARED_LIB)
+ 	@ for file in $(LIBS); do \
+-		cp $$file $(LPREFIX)/; \
+-		chmod 755 $(LPREFIX)/$$file; \
+-		if test $$file = $(SHARED_LIB); then \
++		if [ $$file = $(SHARED_LIB) ]; then \
++			$(BSD_INSTALL_PROGRAM) $$file $(LPREFIX); \
+ 			ln -sf $(SHARED_LIB) $(LPREFIX)/$(SHARED_LINK); \
+-		fi ; \
+-		if test $$file = $(GL_SHARED_LIB); then \
++		elif [ $$file = $(GL_SHARED_LIB) ]; then \
++			$(BSD_INSTALL_PROGRAM) $$file $(LPREFIX); \
+ 			ln -sf $(GL_SHARED_LIB) $(LPREFIX)/$(GL_SHARED_LINK); \
++		else \
++			$(BSD_INSTALL_DATA) $$file $(LPREFIX); \
+ 		fi; \
+ 	  done
+ 

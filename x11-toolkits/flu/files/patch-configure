@@ -1,0 +1,22 @@
+--- configure.orig	Tue Oct 26 17:09:51 2004
++++ configure	Fri Apr  7 15:17:23 2006
+@@ -387,8 +387,6 @@
+ if test $ENABLE_DEBUG -eq 1 
+ then
+     CXXFLAGS=$CXXFLAGS" -g"
+-else
+-    CXXFLAGS=$CXXFLAGS" -O2"
+ fi
+ 
+ if test $OSX -eq 1
+@@ -543,9 +541,7 @@
+ 	@ echo "=== installing FLU ==="
+ 	@ echo "Installing binaries in $(BPREFIX)..."
+ 	@ mkdir -p $(BPREFIX)
+-	@ rm -f $(BPREFIX)/flu-config
+-	@ cp flu-config $(BPREFIX)
+-	@ chmod 755 $(BPREFIX)/flu-config
++	@ $(BSD_INSTALL_SCRIPT) flu-config $(BPREFIX)
+ 	@for dir in FLU $(DIRS); do \
+ 	  (cd $$dir; $(MAKE) $(MFLAGS) install) || break;\
+ 	done
