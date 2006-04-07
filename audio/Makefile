@@ -408,6 +408,7 @@
     SUBDIR += py-eyed3
     SUBDIR += py-flac
     SUBDIR += py-id3
+    SUBDIR += py-karaoke
     SUBDIR += py-libmpdclient
     SUBDIR += py-libtunepimp
     SUBDIR += py-mad

@@ -1,0 +1,27 @@
+bin/pycdg
+bin/pykar
+bin/pykaraoke
+bin/pympg
+lib/python2.4/site-packages/pycdg.py
+lib/python2.4/site-packages/pycdg.pyc
+lib/python2.4/site-packages/pycdg.pyo
+lib/python2.4/site-packages/pykar.py
+lib/python2.4/site-packages/pykar.pyc
+lib/python2.4/site-packages/pykar.pyo
+lib/python2.4/site-packages/pykaraoke.py
+lib/python2.4/site-packages/pykaraoke.pyc
+lib/python2.4/site-packages/pykaraoke.pyo
+lib/python2.4/site-packages/pykversion.py
+lib/python2.4/site-packages/pykversion.pyc
+lib/python2.4/site-packages/pykversion.pyo
+lib/python2.4/site-packages/pympg.py
+lib/python2.4/site-packages/pympg.pyc
+lib/python2.4/site-packages/pympg.pyo
+share/pykaraoke/fonts/vera.ttf
+share/pykaraoke/icons/audio_16.png
+share/pykaraoke/icons/folder_close_16.png
+share/pykaraoke/icons/folder_open_16.png
+share/pykaraoke/icons/note.ico
+@dirrm share/pykaraoke/icons
+@dirrm share/pykaraoke/fonts
+@dirrm share/pykaraoke
