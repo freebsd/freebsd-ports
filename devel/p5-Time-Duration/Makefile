@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Time-Duration
-PORTVERSION=	1.02
+PORTVERSION=	1.03
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Time
@@ -17,7 +17,6 @@ COMMENT=	Rounded or exact English expression of durations
 
 PERL_CONFIGURE=	yes
 
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Time::Duration.3
 
 .include <bsd.port.mk>
