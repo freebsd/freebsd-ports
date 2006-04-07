@@ -1,5 +1,5 @@
 #!/bin/sh
-# $FreeBSD: /tmp/pcvs/ports/security/clamav-devel/Attic/pkg-install,v 1.20 2005-01-27 12:15:27 yar Exp $
+# $FreeBSD$
 
 PREFIX=${PKG_PREFIX:-%%PREFIX%%}
 DESTDIR=${PKG_DESTDIR:-}

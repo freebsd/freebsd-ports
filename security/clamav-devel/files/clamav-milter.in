@@ -41,8 +41,6 @@ start_precmd()
 load_rc_config $name
 : ${clamav_milter_enable="NO"}
 : ${clamav_milter_socket="%%CLAMAV_MILTER_SOCKET%%"}
-: ${clamav_milter_flags="--postmaster-only --local --outgoing --max-children=50"}
+: ${clamav_milter_flags="--postmaster-only --local --outgoing --timeout=0 --max-children=50"}
 
-# add socket to any given argument
-clamav_milter_flags="${clamav_milter_flags} ${clamav_milter_socket}"
 run_rc_command "$1"
