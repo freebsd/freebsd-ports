@@ -1,20 +1,13 @@
 $FreeBSD$
 
---- ../../deploy/make/plugin/common/Defs-bsd.gmk	12 Aug 2005 01:06:25 -0000	1.5
-+++ ../../deploy/make/plugin/common/Defs-bsd.gmk	12 Sep 2005 03:26:43 -0000
-@@ -27,3 +27,15 @@
- ifdef ALT_MOZILLA_HEADERS_PATH
-   MOZILLA_HEADERS_PATH=$(ALT_MOZILLA_HEADERS_PATH)
+--- ../../deploy/make/plugin/common/Defs-bsd.gmk.orig	Tue Mar 28 22:20:28 2006
++++ ../../deploy/make/plugin/common/Defs-bsd.gmk	Tue Mar 28 22:20:45 2006
+@@ -29,7 +29,7 @@
  endif
-+
-+# Default NSPR_PATH and allow override.
+ 
+ # Default NSPR_PATH and allow override.
+-NSPR_PATH = /usr/local
 +NSPR_PATH = ${LOCALBASE}
-+ifdef ALT_NSPR_PATH
-+  NSPR_PATH = $(subst //,/,$(ALT_NSPR_PATH))
-+endif
-+
-+# Default NSPR Headers directory
-+NSPR_HEADERS_PATH=$(NSPR_PATH)/include/nspr
-+ifdef ALT_NSPR_HEADERS_PATH
-+  NSPR_HEADERS_PATH=$(ALT_NSPR_HEADERS_PATH)
-+endif
+ ifdef ALT_NSPR_PATH
+   NSPR_PATH = $(subst //,/,$(ALT_NSPR_PATH))
+ endif
