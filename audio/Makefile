@@ -446,6 +446,7 @@
     SUBDIR += ruby-ogginfo
     SUBDIR += ruby-shout
     SUBDIR += ruby-smf
+    SUBDIR += ruby-snett
     SUBDIR += ruby-vorbisfile
     SUBDIR += ruby-xmms
     SUBDIR += ruby-xmms2

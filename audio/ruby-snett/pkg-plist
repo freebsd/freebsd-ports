@@ -1,0 +1,6 @@
+bin/snett
+%%DATADIR%%/logo.svg
+%%DATADIR%%/logo128.png
+%%DATADIR%%/logo32.png
+%%DATADIR%%/logo64.png
+@dirrm %%DATADIR%%
