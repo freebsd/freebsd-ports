@@ -11599,6 +11599,7 @@ ruby-setup.rb	ports/devel/ruby-setup.rb
 ruby-shout	ports/audio/ruby-shout
 ruby-slang	ports/devel/ruby-slang
 ruby-smf	ports/audio/ruby-smf
+ruby-snett	ports/audio/ruby-snett
 ruby-spread	ports/net/ruby-spread
 ruby-spreadsheet-excel	ports/textproc/ruby-spreadsheet-excel
 ruby-sqlite	ports/databases/ruby-sqlite
