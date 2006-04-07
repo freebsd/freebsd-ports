@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	POE
-PORTVERSION=	0.3301
+PORTVERSION=	0.3400
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	POE
@@ -40,7 +40,7 @@ MAN3=		POE.3 POE::API::Ctl.3 POE::API::ResLoader.3 POE::Component.3 \
 		POE::Loop::IO_Poll.3 POE::Loop::PerlSignals.3 \
 		POE::Loop::Select.3 POE::Loop::Tk.3 POE::Loop::TkActiveState.3 \
 		POE::Loop::TkCommon.3 POE::NFA.3 POE::Pipe.3 \
-		POE::Pipe::OneWay.3 POE::Pipe::TwoWay.3 POE::Preprocessor.3 \
+		POE::Pipe::OneWay.3 POE::Pipe::TwoWay.3 \
 		POE::Queue.3 POE::Queue::Array.3 POE::Resource.3 \
 		POE::Resource::Aliases.3 POE::Resource::Controls.3 \
 		POE::Resource::Events.3 POE::Resource::Extrefs.3 \
