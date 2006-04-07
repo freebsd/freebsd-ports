@@ -1,5 +1,9 @@
 This module provides a Perl interface to the libsyck data serialization
 library.  It exports the Dump and Load functions for converting Perl
-data structures to YAML strings, and the other way around.
+data structures to YAML strings, and the other way around. It also
+provides an implementation of JSON parsing and generation. Because
+JSON is YAML (http://redhanded.hobix.com/inspect/yamlIsJson.html),
+using libsyck gives you the fastest and most memory efficient parser
+and dumper for JSON data representation.
 
 WWW: http://search.cpan.org/dist/YAML-Syck/

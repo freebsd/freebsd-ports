@@ -1,6 +1,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/YAML/Syck/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/YAML/Syck/Syck.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/YAML/Syck/Syck.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/JSON/Syck.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/YAML/Syck.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/YAML/Syck.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/YAML/Loader/Syck.pm
@@ -10,3 +11,4 @@
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/YAML/Loader
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/YAML/Dumper
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/YAML
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/JSON

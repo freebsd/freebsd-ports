@@ -2241,3 +2241,4 @@ mail/prom-mew||2006-04-07|Has expired: mastersite disappeared, no longer maintai
 mail/rmoldmail||2006-04-07|Has expired: mastersite disappeared, no longer maintained by author
 mail/ruby-mime-types||2006-04-07|Has expired: mastersite disappeared, no longer maintained by author
 devel/wftk||2006-04-07|master site disappeared
+textproc/p5-JSON-Syck|textproc/p5-YAML-Syck|2006-04-07|The textproc/p5-YAML-Syck port now includes JSON functionality
