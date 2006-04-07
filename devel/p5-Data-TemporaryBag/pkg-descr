@@ -4,6 +4,3 @@ memory.  When the data size becomes over $Threshold size,
 they are saved into a temporary file internally.
 
 WWW: http://search.cpan.org/dist/Data-TemporaryBag/
-
--- Sergey Skvortsov
-skv@FreeBSD.org
