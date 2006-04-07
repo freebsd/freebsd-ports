@@ -1,7 +1,0 @@
-JSON::Syck is an implementatoin of JSON parsing and generation using
-libsyck YAML data serialization library. Because JSON is YAML
-(http://redhanded.hobix.com/inspect/yamlIsJson.html), using libsyck
-gives you the fastest and most memory efficient parser and dumper for
-JSON data representation.
-
-WWW: http://search.cpan.org/dist/JSON-Syck/
