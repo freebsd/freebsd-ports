@@ -10,6 +10,7 @@ share/locale/ro/LC_MESSAGES/gliv.mo
 share/locale/ru/LC_MESSAGES/gliv.mo
 share/locale/rw/LC_MESSAGES/gliv.mo
 share/locale/sk/LC_MESSAGES/gliv.mo
+share/locale/sv/LC_MESSAGES/gliv.mo
 share/locale/tr/LC_MESSAGES/gliv.mo
 share/locale/vi/LC_MESSAGES/gliv.mo
 @dirrmtry man/ru/man1
