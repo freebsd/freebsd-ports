@@ -5,9 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	ccid
-PORTVERSION=	0.9.4
+PORTVERSION=	1.0.0
 CATEGORIES=	devel
-MASTER_SITES=	http://alioth.debian.org/download.php/1291/
+MASTER_SITES=	http://alioth.debian.org/download.php/1474/
 
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	Generic USB CCID (Chip/Smart Card Interface Devices) driver
@@ -15,18 +15,12 @@ COMMENT=	Generic USB CCID (Chip/Smart Card Interface Devices) driver
 LIB_DEPENDS=	usb-0.1.8:${PORTSDIR}/devel/libusb \
 		pcsclite.1:${PORTSDIR}/devel/pcsc-lite
 
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-libusb=${LOCALBASE} \
-		--enable-usbdropdir=${LOCALBASE}/lib/pcsc/drivers \
+CONFIGURE_ARGS=	--enable-usbdropdir=${LOCALBASE}/lib/pcsc/drivers \
 		--enable-ccidtwindir=${LOCALBASE}/lib/pcsc/drivers/serial \
-		--enable-pcsclite=yes
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
-		LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}"
-
-post-patch:
-#	${REINPLACE_CMD} -e "s,-lpcsclite,-lpcsclite ${PTHREAD_LIBS}," \
-#		${WRKSRC}/examples/Makefile.in
-	${REINPLACE_CMD} -e "s,LDLIBS,LIBS,g" ${WRKSRC}/configure
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
+		LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}" \
+		LIBUSB_CFLAGS="-I${LOCALBASE}/include" \
+		LIBUSB_LIBS="-L${LOCALBASE}/lib -lusb"
 
 .include <bsd.port.mk>
