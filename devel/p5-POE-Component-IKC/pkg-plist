@@ -1,3 +1,4 @@
+%%SITE_PERL%%/POE/Component/IKC.pm
 %%SITE_PERL%%/POE/Component/IKC.pod
 %%SITE_PERL%%/POE/Component/IKC/Channel.pm
 %%SITE_PERL%%/POE/Component/IKC/Client.pm
