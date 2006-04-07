@@ -112,10 +112,12 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <url>http://www.phpmyadmin.net/home_page/security.php?issue=PMASA-2006-1</url>
+      <url>http://secunia.com/advisories/19556/</url>
     </references>
     <dates>
       <discovery>2006-04-06</discovery>
       <entry>2006-04-06</entry>
+      <modified>2006-04-07</modified>
     </dates>
   </vuln>
 
