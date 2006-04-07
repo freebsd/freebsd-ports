@@ -2,35 +2,8 @@ $FreeBSD$
 
 --- ../../j2se/make/java/instrument/Makefile.orig	Thu Jan 13 02:04:44 2005
 +++ ../../j2se/make/java/instrument/Makefile	Thu Jan 13 02:05:03 2005
-@@ -39,5 +39,4 @@
- # into the instrument library.
- #
--ZIP_SRC = $(SHARE_SRC)/native/java/util/zip/zlib-1.1.3
- IO_PLATFORM_SRC = $(PLATFORM_SRC)/native/java/io
- LAUNCHER_SHARE_SRC = $(SHARE_SRC)/bin
-@@ -45,12 +44,4 @@
- 
- FILES_c += \
--	inflate.c \
--	infblock.c \
--	infcodes.c \
--	inffast.c \
--	inftrees.c \
--	zadler32.c \
--	infutil.c \
--	zutil.c \
- 	canonicalize_md.c \
- 	parse_manifest.c 
-@@ -61,5 +60,4 @@
- OTHER_INCLUDES = -I$(SHARE_SRC)/instrument
- OTHER_INCLUDES += -I$(PLATFORM_SRC)/instrument
--OTHER_INCLUDES += -I$(ZIP_SRC)
- OTHER_INCLUDES += -I$(IO_PLATFORM_SRC)
- OTHER_INCLUDES += -I$(LAUNCHER_SHARE_SRC) -I$(LAUNCHER_PLATFORM_SRC)
-@@ -71,9 +61,10 @@
-   COMPILER_WARNING_LEVEL=0
+@@ -72,8 +72,8 @@
  else
-+OTHER_LDLIBS += -lz
  ifeq ($(PLATFORM), bsd)
    ifneq ($(TRUE_PLATFORM), NetBSD)
 -    OTHER_INCLUDES += -I/usr/local/include
@@ -40,9 +13,3 @@ $FreeBSD$
    endif
  else
    OTHER_LDLIBS = -lnsl -ldl
-@@ -123,5 +121,4 @@
- #
- vpath %.c $(SHARE_SRC)/instrument $(PLATFORM_SRC)/instrument
--vpath %.c $(ZIP_SRC)
- vpath %.c $(IO_PLATFORM_SRC)
- vpath %.c $(LAUNCHER_SHARE_SRC) $(LAUNCHER_PLATFORM_SRC)

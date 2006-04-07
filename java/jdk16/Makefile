@@ -7,7 +7,6 @@
 
 PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}p${JDK_PATCHSET_VERSION}
-PORTREVISION=	6
 CATEGORIES=	java devel
 MASTER_SITES=	# http://www.sun.com/software/communitysource/j2se/java2/download.xml
 #		 http://www.eyesbeyond.com/freebsddom/java/jdk15.html
@@ -57,7 +56,7 @@ SUB_LIST+=	JRE_HOME=${PREFIX}/jdk${JDK_VERSION}/jre \
 WRKSRC=		${WRKDIR}/control/make
 
 JDK_VERSION=	1.5.0
-JDK_PATCHSET_VERSION=	2
+JDK_PATCHSET_VERSION=	3
 LATEST_LINK=	jdk15
 
 SUN_LINUX_JDK_VERSION=  1.4.2
