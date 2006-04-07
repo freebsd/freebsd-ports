@@ -17,7 +17,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A static source code checker for C++
 
 USE_PYTHON=	yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
@@ -28,7 +27,7 @@ INFO=		clint
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
+BROKEN=		Does not compile on FreeBSD >= 5.x
 USE_GCC=	3.3
 .endif
 
