@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Jifty-DBI
-PORTVERSION=	0.16
+PORTVERSION=	0.19
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Jifty
@@ -16,21 +16,21 @@ MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Jifty::DBI - An object-relational persistence framework
 
 BUILD_DEPENDS=	\
-		p5-Class-Data-Inheritable>0:${PORTSDIR}/devel/p5-Class-Data-Inheritable \
 		p5-DBI>0:${PORTSDIR}/databases/p5-DBI \
 		p5-Exporter-Lite>0:${PORTSDIR}/devel/p5-Exporter-Lite \
 		p5-UNIVERSAL-require>0:${PORTSDIR}/devel/p5-UNIVERSAL-require \
 		p5-Lingua-EN-Inflect>0:${PORTSDIR}/textproc/p5-Lingua-EN-Inflect \
 		p5-Class-ReturnValue>=0.40:${PORTSDIR}/devel/p5-Class-ReturnValue \
+		p5-Class-Data-Inheritable>0:${PORTSDIR}/devel/p5-Class-Data-Inheritable \
 		p5-Class-Accessor>0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-Clone>0:${PORTSDIR}/devel/p5-Clone \
 		p5-Cache-Simple-TimedExpiry>=0.21:${PORTSDIR}/devel/p5-Cache-Simple-TimedExpiry \
 		p5-Data-Page>0:${PORTSDIR}/databases/p5-Data-Page \
 		p5-DateTime>0:${PORTSDIR}/devel/p5-DateTime \
 		p5-DateTime-Format-Strptime>0:${PORTSDIR}/devel/p5-DateTime-Format-Strptime \
+		p5-DBIx-DBSchema>=0.28:${PORTSDIR}/databases/p5-DBIx-DBSchema \
 		p5-Test-Simple>=0.52:${PORTSDIR}/devel/p5-Test-Simple \
 		p5-DBD-SQLite>0:${PORTSDIR}/databases/p5-DBD-SQLite \
-		p5-DBIx-DBSchema>=0.28:${PORTSDIR}/databases/p5-DBIx-DBSchema \
 		p5-Cache-Memcached>0:${PORTSDIR}/databases/p5-Cache-Memcached
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
