@@ -5,6 +5,8 @@
 # $FreeBSD$
 #
 
+PORTREVISION=	1
+
 WITH_COMMON_ONLY=	yes
 
 MASTERDIR=	${.CURDIR}/../py-wxPython26
