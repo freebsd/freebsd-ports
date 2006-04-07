@@ -5,7 +5,7 @@
  @c %**end of header
  
 +@direntry
-+* GenGetopt (gengetopt).	A tool for generating a C function which parses command line arguments.
++* GenGetopt: (gengetopt).	A tool for generating a C function which parses command line arguments.
 +@end direntry
 +
  @set myhomepage @uref{http://www.lorenzobettini.it}
