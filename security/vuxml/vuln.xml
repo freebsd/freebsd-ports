@@ -34,6 +34,36 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="4bfcd857-c628-11da-b2fb-000e0c2e438a">
+    <topic>kaffeine -- buffer overflow vulnerability</topic>
+    <affects>
+      <package>
+	<name>kaffeine</name>
+	<range><ge>0.4.2</ge><lt>0.8.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The KDE team reports:</p>
+	<blockquote cite="http://www.kde.org/info/security/advisory-20060404-1.txt">
+	  <p>Kaffeine can produce a buffer overflow in http_peek() while
+	    creating HTTP request headers for fetching remote playlists,
+	    which under certain circumstances could be used to crash the
+	    application and/or execute arbitrary code.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>17372</bid>
+      <cvename>CVE-2006-0051</cvename>
+      <url>http://www.kde.org/info/security/advisory-20060404-1.txt</url>
+    </references>
+    <dates>
+      <discovery>2006-04-04</discovery>
+      <entry>2006-04-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="61349f77-c620-11da-b2fb-000e0c2e438a">
     <topic>thunderbird -- javascript execution</topic>
     <affects>
