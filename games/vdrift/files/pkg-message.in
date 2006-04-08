@@ -1,2 +1,6 @@
- * Set write permissions on ~/.vdrift/VDrift.config
- * Run vdrift -datadir %%DATADIR%%
+####################################################
+
+1) Set write permissions on ~/.vdrift/VDrift.config
+2) Run vdrift -datadir %%DATADIR%%
+
+####################################################
