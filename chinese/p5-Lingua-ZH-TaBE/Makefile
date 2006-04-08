@@ -19,16 +19,11 @@ COMMENT=	Chinese processing via libtabe
 LIB_DEPENDS=	tabe.2:${PORTSDIR}/chinese/libtabe
 
 PERL_CONFIGURE=	yes
-WITH_DB?=	db3
-CONFIGURE_ARGS=	DB="${WITH_DB}"
 
-.if ${WITH_DB} == "db2"
-LIB_DEPENDS+=	db2.0:${PORTSDIR}/databases/db2
-.elif ${WITH_DB} == "db4"
-LIB_DEPENDS+=	db4.0:${PORTSDIR}/databases/db4
-.else
-LIB_DEPENDS+=	db3.3:${PORTSDIR}/databases/db3
-.endif
+USE_BDB=	yes
+OBSOLETE_BDB_VAR=	WITH_DB
+
+CONFIGURE_ARGS=	DB="${BDB_LIB_NAME}"
 
 MAN3=		Lingua::ZH::TaBE.3
 
@@ -36,7 +31,7 @@ pre-fetch:
 	@${ECHO} ""
 	@${ECHO} "You may specify db version to use:"
 	@${ECHO} ""
-	@${ECHO} "      WITH_DB=db_version          (Default db3)."
+	@${ECHO} "	WITH_DB_VER=version	(Default 41)"
 	@${ECHO} ""
 
 .include <bsd.port.mk>
