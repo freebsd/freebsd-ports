@@ -7,6 +7,7 @@
 
 PORTNAME=	sylpheed
 PORTVERSION=	2.2.4
+PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://sylpheed.good-day.net/sylpheed/v${PORTVERSION:C/\.[^\.]*$//}/
 
@@ -22,7 +23,6 @@ USE_ICONV=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 
 # Sylpheed needs pthread if GnomeVFS is installed (GtkFileChooser uses it)
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" \
@@ -89,11 +89,6 @@ CONFIGURE_ARGS+=--enable-gtkspell
 CONFIGURE_ARGS+=--disable-gtkspell
 .endif
 
-.if defined(WITH_GNOME)
-PLIST_FILES=	share/gnome/applications/sylpheed.desktop \
-		share/gnome/pixmaps/sylpheed.png
-.endif
-
 MAKEFILES=	Makefile.in ac/Makefile.in faq/Makefile.in faq/de/Makefile.in \
 		faq/en/Makefile.in faq/es/Makefile.in faq/fr/Makefile.in \
 		faq/it/Makefile.in manual/Makefile.in manual/en/Makefile.in \
@@ -125,9 +120,7 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/${i}.ja ${DOCSDIR}
 .endfor
 .endif
-.if defined(WITH_GNOME)
-	@${INSTALL_DATA} ${WRKSRC}/sylpheed.png ${PREFIX}/share/gnome/pixmaps/
-	@${INSTALL_DATA} ${WRKSRC}/sylpheed.desktop ${PREFIX}/share/gnome/applications/
-.endif
+	@${INSTALL_DATA} ${WRKSRC}/sylpheed.png ${PREFIX}/share/pixmaps/
+	@${INSTALL_DATA} ${WRKSRC}/sylpheed.desktop ${PREFIX}/share/applications/
 
 .include <bsd.port.post.mk>

@@ -7,6 +7,7 @@ bin/sylpheed
 %%PORTDOCS%%%%DOCSDIR%%/README.ja
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/TODO.ja
+share/applications/sylpheed.desktop
 share/locale/cs/LC_MESSAGES/sylpheed.mo
 share/locale/bg/LC_MESSAGES/sylpheed.mo
 share/locale/da/LC_MESSAGES/sylpheed.mo
@@ -36,6 +37,7 @@ share/locale/uk/LC_MESSAGES/sylpheed.mo
 share/locale/vi/LC_MESSAGES/sylpheed.mo
 share/locale/zh_CN/LC_MESSAGES/sylpheed.mo
 share/locale/zh_TW/LC_MESSAGES/sylpheed.mo
+share/pixmaps/sylpheed.png
 %%PORTDOCS%%%%DOCSDIR%%/faq/de/sylpheed-faq-1.html
 %%PORTDOCS%%%%DOCSDIR%%/faq/de/sylpheed-faq-2.html
 %%PORTDOCS%%%%DOCSDIR%%/faq/de/sylpheed-faq-3.html
@@ -111,5 +113,7 @@ share/locale/zh_TW/LC_MESSAGES/sylpheed.mo
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/faq/de
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/faq
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry share/applications
 @dirrmtry share/locale/lt/LC_MESSAGES
 @dirrmtry share/locale/lt
+@dirrmtry share/pixmaps
