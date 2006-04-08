@@ -3,29 +3,29 @@ bin/tsidel
 bin/tsidump
 bin/tsiyincheck
 bin/tsiyindump
-include/tabe/bims.h
+%%X11%%include/tabe/bims.h
 include/tabe/tabe.h
-lib/libbims.a
-lib/libbims.la
-lib/libbims.so
-lib/libbims.so.2
+%%X11%%lib/libbims.a
+%%X11%%lib/libbims.la
+%%X11%%lib/libbims.so
+%%X11%%lib/libbims.so.2
 lib/libtabe.a
 lib/libtabe.la
 lib/libtabe.so
 lib/libtabe.so.2
 lib/tabe/tsi.db
 lib/tabe/yin.db
-%%PORTDOCS%%share/doc/tabe/BoPoMoFo.shtml
-%%PORTDOCS%%share/doc/tabe/Changes
-%%PORTDOCS%%share/doc/tabe/Changes.pre-0.1
-%%PORTDOCS%%share/doc/tabe/README.bims
-%%PORTDOCS%%share/doc/tabe/README.tsi
-%%PORTDOCS%%share/doc/tabe/TODO
-%%PORTDOCS%%share/doc/tabe/ZuYinCode.txt
-%%PORTDOCS%%share/doc/tabe/et26.txt
-%%PORTDOCS%%share/doc/tabe/libtabe.sgml
-share/tabe/libtabe-0.2.5
+%%PORTDOCS%%%%DOCSDIR%%/BoPoMoFo.shtml
+%%PORTDOCS%%%%DOCSDIR%%/Changes
+%%PORTDOCS%%%%DOCSDIR%%/Changes.pre-0.1
+%%X11%%%%PORTDOCS%%%%DOCSDIR%%/README.bims
+%%PORTDOCS%%%%DOCSDIR%%/README.tsi
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/ZuYinCode.txt
+%%PORTDOCS%%%%DOCSDIR%%/et26.txt
+%%PORTDOCS%%%%DOCSDIR%%/libtabe.sgml
+%%DATADIR%%/libtabe-0.2.5
 @dirrm include/tabe
 @dirrm lib/tabe
-%%PORTDOCS%%@dirrm share/doc/tabe
-@dirrm share/tabe
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%
