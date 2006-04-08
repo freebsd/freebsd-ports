@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	GSSAPI
-PORTVERSION=	0.20
+PORTVERSION=	0.21
 CATEGORIES=	security perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/A/AG/AGROLMS
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	GSSAPI - Perl extension providing access to the GSSAPIv2 library
+COMMENT=	Perl extension providing access to the GSSAPIv2 library
 
 PERL_CONFIGURE=	yes
 
