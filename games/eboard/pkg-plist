@@ -70,6 +70,7 @@ share/eboard/ghouls.png
 share/eboard/plastic.png
 share/eboard/themeconf.extras1
 share/eboard/themeconf.extras2
+share/eboard/timeseal.FreeBSD
 share/pixmaps/eboard.xpm
 @dirrm share/eboard
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

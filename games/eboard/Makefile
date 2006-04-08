@@ -7,14 +7,14 @@
 
 PORTNAME=	eboard
 PORTVERSION=	0.9.5
-PORTREVISION=	3
+PORTREVISION=	4
 EXTRAS=		1pl2 2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} eboard-extras-1pl2.tar.gz eboard-extras-2.tar.gz
 
-MAINTAINER=	petef@FreeBSD.org
+MAINTAINER=	jylefort@FreeBSD.org
 COMMENT=	GTK+ chess board interface (mainly for FICS and chessd)
 
 HAS_CONFIGURE=	yes
@@ -41,6 +41,7 @@ post-patch:
 		${WRKSRC}/configure
 
 post-install:
+	${LN} -sf ${LOCALBASE}/bin/timeseal ${DATADIR}/timeseal.FreeBSD
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
@@ -55,5 +56,6 @@ post-install:
 .endfor
 	${MKDIR} ${PREFIX}/share/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/icon-eboard.xpm ${PREFIX}/share/pixmaps/eboard.xpm
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

@@ -1,0 +1,7 @@
+===============================================================================
+
+If you want to make FICS games fairer by accounting for network lag,
+install the games/timeseal port (when timeseal is active, the
+bottom-left icon changes to a orange/yellow locked clock).
+
+===============================================================================
