@@ -11575,6 +11575,7 @@ ruby-rbtree	ports/devel/ruby-rbtree
 ruby-rd-mode.el	ports/textproc/ruby-rd-mode.el
 ruby-rdbc1	ports/databases/ruby-rdbc1
 ruby-rdtool	ports/textproc/ruby-rdtool
+ruby-redact	ports/graphics/ruby-redact
 ruby-reference	ports/lang/ruby-reference
 ruby-rfilter	ports/mail/ruby-rfilter
 ruby-rica	ports/irc/ruby-rica
