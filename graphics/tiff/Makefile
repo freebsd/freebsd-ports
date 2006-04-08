@@ -8,7 +8,7 @@
 #
 
 PORTNAME=	tiff
-PORTVERSION=	3.8.1
+PORTVERSION=	3.8.2
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.remotesensing.org/pub/libtiff/ \
 		http://dl1.maptools.org/dl/libtiff/
@@ -18,7 +18,6 @@ COMMENT=	Tools and library routines for working with TIFF images
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
-USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_TARGET=
