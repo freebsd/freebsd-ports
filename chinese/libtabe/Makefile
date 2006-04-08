@@ -14,54 +14,45 @@ MASTER_SITES=	ftp://ftp.linux.org.tw/pub/xcin/libtabe/devel/
 MAINTAINER=	kcwu@csie.org
 COMMENT=	Unified library for Chinese text processing
 
-.if !defined(USE_DB2)
-LIB_DEPENDS=	db3.3:${PORTSDIR}/databases/db3
-.else
-LIB_DEPENDS=	db2.0:${PORTSDIR}/databases/db2
-.endif
-
 WRKSRC=		${WRKDIR}/libtabe
 INSTALLS_SHLIB=	yes
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_XLIB=	yes
+USE_BDB=	yes
+OBSOLETE_BDB_VAR=	USE_DB2
+NOT_FOR_ARCHS=	amd64
+DATADIR=	${PREFIX}/share/tabe
+DOCSDIR=	${PREFIX}/share/doc/tabe
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--includedir=${PREFIX}/include/tabe \
-		--with-db-lib=${LOCALBASE}/lib \
+		--with-db-inc=${BDB_INCLUDE_DIR} \
+		--with-db-lib=${BDB_LIB_DIR} \
 		--with-db-bin=${LOCALBASE}/bin \
 		--enable-shared
 
-.if !defined(USE_DB2)
-CONFIGURE_ARGS+= --with-db-inc=${LOCALBASE}/include/db3
+.if !defined(WITHOUT_X11)
+PLIST_SUB+=	X11=""
+USE_XLIB=	yes
 .else
-CONFIGURE_ARGS+= --with-db-inc=${LOCALBASE}/include/db2
-.endif
-
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64"
-BROKEN=		"Does not compile on amd64"
-.endif
-
-pre-fetch:
-.if !defined(USE_DB2)
-	@${ECHO} --
-	@${ECHO} "Type \"make -DUSE_DB2\" if you want use DB2."
-	@${ECHO} "Otherwise, xcin2.5 will use DB3."
-	@${ECHO} --
+CONFIGURE_ARGS+=--without-x
+PLIST_SUB+=	X11="@comment "
+post-patch:
+	${REINPLACE_CMD} -e '/all:/s/ bims//; /bims/d' ${WRKSRC}/src/Makefile.in
 .endif
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/tabe
-	${INSTALL_DATA} ${WRKSRC}/tsi-src/README ${PREFIX}/share/doc/tabe/README.tsi
-	${INSTALL_DATA} ${WRKSRC}/src/supports/bims/README ${PREFIX}/share/doc/tabe/README.bims
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/tsi-src/README ${DOCSDIR}/README.tsi
+.if !defined(WITHOUT_X11)
+	${INSTALL_DATA} ${WRKSRC}/src/supports/bims/README ${DOCSDIR}/README.bims
+.endif
 .for DOC in BoPoMoFo.shtml Changes Changes.pre-0.1 TODO ZuYinCode.txt \
 		et26.txt libtabe.sgml
-	${INSTALL_DATA} ${WRKSRC}/doc/${DOC} ${PREFIX}/share/doc/tabe
+	${INSTALL_DATA} ${WRKSRC}/doc/${DOC} ${DOCSDIR}
 .endfor
 .endif
-	${MKDIR} ${PREFIX}/share/tabe
-	${TOUCH} ${PREFIX}/share/tabe/libtabe-0.2.5
+	${MKDIR} ${DATADIR}
+	${TOUCH} ${DATADIR}/${PORTNAME}-${PORTVERSION}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
