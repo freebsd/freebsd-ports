@@ -14,15 +14,13 @@ PKGNAMEPREFIX=	linux-
 
 COMMENT=	MBROLA speech synthesizer for Linux
 
-BROKEN=		Size mismatch
-
 CONFLICTS=	mbrola-*
 DIST_SUBDIR=	mbrola-linux
 MASTERDIR=	${PORTSDIR}/audio/mbrola
 MD5_FILE=	${.CURDIR}/distinfo
 ONLY_FOR_ARCHS=	alpha i386 ppc sparc64
 USE_LINUX=	yes
-USE_ZIP=	y
+USE_ZIP=	yes
 
 MASTERDIR=	${.CURDIR}/../mbrola
 .include "${MASTERDIR}/Makefile"
