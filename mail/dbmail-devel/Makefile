@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dbmail
-PORTVERSION=	2.0.7
-PORTREVISION=	2
+PORTVERSION=	2.0.10
 CATEGORIES=	mail
 MASTER_SITES=	http://www.dbmail.org/download/2.0/
 PKGNAMESUFFIX=	-${DATABASE}
@@ -15,7 +14,6 @@ PKGNAMESUFFIX=	-${DATABASE}
 MAINTAINER=	mark_sf@kikg.ifmo.ru
 COMMENT=	An SQL database-based mail system (POP3 and IMAP)
 
-USE_REINPLACE=	YES
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 USE_GMAKE=	YES
@@ -59,21 +57,21 @@ pre-everything::
 	@${ECHO} ""
 
 post-patch:
-	${FIND} ${WRKSRC} -name CVS -type d | ${XARGS} ${RM} -fr
-	${FIND} ${WRKSRC} -name '*.orig' -type f -delete
+	@${FIND} ${WRKSRC} -name CVS -type d | ${XARGS} ${RM} -fr
+	@${FIND} ${WRKSRC} -name '*.orig' -type f -delete
 
 post-configure:
 	@${REINPLACE_CMD} -i.orig 's!/etc/dbmail.conf!${PREFIX}/etc/dbmail.conf!g' \
-				${WRKSRC}/dbmail.h
+		${WRKSRC}/dbmail.h
 
 post-install:
-	@${INSTALL_DATA} ${WRKSRC}/dbmail.conf ${PREFIX}/etc/dbmail.conf-dist
+	${INSTALL_DATA} ${WRKSRC}/dbmail.conf ${PREFIX}/etc/dbmail.conf-dist
 	@${MKDIR} ${DATADIR}/sql
-	@${INSTALL_DATA} ${WRKSRC}/sql/${DATABASE}/* ${DATADIR}/sql
-	@cd ${WRKSRC}/man && ${INSTALL_MAN} ${MAN1} ${MAN1PREFIX}/man/man1
+	${INSTALL_DATA} ${WRKSRC}/sql/${DATABASE}/* ${DATADIR}/sql
+	cd ${WRKSRC}/man && ${INSTALL_MAN} ${MAN1} ${MAN1PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 	@${ECHO} ""
 	@${ECHO} "IMPORTANT NOTE FOR ADMINS UPGRADING FROM 1.X->2.X!!!"
