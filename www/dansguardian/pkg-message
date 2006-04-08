@@ -1,10 +1,15 @@
 ===>   Please Note:
 
 *******************************************************************************
-       This port has placed a log file in /var/log/ named dansguardian.log
-       This log file can get quite large.  Please read the newsyslog(8) man
-       page for instructions on setting up log rotation and compression.
+       All initial config files have been placed under a samples/ directory.
+       You will need to copy these files into the config directory before
+       running DansGuardian for the first time.
 
-       WARNING:  This port uses RCng.  Please read the comments in the startup
-       script for instructions on enabling the daemon.
+       This port has created a log file named dansguardian.log that can get
+       quite large.  Please read the newsyslog(8) man page for instructions
+       on setting up log rotation and compression.
+
+       This port hasa been converted to the new RC framework and should work
+       correctly via rcorder.  Please read the comments in the startup script
+       for instructions on enabling the daemon.
 *******************************************************************************
