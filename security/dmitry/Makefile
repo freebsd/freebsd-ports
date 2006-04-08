@@ -5,19 +5,21 @@
 # $FreeBSD$
 #
 
-PORTNAME=	DMitry
-PORTVERSION=	1.3
+PORTNAME=	dmitry
+PORTVERSION=	1.3a
 CATEGORIES=	security
 MASTER_SITES=	http://www.mor-pah.net/code/ \
 		http://www.deepmagic.org.uk/
+DISTNAME=	DMitry-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	acardenas@bsd.org.pe
 COMMENT=	Deepmagic Information Gathering Tool
 
 HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	--prefix=${PREFIX}
+PLIST_FILES=	bin/dmitry
 
 MAN1=		dmitry.1
-MANCOMPRESSED=	no
 
 PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL NEWS README
 
