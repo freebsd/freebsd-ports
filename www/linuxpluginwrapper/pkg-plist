@@ -13,13 +13,11 @@ lib/pluginwrapper/realplayer.so
 %%EXAMPLESDIR%%/libmap.conf-FreeBSD5-current
 %%EXAMPLESDIR%%/libmap.conf-FreeBSD4.x
 @unexec	/bin/rm -f    %%X11BASE%%/lib/browser_linux_plugins/nppdf.so
-@unexec	/bin/rm -f    %%X11BASE%%/lib/browser_linux_plugins/flashplayer.xpt
-@unexec	/bin/rm -f    %%X11BASE%%/lib/browser_linux_plugins/libflashplayer.so
 @unexec	/bin/rm -f    %%X11BASE%%/lib/browser_linux_plugins/nphelix.so
 @unexec	/bin/rm -f    %%X11BASE%%/lib/browser_linux_plugins/nphelix.xpt
 @unexec /bin/rmdir    %%X11BASE%%/lib/browser_linux_plugins 2>/dev/null || true
 @exec   /bin/mkdir -p %%X11BASE%%/lib/browser_linux_plugins 2>/dev/null || true
-@exec	/bin/ln -sf %%LINUXBASE%%/usr/local/Adobe/Acrobat7.0/Browser/intellinux/nppdf.so %%X11BASE%%/lib/browser_linux_plugins/
+@exec	/bin/ln -sf %%X11BASE%%/Adobe/Acrobat7.0/ENU/Browser/intellinux/nppdf.so %%X11BASE%%/lib/browser_linux_plugins/
 @exec	/bin/ln -sf %%LOCALBASE%%/lib/linux-mozilla/plugins/nphelix.so                   %%X11BASE%%/lib/browser_linux_plugins/
 @exec	/bin/ln -sf %%LOCALBASE%%/lib/linux-mozilla/plugins/nphelix.xpt                  %%X11BASE%%/lib/browser_linux_plugins/
 @dirrm lib/pluginwrapper
