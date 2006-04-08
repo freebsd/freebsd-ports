@@ -1,0 +1,29 @@
+# New ports collection makefile for:	redact
+# Date created:				06 Apr 2006
+# Whom:					Alexander Botero-Lowry <alex@foxybanana.com>
+#
+# $FreeBSD$
+
+PORTNAME=	redact
+PORTVERSION=	0.1.5
+CATEGORIES=	graphics ruby
+MASTER_SITES=	ftp://ftp.code-monkey.de/pub/redact/
+PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
+
+MAINTAINER=	alex@foxybanana.com
+COMMENT=	An edje compiler written in ruby
+
+BUILD_DEPENDS=	${RUBY_SITEARCHLIBDIR}/imlib2.so:${PORTSDIR}/graphics/ruby-imlib2 \
+		${RUBY_SITELIBDIR}/eet.rb:${PORTSDIR}/devel/ruby-eet \
+		${LOCALBASE}/bin/rake:${PORTSDIR}/devel/rubygem-rake
+RUN_DEPENDS=	${BUILD_DEPENDS}
+
+USE_RUBY=	yes
+NO_BUILD=	yes
+
+.include <bsd.port.pre.mk>
+
+do-install:
+	@cd ${WRKSRC} && ${LOCALBASE}/bin/rake PREFIX=${PREFIX}/ install
+
+.include <bsd.port.post.mk>

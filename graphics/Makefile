@@ -525,6 +525,7 @@
     SUBDIR += ruby-ming
     SUBDIR += ruby-opengl
     SUBDIR += ruby-pgplot
+    SUBDIR += ruby-redact
     SUBDIR += ruby-rmagick
     SUBDIR += ruby-rsvg2
     SUBDIR += ruby-svg

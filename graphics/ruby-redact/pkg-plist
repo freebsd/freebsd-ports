@@ -1,0 +1,7 @@
+bin/redact
+%%RUBY_SITELIBDIR%%/redact/redact.rb
+%%RUBY_SITELIBDIR%%/redact/source.rb
+%%RUBY_SITELIBDIR%%/redact/app.rb
+%%RUBY_SITELIBDIR%%/redact/part.rb
+%%RUBY_SITELIBDIR%%/redact/program.rb
+@dirrm %%RUBY_SITELIBDIR%%/redact
