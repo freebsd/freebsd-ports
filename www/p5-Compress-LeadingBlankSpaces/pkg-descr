@@ -18,3 +18,5 @@ The main functionality of this class is concentrated within the
 the data transfer loop on server side.  The rest of the class is
 developed in order to serve possible exceptions, like pre-formatted
 data within HTML.
+
+WWW: http://search.cpan.org/dist/Compress-LeadingBlankSpaces/
