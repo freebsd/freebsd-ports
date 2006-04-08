@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sylpheed-claws
-PORTVERSION=	2.0.0
-PORTREVISION=	3
+PORTVERSION=	2.1.0
 CATEGORIES=	mail news ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sylpheed-claws
@@ -31,7 +30,6 @@ USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack pkgconfig gtk20
-USE_REINPLACE=	yes
 USE_AUTOTOOLS=	autoconf:259 libtool:15
 USE_GCC=	3.3+
 WANT_GNOME=	yes
@@ -73,14 +71,6 @@ CONFIGURE_ENV+=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \
 			OPENSSL_LIBS="-L${OPENSSLLIB} -lcrypto -lssl"
 .else
 CONFIGURE_ARGS+=	--disable-openssl
-.endif
-
-.if ${HAVE_GNOME:Mgnomehier} != "" || defined(WITH_GNOMEPRINT)
-USE_GNOME+=	gnomehier
-PLIST_SUB+=	GNOME=""
-USE_GNOME+=	gnomehier
-.else
-PLIST_SUB+=	GNOME="@comment "
 .endif
 
 .if ${HAVE_GNOME:Mgnomeprint} != "" || defined(WITH_GNOMEPRINT)
@@ -198,12 +188,8 @@ post-install:
 		multiwebsearch.pl nautilus2sylpheed.sh outlook2sylpheed.pl \
 		tb2sylpheed textviewer.sh update-po uudec vcard2xml.py \
 		${DATADIR}
-
-.if ${HAVE_GNOME:Mgnomehier} != ""
-	@${MKDIR} ${PREFIX}/share/gnome/applications
-	@${INSTALL_DATA} ${WRKSRC}/sylpheed-claws.desktop ${PREFIX}/share/gnome/applications/
-.endif
-
+	@${MKDIR} ${PREFIX}/share/applications
+	@${INSTALL_DATA} ${WRKSRC}/sylpheed-claws.desktop ${PREFIX}/share/applications/
 .if !defined(WITHOUT_THEMES)
 	@${MKDIR} ${DATADIR}/themes
 	@cd ${WRKDIR}/${THEMEFILE:C/.tar.gz//} && ${FIND} . -print | \
