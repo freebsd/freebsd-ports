@@ -7,6 +7,7 @@
 
 PORTNAME=	circ
 PORTVERSION=	1.0f
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	ftp://cam.ctan.org/tex-archive/macros/generic/diagrams/ \
 		http://theory.uwinnipeg.ca/scripts/CTAN/macros/generic/diagrams/
@@ -35,7 +36,7 @@ PLIST_SUB=	MKTEXLSR=${MKTEXLSR}
 
 CIRC_INS=	circ.ins
 CIRC_DRV=	circ.drv
-CIRC_DOC=	circ.dvi
+CIRC_DOC=	circ.dvi circ.pdf
 
 FIND_CLASS=	-type f \( -name "*.sty" -or -name "*.def" \)
 FIND_FONTS_PK=	-type f -name "*.*pk"
@@ -76,7 +77,9 @@ do-install:
 .if !defined(NOPORTDOCS)
 	@cd ${WRKSRC}; \
 	${MKDIR} ${TEXMFLOCAL_DOC}/${PORTNAME}; \
-	${INSTALL_DATA} ${CIRC_DOC} ${TEXMFLOCAL_DOC}/${PORTNAME}/${CIRC_DOC}
+	for doc in ${CIRC_DOC}; do \
+	    ${INSTALL_DATA} $${doc} ${TEXMFLOCAL_DOC}/${PORTNAME}/$${doc}; \
+	done
 .endif
 
 post-install:
