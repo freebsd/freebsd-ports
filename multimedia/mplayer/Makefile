@@ -270,7 +270,7 @@
 
 PORTNAME=	mplayer
 PORTVERSION=	0.99.7
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	multimedia audio ipv6
 MASTER_SITES=	http://www1.mplayerhq.hu/MPlayer/releases/ \
 		http://www2.mplayerhq.hu/MPlayer/releases/ \
@@ -332,7 +332,6 @@ CONFIGURE_ARGS+=--with-x11libdir=${X11BASE}/lib \
 
 WANT_GNOME=	yes
 WANT_SDL=	yes
-USE_REINPLACE=	yes
 MAN1=		mplayer.1
 MANCOMPRESSED=	no
 
