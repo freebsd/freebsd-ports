@@ -396,6 +396,8 @@ share/locale/da/LC_MESSAGES/gtk20-properties.mo
 share/locale/da/LC_MESSAGES/gtk20.mo
 share/locale/de/LC_MESSAGES/gtk20-properties.mo
 share/locale/de/LC_MESSAGES/gtk20.mo
+share/locale/dz/LC_MESSAGES/gtk20-properties.mo
+share/locale/dz/LC_MESSAGES/gtk20.mo
 share/locale/el/LC_MESSAGES/gtk20-properties.mo
 share/locale/el/LC_MESSAGES/gtk20.mo
 share/locale/en_CA/LC_MESSAGES/gtk20-properties.mo
@@ -440,6 +442,8 @@ share/locale/it/LC_MESSAGES/gtk20-properties.mo
 share/locale/it/LC_MESSAGES/gtk20.mo
 share/locale/ja/LC_MESSAGES/gtk20-properties.mo
 share/locale/ja/LC_MESSAGES/gtk20.mo
+share/locale/ka/LC_MESSAGES/gtk20-properties.mo
+share/locale/ka/LC_MESSAGES/gtk20.mo
 share/locale/ko/LC_MESSAGES/gtk20-properties.mo
 share/locale/ko/LC_MESSAGES/gtk20.mo
 share/locale/ku/LC_MESSAGES/gtk20-properties.mo
@@ -474,6 +478,8 @@ share/locale/no/LC_MESSAGES/gtk20-properties.mo
 share/locale/no/LC_MESSAGES/gtk20.mo
 share/locale/nso/LC_MESSAGES/gtk20-properties.mo
 share/locale/nso/LC_MESSAGES/gtk20.mo
+share/locale/or/LC_MESSAGES/gtk20.mo
+share/locale/or/LC_MESSAGES/gtk20-properties.mo
 share/locale/pa/LC_MESSAGES/gtk20-properties.mo
 share/locale/pa/LC_MESSAGES/gtk20.mo
 share/locale/pl/LC_MESSAGES/gtk20-properties.mo
@@ -580,6 +586,8 @@ share/themes/Raleigh/gtk-2.0/gtkrc
 @dirrmtry share/locale/ia
 @dirrmtry share/locale/hy/LC_MESSAGES
 @dirrmtry share/locale/hy
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
 @dirrmtry share/locale/br/LC_MESSAGES
 @dirrmtry share/locale/br
 @dirrmtry share/locale/az_IR/LC_MESSAGES
