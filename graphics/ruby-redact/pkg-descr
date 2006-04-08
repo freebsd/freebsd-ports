@@ -1,0 +1,12 @@
+Redact is an Edje compiler written in Ruby.
+
+Unlike the official Edje compiler, edje_cc, Redact doesn't read EDC code - it
+reads Ruby code instead. This means that Redact will allow you to write Edjes
+in a full-blown programming language.
+
+So why is this a good thing?
+
+With edje_cc, the only way to automate the creation of parts and/or programs
+is to use CPP macros, which are very limited feature-wise and hard to debug.
+
+WWW: http://code-monkey.de/pages/redact
