@@ -7,7 +7,7 @@
 
 PORTNAME=	fpdf
 PORTVERSION=	1.53
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	print www
 MASTER_SITES=	http://www.fpdf.org/fr/
 DISTNAME=	${PORTNAME}${PORTVERSION:S|.||}
@@ -18,7 +18,6 @@ COMMENT=	A free PHP class to generate PDF files with pure PHP
 
 USE_PHP=	zlib
 
-USE_DOS2UNIX=	yes
 FETCH_CMD=	/usr/bin/fetch -ARr -o ${DISTDIR}/${DISTFILES}
 NO_BUILD=	yes
 
@@ -28,6 +27,7 @@ SUB_FILES=	pkg-message
 SUB_LIST=	FPDF_DIR=${FPDF_DIR}
 PLIST_SUB=	FPDF_DIR=${FPDF_DIR}
 
+EXT2CNV=	afm css htm php txt
 DOCS=		FAQ.htm doc/* fpdf.css histo.htm install.txt tutoriel
 
 do-fetch:
@@ -37,6 +37,11 @@ do-fetch:
 	fi
 
 pre-patch:
+	@${ECHO_MSG} "===>   Converting DOS text files to UNIX text files"
+.for ext in ${EXT2CNV}
+	@${FIND} ${WRKSRC} -type f -name "*.${ext}" -print0 | \
+			${XARGS} -0 ${REINPLACE_CMD} -i '' -e 's/$$//'
+.endfor
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
 
 do-install:
