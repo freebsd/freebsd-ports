@@ -19,7 +19,7 @@ MASTER_SITES=	ftp://ftp.horde.org/pub/ingo/				\
 		http://ftp.horde.org/pub/ingo/
 DISTNAME=	${PORTNAME}-h3-${PORTVERSION}
 
-MAINTAINER=	thierry@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Horde's email-filter management application
 
 #-----------------------------------------------------------------------
