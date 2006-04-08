@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cairomm
-PORTVERSION=	0.5.0
+PORTVERSION=	0.6.0
 CATEGORIES=	graphics
 MASTER_SITES=	http://cairographics.org/releases/
 
@@ -34,6 +34,9 @@ CONFIGURE_ARGS+=	--disable-docs
 
 post-patch:
 	@${REINPLACE_CMD} -E '/^SUBDIRS = /s/(docs|examples)//g' ${WRKSRC}/Makefile.in
+.else
+post-configure:
+	@${TOUCH} -f ${WRKSRC}/docs/reference/html/index.html
 .endif
 
 .include <bsd.port.post.mk>

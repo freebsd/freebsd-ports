@@ -16,6 +16,7 @@ lib/libcairomm-1.0.so
 lib/libcairomm-1.0.so.0
 libdata/pkgconfig/cairomm-1.0.pc
 %%PORTDOCS%%share/doc/libcairomm-1.0/reference/html/annotated.html
+%%PORTDOCS%%share/doc/libcairomm-1.0/reference/html/cairomm.css
 %%PORTDOCS%%share/doc/libcairomm-1.0/reference/html/cairomm_8h-source.html
 %%PORTDOCS%%share/doc/libcairomm-1.0/reference/html/cairomm_8h.html
 %%PORTDOCS%%share/doc/libcairomm-1.0/reference/html/classCairo_1_1Context-members.html
@@ -113,7 +114,6 @@ libdata/pkgconfig/cairomm-1.0.pc
 %%PORTDOCS%%share/doc/libcairomm-1.0/reference/html/dir_000000_dep.map
 %%PORTDOCS%%share/doc/libcairomm-1.0/reference/html/dir_000000_dep.png
 %%PORTDOCS%%share/doc/libcairomm-1.0/reference/html/dirs.html
-%%PORTDOCS%%share/doc/libcairomm-1.0/reference/html/doxygen.css
 %%PORTDOCS%%share/doc/libcairomm-1.0/reference/html/doxygen.png
 %%PORTDOCS%%share/doc/libcairomm-1.0/reference/html/enums_8h-source.html
 %%PORTDOCS%%share/doc/libcairomm-1.0/reference/html/enums_8h.html
@@ -129,7 +129,8 @@ libdata/pkgconfig/cairomm-1.0.pc
 %%PORTDOCS%%share/doc/libcairomm-1.0/reference/html/functions_type.html
 %%PORTDOCS%%share/doc/libcairomm-1.0/reference/html/functions_vars.html
 %%PORTDOCS%%share/doc/libcairomm-1.0/reference/html/globals.html
-%%PORTDOCS%%share/doc/libcairomm-1.0/reference/html/globals_func.html
+%%PORTDOCS%%share/doc/libcairomm-1.0/reference/html/globals_enum.html
+%%PORTDOCS%%share/doc/libcairomm-1.0/reference/html/globals_eval.html
 %%PORTDOCS%%share/doc/libcairomm-1.0/reference/html/globals_type.html
 %%PORTDOCS%%share/doc/libcairomm-1.0/reference/html/graph_legend.dot
 %%PORTDOCS%%share/doc/libcairomm-1.0/reference/html/graph_legend.html
@@ -165,15 +166,14 @@ libdata/pkgconfig/cairomm-1.0.pc
 %%PORTDOCS%%share/doc/libcairomm-1.0/reference/html/introduction_8h.html
 %%PORTDOCS%%share/doc/libcairomm-1.0/reference/html/namespaceCairo.html
 %%PORTDOCS%%share/doc/libcairomm-1.0/reference/html/namespacemembers.html
-%%PORTDOCS%%share/doc/libcairomm-1.0/reference/html/namespacemembers_func.html
+%%PORTDOCS%%share/doc/libcairomm-1.0/reference/html/namespacemembers_enum.html
+%%PORTDOCS%%share/doc/libcairomm-1.0/reference/html/namespacemembers_eval.html
 %%PORTDOCS%%share/doc/libcairomm-1.0/reference/html/namespacemembers_type.html
 %%PORTDOCS%%share/doc/libcairomm-1.0/reference/html/namespaces.html
 %%PORTDOCS%%share/doc/libcairomm-1.0/reference/html/path_8h-source.html
 %%PORTDOCS%%share/doc/libcairomm-1.0/reference/html/path_8h.html
 %%PORTDOCS%%share/doc/libcairomm-1.0/reference/html/pattern_8h-source.html
 %%PORTDOCS%%share/doc/libcairomm-1.0/reference/html/pattern_8h.html
-%%PORTDOCS%%share/doc/libcairomm-1.0/reference/html/private_8h-source.html
-%%PORTDOCS%%share/doc/libcairomm-1.0/reference/html/private_8h.html
 %%PORTDOCS%%share/doc/libcairomm-1.0/reference/html/refptr_8h-source.html
 %%PORTDOCS%%share/doc/libcairomm-1.0/reference/html/refptr_8h.html
 %%PORTDOCS%%share/doc/libcairomm-1.0/reference/html/surface_8h-source.html
