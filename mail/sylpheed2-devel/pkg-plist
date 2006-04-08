@@ -1,4 +1,6 @@
 bin/sylpheed
+share/applications/sylpheed.desktop
+share/pixmaps/sylpheed.png
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog.ja
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
@@ -111,5 +113,7 @@ share/locale/zh_TW/LC_MESSAGES/sylpheed.mo
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/faq/de
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/faq
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry share/pixmaps
 @dirrmtry share/locale/lt/LC_MESSAGES
 @dirrmtry share/locale/lt
+@dirrmtry share/applications

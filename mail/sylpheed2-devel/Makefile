@@ -7,6 +7,7 @@
 
 PORTNAME=	sylpheed
 PORTVERSION=	2.2.0
+PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://sylpheed.good-day.net/sylpheed/v2.2/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -28,7 +29,6 @@ USE_ICONV=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 
 CONFIGURE_ENV=	CPPFLAGS="-I${PREFIX}/include -I${LOCALBASE}/include -I${X11BASE}/include" \
 		LIBS="-L${PREFIX}/lib -L${LOCALBASE}/lib -L${X11BASE}/lib"
@@ -93,11 +93,6 @@ CONFIGURE_ARGS+=--enable-gtkspell
 CONFIGURE_ARGS+=--disable-gtkspell
 .endif
 
-.if defined(WITH_GNOME)
-PLIST_FILES=	share/gnome/applications/sylpheed.desktop \
-		share/gnome/pixmaps/sylpheed.png
-.endif
-
 MAKEFILES=	Makefile.in ac/Makefile.in faq/Makefile.in faq/de/Makefile.in \
 		faq/en/Makefile.in faq/es/Makefile.in faq/fr/Makefile.in \
 		faq/it/Makefile.in manual/Makefile.in manual/en/Makefile.in \
@@ -122,16 +117,14 @@ post-patch:
 .endif
 
 post-install:
+	@${INSTALL_DATA} ${WRKSRC}/sylpheed.png ${PREFIX}/share/pixmaps/
+	@${INSTALL_DATA} ${WRKSRC}/sylpheed.desktop ${PREFIX}/share/applications/
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for i in ChangeLog INSTALL README TODO
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/${i}.ja ${DOCSDIR}
 .endfor
-.endif
-.if defined(WITH_GNOME)
-	@${INSTALL_DATA} ${WRKSRC}/sylpheed.png ${PREFIX}/share/gnome/pixmaps/
-	@${INSTALL_DATA} ${WRKSRC}/sylpheed.desktop ${PREFIX}/share/gnome/applications/
 .endif
 
 .include <bsd.port.post.mk>
