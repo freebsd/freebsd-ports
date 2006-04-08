@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tofu
-PORTVERSION=	0.2
+PORTVERSION=	0.3
 CATEGORIES=	net python
 MASTER_SITES=	http://download.gna.org/soya/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
