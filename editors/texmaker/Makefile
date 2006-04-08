@@ -9,7 +9,8 @@
 PORTNAME=	texmaker
 PORTVERSION=	1.12
 CATEGORIES=	editors
-MASTER_SITES=	http://www.xm1math.net/texmaker/
+MASTER_SITES=	http://ftp.citkit.ru/pub/texmaker1/ \
+		http://www.bsd-geek.de/FreeBSD/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LaTeX Development Environment
