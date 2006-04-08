@@ -7,5 +7,3 @@ ImPress can be significantly enhanced through use of several modified utilities:
  o Pstoedit - Allows you to translate EPS files to Tk for ImPress use.
  o Font3D - Translates TrueType font strings to vectorized Tk.
  o Type1inst - Aids in maintaining Ghostscript Fontmaps and X11 fonts.dir files.
-
-WWW: http://www.ntlug.org/~ccox/impress/
