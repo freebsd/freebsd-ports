@@ -1,0 +1,4 @@
+Ruby-EET allows you to read and write EET files from Ruby code. Support for
+Ruby object serialization to EDD (EET Data Descriptor) format is given.
+
+WWW: http://code-monkey.de/pages/ruby-eet
