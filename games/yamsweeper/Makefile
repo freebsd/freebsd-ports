@@ -8,10 +8,9 @@
 PORTNAME=	yamsweeper
 PORTVERSION=	1.9
 CATEGORIES=	games
-MASTER_SITES=	ftp://stardust.sfc.wide.ad.jp/pub/JG/JG-0.9.1/sources/ \
-	 	ftp://ftp.riken.go.jp/pub/Linux/jg/JG-0.9.1/sources/ \
-		ftp://ftp.eos.hokudai.ac.jp/pub/Linux/JG/JG-0.9.1/sources/ \
-		ftp://mirror.nucba.ac.jp/mirror/JG/JG-0.9.1/sources/
+MASTER_SITES=	http://www.hanzubon.org/mirrors/Vine/VinePlus/1.1/JG-0.9.1/sources/ \
+		http://ftp.jaist.ac.jp/pub/Linux/Vine/VinePlus/1.1/JG-0.9.1/sources/ \
+		http://ftp.nara.wide.ad.jp/pub/Linux/Vine/VinePlus/1.1/JG-0.9.1/sources/
 EXTRACT_SUFX=	.taz
 
 MAINTAINER=	ports@FreeBSD.org
