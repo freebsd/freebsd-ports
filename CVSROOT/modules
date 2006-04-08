@@ -12277,6 +12277,7 @@ sswf		ports/graphics/sswf
 ssync		ports/sysutils/ssync
 st		ports/devel/st
 stalepid	ports/sysutils/stalepid
+stalonetray	ports/x11/stalonetray
 stamp		ports/graphics/stamp
 stan		ports/misc/stan
 star		ports/archivers/star
