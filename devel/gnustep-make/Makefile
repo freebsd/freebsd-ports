@@ -31,25 +31,7 @@ CONFIGURE_ARGS+=	--with-config-file=${PREFIX}/GNUstep.conf
 GNUSTEP_WITHOUT_LIBOBJC=	yes
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if !defined(GNUSTEP_WITH_BASE_GCC)
-pre-configure:
-	@if test ! -f "${TARGLIB}/libobjc.so"; then \
-		${ECHO_MSG} "libobjc.so not found, please update your gcc"; \
-		${FALSE}; \
-	fi; \
-	if test `${LDCONFIG} -r | ${GREP} "${TARGLIB}/libobjc.so" | wc -l` -eq 0; then \
-		${ECHO_MSG} "trying to fix ldconfig.hints"; \
-		${LDCONFIG} -f "${WRKDIR}/ldconfig.hints" -m "${TARGLIB}";\
-		if test `${LDCONFIG} -f "${WRKDIR}/ldconfig.hints" -r | ${GREP} "${TARGLIB}/libobjc.so" | wc -l` -eq 0; then \
-			${ECHO_MSG} "libobjc.so not in path"; \
-			${FALSE}; \
-		fi; \
-	fi;
-.endif
-
 post-install:
 	${LN} -s Library/Makefiles ${PREFIX}/System/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
