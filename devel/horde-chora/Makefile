@@ -18,7 +18,7 @@ MASTER_SITES=	ftp://ftp.horde.org/pub/chora/				\
 		http://ftp.horde.org/pub/chora/
 DISTNAME=	${PORTNAME}-h3-${PORTVERSION}
 
-MAINTAINER=	thierry@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Horde CVS web-viewer
 
 #-----------------------------------------------------------------------
