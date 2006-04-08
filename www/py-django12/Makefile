@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	django
-PORTVERSION=	0.90
-PORTREVISION=	2
+PORTVERSION=	0.91
 CATEGORIES=	www python
-MASTER_SITES=	http://media.djangoproject.com/releases/0.90/
+MASTER_SITES=	http://media.djangoproject.com/releases/${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Django-${PORTVERSION}
 
@@ -23,6 +22,8 @@ USE_PYTHON=	2.3+
 USE_PYDISTUTILS=	yes
 NO_BUILD=	yes
 DOCSDIR=	${PREFIX}/share/doc/py-django
+DJANGOVER=	${PORTVERSION}
+PLIST_SUB=	DJANGOVER=${DJANGOVER}
 
 OPTIONS=	MOD_PYTHON3	"Install Apache2 with mod_python3"	off \
 		POSTGRESQL	"PostgreSQL support"	off \
