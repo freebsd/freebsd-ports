@@ -49,6 +49,13 @@ PORTDOCS=	AUTHORS BUGS ChangeLog INSTALL NEWS README README.CODESTYLE README.LIC
 
 PREFIX2FIX=	help/preferences.html totool.cpp
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+# Just defining time_t as long in topiechart.h could be sufficient?
+BROKEN=		does not compile with gcc 2.95
+.endif
+
 pre-configure:
 	${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 	${REINPLACE_CMD} -e 's|/etc/torarc|${PREFIX}/etc/torarc|' ${PREFIX2FIX:S|^|${WRKSRC}/|}
@@ -60,4 +67,4 @@ post-install:
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
