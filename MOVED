@@ -2242,3 +2242,6 @@ mail/rmoldmail||2006-04-07|Has expired: mastersite disappeared, no longer mainta
 mail/ruby-mime-types||2006-04-07|Has expired: mastersite disappeared, no longer maintained by author
 devel/wftk||2006-04-07|master site disappeared
 textproc/p5-JSON-Syck|textproc/p5-YAML-Syck|2006-04-07|The textproc/p5-YAML-Syck port now includes JSON functionality
+www/linux-flashplugin||2006-04-08|Removed due to license problem
+www/linux-flashplugin6||2006-04-08|Removed due to license problem
+www/linux-flashplugin7||2006-04-08|Removed due to license problem

@@ -225,9 +225,6 @@
     SUBDIR += links1
     SUBDIR += linux-beonex
     SUBDIR += linux-firefox
-    SUBDIR += linux-flashplugin
-    SUBDIR += linux-flashplugin6
-    SUBDIR += linux-flashplugin7
     SUBDIR += linux-mozilla
     SUBDIR += linux-mozilla-devel
     SUBDIR += linux-nvu

@@ -218,9 +218,6 @@ festival/voice_mwm_di-*	audio/festvox-mwm	No commercial use
 festival/voice_ogirab_di-* audio/festvox-ogirab No commercial use
 festival/voice_tll_di-*	audio/festvox-tll	No commercial use
 ffj30_ce_ml.class	java/forte		Restrictive license
-flashplugin/5.*/*	www/linux-flashplugin	License forbids redistribution
-flashplugin/6.*/*	www/linux-flashplugin6	License forbids redistribution
-flashplugin/7.*/*	www/linux-flashplugin7	License forbids redistribution
 fMSX*			emulators/fmsx		Unclear legal status of
 						distributed ROMs
 foiltex*		textproc/foiltex	Redistribution on a not-for-profit

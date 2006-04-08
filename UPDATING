@@ -6,6 +6,15 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20060408:
+  AFFECTS: users of www/linux-flashplugin*
+  AUTHOR: hrs@FreeBSD.org
+
+  These ports have been removed because the End User License Agreement
+  explicitly forbids to run the Flash Player on FreeBSD.
+  For more details, see
+    http://www.macromedia.com/shockwave/download/license/desktop/.
+
 20060407:
   AFFECTS: users of sysutils/bacula*
   AUTHOR: dan@langille.org
