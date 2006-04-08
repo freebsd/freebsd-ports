@@ -7,7 +7,7 @@
 
 PORTNAME=	linuxpluginwrapper
 PORTVERSION=	20051113
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www linux emulators
 MASTER_SITES=	http://people.FreeBSD.org/~nork/distfiles/ \
 		${MASTER_SITE_LOCAL}
@@ -16,8 +16,7 @@ MASTER_SITE_SUBDIR=	nork
 MAINTAINER=	nork@FreeBSD.org
 COMMENT=	A wrapper allowing use of linux-plugins with native applications
 
-OPTIONS=	FLASH	"install linux-flashplugin"	off \
-		REALPLAYER	"install linux-realplayer"	off \
+OPTIONS=	REALPLAYER	"install linux-realplayer"	off \
 		ACROREAD	"install acroread7"	off
 
 .include <bsd.port.pre.mk>
@@ -27,10 +26,6 @@ IGNORE=		doesn't support ELF symbol versioning, yet.
 .endif
 
 # I will remove WITH_PLUGINS knob.
-.if		defined(WITH_FLASH)
-RUN_DEPENDS=	${X11BASE}/lib/linux-flashplugin6/libflashplayer.so:${PORTSDIR}/www/linux-flashplugin6
-WITH_PLUGINS=	1
-.endif
 .if		defined(WITH_REALPLAYER)
 RUN_DEPENDS+=	${X11BASE}/lib/linux-mozilla/plugins/nphelix.so:${PORTSDIR}/multimedia/linux-realplayer
 WITH_PLUGINS=	1
@@ -113,12 +108,6 @@ pre-install:
 	@${MKDIR} ${X11BASE}/lib/browser_linux_plugins
 .if		defined(WITH_ACROREAD)
 	@${LN} -sf ${X11BASE}/Adobe/Acrobat7.0/ENU/Browser/intellinux/nppdf.so \
-		${X11BASE}/lib/browser_linux_plugins/
-.endif
-.if		defined(WITH_FLASH)
-	@${LN} -sf ${X11BASE}/lib/linux-flashplugin6/flashplayer.xpt \
-		${X11BASE}/lib/browser_linux_plugins/
-	@${LN} -sf ${X11BASE}/lib/linux-flashplugin6/libflashplayer.so \
 		${X11BASE}/lib/browser_linux_plugins/
 .endif
 .if		defined(WITH_REALPLAYER)
