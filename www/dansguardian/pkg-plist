@@ -8,7 +8,6 @@
 @exec mkdir -p etc/dansguardian/languages/danish
 @exec mkdir -p etc/dansguardian/languages/french
 @exec mkdir -p etc/dansguardian/languages/german
-@exec mkdir -p etc/dansguardian/languages/german2
 @exec mkdir -p etc/dansguardian/languages/hebrew
 @exec mkdir -p etc/dansguardian/languages/indonesian
 @exec mkdir -p etc/dansguardian/languages/italian
@@ -16,6 +15,9 @@
 @exec mkdir -p etc/dansguardian/languages/mxspanish
 @exec mkdir -p etc/dansguardian/languages/polish
 @exec mkdir -p etc/dansguardian/languages/portuguese
+@exec mkdir -p etc/dansguardian/languages/russian-1251
+@exec mkdir -p etc/dansguardian/languages/slovak
+@exec mkdir -p etc/dansguardian/languages/spanish
 @exec mkdir -p etc/dansguardian/languages/swedish
 @exec mkdir -p etc/dansguardian/languages/turkish
 @exec mkdir -p etc/dansguardian/languages/ukenglish
@@ -82,8 +84,6 @@ etc/dansguardian/languages/french/messages
 etc/dansguardian/languages/french/template.html
 etc/dansguardian/languages/german/messages
 etc/dansguardian/languages/german/template.html
-etc/dansguardian/languages/german2/messages
-etc/dansguardian/languages/german2/template.html
 etc/dansguardian/languages/hebrew/messages
 etc/dansguardian/languages/hebrew/template.html
 etc/dansguardian/languages/indonesian/messages
@@ -97,6 +97,7 @@ etc/dansguardian/languages/mxspanish/template.html
 etc/dansguardian/languages/polish/messages
 etc/dansguardian/languages/polish/template.html
 etc/dansguardian/languages/portuguese/messages
+etc/dansguardian/languages/portuguese/messagesaccents
 etc/dansguardian/languages/portuguese/template.html
 etc/dansguardian/languages/swedish/messages
 etc/dansguardian/languages/swedish/template.html
@@ -104,6 +105,12 @@ etc/dansguardian/languages/turkish/messages
 etc/dansguardian/languages/turkish/template.html
 etc/dansguardian/languages/ukenglish/messages
 etc/dansguardian/languages/ukenglish/template.html
+etc/dansguardian/languages/spanish/messages
+etc/dansguardian/languages/spanish/template.html
+etc/dansguardian/languages/slovak/messages
+etc/dansguardian/languages/slovak/template.html
+etc/dansguardian/languages/russian-1251/messages
+etc/dansguardian/languages/russian-1251/template.html
 %%PHRASELISTS%%etc/dansguardian/phraselists/chat/weighted
 %%PHRASELISTS%%etc/dansguardian/phraselists/drugadvocacy/weighted
 %%PHRASELISTS%%etc/dansguardian/phraselists/dutchbadwords/weighted
@@ -127,7 +134,6 @@ etc/dansguardian/languages/ukenglish/template.html
 %%PHRASELISTS%%etc/dansguardian/phraselists/violence/weighted
 %%PHRASELISTS%%etc/dansguardian/phraselists/warezhacking/weighted
 %%PHRASELISTS%%etc/dansguardian/phraselists/weapons/weighted
-etc/rc.d/start-dg.sh
 sbin/dansguardian
 @dirrm etc/dansguardian/languages/arspanish
 @dirrm etc/dansguardian/languages/bulgarian
@@ -138,7 +144,6 @@ sbin/dansguardian
 @dirrm etc/dansguardian/languages/dutch
 @dirrm etc/dansguardian/languages/french
 @dirrm etc/dansguardian/languages/german
-@dirrm etc/dansguardian/languages/german2
 @dirrm etc/dansguardian/languages/hebrew
 @dirrm etc/dansguardian/languages/indonesian
 @dirrm etc/dansguardian/languages/italian
@@ -146,6 +151,9 @@ sbin/dansguardian
 @dirrm etc/dansguardian/languages/mxspanish
 @dirrm etc/dansguardian/languages/polish
 @dirrm etc/dansguardian/languages/portuguese
+@dirrm etc/dansguardian/languages/russian-1251
+@dirrm etc/dansguardian/languages/slovak
+@dirrm etc/dansguardian/languages/spanish
 @dirrm etc/dansguardian/languages/swedish
 @dirrm etc/dansguardian/languages/turkish
 @dirrm etc/dansguardian/languages/ukenglish

@@ -7,7 +7,7 @@
 
 PORTNAME=	dansguardian
 PORTVERSION=	2.8.0.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	# empty, see below
 DISTNAME=	${PORTNAME}-${PORTVERSION}.source
@@ -17,8 +17,7 @@ COMMENT=	A fast, feature-rich web content filter for Squid proxy servers
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid
 
-USE_RC_SUBR=	yes
-RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
+USE_RC_SUBR=	dansguardian.sh
 
 CONFLICTS=	dansguardian-2.[67]*
 LATEST_LINK=	dansguardian
@@ -36,15 +35,15 @@ CONFIGURE_ARGS=	--bindir=/sbin/ \
 MAN8=		dansguardian.8
 NOMANCOMPRESSED=	yes
 
-OPTIONS=	DG_APACHE "Enable Apache support." on \
+OPTIONS=	DG_APACHE "Enable Apache support for access denied page" on \
 		DG_PHRASELISTS "Install new phraselists over the old ones." off
 
 DG_URL=		http://dansguardian.org/index.php?page=copyright2
 CONFDIR=	${PREFIX}/etc/dansguardian
 
-NO_CDROM=	"Commercial download is restricted.  Check ${DG_URL} for more info"
-NO_PACKAGE=	"Redistribution is restricted.  Check ${DG_URL} for more info"
-RESTRICTED=	"${NO_PACKAGE}"
+NO_CDROM=	Commercial download is restricted.  Check ${DG_URL} for more info
+NO_PACKAGE=	Redistribution is restricted.  Check ${DG_URL} for more info
+RESTRICTED=	${NO_PACKAGE}
 
 .include <bsd.port.pre.mk>
 
@@ -64,10 +63,6 @@ USE_APACHE=	1.3+
 IGNORE="Commercial source download is restricted.  Please visit and read ${DG_URL} and download ${DISTNAME}${EXTRACT_SUFX} into ${DISTDIR} before running make"
 .endif
 
-post-extract:
-	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${FILESDIR}/dansguardian.sh > ${WRKSRC}/dansguardian.sh
-
 pre-install:
 # Configure pkg-plist based on whether phraselists are to be installed or not
 .if defined(WITH_DG_PHRASELISTS)
@@ -86,8 +81,8 @@ post-install:
 .endif
 
 # Install startup script
-	@${ECHO_MSG} "===>   Installing startup script into ${PREFIX}/etc/rc.d"
-	@${INSTALL_SCRIPT} ${WRKSRC}/dansguardian.sh ${PREFIX}/etc/rc.d/start-dg.sh
+#	@${ECHO_MSG} "===>   Installing startup script into ${PREFIX}/etc/rc.d"
+#	@${INSTALL_SCRIPT} ${WRKSRC}/dansguardian.sh ${PREFIX}/etc/rc.d/start-dg.sh
 
 # Display post-install message
 	@${CAT} pkg-message
