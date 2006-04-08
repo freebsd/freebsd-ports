@@ -5881,9 +5881,6 @@ linux-enemyterritory-tce	ports/games/linux-enemyterritory-tce
 linux-esound	ports/audio/linux-esound
 linux-expat	ports/textproc/linux-expat
 linux-firefox	ports/www/linux-firefox
-linux-flashplugin	ports/www/linux-flashplugin
-linux-flashplugin6	ports/www/linux-flashplugin6
-linux-flashplugin7	ports/www/linux-flashplugin7
 linux-fontconfig	ports/x11-fonts/linux-fontconfig
 linux-gdk-pixbuf	ports/graphics/linux-gdk-pixbuf
 linux-geepee32	ports/emulators/linux-geepee32

@@ -1,7 +1,0 @@
-lib/flash/ShockwaveFlash.class
-lib/flash/libflashplayer.so
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/ReadMe.htm
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@unexec rm -f %D/%%PLUGINSDIR%%/ShockwaveFlash.class %D/%%PLUGINSDIR%%/libflashplayer.so
-@dirrm lib/flash
