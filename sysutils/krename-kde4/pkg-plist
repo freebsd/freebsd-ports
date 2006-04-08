@@ -1,5 +1,7 @@
 bin/krename
 share/applications/kde/krename.desktop
+share/apps/konqueror/servicemenus/krename_dir.desktop
+share/apps/konqueror/servicemenus/krenameservicemenu.desktop
 share/apps/krename/krename_system_default_tabbed.xml
 share/apps/krename/krename_system_default_wizard.xml
 share/apps/krename/logo.png
@@ -23,8 +25,6 @@ share/locale/sl/LC_MESSAGES/krename.mo
 share/locale/sv/LC_MESSAGES/krename.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/krename.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/krename.mo
-share/services/krename_dir.desktop
-share/services/krenameservicemenu.desktop
 @dirrmtry share/locale/sl/LC_MESSAGES
 @dirrmtry share/locale/sl
 @dirrmtry share/locale/pl/LC_MESSAGES

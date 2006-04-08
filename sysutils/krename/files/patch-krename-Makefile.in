@@ -1,0 +1,11 @@
+--- krename/Makefile.in.orig	Sat Apr  8 23:29:10 2006
++++ krename/Makefile.in	Sat Apr  8 23:29:13 2006
+@@ -324,7 +324,7 @@
+ xdg_apps_DATA = krename.desktop
+ 
+ krenameservice_DATA = krenameservicemenu.desktop krename_dir.desktop
+-krenameservicedir = $(kde_servicesdir)
++krenameservicedir = $(kde_datadir)/konqueror/servicemenus
+ 
+ datafiles_DATA = logo.png krename_system_default_tabbed.xml krename_system_default_wizard.xml
+ datafilesdir = $(kde_datadir)/krename
