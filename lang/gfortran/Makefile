@@ -6,8 +6,8 @@
 # $FreeBSD$
 #
 
-MASTERDIR=      ${.CURDIR}/../gcc41/
-PKGNAMESUFFIX=          -withfortran
+MASTERDIR=	${.CURDIR}/../gcc41/
+PKGNAMESUFFIX=	-withfortran
 WITH_FORTRAN=	yes
 
 DESCR=	${.CURDIR}/pkg-descr
