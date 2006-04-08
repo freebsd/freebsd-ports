@@ -1,0 +1,2 @@
+%%RUBY_SITEARCHLIBDIR%%/eet_ext.so
+%%RUBY_SITELIBDIR%%/eet.rb
