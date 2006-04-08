@@ -644,6 +644,7 @@
     SUBDIR += vamos
     SUBDIR += vavoom
     SUBDIR += vdrift
+    SUBDIR += vdrift-data
     SUBDIR += vectoroids
     SUBDIR += viruskiller
     SUBDIR += volleyball
