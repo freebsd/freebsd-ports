@@ -58,11 +58,6 @@ EXTRA_PATCHES+=	${FILESDIR}/NSFileManager.m.patch
 
 PATH:=	${PREFIX}/System/Tools:${PATH}
 
-.if !defined(GNUSTEP_WITH_BASE_GCC)
-pre-configure:
-	${LDCONFIG} -m ${TARGLIB}
-.endif
-
 post-build:
 .for i in ${MAKE_APPS}
 	(cd ${WRKSRC}/${i}; . ${SYSMAKEDIR}/GNUstep.sh; \
@@ -71,7 +66,7 @@ post-build:
 
 post-extract:
 	@${SED} -e "s=%%PREFIX%%=${LOCALBASE}=" \
-		-e "s=%%TARGLIB%%=${TARGLIB}=" ${FILESDIR}/GNUstep.sh \
+		${FILESDIR}/GNUstep.sh \
 		> ${WRKSRC}/GNUstep.sh
 
 post-install:
