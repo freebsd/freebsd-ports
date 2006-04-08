@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cherrypy
-PORTVERSION=	2.2.0.b
+PORTVERSION=	2.2.0
 CATEGORIES=	www python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,12 +20,23 @@ USE_PYTHON=	2.3+
 USE_PYDISTUTILS=	yes
 
 LN_OPTS=	-sf
+RM_OPTS=	-r
 
 EXAMPLESDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
 CPEXAMPLES=	${PYTHON_SITELIBDIR}/${PORTNAME}/tutorial
 
+.if !defined(WITH_EXAMPLES)
+PLIST_SUB=	PORTEXAMPLES="@comment "
+.else
+PLIST_SUB=	PORTEXAMPLES=""
+.endif
+
 post-install:
+.if !defined(WITH_EXAMPLES)
+	@${RM} ${RM_OPTS} ${CPEXAMPLES}
+.else
 	@${MV} ${CPEXAMPLES} ${EXAMPLESDIR} && \
 	${LN} ${LN_OPTS} ${EXAMPLESDIR} ${CPEXAMPLES}
+.endif
 
 .include <bsd.port.mk>
