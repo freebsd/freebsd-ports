@@ -7,13 +7,17 @@
 
 PORTNAME=	choparp
 PORTVERSION=	20021107
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	choparp
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nork@FreeBSD.org
 COMMENT=	Simple proxy arp daemon
 
+USE_RC_SUBR=	choparp.sh
+
+MANCOMPRESSED=	yes
 MAN8=		choparp.8
 PLIST_FILES=	sbin/choparp
 

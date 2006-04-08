@@ -1,0 +1,34 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: choparp
+# REQUIRE: LOGIN
+#
+choparp_enable=${choparp_enable-"NO"}
+choparp_iface=${choparp_iface-}
+choparp_macaddr=${choparp_macaddr-"auto"}
+choparp_network=${choparp_interface-}
+
+. %%RC_SUBR%%
+
+name="choparp"
+rcvar=`set_rcvar`
+start_precmd="choparp_precmd"
+restart_precmd="choparp_precmd"
+
+load_rc_config ${name}
+
+choparp_precmd () {
+	if [ -z "${choparp_iface}"   \
+	  -o -z "${choparp_macaddr}" \
+	  -o -z "${choparp_network}" ]; then
+		warn "set choparp_iface, choparp_macaddr and choparp_network."
+		return 1
+	fi
+}
+
+command="%%PREFIX%%/sbin/${name}"
+command_args="${choparp_iface} ${choparp_macaddr} ${choparp_network}"
+
+run_rc_command "$1"
