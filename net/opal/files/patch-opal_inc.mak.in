@@ -1,0 +1,11 @@
+--- opal_inc.mak.in.orig	Fri Apr  7 08:12:16 2006
++++ opal_inc.mak.in	Fri Apr  7 08:13:55 2006
+@@ -103,7 +103,7 @@
+ endif
+ 
+ 
+-OPAL_BASE  = opal_$(PLATFORM_TYPE)_$(OPAL_SUFFIX)
++OPAL_BASE  = opal_$(OPAL_SUFFIX)
+ OPAL_FILE  = lib$(OPAL_BASE)$(LIB_TYPE).$(LIB_SUFFIX)
+ 
+ LDFLAGS	    += -L$(OPAL_LIBDIR)
