@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	rp-pppoe
-PORTVERSION=	3.7
+PORTVERSION=	3.8
 CATEGORIES=	net
 MASTER_SITES=	http://www.roaringpenguin.com/penguin/pppoe/
 
 MAINTAINER=	matthias.andree@gmx.de
-COMMENT=	"The popular Roaring Penguin's PPPoE software"
+COMMENT=	The popular Roaring Penguin's PPPoE software
 
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 PATCH_WRKSRC=	${WRKSRC}/src
