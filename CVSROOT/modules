@@ -6181,6 +6181,7 @@ markdown	ports/textproc/markdown
 marlin		ports/audio/marlin
 mars		ports/cad/mars
 mars_nwe	ports/net/mars_nwe
+marsnomercy	ports/games/marsnomercy
 masqmail	ports/mail/masqmail
 mastergear	ports/emulators/mastergear
 match		ports/astro/match
