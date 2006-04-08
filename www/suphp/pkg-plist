@@ -1,5 +1,5 @@
 sbin/suphp
-%%MODULEDIR%%/mod_suphp.so
+%%APACHEMODDIR%%/mod_suphp.so
 @exec %D/sbin/apxs -e -a -n suphp %D/%f
 @unexec %D/sbin/apxs -e -A -n suphp %D/%f
 %%PORTDOCS%%%%DOCSDIR%%/en/INSTALL
