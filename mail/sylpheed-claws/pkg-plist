@@ -198,9 +198,26 @@ include/sylpheed-claws/undo.h
 include/sylpheed-claws/unmime.h
 include/sylpheed-claws/vcard.h
 include/sylpheed-claws/wizard.h
+%%CLAM_PLUG%%lib/sylpheed-claws/plugins/clamav_plugin.a
+%%CLAM_PLUG%%lib/sylpheed-claws/plugins/clamav_plugin.la
+%%CLAM_PLUG%%lib/sylpheed-claws/plugins/clamav_plugin.so
 lib/sylpheed-claws/plugins/dillo_viewer.a
 lib/sylpheed-claws/plugins/dillo_viewer.la
 lib/sylpheed-claws/plugins/dillo_viewer.so
+%%GPGME%%lib/sylpheed-claws/plugins/pgpcore.la
+%%GPGME%%lib/sylpheed-claws/plugins/pgpcore.so
+%%GPGME%%lib/sylpheed-claws/plugins/pgpcore.a
+%%GPGME%%lib/sylpheed-claws/plugins/pgpmime.deps
+%%GPGME%%lib/sylpheed-claws/plugins/pgpmime.a
+%%GPGME%%lib/sylpheed-claws/plugins/pgpmime.la
+%%GPGME%%lib/sylpheed-claws/plugins/pgpmime.so
+%%GPGME%%lib/sylpheed-claws/plugins/pgpinline.a
+%%GPGME%%lib/sylpheed-claws/plugins/pgpinline.deps
+%%GPGME%%lib/sylpheed-claws/plugins/pgpinline.la
+%%GPGME%%lib/sylpheed-claws/plugins/pgpinline.so
+%%SA_PLUG%%lib/sylpheed-claws/plugins/spamassassin.a
+%%SA_PLUG%%lib/sylpheed-claws/plugins/spamassassin.la
+%%SA_PLUG%%lib/sylpheed-claws/plugins/spamassassin.so
 lib/sylpheed-claws/plugins/trayicon.a
 lib/sylpheed-claws/plugins/trayicon.la
 lib/sylpheed-claws/plugins/trayicon.so
@@ -213,13 +230,6 @@ libdata/pkgconfig/sylpheed-claws.pc
 %%GPGME%%@dirrm include/sylpheed-claws/plugins/pgpmime
 @dirrmtry include/sylpheed-claws/plugins
 @dirrmtry include/sylpheed-claws
-%%CLAM_PLUG%%lib/sylpheed-claws/plugins/clamav_plugin.so
-%%GPGME%%lib/sylpheed-claws/plugins/pgpcore.so
-%%GPGME%%lib/sylpheed-claws/plugins/pgpmime.deps
-%%GPGME%%lib/sylpheed-claws/plugins/pgpmime.so
-%%GPGME%%lib/sylpheed-claws/plugins/pgpinline.deps
-%%GPGME%%lib/sylpheed-claws/plugins/pgpinline.so
-%%SA_PLUG%%lib/sylpheed-claws/plugins/spamassassin.so
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.sylprint
@@ -253,7 +263,7 @@ share/locale/zh_TW/LC_MESSAGES/sylpheed-claws.mo
 share/pixmaps/sylpheed-claws-128x128.png
 share/pixmaps/sylpheed-claws-64x64.png
 share/pixmaps/sylpheed-claws.png
-%%GNOME%%share/gnome/applications/sylpheed-claws.desktop
+share/applications/sylpheed-claws.desktop
 %%DATADIR%%/OOo2sylpheed.pl
 %%DATADIR%%/acroread2sylpheed.pl
 %%DATADIR%%/calypso_convert.pl
@@ -2042,6 +2052,7 @@ share/pixmaps/sylpheed-claws.png
 %%THEMES%%@dirrm %%DATADIR%%/themes/tom_2.1.1
 %%THEMES%%@dirrm %%DATADIR%%/themes
 @dirrm %%DATADIR%%
+@dirrmtry share/applications
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/manual/en
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/manual
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
