@@ -17,6 +17,8 @@ DISTNAME=	${PORTNAME:U}-${PORTVERSION}
 MAINTAINER=	mnag@FreeBSD.org
 COMMENT=	A pure Python module that provides an implementation of SOAP 1.1
 
+CONFLICTS=	py-zsi-devel-2.*
+
 USE_PYTHON=	2.0+
 USE_PYDISTUTILS=	yes
 

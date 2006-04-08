@@ -575,6 +575,7 @@
     SUBDIR += py-xmlrpc
     SUBDIR += py-xmlrpclib
     SUBDIR += py-zsi
+    SUBDIR += py-zsi-devel
     SUBDIR += pygopherd
     SUBDIR += pynids
     SUBDIR += pypvm
