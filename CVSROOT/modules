@@ -11439,6 +11439,7 @@ ruby-dict	ports/net/ruby-dict
 ruby-diff	ports/textproc/ruby-diff
 ruby-div	ports/www/ruby-div
 ruby-dump.rb	ports/converters/ruby-dump.rb
+ruby-eet	ports/devel/ruby-eet
 ruby-esound	ports/audio/ruby-esound
 ruby-exmars	ports/games/ruby-exmars
 ruby-fam	ports/devel/ruby-fam
