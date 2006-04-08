@@ -6,6 +6,9 @@ bin/shellac.py
 %%PYTHON_SITELIBDIR%%/Shellac/equalizer.pyc
 %%PYTHON_SITELIBDIR%%/Shellac/equalizer.pyo
 %%PYTHON_SITELIBDIR%%/Shellac/find.py
+%%PYTHON_SITELIBDIR%%/Shellac/filebrowser.py
+%%PYTHON_SITELIBDIR%%/Shellac/filebrowser.pyc
+%%PYTHON_SITELIBDIR%%/Shellac/filebrowser.pyo
 %%PYTHON_SITELIBDIR%%/Shellac/find.pyc
 %%PYTHON_SITELIBDIR%%/Shellac/find.pyo
 %%PYTHON_SITELIBDIR%%/Shellac/format.py
@@ -45,6 +48,7 @@ bin/shellac.py
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%DATADIR%%/defaults.conf
 %%DATADIR%%/glade/connect.glade
+%%DATADIR%%/glade/file_browser.glade
 %%DATADIR%%/glade/find.glade
 %%DATADIR%%/glade/gui.glade
 %%DATADIR%%/glade/library.glade
