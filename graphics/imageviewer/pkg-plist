@@ -23,4 +23,4 @@ Local/Applications/ImageViewer.app/stamp.make
 @dirrm Local/Applications/ImageViewer.app/Resources/English.lproj
 @dirrm Local/Applications/ImageViewer.app/Resources
 @dirrm Local/Applications/ImageViewer.app
-@dirrm Local/Applications
+@dirrmtry Local/Applications

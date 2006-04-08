@@ -166,7 +166,7 @@ System/Applications/GPuzzle.app/stamp.make
 @dirrm Local/Library/ApplicationSupport/GSTest/NSOutlineView-test.bundle
 @dirrm Local/Library/ApplicationSupport/GSTest
 @dirrm Local/Library/ApplicationSupport
-@dirrm Local/Library
+@dirrmtry Local/Library
 @dirrm Local/Applications/NSPanelTest.app/Resources
 @dirrm Local/Applications/NSPanelTest.app
 @dirrm Local/Applications/NSScreenTest.app/Resources
@@ -188,4 +188,4 @@ System/Applications/GPuzzle.app/stamp.make
 @dirrm Local/Applications/CurrencyConverter.app
 @dirrm Local/Applications/Calculator.app/Resources
 @dirrm Local/Applications/Calculator.app
-@dirrm Local/Applications
+@dirrmtry Local/Applications

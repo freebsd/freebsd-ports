@@ -53,5 +53,3 @@ System/Library/Preferences/Keyboard.prefs/stamp.make
 @dirrm System/Library/Preferences/Keyboard.prefs/Resources
 @dirrm System/Library/Preferences/Keyboard.prefs
 @dirrm System/Library/Preferences
-@dirrm Local/Library/Preferences
-@dirrm Local/Library

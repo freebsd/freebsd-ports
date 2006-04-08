@@ -12,4 +12,4 @@ Local/Applications/EasyDiff.app/stamp.make
 @dirrm Local/Applications/EasyDiff.app/Resources/main.gorm
 @dirrm Local/Applications/EasyDiff.app/Resources
 @dirrm Local/Applications/EasyDiff.app
-@dirrm Local/Applications
+@dirrmtry Local/Applications

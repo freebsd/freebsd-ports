@@ -184,7 +184,6 @@ System/Library/Libraries/libProjectCenter.so.%%FRAMEVERSION%%
 @unexec rm -f %D/System/Library/Frameworks/ProjectCenter.framework/Resources
 @unexec rm -f %D/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/ProjectCenter
 @unexec rm -f %D/System/Library/Frameworks/ProjectCenter.framework/Versions/Current
-@unexec rm -f %D/System/Library/Headers/ProjectCenter
 @dirrm System/Applications/ProjectCenter.app/Resources/ProjectCenter.gorm
 @dirrm System/Applications/ProjectCenter.app/Resources/AggregateProject.bundle/Resources/Inspector.gorm
 @dirrm System/Applications/ProjectCenter.app/Resources/AggregateProject.bundle/Resources
@@ -220,6 +219,7 @@ System/Library/Libraries/libProjectCenter.so.%%FRAMEVERSION%%
 @dirrm System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%
 @dirrm System/Library/Frameworks/ProjectCenter.framework/Versions
 @dirrm System/Library/Frameworks/ProjectCenter.framework
+@dirrm System/Library/Headers/ProjectCenter
 @exec ln -s %%FRAMEVERSION%% %D/System/Library/Frameworks/ProjectCenter.framework/Versions/Current
 @exec ln -s Versions/Current/Headers %D/System/Library/Frameworks/ProjectCenter.framework/Headers
 @exec ln -s Versions/Current/Resources %D/System/Library/Frameworks/ProjectCenter.framework/Resources
