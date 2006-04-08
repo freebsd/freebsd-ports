@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# This starup script will set the correct library path
+# This startup script will set the correct library path
 # and then startup the teamspeak binary.
 #
 
@@ -19,4 +19,4 @@ if [ -r $TSHOME/setduplexfake.so ]; then
   fi
 fi
 
-$TSHOME/TeamSpeak.bin "$@"
+exec $TSHOME/TeamSpeak.bin "$@"
