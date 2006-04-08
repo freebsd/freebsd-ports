@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	snett
-PORTVERSION=	0.0.1
+PORTVERSION=	0.0.2
 CATEGORIES=	audio ruby
 MASTER_SITES=	ftp://ftp.code-monkey.de/pub/snett/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -22,6 +22,10 @@ USE_RUBY=	yes
 NO_BUILD=	yes
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		Does not compile on FreeBSD 4.x
+.endif
 
 do-install:
 	@cd ${WRKSRC} && ${LOCALBASE}/bin/rake PREFIX=${PREFIX}/ install
