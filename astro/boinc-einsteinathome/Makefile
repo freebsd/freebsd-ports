@@ -11,7 +11,7 @@ MASTER_SITES=	http://einstein.phys.uwm.edu/app_test/FreeBSD/
 DISTNAME=	albert_${PORTVERSION}_i386-unknown-freebsd
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	r.c.ladan@student.tue.nl
+MAINTAINER=	r.c.ladan@gmail.com
 COMMENT=	Einstein@Home for BOINC
 
 .include <bsd.port.pre.mk>
