@@ -8,7 +8,10 @@
 PORTNAME=	gettext
 PORTVERSION=	0.8.0
 CATEGORIES=	devel ruby
-MASTER_SITES=	ftp://ftp.iDaemons.org/pub/distfiles/
+MASTER_SITES=	ftp://ftp.dvo.ru/pub/Gentoo/distfiles/ \
+		ftp://ftp.tu-ilmenau.de/Mirrors/gentoo/distfiles/ \
+		ftp://ftp.tugraz.at/ftp.tu-graz.ac.at/.mirror-sites/gentoo.inode.at/source/distfiles/ \
+		ftp://mir1.ovh.net/gentoo-distfiles/distfiles/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby-${PORTNAME}-package-${PORTVERSION}
 DIST_SUBDIR=	ruby
