@@ -1,5 +1,5 @@
---- bin/startup.sh.orig	Fri Jan 28 02:01:47 2005
-+++ bin/startup.sh	Mon May 23 21:45:26 2005
+--- bin/startup.sh.orig	Fri Apr  7 03:38:58 2006
++++ bin/startup.sh	Sat Apr  8 22:40:32 2006
 @@ -1,30 +1,6 @@
  #! /bin/sh
  
@@ -27,9 +27,9 @@
 -  fi
 -done
 -
--IREPORT_CLASSPATH="${EXEDIR}/../classes":$IREPORT_CLASSPATH
+-IREPORT_CLASSPATH="${EXEDIR}/../classes":${EXEDIR}/../fonts:$IREPORT_CLASSPATH
 -IREPORT_HOME="${EXEDIR}/.."
-+IREPORT_CLASSPATH="%%CLSSPTH%%"
++IREPORT_CLASSPATH="%%CLSSPTH%%:%%DATADIR%%/fonts"
 +IREPORT_HOME="%%DATADIR%%"
  
  java -classpath "$IREPORT_CLASSPATH:$CLASSPATH" -Direport.home=$IREPORT_HOME it.businesslogic.ireport.gui.MainFrame "$@"

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ireport
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.1
 CATEGORIES=	devel databases java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -35,8 +35,9 @@ JARFILES=	LICENSE.asm-attr.txt LICENSE.asm.txt LICENSE.barbecue-1.1.txt	\
 		LICENSE.jta.txt asm-attrs.jar asm.jar barbecue-1.1.jar		\
 		cglib-2.1.jar ehcache-1.1.jar groovy-all-1.0-beta-10.jar	\
 		hibernate3.jar iReport.jar jdt-compiler.jar			\
-		jexelapiexporter-jr120.jar jr-bsh-compiler.jar			\
-		jr-groovy-compiler.jar jta.jar jxl.jar pngencoder.jar toniclf.jar
+		jr-bsh-compiler.jar jr-groovy-compiler.jar			\
+		jsmoothgen-ant-0.9.7.jar jta.jar jxl.jar pngencoder.jar		\
+		toniclf.jar
 BASEFILES=	Changelog.txt notice.txt relnotes${PORTVERSION}.html
 SUBDIRS=	fonts plugins templates
 
@@ -46,8 +47,8 @@ CLSSPTH=	antlr asm-attrs asm.jar barbecue-1.1 bsh cglib-2.1	\
 		commons-logging commons-logging-api dom4j ehcache-1.1	\
 		groovy-all-1.0-beta-10 hibernate3 iReport itext		\
 		jasperreports jcmdline jcommon jdt-compiler		\
-		jexelapiexporter-jr120 jfreechart jr-bsh-compiler	\
-		jr-groovy-compiler jta jxl log4j looks			\
+		jfreechart jr-bsh-compiler jr-groovy-compiler		\
+		jsmoothgen-ant-0.9.7 jta jxl log4j looks		\
 		mysql-connector-java pngencoder poi postgresql tinylaf	\
 		toniclf xalan xercesImpl xml-apis ${CLSSHSQLDB}
 
@@ -99,6 +100,7 @@ do-install:
 	${INSTALL_DATA} ${BASEFILES:S|^|${WRKSRC}/|} ${DATADIR}
 	cd ${WRKSRC} && ${FIND} ${SUBDIRS} -type d -exec ${MKDIR} ${DATADIR}/{} \;
 	cd ${WRKSRC} && ${FIND} ${SUBDIRS} -type f -exec ${INSTALL_DATA} {} ${DATADIR}/{} \;
+	${RM} -rf ${DATADIR}/fonts/font_licenses	# All GPL
 .if !defined(NOPORTDOCS)
 	${LN} -sf ${DATADIR}/docs ${DOCSDIR}
 .endif

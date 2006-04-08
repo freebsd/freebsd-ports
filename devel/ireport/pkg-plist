@@ -115,6 +115,7 @@ bin/iReport
 %%DATADIR%%/plugins/massive_compiler.xml
 %%DATADIR%%/plugins/oracle_options.xml
 %%DATADIR%%/plugins/text_wizard.xml
+%%DATADIR%%/plugins/translationStatus.xml
 %%DATADIR%%/relnotes%%VER%%.html
 %%DATADIR%%/templates/YBC.gif
 %%DATADIR%%/templates/YBC.xml
@@ -143,9 +144,9 @@ bin/iReport
 %%JAVAJARDIR%%/hibernate3.jar
 %%JAVAJARDIR%%/iReport.jar
 %%JAVAJARDIR%%/jdt-compiler.jar
-%%JAVAJARDIR%%/jexelapiexporter-jr120.jar
 %%JAVAJARDIR%%/jr-bsh-compiler.jar
 %%JAVAJARDIR%%/jr-groovy-compiler.jar
+%%JAVAJARDIR%%/jsmoothgen-ant-0.9.7.jar
 %%JAVAJARDIR%%/jta.jar
 %%JAVAJARDIR%%/jxl.jar
 %%JAVAJARDIR%%/pngencoder.jar
