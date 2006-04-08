@@ -22,7 +22,7 @@ share/locale/ja/LC_MESSAGES/rgettext.mo
 share/locale/ja/LC_MESSAGES/rmsgfmt.mo
 share/locale/sv/LC_MESSAGES/rgettext.mo
 share/locale/sv/LC_MESSAGES/rmsgfmt.mo
-@unexec rmdir -p %D/share/locale/ja/LC_MESSAGES 2>/dev/null || true
+@dirrmtry share/locale/ja/LC_MESSAGES
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/README
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/hello.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/hello2.rb
