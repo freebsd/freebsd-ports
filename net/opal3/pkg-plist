@@ -108,11 +108,11 @@ include/opal/t120/x224.h
 include/opal/t38/h323t38.h
 include/opal/t38/t38proto.h
 lib/libopal.so
-lib/libopal__r.so
-lib/libopal__r.so.2.2
-lib/libopal__r.so.2.2.1
+lib/libopal_r.so
+lib/libopal_r.so.2
+lib/libopal_r.so.2.2
+lib/libopal_r.so.2.2.1
 share/opal/opal_inc.mak
-@unexec rm %D/lib/libopal__r.so.2.2 2>/dev/null || true
 @dirrm share/opal
 @dirrm include/opal/t38
 @dirrm include/opal/t120
