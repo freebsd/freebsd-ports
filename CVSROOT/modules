@@ -7011,7 +7011,6 @@ ngrep-lib	ports/net/ngrep-lib
 ngspice_rework	ports/cad/ngspice_rework
 nhc98		ports/lang/nhc98
 nibbles		ports/games/nibbles
-nic		ports/net/nic
 nicetext	ports/textproc/nicetext
 nickle		ports/lang/nickle
 nicmond		ports/net/nicmond
