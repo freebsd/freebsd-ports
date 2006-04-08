@@ -6,22 +6,21 @@
 #
 
 PORTNAME=	libuninameslist
-PORTVERSION=	20${DIST_VER}
+PORTVERSION=	20050712
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	libuninameslist
-DISTNAME=	${PORTNAME}_src-${DIST_VER}
+DISTNAME=	${PORTNAME}_src-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	kanou@khdd.net
 COMMENT=	A library of Unicode annotation data
 
-DIST_VER=	040707
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
-ALL_TARGET=	libuninameslist.la
+ALL_TARGET=	both
 
 .include <bsd.port.mk>
