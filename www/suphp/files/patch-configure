@@ -1,0 +1,11 @@
+--- configure.orig	Thu Mar  2 13:38:36 2006
++++ configure	Thu Mar  2 13:39:23 2006
+@@ -2405,7 +2405,7 @@
+                     | cut -f2 -d"/" \
+                     | cut -f1 -d" "`
+     major_version=`echo $APACHE_VERSION|cut -f1,2 -d.`
+-    if test "$major_version" = "2.0"; then
++    if test "$major_version" = "2.0" -o "$major_version" = "2.2"; then
+       APACHE_VERSION_2=true
+       APACHE_VERSION_1_3=false
+     else

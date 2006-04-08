@@ -16,7 +16,7 @@ COMMENT=	Securely execute ~user PHP scripts
 
 GNU_CONFIGURE=	yes
 USE_PHP=	yes
-USE_APACHE=	yes
+USE_APACHE=	1.3+
 WANT_PHP_CGI=	yes
 CONFLICTS=	mod_php4-4* php-4.* mod_php5-5* php-5.*
 
@@ -53,18 +53,11 @@ CONFIGURE_ARGS+=	--with-setid-mode=${WITH_SETID_MODE}
 
 .include <bsd.port.pre.mk>
 
-.if exists(${LOCALBASE}/include/apache2/apr.h) || defined(WITH_APACHE2)
-APACHE_PORT=	www/apache20
-PLIST_SUB+=	MODULEDIR="libexec/apache2/"
-.else
-PLIST_SUB+=	MODULEDIR="libexec/apache/"
-.endif
-
 show-options:
 	@${SED} -ne 's/^##//p' ${.CURDIR}/Makefile
 
-pre-everything::
-	@${MAKE} show-options
+pre-everything:: show-options
+	@${DO_NADA}
 
 post-install:
 .if !defined(NOPORTDOCS)
