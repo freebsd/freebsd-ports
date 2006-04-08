@@ -7,6 +7,10 @@ lib/dbmail/libsortdbmail.so.0
 lib/dbmail/libsortdbmail.a
 lib/dbmail/libsortdbmail.la
 lib/dbmail/libsortdbmail.so
+lib/libdbmail.so.0
+lib/libdbmail.a
+lib/libdbmail.la
+lib/libdbmail.so
 sbin/dbmail-imapd
 sbin/dbmail-lmtpd
 sbin/dbmail-pop3d
@@ -23,10 +27,10 @@ sbin/dbmail-util
 %%MYSQL%%lib/dbmail/libmysqldbmail.so
 %%PGSQL%%%%DATADIR%%/sql/create_tables.pgsql
 %%PGSQL%%%%DATADIR%%/sql/migrate_from_1.x_to_2.0.pgsql
-%%PGSQL%%/lib/dbmail/libpgsqldbmail.so.0
-%%PGSQL%%/lib/dbmail/libpgsqldbmail.a
-%%PGSQL%%/lib/dbmail/libpgsqldbmail.la
-%%PGSQL%%/lib/dbmail/libpgsqldbmail.so
+%%PGSQL%%lib/dbmail/libpgsqldbmail.so.0
+%%PGSQL%%lib/dbmail/libpgsqldbmail.a
+%%PGSQL%%lib/dbmail/libpgsqldbmail.la
+%%PGSQL%%lib/dbmail/libpgsqldbmail.so
 @dirrm lib/dbmail
 @dirrm %%DATADIR%%/sql
 @dirrm %%DATADIR%%
