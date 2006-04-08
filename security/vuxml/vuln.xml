@@ -34,6 +34,44 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="c7526a14-c4dc-11da-9699-00123ffe8333">
+    <topic>mplayer -- Multiple integer overflows</topic>
+    <affects>
+      <package>
+	<name>mplayer</name>
+	<name>mplayer-esound</name>
+	<name>mplayer-gtk</name>
+	<name>mplayer-gtk2</name>
+	<name>mplayer-gtk-esound</name>
+	<name>mplayer-gtk2-esound</name>
+	<range><lt>0.99.7_12</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/19418/">
+	  <p>The vulnerabilities are caused due to integer overflow errors
+	    in "libmpdemux/asfheader.c" within the handling of an ASF file,
+	    and in "libmpdemux/aviheader.c" when parsing the "indx" chunk in
+	    an AVI file. This can be exploited to cause heap-based buffer
+	    overflows via a malicious ASF file, or via a AVI file with
+	    specially-crafted "wLongsPerEntry" and "nEntriesInUse" values in
+	    the "indx" chunk.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-1502</cvename>
+      <url>http://www.xfocus.org/advisories/200603/11.html</url>
+      <url>http://secunia.com/advisories/19418/</url>
+    </references>
+    <dates>
+      <discovery>2006-03-29</discovery>
+      <entry>2006-04-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4bfcd857-c628-11da-b2fb-000e0c2e438a">
     <topic>kaffeine -- buffer overflow vulnerability</topic>
     <affects>
