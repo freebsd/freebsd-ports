@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	setuptools
-PORTVERSION=	0.6a10
+PORTVERSION=	0.6a11
 CATEGORIES=	devel python
 MASTER_SITES=	http://cheeseshop.python.org/packages/source/s/setuptools/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

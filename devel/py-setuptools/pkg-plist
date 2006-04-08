@@ -1,5 +1,6 @@
 @comment $FreeBSD$
 bin/easy_install
+bin/easy_install-%%PYVER%%
 bin/easy_install.py
 %%PYTHON_SITELIBDIR%%/easy-install.pth
 %%PYTHON_SITELIBDIR%%/setuptools.pth
