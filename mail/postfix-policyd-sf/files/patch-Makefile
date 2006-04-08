@@ -1,32 +1,19 @@
---- Makefile.orig	Mon Oct 24 13:36:01 2005
-+++ Makefile	Mon Oct 24 13:38:36 2005
-@@ -1,20 +1,8 @@
--#
--# systems which install in /usr
--inc  = -I/usr/include/mysql
--lib  = -L/usr/lib/mysql
--# systems with single mysql subdir
--inc += -I/usr/local/mysql/include -I/usr/local/mysql/include/mysql
--lib += -L/usr/local/mysql/lib -L/usr/local/mysql/lib/mysql
--# freebsd ports
--inc += -I/usr/local/include/mysql
--lib += -L/usr/local/lib/mysql
--# netbsd pkgsrc
--inc += -I/usr/pkg/include/mysql
--lib += -L/usr/pkg/lib/mysql
--
+--- Makefile.orig	Wed Mar 15 07:02:14 2006
++++ Makefile	Mon Apr  3 11:17:09 2006
+@@ -12,9 +12,9 @@
+ inc += -I/usr/pkg/include/mysql
+ lib += -L/usr/pkg/lib/mysql
+ 
 -CC       := gcc
 -CPPFLAGS := -O $(inc)
--CFLAGS   := -g -W -Wall -DMAXFDS=1023
-+inc      := -I$(LOCALBASE)/include/mysql
-+lib      := -L$(LOCALBASE)/lib/mysql
+-CFLAGS   := -g -W -Wall -DMAXFDS=4096
 +CC       ?= gcc
 +CPPFLAGS += -O $(inc)
-+CFLAGS   ?= -g -W -Wall -DMAXFDS=1023
++CFLAGS   ?= -g -W -Wall -DMAXFDS=4096
  OS_NAME  := $(shell uname | tr [A-Z] [a-z])
  LDLIBS    = $(lib) -lmysqlclient -lz
  
-@@ -26,15 +14,7 @@
+@@ -26,15 +26,7 @@
  	@echo "  compiling ${CFLAGS} $<"
  	@${CC} ${CPPFLAGS} ${CFLAGS} -o $@ -c $<
  
@@ -39,7 +26,7 @@
 -	@echo "  make clean"
 -	@echo ""
 -	@exit
-+all: build
++all:	build
  
  build: policyd cleanup stats
  
