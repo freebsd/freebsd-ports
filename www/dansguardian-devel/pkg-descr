@@ -3,20 +3,19 @@ and Solaris. It relies on a proxy server, such as Squid, for all fetching;
 however, DansGuardian should work with any proxy server.
 
 It filters using multiple methods, including:
-  - URL and domain filtering
-  - content phrase filtering
-  - PICS filtering
-  - MIME filtering
-  - file extension filtering
-  - POST filtering
-  - user and source IP filtering
+  - URL and domain filtering            - content phrase filtering
+  - PICS filtering                      - MIME filtering
+  - file extension filtering            - POST filtering
+  - username and source IP filtering    - virus filtering
 
 This version also includes support for filter groups (simple ACLs),
-pre-emptive blocking, improved URL caches,  and fork pooling for
+pre-emptive blocking, improved URL caches, and fork pooling for
 improved performance under heavy load.
 
+This is the development version of DansGuardian and is still
+considered to be Alpha quality.
+
 WWW: http://dansguardian.org
-WWW: http://backup.dansguardian.org
 
 - Freddie Cash
 fcash@sd73.bc.ca

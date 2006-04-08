@@ -7,6 +7,7 @@
 
 PORTNAME=	dansguardian
 PORTVERSION=	2.9.6.1
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	# empty, see below
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -35,7 +36,7 @@ MAN8=		dansguardian.8
 OPTIONS=	DG_APACHE  "Enable Apache support for access denied page" on \
 		DG_DMGR    "Enable the fancy download manager" on \
 		DG_CLAMD   "Enable ClamAV daemon support (clamd)" off \
-		DG_CLAMAV  "Enable ClamAV support (libclamav) (broken)" off \
+		DG_CLAMAV  "Enable ClamAV library support (libclamav)" off \
 		DG_ICAP    "Enable ICAP AV content scanner support (broken)" off \
 		DG_KASP    "Enable Kaspersky AV support (broken)" off
 
@@ -53,15 +54,12 @@ USE_APACHE=	1.3+
 .endif
 
 .if defined(WITH_DG_CLAMAV)
-#.if defined(WITH_DG_FORCE_CLAMAV)
-#CONFIGURE_ARGS+=	--enable-clamav=yes
-#LIB_DEPENDS+=		clamav.1:${PORTSDIR}/security/clamav
-#PLIST_SUB+=		CLAMAVCONF=""
-#.else
-#PLIST_SUB+=		CLAMAVCONF="@comment "
-#.endif
-#.else
-BROKEN=	Please use the clamd plugin support.  It's much more flexible, usable, tested, and just generally better
+#IGNORE=		please use the clamd plugin support.  It's much more flexible, usable, tested, and just generally better
+CONFIGURE_ARGS+=	--enable-clamav=yes
+LIB_DEPENDS+=		clamav.1:${PORTSDIR}/security/clamav
+PLIST_SUB+=		CLAMAVCONF=""
+.else
+PLIST_SUB+=		CLAMAVCONF="@comment "
 .endif
 
 .if defined(WITH_DG_CLAMD)
@@ -73,11 +71,19 @@ PLIST_SUB+=		CLAMDCONF="@comment "
 .endif
 
 .if defined(WITH_DG_ICAP)
-BROKEN=	I don't have access to ICAP AV, so I can't test this.  If you have access to it, drop me an e-mail.  Thanks
+#IGNORE=		I don't have access to ICAP AV, so I can't test this.  If you have access to it, drop me an e-mail.  Thanks
+CONFIGURE_ARGS+=	--enable-icap
+PLIST_SUB+=		ICAPCONF=""
+.else
+PLIST_SUB+=		ICAPCONF="@comment "
 .endif
 
 .if defined(WITH_DG_KASP)
-BROKEN=	I don't have access to Kaspersky AV, so I can't test this.  If you have access to it, drop me an e-mail.  Thanks
+#IGNORE=		I don't have access to Kaspersky AV, so I can't test this.  If you have access to it, drop me an e-mail.  Thanks
+CONFIGURE_ARGS+=	--enable-kavd
+PLIST_SUB+=		KAVDCONF=""
+.else
+PLIST_SUB+=		KAVDCONF="@comment "
 .endif
 
 .if defined(WITH_DG_DMGR)
@@ -89,7 +95,7 @@ CONFIGURE_ARGS+=	--enable-fancydm
 
 # User needs to manually download the distfile
 .if !(exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})) && !defined(PACKAGE_BUILDING)
-IGNORE="Commercial source download is restricted.  Please visit and read ${DG_URL} and download ${DISTNAME}${EXTRACT_SUFX} into ${DISTDIR} before running make"
+IGNORE=	commercial source download is restricted.  Please visit and read ${DG_URL} and download ${DISTNAME}${EXTRACT_SUFX} into ${DISTDIR} before running make
 .endif
 
 post-install:
