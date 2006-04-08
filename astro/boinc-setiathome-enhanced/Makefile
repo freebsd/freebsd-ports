@@ -10,7 +10,7 @@ CATEGORIES=	astro
 MASTER_SITES=	http://www.lb.shuttle.de/apastron/boinc/
 DISTNAME=	boinc5.2.14seti${PORTVERSION}freebsd-mmx
 
-MAINTAINER=	r.c.ladan@student.tue.nl
+MAINTAINER=	r.c.ladan@gmail.com
 COMMENT=	Setiathome Enhanced for BOINC
 
 USE_BZIP2=	yes
