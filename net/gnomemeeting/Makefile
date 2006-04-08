@@ -7,6 +7,7 @@
 
 PORTNAME=	gnomemeeting
 PORTVERSION=	1.2.1
+PORTREVISION=	1
 CATEGORIES=	net gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R}
@@ -22,6 +23,7 @@ USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	libgnomeui libbonobo gnomeprefix gnomehack evolutiondataserver \
 		intlhack
+INSTALLS_OMF=	yes
 USE_OPENLDAP=	yes
 GCONF_SCHEMAS=	gnomemeeting.schemas
 USE_SDL=	yes
@@ -33,7 +35,7 @@ CONFIGURE_ENV=	OSTYPE=${OPSYS} \
 		CXXFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${PREFIX}/lib -L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
 		SDL_CONFIG=${LOCALBASE}/bin/sdl11-config \
-		CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
+		CPPFLAGS="-I${LOCALBASE}/include ${LDAP_CPPFLAGS} ${PTHREAD_CFLAGS}" \
 		PTLIBDIR=${PREFIX}
 
 CONFIGURE_ARGS=	--with-pwlib-dir=${LOCALBASE} \
@@ -41,6 +43,12 @@ CONFIGURE_ARGS=	--with-pwlib-dir=${LOCALBASE} \
  		--with-ldap-dir=${LOCALBASE}
 
 MAN1=	gnomemeeting.1
+
+.include <bsd.port.pre.mk>
+
+.if (${WANT_OPENLDAP_VER} == "23")
+LDAP_CPPFLAGS=	-DLDAP_DEPRECATED
+.endif
 
 post-patch:
 	${REINPLACE_CMD} -e 's:-lh323_FreeBSD_x86_r_s:-lh323_r:g; \
@@ -50,4 +58,4 @@ post-patch:
 		s: -DSTATIC_LIBS_USED::g' \
 		${WRKSRC}/configure
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -107,6 +107,7 @@ share/locale/zh_TW/LC_MESSAGES/gnomemeeting.mo
 @dirrm share/gnome/help/gnomemeeting/fr/figures
 @dirrm share/gnome/help/gnomemeeting/fr
 @dirrm share/gnome/help/gnomemeeting
+@dirrm share/gnome/omf/gnomemeeting
 @dirrm share/gnome/sounds/gnomemeeting
 @dirrm share/gnome/gnomemeeting/xdap
 @dirrm share/gnome/gnomemeeting
