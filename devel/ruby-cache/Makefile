@@ -8,8 +8,10 @@
 PORTNAME=	cache
 PORTVERSION=	0.3
 CATEGORIES=	devel ruby
-MASTER_SITES=	${MASTER_SITE_SAVANNAH}
-MASTER_SITE_SUBDIR=	pupa/ruby-cache.pkg/${PORTVERSION}
+MASTER_SITES=	http://cvsup.theplanet.com/distfiles/ruby/ \
+		http://ftp.nara.wide.ad.jp/pub/GNU/savannah/files/pupa/ruby-cache.pkg/${PORTVERSION}/ \
+		http://gnu.rtin.bz/ftp/savannah/files/pupa/ruby-cache.pkg/${PORTVERSION}/ \
+		http://mirror.services.wisc.edu/mirrors/gnu/savannah/files/pupa/ruby-cache.pkg/${PORTVERSION}/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
@@ -24,11 +26,7 @@ RUBY_SETUP=	install.rb
 RUBY_RD_FILES=	${WRKSRC}/MANUAL.rd ${WRKSRC}/README.rd
 DOCS=		${RUBY_RD_FILES} ${RUBY_RD_HTML_FILES}
 
-post-install: doc-install
-
-.include <bsd.port.mk>
-
-doc-install:
+post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODDOCDIR}
 .for f in ${DOCS}
@@ -37,3 +35,5 @@ doc-install:
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/sample/*.rb ${RUBY_MODEXAMPLESDIR}/
 .endif
+
+.include <bsd.port.mk>
