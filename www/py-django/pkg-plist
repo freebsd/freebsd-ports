@@ -1,642 +1,716 @@
 bin/django-admin.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/__init__.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/__init__.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/__init__.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/bin/__init__.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/bin/compile-messages.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/bin/daily_cleanup.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/bin/django-admin.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/bin/make-messages.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/bin/unique-messages.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/bin/validate.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/bin/__init__.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/bin/compile-messages.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/bin/daily_cleanup.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/bin/django-admin.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/bin/make-messages.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/bin/unique-messages.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/bin/validate.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/bin/__init__.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/bin/compile-messages.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/bin/daily_cleanup.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/bin/django-admin.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/bin/make-messages.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/bin/unique-messages.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/bin/validate.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/bin/profiling/__init__.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/bin/profiling/gather_profile_stats.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/bin/profiling/__init__.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/bin/profiling/gather_profile_stats.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/bin/profiling/__init__.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/bin/profiling/gather_profile_stats.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/__init__.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/global_settings.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/settings.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/__init__.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/global_settings.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/settings.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/__init__.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/global_settings.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/settings.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/app_template/__init__.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/app_template/views.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/app_template/__init__.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/app_template/views.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/app_template/__init__.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/app_template/views.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/app_template/models/__init__.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/app_template/models/app_name.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/app_template/models/__init__.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/app_template/models/app_name.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/app_template/models/__init__.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/app_template/models/app_name.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/project_template/__init__.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/project_template/settings.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/project_template/urls.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/project_template/__init__.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/project_template/settings.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/project_template/urls.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/project_template/__init__.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/project_template/settings.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/project_template/urls.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/project_template/apps/__init__.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/project_template/apps/__init__.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/project_template/apps/__init__.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/urls/__init__.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/urls/admin_password_reset.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/urls/defaults.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/urls/i18n.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/urls/registration.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/urls/shortcut.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/urls/__init__.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/urls/admin_password_reset.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/urls/defaults.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/urls/i18n.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/urls/registration.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/urls/shortcut.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/urls/__init__.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/urls/admin_password_reset.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/urls/defaults.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/urls/i18n.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/urls/registration.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/urls/shortcut.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/locale/bn/LC_MESSAGES/django.mo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/locale/bn/LC_MESSAGES/django.po
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/locale/cs/LC_MESSAGES/django.mo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/locale/cs/LC_MESSAGES/django.po
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/locale/cy/LC_MESSAGES/django.mo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/locale/cy/LC_MESSAGES/django.po
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/locale/da/LC_MESSAGES/django.mo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/locale/da/LC_MESSAGES/django.po
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/locale/de/LC_MESSAGES/django.mo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/locale/de/LC_MESSAGES/django.po
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/locale/en/LC_MESSAGES/django.mo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/locale/en/LC_MESSAGES/django.po
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/locale/es/LC_MESSAGES/django.mo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/locale/es/LC_MESSAGES/django.po
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/locale/fr/LC_MESSAGES/django.mo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/locale/fr/LC_MESSAGES/django.po
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/locale/gl/LC_MESSAGES/django.mo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/locale/gl/LC_MESSAGES/django.po
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/locale/is/LC_MESSAGES/django.mo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/locale/is/LC_MESSAGES/django.po
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/locale/it/LC_MESSAGES/django.mo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/locale/it/LC_MESSAGES/django.po
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/locale/no/LC_MESSAGES/django.mo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/locale/no/LC_MESSAGES/django.po
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/locale/pt_BR/LC_MESSAGES/django.mo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/locale/pt_BR/LC_MESSAGES/django.po
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/locale/ro/LC_MESSAGES/django.mo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/locale/ro/LC_MESSAGES/django.po
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/locale/ru/LC_MESSAGES/django.mo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/locale/ru/LC_MESSAGES/django.po
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/locale/sk/LC_MESSAGES/django.mo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/locale/sk/LC_MESSAGES/django.po
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/locale/sr/LC_MESSAGES/django.mo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/locale/sr/LC_MESSAGES/django.po
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/locale/sv/LC_MESSAGES/django.mo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/locale/sv/LC_MESSAGES/django.po
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/locale/zh_CN/LC_MESSAGES/django.mo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/locale/zh_CN/LC_MESSAGES/django.po
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/__init__.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/__init__.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/__init__.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/__init__.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/__init__.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/__init__.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/models/__init__.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/models/admin.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/models/__init__.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/models/admin.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/models/__init__.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/models/admin.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/templatetags/__init__.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/templatetags/adminapplist.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/templatetags/adminmedia.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/templatetags/log.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/templatetags/__init__.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/templatetags/adminapplist.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/templatetags/adminmedia.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/templatetags/log.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/templatetags/__init__.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/templatetags/adminapplist.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/templatetags/adminmedia.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/templatetags/log.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/urls/__init__.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/urls/admin.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/urls/__init__.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/urls/admin.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/urls/__init__.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/urls/admin.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/views/__init__.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/views/decorators.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/views/doc.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/views/main.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/views/template.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/views/__init__.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/views/decorators.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/views/doc.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/views/main.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/views/template.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/views/__init__.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/views/decorators.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/views/doc.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/views/main.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/views/template.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/templates/admin/404.html
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/templates/admin/500.html
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/templates/admin/base.html
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/templates/admin/base_site.html
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/templates/admin/delete_confirmation.html
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/templates/admin/index.html
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/templates/admin/login.html
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/templates/admin/object_history.html
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/templates/admin/template_validator.html
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/templates/admin_doc/bookmarklets.html
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/templates/admin_doc/index.html
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/templates/admin_doc/missing_docutils.html
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/templates/admin_doc/model_detail.html
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/templates/admin_doc/model_index.html
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/templates/admin_doc/template_detail.html
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/templates/admin_doc/template_filter_index.html
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/templates/admin_doc/template_tag_index.html
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/templates/admin_doc/view_detail.html
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/templates/admin_doc/view_index.html
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/templates/registration/logged_out.html
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/templates/registration/password_change_done.html
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/templates/registration/password_change_form.html
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/templates/registration/password_reset_done.html
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/templates/registration/password_reset_email.html
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/templates/registration/password_reset_form.html
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/media/css/base.css
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/media/css/changelists.css
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/media/css/global.css
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/media/img/admin/arrow-down.gif
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/media/img/admin/arrow-up.gif
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/media/img/admin/changelist-bg.gif
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/media/img/admin/chooser-bg.gif
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/media/img/admin/chooser_stacked-bg.gif
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/media/img/admin/default-bg-reverse.gif
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/media/img/admin/default-bg.gif
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/media/img/admin/icon-no.gif
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/media/img/admin/icon-yes.gif
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/media/img/admin/icon_addlink.gif
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/media/img/admin/icon_alert.gif
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/media/img/admin/icon_calendar.gif
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/media/img/admin/icon_changelink.gif
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/media/img/admin/icon_clock.gif
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/media/img/admin/icon_deletelink.gif
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/media/img/admin/icon_error.gif
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/media/img/admin/icon_success.gif
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/media/img/admin/nav-bg-grabber.gif
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/media/img/admin/nav-bg-reverse.gif
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/media/img/admin/nav-bg.gif
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/media/img/admin/selector-add.gif
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/media/img/admin/selector-addall.gif
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/media/img/admin/selector-remove.gif
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/media/img/admin/selector-removeall.gif
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/media/img/admin/selector-search.gif
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/media/img/admin/selector_stacked-add.gif
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/media/img/admin/selector_stacked-remove.gif
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/media/img/admin/tool-left.gif
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/media/img/admin/tool-left_over.gif
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/media/img/admin/tool-right.gif
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/media/img/admin/tool-right_over.gif
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/media/img/admin/tooltag-add.gif
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/media/img/admin/tooltag-add_over.gif
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/media/img/admin/tooltag-arrowright.gif
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/media/img/admin/tooltag-arrowright_over.gif
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/media/img/admin/icon_searchbox.png
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/media/js/SelectBox.js
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/media/js/SelectFilter.js
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/media/js/SelectFilter2.js
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/media/js/calendar.js
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/media/js/core.js
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/media/js/dateparse.js
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/media/js/getElementsBySelector.js
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/media/js/timeparse.js
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/media/js/urlify.js
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/media/js/admin/CollapsedFieldsets.js
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/media/js/admin/DateTimeShortcuts.js
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/media/js/admin/RelatedObjectLookups.js
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/media/js/admin/ordering.js
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/comments/__init__.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/comments/__init__.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/comments/__init__.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/comments/models/__init__.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/comments/models/comments.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/comments/models/__init__.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/comments/models/comments.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/comments/models/__init__.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/comments/models/comments.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/comments/templatetags/__init__.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/comments/templatetags/comments.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/comments/templatetags/__init__.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/comments/templatetags/comments.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/comments/templatetags/__init__.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/comments/templatetags/comments.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/comments/urls/__init__.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/comments/urls/comments.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/comments/urls/__init__.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/comments/urls/comments.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/comments/urls/__init__.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/comments/urls/comments.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/comments/views/__init__.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/comments/views/comments.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/comments/views/karma.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/comments/views/userflags.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/comments/views/__init__.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/comments/views/comments.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/comments/views/karma.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/comments/views/userflags.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/comments/views/__init__.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/comments/views/comments.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/comments/views/karma.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/comments/views/userflags.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/flatpages/__init__.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/flatpages/middleware.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/flatpages/urls.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/flatpages/views.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/flatpages/README.TXT
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/flatpages/__init__.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/flatpages/middleware.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/flatpages/urls.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/flatpages/views.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/flatpages/__init__.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/flatpages/middleware.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/flatpages/urls.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/flatpages/views.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/flatpages/models/__init__.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/flatpages/models/flatpages.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/flatpages/models/__init__.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/flatpages/models/flatpages.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/flatpages/models/__init__.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/flatpages/models/flatpages.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/markup/__init__.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/markup/__init__.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/markup/__init__.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/markup/templatetags/__init__.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/markup/templatetags/markup.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/markup/templatetags/__init__.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/markup/templatetags/markup.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/markup/templatetags/__init__.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/markup/templatetags/markup.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/redirects/__init__.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/redirects/middleware.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/redirects/README.TXT
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/redirects/__init__.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/redirects/middleware.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/redirects/__init__.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/redirects/middleware.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/redirects/models/__init__.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/redirects/models/redirects.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/redirects/models/__init__.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/redirects/models/redirects.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/redirects/models/__init__.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/redirects/models/redirects.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/syndication/__init__.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/syndication/feeds.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/syndication/views.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/syndication/__init__.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/syndication/feeds.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/syndication/views.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/syndication/__init__.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/syndication/feeds.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/syndication/views.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/__init__.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/cache.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/exceptions.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/extensions.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/formfields.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/handler.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/mail.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/management.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/paginator.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/template_loader.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/urlresolvers.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/validators.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/xheaders.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/__init__.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/cache.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/exceptions.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/extensions.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/handler.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/formfields.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/mail.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/management.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/db/__init__.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/db/base.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/db/dicthelpers.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/db/typecasts.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/db/__init__.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/db/base.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/db/dicthelpers.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/db/typecasts.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/db/__init__.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/db/base.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/db/dicthelpers.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/db/typecasts.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/db/backends/__init__.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/db/backends/ado_mssql.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/db/backends/mysql.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/db/backends/postgresql.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/db/backends/sqlite3.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/db/backends/__init__.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/db/backends/ado_mssql.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/db/backends/mysql.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/db/backends/postgresql.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/db/backends/sqlite3.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/db/backends/__init__.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/db/backends/ado_mssql.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/db/backends/mysql.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/db/backends/postgresql.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/db/backends/sqlite3.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/paginator.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/template_loader.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/urlresolvers.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/validators.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/xheaders.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/__init__.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/cache.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/exceptions.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/extensions.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/formfields.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/handler.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/mail.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/management.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/paginator.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/template_loader.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/urlresolvers.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/validators.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/xheaders.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/handlers/__init__.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/handlers/base.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/handlers/modpython.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/handlers/profiler-hotshot.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/handlers/wsgi.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/handlers/__init__.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/handlers/base.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/handlers/modpython.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/handlers/profiler-hotshot.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/handlers/wsgi.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/handlers/__init__.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/handlers/base.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/handlers/modpython.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/handlers/profiler-hotshot.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/handlers/wsgi.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/meta/__init__.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/meta/fields.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/meta/__init__.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/meta/fields.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/meta/__init__.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/meta/fields.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/servers/__init__.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/servers/basehttp.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/servers/__init__.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/servers/basehttp.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/servers/__init__.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/servers/basehttp.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/template/__init__.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/template/defaultfilters.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/template/defaulttags.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/template/loader.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/template/__init__.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/template/defaultfilters.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/template/defaulttags.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/template/loader.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/template/__init__.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/template/defaultfilters.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/template/defaulttags.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/template/loader.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/template/loaders/__init__.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/template/loaders/app_directories.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/template/loaders/eggs.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/template/loaders/filesystem.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/template/loaders/__init__.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/template/loaders/app_directories.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/template/loaders/eggs.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/template/loaders/filesystem.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/template/loaders/__init__.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/template/loaders/app_directories.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/template/loaders/eggs.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/template/loaders/filesystem.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/middleware/__init__.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/middleware/cache.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/middleware/common.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/middleware/doc.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/middleware/gzip.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/middleware/http.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/middleware/locale.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/middleware/sessions.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/middleware/__init__.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/middleware/cache.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/middleware/common.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/middleware/doc.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/middleware/gzip.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/middleware/http.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/middleware/locale.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/middleware/sessions.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/middleware/__init__.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/middleware/cache.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/middleware/common.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/middleware/doc.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/middleware/gzip.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/middleware/http.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/middleware/locale.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/middleware/sessions.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/models/__init__.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/models/auth.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/models/core.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/models/__init__.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/models/auth.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/models/core.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/models/__init__.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/models/auth.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/models/core.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/parts/__init__.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/parts/__init__.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/parts/__init__.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/parts/admin/__init__.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/parts/admin/doc.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/parts/admin/__init__.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/parts/admin/doc.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/parts/admin/__init__.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/parts/admin/doc.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/parts/auth/__init__.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/parts/auth/anonymoususers.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/parts/auth/formfields.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/parts/auth/__init__.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/parts/auth/anonymoususers.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/parts/auth/formfields.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/parts/auth/__init__.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/parts/auth/anonymoususers.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/parts/auth/formfields.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/parts/media/__init__.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/parts/media/photos.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/parts/media/__init__.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/parts/media/photos.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/parts/media/__init__.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/parts/media/photos.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/templatetags/__init__.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/templatetags/i18n.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/templatetags/__init__.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/templatetags/i18n.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/templatetags/__init__.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/templatetags/i18n.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/utils/__init__.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/utils/autoreload.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/utils/cache.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/utils/datastructures.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/utils/dateformat.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/utils/dates.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/utils/decorators.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/utils/feedgenerator.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/utils/functional.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/utils/html.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/utils/httpwrappers.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/utils/images.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/utils/stopwords.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/utils/synch.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/utils/text.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/utils/timesince.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/utils/translation.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/utils/tzinfo.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/utils/xmlutils.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/utils/__init__.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/utils/autoreload.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/utils/cache.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/utils/datastructures.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/utils/dateformat.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/utils/dates.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/utils/decorators.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/utils/feedgenerator.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/utils/functional.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/utils/html.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/utils/httpwrappers.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/utils/images.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/utils/stopwords.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/utils/synch.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/utils/text.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/utils/timesince.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/utils/translation.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/utils/tzinfo.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/utils/xmlutils.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/utils/__init__.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/utils/autoreload.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/utils/cache.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/utils/datastructures.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/utils/dateformat.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/utils/dates.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/utils/decorators.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/utils/feedgenerator.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/utils/functional.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/utils/html.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/utils/httpwrappers.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/utils/images.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/utils/stopwords.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/utils/synch.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/utils/text.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/utils/timesince.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/utils/translation.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/utils/tzinfo.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/utils/xmlutils.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/views/__init__.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/views/debug.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/views/defaults.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/views/i18n.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/views/static.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/views/__init__.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/views/debug.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/views/defaults.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/views/i18n.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/views/static.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/views/__init__.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/views/debug.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/views/defaults.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/views/i18n.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/views/static.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/views/auth/__init__.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/views/auth/login.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/views/auth/__init__.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/views/auth/login.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/views/auth/__init__.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/views/auth/login.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/views/core/__init__.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/views/core/__init__.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/views/core/__init__.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/views/decorators/__init__.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/views/decorators/auth.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/views/decorators/cache.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/views/decorators/gzip.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/views/decorators/http.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/views/decorators/vary.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/views/decorators/__init__.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/views/decorators/auth.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/views/decorators/cache.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/views/decorators/gzip.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/views/decorators/http.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/views/decorators/vary.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/views/decorators/__init__.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/views/decorators/auth.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/views/decorators/cache.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/views/decorators/gzip.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/views/decorators/http.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/views/decorators/vary.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/views/generic/__init__.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/views/generic/create_update.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/views/generic/date_based.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/views/generic/list_detail.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/views/generic/simple.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/views/generic/__init__.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/views/generic/create_update.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/views/generic/date_based.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/views/generic/list_detail.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/views/generic/simple.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/views/generic/__init__.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/views/generic/create_update.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/views/generic/date_based.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/views/generic/list_detail.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/views/generic/simple.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/views/registration/__init__.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/views/registration/passwords.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/views/registration/__init__.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/views/registration/passwords.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/views/registration/__init__.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/views/registration/passwords.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/views/rss/__init__.py
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/views/rss/__init__.pyc
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/views/rss/__init__.pyo
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/EGG-INFO/PKG-INFO
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/EGG-INFO/SOURCES.txt
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/EGG-INFO/top_level.txt
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/EGG-INFO/not-zip-safe
-%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/EGG-INFO/scripts/django-admin.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/EGG-INFO/scripts/django-admin.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/__init__.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/bin/__init__.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/bin/compile-messages.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/bin/daily_cleanup.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/bin/django-admin.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/bin/make-messages.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/bin/unique-messages.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/bin/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/bin/compile-messages.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/bin/daily_cleanup.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/bin/django-admin.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/bin/make-messages.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/bin/unique-messages.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/bin/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/bin/compile-messages.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/bin/daily_cleanup.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/bin/django-admin.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/bin/make-messages.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/bin/profiling/__init__.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/bin/profiling/gather_profile_stats.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/bin/profiling/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/bin/profiling/gather_profile_stats.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/bin/profiling/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/bin/profiling/gather_profile_stats.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/bin/unique-messages.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/__init__.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/global_settings.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/settings.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/global_settings.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/settings.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/global_settings.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/settings.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/app_template/__init__.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/app_template/views.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/app_template/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/app_template/views.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/app_template/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/app_template/views.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/app_template/models/__init__.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/app_template/models/app_name.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/app_template/models/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/app_template/models/app_name.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/app_template/models/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/app_template/models/app_name.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/project_template/__init__.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/project_template/manage.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/project_template/settings.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/project_template/urls.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/project_template/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/project_template/manage.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/project_template/settings.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/project_template/urls.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/project_template/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/project_template/manage.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/project_template/settings.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/project_template/urls.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/urls/__init__.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/urls/admin_password_reset.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/urls/defaults.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/urls/i18n.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/urls/registration.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/urls/shortcut.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/urls/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/urls/admin_password_reset.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/urls/defaults.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/urls/i18n.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/urls/registration.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/urls/shortcut.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/urls/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/urls/admin_password_reset.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/urls/defaults.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/urls/i18n.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/urls/registration.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/urls/shortcut.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/bn/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/bn/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/cs/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/cs/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/cs/LC_MESSAGES/djangojs.mo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/cs/LC_MESSAGES/djangojs.po
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/cy/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/cy/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/cy/LC_MESSAGES/djangojs.mo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/cy/LC_MESSAGES/djangojs.po
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/da/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/da/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/de/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/de/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/de/LC_MESSAGES/djangojs.mo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/de/LC_MESSAGES/djangojs.po
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/en/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/en/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/en/LC_MESSAGES/djangojs.mo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/en/LC_MESSAGES/djangojs.po
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/es/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/es/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/es/LC_MESSAGES/djangojs.mo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/es/LC_MESSAGES/djangojs.po
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/fr/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/fr/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/fr/LC_MESSAGES/djangojs.mo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/fr/LC_MESSAGES/djangojs.po
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/gl/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/gl/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/gl/LC_MESSAGES/djangojs.mo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/gl/LC_MESSAGES/djangojs.po
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/is/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/is/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/it/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/it/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/it/LC_MESSAGES/djangojs.mo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/it/LC_MESSAGES/djangojs.po
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/ja/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/ja/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/ja/LC_MESSAGES/djangojs.mo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/ja/LC_MESSAGES/djangojs.po
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/nl/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/nl/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/no/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/no/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/no/LC_MESSAGES/djangojs.mo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/no/LC_MESSAGES/djangojs.po
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/pt_BR/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/pt_BR/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/ro/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/ro/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/ru/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/ru/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/ru/LC_MESSAGES/djangojs.mo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/ru/LC_MESSAGES/djangojs.po
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/sk/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/sk/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/sk/LC_MESSAGES/djangojs.mo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/sk/LC_MESSAGES/djangojs.po
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/sr/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/sr/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/sr/LC_MESSAGES/djangojs.mo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/sr/LC_MESSAGES/djangojs.po
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/sv/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/sv/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/sv/LC_MESSAGES/djangojs.mo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/sv/LC_MESSAGES/djangojs.po
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/zh_CN/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/zh_CN/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/zh_TW/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/zh_TW/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/__init__.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/__init__.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/filterspecs.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/utils.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/filterspecs.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/utils.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/filterspecs.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/utils.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/models/__init__.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/models/admin.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/models/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/models/admin.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/models/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/models/admin.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/templatetags/__init__.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/templatetags/admin_list.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/templatetags/admin_modify.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/templatetags/adminapplist.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/templatetags/adminmedia.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/templatetags/log.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/templatetags/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/templatetags/admin_list.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/templatetags/admin_modify.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/templatetags/adminapplist.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/templatetags/adminmedia.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/templatetags/log.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/templatetags/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/templatetags/admin_list.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/templatetags/admin_modify.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/templatetags/adminapplist.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/templatetags/adminmedia.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/templatetags/log.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/urls/__init__.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/urls/admin.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/urls/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/urls/admin.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/urls/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/urls/admin.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/views/__init__.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/views/decorators.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/views/doc.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/views/main.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/views/template.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/views/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/views/decorators.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/views/doc.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/views/main.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/views/template.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/views/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/views/decorators.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/views/doc.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/views/main.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/views/template.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/templates/admin/404.html
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/templates/admin/500.html
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/templates/admin/base.html
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/templates/admin/base_site.html
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/templates/admin/change_form.html
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/templates/admin/change_list.html
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/templates/admin/change_list_results.html
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/templates/admin/date_hierarchy.html
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/templates/admin/delete_confirmation.html
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/templates/admin/edit_inline_stacked.html
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/templates/admin/edit_inline_tabular.html
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/templates/admin/field_line.html
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/templates/admin/filter.html
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/templates/admin/filters.html
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/templates/admin/index.html
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/templates/admin/login.html
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/templates/admin/object_history.html
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/templates/admin/pagination.html
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/templates/admin/search_form.html
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/templates/admin/submit_line.html
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/templates/admin/template_validator.html
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/templates/admin_doc/bookmarklets.html
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/templates/admin_doc/index.html
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/templates/admin_doc/missing_docutils.html
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/templates/admin_doc/model_detail.html
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/templates/admin_doc/model_index.html
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/templates/admin_doc/template_detail.html
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/templates/admin_doc/template_filter_index.html
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/templates/admin_doc/template_tag_index.html
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/templates/admin_doc/view_detail.html
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/templates/admin_doc/view_index.html
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/templates/registration/logged_out.html
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/templates/registration/password_change_done.html
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/templates/registration/password_change_form.html
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/templates/registration/password_reset_done.html
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/templates/registration/password_reset_email.html
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/templates/registration/password_reset_form.html
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/templates/widget/date_time.html
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/templates/widget/default.html
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/templates/widget/file.html
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/templates/widget/foreign.html
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/templates/widget/many_to_many.html
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/templates/widget/one_to_one.html
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/media/css/base.css
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/media/css/changelists.css
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/media/css/global.css
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/media/img/admin/arrow-down.gif
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/media/img/admin/arrow-up.gif
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/media/img/admin/changelist-bg.gif
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/media/img/admin/chooser-bg.gif
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/media/img/admin/chooser_stacked-bg.gif
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/media/img/admin/default-bg-reverse.gif
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/media/img/admin/default-bg.gif
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/media/img/admin/icon-no.gif
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/media/img/admin/icon-yes.gif
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/media/img/admin/icon_addlink.gif
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/media/img/admin/icon_alert.gif
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/media/img/admin/icon_calendar.gif
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/media/img/admin/icon_changelink.gif
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/media/img/admin/icon_clock.gif
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/media/img/admin/icon_deletelink.gif
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/media/img/admin/icon_error.gif
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/media/img/admin/icon_success.gif
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/media/img/admin/nav-bg-grabber.gif
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/media/img/admin/nav-bg-reverse.gif
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/media/img/admin/nav-bg.gif
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/media/img/admin/selector-add.gif
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/media/img/admin/selector-addall.gif
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/media/img/admin/selector-remove.gif
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/media/img/admin/selector-removeall.gif
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/media/img/admin/selector-search.gif
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/media/img/admin/selector_stacked-add.gif
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/media/img/admin/selector_stacked-remove.gif
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/media/img/admin/tool-left.gif
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/media/img/admin/tool-left_over.gif
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/media/img/admin/tool-right.gif
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/media/img/admin/tool-right_over.gif
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/media/img/admin/tooltag-add.gif
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/media/img/admin/tooltag-add_over.gif
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/media/img/admin/tooltag-arrowright.gif
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/media/img/admin/tooltag-arrowright_over.gif
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/media/img/admin/icon_searchbox.png
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/media/js/SelectBox.js
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/media/js/SelectFilter.js
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/media/js/SelectFilter2.js
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/media/js/calendar.js
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/media/js/core.js
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/media/js/dateparse.js
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/media/js/getElementsBySelector.js
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/media/js/timeparse.js
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/media/js/urlify.js
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/media/js/admin/CollapsedFieldsets.js
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/media/js/admin/DateTimeShortcuts.js
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/media/js/admin/RelatedObjectLookups.js
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/media/js/admin/ordering.js
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/auth/__init__.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/auth/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/auth/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/auth/handlers/__init__.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/auth/handlers/modpython.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/auth/handlers/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/auth/handlers/modpython.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/auth/handlers/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/auth/handlers/modpython.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/comments/__init__.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/comments/feeds.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/comments/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/comments/feeds.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/comments/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/comments/feeds.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/comments/models/__init__.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/comments/models/comments.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/comments/models/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/comments/models/comments.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/comments/models/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/comments/models/comments.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/comments/templatetags/__init__.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/comments/templatetags/comments.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/comments/templatetags/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/comments/templatetags/comments.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/comments/templatetags/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/comments/templatetags/comments.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/comments/urls/__init__.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/comments/urls/comments.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/comments/urls/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/comments/urls/comments.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/comments/urls/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/comments/urls/comments.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/comments/views/__init__.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/comments/views/comments.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/comments/views/karma.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/comments/views/userflags.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/comments/views/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/comments/views/comments.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/comments/views/karma.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/comments/views/userflags.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/comments/views/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/comments/views/comments.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/comments/views/karma.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/comments/views/userflags.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/flatpages/__init__.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/flatpages/middleware.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/flatpages/urls.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/flatpages/views.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/flatpages/README.TXT
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/flatpages/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/flatpages/middleware.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/flatpages/urls.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/flatpages/views.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/flatpages/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/flatpages/middleware.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/flatpages/urls.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/flatpages/views.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/flatpages/models/__init__.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/flatpages/models/flatpages.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/flatpages/models/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/flatpages/models/flatpages.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/flatpages/models/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/flatpages/models/flatpages.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/markup/__init__.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/markup/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/markup/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/markup/templatetags/__init__.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/markup/templatetags/markup.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/markup/templatetags/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/markup/templatetags/markup.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/markup/templatetags/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/markup/templatetags/markup.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/redirects/__init__.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/redirects/middleware.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/redirects/README.TXT
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/redirects/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/redirects/middleware.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/redirects/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/redirects/middleware.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/redirects/models/__init__.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/redirects/models/redirects.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/redirects/models/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/redirects/models/redirects.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/redirects/models/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/redirects/models/redirects.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/syndication/__init__.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/syndication/feeds.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/syndication/views.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/syndication/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/syndication/feeds.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/syndication/views.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/syndication/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/syndication/feeds.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/syndication/views.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/__init__.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/cache.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/context_processors.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/exceptions.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/extensions.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/formfields.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/handler.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/mail.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/management.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/paginator.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/paginatorNEW.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/template_loader.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/urlresolvers.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/validators.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/xheaders.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/cache.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/context_processors.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/exceptions.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/extensions.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/db/__init__.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/db/base.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/db/dicthelpers.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/db/typecasts.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/db/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/db/base.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/db/dicthelpers.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/db/typecasts.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/db/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/db/base.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/db/dicthelpers.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/db/typecasts.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/db/backends/__init__.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/db/backends/ado_mssql.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/db/backends/mysql.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/db/backends/postgresql.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/db/backends/sqlite3.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/db/backends/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/db/backends/ado_mssql.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/db/backends/mysql.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/db/backends/postgresql.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/db/backends/sqlite3.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/db/backends/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/db/backends/ado_mssql.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/db/backends/mysql.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/db/backends/postgresql.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/db/backends/sqlite3.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/formfields.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/handler.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/mail.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/management.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/paginator.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/paginatorNEW.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/template_loader.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/urlresolvers.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/validators.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/xheaders.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/cache.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/context_processors.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/exceptions.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/extensions.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/formfields.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/handler.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/mail.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/management.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/paginator.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/paginatorNEW.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/template_loader.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/urlresolvers.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/validators.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/xheaders.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/handlers/__init__.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/handlers/base.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/handlers/modpython.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/handlers/profiler-hotshot.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/handlers/wsgi.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/handlers/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/handlers/base.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/handlers/modpython.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/handlers/profiler-hotshot.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/handlers/wsgi.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/handlers/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/handlers/base.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/handlers/modpython.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/handlers/profiler-hotshot.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/handlers/wsgi.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/meta/__init__.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/meta/fields.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/meta/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/meta/fields.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/meta/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/meta/fields.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/servers/__init__.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/servers/basehttp.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/servers/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/servers/basehttp.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/servers/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/servers/basehttp.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/template/__init__.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/template/defaultfilters.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/template/defaulttags.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/template/loader.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/template/loader_tags.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/template/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/template/defaultfilters.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/template/defaulttags.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/template/loader.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/template/loader_tags.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/template/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/template/defaultfilters.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/template/defaulttags.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/template/loader.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/template/loader_tags.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/template/loaders/__init__.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/template/loaders/app_directories.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/template/loaders/eggs.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/template/loaders/filesystem.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/template/loaders/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/template/loaders/app_directories.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/template/loaders/eggs.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/template/loaders/filesystem.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/template/loaders/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/template/loaders/app_directories.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/template/loaders/eggs.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/template/loaders/filesystem.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/middleware/__init__.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/middleware/cache.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/middleware/common.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/middleware/doc.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/middleware/gzip.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/middleware/http.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/middleware/locale.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/middleware/sessions.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/middleware/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/middleware/cache.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/middleware/common.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/middleware/doc.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/middleware/gzip.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/middleware/http.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/middleware/locale.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/middleware/sessions.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/middleware/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/middleware/cache.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/middleware/common.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/middleware/doc.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/middleware/gzip.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/middleware/http.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/middleware/locale.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/middleware/sessions.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/models/__init__.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/models/auth.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/models/core.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/models/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/models/auth.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/models/core.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/models/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/models/auth.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/models/core.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/parts/__init__.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/parts/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/parts/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/parts/auth/__init__.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/parts/auth/anonymoususers.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/parts/auth/formfields.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/parts/auth/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/parts/auth/anonymoususers.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/parts/auth/formfields.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/parts/auth/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/parts/auth/anonymoususers.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/parts/auth/formfields.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/parts/media/__init__.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/parts/media/photos.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/parts/media/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/parts/media/photos.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/parts/media/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/parts/media/photos.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/templatetags/__init__.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/templatetags/i18n.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/templatetags/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/templatetags/i18n.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/templatetags/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/templatetags/i18n.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/utils/__init__.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/utils/autoreload.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/utils/cache.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/utils/datastructures.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/utils/dateformat.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/utils/dates.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/utils/decorators.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/utils/feedgenerator.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/utils/functional.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/utils/html.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/utils/httpwrappers.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/utils/images.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/utils/stopwords.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/utils/synch.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/utils/text.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/utils/timesince.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/utils/translation.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/utils/tzinfo.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/utils/xmlutils.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/utils/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/utils/autoreload.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/utils/cache.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/utils/datastructures.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/utils/dateformat.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/utils/dates.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/utils/decorators.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/utils/feedgenerator.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/utils/functional.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/utils/html.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/utils/httpwrappers.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/utils/images.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/utils/stopwords.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/utils/synch.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/utils/text.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/utils/timesince.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/utils/translation.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/utils/tzinfo.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/utils/xmlutils.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/utils/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/utils/autoreload.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/utils/cache.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/utils/datastructures.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/utils/dateformat.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/utils/dates.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/utils/decorators.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/utils/feedgenerator.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/utils/functional.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/utils/html.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/utils/httpwrappers.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/utils/images.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/utils/stopwords.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/utils/synch.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/utils/text.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/utils/timesince.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/utils/translation.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/utils/tzinfo.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/utils/xmlutils.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/views/__init__.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/views/debug.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/views/defaults.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/views/i18n.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/views/static.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/views/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/views/debug.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/views/defaults.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/views/i18n.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/views/static.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/views/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/views/debug.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/views/defaults.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/views/i18n.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/views/static.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/views/auth/__init__.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/views/auth/login.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/views/auth/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/views/auth/login.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/views/auth/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/views/auth/login.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/views/decorators/__init__.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/views/decorators/auth.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/views/decorators/cache.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/views/decorators/gzip.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/views/decorators/http.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/views/decorators/vary.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/views/decorators/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/views/decorators/auth.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/views/decorators/cache.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/views/decorators/gzip.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/views/decorators/http.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/views/decorators/vary.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/views/decorators/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/views/decorators/auth.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/views/decorators/cache.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/views/decorators/gzip.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/views/decorators/http.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/views/decorators/vary.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/views/generic/__init__.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/views/generic/create_update.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/views/generic/date_based.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/views/generic/list_detail.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/views/generic/simple.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/views/generic/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/views/generic/create_update.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/views/generic/date_based.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/views/generic/list_detail.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/views/generic/simple.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/views/generic/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/views/generic/create_update.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/views/generic/date_based.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/views/generic/list_detail.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/views/generic/simple.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/views/registration/__init__.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/views/registration/passwords.py
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/views/registration/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/views/registration/passwords.pyc
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/views/registration/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/views/registration/passwords.pyo
+%%PORTDOCS%%%%DOCSDIR%%/add_ons.txt
 %%PORTDOCS%%%%DOCSDIR%%/admin_css.txt
+%%PORTDOCS%%%%DOCSDIR%%/apache_auth.txt
 %%PORTDOCS%%%%DOCSDIR%%/authentication.txt
 %%PORTDOCS%%%%DOCSDIR%%/cache.txt
+%%PORTDOCS%%%%DOCSDIR%%/contributing.txt
 %%PORTDOCS%%%%DOCSDIR%%/db-api.txt
 %%PORTDOCS%%%%DOCSDIR%%/design_philosophies.txt
 %%PORTDOCS%%%%DOCSDIR%%/django-admin.txt
+%%PORTDOCS%%%%DOCSDIR%%/email.txt
 %%PORTDOCS%%%%DOCSDIR%%/faq.txt
 %%PORTDOCS%%%%DOCSDIR%%/flatpages.txt
 %%PORTDOCS%%%%DOCSDIR%%/forms.txt
@@ -654,6 +728,7 @@ bin/django-admin.py
 %%PORTDOCS%%%%DOCSDIR%%/request_response.txt
 %%PORTDOCS%%%%DOCSDIR%%/sessions.txt
 %%PORTDOCS%%%%DOCSDIR%%/settings.txt
+%%PORTDOCS%%%%DOCSDIR%%/static_files.txt
 %%PORTDOCS%%%%DOCSDIR%%/syndication_feeds.txt
 %%PORTDOCS%%%%DOCSDIR%%/templates.txt
 %%PORTDOCS%%%%DOCSDIR%%/templates_python.txt
@@ -663,106 +738,111 @@ bin/django-admin.py
 %%PORTDOCS%%%%DOCSDIR%%/tutorial04.txt
 %%PORTDOCS%%%%DOCSDIR%%/url_dispatch.txt
 %%PORTDOCS%%%%DOCSDIR%%/writing-apps-guide-outline.txt
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/bin/profiling
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/bin
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/app_template/models
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/app_template
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/project_template/apps
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/project_template
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/urls
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/locale/bn/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/locale/bn
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/locale/cs/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/locale/cs
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/locale/cy/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/locale/cy
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/locale/da/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/locale/da
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/locale/de/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/locale/de
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/locale/en/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/locale/en
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/locale/es/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/locale/es
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/locale/fr/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/locale/fr
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/locale/gl/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/locale/gl
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/locale/is/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/locale/is
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/locale/it/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/locale/it
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/locale/no/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/locale/no
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/locale/pt_BR/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/locale/pt_BR
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/locale/ro/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/locale/ro
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/locale/ru/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/locale/ru
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/locale/sk/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/locale/sk
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/locale/sr/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/locale/sr
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/locale/sv/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/locale/sv
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/locale/zh_CN/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/locale/zh_CN
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf/locale
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/conf
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/models
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/templatetags
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/urls
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/views
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/templates/admin
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/templates/admin_doc
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/templates/registration
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/templates
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/media/css
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/media/img/admin
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/media/img
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/media/js/admin
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/media/js
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin/media
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/admin
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/comments/models
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/comments/templatetags
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/comments/urls
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/comments/views
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/comments
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/flatpages/models
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/flatpages
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/markup/templatetags
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/markup
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/redirects/models
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/redirects
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib/syndication
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/contrib
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/db/backends
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/db
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/handlers
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/meta
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/servers
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/template/loaders
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core/template
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/core
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/middleware
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/models
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/parts/admin
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/parts/auth
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/parts/media
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/parts
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/templatetags
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/utils
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/views/auth
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/views/core
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/views/decorators
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/views/generic
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/views/registration
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/views/rss
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/views
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/EGG-INFO/scripts
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/EGG-INFO
-@dirrm %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/EGG-INFO/scripts
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/bin/profiling
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/bin
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/app_template/models
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/app_template
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/project_template
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/urls
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/bn/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/bn
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/cs/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/cs
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/cy/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/cy
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/da/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/da
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/de/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/de
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/en/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/en
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/es/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/es
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/fr/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/fr
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/gl/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/gl
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/is/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/is
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/it/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/it
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/ja/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/ja
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/nl/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/nl
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/no/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/no
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/pt_BR/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/pt_BR
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/ro/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/ro
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/ru/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/ru
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/sk/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/sk
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/sr/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/sr
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/sv/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/sv
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/zh_CN/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/zh_CN
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/zh_TW/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale/zh_TW
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf/locale
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/conf
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/models
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/templatetags
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/urls
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/views
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/templates/admin
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/templates/admin_doc
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/templates/registration
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/templates/widget
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/templates
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/media/css
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/media/img/admin
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/media/img
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/media/js/admin
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/media/js
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin/media
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/admin
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/auth/handlers
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/auth
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/comments/models
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/comments/templatetags
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/comments/urls
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/comments/views
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/comments
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/flatpages/models
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/flatpages
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/markup/templatetags
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/markup
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/redirects/models
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/redirects
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib/syndication
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/contrib
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/db/backends
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/db
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/handlers
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/meta
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/servers
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/template/loaders
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core/template
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/core
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/middleware
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/models
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/parts/auth
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/parts/media
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/parts
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/templatetags
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/utils
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/views/auth
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/views/decorators
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/views/generic
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/views/registration
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django/views
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg/django
+@dirrm %%PYTHON_SITELIBDIR%%/Django-%%DJANGOVER%%-py2.4.egg
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
