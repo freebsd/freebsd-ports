@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	web2ldap
-PORTVERSION=	0.16.7
+PORTVERSION=	0.16.10
 CATEGORIES=	www
 MASTER_SITES=	http://www.web2ldap.de/download/ \
 		ftp://ftp.ipt.ru/pub/download/
@@ -19,7 +19,6 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_ldap.so:${PORTSDIR}/net/py-ldap2 \
 		${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
 
 USE_PYTHON=	yes
-USE_REINPLACE=	yes
 
 SUB_FILES=	pkg-message
 
