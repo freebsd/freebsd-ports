@@ -19,7 +19,7 @@ DISTNAME=	rarbsd-3.5.1
 MAINTAINER=	gkovesdan@t-hosting.hu
 COMMENT=	File archiver (binary port)
 
-ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS=	i386 amd64 ia64
 NO_PACKAGE=	Only unmodified original package can be distributed
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/rar
