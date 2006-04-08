@@ -95,3 +95,4 @@ etc/wapsh/loginhosts.dist
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/user_guide
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%
+@dirrmtry www/data
