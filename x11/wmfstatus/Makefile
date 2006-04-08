@@ -17,7 +17,6 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 
-NO_MAN=
 PLIST_FILES=	bin/wmfstatus
 
 .include <bsd.port.mk>
