@@ -5,5 +5,5 @@ Local/Library/Headers/SlideShow/SlideShow.h
 Local/Library/Headers/SlideShow/SlideShowWindow.h
 @dirrm Local/Library/Libraries
 @dirrm Local/Library/Headers/SlideShow
-@dirrm Local/Library/Headers
-@dirrm Local/Library
+@dirrmtry Local/Library/Headers
+@dirrmtry Local/Library

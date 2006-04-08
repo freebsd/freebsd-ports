@@ -20,4 +20,4 @@ Local/Applications/SlideShow.app/stamp.make
 @dirrm Local/Applications/SlideShow.app/Resources/English.lproj
 @dirrm Local/Applications/SlideShow.app/Resources
 @dirrm Local/Applications/SlideShow.app
-@dirrm Local/Applications
+@dirrmtry Local/Applications

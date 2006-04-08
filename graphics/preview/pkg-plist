@@ -34,11 +34,8 @@ Local/Applications/Preview.app/Resources/hand.tiff
 Local/Applications/Preview.app/Resources/last_page.tiff
 Local/Applications/Preview.app/library_paths.openapp
 Local/Applications/Preview.app/stamp.make
-@dirrm Local/Applications/Preview.app/Resources/French.lproj/Preview.help
-@dirrm Local/Applications/Preview.app/Resources/French.lproj/Preview.gorm
 @dirrm Local/Applications/Preview.app/Resources/French.lproj/Main.gorm
 @dirrm Local/Applications/Preview.app/Resources/French.lproj
-@dirrm Local/Applications/Preview.app/Resources/English.lproj/Preview.help
 @dirrm Local/Applications/Preview.app/Resources/English.lproj/Preview.gorm
 @dirrm Local/Applications/Preview.app/Resources/English.lproj/Main.gorm
 @dirrm Local/Applications/Preview.app/Resources/English.lproj
@@ -47,4 +44,4 @@ Local/Applications/Preview.app/stamp.make
 @dirrm Local/Applications/Preview.app/Resources/Bulgarian.lproj
 @dirrm Local/Applications/Preview.app/Resources
 @dirrm Local/Applications/Preview.app
-@dirrm Local/Applications
+@dirrmtry Local/Applications
