@@ -23,61 +23,10 @@ lib/libgnokii.la
 lib/libgnokii.so
 lib/libgnokii.so.2
 libdata/pkgconfig/gnokii.pc
+libdata/pkgconfig/xgnokii.pc
 sbin/gnokiid
 sbin/mgnokiidev
 %%SMSD%%sbin/smsd
-%%PORTDOCS%%%%DOCSDIR%%/Bugs
-%%PORTDOCS%%%%DOCSDIR%%/CREDITS
-%%PORTDOCS%%%%DOCSDIR%%/DataCalls-QuickStart
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/README-2110
-%%PORTDOCS%%%%DOCSDIR%%/README-3810
-%%PORTDOCS%%%%DOCSDIR%%/README-6110
-%%PORTDOCS%%%%DOCSDIR%%/README-6510
-%%PORTDOCS%%%%DOCSDIR%%/README-7110
-%%PORTDOCS%%%%DOCSDIR%%/README-MacOSX
-%%PORTDOCS%%%%DOCSDIR%%/README-Symbian
-%%PORTDOCS%%%%DOCSDIR%%/README-WIN32
-%%PORTDOCS%%%%DOCSDIR%%/README-dancall
-%%PORTDOCS%%%%DOCSDIR%%/README-ericsson
-%%PORTDOCS%%%%DOCSDIR%%/README-siemens
-%%PORTDOCS%%%%DOCSDIR%%/README.libsms
-%%PORTDOCS%%%%DOCSDIR%%/gettext-howto
-%%PORTDOCS%%%%DOCSDIR%%/gnapplet.sis
-%%PORTDOCS%%%%DOCSDIR%%/gnokii-IrDA-Linux
-%%PORTDOCS%%%%DOCSDIR%%/gnokii-hackers-howto
-%%PORTDOCS%%%%DOCSDIR%%/gnokii-ir-howto
-%%PORTDOCS%%%%DOCSDIR%%/gnokii.nol
-%%PORTDOCS%%%%DOCSDIR%%/logos.txt
-%%PORTDOCS%%%%DOCSDIR%%/packaging-howto
-%%PORTDOCS%%%%DOCSDIR%%/ringtones.txt
-%%PORTDOCS%%%%DOCSDIR%%/sample/gnokiirc
-%%PORTDOCS%%%%DOCSDIR%%/sample/logo/bronto.xpm
-%%PORTDOCS%%%%DOCSDIR%%/sample/logo/gnokii.xpm
-%%PORTDOCS%%%%DOCSDIR%%/sample/logo/gnokiiop.xpm
-%%PORTDOCS%%%%DOCSDIR%%/sample/logo/horse.xpm
-%%PORTDOCS%%%%DOCSDIR%%/sample/logo/horse2.xpm
-%%PORTDOCS%%%%DOCSDIR%%/sample/logo/pacman.xpm
-%%PORTDOCS%%%%DOCSDIR%%/sample/magic
-%%PORTDOCS%%%%DOCSDIR%%/sample/ppp/cimd-connect
-%%PORTDOCS%%%%DOCSDIR%%/sample/ppp/options
-%%PORTDOCS%%%%DOCSDIR%%/sample/ppp/pap-secrets
-%%PORTDOCS%%%%DOCSDIR%%/sample/ppp/ppp-6210-modem
-%%PORTDOCS%%%%DOCSDIR%%/sample/ppp/ppp-FILES
-%%PORTDOCS%%%%DOCSDIR%%/sample/ppp/ppp-gnokii
-%%PORTDOCS%%%%DOCSDIR%%/sample/ppp/ppp-hscsd
-%%PORTDOCS%%%%DOCSDIR%%/sample/ppp/ppp-on
-%%PORTDOCS%%%%DOCSDIR%%/sample/ringtone/star.imelody
-%%PORTDOCS%%%%DOCSDIR%%/sample/ringtone/star.rtttl
-%%PORTDOCS%%%%DOCSDIR%%/sample/vCalendar/test.vcs
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/sample/logo
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/sample/ringtone
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/sample/vCalendar
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/sample/vCard
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/sample/ppp
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/sample
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTDOCS%%@exec mkdir -m 755 %D/%%DOCSDIR%%/sample/vCard
 %%NLS%%share/locale/cs/LC_MESSAGES/gnokii.mo
 %%NLS%%share/locale/de/LC_MESSAGES/gnokii.mo
 %%NLS%%share/locale/et/LC_MESSAGES/gnokii.mo
@@ -88,6 +37,7 @@ sbin/mgnokiidev
 %%NLS%%share/locale/pl/LC_MESSAGES/gnokii.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/gnokii.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/gnokii.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/gnokii.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/gnokii.mo
 %%SMSD%%share/smsd/README
 %%SMSD%%share/smsd/action
@@ -169,17 +119,6 @@ sbin/mgnokiidev
 %%X11%%share/xgnokii/help/pl_PL/sms.html
 %%X11%%share/xgnokii/help/pl_PL/speeddial.html
 %%X11%%share/xgnokii/help/pl_PL/xkeyb.html
-%%X11%%share/xgnokii/xpm/5110.xpm
-%%X11%%share/xgnokii/xpm/6110.xpm
-%%X11%%share/xgnokii/xpm/6150.xpm
-%%X11%%share/xgnokii/xpm/Preview_3210.xpm
-%%X11%%share/xgnokii/xpm/Preview_3310.xpm
-%%X11%%share/xgnokii/xpm/Preview_5110.xpm
-%%X11%%share/xgnokii/xpm/Preview_6110.xpm
-%%X11%%share/xgnokii/xpm/Preview_6150.xpm
-%%X11%%share/xgnokii/xpm/Preview_6210.xpm
-%%X11%%share/xgnokii/xpm/Preview_6250.xpm
-%%X11%%share/xgnokii/xpm/Preview_7110.xpm
 %%X11%%@exec mkdir -p %D/share/xgnokii/help/en_US/calendar
 %%X11%%@exec mkdir -p %D/share/xgnokii/help/en_US/contacts
 %%X11%%@exec mkdir -p %D/share/xgnokii/help/en_US/dtmf
@@ -218,5 +157,4 @@ sbin/mgnokiidev
 %%X11%%@dirrm share/xgnokii/help/pl_PL/netmon
 %%X11%%@dirrm share/xgnokii/help/pl_PL
 %%X11%%@dirrm share/xgnokii/help
-%%X11%%@dirrm share/xgnokii/xpm
 %%X11%%@dirrm share/xgnokii
