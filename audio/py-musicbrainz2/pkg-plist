@@ -1,0 +1,24 @@
+%%PYTHON_SITELIBDIR%%/musicbrainz2/__init__.py
+%%PYTHON_SITELIBDIR%%/musicbrainz2/disc.py
+%%PYTHON_SITELIBDIR%%/musicbrainz2/model.py
+%%PYTHON_SITELIBDIR%%/musicbrainz2/utils.py
+%%PYTHON_SITELIBDIR%%/musicbrainz2/webservice.py
+%%PYTHON_SITELIBDIR%%/musicbrainz2/wsxml.py
+%%PYTHON_SITELIBDIR%%/musicbrainz2/data/country_names.csv
+%%PYTHON_SITELIBDIR%%/musicbrainz2/data/language_names.csv
+%%PYTHON_SITELIBDIR%%/musicbrainz2/data/release_type_names.csv
+%%PYTHON_SITELIBDIR%%/musicbrainz2/data/script_names.csv
+%%PYTHON_SITELIBDIR%%/musicbrainz2/__init__.pyc
+%%PYTHON_SITELIBDIR%%/musicbrainz2/disc.pyc
+%%PYTHON_SITELIBDIR%%/musicbrainz2/model.pyc
+%%PYTHON_SITELIBDIR%%/musicbrainz2/utils.pyc
+%%PYTHON_SITELIBDIR%%/musicbrainz2/webservice.pyc
+%%PYTHON_SITELIBDIR%%/musicbrainz2/wsxml.pyc
+%%PYTHON_SITELIBDIR%%/musicbrainz2/__init__.pyo
+%%PYTHON_SITELIBDIR%%/musicbrainz2/disc.pyo
+%%PYTHON_SITELIBDIR%%/musicbrainz2/model.pyo
+%%PYTHON_SITELIBDIR%%/musicbrainz2/utils.pyo
+%%PYTHON_SITELIBDIR%%/musicbrainz2/webservice.pyo
+%%PYTHON_SITELIBDIR%%/musicbrainz2/wsxml.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/musicbrainz2/data
+@dirrm %%PYTHON_SITELIBDIR%%/musicbrainz2
