@@ -1,0 +1,241 @@
+bin/phing
+bin/phing.php
+lib/php/phing/BuildEvent.php
+lib/php/phing/BuildException.php
+lib/php/phing/BuildListener.php
+lib/php/phing/IntrospectionHelper.php
+lib/php/phing/Phing.php
+lib/php/phing/Project.php
+lib/php/phing/ProjectComponent.php
+lib/php/phing/RuntimeConfigurable.php
+lib/php/phing/Target.php
+lib/php/phing/Task.php
+lib/php/phing/TaskAdapter.php
+lib/php/phing/TaskContainer.php
+lib/php/phing/UnknownElement.php
+lib/php/phing/VERSION.TXT
+lib/php/phing/filters/BaseFilterReader.php
+lib/php/phing/filters/BaseParamFilterReader.php
+lib/php/phing/filters/ChainableReader.php
+lib/php/phing/filters/ExpandProperties.php
+lib/php/phing/filters/HeadFilter.php
+lib/php/phing/filters/LineContains.php
+lib/php/phing/filters/LineContainsRegexp.php
+lib/php/phing/filters/PrefixLines.php
+lib/php/phing/filters/ReplaceRegexp.php
+lib/php/phing/filters/ReplaceTokens.php
+lib/php/phing/filters/StripLineBreaks.php
+lib/php/phing/filters/StripLineComments.php
+lib/php/phing/filters/StripPhpComments.php
+lib/php/phing/filters/TabToSpaces.php
+lib/php/phing/filters/TailFilter.php
+lib/php/phing/filters/TranslateGettext.php
+lib/php/phing/filters/XsltFilter.php
+lib/php/phing/filters/util/ChainReaderHelper.php
+lib/php/phing/filters/util/IniFileTokenReader.php
+lib/php/phing/input/DefaultInputHandler.php
+lib/php/phing/input/InputHandler.php
+lib/php/phing/input/InputRequest.php
+lib/php/phing/input/MultipleChoiceInputRequest.php
+lib/php/phing/input/PropertyFileInputHandler.php
+lib/php/phing/input/YesNoInputRequest.php
+lib/php/phing/lib/Capsule.php
+lib/php/phing/lib/Zip.php
+lib/php/phing/listener/AnsiColorLogger.php
+lib/php/phing/listener/BuildLogger.php
+lib/php/phing/listener/DefaultLogger.php
+lib/php/phing/listener/NoBannerLogger.php
+lib/php/phing/listener/PearLogger.php
+lib/php/phing/listener/XmlLogger.php
+lib/php/phing/listener/defaults.properties
+lib/php/phing/mappers/FileNameMapper.php
+lib/php/phing/mappers/FlattenMapper.php
+lib/php/phing/mappers/GlobMapper.php
+lib/php/phing/mappers/IdentityMapper.php
+lib/php/phing/mappers/MergeMapper.php
+lib/php/phing/mappers/RegexpMapper.php
+lib/php/phing/parser/AbstractHandler.php
+lib/php/phing/parser/AbstractSAXParser.php
+lib/php/phing/parser/DataTypeHandler.php
+lib/php/phing/parser/ExpatParseException.php
+lib/php/phing/parser/ExpatParser.php
+lib/php/phing/parser/Location.php
+lib/php/phing/parser/NestedElementHandler.php
+lib/php/phing/parser/ProjectConfigurator.php
+lib/php/phing/parser/ProjectHandler.php
+lib/php/phing/parser/RootHandler.php
+lib/php/phing/parser/TargetHandler.php
+lib/php/phing/parser/TaskHandler.php
+lib/php/phing/system/io/BufferedReader.php
+lib/php/phing/system/io/BufferedWriter.php
+lib/php/phing/system/io/ConsoleReader.php
+lib/php/phing/system/io/FileReader.php
+lib/php/phing/system/io/FileSystem.php
+lib/php/phing/system/io/FileWriter.php
+lib/php/phing/system/io/FilterReader.php
+lib/php/phing/system/io/IOException.php
+lib/php/phing/system/io/PhingFile.php
+lib/php/phing/system/io/Reader.php
+lib/php/phing/system/io/StringReader.php
+lib/php/phing/system/io/TokenReader.php
+lib/php/phing/system/io/UnixFileSystem.php
+lib/php/phing/system/io/Win32FileSystem.php
+lib/php/phing/system/io/WinNTFileSystem.php
+lib/php/phing/system/io/Writer.php
+lib/php/phing/system/lang/Character.php
+lib/php/phing/system/lang/EventObject.php
+lib/php/phing/system/lang/FileNotFoundException.php
+lib/php/phing/system/lang/NullPointerException.php
+lib/php/phing/system/lang/SecurityException.php
+lib/php/phing/system/util/Message.php
+lib/php/phing/system/util/Properties.php
+lib/php/phing/system/util/Register.php
+lib/php/phing/system/util/Timer.php
+lib/php/phing/tasks/defaults.properties
+lib/php/phing/tasks/ext/CapsuleTask.php
+lib/php/phing/tasks/ext/CreoleSQLExecTask.php
+lib/php/phing/tasks/ext/CreoleTask.php
+lib/php/phing/tasks/ext/MailTask.php
+lib/php/phing/tasks/ext/PackageAsPathTask.php
+lib/php/phing/tasks/ext/PearPackageTask.php
+lib/php/phing/tasks/ext/SmartyTask.php
+lib/php/phing/tasks/ext/TarTask.php
+lib/php/phing/tasks/ext/ZipTask.php
+lib/php/phing/tasks/ext/coverage/CoverageFormatter.php
+lib/php/phing/tasks/ext/coverage/CoverageReportTask.php
+lib/php/phing/tasks/ext/coverage/CoverageReportTransformer.php
+lib/php/phing/tasks/ext/coverage/CoverageSetupTask.php
+lib/php/phing/tasks/ext/pearpackage/Fileset.php
+lib/php/phing/tasks/ext/phpdoc/PHPDocumentorTask.php
+lib/php/phing/tasks/ext/phpunit2/BatchTest.php
+lib/php/phing/tasks/ext/phpunit2/FormatterElement.php
+lib/php/phing/tasks/ext/phpunit2/PHPUnit2ReportTask.php
+lib/php/phing/tasks/ext/phpunit2/PHPUnit2ResultFormatter.php
+lib/php/phing/tasks/ext/phpunit2/PHPUnit2Task.php
+lib/php/phing/tasks/ext/phpunit2/PHPUnit2TestRunner.php
+lib/php/phing/tasks/ext/phpunit2/PHPUnit2Util.php
+lib/php/phing/tasks/ext/phpunit2/PlainPHPUnit2ResultFormatter.php
+lib/php/phing/tasks/ext/phpunit2/SummaryPHPUnit2ResultFormatter.php
+lib/php/phing/tasks/ext/phpunit2/XMLPHPUnit2ResultFormatter.php
+lib/php/phing/tasks/ext/svn/SvnLastRevisionTask.php
+lib/php/phing/tasks/system/AdhocTask.php
+lib/php/phing/tasks/system/AdhocTaskdefTask.php
+lib/php/phing/tasks/system/AdhocTypedefTask.php
+lib/php/phing/tasks/system/AppendTask.php
+lib/php/phing/tasks/system/AvailableTask.php
+lib/php/phing/tasks/system/ChmodTask.php
+lib/php/phing/tasks/system/ConditionTask.php
+lib/php/phing/tasks/system/CopyTask.php
+lib/php/phing/tasks/system/CvsPassTask.php
+lib/php/phing/tasks/system/CvsTask.php
+lib/php/phing/tasks/system/DeleteTask.php
+lib/php/phing/tasks/system/EchoTask.php
+lib/php/phing/tasks/system/ExecTask.php
+lib/php/phing/tasks/system/ExitTask.php
+lib/php/phing/tasks/system/ForeachTask.php
+lib/php/phing/tasks/system/IncludePathTask.php
+lib/php/phing/tasks/system/InputTask.php
+lib/php/phing/tasks/system/MatchingTask.php
+lib/php/phing/tasks/system/MkdirTask.php
+lib/php/phing/tasks/system/MoveTask.php
+lib/php/phing/tasks/system/PhingCallTask.php
+lib/php/phing/tasks/system/PhingTask.php
+lib/php/phing/tasks/system/PhpEvalTask.php
+lib/php/phing/tasks/system/PropertyPromptTask.php
+lib/php/phing/tasks/system/PropertyTask.php
+lib/php/phing/tasks/system/ReflexiveTask.php
+lib/php/phing/tasks/system/ResolvePathTask.php
+lib/php/phing/tasks/system/TaskdefTask.php
+lib/php/phing/tasks/system/TouchTask.php
+lib/php/phing/tasks/system/TypedefTask.php
+lib/php/phing/tasks/system/UpToDateTask.php
+lib/php/phing/tasks/system/XsltTask.php
+lib/php/phing/tasks/system/condition/AndCondition.php
+lib/php/phing/tasks/system/condition/Condition.php
+lib/php/phing/tasks/system/condition/ConditionBase.php
+lib/php/phing/tasks/system/condition/ContainsCondition.php
+lib/php/phing/tasks/system/condition/EqualsCondition.php
+lib/php/phing/tasks/system/condition/IsFalseCondition.php
+lib/php/phing/tasks/system/condition/IsSetCondition.php
+lib/php/phing/tasks/system/condition/IsTrueCondition.php
+lib/php/phing/tasks/system/condition/NotCondition.php
+lib/php/phing/tasks/system/condition/OrCondition.php
+lib/php/phing/tasks/system/condition/OsCondition.php
+lib/php/phing/types/AbstractFileSet.php
+lib/php/phing/types/Commandline.php
+lib/php/phing/types/DataType.php
+lib/php/phing/types/Description.php
+lib/php/phing/types/DirSet.php
+lib/php/phing/types/FileList.php
+lib/php/phing/types/FileSet.php
+lib/php/phing/types/FilterChain.php
+lib/php/phing/types/Mapper.php
+lib/php/phing/types/Parameter.php
+lib/php/phing/types/Parameterizable.php
+lib/php/phing/types/Path.php
+lib/php/phing/types/PatternSet.php
+lib/php/phing/types/PhingFilterReader.php
+lib/php/phing/types/Reference.php
+lib/php/phing/types/RegularExpression.php
+lib/php/phing/types/TokenReader.php
+lib/php/phing/types/TokenSource.php
+lib/php/phing/types/defaults.properties
+lib/php/phing/types/selectors/AndSelector.php
+lib/php/phing/types/selectors/BaseExtendSelector.php
+lib/php/phing/types/selectors/BaseSelector.php
+lib/php/phing/types/selectors/BaseSelectorContainer.php
+lib/php/phing/types/selectors/ContainsRegexpSelector.php
+lib/php/phing/types/selectors/ContainsSelector.php
+lib/php/phing/types/selectors/DateSelector.php
+lib/php/phing/types/selectors/DependSelector.php
+lib/php/phing/types/selectors/DepthSelector.php
+lib/php/phing/types/selectors/ExtendFileSelector.php
+lib/php/phing/types/selectors/ExtendSelector.php
+lib/php/phing/types/selectors/FileSelector.php
+lib/php/phing/types/selectors/FilenameSelector.php
+lib/php/phing/types/selectors/MajoritySelector.php
+lib/php/phing/types/selectors/NoneSelector.php
+lib/php/phing/types/selectors/NotSelector.php
+lib/php/phing/types/selectors/OrSelector.php
+lib/php/phing/types/selectors/PresentSelector.php
+lib/php/phing/types/selectors/SelectSelector.php
+lib/php/phing/types/selectors/SelectorContainer.php
+lib/php/phing/types/selectors/SelectorScanner.php
+lib/php/phing/types/selectors/SelectorUtils.php
+lib/php/phing/types/selectors/SizeSelector.php
+lib/php/phing/types/selectors/TypeSelector.php
+lib/php/phing/util/DirectoryScanner.php
+lib/php/phing/util/ExtendedFileStream.php
+lib/php/phing/util/FileUtils.php
+lib/php/phing/util/LogWriter.php
+lib/php/phing/util/PathTokenizer.php
+lib/php/phing/util/SourceFileScanner.php
+lib/php/phing/util/StringHelper.php
+lib/php/phing/util/regexp/PregEngine.php
+lib/php/phing/util/regexp/Regexp.php
+lib/php/phing/util/regexp/RegexpEngine.php
+@dirrm lib/php/phing/util/regexp
+@dirrm lib/php/phing/util
+@dirrm lib/php/phing/types/selectors
+@dirrm lib/php/phing/types
+@dirrm lib/php/phing/tasks/system/condition
+@dirrm lib/php/phing/tasks/system
+@dirrm lib/php/phing/tasks/ext/svn
+@dirrm lib/php/phing/tasks/ext/phpunit2
+@dirrm lib/php/phing/tasks/ext/phpdoc
+@dirrm lib/php/phing/tasks/ext/pearpackage
+@dirrm lib/php/phing/tasks/ext/coverage
+@dirrm lib/php/phing/tasks/ext
+@dirrm lib/php/phing/tasks
+@dirrm lib/php/phing/system/util
+@dirrm lib/php/phing/system/lang
+@dirrm lib/php/phing/system/io
+@dirrm lib/php/phing/system
+@dirrm lib/php/phing/parser
+@dirrm lib/php/phing/mappers
+@dirrm lib/php/phing/listener
+@dirrm lib/php/phing/lib
+@dirrm lib/php/phing/input
+@dirrm lib/php/phing/filters/util
+@dirrm lib/php/phing/filters
+@dirrm lib/php/phing

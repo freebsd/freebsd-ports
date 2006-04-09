@@ -1,0 +1,11 @@
+--- bin/phing.orig	Wed Nov  9 12:14:37 2005
++++ bin/phing	Wed Nov  9 12:15:21 2005
+@@ -67,7 +67,7 @@
+ fi
+ 
+ if (test -z "$PHP_CLASSPATH") ; then
+-	PHP_CLASSPATH=$PHING_HOME/classes
++	PHP_CLASSPATH=@@PHP_LIB@@:@@PEAR_LIB@@
+ 	export PHP_CLASSPATH
+ fi
+ 
