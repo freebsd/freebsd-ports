@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnokii
-PORTVERSION=	0.6.10
-PORTREVISION=	1
+PORTVERSION=	0.6.12
 PORTEPOCH=	1
 CATEGORIES=	comms
 MASTER_SITES=	http://www.gnokii.org/download/gnokii/ \
@@ -17,7 +16,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	mad@madpilot.net
 COMMENT=	Tools to talk to GSM cellular phones
 
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_BZIP2=	yes
 INSTALLS_SHLIB=	yes
@@ -29,8 +27,9 @@ CONFIGURE_ENV+=	MSGFMT="${LOCALBASE}/bin/msgfmt" \
 		CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include -fPIC" \
 		LIBS="-L../common -L${LOCALBASE}/lib"
 
-MAN1=	gnokii.1 todologo.1 ppm2nokia.1 sendsms.1
-MAN8=	gnokiid.8 mgnokiidev.8
+MAN1=		gnokii.1 todologo.1 ppm2nokia.1 sendsms.1
+MAN8=		gnokiid.8 mgnokiidev.8
+PORTDOCS=	*
 
 INSTALL_TARGET=	install-suid
 PKGDEINSTALL=	${PKGINSTALL}
@@ -42,6 +41,10 @@ FIXPREFIX=	Docs/man/gnokiid.8 Docs/DataCalls-QuickStart Docs/README \
 WANT_GNOME=	yes
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		Does not compile on FreeBSD 4.x
+.endif
 
 .if exists(${LOCALBASE}/lib/libical.so.0)
 WITH_ICAL=	yes
@@ -134,10 +137,7 @@ post-patch:
 	@${REINPLACE_CMD} -E -e "s:^(#ifdef.*)__OpenBSD__:\1__FreeBSD__:" \
 		${WRKSRC}/${f}
 .endfor
-.if ${OSVERSION} <= 500027
-	@${FIND} ${WRKSRC} -type f -name "*.[ch]" | ${XARGS} ${REINPLACE_CMD} \
-		-e 's|<stdint.h>|<inttypes.h>|'
-.endif
+	@${REINPLACE_CMD} -e '/pkgconfig/d' ${WRKSRC}/xgnokii/Makefile
 .if defined(SMSD_WITH_GLIB1)
 	@cd ${WRKSRC} && ${PATCH} -s <${PATCHDIR}/smsd-Makefile-WITH_GLIB.diff
 .endif
@@ -158,6 +158,7 @@ pre-install:
 	@${SETENV} "PKG_PREFIX=${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
+	${INSTALL_DATA} ${WRKSRC}/xgnokii/xgnokii.pc ${PREFIX}/libdata/pkgconfig
 	@${SETENV} "PKG_PREFIX=${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .if !defined(NOPORTDOCS)
 	@(cd ${WRKSRC} && ${GMAKE} install-docs)
