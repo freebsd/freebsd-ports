@@ -5,19 +5,21 @@
 # $FreeBSD$
 
 PORTNAME=	mcstas
-PORTVERSION=	1.8
+PORTVERSION=	1.9
 CATEGORIES=	science
-MASTER_SITES=	http://mcstas.risoe.dk/download/
+MASTER_SITES=	http://www.mcstas.org/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	Joerg.Pulz@frm2.tum.de
 COMMENT=	A neutron ray-trace simulation package
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/PGPLOT.pm:${PORTSDIR}/graphics/pgperl \
+BUILD_DEPENDS=	pgxwin_server:${PORTSDIR}/graphics/pgplot
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/PDL.pm:${PORTSDIR}/math/PDL \
 		${SITE_PERL}/${PERL_ARCH}/Tk.pm:${PORTSDIR}/x11-toolkits/p5-Tk
 
 STRIP=
 USE_GZIP=	yes
+USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 NO_MTREE=	yes
