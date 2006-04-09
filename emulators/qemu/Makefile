@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	qemu
-PORTVERSION=	0.8.0
-PORTREVISION=	5
+PORTVERSION=	0.8.0s.20060408
+PORTREVISION=	0
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.qemu.org/:release \
 		http://people.fruitsalad.org/nox/qemu/:snapshot \
@@ -15,10 +15,8 @@ MASTER_SITES=	http://www.qemu.org/:release \
 		http://qemu.dad-answers.com/download/qemu/:snapshot \
 		http://people.brandeis.edu/~jcoiner/qemu_idedma/:idedma \
 		http://people.freebsd.org/~maho/qemu/:misc
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:release
-.if defined (WITH_HACKS_IDEDMA) || defined (WITH_HACKS)
-DISTFILES+=	qemu_dma_patch.tar.gz:idedma
-.endif
+DISTNAME=	${PORTNAME}-snapshot-2006-04-08_23
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:snapshot
 .if defined (WITH_HACKS_CIRRUS) || defined (WITH_HACKS)
 DISTFILES+=	patch3_cirrus:misc
 .endif
@@ -33,10 +31,11 @@ BUILD_DEPENDS+=	texi2html:${PORTSDIR}/textproc/texi2html
 RUN_DEPENDS+=	${LOCALBASE}/sbin/smbd:${PORTSDIR}/net/samba
 .endif
 .if defined(WITH_KQEMU)
-BUILD_DEPENDS+=	${LOCALBASE}/include/kqemu/kqemu.h:${PORTSDIR}/emulators/kqemu-kmod
+BUILD_DEPENDS+=	kqemu-kmod>=1.3.0pre5:${PORTSDIR}/emulators/kqemu-kmod
 .endif
 
 HAS_CONFIGURE=	yes
+USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GETOPT_LONG=	yes
 USE_SDL=	sdl
@@ -64,11 +63,9 @@ pre-everything::
 	@${ECHO_MSG} "Notice: you can build qemu with the (alpha!) kqemu accelerator kernel module"
 	@${ECHO_MSG} "by defining WITH_KQEMU."
 .endif
-.if !defined(WITH_HACKS_IDEDMA) && !defined(WITH_HACKS_CIRRUS) && !defined(WITH_HACKS)
+.if !defined(WITH_HACKS_CIRRUS) && !defined(WITH_HACKS)
 	@${ECHO_MSG} "You can build qemu with some hacks (esp. for speedup)"
 	@${ECHO_MSG} "by defining WITH_HACKS, or specifically:"
-	@${ECHO_MSG} "1. WITH_HACKS_IDEDMA: IDE Bus-master DMA Support by John Coiner"
-	@${ECHO_MSG} "http://people.brandeis.edu/~jcoiner/qemu_idedma/qemu_dma_patch.html"
 	@${ECHO_MSG} "2. WITH_HACKS_CIRRUS: higher speed on large display (cirrus_vga)"
 	@${ECHO_MSG} "by Juergen Pfennig"
 	@${ECHO_MSG} "http://lists.gnu.org/archive/html/qemu-devel/2006-01/msg00208.html"
@@ -92,9 +89,6 @@ pre-patch:
 	done
 
 post-patch:
-.if defined(WITH_HACKS_IDEDMA) || defined (WITH_HACKS)
-	@cd ${WRKDIR} ; ${TAR} xfz ${DISTDIR}/${DIST_SUBDIR}/qemu_dma_patch.tar.gz ; ${CP} new_qemu_dma_patch/bios.bin ${WRKSRC}/pc-bios; cd ${WRKSRC}; ${PATCH} --quiet -p1 < ../new_qemu_dma_patch/qemu-piix4-udma.patch
-.endif
 .if defined(WITH_HACKS_CIRRUS) || defined (WITH_HACKS)
 	@cd ${WRKSRC} ; ${PATCH} --quiet < ${DISTDIR}/${DIST_SUBDIR}/patch3_cirrus
 .endif

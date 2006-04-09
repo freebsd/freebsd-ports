@@ -1,5 +1,5 @@
 Index: qemu/Makefile
-@@ -13,7 +13,7 @@
+@@ -13,11 +13,14 @@
  endif
  DOCS=qemu-doc.html qemu-tech.html qemu.1 qemu-img.1
  
@@ -8,14 +8,6 @@ Index: qemu/Makefile
  	for d in $(TARGET_DIRS); do \
  	$(MAKE) -C $$d $@ || exit 1 ; \
          done
-@@ -21,10 +21,13 @@
- ifdef CONFIG_WIN32
- 	$(MAKE) -C kqemu -f Makefile.winnt
- else
--	$(MAKE) -C kqemu
-+	( cd kqemu && $(BSD_MAKE) -f Makefile.freebsd )
- endif
- endif
  
 +bsd/libmath.a:
 +	( cd bsd ; $(BSD_MAKE) CC=$(CC) )
@@ -23,7 +15,7 @@ Index: qemu/Makefile
  qemu-img$(EXESUF): qemu-img.c block.c block-cow.c block-qcow.c aes.c block-vmdk.c block-cloop.c block-dmg.c block-bochs.c block-vpc.c block-vvfat.c
  	$(CC) -DQEMU_TOOL $(CFLAGS) $(LDFLAGS) $(DEFINES) -o $@ $^ -lz $(LIBS)
  
-@@ -33,6 +36,7 @@
+@@ -26,6 +29,7 @@
  
  clean:
  # avoid old build problems by removing potentially incorrect old files
@@ -31,25 +23,6 @@ Index: qemu/Makefile
  	rm -f config.mak config.h op-i386.h opc-i386.h gen-op-i386.h op-arm.h opc-arm.h gen-op-arm.h 
  	rm -f *.o *.a $(TOOLS) dyngen$(EXESUF) TAGS *.pod *~ */*~
  	$(MAKE) -C tests clean
-@@ -40,7 +44,7 @@
- 	$(MAKE) -C $$d $@ || exit 1 ; \
-         done
- ifdef CONFIG_KQEMU
--	$(MAKE) -C kqemu clean
-+	cd kqemu && $(BSD_MAKE) -f Makefile.freebsd clean
- endif
- 
- distclean: clean
-@@ -73,9 +77,6 @@
- 	for d in $(TARGET_DIRS); do \
- 	$(MAKE) -C $$d $@ || exit 1 ; \
-         done
--ifdef CONFIG_KQEMU
--	cd kqemu ; ./install.sh
--endif
- 
- # various test targets
- test speed test2: all
 Index: qemu/Makefile.target
 @@ -391,8 +391,8 @@
  VL_LDFLAGS+=-Wl,-G0 -Wl,-T,$(SRC_PATH)/ia64.ld
