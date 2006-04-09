@@ -17,14 +17,14 @@ EXTRACT_ONLY=
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python interface to GraphViz agraph
 
-BUILD_DEPENDS=	${SWIG_CMD}:${PORTSDIR}/devel/swig13 \
+BUILD_DEPENDS=	${SWIG_CMD}:${PORTSDIR}/devel/swig11 \
 		dot:${PORTSDIR}/graphics/graphviz
 RUN_DEPENDS=	dot:${PORTSDIR}/graphics/graphviz
 
 NO_CDROM=	"Can't be included in a commercial product"
 
 USE_PYTHON=	yes
-SWIG_CMD=	${LOCALBASE}/bin/swig1.3
+SWIG_CMD=	${LOCALBASE}/bin/swig1.1
 PLIST_SUB=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR:S,^${LOCALBASE}/,,g}
 GV_PORT=	${PORTSDIR}/graphics/graphviz
 MAKEFILE=	${FILESDIR}/Makefile
