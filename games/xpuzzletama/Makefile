@@ -8,10 +8,9 @@
 PORTNAME=	xpuzzletama
 PORTVERSION=	1.5b
 CATEGORIES=	games
-MASTER_SITES=	ftp://stardust.sfc.wide.ad.jp/pub/JG/JG-0.9.1/sources/ \
-		ftp://ftp.riken.go.jp/pub/Linux/jg/JG-0.9.1/sources/ \
-		ftp://ftp.eos.hokudai.ac.jp/pub/Linux/JG/JG-0.9.1/sources/ \
-		ftp://mirror.nucba.ac.jp/mirror/JG/JG-0.9.1/sources/
+MASTER_SITES=	http://www.hanzubon.org/mirrors/Vine/VinePlus/1.1/JG-0.9.1/sources/ \
+		http://hanzubon.jp/Vine/VinePlus/1.1/JG-0.9.1/sources/ \
+		http://ftp.ussg.iu.edu/FreeBSD/ports/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Puzzle tama, a tetris like game
@@ -20,6 +19,9 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_IMAKE=	yes
 USE_XPM=	yes
 NO_INSTALL_MANPAGES=	yes
+
+PLIST_FILES=	bin/xpuzzletama lib/X11/xpuzzletama/tama_score
+PLIST_DIRS=	lib/X11/xpuzzletama
 
 post-install:
 	${MKDIR} ${PREFIX}/lib/X11/xpuzzletama
