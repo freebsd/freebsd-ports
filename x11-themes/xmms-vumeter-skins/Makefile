@@ -16,7 +16,7 @@ DISTFILES=	X-skin.tar.bz2 \
 		vuskin.tar.bz2
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	alejandro@varnet.biz
+MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Additional skins for the XMMS Analog VUmeter plugin
 
 RUN_DEPENDS=	${SKINSDIR}/default/skin.cfg:${PORTSDIR}/graphics/xmms-vumeter

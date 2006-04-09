@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.kolumbus.fi/jyrki.alakuijala/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	alejandro@varnet.biz
+MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Small program for playing chess against the computer
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter

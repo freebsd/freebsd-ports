@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	efxmms
 DISTNAME=	EFXmms-${PORTVERSION}
 
-MAINTAINER=	alejandro@varnet.biz
+MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Send the XMMS audio output through a queue of multiple effect plugins
 
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms

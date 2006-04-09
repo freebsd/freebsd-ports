@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	equ
 DISTNAME=	eq-xmms-skins-${PORTVERSION}
 
-MAINTAINER=	alejandro@varnet.biz
+MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Additional skins for the XMMS EQ plugin
 
 RUN_DEPENDS=	${X11BASE}/lib/xmms/Effect/libeq.so:${PORTSDIR}/audio/xmms-eq

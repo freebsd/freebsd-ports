@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	JChessBoard-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	alejandro@varnet.biz
+MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Chess game and PGN viewer/editor written in Java
 
 USE_JAVA=	yes

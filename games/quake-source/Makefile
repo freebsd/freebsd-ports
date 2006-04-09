@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	quake-
 DISTNAME=	qcc
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	alejandro@varnet.biz
+MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Quake and QuakeWorld source
 
 NO_BUILD=	yes

@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	ftp net
 MASTER_SITES=	http://prozilla.genesys.ro/downloads/prozilla/tarballs/
 
-MAINTAINER=	alejandro@varnet.biz
+MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	ProZilla is a fast download accelerator
 
 USE_BZIP2=	yes

@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.cs.berkeley.edu/~weimer/atris/
 PKGNAMESUFFIX=	-sounds
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
-MAINTAINER=	alejandro@varnet.biz
+MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Sounds for Atris: Alizarin Tetris
 
 RUN_DEPENDS=	atris:${PORTSDIR}/games/atris

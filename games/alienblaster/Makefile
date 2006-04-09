@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.informatik.uni-bremen.de/~schwardt/alienblaster/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	alejandro@varnet.biz
+MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Alien Blaster
 
 USE_GMAKE=	yes

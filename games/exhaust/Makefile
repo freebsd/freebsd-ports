@@ -10,7 +10,7 @@ PORTVERSION=	1.9.2
 CATEGORIES=	games
 MASTER_SITES=	http://www.cs.helsinki.fi/u/jpihlaja/exhaust/
 
-MAINTAINER=	alejandro@varnet.biz
+MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Redcode simulator easy to embed into applications
 
 USE_REINPLACE=	yes

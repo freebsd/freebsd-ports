@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	${DMPKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}.wad
 EXTRACT_SUFX=	.bz2
 
-MAINTAINER=	alejandro@varnet.biz
+MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	A full TC using the Doom II engine
 
 USE_BZIP2=	yes

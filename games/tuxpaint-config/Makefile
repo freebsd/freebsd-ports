@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tuxpaint
 
-MAINTAINER=	alejandro@varnet.biz
+MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Graphical tool to change TuxPaint settings
 
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk

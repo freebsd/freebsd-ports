@@ -10,7 +10,7 @@ PORTVERSION=	1.0.7
 CATEGORIES=	games
 MASTER_SITES=	http://www.cs.berkeley.edu/~weimer/atris/
 
-MAINTAINER=	alejandro@varnet.biz
+MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Atris: Alizarin Tetris
 
 USE_GMAKE=	yes

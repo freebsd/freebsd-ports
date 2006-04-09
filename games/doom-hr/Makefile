@@ -17,7 +17,7 @@ PKGNAMEPREFIX=	${DMPKGNAMEPREFIX}
 DISTFILES=	${PORTNAME}${EXTRACT_SUFX}
 DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
 
-MAINTAINER=	alejandro@varnet.biz
+MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Hell Revealed is a megawad, a 32-level replacement for DooM II
 
 USE_ZIP=	yes
