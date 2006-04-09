@@ -14454,3 +14454,4 @@ zthread		ports/devel/zthread
 ztrack		ports/games/ztrack
 zu-aspell	ports/textproc/zu-aspell
 zziplib		ports/devel/zziplib
+php5-phing	ports/devel/php5-phing
