@@ -16,7 +16,6 @@ COMMENT=	Spam detector using Bayesian analysis of word counts
 
 LIB_DEPENDS=	db4:${PORTSDIR}/databases/db4
 
-USE_GCC=	3.2+
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
