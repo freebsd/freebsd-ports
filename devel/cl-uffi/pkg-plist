@@ -9,11 +9,34 @@ lib/common-lisp/uffi/src/package.lisp
 lib/common-lisp/uffi/src/primitives.lisp
 lib/common-lisp/uffi/src/readmacros-mcl.lisp
 lib/common-lisp/uffi/src/strings.lisp
-%%PORTDOCS%%share/doc/cl-uffi/README
+%%PORTDOCS%%share/doc/cl-uffi/AUTHORS
+%%PORTDOCS%%share/doc/cl-uffi/ChangeLog
+%%PORTDOCS%%share/doc/cl-uffi/INSTALL
+%%PORTDOCS%%share/doc/cl-uffi/LICENSE
+%%PORTDOCS%%share/doc/cl-uffi/Makefile.common
 %%PORTDOCS%%share/doc/cl-uffi/NEWS
+%%PORTDOCS%%share/doc/cl-uffi/README
 %%PORTDOCS%%share/doc/cl-uffi/TODO
+%%PORTDOCS%%share/doc/cl-uffi/examples/Makefile
+%%PORTDOCS%%share/doc/cl-uffi/examples/Makefile.msvc
+%%PORTDOCS%%share/doc/cl-uffi/examples/acl-compat-tester.lisp
+%%PORTDOCS%%share/doc/cl-uffi/examples/arrays.lisp
+%%PORTDOCS%%share/doc/cl-uffi/examples/atoifl.lisp
+%%PORTDOCS%%share/doc/cl-uffi/examples/c-test-fns.c
+%%PORTDOCS%%share/doc/cl-uffi/examples/c-test-fns.lisp
+%%PORTDOCS%%share/doc/cl-uffi/examples/compress.lisp
+%%PORTDOCS%%share/doc/cl-uffi/examples/file-socket.lisp
+%%PORTDOCS%%share/doc/cl-uffi/examples/getenv.lisp
+%%PORTDOCS%%share/doc/cl-uffi/examples/gethostname.lisp
+%%PORTDOCS%%share/doc/cl-uffi/examples/getshells.lisp
+%%PORTDOCS%%share/doc/cl-uffi/examples/gettime.lisp
+%%PORTDOCS%%share/doc/cl-uffi/examples/run-examples.lisp
+%%PORTDOCS%%share/doc/cl-uffi/examples/strtol.lisp
+%%PORTDOCS%%share/doc/cl-uffi/examples/test-examples.lisp
+%%PORTDOCS%%share/doc/cl-uffi/examples/union.lisp
 %%PORTDOCS%%share/doc/cl-uffi/uffi.pdf
 %%PORTDOCS%%share/doc/cl-uffi/html.tar.gz
 @dirrm lib/common-lisp/uffi/src
 @dirrm lib/common-lisp/uffi
+@dirrm share/doc/cl-uffi/examples
 @dirrm share/doc/cl-uffi
