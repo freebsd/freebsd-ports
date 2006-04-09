@@ -12,7 +12,7 @@ MASTER_SITES=	http://offload1.icculus.org/twilight/darkplaces/files/
 PKGNAMEPREFIX=	${Q1PKGNAMEPREFIX}
 DISTNAME=	darkplacesmod${PORTVERSION}
 
-MAINTAINER=	alejandro@varnet.biz
+MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Quake 1 modification (for DarkPlaces)
 
 RUN_DEPENDS=	${LOCALBASE}/share/darkplaces/dummy:${PORTSDIR}/games/darkplaces

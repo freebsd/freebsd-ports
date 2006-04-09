@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMESUFFIX=	-stamps
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
-MAINTAINER=	alejandro@varnet.biz
+MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	TuxPaint Stamps
 
 RUN_DEPENDS=	tuxpaint:${PORTSDIR}/games/tuxpaint

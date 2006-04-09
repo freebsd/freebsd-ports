@@ -19,7 +19,7 @@ PKGNAMESUFFIX=	-demo
 DISTNAME=	linuxq3ademo-${DISTVERSION}.x86
 EXTRACT_SUFX=	.gz.sh
 
-MAINTAINER=	alejandro@varnet.biz
+MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Quake III Arena Demo
 
 ONLY_FOR_ARCHS=	i386

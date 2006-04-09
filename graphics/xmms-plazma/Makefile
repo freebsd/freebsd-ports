@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://membres.lycos.fr/diablolight/
 
-MAINTAINER=	alejandro@varnet.biz
+MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Plazma is an XMMS visualization plugin
 
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms

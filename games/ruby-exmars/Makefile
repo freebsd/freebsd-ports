@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	pav
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 
-MAINTAINER=	alejandro@varnet.biz
+MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Ruby interface to the exMARS Memory Array Redcode Simulator
 
 USE_RUBY=	yes

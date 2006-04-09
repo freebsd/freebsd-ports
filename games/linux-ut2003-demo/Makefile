@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	linux-
 DISTNAME=	ut2003demo-lnx-${PORTVERSION}
 EXTRACT_SUFX=	.sh.bin
 
-MAINTAINER=	alejandro@varnet.biz
+MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Unreal Tournament 2003 demo
 
 ONLY_FOR_ARCHS=	i386

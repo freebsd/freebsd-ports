@@ -10,7 +10,7 @@ PORTVERSION=	0.2
 CATEGORIES=	games
 MASTER_SITES=	http://www.omega.clara.net/anagramarama/dist/
 
-MAINTAINER=	alejandro@varnet.biz
+MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Anagramarama - a word game for Linux, Windows and BeOS
 
 USE_GMAKE=	yes

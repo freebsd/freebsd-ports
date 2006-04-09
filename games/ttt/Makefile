@@ -10,7 +10,7 @@ PORTVERSION=	2003.03.14
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.billsgames.com/unix/x/ttt/
 
-MAINTAINER=	alejandro@varnet.biz
+MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Simple one or two player Tic Tac Toe game
 
 USE_GMAKE=	yes

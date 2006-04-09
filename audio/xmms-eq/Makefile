@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	equ
 PKGNAMEPREFIX=	xmms-
 DISTNAME=	${PORTNAME}-xmms-${PORTVERSION}
 
-MAINTAINER=	alejandro@varnet.biz
+MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	A realtime graphical equalizer plugin for XMMS
 
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms

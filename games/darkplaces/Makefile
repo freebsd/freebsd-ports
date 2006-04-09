@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://offload1.icculus.org/twilight/darkplaces/files/
 DISTNAME=	${PORTNAME}engine${PORTVERSION}
 
-MAINTAINER=	alejandro@varnet.biz
+MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Quake engine modification
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

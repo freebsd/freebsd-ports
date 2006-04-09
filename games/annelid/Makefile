@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	pav
 DISTFILES=	${PORTNAME}-src${EXTRACT_SUFX} \
 		${PORTNAME}-media${EXTRACT_SUFX}
 
-MAINTAINER=	alejandro@varnet.biz
+MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Remake of the ubiquitous "Snake" and "Worm" games
 
 RESTRICTED=	No redistribution allowed

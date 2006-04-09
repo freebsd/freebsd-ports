@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.personal.rdg.ac.uk/~sir03me/
 DISTNAME=	lin${PORTNAME}
 
-MAINTAINER=	alejandro@varnet.biz
+MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	An overhead, OpenGL space shooter
 
 BUILD_DEPENDS=	${X11BASE}/lib/libftgl.a:${PORTSDIR}/graphics/ftgl

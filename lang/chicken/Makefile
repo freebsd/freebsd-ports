@@ -10,7 +10,7 @@ PORTVERSION=	2.3
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://www.call-with-current-continuation.org/
 
-MAINTAINER=	alejandro@varnet.biz
+MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	A Scheme-to-C compiler
 
 USE_GMAKE=	yes

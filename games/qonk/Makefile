@@ -10,7 +10,7 @@ PORTVERSION=	0.0.1
 CATEGORIES=	games
 MASTER_SITES=	http://anthony.liekens.net/pub/files/
 
-MAINTAINER=	alejandro@varnet.biz
+MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Small build and conquer strategy game
 
 USE_GMAKE=	yes

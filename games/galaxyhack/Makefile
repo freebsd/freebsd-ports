@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTFILES=	${PORTNAME}-${PORTVERSION}-src${EXTRACT_SUFX} \
 		${PORTNAME}-1.5-data${EXTRACT_SUFX}
 
-MAINTAINER=	alejandro@varnet.biz
+MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	AI script based strategy game
 
 LIB_DEPENDS=	boost_filesystem.3:${PORTSDIR}/devel/boost \

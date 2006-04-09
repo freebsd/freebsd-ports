@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-0.04
 
-MAINTAINER=	alejandro@varnet.biz
+MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	An 3D Air Hockey, which uses SDL & OpenGL
 
 LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut

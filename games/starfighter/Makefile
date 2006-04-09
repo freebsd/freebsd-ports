@@ -10,7 +10,7 @@ DISTVERSION=	1.1-1
 CATEGORIES=	games
 MASTER_SITES=	http://www.parallelrealities.co.uk/download.php?type=zip&file=
 
-MAINTAINER=	alejandro@varnet.biz
+MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Chris Bainfield is fighting for the freedom of the galaxy
 
 FETCH_BEFORE_ARGS+=	-o ${DISTNAME}${EXTRACT_SUFX}

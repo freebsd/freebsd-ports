@@ -10,7 +10,7 @@ PORTVERSION=	0.0.207
 CATEGORIES=	games
 MASTER_SITES=	http://www.v-lo.krakow.pl/~michal/
 
-MAINTAINER=	alejandro@varnet.biz
+MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Fast Memory Array Redcode Simulator
 
 BUILD_DEPENDS=	guile:${PORTSDIR}/lang/guile

@@ -11,7 +11,7 @@ CATEGORIES=	emulators
 MASTER_SITES=	http://m.peponas.free.fr/gngeo/download/
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	alejandro@varnet.biz
+MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	NeoGeo emulator
 
 RESTRICTED=	The Neo-Geo BIOS can not be redistributed

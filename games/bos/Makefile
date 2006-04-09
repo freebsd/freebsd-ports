@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://bos.seul.org/files/
 DISTNAME=	${PORTNAME}_${PORTVERSION:S/./_/g}
 
-MAINTAINER=	alejandro@varnet.biz
+MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	A real-time strategy game
 
 RUN_DEPENDS=	stratagus:${PORTSDIR}/games/stratagus
