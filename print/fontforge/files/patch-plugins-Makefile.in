@@ -1,0 +1,11 @@
+--- plugins/Makefile.in.orig	Fri Nov 11 10:46:50 2005
++++ plugins/Makefile.in	Wed Mar  1 10:40:02 2006
+@@ -28,7 +28,7 @@
+ CFLAGS = @CFLAGS@ $(_CFLAGS)
+ 
+ LIBS = -rpath $(libdir) $(X_LIBS) ../libgdraw.la ../libgunicode.la \
+-    $(X_PRE_LIBS) $(X_11LIB) $(X_EXTRA_LIBS) @LIBS@ $(STATIC_LIBS) -L/usr/lib -lm
++    $(X_PRE_LIBS) $(X_11LIB) $(X_EXTRA_LIBS) @LIBS@ $(STATIC_LIBS) -L/usr/lib -L/usr/local/lib -lm
+ 
+ PLUGINS = gb12345.la
+ 

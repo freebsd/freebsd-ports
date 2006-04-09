@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	fontforge
-PORTVERSION=	20060117
-PORTREVISION=	1
+PORTVERSION=	20060406
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	fontforge
@@ -29,16 +28,17 @@ LIB_DEPENDS=	uninameslist.0:${PORTSDIR}/textproc/libuninameslist \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 
-DOC_VERSION=	20060114
-DOCFILES=	${DOCFILE_IN_TAR_GZ} ${DOCFILE_IN_TAR_BZ2}
-DOCFILE_IN_TAR_GZ=	${PORTNAME}_htdocs-${DOC_VERSION}.tgz
-DOCFILE_IN_TAR_BZ2=	${PORTNAME}_ja_htdocs-${DOC_VERSION}.tar.bz2
+DOC_VERSION=	${PORTVERSION}
+DOCFILES=	${PORTNAME}_htdocs-${DOC_VERSION}.tar.bz2
+.if !defined(NOPORTDOCS)
+DOCFILES+=	${PORTNAME}_ja_htdocs-${DOC_VERSION}.tar.bz2
+.endif
 
+USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_XLIB=	yes
 USE_ICONV=	yes
-USE_BZIP2=	yes
+USE_XLIB=	yes
 PATCH_STRIP=	-l
 
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
@@ -87,23 +87,30 @@ pre-everything::
 
 post-extract:
 	${MKDIR} ${WRKDIR}/html ${WRKSRC}/cidmap
-	for doc in ${DOCFILE_IN_TAR_GZ} ; \
+	for doc in ${DOCFILES} ; \
 		do ${TAR} -xzC ${WRKDIR}/html -f ${DISTDIR}/$${doc} ; \
-	done
-	for doc in ${DOCFILE_IN_TAR_BZ2} ; \
-		do ${TAR} -xyC ${WRKDIR}/html -f ${DISTDIR}/$${doc} ; \
 	done
 	${TAR} -xzC ${WRKSRC}/cidmap -f ${WRKDIR}/html/cidmaps.tgz
 	${RM} ${WRKDIR}/html/cidmaps.tgz
 
+.if !defined(FONTFORGE_NO_PLUGINS)
+post-build:
+	cd ${WRKSRC}/plugins; ${GMAKE}
+.endif
+
 post-install:
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/LICENSE ${DOCSDIR}
+.if !defined(FONTFORGE_NO_PLUGINS)
+	${MKDIR} ${PREFIX}/share/fontforge/plugins
+	(cd ${WRKSRC}/plugins; ${INSTALL_DATA} .libs/* ${PREFIX}/share/fontforge/plugins )
+.endif
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}/flags ${DOCSDIR}/ja
+	${MKDIR} ${DOCSDIR}/flags ${DOCSDIR}/ja ${DOCSDIR}/ja/nonBMP/
 	${INSTALL_DATA} ${WRKDIR}/html/*.* ${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/html/flags/* ${DOCSDIR}/flags
-	${INSTALL_DATA} ${WRKDIR}/html/ja/* ${DOCSDIR}/ja
+	${INSTALL_DATA} ${WRKDIR}/html/ja/*.* ${DOCSDIR}/ja
+	${INSTALL_DATA} ${WRKDIR}/html/ja/nonBMP/*.* ${DOCSDIR}/ja/nonBMP
 .endif
 
 .include <bsd.port.mk>

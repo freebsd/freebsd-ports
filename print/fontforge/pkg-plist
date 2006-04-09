@@ -19,6 +19,10 @@ share/locale/ru/LC_MESSAGES/FontForge.mo
 %%DATADIR%%/Adobe-Japan1-6.cidmap
 %%DATADIR%%/Adobe-Japan2-0.cidmap
 %%DATADIR%%/Adobe-Korea1-2.cidmap
+%%DATADIR%%/plugins/gb12345.la
+%%DATADIR%%/plugins/gb12345.lai
+%%DATADIR%%/plugins/gb12345.so
+%%DATADIR%%/plugins/gb12345.so.0
 %%PORTDOCS%%%%DOCSDIR%%/AA-Comparison.html
 %%PORTDOCS%%%%DOCSDIR%%/AmbrosiaFV-bm.png
 %%PORTDOCS%%%%DOCSDIR%%/AmbrosiaFV.png
@@ -196,6 +200,7 @@ share/locale/ru/LC_MESSAGES/FontForge.mo
 %%PORTDOCS%%%%DOCSDIR%%/corpchar.html
 %%PORTDOCS%%%%DOCSDIR%%/corpchar.txt
 %%PORTDOCS%%%%DOCSDIR%%/cpodd.png
+%%PORTDOCS%%%%DOCSDIR%%/cubic2quad.png
 %%PORTDOCS%%%%DOCSDIR%%/cvarrowicon.png
 %%PORTDOCS%%%%DOCSDIR%%/cvcornericon.png
 %%PORTDOCS%%%%DOCSDIR%%/cvcurveicon.png
@@ -251,6 +256,7 @@ share/locale/ru/LC_MESSAGES/FontForge.mo
 %%PORTDOCS%%%%DOCSDIR%%/expand-pre.png
 %%PORTDOCS%%%%DOCSDIR%%/expandedlines.png
 %%PORTDOCS%%%%DOCSDIR%%/expandstroke.png
+%%PORTDOCS%%%%DOCSDIR%%/extrema-poi.png
 %%PORTDOCS%%%%DOCSDIR%%/f+i.png
 %%PORTDOCS%%%%DOCSDIR%%/faq.html
 %%PORTDOCS%%%%DOCSDIR%%/faqFS.html
@@ -276,6 +282,8 @@ share/locale/ru/LC_MESSAGES/FontForge.mo
 %%PORTDOCS%%%%DOCSDIR%%/findprobs-random.png
 %%PORTDOCS%%%%DOCSDIR%%/findprobs-refs.png
 %%PORTDOCS%%%%DOCSDIR%%/findprobs.png
+%%PORTDOCS%%%%DOCSDIR%%/fontcompdlg.png
+%%PORTDOCS%%%%DOCSDIR%%/fontcompresults.png
 %%PORTDOCS%%%%DOCSDIR%%/fontinfo-anchors.png
 %%PORTDOCS%%%%DOCSDIR%%/fontinfo-cid.png
 %%PORTDOCS%%%%DOCSDIR%%/fontinfo-comment.png
@@ -404,6 +412,7 @@ share/locale/ru/LC_MESSAGES/FontForge.mo
 %%PORTDOCS%%%%DOCSDIR%%/o4.png
 %%PORTDOCS%%%%DOCSDIR%%/o5.png
 %%PORTDOCS%%%%DOCSDIR%%/oldchangelog.html
+%%PORTDOCS%%%%DOCSDIR%%/openfont.png
 %%PORTDOCS%%%%DOCSDIR%%/otherlinks.html
 %%PORTDOCS%%%%DOCSDIR%%/ott1.png
 %%PORTDOCS%%%%DOCSDIR%%/ott2.png
@@ -426,6 +435,7 @@ share/locale/ru/LC_MESSAGES/FontForge.mo
 %%PORTDOCS%%%%DOCSDIR%%/plugins.html
 %%PORTDOCS%%%%DOCSDIR%%/pnts.gif
 %%PORTDOCS%%%%DOCSDIR%%/pointinfo.png
+%%PORTDOCS%%%%DOCSDIR%%/pointinfo-interp.png
 %%PORTDOCS%%%%DOCSDIR%%/pointmenu.html
 %%PORTDOCS%%%%DOCSDIR%%/pointsize.png
 %%PORTDOCS%%%%DOCSDIR%%/prefs-apps.png
@@ -543,9 +553,12 @@ share/locale/ru/LC_MESSAGES/FontForge.mo
 %%PORTDOCS%%%%DOCSDIR%%/ja/HotKeys.html
 %%PORTDOCS%%%%DOCSDIR%%/ja/IndexFS.html
 %%PORTDOCS%%%%DOCSDIR%%/ja/IndexFrame.html
+%%PORTDOCS%%%%DOCSDIR%%/ja/MacFeatName.png
+%%PORTDOCS%%%%DOCSDIR%%/ja/MacMapping.png
 %%PORTDOCS%%%%DOCSDIR%%/ja/MacOSX.html
 %%PORTDOCS%%%%DOCSDIR%%/ja/MetaFont.html
 %%PORTDOCS%%%%DOCSDIR%%/ja/MetricsView.png
+%%PORTDOCS%%%%DOCSDIR%%/ja/PageSetup.png
 %%PORTDOCS%%%%DOCSDIR%%/ja/PfaEdit-TeX.html
 %%PORTDOCS%%%%DOCSDIR%%/ja/TrueOpenTables.html
 %%PORTDOCS%%%%DOCSDIR%%/ja/UniqueID.html
@@ -556,6 +569,7 @@ share/locale/ru/LC_MESSAGES/FontForge.mo
 %%PORTDOCS%%%%DOCSDIR%%/ja/anchorcontrol.html
 %%PORTDOCS%%%%DOCSDIR%%/ja/autotrace.html
 %%PORTDOCS%%%%DOCSDIR%%/ja/autowidth.html
+%%PORTDOCS%%%%DOCSDIR%%/ja/bdfinfo.html
 %%PORTDOCS%%%%DOCSDIR%%/ja/bezier.html
 %%PORTDOCS%%%%DOCSDIR%%/ja/bibliography.html
 %%PORTDOCS%%%%DOCSDIR%%/ja/bitmapsavail.png
@@ -591,6 +605,8 @@ share/locale/ru/LC_MESSAGES/FontForge.mo
 %%PORTDOCS%%%%DOCSDIR%%/ja/faqFrame.html
 %%PORTDOCS%%%%DOCSDIR%%/ja/filemenu.html
 %%PORTDOCS%%%%DOCSDIR%%/ja/files.html
+%%PORTDOCS%%%%DOCSDIR%%/ja/fontcompdlg.png
+%%PORTDOCS%%%%DOCSDIR%%/ja/fontcompresults.png
 %%PORTDOCS%%%%DOCSDIR%%/ja/fontinfo-comment.png
 %%PORTDOCS%%%%DOCSDIR%%/ja/fontinfo-macstyle.png
 %%PORTDOCS%%%%DOCSDIR%%/ja/fontinfo-panose.png
@@ -621,9 +637,12 @@ share/locale/ru/LC_MESSAGES/FontForge.mo
 %%PORTDOCS%%%%DOCSDIR%%/ja/histogram.html
 %%PORTDOCS%%%%DOCSDIR%%/ja/index.html
 %%PORTDOCS%%%%DOCSDIR%%/ja/kernpairs.html
+%%PORTDOCS%%%%DOCSDIR%%/ja/layerdlg.png
 %%PORTDOCS%%%%DOCSDIR%%/ja/license.html
 %%PORTDOCS%%%%DOCSDIR%%/ja/locale.html
 %%PORTDOCS%%%%DOCSDIR%%/ja/mac-install.html
+%%PORTDOCS%%%%DOCSDIR%%/ja/macFeatureSetting.png
+%%PORTDOCS%%%%DOCSDIR%%/ja/macfeature.png
 %%PORTDOCS%%%%DOCSDIR%%/ja/macformats.html
 %%PORTDOCS%%%%DOCSDIR%%/ja/mad.html
 %%PORTDOCS%%%%DOCSDIR%%/ja/metricsmenu.html
@@ -644,8 +663,16 @@ share/locale/ru/LC_MESSAGES/FontForge.mo
 %%PORTDOCS%%%%DOCSDIR%%/ja/pfaeditmath.html
 %%PORTDOCS%%%%DOCSDIR%%/ja/plugins.html
 %%PORTDOCS%%%%DOCSDIR%%/ja/pointinfo.png
+%%PORTDOCS%%%%DOCSDIR%%/ja/pointinfo-interp.png
 %%PORTDOCS%%%%DOCSDIR%%/ja/pointmenu.html
 %%PORTDOCS%%%%DOCSDIR%%/ja/prefs.html
+%%PORTDOCS%%%%DOCSDIR%%/ja/prefs-apps.png
+%%PORTDOCS%%%%DOCSDIR%%/ja/prefs-editing.png
+%%PORTDOCS%%%%DOCSDIR%%/ja/prefs-font.png
+%%PORTDOCS%%%%DOCSDIR%%/ja/prefs-generic.png
+%%PORTDOCS%%%%DOCSDIR%%/ja/prefs-macfeat.png
+%%PORTDOCS%%%%DOCSDIR%%/ja/prefs-macmap.png
+%%PORTDOCS%%%%DOCSDIR%%/ja/prefs-script.png
 %%PORTDOCS%%%%DOCSDIR%%/ja/print.html
 %%PORTDOCS%%%%DOCSDIR%%/ja/privatekey.png
 %%PORTDOCS%%%%DOCSDIR%%/ja/privatekeymenu.png
@@ -679,8 +706,11 @@ share/locale/ru/LC_MESSAGES/FontForge.mo
 %%PORTDOCS%%%%DOCSDIR%%/ja/windowmenu.html
 %%PORTDOCS%%%%DOCSDIR%%/ja/xim.html
 %%PORTDOCS%%%%DOCSDIR%%/ja/xres.html
+%%PORTDOCS%%%%DOCSDIR%%/ja/nonBMP/index.html
+@dirrm %%DATADIR%%/plugins
 @dirrm %%DATADIR%%
 @dirrm %%DOCSDIR%%/flags
+@dirrm %%DOCSDIR%%/ja/nonBMP
 @dirrm %%DOCSDIR%%/ja
 @dirrm %%DOCSDIR%%
 @dirrmtry share/locale/es/LC_MESSAGES
