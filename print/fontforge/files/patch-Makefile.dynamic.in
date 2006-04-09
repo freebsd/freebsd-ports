@@ -1,34 +1,31 @@
---- Makefile.dynamic.in.orig	Thu Nov 17 05:56:25 2005
-+++ Makefile.dynamic.in	Sun Dec  4 16:19:03 2005
-@@ -52,17 +52,17 @@
+--- Makefile.dynamic.in.orig	Fri Apr  7 22:22:55 2006
++++ Makefile.dynamic.in	Sun Apr  9 02:07:36 2006
+@@ -54,8 +54,8 @@
  	$(LIBTOOL) --mode=install $(INSTALL) -c libgunicode.la $(libdir)/libgunicode.la
  	#cp .libs/*.so.*.* $(libdir)
  	$(LIBTOOL) --mode=finish $(libdir)
 -	mkdir -p $(libdir)/pkgconfig
 -	$(LIBTOOL) --mode=install $(INSTALL) -c fontforge.pc $(libdir)/pkgconfig
 +	mkdir -p ${PREFIX}/libdata/pkgconfig
-+	${BSD_INSTALL_DATA} -c fontforge.pc ${PREFIX}/libdata/pkgconfig
++	$(LIBTOOL) --mode=install $(INSTALL) -c fontforge.pc ${PREFIX}/libdata/pkgconfig
  
  install_docs:
  	mkdir -p $(docdir)
- 	mkdir -p $(docdir)/flags $(docdir)/ja
- #explicit use of sh to make sure we don't invoke csh with different "if" syntax
- 	-sh -c "if test -d htdocs/ja >/dev/null ; then mkdir -p $(docdir)/ja ; fi"
--	-cp htdocs/*.{html,png,gif,pdf} $(docdir)
--	-cp htdocs/flags/* $(docdir)/flags
--	-cp htdocs/ja/* $(docdir)/ja
-+	${BSD_INSTALL_DATA} htdocs/*.{html,png,gif,pdf} $(docdir)
-+	${BSD_INSTALL_DATA} htdocs/flags/* $(docdir)/flags
-+	${BSD_INSTALL_DATA} htdocs/ja/* $(docdir)/ja
- 
- install_po:
- 	( cd po ; make install )
-@@ -73,7 +73,7 @@
+@@ -75,7 +75,7 @@
  	mkdir -p $(mandir)/man1
  	mkdir -p $(sharedir)
  	$(LIBTOOL) --mode=install $(INSTALL) -c fontforge/fontforge $(bindir)
--	-$(LIBTOOL) --mode=install $(INSTALL) -c fontforge/sfddiff $(bindir)
+-#	-$(LIBTOOL) --mode=install $(INSTALL) -c fontforge/sfddiff $(bindir)
 +	$(LIBTOOL) --mode=install $(INSTALL) -c fontforge/sfddiff $(bindir)
  #	-rm -f $(bindir)/pfaedit
  #	(cd $(bindir) ; ln -s fontforge pfaedit)
- #	cp fontforge/pfaedit-*.ui $(sharedir)
+ #	$(INSTALL_DATA) fontforge/pfaedit-*.ui $(sharedir)
+@@ -84,7 +84,7 @@
+ # if you are editing CID keyed files (and even then you can live without them
+ 	-$(INSTALL_DATA) $(srcdir)/cidmap/*.cidmap $(sharedir) >/dev/null 2>&1
+ 	$(INSTALL_DATA) $(srcdir)/fontforge/fontforge.1 $(mandir)/man1
+-#	-$(INSTALL_DATA) $(srcdir)/fontforge/sfddiff.1 $(mandir)/man1
++	$(INSTALL_DATA) $(srcdir)/fontforge/sfddiff.1 $(mandir)/man1
+ #explicit use of sh to make sure we don't invoke csh with different "if" syntax
+ 	sh -c "if test -d $(srcdir)/htdocs >/dev/null ; then $(MAKE) install_docs ; fi"
+ 	sh < systemspecific
