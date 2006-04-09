@@ -1,0 +1,11 @@
+--- src/ScreenPlacement.hh	2006/02/19 11:11:22	4211
++++ src/ScreenPlacement.hh	2006/04/05 14:14:35	4291
+@@ -27,6 +27,8 @@
+ #include "PlacementStrategy.hh"
+ #include "FbTk/Resource.hh"
+ 
++#include <memory>
++
+ class BScreen;
+ 
+ /**
