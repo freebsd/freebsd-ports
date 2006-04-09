@@ -88,7 +88,7 @@ pre-everything::
 post-extract:
 	${MKDIR} ${WRKDIR}/html ${WRKSRC}/cidmap
 	for doc in ${DOCFILES} ; \
-		do ${TAR} -xzC ${WRKDIR}/html -f ${DISTDIR}/$${doc} ; \
+		do ${TAR} -xjC ${WRKDIR}/html -f ${DISTDIR}/$${doc} ; \
 	done
 	${TAR} -xzC ${WRKSRC}/cidmap -f ${WRKDIR}/html/cidmaps.tgz
 	${RM} ${WRKDIR}/html/cidmaps.tgz
