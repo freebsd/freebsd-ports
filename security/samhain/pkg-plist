@@ -4,6 +4,7 @@
 %%YULE%%sbin/yule
 %%YULE%%sbin/yulectl
 %%YULE%%etc/rc.d/yule.sh.sample
+%%YULE%%@unexec echo To delete the yule user permanently, use 'pw userdel ${USER}'"
 %%YULE%%@unexec rmdir /var/lib/yule 2>/dev/null || true
 %%SAMHAIN%%sbin/samhain
 %%SAMHAIN%%etc/rc.d/samhain.sh.sample

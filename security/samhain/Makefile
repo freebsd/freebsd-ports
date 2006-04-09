@@ -6,6 +6,7 @@
 
 PORTNAME=	samhain
 PORTVERSION=	2.1.2
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://la-samhna.de/archive/ \
 		http://cold.darkambient.net/
@@ -21,6 +22,8 @@ OPTIONS=	KCHECK "Enable rogue KLD detection" off \
 		XML_LOGS "Enable XML-formatted logs" on \
 		LIBWRAP "Enable TCP wrapper support" on \
 		PRELUDE "Enable Prelude Framework support" off
+
+SUB_FILES+=	pkg-install
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
@@ -71,11 +74,13 @@ MAN5=	samhainrc.5
 MAN8=	samhain.8
 .elif defined(WITH_SERVER)
 CONFIGURE_ARGS+=	--enable-network=server
+SUB_LIST+=	WITH_YULE="yes"
 PLIST_SUB+=	YULE="" SAMHAIN="@comment " SETPWD="@comment "
 EXTRA_PATCHES+=	${FILESDIR}/fixyulerc.patch
 MAN5=	yulerc.5
 MAN8=	yule.8
 .else
+SUB_LIST+=	WITH_YULE=""
 PLIST_SUB+=	SAMHAIN="" YULE="@comment " SETPWD="@comment "
 EXTRA_PATCHES+=	${FILESDIR}/fixsamhainrc.patch
 MAN5=	samhainrc.5
@@ -127,6 +132,9 @@ post-extract:
 	@${TAR} -C ${WRKDIR} -xzf ${WRKSRC}.tar.gz
 	@${RM} ${WRKSRC}.tar.gz ${WRKSRC}.tar.gz.asc
 
+pre-install:
+	@PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+
 post-install:
 .if !defined(WITH_SERVER)
 	@${CP} ${WRKSRC}/init/samhain.startFreeBSD ${PREFIX}/etc/rc.d/samhain.sh.sample
@@ -151,8 +159,5 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/docs/sh_mounts.txt ${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/docs/sh_userfiles.txt ${DOCSDIR}
 .endif
-
-install-user:
-	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} install-user)
 
 .include <bsd.port.post.mk>
