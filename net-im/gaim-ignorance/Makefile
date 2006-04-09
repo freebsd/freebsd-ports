@@ -20,6 +20,8 @@ BUILD_DEPENDS=	gaim:${PORTSDIR}/net-im/gaim
 RUN_DEPENDS=	gaim:${PORTSDIR}/net-im/gaim
 
 DEPRECATED=	The author has taken down his site and has ceased developing this program
+BROKEN=		${DEPRECATED}
+EXPIRATION_DATE=2006-07-01
 
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes
