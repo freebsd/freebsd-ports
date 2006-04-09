@@ -5543,6 +5543,7 @@ libglade-java	ports/devel/libglade-java
 libglade2	ports/devel/libglade2
 libglademm	ports/devel/libglademm
 libglademm24	ports/devel/libglademm24
+libgltext	ports/graphics/libgltext
 libglut		ports/graphics/libglut
 libgmp4		ports/math/libgmp4
 libgnetwork	ports/net/libgnetwork
