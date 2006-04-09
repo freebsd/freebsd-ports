@@ -414,6 +414,7 @@
     SUBDIR += py-libtunepimp
     SUBDIR += py-mad
     SUBDIR += py-musicbrainz
+    SUBDIR += py-musicbrainz2
     SUBDIR += py-ogg
     SUBDIR += py-openal
     SUBDIR += py-sdl_mixer
