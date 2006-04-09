@@ -8,10 +8,10 @@
 PORTNAME=	sxsame
 PORTVERSION=	3.02
 CATEGORIES=	games
-MASTER_SITES=	ftp://stardust.sfc.wide.ad.jp/pub/JG/JG-0.9.1/sources/ \
-		ftp://ftp.riken.go.jp/pub/Linux/jg/JG-0.9.1/sources/ \
-		ftp://ftp.eos.hokudai.ac.jp/pub/Linux/JG/JG-0.9.1/sources/ \
-		ftp://mirror.nucba.ac.jp/mirror/JG/JG-0.9.1/sources/
+MASTER_SITES=	http://www.hanzubon.org/mirrors/Vine/VinePlus/1.1/JG-0.9.1/sources/ \
+		http://www.asahi-net.or.jp/~fj9y-ynym/ \
+		http://ftp.ncnu.edu.tw/FreeBSD/distfiles/ \
+		http://mirror.israel.net/pub/FreeBSD/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tile-removing puzzle game for the X Window system
@@ -26,9 +26,9 @@ MAKE_ENV+=	BINOWN=${BINOWN} BINGRP=${BINGRP} BINMODE=${BINMODE}
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/sxsame
+	@${MKDIR} ${DOCSDIR}
 .for i in INSTALL.jp README.jp
-	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/share/doc/sxsame
+	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 .endif
 

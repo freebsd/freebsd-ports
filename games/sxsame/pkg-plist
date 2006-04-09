@@ -25,9 +25,9 @@ lib/X11/sxsame/mono1.same
 lib/X11/sxsame/s_marble.bmp
 lib/X11/sxsame/samegame.dat
 lib/X11/sxsame/snake.bmp
-%%PORTDOCS%%share/doc/sxsame/INSTALL.jp
-%%PORTDOCS%%share/doc/sxsame/README.jp
-%%PORTDOCS%%@dirrm share/doc/sxsame
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL.jp
+%%PORTDOCS%%%%DOCSDIR%%/README.jp
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @exec mkdir -p %D/lib/X11/sxsame
 @exec chmod 2775 %D/lib/X11/sxsame
 @unexec rm -rf %D/lib/X11/sxsame
