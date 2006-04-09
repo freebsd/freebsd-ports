@@ -1,8 +1,9 @@
 Index: qemu/configure
-@@ -122,6 +122,7 @@
+@@ -122,7 +122,8 @@
  *)
  oss="yes"
  linux="yes"
+ user="yes"
 +usb="linux"
  if [ "$cpu" = "i386" -o "$cpu" = "x86_64" ] ; then
      kqemu="yes"
