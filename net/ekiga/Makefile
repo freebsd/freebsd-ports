@@ -7,7 +7,7 @@
 
 PORTNAME=	ekiga
 PORTVERSION=	2.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.0
@@ -23,10 +23,11 @@ USE_GMAKE=	yes
 USE_SDL=	sdl
 INSTALLS_OMF=	yes
 USE_GNOME=	libgnomeui gnomeprefix gnomehack gnomedocutils \
-		evolutiondataserver
-USE_AUTOTOOLS=	libtool:15
-LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
-CONFIGURE_ENV=	SDL_CONFIG=${LOCALBASE}/bin/sdl11-config LDFLAGS="${LDFLAGS}"
+		evolutiondataserver intlhack
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
+		SDL_CONFIG="${SDL_CONFIG}"
 CONFIGURE_ARGS=	--with-pwlib-dir=${LOCALBASE} \
 		--with-opal-dir=${LOCALBASE}
 
@@ -45,8 +46,14 @@ CONFIGURE_ARGS+=--disable-avahi
 .ifndef (WITHOUT_DBUS)
 LIB_DEPENDS+=	dbus-1.2:${PORTSDIR}/devel/dbus
 CONFIGURE_ARGS+=--enable-dbus
+PLIST_SUB+=	DBUS:=""
 .else
 CONFIGURE_ARGS+=--disable-dbus
+PLIST_SUB+=	DBUS:="@comment "
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|{datadir}/dbus-1|(prefix)/share/dbus-1|g' \
+		${WRKSRC}/Makefile.in
 
 .include <bsd.port.post.mk>

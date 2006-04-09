@@ -1,6 +1,9 @@
 bin/ekiga
 bin/ekiga-config-tool
+%%DBUS:%%bin/ekiga-helper
 libdata/bonobo/servers/ekiga.server
+%%DBUS:%%share/dbus-1/services/net.ekiga.helper.service
+%%DBUS:%%share/dbus-1/services/net.ekiga.instance.service
 share/gnome/applications/ekiga.desktop
 share/gnome/help/ekiga/C/ekiga.xml
 share/gnome/help/ekiga/C/figures/accounts_d1.png
