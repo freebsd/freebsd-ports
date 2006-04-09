@@ -14,6 +14,9 @@ MASTER_SITES=	http://frankhale.org/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The C++ version of aewm
 
+DEPRECATED=	The project is dead, a fork exists: xaewm
+EXPIRATION_DATE=2006-07-01
+
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 MAKE_ARGS=	CC="${CXX}" CFLAGS="${CXXFLAGS}" \
