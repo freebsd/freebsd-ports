@@ -5644,6 +5644,7 @@ libnotify	ports/devel/libnotify
 libnova		ports/astro/libnova
 libnss-mysql	ports/net/libnss-mysql
 libntlm		ports/security/libntlm
+libnxml		ports/textproc/libnxml
 libodbc++	ports/databases/libodbc++
 libofa		ports/audio/libofa
 libofx		ports/finance/libofx
