@@ -14,6 +14,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	sumikawa@FreeBSD.org
 COMMENT=	A caching proxy server for HTTP and FTP designed for dial-up hosts
 
+LIB_DEPENDS=	gnutls.15:${PORTSDIR}/security/gnutls
+
 USE_PERL5=	yes
 USE_GMAKE=	yes
 USE_RC_SUBR=	${PORTNAME}d.sh
