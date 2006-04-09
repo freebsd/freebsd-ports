@@ -20,6 +20,8 @@ COMMENT=	Equivalence's H323 GateKeeper for OpenH323 OhPhone and NetMeeting
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/net/openh323-112:build
 
 BROKEN=		Incomplete dependency list
+DEPRECATED=	Latest version is from 2003-02-03. Use net/gatekeeper instead
+EXPIRATION_DATE=	2006-07-01
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
