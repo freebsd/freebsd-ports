@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	slune
-PORTVERSION=	1.0.10
+PORTVERSION=	1.0.11
 CATEGORIES=	games python
 MASTER_SITES=	http://download.gna.org/slune/
 DISTNAME=	Slune-${PORTVERSION}
@@ -24,6 +24,7 @@ LIB_DEPENDS=	cal3d.11:${PORTSDIR}/graphics/cal3d \
 
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes
+USE_GETTEXT=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 USE_GL=		yes
