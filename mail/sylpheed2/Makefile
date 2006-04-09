@@ -120,6 +120,8 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/${i}.ja ${DOCSDIR}
 .endfor
 .endif
+	@${MKDIR} ${PREFIX}/share/pixmaps
+	@${MKDIR} ${PREFIX}/share/applications
 	@${INSTALL_DATA} ${WRKSRC}/sylpheed.png ${PREFIX}/share/pixmaps/
 	@${INSTALL_DATA} ${WRKSRC}/sylpheed.desktop ${PREFIX}/share/applications/
 
