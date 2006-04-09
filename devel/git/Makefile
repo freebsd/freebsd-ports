@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	git
-PORTVERSION=	1.2.4
+PORTVERSION=	1.2.6
 CATEGORIES=	devel
 MASTER_SITES=	http://www.kernel.org/pub/software/scm/git/
 
@@ -21,7 +21,7 @@ RUN_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		wish8.4:${PORTSDIR}/x11-toolkits/tk84
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
-CONFLICTS=	cogito-[0-9]* git-4.*
+CONFLICTS=	cogito-0.1[012] git-4.*
 
 MAN1=		git-add.1 \
 		git-am.1 \
