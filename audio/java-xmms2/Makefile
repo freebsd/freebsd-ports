@@ -27,7 +27,7 @@ SCONS_TARGET=	src/clients/lib/java/libxmms2java.so src/clients/lib/java/xmms2jav
 XMMS2_SLAVE=	java
 
 do-install:
-	@cd ${WRKSRC} && ${INSTALL_PROGRAM} src/clients/lib/java/xmms2java.jar \
+	@cd ${WRKSRC} && ${INSTALL_DATA} src/clients/lib/java/xmms2java.jar \
 	${JAVAJARDIR}/xmms2java.jar
 
 .include "${MASTERDIR}/Makefile"
