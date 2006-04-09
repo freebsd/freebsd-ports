@@ -7,7 +7,7 @@
 
 PORTNAME=	xmms2
 PORTVERSION=	0.2.d.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -41,8 +41,6 @@ MAN1=		xmms2.1
 MAN8=		xmms2d.8
 MANCOMPRESSED=	yes
 .endif
-
-DATADIR=	share/xmms2
 
 SCONS_TARGET?=
 
@@ -165,6 +163,12 @@ PLIST_SUB+=	MDNS="@comment "
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if defined(XMMS2_SLAVE) && ${XMMS2_SLAVE} != "java"
+.if ${OSVERSION} < 500000
+BROKEN=	Broken on FreeBSD 4.x
+.endif
+.endif
 
 pre-everything::
 .if defined(WITH_SAMBA)
