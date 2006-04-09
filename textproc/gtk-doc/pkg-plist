@@ -10,6 +10,7 @@ bin/gtkdocize
 libdata/pkgconfig/gtk-doc.pc
 share/aclocal/gtk-doc.m4
 %%DATADIR%%/data/devhelp.xsl
+%%DATADIR%%/data/devhelp2.xsl
 %%DATADIR%%/data/gtk-doc.dcl
 %%DATADIR%%/data/gtk-doc.dsl
 %%DATADIR%%/data/gtk-doc.make
@@ -21,9 +22,17 @@ share/aclocal/gtk-doc.m4
 %%DATADIR%%/data/style.css
 %%DATADIR%%/data/up.png
 %%DATADIR%%/data/version-greater-or-equal.xsl
+share/help/gtk-doc-manual/C/fdl-appendix.xml
+share/help/gtk-doc-manual/C/gtk-doc-manual.xml
+share/omf/gtk-doc/gtk-doc-manual-C.omf
 @unexec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% remove CATALOG %%CATALOG_DIR%%/gtk-doc.cat
 share/sgml/gtk-doc/gtk-doc.cat
 @exec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% add CATALOG %%CATALOG_DIR%%/gtk-doc.cat
 @dirrm share/sgml/gtk-doc
+@dirrm share/omf/gtk-doc
+@dirrmtry share/omf
+@dirrm share/help/gtk-doc-manual/C
+@dirrm share/help/gtk-doc-manual
+@dirrmtry share/help
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%
