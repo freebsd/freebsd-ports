@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wxsvg
-DISTVERSION=	1.0b5
+DISTVERSION=	1.0b6
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,7 +19,7 @@ RUN_DEPENDS=	${WX_CONFIG}:${PORTSDIR}/x11-toolkits/wxgtk26
 
 INSTALLS_SHLIB=	yes
 WX_CONFIG=	wxgtk2-2.6-config
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	libartlgpl2
 
 .include <bsd.port.pre.mk>
@@ -31,5 +31,6 @@ BROKEN=	does not build
 post-patch:
 	@${REINPLACE_CMD} -e 's|wx-config|${WX_CONFIG}|' \
 		${WRKSRC}/configure
+	cd ${WRKSRC} && ${LIBTOOLIZE} --copy --force
 
 .include <bsd.port.post.mk>
