@@ -5,12 +5,12 @@ bin/mcplot
 bin/mcresplot
 bin/mcrun
 bin/mcgui
+bin/mcdaemon
 bin/mcdoc
 bin/mcstas2vitess
 bin/mcconvert
 lib/mcstas/contrib/Al_window.comp
 lib/mcstas/contrib/Collimator_ROC.comp
-lib/mcstas/contrib/FermiChopper.comp
 lib/mcstas/contrib/Filter_graphite.comp
 lib/mcstas/contrib/Filter_powder.comp
 lib/mcstas/contrib/Guide_curved.comp
@@ -18,39 +18,26 @@ lib/mcstas/contrib/Guide_honeycomb.comp
 lib/mcstas/contrib/Guide_tapering.comp
 lib/mcstas/contrib/He3_cell.comp
 lib/mcstas/contrib/ISIS_moderator.comp
-lib/mcstas/contrib/ISIS_tables/Etable.E1
-lib/mcstas/contrib/ISIS_tables/Etable.E2
-lib/mcstas/contrib/ISIS_tables/Etable.E3
-lib/mcstas/contrib/ISIS_tables/Etable.E4
-lib/mcstas/contrib/ISIS_tables/Etable.E5
-lib/mcstas/contrib/ISIS_tables/Etable.E6
-lib/mcstas/contrib/ISIS_tables/Etable.E7
-lib/mcstas/contrib/ISIS_tables/Etable.E8
-lib/mcstas/contrib/ISIS_tables/Etable.E9
-lib/mcstas/contrib/ISIS_tables/Etable.W1
-lib/mcstas/contrib/ISIS_tables/Etable.W2
-lib/mcstas/contrib/ISIS_tables/Etable.W3
-lib/mcstas/contrib/ISIS_tables/Etable.W4
-lib/mcstas/contrib/ISIS_tables/Etable.W5
-lib/mcstas/contrib/ISIS_tables/Etable.W6
-lib/mcstas/contrib/ISIS_tables/Etable.W7
-lib/mcstas/contrib/ISIS_tables/Etable.W8
-lib/mcstas/contrib/ISIS_tables/Etable.W9
-lib/mcstas/contrib/ISIS_tables/Etable.broad
-lib/mcstas/contrib/ISIS_tables/Etable.ch4
-lib/mcstas/contrib/ISIS_tables/Etable.groove
-lib/mcstas/contrib/ISIS_tables/Etable.h2
-lib/mcstas/contrib/ISIS_tables/Etable.hydrogen
-lib/mcstas/contrib/ISIS_tables/Etable.merlin
-lib/mcstas/contrib/ISIS_tables/Etable.narrow
-lib/mcstas/contrib/ISIS_tables/Etable.water
+lib/mcstas/contrib/PSD_monitor_rad.comp
+lib/mcstas/contrib/SANS_AnySamp.comp
+lib/mcstas/contrib/SANS_DebyeS.comp
+lib/mcstas/contrib/SANS_Guinier.comp
+lib/mcstas/contrib/SNS_source.comp
+lib/mcstas/contrib/Virtual_tripoli4_input.comp
+lib/mcstas/contrib/Virtual_tripoli4_output.comp
+lib/mcstas/contrib/ISIS_tables/h.broad
+lib/mcstas/contrib/ISIS_tables/h.ch4
+lib/mcstas/contrib/ISIS_tables/h.groove
+lib/mcstas/contrib/ISIS_tables/h.h2
+lib/mcstas/contrib/ISIS_tables/h.hydrogen
+lib/mcstas/contrib/ISIS_tables/h.narrow
+lib/mcstas/contrib/ISIS_tables/h.water
 lib/mcstas/contrib/Monochromator_2foc.comp
 lib/mcstas/contrib/SiC.comp
 lib/mcstas/contrib/doc/ISISdoc.pdf
 lib/mcstas/contrib/doc/ISISdoc.ps
 lib/mcstas/contrib/Al_window.html
 lib/mcstas/contrib/Collimator_ROC.html
-lib/mcstas/contrib/FermiChopper.html
 lib/mcstas/contrib/Filter_graphite.html
 lib/mcstas/contrib/Filter_powder.html
 lib/mcstas/contrib/Guide_curved.html
@@ -60,8 +47,34 @@ lib/mcstas/contrib/He3_cell.html
 lib/mcstas/contrib/ISIS_moderator.html
 lib/mcstas/contrib/Monochromator_2foc.html
 lib/mcstas/contrib/SiC.html
+lib/mcstas/contrib/PSD_monitor_rad.html
+lib/mcstas/contrib/SANS_AnySamp.html
+lib/mcstas/contrib/SANS_DebyeS.html
+lib/mcstas/contrib/SANS_Guinier.html
+lib/mcstas/contrib/SNS_source.html
+lib/mcstas/contrib/Virtual_tripoli4_input.html
+lib/mcstas/contrib/Virtual_tripoli4_output.html
+lib/mcstas/data/Al.laz
+lib/mcstas/data/Be.laz
+lib/mcstas/data/Be.trm
+lib/mcstas/data/Cd.laz
+lib/mcstas/data/Cu.laz
+lib/mcstas/data/Fe.laz
+lib/mcstas/data/Ge.laz
+lib/mcstas/data/Graphite.laz
+lib/mcstas/data/He4.sqw
+lib/mcstas/data/Li.laz
+lib/mcstas/data/Nb.laz
+lib/mcstas/data/Ni.laz
+lib/mcstas/data/Rb_coh.sqw
+lib/mcstas/data/Rb_inc.sqw
+lib/mcstas/data/Sapphire.trm
+lib/mcstas/data/Si.laz
+lib/mcstas/data/Ti.laz
+lib/mcstas/data/V.laz
+lib/mcstas/data/Zn.laz
+lib/mcstas/data/Zr.laz
 lib/mcstas/data/BeO.lau
-lib/mcstas/data/BeO.trm
 lib/mcstas/data/HOPG.rfl
 lib/mcstas/data/HOPG.trm
 lib/mcstas/data/README
@@ -77,8 +90,6 @@ lib/mcstas/data/quartz.lau
 lib/mcstas/data/quartzb.lau
 lib/mcstas/data/rutile.lau
 lib/mcstas/doc/README
-lib/mcstas/doc/mcstas-1.4-manual.ps.gz
-lib/mcstas/doc/mcstas-1.5-manual.ps.gz
 lib/mcstas/doc/mcstas-components.pdf
 lib/mcstas/doc/mcstas-components.ps.gz
 lib/mcstas/doc/mcstas-manual.pdf
@@ -108,6 +119,15 @@ lib/mcstas/doc/tutorial/html/img23.png
 lib/mcstas/doc/tutorial/html/img24.png
 lib/mcstas/doc/tutorial/html/img25.png
 lib/mcstas/doc/tutorial/html/img26.png
+lib/mcstas/doc/tutorial/html/img27.png
+lib/mcstas/doc/tutorial/html/img28.png
+lib/mcstas/doc/tutorial/html/img29.png
+lib/mcstas/doc/tutorial/html/img30.png
+lib/mcstas/doc/tutorial/html/img31.png
+lib/mcstas/doc/tutorial/html/img32.png
+lib/mcstas/doc/tutorial/html/img33.png
+lib/mcstas/doc/tutorial/html/img34.png
+lib/mcstas/doc/tutorial/html/img35.png
 lib/mcstas/doc/tutorial/html/img3.png
 lib/mcstas/doc/tutorial/html/img4.png
 lib/mcstas/doc/tutorial/html/img5.png
@@ -126,6 +146,7 @@ lib/mcstas/doc/tutorial/html/node11.html
 lib/mcstas/doc/tutorial/html/node12.html
 lib/mcstas/doc/tutorial/html/node13.html
 lib/mcstas/doc/tutorial/html/node14.html
+lib/mcstas/doc/tutorial/html/node15.html
 lib/mcstas/doc/tutorial/html/node2.html
 lib/mcstas/doc/tutorial/html/node3.html
 lib/mcstas/doc/tutorial/html/node4.html
@@ -146,12 +167,26 @@ lib/mcstas/doc/tutorial/pics/mono.eps
 lib/mcstas/doc/tutorial/tutorial.ps
 lib/mcstas/doc/tutorial/tutorial.tex
 lib/mcstas/doc/tutorial/tutorial_meat.tex
-lib/mcstas/examples/Hetfull.instr
+lib/mcstas/editors/README
+lib/mcstas/editors/emacs
+lib/mcstas/editors/mcstas.xml
+lib/mcstas/editors/nedit
+lib/mcstas/examples/FZJ_SANS_KWS2_AnySample.instr
+lib/mcstas/examples/FZJ_SANS_KWS2_DebyeS.instr
+lib/mcstas/examples/FZJ_SANS_KWS2_Guinier.instr
+lib/mcstas/examples/FZJ_SANS_KWS2_NoSample.instr
 lib/mcstas/examples/ILL_D9.instr
+lib/mcstas/examples/ILL_H113.instr
+lib/mcstas/examples/ILL_H142.instr
+lib/mcstas/examples/ILL_H15.instr
+lib/mcstas/examples/ILL_H24.instr
+lib/mcstas/examples/ILL_H53.instr
+lib/mcstas/examples/ISIS_Hetfull.instr
 lib/mcstas/examples/ISIStest.instr
+lib/mcstas/examples/PSI_Focus.instr
 lib/mcstas/examples/SANS.instr
+lib/mcstas/examples/SNS_test.instr
 lib/mcstas/examples/Test_Phonon.instr
-lib/mcstas/examples/focus_psi.instr
 lib/mcstas/examples/h8_test.instr
 lib/mcstas/examples/linup-1.instr
 lib/mcstas/examples/linup-2.instr
@@ -162,12 +197,22 @@ lib/mcstas/examples/linup-6.instr
 lib/mcstas/examples/linup-7.instr
 lib/mcstas/examples/prisma2.instr
 lib/mcstas/examples/vanadium_example.instr
-lib/mcstas/examples/Hetfull.html
+lib/mcstas/examples/FZJ_SANS_KWS2_AnySample.html
+lib/mcstas/examples/FZJ_SANS_KWS2_DebyeS.html
+lib/mcstas/examples/FZJ_SANS_KWS2_Guinier.html
+lib/mcstas/examples/FZJ_SANS_KWS2_NoSample.html
 lib/mcstas/examples/ILL_D9.html
+lib/mcstas/examples/ILL_H113.html
+lib/mcstas/examples/ILL_H142.html
+lib/mcstas/examples/ILL_H15.html
+lib/mcstas/examples/ILL_H24.html
+lib/mcstas/examples/ILL_H53.html
+lib/mcstas/examples/ISIS_Hetfull.html
 lib/mcstas/examples/ISIStest.html
+lib/mcstas/examples/PSI_Focus.html
 lib/mcstas/examples/SANS.html
+lib/mcstas/examples/SNS_test.html
 lib/mcstas/examples/Test_Phonon.html
-lib/mcstas/examples/focus_psi.html
 lib/mcstas/examples/h8_test.html
 lib/mcstas/examples/linup-1.html
 lib/mcstas/examples/linup-2.html
@@ -178,9 +223,11 @@ lib/mcstas/examples/linup-6.html
 lib/mcstas/examples/linup-7.html
 lib/mcstas/examples/prisma2.html
 lib/mcstas/examples/vanadium_example.html
+lib/mcstas/misc/Beam_spy.comp
 lib/mcstas/misc/Progress_bar.comp
 lib/mcstas/misc/Vitess_input.comp
 lib/mcstas/misc/Vitess_output.comp
+lib/mcstas/misc/Beam_spy.html
 lib/mcstas/misc/Progress_bar.html
 lib/mcstas/misc/Vitess_input.html
 lib/mcstas/misc/Vitess_output.html
@@ -246,17 +293,23 @@ lib/mcstas/obsolete/PSD_curved.comp
 lib/mcstas/obsolete/PSD_entry.comp
 lib/mcstas/obsolete/PSD_monitor_4PI_log.comp
 lib/mcstas/obsolete/Powder0.comp
+lib/mcstas/obsolete/Powder2.comp
 lib/mcstas/obsolete/Powder_filter.comp
 lib/mcstas/obsolete/Soller_trans.comp
 lib/mcstas/obsolete/Source_Maxwell.comp
 lib/mcstas/obsolete/Source_file.comp
+lib/mcstas/obsolete/Source_flat.comp
+lib/mcstas/obsolete/Source_flat_lambda.comp
+lib/mcstas/obsolete/Source_flux.comp
+lib/mcstas/obsolete/Source_flux_lambda.comp
 lib/mcstas/obsolete/window.comp
 lib/mcstas/optics/Arm.comp
 lib/mcstas/optics/Beamstop.comp
 lib/mcstas/optics/Bender.comp
 lib/mcstas/optics/Chopper.comp
-lib/mcstas/optics/Chopper_Fermi.comp
 lib/mcstas/optics/Collimator_linear.comp
+lib/mcstas/optics/Collimator_radial.comp
+lib/mcstas/optics/FermiChopper.comp
 lib/mcstas/optics/Filter_gen.comp
 lib/mcstas/optics/Guide.comp
 lib/mcstas/optics/Guide_channeled.comp
@@ -268,12 +321,14 @@ lib/mcstas/optics/Monochromator_flat.comp
 lib/mcstas/optics/Selector.comp
 lib/mcstas/optics/Slit.comp
 lib/mcstas/optics/V_selector.comp
+lib/mcstas/optics/Vitess_ChopperFermi.comp
 lib/mcstas/optics/Arm.html
 lib/mcstas/optics/Beamstop.html
 lib/mcstas/optics/Bender.html
 lib/mcstas/optics/Chopper.html
-lib/mcstas/optics/Chopper_Fermi.html
 lib/mcstas/optics/Collimator_linear.html
+lib/mcstas/optics/Collimator_radial.html
+lib/mcstas/optics/FermiChopper.html
 lib/mcstas/optics/Filter_gen.html
 lib/mcstas/optics/Guide.html
 lib/mcstas/optics/Guide_channeled.html
@@ -285,22 +340,33 @@ lib/mcstas/optics/Monochromator_flat.html
 lib/mcstas/optics/Selector.html
 lib/mcstas/optics/Slit.html
 lib/mcstas/optics/V_selector.html
+lib/mcstas/optics/Vitess_ChopperFermi.html
+lib/mcstas/samples/Isotropic_Sqw.comp
 lib/mcstas/samples/Phonon_simple.comp
 lib/mcstas/samples/Powder1.comp
-lib/mcstas/samples/Powder2.comp
+lib/mcstas/samples/PowderN.comp
 lib/mcstas/samples/Res_sample.comp
 lib/mcstas/samples/Sans_spheres.comp
 lib/mcstas/samples/Single_crystal.comp
+lib/mcstas/samples/TOFRes_sample.comp
 lib/mcstas/samples/V_sample.comp
+lib/mcstas/samples/Isotropic_Sqw.html
 lib/mcstas/samples/Phonon_simple.html
 lib/mcstas/samples/Powder1.html
-lib/mcstas/samples/Powder2.html
+lib/mcstas/samples/PowderN.html
 lib/mcstas/samples/Res_sample.html
 lib/mcstas/samples/Sans_spheres.html
 lib/mcstas/samples/Single_crystal.html
+lib/mcstas/samples/TOFRes_sample.html
 lib/mcstas/samples/V_sample.html
 lib/mcstas/share/adapt_tree-lib.c
 lib/mcstas/share/adapt_tree-lib.h
+lib/mcstas/share/chopper_fermi.c
+lib/mcstas/share/chopper_fermi.h
+lib/mcstas/share/general.c
+lib/mcstas/share/general.h
+lib/mcstas/share/intersection.c
+lib/mcstas/share/intersection.h
 lib/mcstas/share/mcstas-r.c
 lib/mcstas/share/mcstas-r.h
 lib/mcstas/share/monitor_nd-lib.c
@@ -318,11 +384,8 @@ lib/mcstas/sources/Source_Maxwell_3.comp
 lib/mcstas/sources/Source_Optimizer.comp
 lib/mcstas/sources/Source_adapt.comp
 lib/mcstas/sources/Source_div.comp
-lib/mcstas/sources/Source_flat.comp
-lib/mcstas/sources/Source_flat_lambda.comp
-lib/mcstas/sources/Source_flux.comp
-lib/mcstas/sources/Source_flux_lambda.comp
 lib/mcstas/sources/Source_gen.comp
+lib/mcstas/sources/Source_simple.comp
 lib/mcstas/sources/Virtual_input.comp
 lib/mcstas/sources/Virtual_output.comp
 lib/mcstas/sources/Adapt_check.html
@@ -334,11 +397,8 @@ lib/mcstas/sources/Source_Maxwell_3.html
 lib/mcstas/sources/Source_Optimizer.html
 lib/mcstas/sources/Source_adapt.html
 lib/mcstas/sources/Source_div.html
-lib/mcstas/sources/Source_flat.html
-lib/mcstas/sources/Source_flat_lambda.html
-lib/mcstas/sources/Source_flux.html
-lib/mcstas/sources/Source_flux_lambda.html
 lib/mcstas/sources/Source_gen.html
+lib/mcstas/sources/Source_simple.html
 lib/mcstas/sources/Virtual_input.html
 lib/mcstas/sources/Virtual_output.html
 lib/mcstas/tools/matlab/CheckNeutNumber.m
@@ -356,11 +416,23 @@ lib/mcstas/tools/perl/mcplotlib.pl
 lib/mcstas/tools/perl/mcrunlib.pl
 lib/mcstas/tools/perl/mcstas_config.perl
 lib/mcstas/tools/perl/mcstas_config.perl.in
-lib/mcstas/tools/perl/mcstas_unix.pl
 lib/mcstas/tools/perl/modules/%%PERL_ARCHNAME%%/auto/Proc/Simple/.packlist
+lib/mcstas/tools/perl/modules/%%PERL_ARCHNAME%%/auto/Tk/CodeText/.packlist
 lib/mcstas/tools/perl/modules/auto/Proc/Simple/autosplit.ix
 lib/mcstas/tools/perl/modules/Proc/Simple.pm
+lib/mcstas/tools/perl/modules/Tk/RulesEditor.pm
+lib/mcstas/tools/perl/modules/Tk/CodeText.pm
+lib/mcstas/tools/perl/modules/Tk/CodeText.pod
+lib/mcstas/tools/perl/modules/Tk/CodeText/McStas.pm
+lib/mcstas/tools/perl/modules/Tk/CodeText/Xresources.pm
+lib/mcstas/tools/perl/modules/Tk/CodeText/None.pm
+lib/mcstas/tools/perl/modules/Tk/CodeText/Template.pm
 lib/mcstas/tools/perl/modules/lib/%%PERL_PORT%%/%%PERL_VERSION%%/man/man3/Proc::Simple.3
+lib/mcstas/tools/perl/modules/lib/%%PERL_PORT%%/%%PERL_VERSION%%/man/man3/Tk::CodeText::McStas.3
+lib/mcstas/tools/perl/modules/lib/%%PERL_PORT%%/%%PERL_VERSION%%/man/man3/Tk::CodeText::Xresources.3
+lib/mcstas/tools/perl/modules/lib/%%PERL_PORT%%/%%PERL_VERSION%%/man/man3/Tk::CodeText::None.3
+lib/mcstas/tools/perl/modules/lib/%%PERL_PORT%%/%%PERL_VERSION%%/man/man3/Tk::CodeText::Template.3
+lib/mcstas/tools/perl/modules/lib/%%PERL_PORT%%/%%PERL_VERSION%%/man/man3/Tk::CodeText.3
 lib/mcstas/tools/perl/modules/%%PERL_ARCHNAME%%/perllocal.pod
 lib/mcstas/tools/scilab/mcdisplay.sci
 lib/mcstas/tools/scilab/mcplot.sci
@@ -520,7 +592,6 @@ lib/mcstas/tools/scilab/plotlib/man/whatis
 lib/mcstas/tools/scilab/plotlib/man/whitebg.cat
 lib/mcstas/tools/scilab/plotlib/man/xlabel.cat
 lib/mcstas/tools/scilab/plotlib/man/ylabel.cat
-lib/mcstas/builddocs.sh
 lib/mcstas/index.html
 lib/mcstas/LGPL
 lib/mcstas/LICENSE.LIB
@@ -534,9 +605,13 @@ lib/mcstas/README
 @dirrm lib/mcstas/tools/perl/modules/auto
 @dirrm lib/mcstas/tools/perl/modules/%%PERL_ARCHNAME%%/auto/Proc/Simple
 @dirrm lib/mcstas/tools/perl/modules/%%PERL_ARCHNAME%%/auto/Proc
+@dirrm lib/mcstas/tools/perl/modules/%%PERL_ARCHNAME%%/auto/Tk/CodeText
+@dirrm lib/mcstas/tools/perl/modules/%%PERL_ARCHNAME%%/auto/Tk
 @dirrm lib/mcstas/tools/perl/modules/%%PERL_ARCHNAME%%/auto
 @dirrm lib/mcstas/tools/perl/modules/%%PERL_ARCHNAME%%
 @dirrm lib/mcstas/tools/perl/modules/Proc
+@dirrm lib/mcstas/tools/perl/modules/Tk/CodeText
+@dirrm lib/mcstas/tools/perl/modules/Tk
 @dirrm lib/mcstas/tools/perl/modules/lib/%%PERL_PORT%%/%%PERL_VERSION%%/man/man3
 @dirrm lib/mcstas/tools/perl/modules/lib/%%PERL_PORT%%/%%PERL_VERSION%%/man
 @dirrm lib/mcstas/tools/perl/modules/lib/%%PERL_PORT%%/%%PERL_VERSION%%
@@ -554,6 +629,7 @@ lib/mcstas/README
 @dirrm lib/mcstas/monitors
 @dirrm lib/mcstas/misc
 @dirrm lib/mcstas/examples
+@dirrm lib/mcstas/editors
 @dirrm lib/mcstas/doc/tutorial/pics
 @dirrm lib/mcstas/doc/tutorial/html
 @dirrm lib/mcstas/doc/tutorial
