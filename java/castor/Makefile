@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	castor
-PORTVERSION=	0.9.9.1
+PORTVERSION=	1.0
 CATEGORIES=	java devel
 MASTER_SITES=	http://dist.codehaus.org/castor/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
