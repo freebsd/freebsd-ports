@@ -6,25 +6,25 @@
 #
 
 PORTNAME=	kqemu
-PORTVERSION=	0.7.2
-PORTREVISION=	1
+PORTVERSION=	1.3.0.p5
+PORTREVISION=	0
 CATEGORIES=	emulators
 MASTER_SITES=	http://fabrice.bellard.free.fr/qemu/
 PKGNAMESUFFIX=	-kmod
+DISTNAME=	${PORTNAME}-${PORTVERSION:C/.p/pre/}
 DIST_SUBDIR=	kqemu
 
-MAINTAINER=	nork@FreeBSD.org
-COMMENT=	Kernel Acceralator for QEMU CPU Emulator
+MAINTAINER=	nox@jelal.kn-bremen.de
+COMMENT=	Kernel Acceralator for QEMU CPU Emulator (development version)
 
 ONLY_FOR_ARCHS=	i386 amd64
-NO_PACKAGE=	"Depends on kernel, and module not redistributable"
+NO_PACKAGE=	Depends on kernel, and module not redistributable
 
 PLIST_FILES=	"include/kqemu/kqemu.h"
 PLIST_FILES+=	"@dirrm include/kqemu"
 PLIST_FILES+=	"@cwd /"
 PLIST_FILES+=	${KMODDIR:C,^/,,}/kqemu.ko
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
 MAKEFILE=	Makefile.freebsd
 
 .include <bsd.port.pre.mk>
