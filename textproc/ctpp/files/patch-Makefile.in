@@ -1,8 +1,11 @@
---- Makefile.in.orig	Wed Feb  9 11:50:31 2005
-+++ Makefile.in	Wed Feb  9 22:09:28 2005
-@@ -75,8 +75,8 @@
+--- Makefile.in.orig	Wed Feb  9 10:50:31 2005
++++ Makefile.in	Sat Mar 25 17:56:33 2006
+@@ -74,9 +74,11 @@
+ 			fi; \
  		fi; \
  	done;
++
++install-doc::
  	@echo -------------------------------------- Installing documentation ----------
 -	if test ! -d "$(PREFIX)/doc"; then \
 -		$(INSTALL) -d -m 0755 $(PREFIX)/doc; \
@@ -11,7 +14,7 @@
  	fi; \
  	ELEM_LIST=`ls -R -1 $(BUILDROOT)/doc | sed 's!:$$!!';` ; \
  	CURR_DIR=''; \
-@@ -85,10 +85,10 @@
+@@ -85,10 +87,10 @@
  			EXCL_PATH=`echo $(BUILDROOT)/doc | sed 's!\.!\\\\.!g'`; \
  			INST_PATH=`eval "echo $$ELEMENT | sed 's!^$$EXCL_PATH!!g'"`; \
  			CURR_DIR=$$ELEMENT; \

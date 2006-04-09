@@ -15,82 +15,82 @@ include/ctpp/functions/value_in_set.hpp
 include/ctpp/util/d2str.hpp
 lib/libctpp.so
 lib/libctpp.a
-share/doc/ctpp/en/ctpp.chm
-share/doc/ctpp/en/html/ctpp_compile.html
-share/doc/ctpp/en/html/ctpp_context_vars.html
-share/doc/ctpp/en/html/ctpp_cover.html
-share/doc/ctpp/en/html/ctpp.css
-share/doc/ctpp/en/html/ctpp_def.html
-share/doc/ctpp/en/html/ctpp_dev_algorithm.html
-share/doc/ctpp/en/html/ctpp_dev_api.html
-share/doc/ctpp/en/html/ctpp_dev_intro.html
-share/doc/ctpp/en/html/ctpp_dev_sample.html
-share/doc/ctpp/en/html/ctpp_dev_udf.html
-share/doc/ctpp/en/html/ctpp_errors.html
-share/doc/ctpp/en/html/ctpp_function_form_param.html
-share/doc/ctpp/en/html/ctpp_function_href_param.html
-share/doc/ctpp/en/html/ctpp_function_htmlescape.html
-share/doc/ctpp/en/html/ctpp_function_in_set.html
-share/doc/ctpp/en/html/ctpp_function_is_a.html
-share/doc/ctpp/en/html/ctpp_function_num_format.html
-share/doc/ctpp/en/html/ctpp_function_re.html
-share/doc/ctpp/en/html/ctpp_function_sprintf.html
-share/doc/ctpp/en/html/ctpp_function_urlescape.html
-share/doc/ctpp/en/html/ctpp.hhc
-share/doc/ctpp/en/html/ctpp.hhk
-share/doc/ctpp/en/html/ctpp.hhp
-share/doc/ctpp/en/html/ctpp_intro.html
-share/doc/ctpp/en/html/ctpp_license.html
-share/doc/ctpp/en/html/ctpp_operators.html
-share/doc/ctpp/en/html/ctpp_thanks.html
-share/doc/ctpp/en/html/ctpp_tmpl_if.html
-share/doc/ctpp/en/html/ctpp_tmpl_include.html
-share/doc/ctpp/en/html/ctpp_tmpl_loop.html
-share/doc/ctpp/en/html/ctpp_tmpl_udf.html
-share/doc/ctpp/en/html/ctpp_tmpl_var.html
-share/doc/ctpp/en/html/index.html
-share/doc/ctpp/en/html/index_left.html
-share/doc/ctpp/ru/ctpp.chm
-share/doc/ctpp/ru/html/ctpp_compile.html
-share/doc/ctpp/ru/html/ctpp_context_vars.html
-share/doc/ctpp/ru/html/ctpp_cover.html
-share/doc/ctpp/ru/html/ctpp.css
-share/doc/ctpp/ru/html/ctpp_def.html
-share/doc/ctpp/ru/html/ctpp_dev_algorithm.html
-share/doc/ctpp/ru/html/ctpp_dev_api.html
-share/doc/ctpp/ru/html/ctpp_dev_intro.html
-share/doc/ctpp/ru/html/ctpp_dev_sample.html
-share/doc/ctpp/ru/html/ctpp_dev_udf.html
-share/doc/ctpp/ru/html/ctpp_errors.html
-share/doc/ctpp/ru/html/ctpp_function_form_param.html
-share/doc/ctpp/ru/html/ctpp_function_href_param.html
-share/doc/ctpp/ru/html/ctpp_function_htmlescape.html
-share/doc/ctpp/ru/html/ctpp_function_in_set.html
-share/doc/ctpp/ru/html/ctpp_function_is_a.html
-share/doc/ctpp/ru/html/ctpp_function_num_format.html
-share/doc/ctpp/ru/html/ctpp_function_re.html
-share/doc/ctpp/ru/html/ctpp_function_sprintf.html
-share/doc/ctpp/ru/html/ctpp_function_urlescape.html
-share/doc/ctpp/ru/html/ctpp.hhc
-share/doc/ctpp/ru/html/ctpp.hhk
-share/doc/ctpp/ru/html/ctpp.hhp
-share/doc/ctpp/ru/html/ctpp_intro.html
-share/doc/ctpp/ru/html/ctpp_license.html
-share/doc/ctpp/ru/html/ctpp_operators.html
-share/doc/ctpp/ru/html/ctpp_thanks.html
-share/doc/ctpp/ru/html/ctpp_tmpl_if.html
-share/doc/ctpp/ru/html/ctpp_tmpl_include.html
-share/doc/ctpp/ru/html/ctpp_tmpl_loop.html
-share/doc/ctpp/ru/html/ctpp_tmpl_udf.html
-share/doc/ctpp/ru/html/ctpp_tmpl_var.html
-share/doc/ctpp/ru/html/index.html
-share/doc/ctpp/ru/html/index_left.html
+%%PORTDOCS%%%%DOCSDIR%%/en/ctpp.chm
+%%PORTDOCS%%%%DOCSDIR%%/en/html/ctpp_compile.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/ctpp_context_vars.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/ctpp_cover.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/ctpp.css
+%%PORTDOCS%%%%DOCSDIR%%/en/html/ctpp_def.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/ctpp_dev_algorithm.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/ctpp_dev_api.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/ctpp_dev_intro.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/ctpp_dev_sample.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/ctpp_dev_udf.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/ctpp_errors.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/ctpp_function_form_param.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/ctpp_function_href_param.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/ctpp_function_htmlescape.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/ctpp_function_in_set.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/ctpp_function_is_a.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/ctpp_function_num_format.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/ctpp_function_re.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/ctpp_function_sprintf.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/ctpp_function_urlescape.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/ctpp.hhc
+%%PORTDOCS%%%%DOCSDIR%%/en/html/ctpp.hhk
+%%PORTDOCS%%%%DOCSDIR%%/en/html/ctpp.hhp
+%%PORTDOCS%%%%DOCSDIR%%/en/html/ctpp_intro.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/ctpp_license.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/ctpp_operators.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/ctpp_thanks.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/ctpp_tmpl_if.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/ctpp_tmpl_include.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/ctpp_tmpl_loop.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/ctpp_tmpl_udf.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/ctpp_tmpl_var.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/index.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/index_left.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/ctpp.chm
+%%PORTDOCS%%%%DOCSDIR%%/ru/html/ctpp_compile.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/html/ctpp_context_vars.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/html/ctpp_cover.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/html/ctpp.css
+%%PORTDOCS%%%%DOCSDIR%%/ru/html/ctpp_def.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/html/ctpp_dev_algorithm.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/html/ctpp_dev_api.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/html/ctpp_dev_intro.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/html/ctpp_dev_sample.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/html/ctpp_dev_udf.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/html/ctpp_errors.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/html/ctpp_function_form_param.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/html/ctpp_function_href_param.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/html/ctpp_function_htmlescape.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/html/ctpp_function_in_set.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/html/ctpp_function_is_a.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/html/ctpp_function_num_format.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/html/ctpp_function_re.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/html/ctpp_function_sprintf.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/html/ctpp_function_urlescape.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/html/ctpp.hhc
+%%PORTDOCS%%%%DOCSDIR%%/ru/html/ctpp.hhk
+%%PORTDOCS%%%%DOCSDIR%%/ru/html/ctpp.hhp
+%%PORTDOCS%%%%DOCSDIR%%/ru/html/ctpp_intro.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/html/ctpp_license.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/html/ctpp_operators.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/html/ctpp_thanks.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/html/ctpp_tmpl_if.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/html/ctpp_tmpl_include.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/html/ctpp_tmpl_loop.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/html/ctpp_tmpl_udf.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/html/ctpp_tmpl_var.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/html/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/html/index_left.html
 @dirrm include/ctpp/util
 @dirrm include/ctpp/functions
 @dirrm include/ctpp/ctpp
 @dirrm include/ctpp
-@dirrm share/doc/ctpp/en/html
-@dirrm share/doc/ctpp/en
-@dirrm share/doc/ctpp/ru/html
-@dirrm share/doc/ctpp/ru
-@dirrm share/doc/ctpp
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/en
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ru/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ru
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
