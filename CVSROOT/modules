@@ -9912,6 +9912,7 @@ php5-openssl	ports/security/php5-openssl
 php5-pcntl	ports/devel/php5-pcntl
 php5-pcre	ports/devel/php5-pcre
 php5-pgsql	ports/databases/php5-pgsql
+php5-phing	ports/devel/php5-phing
 php5-posix	ports/sysutils/php5-posix
 php5-propel	ports/databases/php5-propel
 php5-pspell	ports/textproc/php5-pspell
@@ -14454,4 +14455,3 @@ zthread		ports/devel/zthread
 ztrack		ports/games/ztrack
 zu-aspell	ports/textproc/zu-aspell
 zziplib		ports/devel/zziplib
-php5-phing	ports/devel/php5-phing
