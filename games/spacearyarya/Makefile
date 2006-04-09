@@ -9,7 +9,10 @@ PORTNAME=	spacearyarya
 PORTVERSION=	1.0.2
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	http://kxl.hn.org/download/
+MASTER_SITES=	ftp://ftp.dvo.ru/pub/Gentoo/distfiles/ \
+		ftp://ftp.uni-erlangen.de/.mirrors/ftpbsd/ftp.freebsd.org/pub/FreeBSD/ports/distfiles/ \
+		ftp://ftp.bsdfr.org/pub/FreeBSD/ports/distfiles/ \
+		ftp://ftp.jpix.ad.jp/pub/FreeBSD/ports/distfiles/
 DISTNAME=	SpaceAryarya-KXL-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
