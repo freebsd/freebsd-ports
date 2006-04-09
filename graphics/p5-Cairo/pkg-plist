@@ -2,7 +2,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Cairo/Install/Files.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Cairo/Install/cairo-perl-auto.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Cairo/Install/cairo-perl-auto.typemap
-%%SITE_PERL%%/%%PERL_ARCH%%/Cairo/Install/cairo-perl-enums.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Cairo/Install/cairo-perl.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Cairo/Install/cairo-perl.typemap
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cairo/.packlist
