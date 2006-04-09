@@ -41,8 +41,6 @@ bin/opera
 %%DATADIR%%/locale/english.lng
 %%DATADIR%%/opera6.adr
 %%DATADIR%%/plugins/libnpp.so
-%%DATADIR%%/plugins/operamotifwrapper-1
-%%DATADIR%%/plugins/operamotifwrapper-2
 %%DATADIR%%/plugins/operamotifwrapper-3
 %%DATADIR%%/plugins/operaplugincleaner
 %%DATADIR%%/search.ini

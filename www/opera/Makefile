@@ -8,29 +8,29 @@
 PORTNAME=	opera
 PORTVERSION=	${OPERA_VER}.${OPERA_DATE}
 CATEGORIES=	www ipv6
-MASTER_SITES=	http://ftp.scarlet.be/pub/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/ \
-		ftp://ftp.planetmirror.com/pub/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/ \
-		http://www.mehok.uni-miskolc.hu/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/ \
-		ftp://ftp.heanet.ie/pub/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/ \
-		http://opera.nsc.no/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/ \
-		http://ftp.task.gda.pl/pub/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/ \
-		ftp://ftp.idilis.ro/mirrors/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/ \
-		http://www.fastmirrors.org/pub/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/ \
-		http://ftp.sunet.se/pub/www/clients/Opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/ \
-		ftp://mirror.switch.ch/mirror/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/ \
-		ftp://ftp.tiscali.nl/pub/mirrors/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/ \
-		http://ftp.ankara.edu.tr/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/ \
-		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/&,} \
-		ftp://ftp.opera.com/pub/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/
+MASTER_SITES=	http://ftp.scarlet.be/pub/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/static/ \
+		ftp://ftp.planetmirror.com/pub/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/static/ \
+		http://www.mehok.uni-miskolc.hu/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/static/ \
+		ftp://ftp.heanet.ie/pub/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/static/ \
+		http://opera.nsc.no/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/static/ \
+		http://ftp.task.gda.pl/pub/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/static/ \
+		ftp://ftp.idilis.ro/mirrors/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/static/ \
+		http://www.fastmirrors.org/pub/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/static/ \
+		http://ftp.sunet.se/pub/www/clients/Opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/static/ \
+		ftp://mirror.switch.ch/mirror/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/static/ \
+		ftp://ftp.tiscali.nl/pub/mirrors/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/static/ \
+		http://ftp.ankara.edu.tr/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/static/ \
+		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/static/&,} \
+		ftp://ftp.opera.com/pub/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/static/
 DISTNAME=	${PORTNAME}-${OPERA_VER}-${OPERA_DATE}.1-static-qt.i386.freebsd-en
 
 MAINTAINER=	avleeuwen@piwebs.com
 COMMENT=	A blazingly fast, full-featured, standards-compliant browser
 
-OPERA_VER=	8.51
+OPERA_VER=	8.54
 OPERA_MINVER=	#
 OPERA_REL=	final
-OPERA_DATE=	20051114
+OPERA_DATE=	20060330
 
 DATADIR=	${PREFIX}/share/${PORTNAME}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}
@@ -38,15 +38,12 @@ DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}
 USE_BZIP2=	yes
 WANT_GNOME=	yes
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
 ONLY_FOR_ARCHS=	i386
 
 NO_BUILD=	yes
 NO_FILTER_SHLIBS=yes
 
-.ifndef(WITHOUT_ASPELL)
-LIB_DEPENDS+=	aspell.16:${PORTSDIR}/textproc/aspell
-.endif
+OPTIONS=	ASPELL	"Support spelling checker"	off
 
 .include <bsd.port.pre.mk>
 
@@ -56,6 +53,10 @@ LIB_DEPENDS+=	c_r.4:${PORTSDIR}/misc/compat4x
 
 .if ${OSVERSION} >= 600000
 LIB_DEPENDS+=	z.2:${PORTSDIR}/misc/compat5x
+.endif
+
+.if defined(WITH_ASPELL)
+LIB_DEPENDS+=	aspell.16:${PORTSDIR}/textproc/aspell
 .endif
 
 .if ${HAVE_GNOME:Mgnomehier}!=""
@@ -68,13 +69,6 @@ PLIST_SUB+=	GNOME="@comment "
 PLIST_SUB+=	KDE=""
 .else
 PLIST_SUB+=	KDE="@comment "
-.endif
-
-pre-everything::
-.if !defined(WITHOUT_ASPELL)
-	@${ECHO_CMD} '===> The following options are available for this port:'
-	@${ECHO_CMD} '===>'
-	@${ECHO_CMD} '===> Define WITHOUT_ASPELL to not install aspell.'
 .endif
 
 post-patch:
