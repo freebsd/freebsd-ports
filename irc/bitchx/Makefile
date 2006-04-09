@@ -77,10 +77,6 @@ LIB_DEPENDS+=	xmms.4:${PORTSDIR}/multimedia/xmms
 USE_AUTOTOOLS=	autoconf:253
 .endif
 
-.if ${ARCH} == "alpha" || ${ARCH} == "ia64" || ${ARCH} == "amd64"
-IGNORE=	dumps core on startup
-.endif
-
 .if defined(WITH_IPV6)
 CONFIGURE_ARGS+=--enable-ipv6
 .endif
