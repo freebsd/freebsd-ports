@@ -1,4 +1,11 @@
 bin/openmcu
-share/doc/openh323/openmcu/ReadMe.txt
-@dirrmtry share/doc/openh323/openmcu
-@dirrmtry share/doc/openh323
+%%EXAMPLESDIR%%/%%PORTNAME%%/connecting.wav
+%%EXAMPLESDIR%%/%%PORTNAME%%/entering.wav
+%%EXAMPLESDIR%%/%%PORTNAME%%/leaving.wav
+%%EXAMPLESDIR%%/%%PORTNAME%%/openmcu.ini
+%%EXAMPLESDIR%%/%%PORTNAME%%/server.pem
+@dirrm %%EXAMPLESDIR%%/%%PORTNAME%%
+@dirrmtry %%EXAMPLESDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/%%PORTNAME%%/ReadMe.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/%%PORTNAME%%
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
