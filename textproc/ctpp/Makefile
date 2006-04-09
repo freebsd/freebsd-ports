@@ -26,6 +26,10 @@ CONFIGURE_ARGS+=	--enable-optimization
 CONFIGURE_ARGS+=	--enable-debug
 .endif
 
+.if !defined(NOPORTDOCS)
+INSTALL_TARGET=	install install-doc
+.endif
+
 post-patch:
 	@${RM} -f ${WRKSRC}/obj/*.o
 
