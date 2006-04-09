@@ -1,0 +1,20 @@
+include/gltext.h
+lib/libgltext.so.0
+lib/libgltext.so
+lib/libgltext.la
+lib/libgltext.a
+%%PORTDOCS%%%%DOCSDIR%%/tutorial.txt
+%%EXAMPLES%%%%EXAMPLESDIR%%/alpha/alpha
+%%EXAMPLES%%%%EXAMPLESDIR%%/alpha/alpha.cpp
+%%EXAMPLES%%%%EXAMPLESDIR%%/fps/fps
+%%EXAMPLES%%%%EXAMPLESDIR%%/fps/fps.cpp
+%%EXAMPLES%%%%EXAMPLESDIR%%/simple/simple
+%%EXAMPLES%%%%EXAMPLESDIR%%/simple/simple.cpp
+%%EXAMPLES%%%%EXAMPLESDIR%%/sizes/sizes
+%%EXAMPLES%%%%EXAMPLESDIR%%/sizes/sizes.cpp
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%EXAMPLES%%@dirrm %%EXAMPLESDIR%%/alpha
+%%EXAMPLES%%@dirrm %%EXAMPLESDIR%%/fps
+%%EXAMPLES%%@dirrm %%EXAMPLESDIR%%/simple
+%%EXAMPLES%%@dirrm %%EXAMPLESDIR%%/sizes
+%%EXAMPLES%%@dirrm %%EXAMPLESDIR%%

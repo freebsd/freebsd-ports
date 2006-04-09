@@ -1,0 +1,14 @@
+GLText is a portable font rendering library for C++ OpenGL applications. It
+uses FreeType2 to read and render high-quality TrueType fonts with a minimal
+footprint. With just a few easy lines of C++, you can add gorgeously
+rendered text to your graphical applications.
+
+GLText is an open source project licensed under the LGPL. Basically this means
+that you can use and link your application with it regardless of what license
+your application uses. If you make changes to GLText, however,
+you must make those changes open source under the LGPL.
+
+Written with portablility in mind, GLText works on Windows, Linux, FreeBSD and
+IRIX - virtually anywhere that FreeType2 supports.
+
+WWW:	http://gltext.sourceforge.net
