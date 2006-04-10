@@ -6,14 +6,16 @@
 #
 
 PORTNAME=	String-Approx
-PORTVERSION=	3.25
+PORTVERSION=	3.26
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	String
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for approximate matching (fuzzy matching)
+
+BUILD_DEPENDS=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
 
 PERL_CONFIGURE=	YES
 
