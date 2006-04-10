@@ -32,6 +32,7 @@
 %%SITE_PERL%%/DBIx/Class/Manual.pod
 %%SITE_PERL%%/DBIx/Class/Manual/Component.pod
 %%SITE_PERL%%/DBIx/Class/Manual/Cookbook.pod
+%%SITE_PERL%%/DBIx/Class/Manual/DocMap.pod
 %%SITE_PERL%%/DBIx/Class/Manual/Example.pod
 %%SITE_PERL%%/DBIx/Class/Manual/Glossary.pod
 %%SITE_PERL%%/DBIx/Class/Manual/Intro.pod
@@ -69,6 +70,7 @@
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/Cursor.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/DB2.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/MSSQL.pm
+%%SITE_PERL%%/DBIx/Class/Storage/DBI/MultiDistinctEmulation.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/Oracle.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/Pg.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/SQLite.pm

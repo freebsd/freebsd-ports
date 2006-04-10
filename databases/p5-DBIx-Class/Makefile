@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBIx-Class
-PORTVERSION=	0.06000
+PORTVERSION=	0.06001
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DBIx
@@ -42,6 +42,7 @@ MAN3=	DBIx::Class.3 \
 	DBIx::Class::Manual.3 \
 	DBIx::Class::Manual::Component.3 \
 	DBIx::Class::Manual::Cookbook.3 \
+	DBIx::Class::Manual::DocMap.3 \
 	DBIx::Class::Manual::Example.3 \
 	DBIx::Class::Manual::Glossary.3 \
 	DBIx::Class::Manual::Intro.3 \
@@ -69,6 +70,7 @@ MAN3=	DBIx::Class.3 \
 	DBIx::Class::Storage::DBI::Cursor.3 \
 	DBIx::Class::Storage::DBI::DB2.3 \
 	DBIx::Class::Storage::DBI::MSSQL.3 \
+	DBIx::Class::Storage::DBI::MultiDistinctEmulation.3 \
 	DBIx::Class::Storage::DBI::Oracle.3 \
 	DBIx::Class::Storage::DBI::Pg.3 \
 	DBIx::Class::Storage::DBI::SQLite.3 \
