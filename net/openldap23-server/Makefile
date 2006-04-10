@@ -263,7 +263,7 @@ IGNORE=			: WITH_BDB_VER must be 3, 4, 41, 42 or 43
 
 LIB_DEPENDS+=		${BDBLIB}:${PORTSDIR}/databases/db${WITH_BDB_VER}
 CPPFLAGS+=		-I${LOCALBASE}/include/db${WITH_BDB_VER}
-CONFIGURE_ARGS+=	--with-ldbm-api=berkeley
+CONFIGURE_ARGS+=	--enable-ldbm-api=berkeley
 CONFIGURE_SED+=		-e 's,ol_DB_LIB=$$,&-l${BDBLIB:R},' \
 			-e 's,(ol_cv_lib_db=)yes$$,\1-l${BDBLIB:R},'
 .endif
