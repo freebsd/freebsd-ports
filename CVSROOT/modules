@@ -12364,6 +12364,7 @@ suckblow	ports/net/suckblow
 sud		ports/security/sud
 sudo		ports/security/sudo
 sudoku		ports/games/sudoku
+sudoku_solver	ports/games/sudoku_solver
 sudoscript	ports/security/sudoscript
 sudosh		ports/security/sudosh
 sudsol		ports/games/sudsol
