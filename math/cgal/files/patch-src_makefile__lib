@@ -1,0 +1,10 @@
+--- src/makefile_lib.orig	Mon Apr 10 07:54:15 2006
++++ src/makefile_lib	Mon Apr 10 07:54:20 2006
+@@ -51,7 +51,6 @@
+ #---------------------------------------------------------------------#
+ 
+ lib: lib_no_install
+-	mv $(CGAL_LIB) $(CGAL_LIB_DESTINATION)
+ 
+ lib_no_install: $(CGAL_OBJECTS) $(CGAL_EXTRA_OBJECTS)
+ 	$(CGAL_LIB_CREATE)$(CGAL_LIB) \
