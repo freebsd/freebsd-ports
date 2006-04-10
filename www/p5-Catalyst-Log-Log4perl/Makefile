@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Catalyst-Log-Log4perl
-PORTVERSION=	0.1
+PORTVERSION=	0.3
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Catalyst
@@ -15,8 +15,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lars@balker.dk
 COMMENT=	Log::Log4perl logging for Catalyst
 
-BUILD_DEPENDS=	p5-Catalyst>=5.30:${PORTSDIR}/www/p5-Catalyst \
-		p5-Log-Log4perl>=0:${PORTSDIR}/devel/p5-Log-Log4perl
+BUILD_DEPENDS=	p5-Catalyst>=5.60:${PORTSDIR}/www/p5-Catalyst \
+		p5-Log-Log4perl>=0:${PORTSDIR}/devel/p5-Log-Log4perl \
+		p5-Params-Validate>=0:${PORTSDIR}/devel/p5-Params-Validate
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
