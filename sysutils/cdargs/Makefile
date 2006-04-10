@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cdargs
-PORTVERSION=	1.33
+PORTVERSION=	1.35
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.skamphausen.de/software/cdargs/
 
@@ -14,7 +14,6 @@ MAINTAINER=	wxs@csh.rit.edu
 COMMENT=	Navigate the filesystem using a menu interface or a bookmark system
 
 USE_GETOPT_LONG=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CFLAGS+=	-DHAVE_DECL_GETOPT
