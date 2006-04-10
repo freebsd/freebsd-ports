@@ -34,6 +34,35 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="43cb40b3-c8c2-11da-a672-000e0c2e438a">
+    <topic>f2c -- insecure temporary files</topic>
+    <affects>
+      <package>
+	<name>f2c</name>
+	<range><gt>0</gt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Javier Fernandez-Sanguino Pena reports two temporary file
+	  vulnerability within f2c.  The vulnerabilities are caused
+	  due to weak temporary file handling.  An attacker could
+	  create an symbolic link, causing a local user running f2c
+	  to overwrite the symlinked file.  This could give the
+	  attacker elevated privileges.</p>
+      </body>
+    </description>
+    <references>
+      <bid>1280</bid>
+      <cvename>CAN-2005-0017</cvename>
+      <cvename>CAN-2005-0018</cvename>
+    </references>
+    <dates>
+      <discovery>2005-01-27</discovery>
+      <entry>2006-04-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c7526a14-c4dc-11da-9699-00123ffe8333">
     <topic>mplayer -- Multiple integer overflows</topic>
     <affects>
