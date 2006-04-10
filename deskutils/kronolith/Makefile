@@ -19,7 +19,7 @@ MASTER_SITES=	ftp://ftp.horde.org/pub/kronolith/				\
 		http://ftp.horde.org/pub/kronolith/
 DISTNAME=	${PORTNAME}-h3-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	shaun@inerd.com
 COMMENT=	Kronolith is the Horde calendar application
 
 RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/rpc.php:${PORTSDIR}/www/horde

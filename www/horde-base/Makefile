@@ -21,7 +21,7 @@ MASTER_SITES=	ftp://ftp.horde.org/pub/horde/				\
 PKGNAMESUFFIX=	-php5
 .endif
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	shaun@inerd.com
 COMMENT=	A common code-base used by Horde applications, written in PHP
 
 #----------------------------------------------------------------------------

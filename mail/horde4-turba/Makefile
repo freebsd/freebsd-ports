@@ -19,7 +19,7 @@ MASTER_SITES=	ftp://ftp.horde.org/pub/turba/				\
 		http://ftp.horde.org/pub/turba/
 DISTNAME=	${PORTNAME}-h3-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	shaun@inerd.com
 COMMENT=	The Horde contact management application
 
 #-----------------------------------------------------------------------
