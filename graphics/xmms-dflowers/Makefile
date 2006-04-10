@@ -9,11 +9,12 @@ PORTNAME=	dflowers
 PORTVERSION=	1.2.1
 PORTREVISION=	1
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.shell.linux.se/bm/f/
+MASTER_SITES=	${MASTER_SITE_GENTOO}
+MASTER_SITE_SUBDIR=	distfiles
 PKGNAMEPREFIX=	xmms-
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/^/v/}
 
-MAINTAINER=	alejandro@varnet.biz
+MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Dual Flowers visualization plugin for XMMS
 
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
