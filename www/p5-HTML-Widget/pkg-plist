@@ -16,6 +16,7 @@
 %%SITE_PERL%%/HTML/Widget/Constraint/Integer.pm
 %%SITE_PERL%%/HTML/Widget/Constraint/Length.pm
 %%SITE_PERL%%/HTML/Widget/Constraint/Maybe.pm
+%%SITE_PERL%%/HTML/Widget/Constraint/Number.pm
 %%SITE_PERL%%/HTML/Widget/Constraint/Printable.pm
 %%SITE_PERL%%/HTML/Widget/Constraint/Range.pm
 %%SITE_PERL%%/HTML/Widget/Constraint/Regex.pm
