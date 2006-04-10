@@ -77,6 +77,7 @@ bin/nt
 %%DATADIR%%/themes/gnome/popup/down.png
 %%DATADIR%%/themes/gnome/popup/log.png
 %%DATADIR%%/themes/gnome/popup/pause.png
+%%DATADIR%%/themes/gnome/popup/remove.png
 %%DATADIR%%/themes/gnome/popup/remove_completed.png
 %%DATADIR%%/themes/gnome/popup/start.png
 %%DATADIR%%/themes/gnome/popup/up.png
@@ -155,6 +156,16 @@ bin/nt
 %%DATADIR%%/themes/gnomeria/buttons/speedlow.png
 %%DATADIR%%/themes/gnomeria/buttons/speedmedium.png
 %%DATADIR%%/themes/gnomeria/buttons/stop.png
+%%DATADIR%%/themes/gnomeria/dnd1.png
+%%DATADIR%%/themes/gnomeria/dnd2.png
+%%DATADIR%%/themes/gnomeria/dndmini.png
+%%DATADIR%%/themes/gnomeria/log/error.png
+%%DATADIR%%/themes/gnomeria/log/from_server.png
+%%DATADIR%%/themes/gnomeria/log/ok.png
+%%DATADIR%%/themes/gnomeria/log/to_server.png
+%%DATADIR%%/themes/gnomeria/log/warning.png
+%%DATADIR%%/themes/gnomeria/offline.png
+%%DATADIR%%/themes/gnomeria/online.png
 %%DATADIR%%/themes/gnomeria/queue/complete.png
 %%DATADIR%%/themes/gnomeria/queue/failed.png
 %%DATADIR%%/themes/gnomeria/queue/paused.png
@@ -267,6 +278,7 @@ share/locale/fr/LC_MESSAGES/d4x.mo
 share/locale/hu/LC_MESSAGES/d4x.mo
 share/locale/it/LC_MESSAGES/d4x.mo
 share/locale/ja/LC_MESSAGES/d4x.mo
+share/locale/nl/LC_MESSAGES/d4x.mo
 share/locale/pl/LC_MESSAGES/d4x.mo
 share/locale/pt_BR/LC_MESSAGES/d4x.mo
 share/locale/ru/LC_MESSAGES/d4x.mo
@@ -285,6 +297,7 @@ share/locale/zh_CN/LC_MESSAGES/d4x.mo
 @dirrm %%DATADIR%%/themes/nuvola32
 @dirrm %%DATADIR%%/themes/gnomeria/toolbar
 @dirrm %%DATADIR%%/themes/gnomeria/queue
+@dirrm %%DATADIR%%/themes/gnomeria/log
 @dirrm %%DATADIR%%/themes/gnomeria/buttons
 @dirrm %%DATADIR%%/themes/gnomeria
 @dirrm %%DATADIR%%/themes/gnome/toolbar
