@@ -33,6 +33,12 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 INSTALLS_SHLIB=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		Does not compile on FreeBSD 4.x
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|^CFLAGS=|#CFLAGS=|g ; \
 		 s|^CPPFLAGS=|#CPPFLAGS=|g' ${WRKSRC}/configure
@@ -43,4 +49,4 @@ post-configure:
 	@${REINPLACE_CMD} -e 's|\(^LDFLAGS =.*\)|\1 ${PTHREAD_LIBS} -liconv|g' \
 		${WRKSRC}/examples/Makefile
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
