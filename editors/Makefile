@@ -97,6 +97,7 @@
     SUBDIR += mined
     SUBDIR += mlview
     SUBDIR += mode-info
+    SUBDIR += morla
     SUBDIR += mp
     SUBDIR += muggy
     SUBDIR += mule

@@ -1,0 +1,13 @@
+Morla is a RDF editor written in C. It is based on the libnxml and librdf
+libraries. With Morla you can manage more RDF documents simultaneously,
+visualize graphs and use templates for quick writing.
+
+With Morla you can import RDFS documents and use their contents to write new
+RDF triples. Templates are also RDF documents and they make Morla easily
+personalizable and expandable.
+
+You can also use Morla as a RDF navigator, wandering among the net knots of
+the RDF documents present on Internet exactly as we are used to do with normal
+browsers.
+
+WWW: http://www2.autistici.org/bakunin/morla/index.php
