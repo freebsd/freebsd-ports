@@ -7,7 +7,7 @@
 
 PORTNAME=	Mail-SpamAssassin
 PORTVERSION=	3.1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_APACHE:S/$/:apache/} ${MASTER_SITE_PERL_CPAN:S/$/:cpan/}
 MASTER_SITE_SUBDIR=	spamassassin/source/:apache Mail/:cpan
@@ -38,7 +38,7 @@ OPTIONS=	AS_ROOT "Run spamd as root (recommended)" on \
 		SSL "Build with SSL support for spamd/spamc" on \
 		MYSQL "Add MySQL support" off \
 		PGSQL "Add PostreSQL support" off \
-		RAZOR "Add Vipul's Razor support" off \
+		RAZOR "Add Vipul's Razor support" on \
 		SPF_QUERY "Add SPF query support" off \
 		RELAY_COUNTRY "Relay country support" off \
 		TOOLS "Install SpamAssassin tools" off
