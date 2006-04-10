@@ -1,19 +1,28 @@
 bin/gmpc
 %%DATADIR%%/gmpc-tray.png
 %%DATADIR%%/gmpc.png
+%%DATADIR%%/icecast.png
 %%DATADIR%%/media-album.png
 %%DATADIR%%/media-artist.png
 %%DATADIR%%/media-audiofile.png
 %%DATADIR%%/media-next.png
 %%DATADIR%%/media-pause.png
 %%DATADIR%%/media-play.png
+%%DATADIR%%/media-playlist.png
 %%DATADIR%%/media-prev.png
 %%DATADIR%%/media-stop.png
 %%DATADIR%%/media-stream.png
 %%DATADIR%%/player-repeat.png
 %%DATADIR%%/player-shuffle.png
 %%DATADIR%%/gmpc.glade
-%%DATADIR%%/playlist.glade
+%%DATADIR%%/playlist3.glade
 %%DATADIR%%/open-location.glade
 %%DATADIR%%/add-browser.glade
+share/applications/gmpc.desktop
+include/gmpc/config1.h
+include/gmpc/cover-art.h
+include/gmpc/plugin.h
+include/gmpc/qthread.h
+@dirrm include/gmpc
+libdata/pkgconfig/gmpc.pc
 @dirrm %%DATADIR%%
