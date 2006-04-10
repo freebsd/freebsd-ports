@@ -523,6 +523,7 @@
     SUBDIR += quake3
     SUBDIR += quake3-data
     SUBDIR += quakeforge
+    SUBDIR += quetoo
     SUBDIR += quit
     SUBDIR += qwdtools
     SUBDIR += race
