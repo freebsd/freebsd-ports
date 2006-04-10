@@ -31,15 +31,20 @@ DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}${PKGNAMESUFFIX}
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}${PKGNAMESUFFIX}
 PORTDOCS=	*
 
+post-extract:
+	@${FIND} -P ${WRKSRC} -name .cvsignore -delete
+
 post-install:
 .if !defined(NOPORTDOCS)
-.for f in CHANGES README doc/zsi.* doc/*.tex
-	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
+.for f in CHANGES README doc/*.xsd doc/*.tex
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
 .for subdir in interop samples test
 	@${MKDIR} ${EXAMPLESDIR}/${subdir}
-	@${CP} -rp ${WRKSRC}/${subdir}/* ${EXAMPLESDIR}/${subdir}
+	cd ${WRKSRC}/${subdir} && ${FIND} . | \
+		${CPIO} -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}/${subdir}
 .endfor
 
 .include <bsd.port.mk>

@@ -32,7 +32,6 @@ bin/wsdl2py.py
 %%EXAMPLESDIR%%/test/test_zsi_net.py
 %%EXAMPLESDIR%%/test/tests_bad.py
 %%EXAMPLESDIR%%/test/tests_good.py
-%%EXAMPLESDIR%%/test/wsdl2py/.cvsignore
 %%EXAMPLESDIR%%/test/wsdl2py/README
 %%EXAMPLESDIR%%/test/wsdl2py/ServiceTest.py
 %%EXAMPLESDIR%%/test/wsdl2py/config.txt
