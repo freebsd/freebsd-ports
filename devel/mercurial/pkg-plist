@@ -119,6 +119,7 @@ bin/hgmerge
 %%PYTHON_SITELIBDIR%%/mercurial/templates/error-gitweb.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/error.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/fileannotate-gitweb.tmpl
+%%PYTHON_SITELIBDIR%%/mercurial/templates/fileannotate-raw.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/fileannotate.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/filediff-raw.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/filediff.tmpl
@@ -140,6 +141,9 @@ bin/hgmerge
 %%PYTHON_SITELIBDIR%%/mercurial/templates/manifest-gitweb.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/manifest.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/map
+%%PYTHON_SITELIBDIR%%/mercurial/templates/map-cmdline.changelog
+%%PYTHON_SITELIBDIR%%/mercurial/templates/map-cmdline.compact
+%%PYTHON_SITELIBDIR%%/mercurial/templates/map-cmdline.default
 %%PYTHON_SITELIBDIR%%/mercurial/templates/map-gitweb
 %%PYTHON_SITELIBDIR%%/mercurial/templates/map-raw
 %%PYTHON_SITELIBDIR%%/mercurial/templates/map-rss
@@ -147,8 +151,13 @@ bin/hgmerge
 %%PYTHON_SITELIBDIR%%/mercurial/templates/search-gitweb.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/search.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/shortlog-gitweb.tmpl
+%%PYTHON_SITELIBDIR%%/mercurial/templates/static/hgicon.png
+%%PYTHON_SITELIBDIR%%/mercurial/templates/static/style-gitweb.css
+%%PYTHON_SITELIBDIR%%/mercurial/templates/static/style.css
 %%PYTHON_SITELIBDIR%%/mercurial/templates/summary-gitweb.tmpl
+%%PYTHON_SITELIBDIR%%/mercurial/templates/tagentry-rss.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/tags-gitweb.tmpl
+%%PYTHON_SITELIBDIR%%/mercurial/templates/tags-rss.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/tags.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/transaction.py
 %%PYTHON_SITELIBDIR%%/mercurial/transaction.pyc
