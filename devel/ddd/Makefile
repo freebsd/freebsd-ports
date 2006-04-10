@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	ddd
-PORTVERSION=	3.3.10
+PORTVERSION=	3.3.11
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,10 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	sergio@softshark.org
 COMMENT=	Data Display Debugger -- a common graphical front-end for GDB/DBX/XDB
 
-LIB_DEPENDS=	iberty.1:${PORTSDIR}/devel/freelibiberty
-
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 USE_XPM=	yes
 USE_MOTIF=	yes
 GNU_CONFIGURE=	yes
@@ -26,7 +23,7 @@ GNU_CONFIGURE=	yes
 CFLAGS+=	-Wno-deprecated
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV=	CPPFLAGS='-I${LOCALBASE}/include/freelibiberty ${CPPFLAGS}' \
+CONFIGURE_ENV=	CPPFLAGS='${CPPFLAGS}' \
 		LDFLAGS='${LDFLAGS}'
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-motif-libraries="${LIBXMDIR}" \
