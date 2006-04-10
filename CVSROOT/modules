@@ -3109,6 +3109,7 @@ gmime2		ports/mail/gmime2
 gmime2-sharp	ports/mail/gmime2-sharp
 gmixer		ports/audio/gmixer
 gmpc		ports/audio/gmpc
+gmpccaa		ports/audio/gmpccaa
 gmrun		ports/x11/gmrun
 gmsh		ports/cad/gmsh
 gmt		ports/graphics/gmt
