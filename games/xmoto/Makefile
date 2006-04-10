@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmoto
-PORTVERSION=	0.1.11
+PORTVERSION=	0.1.12
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -39,7 +39,6 @@ PORTDOCS=	README ChangeLog
 post-patch:
 	@${REINPLACE_CMD} -e 's|SDL/|SDL11/|' ${WRKSRC}/src/VCommon.h
 	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|' ${WRKSRC}/src/image/tim_memory_crt.cpp
-	@${REINPLACE_CMD} -e 's|-lSDL |`${SDL_CONFIG} --libs` |' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|endian.h|sys/endian.h|' ${WRKSRC}/src/VCommon.h
 	@${REINPLACE_CMD} -e '/LIBS/ s|\(-lSDL_mixer\)|\1 `${SDL_CONFIG} --libs`|' ${WRKSRC}/configure
 
