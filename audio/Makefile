@@ -167,6 +167,7 @@
     SUBDIR += glurp
     SUBDIR += gmixer
     SUBDIR += gmpc
+    SUBDIR += gmpccaa
     SUBDIR += gnapster
     SUBDIR += gnomeaudio2
     SUBDIR += gnomemedia2
