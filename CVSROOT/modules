@@ -1080,6 +1080,7 @@ cftp		ports/ftp/cftp
 cfv		ports/security/cfv
 cfvers		ports/sysutils/cfvers
 cg		ports/news/cg
+cgal		ports/math/cgal
 cgdb		ports/devel/cgdb
 cgi-lib		ports/www/cgi-lib
 cgi-lib.pl	ports/www/cgi-lib.pl
