@@ -1,3 +1,4 @@
+%%EVENTUM%%/CONTRIB
 %%EVENTUM%%/COPYING
 %%EVENTUM%%/ChangeLog
 %%EVENTUM%%/FAQ
@@ -27,6 +28,7 @@
 %%EVENTUM%%/duplicate.php
 %%EVENTUM%%/emails.php
 %%EVENTUM%%/faq.php
+%%EVENTUM%%/favicon.ico
 %%EVENTUM%%/file_upload.php
 %%EVENTUM%%/forgot_password.php
 %%EVENTUM%%/get_attachment.php
@@ -408,6 +410,8 @@
 %%EVENTUM%%/misc/upgrade/v1.6.1_to_v1.7.0/index.html
 %%EVENTUM%%/misc/upgrade/v1.6.1_to_v1.7.0/set_root_message_ids.php
 %%EVENTUM%%/misc/upgrade/v1.6.1_to_v1.7.0/upgrade_config.php
+%%EVENTUM%%/misc/upgrade/v1.7.0_to_v1.7.1/index.html
+%%EVENTUM%%/misc/upgrade/v1.7.0_to_v1.7.1/upgrade_config.php
 %%EVENTUM%%/new.php
 %%EVENTUM%%/news.php
 %%EVENTUM%%/notification.php
@@ -478,6 +482,7 @@
 %%EVENTUM%%/templates/en/customer/example/quarantine.tpl.html
 %%EVENTUM%%/templates/en/customer/example/report_form_fields.tpl.html
 %%EVENTUM%%/templates/en/duplicate.tpl.html
+%%EVENTUM%%/templates/en/edit_custom_fields.tpl.html
 %%EVENTUM%%/templates/en/email_drafts.tpl.html
 %%EVENTUM%%/templates/en/email_filter_form.tpl.html
 %%EVENTUM%%/templates/en/emails.tpl.html
@@ -641,10 +646,6 @@
 %%EVENTUM%%/templates/en/view_headers.tpl.html
 %%EVENTUM%%/templates/en/view_note.tpl.html
 %%EVENTUM%%/templates/en/yellow_note.tpl.html
-%%EVENTUM%%/templates_c/%%-11^%%-1130223493^setup.tpl.html.php
-%%EVENTUM%%/templates_c/%%-13^%%-137898301^error_icon.tpl.html.php
-%%EVENTUM%%/templates_c/%%-81^%%-810598535^header.tpl.html.php
-%%EVENTUM%%/templates_c/%%102^%%102046939^footer.tpl.html.php
 %%EVENTUM%%/time_tracking.php
 %%EVENTUM%%/update.php
 %%EVENTUM%%/view.php
@@ -667,6 +668,7 @@
 @dirrm %%EVENTUM%%/setup
 @dirrm %%EVENTUM%%/rpc
 @dirrm %%EVENTUM%%/reports
+@dirrm %%EVENTUM%%/misc/upgrade/v1.7.0_to_v1.7.1
 @dirrm %%EVENTUM%%/misc/upgrade/v1.6.1_to_v1.7.0
 @dirrm %%EVENTUM%%/misc/upgrade/v1.6.0_to_v1.6.1
 @dirrm %%EVENTUM%%/misc/upgrade/v1.5_to_v1.5.1
