@@ -1,0 +1,13 @@
+@comment $FreeBSD$
+bin/morla
+share/locale/it/LC_MESSAGES/morla.mo
+%%DATADIR%%/bootsplash.png
+%%DATADIR%%/icons/128_BN.png
+%%DATADIR%%/icons/128_color.png
+%%DATADIR%%/icons/32_BN.png
+%%DATADIR%%/icons/32_color.png
+%%DATADIR%%/icons/64_BN.png
+%%DATADIR%%/icons/64_color.png
+%%DATADIR%%/icons/700_color.png
+@dirrm %%DATADIR%%/icons
+@dirrm %%DATADIR%%
