@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	shmux
-DISTVERSION=	1.0b4
+DISTVERSION=	1.0b6
 CATEGORIES=	net
 MASTER_SITES=	http://web.taranis.org/shmux/dist/
 EXTRACT_SUFX=	.tgz
