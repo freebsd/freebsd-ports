@@ -167,6 +167,7 @@
     SUBDIR += fargoal
     SUBDIR += fgfs-base
     SUBDIR += fgkicker
+    SUBDIR += fgsd
     SUBDIR += fillets-ng
     SUBDIR += filters
     SUBDIR += fkiss
