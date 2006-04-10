@@ -1,0 +1,45 @@
+--- install_cgal.orig	Mon Dec 20 18:06:41 2004
++++ install_cgal	Mon Apr 10 10:36:58 2006
+@@ -1011,7 +1011,7 @@
+ 	    ;;
+ 	*)
+ 	    #### settings for unknown compiler
+-	    CGAL_SHARED_LIB_CREATE="`compiler_bin` -G"
++	    CGAL_SHARED_LIB_CREATE="`compiler_bin` -shared"
+ 	    ;;
+     esac
+     # Remove *.moc files too, on all platforms
+@@ -1339,6 +1339,8 @@
+ 	cleanup_after_compile
+ 	cleanup_after_link_run
+     done
++    sed -e "s|CGAL/compiler_config\.h|CGAL/config/${CGAL_OS_COMPILER}/&|" ${CGAL_INCL_DIR}/CGAL/config.h > ${CGAL_INCL_DIR}/CGAL/config.h.tmp
++    mv -f ${CGAL_INCL_DIR}/CGAL/config.h.tmp ${CGAL_INCL_DIR}/CGAL/config.h
+     cd ${CGAL_DIR}
+     CONFIG_TEST_PASSED='y'
+ }
+@@ -5675,7 +5677,7 @@
+   # CGAL_LIB_CXXFLAGS
+   #
+   ${_printf} "%s\\\\\n" "CGAL_LIB_CXXFLAGS = " >> ${FILE}
+-  makefile_print_line "${CGAL_LIB_CXXFLAGS} -O2" >> ${FILE}
++  makefile_print_line "${CGAL_LIB_CXXFLAGS}" >> ${FILE}
+   ${_printf} "\t%s\n" "\$(CGAL_CXXFLAGS)" >> ${FILE}
+ 
+   #
+@@ -5693,13 +5695,13 @@
+   #
+   # CGAL_SHARED_LIB
+   #
+-  ${_printf} "%s\n" "CGAL_SHARED_LIB = libCGAL${SHARED_LIB_EXT}" >> ${FILE}
++  ${_printf} "%s\n" "CGAL_SHARED_LIB = libCGAL${SHARED_LIB_EXT}.${SHLIB_VERSION}" >> ${FILE}
+ 
+   #
+   # CGAL_SHARED_LIB_CXXFLAGS
+   #
+   ${_printf} "%s\\\\\n" "CGAL_SHARED_LIB_CXXFLAGS = " >> ${FILE}
+-  makefile_print_line "${CGAL_SHARED_LIB_CXXFLAGS} -O2" >> ${FILE}
++  makefile_print_line "${CGAL_SHARED_LIB_CXXFLAGS}" >> ${FILE}
+   ${_printf} "\t%s\n" "\$(CGAL_CXXFLAGS)" >> ${FILE}
+ 
+   #

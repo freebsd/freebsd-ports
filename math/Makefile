@@ -30,6 +30,7 @@
     SUBDIR += calcoo
     SUBDIR += calctool
     SUBDIR += ccmath
+    SUBDIR += cgal
     SUBDIR += chryzodus
     SUBDIR += clarence
     SUBDIR += cln

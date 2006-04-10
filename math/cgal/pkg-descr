@@ -1,0 +1,22 @@
+CGAL is a collaborative effort of several sites in Europe and Israel. The goal
+is to make the most important of the solutions and methods developed in
+computational geometry available to users in industry and academia in a C++
+library. The goal is to provide easy access to useful, reliable geometric
+algorithms.
+
+The CGAL library contains:
+
+    * the Kernel with geometric primitives such as points, vectors, lines,
+      predicates for testing things such as relative positions of points, and
+      operations such as intersections and distance calculation.
+    * the Basic Library which is a collection of standard data structures and
+      geometric algorithms, such as convex hull in 2D/3D, (Delaunay)
+      triangulation in 2D/3D, planar map, polyhedron, smallest enclosing
+      circle, and multidimensional query structures.
+    * the Support Library which offers interfaces to other packages, e.g., for
+      visualisation, and I/O, and other support facilities.
+
+WWW: http://www.cgal.org/
+
+- Jean-Yves Lefort
+jylefort@FreeBSD.org
