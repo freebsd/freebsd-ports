@@ -35,10 +35,10 @@ include/FLU/flu_file_chooser_pixmaps.h
 include/FLU/flu_pixmaps.h
 lib/libflu.a
 lib/libflu.so
-lib/libflu.so.2.14
+lib/libflu.so.%%SHLIB_VERSION%%
 lib/libflu_gl.a
 lib/libflu_gl.so
-lib/libflu_gl.so.2.14
+lib/libflu_gl.so.%%SHLIB_VERSION%%
 %%EXAMPLESDIR%%/Flu_Button_Try.cpp
 %%EXAMPLESDIR%%/Flu_Chat_Buffer_Try.cpp
 %%EXAMPLESDIR%%/Flu_Combo_Box_Try.cpp
