@@ -187,6 +187,7 @@ System/Applications/Gorm.app/Resources/GormEHCoil.tiff
 System/Applications/Gorm.app/Resources/GormEHLine.tiff
 System/Applications/Gorm.app/Resources/GormEVCoil.tiff
 System/Applications/Gorm.app/Resources/GormEVLine.tiff
+System/Applications/Gorm.app/Resources/GormFile.tiff
 System/Applications/Gorm.app/Resources/GormFilesOwner.tiff
 System/Applications/Gorm.app/Resources/GormFirstResponder.tiff
 System/Applications/Gorm.app/Resources/GormFontManager.tiff
@@ -198,9 +199,11 @@ System/Applications/Gorm.app/Resources/GormMHLine.tiff
 System/Applications/Gorm.app/Resources/GormMVCoil.tiff
 System/Applications/Gorm.app/Resources/GormMVLine.tiff
 System/Applications/Gorm.app/Resources/GormMenu.tiff
+System/Applications/Gorm.app/Resources/GormNib.tiff
 System/Applications/Gorm.app/Resources/GormObject.tiff
 System/Applications/Gorm.app/Resources/GormOutlet.tiff
 System/Applications/Gorm.app/Resources/GormOutletSelected.tiff
+System/Applications/Gorm.app/Resources/GormPalette.tiff
 System/Applications/Gorm.app/Resources/GormSound.tiff
 System/Applications/Gorm.app/Resources/GormSourceTag.tiff
 System/Applications/Gorm.app/Resources/GormTargetTag.tiff
