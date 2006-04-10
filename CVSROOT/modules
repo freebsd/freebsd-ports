@@ -6300,7 +6300,6 @@ metis-edf	ports/math/metis-edf
 metromap	ports/misc/metromap
 mew		ports/mail/mew
 mew-emacs20	ports/mail/mew-emacs20
-mew-mule	ports/mail/mew-mule
 mew2		ports/mail/mew2
 mew2-emacs20	ports/mail/mew2-emacs20
 mew3		ports/mail/mew3

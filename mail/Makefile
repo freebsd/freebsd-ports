@@ -206,7 +206,6 @@
     SUBDIR += metamail
     SUBDIR += mew
     SUBDIR += mew-emacs20
-    SUBDIR += mew-mule
     SUBDIR += mew2
     SUBDIR += mew2-emacs20
     SUBDIR += mew3
