@@ -1,0 +1,315 @@
+#!/bin/sh -e
+#
+# rmport - remove port(s) from the FreeBSD Ports Collection.
+#
+# Copyright 2006 Vasil Dimov
+# All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions
+# are met:
+# 1. Redistributions of source code must retain the above copyright
+#    notice, this list of conditions and the following disclaimer.
+# 2. Redistributions in binary form must reproduce the above copyright
+#    notice, this list of conditions and the following disclaimer in the
+#    documentation and/or other materials provided with the distribution.
+#
+# THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND
+# ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+# IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+# ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
+# FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+# DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+# OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+# HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+# LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+# OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+# SUCH DAMAGE.
+#
+# Authors:
+# Originally written by Vasil Dimov <vd@FreeBSD.org>
+# Others:
+#
+# $FreeBSD$
+#
+# MAINTAINER=	vd@FreeBSD.org
+#
+
+PORTSDIR=${PORTSDIR:-/usr/ports}
+INDEX=${PORTSDIR}/`make -C ${PORTSDIR} -V INDEXFILE`
+
+TODAY=`date -u -v+0d +%Y-%m-%d`
+
+SED="sed -i .orig -E"
+# use ~/.ssh/config to set up the desired username if different than $LOGNAME
+PCVS=${PCVS:-cvs -d pcvs.freebsd.org:/home/pcvs}
+
+log()
+{
+	echo "==> $*" >&2
+}
+
+find_expired()
+{
+	EXPVAR=EXPIRATION_DATE
+
+	find ${PORTSDIR} -mindepth 3 -maxdepth 3 -name "Makefile*" \
+		|xargs grep -H ${EXPVAR} \
+		|sed -E "s|${PORTSDIR}/?([^/]+/[^/]+)/Makefile:${EXPVAR}=[[:space:]]*([0-9-]{10})$|\2 \1|g" \
+		|perl -ne "if ((substr(\$_, 0, 10) cmp '${TODAY}') <= 0) { print(\$_); }"
+}
+
+# create temporary checkout directory
+mkcodir()
+{
+	log "creating temporary directory"
+	d=`mktemp -d -t rmport`
+	log "created ${d}"
+	echo "${d}"
+}
+
+# checkout common files from the repository
+co_common()
+{
+	log "getting CVSROOT/modules, ports/MOVED and ports/LEGAL from repository"
+	${PCVS} co CVSROOT/modules ports/MOVED ports/LEGAL
+}
+
+# check if some ports depend on the given port
+# XXX INDEX file may be outdated and not contain recently added dependencies
+# it is very unlikely for someone to make a port to depend on a port that
+# has EXPIRATION_DATE set
+check_dep()
+{
+	cat=${1}
+	port=${2}
+	pkgname=${3}
+	persist=${4}
+
+	while : ; do
+		log "${cat}/${port}: checking dependencies"
+
+		err=0
+
+		deps=`grep -E "^.+${pkgname}" ${INDEX} || :`
+		if [ -n "${deps}" ] ; then
+			log "${cat}/${port}: some port(s) depend on ${pkgname}:"
+			printf "%s\n" "${deps}"
+			err=1
+		fi
+
+		# check if some port mentions the port to be deleted
+		r="`find ${PORTSDIR} -mindepth 3 -maxdepth 3 -not -path "*/${cat}/${port}/*" -name "Makefile*" |xargs grep -Hw ${cat}/${port} || :`"
+		if [ -n "${r}" ] ; then
+			log "${cat}/${port}: some ports mention ${cat}/${port} in their Makefiles"
+			printf "%s\n" "${r}" >&2
+			err=1
+		fi
+
+		if [ ${err} -eq 0 ] ; then
+			break
+		fi
+
+		if [ ${persist} -eq 0 ] ; then
+			break
+		fi
+
+		read -p 'deal with the above issues and hit <enter> when ready' answer
+	done
+}
+
+# checkout port's specific files from the repository
+co_port()
+{
+	cat=${1}
+	port=${2}
+
+	log "${cat}/${port}: getting ${cat}/Makefile and port's files from repository"
+	${PCVS} co ports/${cat}/Makefile ports/${cat}/${port}
+}
+
+# check if anything about the port is mentioned in ports/LEGAL
+check_LEGAL()
+{
+	cat=${1}
+	port=${2}
+	pkgname=${3}
+
+	for checkstr in ${pkgname} ${cat}/${port} ; do
+		msg="${cat}/${port}: checking if ${checkstr} is in ports/LEGAL"
+		log "${msg}"
+		while grep -i ${checkstr} ports/LEGAL ; do
+			read -p "${checkstr} is in ports/LEGAL, remove it and hit <enter> when ready" answer
+			log "${msg}"
+		done
+	done
+}
+
+# remove port's entry from CVSROOT/modules
+edit_modules()
+{
+	cat=${1}
+	port=${2}
+
+	log "${cat}/${port}: removing from CVSROOT/modules"
+
+	${SED} -e "/^(ports_)?(..-)?${port}[[:space:]]+ports\/${cat}\/${port}\$/d" \
+		CVSROOT/modules
+}
+
+# add port's entry to ports/MOVED
+edit_MOVED()
+{
+	cat=${1}
+	port=${2}
+
+	DEPRECATED="`make -C ${PORTSDIR}/${cat}/${port} -V DEPRECATED`"
+	DEPRECATED=${DEPRECATED:+: ${DEPRECATED}}
+	REASON="Has expired${DEPRECATED}"
+
+	log "${cat}/${port}: adding entry to ports/MOVED"
+
+	echo "${cat}/${port}||${TODAY}|${REASON}" >> ports/MOVED
+}
+
+# remove port from category/Makefile
+edit_Makefile()
+{
+	cat=${1}
+	port=${2}
+
+	log "${cat}/${port}: removing from ${cat}/Makefile"
+
+	${SED} -e "/^[[:space:]]*SUBDIR[[:space:]]*\+=[[:space:]]*${port}([[:space:]]+#.*)?$/d" \
+		ports/${cat}/Makefile
+}
+
+# remove port's files
+rm_port()
+{
+	cat=${1}
+	port=${2}
+
+	log "${cat}/${port}: removing port's files"
+
+	${PCVS} rm `find ports/${cat}/${port} -type f -not -path "*/CVS/*" -delete -print`
+}
+
+# diff
+diff()
+{
+	log "creating diff"
+
+	diffout=${codir}/diff
+
+	${PCVS} diff -u CVSROOT/modules ports/MOVED ports/LEGAL \
+	ports > ${diffout} 2>&1 || :
+
+	read -p "hit <enter> to view cvs diff output" answer
+
+	# give this to the outside world so it can be removed when we are done
+	echo ${diffout}
+}
+
+# ask for confirmation and commit
+commit()
+{
+	read -p "do you want to commit? [yn] " answer
+
+	if [ "${answer}" = "y" -o "${answer}" = "Y" ] ; then
+		${PCVS} ci CVSROOT/modules ports/MOVED ports/LEGAL \
+		ports
+	fi
+}
+
+cleanup()
+{
+	diffout=${1}
+	codir=${2}
+
+	log "cleaning up"
+
+	rm ${diffout}
+
+	# release cvs directories
+	${PCVS} rel -d CVSROOT ports
+
+	cd /
+	rmdir ${codir}
+}
+
+usage()
+{
+	echo "Usage:" >&2
+	echo "find expired ports:" >&2
+	echo "${0} -F" >&2
+	echo "remove port(s):" >&2
+	echo "${0} category1/port1 [ category2/port2 ... ]" >&2
+	echo "just check dependencies:" >&2
+	echo "${0} -d category/port" >&2
+	exit 64
+}
+
+# main
+
+if [ ${#} -eq 0 -o ${1} = "-h" -o ${1} = "--help" ] ; then
+	usage
+fi
+
+if [ ${1} = "-d" ] ; then
+	if [ ${#} -ne 2 ] ; then
+		usage
+	fi
+	catport=${2}
+	cat=`dirname ${catport}`
+	port=`basename ${catport}`
+	pkgname=`make -C ${PORTSDIR}/${cat}/${port} -V PKGNAME`
+	check_dep ${cat} ${port} ${pkgname} 0
+	exit
+fi
+
+if [ ${1} = "-F" ] ; then
+	if [ ${#} -ne 1 ] ; then
+		usage
+	fi
+	find_expired
+	exit
+fi
+
+codir=`mkcodir`
+cd ${codir}
+
+co_common
+
+for catport in $* ; do
+	cat=`dirname ${catport}`
+	port=`basename ${catport}`
+	pkgname=`make -C ${PORTSDIR}/${cat}/${port} -V PKGNAME`
+
+	check_dep ${cat} ${port} ${pkgname} 1
+
+	co_port ${cat} ${port}
+
+	check_LEGAL ${cat} ${port} ${pkgname}
+
+	# everything seems ok, edit the files
+
+	edit_modules ${cat} ${port}
+
+	edit_MOVED ${cat} ${port}
+
+	edit_Makefile ${cat} ${port}
+
+	rm_port ${cat} ${port}
+done
+
+diffout=`diff`
+
+# EDITOR instead of PAGER because vim has nice syntax highlighting ;-)
+${EDITOR} ${diffout}
+
+commit
+
+cleanup ${diffout} ${codir}
+
+# EOF
