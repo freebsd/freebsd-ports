@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XaraLX
-PORTVERSION=	0.4r762
+PORTVERSION=	0.4r790
 CATEGORIES=	graphics
 MASTER_SITES=	http://downloads.xara.com/opensource/
 
@@ -40,10 +40,5 @@ PLIST_FILES=	bin/${PROG}
 
 pre-configure:
 	cd ${WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${AUTORECONF} -f -s -i
-
-# the stock install target installs include/camtypes.h in addition which
-# is absolutely completely not necessary
-#do-install:
-#	${INSTALL_PROGRAM} ${WRKSRC}/${PROG} ${PREFIX}/bin
 
 .include <bsd.port.mk>
