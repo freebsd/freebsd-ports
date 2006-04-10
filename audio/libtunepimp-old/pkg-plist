@@ -14,8 +14,11 @@ lib/libtunepimp.so
 lib/libtunepimp.so.3
 lib/tunepimp/plugins/flac.tpp
 lib/tunepimp/plugins/mp3.tpp
+lib/tunepimp/plugins/mp4.tpp
+lib/tunepimp/plugins/mpc.tpp
 lib/tunepimp/plugins/vorbis.tpp
 lib/tunepimp/plugins/wav.tpp
-@dirrm include/tunepimp
+lib/tunepimp/plugins/wma.tpp
 @dirrm lib/tunepimp/plugins
 @dirrm lib/tunepimp
+@dirrm include/tunepimp

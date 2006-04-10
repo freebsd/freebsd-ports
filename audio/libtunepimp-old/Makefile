@@ -7,6 +7,7 @@
 
 PORTNAME=	libtunepimp
 PORTVERSION=	0.4.2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://ftp.musicbrainz.org/pub/musicbrainz/ \
@@ -15,25 +16,31 @@ MASTER_SITES=	http://ftp.musicbrainz.org/pub/musicbrainz/ \
 MAINTAINER=	lauri@kde.org
 COMMENT=	Client library for musicbrainz
 
-LIB_DEPENDS=	vorbis:${PORTSDIR}/audio/libvorbis \
-		FLAC:${PORTSDIR}/audio/flac \
-		mad:${PORTSDIR}/audio/libmad \
-		ogg:${PORTSDIR}/audio/libogg \
+LIB_DEPENDS=	FLAC:${PORTSDIR}/audio/flac \
 		expat:${PORTSDIR}/textproc/expat2 \
-		musicbrainz:${PORTSDIR}/audio/libmusicbrainz
+		mad:${PORTSDIR}/audio/libmad \
+		mp4v2:${PORTSDIR}/multimedia/mpeg4ip-libmp4v2 \
+		musicbrainz:${PORTSDIR}/audio/libmusicbrainz \
+		ogg:${PORTSDIR}/audio/libogg \
+		tag:${PORTSDIR}/audio/taglib \
+		vorbis:${PORTSDIR}/audio/libvorbis
 
 CONFLICTS=	trm-0*
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -liconv"
+		LDFLAGS="-L${LOCALBASE}/lib"
 INSTALLS_SHLIB=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^CFLAGS=|#CFLAGS=|g ; \
-		 s|^CXXFLAGS=|#CXXFLAGS=|g' ${WRKSRC}/configure
+		 s|^CPPFLAGS=|#CPPFLAGS=|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|-lthr|${PTHREAD_LIBS}|g' \
 		${WRKSRC}/lib/threads/posix/Makefile.in
+
+post-configure:
+	@${REINPLACE_CMD} -e 's|\(^LDFLAGS =.*\)|\1 ${PTHREAD_LIBS} -liconv|g' \
+		${WRKSRC}/examples/Makefile
 
 .include <bsd.port.mk>
