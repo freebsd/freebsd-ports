@@ -11092,6 +11092,7 @@ quelcom		ports/audio/quelcom
 queryperf	ports/dns/queryperf
 quesa		ports/graphics/quesa
 queso		ports/net/queso
+quetoo		ports/games/quetoo
 queue-fix	ports/mail/queue-fix
 queue-repair	ports/mail/queue-repair
 quftp		ports/ftp/quftp
