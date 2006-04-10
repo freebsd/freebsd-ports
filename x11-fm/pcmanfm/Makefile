@@ -19,6 +19,7 @@ USE_GCC=	3.3+
 USE_AUTOTOOLS=	libtool:15
 USE_X_PREFIX=	yes
 USE_FAM=	yes
+WANT_FAM_SYSTEM=fam
 INSTALLS_SHLIB=	yes
 
 .if !defined(WITHOUT_NLS)
