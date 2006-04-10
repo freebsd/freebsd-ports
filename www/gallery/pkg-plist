@@ -17,6 +17,7 @@
 %%GALLERYDIR%%/classes/Database.php
 %%GALLERYDIR%%/classes/EverybodyUser.php
 %%GALLERYDIR%%/classes/HTML/table.php
+%%GALLERYDIR%%/classes/HTML_Safe/Safe.php
 %%GALLERYDIR%%/classes/Image.php
 %%GALLERYDIR%%/classes/LoggedInUser.php
 %%GALLERYDIR%%/classes/Mail/RFC822.php
@@ -26,6 +27,9 @@
 %%GALLERYDIR%%/classes/NobodyUser.php
 %%GALLERYDIR%%/classes/User.php
 %%GALLERYDIR%%/classes/UserDB.php
+%%GALLERYDIR%%/classes/XML_HTMLSax3/HTMLSax3.php
+%%GALLERYDIR%%/classes/XML_HTMLSax3/HTMLSax3/Decorators.php
+%%GALLERYDIR%%/classes/XML_HTMLSax3/HTMLSax3/States.php
 %%GALLERYDIR%%/classes/database/mysql/Database.php
 %%GALLERYDIR%%/classes/gallery/User.php
 %%GALLERYDIR%%/classes/gallery/UserDB.php
@@ -366,6 +370,11 @@
 %%GALLERYDIR%%/images/icons/history.gif
 %%GALLERYDIR%%/images/icons/idea.gif
 %%GALLERYDIR%%/images/icons/identity.gif
+%%GALLERYDIR%%/images/icons/imageedit/flip.gif
+%%GALLERYDIR%%/images/icons/imageedit/mirror.gif
+%%GALLERYDIR%%/images/icons/imageedit/rotate-180.gif
+%%GALLERYDIR%%/images/icons/imageedit/rotate-270.gif
+%%GALLERYDIR%%/images/icons/imageedit/rotate-90.gif
 %%GALLERYDIR%%/images/icons/info.gif
 %%GALLERYDIR%%/images/icons/kcmfontinst.gif
 %%GALLERYDIR%%/images/icons/kdf.gif
@@ -1127,6 +1136,7 @@
 @dirrm %%GALLERYDIR%%/includes/add_photos
 @dirrm %%GALLERYDIR%%/includes
 @dirrm %%GALLERYDIR%%/images/icons/tree
+@dirrm %%GALLERYDIR%%/images/icons/imageedit
 @dirrm %%GALLERYDIR%%/images/icons
 @dirrm %%GALLERYDIR%%/images/ecard_images
 @dirrm %%GALLERYDIR%%/images
@@ -1172,7 +1182,10 @@
 @dirrm %%GALLERYDIR%%/classes/gallery
 @dirrm %%GALLERYDIR%%/classes/database/mysql
 @dirrm %%GALLERYDIR%%/classes/database
+@dirrm %%GALLERYDIR%%/classes/XML_HTMLSax3/HTMLSax3
+@dirrm %%GALLERYDIR%%/classes/XML_HTMLSax3
 @dirrm %%GALLERYDIR%%/classes/Mail
+@dirrm %%GALLERYDIR%%/classes/HTML_Safe
 @dirrm %%GALLERYDIR%%/classes/HTML
 @dirrm %%GALLERYDIR%%/classes
 @dirrmtry %%GALLERYDIR%%
