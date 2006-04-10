@@ -14,50 +14,51 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A message-of-the-day browser for X11 and dumb-terminals
 
 USE_IMAKE=	yes
-USE_PERL5_BUILD=yes
 NO_INSTALL_MANPAGES=	yes
 XFREE86_HTML_MAN=	no
 
 MAN8=		xmotd.8
 PLIST_FILES=	bin/xmotd
 
-.if defined(USE_HTML)
+OPTIONS=	HTML "Use HTML widget instead of ASCII text" off
+OPTIONS+=	MOTIF "Use Motif widget library" off
+OPTIONS+=	XPM "Allows colour XPM pixmaps" off
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_HTML)
 MAKE_ARGS+=	-DHAVE_HTML
 .endif
 
-.if defined(USE_MOTIF)
+.if defined(WITH_MOTIF)
 MAKE_ARGS+=	-DMOTIF
+USE_MOTIF=	yes
 .endif
 
-pre-fetch:
-	@${ECHO} ""
-	@${ECHO} "You may use the following build options:"
-	@${ECHO} ""
-	@${ECHO} "	USE_HTML=yes	uses HTML widget instead of ASCII text"
-	@${ECHO} "	USE_MOTIF=yes	uses Motif widget library"
-	@${ECHO} "	USE_XPM=yes	allows colour XPM pixmaps"
-	@${ECHO} ""
+.if defined(WITH_XPM)
+USE_XPM=	yes
+.endif
 
 post-extract:
 	@${TOUCH} ${WRKSRC}/xmotd.man
 
 post-patch:
-	@${PERL} -pi -e 's:/usr/local/bin/::g' ${WRKSRC}/xmotd.8
+	@${REINPLACE_CMD} -e 's:/usr/local/bin/::g' ${WRKSRC}/xmotd.8
 .for file in libhtmlw/HTML-PSformat.c main.c textmode.c xmotd.c
-	@${PERL} -pi -e 's:malloc.h:stdlib.h:' ${WRKSRC}/${file}
+	@${REINPLACE_CMD} -e 's:malloc.h:stdlib.h:' ${WRKSRC}/${file}
 .endfor
-.if defined(USE_HTML)
-	@${PERL} -pi.orig -e 's:XCOMM #define HAVE_HTML:#define HAVE_HTML:g' ${WRKSRC}/Imakefile
+.if defined(WITH_HTML)
+	@${REINPLACE_CMD} -e 's:XCOMM #define HAVE_HTML:#define HAVE_HTML:g' ${WRKSRC}/Imakefile
 .endif
-.if defined (USE_MOTIF)
-	@${PERL} -pi.orig -e 's:XCOMM #define MOTIF:#define MOTIF:g' ${WRKSRC}/Imakefile
+.if defined (WITH_MOTIF)
+	@${REINPLACE_CMD} -e 's:XCOMM #define MOTIF:#define MOTIF:g' ${WRKSRC}/Imakefile
 .endif
-.if defined(USE_XPM)
-	@${PERL} -pi.orig -e 's:XCOMM #define HAVE_XPM:#define HAVE_XPM:g' ${WRKSRC}/Imakefile
+.if defined(WITH_XPM)
+	@${REINPLACE_CMD} -e 's:XCOMM #define HAVE_XPM:#define HAVE_XPM:g' ${WRKSRC}/Imakefile
 .endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xmotd ${X11BASE}/bin/xmotd
 	${INSTALL_MAN} ${WRKSRC}/xmotd.8 ${MANPREFIX}/man/man8
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
