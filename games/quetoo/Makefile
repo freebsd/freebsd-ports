@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://jdolan.dyndns.org/jaydolan/files/
 
 MAINTAINER=	danfe@FreeBSD.org
-COMMENT=	Fast, stable, compatible, and secure Quake II engine
+COMMENT=	Fast, stable, compatible, and secure Quake II client
 
 USE_BZIP2=	yes
 USE_SDL=	sdl
