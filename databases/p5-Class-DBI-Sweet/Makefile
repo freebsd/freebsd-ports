@@ -20,13 +20,16 @@ BUILD_DEPENDS=	p5-Class-DBI>=3.0.12:${PORTSDIR}/databases/p5-Class-DBI \
 		${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
 		${SITE_PERL}/SQL/Abstract.pm:${PORTSDIR}/databases/p5-SQL-Abstract \
 		${SITE_PERL}/${PERL_ARCH}/DBD/SQLite.pm:${PORTSDIR}/databases/p5-DBD-SQLite
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_MODBUILD=	yes
 
 MAN3=		Class::DBI::Sweet.3 Class::DBI::Sweet::Topping.3
 
 .include <bsd.port.pre.mk>
+
 .if ${PERL_LEVEL} < 500801
-IGNORE= requires at least Perl 5.8.1. Install lang/perl5.8, and try again
+IGNORE=	requires at least Perl 5.8.1. Install lang/perl5.8, and try again
 .endif
+
 .include <bsd.port.post.mk>
