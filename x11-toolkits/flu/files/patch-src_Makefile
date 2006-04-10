@@ -1,5 +1,18 @@
 --- src/Makefile.orig	Thu Sep 23 21:24:39 2004
-+++ src/Makefile	Fri Apr  7 15:21:24 2006
++++ src/Makefile	Mon Apr 10 09:35:07 2006
+@@ -47,10 +47,10 @@
+ STATIC_LIB_DIR = ../lib
+ 
+ SHARED_LINK = libflu.$(SHARED_EXT)
+-SHARED_LIB = $(SHARED_LINK).$(VERSION)
++SHARED_LIB = $(SHARED_LINK).$(SHLIB_VERSION)
+ STATIC_LIB = libflu.a
+ GL_SHARED_LINK = libflu_gl.$(SHARED_EXT)
+-GL_SHARED_LIB = $(GL_SHARED_LINK).$(VERSION)
++GL_SHARED_LIB = $(GL_SHARED_LINK).$(SHLIB_VERSION)
+ GL_STATIC_LIB = libflu_gl.a
+ 
+ LIBS = $(STATIC_LIB)
 @@ -89,15 +89,15 @@
  install:	$(LIBS)
  	@ echo "Installing libraries in $(LPREFIX)..."
