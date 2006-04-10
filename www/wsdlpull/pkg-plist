@@ -26,11 +26,14 @@ include/wsdl/wsdlparser/WsdlException.h
 include/wsdl/wsdlparser/WsdlExtension.h
 include/wsdl/wsdlparser/WsdlInvoker.h
 include/wsdl/wsdlparser/WsdlParser.h
+include/wsdl/xmlpull/ConfigFile.h
 include/wsdl/xmlpull/Qname.h
 include/wsdl/xmlpull/XmlPullParser.h
 include/wsdl/xmlpull/XmlPullParserException.h
 include/wsdl/xmlpull/XmlSerializer.h
 include/wsdl/xmlpull/XmlUtils.h
+include/wsdl/xmlpull/osdir.h
+include/wsdl/xmlpull/wsdlpull_export.h
 lib/libschema.a
 lib/libschema.la
 lib/libschema.so
@@ -47,6 +50,7 @@ lib/libxmlpull.so.0
 %%PORTDOCS%%%%DOCSDIR%%/wsdlpull.html
 %%DATADIR%%/http.xsd
 %%DATADIR%%/mime.xsd
+%%DATADIR%%/schema.conf
 %%DATADIR%%/schema.dtd
 %%DATADIR%%/soap-encoding.xsd
 %%DATADIR%%/soap.xsd

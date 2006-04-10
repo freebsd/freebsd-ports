@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	wsdlpull
-PORTVERSION=	1.9.8
-PORTREVISION=	1
+PORTVERSION=	1.10
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,8 +17,6 @@ COMMENT=	C++ WSDL Parser
 
 LIB_DEPENDS=	curl.3:${PORTSDIR}/ftp/curl
 
-WRKSRC=		${WRKDIR}/${DISTNAME:R}
-
 USE_GNOME=	gnometarget
 USE_GCC=	3.4+
 USE_GETOPT_LONG=yes
@@ -28,12 +25,13 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/wsdl
 INSTALLS_SHLIB=	yes
 
-CPPFLAGS=	-I${LOCALBASE}/include
+CPPFLAGS=	-I${LOCALBASE}/include -DHAVE_DECL_GETOPT
 LDFLAGS=	-L${LOCALBASE}/lib
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|: install-docsDATA|:|g'
+	@${REINPLACE_CMD} -e '/-O2 -Wall/d' ${WRKSRC}/configure
 
 post-install:
 .if !defined(NOPORTDOCS)
