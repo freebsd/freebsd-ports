@@ -18,6 +18,7 @@
 %%SITE_PERL%%/Oryx/DBI/Util/Pg.pm
 %%SITE_PERL%%/Oryx/DBI/Util/SQLite.pm
 %%SITE_PERL%%/Oryx/DBI/Util/mysql.pm
+%%SITE_PERL%%/Oryx/DBI/Util/Generic.pm
 %%SITE_PERL%%/Oryx/DBM.pm
 %%SITE_PERL%%/Oryx/DBM/Association.pm
 %%SITE_PERL%%/Oryx/DBM/Association/Array.pm
