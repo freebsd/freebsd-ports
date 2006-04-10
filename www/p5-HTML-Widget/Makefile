@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	HTML-Widget
-PORTVERSION=	1.05
+PORTVERSION=	1.06
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	../by-authors/id/J/JR/JROBINSON
+MASTER_SITE_SUBDIR=	../by-authors/id/C/CF/CFRANKS
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	lars@balker.dk
@@ -18,11 +18,13 @@ COMMENT=	HTML Widget And Validation Framework
 BUILD_DEPENDS=	p5-HTML-Tree>=0:${PORTSDIR}/www/p5-HTML-Tree \
 		p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-Class-Accessor-Chained>=0:${PORTSDIR}/devel/p5-Class-Accessor-Chained \
+		p5-HTML-Scrubber>=0:${PORTSDIR}/www/p5-HTML-Scrubber \
+		p5-Storable>=0:${PORTSDIR}/devel/p5-Storable \
+		p5-Module-Pluggable-Fast>=0:${PORTSDIR}/devel/p5-Module-Pluggable-Fast \
 		p5-Email-Valid>=0:${PORTSDIR}/mail/p5-Email-Valid \
 		p5-Date-Calc>=0:${PORTSDIR}/devel/p5-Date-Calc \
-		p5-Test-MockObject>=0:${PORTSDIR}/devel/p5-Test-MockObject \
-		p5-HTML-Scrubber>=0:${PORTSDIR}/www/p5-HTML-Scrubber \
-		p5-Storable>=0:${PORTSDIR}/devel/p5-Storable
+		p5-Scalar-List-Utils>=0:${PORTSDIR}/lang/p5-Scalar-List-Utils \
+		p5-Test-NoWarnings>=0:${PORTSDIR}/devel/p5-Test-NoWarnings
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
@@ -45,6 +47,7 @@ MAN3=	HTML::Widget.3 \
 	HTML::Widget::Constraint::Integer.3 \
 	HTML::Widget::Constraint::Length.3 \
 	HTML::Widget::Constraint::Maybe.3 \
+	HTML::Widget::Constraint::Number.3 \
 	HTML::Widget::Constraint::Printable.3 \
 	HTML::Widget::Constraint::Range.3 \
 	HTML::Widget::Constraint::Regex.3 \
