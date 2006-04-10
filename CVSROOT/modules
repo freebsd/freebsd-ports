@@ -2369,6 +2369,7 @@ fftw3-long	ports/math/fftw3-long
 fget		ports/ftp/fget
 fgfs-base	ports/games/fgfs-base
 fgkicker	ports/games/fgkicker
+fgsd		ports/games/fgsd
 fhist		ports/devel/fhist
 fhttpd		ports/www/fhttpd
 fi-aspell	ports/textproc/fi-aspell
