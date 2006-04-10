@@ -85,6 +85,7 @@
     SUBDIR += crp
     SUBDIR += css-mode.el
     SUBDIR += cssed
+    SUBDIR += csstidy
     SUBDIR += cybercalendar
     SUBDIR += dalbum
     SUBDIR += dansguardian
