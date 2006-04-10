@@ -18,7 +18,7 @@ MASTER_SITES=	ftp://ftp.horde.org/pub/mnemo/				\
 		http://ftp.horde.org/pub/mnemo/
 DISTNAME=	${PORTNAME}-h3-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	shaun@inerd.com
 COMMENT=	Mnemo is the Horde notes and memos application
 
 RUN_DEPENDS=	${LOCALBASE}/${LHORDEDIR}/rpc.php:${PORTSDIR}/www/horde
