@@ -6602,6 +6602,7 @@ mopd		ports/net/mopd
 morebalance	ports/net/morebalance
 moregroupware	ports/deskutils/moregroupware
 moria		ports/games/moria
+morla		ports/editors/morla
 morpheus	ports/graphics/morpheus
 moscow_ml	ports/lang/moscow_ml
 most		ports/sysutils/most
