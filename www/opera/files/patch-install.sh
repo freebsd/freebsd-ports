@@ -1,6 +1,6 @@
---- install.sh.orig	Fri Feb 24 09:55:34 2006
-+++ install.sh	Wed Mar  1 12:46:33 2006
-@@ -381,7 +381,7 @@
+--- install.sh.orig	Fri Mar 31 14:12:48 2006
++++ install.sh	Mon Apr 10 08:09:43 2006
+@@ -397,7 +397,7 @@
  	    mvv=''    # SunOS mv (no -v verbose option)
  	;;
  
@@ -9,7 +9,7 @@
  		cpf='-f'
  		if test "$verbose" -gt '1'
  		then
-@@ -771,7 +771,7 @@
+@@ -789,7 +789,7 @@
      debug_msg 0 "in generate_wrapper()"
  
      case "${machine}:${os}" in
@@ -18,9 +18,9 @@
  	    wrapper_ibmjava="
  	    IBMJava2-142/jre \\
  	    IBMJava2-141/jre \\
-@@ -810,10 +810,19 @@
- 
-     wrapper_contain="#!/bin/sh
+@@ -832,10 +832,19 @@
+ OPERA_SCRIPT_PATH=$0
+ export OPERA_SCRIPT_PATH
  
 +# Location of locale data
 +if [ -f %%LOCALBASE%%/share/compat/locale/UTF-8/LC_CTYPE ]; then
@@ -38,7 +38,7 @@
  # Parse commandline parameters
  toset=
  _QTSTYLE_FROM_CMDLINE_='NO'
-@@ -865,6 +874,9 @@
+@@ -887,6 +896,9 @@
  OPERA_LD_PRELOAD=\"\${LD_PRELOAD}\"
  export OPERA_LD_PRELOAD
  
@@ -48,7 +48,7 @@
  # Native Java enviroment
  if test -f \"\${OPERA_PERSONALDIR}/javapath.txt\"; then
      INIJAVA=\`cat \${OPERA_PERSONALDIR}/javapath.txt\`
-@@ -888,69 +900,12 @@
+@@ -910,69 +922,12 @@
  
  if test ! \"\${OPERA_JAVA_DIR}\"; then
  
@@ -122,7 +122,7 @@
  	; do
  	for PREFIX in \${PREFIXES}; do
  	    if test -f \"\${PREFIX}/\${SUNJAVA}/lib/${wrapper_sunjava_machine}/libjava.so\"; then OPERA_JAVA_DIR=\"\${PREFIX}/\${SUNJAVA}/lib/${wrapper_sunjava_machine}\" && break; fi
-@@ -1001,11 +956,8 @@
+@@ -1023,11 +978,8 @@
  
  # Acrobat Reader
  for BINDIR in \\
@@ -136,7 +136,7 @@
      ; do
      if test -d \${BINDIR} ; then PATH=\${PATH}:\${BINDIR}; fi
  done
-@@ -1016,12 +968,13 @@
+@@ -1038,12 +990,13 @@
  LD_LIBRARY_PATH=\"\${OPERA_BINARYDIR}\${LD_LIBRARY_PATH:+:}\${LD_LIBRARY_PATH}\"
  export LD_LIBRARY_PATH
  
@@ -152,7 +152,7 @@
          LD_LIBRARY_PATH=\"\${LD_LIBRARY_PATH}:\${LIBASPELL_DIR}\"
      fi
  done"
-@@ -1123,7 +1076,7 @@
+@@ -1153,7 +1106,7 @@
      chop "${OPERADESTDIR}" "str_localdirshare"
      chop "${OPERADESTDIR}" "str_localdirplugin"
  
@@ -161,7 +161,23 @@
  
      # Executable
      debug_msg 1 "Executable"
-@@ -1338,44 +1291,13 @@
+@@ -1193,15 +1146,6 @@
+     generate_wrapper
+     chmod $chmodv 755 $wrapper_dir/opera
+ 
+-    # Manual page
+-    debug_msg 1 "Manual page"
+-
+-    mkdir $mkdirv $mkdirp ${man_dir}
+-    chmod $chmodv 755 ${man_dir}
+-    mkdir $mkdirv $mkdirp ${man_dir}/man1
+-    chmod $chmodv 755 ${man_dir}/man1
+-    cp $cpv $cpf man/opera.1 ${man_dir}/man1
+-
+     # Documentation
+     debug_msg 1 "Documentation"
+ 
+@@ -1377,44 +1321,13 @@
  
      if test -z "${OPERADESTDIR}"
      then
@@ -208,7 +224,7 @@
  	fi
  
      fi # OPERADESTDIR
-@@ -1582,48 +1504,42 @@
+@@ -1623,48 +1536,42 @@
      # This function searches for common gnome icon paths.
      debug_msg 1 "in gnome()"
  
@@ -280,7 +296,7 @@
  
      elif test -d /usr/share/gnome/
      then
-@@ -1671,9 +1587,9 @@
+@@ -1712,9 +1619,9 @@
      # This function searches for common kde2 and kde 3 icon paths.
      debug_msg 1 "in kde()"
  
@@ -292,7 +308,7 @@
  	if test -d "$DIR_HI" -a -w "$DIR_HI"
  	then
  	    if test -d "$DIR_HI"/48x48/apps -a -w "$DIR_HI"/48x48/apps
-@@ -1687,7 +1603,7 @@
+@@ -1728,7 +1635,7 @@
  	    fi
  	fi
  
@@ -301,7 +317,7 @@
  	if test -d $DIR_LO -a -w $DIR_LO
  	then
  	    if test -d $DIR_LO/32x32/apps -a -w $DIR_LO/32x32/apps
-@@ -1701,15 +1617,15 @@
+@@ -1742,15 +1649,15 @@
  	    fi
  	fi
  
@@ -323,9 +339,9 @@
  	    fi
  	fi
      fi
-@@ -1799,12 +1715,8 @@
+@@ -1866,12 +1773,8 @@
  	generate_desktop ${SHORTCUT_DIR} xdg
- 	update-desktop-database
+ 	${UDD}
      else
 -	icons
  	gnome
