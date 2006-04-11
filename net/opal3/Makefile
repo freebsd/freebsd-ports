@@ -20,6 +20,7 @@ LIB_DEPENDS=	pt_r.1:${PORTSDIR}/devel/pwlib
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_v${PORTVERSION:S/./_/g}
 
+# In opal's Makefile the default make's target is optshared
 ALL_TARGET=	optshared
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf:259
@@ -31,6 +32,10 @@ CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -I${WRKSRC}/include
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		Does not build on FreeBSD 4.x, if you manage to make it work, please send a patch to the maintainer: ${MAINTAINER}
+.endif
 
 .ifdef (WITH_FFMPEG)
 LIB_DEPENDS+=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg
