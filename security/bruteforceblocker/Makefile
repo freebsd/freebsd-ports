@@ -12,13 +12,14 @@ MASTER_SITES=	http://danger.rulez.sk/projects/bruteforceblocker/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	pav
 
-MAINTAINER=	danger@rulez.sk
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Checks for SSH bruteforce and blocks given IPs
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Unix/Syslog.pm:${PORTSDIR}/sysutils/p5-Unix-Syslog \
 		${SITE_PERL}/Sys/Hostname/Long.pm:${PORTSDIR}/sysutils/p5-Sys-Hostname-Long \
 		${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/${PERL_ARCH}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS
+		${SITE_PERL}/${PERL_ARCH}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS \
+		${SITE_PERL}/File/Tail.pm:${PORTSDIR}/devel/p5-File-Tail
 
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
