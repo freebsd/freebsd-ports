@@ -8567,6 +8567,7 @@ p5-Mail-Transport-Dbx	ports/mail/p5-Mail-Transport-Dbx
 p5-Mail-Verify	ports/mail/p5-Mail-Verify
 p5-Mail-Webmail-Gmail	ports/mail/p5-Mail-Webmail-Gmail
 p5-Make		ports/devel/p5-Make
+p5-Makefile-Parser	ports/textproc/p5-Makefile-Parser
 p5-MasonX-Interp-WithCallbacks	ports/www/p5-MasonX-Interp-WithCallbacks
 p5-MasonX-Profiler	ports/www/p5-MasonX-Profiler
 p5-MasonX-Request-WithApacheSession	ports/www/p5-MasonX-Request-WithApacheSession
