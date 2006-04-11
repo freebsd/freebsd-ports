@@ -1,6 +1,19 @@
-%%PYTHON_SITELIBDIR%%/graphviz/__init__.py
-%%PYTHON_SITELIBDIR%%/graphviz/__init__.pyc
-%%PYTHON_SITELIBDIR%%/graphviz/graphviz.py
-%%PYTHON_SITELIBDIR%%/graphviz/graphviz.pyc
-%%PYTHON_SITELIBDIR%%/graphviz/_graphviz.so
-@dirrm %%PYTHON_SITELIBDIR%%/graphviz
+%%PYTHON_SITELIBDIR%%/pygraphviz/__init__.py
+%%PYTHON_SITELIBDIR%%/pygraphviz/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pygraphviz/__init__.pyo
+%%PYTHON_SITELIBDIR%%/pygraphviz/graphviz.py
+%%PYTHON_SITELIBDIR%%/pygraphviz/graphviz.pyc
+%%PYTHON_SITELIBDIR%%/pygraphviz/graphviz.pyo
+%%PYTHON_SITELIBDIR%%/pygraphviz/pygraphviz.py
+%%PYTHON_SITELIBDIR%%/pygraphviz/pygraphviz.pyc
+%%PYTHON_SITELIBDIR%%/pygraphviz/pygraphviz.pyo
+%%PYTHON_SITELIBDIR%%/pygraphviz/_graphviz.so
+%%PYTHON_SITELIBDIR%%/pygraphviz/tests/__init__.py
+%%PYTHON_SITELIBDIR%%/pygraphviz/tests/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pygraphviz/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/pygraphviz/tests/pygraphviz_test.txt
+%%PYTHON_SITELIBDIR%%/pygraphviz/tests/test.py
+%%PYTHON_SITELIBDIR%%/pygraphviz/tests/test.pyc
+%%PYTHON_SITELIBDIR%%/pygraphviz/tests/test.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/pygraphviz/tests
+@dirrm %%PYTHON_SITELIBDIR%%/pygraphviz

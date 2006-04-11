@@ -1,4 +1,3 @@
-A Python interface to the agraph component of graphviz.  This code is
-covered by the Brown Copyright.
+A Python interface to the agraph component of graphviz.
 
-WWW: http://www.cs.brown.edu/~er/software/
+WWW: http://networkx.lanl.gov/pygraphviz/
