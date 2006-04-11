@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBIx-DBSchema
-PORTVERSION=	0.28
+PORTVERSION=	0.31
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DBIx
@@ -28,7 +28,7 @@ MAN3=	DBIx::DBSchema.3 DBIx::DBSchema::ColGroup.3 \
 	DBIx::DBSchema::DBD::Oracle.3 DBIx::DBSchema::DBD::SQLite.3
 
 .if !defined(NOPORTDOCS)
-PORTDOCS=	Changes README TODO
+PORTDOCS=	Changes README
 
 post-install:
 	@${MKDIR} ${DOCSDIR}
