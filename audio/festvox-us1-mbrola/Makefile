@@ -7,6 +7,7 @@
 
 PORTNAME=	festvox-${VOICE}-mbrola
 PORTVERSION?=	20041012
+PORTREVISION?=	1
 CATEGORIES=	audio accessibility
 MASTER_SITES=	${MASTER_SITE_FESTIVAL}
 MASTER_SITE_SUBDIR=	1.95
@@ -16,7 +17,6 @@ MAINTAINER=	jylefort@FreeBSD.org
 COMMENT?=	The MBROLA ${VOICE} voice (${VOICEDESC}) for Festival
 
 RUN_DEPENDS=	${LOCALBASE}/share/festival/lib/dicts/cmu/cmulex.scm:${PORTSDIR}/audio/festlex-cmu \
-		festival:${PORTSDIR}/audio/festival \
 		mbrola:${PORTSDIR}/audio/linux-mbrola \
 		${LOCALBASE}/share/mbrolavox/${VOICE}/${VOICE}:${PORTSDIR}/audio/mbrolavox
 
@@ -29,12 +29,7 @@ VOICEDESC?=	American English, female
 VOICEDIR=	${PREFIX}/share/festival/lib/voices/english/${VOICE}_mbrola
 VOICEDIR_REL=	${VOICEDIR:S|^${PREFIX}/||}
 
-PLIST_FILES=	${VOICEDIR_REL}/festvox/${VOICE}_mbrola.scm \
-		${VOICEDIR_REL}/festvox/usdurtreeZ.scm \
-		${VOICEDIR_REL}/${VOICE} \
-		${VOICEDIR_REL}/usradio
-PLIST_DIRS=	${VOICEDIR_REL}/festvox \
-		${VOICEDIR_REL}
+PLIST_SUB=	VOICE="${VOICE}" VOICEDIR_REL="${VOICEDIR_REL}"
 
 MD5_FILE=	${.CURDIR}/distinfo
 
