@@ -7,20 +7,20 @@
 
 PORTNAME=	bdc
 PORTVERSION=	7.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
-MASTER_SITES=	# http://download.bitdefender.com/freebsd/${BDREL}/beta/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-fbsd${BDREL}
+#MASTER_SITES=	# http://download.bitdefender.com/freebsd/${BDREL}/final/
+DISTNAME=	${PORTNAME}-${PORTVERSION}.2-fbsd${BDREL}
 
 MAINTAINER=	apircalabu@bitdefender.com
 COMMENT=	BitDefender Console Antivirus for FreeBSD
 
 .include <bsd.port.pre.mk>
 .if ${OSVERSION} >= 600000
-LIB_DEPENDS+=   c.5:${PORTSDIR}/misc/compat5x
+LIB_DEPENDS+=	c.5:${PORTSDIR}/misc/compat5x
 .endif
 .if ${OSVERSION} < 490000 || ${OSVERSION} >= 500000 && ${OSVERSION} < 502001
-IGNORE=		"requires FreeBSD-STABLE \(4.9 or later\), or FreeBSD-CURRENT \(5.2.1 or later\)"
+IGNORE=		requires FreeBSD-STABLE \(4.9 or later\), or FreeBSD-CURRENT \(5.2.1 or later\)
 .elif ${OSVERSION} < 500000
 BDREL=		4
 .else
@@ -33,16 +33,16 @@ NO_BUILD=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 ONLY_FOR_ARCHS=	i386
-RESTRICTED=     "License prohibits redistribution"
+RESTRICTED=	License prohibits redistribution
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
 ECHO_MSG=	/usr/bin/printf
 IGNORE=	:\n\
 You have to fetch ${DISTNAME}${EXTRACT_SUFX} manually after\n\
 reading and agreeing to the license at:\n\
-http://download.bitdefender.com/freebsd/${BDREL}/beta/LICENSE\n\
+http://download.bitdefender.com/freebsd/${BDREL}/final/LICENSE\n\
 A direct link to the distribution file:\n\
-http://download.bitdefender.com/freebsd/${BDREL}/beta/${DISTNAME}${EXTRACT_SUFX}\n\
+http://download.bitdefender.com/freebsd/${BDREL}/final/${DISTNAME}${EXTRACT_SUFX}\n\
 Once the file has been downloaded move it to\n\
 ${DISTDIR} and restart the build.\n
 .endif
