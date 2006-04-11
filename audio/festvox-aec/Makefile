@@ -9,6 +9,7 @@
 
 PORTNAME=	festvox_aec
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	audio accessibility
 MASTER_SITES=	${MASTER_SITE_FESTIVAL_OGI}
 DISTNAME=	voice_aec_di-2.0
@@ -41,6 +42,8 @@ pre-install:
 .for ii in /group /festvox /
 	${ECHO_CMD} @dirrm ${AECDIR}${ii} >> ${PLIST}
 .endfor
+	${ECHO_CMD} @dirrmtry share/festival/lib/voices/english >> ${PLIST}
+	${ECHO_CMD} @dirrmtry share/festival/lib/voices >> ${PLIST}
 
 do-install:
 	${MKDIR} ${FHOME}
