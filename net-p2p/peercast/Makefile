@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	peercast
-PORTVERSION=	0.1214
+PORTVERSION=	0.1217
 CATEGORIES=	net-p2p multimedia
 MASTER_SITES=	http://www.peercast.org/
 DISTNAME=	peercast-linux
