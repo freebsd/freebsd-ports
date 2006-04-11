@@ -59,6 +59,7 @@ CONFIGURE_ENV+=	LDFLAGS=${PTHREAD_LIBS}
 RUN_DEPENDS+=	${X11BASE}/lib/X11/fonts/texcm-ttf/cmex10.ttf:${PORTSDIR}/x11-fonts/texcm-ttf
 .else
 LIB_DEPENDS+=	forms:${PORTSDIR}/x11-toolkits/xforms
+CONFIGURE_ARGS+=--with-frontend=xforms
 USE_XPM=	yes
 .endif
 
