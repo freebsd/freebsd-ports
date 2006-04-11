@@ -9,6 +9,7 @@
 
 PORTNAME=	festvox-don
 PORTVERSION=	1.4.0
+PORTREVISION=	1
 CATEGORIES=	audio accessibility
 MASTER_SITES=	${MASTER_SITE_FESTIVAL}
 MASTER_SITE_SUBDIR=	1.4.1
@@ -21,8 +22,6 @@ COMMENT=	British English male voice for Festival speech synthesis system
 RUN_DEPENDS=	\
 ${LOCALBASE}/share/festival/lib/dicts/wsj.wp39.poslexR:${PORTSDIR}/audio/festlex-poslex \
 ${LOCALBASE}/share/festival/lib/dicts/oald/oaldlex.scm:${PORTSDIR}/audio/festlex-oald
-
-BROKEN=		Incomplete pkg-plist
 
 WRKSRC=		${WRKDIR}/festival
 

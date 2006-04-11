@@ -6,3 +6,5 @@ share/festival/lib/voices/english/kal_diphone/COPYING
 @dirrm share/festival/lib/voices/english/kal_diphone/group
 @dirrm share/festival/lib/voices/english/kal_diphone/festvox
 @dirrm share/festival/lib/voices/english/kal_diphone
+@dirrmtry share/festival/lib/voices/english
+@dirrmtry share/festival/lib/voices
