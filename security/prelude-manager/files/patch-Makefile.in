@@ -1,9 +1,9 @@
---- Makefile.in.orig	Tue Oct 18 12:12:28 2005
-+++ Makefile.in	Tue Oct 18 12:13:07 2005
-@@ -602,17 +602,8 @@
- 	$(INSTALL) -d -m 700 $(DESTDIR)$(configdir);
+--- Makefile.in.orig	Tue Mar 28 19:04:43 2006
++++ Makefile.in	Wed Mar 29 09:32:01 2006
+@@ -710,17 +710,8 @@
  	$(INSTALL) -d -m 700 $(DESTDIR)$(manager_run_dir);
- 	$(INSTALL) -d -m 700 $(DESTDIR)$(manager_fifo_dir);
+ 	$(INSTALL) -d -m 700 $(DESTDIR)$(manager_scheduler_dir);
+ 	$(INSTALL) -d -m 700 $(DESTDIR)$(manager_failover_dir);
 -	@if test -f $(DESTDIR)$(configdir)/prelude-manager.conf; then                                                  \
 -		$(INSTALL) -m 600 $(top_srcdir)/prelude-manager.conf $(DESTDIR)$(configdir)/prelude-manager.conf-dist; \
 -		echo "********************************************************************************";     		\
