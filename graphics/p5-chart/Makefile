@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Chart
-PORTVERSION=	2.3
+PORTVERSION=	2.4.1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Chart
@@ -19,6 +19,6 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD
 
 PERL_CONFIGURE=	yes
 
-#MAN3=		Chart.3
+MAN3=		Chart.3
 
 .include <bsd.port.mk>
