@@ -43,7 +43,10 @@ MAN8=	au.8	venus.8
 
 .if ${CODA_SUITE} == client
 .if ${OSVERSION} < 501106
-IGNORE=		"This version of FreeBSD lacks Coda 6.x kernel support"
+IGNORE=		lacks kernel support on this version of FreeBSD
+.endif
+.if ${OSVERSION} >= 600000
+IGNORE=		makes a kernel panic on this version of FreeBSD
 .endif
 .endif
 
