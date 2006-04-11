@@ -126,9 +126,21 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002dext_003apackage_002dlocked_002dp.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002dext_003aparse_002dnative_002dnamestring.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002dext_003aposix_002dgetenv.html
+%%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002dext_003aprocess_002dalive_002dp.html
+%%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002dext_003aprocess_002dclose.html
+%%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002dext_003aprocess_002dcore_002ddumped.html
+%%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002dext_003aprocess_002derror.html
+%%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002dext_003aprocess_002dexit_002dcode.html
+%%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002dext_003aprocess_002dinput.html
+%%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002dext_003aprocess_002dkill.html
+%%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002dext_003aprocess_002doutput.html
+%%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002dext_003aprocess_002dp.html
+%%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002dext_003aprocess_002dstatus.html
+%%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002dext_003aprocess_002dwait.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002dext_003apurify.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002dext_003aquit.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002dext_003aremove_002dimplementation_002dpackage.html
+%%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002dext_003arun_002dprogram.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002dext_003asave_002dlisp_002dand_002ddie.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002dext_003aschedule_002dtimer.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002dext_003atimer_002dname.html
@@ -314,6 +326,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Variable-sb_002ddebug_003a_002atrace_002dvalues_002a.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Variable-sb_002dext_003a_002aafter_002dgc_002dhooks_002a.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Variable-sb_002dext_003a_002acompiler_002dprint_002dvariable_002dalist_002a.html
+%%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Variable-sb_002dext_003a_002acore_002dpathname_002a.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Variable-sb_002dext_003a_002adebug_002dprint_002dvariable_002dalist_002a.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Variable-sb_002dext_003a_002aed_002dfunctions_002a.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Variable-sb_002dext_003a_002ainvoke_002ddebugger_002dhook_002a.html
@@ -363,11 +376,6 @@ lib/sbcl/sb-bsd-sockets/Makefile
 lib/sbcl/sb-bsd-sockets/NEWS
 lib/sbcl/sb-bsd-sockets/TODO
 lib/sbcl/sb-bsd-sockets/a.out
-lib/sbcl/sb-bsd-sockets/alien.so
-lib/sbcl/sb-bsd-sockets/alien/get-h-errno.c
-lib/sbcl/sb-bsd-sockets/alien/get-h-errno.o
-lib/sbcl/sb-bsd-sockets/alien/undefs.c
-lib/sbcl/sb-bsd-sockets/alien/undefs.o
 lib/sbcl/sb-bsd-sockets/constants.fasl
 lib/sbcl/sb-bsd-sockets/constants.lisp
 lib/sbcl/sb-bsd-sockets/constants.lisp-temp
@@ -443,11 +451,6 @@ lib/sbcl/sb-posix/Makefile
 lib/sbcl/sb-posix/README
 lib/sbcl/sb-posix/TODO
 lib/sbcl/sb-posix/a.out
-lib/sbcl/sb-posix/alien.so
-lib/sbcl/sb-posix/alien/stat-macros.c
-lib/sbcl/sb-posix/alien/stat-macros.o
-lib/sbcl/sb-posix/alien/waitpid-macros.c
-lib/sbcl/sb-posix/alien/waitpid-macros.o
 lib/sbcl/sb-posix/constants.fasl
 lib/sbcl/sb-posix/constants.lisp
 lib/sbcl/sb-posix/constants.lisp-temp
@@ -541,14 +544,12 @@ lib/sbcl/sbcl.core
 @dirrm lib/sbcl/sb-rt
 @dirrm lib/sbcl/sb-rotate-byte
 @dirrm lib/sbcl/sb-posix/test-lab
-@dirrm lib/sbcl/sb-posix/alien
 @dirrm lib/sbcl/sb-posix
 @dirrm lib/sbcl/sb-md5
 @dirrm lib/sbcl/sb-introspect
 @dirrm lib/sbcl/sb-grovel
 @dirrm lib/sbcl/sb-executable
 @dirrm lib/sbcl/sb-cltl2
-@dirrm lib/sbcl/sb-bsd-sockets/alien
 @dirrm lib/sbcl/sb-bsd-sockets
 @dirrm lib/sbcl/sb-aclrepl
 @dirrm lib/sbcl/asdf-install
