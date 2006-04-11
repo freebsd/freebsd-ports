@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Makefile/Parser.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Makefile/Parser/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Makefile/Parser
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Makefile
+@dirrmtry %%SITE_PERL%%/Makefile
