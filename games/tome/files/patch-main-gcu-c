@@ -1,0 +1,11 @@
+--- main-gcu.c.orig	Mon Apr  3 17:33:49 2006
++++ main-gcu.c	Mon Apr  3 17:33:55 2006
+@@ -811,7 +811,7 @@
+ 			if (!directory)
+ 				return 1;
+ 
+-			while (entry = readdir(directory))
++			while ((entry = readdir(directory)))
+ 			{
+ 				char file[PATH_MAX + NAME_MAX + 2];
+ 				struct stat filedata;
