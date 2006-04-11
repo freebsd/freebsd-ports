@@ -5,3 +5,5 @@ share/festival/lib/voices/english/rab_diphone/festvox/rab_diphone.scm
 share/festival/lib/voices/english/rab_diphone/COPYING
 @dirrm share/festival/lib/voices/english/rab_diphone/festvox
 @dirrm share/festival/lib/voices/english/rab_diphone
+@dirrmtry share/festival/lib/voices/english
+@dirrmtry share/festival/lib/voices
