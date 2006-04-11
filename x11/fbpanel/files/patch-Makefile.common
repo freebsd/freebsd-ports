@@ -1,5 +1,14 @@
---- Makefile.common.orig	Thu Jul 28 22:35:08 2005
-+++ Makefile.common	Thu Jul 28 22:36:06 2005
+--- Makefile.common.orig	Tue May 31 17:39:18 2005
++++ Makefile.common	Sun Apr  2 16:30:37 2006
+@@ -53,7 +53,7 @@
+ 
+ DEVEL  ?= 0
+ CHATTY ?= $(DEVEL)
+-STATIC_PLUGINS ?= 0
++STATIC_PLUGINS ?= 1
+ #$(warning CHATTY=$(CHATTY) DEVEL=$(DEVEL))
+ ifeq (1,$(CHATTY))
+ Q :=
 @@ -83,13 +83,11 @@
  # compile flags
  

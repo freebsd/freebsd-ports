@@ -13,19 +13,5 @@ bin/fbpanel
 %%DATADIR%%/images/top-left.xpm
 %%DATADIR%%/images/top-right.xpm
 %%DATADIR%%/pager
-%%DATADIR%%/plugins/dclock.so
-%%DATADIR%%/plugins/deskno.so
-%%DATADIR%%/plugins/icons.so
-%%DATADIR%%/plugins/image.so
-%%DATADIR%%/plugins/launchbar.so
-%%DATADIR%%/plugins/menu.so
-%%DATADIR%%/plugins/pager.so
-%%DATADIR%%/plugins/separator.so
-%%DATADIR%%/plugins/space.so
-%%DATADIR%%/plugins/taskbar.so
-%%DATADIR%%/plugins/test.so
-%%DATADIR%%/plugins/tray.so
-%%DATADIR%%/plugins/wincmd.so
 @dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%/plugins
 @dirrm %%DATADIR%%
