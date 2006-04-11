@@ -1,6 +1,47 @@
 --- configure.orig	Thu Feb 23 00:59:58 2006
-+++ configure	Mon Apr  3 10:55:28 2006
-@@ -9026,33 +9026,8 @@
++++ configure	Wed Apr  5 11:03:16 2006
+@@ -8193,37 +8193,12 @@
+ 
+ 
+ 
+-# This can be used to rebuild libtool when needed
+-LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
+-
+-# Always use our own libtool.
+-LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+-
+-# Prevent multiple expansion
+-
+-
+ #
+ # libtool stuff
+ #
+-if test -z "${LTFLAGS}"; then
+-  LTFLAGS="--silent"
+-fi
+-
+-LIBTOOL_SCRIPT="`pwd`/libtool"
+-LIBTOOL="${LIBTOOL_SCRIPT} ${LTFLAGS}"
+-libtoolversion=`${SHELL} ${LIBTOOL_SCRIPT} --version`
+-case $libtoolversion in
+-     *1.4*)
+-       SH_LIBTOOL="${LIBTOOL_SCRIPT}"
+-       SHLTCFLAGS="-prefer-pic"
+-       LTCFLAGS="-prefer-non-pic -static"
+-       ;;
+-     *)
+-       SH_LIBTOOL="${SHELL} ${LIBTOOL_SCRIPT} ${LTFLAGS}"
+-       SHLTCFLAGS=""
+-       LTCFLAGS=""
+-       ;;
+-esac
++SH_LIBTOOL="${SHELL} ${LIBTOOL}"
++SHLTCFLAGS=""
++LTCFLAGS=""
+ 
+ 
+ 
+@@ -9026,33 +9001,8 @@
  	PROXY_LIBS='-lnsl -lsocket -lthread'
  	;;
  

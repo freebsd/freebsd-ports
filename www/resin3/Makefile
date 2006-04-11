@@ -18,6 +18,7 @@ JAVA_VERSION=		1.2+
 HAS_CONFIGURE=		yes
 USE_PYTHON=		yes
 USE_OPENSSL=		yes
+USE_AUTOTOOLS=		libtool:15
 
 # Customizable settings
 RUNASUSER?=		www
@@ -61,7 +62,7 @@ CONFIGURE_ARGS+=	--with-java-home=${JAVA_HOME} \
 LDFLAGS+=		-L${OPENSSLLIB} -lcrypto -lssl
 # We need to link with cc instead of ld for the FreeBSD specific options used
 # by threading libraries
-CONFIGURE_ENV=		LD=${CC} PTHREAD_LIBS=${PTHREAD_LIBS} LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV=		LD=${CC} PTHREAD_LIBS=${PTHREAD_LIBS} LDFLAGS="${LDFLAGS}" LIBTOOL=${LIBTOOL}
 
 # Install the Apache plugin if needed
 .if defined(WITH_APACHE) && (${WITH_APACHE} == yes || ${WITH_APACHE} == YES)
@@ -131,7 +132,7 @@ defined(WITH_APACHE) && (${WITH_APACHE} == yes || ${WITH_APACHE} == YES))
 .endif
 
 post-build:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_ARGS} install
+	cd ${WRKSRC}/modules/c/src/resin_os && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_ARGS} install
 
 # Resin does not handle installation, so proceed now
 do-install:
