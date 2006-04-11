@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lyx
-PORTVERSION=	1.3.7
+PORTVERSION=	1.4.0
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/stable/ \
 		ftp://planetmirror.com/pub/lyx/stable/ \
@@ -16,10 +16,8 @@ MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/stable/ \
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Document processor interfaced with LaTeX (nearly WYSIWYG)
 
-BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
-		latex:${PORTSDIR}/print/teTeX
-RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
-		latex:${PORTSDIR}/print/teTeX
+BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX
+RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX
 
 CONFLICTS=	cjk-lyx-*
 
@@ -38,7 +36,7 @@ CONFIGURE_ARGS=	--with-extra-lib="${LOCALBASE}/lib" \
 		--with-extra-inc="${LOCALBASE}/include"
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}"
-MAN1=		lyx.1 reLyX.1
+MAN1=		lyx.1 tex2lyx.1 lyxclient.1
 USE_REINPLACE=	yes
 
 post-configure:
