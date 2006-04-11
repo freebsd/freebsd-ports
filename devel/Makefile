@@ -1434,6 +1434,7 @@
     SUBDIR += py-dbus
     SUBDIR += py-dialog
     SUBDIR += py-elementtree
+    SUBDIR += py-epsilon
     SUBDIR += py-fam
     SUBDIR += py-fileutils
     SUBDIR += py-fortran
