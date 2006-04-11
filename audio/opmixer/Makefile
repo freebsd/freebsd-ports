@@ -6,43 +6,52 @@
 #
 
 PORTNAME=	opmixer
-PORTVERSION=	0.70
-PORTREVISION=	5
+PORTVERSION=	0.75
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	optronic
+DISTNAME=	opMixer-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Adjusts a mixer
 
 LIB_DEPENDS=	gtkmm-1.2.2:${PORTSDIR}/x11-toolkits/gtk--
 
-DOCDIR=		share/doc/${PORTNAME}
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-PLIST=		${WRKDIR}/pkg-plist
-WRKSRC=		${WRKDIR}/opmixer
+USE_GNOME=	gtk12 gnometarget
+GNU_CONFIGURE=	yes
+
+PORTDOCS=	README
+PLIST_FILES=	${BIN_PROGRAMS:S/^/bin\//}
+
+BIN_PROGRAMS=	opmixer opmixer-load volset
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
-
-pre-install:
-	${ECHO_CMD} "bin/opmixer" > ${PLIST}
-	${ECHO_CMD} "bin/opmixer-load" >> ${PLIST}
-	${ECHO_CMD} "bin/volset" >> ${PLIST}
-.if !defined(NOPORTDOCS)
-	${ECHO_CMD} ${DOCDIR}/README >> ${PLIST}
-	${ECHO_CMD} @dirrm ${DOCDIR} >> ${PLIST}
-.endif
+post-patch:
+	@${REINPLACE_CMD} -e  \
+		's|(VScale \*)|VScale *|g ; \
+		 s|(Adjustment \*)|Adjustment *|g ; \
+		 s|(CheckButton \*)|CheckButton *|g' ${WRKSRC}/src/gui.cc
+	@${REINPLACE_CMD} -e  \
+		's|<string\.h>|<cstring>|g ; \
+		 s|<iostream\.h>|<iostream>|g ; \
+		 s|(LineInfo \*)|LineInfo *|g ; \
+		 s| cout| std::cout|g ; \
+		 s| endl| std::endl|g' ${WRKSRC}/src/ossmixer.cc
+	@${REINPLACE_CMD} -e  \
+		's|<stdlib\.h>|<cstdlib>|g ; \
+		 s|<stdio\.h>|<cstdio>|g' ${WRKSRC}/src/ossmixer.hh
+	@${REINPLACE_CMD} -e  \
+		's| endl| std::endl|g' ${WRKSRC}/src/volset.cc
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/opmixer ${WRKSRC}/opmixer-load \
-		${WRKSRC}/volset ${PREFIX}/bin
+.for file in ${BIN_PROGRAMS}
+	${INSTALL_PROGRAM} ${WRKSRC}/src/${file} ${PREFIX}/bin
+.endfor
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
