@@ -7,6 +7,7 @@
 
 PORTNAME=	see
 PORTVERSION=	1.3.1
+PORTREVISION=	1
 CATEGORIES=	lang devel
 MASTER_SITES=	http://www.adaptive-enterprises.com.au/~d/software/see/
 
@@ -15,7 +16,7 @@ COMMENT=	Simple ECMAScript Engine (SEE)
 
 CONFLICTS=	see-devel-[0-9]*
 
-OPTIONS=	GC "Use Boehm-Weiser garbage collection package" on \
+OPTIONS=	GC "Use Boehm-Weiser garbage collection pkg" on \
 		OPTIMIZED_CFLAGS "Enable some additional optimizations" off
 
 INSTALLS_SHLIB=	yes
@@ -32,7 +33,7 @@ CONFIGURE_ENV=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
 CFLAGS+=	-O3 -fomit-frame-pointer
 .endif
 
-.if defined(WITH_GC)
+.if !defined(WITHOUT_GC)
 LIB_DEPENDS+=	gc:${PORTSDIR}/devel/boehm-gc
 .else
 CONFIGURE_ARGS+=	--without-boehm-gc
