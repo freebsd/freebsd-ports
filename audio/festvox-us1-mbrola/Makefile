@@ -16,6 +16,7 @@ MAINTAINER=	jylefort@FreeBSD.org
 COMMENT?=	The MBROLA ${VOICE} voice (${VOICEDESC}) for Festival
 
 RUN_DEPENDS=	${LOCALBASE}/share/festival/lib/dicts/cmu/cmulex.scm:${PORTSDIR}/audio/festlex-cmu \
+		festival:${PORTSDIR}/audio/festival \
 		mbrola:${PORTSDIR}/audio/linux-mbrola \
 		${LOCALBASE}/share/mbrolavox/${VOICE}/${VOICE}:${PORTSDIR}/audio/mbrolavox
 
