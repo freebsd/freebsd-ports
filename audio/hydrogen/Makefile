@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hydrogen
-PORTVERSION=	0.9.2
+PORTVERSION=	0.9.3
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,7 +19,6 @@ LIB_DEPENDS=	sndfile:${PORTSDIR}/audio/libsndfile
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 USE_GETOPT_LONG=yes
 USE_QT_VER=	3
 CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include
@@ -77,13 +76,11 @@ CONFIGURE_ARGS+=--disable-flac-support
 
 post-patch:
 	@${MV} -f ${WRKSRC}/data/doc/man ${WRKSRC}
-	@${FIND} ${WRKSRC}/data -type f -path '*/CVS/*' -delete
-	@${FIND} ${WRKSRC}/data -type d -name CVS -delete
 	@${RM} -f \
 		${WRKSRC}/data/doc/*.docbook \
 		${WRKSRC}/data/doc/updateManuals.sh \
 		${WRKSRC}/data/i18n/*.ts \
-		${WRKSRC}/data/i18n/update-Translations.sh
+		${WRKSRC}/data/i18n/updateTranslations.sh
 	@${REINPLACE_CMD} -e 's|pa_unix_oss|lib|; s|pa_common|include|' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/usr|${LOCALBASE}|' \
