@@ -1,0 +1,11 @@
+--- skills.c.orig	Mon Apr  3 17:41:37 2006
++++ skills.c	Mon Apr  3 17:41:44 2006
+@@ -257,7 +257,7 @@
+ 			strcat(buf, format(" - %s", s_info[i].name + s_name));
+ 		}
+ 
+-		fprintf(fff, "%-49s%s%02ld.%03ld [%01d.%03d]",
++		fprintf(fff, "%-49s%s%02ld.%03ld [%01ld.%03ld]",
+ 		        buf, s_info[i].value < 0 ? "-" : " ",
+ 			ABS(s_info[i].value) / SKILL_STEP,
+ 			ABS(s_info[i].value) % SKILL_STEP,
