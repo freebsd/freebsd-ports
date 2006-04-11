@@ -1,0 +1,8 @@
+%%VOICEDIR_REL%%/festvox/%%VOICE%%_mbrola.scm
+%%VOICEDIR_REL%%/festvox/usdurtreeZ.scm
+%%VOICEDIR_REL%%/%%VOICE%%
+%%VOICEDIR_REL%%/usradio
+@dirrm %%VOICEDIR_REL%%/festvox
+@dirrm %%VOICEDIR_REL%%
+@dirrmtry share/festival/lib/voices/english
+@dirrmtry share/festival/lib/voices
