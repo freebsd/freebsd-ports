@@ -751,6 +751,7 @@
     SUBDIR += spellutils
     SUBDIR += sr-aspell
     SUBDIR += srilm
+    SUBDIR += ssddiff
     SUBDIR += stardict2
     SUBDIR += stardict2-dictd_mova
     SUBDIR += stardict2-quick
