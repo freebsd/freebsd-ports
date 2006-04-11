@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	trafshow
-PORTVERSION=	5.2.2
+PORTVERSION=	5.2.3
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.nsk.su/pub/RinetSoftware/
@@ -15,7 +15,6 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	jylefort@FreeBSD.org
 COMMENT=	Full screen visualization of network traffic
 
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" PTHREAD_LIBS="${PTHREAD_LIBS}"
 ALL_TARGET=	trafshow

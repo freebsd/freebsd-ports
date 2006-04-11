@@ -1,5 +1,5 @@
---- show_dump.c.orig	Mon Jul 12 07:21:09 2004
-+++ show_dump.c	Wed Feb  1 18:07:01 2006
+--- show_dump.c.orig	Wed Apr 12 00:16:51 2006
++++ show_dump.c	Wed Apr 12 00:18:21 2006
 @@ -21,6 +21,7 @@
  #include <sys/param.h>
  #include <sys/types.h>
@@ -12,20 +12,26 @@
          bpf_u_int32 net;
          bpf_u_int32 mask;
  	char name[100], buf[256];
-+	u_int v;
++	int v = 1;
  
  	/* sanity check */
  	if (!ph || !ns) return -1;
-@@ -141,6 +143,12 @@
+@@ -139,13 +141,16 @@
+ 		if (buf[0] != '\0')
+ 			screen_status("%s: %s", ph->name, buf);
  		if (!live_pcap) return -1;
+-#ifdef	notdef
  		if (pcap_setnonblock(live_pcap, 1, buf) < 0) {
  			screen_status("%s: %s", ph->name, buf);
-+			show_dump_close();
-+			return -1;
-+		}
-+		v = 1;
-+		if (ioctl(pcap_fileno(live_pcap), BIOCIMMEDIATE, &v) < 0) {
-+			screen_status("%s: %s", ph->name, strerror(errno));
  			show_dump_close();
  			return -1;
  		}
+-#endif
++		if (ioctl(pcap_fileno(live_pcap), BIOCIMMEDIATE, &v) < 0) {
++			screen_status("%s: %s", ph->name, strerror(errno));
++			show_dump_close();
++			return -1;
++		}
+ 		/* setup filter expression */
+ 		if (pcap_lookupnet(strcpy(name, ph->name), &net, &mask, buf) < 0) {
+ 			/* ignore error */
