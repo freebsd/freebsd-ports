@@ -1,6 +1,7 @@
-bin/pdfbklt.plx
-bin/pdfrevert.plx
-bin/pdfstamp.plx
+bin/pdfbklt
+bin/pdfrevert
+bin/pdfstamp
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/PDF/.packlist
 %%SITE_PERL%%/Text/PDF/Array.pm
 %%SITE_PERL%%/Text/PDF/Bool.pm
 %%SITE_PERL%%/Text/PDF/Dict.pm
@@ -19,6 +20,7 @@ bin/pdfstamp.plx
 %%SITE_PERL%%/Text/PDF/Utils.pm
 %%SITE_PERL%%/Text/PDF/changes
 %%SITE_PERL%%/Text/PDF/examples/CD.CFG
+%%SITE_PERL%%/Text/PDF/examples/boon_graph.pdf
 %%SITE_PERL%%/Text/PDF/examples/call_conf.txt
 %%SITE_PERL%%/Text/PDF/examples/graph.pl
 %%SITE_PERL%%/Text/PDF/examples/hello.pl
@@ -27,9 +29,9 @@ bin/pdfstamp.plx
 %%SITE_PERL%%/Text/PDF/examples/pdfcrop.pl
 %%SITE_PERL%%/Text/PDF/examples/pdfgetobj.pl
 %%SITE_PERL%%/Text/PDF/examples/pdflines.pl
+%%SITE_PERL%%/Text/PDF/examples/squ.pdf
 %%SITE_PERL%%/Text/PDF/examples/squares.pdf
 %%SITE_PERL%%/Text/PDF/examples/test.pdf
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/PDF/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/PDF
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text
 @dirrm %%SITE_PERL%%/Text/PDF/examples
