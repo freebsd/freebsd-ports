@@ -115,3 +115,8 @@ share/ghostscript/5.50/gs_typ42.ps
 share/ghostscript/5.50/gs_type1.ps
 share/ghostscript/5.50/gs_wan_e.ps
 @dirrm include/DPS
+@dirrmtry share/ghostscript/5.50/doc
+@dirrmtry share/ghostscript/5.50/examples
+@dirrmtry share/ghostscript/5.50
+@dirrmtry share/ghostscript/fonts
+@dirrmtry share/ghostscript
