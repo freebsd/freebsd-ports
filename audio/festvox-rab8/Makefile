@@ -9,6 +9,7 @@
 
 PORTNAME=	festvox-rab8
 PORTVERSION=	1.4.1
+PORTREVISION=	1
 CATEGORIES=	audio accessibility
 MASTER_SITES=	${MASTER_SITE_FESTIVAL}
 MASTER_SITE_SUBDIR=	${PORTVERSION}
@@ -21,8 +22,6 @@ COMMENT=	British English male voice, sampled at 8 kHz, for Festival
 RUN_DEPENDS=	\
 ${LOCALBASE}/share/festival/lib/dicts/wsj.wp39.poslexR:${PORTSDIR}/audio/festlex-poslex \
 ${LOCALBASE}/share/festival/lib/dicts/oald/oaldlex.scm:${PORTSDIR}/audio/festlex-oald
-
-BROKEN=		Incomplete pkg-plist
 
 WRKSRC=		${WRKDIR}/festival
 

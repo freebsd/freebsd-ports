@@ -6,3 +6,5 @@ share/festival/lib/voices/english/ked_diphone/festvox/kddurtreeZ.scm
 share/festival/lib/voices/english/ked_diphone/COPYING
 @dirrm share/festival/lib/voices/english/ked_diphone/festvox
 @dirrm share/festival/lib/voices/english/ked_diphone
+@dirrmtry share/festival/lib/voices/english
+@dirrmtry share/festival/lib/voices
