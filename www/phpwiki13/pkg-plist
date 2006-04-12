@@ -1,25 +1,25 @@
-%%DOCSDIR%%/INSTALL
-%%DOCSDIR%%/LICENSE
-%%DOCSDIR%%/README
-%%DOCSDIR%%/TODO
-%%DOCSDIR%%/UPGRADING
-%%DOCSDIR%%/CREDITS
-%%DOCSDIR%%/HISTORY
-%%DOCSDIR%%/INSTALL.MacOSX
-%%DOCSDIR%%/INSTALL.flatfile
-%%DOCSDIR%%/INSTALL.mSQL
-%%DOCSDIR%%/INSTALL.mysql
-%%DOCSDIR%%/INSTALL.oci8
-%%DOCSDIR%%/INSTALL.pgsql
-%%DOCSDIR%%/INSTALL.sqlite
-%%DOCSDIR%%/README.coding
-%%DOCSDIR%%/README.foaf
-%%DOCSDIR%%/README.fpdf
-%%DOCSDIR%%/README.phpwiki-auth
-%%DOCSDIR%%/README.phpwiki-cache
-%%DOCSDIR%%/README.security
-%%DOCSDIR%%/THEMES
-%%DOCSDIR%%/phpwiki_architecture.png
+%%PORTDOCS%%%%DOCSDIR%%/CREDITS
+%%PORTDOCS%%%%DOCSDIR%%/HISTORY
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL.MacOSX
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL.flatfile
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL.mSQL
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL.mysql
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL.oci8
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL.pgsql
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL.sqlite
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.coding
+%%PORTDOCS%%%%DOCSDIR%%/README.foaf
+%%PORTDOCS%%%%DOCSDIR%%/README.fpdf
+%%PORTDOCS%%%%DOCSDIR%%/README.phpwiki-auth
+%%PORTDOCS%%%%DOCSDIR%%/README.phpwiki-cache
+%%PORTDOCS%%%%DOCSDIR%%/README.security
+%%PORTDOCS%%%%DOCSDIR%%/THEMES
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/UPGRADING
+%%PORTDOCS%%%%DOCSDIR%%/phpwiki_architecture.png
 %%PHPWIKI%%/GoogleSearch.wsdl
 %%PHPWIKI%%/PhpWiki.wsdl
 %%PHPWIKI%%/RPC2.php
@@ -30,6 +30,8 @@
 %%PHPWIKI%%/config/config-dist.ini
 %%PHPWIKI%%/config/make-dbhelper.pl
 %%PHPWIKI%%/config/phpwiki.spec
+%%PHPWIKI%%/config/two-level-tlds
+%%PHPWIKI%%/config/whitelist
 %%PHPWIKI%%/configurator.php
 %%PHPWIKI%%/favicon.ico
 %%PHPWIKI%%/getimg.php
@@ -69,6 +71,7 @@
 %%PHPWIKI%%/lib/RssWriter.php
 %%PHPWIKI%%/lib/RssWriter2.php
 %%PHPWIKI%%/lib/SemanticWeb.php
+%%PHPWIKI%%/lib/SpamBlocklist.php
 %%PHPWIKI%%/lib/Template.php
 %%PHPWIKI%%/lib/TextSearchQuery.php
 %%PHPWIKI%%/lib/Theme.php
@@ -133,6 +136,7 @@
 %%PHPWIKI%%/lib/WikiDB/backend/ADODB_mssql.php
 %%PHPWIKI%%/lib/WikiDB/backend/ADODB_mysql.php
 %%PHPWIKI%%/lib/WikiDB/backend/ADODB_oci8po.php
+%%PHPWIKI%%/lib/WikiDB/backend/ADODB_postgres7.php
 %%PHPWIKI%%/lib/WikiDB/backend/ADODB_sqlite.php
 %%PHPWIKI%%/lib/WikiDB/backend/PDO.php
 %%PHPWIKI%%/lib/WikiDB/backend/PDO_mysql.php
@@ -258,12 +262,14 @@
 %%PHPWIKI%%/lib/plugin/CalendarList.php
 %%PHPWIKI%%/lib/plugin/CategoryPage.php
 %%PHPWIKI%%/lib/plugin/Comment.php
+%%PHPWIKI%%/lib/plugin/CreateBib.php
 %%PHPWIKI%%/lib/plugin/CreatePage.php
 %%PHPWIKI%%/lib/plugin/CreateToc.php
 %%PHPWIKI%%/lib/plugin/DeadEndPages.php
 %%PHPWIKI%%/lib/plugin/Diff.php
 %%PHPWIKI%%/lib/plugin/EditMetaData.php
 %%PHPWIKI%%/lib/plugin/ExternalSearch.php
+%%PHPWIKI%%/lib/plugin/FileInfo.php
 %%PHPWIKI%%/lib/plugin/FoafViewer.php
 %%PHPWIKI%%/lib/plugin/FrameInclude.php
 %%PHPWIKI%%/lib/plugin/FullTextSearch.php
@@ -274,7 +280,6 @@
 %%PHPWIKI%%/lib/plugin/GraphViz.php
 %%PHPWIKI%%/lib/plugin/HelloWorld.php
 %%PHPWIKI%%/lib/plugin/HtmlConverter.php
-%%PHPWIKI%%/lib/plugin/Imdb.php
 %%PHPWIKI%%/lib/plugin/IncludePage.php
 %%PHPWIKI%%/lib/plugin/IncludePages.php
 %%PHPWIKI%%/lib/plugin/IncludeSiteMap.php
@@ -787,7 +792,6 @@
 %%PHPWIKI%%/pgsrc/NewMarkupTestPage
 %%PHPWIKI%%/pgsrc/OldMarkupTestPage
 %%PHPWIKI%%/pgsrc/OldStyleTablePlugin
-%%PHPWIKI%%/pgsrc/OldStyleTablePlugin.orig
 %%PHPWIKI%%/pgsrc/OldTextFormattingRules
 %%PHPWIKI%%/pgsrc/OrphanedPages
 %%PHPWIKI%%/pgsrc/PageDump
@@ -901,6 +905,7 @@
 %%PHPWIKI%%/tests/unit/lib/TextSearchTest.php
 %%PHPWIKI%%/tests/unit/lib/plugin/AllPagesTest.php
 %%PHPWIKI%%/tests/unit/lib/plugin/AllUsersTest.php
+%%PHPWIKI%%/tests/unit/lib/plugin/IncludePageTest.php
 %%PHPWIKI%%/tests/unit/lib/plugin/ListPagesTest.php
 %%PHPWIKI%%/tests/unit/lib/plugin/OrphanedPagesTest.php
 %%PHPWIKI%%/tests/unit/lib/plugin/WantedPagesTest.php
@@ -908,11 +913,14 @@
 %%PHPWIKI%%/tests/unit/mysql-profile.png
 %%PHPWIKI%%/tests/unit/mysql-test-destroy.sql
 %%PHPWIKI%%/tests/unit/mysql-test-initialize.sql
+%%PHPWIKI%%/tests/unit/pgsql-test-initialize.sql
 %%PHPWIKI%%/tests/unit/prepare_pl
 %%PHPWIKI%%/tests/unit/readme.html
 %%PHPWIKI%%/tests/unit/runme_all
 %%PHPWIKI%%/tests/unit/runme_basic
 %%PHPWIKI%%/tests/unit/runme_mem
+%%PHPWIKI%%/tests/unit/runme_pgsql
+%%PHPWIKI%%/tests/unit/runme_sql
 %%PHPWIKI%%/tests/unit/test.php
 %%PHPWIKI%%/tests/unit/testbox/latest_ver/latest_versions
 %%PHPWIKI%%/tests/unit/testbox/page_data/InterWikiMap
@@ -1496,6 +1504,7 @@
 %%PHPWIKI%%/themes/wikilens/templates/navbar.tmpl
 %%PHPWIKI%%/themes/wikilens/themeinfo.php
 %%PHPWIKI%%/uploads/.htaccess
+%%PHPWIKI%%/uploads/highlight-emacs.css
 %%PHPWIKI%%/wiki
 @dirrm %%PHPWIKI%%/uploads
 @dirrm %%PHPWIKI%%/themes/wikilens/templates
@@ -1618,4 +1627,4 @@
 @dirrm %%PHPWIKI%%/lib
 @dirrm %%PHPWIKI%%/config
 @dirrm %%PHPWIKI%%
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
