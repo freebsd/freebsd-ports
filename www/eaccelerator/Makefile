@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	eaccelerator
-DISTVERSION=	0.9.5-beta1
+DISTVERSION=	0.9.5-beta2
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,7 +18,7 @@ USE_PHP=	session
 USE_PHPIZE=	yes
 USE_PHP_BUILD=	yes
 
-CONFIGURE_ARGS=	--enable-eaccelerator=shared
+CONFIGURE_ARGS=	--enable-eaccelerator=shared --with-eaccelerator-sessions
 
 USE_BZIP2=	yes
 SUB_FILES=	pkg-message
@@ -29,10 +29,10 @@ PORTDOCS=	*
 .include <bsd.port.pre.mk>
 
 .if ${PHP_VER} == 5
-CONFIGURE_ARGS+=--without-eaccelerator-encoder
-PLIST_SUB+=	ENCODER="@comment "
+CONFIGURE_ARGS+=	--without-eaccelerator-encoder
+PLIST_SUB+=		ENCODER="@comment "
 .else
-PLIST_SUB+=	ENCODER=""
+PLIST_SUB+=		ENCODER=""
 
 post-build:
 	@${SED} "s|%%LOCALBASE%%|${LOCALBASE}|g; s|0777|0755|g" \
@@ -41,21 +41,21 @@ post-build:
 
 do-install:
 	@${MKDIR} ${PREFIX}/lib/php/${PHP_EXT_DIR}
-	@${INSTALL_DATA} ${WRKSRC}/modules/${PORTNAME}.so \
+	${INSTALL_DATA} ${WRKSRC}/modules/${PORTNAME}.so \
 	       ${PREFIX}/lib/php/${PHP_EXT_DIR}
 .if ${PHP_VER} == 4
-	@${INSTALL_SCRIPT} ${WRKSRC}/encoder ${PREFIX}/bin
-.endif
-	@${MKDIR} ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.ini ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.php ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}_password.php ${EXAMPLESDIR}
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/encoder ${PREFIX}/bin
 .endif
 
 post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+.endif
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.ini ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/control.php ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/dasm.php ${EXAMPLESDIR}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
