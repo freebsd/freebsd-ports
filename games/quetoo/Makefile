@@ -21,9 +21,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include \
 		${PTHREAD_CFLAGS}" LDFLAGS="-L${LOCALBASE}/lib \
 		-L${X11BASE}/lib ${PTHREAD_LIBS}" \
 		OPENGL_CFLAGS="-I${X11BASE}/include" \
-		OPENGL_LIBS="-L${X11BASE}/lib" \
-		MYSQL_LIBS="-L${LOCALBASE}/lib/mysql -lmysqlclient" \
-		MYSQL_CFLAGS="-I${LOCALBASE}/include"
+		OPENGL_LIBS="-L${X11BASE}/lib"
 
 LIBDIR=		${PREFIX}/lib/${PORTNAME}
 PLIST_SUB+=	LIBDIR="${LIBDIR:S/${PREFIX}\///}"
@@ -46,6 +44,8 @@ PLIST_SUB+=	QMASS="@comment "
 .if defined(WITH_MYSQL)
 USE_MYSQL=	yes
 CONFIGURE_ARGS+=	--with-mysql
+CONFIGURE_ENV+=	MYSQL_LIBS="-L${LOCALBASE}/lib/mysql -lmysqlclient" \
+		MYSQL_CFLAGS="-I${LOCALBASE}/include"
 .endif
 
 .if !defined(WITH_OPTIMIZED_CFLAGS)
