@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rfc
-PORTVERSION=	3.2.2
+PORTVERSION=	3.2.3
 CATEGORIES=	misc
 MASTER_SITES=	http://www.dewn.com/rfc/
 
@@ -16,15 +16,15 @@ COMMENT=	Perl script to search for RFC's
 RUN_DEPENDS=	w3m:${PORTSDIR}/www/w3m
 
 NO_BUILD=	yes
-USE_REINPLACE=	yes
 
 MAN1=		rfc.1
-PLIST_FILES=	bin/rfc
+PLIST_FILES=	bin/rfc \
+		"@unexec rm -f %%PREFIX%%/etc/rfc-index"
 
 do-configure:
 	@${REINPLACE_CMD} -e 's|/usr/local/etc/rfc|${PREFIX}/etc/rfc| ; \
-		s|/usr/local/etc/nmap|${PREFIX}/share/misc/nmap|' \
-		${WRKSRC}/${PORTNAME}-${PORTVERSION}
+		s|/usr/local/etc/nmap|${PREFIX}/share/misc/nmap| ; \
+		s|/usr/bin/perl|${PERL}|' ${WRKSRC}/${PORTNAME}-${PORTVERSION}
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}-${PORTVERSION} ${PREFIX}/bin/${PORTNAME}
