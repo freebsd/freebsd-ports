@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xcircuit
-PORTVERSION=	3.4.16
+PORTVERSION=	3.4.21
 PORTEPOCH=	1
 CATEGORIES=	cad
 MASTER_SITES=	http://opencircuitdesign.com/xcircuit/archive/
@@ -23,7 +23,6 @@ USE_XPM=	yes
 USE_TCL=	84
 USE_TK=		84
 USE_GHOSTSCRIPT_RUN=	yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
@@ -52,9 +51,11 @@ post-patch:
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${EXAMPLESDIR}
-	${TAR} -C ${WRKSRC}/examples --exclude "*.py" -cf - . | \
-		${TAR} -C ${EXAMPLESDIR} --unlink -xf -
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/.xcircuitrc ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/*.lgf ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/*.lps ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/*.ps ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/*.sim ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>
