@@ -1,13 +1,26 @@
 #!/bin/sh
+#
 # wolf3d - wolf3d-20011028 wrapper script
 #
 # 2004 Travis Poppe
+#
 
-USERDIR=$HOME/.wolf3d
+USERDIR="$HOME/.wolf3d"
+WOLF_BIN="sdlwolf3d"
 
-if [ -d $USERDIR ]; then
-	echo "wolf3d appears to be installed to $USERDIR/"
+msg_game()
+{
+	echo "Please provide a \"-game\" parameter with one of the following values:"
 	echo ""
+	echo "wf - Wolfenstein 3D (full version)"
+	echo "ws - Wolfenstein 3D (shareware version)"
+	echo "sf - Spear of Destiny (full version)"
+	echo "ss - Spear of Destiny (shareware version)"
+	echo ""
+}
+
+msg_options()
+{
 	echo "Basic options:"
 	echo ""
 	echo "-nowait           Skips introduction"
@@ -19,28 +32,30 @@ if [ -d $USERDIR ]; then
 	echo "-demotest         Starts wolf3d in demonstration mode"
 	echo "-version          Reports game version"
 	echo ""
+}
 
-	cd $USERDIR
-	./sdlwolf3d $*
-	exit
+if [ "$1" = "-game" -a -n "`echo $2 | grep -E '^(wf|ws|sf|ss)$'`" ]
+then
+	GAME="$2"
+	shift; shift
+
+	if [ ! -d $USERDIR ]
+	then
+		mkdir $USERDIR
+		ln -s %%PREFIX%%/libexec/wolf3d/* $USERDIR
+		ln -s %%DATADIR%%/* $USERDIR
+
+		echo "wolf3d was installed to $USERDIR/"
+	else
+		echo "wolf3d appears to be installed to $USERDIR/"
+	fi
+
+	msg_options
+
+	cd $USERDIR || exit 1
+	exec ./${WOLF_BIN}-${GAME} "$@"
+else
+	msg_game
+
+	exit 1
 fi
-
-mkdir $USERDIR
-ln -s %%PREFIX%%/libexec/wolf3d/* $USERDIR
-
-echo "Installed wolf3d to $USERDIR/"
-echo ""
-echo "Basic options:"
-echo ""
-echo "-nowait           Skips introduction"
-echo "-nojoy            Disables joystick"
-echo "-nomouse          Disables mouse"
-echo "-x2               Increases screen size by x2"
-echo "-x3               Increases screen size by x3"
-echo "-fullscreen       Enables fullscreen mode"
-echo "-demotest         Starts wolf3d in demonstration mode"
-echo "-version          Reports game version"
-echo ""
-
-cd $USERDIR
-./sdlwolf3d $*

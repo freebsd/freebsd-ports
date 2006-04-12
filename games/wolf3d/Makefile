@@ -7,45 +7,87 @@
 
 PORTNAME=	wolf3d
 PORTVERSION=	20011028
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	http://www.icculus.org/wolf3d/:wolf \
 		http://cvsup.theplanet.com/distfiles/:wolf \
-		http://www.liquidx.org/distfiles/:wolfdata
-DISTFILES=	wolf3d-20011028.tar.gz:wolf wolfdata.tar.gz:wolfdata
+		http://www.liquidx.org/distfiles/:sw \
+DISTNAME=	wolf3d-${PORTVERSION}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:wolf
 
 MAINTAINER=	tlp@liquidx.org
 COMMENT=	"Wolfenstein 3D Linux" by Steven Fuller (1992)
 
 USE_SDL=	sdl
-USE_GZIP=	yes
-USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|gcc|${CC}|' ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e 's|sdl-config|sdl11-config|' ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e 's|OBJS += sd_null.o|#OBJS += sd_null.o|' ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e 's|#OBJS += sd_oss.o fmopl.o|OBJS += sd_oss.o fmopl.o|' ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e 's|/usr/X11R6/lib|${X11BASE}/lib|' ${WRKSRC}/Makefile
-	@${CAT} ${FILESDIR}/wolf3d.in | ${SED} -e 's,%%PREFIX%%,${PREFIX},g' > ${WRKDIR}/wolf3d
+OPTIONS=	WOLF_SW "Install shareware data for Wolfenstein 3D" on \
+		SPEAR_SW "Install shareware data for Spear of Destiny" off
+
+SUB_FILES=	pkg-message wolf3d
+
+WOLF_BIN=	sdlwolf3d
+WOLF_VERS=	wf ws sf ss
+
+WF_CF=		-DWMODE=1
+WS_CF=		-DWMODE=0
+SF_CF=		-DWMODE=3
+SS_CF=		-DWMODE=2
+
+.include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_WOLF_SW)
+DISTFILES+=	wolfdata${EXTRACT_SUFX}:sw
+PLIST_SUB+=	WOLF_SW=""
+.else
+PLIST_SUB+=	WOLF_SW="@comment "
+.endif
+
+.if defined(WITH_SPEAR_SW)
+DISTFILES+=	speardata${EXTRACT_SUFX}:sw
+PLIST_SUB+=	SPEAR_SW=""
+.else
+PLIST_SUB+=	SPEAR_SW="@comment "
+.endif
+
+post-extract:
+.if defined(WITH_SPEAR_SW)
+	@${MV} ${WRKDIR}/audit.sdm ${WRKDIR}/audiot.sdm
+.endif
+
+do-build:
+.for f in ${WOLF_VERS}
+	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} WF=${${f:U}_CF} ${ALL_TARGET}
+	@cd ${WRKSRC} && ${MV} ${WOLF_BIN} ${WOLF_BIN}-${f}
+	@cd ${WRKSRC}; ${MAKE} clean
+.endfor
 
 do-install:
 	${MKDIR} ${PREFIX}/libexec/wolf3d
+.for f in ${WOLF_VERS}
+	${INSTALL_PROGRAM} ${WRKSRC}/${WOLF_BIN}-${f} ${PREFIX}/libexec/wolf3d
+.endfor
 	${INSTALL_SCRIPT} ${WRKDIR}/wolf3d ${PREFIX}/bin/wolf3d
-	${INSTALL_PROGRAM} ${WRKSRC}/sdlwolf3d ${PREFIX}/libexec/wolf3d/sdlwolf3d
-	${INSTALL_DATA} ${WRKDIR}/wolfdata/* ${PREFIX}/libexec/wolf3d
+
+	${MKDIR} ${DATADIR}
+.if !defined(WITHOUT_WOLF_SW)
+	${INSTALL_DATA} ${WRKDIR}/wolfdata/* ${DATADIR}
+.endif
+.if defined(WITH_SPEAR_SW)
+	${INSTALL_DATA} ${WRKDIR}/*.sdm ${DATADIR}
+.endif
+
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${MKDIR} ${DOCSDIR}/docs
 	${INSTALL_DATA} ${WRKSRC}/docs/* ${DOCSDIR}/docs
-	${INSTALL_DATA}	${WRKSRC}/IDEAS ${DOCSDIR}/IDEAS
-	${INSTALL_DATA} ${WRKSRC}/NOTES ${DOCSDIR}/NOTES
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/README
-	${INSTALL_DATA} ${WRKSRC}/TODO ${DOCSDIR}/TODO
+.   for f in IDEAS NOTES README TODO
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/IDEAS
+.   endfor
 .endif
 
 post-install:
+	@${ECHO_CMD}
 	@${CAT} ${PKGMESSAGE}
+	@${ECHO_CMD}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
