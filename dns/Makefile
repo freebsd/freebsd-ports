@@ -60,6 +60,7 @@
     SUBDIR += nsd
     SUBDIR += nslint
     SUBDIR += nsping
+    SUBDIR += nss_resinit
     SUBDIR += odsclient
     SUBDIR += p5-BIND-Conf_Parser
     SUBDIR += p5-DNS-Config

@@ -1,0 +1,9 @@
+The nss_resinit is a module for the nsswitch subsystem which makes
+resolver(3) reread /etc/resolv.conf when it is updated.  In the
+traditional implementation of resolver(3) it is initialized by the
+application once and never reread /etc/resolv.conf after that even if
+the file is updated.  This module is useful especially when name
+servers in /etc/resolv.conf are changed frequently as seen in mobile
+environment.
+
+- Hajimu UMEMOTO <ume@FreeBSD.org>
