@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	solid-ircd
-PORTVERSION=	3.4.7
+PORTVERSION=	3.4.7a
 CATEGORIES=	irc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=solidircd
-DISTNAME=	solid5
+DISTNAME=	solid3.4.7stablea
 
 MAINTAINER=	freebsd@nsacenter.com
 COMMENT=	Solid Internet Relay Chat Daemon based on bahamut IRCd
 
-WRKSRC=		${WRKDIR}/solidircd-dev
+WRKSRC=		${WRKDIR}/solidircd-stable
 
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
