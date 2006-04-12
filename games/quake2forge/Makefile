@@ -78,7 +78,7 @@ CONFIGURE_ARGS+=--disable-sdl --disable-sdltest
 PLIST_SUB+=	SDL="@comment "
 .endif
 
-.if !defined(WITHOUT_GL) && (defined(WITH_SDL)
+.if !defined(WITHOUT_GL) && defined(WITH_SDL)
 PLIST_SUB+=	SDLGL=""
 .else
 PLIST_SUB+=	SDLGL="@comment "
