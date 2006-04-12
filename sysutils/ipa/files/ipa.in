@@ -4,12 +4,13 @@
 #
 
 # If some IPA module requires some services, then they should
-# be specified after the REQUIRE, by default REQUIRE is empty,
-# since ipa itself does not require anything for running.
+# be specified after REQUIRE, by default REQUIRE contains
+# only syslogd, since ipa uses syslog for logging by default
+# and does not require anything more for running.
 
 # PROVIDE: ipa
-# REQUIRE:
-# BEFORE: LOGIN
+# REQUIRE: syslogd
+# KEYWORD: shutdown
 
 # Following line can enable ipa (see rc.subr(8) for information
 # where to write it):
@@ -19,14 +20,14 @@
 
 . %%RC_SUBR%%
 
-name=ipa
-rcvar=`set_rcvar`
+name="ipa"
+rcvar=${name}_enable
 
 command="%%PREFIX%%/bin/ipa"
+extra_commands="reload"
 
 load_rc_config $name
 
-ipa_enable=${ipa_enable:-"NO"}
+: ${ipa_enable="NO"}
 
-extra_commands="reload"
 run_rc_command "$1"
