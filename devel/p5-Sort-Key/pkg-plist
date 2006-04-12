@@ -1,6 +1,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Sort/Key.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Sort/Key/Maker.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Sort/Key/Multi.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Sort/Key/Natural.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Sort/Key/Register.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sort/Key/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sort/Key/Key.bs
