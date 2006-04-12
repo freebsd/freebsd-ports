@@ -315,4 +315,3 @@ include/QF/ruamoko/gui/View.h
 @dirrm lib/ruamoko
 @dirrm lib/quakeforge
 @dirrm %%DATADIR%%/QF
-@dirrm %%DATADIR%%
