@@ -8,8 +8,8 @@
 PORTNAME=	h2n
 PORTVERSION=	1.29
 CATEGORIES=	dns
-MASTER_SITES=	ftp://ftp.iij.ad.jp/pub/published/oreilly/nutshell/dnsbind/
-DISTNAME=	dns
+MASTER_SITES=	ftp://ftp.oreilly.com/published/oreilly/nutshell/dnsbind/
+DISTNAME=	dns.3ed
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
@@ -17,7 +17,9 @@ COMMENT=	Translate host table to name server file format
 
 NO_BUILD=	YES
 NO_WRKSUBDIR=	YES
-RESTRICTED=	"Never get an approval yet."
+RESTRICTED=	Never got an approval yet.
+
+PLIST_FILES=	bin/h2n man/cat8/h2n.8
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/h2n ${PREFIX}/bin
