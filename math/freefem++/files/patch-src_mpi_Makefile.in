@@ -1,0 +1,13 @@
+--- src/mpi/Makefile.in.orig	Wed Apr 12 11:31:03 2006
++++ src/mpi/Makefile.in	Wed Apr 12 21:25:05 2006
+@@ -227,8 +227,8 @@
+ FreeFem___mpi_SOURCES = ../Graphics/sansrgraph.cpp parallelempi.cpp	\
+ ../lglib/lg.tab.cpp
+ 
+-FreeFem___mpi_DEPENDENCIES = ../fflib/libff.a
+-LDADD = ../fflib/libff.a @UMFPACKLIB@ @ARPACKLIB@ @BLASLIB@
++FreeFem___mpi_DEPENDENCIES = ../fflib/libff.a ../lglib/liblg.a
++LDADD = ../fflib/libff.a ../lglib/liblg.a @UMFPACKLIB@ @ARPACKLIB@ @BLASLIB@
+ AM_CXXFLAGS = -DPARALLELE
+ INCLUDES = -I../fflib -I../Graphics -I../femlib
+ all: all-am
