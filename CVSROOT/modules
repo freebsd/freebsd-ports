@@ -7107,6 +7107,7 @@ nspostgres	ports/www/nspostgres
 nspr		ports/devel/nspr
 nss		ports/security/nss
 nss_ldap	ports/net/nss_ldap
+nss_resinit	ports/dns/nss_resinit
 nstreams	ports/net-mgmt/nstreams
 ntalk		ports/net/ntalk
 nte		ports/mbone/nte
