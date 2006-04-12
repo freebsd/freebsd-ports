@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	redland
-PORTVERSION=	1.0.2
-PORTREVISION=	1
+PORTVERSION=	1.0.3
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://librdf.org/dist/source/
