@@ -19,7 +19,7 @@ bin/stella
 %%PORTDOCS%%%%DOCSDIR%%/graphics/rom_browser.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/secret_quest.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/space_invaders.png
-%%PORTDOCS%%%%DOCSDIR%%/stella.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
 %%DATADIR%%/stella.pro
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/graphics
