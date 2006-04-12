@@ -28,6 +28,7 @@ bin/FreeFem++-nw
 %%PORTDOCS%%%%EXAMPLESDIR%%/bug/bb.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/bug/bug-arg-string.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/bug/bug-mesh.edp
+%%PORTDOCS%%%%EXAMPLESDIR%%/bug/bug-toto.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/bug/bugborder.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/bug/bugf.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/bug/bugv1.18.edp
@@ -114,8 +115,6 @@ bin/FreeFem++-nw
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/error.hpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/fem.hpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/fem3.hpp
-%%PORTDOCS%%%%EXAMPLESDIR%%/load/ff-mt19937ar.cpp
-%%PORTDOCS%%%%EXAMPLESDIR%%/load/ff-mt19937ar.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/ffstack.hpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/funcTemplate.cpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/funcTemplate.edp
@@ -159,6 +158,7 @@ bin/FreeFem++-nw
 %%PORTDOCS%%%%EXAMPLESDIR%%/testFE.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/testadp.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/teste.edp
+%%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/AdaptResidualErrorIndicator.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/FE.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/FEComplex.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/LapDG2.edp
@@ -217,6 +217,7 @@ bin/FreeFem++-nw
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/sparse-cmatrix.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/sparse-matrix.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/sphere.edp
+%%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/string.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/tablefunction.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/xyf
 %%PORTDOCS%%%%EXAMPLESDIR%%/wafer-heating-laser-axi.edp
