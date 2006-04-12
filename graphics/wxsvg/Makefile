@@ -31,6 +31,8 @@ BROKEN=	does not build
 post-patch:
 	@${REINPLACE_CMD} -e 's|wx-config|${WX_CONFIG}|' \
 		${WRKSRC}/configure
+
+pre-configure:
 	cd ${WRKSRC} && ${LIBTOOLIZE} --copy --force
 
 .include <bsd.port.post.mk>
