@@ -15,6 +15,8 @@ DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A general purpose programming language
 
+CONFLICTS=	diablo-jdk-1.5.0*
+
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 
 USE_LINUX=	yes
