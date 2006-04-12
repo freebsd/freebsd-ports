@@ -18,11 +18,11 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Cleaned up copy of the GPLd Quake 1 source code
 
+NOT_FOR_ARCHS=	sparc64
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-USE_GMAKE=	yes
-USE_REINPLACE=	yes
 USE_BISON=	yes
+USE_GMAKE=	yes
 WANT_SDL=	yes
 
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
@@ -40,23 +40,20 @@ OPTIONS=	CLIENTS "Build clients" on \
 		XMMS "Enable XMMS support in clients" off
 
 MAN1=		pak.1 qfcc.1 qflight.1 qfvis.1 wad.1
-
+SUB_FILES=	pkg-message
 INSTALLS_SHLIB=	yes
-LDCONFIG_DIRS=	%%PREFIX%%/lib/quakeforge
+
+DATADIR=	${Q1DIR}
 
 .include "${.CURDIR}/../quake-data/Makefile.include"
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "sparc64"
-BROKEN=		"Does not compile on sparc64"
-.endif
-
-.if defined(WITH_CLIENTS)
-USE_XLIB=	yes
+.if !defined(WITHOUT_CLIENTS)
+USE_GL=		yes
 PLIST_SUB+=	CLIENTS=""
 
-.if defined(WITH_SDL) || ${HAVE_SDL:Msdl}!=""
+.if defined(WITH_SDL)
 USE_SDL=	sdl
 CONFIGURE_ARGS+=--with-sdl=${LOCALBASE}
 PLIST_SUB+=	SDL=""
@@ -65,7 +62,7 @@ CONFIGURE_ARGS+=--without-sdl
 PLIST_SUB+=	SDL="@comment "
 .endif
 
-.if defined(WITH_VORBIS) || exists(${LOCALBASE}/lib/libvorbis.so.3)
+.if defined(WITH_VORBIS)
 LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
 CONFIGURE_ARGS+=--with-ogg=${LOCALBASE} --with-vorbis=${LOCALBASE}
 PLIST_SUB+=	VORBIS=""
@@ -74,7 +71,7 @@ CONFIGURE_ARGS+=--without-ogg --without-vorbis
 PLIST_SUB+=	VORBIS="@comment "
 .endif
 
-.if defined(WITH_XMMS) || exists(${X11BASE}/lib/libxmms.so.4)
+.if defined(WITH_XMMS)
 LIB_DEPENDS+=	xmms.4:${PORTSDIR}/multimedia/xmms
 CONFIGURE_ARGS+=--with-xmms-prefix=${X11BASE}
 PLIST_SUB+=	XMMS=""
@@ -86,9 +83,9 @@ PLIST_SUB+=	XMMS="@comment "
 .else
 CONFIGURE_ARGS+=--without-clients
 PLIST_SUB+=	CLIENTS="@comment "
-.endif # WITH_CLIENTS
+.endif	# WITH_CLIENTS
 
-.if defined(WITH_OPTIMIZED_CFLAGS)
+.if !defined(WITHOUT_OPTIMIZED_CFLAGS)
 CFLAGS+=	-O3 -funroll-loops -fomit-frame-pointer -fno-common \
 		-fexpensive-optimizations -fstrict-aliasing
 .   if ${ARCH} != "alpha"
@@ -96,7 +93,7 @@ CFLAGS+=	-ffast-math
 .   endif
 .endif
 
-.if defined(WITH_SERVERS)
+.if !defined(WITHOUT_SERVERS)
 PLIST_SUB+=	SERVERS=""
 .else
 CONFIGURE_ARGS+=--without-servers
@@ -112,8 +109,8 @@ PLIST_SUB+=	SKYBOXES="@comment "
 .endif
 
 .if defined(WITH_STATIC_PLUGINS)
-PLIST_SUB+=	PLUGINS="@comment "
 CONFIGURE_ARGS+=--with-static-plugins
+PLIST_SUB+=	PLUGINS="@comment "
 .else
 PLIST_SUB+=	PLUGINS=""
 .endif
@@ -131,5 +128,6 @@ post-install:
 	${CP} -R ${WRKSRC}/doc/${d} ${DOCSDIR}
 .   endfor
 .endif
+	@${ECHO_CMD}; ${CAT} ${PKGMESSAGE}; ${ECHO_CMD}
 
 .include <bsd.port.post.mk>
