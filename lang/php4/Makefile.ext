@@ -200,7 +200,7 @@ CONFIGURE_ARGS+=--with-mhash=${LOCALBASE}
 .endif
 
 .if ${PHP_MODNAME} == "ming"
-LIB_DEPENDS+=	ming.3:${PORTSDIR}/graphics/ming
+LIB_DEPENDS+=	ming.4:${PORTSDIR}/graphics/ming
 
 CONFIGURE_ARGS+=--with-ming=${LOCALBASE}
 .endif
