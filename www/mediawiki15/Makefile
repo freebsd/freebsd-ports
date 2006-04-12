@@ -16,6 +16,8 @@ COMMENT=	The wiki engine used by Wikipedia
 
 CONFLICTS=	mediawiki-1.[0-46-9].*
 
+NO_LATEST_LINK=	yes
+
 NO_BUILD=	yes
 USE_PHP=	iconv mbstring pcre session xml zlib imagick readline
 WANT_PHP_WEB=	yes
