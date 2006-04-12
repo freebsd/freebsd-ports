@@ -6,27 +6,30 @@
 #
 
 PORTNAME=	bugle
-PORTVERSION=	0.0.20060101
+PORTVERSION=	0.0.20060224
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	bugle
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	erik@smluc.org
 COMMENT=	A debugging library for OpenGL
 
-MAN1=		gldb.1
-MAN3=		bugle.3
+LIB_DEPENDS=	gtkglext-x11-1.0.2:${PORTSDIR}/x11-toolkits/gtkglext
 
+GNU_CONFIGURE=	yes
 USE_GCC=	3.4
 USE_GL=		yes
 USE_PERL5=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libltdl:15
+INSTALLS_SHLIB=	yes
+
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--enable-ltdl-install=no
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LIBS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
-INSTALLS_SHLIB=	yes
-USE_AUTOTOOLS=	libltdl:15
+
+MAN1=		gldb.1
+MAN3=		bugle.3
 
 .include <bsd.port.pre.mk>
 
