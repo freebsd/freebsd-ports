@@ -7,6 +7,7 @@
 
 PORTNAME=	kiki
 PORTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,7 +23,7 @@ USE_PYTHON=	2.3
 USE_GMAKE=	yes
 USE_GL=		yes
 USE_SDL=	sdl mixer image
-USE_DOS2UNIX=	yes
+USE_DOS2UNIX=	kodilib/linux/Makefile src/main/KikiController.cpp linux/Makefile kodilib/src/types/KVector.h
 USE_GCC=	3.4+
 
 MAKE_ENV=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
