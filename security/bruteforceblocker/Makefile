@@ -12,7 +12,7 @@ MASTER_SITES=	http://danger.rulez.sk/projects/bruteforceblocker/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	pav
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danger@rulez.sk
 COMMENT=	Checks for SSH bruteforce and blocks given IPs
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Unix/Syslog.pm:${PORTSDIR}/sysutils/p5-Unix-Syslog \
