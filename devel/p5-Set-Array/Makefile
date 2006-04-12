@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Set-Array
-PORTVERSION=	0.13
+PORTVERSION=	0.14
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/R/RS/RSAVAGE
@@ -24,8 +24,10 @@ PERL_MODBUILD=	yes
 
 MAN3=		Set::Array.3
 
-# a bug in test script
-post-patch:
-	${REINPLACE_CMD} -e 's/0.12/0.13/' ${WRKSRC}/t/test.t
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+.if ${PERL_LEVEL} < 500600
+IGNORE=		requires perl 5.6.0 or later. Install lang/perl5.8 and try again
+.endif
+
+.include <bsd.port.post.mk>
