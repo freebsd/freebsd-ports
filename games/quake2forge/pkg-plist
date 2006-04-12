@@ -1,4 +1,4 @@
-bin/q2f
+bin/quake2forge
 lib/quake2forge/baseq2/game.a
 lib/quake2forge/baseq2/game.la
 lib/quake2forge/baseq2/game.so

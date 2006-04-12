@@ -19,12 +19,11 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	First Person Shooter with many addons available
 
-USE_BZIP2=	yes
 USE_AUTOTOOLS=	autoconf:259 libtool:15
-USE_REINPLACE=	yes
+USE_BZIP2=	yes
 WANT_SDL=	yes
 
-CONFIGURE_ARGS=	--program-transform-name='s/^quake2$$/q2f/'
+CONFIGURE_ARGS=	--program-transform-name='s/^quake2$$/${PORTNAME}/'
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 OPTIONS=	AO "Enable libao support" off \
@@ -41,7 +40,7 @@ LIBDIR=		${PREFIX}/lib/${PORTNAME}
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_AO) || exists(${LOCALBASE}/lib/libao.so.3)
+.if defined(WITH_AO)
 LIB_DEPENDS+=	ao.3:${PORTSDIR}/audio/libao
 CONFIGURE_ARGS+=--with-ao=${LOCALBASE}
 PLIST_SUB+=	AO=""
@@ -50,7 +49,7 @@ CONFIGURE_ARGS+=--without-ao
 PLIST_SUB+=	AO="@comment "
 .endif
 
-.if defined(WITH_GL) || exists(${X11BASE}/lib/libGL.so.1)
+.if !defined(WITHOUT_GL)
 USE_GL=		yes
 CONFIGURE_ARGS+=--with-opengl=${X11BASE}
 PLIST_SUB+=	GL=""
@@ -70,7 +69,7 @@ PLIST_SUB+=	ROGUE=""
 PLIST_SUB+=	ROGUE="@comment "
 .endif
 
-.if defined(WITH_SDL) || ${HAVE_SDL:Msdl}!=""
+.if defined(WITH_SDL)
 USE_SDL=	yes
 CONFIGURE_ARGS+=--with-sdl=${LOCALBASE}
 PLIST_SUB+=	SDL=""
@@ -79,13 +78,13 @@ CONFIGURE_ARGS+=--disable-sdl --disable-sdltest
 PLIST_SUB+=	SDL="@comment "
 .endif
 
-.if defined(WITH_GL) && (defined(WITH_SDL) || ${HAVE_SDL:Msdl}!="")
+.if !defined(WITHOUT_GL) && (defined(WITH_SDL)
 PLIST_SUB+=	SDLGL=""
 .else
 PLIST_SUB+=	SDLGL="@comment "
 .endif
 
-.if defined(WITH_SVGA) || exists(${LOCALBASE}/lib/libvga.so.1)
+.if defined(WITH_SVGA)
 LIB_DEPENDS+=	vga.1:${PORTSDIR}/graphics/svgalib
 CONFIGURE_ARGS+=--with-svgalib=${LOCALBASE}
 PLIST_SUB+=	SVGA=""
@@ -94,7 +93,7 @@ CONFIGURE_ARGS+=--with-svgalib=no
 PLIST_SUB+=	SVGA="@comment "
 .endif
 
-.if defined(WITH_X11) || exists(${X11BASE}/lib/libX11.so.6)
+.if !defined(WITHOUT_X11)
 USE_XLIB=	yes
 CONFIGURE_ARGS+=--with-x
 PLIST_SUB+=	X11=""
