@@ -1,11 +1,17 @@
-%%PMWIKIDIR%%/COPYING
-%%PMWIKIDIR%%/cookbook/.cvsignore
+%%PMWIKIDIR%%/README.txt
 %%PMWIKIDIR%%/cookbook/.htaccess
+%%PMWIKIDIR%%/docs/.htaccess
+%%PMWIKIDIR%%/docs/COPYING.txt
+%%PMWIKIDIR%%/docs/DOCUMENTATION.txt
+%%PMWIKIDIR%%/docs/INSTALL.txt
+%%PMWIKIDIR%%/docs/UPGRADE.txt
+%%PMWIKIDIR%%/docs/sample-config.php
 %%PMWIKIDIR%%/local/.htaccess
 %%PMWIKIDIR%%/pmwiki.php
 %%PMWIKIDIR%%/pub/guiedit/README
 %%PMWIKIDIR%%/pub/guiedit/attach.gif
 %%PMWIKIDIR%%/pub/guiedit/big.gif
+%%PMWIKIDIR%%/pub/guiedit/blank.gif
 %%PMWIKIDIR%%/pub/guiedit/center.gif
 %%PMWIKIDIR%%/pub/guiedit/em.gif
 %%PMWIKIDIR%%/pub/guiedit/extlink.gif
@@ -16,11 +22,14 @@
 %%PMWIKIDIR%%/pub/guiedit/h3.gif
 %%PMWIKIDIR%%/pub/guiedit/hr.gif
 %%PMWIKIDIR%%/pub/guiedit/indent.gif
+%%PMWIKIDIR%%/pub/guiedit/left.gif
 %%PMWIKIDIR%%/pub/guiedit/math.gif
 %%PMWIKIDIR%%/pub/guiedit/ol.gif
 %%PMWIKIDIR%%/pub/guiedit/outdent.gif
 %%PMWIKIDIR%%/pub/guiedit/pagelink.gif
+%%PMWIKIDIR%%/pub/guiedit/preview.gif
 %%PMWIKIDIR%%/pub/guiedit/right.gif
+%%PMWIKIDIR%%/pub/guiedit/save.gif
 %%PMWIKIDIR%%/pub/guiedit/small.gif
 %%PMWIKIDIR%%/pub/guiedit/spellcheck.gif
 %%PMWIKIDIR%%/pub/guiedit/strong.gif
@@ -37,12 +46,15 @@
 %%PMWIKIDIR%%/pub/skins/print/print.css
 %%PMWIKIDIR%%/pub/skins/print/print.php
 %%PMWIKIDIR%%/pub/skins/print/print.tmpl
-%%PMWIKIDIR%%/sample-config.php
+%%PMWIKIDIR%%/scripts/.htaccess
 %%PMWIKIDIR%%/scripts/author.php
 %%PMWIKIDIR%%/scripts/authuser.php
+%%PMWIKIDIR%%/scripts/caches.php
 %%PMWIKIDIR%%/scripts/compat1x.php
 %%PMWIKIDIR%%/scripts/crypt.php
 %%PMWIKIDIR%%/scripts/diag.php
+%%PMWIKIDIR%%/scripts/draft.php
+%%PMWIKIDIR%%/scripts/feeds.php
 %%PMWIKIDIR%%/scripts/forms.php
 %%PMWIKIDIR%%/scripts/guiedit.php
 %%PMWIKIDIR%%/scripts/httpauth.php
@@ -54,7 +66,7 @@
 %%PMWIKIDIR%%/scripts/phpdiff.php
 %%PMWIKIDIR%%/scripts/prefs.php
 %%PMWIKIDIR%%/scripts/refcount.php
-%%PMWIKIDIR%%/scripts/rss.php
+%%PMWIKIDIR%%/scripts/robots.php
 %%PMWIKIDIR%%/scripts/simuledit.php
 %%PMWIKIDIR%%/scripts/skins.php
 %%PMWIKIDIR%%/scripts/stdconfig.php
@@ -67,12 +79,13 @@
 %%PMWIKIDIR%%/scripts/version.php
 %%PMWIKIDIR%%/scripts/wikistyles.php
 %%PMWIKIDIR%%/scripts/xlpage-utf-8.php
-%%PMWIKIDIR%%/wikilib.d/Main.GroupAttributes
 %%PMWIKIDIR%%/wikilib.d/Main.HomePage
 %%PMWIKIDIR%%/wikilib.d/Main.WikiSandbox
-%%PMWIKIDIR%%/wikilib.d/PmWiki.AdvancedTables
+%%PMWIKIDIR%%/wikilib.d/PmWiki.AccessKeys
 %%PMWIKIDIR%%/wikilib.d/PmWiki.Audiences
+%%PMWIKIDIR%%/wikilib.d/PmWiki.AuthUser
 %%PMWIKIDIR%%/wikilib.d/PmWiki.AvailableActions
+%%PMWIKIDIR%%/wikilib.d/PmWiki.BackupAndRestore
 %%PMWIKIDIR%%/wikilib.d/PmWiki.BasicEditing
 %%PMWIKIDIR%%/wikilib.d/PmWiki.BasicVariables
 %%PMWIKIDIR%%/wikilib.d/PmWiki.Categories
@@ -88,13 +101,11 @@
 %%PMWIKIDIR%%/wikilib.d/PmWiki.DesignNotes
 %%PMWIKIDIR%%/wikilib.d/PmWiki.DocumentationIndex
 %%PMWIKIDIR%%/wikilib.d/PmWiki.EditVariables
-%%PMWIKIDIR%%/wikilib.d/PmWiki.ErrorMessages
 %%PMWIKIDIR%%/wikilib.d/PmWiki.FAQ
 %%PMWIKIDIR%%/wikilib.d/PmWiki.FilePermissions
 %%PMWIKIDIR%%/wikilib.d/PmWiki.FmtPageName
 %%PMWIKIDIR%%/wikilib.d/PmWiki.Functions
 %%PMWIKIDIR%%/wikilib.d/PmWiki.Glossary
-%%PMWIKIDIR%%/wikilib.d/PmWiki.GroupAttributes
 %%PMWIKIDIR%%/wikilib.d/PmWiki.GroupHeader
 %%PMWIKIDIR%%/wikilib.d/PmWiki.GroupHeaders
 %%PMWIKIDIR%%/wikilib.d/PmWiki.I18nVariables
@@ -111,11 +122,13 @@
 %%PMWIKIDIR%%/wikilib.d/PmWiki.MailPosts
 %%PMWIKIDIR%%/wikilib.d/PmWiki.MailingLists
 %%PMWIKIDIR%%/wikilib.d/PmWiki.MarkupMasterIndex
-%%PMWIKIDIR%%/wikilib.d/PmWiki.MarkupVariables
 %%PMWIKIDIR%%/wikilib.d/PmWiki.OtherVariables
 %%PMWIKIDIR%%/wikilib.d/PmWiki.PageDirectives
 %%PMWIKIDIR%%/wikilib.d/PmWiki.PageFileFormat
 %%PMWIKIDIR%%/wikilib.d/PmWiki.PageHistory
+%%PMWIKIDIR%%/wikilib.d/PmWiki.PageLists
+%%PMWIKIDIR%%/wikilib.d/PmWiki.PageVariables
+%%PMWIKIDIR%%/wikilib.d/PmWiki.PagelistVariables
 %%PMWIKIDIR%%/wikilib.d/PmWiki.Passwords
 %%PMWIKIDIR%%/wikilib.d/PmWiki.PasswordsAdmin
 %%PMWIKIDIR%%/wikilib.d/PmWiki.PathVariables
@@ -123,16 +136,17 @@
 %%PMWIKIDIR%%/wikilib.d/PmWiki.PerGroupCustomizations
 %%PMWIKIDIR%%/wikilib.d/PmWiki.PmWiki
 %%PMWIKIDIR%%/wikilib.d/PmWiki.PmWikiPhilosophy
-%%PMWIKIDIR%%/wikilib.d/PmWiki.RSS
 %%PMWIKIDIR%%/wikilib.d/PmWiki.RefCount
 %%PMWIKIDIR%%/wikilib.d/PmWiki.ReleaseNotes
 %%PMWIKIDIR%%/wikilib.d/PmWiki.Requirements
 %%PMWIKIDIR%%/wikilib.d/PmWiki.Security
-%%PMWIKIDIR%%/wikilib.d/PmWiki.SimpleTables
 %%PMWIKIDIR%%/wikilib.d/PmWiki.SimultaneousEdits
 %%PMWIKIDIR%%/wikilib.d/PmWiki.SitePreferences
 %%PMWIKIDIR%%/wikilib.d/PmWiki.SkinTemplates
 %%PMWIKIDIR%%/wikilib.d/PmWiki.Skins
+%%PMWIKIDIR%%/wikilib.d/PmWiki.SpecialCharacters
+%%PMWIKIDIR%%/wikilib.d/PmWiki.TableDirectives
+%%PMWIKIDIR%%/wikilib.d/PmWiki.Tables
 %%PMWIKIDIR%%/wikilib.d/PmWiki.TextFormattingRules
 %%PMWIKIDIR%%/wikilib.d/PmWiki.Troubleshooting
 %%PMWIKIDIR%%/wikilib.d/PmWiki.Upgrades
@@ -142,7 +156,9 @@
 %%PMWIKIDIR%%/wikilib.d/PmWiki.UploadsAdmin
 %%PMWIKIDIR%%/wikilib.d/PmWiki.UrlApprovals
 %%PMWIKIDIR%%/wikilib.d/PmWiki.Variables
+%%PMWIKIDIR%%/wikilib.d/PmWiki.WebFeeds
 %%PMWIKIDIR%%/wikilib.d/PmWiki.WikiAdministrator
+%%PMWIKIDIR%%/wikilib.d/PmWiki.WikiFarmTerminology
 %%PMWIKIDIR%%/wikilib.d/PmWiki.WikiFarms
 %%PMWIKIDIR%%/wikilib.d/PmWiki.WikiGroup
 %%PMWIKIDIR%%/wikilib.d/PmWiki.WikiGroups
@@ -155,10 +171,13 @@
 %%PMWIKIDIR%%/wikilib.d/PmWiki.WikiWikiWeb
 %%PMWIKIDIR%%/wikilib.d/PmWiki.WikiWord
 %%PMWIKIDIR%%/wikilib.d/PmWiki.WikiWords
+%%PMWIKIDIR%%/wikilib.d/Site.AuthForm
+%%PMWIKIDIR%%/wikilib.d/Site.AuthUser
 %%PMWIKIDIR%%/wikilib.d/Site.EditForm
 %%PMWIKIDIR%%/wikilib.d/Site.EditQuickReference
 %%PMWIKIDIR%%/wikilib.d/Site.GroupAttributes
 %%PMWIKIDIR%%/wikilib.d/Site.PageActions
+%%PMWIKIDIR%%/wikilib.d/Site.PageListTemplates
 %%PMWIKIDIR%%/wikilib.d/Site.PageNotFound
 %%PMWIKIDIR%%/wikilib.d/Site.Preferences
 %%PMWIKIDIR%%/wikilib.d/Site.Search
@@ -172,7 +191,9 @@
 @dirrm %%PMWIKIDIR%%/pub/skins/pmwiki
 @dirrm %%PMWIKIDIR%%/pub/skins
 @dirrm %%PMWIKIDIR%%/pub/guiedit
+@dirrm %%PMWIKIDIR%%/pub/css
 @dirrm %%PMWIKIDIR%%/pub
 @dirrm %%PMWIKIDIR%%/local
+@dirrm %%PMWIKIDIR%%/docs
 @dirrm %%PMWIKIDIR%%/cookbook
 @dirrmtry %%PMWIKIDIR%%
