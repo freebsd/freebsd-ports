@@ -1,7 +1,11 @@
 solid-ircd/convert_conf
+solid-ircd/elmer.conf
 solid-ircd/ircd
 solid-ircd/ircd.motd
 solid-ircd/mkpasswd
+solid-ircd/opers.txt
+solid-ircd/reference.conf
+solid-ircd/rehash
 solid-ircd/template.conf
 solid-ircd/ssl/CVS/Entries
 solid-ircd/ssl/CVS/Repository
