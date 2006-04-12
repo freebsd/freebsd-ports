@@ -1,0 +1,38 @@
+--- Makefile.orig	Thu Sep 27 20:58:29 2001
++++ Makefile	Sun Apr  9 10:34:17 2006
+@@ -1,7 +1,8 @@
+-CC = gcc
++#CC = gcc
+ #CC = gcc-3.0
+ 
+-CFLAGS = -g -Wall -pedantic
++CFLAGS += -O2 -fomit-frame-pointer -ffast-math -funroll-loops
++#CFLAGS = -g -Wall -pedantic
+ #CFLAGS = -g -O2 -Wall -pedantic 
+ #CFLAGS = -Wall -O6 -fomit-frame-pointer -ffast-math -funroll-loops -mpentiumpro -mcpu=pentiumpro -march=pentiumpro
+ #CFLAGS = -g -Wall -pedantic -std=gnu99
+@@ -17,18 +18,18 @@
+ XOBJS = $(OBJS) $(ROBJS) vi_xlib.o
+ DOBJS = $(OBJS) $(ROBJS) vi_sdl.o
+ 
+-LFLAGS = -lm
++LFLAGS += -lm
+ 
+-OBJS += sd_null.o
+-#OBJS += sd_oss.o fmopl.o
++#OBJS += sd_null.o
++OBJS += sd_oss.o fmopl.o
+ #CFLAGS += -D_REENTRANT
+ #LFLAGS += -lpthread
+ 
+-CFLAGS += `sdl-config --cflags`
++CFLAGS += `$(SDL_CONFIG) --cflags`
+ 
+ SLFLAGS = $(LFLAGS) -lvga
+-XLFLAGS = $(LFLAGS) -L/usr/X11R6/lib -lX11 -lXext
+-DLFLAGS = $(LFLAGS) `sdl-config --libs` -L/usr/X11R6/lib -lX11 -lXext
++XLFLAGS = $(LFLAGS) -L$(X11BASE)/lib -lX11 -lXext
++DLFLAGS = $(LFLAGS) `$(SDL_CONFIG) --libs` -L$(X11BASE)/lib -lX11 -lXext
+ 
+ NASM = nasm
+ 

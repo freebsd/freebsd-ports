@@ -1,19 +1,29 @@
 bin/wolf3d
-libexec/wolf3d/audiohed.wl1
-libexec/wolf3d/audiot.wl1
-libexec/wolf3d/gamemaps.wl1
-libexec/wolf3d/maphead.wl1
-libexec/wolf3d/sdlwolf3d
-libexec/wolf3d/vgadict.wl1
-libexec/wolf3d/vgagraph.wl1
-libexec/wolf3d/vgahead.wl1
-libexec/wolf3d/vswap.wl1
+libexec/wolf3d/sdlwolf3d-sf
+libexec/wolf3d/sdlwolf3d-ss
+libexec/wolf3d/sdlwolf3d-wf
+libexec/wolf3d/sdlwolf3d-ws
+%%PORTDOCS%%%%DOCSDIR%%/IDEAS
 %%PORTDOCS%%%%DOCSDIR%%/docs/goodstuf.txt
 %%PORTDOCS%%%%DOCSDIR%%/docs/release.txt
-%%PORTDOCS%%%%DOCSDIR%%/IDEAS
-%%PORTDOCS%%%%DOCSDIR%%/NOTES
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%WOLF_SW%%%%DATADIR%%/audiohed.wl1
+%%WOLF_SW%%%%DATADIR%%/audiot.wl1
+%%WOLF_SW%%%%DATADIR%%/gamemaps.wl1
+%%WOLF_SW%%%%DATADIR%%/maphead.wl1
+%%WOLF_SW%%%%DATADIR%%/vgadict.wl1
+%%WOLF_SW%%%%DATADIR%%/vgagraph.wl1
+%%WOLF_SW%%%%DATADIR%%/vgahead.wl1
+%%WOLF_SW%%%%DATADIR%%/vswap.wl1
+%%SPEAR_SW%%%%DATADIR%%/audiohed.sdm
+%%SPEAR_SW%%%%DATADIR%%/audiot.sdm
+%%SPEAR_SW%%%%DATADIR%%/config.sdm
+%%SPEAR_SW%%%%DATADIR%%/gamemaps.sdm
+%%SPEAR_SW%%%%DATADIR%%/maphead.sdm
+%%SPEAR_SW%%%%DATADIR%%/vgadict.sdm
+%%SPEAR_SW%%%%DATADIR%%/vgagraph.sdm
+%%SPEAR_SW%%%%DATADIR%%/vgahead.sdm
+%%SPEAR_SW%%%%DATADIR%%/vswap.sdm
+@dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/docs
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm libexec/wolf3d
