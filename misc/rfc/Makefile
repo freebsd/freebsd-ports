@@ -10,7 +10,7 @@ PORTVERSION=	3.2.3
 CATEGORIES=	misc
 MASTER_SITES=	http://www.dewn.com/rfc/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sean-freebsd@farley.org
 COMMENT=	Perl script to search for RFC's
 
 RUN_DEPENDS=	w3m:${PORTSDIR}/www/w3m
@@ -27,7 +27,8 @@ do-configure:
 		s|/usr/bin/perl|${PERL}|' ${WRKSRC}/${PORTNAME}-${PORTVERSION}
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}-${PORTVERSION} ${PREFIX}/bin/${PORTNAME}
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}-${PORTVERSION} \
+		${PREFIX}/bin/${PORTNAME}
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
