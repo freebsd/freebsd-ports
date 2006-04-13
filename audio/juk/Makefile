@@ -7,7 +7,7 @@
 
 PORTNAME=	juk
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
@@ -59,6 +59,10 @@ pre-everything::
 	@${ECHO_MSG} "*********************************************************"
 	@${ECHO_MSG}
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|LIBS="-ltunepimp  $$LIBS"|LIBS="-ltunepimp -liconv $$LIBS"|g' \
+		${WRKSRC}/configure
 
 do-build:
 	cd ${WRKSRC}/arts/runtime && ${SETENV} ${MAKE_ENV} ${GMAKE}
