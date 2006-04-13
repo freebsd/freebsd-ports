@@ -1,8 +1,7 @@
 #!/bin/sh
 
-# PROVIDE asterisk
-# REQUIRE: NETWORKING SERVERS
-# BEFORE: DAEMON
+# PROVIDE: asterisk
+# REQUIRE: DAEMON
 # KEYWORD: shutdown
 
 #
