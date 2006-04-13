@@ -209,6 +209,9 @@ lib/kde3/kstplugins/syncbin.a
 lib/kde3/kstplugins/syncbin.la
 lib/kde3/kstplugins/syncbin.so
 lib/kde3/kstplugins/syncbin.xml
+lib/kde3/plugins/designer/kstwidgets.a
+lib/kde3/plugins/designer/kstwidgets.so
+lib/kde3/plugins/designer/kstwidgets.la
 lib/libkst.a
 lib/libkst.la
 lib/libkst.so
@@ -896,3 +899,5 @@ share/servicetypes/kst/kstplugin.desktop
 @dirrmtry share/apps/kconf_update
 @dirrmtry share/applnk/Applications/Sciences
 @dirrm lib/kde3/kstplugins
+@dirrmtry lib/kde3/plugins/designer
+@dirrmtry lib/kde3/plugins
