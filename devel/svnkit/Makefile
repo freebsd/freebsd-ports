@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	javasvn
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.4
 CATEGORIES=	devel java
 MASTER_SITES=	http://tmate.org/svn/
 DISTNAME=	org.tmatesoft.svn_${PORTVERSION}.standalone
