@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	munger
-PORTVERSION=	4.87
+PORTVERSION=	4.95
 CATEGORIES=	lang
 MASTER_SITES=	http://www.jamesbailie.com/
 
@@ -20,7 +20,11 @@ MANCOMPRESSED=	yes
 
 OPTIONS=	FCGI "include FastCGI interface" on \
 		SQL  "include SQLite interface"  on \
-		TERM "include character-I/O functions" on
+		TERM "include character-I/O functions" on \
+		BN   "include bignum support" off \
+		DKNS "install Dickens text editor" off
+
+INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>
 
@@ -36,6 +40,23 @@ MAKE_ARGS+=	-DWITH_FCGI
 
 .if !defined(WITHOUT_TERM)
 MAKE_ARGS+=	-DWITH_TERM
+.endif
+
+.if defined(WITH_BN)
+MAKE_ARGS+=	-DWITH_BN
+.endif
+
+.if defined(WITH_DKNS)
+MAKE_ARGS+=	-DWITH_DKNS
+MAN1+=		dkns.1
+PLIST_SUB+=	DKNS_BIN="bin/dkns"
+.else
+PLIST_SUB+=	DKNS_BIN="${DATADIR:S,^${PREFIX}/,,}/dkns.munger"
+.endif
+
+post-patch:
+.if !defined(WITHOUT_SQL)
+	${REINPLACE_CMD} 's/-lsqlite3/${PTHREAD_LIBS} &/' ${WRKSRC}/Makefile
 .endif
 
 post-build:

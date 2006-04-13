@@ -1,6 +1,16 @@
 bin/munger
+lib/libmunger.so.1
+%%DKNS_BIN%%
 %%DATADIR%%/mbox2munger.munger
 %%DATADIR%%/xml2alist.munger
+%%DATADIR%%/xml2sqlite.munger
+%%DATADIR%%/xmlsqlite.munger
+%%DATADIR%%/login.css
+%%DATADIR%%/login.fcgi
+%%DATADIR%%/incorporation.munger
+%%DATADIR%%/blog.css
+%%DATADIR%%/blog.fcgi
+%%DATADIR%%/rss.munger
 %%DATADIR%%/mime2munger.munger
 %%DATADIR%%/google.munger
 %%DATADIR%%/google.template
