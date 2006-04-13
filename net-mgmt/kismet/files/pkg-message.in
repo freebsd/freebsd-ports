@@ -1,0 +1,10 @@
+=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=
+* NOTE:
+
+You have built gpsmap with Google Maps functionality. 
+This is third-party patch allows you to plot wireless networks
+using Google Maps engine. It's unsupported by Kismet authors,
+please read %%PREFIX%%/share/kismet/gpsmap-gmap/README.txt from
+step 10, or see http://www.parknation.com/gmap/
+
+=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=

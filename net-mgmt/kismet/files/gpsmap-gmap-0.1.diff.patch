@@ -1,0 +1,11 @@
+--- gpsmap-gmap-0.1.diff.orig	Thu Apr  6 17:36:37 2006
++++ gpsmap-gmap-0.1.diff	Thu Apr  6 17:36:44 2006
+@@ -430,7 +430,7 @@
+             "  -v, --verbose                  Verbose output while running\n"
+             "  -g, --config-file <file>       Alternate config file\n"
+             "  -o, --output <filename>        Image output file\n"
+-+	   "  -j, --googlemaps		     Create a javascript file (used for gogle maps\n"
+++	   "  -j, --googlemaps	     	 Create a javascript file (used for google maps)\n"
+             "  -f, --filter <MAC list>        Comma-separated list of MACs to filter\n"
+             "  -i, --invert-filter            Invert filtering (ONLY draw filtered MACs)\n"
+             "  -F, --typefilter <Type list>   Comma-separated list of net types to filter\n"
