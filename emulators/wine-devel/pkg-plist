@@ -8,6 +8,7 @@ bin/uninstaller
 bin/wcmd
 bin/widl
 bin/wine
+bin/wine-kthread
 bin/wineboot
 bin/winebrowser
 bin/winebuild
@@ -354,6 +355,7 @@ include/wine/windows/winbase.h
 include/wine/windows/wincon.h
 include/wine/windows/wincrypt.h
 include/wine/windows/windef.h
+include/wine/windows/windns.h
 include/wine/windows/windows.h
 include/wine/windows/windowsx.h
 include/wine/windows/winerror.h
@@ -458,6 +460,7 @@ lib/wine/dmstyle.dll.so
 lib/wine/dmsynth.dll.so
 lib/wine/dmusic.dll.so
 lib/wine/dmusic32.dll.so
+lib/wine/dnsapi.dll.so
 lib/wine/dpnhpast.dll.so
 lib/wine/dplay.dll.so
 lib/wine/dplayx.dll.so
@@ -477,6 +480,7 @@ lib/wine/hhctrl.ocx.so
 lib/wine/iccvid.dll.so
 lib/wine/icinfo.exe.so
 lib/wine/icmp.dll.so
+lib/wine/iexplore.exe.so
 lib/wine/ifsmgr.vxd.so
 lib/wine/imaadp32.acm.so
 lib/wine/imagehlp.dll.so
@@ -517,6 +521,7 @@ lib/wine/libdinput.def
 lib/wine/libdinput.def.a
 lib/wine/libdinput8.def
 lib/wine/libdmusic32.def
+lib/wine/libdnsapi.def
 lib/wine/libdpnet.def
 lib/wine/libglut32.def
 lib/wine/libdplay.def
