@@ -1,16 +1,20 @@
 ==============================================================================
 
-QuakeForge has been installed.
+Wolf3D has been installed.
 
-If you have sound problems try increasing the sound rate. This can be done
-with the variable "snd_rate". Standard values could be 22050 and 44100.
+If you have the original data files for Wolfenstein 3D (.wl6 files) and/or
+Spear of Destiny (.sod files) place them using lower-case names into
+"%%DATADIR%%".
 
-To do this when calling the program do (for example):
+This port's wrapper script will install the wolf3d data to your home directory
+the first time you run it. If for some odd reason you already have a directory
+called .wolf3d in your home directory, you must (re)move it before this port
+will function correctly.
 
-nq-glx +set snd_speed 44100
+Note: the "~/.wolf3d" directory will be created only once. If you add files to
+the data directory you will have to remove "~/.wolf3d" and re-run the script,
+or create the symbolic links manually.
 
-Alternatively you can put it in the global configuration file (as root):
-
-echo "set snd_speed 44100" >> %%PREFIX%%/etc/quakeforge.conf
+-tlp
 
 ==============================================================================
