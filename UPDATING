@@ -6,6 +6,16 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20060413:
+  AFFECTS: users of security/tor-devel
+  AUTHOR: johans@FreeBSD.org
+
+  The default data directory of tor-devel has been changed from
+  /var/run/tor to /var/db/tor/data
+  In order to keep your old server settings, you should either
+  move the appropriate files to this directory manually,
+  or set the tor_datadir variable accordingly in /etc/rc.conf
+
 20060408:
   AFFECTS: users of www/linux-flashplugin*
   AUTHOR: hrs@FreeBSD.org
