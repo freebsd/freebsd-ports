@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xvile
-PORTVERSION=	9.5d
+PORTVERSION=	9.5g
 CATEGORIES=	editors
 MASTER_SITES=	ftp://ftp.phred.org/pub/vile/ \
 		ftp://invisible-island.net/vile/ \
@@ -18,14 +18,18 @@ PATCH_SITES=    ${MASTER_SITES:S,vile/,vile/patches/,g}
 PATCHFILES=	vile-9.5a.patch.gz \
 		vile-9.5b.patch.gz \
 		vile-9.5c.patch.gz \
-		vile-9.5d.patch.gz
+		vile-9.5d.patch.gz \
+		vile-9.5e.patch.gz \
+		vile-9.5f.patch.gz \
+		vile-9.5g.patch.gz
 
 MAINTAINER=	gj@FreeBSD.org
 COMMENT=	VI Like Emacs, X11 version -- a fully "X aware" vi work-alike
 
 USE_XLIB=	yes
 MAKEFILE=	makefile
-HAS_CONFIGURE=	yes
+GNU_CONFIGURE=	yes
+USE_PERL5=	yes
 
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--with-libdir-path=${PREFIX}/lib/xvile \
@@ -61,10 +65,10 @@ pre-configure:
 CONFIGURE_ARGS+= --with-screen=Xaw
 .if defined(WITH_XAW3D)
 LIB_DEPENDS+=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
-CONFIGURE_ARGS+= --with-Xaw3d
+CONFIGURE_ARGS+=	--with-Xaw3d
 .endif
 .else
-CONFIGURE_ARGS+= --with-screen=x11
+CONFIGURE_ARGS+=	--with-screen=x11
 .endif
 
 .if defined(WITH_PERL)
@@ -74,7 +78,7 @@ USE_PERL5=	yes
 .endif
 
 .if defined(WITH_FILTERS)
-CONFIG_ARGS+= --with-loadable-filters
+CONFIGURE_ARGS+=	--with-loadable-filters
 PLIST=		${PKGDIR}/pkg-plist.filt
 .endif
 
