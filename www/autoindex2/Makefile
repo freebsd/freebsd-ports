@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	AutoIndex
-PORTVERSION=	2.1.2
+PORTVERSION=	2.2.0
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	autoindex
@@ -36,7 +36,7 @@ INSTALLDIR?=	www/data/${PORTNAME}
 
 do-install:
 	@${MKDIR} ${PREFIX}/${INSTALLDIR}
-	@${CP} -Rp ${WRKSRC}/* ${PREFIX}/${INSTALLDIR}
+	@${CP} -R ${WRKSRC}/* ${PREFIX}/${INSTALLDIR}
 	@${CP} -p ${WRKSRC}/.htpasswd.autoindex ${PREFIX}/${INSTALLDIR}/.htpasswd.autoindex-dist
 	@${CHMOD} 666 ${PREFIX}/${INSTALLDIR}/config.php
 	@${ECHO_CMD} ""
