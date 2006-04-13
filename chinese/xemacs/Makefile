@@ -47,6 +47,10 @@ PLIST_SUB=	XEMACS_VER=20.4 XEMACS_ARCH=${XEMACS_ARCH}
 BROKEN=		Configure fails on ia64
 .endif
 
+.if (${OSVERSION} >= 600000)
+BROKEN=		Does not build even with fix for -lxpg4
+.endif
+
 # Have
 pre-configure:
 .if defined(HAVE_MOTIF)
