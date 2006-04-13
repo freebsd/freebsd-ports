@@ -6,9 +6,7 @@
 #
 
 PORTNAME=	gaphor
-PORTVERSION=	0.7.0.1
-PORTREVISION=	2
-#PORTREVISION=	1
+PORTVERSION=	0.7.1
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,15 +15,13 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	rehsack@liwing.de
 COMMENT=	UML modeling environment written in Python
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/diacanvas/_canvasmodule.so:${PORTSDIR}/graphics/diacanvas2
+BUILD_DEPENDS=	diacanvas2>=0:${PORTSDIR}/graphics/diacanvas2
 RUN_DEPENDS=	${BUILD_DEPENDS}
 .if defined(PACKAGE_BUILDING)
 BUILD_DEPENDS+=	Xvfb:${X_VFBSERVER_PORT}
-BROKEN=		"Does not build"
 .endif
 
 USE_PYTHON=	2.2+
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/\\.[0-9]+$//}
 
 do-configure:
 	@cd ${WRKSRC}; ${PYTHON_CMD} setup.py config

@@ -21,8 +21,12 @@ bin/gaphor
 %%PYTHON_SITELIBDIR%%/gaphor/diagram/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gaphor/diagram/action.py
 %%PYTHON_SITELIBDIR%%/gaphor/diagram/action.pyc
+%%PYTHON_SITELIBDIR%%/gaphor/diagram/activitynodes.py
+%%PYTHON_SITELIBDIR%%/gaphor/diagram/activitynodes.pyc
 %%PYTHON_SITELIBDIR%%/gaphor/diagram/actor.py
 %%PYTHON_SITELIBDIR%%/gaphor/diagram/actor.pyc
+%%PYTHON_SITELIBDIR%%/gaphor/diagram/artifact.py
+%%PYTHON_SITELIBDIR%%/gaphor/diagram/artifact.pyc
 %%PYTHON_SITELIBDIR%%/gaphor/diagram/association.py
 %%PYTHON_SITELIBDIR%%/gaphor/diagram/association.pyc
 %%PYTHON_SITELIBDIR%%/gaphor/diagram/attribute.py
@@ -57,6 +61,8 @@ bin/gaphor
 %%PYTHON_SITELIBDIR%%/gaphor/diagram/implementation.pyc
 %%PYTHON_SITELIBDIR%%/gaphor/diagram/include.py
 %%PYTHON_SITELIBDIR%%/gaphor/diagram/include.pyc
+%%PYTHON_SITELIBDIR%%/gaphor/diagram/interaction.py
+%%PYTHON_SITELIBDIR%%/gaphor/diagram/interaction.pyc
 %%PYTHON_SITELIBDIR%%/gaphor/diagram/interface.py
 %%PYTHON_SITELIBDIR%%/gaphor/diagram/interface.pyc
 %%PYTHON_SITELIBDIR%%/gaphor/diagram/itemactions.py
@@ -65,6 +71,10 @@ bin/gaphor
 %%PYTHON_SITELIBDIR%%/gaphor/diagram/itemtool.pyc
 %%PYTHON_SITELIBDIR%%/gaphor/diagram/klass.py
 %%PYTHON_SITELIBDIR%%/gaphor/diagram/klass.pyc
+%%PYTHON_SITELIBDIR%%/gaphor/diagram/lifeline.py
+%%PYTHON_SITELIBDIR%%/gaphor/diagram/lifeline.pyc
+%%PYTHON_SITELIBDIR%%/gaphor/diagram/message.py
+%%PYTHON_SITELIBDIR%%/gaphor/diagram/message.pyc
 %%PYTHON_SITELIBDIR%%/gaphor/diagram/nameditem.py
 %%PYTHON_SITELIBDIR%%/gaphor/diagram/nameditem.pyc
 %%PYTHON_SITELIBDIR%%/gaphor/diagram/node.py
@@ -131,8 +141,6 @@ bin/gaphor
 %%PYTHON_SITELIBDIR%%/gaphor/ui/diagramtab.pyc
 %%PYTHON_SITELIBDIR%%/gaphor/ui/diagramview.py
 %%PYTHON_SITELIBDIR%%/gaphor/ui/diagramview.pyc
-%%PYTHON_SITELIBDIR%%/gaphor/ui/diagramwindow.py
-%%PYTHON_SITELIBDIR%%/gaphor/ui/diagramwindow.pyc
 %%PYTHON_SITELIBDIR%%/gaphor/ui/editoractions.py
 %%PYTHON_SITELIBDIR%%/gaphor/ui/editoractions.pyc
 %%PYTHON_SITELIBDIR%%/gaphor/ui/editorwindow.py
@@ -159,6 +167,7 @@ bin/gaphor
 %%DATADIR%%/pixmaps/action24.png
 %%DATADIR%%/pixmaps/activityfinalnode24.png
 %%DATADIR%%/pixmaps/actor24.png
+%%DATADIR%%/pixmaps/artifact24.png
 %%DATADIR%%/pixmaps/association24.png
 %%DATADIR%%/pixmaps/attribute24.png
 %%DATADIR%%/pixmaps/class24.png
@@ -175,14 +184,22 @@ bin/gaphor
 %%DATADIR%%/pixmaps/implementation24.png
 %%DATADIR%%/pixmaps/include24.png
 %%DATADIR%%/pixmaps/initialnode24.png
+%%DATADIR%%/pixmaps/interaction24.png
 %%DATADIR%%/pixmaps/interface24.png
+%%DATADIR%%/pixmaps/lifeline24.png
 %%DATADIR%%/pixmaps/logo.png
+%%DATADIR%%/pixmaps/node24.png
 %%DATADIR%%/pixmaps/operation24.png
 %%DATADIR%%/pixmaps/package24.png
 %%DATADIR%%/pixmaps/pointer24.png
 %%DATADIR%%/pixmaps/profile24.png
 %%DATADIR%%/pixmaps/stereotype24.png
 %%DATADIR%%/pixmaps/usecase24.png
+%%DATADIR%%/plugins/alignment/__init__.py
+%%DATADIR%%/plugins/alignment/__init__.pyc
+%%DATADIR%%/plugins/alignment/alignment.py
+%%DATADIR%%/plugins/alignment/alignment.pyc
+%%DATADIR%%/plugins/alignment/plugin.xml
 %%DATADIR%%/plugins/checkmetamodel/__init__.py
 %%DATADIR%%/plugins/checkmetamodel/__init__.pyc
 %%DATADIR%%/plugins/checkmetamodel/checkmodel.py
@@ -205,6 +222,11 @@ bin/gaphor
 %%DATADIR%%/plugins/plugineditor/plugin.xml
 %%DATADIR%%/plugins/plugineditor/plugineditor.py
 %%DATADIR%%/plugins/plugineditor/plugineditor.pyc
+%%DATADIR%%/plugins/pngexport/__init__.py
+%%DATADIR%%/plugins/pngexport/__init__.pyc
+%%DATADIR%%/plugins/pngexport/plugin.xml
+%%DATADIR%%/plugins/pngexport/pngexport.py
+%%DATADIR%%/plugins/pngexport/pngexport.pyc
 %%DATADIR%%/plugins/pynsource/__init__.py
 %%DATADIR%%/plugins/pynsource/__init__.pyc
 %%DATADIR%%/plugins/pynsource/engineer.py
@@ -214,12 +236,25 @@ bin/gaphor
 %%DATADIR%%/plugins/pynsource/plugin.xml
 %%DATADIR%%/plugins/pynsource/pynsource.py
 %%DATADIR%%/plugins/pynsource/pynsource.pyc
+%%DATADIR%%/plugins/svgexport/__init__.py
+%%DATADIR%%/plugins/svgexport/__init__.pyc
+%%DATADIR%%/plugins/svgexport/plugin.xml
+%%DATADIR%%/plugins/xmiexport/__init__.py
+%%DATADIR%%/plugins/xmiexport/__init__.pyc
+%%DATADIR%%/plugins/xmiexport/exportmodel.py
+%%DATADIR%%/plugins/xmiexport/exportmodel.pyc
+%%DATADIR%%/plugins/xmiexport/plugin.xml
 share/locale/nl/LC_MESSAGES/gaphor.mo
+share/locale/es/LC_MESSAGES/gaphor.mo
+@dirrm %%DATADIR%%/plugins/alignment
 @dirrm %%DATADIR%%/plugins/pynsource
 @dirrm %%DATADIR%%/plugins/plugineditor
+@dirrm %%DATADIR%%/plugins/pngexport
 @dirrm %%DATADIR%%/plugins/liveobjectbrowser
 @dirrm %%DATADIR%%/plugins/diagramlayout
 @dirrm %%DATADIR%%/plugins/checkmetamodel
+@dirrm %%DATADIR%%/plugins/svgexport
+@dirrm %%DATADIR%%/plugins/xmiexport
 @dirrm %%DATADIR%%/plugins
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%
