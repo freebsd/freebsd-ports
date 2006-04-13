@@ -16,5 +16,13 @@ share/kismet/wav/alert.wav
 share/kismet/wav/junk_traffic.wav
 share/kismet/wav/new_network.wav
 share/kismet/wav/traffic.wav
+%%GMAP%%share/kismet/gpsmap-gmap/README.txt
+%%GMAP%%share/kismet/gpsmap-gmap/index.html
+%%GMAP%%share/kismet/gpsmap-gmap/mapfiles/open.png
+%%GMAP%%share/kismet/gpsmap-gmap/mapfiles/shadow.png
+%%GMAP%%share/kismet/gpsmap-gmap/mapfiles/wep.png
+%%GMAP%%share/kismet/gpsmap-gmap/mapfiles/wpa.png
+%%GMAP%%@dirrm share/kismet/gpsmap-gmap/mapfiles
+%%GMAP%%@dirrm share/kismet/gpsmap-gmap
 @dirrm share/kismet/wav
 @dirrm share/kismet
