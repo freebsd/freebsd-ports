@@ -10662,6 +10662,7 @@ py-fchksum	ports/security/py-fchksum
 py-feedparser	ports/textproc/py-feedparser
 py-fileutils	ports/devel/py-fileutils
 py-flac		ports/audio/py-flac
+py-flakes	ports/devel/py-flakes
 py-flowtools	ports/net-mgmt/py-flowtools
 py-fltk		ports/x11-toolkits/py-fltk
 py-fngrab	ports/net-p2p/py-fngrab
