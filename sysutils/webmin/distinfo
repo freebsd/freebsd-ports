@@ -1,3 +1,6 @@
 MD5 (webmin-1.270.tar.gz) = f9e103f7ee20a77e540335986c2c3f01
 SHA256 (webmin-1.270.tar.gz) = aa9bbf6589af5bb6b8e2203492c24b885b5ffed555ceab63a08bef07c6e3a311
 SIZE (webmin-1.270.tar.gz) = 9418746
+MD5 (ldap-useradmin-1.270-1.wbm.gz) = cb000c6641567956d7755a963f52207c
+SHA256 (ldap-useradmin-1.270-1.wbm.gz) = 0ee370c9bb75461c162adecb4eca4f1c879bca515928fff3d6df6a89c9a55b73
+SIZE (ldap-useradmin-1.270-1.wbm.gz) = 49561
