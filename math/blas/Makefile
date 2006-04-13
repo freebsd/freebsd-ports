@@ -20,7 +20,8 @@ COMMENT=	Basic Linear Algebra, level 1, 2, and 3
 INSTALLS_SHLIB=	yes
 NO_WRKSUBDIR=	yes
 
-pre-build:
-	${CP} ${FILESDIR}/makefile.lib ${WRKSRC}/Makefile
+do-configure:
+	@${INSTALL_DATA} ${FILESDIR}/makefile.lib ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's+@FFLAGS@+${FFLAGS}+g' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
