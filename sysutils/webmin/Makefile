@@ -7,13 +7,14 @@
 
 PORTNAME=	webmin
 PORTVERSION=	1.270
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webmin.com/updates/:up \
 		${MASTER_SITE_SOURCEFORGE:S/$/:sf/} \
 		${MASTER_SITE_LOCAL:S/$/:local/}
 MASTER_SITE_SUBDIR=	webadmin/:sf \
 			olgeni/:local
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:sf ${WEBMIN_MODULES:S/gz$/gz:local/}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:sf ${WEBMIN_MODULES:S/gz$/gz:up/}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	olgeni@FreeBSD.org
@@ -28,7 +29,7 @@ USE_RC_SUBR=    webmin.sh
 USE_REINPLACE=	yes
 SUB_LIST=	PERL5=${PERL}
 
-WEBMIN_MODULES=
+WEBMIN_MODULES=	ldap-useradmin-1.270-1.wbm.gz
 
 post-extract:
 	@if [ "${WEBMIN_MODULES}" != "" ]; then \
