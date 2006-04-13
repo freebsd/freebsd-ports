@@ -5927,6 +5927,7 @@ linux-oracle-instantclient-basic	ports/databases/linux-oracle-instantclient-basi
 linux-oracle-instantclient-sdk	ports/databases/linux-oracle-instantclient-sdk
 linux-oracle-instantclient-sqlplus	ports/databases/linux-oracle-instantclient-sqlplus
 linux-overnet-core	ports/net-p2p/linux-overnet-core
+linux-padjoy	ports/emulators/linux-padjoy
 linux-pam-docs	ports/security/linux-pam-docs
 linux-pango	ports/x11-toolkits/linux-pango
 linux-panorama-tools	ports/graphics/linux-panorama-tools
