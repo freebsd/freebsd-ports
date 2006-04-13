@@ -1,4 +1,5 @@
 @comment $FreeBSD$
+etc/MailScanner/country.domains.conf.sample
 etc/MailScanner/MailScanner.conf.sample
 etc/MailScanner/filename.rules.conf.sample
 etc/MailScanner/filetype.rules.conf.sample

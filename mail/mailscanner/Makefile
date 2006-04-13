@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MailScanner
-PORTVERSION=	4.51.5
+PORTVERSION=	4.52.2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.sng.ecs.soton.ac.uk/mailscanner/files/4/tar/
 DISTNAME=	${PORTNAME}-install-${PORTVERSION}-${PATCHLEVEL}
@@ -106,7 +106,8 @@ DOC_FILES=	INSTALL INSTALL.FreeBSD INSTALL.OpenBSD README
 ETC_FILES=	MailScanner.conf filename.rules.conf \
 		filetype.rules.conf spam.assassin.prefs.conf \
 		spam.lists.conf virus.scanners.conf \
-		phishing.safe.sites.conf
+		phishing.safe.sites.conf \
+		country.domains.conf
 MCP_FILES=	mcp.spam.assassin.prefs.conf \
 		10_example.cf
 USRLOCAL_FILES_LIB=	\
