@@ -11,6 +11,10 @@ To do anything useful with the emulator, you need:
 
       emulators/linux-peops-spu
 
+  - optionally, a joystick plugin:
+
+      emulators/linux-padjoy
+
   - a Playstation BIOS image:
 
       The port documentation says: "during testing we found out that the
