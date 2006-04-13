@@ -9,6 +9,7 @@ PORTNAME=	XaraLX
 PORTVERSION=	0.4r798
 CATEGORIES=	graphics
 MASTER_SITES=	http://downloads.xara.com/opensource/
+DISTFILES=	${PORTNAME}Src-${PORTVERSION}.tar.gz
 
 MAINTAINER=	vd@FreeBSD.org
 COMMENT=	A top-tier vector and general purpose graphics program
