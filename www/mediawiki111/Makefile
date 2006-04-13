@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mediawiki
-PORTVERSION=	1.5.8
+PORTVERSION=	1.6.3
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	wikipedia
@@ -14,20 +14,23 @@ MASTER_SITE_SUBDIR=	wikipedia
 MAINTAINER=	gerrit.beine@gmx.de
 COMMENT=	The wiki engine used by Wikipedia
 
-CONFLICTS=	mediawiki-1.[0-46-9].*
+CONFLICTS=	mediawiki-1.[0-57-9].*
 
 NO_BUILD=	yes
 USE_PHP=	iconv mbstring pcre session xml zlib imagick readline
 WANT_PHP_WEB=	yes
 MEDIAWIKIDIR?=	www/data-dist/mediawiki
 
-OPTIONS=	PGSQL "Use PostgreSQL instead of MySQL" off \
+OPTIONS=	PGSQL "Use PostgreSQL instead of MySQL (not funtional)" off \
 		LDAP "Use LDAP authentication" off
 
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_PGSQL)
 USE_PHP+=	pgsql
+IGNORE=		the table definitions for PostgreSQL install are out of date.\
+		PostgreSQL support may return in later releases, pending appropriate patches.\
+		Use www/mediawiki15 for while
 .else
 USE_PHP+=	mysql
 .endif
@@ -36,16 +39,19 @@ USE_PHP+=	mysql
 USE_PHP+=	ldap
 .endif
 
+# Fix USE_PHP after bsd.port.pre.mk
+.include "${PORTSDIR}/Mk/bsd.php.mk"
+
 do-install:
-	-${MKDIR} ${PREFIX}/${MEDIAWIKIDIR}
-	@${CP} -r ${WRKSRC}/ ${PREFIX}/${MEDIAWIKIDIR}
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${MEDIAWIKIDIR}
+	@${MKDIR} ${PREFIX}/${MEDIAWIKIDIR}
+	${CP} -r ${WRKSRC}/ ${PREFIX}/${MEDIAWIKIDIR}
+	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${MEDIAWIKIDIR}
 
 post-install:
 	@${FIND} ${WRKSRC}/${file} -not -type d \
-	  | ${SED} -ne 's,^${WRKSRC},${MEDIAWIKIDIR},p' >> ${TMPPLIST}
+		| ${SED} -ne 's,^${WRKSRC},${MEDIAWIKIDIR},p' >> ${TMPPLIST}
 	@${FIND} -d ${WRKSRC}/${file} -type d \
-	  | ${SED} -ne 's,^${WRKSRC},@dirrm ${MEDIAWIKIDIR},p' >> ${TMPPLIST}
+		| ${SED} -ne 's,^${WRKSRC},@dirrm ${MEDIAWIKIDIR},p' >> ${TMPPLIST}
 	@${SED} -e 's|%%MEDIAWIKIDIR%%|${PREFIX}/${MEDIAWIKIDIR}|' ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
