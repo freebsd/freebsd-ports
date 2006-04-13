@@ -1,0 +1,36 @@
+Index: configure.ac
+===================================================================
+RCS file: /home/wine/wine/configure.ac,v
+retrieving revision 1.475
+diff -u -3 -p -r1.475 configure.ac
+--- configure.ac	10 Apr 2006 18:49:33 -0000	1.475
++++ configure.ac	11 Apr 2006 14:04:46 -0000
+@@ -1159,6 +1159,9 @@ case $host_cpu in
+         AC_SUBST(EXTRA_BINARIES,"wine-kthread wine-pthread wine-preloader") ;;
+       darwin*)
+         AC_SUBST(MAIN_BINARY,"wine-pthread") ;;
++      freebsd*)
++        AC_SUBST(MAIN_BINARY,"wine-pthread")
++        AC_SUBST(EXTRA_BINARIES,"wine-kthread") ;;
+       *)
+         AC_SUBST(MAIN_BINARY,"wine-kthread") ;;
+     esac
+Index: configure
+===================================================================
+RCS file: /home/wine/wine/configure,v
+retrieving revision 1.788
+diff -u -3 -p -r1.788 configure
+--- configure	10 Apr 2006 18:49:32 -0000	1.788
++++ configure	11 Apr 2006 14:04:45 -0000
+@@ -13740,6 +13740,10 @@ case $host_cpu in
+ 
+         EXTRA_BINARIES="wine-kthread wine-pthread wine-preloader"
+  ;;
++      freebsd*)
++        MAIN_BINARY="wine-pthread"
++        EXTRA_BINARIES="wine-kthread"
++ ;;
+       darwin*)
+         MAIN_BINARY="wine-pthread"
+  ;;
+
