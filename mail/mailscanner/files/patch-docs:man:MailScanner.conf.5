@@ -1,8 +1,8 @@
---- ../MailScanner-install-4.51.5.orig/docs/man/MailScanner.conf.5	Mon Mar  6 19:05:04 2006
-+++ docs/man/MailScanner.conf.5	Mon Mar  6 19:05:25 2006
+--- ../MailScanner-install-4.52.2.orig/docs/man/MailScanner.conf.5	Thu Apr 13 09:25:25 2006
++++ docs/man/MailScanner.conf.5	Thu Apr 13 09:25:46 2006
 @@ -1,4 +1,4 @@
 -.TH "MailScanner.conf" "5" "4.50.1" "Julian Field" "Mail"
-+.TH "MailScanner.conf" "5" "4.51.5" "Julian Field" "Mail"
++.TH "MailScanner.conf" "5" "4.52.2" "Julian Field" "Mail"
  .SH "NAME"
  .LP 
  MailScanner.conf \- Main configuration for MailScanner
@@ -60,7 +60,47 @@
  
  .TP 
  \fBVirus Scanners\fR
-@@ -1682,7 +1704,7 @@
+@@ -686,6 +708,23 @@
+ .br 
+ While detecting "Phishing" attacks, do you also want to point out links to numeric IP addresses. Genuine links to totally numeric IP addresses are very rare, so this option is set to "yes" by default. If a numeric IP address is found in a link, the same phishing warning message is used as in the Find Phishing Fraud option above. This value cannot be the name of a ruleset, only a simple yes or no.
+ 
++.TP 
++\fBUse Stricter Phishing Net\fR
++Default: yes
++.br 
++
++.br 
++If this is set to yes, then most of the URL in a link must match the destination address it claims to take you to. This is the default as it is a much stronger test and is very hard to maliciously avoid. If this is set to no, then just the company name and country (and any names between the two, dependent on the specific country) must match. This is not as strict as it will not protect you against internal malicious sites based within the company being abused. For example, it would not find www.nasty.company\-name.co.uk pretending to be www.nice.company\-name.co.uk. But it will still detect most phishing attacks of the type www.nasty.co.jp versus www.nice.co.jp. Depending on the country code it knows how many levels of domain need to be checked. This can also be the filename of a ruleset.
++
++
++.TP 
++\fBHighlight Phishing Fraud\fR
++Default: yes
++.br 
++
++.br 
++If a phishing fraud is detected, do you want to highlight the tag with a message stating that the link may be to a fraudulent web site. This can also be the filename of a ruleeset.
++
+ 
+ .TP 
+ \fBPhishing Safe Sites File\fR
+@@ -695,6 +734,15 @@
+ .br 
+ There are some companies, such as banks, that insist on sending out email messages with links in them that are caught by the "Find Phishing Fraud" test described above. This is the name of a file which contains a list of link destinations which should be ignored in the test. This may, for example, contain the known websites of some banks. See the file itself for more information. This can only be the name of the file containing the list, it *cannot* be the filename of a ruleset.
+ 
++.TP 
++\fBCountry Sub\-Domains List\fR
++Default: %etc\-dir%/country.domains.conf
++.br 
++
++.br 
++.TP 
++This file lists all the countries that use 2nd\-level and 3rd\-level domain names to classify distinct types of website within their country. This cannot be the name of a ruleset, it is just a simple setting.
++
+ 
+ .TP 
+ \fBAllow IFrame Tags\fR
+@@ -1682,7 +1730,7 @@
  .SH "SpamAssassin"
  .TP 
  \fBUse SpamAssassin\fR
@@ -69,7 +109,7 @@
  .br 
  
  .br 
-@@ -2113,6 +2135,22 @@
+@@ -2113,6 +2161,22 @@
  .RE
  
  .TP 
@@ -92,7 +132,7 @@
  \fBDebug\fR
  Default: no
  .br 
-@@ -2167,6 +2205,15 @@
+@@ -2167,6 +2231,15 @@
  
  .br 
  The value of the option is actually never used, but it is evaluated at the end of processing a batch of messages. It is designed to be used in conjunction with a Custom Function. The Custom Function should then be written to have a "side effect" of doing something useful such as logging lots of information about the batch of messages to a file or an SQL database. 

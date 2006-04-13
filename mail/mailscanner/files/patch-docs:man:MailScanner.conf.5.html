@@ -1,6 +1,6 @@
 --- ../MailScanner-install-4.50.15.orig/docs/man/MailScanner.conf.5.html	Tue Feb  7 13:45:34 2006
 +++ docs/man/MailScanner.conf.5.html	Tue Feb  7 13:58:55 2006
-@@ -1,7013 +1,7172 @@
+@@ -1,7013 +1,7099 @@
 -<!-- Creator     : groff version 1.19 -->
 -<!-- CreationDate: Wed Jan  4 14:36:14 2006 -->
 -<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
@@ -7015,7 +7015,7 @@
 -</body>
 -</html>
 +<!-- Creator     : groff version 1.19 -->
-+<!-- CreationDate: Mon Mar  6 19:04:33 2006 -->
++<!-- CreationDate: Thu Apr 13 09:24:53 2006 -->
 +<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
 +"http://www.w3.org/TR/html4/loose.dtd">
 +<html>
@@ -9114,6 +9114,61 @@
 +<tr valign="top" align="left">
 +<td width="11%"></td>
 +<td width="89%">
++<p><b>Use Stricter Phishing Net</b></p></td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="22%"></td>
++<td width="78%">
++<p>Default: yes</p>
++<!-- INDENTATION -->
++<p>If this is set to yes, then most of the URL in a link
++must match the destination address it claims to take you to.
++This is the default as it is a much stronger test and is
++very hard to maliciously avoid. If this is set to no, then
++just the company name and country (and any names between the
++two, dependent on the specific country) must match. This is
++not as strict as it will not protect you against internal
++malicious sites based within the company being abused. For
++example, it would not find
++www.nasty.company&minus;name.co.uk pretending to be
++www.nice.company&minus;name.co.uk. But it will still detect
++most phishing attacks of the type www.nasty.co.jp versus
++www.nice.co.jp. Depending on the country code it knows how
++many levels of domain need to be checked. This can also be
++the filename of a ruleset.</p>
++</td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="11%"></td>
++<td width="89%">
++<p><b>Highlight Phishing Fraud</b></p></td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="22%"></td>
++<td width="78%">
++<p>Default: yes</p>
++<!-- INDENTATION -->
++<p>If a phishing fraud is detected, do you want to highlight
++the tag with a message stating that the link may be to a
++fraudulent web site. This can also be the filename of a
++ruleeset.</p>
++</td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="11%"></td>
++<td width="89%">
 +<p><b>Phishing Safe Sites File</b></p></td>
 +</table>
 +<!-- INDENTATION -->
@@ -9134,6 +9189,35 @@
 +the name of the file containing the list, it *cannot* be the
 +filename of a ruleset.</p>
 +</td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="11%"></td>
++<td width="89%">
++<p><b>Country Sub&minus;Domains List</b></p></td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="22%"></td>
++<td width="78%">
++<p>Default: %etc&minus;dir%/country.domains.conf</p>
++</td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="11%"></td>
++<td width="89%">
++<p>This file lists all the countries that use
++2nd&minus;level and 3rd&minus;level domain names to classify
++distinct types of website within their country. This cannot
++be the name of a ruleset, it is just a simple
++setting.</p></td>
 +</table>
 +<!-- INDENTATION -->
 +<table width="100%" border=0 rules="none" frame="void"
