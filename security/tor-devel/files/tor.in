@@ -12,7 +12,10 @@
 # tor_conf (str):	Points to your tor conf file
 #			Default: %%PREFIX%%/etc/tor/torrc
 # tor_user (str):	Tor Daemon user. Default _tor
-# tor_groupr (str):	Tor Daemon group. Default _tor
+# tor_group (str):	Tor Daemon group. Default _tor
+# tor_datadir (str):	Tor DataDir.  Defaults /var/db/tor
+# 			This will overide your torrc as it is
+# 			a command line option.
 #
 
 . %%RC_SUBR%%
@@ -28,7 +31,7 @@ load_rc_config ${name}
 : ${tor_group="_tor"}
 : ${tor_pidfile="/var/run/tor/tor.pid"}
 : ${tor_logfile="/var/log/tor"}
-: ${tor_datadir="/var/run/tor"}
+: ${tor_datadir="/var/db/tor"}
 
 required_files=${tor_conf}
 required_dirs=${tor_datadir}

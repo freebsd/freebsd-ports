@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	tor
-PORTVERSION=	0.1.1.13
+PORTVERSION=	0.1.1.18
 CATEGORIES=	security net
 MASTER_SITES=	http://tor.eff.org/dist/
 PKGNAMESUFFIX=	-devel
-DISTNAME=	${PORTNAME}-${PORTVERSION}-alpha
+DISTNAME=	${PORTNAME}-${PORTVERSION}-rc
 
 MAINTAINER=	peter.thoenen@yahoo.com
 COMMENT=	An anonymizing overlay network for TCP
@@ -23,7 +23,6 @@ USE_OPENSSL=	yes
 
 USE_RC_SUBR=	tor
 SUB_FILES=	pkg-message
-PKG_MESSAGE=	${WRKSRC}/pkg-message
 
 CONFLICTS=	tor-[0-9]*
 
@@ -45,13 +44,11 @@ pre-install:
 		${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
-	@${MKDIR} /var/run/tor
-	@${CHOWN} _tor:_tor /var/run/tor
 	@${TOUCH} /var/log/tor
 	@${CHOWN} _tor:_tor /var/log/tor
 	@${MKDIR} /var/db/tor
 	@${MKDIR} /var/db/tor/data
-	@${CHOWN} -R _tor:_tor /var/db/tor
+	@${CHOWN} _tor:_tor /var/db/tor
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
