@@ -1,6 +1,6 @@
 --- ../MailScanner-install-4.50.15.orig/docs/man/MailScanner.conf.5.html	Tue Feb  7 13:45:34 2006
 +++ docs/man/MailScanner.conf.5.html	Tue Feb  7 13:58:55 2006
-@@ -1,7013 +1,7099 @@
+@@ -1,7013 +1,7172 @@
 -<!-- Creator     : groff version 1.19 -->
 -<!-- CreationDate: Wed Jan  4 14:36:14 2006 -->
 -<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
@@ -7015,7 +7015,7 @@
 -</body>
 -</html>
 +<!-- Creator     : groff version 1.19 -->
-+<!-- CreationDate: Tue Feb  7 13:58:30 2006 -->
++<!-- CreationDate: Mon Mar  6 19:04:33 2006 -->
 +<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
 +"http://www.w3.org/TR/html4/loose.dtd">
 +<html>
@@ -8080,6 +8080,73 @@
 +<tr valign="top" align="left">
 +<td width="11%"></td>
 +<td width="89%">
++<p><b>Use TNEF Contents</b></p></td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="22%"></td>
++<td width="78%">
++<p>Default: replace<br>
++When the TNEF (winmail.dat) attachments are expanded, should
++the attachments contained in there be added to the list of
++attachments in the message? If you set this to
++&quot;add&quot; or &quot;replace&quot; then recipients of
++messages sent in &quot;Outlook Rich Text Format&quot; (TNEF)
++will be able to read the attachments if they are not using
++Microsoft Outlook.</p>
++</td>
++</table>
++<!-- TABS -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="4" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="22%"></td>
++<td width="1%">
++
++<p>&bull;</p>
++</td>
++<td width="5%"></td>
++<td width="72%">
++
++<p>no: Leave winmail.dat TNEF attachments alone.</p>
++</td>
++<tr valign="top" align="left">
++<td width="22%"></td>
++<td width="1%">
++
++<p>&bull;</p>
++</td>
++<td width="5%"></td>
++<td width="72%">
++
++<p>add: Add the contents of winmail.dat as extra
++attachments, but also still include the winmail.dat file
++itself. This will result in TNEF messages being doubled in
++size.</p>
++</td>
++<tr valign="top" align="left">
++<td width="22%"></td>
++<td width="1%">
++
++<p>&bull;</p>
++</td>
++<td width="5%"></td>
++<td width="72%">
++
++<p>replace: Replace the winmail.dat TNEF attachment with
++the files it contains, and delete the original winmail.dat
++file itself. This means the message stays the same size, but
++is usable by non&minus;Outlook recipients.</p>
++</td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="11%"></td>
++<td width="89%">
 +<p><b>Deliver Unparsable TNEF</b></p></td>
 +</table>
 +<!-- INDENTATION -->
@@ -8088,8 +8155,14 @@
 +<tr valign="top" align="left">
 +<td width="22%"></td>
 +<td width="78%">
-+<p>Default: no</p>
++<p>Default: no</p></td>
++</table>
 +<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="28%"></td>
++<td width="72%">
 +<p>Rich Text format attachments produced by some versions of
 +Microsoft Outlook cannot be completely decoded at present.
 +Setting this option to yes allows compatibility with the

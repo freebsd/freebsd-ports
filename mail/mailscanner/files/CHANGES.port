@@ -1,3 +1,10 @@
+
+Version 4.51.5
+=================
+- Some changes in FreeBSD 6.1 resulted in problems in the mta.sh script.
+  Fixed.
+- Upgrade to MailScanenr 4.51
+
 Version 4.50.15_1
 =================
 - The MailScanner binary is now put into /usr/local/sbin allowing for

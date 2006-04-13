@@ -1,12 +1,35 @@
---- ../MailScanner-install-4.50.15.orig/docs/man/MailScanner.conf.5	Tue Feb  7 13:45:33 2006
-+++ docs/man/MailScanner.conf.5	Tue Feb  7 13:58:52 2006
+--- ../MailScanner-install-4.51.5.orig/docs/man/MailScanner.conf.5	Mon Mar  6 19:05:04 2006
++++ docs/man/MailScanner.conf.5	Mon Mar  6 19:05:25 2006
 @@ -1,4 +1,4 @@
 -.TH "MailScanner.conf" "5" "4.50.1" "Julian Field" "Mail"
-+.TH "MailScanner.conf" "5" "4.50.15" "Julian Field" "Mail"
++.TH "MailScanner.conf" "5" "4.51.5" "Julian Field" "Mail"
  .SH "NAME"
  .LP 
  MailScanner.conf \- Main configuration for MailScanner
-@@ -423,6 +423,12 @@
+@@ -364,6 +364,22 @@
+ Should we use a TNEF decoder (external or Perl module)? This should be "yes" unless the scanner you are using (Sophos, McAfee) has the facility built\-in. However, if you set it to "no", then the filenames within the TNEF attachment will not be checked against the filename rules.
+ 
+ .TP 
++\fBUse TNEF Contents\fR
++Default: replace
++.br 
++When the TNEF (winmail.dat) attachments are expanded, should the attachments contained in there be added to the list of attachments in the message? If you set this to "add" or "replace" then recipients of messages sent in "Outlook Rich Text Format" (TNEF) will be able to read the attachments if they are not using Microsoft Outlook.
++.br 
++.RS 7
++.IP  \(bu 4
++no: Leave winmail.dat TNEF attachments alone.
++.IP  \(bu 4
++add: Add the contents of winmail.dat as extra attachments, but also still include the winmail.dat file itself. This will result in TNEF messages being doubled in size.
++.IP  \(bu 4
++replace: Replace the winmail.dat TNEF attachment with the files it            contains, and delete the original winmail.dat file itself. This means the message stays the same size, but is usable by non\-Outlook recipients.
++.RE
++
++
++.TP 
+ \fBDeliver Unparsable TNEF\fR
+ Default: no
+ .br 
+@@ -423,6 +439,12 @@
  The maximum length of time the "unrar" command is allowed to run for 1 RAR archive (in seconds)
  
  .TP 
@@ -19,7 +42,7 @@
  \fBBlock Encrypted Messages\fR
  Default: no
  .br 
-@@ -521,7 +527,7 @@
+@@ -521,7 +543,7 @@
  .SH "Virus scanning and vulnerability testing"
  .TP 
  \fBVirus Scanning\fR
@@ -28,7 +51,7 @@
  .br 
  
  .br 
-@@ -529,7 +535,7 @@
+@@ -529,7 +551,7 @@
  .br 
  NOTE: Switching this to no completely disables all virus\-scanning functionality. If you just want to switch of actual virus scanning, then set "Virus Scanners = none" instead.
  .br 
@@ -37,7 +60,7 @@
  
  .TP 
  \fBVirus Scanners\fR
-@@ -1682,7 +1688,7 @@
+@@ -1682,7 +1704,7 @@
  .SH "SpamAssassin"
  .TP 
  \fBUse SpamAssassin\fR
@@ -46,7 +69,7 @@
  .br 
  
  .br 
-@@ -2113,6 +2119,22 @@
+@@ -2113,6 +2135,22 @@
  .RE
  
  .TP 
@@ -69,7 +92,7 @@
  \fBDebug\fR
  Default: no
  .br 
-@@ -2167,6 +2189,15 @@
+@@ -2167,6 +2205,15 @@
  
  .br 
  The value of the option is actually never used, but it is evaluated at the end of processing a batch of messages. It is designed to be used in conjunction with a Custom Function. The Custom Function should then be written to have a "side effect" of doing something useful such as logging lots of information about the batch of messages to a file or an SQL database. 

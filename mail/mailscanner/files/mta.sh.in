@@ -22,6 +22,9 @@
 # mta_pidfile (str):      PID file, defaults depending on $mta_type either
 #			  to "/var/run/sendmail.pid" or "/var/run/exim.pid"
 #
+#
+# ATTENTION: All of the above entries are necessary in order for mta.sh to work correctly!
+#
 
 #
 # Examples:
@@ -45,16 +48,29 @@
 # mta_profiles="incoming outgoing submitqueue"
 # mta_incoming_flags="-L sm-mta-in -bd -OPrivacyOptions=noetrn -OQueueDirectory=/var/spool/mqueue.in -ODeliveryMode=queueonly"
 # mta_incoming_pidfile="/var/run/sendmail_in.pid"
+# mta_incoming_configfile="/etc/mail/sendmail.cf"
 # mta_outgoing_flags="-L sm-mta-out -q15m"
 # mta_outgoing_pidfile="/var/run/sendmail_out.pid"
+# mta_outgoing_configfile="/etc/mail/sendmail.cf"
 # mta_submitqueue_flags="-L sm-msp-queue -Ac -q15m"
 # mta_submitqueue_pidfile="/var/spool/clientmqueue/sm-client.pid"
-#
+# mta_submitqueue_configfile="/etc/mail/submit.cf"
+
+PATH=$PATH:/sbin:/usr/sbin; export PATH
 
 . %%RC_SUBR%%
 
 name="mta"
 rcvar=`set_rcvar`
+
+_mta_rc_script="%%PREFIX%%/etc/rc.d/mta"
+_mta_osversion="`sysctl -n kern.osreldate`"
+if [ \( "$_mta_osversion" -lt "600101" \) -o \
+	\( \( $_mta_osversion -ge 700000 \) -a \
+		\( $_mta_osversion -lt 700007 \) \) ]
+then
+	$_mta_rc_script="{$_mta_rc_script}.sh"
+fi
 
 load_rc_config $name
 
@@ -102,13 +118,13 @@ if [ -n "${2}" -o -n "$profile" ]; then
 		eval mta_pidfile=\${mta_${profile}_pidfile:-${mta_pidfile}}
 		pidfile="${_pidprefix}.${profile}.pid"
 	else
-		echo "$0: extra argument ignored"
+		echo "$_mta_rc_script: extra argument ignored"
 	fi
 else
 	if [ "x${mta_profiles}" != "x" ]; then
 	for profile in ${mta_profiles}; do
 		echo "===> mta profile: ${profile}"
-		$0 $1 $profile
+		$_mta_rc_script $1 $profile
 		retcode=$?
 		if [ "$?" -ne 0 ]; then
 			failed="${profile} ({$retcode}) ${failed}"
