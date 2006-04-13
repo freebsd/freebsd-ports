@@ -1,0 +1,8 @@
+bin/pyflakes
+%%PYTHON_SITELIBDIR%%/pyflakes/__init__.py
+%%PYTHON_SITELIBDIR%%/pyflakes/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pyflakes/__init__.pyo
+%%PYTHON_SITELIBDIR%%/pyflakes/messages.py
+%%PYTHON_SITELIBDIR%%/pyflakes/messages.pyc
+%%PYTHON_SITELIBDIR%%/pyflakes/messages.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/pyflakes

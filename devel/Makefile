@@ -1437,6 +1437,7 @@
     SUBDIR += py-epsilon
     SUBDIR += py-fam
     SUBDIR += py-fileutils
+    SUBDIR += py-flakes
     SUBDIR += py-fortran
     SUBDIR += py-freebsd
     SUBDIR += py-game
