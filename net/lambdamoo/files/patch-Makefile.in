@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Thu Apr 13 13:54:19 2006
++++ Makefile.in	Thu Apr 13 13:54:25 2006
+@@ -17,7 +17,7 @@
+ LIBRARIES = @LIBS@
+ YACC = @YACC@
+ 
+-CFLAGS = -O
++CFLAGS?= -O
+ # If you're using GCC, you may prefer:
+ # CFLAGS = -O2 -finline-functions
+ #
