@@ -31,6 +31,7 @@ lib/vile/vile-ini-filt.so
 lib/vile/vile-iss-filt.so
 lib/vile/vile-key-filt.so
 lib/vile/vile-latex-filt.so
+lib/vile/vile-lua-filt.so
 lib/vile/vile-lex-filt.so
 lib/vile/vile-lisp-filt.so
 lib/vile/vile-m4-filt.so
@@ -95,6 +96,7 @@ share/vile/bnf.keywords
 share/vile/c.keywords
 share/vile/color-ls.rc
 share/vile/cpp.keywords
+share/vile/cs.keywords
 share/vile/csh.keywords
 share/vile/css.keywords
 share/vile/cweb.keywords
@@ -118,6 +120,7 @@ share/vile/js.keywords
 share/vile/latex.keywords
 share/vile/lex.keywords
 share/vile/lisp.keywords
+share/vile/lua.keywords
 share/vile/loaderrs.rc
 share/vile/m4.keywords
 share/vile/macros/color-ls.rc
@@ -210,6 +213,7 @@ share/vile/xml.keywords
 share/vile/xres.keywords
 share/vile/xs.keywords
 share/vile/yacc.keywords
+@dirrm share/vile/doc
 @dirrm share/vile/perl/Vile
 @dirrm share/vile/perl
 @dirrm share/vile/macros

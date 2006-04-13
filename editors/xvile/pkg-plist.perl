@@ -36,6 +36,7 @@ lib/xvile/vile-iss-filt
 lib/xvile/vile-latex-filt
 lib/xvile/vile-lex-filt
 lib/xvile/vile-lisp-filt
+lib/xvile/vile-lua-filt
 lib/xvile/vile-m4-filt
 lib/xvile/vile-mail-filt
 lib/xvile/vile-make-filt
@@ -146,6 +147,7 @@ share/xvile/vile/vlog.keywords
 share/xvile/vile/ada.keywords
 share/xvile/vile/awk.keywords
 share/xvile/vile/bat.keywords
+share/xvile/vile/cs.keywords
 share/xvile/vile/csh.keywords
 share/xvile/vile/cweb.keywords
 share/xvile/vile/dcl.keywords
@@ -164,6 +166,7 @@ share/xvile/vile/js.keywords
 share/xvile/vile/latex.keywords
 share/xvile/vile/lex.keywords
 share/xvile/vile/lisp.keywords
+share/xvile/vile/lua.keywords
 share/xvile/vile/m4.keywords
 share/xvile/vile/mail.keywords
 share/xvile/vile/make.keywords
@@ -214,6 +217,7 @@ share/xvile/macros/vileperl.rc
 share/xvile/macros/which.rc
 share/xvile/macros/vile-pager
 share/xvile/vile/yacc.keywords
+@dirrm share/xvile/vile/doc
 @dirrm share/xvile/vile/perl/Vile
 @dirrm share/xvile/vile/perl
 @dirrm share/xvile/macros

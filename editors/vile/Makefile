@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vile
-PORTVERSION=	9.5d
+PORTVERSION=	9.5g
 CATEGORIES=	editors
 MASTER_SITES=	ftp://dickey.his.com/vile/ \
 		ftp://invisible-island.net/vile/ \
@@ -18,7 +18,10 @@ PATCH_SITES=	${MASTER_SITES:S,vile/,vile/patches/,g}
 PATCHFILES=	vile-9.5a.patch.gz \
 		vile-9.5b.patch.gz \
 		vile-9.5c.patch.gz \
-		vile-9.5d.patch.gz
+		vile-9.5d.patch.gz \
+		vile-9.5e.patch.gz \
+		vile-9.5f.patch.gz \
+		vile-9.5g.patch.gz
 
 MAINTAINER=	gj@FreeBSD.org
 COMMENT=	VI Like Emacs.  a vi "workalike", with many additional features
