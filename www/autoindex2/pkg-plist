@@ -19,6 +19,7 @@
 %%INSTALLDIR%%/classes/Icon.php
 %%INSTALLDIR%%/classes/Image.php
 %%INSTALLDIR%%/classes/Item.php
+%%INSTALLDIR%%/classes/Language.php
 %%INSTALLDIR%%/classes/Logging.php
 %%INSTALLDIR%%/classes/MimeType.php
 %%INSTALLDIR%%/classes/Search.php
@@ -158,11 +159,13 @@
 %%INSTALLDIR%%/languages/ca.txt
 %%INSTALLDIR%%/languages/cz.txt
 %%INSTALLDIR%%/languages/de.txt
+%%INSTALLDIR%%/languages/el.txt
 %%INSTALLDIR%%/languages/en.txt
 %%INSTALLDIR%%/languages/es.txt
 %%INSTALLDIR%%/languages/fr.txt
 %%INSTALLDIR%%/languages/hu.txt
 %%INSTALLDIR%%/languages/it.txt
+%%INSTALLDIR%%/languages/ja.txt
 %%INSTALLDIR%%/languages/ko.txt
 %%INSTALLDIR%%/languages/ms.txt
 %%INSTALLDIR%%/languages/nl.txt
