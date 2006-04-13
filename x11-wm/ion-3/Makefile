@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ion-3ds
-PORTVERSION=	20060305
+PORTVERSION=	20060326
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://modeemi.fi/~tuomov/ion/dl/
 

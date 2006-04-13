@@ -80,8 +80,8 @@
  
 -CFLAGS=-g -Os $(WARN) $(DEFINES) $(EXTRA_INCLUDES) $(INCLUDES)
 -LDFLAGS=-g -Os $(EXTRA_LIBS) $(LIBS)
-+CFLAGS=$(WARN) $(DEFINES) $(EXTRA_INCLUDES) $(INCLUDES)
-+LDFLAGS=$(EXTRA_LIBS) $(LIBS)
++CFLAGS+=$(WARN) $(DEFINES) $(EXTRA_INCLUDES) $(INCLUDES)
++LDFLAGS+=$(EXTRA_LIBS) $(LIBS)
  EXPORT_DYNAMIC=-Xlinker --export-dynamic
  
  # The following options are mainly for development use and can be used
