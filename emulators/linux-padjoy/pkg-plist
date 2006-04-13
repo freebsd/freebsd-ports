@@ -1,0 +1,8 @@
+lib/psemupro/plugins/libpadJoy-%%MAJOR%%.%%MINOR%%.so
+libexec/psemupro/cfg/cfgPadJoy
+@dirrmtry lib/psemupro/plugins
+@dirrmtry lib/psemupro
+@dirrmtry libexec/psemupro/cfg
+@dirrmtry libexec/psemupro
+%%PORTDOCS%%%%DOCSDIR%%/readme.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
