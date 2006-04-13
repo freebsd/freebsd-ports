@@ -276,3 +276,4 @@ share/enlightenment/epplet_icons/Emix.icon
 @dirrm share/enlightenment/epplet_data/E-Clock
 @dirrm share/enlightenment/epplet_data/E-Biff
 @unexec rmdir %D/share/enlightenment/epplet_data
+@dirrmtry share/enlightenment
