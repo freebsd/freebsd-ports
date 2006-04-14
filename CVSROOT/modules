@@ -7752,6 +7752,7 @@ p5-Class-ISA	ports/devel/p5-Class-ISA
 p5-Class-Inner	ports/devel/p5-Class-Inner
 p5-Class-Inspector	ports/devel/p5-Class-Inspector
 p5-Class-Loader	ports/devel/p5-Class-Loader
+p5-Class-MOP	ports/devel/p5-Class-MOP
 p5-Class-MakeMethods	ports/devel/p5-Class-MakeMethods
 p5-Class-MethodMaker	ports/devel/p5-Class-MethodMaker
 p5-Class-MethodMapper	ports/devel/p5-Class-MethodMapper
