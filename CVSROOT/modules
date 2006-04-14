@@ -5019,6 +5019,7 @@ kdemultimedia3	ports/multimedia/kdemultimedia3
 kdenetwork3	ports/net/kdenetwork3
 kdepim3		ports/deskutils/kdepim3
 kdesdk3		ports/devel/kdesdk3
+kdesvn		ports/devel/kdesvn
 kdetoys3	ports/x11-clocks/kdetoys3
 kdeutils3	ports/misc/kdeutils3
 kdevelop	ports/devel/kdevelop
