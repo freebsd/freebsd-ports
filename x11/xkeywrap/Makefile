@@ -15,6 +15,8 @@ MASTER_SITES=	http://www.seki.ee.kagu.tus.ac.jp/~sakai/myfreesoft/ \
 MAINTAINER=	sakai@seki.ee.kagu.tus.ac.jp
 COMMENT=	Record, repeat, and play key sequence from keyboard
 
+BROKEN=		does not fetch
+
 USE_X_PREFIX=	yes
 MAN1=		xkeywrap.1
 MANCOMPRESSED=	yes
