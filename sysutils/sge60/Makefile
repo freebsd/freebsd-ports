@@ -7,7 +7,7 @@
 
 PORTNAME=	sge
 PORTVERSION=	${SGE_VERSION}
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	sysutils parallel
 MASTER_SITES=	http://gridengine.sunsource.net/files/documents/7/51/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
@@ -29,6 +29,8 @@ OPTIONS=	BDB "Use DB based spooler (currently broken)" off \
 		QMON "Qmon support (requires X and Motif)" on
 
 CONFLICTS=	sge-5* sgeee-[0-9]*
+
+EXTRA_PATCHES=	${FILESDIR}/sge-freebsd-pdc.diff
 
 .if !exists(/usr/include/sys/_pthreadtypes.h)
 EXTRA_PATCHES=	${FILESDIR}/pthread-types.diff
