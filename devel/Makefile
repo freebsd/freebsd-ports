@@ -426,6 +426,7 @@
     SUBDIR += kcachegrind
     SUBDIR += kdbg
     SUBDIR += kdesdk3
+    SUBDIR += kdesvn
     SUBDIR += kdevelop
     SUBDIR += kimwitu
     SUBDIR += kimwitu++
