@@ -9,10 +9,8 @@ PORTNAME?=	adblock
 DISTVERSION=	0.5-dev
 PORTREVISION?=	0
 CATEGORIES=	www
-MASTER_SITES=	http://www.devlib.org/mozdev/adblock/	\
-		http://downloads.mozdev.org/adblock/	\
-		http://ftp.ntua.gr/pub/www/mozdev/adblock/	\
-		http://ftp.iasi.roedu.net/mirrors/mozdev.org/adblock/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	thierry
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	thierry@FreeBSD.org
