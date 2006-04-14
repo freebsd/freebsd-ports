@@ -20,9 +20,6 @@ bin/shellac.py
 %%PYTHON_SITELIBDIR%%/Shellac/guiwidgets.py
 %%PYTHON_SITELIBDIR%%/Shellac/guiwidgets.pyc
 %%PYTHON_SITELIBDIR%%/Shellac/guiwidgets.pyo
-%%PYTHON_SITELIBDIR%%/Shellac/jux_glib.py
-%%PYTHON_SITELIBDIR%%/Shellac/jux_glib.pyc
-%%PYTHON_SITELIBDIR%%/Shellac/jux_glib.pyo
 %%PYTHON_SITELIBDIR%%/Shellac/library.py
 %%PYTHON_SITELIBDIR%%/Shellac/library.pyc
 %%PYTHON_SITELIBDIR%%/Shellac/library.pyo
@@ -44,6 +41,9 @@ bin/shellac.py
 %%PYTHON_SITELIBDIR%%/Shellac/streambrowser.py
 %%PYTHON_SITELIBDIR%%/Shellac/streambrowser.pyc
 %%PYTHON_SITELIBDIR%%/Shellac/streambrowser.pyo
+%%PYTHON_SITELIBDIR%%/Shellac/xmmsglib.py
+%%PYTHON_SITELIBDIR%%/Shellac/xmmsglib.pyc
+%%PYTHON_SITELIBDIR%%/Shellac/xmmsglib.pyo
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%DATADIR%%/defaults.conf
