@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://www.compu-art.de/mars_nwe/ \
 DISTNAME=	mars_nwe-0.99.pl19
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	bp@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Netware server emulator for Un*x systems
 
 WRKSRC=		${WRKDIR}/mars_nwe
