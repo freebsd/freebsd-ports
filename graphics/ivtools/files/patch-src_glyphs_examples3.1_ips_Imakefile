@@ -1,0 +1,13 @@
+
+$FreeBSD$
+
+--- src/glyphs/examples3.1/ips/Imakefile.orig
++++ src/glyphs/examples3.1/ips/Imakefile
+@@ -6,6 +6,7 @@
+ 
+ #ifdef InObjectCodeDir
+ 
++OTHER_CCLDLIBS = $(TIFF_CCLDLIBS)
+ Use_libInterViews()
+ ComplexProgramTargetNoInstall(ips)
+ 

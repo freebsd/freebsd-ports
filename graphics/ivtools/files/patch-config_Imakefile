@@ -1,9 +1,13 @@
---- config/Imakefile.orig	Mon Jul 16 10:10:06 2001
-+++ config/Imakefile	Wed Mar 27 12:18:06 2002
-@@ -9,12 +9,3 @@
+
+$FreeBSD$
+
+--- config/Imakefile.orig
++++ config/Imakefile
+@@ -8,13 +8,3 @@
+ SUBDIRS = InterViews
  
  MakeInSubdirs($(SUBDIRS))
- 
+-
 -#if !InstallRelative
 -install::
 -	MakeDir($(CONFIGDIR))

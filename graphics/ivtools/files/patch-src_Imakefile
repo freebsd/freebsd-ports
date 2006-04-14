@@ -1,0 +1,13 @@
+
+$FreeBSD$
+
+--- src/Imakefile.orig
++++ src/Imakefile
+@@ -75,7 +75,6 @@
+ 	DrawServ \
+ 	drawserv_ \
+ 	\
+-	include \
+ 	scripts \
+ 	utils \
+ 	tests \

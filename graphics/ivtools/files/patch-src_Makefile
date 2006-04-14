@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- src/Makefile.orig
++++ src/Makefile
+@@ -298,7 +298,7 @@
+ 
+ ACEDISPATCH =
+ 
+-SUBDIRS = 	IV-common 	Unidraw-common 		ComUtil 	Attribute 	TopoFace 	ComTerp 	comtest 	comterp_ 		IV 	InterViews 	IV-2_6 	IV-X11 	OS 	TIFF 	Dispatch 	dclock 	iclass 	idemo 		Time 	IVGlyph 	ivtext 	glyphs 		AttrGlyph 	ComGlyph 	glyphterp 		Unidraw 	UniIdraw 	idraw 		OverlayUnidraw 	$(ACEDISPATCH) 	drawtool 		$(IUEDIRS) 		ComUnidraw 	comdraw 		FrameUnidraw 	flipbook 		GraphUnidraw 	graphdraw 		DrawServ 	drawserv_ 		include 	scripts 	utils 	tests 		 	man 	html
++SUBDIRS = 	IV-common 	Unidraw-common 		ComUtil 	Attribute 	TopoFace 	ComTerp 	comtest 	comterp_ 		IV 	InterViews 	IV-2_6 	IV-X11 	OS 	TIFF 	Dispatch 	dclock 	iclass 	idemo 		Time 	IVGlyph 	ivtext 	glyphs 		AttrGlyph 	ComGlyph 	glyphterp 		Unidraw 	UniIdraw 	idraw 		OverlayUnidraw 	$(ACEDISPATCH) 	drawtool 		$(IUEDIRS) 		ComUnidraw 	comdraw 		FrameUnidraw 	flipbook 		GraphUnidraw 	graphdraw 		DrawServ 	drawserv_ 		scripts 	utils 	tests 		 	man 	html
+ 
+ Makefiles::
+ 	-@for i in $(SUBDIRS); \
