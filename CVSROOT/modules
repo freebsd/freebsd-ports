@@ -10599,6 +10599,7 @@ py-anonfunc	ports/devel/py-anonfunc
 py-anygui	ports/x11-toolkits/py-anygui
 py-ao		ports/audio/py-ao
 py-asv		ports/textproc/py-asv
+py-axiom	ports/databases/py-axiom
 py-beautifulsoup	ports/www/py-beautifulsoup
 py-biopython	ports/biology/py-biopython
 py-bison	ports/devel/py-bison
