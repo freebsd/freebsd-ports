@@ -18,6 +18,7 @@ include/jrtplib3/rtpconfig_win.h
 include/jrtplib3/rtpdebug.h
 include/jrtplib3/rtpdefines.h
 include/jrtplib3/rtperrors.h
+include/jrtplib3/rtpfaketransmitter.h
 include/jrtplib3/rtphashtable.h
 include/jrtplib3/rtpinternalsourcedata.h
 include/jrtplib3/rtpipv4address.h
@@ -44,7 +45,7 @@ include/jrtplib3/rtptypes_unix.h
 include/jrtplib3/rtptypes_win.h
 include/jrtplib3/rtpudpv4transmitter.h
 include/jrtplib3/rtpudpv6transmitter.h
-lib/libjrtp-3.1.0.so
+lib/libjrtp-3.5.2.so
 lib/libjrtp.a
 lib/libjrtp.la
 lib/libjrtp.so
