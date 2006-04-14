@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ivtools
-PORTVERSION=	1.2.1
-PORTREVISION=	1
+PORTVERSION=	1.2.3
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,26 +15,19 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Drawing editors derived from idraw
 
-FORBIDDEN=	http://vuxml.FreeBSD.org/pkg-ivtools.html
-
 BUILD_DEPENDS=	imake:${X_IMAKE_PORT}
+LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff
 
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	autoconf:259
+CONFIGURE_ARGS=	--with-tiff=${PREFIX}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 INSTALLS_SHLIB=	yes
+USE_GNAKE=	yes
+MAKE_ARGS=	ARCH=FREEBSD
 
 MANCOMPRESSED=	no
 MAN1=	idraw.1 iclass.1 drawtool.1 comterp.1 comdraw.1 flipbook.1 graphdraw.1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
-
-.if ${ARCH} != "i386"
-BROKEN=		"fails to configure on ${ARCH}"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
