@@ -1,0 +1,11 @@
+--- configure.orig	Tue Apr 11 13:11:45 2006
++++ configure	Tue Apr 11 13:12:18 2006
+@@ -45156,6 +45156,8 @@
+ build_brlcad_jove=no
+ if test "x$bc_build_jove" = "xyes" ; then
+ 	build_brlcad_jove=yes
++elif test "x$bc_build_jove" = "xno" ; then
++	build_brlcad_jove=no # damnit
+ else
+ 	# enable jove if no suitable system emacs/jove was found
+ 	if test "x$BCEDITOR" = "x" ; then

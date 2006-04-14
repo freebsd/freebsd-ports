@@ -1,4 +1,5 @@
 @unexec rm -f %%LOCALBASE%%/bin/mged
+@unexec rm -f %%LOCALBASE%%/bin/mged.sh
 @exec ln -s %D/%F %%LOCALBASE%%/bin/mged
 bin/a-d
 bin/alias-pix
@@ -17,6 +18,7 @@ bin/anim_track
 bin/anim_turn
 bin/any-png.sh
 bin/ap-pix
+bin/archer
 bin/asc-nmg
 bin/asc-pl
 bin/asc2g
@@ -183,7 +185,6 @@ bin/lgt
 bin/loop
 bin/mac-pix
 bin/mged
-bin/mged.sh
 bin/mk_bolt
 bin/mk_gastank
 bin/mk_handle
@@ -350,6 +351,7 @@ bin/terrain
 bin/testfree
 bin/texturescale
 bin/torii
+bin/tracker.sh
 bin/ttcp
 bin/tube
 bin/txyz-pl
@@ -368,13 +370,68 @@ bin/wavelet
 bin/wdb_example
 bin/xyz-pl
 bin/yuv-pix
-include/adage.h
-include/adagecursor.h
-include/adageframe.h
+include/blt.h
+include/bltBind.h
+include/bltChain.h
+include/bltGrAxis.h
+include/bltGrElem.h
+include/bltGrLegd.h
+include/bltGraph.h
+include/bltHash.h
+include/bltImage.h
+include/bltInt.h
+include/bltInterp.h
+include/bltList.h
+include/bltMath.h
+include/bltNsUtil.h
+include/bltObjConfig.h
+include/bltPool.h
+include/bltPs.h
+include/bltSwitch.h
+include/bltTable.h
+include/bltText.h
+include/bltTile.h
+include/bltTkInt.h
+include/bltTree.h
+include/bltTreeView.h
+include/bltTuple.h
+include/bltVecInt.h
+include/bltVector.h
+include/bltWait.h
+include/bltWin.h
 include/bot.h
 include/brlcad/RtServerImpl.h
 include/brlcad/XtndRunsv.h
 include/brlcad/anim.h
+include/brlcad/blt.h
+include/brlcad/bltBind.h
+include/brlcad/bltChain.h
+include/brlcad/bltGrAxis.h
+include/brlcad/bltGrElem.h
+include/brlcad/bltGrLegd.h
+include/brlcad/bltGraph.h
+include/brlcad/bltHash.h
+include/brlcad/bltImage.h
+include/brlcad/bltInt.h
+include/brlcad/bltInterp.h
+include/brlcad/bltList.h
+include/brlcad/bltMath.h
+include/brlcad/bltNsUtil.h
+include/brlcad/bltObjConfig.h
+include/brlcad/bltPool.h
+include/brlcad/bltPs.h
+include/brlcad/bltSwitch.h
+include/brlcad/bltTable.h
+include/brlcad/bltText.h
+include/brlcad/bltTile.h
+include/brlcad/bltTkInt.h
+include/brlcad/bltTree.h
+include/brlcad/bltTreeView.h
+include/brlcad/bltTuple.h
+include/brlcad/bltVecInt.h
+include/brlcad/bltVector.h
+include/brlcad/bltWait.h
+include/brlcad/bltWin.h
 include/brlcad/bn.h
 include/brlcad/brlcad.h
 include/brlcad/brlcad_config.h
@@ -414,6 +471,7 @@ include/brlcad/libtermio.h
 include/brlcad/light.h
 include/brlcad/machine.h
 include/brlcad/mater.h
+include/brlcad/missing.h
 include/brlcad/msr.h
 include/brlcad/nmg.h
 include/brlcad/noalias-prag.h
@@ -472,8 +530,6 @@ include/brlcad/wdb.h
 include/brlcad/zconf.h
 include/brlcad/zlib.h
 include/debug.h
-include/dmdfb.h
-include/fblocal.h
 include/fixpt.h
 include/itcl.h
 include/itclDecls.h
@@ -481,16 +537,31 @@ include/itclInt.h
 include/itclIntDecls.h
 include/itk.h
 include/itkDecls.h
-include/nilcursor.h
-include/oglcursor.h
-include/pkgtypes.h
+include/missing.h
 include/plane.h
 include/qray.h
 include/rb_internals.h
-include/sgicursor.h
+include/tcl.h
+include/tclDecls.h
+include/tclPlatDecls.h
 include/tk.h
 include/tkDecls.h
 include/tkPlatDecls.h
+lib/blt2.4/ZoomStack.itcl
+lib/blt2.4/dd_protocols/dd-color.tcl
+lib/blt2.4/dd_protocols/dd-file.tcl
+lib/blt2.4/dd_protocols/dd-number.tcl
+lib/blt2.4/dd_protocols/dd-text.tcl
+lib/blt2.4/dnd.tcl
+lib/blt2.4/dragdrop.tcl
+lib/blt2.4/graph.tcl
+lib/blt2.4/hierbox.tcl
+lib/blt2.4/hiertable.tcl
+lib/blt2.4/tabnotebook.tcl
+lib/blt2.4/tabset.tcl
+lib/blt2.4/treeview.tcl
+lib/blt2.4/treeview.xbm
+lib/blt2.4/treeview_m.xbm
 lib/itcl3.3/itcl.tcl
 lib/itcl3.3/pkgIndex.tcl
 lib/itk3.3/Archetype.itk
@@ -561,6 +632,14 @@ lib/iwidgets4.0.1/scripts/timefield.itk
 lib/iwidgets4.0.1/scripts/toolbar.itk
 lib/iwidgets4.0.1/scripts/unknownimage.gif
 lib/iwidgets4.0.1/scripts/watch.itk
+lib/libblt.a
+lib/libblt.la
+lib/libblt.so
+lib/libblt.so.0
+lib/libblt2.4.a
+lib/libblt2.4.la
+lib/libblt2.4.so
+lib/libblt2.4.so.0
 lib/libbn.a
 lib/libbn.la
 lib/libbn.so
@@ -641,10 +720,26 @@ lib/libsysv.a
 lib/libsysv.la
 lib/libsysv.so
 lib/libsysv.so.19
+lib/libtcl.a
+lib/libtcl.la
+lib/libtcl.so
+lib/libtcl.so.19
+lib/libtcl8.4.a
+lib/libtcl8.4.la
+lib/libtcl8.4.so
+lib/libtcl8.4.so.19
 lib/libtclcad.a
 lib/libtclcad.la
 lib/libtclcad.so
 lib/libtclcad.so.19
+lib/libtclstub.a
+lib/libtclstub.la
+lib/libtclstub.so
+lib/libtclstub.so.0
+lib/libtclstub8.4.a
+lib/libtclstub8.4.la
+lib/libtclstub8.4.so
+lib/libtclstub8.4.so.0
 lib/libtermio.a
 lib/libtermio.la
 lib/libtermio.so
@@ -669,6 +764,106 @@ lib/libwdb.a
 lib/libwdb.la
 lib/libwdb.so
 lib/libwdb.so.19
+lib/tcl8.4/auto.tcl
+lib/tcl8.4/dde/pkgIndex.tcl
+lib/tcl8.4/encoding/ascii.enc
+lib/tcl8.4/encoding/big5.enc
+lib/tcl8.4/encoding/cp1250.enc
+lib/tcl8.4/encoding/cp1251.enc
+lib/tcl8.4/encoding/cp1252.enc
+lib/tcl8.4/encoding/cp1253.enc
+lib/tcl8.4/encoding/cp1254.enc
+lib/tcl8.4/encoding/cp1255.enc
+lib/tcl8.4/encoding/cp1256.enc
+lib/tcl8.4/encoding/cp1257.enc
+lib/tcl8.4/encoding/cp1258.enc
+lib/tcl8.4/encoding/cp437.enc
+lib/tcl8.4/encoding/cp737.enc
+lib/tcl8.4/encoding/cp775.enc
+lib/tcl8.4/encoding/cp850.enc
+lib/tcl8.4/encoding/cp852.enc
+lib/tcl8.4/encoding/cp855.enc
+lib/tcl8.4/encoding/cp857.enc
+lib/tcl8.4/encoding/cp860.enc
+lib/tcl8.4/encoding/cp861.enc
+lib/tcl8.4/encoding/cp862.enc
+lib/tcl8.4/encoding/cp863.enc
+lib/tcl8.4/encoding/cp864.enc
+lib/tcl8.4/encoding/cp865.enc
+lib/tcl8.4/encoding/cp866.enc
+lib/tcl8.4/encoding/cp869.enc
+lib/tcl8.4/encoding/cp874.enc
+lib/tcl8.4/encoding/cp932.enc
+lib/tcl8.4/encoding/cp936.enc
+lib/tcl8.4/encoding/cp949.enc
+lib/tcl8.4/encoding/cp950.enc
+lib/tcl8.4/encoding/dingbats.enc
+lib/tcl8.4/encoding/ebcdic.enc
+lib/tcl8.4/encoding/euc-cn.enc
+lib/tcl8.4/encoding/euc-jp.enc
+lib/tcl8.4/encoding/euc-kr.enc
+lib/tcl8.4/encoding/gb12345.enc
+lib/tcl8.4/encoding/gb1988.enc
+lib/tcl8.4/encoding/gb2312-raw.enc
+lib/tcl8.4/encoding/gb2312.enc
+lib/tcl8.4/encoding/iso2022-jp.enc
+lib/tcl8.4/encoding/iso2022-kr.enc
+lib/tcl8.4/encoding/iso2022.enc
+lib/tcl8.4/encoding/iso8859-1.enc
+lib/tcl8.4/encoding/iso8859-10.enc
+lib/tcl8.4/encoding/iso8859-13.enc
+lib/tcl8.4/encoding/iso8859-14.enc
+lib/tcl8.4/encoding/iso8859-15.enc
+lib/tcl8.4/encoding/iso8859-16.enc
+lib/tcl8.4/encoding/iso8859-2.enc
+lib/tcl8.4/encoding/iso8859-3.enc
+lib/tcl8.4/encoding/iso8859-4.enc
+lib/tcl8.4/encoding/iso8859-5.enc
+lib/tcl8.4/encoding/iso8859-6.enc
+lib/tcl8.4/encoding/iso8859-7.enc
+lib/tcl8.4/encoding/iso8859-8.enc
+lib/tcl8.4/encoding/iso8859-9.enc
+lib/tcl8.4/encoding/jis0201.enc
+lib/tcl8.4/encoding/jis0208.enc
+lib/tcl8.4/encoding/jis0212.enc
+lib/tcl8.4/encoding/koi8-r.enc
+lib/tcl8.4/encoding/koi8-u.enc
+lib/tcl8.4/encoding/ksc5601.enc
+lib/tcl8.4/encoding/macCentEuro.enc
+lib/tcl8.4/encoding/macCroatian.enc
+lib/tcl8.4/encoding/macCyrillic.enc
+lib/tcl8.4/encoding/macDingbats.enc
+lib/tcl8.4/encoding/macGreek.enc
+lib/tcl8.4/encoding/macIceland.enc
+lib/tcl8.4/encoding/macJapan.enc
+lib/tcl8.4/encoding/macRoman.enc
+lib/tcl8.4/encoding/macRomania.enc
+lib/tcl8.4/encoding/macThai.enc
+lib/tcl8.4/encoding/macTurkish.enc
+lib/tcl8.4/encoding/macUkraine.enc
+lib/tcl8.4/encoding/shiftjis.enc
+lib/tcl8.4/encoding/symbol.enc
+lib/tcl8.4/encoding/tis-620.enc
+lib/tcl8.4/history.tcl
+lib/tcl8.4/http1.0/http.tcl
+lib/tcl8.4/http1.0/pkgIndex.tcl
+lib/tcl8.4/http2.4/http.tcl
+lib/tcl8.4/http2.4/pkgIndex.tcl
+lib/tcl8.4/init.tcl
+lib/tcl8.4/ldAout.tcl
+lib/tcl8.4/msgcat1.3/msgcat.tcl
+lib/tcl8.4/msgcat1.3/pkgIndex.tcl
+lib/tcl8.4/opt0.4/optparse.tcl
+lib/tcl8.4/opt0.4/pkgIndex.tcl
+lib/tcl8.4/package.tcl
+lib/tcl8.4/parray.tcl
+lib/tcl8.4/reg/pkgIndex.tcl
+lib/tcl8.4/safe.tcl
+lib/tcl8.4/tclIndex
+lib/tcl8.4/tcltest2.2/pkgIndex.tcl
+lib/tcl8.4/tcltest2.2/tcltest.tcl
+lib/tcl8.4/word.tcl
+lib/tclConfig.sh
 lib/tk8.4/bgerror.tcl
 lib/tk8.4/button.tcl
 lib/tk8.4/choosedir.tcl
@@ -789,6 +984,10 @@ lib/tk8.4/tkfbox.tcl
 lib/tk8.4/unsupported.tcl
 lib/tk8.4/xmfbox.tcl
 lib/tkConfig.sh
+lib/tkimg.a
+lib/tkimg.la
+lib/tkimg.so
+lib/tkimg.so.0
 %%DATADIR%%/%%PORTVERSION%%/AUTHORS
 %%DATADIR%%/%%PORTVERSION%%/COPYING
 %%DATADIR%%/%%PORTVERSION%%/HACKING
@@ -840,6 +1039,7 @@ lib/tkConfig.sh
 %%DATADIR%%/%%PORTVERSION%%/doc/README.Solaris
 %%DATADIR%%/%%PORTVERSION%%/doc/README.Windows
 %%DATADIR%%/%%PORTVERSION%%/doc/anim.txt
+%%DATADIR%%/%%PORTVERSION%%/doc/archer_ack.txt
 %%DATADIR%%/%%PORTVERSION%%/doc/benchmark.tr
 %%DATADIR%%/%%PORTVERSION%%/doc/cvs.txt
 %%DATADIR%%/%%PORTVERSION%%/doc/description.txt
@@ -990,6 +1190,8 @@ lib/tkConfig.sh
 %%DATADIR%%/%%PORTVERSION%%/html/manuals/Install.html
 %%DATADIR%%/%%PORTVERSION%%/html/manuals/Obtain.html
 %%DATADIR%%/%%PORTVERSION%%/html/manuals/Overview.html
+%%DATADIR%%/%%PORTVERSION%%/html/manuals/archer/Archer_Documentation.chm
+%%DATADIR%%/%%PORTVERSION%%/html/manuals/archer/archer.ico
 %%DATADIR%%/%%PORTVERSION%%/html/manuals/cadwidgets/Command.html
 %%DATADIR%%/%%PORTVERSION%%/html/manuals/cadwidgets/Database.html
 %%DATADIR%%/%%PORTVERSION%%/html/manuals/cadwidgets/Db.html
@@ -1160,16 +1362,223 @@ lib/tkConfig.sh
 %%DATADIR%%/%%PORTVERSION%%/pix/star.pix
 %%DATADIR%%/%%PORTVERSION%%/pix/world.log
 %%DATADIR%%/%%PORTVERSION%%/pix/world.pix
+%%DATADIR%%/%%PORTVERSION%%/plugins/archer/Wizards/tankwizardIA.tcl
+%%DATADIR%%/%%PORTVERSION%%/plugins/archer/Wizards/tankwizardIA/TankWizardIA.tcl
+%%DATADIR%%/%%PORTVERSION%%/plugins/archer/Wizards/tankwizardIA/images/tank.png
+%%DATADIR%%/%%PORTVERSION%%/plugins/archer/utility.tcl
+%%DATADIR%%/%%PORTVERSION%%/plugins/archer/wizards.tcl
 %%DATADIR%%/%%PORTVERSION%%/sample_applications/fortran_example.f
 %%DATADIR%%/%%PORTVERSION%%/sample_applications/g-xxx.c
 %%DATADIR%%/%%PORTVERSION%%/sample_applications/g-xxx_facets.c
+%%DATADIR%%/%%PORTVERSION%%/sample_applications/g_transfer.c
 %%DATADIR%%/%%PORTVERSION%%/sample_applications/g_xxx.c
 %%DATADIR%%/%%PORTVERSION%%/sample_applications/nurb_example.c
 %%DATADIR%%/%%PORTVERSION%%/sample_applications/pl-dm.c
 %%DATADIR%%/%%PORTVERSION%%/sample_applications/raydebug.tcl
+%%DATADIR%%/%%PORTVERSION%%/sample_applications/roots_example.c
 %%DATADIR%%/%%PORTVERSION%%/sample_applications/rtexample.c
+%%DATADIR%%/%%PORTVERSION%%/sample_applications/tpkg.c
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/ami.tcl
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/ampi.tcl
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/Arb4EditFrame.tcl
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/Arb5EditFrame.tcl
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/Arb6EditFrame.tcl
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/Arb7EditFrame.tcl
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/Arb8EditFrame.tcl
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/Archer.tcl
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/BotEditFrame.tcl
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/CombEditFrame.tcl
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/EhyEditFrame.tcl
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/EllEditFrame.tcl
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/EpaEditFrame.tcl
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/EtoEditFrame.tcl
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/ExtrudeEditFrame.tcl
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/GeometryEditFrame.tcl
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/GripEditFrame.tcl
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/HalfEditFrame.tcl
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/LoadArcherLibs.tcl
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/PartEditFrame.tcl
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/PipeEditFrame.tcl
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/Plugin.tcl
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/RhcEditFrame.tcl
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/RpcEditFrame.tcl
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/SketchEditFrame.tcl
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/SphereEditFrame.tcl
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/TgcEditFrame.tcl
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/TorusEditFrame.tcl
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/Wizard.tcl
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/bgerror.tcl
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/cursor.tcl
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/arrow_back.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/arrow_forward.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/blank.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/bug.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/closeall.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/combination.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/configure.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/edit_copy.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/edit_cut.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/edit_paste.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/edit_rotate.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/edit_scale.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/edit_select.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/edit_translate.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/file_new.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/file_text_small.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/find.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/folder_closed_small.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/folder_open_small.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/open.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/option_text.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/option_tree.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/pane_blank.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/pane_collapse.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/pane_expand.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/primitive_arb6.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/primitive_arb8.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/primitive_bot.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/primitive_cone.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/primitive_ehy.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/primitive_ell.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/primitive_epa.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/primitive_eto.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/primitive_extrude.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/primitive_grip.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/primitive_half.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/primitive_list.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/primitive_other.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/primitive_pipe.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/primitive_rhc.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/primitive_rpc.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/primitive_sketch.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/primitive_sph.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/primitive_tor.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/refresh.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/run.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/save.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/view_left_right_small.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/view_rotate.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/view_scale.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/view_select.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/view_top_bottom_small.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/view_translate.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/wizard.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal_Large/arrow_back.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal_Large/arrow_forward.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal_Large/blank.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal_Large/bug.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal_Large/closeall.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal_Large/combination.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal_Large/configure.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal_Large/edit_copy.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal_Large/edit_cut.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal_Large/edit_paste.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal_Large/edit_rotate.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal_Large/edit_scale.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal_Large/edit_select.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal_Large/edit_translate.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal_Large/file_new.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal_Large/file_text_small.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal_Large/find.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal_Large/folder_closed_small.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal_Large/folder_open_small.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal_Large/open.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal_Large/option_text.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal_Large/option_tree.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal_Large/pane_blank.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal_Large/pane_collapse.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal_Large/pane_expand.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal_Large/primitive_arb6.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal_Large/primitive_arb8.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal_Large/primitive_bot.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal_Large/primitive_cone.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal_Large/primitive_ehy.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal_Large/primitive_ell.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal_Large/primitive_epa.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal_Large/primitive_eto.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal_Large/primitive_extrude.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal_Large/primitive_grip.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal_Large/primitive_half.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal_Large/primitive_list.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal_Large/primitive_other.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal_Large/primitive_pipe.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal_Large/primitive_rhc.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal_Large/primitive_rpc.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal_Large/primitive_sketch.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal_Large/primitive_sph.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal_Large/primitive_tor.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal_Large/refresh.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal_Large/run.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal_Large/save.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal_Large/view_left_right_small.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal_Large/view_rotate.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal_Large/view_scale.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal_Large/view_select.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal_Large/view_top_bottom_small.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal_Large/view_translate.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal_Large/wizard.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Windows/arrow_back.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Windows/arrow_forward.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Windows/blank.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Windows/bug.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Windows/closeall.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Windows/combination.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Windows/configure.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Windows/edit_copy.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Windows/edit_cut.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Windows/edit_paste.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Windows/edit_rotate.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Windows/edit_scale.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Windows/edit_select.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Windows/edit_translate.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Windows/file_new.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Windows/file_text_small.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Windows/find.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Windows/folder_closed_small.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Windows/folder_open_small.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Windows/open.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Windows/option_text.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Windows/option_tree.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Windows/pane_blank.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Windows/pane_collapse.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Windows/pane_expand.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Windows/primitive_arb6.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Windows/primitive_arb8.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Windows/primitive_bot.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Windows/primitive_cone.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Windows/primitive_ehy.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Windows/primitive_ell.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Windows/primitive_epa.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Windows/primitive_eto.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Windows/primitive_extrude.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Windows/primitive_grip.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Windows/primitive_half.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Windows/primitive_list.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Windows/primitive_other.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Windows/primitive_pipe.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Windows/primitive_rhc.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Windows/primitive_rpc.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Windows/primitive_sketch.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Windows/primitive_sph.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Windows/primitive_tor.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Windows/refresh.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Windows/run.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Windows/save.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Windows/view_left_right_small.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Windows/view_rotate.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Windows/view_scale.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Windows/view_select.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Windows/view_top_bottom_small.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Windows/view_translate.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Windows/wizard.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/aboutArcher.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/archer.bmp
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/closedf.gif
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/node.gif
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/openf.gif
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/pkgIndex.tcl
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/tabwindow.itk
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/tclIndex
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/cad_clrpick.tcl
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/cad_dialog.tcl
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/chkexterns.tcl
@@ -1298,6 +1707,7 @@ lib/tkConfig.sh
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/mged/overlap.tcl
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/mged/pattern.tcl
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/mged/pattern_gui.tcl
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/mged/pkgIndex.tcl
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/mged/plot.tcl
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/mged/points.tcl
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/mged/prj_add.tcl
@@ -1305,6 +1715,8 @@ lib/tkConfig.sh
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/mged/qray.tcl
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/mged/ray.tcl
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/mged/raypick.tcl
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/mged/reid.tcl
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/mged/remat.tcl
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/mged/rt.tcl
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/mged/rt_script.tcl
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/mged/sample.tcl
@@ -1382,6 +1794,28 @@ lib/tkConfig.sh
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/rtwizard/pkgIndex.tcl
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/rtwizard/rtwizard.tcl
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/rtwizard/tclIndex
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/sdialogs/pkgIndex.tcl
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/sdialogs/scripts/entrydialog.itk
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/sdialogs/scripts/listdialog.itk
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/sdialogs/scripts/stddlgs.tcl
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/sdialogs/scripts/tclIndex
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/sdialogs/sdialogs.tcl
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/sdialogs/tclIndex
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/swidgets/images/closed.gif
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/swidgets/images/leaf.gif
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/swidgets/images/minus.xbm
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/swidgets/images/open.gif
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/swidgets/images/plus.xbm
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/swidgets/images/tip.gif
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/swidgets/pkgIndex.tcl
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/swidgets/scripts/selectlists.itk
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/swidgets/scripts/tclIndex
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/swidgets/scripts/tkgetdir.itk
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/swidgets/scripts/togglearrow.itk
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/swidgets/scripts/tooltip.itk
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/swidgets/scripts/tree.itk
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/swidgets/swidgets.tcl
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/swidgets/tclIndex
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/tclIndex
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/util/expand_int_ranges.tcl
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/util/luniq.tcl
@@ -1392,6 +1826,11 @@ lib/tkConfig.sh
 %%DATADIR%%/%%PORTVERSION%%/vfont/nonie.r.12
 @dirrm %%DATADIR%%/%%PORTVERSION%%/vfont
 @dirrm %%DATADIR%%/%%PORTVERSION%%/tclscripts/util
+@dirrm %%DATADIR%%/%%PORTVERSION%%/tclscripts/swidgets/scripts
+@dirrm %%DATADIR%%/%%PORTVERSION%%/tclscripts/swidgets/images
+@dirrm %%DATADIR%%/%%PORTVERSION%%/tclscripts/swidgets
+@dirrm %%DATADIR%%/%%PORTVERSION%%/tclscripts/sdialogs/scripts
+@dirrm %%DATADIR%%/%%PORTVERSION%%/tclscripts/sdialogs
 @dirrm %%DATADIR%%/%%PORTVERSION%%/tclscripts/rtwizard/lib
 @dirrm %%DATADIR%%/%%PORTVERSION%%/tclscripts/rtwizard/examples/PictureTypeF
 @dirrm %%DATADIR%%/%%PORTVERSION%%/tclscripts/rtwizard/examples/PictureTypeE
@@ -1406,8 +1845,19 @@ lib/tkConfig.sh
 @dirrm %%DATADIR%%/%%PORTVERSION%%/tclscripts/mged
 @dirrm %%DATADIR%%/%%PORTVERSION%%/tclscripts/lib
 @dirrm %%DATADIR%%/%%PORTVERSION%%/tclscripts/geometree
+@dirrm %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Windows
+@dirrm %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal_Large
+@dirrm %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal
+@dirrm %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes
+@dirrm %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images
+@dirrm %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer
 @dirrm %%DATADIR%%/%%PORTVERSION%%/tclscripts
 @dirrm %%DATADIR%%/%%PORTVERSION%%/sample_applications
+@dirrm %%DATADIR%%/%%PORTVERSION%%/plugins/archer/Wizards/tankwizardIA/images
+@dirrm %%DATADIR%%/%%PORTVERSION%%/plugins/archer/Wizards/tankwizardIA
+@dirrm %%DATADIR%%/%%PORTVERSION%%/plugins/archer/Wizards
+@dirrm %%DATADIR%%/%%PORTVERSION%%/plugins/archer
+@dirrm %%DATADIR%%/%%PORTVERSION%%/plugins
 @dirrm %%DATADIR%%/%%PORTVERSION%%/pix
 @dirrm %%DATADIR%%/%%PORTVERSION%%/html/manuals/shaders
 @dirrm %%DATADIR%%/%%PORTVERSION%%/html/manuals/mged/animmate
@@ -1416,6 +1866,7 @@ lib/tkConfig.sh
 @dirrm %%DATADIR%%/%%PORTVERSION%%/html/manuals/libdm
 @dirrm %%DATADIR%%/%%PORTVERSION%%/html/manuals/libbu
 @dirrm %%DATADIR%%/%%PORTVERSION%%/html/manuals/cadwidgets
+@dirrm %%DATADIR%%/%%PORTVERSION%%/html/manuals/archer
 @dirrm %%DATADIR%%/%%PORTVERSION%%/html/manuals/Anim_Tutorial
 @dirrm %%DATADIR%%/%%PORTVERSION%%/html/manuals
 @dirrm %%DATADIR%%/%%PORTVERSION%%/html/ReleaseNotes/Rel6.0
@@ -1440,10 +1891,21 @@ lib/tkConfig.sh
 @dirrm lib/tk8.4/demos/images
 @dirrm lib/tk8.4/demos
 @dirrm lib/tk8.4
+@dirrm lib/tcl8.4/tcltest2.2
+@dirrm lib/tcl8.4/reg
+@dirrm lib/tcl8.4/opt0.4
+@dirrm lib/tcl8.4/msgcat1.3
+@dirrm lib/tcl8.4/http2.4
+@dirrm lib/tcl8.4/http1.0
+@dirrm lib/tcl8.4/encoding
+@dirrm lib/tcl8.4/dde
+@dirrm lib/tcl8.4
 @dirrm lib/iwidgets4.0.1/scripts
 @dirrm lib/iwidgets4.0.1
 @dirrm lib/itk3.3
 @dirrm lib/itcl3.3
+@dirrm lib/blt2.4/dd_protocols
+@dirrm lib/blt2.4
 @dirrm lib
 @dirrm include/brlcad
 @dirrm include
