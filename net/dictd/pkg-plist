@@ -3,4 +3,3 @@ sbin/dictd
 @unexec if cmp -s %D/etc/dictd.conf %D/etc/dictd.conf.sample; then rm -f %D/etc/dictd.conf; fi
 etc/dictd.conf.sample
 @exec [ -f %B/dictd.conf ] || cp %B/%f %B/dictd.conf
-etc/rc.d/dictd.sh
