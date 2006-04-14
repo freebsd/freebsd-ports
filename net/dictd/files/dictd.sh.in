@@ -1,0 +1,21 @@
+#!/bin/sh
+# $FreeBSD: /tmp/pcvs/ports/net/dictd/files/Attic/dictd.sh.in,v 1.1 2006-04-14 06:10:26 edwin Exp $
+#
+# PROVIDE: dictd
+# REQUIRE: DAEMON
+#
+# Add the following line to /etc/rc.conf[.local] to enable dictd:
+#
+# dictd_enable="YES"
+#
+
+dictd_enable=${dictd_enable-"NO"}
+
+. %%RC_SUBR%%
+
+name=dictd
+rcvar=`set_rcvar`
+command=%%PREFIX%%/sbin/dictd
+
+load_rc_config $name
+run_rc_command "$1"

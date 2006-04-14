@@ -18,8 +18,7 @@ COMMENT=	Dict protocol (RFC 2229) server
 MAN1=		dictzip.1
 MAN8=		dictd.8
 
-USE_RC_SUBR=	yes
-USE_REINPLACE=	yes
+USE_RC_SUBR=	${PORTNAME}.sh
 USE_BISON=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-etcdir=${PREFIX}/etc --with-cflags="${CFLAGS}" \
@@ -27,7 +26,8 @@ CONFIGURE_ARGS=	--with-etcdir=${PREFIX}/etc --with-cflags="${CFLAGS}" \
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
+SUB_FILES+=	pkg-message
+SUB_LIST+=	PORTSDIR=${PORTSDIR}
 
 USE_GMAKE=	yes
 
@@ -43,8 +43,7 @@ post-patch:
 post-install:
 	@${SED} "s|%%PREFIX%%|${PREFIX}|g" < ${FILESDIR}/${PORTNAME}.conf > ${PREFIX}/etc/${PORTNAME}.conf.sample
 	@[ -f ${PREFIX}/etc/${PORTNAME}.conf ] || ${CP} ${PREFIX}/etc/${PORTNAME}.conf.sample ${PREFIX}/etc/${PORTNAME}.conf
-	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} ${FILESDIR}/${PORTNAME}.sh > ${PREFIX}/etc/rc.d/${PORTNAME}.sh
-	@${CHMOD} +x ${PREFIX}/etc/rc.d/${PORTNAME}.sh
-	@${SED} "s|%%PREFIX%%|${PREFIX}|g" < ${PKGMESSAGE}
+	#@${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${PREFIX}/etc/rc.d
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
