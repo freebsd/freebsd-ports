@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	Curses
 PKGNAMEPREFIX=	p5-
 DISTNAME=	CursesWidgets-${PORTVERSION}
 
-MAINTAINER=	petef@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Curses-based widgets and functions
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Curses.pm:${PORTSDIR}/devel/p5-Curses

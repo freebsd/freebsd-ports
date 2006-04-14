@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	dbiwrapper
 PKGNAMEPREFIX=	p5-
 DISTNAME=	libdbiwrapper-perl-${PORTVERSION}
 
-MAINTAINER=	petef@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl extension for generic DBI database access
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-XML-LibXML \

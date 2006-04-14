@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://www.monkey.org/~provos/
 
-MAINTAINER=	petef@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A small, efficient web crawler with advanced features
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libevent.a:${PORTSDIR}/devel/libevent

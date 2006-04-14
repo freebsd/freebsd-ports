@@ -10,7 +10,7 @@ PORTVERSION=	1.3.2
 CATEGORIES=	security
 MASTER_SITES=	http://www.dakotacom.net/~donut/programs/ssh-multiadd/
 
-MAINTAINER=	petef@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to add multiple ssh keys to the authentication agent
 
 USE_PYTHON=	yes

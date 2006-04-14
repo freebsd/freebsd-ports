@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://www.rpi.edu/~mullr/cfm/dist/
 MASTER_SITE_SUBDIR=	petef
 
-MAINTAINER=	petef@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quick Perl/Tk file manager with support for regular expressions
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Tk.pm:${PORTSDIR}/x11-toolkits/p5-Tk

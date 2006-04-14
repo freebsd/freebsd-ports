@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://chaos2.org/xscorch/ \
 		http://mirror.dok.org/xscorch/
 
-MAINTAINER=	petef@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multiplayer tank shoot-em-up
 
 LIB_DEPENDS=	mikmod.2:${PORTSDIR}/audio/libmikmod

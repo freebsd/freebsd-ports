@@ -11,7 +11,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://bulldog.tzo.org/ascii2pdf/
 DISTNAME=	${PORTNAME}-0.9.1
 
-MAINTAINER=	petef@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A perl script to convert text files to PDF files
 
 RUN_DEPENDS=    ${SITE_PERL}/PDF/Create.pm:${PORTSDIR}/textproc/p5-PDF-Create

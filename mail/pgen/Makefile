@@ -10,7 +10,7 @@ PORTVERSION=	0.2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.happygiraffe.net/dist/
 
-MAINTAINER=	petef@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to generate a procmailrc file with m4 macros
 
 GNU_CONFIGURE=	yes

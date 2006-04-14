@@ -12,7 +12,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://www.redhead.dk/download/stable/
 DISTNAME=	Sigit-${PORTVERSION}
 
-MAINTAINER=	petef@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool to create random signatures
 
 USE_REINPLACE=	yes

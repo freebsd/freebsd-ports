@@ -10,7 +10,7 @@ PORTVERSION=	2.3
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.logarithmic.net/pfh-files/synaesthesia/
 
-MAINTAINER=	petef@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphically represents sound in real time
 
 USE_SDL=	sdl

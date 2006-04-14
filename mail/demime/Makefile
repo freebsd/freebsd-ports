@@ -12,7 +12,7 @@ MASTER_SITES=	http://majordomo.squawk.com/njs/demime/:demime \
 		http://scifi.squawk.com/:junkmail
 DISTFILES=	${PORTNAME}.${PORTVERSION}:demime demime_junkmail.cf:junkmail
 
-MAINTAINER=	petef@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool to scrub mime from mailing lists
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \

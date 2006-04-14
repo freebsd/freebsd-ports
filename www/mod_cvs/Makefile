@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		ftp://ftp.isk.kth.se/pub/people/main/mod_cvs/
 MASTER_SITE_SUBDIR=	petef
 
-MAINTAINER=	petef@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A module that makes Apache CVS aware
 
 CONFLICTS=	apache-contrib-1.*
