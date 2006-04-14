@@ -1,11 +1,11 @@
---- src/liboptical/Makefile.in.orig	Wed Dec 28 18:33:29 2005
-+++ src/liboptical/Makefile.in	Wed Dec 28 18:33:36 2005
-@@ -421,7 +421,7 @@
- 	vers.c
+--- src/liboptical/Makefile.in.orig	Tue Apr 11 00:42:03 2006
++++ src/liboptical/Makefile.in	Fri Apr 14 01:13:22 2006
+@@ -436,7 +436,7 @@
  
+ # convenience library, must NOT be set to static in here
  noinst_LTLIBRARIES = librtms.la
 -librtms_la_CFLAGS = -DRT_MULTISPECTRAL
 +librtms_la_CFLAGS = -DRT_MULTISPECTRAL -fPIC
- librtms_la_LDFLAGS = -static
- librtms_la_LIBADD = ${BU} ${BN} ${TCL} ${LIBRT}
- librtms_la_SOURCES = \
+ librtms_la_LIBADD = \
+ 	${LIBRT} \
+ 	${BN} \
