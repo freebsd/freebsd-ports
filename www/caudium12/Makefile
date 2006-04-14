@@ -9,9 +9,7 @@ PORTNAME=	caudium12
 PORTVERSION=	1.2.34
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.caudium.net/caudium/source/ \
-		ftp://ftp.us.caudium.net/pub/caudium/source/ \
-		ftp://ftp.oav.net/caudium/source/old/ \
-		ftp://ftp.us.caudium.net/pub/caudium/source/
+		ftp://ftp.oav.net/caudium/source/
 DISTNAME=	caudium-${PORTVERSION}
 
 MAINTAINER=	kiwi@oav.net
