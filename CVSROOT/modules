@@ -4787,6 +4787,7 @@ jgraph		ports/graphics/jgraph
 jgrapht		ports/java/jgrapht
 jgv		ports/graphics/jgv
 jhead		ports/graphics/jhead
+jid3lib		ports/audio/jid3lib
 jigdo		ports/net-p2p/jigdo
 jikes		ports/java/jikes
 jing		ports/textproc/jing
