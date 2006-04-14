@@ -7,26 +7,36 @@
 
 PORTNAME=	ldouble
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://www.moshier.net/
-DISTNAME=	ldouble
+DISTFILES=	${LDOUBLE_DISTFILE}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Long double math precision functions
 
-USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile
-USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
-ONLY_FOR_ARCHS=	i386
+# Known to work on atleast sparc64 & i386
+#ONLY_FOR_ARCHS=	i386 sparc64
 
 PLIST_FILES=	lib/libml.a \
 		lib/libml.so \
-		lib/libml.so.0 \
-		include/mathl.h
+		lib/libml.so.0
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH}=="i386"
+LDOUBLE_DISTFILE=	ldouble.zip
+USE_ZIP=		yes
+EXTRA_PATCHES=	${FILESDIR}/i386-makefile-patch
 PORTDOCS=	ldoubdoc.html
+.else
+LDOUBLE_DISTFILE=	128bit.tgz
+EXTRA_PATCHES=	${FILESDIR}/128-makefile-patch
+PORTDOCS=	128bdoc.html
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%CC%%|${CC}|; s|%%CFLAGS%%|${CFLAGS}|' \
@@ -35,11 +45,12 @@ post-patch:
 do-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/ldoubdoc.html ${DOCSDIR}
+.for f in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+.endfor
 .endif
 	${INSTALL_DATA} ${WRKSRC}/libml.a ${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/libml.so.0 ${PREFIX}/lib
 	${LN} -sf libml.so.0 ${PREFIX}/lib/libml.so
-	${INSTALL_DATA} ${WRKSRC}/protos.h ${PREFIX}/include/mathl.h
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
