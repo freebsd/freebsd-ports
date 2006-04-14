@@ -764,6 +764,7 @@
     SUBDIR += p5-Class-Inner
     SUBDIR += p5-Class-Inspector
     SUBDIR += p5-Class-Loader
+    SUBDIR += p5-Class-MOP
     SUBDIR += p5-Class-MakeMethods
     SUBDIR += p5-Class-MethodMaker
     SUBDIR += p5-Class-MethodMapper
