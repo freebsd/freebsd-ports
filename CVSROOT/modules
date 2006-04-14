@@ -3754,6 +3754,7 @@ hexcalc		ports/math/hexcalc
 hexcurse	ports/editors/hexcurse
 hexedit		ports/editors/hexedit
 hexpert		ports/editors/hexpert
+hexxagon	ports/games/hexxagon
 heyu		ports/misc/heyu
 heyu2		ports/misc/heyu2
 hf6to4		ports/net/hf6to4
