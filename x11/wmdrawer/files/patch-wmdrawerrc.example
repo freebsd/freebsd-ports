@@ -5,7 +5,7 @@
  [general]
  # Dock's icon [optional]
 -#dock_icon	panel-drawer.png
-+dock_icon	daemon.png
++dock_icon	beastie.png
  
  # Drawer's opening direction [required]
  # Top to bottom = 0
