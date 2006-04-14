@@ -94,31 +94,31 @@ lib/%%PYTHON_VERSION%%/site-packages/pyui/viewer.pyo
 lib/%%PYTHON_VERSION%%/site-packages/pyui/widgets.py
 lib/%%PYTHON_VERSION%%/site-packages/pyui/widgets.pyc
 lib/%%PYTHON_VERSION%%/site-packages/pyui/widgets.pyo
-%%PORTDOCS%%share/doc/py-ui/dependencies.jpg
-%%PORTDOCS%%share/doc/py-ui/pyui.base.html
-%%PORTDOCS%%share/doc/py-ui/pyui.colors.html
-%%PORTDOCS%%share/doc/py-ui/pyui.core.html
-%%PORTDOCS%%share/doc/py-ui/pyui.database.html
-%%PORTDOCS%%share/doc/py-ui/pyui.desktop.html
-%%PORTDOCS%%share/doc/py-ui/pyui.dialogs.html
-%%PORTDOCS%%share/doc/py-ui/pyui.entry.html
-%%PORTDOCS%%share/doc/py-ui/pyui.greenTheme.html
-%%PORTDOCS%%share/doc/py-ui/pyui.grid.html
-%%PORTDOCS%%share/doc/py-ui/pyui.html
-%%PORTDOCS%%share/doc/py-ui/pyui.html.html
-%%PORTDOCS%%share/doc/py-ui/pyui.layouts.html
-%%PORTDOCS%%share/doc/py-ui/pyui.locals.html
-%%PORTDOCS%%share/doc/py-ui/pyui.renderer3d.html
-%%PORTDOCS%%share/doc/py-ui/pyui.rendererBase.html
-%%PORTDOCS%%share/doc/py-ui/pyui.renderers.openglGlut.html
-%%PORTDOCS%%share/doc/py-ui/pyui.renderers.openglPygame.html
-%%PORTDOCS%%share/doc/py-ui/pyui.renderers.pygame2D.html
-%%PORTDOCS%%share/doc/py-ui/pyui.sheet.html
-%%PORTDOCS%%share/doc/py-ui/pyui.theme.html
-%%PORTDOCS%%share/doc/py-ui/pyui.tree.html
-%%PORTDOCS%%share/doc/py-ui/pyui.viewer.html
-%%PORTDOCS%%share/doc/py-ui/pyui.widgets.html
-%%PORTDOCS%%@dirrm share/doc/py-ui
+%%PORTDOCS%%%%DOCSDIR%%/dependencies.jpg
+%%PORTDOCS%%%%DOCSDIR%%/pyui.base.html
+%%PORTDOCS%%%%DOCSDIR%%/pyui.colors.html
+%%PORTDOCS%%%%DOCSDIR%%/pyui.core.html
+%%PORTDOCS%%%%DOCSDIR%%/pyui.database.html
+%%PORTDOCS%%%%DOCSDIR%%/pyui.desktop.html
+%%PORTDOCS%%%%DOCSDIR%%/pyui.dialogs.html
+%%PORTDOCS%%%%DOCSDIR%%/pyui.entry.html
+%%PORTDOCS%%%%DOCSDIR%%/pyui.greenTheme.html
+%%PORTDOCS%%%%DOCSDIR%%/pyui.grid.html
+%%PORTDOCS%%%%DOCSDIR%%/pyui.html
+%%PORTDOCS%%%%DOCSDIR%%/pyui.html.html
+%%PORTDOCS%%%%DOCSDIR%%/pyui.layouts.html
+%%PORTDOCS%%%%DOCSDIR%%/pyui.locals.html
+%%PORTDOCS%%%%DOCSDIR%%/pyui.renderer3d.html
+%%PORTDOCS%%%%DOCSDIR%%/pyui.rendererBase.html
+%%PORTDOCS%%%%DOCSDIR%%/pyui.renderers.openglGlut.html
+%%PORTDOCS%%%%DOCSDIR%%/pyui.renderers.openglPygame.html
+%%PORTDOCS%%%%DOCSDIR%%/pyui.renderers.pygame2D.html
+%%PORTDOCS%%%%DOCSDIR%%/pyui.sheet.html
+%%PORTDOCS%%%%DOCSDIR%%/pyui.theme.html
+%%PORTDOCS%%%%DOCSDIR%%/pyui.tree.html
+%%PORTDOCS%%%%DOCSDIR%%/pyui.viewer.html
+%%PORTDOCS%%%%DOCSDIR%%/pyui.widgets.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/pyui/themes
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/pyui/renderers
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/pyui

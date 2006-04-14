@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	pyui
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pyui${PORTVERSION:S/.//}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	alex@foxybanana.com
 COMMENT=	A user interface library written in Python
 
 RUN_DEPENDS=	\
@@ -27,6 +27,8 @@ RUN_DEPENDS=	\
 USE_ZIP=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
+
+DOCSDIR=	${LOCALBASE}/share/doc/py-ui
 
 post-install:
 .if !defined(NOPORTDOCS)
