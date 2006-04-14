@@ -291,7 +291,7 @@ share/pixmaps/abiword_48.png
 @dirrm share/AbiSuite-%%ABIVERSION%%/AbiWord
 @dirrm share/AbiSuite-%%ABIVERSION%%
 @exec /bin/mkdir -p %D/lib/AbiWord-%%ABIVERSION%%/plugins
-@unexec /bin/rmdir %D/lib/AbiWord-%%ABIVERSION%%/plugins 2>/dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/lib/AbiWord-%%ABIVERSION%% 2>/dev/null || /usr/bin/true
+@dirrmtry lib/AbiWord-%%ABIVERSION%%/plugins
+@dirrmtry lib/AbiWord-%%ABIVERSION%%
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true

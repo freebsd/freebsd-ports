@@ -1,16 +1,16 @@
---- abiword.desktop.orig	Tue Jan 10 00:02:54 2006
-+++ abiword.desktop	Tue Jan 10 00:03:49 2006
+--- abiword.desktop.orig	Fri Apr 14 12:43:24 2006
++++ abiword.desktop	Fri Apr 14 12:45:03 2006
 @@ -3,11 +3,11 @@
  Icon=abiword_48.png
  Terminal=false
  Type=Application
--Categories=Application;Office;WordProcessor;X-Red-Hat-Base;
-+Categories=Application;Office;WordProcessor;
+-Categories=Application;Office;WordProcessor;GNOME;GTK;X-Red-Hat-Base;
++Categories=Application;Office;WordProcessor;GNOME;GTK;
  StartupNotify=true
  Encoding=UTF-8
  X-Desktop-File-Install-Version=0.9
--MimeType=application/x-abiword;text/x-abiword;text/x-xml-abiword;text/plain;application/vnd.ms-word;application/rtf;application/vnd.plain;application/xhtml+xml;text/html;
-+MimeType=application/x-abiword;text/x-abiword;text/x-xml-abiword;application/vnd.ms-word;application/msword;application/rtf;application/vnd.plain;application/xhtml+xml;text/html;
+-MimeType=application/x-abiword;text/x-abiword;text/x-xml-abiword;text/plain;application/msword;application/rtf;application/vnd.plain;application/xhtml+xml;text/html;
++MimeType=application/x-abiword;text/x-abiword;text/x-xml-abiword;application/msword;application/rtf;application/vnd.plain;application/xhtml+xml;text/html;
  Name=AbiWord
  GenericName=Word Processor
  Comment=AbiWord Word Processor
