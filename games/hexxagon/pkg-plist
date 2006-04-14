@@ -1,0 +1,14 @@
+bin/hexxagon
+%%DATADIR%%/images/about_top.xpm
+%%DATADIR%%/images/board_D_0.xpm
+%%DATADIR%%/images/board_L_0.xpm
+%%DATADIR%%/images/board_L_1.xpm
+%%DATADIR%%/images/board_L_2.xpm
+%%DATADIR%%/images/board_N_0.xpm
+%%DATADIR%%/images/board_N_1.xpm
+%%DATADIR%%/images/board_N_2.xpm
+%%DATADIR%%/images/computer_wins.xpm
+%%DATADIR%%/images/draw.xpm
+%%DATADIR%%/images/you_win.xpm
+@dirrm %%DATADIR%%/images
+@dirrm %%DATADIR%%
