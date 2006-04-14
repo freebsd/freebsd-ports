@@ -1,0 +1,10 @@
+--- configure.orig	Fri Apr 14 13:58:45 2006
++++ configure	Fri Apr 14 13:59:09 2006
+@@ -21878,6 +21878,7 @@
+ 
+    ASPELL_CFLAGS=
+    if test "x$with_aspell_prefix" != "x"; then
++       aspell_prefix=$with_aspell_prefix
+        LDFLAGS="-L$with_aspell_prefix/lib "$LDFLAGS
+        ASPELL_INC="-I$with_aspell_prefix/include"
+        ASPELL_LIBS="-L$with_aspell_prefix/lib -laspell"
