@@ -35,7 +35,7 @@
  	str_start += strlen("Node: ");
  	/* and search for the next comma, tab, or newline */
 -	char *c = str_start;
-+	*c = str_start;
++	c = str_start;
  	while ( (*c!=',') && (*c!='\t') && (*c!='\n') && (*c!='\0') ) c++;
  	*c = '\0';
  	
