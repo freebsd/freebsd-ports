@@ -13,6 +13,7 @@ PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.ora.com/pub/davenport/
 DISTFILES=	docbk30.tar.Z
+EXTRACT_ONLY=	# empty
 
 MAINTAINER=	nik@FreeBSD.org
 COMMENT=	V3.0 of the DocBook DTD, designed for technical documentation
@@ -21,7 +22,6 @@ RUN_DEPENDS=	${ISOCAT}:${PORTSDIR}/textproc/iso8879 \
 		${XMLCATMGR}:${PORTSDIR}/textproc/xmlcatmgr
 
 NO_MTREE=	yes
-EXTRACT_ONLY=	# empty
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 PLIST_SUB=	DTD_NAME=${PORTNAME}
