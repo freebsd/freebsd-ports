@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.fasta.fh-dortmund.de/pub/linux/gentoo/distfiles/ \
 		http://voodoo.bawue.com/download/
 DISTNAME=	SambaSentinel-${PORTVERSION}
 
-MAINTAINER=	pat@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SambaSentinel is a gtk-frontend to smbstatus with additional features
 
 RUN_DEPENDS=	jags:${PORTSDIR}/net/jags

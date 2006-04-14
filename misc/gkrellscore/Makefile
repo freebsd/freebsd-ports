@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.dvo.ru/pub/Gentoo/distfiles/ \
 		http://voodoo.bawue.com/download/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	pat@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plugin to GKrellM that displays current sports scores
 
 BUILD_DEPENDS=	${X11BASE}/include/gkrellm/gkrellm.h:${PORTSDIR}/sysutils/gkrellm

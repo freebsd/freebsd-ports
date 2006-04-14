@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	comms windowmaker
 MASTER_SITES=	ftp://ftp.seul.org/pub/yawmppp/
 
-MAINTAINER=	pat@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Window Maker dockapp that helps with easy use of pppd
 
 USE_X_PREFIX=	yes

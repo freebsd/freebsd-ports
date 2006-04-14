@@ -10,7 +10,7 @@ PORTVERSION=	0.1.6
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	http://www.markstaggs.net/wmmemload/
 
-MAINTAINER=	pat@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An dockapp for windowmaker that displays the current mem/swap usage
 
 USE_X_PREFIX=	yes

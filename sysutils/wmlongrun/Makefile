@@ -10,7 +10,7 @@ PORTVERSION=	0.2.0
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	http://www.sh.rim.or.jp/~ssato/src/
 
-MAINTAINER=	pat@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A dockapp to monitor the LongRun(tm) status on Crusoe
 
 USE_X_PREFIX=	yes

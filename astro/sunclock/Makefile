@@ -11,7 +11,7 @@ PORTVERSION=	3.54.1
 CATEGORIES=	astro x11-clocks
 MASTER_SITES=	http://frmas.free.fr/files/
 
-MAINTAINER=	pat@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shows which portion of the Earth's surface is illuminated by the Sun
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \

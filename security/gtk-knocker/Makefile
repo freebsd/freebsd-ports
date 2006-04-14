@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=	gtk-
 DISTNAME=	gtk-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	pat@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple and easy to use TCP only port scanner (GTK+ version)
 
 USE_X_PREFIX=	yes

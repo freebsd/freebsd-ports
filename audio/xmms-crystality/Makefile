@@ -13,7 +13,7 @@ MASTER_SITES=	http://fanthom.math.put.poznan.pl/~gyver/crystality/
 PKGNAMEPREFIX=	xmms-
 DISTNAME=	${PORTNAME}-plugin-${PORTVERSION}
 
-MAINTAINER=	pat@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Realtime XMMS plugin for remastering mp3 sound
 
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms

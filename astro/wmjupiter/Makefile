@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	astro windowmaker
 MASTER_SITES=	http://www.inxsoft.net/wmjupiter/
 
-MAINTAINER=	pat@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dockapp that displays information on jupiter
 
 PLIST_FILES=	bin/wmJupiter

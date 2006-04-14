@@ -12,7 +12,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://volnorm.sourceforge.net/
 PKGNAMEPREFIX=	xmms-
 
-MAINTAINER=	pat@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Volume Normalizer plugin for XMMS
 
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms

@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.ne.jp/asahi/linux/timecop/software/
 PKGNAMESUFFIX=	-gdk
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
-MAINTAINER=	pat@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	wmcube-gdk is a modified version of the dockapp wmCube
 
 USE_X_PREFIX=	yes

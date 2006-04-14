@@ -11,7 +11,7 @@ CATEGORIES=	games net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	pat@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A command line program to query game servers on the net
 
 GNU_CONFIGURE=	yes

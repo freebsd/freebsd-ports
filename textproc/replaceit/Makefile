@@ -10,7 +10,7 @@ PORTVERSION=	1.0.0
 CATEGORIES=	textproc
 MASTER_SITES=	http://pldaniels.com/replaceit/
 
-MAINTAINER=	pat@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A light replacement to the combination of sed/awk/grep/head/tail
 
 PLIST_FILES=	bin/replaceit

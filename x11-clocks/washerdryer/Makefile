@@ -12,7 +12,7 @@ CATEGORIES=	x11-clocks windowmaker
 MASTER_SITES=	http://lucille.dhs.org/
 DISTNAME=	washerDryer-${PORTVERSION}
 
-MAINTAINER=	pat@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A dockapp that keeps track of the loads in your washer and dryer
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/washerDryer

@@ -13,7 +13,7 @@ CATEGORIES=	net games
 MASTER_SITES=	http://tadpol.org/projects/binaries/
 DISTNAME=	gkrellm_qst-${PORTVERSION}
 
-MAINTAINER=	pat@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plugin for Gkrellm that displays updated info on several game servers
 
 BUILD_DEPENDS=	${X11BASE}/include/gkrellm/gkrellm.h:${PORTSDIR}/sysutils/gkrellm
