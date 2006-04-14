@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.0w.ru/httpd/
 DISTNAME=	0W-httpd-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 
-MAINTAINER=	vsevolod@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight and fast http server
 
 USE_GMAKE=	yes

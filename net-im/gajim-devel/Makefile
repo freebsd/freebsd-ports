@@ -10,7 +10,7 @@ PORTVERSION=	0.9.1
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.gajim.org/downloads/
 
-MAINTAINER=	vsevolod@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gajim is a Jabber client based on a plugin system
 
 LIB_DEPENDS=	gtkspell.0:${PORTSDIR}/textproc/gtkspell2

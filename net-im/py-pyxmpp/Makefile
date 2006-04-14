@@ -11,7 +11,7 @@ CATEGORIES=	net-im python
 MASTER_SITES=	http://jabberstudio.2nw.net/pyxmpp/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	vsevolod@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Python XMPP library
 
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2:install

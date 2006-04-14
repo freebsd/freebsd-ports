@@ -12,7 +12,7 @@ CATEGORIES=	textproc python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	archmage
 
-MAINTAINER=	vsevolod@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extensible reader/decompiler of files in CHM format
 
 LIB_DEPENDS=	chm.0:${PORTSDIR}/misc/chmlib

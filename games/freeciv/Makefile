@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.freeciv.org/pub/freeciv/stable/ \
 		ftp://ftp.netc.pt/pub/freeciv/stable/ \
 		ftp://ftp.pvv.ntnu.no/pub/freeciv/stable/
 
-MAINTAINER?=	vsevolod@FreeBSD.org
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	A civilisation clone for X11; multiplayer
 
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \

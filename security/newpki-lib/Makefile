@@ -11,7 +11,7 @@ CATEGORIES=	security devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	newpki
 
-MAINTAINER=	vsevolod@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ PKI libraries from newpki project
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-2.0.0
