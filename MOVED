@@ -2248,3 +2248,4 @@ www/linux-flashplugin7||2006-04-08|Removed due to license problem
 net/nic||2006-04-08|Deprecated for a long time
 www/flashpluginwrapper||2006-04-08|Removed as it depends on linux-flashplugin
 mail/mew-mule||2006-04-10|Has expired: Does not work on the current emacs port
+net/smbfs||2006-04-14|Incorporated into base system long ago
