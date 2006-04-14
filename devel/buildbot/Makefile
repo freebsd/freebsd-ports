@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	kwm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Automated system from compile/test cycle to validate code changes
 
 RUN_DEPENDS=	mktap:${PORTSDIR}/devel/py-twisted

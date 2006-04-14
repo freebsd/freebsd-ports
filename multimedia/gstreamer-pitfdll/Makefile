@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pitfdll
 DISTNAME=	pitfdll-${PORTVERSION}
 
-MAINTAINER=	kwm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GStreamer DLL loader plugin
 
 RUN_DEPENDS=	${LOCALBASE}/lib/win32/wmv8ds32.ax:${PORTSDIR}/multimedia/win32-codecs

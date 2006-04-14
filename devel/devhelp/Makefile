@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C,^([[:digit:]]+\.[[:digit:]]+).*,\1,}
 DIST_SUBDIR=	gnome2
 
-MAINTAINER=	kwm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Developer help browser for GNOME 2
 
 BUILD_DEPENDS=	${X11BASE}/lib/${MOZILLA}/components/libwidget_gtk2.so:${PORTSDIR}/www/${MOZILLA}

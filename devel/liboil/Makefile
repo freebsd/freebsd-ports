@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://liboil.freedesktop.org/download/
 
-MAINTAINER=	kwm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library of optimized inner loops
 
 USE_GNOME=	glib20

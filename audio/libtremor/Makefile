@@ -12,7 +12,7 @@ MASTER_SITES=	http://members.chello.nl/~g.mast/distfiles/
 DISTNAME=	tremor_snapshot_${SNAP_DATE}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	kwm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Integer-only fully Ogg Vorbis compliant decoder library
 
 SNAP_DATE=	02132004

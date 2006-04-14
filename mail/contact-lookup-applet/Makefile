@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.burtonini.com/computing/
 PKGNAMESUFFIX=	-lookup-applet
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
-MAINTAINER=	kwm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gnome panel applet for easy Evolution contact book access
 
 USE_GMAKE=	yes

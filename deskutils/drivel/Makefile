@@ -12,7 +12,7 @@ CATEGORIES=	deskutils gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	kwm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Gnome livejournal client
 
 LIB_DEPENDS=	curl.3:${PORTSDIR}/ftp/curl

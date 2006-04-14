@@ -12,7 +12,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	libvisual
 
-MAINTAINER=	kwm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Set of plugins for the libvisual framework
 
 LIB_DEPENDS=	visual.0:${PORTSDIR}/graphics/libvisual

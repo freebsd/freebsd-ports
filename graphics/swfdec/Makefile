@@ -12,7 +12,7 @@ PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.schleef.org/swfdec/download/
 
-MAINTAINER=	kwm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Flash Rendering Library
 
 LIB_DEPENDS=	mad.2:${PORTSDIR}/audio/libmad \
