@@ -28,7 +28,6 @@ COMMENT=	The Berkeley DB package, revision 4.4
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/build_unix
 
-USE_REINPLACE=		yes
 INSTALLS_SHLIB=		yes
 GNU_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	../dist/configure
