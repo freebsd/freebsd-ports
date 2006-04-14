@@ -10,10 +10,36 @@
 +use lib qw(%%PREFIX%%/smokeping/lib);
  use CGI::Carp qw(fatalsToBrowser);
  
- use Smokeping 2.000005;
+ use Smokeping 2.000008;
  
 -Smokeping::cgi("/home/oetiker/data/projects/AADJ-smokeping/dist/etc/config");
 +Smokeping::cgi("%%PREFIX%%/etc/smokeping/config");
  
  =head1 NAME
+ 
+@@ -34,23 +34,8 @@
+ 
+ =head1 SETUP
+ 
+-When installing SmokePing, this file has to be adjusted to fit your
+-local system. Three paths have to be entered.
+-
+- use lib qw(/usr/pack/rrdtool-1.0.33-to/lib/perl);
+-
+-One pointing to your B<rrdtool> installation
+-
+- use lib qw(/home/oetiker/public_html/smokeping/lib);
+-
+-One pointing to the place where you have installed the SmokePing libraries
+-
+- use Smokeping;
+-
+- Smokeping::cgi("/home/oetiker/.smokeping/config");
+-
+-The third path is the argument to the Smokeping::cgi command. It points to
+-the SmokePing configuration file.
+++When installing SmokePing, this file has been adjusted to fit your
+++local system. There should be no need for further path adjustments.
+ 
+ =head1 COPYRIGHT
  

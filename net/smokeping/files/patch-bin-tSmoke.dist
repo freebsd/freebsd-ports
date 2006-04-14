@@ -14,7 +14,7 @@
 -use lib "/usr/local/rrdtool-1.0.39/lib/perl";
 +use lib qw(%%PREFIX%%/smokeping/lib);
  
- use Smokeping 2.000001;
+ use Smokeping 2.000008;
  use Net::SMTP;
 @@ -60,7 +59,7 @@
  use RRDs;
