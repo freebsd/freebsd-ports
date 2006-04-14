@@ -9298,6 +9298,7 @@ p5-WDDX		ports/textproc/p5-WDDX
 p5-WWW-Babelfish	ports/www/p5-WWW-Babelfish
 p5-WWW-Curl	ports/www/p5-WWW-Curl
 p5-WWW-Dilbert	ports/www/p5-WWW-Dilbert
+p5-WWW-Google-SiteMap	ports/textproc/p5-WWW-Google-SiteMap
 p5-WWW-IMDb	ports/www/p5-WWW-IMDb
 p5-WWW-Link	ports/www/p5-WWW-Link
 p5-WWW-Mechanize	ports/www/p5-WWW-Mechanize
