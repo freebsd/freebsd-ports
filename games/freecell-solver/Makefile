@@ -7,8 +7,8 @@
 #
 
 PORTNAME=	freecell-solver
-PORTVERSION=	2.8.11
-PORTREVISION=	1
+PORTVERSION=	2.8.12
+PORTREVISION=	0
 CATEGORIES=	games
 MASTER_SITES=	http://download.berlios.de/fc-solve/
 
@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A program that automatically solves games of Freecell
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+USE_GNOME=	gnometarget
 INSTALLS_SHLIB=	yes
 
 MAN6=	fc-solve-board_gen.6 fc-solve.6 \
