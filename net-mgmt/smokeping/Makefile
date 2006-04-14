@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	smokeping
-PORTVERSION=	2.0.5
+PORTVERSION=	2.0.8
 CATEGORIES=	net www
 MASTER_SITES=	http://people.ee.ethz.ch/~oetiker/webtools/smokeping/pub/
 
@@ -69,7 +69,6 @@ RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS
 .endif
 
 NO_BUILD=	yes
-USE_REINPLACE=	yes
 USE_PERL5=	yes
 
 MAN1=		smokeping.1 \
