@@ -7,6 +7,7 @@
 
 PORTNAME=	pinfo
 PORTVERSION=	0.6.9
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://alioth.debian.org/download.php/1502/
 
