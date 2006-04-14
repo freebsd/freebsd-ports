@@ -242,6 +242,7 @@
     SUBDIR += jack
     SUBDIR += jamboree
     SUBDIR += java-xmms2
+    SUBDIR += jid3lib
     SUBDIR += juk
     SUBDIR += juke
     SUBDIR += jxm
