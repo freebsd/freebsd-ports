@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mt-daapd
-PORTVERSION=	0.2.3
-PORTREVISION=	1
+PORTVERSION=	0.2.4
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mt-daapd
@@ -40,7 +39,7 @@ pre-install:
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
 .for i in README AUTHORS COPYING CREDITS \
 	ChangeLog INSTALL NEWS TODO
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
@@ -52,8 +51,8 @@ post-install:
 	${SED} ${FILES_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${FILESDIR}/mt-daapd.conf > ${WRKDIR}/mt-daapd.conf
 	${INSTALL_DATA} ${WRKDIR}/mt-daapd.conf ${PREFIX}/etc/mt-daapd.conf.sample
-	${MKDIR} ${PREFIX}/var/mt-daapd/db
-	${MKDIR} ${PREFIX}/share/mt-daapd/mp3
+	@${MKDIR} ${PREFIX}/var/mt-daapd/db
+	@${MKDIR} ${PREFIX}/share/mt-daapd/mp3
 	${CHMOD} 0755 ${PREFIX}/var/mt-daapd/db
 	${CHMOD} 0755 ${PREFIX}/share/mt-daapd/mp3
 	${CHOWN} ${DAAPD_USER}:${DAAPD_GROUP} ${PREFIX}/var/mt-daapd/db
