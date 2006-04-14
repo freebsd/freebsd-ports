@@ -10,7 +10,7 @@ PORTVERSION=	4.4.7
 CATEGORIES=	misc
 MASTER_SITES=	http://www.catb.org/~esr/jargon/
 
-MAINTAINER=	sf@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The famous jargon file
 
 NO_BUILD=	yes

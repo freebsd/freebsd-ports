@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://8ne.sakura.ne.jp:20008/chika/unitbase/xsys35/down/
 
-MAINTAINER=	sf@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	AliceSoft System 3.5/3.6/3.8/3.9 on X Window System
 
 LIB_DEPENDS=	vorbis.3:${PORTSDIR}/audio/libvorbis \
