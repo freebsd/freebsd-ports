@@ -12,7 +12,7 @@ CATEGORIES=	security net
 MASTER_SITES=	http://www.mirrors.wiretapped.net/security/packet-construction/rain/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/beta/}
 
-MAINTAINER=	pat@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Rain is a packeting tool used for testing system stability
 
 GNU_CONFIGURE=	yes

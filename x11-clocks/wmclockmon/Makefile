@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	x11-clocks windowmaker
 MASTER_SITES=	http://tnemeth.free.fr/projets/programmes/
 
-MAINTAINER=	pat@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A digital clock dockapp with a similar look to wmcpuload
 
 USE_X_PREFIX=	yes

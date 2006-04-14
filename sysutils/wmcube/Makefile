@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	http://kling.mine.nu/files/
 
-MAINTAINER=	pat@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Window Maker dockapp that displays cpu load and a realtime 3d object
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/${PORTNAME}

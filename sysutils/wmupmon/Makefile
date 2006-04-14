@@ -10,7 +10,7 @@ PORTVERSION=	0.1.3
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	http://j-z-s.com/projects/downloads/
 
-MAINTAINER=	pat@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An uptime showing dockapp with a similar look to wmcpuload
 
 USE_BZIP2=	yes

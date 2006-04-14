@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	converters
 MASTER_SITES=	http://www.hibernaculum.net/download/
 
-MAINTAINER=	pat@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A program to convert between the 4 common bases used in programming
 
 PLIST_FILES=	bin/gbase

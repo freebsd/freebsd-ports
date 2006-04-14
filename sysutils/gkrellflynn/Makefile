@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://horus.comlab.uni-rostock.de/flynn/
 
-MAINTAINER=	pat@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Flynn is a tiny system load meter for gkrellm
 
 BUILD_DEPENDS=	${X11BASE}/include/gkrellm/gkrellm.h:${PORTSDIR}/sysutils/gkrellm

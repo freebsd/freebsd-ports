@@ -12,7 +12,7 @@ CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	pat@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Menu converter between varieties of Window Managers
 
 USE_X_PREFIX=	yes

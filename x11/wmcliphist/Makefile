@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	x11 windowmaker
 MASTER_SITES=	http://linux.nawebu.cz/wmcliphist/
 
-MAINTAINER=	pat@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Clipboard history management dockapp for Window Maker
 
 USE_X_PREFIX=	yes

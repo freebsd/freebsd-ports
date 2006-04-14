@@ -12,7 +12,7 @@ CATEGORIES=	print windowmaker
 MASTER_SITES=	http://www.ur.uklinux.net/wmlpq/dl/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	pat@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Print queue monitoring dockapp for Window Maker
 
 LIB_DEPENDS=	dockapp.2:${PORTSDIR}/x11-wm/libdockapp

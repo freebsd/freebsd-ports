@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	x11 windowmaker
 MASTER_SITES=	http://dockapps.org/files/155/541/
 
-MAINTAINER=	pat@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Showing moving blobs
 
 USE_X_PREFIX=	yes

@@ -11,7 +11,7 @@ CATEGORIES=	mail windowmaker
 MASTER_SITES=	http://bart.sm.luth.se/~dansun-8/software/wmMultiPop3/
 DISTNAME=	wmMultiPop3-${PORTVERSION}
 
-MAINTAINER=	pat@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A WindowMaker dockapp that checks multiple pop3 accounts for new mail
 
 BUILD_WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}

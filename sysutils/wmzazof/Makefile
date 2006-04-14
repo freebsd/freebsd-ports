@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	http://users.chello.be/cr49940//wmzazof/
 
-MAINTAINER=	pat@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple dockapp that displays the uptime, free and used memory
 
 LIB_DEPENDS=	dockapp.2:${PORTSDIR}/x11-wm/libdockapp

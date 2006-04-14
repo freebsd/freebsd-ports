@@ -11,7 +11,7 @@ CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	http://www.kitenet.net/programs/wmbattery/old/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	pat@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Window Maker dockapp that displays info about your battery
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

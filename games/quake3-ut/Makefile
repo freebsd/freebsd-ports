@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.snt.utwente.nl/pub/games/urbanterror/
 PKGNAMEPREFIX=	${Q3PKGNAMEPREFIX}
 DISTNAME=	urbanTerror${PORTVERSION:S/.//}_full
 
-MAINTAINER=	pat@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quake III Arena Mod: Urban Terror
 
 USE_ZIP=	yes

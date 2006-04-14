@@ -10,7 +10,7 @@ PORTVERSION=	0.5.0
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	http://www.sh.rim.or.jp/~ssato/src/
 
-MAINTAINER=	pat@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ticker dockapp for Window Maker
 
 USE_BZIP2=	yes

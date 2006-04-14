@@ -15,7 +15,7 @@ DISTNAME=	linuxq3apoint-${DISTVERSION}.x86
 EXTRACT_SUFX=	.run
 DIST_SUBDIR=	${Q3PKGNAMEPREFIX}data
 
-MAINTAINER=	pat@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quake III Arena for Linux
 
 ONLY_FOR_ARCHS=	i386

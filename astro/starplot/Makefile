@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	astro
 MASTER_SITES=	http://starplot.org/downloads/
 
-MAINTAINER=	pat@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	3-dimensional viewer for star charts
 
 USE_X_PREFIX=	yes

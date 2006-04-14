@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	pat@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An educational typing tutor starring Tux the Linux Penguin
 
 USE_SDL=	image mixer sdl

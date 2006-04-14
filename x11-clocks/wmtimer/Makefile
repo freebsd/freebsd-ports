@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	x11-clocks windowmaker
 MASTER_SITES=	http://www.darkops.net/wmtimer/
 
-MAINTAINER=	pat@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-Function timer dockapp for WindowMaker
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/wmtimer

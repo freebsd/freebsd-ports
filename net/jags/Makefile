@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://sumpan.campus.luth.se/software/jags/download/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	pat@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	JAGS - Just Another GTK+ Samba Client
 
 NO_LATEST_LINK=	yes

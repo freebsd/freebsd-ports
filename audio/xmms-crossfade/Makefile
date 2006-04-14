@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.eisenlohr.org/xmms-crossfade/
 
-MAINTAINER=	pat@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XMMS Output plugin for crossfading between songs
 
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms

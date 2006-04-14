@@ -10,7 +10,7 @@ PORTVERSION=	1.2
 CATEGORIES=	lang lisp
 MASTER_SITES=	http://www.sigala.it/sandro/files/
 
-MAINTAINER=	pat@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple Lisp interpreter
 
 GNU_CONFIGURE=	yes

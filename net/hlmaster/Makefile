@@ -11,7 +11,7 @@ CATEGORIES=	net games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	pat@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Half-Life game master server daemon
 
 GNU_CONFIGURE=	yes
