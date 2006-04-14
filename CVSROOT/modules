@@ -8637,6 +8637,7 @@ p5-Module-Starter	ports/devel/p5-Module-Starter
 p5-Module-Starter-PBP	ports/devel/p5-Module-Starter-PBP
 p5-Module-Versions-Report	ports/devel/p5-Module-Versions-Report
 p5-Mon		ports/net-mgmt/p5-Mon
+p5-Moose	ports/devel/p5-Moose
 p5-MusicBrainz-Client	ports/audio/p5-MusicBrainz-Client
 p5-MusicBrainz-Queries	ports/audio/p5-MusicBrainz-Queries
 p5-MusicBrainz-TRM	ports/audio/p5-MusicBrainz-TRM
