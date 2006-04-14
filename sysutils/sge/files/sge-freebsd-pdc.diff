@@ -1,0 +1,366 @@
+--- daemons/common/pdc.c.orig	Thu Sep  1 02:09:04 2005
++++ daemons/common/pdc.c	Thu Apr 13 22:05:15 2006
+@@ -118,6 +118,16 @@
+ #include "sge_unistd.h"
+ #endif
+ 
++#if defined(FREEBSD)
++#include <sys/param.h>
++#include <sys/sysctl.h>
++#include <sys/user.h>
++
++#include <fcntl.h>
++#include <kvm.h>
++#include <limits.h>
++#endif
++
+ #if defined(LINUX) || defined(ALPHA) || defined(IRIX) || defined(SOLARIS) || defined(DARWIN) || defined (FREEBSD) || defined(NETBSD)
+ 
+ #include "sge_os.h"
+@@ -188,12 +198,57 @@
+    }
+ #endif
+ 
+-#if defined(LINUX) || defined(SOLARIS) || defined(ALPHA)
++#if defined(LINUX) || defined(SOLARIS) || defined(ALPHA) || defined(FREEBSD)
+ 
+ void pdc_kill_addgrpid(gid_t add_grp_id, int sig,
+    tShepherd_trace shepherd_trace)
+ {
++#if defined(LINUX) || defined(SOLARIS) || defined(ALPHA)
+    procfs_kill_addgrpid(add_grp_id, sig, shepherd_trace);      
++#elif defined(FREEBSD)
++   kvm_t *kd;
++   int i, nprocs;
++   struct kinfo_proc *procs;
++   char kerrbuf[_POSIX2_LINE_MAX];
++
++   kd = kvm_openfiles(NULL, NULL, NULL, O_RDONLY, kerrbuf);
++   if (kd == NULL) {
++#if DEBUG
++      fprintf(stderr, "kvm_getprocs: error %s\n", kerrbuf);
++#endif
++      return;
++   }
++
++   procs = kvm_getprocs(kd, KERN_PROC_ALL, 0, &nprocs);
++   if (procs == NULL) {
++#if DEBUG
++      fprintf(stderr, "kvm_getprocs: error %s\n", kvm_geterr(kd));
++#endif
++      kvm_close(kd);
++      return;
++   }
++   for (; nprocs >= 0; nprocs--, procs++) {
++      for (i = 0; i < procs->ki_ngroups; i++) {
++         if (procs->ki_groups[i] == add_grp_id) {
++	    char err_str[256];
++
++	    if (procs->ki_uid != 0 && procs->ki_ruid != 0 &&
++		procs->ki_svuid != 0 &&
++		procs->ki_rgid != 0 && procs->ki_svgid != 0) {
++	       kill(procs->ki_pid, sig);
++	       sprintf(err_str, MSG_SGE_KILLINGPIDXY_UI ,
++		       sge_u32c(procs->ki_pid), add_grp_id);
++	    } else {
++	       sprintf(err_str, MSG_SGE_DONOTKILLROOTPROCESSXY_UI ,
++		       sge_u32c(procs->ki_pid), add_grp_id);
++	    }
++	    if (shepherd_trace)
++	       shepherd_trace(err_str);
++	 }
++      }
++   }
++   kvm_close(kd);
++#endif
+ }
+ #endif
+ 
+@@ -1404,6 +1459,95 @@
+          ; 
+       pt_close();
+    }
++#elif defined(FREEBSD)
++   {
++      kvm_t *kd;
++      int i, nprocs;
++      struct kinfo_proc *procs;
++      char kerrbuf[_POSIX2_LINE_MAX];
++      job_elem_t *job_elem;
++      double old_time = 0.0;
++      uint64 old_vmem = 0;
++ 
++      kd = kvm_openfiles(NULL, NULL, NULL, O_RDONLY, kerrbuf);
++      if (kd == NULL) {
++#if DEBUG
++         fprintf(stderr, "kvm_getprocs: error %s\n", kerrbuf);
++#endif
++         DEXIT;
++         return -1;
++      }
++
++      procs = kvm_getprocs(kd, KERN_PROC_ALL, 0, &nprocs);
++      if (procs == NULL) {
++#if DEBUG
++         fprintf(stderr, "kvm_getprocs: error %s\n", kvm_geterr(kd));
++#endif
++         kvm_close(kd);
++         DEXIT;
++         return -1;
++      }
++      for (; nprocs >= 0; nprocs--, procs++) {
++         for (curr=job_list.next; curr != &job_list; curr=curr->next) {
++            job_elem = LNK_DATA(curr, job_elem_t, link);
++
++            for (i = 0; i < procs->ki_ngroups; i++) {
++               if (job_elem->job.jd_jid == procs->ki_groups[i]) {
++                  lnk_link_t  *curr2;
++                  proc_elem_t *proc_elem;
++                  int newprocess;
++
++		  newprocess = 1;
++		  if (job_elem->job.jd_proccount != 0) {
++                     for (curr2=job_elem->procs.next; curr2 != &job_elem->procs; curr2=curr2->next) {
++                        proc_elem = LNK_DATA(curr2, proc_elem_t, link);
++
++                        if (proc_elem->proc.pd_pid == procs->ki_pid) {
++                           newprocess = 0;
++                           break;
++                        }
++		     }
++		  }
++                  if (newprocess) {
++                     proc_elem = malloc(sizeof(proc_elem_t));
++                     if (proc_elem == NULL) {
++			 kvm_close(kd);
++                        DEXIT;
++                        return 0;
++                     }
++
++                     memset(proc_elem, 0, sizeof(proc_elem_t));
++                     proc_elem->proc.pd_length = sizeof(psProc_t);
++                     proc_elem->proc.pd_state  = 1; /* active */
++                     proc_elem->proc.pd_pstart = procs->ki_start.tv_sec;
++
++                     LNK_ADD(job_elem->procs.prev, &proc_elem->link);
++                     job_elem->job.jd_proccount++;
++                  } else {
++                     /* save previous usage data - needed to build delta usage */
++                     old_time = proc_elem->proc.pd_utime + proc_elem->proc.pd_stime;
++                     old_vmem  = proc_elem->vmem;
++                  }
++                  proc_elem->proc.pd_tstamp = time_stamp;
++                  proc_elem->proc.pd_pid    = procs->ki_pid;
++
++                  proc_elem->proc.pd_utime  = procs->ki_rusage.ru_utime.tv_sec;
++                  proc_elem->proc.pd_stime  = procs->ki_rusage.ru_stime.tv_sec;
++
++                  proc_elem->proc.pd_uid    = procs->ki_uid;
++                  proc_elem->proc.pd_gid    = procs->ki_rgid;
++                  proc_elem->vmem           = procs->ki_size;
++                  proc_elem->rss            = procs->ki_rssize;
++
++                  proc_elem->mem = ((proc_elem->proc.pd_stime + proc_elem->proc.pd_utime) - old_time) *
++                                   (( old_vmem + proc_elem->vmem)/2);
++	       }
++	    }
++         }
++      }
++
++      kvm_close(kd);
++   }
+ #elif defined(NECSX4) || defined(NECSX5)
+    {
+       for (curr=job_list.next; curr != &job_list; curr=curr->next) {
+@@ -1951,7 +2095,7 @@
+ 
+       }
+ 
+-#elif defined(ALPHA) || defined(LINUX) || defined(SOLARIS)
++#elif defined(ALPHA) || defined(LINUX) || defined(SOLARIS) || defined(FREEBSD)
+       {
+          int proccount;
+          lnk_link_t *currp, *nextp;
+--- daemons/common/pdc.h.orig	Mon Feb  9 06:06:49 2004
++++ daemons/common/pdc.h	Thu Apr 13 22:00:01 2006
+@@ -187,7 +187,7 @@
+    int sup_groups_in_proc(void);
+ #endif
+ 
+-#if defined(ALPHA) || defined(LINUX) || defined(SOLARIS)
++#if defined(ALPHA) || defined(LINUX) || defined(SOLARIS) || defined(FREEBSD)
+    void pdc_kill_addgrpid(gid_t, int, tShepherd_trace);
+ #endif
+ 
+--- daemons/common/setosjobid.c.orig	Tue May  3 02:18:19 2005
++++ daemons/common/setosjobid.c	Thu Apr 13 22:00:01 2006
+@@ -126,7 +126,7 @@
+    sprintf(err_str, "setosjobid: uid = "pid_t_fmt", euid = "pid_t_fmt, getuid(), geteuid());
+    shepherd_trace(err_str);
+ 
+-#  if defined(SOLARIS) || defined(ALPHA) || defined(LINUX)
++#  if defined(SOLARIS) || defined(ALPHA) || defined(LINUX) || defined(FREEBSD)
+       /* Read SgeId from config-File and create Addgrpid-File */
+       {  
+          char *cp;
+--- daemons/execd/exec_job.c.orig	Wed Nov 23 03:03:59 2005
++++ daemons/execd/exec_job.c	Thu Apr 13 22:06:17 2006
+@@ -106,7 +106,7 @@
+ extern char execd_spool_dir[SGE_PATH_MAX];
+ 
+ #if COMPILE_DC
+-#if defined(SOLARIS) || defined(ALPHA) || defined(LINUX)
++#if defined(SOLARIS) || defined(ALPHA) || defined(LINUX) || defined(FREEBSD)
+ /* local functions */
+ static int addgrpid_already_in_use(long);
+ static long get_next_addgrpid(lList *, long);
+@@ -143,7 +143,7 @@
+ }
+ 
+ #if COMPILE_DC
+-#if defined(SOLARIS) || defined(ALPHA) || defined(LINUX)
++#if defined(SOLARIS) || defined(ALPHA) || defined(LINUX) || defined(FREEBSD)
+ static long get_next_addgrpid(
+ lList *rlp,
+ long last_addgrpid 
+@@ -245,7 +245,7 @@
+    char dce_wrapper_cmd[128];
+ 
+ #if COMPILE_DC
+-#if defined(SOLARIS) || defined(ALPHA) || defined(LINUX)
++#if defined(SOLARIS) || defined(ALPHA) || defined(LINUX) || defined(FREEBSD)
+    static gid_t last_addgrpid;
+ #endif
+ #endif   
+@@ -778,7 +778,7 @@
+ 
+    #ifdef COMPILE_DC
+ 
+-   #  if defined(SOLARIS) || defined(ALPHA) || defined(LINUX)
++   #  if defined(SOLARIS) || defined(ALPHA) || defined(LINUX) || defined(FREEBSD)
+ 
+       {
+          lList *rlp = NULL;
+--- daemons/execd/execd_ck_to_do.c.orig	Wed Nov  2 08:03:13 2005
++++ daemons/execd/execd_ck_to_do.c	Thu Apr 13 22:07:18 2006
+@@ -913,7 +913,7 @@
+    FILE *fp;
+    SGE_STRUCT_STAT sb;
+ 
+-#if defined(SOLARIS) || defined(ALPHA) || defined(LINUX) 
++#if defined(SOLARIS) || defined(ALPHA) || defined(LINUX) || defined(FREEBSD)
+    gid_t addgrpid;
+    dstring addgrpid_path = DSTRING_INIT;
+ #else   
+@@ -928,7 +928,7 @@
+       pe_task_id = lGetString(pe_task, PET_id);
+    }
+ 
+-#if defined(SOLARIS) || defined(ALPHA) || defined(LINUX)
++#if defined(SOLARIS) || defined(ALPHA) || defined(LINUX) || defined(FREEBSD)
+    /**
+     ** read additional group id and use it as osjobid 
+     **/
+--- daemons/execd/ptf.c.orig	Tue Nov 22 07:35:00 2005
++++ daemons/execd/ptf.c	Thu Apr 13 22:08:27 2006
+@@ -44,7 +44,7 @@
+ 
+ #if defined(COMPILE_DC) || defined(MODULE_TEST)
+ 
+-#if defined(IRIX) || defined(ALPHA) || defined(LINUX) || defined(SOLARIS) || defined(NECSX4) || defined(NECSX5) || !defined(MODULE_TEST)
++#if defined(IRIX) || defined(ALPHA) || defined(LINUX) || defined(SOLARIS) || defined(NECSX4) || defined(NECSX5) || !defined(MODULE_TEST) || defined(FREEBSD)
+ #   define USE_DC
+ #endif
+ 
+@@ -82,7 +82,7 @@
+ #  include <sys/category.h>
+ #endif
+ 
+-#if defined(ALPHA) || defined(SOLARIS) || defined(LINUX)
++#if defined(ALPHA) || defined(SOLARIS) || defined(LINUX) || defined(FREEBSD)
+ #  include <sys/resource.h>
+ #endif
+ 
+@@ -217,7 +217,7 @@
+ 
+ static void ptf_setpriority_jobid(lListElem *job, lListElem *osjob, long pri);
+ 
+-#elif defined(ALPHA) || defined(SOLARIS) || defined(LINUX)
++#elif defined(ALPHA) || defined(SOLARIS) || defined(LINUX) || defined(FREEBSD)
+ 
+ static void ptf_setpriority_addgrpid(lListElem *job, lListElem *osjob,
+                                      long pri);
+@@ -365,7 +365,7 @@
+       lSetDouble(usage, UA_value, 0);
+       lAppendElem(usage_list, usage);
+ 
+-#if defined(ALPHA) || defined(LINUX) || defined(SOLARIS)
++#if defined(ALPHA) || defined(LINUX) || defined(SOLARIS) || defined(FREBSD)
+       usage = lCreateElem(UA_Type);
+       lSetString(usage, UA_name, USAGE_ATTR_VMEM);
+       lSetDouble(usage, UA_value, 0);
+@@ -494,7 +494,7 @@
+    ptf_setpriority_ash(job, osjob, pri);
+ #elif defined(CRAY) || defined(NECSX4) || defined(NECSX5)
+    ptf_setpriority_jobid(job, osjob, pri);
+-#elif defined(ALPHA) || defined(SOLARIS) || defined(LINUX)
++#elif defined(ALPHA) || defined(SOLARIS) || defined(LINUX) || defined(FREEBSD)
+    ptf_setpriority_addgrpid(job, osjob, pri);
+ #endif
+ }
+@@ -713,7 +713,7 @@
+    DEXIT;
+ }
+ 
+-#elif defined(ALPHA) || defined(SOLARIS) || defined(LINUX)
++#elif defined(ALPHA) || defined(SOLARIS) || defined(LINUX) || defined(FREEBSD)
+ 
+ /****** execd/ptf/ptf_setpriority_addgrpid() **********************************
+ *  NAME
+@@ -724,9 +724,9 @@
+ *                                       long *pri)
+ *
+ *  FUNCTION
+-*     This function is only available for the architecture SOLARIS, ALPHA and
+-*     LINUX. All processes belonging to "job" and "osjob" will get a new i
+-*     priority.
++*     This function is only available for the architecture SOLARIS, ALPHA,
++*     LINUX, and FREEBSD. All processes belonging to "job" and "osjob" will
++*     get a new priority.
+ *
+ *     This function assumes the the "max" priority is smaller than the "min"
+ *     priority.
+@@ -1981,7 +1981,7 @@
+       }
+    }
+ 
+-#elif defined(ALPHA) || defined(SOLARIS) || defined(LINUX)
++#elif defined(ALPHA) || defined(SOLARIS) || defined(LINUX) || defined(FREEBSD)
+    if (getuid() == 0) {
+       if (setpriority(PRIO_PROCESS, getpid(), PTF_MAX_PRIORITY) < 0) {
+          ERROR((SGE_EVENT, MSG_PRIO_SETPRIOFAILED_S, strerror(errno)));
+--- daemons/shepherd/shepherd.c.orig	Thu Dec  1 05:49:28 2005
++++ daemons/shepherd/shepherd.c	Thu Apr 13 22:00:01 2006
+@@ -2411,9 +2411,9 @@
+         kill(pid, sig);
+         sge_switch2admin_user();
+ 
+-#if defined(SOLARIS) || defined(LINUX) || defined(ALPHA) || defined(IRIX)
++#if defined(SOLARIS) || defined(LINUX) || defined(ALPHA) || defined(IRIX) || defined(FREEBSD)
+         if (first_kill == 0 || sig != SIGKILL || is_qrsh == false) {                        
+-#   if defined(SOLARIS) || defined(LINUX) || defined(ALPHA)
++#   if defined(SOLARIS) || defined(LINUX) || defined(ALPHA) || defined(FREEBSD)
+             if (atoi(get_conf_val("enable_addgrp_kill")) == 1) {
+                 gid_t add_grp_id;
+                 char *cp = search_conf_val("add_grp_id");
+--- libs/uti/sge_uidgid.c.orig	Wed Nov 23 03:04:09 2005
++++ libs/uti/sge_uidgid.c	Thu Apr 13 22:00:01 2006
+@@ -850,7 +850,7 @@
+ #endif
+ #endif /* WIN32 */
+  
+-#if defined(SOLARIS) || defined(ALPHA) || defined(LINUX)
++#if defined(SOLARIS) || defined(ALPHA) || defined(LINUX) || defined(FREEBSD)
+    /* add Additional group id to current list of groups */
+    if (add_grp) {
+       if (sge_add_group(add_grp, err_str) == -1) {
