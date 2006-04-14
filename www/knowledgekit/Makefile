@@ -8,12 +8,12 @@
 PORTNAME=	knowledgekit
 PORTVERSION=	1.6.7
 CATEGORIES=	www zope
-MASTER_SITES=	http://www.zope.org/Members/Bill/Products/KnowledgeKit/
+MASTER_SITES=	http://www.zope.org/Members/Bill/Products/KnowledgeKit/${PORTVERSION}/
 DISTNAME=	KnowledgeKit-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A mechanism for the automatic creation and maintenance of Knowledge Bases
+COMMENT=	A mechanism for the automatic creation/maintenance of Knowledge Bases
 
 RUN_DEPENDS=	${ZOPEBASEDIR}/skel/bin/zopectl.in:${PORTSDIR}/www/zope
 
