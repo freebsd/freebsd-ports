@@ -11,8 +11,13 @@ CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.lemis.com/pub/
 
 MAINTAINER=	grog@FreeBSD.Org
-COMMENT=	utility to set title on an xterm
+COMMENT=	Utility to set title on an xterm
 
 NO_WRKSUBDIR=	YES
+
+PLIST_FILES=	bin/xtset
+
+MAN1=		xtset.1
+MANCOMPRESSED=	yes
 
 .include <bsd.port.mk>
