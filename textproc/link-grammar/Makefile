@@ -6,21 +6,19 @@
 #
 
 PORTNAME=	link-grammar
-PORTVERSION=	4.1.3
-PORTREVISION=	1
+PORTVERSION=	4.2.2
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.abisource.com/downloads/${PORTNAME}/${PORTVERSION}/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A grammar checking library
 
-USE_GNOME=	gnometarget
+USE_GNOME=	gnometarget ltverhack
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
+USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
-GNU_CONFIGURE=	yes
 
-DOCS=		LICENSE README
+DOCS=		AUTHORS LICENSE MAINTAINERS README
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g' \
