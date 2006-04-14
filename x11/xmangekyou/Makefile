@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.seki.ee.kagu.tus.ac.jp/~sakai/myfreesoft/
 MAINTAINER=	sakai@seki.ee.kagu.tus.ac.jp
 COMMENT=	A kaleidoscope on X
 
+BROKEN=		does not fetch
+
 ALL_TARGET=	xmangekyou
 
 USE_X_PREFIX=	yes
