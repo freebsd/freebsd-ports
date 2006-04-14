@@ -17,6 +17,10 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A .bdf fonts/.xbm bitmaps/.xpm colored pixmaps/mouse cursor editor
 
+BROKEN=		does not fetch
+DEPRECATED=	old, old, old, unmaintained, no usable MASTER_SITES
+EXPIRATION_DATE=	2006-05-22
+
 USE_IMAKE=	yes
 USE_XPM=	yes
 
