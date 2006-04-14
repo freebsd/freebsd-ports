@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	SOAP-Lite
-PORTVERSION=	0.60a
+PORTVERSION=	0.67
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	SOAP
@@ -24,26 +24,40 @@ BUILD_DEPENDS=	${SITE_PERL}/MIME/Lite.pm:${PORTSDIR}/mail/p5-MIME-Lite \
 		${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-0.60
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--noprompt
 INSTALL_TARGET=	pure_install
-USE_REINPLACE=	yes
 
-MAN1=		SOAPsh.pl.1 XMLRPCsh.pl.1
+MAN1=		SOAPsh.pl.1 XMLRPCsh.pl.1 stubmaker.pl.1
 MAN3=		Apache::SOAP.3 \
 		Apache::XMLRPC::Lite.3 \
+		OldDocs::SOAP::Lite.3 \
+		OldDocs::SOAP::Transport::FTP.3 \
+		OldDocs::SOAP::Transport::HTTP.3 \
+		OldDocs::SOAP::Transport::IO.3 \
+		OldDocs::SOAP::Transport::JABBER.3 \
+		OldDocs::SOAP::Transport::LOCAL.3 \
+		OldDocs::SOAP::Transport::MAILTO.3 \
+		OldDocs::SOAP::Transport::MQ.3 \
+		OldDocs::SOAP::Transport::POP3.3 \
+		OldDocs::SOAP::Transport::TCP.3 \
+		SOAP::Client.3 \
+		SOAP::Constants.3 \
+		SOAP::Data.3 \
+		SOAP::Deserializer.3 \
+		SOAP::Fault.3 \
+		SOAP::Header.3 \
 		SOAP::Lite.3 \
+		SOAP::Packager.3 \
+		SOAP::SOM.3 \
+		SOAP::Schema.3 \
+		SOAP::Serializer.3 \
+		SOAP::Server.3 \
 		SOAP::Test.3 \
-		SOAP::Transport::FTP.3 \
-		SOAP::Transport::JABBER.3 \
-		SOAP::Transport::HTTP.3 \
-		SOAP::Transport::IO.3 \
-		SOAP::Transport::LOCAL.3 \
-		SOAP::Transport::MAILTO.3 \
-		SOAP::Transport::MQ.3 \
+		SOAP::Trace.3 \
+		SOAP::Transport.3 \
 		SOAP::Transport::POP3.3 \
-		SOAP::Transport::TCP.3 \
+		SOAP::Utils.3 \
 		UDDI::Lite.3 \
 		XML::Parser::Lite.3 \
 		XMLRPC::Lite.3 \
