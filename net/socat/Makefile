@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	socat
-PORTVERSION=	1.4.2.0
+PORTVERSION=	1.4.3.1
 CATEGORIES=	net
 MASTER_SITES=	http://www.dest-unreach.org/socat/download/
 
