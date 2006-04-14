@@ -10330,7 +10330,6 @@ ports_science	ports/science
 ports_security	ports/security
 ports_sendmail	ports/mail/sendmail
 ports_shells	ports/shells
-ports_smbfs	ports/net/smbfs
 ports_sysutils	ports/sysutils
 ports_tcpdump	ports/net/tcpdump
 ports_texinfo		ports/print/texinfo
