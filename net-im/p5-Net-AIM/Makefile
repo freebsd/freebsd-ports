@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	petef@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl extension for the AOL Instant Messenger TOC protocol
 
 PERL_CONFIGURE=	yes

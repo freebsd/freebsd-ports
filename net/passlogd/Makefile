@@ -10,7 +10,7 @@ PORTVERSION=	0.1e
 CATEGORIES=	net
 MASTER_SITES=	http://www.morphine.com/src/
 
-MAINTAINER=	petef@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Intercept and dump syslog remote log packets
 
 PLIST_FILES=	sbin/passlogd

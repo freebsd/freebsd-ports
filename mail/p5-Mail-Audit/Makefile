@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Mail
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	petef@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl module for creating easy mail filters
 
 BUILD_DEPENDS=	${SITE_PERL}/Net/Config.pm:${PORTSDIR}/net/p5-Net \

@@ -12,7 +12,7 @@ CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.billsgames.com/unix/x/explosions/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/^0.//}
 
-MAINTAINER=	petef@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	3D objects flying around resembling explosions with various effects
 
 USE_SDL=	sdl image

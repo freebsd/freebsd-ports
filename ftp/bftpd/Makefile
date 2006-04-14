@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	http://bftpd.sourceforge.net/downloads/src/
 
-MAINTAINER=	petef@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Very configurable FTP server that can do chroot easily
 
 GNU_CONFIGURE=	yes

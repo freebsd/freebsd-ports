@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Graphics
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	petef@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A perl class that defines RGB values for common color names
 
 BUILD_DEPENDS=	${SITE_PERL}/Module/Load.pm:${PORTSDIR}/devel/p5-Module-Load

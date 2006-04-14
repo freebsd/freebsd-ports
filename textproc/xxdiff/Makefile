@@ -11,7 +11,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	petef@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	QT interface to view/merge differences between 2 or 3 files
 
 BUILD_DEPENDS=	tmake:${PORTSDIR}/devel/tmake

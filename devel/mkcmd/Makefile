@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://archive.progeny.com/pundits/ \
 		ftp://ftp.physics.purdue.edu/pub/pundits/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	petef@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command-line parser and manual page generator
 
 BUILD_DEPENDS=	makeme:${PORTSDIR}/devel/msrc0

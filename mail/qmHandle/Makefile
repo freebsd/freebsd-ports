@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	qmhandle
 DISTNAME=	qmhandle-${PORTVERSION}
 
-MAINTAINER=	petef@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to view and manage a qmail queue
 
 USE_QMAIL_RUN=	yes

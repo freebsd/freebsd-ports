@@ -11,7 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://colorize.raszi.hu/downloads/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	petef@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A robust log colorizer
 
 RUN_DEPENDS=	${SITE_PERL}/Term/ANSIColor.pm:${PORTSDIR}/devel/p5-Term-ANSIColor

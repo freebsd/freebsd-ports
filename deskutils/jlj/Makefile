@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 PATCH_SITES=	http://www.atarininja.org/~wxs/patches/
 PATCHFILES=	jlj-tags-port.diff
 
-MAINTAINER=	petef@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Jerry's command-line LiveJournal.com entry system
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

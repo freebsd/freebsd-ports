@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	File/FTASSIN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=     petef@FreeBSD.org
+MAINTAINER=     ports@FreeBSD.org
 COMMENT=	A perl script to convert text files to PDF files
 
 PERL_CONFIGURE=	yes

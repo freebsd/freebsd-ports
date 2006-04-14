@@ -11,7 +11,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	http://www.happygiraffe.net/dist/
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	petef@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A class that provides an easy interface to use config files
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser

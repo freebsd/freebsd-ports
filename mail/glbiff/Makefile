@@ -12,7 +12,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://www.dgp.utoronto.ca/~mac/code/projects/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	petef@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Xbiff-like program for X Window System with nice 3D output
 
 LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut

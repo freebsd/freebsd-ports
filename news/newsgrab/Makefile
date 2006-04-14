@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	newsgrab
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	petef@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Download and uudecode binary files from USENET using regexps
 
 RUN_DEPENDS=	${SITE_PERL}/News/NNTPClient.pm:${PORTSDIR}/news/p5-NNTPClient \

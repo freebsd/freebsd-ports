@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=
 EXTRACT_ONLY=	${PORTNAME}
 
-MAINTAINER=	petef@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert a MySQL dump to a PostgreSQL dump
 
 .include <bsd.port.pre.mk>

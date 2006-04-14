@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://bellatrix.pcl.ox.ac.uk/~ben/dopewars/
 MASTER_SITE_SUBDIR=	dopewars
 
-MAINTAINER=	petef@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A UNIX rewrite of a game originally based on "Drug Wars"
 
 USE_GETTEXT=	yes

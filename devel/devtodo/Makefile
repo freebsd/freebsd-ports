@@ -10,7 +10,7 @@ PORTVERSION=	0.1.19
 CATEGORIES=	devel
 MASTER_SITES=	http://swapoff.org/files/devtodo/
 
-MAINTAINER=	petef@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to effectively maintain todo lists aimed at developers
 
 GNU_CONFIGURE=	yes

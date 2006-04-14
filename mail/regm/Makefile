@@ -10,7 +10,7 @@ PORTVERSION=	1.0
 CATEGORIES=	mail python
 MASTER_SITES=	http://hamete.org/regm/
 
-MAINTAINER=	petef@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extract messages from a mailbox using regular expressions
 
 PLIST_FILES=	bin/regm

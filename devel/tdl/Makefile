@@ -10,7 +10,7 @@ PORTVERSION=	1.5.2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.rpcurnow.force9.co.uk/tdl/
 
-MAINTAINER=	petef@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	To-do list manager
 
 HAS_CONFIGURE=	yes
