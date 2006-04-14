@@ -2,10 +2,7 @@ The DocBook DTD defines structural and content-based SGML markup
 for computer documentation, with a primary emphasis on software
 documentation and related classes of technical documents. Its
 main high-level hierarchical structures are for books, reference
-entries (for example, ``man pages''), and articles. It is
-maintained by the Davenport Group (about which see the Davenport
-archive at http://www.ora.com/davenport/ or
-ftp://ftp.ora.com/pub/davenport/).
+entries (for example, ``man pages''), and articles.
 
 This port contains DocBook 3.1
 
