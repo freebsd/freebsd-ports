@@ -16,7 +16,6 @@ COMMENT=	Pseudoserver to support mobile X11 clients
 
 WRKSRC=		${WRKDIR}/xmove
 
-USE_X_PREFIX=	yes
 USE_IMAKE=	yes
 
 MAN1=		xmove.1 xmovectrl.1
