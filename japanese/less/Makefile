@@ -21,7 +21,7 @@ PATCH_SITES=	http://www25.big.jp/~jam/less/
 PATCHFILES=	${DISTNAME}-iso${PORTVERSION:E}.patch.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	sf@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Less + zcat + ISO-2022 - a pager similar to more and pg
 
 GNU_CONFIGURE=	yes
