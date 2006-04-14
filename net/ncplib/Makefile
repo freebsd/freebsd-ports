@@ -10,7 +10,7 @@ PORTVERSION=	1.3.4
 CATEGORIES=	net
 MASTER_SITES=	http://rbp.chat.ru/pub/nwlib/
 
-MAINTAINER=	bp@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Client for Novell NetWare servers
 
 BROKEN=		Incorrect pkg-plist
