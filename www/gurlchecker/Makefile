@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	www gnome
 MASTER_SITES=	http://labs.libre-entreprise.org/download.php/${DOWNNUM}/
 
-MAINTAINER=	kwm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Gnome program to check a page/website for broken links
 
 LIB_DEPENDS=	gnutls.15:${PORTSDIR}/security/gnutls \

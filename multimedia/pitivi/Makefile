@@ -12,7 +12,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	kwm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gstreamer based non-linear audio/video editor
 
 BUILD_DEPENDS=	gnonlin-config:${PORTSDIR}/multimedia/gnonlin \

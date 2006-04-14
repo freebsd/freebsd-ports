@@ -13,7 +13,7 @@ MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst-editor/
 PKGNAMESUFFIX=	-editor
 DISTNAME=	gst-editor-${PORTVERSION}
 
-MAINTAINER=	kwm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Provide View and Controller counterparts to GStreamer's Model
 
 LIB_DEPENDS=	gstreamer-0.8.5:${PORTSDIR}/multimedia/gstreamer \

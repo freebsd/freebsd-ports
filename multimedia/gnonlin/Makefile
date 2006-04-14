@@ -12,7 +12,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	kwm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GStreamer extension library for non-linear editing
 
 LIB_DEPENDS=	gstreamer-0.8.5:${PORTSDIR}/multimedia/gstreamer

@@ -1,4 +1,4 @@
-# New ports collection makefile for:   libmusepack
+# New ports collection makefile for:   libmpcdec
 # Date created:        29 November 2004
 # Whom:                Koop Mast <kwm@FreeBSD.org>
 #
@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.saunalahti.fi/grimmel/musepack.net-files/source/
 
-MAINTAINER=	kwm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High quality audio compression format
 
 USE_BZIP2=	yes

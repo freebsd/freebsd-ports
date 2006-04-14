@@ -13,7 +13,7 @@ MASTER_SITES=	http://flapjack.navi.cx/releases/xchat-gnome/
 PKGNAMESUFFIX=	-gnome
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
-MAINTAINER=	kwm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An IRC client for GNOME 2 (development version)
 
 USE_X_PREFIX=	yes

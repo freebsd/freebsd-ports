@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	net gnome
 MASTER_SITES=	http://www.gnomepro.com/tsclient/
 
-MAINTAINER=	kwm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GNOME 2 frontend for rdesktop and vncviewer
 
 RUN_DEPENDS=	rdesktop:${PORTSDIR}/net/rdesktop

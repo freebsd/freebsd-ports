@@ -13,7 +13,7 @@ MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst${PKGNAMESUFFIX}/
 PKGNAMESUFFIX=	-monkeysaudio
 DISTNAME=	gst${PKGNAMESUFFIX}-${PORTVERSION}
 
-MAINTAINER=	kwm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GStreamer plugin for monkeysaudio files
 
 USE_X_PREFIX=	yes

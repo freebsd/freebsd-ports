@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_GNOME} \
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${GST_VERSION}
 DIST_SUBDIR=	gnome2
 
-MAINTAINER=	kwm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Development framework for creating media applications
 
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt

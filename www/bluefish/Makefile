@@ -15,7 +15,7 @@ MASTER_SITES=	http://pkedu.fbt.eitn.wau.nl/~olivier/${DOWNLOAD}/ \
 		http://bluefish.mrball.net/${DOWNLOAD}/ \
 		ftp://ftp.ratisbona.com/pub/bluefish/${DOWNLOAD}/
 
-MAINTAINER=	kwm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTML editor designed for the experienced web designer
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre \
