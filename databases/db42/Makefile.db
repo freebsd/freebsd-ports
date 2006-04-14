@@ -7,7 +7,6 @@ PATCH_DIST_STRIP=	-d ${WRKDIR}/${DISTNAME}
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/build_unix
 
-USE_REINPLACE=		yes
 INSTALLS_SHLIB=		yes
 USE_AUTOTOOLS=		libtool:15
 CONFIGURE_SCRIPT=	../dist/configure
