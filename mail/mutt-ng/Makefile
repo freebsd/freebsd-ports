@@ -12,7 +12,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://nion.modprobe.de/mutt-ng/snapshots/
 DISTNAME=	muttng-${PORTVERSION}
 
-MAINTAINER=	vsevolod@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A fork of the mutt with the goal to incorporate all the patches
 
 GNU_CONFIGURE=	yes

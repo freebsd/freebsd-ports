@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	radius
 DISTNAME=	radius-${PORTVERSION}
 
-MAINTAINER=	vsevolod@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU RADIUS server
 
 CONFLICTS=	freeradius-0.* openradius-0.* radiusd-cistron-1.*

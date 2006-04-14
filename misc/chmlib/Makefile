@@ -12,7 +12,7 @@ CATEGORIES=	misc
 MASTER_SITES=	http://66.93.236.84/~jedwin/projects/chmlib/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	vsevolod@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library for dealing with Microsoft ITSS/CHM format files
 
 GNU_CONFIGURE=	yes

@@ -10,7 +10,7 @@ PORTVERSION=	0.7.6
 CATEGORIES=	converters www
 MASTER_SITES=	http://stuff.myrealm.co.uk/htx/
 
-MAINTAINER=	vsevolod@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTML to XHTML converter
 
 USE_PERL5=	yes

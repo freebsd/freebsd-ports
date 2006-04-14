@@ -12,7 +12,7 @@ PORTREVISION=	1
 CATEGORIES?=	security sysutils
 MASTER_SITES?=	http://highsecure.ru/
 
-MAINTAINER?=	vsevolod@FreeBSD.org
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	Message digest wrapper utility
 
 CONFLICTS?=	emboss-[0-9]* qmail-ldap2-*

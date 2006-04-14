@@ -12,7 +12,7 @@ MASTER_SITE_SUBDIR=	python-ldap
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	python-ldap-${PORTVERSION}
 
-MAINTAINER=	vsevolod@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An LDAP module for python, for OpenLDAP2
 
 USE_PYTHON=	yes

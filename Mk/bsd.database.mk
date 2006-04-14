@@ -7,7 +7,7 @@
 .if defined(_POSTMKINCLUDED) && !defined(Database_Post_Include)
 
 Database_Post_Include=			bsd.database.mk
-Database_Include_MAINTAINER=	vsevolod@FreeBSD.org
+Database_Include_MAINTAINER=	ports@FreeBSD.org
 
 # This file contains some routines to interact with different databases, such
 # as mysql, postgresql and berkley DB. For including this file define macro

@@ -10,7 +10,7 @@ PORTVERSION=	0.3.0
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://opensolaris.org/os/community/performance/libmicro/
 
-MAINTAINER=	vsevolod@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Set of utilities to benchmark productivity of system calls
 
 USE_GMAKE=	yes

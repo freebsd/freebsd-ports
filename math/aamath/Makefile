@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	math textproc
 MASTER_SITES=	http://fuse.superglue.se/aamath/
 
-MAINTAINER=	vsevolod@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Aamath is a tool for rendering mathematical expressions to ascii art
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

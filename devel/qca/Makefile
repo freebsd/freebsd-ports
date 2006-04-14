@@ -10,7 +10,7 @@ PORTVERSION=	1.0
 CATEGORIES=	devel security
 MASTER_SITES=	http://psi.affinix.com/beta/
 
-MAINTAINER=	vsevolod@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Straightforward and cross-platform crypto API
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake

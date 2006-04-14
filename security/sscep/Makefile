@@ -12,7 +12,7 @@ MASTER_SITES=		http://www.klake.org/~jt/sscep/
 DISTNAME=		${PORTNAME}
 EXTRACT_SUFX=		.tgz
 
-MAINTAINER=		vsevolod@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Simple scep client
 
 USE_OPENSSL=		yes

@@ -12,7 +12,7 @@ CATEGORIES=	irc
 MASTER_SITES=	http://highsecure.ru/
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	vsevolod@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A modular IRC client with many features
 
 CONFLICTS=	irssi-0.8*
