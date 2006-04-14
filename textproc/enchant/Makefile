@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	enchant
-PORTVERSION=	1.2.3
+PORTVERSION=	1.2.5
 CATEGORIES=	textproc gnome
 MASTER_SITES=	http://www.abisource.com/downloads/enchant/${PORTVERSION}/
 #		${MASTER_SITE_SOURCEFORGE}
@@ -30,7 +30,8 @@ MAN1=		enchant.1
 
 .ifndef(WITHOUT_ASPELL)
 LIB_DEPENDS+=	pspell.16:${PORTSDIR}/textproc/aspell
-CONFIGURE_ARGS+=--enable-aspell
+CONFIGURE_ARGS+=--enable-aspell \
+		--with-aspell-prefix=${LOCALBASE}
 PLIST_SUB+=	ASPELL=""
 .else
 CONFIGURE_ARGS+=--disable-aspell
@@ -39,10 +40,11 @@ PLIST_SUB+=	ASPELL="@comment "
 
 .include <bsd.port.pre.mk>
 
+# Disable, it needs hspell 0.9 or above.
 #.if exists(${LOCALBASE}/bin/hspell)
 #WITH_HSPELL=	yes
 #.endif
-
+#
 #.if defined(WITH_HSPELL)
 #BUILD_DEPENDS+=	hspell:${PORTSDIR}/hebrew/hspell
 #CONFIGURE_ARGS+=--enable-hspell

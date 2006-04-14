@@ -1,4 +1,16 @@
-Enchant is a dictionary backend. It's somewhat of a broker of various
-pre-existing spellchecking programs.
+On the surface, Enchant appears to be a generic spell checking library. You
+can request dictionaries from it, ask if a word is correctly spelled, get
+corrections for a misspelled word, etc...
+
+Beneath the surface, Enchant is a whole lot more - and less - than that.
+You'll see that Enchant isn't really a spell checking library at all.
+
+"What's that?" you ask. Well, Enchant doesn't try to do any of the work
+itself. It's lazy, and requires backends to do most of its dirty work. Looking
+closer, you'll see the Enchant is more-or-less a fancy wrapper around the
+dlopen() system call. Enchant steps in to provide uniformity and conformity
+on top of these libraries, and implement certain features that may be lacking
+in any individual provider library. Everything should "just work" for any and
+every definition of "just working."
 
 WWW:	http://www.abisource.com/projects/enchant/
