@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	abiword
-PORTVERSION=	2.4.2
-PORTREVISION=	1
+PORTVERSION=	2.4.4
 CATEGORIES=	editors
 MASTER_SITES=	http://www.abisource.com/downloads/%SUBDIR%/${PORTVERSION}/source/
 MASTER_SITE_SUBDIR=	abiword
@@ -31,7 +30,6 @@ USE_ICONV=	yes
 USE_GNOME=	libglade2 libxml2 libgnomeprintui desktopfileutils
 WANT_GNOME=	yes
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-xft \
 		--with-sys-wv \
@@ -54,6 +52,8 @@ EXTRACT_AFTER_ARGS=| ${TAR} -xpf - ${EXTERNALS:C,^,--exclude ${DISTNAME}/,}
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-debug \
 			--enable-symbols
+CFLAGS+=		-g
+STRIP=
 .endif
 
 .ifndef(WITHOUT_GTKSPELL)
@@ -99,7 +99,7 @@ post-patch:
 		 s|[(]libdir[)]/bonobo/servers|(prefix)/libdata/bonobo/servers|g'
 
 post-install:
-	@${MKDIR} ${X11BASE}/lib/AbiWord-${ABIVERSION}/plugins
+	@${MKDIR} ${PREFIX}/lib/AbiWord-${ABIVERSION}/plugins
 	@${MKDIR} ${X11BASE}/share/applications
 	@${INSTALL_DATA} ${WRKSRC}/abiword.desktop \
 		${X11BASE}/share/applications/abiword.desktop
@@ -107,8 +107,10 @@ post-install:
 	@${LN} -sf ${PREFIX}/share/AbiSuite-${ABIVERSION}/icons/abiword_48.png \
 		${X11BASE}/share/pixmaps/abiword_48.png
 .if defined(GNOME_ENABLED)
+	@${MKDIR} ${X11BASE}/libdata/bonobo/servers
 	@${INSTALL_DATA} ${WRKDIR}/abiword-${PORTVERSION}/abidistfiles/GNOME_AbiWord_Control_${ABIVERSION:S/./_/}.server \
 		${X11BASE}/libdata/bonobo/servers/
+	@${MKDIR} ${X11BASE}/share/gnome/gnome-2.0/ui
 	@${INSTALL_DATA} ${WRKDIR}/abiword-${PORTVERSION}/abidistfiles/abi-nautilus-view-file.xml \
 		${X11BASE}/share/gnome/gnome-2.0/ui/
 .endif

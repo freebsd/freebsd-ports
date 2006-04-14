@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	abiword
-PORTVERSION=	2.4.2
-PORTREVISION=	2
+PORTVERSION=	2.4.4
 CATEGORIES=	editors
 MASTER_SITES=	http://www.abisource.com/downloads/%SUBDIR%/${PORTVERSION}/source/
 MASTER_SITE_SUBDIR=	abiword
@@ -26,7 +25,6 @@ USE_GMAKE=	yes
 USE_GNOME=	gnometarget gtk20
 WANT_GNOME=	yes
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
@@ -133,7 +131,7 @@ PLIST_SUB+=		GOOGLE:="@comment "
 .endif
 
 .if defined(WITH_GRAMMAR) || defined(PACKAGE_BUILDING)
-LIB_DEPENDS+=		link-grammar.5:${PORTSDIR}/textproc/link-grammar
+LIB_DEPENDS+=		link-grammar.4:${PORTSDIR}/textproc/link-grammar
 CONFIGURE_ARGS+=	--enable-abigrammar
 PLIST_SUB+=		GRAMMAR:=""
 .else
