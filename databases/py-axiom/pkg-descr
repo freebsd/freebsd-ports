@@ -1,0 +1,15 @@
+Axiom is an object database, or alternatively, an object-relational mapper.
+
+Its primary goal is to provide an object-oriented layer with what we consider 
+to be the key aspects of OO, i.e. polymorphism and message dispatch, without 
+hindering the power of an RDBMS. It is designed to "feel pythonic", without 
+encouraging the typical ORM behavior such as potato programming.
+
+Axiom provides a full interface to the database, which strongly suggests that 
+you do not write any SQL of your own. Metaprogramming is difficult and 
+dangerous (as many, many SQL injection attacks amply demonstrate). Writing 
+your own SQL is still possible, however, and Axiom does have several methods 
+which return fragments of generated schema if you wish to use them in your own 
+queries. 
+
+WWW: http://divmod.org/trac/wiki/DivmodAxiom
