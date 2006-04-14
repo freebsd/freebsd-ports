@@ -273,6 +273,7 @@
     SUBDIR += heroes
     SUBDIR += hex
     SUBDIR += hex-a-hop
+    SUBDIR += hexxagon
     SUBDIR += highmoon
     SUBDIR += hlserver-admin
     SUBDIR += hlserver-cs
