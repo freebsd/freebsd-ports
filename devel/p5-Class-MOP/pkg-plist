@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Class/MOP.pm
+%%SITE_PERL%%/Class/MOP/Attribute.pm
+%%SITE_PERL%%/Class/MOP/Class.pm
+%%SITE_PERL%%/Class/MOP/Method.pm
+%%SITE_PERL%%/metaclass.pm
+@dirrmtry %%SITE_PERL%%/Class/MOP
+@dirrmtry %%SITE_PERL%%/Class
