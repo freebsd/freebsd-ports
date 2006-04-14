@@ -1,0 +1,9 @@
+KDESvn is yet another client for Subversion. It uses the native KDE API
+instead of an extra library like GAMBAS and it is using the native Subversion
+delevelopment API instead of just parsing the output of the commandline 
+tool like most other clients do.
+
+WWW: http://www.alwins-world.de/programs/kdesvn/
+
+- Yuan Jue
+yuanjue@yuanjue.net
