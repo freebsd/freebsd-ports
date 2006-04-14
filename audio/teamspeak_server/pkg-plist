@@ -1,4 +1,3 @@
-etc/rc.d/teamspeak_server.sh.sample
 lib/teamspeak_server/INSTALL
 lib/teamspeak_server/INSTALL.mysql
 lib/teamspeak_server/Manual/C1H_HTML.css
