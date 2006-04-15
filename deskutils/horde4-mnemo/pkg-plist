@@ -9,7 +9,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/UPGRADING
 %%MNEMODIR%%/config/.htaccess
 %%MNEMODIR%%/config/conf.xml
-%%MNEMODIR%%/config/prefs.php
 %%MNEMODIR%%/config/prefs.php.dist
 %%MNEMODIR%%/data.php
 %%MNEMODIR%%/index.php

@@ -30,7 +30,7 @@ USE_GETTEXT=	yes
 PLIST_SUB=	MNEMODIR=${LMNEMODIR} HORDE_INC=${HORDE_INC:S|^${LOCALBASE}/||}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
-SUB_FILES=	pkg-message pkg-deinstall
+SUB_FILES=	pkg-message pkg-install pkg-deinstall
 SUB_LIST=	MNEMODIR=${MNEMODIR}
 
 REINPLACE_ARGS=	-i ""
@@ -66,11 +66,7 @@ do-install:
 	@${CP} -Rp ${WRKSRC}/${REP} ${MNEMODIR}
 .endfor
 	@${CP} -p  ${WRKSRC}/*.php ${MNEMODIR}
-.for FILE in ${CONFFILE}
-	@if [ ! -f ${CONFDIR}/${FILE} ]; then			\
-	  ${CP} ${CONFDIR}/${FILE}.dist ${CONFDIR}/${FILE} ;	\
-	fi
-.endfor
+
 	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${MNEMODIR}
 	@${CHMOD} -R o-rwx ${CONFDIR}
 	@${INSTALL_DATA} ${WRKDIR}/httpd-mnemo.conf ${HORDE_INC}
@@ -83,6 +79,7 @@ do-install:
 .endif
 
 post-install:
+	@${SETENV} ${SCRIPTS_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}
