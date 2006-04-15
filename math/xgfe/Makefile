@@ -12,7 +12,7 @@ CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR=	graphics/gnuplot/contrib
 
-MAINTAINER=	mph@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An X11 front-end for Gnuplot
 
 RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot

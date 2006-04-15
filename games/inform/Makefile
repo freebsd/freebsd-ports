@@ -12,7 +12,7 @@ MASTER_SITES=  	ftp://ftp.ifarchive.org/if-archive/infocom/compilers/inform6/sou
 		ftp://ftp.ifarchive.org/if-archive/infocom/compilers/inform6/library/
 DISTFILES=	inform630_source.zip inform_library611.zip
 
-MAINTAINER=	mph@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Compiler for producing text adventure games
 
 .if !defined(NOPORTDOCS)

@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	games/solitaires
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 
-MAINTAINER=	mph@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An X11 solitaire game with 14 variations
 
 USE_IMAKE=	yes

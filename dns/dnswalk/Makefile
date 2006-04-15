@@ -10,7 +10,7 @@ PORTVERSION=	2.0.2
 CATEGORIES=	dns
 MASTER_SITES=	http://www.visi.com/~barr/dnswalk/
 
-MAINTAINER=	mph@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DNS debugger - requests a zone transfer and analyzes the result
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS

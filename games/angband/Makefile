@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.thangorodrim.net/pub/angband/Source/ \
 		ftp://ftp.sunet.se/pub/games/Angband/Source/ \
 		ftp://ftp.planetmirror.com/pub/angband/Source/
 
-MAINTAINER=	mph@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Rogue-like game with color, X11 support
 
 GNU_CONFIGURE=	yes
