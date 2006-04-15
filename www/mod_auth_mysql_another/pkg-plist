@@ -1,6 +1,0 @@
-libexec/apache%%VER%%/mod_auth_mysql.so
-@exec %D/sbin/apxs -e -a -n mysql_auth %f
-@unexec %D/sbin/apxs -e -A -n mysql_auth %f
-%%PORTDOCS%%share/doc/mod_auth_mysql_another/CONFIGURE
-%%PORTDOCS%%share/doc/mod_auth_mysql_another/CHANGES
-%%PORTDOCS%%@dirrm share/doc/mod_auth_mysql_another
