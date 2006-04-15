@@ -13,7 +13,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	# empty
 DISTFILES=	# empty
 
-MAINTAINER=	nik@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Meta-port for the different versions of the DocBook DTD
 
 RUN_DEPENDS=	${PREFIX}/share/sgml/iso8879:${PORTSDIR}/textproc/iso8879 \

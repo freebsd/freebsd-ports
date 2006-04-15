@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	nik
 DISTNAME=	tap-${PORTVERSION}
 
-MAINTAINER=	nik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library implementing the Test Anything Protocol
 
 GNU_CONFIGURE=	yes

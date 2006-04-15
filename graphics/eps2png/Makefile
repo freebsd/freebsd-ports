@@ -11,7 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/J/JV/JV/
 
-MAINTAINER=	nik@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts EPS images to PNG
 
 USE_GHOSTSCRIPT_RUN=	yes
