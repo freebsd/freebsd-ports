@@ -12,7 +12,7 @@ CATEGORIES=		print
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	jadetex
 
-MAINTAINER=		nik@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=	A TeX backend for Jade, for typesetting SGML documents
 
 BUILD_DEPENDS=		etex:${PORTSDIR}/print/teTeX-base

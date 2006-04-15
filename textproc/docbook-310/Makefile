@@ -15,7 +15,7 @@ MASTER_SITES=	http://www.docbook.org/sgml/3.1/
 DISTNAME=	docbk31
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	nik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	V3.1 of the DocBook DTD, designed for technical documentation
 
 RUN_DEPENDS=	${ISOCAT}:${PORTSDIR}/textproc/iso8879 \

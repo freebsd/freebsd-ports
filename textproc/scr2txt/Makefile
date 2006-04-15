@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR= nik
 NO_WRKSUBDIR=	yes
 
-MAINTAINER=	nik@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts the output of "vidcontrol -p" to text
 
 MAN1=		scr2txt.1
