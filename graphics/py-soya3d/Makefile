@@ -6,12 +6,13 @@
 #
 
 PORTNAME=	soya3d
-PORTVERSION=	0.10.1
+PORTVERSION=	0.10.2
 CATEGORIES=	graphics
 MASTER_SITES=	http://download.gna.org/soya/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Soya-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+DIST_SUBDIR=	python
 
 MAINTAINER=	acardenas@bsd.org.pe
 COMMENT=	Very high level 3D engine for Python
@@ -31,7 +32,6 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 USE_GL=		yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 
 MANDIR=	${WRKDIR}/${DISTNAME}/manpage/man1
 MAN1=	soya_editor.1
@@ -44,7 +44,7 @@ DISTFILES+=	SoyaTutorial-${PORTVERSION}${EXTRACT_SUFX}
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"
-BROKEN=	"Does not compile in ${ARCH}"
+BROKEN=	Does not compile in ${ARCH}
 .endif
 
 post-patch:
