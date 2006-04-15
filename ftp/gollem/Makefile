@@ -7,6 +7,7 @@
 
 PORTNAME=	gollem
 PORTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	ftp www
 MASTER_SITES=	ftp://ftp.horde.org/pub/gollem/				\
 		ftp://ftp.planetmirror.com/pub/horde/gollem/		\
@@ -18,7 +19,7 @@ MASTER_SITES=	ftp://ftp.horde.org/pub/gollem/				\
 		http://ftp.horde.org/pub/gollem/
 DISTNAME=	${PORTNAME}-h3-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	shaun@inerd.com
 COMMENT=	Gollem is the Horde web-based File Manager
 
 RUN_DEPENDS=	${LOCALBASE}/${LHORDEDIR}/rpc.php:${PORTSDIR}/www/horde
@@ -30,7 +31,7 @@ USE_APACHE=	1.3+	# needed to test APACHE_VERSION
 PLIST_SUB=	GOLLEMDIR=${LGOLLEMDIR} HORDE_INC=${HORDE_INC:S|^${LOCALBASE}/||}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
-SUB_FILES=	pkg-message pkg-deinstall
+SUB_FILES=	pkg-message pkg-install pkg-deinstall
 SUB_LIST=	GOLLEMDIR=${GOLLEMDIR}
 
 DOCS=		README docs/CHANGES docs/CREDITS docs/INSTALL	\
@@ -61,11 +62,7 @@ do-install:
 	@${MKDIR}  ${GOLLEMDIR}
 	@${CP} -Rp ${SUB_DIRS:S|^|${WRKSRC}/|} ${GOLLEMDIR}
 	@${CP} -p  ${WRKSRC}/*.php ${GOLLEMDIR}
-.for FILE in ${CONFFILE}
-	@if [ ! -f ${CONFDIR}/${FILE} ]; then \
-	  ${CP} ${CONFDIR}/${FILE}.dist ${CONFDIR}/${FILE} ; \
-	fi
-.endfor
+
 	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${GOLLEMDIR}
 	@${CHMOD} -R o-rwx ${CONFDIR}
 	@${INSTALL_DATA} ${WRKDIR}/httpd-gollem.conf ${HORDE_INC}
@@ -76,6 +73,7 @@ do-install:
 .endif
 
 post-install:
+	@${SETENV} ${SCRIPTS_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}
