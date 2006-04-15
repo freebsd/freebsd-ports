@@ -431,12 +431,12 @@ libdata/pkgconfig/Wand.pc
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Magick/Magick.bs
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Magick/Magick.so
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Magick/autosplit.ix
-share/ImageMagick/config/coder.xml
-share/ImageMagick/config/log.xml
-share/ImageMagick/config/magic.xml
-share/ImageMagick-%%PORTVERSION%%/LICENSE
-share/ImageMagick-%%PORTVERSION%%/ChangeLog
-share/ImageMagick-%%PORTVERSION%%/NEWS
+%%DATADIR%%/config/coder.xml
+%%DATADIR%%/config/log.xml
+%%DATADIR%%/config/magic.xml
+%%DATADIR%%-%%PORTVERSION%%/LICENSE
+%%DATADIR%%-%%PORTVERSION%%/ChangeLog
+%%DATADIR%%-%%PORTVERSION%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/images/arc.png
 %%PORTDOCS%%%%DOCSDIR%%/images/background.jpg
 %%PORTDOCS%%%%DOCSDIR%%/images/button.gif
@@ -589,14 +589,14 @@ share/ImageMagick-%%PORTVERSION%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/www/search.html
 %%PORTDOCS%%%%DOCSDIR%%/www/sponsors.html
 %%PORTDOCS%%%%DOCSDIR%%/www/subversion.html
-%%PORTDOCS%%@dirrm share/doc/ImageMagick/www/api
-%%PORTDOCS%%@dirrm share/doc/ImageMagick/www/Magick++
-%%PORTDOCS%%@dirrm share/doc/ImageMagick/www
-%%PORTDOCS%%@dirrm share/doc/ImageMagick/images
-%%PORTDOCS%%@dirrm share/doc/ImageMagick
-@dirrm share/ImageMagick-%%PORTVERSION%%
-@dirrm share/ImageMagick/config
-@dirrm share/ImageMagick
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/www/api
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/www/Magick++
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/www
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%-%%PORTVERSION%%
+@dirrm %%DATADIR%%/config
+@dirrm %%DATADIR%%
 %%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Magick
 %%WITH_PERL%%@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image
 %%WITH_PERL%%@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Image

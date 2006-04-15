@@ -7,7 +7,7 @@
 
 PORTNAME=	ImageMagick
 PORTVERSION=	6.2.5.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics perl5
 MASTER_SITES=	ftp://ftp.nluug.nl/pub/ImageMagick/ \
 		${MASTER_SITE_LOCAL:S/%SUBDIR%/pav/}
@@ -52,8 +52,11 @@ PLIST_SUB+=		WITH_PERL='@comment '
      defined(PERL_THREADED) && ${PERL_THREADED} == "true")
 CONFIGURE_ARGS+=	--with-threads
 CONFIGURE_ENV+=		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" PTHREAD_LIBS="${PTHREAD_LIBS}"
+LDFLAGS+=		${PTHREAD_LIBS}
+WITH_IMAGEMAGICK_THREADS=yes
 .else
 CONFIGURE_ARGS+=	--without-threads
+.undef WITH_IMAGEMAGICK_THREADS
 .endif
 
 # Faster, but poor quality
@@ -123,7 +126,7 @@ CONFIGURE_ARGS+=	--without-jp2
 # GraphViz dot graphs
 .if defined(WITH_IMAGEMAGICK_DOT)
 BUILD_DEPENDS+=		dot:${PORTSDIR}/graphics/graphviz
-RUN_DEPENDS+=		dot:${PORTSDIR}/graphics/graphviz  
+RUN_DEPENDS+=		dot:${PORTSDIR}/graphics/graphviz
 .else
 CONFIGURE_ARGS+=	--without-dot
 CONFIGURE_ARGS+=	--without-gvc
@@ -227,6 +230,16 @@ post-patch:
 	@${PERL} -pi -e 's|<malloc.h>|<stdlib.h>|g' ${WRKSRC}/ltdl/ltdl.c
 	@${PERL} -pi -e 's|timestamp: %ld|timestamp: %d|g' \
 		${WRKSRC}/magick/xwindow.c
+.if defined(WITH_IMAGEMAGICK_THREADS)
+. for i in Magick++/lib/ImageMagick++.pc.in wand/Wand.pc.in magick/ImageMagick.pc.in
+	@${PERL} -pi -e 's|^(Libs.+)$$|\1 ${PTHREAD_LIBS}|; \
+		s|^(Cflags.+)$$|\1 ${PTHREAD_CFLAGS}|' \
+		${WRKSRC}/${i}
+. endfor
+.endif
+# deprecated gvCleanup
+	@${REINPLACE_CMD} -e "s|gvCleanup|gvFreeContext|g" \
+		${WRKSRC}/coders/dot.c
 
 post-install:
 .if defined(WITHOUT_IMAGEMAGICK_16BIT_PIXEL)
