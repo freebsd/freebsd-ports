@@ -1,0 +1,20 @@
+--- Makefile.orig	Mon Mar 27 12:25:04 2006
++++ Makefile	Mon Mar 27 12:43:24 2006
+@@ -1,7 +1,7 @@
+ # makefile for POSIX library for Lua
+ 
+ # change these to reflect your Lua installation
+-LUA= /tmp/lhf/lua-5.0
++LUA= ${PREFIX}
+ LUAINC= $(LUA)/include
+ LUALIB= $(LUA)/lib
+ LUABIN= $(LUA)/bin
+@@ -21,7 +21,7 @@
+ all:	test
+ 
+ test:	$T
+-	$(LUABIN)/lua -l$(MYNAME) test.lua
++	LD_PRELOAD=${PREFIX}/lib/liblua.so:${PREFIX}/lib/liblualib.so $(LUABIN)/lua -l$(MYNAME) test.lua
+ 
+ $T:	$(OBJS)
+ 	$(CC) -o $@ -shared $(OBJS)
