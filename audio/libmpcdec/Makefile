@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	libmpcdec
-PORTVERSION=	1.2
-PORTREVISION=	1
+PORTVERSION=	1.2.2
 CATEGORIES=	audio
-MASTER_SITES=	http://www.saunalahti.fi/grimmel/musepack.net-files/source/
+MASTER_SITES=	http://files2.musepack.net/source/ \
+		http://www.saunalahti.fi/grimmel/musepack.net-files/source/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High quality audio compression format
 
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
