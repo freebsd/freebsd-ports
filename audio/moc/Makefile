@@ -58,7 +58,7 @@ CONFIGURE_ARGS+=	--without-mp3
 .endif
 
 .if defined(WITH_MUSEPACK)
-LIB_DEPENDS+=	mpcdec.3:${PORTSDIR}/audio/libmpcdec \
+LIB_DEPENDS+=	mpcdec.4:${PORTSDIR}/audio/libmpcdec \
 		tag_c.0:${PORTSDIR}/audio/taglib
 PLIST_FILES+=	lib/moc/decoder_plugins/libmusepack_decoder.la \
 		lib/moc/decoder_plugins/libmusepack_decoder.so
