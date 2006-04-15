@@ -7,6 +7,7 @@
 
 PORTNAME=	nag
 PORTVERSION=	2.1
+PORTREVISION=	1
 CATEGORIES=	deskutils www
 MASTER_SITES=	ftp://ftp.horde.org/pub/nag/				\
 		ftp://ftp.planetmirror.com/pub/horde/nag/		\
