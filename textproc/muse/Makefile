@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	muse
-PORTVERSION=	3.02.6
+PORTVERSION=	3.02.6b
 CATEGORIES=	textproc elisp
 MASTER_SITES=	http://download.gna.org/muse-el/ \
 		http://dryice.name/computer/FreeBSD/distfiles/
@@ -27,7 +27,7 @@ LISPDIR=	${PREFIX}/${EMACS_SITE_LISPDIR}/${PORTNAME}
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	AUTHORS ChangeLog ChangeLog.2004 ChangeLog.main NEWS \
-		README scripts
+		README scripts COPYING
 .endif
 
 post-install:
