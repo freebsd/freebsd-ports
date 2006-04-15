@@ -6,20 +6,19 @@
 #
 
 PORTNAME=	grass
-PORTVERSION=	6.0.1
-PORTREVISION=   2
+PORTVERSION=	6.0.2
 PORTEPOCH=	2
 CATEGORIES=	databases
-MASTER_SITES=	ftp://grass.itc.it/pub/grass/grass60/source/\
-		http://grass.itc.it/grass60/source/ \
-		http://grass.meteo.uni.wroc.pl/grass60/source/ \
-		http://grass.ru.ac.za/grass60/source/\
-		ftp://ftp.planetmirror.com/pub/grass/grass60/source/\
-		http://wgrass.media.osaka-cu.ac.jp/grassh/grass60/source/\
-		http://public.planetmirror.com/pub/grass/grass60/source/\
+MASTER_SITES=	http://grass.itc.it/grass60/source/ \
+		ftp://grass.itc.it/pub/grass/grass60/source/ \
+		http://grass.ibiblio.org/grass60/source/\
 		ftp://www.ibiblio.org/pub/packages/gis/grass/grass60/source/\
 		http://www.geog.uni-hannover.de/grass/grass60/source/\
-		http://grass.ibiblio.org/grass60/source/\
+		http://grass.meteo.uni.wroc.pl/grass60/source/ \
+		http://grass.ru.ac.za/grass60/source/\
+		http://wgrass.media.osaka-cu.ac.jp/grassh/grass60/source/\
+		http://public.planetmirror.com/pub/grass/grass60/source/\
+		ftp://ftp.planetmirror.com/pub/grass/grass60/source/\
 		http://gulus.usherbrooke.ca/pub/appl/grass/grass60/source/\
 		http://ludique.u-bourgogne.fr/grass/grass60/source/
 
@@ -43,9 +42,7 @@ USE_GETTEXT=	yes
 USE_PERL5=	yes
 USE_XLIB=	yes
 USE_FREETYPE=	yes
-USE_PGSQL=	yes
 USE_FFTW=	yes
-USE_REINPLACE=	yes
 USE_TCL_BUILD=	yes
 USE_TCL=	yes
 USE_TK=		yes
@@ -64,14 +61,16 @@ CONFIGURE_ARGS=	--with-includes=${LOCALBASE}/include \
 		--with-freetype-includes=${LOCALBASE}/include/freetype2 \
 		--with-nls \
 		--with-cxx \
+		--with-readline \
 		--enable-largefile
 
-GRASS_INST_DIR=	${PORTNAME}
 PLIST_SUB=	GRASS_INST_DIR=${GRASS_INST_DIR}
-SUB_FILES=	grass.sh
-SUB_LIST=	GRASS_INST_DIR=${GRASS_INST_DIR}
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/%%GRASS_INST_DIR%%/lib
+USE_LDCONFIG=	${PREFIX}/${GRASS_INST_DIR}/lib
+
+OPTIONS=	MYSQL "Enable MySQL support" Off \
+		PGSQL "Enable PostgreSQL support" On
 
 .include <bsd.port.pre.mk>
 
@@ -81,12 +80,33 @@ PLIST_SUB+=	FBSD4=""
 PLIST_SUB+=	FBSD4="@comment "
 .endif
 
-post-extract:
-	@${REINPLACE_CMD} -e 's/ make mo/ ${GMAKE} mo/g' \
-	${WRKSRC}/locale/Makefile
-	@${REINPLACE_CMD} -E '28s|/grass-.*|/${GRASS_INST_DIR}|g' ${WRKSRC}/Makefile
+.if !defined (GRASS_INST_DIR)
+GRASS_INST_DIR=	${PORTNAME}
+.endif
 
-post-install:
-	@${INSTALL_SCRIPT} ${WRKDIR}/grass.sh ${PREFIX}/etc/rc.d/000.grass.sh
+.if defined(WITH_MYSQL)
+USE_MYSQL=	yes
+CONFIGURE_ARGS+=--with-mysql \
+		--with-mysql-includes=${LOCALBASE}/include/mysql \
+		--with-mysql-libs=${LOCALBASE}/lib/mysql
+PLIST_SUB+=	MYSQL=""
+.else
+PLIST_SUB+=	MYSQL="@comment "
+.endif
+.if defined(WITHOUT_PGSQL)
+CONFIGURE_ARGS+=--without-postgres
+PLIST_SUB+=	PGSQL="@comment "
+.else
+USE_PGSQL=	yes
+PLIST_SUB+=	PGSQL=""
+.endif
+
+.include "${PORTSDIR}/misc/ldconfig_compat/bsd.ldconfig.mk"
+
+post-extract:
+	@${REINPLACE_CMD} -E '28s|/grass-.*|/${GRASS_INST_DIR}|g' \
+	${WRKSRC}/Makefile
+
+post-install: install-ldconfig-file
 
 .include <bsd.port.post.mk>
