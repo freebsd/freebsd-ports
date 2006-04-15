@@ -15,7 +15,7 @@ COMMENT=	KDE frontend for Subversion
 
 EXTRA_PATCHES=	${.CURDIR}/../../x11/kde3/files/extrapatch-old_configure
 
-LIB_DEPENDS+=	apr-1:${PORTSDIR}/devel/apr \
+LIB_DEPENDS+=	apr-1:${PORTSDIR}/devel/apr-svn \
 		svn_client-1:${PORTSDIR}/devel/subversion \
 		neon:${PORTSDIR}/www/neon
 
