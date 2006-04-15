@@ -16,7 +16,7 @@ PKGNAMESUFFIX=	-plugins${GST_PLUGIN_SUFFIX}
 DISTNAME=	gst-plugins-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gnome@FreeBSD.org
 COMMENT?=	GStreamer written collection of plugins handling several media types
 
 LIB_DEPENDS+=	gstreamer-0.8.5:${PORTSDIR}/multimedia/gstreamer \
