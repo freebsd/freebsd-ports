@@ -21,6 +21,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-src-${PORTVERSION}
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
+USE_GETTEXT=	yes
 
 MAN1=		audacity.1
 MANCOMPRESSED=	yes
@@ -33,10 +34,6 @@ OPTIONS=	ID3TAG	"ID3 tag support"		off \
 
 .if ${ARCH} == "i386" && ${OSVERSION} >= 501103
 SSE_CFLAGS=	-mno-sse -mno-sse2
-.endif
-
-.if ${ARCH} != "i386"
-BROKEN=		"Does not build on !i386"
 .endif
 
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
