@@ -20,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py:${PORTSDIR}/x11-toolki
 USE_BZIP2=		yes
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
-USE_REINPLACE=		yes
+USE_GETTEXT=		yes
 
 OPTIONS=	GEOIP "Enable the GeoIP based country code blocker" off \
 		PSYCO "Enable Psyco, the optimizing Python compiler" off \
