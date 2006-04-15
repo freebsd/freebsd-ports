@@ -25,7 +25,7 @@ DISTFILES+=	soa-5_2-ga-bin-linux-pt.bin
 .endif
 EXTRACT_ONLY=	109939-03.tar.Z
 
-MAINTAINER=	mbr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sistema integrado de processador de texto/planilha/e muito mais
 
 FETCH_DEPENDS=	${LINUX_BASE_PORT}

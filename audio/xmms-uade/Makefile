@@ -12,7 +12,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://zakalwe.virtuaalipalvelin.net/uade/uade/
 DISTNAME=	uade-${PORTVERSION}
 
-MAINTAINER=	mbr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unix Amiga Delitracker Emulator with XMMS Input plugin
 
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms

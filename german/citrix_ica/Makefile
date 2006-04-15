@@ -12,7 +12,7 @@ CATEGORIES=	german net comms linux
 MASTER_SITES=
 DISTNAME=	${PORTNAME}-linuxx86-de
 
-MAINTAINER=	mbr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Citrix(R) client for the Microsoft Windows Terminal Server
 
 ONLY_FOR_ARCHS=	i386
