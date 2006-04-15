@@ -21,8 +21,10 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Glib/Param/Enum.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Glib/Param/Flags.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Glib/Param/Int.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Glib/Param/Int64.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Glib/Param/String.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Glib/Param/UInt.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Glib/Param/UInt64.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Glib/Param/Unichar.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Glib/ParamSpec.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Glib/ParseXSDoc.pm
