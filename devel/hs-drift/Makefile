@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	drift
-PORTVERSION=	2.1.0
-PORTREVISION=	1
+PORTVERSION=	2.2.0
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://repetae.net/john/computer/haskell/DrIFT/drop/
 PKGNAMEPREFIX=	hs-
@@ -24,9 +23,11 @@ OPTIONS=	NHC98 "Build with nhc98" off \
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 .else
 BUILD_DEPENDS=	nhc98:${PORTSDIR}/lang/nhc98
+BROKEN=		Does not build
 .endif
 
-HAS_CONFIGURE=	yes
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
 
 INFO=	drift
 PLIST_FILES=	bin/DrIFT bin/drift-ghc
