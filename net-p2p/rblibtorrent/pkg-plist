@@ -43,6 +43,7 @@ lib/libtorrent.so
 lib/libtorrent.la
 lib/libtorrent.a
 libdata/pkgconfig/libtorrent.pc
+bin/client_test
 bin/dump_torrent
 bin/make_torrent
 bin/simple_client
