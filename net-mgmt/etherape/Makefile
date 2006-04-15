@@ -12,7 +12,7 @@ CATEGORIES=	net-mgmt gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	samy@kerneled.org
+MAINTAINER=	sbahra@kerneled.org
 COMMENT=	A graphical network traffic visualization tool for gnome
 
 USE_GETTEXT=	yes

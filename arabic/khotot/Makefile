@@ -12,7 +12,7 @@ MASTER_SITES=	#
 DISTFILES=	#
 EXTRACT_ONLY=	#
 
-MAINTAINER=	samy@kerneled.com
+MAINTAINER=	sbahra@kerneled.org
 COMMENT=	A meta-port of the most popular font packages
 
 .if !defined(WITHOUT_MONO)
