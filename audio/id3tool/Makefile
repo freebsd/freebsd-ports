@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	id3tool
-PORTVERSION=	1.2
+PORTVERSION=	1.2a
 CATEGORIES=	audio
 MASTER_SITES=	http://nekohako.xware.cx/id3tool/
 
