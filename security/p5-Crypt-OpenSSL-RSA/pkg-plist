@@ -2,23 +2,13 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA/RSA.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA/RSA.bs
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA/DESTROY.al
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA/_new.al
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA/_set_padding_mode.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA/autosplit.ix
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA/generate_key.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA/get_key_parameters.al
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA/get_padding_mode.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA/import_random_seed.al
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA/load_public_key.al
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA/new.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA/new_key_from_parameters.al
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA/new_private_key.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA/new_public_key.al
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA/set_padding_mode.al
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA/use_sslv23_padding.al
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL    
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt            
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Crypt/OpenSSL         
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Crypt                 
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Crypt/OpenSSL
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Crypt
