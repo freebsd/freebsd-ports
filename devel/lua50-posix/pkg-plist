@@ -1,0 +1,6 @@
+share/lua/5.0/posix.lua
+lib/lua/5.0/lposix.so
+@dirrmtry share/lua/5.0
+@dirrmtry share/lua
+@dirrmtry lib/lua/5.0
+@dirrmtry lib/lua
