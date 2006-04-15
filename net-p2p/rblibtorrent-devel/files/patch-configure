@@ -30,3 +30,23 @@
  fi
  
    done
+@@ -20880,7 +20880,8 @@
+ echo "$as_me:$LINENO: result: `eval echo '${'$as_ac_Lib'}'`" >&5
+ echo "${ECHO_T}`eval echo '${'$as_ac_Lib'}'`" >&6
+ if test `eval echo '${'$as_ac_Lib'}'` = yes; then
+-  BOOST_REGEX_LIB=$ax_lib break
++  BOOST_REGEX_LIB=$ax_lib
++  break
+ fi
+ 
+   done
+@@ -21037,7 +21038,8 @@
+ echo "$as_me:$LINENO: result: `eval echo '${'$as_ac_Lib'}'`" >&5
+ echo "${ECHO_T}`eval echo '${'$as_ac_Lib'}'`" >&6
+ if test `eval echo '${'$as_ac_Lib'}'` = yes; then
+-  BOOST_PROGRAM_OPTIONS_LIB=$ax_lib break
++  BOOST_PROGRAM_OPTIONS_LIB=$ax_lib
++  break
+ fi
+ 
+   done
