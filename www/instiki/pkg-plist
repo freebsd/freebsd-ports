@@ -1,4 +1,3 @@
-etc/rc.d/instiki.sh
 %%INSTIKIDIR%%natives/osx/desktop_launcher/English.lproj/MainMenu.nib/classes.nib
 %%INSTIKIDIR%%natives/osx/desktop_launcher/English.lproj/MainMenu.nib/info.nib
 %%INSTIKIDIR%%natives/osx/desktop_launcher/English.lproj/MainMenu.nib/objects.nib
