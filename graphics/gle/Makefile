@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gle
-PORTVERSION=	3.0.3
-PORTREVISION=	2
+PORTVERSION=	3.1.0
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://linas.org/gle/pub/ \
@@ -21,7 +20,6 @@ COMMENT=	A GL Tubing and Extrusion Library
 LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
 
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	"LIBS=-L${X11BASE}/lib -lXext ${PTHREAD_LIBS}"
