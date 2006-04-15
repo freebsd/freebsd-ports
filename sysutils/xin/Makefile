@@ -12,7 +12,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	utils/file
 
-MAINTAINER=	markp@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Splits standard input and pipes into a command
 
 USE_GETOPT_LONG=yes

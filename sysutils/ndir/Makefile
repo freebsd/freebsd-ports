@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.Informatik.Uni-Oldenburg.DE/~mw/software/
 DISTNAME=	NDir-${PORTVERSION}
 EXTRACT_SUFX=	-1.tar.gz
 
-MAINTAINER=	markp@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A featureful directory lister
 
 USE_GMAKE=	yes

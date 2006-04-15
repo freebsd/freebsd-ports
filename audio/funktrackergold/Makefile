@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	apps/sound/players
 DISTNAME=	funktrackergold-1.5-2
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	markp@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A curses MOD/FNK music tracker
 
 WRKSRC=		${WRKDIR}/funkgold

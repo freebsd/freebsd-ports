@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.radscan.com/conquest/
 EXTRACT_SUFX=	.src.tar.gz
 
-MAINTAINER=	markp@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A multi-player curses space warfare game similar to Netrek
 
 GNU_CONFIGURE=	yes

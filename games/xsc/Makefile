@@ -10,7 +10,7 @@ PORTVERSION=	1.4
 CATEGORIES=	games
 MASTER_SITES=	http://www.panix.com/~mbh/xsc/
 
-MAINTAINER=	markp@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A vector graphics space shoot'em up game
 
 USE_X_PREFIX=	yes

@@ -10,7 +10,7 @@ PORTVERSION=	1.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://klicman.org/throttle/
 
-MAINTAINER=	markp@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A pipe bandwidth throttling utility
 
 GNU_CONFIGURE=	yes

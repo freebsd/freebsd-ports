@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://sammy.net/~sammy/hacks/
 
-MAINTAINER=	markp@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tcp connection redirection utility
 
 USE_RC_SUBR=	redir

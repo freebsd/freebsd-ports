@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		http://paranoia.rulez.org/videogen/download/
 MASTER_SITE_SUBDIR=	X11/xutils
 
-MAINTAINER=	markp@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool for calculating XFree86 modelines
 
 MAN1=		videogen.1
