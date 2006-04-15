@@ -9,7 +9,7 @@ PORTNAME=	Net_LDAP
 PORTVERSION=	0.6.6
 CATEGORIES=	net pear
 
-MAINTAINER=	tux@pinguru.net
+MAINTAINER=	gerrit.beine@gmx.de
 COMMENT=	OO interface for searching and manipulating LDAP-entries
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

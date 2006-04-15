@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.gentleware.org/ \
 		ftp://ftp.beine-computer.de/pub/distfiles/
 DISTNAME=	${PORTNAME}${EDITION}-${PORTVERSION}
 
-MAINTAINER=	tux@pinguru.net
+MAINTAINER=	gerrit.beine@gmx.de
 COMMENT=	A popular UML CASE tool
 
 USE_ZIP=	yes

@@ -10,7 +10,7 @@ PORTVERSION=	0.0.2
 CATEGORIES=	x11
 MASTER_SITES=	http://bbtools.windsofstorm.net/sources/
 
-MAINTAINER=	tux@pinguru.net
+MAINTAINER=	gerrit.beine@gmx.de
 COMMENT=	Application configuring tool for the blackbox window manager
 
 USE_X_PREFIX=	yes

@@ -9,7 +9,7 @@ PORTNAME=	PHPDoc
 PORTVERSION=	0.1.0
 CATEGORIES=	devel www pear
 
-MAINTAINER=	tux@pinguru.net
+MAINTAINER=	gerrit.beine@gmx.de
 COMMENT=	Tool to generate documentation from the source
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

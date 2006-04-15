@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	e-p-i-c
 PKGNAMEPREFIX=	eclipse-
 DISTNAME=	${EPIC}_${PORTVERSION}_20040711
 
-MAINTAINER=	tux@pinguru.net
+MAINTAINER=	gerrit.beine@gmx.de
 COMMENT=	EPIC adds Perl support to the Eclipse IDE Framework
 
 RUN_DEPENDS=	${LOCALBASE}/bin/eclipse:${PORTSDIR}/java/eclipse

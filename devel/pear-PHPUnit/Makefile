@@ -9,7 +9,7 @@ PORTNAME=	PHPUnit
 PORTVERSION=	1.3.2
 CATEGORIES=	devel www pear
 
-MAINTAINER=	tux@pinguru.net
+MAINTAINER=	gerrit.beine@gmx.de
 COMMENT=	PEAR regression testing framework for unit tests
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

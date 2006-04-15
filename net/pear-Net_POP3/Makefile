@@ -9,7 +9,7 @@ PORTNAME=	Net_POP3
 PORTVERSION=	1.3.6
 CATEGORIES=	net pear
 
-MAINTAINER=	tux@pinguru.net
+MAINTAINER=	gerrit.beine@gmx.de
 COMMENT=	Provides a POP3 class to access POP3 server
 
 BUILD_DEPENDS=	${PEARDIR}/Net/Socket.php:${PORTSDIR}/net/pear-Net_Socket

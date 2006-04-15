@@ -9,7 +9,7 @@ PORTNAME=	Net_Server
 PORTVERSION=	0.12.0
 CATEGORIES=	net pear
 
-MAINTAINER=	tux@pinguru.net
+MAINTAINER=	gerrit.beine@gmx.de
 COMMENT=	Generic server class
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

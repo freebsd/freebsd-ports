@@ -11,7 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://www.lsilogic.com/files/support/rsa/beta/drivers/
 DISTNAME=	dr_freebsd_${PORTVERSION}
 
-MAINTAINER=	tux@pinguru.net
+MAINTAINER=	gerrit.beine@gmx.de
 COMMENT=	LSI Logic's MegaRAID controlling software
 
 USE_ZIP=	yes
