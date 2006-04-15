@@ -1,5 +1,5 @@
 bin/stegdetect
 bin/stegbreak
+bin/stegcompare
+bin/stegdeimage
 %%X11%%bin/xsteg
-share/stegbreak/rules.ini
-@dirrm share/stegbreak
