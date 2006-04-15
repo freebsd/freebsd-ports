@@ -6,6 +6,7 @@ info/muse
 %%EMACS_SITE_LISPDIR%%/muse/experimental/Makefile
 %%EMACS_SITE_LISPDIR%%/muse/experimental/muse-cite.el
 %%EMACS_SITE_LISPDIR%%/muse/experimental/muse-message.el
+%%EMACS_SITE_LISPDIR%%/muse/muse-autoloads.el
 %%EMACS_SITE_LISPDIR%%/muse/muse-blosxom.el
 %%EMACS_SITE_LISPDIR%%/muse/muse-blosxom.elc
 %%EMACS_SITE_LISPDIR%%/muse/muse-book.el
