@@ -1,6 +1,8 @@
 @comment $FreeBSD$
 bin/bayesol
 bin/dbacl
+bin/hmine
+bin/hypex
 bin/mailcross
 bin/mailfoot
 bin/mailinspect
