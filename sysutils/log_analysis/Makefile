@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	log_analysis
-PORTVERSION=	0.42
+PORTVERSION=	0.43
 CATEGORIES=	sysutils
 MASTER_SITES=	http://lug.umbc.edu/~mabzug1/
 
