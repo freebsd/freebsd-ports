@@ -37,13 +37,7 @@ MLINKS=	event.3 event_init.3 event.3 event_dispatch.3 event.3 event_loop.3 \
 	event.3 evbuffer_add_printf.3 event.3 evbuffer_drain.3 \
 	event.3 evbuffer_write.3 event.3 evbuffer_read.3 event.3 evbuffer_find.3
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700014
-BROKEN=		"Does not compile on FreeBSD >= 7.0"
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's,CFLAGS =,CFLAGS +=,' ${WRKSRC}/Makefile.in
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
