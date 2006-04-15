@@ -1,9 +1,6 @@
 ************************************************************************
 Horde has been installed in %%HORDEDIR%% with your blank
-configuration files. After a reinstallation, you have to explicitely
-merge your files %%HORDEDIR%%/config/conf.php.new
-and %%HORDEDIR%%/config/conf.php.previous
-into %%HORDEDIR%%/config/conf.php .
+configuration files.
 
 WARNING! the first user will get logged in as an administrator!
 ********

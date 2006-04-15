@@ -20,7 +20,7 @@ MASTER_SITES=	ftp://ftp.horde.org/pub/ingo/				\
 DISTNAME=	${PORTNAME}-h3-${PORTVERSION}
 
 MAINTAINER=	shaun@inerd.com
-COMMENT=	Horde's email-filter management application
+COMMENT=	Horde\'s email-filter management application
 
 #-----------------------------------------------------------------------
 # You may define this option:
@@ -39,7 +39,7 @@ USE_APACHE=	1.3+	# needed to test APACHE_VERSION
 PLIST_SUB=	INGODIR=${LINGODIR}  HORDE_INC=${HORDE_INC:S|^${LOCALBASE}/||}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
-SUB_FILES=	pkg-message pkg-deinstall
+SUB_FILES=	pkg-message pkg-install pkg-deinstall
 SUB_LIST=	INGODIR=${INGODIR}
 
 DOCS=		LICENSE README docs/CHANGES docs/CREDITS docs/INSTALL	\
@@ -76,11 +76,7 @@ do-install:
 	@${CP} -Rp ${WRKSRC}/${REP} ${INGODIR}
 .endfor
 	@${CP} -p  ${WRKSRC}/*.php ${INGODIR}
-.for FILE in ${CONFFILE}
-	@if [ ! -f ${CONFDIR}/${FILE} ]; then \
-	  ${CP} ${CONFDIR}/${FILE}.dist ${CONFDIR}/${FILE} ; \
-	fi
-.endfor
+
 	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${INGODIR}
 	@${CHMOD} -R o-rwx ${CONFDIR}
 	@${INSTALL_DATA} ${WRKDIR}/httpd-ingo.conf ${HORDE_INC}
@@ -93,6 +89,7 @@ do-install:
 .endif
 
 post-install:
+	@${SETENV} ${SCRIPTS_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}

@@ -102,14 +102,11 @@ case $2 in
         fi
 
         if [ -z "${PACKAGE_BUILDING}" ]; then
-            # Don't reset the config to default (PR ports/88621)
+            # Copy over sample config files unless they already exist
 
-            for cf in `ls %%HORDEDIR%%/config/*php`; do
-                if [ -f $cf.previous ]; then
-                    mv $cf $cf.new
-                    echo "--->   $cf not installed ***"
-                    echo "--->       please copy from $cf.previous ***"
-                    echo "--->                or from $cf.new      ***"
+            for cf in `ls %%HORDEDIR%%/config/*.dist | sed -e 's/\.dist//g'`; do
+                if [ ! -f $cf ]; then
+                    cp -p $cf.dist $cf
                 fi
             done
         fi
