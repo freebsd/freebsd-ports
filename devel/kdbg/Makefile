@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	kdbg
-PORTVERSION=	1.2.5
-PORTREVISION=	4
+PORTVERSION=	2.0.3
 CATEGORIES=	devel kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR= kdbg/
+MASTER_SITE_SUBDIR=	kdbg/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A graphical user interface around gdb using KDE
@@ -18,6 +17,8 @@ COMMENT=	A graphical user interface around gdb using KDE
 USE_QT_VER=	3
 USE_KDELIBS_VER=3
 USE_AUTOTOOLS=	libtool:15
+USE_GETTEXT=yes
+
 CONFIGURE_ENV=	LIBQTMT="-lqt-mt" CXXFLAGS=-pthread
 CONFIGURE_ARGS=	--with-kde-version=3
 
