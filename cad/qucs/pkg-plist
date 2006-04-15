@@ -1,7 +1,17 @@
+bin/qucs
+bin/qucsator
+bin/qucsconv
+bin/qucsdigi
+bin/qucsedit
+bin/qucsfilter
+bin/qucshelp
+bin/qucslib
+bin/qucstrans
 %%DATADIR%%/bitmaps/ac.png
 %%DATADIR%%/bitmaps/ac_current.png
 %%DATADIR%%/bitmaps/ac_voltage.png
 %%DATADIR%%/bitmaps/amplifier.png
+%%DATADIR%%/bitmaps/and.png
 %%DATADIR%%/bitmaps/arrow.png
 %%DATADIR%%/bitmaps/attenuator.png
 %%DATADIR%%/bitmaps/biast.png
@@ -15,6 +25,7 @@
 %%DATADIR%%/bitmaps/circulator.png
 %%DATADIR%%/bitmaps/coax.png
 %%DATADIR%%/bitmaps/coplanar.png
+%%DATADIR%%/bitmaps/coupler.png
 %%DATADIR%%/bitmaps/cpwgap.png
 %%DATADIR%%/bitmaps/cpwopen.png
 %%DATADIR%%/bitmaps/cpwshort.png
@@ -26,6 +37,9 @@
 %%DATADIR%%/bitmaps/dcblock.png
 %%DATADIR%%/bitmaps/dcfeed.png
 %%DATADIR%%/bitmaps/deactiv.png
+%%DATADIR%%/bitmaps/dflipflop.png
+%%DATADIR%%/bitmaps/digi.png
+%%DATADIR%%/bitmaps/digi_source.png
 %%DATADIR%%/bitmaps/diode.png
 %%DATADIR%%/bitmaps/dmosfet.png
 %%DATADIR%%/bitmaps/dmosfet_sub.png
@@ -46,13 +60,16 @@
 %%DATADIR%%/bitmaps/filledrect.png
 %%DATADIR%%/bitmaps/gear.png
 %%DATADIR%%/bitmaps/gnd.png
+%%DATADIR%%/bitmaps/ground.png
 %%DATADIR%%/bitmaps/gyrator.png
 %%DATADIR%%/bitmaps/hb.png
 %%DATADIR%%/bitmaps/inductor.png
+%%DATADIR%%/bitmaps/inverter.png
 %%DATADIR%%/bitmaps/iprobe.png
 %%DATADIR%%/bitmaps/ipulse.png
 %%DATADIR%%/bitmaps/irect.png
 %%DATADIR%%/bitmaps/isolator.png
+%%DATADIR%%/bitmaps/jkflipflop.png
 %%DATADIR%%/bitmaps/line.png
 %%DATADIR%%/bitmaps/marker.png
 %%DATADIR%%/bitmaps/microstrip.png
@@ -68,15 +85,23 @@
 %%DATADIR%%/bitmaps/msstep.png
 %%DATADIR%%/bitmaps/mstee.png
 %%DATADIR%%/bitmaps/msvia.png
+%%DATADIR%%/bitmaps/mutual.png
+%%DATADIR%%/bitmaps/mutual2.png
+%%DATADIR%%/bitmaps/nand.png
 %%DATADIR%%/bitmaps/nfet.png
 %%DATADIR%%/bitmaps/nmosfet.png
 %%DATADIR%%/bitmaps/nmosfet_sub.png
 %%DATADIR%%/bitmaps/nodename.png
 %%DATADIR%%/bitmaps/noise_current.png
+%%DATADIR%%/bitmaps/noise_ii.png
+%%DATADIR%%/bitmaps/noise_iv.png
 %%DATADIR%%/bitmaps/noise_volt.png
+%%DATADIR%%/bitmaps/noise_vv.png
+%%DATADIR%%/bitmaps/nor.png
 %%DATADIR%%/bitmaps/npn.png
 %%DATADIR%%/bitmaps/npnsub.png
 %%DATADIR%%/bitmaps/opamp.png
+%%DATADIR%%/bitmaps/or.png
 %%DATADIR%%/bitmaps/pfet.png
 %%DATADIR%%/bitmaps/pmosfet.png
 %%DATADIR%%/bitmaps/pmosfet_sub.png
@@ -96,6 +121,7 @@
 %%DATADIR%%/bitmaps/resistor.png
 %%DATADIR%%/bitmaps/resistor_us.png
 %%DATADIR%%/bitmaps/rotate_ccw.png
+%%DATADIR%%/bitmaps/rsflipflop.png
 %%DATADIR%%/bitmaps/smith.png
 %%DATADIR%%/bitmaps/smithpolar.png
 %%DATADIR%%/bitmaps/source.png
@@ -113,12 +139,14 @@
 %%DATADIR%%/bitmaps/symtrans.png
 %%DATADIR%%/bitmaps/tabular.png
 %%DATADIR%%/bitmaps/text.png
+%%DATADIR%%/bitmaps/timing.png
 %%DATADIR%%/bitmaps/tiny.button.qucs.xpm
 %%DATADIR%%/bitmaps/tiny.qucs.xpm
 %%DATADIR%%/bitmaps/tline.png
 %%DATADIR%%/bitmaps/top.png
 %%DATADIR%%/bitmaps/tran.png
 %%DATADIR%%/bitmaps/transformer.png
+%%DATADIR%%/bitmaps/truth.png
 %%DATADIR%%/bitmaps/undo.png
 %%DATADIR%%/bitmaps/vccs.png
 %%DATADIR%%/bitmaps/vcvs.png
@@ -129,16 +157,23 @@
 %%DATADIR%%/bitmaps/vpulse.png
 %%DATADIR%%/bitmaps/vrect.png
 %%DATADIR%%/bitmaps/wire.png
+%%DATADIR%%/bitmaps/xnor.png
+%%DATADIR%%/bitmaps/xor.png
 %%DATADIR%%/bitmaps/ysmith.png
+%%DATADIR%%/docs/de/characters.html
 %%DATADIR%%/docs/de/index.html
 %%DATADIR%%/docs/de/inhalttab.png
+%%DATADIR%%/docs/de/internal.html
+%%DATADIR%%/docs/de/matching.html
 %%DATADIR%%/docs/de/mathfunc.html
 %%DATADIR%%/docs/de/paste.png
 %%DATADIR%%/docs/de/programs.html
+%%DATADIR%%/docs/de/qucsdigi.png
 %%DATADIR%%/docs/de/qucshaupt.png
 %%DATADIR%%/docs/de/select.png
 %%DATADIR%%/docs/de/short.html
 %%DATADIR%%/docs/de/start.html
+%%DATADIR%%/docs/de/start_digi.html
 %%DATADIR%%/docs/de/subcircuit.html
 %%DATADIR%%/docs/de/unterschaltung.png
 %%DATADIR%%/docs/de/wire.png
@@ -146,13 +181,16 @@
 %%DATADIR%%/docs/en/contab.png
 %%DATADIR%%/docs/en/index.html
 %%DATADIR%%/docs/en/internal.html
+%%DATADIR%%/docs/en/matching.html
 %%DATADIR%%/docs/en/mathfunc.html
 %%DATADIR%%/docs/en/paste.png
 %%DATADIR%%/docs/en/programs.html
+%%DATADIR%%/docs/en/qucsdigi.png
 %%DATADIR%%/docs/en/qucsmain.png
 %%DATADIR%%/docs/en/select.png
 %%DATADIR%%/docs/en/short.html
 %%DATADIR%%/docs/en/start.html
+%%DATADIR%%/docs/en/start_digi.html
 %%DATADIR%%/docs/en/subcircuit.html
 %%DATADIR%%/docs/en/subcircuit.png
 %%DATADIR%%/docs/en/wire.png
@@ -189,20 +227,23 @@
 %%DATADIR%%/lang/qucs_pl.qm
 %%DATADIR%%/lang/qucs_pt.qm
 %%DATADIR%%/lang/qucs_ro.qm
-%%DATADIR%%/lang/qucs_se.qm
+%%DATADIR%%/lang/qucs_sv.qm
+%%DATADIR%%/lang/qucs_tr.qm
+%%DATADIR%%/library/Bridges.lib
 %%DATADIR%%/library/Diodes.lib
+%%DATADIR%%/library/JFETs.lib
+%%DATADIR%%/library/LEDs.lib
 %%DATADIR%%/library/MOSFETs.lib
 %%DATADIR%%/library/OpAmps.lib
 %%DATADIR%%/library/Substrates.lib
 %%DATADIR%%/library/Transistors.lib
-bin/qucs
-bin/qucsator
-bin/qucsconv
-bin/qucsedit
-bin/qucsfilter
-bin/qucshelp
-bin/qucslib
-bin/qucstrans
+%%DATADIR%%/library/Z-Diodes.lib
+%%DATADIR%%/tline/cstrip_kj_1.trc
+%%DATADIR%%/tline/cstrip_kj_2.trc
+%%DATADIR%%/tline/hp.trc
+%%DATADIR%%/tline/ustrip50fr4.trc
+%%DATADIR%%/tline/ustrip_jansen.trc
+@dirrm %%DATADIR%%/tline
 @dirrm %%DATADIR%%/library
 @dirrm %%DATADIR%%/lang
 @dirrm %%DATADIR%%/docs/fr
@@ -211,4 +252,4 @@ bin/qucstrans
 @dirrm %%DATADIR%%/docs/de
 @dirrm %%DATADIR%%/docs
 @dirrm %%DATADIR%%/bitmaps
-@dirrm %%DATADIR%%
+@dirrm %%DATADIR%%/
