@@ -11,16 +11,16 @@
 #
 
 bfilter_enable=${bfilter_enable-"NO"}
-bfilter_flags=${bfilter_flags-"-c /usr/local/etc/bfilter"}
+bfilter_flags=${bfilter_flags-"-c %%PREFIX%%/etc/bfilter"}
 
-. /etc/rc.subr
+. %%RC_SUBR%%
 
 load_rc_config bfilter
 
 name=bfilter
 rcvar=`set_rcvar`
 
-command=/usr/local/bin/${name}
+command=%%PREFIX%%/bin/${name}
 sig_stop=-KILL
 
 load_rc_config ${name}
