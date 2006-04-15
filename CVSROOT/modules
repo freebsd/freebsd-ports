@@ -12255,6 +12255,7 @@ squirrelmail-change_ldappass-plugin	ports/mail/squirrelmail-change_ldappass-plug
 squirrelmail-compatibility-plugin	ports/mail/squirrelmail-compatibility-plugin
 squirrelmail-devel	ports/mail/squirrelmail-devel
 squirrelmail-email_footer-plugin	ports/mail/squirrelmail-email_footer-plugin
+squirrelmail-login_auth-plugin	ports/mail/squirrelmail-login_auth-plugin
 squirrelmail-login_notes-plugin	ports/mail/squirrelmail-login_notes-plugin
 squirrelmail-notes-plugin	ports/mail/squirrelmail-notes-plugin
 squirrelmail-notify-plugin	ports/mail/squirrelmail-notify-plugin
