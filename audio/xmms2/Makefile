@@ -106,7 +106,7 @@ PLIST_SUB+=	SDL="@comment "
 .endif
 
 .if defined(WITH_MUSEPACK)
-LIB_DEPENDS+=	mpcdec.3:${PORTSDIR}/audio/libmpcdec
+LIB_DEPENDS+=	mpcdec.4:${PORTSDIR}/audio/libmpcdec
 PLIST_SUB+=	MUSEPACK=""
 .else
 EXCLUDE+=	musepack

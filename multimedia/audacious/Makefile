@@ -90,7 +90,7 @@ CONFIGURE_ARGS+=	--disable-sid
 .if !defined(WITHOUT_MPC)
 INPUT_PLUGINS+=	musepack
 PLIST_SUB+=	MPCPLUGIN=""
-LIB_DEPENDS+=	mpcdec.3:${PORTSDIR}/audio/libmpcdec \
+LIB_DEPENDS+=	mpcdec.4:${PORTSDIR}/audio/libmpcdec \
 	tag.5:${PORTSDIR}/audio/taglib
 .else
 PLIST_SUB+=	MPCPLUGIN="@comment "
