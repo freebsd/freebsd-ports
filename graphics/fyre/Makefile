@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://flapjack.navi.cx/releases/fyre/
 
-MAINTAINER=	samy@kerneled.org
+MAINTAINER=	sbahra@kerneled.org
 COMMENT=	Chaos map rendering system with GTK+-2 interface
 
 LIB_DEPENDS=	Half:${PORTSDIR}/graphics/OpenEXR \

@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.kerneled.org/files/FreeBSD-ports/
 
-MAINTAINER=	samy@kerneled.org
+MAINTAINER=	sbahra@kerneled.org
 COMMENT=	A commandline based ELF header analyzer
 
 MAN1=		elf.1

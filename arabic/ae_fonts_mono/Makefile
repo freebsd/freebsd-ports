@@ -12,7 +12,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	arabeyes
 DISTNAME=		ae_fonts_mono
 
-MAINTAINER=	samy@kerneled.com
+MAINTAINER=	sbahra@kerneled.org
 COMMENT=	A collection of PCF fonts that include Arabic glyphs
 
 BUILD_DEPENDS=	mkfontdir:${X_CLIENTS_PORT}

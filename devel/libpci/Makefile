@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.kerneled.org/files/FreeBSD-ports/ \
 		ftp://ftp.kernel.org/pub/software/utils/pciutils/
 DISTNAME=	pciutils-${PORTVERSION}
 
-MAINTAINER=	samy@kerneled.org
+MAINTAINER=	sbahra@kerneled.org
 COMMENT=	PCI configuration space I/O made easy
 
 USE_BZIP2=	yes

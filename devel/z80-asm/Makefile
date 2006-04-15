@@ -12,7 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.kerneled.org/files/FreeBSD-ports/
 DISTNAME=	z80-asm
 
-MAINTAINER=	samy@kerneled.org
+MAINTAINER=	sbahra@kerneled.org
 COMMENT=	A Z80 assembly code assembler and disassembler
 
 MAN1=		z80-asm.1 z80-dis.1

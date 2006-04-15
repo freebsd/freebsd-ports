@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://atrey.karlin.mff.cuni.cz/pub/linux/pci/ \
 		ftp://ftp.kernel.org/pub/software/utils/pciutils/ \
 		ftp://metalab.unc.edu/pub/Linux/hardware/
 
-MAINTAINER=	samy@kerneled.org
+MAINTAINER=	sbahra@kerneled.org
 COMMENT=	PCI configuration utilities
 
 USE_GMAKE=	yes
