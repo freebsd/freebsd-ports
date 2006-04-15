@@ -2,24 +2,29 @@
 #
 # $FreeBSD$
 #
-
 # PROVIDE: imapproxyd
-# REQUIRE: LOGIN
-# BEFORE: mail
+# REQUIRE: DAEMON courier_imap_imapd courier_imap_imapd_ssl cyrus_imapd
 # KEYWORD: shutdown
 
 #
 # Add the following line to /etc/rc.conf to enable imapproxyd:
 #
-#imapproxyd_enable="YES"
-#
+# imapproxyd_enable (bool):	Set "YES" to enable imapproxyd
+#				Default is "NO"
+# imapproxyd_conf (file):	Set location of conf file.
+#				Default is "%%PREFIX%%/etc/imapproxyd.conf"
 
 . %%RC_SUBR%%
 
 name=imapproxyd
-rcvar=`set_rcvar`
-
-command=%%PREFIX%%/sbin/in.imapproxyd
+rcvar=${name}_enable
 
 load_rc_config $name
+
+: ${imapproxyd_enable="NO"}
+: ${imapproxyd_conf="%%PREFIX%%/etc/imapproxyd.conf"}
+
+command=%%PREFIX%%/sbin/in.imapproxyd
+required_files="${imapproxyd_conf}"
+
 run_rc_command "$1"
