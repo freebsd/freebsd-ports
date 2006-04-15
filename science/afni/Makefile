@@ -16,7 +16,7 @@
 # Makefile.BSD, which is included in the source distribution.
 
 PORTNAME=	afni
-PORTVERSION=	2005.12.30.0934
+PORTVERSION=	2005.12.30.0934.2
 CATEGORIES=	science biology graphics
 MASTER_SITES=	http://www.neuro.mcw.edu/~bacon/Ports/distfiles/AFNI/${PORTVERSION}/
 DISTFILES=	afni_src.tgz afni_doc.tgz afni.1 \
@@ -69,6 +69,7 @@ SCRIPTS=\
 	@GetAfniOrient \
 	@GetAfniPrefix \
 	@GetAfniView \
+	@IsoMasks \
 	@NoExt \
 	@Purify_1D \
 	@RenamePanga \

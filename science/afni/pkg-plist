@@ -45,6 +45,7 @@ bin/3dFDR
 bin/3dFWHM
 bin/3dFourier
 bin/3dFriedman
+bin/3dGetrow
 bin/3dIntracranial
 bin/3dKruskalWallis
 bin/3dLRflip
@@ -251,6 +252,7 @@ lib/model_diffexp.so
 lib/model_diffusion.so
 lib/model_gammavar.so
 lib/model_linear.so
+lib/model_michaelis_menton.so
 lib/model_null.so
 lib/model_quadratic.so
 lib/model_sinewave_ap.so
@@ -360,6 +362,7 @@ lib/plug_zeropad.so
 %%DATADIR%%/face_ibitter.jpg
 %%DATADIR%%/face_ilevy.jpg
 %%DATADIR%%/face_imukai.jpg
+%%DATADIR%%/face_jbacon.jpg
 %%DATADIR%%/face_jbinder.jpg
 %%DATADIR%%/face_jbjork.jpg
 %%DATADIR%%/face_jchoi.jpg
@@ -404,6 +407,7 @@ lib/plug_zeropad.so
 %%DATADIR%%/face_qiulin.jpg
 %%DATADIR%%/face_rabeauchamp.jpg
 %%DATADIR%%/face_rbirn.jpg
+%%DATADIR%%/face_rdesai.jpg
 %%DATADIR%%/face_rhammett.jpg
 %%DATADIR%%/face_rhenderson.jpg
 %%DATADIR%%/face_rhoge.jpg
