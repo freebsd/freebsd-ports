@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	max
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	max@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	B Plus file transfer protocol
 
 do-install:

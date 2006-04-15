@@ -11,7 +11,7 @@ CATEGORIES=	japanese
 MASTER_SITES=	http://www.nerimadors.or.jp/~jiro/cdrom2/
 DISTNAME=	euc
 
-MAINTAINER=	max@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool to lookup CD-ROM dictionaries
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

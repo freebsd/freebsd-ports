@@ -20,7 +20,7 @@ DISTFILES=	${TETEX_SRC}:ctan ${TETEX_TEXMF}:ctan ${PTEX_TEXMF}:ptex \
 		 ${DVIPSK_JPATCH}:dvips ${UDVIPS_PATCH}:udvipspatch
 EXTRACT_ONLY=	${TETEX_SRC} ${DVIPSK_JPATCH}
 
-MAINTAINER=	max@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Base files for ASCII Japanese pTeX
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \

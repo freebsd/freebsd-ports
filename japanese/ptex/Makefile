@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	ja-
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 DIST_SUBDIR=	teTeX
 
-MAINTAINER=	max@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Japanese specific files for ASCII Japanese pTeX
 
 BUILD_DEPENDS=	${LOCALBASE}/share/texmf/ptex/plain/base/ptex.tex:${PORTSDIR}/japanese/ptex-base

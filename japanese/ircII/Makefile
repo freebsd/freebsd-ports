@@ -18,7 +18,7 @@ PATCH_SITES=	ftp://ftp.kyoto.wide.ad.jp/IRC/ircII/
 PATCHFILES=	${DISTNAME}-jp.patch.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	max@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The 'Internet Relay Chat' Client
 
 GNU_CONFIGURE=	yes

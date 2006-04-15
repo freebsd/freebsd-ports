@@ -10,7 +10,7 @@ PORTVERSION=	0.5
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.aist-nara.ac.jp/pub/Security/tool/donkey/
 
-MAINTAINER=	max@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An alternative for S/KEY's key command
 
 GNU_CONFIGURE=	yes
