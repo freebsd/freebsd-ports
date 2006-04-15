@@ -1,15 +1,15 @@
---- Makefile.in.orig	Thu Jan 19 03:58:11 2006
-+++ Makefile.in	Thu Jan 19 14:01:55 2006
+--- Makefile.in.orig	Tue Apr  4 17:23:41 2006
++++ Makefile.in	Tue Apr 11 02:25:14 2006
 @@ -314,7 +314,7 @@
  sharedstatedir = @sharedstatedir@
  sysconfdir = @sysconfdir@
  target_alias = @target_alias@
--SUBDIRS = m4 contrib www doc icons qa cherokee cget 
-+SUBDIRS = m4 contrib www icons qa cherokee cget 
+-SUBDIRS = m4 contrib www doc icons qa cherokee cget windows
++SUBDIRS = m4 contrib www icons qa cherokee cget windows
  bin_SCRIPTS = cherokee-config
  SUFFIXES = .sample.pre .sample
  
-@@ -978,7 +978,7 @@
+@@ -979,7 +979,7 @@
  
  
  .sample.pre.sample:
@@ -18,7 +18,7 @@
  
  install-data-local-config:
  	@$(mkinstalldirs) $(DESTDIR)$(pkgincludedir);
-@@ -1021,9 +1021,6 @@
+@@ -1022,9 +1022,6 @@
  		echo "$@ will not overwrite existing $(cherokeeconfdir)/mime.compression.types"; \
  	else \
  		$(INSTALL_DATA) $(top_srcdir)/mime.compression.types.sample $(DESTDIR)$(cherokeeconfdir)/mime.compression.types; \
