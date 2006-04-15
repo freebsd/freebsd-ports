@@ -10,16 +10,11 @@
 %%TURBADIR%%/addressbooks.php
 %%TURBADIR%%/browse.php
 %%TURBADIR%%/config/.htaccess
-%%TURBADIR%%/config/attributes.php
 %%TURBADIR%%/config/attributes.php.dist
 %%TURBADIR%%/config/conf.xml
-%%TURBADIR%%/config/menu.php
 %%TURBADIR%%/config/menu.php.dist
-%%TURBADIR%%/config/mime_drivers.php
 %%TURBADIR%%/config/mime_drivers.php.dist
-%%TURBADIR%%/config/prefs.php
 %%TURBADIR%%/config/prefs.php.dist
-%%TURBADIR%%/config/sources.php
 %%TURBADIR%%/config/sources.php.dist
 %%TURBADIR%%/data.php
 %%TURBADIR%%/delete.php
