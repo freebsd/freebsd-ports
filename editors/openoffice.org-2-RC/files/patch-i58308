@@ -1,0 +1,26 @@
+see: 
+http://lists.ximian.com/pipermail/openoffice/2006-January/001520.html
+http://lists.ximian.com/pipermail/openoffice/2006-January/001522.html
+http://lists.ximian.com/pipermail/openoffice/2006-January/001528.html
+
+Index: filter/source/config/fragments/makefile.mk
+===================================================================
+RCS file: /cvs/framework/filter/source/config/fragments/makefile.mk,v
+retrieving revision 1.16
+retrieving revision 1.16.16.1
+diff -u -r1.16 -r1.16.16.1
+--- filter/source/config/fragments/makefile.mk	14 Dec 2005 14:48:16 -0000	1.16
++++ filter/source/config/fragments/makefile.mk	17 Jan 2006 11:03:31 -0000	1.16.16.1
+@@ -156,11 +156,7 @@
+ MERGE:=python ../tools/merge/pyAltFCFGMerge
+ .ELSE
+ MERGE    := $(JAVAI) -jar $(CLASSDIR)$/FCFGMerge.jar
+-.IF "$(JDK)" == "gcj"
+-XALANCLASS=$(SOLARBINDIR)/xalan.jar
+-CLASSPATH:=$(CLASSPATH)$(PATH_SEPERATOR){$(subst,%Z*Z%,$(PATH_SEPERATOR) $(XALANCLASS:s/ /%Z*Z%/))}
+-.ENDIF
+-PACKLANG := $(JAVAI) org.apache.xalan.xslt.Process -XSL langfilter.xsl
++PACKLANG := $(JAVAI) $(JAVACPS) $(SOLARBINDIR)/xalan.jar org.apache.xalan.xslt.Process -XSL langfilter.xsl
+ .ENDIF
+ 
+ # -----------------------------------------------------------------------------

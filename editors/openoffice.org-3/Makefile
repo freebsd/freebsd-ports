@@ -49,9 +49,9 @@ ONLY_FOR_ARCHS=	i386
 
 .if !defined(WITHOUT_JAVA) && !defined(WITH_GNUGCJ)
 USE_JAVA=	yes
-JAVA_VERSION=	1.4
+JAVA_VERSION=	1.4+
 JAVA_BUILD=	jdk
-JAVA_VENDOR=	bsdjava
+JAVA_VENDOR=	freebsd bsdjava
 .endif
 
 .include <bsd.port.pre.mk>
