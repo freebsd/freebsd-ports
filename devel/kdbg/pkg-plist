@@ -1,22 +1,33 @@
 bin/kdbg
-share/applnk/Development/kdbg.desktop
+share/applications/kde/kdbg.desktop
+share/apps/kdbg/icons/hicolor/16x16/actions/brkpt.png
+share/apps/kdbg/icons/hicolor/16x16/actions/execopen.png
+share/apps/kdbg/icons/hicolor/16x16/actions/pgmfinish.png
+share/apps/kdbg/icons/hicolor/16x16/actions/pgmnext.png
+share/apps/kdbg/icons/hicolor/16x16/actions/pgmnexti.png
+share/apps/kdbg/icons/hicolor/16x16/actions/pgmrun.png
+share/apps/kdbg/icons/hicolor/16x16/actions/pgmstep.png
+share/apps/kdbg/icons/hicolor/16x16/actions/pgmstepi.png
+share/apps/kdbg/icons/hicolor/22x22/actions/brkpt.png
+share/apps/kdbg/icons/hicolor/22x22/actions/execopen.png
+share/apps/kdbg/icons/hicolor/22x22/actions/hi22/action-pulse.pngseq
+share/apps/kdbg/icons/hicolor/22x22/actions/pgmfinish.png
+share/apps/kdbg/icons/hicolor/22x22/actions/pgmnext.png
+share/apps/kdbg/icons/hicolor/22x22/actions/pgmnexti.png
+share/apps/kdbg/icons/hicolor/22x22/actions/pgmrun.png
+share/apps/kdbg/icons/hicolor/22x22/actions/pgmstep.png
+share/apps/kdbg/icons/hicolor/22x22/actions/pgmstepi.png
+share/apps/kdbg/icons/hicolor/22x22/actions/pulse.png
+share/apps/kdbg/kdbgui.rc
 share/apps/kdbg/pics/brkcond.xpm
 share/apps/kdbg/pics/brkdis.xpm
 share/apps/kdbg/pics/brkena.xpm
-share/apps/kdbg/pics/brkpt.xpm
+share/apps/kdbg/pics/brkorph.xpm
 share/apps/kdbg/pics/brktmp.xpm
-share/apps/kdbg/pics/execopen.xpm
 share/apps/kdbg/pics/pcinner.xpm
 share/apps/kdbg/pics/pcup.xpm
-share/apps/kdbg/pics/pgmfinish.xpm
-share/apps/kdbg/pics/pgmnext.xpm
-share/apps/kdbg/pics/pgmnexti.xpm
-share/apps/kdbg/pics/pgmrun.xpm
-share/apps/kdbg/pics/pgmstep.xpm
-share/apps/kdbg/pics/pgmstepi.xpm
 share/apps/kdbg/pics/pointer.xpm
 share/apps/kdbg/pics/regs.xpm
-share/apps/kdbg/pics/search.xpm
 share/apps/kdbg/pics/watch.xpm
 share/apps/kdbg/pics/watchcoded.xpm
 share/apps/kdbg/pics/watchdis.xpm
@@ -29,6 +40,7 @@ share/apps/kdbg/types/kdecore3.kdbgtt
 share/apps/kdbg/types/qt.kdbgtt
 share/apps/kdbg/types/qt2.kdbgtt
 share/apps/kdbg/types/qt3.kdbgtt
+share/apps/kdbg/types/qt4core.kdbgtt
 share/apps/kdbg/types/stdc++.kdbgtt
 share/doc/HTML/de/kdbg/argspwdenv.html
 share/doc/HTML/de/kdbg/breakptlist.html
@@ -51,6 +63,7 @@ share/doc/HTML/en/kdbg/breakptlist.html
 share/doc/HTML/en/kdbg/globaloptions.html
 share/doc/HTML/en/kdbg/howdoi.html
 share/doc/HTML/en/kdbg/index.html
+share/doc/HTML/en/kdbg/invocation.html
 share/doc/HTML/en/kdbg/localvars.html
 share/doc/HTML/en/kdbg/memory.html
 share/doc/HTML/en/kdbg/pgmoutput.html
@@ -62,6 +75,7 @@ share/doc/HTML/en/kdbg/threads.html
 share/doc/HTML/en/kdbg/tips.html
 share/doc/HTML/en/kdbg/types.html
 share/doc/HTML/en/kdbg/watches.html
+share/doc/HTML/en/kdbg/xslt.html
 share/doc/HTML/ru/kdbg/argspwdenv.html
 share/doc/HTML/ru/kdbg/breakptlist.html
 share/doc/HTML/ru/kdbg/globaloptions.html
@@ -80,6 +94,7 @@ share/doc/HTML/ru/kdbg/types.html
 share/doc/HTML/ru/kdbg/watches.html
 share/icons/hicolor/16x16/apps/kdbg.png
 share/icons/hicolor/32x32/apps/kdbg.png
+share/icons/hicolor/48x48/apps/kdbg.png
 share/icons/locolor/16x16/apps/kdbg.png
 share/icons/locolor/32x32/apps/kdbg.png
 share/locale/cs/LC_MESSAGES/kdbg.mo
@@ -91,8 +106,8 @@ share/locale/hr/LC_MESSAGES/kdbg.mo
 share/locale/hu/LC_MESSAGES/kdbg.mo
 share/locale/it/LC_MESSAGES/kdbg.mo
 share/locale/ja/LC_MESSAGES/kdbg.mo
-share/locale/no/LC_MESSAGES/kdbg.mo
-share/locale/no_NY/LC_MESSAGES/kdbg.mo
+share/locale/nb/LC_MESSAGES/kdbg.mo
+share/locale/nn/LC_MESSAGES/kdbg.mo
 share/locale/pl/LC_MESSAGES/kdbg.mo
 share/locale/pt/LC_MESSAGES/kdbg.mo
 share/locale/ro/LC_MESSAGES/kdbg.mo
@@ -101,12 +116,20 @@ share/locale/sk/LC_MESSAGES/kdbg.mo
 share/locale/sr/LC_MESSAGES/kdbg.mo
 share/locale/sv/LC_MESSAGES/kdbg.mo
 share/locale/tr/LC_MESSAGES/kdbg.mo
-share/locale/zh_CN.GB2312/LC_MESSAGES/kdbg.mo
-@dirrmtry share/locale/no_NY/LC_MESSAGES
-@dirrmtry share/locale/no_NY
 @dirrm share/doc/HTML/ru/kdbg
+@dirrmtry share/doc/HTML/ru
 @dirrm share/doc/HTML/en/kdbg
+@dirrmtry share/doc/HTML/en
 @dirrm share/doc/HTML/de/kdbg
+@dirrmtry share/doc/HTML/de
+@dirrmtry share/doc/HTML
 @dirrm share/apps/kdbg/types
 @dirrm share/apps/kdbg/pics
+@dirrm share/apps/kdbg/icons/hicolor/22x22/actions/hi22
+@dirrm share/apps/kdbg/icons/hicolor/22x22/actions
+@dirrm share/apps/kdbg/icons/hicolor/22x22
+@dirrm share/apps/kdbg/icons/hicolor/16x16/actions
+@dirrm share/apps/kdbg/icons/hicolor/16x16
+@dirrm share/apps/kdbg/icons/hicolor
+@dirrm share/apps/kdbg/icons
 @dirrm share/apps/kdbg
