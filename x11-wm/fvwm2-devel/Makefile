@@ -86,6 +86,7 @@ CONFIGURE_ARGS+=	--with-png --with-png-includes=${LOCALBASE}/include \
 .if defined(WITHOUT_BIDI)
 CONFIGURE_ARGS+=	--disable-bidi
 .else
+BROKEN=		fribidi 0.10.7 is required, fribidi 0.10.4 is currently in the ports collection, build WITHOUT_BIDI in the interim
 LIB_DEPENDS+=	fribidi.0:${PORTSDIR}/converters/fribidi
 .endif
 
