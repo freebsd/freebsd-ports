@@ -1,0 +1,38 @@
+$FreeBSD$
+
+With Java 1.5, 'enum' is a keyword
+
+--- src/java/xpath/org/xmlpull/v1/builder/xpath/jaxen/function/ext/LocaleFunctionSupport.java.orig	Sat Apr 15 02:21:03 2006
++++ src/java/xpath/org/xmlpull/v1/builder/xpath/jaxen/function/ext/LocaleFunctionSupport.java	Sat Apr 15 02:21:40 2006
+@@ -130,24 +130,24 @@
+      *      be found 
+      */
+     protected Locale findLocale(String localeText) {
+-        StringTokenizer enum = new StringTokenizer( localeText, "-" );
+-        if (enum.hasMoreTokens()) 
++        StringTokenizer _enum = new StringTokenizer( localeText, "-" );
++        if (_enum.hasMoreTokens()) 
+         {
+-            String language = enum.nextToken();
+-            if (! enum.hasMoreTokens()) 
++            String language = _enum.nextToken();
++            if (! _enum.hasMoreTokens()) 
+             {                
+                 return findLocaleForLanguage(language);
+             }
+             else 
+             {
+-                String country = enum.nextToken();
+-                if (! enum.hasMoreTokens()) 
++                String country = _enum.nextToken();
++                if (! _enum.hasMoreTokens()) 
+                 {
+                     return new Locale(language, country);
+                 }
+                 else 
+                 {
+-                    String variant = enum.nextToken();
++                    String variant = _enum.nextToken();
+                     return new Locale(language, country, variant);
+                 }
+             }
