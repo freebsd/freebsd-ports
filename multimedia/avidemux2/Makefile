@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	avidemux2
-PORTVERSION=	2.1.1
+PORTVERSION=	2.1.2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://fixounet.free.fr/avidemux/ \
 		http://download.berlios.de/avidemux/
@@ -111,6 +111,10 @@ BROKEN=		"does not compile"
 post-extract:
 	@${REINPLACE_CMD} -e 's/[[:cntrl:]]*$$//' \
 		${WRKSRC}/avidemux/ADM_mplex/ADM_mplexout.cpp
+
+pre-build:
+	@${FIND} ${WRKSRC} -type f -print0 | \
+	${XARGS} -x -n 10 -0 ${TOUCH}
 
 post-patch:
 	@${TOUCH} ${WRKSRC}/*
