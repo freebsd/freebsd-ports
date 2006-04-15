@@ -11,7 +11,7 @@ CATEGORIES=	irc www perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	cgiirc
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	shaun@inerd.com
 COMMENT=	IRC web gate written on perl
 
 USE_PERL5=	yes

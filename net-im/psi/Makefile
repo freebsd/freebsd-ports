@@ -11,7 +11,7 @@ CATEGORIES=	net-im
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	shaun@inerd.com
 COMMENT=	A Qt-based Jabber client
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
