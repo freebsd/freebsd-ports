@@ -1,6 +1,14 @@
---- configure.pl.orig	Sat Jun 26 14:32:52 2004
-+++ configure.pl	Fri Jul 16 16:53:50 2004
-@@ -2007,7 +2007,11 @@
+--- configure.pl.orig	Mon Jan 16 12:13:55 2006
++++ configure.pl	Sat Apr 15 15:48:03 2006
+@@ -74,7 +74,6 @@
+    'deprecated.txt' => $DOC_DIR,
+    'license.txt' => $DOC_DIR,
+    'log.txt' => $DOC_DIR,
+-   'rngs.txt' => $DOC_DIR,
+    'thanks.txt' => $DOC_DIR,
+    'todo.txt' => $DOC_DIR
+    );
+@@ -2040,7 +2039,11 @@
     my $link_to = "-lm";
     foreach my $lib (@{ $lib_list })
     {
