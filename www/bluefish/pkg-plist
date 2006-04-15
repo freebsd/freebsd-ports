@@ -31,6 +31,7 @@ share/locale/cs/LC_MESSAGES/bluefish.mo
 share/locale/da/LC_MESSAGES/bluefish.mo
 share/locale/de/LC_MESSAGES/bluefish.mo
 share/locale/es/LC_MESSAGES/bluefish.mo
+share/locale/eu/LC_MESSAGES/bluefish.mo
 share/locale/fi/LC_MESSAGES/bluefish.mo
 share/locale/fr/LC_MESSAGES/bluefish.mo
 share/locale/hu/LC_MESSAGES/bluefish.mo
@@ -41,6 +42,7 @@ share/locale/pl/LC_MESSAGES/bluefish.mo
 share/locale/pt/LC_MESSAGES/bluefish.mo
 share/locale/pt_BR/LC_MESSAGES/bluefish.mo
 share/locale/ru/LC_MESSAGES/bluefish.mo
+share/locale/sk/LC_MESSAGES/bluefish.mo
 share/locale/sr/LC_MESSAGES/bluefish.mo
 share/locale/sv/LC_MESSAGES/bluefish.mo
 share/locale/ta/LC_MESSAGES/bluefish.mo
