@@ -11,7 +11,7 @@ CATEGORIES=	ftp www ipv6
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	wget
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	vd@FreeBSD.org
 COMMENT=	Retrieve files from the Net via HTTP and FTP
 
 .if !defined(WITHOUT_NLS)
@@ -20,7 +20,6 @@ USE_GETTEXT=	yes
 
 CONFLICTS=	wget-devel-[0-9]*
 
-USE_REINPLACE=		yes
 USE_PERL5_BUILD=	yes
 GNU_CONFIGURE=		yes
 
