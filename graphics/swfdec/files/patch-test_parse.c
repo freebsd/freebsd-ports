@@ -1,6 +1,6 @@
---- test/render.c.orig	Wed Dec 15 12:04:53 2004
-+++ test/render.c	Wed Dec 15 12:42:01 2004
-@@ -12,6 +12,7 @@
+--- test/parse.c.orig	Sat Apr 15 04:33:30 2006
++++ test/parse.c	Sat Apr 15 04:33:48 2006
+@@ -11,6 +11,7 @@
  #include <swfdec_render.h>
  #include <swfdec_sprite.h>
  #include <swfdec_buffer.h>

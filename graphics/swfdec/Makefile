@@ -7,24 +7,21 @@
 #
 
 PORTNAME=	swfdec
-PORTVERSION=	0.3.5
-PORTREVISION=	1
+PORTVERSION=	0.3.6
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.schleef.org/swfdec/download/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rainer.alves@gmail.com
 COMMENT=	Flash Rendering Library
 
 LIB_DEPENDS=	mad.2:${PORTSDIR}/audio/libmad \
 		oil-0.3.1:${PORTSDIR}/devel/liboil
 
-USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_SDL=	sdl
 USE_GNOME=	gnomehack gtk20 libartlgpl2
 USE_GSTREAMER=	gconf
 USE_GETOPT_LONG=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
@@ -46,7 +43,7 @@ PLIST_SUB+=	GIMP="@comment "
 
 pre-everything::
 	@${ECHO} ""
-	@${ECHO} "Definde WITH_GIMP to build swf gimp plugin"
+	@${ECHO} "Define WITH_GIMP in order to build the SWF Gimp plugin"
 	@${ECHO} ""
 
 post-patch:
