@@ -8,6 +8,7 @@
 
 PORTNAME=	downloader
 PORTVERSION=	2.5.7.1
+PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	http://d4x.krasu.ru/files/ \
 		ftp://ftp.chg.ru/pub/X11/applications/Xdownloader/
@@ -38,7 +39,7 @@ LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 CONFIGURE_ARGS+=	--disable-openssl
 .else
 USE_OPENSSL=	yes
-CONFIGURE_ENV+=	SSL_CFLAGS="${OPENSSL_CFLAGS}" SSL_LIBS="${OPENSSL_LDFLAGS}"
+CONFIGURE_ENV+=	SSL_CFLAGS="${OPENSSLINC}" SSL_LIBS="${OPENSSLLIB}"
 LDFLAGS+=	-lssl -lcrypto
 .endif
 
