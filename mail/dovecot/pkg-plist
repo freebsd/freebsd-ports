@@ -39,5 +39,6 @@ libexec/dovecot/ssl-build-param
 @dirrm libexec/dovecot
 sbin/dovecot
 sbin/dovecotpw
-share/dovecot/mkcert.sh
-@dirrm share/dovecot
+%%DATADIR%%/dovecot-openssl.cnf
+%%DATADIR%%/mkcert.sh
+@dirrm %%DATADIR%%
