@@ -13,3 +13,16 @@
  		NULL
  	};
  
+@@ -166,9 +162,9 @@
+ {
+ 	char	*word;
+ 	register unsigned char	*p;
+-	register long	sum = 0L;
+-	register long	xsum = 0L;
+-	register long	n;
++	register int	sum = 0;
++	register int	xsum = 0;
++	register int	n;
+ 	BOOL	chksum_ok = FALSE;
+ 	
+ 	while ((n = fgetline(dat_file, linebuf, sizeof(linebuf))) >= 0) {

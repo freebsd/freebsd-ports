@@ -5,5 +5,5 @@
  ###########################################################################
 -DIRS=		patches conf inc lib libdeflt libscg librscg \
 -		sformat rscsi man
-+DIRS=		conf inc lib libscg sformat
++DIRS=		conf inc libschily libscg sformat
  ###########################################################################

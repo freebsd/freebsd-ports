@@ -7,10 +7,14 @@
 
 PORTNAME=	sformat
 PORTVERSION=	3.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://ftp.zeist.de/pub/distfiles/ \
-		ftp://ftp.berlios.de/pub/sformat/
+MASTER_SITES=	ftp://ftp.berlios.de/pub/sformat/:sformat \
+		${MASTER_SITE_LOCAL:S/$/:libschily,sformat/}
+MASTER_SITE_SUBDIR=	marius/:libschily,sformat
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:sformat \
+		${LIBSCHILY}:libschily
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	marius@FreeBSD.org
 COMMENT=	Allows formatting/partitioning/analysis/repairing of SCSI disks
@@ -19,12 +23,15 @@ USE_GMAKE=	yes
 
 MAN1=		sformat.1
 
+LIBSCHILY=	libschily-2.01.01a07.tar.gz
 MAKE_ENV=	CCOM=${CC}
 SFMTTARGET=	${ARCH}-freebsd-${CC}
 
 .include <bsd.port.pre.mk>
 
 post-extract:
+	@cd ${WRKSRC} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
+		${DISTDIR}/${DIST_SUBDIR}/${LIBSCHILY} ${EXTRACT_AFTER_ARGS}
 .for i in config.guess config.sub
 	@${CP} ${PORTSDIR}/Templates/${i} ${WRKSRC}/conf
 .endfor
