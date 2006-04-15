@@ -22,6 +22,6 @@ USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 
 do-configure:
-	@cd ${WRKSRC} && ${PYTHON_CMD} config_unix.py --prefix="${LOCALBASE}"
+	@cd ${WRKSRC} && ${PYTHON_CMD} config_unix.py --prefix "${LOCALBASE}"
 
 .include <bsd.port.mk>
