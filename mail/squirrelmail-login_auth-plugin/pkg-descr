@@ -1,0 +1,11 @@
+If you keep SquirrelMail behind a password-protected directory on your web
+server and if PHP has access to the username and password, this plugin will
+bypass the login screen and use the provided username/password.
+
+If this plugin enabled and the information isn't present, it doesn't crash
+or produce error messages. It just doesn't automatically log you in. If the
+user/pass information does not work for the IMAP server, this still displays
+the login form, just in case the web server password and IMAP password are
+not synchronized.
+
+WWW: http://www.squirrelmail.org/plugin_view.php?id=34
