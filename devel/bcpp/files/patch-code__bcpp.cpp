@@ -1,21 +1,5 @@
---- bcpp.cpp.orig	Sat May 18 13:53:27 2002
-+++ bcpp.cpp	Fri Jun  7 14:39:33 2002
-@@ -1455,6 +1455,7 @@
- 
- }
- 
-+/*
- // purge an Indent-stack
- static void freeIndentStack(StackList* pImode)
- {
-@@ -1475,6 +1476,7 @@
-         dst -> push(temp);
-     }
- }
-+*/
- 
- // no extra indent immediately after any brace
- void resetSingleIndent(StackList* pIMode)
+--- code/bcpp.cpp.orig	Sat May 18 13:53:27 2002
++++ code/bcpp.cpp	Fri Jun  7 14:39:33 2002
 @@ -2755,6 +2757,7 @@
      char* pSPath      = getenv ("PATH");
      char* pEPath      = NULL;

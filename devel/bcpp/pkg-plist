@@ -1,5 +1,5 @@
 bin/bcpp
 etc/bcpp.cfg.sample
-%%PORTDOCS%%share/doc/bcpp/hirachy.txt
-%%PORTDOCS%%share/doc/bcpp/manual.txt
-%%PORTDOCS%%@dirrm share/doc/bcpp
+%%PORTDOCS%%%%DOCSDIR%%/hirachy.txt
+%%PORTDOCS%%%%DOCSDIR%%/manual.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
