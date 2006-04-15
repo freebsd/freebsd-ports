@@ -120,10 +120,9 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  ${MASTER_SITE_OVERRIDE})
 # EXTRACT_ONLY	- If set, a subset of ${DISTFILES} you want to
 #				  actually extract.
-# ALWAYS_KEEP_DISTFILES
-#				- If set, the package building cluster will save the distfiles
-#				  along with the packages. This may be required to comply with
-#				  some licenses, e.g. GPL in some cases.
+# ALWAYS_KEEP_DISTFILES - If set, the package building cluster will save the distfiles along
+#				  with the packages. This may be required to comply with some
+#				  licenses, e.g. GPL in some cases.
 #				  Default: not set.
 #
 # (NOTE: by convention, the MAINTAINER entry (see above) should go here.)
@@ -177,7 +176,6 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # DISABLE_VULNERABILITIES
 #				- If set, do not check if the port is listed in the
 #				  vulnerabilities database.
-#
 # In addition to RESTRICTED or NO_CDROM, if only a subset of distfiles
 # or patchfiles have redistribution restrictions, set the following
 # to the list of such files.
@@ -209,17 +207,6 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # ONLY_FOR_ARCHS
 #				- Only build ports if ${ARCH} matches one of these.
 # NOT_FOR_ARCHS	- Only build ports if ${ARCH} doesn't match one of these.
-#
-# Set these if your port only builds on certain OS versions.
-#
-# ONLY_FOR_OSVERSION
-#				- An OS version, optionally prefixed or suffixed a "+" to
-#				  indicate "up to" or "from". OS Versions are the six digits
-#				  versions like ${OSVERSION}). For example: 500000+ requires
-#				  OSVERSION 500000 or higher, +499999 requires OSVERSION to
-#				  be lower than 500000.
-# ONLY_FOR_OSVERSION_REASON
-#				- An optional reason why it doesn't work on this OSVERSION.
 #
 # Dependency checking.  Use these if your port requires another port
 # not in the list below.  (Default: empty.)
@@ -270,12 +257,6 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  package depends on.  "lib" is the name of a shared library.
 #				  make will use "ldconfig -r" to search for the library.
 #				  lib can contain extended regular expressions.
-# TEST_DEPENDS	- A list of "path:dir[:target]" tuples of other ports this
-#				  package depends to test.  The test done to determine
-#				  the existence of the dependency is the same as
-#				  FETCH_DEPENDS.  This will be checked during the
-#				  "test" stage.  If the third field ("target") exists,
-#				  it will be used instead of ${DEPENDS_TARGET}.
 # DEPENDS		- A list of "dir[:target]" tuples of other ports this
 #				  package depends on being made first.  Use this only for
 #				  things that don't fall into the above four categories.
@@ -310,11 +291,6 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # USE_GMAKE		- If set, this port uses gmake.
 # GMAKE			- Set to path of GNU make if not in $PATH.
 #				  Default: gmake
-# USE_BSD_MK		- If set, this port uses /usr/share/mk/* files. Additional variables
-#				  are added to MAKE_ENV and PLIST_SUB.
-#				  Note that if USE_BSD_MK equal to "bin"
-#				  then "BINDIR=${PREFIX}/bin" will be added to MAKE_ENV,
-#				  else "BINDIR=${PREFIX}/sbin" will be appended.
 ##
 # USE_GETOPT_LONG
 #				- If set, this port uses getopt_long. If OSVERSION
@@ -467,15 +443,13 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				- Set to yes to enable automatic packing list generation.
 #				  Currently has no effect unless USE_LINUX_RPM is set.
 #
-# OVERRIDE_LINUX_BASE_PORT
-#				- This specifies the default linux base to use, for valid
-#				  values have a look at the description of USE_LINUX. This is
-#				  an user-only variable. Don't use it in any port, it's meant
-#				  to be used in make.conf.
+# OVERRIDE_LINUX_BASE_PORT	- This specifies the default linux base to use, for valid values
+#				  have a look at the description of USE_LINUX. This is an user-only
+#				  variable. Don't use it in any port, it's meant to be used in
+#				  make.conf.
 #
-# LINUX_BASE_PORT
-#				- This is a read-only variable, it gets set to a value which is
-#				  usable in *_DEPENDS (e.g. BUILD_DEPENDS=${LINUX_BASE_PORT}).
+# LINUX_BASE_PORT		- This is a read-only variable, it gets set to a value which
+#				  is usable in *_DEPENDS (e.g. BUILD_DEPENDS=${LINUX_BASE_PORT}).
 #				  It honors USE_LINUX=foo and OVERRIDE_LINUX_BASE_PORT.
 # USE_RC_SUBR	- If set, the ports startup/shutdown script uses the common
 # 				  routines found in etc/rc.subr and may need to
@@ -484,6 +458,8 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # 				  automatically added to ${SUB_FILES}, some %%VAR%%'s will
 # 				  automatically be expanded, they will be installed in
 # 				  ${PREFIX}/etc/rc.d and added to the packing list.
+# 				  pairs will be added to ${SUB_LIST}. These files will be
+# 				  installed in ${PREFIX}/etc/rc.d and added to the packing list.
 # USE_RCORDER	- List of rc.d startup scripts to be called early in the boot
 # 				  process. This acts exactly like USE_RC_SUBR except that
 # 				  scripts are installed in /etc/rc.d.
@@ -632,9 +608,6 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  for this port.
 # build-depends-list
 #				- Show all directories which are build-dependencies
-#				  for this port.
-# test-depends-list
-#				- Show all directories which are test-dependencies
 #				  for this port.
 # package-depends-list
 #				- Show all directories which are
@@ -815,18 +788,6 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  Default: see below
 # MAKE_ARGS		- Any extra arguments to sub-make in build and install stages.
 #				  Default: none
-# For test:
-#
-# HAS_TEST	- If set, this port has its own test suite.  The
-#			  test stage will not do anything if this is not set.
-# TEST_TARGET
-#			- Default target for sub-make in test stage.
-#			  	Default: test
-# TEST_WRKSRC		- Directory to do test in (default: ${WRKSRC}).
-# TEST_ENV		- Additional environment vars passed to sub-make in test stage.
-#			  	Default: see below
-# TEST_ARGS		- Any extra arguments to sub-make in test stage.
-#			 	Default: none
 #
 # For install:
 #
@@ -1246,6 +1207,7 @@ DISTNAME?=	${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION:C/:(.)/\1/g}${DISTVERSI
 # tree we are and thus can't go relative.  They can, of course, be overridden
 # by individual Makefiles or local system make configuration.
 PORTSDIR?=		/usr/ports
+DEVELPORTSDIR?=	${PORTSDIR}/devel/portmk
 LOCALBASE?=		${DESTDIR}/usr/local
 X11BASE?=		${DESTDIR}/usr/X11R6
 LINUXBASE?=		${DESTDIR}/compat/linux
@@ -1371,59 +1333,115 @@ PERL=		${LOCALBASE}/bin/perl
 .endif
 
 .if defined(USE_LOCAL_MK)
+.if exists(${DEVELPORTSDIR}/Mk/bsd.local.mk)
+.include "${DEVELPORTSDIR}/Mk/bsd.local.mk"
+.else
 .include "${PORTSDIR}/Mk/bsd.local.mk"
+.endif
 .endif
 
 .if defined(USE_OPENSSL)
+.if exists(${DEVELPORTSDIR}/Mk/bsd.openssl.mk)
+.include "${DEVELPORTSDIR}/Mk/bsd.openssl.mk"
+.else
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
 .endif
+.endif
 
-.if defined(USE_EMACS)
+.if defined(USE_EMACS) || defined(EMACS_PORT_NAME)
+.if exists(${DEVELPORTSDIR}/Mk/bsd.emacs.mk)
+.include "${DEVELPORTSDIR}/Mk/bsd.emacs.mk"
+.else
 .include "${PORTSDIR}/Mk/bsd.emacs.mk"
+.endif
 .endif
 
 .if defined(USE_GNUSTEP)
+.if exists(${DEVELPORTSDIR}/Mk/bsd.gnustep.mk)
+.include "${DEVELPORTSDIR}/Mk/bsd.gnustep.mk"
+.else
 .include "${PORTSDIR}/Mk/bsd.gnustep.mk"
+.endif
 .endif
 
 .if defined(USE_PHP)
+.if exists(${DEVELPORTSDIR}/Mk/bsd.php.mk)
+.include "${DEVELPORTSDIR}/Mk/bsd.php.mk"
+.else
 .include "${PORTSDIR}/Mk/bsd.php.mk"
+.endif
 .endif
 
 .if defined(USE_PYTHON) || defined(USE_PYTHON_BUILD) || defined(USE_PYTHON_RUN)
+.if exists(${DEVELPORTSDIR}/Mk/bsd.python.mk)
+.include "${DEVELPORTSDIR}/Mk/bsd.python.mk"
+.else
 .include "${PORTSDIR}/Mk/bsd.python.mk"
+.endif
 .endif
 
 .if defined(USE_JAVA)
+.if exists(${DEVELPORTSDIR}/Mk/bsd.java.mk)
+.include "${DEVELPORTSDIR}/Mk/bsd.java.mk"
+.else
 .include "${PORTSDIR}/Mk/bsd.java.mk"
+.endif
 .endif
 
 .if defined(USE_RUBY) || defined(USE_LIBRUBY)
+.if exists(${DEVELPORTSDIR}/Mk/bsd.ruby.mk)
+.include "${DEVELPORTSDIR}/Mk/bsd.ruby.mk"
+.else
 .include "${PORTSDIR}/Mk/bsd.ruby.mk"
 .endif
+.endif
 
-.if defined(USE_TCL) || defined(USE_TCL_BUILD) || defined(USE_TK)
+.if defined(USE_TCL) || defined(USE_TK)
+.if exists(${DEVELPORTSDIR}/Mk/bsd.tcl.mk)
+.include "${DEVELPORTSDIR}/Mk/bsd.tcl.mk"
+.else
 .include "${PORTSDIR}/Mk/bsd.tcl.mk"
+.endif
 .endif
 
 .if defined(USE_APACHE) || defined(APACHE_COMPAT)
+.if exists(${DEVELPORTSDIR}/Mk/bsd.apache.mk)
+.include "${DEVELPORTSDIR}/Mk/bsd.apache.mk"
+.else
 .include "${PORTSDIR}/Mk/bsd.apache.mk"
+.endif
 .endif
 
 .if defined(USE_QT_VER) || defined(USE_KDELIBS_VER) || defined(USE_KDEBASE_VER)
+.if exists(${DEVELPORTSDIR}/Mk/bsd.kde.mk)
+.include "${DEVELPORTSDIR}/Mk/bsd.kde.mk"
+.else
 .include "${PORTSDIR}/Mk/bsd.kde.mk"
+.endif
 .endif
 
 .if defined(WANT_GNOME) || defined(USE_GNOME) || defined(USE_GTK)
+.if exists(${DEVELPORTSDIR}/Mk/bsd.gnome.mk)
+.include "${DEVELPORTSDIR}/Mk/bsd.gnome.mk"
+.else
 .include "${PORTSDIR}/Mk/bsd.gnome.mk"
+.endif
 .endif
 
 .if defined(WANT_GSTREAMER) || defined(USE_GSTREAMER)
+.if exists(${DEVELPORTSDIR}/Mk/bsd.gstreamer.mk)
+.include "${DEVELPORTSDIR}/Mk/bsd.gstreamer.mk"
+.else
 .include "${PORTSDIR}/Mk/bsd.gstreamer.mk"
+.endif
 .endif
 
 .if defined(USE_SDL) || defined(WANT_SDL)
+.if exists(${DEVELPORTSDIR}/Mk/bsd.sdl.mk)
+.include "${DEVELPORTSDIR}/Mk/bsd.sdl.mk"
+.else
 .include "${PORTSDIR}/Mk/bsd.sdl.mk"
+.endif
 .endif
 
 .if defined(USE_QMAIL) || defined(USE_QMAIL_RUN) || defined(USE_QMAIL_BUILD) || defined(WANT_QMAIL)
@@ -1472,7 +1490,6 @@ WRKSRC?=		${WRKDIR}/${DISTNAME}
 PATCH_WRKSRC?=	${WRKSRC}
 CONFIGURE_WRKSRC?=	${WRKSRC}
 BUILD_WRKSRC?=	${WRKSRC}
-TEST_WRKSRC?=	${WRKSRC}
 INSTALL_WRKSRC?=${WRKSRC}
 
 PLIST_SUB+=	OSREL=${OSREL} PREFIX=%D LOCALBASE=${LOCALBASE} X11BASE=${X11BASE}
@@ -1502,7 +1519,6 @@ MAKE_SHELL?=	${SH}
 CONFIGURE_ENV+=	SHELL=${SH} CONFIG_SHELL=${SH} PORTOBJFORMAT=${PORTOBJFORMAT}
 SCRIPTS_ENV+=	PORTOBJFORMAT=${PORTOBJFORMAT}
 MAKE_ENV+=		SHELL=${SH} PORTOBJFORMAT=${PORTOBJFORMAT} NO_LINT=YES
-TEST_ENV+=		SHELL=${SH}
 PLIST_SUB+=		PORTOBJFORMAT=${PORTOBJFORMAT}
 
 .if defined(MANCOMPRESSED)
@@ -1532,10 +1548,17 @@ EXTRACT_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
 .if defined(USE_GMAKE)
 BUILD_DEPENDS+=		gmake:${PORTSDIR}/devel/gmake
 CONFIGURE_ENV+=	MAKE=${GMAKE}
+# note: the next line is from 86106 which says: "It needs more investigation.
+# We will keep it in devel/portmk for further tests."
+MAKE_ENV+=		CC="${CC}" CXX="${CXX}"
 .endif
 
 .if defined(USE_GCC)
+.if exists(${DEVELPORTSDIR}/Mk/bsd.gcc.mk)
+.include "${DEVELPORTSDIR}/Mk/bsd.gcc.mk"
+.else
 .include "${PORTSDIR}/Mk/bsd.gcc.mk"
+.endif
 .endif
 
 .if defined(USE_OPENLDAP_VER)
@@ -1604,23 +1627,6 @@ LIB_DEPENDS+=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 CPPFLAGS+=		-I${LOCALBASE}/include
 LDFLAGS+=		-L${LOCALBASE}/lib -lgnugetopt
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-.endif
-.endif
-
-.if defined(USE_BSD_MK)
-.if ${USE_BSD_MK:U} == "BIN"
-MAKE_ENV+=	BINDIR=${PREFIX}/bin
-.else
-MAKE_ENV+=	BINDIR=${PREFIX}/sbin
-.endif
-MAKE_ENV+=	SHAREDIR=${PREFIX}
-.if defined(NOMANCOMPRESS)
-MAKE_ENV+=	NOMANCOMPRESS=${NOMANCOMPRESS}
-.endif
-.if defined(NOPROFILE)
-PLIST_SUB+=	PROFILE="@comment "
-.else
-PLIST_SUB+=	PROFILE=""
 .endif
 .endif
 
@@ -1808,7 +1814,6 @@ PLIST_SUB+=		PERL_VERSION=${PERL_VERSION} \
 .if defined(PERL_MODBUILD)
 PERL_CONFIGURE=		yes
 CONFIGURE_SCRIPT?=	Build.PL
-HAS_TEST?=		yes
 .if ${PORTNAME} != Module-Build
 BUILD_DEPENDS+=		${SITE_PERL}/Module/Build.pm:${PORTSDIR}/devel/p5-Module-Build
 .endif
@@ -1824,14 +1829,10 @@ CONFIGURE_ARGS+= \
 	install_path=bindoc="${MAN1PREFIX}/man/man1"
 .elif defined(PERL_CONFIGURE)
 CONFIGURE_ARGS+=	INSTALLDIRS="site"
-HAS_TEST?=		yes
 .endif
 
 .if defined(PERL_CONFIGURE)
 USE_PERL5=	yes
-.if (defined(BATCH) && !defined(IS_INTERACTIVE))
-CONFIGURE_ENV+=	PERL_MM_USE_DEFAULT="YES"
-.endif
 .endif
 
 .if ${PERL_LEVEL} >= 500600
@@ -1846,45 +1847,85 @@ RUN_DEPENDS+=	${PERL5}:${PORTSDIR}/lang/${PERL_PORT}
 .endif
 
 .if defined(USE_LOCAL_MK)
+.if exists(${DEVELPORTSDIR}/Mk/bsd.local.mk)
+.include "${DEVELPORTSDIR}/Mk/bsd.local.mk"
+.else
 .include "${PORTSDIR}/Mk/bsd.local.mk"
+.endif
 .endif
 
 .if defined(USE_MYSQL) || defined(WANT_MYSQL_VER) || \
 	defined(USE_PGSQL) || defined(WANT_PGSQL_VER) || \
 	defined(USE_BDB) || defined(USE_SQLITE)
+.if exists(${DEVELPORTSDIR}/Mk/bsd.database.mk)
+.include "${DEVELPORTSDIR}/Mk/bsd.database.mk"
+.else
 .include "${PORTSDIR}/Mk/bsd.database.mk"
+.endif
 .endif
 
 .if defined(WANT_GSTREAMER) || defined(USE_GSTREAMER)
+.if exists(${DEVELPORTSDIR}/Mk/bsd.gstreamer.mk)
+.include "${DEVELPORTSDIR}/Mk/bsd.gstreamer.mk"
+.else
 .include "${PORTSDIR}/Mk/bsd.gstreamer.mk"
+.endif
 .endif
 
 .if defined(USE_LINUX_RPM)
+.if exists(${DEVELPORTSDIR}/Mk/bsd.linux-rpm.mk)
+.include "${DEVELPORTSDIR}/Mk/bsd.linux-rpm.mk"
+.else
 .include "${PORTSDIR}/Mk/bsd.linux-rpm.mk"
+.endif
 .endif
 
 .if defined(USE_SDL) || defined(WANT_SDL)
+.if exists(${DEVELPORTSDIR}/Mk/bsd.sdl.mk)
+.include "${DEVELPORTSDIR}/Mk/bsd.sdl.mk"
+.else
 .include "${PORTSDIR}/Mk/bsd.sdl.mk"
+.endif
 .endif
 
 .if defined(USE_PYTHON)
+.if exists(${DEVELPORTSDIR}/Mk/bsd.python.mk)
+.include "${DEVELPORTSDIR}/Mk/bsd.python.mk"
+.else
 .include "${PORTSDIR}/Mk/bsd.python.mk"
 .endif
+.endif
 
-.if defined(USE_TCL) || defined(USE_TCL_BUILD) || defined(USE_TK)
+.if defined(USE_TCL) || defined(USE_TK)
+.if exists(${DEVELPORTSDIR}/Mk/bsd.tcl.mk)
+.include "${DEVELPORTSDIR}/Mk/bsd.tcl.mk"
+.else
 .include "${PORTSDIR}/Mk/bsd.tcl.mk"
+.endif
 .endif
 
 .if defined(USE_APACHE) || defined(APACHE_COMPAT)
+.if exists(${DEVELPORTSDIR}/Mk/bsd.apache.mk)
+.include "${DEVELPORTSDIR}/Mk/bsd.apache.mk"
+.else
 .include "${PORTSDIR}/Mk/bsd.apache.mk"
+.endif
 .endif
 
 .if defined(USE_AUTOTOOLS)
+.if exists(${DEVELPORTSDIR}/Mk/bsd.autotools.mk)
+.include "${DEVELPORTSDIR}/Mk/bsd.autotools.mk"
+.else
 .include "${PORTSDIR}/Mk/bsd.autotools.mk"
+.endif
 .endif
 
 .if defined(WANT_GNOME) || defined(USE_GNOME) || defined(USE_GTK)
+.if exists(${DEVELPORTSDIR}/Mk/bsd.gnome.mk)
+.include "${DEVELPORTSDIR}/Mk/bsd.gnome.mk"
+.else
 .include "${PORTSDIR}/Mk/bsd.gnome.mk"
+.endif
 .endif
 
 .if exists(${PORTSDIR}/../Makefile.inc)
@@ -1937,12 +1978,12 @@ REINPLACE_ARGS?=	-i.bak
 REINPLACE_CMD?=	${SED} ${REINPLACE_ARGS}
 
 # Names of cookies used to skip already completed stages
-EXTRACT_COOKIE?=	${WRKDIR}/.extract_done.${PORTNAME}.${PREFIX:S/\//_/g}
-CONFIGURE_COOKIE?=	${WRKDIR}/.configure_done.${PORTNAME}.${PREFIX:S/\//_/g}
-INSTALL_COOKIE?=	${WRKDIR}/.install_done.${PORTNAME}.${PREFIX:S/\//_/g}
-BUILD_COOKIE?=		${WRKDIR}/.build_done.${PORTNAME}.${PREFIX:S/\//_/g}
-PATCH_COOKIE?=		${WRKDIR}/.patch_done.${PORTNAME}.${PREFIX:S/\//_/g}
-PACKAGE_COOKIE?=	${WRKDIR}/.package_done.${PORTNAME}.${PREFIX:S/\//_/g}
+EXTRACT_COOKIE?=	${WRKDIR}/.extract_done.${PKGNAME}.${PREFIX:S/\//_/g}
+CONFIGURE_COOKIE?=	${WRKDIR}/.configure_done.${PKGNAME}.${PREFIX:S/\//_/g}
+INSTALL_COOKIE?=	${WRKDIR}/.install_done.${PKGNAME}.${PREFIX:S/\//_/g}
+BUILD_COOKIE?=		${WRKDIR}/.build_done.${PKGNAME}.${PREFIX:S/\//_/g}
+PATCH_COOKIE?=		${WRKDIR}/.patch_done.${PKGNAME}.${PREFIX:S/\//_/g}
+PACKAGE_COOKIE?=	${WRKDIR}/.package_done.${PKGNAME}.${PREFIX:S/\//_/g}
 
 # How to do nothing.  Override if you, for some strange reason, would rather
 # do something.
@@ -2191,7 +2232,6 @@ PKG_DBDIR?=		/var/db/pkg
 MOTIFLIB?=	-L${X11BASE}/lib -lXm -lXp
 
 ALL_TARGET?=		all
-TEST_TARGET?=		test
 INSTALL_TARGET?=	install
 
 # This is a mid-term solution patch while pkg-comment files are
@@ -2214,7 +2254,11 @@ check-makevars::
 .endif
 
 # Popular master sites
-.include "bsd.sites.mk"
+.if exists(${DEVELPORTSDIR}/Mk/bsd.sites.mk)
+.include "${DEVELPORTSDIR}/Mk/bsd.sites.mk"
+.else
+.include "${PORTSDIR}/Mk/bsd.sites.mk"
+.endif
 
 # Empty declaration to avoid "variable MASTER_SITES recursive" error
 MASTER_SITES?=
@@ -2863,7 +2907,6 @@ LDCONFIG_RUNLIST!=	${ECHO_CMD} ${LDCONFIG_PLIST} | ${SED} -e "s!%D!${PREFIX}!g"
 # Don't build a port if the system is too old.
 ################################################################
 
-# Check the machine architectures
 .if defined(ONLY_FOR_ARCHS)
 .for __ARCH in ${ONLY_FOR_ARCHS}
 .if ${ARCH:M${__ARCH}} != ""
@@ -2886,51 +2929,9 @@ __ARCH_OK?=     1
 .if defined(ONLY_FOR_ARCHS)
 IGNORE=		is only for ${ONLY_FOR_ARCHS},
 .else # defined(NOT_FOR_ARCHS)
-IGNORE=		does not run on ${NOT_FOR_ARCHS}.
+IGNORE=		does not run on ${NOT_FOR_ARCHS},
 .endif
-IGNORE+=	and you are running ${ARCH}.
-.if defined(ONLY_FOR_ARCHS_REASON_${ARCH})
-IGNORE+=	Reason: ${ONLY_FOR_ARCHS_REASON_${ARCH}}
-.elif defined(ONLY_FOR_ARCHS_REASON)
-IGNORE+=	Reason: ${ONLY_FOR_ARCHS_REASON}
-.endif
-
-.if defined(NOT_FOR_ARCHS_REASON_${ARCH})
-IGNORE+=	Reason: ${NOT_FOR_ARCHS_REASON_${ARCH}}
-.elif defined(NOT_FOR_ARCHS_REASON)
-IGNORE+=	Reason: ${NOT_FOR_ARCHS_REASON}
-.endif
-.endif
-
-#
-# Compare OSVERSION with the values in ${ONLY_FOR_OSVERSION}
-#
-.if defined(ONLY_FOR_OSVERSION)
-
-# Strip any leading or following characters
-_ONLY_FOR_OSVERSION:=${ONLY_FOR_OSVERSION}
-_ONLY_FOR_OSVERSION:=${_ONLY_FOR_OSVERSION:S/+//}
-_ONLY_FOR_OSVERSION:=${_ONLY_FOR_OSVERSION:S/-//}
-.if ${ONLY_FOR_OSVERSION} == "-${_ONLY_FOR_OSVERSION}"
-_OKAYEARLIER=	true
-.endif
-.if ${ONLY_FOR_OSVERSION} == "${_ONLY_FOR_OSVERSION}+"
-_OKAYLATER=	true
-.endif
-
-# Check versions
-.if !defined(_OKAYEARLIER) && !defined(_OKAYLATER) && ( ${OSVERSION} != ${_ONLY_FOR_OSVERSION} )
-BROKEN=	Requires OSVERSION ${_ONLY_FOR_OSVERSION}: ${ONLY_FOR_OSVERSION_REASON}
-.endif
-.if defined(_OKAYEARLIER) && ${OSVERSION} > ${_ONLY_FOR_OSVERSION}
-BROKEN=	Requires OSVERSION ${_ONLY_FOR_OSVERSION} or earlier: ${ONLY_FOR_OSVERSION_REASON}
-.endif
-.if defined(_OKAYLATER) && ${OSVERSION} < ${_ONLY_FOR_OSVERSION}
-BROKEN=	Requires OSVERSION ${_ONLY_FOR_OSVERSION} or later: ${ONLY_FOR_OSVERSION_REASON}
-.endif
-
-.undef _OKAYEARLIER
-.undef _OKAYLATER
+IGNORE+=	and you are running ${ARCH}
 .endif
 
 .if !defined(NO_IGNORE)
@@ -3474,35 +3475,6 @@ do-build:
 .else
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
 .endif
-.endif
-.endif
-
-# Test
-
-.if !target(do-test)
-do-test:
-.if defined(HAS_TEST)
-.if defined(USE_GMAKE)
-	@(cd ${BUILD_WRKSRC}; ${SETENV} ${TEST_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${TEST_ARGS} ${TEST_TARGET})
-.else
-.if defined(PERL_MODBUILD)
-	@(cd ${BUILD_WRKSRC}; ${SETENV} ${TEST_ENV} ${PERL5} ${PL_BUILD} ${TEST_ARGS} ${TEST_TARGET})
-.else
-	@(cd ${BUILD_WRKSRC}; ${SETENV} ${TEST_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${TEST_ARGS} ${TEST_TARGET})
-.endif
-.endif
-.endif
-.endif
-
-.if !target(test)
-test: build test-depends
-	@${ECHO_MSG} "===>  Testing for ${PKGNAME}"
-.if target(pre-test)
-	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} pre-test
-.endif
-	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} do-test
-.if target(post-test)
-	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} post-test
 .endif
 .endif
 
@@ -4525,7 +4497,7 @@ _INSTALL_DEPENDS=	\
 		${ECHO_MSG} "===>   Returning to build of ${PKGNAME}"; \
 
 
-.for deptype in EXTRACT PATCH FETCH BUILD RUN TEST
+.for deptype in EXTRACT PATCH FETCH BUILD RUN
 ${deptype:L}-depends:
 .if defined(${deptype}_DEPENDS)
 .if !defined(NO_DEPENDS)
@@ -4687,7 +4659,7 @@ misc-depends:
 
 # Dependency lists: both build and runtime, recursive.  Print out directory names.
 
-_UNIFIED_DEPENDS=${EXTRACT_DEPENDS} ${PATCH_DEPENDS} ${FETCH_DEPENDS} ${BUILD_DEPENDS} ${LIB_DEPENDS} ${RUN_DEPENDS} ${TEST_DEPENDS}
+_UNIFIED_DEPENDS=${EXTRACT_DEPENDS} ${PATCH_DEPENDS} ${FETCH_DEPENDS} ${BUILD_DEPENDS} ${LIB_DEPENDS} ${RUN_DEPENDS}
 _DEPEND_DIRS=	${_UNIFIED_DEPENDS:C,^[^:]*:([^:]*).*$,\1,} ${DEPENDS:C,:.*,,}
 
 all-depends-list:
@@ -4841,20 +4813,6 @@ run-depends-list:
 
 RUN-DEPENDS-LIST= \
 	for dir in $$(${ECHO_CMD} "${LIB_DEPENDS} ${RUN_DEPENDS}" | ${SED} -e 'y/ /\n/' | ${CUT} -f 2 -d ':' | ${SORT} -u) $$(${ECHO_CMD} ${DEPENDS} | ${SED} -e 'y/ /\n/' | ${CUT} -f 1 -d ':' | ${SORT} -u); do \
-		if [ -d $$dir ]; then \
-			${ECHO_CMD} $$dir; \
-		else \
-			${ECHO_MSG} "${PKGNAME}: \"$$dir\" non-existent -- dependency list incomplete" >&2; \
-		fi; \
-	done | ${SORT} -u
-
-test-depends-list:
-.if defined(TEST_DEPENDS) || defined(DEPENDS)
-	@${TEST-DEPENDS-LIST}
-.endif
-
-TEST-DEPENDS-LIST= \
-	for dir in $$(${ECHO_CMD} "${TEST_DEPENDS}" | ${TR} '\040' '\012' | ${SED} -e 's/^[^:]*://' -e 's/:.*//' | ${SORT} -u) $$(${ECHO_CMD} ${DEPENDS} | ${TR} '\040' '\012' | ${SED} -e 's/:.*//' | ${SORT} -u); do \
 		if [ -d $$dir ]; then \
 			${ECHO_CMD} $$dir; \
 		else \
@@ -5042,11 +5000,9 @@ _PRETTY_PRINT_DEPENDS_LIST=\
 	if [ ! -r ${INDEXDIR}/${INDEXFILE} ] ; then \
 		${ECHO_CMD} "${.TARGET} requires an INDEX file (${INDEXFILE}). Please run make index or make fetchindex."; \
 	else \
-		target=${.TARGET:C/pretty-print-(.*)-depends-list/\1/} ; \
-		if [ "$$target" = "build" ] ; then fldnum=8 ; else fldnum=9 ; fi ; \
 		${ECHO_CMD} -n 'This port requires package(s) "' ; \
-		${ECHO_CMD} -n `${AWK} -F\| "\\$$1 ~ /^${PKGNAME}/ {print \\$$$${fldnum};}" ${INDEXDIR}/${INDEXFILE}` ; \
-		${ECHO_CMD} "\" to $$target."; \
+		${ECHO_CMD} -n `${AWK} -F\| '$$1 ~ /^${PKGNAME}/ {print $$8;}' ${INDEXDIR}/${INDEXFILE}` ; \
+		${ECHO_CMD} '" to ${.TARGET:C/pretty-print-(.*)-depends-list/\1/}.'; \
 	fi;
 
 
@@ -5180,12 +5136,12 @@ add-plist-info:
 .if defined(INFO)
 .for i in ${INFO}
 	install-info --quiet ${PREFIX}/${INFO_PATH}/$i.info ${PREFIX}/${INFO_PATH}/dir
-	@${ECHO_CMD} "@unexec install-info --quiet --delete %D/${INFO_PATH}/$i.info %D/${INFO_PATH}/dir" \
+	@${ECHO_CMD} "@unexec install-info --delete %D/${INFO_PATH}/$i.info %D/${INFO_PATH}/dir" \
 		>> ${TMPPLIST}
 	@${LS} ${PREFIX}/${INFO_PATH}/$i.info* | ${SED} -e s:${PREFIX}/::g >> ${TMPPLIST}
-	@${ECHO_CMD} "@exec install-info --quiet %D/${INFO_PATH}/$i.info %D/${INFO_PATH}/dir" \
+	@${ECHO_CMD} "@exec install-info %D/${INFO_PATH}/$i.info %D/${INFO_PATH}/dir" \
 		>> ${TMPPLIST}
-	@if [ "`${DIRNAME} $i`" != "." ]; then \
+	if [ "`${DIRNAME} $i`" != "." ]; then \
 		${ECHO_CMD} "@unexec ${RMDIR} %D/info/`${DIRNAME} $i` 2> /dev/null || true" >> ${TMPPLIST}; \
 	fi
 .endfor
@@ -5224,7 +5180,7 @@ install-rc-script:
 .if defined(USE_RC_SUBR) && ${USE_RC_SUBR:U} != "YES"
 	@${ECHO_CMD} "===> Installing rc.d startup script(s)"
 	@${ECHO_CMD} "@cwd ${PREFIX}" >> ${TMPPLIST}
-.if (${OSVERSION} >= 700007 || ( ${OSVERSION} < 700000 && ${OSVERSION} >= 600101 ))
+.if (${OSVERSION} >= 700007 || (${OSVERSION} < 700000 && ${OSVERSION} >= 600101))
 	@for i in ${USE_RC_SUBR}; do \
 		${INSTALL_SCRIPT} ${WRKDIR}/$${i} ${PREFIX}/etc/rc.d/$${i%.sh}; \
 		${ECHO_CMD} "etc/rc.d/$${i%.sh}" >> ${TMPPLIST}; \
