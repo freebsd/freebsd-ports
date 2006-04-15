@@ -17,7 +17,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 #PATCHFILES=	bidwatcher-1.3.16-SSL_with_libcurl.02.patch
 #PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	mph@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bid monitor for eBay
 
 LIB_DEPENDS=	curl.3:${PORTSDIR}/ftp/curl

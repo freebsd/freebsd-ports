@@ -12,7 +12,7 @@ MASTER_SITES=   	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	mph
 DISTFILES=		unix8m.tgz
 
-MAINTAINER=		mph@freebsd.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=	An Infocom game interpreter for X11
 
 PLIST_FILES=	bin/xinfocom

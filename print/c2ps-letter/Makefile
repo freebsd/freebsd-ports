@@ -11,7 +11,7 @@ CATEGORIES=	print
 MASTER_SITES=	http://www.cs.technion.ac.il/users/c2ps/
 DISTNAME=	c2ps-${PORTVERSION}
 
-MAINTAINER=	mph@freebsd.org
+MAINTAINER=	ports@freebsd.org
 COMMENT=	A PostScript pretty-printer for C source
 
 MAN1=		c2ps.1

@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	Term
 PKGNAMEPREFIX=	p5-
 DISTNAME=	Term-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	mph@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl 5 module for Term::ReadLine editing without GNU readline
 
 PERL_CONFIGURE=	YES

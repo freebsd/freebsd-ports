@@ -12,7 +12,7 @@ MASTER_SITES=   	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	mph
 DISTNAME=		jzip201g
 
-MAINTAINER=		mph@freebsd.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=	A text-mode Infocom game interpreter
 
 USE_ZIP=		yes

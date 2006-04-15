@@ -16,7 +16,7 @@ MASTER_SITES=	ftp://ftp.ifarchive.org/if-archive/infocom/interpreters/zip/ \
 	ftp://wuarchive.wustl.edu/doc/misc/if-archive/infocom/interpreters/zip/
 DISTFILES=		xzip182.tar.Z
 
-MAINTAINER=		mph@freebsd.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=	An Infocom game interpreter that runs under X11
 
 WRKSRC=			${WRKDIR}/xzip

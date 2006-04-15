@@ -10,7 +10,7 @@ PORTVERSION=	0.20
 CATEGORIES=	lang
 MASTER_SITES=	http://www.catb.org/~esr/intercal/
 
-MAINTAINER=	mph@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The C-INTERCAL compiler, ick, and supporting libraries
 
 WRKSRC=		$(WRKDIR)/$(DISTNAME)/src

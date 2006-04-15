@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://tuxick.net/xfrisk/files/
 DISTNAME=	XFrisk-${PORTVERSION}
 
-MAINTAINER=	mph@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A multi-player networked Risk game for X11
 
 LIB_DEPENDS=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
