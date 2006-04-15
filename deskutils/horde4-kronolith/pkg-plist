@@ -13,11 +13,8 @@
 %%KRONOLITHDIR%%/calendars.php
 %%KRONOLITHDIR%%/config/.htaccess
 %%KRONOLITHDIR%%/config/conf.xml
-%%KRONOLITHDIR%%/config/keywords.php
 %%KRONOLITHDIR%%/config/keywords.php.dist
-%%KRONOLITHDIR%%/config/menu.php
 %%KRONOLITHDIR%%/config/menu.php.dist
-%%KRONOLITHDIR%%/config/prefs.php
 %%KRONOLITHDIR%%/config/prefs.php.dist
 %%KRONOLITHDIR%%/contacts.php
 %%KRONOLITHDIR%%/data.php

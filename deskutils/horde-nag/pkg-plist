@@ -8,9 +8,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/UPGRADING
 %%NAGDIR%%/config/.htaccess
 %%NAGDIR%%/config/conf.xml
-%%NAGDIR%%/config/menu.php
 %%NAGDIR%%/config/menu.php.dist
-%%NAGDIR%%/config/prefs.php
 %%NAGDIR%%/config/prefs.php.dist
 %%NAGDIR%%/data.php
 %%NAGDIR%%/ics.php
