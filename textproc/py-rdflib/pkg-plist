@@ -55,6 +55,12 @@
 %%PYTHON_SITELIBDIR%%/rdflib/store/MySQL.pyo
 %%PYTHON_SITELIBDIR%%/rdflib/store/Concurrent.pyo
 %%PYTHON_SITELIBDIR%%/rdflib/store/Redland.pyo
+%%PYTHON_SITELIBDIR%%/rdflib/store/AbstractSQLStore.py
+%%PYTHON_SITELIBDIR%%/rdflib/store/SQLite.py
+%%PYTHON_SITELIBDIR%%/rdflib/store/AbstractSQLStore.pyc
+%%PYTHON_SITELIBDIR%%/rdflib/store/SQLite.pyc
+%%PYTHON_SITELIBDIR%%/rdflib/store/AbstractSQLStore.pyo
+%%PYTHON_SITELIBDIR%%/rdflib/store/SQLite.pyo
 %%PYTHON_SITELIBDIR%%/rdflib/sparql/graphPattern.py
 %%PYTHON_SITELIBDIR%%/rdflib/sparql/sparql.py
 %%PYTHON_SITELIBDIR%%/rdflib/sparql/sparqlOperators.py
@@ -95,6 +101,9 @@
 %%PYTHON_SITELIBDIR%%/rdflib/syntax/serializers/QNameProvider.pyo
 %%PYTHON_SITELIBDIR%%/rdflib/syntax/serializers/XMLWriter.pyo
 %%PYTHON_SITELIBDIR%%/rdflib/syntax/serializers/__init__.pyo
+%%PYTHON_SITELIBDIR%%/rdflib/syntax/serializers/N3Serializer.py
+%%PYTHON_SITELIBDIR%%/rdflib/syntax/serializers/N3Serializer.pyc
+%%PYTHON_SITELIBDIR%%/rdflib/syntax/serializers/N3Serializer.pyo
 %%PYTHON_SITELIBDIR%%/rdflib/syntax/parsers/RDFXMLParser.py
 %%PYTHON_SITELIBDIR%%/rdflib/syntax/parsers/NTParser.py
 %%PYTHON_SITELIBDIR%%/rdflib/syntax/parsers/N3Parser.py
