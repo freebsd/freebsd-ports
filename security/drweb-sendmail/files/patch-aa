@@ -8,7 +8,7 @@
 -AdminTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/virus-admin.msg
 -RcptsTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/virus-rcpts.msg
 +SenderTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/sender_virus.msg
-+AdminTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/admih_virus.msg
++AdminTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/admin_virus.msg
 +RcptsTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/rcpts_virus.msg
  
  [MalwareNotifications]
