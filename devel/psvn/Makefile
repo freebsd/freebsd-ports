@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	psvn
-PORTVERSION=	17982
+PORTVERSION=	19287
 CATEGORIES=	devel elisp
-MASTER_SITES=	http://svn.collab.net/viewcvs/*checkout*/svn/trunk/contrib/client-side/psvn/
-DISTNAME=	psvn.el\?rev=${PORTVERSION}
+MASTER_SITES=	http://svn.collab.net/viewvc/*checkout*/svn/trunk/contrib/client-side/psvn/
+DISTNAME=	psvn.el\?pathrev=${PORTVERSION}
 EXTRACT_SUFX=	# empty
 
 MAINTAINER=	bsam@ipt.ru
