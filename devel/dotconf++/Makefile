@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dotconfpp
-PORTVERSION=	0.0.4a
-PORTREVISION=	2
+PORTVERSION=	0.0.5
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://voodoo.com.ua/dotconfpp/
@@ -18,7 +17,6 @@ MAINTAINER=	mark_sf@kikg.ifmo.ru
 COMMENT=	Configuration file parser written in C++
 
 USE_AUTOTOOLS=	libtool:15
-USE_REINPLACE=	yes
 
 INSTALLS_SHLIB=	yes
 

@@ -12,9 +12,7 @@
 @@ -132,7 +132,7 @@
  target_alias = @target_alias@
  EXTRA_DIST = dotconfpp.h mempool.h mempool.cc
- 
--LIBdir = /usr/local/lib
+-LIBdir = ${prefix}/lib
 +LIBdir = @prefix@/lib
  SUBDIRS = . example1 example2
- 
  INCLUDES = -I.
