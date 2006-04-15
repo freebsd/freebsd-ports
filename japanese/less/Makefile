@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	less+iso
-PORTVERSION=	382.259
+PORTVERSION=	382.262
 PORTREVISION=	0
 CATEGORIES=	japanese
 MASTER_SITES=	http://www25.big.jp/~jam/less/ \
@@ -19,7 +19,10 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 PATCH_SITES=	http://www25.big.jp/~jam/less/
 PATCHFILES=	${DISTNAME}-iso258.patch.gz \
-		${DISTNAME}-iso258-${PORTVERSION:E}.patch.gz
+		${DISTNAME}-iso258-259.patch.gz \
+		${DISTNAME}-iso259-260.patch.gz \
+		${DISTNAME}-iso260-261.patch.gz \
+		${DISTNAME}-iso261-${PORTVERSION:E}.patch.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	ports@FreeBSD.org
