@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	emacs
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
-MAINTAINER?=	okazaki@FreeBSD.org
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT=	Collection of useful routines for Emacs lisp programs
 
 # setupel filename

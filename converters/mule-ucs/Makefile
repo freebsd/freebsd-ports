@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	mule/Mule-UCS/test
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 DISTNAME=	Mule-UCS-current
 
-MAINTAINER?=	okazaki@FreeBSD.org
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	Universal encoding system for GNU Emacs 21
 
 MASTER_SITE_M17N+=	\

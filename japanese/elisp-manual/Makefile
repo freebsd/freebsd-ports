@@ -16,7 +16,7 @@ PATCH_SITES=	ftp://ftp.ascii.co.jp/pub/GNU/elisp-manual-20/
 PATCHFILES=	elisp-manual-20-2.5-jp.ERRATA.000422.jis \
 		elisp-manual-20-2.5-jp.ERRATA.000508.jis
 
-MAINTAINER=	okazaki@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Japanese translation of the GNU Emacs Lisp Reference Manual
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash

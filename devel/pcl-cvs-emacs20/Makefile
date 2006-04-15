@@ -18,7 +18,7 @@ PATCH_SITES=	${MASTER_SITE_LOCAL}
 PATCH_SITE_SUBDIR=	okazaki/pcl-cvs
 PATCHFILES=	pcl-cvs-2.9.9-compat.patch
 
-MAINTAINER=	okazaki@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An Emacs-based front-end to CVS
 
 # startup el filename

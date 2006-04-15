@@ -20,7 +20,7 @@ PATCH_SITE_SUBDIR=	pool/main/g/groff
 PATCHFILES=	${DISTNAME:S,-,_,}-7.diff.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	okazaki@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Japanese enhancement of GNU xditview
 
 RUN_DEPENDS=	${LOCALBASE}/bin/groff:${PORTSDIR}/japanese/groff

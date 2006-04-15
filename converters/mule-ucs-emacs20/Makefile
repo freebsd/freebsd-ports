@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-MAINTAINER=	okazaki@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Universal encoding system for GNU Emacs 20
 
 PORTCLASS=	slave
