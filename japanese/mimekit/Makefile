@@ -11,7 +11,7 @@ CATEGORIES=	japanese devel mail
 MASTER_SITES=	ftp://ftp.delegate.org/pub/DeleGate/
 DISTNAME=	delegate8.9.6-pre11
 
-MAINTAINER=	max@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library to handle messages with MIME-encoded headers
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/mimekit

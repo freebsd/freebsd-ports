@@ -10,7 +10,7 @@ PORTVERSION=	2.3.4
 CATEGORIES=	japanese textproc
 MASTER_SITES=	http://kakasi.namazu.org/stable/
 
-MAINTAINER=	max@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Kanji-Kana Simple Inverter, language filter for Japanese
 
 GNU_CONFIGURE=	yes

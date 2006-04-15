@@ -15,7 +15,7 @@ PATCH_SITES=	ftp://ftp.web.ad.jp/pub/TeX/akiu/dviwares/dvi2tty/
 PATCHFILES=	${PORTNAME}-jtex-patch \
 		dvi2tty.c-patch
 
-MAINTAINER=	max@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Character-based DVI file previewer
 
 RUN_DEPENDS=	jless:${PORTSDIR}/japanese/less

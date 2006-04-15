@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL} \
 MASTER_SITE_SUBDIR=	trevor
 DISTNAME=	telnetx+transit.src.940401
 
-MAINTAINER=	max@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Telnet client with binary transfer protocols support
 
 RUN_DEPENDS+=	bp:${PORTSDIR}/comms/bpl+

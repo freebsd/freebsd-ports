@@ -12,7 +12,7 @@ MASTER_SITES=	http://www01.tcp-ip.or.jp/~furukawa/nkf_utf8/
 PKGNAMEPREFIX?=	ja-
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//:S/./-/}
 
-MAINTAINER=	max@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	Network Kanji code conversion Filter
 
 .if ${PKGNAMEPREFIX} != "ja-p5-"
