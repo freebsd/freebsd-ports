@@ -10,7 +10,7 @@ PORTVERSION=	1.1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.jwz.org/ppmcaption/
 
-MAINTAINER=	markp@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A utility which adds text to images
 
 GNU_CONFIGURE=	yes

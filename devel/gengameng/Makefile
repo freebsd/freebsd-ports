@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://ftp.osuosl.org/pub/FreeBSD/distfiles/
 
-MAINTAINER=	markp@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An SDL game engine library
 
 USE_SDL=	image sdl

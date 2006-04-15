@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		ftp://ftp.kobe-u.ac.jp/pub/Linux/packages/Vine/VinePlus/1.1/JG-0.9.1/sources/
 MASTER_SITE_SUBDIR=	will
 
-MAINTAINER=	markp@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A falling ball puzzle game for X
 
 ALL_TARGET=	xrot

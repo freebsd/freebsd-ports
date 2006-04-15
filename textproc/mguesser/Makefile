@@ -10,7 +10,7 @@ PORTVERSION=	0.2
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.mnogosearch.org/guesser/
 
-MAINTAINER=	markp@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool for guessing a text's charset and language
 
 CFLAGS+=	-DUDM_GUESSER_STANDALONG -DLMDIR=\"${PREFIX}/share/mguesser\"

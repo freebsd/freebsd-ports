@@ -11,7 +11,7 @@ PORTREVISION=	4
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.kill-9.org/mbrowse/
 
-MAINTAINER=	markp@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An SNMP MIB Browser for X
 
 .if defined(WITH_NET_SNMP4)

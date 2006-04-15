@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://catb.org/~esr/greed/
 PKGNAMESUFFIX=	-game
 
-MAINTAINER=	markp@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A text puzzle game with the aim of clearing the game field
 
 ALL_TARGET=	greed

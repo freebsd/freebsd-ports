@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://www.icculus.org/mp3check/
 EXTRACT_SUFX=
 
-MAINTAINER=	markp@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool for checking and fixing mp3 archive inconsistencies
 
 RUN_DEPENDS=	${LOCALBASE}/bin/id3tool:${PORTSDIR}/audio/id3tool \

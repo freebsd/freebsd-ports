@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.theory.org/~matt/dim/
 DISTNAME=	dim
 EXTRACT_SUFX=	.tar
 
-MAINTAINER=	markp@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A directory lister which sorts the file list in 2D
 
 USE_PERL5_RUN=	yes

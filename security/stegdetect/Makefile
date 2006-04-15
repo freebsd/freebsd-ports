@@ -12,7 +12,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://www.mirrors.wiretapped.net/security/steganography/stegdetect/ \
 		http://www.outguess.org/
 
-MAINTAINER=	markp@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An automated tool for detecting steganographic content in jpegs
 
 .if !defined(WITHOUT_X11)

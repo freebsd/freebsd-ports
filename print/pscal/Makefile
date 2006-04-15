@@ -10,7 +10,7 @@ PORTVERSION=	1.15
 CATEGORIES=	print
 MASTER_SITES=	http://www.panix.com/~mbh/pscal/
 
-MAINTAINER=	markp@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A utility for generating Postscript calendars
 
 NO_BUILD=	yes

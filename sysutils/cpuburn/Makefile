@@ -12,7 +12,7 @@ MASTER_SITES=	http://pages.sbcglobal.net/redelm/
 DISTNAME=	cpuburn_${PORTVERSION:S/./_/g}
 EXTRACT_SUFX=	_tar.gz
 
-MAINTAINER=	markp@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CPU/memory stress testing utilities
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

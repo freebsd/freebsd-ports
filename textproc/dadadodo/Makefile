@@ -10,7 +10,7 @@ PORTVERSION=	1.04
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.jwz.org/dadadodo/
 
-MAINTAINER=	markp@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Text processor which analyses text and generates random sentences
 
 PLIST_FILES=	bin/dadadodo
