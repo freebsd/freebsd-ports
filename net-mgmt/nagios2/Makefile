@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nagios
-PORTVERSION=	2.0
+PORTVERSION=	2.2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	nagios
@@ -22,7 +22,6 @@ USE_ICONV=	yes
 USE_PERL5_BUILD=	yes
 USE_AUTOTOOLS=	autoconf:259
 USE_RC_SUBR=	nagios.sh
-USE_REINPLACE=	yes
 
 OPTIONS=	EMBEDDED_PERL "Enable embedded Perl [requires Perl 5.8+]" OFF \
 		NANOSLEEP "Use nanosleep in event timing" OFF
@@ -92,7 +91,7 @@ USE_PERL5=	yes
 CONFIGURE_ARGS+=	--enable-embedded-perl \
 		--with-perlcache
 .else
-IGNORE=		"Embedded Perl requires Perl 5.8 or higher (see lang/perl5.8)"
+IGNORE=		Embedded Perl requires Perl 5.8 or higher (see lang/perl5.8)
 .endif
 PLIST_SUB+=	EMBEDDED_PERL=""
 .else

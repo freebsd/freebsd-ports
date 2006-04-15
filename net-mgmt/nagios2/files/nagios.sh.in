@@ -25,6 +25,7 @@ nagios_user="%%NAGIOSUSER%%"
 start_precmd="start_precmd"
 stop_postcmd="stop_postcmd"
 restart_precmd="nagios_checkconfig"
+reload_precmd="nagios_checkconfig"
 sig_reload=HUP
 
 [ -z "${nagios_enable}" ]       && nagios_enable="NO"
