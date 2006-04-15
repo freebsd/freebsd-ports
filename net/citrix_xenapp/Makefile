@@ -12,7 +12,7 @@ CATEGORIES=	net comms linux
 MASTER_SITES=
 DISTNAME=	${PORTNAME}-linuxx86-${PORTVERSION}
 
-MAINTAINER=	mbr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Citrix(R) client for the Microsoft Windows Terminal Server
 
 RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXm.so.3:${PORTSDIR}/x11-toolkits/linux-openmotif

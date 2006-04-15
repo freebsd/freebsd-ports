@@ -27,7 +27,7 @@ DISTFILES+=     soa-7-ga-bin-linux-de.bin
 
 EXTRACT_ONLY=	116518-08.tar
 
-MAINTAINER=	mbr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Wordprocessor/dbase/spreadheet/drawing/chart
 
 ONLY_FOR_ARCHS=	i386

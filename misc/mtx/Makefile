@@ -12,7 +12,7 @@ CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mtx
 
-MAINTAINER=	mbr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Control SCSI media changer devices
 
 USE_GMAKE=	yes

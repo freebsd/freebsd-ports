@@ -29,7 +29,7 @@ DISTFILES+=	soa-5_2-ga-bin-linux-fr.bin so-5_2-ga-bin-linux-fr.bin
 .endif
 EXTRACT_ONLY=	109939-03.tar.Z
 
-MAINTAINER=	mbr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Suite bureautique intégrée
 
 FETCH_DEPENDS=	${LINUX_BASE_PORT}

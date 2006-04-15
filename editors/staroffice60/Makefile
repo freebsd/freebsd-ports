@@ -23,7 +23,7 @@ DISTFILES+=	soa-6_0-ga-bin-linux-en.bin
 
 EXTRACT_ONLY=	112887-04.tar
 
-MAINTAINER=	mbr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Wordprocessor/dbase/spreadheet/drawing/chart
 
 NO_LATEST_LINK=	yes

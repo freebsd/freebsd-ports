@@ -11,7 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/graphics/misc
 
-MAINTAINER=	mbr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Creates thumbnails of JPEG images
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
