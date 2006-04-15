@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	wavpack
-PORTVERSION=	4.2
-PORTREVISION=	1
+PORTVERSION=	4.32
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	kwm
+MASTER_SITES=	http://www.wavpack.com/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Compress (and restore) both 16 and 24-bit audio files in .wav format
@@ -18,7 +16,6 @@ COMMENT=	Compress (and restore) both 16 and 24-bit audio files in .wav format
 GNU_CONFIGURE=	yes
 USE_ICONV=	yes
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
@@ -29,8 +26,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|libdir)/pkgconfig|prefix)/libdata/pkgconfig|g' \
 		${WRKSRC}/Makefile.in
 .for i in ${FILES}
-	@cd ${WRKSRC} && cp ${i} ${i}.orig && \
+	@cd ${WRKSRC} && ${CP} ${i} ${i}.orig && \
 		col < ${i}.orig > ${i}
-.endfor	
+.endfor
 
 .include <bsd.port.mk>

@@ -1,5 +1,6 @@
 bin/wavpack
 bin/wvunpack
+bin/wvgain
 include/wavpack/md5.h
 include/wavpack/unpack3.h
 include/wavpack/wavpack.h
