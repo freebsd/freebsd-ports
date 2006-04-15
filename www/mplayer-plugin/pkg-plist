@@ -25,6 +25,9 @@ share/locale/nl/LC_MESSAGES/mplayerplug-in.mo
 share/locale/pl/LC_MESSAGES/mplayerplug-in.mo
 share/locale/pt_BR/LC_MESSAGES/mplayerplug-in.mo
 share/locale/ru/LC_MESSAGES/mplayerplug-in.mo
+share/locale/se/LC_MESSAGES/mplayerplug-in.mo
 @dirrmtry share/locale/en_US/LC_MESSAGES
 @dirrmtry share/locale/en_US
+@dirrmtry share/locale/se/LC_MESSAGES
+@dirrmtry share/locale/se
 @dirrmtry lib/browser_plugins
