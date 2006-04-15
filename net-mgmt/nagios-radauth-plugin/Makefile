@@ -6,6 +6,7 @@
 
 PORTNAME=	nagios-radauth-plugin
 PORTVERSION=	1.00
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.hick.org/code/skape/radauth/
 DISTNAME=	radauth-${PORTVERSION}
