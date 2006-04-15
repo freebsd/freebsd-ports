@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bcpp
-PORTVERSION=	20020518
+PORTVERSION=	20050725
 CATEGORIES=	devel
 MASTER_SITES=	ftp://invisible-island.net/bcpp/
 EXTRACT_SUFX=	.tgz
@@ -14,28 +14,27 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	buchanon@msu.edu
 COMMENT=	A utility similar to indent for C++ code
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/code
+WRKSRC=		${WRKDIR}/${DISTNAME}
 MAKEFILE=	makefile
-ALL_TARGET=	${PORTNAME}
-USE_REINPLACE=	yes
+GNU_CONFIGURE=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},g' ${WRKSRC}/bcpp.cpp
+	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},g' \
+		${WRKSRC}/code/bcpp.cpp
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.cfg \
+	${INSTALL_PROGRAM} ${WRKSRC}/code/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/code/${PORTNAME}.cfg \
 		${PREFIX}/etc/${PORTNAME}.cfg.sample
 
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_MAN} ${WRKDIR}/${DISTNAME}/txtdocs/hirachy.txt ${DOCSDIR}
-	${INSTALL_MAN} ${WRKDIR}/${DISTNAME}/txtdocs/manual.txt ${DOCSDIR}
-.endif
-
 post-install:
-	@${ECHO} "************************************************************"
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/txtdocs/hirachy.txt ${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/txtdocs/manual.txt ${DOCSDIR}
+.endif
+	@${ECHO_CMD}
 	@${CAT} ${PKGMESSAGE}
-	@${ECHO} "************************************************************"
+	@${ECHO_CMD}
 
 .include <bsd.port.mk>
