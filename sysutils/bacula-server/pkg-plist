@@ -7,6 +7,8 @@ sbin/bextract
 sbin/bls
 sbin/bscan
 sbin/btape
+sbin/bwild
+sbin/bregex
 %%WXCONS%%sbin/wx-console
 %%GNOMECONS%%sbin/gnome-console
 sbin/dbcheck
