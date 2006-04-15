@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sed
-PORTVERSION=	4.1.4
+PORTVERSION=	4.1.5
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,7 +16,6 @@ MAINTAINER=	gkovesdan@t-hosting.hu
 COMMENT=	The GNU stream editor
 
 # Global variables
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV+=	MAKEINFO="makeinfo --no-split"
