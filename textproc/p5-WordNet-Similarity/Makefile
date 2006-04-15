@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	WordNet-Similarity
-PORTVERSION=	1.02
+PORTVERSION=	1.03
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	WordNet
@@ -45,7 +45,8 @@ MAN3=		WordNet::Similarity.3 WordNet::Similarity::jcn.3 \
 		WordNet::Similarity::DepthFinder.3 \
 		WordNet::Similarity::GlossFinder.3 \
 		WordNet::Similarity::ICFinder.3 \
-		WordNet::Similarity::PathFinder.3
+		WordNet::Similarity::PathFinder.3 \
+		vectorFile.3 stem.3 get_wn_info.3
 
 post-patch:
 	@${REINPLACE_CMD} -e  \
