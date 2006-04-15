@@ -6,12 +6,11 @@
 #
 
 PORTNAME=		smb4k
-PORTVERSION=		0.6.4
-PORTREVISION=	1
+PORTVERSION=		0.6.8
 CATEGORIES=		net kde
 MASTER_SITES=		http://download.berlios.de/smb4k/
 
-MAINTAINER=		shelton@granch.ru
+MAINTAINER=		shelton@www.granch.ru
 COMMENT=		KDE 3.x SMB Network browser and SMB shares mounting center
 
 RUN_DEPENDS=		sudo:${PORTSDIR}/security/sudo \
@@ -19,8 +18,8 @@ RUN_DEPENDS=		sudo:${PORTSDIR}/security/sudo \
 
 USE_KDEBASE_VER=	3
 USE_GMAKE=		yes
-USE_REINPLACE=		yes
 USE_AUTOTOOLS=		libtool:15
+USE_GETTEXT=		yes
 CONFIGURE_ARGS += 	--with-qt-dir=${QT_PREFIX} \
 			--with-extra-includes=${LOCALBASE}/include \
 			--with-extra-libs=${LOCALBASE}/lib
@@ -32,7 +31,7 @@ INSTALLS_SHLIB=		yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-BROKEN=		"does not build on 4.x (missing sys/statvfs.h)"
+BROKEN=		does not build on 4.x (missing sys/statvfs.h)
 .endif
 
 post-install:
