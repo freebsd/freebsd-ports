@@ -120,7 +120,7 @@ PEARDIR?=	${LOCALBASE}/share/pear
 PLIST_SUB=	IMPDIR=${LIMPDIR} HORDE_INC=${HORDE_INC:S|^${LOCALBASE}/||}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
-SUB_FILES=	pkg-message pkg-deinstall
+SUB_FILES=	pkg-message pkg-install pkg-deinstall
 SUB_LIST=	IMPDIR=${IMPDIR} PORTSDIR=${PORTSDIR} CONFDIR=${CONFDIR}
 
 IMPDIR=		${PREFIX}/${LIMPDIR}
@@ -226,11 +226,7 @@ do-install:
 	@${CP} -Rp ${WRKSRC}/${REP} ${IMPDIR}
 .endfor
 	@${CP} -p  ${WRKSRC}/*.php ${IMPDIR}
-.for FILE in ${CONFFILE}
-	@if [ ! -f ${CONFDIR}/${FILE} ]; then \
-	  ${CP} ${CONFDIR}/${FILE}.dist ${CONFDIR}/${FILE} ; \
-	fi
-.endfor
+
 	@${INSTALL_DATA} ${WRKSRC}/config/conf.xml ${CONFDIR}
 	@${INSTALL_DATA} ${WRKDIR}/httpd-imp.conf ${HORDE_INC}
 	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${IMPDIR}
@@ -244,6 +240,7 @@ do-install:
 .endif
 
 post-install:
+	@${SETENV} ${SCRIPTS_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}

@@ -20,7 +20,7 @@ MASTER_SITES=	ftp://ftp.horde.org/pub/passwd/				\
 DISTNAME=	passwd-h3-${PORTVERSION}
 DIST_SUBDIR=	horde
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	shaun@inerd.com
 COMMENT=	A password changing module for Horde
 
 RUN_DEPENDS=	${LOCALBASE}/${LHORDEDIR}/rpc.php:${PORTSDIR}/www/horde
@@ -32,7 +32,7 @@ PLIST_SUB=	LPWDDIR=${LPWDDIR} PWDDIR=${PWDDIR}	\
 		HORDE_INC=${HORDE_INC:S|^${LOCALBASE}/||}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
-SUB_FILES=	pkg-message pkg-deinstall
+SUB_FILES=	pkg-message pkg-install pkg-deinstall
 SUB_LIST=	PWDDIR=${PWDDIR} CONFDIR=${CONFDIR} HORDEDIR=${HORDEDIR}
 
 DOCS=		LICENSE README docs/CHANGES docs/CREDITS docs/INSTALL	\
@@ -65,11 +65,7 @@ do-install:
 	@${CP} -Rp ${WRKSRC}/${REP} ${PWDDIR}
 .endfor
 	@${CP} -p  ${WRKSRC}/*.php ${PWDDIR}
-.for FILE in ${CONFFILE}
-	@if [ ! -f ${CONFDIR}/${FILE} ]; then \
-	  ${CP} ${CONFDIR}/${FILE}.dist ${CONFDIR}/${FILE} ; \
-	fi
-.endfor
+
 	@${CHOWN} -R www:www ${PWDDIR}
 	@${CHMOD} -R o-rwx ${CONFDIR}
 	@${INSTALL_DATA} ${WRKDIR}/httpd-pwd.conf ${HORDE_INC}
@@ -82,6 +78,7 @@ do-install:
 .endif
 
 post-install:
+	@${SETENV} ${SCRIPTS_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}

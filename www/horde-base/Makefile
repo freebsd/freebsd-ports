@@ -137,7 +137,7 @@ USE_PHP+=	mcrypt
 . if !defined(WITHOUT_MYSQL)
 USE_PHP+=	mysql
 . endif
-. if defined(WITH_POSTGRESQL)
+. if defined(WITH_POSTGRESQL) || defined(WITH_PGSQL)
 USE_PHP+=	pgsql
 . endif
 . if defined(WITH_SQLITE)
@@ -339,11 +339,7 @@ do-install:
 	@${CP} -Rp ${WRKSRC}/${REP} ${HORDEDIR}
 .endfor
 	@${CP} -p  ${WRKSRC}/*.php ${HORDEDIR}
-.for FILE in ${CONFFILE}
-	@if [ ! -f ${CONFDIR}/${FILE} ]; then \
-	  ${CP} ${CONFDIR}/${FILE}.dist ${CONFDIR}/${FILE} ; \
-	fi
-.endfor
+
 	@${CP} ${WRKSRC}/scripts/set_perms.sh ${HORDESBIN}/horde_set_perms.sh
 	@${CHMOD} u+x ${HORDESBIN}/horde_set_perms.sh
 .if ${APACHE_VERSION} >= 20
@@ -373,7 +369,7 @@ do-install:
 .endif
 
 post-install:
-	${SETENV} ${SCRIPTS_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@${SETENV} ${SCRIPTS_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}

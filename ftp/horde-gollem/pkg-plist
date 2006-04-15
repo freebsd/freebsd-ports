@@ -1,17 +1,11 @@
 %%HORDE_INC%%/httpd-gollem.conf
 %%GOLLEMDIR%%/clipboard.php
-%%GOLLEMDIR%%/config/backends.php
 %%GOLLEMDIR%%/config/backends.php.dist
 %%GOLLEMDIR%%/config/conf.xml
-%%GOLLEMDIR%%/config/credentials.php
 %%GOLLEMDIR%%/config/credentials.php.dist
-%%GOLLEMDIR%%/config/menu.php
 %%GOLLEMDIR%%/config/menu.php.dist
-%%GOLLEMDIR%%/config/mime_drivers.php
 %%GOLLEMDIR%%/config/mime_drivers.php.dist
-%%GOLLEMDIR%%/config/motd.php
 %%GOLLEMDIR%%/config/motd.php.dist
-%%GOLLEMDIR%%/config/prefs.php
 %%GOLLEMDIR%%/config/prefs.php.dist
 %%GOLLEMDIR%%/index.php
 %%GOLLEMDIR%%/js/stripe.js

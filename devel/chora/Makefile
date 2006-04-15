@@ -70,7 +70,7 @@ LCHORADIR=	${LHORDEDIR}/chora
 PLIST_SUB=	CHORADIR=${LCHORADIR} HORDE_INC=${HORDE_INC:S|^${LOCALBASE}/||}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
-SUB_FILES=	pkg-message pkg-deinstall
+SUB_FILES=	pkg-message pkg-install pkg-deinstall
 SUB_LIST=	CHORADIR=${CHORADIR} CONFDIR=${CONFDIR}
 
 CHORADIR=	${PREFIX}/${LCHORADIR}
@@ -114,11 +114,7 @@ do-install:
 	@${CP} -Rp ${WRKSRC}/${REP} ${CHORADIR}
 .endfor
 	@${CP} -p  ${WRKSRC}/*.php ${CHORADIR}
-.for FILE in ${CONFFILE}
-	@if [ ! -f ${CONFDIR}/${FILE} ]; then \
-	  ${CP} ${CONFDIR}/${FILE}.dist ${CONFDIR}/${FILE} ; \
-	fi
-.endfor
+
 	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${CHORADIR}
 	@${CHMOD} -R o-rwx ${CONFDIR}
 	@${INSTALL_DATA} ${WRKDIR}/httpd-chora.conf ${HORDE_INC}
@@ -131,6 +127,7 @@ do-install:
 .endif
 
 post-install:
+	@${SETENV} ${SCRIPTS_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}

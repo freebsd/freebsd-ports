@@ -16,6 +16,21 @@ upgrades.
   move the appropriate files to this directory manually,
   or set the tor_datadir variable accordingly in /etc/rc.conf
 
+20060414:
+  AFFECTS: users of www/horde, www/horde-php5, www/horde-passwd,
+           deskutils/nag, deskutils/mnemo, deskutils/kronolith,
+           mail/turba, mail/ingo, mail/imp, devel/chora
+  AUTHOR: shaun@inerd.com
+
+  The Horde ports no longer overwrite your existing configuration
+  files during an upgrade: if you have modified any of the files in the
+  config directory of any of these ports, they will be left untouched
+  when you upgrade.
+
+  It is recommended that the new .dist files are examined after an
+  upgrade and any changes merged into your existing config files if
+  necessary.
+
 20060408:
   AFFECTS: users of www/linux-flashplugin*
   AUTHOR: hrs@FreeBSD.org

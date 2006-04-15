@@ -12,15 +12,10 @@
 %%CHORADIR%%/co.php
 %%CHORADIR%%/config/.htaccess
 %%CHORADIR%%/config/conf.xml
-%%CHORADIR%%/config/cvsgraph.conf
 %%CHORADIR%%/config/cvsgraph.conf.dist
-%%CHORADIR%%/config/longIntro.txt
 %%CHORADIR%%/config/longIntro.txt.dist
-%%CHORADIR%%/config/mime_drivers.php
 %%CHORADIR%%/config/mime_drivers.php.dist
-%%CHORADIR%%/config/prefs.php
 %%CHORADIR%%/config/prefs.php.dist
-%%CHORADIR%%/config/sourceroots.php
 %%CHORADIR%%/config/sourceroots.php.dist
 %%CHORADIR%%/cvs.php
 %%CHORADIR%%/cvsgraph.php
