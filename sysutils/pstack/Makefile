@@ -8,8 +8,10 @@
 
 PORTNAME=	pstack
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://bsd-pstack.sourceforge.net/releases/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	bsd-pstack
 
 MAINTAINER=	pmedwards@eircom.net
 COMMENT=	Retrieve process/core file stack traces
@@ -20,4 +22,11 @@ MANCOMPRESSED=	yes
 MAN1=		pstack.1
 PLIST_FILES=	bin/pstack
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 600000
+post-patch:
+	${REINPLACE_CMD} -e 's/DT_COUNT/DT_BIND_NOW/' ${WRKSRC}/elf.c
+.endif
+
+.include <bsd.port.post.mk>
