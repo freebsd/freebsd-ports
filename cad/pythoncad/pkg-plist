@@ -35,7 +35,6 @@ bin/gtkpycad
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/linetype.py
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/logger.py
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/maptree.py
-%%PYTHON_SITELIBDIR%%/PythonCAD/Generic/menus.py
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/message.py
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/mirror.py
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/move.py
@@ -48,8 +47,8 @@ bin/gtkpycad
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/printing.py
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/prompt.py
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/quadtree.py
-%%PYTHON_SITELIBDIR%%/PythonCAD/Generic/text.py
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/segjoint.py
+%%PYTHON_SITELIBDIR%%/PythonCAD/Generic/text.py
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/segment.py
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/selections.py
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/split.py
@@ -74,8 +73,8 @@ bin/gtkpycad
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/conobject.pyc
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/delete.pyc
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/dimension.pyc
-%%PYTHON_SITELIBDIR%%/PythonCAD/Generic/dimtrees.pyc
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/dwg12.pyc
+%%PYTHON_SITELIBDIR%%/PythonCAD/Generic/dimtrees.pyc
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/dwg1314.pyc
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/dwg15.pyc
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/dwgbase.pyc
@@ -97,7 +96,6 @@ bin/gtkpycad
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/linetype.pyc
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/logger.pyc
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/maptree.pyc
-%%PYTHON_SITELIBDIR%%/PythonCAD/Generic/menus.pyc
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/message.pyc
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/mirror.pyc
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/move.pyc
@@ -110,8 +108,8 @@ bin/gtkpycad
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/printing.pyc
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/prompt.pyc
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/quadtree.pyc
-%%PYTHON_SITELIBDIR%%/PythonCAD/Generic/text.pyc
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/segjoint.pyc
+%%PYTHON_SITELIBDIR%%/PythonCAD/Generic/text.pyc
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/segment.pyc
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/selections.pyc
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/split.pyc
@@ -121,9 +119,9 @@ bin/gtkpycad
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/tools.pyc
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/transfer.pyc
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/tree.pyc
-%%PYTHON_SITELIBDIR%%/PythonCAD/Generic/arc.pyo
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/units.pyc
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/util.pyc
+%%PYTHON_SITELIBDIR%%/PythonCAD/Generic/arc.pyo
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/vcline.pyc
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/__init__.pyo
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/acline.pyo
@@ -159,7 +157,6 @@ bin/gtkpycad
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/linetype.pyo
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/logger.pyo
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/maptree.pyo
-%%PYTHON_SITELIBDIR%%/PythonCAD/Generic/menus.pyo
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/message.pyo
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/mirror.pyo
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/move.pyo
@@ -172,8 +169,8 @@ bin/gtkpycad
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/printing.pyo
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/prompt.pyo
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/quadtree.pyo
-%%PYTHON_SITELIBDIR%%/PythonCAD/Generic/text.pyo
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/segjoint.pyo
+%%PYTHON_SITELIBDIR%%/PythonCAD/Generic/text.pyo
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/segment.pyo
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/selections.pyo
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/split.pyo
