@@ -22,7 +22,7 @@ LIB_DEPENDS=	mp4v2.0:${PORTSDIR}/multimedia/mpeg4ip-libmp4v2 \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-NO_CDROM=	"Restrictive copyright (do not sell for profit)"
+NO_CDROM=	Restrictive copyright (do not sell for profit)
 
 USE_AUTOTOOLS=	automake:15 autoheader:259 libtool:15
 AUTOMAKE_ARGS=	--add-missing
@@ -30,7 +30,6 @@ CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 
 CONFIGURE_ARGS=	--with-drm
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
