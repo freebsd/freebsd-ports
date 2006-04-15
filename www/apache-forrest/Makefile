@@ -11,7 +11,6 @@ MASTER_SITES=		${MASTER_SITE_APACHE} \
 			http://mirror.tomato.it/apache/forrest/ \
 			http://mirrors.publicshout.org/apache/forrest/ \
 			http://mirror.nohup.it/apache/forrest/ \
-			http://www.apache.inetcosmos.org/dist/forrest/ \
 			ftp://mirror.nohup.it/apache/forrest/
 MASTER_SITE_SUBDIR=	forrest
 DISTNAME=		${PORTNAME}-${PORTVERSION}
@@ -22,7 +21,6 @@ COMMENT=		A tool for rapid development of small sites
 USE_JAVA=		yes
 JAVA_VERSION=		1.4+
 
-USE_REINPLACE=		Yes
 REPLACE_FILES=		${WRKSRC}/bin/forrest ${WRKSRC}/tools/ant/bin/ant
 
 NO_BUILD=		Yes
