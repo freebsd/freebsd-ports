@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	htpdate
-PORTVERSION=	0.8.8
+PORTVERSION=	0.9.1
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.clevervest.com/htp/archive/c/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	babak@farrokhi.net
 COMMENT=	Time synchronization over http utility
 
 USE_BZIP2=	yes
