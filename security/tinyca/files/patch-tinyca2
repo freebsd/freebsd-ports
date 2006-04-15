@@ -7,21 +7,23 @@ $FreeBSD$
  # along with this program; if not, write to the Free Software
  # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111, USA.
  
--BEGIN { push(@INC, './lib'); # put here the location of the modules
-+BEGIN { push(@INC, '%%SITE_PERL%%/tinyca'); # put here the location of the modules
+-BEGIN { unshift(@INC, './lib'); # put here the location of the modules
++BEGIN { unshift(@INC, '%%SITE_PERL%%/tinyca'); # put here the location of the modules
  }
  
  use strict;
-@@ -53,7 +53,7 @@
+@@ -53,8 +53,8 @@
  
  # location of openssl
  $init->{'opensslbin'} = "/usr/bin/openssl";
 -$init->{'zipbin'} = "/usr/bin/zip";
+-$init->{'tarbin'} = "/bin/tar";
 +$init->{'zipbin'} = "%%PREFIX%%/bin/zip";
++$init->{'tarbin'} = "/usr/bin/tar";
  
  if(not -x $init->{'opensslbin'}) {
     printf(gettext("Can't execute %s.\n"), $init->{'opensslbin'});
-@@ -67,7 +67,7 @@
+@@ -73,7 +73,7 @@
  }
  
  # directory with the templates
