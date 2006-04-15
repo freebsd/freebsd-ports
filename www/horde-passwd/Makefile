@@ -7,6 +7,7 @@
 
 PORTNAME=	horde-passwd
 PORTVERSION=	3.0
+PORTREVISION=	1
 CATEGORIES=	www mail
 MASTER_SITES=	ftp://ftp.horde.org/pub/passwd/				\
 		ftp://ftp.planetmirror.com/pub/horde/passwd/		\

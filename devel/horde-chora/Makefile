@@ -7,6 +7,7 @@
 
 PORTNAME=	chora
 PORTVERSION=	2.0.1
+PORTREVISION=	1
 CATEGORIES=	devel www
 MASTER_SITES=	ftp://ftp.horde.org/pub/chora/				\
 		ftp://ftp.planetmirror.com/pub/horde/chora/		\
