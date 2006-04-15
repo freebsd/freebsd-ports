@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dbacl
-PORTVERSION=	1.11
+PORTVERSION=	1.12
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,9 +18,8 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-USE_REINPLACE=	yes
 
-PROGRAMS=	bayesol dbacl mailinspect
+PROGRAMS=	bayesol dbacl mailinspect hmine hypex
 SCRIPTS=	mailcross mailtoe mailfoot
 MAN1=		bayesol.1 dbacl.1 mailcross.1 mailinspect.1 mailtoe.1 mailfoot.1
 DOCS=		AUTHORS ChangeLog README doc/dbacl.ps \
