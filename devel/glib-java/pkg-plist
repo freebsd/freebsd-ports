@@ -25,7 +25,9 @@ libdata/pkgconfig/%%PORTNAME%%.pc
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/glib/package-tree.html
 %%PORTDOCS%%%%DOCSDIR%%/api/overview-tree.html
 %%PORTDOCS%%%%DOCSDIR%%/api/package-list
+%%PORTDOCS%%%%DOCSDIR%%/api/packages.html
 %%PORTDOCS%%%%DOCSDIR%%/api/resources/inherit.gif
+%%PORTDOCS%%%%DOCSDIR%%/api/serialized-form.html
 %%PORTDOCS%%%%DOCSDIR%%/api/stylesheet.css
 share/%%PORTNAME%%/macros/ac_prog_jar.m4
 share/%%PORTNAME%%/macros/ac_prog_javac.m4
