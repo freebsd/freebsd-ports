@@ -570,6 +570,7 @@
     SUBDIR += log4sh
     SUBDIR += looks
     SUBDIR += lrmi
+    SUBDIR += lua50-compat51
     SUBDIR += lwp
     SUBDIR += m17n-db
     SUBDIR += m17n-docs

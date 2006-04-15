@@ -1,0 +1,5 @@
+lib/liblua-compat-5.1.a
+lib/liblua-compat-5.1_p.a
+share/lua/5.0/compat-5.1.lua
+@dirrmtry share/lua/5.0
+@dirrmtry share/lua
