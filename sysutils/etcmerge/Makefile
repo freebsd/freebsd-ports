@@ -19,7 +19,6 @@ COMMENT=	"Automatic 3-way merge of /etc updates"
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
-NO_MAN=		yes
 
 SRC=		${.CURDIR}/src
 
