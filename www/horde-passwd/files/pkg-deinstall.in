@@ -2,7 +2,6 @@
 #
 # $FreeBSD$
 #
-# Backup horde-passwd config files, if needed.
 
 if [ x$2 != xDEINSTALL ]; then
     exit
@@ -12,13 +11,10 @@ if [ -z "${PACKAGE_BUILDING}" ]; then
   for cf in `ls %%PWDDIR%%/config/*php`; do
     diff -bBqw $cf $cf.dist >/dev/null 2>&1
     case $? in
-      0)  # original config file, will be deleted by pkg-plist
+      0)  # original config file, delete it
+          rm -f $cf
           ;;
-      1)  # config file has been updated, must be backuped
-          cp -p $cf $cf.previous
-          echo "===> Backing-up..."
-          echo "--->   $cf has been saved ***"
-          echo "--->      as $cf.previous ***"
+      1)  # config file has been updated, leave it alone
           ;;
       *)  # not found?
           ;;

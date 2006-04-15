@@ -8,12 +8,9 @@
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%INGODIR%%/blacklist.php
 %%INGODIR%%/config/.htaccess
-%%INGODIR%%/config/backends.php
 %%INGODIR%%/config/backends.php.dist
 %%INGODIR%%/config/conf.xml
-%%INGODIR%%/config/fields.php
 %%INGODIR%%/config/fields.php.dist
-%%INGODIR%%/config/prefs.php
 %%INGODIR%%/config/prefs.php.dist
 %%INGODIR%%/filters.php
 %%INGODIR%%/forward.php
