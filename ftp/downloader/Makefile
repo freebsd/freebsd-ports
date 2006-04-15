@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	downloader
-PORTVERSION=	2.5.7
+PORTVERSION=	2.5.7.1
 CATEGORIES=	ftp
 MASTER_SITES=	http://d4x.krasu.ru/files/ \
 		ftp://ftp.chg.ru/pub/X11/applications/Xdownloader/
