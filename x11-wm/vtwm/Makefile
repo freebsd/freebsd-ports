@@ -10,7 +10,7 @@ PORTVERSION=	5.4.7
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.vtwm.org/downloads/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	spam@rm-rf.kiev.ua
 COMMENT=	Twm with a virtual desktop and optional Motif-like features
 
 USE_IMAKE=	yes
