@@ -43,6 +43,7 @@ EXIF			Support for EXIF headers in JPEG or TIFF files
 FAAD			FAAD AAC and MP4 audio decoder support
 FAAC			FAAC AAC and MP4 audio encoder support
 FLAC			Flac audio support
+GHC			Prefer/use Glasgow Haskell Compiler
 GNOME			Adds GNOME support
 GSTREAMER		Gstreamer multimedia support
 GTK1			Adds Gtk+1 support
@@ -65,6 +66,7 @@ MUSEPACK		Musepack (MPC, musicpd, libmpcdec) support
 MYSQL			MySQL database support
 NAS			Adds support for NAS (Network Audio Sound)
 NCURSES			Adds ncurses console graphics support
+NHC98			Prefer/use nhc98 Haskell compiler
 NIS			Support for NIS/YP
 NLS			Native Language Support via gettext utilities
 OGG			OGG multimedia container format
