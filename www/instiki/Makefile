@@ -7,11 +7,11 @@
 
 PORTNAME=	instiki
 PORTVERSION=	0.10.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www ruby
 MASTER_SITES=	http://rubyforge.lauschmusik.de/instiki/	\
 		http://rubyforge.planetargon.com/instiki/	\
-		http://rubyforge.org/frs/download.php/5350/
+		http://rubyforge.rubyuser.de/instiki/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	arsptr@optusnet.com.au
@@ -24,10 +24,8 @@ INSTIKIDIR?=	instiki
 
 PLIST_SUB=	INSTIKIDIR=${INSTIKIDIR}/
 
-USE_RC_SUBR=	yes
-SED_SCRIPT=	-e 's,%%RC_SUBR%%,${RC_SUBR},g' \
-		-e 's,%%PREFIX%%,${PREFIX},g' \
-		-e 's,%%INSTIKIDIR%%,${INSTIKIDIR},g' \
+USE_RC_SUBR=	${PORTNAME}
+SED_LIST+=	-e 's,%%INSTIKIDIR%%,${INSTIKIDIR},g' \
 		-e 's,%%INSTIKIPORT%%,${INSTIKIPORT},g' \
 		-e 's,%%RUBY_WITH_SUFFIX%%,${RUBY_WITH_SUFFIX},g'
 
@@ -38,12 +36,8 @@ INSTIKIPORT?=	2500
 post-patch:
 	@${FIND} ${WRKSRC} -name '*.orig' -delete
 
-pre-install:
-	@${SED} ${SED_SCRIPT} ${FILESDIR}/${PORTNAME}.sh >${WRKDIR}/${PORTNAME}.sh
-
 do-install:
 	${CP} -pR ${WRKSRC}/ ${PREFIX}/${INSTIKIDIR}
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${PREFIX}/etc/rc.d/${PORTNAME}.sh
 	${MKDIR} ${PREFIX}/${INSTIKIDIR}/storage/${INSTIKIPORT}
 	${CHMOD} +x ${PREFIX}/${INSTIKIDIR}/instiki
 

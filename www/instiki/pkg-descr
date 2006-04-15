@@ -1,7 +1,8 @@
 Instiki is a wiki clone implemented in ruby with no dependencies
 other than ruby-1.8.1 or greater. Instiki was written and is
 maintained by David Heinemeier Hansson. Homepage is
-WWW: http://www.instiki.org
+
+WWW:  http://www.instiki.org/show/HomePage
 
 - Kelley Reynolds
 kelley@insidesystems.net
