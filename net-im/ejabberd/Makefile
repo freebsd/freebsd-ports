@@ -12,7 +12,7 @@ CATEGORIES=	net-im
 MASTER_SITES=	http://www.jabber.ru/files/ejabberd/ \
 		http://www.process-one.net/en/projects/ejabberd/download/${PORTVERSION}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	shaun@inerd.com
 COMMENT=	Free and Open Source distributed fault-tolerant Jabber server
 
 BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang
