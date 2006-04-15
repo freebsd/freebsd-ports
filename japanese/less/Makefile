@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	less+iso
-PORTVERSION=	382.258
+PORTVERSION=	382.259
 PORTREVISION=	0
 CATEGORIES=	japanese
 MASTER_SITES=	http://www25.big.jp/~jam/less/ \
@@ -18,7 +18,8 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 PATCH_SITES=	http://www25.big.jp/~jam/less/
-PATCHFILES=	${DISTNAME}-iso${PORTVERSION:E}.patch.gz
+PATCHFILES=	${DISTNAME}-iso258.patch.gz \
+		${DISTNAME}-iso258-${PORTVERSION:E}.patch.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	ports@FreeBSD.org
@@ -34,7 +35,8 @@ READMES=	README.iso README.regex README.iso.jp README.regex.jp
 post-patch:
 	(cd ${WRKSRC} ; \
 	 ${RM} -f COPYING; \
-	 ${GZCAT} ${DISTDIR}/regex_cs-lwp9k.shar.gz | ${SH} )
+	 ${GZCAT} ${DISTDIR}/regex_cs-lwp9k.shar.gz | ${SH}; \
+	 ${PATCH} < ${PATCHDIR}/regex_cs.c.patch )
 
 post-install:
 .if !defined(NOPORTDOCS)

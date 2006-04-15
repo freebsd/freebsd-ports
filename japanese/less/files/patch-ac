@@ -4,5 +4,5 @@
  		in search.c.
  */
  
--char version[] = "358+iso254";
-+char version[] = "358+iso254+regex_cs-lwp9k+gtags";
+-char version[] = "382+iso259";
++char version[] = "382+iso259+regex_cs-lwp9k";
