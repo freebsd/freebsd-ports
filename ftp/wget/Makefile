@@ -18,8 +18,6 @@ COMMENT=	Retrieve files from the Net via HTTP and FTP
 USE_GETTEXT=	yes
 .endif
 
-CONFLICTS=	wget-devel-[0-9]*
-
 USE_PERL5_BUILD=	yes
 GNU_CONFIGURE=		yes
 
