@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ledger
-PORTVERSION=	2.3
+PORTVERSION=	2.4.1
 CATEGORIES=	finance
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED} \
 		http://www.badplandude.com/~wcarey/ledger/
@@ -25,6 +25,7 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/w3c-libwww
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_TARGET?=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 NO_INSTALL_MANPAGES=	yes
 INFO=	ledger
