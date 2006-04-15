@@ -7,13 +7,13 @@
 #
 
 PORTNAME=	bluefish
-PORTVERSION=	1.0.4
-PORTREVISION=	3
+PORTVERSION=	1.0.5
 CATEGORIES=	www editors
-MASTER_SITES=	http://pkedu.fbt.eitn.wau.nl/~olivier/${DOWNLOAD}/ \
-		ftp://bluefish.advancecreations.com/pub/bluefish/${DOWNLOAD}/ \
+MASTER_SITES=	http://pkedu.fbt.wur.nl/~olivier/${DOWNLOAD}/ \
 		http://bluefish.mrball.net/${DOWNLOAD}/ \
-		ftp://ftp.ratisbona.com/pub/bluefish/${DOWNLOAD}/
+		ftp://ftp.ratisbona.com/pub/bluefish/${DOWNLOAD}/ \
+		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTML editor designed for the experienced web designer
@@ -64,9 +64,6 @@ pre-everything::
 	@${ECHO_MSG} "For Highlighting to work, please enable UTF-8 support in devel/pcre."
 	@${ECHO_MSG} "This will reduce the number of warning in the console when running bluefish."
 	@${ECHO_MSG} ""
-
-post-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/debian/bluefish.1 ${PREFIX}/man/man1/bluefish.1
 
 .include <bsd.port.pre.mk>
 
