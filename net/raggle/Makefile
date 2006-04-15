@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	raggle
-PORTVERSION=	0.3.2
+PORTVERSION=	0.4.4
 CATEGORIES=	net
 MASTER_SITES=	http://www.raggle.org/files/
 
@@ -21,7 +21,9 @@ USE_RUBY_FEATURES=	rexml yaml
 NO_BUILD=	yes
 
 MAN1=		raggle.1
-DOCS=		AUTHORS BUGS COPYING ChangeLog README TODO doc/*
+DOCS=		AUTHORS BUGS COPYING ChangeLog README TODO \
+		doc/default_config.rb doc/pauls_feeds.opml.gz \
+		doc/theme_documentation.txt 
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/raggle ${PREFIX}/bin
