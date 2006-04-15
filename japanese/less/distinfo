@@ -7,3 +7,6 @@ SIZE (regex_cs-lwp9k.shar.gz) = 60569
 MD5 (less-382-iso258.patch.gz) = bc42654a79a727c15b87596708a22333
 SHA256 (less-382-iso258.patch.gz) = 0681485f47237aeee42a34bbf0ab55215933c7713d1be80ac202a31c7a6fdc31
 SIZE (less-382-iso258.patch.gz) = 87859
+MD5 (less-382-iso258-259.patch.gz) = f62f5a06fff9c3c1f209800287c0f61a
+SHA256 (less-382-iso258-259.patch.gz) = 845bb97f407727febd4ee4014618715884bf393d1531089e18faf4e895e19cec
+SIZE (less-382-iso258-259.patch.gz) = 9466
