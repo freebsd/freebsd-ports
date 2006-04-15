@@ -1,0 +1,63 @@
+Index: xmerge/source/xmerge/java/org/openoffice/xmerge/ConvertData.java
+===================================================================
+RCS file: /cvs/xml/xmerge/source/xmerge/java/org/openoffice/xmerge/ConvertData.java,v
+retrieving revision 1.2
+diff -u -r1.2 ConvertData.java
+--- xmerge/source/xmerge/java/org/openoffice/xmerge/ConvertData.java	24 Oct 2005 17:58:33 -0000	1.2
++++ xmerge/source/xmerge/java/org/openoffice/xmerge/ConvertData.java	15 Apr 2006 00:36:23 -0000
+@@ -127,8 +127,8 @@
+      *           <code>Vector</code> of <code>Document</code> objects.
+      */
+     public Enumeration getDocumentEnumeration() {
+-        Enumeration enum = v.elements();
+-		return (enum);
++        Enumeration enumer = v.elements();
++		return (enumer);
+ 	}
+ 
+ 
+Index: xmerge/source/xmerge/java/org/openoffice/xmerge/converter/xml/xslt/DocumentDeserializerImpl.java
+===================================================================
+RCS file: /cvs/xml/xmerge/source/xmerge/java/org/openoffice/xmerge/converter/xml/xslt/DocumentDeserializerImpl.java,v
+retrieving revision 1.2
+diff -u -r1.2 DocumentDeserializerImpl.java
+--- xmerge/source/xmerge/java/org/openoffice/xmerge/converter/xml/xslt/DocumentDeserializerImpl.java	24 Oct 2005 18:12:55 -0000	1.2
++++ xmerge/source/xmerge/java/org/openoffice/xmerge/converter/xml/xslt/DocumentDeserializerImpl.java	15 Apr 2006 00:36:23 -0000
+@@ -155,14 +155,14 @@
+      */
+     public Document deserialize() throws ConvertException, IOException {
+ 	log("\nFound the XSLT deserializer");
+-	Enumeration enum = cd.getDocumentEnumeration();
++	Enumeration enumer = cd.getDocumentEnumeration();
+ 	org.w3c.dom.Document domDoc=null;
+ 	DOMDocument docOut=null;
+ 	GenericOfficeDocument doc = null;
+ 	ByteArrayOutputStream baos =null;
+ 	GenericOfficeDocument sxwDoc = new GenericOfficeDocument("output");
+-	while (enum.hasMoreElements()) {       
+-		 docOut = (DOMDocument) enum.nextElement();
++	while (enumer.hasMoreElements()) {       
++		 docOut = (DOMDocument) enumer.nextElement();
+ 	}
+ 	domDoc = docOut.getContentDOM();	
+ 	try{
+Index: xmerge/source/xmerge/java/org/openoffice/xmerge/converter/xml/xslt/PluginFactoryImpl.java
+===================================================================
+RCS file: /cvs/xml/xmerge/source/xmerge/java/org/openoffice/xmerge/converter/xml/xslt/PluginFactoryImpl.java,v
+retrieving revision 1.2
+diff -u -r1.2 PluginFactoryImpl.java
+--- xmerge/source/xmerge/java/org/openoffice/xmerge/converter/xml/xslt/PluginFactoryImpl.java	24 Oct 2005 18:13:41 -0000	1.2
++++ xmerge/source/xmerge/java/org/openoffice/xmerge/converter/xml/xslt/PluginFactoryImpl.java	15 Apr 2006 00:36:23 -0000
+@@ -183,9 +183,9 @@
+ 	String ext= ".txt";
+ 	String mimeType = null;
+ 	ConverterInfo ci = this.getConverterInfo();
+-	Enumeration enum = ci.getDeviceMime();
+-	while (enum.hasMoreElements()) {       
+-	    mimeType= (String) enum.nextElement();
++	Enumeration enumer = ci.getDeviceMime();
++	while (enumer.hasMoreElements()) {       
++	    mimeType= (String) enumer.nextElement();
+ 	}
+ 	try {
+ 	    props.load(is);

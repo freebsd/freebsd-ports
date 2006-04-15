@@ -50,9 +50,9 @@ ONLY_FOR_ARCHS=	i386
 
 .if !defined(WITHOUT_JAVA) && !defined(WITH_GNUGCJ)
 USE_JAVA=	yes
-JAVA_VERSION=	1.4
+JAVA_VERSION=	1.5
 JAVA_BUILD=	jdk
-JAVA_VENDOR=	bsdjava
+JAVA_VENDOR=	freebsd bsdjava
 .endif
 
 .include <bsd.port.pre.mk>
@@ -64,9 +64,9 @@ IGNORE=		install lang/perl5.8 then try again
 
 CODELINE=		680
 RELEASE_NR=		2.0
-MILESTONE?=		162
+MILESTONE?=		163
 OOOTAG?=		SRC680_m${MILESTONE}
-SNAPDATE=		20060331
+SNAPDATE=		20060413
 INSTALLATION_BASEDIR?=	openoffice.org-${OOOTAG}
 EXECBASE?=		openoffice.org-${OOOTAG}
 DIST_SUBDIR=		openoffice.org2.0
