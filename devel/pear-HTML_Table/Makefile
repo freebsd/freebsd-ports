@@ -9,7 +9,7 @@ PORTNAME=	HTML_Table
 PORTVERSION=	1.6.1
 CATEGORIES=	devel www pear
 
-MAINTAINER=	tux@pinguru.net
+MAINTAINER=	gerrit.beine@gmx.de
 COMMENT=	Makes the design of HTML tables easy, flexible, reusable and efficient
 
 BUILD_DEPENDS=	${PEARDIR}/HTML/Common.php:${PORTSDIR}/devel/pear-HTML_Common

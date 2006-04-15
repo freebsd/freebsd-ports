@@ -12,7 +12,7 @@ CATEGORIES=	irc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	tux@pinguru.net
+MAINTAINER=	gerrit.beine@gmx.de
 COMMENT=	GNU Thales -- An IRC to MySQL gateway
 
 GNU_CONFIGURE=	yes

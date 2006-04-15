@@ -11,7 +11,7 @@ CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	tux@pinguru.net
+MAINTAINER=	gerrit.beine@gmx.de
 COMMENT=	VYM  (View Your Mind) is a tool to generate and manipulate maps
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake

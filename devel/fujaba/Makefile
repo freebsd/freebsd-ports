@@ -11,7 +11,7 @@ CATEGORIES=	devel java
 MASTER_SITES=	http://wwwcs.uni-paderborn.de/cs/fujaba/downloads/packages/Fujaba_4/
 DISTNAME=	FujabaToolSuite_Developer${PORTVERSION:S/./_/g}
 
-MAINTAINER=	tux@pinguru.net
+MAINTAINER=	gerrit.beine@gmx.de
 COMMENT=	Another UML CASE tool
 
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
