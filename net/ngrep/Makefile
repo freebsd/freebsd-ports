@@ -42,11 +42,17 @@ CONFIGURE_ARGS+=	--enable-pcre
 CONFIGURE_ARGS+=	--with-pcap-includes=/usr/include
 .else
 CONFIGURE_ARGS+=	--with-pcap-includes=${LOCALBASE}/include
-LIB_DEPENDS=		pcap.2:${PORTSDIR}/net/libpcap
+BUILD_DEPENDS+=		${LOCALBASE}/lib/libpcap.a:${PORTSDIR}/net/libpcap
 .endif
 
 .if !defined(WITHOUT_IPV6)
 CONFIGURE_ARGS+=	--enable-ipv6
+.endif
+
+post-patch:
+.if defined(WITH_PORTS_PCAP)
+	@${REINPLACE_CMD} -e "s|-lpcap|${LOCALBASE}/lib/libpcap.a|g" \
+		${WRKSRC}/Makefile.in ${WRKSRC}/configure
 .endif
 
 post-install:
