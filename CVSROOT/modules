@@ -6076,6 +6076,7 @@ lua		ports/lang/lua
 lua-mode.el	ports/lang/lua-mode.el
 lua4		ports/lang/lua4
 lua50-compat51	ports/devel/lua50-compat51
+lua50-posix	ports/devel/lua50-posix
 luasocket	ports/net/luasocket
 lucidlife	ports/games/lucidlife
 luma		ports/sysutils/luma
