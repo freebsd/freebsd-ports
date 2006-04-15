@@ -7,11 +7,10 @@
 #
 
 PORTNAME=	qwtplot3d
-PORTVERSION=	0.2.4.b
+PORTVERSION=	0.2.6
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/-beta/}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
@@ -31,9 +30,9 @@ pre-build:
 
 do-install:
 	${CP} ${WRKSRC}/include/* ${PREFIX}/include
-	${INSTALL_DATA} ${WRKSRC}/lib/libqwtplot3d.so.0.2.4 ${PREFIX}/lib
-	${LN} -fs ${PREFIX}/lib/libqwtplot3d.so.0.2.4 ${PREFIX}/lib/libqwtplot3d.so.0
-	${LN} -fs ${PREFIX}/lib/libqwtplot3d.so.0.2.4 ${PREFIX}/lib/libqwtplot3d.so
+	${INSTALL_DATA} ${WRKSRC}/lib/libqwtplot3d.so.${PORTVERSION} ${PREFIX}/lib
+	${LN} -fs ${PREFIX}/lib/libqwtplot3d.so.${PORTVERSION} ${PREFIX}/lib/libqwtplot3d.so.0
+	${LN} -fs ${PREFIX}/lib/libqwtplot3d.so.${PORTVERSION} ${PREFIX}/lib/libqwtplot3d.so
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${EXAMPLESDIR}
 	${CP} -R ${WRKSRC}/examples/ ${EXAMPLESDIR}

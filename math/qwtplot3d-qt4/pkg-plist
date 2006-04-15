@@ -21,10 +21,11 @@ include/qwt3d_multiplot.h
 include/qwt3d_openglhelper.h
 include/qwt3d_parametricsurface.h
 include/qwt3d_plot.h
+include/qwt3d_portability.h
 include/qwt3d_scale.h
 include/qwt3d_surfaceplot.h
 include/qwt3d_types.h
 include/qwt3d_volumeplot.h
 lib/libqwtplot3d.so
 lib/libqwtplot3d.so.0
-lib/libqwtplot3d.so.0.2.4
+lib/libqwtplot3d.so.0.2.6
