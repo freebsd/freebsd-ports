@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	phpmyfaq
-PORTVERSION=	1.5.2
+PORTVERSION=	1.5.8
 CATEGORIES=	www
 MASTER_SITES=	http://www.phpmyfaq.de/download/
 DISTNAME=	${PORTNAME}.${PORTVERSION}.full
 EXTRACT_SUFX=	.zip
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	babak@farrokhi.net
 COMMENT=	A multilingual, completely database-driven FAQ-system
 
 WRKSRC=		${WRKDIR}/${PORTNAME}.${PORTVERSION}
@@ -26,7 +26,7 @@ WANT_PHP_WEB=	YES
 pre-fetch:
 .if !defined(PHPMYFAQ_URL)
 	 @${ECHO_MSG} ""
-	 @${ECHO_MSG} "Define PHPMYFAQ_URL to override default of ${PREFIX}/${WWWDOCROOT}/'${PHPMYFAQ_URL}'."
+	 @${ECHO_MSG} "Define PHPMYFAQ_URL to override default of ${PREFIX}/'${PHPMYFAQ_URL}'."
 	 @${ECHO_MSG} ""
 .endif
 
