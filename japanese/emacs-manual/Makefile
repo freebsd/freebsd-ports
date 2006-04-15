@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	emacs/:gnu
 DISTNAME=	emacs-20.6-man-jp
 DISTFILES=	${DISTNAME}.tgz:ascii ${EMACS_ARC:S/$/:gnu/}
 
-MAINTAINER=	okazaki@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Japanese translation of the GNU Emacs Manual
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash

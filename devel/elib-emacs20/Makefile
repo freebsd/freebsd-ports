@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-MAINTAINER=	okazaki@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 # This is a slave port.
 PORTCLASS=	slave
