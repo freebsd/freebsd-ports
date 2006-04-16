@@ -12973,6 +12973,7 @@ uhexen		ports/games/uhexen
 uim		ports/textproc/uim
 uim-el		ports/textproc/uim-el
 uim-el-xemacs21-mule	ports/textproc/uim-el-xemacs21-mule
+uim-gnome	ports/textproc/uim-gnome
 uird		ports/comms/uird
 uk-aspell	ports/ukrainian/aspell
 uk-emacs-koi8u	ports/ukrainian/emacs-koi8u
