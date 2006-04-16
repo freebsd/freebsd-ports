@@ -6,17 +6,13 @@
 #
 
 PORTNAME=	clip
-PORTVERSION=	1.1.14.1
-PORTREVISION=	4
+DISTVERSION=	1.1.15-1
 CATEGORIES=	databases lang
-MASTER_SITES=	ftp://ftp.linux.ru.net/mirrors/clip/:files	\
-		ftp://ftp.itk.ru/pub/clip/:files		\
-		${MASTER_SITE_LOCAL:S/$/:patch/}
-MASTER_SITE_SUBDIR=lawrance/:patch
-DISTFILES=	${PORTNAME}-prg-${PORTVERSION:R}-${PORTVERSION:E}.tgz:files \
-		patch.tgz:patch
+MASTER_SITES=	ftp://ftp.linux.ru.net/mirrors/clip/	\
+		ftp://ftp.itk.ru/pub/clip/
+DISTNAME=	${PORTNAME}-prg-${DISTVERSION}
+EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	clip
-EXTRACT_ONLY=	${PORTNAME}-prg-${PORTVERSION:R}-${PORTVERSION:E}.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	xBase and Clipper language compatible compiler
@@ -33,9 +29,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg		\
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash			\
 		wget:${PORTSDIR}/ftp/wget
 
-BROKEN=		Incomplete pkg-plist
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-prg-${PORTVERSION:R}-${PORTVERSION:E}
+WRKSRC=		${WRKDIR}/${PORTNAME}-prg-${DISTVERSION}
 USE_GETTEXT=	yes
 WANT_GNOME=	yes
 SUB_FILES=	pkg-message
@@ -50,7 +44,7 @@ OPTIONS=	IODBC		"iODBC support"				on \
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != "i386"
-BROKEN=		"Does not compile on !i386"
+BROKEN=		Does not compile on !i386
 .endif
 
 # OPT_CLIPLIBS contains the optional subdirectories built by
@@ -97,7 +91,6 @@ PLIST_SUB+=	IBASE="@comment "
 USE_BISON=		yes
 USE_GMAKE=		yes
 USE_ICONV=		yes
-USE_REINPLACE=		yes
 REINPLACE_ARGS=		-i ""
 USE_XLIB=		yes
 USE_XPM=		yes
@@ -122,19 +115,18 @@ FIREBIRD_PORT?=	databases/firebird-client
 BIN2STRIP=	bdbf clip clip_bl clip_blank clip_cld clip_conv clip_dbf2txt	\
 		clip_dbg clip_fl clip_hashextract clip_hindex clip_hseek	\
 		clip_hv clip_prg clip_run clip_trans clip_we clipar cliphash	\
-		cobra_clnt1 cobra_serv codb_ab codb_abx codb_addobj codb_export \
-		codb_make codb_pack codb_reindex ctosgml dbc	\
+		cobra_clnt1 cobra_serv codb_ab codb_addobj codb_load codb_export\
+		codb_make codb_pack codb_rcheck codb_reindex ctosgml dbc	\
 		ftosgml gen_tbl po_compat po_extr po_subst pp_ron sqlrun	\
 		wcl2prg www_clip xclip
+
+DIR2PRUNE=	include/memdebug doc/clip-com doc/clip-oasis/nanfor doc/clip-oasis
 
 pre-everything::
 	@if [ ! -z "${CLIPROOT}" ]; then \
 		${ECHO} Please unset CLIPROOT in your environment! ; \
 		exit 1; \
 	fi
-
-pre-patch:
-	@cd ${WRKSRC} && ${PAX} -z -r -s '/clip-prg//' -f ${DISTDIR}/${DIST_SUBDIR}/patch.tgz
 
 pre-configure:
 	@${FIND} ${WRKSRC} -name "Makefile*" -or -name Imakefile |		\
@@ -151,12 +143,12 @@ pre-configure:
 	-e "s|/usr/X11R6|${X11BASE}|g"
 
 post-build: # don't include emppty directories
-	@cd ${WRKDIR}/cliproot && ${RMDIR} include/memdebug doc/clip-oasis/nanfor doc/clip-oasis
+	${RMDIR} ${DIR2PRUNE:S|^|${WRKDIR}/cliproot/|}
 
 do-install:
 	@${MKDIR} ${PREFIX}/clip
 	@${CP} -R ${WRKDIR}/cliproot/* ${PREFIX}/clip
-.for FILE in ${BIN2STRIP}
+.for FILE in ${BIN2STRIP}G
 	@${STRIP_CMD} ${PREFIX}/clip/bin/${FILE}
 .endfor
 	@for f in `${LS} ${PREFIX}/clip/lib/*.so` ;				\
@@ -166,5 +158,11 @@ do-install:
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
+
+.if defined(MAINTAINER_MODE)
+regression-test:	install
+	(cd ${WRKSRC}/clip/tests &&	\
+	CLIPROOT=${PREFIX}/clip PATH="${PATH}:${PREFIX}/clip/bin" ${GMAKE} all)
+.endif
 
 .include <bsd.port.post.mk>

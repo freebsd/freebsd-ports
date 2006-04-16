@@ -61,7 +61,6 @@ clip/bin/cliphash
 clip/bin/cobra_clnt1
 clip/bin/cobra_serv
 clip/bin/codb_ab
-clip/bin/codb_abx
 clip/bin/codb_addobj
 clip/bin/codb_export
 clip/bin/codb_load
@@ -262,56 +261,51 @@ clip/codb_ab/reports/default.ex
 clip/codb_ab/reports/default.nm
 clip/codb_ab/reports/default.po
 clip/codb_ab/reports/default.prg
-clip/codb_abx/plugins/.clipcharset
-clip/codb_abx/plugins/.cliprc
-clip/codb_abx/plugins/attr.ex
-clip/codb_abx/plugins/attr.nm
-clip/codb_abx/plugins/attr.po
-clip/codb_abx/plugins/attr.prg
-clip/codb_abx/plugins/class.ex
-clip/codb_abx/plugins/class.nm
-clip/codb_abx/plugins/class.po
-clip/codb_abx/plugins/class.prg
-clip/codb_abx/plugins/counter.ex
-clip/codb_abx/plugins/counter.nm
-clip/codb_abx/plugins/counter.po
-clip/codb_abx/plugins/counter.prg
-clip/codb_abx/plugins/default.ex
-clip/codb_abx/plugins/default.nm
-clip/codb_abx/plugins/default.po
-clip/codb_abx/plugins/default.prg
-clip/codb_abx/plugins/deposit.ex
-clip/codb_abx/plugins/deposit.nm
-clip/codb_abx/plugins/deposit.po
-clip/codb_abx/plugins/deposit.prg
-clip/codb_abx/plugins/group.ex
-clip/codb_abx/plugins/group.nm
-clip/codb_abx/plugins/group.po
-clip/codb_abx/plugins/group.prg
-clip/codb_abx/plugins/index.ex
-clip/codb_abx/plugins/index.nm
-clip/codb_abx/plugins/index.po
-clip/codb_abx/plugins/index.prg
-clip/codb_abx/plugins/plugins.ex
-clip/codb_abx/plugins/plugins.nm
-clip/codb_abx/plugins/plugins.po
-clip/codb_abx/plugins/plugins.prg
-clip/codb_abx/plugins/report.ex
-clip/codb_abx/plugins/report.nm
-clip/codb_abx/plugins/report.po
-clip/codb_abx/plugins/report.prg
-clip/codb_abx/plugins/tcolumn.ex
-clip/codb_abx/plugins/tcolumn.nm
-clip/codb_abx/plugins/tcolumn.po
-clip/codb_abx/plugins/tcolumn.prg
-clip/codb_abx/plugins/tview.ex
-clip/codb_abx/plugins/tview.nm
-clip/codb_abx/plugins/tview.po
-clip/codb_abx/plugins/tview.prg
-clip/codb_abx/plugins/user.ex
-clip/codb_abx/plugins/user.nm
-clip/codb_abx/plugins/user.po
-clip/codb_abx/plugins/user.prg
+clip/doc/clip-gd/eng/asdf.png
+clip/doc/clip-gd/eng/circle1.png
+clip/doc/clip-gd/eng/circle2.png
+clip/doc/clip-gd/eng/gd_lib.html
+clip/doc/clip-gd/eng/gd_prg.html
+clip/doc/clip-gd/eng/hist1.png
+clip/doc/clip-gd/eng/hist2.png
+clip/doc/clip-gd/eng/histcumul1.png
+clip/doc/clip-gd/eng/histcumul2.png
+clip/doc/clip-gd/eng/histnorm1.png
+clip/doc/clip-gd/eng/histnorm2.png
+clip/doc/clip-gd/eng/histvolume.png
+clip/doc/clip-gd/eng/line1.png
+clip/doc/clip-gd/eng/line2.png
+clip/doc/clip-gd/eng/linecumul1.png
+clip/doc/clip-gd/eng/linecumul2.png
+clip/doc/clip-gd/eng/linenorm1.png
+clip/doc/clip-gd/eng/linenorm2.png
+clip/doc/clip-gd/eng/o_gdimage.html
+clip/doc/clip-gd/eng/o_graphics.html
+clip/doc/clip-gd/eng/ring1.png
+clip/doc/clip-gd/eng/ring2.png
+clip/doc/clip-gd/rus/asdf.png
+clip/doc/clip-gd/rus/circle1.png
+clip/doc/clip-gd/rus/circle2.png
+clip/doc/clip-gd/rus/gd_lib.html
+clip/doc/clip-gd/rus/gd_prg.html
+clip/doc/clip-gd/rus/gistvolume.png
+clip/doc/clip-gd/rus/hist1.png
+clip/doc/clip-gd/rus/hist2.png
+clip/doc/clip-gd/rus/histcumul1.png
+clip/doc/clip-gd/rus/histcumul2.png
+clip/doc/clip-gd/rus/histnorm1.png
+clip/doc/clip-gd/rus/histnorm2.png
+clip/doc/clip-gd/rus/histvolume.png
+clip/doc/clip-gd/rus/line1.png
+clip/doc/clip-gd/rus/line2.png
+clip/doc/clip-gd/rus/linecumul1.png
+clip/doc/clip-gd/rus/linecumul2.png
+clip/doc/clip-gd/rus/linenorm1.png
+clip/doc/clip-gd/rus/linenorm2.png
+clip/doc/clip-gd/rus/o_gdimage.html
+clip/doc/clip-gd/rus/o_graphics.html
+clip/doc/clip-gd/rus/ring1.png
+clip/doc/clip-gd/rus/ring2.png
 clip/doc/example/Makefile
 clip/doc/example/abox.ch
 clip/doc/example/box.ch
@@ -326,6 +320,8 @@ clip/doc/example/clip-cti/browsecombo.prg
 clip/doc/example/clip-cti/ctifd.prg
 clip/doc/example/clip-cti/ctitest.prg
 clip/doc/example/clip-cti/test.dbf
+clip/doc/example/clip-fcgi/Makefile
+clip/doc/example/clip-fcgi/clip_echo.fcgi.prg
 clip/doc/example/clip-fw/.clipcharset
 clip/doc/example/clip-fw/Makefile
 clip/doc/example/clip-fw/atest.prg
@@ -363,6 +359,8 @@ clip/doc/example/clip-fw/testlbx.prg
 clip/doc/example/clip-fw/testscrl.prg
 clip/doc/example/clip-fw/testwsty.prg
 clip/doc/example/clip-fw/tooltip.prg
+clip/doc/example/clip-gd/Makefile
+clip/doc/example/clip-gd/gr.prg
 clip/doc/example/clip-gtk/Makefile
 clip/doc/example/clip-gtk/accel.prg
 clip/doc/example/clip-gtk/basket.bmp
@@ -406,11 +404,16 @@ clip/doc/example/clip-gtk2/test.prg
 clip/doc/example/clip-gtk2/test_dnd.prg
 clip/doc/example/clip-gtk2/test_gtk.prg
 clip/doc/example/clip-gtk2/test_image.prg
+clip/doc/example/clip-gtk2/test_rc.prg
 clip/doc/example/clip-gtk2/test_stock.prg
 clip/doc/example/clip-gtk2/test_text.prg
 clip/doc/example/clip-gtk2/test_tree.prg
 clip/doc/example/clip-gtk2/text.prg
+clip/doc/example/clip-gtk2/winback.prg
 clip/doc/example/clip-gtk2/winpic.prg
+clip/doc/example/clip-gtkextra/Makefile
+clip/doc/example/clip-gtkextra/pixmaps.ch
+clip/doc/example/clip-gtkextra/sheet.prg
 clip/doc/example/clip-gzip/Makefile
 clip/doc/example/clip-gzip/gz.prg
 clip/doc/example/clip-rtf/Makefile
@@ -421,8 +424,10 @@ clip/doc/example/clip-rtf/veggies.dbf
 clip/doc/example/clip-ui/Makefile
 clip/doc/example/clip-ui/form_ui.prg
 clip/doc/example/clip-ui/icons/doc_bank_pp.xpm
+clip/doc/example/clip-ui/icons/eas-logo.xpm
 clip/doc/example/clip-ui/icons/journal_bank_pp.xpm
 clip/doc/example/clip-ui/icons/reference_partner.xpm
+clip/doc/example/clip-ui/icons/tick.xpm
 clip/doc/example/clip-ui/testWindow.xfl
 clip/doc/example/clip-ui/test_ui.prg
 clip/doc/example/hello.prg
@@ -437,62 +442,6 @@ clip/doc/example/tcpserv.prg
 clip/doc/example/test.dbf.orig
 clip/doc/example/test_dbf.prg
 clip/doc/example/testlock.prg
-clip/doc/example/clip-gd/gr.prg
-clip/doc/example/clip-gd/Makefile
-clip/doc/example/clip-fcgi/clip_echo.fcgi.prg
-clip/doc/example/clip-fcgi/Makefile
-clip/doc/example/clip-gtkextra/pixmaps.ch
-clip/doc/example/clip-gtkextra/Makefile
-clip/doc/example/clip-gtkextra/sheet.prg
-clip/doc/example/clip-gtk2/winback.prg
-clip/doc/example/clip-gtk2/test_rc.prg
-clip/doc/example/clip-ui/icons/eas-logo.xpm
-clip/doc/example/clip-ui/icons/tick.xpm
-clip/doc/clip-gd/rus/ring2.png
-clip/doc/clip-gd/rus/o_gdimage.html
-clip/doc/clip-gd/rus/gd_prg.html
-clip/doc/clip-gd/rus/gd_lib.html
-clip/doc/clip-gd/rus/asdf.png
-clip/doc/clip-gd/rus/ring1.png
-clip/doc/clip-gd/rus/linenorm2.png
-clip/doc/clip-gd/rus/linenorm1.png
-clip/doc/clip-gd/rus/linecumul2.png
-clip/doc/clip-gd/rus/linecumul1.png
-clip/doc/clip-gd/rus/line2.png
-clip/doc/clip-gd/rus/line1.png
-clip/doc/clip-gd/rus/histvolume.png
-clip/doc/clip-gd/rus/histnorm2.png
-clip/doc/clip-gd/rus/histnorm1.png
-clip/doc/clip-gd/rus/histcumul2.png
-clip/doc/clip-gd/rus/histcumul1.png
-clip/doc/clip-gd/rus/hist2.png
-clip/doc/clip-gd/rus/hist1.png
-clip/doc/clip-gd/rus/gistvolume.png
-clip/doc/clip-gd/rus/circle2.png
-clip/doc/clip-gd/rus/circle1.png
-clip/doc/clip-gd/rus/o_graphics.html
-clip/doc/clip-gd/eng/ring2.png
-clip/doc/clip-gd/eng/o_gdimage.html
-clip/doc/clip-gd/eng/gd_prg.html
-clip/doc/clip-gd/eng/gd_lib.html
-clip/doc/clip-gd/eng/asdf.png
-clip/doc/clip-gd/eng/ring1.png
-clip/doc/clip-gd/eng/linenorm2.png
-clip/doc/clip-gd/eng/linenorm1.png
-clip/doc/clip-gd/eng/linecumul2.png
-clip/doc/clip-gd/eng/linecumul1.png
-clip/doc/clip-gd/eng/line2.png
-clip/doc/clip-gd/eng/line1.png
-clip/doc/clip-gd/eng/histvolume.png
-clip/doc/clip-gd/eng/histnorm2.png
-clip/doc/clip-gd/eng/histnorm1.png
-clip/doc/clip-gd/eng/histcumul2.png
-clip/doc/clip-gd/eng/histcumul1.png
-clip/doc/clip-gd/eng/hist2.png
-clip/doc/clip-gd/eng/hist1.png
-clip/doc/clip-gd/eng/circle2.png
-clip/doc/clip-gd/eng/circle1.png
-clip/doc/clip-gd/eng/o_graphics.html
 clip/etc/.calendar
 clip/etc/.macro
 clip/etc/.templ
@@ -550,6 +499,7 @@ clip/include/_win32.h
 clip/include/achoice.ch
 clip/include/aof.ch
 clip/include/assert.ch
+clip/include/bggraph.ch
 clip/include/blob.ch
 clip/include/box.ch
 clip/include/browsys.ch
@@ -559,6 +509,7 @@ clip/include/clip-gtk.ch
 clip/include/clip-gtk.h
 clip/include/clip-gtk2.ch
 clip/include/clip-gtk2.h
+clip/include/clip-gtkextra.ch
 clip/include/clip-ui.ch
 clip/include/clip.ch
 clip/include/clip.h
@@ -630,6 +581,7 @@ clip/include/debug.ch
 clip/include/directry.ch
 clip/include/edit.ch
 clip/include/error.ch
+clip/include/fcgi.ch
 clip/include/fileio.ch
 clip/include/form.ch
 clip/include/fox.ch
@@ -679,6 +631,7 @@ clip/include/fwin/vkey.ch
 clip/include/fwin/winapi.ch
 clip/include/fwin/winten.h
 clip/include/fwin/yacc.ch
+clip/include/gdinfo.ch
 clip/include/getexit.ch
 clip/include/gtk2-stock.ch
 clip/include/hash.h
@@ -727,10 +680,6 @@ clip/include/taskcfg.h
 clip/include/tbrowse.ch
 clip/include/tcp.ch
 clip/include/ulimit.ch
-clip/include/gdinfo.ch
-clip/include/bggraph.ch
-clip/include/fcgi.ch
-clip/include/clip-gtkextra.ch
 clip/kamache/kamache
 clip/kamache/kamache.ini
 clip/kamache/mod-clip/Makefile
@@ -741,6 +690,8 @@ clip/kamache/mod-ini/kmch_hello.po
 clip/kamache/mod-ini/kmch_hello.prg
 clip/kamache/mod-ini/mk_tmpdir.po
 clip/kamache/mod-ini/mk_tmpdir.prg
+clip/keymaps/es-cp850
+clip/keymaps/es-cp850.kmap
 clip/keymaps/genmap.sh
 clip/keymaps/pl-maz
 clip/keymaps/pl-maz.kmap
@@ -793,10 +744,18 @@ clip/lib/libclip-cti.a
 clip/lib/libclip-cti.ex
 clip/lib/libclip-cti.nm
 clip/lib/libclip-cti.so
+clip/lib/libclip-fcgi.a
+clip/lib/libclip-fcgi.ex
+clip/lib/libclip-fcgi.nm
+clip/lib/libclip-fcgi.so
 clip/lib/libclip-fw.a
 clip/lib/libclip-fw.ex
 clip/lib/libclip-fw.nm
 clip/lib/libclip-fw.so
+clip/lib/libclip-gd.a
+clip/lib/libclip-gd.ex
+clip/lib/libclip-gd.nm
+clip/lib/libclip-gd.so
 clip/lib/libclip-gtk.a
 clip/lib/libclip-gtk.ex
 clip/lib/libclip-gtk.nm
@@ -805,6 +764,10 @@ clip/lib/libclip-gtk2.a
 clip/lib/libclip-gtk2.ex
 clip/lib/libclip-gtk2.nm
 clip/lib/libclip-gtk2.so
+clip/lib/libclip-gtkextra.a
+clip/lib/libclip-gtkextra.ex
+clip/lib/libclip-gtkextra.nm
+clip/lib/libclip-gtkextra.so
 clip/lib/libclip-gzip.a
 clip/lib/libclip-gzip.ex
 clip/lib/libclip-gzip.nm
@@ -832,19 +795,7 @@ clip/lib/libclip.a
 clip/lib/libclip.ex
 clip/lib/libclip.nm
 clip/lib/libclip.so
-clip/lib/libclip-gd.so
-clip/lib/libclip-gd.nm
-clip/lib/libclip-gd.ex
-clip/lib/libclip-gd.a
 clip/lib/libgd.a
-clip/lib/libclip-fcgi.so
-clip/lib/libclip-fcgi.nm
-clip/lib/libclip-fcgi.ex
-clip/lib/libclip-fcgi.a
-clip/lib/libclip-gtkextra.so
-clip/lib/libclip-gtkextra.nm
-clip/lib/libclip-gtkextra.ex
-clip/lib/libclip-gtkextra.a
 clip/locale.mo/es_ES.8859-1/bdbfs.mo
 clip/locale.mo/es_ES.8859-1/clip-cti.mo
 clip/locale.mo/es_ES.8859-1/clip-fw.mo
@@ -861,7 +812,6 @@ clip/locale.mo/es_ES.8859-1/mod-ini.mo
 clip/locale.mo/es_ES.8859-1/pp.mo
 clip/locale.mo/es_ES.8859-1/sys.mo
 clip/locale.mo/es_ES.8859-1/udb.mo
-clip/locale.mo/es_ES.8859-1/udbx.mo
 clip/locale.mo/es_ES.ISO01/bdbfs.mo
 clip/locale.mo/es_ES.ISO01/clip-cti.mo
 clip/locale.mo/es_ES.ISO01/clip-fw.mo
@@ -878,7 +828,6 @@ clip/locale.mo/es_ES.ISO01/mod-ini.mo
 clip/locale.mo/es_ES.ISO01/pp.mo
 clip/locale.mo/es_ES.ISO01/sys.mo
 clip/locale.mo/es_ES.ISO01/udb.mo
-clip/locale.mo/es_ES.ISO01/udbx.mo
 clip/locale.mo/ru_RU.KOI8-R/bdbfs.mo
 clip/locale.mo/ru_RU.KOI8-R/brow.mo
 clip/locale.mo/ru_RU.KOI8-R/ca_dbu.mo
@@ -914,7 +863,6 @@ clip/locale.po/es_ES.8859-1/mod-ini.po
 clip/locale.po/es_ES.8859-1/pp.po
 clip/locale.po/es_ES.8859-1/sys.po
 clip/locale.po/es_ES.8859-1/udb.po
-clip/locale.po/es_ES.8859-1/udbx.po
 clip/locale.po/es_ES.ISO01/bdbfs.po
 clip/locale.po/es_ES.ISO01/clip-cti.po
 clip/locale.po/es_ES.ISO01/clip-fw.po
@@ -931,7 +879,6 @@ clip/locale.po/es_ES.ISO01/mod-ini.po
 clip/locale.po/es_ES.ISO01/pp.po
 clip/locale.po/es_ES.ISO01/sys.po
 clip/locale.po/es_ES.ISO01/udb.po
-clip/locale.po/es_ES.ISO01/udbx.po
 clip/locale.po/ru_RU.KOI8-R/bdbfs.po
 clip/locale.po/ru_RU.KOI8-R/brow.po
 clip/locale.po/ru_RU.KOI8-R/ca_dbu.po
@@ -980,7 +927,9 @@ clip/locale.pot/clip-gtk/gtkermsg.pot
 clip/locale.pot/clip-gtk2/_.pot
 clip/locale.pot/clip-gtk2/gtkermsg.pot
 clip/locale.pot/clip-r2d2/_.pot
+clip/locale.pot/clip-r2d2/acc_log.pot
 clip/locale.pot/clip-r2d2/balance.pot
+clip/locale.pot/clip-r2d2/balance2.pot
 clip/locale.pot/cobra_clnt/_.pot
 clip/locale.pot/cobra_clnt/objbrowse.pot
 clip/locale.pot/cobra_serv/_.pot
@@ -993,9 +942,8 @@ clip/locale.pot/codb/codb_funcs.pot
 clip/locale.pot/codb/count_dbf.pot
 clip/locale.pot/codb/dep_all.pot
 clip/locale.pot/codb/dep_dbf.pot
-clip/locale.pot/codb/dict_dbf.pot
-clip/locale.pot/codb/list_id.pot
 clip/locale.pot/codb/dict_all.pot
+clip/locale.pot/codb/list_id.pot
 clip/locale.pot/debug/_.pot
 clip/locale.pot/debug/cld_obj.pot
 clip/locale.pot/debug/clip_cld.pot
@@ -1072,25 +1020,6 @@ clip/locale.pot/udb/report.pot
 clip/locale.pot/udb/tcolumn.pot
 clip/locale.pot/udb/tview.pot
 clip/locale.pot/udb/user.pot
-clip/locale.pot/udbx/_.pot
-clip/locale.pot/udbx/abx_data_browse.pot
-clip/locale.pot/udbx/abx_funcs.pot
-clip/locale.pot/udbx/abx_getobj.pot
-clip/locale.pot/udbx/abx_menu.pot
-clip/locale.pot/udbx/abx_meta_browse.pot
-clip/locale.pot/udbx/abx_obj.pot
-clip/locale.pot/udbx/attr.pot
-clip/locale.pot/udbx/class.pot
-clip/locale.pot/udbx/counter.pot
-clip/locale.pot/udbx/default.pot
-clip/locale.pot/udbx/deposit.pot
-clip/locale.pot/udbx/group.pot
-clip/locale.pot/udbx/index.pot
-clip/locale.pot/udbx/plugins.pot
-clip/locale.pot/udbx/report.pot
-clip/locale.pot/udbx/tcolumn.pot
-clip/locale.pot/udbx/tview.pot
-clip/locale.pot/udbx/user.pot
 clip/term/cons25r
 clip/term/cygwin
 clip/term/linux-console
@@ -1102,96 +1031,92 @@ clip/term/linux-stelnet1
 clip/term/linux-trans
 clip/term/pc3c
 clip/term/pcansi
-@dirrm clip/bin
-@dirrm clip/charsets
-@dirrm clip/cliprc
-@dirrm clip/cobra/auth
-@dirrm clip/cobra/files
-@dirrm clip/cobra/mod-ini
-@dirrm clip/cobra/tcp-wrap
-@dirrm clip/cobra
-@dirrm clip/codb_ab/plugins
-@dirrm clip/codb_ab/reports
-@dirrm clip/codb_ab
-@dirrm clip/codb_abx/plugins
-@dirrm clip/codb_abx
-@dirrm clip/doc/clip-com
-@dirrm clip/doc/clip-gd/eng
-@dirrm clip/doc/clip-gd/rus
-@dirrm clip/doc/clip-gd
-%%IBASE%%@dirrm clip/doc/clip-interbase
-@dirrm clip/doc/example/clip-bzip2
-@dirrm clip/doc/example/clip-com
-@dirrm clip/doc/example/clip-crypto
-@dirrm clip/doc/example/clip-cti
-@dirrm clip/doc/example/clip-fcgi
-@dirrm clip/doc/example/clip-fw/bitmaps
-@dirrm clip/doc/example/clip-fw/data
-@dirrm clip/doc/example/clip-fw
-@dirrm clip/doc/example/clip-gd
-@dirrm clip/doc/example/clip-gtk
-@dirrm clip/doc/example/clip-gtk2
-@dirrm clip/doc/example/clip-gtkextra
-@dirrm clip/doc/example/clip-gzip
-@dirrm clip/doc/example/clip-rtf
+@dirrm clip/term
+@dirrm clip/locale.pot/udb
+@dirrm clip/locale.pot/sys
+@dirrm clip/locale.pot/pp
+@dirrm clip/locale.pot/mod-ini
+@dirrm clip/locale.pot/debug
+@dirrm clip/locale.pot/codb
+@dirrm clip/locale.pot/cobra_serv
+@dirrm clip/locale.pot/cobra_clnt
+@dirrm clip/locale.pot/clip-r2d2
+@dirrm clip/locale.pot/clip-gtk2
+@dirrm clip/locale.pot/clip-gtk
+@dirrm clip/locale.pot/clip-fw
+@dirrm clip/locale.pot/clip-cti
+@dirrm clip/locale.pot/bdbfs
+@dirrm clip/locale.pot
+@dirrm clip/locale.po/ru_RU.KOI8-R
+@dirrm clip/locale.po/es_ES.ISO01
+@dirrm clip/locale.po/es_ES.8859-1
+@dirrm clip/locale.po
+@dirrm clip/locale.mo/ru_RU.KOI8-R
+@dirrm clip/locale.mo/es_ES.ISO01
+@dirrm clip/locale.mo/es_ES.8859-1
+@dirrm clip/locale.mo
+@dirrm clip/lib/drivers
+@dirrm clip/lib
+@dirrm clip/lang
+@dirrm clip/keymaps
+@dirrm clip/kamache/mod-ini
+@dirrm clip/kamache/mod-clip
+@dirrm clip/kamache
+@dirrm clip/include/netto
+@dirrm clip/include/nanfor
+@dirrm clip/include/fwin
+@dirrm clip/include/cti
+@dirrm clip/include
+@dirrm clip/etc/terminfo/x
+@dirrm clip/etc/terminfo/v
+@dirrm clip/etc/terminfo/s
+@dirrm clip/etc/terminfo/r
+@dirrm clip/etc/terminfo/p
+@dirrm clip/etc/terminfo/m
+@dirrm clip/etc/terminfo/l
+@dirrm clip/etc/terminfo/d
+@dirrm clip/etc/terminfo/c
+@dirrm clip/etc/terminfo/a
+@dirrm clip/etc/terminfo
+@dirrm clip/etc
 @dirrm clip/doc/example/clip-ui/icons
 @dirrm clip/doc/example/clip-ui
+@dirrm clip/doc/example/clip-rtf
 %%PGSQL%%@dirrm clip/doc/example/clip-postgres
 %%ODBC%%@dirrm clip/doc/example/clip-odbc
 %%MYSQL%%@dirrm clip/doc/example/clip-mysql
 %%IBASE%%@dirrm clip/doc/example/clip-interbase
+@dirrm clip/doc/example/clip-gzip
+@dirrm clip/doc/example/clip-gtkextra
+@dirrm clip/doc/example/clip-gtk2
+@dirrm clip/doc/example/clip-gtk
+@dirrm clip/doc/example/clip-gd
+@dirrm clip/doc/example/clip-fw/data
+@dirrm clip/doc/example/clip-fw/bitmaps
+@dirrm clip/doc/example/clip-fw
+@dirrm clip/doc/example/clip-fcgi
+@dirrm clip/doc/example/clip-cti
+@dirrm clip/doc/example/clip-crypto
+@dirrm clip/doc/example/clip-com
+@dirrm clip/doc/example/clip-bzip2
 @dirrm clip/doc/example
 %%PGSQL%%@dirrm clip/doc/clip-postgres
 %%ODBC%%@dirrm clip/doc/clip-odbc
 %%MYSQL%%@dirrm clip/doc/clip-mysql
+%%IBASE%%@dirrm clip/doc/clip-interbase
+@dirrm clip/doc/clip-gd/rus
+@dirrm clip/doc/clip-gd/eng
+@dirrm clip/doc/clip-gd
 @dirrm clip/doc
-@dirrm clip/etc/terminfo/a
-@dirrm clip/etc/terminfo/c
-@dirrm clip/etc/terminfo/d
-@dirrm clip/etc/terminfo/l
-@dirrm clip/etc/terminfo/m
-@dirrm clip/etc/terminfo/p
-@dirrm clip/etc/terminfo/r
-@dirrm clip/etc/terminfo/s
-@dirrm clip/etc/terminfo/v
-@dirrm clip/etc/terminfo/x
-@dirrm clip/etc/terminfo
-@dirrm clip/etc
-@dirrm clip/include/cti
-@dirrm clip/include/fwin
-@dirrm clip/include/nanfor
-@dirrm clip/include/netto
-@dirrm clip/include
-@dirrm clip/kamache/mod-clip
-@dirrm clip/kamache/mod-ini
-@dirrm clip/kamache
-@dirrm clip/keymaps
-@dirrm clip/lang
-@dirrm clip/lib/drivers
-@dirrm clip/lib
-@dirrm clip/locale.mo/es_ES.8859-1
-@dirrm clip/locale.mo/es_ES.ISO01
-@dirrm clip/locale.mo/ru_RU.KOI8-R
-@dirrm clip/locale.mo
-@dirrm clip/locale.po/es_ES.8859-1
-@dirrm clip/locale.po/es_ES.ISO01
-@dirrm clip/locale.po/ru_RU.KOI8-R
-@dirrm clip/locale.po
-@dirrm clip/locale.pot/bdbfs
-@dirrm clip/locale.pot/clip-cti
-@dirrm clip/locale.pot/clip-fw
-@dirrm clip/locale.pot/clip-gtk
-@dirrm clip/locale.pot/clip-gtk2
-@dirrm clip/locale.pot/clip-r2d2
-@dirrm clip/locale.pot/cobra_clnt
-@dirrm clip/locale.pot/cobra_serv
-@dirrm clip/locale.pot/codb
-@dirrm clip/locale.pot/debug
-@dirrm clip/locale.pot/mod-ini
-@dirrm clip/locale.pot/pp
-@dirrm clip/locale.pot/sys
-@dirrm clip/locale.pot/udb
-@dirrm clip/locale.pot/udbx
-@dirrm clip/locale.pot
-@dirrm clip/term
+@dirrm clip/codb_ab/reports
+@dirrm clip/codb_ab/plugins
+@dirrm clip/codb_ab
+@dirrm clip/cobra/tcp-wrap
+@dirrm clip/cobra/mod-ini
+@dirrm clip/cobra/files
+@dirrm clip/cobra/auth
+@dirrm clip/cobra
+@dirrm clip/cliprc
+@dirrm clip/charsets
+@dirrm clip/bin
 @dirrm clip
