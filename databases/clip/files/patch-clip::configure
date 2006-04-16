@@ -1,15 +1,15 @@
---- clip/configure.orig	Wed Apr 14 10:39:50 2004
-+++ clip/configure	Tue Jun 29 11:24:45 2004
-@@ -177,7 +177,7 @@
+--- clip/configure.orig	Thu Aug 25 10:36:33 2005
++++ clip/configure	Sun Apr 16 11:12:21 2006
+@@ -181,7 +181,7 @@
  #	initial CFLAGS
  #
  #C_FLAGS="-Wall -I. $DEBUGFLAGS $OPTFLAGS $MDBG"
 -C_FLAGS="-Wall -I. -I./include $DEBUGFLAGS $OPTFLAGS -O0"
-+C_FLAGS="-Wall -I. -I./include -I/usr/local/include -L/usr/local/lib -O0"
++C_FLAGS="-Wall -I. -I./include -I/usr/local/include -L/usr/local/lib $DEBUGFLAGS $OPTFLAGS -O0"
+ ADD_CFLAGS="-fPIC"
  
  uname=`uname -s`
- uver=`uname -r`
-@@ -500,7 +500,7 @@
+@@ -509,7 +509,7 @@
  #include <iconv.h>
  int main(int argc, char **argv) { iconv_t it; it = iconv_open("utf-8", "utf-8"); return 0;}
  ' > /tmp/$$.c
@@ -18,7 +18,7 @@
  if [ $? = 0 ]
  then
  	echo 'ICONV_LIB=-liconv' >&3
-@@ -641,7 +641,7 @@
+@@ -651,7 +651,7 @@
  else
  	if [ -f /usr/local/bin/wget ]
  	then
