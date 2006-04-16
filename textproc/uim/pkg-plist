@@ -1,19 +1,8 @@
-%%QT%%bin/uim-chardict-qt
 bin/uim-el-agent
 bin/uim-fep
 bin/uim-fep-tick
-%%GTK%%bin/uim-helper-toolbar-gtk
-%%GTK%%bin/uim-helper-toolbar-gtk-systray
-%%GTK%%bin/uim-im-switcher-gtk
-%%QT%%bin/uim-im-switcher-qt
-%%GTK%%bin/uim-input-pad-ja
 bin/uim-module-manager
-%%GTK%%bin/uim-pref-gtk
-%%QT%%bin/uim-pref-qt
 bin/uim-sh
-%%GTK%%bin/uim-toolbar-gtk
-%%GTK%%bin/uim-toolbar-gtk-systray
-%%QT%%bin/uim-toolbar-qt
 bin/uim-xim
 include/uim/plugin.h
 include/uim/uim-compat-scm.h
@@ -23,10 +12,6 @@ include/uim/uim-im-switcher.h
 include/uim/uim-scm.h
 include/uim/uim-util.h
 include/uim/uim.h
-%%GNOME%%libdata/bonobo/servers/GNOME_UimApplet.server
-%%GTK%%lib/gtk-2.0/2.4.0/immodules/im-uim.a
-%%GTK%%lib/gtk-2.0/2.4.0/immodules/im-uim.la
-%%GTK%%lib/gtk-2.0/2.4.0/immodules/im-uim.so
 lib/libuim-custom.a
 lib/libuim-custom.la
 lib/libuim-custom.so
@@ -35,33 +20,14 @@ lib/libuim.a
 lib/libuim.la
 lib/libuim.so
 lib/libuim.so.1
-%%ANTHY%%lib/uim/plugin/libuim-anthy.a
-%%ANTHY%%lib/uim/plugin/libuim-anthy.la
-%%ANTHY%%lib/uim/plugin/libuim-anthy.so
-%%CANNA%%lib/uim/plugin/libuim-canna.a
-%%CANNA%%lib/uim/plugin/libuim-canna.la
-%%CANNA%%lib/uim/plugin/libuim-canna.so
 lib/uim/plugin/libuim-custom-enabler.a
 lib/uim/plugin/libuim-custom-enabler.la
 lib/uim/plugin/libuim-custom-enabler.so
-%%M17NLIB%%lib/uim/plugin/libuim-m17nlib.a
-%%M17NLIB%%lib/uim/plugin/libuim-m17nlib.la
-%%M17NLIB%%lib/uim/plugin/libuim-m17nlib.so
-%%PRIME%%lib/uim/plugin/libuim-prime.a
-%%PRIME%%lib/uim/plugin/libuim-prime.la
-%%PRIME%%lib/uim/plugin/libuim-prime.so
-%%SCIM%%lib/uim/plugin/libuim-scim.a
-%%SCIM%%lib/uim/plugin/libuim-scim.la
-%%SCIM%%lib/uim/plugin/libuim-scim.so
 lib/uim/plugin/libuim-skk.a
 lib/uim/plugin/libuim-skk.la
 lib/uim/plugin/libuim-skk.so
 libdata/pkgconfig/uim.pc
-%%GTK%%libexec/uim-candwin-gtk
-%%QT%%libexec/uim-candwin-qt
 libexec/uim-helper-server
-%%GNOME%%libexec/uim-helper-applet
-%%GNOME%%libexec/uim-toolbar-applet
 share/applications/uim.desktop
 share/locale/fr/LC_MESSAGES/uim.mo
 share/locale/ja/LC_MESSAGES/uim.mo
@@ -93,7 +59,6 @@ share/locale/ko/LC_MESSAGES/uim.mo
 %%DATADIR%%/hangul.scm
 %%DATADIR%%/hangul2.scm
 %%DATADIR%%/hangul3.scm
-%%GNOME%%%%DATADIR%%/helperdata/bushu.t
 %%DATADIR%%/i18n.scm
 %%DATADIR%%/im-custom.scm
 %%DATADIR%%/im.scm
@@ -148,10 +113,7 @@ share/locale/ko/LC_MESSAGES/uim.mo
 @dirrm lib/uim/plugin
 @dirrm lib/uim
 @dirrmtry share/applications
-%%GNOME%%@dirrm %%DATADIR%%/helperdata
 %%PORTDOCS%%@dirrm %%DOCSDIR_JA%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%
-%%GTK%%@exec gtk-query-immodules-2.0 > %D/etc/gtk-2.0/gtk.immodules
-%%GTK%%@unexec gtk-query-immodules-2.0 > %D/etc/gtk-2.0/gtk.immodules
