@@ -1,0 +1,11 @@
+--- configure.orig	Sun Apr  2 00:14:03 2006
++++ configure	Sun Apr  2 00:14:37 2006
+@@ -2426,7 +2426,7 @@
+ if test "${with_netpbm+set}" = set; then
+   withval="$with_netpbm"
+    if test "$withval" != "no"; then
+-    LDFLAGS="-L$withval/lib $LDFLAGS";\
++    LDFLAGS="-L$withval/lib -R$withval/lib $LDFLAGS";\
+     CPPFLAGS="-I$withval/include $CPPFLAGS";\
+    fi
+ fi;
