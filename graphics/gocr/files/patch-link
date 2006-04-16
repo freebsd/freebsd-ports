@@ -1,0 +1,44 @@
+--- src/Makefile.in	Mon Feb 28 15:40:39 2005
++++ src/Makefile.in	Wed Apr 12 09:20:51 2006
+@@ -4,8 +4,8 @@
+ 
+ EXEEXT = 
+ PROGRAM = gocr$(EXEEXT)
+-PGMASCLIB = Pgm2asc
+-LIBPGMASCLIB = lib$(PGMASCLIB).a
++PGMASCLIB = ./libPgm2asc.a
++LIBPGMASCLIB = $(PGMASCLIB)
+ INCLUDEFILES = gocr.h
+ 
+ LIBOBJS=pgm2asc.o \
+@@ -53,7 +53,7 @@
+ all: $(PROGRAM) $(LIBPGMASCLIB)
+ 
+ $(PROGRAM): $(LIBPGMASCLIB) gocr.o
+-	$(CC) -o $@ gocr.o $(LDFLAGS) -l$(PGMASCLIB)
++	$(CC) -o $@ gocr.o $(LDFLAGS) $(PGMASCLIB)
+ 	if test -r $(PROGRAM); then cp $@ ../bin; fi
+ 
+ 
+--- src/Makefile	Mon Feb 28 15:40:39 2005
++++ src/Makefile	Wed Apr 12 09:20:51 2006
+@@ -4,8 +4,8 @@
+ 
+ EXEEXT = 
+ PROGRAM = gocr$(EXEEXT)
+-PGMASCLIB = Pgm2asc
+-LIBPGMASCLIB = lib$(PGMASCLIB).a
++PGMASCLIB = ./libPgm2asc.a
++LIBPGMASCLIB = $(PGMASCLIB)
+ INCLUDEFILES = gocr.h
+ 
+ LIBOBJS=pgm2asc.o \
+@@ -53,7 +53,7 @@
+ all: $(PROGRAM) $(LIBPGMASCLIB)
+ 
+ $(PROGRAM): $(LIBPGMASCLIB) gocr.o
+-	$(CC) -o $@ gocr.o $(LDFLAGS) -l$(PGMASCLIB)
++	$(CC) -o $@ gocr.o $(LDFLAGS) $(PGMASCLIB)
+ 	if test -r $(PROGRAM); then cp $@ ../bin; fi
+ 
+ 
