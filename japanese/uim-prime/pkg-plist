@@ -1,0 +1,5 @@
+lib/uim/plugin/libuim-prime.a
+lib/uim/plugin/libuim-prime.la
+lib/uim/plugin/libuim-prime.so
+@exec uim-module-manager --register prime
+@unexec uim-module-manager --unregister prime
