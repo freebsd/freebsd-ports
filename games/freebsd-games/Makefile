@@ -7,7 +7,7 @@
 
 PORTNAME=	freebsd-games
 PORTVERSION=	5.1.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=markm
@@ -15,7 +15,6 @@ MASTER_SITE_SUBDIR=markm
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FreeBSD-modified "Standard" BSD games
 
-USE_REINPLACE=	yes
 USE_BZIP2=	yes
 
 MAN6=	\
@@ -64,6 +63,8 @@ post-patch:
 	@${FIND} ${WRKSRC} -name '*.c' -or -name '*.h' -or -name '*.6' -or \
 		-name 'index' | ${XARGS} ${REINPLACE_CMD} -e \
 		's|share/games|local/share/games|g'
+	@${FIND} ${WRKSRC} -name 'Makefile' | \
+		${XARGS} ${REINPLACE_CMD}  's|$${LIBCOMPAT}||g;;s|-lcompat||g'
 	@for f in ${PATHNAME_FILES}; do \
 		${REINPLACE_CMD} -e 's|/usr/local/local/local|${PREFIX}|g' \
 			${WRKSRC}/$${f}; \

@@ -1,8 +1,6 @@
-$FreeBSD$
-
---- larn/io.c	24 Jan 2004 21:00:14 -0000	1.3
-+++ larn/io.c	21 Jun 2004 02:28:34 -0000	1.4
-@@ -25,7 +25,7 @@
+--- larn/io.c.orig	Thu May  9 06:39:10 2002
++++ larn/io.c	Sun Apr 16 20:40:41 2006
+@@ -24,7 +24,7 @@
   *	FILE INPUT ROUTINES
   *
   *	long lgetc()				read one character from input buffer
@@ -11,7 +9,17 @@ $FreeBSD$
   *	lrfill(address,number)		put input bytes into a buffer
   *	char *lgetw()				get a whitespace ended word from input
   *	char *lgetl()				get a \n or EOF ended line from input
-@@ -343,7 +343,7 @@
+@@ -75,6 +75,9 @@
+ #define CBREAK RAW		/* V7 has no CBREAK */
+ #endif
+ 
++#define stty(_a,_b) ioctl(_a,TIOCSETP,_b)
++#define gtty(_a,_b) ioctl(_a,TIOCGETP,_b)
++
+ #define doraw(_a) (_a.sg_flags |= CBREAK,_a.sg_flags &= ~ECHO)
+ #define unraw(_a) (_a.sg_flags &= ~CBREAK,_a.sg_flags |= ECHO)
+ #include <sgtty.h>
+@@ -345,7 +348,7 @@
      }
  
  /*
@@ -20,7 +28,7 @@ $FreeBSD$
   *
   *		+---------+---------+---------+---------+
   *		|	high  |			|		  |	  low	|
-@@ -355,7 +355,7 @@
+@@ -357,7 +360,7 @@
   *	The save order is low order first, to high order (4 bytes total)
   *	Returns the int read
   */
