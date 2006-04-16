@@ -1847,7 +1847,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>heartbeat</name>
-	<range><ge>0</ge></range>
+	<range><lt>1.2.4</lt></range>
       </package>
     </affects>
     <description>
@@ -1867,6 +1867,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2005-07-12</discovery>
       <entry>2006-02-16</entry>
+      <modified>2006-04-16</modified>
     </dates>
   </vuln>
 
