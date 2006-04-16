@@ -27,13 +27,11 @@ GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-0.5.9
 
 MAN1=		dgs.1 dpsnx.agent.1
-MANN=		dpsexec.man makepsres.man xepsf.man
+MANN=		dpsexec.man xepsf.man
+INSTALLDIRS=	gs DPS/clients/pswrap \
+		DPS/demos/dpsexec DPS/demos/xepsf
 
 .include <bsd.port.pre.mk>
-
-.if ${X_WINDOW_SYSTEM:L} != xfree86-3
-IGNORE=		is included in XFree86 4.x and above
-.endif
 
 pre-fetch:
 .if !defined(WITH_GHOSTSCRIPT_AFPL) || ${WITH_GHOSTSCRIPT_AFPL} != yes
@@ -46,5 +44,35 @@ pre-fetch:
 pre-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} \
 		${REINPLACE_CMD} -e 's|manm|mann|g'
+
+.if ${X_WINDOW_SYSTEM:L} != xfree86-4
+INSTALLDIRS+=	DPS/clients/makepsres DPS/demos/texteroids
+MANN+=		makepsres.man
+.endif
+
+.if ${X_WINDOW_SYSTEM:L} == xfree86-3
+PLIST_SUB+=	WITH_XORG=""
+PLIST_SUB+=	WITH_XFREE4=""
+.else
+PLIST_SUB+=	WITH_XORG="@comment "
+
+.if ${X_WINDOW_SYSTEM:L} == xorg
+INSTALLDIRS+=	DPS/lib/dpstk DPS/lib/psres
+PLIST_SUB+=	WITH_XFREE4=""
+.else
+PLIST_SUB+=	WITH_XFREE4="@comment "
+.endif
+
+do-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/dgs-config ${PREFIX}/bin/
+	${INSTALL_SCRIPT} ${WRKSRC}/dpsnx.agent ${PREFIX}/bin/
+	${INSTALL_DATA} ${WRKSRC}/path_dps.m4 ${PREFIX}/share/aclocal/
+	${INSTALL_MAN} ${WRKSRC}/dpsnx.agent.1 ${PREFIX}/man/man1/
+.for i in ${INSTALLDIRS}
+	@(cd ${INSTALL_WRKSRC}/${i} && ${SETENV} ${MAKE_ENV} \
+		${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
+.endfor
+
+.endif
 
 .include <bsd.port.post.mk>
