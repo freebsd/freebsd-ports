@@ -69,6 +69,7 @@ bin/jalbum
 %%DATADIR%%/help/images/slideedit.gif
 %%DATADIR%%/help/images/smiley.gif
 %%DATADIR%%/help/images/textexample.jpg
+%%DATADIR%%/help/images/tintexample.jpg
 %%DATADIR%%/help/images/tip.gif
 %%DATADIR%%/help/images/toolbox.gif
 %%DATADIR%%/help/images/ui-accounts.png
@@ -149,6 +150,8 @@ bin/jalbum
 %%DATADIR%%/plugins/TextFilter.class
 %%DATADIR%%/plugins/TextFilter.java
 %%DATADIR%%/plugins/TextFilter.jbx
+%%DATADIR%%/plugins/TintFilter.class
+%%DATADIR%%/plugins/TintFilter.java
 %%DATADIR%%/plugins/WatermarkFilter.class
 %%DATADIR%%/plugins/WatermarkFilter.java
 %%DATADIR%%/plugins/WatermarkFilter.jbx
@@ -612,14 +615,23 @@ bin/jalbum
 %%DATADIR%%/skins/Camera Geek/styles/Custom.css
 %%DATADIR%%/skins/Camera Geek/styles/Dark.css
 %%DATADIR%%/skins/Camera Geek/styles/Sunset.css
+%%DATADIR%%/skins/Chameleon/help/help.html
+%%DATADIR%%/skins/Chameleon/help/index.gif
+%%DATADIR%%/skins/Chameleon/help/main.gif
+%%DATADIR%%/skins/Chameleon/help/slide.gif
 %%DATADIR%%/skins/Chameleon/hints.jap
+%%DATADIR%%/skins/Chameleon/history.txt
 %%DATADIR%%/skins/Chameleon/index.htt
 %%DATADIR%%/skins/Chameleon/onload.bsh
+%%DATADIR%%/skins/Chameleon/originalslide.htt
 %%DATADIR%%/skins/Chameleon/readme.txt
+%%DATADIR%%/skins/Chameleon/res/avi.gif
 %%DATADIR%%/skins/Chameleon/res/bg.gif
 %%DATADIR%%/skins/Chameleon/res/dia.gif
+%%DATADIR%%/skins/Chameleon/res/doc.gif
 %%DATADIR%%/skins/Chameleon/res/folder.gif
 %%DATADIR%%/skins/Chameleon/res/folder1.gif
+%%DATADIR%%/skins/Chameleon/res/gif.gif
 %%DATADIR%%/skins/Chameleon/res/hdr_left.gif
 %%DATADIR%%/skins/Chameleon/res/hdr_mid.gif
 %%DATADIR%%/skins/Chameleon/res/hdr_right.gif
@@ -629,6 +641,8 @@ bin/jalbum
 %%DATADIR%%/skins/Chameleon/res/next-disabled.gif
 %%DATADIR%%/skins/Chameleon/res/next.gif
 %%DATADIR%%/skins/Chameleon/res/next1.gif
+%%DATADIR%%/skins/Chameleon/res/pdf.gif
+%%DATADIR%%/skins/Chameleon/res/ppt.gif
 %%DATADIR%%/skins/Chameleon/res/prev-disabled.gif
 %%DATADIR%%/skins/Chameleon/res/prev.gif
 %%DATADIR%%/skins/Chameleon/res/prev1.gif
@@ -636,8 +650,13 @@ bin/jalbum
 %%DATADIR%%/skins/Chameleon/res/show1.gif
 %%DATADIR%%/skins/Chameleon/res/stop.gif
 %%DATADIR%%/skins/Chameleon/res/stop1.gif
+%%DATADIR%%/skins/Chameleon/res/txt.gif
 %%DATADIR%%/skins/Chameleon/res/up.gif
 %%DATADIR%%/skins/Chameleon/res/up1.gif
+%%DATADIR%%/skins/Chameleon/res/wmv.gif
+%%DATADIR%%/skins/Chameleon/res/xls.gif
+%%DATADIR%%/skins/Chameleon/res/xml.gif
+%%DATADIR%%/skins/Chameleon/res/zip.gif
 %%DATADIR%%/skins/Chameleon/slide.htt
 %%DATADIR%%/skins/Chameleon/styles/3D_dark.css
 %%DATADIR%%/skins/Chameleon/styles/3D_dark.jpg
@@ -1215,17 +1234,20 @@ bin/jalbum
 %%DATADIR%%/skins/Chameleon/styles/World/stop1.gif
 %%DATADIR%%/skins/Chameleon/styles/World/up.gif
 %%DATADIR%%/skins/Chameleon/styles/World/up1.gif
+%%DATADIR%%/skins/Chameleon/texts/texts.bak
 %%DATADIR%%/skins/Chameleon/texts/texts.properties
 %%DATADIR%%/skins/Chameleon/texts/texts_da.properties
 %%DATADIR%%/skins/Chameleon/texts/texts_de.properties
 %%DATADIR%%/skins/Chameleon/texts/texts_en.properties
 %%DATADIR%%/skins/Chameleon/texts/texts_es.properties
+%%DATADIR%%/skins/Chameleon/texts/texts_fi.properties
 %%DATADIR%%/skins/Chameleon/texts/texts_fr.properties
 %%DATADIR%%/skins/Chameleon/texts/texts_hu.properties
 %%DATADIR%%/skins/Chameleon/texts/texts_it.properties
 %%DATADIR%%/skins/Chameleon/texts/texts_nl.properties
 %%DATADIR%%/skins/Chameleon/texts/texts_pl.properties
 %%DATADIR%%/skins/Chameleon/texts/texts_pt.properties
+%%DATADIR%%/skins/Chameleon/texts/texts_ru.properties
 %%DATADIR%%/skins/Chameleon/texts/texts_sk.properties
 %%DATADIR%%/skins/Chameleon/texts/texts_sr.properties
 %%DATADIR%%/skins/Chameleon/texts/texts_sr_latin.properties
@@ -1935,6 +1957,11 @@ bin/jalbum
 %%DATADIR%%/skins/Simple/texts/texts_sv.properties
 %%DATADIR%%/skins/Simple/top.htt
 %%DATADIR%%/skins/Slide show/index.htt
+%%DATADIR%%/skins/Slide show/init.bsh
+%%DATADIR%%/skins/Slide show/mp3player.swf
+%%DATADIR%%/skins/Slide show/music/Atmos.mp3
+%%DATADIR%%/skins/Slide show/music/Drops.mp3
+%%DATADIR%%/skins/Slide show/music/Stroboscope.mp3
 %%DATADIR%%/skins/Slide show/onload.bsh
 %%DATADIR%%/skins/Slide show/res/camera.gif
 %%DATADIR%%/skins/Slide show/res/close.gif
@@ -2034,37 +2061,90 @@ bin/jalbum
 %%DATADIR%%/skins/Whitey/res/up.gif
 %%DATADIR%%/skins/Whitey/slide.htt
 %%DATADIR%%/skins/Whitey/styles/White.css
+%%DATADIR%%/skins/XP/Tree.htt
 %%DATADIR%%/skins/XP/about.txt
 %%DATADIR%%/skins/XP/hints.jap
 %%DATADIR%%/skins/XP/index.htt
 %%DATADIR%%/skins/XP/init.bsh
 %%DATADIR%%/skins/XP/onload.bsh
+%%DATADIR%%/skins/XP/plugins.bsh
+%%DATADIR%%/skins/XP/plugins/Example plugin/coliterator.htt
+%%DATADIR%%/skins/XP/plugins/Example plugin/head.htt
+%%DATADIR%%/skins/XP/plugins/Example plugin/headIndex.htt
+%%DATADIR%%/skins/XP/plugins/Example plugin/headSlide.htt
+%%DATADIR%%/skins/XP/plugins/Example plugin/index_indexTemplate.htt
+%%DATADIR%%/skins/XP/plugins/Example plugin/init.bsh
+%%DATADIR%%/skins/XP/plugins/Example plugin/javascript.js
+%%DATADIR%%/skins/XP/plugins/Example plugin/javascriptIndex.js
+%%DATADIR%%/skins/XP/plugins/Example plugin/javascriptOnLoad.htt
+%%DATADIR%%/skins/XP/plugins/Example plugin/javascriptOnLoadIndex.htt
+%%DATADIR%%/skins/XP/plugins/Example plugin/javascriptOnLoadSlide.htt
+%%DATADIR%%/skins/XP/plugins/Example plugin/javascriptSlide.js
+%%DATADIR%%/skins/XP/plugins/Example plugin/once_onceTemplate.htt
+%%DATADIR%%/skins/XP/plugins/Example plugin/onload.bsh
+%%DATADIR%%/skins/XP/plugins/Example plugin/panel.htt
+%%DATADIR%%/skins/XP/plugins/Example plugin/panelActivities.htt
+%%DATADIR%%/skins/XP/plugins/Example plugin/panelActivitiesIndex.htt
+%%DATADIR%%/skins/XP/plugins/Example plugin/panelActivitiesSlide.htt
+%%DATADIR%%/skins/XP/plugins/Example plugin/panelIndex.htt
+%%DATADIR%%/skins/XP/plugins/Example plugin/panelInformation.htt
+%%DATADIR%%/skins/XP/plugins/Example plugin/panelInformationIndex.htt
+%%DATADIR%%/skins/XP/plugins/Example plugin/panelInformationSlide.htt
+%%DATADIR%%/skins/XP/plugins/Example plugin/panelSlide.htt
+%%DATADIR%%/skins/XP/plugins/Example plugin/res/1x1.gif
+%%DATADIR%%/skins/XP/plugins/Example plugin/rowiterator.htt
+%%DATADIR%%/skins/XP/plugins/Example plugin/slideReplacement.htt
+%%DATADIR%%/skins/XP/plugins/Example plugin/slide_slideTemplate.htt
+%%DATADIR%%/skins/XP/plugins/Example plugin/styles/LightGrey.css
+%%DATADIR%%/skins/XP/plugins/Example plugin/styles/LightGrey/1x1LightGrey.gif
+%%DATADIR%%/skins/XP/plugins/Example plugin/styles/OliveGreen.css
+%%DATADIR%%/skins/XP/plugins/Example plugin/styles/OliveGreen/1x1OliveGreen.gif
+%%DATADIR%%/skins/XP/plugins/Example plugin/styles/Standard (Blue).css
+%%DATADIR%%/skins/XP/plugins/Example plugin/styles/Standard (Blue)/1x1Standard (Blue).gif
+%%DATADIR%%/skins/XP/plugins/Example plugin/texts/texts.properties
+%%DATADIR%%/skins/XP/plugins/Example plugin/texts/texts_sv.properties
+%%DATADIR%%/skins/XP/plugins/Readme.txt
 %%DATADIR%%/skins/XP/res/1x1.gif
 %%DATADIR%%/skins/XP/res/Back.gif
 %%DATADIR%%/skins/XP/res/FolderLarge.gif
 %%DATADIR%%/skins/XP/res/FolderUp.gif
 %%DATADIR%%/skins/XP/res/Forward.gif
+%%DATADIR%%/skins/XP/res/IconFolder.gif
+%%DATADIR%%/skins/XP/res/IconFolderOpen.gif
 %%DATADIR%%/skins/XP/res/ImageLarge.gif
 %%DATADIR%%/skins/XP/res/JAlbum.gif
 %%DATADIR%%/skins/XP/res/OrderPrints.gif
 %%DATADIR%%/skins/XP/res/Slideshow.gif
+%%DATADIR%%/skins/XP/res/TreeDot.gif
+%%DATADIR%%/skins/XP/res/TreeL.gif
+%%DATADIR%%/skins/XP/res/TreeMinus.gif
+%%DATADIR%%/skins/XP/res/TreePlus.gif
+%%DATADIR%%/skins/XP/res/TreeT.gif
+%%DATADIR%%/skins/XP/res/btnFolderClose.gif
+%%DATADIR%%/skins/XP/res/btnFolderCloseHover.gif
 %%DATADIR%%/skins/XP/res/folder.gif
 %%DATADIR%%/skins/XP/res/movie.gif
 %%DATADIR%%/skins/XP/res/x.js
 %%DATADIR%%/skins/XP/slide.htt
 %%DATADIR%%/skins/XP/styles/LightGrey.css
 %%DATADIR%%/skins/XP/styles/LightGrey.jpg
+%%DATADIR%%/skins/XP/styles/LightGrey/ImagePaneHeaderClosed.gif
 %%DATADIR%%/skins/XP/styles/LightGrey/ImagePaneHeaderOpen.gif
+%%DATADIR%%/skins/XP/styles/LightGrey/InfoPaneHeaderClosed.gif
 %%DATADIR%%/skins/XP/styles/LightGrey/InfoPaneHeaderOpen.gif
 %%DATADIR%%/skins/XP/styles/LightGrey/MainBG.gif
 %%DATADIR%%/skins/XP/styles/OliveGreen.css
 %%DATADIR%%/skins/XP/styles/OliveGreen.jpg
+%%DATADIR%%/skins/XP/styles/OliveGreen/ImagePaneHeaderClosedOlive.gif
 %%DATADIR%%/skins/XP/styles/OliveGreen/ImagePaneHeaderOpenOlive.gif
+%%DATADIR%%/skins/XP/styles/OliveGreen/InfoPaneHeaderClosedOlive.gif
 %%DATADIR%%/skins/XP/styles/OliveGreen/InfoPaneHeaderOpenOlive.gif
 %%DATADIR%%/skins/XP/styles/OliveGreen/MainBGOlive.gif
 %%DATADIR%%/skins/XP/styles/Standard (Blue).css
 %%DATADIR%%/skins/XP/styles/Standard (Blue).jpg
+%%DATADIR%%/skins/XP/styles/Standard (Blue)/ImagePaneHeaderClosedBlue.gif
 %%DATADIR%%/skins/XP/styles/Standard (Blue)/ImagePaneHeaderOpenBlue.gif
+%%DATADIR%%/skins/XP/styles/Standard (Blue)/InfoPaneHeaderClosedBlue.gif
 %%DATADIR%%/skins/XP/styles/Standard (Blue)/InfoPaneHeaderOpenBlue.gif
 %%DATADIR%%/skins/XP/styles/Standard (Blue)/MainBGBlue.gif
 %%DATADIR%%/skins/XP/texts/texts.properties
@@ -2077,12 +2157,14 @@ bin/jalbum
 %%DATADIR%%/skins/XP/texts/texts_es.properties
 %%DATADIR%%/skins/XP/texts/texts_fi.properties
 %%DATADIR%%/skins/XP/texts/texts_fr.properties
+%%DATADIR%%/skins/XP/texts/texts_hu.properties
 %%DATADIR%%/skins/XP/texts/texts_is.properties
 %%DATADIR%%/skins/XP/texts/texts_it.properties
 %%DATADIR%%/skins/XP/texts/texts_nl.properties
 %%DATADIR%%/skins/XP/texts/texts_no.properties
 %%DATADIR%%/skins/XP/texts/texts_pl.properties
 %%DATADIR%%/skins/XP/texts/texts_pt.properties
+%%DATADIR%%/skins/XP/texts/texts_ru.properties
 %%DATADIR%%/skins/XP/texts/texts_sk.properties
 %%DATADIR%%/skins/XP/texts/texts_sl.properties
 %%DATADIR%%/skins/XP/texts/texts_sv.properties
@@ -2138,6 +2220,14 @@ bin/jalbum
 @dirrm %%DATADIR%%/skins/XP/styles/LightGrey
 @dirrm %%DATADIR%%/skins/XP/styles
 @dirrm %%DATADIR%%/skins/XP/res
+@dirrm %%DATADIR%%/skins/XP/plugins/Example plugin/texts
+@dirrm %%DATADIR%%/skins/XP/plugins/Example plugin/styles/Standard (Blue)
+@dirrm %%DATADIR%%/skins/XP/plugins/Example plugin/styles/OliveGreen
+@dirrm %%DATADIR%%/skins/XP/plugins/Example plugin/styles/LightGrey
+@dirrm %%DATADIR%%/skins/XP/plugins/Example plugin/styles
+@dirrm %%DATADIR%%/skins/XP/plugins/Example plugin/res
+@dirrm %%DATADIR%%/skins/XP/plugins/Example plugin
+@dirrm %%DATADIR%%/skins/XP/plugins
 @dirrm %%DATADIR%%/skins/XP
 @dirrm %%DATADIR%%/skins/Whitey/styles
 @dirrm %%DATADIR%%/skins/Whitey/res
@@ -2158,6 +2248,7 @@ bin/jalbum
 @dirrm %%DATADIR%%/skins/Standard
 @dirrm %%DATADIR%%/skins/Slide show/styles
 @dirrm %%DATADIR%%/skins/Slide show/res
+@dirrm %%DATADIR%%/skins/Slide show/music
 @dirrm %%DATADIR%%/skins/Slide show
 @dirrm %%DATADIR%%/skins/Simple/texts
 @dirrm %%DATADIR%%/skins/Simple/styles
@@ -2257,6 +2348,7 @@ bin/jalbum
 @dirrm %%DATADIR%%/skins/Chameleon/styles/3D_dark
 @dirrm %%DATADIR%%/skins/Chameleon/styles
 @dirrm %%DATADIR%%/skins/Chameleon/res
+@dirrm %%DATADIR%%/skins/Chameleon/help
 @dirrm %%DATADIR%%/skins/Chameleon
 @dirrm %%DATADIR%%/skins/Camera Geek/styles
 @dirrm %%DATADIR%%/skins/Camera Geek/res
