@@ -7,7 +7,6 @@
     SUBDIR += WebMagick
     SUBDIR += abcache
     SUBDIR += adblock
-    SUBDIR += adblock-firefox
     SUBDIR += admuser
     SUBDIR += adzap
     SUBDIR += amaya
