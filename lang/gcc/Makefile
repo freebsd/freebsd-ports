@@ -8,7 +8,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	4.2.0
-PORTREVISION=	20060408
+PORTREVISION=	20060415
 CATEGORIES=	lang java
 VERSIONSTRING=	4.2-${PORTREVISION}
 MASTER_SITES=	${MASTER_SITE_GCC}
@@ -48,7 +48,8 @@ NOMANCOMPRESS=	yes	# too hard to deal with differences on 5-cur and releng4
 WITHOUT_JAVA=	yes
 .endif
 
-# FIXME: As of 20051202, installing libgcj nearly kills 1GB machines.
+# FIXME: As of 20060416, installing libgcj requires jar/fastjar which has
+# not been packaged for FreeBSD yet.
 WITHOUT_JAVA=	yes
 
 .if ${ARCH} == "amd64"
