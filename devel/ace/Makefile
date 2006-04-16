@@ -29,13 +29,14 @@ USE_GNOME=	pkgconfig
 WRKSRC=		${WRKDIR}/ACE_wrappers
 BUILD_WRKSRC=	${WRKSRC}/objdir
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
+NOT_FOR_ARCH=	sparc64
 
 MAN1=		ace-gperf.1
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-BROKEN=		Does not support
+BROKEN=		does not support
 .endif
 
 post-extract:
