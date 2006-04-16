@@ -49,33 +49,45 @@ OPTIONS=	BDB_3		"Use BerkeleyDB v3"	on \
 		BDB_4		"Use BerkeleyDB v4"	off \
 		BDB_41		"Use BerkeleyDB v4.1"	off \
 		BDB_42		"Use BerkeleyDB v4.2"	off \
-		BDB_43		"Use BerkeleyDB v4.3"	off
+		BDB_43		"Use BerkeleyDB v4.3"	off \
+		BDB_44		"Use BerkeleyDB v4.4"	off
 .elif ${USE_BDB_VER} == 4
 OPTIONS=	BDB_3		"Use BerkeleyDB v3"	off \
 		BDB_4		"Use BerkeleyDB v4"	on \
 		BDB_41		"Use BerkeleyDB v4.1"	off \
 		BDB_42		"Use BerkeleyDB v4.2"	off \
-		BDB_43		"Use BerkeleyDB v4.3"	off
+		BDB_43		"Use BerkeleyDB v4.3"	off \
+		BDB_44		"Use BerkeleyDB v4.4"	off
 .elif ${USE_BDB_VER} == 41
 OPTIONS=	BDB_3		"Use BerkeleyDB v3"	off \
 		BDB_4		"Use BerkeleyDB v4"	off \
 		BDB_41		"Use BerkeleyDB v4.1"	on \
 		BDB_42		"Use BerkeleyDB v4.2"	off \
-		BDB_43		"Use BerkeleyDB v4.3"	off
+		BDB_43		"Use BerkeleyDB v4.3"	off \
+		BDB_44		"Use BerkeleyDB v4.4"	off
 .elif ${USE_BDB_VER} == 42
 OPTIONS=	BDB_3		"Use BerkeleyDB v3"	off \
 		BDB_4		"Use BerkeleyDB v4"	off \
 		BDB_41		"Use BerkeleyDB v4.1"	off \
 		BDB_42		"Use BerkeleyDB v4.2"	on \
-		BDB_43		"Use BerkeleyDB v4.3"	off
+		BDB_43		"Use BerkeleyDB v4.3"	off \
+		BDB_44		"Use BerkeleyDB v4.4"	off
 .elif ${USE_BDB_VER} == 43
 OPTIONS=	BDB_3		"Use BerkeleyDB v3"	off \
 		BDB_4		"Use BerkeleyDB v4"	off \
 		BDB_41		"Use BerkeleyDB v4.1"	off \
 		BDB_42		"Use BerkeleyDB v4.2"	off \
-		BDB_43		"Use BerkeleyDB v4.3"	on
+		BDB_43		"Use BerkeleyDB v4.3"	on \
+		BDB_44		"Use BerkeleyDB v4.4"	off
+.elif ${USE_BDB_VER} == 44
+OPTIONS=	BDB_3		"Use BerkeleyDB v3"	off \
+		BDB_4		"Use BerkeleyDB v4"	off \
+		BDB_41		"Use BerkeleyDB v4.1"	off \
+		BDB_42		"Use BerkeleyDB v4.2"	off \
+		BDB_43		"Use BerkeleyDB v4.3"	off \
+		BDB_44		"Use BerkeleyDB v4.4"	on
 .else
-BROKEN=		"WITH_BDB_VER must be 3, 4, 41, 42 or 43"
+BROKEN=		"WITH_BDB_VER must be 3, 4, 41, 42, 43 or 44"
 .endif
 
 OPTIONS+=	DRAC		"Enable DRAC support"			off
@@ -84,13 +96,13 @@ OPTIONS+=	LDAP_PTLOADER	"Enable LDAP ptloader"			off
 OPTIONS+=	LISTEXT		"Enable IMAP List extensions"		off
 OPTIONS+=	MURDER		"Enable IMAP Murder support"		off
 OPTIONS+=	NETSCAPEHACK	"Enable X-NETSCAPE extensions"		off
-OPTIONS+=	NNTP		"Enable NNTP support (BROKEN)"		off
+OPTIONS+=	NNTP		"Enable NNTP support"			off
 OPTIONS+=	REPLICATION	"Enable replication"			off
 OPTIONS+=	SNMP_4		"Enable SNMP support using net-snmp v4"	off \
 		SNMP_5		"Enable SNMP support using net-snmp v5"	off
 OPTIONS+=	PASS8BITHACK	"Add pass8bit option (not recommended)"	off
 
-BDB_VERS=	3 4 41 42 43
+BDB_VERS=	3 4 41 42 43 44
 
 .include <bsd.port.pre.mk>
 
@@ -113,23 +125,20 @@ WITH_BDB_${USE_BDB_VER}=	true
 BROKEN=		"Multiple BDB versions selected.  Run 'make config' again!"
 .endif
 .if defined(WITH_BDB_3)
-BDB_VER=	3
+USE_BDB=	3
 .elif defined(WITH_BDB_4)
-BDB_VER=	4
 USE_BDB=	40
 .elif defined(WITH_BDB_41)
-BDB_VER=	41
+USE_BDB=	41
 .elif defined(WITH_BDB_42)
-BDB_VER=	42
-BDB_SUFFIX=	-4.2
+USE_BDB=	42
 .elif defined(WITH_BDB_43)
-BDB_VER=	43
-BDB_SUFFIX=	-4.3
+USE_BDB=	43
+.elif defined(WITH_BDB_44)
+USE_BDB=	44
 .endif
-USE_BDB?=	${BDB_VER}
-BDB_SUFFIX?=	${BDB_VER}
-CONFIGURE_ARGS+=--with-bdb-incdir=${LOCALBASE}/include/db${BDB_VER} \
-		--with-bdb=db${BDB_SUFFIX}
+CONFIGURE_ARGS+=--with-bdb-incdir=${BDB_INCLUDE_DIR} \
+		--with-bdb=${BDB_LIB_NAME}
 
 .if defined(WITH_NNTP)
 CONFIGURE_ARGS+=--enable-nntp
