@@ -6,15 +6,18 @@
 #
 
 PORTNAME=	bugmenot
-#PKGNAMESUFFIX set to -firefox in ../mozex/Makefile.xpi
+PORTVERSION=	1.3
+CATEGORIES=	www
+MASTER_SITES=	http://extensions.roachfiend.com/
+DISTNAME=	${PORTNAME}
+DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}_${PORTREVISION}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Firefox extension to bypass compulsory web registration
 
-MASTERDIR=	${.CURDIR}/../bugmenot
+XPI_ID=		{987311C6-B504-4aa2-90BF-60CC49808D42}
+XPI_FILES=	chrome/bugmenot.jar install.js install.rdf license.txt chrome.manifest
+XPI_DIRS=	chrome
 
-WITH_FIREFOX=	yes
-
-BROKEN=	"Does not build with new Firefox"
-
-.include "${MASTERDIR}/Makefile"
+.include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
+.include <bsd.port.mk>
