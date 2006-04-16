@@ -964,6 +964,7 @@
     SUBDIR += xist
     SUBDIR += xitami
     SUBDIR += xpath2rss
+    SUBDIR += xpi-adblock
     SUBDIR += xshttpd
     SUBDIR += xshttpd-devel
     SUBDIR += xulrunner
