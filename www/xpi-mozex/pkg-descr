@@ -1,0 +1,10 @@
+Mozex is an extension to Mozilla or Firefox which allows the user to use
+external programs for these actions:
+
+    * view page source
+    * edit content of textareas (possibly utilizing a spell-checker in the
+      text editor)
+    * handle mailto, news, telnet and FTP links
+    * download files
+
+WWW: http://mozex.mozdev.org/index.html
