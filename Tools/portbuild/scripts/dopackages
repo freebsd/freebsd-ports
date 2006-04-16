@@ -551,7 +551,7 @@ if [ "$nofinish" = 0 ]; then
     cp -p ${i} ${pb}/${arch}/${branch}/errors/old-errors;
   done
 
-  archiveports ${pb} ${arch} ${branch} &
+  #archiveports ${pb} ${arch} ${branch} &
   generatemd5 ${pb} ${arch} ${branch} &
   wait
 
