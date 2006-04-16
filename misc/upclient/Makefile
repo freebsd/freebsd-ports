@@ -7,7 +7,7 @@
 
 PORTNAME=	upclient
 PORTVERSION=	5.0.b8
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	misc
 MASTER_SITES=	http://uptimes.hostingwired.com/files/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -26,7 +26,7 @@ USE_RC_SUBR=	yes
 ALL_TARGET=	bsd
 BUILD_WRKSRC=	${WRKSRC}/src
 
-SUB_FILES=	pkg-message 
+SUB_FILES=	pkg-message  upclient.sh
 PKGMESSAGE=	${WRKDIR}/pkg-message upclient.sh
 
 MAN8=		upclient.8
