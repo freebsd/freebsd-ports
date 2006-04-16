@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	statgrab
-PORTVERSION=	0.4
-PORTREVISION=	3
+PORTVERSION=	0.5.0
 CATEGORIES=	devel pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
