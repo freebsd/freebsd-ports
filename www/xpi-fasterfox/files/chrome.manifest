@@ -1,0 +1,36 @@
+
+overlay	chrome://browser/content/browser.xul	chrome://fasterfox/content/fasterfoxOverlay.xul
+overlay	chrome://navigator/content/navigator.xul	chrome://fasterfox/content/fasterfoxOverlay.xul
+content	fasterfox	jar:chrome/fasterfox.jar!/content/fasterfox/
+
+skin	fasterfox	classic/1.0	jar:chrome/fasterfox.jar!/skin/classic/fasterfox/
+
+locale	fasterfox	en-US	jar:chrome/fasterfox.jar!/locale/en-US/fasterfox/
+
+locale	fasterfox	cs-CZ	jar:chrome/fasterfox.jar!/locale/cs-CZ/fasterfox/
+
+locale	fasterfox	de-DE	jar:chrome/fasterfox.jar!/locale/de-DE/fasterfox/
+
+locale	fasterfox	fi-FI	jar:chrome/fasterfox.jar!/locale/fi-FI/fasterfox/
+
+locale	fasterfox	fr-FR	jar:chrome/fasterfox.jar!/locale/fr-FR/fasterfox/
+
+locale	fasterfox	he-IL	jar:chrome/fasterfox.jar!/locale/he-IL/fasterfox/
+
+locale	fasterfox	it-IT	jar:chrome/fasterfox.jar!/locale/it-IT/fasterfox/
+
+locale	fasterfox	ja-JP	jar:chrome/fasterfox.jar!/locale/ja-JP/fasterfox/
+
+locale	fasterfox	ko-KR	jar:chrome/fasterfox.jar!/locale/ko-KR/fasterfox/
+
+locale	fasterfox	nl-NL	jar:chrome/fasterfox.jar!/locale/nl-NL/fasterfox/
+
+locale	fasterfox	pl-PL	jar:chrome/fasterfox.jar!/locale/pl-PL/fasterfox/
+
+locale	fasterfox	sl-SI	jar:chrome/fasterfox.jar!/locale/sl-SI/fasterfox/
+
+locale	fasterfox	sk-SK	jar:chrome/fasterfox.jar!/locale/sk-SK/fasterfox/
+
+locale	fasterfox	tr-TR	jar:chrome/fasterfox.jar!/locale/tr-TR/fasterfox/
+
+locale	fasterfox	zh-CN	jar:chrome/fasterfox.jar!/locale/zh-CN/fasterfox/

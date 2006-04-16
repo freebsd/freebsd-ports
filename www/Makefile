@@ -966,6 +966,7 @@
     SUBDIR += xpath2rss
     SUBDIR += xpi-adblock
     SUBDIR += xpi-colorfultabs
+    SUBDIR += xpi-fasterfox
     SUBDIR += xshttpd
     SUBDIR += xshttpd-devel
     SUBDIR += xulrunner
