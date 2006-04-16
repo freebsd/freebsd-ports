@@ -228,7 +228,6 @@ adamem		ports/emulators/adamem
 adasdl		ports/devel/adasdl
 adasockets	ports/net/adasockets
 adblock		ports/www/adblock
-adblock-firefox	ports/www/adblock-firefox
 adcomplain	ports/mail/adcomplain
 add		ports/math/add
 add-css-links	ports/textproc/add-css-links
