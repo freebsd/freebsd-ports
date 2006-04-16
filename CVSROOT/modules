@@ -2832,6 +2832,7 @@ gcvs		ports/devel/gcvs
 gd		ports/graphics/gd
 gd-aspell	ports/textproc/gd-aspell
 gdal		ports/graphics/gdal
+gdal-grass	ports/graphics/gdal-grass
 gdam		ports/audio/gdam
 gdb53		ports/devel/gdb53
 gdb53-act	ports/devel/gdb53-act
