@@ -6,7 +6,7 @@
 #
 
 CATEGORIES=	audio
-PORTREVISION=	2
+PORTREVISION=	3
 
 COMMENT=	Gstreamer musepack mpc encoder/decoder plugin
 
