@@ -15,7 +15,6 @@ MAINTAINER=	novel@FreeBSD.org
 COMMENT=	PowerPC emulator
 
 USE_XLIB=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 PKGMESSAGE=	${WRKDIR}/pkg-message
@@ -58,7 +57,7 @@ CONFIGURE_ARGS+=	--disable-debug
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64"
-BROKEN=			"Internal compiler error on ia64"
+BROKEN=			Internal compiler error on ia64
 .endif
 
 # jitc_x86 is avaible only on x86
@@ -76,7 +75,7 @@ CONFIGURE_ARGS+=	--enable-cpu=generic
 .if ${OSVERSION} < 503001
 #USE_GCC=	3.4
 #CFLAGS+=	-DFREEBSD_MB_SUPPORT
-BROKEN=		"Missing truncf()"
+BROKEN=		Missing truncf()
 .endif
 
 pre-everything::
@@ -88,6 +87,11 @@ pre-everything::
 
 post-extract:
 	@${REINPLACE_CMD} -e 's|-g -O2||;s|-O2||' ${WRKSRC}/configure
+
+pre-configure:
+.if ${OSVERSION} > 700000
+	@${REINPLACE_CMD} -e 's|clock_settime\ ()|foobar()|' ${WRKSRC}/configure
+.endif
 
 post-configure:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/Makefile
