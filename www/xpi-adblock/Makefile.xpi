@@ -1,0 +1,81 @@
+# New ports collection makefile for:	xpi infrastructure
+# Date created:		28 March 2006
+# Whom:			Andrew Pantyukhin <infofarmer@gmail.com>
+#
+# $FreeBSD$
+#
+
+# This Makefile is an alpha-version of a new xpi infrastructure.
+# It currently supports Gecko 1.8+ (Firefox 1.5+). Support for
+# Gecko 1.7x (and Seamonkey 1.0) may be merged later from
+# Thierry Thomas works (but I doubt it is worthwhile).
+#
+# A new xpi will require a PORTNAME, PORTVERSION, DISTVERSION-
+# SUFFIX and CATEGORIES. In case it is not published on the
+# mozilla.org sites, MASTER_SITES can be redefined. XPI_* vars
+# will also need to be defined manually, which helps keep the
+# infrastructure simpler.
+#
+# PKGNAMESUFFIX will probably follow the mozilla.org pattern
+# (fx for firefox, mz for mozilla) extended by abbreviations of
+# linux and devel versions, and some other things.
+#
+# An xpi compatibility with different browsers will be determined
+# from DISTVERSIONSUFFIX or manually by maintainer.
+#
+# Browsers that user want an xpi installed in can be defined by
+# WITH_XPI_BROWSERS. Employing symlinks or hardlinks may be
+# considered later, but it will complicate matters.
+#
+# In case an xpi does not have chrome.manifest, it should be
+# generated manually by a maintainer and placed in files, where
+# it will be noticed. 
+
+MASTER_SITES?=	${MASTER_SITE_MOZILLA}
+MASTER_SITE_SUBDIR?=	extensions/${PORTNAME}
+PKGNAMEPREFIX?=	xpi-
+PKGNAMESUFFIX?=	-fx
+EXTRACT_SUFX?=	.xpi
+DIST_SUBDIR?=	xpi
+
+USE_X_PREFIX=	yes
+NO_BUILD=	yes
+USE_ZIP=	yes
+EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
+
+WITH_XPI_BROWSERS?=	firefox		# Try adding linux-firefox
+
+XPI_DIRS?=	chrome components defaults/preferences defaults
+
+.for _BROWSER in ${WITH_XPI_BROWSERS}
+RUN_DEPENDS+=	${_BROWSER}:${PORTSDIR}/www/${_BROWSER}
+TARGET_DIRS+=	lib/${_BROWSER}/extensions/${XPI_ID}
+.endfor
+
+.for _TD in ${TARGET_DIRS}
+PLIST_FILES+=	${XPI_FILES:S.^.${_TD}/.}
+PLIST_DIRS+=	${XPI_DIRS:S.^.${_TD}/.}
+PLIST_DIRS+=	${_TD}
+.endfor
+
+do-install:
+.for _TD in ${TARGET_DIRS}
+	@${INSTALL} -d ${PREFIX}/${_TD}
+	@${CP} -Rp ${WRKSRC}/ ${PREFIX}/${_TD}/
+	@if [ -d ${FILESDIR} -a -f ${FILESDIR}/chrome.manifest ] ; \
+		then ${CP} -p ${FILESDIR}/chrome.manifest ${PREFIX}/${_TD}/ ; fi
+.endfor
+
+# Maintainer section
+xpi-gen:	extract
+	@${ECHO_CMD} -n 'XPI_ID='
+	@${GREP} -m1 em:id ${WRKSRC}/install.rdf | ${CUT} -f2- -d\> | \
+	${CUT} -f1 -d\< | ${CUT} -f2 -d\"
+	@${ECHO_CMD} -n 'XPI_FILES='
+	@cd ${WRKSRC} && ${FIND} -s . -not -type d | cut -f2- -d/ | ${TR} '\n' ' '
+	@if [ -d ${FILESDIR} -a -f ${FILESDIR}/chrome.manifest ] ; \
+		then ${ECHO_CMD} chrome.manifest ; fi
+	@${ECHO_CMD}
+	@${ECHO_CMD} -n 'XPI_DIRS='
+	@cd ${WRKSRC} && ${FIND} -ds . -not -name . -type d | cut -f2- -d/ | ${TR} '\n' ' '
+	@${ECHO_CMD}
