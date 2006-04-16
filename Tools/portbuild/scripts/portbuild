@@ -11,7 +11,7 @@ mount_fs()
     if [ ${disconnected} = 1 ]; then
 	mount -t nullfs -r ${fs} ${mntpt}
     else
-	mount -o nfsv3,intr -r ${master}:${fs} ${mntpt}
+	mount_nfs -o ro -3 -i ${master}:${fs} ${mntpt}
     fi
 }
 
