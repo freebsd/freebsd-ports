@@ -20,6 +20,7 @@ MASTERDIR=	${.CURDIR}/../xmms2
 USE_JAVA=	yes
 JAVA_VERSION=	1.4+
 
+INSTALLS_SHLIB=	yes
 PLIST=		${.CURDIR}/pkg-plist
 
 SCONS_TARGET=	src/clients/lib/java/libxmms2java.so src/clients/lib/java/xmms2java.jar
@@ -29,5 +30,7 @@ XMMS2_SLAVE=	java
 do-install:
 	@cd ${WRKSRC} && ${INSTALL_DATA} src/clients/lib/java/xmms2java.jar \
 	${JAVAJARDIR}/xmms2java.jar
+	@cd ${WRKSRC} && ${INSTALL_DATA} src/clients/lib/java/libxmms2java.so \
+	${PREFIX}/lib/libxmms2java.so
 
 .include "${MASTERDIR}/Makefile"
