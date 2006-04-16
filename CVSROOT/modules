@@ -4591,6 +4591,7 @@ ja-trac		ports/japanese/trac
 ja-truetypefonts	ports/japanese/truetypefonts
 ja-typist	ports/japanese/typist
 ja-uim-anthy	ports/japanese/uim-anthy
+ja-uim-canna	ports/japanese/uim-canna
 ja-vera-fpw	ports/japanese/vera-fpw
 ja-vflib	ports/japanese/vflib
 ja-vftool	ports/japanese/vftool
