@@ -53,7 +53,7 @@ Note:  Please add new entries to the beginning of this file.
       </package>
       <package>
 	<name>linux-mozilla</name>
-	<range><lt>1.7.12</lt></range>
+	<range><lt>1.7.13</lt></range>
       </package>
       <package>
 	<name>linux-mozilla-devel</name>
