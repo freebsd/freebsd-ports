@@ -59,6 +59,23 @@ CONFIGURE_ARGS+=--without-${_x}
 CONFIGURE_ARGS+=--disable-applet
 .endif
 
+.if !defined(UIM_SLAVE)
+pre-everything::
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "NOTE:"
+	@${ECHO_MSG} "Optional features are splitted into the following slave ports."
+	@${ECHO_MSG} "OPTIONS variable is no longer used."
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "japanese/uim-anthy"
+	@${ECHO_MSG} "japanese/uim-canna"
+	@${ECHO_MSG} "japanese/uim-prime"
+	@${ECHO_MSG} "textproc/uim-gnome"
+	@${ECHO_MSG} "textproc/uim-gtk"
+	@${ECHO_MSG} "textproc/uim-m17nlib"
+	@${ECHO_MSG} "textproc/uim-qt"
+	@${ECHO_MSG} ""
+.endif
+
 post-patch:
 	${REINPLACE_CMD} -e 's,%%LOCALBASE%%,${LOCALBASE},' ${WRKSRC}/scm/skk-custom.scm
 
