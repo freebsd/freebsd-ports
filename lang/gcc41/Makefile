@@ -8,7 +8,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	4.1.1
-PORTREVISION=	20060407
+PORTREVISION=	20060414
 CATEGORIES=	lang java
 VERSIONSTRING=	4.1-${PORTREVISION}
 MASTER_SITES=	${MASTER_SITE_GCC}
@@ -47,9 +47,6 @@ NOMANCOMPRESS=	yes	# too hard to deal with differences on 5-cur and releng4
 .if ${ARCH} == amd64  ||  ${ARCH} == ia64  ||  ${ARCH} == sparc64
 WITHOUT_JAVA=	yes
 .endif
-
-# FIXME: As of 20051202, installing libgcj nearly kills 1GB machines.
-WITHOUT_JAVA=	yes
 
 .if ${ARCH} == "amd64"
 CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
