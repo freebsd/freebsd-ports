@@ -654,7 +654,7 @@ Index: qemu/usb-bsd.c
 +    usb_host_scan(NULL, usb_host_info_device);
 +}
 Index: qemu/vl.c
-@@ -2820,10 +2822,12 @@
+@@ -3245,14 +3258,17 @@
          dev = usb_host_device_open(p);
          if (!dev)
              return -1;
@@ -664,10 +664,15 @@ Index: qemu/vl.c
          if (!dev)
              return -1;
 +        dev->isproxied = 0;
+     } else if (!strcmp(devname, "tablet")) {
+ 	dev = usb_tablet_init();
+ 	if (!dev)
+ 	    return -1;
++        dev->isproxied = 0;
      } else {
          return -1;
      }
-@@ -2852,6 +2856,8 @@
+@@ -3281,6 +3297,8 @@
          if (dev && dev->addr == addr)
              break;
      }
