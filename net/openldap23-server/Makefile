@@ -39,7 +39,7 @@ BROKEN=			"incompatible OpenLDAP version: ${WANT_OPENLDAP_VER}"
 .endif
 
 PORTREVISION_CLIENT=	0
-PORTREVISION_SERVER=	0
+PORTREVISION_SERVER=	1
 
 .if !defined(CLIENT_ONLY)
 OPTIONS=	SASL "With (Cyrus) SASL2 support" on \
@@ -269,10 +269,10 @@ CONFIGURE_SED+=		-e 's,ol_DB_LIB=$$,&-l${BDBLIB:R},' \
 .endif
 
 .if defined(WITHOUT_SHELL)
+PLIST_SUB+=		BACK_SHELL="@comment "
+.else
 CONFIGURE_ARGS+=	--enable-shell=${BACKEND_ENABLE}
 PLIST_SUB+=		BACK_SHELL=${BACKEND_PLIST}
-.else
-PLIST_SUB+=		BACK_SHELL="@comment "
 .endif
 
 .if defined(WITH_PERL)
