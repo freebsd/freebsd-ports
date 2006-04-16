@@ -7,6 +7,7 @@
 
 PORTNAME=	ivtools
 PORTVERSION=	1.2.3
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -30,4 +31,12 @@ MAKE_ARGS=	ARCH=FREEBSD
 MANCOMPRESSED=	no
 MAN1=	idraw.1 iclass.1 drawtool.1 comterp.1 comdraw.1 flipbook.1 graphdraw.1
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 500034
+PLIST_SUB+=	IVDL="@comment "
+.else
+PLIST_SUB+=	IVDL=""
+.endif
+
+.include <bsd.port.post.mk>
