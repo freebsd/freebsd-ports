@@ -25,6 +25,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS=-I${PREFIX}/include LDFLAGS=-L${PREFIX}/lib LIBS=-Wl,-rpath,${PREFIX}/lib/wine
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/lib/wine
+USE_LDCONFIG=	${PREFIX}/lib/wine
 MAN1=		widl.1 wine.1 winebuild.1 winedbg.1 winedump.1 winegcc.1 \
 		winemaker.1 wineserver.1 wmc.1 wrc.1
 ONLY_FOR_ARCHS=	i386
@@ -34,10 +35,11 @@ USE_GMAKE=	yes
 USE_GL=		yes
 USE_XPM=	yes
 
-SUB_FILES=	pkg-message wine.sh
+SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 .include <bsd.port.pre.mk>
+.include "${PORTSDIR}/misc/ldconfig_compat/bsd.ldconfig.mk"
 
 .if ${OSVERSION} < 503000
 IGNORE=		fails to work on versions of FreeBSD before 5.3 (due to problems with threading support)
@@ -46,8 +48,7 @@ IGNORE=		fails to work on versions of FreeBSD before 5.3 (due to problems with t
 pre-build:
 	cd ${WRKSRC} && make depend
 
-post-install:
-	-@${MKDIR} ${PREFIX}/etc/rc.d
+post-install: install-ldconfig-file
 	${RM} ${PREFIX}/man/man1/wineg++.1
 .if !defined(NOPORTDOCS)
 	-@${MKDIR} ${DOCSDIR}
@@ -60,7 +61,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/tools/winedump/README ${DOCSDIR}/README.winedump
 .endif
 	@${INSTALL_SCRIPT} ${WRKSRC}/tools/bug_report.pl ${PREFIX}/lib/wine
-	@${INSTALL_SCRIPT} ${WRKDIR}/wine.sh ${PREFIX}/etc/rc.d/000.wine.sh
 	@${ECHO}
 	@${CAT} ${PKGMESSAGE}
 
