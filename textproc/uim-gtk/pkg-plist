@@ -1,0 +1,13 @@
+bin/uim-helper-toolbar-gtk
+bin/uim-helper-toolbar-gtk-systray
+bin/uim-im-switcher-gtk
+bin/uim-input-pad-ja
+bin/uim-pref-gtk
+bin/uim-toolbar-gtk
+bin/uim-toolbar-gtk-systray
+lib/gtk-2.0/2.4.0/immodules/im-uim.a
+lib/gtk-2.0/2.4.0/immodules/im-uim.la
+lib/gtk-2.0/2.4.0/immodules/im-uim.so
+libexec/uim-candwin-gtk
+@exec gtk-query-immodules-2.0 > %D/etc/gtk-2.0/gtk.immodules
+@unexec gtk-query-immodules-2.0 > %D/etc/gtk-2.0/gtk.immodules
