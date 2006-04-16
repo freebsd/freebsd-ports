@@ -65,9 +65,9 @@ bin/axiomatic
 %%PYTHON_SITELIBDIR%%/axiom/sequence.py
 %%PYTHON_SITELIBDIR%%/axiom/sequence.pyc
 %%PYTHON_SITELIBDIR%%/axiom/sequence.pyo
-%%PYTHON_SITELIBDIR%%/axiom/slot%%PERL_ARCH%%ine.py
-%%PYTHON_SITELIBDIR%%/axiom/slot%%PERL_ARCH%%ine.pyc
-%%PYTHON_SITELIBDIR%%/axiom/slot%%PERL_ARCH%%ine.pyo
+%%PYTHON_SITELIBDIR%%/axiom/slotmachine.py
+%%PYTHON_SITELIBDIR%%/axiom/slotmachine.pyc
+%%PYTHON_SITELIBDIR%%/axiom/slotmachine.pyo
 %%PYTHON_SITELIBDIR%%/axiom/store.py
 %%PYTHON_SITELIBDIR%%/axiom/store.pyc
 %%PYTHON_SITELIBDIR%%/axiom/store.pyo
@@ -141,9 +141,9 @@ bin/axiomatic
 %%PYTHON_SITELIBDIR%%/axiom/test/test_sequence.py
 %%PYTHON_SITELIBDIR%%/axiom/test/test_sequence.pyc
 %%PYTHON_SITELIBDIR%%/axiom/test/test_sequence.pyo
-%%PYTHON_SITELIBDIR%%/axiom/test/test_slot%%PERL_ARCH%%ine.py
-%%PYTHON_SITELIBDIR%%/axiom/test/test_slot%%PERL_ARCH%%ine.pyc
-%%PYTHON_SITELIBDIR%%/axiom/test/test_slot%%PERL_ARCH%%ine.pyo
+%%PYTHON_SITELIBDIR%%/axiom/test/test_slotmachine.py
+%%PYTHON_SITELIBDIR%%/axiom/test/test_slotmachine.pyc
+%%PYTHON_SITELIBDIR%%/axiom/test/test_slotmachine.pyo
 %%PYTHON_SITELIBDIR%%/axiom/test/test_substore.py
 %%PYTHON_SITELIBDIR%%/axiom/test/test_substore.pyc
 %%PYTHON_SITELIBDIR%%/axiom/test/test_substore.pyo
