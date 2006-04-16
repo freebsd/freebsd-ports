@@ -30,7 +30,6 @@ bin/wineshelllink
 bin/winhelp
 bin/wmc
 bin/wrc
-etc/rc.d/000.wine.sh
 include/wine/debug.h
 include/wine/exception.h
 include/wine/itss.h
