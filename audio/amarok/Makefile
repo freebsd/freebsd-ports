@@ -6,7 +6,7 @@
 
 PORTNAME=	amarok
 PORTVERSION=	1.3.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -94,6 +94,8 @@ CONFIGURE_ARGS+=--enable-postgresql
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2||g'	${WRKSRC}/${CONFIGURE_SCRIPT}
+	@${REINPLACE_CMD} -e 's|LIBS="-ltunepimp  $$LIBS"|LIBS="-ltunepimp -liconv $$LIBS"|g' \
+	${WRKSRC}/${CONFIGURE_SCRIPT}
 	@${REINPLACE_CMD} -e 's|xx||g' ${WRKSRC}/po/Makefile.in
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${TOUCH}
 
