@@ -94,8 +94,9 @@ MOZILLA_PLIST_DIRS?=	bin include lib share/idl
 
 PKGINSTALL?=	${WRKDIR}/pkg-install
 PKGDEINSTALL?=	${WRKDIR}/pkg-deinstall
-PKGINSTALL_INC?=	${MASTERDIR}/pkg-install.in
-PKGDEINSTALL_INC?=	${MASTERDIR}/pkg-deinstall.in
+MASTER_MOZDIR?=	${.CURDIR}/../../www/mozilla
+PKGINSTALL_INC?=	${MASTER_MOZDIR}/pkg-install.in
+PKGDEINSTALL_INC?=	${MASTER_MOZDIR}/pkg-deinstall.in
 
 EXTRACT_AFTER_ARGS?=	| ${TAR} -xf - --exclude */CVS/*	\
 			--exclude */macbuild/*			\
