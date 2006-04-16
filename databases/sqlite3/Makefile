@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	sqlite
-PORTVERSION=	3.3.4
-PORTREVISION=	1
+PORTVERSION=	3.3.5
 CATEGORIES=	databases
 MASTER_SITES=	http://www.sqlite.org/
 
@@ -18,12 +17,11 @@ COMMENT=	An SQL database engine in a C library w/ Tcl wrapper
 USE_GMAKE=	YES
 USE_GNOME=	pkgconfig
 USE_AUTOTOOLS=	libtool:15
+USE_DOS2UNIX=	*.pc.in
 INSTALLS_SHLIB=	YES
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=		--prefix=${PREFIX} --with-hints=freebsd.hints
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-
-LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}3
 
 DOCSDIR=	${PREFIX}/share/doc/sqlite3
 EXAMPLESDIR=	${PREFIX}/share/examples/sqlite3
@@ -60,12 +58,18 @@ CONFIGURE_ARGS+=	--enable-debug
 
 .if !defined(NOPORTDOCS) && !defined(WITHOUT_DOCS)
 BUILD_DEPENDS+=		tclsh${TCL_V}:${PORTSDIR}/lang/tcl${TCL_V:S/.//}
+ALL_TARGET=		all doc
 PORTDOCS=		*
 .endif
 
 post-patch:
+.if defined(WITH_THREADS)
 	@${REINPLACE_CMD} -e "s|-lpthread|${PTHREAD_LIBS}|g" \
 		${WRKSRC}/configure
+	@${REINPLACE_CMD} -E -e "s|(Libs:.*)|\1 ${PTHREAD_LIBS}|" \
+		-e "s|(Cflags:.*)|\1 ${PTHREAD_CFLAGS}|" \
+		${WRKSRC}/sqlite.pc.in ${WRKSRC}/sqlite3.pc.in
+.endif
 	@${REINPLACE_CMD} -e "s|tclsh \$$(TOP)|\$$(TCLSH) \$$(TOP)|g" \
 		-e "s|./libtool|${LIBTOOL}|g" \
 		-e "s|\$${HAVE_TCL:1=tcl_install}||" \
@@ -74,12 +78,6 @@ post-patch:
 		> ${WRKSRC}/freebsd.hints
 	@${ECHO} "config_TARGET_TCL_LIBS=\"-L${PREFIX}/lib -ltcl${TCL_V:S/.//}\"" \
 		>> ${WRKSRC}/freebsd.hints
-
-post-build:
-.if !defined(NOPORTDOCS) && !defined(WITHOUT_DOCS)
-	@${ECHO_MSG} "===> Building docs"
-	@(cd ${WRKSRC} && ${GMAKE} ${MAKE_ARGS} doc)
-.endif
 
 post-install:
 .if defined(WITH_TCLWRAPPER)
