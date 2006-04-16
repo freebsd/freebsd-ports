@@ -790,6 +790,7 @@
     SUBDIR += uim-el
     SUBDIR += uim-el-xemacs21-mule
     SUBDIR += uim-gnome
+    SUBDIR += uim-gtk
     SUBDIR += uni2ascii
     SUBDIR += unroff
     SUBDIR += unrtf
