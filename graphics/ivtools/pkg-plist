@@ -5,6 +5,7 @@ bin/drawtool
 bin/flipbook
 bin/graphdraw
 bin/iclass
+%%IVDL%%bin/ivdl
 bin/idraw
 bin/ivgetjpg
 bin/ivtext
