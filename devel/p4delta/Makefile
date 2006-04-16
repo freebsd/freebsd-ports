@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	p4delta
-PORTVERSION=	1.3
+PORTVERSION=	1.3.2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,9 +15,10 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	mich@FreeBSD.org
 COMMENT=	Summarizes and manages differences between local files and Perforce
 
+RUN_DEPENDS=	${LOCALBASE}/bin/p4:${PORTSDIR}/devel/perforce
+
 USE_RUBY=	yes
 NO_BUILD=	yes
-USE_REINPLACE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^#!/usr/bin/ruby|#!${RUBY}|' ${WRKSRC}/p4delta
