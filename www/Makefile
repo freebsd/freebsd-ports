@@ -968,6 +968,7 @@
     SUBDIR += xpi-colorfultabs
     SUBDIR += xpi-fasterfox
     SUBDIR += xpi-noscript
+    SUBDIR += xpi-tabmixplus
     SUBDIR += xshttpd
     SUBDIR += xshttpd-devel
     SUBDIR += xulrunner
