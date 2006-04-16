@@ -94,6 +94,8 @@ MOZILLA_PLIST_DIRS?=	bin include lib share/idl
 
 PKGINSTALL?=	${WRKDIR}/pkg-install
 PKGDEINSTALL?=	${WRKDIR}/pkg-deinstall
+PKGINSTALL_INC?=	${MASTERDIR}/pkg-install.in
+PKGDEINSTALL_INC?=	${MASTERDIR}/pkg-deinstall.in
 
 EXTRACT_AFTER_ARGS?=	| ${TAR} -xf - --exclude */CVS/*	\
 			--exclude */macbuild/*			\
@@ -239,11 +241,11 @@ MOZCONFIG_SED?= ${SED} ${MOZ_SED_ARGS}
 post-patch: gecko-post-patch gecko-moz-pis-patch
 
 gecko-post-patch:
-.if exists(${MASTER_DIR}/pkg-install.in)
-	@${MOZCONFIG_SED} < ${MASTER_DIR}/pkg-install.in > ${PKGINSTALL}
+.if exists(${PKGINSTALL_INC})
+	@${MOZCONFIG_SED} < ${PKGINSTALL_INC} > ${PKGINSTALL}
 .endif
-.if exists(${MASTER_DIR}/pkg-deinstall.in)
-	@${MOZCONFIG_SED} < ${MASTER_DIR}/pkg-deinstall.in > ${PKGDEINSTALL}
+.if exists(${PKGDEINSTALL_INC})
+	@${MOZCONFIG_SED} < ${PKGDEINSTALL_INC} > ${PKGDEINSTALL}
 .endif
 	@${RM} -f ${MOZCONFIG}
 .if !defined(NOMOZCONFIG)
