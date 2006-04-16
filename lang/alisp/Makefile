@@ -7,6 +7,7 @@
 
 PORTNAME=	alisp
 PORTVERSION=	20050425
+PORTREVISION=	1
 CATEGORIES=	lang devel lisp
 MASTER_SITES=	http://www.t3x.org/files/
 
