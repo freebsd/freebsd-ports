@@ -1,0 +1,10 @@
+NoScript provides extra protection for your Mozilla/Firefox
+or Flock browser: this extension allows JavaScript and Java
+execution only for trusted domains of your choice (e.g. your
+home-banking web site).
+
+This whitelist based pre-emptive script blocking approach
+prevents exploitation of security vulnerabilities (known and
+even not known yet!) with no loss of functionality... 
+
+WWW: http://www.noscript.net/
