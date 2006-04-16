@@ -34,6 +34,41 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="8be2e304-cce6-11da-a3b1-00123ffe8333">
+    <topic>mailman -- Private Archive Script Cross-Site Scripting</topic>
+    <affects>
+      <package>
+	<name>mailman</name>
+	<name>ja-mailman</name>
+	<name>mailman-with-htdig</name>
+	<range><lt>2.1.8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/19558/">
+	  <p>A vulnerability has been reported in Mailman, which can be
+	    exploited by malicious people to conduct cross-site scripting
+	    attacks.</p>
+	  <p>Unspecified input passed to the private archive script is not
+	    properly sanitised before being returned to users. This can be
+	    exploited to execute arbitrary HTML and script code in a user's
+	    browser session in context of a vulnerable site.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-1712</cvename>
+      <mlist>http://mail.python.org/pipermail/mailman-announce/2006-April/000084.html</mlist>
+      <url>http://secunia.com/advisories/19558/</url>
+    </references>
+    <dates>
+      <discovery>2006-04-07</discovery>
+      <entry>2006-04-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="43cb40b3-c8c2-11da-a672-000e0c2e438a">
     <topic>f2c -- insecure temporary files</topic>
     <affects>
