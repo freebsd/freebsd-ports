@@ -14049,6 +14049,7 @@ xphotohunter	ports/games/xphotohunter
 xpi-adblock	ports/www/xpi-adblock
 xpi-colorfultabs	ports/www/xpi-colorfultabs
 xpi-fasterfox	ports/www/xpi-fasterfox
+xpi-noscript	ports/www/xpi-noscript
 xpilot		ports/games/xpilot
 xpilot-ng-client	ports/games/xpilot-ng-client
 xpilot-ng-server	ports/games/xpilot-ng-server
