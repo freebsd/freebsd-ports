@@ -215,6 +215,7 @@
 %%RTPLIST%%/lib/t/regression/11-template-insert.t
 %%RTPLIST%%/lib/t/regression/12-search.t
 %%RTPLIST%%/lib/t/regression/13-attribute-tests.t
+%%RTPLIST%%/lib/t/regression/14linking.t
 %%RTPLIST%%/lib/t/regression/14merge.t
 %%RTPLIST%%/lib/t/regression/15cf_single_values_are_single.t
 %%RTPLIST%%/lib/t/regression/16-transaction_cf_tests.t
@@ -224,6 +225,7 @@
 %%RTPLIST%%/lib/t/regression/20savedsearch.t
 %%RTPLIST%%/lib/t/regression/21query-builder.t
 %%RTPLIST%%/lib/t/regression/22search_tix_by_txn.t
+%%RTPLIST%%/lib/t/regression/22search_tix_by_watcher.t
 %%RTPLIST%%/lib/t/regression/mime_tests
 %%RTPLIST%%/lib/t/setup_regression.t
 %%RTPLIST%%/lib/t/create_data.pl
@@ -401,6 +403,7 @@
 %%RTPLIST%%/share/html/NoAuth/images/bplogo.gif
 %%RTPLIST%%/share/html/NoAuth/images/favicon.png
 %%RTPLIST%%/share/html/NoAuth/images/space.gif
+%%RTPLIST%%/share/html/NoAuth/printrt.css
 %%RTPLIST%%/share/html/NoAuth/webrt.css
 %%RTPLIST%%/share/html/REST/1.0/Forms/queue/default
 %%RTPLIST%%/share/html/REST/1.0/Forms/queue/ns
