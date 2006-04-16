@@ -194,7 +194,7 @@ post-build:
 .endfor
 	@${CAT} ${.CURDIR}/pkg-plist >> ${PLIST}
 
-pre-install:
+pre-su-install:
 	@${INSTALL_DATADIR} ${PREFIX}/live
 	@${INSTALL_DATADIR} ${PREFIX}/live/groupsock
 	@${INSTALL_DATADIR} ${PREFIX}/live/liveMedia
