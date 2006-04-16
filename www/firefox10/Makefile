@@ -7,16 +7,20 @@
 #
 
 PORTNAME=	firefox
-DISTVERSION=	1.5.0.2
+DISTVERSION=	1.0.8
 PORTEPOCH=	1
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_MOZILLA}
-MASTER_SITE_SUBDIR=	${PORTNAME}/releases/${DISTVERSION}/source
-DISTNAME=	${PORTNAME}-${DISTVERSION}-source
+MASTER_SITES=	${MASTER_SITE_MOZILLA} \
+		${MASTER_SITE_LOCAL:S/$/:local/}
+MASTER_SITE_SUBDIR=	${PORTNAME}/releases/${DISTVERSION}/source \
+			ahze/:local
+DISTFILES=	${PORTNAME}-${DISTVERSION}-source${EXTRACT_SUFX} \
+		libart_lgpl-1${EXTRACT_SUFX}:local
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
 
+LATEST_LINK=	${PORTNAME}10
 USE_X_PREFIX=	yes
 WANT_GNOME=	yes
 ALL_TARGET=	default
@@ -31,10 +35,15 @@ GECKO_PLIST_PRE_DIRS=	lib/${MOZILLA}/chrome/icons/default lib/${MOZILLA}/chrome/
 
 FIREFOX_ICON=		${MOZILLA}.xpm
 FIREFOX_ICON_SRC=	${PREFIX}/lib/${MOZILLA}/icons/default.xpm
+MOZILLA=	${PORTNAME}${MOZILLA_SUFX}
+MOZILLA_SUFX=	10
+MOZ_EXPORT+=	MOZ_INTERNAL_LIBART_LGPL=1
+MOZ_MK_OPTIONS+=MOZ_INTERNAL_LIBART_LGPL=1
 MOZ_OPTIONS=	--enable-application=browser \
-		--enable-system-cairo	\
 		--enable-official-branding \
-		--enable-canvas
+		--program-transform-name='s/firefox/${MOZILLA}/' \
+		--enable-svg \
+		--enable-svg-renderer-libart
 
 SYSTEM_PREFS=		${FAKEDIR}/lib/${MOZILLA}/defaults/pref/firefox.js
 MOZ_PIS_SCRIPTS=	moz_pis_S50cleanhome
@@ -48,8 +57,11 @@ OPTIONS=	NEWTAB "Open external links in a new tab" on \
 IGNORE=	core dumps on alpha during post-build
 .endif
 
-.if ${OSVERSION} >= 600000
-MOZ_OPTIONS+=	--enable-svg --enable-svg-renderer=cairo
+# libart patches
+.if ${OSVERSION} < 500035
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-nsSVGLibartGlyphMetricsFT.cpp
+.else
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch2-nsSVGLibartGlyphMetricsFT.cpp
 .endif
 
 .if ${PERL_LEVEL} < 500600
