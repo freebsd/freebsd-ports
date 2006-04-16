@@ -377,6 +377,7 @@
     SUBDIR += trac
     SUBDIR += truetypefonts
     SUBDIR += typist
+    SUBDIR += uim-anthy
     SUBDIR += vera-fpw
     SUBDIR += vflib
     SUBDIR += vftool
