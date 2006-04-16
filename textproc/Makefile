@@ -792,6 +792,7 @@
     SUBDIR += uim-gnome
     SUBDIR += uim-gtk
     SUBDIR += uim-m17nlib
+    SUBDIR += uim-qt
     SUBDIR += uni2ascii
     SUBDIR += unroff
     SUBDIR += unrtf
