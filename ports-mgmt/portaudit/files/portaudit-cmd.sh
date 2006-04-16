@@ -131,6 +131,7 @@ audit_installed()
 	local osversion=`sysctl -n kern.osreldate`
 
 	fixedre=`echo -n $portaudit_fixed | tr -c '[:alnum:]- \t\n' 'x' | tr -s ' \t\n' '|'`
+	installedre=`$pkg_info -aE | sed -e 's/-[^-]*$//g' | paste -s -d '|' -`
 
 	extract_auditfile | awk -F\| "$PRINTAFFECTED_AWK"'
 		BEGIN { vul=0; fixedre="'"$fixedre"'" }
@@ -143,6 +144,9 @@ audit_installed()
 					"To disable this check add the uuid to \`portaudit_fixed'"'"' in %%PREFIX%%/etc/portaudit.conf")
 			}
 			next
+		}
+		$1 ~ /^[^{}*?]*[<=>!]/ {
+			if ($1 !~ "^('"$installedre"')[<=>!]") next;
 		}
 		{
 			cmd="'"$pkg_info"' -E \"" $1 "\""
