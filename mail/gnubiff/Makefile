@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnubiff
-PORTVERSION=	2.1.9
+PORTVERSION=	2.2.0
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -33,6 +33,15 @@ INFO=		gnubiff
 
 .ifdef(WITH_GNUBIFF_PASSWORD)
 CONFIGURE_ARGS+=	--with-password
+.endif
+
+.ifndef(WITHOUT_NLS)
+CONFIGURE_ARGS+=	--enable-nls
+PLIST_SUB+=		NLS=""
+USE_GETTEXT=		yes
+.else
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=		NLS="@comment "
 .endif
 
 # This application can dock in the GNOME panel, or it can not.
