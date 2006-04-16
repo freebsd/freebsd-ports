@@ -378,6 +378,7 @@
     SUBDIR += truetypefonts
     SUBDIR += typist
     SUBDIR += uim-anthy
+    SUBDIR += uim-canna
     SUBDIR += vera-fpw
     SUBDIR += vflib
     SUBDIR += vftool

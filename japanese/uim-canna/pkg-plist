@@ -1,0 +1,5 @@
+lib/uim/plugin/libuim-canna.a
+lib/uim/plugin/libuim-canna.la
+lib/uim/plugin/libuim-canna.so
+@exec uim-module-manager --register canna
+@unexec uim-module-manager --unregister canna
