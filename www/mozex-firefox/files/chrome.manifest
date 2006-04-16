@@ -1,0 +1,6 @@
+
+overlay	chrome://navigator/content/navigator.xul	chrome://mozex/content/mozex.xul
+overlay	chrome://communicator/content/pref/preftree.xul	chrome://mozex/content/mozexPrefOverlay.xul
+overlay	chrome://browser/content/browser.xul	chrome://mozex/content/mozex.xul
+overlay	chrome://browser/content/pref/pref.xul	chrome://mozex/content/mozexPrefOverlay.xul
+content	mozex	jar:chrome/mozex.jar!/content/mozex/

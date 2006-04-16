@@ -6,15 +6,17 @@
 #
 
 PORTNAME=	mozex
-PORTREVISION=	4
-#PKGNAMESUFFIX set to -firefox in ../mozex/Makefile.xpi
+PORTVERSION=	1.9.0
+CATEGORIES=	www
+MASTER_SITES=	http://mozdev.oregonstate.edu/mozex/	\
+		http://downloads.mozdev.org/mozex/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mozex allows Firefox's users to use external programs for mail, news, etc.
 
-MASTERDIR=	${.CURDIR}/../mozex
+XPI_ID=		{01bc0112-afff-4fb5-8772-191bf35a8ffb}
+XPI_FILES=	chrome/mozex.jar install.js install.rdf chrome.manifest
+XPI_DIRS=	chrome
 
-WITH_FIREFOX=	yes
-BROKEN="Does not work with Firefox 1.5"
-
-.include "${MASTERDIR}/Makefile"
+.include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
+.include <bsd.port.mk>
