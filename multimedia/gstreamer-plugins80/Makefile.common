@@ -261,7 +261,7 @@ LIB_DEPENDS+=	visual.0:${PORTSDIR}/graphics/libvisual
 
 # musepack
 .if ${GST_PLUGIN}=="musepack"
-LIB_DEPENDS+=	mpcdec.3:${PORTSDIR}/audio/libmpcdec
+LIB_DEPENDS+=	mpcdec.4:${PORTSDIR}/audio/libmpcdec
 .endif
 
 # hermes
