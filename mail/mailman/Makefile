@@ -6,25 +6,23 @@
 #
 
 PORTNAME=	mailman
-PORTVERSION=	2.1.7
+PORTVERSION=	2.1.8
 CATEGORIES?=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.list.org/
 MASTER_SITE_SUBDIR=	mailman
-.if defined(WITH_HTDIG)
-PKGNAMESUFFIX=	-with-htdig
-.endif
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	mailman
 
 .if defined(WITH_HTDIG)
 # see http://www.openinfo.co.uk/mailman/index.html
 # Order of application of these patches is critical.
+PATCH_SITES+=	http://www.openinfo.co.uk/mm/patches/444879/:patch1 \
+		http://www.openinfo.co.uk/mm/patches/444884/:patch2
 PATCHFILES+=	indexing-2.1.6-0.1.patch.gz:patch1 \
 		htdig-2.1.6-0.1.patch.gz:patch2
 PATCH_DIST_STRIP=	-p1
-PATCH_SITES+=	http://www.openinfo.co.uk/mm/patches/444879/:patch1 \
-		http://www.openinfo.co.uk/mm/patches/444884/:patch2
+PKGNAMESUFFIX+=	-with-htdig
 .endif
 
 MAINTAINER?=	ports@freebsd.org
@@ -40,7 +38,6 @@ RUN_DEPENDS+=	htdig:${PORTSDIR}/textproc/htdig
 
 HAS_CONFIGURE=	yes
 USE_PYTHON=	yes
-USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--prefix=${MAILMANDIR} --with-python=${PYTHON_CMD} \
 		--with-username=${MM_USERNAME} \
 		--with-groupname=${MM_GROUPNAME} \
