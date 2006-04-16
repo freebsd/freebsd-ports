@@ -40,6 +40,9 @@ BACKVERSION=		${PORTVERSION:C/([0-9])*[.]([0-9]*).*/\1\2/1}
 BREAKS_IF_PEDANTIC=	yes
 
 .if defined(WITH_GNUSTEP_XDPS)
+GNUSTEP_DGS_PORT?=	x11/dgs
+BUILD_DEPENDS+=		pswrap:${PORTSDIR}/${GNUSTEP_DGS_PORT}
+LIB_DEPENDS+=		dpstk:${PORTSDIR}/${GNUSTEP_DGS_PORT}
 CONFIGURE_ARGS+=	--enable-graphics=xdps --with-name=xdps
 CONFIGURE_ARGS+=	--disable-glitz
 PLIST_SUB+=		BACK=xdps-${BACKVERSION}
@@ -85,17 +88,6 @@ PLIST_SUB+=		BACKVERSION=${PORTVERSION:C/([0-9])*[.]([0-9]*).*/\1\2/1}
 .if ${OSVERSION} < 500000
 ADDITIONAL_LDFLAGS+=	-L/usr/lib -lcipher
 MAKE_ENV+=		ADDITIONAL_LDFLAGS="${ADDITIONAL_LDFLAGS}"
-.endif
-
-.if defined(WITH_GNUSTEP_XDPS)
-.if ${X_WINDOW_SYSTEM:L} == xorg
-XORG_LIBRARIES_PORT!=   (cd ${PORTSDIR}/${GNUSTEP_GUI_PORT} && make -V X_LIBRARIES_PORT)
-XORG_PORTVERSION!=      (cd ${XORG_LIBRARIES_PORT} && make -V PORTVERSION)
-XORG_VERSION=           ${XORG_PORTVERSION:S=.==g}
-.if ${XORG_VERSION} >= 690
-BROKEN=         xdps is no longer supported by xorg version 6.9.0 and above
-.endif
-.endif
 .endif
 
 pre-configure:
