@@ -138,6 +138,7 @@
     SUBDIR += gcolor2
     SUBDIR += gd
     SUBDIR += gdal
+    SUBDIR += gdal-grass
     SUBDIR += gdchart
     SUBDIR += gdk-pixbuf
     SUBDIR += gdtclft
