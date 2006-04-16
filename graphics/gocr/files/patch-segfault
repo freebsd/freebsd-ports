@@ -1,0 +1,19 @@
+--- src/pgm2asc.c	Fri Apr 14 11:07:42 2006
++++ src/pgm2asc.c	Fri Apr 14 11:06:15 2006
+@@ -1200,6 +1200,7 @@
+         } end_for_each(&(JOB->res.boxlist));
+ 	box4=box5;
+       	{
++          if (box2 != NULL && box4 != NULL){
+           if( /* umlaut "a "o "u, ij; box2 is the dot, box4 the body */
+             ( y1<=box2->m2
+               &&   box4->x1>=3*x0-2*x1  /* test if box4 is around box2 */
+@@ -1252,7 +1253,7 @@
+ 	    list_del(&(JOB->res.boxlist), box4); /* ret&1: error-message ??? */
+ 	    free(box4);
+           }
+-	}
++	  }}
+       }
+ // continue;
+       // horizontally broken w' K'
