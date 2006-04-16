@@ -9,6 +9,7 @@ bin/xasy
 %%DATADIR%%/boxes.asy
 %%DATADIR%%/constants.asy
 %%DATADIR%%/drawtree.asy
+%%DATADIR%%/embed.asy
 %%DATADIR%%/featpost3D.asy
 %%DATADIR%%/feynman.asy
 %%DATADIR%%/filldraw.asy
@@ -32,6 +33,7 @@ bin/xasy
 %%DATADIR%%/roundedpath.asy
 %%DATADIR%%/shipout.asy
 %%DATADIR%%/simplex.asy
+%%DATADIR%%/solids.asy
 %%DATADIR%%/stats.asy
 %%DATADIR%%/strings.asy
 %%DATADIR%%/three.asy
@@ -61,6 +63,7 @@ bin/xasy
 %%EXAMPLESDIR%%/cos2theta.asy
 %%EXAMPLESDIR%%/cosaddition.asy
 %%EXAMPLESDIR%%/cube.asy
+%%EXAMPLESDIR%%/cylinder.asy
 %%EXAMPLESDIR%%/datagraph.asy
 %%EXAMPLESDIR%%/delu.asy
 %%EXAMPLESDIR%%/diagonal.asy
@@ -124,6 +127,7 @@ bin/xasy
 %%EXAMPLESDIR%%/planes.asy
 %%EXAMPLESDIR%%/polararea.asy
 %%EXAMPLESDIR%%/polarcircle.asy
+%%EXAMPLESDIR%%/poster.asy
 %%EXAMPLESDIR%%/progrid.asy
 %%EXAMPLESDIR%%/quartercircle.asy
 %%EXAMPLESDIR%%/ring.asy
@@ -135,6 +139,7 @@ bin/xasy
 %%EXAMPLESDIR%%/shade.asy
 %%EXAMPLESDIR%%/shadedtiling.asy
 %%EXAMPLESDIR%%/sin1x.asy
+%%EXAMPLESDIR%%/sinc.asy
 %%EXAMPLESDIR%%/sinxlex.asy
 %%EXAMPLESDIR%%/sphere.asy
 %%EXAMPLESDIR%%/spiral.asy
