@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	piewm
-PORTVERSION=	1.03
+PORTVERSION=	1.04
 CATEGORIES=	x11-wm
-MASTER_SITES=	ftp://ftp.crynwr.com/piewm/
+MASTER_SITES=	http://www.crynwr.com/piewm/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tvtwm with pie (circular) menus
