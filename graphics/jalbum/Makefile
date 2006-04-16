@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jalbum
-PORTVERSION=	6.2
+PORTVERSION=	6.4
 CATEGORIES=	graphics java
 MASTER_SITES=	http://jalbum.net/download/
 DISTNAME=	JAlbum${PORTVERSION}
@@ -23,6 +23,8 @@ NO_BUILD=	yes
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.4+
+# breaks with the linux jvm
+JAVA_OS=	native
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 
 SUB_FILES=	jalbum.sh
