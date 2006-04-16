@@ -6,14 +6,18 @@
 #
 
 PORTNAME=	preferential
-#PKGNAMESUFFIX set to -firefox in ../mozex/Makefile.xpi
+PORTVERSION=	0.8.1
+CATEGORIES=	www
+MASTER_SITES=	http://mozdev.elliptic.fr/preferential/versions/	\
+		http://mozdev.oregonstate.edu/preferential/versions/	\
+		http://downloads.mozdev.org/preferential/versions/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GUI interface to view & edit all Firefox prefs
 
-MASTERDIR=	${.CURDIR}/../preferential
+XPI_ID=		{e3a1bec3-1cc1-4d20-875b-a10587471a5e}
+XPI_FILES=	chrome/preferential.jar install.js install.rdf chrome.manifest
+XPI_DIRS=	chrome
 
-BROKEN="Does not work with Firefox 1.5"
-WITH_FIREFOX=	yes
-
-.include "${MASTERDIR}/Makefile"
+.include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
+.include <bsd.port.mk>
