@@ -537,7 +537,7 @@ diff -Nru qemu-0.7.0/bsd.orig/amd64/s_ceill.S qemu-0.7.0/bsd/amd64/s_ceill.S
 +
 +#include <machine/asm.h>
 +
-+__FBSDID("$FreeBSD: /tmp/pcvs/ports/emulators/qemu-devel/files/Attic/patch-libmath,v 1.1 2005-05-03 04:02:46 nork Exp $")
++__FBSDID("$FreeBSD: /tmp/pcvs/ports/emulators/qemu-devel/files/Attic/patch-libmath,v 1.2 2006-04-16 02:38:02 nork Exp $")
 +
 +	.file	"s_ceill.c"
 +	.section	.rodata.cst8,"aM",@progbits,8
@@ -824,7 +824,7 @@ diff -Nru qemu-0.7.0/bsd.orig/amd64/s_floorl.S qemu-0.7.0/bsd/amd64/s_floorl.S
 +
 +#include <machine/asm.h>
 +
-+__FBSDID("$FreeBSD: /tmp/pcvs/ports/emulators/qemu-devel/files/Attic/patch-libmath,v 1.1 2005-05-03 04:02:46 nork Exp $")
++__FBSDID("$FreeBSD: /tmp/pcvs/ports/emulators/qemu-devel/files/Attic/patch-libmath,v 1.2 2006-04-16 02:38:02 nork Exp $")
 +
 +	.file	"s_floorl.c"
 +	.section	.rodata.cst8,"aM",@progbits,8
@@ -1085,7 +1085,7 @@ diff -Nru qemu-0.7.0/bsd.orig/amd64/s_isnormal.c qemu-0.7.0/bsd/amd64/s_isnormal
 + * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
 + * SUCH DAMAGE.
 + *
-+ * $FreeBSD: /tmp/pcvs/ports/emulators/qemu-devel/files/Attic/patch-libmath,v 1.1 2005-05-03 04:02:46 nork Exp $
++ * $FreeBSD: /tmp/pcvs/ports/emulators/qemu-devel/files/Attic/patch-libmath,v 1.2 2006-04-16 02:38:02 nork Exp $
 + */
 +
 +union IEEEf2bits {
@@ -1149,7 +1149,7 @@ diff -Nru qemu-0.7.0/bsd.orig/amd64/s_llrint.S qemu-0.7.0/bsd/amd64/s_llrint.S
 +++ qemu-0.7.0/bsd/amd64/s_llrint.S	Fri Apr 29 02:11:27 2005
 @@ -0,0 +1,6 @@
 +#include <machine/asm.h>
-+__FBSDID("$FreeBSD: /tmp/pcvs/ports/emulators/qemu-devel/files/Attic/patch-libmath,v 1.1 2005-05-03 04:02:46 nork Exp $")
++__FBSDID("$FreeBSD: /tmp/pcvs/ports/emulators/qemu-devel/files/Attic/patch-libmath,v 1.2 2006-04-16 02:38:02 nork Exp $")
 +	
 +/* sizeof(long) == sizeof(long long) */
 +#define	fn	llrint
@@ -1159,7 +1159,7 @@ diff -Nru qemu-0.7.0/bsd.orig/amd64/s_llrintf.S qemu-0.7.0/bsd/amd64/s_llrintf.S
 +++ qemu-0.7.0/bsd/amd64/s_llrintf.S	Fri Apr 29 02:11:27 2005
 @@ -0,0 +1,6 @@
 +#include <machine/asm.h>
-+__FBSDID("$FreeBSD: /tmp/pcvs/ports/emulators/qemu-devel/files/Attic/patch-libmath,v 1.1 2005-05-03 04:02:46 nork Exp $")
++__FBSDID("$FreeBSD: /tmp/pcvs/ports/emulators/qemu-devel/files/Attic/patch-libmath,v 1.2 2006-04-16 02:38:02 nork Exp $")
 +	
 +/* sizeof(long) == sizeof(long long) */
 +#define	fn	llrintf
@@ -1236,7 +1236,7 @@ diff -Nru qemu-0.7.0/bsd.orig/amd64/s_lrint.S qemu-0.7.0/bsd/amd64/s_lrint.S
 +#include <machine/asm.h>
 +
 +#ifndef fn
-+__FBSDID("$FreeBSD: /tmp/pcvs/ports/emulators/qemu-devel/files/Attic/patch-libmath,v 1.1 2005-05-03 04:02:46 nork Exp $")
++__FBSDID("$FreeBSD: /tmp/pcvs/ports/emulators/qemu-devel/files/Attic/patch-libmath,v 1.2 2006-04-16 02:38:02 nork Exp $")
 +#define	fn	lrint
 +#endif
 +
@@ -1276,7 +1276,7 @@ diff -Nru qemu-0.7.0/bsd.orig/amd64/s_lrintf.S qemu-0.7.0/bsd/amd64/s_lrintf.S
 +#include <machine/asm.h>
 +
 +#ifndef fn
-+__FBSDID("$FreeBSD: /tmp/pcvs/ports/emulators/qemu-devel/files/Attic/patch-libmath,v 1.1 2005-05-03 04:02:46 nork Exp $")
++__FBSDID("$FreeBSD: /tmp/pcvs/ports/emulators/qemu-devel/files/Attic/patch-libmath,v 1.2 2006-04-16 02:38:02 nork Exp $")
 +#define	fn	lrintf
 +#endif
 +
@@ -1341,7 +1341,7 @@ diff -Nru qemu-0.7.0/bsd.orig/amd64/s_round.c qemu-0.7.0/bsd/amd64/s_round.c
 + */
 +
 +#include <sys/cdefs.h>
-+__FBSDID("$FreeBSD: /tmp/pcvs/ports/emulators/qemu-devel/files/Attic/patch-libmath,v 1.1 2005-05-03 04:02:46 nork Exp $");
++__FBSDID("$FreeBSD: /tmp/pcvs/ports/emulators/qemu-devel/files/Attic/patch-libmath,v 1.2 2006-04-16 02:38:02 nork Exp $");
 +
 +#include <math.h>
 +
@@ -1354,14 +1354,14 @@ diff -Nru qemu-0.7.0/bsd.orig/amd64/s_round.c qemu-0.7.0/bsd/amd64/s_round.c
 +		return (x);
 +
 +	if (x >= 0.0) {
-+		t = ceil(x);
-+		if (t - x > 0.5)
-+			t -= 1.0;
++		t = floor(x);
++		if (t - x <= -0.5)
++			t += 1.0;
 +		return (t);
 +	} else {
-+		t = ceil(-x);
-+		if (t + x > 0.5)
-+			t -= 1.0;
++		t = floor(-x);
++		if (t + x <= -0.5)
++			t += 1.0;
 +		return (-t);
 +	}
 +}
@@ -1936,7 +1936,7 @@ diff -Nru qemu-0.7.0/bsd.orig/i386/s_ceill.S qemu-0.7.0/bsd/i386/s_ceill.S
 + */
 +	
 +#include <machine/asm.h>
-+RCSID("$FreeBSD: /tmp/pcvs/ports/emulators/qemu-devel/files/Attic/patch-libmath,v 1.1 2005-05-03 04:02:46 nork Exp $")
++RCSID("$FreeBSD: /tmp/pcvs/ports/emulators/qemu-devel/files/Attic/patch-libmath,v 1.2 2006-04-16 02:38:02 nork Exp $")
 +
 +ENTRY(ceill)
 +	pushl	%ebp
@@ -2003,7 +2003,7 @@ diff -Nru qemu-0.7.0/bsd.orig/i386/s_floorl.S qemu-0.7.0/bsd/i386/s_floorl.S
 + */
 +
 +#include <machine/asm.h>
-+RCSID("$FreeBSD: /tmp/pcvs/ports/emulators/qemu-devel/files/Attic/patch-libmath,v 1.1 2005-05-03 04:02:46 nork Exp $")
++RCSID("$FreeBSD: /tmp/pcvs/ports/emulators/qemu-devel/files/Attic/patch-libmath,v 1.2 2006-04-16 02:38:02 nork Exp $")
 +
 +ENTRY(floorl)
 +	pushl	%ebp
@@ -2054,7 +2054,7 @@ diff -Nru qemu-0.7.0/bsd.orig/i386/s_isnormal.c qemu-0.7.0/bsd/i386/s_isnormal.c
 + * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
 + * SUCH DAMAGE.
 + *
-+ * $FreeBSD: /tmp/pcvs/ports/emulators/qemu-devel/files/Attic/patch-libmath,v 1.1 2005-05-03 04:02:46 nork Exp $
++ * $FreeBSD: /tmp/pcvs/ports/emulators/qemu-devel/files/Attic/patch-libmath,v 1.2 2006-04-16 02:38:02 nork Exp $
 + */
 +
 +union IEEEf2bits {
@@ -2144,7 +2144,7 @@ diff -Nru qemu-0.7.0/bsd.orig/i386/s_llrint.S qemu-0.7.0/bsd/i386/s_llrint.S
 + */
 +
 +#include <machine/asm.h>
-+RCSID("$FreeBSD: /tmp/pcvs/ports/emulators/qemu-devel/files/Attic/patch-libmath,v 1.1 2005-05-03 04:02:46 nork Exp $"); 
++RCSID("$FreeBSD: /tmp/pcvs/ports/emulators/qemu-devel/files/Attic/patch-libmath,v 1.2 2006-04-16 02:38:02 nork Exp $"); 
 +	
 +ENTRY(llrint)
 +	fldl	4(%esp)
@@ -2184,7 +2184,7 @@ diff -Nru qemu-0.7.0/bsd.orig/i386/s_llrintf.S qemu-0.7.0/bsd/i386/s_llrintf.S
 + */
 +
 +#include <machine/asm.h>
-+RCSID("$FreeBSD: /tmp/pcvs/ports/emulators/qemu-devel/files/Attic/patch-libmath,v 1.1 2005-05-03 04:02:46 nork Exp $")
++RCSID("$FreeBSD: /tmp/pcvs/ports/emulators/qemu-devel/files/Attic/patch-libmath,v 1.2 2006-04-16 02:38:02 nork Exp $")
 +	
 +ENTRY(llrintf)
 +	flds	4(%esp)
@@ -2263,7 +2263,7 @@ diff -Nru qemu-0.7.0/bsd.orig/i386/s_lrint.S qemu-0.7.0/bsd/i386/s_lrint.S
 + */
 +
 +#include <machine/asm.h>
-+RCSID("$FreeBSD: /tmp/pcvs/ports/emulators/qemu-devel/files/Attic/patch-libmath,v 1.1 2005-05-03 04:02:46 nork Exp $"); 
++RCSID("$FreeBSD: /tmp/pcvs/ports/emulators/qemu-devel/files/Attic/patch-libmath,v 1.2 2006-04-16 02:38:02 nork Exp $"); 
 +	
 +ENTRY(lrint)
 +	fldl	4(%esp)
@@ -2302,7 +2302,7 @@ diff -Nru qemu-0.7.0/bsd.orig/i386/s_lrintf.S qemu-0.7.0/bsd/i386/s_lrintf.S
 + */
 +
 +#include <machine/asm.h>
-+RCSID("$FreeBSD: /tmp/pcvs/ports/emulators/qemu-devel/files/Attic/patch-libmath,v 1.1 2005-05-03 04:02:46 nork Exp $")
++RCSID("$FreeBSD: /tmp/pcvs/ports/emulators/qemu-devel/files/Attic/patch-libmath,v 1.2 2006-04-16 02:38:02 nork Exp $")
 +	
 +ENTRY(lrintf)
 +	flds	4(%esp)
@@ -2401,7 +2401,7 @@ diff -Nru qemu-0.7.0/bsd.orig/i386/s_round.c qemu-0.7.0/bsd/i386/s_round.c
 + */
 +
 +#include <sys/cdefs.h>
-+__FBSDID("$FreeBSD: /tmp/pcvs/ports/emulators/qemu-devel/files/Attic/patch-libmath,v 1.1 2005-05-03 04:02:46 nork Exp $");
++__FBSDID("$FreeBSD: /tmp/pcvs/ports/emulators/qemu-devel/files/Attic/patch-libmath,v 1.2 2006-04-16 02:38:02 nork Exp $");
 +
 +#include <math.h>
 +
@@ -2414,14 +2414,14 @@ diff -Nru qemu-0.7.0/bsd.orig/i386/s_round.c qemu-0.7.0/bsd/i386/s_round.c
 +		return (x);
 +
 +	if (x >= 0.0) {
-+		t = ceil(x);
-+		if (t - x > 0.5)
-+			t -= 1.0;
++		t = floor(x);
++		if (t - x <= -0.5)
++			t += 1.0;
 +		return (t);
 +	} else {
-+		t = ceil(-x);
-+		if (t + x > 0.5)
-+			t -= 1.0;
++		t = floor(-x);
++		if (t + x <= -0.5)
++			t += 1.0;
 +		return (-t);
 +	}
 +}
