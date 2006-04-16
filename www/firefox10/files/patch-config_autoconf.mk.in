@@ -1,6 +1,6 @@
---- config/autoconf.mk.in.orig	Thu Jul 14 00:50:06 2005
-+++ config/autoconf.mk.in	Thu Jul 14 00:50:40 2005
-@@ -50,13 +50,13 @@
+--- config/autoconf.mk.in.orig	Mon Mar 15 22:56:25 2004
++++ config/autoconf.mk.in	Fri Mar 19 15:17:50 2004
+@@ -31,13 +31,13 @@
  prefix		= @prefix@
  exec_prefix	= @exec_prefix@
  bindir		= @bindir@

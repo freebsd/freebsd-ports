@@ -123,6 +123,7 @@
     SUBDIR += firefox
     SUBDIR += firefox-devel
     SUBDIR += firefox-remote
+    SUBDIR += firefox10
     SUBDIR += flashplugin
     SUBDIR += flashplugin-mozilla
     SUBDIR += flood
