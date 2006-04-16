@@ -31,6 +31,7 @@ MOZPORT!=	${BASENAME} ${MOZDIR}
 MOZLDIR=	lib/${MOZPORT}
 .else
 # Firefox
+DEPRECATED=	"must be converted to include www/xpi-adblock/Makefile.xpi"
 PKGNAMESUFFIX=	-firefox
 . if exists(${X11BASE}/lib)
 MOZDIR!=	${FIND} ${X11BASE}/lib -name firefox-bin -exec dirname {} \; | ${HEAD} -n 1
