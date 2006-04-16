@@ -8,7 +8,7 @@
 PORTNAME=	uim
 PORTVERSION=	1.0.1
 PORTREVISION=	2
-CATEGORIES=	textproc
+CATEGORIES?=	textproc
 MASTER_SITES=	http://uim.freedesktop.org/releases/
 
 MAINTAINER=	nobutaka@FreeBSD.org
