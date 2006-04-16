@@ -1,0 +1,10 @@
+Fasterfox allows you to tweak many network and rendering
+settings such as simultaneous connections, pipelining,
+cache, DNS cache, and initial paint delay.
+
+Dynamic speed increases can be obtained with the unique
+prefetching mechanism, which recycles idle bandwidth by
+silently loading and caching all of the links on the page
+you are browsing.
+
+WWW: http://fasterfox.mozdev.org/
