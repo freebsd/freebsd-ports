@@ -1,0 +1,35 @@
+==============================================================================
+
+GnGeo has been installed.
+
+1) You need to manually download neogeo-bios or neogeo-unibios. It's available
+   at:
+
+   - neogeo-bios:	http://www.ocf.berkeley.edu/~wwu/downloads/neogeo.zip
+   - neogeo-unibios:	http://unibios.free.fr/download.html
+
+   Please keep in mind that the NEOGEO BIOS is copyrighted software.
+
+2) Choose one and extract the files and place them into
+   %%DATADIR%% directory.
+
+3) If you use the neogeo-bios, you need rename some files.
+
+   - neo-geo.rom	-> sp-s2.sp1
+   - ng-lo.rom		-> 000-lo.lo
+   - ng-sfix.rom	-> sfix.sfx
+   - ng-sm1.rom		-> ng-sm1.rom
+
+4) Run gngeo.
+
+   Using neogeo-bios:
+   # gngeo <romname>
+
+   Using neogeo-unibios:
+   # gngeo --system unibios <romname>
+
+   Note: Use rom's name (romname) without zip extension.
+
+5) Enjoy it ;)
+
+==============================================================================
