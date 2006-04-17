@@ -1,3 +1,6 @@
 MD5 (MPlayer-1.0pre7try2.tar.bz2) = aaca4fd327176c1afb463f0f047ef6f4
 SHA256 (MPlayer-1.0pre7try2.tar.bz2) = 006da26e16bd1b1a8aec5d59b72b0b2ae7716f4e7634859a3e88b6fbbec4d89a
 SIZE (MPlayer-1.0pre7try2.tar.bz2) = 6868786
+MD5 (MPlayer-1.0pre7try2-gtk2.patch) = aa7ae259b66f3a88d4dff39faeea7354
+SHA256 (MPlayer-1.0pre7try2-gtk2.patch) = 15f13b741b0ed8ec5726e5c68d03d559c32582a3e2d1e3014685531c69a47ab2
+SIZE (MPlayer-1.0pre7try2-gtk2.patch) = 6177
