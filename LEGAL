@@ -664,8 +664,6 @@ zh-moettf/*		chinese/moettf		Contact Taiwan Ministry of
 NTU*.TTF		chinese/ntuttf		No commercial use
 ztelnet-*		net/ztelnet		zmodem code has restrictive
 						copyright
-gngeo-*                 emulators/gngeo         The Neo-Geo BIOS
-						can not be redistributed
 twelf-*			lang/twelf		License is currently
 						indeterminate
 pfpro-*			finance/pfpro		Only available for customers
