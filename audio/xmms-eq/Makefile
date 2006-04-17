@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	eq
-PORTVERSION=	0.6
-PORTREVISION=	1
+PORTVERSION=	0.7
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	equ
@@ -19,28 +18,35 @@ COMMENT=	A realtime graphical equalizer plugin for XMMS
 
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 
-USE_BZIP2=	yes
-USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
+USE_BZIP2=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	lib/xmms/Effect/libeq.la \
 		lib/xmms/Effect/libeq.so
 
-OPTIONS=	OPTIMIZED_CFLAGS "use optimized C flags" on \
-		EXT_INSTRUCTIONS "use MMX/SSE/SSE2 instructions if available" on
+OPTIONS=	BENCHMARK "Enable counting the cycles used by the IIR" off \
+		EXT_INS "Use MMX/SSE/SSE2 instructions if available" on \
+		OPTIMIZED_CFLAGS "Enable compilation optimizations" on
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITHOUT_EXT_INSTRUCTIONS) || defined(PACKAGE_BUILDING)
+.if defined(WITH_BENCHMARK)
+CONFIGURE_ARGS+=	--enable-benchmark
+.endif
+
+.if defined(WITHOUT_EXT_INS) || defined(PACKAGE_BUILDING)
 CONFIGURE_ARGS+=	--disable-autodetect
 .endif
 
 .if defined(WITHOUT_OPTIMIZED_CFLAGS)
 post-patch:
-	@${REINPLACE_CMD} -e 's|-O3||g; s|-fomit-frame-pointer||g; \
-		s|-finline-functions||g; s|-ffast-math||g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-O3||g; \
+		s|-fomit-frame-pointer||g; \
+		s|-finline-functions||g; \
+		s|-ffast-math||g' \
+		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 .endif
 
 post-install:
