@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		smb4k
-PORTVERSION=		0.6.8
+PORTVERSION=		0.6.10
 CATEGORIES=		net kde
 MASTER_SITES=		http://download.berlios.de/smb4k/
 
@@ -23,10 +23,9 @@ USE_GETTEXT=		yes
 CONFIGURE_ARGS += 	--with-qt-dir=${QT_PREFIX} \
 			--with-extra-includes=${LOCALBASE}/include \
 			--with-extra-libs=${LOCALBASE}/lib
-DOCSDIR=		share/doc/HTML/en/${PORTNAME}
-PLIST_SUB=		DOCSDIR=${DOCSDIR}
-
+DOCSDIR=		${PREFIX}/share/doc/HTML/en/${PORTNAME}
 INSTALLS_SHLIB=		yes
+PKGMESSAGE=		${WRKDIR}/pkg-message
 
 .include <bsd.port.pre.mk>
 
@@ -38,7 +37,9 @@ post-install:
 .for i in smb2awk smb2nsmbrc
 	${INSTALL_SCRIPT} ${FILESDIR}/${i} ${PREFIX}/bin
 .endfor
-	${INSTALL_DATA} ${FILESDIR}/README.FreeBSD ${PREFIX}/${DOCSDIR}
-	@${SED} -e "s,%%PREFIX%%,${PREFIX},g" ${PKGMESSAGE}
+	${INSTALL_DATA} ${FILESDIR}/README.FreeBSD ${DOCSDIR}
+
+	@${SED} -e "s,%%PREFIX%%,${PREFIX},g" pkg-message > ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
