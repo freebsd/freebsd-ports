@@ -16,6 +16,8 @@ DISTNAME=	pysnmp-${PORTVERSION}
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	SNMP framework for Python
 
+CONFLICTS=	py??-snmp4-[0-9]*
+
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
