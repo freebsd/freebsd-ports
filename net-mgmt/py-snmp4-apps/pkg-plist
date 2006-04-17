@@ -1,0 +1,40 @@
+bin/pysnmpbulkwalk
+bin/pysnmpget
+bin/pysnmpset
+bin/pysnmpwalk
+%%PYTHON_SITELIBDIR%%/pysnmp_apps/__init__.py
+%%PYTHON_SITELIBDIR%%/pysnmp_apps/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pysnmp_apps/__init__.pyo
+%%PYTHON_SITELIBDIR%%/pysnmp_apps/v4/__init__.py
+%%PYTHON_SITELIBDIR%%/pysnmp_apps/v4/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pysnmp_apps/v4/__init__.pyo
+%%PYTHON_SITELIBDIR%%/pysnmp_apps/v4/cli/__init__.py
+%%PYTHON_SITELIBDIR%%/pysnmp_apps/v4/cli/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pysnmp_apps/v4/cli/__init__.pyo
+%%PYTHON_SITELIBDIR%%/pysnmp_apps/v4/cli/base.py
+%%PYTHON_SITELIBDIR%%/pysnmp_apps/v4/cli/base.pyc
+%%PYTHON_SITELIBDIR%%/pysnmp_apps/v4/cli/base.pyo
+%%PYTHON_SITELIBDIR%%/pysnmp_apps/v4/cli/main.py
+%%PYTHON_SITELIBDIR%%/pysnmp_apps/v4/cli/main.pyc
+%%PYTHON_SITELIBDIR%%/pysnmp_apps/v4/cli/main.pyo
+%%PYTHON_SITELIBDIR%%/pysnmp_apps/v4/cli/mibview.py
+%%PYTHON_SITELIBDIR%%/pysnmp_apps/v4/cli/mibview.pyc
+%%PYTHON_SITELIBDIR%%/pysnmp_apps/v4/cli/mibview.pyo
+%%PYTHON_SITELIBDIR%%/pysnmp_apps/v4/cli/msgmod.py
+%%PYTHON_SITELIBDIR%%/pysnmp_apps/v4/cli/msgmod.pyc
+%%PYTHON_SITELIBDIR%%/pysnmp_apps/v4/cli/msgmod.pyo
+%%PYTHON_SITELIBDIR%%/pysnmp_apps/v4/cli/pdu.py
+%%PYTHON_SITELIBDIR%%/pysnmp_apps/v4/cli/pdu.pyc
+%%PYTHON_SITELIBDIR%%/pysnmp_apps/v4/cli/pdu.pyo
+%%PYTHON_SITELIBDIR%%/pysnmp_apps/v4/cli/secmod.py
+%%PYTHON_SITELIBDIR%%/pysnmp_apps/v4/cli/secmod.pyc
+%%PYTHON_SITELIBDIR%%/pysnmp_apps/v4/cli/secmod.pyo
+%%PYTHON_SITELIBDIR%%/pysnmp_apps/v4/cli/spark.py
+%%PYTHON_SITELIBDIR%%/pysnmp_apps/v4/cli/spark.pyc
+%%PYTHON_SITELIBDIR%%/pysnmp_apps/v4/cli/spark.pyo
+%%PYTHON_SITELIBDIR%%/pysnmp_apps/v4/cli/target.py
+%%PYTHON_SITELIBDIR%%/pysnmp_apps/v4/cli/target.pyc
+%%PYTHON_SITELIBDIR%%/pysnmp_apps/v4/cli/target.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/pysnmp_apps/v4/cli
+@dirrm %%PYTHON_SITELIBDIR%%/pysnmp_apps/v4
+@dirrm %%PYTHON_SITELIBDIR%%/pysnmp_apps
