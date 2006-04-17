@@ -2993,6 +2993,7 @@ giram		ports/graphics/giram
 git		ports/misc/git
 gj		ports/java/gj
 gj-jdk11	ports/java/gj-jdk11
+gjdoc		ports/java/gjdoc
 gkermit		ports/comms/gkermit
 gkfreq		ports/sysutils/gkfreq
 gkleds2		ports/sysutils/gkleds2
