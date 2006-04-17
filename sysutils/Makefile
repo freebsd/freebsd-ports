@@ -103,6 +103,7 @@
     SUBDIR += dd_rescue
     SUBDIR += deleted
     SUBDIR += deltup
+    SUBDIR += desktopbsd-tools
     SUBDIR += detach
     SUBDIR += detox
     SUBDIR += di
