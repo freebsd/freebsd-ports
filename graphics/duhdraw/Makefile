@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	duhdraw
-PORTVERSION=	2.7.9
+PORTVERSION=	2.8.13
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.cs.helsinki.fi/u/penberg/duhdraw/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An ANSI graphic drawing program
 
-USE_REINPLACE=	yes
 MAKE_ARGS=	CC="${CC} ${CFLAGS}"
 
 PLIST_FILES=	bin/ansi bin/ansitoc bin/duhdraw
