@@ -1,16 +1,16 @@
-# Ports collection makefile for:  preferential-firefox
-# Date created:			  Tue Oct 28, 2003
-# Whom:				  Thierry Thomas (<thierry@pompo.net>)
+# Ports collection makefile for:	preferential-firefox
+# Date created:				Tue Oct 28, 2003
+# Whom:					Thierry Thomas (<thierry@pompo.net>)
 #
 # $FreeBSD$
 #
 
 PORTNAME=	preferential
 PORTVERSION=	0.8.1
+DISTVERSIONSUFFIX=	-fx+mz+tb
 CATEGORIES=	www
-MASTER_SITES=	http://mozdev.elliptic.fr/preferential/versions/	\
-		http://mozdev.oregonstate.edu/preferential/versions/	\
-		http://downloads.mozdev.org/preferential/versions/
+MASTER_SITE_SUBDIR=	extensions/preferential_new_guid_
+DISTNAME=	preferential_new_guid_-${PORTVERSION}${DISTVERSIONSUFFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GUI interface to view & edit all Firefox prefs
