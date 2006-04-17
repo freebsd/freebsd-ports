@@ -31,6 +31,7 @@ libexec/p7zip/7zCon.sfx
 %%MODULES%%libexec/p7zip/Formats/split.so
 %%MODULES%%libexec/p7zip/Formats/lzh.so
 %%MODULES%%libexec/p7zip/Formats/z.so
+%%MODULES%%libexec/p7zip/Formats/iso.so
 %%MODULES%%@dirrm libexec/p7zip/Formats
 %%MODULES%%@dirrm libexec/p7zip/Codecs
 @dirrm libexec/p7zip
