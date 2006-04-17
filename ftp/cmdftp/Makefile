@@ -11,7 +11,7 @@ CATEGORIES=	ftp
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	infofarmer@gmail.com
 COMMENT=	Command line shell-like ftp client
 
 GNU_CONFIGURE=	yes
