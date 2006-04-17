@@ -1,0 +1,11 @@
+--- configure.orig     Tue Nov  1 02:34:47 2005
++++ configure  Fri Feb 10 16:26:00 2006
+@@ -26327,7 +26327,7 @@
+ then
+  NSDEJAVU_CFLAGS=${X_CFLAGS}
+  case "$host" in
+- *-cygwin* | *-mingw*)
++ *-cygwin* | *-mingw* | *-freebsd*)
+    NSDEJAVU_LIBS="`echo ${X_LIBS} | sed -e 's/-lXext/-lXt -lXext/'`"
+    NSDEJAVU_LIBS="-no-undefined $NSDEJAVU_LIBS"
+    ;;
