@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Image-ExifTool
-PORTVERSION=	6.00
+PORTVERSION=	6.01
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://www.sno.phy.queensu.ca/~phil/exiftool/ \
 		${MASTER_SITE_PERL_CPAN}
@@ -44,7 +44,7 @@ post-install:
 
 # Maintainer section
 mantags:
-	@cd ${LOCALBASE}/lib/perl5/5.8.7/man/man3/ && \
-	ls Image::ExifTool::* | cut -f5 -d: | cut -f1 -d. | ${TR} "\n" " "
+	@cd ${LOCALBASE}/lib/perl5/${PERL_VERSION}/man/man3/ && \
+		ls Image::ExifTool::* | cut -f5 -d: | cut -f1 -d. | ${TR} "\n" " "
 
 .include <bsd.port.mk>
