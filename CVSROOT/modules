@@ -6925,13 +6925,9 @@ neowebscript	ports/www/neowebscript
 nepenthes	ports/net/nepenthes
 nepim		ports/net/nepim
 nessus		ports/security/nessus
-nessus-devel	ports/security/nessus-devel
 nessus-libnasl	ports/security/nessus-libnasl
-nessus-libnasl-devel	ports/security/nessus-libnasl-devel
 nessus-libraries	ports/security/nessus-libraries
-nessus-libraries-devel	ports/security/nessus-libraries-devel
 nessus-plugins	ports/security/nessus-plugins
-nessus-plugins-devel	ports/security/nessus-plugins-devel
 net-http	ports/net/net-http
 net-snmp	ports/net-mgmt/net-snmp
 net-snmp-tkmib	ports/net-mgmt/net-snmp-tkmib

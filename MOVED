@@ -2250,3 +2250,7 @@ www/flashpluginwrapper||2006-04-08|Removed as it depends on linux-flashplugin
 mail/mew-mule||2006-04-10|Has expired: Does not work on the current emacs port
 net/smbfs||2006-04-14|Incorporated into base system long ago
 www/adblock-firefox|www/xpi-adblock|2006-04-16|Follow the new xpi infrastructure
+security/nessus-devel||2006-04-17|Has expired: Development version of nessus is no longer available in sources
+security/nessus-libnasl-devel||2006-04-17|Has expired: Development version of nessus is no longer available in sources
+security/nessus-libraries-devel||2006-04-17|Has expired: Development version of nessus is no longer available in sources
+security/nessus-plugins-devel||2006-04-17|Has expired: Development version of nessus is no longer available in sources
