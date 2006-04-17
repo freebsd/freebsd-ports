@@ -2808,6 +2808,7 @@ gcc33		ports/lang/gcc33
 gcc34		ports/lang/gcc34
 gcc40		ports/lang/gcc40
 gcc41		ports/lang/gcc41
+gcc41-withgcjawt	ports/lang/gcc41-withgcjawt
 gcc42		ports/lang/gcc42
 gccxml		ports/devel/gccxml
 gcdmaster	ports/sysutils/gcdmaster
