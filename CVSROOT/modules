@@ -6083,6 +6083,7 @@ lua		ports/lang/lua
 lua-mode.el	ports/lang/lua-mode.el
 lua4		ports/lang/lua4
 lua50-compat51	ports/devel/lua50-compat51
+lua50-filename	ports/devel/lua50-filename
 lua50-posix	ports/devel/lua50-posix
 lua50-pty	ports/devel/lua50-pty
 luasocket	ports/net/luasocket
