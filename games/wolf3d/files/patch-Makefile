@@ -1,12 +1,12 @@
 --- Makefile.orig	Thu Sep 27 20:58:29 2001
-+++ Makefile	Sun Apr  9 10:34:17 2006
++++ Makefile	Thu Apr 13 15:49:57 2006
 @@ -1,7 +1,8 @@
 -CC = gcc
 +#CC = gcc
  #CC = gcc-3.0
  
 -CFLAGS = -g -Wall -pedantic
-+CFLAGS += -O2 -fomit-frame-pointer -ffast-math -funroll-loops
++CFLAGS += $(OPT_CF) $(WF)
 +#CFLAGS = -g -Wall -pedantic
  #CFLAGS = -g -O2 -Wall -pedantic 
  #CFLAGS = -Wall -O6 -fomit-frame-pointer -ffast-math -funroll-loops -mpentiumpro -mcpu=pentiumpro -march=pentiumpro
