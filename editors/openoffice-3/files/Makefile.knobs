@@ -6,7 +6,7 @@
 CONFIGURE_ARGS+=	--with-jdk-home="${JAVA_HOME}" --with-ant-home=${LOCALBASE}/ant
 .endif
 .if !defined(WITHOUT_JAVA) && defined(WITH_GNUGCJ)
-CONFIGURE_ARGS+=	--with-jdk-home="${LOCALBASE}" --with-java=gij --with-ant-home="${WRKDIR}/apache-ant-${ANT_VERSION}"
+CONFIGURE_ARGS+=	--with-jdk-home="${WRKDIR}/gnugcj" --with-java=gij --with-ant-home="${WRKDIR}/apache-ant-${ANT_VERSION}"
 .endif
 .if defined(WITHOUT_JAVA)
 CONFIGURE_ARGS+=	--without-java
@@ -98,12 +98,11 @@ pre-fetch:
 #	@${ECHO} "You can compile OOo without Java support with"
 #	@${ECHO} "make -DWITHOUT_JAVA"
 #.endif
-#XXX currently broken
-#.if !defined(WITH_GNUGCJ)
-#	@${ECHO}
-#	@${ECHO} "You can compile OOo with GNU GCJ instead of SUN's JDK with"
-#	@${ECHO} "make -DWITH_GNUGCJ"
-#.endif
+.if !defined(WITH_GNUGCJ)
+	@${ECHO}
+	@${ECHO} "You can compile OOo with GNU GCJ instead of SUN's JDK with"
+	@${ECHO} "make -DWITH_GNUGCJ"
+.endif
 .if !defined(WITH_CUPS)
 	@${ECHO}
 	@${ECHO} "You can compile OOo with CUPS support with"
