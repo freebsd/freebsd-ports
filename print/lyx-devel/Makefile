@@ -7,6 +7,7 @@
 
 PORTNAME=	lyx
 PORTVERSION=	1.4.1
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/stable/ \
 		ftp://planetmirror.com/pub/lyx/stable/ \
@@ -18,6 +19,7 @@ COMMENT=	Document processor interfaced with LaTeX (nearly WYSIWYG)
 
 BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX
+LIB_DEPENDS=	boost_regex:${PORTSDIR}/devel/boost
 
 CONFLICTS=	cjk-lyx-*
 
@@ -31,13 +33,27 @@ USE_PYTHON=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-EXTRACT_AFTER_ARGS=| ${TAR} -xf - --exclude ${PORTNAME}-${PORTVERSION}/intl/*.[ch]
+EXTRACT_AFTER_ARGS=| ${TAR} -xf - --exclude ${PORTNAME}-${PORTVERSION}/intl/*.[ch] --exclude ${PORTNAME}-${PORTVERSION}/boost
 CONFIGURE_ARGS=	--with-extra-lib="${LOCALBASE}/lib" \
+		--without-included-boost \
 		--with-extra-inc="${LOCALBASE}/include"
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}"
 MAN1=		lyx.1 tex2lyx.1 lyxclient.1
 USE_REINPLACE=	yes
+
+#post-extract:
+#	# Removing mention of the bundled boost
+#	${REINPLACE_CMD} -e '/boost\/.*Makefile/d' ${WRKSRC}/configure.ac
+
+post-patch:
+	# Removing mention of the bundled boost
+	${REINPLACE_CMD} -e 's, boost/[^ ]*Makefile,,g' ${WRKSRC}/configure
+	${REINPLACE_CMD} -e 's,detail/nullstream,utils/nullstream,' \
+	    ${WRKSRC}/src/pch.h ${WRKSRC}/src/support/pch.h \
+	    ${WRKSRC}/src/support/debugstream.h
+	${REINPLACE_CMD} -e 's,boost/regex\.hpp,boost/cregex.hpp,' \
+	    ${WRKSRC}/src/support/filetools.C
 
 post-configure:
 	# Removing explicit linking with -lc
