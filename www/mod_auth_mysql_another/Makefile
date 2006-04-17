@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME:S/_//g}
 PKGNAMESUFFIX=	_another
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mbr@FreeBSD.org
 COMMENT=	Allows users to use MySQL databases for user authentication
 
 USE_MYSQL=	YES
