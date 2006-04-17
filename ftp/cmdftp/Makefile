@@ -6,27 +6,27 @@
 #
 
 PORTNAME=	cmdftp
-PORTVERSION=	0.9.2
+PORTVERSION=	0.9.3
 CATEGORIES=	ftp
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	cmdftp
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command line shell-like ftp client
 
-USE_REINPLACE=yes
-GNU_CONFIGURE=yes
-USE_GMAKE=yes
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
 
-DOCS=	ChangeLog README INSTALL NEWS COPYING AUTHORS
+PORTDOCS=	ChangeLog README INSTALL NEWS COPYING AUTHORS
+PLIST_FILES=	bin/cmdftp
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/cmdftp ${PREFIX}/bin
-
-post-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
+. for f in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+. endfor
 .endif
 
 .include <bsd.port.mk>
