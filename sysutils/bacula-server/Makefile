@@ -22,6 +22,8 @@ UNIQUENAME?=${PORTNAME}${PKGNAMESUFFIX}
 
 USE_RC_SUBR?=	bacula-dir bacula-sd
 
+SUB_FILES+=	pkg-message
+
 # The user/group IDs below are registered, see
 # http://www.freebsd.org/doc/en_US.ISO8859-1/books/porters-handbook/book.html#DADS-UID
 #
@@ -340,14 +342,14 @@ post-install:
 	@${ECHO_MSG} "For USB support read the bacula manual!! It could be necessary"
 	@${ECHO_MSG} "to configure/compile a new kernel!"
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Look at $PREFIX/share/bacula/update_bacula_tables for"
+	@${ECHO_MSG} "Look at ${PREFIX}/share/bacula/update_bacula_tables for"
 	@${ECHO_MSG} "database update procedure. Details can be found in the"
 	@${ECHO_MSG} "ReleaseNotes"
 .endif
 	@${ECHO_MSG} "*********************************************************************"
 
 .if !defined(WITH_CLIENT_ONLY)
-	${CAT} pkg-message
+	${CAT} ${PKGMESSAGE}
 .endif
 
 .include <bsd.port.post.mk>

@@ -1,20 +1,20 @@
 ################################################################################
-  Please read the file"
+  Please read this file:
 
-	${DOCSDIR}/ReleaseNotes"
+	%%DOCSDIR%%/ReleaseNotes
 
   for the upgrade procedure!
 
   IF YOU IGNORE THIS you may !! LOSE DATA !!
 
-  For USB support read the manual. It could be necessary 
-  to configure/compile a new kernel!
+  WARNING: That file also contains important information regarding
+  Windows FD, blackslashes in FileSets, and Scratch Pools.
+
+  For USB support read the manual. It may be necessary
+  to configure/compile a new kernel.
 
   Please note that bacula-server no longer installs the client
-  and that the documentation can be optionally installed with the 
+  and that the documentation can be optionally installed with the
   client port (sysutils/bacula-client).
-
-  WARNING: please read ReleaseNotes for important information
-  regarding Windows FD, blackslashes in FileSets, and Scratch Pools.
 
 ################################################################################
