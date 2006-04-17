@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	h.eichmann@gmx.de
 COMMENT=	A KDE3 graphical frontend for diff
 
-USE_KDELIBS_VER=3
+USE_KDEBASE_VER=3
 USE_AUTOTOOLS=	libtool:15
 USE_REINPLACE=	yes
 
