@@ -67,6 +67,7 @@ MAINTAINER?=	gnome@FreeBSD.org
 
 MOZILLA?=	${PORTNAME}
 MOZILLA_VER?=	${PORTVERSION}
+MOZILLA_BIN?=	${PORTNAME}-bin
 MOZ_RPATH?=	${MOZILLA}
 USE_GNOME+=	gtk20 libidl desktopfileutils
 USE_ICONV=	yes
@@ -236,6 +237,7 @@ MOZ_SED_ARGS+=	-e's|@CPPFLAGS@|${CPPFLAGS}|g'		\
 		-e 's|%%PERL%%|${PERL5}|g'		\
 		-e 's|%%KRB5_HOME%%|${KRB5_HOME}|g'	\
 		-e 's|%%MOZILLA%%|${MOZILLA}|g'		\
+		-e 's|%%MOZILLA_BIN%%|${MOZILLA_BIN}|g'	\
 		-e 's|%%MOZDIR%%|${PREFIX}/lib/${MOZILLA}|g'
 MOZCONFIG_SED?= ${SED} ${MOZ_SED_ARGS}
 

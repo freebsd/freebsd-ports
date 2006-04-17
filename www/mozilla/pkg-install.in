@@ -14,7 +14,7 @@ PATH=/bin:/usr/bin
 [ "x$2" != "xPOST-INSTALL" ] && exit 0
 
 MOZDIR=%%MOZDIR%%
-MOZBIN=${MOZDIR}/%%MOZILLA%%-bin
+MOZBIN=${MOZDIR}/%%MOZILLA_BIN%%
 REGXPCOM=${MOZDIR}/regxpcom
 REGCHROME=${MOZDIR}/regchrome
 
