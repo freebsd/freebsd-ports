@@ -464,6 +464,9 @@ share/pixmaps/tuxpaint.png
 %%DATADIR%%/fonts/locale/hi.ttf
 %%DATADIR%%/fonts/locale/hi_docs/COPYING.txt
 %%DATADIR%%/fonts/locale/hi_docs/README.txt
+%%DATADIR%%/fonts/locale/ka.ttf
+%%DATADIR%%/fonts/locale/ka_docs/COPYING.txt
+%%DATADIR%%/fonts/locale/ka_docs/README.txt
 %%DATADIR%%/fonts/locale/ta.ttf
 %%DATADIR%%/fonts/locale/ta_docs/COPYING.txt
 %%DATADIR%%/fonts/locale/ta_docs/README.txt
@@ -674,6 +677,7 @@ share/pixmaps/tuxpaint.png
 @dirrm %%DATADIR%%/fonts/locale/vi_docs
 @dirrm %%DATADIR%%/fonts/locale/th_docs
 @dirrm %%DATADIR%%/fonts/locale/ta_docs
+@dirrm %%DATADIR%%/fonts/locale/ka_docs
 @dirrm %%DATADIR%%/fonts/locale/hi_docs
 @dirrm %%DATADIR%%/fonts/locale/he_docs
 @dirrm %%DATADIR%%/fonts/locale/el_docs
@@ -681,14 +685,14 @@ share/pixmaps/tuxpaint.png
 @dirrm %%DATADIR%%/fonts
 @dirrm %%DATADIR%%/brushes
 @dirrm %%DATADIR%%
-@dirrmtry share/locale/sw/LC_MESSAGES
-@dirrmtry share/locale/sw
-@dirrmtry share/locale/gos/LC_MESSAGES
-@dirrmtry share/locale/gos
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
 @dirrmtry share/locale/tlh/LC_MESSAGES
 @dirrmtry share/locale/tlh
+@dirrmtry share/locale/sw/LC_MESSAGES
+@dirrmtry share/locale/sw
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
+@dirrmtry share/locale/gos/LC_MESSAGES
+@dirrmtry share/locale/gos
 @dirrm %%DOCSDIR%%/zh_tw/html
 @dirrm %%DOCSDIR%%/zh_tw
 @dirrm %%DOCSDIR%%/zh_cn

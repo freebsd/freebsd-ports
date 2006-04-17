@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tuxpaint
-PORTVERSION=	0.9.15
+PORTVERSION=	0.9.15b
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,7 +17,6 @@ COMMENT=	Drawing program designed for young children
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_SDL=	image mixer sdl ttf
-USE_REINPLACE=	yes
 
 MAN1=		tuxpaint.1 tuxpaint-import.1
 MANCOMPRESSED=	yes
