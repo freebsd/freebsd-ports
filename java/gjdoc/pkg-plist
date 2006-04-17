@@ -1,0 +1,12 @@
+bin/gjdoc
+info/gjdoc.info
+lib/lib-com-sun-javadoc.so.0
+lib/lib-com-sun-javadoc.la
+lib/lib-com-sun-tools-doclets-Taglet.so.0
+lib/lib-com-sun-tools-doclets-Taglet.la
+lib/lib-gnu-classpath-tools-gjdoc.so.0
+lib/lib-gnu-classpath-tools-gjdoc.la
+share/java/com-sun-javadoc-0.7.7.jar
+share/java/com-sun-tools-doclets-Taglet-0.7.7.jar
+share/java/gnu-classpath-tools-gjdoc-0.7.7.jar
+share/java/antlr-2.7.5.jar

@@ -1,0 +1,22 @@
+--- Makefile.in~	Sun Feb 19 21:54:20 2006
++++ Makefile.in	Sun Feb 19 21:55:14 2006
+@@ -616,7 +616,8 @@
+ LTGCJCOMPILE = $(LIBGCJCOMPILE) -MF $(@:.lo=.d)
+ jar_DATA = com-sun-javadoc-$(VERSION).jar \
+ 	com-sun-tools-doclets-Taglet-$(VERSION).jar \
+-	gnu-classpath-tools-gjdoc-$(VERSION).jar
++	gnu-classpath-tools-gjdoc-$(VERSION).jar \
++        $(ANTLR_JAR)
+ 
+ jardir = $(datadir)/java
+ BUILT_SOURCES = $(jar_DATA)
+@@ -3755,7 +3755,7 @@
+ 
+ gnu-classpath-tools-gjdoc-$(VERSION).jar: $(srcdir)/gjdoc.manifest src/resources/version.properties $(gnu_classpath_tools_gjdoc_jar_CLASSES) $(gnu_classpath_tools_gjdoc_jar_GENCLASSES) $(gjdoc_resources_src)
+ 	for res in $(gjdoc_resources) ; \
+-	do  cp -u $(srcdir)/src/resources/$$res $$res ; done
++	do  gcp -u $(srcdir)/src/resources/$$res $$res ; done
+ 	$(JAR) cfm $@ $(srcdir)/gjdoc.manifest \
+ 	$(gjdoc_resources) \
+ 	-C src/resources version.properties \
+
