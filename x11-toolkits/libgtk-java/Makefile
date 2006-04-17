@@ -66,6 +66,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/THANKS ${DOCSDIR}
 	${MKDIR} ${DOCSDIR}/api
 	cd ${WRKSRC}/doc/api && ${FIND} . | ${CPIO} -pdmu ${DOCSDIR}/api
+	${TOUCH} ${DOSCDIR}/api/packages.html
 	${MKDIR} ${DOCSDIR}/examples
 	cd ${WRKSRC}/doc/examples && ${FIND} . \
 		| ${CPIO} -pdmu ${DOCSDIR}/examples
