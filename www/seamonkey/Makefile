@@ -52,7 +52,7 @@ MOZ_OPTIONS+=	--enable-glitz
 LIB_DEPENDS+=	glitz.1:${PORTSDIR}/graphics/glitz
 .endif
 
-.if ${ARCH} == "alpha" && ${OSVERSION} < 500035
+.if ${ARCH} == "alpha" && ${OSVERSION} < 500035 || ${ARCH}=="sparc64"
 IGNORE=		core dumps on ${ARCH} during post-build
 .endif
 
