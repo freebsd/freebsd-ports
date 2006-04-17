@@ -1,0 +1,10 @@
+Gjdoc is a documentation generation framework for java source files;
+espcially generating API documentation in HTML format from
+doc comments in source code.
+Also, ANTLR (ANother Tool for Language Recognition) is used; this is
+a language tool that provides a framework for constructing recognizers,
+compilers, and translators from grammatical descriptions containing
+Java, C#, C++, or Python actions. 
+
+WWW: http://www.gnu.org/software/classpath/cp-tools/
+     http://www.antlr.org/
