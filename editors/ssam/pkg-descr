@@ -1,0 +1,6 @@
+Ssam(1) is analogous to the stream editor sed(1), but uses the
+sam(1) command set to provide improved functionality, and is  aware
+of  the  UTF character  set.   It  uses  the  UTF-aware  regular
+expression library, ure(3).
+
+WWW: http://www.westley.demon.co.uk/software.html
