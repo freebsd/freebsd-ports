@@ -12,7 +12,7 @@ MASTER_SITES=	http://people.freebsd.org/~mbr/distfiles/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mbr@FreeBSD.org
 COMMENT=	POP3 Proxy Server derived from UP IMAP Proxy
 
 GNU_CONFIGURE=	YES
