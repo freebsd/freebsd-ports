@@ -39,6 +39,9 @@ USE_PHP+=	mysql
 USE_PHP+=	ldap
 .endif
 
+# Fix USE_PHP after bsd.port.pre.mk
+.include "${PORTSDIR}/Mk/bsd.php.mk"
+
 do-install:
 	-${MKDIR} ${PREFIX}/${MEDIAWIKIDIR}
 	@${CP} -r ${WRKSRC}/ ${PREFIX}/${MEDIAWIKIDIR}
