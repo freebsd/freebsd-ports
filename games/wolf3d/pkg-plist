@@ -23,7 +23,7 @@ libexec/wolf3d/sdlwolf3d-ws
 %%SPEAR_SW%%%%DATADIR%%/vgagraph.sdm
 %%SPEAR_SW%%%%DATADIR%%/vgahead.sdm
 %%SPEAR_SW%%%%DATADIR%%/vswap.sdm
-@dirrm %%DATADIR%%
+@unexec rmdir %D/%%DATADIR%% 2>/dev/null || echo "If you are permanently removing this port, you should remove any Wolfenstein 3D and/or Spear Of Destiny data files left in %D/%%DATADIR%%." | fmt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/docs
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm libexec/wolf3d

@@ -21,6 +21,7 @@ COMMENT=	"Wolfenstein 3D Linux" by Steven Fuller (1992)
 USE_SDL=	sdl
 
 OPTIONS=	WOLF_SW "Install shareware data for Wolfenstein 3D" on \
+		OPTIMIZED_CFLAGS "Enable compilation optimizations" on \
 		SPEAR_SW "Install shareware data for Spear of Destiny" off
 
 SUB_FILES=	pkg-message wolf3d
@@ -40,6 +41,10 @@ DISTFILES+=	wolfdata${EXTRACT_SUFX}:sw
 PLIST_SUB+=	WOLF_SW=""
 .else
 PLIST_SUB+=	WOLF_SW="@comment "
+.endif
+
+.if !defined(WITHOUT_OPTIMIZED_CFLAGS)
+MAKE_ENV+=	OPT_CF="-O2 -fomit-frame-pointer -ffast-math -funroll-loops"
 .endif
 
 .if defined(WITH_SPEAR_SW)
