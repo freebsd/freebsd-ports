@@ -1,0 +1,6 @@
+PySNMP is fully functional SNMP v.1 engine (BER encoders/decoders
+for a subset of ASN.1 data types, sockets based networking etc.)
+written entirely in Python.  This package provides additional python-format
+MIB files for use with PySNMP.
+
+WWW: http://pysnmp.sourceforge.net/
