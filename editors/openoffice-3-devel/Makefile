@@ -141,6 +141,9 @@ CONFIGURE_WRKSRC=	${WRKSRC}/config_office
 TCSH?=		/bin/tcsh
 PKGMESSAGE=	${WRKDIR}/pkg-message
 NUMOFPROCESSES?=	1
+.if defined(WITH_GNUGCJ)
+CONFIGURE_ENV+=      PATH="${WRKDIR}/gnugcj/bin:${PATH}"
+.endif
 
 CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp --with-gnu-patch=${LOCALBASE}/bin/gpatch --with-epm=internal --enable-crashdump=yes --enable-symbols=SMALL --with-system-freetype 
 #workarounds
@@ -185,6 +188,7 @@ post-extract:
 	@${LN} -s ${LOCALBASE}/bin/gij41 ${WRKDIR}/gnugcj/bin/gij
 	@${LN} -s ${LOCALBASE}/bin/gjdoc ${WRKDIR}/gnugcj/bin/javadoc  # #iXXXXX# xmerge doesn't support gjdoc
 	@${LN} -s ${LOCALBASE}/bin/fastjar41 ${WRKDIR}/gnugcj/bin/fastjar
+	@${LN} -s ${LOCALBASE}/bin/gcj-dbtool41 ${WRKDIR}/gnugcj/bin/gcj-dbtool
 	@${LN} -s ${PREFIX}/lib/gcc/${MACHINE_ARCH}-portbld-freebsd${OSREL}/${GCCVER}/libgcj.so ${WRKDIR}/gnugcj/lib
 .endif
 .if defined(WITH_GPC)
