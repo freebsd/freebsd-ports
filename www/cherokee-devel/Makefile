@@ -16,6 +16,7 @@ COMMENT=	An extremely fast and flexible web server
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
+USE_BISON=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_RC_SUBR=	cherokee.sh
 USE_GCC=	3.4+
