@@ -7,6 +7,7 @@
 
 PORTNAME=	ezm3
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	lang
 
 MASTER_SITES=	ftp://ftp.FreeBSD.org/pub/FreeBSD/development/CVSup/ezm3/:src \
@@ -90,6 +91,9 @@ post-patch:
 .if ${ARCH} == "sparc64" && ${OSVERSION} < 502107
 	@${REINPLACE_CMD} -E -e 's|(^.*time_t.*=.*)int64_t;|\1int32_t;|' \
 		${WRKSRC}/libs/m3core/src/unix/freebsd-4.sparc64/Utypes.i3
+.elif ${ARCH} == "amd64"
+	@${CP} ${WRKSRC}/libs/m3core/src/unix/freebsd-4.alpha/Unix.i3 \
+	    ${WRKSRC}/libs/m3core/src/unix/freebsd-4.amd64/Unix.i3
 .endif
 
 do-build:
