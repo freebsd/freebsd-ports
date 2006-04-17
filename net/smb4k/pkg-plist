@@ -83,6 +83,6 @@ share/locale/zh_TW/LC_MESSAGES/smb4k.mo
 %%PORTDOCS%%%%DOCSDIR%%/README.FreeBSD
 %%PORTDOCS%%%%DOCSDIR%%/index.cache.bz2
 %%PORTDOCS%%%%DOCSDIR%%/index.docbook
-%%PORTDOCS%%%%DOCSDIR%%/common
+%%PORTDOCS%%@unexec rm -f %D/%%DOCSDIR%%/common
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm share/apps/smb4k
