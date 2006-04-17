@@ -139,6 +139,7 @@
     SUBDIR += spe
     SUBDIR += speedbar
     SUBDIR += speedbar-emacs20
+    SUBDIR += ssam
     SUBDIR += ssed
     SUBDIR += staroffice5
     SUBDIR += staroffice52
