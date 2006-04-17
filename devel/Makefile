@@ -572,6 +572,7 @@
     SUBDIR += lrmi
     SUBDIR += lua50-compat51
     SUBDIR += lua50-posix
+    SUBDIR += lua50-pty
     SUBDIR += lwp
     SUBDIR += m17n-db
     SUBDIR += m17n-docs

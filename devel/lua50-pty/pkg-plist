@@ -1,0 +1,6 @@
+lib/lua/5.0/lpty.so
+share/lua/5.0/pty.lua
+@dirrmtry lib/lua/5.0
+@dirrmtry lib/lua
+@dirrmtry share/lua/5.0
+@dirrmtry share/lua
