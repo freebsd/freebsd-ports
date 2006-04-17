@@ -1,6 +1,6 @@
---- makefile.in.orig	Mon Apr 28 04:38:00 2003
-+++ makefile.in	Sun Jun  1 23:40:30 2003
-@@ -349,22 +349,19 @@
+--- makefile.in.orig	Mon Jan 23 04:16:14 2006
++++ makefile.in	Tue Apr 18 01:33:31 2006
+@@ -360,13 +360,9 @@
  		if test "$(COMPRESS_PROG)" != "" ; then \
  			(cd $(HELPDIR) && $(COMPRESS_PROG) $$files ) \
  		fi'
@@ -16,25 +16,26 @@
 +	@echo Updating $(libdir)/lynx.cfg.default to point to installed help-files
  	@ECHO_CC@sed	-e '/^HELPFILE:http/s!^!#!' \
  		-e '/^#HELPFILE:file/s!#!!' \
- 		-e '/^HELPFILE:file/s!/PATH_TO/lynx_help!$(helpdir)!' \
- 		-e '/^[A-Z_]*:/s!/PATH_TO/lynx_doc!$(docdir)!' \
- 		-e '/^HELPFILE:file/s!$$!$(COMPRESS_EXT)!' \
+ 		$(LIBDIR)/lynx.tmp | \
+@@ -374,9 +370,10 @@
+ 	$(SHELL) -c "$(scripts_dir)/cfg_path.sh lynx_doc  $(helpdir)" | \
+ 	sed	-e '/^HELPFILE:file/s!$$!$(COMPRESS_EXT)!' \
  		-e '/^HELPFILE:file/s!$(COMPRESS_EXT)$(COMPRESS_EXT)$$!$(COMPRESS_EXT)!' \
--		$(LIBDIR)/lynx.tmp >$(LIBDIR)/lynx.cfg
+-		>$(LIBDIR)/lynx.cfg
 -	chmod 644 $(LIBDIR)/lynx.cfg
-+		$(LIBDIR)/lynx.tmp >$(LIBDIR)/lynx.cfg.default
++		>$(LIBDIR)/lynx.cfg.default
 +	chmod 644 $(LIBDIR)/lynx.cfg.default
  	-rm -f $(LIBDIR)/lynx.tmp
 +	-[ ! -f $(LIBDIR)/lynx.cfg ] && $(INSTALL_DATA) $(LIBDIR)/lynx.cfg.default $(LIBDIR)/lynx.cfg
  
  LYHelp.h : help_files.sed LYHelp.hin
  	@echo Creating $@
-@@ -386,7 +383,7 @@
- 	$(SHELL) -c '$(srcdir)/cfg_defs.sh $(srcdir)'
+@@ -398,7 +395,7 @@
+ 	$(SHELL) -c 'SHELL=$(SHELL) $(SHELL) $(scripts_dir)/cfg_defs.sh $(srcdir)'
  
  install-cfg : $(LIBDIR)
--	@$(SHELL) -c '$(srcdir)/scripts/install-cfg.sh "$(INSTALL_DATA)" $(srcdir)/lynx.cfg $(LIBDIR)/lynx.cfg'
-+	@$(SHELL) -c '$(srcdir)/scripts/install-cfg.sh "$(INSTALL_DATA)" $(srcdir)/lynx.cfg $(LIBDIR)/lynx.cfg.default'
+-	@$(SHELL) -c '$(scripts_dir)/install-cfg.sh "$(INSTALL_DATA)" $(srcdir)/lynx.cfg $(LIBDIR)/lynx.cfg'
++	@$(SHELL) -c '$(scripts_dir)/install-cfg.sh "$(INSTALL_DATA)" $(srcdir)/lynx.cfg $(LIBDIR)/lynx.cfg.default'
  
  install-lss : $(LIBDIR)
  	-mv -f $(LIBDIR)/lynx.lss $(LIBDIR)/lynx.oldlss

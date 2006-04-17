@@ -56,8 +56,8 @@ etc/lynx.cfg.default
 %%DOCSDIR%%/test/README.txt
 %%DOCSDIR%%/test/TestComment.html
 %%DOCSDIR%%/test/c1.html
-%%DOCSDIR%%/test/iso8859-1.html
-%%DOCSDIR%%/test/iso88592.html
+%%DOCSDIR%%/test/iso-8859-1.html
+%%DOCSDIR%%/test/iso-8859-2.html
 %%DOCSDIR%%/test/koi8-r.html
 %%DOCSDIR%%/test/quickbrown.html
 %%DOCSDIR%%/test/raw8bit.html
