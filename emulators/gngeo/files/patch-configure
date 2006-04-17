@@ -1,13 +1,14 @@
---- configure.orig	Mon Sep 20 13:35:06 2004
-+++ configure	Wed Aug 17 16:29:55 2005
-@@ -3118,10 +3118,6 @@
+--- configure.orig	Sat Apr  1 10:19:10 2006
++++ configure	Thu Apr 13 23:02:32 2006
+@@ -3111,11 +3111,6 @@
+ echo "$as_me: error: can't find SDL on your system" >&2;}
     { (exit 1); exit 1; }; }
  fi
- 
--else
--	{ { echo "$as_me:$LINENO: error: can't find sdl-config on your system" >&5
+-
+-	else
+-		{ { echo "$as_me:$LINENO: error: can't find sdl-config on your system" >&5
 -echo "$as_me: error: can't find sdl-config on your system" >&2;}
 -   { (exit 1); exit 1; }; };
+ 	fi
+ 	enable_gp2x=false
  fi
- 
- 

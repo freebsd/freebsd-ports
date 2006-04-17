@@ -3,12 +3,8 @@ bin/gngeo
 %%DATADIR%%/gui_font.bmp
 %%DATADIR%%/gui_font2.bmp
 %%DATADIR%%/little_font.bmp
-%%DATADIR%%/neo-geo.rom
-%%DATADIR%%/ng-lo.rom
-%%DATADIR%%/ng-sfix.rom
-%%DATADIR%%/ng-sm1.rom
 %%DATADIR%%/romrc
 %%DATADIR%%/sb_arrows.bmp
 %%EXAMPLESDIR%%/gngeorc
-@dirrm %%DATADIR%%
 @dirrm %%EXAMPLESDIR%%
+@unexec rmdir %D/%%DATADIR%% >/dev/null 2>&1 || echo "If you are permanently removing this port, you should remove the Neo-Geo BIOS files left in %D/%%DATADIR%%."
