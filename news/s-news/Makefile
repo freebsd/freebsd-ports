@@ -16,13 +16,11 @@ COMMENT=	Simple news server for hosts with one or two users
 
 LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
 
-CONFLICTS=	nntp-*
-
-NEWSSPOOL=	/var/spool/s-news
+CONFLICTS=	nntp-[0-9]*
 
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--with-confdir=${PREFIX}/etc/s-news \
-		--with-spooldir=${NEWSSPOOL}
+		--with-spooldir=/var/spool/s-news
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
