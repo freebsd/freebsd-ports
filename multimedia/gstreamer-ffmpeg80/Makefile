@@ -13,7 +13,7 @@ MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst-ffmpeg/
 PKGNAMESUFFIX=	-ffmpeg
 DISTNAME=	gst-ffmpeg-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GStreamer plug-in for manipulating MPEG video streams
 
 USE_X_PREFIX=	yes
