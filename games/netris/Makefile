@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		netris
-PORTVERSION=		0.5
+PORTVERSION=		0.52
 CATEGORIES=		games ipv6
 MASTER_SITES=		ftp://ftp.netris.org/pub/netris/
 
@@ -14,7 +14,7 @@ PATCH_SITES=		http://debian.lcs.mit.edu/pub/usagi/ftp.v6.linux.or.jp/IPv6-2/netr
 PATCHFILES=		netris-0.5-v6-19991206a.diff.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=		gavin.atkinson@ury.york.ac.uk
 COMMENT=		A network head to head version of T*tris
 
 HAS_CONFIGURE=		yes
