@@ -1,5 +1,8 @@
-The Preferential project aims to provide all users of Gecko browsers
-(eg. Mozilla, Firefox) with a simple, accessible GUI that allows the
-modification of any preference set within that browser environment.
+The Preferential project aims to provide a comprehensive resource
+for finding Mozilla preference documentation. It is also a popular
+Mozilla extension that provides all Gecko-based products (eg.
+Mozilla Suite, Firefox & Thunderbird) with a simple, accessible
+GUI to use when browsing and modifying preferences set within that
+product.
 
 WWW: http://preferential.mozdev.org/
