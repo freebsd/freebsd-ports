@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.imapproxy.org/downloads/
 PKGNAMEPREFIX=	up-
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	mnag@FreeBSD.org
+MAINTAINER=	mbr@FreeBSD.org
 COMMENT=	A caching IMAP proxy server
 
 USE_REINPLACE=	YES
