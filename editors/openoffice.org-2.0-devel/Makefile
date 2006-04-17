@@ -83,9 +83,11 @@ PKGNAMESUFFIX?=         -${LANG_SUFFIX}
 .endif
 
 .if defined(WITH_GNUGCJ)
-#BUILD_DEPENDS+=	gcj41:${PORTSDIR}/lang/gcc41-with_gcj
-#BUILD_DEPENDS+=	gjdoc:${PORTSDIR}/java/gjdoc
-#RUN_DEPENDS+=	gcj41:${PORTSDIR}/lang/gcc41-with_gcj
+#this wired part must be rewritten
+GCCVER=4.1.1
+BUILD_DEPENDS+=	${PREFIX}/lib/gcc/${MACHINE_ARCH}-portbld-freebsd${OSREL}/${GCCVER}/lib-gnu-java-awt-peer-gtk.so:${PORTSDIR}/lang/gcc41-withgcjawt
+BUILD_DEPENDS+=	gjdoc:${PORTSDIR}/java/gjdoc
+RUN_DEPENDS+=	${PREFIX}/lib/gcc/${MACHINE_ARCH}-portbld-freebsd${OSREL}/${GCCVER}/lib-gnu-java-awt-peer-gtk.so:${PORTSDIR}/lang/gcc41-withgcjawt
 BROKEN=	"Still work in progress"	
 .else
 BUILD_DEPENDS+=	gcc-ooo:${PORTSDIR}/lang/gcc-ooo
@@ -176,8 +178,14 @@ pre-everything::
 post-extract:
 .if defined(WITH_GNUGCJ)
 	@cd ${WRKDIR} ; ${CAT} ${DISTDIR}/${DIST_SUBDIR}/${ANT_DISTFILE} | ${BZIP2_CMD} -d | ${TAR} xf -
-# #iXXXXX# xmerge doesn't support gjdoc
-	@${LN} -s ${LOCALBASE}/bin/gjdoc ${WRKSRC}/solenv/bin/javadoc
+	@${RM} -Rf ${WRKDIR}/gnugcj
+	@${MKDIR} ${WRKDIR}/gnugcj/bin
+	@${MKDIR} ${WRKDIR}/gnugcj/lib
+	@${LN} -s ${LOCALBASE}/bin/gcj41 ${WRKDIR}/gnugcj/bin/gcj
+	@${LN} -s ${LOCALBASE}/bin/gij41 ${WRKDIR}/gnugcj/bin/gij
+	@${LN} -s ${LOCALBASE}/bin/gjdoc ${WRKDIR}/gnugcj/bin/javadoc  # #iXXXXX# xmerge doesn't support gjdoc
+	@${LN} -s ${LOCALBASE}/bin/fastjar41 ${WRKDIR}/gnugcj/bin/fastjar
+	@${LN} -s ${PREFIX}/lib/gcc/${MACHINE_ARCH}-portbld-freebsd${OSREL}/${GCCVER}/libgcj.so ${WRKDIR}/gnugcj/lib
 .endif
 .if defined(WITH_GPC)
 	@cd ${WRKDIR} ; ${CAT} ${DISTDIR}/${DIST_SUBDIR}/gpc231.tar.Z | ${TAR} xfz -
