@@ -49,6 +49,11 @@ log()
 	echo "==> $*" >&2
 }
 
+pkgname()
+{
+	make -C ${PORTSDIR}/${1} -V PKGNAME
+}
+
 find_expired()
 {
 	EXPVAR=EXPIRATION_DATE
@@ -76,32 +81,43 @@ co_common()
 }
 
 # check if some ports depend on the given port
-# XXX INDEX file may be outdated and not contain recently added dependencies
-# it is very unlikely for someone to make a port to depend on a port that
-# has EXPIRATION_DATE set
+# XXX Very Little Chance (tm) for breaking INDEX exists:
+# /usr/ports/INDEX may be outdated and not contain recently added dependencies
+# Anyway, it is very unlikely for someone to make a port to depend on a port
+# that has EXPIRATION_DATE set, or /usr/ports/INDEX is really outdated - from
+# before EXPIRATION_DATE being set
 check_dep()
 {
-	cat=${1}
-	port=${2}
-	pkgname=${3}
-	persist=${4}
+	catport=${1}
+	persist=${2}
+	alltorm=${3}
+	pkgname=`pkgname ${catport}`
+
+	rmpkgs=""
+	rmcatports=""
+	for torm in ${alltorm} ; do
+		rmpkgs="${rmpkgs:+${rmpkgs}|}`pkgname ${torm}`"
+		rmcatports="${rmcatports:+${rmcatports}|}${PORTSDIR}/${torm}/"
+	done
 
 	while : ; do
-		log "${cat}/${port}: checking dependencies"
+		log "${catport}: checking dependencies"
 
 		err=0
 
-		deps=`grep -E "^.+${pkgname}" ${INDEX} || :`
+		deps=`grep -E "${pkgname}" ${INDEX} |grep -vE "^(${rmpkgs})" || :`
 		if [ -n "${deps}" ] ; then
-			log "${cat}/${port}: some port(s) depend on ${pkgname}:"
-			printf "%s\n" "${deps}"
+			log "${catport}: some port(s) depend on ${pkgname}:"
+			printf "%s\n" "${deps}" >&2
 			err=1
 		fi
 
 		# check if some port mentions the port to be deleted
-		r="`find ${PORTSDIR} -mindepth 3 -maxdepth 3 -not -path "*/${cat}/${port}/*" -name "Makefile*" |xargs grep -Hw ${cat}/${port} || :`"
+		r="`find ${PORTSDIR} -mindepth 3 -maxdepth 3 -name "Makefile*" \
+			|xargs grep -Hw ${catport} \
+			|grep -vE "^(${rmcatports})" || :`"
 		if [ -n "${r}" ] ; then
-			log "${cat}/${port}: some ports mention ${cat}/${port} in their Makefiles"
+			log "${catport}: some ports mention ${catport} in their Makefiles:"
 			printf "%s\n" "${r}" >&2
 			err=1
 		fi
@@ -131,12 +147,11 @@ co_port()
 # check if anything about the port is mentioned in ports/LEGAL
 check_LEGAL()
 {
-	cat=${1}
-	port=${2}
-	pkgname=${3}
+	catport=${1}
+	pkgname=${2}
 
-	for checkstr in ${pkgname} ${cat}/${port} ; do
-		msg="${cat}/${port}: checking if ${checkstr} is in ports/LEGAL"
+	for checkstr in ${pkgname} ${catport} ; do
+		msg="${catport}: checking if ${checkstr} is in ports/LEGAL"
 		log "${msg}"
 		while grep -i ${checkstr} ports/LEGAL ; do
 			read -p "${checkstr} is in ports/LEGAL, remove it and hit <enter> when ready" answer
@@ -160,16 +175,15 @@ edit_modules()
 # add port's entry to ports/MOVED
 edit_MOVED()
 {
-	cat=${1}
-	port=${2}
+	catport=${1}
 
-	DEPRECATED="`make -C ${PORTSDIR}/${cat}/${port} -V DEPRECATED`"
+	DEPRECATED="`make -C ${PORTSDIR}/${catport} -V DEPRECATED`"
 	DEPRECATED=${DEPRECATED:+: ${DEPRECATED}}
 	REASON="Has expired${DEPRECATED}"
 
-	log "${cat}/${port}: adding entry to ports/MOVED"
+	log "${catport}: adding entry to ports/MOVED"
 
-	echo "${cat}/${port}||${TODAY}|${REASON}" >> ports/MOVED
+	echo "${catport}||${TODAY}|${REASON}" >> ports/MOVED
 }
 
 # remove port from category/Makefile
@@ -187,12 +201,11 @@ edit_Makefile()
 # remove port's files
 rm_port()
 {
-	cat=${1}
-	port=${2}
+	catport=${1}
 
-	log "${cat}/${port}: removing port's files"
+	log "${catport}: removing port's files"
 
-	${PCVS} rm `find ports/${cat}/${port} -type f -not -path "*/CVS/*" -delete -print`
+	${PCVS} rm `find ports/${catport} -type f -not -path "*/CVS/*" -delete -print`
 }
 
 # diff
@@ -261,10 +274,7 @@ if [ ${1} = "-d" ] ; then
 		usage
 	fi
 	catport=${2}
-	cat=`dirname ${catport}`
-	port=`basename ${catport}`
-	pkgname=`make -C ${PORTSDIR}/${cat}/${port} -V PKGNAME`
-	check_dep ${cat} ${port} ${pkgname} 0
+	check_dep ${catport} 0 ${catport}
 	exit
 fi
 
@@ -284,23 +294,25 @@ co_common
 for catport in $* ; do
 	cat=`dirname ${catport}`
 	port=`basename ${catport}`
-	pkgname=`make -C ${PORTSDIR}/${cat}/${port} -V PKGNAME`
+	# remove any trailing slashes
+	catport="${cat}/${port}"
+	pkgname=`pkgname ${cat}/${port}`
 
-	check_dep ${cat} ${port} ${pkgname} 1
+	check_dep ${catport} 1 "${*}"
 
 	co_port ${cat} ${port}
 
-	check_LEGAL ${cat} ${port} ${pkgname}
+	check_LEGAL ${catport} ${pkgname}
 
 	# everything seems ok, edit the files
 
 	edit_modules ${cat} ${port}
 
-	edit_MOVED ${cat} ${port}
+	edit_MOVED ${catport}
 
 	edit_Makefile ${cat} ${port}
 
-	rm_port ${cat} ${port}
+	rm_port ${catport}
 done
 
 diffout=`diff`
