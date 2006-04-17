@@ -1,0 +1,5 @@
+ASN.1 types and codecs (BER, CER, DER) implementation in Python programming 
+language.
+
+Author:	Ilya Etingof (ilya@glas.net)
+WWW:	http://sourceforge.net/projects/pyasn1/

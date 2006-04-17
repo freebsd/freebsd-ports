@@ -1,0 +1,52 @@
+# New ports collection makefile for:	py-pyasn1
+# Date created:				Sat Apr  8 21:37:32 CDT 2006
+# Whom:					Martin Jackson <mhjacks@swbell.net>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	asn1
+PORTVERSION=	0.0.4a
+CATEGORIES=	devel python
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	py${PORTNAME}
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	py${PORTNAME}-${PORTVERSION}
+
+MAINTAINER=	mhjacks@swbell.net
+COMMENT=	ASN.1 toolkit for Python
+
+USE_PYTHON=		yes
+USE_PYDISTUTILS=	yes
+
+DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
+EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
+
+BASEDOCS=	CHANGES \
+		README \
+		LICENSE \
+		TODO
+
+DOCDOCS=	notes.html
+
+EXAMPLE_FILES=	snmp.py \
+		x509.py
+
+post-install:
+# docs
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+. for f in ${BASEDOCS}
+	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+. endfor
+. for f in ${DOCDOCS}
+	@${INSTALL_DATA} ${WRKSRC}/doc/${f} ${DOCSDIR}
+. endfor
+.endif
+# examples
+	@${MKDIR} ${EXAMPLESDIR}
+.for f in ${EXAMPLE_FILES}
+	@${INSTALL_DATA} ${WRKSRC}/examples/${f} ${EXAMPLESDIR}
+.endfor
+
+.include <bsd.port.mk>
