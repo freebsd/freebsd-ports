@@ -64,7 +64,7 @@ Gecko_Pre_Include=			bsd.gecko.mk
 #  .endif
 
 .if ${OSVERSION} >= 500000
-.if ${ARCH}!="sparc64" || ${ARCH}!="ia64"
+.if ${ARCH}!="sparc64" && ${ARCH}!="ia64"
 _GECKO_ALL=	firefox nvu seamonkey sunbird thunderbird xulrunner firefox-devel
 .endif
 _GECKO_ALL+=	firefox10
@@ -141,6 +141,7 @@ _gecko-pre-everything::
 	@${ECHO_CMD} " Warning: ${PORTNAME} does not support any gecko you"
 	@${ECHO_CMD} " listed in WITH_GECKO=${WITH_GECKO}."
 	@${ECHO_CMD} " \"${GECKO}\" will be used"
+	@${ECHO_CMD} ""
 	@${ECHO_CMD} " for gecko support, but you can change that by using one of"
 	@${ECHO_CMD} " the following values:"
 .else
