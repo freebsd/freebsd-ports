@@ -42,6 +42,10 @@ MOZ_MK_OPTIONS=	MOZ_CO_PROJECT=calendar
 BROKEN=	does not build
 .endif
 
+.if ${ARCH}=="sparc64"
+IGNORE=	 core dumps on ${ARCH}
+.endif
+
 .if ${PERL_LEVEL} < 500600
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-config_make-jars.pl
 .endif
