@@ -1,0 +1,11 @@
+--- Makefile.orig	Mon Apr 17 09:12:06 2006
++++ Makefile	Mon Apr 17 09:13:03 2006
+@@ -68,7 +68,7 @@
+ #		-Wchar-subscripts -Winline -Wnested-externs -fPIC
+ CFLAGS_GCC =	-O2 -Wall -Werror -Wno-format-y2k			\
+ 		-Wreturn-type -Wcast-qual -Wwrite-strings -Wswitch	\
+-		-Wshadow -Wcast-align					\
++		-Wshadow						\
+ 		-Wchar-subscripts -Winline -Wnested-externs -fPIC
+ CFLAGS_SUN = -KPIC -xO2 -D_SUN_PAM_ -D_HAVE_USERDEFS_H_
+ CFLAGS_HP = -Ae +w1 +W 474,486,542 +z +O2
