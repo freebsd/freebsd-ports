@@ -6,6 +6,6 @@ The IWAD file is the file used by Doom which contains all the game data
 you currently still need one of the proprietary IWAD files from id in order to
 play Doom. Freedoom aims to create a Free alternative. Combined with the
 GPL-licensed Doom source code this will result in a complete Free Doom-based
-game
+game.
 
 WWW: http://freedoom.sf.net/
