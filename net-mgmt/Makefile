@@ -155,6 +155,7 @@
     SUBDIR += py-ipy
     SUBDIR += py-snmp
     SUBDIR += py-snmp4
+    SUBDIR += py-snmp4-mibs
     SUBDIR += py-yapsnmp
     SUBDIR += rancid
     SUBDIR += rate
