@@ -1,0 +1,6 @@
+GCC, the GNU Compiler Collection includes C, C++, Java with AWT.
+
+This port installs the various front ends as gcc41, g++41, gcj41,
+like master port, *AND* installs gcj+AWT as well.
+
+WWW: http://gcc.gnu.org/
