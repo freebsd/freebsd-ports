@@ -2408,6 +2408,7 @@ firedns		ports/dns/firedns
 firefox		ports/www/firefox
 firefox-devel	ports/www/firefox-devel
 firefox-remote	ports/www/firefox-remote
+firefox10	ports/www/firefox10
 firemime	ports/mail/firemime
 firepay		ports/mail/firepay
 fireprofile	ports/databases/fireprofile
