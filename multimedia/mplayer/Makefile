@@ -61,8 +61,8 @@
 # user interface by defining WITHOUT_GUI
 # Note: If you define WITH_GTK* *and* WITHOUT_GUI, mplayer will be built without
 #       gui capabilities.
-#       At the moment there is no current gtk2 patch available, so defining this
-#       knob has no effect right now.
+#       The GTK2 patches are not official ones, so they should be considered
+#       as experimental.
 #
 # WITHOUT_GUI
 # default: undefined
@@ -287,8 +287,8 @@ DISTNAME=	MPlayer-1.0pre7try2
 MAINTAINER=	riggs@rrr.de
 COMMENT=	High performance media player/encoder supporting many formats
 
-PATCH_SITES=	http://www.win.net/~ardneh/patches/ \
-		http://www.rrr.de/~riggs/mplayer/
+PATCH_SITES=	${MASTER_SITE_LOCAL}
+PATCH_SITE_SUBDIR=	tmclaugh
 PATCH_DIST_STRIP=	-p1
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
@@ -551,8 +551,7 @@ CONFIGURE_ARGS+=	--enable-debug
 CFLAGS+=	-O3 -ffast-math -fomit-frame-pointer
 .endif
 
-#.if ${HAVE_GNOME:Mgtk12}!="" && !defined(WITH_GTK2) && !defined(WITHOUT_GUI)
-.if ${HAVE_GNOME:Mgtk12}!="" && !defined(WITHOUT_GUI)
+.if ${HAVE_GNOME:Mgtk12}!="" && !defined(WITH_GTK2) && !defined(WITHOUT_GUI)
 WITH_GTK1=	yes
 .endif
 
@@ -565,25 +564,24 @@ RUN_DEPENDS+=	${LOCALBASE}/share/mplayer/Skin:${PORTSDIR}/multimedia/mplayer-ski
 PLIST_SUB+=	GMPLAYER="@comment "
 .endif
 
-#.if defined(WITH_GTK2) && !defined(WITH_GTK1) && !defined(WITHOUT_GUI)
-#.if ( ${OSVERSION} < 500000 )
-#USE_GCC=	3.4
-#.endif
-#USE_GNOME+=	gtk20
-#PATCHFILES+=	mplayer1.0pre5-gtk2-20040730.patch.bz2
-#.if defined(PKGNAMESUFFIX)
-#PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-gtk2
-#.else
-#PKGNAMESUFFIX=	-gtk2
-#.endif
-#CONFIGURE_ARGS+=	--enable-gui
-#.if defined(WITH_LANG)
-#WITH_LANG=	""
-#.endif
-#.endif
+.if defined(WITH_GTK2) && !defined(WITH_GTK1) && !defined(WITHOUT_GUI)
+.if ( ${OSVERSION} < 500000 )
+USE_GCC=	3.4
+.endif
+USE_GNOME+=	gtk20
+PATCHFILES+=	MPlayer-1.0pre7try2-gtk2.patch
+.if defined(PKGNAMESUFFIX)
+PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-gtk2
+.else
+PKGNAMESUFFIX=	-gtk2
+.endif
+CONFIGURE_ARGS+=	--enable-gui --enable-gtk2
+.if defined(WITH_LANG)
+WITH_LANG=	""
+.endif
+.endif
 
-#.if defined(WITH_GTK1) && !defined(WITH_GTK2) && !defined(WITHOUT_GUI)
-.if defined(WITH_GTK1) && !defined(WITHOUT_GUI)
+.if defined(WITH_GTK1) && !defined(WITH_GTK2) && !defined(WITHOUT_GUI)
 USE_GNOME+=	gtk12
 .if defined(PKGNAMESUFFIX)
 PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-gtk
