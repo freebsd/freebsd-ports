@@ -12,7 +12,7 @@ include/estraier.h
 lib/libestraier.a
 lib/libestraier.so
 lib/libestraier.so.8
-lib/libestraier.so.8.5.0
+lib/libestraier.so.8.7.0
 libdata/pkgconfig/hyperestraier.pc
 libexec/estseek.cgi
 %%DATADIR%%/COPYING
@@ -73,8 +73,6 @@ libexec/estseek.cgi
 %%DATADIR%%/doc/pguide-ja.html
 %%DATADIR%%/doc/rubynativeapi/classes/Estraier.html
 %%DATADIR%%/doc/rubynativeapi/classes/Estraier/Condition.html
-%%DATADIR%%/doc/rubynativeapi/classes/Estraier/Condition.src/M000029.html
-%%DATADIR%%/doc/rubynativeapi/classes/Estraier/Condition.src/M000030.html
 %%DATADIR%%/doc/rubynativeapi/classes/Estraier/Condition.src/M000031.html
 %%DATADIR%%/doc/rubynativeapi/classes/Estraier/Condition.src/M000032.html
 %%DATADIR%%/doc/rubynativeapi/classes/Estraier/Condition.src/M000033.html
@@ -82,6 +80,8 @@ libexec/estseek.cgi
 %%DATADIR%%/doc/rubynativeapi/classes/Estraier/Condition.src/M000035.html
 %%DATADIR%%/doc/rubynativeapi/classes/Estraier/Condition.src/M000036.html
 %%DATADIR%%/doc/rubynativeapi/classes/Estraier/Condition.src/M000037.html
+%%DATADIR%%/doc/rubynativeapi/classes/Estraier/Condition.src/M000038.html
+%%DATADIR%%/doc/rubynativeapi/classes/Estraier/Condition.src/M000039.html
 %%DATADIR%%/doc/rubynativeapi/classes/Estraier/Database.html
 %%DATADIR%%/doc/rubynativeapi/classes/Estraier/Database.src/M000001.html
 %%DATADIR%%/doc/rubynativeapi/classes/Estraier/Database.src/M000002.html
@@ -105,9 +105,8 @@ libexec/estseek.cgi
 %%DATADIR%%/doc/rubynativeapi/classes/Estraier/Database.src/M000020.html
 %%DATADIR%%/doc/rubynativeapi/classes/Estraier/Database.src/M000021.html
 %%DATADIR%%/doc/rubynativeapi/classes/Estraier/Database.src/M000022.html
+%%DATADIR%%/doc/rubynativeapi/classes/Estraier/Database.src/M000023.html
 %%DATADIR%%/doc/rubynativeapi/classes/Estraier/Document.html
-%%DATADIR%%/doc/rubynativeapi/classes/Estraier/Document.src/M000038.html
-%%DATADIR%%/doc/rubynativeapi/classes/Estraier/Document.src/M000039.html
 %%DATADIR%%/doc/rubynativeapi/classes/Estraier/Document.src/M000040.html
 %%DATADIR%%/doc/rubynativeapi/classes/Estraier/Document.src/M000041.html
 %%DATADIR%%/doc/rubynativeapi/classes/Estraier/Document.src/M000042.html
@@ -119,13 +118,16 @@ libexec/estseek.cgi
 %%DATADIR%%/doc/rubynativeapi/classes/Estraier/Document.src/M000048.html
 %%DATADIR%%/doc/rubynativeapi/classes/Estraier/Document.src/M000049.html
 %%DATADIR%%/doc/rubynativeapi/classes/Estraier/Document.src/M000050.html
+%%DATADIR%%/doc/rubynativeapi/classes/Estraier/Document.src/M000051.html
+%%DATADIR%%/doc/rubynativeapi/classes/Estraier/Document.src/M000052.html
 %%DATADIR%%/doc/rubynativeapi/classes/Estraier/Result.html
-%%DATADIR%%/doc/rubynativeapi/classes/Estraier/Result.src/M000023.html
 %%DATADIR%%/doc/rubynativeapi/classes/Estraier/Result.src/M000024.html
 %%DATADIR%%/doc/rubynativeapi/classes/Estraier/Result.src/M000025.html
 %%DATADIR%%/doc/rubynativeapi/classes/Estraier/Result.src/M000026.html
 %%DATADIR%%/doc/rubynativeapi/classes/Estraier/Result.src/M000027.html
 %%DATADIR%%/doc/rubynativeapi/classes/Estraier/Result.src/M000028.html
+%%DATADIR%%/doc/rubynativeapi/classes/Estraier/Result.src/M000029.html
+%%DATADIR%%/doc/rubynativeapi/classes/Estraier/Result.src/M000030.html
 %%DATADIR%%/doc/rubynativeapi/created.rid
 %%DATADIR%%/doc/rubynativeapi/files/estraier-doc_rb.html
 %%DATADIR%%/doc/rubynativeapi/fr_class_index.html

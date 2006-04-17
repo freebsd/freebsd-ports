@@ -6,7 +6,7 @@
 #    $MCom: ports-stable/textproc/hyperestraier/Makefile,v 1.1 2006/03/04 21:43:08 ahze Exp $
 
 PORTNAME=	hyperestraier
-PORTVERSION=	1.1.6
+PORTVERSION=	1.2.2
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
