@@ -1,0 +1,82 @@
+# .mozconfig.in -*-shell-script-*-
+# $FreeBSD$
+######################################################################
+# standard opts from README
+export MOZ_PHOENIX=1
+mk_add_options MOZ_PHOENIX=1
+ac_add_options --enable-crypto
+ac_add_options --disable-tests
+ac_add_options --disable-mailnews
+ac_add_options --disable-composer
+ac_add_options --enable-default-toolkit=gtk2
+# See the following URL for approval email for using official branding
+# http://people.freebsd.org/~ahze/firefox_thunderbird-approved.txt
+ac_add_options --enable-official-branding
+######################################################################
+# FBSD specific
+export CPPFLAGS="@CPPFLAGS@"
+export CFLAGS="@CFLAGS@"
+export LIBS="@LIBS@"
+export LDFLAGS="@LDFLAGS@"
+export CONFIG_SH=/bin/sh
+export XP_UNIX=1
+mk_add_options XP_UNIX=1
+export PERL="@PERL@"
+mk_add_options PERL=$PERL
+# Configure options for installation
+ac_add_options --prefix=@FAKEDIR@
+ac_add_options --x-includes=@X11BASE@/include
+ac_add_options --x-libraries=@X11BASE@/lib
+######################################################################
+# Use ports for these libraries
+ac_add_options --with-system-jpeg=@LOCALBASE@
+ac_add_options --with-system-zlib
+ac_add_options --with-system-png=@LOCALBASE@
+ac_add_options --with-system-nspr
+ac_add_options --with-gssapi=@KRB5_HOME@
+######################################################################
+# set compile/link features
+ac_add_options --with-pthreads
+######################################################################
+# disable unneeded/unavailable
+ac_add_options --disable-auto-deps
+ac_add_options --disable-bidi
+ac_add_options --disable-dtd-debug
+ac_add_options --disable-jsd
+ac_add_options --disable-ldap
+ac_add_options --disable-pedantic
+ac_add_options --disable-profilesharing
+ac_add_options --disable-installer
+ac_add_options --enable-single-profile
+ac_add_options --disable-profilesharing
+ac_add_options --enable-image-decoders=all
+ac_add_options --enable-extensions="cookie,xml-rpc,xmlextras,pref,transformiix,universalchardet,webservices,inspector,p3p,gnomevfs,negotiateauth"
+######################################################################
+# conditional from port Makefile
+#if test -n "$WITH_REORDER"; then
+#    ac_add_options --enable-reorder
+#else
+#    ac_add_options --disable-reorder
+#fi # test -n "$WITH_REORDER"
+if test -n "$WITH_DEBUG"; then
+    ac_add_options --enable-debug
+    ac_add_options --disable-strip
+else
+    ac_add_options --disable-debug
+    ac_add_options --enable-optimize=${WITH_OPTIMIZE}
+    ac_add_options --enable-strip
+fi # test -n "$WITH_DEBUG"
+if test -n "$WITH_LOGGING"; then
+    ac_add_options --enable-logging
+else
+    ac_add_options --disable-logging
+fi # test -n "$WITH_LOGGING"
+if test -z "$WITHOUT_XFT"; then
+    ac_add_options --enable-xft
+else
+    ac_add_options --disable-xft
+fi # test -z "$WITHOUT_XFT"
+if test -z "$WITH_SMB"; then
+    ac_add_options --disable-gnomevfs
+fi # test -z "$WITH_SMB"
+######################################################################
