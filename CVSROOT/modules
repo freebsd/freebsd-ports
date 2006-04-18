@@ -11737,6 +11737,7 @@ samba-libsmbclient	ports/net/samba-libsmbclient
 samba-nmblookup	ports/net/samba-nmblookup
 samba-vscan	ports/security/samba-vscan
 samba3		ports/net/samba3
+samba4wins	ports/net/samba4wins
 sambasentinel	ports/net/sambasentinel
 samefile	ports/sysutils/samefile
 samhain		ports/security/samhain
