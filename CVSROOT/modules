@@ -6821,6 +6821,7 @@ mysql-connector-java	ports/databases/mysql-connector-java
 mysql-connector-odbc	ports/databases/mysql-connector-odbc
 mysql-editor	ports/databases/mysql-editor
 mysql-navigator	ports/databases/mysql-navigator
+mysql-query-browser	ports/databases/mysql-query-browser
 mysql2odbc	ports/databases/mysql2odbc
 mysql2pgsql	ports/databases/mysql2pgsql
 mysql323-client	ports/databases/mysql323-client
