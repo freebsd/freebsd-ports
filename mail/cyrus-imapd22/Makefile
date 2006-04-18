@@ -88,7 +88,7 @@ OPTIONS+=	BDB_3		"Use BerkeleyDB v3"	off \
 		BDB_43		"Use BerkeleyDB v4.3"	off \
 		BDB_44		"Use BerkeleyDB v4.4"	on
 .else
-IGNORE=		"WITH_BDB_VER must be 3, 4, 41, 42, 43 or 44"
+IGNORE=		"cannot install: WITH_BDB_VER must be 3, 4, 41, 42, 43 or 44"
 .endif
 
 OPTIONS+=	DRAC		"Enable DRAC support"			off
