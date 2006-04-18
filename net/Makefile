@@ -43,6 +43,7 @@
     SUBDIR += bing
     SUBDIR += binkd
     SUBDIR += bird
+    SUBDIR += bittwist
     SUBDIR += blam
     SUBDIR += bld
     SUBDIR += bmon
