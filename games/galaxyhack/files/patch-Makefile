@@ -1,15 +1,20 @@
---- Makefile.orig	Sat May  7 05:50:48 2005
-+++ Makefile	Sun Oct  9 12:45:33 2005
-@@ -9,10 +9,9 @@
- INSTALL_DIR=/usr/local/share
- INSTALL_BIN_DIR=/usr/local/bin
+--- Makefile.orig	Thu Apr 13 19:11:17 2006
++++ Makefile	Thu Apr 13 19:15:06 2006
+@@ -6,13 +6,11 @@
+ # James Gregory and Everton da Silva Marques <evertonsm@yahoo.com.br>
+ #
+ 
+-INSTALL_DIR=/usr/local/share
+-INSTALL_BIN_DIR=/usr/local/bin
++INSTALL_DIR=$(PREFIX)/share
++INSTALL_BIN_DIR=$(PREFIX)/bin
  
 -CXX = g++
 -CXXFLAGS = $(shell sdl-config --cflags) -O3
-+CXXFLAGS = $(CFLAGS) -O3 $(shell sdl-config --cflags) $(shell freetype-config --cflags)
- DEFINES = -D__linux__
+-DEFINES = -D__linux__
 -LDFLAGS = $(shell sdl-config --libs) -lSDL_image -lSDL_mixer -lSDL_gfx -lboost_filesystem
-+LDFLAGS = $(shell sdl-config --libs) -lSDL_image -lSDL_mixer -lSDL_gfx -lboost_filesystem $(shell freetype-config --libs)
++CXXFLAGS = $(CFLAGS) $(OPTIMIZED_CFLAGS) $(shell $(SDL_CONFIG) --cflags)
++LDFLAGS += $(shell $(SDL_CONFIG) --libs) -lSDL_image -lSDL_mixer -lSDL_gfx -lboost_filesystem $(shell freetype-config --libs)
  
  OBJS = AIInterpreter.o AutoFireUnit.o BCCompiler.o DerivedGroups.o DragWindow.o \
  	ForceSelect.o ForceSelectWin.o GenWindow.o GenWindow_Base.o Globals.o \
