@@ -6,19 +6,18 @@
 #
 
 PORTNAME=	tmpwatch
-PORTVERSION=	2.9.0
+PORTVERSION=	2.9.6
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_FEDORA_LINUX}
-MASTER_SITE_SUBDIR=	1/SRPMS
-EXTRACT_SUFX=	-2.src.rpm
+MASTER_SITE_SUBDIR=	5/source/SRPMS
+EXTRACT_SUFX=	-1.2.1.src.rpm
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rainer.alves@gmail.com
 COMMENT=	A utility for removing files based on when they were last accessed
 
 EXTRACT_DEPENDS=rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
 
 USE_GETOPT_LONG=yes
-USE_REINPLACE=	yes
 
 CFLAGS+=	${CPPFLAGS} -DVERSION=\"${PORTVERSION}\"
 MAN8=		tmpwatch.8
