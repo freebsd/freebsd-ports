@@ -6,46 +6,43 @@
 #
 
 PORTNAME=	pari
-PORTVERSION=	2.1.6
+PORTVERSION=	${MAJOR_VERSION}.${MINOR_VERSION}.${REV_VERSION}
 CATEGORIES=	math
-MASTER_SITES= http://pari.math.u-bordeaux.fr/pub/pari/unix/
+MASTER_SITES=	http://pari.math.u-bordeaux.fr/pub/pari/unix/
+DISTNAME=	pari-${MAJOR_VERSION}.${MINOR_VERSION}.${REV_VERSION}
 
 MAINTAINER=	yoshiaki@kt.rim.or.jp
 COMMENT=	Mathmatics library and advanced calculator package
 
-EXTRACT_SUFX=   .tgz
+CONFLICTS=	pari-2.2.*
+
+EXTRACT_SUFX=	.tgz
+NO_LATEST_LINK=	yes
 INSTALLS_SHLIB=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	Configure
 CONFIGURE_ARGS=	--prefix=${PREFIX} --share-prefix=${PREFIX}/share
-# build is broken on some locales
-CONFIGURE_ENV=	LANG=C
-MAKE_ENV=	LANG=C
 
-USE_GMAKE=	yes
-USE_REINPLACE=	yes
+#USE_GMAKE=	yes
 MAKE_ARGS=	gp
+PLIST_SUB=	MAJOR_VERSION=${MAJOR_VERSION} MINOR_VERSION=${MINOR_VERSION} REV_VERSION=${REV_VERSION}
+
+MAJOR_VERSION=	2
+MINOR_VERSION=	1
+REV_VERSION=	7
 
 MAN1=		gp.1 gphelp.1 tex2mail.1
 MLINKS=		gp.1 pari.1
 
-HAVE_EMACS!=	which emacs || echo nope
+.include <bsd.port.pre.mk>
+
+HAVE_EMACS!=	${WHICH} emacs || ${ECHO} nope
 .if ${HAVE_EMACS} != "nope"
 PLIST=		${PKGDIR}/pkg-plist.emacs
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-USE_GCC=    3.2
-.endif
-
 .if ${ARCH} == "amd64"
 CFLAGS+=	-fPIC
-.endif
-
-.if ${ARCH} == "sparc64" || ${ARCH} == "ia64"
-BROKEN=		"Does not compile on sparc64 or ia64"
 .endif
 
 post-patch:

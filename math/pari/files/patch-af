@@ -1,6 +1,6 @@
---- config/Makefile.SH.orig	Thu Sep 27 10:58:38 2001
-+++ config/Makefile.SH	Wed May 22 01:43:10 2002
-@@ -176,7 +176,7 @@
+--- config/Makefile.SH.orig	Sat Apr 26 04:08:14 2003
++++ config/Makefile.SH	Tue Feb 28 19:07:18 2006
+@@ -183,7 +183,7 @@
  LIBDIR = \$(DESTDIR)$libdir
  BINDIR = \$(DESTDIR)$bindir
  DATADIR= \$(DESTDIR)$datadir
@@ -9,7 +9,7 @@
  ALLDIR = \$(DESTDIR)$miscdir
  READMEDIR = \$(ALLDIR)
  DOCDIR  = \$(ALLDIR)/doc
-@@ -348,7 +348,7 @@
+@@ -355,7 +355,7 @@
  
  install-doc::
  	-mkdir -p \$(BINDIR) \$(DOCDIR)
@@ -18,7 +18,7 @@
  	-\$(INSTALL_PROGRAM) $doc/gphelp    \$(BINDIR)
  	-\$(INSTALL_DATA) $doc/Makefile     \$(DOCDIR)
  	-\$(INSTALL_DATA) $doc/translations \$(DOCDIR)
-@@ -367,10 +367,10 @@
+@@ -374,10 +374,10 @@
  	-\$(INSTALL_DATA) $doc/usersch4.tex \$(DOCDIR)
  	-\$(INSTALL_DATA) $doc/usersch5.tex \$(DOCDIR)
  	-\$(INSTALL_DATA) $doc/paricfg.tex  \$(DOCDIR)
@@ -33,7 +33,7 @@
  
  install-examples:
  	-mkdir -p \$(EXDIR)
-@@ -388,8 +388,8 @@
+@@ -395,8 +395,8 @@
  	-\$(INSTALL_DATA) $ex/taylor.gp   \$(EXDIR)
  
  install-data:
@@ -44,7 +44,7 @@
  
  install-lib-sta: \$(LIBPARI_STA)
  	-mkdir -p \$(LIBDIR)
-@@ -401,6 +401,7 @@
+@@ -408,6 +408,7 @@
  	-mkdir -p \$(LIBDIR)
  	-\$(RM) \$(LIBDIR)/\$(LIBPARI_DYN)
  	\$(INSTALL_PROGRAM) \$(LIBPARI_DYN) \$(LIBDIR)/\$(LIBPARI_DYN)
@@ -52,7 +52,7 @@
  EOT
  if test "$soname" != "$sodest"; then
    cat >> $file << EOT
-@@ -429,6 +430,7 @@
+@@ -436,6 +437,7 @@
  \$(LIBPARI_DYN): \$(OBJS)
  	-\$(RM) \$(LIBPARI_DYN)
  	\$(DLLD) -o \$@ \$(DLLDFLAGS) \$(OBJS) \$(EXTRADLLDFLAGS)
@@ -60,7 +60,7 @@
  EOT
      if test "$soname" != "$sodest"; then
        cat >> $file << EOT
-@@ -457,13 +459,13 @@
+@@ -464,13 +466,13 @@
  
  if test -n "$emacs"; then
    cat >> $file << EOT
