@@ -65,6 +65,11 @@ IS_INTERACTIVE=	yes
 IGNORE=		needs at least FreeBSD 5.3-RELEASE
 .endif
 
+.if ( ${OSVERSION} >= 700014 )
+IGNORE=		is now obsolete, install net/${DRIVERNAME}-firmware-kmod instead
+.endif
+
+
 .if ${OSVERSION} > ${MIN7OSVERSION}
 SUB_LIST+=	DONT_NEED_CONTROL="@comment "
 MTREE_DIRRM=	"@comment "
