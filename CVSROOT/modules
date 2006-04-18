@@ -13560,6 +13560,7 @@ x2x		ports/x11-servers/x2x
 x3270		ports/x11/x3270
 x3eyes		ports/games/x3eyes
 x48		ports/emulators/x48
+x4x		ports/audio/x4x
 x86info		ports/sysutils/x86info
 xabacus		ports/games/xabacus
 xacpim		ports/sysutils/xacpim
