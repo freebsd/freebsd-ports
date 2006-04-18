@@ -152,6 +152,7 @@
 %%PHPBBDIR%%/templates/subSilver/admin/auth_ug_body.tpl
 %%PHPBBDIR%%/templates/subSilver/admin/board_config_body.tpl
 %%PHPBBDIR%%/templates/subSilver/admin/category_edit_body.tpl
+%%PHPBBDIR%%/templates/subSilver/admin/confirm_body.tpl
 %%PHPBBDIR%%/templates/subSilver/admin/db_utils_backup_body.tpl
 %%PHPBBDIR%%/templates/subSilver/admin/db_utils_restore_body.tpl
 %%PHPBBDIR%%/templates/subSilver/admin/disallow_body.tpl
