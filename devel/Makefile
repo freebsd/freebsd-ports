@@ -1514,6 +1514,7 @@
     SUBDIR += pylint
     SUBDIR += pyobfuscate
     SUBDIR += pymacs
+    SUBDIR += pypersrc
     SUBDIR += pyrex
     SUBDIR += pyumlgraph
     SUBDIR += qca
