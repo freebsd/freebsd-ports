@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	uni2ascii
-PORTVERSION=	3.5.2
+PORTVERSION=	3.6
 CATEGORIES=	textproc
 MASTER_SITES=	http://critical.ch/distfiles/
 
