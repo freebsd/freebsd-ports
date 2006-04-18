@@ -116,4 +116,3 @@ share/pixmaps/sylpheed.png
 @dirrmtry share/applications
 @dirrmtry share/locale/lt/LC_MESSAGES
 @dirrmtry share/locale/lt
-@dirrmtry share/pixmaps
