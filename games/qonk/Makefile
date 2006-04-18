@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qonk
-PORTVERSION=	0.0.1
+DISTVERSION=	0.0.2beta1
 CATEGORIES=	games
 MASTER_SITES=	http://anthony.liekens.net/pub/files/
 
@@ -15,7 +15,6 @@ COMMENT=	Small build and conquer strategy game
 
 USE_GMAKE=	yes
 USE_SDL=	gfx sdl ttf
-USE_REINPLACE=	yes
 
 OPTIONS=	OPTIMIZED_CFLAGS "Enable compilation optimizations" on
 
@@ -33,7 +32,7 @@ post-patch:
 				${WRKSRC}/main.cpp ${WRKSRC}/messages.cpp
 
 # Enable/disable compilation optimizations
-.if !defined(WITH_OPTIMIZED_CFLAGS)
+.if defined(WITHOUT_OPTIMIZED_CFLAGS)
 	@${REINPLACE_CMD} -e 's|-O3||' \
 				${WRKSRC}/${MAKEFILE}
 .endif
