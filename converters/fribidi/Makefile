@@ -7,12 +7,9 @@
 #
 
 PORTNAME=	fribidi
-PORTVERSION=	0.10.4
-PORTREVISION=	2
+PORTVERSION=	0.10.7
 CATEGORIES=	converters
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		http://freedesktop.org/~fribidi/download/
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	http://fribidi.org/download/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A Free Implementation of the Unicode Bidirectional Algorithm
