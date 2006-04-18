@@ -1,5 +1,6 @@
 #! /bin/sh
 
+BATCH=${BATCH:=no}
 base=%%PREFIX%%
 
 ask() {
@@ -7,7 +8,7 @@ ask() {
 
     question=$1
     default=$2
-    if [ -z "${PACKAGE_BUILDING}" ]; then
+    if [ -z "${PACKAGE_BUILDING}" -a x${BATCH} = xno ]; then
 	read -p "${question} [${default}]? " answer
     fi
     if [ x${answer} = x ]; then
@@ -133,17 +134,17 @@ EOF
     make_account ${user} ${group} "${user} ${group}" "/nonexistent"
 
     echo "Adding empty dirs and pid file."
-    test -d /var/lib/heartbeat/ckpt || \
-            install -d -m 755 /var/lib/heartbeat/ckpt
-    test -d /var/lib/heartbeat/ccm || \
-            install -d -m 755 /var/lib/heartbeat/ccm
-    test -d /var/lock/subsys || \
-            install -d -m 755 /var/lock/subsys
+    test -d ${base}/var/lib/heartbeat/ckpt || \
+            install -d -m 755 ${base}/var/lib/heartbeat/ckpt
+    test -d ${base}/var/lib/heartbeat/ccm || \
+            install -d -m 755 ${base}/var/lib/heartbeat/ccm
+    test -d ${base}/var/lock/subsys || \
+            install -d -m 755 ${base}/var/lock/subsys
     test -d ${base}/etc/ha.d/conf || \
             install -d -m 755 ${base}/etc/ha.d/conf
-    test -f /var/run/heartbeat.pid || \
+    test -f ${base}/var/run/heartbeat.pid || \
             install -m 644 -o ${user} -g ${group} /dev/null \
-                /var/run/heartbeat.pid
+                ${base}/var/run/heartbeat.pid
     ;;
 
 DEINSTALL)
@@ -160,15 +161,14 @@ DEINSTALL)
     delete_account hacluster haclient
 
     echo "Removing runtime files"
-    if [ -d /var/lib/heartbeat ]; then
-        rm -r /var/lib/heartbeat
+    if [ -d ${base}/var/lib/heartbeat ]; then
+        rm -r ${base}/var/lib/heartbeat
     fi
-    if [ -f /var/lock/subsys/heartbeat ]; then
-        rm /var/lock/subsys/heartbeat
+    if [ -f ${base}/var/lock/subsys/heartbeat ]; then
+        rm ${base}/var/lock/subsys/heartbeat
     fi
-    if [ -f /var/run/heartbeat.pid ]; then
-        rm /var/run/heartbeat.pid
+    if [ -f ${base}/var/run/heartbeat.pid ]; then
+        rm ${base}/var/run/heartbeat.pid
     fi
     ;;
-
 esac

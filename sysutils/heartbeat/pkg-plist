@@ -14,6 +14,7 @@ etc/ha.d/resource.d/IPaddr
 etc/ha.d/resource.d/IPaddr2
 etc/ha.d/resource.d/IPsrcaddr
 etc/ha.d/resource.d/LVM
+etc/ha.d/resource.d/LVSSyncDaemonSwap
 etc/ha.d/resource.d/LinuxSCSI
 etc/ha.d/resource.d/MailTo
 etc/ha.d/resource.d/OCF
@@ -35,8 +36,10 @@ include/clplumbing/apphb_cs.h
 include/clplumbing/base64.h
 include/clplumbing/cl_log.h
 include/clplumbing/cl_malloc.h
+include/clplumbing/cl_misc.h
 include/clplumbing/cl_poll.h
 include/clplumbing/cl_signal.h
+include/clplumbing/coredumps.h
 include/clplumbing/cpulimits.h
 include/clplumbing/ipc.h
 include/clplumbing/loggingdaemon.h
@@ -82,8 +85,6 @@ lib/heartbeat/apphbd
 lib/heartbeat/apphbtest
 lib/heartbeat/ccm
 lib/heartbeat/ccm_testclient
-lib/heartbeat/checkpointd
-lib/heartbeat/ckpttest
 lib/heartbeat/clmtest
 lib/heartbeat/cts/CM_fs.py
 lib/heartbeat/cts/CM_hb.py
@@ -146,10 +147,6 @@ lib/libccmclient.a
 lib/libccmclient.la
 lib/libccmclient.so
 lib/libccmclient.so.0
-lib/libckpt.a
-lib/libckpt.la
-lib/libckpt.so
-lib/libckpt.so.0
 lib/libclm.a
 lib/libclm.la
 lib/libclm.so
@@ -186,6 +183,9 @@ lib/stonith/plugins/stonith/apcsmart.so
 lib/stonith/plugins/stonith/baytech.a
 lib/stonith/plugins/stonith/baytech.la
 lib/stonith/plugins/stonith/baytech.so
+lib/stonith/plugins/stonith/cyclades.a
+lib/stonith/plugins/stonith/cyclades.la
+lib/stonith/plugins/stonith/cyclades.so
 lib/stonith/plugins/stonith/external.a
 lib/stonith/plugins/stonith/external.la
 lib/stonith/plugins/stonith/external.so
@@ -204,6 +204,10 @@ lib/stonith/plugins/stonith/nw_rpc100s.so
 lib/stonith/plugins/stonith/rcd_serial.a
 lib/stonith/plugins/stonith/rcd_serial.la
 lib/stonith/plugins/stonith/rcd_serial.so
+lib/stonith/plugins/stonith/ribcl.py
+lib/stonith/plugins/stonith/riloe.a
+lib/stonith/plugins/stonith/riloe.la
+lib/stonith/plugins/stonith/riloe.so
 lib/stonith/plugins/stonith/rps10.a
 lib/stonith/plugins/stonith/rps10.la
 lib/stonith/plugins/stonith/rps10.so
@@ -213,33 +217,36 @@ lib/stonith/plugins/stonith/ssh.so
 lib/stonith/plugins/stonith/wti_nps.a
 lib/stonith/plugins/stonith/wti_nps.la
 lib/stonith/plugins/stonith/wti_nps.so
+lib/stonith/plugins/stonith/drac3.so
+lib/stonith/plugins/stonith/drac3.la
+lib/stonith/plugins/stonith/drac3.a
 sbin/ldirectord
 sbin/meatclient
 sbin/stonith
 sbin/supervise-ldirectord-config
-share/doc/heartbeat-1.2.3/AUTHORS
-share/doc/heartbeat-1.2.3/COPYING
-share/doc/heartbeat-1.2.3/ChangeLog
-share/doc/heartbeat-1.2.3/DirectoryMap.txt
-share/doc/heartbeat-1.2.3/GettingStarted.html
-share/doc/heartbeat-1.2.3/GettingStarted.txt
-share/doc/heartbeat-1.2.3/HardwareGuide.html
-share/doc/heartbeat-1.2.3/HardwareGuide.txt
-share/doc/heartbeat-1.2.3/README
-share/doc/heartbeat-1.2.3/Requirements.html
-share/doc/heartbeat-1.2.3/Requirements.txt
-share/doc/heartbeat-1.2.3/apphbd.cf
-share/doc/heartbeat-1.2.3/authkeys
-share/doc/heartbeat-1.2.3/faqntips.html
-share/doc/heartbeat-1.2.3/faqntips.txt
-share/doc/heartbeat-1.2.3/ha.cf
-share/doc/heartbeat-1.2.3/haresources
-share/doc/heartbeat-1.2.3/heartbeat_api.html
-share/doc/heartbeat-1.2.3/heartbeat_api.txt
-share/doc/heartbeat-1.2.3/rsync.html
-share/doc/heartbeat-1.2.3/rsync.txt
-share/doc/heartbeat-1.2.3/startstop
-@dirrm share/doc/heartbeat-1.2.3
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/DirectoryMap.txt
+%%PORTDOCS%%%%DOCSDIR%%/GettingStarted.html
+%%PORTDOCS%%%%DOCSDIR%%/GettingStarted.txt
+%%PORTDOCS%%%%DOCSDIR%%/HardwareGuide.html
+%%PORTDOCS%%%%DOCSDIR%%/HardwareGuide.txt
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/Requirements.html
+%%PORTDOCS%%%%DOCSDIR%%/Requirements.txt
+%%PORTDOCS%%%%DOCSDIR%%/apphbd.cf
+%%PORTDOCS%%%%DOCSDIR%%/authkeys
+%%PORTDOCS%%%%DOCSDIR%%/faqntips.html
+%%PORTDOCS%%%%DOCSDIR%%/faqntips.txt
+%%PORTDOCS%%%%DOCSDIR%%/ha.cf
+%%PORTDOCS%%%%DOCSDIR%%/haresources
+%%PORTDOCS%%%%DOCSDIR%%/heartbeat_api.html
+%%PORTDOCS%%%%DOCSDIR%%/heartbeat_api.txt
+%%PORTDOCS%%%%DOCSDIR%%/rsync.html
+%%PORTDOCS%%%%DOCSDIR%%/rsync.txt
+%%PORTDOCS%%%%DOCSDIR%%/startstop
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/stonith/plugins/stonith
 @dirrm lib/stonith/plugins
 @dirrm lib/stonith
