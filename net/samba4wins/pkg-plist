@@ -1,0 +1,51 @@
+@unexec %D/etc/rc.d/samba4wins.sh forcestop 2>/dev/null || true
+etc/samba4wins.conf.sample
+bin/nmblookup4
+bin/ldbadd
+bin/ldbdel
+bin/ldbedit
+bin/ldbmodify
+bin/ldbrename
+bin/ldbsearch
+bin/samba3dump
+bin/smbscript
+bin/smbstatus
+bin/smbtorture
+bin/testparm
+bin/winreg
+sbin/smbd4wins
+lib/samba4wins/lowcase.dat
+lib/samba4wins/upcase.dat
+lib/samba4wins/valid.dat
+%%PORTDOCS%%%%DOCSDIR%%/HOWTO.txt
+%%PORTDOCS%%%%DOCSDIR%%/NEWS.txt
+%%PORTDOCS%%%%DOCSDIR%%/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/TODO.txt
+%%DATADIR%%/js/auth.js
+%%DATADIR%%/js/base.js
+%%DATADIR%%/js/encoder.js
+%%DATADIR%%/js/management.js
+%%DATADIR%%/js/provision.js
+%%DATADIR%%/js/samr.js
+%%DATADIR%%/js/server_call.js
+%%DATADIR%%/js/upgrade.js
+%%DATADIR%%/js/winreg.js
+%%DATADIR%%/setup/display_specifiers.ldif
+%%DATADIR%%/setup/hklm.ldif
+%%DATADIR%%/setup/provision.ldif
+%%DATADIR%%/setup/provision.smb.conf
+%%DATADIR%%/setup/provision.zone
+%%DATADIR%%/setup/provision_init.ldif
+%%DATADIR%%/setup/provision_templates.ldif
+%%DATADIR%%/setup/provision_users.ldif
+%%DATADIR%%/setup/schema.ldif
+%%DATADIR%%/setup/secrets.ldif
+@dirrmtry lib/samba4wins/pkgconfig
+@dirrmtry private/tls
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%/setup
+@dirrm %%DATADIR%%/js
+@dirrm %%DATADIR%%
+@dirrm lib/samba4wins
+@unexec echo "Warning: If you will *NOT* use this package anymore, please remove %%S4W_LOCKDIR%%/* manually."
+@unexec echo "Warning: If you will *NOT* use this package anymore, please remove %%S4W_LOGDIR%%/* manually."

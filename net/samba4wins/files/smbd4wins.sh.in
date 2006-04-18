@@ -1,0 +1,25 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: smbd2wins
+# REQUIRE: NETWORKING SERVERS named ldconfig
+# BEFORE: DAEMON
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable smbd:
+#
+#smbd4wins_enable="YES"
+#
+
+. %%RC_SUBR%%
+
+name="smbd4wins"
+rcvar=`set_rcvar`
+command="%%PREFIX%%/sbin/${name}"
+pidfile="%%S4W_RUNDIR%%/${name}.pid"
+
+load_rc_config $name
+run_rc_command "$1"

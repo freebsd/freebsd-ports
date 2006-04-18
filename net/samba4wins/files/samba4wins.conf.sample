@@ -1,0 +1,29 @@
+#
+# /usr/local/etc/samba4wins.conf
+#
+# Please read the following files carefully!
+#
+# /usr/local/share/doc/samba4wins/:
+# README.txt
+# NEWS.txt
+# HOWTO.txt
+# TODO.txt
+# 
+
+[globals]
+	# it's important that this netbios name is different from 
+	# the one that's used for samba3!
+	###netbios name = SERVER1-WINS
+	# only use the given interfaces
+	###bind interfaces only = yes
+	# this is the unicast address
+	###interfaces = 192.168.9.2
+	# samba4wins is only a wins server, 
+	# and broadcasts are handled by samba3
+	# so disable listening on the broadcast address
+	###nbtd:disable_broadcast = yes
+
+	# as we want to ourself as wins server
+	# and don't listen on 127.0.0.1
+	# we need to explicit set the wins server here
+	###wins server = 192.168.9.2
