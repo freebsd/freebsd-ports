@@ -15,7 +15,6 @@ DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 MAINTAINER=	joshua@roughtrade.net
 COMMENT=	The Spread Group Communication System, a network toolkit
 
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 USE_PERL5=	yes
 USE_RC_SUBR=	yes
