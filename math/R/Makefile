@@ -1,5 +1,5 @@
 # vim: tabstop=8 softtabstop=0 noexpandtab
-# Ports Makefile for:	R
+# New ports collection makefile for:	R
 # Date created:		Fri Feb  9 10:50:25 EST 2001
 # Whom:			Maurice Castro <maurice@serc.rmit.edu.au>
 #
@@ -8,6 +8,7 @@
 
 PORTNAME=	R
 PORTVERSION=	2.2.1
+PORTREVISION=	1
 CATEGORIES=	math lang
 MASTER_SITES=	http://cran.r-project.org/src/base/R-2/ \
 		ftp://cran.r-project.org/pub/R/src/base/R-2/ \
@@ -68,17 +69,21 @@ check-all: build
 .if defined(WITH_ATLAS)
 LIB_DEPENDS+=	f77blas.1:${PORTSDIR}/math/atlas
 CONFIGURE_ARGS+=--with-lapack="-lalapack -lcblas" --with-blas="-lf77blas"
+PLIST_SUB+=	BLAS="@comment "
 .else
 LIB_DEPENDS+=	blas.1:${PORTSDIR}/math/blas
 CONFIGURE_ARGS+=--with-blas="-lblas"
+PLIST_SUB+=	BLAS=""
 .endif
 
 .if defined(WITHOUT_TCLTK)
 CONFIGURE_ARGS+=--without-tcltk
+PLIST_SUB+=	TCLTK="@comment "
 .else
 LIB_DEPENDS+=	tcl84:${PORTSDIR}/lang/tcl84 \
 		tk84:${PORTSDIR}/x11-toolkits/tk84
 CONFIGURE_ARGS+=--with-tcltk
+PLIST_SUB+=	TCLTK=""
 .endif
 
 .if defined(WITHOUT_JPEG)
@@ -97,9 +102,11 @@ CONFIGURE_ARGS+=--with-libpng
 
 .if defined(WITHOUT_X11)
 CONFIGURE_ARGS+=--without-x
+PLIST_SUB+=	X11="@comment "
 .else
 CONFIGURE_ARGS+=--with-x
 USE_XLIB=	yes
+PLIST_SUB+=	X11=""
 .endif
 
 .if !defined(WITHOUT_GHOSTSCRIPT)
@@ -117,15 +124,15 @@ CONFIGURE_ARGS+=--with-system-pcre
 BUILD_DEPENDS+=	pdflatex:${PORTSDIR}/print/teTeX-base
 ALL_TARGET+=	dvi
 INSTALL_TARGET+=install-dvi
-PLIST_SUB+=	DVI_MANUAL=''
+PLIST_SUB+=	DVI_MANUAL=""
 .else
-PLIST_SUB+=	DVI_MANUAL='@comment '
+PLIST_SUB+=	DVI_MANUAL="@comment "
 .endif
 
 .if defined(WITHOUT_PDF_MANUALS)
-PLIST_SUB+=	PDF_MANUAL='@comment '
+PLIST_SUB+=	PDF_MANUAL="@comment "
 .else
-PLIST_SUB+=	PDF_MANUAL=''
+PLIST_SUB+=	PDF_MANUAL=""
 BUILD_DEPENDS+=	pdflatex:${PORTSDIR}/print/teTeX-base
 ALL_TARGET+=	pdf
 INSTALL_TARGET+=install-pdf

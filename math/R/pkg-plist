@@ -73,7 +73,7 @@ lib/R/include/Rmath.h
 lib/R/include/Rversion.h
 lib/R/include/S.h
 lib/R/lib/libR.so
-lib/R/lib/libRlapack.so
+%%BLAS%%lib/R/lib/libRlapack.so
 lib/R/library/KernSmooth/CONTENTS
 lib/R/library/KernSmooth/DESCRIPTION
 lib/R/library/KernSmooth/INDEX
@@ -7714,17 +7714,17 @@ lib/R/library/tcltk/INDEX
 lib/R/library/tcltk/Meta/Rd.rds
 lib/R/library/tcltk/Meta/demo.rds
 lib/R/library/tcltk/Meta/hsearch.rds
-lib/R/library/tcltk/Meta/nsInfo.rds
+%%TCLTK%%lib/R/library/tcltk/Meta/nsInfo.rds
 lib/R/library/tcltk/Meta/package.rds
-lib/R/library/tcltk/NAMESPACE
+%%TCLTK%%lib/R/library/tcltk/NAMESPACE
 lib/R/library/tcltk/R-ex/TclInterface.R
 lib/R/library/tcltk/R-ex/TkCommands.R
 lib/R/library/tcltk/R-ex/TkWidgetcmds.R
 lib/R/library/tcltk/R-ex/TkWidgets.R
 lib/R/library/tcltk/R-ex/tclServiceMode.R
 lib/R/library/tcltk/R/tcltk
-lib/R/library/tcltk/R/tcltk.rdb
-lib/R/library/tcltk/R/tcltk.rdx
+%%TCLTK%%lib/R/library/tcltk/R/tcltk.rdb
+%%TCLTK%%lib/R/library/tcltk/R/tcltk.rdx
 lib/R/library/tcltk/demo/tkcanvas.R
 lib/R/library/tcltk/demo/tkdensity.R
 lib/R/library/tcltk/demo/tkfaq.R
@@ -7769,7 +7769,7 @@ lib/R/library/tcltk/latex/tcltk-package.tex
 lib/R/library/tcltk/latex/tkStartGUI.tex
 lib/R/library/tcltk/latex/tk_select.list.tex
 lib/R/library/tcltk/latex/tkpager.tex
-lib/R/library/tcltk/libs/tcltk.so
+%%TCLTK%%lib/R/library/tcltk/libs/tcltk.so
 lib/R/library/tcltk/man/tcltk.Rd.gz
 lib/R/library/tcltk/po/en@quot/LC_MESSAGES/R-tcltk.mo
 lib/R/library/tcltk/po/fr/LC_MESSAGES/R-tcltk.mo
@@ -8224,7 +8224,7 @@ lib/R/library/utils/po/en@quot/LC_MESSAGES/R-utils.mo
 lib/R/library/utils/po/fr/LC_MESSAGES/R-utils.mo
 lib/R/library/utils/po/ko/LC_MESSAGES/R-utils.mo
 lib/R/library/utils/po/zh_CN/LC_MESSAGES/R-utils.mo
-lib/R/modules/R_X11.so
+%%X11%%lib/R/modules/R_X11.so
 lib/R/modules/internet.so
 lib/R/modules/lapack.so
 lib/R/modules/vfonts.so
@@ -8433,7 +8433,7 @@ lib/libR.so
 @dirrm lib/R/library/tcltk/po/en@quot
 @dirrm lib/R/library/tcltk/po
 @dirrm lib/R/library/tcltk/man
-@dirrm lib/R/library/tcltk/libs
+%%TCLTK%%@dirrm lib/R/library/tcltk/libs
 @dirrm lib/R/library/tcltk/latex
 @dirrm lib/R/library/tcltk/html
 @dirrm lib/R/library/tcltk/help
