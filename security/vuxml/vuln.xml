@@ -34,6 +34,37 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="22c6b826-cee0-11da-8578-00123ffe8333">
+    <topic>plone -- "member_id" Parameter Portrait Manipulation Vulnerability</topic>
+    <affects>
+      <package>
+	<name>plone</name>
+	<range><lt>2.1.2_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/19633/">
+	  <p>The vulnerability is caused due to missing security declarations
+	    in "changeMemberPortrait" and "deletePersonalPortrait". This can
+	    be exploited to manipulate or delete another user's portrait via
+	    the "member_id" parameter.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-1711</cvename>
+      <url>http://dev.plone.org/plone/ticket/5432</url>
+      <url>http://www.debian.org/security/2006/dsa-1032</url>
+      <url>http://secunia.com/advisories/19633/</url>
+    </references>
+    <dates>
+      <discovery>2006-04-13</discovery>
+      <entry>2006-04-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="84630f4a-cd8c-11da-b7b9-000c6ec775d9">
     <topic>mozilla -- multiple vulnerabilities</topic>
     <affects>
