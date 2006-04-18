@@ -1,14 +1,11 @@
 bin/galaxyhack
 libexec/galaxyhack
-%%DATADIR%%/settings.dat
 %%DATADIR%%/fleets/Morennians/Moravator.dat
 %%DATADIR%%/fleets/Morennians/Morennian Corvette.dat
 %%DATADIR%%/fleets/Morennians/Morennians.dat
 %%DATADIR%%/fleets/Morennians/X-Fighter.dat
 %%DATADIR%%/fleets/Morennians/attackcapship.ai
 %%DATADIR%%/fleets/Morennians/moveandfire.ai
-%%DATADIR%%/fleets/Morennians/movetocapship.ai
-%%DATADIR%%/fleets/Morennians/movetoslow.ai
 %%DATADIR%%/fleets/Zenennians/Damascus.dat
 %%DATADIR%%/fleets/Zenennians/Emperor.dat
 %%DATADIR%%/fleets/Zenennians/Solar Cruiser.dat
@@ -47,6 +44,7 @@ libexec/galaxyhack
 %%DATADIR%%/music/11radsat.it
 %%DATADIR%%/music/corruptor.ogg
 %%DATADIR%%/music/fission.ogg
+%%DATADIR%%/settings.dat
 %%DATADIR%%/standardpictures/blue/capship/kasper-capital-1.png
 %%DATADIR%%/standardpictures/blue/capship/kasper-capital-2.png
 %%DATADIR%%/standardpictures/blue/capship/kasper-capital-3.png
