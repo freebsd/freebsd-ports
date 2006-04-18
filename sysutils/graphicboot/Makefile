@@ -7,13 +7,14 @@
 
 PORTNAME=	graphicboot
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://matt.sixxgate.com/files/
 
 MAINTAINER=	sixxgate@hotmail.com
 COMMENT=	Provides graphical X Window startup to FreeBSD during 'rc'
 
-RUN_DEPENDS=	xloadimage:${PORTSDIR}/x11/xloadimage
+#RUN_DEPENDS=	xloadimage:${PORTSDIR}/x11/xloadimage
 
 USE_MOTIF=	yes
 USE_BZIP2=	yes
@@ -29,6 +30,6 @@ BROKEN=		The graphical boot requires rcorder which is only on FreeBSD 5 or great
 .endif
 
 post-install:
-	${CAT} pkg-message
+	@${CAT} pkg-message
 
 .include <bsd.port.post.mk>
