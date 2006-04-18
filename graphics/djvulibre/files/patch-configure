@@ -1,5 +1,14 @@
---- configure.orig     Tue Nov  1 02:34:47 2005
-+++ configure  Fri Feb 10 16:26:00 2006
+--- configure.orig	Mon Oct 31 19:34:47 2005
++++ configure	Tue Apr 18 13:55:47 2006
+@@ -486,7 +486,7 @@
+ srcdir=
+ verbose=
+ x_includes=NONE
+-x_libraries=NONE
++x_libraries=${X11BASE}/lib
+ 
+ # Installation directory options.
+ # These are left unexpanded so users can "make install exec_prefix=/foo"
 @@ -26327,7 +26327,7 @@
  then
   NSDEJAVU_CFLAGS=${X_CFLAGS}
