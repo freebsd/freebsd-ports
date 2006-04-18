@@ -19,7 +19,7 @@ MASTER_SITE_SUBDIR=	freepascal
 DISTNAME=	${PORTNAME}-${PORTVERSION}.i386-freebsd
 EXTRACT_SUFX=	.tar
 
-MAINTAINER=	vsevolod@highsecure.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free Pascal compiler with Turbo, Delphi and other extensions
 
 BUILDNAME=	i386-freebsd
