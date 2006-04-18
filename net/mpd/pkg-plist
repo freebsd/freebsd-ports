@@ -60,5 +60,5 @@ sbin/mpd
 %%PORTDOCS%%%%DOCSDIR%%/mpd8.html
 %%PORTDOCS%%%%DOCSDIR%%/mpd9.html
 %%PORTDOCS%%%%DOCSDIR%%/mpd_toc.html
-@dirrm %%PORTDOCS%%%%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm etc/mpd
