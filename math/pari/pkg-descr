@@ -9,5 +9,3 @@ application (for instance written in C, C++, Pascal or Fortran);
 2) as a sophisticated programmable calculator, named GP, which contains 
 most of the standard control instructions of a standard language
 like C.
-
-WWW: http://pari.math.u-bordeaux.fr/
