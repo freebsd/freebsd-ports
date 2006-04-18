@@ -9,7 +9,9 @@ PORTNAME=	ldouble
 PORTVERSION=	0.1
 PORTREVISION=	1
 CATEGORIES=	math
-MASTER_SITES=	http://www.moshier.net/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+#	http://www.moshier.net/
+MASTER_SITE_SUBDIR=	ahze
 DISTFILES=	${LDOUBLE_DISTFILE}
 
 MAINTAINER=	ahze@FreeBSD.org
