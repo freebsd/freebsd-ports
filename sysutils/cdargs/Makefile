@@ -8,7 +8,8 @@
 PORTNAME=	cdargs
 PORTVERSION=	1.35
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.skamphausen.de/software/cdargs/
+MASTER_SITES=	http://www.skamphausen.de/software/cdargs/ \
+		http://www.atarininja.org/~wxs/distfiles/
 
 MAINTAINER=	wxs@csh.rit.edu
 COMMENT=	Navigate the filesystem using a menu interface or a bookmark system
