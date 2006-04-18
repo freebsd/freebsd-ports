@@ -39,7 +39,7 @@ BROKEN=			"incompatible OpenLDAP version: ${WANT_OPENLDAP_VER}"
 .endif
 
 PORTREVISION_CLIENT=	0
-PORTREVISION_SERVER=	1
+PORTREVISION_SERVER=	2
 
 .if !defined(CLIENT_ONLY)
 OPTIONS=	SASL "With (Cyrus) SASL2 support" on \
@@ -50,13 +50,22 @@ OPTIONS=	SASL "With (Cyrus) SASL2 support" on \
 		SLAPI "With Netscape SLAPI plugin API" off \
 		TCP_WRAPPERS "With tcp wrapper support" on \
 		BDB "With BerkeleyDB support" on \
+		ACCESSLOG "With In-Directory Access Logging overlay" off \
+		AUDITLOG "With Audit Logging overlay" off \
+		DENYOP "With Deny Operation overlay" off \
 		DYNGROUP "With Dynamic Group overlay" off \
-		PROXYCACHE "With Proxy Cache overlay" off \
-		ACI "With per-object ACIs (experimental)" off \
-		UNIQUE "With attribute Uniqueness overlay" off \
+		DYNLIST "With Dynamic List overlay" off \
+		LASTMOD "With Last Modification overlay" off \
 		PPOLICY "With Password Policy overlay" off \
-		SYNCPROV "With Syncprov overlay" off \
+		PROXYCACHE "With Proxy Cache overlay" off \
+		REFINT "With Referential Integrity overlay" off \
+		RETCODE "With Return Code testing overlay" off \
 		RWM "With Rewrite/Remap overlay" off \
+		SYNCPROV "With Syncrepl Provider overlay" off \
+		TRANSLUCENT "With Translucent Proxy overlay" off \
+		UNIQUE "With attribute Uniqueness overlay" off \
+		VALSORT "With Value Sorting overlay" off \
+		ACI "With per-object ACIs (experimental)" off \
 		DYNAMIC_BACKENDS "Build dynamic backends" on \
 		RCORDER "Add rc order for slapd(1)" off
 .endif
@@ -187,24 +196,48 @@ CONFIGURE_ARGS+=	--localstatedir=${LOCALSTATEDIR} \
 
 PLIST_SUB+=		BACKEND=${BACKEND_PLIST}
 
+.if defined(WITH_ACCESSLOG)
+CONFIGURE_ARGS+=	--enable-accesslog
+.endif
+
+.if defined(WITH_AUDITLOG)
+CONFIGURE_ARGS+=	--enable-auditlog
+.endif
+
+.if defined(WITH_DENYOP)
+CONFIGURE_ARGS+=	--enable-denyop
+.endif
+
 .if defined(WITH_DYNGROUP)
 CONFIGURE_ARGS+=	--enable-dyngroup
+.endif
+
+.if defined(WITH_DYNLIST)
+CONFIGURE_ARGS+=	--enable-dynlist
+.endif
+
+.if defined(WITH_LASTMOD)
+CONFIGURE_ARGS+=	--enable-lastmod
+.endif
+
+.if defined(WITH_PPOLICY)
+CONFIGURE_ARGS+=	--enable-ppolicy
 .endif
 
 .if defined(WITH_PROXYCACHE)
 CONFIGURE_ARGS+=	--enable-proxycache
 .endif
 
-.if defined(WITH_ACI)
-CONFIGURE_ARGS+=	--enable-aci
+.if defined(WITH_REFINT)
+CONFIGURE_ARGS+=	--enable-refint
 .endif
 
-.if defined(WITH_UNIQUE)
-CONFIGURE_ARGS+=	--enable-unique
+.if defined(WITH_RETCODE)
+CONFIGURE_ARGS+=	--enable-retcode
 .endif
 
-.if defined(WITH_PPOLICY)
-CONFIGURE_ARGS+=	--enable-ppolicy
+.if defined(WITH_RWM)
+CONFIGURE_ARGS+=	--enable-rwm
 .endif
 
 .if defined(WITH_SYNCPROV)
@@ -213,8 +246,20 @@ CONFIGURE_ARGS+=	--enable-syncprov
 CONFIGURE_ARGS+=	--disable-syncprov
 .endif
 
-.if defined(WITH_RWM)
-CONFIGURE_ARGS+=	--enable-rwm
+.if defined(WITH_TRANSLUCENT)
+CONFIGURE_ARGS+=	--enable-translucent
+.endif
+
+.if defined(WITH_UNIQUE)
+CONFIGURE_ARGS+=	--enable-unique
+.endif
+
+.if defined(WITH_VALSORT)
+CONFIGURE_ARGS+=	--enable-valsort
+.endif
+
+.if defined(WITH_ACI)
+CONFIGURE_ARGS+=	--enable-aci
 .endif
 
 .if defined(WITHOUT_BDB)
