@@ -1,0 +1,19 @@
+--- Imakefile.orig	Tue Apr 18 16:00:52 2006
++++ Imakefile	Tue Apr 18 16:01:24 2006
+@@ -48,11 +48,11 @@
+ ComplexProgramTarget(graphicboot)
+ 
+ install::
+-	$(INSTALL) $(INSTALLFLAGS) $(INSTPGMFLAGS) startgraphicboot $(RC_DDIR)/startgraphicboot
+-	$(INSTALL) $(INSTALLFLAGS) $(INSTPGMFLAGS) endgraphicboot $(RC_DDIR)/endgraphicboot
++	$(INSTALL) $(INSTALLFLAGS) startgraphicboot $(RC_DDIR)/startgraphicboot
++	$(INSTALL) $(INSTALLFLAGS) endgraphicboot $(RC_DDIR)/endgraphicboot
+ 	$(MKDIRHIER) $(XBCONF)
+-	$(INSTALL) $(INSTALLFLAGS) $(INSTPGMFLAGS) Xsplash.jpg $(XBCONF)/Xsplash.jpg
+-	$(INSTALL) $(INSTALLFLAGS) $(INSTPGMFLAGS) Xresources $(XBCONF)/Xresources
+-	$(INSTALL) $(INSTALLFLAGS) $(INSTPGMFLAGS) xorg.conf $(XBCONF)/xorg.conf
++	$(INSTALL) $(INSTALLFLAGS) Xsplash.jpg $(XBCONF)/Xsplash.jpg
++	$(INSTALL) $(INSTALLFLAGS) Xresources $(XBCONF)/Xresources
++	$(INSTALL) $(INSTALLFLAGS) xorg.conf $(XBCONF)/xorg.conf
+ 	$(LN) -f $(DESTDIR)$(BINDIR)/$(XSERVERNAME) $(XBCONF)/Xserver
+ 	chmod +x $(RC_DDIR)/startgraphicboot $(RC_DDIR)/endgraphicboot
