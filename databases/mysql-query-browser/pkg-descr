@@ -1,0 +1,21 @@
+MySQL Query Browser is a database querying tool that combines the simplicity
+of a Web-browser-like interface with powerful features like multiple result
+sets on tab sheets, query history, storing query "bookmarks", editing and
+comparing resultsets, SQL script debugging, and more.
+
+Plus, the integrated environment provides:
+    * Query Toolbar to easily create and execute queries and navigate
+      query history
+    * Script Editor giving you control to manually create or edit
+      SQL statements
+    * Results Window so you can also easily compare and work with
+      multiple queries
+    * Object Browser enabling you to manage your databases, bookmarks,
+      and history using a Web Browser like interface
+    * Database Explorer where you can select tables and fields to query,
+      as well as create and delete tables
+    * Table Editor allows you easily create, modify and delete tables
+    * Inline Help giving you instant help access to selected objects,
+      parameters, and functions
+
+WWW: http://www.mysql.com/products/tools/query-browser/
