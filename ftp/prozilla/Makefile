@@ -6,9 +6,8 @@
 #
 
 PORTNAME=	prozilla
-PORTVERSION=	2.0.3
-PORTREVISION=	2
-CATEGORIES=	ftp net
+PORTVERSION=	2.0.4
+CATEGORIES=	ftp www
 MASTER_SITES=	http://prozilla.genesys.ro/downloads/prozilla/tarballs/
 
 MAINTAINER=	alepulver@FreeBSD.org
@@ -21,17 +20,11 @@ USE_GMAKE=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+
+CPPFLAGS=	${CFLAGS} -I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
 
 MAN1=		proz.1
-
-SUB_FILES=	pkg-message
-PKGMESSAGE=	${FILESDIR}/pkg-message
-
-post-install:
-	@${ECHO_CMD}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_CMD}
 
 .include <bsd.port.mk>
