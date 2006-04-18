@@ -1,0 +1,26 @@
+--- GNUmakefile.orig	Sun Mar  5 10:32:34 2006
++++ GNUmakefile	Tue Apr 18 20:57:06 2006
+@@ -6,13 +6,7 @@
+ include GNUmakefile.config
+ 
+ # Where to install.
+-ifeq ($(USER),root)
+-	INSTALL_DIR=/usr/local/bin
+-else
+-    # Quote INSTALL_DIR (cygwin HOME has space chars)
+-    # but not wildcards which would suppress globbing.
+-	INSTALL_DIR="$(HOME)/bin"
+-endif
++INSTALL_DIR=$(PREFIX)/bin
+ 
+ INSTALL			= install
+ INSTALL_OWNER	=
+@@ -114,7 +108,7 @@
+ 	$(CC) -c -o $@ $(CC_FLAGS) $(subst $(OUT_DIR)/,$(CC_SRC_DIR)/,$<)
+ 
+ $(CTAGS_LIB): $(CTAGS_SRC_DIR)/config.status $(CTAGS_SRCS)
+-	make -C $(CTAGS_SRC_DIR) $(MAKECMDGOALS)
++	$(MAKE) -C $(CTAGS_SRC_DIR) $(MAKECMDGOALS)
+ 
+ $(CTAGS_SRC_DIR)/config.status:
+ 	cd $(CTAGS_SRC_DIR) && ./configure
