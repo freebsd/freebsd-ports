@@ -58,7 +58,7 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 USE_BDB=	40
 .elif ${WITH_BDB_VER} != 3 && ${WITH_BDB_VER} != 41 && \
       ${WITH_BDB_VER} != 42 && ${WITH_BDB_VER} != 43 && ${WITH_BDB_VER} != 44
-IGNORE=		"WITH_BDB_VER must be 3, 4, 41, 42, 43 or 44"
+IGNORE=		"cannot install: WITH_BDB_VER must be 3, 4, 41, 42, 43 or 44"
 .endif
 USE_BDB?=	${WITH_BDB_VER}
 CONFIGURE_ARGS+=--with-dblib=berkeley --with-bdb-libdir=${LOCALBASE}/lib \
