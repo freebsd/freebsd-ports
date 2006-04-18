@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	munger
-PORTVERSION=	4.95
+PORTVERSION=	4.97
 CATEGORIES=	lang
 MASTER_SITES=	http://www.jamesbailie.com/
 
@@ -52,11 +52,6 @@ MAN1+=		dkns.1
 PLIST_SUB+=	DKNS_BIN="bin/dkns"
 .else
 PLIST_SUB+=	DKNS_BIN="${DATADIR:S,^${PREFIX}/,,}/dkns.munger"
-.endif
-
-post-patch:
-.if !defined(WITHOUT_SQL)
-	${REINPLACE_CMD} 's/-lsqlite3/${PTHREAD_LIBS} &/' ${WRKSRC}/Makefile
 .endif
 
 post-build:
