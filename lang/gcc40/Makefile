@@ -35,7 +35,11 @@ NOMANCOMPRESS=	yes	# too hard to deal with differences on 5-cur and releng4
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "amd64"
+CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
+.else
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
+.endif
 
 SRCDIR=		${WRKDIR}/gcc-${VERSIONSTRING}
 WRKSRC=		${WRKDIR}/build
