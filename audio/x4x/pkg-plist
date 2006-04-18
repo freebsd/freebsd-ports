@@ -1,0 +1,71 @@
+bin/X4X
+%%DATADIR%%/.xmms2/clients/x4x/images/icons/default/about16x16.png
+%%DATADIR%%/.xmms2/clients/x4x/images/icons/default/about32x32.png
+%%DATADIR%%/.xmms2/clients/x4x/images/icons/default/about48x48.png
+%%DATADIR%%/.xmms2/clients/x4x/images/icons/default/about64x64.png
+%%DATADIR%%/.xmms2/clients/x4x/images/icons/default/lists16x16.png
+%%DATADIR%%/.xmms2/clients/x4x/images/icons/default/lists32x32.png
+%%DATADIR%%/.xmms2/clients/x4x/images/icons/default/lists48x48.png
+%%DATADIR%%/.xmms2/clients/x4x/images/icons/default/lists64x64.png
+%%DATADIR%%/.xmms2/clients/x4x/images/icons/default/misc16x16.png
+%%DATADIR%%/.xmms2/clients/x4x/images/icons/default/misc32x32.png
+%%DATADIR%%/.xmms2/clients/x4x/images/icons/default/misc48x48.png
+%%DATADIR%%/.xmms2/clients/x4x/images/icons/default/misc64x64.png
+%%DATADIR%%/.xmms2/clients/x4x/images/icons/default/next16x16.png
+%%DATADIR%%/.xmms2/clients/x4x/images/icons/default/next32x32.png
+%%DATADIR%%/.xmms2/clients/x4x/images/icons/default/next48x48.png
+%%DATADIR%%/.xmms2/clients/x4x/images/icons/default/next64x64.png
+%%DATADIR%%/.xmms2/clients/x4x/images/icons/default/pause16x16.png
+%%DATADIR%%/.xmms2/clients/x4x/images/icons/default/pause32x32.png
+%%DATADIR%%/.xmms2/clients/x4x/images/icons/default/pause48x48.png
+%%DATADIR%%/.xmms2/clients/x4x/images/icons/default/pause64x64.png
+%%DATADIR%%/.xmms2/clients/x4x/images/icons/default/play16x16.png
+%%DATADIR%%/.xmms2/clients/x4x/images/icons/default/play32x32.png
+%%DATADIR%%/.xmms2/clients/x4x/images/icons/default/play48x48.png
+%%DATADIR%%/.xmms2/clients/x4x/images/icons/default/play64x64.png
+%%DATADIR%%/.xmms2/clients/x4x/images/icons/default/prev16x16.png
+%%DATADIR%%/.xmms2/clients/x4x/images/icons/default/prev32x32.png
+%%DATADIR%%/.xmms2/clients/x4x/images/icons/default/prev48x48.png
+%%DATADIR%%/.xmms2/clients/x4x/images/icons/default/prev64x64.png
+%%DATADIR%%/.xmms2/clients/x4x/images/icons/default/stop16x16.png
+%%DATADIR%%/.xmms2/clients/x4x/images/icons/default/stop32x32.png
+%%DATADIR%%/.xmms2/clients/x4x/images/icons/default/stop48x48.png
+%%DATADIR%%/.xmms2/clients/x4x/images/icons/default/stop64x64.png
+%%DATADIR%%/.xmms2/clients/x4x/images/icons/default/trayAbout.png
+%%DATADIR%%/.xmms2/clients/x4x/images/icons/default/trayEQ.png
+%%DATADIR%%/.xmms2/clients/x4x/images/icons/default/trayExit.png
+%%DATADIR%%/.xmms2/clients/x4x/images/icons/default/trayHelp.png
+%%DATADIR%%/.xmms2/clients/x4x/images/icons/default/trayIcon.png
+%%DATADIR%%/.xmms2/clients/x4x/images/icons/default/trayLists.png
+%%DATADIR%%/.xmms2/clients/x4x/images/icons/default/trayMovie.png
+%%DATADIR%%/.xmms2/clients/x4x/images/icons/default/trayNext.png
+%%DATADIR%%/.xmms2/clients/x4x/images/icons/default/trayPause.png
+%%DATADIR%%/.xmms2/clients/x4x/images/icons/default/trayPlay.png
+%%DATADIR%%/.xmms2/clients/x4x/images/icons/default/trayPrefs.png
+%%DATADIR%%/.xmms2/clients/x4x/images/icons/default/trayPrev.png
+%%DATADIR%%/.xmms2/clients/x4x/images/icons/default/trayStop.png
+%%DATADIR%%/.xmms2/clients/x4x/styles/bigscreen.xml
+%%DATADIR%%/.xmms2/clients/x4x/styles/default.xml
+%%DATADIR%%/.xmms2/clients/x4x/styles/small.xml
+%%DATADIR%%/X4X.jar
+%%DATADIR%%/images/logo.ico
+%%DATADIR%%/images/logo.png
+%%DATADIR%%/images/logo.xpm
+%%DATADIR%%/libs/XWidgets.jar
+%%DATADIR%%/log4j.properties
+%%DATADIR%%/properties/lang/x4x.properties
+%%DATADIR%%/properties/lang/x4x_de.properties
+%%DATADIR%%/properties/lang/x4x_de_austrian.properties
+%%DATADIR%%/properties/lang/x4x_en.properties
+@dirrm %%DATADIR%%/.xmms2/clients/x4x/images/icons/default
+@dirrm %%DATADIR%%/.xmms2/clients/x4x/images/icons
+@dirrm %%DATADIR%%/.xmms2/clients/x4x/images
+@dirrm %%DATADIR%%/.xmms2/clients/x4x/styles
+@dirrm %%DATADIR%%/.xmms2/clients/x4x
+@dirrm %%DATADIR%%/.xmms2/clients
+@dirrm %%DATADIR%%/.xmms2
+@dirrm %%DATADIR%%/images
+@dirrm %%DATADIR%%/libs
+@dirrm %%DATADIR%%/properties/lang
+@dirrm %%DATADIR%%/properties
+@dirrm %%DATADIR%%
