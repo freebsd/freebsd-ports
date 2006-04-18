@@ -6,26 +6,25 @@
 #
 
 PORTNAME=	vnc2swf
-PORTVERSION=	0.4.2
+PORTVERSION=	0.5.0
 CATEGORIES=	net
 MASTER_SITES=	http://www.unixuser.org/~euske/${PORTNAME}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	VNC Session Recorder to SWF Flash (Movie) format
 
-LIB_DEPENDS=	ming:${PORTSDIR}/graphics/ming
-
-GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+
 PLIST_FILES=	bin/vnc2swf bin/recordwin
 
-CONFIGURE_ARGS=	--with-ming=${LOCALBASE}/lib
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/ming"
+post-patch:
+	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
+		's| -g||g'
 
-pre-configure:
-	@${REINPLACE_CMD} -e 's|^prefix.*|prefix= @prefix@|' ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e 's|-g||' ${WRKSRC}/Makefile.in \
-	${WRKSRC}/rdr/Makefile.in ${WRKSRC}/rfb/Makefile.in
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/vnc2swf ${PREFIX}/bin/vnc2swf
+	${INSTALL_SCRIPT} ${WRKSRC}/recordwin.sh ${PREFIX}/bin/recordwin
+
 .include <bsd.port.mk>
