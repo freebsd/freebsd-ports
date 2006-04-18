@@ -5,6 +5,10 @@ bin/gphelp
 include/pari/paricfg.h
 include/pari/pariinl.h
 include/pari/pari.h
+include/pari/parinf.h
+include/pari/pariold.h
+include/pari/paripriv.h
+include/pari/paritune.h
 include/pari/paritype.h
 include/pari/paricast.h
 include/pari/paricom.h
@@ -17,7 +21,8 @@ include/pari/paridecl.h
 include/pari/genpari.h
 lib/libpari-%%MAJOR_VERSION%%.%%MINOR_VERSION%%.so.%%REV_VERSION%%.0.0
 lib/libpari-%%MAJOR_VERSION%%.%%MINOR_VERSION%%.so.%%REV_VERSION%%
-lib/libpari-%%MAJOR_VERSION%%.%%MINOR_VERSION%%.so
+lib/libpari.so
+lib/pari/pari.cfg
 %%DOCSDIR%%/AUTHORS
 %%DOCSDIR%%/Announce.2.1
 %%DOCSDIR%%/CHANGES
@@ -28,8 +33,8 @@ lib/libpari-%%MAJOR_VERSION%%.%%MINOR_VERSION%%.so
 %%DOCSDIR%%/NEW
 %%DOCSDIR%%/README
 %%DOCSDIR%%/TODO
-%%DOCSDIR%%/pari.desc
 %%DOCSDIR%%/PARI/822.pm
+%%DOCSDIR%%/pari.desc
 %%DOCSDIR%%/misc/README
 %%DOCSDIR%%/misc/color.dft
 %%DOCSDIR%%/misc/gpalias
@@ -61,14 +66,24 @@ lib/libpari-%%MAJOR_VERSION%%.%%MINOR_VERSION%%.so
 %%DOCSDIR%%/examples/cl.gp
 %%DOCSDIR%%/examples/classno.gp
 %%DOCSDIR%%/examples/contfrac.gp
+%%DOCSDIR%%/examples/extgcd.c
 %%DOCSDIR%%/examples/lucas.gp
-%%DOCSDIR%%/examples/matexp.c
 %%DOCSDIR%%/examples/rho.gp
 %%DOCSDIR%%/examples/squfof.gp
 %%DOCSDIR%%/examples/taylor.gp
+share/emacs/site-lisp/pari/pari-conf.el
+share/emacs/site-lisp/pari/pari-completion.el
+share/emacs/site-lisp/pari/pari-fontification.el
+share/emacs/site-lisp/pari/pari-help.el
+share/emacs/site-lisp/pari/pari-messages.el
+share/emacs/site-lisp/pari/pari.el
+share/emacs/site-lisp/pari/pariemacs.txt
+share/emacs/site-lisp/pari/sli-tools.el
 @dirrm include/pari
-@dirrm %%DOCSDIR%%/PARI
+@dirrm lib/pari
 @dirrm %%DOCSDIR%%/misc
 @dirrm %%DOCSDIR%%/doc
 @dirrm %%DOCSDIR%%/examples
+@dirrm %%DOCSDIR%%/PARI
 @dirrm %%DOCSDIR%%
+@dirrm share/emacs/site-lisp/pari
