@@ -131,6 +131,17 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <certvu>179014</certvu>
+      <certvu>252324</certvu>
+      <certvu>329500</certvu>
+      <certvu>350262</certvu>
+      <certvu>488774</certvu>
+      <certvu>736934</certvu>
+      <certvu>813230</certvu>
+      <certvu>842094</certvu>
+      <certvu>932734</certvu>
+      <certvu>935556</certvu>
+      <certvu>968814</certvu>
       <cvename>CVE-2006-0749</cvename>
       <cvename>CVE-2006-1045</cvename>
       <cvename>CVE-2006-1529</cvename>
@@ -176,10 +187,12 @@ Note:  Please add new entries to the beginning of this file.
       <url>http://www.mozilla.org/security/announce/2006/mfsa2006-28.html</url>
       <url>http://www.mozilla.org/security/announce/2006/mfsa2006-29.html</url>
       <url>http://www.zerodayinitiative.com/advisories/ZDI-06-010.html</url>
+      <uscertta>TA06-107A</uscertta>
     </references>
     <dates>
       <discovery>2006-04-13</discovery>
       <entry>2006-04-16</entry>
+      <modified>2006-04-18</modified>
     </dates>
   </vuln>
 
