@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	6tunnel
-PORTVERSION=	0.11.r2
+DISTVERSION=	0.11rc2
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://toxygen.net/6tunnel/
-DISTNAME=	${PORTNAME}-${PORTVERSION:R}rc2
 
 MAINTAINER=	shaun@inerd.com
 COMMENT=	TCP proxy for applications that don't speak IPv6
@@ -25,9 +24,4 @@ MAN1=		6tunnel.1
 MANCOMPRESSED=	no
 PLIST_FILES=	bin/6tunnel
 
-.include <bsd.port.pre.mk>
-
-pre-configure:
-	@cd ${WRKSRC}; ${AUTOCONF}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
