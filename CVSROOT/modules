@@ -10954,6 +10954,7 @@ pynids		ports/net/pynids
 pyobfuscate	ports/devel/pyobfuscate
 pypanda		ports/misc/pypanda
 pypanel		ports/deskutils/pypanel
+pypersrc	ports/devel/pypersrc
 pypvm		ports/net/pypvm
 pyrex		ports/devel/pyrex
 pyro		ports/graphics/pyro
