@@ -6,6 +6,19 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20060418:
+  AFFECTS: users of net/{ipw,iwi}-firmware
+  AUTHOR: flz@FreeBSD.org
+
+  Some changes in the way ipw(4) and iwi(4) work lead to fundamental
+  changes in ipw-firmware and iwi-firmware ports. Since these drivers
+  are now using loadable kernel modules as firmware, two new ports have
+  been created: net/ipw-firmware-kmod and net/iwi-firmware-kmod.
+
+  You should not be able to install the wrong one since detection is
+  base on your FreeBSD version. Trying to install the wrong port will
+  result in an error message (port marked as IGNORE).
+
 20060413:
   AFFECTS: users of security/tor-devel
   AUTHOR: johans@FreeBSD.org
