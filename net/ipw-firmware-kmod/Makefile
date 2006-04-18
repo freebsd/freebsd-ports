@@ -36,8 +36,7 @@ NO_PACKAGE=	"this is a modified version of a restricted firmware"
 
 .include <bsd.port.pre.mk>
 
-.if ( ${OSVERSION} >= 700000 && ${OSVERSION} < 700014 ) || \
-	!defined(TESTING)
+.if ( ${OSVERSION} >= 700000 && ${OSVERSION} < 700014 )
 IGNORE=		needs fresh ${DRIVERNAME}(4)
 .endif
 
