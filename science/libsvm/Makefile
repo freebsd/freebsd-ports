@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libsvm
-PORTVERSION=	2.81
+PORTVERSION=	2.82
 PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	science math
@@ -17,7 +17,6 @@ MAINTAINER=	rafan@infor.org
 COMMENT=	A library for Support Vector Machines
 
 USE_ZIP=	yes
-USE_REINPLACE=	yes
 
 .if defined(WITH_PYTHON)
 CATEGORIES+=	python
