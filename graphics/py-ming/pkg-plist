@@ -1,25 +1,7 @@
-lib/%%PYTHON_VERSION%%/site-packages/mingcmodule.so
+lib/%%PYTHON_VERSION%%/site-packages/_mingc.so
 lib/%%PYTHON_VERSION%%/site-packages/ming.py
-%%PORTDOCS%%share/examples/%%PYTHON_VERSION%%/ming/action.py
-%%PORTDOCS%%share/examples/%%PYTHON_VERSION%%/ming/alphafill.py
-%%PORTDOCS%%share/examples/%%PYTHON_VERSION%%/ming/animation.py
-%%PORTDOCS%%share/examples/%%PYTHON_VERSION%%/ming/bitmapxform.py
-%%PORTDOCS%%share/examples/%%PYTHON_VERSION%%/ming/button.py
-%%PORTDOCS%%share/examples/%%PYTHON_VERSION%%/ming/cxform.py
-%%PORTDOCS%%share/examples/%%PYTHON_VERSION%%/ming/drag.py
-%%PORTDOCS%%share/examples/%%PYTHON_VERSION%%/ming/glyph.py
-%%PORTDOCS%%share/examples/%%PYTHON_VERSION%%/ming/gradient.py
-%%PORTDOCS%%share/examples/%%PYTHON_VERSION%%/ming/gradientxform.py
-%%PORTDOCS%%share/examples/%%PYTHON_VERSION%%/ming/jpegfill.py
-%%PORTDOCS%%share/examples/%%PYTHON_VERSION%%/ming/keypress.py
-%%PORTDOCS%%share/examples/%%PYTHON_VERSION%%/ming/morph.py
-%%PORTDOCS%%share/examples/%%PYTHON_VERSION%%/ming/mousetrack.py
-%%PORTDOCS%%share/examples/%%PYTHON_VERSION%%/ming/newbutton.py
-%%PORTDOCS%%share/examples/%%PYTHON_VERSION%%/ming/png.py
-%%PORTDOCS%%share/examples/%%PYTHON_VERSION%%/ming/pngalpha.py
-%%PORTDOCS%%share/examples/%%PYTHON_VERSION%%/ming/shape.py
-%%PORTDOCS%%share/examples/%%PYTHON_VERSION%%/ming/sprite.py
-%%PORTDOCS%%share/examples/%%PYTHON_VERSION%%/ming/streammp3.py
-%%PORTDOCS%%share/examples/%%PYTHON_VERSION%%/ming/text.py
-%%PORTDOCS%%@dirrm share/examples/%%PYTHON_VERSION%%/ming
-%%PORTDOCS%%@unexec rmdir %D/share/examples/%%PYTHON_VERSION%% 2>/dev/null || true
+lib/%%PYTHON_VERSION%%/site-packages/ming.pyc
+lib/%%PYTHON_VERSION%%/site-packages/ming.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mingc.py
+lib/%%PYTHON_VERSION%%/site-packages/mingc.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mingc.pyo
