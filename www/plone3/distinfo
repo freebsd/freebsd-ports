@@ -1,3 +1,6 @@
 MD5 (zope/Plone-2.1.2.tar.gz) = 863311e29550f9b4bf6c2502fdbed1fa
 SHA256 (zope/Plone-2.1.2.tar.gz) = e9c0b53d887b53310daab656ef83b0abecdde39b679806a0f04f3cda222fbac2
 SIZE (zope/Plone-2.1.2.tar.gz) = 7126486
+MD5 (zope/PloneHotfix20060410.tar.gz) = fecdb36acae4751f6a8975c2068247c3
+SHA256 (zope/PloneHotfix20060410.tar.gz) = f1d86b78c39392d4b9e81f9a3e854cccdcc1bcd8bf51fb6468cc1c8c9a4d30f1
+SIZE (zope/PloneHotfix20060410.tar.gz) = 2972
