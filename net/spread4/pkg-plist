@@ -25,7 +25,7 @@ sbin/spread
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Spread/Spread.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Spread/autosplit.ix
 %%EXAMPLESDIR%%/test.pl
-@exec mkdir -p /var/run/spread %B/var/run
+@exec mkdir -p /var/run/spread
 @unexec rmdir /var/run/spread 2>/dev/null || true
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Spread
 @dirrmtry %%EXAMPLESDIR%%
