@@ -6,23 +6,21 @@
 #
 
 PORTNAME=	ming
-PORTVERSION=	0.2a
+PORTVERSION=	0.3.0
 CATEGORIES=	graphics perl5
-MASTER_SITES=	# none
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=	p5-
-DISTFILES=	# none
+DISTNAME=	${PORTNAME}-perl-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl5 module for Ming which allows you to create Flash 4/5 movies
 
-EXTRACT_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/graphics/ming:patch
-LIB_DEPENDS=	ming.3:${PORTSDIR}/graphics/ming
+LIB_DEPENDS=	ming.4:${PORTSDIR}/graphics/ming
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/perl_ext
 
 USE_PERL5=	yes
-
-MD5_FILE=	${.CURDIR}/../ming/distinfo
-
-WRKSRC=		${WRKDIR}/${DISTNAME}/perl_ext
 PERL_CONFIGURE=	yes
 CONFIGURE_ENV=	LOCALBASE="${LOCALBASE}"
 
@@ -30,23 +28,30 @@ MAN3=		SWF.3 \
 		SWF::Action.3 \
 		SWF::Bitmap.3 \
 		SWF::Button.3 \
+		SWF::Constants.3 \
 		SWF::DisplayItem.3 \
 		SWF::Morph.3 \
+		SWF::Movie.3 \
 		SWF::Shape.3 \
-		SWF::Sprite.3
+		SWF::Sound.3 \
+		SWF::Sprite.3 \
+		SWF::TextField.3 \
+		SWF::VideoStream.3
 
-EXAMPLES=	examples/*
+.include <bsd.port.pre.mk>
 
-do-extract:
-	${MKDIR} ${WRKDIR}
-	${LN} -s `cd ${PORTSDIR}/graphics/ming && ${MAKE} -V WRKDIR`/* ${WRKDIR}/
+.if ${OSVERSION} < 500000
+BROKEN=	Doesn't build on < 5.x
+.endif
+
+post-patch:
+	@${ECHO_CMD} -n > ${WRKSRC}/../configure.in
+	@${LN} -sf ${LOCALBASE}/include/ming ${WRKSRC}/../src
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/examples/perl5/${PORTNAME}
-.for f in ${EXAMPLES}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/examples/perl5/${PORTNAME}/
-.endfor
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/*.* ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
