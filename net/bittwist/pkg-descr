@@ -1,0 +1,5 @@
+A libpcap-based ethernet packet generator, capable of replaying traffic
+from a pcap file, and an editor to allow you to change the contents of a
+trace file on the fly.
+
+WWW: http://bittwist.sourceforge.net
