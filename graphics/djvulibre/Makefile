@@ -28,7 +28,8 @@ CONFIGURE_ENV=	JPEG_CFLAGS="-I${LOCALBASE}/include" \
 		TIFF_LIBS="-L${LOCALBASE}/lib -ltiff" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}" \
-		CXX="${CXX}"
+		CXX="${CXX}" \
+		X11BASE="${X11BASE}"
 CONFIGURE_ARGS=	--enable-threads=pthread --enable-shared
 INSTALLS_SHLIB=	yes
 
