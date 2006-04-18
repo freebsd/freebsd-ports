@@ -529,6 +529,7 @@
 %%IPPLANDIR%%/user/searchallform.php
 %%IPPLANDIR%%/user/swiplib.php
 %%IPPLANDIR%%/user/traceroute.php
+%%IPPLANDIR%%/user/treeview.php
 %%IPPLANDIR%%/user/whois.php
 %%IPPLANDIR%%/xmllib.php
 @dirrm %%IPPLANDIR%%/user/Net/DNS/RR

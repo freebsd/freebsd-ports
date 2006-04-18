@@ -6,23 +6,25 @@
 #
 
 PORTNAME=	ipplan
-PORTVERSION=	4.51
+PORTVERSION=	4.55
 CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	iptrack
-DISTNAME=	${PORTNAME}-4.51
+DISTNAME=	${PORTNAME}-4.55
 
 MAINTAINER=	mt@primats.org.ua
 COMMENT=	IP address management and tracking
 
-USE_REINPLACE=	yes
+RUN_DEPENDS=	nmap:${PORTSDIR}/security/nmap
+
+USE_PERL5_RUN=	yes
+USE_PHP=	gettext pcre xml zlib
+
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 IPPLANDIR?=	share/${PORTNAME}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 PLIST_SUB=	IPPLANDIR=${IPPLANDIR}
-
-USE_PHP=	gettext pcre xml zlib
 
 .if !defined(WITHOUT_MYSQL)
 USE_PHP+=	mysql
@@ -36,21 +38,30 @@ USE_PHP+=	pgsql
 USE_PHP+=	snmp
 .endif
 
+.include <bsd.port.pre.mk>
+
 post-patch:
-	@${SED} -e 's|%IPPLANDIR%|${PREFIX}/${IPPLANDIR}|g' ${MASTERDIR}/pkg-message > ${PKGMESSAGE}
-.if defined(WITH_PGSQL)
-	@${REINPLACE_CMD} -e 's|INSTALL|INSTALL-POSTGRESQL|g' ${PKGMESSAGE}
-.endif
+	@${REINPLACE_CMD} -e "s|/usr/bin/perl|${PERL}|" \
+		-e "s|/usr/bin/xsltproc|${LOCALBASE}/bin/xsltproc|" \
+		${WRKSRC}/contrib/process-exports.pl
+	@${REINPLACE_CMD} -e "s|/usr/local/bin/php|${LOCALBASE}/bin/php|" \
+		${WRKSRC}/contrib/ipplan-poller.php
+	@${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|" \
+		${WRKSRC}/config.php
+	@${FIND} ${WRKSRC} -name '*.orig' -delete -o -name '*.bak' -delete
 
 do-install:
 	@${MKDIR} ${PREFIX}/${IPPLANDIR}
 	@${CP} -R ${WRKSRC}/* ${PREFIX}/${IPPLANDIR}
-	@${FIND} ${PREFIX}/${IPPLANDIR} -name '*.orig' -delete
-	@${CAT} ${PKGMESSAGE}
 
 post-install:
 	@${MKDIR} -m 700 /var/spool/ipplan/uploads \
 		/var/spool/ipplan/exportdns
 	@${CHOWN} -R www:www /var/spool/ipplan
+	@${SED} -e 's|%IPPLANDIR%|${PREFIX}/${IPPLANDIR}|g' ${MASTERDIR}/pkg-message > ${PKGMESSAGE}
+.if defined(WITH_PGSQL)
+	@${REINPLACE_CMD} -e 's|INSTALL|INSTALL-POSTGRESQL|g' ${PKGMESSAGE}
+.endif
+	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
