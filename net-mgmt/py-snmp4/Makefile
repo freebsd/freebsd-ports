@@ -16,15 +16,17 @@ DISTNAME=	pysnmp-${PORTVERSION}
 MAINTAINER=	mhjacks@swbell.net
 COMMENT=	SNMP framework for Python
 
-CONFLICTS=	py??-snmp-[0-9]*
-
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pyasn1/__init__.py:${PORTSDIR}/devel/py-asn1 \
 		${PYTHON_SITELIBDIR}/Crypto/__init__.py:${PORTSDIR}/security/py-pycrypto
+
+CONFLICTS=	py??-snmp-[0-9]*
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
+
+PORTDOCS=	*
 
 BASEDOCS=	CHANGES \
 		LICENSE \
