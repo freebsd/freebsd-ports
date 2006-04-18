@@ -630,6 +630,7 @@
     SUBDIR += samba-libsmbclient
     SUBDIR += samba-nmblookup
     SUBDIR += samba3
+    SUBDIR += samba4wins
     SUBDIR += sambasentinel
     SUBDIR += samplicator
     SUBDIR += sbd
