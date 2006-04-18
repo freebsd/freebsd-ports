@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	renattach
-PORTVERSION=	1.2.2
+PORTVERSION=	1.2.3
 CATEGORIES=	mail
 MASTER_SITES=	http://www.pc-tools.net/files/unix/
 
