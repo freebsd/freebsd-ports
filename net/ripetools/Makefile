@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.ripe.net/tools/
 DISTNAME=	ripe-whois-tools-2.4
 
-MAINTAINER=	joe@uk.freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	RIPE's own version of whois, and a RIPE database tool
 
 DEPRECATED=	"Please use net/ripe-whois!"
