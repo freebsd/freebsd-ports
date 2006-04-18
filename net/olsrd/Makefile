@@ -43,6 +43,10 @@ MAKE_ARGS+=	INSTALL_PREFIX=${PREFIX}
 IGNORE=		needs ieee80211.h headers
 .endif
 
+.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
+CFLAGS+=	-fPIC
+.endif
+
 .if !defined(WITH_MULTI_IF)
 pre-everything::
 	@${ECHO_MSG}	""
