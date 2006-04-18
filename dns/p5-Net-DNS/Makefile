@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-DNS
-PORTVERSION=	0.56
+PORTVERSION=	0.57
 CATEGORIES=	dns net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
@@ -16,7 +16,8 @@ MAINTAINER=	DougB@FreeBSD.org
 COMMENT=	Perl5 interface to the DNS resolver, and dynamic updates
 
 # Warnings during build are harmless, the port does not need these to build
-RUN_DEPENDS=	ipcount:${PORTSDIR}/net-mgmt/p5-Net-IP
+RUN_DEPENDS=	ipcount:${PORTSDIR}/net-mgmt/p5-Net-IP \
+		${SITE_PERL}/Digest/HMAC_MD5.pm:${PORTSDIR}/security/p5-Digest-HMAC
 
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--online-tests
@@ -43,17 +44,10 @@ MAN3=		Net::DNS.3 Net::DNS::Header.3 Net::DNS::Packet.3 \
 
 .include <bsd.port.pre.mk>
 
-pre-fetch:
 .if ${PERL_LEVEL} < 500600
-	@${ECHO} "************************************************************"
-	@${ECHO} "* WARNING: Dependencies for the cryptographic functions of *"
-	@${ECHO} "* this library require at least Perl 5.6.2. Although most  *"
-	@${ECHO} "* functions of this library will work without them, if you *"
-	@${ECHO} "* need those features, you will have to upgrade Perl.      *"
-	@${ECHO} "************************************************************"
-	@sleep 5
-.else
-RUN_DEPENDS+=	${SITE_PERL}/Digest/HMAC_MD5.pm:${PORTSDIR}/security/p5-Digest-HMAC
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/IO/Socket/INET.pm:${PORTSDIR}/devel/p5-IO
+post-patch:
+	${PERL} -pi -e 's/=(.*);/\($$1\);/ if m{errorstring}' ${WRKSRC}/lib/Net/DNS/Resolver/Recurse.pm
 .endif
 
 .if ${PERL_LEVEL} < 500800
