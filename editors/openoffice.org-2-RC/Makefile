@@ -182,13 +182,11 @@ post-extract:
 	@cd ${WRKDIR} ; ${CAT} ${DISTDIR}/${DIST_SUBDIR}/${ANT_DISTFILE} | ${BZIP2_CMD} -d | ${TAR} xf -
 	@${RM} -Rf ${WRKDIR}/gnugcj
 	@${MKDIR} ${WRKDIR}/gnugcj/bin
-	@${MKDIR} ${WRKDIR}/gnugcj/lib
 	@${LN} -s ${LOCALBASE}/bin/gcj41 ${WRKDIR}/gnugcj/bin/gcj
 	@${LN} -s ${LOCALBASE}/bin/gij41 ${WRKDIR}/gnugcj/bin/gij
 	@${LN} -s ${LOCALBASE}/bin/gjdoc ${WRKDIR}/gnugcj/bin/javadoc  # #iXXXXX# xmerge doesn't support gjdoc
 	@${LN} -s ${LOCALBASE}/bin/fastjar41 ${WRKDIR}/gnugcj/bin/fastjar
 	@${LN} -s ${LOCALBASE}/bin/gcj-dbtool41 ${WRKDIR}/gnugcj/bin/gcj-dbtool
-	@${LN} -s ${PREFIX}/lib/gcc/${MACHINE_ARCH}-portbld-freebsd${OSREL}/${GCCVER}/libgcj.so ${WRKDIR}/gnugcj/lib
 .endif
 .if defined(WITH_GPC)
 	@cd ${WRKDIR} ; ${CAT} ${DISTDIR}/${DIST_SUBDIR}/gpc231.tar.Z | ${TAR} xfz -

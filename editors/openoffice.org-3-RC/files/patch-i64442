@@ -1,0 +1,55 @@
+
+Index: jvmfwk/plugins/sunmajor/pluginlib/gnujre.cxx
+===================================================================
+RCS file: /cvs/udk/jvmfwk/plugins/sunmajor/pluginlib/gnujre.cxx,v
+retrieving revision 1.5
+diff -u -r1.5 gnujre.cxx
+--- jvmfwk/plugins/sunmajor/pluginlib/gnujre.cxx	20 Jan 2006 10:54:22 -0000	1.5
++++ jvmfwk/plugins/sunmajor/pluginlib/gnujre.cxx	18 Apr 2006 02:29:16 -0000
+@@ -63,11 +63,11 @@
+ char const* const* GnuInfo::getRuntimePaths(int * size)
+ {
+     static char const* ar[]= {
+-          "/lib/libgcj.so.7",
+-          "/lib/libgcj.so.6"
++          "/libgcj.so.7",
++          "/libgcj.so.6"
+ #if 0   //unreliable
+-	, "/lib/libgcj.so.5"
+-        , "/lib/libgcj.so.4"
++	, "/libgcj.so.5"
++        , "/libgcj.so.4"
+ #endif
+     };
+     *size = sizeof(ar) / sizeof (char*);
+@@ -86,7 +86,7 @@
+     OUString sVersionProperty(
+         RTL_CONSTASCII_USTRINGPARAM("java.version"));
+     OUString sHomeProperty(
+-        RTL_CONSTASCII_USTRINGPARAM("java.home"));
++        RTL_CONSTASCII_USTRINGPARAM("gnu.classpath.home.url"));
+     OUString sAccessProperty(
+         RTL_CONSTASCII_USTRINGPARAM("javax.accessibility.assistive_technologies"));
+ 
+@@ -110,19 +110,8 @@
+         }
+         else if (!bHome && sHomeProperty.equals(i->first))
+         {
+-           OUString fileURL;
+-           if (osl_getFileURLFromSystemPath(i->second.pData,& fileURL.pData) ==
+-               osl_File_E_None)
+-           {
+-               //make sure that the drive letter have all the same case
+-               //otherwise file:///c:/jre and file:///C:/jre produce two
+-               //different objects!!!
+-               if (makeDriveLetterSame( & fileURL))
+-               {
+-                   m_sHome = fileURL;
+-                   bHome = true;
+-               }
+-           }
++          m_sHome = i->second;
++          bHome = true;
+         }
+         else if (!bAccess && sAccessProperty.equals(i->first))
+         {
