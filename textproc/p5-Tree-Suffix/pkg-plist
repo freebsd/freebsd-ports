@@ -1,0 +1,7 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Tree/Suffix/Suffix.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Tree/Suffix/Suffix.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Tree/Suffix/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/Tree/Suffix.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tree/Suffix
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tree
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Tree
