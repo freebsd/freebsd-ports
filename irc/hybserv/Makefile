@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hybserv
-PORTVERSION=	1.9.1
+PORTVERSION=	1.9.2
 CATEGORIES=	irc
 MASTER_SITES=	http://www.hybserv.net/downloads/
 
@@ -20,6 +20,13 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
 WRKSRC=		${WRKDIR}/hybserv
+
+CONFIGURE_TARGET=       --build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+
+.if defined(WITH_DAEMONTOOLS)
+CONFIGURE_ARGS+=	--with-daemontools
+RUN_DEPENDS+=	supervise:${PORTSDIR}/sysutils/daemontools
+.endif
 
 pre-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL

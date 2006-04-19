@@ -28,6 +28,8 @@ hybserv/help/seenserv/seennick
 hybserv/help/seenserv/index
 hybserv/help/seenserv/seen
 hybserv/help/seenserv/seenstat
+hybserv/help/seenserv/join
+hybserv/help/seenserv/part
 hybserv/help/operserv/dcc/motd
 hybserv/help/operserv/dcc/index
 hybserv/help/operserv/dcc/link
@@ -92,6 +94,8 @@ hybserv/help/nickserv/set/signon
 hybserv/help/nickserv/set/uin
 hybserv/help/nickserv/set/unsecure
 hybserv/help/nickserv/set/automask
+hybserv/help/nickserv/set/neverop
+hybserv/help/nickserv/set/phrase
 hybserv/help/nickserv/collide
 hybserv/help/nickserv/droplink
 hybserv/help/nickserv/flag
@@ -111,6 +115,8 @@ hybserv/help/nickserv/showlink
 hybserv/help/nickserv/unforbid
 hybserv/help/nickserv/unlink
 hybserv/help/nickserv/drop
+hybserv/help/nickserv/recoverpass
+hybserv/help/nickserv/clearnoexp
 hybserv/help/statserv/stats
 hybserv/help/statserv/domain
 hybserv/help/statserv/greplog
@@ -129,6 +135,8 @@ hybserv/help/helpserv/memoserv
 hybserv/help/helpserv/nickserv
 hybserv/help/helpserv/operserv
 hybserv/help/helpserv/statserv
+hybserv/help/helpserv/seenserv
+hybserv/help/helpserv/global
 hybserv/help/global/gchannote
 hybserv/help/global/gcmemo
 hybserv/help/global/gmemo
@@ -205,4 +213,5 @@ hybserv/help/chanserv/drop
 @dirrm hybserv/help/chanserv/set
 @dirrm hybserv/help/chanserv
 @dirrm hybserv/help
+@dirrm hybserv/logs
 @dirrm hybserv
