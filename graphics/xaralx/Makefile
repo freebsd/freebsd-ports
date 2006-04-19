@@ -35,6 +35,12 @@ CONFIGURE_ENV=	CPPFLAGS_APPEND="`pkg-config --cflags ${PKGCONFIGS}` \
 USE_GMAKE=	yes
 USE_GCC=	3.4+
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=	does not configure due to the lack of CDraw libraries for sparc64
+.endif
+
 PROG=	XaraLX
 
 PLIST_FILES=	bin/${PROG}
@@ -42,4 +48,4 @@ PLIST_FILES=	bin/${PROG}
 pre-configure:
 	cd ${WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${AUTORECONF} -f -s -i
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
