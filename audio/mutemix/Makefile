@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	mutemix
-PORTVERSION=	0.6
-PORTREVISION=	1
+PORTVERSION=	1.0
 CATEGORIES=	audio
 MASTER_SITES=	http://www.v-i-t.de/mirkos_hp/pub/
 EXTRACT_SUFX=	.py
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	laszlof@vonostingroup.com
 COMMENT=	Adjusts a mixer
 
 RUN_DEPENDS=	aumix:${PORTSDIR}/audio/aumix \
