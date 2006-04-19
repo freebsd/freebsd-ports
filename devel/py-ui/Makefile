@@ -28,6 +28,11 @@ USE_ZIP=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
+DEPRECATED=	PyUI does not work with well with current versions of\
+		graphics/py-opengl and has not been developed in over two\
+		years. Python game development should be done with\
+		devel/py-game instead
+
 DOCSDIR=	${LOCALBASE}/share/doc/py-ui
 
 post-install:
