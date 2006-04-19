@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	Perl-Critic
-PORTVERSION=	0.14
+PORTVERSION=	0.15
 CATEGORIES=	textproc devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Perl
@@ -20,6 +20,7 @@ BUILD_DEPENDS=	${SITE_PERL}/Config/Tiny.pm:${PORTSDIR}/devel/p5-Config-Tiny \
 		${SITE_PERL}/${PERL_ARCH}/List/MoreUtils.pm:${PORTSDIR}/lang/p5-List-MoreUtils \
 		${SITE_PERL}/PPI.pm:${PORTSDIR}/textproc/p5-PPI \
 		${SITE_PERL}/String/Format.pm:${PORTSDIR}/textproc/p5-String-Format \
+		${SITE_PERL}/Module/Pluggable.pm:${PORTSDIR}/devel/p5-Module-Pluggable \
 		${SITE_PERL}/Perl/Tidy.pm:${PORTSDIR}/devel/perltidy
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
@@ -36,6 +37,8 @@ MAN3=	Perl::Critic.3 \
 	Perl::Critic::Policy::BuiltinFunctions::RequireBlockGrep.3 \
 	Perl::Critic::Policy::BuiltinFunctions::RequireBlockMap.3 \
 	Perl::Critic::Policy::BuiltinFunctions::RequireGlobFunction.3 \
+	Perl::Critic::Policy::ClassHierarchies::ProhibitAutoloading.3 \
+	Perl::Critic::Policy::ClassHierarchies::ProhibitExplicitISA.3 \
 	Perl::Critic::Policy::ClassHierarchies::ProhibitOneArgBless.3 \
 	Perl::Critic::Policy::CodeLayout::ProhibitHardTabs.3 \
 	Perl::Critic::Policy::CodeLayout::ProhibitParensWithBuiltins.3 \
@@ -48,10 +51,15 @@ MAN3=	Perl::Critic.3 \
 	Perl::Critic::Policy::ControlStructures::ProhibitUnlessBlocks.3 \
 	Perl::Critic::Policy::ControlStructures::ProhibitUntilBlocks.3 \
 	Perl::Critic::Policy::Documentation::RequirePodAtEnd.3 \
+	Perl::Critic::Policy::Documentation::RequirePodSections.3 \
 	Perl::Critic::Policy::InputOutput::ProhibitBacktickOperators.3 \
 	Perl::Critic::Policy::InputOutput::ProhibitBarewordFileHandles.3 \
 	Perl::Critic::Policy::InputOutput::ProhibitOneArgSelect.3 \
+	Perl::Critic::Policy::InputOutput::ProhibitReadlineInForLoop.3 \
 	Perl::Critic::Policy::InputOutput::ProhibitTwoArgOpen.3 \
+	Perl::Critic::Policy::InputOutput::RequireBracedFileHandleWithPrint.3 \
+	Perl::Critic::Policy::Miscellanea::ProhibitFormats.3 \
+	Perl::Critic::Policy::Miscellanea::ProhibitTies.3 \
 	Perl::Critic::Policy::Miscellanea::RequireRcsKeywords.3 \
 	Perl::Critic::Policy::Modules::ProhibitMultiplePackages.3 \
 	Perl::Critic::Policy::Modules::RequireBarewordIncludes.3 \
@@ -80,6 +88,7 @@ MAN3=	Perl::Critic.3 \
 	Perl::Critic::Policy::ValuesAndExpressions::ProhibitEmptyQuotes.3 \
 	Perl::Critic::Policy::ValuesAndExpressions::ProhibitInterpolationOfLiterals.3 \
 	Perl::Critic::Policy::ValuesAndExpressions::ProhibitLeadingZeros.3 \
+	Perl::Critic::Policy::ValuesAndExpressions::ProhibitMixedBooleanOperators.3 \
 	Perl::Critic::Policy::ValuesAndExpressions::ProhibitNoisyQuotes.3 \
 	Perl::Critic::Policy::ValuesAndExpressions::RequireInterpolationOfMetachars.3 \
 	Perl::Critic::Policy::ValuesAndExpressions::RequireNumberSeparators.3 \
@@ -90,6 +99,8 @@ MAN3=	Perl::Critic.3 \
 	Perl::Critic::Policy::Variables::ProhibitPunctuationVars.3 \
 	Perl::Critic::Policy::Variables::ProtectPrivateVars.3 \
 	Perl::Critic::Policy::Variables::ProhibitMatchVars.3 \
+	Perl::Critic::Policy::Variables::ProhibitConditionalDeclarations.3 \
+	Perl::Critic::Policy::Variables::RequireInitializationForLocalVars.3 \
 	Perl::Critic::Utils.3 \
 	Perl::Critic::Violation.3
 
