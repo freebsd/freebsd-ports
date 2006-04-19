@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Catalyst-Model-DBIC
-PORTVERSION=	0.13
+PORTVERSION=	0.14
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Catalyst
@@ -21,6 +21,8 @@ BUILD_DEPENDS=	p5-Catalyst>=5.00:${PORTSDIR}/www/p5-Catalyst \
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
+
+DEPRECATED=	This module is obsoleted by www/p5-Catalyst-Model-DBIC-Schema
 
 MAN3=	Catalyst::Helper::Model::DBIC.3 \
 	Catalyst::Model::DBIC.3
