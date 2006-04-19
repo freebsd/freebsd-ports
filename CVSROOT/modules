@@ -9265,6 +9265,7 @@ p5-Tree-Parser	ports/devel/p5-Tree-Parser
 p5-Tree-Simple	ports/devel/p5-Tree-Simple
 p5-Tree-Simple-View	ports/devel/p5-Tree-Simple-View
 p5-Tree-Simple-VisitorFactory	ports/devel/p5-Tree-Simple-VisitorFactory
+p5-Tree-Suffix	ports/textproc/p5-Tree-Suffix
 p5-UML-Sequence	ports/textproc/p5-UML-Sequence
 p5-UML-State	ports/textproc/p5-UML-State
 p5-UNIVERSAL-can	ports/devel/p5-UNIVERSAL-can
