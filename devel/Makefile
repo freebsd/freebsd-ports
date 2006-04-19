@@ -466,6 +466,7 @@
     SUBDIR += libcwd
     SUBDIR += libdaemon
     SUBDIR += libdasm
+    SUBDIR += libdfui
     SUBDIR += libdict
     SUBDIR += libdlmalloc
     SUBDIR += libdnsres
