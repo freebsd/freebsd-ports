@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	robodoc
-PORTVERSION=	4.0.18
+PORTVERSION=	4.99.8
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	http://www.xs4all.nl/~rfsber/Robo/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	freebsd@unixfreunde.de
 COMMENT=	Code reference program similar to cxref that produces HTML
 
 GNU_CONFIGURE=	yes
