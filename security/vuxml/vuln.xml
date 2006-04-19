@@ -34,6 +34,56 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="1fa4c9f1-cfca-11da-a672-000e0c2e438a">
+    <topic>FreeBSD -- FPU information disclosure</topic>
+    <affects>
+      <system>
+	<name>FreeBSD</name>
+	<range><gt>6.0</gt><lt>6.0_7</lt></range>
+	<range><gt>5.4</gt><lt>5.4_14</lt></range>
+	<range><gt>5.3</gt><lt>5.3_29</lt></range>
+	<range><gt>4.11</gt><lt>4.11_17</lt></range>
+	<range><gt>4.10</gt><lt>4.10_23</lt></range>
+      </system>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description</h1>
+	<p>On "7th generation" and "8th generation" processors
+	  manufactured by AMD, including the AMD Athlon, Duron, Athlon
+	  MP, Athlon XP, Athlon64, Athlon64 FX, Opteron, Turion, and
+	  Sempron, the fxsave and fxrstor instructions do not save and
+	  restore the FOP, FIP, and FDP registers unless the exception
+	  summary bit (ES) in the x87 status word is set to 1,
+	  indicating that an unmasked x87 exception has occurred.</p>
+	<p>This behaviour is consistent with documentation provided by
+	  AMD, but is different from processors from other vendors,
+	  which save and restore the FOP, FIP, and FDP registers
+	  regardless of the value of the ES bit.  As a result of this
+	  discrepancy remaining unnoticed until now, the FreeBSD kernel
+	  does not restore the contents of the FOP, FIP, and FDP
+	  registers between context switches.</p>
+	<h1>Impact</h1>
+	<p>On affected processors, a local attacker can monitor the
+	  execution path of a process which uses floating-point
+	  operations.  This may allow an attacker to steal
+	  cryptographic keys or other sensitive information.</p>
+	<h1>Workaround</h1>
+	<p>No workaround is available, but systems which do not use AMD
+	  Athlon, Duron, Athlon MP, Athlon XP, Athlon64, Athlon64 FX,
+	  Opteron, Turion, or Sempron processors are not vulnerable.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-1056</cvename>
+      <freebsdsa>SA-06:14</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2006-04-19</discovery>
+      <entry>2006-04-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="22c6b826-cee0-11da-8578-00123ffe8333">
     <topic>plone -- "member_id" Parameter Portrait Manipulation Vulnerability</topic>
     <affects>
