@@ -5482,6 +5482,7 @@ libdaemon	ports/devel/libdaemon
 libdasm		ports/devel/libdasm
 libdbi		ports/databases/libdbi
 libdbi-drivers	ports/databases/libdbi-drivers
+libdfui		ports/devel/libdfui
 libdict		ports/devel/libdict
 libdivxdecore	ports/multimedia/libdivxdecore
 libdivxdecore-devel	ports/multimedia/libdivxdecore-devel
