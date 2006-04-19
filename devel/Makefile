@@ -447,6 +447,7 @@
     SUBDIR += libassa
     SUBDIR += libassetml
     SUBDIR += libast
+    SUBDIR += libaura
     SUBDIR += libavl
     SUBDIR += libbegemot
     SUBDIR += libbfd
