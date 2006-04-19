@@ -50,6 +50,7 @@ www/simplog/adodb/docs/old-changelog.htm
 www/simplog/adodb/docs/readme.htm
 www/simplog/adodb/docs/tips_portable_sql.htm
 www/simplog/adodb/docs/docs-adodb.htm
+www/simplog/adodb/docs/docs-active-record.htm
 www/simplog/adodb/drivers/adodb-access.inc.php
 www/simplog/adodb/drivers/adodb-ado.inc.php
 www/simplog/adodb/drivers/adodb-ado_access.inc.php
@@ -93,6 +94,11 @@ www/simplog/adodb/drivers/adodb-postgres8.inc.php
 www/simplog/adodb/drivers/adodb-sqlite.inc.php.bak
 www/simplog/adodb/drivers/adodb-sqlitepo.inc.php
 www/simplog/adodb/drivers/adodb-sybase_ase.inc.php
+www/simplog/adodb/drivers/adodb-pdo_pgsql.inc.php
+www/simplog/adodb/drivers/adodb-odbc_db2.inc.php
+www/simplog/adodb/drivers/adodb-pdo_mssql.inc.php
+www/simplog/adodb/drivers/adodb-pdo_mysql.inc.php
+www/simplog/adodb/drivers/adodb-pdo_oci.inc.php
 www/simplog/adodb/lang/adodb-ca.inc.php
 www/simplog/adodb/lang/adodb-cn.inc.php
 www/simplog/adodb/lang/adodb-cz.inc.php
@@ -142,6 +148,7 @@ www/simplog/adodb/session/adodb-sessions.mysql.sql
 www/simplog/adodb/session/adodb-sessions.oracle.clob.sql
 www/simplog/adodb/session/adodb-sessions.oracle.sql
 www/simplog/adodb/session/crypt.inc.php
+www/simplog/adodb/session/adodb-encrypt-sha1.php
 www/simplog/adodb/session/old/adodb-cryptsession.php
 www/simplog/adodb/session/old/adodb-session-clob.php
 www/simplog/adodb/session/old/adodb-session.php
@@ -174,14 +181,23 @@ www/simplog/adodb/tests/tmssql.php
 www/simplog/adodb/tests/xmlschema.xml
 www/simplog/adodb/tests/pdo.php
 www/simplog/adodb/tests/xmlschema-mssql.xml
+www/simplog/adodb/tests/test-active-recs2.php
+www/simplog/adodb/tests/test-active-record.php
+www/simplog/adodb/tests/rr.htm
 www/simplog/adodb/xsl/convert-0.1-0.2.xsl
 www/simplog/adodb/xsl/convert-0.2-0.1.xsl
 www/simplog/adodb/xsl/remove-0.2.xsl
+www/simplog/adodb/xsl/remove-0.3.xsl
+www/simplog/adodb/xsl/convert-0.1-0.3.xsl
+www/simplog/adodb/xsl/convert-0.2-0.3.xsl
 www/simplog/adodb/tips_portable_sql.htm
 www/simplog/adodb/toexport.inc.php
 www/simplog/adodb/tohtml.inc.php
 www/simplog/adodb/tute.htm
 www/simplog/adodb/xmlschema.dtd
+www/simplog/adodb/adodb-active-record.inc.php
+www/simplog/adodb/adodb-xmlschema03.inc.php
+www/simplog/adodb/xmlschema03.dtd
 www/simplog/api.php
 www/simplog/archive.php
 www/simplog/atom.php
@@ -276,6 +292,19 @@ www/simplog/phpFlickr/README.txt
 www/simplog/phpFlickr/ChangeLog.txt
 www/simplog/phpFlickr/phpFlickr.php
 www/simplog/phpFlickr/xml.php
+www/simplog/phpFlickr/auth.php
+www/simplog/phpFlickr/example.php
+www/simplog/phpFlickr/getToken.php
+www/simplog/phpFlickr/PEAR/DB/common.php
+www/simplog/phpFlickr/PEAR/DB/mysql.php
+www/simplog/phpFlickr/PEAR/DB/pgsql.php
+www/simplog/phpFlickr/PEAR/DB/storage.php
+www/simplog/phpFlickr/PEAR/HTTP/Request/Listener.php
+www/simplog/phpFlickr/PEAR/HTTP/Request.php
+www/simplog/phpFlickr/PEAR/Net/Socket.php
+www/simplog/phpFlickr/PEAR/Net/URL.php
+www/simplog/phpFlickr/PEAR/DB.php
+www/simplog/phpFlickr/PEAR/PEAR.php
 www/simplog/karma.php
 www/simplog/lib.php
 www/simplog/login.php
@@ -332,6 +361,11 @@ www/simplog/xmlrpcs.inc
 @dirrm www/simplog/templates/images
 @dirrm www/simplog/templates
 @dirrm www/simplog/install
+@dirrm www/simplog/phpFlickr/PEAR/DB
+@dirrm www/simplog/phpFlickr/PEAR/HTTP/Request
+@dirrm www/simplog/phpFlickr/PEAR/HTTP
+@dirrm www/simplog/phpFlickr/PEAR/Net
+@dirrm www/simplog/phpFlickr/PEAR
 @dirrm www/simplog/phpFlickr
 @dirrm www/simplog/images/smile
 @dirrm www/simplog/images
