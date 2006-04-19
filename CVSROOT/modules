@@ -9227,6 +9227,7 @@ p5-Tie-Hash-Sorted	ports/devel/p5-Tie-Hash-Sorted
 p5-Tie-Hash-TwoWay	ports/devel/p5-Tie-Hash-TwoWay
 p5-Tie-IxHash	ports/devel/p5-Tie-IxHash
 p5-Tie-NetAddr-IP	ports/net-mgmt/p5-Tie-NetAddr-IP
+p5-Tie-Restore	ports/devel/p5-Tie-Restore
 p5-Tie-ShareLite	ports/devel/p5-Tie-ShareLite
 p5-Tie-Syslog	ports/sysutils/p5-Tie-Syslog
 p5-Tie-iCal	ports/devel/p5-Tie-iCal
