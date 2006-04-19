@@ -7,7 +7,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	4.1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITES+=	http://people.freebsd.org/~joerg/:local
@@ -48,7 +48,7 @@ ARCH=		x86_64
 
 CONFLICTS=	avr-gcc-3*
 
-CONFIGURE_ARGS=	--target=avr --disable-libssp
+CONFIGURE_ARGS=	--target=avr --disable-libssp --with-dwarf2
 
 MAKE_FLAGS=	LANGUAGES="c c++"
 # get rid of that silly -mcpu=pentiumpro FreeBSD 5+ is so fond of. :-(
