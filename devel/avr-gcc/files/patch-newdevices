@@ -20,7 +20,7 @@ diff -ur ../gcc-3.4.6.orig/gcc/config/avr/avr.c ./gcc/config/avr/avr.c
      /* Classic, > 8K.  */
    { "avr3",      3, NULL },
    { "atmega103", 3, "__AVR_ATmega103__" },
-@@ -185,19 +197,47 @@
+@@ -185,19 +197,50 @@
      /* Enhanced, <= 8K.  */
    { "avr4",      4, NULL },
    { "atmega8",   4, "__AVR_ATmega8__" },
@@ -36,13 +36,15 @@ diff -ur ../gcc-3.4.6.orig/gcc/config/avr/avr.c ./gcc/config/avr/avr.c
    { "atmega161", 5, "__AVR_ATmega161__" },
    { "atmega162", 5, "__AVR_ATmega162__" },
    { "atmega163", 5, "__AVR_ATmega163__" },
-+  { "atmega164", 5, "__AVR_ATmega164__" },
++  { "atmega164p",5, "__AVR_ATmega164P__" },
 +  { "atmega165", 5, "__AVR_ATmega165__" },
++  { "atmega165p", 5,"__AVR_ATmega165P__" },
 +  { "atmega168", 5, "__AVR_ATmega168__" },
    { "atmega169", 5, "__AVR_ATmega169__" },
++  { "atmega169p", 5,"__AVR_ATmega169P__" },
    { "atmega32",  5, "__AVR_ATmega32__" },
    { "atmega323", 5, "__AVR_ATmega323__" },
-+  { "atmega324", 5, "__AVR_ATmega324__" },
++  { "atmega324p",5, "__AVR_ATmega324P__" },
 +  { "atmega325", 5, "__AVR_ATmega325__" },
 +  { "atmega3250", 5, "__AVR_ATmega3250__" },
 +  { "atmega329", 5, "__AVR_ATmega329__" },
@@ -51,6 +53,7 @@ diff -ur ../gcc-3.4.6.orig/gcc/config/avr/avr.c ./gcc/config/avr/avr.c
 +  { "atmega640", 5, "__AVR_ATmega640__" },
    { "atmega64",  5, "__AVR_ATmega64__" },
 +  { "atmega644", 5, "__AVR_ATmega644__" },
++  { "atmega644p",5, "__AVR_ATmega644P__" },
 +  { "atmega645", 5, "__AVR_ATmega645__" },
 +  { "atmega6450", 5, "__AVR_ATmega6450__" },
 +  { "atmega649", 5, "__AVR_ATmega649__" },
@@ -108,7 +111,7 @@ diff -ur ../gcc-3.4.6.orig/gcc/config/avr/avr.h ./gcc/config/avr/avr.h
  /* Another C string constant that tells the GCC driver program how
     and when to place a reference to `libgcc.a' into the linker
     command line.  This constant is placed both before and after the
-@@ -2421,23 +2422,62 @@
+@@ -2421,23 +2422,65 @@
  %{mmcu=at90c8534:crtc8534.o%s} \
  %{mmcu=at90s8535:crts8535.o%s} \
  %{mmcu=at86rf401:crt86401.o%s} \
@@ -139,13 +142,15 @@ diff -ur ../gcc-3.4.6.orig/gcc/config/avr/avr.h ./gcc/config/avr/avr.h
  %{mmcu=atmega161|mmcu=avr5:crtm161.o%s} \
  %{mmcu=atmega162:crtm162.o%s} \
  %{mmcu=atmega163:crtm163.o%s} \
-+%{mmcu=atmega164:crtm164.o%s} \
++%{mmcu=atmega164p:crtm164p.o%s} \
 +%{mmcu=atmega165:crtm165.o%s} \
++%{mmcu=atmega165p:crtm165p.o%s} \
 +%{mmcu=atmega168:crtm168.o%s} \
  %{mmcu=atmega169:crtm169.o%s} \
++%{mmcu=atmega169p:crtm169p.o%s} \
  %{mmcu=atmega32:crtm32.o%s} \
  %{mmcu=atmega323:crtm323.o%s} \
-+%{mmcu=atmega324:crtm324.o%s} \
++%{mmcu=atmega324p:crtm324p.o%s} \
 +%{mmcu=atmega325:crtm325.o%s} \
 +%{mmcu=atmega3250:crtm3250.o%s} \
 +%{mmcu=atmega329:crtm329.o%s} \
@@ -154,6 +159,7 @@ diff -ur ../gcc-3.4.6.orig/gcc/config/avr/avr.h ./gcc/config/avr/avr.h
  %{mmcu=atmega64:crtm64.o%s} \
 +%{mmcu=atmega640:crtm640.o%s} \
 +%{mmcu=atmega644:crtm644.o%s} \
++%{mmcu=atmega644p:crtm644p.o%s} \
 +%{mmcu=atmega645:crtm645.o%s} \
 +%{mmcu=atmega6450:crtm6450.o%s} \
 +%{mmcu=atmega649:crtm649.o%s} \
@@ -174,7 +180,7 @@ diff -ur ../gcc-3.4.6.orig/gcc/config/avr/avr.h ./gcc/config/avr/avr.h
 diff -ur ../gcc-3.4.6.orig/gcc/config/avr/t-avr ./gcc/config/avr/t-avr
 --- ../gcc-3.4.6.orig/gcc/config/avr/t-avr	Mon Apr 25 06:17:34 2005
 +++ ./gcc/config/avr/t-avr	Sun Mar 19 23:08:56 2006
-@@ -46,12 +46,30 @@
+@@ -46,12 +46,31 @@
  	mmcu?avr3=mmcu?at43usb320 mmcu?avr3=mmcu?at43usb355 \
  	mmcu?avr3=mmcu?at76c711 \
  	mmcu?avr4=mmcu?atmega8515 mmcu?avr4=mmcu?atmega8535 \
@@ -184,19 +190,20 @@ diff -ur ../gcc-3.4.6.orig/gcc/config/avr/t-avr ./gcc/config/avr/t-avr
 +	mmcu?avr4=mmcu?at90pwm2  mmcu?avr4=mmcu?at90pwm3 \
  	mmcu?avr5=mmcu?atmega161 mmcu?avr5=mmcu?atmega162 \
 -	mmcu?avr5=mmcu?atmega163 mmcu?avr5=mmcu?atmega169 \
-+	mmcu?avr5=mmcu?atmega163 mmcu?avr5=mmcu?atmega164 \
-+	mmcu?avr5=mmcu?atmega165 \
++	mmcu?avr5=mmcu?atmega163 mmcu?avr5=mmcu?atmega164p \
++	mmcu?avr5=mmcu?atmega165 mmcu?avr5=mmcu?atmega165p \
 +	mmcu?avr5=mmcu?atmega168 mmcu?avr5=mmcu?atmega169 \
++	mmcu?avr5=mmcu?atmega169p \
  	mmcu?avr5=mmcu?atmega16 \
 -	mmcu?avr5=mmcu?atmega323 mmcu?avr5=mmcu?atmega32 \
 -	mmcu?avr5=mmcu?atmega64  mmcu?avr5=mmcu?atmega128 \
-+	mmcu?avr5=mmcu?atmega323 mmcu?avr5=mmcu?atmega324 \
++	mmcu?avr5=mmcu?atmega323 mmcu?avr5=mmcu?atmega324p \
 +	mmcu?avr5=mmcu?atmega325 mmcu?avr5=mmcu?atmega3250 \
 +	mmcu?avr5=mmcu?atmega329 mmcu?avr5=mmcu?atmega3290 \
 +	mmcu?avr5=mmcu?atmega32 \
 +	mmcu?avr5=mmcu?atmega406 \
-+	mmcu?avr5=mmcu?atmega640 \
-+	mmcu?avr5=mmcu?atmega644 mmcu?avr5=mmcu?atmega645 \
++	mmcu?avr5=mmcu?atmega640 mmcu?avr5=mmcu?atmega644 \
++	mmcu?avr5=mmcu?atmega644p mmcu?avr5=mmcu?atmega645 \
 +	mmcu?avr5=mmcu?atmega6450 mmcu?avr5=mmcu?atmega649 \
 +	mmcu?avr5=mmcu?atmega6490 mmcu?avr5=mmcu?atmega64 \
 +	mmcu?avr5=mmcu?atmega128 \
