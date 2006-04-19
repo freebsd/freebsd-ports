@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	File-Rsync
-PORTVERSION=	0.34
+PORTVERSION=	0.42
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	File
@@ -19,7 +19,15 @@ BUILD_DEPENDS=	rsync:${PORTSDIR}/net/rsync
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
+CONFIGURE_ARGS+=	</dev/null
 
-MAN3=		File::Rsync.3 File::Rsync::Config.3
+MAN3=		File::Rsync.3 File::config.3
 
-.include <bsd.port.mk>
+do-patch:
+		@${REINPLACE_CMD} -e "s,<STDIN>,'${LOCALBASE}/bin/rsync'," ${WRKSRC}/makepm.PL
+
+.include <bsd.port.pre.mk>
+.if ${PERL_LEVEL} < 500800
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Scalar/Util.pm:${PORTSDIR}/lang/p5-Scalar-List-Utils
+.endif
+.include <bsd.port.post.mk>
