@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	winefish
-DISTVERSION=	1.3.2.6
+DISTVERSION=	1.3.3
 CATEGORIES=	editors print
 MASTER_SITES=	http://download.berlios.de/winefish/ \
 		http://nivi.interfree.it/distfiles/winefish/
@@ -42,6 +42,9 @@ OPTIONS=	CONTEXT	"Enable ConTexT support (Experimental)"	off \
 CONFIGURE_ARGS+=	--with-context
 .endif
 
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+PLIST_SUB=	IFNLS=
 # vietnamese support
 .if defined (WITH_UNIKEY_GTK) && !defined (WITH_VNTEX)
 WITH_VNTEX=true
@@ -52,6 +55,10 @@ CONFIGURE_ARGS+=	--with-vntex
 .if defined (WITH_UNIKEY_GTK)
 CONFIGURE_ARGS+=	--with-unikey-gtk
 .endif
+.endif
+.else
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB=	IFNLS="@comment "
 .endif
 
 post-install:

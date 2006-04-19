@@ -5,9 +5,9 @@ share/gnome/applications/winefish.desktop
 share/gnome/applications/winefish-project.desktop
 share/gnome/mime-info/winefish.mime
 share/gnome/mime-info/winefish.keys
-share/locale/fr/LC_MESSAGES/winefish.mo
-share/locale/it/LC_MESSAGES/winefish.mo
-share/locale/vi/LC_MESSAGES/winefish.mo
+%%IFNLS%%share/locale/fr/LC_MESSAGES/winefish.mo
+%%IFNLS%%share/locale/it/LC_MESSAGES/winefish.mo
+%%IFNLS%%share/locale/vi/LC_MESSAGES/winefish.mo
 share/mime/packages/winefish.xml
 share/pixmaps/gnome-application-winefish-project.png
 share/pixmaps/winefish-icon.png
