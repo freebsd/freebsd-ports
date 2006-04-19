@@ -7,12 +7,12 @@
 #
 
 PORTNAME=	dact
-PORTVERSION=	0.8.39
-PORTREVISION=	2
+PORTVERSION=	0.8.41
+PORTREVISION=	0
 CATEGORIES=	archivers
 MASTER_SITES=	http://www.rkeene.org/files/oss/dact/release/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	freebsd@unixfreunde.de
 COMMENT=	Dynamic Adaptive Compression Tool
 
 LIB_DEPENDS=	mcrypt.8:${PORTSDIR}/security/libmcrypt \
