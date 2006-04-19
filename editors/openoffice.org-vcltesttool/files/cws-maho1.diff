@@ -1,145 +1,3 @@
-
-Index: config_office/configure
-===================================================================
-RCS file: /cvs/tools/config_office/configure,v
-retrieving revision 1.142
-retrieving revision 1.142.4.7
-diff -u -p -r1.142 -r1.142.4.7
---- config_office/configure	28 Feb 2006 16:55:27 -0000	1.142
-+++ config_office/configure	7 Mar 2006 02:51:40 -0000	1.142.4.7
-@@ -308,7 +308,7 @@ ac_includes_default="\
- # include <unistd.h>
- #endif"
- 
--ac_subst_vars='SHELL PATH_SEPARATOR PACKAGE_NAME PACKAGE_TARNAME PACKAGE_VERSION PACKAGE_STRING PACKAGE_BUGREPORT exec_prefix prefix program_transform_name bindir sbindir libexecdir datadir sysconfdir sharedstatedir localstatedir libdir includedir oldincludedir infodir mandir build_alias host_alias target_alias DEFS ECHO_C ECHO_N ECHO_T LIBS AWK SED LOCAL_SOLENV UPD SOURCEVERSION build build_cpu build_vendor build_os host host_cpu host_vendor host_os target target_cpu target_vendor target_os OSVERSION PTHREAD_CFLAGS PTHREAD_LIBS ENABLE_CRASHDUMP ENABLE_VCTK VC_STANDARD ENABLE_DEBUG PRODUCT PROFULLSWITCH PROEXT ENABLE_SYMBOLS ENABLE_CUPS ENABLE_FONTCONFIG WITH_BINFILTER ENABLE_DIRECTX NETTOOLKIT ENABLE_RPATH WITH_MYSPELL_DICTS USE_SHELL WITH_MINGWIN TCSH GCC_HOME CC CFLAGS LDFLAGS CPPFLAGS ac_ct_CC EXEEXT OBJEXT COMPATH GCCVER HAVE_GCC_VISIBILITY_FEATURE GNUMAKE _cc MSPDB_PATH COMEX MIDL_PATH CSC_PATH NMAKE_PATH FRAME_HOME CPP EGREP PAM_LINK CRYPT_LINK CXX CXXFLAGS ac_ct_CXX GXX_INCLUDE_PATH EXCEPTIONS CXXCPP STLPORT4 USE_SYSTEM_STL ALLOC BUILD_VER_STRING SOLAR_JAVA LANG JAVAINTERPRETER JAVACOMPILER JAVADOC AWTLIB JAVACACHE JAVA_HOME JDK XSLTPROC PERL DMAKE BUILD_DMAKE EPM DPKG PKGMK BUILD_EPM PKGFORMAT RPM SYSTEM_STDLIBS SYSTEM_ZLIB SYSTEM_JPEG SYSTEM_EXPAT PKG_CONFIG FREETYPE_CFLAGS FREETYPE_LIBS SYSTEM_FREETYPE LIBWPD_CFLAGS LIBWPD_LIBS SYSTEM_LIBWPD LIBXML_CFLAGS LIBXML_LIBS SYSTEM_LIBXML PYTHON PYTHON_VERSION PYTHON_PREFIX PYTHON_EXEC_PREFIX PYTHON_PLATFORM pythondir pkgpythondir pyexecdir pkgpyexecdir SYSTEM_PYTHON PYTHON_CFLAGS PYTHON_LIBS SYSTEM_DB DB_VERSION DB_INCLUDES DB_JAR SABLOTCONFIG SYSTEM_SABLOT SABLOT_LIBS CURLCONFIG SYSTEM_CURL CURL_CFLAGS CURL_LIBS SYSTEM_BOOST SYSTEM_ODBC_HEADERS WITH_MOZILLA WITH_OPENLDAP MOZILLAXPCOM_CFLAGS MOZILLAXPCOM_LIBS MOZ_NSPR_CFLAGS MOZ_NSPR_LIBS MOZ_NSS_CFLAGS MOZ_NSS_LIBS MOZILLA_VERSION MOZILLA_TOOLKIT MOZLIBREQ_CFLAGS MOZLIBREQ_LIBS BUILD_MOZAB SYSTEM_MOZILLA MOZ_INC MOZ_LIB MOZ_LIB_XPCOM MOZ_LDAP_CFLAGS SYSTEM_SANE_HEADER X_CFLAGS X_PRE_LIBS X_LIBS X_EXTRA_LIBS XINC XLIB SYSTEM_XRENDER_HEADERS XRENDER_LINK XMKMF SYSTEM_NAS NAS_INCLUDES ENABLE_NAS ENABLE_PASF SYSTEM_PORTAUDIO SYSTEM_SNDFILE BUILD_TYPE NEON_CFLAGS NEON_LIBS SYSTEM_NEON AGG_CFLAGS AGG_LIBS SYSTEM_AGG MYSPELL_CFLAGS MYSPELL_LIBS SYSTEM_MYSPELL SYSTEM_HUNSPELL HUNSPELL_CFLAGS SYSTEM_HYPH SYSTEM_MYTHES PSDK_HOME DIRECTXSDK_HOME DIRECTXSDK_LIB NSIS_PATH EXTRA_DOTNET_FILES BISON FLEX PATCH GNUPATCH GNUCP CYGWIN_PATH ML_EXE ASM_HOME ZIP UNZIP ZIP_HOME LIBART_CFLAGS LIBART_LIBS WITH_LIBART WITH_GPC ENABLE_GTK ENABLE_KDE GNOMEVFS_CFLAGS GNOMEVFS_LIBS GCONF_CFLAGS GCONF_LIBS ENABLE_GNOMEVFS GTK_CFLAGS GTK_LIBS GDKPIXBUF_CFLAGS GDKPIXBUF_LIBS CAIRO_CFLAGS CAIRO_LIBS ENABLE_CAIRO SYSTEM_CAIRO MOC KDE_CFLAGS KDE_LIBS LIBSN_CFLAGS LIBSN_LIBS WITH_LIBSN GOBJECT_CFLAGS GOBJECT_LIBS ENABLE_EVOAB2 ENABLE_KAB WITH_FONTOOO SYSTEM_MSPACK WITH_FONTS SCPDEFS WITHOUT_PPDS WITHOUT_AFMS USE_XINERAMA XINERAMA_LINK ANT ANT_HOME ANT_LIB WITH_LANG WITH_DICT ENABLE_STATIC_GTK LOCAL_SOLVER LIBOBJS LTLIBOBJS'
-+ac_subst_vars='SHELL PATH_SEPARATOR PACKAGE_NAME PACKAGE_TARNAME PACKAGE_VERSION PACKAGE_STRING PACKAGE_BUGREPORT exec_prefix prefix program_transform_name bindir sbindir libexecdir datadir sysconfdir sharedstatedir localstatedir libdir includedir oldincludedir infodir mandir build_alias host_alias target_alias DEFS ECHO_C ECHO_N ECHO_T LIBS AWK SED LOCAL_SOLENV UPD SOURCEVERSION build build_cpu build_vendor build_os host host_cpu host_vendor host_os target target_cpu target_vendor target_os OSVERSION PTHREAD_CFLAGS PTHREAD_LIBS ENABLE_CRASHDUMP ENABLE_VCTK VC_STANDARD ENABLE_DEBUG PRODUCT PROFULLSWITCH PROEXT ENABLE_SYMBOLS ENABLE_CUPS ENABLE_FONTCONFIG WITH_BINFILTER ENABLE_DIRECTX NETTOOLKIT ENABLE_RPATH WITH_MYSPELL_DICTS USE_SHELL WITH_MINGWIN TCSH GCC_HOME CC CFLAGS LDFLAGS CPPFLAGS ac_ct_CC EXEEXT OBJEXT COMPATH GCCVER HAVE_GCC_VISIBILITY_FEATURE GNUMAKE _cc MSPDB_PATH COMEX MIDL_PATH CSC_PATH NMAKE_PATH FRAME_HOME CPP EGREP PAM_LINK CRYPT_LINK CXX CXXFLAGS ac_ct_CXX GXX_INCLUDE_PATH EXCEPTIONS CXXCPP STLPORT4 USE_SYSTEM_STL ALLOC BUILD_VER_STRING SOLAR_JAVA LANG JAVAINTERPRETER JAVACOMPILER JAVADOC AWTLIB JAVACACHE JAR JAVACMD JAVA_HOME JDK XSLTPROC PERL DMAKE BUILD_DMAKE EPM DPKG PKGMK BUILD_EPM PKGFORMAT RPM SYSTEM_STDLIBS SYSTEM_ZLIB SYSTEM_JPEG SYSTEM_EXPAT PKG_CONFIG FREETYPE_CFLAGS FREETYPE_LIBS SYSTEM_FREETYPE LIBWPD_CFLAGS LIBWPD_LIBS SYSTEM_LIBWPD LIBXML_CFLAGS LIBXML_LIBS SYSTEM_LIBXML PYTHON PYTHON_VERSION PYTHON_PREFIX PYTHON_EXEC_PREFIX PYTHON_PLATFORM pythondir pkgpythondir pyexecdir pkgpyexecdir SYSTEM_PYTHON PYTHON_CFLAGS PYTHON_LIBS SYSTEM_DB DB_VERSION DB_INCLUDES DB_JAR SABLOTCONFIG SYSTEM_SABLOT SABLOT_LIBS CURLCONFIG SYSTEM_CURL CURL_CFLAGS CURL_LIBS SYSTEM_BOOST SYSTEM_ODBC_HEADERS WITH_MOZILLA WITH_OPENLDAP MOZILLAXPCOM_CFLAGS MOZILLAXPCOM_LIBS MOZ_NSPR_CFLAGS MOZ_NSPR_LIBS MOZ_NSS_CFLAGS MOZ_NSS_LIBS MOZILLA_VERSION MOZILLA_TOOLKIT MOZLIBREQ_CFLAGS MOZLIBREQ_LIBS BUILD_MOZAB SYSTEM_MOZILLA MOZ_INC MOZ_LIB MOZ_LIB_XPCOM MOZ_LDAP_CFLAGS SYSTEM_SANE_HEADER X_CFLAGS X_PRE_LIBS X_LIBS X_EXTRA_LIBS XINC XLIB SYSTEM_XRENDER_HEADERS XRENDER_LINK XMKMF SYSTEM_NAS NAS_INCLUDES ENABLE_NAS ENABLE_PASF SYSTEM_PORTAUDIO SYSTEM_SNDFILE BUILD_TYPE NEON_CFLAGS NEON_LIBS SYSTEM_NEON AGG_CFLAGS AGG_LIBS SYSTEM_AGG MYSPELL_CFLAGS MYSPELL_LIBS SYSTEM_MYSPELL SYSTEM_HUNSPELL HUNSPELL_CFLAGS SYSTEM_HYPH SYSTEM_MYTHES PSDK_HOME DIRECTXSDK_HOME DIRECTXSDK_LIB NSIS_PATH EXTRA_DOTNET_FILES BISON FLEX PATCH GNUPATCH GNUCP CYGWIN_PATH ML_EXE ASM_HOME ZIP UNZIP ZIP_HOME LIBART_CFLAGS LIBART_LIBS WITH_LIBART WITH_GPC ENABLE_GTK ENABLE_KDE GNOMEVFS_CFLAGS GNOMEVFS_LIBS GCONF_CFLAGS GCONF_LIBS ENABLE_GNOMEVFS GTK_CFLAGS GTK_LIBS GDKPIXBUF_CFLAGS GDKPIXBUF_LIBS CAIRO_CFLAGS CAIRO_LIBS ENABLE_CAIRO SYSTEM_CAIRO MOC KDE_CFLAGS KDE_LIBS LIBSN_CFLAGS LIBSN_LIBS WITH_LIBSN GOBJECT_CFLAGS GOBJECT_LIBS ENABLE_EVOAB2 ENABLE_KAB WITH_FONTOOO SYSTEM_MSPACK WITH_FONTS SCPDEFS WITHOUT_PPDS WITHOUT_AFMS USE_XINERAMA XINERAMA_LINK ANT ANT_HOME ANT_LIB WITH_LANG WITH_DICT ENABLE_STATIC_GTK LOCAL_SOLVER LIBOBJS LTLIBOBJS'
- ac_subst_files=''
- 
- # Initialize some variables set by options.
-@@ -7250,9 +7250,14 @@ echo "$as_me: error: $javacompiler not f
- fi
- 
- if test "$SOLAR_JAVA" != ""; then
-+    if test "$JDK" = "gcj"; then
-+	javadoc_program=gjdoc
-+    else
-+	javadoc_program=javadoc
-+    fi
-     if test -z "$with_jdk_home"; then
--        # Extract the first word of "javadoc", so it can be a program name with args.
--set dummy javadoc; ac_word=$2
-+        # Extract the first word of "$javadoc_program", so it can be a program name with args.
-+set dummy $javadoc_program; ac_word=$2
- echo "$as_me:$LINENO: checking for $ac_word" >&5
- echo $ECHO_N "checking for $ac_word... $ECHO_C" >&6
- if test "${ac_cv_path_JAVADOC+set}" = set; then
-@@ -7291,12 +7296,12 @@ echo "${ECHO_T}no" >&6
- fi
- 
-     else
--        _javadoc_path="$with_jdk_home/bin/javadoc"
-+        _javadoc_path="$with_jdk_home/bin/$javadoc_program"
-                 if test -x "$_javadoc_path"; then
-             JAVADOC=$_javadoc_path
-         else
--            # Extract the first word of "javadoc", so it can be a program name with args.
--set dummy javadoc; ac_word=$2
-+            # Extract the first word of "$javadoc_program", so it can be a program name with args.
-+set dummy $javadoc_program; ac_word=$2
- echo "$as_me:$LINENO: checking for $ac_word" >&5
- echo $ECHO_N "checking for $ac_word... $ECHO_C" >&6
- if test "${ac_cv_path_JAVADOC+set}" = set; then
-@@ -7717,6 +7722,59 @@ echo "$as_me: WARNING: $javacache not fo
-    fi
- fi
- 
-+if test "$JDK" = "gcj"; then
-+   if test -x "$JAVA_HOME/bin/fastjar"; then
-+      JAR="$JAVA_HOME/bin/fastjar";
-+   else
-+      if test -x "$JAVA_HOME/bin/jar"; then
-+         JAR="$JAVA_HOME/bin/jar";
-+      else
-+         # Extract the first word of "jar", so it can be a program name with args.
-+set dummy jar; ac_word=$2
-+echo "$as_me:$LINENO: checking for $ac_word" >&5
-+echo $ECHO_N "checking for $ac_word... $ECHO_C" >&6
-+if test "${ac_cv_path_JAR+set}" = set; then
-+  echo $ECHO_N "(cached) $ECHO_C" >&6
-+else
-+  case $JAR in
-+  [\\/]* | ?:[\\/]*)
-+  ac_cv_path_JAR="$JAR" # Let the user override the test with a path.
-+  ;;
-+  *)
-+  as_save_IFS=$IFS; IFS=$PATH_SEPARATOR
-+for as_dir in $PATH
-+do
-+  IFS=$as_save_IFS
-+  test -z "$as_dir" && as_dir=.
-+  for ac_exec_ext in '' $ac_executable_extensions; do
-+  if $as_executable_p "$as_dir/$ac_word$ac_exec_ext"; then
-+    ac_cv_path_JAR="$as_dir/$ac_word$ac_exec_ext"
-+    echo "$as_me:$LINENO: found $as_dir/$ac_word$ac_exec_ext" >&5
-+    break 2
-+  fi
-+done
-+done
-+
-+  ;;
-+esac
-+fi
-+JAR=$ac_cv_path_JAR
-+
-+if test -n "$JAR"; then
-+  echo "$as_me:$LINENO: result: $JAR" >&5
-+echo "${ECHO_T}$JAR" >&6
-+else
-+  echo "$as_me:$LINENO: result: no" >&5
-+echo "${ECHO_T}no" >&6
-+fi
-+
-+      fi
-+   fi
-+JAVACMD=$JAVAINTERPRETER
-+
-+
-+fi
-+
- 
- 
- 
-@@ -19533,9 +19591,8 @@ cat > conftest.xml << EOF
- 	</target>
-     </project>
- EOF
--  oldJAVA_HOME=$JAVA_HOME
-   if test "$JDK" = "gcj"; then
--    JAVA_HOME=; export JAVA_HOME
-+    export JAVACMD
-     ant_cmd="$ANT -Dbuild.compiler=gcj -buildfile conftest.xml 1>&2"
-   else
-     ant_cmd="$ANT -buildfile conftest.xml 1>&2"
-@@ -19562,9 +19619,9 @@ echo "$as_me: WARNING: Ant does not work
-     ANT_HOME=""
-     echo "Ant does not work - Some Java projects will not build!" >>warn
-   fi
--  JAVA_HOME=$oldJAVA_HOME
-   rm -f conftest* core core.* *.core
- fi
-+
- if test -z "$ANT_HOME"; then
-    ANT_HOME="NO_ANT_HOME"
- fi
-@@ -20381,6 +20438,8 @@ s,@JAVACOMPILER@,$JAVACOMPILER,;t t
- s,@JAVADOC@,$JAVADOC,;t t
- s,@AWTLIB@,$AWTLIB,;t t
- s,@JAVACACHE@,$JAVACACHE,;t t
-+s,@JAR@,$JAR,;t t
-+s,@JAVACMD@,$JAVACMD,;t t
- s,@JAVA_HOME@,$JAVA_HOME,;t t
- s,@JDK@,$JDK,;t t
- s,@XSLTPROC@,$XSLTPROC,;t t
 Index: config_office/configure.in
 ===================================================================
 RCS file: /cvs/tools/config_office/configure.in,v
@@ -285,3 +143,143 @@ diff -u -p -r1.11 -r1.11.12.1
  .ELSE
  all:
 
+Index: config_office/configure
+===================================================================
+RCS file: /cvs/tools/config_office/configure,v
+retrieving revision 1.145
+diff -u -r1.145 configure
+--- config_office/configure	29 Mar 2006 13:57:35 -0000	1.145
++++ config_office/configure	18 Apr 2006 21:40:02 -0000
+@@ -309,7 +309,7 @@
+ # include <unistd.h>
+ #endif"
+ 
+-ac_subst_vars='SHELL PATH_SEPARATOR PACKAGE_NAME PACKAGE_TARNAME PACKAGE_VERSION PACKAGE_STRING PACKAGE_BUGREPORT exec_prefix prefix program_transform_name bindir sbindir libexecdir datadir sysconfdir sharedstatedir localstatedir libdir includedir oldincludedir infodir mandir build_alias host_alias target_alias DEFS ECHO_C ECHO_N ECHO_T LIBS AWK SED LOCAL_SOLENV UPD SOURCEVERSION build build_cpu build_vendor build_os host host_cpu host_vendor host_os target target_cpu target_vendor target_os OSVERSION PTHREAD_CFLAGS PTHREAD_LIBS ENABLE_CRASHDUMP ENABLE_VCTK VC_STANDARD ENABLE_DEBUG PRODUCT PROFULLSWITCH PROEXT ENABLE_SYMBOLS ENABLE_CUPS ENABLE_FONTCONFIG WITH_BINFILTER ENABLE_DIRECTX NETTOOLKIT ENABLE_RPATH WITH_MYSPELL_DICTS USE_SHELL WITH_MINGWIN TCSH GCC_HOME CC CFLAGS LDFLAGS CPPFLAGS ac_ct_CC EXEEXT OBJEXT COMPATH GCCVER HAVE_GCC_VISIBILITY_FEATURE GNUMAKE _cc MSPDB_PATH COMEX MIDL_PATH CSC_PATH NMAKE_PATH FRAME_HOME CPP EGREP PAM_LINK CRYPT_LINK CXX CXXFLAGS ac_ct_CXX GXX_INCLUDE_PATH EXCEPTIONS CXXCPP STLPORT4 USE_SYSTEM_STL ALLOC BUILD_VER_STRING SOLAR_JAVA LANG JAVAINTERPRETER JAVACOMPILER JAVADOC AWTLIB JAVACACHE JAVA_HOME JDK XSLTPROC PERL DMAKE BUILD_DMAKE EPM DPKG PKGMK BUILD_EPM PKGFORMAT RPM SYSTEM_STDLIBS SYSTEM_ZLIB SYSTEM_JPEG SYSTEM_EXPAT PKG_CONFIG FREETYPE_CFLAGS FREETYPE_LIBS SYSTEM_FREETYPE LIBWPD_CFLAGS LIBWPD_LIBS SYSTEM_LIBWPD LIBXML_CFLAGS LIBXML_LIBS SYSTEM_LIBXML PYTHON PYTHON_VERSION PYTHON_PREFIX PYTHON_EXEC_PREFIX PYTHON_PLATFORM pythondir pkgpythondir pyexecdir pkgpyexecdir SYSTEM_PYTHON PYTHON_CFLAGS PYTHON_LIBS SYSTEM_DB DB_VERSION DB_INCLUDES DB_JAR SABLOTCONFIG SYSTEM_SABLOT SABLOT_LIBS CURLCONFIG SYSTEM_CURL CURL_CFLAGS CURL_LIBS SYSTEM_BOOST SYSTEM_ODBC_HEADERS WITH_MOZILLA WITH_OPENLDAP MOZILLAXPCOM_CFLAGS MOZILLAXPCOM_LIBS MOZ_NSPR_CFLAGS MOZ_NSPR_LIBS MOZ_NSS_CFLAGS MOZ_NSS_LIBS MOZILLA_VERSION MOZILLA_TOOLKIT MOZLIBREQ_CFLAGS MOZLIBREQ_LIBS BUILD_MOZAB SYSTEM_MOZILLA MOZ_INC MOZ_LIB MOZ_LIB_XPCOM MOZ_LDAP_CFLAGS SYSTEM_SANE_HEADER X_CFLAGS X_PRE_LIBS X_LIBS X_EXTRA_LIBS XINC XLIB SYSTEM_XRENDER_HEADERS XRENDER_LINK XMKMF SYSTEM_NAS NAS_INCLUDES ENABLE_NAS ENABLE_PASF SYSTEM_PORTAUDIO SYSTEM_SNDFILE BUILD_TYPE NEON_CFLAGS NEON_LIBS SYSTEM_NEON AGG_CFLAGS AGG_LIBS SYSTEM_AGG MYSPELL_CFLAGS MYSPELL_LIBS SYSTEM_MYSPELL SYSTEM_HUNSPELL HUNSPELL_CFLAGS SYSTEM_HYPH SYSTEM_MYTHES PSDK_HOME DIRECTXSDK_HOME DIRECTXSDK_LIB NSIS_PATH EXTRA_DOTNET_FILES BISON FLEX PATCH GNUPATCH GNUCP CYGWIN_PATH ML_EXE ASM_HOME ZIP UNZIP ZIP_HOME LIBART_CFLAGS LIBART_LIBS WITH_LIBART WITH_GPC ENABLE_GTK ENABLE_KDE GNOMEVFS_CFLAGS GNOMEVFS_LIBS GCONF_CFLAGS GCONF_LIBS ENABLE_GNOMEVFS GTK_CFLAGS GTK_LIBS GDKPIXBUF_CFLAGS GDKPIXBUF_LIBS CAIRO_CFLAGS CAIRO_LIBS ENABLE_CAIRO SYSTEM_CAIRO MOC KDE_CFLAGS KDE_LIBS ENABLE_LOCKDOWN LIBSN_CFLAGS LIBSN_LIBS WITH_LIBSN GOBJECT_CFLAGS GOBJECT_LIBS ENABLE_EVOAB2 ENABLE_KAB WITH_FONTOOO SYSTEM_MSPACK WITH_FONTS SCPDEFS WITHOUT_PPDS WITHOUT_AFMS USE_XINERAMA XINERAMA_LINK ANT ANT_HOME ANT_LIB WITH_LANG WITH_DICT ENABLE_STATIC_GTK LOCAL_SOLVER LIBOBJS LTLIBOBJS'
++ac_subst_vars='SHELL PATH_SEPARATOR PACKAGE_NAME PACKAGE_TARNAME PACKAGE_VERSION PACKAGE_STRING PACKAGE_BUGREPORT exec_prefix prefix program_transform_name bindir sbindir libexecdir datadir sysconfdir sharedstatedir localstatedir libdir includedir oldincludedir infodir mandir build_alias host_alias target_alias DEFS ECHO_C ECHO_N ECHO_T LIBS AWK SED LOCAL_SOLENV UPD SOURCEVERSION build build_cpu build_vendor build_os host host_cpu host_vendor host_os target target_cpu target_vendor target_os OSVERSION PTHREAD_CFLAGS PTHREAD_LIBS ENABLE_CRASHDUMP ENABLE_VCTK VC_STANDARD ENABLE_DEBUG PRODUCT PROFULLSWITCH PROEXT ENABLE_SYMBOLS ENABLE_CUPS ENABLE_FONTCONFIG WITH_BINFILTER ENABLE_DIRECTX NETTOOLKIT ENABLE_RPATH WITH_MYSPELL_DICTS USE_SHELL WITH_MINGWIN TCSH GCC_HOME CC CFLAGS LDFLAGS CPPFLAGS ac_ct_CC EXEEXT OBJEXT COMPATH GCCVER HAVE_GCC_VISIBILITY_FEATURE GNUMAKE _cc MSPDB_PATH COMEX MIDL_PATH CSC_PATH NMAKE_PATH FRAME_HOME CPP EGREP PAM_LINK CRYPT_LINK CXX CXXFLAGS ac_ct_CXX GXX_INCLUDE_PATH EXCEPTIONS CXXCPP STLPORT4 USE_SYSTEM_STL ALLOC BUILD_VER_STRING SOLAR_JAVA LANG JAVAINTERPRETER JAVACOMPILER JAVADOC AWTLIB JAVACACHE JAR JAVACMD JAVA_HOME JDK XSLTPROC PERL DMAKE BUILD_DMAKE EPM DPKG PKGMK BUILD_EPM PKGFORMAT RPM SYSTEM_STDLIBS SYSTEM_ZLIB SYSTEM_JPEG SYSTEM_EXPAT PKG_CONFIG FREETYPE_CFLAGS FREETYPE_LIBS SYSTEM_FREETYPE LIBWPD_CFLAGS LIBWPD_LIBS SYSTEM_LIBWPD LIBXML_CFLAGS LIBXML_LIBS SYSTEM_LIBXML PYTHON PYTHON_VERSION PYTHON_PREFIX PYTHON_EXEC_PREFIX PYTHON_PLATFORM pythondir pkgpythondir pyexecdir pkgpyexecdir SYSTEM_PYTHON PYTHON_CFLAGS PYTHON_LIBS SYSTEM_DB DB_VERSION DB_INCLUDES DB_JAR SABLOTCONFIG SYSTEM_SABLOT SABLOT_LIBS CURLCONFIG SYSTEM_CURL CURL_CFLAGS CURL_LIBS SYSTEM_BOOST SYSTEM_ODBC_HEADERS WITH_MOZILLA WITH_OPENLDAP MOZILLAXPCOM_CFLAGS MOZILLAXPCOM_LIBS MOZ_NSPR_CFLAGS MOZ_NSPR_LIBS MOZ_NSS_CFLAGS MOZ_NSS_LIBS MOZILLA_VERSION MOZILLA_TOOLKIT MOZLIBREQ_CFLAGS MOZLIBREQ_LIBS BUILD_MOZAB SYSTEM_MOZILLA MOZ_INC MOZ_LIB MOZ_LIB_XPCOM MOZ_LDAP_CFLAGS SYSTEM_SANE_HEADER X_CFLAGS X_PRE_LIBS X_LIBS X_EXTRA_LIBS XINC XLIB SYSTEM_XRENDER_HEADERS XRENDER_LINK XMKMF SYSTEM_NAS NAS_INCLUDES ENABLE_NAS ENABLE_PASF SYSTEM_PORTAUDIO SYSTEM_SNDFILE BUILD_TYPE NEON_CFLAGS NEON_LIBS SYSTEM_NEON AGG_CFLAGS AGG_LIBS SYSTEM_AGG MYSPELL_CFLAGS MYSPELL_LIBS SYSTEM_MYSPELL SYSTEM_HUNSPELL HUNSPELL_CFLAGS SYSTEM_HYPH SYSTEM_MYTHES PSDK_HOME DIRECTXSDK_HOME DIRECTXSDK_LIB NSIS_PATH EXTRA_DOTNET_FILES BISON FLEX PATCH GNUPATCH GNUCP CYGWIN_PATH ML_EXE ASM_HOME ZIP UNZIP ZIP_HOME LIBART_CFLAGS LIBART_LIBS WITH_LIBART WITH_GPC ENABLE_GTK ENABLE_KDE GNOMEVFS_CFLAGS GNOMEVFS_LIBS GCONF_CFLAGS GCONF_LIBS ENABLE_GNOMEVFS GTK_CFLAGS GTK_LIBS GDKPIXBUF_CFLAGS GDKPIXBUF_LIBS CAIRO_CFLAGS CAIRO_LIBS ENABLE_CAIRO SYSTEM_CAIRO MOC KDE_CFLAGS KDE_LIBS ENABLE_LOCKDOWN LIBSN_CFLAGS LIBSN_LIBS WITH_LIBSN GOBJECT_CFLAGS GOBJECT_LIBS ENABLE_EVOAB2 ENABLE_KAB WITH_FONTOOO SYSTEM_MSPACK WITH_FONTS SCPDEFS WITHOUT_PPDS WITHOUT_AFMS USE_XINERAMA XINERAMA_LINK ANT ANT_HOME ANT_LIB WITH_LANG WITH_DICT ENABLE_STATIC_GTK LOCAL_SOLVER LIBOBJS LTLIBOBJS'
+ ac_subst_files=''
+ 
+ # Initialize some variables set by options.
+@@ -7494,9 +7494,14 @@
+ fi
+ 
+ if test "$SOLAR_JAVA" != ""; then
++    if test "$JDK" = "gcj"; then
++	javadoc_program=gjdoc
++    else
++	javadoc_program=javadoc
++    fi
+     if test -z "$with_jdk_home"; then
+-        # Extract the first word of "javadoc", so it can be a program name with args.
+-set dummy javadoc; ac_word=$2
++        # Extract the first word of "$javadoc_program", so it can be a program name with args.
++set dummy $javadoc_program; ac_word=$2
+ echo "$as_me:$LINENO: checking for $ac_word" >&5
+ echo $ECHO_N "checking for $ac_word... $ECHO_C" >&6
+ if test "${ac_cv_path_JAVADOC+set}" = set; then
+@@ -7535,12 +7540,12 @@
+ fi
+ 
+     else
+-        _javadoc_path="$with_jdk_home/bin/javadoc"
++        _javadoc_path="$with_jdk_home/bin/$javadoc_program"
+                 if test -x "$_javadoc_path"; then
+             JAVADOC=$_javadoc_path
+         else
+-            # Extract the first word of "javadoc", so it can be a program name with args.
+-set dummy javadoc; ac_word=$2
++            # Extract the first word of "$javadoc_program", so it can be a program name with args.
++set dummy $javadoc_program; ac_word=$2
+ echo "$as_me:$LINENO: checking for $ac_word" >&5
+ echo $ECHO_N "checking for $ac_word... $ECHO_C" >&6
+ if test "${ac_cv_path_JAVADOC+set}" = set; then
+@@ -7989,6 +7994,59 @@
+    fi
+ fi
+ 
++if test "$JDK" = "gcj"; then
++   if test -x "$JAVA_HOME/bin/fastjar"; then
++      JAR="$JAVA_HOME/bin/fastjar";
++   else
++      if test -x "$JAVA_HOME/bin/jar"; then
++         JAR="$JAVA_HOME/bin/jar";
++      else
++         # Extract the first word of "jar", so it can be a program name with args.
++set dummy jar; ac_word=$2
++echo "$as_me:$LINENO: checking for $ac_word" >&5
++echo $ECHO_N "checking for $ac_word... $ECHO_C" >&6
++if test "${ac_cv_path_JAR+set}" = set; then
++  echo $ECHO_N "(cached) $ECHO_C" >&6
++else
++  case $JAR in
++  [\\/]* | ?:[\\/]*)
++  ac_cv_path_JAR="$JAR" # Let the user override the test with a path.
++  ;;
++  *)
++  as_save_IFS=$IFS; IFS=$PATH_SEPARATOR
++for as_dir in $PATH
++do
++  IFS=$as_save_IFS
++  test -z "$as_dir" && as_dir=.
++  for ac_exec_ext in '' $ac_executable_extensions; do
++  if $as_executable_p "$as_dir/$ac_word$ac_exec_ext"; then
++    ac_cv_path_JAR="$as_dir/$ac_word$ac_exec_ext"
++    echo "$as_me:$LINENO: found $as_dir/$ac_word$ac_exec_ext" >&5
++    break 2
++  fi
++done
++done
++
++  ;;
++esac
++fi
++JAR=$ac_cv_path_JAR
++
++if test -n "$JAR"; then
++  echo "$as_me:$LINENO: result: $JAR" >&5
++echo "${ECHO_T}$JAR" >&6
++else
++  echo "$as_me:$LINENO: result: no" >&5
++echo "${ECHO_T}no" >&6
++fi
++
++      fi
++   fi
++JAVACMD=$JAVAINTERPRETER
++
++
++fi
++
+ 
+ 
+ 
+@@ -20432,9 +20490,8 @@
+ 	</target>
+     </project>
+ EOF
+-  oldJAVA_HOME=$JAVA_HOME
+   if test "$JDK" = "gcj"; then
+-    JAVA_HOME=; export JAVA_HOME
++    export JAVACMD
+     ant_cmd="$ANT -Dbuild.compiler=gcj -buildfile conftest.xml 1>&2"
+   else
+     ant_cmd="$ANT -buildfile conftest.xml 1>&2"
+@@ -20461,9 +20518,9 @@
+     ANT_HOME=""
+     echo "Ant does not work - Some Java projects will not build!" >>warn
+   fi
+-  JAVA_HOME=$oldJAVA_HOME
+   rm -f conftest* core core.* *.core
+ fi
++
+ if test -z "$ANT_HOME"; then
+    ANT_HOME="NO_ANT_HOME"
+ fi
+@@ -21281,6 +21338,8 @@
+ s,@JAVADOC@,$JAVADOC,;t t
+ s,@AWTLIB@,$AWTLIB,;t t
+ s,@JAVACACHE@,$JAVACACHE,;t t
++s,@JAR@,$JAR,;t t
++s,@JAVACMD@,$JAVACMD,;t t
+ s,@JAVA_HOME@,$JAVA_HOME,;t t
+ s,@JDK@,$JDK,;t t
+ s,@XSLTPROC@,$XSLTPROC,;t t

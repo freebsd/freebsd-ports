@@ -88,7 +88,6 @@ GCCVER=4.1.1
 BUILD_DEPENDS+=	${PREFIX}/lib/gcc/${MACHINE_ARCH}-portbld-freebsd${OSREL}/${GCCVER}/lib-gnu-java-awt-peer-gtk.so:${PORTSDIR}/lang/gcc41-withgcjawt
 BUILD_DEPENDS+=	gjdoc:${PORTSDIR}/java/gjdoc
 RUN_DEPENDS+=	${PREFIX}/lib/gcc/${MACHINE_ARCH}-portbld-freebsd${OSREL}/${GCCVER}/lib-gnu-java-awt-peer-gtk.so:${PORTSDIR}/lang/gcc41-withgcjawt
-BROKEN=	"Still work in progress"	
 .else
 BUILD_DEPENDS+=	gcc-ooo:${PORTSDIR}/lang/gcc-ooo
 .endif
@@ -153,7 +152,7 @@ CONFIGURE_ARGS+=	--with-system-xrender-headers=yes #i62713#
 EXTRA_PATCHES+=	${FILESDIR}/fbsd4-workaroundpatch
 .endif
 .if defined(WITH_GNUGCJ)
-EXTRA_PATCHES+=	${FILESDIR}/gcj-patches ${FILESDIR}/cws-maho1.diff ${FILESDIR}/gcj-fbsdworkaround
+EXTRA_PATCHES+=	${FILESDIR}/cws-maho1.diff ${FILESDIR}/gcj-fbsdworkaround
 .endif
 #.if defined(WITH_TTF_BYTECODE_ENABLED)
 #EXTRA_PATCHES+=	 ${FILESDIR}/optpatch-freetype
@@ -183,13 +182,11 @@ post-extract:
 	@cd ${WRKDIR} ; ${CAT} ${DISTDIR}/${DIST_SUBDIR}/${ANT_DISTFILE} | ${BZIP2_CMD} -d | ${TAR} xf -
 	@${RM} -Rf ${WRKDIR}/gnugcj
 	@${MKDIR} ${WRKDIR}/gnugcj/bin
-	@${MKDIR} ${WRKDIR}/gnugcj/lib
 	@${LN} -s ${LOCALBASE}/bin/gcj41 ${WRKDIR}/gnugcj/bin/gcj
 	@${LN} -s ${LOCALBASE}/bin/gij41 ${WRKDIR}/gnugcj/bin/gij
 	@${LN} -s ${LOCALBASE}/bin/gjdoc ${WRKDIR}/gnugcj/bin/javadoc  # #iXXXXX# xmerge doesn't support gjdoc
 	@${LN} -s ${LOCALBASE}/bin/fastjar41 ${WRKDIR}/gnugcj/bin/fastjar
 	@${LN} -s ${LOCALBASE}/bin/gcj-dbtool41 ${WRKDIR}/gnugcj/bin/gcj-dbtool
-	@${LN} -s ${PREFIX}/lib/gcc/${MACHINE_ARCH}-portbld-freebsd${OSREL}/${GCCVER}/libgcj.so ${WRKDIR}/gnugcj/lib
 .endif
 .if defined(WITH_GPC)
 	@cd ${WRKDIR} ; ${CAT} ${DISTDIR}/${DIST_SUBDIR}/gpc231.tar.Z | ${TAR} xfz -
