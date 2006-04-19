@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	foremost
-PORTVERSION=	1.0
-PORTREVISION=	3
+PORTVERSION=	1.2
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	http://foremost.sourceforge.net/pkg/
 
 MAINTAINER=	onatan@gmail.com
 COMMENT=	Console program to recover files based on their headers and footers
@@ -18,7 +16,6 @@ COMMENT=	Console program to recover files based on their headers and footers
 USE_GMAKE=	yes
 ALL_TARGET=	freebsd
 MAN1=		foremost.1
-USE_REINPLACE=	yes
 
 PLIST_FILES=	bin/foremost etc/foremost.conf.sample
 
