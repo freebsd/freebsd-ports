@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	rhythmbox
-PORTVERSION=	0.9.3.1
-PORTREVISION=	1
+PORTVERSION=	0.9.4
 CATEGORIES=	audio gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.9
@@ -20,15 +19,18 @@ COMMENT=	Audio player for the Gnome 2 desktop environment
 LIB_DEPENDS=	musicbrainz.4:${PORTSDIR}/audio/libmusicbrainz \
 		id3tag.0:${PORTSDIR}/audio/libid3tag \
 		totem-plparser.1:${PORTSDIR}/multimedia/totem-gstreamer \
-		dbus-1.2:${PORTSDIR}/devel/dbus
+		dbus-1.2:${PORTSDIR}/devel/dbus \
+		sexy.1:${PORTSDIR}/x11-toolkits/libsexy \
+		gnome-media-profiles.0:${PORTSDIR}/audio/gnomemedia2
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 INSTALLS_OMF=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack intlhack gnomeprefix libgnomeui nautiluscdburner
+WANT_GNOME=	yes
 USE_GSTREAMER=	flac mad gnomevfs gconf jpeg
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-nautilus-menu
 CONFIGURE_ENV=	LIBS="-lm" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
@@ -39,7 +41,8 @@ GCONF_SCHEMAS=	rhythmbox.schemas
 OPTIONS=	IPOD "Enable iPod support" off \
 		DAAP "Enable iTunes music sharing" off \
 		FAAD "Enable FAAD decoder support" off \
-		NOTIFY "Enable libnotify support" on
+		NOTIFY "Enable libnotify support" on \
+		VORBIS "Enable Ogg/Vorbis support" on
 
 .include <bsd.port.pre.mk>
 
@@ -51,11 +54,7 @@ BROKEN=	Does not build on 4.X
 CONFIGURE_ARGS+=	--enable-ipod
 .endif
 
-.if exists(${LOCALBASE}/lib/libvorbis.so)
-WITH_VORBIS=	yes
-.endif
-
-.ifdef (WITH_VORBIS)
+.if !defined(WITHOUT_VORBIS)
 USE_GSTREAMER+=		vorbis
 .else
 CONFIGURE_ARGS+=	--disable-vorbis --disable-vorbistest
@@ -82,11 +81,15 @@ LIB_DEPENDS+=		notify.1:${PORTSDIR}/devel/libnotify
 CONFIGURE_ARGS+=	--disable-libnotify
 .endif
 
-pre-everything::
-.if !defined(WITH_VORBIS)
-	@${ECHO_MSG}
-	@${ECHO_MSG} "Define WITH_VORBIS to enable Vorbis support"
-	@${ECHO_MSG}
+.if ${HAVE_GNOME:Mpygtk2}!=""
+USE_PYTHON=	yes
+.include "${PORTSDIR}/Mk/bsd.python.mk"
+USE_GNOME+=	pygtk2
+CONFIGURE_ARGS+=--enable-python
+PLIST_SUB+=	PYTHON=""
+.else
+CONFIGURE_ARGS+=--disable-python
+PLIST_SUB+=	PYTHON="@comment "
 .endif
 
 .include <bsd.port.post.mk>

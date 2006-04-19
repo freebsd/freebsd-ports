@@ -1,18 +1,32 @@
---- configure.orig	Thu Feb  2 02:03:39 2006
-+++ configure	Thu Feb  2 02:04:34 2006
-@@ -21318,9 +21318,9 @@
+--- configure.orig	Mon Apr 17 03:03:22 2006
++++ configure	Mon Apr 17 03:04:12 2006
+@@ -21375,14 +21375,14 @@ echo "${ECHO_T}yes" >&6
  	enable_hal02=yes
  fi
    fi
 -  if test x$enable_hal05 == xyes || test x$enable_hal02 == xyes; then
 +  if test x$enable_hal05 = xyes || test x$enable_hal02 = xyes; then
        enable_hal=yes
+ 
+ cat >>confdefs.h <<\_ACEOF
+ #define HAVE_HAL 1
+ _ACEOF
+ 
 -      if test x$enable_hal05 == xyes; then
 +      if test x$enable_hal05 = xyes; then
  
  cat >>confdefs.h <<\_ACEOF
  #define HAVE_HAL_0_5 1
-@@ -22121,7 +22121,7 @@
+@@ -22104,7 +22104,7 @@ echo "${ECHO_T}yes" >&6
+ 	have_gnome_media_profiles=yes
+ fi
+ 
+-   if test x$have_gnome_media_profiles == xno; then
++   if test x$have_gnome_media_profiles = xno; then
+       { { echo "$as_me:$LINENO: error: Track transfer support explicitly requested but gnome-media-profiles not found." >&5
+ echo "$as_me: error: Track transfer support explicitly requested but gnome-media-profiles not found." >&2;}
+    { (exit 1); exit 1; }; }
+@@ -22311,7 +22311,7 @@ echo "${ECHO_T}yes" >&6
  	have_avahi_05=yes
  fi
  fi
@@ -21,8 +35,8 @@
     have_avahi=yes
  else
     have_avahi=no
-@@ -22208,7 +22208,7 @@
- 
+@@ -22399,7 +22399,7 @@ _ACEOF
+       use_avahi=yes
        { echo "$as_me:$LINENO: Detected Avahi, using it for mDNS/DNS-SD" >&5
  echo "$as_me: Detected Avahi, using it for mDNS/DNS-SD" >&6;}
 -      if test x$have_avahi_06 == xyes; then
@@ -30,7 +44,7 @@
  
  cat >>confdefs.h <<\_ACEOF
  #define HAVE_AVAHI_0_6 1
-@@ -22275,7 +22275,7 @@
+@@ -22468,7 +22468,7 @@ _ACEOF
     { echo "$as_me:$LINENO: Using Avahi for mDNS/DNS-SD" >&5
  echo "$as_me: Using Avahi for mDNS/DNS-SD" >&6;}
  
@@ -39,7 +53,7 @@
  
  cat >>confdefs.h <<\_ACEOF
  #define HAVE_AVAHI_0_6 1
-@@ -23069,7 +23069,7 @@
+@@ -23289,7 +23289,7 @@ fi
  
  
  if test x"$x_includes" != x"NONE" && test -n "$x_includes" ; then
@@ -48,3 +62,12 @@
  fi
  if test x"$x_libraries" != x"NONE" && test -n "$x_libraries" ; then
  	LIBS=-L`echo $x_libraries | sed -e "s/:/ -L/g"`
+@@ -26298,7 +26298,7 @@ if test "${with_internal_libsexy+set}" =
+ else
+   with_internal_libsexy=no
+ fi;
+-if test "x$with_internal_libsexy" == "xno"; then
++if test "x$with_internal_libsexy" = "xno"; then
+ 
+ pkg_failed=no
+ echo "$as_me:$LINENO: checking for LIBSEXY" >&5
