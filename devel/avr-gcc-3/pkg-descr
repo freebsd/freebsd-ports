@@ -3,18 +3,15 @@ FSF gcc-3.x for Atmel AVR cross-development
 This brings the gcc compiler to the Atmel AVR 8-bit RISC family of
 microcontrollers.
 
-Included is the basic C++ compiler, although this is only of limited
-use without a libstdc++, and it is little tested.
-
 Supported debugging formats: -gstabs [default] and -gdwarf-2
 Locally hack added: recognizes 0bXXX binary constants
-
 Locally added support for the following AVR devices:
 
   ATtiny13/ATtiny2313             ATtiny24/ATtiny44/ATtiny84
   ATtiny25/ATtiny45/ATtiny85      ATtiny261/ATtiny461/ATtiny861
   ATmega48/ATmega88/ATmega168     ATmega406
-  ATmega164/ATmega324/ATmega644   ATmega165
+  ATmega164P/ATmega324P/ATmega644/ATmega644P
+  ATmega165/ATmega165P/ATmega169P
   ATmega325/ATmega3250/ATmega645/ATmega6450
   ATmega329/ATmega3290/ATmega649/ATmega6490
   ATmega640/ATmega1280/ATmega1281 AT90PWM2/AT90PWM3
