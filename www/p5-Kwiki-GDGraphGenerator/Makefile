@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Kwiki-GDGraphGenerator
-PORTVERSION=	0.03
+PORTVERSION=	0.04
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Kwiki
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Kwiki plugin for putting pretty graphs into your Kwiki pages
 
 BUILD_DEPENDS=	${SITE_PERL}/Kwiki.pm:${PORTSDIR}/www/p5-Kwiki \
