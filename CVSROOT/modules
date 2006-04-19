@@ -10807,6 +10807,7 @@ py-pmock	ports/devel/py-pmock
 py-posix1e	ports/security/py-posix1e
 py-pow		ports/security/py-pow
 py-pqueue	ports/devel/py-pqueue
+py-prewikka	ports/www/py-prewikka
 py-probstat	ports/math/py-probstat
 py-prolog	ports/lang/py-prolog
 py-protocols	ports/devel/py-protocols
