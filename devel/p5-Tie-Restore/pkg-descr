@@ -1,0 +1,13 @@
+Provides the opposite of the 'tied' function.  Say you have %hash that
+is tied to $object.  Then, it is relatively simple to get $object from
+%hash simply by saying
+
+ $object = tied %hash;
+
+But, how does one go the other way?  Simple, with Tie::Restore
+
+ tie %hash, 'Tie::Restore', $object;
+
+Works for any kind of tie. (scalar, array, hash, filehandle)
+
+WWW: http://search.cpan.org/dist/Tie-Restore/
