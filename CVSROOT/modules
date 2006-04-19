@@ -5443,6 +5443,7 @@ libassetml	ports/devel/libassetml
 libassuan	ports/security/libassuan
 libast		ports/devel/libast
 libaudiofile	ports/audio/libaudiofile
+libaura		ports/devel/libaura
 libaux		ports/graphics/libaux
 libavl		ports/devel/libavl
 libbegemot	ports/devel/libbegemot
