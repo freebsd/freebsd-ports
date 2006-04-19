@@ -369,6 +369,8 @@ jre118_v3-glibc-*	java/linux-blackdown-jre11 License does not allow
 jsdk20-solaris2-sparc*	java/jsdk		No commercial use
 jude-comunity-*.zip	devel/jude-community	License restrictions
 kaffe-*		java/kaffe		Restrictive copyright
+KASH3-*			math/kash3		Not for commercial
+						distribution or use
 kde-icons-*		x11-themes/kde-icons-*	Unclear about licensing
 						status
 ladder.tar		games/ladder		Possible copyright problems?
