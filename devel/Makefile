@@ -1253,6 +1253,7 @@
     SUBDIR += p5-Tie-Hash-Sorted
     SUBDIR += p5-Tie-Hash-TwoWay
     SUBDIR += p5-Tie-IxHash
+    SUBDIR += p5-Tie-Restore
     SUBDIR += p5-Tie-ShareLite
     SUBDIR += p5-Tie-iCal
     SUBDIR += p5-Time-Duration
