@@ -42,8 +42,10 @@ Note:  Please add new entries to the beginning of this file.
 	<range><gt>6.0</gt><lt>6.0_7</lt></range>
 	<range><gt>5.4</gt><lt>5.4_14</lt></range>
 	<range><gt>5.3</gt><lt>5.3_29</lt></range>
+	<range><gt>5</gt><lt>5.3</lt></range>
 	<range><gt>4.11</gt><lt>4.11_17</lt></range>
 	<range><gt>4.10</gt><lt>4.10_23</lt></range>
+	<range><lt>4.10</lt></range>
       </system>
     </affects>
     <description>
