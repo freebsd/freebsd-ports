@@ -7,7 +7,7 @@
 
 PORTNAME=	ldouble
 PORTVERSION=	0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 #	http://www.moshier.net/
@@ -34,6 +34,7 @@ LDOUBLE_DISTFILE=	ldouble.zip
 USE_ZIP=		yes
 EXTRA_PATCHES=	${FILESDIR}/i386-makefile-patch
 PORTDOCS=	ldoubdoc.html
+PLIST_FILES+=	include/mathl.h
 .else
 LDOUBLE_DISTFILE=	128bit.tgz
 EXTRA_PATCHES=	${FILESDIR}/128-makefile-patch
@@ -54,5 +55,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/libml.a ${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/libml.so.0 ${PREFIX}/lib
 	${LN} -sf libml.so.0 ${PREFIX}/lib/libml.so
+.if ${ARCH}=="i386"
+	${INSTALL_DATA} ${WRKSRC}/protos.h ${PREFIX}/include/mathl.h
+.endif
 
 .include <bsd.port.post.mk>
