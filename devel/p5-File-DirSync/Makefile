@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	File-DirSync
-PORTVERSION=	1.12
+PORTVERSION=	1.13
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	File
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mhjacks@swbell.net
 COMMENT=	Perl5 module for synchronizing two directories rapidly
 
 PERL_CONFIGURE=	yes
