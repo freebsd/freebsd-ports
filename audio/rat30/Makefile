@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	mbone audio
 MASTER_SITES=	http://www-mice.cs.ucl.ac.uk/multimedia/software/rat/releases/${PORTVERSION}/
 
-MAINTAINER=	anton@chelcom.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IPv4/v6 Multicast and unicast audio conferencing tool
 
 LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
