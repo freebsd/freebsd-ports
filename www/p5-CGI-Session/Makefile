@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	CGI-Session
-PORTVERSION=	3.95
+PORTVERSION=	4.13
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	CGI
@@ -17,21 +17,26 @@ COMMENT=	Perl extension for persistent session management
 
 PERL_CONFIGURE=	yes
 
-MAN3=		CGI::Session::DB_File.3 \
-		CGI::Session::Example.3 \
-		CGI::Session::MySQL.3 \
-		CGI::Session::File.3 \
+MAN3=		\
 		CGI::Session.3 \
-		CGI::Session::ID::Incr.3 \
-		CGI::Session::ID::SHA1.3 \
-		CGI::Session::Serialize::FreezeThaw.3 \
-		CGI::Session::Serialize::Default.3 \
-		CGI::Session::BluePrint.3 \
-		CGI::Session::ID::MD5.3 \
-		CGI::Session::PostgreSQL.3 \
+		CGI::Session::Driver.3 \
+		CGI::Session::Driver::DBI.3 \
+		CGI::Session::Driver::db_file.3 \
+		CGI::Session::Driver::file.3 \
+		CGI::Session::Driver::mysql.3 \
+		CGI::Session::Driver::postgresql.3 \
+		CGI::Session::Driver::sqlite.3 \
+		CGI::Session::ErrorHandler.3 \
+		CGI::Session::ID::incr.3 \
+		CGI::Session::ID::md5.3 \
+		CGI::Session::ID::static.3 \
+		CGI::Session::Serialize::default.3 \
+		CGI::Session::Serialize::freezethaw.3 \
+		CGI::Session::Serialize::json.3 \
+		CGI::Session::Serialize::storable.3 \
+		CGI::Session::Serialize::yaml.3 \
+		CGI::Session::Test::Default.3 \
 		CGI::Session::Tutorial.3 \
-		CGI::Session::CookBook.3 \
-		CGI::Session::Serialize::Storable.3
 
 .include <bsd.port.pre.mk>
 
