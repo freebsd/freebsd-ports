@@ -800,6 +800,7 @@
     SUBDIR += py-mechanize
     SUBDIR += py-mt
     SUBDIR += py-nevow
+    SUBDIR += py-prewikka
     SUBDIR += py-pullparser
     SUBDIR += py-scgi
     SUBDIR += py-turbogears
