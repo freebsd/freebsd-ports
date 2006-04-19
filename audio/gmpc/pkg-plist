@@ -19,6 +19,7 @@ bin/gmpc
 %%DATADIR%%/open-location.glade
 %%DATADIR%%/add-browser.glade
 share/applications/gmpc.desktop
+share/pixmaps/gmpc.png
 include/gmpc/config1.h
 include/gmpc/cover-art.h
 include/gmpc/plugin.h
@@ -26,3 +27,4 @@ include/gmpc/qthread.h
 @dirrm include/gmpc
 libdata/pkgconfig/gmpc.pc
 @dirrm %%DATADIR%%
+@dirrmtry share/applications
