@@ -1,7 +1,6 @@
 share/lua/5.0/mime.lua
 share/lua/5.0/socket.lua
 share/lua/5.0/ltn12.lua
-share/lua/5.0/compat-5.1.lua
 share/lua/5.0/socket/smtp.lua
 share/lua/5.0/socket/ftp.lua
 share/lua/5.0/socket/tp.lua

@@ -1,0 +1,10 @@
+--- Makefile.orig	Mon Apr 17 11:33:50 2006
++++ Makefile	Mon Apr 17 11:33:57 2006
+@@ -25,7 +25,6 @@
+ 	smtp.lua
+ 
+ TO_TOP_SHARE:= \
+-	$(COMPAT)/compat-5.1.lua \
+ 	ltn12.lua \
+ 	socket.lua \
+ 	mime.lua
