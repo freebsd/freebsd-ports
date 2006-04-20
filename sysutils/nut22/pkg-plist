@@ -62,7 +62,6 @@ sbin/upssched
 %%CGIETC%%upsstats-single.html.sample
 %%PORTDOCS%%@exec mkdir %D/%%DOCSDIR%%
 %%PORTDOCS%%@exec mkdir %D/%%DOCSDIR%%/cables
-%%PORTDOCS%%@exec mkdir %D/%%DOCSDIR%%/drivers
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS
 %%PORTDOCS%%%%DOCSDIR%%/FAQ
