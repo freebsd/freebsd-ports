@@ -11,7 +11,7 @@ CATEGORIES=	x11-fonts
 MASTER_SITES=	ftp://ftp.gnome.ru/fonts/urw/release/
 DISTNAME=	urw-fonts-${PORTVERSION:S/b/pre/}-ttf
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Unicode TrueType fonts from URW extended by Valek Filippov
 
 DISABLE_SIZE=	yes
