@@ -1,0 +1,101 @@
+--- programs/Xserver/hw/xfree86/drivers/sunffb/ffb_accel.c.orig	Fri Mar 31 00:22:07 2006
++++ programs/Xserver/hw/xfree86/drivers/sunffb/ffb_accel.c	Fri Mar 31 00:35:35 2006
+@@ -43,8 +43,6 @@
+ #include	"ffb_rcache.h"
+ #include	"ffb_loops.h"
+ #include	"ffb_regs.h"
+-#include	"ffb_stip.h"
+-#include 	"ffb_gc.h"
+ 
+ int	CreatorScreenPrivateIndex;
+ int	CreatorGCPrivateIndex;
+--- programs/Xserver/hw/xfree86/drivers/sunffb/ffb_dga.c.orig	Fri Mar 31 00:22:07 2006
++++ programs/Xserver/hw/xfree86/drivers/sunffb/ffb_dga.c	Fri Mar 31 00:36:08 2006
+@@ -36,7 +36,6 @@
+ #include "ffb_regs.h"
+ #include "ffb_rcache.h"
+ #include "ffb_fifo.h"
+-#include "ffb_stip.h"
+ #include "ffb_loops.h"
+ 
+ static Bool FFB_OpenFramebuffer(ScrnInfoPtr, char **, unsigned char **,
+--- programs/Xserver/hw/xfree86/drivers/sunffb/ffb_dri.c.orig	Fri Mar 31 00:22:07 2006
++++ programs/Xserver/hw/xfree86/drivers/sunffb/ffb_dri.c	Fri Mar 31 00:37:04 2006
+@@ -33,11 +33,6 @@
+ 
+ #include "xf86PciInfo.h"
+ #include "xf86Pci.h"
+-#define PSZ 8
+-#include "cfb.h"
+-#undef PSZ
+-#include "cfb16.h"
+-#include "cfb32.h"
+ 
+ #include "miline.h"
+ 
+--- programs/Xserver/hw/xfree86/drivers/sunffb/Imakefile.orig	Fri Mar 31 00:22:07 2006
++++ programs/Xserver/hw/xfree86/drivers/sunffb/Imakefile	Fri Mar 31 00:34:27 2006
+@@ -60,16 +60,10 @@
+ #define FFBsObjectRule(name)
+ #endif
+ 
+-SRCS = ffb_driver.c ffb_accel.c ffb_attr.c ffb_stip.c ffb_bcopy.c \
+-       ffb_cplane.c ffb_fspans.c ffb_point.c ffb_seg.c ffb_plygon.c \
+-       ffb_line.c ffb_glyph.c ffb_frect.c ffb_circle.c ffb_checks.c \
+-       ffb_stubs.c ffb_gc.c ffb_gspans.c ffb_sspans.c ffb_zeroarc.c \
+-       ffb_cursor.c ffb_dga.c ffb_dac.c ffb_wid.c ffb_dbe.c $(DRISRCS)
+-OBJS = ffb_driver.o ffb_accel.o ffb_attr.o ffb_stip.o ffb_bcopy.o \
+-       ffb_cplane.o ffb_fspans.o ffb_point.o ffb_seg.o ffb_plygon.o \
+-       ffb_line.o ffb_glyph.o ffb_frect.o ffb_circle.o ffb_checks.o \
+-       ffb_stubs.o ffb_gc.o ffb_gspans.o ffb_sspans.o ffb_zeroarc.o \
+-       ffb_cursor.o ffb_dga.o ffb_dac.o ffb_wid.o ffb_dbe.o $(VISOBJS) \
++SRCS = ffb_driver.c ffb_accel.c ffb_attr.c \
++       ffb_cursor.c ffb_dga.c ffb_dac.c ffb_wid.c $(DRISRCS)
++OBJS = ffb_driver.o ffb_accel.o ffb_attr.o \
++       ffb_cursor.o ffb_dga.o ffb_dac.o ffb_wid.o $(VISOBJS) \
+        $(DRIOBJS)
+ 
+ #if defined(XF86DriverSDK)
+@@ -107,28 +101,10 @@
+ FFBCObjectRule(ffb_accel)
+ FFBCObjectRule(ffb_driver)
+ FFBCObjectRule(ffb_attr)
+-FFBCObjectRule(ffb_stip)
+-FFBCObjectRule(ffb_bcopy)
+-FFBCObjectRule(ffb_cplane)
+-FFBCObjectRule(ffb_fspans)
+-FFBCObjectRule(ffb_point)
+-FFBCObjectRule(ffb_seg)
+-FFBCObjectRule(ffb_plygon)
+-FFBCObjectRule(ffb_line)
+-FFBCObjectRule(ffb_glyph)
+-FFBCObjectRule(ffb_frect)
+-FFBCObjectRule(ffb_circle)
+-FFBCObjectRule(ffb_checks)
+-FFBCObjectRule(ffb_stubs)
+-FFBCObjectRule(ffb_gc)
+-FFBCObjectRule(ffb_gspans)
+-FFBCObjectRule(ffb_sspans)
+-FFBCObjectRule(ffb_zeroarc)
+ FFBCObjectRule(ffb_cursor)
+ FFBCObjectRule(ffb_dga)
+ FFBCObjectRule(ffb_dac)
+ FFBCObjectRule(ffb_wid)
+-FFBCObjectRule(ffb_dbe)
+ FFBsObjectRule(VISmoveImage)
+ FFBsObjectRule(ffb_asm)
+ #if BuildXF86DRI
+--- programs/Xserver/hw/xfree86/drivers/sunffb/ffb_driver.c.orig	Wed Apr 19 13:13:47 2006
++++ programs/Xserver/hw/xfree86/drivers/sunffb/ffb_driver.c	Wed Apr 19 13:14:25 2006
+@@ -411,11 +411,6 @@
+ 	xf86DrvMsg(pScrn->scrnIndex, X_CONFIG, "Acceleration disabled\n");
+     }
+         
+-    if (xf86LoadSubModule(pScrn, "xf8_32wid") == NULL) {
+-	FFBFreeRec(pScrn);
+-	return FALSE;
+-    }
+-
+     if (xf86LoadSubModule(pScrn, "fb") == NULL) {
+ 	FFBFreeRec(pScrn);
+ 	return FALSE;
