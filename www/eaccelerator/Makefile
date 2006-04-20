@@ -18,7 +18,9 @@ USE_PHP=	session
 USE_PHPIZE=	yes
 USE_PHP_BUILD=	yes
 
-CONFIGURE_ARGS=	--enable-eaccelerator=shared --with-eaccelerator-sessions
+CONFIGURE_ARGS=	--enable-eaccelerator=shared \
+		--with-eaccelerator-sessions \
+		--with-eaccelerator-userid=www
 
 USE_BZIP2=	yes
 SUB_FILES=	pkg-message
