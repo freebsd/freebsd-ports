@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nocc
-DISTVERSION=	1.0.0rc1
+DISTVERSION=	1.1
 CATEGORIES=	mail www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,16 +17,11 @@ COMMENT=	A web-based e-mail system which access POP3 and IMAP mail servers
 USE_PHP=	imap pcre session
 WANT_PHP_WEB=	yes
 
-PKGMESSAGE=	${WRKDIR}/pkg-message
+SUB_FILES=	pkg-message
 NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
 
-.if !defined(NOPORTDOCS)
 PORTDOCS=	*
-.endif
-
-pre-patch:
-	@${SED} 's|%%PREFIX%%|${PREFIX}|g' \
-		${PKGDIR}/pkg-message > ${PKGMESSAGE}
 
 do-install:
 	${MKDIR} ${PREFIX}/www/nocc

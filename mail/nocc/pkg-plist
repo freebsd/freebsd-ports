@@ -11,6 +11,7 @@ www/nocc/conf_charset.php
 www/nocc/conf_lang.php
 www/nocc/contacts.php
 www/nocc/contacts_manager.php
+www/nocc/crypt.php
 www/nocc/delete.php
 www/nocc/detect_cyr_charset.php
 www/nocc/down_mail.php
@@ -68,6 +69,7 @@ www/nocc/lang/hr.php
 www/nocc/lang/hu.php
 www/nocc/lang/is.php
 www/nocc/lang/it.php
+www/nocc/lang/ja.php
 www/nocc/lang/kr.php
 www/nocc/lang/lv.php
 www/nocc/lang/nl.php
