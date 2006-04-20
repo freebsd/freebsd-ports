@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	DBD-Pg
-PORTVERSION=	1.43
-PORTREVISION=	1
+PORTVERSION=	1.48
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DBD
@@ -39,7 +38,7 @@ post-install:
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500600
-IGNORE=		Needs DBI 1.38 which needs perl 5.6, install lang/perl5.8 and try again
+IGNORE=		needs DBI 1.38 which needs perl 5.6, install lang/perl5.8 and try again
 .endif
 
 PG_CONFIG=	${LOCALBASE}/bin/pg_config

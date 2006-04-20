@@ -1,13 +1,15 @@
---- Makefile.PL.orig	Sat May 21 16:43:17 2005
-+++ Makefile.PL	Mon May 23 13:32:05 2005
-@@ -85,13 +85,13 @@
+--- Makefile.PL.orig	Thu Apr 20 19:25:49 2006
++++ Makefile.PL	Thu Apr 20 19:26:54 2006
+@@ -96,7 +96,7 @@
    }
  }
  
--my $comp_opts = $Config{q{ccflags}} . " -DPGLIBVERSION=$serverversion";
-+my $comp_opts = " -DPGLIBVERSION=$serverversion";
+-my $comp_opts = $Config{q{ccflags}} . " -DPGLIBVERSION=$serverversion -DPGDEFPORT=$defaultport";
++my $comp_opts = " -DPGLIBVERSION=$serverversion -DPGDEFPORT=$defaultport";
  
- my %opts = 
+ if ($ENV{DBDPG_GCCDEBUG}) {
+ 	warn "Enabling many compiler options\n";
+@@ -120,7 +120,7 @@
  	(
  	 NAME           => 'DBD::Pg',
  	 VERSION_FROM   => 'Pg.pm',
@@ -16,11 +18,11 @@
  	 OBJECT         => "Pg\$(OBJ_EXT) dbdimp\$(OBJ_EXT) quote\$(OBJ_EXT) types\$(OBJ_EXT)",
  	 LIBS           => ["-L$POSTGRES_LIB -lpq"],
  	 AUTHOR         => 'http://gborg.postgresql.org/project/dbdpg/',
-@@ -99,7 +99,6 @@
- 	 PREREQ_PM      => { 'Test::Simple' => '0.17',  # Need Test::More.
- 											 'Test::Harness' => '2.03', # Need TODO tests.
- 									 },
+@@ -130,7 +130,6 @@
+ 						'Test::Simple' => '0.30',
+ 						'Test::Harness' => '2.03',
+ 					   },
 -	 CCFLAGS        => $comp_opts,
  	 PERL_MALLOC_OK => 1,
  	 NEEDS_LINKING  => 1,
- 	 clean          => { FILES => 'trace' },
+ 	 clean          => { FILES => 'trace Pg.xsi' },
