@@ -1,5 +1,5 @@
 --- choparp.c.orig	Fri Nov  8 07:36:03 2002
-+++ choparp.c	Sat Apr  8 14:37:41 2006
++++ choparp.c	Thu Apr 20 23:56:38 2006
 @@ -42,6 +42,7 @@
  #include <string.h>
  #include <sys/types.h>
@@ -8,7 +8,18 @@
  #include <sys/time.h>
  #include <sys/ioctl.h>
  #include <net/bpf.h>
-@@ -280,13 +281,22 @@
+@@ -239,6 +240,10 @@
+ 	fprintf(stderr,"checkarp: WARNING: received unknown type ARP request.\n");
+ 	return(0);
+     }
++    if (ntohl(*(u_int32_t *)(arp->arp_tpa)) == ntohl(*(u_int32_t *)(arp->arp_spa))) {
++	fprintf(stderr,"checkarp: WARNING: sender equal dest.\n");
++	return(0);
++    }
+     target_ip = ntohl(*(u_int32_t *)(arp->arp_tpa));
+     return match(target_ip, targets) && !match(target_ip, excludes);
+ }
+@@ -280,13 +285,22 @@
      char    *rframe;
      char    *sframe;
      size_t  frame_len;
@@ -35,7 +46,7 @@
  
          if (r < 0) {
              if (errno == EINTR)
-@@ -295,7 +305,7 @@
+@@ -295,7 +309,7 @@
              return;
          }
  
@@ -44,7 +55,7 @@
          if (rlen < 0) {
              if (errno == EINTR)
                  continue;
-@@ -307,7 +317,7 @@
+@@ -307,7 +321,7 @@
  	while((rframe = getarp(p, rlen, &nextp, &nextlen)) != NULL){
  	    if (checkarp(rframe)){
  		sframe = gen_arpreply(rframe, &frame_len);
@@ -53,7 +64,7 @@
  	    }
  	    p = nextp;
  	    rlen = nextlen;
-@@ -437,6 +447,9 @@
+@@ -437,6 +451,9 @@
  #endif
      if ((fd = openbpf(ifname, &buf, &buflen)) < 0)
  	return(-1);
