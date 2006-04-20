@@ -19,7 +19,7 @@ BUILD_DEPENDS=	\
 LIB_DEPENDS=	\
 		speex.3:${PORTSDIR}/audio/speex \
 		ilbc.0:${PORTSDIR}/net/ilbc \
-		ortp.2:${PORTSDIR}/net/ortp \
+		ortp.4:${PORTSDIR}/net/ortp \
 		expat.6:${PORTSDIR}/textproc/expat2
 
 USE_GNOME=	glib20
