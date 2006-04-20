@@ -1,5 +1,5 @@
 
-$FreeBSD$
+$FreeBSD: /tmp/pcvs/ports/lang/rscheme/files/patch-..__handc__rshell__shell.c,v 1.1 2006-04-20 21:32:20 anray Exp $
 
 --- ../handc/rshell/shell.c	2001/07/31 08:24:33	1.1
 +++ ../handc/rshell/shell.c	2001/07/31 08:25:25

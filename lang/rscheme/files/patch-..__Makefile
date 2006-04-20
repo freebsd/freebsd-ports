@@ -1,5 +1,5 @@
 
-$FreeBSD$
+$FreeBSD: /tmp/pcvs/ports/lang/rscheme/files/patch-..__Makefile,v 1.1 2006-04-20 21:32:20 anray Exp $
 
 --- ../Makefile.orig	Thu Mar 18 17:40:45 1999
 +++ ../Makefile	Tue Jul 31 10:48:35 2001

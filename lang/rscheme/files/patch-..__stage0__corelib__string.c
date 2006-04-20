@@ -1,5 +1,5 @@
 
-$FreeBSD$
+$FreeBSD: /tmp/pcvs/ports/lang/rscheme/files/patch-..__stage0__corelib__string.c,v 1.1 2006-04-20 21:32:20 anray Exp $
 
 --- ../stage0/corelib/string.c	2001/07/31 07:20:17	1.1
 +++ ../stage0/corelib/string.c	2001/07/31 07:21:08
