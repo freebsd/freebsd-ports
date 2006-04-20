@@ -593,6 +593,7 @@
     SUBDIR += pear-XML_Beautifier
     SUBDIR += pear-XML_HTMLSax
     SUBDIR += pear-XML_Wddx
+    SUBDIR += pecl-xdiff
     SUBDIR += perl2html
     SUBDIR += permute
     SUBDIR += php4-ctype
