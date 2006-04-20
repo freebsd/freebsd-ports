@@ -10,6 +10,6 @@ your name and email address. Don't forget the \ in front of the @.
 
 Then read the file bin/README with regarding to the "Running" section.
 
-Note: for this tool to work you need to have the patch in ports/86776
+Note: for this tool to work you need to have the first patch in ports/86776
 (http://www.freebsd.org/cgi/query-pr.cgi?pr=ports/86776) applied
 to bsd.port.mk.
