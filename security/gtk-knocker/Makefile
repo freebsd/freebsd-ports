@@ -26,11 +26,17 @@ MAN1=		gtk-knocker.1
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 502000
-BROKEN=		"Does not compile"
-.endif
+post-patch:
+.for file in src/gtk_support.c src/gtk_callbacks.c
+	@${REINPLACE_CMD} -e 's|"\.\./pixmaps"|PACKAGE_DATA_DIR "/pixmaps"|g' \
+		${WRKSRC}/${file}
+.endfor
+.for file in src/license.h
+	@${REINPLACE_CMD} -e 's|$$|\\n\\|g ; \
+		 s|^".*|";|g' ${WRKSRC}/${file}
+.endfor
 
 post-install:
-	@${INSTALL_MAN} ${WRKSRC}/docs/gtk-knocker.1 ${PREFIX}/man/man1
+	@${INSTALL_MAN} ${WRKSRC}/docs/gtk-knocker.1 ${MANPREFIX}/man/man1
 
 .include <bsd.port.post.mk>
