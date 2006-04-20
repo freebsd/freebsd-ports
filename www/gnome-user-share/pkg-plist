@@ -1,7 +1,10 @@
 bin/gnome-file-share-properties
 libexec/gnome-user-share
 share/gnome/applications/gnome-user-share-properties.desktop
+share/gnome/gnome-user-share/dav_groupfile
 share/gnome/gnome-user-share/dav_user.conf
+share/gnome/gnome-user-share/dav_user_2.0.conf
+share/gnome/gnome-user-share/dav_user_2.2.conf
 share/gnome/gnome-user-share/file-share-properties.glade
 share/locale/bg/LC_MESSAGES/gnome-user-share.mo
 share/locale/ca/LC_MESSAGES/gnome-user-share.mo
@@ -12,12 +15,14 @@ share/locale/el/LC_MESSAGES/gnome-user-share.mo
 share/locale/en_CA/LC_MESSAGES/gnome-user-share.mo
 share/locale/en_GB/LC_MESSAGES/gnome-user-share.mo
 share/locale/fi/LC_MESSAGES/gnome-user-share.mo
+share/locale/fr/LC_MESSAGES/gnome-user-share.mo
 share/locale/gl/LC_MESSAGES/gnome-user-share.mo
 share/locale/hu/LC_MESSAGES/gnome-user-share.mo
 share/locale/it/LC_MESSAGES/gnome-user-share.mo
 share/locale/ja/LC_MESSAGES/gnome-user-share.mo
 share/locale/ko/LC_MESSAGES/gnome-user-share.mo
 share/locale/lt/LC_MESSAGES/gnome-user-share.mo
+share/locale/nb/LC_MESSAGES/gnome-user-share.mo
 share/locale/ne/LC_MESSAGES/gnome-user-share.mo
 share/locale/nl/LC_MESSAGES/gnome-user-share.mo
 share/locale/pa/LC_MESSAGES/gnome-user-share.mo
@@ -27,5 +32,6 @@ share/locale/sk/LC_MESSAGES/gnome-user-share.mo
 share/locale/sq/LC_MESSAGES/gnome-user-share.mo
 share/locale/sv/LC_MESSAGES/gnome-user-share.mo
 share/locale/uk/LC_MESSAGES/gnome-user-share.mo
+share/locale/vi/LC_MESSAGES/gnome-user-share.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-user-share.mo
 @dirrm share/gnome/gnome-user-share

@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	gnome-user-share
-PORTVERSION=	0.9
+PORTVERSION=	0.10
 CATEGORIES=	www deskutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.9
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.10
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -22,7 +22,6 @@ USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_APACHE=	2.0+
 USE_GNOME=	gnomeprefix gnomehack intlhack libglade2 gconf2
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
@@ -31,6 +30,6 @@ GCONF_SCHEMAS=	desktop_gnome_file_sharing.schemas
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/httpd/modules|${LOCALBASE}/${APACHEMODDIR}|g' \
-		${WRKSRC}/dav_user.conf
+		${WRKSRC}/dav_user_${APACHE_VERSION:C/([0-9])$/.\1/}.conf
 
 .include <bsd.port.mk>
