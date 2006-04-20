@@ -6,27 +6,28 @@
 #
 
 PORTNAME?=	openoffice.org
-PORTVERSION?=	2.0.2
+PORTVERSION?=	${OOOVERSION}
 CATEGORIES+=	editors java
-MASTER_SITES+=	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/stable/${PORTVERSION}/&,} \
+MASTER_SITES+=	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/stable/${OOOVERSION}/&,} \
 		http://openoffice.lunarshells.com/sources/ \
 		http://ooopackages.good-day.net/pub/OpenOffice.org/sources/ \
 		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/:gpc \
 		${MASTER_SITE_APACHE:S,%SUBDIR%/,ant/binaries/:antbin,} \
 		${MASTER_SITE_MOZILLA:S/$/:mozsrc/}
 MASTER_SITE_SUBDIR+=	mozilla/releases/mozilla${MOZILLA_VERSION}/source/:mozsrc
-DISTFILES+=	OOo_${PORTVERSION}_src.tar.gz
+DISTFILES+=	OOo_${OOOVERSION}_src.tar.gz
 .if defined(WITH_GPC)
 DISTFILES+=     gpc231.tar.Z:gpc
 .endif
 .if defined(WITH_GNUGCJ)
 DISTFILES+=     ${ANT_DISTFILE}:antbin
 .endif
-EXTRACT_ONLY=	OOo_${PORTVERSION}_src.tar.gz
+EXTRACT_ONLY=	OOo_${OOOVERSION}_src.tar.gz
 
 MAINTAINER=	openoffice@FreeBSD.org
 COMMENT?=	Integrated wordprocessor/dbase/spreadsheet/drawing/chart/browser
 
+OOOVERSION=	2.0.2
 NO_LATEST_LINK=	yes
 USE_GNOME=	gtk20 gnomevfs2
 MOZILLA_VERSION=	1.7.5
@@ -42,7 +43,6 @@ USE_KDELIBS_VER=        3
 USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_PERL5=	yes
-USE_REINPLACE=	yes
 WITHOUT_CPU_CFLAGS=	true
 
 ONLY_FOR_ARCHS=	i386
@@ -64,11 +64,11 @@ IGNORE=		install lang/perl5.8 then try again
 CODELINE=		680
 RELEASE_NR=		2.0
 OOOTAG?=		OOB680_m5
-INSTALLATION_BASEDIR?=	openoffice.org-${PORTVERSION}
-EXECBASE?=		openoffice.org-${PORTVERSION}
+INSTALLATION_BASEDIR?=	openoffice.org-${OOOVERSION}
+EXECBASE?=		openoffice.org-${OOOVERSION}
 DIST_SUBDIR=		openoffice.org2.0
 SIMPLEOSVER=		${OSREL:C/\.//g}
-PACKAGE_BASENAME=	OOo_${PORTVERSION}_${OPSYS}${SIMPLEOSVER}Intel
+PACKAGE_BASENAME=	OOo_${OOOVERSION}_${OPSYS}${SIMPLEOSVER}Intel
 
 LOCALIZED_LANG?=	en-US
 # FIXME (Somehow INDEX build fails)
@@ -222,7 +222,7 @@ post-install:
 	@${CP} ${FILESDIR}/openoffice.org-wrapper ${WRKDIR}/
 	@${REINPLACE_CMD} -e 's#%%PREFIX%%#${PREFIX}#g' \
 			-e 's#%%RELEASE_NR%%#${RELEASE_NR}#g' \
-			-e 's#%%PORTVERSION%%#${PORTVERSION}#g' \
+			-e 's#%%OOOVERSION%%#${OOOVERSION}#g' \
 			-e 's#%%INSTALLATION_BASEDIR%%#${INSTALLATION_BASEDIR}#g' \
 			${WRKDIR}/openoffice.org-wrapper
 	@${INSTALL_SCRIPT} ${WRKDIR}/openoffice.org-wrapper \
