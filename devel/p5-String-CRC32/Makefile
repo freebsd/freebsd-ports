@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	String-CRC32
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	String
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl interface for cyclic redundency check generation
 
 PERL_CONFIGURE=	yes
