@@ -7,28 +7,32 @@
 #
 
 PORTNAME=	ulxmlrpcpp
-PORTVERSION=	1.4.6
-PORTREVISION=	1
+PORTVERSION=	1.5.0
 CATEGORIES=	net devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-#DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E:S/b/beta/}
+DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A ultra lightweight xml-rpc library written in C++
+COMMENT=	An ultra lightweight xml-rpc library written in C++
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
 USE_BZIP2=	yes
+USE_GNOME=	gnomehack gnometarget
 USE_ICONV=	yes
-USE_REINPLACE=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--disable-doxygen
+USE_OPENSSL=	yes
+USE_AUTOTOOLS=	libtool:15
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 INSTALLS_SHLIB=	yes
 
+CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+
 post-patch:
-	@${REINPLACE_CMD} -e "s|-pthread|${PTHREAD_LIBS}|g" ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
+		'/^SUBDIRS/s| docs | |g' ${WRKSRC}/ulxmlrpcpp/Makefile.in
 
 .include <bsd.port.mk>
