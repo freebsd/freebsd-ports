@@ -7,23 +7,21 @@
 #
 
 PORTNAME=	clpbar
-PORTVERSION=	1.10.4
+PORTVERSION=	1.10.6
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	bar-${PORTVERSION}
+DISTNAME=	bar_${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	freebsd@unixfreunde.de
 COMMENT=	Command Line Progress Bar
 
-USE_REINPLACE=	yes
+WRKSRC=		${WRKDIR}/bar-${PORTVERSION}
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+MAKE_ARGS+=	CFLAGS+="${CFLAGS}"
 
 MAN1=		bar.1
 PLIST_FILES=	bin/bar
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|= -O2|= @CFLAGS@|g' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
