@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	WWW-Wikipedia
-PORTVERSION=	1.8
+PORTVERSION=	1.9
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	WWW
@@ -28,7 +28,7 @@ MAN3=		WWW::Wikipedia.3 \
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500800
-IGNORE=		This port requires perl 5.8.0 or later. Install lang/perl5.8 then try again
+IGNORE=		requires perl 5.8.0 or later. Install lang/perl5.8 then try again
 .endif
 
 .include <bsd.port.post.mk>
