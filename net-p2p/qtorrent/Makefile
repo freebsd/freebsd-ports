@@ -22,6 +22,12 @@ USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
+.if defined(PACKAGE_BUILDING)
+TMPDIR?=	/tmp                
+MAKE_ENV+=	TMPDIR="${TMPDIR}"      
+CONFIGURE_ENV+=	TMPDIR="${TMPDIR}" 
+.endif
+
 pre-everything::
 	@${ECHO_MSG} "===>"
 	@${ECHO_MSG} "===> For qtorrent to work you need to compile"
@@ -30,7 +36,7 @@ pre-everything::
 
 post-patch:
 .for i in torrentsettings torrentwindow
-	@${LOCALBASE}/bin/pyuic -o ${WRKSRC}/pyqtorrent/${i}.py ${WRKSRC}/pyqtorrent/${i}.ui
+	@${SETENV} ${MAKE_ENV} ${LOCALBASE}/bin/pyuic -o ${WRKSRC}/pyqtorrent/${i}.py ${WRKSRC}/pyqtorrent/${i}.ui
 .endfor
 
 .include <bsd.port.mk>

@@ -20,8 +20,16 @@ CONFIGURE_ENV=	QTDIR=${X11BASE}/lib QTINCDIR=${X11BASE}/include \
 
 UIM_SLAVE=	yes
 
+# This is normally handled by defining USE_QT_VER ...
+
+.if defined(PACKAGE_BUILDING)
+TMPDIR?=	/tmp                
+MAKE_ENV+=	TMPDIR="${TMPDIR}"      
+CONFIGURE_ENV+=	TMPDIR="${TMPDIR}" 
+.endif
+
 do-install:
-	(cd ${WRKSRC}/qt && ${GMAKE} install)
-	(cd ${WRKSRC}/helper && ${GMAKE} install)
+	(cd ${WRKSRC}/qt && ${SETENV} ${MAKE_ENV} ${GMAKE} install)
+	(cd ${WRKSRC}/helper && ${SETENV} ${MAKE_ENV} ${GMAKE} install)
 
 .include "${MASTERDIR}/Makefile"
