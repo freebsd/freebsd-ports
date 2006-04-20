@@ -7,6 +7,7 @@
 
 PORTNAME=	tw_cli
 PORTVERSION=	9.3.0.3
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://3ware.com/download/Escalade9000Series/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-freebsd_5.4-${DIST_ARCH}-${PORTVERSION}
@@ -22,7 +23,10 @@ ONLY_FOR_ARCHS=	i386 amd64 ia64
 WRKSRC=	${WRKDIR}
 NO_BUILD=	yes
 STRIP=		# empty
-PLIST_FILES=	sbin/tw_cli sbin/tw_sched
+SUB_FILES+=	407.status-3ware-raid
+PLIST_FILES=	sbin/tw_cli sbin/tw_sched \
+	etc/periodic/daily/407.status-3ware-raid
+PLIST_DIRS=	etc/periodic/daily etc/periodic
 PORTDOCS=	tw_cli.8.html tw_sched.8.html
 MAN8+=		tw_cli.8 tw_sched.8
 
@@ -38,6 +42,9 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tw_cli ${WRKSRC}/tw_sched ${PREFIX}/sbin/
 	${INSTALL_MAN} ${WRKSRC}/tw_cli.8.nroff ${MANPREFIX}/man/man8/tw_cli.8
 	${INSTALL_MAN} ${WRKSRC}/tw_sched.8.nroff ${MANPREFIX}/man/man8/tw_sched.8
+	@${MKDIR} ${PREFIX}/etc/periodic/daily
+	${INSTALL_SCRIPT} ${WRKDIR}/407.status-3ware-raid \
+		${PREFIX}/etc/periodic/daily/
 
 post-install:
 .if !defined(NOPORTDOCS)
