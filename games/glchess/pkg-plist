@@ -1,29 +1,27 @@
 bin/glchess
-etc/glchessrc
-%%PORTDOCS%%share/doc/glchess/ChangeLog
-%%PORTDOCS%%share/doc/glchess/README
-%%PORTDOCS%%share/doc/glchess/TODO
-share/glchess/textures/1.rgb
-share/glchess/textures/2.rgb
-share/glchess/textures/3.rgb
-share/glchess/textures/4.rgb
-share/glchess/textures/5.rgb
-share/glchess/textures/6.rgb
-share/glchess/textures/7.rgb
-share/glchess/textures/8.rgb
-share/glchess/textures/a.rgb
-share/glchess/textures/b.rgb
-share/glchess/textures/black_board_texture.rgb
-share/glchess/textures/black_piece_texture.rgb
-share/glchess/textures/c.rgb
-share/glchess/textures/d.rgb
-share/glchess/textures/e.rgb
-share/glchess/textures/f.rgb
-share/glchess/textures/g.rgb
-share/glchess/textures/h.rgb
-share/glchess/textures/selected_piece_texture.rgb
-share/glchess/textures/white_board_texture.rgb
-share/glchess/textures/white_piece_texture.rgb
-@dirrm share/glchess/textures/
-@dirrm share/glchess
-%%PORTDOCS%%@dirrm share/doc/glchess
+%%DATADIR%%/ai.py
+%%DATADIR%%/builtin_models.py
+%%DATADIR%%/cecp.py
+%%DATADIR%%/chess_board.py
+%%DATADIR%%/game.py
+%%DATADIR%%/glchess.py
+%%DATADIR%%/pgn.py
+%%DATADIR%%/san.py
+%%DATADIR%%/scene.py
+%%DATADIR%%/gui/chess_view.glade
+%%DATADIR%%/gui/error_dialog.glade
+%%DATADIR%%/gui/glchess.glade
+%%DATADIR%%/gui/load_game.glade
+%%DATADIR%%/gui/network_game.glade
+%%DATADIR%%/gui/new_game.glade
+%%DATADIR%%/gui/new_game_simple.glade
+%%DATADIR%%/gui/save_game.glade
+%%DATADIR%%/gui/splashscreen.glade
+%%DATADIR%%/ui/__init__.py
+%%DATADIR%%/ui/ui.py
+%%DATADIR%%/ui/gtkui/gtkui.py
+%%DATADIR%%/ui/gtkui/__init__.py
+@dirrm %%DATADIR%%/ui/gtkui
+@dirrm %%DATADIR%%/ui
+@dirrm %%DATADIR%%/gui
+@dirrm %%DATADIR%%
