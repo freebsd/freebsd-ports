@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	XaraLX
-PORTVERSION=	0.4r798
+PORTVERSION?=	0.4r798
 CATEGORIES=	graphics
 MASTER_SITES=	http://downloads.xara.com/opensource/
-DISTFILES=	${PORTNAME}Src-${PORTVERSION}.tar.gz
+DISTFILES?=	${PORTNAME}Src-${PORTVERSION}.tar.gz
 
 MAINTAINER=	vd@FreeBSD.org
-COMMENT=	A top-tier vector and general purpose graphics program
+COMMENT?=	Top-tier vector/general purpose graphics program (recommended version)
 
 #WXDEP=	${X11BASE}/libwx_baseu-2.6.so.0.3.1
 WXDEP=	wxgtk2-unicode>=2.6.3
@@ -26,7 +26,8 @@ LIB_DEPENDS=	dlmalloc.2:${PORTSDIR}/devel/libdlmalloc
 USE_AUTOTOOLS=	autoconf:259:env aclocal:19:env automake:19:env
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--with-wx-config=wxgtk2u-2.6-config
+CONFIGURE_ARGS=	--with-wx-config=wxgtk2u-2.6-config \
+		--program-suffix=${PKGNAMESUFFIX}
 PKGCONFIGS=atk fontconfig gdk-2.0 pango
 CONFIGURE_ENV=	CPPFLAGS_APPEND="`pkg-config --cflags ${PKGCONFIGS}` \
 		-I${LOCALBASE}/include/atk-1.0/atk \
@@ -41,7 +42,7 @@ USE_GCC=	3.4+
 BROKEN=	does not configure due to the lack of CDraw libraries for sparc64
 .endif
 
-PROG=	XaraLX
+PROG=	XaraLX${PKGNAMESUFFIX}
 
 PLIST_FILES=	bin/${PROG}
 
