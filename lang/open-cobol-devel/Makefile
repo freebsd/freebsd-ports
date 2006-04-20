@@ -40,6 +40,8 @@ PLIST_SUB+=	NLS=""
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|__gmp_rand|__gmpz_init|g' \
+		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|^SUBDIRS = lib |SUBDIRS = |g' \
 		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|$$(top_builddir)/lib/libsupport\.a||g' \
