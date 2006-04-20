@@ -16,9 +16,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(..)$/\1/}
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Build and install Perl modules
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathTools \
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathTools \
 		${SITE_PERL}/ExtUtils/CBuilder.pm:${PORTSDIR}/devel/p5-ExtUtils-CBuilder
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_MODBUILD=	yes
 
@@ -34,9 +34,10 @@ post-install:
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} > 500600
-BUILD_DEPENDS+=	${SITE_PERL}/ExtUtils/ParseXS.pm:${PORTSDIR}/devel/p5-ExtUtils-ParseXS
-BUILD_DEPENDS+=	${SITE_PERL}/Archive/Tar.pm:${PORTSDIR}/archivers/p5-Archive-Tar
-BUILD_DEPENDS+=	${SITE_PERL}/YAML.pm:${PORTSDIR}/textproc/p5-YAML
+RUN_DEPENDS+=	${SITE_PERL}/ExtUtils/ParseXS.pm:${PORTSDIR}/devel/p5-ExtUtils-ParseXS
+RUN_DEPENDS+=	${SITE_PERL}/Archive/Tar.pm:${PORTSDIR}/archivers/p5-Archive-Tar
+RUN_DEPENDS+=	${SITE_PERL}/YAML.pm:${PORTSDIR}/textproc/p5-YAML
+.endif
 
 MAN3=		Module::Build.3 \
 		Module::Build::Base.3 \
@@ -60,9 +61,8 @@ MAN3=		Module::Build.3 \
 		Module::Build::Platform::os2.3
 MAN1=		config_data.1
 
-.endif
 .if ${PERL_LEVEL} < 500805
-BUILD_DEPENDS+=	${SITE_PERL}/Pod/Man.pm:${PORTSDIR}/textproc/p5-podlators
+RUN_DEPENDS+=	${SITE_PERL}/Pod/Man.pm:${PORTSDIR}/textproc/p5-podlators
 .endif
 
 .include <bsd.port.post.mk>
