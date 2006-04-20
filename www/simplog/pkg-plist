@@ -385,4 +385,5 @@ www/simplog/xmlrpcs.inc
 @dirrm www/simplog/adodb/contrib
 @dirrm www/simplog/adodb/xsl
 @dirrm www/simplog/adodb
+@dirrm www/simplog/cache
 @dirrmtry www/simplog
