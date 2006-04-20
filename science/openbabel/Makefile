@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	openbabel
-PORTVERSION=	2.0.0
-PORTREVISION=	1
+PORTVERSION=	2.0.1
 CATEGORIES=	science
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -35,6 +34,8 @@ post-extract:
 	@${LN} -sf babel.1 ${WRKSRC}/doc/openbabel.1
 
 post-patch:
+	@${REINPLACE_CMD} -e \
+		'/test/s| == | = |g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e \
 		's|= babel|= openbabel|g' ${WRKSRC}/doc/Makefile.in
 	@${REINPLACE_CMD} -e 's| babel| openbabel|g ; \
