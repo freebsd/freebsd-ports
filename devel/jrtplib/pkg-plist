@@ -49,4 +49,5 @@ lib/libjrtp-3.5.2.so
 lib/libjrtp.a
 lib/libjrtp.la
 lib/libjrtp.so
+libdata/pkgconfig/jrtplib.pc
 @dirrm include/jrtplib3
