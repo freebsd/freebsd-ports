@@ -7,6 +7,7 @@
 
 PORTNAME=	luasocket
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://luaforge.net/frs/download.php/1097/
 
@@ -14,6 +15,8 @@ MAINTAINER=	andrew+ports@fubar.geek.nz
 COMMENT=	IPv4 Sockets support for the Lua language
 
 BUILD_DEPENDS=	${LOCALBASE}/include/lua.h:${PORTSDIR}/lang/lua
+RUN_DEPENDS=	${LOCALBASE}/include/lua.h:${PORTSDIR}/lang/lua \
+		${LOCALBASE}/share/lua/5.0/compat-5.1.lua:${PORTSDIR}/devel/lua50-compat51
 
 USE_GMAKE=	yes
 
