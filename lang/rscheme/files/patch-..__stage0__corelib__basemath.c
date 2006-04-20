@@ -1,5 +1,5 @@
 
-$FreeBSD$
+$FreeBSD: /tmp/pcvs/ports/lang/rscheme/files/patch-..__stage0__corelib__basemath.c,v 1.1 2006-04-20 21:32:20 anray Exp $
 
 --- ../stage0/runtime/basemath.c	Fri Feb 10 14:51:07 2006
 +++ ../stage0/runtime/basemath.c	Fri Feb 10 14:57:02 2006
