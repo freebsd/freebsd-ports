@@ -5,11 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	subversion
-PORTVERSION=	1.3.0
-PORTREVISION?=	4
+PORTVERSION=	1.3.1
+PORTREVISION?=	0
 CATEGORIES=	devel
 MASTER_SITES=	http://subversion.tigris.org/downloads/:main \
-		http://svnbook.red-bean.com:9000/en/1.1/:bookhtml \
+		http://svnbook.red-bean.com/en/1.1/:bookhtml \
 		http://svnbook.red-bean.com/en/1.1/:bookpdf
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}:main
 EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
