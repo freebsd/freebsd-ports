@@ -9759,6 +9759,7 @@ pecl-ssh2	ports/security/pecl-ssh2
 pecl-statgrab	ports/devel/pecl-statgrab
 pecl-svn	ports/devel/pecl-svn
 pecl-tidy	ports/www/pecl-tidy
+pecl-xdiff	ports/textproc/pecl-xdiff
 pecl-yaz	ports/net/pecl-yaz
 pecl-zip	ports/archivers/pecl-zip
 pecomato	ports/graphics/pecomato
