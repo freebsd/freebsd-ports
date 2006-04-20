@@ -1,0 +1,12 @@
+From the README file:
+
+   Net::Akismet is meant to provide perl interface to the Akismet web service.
+
+   Akismet is blog comment and trackback spam blocker, free for personal use.
+   More info on http://akismet.com/
+
+   The module allows you to either check if an item is spam or report certain
+   comment as spam/false postivie.
+
+Author:		Nikolay Bachiyski <nbachiyski@developer.bg>
+WWW:		http://search.cpan.org/dist/Net-Akismet/
