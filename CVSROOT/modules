@@ -7621,6 +7621,7 @@ p5-CGI-FastTemplate	ports/www/p5-CGI-FastTemplate
 p5-CGI-Framework	ports/www/p5-CGI-Framework
 p5-CGI-Kwiki	ports/www/p5-CGI-Kwiki
 p5-CGI-Minimal	ports/www/p5-CGI-Minimal
+p5-CGI-Prototype	ports/www/p5-CGI-Prototype
 p5-CGI-Response	ports/www/p5-CGI-Response
 p5-CGI-SSI	ports/www/p5-CGI-SSI
 p5-CGI-Session	ports/www/p5-CGI-Session
