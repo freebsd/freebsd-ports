@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	pdftohtml
-PORTVERSION=	0.36
-PORTREVISION=	4
+PORTVERSION=	0.38
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -23,6 +22,9 @@ GSPORT?=	print/ghostscript-gnu
 .endif
 
 RUN_DEPENDS+=	${LOCALBASE}/bin/gs:${PORTSDIR}/${GSPORT}
+
+USE_GMAKE=	yes
+USE_MOTIF=	yes
 
 PLIST_FILES=	bin/pdftohtml
 
@@ -41,6 +43,6 @@ pre-patch:
 		${REINPLACE_CMD} -e "s|-O[0-9]||" -e "s|-g||"
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/pdftohtml ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/src/pdftohtml ${PREFIX}/bin
 
 .include <bsd.port.mk>
