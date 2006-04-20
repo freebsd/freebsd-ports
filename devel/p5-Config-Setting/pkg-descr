@@ -10,7 +10,7 @@ access mechanism can also be overridden, the setting don't have to
 come from a file, but (maybe) from a website. You'll have to write
 your own there, though.
 
-WWW: http://www.happygiraffe.net/Config-Setting
+WWW: http://search.cpan.org/dist/Config-Setting/
 
 - Pete
 petef@databits.net
