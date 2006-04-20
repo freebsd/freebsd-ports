@@ -1,0 +1,8 @@
+%%SITE_PERL%%/Class/Prototyped.pm
+%%SITE_PERL%%/Class/Prototyped/Graph.pm
+%%SITE_PERL%%/Class/Prototyped/why.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Prototyped/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Prototyped
+@dirrmtry %%SITE_PERL%%/Class/Prototyped
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
+@dirrmtry %%SITE_PERL%%/Class

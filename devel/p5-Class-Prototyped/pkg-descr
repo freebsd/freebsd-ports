@@ -1,0 +1,6 @@
+This module provides for efficient and simple prototype-based
+programming in Perl. You can provide different subroutines for each
+object, and also have objects inherit their behavior and state from
+another object.
+
+WWW: http://search.cpan.org/dist/Class-Prototyped/

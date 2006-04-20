@@ -781,6 +781,7 @@
     SUBDIR += p5-Class-ObjectTemplate-DB
     SUBDIR += p5-Class-Observable
     SUBDIR += p5-Class-ParmList
+    SUBDIR += p5-Class-Prototyped
     SUBDIR += p5-Class-ReturnValue
     SUBDIR += p5-Class-Roles
     SUBDIR += p5-Class-Singleton
