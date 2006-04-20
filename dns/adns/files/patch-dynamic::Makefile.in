@@ -1,6 +1,6 @@
---- dynamic/Makefile.in.orig	Fri Oct 15 21:57:50 1999
-+++ dynamic/Makefile.in	Mon Mar 20 18:41:21 2000
-@@ -24,7 +24,7 @@
+--- dynamic/Makefile.in.orig	Thu Apr 20 13:15:27 2006
++++ dynamic/Makefile.in	Thu Apr 20 13:17:43 2006
+@@ -23,7 +23,7 @@
  srcdir=		@srcdir@
  VPATH=		@srcdir@
  
@@ -9,11 +9,13 @@
  include		$(srcdir)/../settings.make
  include		$(srcdir)/../src/adns.make
  
-@@ -32,16 +32,12 @@
- 
+@@ -32,17 +32,13 @@
  install:
+ 		mkdir -p $(lib_dir)
  		$(INSTALL_PROGRAM) $(SHLIBFILE) $(lib_dir)/$(SHLIBFILE)
 -		ln -sf $(SHLIBFILE) $(lib_dir)/$(SHLIBSONAME)
+-		ln -sf $(SHLIBSONAME) $(lib_dir)/$(SHLIBFORLINK)
++		ln -sf $(SHLIBFILE) $(lib_dir)/$(SHLIBFORLINK)
  
  uninstall:
 -		rm -f $(lib_dir)/$(SHLIBFILE) $(lib_dir)/$(SHLIBSONAME)
