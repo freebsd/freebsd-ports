@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Text-VimColor
-PORTVERSION=	0.09
+PORTVERSION=	0.11
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/G/GE/GEOFFR/
@@ -26,7 +26,7 @@ MAN3=		Text::VimColor.3
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500601
-IGNORE=		This port requires perl 5.6.1 or later. Install lang/perl5 then try again
+IGNORE=		requires perl 5.6.1 or later. Install lang/perl5 then try again
 .endif
 
 .include <bsd.port.post.mk>
