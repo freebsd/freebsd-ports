@@ -1,0 +1,7 @@
+%%SITE_PERL%%/CGI/Prototype.pm
+%%SITE_PERL%%/CGI/Prototype/Hidden.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Prototype/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Prototype
+@dirrmtry %%SITE_PERL%%/CGI/Prototype
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI
+@dirrmtry %%SITE_PERL%%/CGI

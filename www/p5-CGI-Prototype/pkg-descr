@@ -1,0 +1,12 @@
+The core of every CGI application seems to be roughly the same:
+- analyze the incoming parameters, cookies, and URLs to determine the
+  state of the application (let's call this "dispatch").
+- based on the current state, analyze the incoming parameters to respond
+  to any form submitted ("respond").
+- from there, decide what response page should be generated, and produce
+  it ("render").
+
+CGI::Prototype creates a Class::Prototyped engine for doing all this,
+with the right amount of callback hooks to customize the process.
+
+WWW: http://search.cpan.org/dist/CGI-Prototype/
