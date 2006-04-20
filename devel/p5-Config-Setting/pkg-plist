@@ -1,9 +1,7 @@
 %%SITE_PERL%%/Config/Setting.pm
+%%SITE_PERL%%/Config/Setting/Chunk.pm
 %%SITE_PERL%%/Config/Setting/FileProvider.pm
 %%SITE_PERL%%/Config/Setting/IniParser.pm
 %%SITE_PERL%%/Config/Setting/XMLParser.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/Setting/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/Setting
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config
 @dirrm %%SITE_PERL%%/Config/Setting
 @dirrmtry %%SITE_PERL%%/Config
