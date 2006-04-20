@@ -16,6 +16,8 @@ COMMENT=	Lua 5.1 package compatibility layer for Lua 5.0.x
 
 BUILD_DEPENDS=	${LOCALBASE}/include/lua.h:${PORTSDIR}/lang/lua
 
+CONFLICTS=	luasocket-2.0
+
 # Update these values when there is a new release
 CVER=		5.1
 CREV=		r5
@@ -26,7 +28,7 @@ LIBDIR=		${PREFIX}/lib
 post-extract:
 	@${CP} ${FILESDIR}/Makefile ${WRKSRC}
 
-post-install:
+do-install:
 	${MKDIR} ${PREFIX}/share/lua/5.0
 	${INSTALL_DATA} ${WRKSRC}/compat-5.1.lua ${PREFIX}/share/lua/5.0
 
