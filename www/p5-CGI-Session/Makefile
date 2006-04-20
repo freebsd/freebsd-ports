@@ -40,7 +40,9 @@ MAN3=		\
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500800
+.if ${PERL_LEVEL} < 500600
+IGNORE=		requires perl 5.6.0 or higher. Please install lang/perl5.8 and try again
+.elif ${PERL_LEVEL} < 500800
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5
 RUN_DEPENDS=	${BUILD_DEPENDS}
 .endif
