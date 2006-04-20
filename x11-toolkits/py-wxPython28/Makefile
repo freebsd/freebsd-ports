@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wxPython
-PORTVERSION=	2.6.3.0
+PORTVERSION=	2.6.3.2
 PORTREVISION?=	0
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -170,16 +170,12 @@ post-install:
 ##
 # wxversion wxPython available list
 ##
-.if defined(WITH_COMMON_ONLY)
-# create the file
-	@${ECHO_CMD} -n >> \
-		${PYTHON_SITELIBDIR:C@^${LOCALBASE}@${PREFIX}@}/wx.pth
-.else
+.if !defined(WITH_COMMON_ONLY)
 # add ansi/unicode to the available list
 	@${ECHO_CMD} ${WX_PYTHON_DIR} >> \
 		${PYTHON_SITELIBDIR:C@^${LOCALBASE}@${PREFIX}@}/wx.pth
-.endif
 	@${CHMOD} ${SHAREMODE} \
 		${PYTHON_SITELIBDIR:C@^${LOCALBASE}@${PREFIX}@}/wx.pth
+.endif
 
 .include <bsd.port.post.mk>

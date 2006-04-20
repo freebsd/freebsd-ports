@@ -142,7 +142,6 @@ include/wx-%%WX_VERSION%%/wx/wxPython/pytree.h
 include/wx-%%WX_VERSION%%/wx/wxPython/swigver.h
 include/wx-%%WX_VERSION%%/wx/wxPython/wxPython.h
 include/wx-%%WX_VERSION%%/wx/wxPython/wxPython_int.h
-%%PYTHON_SITELIBDIR%%/wx.pth
 %%PYTHON_SITELIBDIR%%/wxversion.py
 %%PYTHON_SITELIBDIR%%/wxversion.pyc
 %%PYTHON_SITELIBDIR%%/wxversion.pyo
