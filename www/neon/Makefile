@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	neon
-PORTVERSION=	0.25.4
-PORTREVISION=	1
+PORTVERSION=	0.25.5
+PORTREVISION=	0
 CATEGORIES=	www
 MASTER_SITES=	http://www.webdav.org/neon/ \
 		http://keyserver.kjsl.com/~jharris/distfiles/
