@@ -8,7 +8,10 @@
 PORTNAME=	htx
 DISTVERSION=	0.7.7a
 CATEGORIES=	converters www
-MASTER_SITES=	http://stuff.myrealm.co.uk/htx/
+MASTER_SITES=	http://stuff.myrealm.co.uk/htx/ \
+		http://bsd.csme.ru/myports/ \
+		http://bsd2.csme.ru/myports/ \
+		http://bsd3.csme.ru/myports/
 
 MAINTAINER=	infofarmer@gmail.com
 COMMENT=	HTML to XHTML converter
@@ -22,6 +25,6 @@ post-patch:
 	@${PERL5} -pi.orig -e 's,/usr/bin/perl,${PERL5},' ${WRKSRC}/htx
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/htx ${PREFIX}/bin/
+	${INSTALL_SCRIPT} ${WRKSRC}/htx ${PREFIX}/bin
 
 .include <bsd.port.mk>
