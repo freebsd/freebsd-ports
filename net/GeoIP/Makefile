@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	GeoIP
-PORTVERSION=	1.3.14
+PORTVERSION=	1.3.16
 CATEGORIES=	net
 MASTER_SITES=	http://www.maxmind.com/download/geoip/api/c/
 
@@ -17,10 +17,5 @@ GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
 MAN1=		geoiplookup.1 geoipupdate.1
-
-post-install:
-.if !exists(${PREFIX}/etc/GeoIP.conf)
-	@${INSTALL_DATA} ${PREFIX}/etc/GeoIP.conf.default ${PREFIX}/etc/GeoIP.conf
-.endif
 
 .include <bsd.port.mk>

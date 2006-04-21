@@ -2,7 +2,6 @@ bin/geoiplookup
 bin/geoipupdate
 @unexec if cmp -s %D/etc/GeoIP.conf %D/etc/GeoIP.conf.default; then rm -f %D/etc/GeoIP.conf; fi
 etc/GeoIP.conf.default
-@exec [ -f %B/GeoIP.conf ] || cp %B/%f %B/GeoIP.conf
 include/GeoIP.h
 include/GeoIPCity.h
 include/GeoIPUpdate.h
