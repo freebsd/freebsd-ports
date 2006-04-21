@@ -1,0 +1,11 @@
+--- apps/jetty/build.xml.orig	Fri Apr 21 15:31:49 2006
++++ apps/jetty/build.xml	Fri Apr 21 15:32:09 2006
+@@ -37,7 +37,7 @@
+ 	<copy file="jetty-5.1.6/ext/commons-logging-api.jar" tofile="jettylib/commons-logging.jar" />
+         <delete dir="jetty-5.1.6" />
+     </target>
+-    <target name="build" depends="fetchJettylib" />
++    <target name="build" />
+     <target name="builddep" />
+     <target name="compile" />
+     <target name="jar" />
