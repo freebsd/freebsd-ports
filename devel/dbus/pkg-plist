@@ -41,7 +41,7 @@ lib/libdbus-glib-1.so.2
 %%QT%%lib/libdbus-qt-1.a
 %%QT%%lib/libdbus-qt-1.la
 %%QT%%lib/libdbus-qt-1.so
-%%QT%%lib/libdbus-qt-1.so.2
+%%QT%%lib/libdbus-qt-1.so.1
 libdata/pkgconfig/dbus-1.pc
 libdata/pkgconfig/dbus-glib-1.pc
 @exec mkdir -p %D/etc/dbus-1/system.d
