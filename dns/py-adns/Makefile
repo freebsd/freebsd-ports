@@ -7,6 +7,7 @@
 
 PORTNAME=	adns
 PORTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	dns python
 MASTER_SITES=	http://dustman.net/andy/python/adns-python/${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +16,7 @@ DISTNAME=	adns-python-${PORTVERSION}
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	A Python Interface to adns, the asynchronous DNS library
 
-LIB_DEPENDS=	adns.1:${PORTSDIR}/dns/adns
+LIB_DEPENDS=	adns.12:${PORTSDIR}/dns/adns
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

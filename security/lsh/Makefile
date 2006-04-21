@@ -6,7 +6,7 @@
 
 PORTNAME=	lsh
 PORTVERSION=	2.0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security ipv6
 MASTER_SITES=	${MASTER_SITE_GNUPG} \
 		ftp://ftp.lysator.liu.se/pub/security/%SUBDIR%/
