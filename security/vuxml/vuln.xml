@@ -34,6 +34,31 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="408f6ebf-d152-11da-962f-000b972eb521">
+    <topic>cyrus-sasl -- DIGEST-MD5 Pre-Authentication Denial of Service</topic>
+    <affects>
+      <package>
+	<name>cyrus-sasl</name>
+	<range><ge>2.*</ge><lt>2.1.21</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Unspecified vulnerability in the CMU Cyrus Simple
+        Authentication and Security Layer (SASL) library, has unknown
+        impact and remote unauthenticated attack vectors, related to
+        DIGEST-MD5 negotiation.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-1721</cvename>
+    </references>
+    <dates>
+      <discovery>2006-04-11</discovery>
+      <entry>2006-04-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1fa4c9f1-cfca-11da-a672-000e0c2e438a">
     <topic>FreeBSD -- FPU information disclosure</topic>
     <affects>
