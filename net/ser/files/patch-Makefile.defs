@@ -1,5 +1,8 @@
---- Makefile.defs.orig	Wed Jan 11 03:55:58 2006
-+++ Makefile.defs	Thu Mar  2 19:08:17 2006
+
+$FreeBSD$
+
+--- Makefile.defs.orig
++++ Makefile.defs
 @@ -169,10 +169,11 @@
  INSTALL-TOUCH = touch          # used to create the file first (good to 
                                 #  make solaris install work)
@@ -32,7 +35,7 @@
  ifeq		($(CC_NAME), gcc)
  				#common stuff
 -				CFLAGS=-g -O9 -funroll-loops  -Wcast-align $(PROFILE) \
-+				CFLAGS=-funroll-loops  -Wcast-align $(PROFILE) \
++				CFLAGS+=-funroll-loops  -Wcast-align $(PROFILE) \
  					-Wall  
  			#if gcc 4.0+
  ifeq			($(CC_SHORTVER), 4.x)
@@ -132,7 +135,15 @@
  		LDFLAGS+=-g $(PROFILE)
  		MOD_LDFLAGS=-G $(LDFLAGS)
  endif
-@@ -1034,7 +1034,7 @@
+@@ -1028,13 +1028,14 @@
+ 
+ ifeq ($(OS), freebsd)
+ 	DEFS+=-DHAVE_SOCKADDR_SA_LEN -DHAVE_GETHOSTBYNAME2 -DHAVE_UNION_SEMUN \
+-		-DHAVE_SCHED_YIELD -DHAVE_MSGHDR_MSG_CONTROL -DHAVE_CONNECT_ECONNRESET_BUG
++		-DHAVE_SCHED_YIELD -DHAVE_MSGHDR_MSG_CONTROL -DHAVE_CONNECT_ECONNRESET_BUG \
++		-I$(LOCALBASE)/include
+ 	ifneq ($(found_lock_method), yes)
+ 		DEFS+= -DUSE_PTHREAD_MUTEX  # try pthread sems
  		found_lock_method=yes
  		LIBS= -pthread -lfl  #dlopen is in libc
  	else

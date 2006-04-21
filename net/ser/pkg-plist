@@ -9,7 +9,7 @@ lib/ser/modules/acc.so
 lib/ser/modules/auth.so
 lib/ser/modules/auth_db.so
 lib/ser/modules/auth_diameter.so
-lib/ser/modules/auth_radius.so
+%%RADIUS%%lib/ser/modules/auth_radius.so
 lib/ser/modules/avp.so
 lib/ser/modules/avp_db.so
 lib/ser/modules/avpops.so
@@ -31,7 +31,7 @@ lib/ser/modules/msilo.so
 lib/ser/modules/mediaproxy.so
 lib/ser/modules/nathelper.so
 lib/ser/modules/options.so
-lib/ser/modules/pa.so
+%%PA%%lib/ser/modules/pa.so
 lib/ser/modules/pdt.so
 lib/ser/modules/permissions.so
 lib/ser/modules/pike.so
@@ -62,7 +62,7 @@ sbin/serunix
 %%DOCSDIR%%/README.auth
 %%DOCSDIR%%/README.auth_db
 %%DOCSDIR%%/README.auth_diameter
-%%DOCSDIR%%/README.auth_radius
+%%RADIUS%%%%DOCSDIR%%/README.auth_radius
 %%DOCSDIR%%/README.avp
 %%DOCSDIR%%/README.avp_db
 %%DOCSDIR%%/README.avpops
@@ -81,7 +81,7 @@ sbin/serunix
 %%DOCSDIR%%/README.msilo
 %%DOCSDIR%%/README.nathelper
 %%DOCSDIR%%/README.options
-%%DOCSDIR%%/README.pa
+%%PA%%%%DOCSDIR%%/README.pa
 %%DOCSDIR%%/README.pdt
 %%DOCSDIR%%/README.permissions
 %%DOCSDIR%%/README.pike

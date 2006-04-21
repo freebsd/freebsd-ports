@@ -1,9 +1,9 @@
 
 $FreeBSD$
 
---- modules/tm/t_lookup.c.orig	Fri Jul 16 00:18:34 2004
-+++ modules/tm/t_lookup.c	Tue Jul 27 21:01:37 2004
-@@ -97,8 +97,8 @@
+--- modules/tm/t_lookup.c.orig
++++ modules/tm/t_lookup.c
+@@ -103,8 +103,8 @@
  #include "t_msgbuilder.h" /* for t_lookup_callid */
  
  #define EQ_VIA_LEN(_via)\
@@ -14,7 +14,7 @@ $FreeBSD$
  
  
  
-@@ -116,7 +116,7 @@
+@@ -122,7 +122,7 @@
  #define EQ_VIA_STR(_via)\
  	( memcmp( t_msg->_via->name.s,\
  	 p_msg->_via->name.s,\
@@ -23,3 +23,14 @@ $FreeBSD$
  	)==0 )
  
  
+@@ -264,8 +264,10 @@
+ 	if (memcmp(inv_via->host.s, ack_via->host.s,
+ 			ack_via->host.len)!=0)
+ 		return 0;
++#if 0
+ 	if (inv_via->port!=ack_via->port)
+ 		return 0;
++#endif
+ 	if (inv_via->transport.len!=ack_via->transport.len)
+ 		return 0;
+ 	if (memcmp(inv_via->transport.s, ack_via->transport.s,

@@ -7,6 +7,7 @@
 
 PORTNAME=	ser
 PORTVERSION=	0.9.6
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://download.berlios.de/ser/ \
 		http://download2.berlios.de/ser/
@@ -14,9 +15,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}_src
 
 MAINTAINER=	sobomax@FreeBSD.org
 COMMENT=	A very fast and configurable SIP proxy
-
-LIB_DEPENDS=	radiusclient-ng.2:${PORTSDIR}/net/radiusclient \
-		xml2.5:${PORTSDIR}/textproc/libxml2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
@@ -27,6 +25,8 @@ MAKE_ENV+=	"LDFLAGS=-L${LOCALBASE}/lib"
 MAN8=		ser.8
 MAN5=		ser.cfg.5
 MANCOMPRESSED=	no
+
+.include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_MYSQL)
 USE_MYSQL=	yes
@@ -44,7 +44,23 @@ PLIST_SUB+=	POSTGRESQL="@comment "
 MAKE_ENV+=	POSTGRESQL=postgres
 .endif
 
-.include <bsd.port.pre.mk>
+.if !defined(WITHOUT_PRESENCE)
+USE_PA=		yes
+PLIST_SUB+=	PA=""
+LIB_DEPENDS+=	xml2.5:${PORTSDIR}/textproc/libxml2
+.else
+PLIST_SUB+=	PA="@comment "
+MAKE_ENV+=	PA=pa
+.endif
+
+.if !defined(WITHOUT_RADIUS)
+USE_RADIUS=	yes
+PLIST_SUB+=	RADIUS=""
+LIB_DEPENDS+=	radiusclient-ng.2:${PORTSDIR}/net/radiusclient
+.else
+PLIST_SUB+=	RADIUS="@comment "
+MAKE_ENV+=	RADIUS="auth_radius group_radius uri_radius avp_radius"
+.endif
 
 .if ${ARCH} == "sparc64" || ${ARCH} == "ia64"
 BROKEN=		Does not compile completely on sparc64 or ia64
