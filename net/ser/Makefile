@@ -12,7 +12,7 @@ MASTER_SITES=	http://download.berlios.de/ser/ \
 		http://download2.berlios.de/ser/
 DISTNAME=	${PORTNAME}-${PORTVERSION}_src
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sobomax@FreeBSD.org
 COMMENT=	A very fast and configurable SIP proxy
 
 LIB_DEPENDS=	radiusclient-ng.2:${PORTSDIR}/net/radiusclient \
