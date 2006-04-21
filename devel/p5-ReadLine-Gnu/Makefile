@@ -25,6 +25,10 @@ CONFIGURE_ARGS+=--includedir=${LOCALBASE}/include
 LIB_DEPENDS+=	readline.5:${PORTSDIR}/devel/readline
 .endif
 
+.if ${PERL_LEVEL} < 500800
+IGNORE=	this port requires Perl 5.8 or newer. Install lang/perl5.8 and try again
+.endif
+
 MAN3=		Term::ReadLine::Gnu.3
 
 .include <bsd.port.post.mk>
