@@ -37,6 +37,10 @@ EXAMPLESDIR=	${PREFIX}/share/examples/openh323
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == sparc64 && ${OSVERSION} <= 700003
+BROKEN=	does not link due to missing symbol in default thread library
+.endif
+
 pre-install:
 	@${SED}	-e 's|%%EXAMPLESDIR%%|${EXAMPLESDIR}|g' \
 		-e 's|%%PORTNAME%%|${PORTNAME}|g' \
