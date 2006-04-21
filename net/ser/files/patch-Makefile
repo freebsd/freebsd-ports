@@ -3,7 +3,7 @@ $FreeBSD$
 
 --- Makefile.orig
 +++ Makefile
-@@ -45,13 +45,12 @@
+@@ -46,13 +46,12 @@
  skip_modules?=
  
  # if not set on the cmd. line or the env, exclude this modules:
@@ -17,11 +17,11 @@ $FreeBSD$
  							cpl-c \
 -							auth_radius group_radius uri_radius avp_radius \
 -							pa
-+							group_radius uri_radius avp_radius
++							$(RADIUS) $(PA)
  # always exclude the CVS dir
  override exclude_modules+= CVS $(skip_modules)
  
-@@ -263,7 +262,7 @@
+@@ -268,7 +267,7 @@
  		chmod 644 $(cfg-prefix)/$(cfg-dir)ser.cfg.sample
  		if [ -z "${skip_cfg_install}" -a \
  				! -f $(cfg-prefix)/$(cfg-dir)ser.cfg ]; then \
@@ -29,8 +29,8 @@ $FreeBSD$
 +			cp $(cfg-prefix)/$(cfg-dir)ser.cfg.sample \
  				$(cfg-prefix)/$(cfg-dir)ser.cfg; \
  		fi
- #		$(INSTALL-CFG) etc/ser.cfg $(cfg-prefix)/$(cfg-dir)
-@@ -272,10 +271,10 @@
+ 		# radius dictionary
+@@ -280,10 +279,10 @@
  		$(INSTALL-TOUCH) $(bin-prefix)/$(bin-dir)/ser 
  		$(INSTALL-BIN) ser $(bin-prefix)/$(bin-dir)
  		$(INSTALL-TOUCH)   $(bin-prefix)/$(bin-dir)/sc
