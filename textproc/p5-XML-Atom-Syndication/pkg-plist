@@ -1,7 +1,17 @@
 %%SITE_PERL%%/XML/Atom/Syndication.pm
-%%SITE_PERL%%/XML/Atom/Syndication/Document.pm
-%%SITE_PERL%%/XML/Atom/Syndication/Element.pm
-%%SITE_PERL%%/XML/Atom/Syndication/Characters.pm
+%%SITE_PERL%%/XML/Atom/Syndication/Category.pm
+%%SITE_PERL%%/XML/Atom/Syndication/Content.pm
+%%SITE_PERL%%/XML/Atom/Syndication/Entry.pm
+%%SITE_PERL%%/XML/Atom/Syndication/Feed.pm
+%%SITE_PERL%%/XML/Atom/Syndication/Generator.pm
+%%SITE_PERL%%/XML/Atom/Syndication/Link.pm
+%%SITE_PERL%%/XML/Atom/Syndication/Object.pm
+%%SITE_PERL%%/XML/Atom/Syndication/Person.pm
+%%SITE_PERL%%/XML/Atom/Syndication/Source.pm
+%%SITE_PERL%%/XML/Atom/Syndication/Text.pm
+%%SITE_PERL%%/XML/Atom/Syndication/Thing.pm
+%%SITE_PERL%%/XML/Atom/Syndication/Util.pm
+%%SITE_PERL%%/XML/Atom/Syndication/Writer.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Atom/Syndication/.packlist
 @dirrm %%SITE_PERL%%/XML/Atom/Syndication
 @dirrmtry %%SITE_PERL%%/XML/Atom
