@@ -11,4 +11,6 @@ MASTERDIR=	${.CURDIR}/../../lang/php4
 
 PKGNAMESUFFIX=	-ming
 
+BROKEN=		doesn't work with new version of ming library
+
 .include "${MASTERDIR}/Makefile"
