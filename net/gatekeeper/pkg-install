@@ -76,7 +76,7 @@ POST-INSTALL)
 	echo "       More example configurations can be found in"
 	echo "       ${PKG_PREFIX}/share/examples/openh323/gatekeeper."
 	echo ""
-	echo "     o Documantation can be found in"
+	echo "     o Documentation can be found in"
 	echo "       ${PKG_PREFIX}/share/doc/openh323/gatekeeper."
 	echo ""
 	echo "     o A log directory has been created in ${gnugk_logdir}."

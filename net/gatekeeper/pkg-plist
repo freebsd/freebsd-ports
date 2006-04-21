@@ -1,4 +1,5 @@
 @unexec %D/etc/rc.d/gnugk.sh forcestop 2>/dev/null || true
+@unexec %D/etc/rc.d/gnugk forcestop 2>/dev/null || true
 bin/addpasswd
 bin/gnugk
 etc/gnugk.ini.default
