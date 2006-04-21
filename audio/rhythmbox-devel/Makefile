@@ -31,7 +31,7 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomehack intlhack gnomeprefix libgnomeui nautiluscdburner
 WANT_GNOME=	yes
 USE_GSTREAMER=	flac mad gnomevfs gconf jpeg
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS=	--enable-nautilus-menu
 CONFIGURE_ENV=	LIBS="-lm" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
