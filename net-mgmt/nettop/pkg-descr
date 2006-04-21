@@ -1,0 +1,4 @@
+Nettop is a program which looks like top, but is for network packets.
+It requires libpcap and slang to be installed on your computer.
+
+WWW: http://srparish.net/scripts/
