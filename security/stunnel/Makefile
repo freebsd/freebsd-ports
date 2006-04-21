@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	stunnel
-PORTVERSION=	4.14
-PORTREVISION=	2
+PORTVERSION=	4.15
 CATEGORIES=	security
 MASTER_SITES=	http://www.stunnel.org/download/stunnel/src/ \
 		ftp://stunnel.mirt.net/stunnel/ \
@@ -16,6 +15,10 @@ MASTER_SITES=	http://www.stunnel.org/download/stunnel/src/ \
 
 MAINTAINER=	roam@FreeBSD.org
 COMMENT=	SSL encryption wrapper for standard network daemons
+
+PATCHFILES+=	fdputline.patch:fdputline
+PATCH_SITES+=	ftp://ftp.mirt.net/stunnel/:fdputline
+PATCH_DIST_STRIP=	-p1
 
 USE_OPENSSL=	YES
 USE_RC_SUBR=	YES
@@ -62,11 +65,11 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} ${PTHREAD_CFLAGS}" LDFLAGS="${LDFLAGS} ${PT
 post-patch:
 # place files under /var/tmp so that this can be run by an unprivileged
 # user stunnel and group stunnel
-	@${REINPLACE_CMD} -E -e 's|\@prefix\@/var/run/stunnel/|/var/tmp/stunnel|; \
+	@${REINPLACE_CMD} -E -e 's|\@prefix\@/var/lib/stunnel/|/var/tmp/stunnel|; \
 		s|nobody|stunnel|;s|nogroup|stunnel|' \
 		${WRKSRC}/tools/stunnel.conf-sample.in
-	@${REINPLACE_CMD} -E -e 's|localstatedir/run/stunnel.pid|localstatedir/stunnel.pid|' \
-		${WRKSRC}/configure.ac ${WRKSRC}/configure
+	${REINPLACE_CMD} -E -e 's|\$$\(prefix\)/var/run/stunnel/stunnel.pid|$$(localstatedir)/stunnel.pid|' \
+		${WRKSRC}/src/Makefile.in
 	@${FIND} ${WRKSRC} -type f -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -E -e 's,@(ACLOCAL|AUTO(MAKE|CONF|HEADER))@,/usr/bin/true,'
 .ifdef(NOPORTDOCS)
 	@${REINPLACE_CMD} -E -e 's/ install-docDATA/ /; s/^(SUBDIRS.+)doc/\1/' \

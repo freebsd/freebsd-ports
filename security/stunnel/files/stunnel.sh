@@ -17,7 +17,7 @@
 #				that stunnel will use during the automated
 #				start-up.
 # stunnel_pidfile (str):	Default "!!PREFIX!!/var/stunnel/stunnel.pid"
-#				Set it to the value of 'pidfile' in
+#				Set it to the value of 'pid' in
 #				the stunnel.conf file.
 #
 
