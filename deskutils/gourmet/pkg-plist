@@ -62,6 +62,9 @@ bin/gourmet
 %%PYTHON_SITELIBDIR%%/gourmet/check_encodings.py
 %%PYTHON_SITELIBDIR%%/gourmet/check_encodings.pyc
 %%PYTHON_SITELIBDIR%%/gourmet/check_encodings.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/chooserNotebook.py
+%%PYTHON_SITELIBDIR%%/gourmet/chooserNotebook.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/chooserNotebook.pyo
 %%PYTHON_SITELIBDIR%%/gourmet/convert.py
 %%PYTHON_SITELIBDIR%%/gourmet/convert.pyc
 %%PYTHON_SITELIBDIR%%/gourmet/convert.pyo
@@ -230,6 +233,27 @@ bin/gourmet
 %%PYTHON_SITELIBDIR%%/gourmet/keymanager.py
 %%PYTHON_SITELIBDIR%%/gourmet/keymanager.pyc
 %%PYTHON_SITELIBDIR%%/gourmet/keymanager.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/legacy_db/__init__.py
+%%PYTHON_SITELIBDIR%%/gourmet/legacy_db/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/legacy_db/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/legacy_db/db_085/__init__.py
+%%PYTHON_SITELIBDIR%%/gourmet/legacy_db/db_085/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/legacy_db/db_085/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/legacy_db/db_085/rdatabase.py
+%%PYTHON_SITELIBDIR%%/gourmet/legacy_db/db_085/rdatabase.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/legacy_db/db_085/rdatabase.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/legacy_db/db_085/rmetakit.py
+%%PYTHON_SITELIBDIR%%/gourmet/legacy_db/db_085/rmetakit.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/legacy_db/db_085/rmetakit.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/legacy_db/db_09/__init__.py
+%%PYTHON_SITELIBDIR%%/gourmet/legacy_db/db_09/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/legacy_db/db_09/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/legacy_db/db_09/rdatabase.py
+%%PYTHON_SITELIBDIR%%/gourmet/legacy_db/db_09/rdatabase.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/legacy_db/db_09/rdatabase.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/legacy_db/db_09/rmetakit.py
+%%PYTHON_SITELIBDIR%%/gourmet/legacy_db/db_09/rmetakit.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/legacy_db/db_09/rmetakit.pyo
 %%PYTHON_SITELIBDIR%%/gourmet/mnemonic_manager.py
 %%PYTHON_SITELIBDIR%%/gourmet/mnemonic_manager.pyc
 %%PYTHON_SITELIBDIR%%/gourmet/mnemonic_manager.pyo
@@ -371,6 +395,9 @@ share/locale/tr/LC_MESSAGES/gourmet.mo
 share/pixmaps/recbox.png
 @dirrm %%DATADIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/gourmet/nutrition
+@dirrm %%PYTHON_SITELIBDIR%%/gourmet/legacy_db/db_09
+@dirrm %%PYTHON_SITELIBDIR%%/gourmet/legacy_db/db_085
+@dirrm %%PYTHON_SITELIBDIR%%/gourmet/legacy_db
 @dirrm %%PYTHON_SITELIBDIR%%/gourmet/importers/html_plugins
 @dirrm %%PYTHON_SITELIBDIR%%/gourmet/importers
 @dirrm %%PYTHON_SITELIBDIR%%/gourmet/exporters
