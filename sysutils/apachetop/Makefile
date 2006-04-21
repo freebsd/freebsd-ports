@@ -6,17 +6,15 @@
 #
 
 PORTNAME=	apachetop
-PORTVERSION=	0.12.5
+PORTVERSION=	0.12.6
 CATEGORIES=	sysutils
-MASTER_SITES=	http://spork.qfe3.net/apachetop/files/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	http://www.webta.org/apachetop/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Apache RealTime log stats
 
 USE_AUTOTOOLS=	autoconf:259:env
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 
 MAN1=		apachetop.1
 PLIST_FILES=	bin/apachetop
