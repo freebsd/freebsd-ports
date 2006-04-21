@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	make++
-PORTVERSION=	1.18
+PORTVERSION=	1.19
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME:S/+/p/g}
@@ -35,7 +35,5 @@ do-install:
 	  ${FIND} . -name "*.pm" -exec ${INSTALL_SCRIPT} {} ${DATADIR}/Signature \;)
 	@(cd ${WRKSRC} ; \
 	  ${FIND} . -name "*.mk" -exec ${INSTALL_SCRIPT} {} ${DATADIR} \;)
-	@${MKDIR} ${DATADIR}/html
-	${CP} ${WRKSRC}/doc/* ${DATADIR}/html
 
 .include <bsd.port.mk>

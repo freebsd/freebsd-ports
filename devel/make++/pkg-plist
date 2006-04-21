@@ -18,36 +18,5 @@ share/makepp/Signature/c_compilation_md5.pm
 share/makepp/Signature/exact_match.pm
 share/makepp/Signature/md5.pm
 share/makepp/Signature/target_newer.pm
-share/makepp/html/bugs.html
-share/makepp/html/build_algorithm.html
-share/makepp/html/builtin.html
-share/makepp/html/command_line.html
-share/makepp/html/dirs.html
-share/makepp/html/extending_makepp.html
-share/makepp/html/features.html
-share/makepp/html/incompat.html
-share/makepp/html/index.html
-share/makepp/html/inferring.html
-share/makepp/html/legacy_makefiles.html
-share/makepp/html/release_notes_118.html
-share/makepp/html/repositories.html
-share/makepp/html/scanning.html
-share/makepp/html/signature_checking.html
-share/makepp/html/syntax_makefile.html
-share/makepp/html/t_builtin.html
-share/makepp/html/t_debugging.html
-share/makepp/html/t_dirs.html
-share/makepp/html/t_functions.html
-share/makepp/html/t_index.html
-share/makepp/html/t_pattern.html
-share/makepp/html/t_phony.html
-share/makepp/html/t_qt.html
-share/makepp/html/t_simplest.html
-share/makepp/html/t_unix_compilation.html
-share/makepp/html/t_variables.html
-share/makepp/html/t_variant.html
-share/makepp/html/t_whatsin.html
-share/makepp/html/t_wildcards.html
 @dirrm share/makepp/Signature
-@dirrm share/makepp/html
 @dirrm share/makepp
