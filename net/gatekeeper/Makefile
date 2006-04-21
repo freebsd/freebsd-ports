@@ -8,7 +8,7 @@
 PORTNAME=	gatekeeper
 #PORTVERSION=	2.2.3
 DISTVERSION=	2.2.3-2
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= openh323gk
@@ -42,6 +42,8 @@ EXAMPLESDIR=	${PREFIX}/share/examples/openh323
 
 .if ${OSVERSION} < 500000
 BROKEN=		does not build
+.elif ${ARCH} == sparc64 && ${OSVERSION} <= 700003
+BROKEN= does not link due to missing symbol in default thread library
 .endif
 
 .if defined(WITH_FDSET)
