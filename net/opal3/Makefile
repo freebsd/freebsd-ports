@@ -37,6 +37,11 @@ CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -I${WRKSRC}/include
 BROKEN=		Does not build on FreeBSD 4.x, if you manage to make it work, please send a patch to the maintainer: ${MAINTAINER}
 .endif
 
+# Avoid build error on amd64: relocation R_X86_64_32 can not be used when making a shared object; recompile with -fPIC
+.if (${ARCH} == "amd64")
+CFLAGS+=	-fPIC
+.endif
+
 .ifdef (WITH_FFMPEG)
 LIB_DEPENDS+=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg
 CONFIGURE_ARGS+=	--enable-h263avcodec=${LOCALBASE}/include/ffmpeg
