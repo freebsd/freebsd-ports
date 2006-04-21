@@ -9401,6 +9401,7 @@ p5-XML-RAI	ports/textproc/p5-XML-RAI
 p5-XML-RSS	ports/textproc/p5-XML-RSS
 p5-XML-RSS-JavaScript	ports/textproc/p5-XML-RSS-JavaScript
 p5-XML-RSS-LibXML	ports/textproc/p5-XML-RSS-LibXML
+p5-XML-RSS-Parser	ports/textproc/p5-XML-RSS-Parser
 p5-XML-RegExp	ports/textproc/p5-XML-RegExp
 p5-XML-SAX	ports/textproc/p5-XML-SAX
 p5-XML-SAX-Expat	ports/textproc/p5-XML-SAX-Expat
