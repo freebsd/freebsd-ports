@@ -1,11 +1,11 @@
---- src/ssl.c.orig	Mon Dec 27 13:47:16 2004
-+++ src/ssl.c	Mon Dec 27 13:50:36 2004
-@@ -116,6 +116,8 @@
- static void init_engine(void) {
-     ENGINE *e;
+--- src/ssl.c.old	Fri Apr 21 10:44:23 2006
++++ src/ssl.c	Fri Apr 21 10:44:26 2006
+@@ -256,6 +256,8 @@
+ }
  
+ static void init_engine() {
 +    s_log(LOG_ERR, "This version of stunnel was compiled WITHOUT support for OpenSSL hardware engines!  If you need this functionality, rebuild the FreeBSD port with the WITH_STUNNEL_SSL_ENGINE option set to 'yes'; contact Peter Pentchev <roam@FreeBSD.org> for details.");
 +    exit(1);
-     ENGINE_load_builtin_engines();
-     if(!strcasecmp(options.engine, "auto")) {
-         s_log(LOG_DEBUG, "Enabling auto engine support");
+     if(engine_initialized)
+         return;
+     engine_initialized=1;
