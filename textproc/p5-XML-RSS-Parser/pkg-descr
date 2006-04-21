@@ -1,0 +1,15 @@
+XML::RSS::Parser is a lightweight liberal parser of RSS feeds. This parser
+is "liberal" in that it does not demand compliance of a specific RSS version
+and will attempt to gracefully handle tags it does not expect or understand.
+The parser's only requirements is that the file is well-formed XML and
+remotely resembles RSS. Roughly speaking, well formed XML with a channel
+element as a direct sibling or the root tag and item elements etc.
+
+There are a number of advantages to using this module then just using
+a standard parser-tree combination. There are a number of different RSS
+formats in use today. In very subtle ways these formats are not entirely
+compatible from one to another. XML::RSS::Parser makes a couple assumptions
+to "normalize" the parse tree into a more consistent form. For instance,
+it forces channel and item into a parent-child relationship.
+
+WWW: http://search.cpan.org/dist/XML-RSS-Parser/

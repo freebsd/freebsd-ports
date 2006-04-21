@@ -1,0 +1,12 @@
+%%SITE_PERL%%/XML/RSS/Parser.pm
+%%SITE_PERL%%/XML/RSS/Parser/Characters.pm
+%%SITE_PERL%%/XML/RSS/Parser/Element.pm
+%%SITE_PERL%%/XML/RSS/Parser/Feed.pm
+%%SITE_PERL%%/XML/RSS/Parser/Util.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/RSS/Parser/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/RSS/Parser
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/RSS
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
+@dirrmtry %%SITE_PERL%%/XML/RSS/Parser
+@dirrmtry %%SITE_PERL%%/XML/RSS
+@dirrmtry %%SITE_PERL%%/XML
