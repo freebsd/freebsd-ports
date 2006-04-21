@@ -7,6 +7,7 @@
 
 PORTNAME=	jetty
 DISTVERSION=	5.1.11RC0
+PORTREVISION=	1
 CATEGORIES=	www java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	jetty
@@ -29,17 +30,17 @@ post-extract:
 	${FIND} ${WRKSRC} -name .cvsignore -delete
 
 do-install:
-	@${MKDIR} ${PREFIX}/share/java/${PORTNAME}-${PORTVERSION}
+	@${MKDIR} ${PREFIX}/share/java/${PORTNAME}
 	@(cd ${WRKSRC} && ${TAR} -c --exclude 'src/*' -f - ./ ) \
-		| (cd ${PREFIX}/share/java/${PORTNAME}-${PORTVERSION} && ${TAR} --unlink -x -f -)
+		| (cd ${PREFIX}/share/java/${PORTNAME} && ${TAR} --unlink -x -f -)
 
 post-install:
 	@${SED} 's|%%PREFIX%%|${PREFIX}|g' ${PKGMESSAGE} \
-		| ${SED} 's|%%PORTVERSION%%|${PORTVERSION}|g'
+		| ${SED} 's|-%%PORTVERSION%%||g'
 	@${CHMOD} a+rx \
-		${PREFIX}/share/java/${PORTNAME}-${PORTVERSION}/extra/unix/bin/jetty.sh
+		${PREFIX}/share/java/${PORTNAME}/extra/unix/bin/jetty.sh
 	@${LN} -sf \
-		${PREFIX}/share/java/${PORTNAME}-${PORTVERSION}/extra/unix/bin/jetty.sh \
+		${PREFIX}/share/java/${PORTNAME}/extra/unix/bin/jetty.sh \
 		${PREFIX}/sbin/jetty
 
 .include <bsd.port.mk>
