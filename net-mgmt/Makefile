@@ -101,6 +101,7 @@
     SUBDIR += netsaint
     SUBDIR += netsaint-plugins
     SUBDIR += netspoc
+    SUBDIR += nettop
     SUBDIR += netustad
     SUBDIR += netwag
     SUBDIR += netwox
