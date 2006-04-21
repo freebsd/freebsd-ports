@@ -7,6 +7,7 @@
 
 PORTNAME=	libjingle
 PORTVERSION=	0.3.0
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -69,6 +70,11 @@ post-configure:
 		-e 's|^.+(HAVE_ILBC)[[:space:]].*$$|#define \1 1|' \
 		-e 's|^.+(HAVE_SPEEX_H)[[:space:]].*$$|#define \1 1|' \
 		-e 's|^.+(HAVE_SPEEX)[[:space:]].*$$|#define \1 1|' \
+		${CONFIGURE_WRKSRC}/config.h
+# configure does not handle OSS support
+# force oss
+	@${ECHO_CMD} \
+		'#define HAVE_SYS_SOUNDCARD_H 1' >> \
 		${CONFIGURE_WRKSRC}/config.h
 
 post-install:
