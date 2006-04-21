@@ -7,14 +7,14 @@
 
 PORTNAME=	fastresolve
 PORTVERSION=	2.10
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	dns
 MASTER_SITES=	http://www.djmnet.org/sw/dist/
 
 MAINTAINER=	martin@matuska.org
 COMMENT=	Programs that process web logs to get DNS and domain ownership info
 
-LIB_DEPENDS=	adns.1:${PORTSDIR}/dns/adns
+LIB_DEPENDS=	adns.12:${PORTSDIR}/dns/adns
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/BerkeleyDB.pm:${PORTSDIR}/databases/p5-BerkeleyDB
 
 USE_BZIP2=	yes

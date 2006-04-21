@@ -7,7 +7,7 @@
 
 PORTNAME=	gale
 PORTVERSION=	0.99f
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im
 MASTER_SITES=	http://download.ofb.net/${PORTNAME}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}ruit
@@ -17,7 +17,7 @@ COMMENT=	A secure instant messaging system
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libgc.a:${PORTSDIR}/devel/boehm-gc
 LIB_DEPENDS=	wwwcore.1:${PORTSDIR}/www/libwww \
-		adns.1:${PORTSDIR}/dns/adns
+		adns.12:${PORTSDIR}/dns/adns
 
 USE_ICONV=	yes
 USE_GNOME=	glib12

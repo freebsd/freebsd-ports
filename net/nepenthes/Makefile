@@ -7,6 +7,7 @@
 
 PORTNAME=	nepenthes
 PORTVERSION=	0.1.5
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	nepenthes
@@ -17,7 +18,7 @@ COMMENT=	Determine the malware activity on a network
 LIB_DEPENDS=	curl.3:${PORTSDIR}/ftp/curl \
 		magic.1:${PORTSDIR}/sysutils/file \
 		pcre.0:${PORTSDIR}/devel/pcre \
-		adns.1:${PORTSDIR}/dns/adns
+		adns.12:${PORTSDIR}/dns/adns
 
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
