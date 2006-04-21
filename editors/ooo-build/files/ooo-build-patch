@@ -20,9 +20,9 @@ gnu patch is gpatch for FreeBSD.
  	$base_cmd = 'sed \'s/^\(@.*\)\r$/\1/\' | ' . $base_cmd;
      }
 
---- patches/src680/apply.orig	Fri Mar 10 01:33:16 2006
-+++ patches/src680/apply	Fri Mar 17 08:49:29 2006
-@@ -70,6 +70,8 @@
+--- patches/src680/apply.orig	Fri Apr 14 03:52:06 2006
++++ patches/src680/apply	Fri Apr 21 07:11:03 2006
+@@ -71,6 +71,8 @@
  Gentoo64: GentooBase, 64bit
  # Win32
  Win32 : Win32Common, NovellOnly, NovellOnlyWin32, NovellSplash
@@ -31,7 +31,7 @@ gnu patch is gpatch for FreeBSD.
  # translate.org.za
  translate-org-za-linux: translate-org-za-common, translate-org-za-splash, LinuxCommon, Common, Lockdown
  translate-org-za-win32: translate-org-za-common, translate-org-za-splash, Win32Common, Common
-@@ -328,7 +330,7 @@
+@@ -356,7 +358,7 @@
  
  [ Shrink ]
  # strip 450k of .comment sections - i#57063
@@ -40,16 +40,25 @@ gnu patch is gpatch for FreeBSD.
  
  
  [ QuickStarter ]
-@@ -341,7 +343,7 @@
+@@ -376,7 +378,7 @@
  # Show more steps during startup
  speed-ooqstart-more-steps.diff
  # Make it X11+glib-only
 -speed-ooqstart-x11-only.diff
 +# speed-ooqstart-x11-only.diff
+ # Fix -display and other options, n#160296
+ speed-ooqstart-options.diff
  
+@@ -678,7 +680,7 @@
+ buildfix-qadevOOo-java-encoding.diff
  
- # make the office socket name more predictable for external re-use
-@@ -657,11 +659,11 @@
+ # fix error on jdk 1.5 from enum reserved word
+-java-1_5-enum-reserved-word.diff
++# java-1_5-enum-reserved-word.diff
+ 
+ # detect the right CFLAGS in configure rather than in makafile.mk
+ buildfix-system-moz-plugin.diff
+@@ -696,11 +698,11 @@
  buildfix-connectivity-kab-stdio.diff
  
  # do not pack any potential .orig files with ppds
@@ -63,7 +72,16 @@ gnu patch is gpatch for FreeBSD.
  
  [ MandrivaOnly ]
  mozilla-firefox.diff
-@@ -756,10 +758,10 @@
+@@ -734,7 +736,7 @@
+ 
+ [ GCJ ]
+ # Use jaxp api for helpcontent building utilities #58308 CWS jaxpapi
+-cws-jaxpapi.diff
++# cws-jaxpapi.diff
+ 
+ [ GCJExperimental ]
+ # Another fix for --without-java i#56619
+@@ -795,10 +797,10 @@
  parallel-sysui-makefiles.diff
  
  # Fix/workaround race condition with .REMOVE rule #16752
