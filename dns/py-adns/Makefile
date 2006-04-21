@@ -23,6 +23,8 @@ USE_PYDISTUTILS=	yes
 USE_REINPLACE=	yes
 PLIST_SUB+=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR:S/^${LOCALBASE}\///g}
 
+BROKEN=		does not build with a new version of dns/adns
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|^\(include_dirs = \).*$$|\1\["${LOCALBASE}/include"\]|g' \
 		-e 's|^\(library_dirs = \).*$$|\1\["${LOCALBASE}/lib"\]|g' \
