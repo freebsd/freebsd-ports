@@ -1,0 +1,20 @@
+ooo-build is a collection of patches, artwork and build infrastructure
+exists solely as a reflection of the many problems encouraging reasonably
+responsive change up-stream. The process of change is painful for
+any organisation, the larger the more painful. However - the size of the
+problem is no excuse to not try; hence the evenutal aim is to remove the
+need for ooo-build by incrementally fixing the various problems.
+
+ooo-build arose from acute frustration with the bad-old days of OOo
+process before the Child Workspace concept was introduced, it is also
+fueled by a non-performant CVS server.
+
+o a lot of minor fixes
+o VBA interoperability
+o Solver (linear programming)
+o Mono bridge
+o Evolution2 integration
+o 64bit stuffs
+
+WWW: http://wiki.services.openoffice.org/wiki/Ooo-build
+     http://www.go-oo.org/packages/
