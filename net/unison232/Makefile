@@ -53,8 +53,10 @@ post-build:
 	@${GMAKE} -C ${WRKSRC} UISTYLE=text NAME=unison-text
 .endif
 
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/unison ${PREFIX}/bin
+
 post-install:
-	@${STRIP_CMD} ${PREFIX}/bin/unison
 .if defined(WITH_GTK2)
 	@${INSTALL_PROGRAM} ${WRKSRC}/unison-text ${PREFIX}/bin
 .endif
