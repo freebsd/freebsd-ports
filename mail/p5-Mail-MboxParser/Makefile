@@ -20,6 +20,8 @@ BUILD_DEPENDS=	${SITE_PERL}/MIME/Tools.pm:${PORTSDIR}/mail/p5-MIME-Tools \
 		${SITE_PERL}/Mail/Mbox/MessageParser.pm:${PORTSDIR}/mail/p5-Mail-Mbox-MessageParser
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+BROKEN=		Incorrect pkg-plist
+
 PERL_CONFIGURE=	yes
 
 MAN3=		Mail::MboxParser.3 Mail::MboxParser::Base.3 \
