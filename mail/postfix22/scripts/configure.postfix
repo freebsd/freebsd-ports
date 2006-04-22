@@ -1,5 +1,5 @@
 #!/bin/sh
-# $FreeBSD: /tmp/pcvs/ports/mail/postfix22/scripts/Attic/configure.postfix,v 1.74 2006-04-18 13:24:14 mnag Exp $
+# $FreeBSD: /tmp/pcvs/ports/mail/postfix22/scripts/Attic/configure.postfix,v 1.75 2006-04-22 14:04:52 mnag Exp $
 
 if [ -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc ]; then
 	exit
@@ -27,11 +27,7 @@ SASLKRB5	"If your SASL requires Kerberos5 select this option" "$status_SASLKRB5"
 SASLKRB5MIT	"If your SASL requires MIT Kerberos5 select this option" "$status_SASLKRB5MIT" \
 SPF		"SPF support" "$status_SPF" \
 TLS		"SSL and TLS" "$status_TLS" \
-DB3		"Berkeley DB3 (required if SASL also built with DB3)" "$status_DB3" \
-DB40		"Berkeley DB4.0 (required if SASL also built with DB4.0)" "$status_DB40" \
-DB41		"Berkeley DB4.1 (required if SASL also built with DB4.1)" "$status_DB41" \
-DB42		"Berkeley DB4.2 (required if SASL also built with DB4.2)" "$status_DB42" \
-DB43		"Berkeley DB4.3 (required if SASL also built with DB4.3)" "$status_DB43" \
+BDB		"Berkeley DB (select version using WITH_BDB_VER variable)" "$status_BDB" \
 MySQL		"MySQL map lookups (choose version with WITH_MYSQL_VER)" "$status_MySQL" \
 PgSQL		"PostgreSQL map lookups (choose with DEFAULT_PGSQL_VER)" "$status_PgSQL" \
 OpenLDAP	"OpenLDAP map lookups (choose ver. with WITH_OPENLDAP_VER)" "$status_OpenLDAP" \
@@ -124,65 +120,11 @@ while [ "$1" ]; do
 			echo "POSTFIX_AUXLIBS+=	-L\${OPENSSLLIB} \${LDFLAGS} -lssl -lcrypto"
 			echo "TLS_SUFFIX=	+tls"
 			;;
-		DB3)
-			if [ "X$BDB_SELECTED" != "X" ]; then
-				/usr/bin/dialog --msgbox "Select exactly one of the DB3, DB40, DB41, DB42 and DB43 options." 5 60 > /dev/stderr
-				rm -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
-				exit 1
-			fi
-			echo "LIB_DEPENDS+=	db3.3:\${PORTSDIR}/databases/db3"
-			echo "POSTFIX_CCARGS+=	-I\${LOCALBASE}/include/db3"
-			echo "POSTFIX_AUXLIBS+=	-L\${LOCALBASE}/lib -ldb3"
-			echo "DB_SUFFIX=	+db3"
-			BDB_SELECTED="3"
-			;;
-		DB40)
-			if [ "X$BDB_SELECTED" != "X" ]; then
-				/usr/bin/dialog --msgbox "Select exactly one of the DB3, DB40, DB41, DB42 and DB43 options." 5 60 > /dev/stderr
-				rm -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
-				exit 1
-			fi
-			echo "LIB_DEPENDS+=	db4.0:\${PORTSDIR}/databases/db4"
-			echo "POSTFIX_CCARGS+=	-I\${LOCALBASE}/include/db4"
-			echo "POSTFIX_AUXLIBS+=	-L\${LOCALBASE}/lib -ldb4"
-			echo "DB_SUFFIX=	+db40"
-			BDB_SELECTED="40"
-			;;
-		DB41)
-			if [ "X$BDB_SELECTED" != "X" ]; then
-				/usr/bin/dialog --msgbox "Select exactly one of the DB3, DB40, DB41, DB42 and DB43 options." 5 60 > /dev/stderr
-				rm -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
-				exit 1
-			fi
-			echo "LIB_DEPENDS+=	db41.1:\${PORTSDIR}/databases/db41"
-			echo "POSTFIX_CCARGS+=	-I\${LOCALBASE}/include/db41"
-			echo "POSTFIX_AUXLIBS+=	-L\${LOCALBASE}/lib -ldb41"
-			echo "DB_SUFFIX=	+db41"
-			BDB_SELECTED="41"
-			;;
-		DB42)
-			if [ "X$BDB_SELECTED" != "X" ]; then
-				/usr/bin/dialog --msgbox "Select exactly one of the DB3, DB40, DB41, DB42 and DB43 options." 5 60 > /dev/stderr
-				rm -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
-				exit 1
-			fi
-			echo "LIB_DEPENDS+=	db-4.2.2:\${PORTSDIR}/databases/db42"
-			echo "POSTFIX_CCARGS+=	-I\${LOCALBASE}/include/db42"
-			echo "POSTFIX_AUXLIBS+=	-L\${LOCALBASE}/lib/db42/ -ldb"
-			echo "DB_SUFFIX=	+db42"
-			BDB_SELECTED="42"
-			;;
-		DB43)
-			if [ "X$BDB_SELECTED" != "X" ]; then
-				/usr/bin/dialog --msgbox "Select exactly one of the DB3, DB40, DB41, DB42 and DB43 options." 5 60 > /dev/stderr
-				rm -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
-				exit 1
-			fi
-			echo "LIB_DEPENDS+=	db-4.3.0:\${PORTSDIR}/databases/db43"
-			echo "POSTFIX_CCARGS+=	-I\${LOCALBASE}/include/db43"
-			echo "POSTFIX_AUXLIBS+=	-L\${LOCALBASE}/lib/db43/ -ldb"
-			echo "DB_SUFFIX=	+db43"
-			BDB_SELECTED="43"
+		BDB)
+			echo "USE_BDB=		yes"
+			echo "POSTFIX_CCARGS+=	-I\${BDB_INCLUDE_DIR}"
+			echo "POSTFIX_AUXLIBS+=	-L\${BDB_LIB_DIR} -l\${BDB_LIB_NAME}"
+			echo "DB_SUFFIX=	+${BDB_LIB_NAME}"
 			;;
 		MySQL)
 			echo "USE_MYSQL=YES"
