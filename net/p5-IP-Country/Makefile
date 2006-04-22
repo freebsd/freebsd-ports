@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	IP-Country
-PORTVERSION=	2.20
+PORTVERSION=	2.21
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/N/NW/NWETTERS
@@ -28,4 +28,12 @@ MAN3=		IP::Authority.3 \
 		IP::Country::Slow.3 \
 		IP::Country.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+post-patch:
+	${FIND} ${WRKSRC} -name "*.pm" | ${XARGS} ${REINPLACE_CMD} -e '/warnings/d'
+	${FIND} ${WRKSRC} -name "*.pm.bak" -delete
+.endif
+
+.include <bsd.port.post.mk>
