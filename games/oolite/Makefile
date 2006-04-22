@@ -16,6 +16,8 @@ DISTFILES=	${PORTNAME}-src-${OOLITE_BASE_VERSION}-${OOLITE_SRC_VERSION}${EXTRACT
 MAINTAINER=	avg@icyb.net.ua
 COMMENT=	Trade and combat space simulator, clone of Elite
 
+BROKEN=		Size mismatch
+
 OOLITE_BASE_VERSION=	1.62
 OOLITE_SRC_VERSION=	3
 OOLITE_DATA_VERSION=	3
