@@ -23,6 +23,9 @@
 %%PYTHON_SITELIBDIR%%/bsddb3/tests/__init__.py
 %%PYTHON_SITELIBDIR%%/bsddb3/tests/__init__.pyc
 %%PYTHON_SITELIBDIR%%/bsddb3/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/bsddb3/tests/test_1413192.py
+%%PYTHON_SITELIBDIR%%/bsddb3/tests/test_1413192.pyc
+%%PYTHON_SITELIBDIR%%/bsddb3/tests/test_1413192.pyo
 %%PYTHON_SITELIBDIR%%/bsddb3/tests/test_all.py
 %%PYTHON_SITELIBDIR%%/bsddb3/tests/test_all.pyc
 %%PYTHON_SITELIBDIR%%/bsddb3/tests/test_all.pyo
