@@ -16,6 +16,8 @@ COMMENT=	Open-source java tools for processing biological data
 RUN_DEPENDS=	${JAVAJARDIR:S,^${PREFIX},${LOCALBASE},}/xml-apis.jar:${PORTSDIR}/textproc/xerces-j \
 		${JAVAJARDIR:S,^${PREFIX},${LOCALBASE},}/jakarta-regexp.jar:${PORTSDIR}/java/jakarta-regexp
 
+BROKEN=		Does not compile
+
 USE_JAVA=	yes
 JAVA_VERSION=	1.3+
 USE_ANT=	yes

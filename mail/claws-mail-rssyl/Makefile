@@ -19,6 +19,8 @@ LIB_DEPENDS=	curl.3:${PORTSDIR}/ftp/curl
 BUILD_DEPENDS=	sylpheed-claws:${PORTSDIR}/mail/sylpheed-claws
 RUN_DEPENDS=	sylpheed-claws:${PORTSDIR}/mail/sylpheed-claws
 
+BROKEN=		Does not compile
+
 USE_X_PREFIX=	yes
 USE_AUTOTOOLS=	autoconf:259
 USE_REINPLACE=	yes
