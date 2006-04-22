@@ -18,6 +18,8 @@ COMMENT=	Gtk bindings for the Display GhostScript System
 BUILD_DEPENDS=	pswrap:${PORTSDIR}/x11/dgs
 RUN_DEPENDS=	pswrap:${PORTSDIR}/x11/dgs
 
+BROKEN=		Unfetchable
+
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
