@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	audacious
-PORTVERSION=	0.2.3
+PORTVERSION=	1.0.0
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://audacious-media-player.org/release/ \
 		${MASTER_SITE_LOCAL}
