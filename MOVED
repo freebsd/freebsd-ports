@@ -2254,3 +2254,4 @@ security/nessus-devel||2006-04-17|Has expired: Development version of nessus is 
 security/nessus-libnasl-devel||2006-04-17|Has expired: Development version of nessus is no longer available in sources
 security/nessus-libraries-devel||2006-04-17|Has expired: Development version of nessus is no longer available in sources
 security/nessus-plugins-devel||2006-04-17|Has expired: Development version of nessus is no longer available in sources
+audio/gstreamer-plugins-polypaudio|audio/gstreamer-plugins-polyp|2006-04-21|The port name has been changed to match its correct name
