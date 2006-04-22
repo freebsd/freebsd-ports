@@ -14,6 +14,8 @@ MASTER_SITES=	http://www.garret.ru/~knizhnik/
 MAINTAINER=	osa@FreeBSD.org
 COMMENT=	Main Memory Relational Database Management System
 
+BROKEN=		Size mismatch
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_GMAKE=	yes
