@@ -208,7 +208,7 @@
     SUBDIR += gstreamer-plugins-musicbrainz
     SUBDIR += gstreamer-plugins-nas
     SUBDIR += gstreamer-plugins-ogg
-    SUBDIR += gstreamer-plugins-polypaudio
+    SUBDIR += gstreamer-plugins-polyp
     SUBDIR += gstreamer-plugins-shout
     SUBDIR += gstreamer-plugins-shout2
     SUBDIR += gstreamer-plugins-sidplay
