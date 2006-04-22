@@ -1,26 +1,26 @@
 bin/gnash
 bin/gparser
 bin/gprocessor
-lib/gnash/libbase.a
-lib/gnash/libbase.la
-lib/gnash/libbase.so
-lib/gnash/libbase.so.0
-lib/gnash/libgeometry.a
-lib/gnash/libgeometry.la
-lib/gnash/libgeometry.so
-lib/gnash/libgeometry.so.0
-lib/gnash/libserver.a
-lib/gnash/libserver.la
-lib/gnash/libserver.so
-lib/gnash/libserver.so.0
-%%PLUGIN:%%lib/browser_plugins/libgnash.so
-share/gnome/omf/gnash/gnash.omf
-%%PORTDOCS%%%%DOCSDIR%%/gnash.html
-%%PORTDOCS%%%%DOCSDIR%%/gnash.pdf
-%%PORTDOCS%%%%DOCSDIR%%/gnash.xml
-%%PORTDOCS%%%%DOCSDIR%%/legal.xml
-%%PORTDOCS%%%%DOCSDIR%%/images/car_crash.png
+lib/browser_plugins/libgnashplugin.so
+lib/gnash/libgnashasobjs.a
+lib/gnash/libgnashasobjs.la
+lib/gnash/libgnashasobjs.so
+lib/gnash/libgnashasobjs.so.0
+lib/gnash/libgnashbackend.a
+lib/gnash/libgnashbackend.la
+lib/gnash/libgnashbackend.so
+lib/gnash/libgnashbackend.so.0
+lib/gnash/libgnashbase.a
+lib/gnash/libgnashbase.la
+lib/gnash/libgnashbase.so
+lib/gnash/libgnashbase.so.0
+lib/gnash/libgnashgeo.a
+lib/gnash/libgnashgeo.la
+lib/gnash/libgnashgeo.so
+lib/gnash/libgnashgeo.so.0
+lib/gnash/libgnashserver.a
+lib/gnash/libgnashserver.la
+lib/gnash/libgnashserver.so
+lib/gnash/libgnashserver.so.0
 @dirrm lib/gnash
-@dirrm share/gnome/omf/gnash
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry lib/browser_plugins
