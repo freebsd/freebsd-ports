@@ -15,6 +15,8 @@ COMMENT=	A GTK2 based XMMS2 client, written in C
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libxmmsclient.so:${PORTSDIR}/audio/xmms2
 
+BROKEN=		Unfetchable
+
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk20
 
