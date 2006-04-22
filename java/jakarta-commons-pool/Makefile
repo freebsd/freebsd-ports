@@ -21,6 +21,8 @@ RUN_DEPENDS=	${JAR_DEPENDS}
 
 JAR_DEPENDS=	${JAVALIBDIR}/commons-collections.jar:${PORTSDIR}/java/jakarta-commons-collections
 
+BROKEN=		Does not compile
+
 USE_JAVA=	yes
 JAVA_VERSION=	1.2+
 
