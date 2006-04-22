@@ -8,7 +8,7 @@
 PORTNAME=	gxditview
 PORTVERSION=	1.18.1
 DISTVERSIONSUFFIX=	.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	japanese print
 MASTER_SITES=	${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/main/g/groff
@@ -17,7 +17,7 @@ DISTFILES=	${DISTNAME:S,-,_,}.orig${EXTRACT_SUFX}
 
 PATCH_SITES=	${MASTER_SITE_DEBIAN}
 PATCH_SITE_SUBDIR=	pool/main/g/groff
-PATCHFILES=	${DISTNAME:S,-,_,}-7.diff.gz
+PATCHFILES=	${DISTNAME:S,-,_,}-12.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	ports@FreeBSD.org
@@ -25,13 +25,11 @@ COMMENT=	Japanese enhancement of GNU xditview
 
 RUN_DEPENDS=	${LOCALBASE}/bin/groff:${PORTSDIR}/japanese/groff
 
-CONFLICTS=	gxditview-*
+CONFLICTS=	gxditview-[1-9]*
 
 GNU_CONFIGURE=	yes
-#USE_GMAKE=	yes
 USE_IMAKE=	yes
 USE_ICONV=	yes
-USE_REINPLACE=	yes
 
 CONFIGURE_ARGS=	--program-prefix=g --enable-multibyte
 CONFIGURE_ENV=	INSTALL_MAN="${INSTALL_MAN}" \
