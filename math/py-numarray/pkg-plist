@@ -89,6 +89,9 @@
 %%PYTHON_SITELIBDIR%%/numarray/dotblas.py
 %%PYTHON_SITELIBDIR%%/numarray/dotblas.pyc
 %%PYTHON_SITELIBDIR%%/numarray/dotblas.pyo
+%%PYTHON_SITELIBDIR%%/numarray/dtype.py
+%%PYTHON_SITELIBDIR%%/numarray/dtype.pyc
+%%PYTHON_SITELIBDIR%%/numarray/dtype.pyo
 %%PYTHON_SITELIBDIR%%/numarray/examples/__init__.py
 %%PYTHON_SITELIBDIR%%/numarray/examples/__init__.pyc
 %%PYTHON_SITELIBDIR%%/numarray/examples/__init__.pyo
