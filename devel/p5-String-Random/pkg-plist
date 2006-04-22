@@ -1,5 +1,2 @@
 %%SITE_PERL%%/String/Random.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/String/Random/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/String/Random
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/String
 @dirrmtry %%SITE_PERL%%/String
