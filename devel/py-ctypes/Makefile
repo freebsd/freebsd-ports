@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ctypes
-PORTVERSION=	0.9.6
+PORTVERSION=	0.9.9.6
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S,%SUBDIR%/,ctypes/,g}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,10 +16,9 @@ COMMENT=	Python module allowing to create and manipulate C data types
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 
-ONLY_FOR_ARCHS=	i386 alpha powerpc
+ONLY_FOR_ARCHS=	i386 amd64 alpha powerpc sparc64
 
 .include <bsd.port.pre.mk>
 
