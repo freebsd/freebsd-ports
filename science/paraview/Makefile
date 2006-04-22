@@ -16,6 +16,8 @@ COMMENT=	ParaView is a powerful scientific data visualization application
 BUILD_DEPENDS=	cmake:${PORTSDIR}/devel/cmake
 LIB_DEPENDS=	hdf5.0:${PORTSDIR}/science/hdf5
 
+BROKEN=		Does not build
+
 USE_GL=		yes
 WRKSRC=		${WRKDIR}/${DISTNAME}-build
 PATCH_WRKSRC=	${WRKDIR}/${DISTNAME}
