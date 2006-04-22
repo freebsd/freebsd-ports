@@ -17,7 +17,7 @@
     SUBDIR += akode-plugins-mpc
     SUBDIR += akode-plugins-mpeg
     SUBDIR += akode-plugins-oss
-    SUBDIR += akode-plugins-polypaudio
+    SUBDIR += akode-plugins-polyp
     SUBDIR += akode-plugins-resampler
     SUBDIR += akode-plugins-xiph
     SUBDIR += alac

@@ -6,11 +6,11 @@
 #
 
 CATEGORIES=	audio
-PORTREVISION=	1
+PORTREVISION=	2
 
 COMMENT=	Gstreamer polypaudio sound server plugin
 
-GST_PLUGIN=	polypaudio
+GST_PLUGIN=	polyp
 
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins
 
