@@ -3526,7 +3526,7 @@ gstreamer-plugins-musicbrainz	ports/audio/gstreamer-plugins-musicbrainz
 gstreamer-plugins-nas		ports/audio/gstreamer-plugins-nas
 gstreamer-plugins-ogg		ports/audio/gstreamer-plugins-ogg
 gstreamer-plugins-pango		ports/x11-toolkits/gstreamer-plugins-pango
-gstreamer-plugins-polypaudio	ports/audio/gstreamer-plugins-polypaudio
+gstreamer-plugins-polyp		ports/audio/gstreamer-plugins-polyp
 gstreamer-plugins-sdl		ports/devel/gstreamer-plugins-sdl
 gstreamer-plugins-shout		ports/audio/gstreamer-plugins-shout
 gstreamer-plugins-shout2	ports/audio/gstreamer-plugins-shout2
