@@ -8,6 +8,7 @@
 
 PORTNAME=	firefox
 DISTVERSION=	1.0.8
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA} \
@@ -40,6 +41,7 @@ MOZILLA_SUFX=	10
 MOZ_EXTENSIONS+=cookie,xml-rpc,xmlextras,pref,transformiix,universalchardet,webservices,inspector,p3p,gnomevfs,negotiateauth
 MOZ_EXPORT+=	MOZ_INTERNAL_LIBART_LGPL=1
 MOZ_MK_OPTIONS+=MOZ_INTERNAL_LIBART_LGPL=1
+PORT_MOZCONFIG=	${WRKSRC}/browser/config/mozconfig
 MOZ_OPTIONS=	--disable-ldap \
 		--enable-application=browser \
 		--enable-official-branding \
