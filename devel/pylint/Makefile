@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pylint
-PORTVERSION=	0.7.0
+PORTVERSION=	0.11.0
 CATEGORIES=	devel python
 MASTER_SITES=	ftp://ftp.logilab.org/pub/pylint/
 PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
