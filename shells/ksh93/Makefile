@@ -15,6 +15,8 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	joe@zircon.seattle.wa.us
 COMMENT=	Official AT&T release of KornShell 93
 
+MANUAL_PACKAGE_BUILD=Doesn't build in tinderbox environment
+
 VERSION=	2006-02-14
 RESTRICTED=	Source recipient must acknowledge license
 
