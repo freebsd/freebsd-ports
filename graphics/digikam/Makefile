@@ -22,6 +22,8 @@ LIB_DEPENDS=	kexif.1:${PORTSDIR}/graphics/libkexif \
 		sqlite3.8:${PORTSDIR}/databases/sqlite3
 RUN_DEPENDS=	dcraw:${PORTSDIR}/graphics/dcraw
 
+BROKEN=		Incorrect pkg-plist
+
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
