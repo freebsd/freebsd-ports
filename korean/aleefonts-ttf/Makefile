@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	aleefonts
-PORTVERSION=	7.1
+PORTVERSION=	7.3
 CATEGORIES=	korean x11-fonts
 MASTER_SITES=	${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/main/t/ttf-alee
