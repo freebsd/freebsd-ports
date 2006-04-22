@@ -125,6 +125,9 @@ lib/scons-%%SCONS_VER%%/SCons/Scanner/Fortran.pyo
 lib/scons-%%SCONS_VER%%/SCons/Scanner/IDL.py
 lib/scons-%%SCONS_VER%%/SCons/Scanner/IDL.pyc
 lib/scons-%%SCONS_VER%%/SCons/Scanner/IDL.pyo
+lib/scons-%%SCONS_VER%%/SCons/Scanner/LaTeX.py
+lib/scons-%%SCONS_VER%%/SCons/Scanner/LaTeX.pyc
+lib/scons-%%SCONS_VER%%/SCons/Scanner/LaTeX.pyo
 lib/scons-%%SCONS_VER%%/SCons/Scanner/Prog.py
 lib/scons-%%SCONS_VER%%/SCons/Scanner/Prog.pyc
 lib/scons-%%SCONS_VER%%/SCons/Scanner/Prog.pyo
@@ -149,6 +152,9 @@ lib/scons-%%SCONS_VER%%/SCons/Sig/TimeStamp.pyo
 lib/scons-%%SCONS_VER%%/SCons/Sig/__init__.py
 lib/scons-%%SCONS_VER%%/SCons/Sig/__init__.pyc
 lib/scons-%%SCONS_VER%%/SCons/Sig/__init__.pyo
+lib/scons-%%SCONS_VER%%/SCons/Subst.py
+lib/scons-%%SCONS_VER%%/SCons/Subst.pyc
+lib/scons-%%SCONS_VER%%/SCons/Subst.pyo
 lib/scons-%%SCONS_VER%%/SCons/Taskmaster.py
 lib/scons-%%SCONS_VER%%/SCons/Taskmaster.pyc
 lib/scons-%%SCONS_VER%%/SCons/Taskmaster.pyo
@@ -221,6 +227,9 @@ lib/scons-%%SCONS_VER%%/SCons/Tool/default.pyo
 lib/scons-%%SCONS_VER%%/SCons/Tool/dmd.py
 lib/scons-%%SCONS_VER%%/SCons/Tool/dmd.pyc
 lib/scons-%%SCONS_VER%%/SCons/Tool/dmd.pyo
+lib/scons-%%SCONS_VER%%/SCons/Tool/dvi.py
+lib/scons-%%SCONS_VER%%/SCons/Tool/dvi.pyc
+lib/scons-%%SCONS_VER%%/SCons/Tool/dvi.pyo
 lib/scons-%%SCONS_VER%%/SCons/Tool/dvipdf.py
 lib/scons-%%SCONS_VER%%/SCons/Tool/dvipdf.pyc
 lib/scons-%%SCONS_VER%%/SCons/Tool/dvipdf.pyo
@@ -341,6 +350,9 @@ lib/scons-%%SCONS_VER%%/SCons/Tool/mwld.pyo
 lib/scons-%%SCONS_VER%%/SCons/Tool/nasm.py
 lib/scons-%%SCONS_VER%%/SCons/Tool/nasm.pyc
 lib/scons-%%SCONS_VER%%/SCons/Tool/nasm.pyo
+lib/scons-%%SCONS_VER%%/SCons/Tool/pdf.py
+lib/scons-%%SCONS_VER%%/SCons/Tool/pdf.pyc
+lib/scons-%%SCONS_VER%%/SCons/Tool/pdf.pyo
 lib/scons-%%SCONS_VER%%/SCons/Tool/pdflatex.py
 lib/scons-%%SCONS_VER%%/SCons/Tool/pdflatex.pyc
 lib/scons-%%SCONS_VER%%/SCons/Tool/pdflatex.pyo
