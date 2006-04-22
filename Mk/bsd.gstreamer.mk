@@ -123,7 +123,7 @@ nas_PLIST=	libgstnassink
 
 ogg_DEPENDS=	audio/gstreamer-plugins-ogg
 
-polypaudio_DEPENDS=	audio/gstreamer-plugins-polypaudio
+polypaudio_DEPENDS=	audio/gstreamer-plugins-polyp
 polypaudio_PLIST=	libpolypaudio
 
 shout_DEPENDS=	audio/gstreamer-plugins-shout
