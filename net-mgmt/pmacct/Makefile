@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	pmacct
-PORTVERSION=	0.10.0
+PORTVERSION=	0.10.1
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://www.ba.cnr.it/~paolo/pmacct/
+MASTER_SITES=	http://www.pmacct.net/
 
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Accounting and aggregation tool for IPv4 and IPv6 traffic
@@ -17,7 +17,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 USE_GETOPT_LONG=yes
-WRKSRC=		${WRKDIR}/${PORTNAME}-0.10.0
 
 OPTIONS=	MYSQL "Enable MySQL support." Off \
 		PGSQL "Enable PostgreSQL support." Off \
