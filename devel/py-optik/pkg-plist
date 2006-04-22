@@ -22,6 +22,7 @@
 %%EXAMPLES%%/caseless.py
 %%EXAMPLES%%/custom_source.py
 %%EXAMPLES%%/custom_type.py
+%%EXAMPLES%%/help_groups.py
 %%EXAMPLES%%/i18n.py
 %%EXAMPLES%%/no_help.py
 %%EXAMPLES%%/optional_arg_1.py
