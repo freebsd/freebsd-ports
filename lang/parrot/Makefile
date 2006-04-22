@@ -18,6 +18,8 @@ BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4 \
 		icudata.34:${PORTSDIR}/devel/icu
 
+BROKEN=		Incorrect pkg-plist
+
 USE_GCC=	3.4+
 USE_PERL5=	yes
 USE_GMAKE=	yes
