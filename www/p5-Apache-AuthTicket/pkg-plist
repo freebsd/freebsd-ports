@@ -1,5 +1,7 @@
 %%SITE_PERL%%/Apache/AuthTicket.pm
+%%SITE_PERL%%/Apache2/AuthTicket.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/AuthTicket/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/AuthTicket
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache
+@dirrmtry %%SITE_PERL%%/Apache2
 @dirrmtry %%SITE_PERL%%/Apache
