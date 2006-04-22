@@ -24,6 +24,7 @@ RUN_DEPENDS=	\
 
 DEPRECATED=	"Development ceased"
 
+USE_PERL5_BUILD=yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
