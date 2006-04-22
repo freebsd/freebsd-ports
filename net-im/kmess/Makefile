@@ -16,6 +16,8 @@ COMMENT=	MSN Messenger Client for KDE3
 
 LIB_DEPENDS=	mimelib.1:${PORTSDIR}/deskutils/kdepim3
 
+BROKEN=		Does not compile
+
 USE_KDELIBS_VER=3
 USE_AUTOTOOLS=	libtool:15
 USE_REINPLACE=	yes
