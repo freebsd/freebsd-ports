@@ -4,7 +4,6 @@ bin/genguid
 bin/ns
 bin/nsc
 bin/nsd
-bin/pyroc
 bin/rns
 bin/wxnsc
 bin/xnsc
@@ -65,9 +64,6 @@ bin/xnsc
 %%PYTHON_SITELIBDIR%%/Pyro/protocol.py
 %%PYTHON_SITELIBDIR%%/Pyro/protocol.pyc
 %%PYTHON_SITELIBDIR%%/Pyro/protocol.pyo
-%%PYTHON_SITELIBDIR%%/Pyro/pyroc.py
-%%PYTHON_SITELIBDIR%%/Pyro/pyroc.pyc
-%%PYTHON_SITELIBDIR%%/Pyro/pyroc.pyo
 %%PYTHON_SITELIBDIR%%/Pyro/util.py
 %%PYTHON_SITELIBDIR%%/Pyro/util.pyc
 %%PYTHON_SITELIBDIR%%/Pyro/util.pyo
@@ -131,6 +127,14 @@ bin/xnsc
 %%PORTDOCS%%%%EXAMPLESDIR%%/agent2/serv/objects/wax.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/agent2/serv/server.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/agent2/serv/shop.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/agent3/Readme.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/agent3/agent/ShoppingAgent.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/agent3/agent/__init__.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/agent3/agent/base.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/agent3/client.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/agent3/serv/shop1.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/agent3/serv/shop2.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/agent3/serv/shop3.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/attributes/Person.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/attributes/Readme.txt
 %%PORTDOCS%%%%EXAMPLESDIR%%/attributes/client.py
@@ -176,6 +180,16 @@ bin/xnsc
 %%PORTDOCS%%%%EXAMPLESDIR%%/denyhosts/Readme.txt
 %%PORTDOCS%%%%EXAMPLESDIR%%/denyhosts/client.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/denyhosts/server.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/distributed-computing/Readme.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/distributed-computing/cell/__init__.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/distributed-computing/cell/dispatcher.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/distributed-computing/cell/monitor.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/distributed-computing/cell/processor.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/distributed-computing/client.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/distributed-computing/tasks/__init__.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/distributed-computing/tasks/md5crack.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/distributed-computing/tasks/sorting.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/distributed-computing/tasks/task.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/exceptions/Readme.txt
 %%PORTDOCS%%%%EXAMPLESDIR%%/exceptions/client.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/exceptions/excep.py
@@ -184,6 +198,7 @@ bin/xnsc
 %%PORTDOCS%%%%EXAMPLESDIR%%/factory/client.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/factory/factory.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/factory/server.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/filetransfer/Readme.txt
 %%PORTDOCS%%%%EXAMPLESDIR%%/filetransfer/client.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/filetransfer/server.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/hugetransfer/Readme.txt
@@ -208,6 +223,9 @@ bin/xnsc
 %%PORTDOCS%%%%EXAMPLESDIR%%/noNS/client.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/noNS/client2.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/noNS/server.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/oneway/Readme.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/oneway/client.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/oneway/server.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/quickstart-noNS/Readme.txt
 %%PORTDOCS%%%%EXAMPLESDIR%%/quickstart-noNS/client.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/quickstart-noNS/object.py
@@ -232,17 +250,26 @@ bin/xnsc
 %%PORTDOCS%%%%EXAMPLESDIR%%/ssl/certs/client.pem
 %%PORTDOCS%%%%EXAMPLESDIR%%/ssl/certs/server.pem
 %%PORTDOCS%%%%EXAMPLESDIR%%/ssl/client.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/ssl/newcerts/demoCA/cacert.pem
-%%PORTDOCS%%%%EXAMPLESDIR%%/ssl/newcerts/demoCA/index.txt
-%%PORTDOCS%%%%EXAMPLESDIR%%/ssl/newcerts/demoCA/index.txt.old
-%%PORTDOCS%%%%EXAMPLESDIR%%/ssl/newcerts/demoCA/newcerts/01.pem
-%%PORTDOCS%%%%EXAMPLESDIR%%/ssl/newcerts/demoCA/newcerts/02.pem
-%%PORTDOCS%%%%EXAMPLESDIR%%/ssl/newcerts/demoCA/private/cakey.pem
-%%PORTDOCS%%%%EXAMPLESDIR%%/ssl/newcerts/demoCA/serial
-%%PORTDOCS%%%%EXAMPLESDIR%%/ssl/newcerts/demoCA/serial.old
-%%PORTDOCS%%%%EXAMPLESDIR%%/ssl/newcerts/newcert.pem
-%%PORTDOCS%%%%EXAMPLESDIR%%/ssl/newcerts/newkey.pem
-%%PORTDOCS%%%%EXAMPLESDIR%%/ssl/newcerts/newreq.pem
+%%PORTDOCS%%%%EXAMPLESDIR%%/ssl/newcerts/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/ssl/newcerts/ca-cert.pem
+%%PORTDOCS%%%%EXAMPLESDIR%%/ssl/newcerts/host.key
+%%PORTDOCS%%%%EXAMPLESDIR%%/ssl/newcerts/index
+%%PORTDOCS%%%%EXAMPLESDIR%%/ssl/newcerts/index.attr
+%%PORTDOCS%%%%EXAMPLESDIR%%/ssl/newcerts/index.attr.old
+%%PORTDOCS%%%%EXAMPLESDIR%%/ssl/newcerts/index.old
+%%PORTDOCS%%%%EXAMPLESDIR%%/ssl/newcerts/newcerts/01.pem
+%%PORTDOCS%%%%EXAMPLESDIR%%/ssl/newcerts/newcerts/02.pem
+%%PORTDOCS%%%%EXAMPLESDIR%%/ssl/newcerts/openssl.cnf
+%%PORTDOCS%%%%EXAMPLESDIR%%/ssl/newcerts/private/ca-key.pem
+%%PORTDOCS%%%%EXAMPLESDIR%%/ssl/newcerts/requests/client.cert
+%%PORTDOCS%%%%EXAMPLESDIR%%/ssl/newcerts/requests/client.csr
+%%PORTDOCS%%%%EXAMPLESDIR%%/ssl/newcerts/requests/client.pem
+%%PORTDOCS%%%%EXAMPLESDIR%%/ssl/newcerts/requests/host.key
+%%PORTDOCS%%%%EXAMPLESDIR%%/ssl/newcerts/requests/server.cert
+%%PORTDOCS%%%%EXAMPLESDIR%%/ssl/newcerts/requests/server.csr
+%%PORTDOCS%%%%EXAMPLESDIR%%/ssl/newcerts/requests/server.pem
+%%PORTDOCS%%%%EXAMPLESDIR%%/ssl/newcerts/serial
+%%PORTDOCS%%%%EXAMPLESDIR%%/ssl/newcerts/serial.old
 %%PORTDOCS%%%%EXAMPLESDIR%%/ssl/server.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/stockquotes/Client.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/stockquotes/MClient.py
@@ -261,9 +288,9 @@ bin/xnsc
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/user_passwd_auth
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/stresstest
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/stockquotes
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/ssl/newcerts/demoCA/private
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/ssl/newcerts/demoCA/newcerts
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/ssl/newcerts/demoCA
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/ssl/newcerts/requests
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/ssl/newcerts/private
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/ssl/newcerts/newcerts
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/ssl/newcerts
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/ssl/certs
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/ssl
@@ -271,6 +298,7 @@ bin/xnsc
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/rserve
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/quickstart-noNS
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/quickstart
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/oneway
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/noNS
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/naming
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/multithread
@@ -281,6 +309,9 @@ bin/xnsc
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/filetransfer
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/factory
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/exceptions
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/distributed-computing/tasks
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/distributed-computing/cell
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/distributed-computing
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/denyhosts
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/countingcars
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/circle
@@ -291,6 +322,9 @@ bin/xnsc
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/autoreconnect
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/authenticate
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/attributes
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/agent3/serv
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/agent3/agent
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/agent3
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/agent2/serv/objects
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/agent2/serv
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/agent2/agent
