@@ -12,7 +12,9 @@ include/audacious/vfs.h
 include/audacious/input.h
 include/audacious/output.h
 include/audacious/xml_document.h
+lib/audacious/Effect/libaudiocompress.so
 lib/audacious/Effect/libladspa.so
+lib/audacious/Effect/libstereo.so
 lib/audacious/Effect/libvoice_removal.so
 lib/audacious/General/libsong_change.so
 lib/audacious/General/libscrobbler.so
@@ -51,6 +53,7 @@ share/pixmaps/audacious.png
 %%DATADIR%%/Skins/Default/pledit.txt
 %%DATADIR%%/Skins/Default/posbar.png
 %%DATADIR%%/Skins/Default/shufrep.png
+%%DATADIR%%/Skins/Default/skin.hints
 %%DATADIR%%/Skins/Default/text.png
 %%DATADIR%%/Skins/Default/titlebar.png
 %%DATADIR%%/Skins/Default/viscolor.txt
