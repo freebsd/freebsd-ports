@@ -1,0 +1,34 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: apcupsd
+# REQUIRE: SERVERS
+# BEFORE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following line to /etc/rc.conf[.local] to enable apcupsd
+#
+# apcupsd_enable (bool):	Set to "NO" by default.
+#				Set it to "YES" to enable apcupsd.
+# apcupsd_args (str):		Custom additional arguments to be passed
+#				to apcupsd (default empty).
+#
+
+. %%RC_SUBR%%
+
+name="apcupsd"
+rcvar=${name}_enable
+
+load_rc_config $name
+
+: ${apcupsd_enable="NO"}
+: ${apcupsd_flags="--kill-on-powerfail"}
+: ${apcupsd_pidfile="/var/run/apcupsd.pid"}
+: ${apcupsd_lockfile"/var/spool/lock/apcupsd.lock"}
+
+pidfile="/var/run/apcupsd.pid"
+required_files="%%PREFIX%%/etc/apcupsd/apcupsd.conf"
+command="%%PREFIX%%/sbin/apcupsd"
+
+run_rc_command "$1"
