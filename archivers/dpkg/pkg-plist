@@ -9,6 +9,7 @@ bin/dpkg-genchanges
 bin/dpkg-gencontrol
 bin/dpkg-name
 bin/dpkg-parsechangelog
+bin/dpkg-query
 bin/dpkg-scanpackages
 bin/dpkg-scansources
 bin/dpkg-shlibdeps
@@ -41,23 +42,41 @@ sbin/dpkg-statoverride
 sbin/install-info
 sbin/start-stop-daemon
 sbin/update-alternatives
-sbin/update-rc.d
+%%DOCSDIR%%/ChangeLog
+%%DOCSDIR%%/THANKS
+%%DOCSDIR%%/TODO
+%%DOCSDIR%%/copyright
+%%DATADIR%%/archtable
+%%NLS%%share/locale/bs/LC_MESSAGES/dpkg.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/dpkg.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/dpkg.mo
 %%NLS%%share/locale/da/LC_MESSAGES/dpkg.mo
 %%NLS%%share/locale/de/LC_MESSAGES/dpkg.mo
-%%NLS%%share/locale/en/LC_MESSAGES/dpkg.mo
+%%NLS%%share/locale/el/LC_MESSAGES/dpkg.mo
 %%NLS%%share/locale/es/LC_MESSAGES/dpkg.mo
+%%NLS%%share/locale/eu/LC_MESSAGES/dpkg.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/dpkg.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/dpkg.mo
+%%NLS%%share/locale/he/LC_MESSAGES/dpkg.mo
+%%NLS%%share/locale/id/LC_MESSAGES/dpkg.mo
 %%NLS%%share/locale/it/LC_MESSAGES/dpkg.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/dpkg.mo
+%%NLS%%share/locale/ko/LC_MESSAGES/dpkg.mo
+%%NLS%%share/locale/nb/LC_MESSAGES/dpkg.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/dpkg.mo
+%%NLS%%share/locale/nn/LC_MESSAGES/dpkg.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/dpkg.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/dpkg.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/dpkg.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/dpkg.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/dpkg.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/dpkg.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/dpkg.mo
+%%NLS%%share/locale/tl/LC_MESSAGES/dpkg.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/dpkg.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/dpkg.mo
 @dirrm var/dpkg/updates
+@dirrm var/dpkg/parts
 @dirrm var/dpkg/methods/mnt
 @dirrm var/dpkg/methods/floppy
 @dirrm var/dpkg/methods/disk
@@ -65,6 +84,10 @@ sbin/update-rc.d
 @dirrm var/dpkg/info
 @dirrm var/dpkg/alternatives
 @dirrm var/dpkg
+@dirrm var
+@dirrm %%DATADIR%%/origins
+@dirrm %%DATADIR%%
+@dirrm %%DOCSDIR%%
 @dirrm lib/dpkg/parsechangelog
 @dirrm lib/dpkg/methods/floppy
 @dirrm lib/dpkg/methods/disk

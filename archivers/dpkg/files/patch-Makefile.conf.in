@@ -1,6 +1,6 @@
---- Makefile.conf.in.orig	Thu Mar  6 16:27:30 2003
-+++ Makefile.conf.in	Thu Mar  6 16:27:45 2003
-@@ -59,7 +59,7 @@
+--- Makefile.conf.in.orig	Sat Apr 22 12:31:27 2006
++++ Makefile.conf.in	Sat Apr 22 12:31:41 2006
+@@ -68,7 +68,7 @@
  DEFS			= @DEFS@ -D_GNU_SOURCE
  INCLUDE_CFLAGS		= -I$(top_srcdir)/include -I$(top_srcdir) -I$(srcdir) -I../include -I.. -I. -I$(top_srcdir)/optlib
  

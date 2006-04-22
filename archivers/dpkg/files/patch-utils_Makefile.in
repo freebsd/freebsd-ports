@@ -1,0 +1,11 @@
+--- utils/Makefile.in.orig	Sat Apr 22 12:20:54 2006
++++ utils/Makefile.in	Sat Apr 22 12:22:12 2006
+@@ -72,7 +72,7 @@
+ 	$(INSTALL_DATA) $(srcdir)/$(MD5_MANPAGES) $(DESTDIR)/$(man1dir)
+ 
+ start-stop-daemon: $(SSD_OBJECTS) ../lib/libdpkg.a
+-	$(CC) $(LDFLAGS) -o $@ $(SSD_OBJECTS) $(LIBS) $(SSD_LIBS)
++	$(CC) $(LDFLAGS) -o $@ $(SSD_OBJECTS) $(LIBS) $(SSD_LIBS) $(NLS_LIBS)
+ 
+ md5sum-static: LDFLAGS += -static
+ md5sum-static: ZLIB_LIBS = $(ZLIBS_LIBS_ALSO_STATIC)
