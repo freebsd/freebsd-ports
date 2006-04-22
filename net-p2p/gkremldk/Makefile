@@ -20,6 +20,8 @@ BUILD_DEPENDS=	\
 		${X11BASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 
+BROKEN=		Incorrect pkg-plist
+
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
