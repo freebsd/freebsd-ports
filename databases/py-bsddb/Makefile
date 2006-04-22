@@ -17,47 +17,13 @@ DISTFILES=	${PYTHON_DISTFILE}
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	Python bindings to the Berkeley DB library
 
-.if defined(WITH_DB3)
-WITH_BDB_VER?=	3
-.elif defined(WITH_DB4)
-WITH_BDB_VER?=	4
-.else
-WITH_BDB_VER?=	41
-.endif
-
-.if defined(WITH_BDB_VER)
-.if ${WITH_BDB_VER} == 3
-LIB_DEPENDS=	db3.3:${PORTSDIR}/databases/db3
-DBVERSION=	db3
-DBHEADER=	db3
-.elif ${WITH_BDB_VER} == 4
-LIB_DEPENDS=	db4.0:${PORTSDIR}/databases/db4
-DBVERSION=	db4
-DBHEADER=	db4
-.elif ${WITH_BDB_VER} == 41
-LIB_DEPENDS=	db41.1:${PORTSDIR}/databases/db41
-DBVERSION=	db41
-DBHEADER=	db41
-.elif ${WITH_BDB_VER} == 42
-LIB_DEPENDS=	db-4.2.2:${PORTSDIR}/databases/db42
-DBVERSION=	db-4.2
-DBHEADER=	db42
-.elif ${WITH_BDB_VER} == 43
-LIB_DEPENDS=	db-4.3:${PORTSDIR}/databases/db43
-DBVERSION=	db-4.3
-DBHEADER=	db43
-.else
-BROKEN=         "WITH_BDB_VER must be 3, 4, 41, 42 or 43"
-.endif
-.endif
-
-DIST_SUBDIR=	python
+USE_BDB=	yes
 USE_PYTHON=	2.3+
 USE_PYDISTUTILS=yes
-USE_REINPLACE=	yes
+DIST_SUBDIR=	python
 WRKSRC=		${PYTHON_WRKSRC}/Modules
 MD5_FILE=	${PORTSDIR}/lang/python/distinfo
-MAKE_ENV=	BSDDB_VERSION=${DBVERSION}
+MAKE_ENV=	BSDDB_VERSION=${BDB_LIB_NAME}
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/_bsddb.so
 
 post-extract:
@@ -65,7 +31,7 @@ post-extract:
 
 post-patch:
 	${REINPLACE_CMD} -e \
-		's,^\(#include.*\)\(db\.h.*\)$$,\1${DBHEADER}/\2,' \
+		's,^\(#include.*\)\(db\.h.*\)$$,\1${BDB_INCLUDE_DIR}/\2,' \
 		${WRKSRC}/_bsddb.c
 
 .include <bsd.port.mk>
