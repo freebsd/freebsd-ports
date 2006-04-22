@@ -36,11 +36,7 @@ OPTIONS=	PCRE		"Perl Compatible Regular Expressions" 			on \
 		SASLKRB5	"If your SASL req. Kerberos5 select this option"	off \
 		SASLKMIT	"If your SASL req. MIT Kerberos5 select this option"	off \
 		TLS		"Enable SSL and TLS support"				off \
-		DB3		"Berkeley DB3 (required if SASL built with DB3)"	off \
-		DB40		"Berkeley DB4.0 (required if SASL built with DB4.0)"	off \
-		DB41		"Berkeley DB4.1 (required if SASL built with DB4.1)"	off \
-		DB42		"Berkeley DB4.2 (required if SASL built with DB4.2)"	off \
-		DB43		"Berkeley DB4.3 (required if SASL built with DB4.3)"	off \
+		BDB		"Berkeley DB (choose version with WITH_BDB_VER)"	off \
 		MYSQL		"MySQL maps (choose version with WITH_MYSQL_VER)"	off \
 		PGSQL		"PostgreSQL maps (choose with DEFAULT_PGSQL_VER)"	off \
 		OPENLDAP	"OpenLDAP maps (choose ver. with WITH_OPENLDAP_VER)"	off \
@@ -148,58 +144,10 @@ POSTFIX_CCARGS+=	-DUSE_TLS -I${OPENSSLINC}
 POSTFIX_AUXLIBS+=	-L${OPENSSLLIB} ${LDFLAGS} -lssl -lcrypto
 .endif
 
-.if defined(WITH_DB3)
-.if defined(WITH_DB40) || defined(WITH_DB41) || defined(WITH_DB42) || defined(WITH_DB43)
-BROKEN=			Select only one Berkeley DB version
-.endif
-LIB_DEPENDS+=		db3.3:${PORTSDIR}/databases/db3
-POSTFIX_CCARGS+=	-I${LOCALBASE}/include/db3
-POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -ldb3
-.endif
-
-.if defined(WITH_DB40)
-.if defined(WITH_DB3) || defined(WITH_DB41) || defined(WITH_DB42) || defined(WITH_DB43)
-BROKEN=			Select only one Berkeley DB version
-.endif
-LIB_DEPENDS+=		db4.0:${PORTSDIR}/databases/db4
-POSTFIX_CCARGS+=	-I${LOCALBASE}/include/db4
-POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -ldb4
-.endif
-
-.if defined(WITH_DB40)
-.if defined(WITH_DB3) || defined(WITH_DB41) || defined(WITH_DB42) || defined(WITH_DB43)
-BROKEN=			Select only one Berkeley DB version
-.endif
-LIB_DEPENDS+=		db4.0:${PORTSDIR}/databases/db4
-POSTFIX_CCARGS+=	-I${LOCALBASE}/include/db4
-POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -ldb4
-.endif
-
-.if defined(WITH_DB41)
-.if defined(WITH_DB3) || defined(WITH_DB40) || defined(WITH_DB42) || defined(WITH_DB43)
-BROKEN=			Select only one Berkeley DB version
-.endif
-LIB_DEPENDS+=		db41.1:${PORTSDIR}/databases/db41
-POSTFIX_CCARGS+=	-I${LOCALBASE}/include/db41
-POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -ldb41
-.endif
-
-.if defined(WITH_DB42)
-.if defined(WITH_DB3) || defined(WITH_DB40) || defined(WITH_DB41) || defined(WITH_DB43)
-BROKEN=			Select only one Berkeley DB version
-.endif
-LIB_DEPENDS+=		db-4.2.2:${PORTSDIR}/databases/db42
-POSTFIX_CCARGS+=	-I${LOCALBASE}/include/db42
-POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib/db42/ -ldb
-.endif
-
-.if defined(WITH_DB43)
-.if defined(WITH_DB3) || defined(WITH_DB40) || defined(WITH_DB41) || defined(WITH_DB42)
-BROKEN=			Select only one Berkeley DB version
-.endif
-LIB_DEPENDS+=		db-4.3.0:${PORTSDIR}/databases/db43
-POSTFIX_CCARGS+=	-I${LOCALBASE}/include/db43
-POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib/db43/ -ldb
+.if defined(WITH_BDB)
+USE_BDB=		yes
+POSTFIX_CCARGS+=	-I${BDB_INCLUDE_DIR}
+POSTFIX_AUXLIBS+=	-L${BDB_LIB_DIR} -l${BDB_LIB_NAME}
 .endif
 
 .if defined(WITH_MYSQL)
