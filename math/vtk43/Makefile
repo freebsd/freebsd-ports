@@ -23,6 +23,8 @@ DISTFILES?=	VTK-${PORTVERSION}-cvs${CVSDATE}.tar.gz
 MAINTAINER=	bacon@smithers.neuro.mcw.edu
 COMMENT?=	The Visualization Toolkit shared libs
 
+BROKEN=		Incorrect pkg-plist
+
 USE_REINPLACE=	yes
 
 PREFIX=		${LOCALBASE}/vtk43
