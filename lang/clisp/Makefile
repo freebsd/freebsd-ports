@@ -35,6 +35,11 @@ MAKEMAKE_ARGS=--prefix=${PREFIX} --mandir=${PREFIX}/man --with-dynamic-ffi \
 
 .if ${ARCH} == amd64 || ${ARCH} == ia64
 CONFIGURE_ARGS+=	--disable-mmap
+BROKEN=		Does not compile on ${ARCH}
+.endif
+
+.if ${OSVERSION} < 500000
+BROKEN=		Coredump during build on 4.x
 .endif
 
 # The source doesn't include a top-level Makefile, so we'll fake one.
