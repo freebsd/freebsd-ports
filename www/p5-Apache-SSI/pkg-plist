@@ -1,6 +1,3 @@
 %%SITE_PERL%%/Apache/SSI.pm
 %%SITE_PERL%%/Apache/FakeSSI.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/SSI/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/SSI
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache
 @dirrmtry %%SITE_PERL%%/Apache
