@@ -9,4 +9,6 @@ VOICE=		us3
 VOICEDESC=	American English, high-pitched male
 MASTERDIR=	${.CURDIR}/../festvox-us1-mbrola
 
+BROKEN=		Broken dependency
+
 .include "${MASTERDIR}/Makefile"
