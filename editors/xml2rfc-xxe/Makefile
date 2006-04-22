@@ -15,6 +15,8 @@ COMMENT=	An xml2rfc configuration for XMLMind XML Editor
 
 RUN_DEPENDS=	xxe:${PORTSDIR}/editors/xxe
 
+BROKEN=		Does not build
+
 USE_ZIP=	YES
 NO_BUILD=	YES
 
