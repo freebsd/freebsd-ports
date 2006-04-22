@@ -20,14 +20,12 @@ LIB_DEPENDS=	adns.12:${PORTSDIR}/dns/adns
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-USE_REINPLACE=	yes
 PLIST_SUB+=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR:S/^${LOCALBASE}\///g}
-
-BROKEN=		does not build with a new version of dns/adns
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^\(include_dirs = \).*$$|\1\["${LOCALBASE}/include"\]|g' \
 		-e 's|^\(library_dirs = \).*$$|\1\["${LOCALBASE}/lib"\]|g' \
+		-e 's|\(extra_objects=.*\)$$|\1define_macros=[("adns__rrt_typemask","adns_rrt_typemask")],|g' \
 		${WRKSRC}/setup.py
 
 .include <bsd.port.mk>
