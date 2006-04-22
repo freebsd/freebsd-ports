@@ -1,6 +1,5 @@
 sbin/apcupsd
 sbin/apcaccess
-sbin/apcnisd
 sbin/apctest
 sbin/smtp
 %%POWERFL%%sbin/powerflute
@@ -12,13 +11,13 @@ etc/apcupsd/apccontrol
 etc/apcupsd/changeme
 etc/apcupsd/commfailure
 etc/apcupsd/commok
-etc/apcupsd/mainsback
 etc/apcupsd/masterconnect
 etc/apcupsd/mastertimeout
 etc/apcupsd/onbattery
+etc/apcupsd/offbattery
 %%CGI%%@unexec if cmp -s %D/etc/apcupsd/apcupsd.css.sample %D/etc/apcupsd/apcupsd.css; then rm -f %D/etc/apcupsd/apcupsd.css; fi
 %%CGI%%etc/apcupsd/apcupsd.css.sample
-%%CGI%%@unexec if cmp -s %D/etc/apcupsd/host.conf.sample %D/etc/apcupsd/host.conf; then rm -f %D/etc/apcupsd/host.conf; fi
+%%CGI%%@unexec if cmp -s %D/etc/apcupsd/hosts.conf.sample %D/etc/apcupsd/hosts.conf; then rm -f %D/etc/apcupsd/hosts.conf; fi
 %%CGI%%etc/apcupsd/hosts.conf.sample
 %%CGI%%@unexec if cmp -s %D/etc/apcupsd/multimon.conf.sample %D/etc/apcupsd/multimon.conf; then rm -f %D/etc/apcupsd/multimon.conf; fi
 %%CGI%%etc/apcupsd/multimon.conf.sample
@@ -26,6 +25,6 @@ etc/apcupsd/onbattery
 %%CGI%%etc/apcupsd/cgi/upsfstats.cgi
 %%CGI%%etc/apcupsd/cgi/upsimage.cgi
 %%CGI%%etc/apcupsd/cgi/upsstats.cgi
-etc/rc.d/%%STARTUP_SCRIPT%%
 %%CGI%%@dirrm etc/apcupsd/cgi
 @dirrmtry etc/apcupsd
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

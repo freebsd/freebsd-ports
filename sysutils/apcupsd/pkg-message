@@ -1,12 +1,4 @@
 **********************************************************************
-NOTE IF you install a apcupsd server:
-
-Change to /dev and create a softlink to e.g. ups from the serial line
-the USV is connected to, e.g.
-
-  cd /dev
-  ln -s cuaa1 ups
-
 Read the manual
 
   ${PREFIX}/share/doc/apcupsd/manual.pdf
@@ -18,7 +10,7 @@ Sample files are installed in ${PREFIX}/etc/apcupsd. These files
 must be copied and/or configured for a proper working apcupsd.
 You need to modify ${PREFIX}/etc/apcupsd/apcupsd.conf as follows:
 
-  For serial cable: DEVICE /dev/ups (or /dev/cuaaX)
+  For serial cable: DEVICE /dev/cuaadX (or /dev/cuaaX for [45.]x) 
   For USB cable: DEVICE (yes, leave it blank after DEVICE)
 
 NOTE that for USB cable you must comment out the line
@@ -29,5 +21,8 @@ in your kernel configuration file and recompile the kernel.
 Your keyboard and mouse will still work.
 
 WARNING USB support on FreeBSD is still considered BETA!
+
+Add apcupsd_enable=YES to your /etc/rc.conf[.local] to have apcupsd
+starting up at boot time.
 
 **********************************************************************
