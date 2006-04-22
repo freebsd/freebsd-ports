@@ -15,11 +15,15 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	hideo@lastamericanempire.com
 COMMENT=	Authen::Libwrap - access to TCP Wrappers library
 
-BUILD_DEPENDS=	${SITE_PERL}/Module/Build.pm:${PORTSDIR}/devel/p5-Module-Build
-RUN_DEPENDS=	${BUILD_DEPENDS}
-
 PERL_MODBUILD=	yes
 
 MAN3=	Authen::Libwrap.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+post-patch:
+	@${PERL} -pi -e 'undef $$_ if /^\s*(?:no|use) warnings/o' ${WRKSRC}/Build.PL ${WRKSRC}/lib/Authen/Libwrap.pm
+.endif
+
+.include <bsd.port.post.mk>
