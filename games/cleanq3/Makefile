@@ -38,6 +38,14 @@ OPTIONS=	OPTIMIZED_CFLAGS "Build with extra optimization options" on
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} != "i386"
+BROKEN=		Does not compile on ${ARCH}
+.endif
+
+.if ${OSVERSION} < 500000
+BROKEN=		Does not compile on 4.x
+.endif
+
 .if defined(WITH_OPTIMIZED_CFLAGS)
 CFLAGS=		-O6 -fomit-frame-pointer -ffast-math -falign-loops=2 -falign-jumps=2 \
 		-falign-functions=2 -fno-strict-aliasing -fstrength-reduce
