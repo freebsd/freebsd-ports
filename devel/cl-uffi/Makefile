@@ -18,6 +18,8 @@ COMMENT=	Universal Foreign Function Interface for Common Lisp
 BUILD_DEPENDS=	${LOCALBASE}/lib/common-lisp/asdf/asdf.lisp:${PORTSDIR}/devel/cl-asdf
 RUN_DEPENDS=	${LOCALBASE}/lib/common-lisp/asdf/asdf.lisp:${PORTSDIR}/devel/cl-asdf
 
+BROKEN=		Unfetchable
+
 DOCSDIR?=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 NO_BUILD=	yes
 CL_LIBDIR?=	${LOCALBASE}/lib/common-lisp
