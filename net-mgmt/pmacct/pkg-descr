@@ -10,4 +10,4 @@ Gathering packets off the wire is done either using pcap
 library (and promiscuous mode of the listening interface) or
 reading Netflow packets coming from the network.
 
-WWW: http://www.ba.cnr.it/~paolo/pmacct/ 
+WWW: http://www.pmacct.net/
