@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	gui
-PORTVERSION=	1.5.1
-PORTREVISION=	3
+PORTVERSION=	1.7
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	http://www.cosc.canterbury.ac.nz/~greg/python_gui/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,19 +18,18 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/Pyrex/Distutils/__init__.py:${PORTSDIR}/deve
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-USE_REINPLACE=	yes
 USE_GNOME=	pygtk2
 
 DOCSDIR=	share/doc/${PKGNAMEPREFIX}${PORTNAME}
 EXAMPLESDIR=	share/examples/${PKGNAMEPREFIX}${PORTNAME}
 
 post-extract:
-	${RM} -rf ${WRKSRC}/GUI/Mac
+	${RM} -rf ${WRKSRC}/GUI/Cocoa
 	${TOUCH} ${WRKSRC}/GUI/Gtk/__init__.py \
 		${WRKSRC}/GUI/Generic/__init__.py
 
 post-patch:
-	${REINPLACE_CMD} -e 's/"GUI.Mac",//g' ${WRKSRC}/setup.py
+	${REINPLACE_CMD} -e 's/"GUI.Cocoa",//g' ${WRKSRC}/setup.py
 
 post-install:
 .if !defined(NOPORTDOCS)
