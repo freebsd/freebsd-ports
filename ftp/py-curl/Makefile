@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	curl
-PORTVERSION=	7.14.1
+PORTVERSION=	7.15.2
 CATEGORIES=	ftp python
 MASTER_SITES=	http://pycurl.sourceforge.net/download/ \
 		http://pycurl.sourceforge.net/download/00-OLD-VERSIONS/
@@ -20,7 +20,6 @@ LIB_DEPENDS=	curl.3:${PORTSDIR}/ftp/curl
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-USE_REINPLACE=	yes
 USE_OPENSSL=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/py-curl
