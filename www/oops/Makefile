@@ -9,7 +9,8 @@ PORTNAME=	oops
 PORTVERSION=	${OOPSVERSION}
 PORTREVISION=	4
 CATEGORIES=	www
-MASTER_SITES=	http://oops-cache.org/
+MASTER_SITES=	http://oops-cache.org/ \
+		ftp://kucha.ru/pub/misc/oops/
 DISTNAME=	${PORTNAME}-${OOPSVERSION}
 
 MAINTAINER=	marck@FreeBSD.org
