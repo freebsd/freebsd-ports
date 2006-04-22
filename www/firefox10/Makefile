@@ -37,9 +37,11 @@ FIREFOX_ICON=		${MOZILLA}.xpm
 FIREFOX_ICON_SRC=	${PREFIX}/lib/${MOZILLA}/icons/default.xpm
 MOZILLA=	${PORTNAME}${MOZILLA_SUFX}
 MOZILLA_SUFX=	10
+MOZ_EXTENSIONS+=cookie,xml-rpc,xmlextras,pref,transformiix,universalchardet,webservices,inspector,p3p,gnomevfs,negotiateauth
 MOZ_EXPORT+=	MOZ_INTERNAL_LIBART_LGPL=1
 MOZ_MK_OPTIONS+=MOZ_INTERNAL_LIBART_LGPL=1
-MOZ_OPTIONS=	--enable-application=browser \
+MOZ_OPTIONS=	--disable-ldap \
+		--enable-application=browser \
 		--enable-official-branding \
 		--program-transform-name='s/firefox/${MOZILLA}/' \
 		--enable-svg \
