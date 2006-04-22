@@ -17,10 +17,10 @@ MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Python ICQ-Transport for Jabber
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/OpenSSL/__init__.py:${PORTSDIR}/security/py-openssl \
-		${PYTHON_SITELIBDIR}/twisted/__init__.py:${PORTSDIR}/devel/py-twisted \
-		${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging
+		${PYTHON_SITELIBDIR}/twisted/__init__.py:${PORTSDIR}/devel/py-twisted
 
-OPTIONS=	EJABBERD "Use transport with ejabberd" off
+OPTIONS=	EJABBERD "Use transport with ejabberd" off \
+		X11 "Use X11 (required to avatars working)" on
 
 NO_BUILD=	yes
 USE_PYTHON=	yes
@@ -39,6 +39,10 @@ PORTDOCS=	COPYING README NEWS
 JABBER_USER?=	ejabberd
 .else
 JABBER_USER?=	jabber
+.endif
+
+.if !defined(WITHOUT_X11)
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging
 .endif
 
 SUB_LIST+=	JABBER_USER=${JABBER_USER}
