@@ -1,11 +1,11 @@
---- Makefile.in.orig	Fri Apr  4 19:35:23 2003
-+++ Makefile.in	Fri Apr  4 19:35:36 2003
-@@ -9,7 +9,7 @@
+--- Makefile.in.orig	Sat Apr 22 12:32:05 2006
++++ Makefile.in	Sat Apr 22 12:32:15 2006
+@@ -10,7 +10,7 @@
  include Makefile.conf
  
- SUBDIRS		= include optlib lib intl dpkg-deb split scripts utils main \
--		  utils @DSELECTDIR@ po methods doc
-+		  utils @DSELECTDIR@ po methods
+ SUBDIRS		= include optlib lib dpkg-deb split scripts utils main \
+-		  @DSELECTDIR@ po methods man doc
++		  @DSELECTDIR@ po methods man
  
  all: version.h all-recursive
  
