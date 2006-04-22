@@ -23,6 +23,8 @@ DISTFILES?=	VTK-${PORTVERSION}-LatestRelease.tar.gz
 MAINTAINER=	ko@irfu.se
 COMMENT?=	The Visualization Toolkit shared libs
 
+BROKEN=		Does not build
+
 USE_REINPLACE=	yes
 
 LIBVER=		1
