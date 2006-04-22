@@ -8,7 +8,7 @@
 PORTNAME=	groff
 PORTVERSION=	1.18.1
 DISTVERSIONSUFFIX=	.1
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	japanese print
 MASTER_SITES=	${MASTER_SITE_LOCAL:S,%SUBDIR%,okazaki/&,} \
 		${MASTER_SITE_DEBIAN:S,$,:debian,}
@@ -17,7 +17,7 @@ DISTFILES=	${DISTNAME:S,-,_,}.orig${EXTRACT_SUFX}:debian ${TMAC_DISTNAME}.tar.gz
 
 PATCH_SITES=	${MASTER_SITE_DEBIAN}
 PATCH_SITE_SUBDIR=	pool/main/g/groff
-PATCHFILES=	${DISTNAME:S,-,_,}-7.diff.gz
+PATCHFILES=	${DISTNAME:S,-,_,}-12.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	ports@FreeBSD.org
@@ -33,7 +33,6 @@ TMAC_DISTNAME=	tmac-${TMAC_DATE}_2
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
-USE_REINPLACE=	yes
 
 CONFIGURE_ARGS=	--enable-multibyte
 CONFIGURE_ENV=	INSTALL_MAN="${INSTALL_MAN}" \
@@ -44,7 +43,6 @@ TMACBASE=	${WRKDIR}/${TMAC_DISTNAME}
 TMACDIR=	share/groff/${PORTVERSION}/tmac
 SITETMACDIR=	share/groff/site-tmac
 MDOCDIR=	${TMACDIR}/mdoc
-INFODIR=	${PREFIX}/info
 PLIST_SUB=	GROFF_VERSION=${PORTVERSION}
 
 MAN1=		addftinfo.1 afmtodit.1 \
@@ -95,6 +93,7 @@ WITHOUT_INFO=	yes
 .if defined(WITHOUT_INFO)
 PLIST_SUB+=	INFO="@comment "
 .else
+INFO=		groff
 PLIST_SUB+=	INFO=""
 .endif
 
@@ -104,9 +103,6 @@ WITHOUT_WCHAR_H=	yes
 .endif
 
 POST_INSTALL_SEQ=	install-links
-.if !defined(WITHOUT_INFO)
-POST_INSTALL_SEQ+=	install-info
-.endif
 .if !defined(NOPORTDOCS)
 POST_INSTALL_SEQ+=	install-documents
 .endif
@@ -114,6 +110,8 @@ POST_INSTALL_SEQ+=	install-documents
 post-patch:
 	${REINPLACE_CMD} -e 's|\(install_data\)|\1 install_doc|g;' \
 		${WRKSRC}/Makefile.in
+	${REINPLACE_CMD} -E -e 's|^@setfilename +groff|&.info|g;' \
+		${WRKSRC}/doc/groff.texinfo
 .if defined(WITHOUT_WCHAR_H)
 	${REINPLACE_CMD} -e 's|#include <wchar[.]h>||g;' \
 		${WRKSRC}/src/libs/libgroff/encoding.cc
@@ -125,7 +123,9 @@ post-build:
 	cd ${WRKSRC}/doc && makeinfo --no-split groff.texinfo
 .endif
 	cd ${WRKSRC} && ${FIND} font -name DESC \
-	| ${XARGS} ${REINPLACE_CMD} -e 's|pro \(.*\)|pro ${PREFIX}/bin/\1|g;'
+	| ${XARGS} ${REINPLACE_CMD} -E -e 's|pro +(gxditview)|pro ${X11BASE}/bin/\1|g;'
+	cd ${WRKSRC} && ${FIND} font -name DESC \
+	| ${XARGS} ${REINPLACE_CMD} -E -e 's|pro +([^/].*)|pro ${PREFIX}/bin/\1|g;'
 
 post-install: ${POST_INSTALL_SEQ}
 .for F in ${SITETMACFILES}
@@ -143,10 +143,9 @@ install-documents:
 .for F in ${DOCUMENTS}
 	${INSTALL_DATA} ${INSTALL_WRKSRC}/${F} ${DOCSDIR}/${PORTVERSION}
 .endfor
-
-install-info:
-	${INSTALL_DATA} ${WRKSRC}/doc/groff ${INFODIR}
-	install-info ${INFODIR}/groff ${INFODIR}/dir
+.if !defined(WITHOUT_INFO)
+	${INSTALL_DATA} ${WRKSRC}/doc/groff.info ${PREFIX}/${INFO_PATH}
+.endif
 
 install-links:
 .for F in eqn neqn pic tbl
