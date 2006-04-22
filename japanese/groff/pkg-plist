@@ -32,9 +32,6 @@ bin/soelim
 bin/tbl
 bin/tfmtodit
 bin/troff
-%%INFO%%@unexec install-info --delete %D/info/groff %D/info/dir
-%%INFO%%info/groff
-%%INFO%%@exec install-info %D/info/groff %D/info/dir
 %%DATADIR%%/%%GROFF_VERSION%%/eign
 %%DATADIR%%/%%GROFF_VERSION%%/font/devX100-12/CB
 %%DATADIR%%/%%GROFF_VERSION%%/font/devX100-12/CBI
@@ -328,6 +325,7 @@ bin/troff
 %%DATADIR%%/%%GROFF_VERSION%%/tmac/an.tmac
 %%DATADIR%%/%%GROFF_VERSION%%/tmac/andoc.tmac
 %%DATADIR%%/%%GROFF_VERSION%%/tmac/andocj.tmac
+%%DATADIR%%/%%GROFF_VERSION%%/tmac/big5.tmac
 %%DATADIR%%/%%GROFF_VERSION%%/tmac/cp1047.tmac
 %%DATADIR%%/%%GROFF_VERSION%%/tmac/doc-old.tmac
 %%DATADIR%%/%%GROFF_VERSION%%/tmac/doc.tmac
@@ -337,6 +335,7 @@ bin/troff
 %%DATADIR%%/%%GROFF_VERSION%%/tmac/ec.tmac
 %%DATADIR%%/%%GROFF_VERSION%%/tmac/eqnrc
 %%DATADIR%%/%%GROFF_VERSION%%/tmac/euc-jp.tmac
+%%DATADIR%%/%%GROFF_VERSION%%/tmac/gb.tmac
 %%DATADIR%%/%%GROFF_VERSION%%/tmac/html.tmac
 %%DATADIR%%/%%GROFF_VERSION%%/tmac/hyphen.us
 %%DATADIR%%/%%GROFF_VERSION%%/tmac/latin1.tmac
