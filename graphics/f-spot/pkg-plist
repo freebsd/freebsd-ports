@@ -58,4 +58,7 @@ share/locale/zh_CN/LC_MESSAGES/f-spot.mo
 share/locale/zh_TW/LC_MESSAGES/f-spot.mo
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
+@dirrmtry share/gnome-screensaver/themes
+@dirrmtry share/gnome-screensaver
+@dirrmtry libexec/gnome-screensaver
 @dirrm lib/f-spot
