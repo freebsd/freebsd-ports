@@ -18,8 +18,8 @@ DISTFILES=	gcc-core-${VERSIONSTRING}${EXTRACT_SUFX} \
 		gcc-objc-${VERSIONSTRING}${EXTRACT_SUFX} \
 		gcc-testsuite-${VERSIONSTRING}${EXTRACT_SUFX}
 
-MAINTAINER=	gerald@FreeBSD.org
-COMMENT=	GNU Compiler Collection 4.1
+MAINTAINER?=	gerald@FreeBSD.org
+COMMENT?=	GNU Compiler Collection 4.1
 
 .if defined(WITH_FORTRAN)
 LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4 \

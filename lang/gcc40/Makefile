@@ -18,8 +18,8 @@ DISTFILES=	gcc-core-${VERSIONSTRING}${EXTRACT_SUFX} \
 		gcc-objc-${VERSIONSTRING}${EXTRACT_SUFX} \
 		gcc-testsuite-${VERSIONSTRING}${EXTRACT_SUFX}
 
-MAINTAINER=	gerald@FreeBSD.org
-COMMENT=	GNU Compiler Collection 4.0
+MAINTAINER?=	gerald@FreeBSD.org
+COMMENT?=	GNU Compiler Collection 4.0
 
 SUFFIX=		40
 LATEST_LINK?=	gcc${SUFFIX}${PKGNAMESUFFIX}
