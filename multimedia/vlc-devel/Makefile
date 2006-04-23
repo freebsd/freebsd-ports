@@ -228,17 +228,17 @@
 #
 
 PORTNAME=	vlc
-DISTVERSION=	0.8.5.20060314
-PORTREVISION=	3
+DISTVERSION=	0.8.5.20060423-test3
+PORTREVISION=	0
 CATEGORIES=	multimedia audio ipv6 net www
-MASTER_SITES=	http://nightlies.videolan.org/build/source/
-#		http://download2.videolan.org/pub/videolan/testing/${PORTNAME}-${DISTVERSION}/ \
+MASTER_SITES=	http://download.videolan.org/pub/videolan/testing/vlc-${DISTVERSION}/
+#		http://nightlies.videolan.org/build/source/
 #		http://download.videolan.org/pub/videolan/vlc/${PORTVERSION}/ \
 #		http://ftp.snt.utwente.nl/pub/software/videolan/vlc/${PORTVERSION}/ \
 #		ftp://ftp.crans.org/pub/videolan/vlc/${PORTVERSION}/ \
 #		ftp://videolan.cs.pu.edu.tw/Windows/VideoLAN/vlc/${PORTVERSION}/ \
 PKGNAMESUFFIX=	-devel
-DISTNAME=	${PORTNAME}-snapshot-${DISTVERSION:S/0.8.5.//}
+DISTNAME=	${PORTNAME}-${DISTVERSION:S/.20060423//}
 
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Multimedia streaming server and player for various audio/video formats
@@ -247,11 +247,11 @@ RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/bitstream-vera/Vera.ttf:${PORTSDIR}/x11-fo
 
 CONFLICTS=	vlc-[0-9]*
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-0.8.5-test1
+#WRKSRC=		${WRKDIR}/${PORTNAME}-0.8.5-test1
 
 WITH_VLC_DEFAULT_FONT?=	${X11BASE}/lib/X11/fonts/bitstream-vera/Vera.ttf
 
-#USE_BZIP2=	yes
+USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GETOPT_LONG=yes
 USE_GETTEXT=	yes
@@ -652,7 +652,7 @@ CONFIGURE_ARGS+=--disable-smb
 .endif
 
 .if defined(WITH_SDL) && !defined(WITHOUT_SDL)
-USE_SDL=	yes
+USE_SDL=	image
 CONFIGURE_ARGS+=--enable-sdl
 .else
 CONFIGURE_ARGS+=--disable-sdl
