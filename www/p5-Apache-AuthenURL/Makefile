@@ -6,24 +6,21 @@
 #
 
 PORTNAME=	Apache-AuthenURL
-PORTVERSION=	0.9
+PORTVERSION=	2.05
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Apache
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Apache/mod_perl module to handle auth against external URLs
 
-BUILD_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/Apache/AuthenCache.pm:${PORTSDIR}/www/p5-Apache-AuthenCache
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/mod_perl.pm:${PORTSDIR}/www/mod_perl \
+		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN3=		Apache::AuthenURL.3
-
-post-patch:
-	@${FIND} ${WRKSRC} -name "*.orig" -a -exec ${RM} -f {} \;
+MAN3=		Apache::AuthenURL.3 Apache::AuthenURL::Cache.3
 
 .include <bsd.port.mk>
