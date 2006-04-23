@@ -3,16 +3,16 @@
 # Whom:                Yukihiro Nakai <nakai@FreeBSD.org>
 #
 # $FreeBSD$
-#   $Id: Makefile,v 1.55 2006/02/05 03:04:28 tmclau02 Exp $
+#   $Id: Makefile,v 1.58 2006/04/15 02:00:25 tmclau02 Exp $
 #
 
 PORTNAME=	mono
-PORTVERSION=	1.1.13.2
+PORTVERSION=	1.1.13.6
 PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.go-mono.com/sources/mono-1.1/ \
 		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	tmclaugh
+MASTER_SITE_SUBDIR=	tmclaugh/mono
 
 MAINTAINER=	bsd-sharp-list@forge.novell.com
 COMMENT=	An open source implementation of .NET Development Framework
@@ -51,7 +51,7 @@ pre-everything::
 	@${CAT} ${PKGMESSAGE}
 
 .if ${OSVERSION} < 503000
-IGNORE=	Does not work on 4.X and 5.X before 503000
+IGNORE=	does not work on 4.X and 5.X before 503000
 .endif
 
 # ttyname_r(3) patch
@@ -68,6 +68,10 @@ post-patch:
 		${WRKSRC}/mono/metadata/assembly.c
 	@${REINPLACE_CMD} -e 's|.so.0|.so|g' \
 		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|%%CC%%|${CC}|g ; \
+		s|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|g' \
+		${WRKSRC}/mcs/tools/mkbundle/mkbundle.cs
+
 .if ${OSVERSION} >= 700000
 	@${REINPLACE_CMD} -e 's|freebsd6|freebsd7|g' \
 	${WRKSRC}/configure ${WRKSRC}/libgc/configure
