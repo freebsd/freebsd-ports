@@ -46,7 +46,7 @@ MAN1=	gnomemeeting.1
 
 .include <bsd.port.pre.mk>
 
-if ${ARCH} == sparc64 && ${OSVERSION} <= 700003
+.if ${ARCH} == sparc64 && ${OSVERSION} <= 700003
 BROKEN= configure fails due to missing symbol in default thread library
 .endif
 
