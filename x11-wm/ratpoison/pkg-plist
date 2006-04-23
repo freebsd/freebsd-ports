@@ -8,6 +8,8 @@ bin/rpws
 %%PORTDOCS%%%%DATADIR%%/rpshowall.sh
 %%PORTDOCS%%%%DATADIR%%/rpws
 %%PORTDOCS%%%%DATADIR%%/split.sh
+%%PORTDOCS%%%%DATADIR%%/sloppy.c
+%%PORTDOCS%%%%DATADIR%%/unrat.c
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
