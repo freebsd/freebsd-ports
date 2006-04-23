@@ -1,0 +1,11 @@
+--- #rijndael.h~	Thu Apr 20 13:56:04 2006
++++ rijndael.h	Thu Apr 20 13:56:04 2006
+@@ -27,7 +27,7 @@
+ 
+ #include <stdlib.h>
+ 
+-typedef unsigned long UINT32;
++typedef unsigned int UINT32;
+ typedef unsigned char UINT8;
+ 
+ /* Other block sizes and key lengths are possible, but in the context of
