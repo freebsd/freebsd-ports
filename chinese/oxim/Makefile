@@ -6,17 +6,18 @@
 #
 
 PORTNAME=	oxim
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	chinese textproc
-MASTER_SITES=	ftp://140.111.128.66/odp/OXIM/Source/
+MASTER_SITES=	ftp://apt.nc.hcc.edu.tw/pub/mirror/opendesktop.org.tw/OXIM/Source/ \
+		ftp://140.111.128.66/odp/OXIM/Source/
 
 MAINTAINER=	rafan@infor.org
 COMMENT=	Open X Input Method server
 
 # make sure we have the required libchewing
 LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/libXft
-BUILD_DEPENDS=	zh-libchewing>=0.2.7:${PORTSDIR}/chinese/libchewing
-RUN_DEPENDS=	zh-libchewing>=0.2.7:${PORTSDIR}/chinese/libchewing \
+BUILD_DEPENDS=	zh-libchewing>=0.2.6:${PORTSDIR}/chinese/libchewing
+RUN_DEPENDS=	zh-libchewing>=0.2.6:${PORTSDIR}/chinese/libchewing \
 		zh-fireflyttf>=0:${PORTSDIR}/chinese/fireflyttf
 
 OPTIONS=	GTK2 "Enable GTK2 input method module" On
@@ -62,6 +63,9 @@ CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 post-patch:
 	${REINPLACE_CMD} 's|%%PREFIX%%|${PREFIX}|' \
 			${WRKSRC}/src/gtk-immodule/gtkintl.h
+	${REINPLACE_CMD} 's|^(defint|(define|' \
+			${WRKSRC}/etc/oxim.conf.in
+
 post-install:
 .if !defined(WITHOUT_GTK2)
 	@gtk-query-immodules-2.0 > ${PREFIX}/etc/gtk-2.0/gtk.immodules
