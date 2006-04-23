@@ -20,7 +20,7 @@ USE_REINPLACE=	yes
 MAN1=		icontact.1 xvtoppm.1
 
 post-patch:
-	${REINPLACE_CMD} "s/CC=cc/CC=${CC}/g; s/CFLAGS=-O/CFLAGS=${CFLAGS}/g" \
+	${REINPLACE_CMD} "s|CC=cc|CC=${CC}|g; s|CFLAGS=-O|CFLAGS=${CFLAGS}|g" \
 		${WRKSRC}/Makefile
 
 do-install:
