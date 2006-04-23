@@ -34,6 +34,39 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="8d4ae57d-d2ab-11da-a672-000e0c2e438a">
+    <topic>xine -- multiple remote string vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>xine</name>
+	<range><lt>0.99.4_4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>c0ntexb reports:</p>
+	<blockquote cite="http://www.open-security.org/advisories/16">
+	  <p>There are 2 format string bugs in the latest version of
+	    Xine that could be exploited by a malicious person to
+	    execute code on the system of a remote user running the
+	    media player against a malicious playlist file.  By passing
+	    a format specifier in the path of a file that is embedded
+	    in a remote playlist, it is possible to trigger this bug.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>17579</bid>
+      <cvename>CVE-2006-1905</cvename>
+      <url>http://www.open-security.org/advisories/16</url>
+    </references>
+    <dates>
+      <discovery>2006-04-18</discovery>
+      <entry>2006-04-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="408f6ebf-d152-11da-962f-000b972eb521">
     <topic>cyrus-sasl -- DIGEST-MD5 Pre-Authentication Denial of Service</topic>
     <affects>
