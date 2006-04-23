@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	MySQLdb
-PORTVERSION=	1.2.0
-PORTREVISION=	1
+DISTVERSION=	1.2.1_p2
 CATEGORIES=	databases python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mysql-python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	MySQL-python-${PORTVERSION}
+DISTNAME=	MySQL-python-${DISTVERSION}
 
 MAINTAINER=	mnag@FreeBSD.org
 COMMENT=	Access a MySQL database through Python
@@ -23,41 +22,23 @@ USE_MYSQL=		yes
 
 CONFLICTS=	py*-MySQLdb-devel-[0-9]*
 
-pre-fetch:
-	@${ECHO} ""
-	@${ECHO} "You may use the following build options:"
-	@${ECHO} ""
-	@${ECHO} "	WITHOUT_MYSQLCLIENT_R=yes	Don't use mysqlclient_r lib"
-	@${ECHO} "					but is not guarantee thread-safe."
-	@${ECHO} ""
-	@${ECHO} "	Default use mysqlclient_r"
-	@${ECHO} ""
-
-.if defined(WITHOUT_MYSQLCLIENT_R)
-MAKE_ENV+=	mysqlclient="mysqlclient"
-.endif
-
-.if !defined(NOPORTDOCS)
 PORTDOCS=	*
+
+OPTIONSFILE=	${PORT_DBDIR}/${PORTNAME}/options
+OPTIONS=	MYSQLCLIENT_R "Use libmysqlclient_r (thread safe)" on
+
+.include <bsd.port.pre.mk>
+
+post-patch:
+.if defined(WITHOUT_MYSQLCLIENT_R)
+	@${REINPLACE_CMD} -E -e "s|(threadsafe.*)True|\1 False|" \
+		${WRKSRC}/site.cfg
 .endif
 
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/doc/*.html ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/doc/*.txt ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/doc/*.css ${DOCSDIR}
-	@${MKDIR} ${DOCSDIR}/doc
-	@${INSTALL_DATA} ${WRKSRC}/doc/doc/*.html ${DOCSDIR}/doc
-	@${INSTALL_DATA} ${WRKSRC}/doc/doc/*.css ${DOCSDIR}/doc
-	@${MKDIR} ${DOCSDIR}/doc/public
-	@${INSTALL_DATA} ${WRKSRC}/doc/doc/public/* ${DOCSDIR}/doc/public
-	@${MKDIR} ${DOCSDIR}/doc/private
-	@${INSTALL_DATA} ${WRKSRC}/doc/doc/private/* ${DOCSDIR}/doc/private
-	@${MKDIR} ${DOCSDIR}/public
-	@${INSTALL_DATA} ${WRKSRC}/doc/public/* ${DOCSDIR}/public
-	@${MKDIR} ${DOCSDIR}/private
-	@${INSTALL_DATA} ${WRKSRC}/doc/private/* ${DOCSDIR}/private
+	${INSTALL_DATA} ${WRKSRC}/doc/*.txt ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
