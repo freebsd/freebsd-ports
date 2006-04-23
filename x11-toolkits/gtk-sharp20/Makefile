@@ -8,7 +8,7 @@
 
 PORTNAME=	gtk-sharp
 PORTVERSION=	2.8.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://go-mono.com/sources/gtk-sharp-2.0/
 
@@ -18,7 +18,8 @@ COMMENT=	GTK+ and GNOME interfaces for the .NET runtime
 BUILD_DEPENDS=	mono:${PORTSDIR}/lang/mono \
 		monodocer:${PORTSDIR}/devel/monodoc
 RUN_DEPENDS=	mono:${PORTSDIR}/lang/mono \
-		monodocer:${PORTSDIR}/devel/monodoc
+		monodocer:${PORTSDIR}/devel/monodoc \
+		${SITE_PERL}/${PERL_ARCH}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-XML-LibXML
 
 USE_X_PREFIX=	yes
 LATEST_LINK=	gtk-sharp20
