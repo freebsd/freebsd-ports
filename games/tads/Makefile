@@ -8,7 +8,9 @@
 PORTNAME=	tads
 PORTVERSION=	2.5.9
 CATEGORIES=	games lang
-MASTER_SITES=	http://www.ifarchive.org/if-archive/programming/tads2/source/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+#		http://www.ifarchive.org/if-archive/programming/tads2/source/
+MASTER_SITE_SUBDIR=kris
 DISTNAME=	tads23-unix
 
 MAINTAINER=	kris@FreeBSD.org
