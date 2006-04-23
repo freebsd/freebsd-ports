@@ -215,7 +215,7 @@ lib/libCEGUIOgreRenderer.so.0
 lib/libOgreMain.a
 lib/libOgreMain.la
 lib/libOgreMain.so
-lib/libOgreMain.so.9
+lib/libOgreMain.so.10
 lib/libOgrePlatform.a
 lib/libOgrePlatform.la
 lib/libOgrePlatform.so
