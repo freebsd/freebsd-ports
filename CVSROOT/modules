@@ -2574,6 +2574,7 @@ fracplanet	ports/graphics/fracplanet
 fragroute	ports/security/fragroute
 fragrouter	ports/security/fragrouter
 fraqtive	ports/graphics/fraqtive
+freealut	ports/audio/freealut
 freebase	ports/devel/freebase
 freebirth	ports/audio/freebirth
 freebsd-games	ports/games/freebsd-games
