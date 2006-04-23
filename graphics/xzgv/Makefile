@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	apps/graphics/viewers/X
 MAINTAINER=	nosuzuki@postcard.st
 COMMENT=	An image viewer with thumbnail-based file selector for X
 
+FORBIDDEN=	http://vuxml.freebsd.org/a813a219-d2d4-11da-a672-000e0c2e438a.html
+
 USE_X_PREFIX=	yes
 USE_GNOME=	imlib
 USE_REINPLACE=	yes

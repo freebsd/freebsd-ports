@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	apps/graphics/viewers/svga
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphics viewer for SVGAlib
 
+FORBIDDEN=	http://vuxml.freebsd.org/a813a219-d2d4-11da-a672-000e0c2e438a.html
+
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		vga.1:${PORTSDIR}/graphics/svgalib \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
