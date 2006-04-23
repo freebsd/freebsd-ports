@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mod_fcgid
-PORTVERSION=	1.07
+PORTVERSION=	1.08
 CATEGORIES=	www
 MASTER_SITES=	http://fastcgi.coremail.cn/ \
 		${MASTER_SITE_LOCAL}
@@ -16,14 +16,32 @@ DISTNAME=	${PORTNAME}.${PORTVERSION}
 MAINTAINER=	hemi@puresimplicity.net
 COMMENT=	An alternative FastCGI module for Apache2
 
-USE_APACHE=	yes
+USE_APACHE=	2.0+
 WITH_APACHE2=	yes
-MAKE_ARGS=	top_dir="${LOCALBASE}/share/apache2" INCLUDES="-I${LOCALBASE}/include/apache2"
+
+SUB_FILES=	pkg-message
+
+.include <bsd.port.pre.mk>
+
+.if ${APACHE_VERSION} >= 22
+MAKE_ARGS=	top_dir="${LOCALBASE}/share/apache${APACHE_VERSION}"
+MAKE_ARGS+=	INCLUDES="-I${LOCALBASE}/include/apache${APACHE_VERSION} -I${LOCALBASE}/include/apr-1"
+INSTALL_TARGET=	install-modules-yes
+PLIST_SUB=	APACHE_VERSION=${APACHE_VERSION}
+PLIST_FILES+=	libexec/apache%%APACHE_VERSION%%/mod_fcgid.a
+PLIST_FILES+=	libexec/apache%%APACHE_VERSION%%/mod_fcgid.la
+SUB_LIST=	APACHE_VERSION=${APACHE_VERSION}
+.else
+MAKE_ARGS=	top_dir="${LOCALBASE}/share/apache${APACHE_VERSION:S/20/2/}"
+MAKE_ARGS+=	INCLUDES="-I${LOCALBASE}/include/apache${APACHE_VERSION:S/20/2/}"
 INSTALL_TARGET=	install-modules
+PLIST_SUB=	APACHE_VERSION=${APACHE_VERSION:S/20/2/}
+SUB_LIST=	APACHE_VERSION=${APACHE_VERSION:S/20/2/}
+.endif
 
 post-install:
 	${MKDIR} -m 700 /var/run/fcgidsock
 	${CHOWN} www:www /var/run/fcgidsock
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
