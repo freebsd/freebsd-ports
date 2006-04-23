@@ -1,14 +1,14 @@
---- mono/mini/mini-amd64.c.orig	Sun Oct 30 14:33:12 2005
-+++ mono/mini/mini-amd64.c	Sun Nov 13 18:39:16 2005
-@@ -13,6 +13,7 @@
- #include "mini.h"
+--- mono/mini/mini-amd64.c.orig	Mon Mar 13 17:57:59 2006
++++ mono/mini/mini-amd64.c	Tue Apr  4 21:21:37 2006
+@@ -14,6 +14,7 @@
  #include <string.h>
  #include <math.h>
+ #include <unistd.h>
 +#include <ucontext.h>
  
  #include <mono/metadata/appdomain.h>
  #include <mono/metadata/debug-helpers.h>
-@@ -49,6 +49,10 @@
+@@ -57,6 +58,10 @@
  #define ARGS_OFFSET 16
  #define GP_SCRATCH_REG AMD64_R11
  
@@ -19,7 +19,7 @@
  /*
   * AMD64 register usage:
   * - callee saved registers are used for global register allocation
-@@ -4639,6 +4643,7 @@
+@@ -4717,6 +4722,7 @@
  
  #define IS_REX(inst) (((inst) >= 0x40) && ((inst) <= 0x4f))
  
@@ -27,7 +27,7 @@
  static int reg_to_ucontext_reg [] = {
  	REG_RAX, REG_RCX, REG_RDX, REG_RBX, REG_RSP, REG_RBP, REG_RSI, REG_RDI,
  	REG_R8, REG_R9, REG_R10, REG_R11, REG_R12, REG_R13, REG_R14, REG_R15,
-@@ -4650,27 +4655,37 @@
+@@ -4728,27 +4734,37 @@
   * integer overflow.
   */
  gboolean
