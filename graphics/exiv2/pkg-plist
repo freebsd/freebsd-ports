@@ -26,7 +26,7 @@ include/exiv2/sonymn.hpp
 include/exiv2/tags.hpp
 include/exiv2/types.hpp
 include/exiv2/value.hpp
-lib/libexiv2-0.9.so
+lib/libexiv2-0.9.1.so
 lib/libexiv2.a
 lib/libexiv2.la
 lib/libexiv2.so
