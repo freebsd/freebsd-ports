@@ -7,6 +7,7 @@
 
 PORTNAME=	pcmanx
 PORTVERSION=	0.3.4
+PORTREVISION=	1
 CATEGORIES=	chinese net gnome
 MASTER_SITES=	http://pcmanx.csie.net/release/
 DISTNAME=	${PORTNAME}-gtk2-${PORTVERSION}
@@ -19,7 +20,6 @@ USE_GCC=	3.3+
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 
 .if !defined(WITHOUT_NLS)
@@ -34,6 +34,10 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 post-extract:
+	@${REINPLACE_CMD} -e 's/wget/fetch/' ${WRKSRC}/po/zh_CN.po
 	@${REINPLACE_CMD} -e 's/wget/fetch/' ${WRKSRC}/po/zh_TW.po
+	@${REINPLACE_CMD} -e 's/wget -O/fetch -o/' ${WRKSRC}/src/mainframe.cpp
+	@${REINPLACE_CMD} -e 's/wget/fetch/' ${WRKSRC}/src/generalprefpage.cpp
+	@${REINPLACE_CMD} -e 's/wget/fetch/' ${WRKSRC}/src/view/telnetview.cpp
 
 .include <bsd.port.mk>
