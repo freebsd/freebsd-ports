@@ -85,6 +85,7 @@ lib/webmin/virtual-server/help/domslimit.html
 lib/webmin/virtual-server/help/extraemail.html
 lib/webmin/virtual-server/help/framefwd.html
 lib/webmin/virtual-server/help/ftp.html
+lib/webmin/virtual-server/help/fwdto.html
 lib/webmin/virtual-server/help/iface.html
 lib/webmin/virtual-server/help/index.de.html
 lib/webmin/virtual-server/help/index.html
