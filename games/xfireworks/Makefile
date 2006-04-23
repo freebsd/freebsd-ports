@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.seki.ee.kagu.tus.ac.jp/~sakai/myfreesoft/ \
 		http://hp.vector.co.jp/authors/VA014157/myfreesoft/ \
 		http://www.people.or.jp/~hsakai/myfreesoft/
 
-MAINTAINER=	sakai@seki.ee.kagu.tus.ac.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fireworks on X
 
 USE_X_PREFIX=	yes
