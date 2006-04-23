@@ -11,7 +11,7 @@ CATEGORIES=	science cad
 MASTER_SITES=	ftp://ftp.srware.com/pub/	\
 		http://www.wrcad.com/ftp/pub/
 
-MAINTAINER=	giffunip@asme.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A three-dimensional capacitance extraction program
 
 P_VERSION=	2.0
