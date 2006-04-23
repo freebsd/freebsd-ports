@@ -1,6 +1,24 @@
---- sid-filter/sid-filter.c.orig	Fri Jul 15 21:15:19 2005
-+++ sid-filter/sid-filter.c	Wed Jul 27 19:20:27 2005
-@@ -1866,7 +1866,7 @@
+--- sid-filter/sid-filter.c.orig	Tue Apr 18 09:36:23 2006
++++ sid-filter/sid-filter.c	Sun Apr 23 16:48:06 2006
+@@ -1893,7 +1893,7 @@
+ 		else
+ 		{
+ 			sid_msgcleanup(ctx);
+-			return SMFIS_TEMPFAIL;
++			return (testmode ? SMFIS_ACCEPT : SMFIS_TEMPFAIL);
+ 		}
+ 	}
+ 
+@@ -1934,7 +1934,7 @@
+ 			else
+ 			{
+ 				sid_msgcleanup(ctx);
+-				return SMFIS_TEMPFAIL;
++				return (testmode ? SMFIS_ACCEPT : SMFIS_TEMPFAIL);
+ 			}
+ 		}
+ 
+@@ -1985,7 +1985,7 @@
  		}
  
  		sid_msgcleanup(ctx);
@@ -8,13 +26,4 @@
 +		return (testmode ? SMFIS_ACCEPT : SMFIS_TEMPFAIL);
  	}
  
- 	/* construct the status header's content */
-@@ -1896,7 +1896,7 @@
- 			}
  
- 			sid_msgcleanup(ctx);
--			return SMFIS_TEMPFAIL;
-+			return (testmode ? SMFIS_ACCEPT : SMFIS_TEMPFAIL);
- 		}
- 
- 		sm_strlcat(stathdr, "; spf=", sizeof stathdr);

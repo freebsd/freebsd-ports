@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sid-milter
-PORTVERSION=	0.2.10
-PORTREVISION=	1
+PORTVERSION=	0.2.11
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sid-milter
@@ -23,10 +22,9 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/libmilter.a:${PORTSDIR}/mail/${SENDMAIL_MILTER_
 .endif
 .endif
 
-RESTRICTED=	"may incorporate intellectual property, possible patent issues"
+RESTRICTED=	may incorporate intellectual property, possible patent issues
 
 SENDMAIL_MILTER_PORT?=	sendmail
-USE_REINPLACE=	yes
 WCONF=		${WRKSRC}/devtools/Site
 MAN8=		sid-filter.8
 DOCSFILES=	INSTALL KNOWNBUGS LICENSE README README-SenderID RELEASE_NOTES
