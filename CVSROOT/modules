@@ -8441,6 +8441,7 @@ p5-JavaScript-SpiderMonkey	ports/lang/p5-JavaScript-SpiderMonkey
 p5-JavaScript-Squish	ports/lang/p5-JavaScript-Squish
 p5-Jifty	ports/www/p5-Jifty
 p5-Jifty-DBI	ports/databases/p5-Jifty-DBI
+p5-KinoSearch	ports/textproc/p5-KinoSearch
 p5-Kwiki	ports/www/p5-Kwiki
 p5-Kwiki-Archive-Rcs	ports/www/p5-Kwiki-Archive-Rcs
 p5-Kwiki-Archive-SVK	ports/www/p5-Kwiki-Archive-SVK
