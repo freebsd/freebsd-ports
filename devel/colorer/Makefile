@@ -22,12 +22,10 @@ BUILD_DEPENDS=	fop:${PORTSDIR}/textproc/fop \
 		${LOCALBASE}/share/mathml-xsd/mathml2.xsd:${PORTSDIR}/textproc/mathml-xsd \
 		${LOCALBASE}/share/xhtml1-xsd/xhtml1-strict.xsd:${PORTSDIR}/textproc/xhtml1-xsd
 
-BROKEN=		Does not compile
-
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.4+
+JAVA_VERSION=	1.4
 USE_ANT=	yes
 ALL_TARGET?=	library-linux
 USE_GMAKE=	yes
