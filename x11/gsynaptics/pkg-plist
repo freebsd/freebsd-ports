@@ -1,0 +1,13 @@
+bin/gsynaptics
+bin/gsynaptics-init
+share/applications/gsynaptics.desktop
+share/gnome/autostart/gsynaptics-init.desktop
+share/gsynaptics/gsynaptics.glade
+share/locale/es/LC_MESSAGES/gsynaptics.mo
+share/locale/fr/LC_MESSAGES/gsynaptics.mo
+share/locale/ja/LC_MESSAGES/gsynaptics.mo
+share/pixmaps/touchpad.png
+@dirrmtry share/pixmaps
+@dirrmtry share/gnome/autostart
+@dirrmtry share/applications
+@dirrm share/gsynaptics

@@ -1,0 +1,31 @@
+===============================================================================
+
+			* SETUP NOTE * SETUP NOTE *
+
+o Enable "SHMConfig on" in /etc/xorg.conf (or /etc/XF86Config)
+  This tools can be used only if "SHMConfig" "on" in the section
+  of synaptics driver in /etc/xorg.conf or /etc/XF86Config.
+
+/etc/xorg.conf (/etc/XF86Config) ------------------
+	:
+Section "InputDevice"
+	Driver		"synaptics"
+		:
+	Option		"SHMConfig"		"on"
+		:
+EndSection
+	:
+/etc/xorg.conf (/etc/XF86Config) ------------------
+
+o To use your setting value at each time of starting of Xserver,
+  you have to run gsynaptics-init at starting time of Xserver.
+
+  GNOME users,
+    you have to add gsynaptics-init on [Desktop] - [Preferences]
+    - [Sessions] - [Startup Programs] in GNOME Menu.
+
+  non GNOME users,
+    you have to add gsynaptics-init in .xinitrc or
+    .xsession. 
+
+===============================================================================
