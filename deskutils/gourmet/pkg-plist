@@ -403,6 +403,14 @@ share/pixmaps/recbox.png
 @dirrm %%PYTHON_SITELIBDIR%%/gourmet/exporters
 @dirrm %%PYTHON_SITELIBDIR%%/gourmet/backends
 @dirrm %%PYTHON_SITELIBDIR%%/gourmet
-@unexec /bin/rmdir %D/%%PYTHON_SITELIBDIR%% 2>/dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/%%PYTHON_LIBDIR%% 2>/dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/applications 2>/dev/null || /usr/bin/true
+@dirrmtry %%PYTHON_SITELIBDIR%%
+@dirrmtry %%PYTHON_LIBDIR%%
+@dirrmtry share/locale/sv_SE/LC_MESSAGES
+@dirrmtry share/locale/sv_SE
+@dirrmtry share/locale/nl_NL/LC_MESSAGES
+@dirrmtry share/locale/nl_NL
+@dirrmtry share/locale/nl_BE/LC_MESSAGES
+@dirrmtry share/locale/nl_BE
+@dirrmtry share/locale/de_DE/LC_MESSAGES
+@dirrmtry share/locale/de_DE
+@dirrmtry share/applications
