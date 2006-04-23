@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ace
-PORTVERSION=	5.5
+PORTVERSION=	5.5.1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://deuce.doc.wustl.edu/pub/previous_versions/ \
 		http://deuce.doc.wustl.edu/old_distribution/ \
@@ -37,6 +37,10 @@ MAN1=		ace-gperf.1
 
 .if ${OSVERSION} < 500000
 BROKEN=		does not support
+.endif
+
+.if ${OSVERSION} > 700015
+EXTRA_PATCHES=	extra-ace-OS_NS_netdb.inl
 .endif
 
 post-extract:
