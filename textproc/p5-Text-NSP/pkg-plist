@@ -10,36 +10,41 @@ bin/rank.pl
 bin/kocos-script.sh
 bin/combig.pl
 bin/sort-bigrams.pl
-%%SITE_PERL%%/auto/Text/NSP/autosplit.ix
-%%SITE_PERL%%/pmi.pm
-%%SITE_PERL%%/rightFisher.pm
-%%SITE_PERL%%/tmi3.pm
-%%SITE_PERL%%/measure3d.pm
-%%SITE_PERL%%/odds.pm
-%%SITE_PERL%%/ll3.pm
-%%SITE_PERL%%/ll.pm
-%%SITE_PERL%%/dice.pm
-%%SITE_PERL%%/x2.pm
-%%SITE_PERL%%/measure2d.pm
-%%SITE_PERL%%/leftFisher.pm
-%%SITE_PERL%%/phi.pm
-%%SITE_PERL%%/tmi.pm
-%%SITE_PERL%%/tscore.pm
 %%SITE_PERL%%/Text/NSP.pm
+%%SITE_PERL%%/Text/NSP/Measures.pm
+%%SITE_PERL%%/Text/NSP/Measures/2D.pm
+%%SITE_PERL%%/Text/NSP/Measures/3D.pm
+%%SITE_PERL%%/Text/NSP/Measures/2D/Fisher2.pm
+%%SITE_PERL%%/Text/NSP/Measures/2D/Fisher.pm
+%%SITE_PERL%%/Text/NSP/Measures/2D/odds.pm
+%%SITE_PERL%%/Text/NSP/Measures/2D/dice.pm
+%%SITE_PERL%%/Text/NSP/Measures/2D/CHI.pm
+%%SITE_PERL%%/Text/NSP/Measures/2D/MI.pm
+%%SITE_PERL%%/Text/NSP/Measures/2D/Fisher2/left.pm
+%%SITE_PERL%%/Text/NSP/Measures/2D/Fisher2/right.pm
+%%SITE_PERL%%/Text/NSP/Measures/2D/Fisher2/twotailed.pm
+%%SITE_PERL%%/Text/NSP/Measures/2D/Fisher/right.pm
+%%SITE_PERL%%/Text/NSP/Measures/2D/Fisher/left.pm
+%%SITE_PERL%%/Text/NSP/Measures/2D/Fisher/twotailed.pm
+%%SITE_PERL%%/Text/NSP/Measures/2D/MI/pmi.pm
+%%SITE_PERL%%/Text/NSP/Measures/2D/MI/ll.pm
+%%SITE_PERL%%/Text/NSP/Measures/2D/MI/tmi.pm
+%%SITE_PERL%%/Text/NSP/Measures/2D/CHI/tscore.pm
+%%SITE_PERL%%/Text/NSP/Measures/2D/CHI/phi.pm
+%%SITE_PERL%%/Text/NSP/Measures/2D/CHI/x2.pm
+%%SITE_PERL%%/Text/NSP/Measures/3D/MI.pm
+%%SITE_PERL%%/Text/NSP/Measures/3D/MI/tmi.pm
+%%SITE_PERL%%/Text/NSP/Measures/3D/MI/ll.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/NSP/.packlist
 %%PORTDOCS%%%%DOCSDIR%%/html/dice.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ll.html
-%%PORTDOCS%%%%DOCSDIR%%/html/ll3.html
 %%PORTDOCS%%%%DOCSDIR%%/html/odds.html
 %%PORTDOCS%%%%DOCSDIR%%/html/phi.html
 %%PORTDOCS%%%%DOCSDIR%%/html/tmi.html
 %%PORTDOCS%%%%DOCSDIR%%/html/pmi.html
 %%PORTDOCS%%%%DOCSDIR%%/html/tscore.html
 %%PORTDOCS%%%%DOCSDIR%%/html/x2.html
-%%PORTDOCS%%%%DOCSDIR%%/html/leftFisher.html
-%%PORTDOCS%%%%DOCSDIR%%/html/rightFisher.html
 %%PORTDOCS%%%%DOCSDIR%%/html/measure2d.html
-%%PORTDOCS%%%%DOCSDIR%%/html/measure3d.html
 %%PORTDOCS%%%%DOCSDIR%%/html/count.html
 %%PORTDOCS%%%%DOCSDIR%%/html/statistic.html
 %%PORTDOCS%%%%DOCSDIR%%/html/rank.html
@@ -65,7 +70,14 @@ bin/sort-bigrams.pl
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/pod
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/NSP
-@dirrm %%SITE_PERL%%/auto/Text/NSP
+@dirrm %%SITE_PERL%%/Text/NSP/Measures/3D/MI
+@dirrm %%SITE_PERL%%/Text/NSP/Measures/3D
+@dirrm %%SITE_PERL%%/Text/NSP/Measures/2D/MI
+@dirrm %%SITE_PERL%%/Text/NSP/Measures/2D/Fisher2
+@dirrm %%SITE_PERL%%/Text/NSP/Measures/2D/Fisher
+@dirrm %%SITE_PERL%%/Text/NSP/Measures/2D/CHI
+@dirrm %%SITE_PERL%%/Text/NSP/Measures/2D
+@dirrm %%SITE_PERL%%/Text/NSP/Measures
+@dirrm %%SITE_PERL%%/Text/NSP
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text
-@dirrmtry %%SITE_PERL%%/auto/Text
 @dirrmtry %%SITE_PERL%%/Text
