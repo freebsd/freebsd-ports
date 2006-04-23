@@ -25,18 +25,17 @@ CONFLICTS=	py*-MySQLdb-[0-9]*
 
 PORTDOCS=	*
 
-pre-fetch:
-	@${ECHO} ""
-	@${ECHO} "You may use the following build options:"
-	@${ECHO} ""
-	@${ECHO} "	WITHOUT_MYSQLCLIENT_R=yes	Don't use mysqlclient_r lib"
-	@${ECHO} "					but is not guarantee thread-safe."
-	@${ECHO} ""
-	@${ECHO} "	Default use mysqlclient_r"
-	@${ECHO} ""
+IGNORE=		please, use databases/py-MySQLdb instead
 
+OPTIONSFILE=	${PORT_DBDIR}/${PORTNAME}/options
+OPTIONS=	MYSQLCLIENT_R "Use libmysqlclient_r (thread safe)" on
+
+.include <bsd.port.pre.mk>
+
+post-patch:
 .if defined(WITHOUT_MYSQLCLIENT_R)
-MAKE_ENV+=	mysqlclient="mysqlclient"
+	@${REINPLACE_CMD} -E -e "s|(threadsafe.*)True|\1 False|" \
+		${WRKSRC}/site.cfg
 .endif
 
 post-install:
@@ -46,4 +45,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
