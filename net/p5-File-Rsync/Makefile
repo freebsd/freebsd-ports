@@ -21,9 +21,9 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS+=	</dev/null
 
-MAN3=		File::Rsync.3 File::config.3
+MAN3=		File::Rsync.3
 
-do-patch:
+post-patch:
 		@${REINPLACE_CMD} -e "s,<STDIN>,'${LOCALBASE}/bin/rsync'," ${WRKSRC}/makepm.PL
 
 .include <bsd.port.pre.mk>
