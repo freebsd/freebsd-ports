@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xtu
-PORTVERSION=	1.2
-PORTREVISION=	1
+PORTVERSION=	1.3
 CATEGORIES=	x11-clocks
 MASTER_SITES=	http://core.de/~coto/projects/xtu/
 
@@ -17,7 +16,7 @@ COMMENT=	Transparent analog clock for X11
 USE_IMAKE=	yes
 WANT_GNOME=	yes
 MAKE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-NO_INSTALL_MANPAGES=	yes
+MAN1=		xtu.1
 PLIST_FILES=	bin/xtu
 
 .include <bsd.port.pre.mk>
