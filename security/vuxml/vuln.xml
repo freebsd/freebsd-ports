@@ -34,6 +34,45 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a813a219-d2d4-11da-a672-000e0c2e438a">
+    <topic>zgv, xzgv -- heap overflow vulnerability</topic>
+    <affects>
+      <package>
+	<name>zgv</name>
+	<range><gt>0</gt></range>
+      </package>
+      <package>
+	<name>xzgv</name>
+	<range><gt>0</gt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gentoo reports:</p>
+	<blockquote cite="http://www.gentoo.org/security/en/glsa/glsa-200604-10.xml">
+	  <p>Andrea Barisani of Gentoo Linux discovered xzgv and zgv
+	    allocate insufficient memory when rendering images with
+	    more than 3 output components, such as images using the
+	    YCCK or CMYK colour space.  When xzgv or zgv attempt to
+	    render the image, data from the image overruns a heap
+	    allocated buffer.</p>
+	  <p>An attacker may be able to construct a malicious image that
+	    executes arbitrary code with the permissions of the xzgv or
+	    zgv user when attempting to render the image.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>17409</bid>
+      <cvename>CVE-2006-1060</cvename>
+      <url>http://www.gentoo.org/security/en/glsa/glsa-200604-10.xml</url>
+    </references>
+    <dates>
+      <discovery>2006-04-21</discovery>
+      <entry>2006-04-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="86cc5c6f-d2b4-11da-a672-000e0c2e438a">
     <topic>crossfire-server -- denial of service and remote code
       execution vulnerability</topic>
