@@ -51,18 +51,13 @@ SUB_LIST=	BINDIR="${BINDIR}" \
 .if ${ARCH} == sparc64 || ${ARCH} == alpha
 VERSION=	2.9003.481
 .elif ${ARCH} == amd64
-VERSION=	2.9010.495
-.else
 VERSION=	2.9011.496
+.else
+VERSION=	2.9012.497
 .endif
 
 .if ${OSVERSION} < 300000
 IGNORE=		requires FreeBSD 3.X or greater
-.endif
-
-.if ${ARCH} == "i386" && ${OSVERSION} > 503000
-MASTER_SITE_SUBDIR=	prerelease/rc
-DISTNAME=	dnetc${PORTVERSION:E}-freebsd5-${ARCH:S/i386/x86/}-elf
 .endif
 
 do-configure:
