@@ -1,0 +1,22 @@
+--- mrtg.old	Fri Feb  3 07:33:33 2006
++++ mrtg	Mon Apr  3 11:30:45 2006
+@@ -172,11 +172,17 @@
+     my $gid = $(;
+ 
+     if (defined $opts{group}) {
+-        $gid = getgrnam($opts{group}) or die "ERROR: Unknown Group: $opts{group})\n";
++	$gid = getgrnam($opts{group});
++	if( $gid =~ /^$/ ) {
++		die "ERROR: Unknown Group: $opts{group}\n";
++	}
+     }
+ 
+     if (defined $opts{user}) {
+-        $uid = getpwnam($opts{user}) or die "ERROR: Unknown User: $opts{user})\n";
++	$uid = getpwnam($opts{user});
++	if( $uid =~ /^$/ ) {
++		die "ERROR: Unknown User: $opts{user}\n";
++	}
+     }
+ 
+     # If we've specified using FHS (http://www.pathname.com/fhs/) on the command line,
