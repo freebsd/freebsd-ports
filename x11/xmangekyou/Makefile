@@ -10,7 +10,7 @@ PORTVERSION=	2.0.1
 CATEGORIES=	x11
 MASTER_SITES=	http://www.seki.ee.kagu.tus.ac.jp/~sakai/myfreesoft/
 
-MAINTAINER=	sakai@seki.ee.kagu.tus.ac.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A kaleidoscope on X
 
 BROKEN=		does not fetch
