@@ -3,12 +3,11 @@
 # Whom:				Tom McLaughlin <tmclaugh@sdf.lonestar.org>
 #
 # $FreeBSD$
-#   $Id: Makefile,v 1.26 2006/02/15 02:36:17 tmclau02 Exp $
+#   $Id: Makefile,v 1.28 2006/04/05 01:11:37 tmclau02 Exp $
 #
 
 PORTNAME=	f-spot
-PORTVERSION=	0.1.8
-PORTREVISION=	2
+PORTVERSION=	0.1.11
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.1
