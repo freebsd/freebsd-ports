@@ -1,0 +1,31 @@
+# New ports collection makefile for:	freealut
+# Date created:				08 March 2006
+# Whom:					Oliver Lehmann <oliver@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	freealut
+PORTVERSION=	1.0.1
+CATEGORIES=	audio
+MASTER_SITES=	http://www.openal.org/openal_webstf/downloads/
+
+MAINTAINER=	oliver@FreeBSD.org
+COMMENT=	The OpenAL Utility Toolkit
+
+LIB_DEPENDS=	openal.0:${PORTSDIR}/audio/openal
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+USE_GMAKE=	yes
+USE_GNOME=	pkgconfig gnomehack
+INSTALLS_SHLIB=	yes
+
+.include <bsd.port.pre.mk>
+
+post-patch:
+	@${REINPLACE_CMD} -e 's/@CFLAGS@/& -lopenal ${PTHREAD_LIBS}/g' \
+		${WRKSRC}/examples/Makefile.in \
+		${WRKSRC}/test_suite/Makefile.in
+
+.include <bsd.port.post.mk>

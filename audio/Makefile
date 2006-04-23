@@ -147,6 +147,7 @@
     SUBDIR += flite
     SUBDIR += fluidsynth
     SUBDIR += fmio
+    SUBDIR += freealut
     SUBDIR += freebirth
     SUBDIR += funktrackergold
     SUBDIR += gai-album
