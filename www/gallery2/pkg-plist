@@ -235,6 +235,7 @@
 %%GALLERY2DIR%%/lib/smarty_plugins/modifier.utf8.php
 %%GALLERY2DIR%%/lib/smtp/smtp.php
 %%GALLERY2DIR%%/lib/support/cache.php
+%%GALLERY2DIR%%/lib/support/chmod.php
 %%GALLERY2DIR%%/lib/support/gd.php
 %%GALLERY2DIR%%/lib/support/index.php
 %%GALLERY2DIR%%/lib/support/phpinfo.php
