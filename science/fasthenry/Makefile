@@ -11,7 +11,7 @@ CATEGORIES=	science cad
 MASTER_SITES=	ftp://ftp.srware.com/pub/	\
 		http://www.wrcad.com/ftp/pub/
 
-MAINTAINER=	giffunip@asme.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A multipole-accelerated inductance analysis program
 
 P_VERSION=	3.0
