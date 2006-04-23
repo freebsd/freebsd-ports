@@ -3541,6 +3541,7 @@ gstreamer-plugins-wavpack	ports/audio/gstreamer-plugins-wavpack
 gstreamer-plugins-x264		ports/multimedia/gstreamer-plugins-x264
 gstreamer-plugins-xvid		ports/multimedia/gstreamer-plugins-xvid
 gsubedit	ports/multimedia/gsubedit
+gsynaptics	ports/x11/gsynaptics
 gsystem		ports/science/gsystem
 gtar		ports/archivers/gtar
 gtetrinet	ports/games/gtetrinet
