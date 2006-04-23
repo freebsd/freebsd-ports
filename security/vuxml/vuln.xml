@@ -34,6 +34,38 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="8cfb6f42-d2b0-11da-a672-000e0c2e438a">
+    <topic>p5-DBI -- insecure temporary file creation
+      vulnerability</topic>
+    <affects>
+      <package>
+	<name>p5-DBI</name>
+	<name>p5-DBI-137</name>
+	<range><lt>1.48</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Javier Fernández-Sanguino Peña reports:</p>
+	<blockquote cite="http://www.debian.org/security/2005/dsa-658">
+	  <p>The DBI library, the Perl5 database interface, creates a
+	    temporary PID file in an insecure manner.  This can be
+	    exploited by a malicious user to overwrite arbitrary files
+	    owned by the person executing the parts of the library.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>12360</bid>
+      <cvename>CAN-2005-0077</cvename>
+      <url>http://www.debian.org/security/2005/dsa-658</url>
+    </references>
+    <dates>
+      <discovery>2005-01-25</discovery>
+      <entry>2006-04-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e0b342a1-d2ae-11da-a672-000e0c2e438a">
     <topic>wordpress -- full path disclosure</topic>
     <affects>
