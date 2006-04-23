@@ -34,6 +34,36 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="e0b342a1-d2ae-11da-a672-000e0c2e438a">
+    <topic>wordpress -- full path disclosure</topic>
+    <affects>
+      <package>
+	<name>wordpress</name>
+	<range><lt>1.5.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Dedi Dwianto reports:</p>
+	<blockquote cite="http://echo.or.id/adv/adv24-theday-2005.txt">
+	  <p>A remote user can access the file directly to cause the
+	    system to display an error message that indicates the
+	    installation path.  The resulting error message will
+	    disclose potentially sensitive installation path
+	    information to the remote attacker.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2005-4463</cvename>
+      <url>http://echo.or.id/adv/adv24-theday-2005.txt</url>
+    </references>
+    <dates>
+      <discovery>2005-12-20</discovery>
+      <entry>2006-04-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8d4ae57d-d2ab-11da-a672-000e0c2e438a">
     <topic>xine -- multiple remote string vulnerabilities</topic>
     <affects>
