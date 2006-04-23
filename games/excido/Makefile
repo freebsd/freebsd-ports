@@ -15,7 +15,8 @@ MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	A portable fast-paced 3d shooter
 
 LIB_DEPENDS=	openal.0:${PORTSDIR}/audio/openal \
-		physfs-1.0.1:${PORTSDIR}/devel/physfs
+		physfs-1.0.1:${PORTSDIR}/devel/physfs \
+		alut.0:${PORTSDIR}/audio/freealut
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

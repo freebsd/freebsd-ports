@@ -6,24 +6,20 @@
 #
 
 PORTNAME=	openal
-PORTVERSION=	20050401
-PORTREVISION=	1
+PORTVERSION=	20060211
 CATEGORIES=	audio
-MASTER_SITES=	http://math.missouristate.edu/~erik/files/fbsd/\
-		http://www.smluc.org/~erik/files/fbsd/
+MASTER_SITES=	http://openal.org/openal_webstf/downloads/
+DISTVERSION=	0.0.8
 
 MAINTAINER=	erik@smluc.org
 COMMENT=	A 3D positional spatialized sound library
 
-INFO=		openal
-
-WRKSRC=		${WRKDIR}/${DISTNAME}/linux
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--enable-capture
 USE_GMAKE=	yes
-USE_GNOME=	pkgconfig
+USE_GNOME=	pkgconfig gnomehack
 WANT_SDL=	yes
 INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
@@ -43,27 +39,37 @@ WITH_SDL=	yes	# smpeg requires SDL
 .if defined(WITH_ARTS)
 LIB_DEPENDS+=	artsc.0:${PORTSDIR}/audio/arts
 CONFIGURE_ARGS+=--enable-arts
+.else
+CONFIGURE_ARGS+=--disable-arts
 .endif
 
 .if defined(WITH_ESD)
 USE_GNOME+=	esound
 CONFIGURE_ARGS+=--enable-esd
+.else
+CONFIGURE_ARGS+=--disable-esd
 .endif
 
 .if defined(WITH_SDL)
 USE_SDL+=	sdl
 CONFIGURE_ENV+=	HAVESDL="${SDL_CONFIG}"
 CONFIGURE_ARGS+=--enable-sdl
+.else
+CONFIGURE_ARGS+=--disable-sdl
 .endif
 
 .if defined(WITH_VORBIS)
 LIB_DEPENDS+=	vorbisfile.4:${PORTSDIR}/audio/libvorbis
 CONFIGURE_ARGS+=--enable-vorbis
+.else
+CONFIGURE_ARGS+=--disable-vorbis
 .endif
 
 .if defined(WITH_SMPEG)
 LIB_DEPENDS+=	smpeg.1:${PORTSDIR}/multimedia/smpeg
 CONFIGURE_ARGS+=--enable-smpeg
+.else
+CONFIGURE_ARGS+=--disable-smpeg
 .endif
 
 post-patch:
@@ -71,8 +77,5 @@ post-patch:
 		/CPPFLAGS=/ d' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e '/#include/ s|SDL/||' \
 		${WRKSRC}/src/extensions/al_ext_mp3.c
-
-post-install:
-	${INSTALL_DATA} ${WRKSRC}/doc/openal.info ${PREFIX}/info
 
 .include <bsd.port.post.mk>

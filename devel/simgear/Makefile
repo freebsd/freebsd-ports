@@ -17,7 +17,8 @@ COMMENT=	A toolkit for 3D games and simulations
 BUILD_DEPENDS=	${X11BASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
 RUN_DEPENDS=	${X11BASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
 LIB_DEPENDS=	openal.0:${PORTSDIR}/audio/openal \
-		jpeg.9:${PORTSDIR}/graphics/jpeg
+		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		alut.0:${PORTSDIR}/audio/freealut
 
 USE_X_PREFIX=	yes
 USE_GL=		yes

@@ -17,7 +17,8 @@ COMMENT=	Eternal Lands is a free 3D MMORPG
 
 LIB_DEPENDS=	openal.0:${PORTSDIR}/audio/openal \
 		vorbis.3:${PORTSDIR}/audio/libvorbis \
-		cal3d.11:${PORTSDIR}/graphics/cal3d
+		cal3d.11:${PORTSDIR}/graphics/cal3d \
+		alut.0:${PORTSDIR}/audio/freealut
 RUN_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
 USE_GNOME=	libxml2

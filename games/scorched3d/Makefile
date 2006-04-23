@@ -22,6 +22,7 @@ BUILD_DEPENDS=		${X11BASE}/include/wx-2.6/wx/wx.h:${PORTSDIR}/x11-toolkits/wxgtk
 RUN_DEPENDS=		${X11BASE}/include/wx-2.6/wx/wx.h:${PORTSDIR}/x11-toolkits/wxgtk26-common \
 			wxgtk2-2.6-config:${PORTSDIR}/x11-toolkits/wxgtk26 \
 			openal-config:${PORTSDIR}/audio/openal
+LIB_DEPENDS=		alut.0:${PORTSDIR}/audio/freealut
 
 SCORCH_VERSION=		39.1
 

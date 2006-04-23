@@ -47,8 +47,8 @@
 +CXXFLAGS=${CFLAGS} -fno-exceptions
  .else
 -CFLAGS=-Wdeclaration-after-statement -Wall -Werror -ggdb -pipe
-+CFLAGS+=-Wdeclaration-after-statement -Wall -Werror -ggdb -pipe
-+CXXFLAGS=-Wall -Wno-deprecated -Werror -ggdb -pipe -fno-exceptions
++CFLAGS+=-Wdeclaration-after-statement -ggdb -pipe
++CXXFLAGS=-ggdb -pipe -fno-exceptions
  .endif
 -CFLAGS+=-march=i686 -DBSD -DELC
 -CFLAGS+=-I${X11BASE}/include `${SDL_CONFIG} --cflags`
@@ -59,7 +59,8 @@
 +CFLAGS+=${CPPFLAGS}
 +CXXFLAGS+=${CPPFLAGS}
  LDFLAGS+=-L${X11BASE}/lib -lGL `${SDL_CONFIG} --libs` `${LIBXML2_CONFIG} --libs`
- LDFLAGS+=-L${LOCALBASE}/lib -lSDL_net -lopenal -lGLU -lvorbis -lvorbisfile -lm
+-LDFLAGS+=-L${LOCALBASE}/lib -lSDL_net -lopenal -lGLU -lvorbis -lvorbisfile -lm
++LDFLAGS+=-L${LOCALBASE}/lib -lSDL_net -lopenal -lalut -lGLU -lvorbis -lvorbisfile -lm
  .if CAL3D
 -SRCS+=cal3dwrap.c
 +SRCS+=cal3d_wrapper.cpp

@@ -17,7 +17,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	3D asteroids-like multiplayer game
 
 LIB_DEPENDS=	openal.0:${PORTSDIR}/audio/openal \
-		glut.4:${PORTSDIR}/graphics/libglut
+		glut.4:${PORTSDIR}/graphics/libglut \
+		alut.0:${PORTSDIR}/audio/freealut
 
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 
@@ -42,6 +43,7 @@ pre-patch:
 	@${PERL} -pi.orig -e 's|^aclocal|${ACLOCAL}|; \
 		s|^autoconf|${AUTOCONF}|; s|^automake|${AUTOMAKE}|' \
 		${WRKSRC}/autogen.sh
+	@${REINPLACE_CMD} -e 's|-lopenal|& -lalut|' ${WRKSRC}/Makefile.am
 
 pre-configure:
 	cd ${WRKSRC}; ${SH} autogen.sh

@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	ember
-PORTVERSION=	0.3.4
-PORTREVISION=	2
+PORTVERSION=	0.4.0
+PORTREVISION=	0
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://amber.worldforge.org/ember/releases/stable/
@@ -16,13 +16,14 @@ MASTER_SITE_SUBDIR=worldforge
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Ember is a WorldForge 3d client using the OGRE 3d library
 
-RUN_DEPENDS=	${X11BASE}/bin/WFUT.jar:${PORTSDIR}/devel/wfut
+#RUN_DEPENDS=	${X11BASE}/bin/WFUT.jar:${PORTSDIR}/devel/wfut
 LIB_DEPENDS=	sigc-2.0:${PORTSDIR}/devel/libsigc++20 \
-		OgreMain.9:${PORTSDIR}/graphics/ogre3d \
+		OgreMain.10:${PORTSDIR}/graphics/ogre3d \
 		eris-1.3:${PORTSDIR}/devel/eris \
 		varconf-1.0.6:${PORTSDIR}/devel/varconf \
 		mercator-0.2.4:${PORTSDIR}/devel/mercator \
-		openal.0:${PORTSDIR}/audio/openal
+		openal.0:${PORTSDIR}/audio/openal \
+		alut.0:${PORTSDIR}/audio/freealut
 
 CONFIGURE_ARGS=	--with-png-prefix=${LOCALBASE} --enable-binreloc --program-transform-name= --disable-cppunit
 USE_SDL=	sdl image
@@ -32,6 +33,7 @@ INSTALLS_SHLIB=	YES
 USE_GCC=	3.4
 USE_X_PREFIX=	YES
 USE_GNOME=	gnomehack
+USE_BZIP2=	YES
 CPPFLAGS=	-DBR_NO_MACROS
 
 .include <bsd.port.pre.mk>
@@ -59,6 +61,10 @@ post-patch:
 		 /Plugin=Plugin_CgProgramManager.so/d; \
 		s|/usr/lib/OGRE|${X11BASE}/lib/OGRE|' \
 		${WRKSRC}/src/components/ogre/plugins.cfg
+	@${REINPLACE_CMD} -e 's|/altypes\.h|/al\.h|' \
+		${WRKSRC}/src/services/sound/SoundService.h
+	@${REINPLACE_CMD} -e 's|@LDFLAGS@|& -lopenal -lalut|' \
+		${WRKSRC}/src/components/ogre/Makefile.in
 .if ${OSVERSION} < 500000
 	@${REINPLACE_CMD} -e 's|lrintf|(long int)rintf|g' \
 		${WRKSRC}/src/components/ogre/environment/meshtree/TStem.cpp \
