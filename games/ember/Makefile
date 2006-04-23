@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=worldforge
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Ember is a WorldForge 3d client using the OGRE 3d library
 
-#RUN_DEPENDS=	${X11BASE}/bin/WFUT.jar:${PORTSDIR}/devel/wfut
+RUN_DEPENDS=	${X11BASE}/bin/WFUT.jar:${PORTSDIR}/devel/wfut
 LIB_DEPENDS=	sigc-2.0:${PORTSDIR}/devel/libsigc++20 \
 		OgreMain.10:${PORTSDIR}/graphics/ogre3d \
 		eris-1.3:${PORTSDIR}/devel/eris \
