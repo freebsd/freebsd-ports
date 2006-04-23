@@ -18,7 +18,8 @@ COMMENT=	A rally car racing game
 
 BUILD_DEPENDS=	jam:${PORTSDIR}/devel/jam
 LIB_DEPENDS=	openal:${PORTSDIR}/audio/openal \
-		physfs:${PORTSDIR}/devel/physfs
+		physfs:${PORTSDIR}/devel/physfs \
+		alut.0:${PORTSDIR}/audio/freealut
 
 USE_X_PREFIX=	yes
 USE_SDL=	sdl image
@@ -42,7 +43,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|SDL/||' \
 		${WRKSRC}/src/trigger/main.cpp \
 		${WRKSRC}/src/pengine/texture.cpp
-	@${REINPLACE_CMD} -e 's|\$${prefix}/share|${DATADIR}|' \
+	@${REINPLACE_CMD} -e 's|\$${prefix}/share|${DATADIR}|; \
+		s|-lopenal|& -lalut|g' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|-O3||' ${WRKSRC}/Jamrules
 

@@ -17,7 +17,8 @@ COMMENT=	The Open Racing Car Simulator
 
 BUILD_DEPENDS=	${X11BASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png	\
-		openal.0:${PORTSDIR}/audio/openal
+		openal.0:${PORTSDIR}/audio/openal \
+		alut.0:${PORTSDIR}/audio/freealut
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 USE_BZIP2=	yes

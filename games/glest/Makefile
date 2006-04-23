@@ -19,7 +19,8 @@ COMMENT=	Free 3d real-time customizable strategy game
 
 LIB_DEPENDS=	xerces-c.26:${PORTSDIR}/textproc/xerces-c2 \
 		vorbis.3:${PORTSDIR}/audio/libvorbis \
-		openal.0:${PORTSDIR}/audio/openal
+		openal.0:${PORTSDIR}/audio/openal \
+		alut.0:${PORTSDIR}/audio/freealut
 BUILD_DEPENDS=	jam:${PORTSDIR}/devel/jam
 
 USE_REINPLACE=	yes

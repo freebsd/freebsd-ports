@@ -19,7 +19,8 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		mad.2:${PORTSDIR}/audio/libmad \
 		ogg.5:${PORTSDIR}/audio/libogg \
 		openal.0:${PORTSDIR}/audio/openal \
-		vorbis.3:${PORTSDIR}/audio/libvorbis
+		vorbis.3:${PORTSDIR}/audio/libvorbis \
+		alut.0:${PORTSDIR}/audio/freealut
 
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
@@ -43,7 +44,9 @@ post-patch:
 .for f in configure *.c *.h
 	@${FIND} ${WRKSRC} -type f -name "${f}" -print0 | \
 		${XARGS} -0 ${REINPLACE_CMD} -e \
-		's|\(#include.*\)SDL/\(SDL.*\)|\1\2|'
+		's|\(#include.*\)SDL/\(SDL.*\)|\1\2| ; \
+		s|-lopenal |&-lalut|g ; \
+		s|"-lalut|"-lopenal -lalut|'
 .endfor
 
 do-install:

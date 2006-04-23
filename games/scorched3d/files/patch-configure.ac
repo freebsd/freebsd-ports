@@ -1,6 +1,29 @@
---- configure.ac.orig	Fri Oct 14 10:18:06 2005
-+++ configure.ac	Fri Oct 14 10:19:33 2005
-@@ -248,13 +248,13 @@
+--- configure.ac.orig	Mon Jul 25 19:06:13 2005
++++ configure.ac	Wed Mar 29 14:07:50 2006
+@@ -103,6 +103,7 @@
+ 		    , enable_openaltest=yes)
+ AC_MSG_CHECKING(for OpenAL)
+ AC_PATH_PROG(OPENAL_CONFIG, openal-config, no)
++AC_PATH_PROG(ALUT_CONFIG, freealut-config, no)
+ have_openal=yes
+ if test x$OPENAL_CONFIG = xno; then
+ 	echo "*** The openal-config script installed by OpenAL could not be found"
+@@ -114,11 +115,11 @@
+ 	if test x"$use_static_openal" = x"yes"; then
+ 		LIBS="$LIBS /usr/local/lib/libopenal.a"
+ 	else
+-		LIBS="$LIBS `$OPENAL_CONFIG --libs`"
++		LIBS="$LIBS `$OPENAL_CONFIG --libs` `$ALUT_CONFIG --libs`"
+ 	fi
+ 	
+-	CFLAGS="$CFLAGS `$OPENAL_CONFIG --cflags`"
+-	CXXFLAGS="$CXXFLAGS `$OPENAL_CONFIG --cflags`"
++	CFLAGS="$CFLAGS `$OPENAL_CONFIG --cflags` `$ALUT_CONFIG --cflags`"
++	CXXFLAGS="$CXXFLAGS `$OPENAL_CONFIG --cflags` `$ALUT_CONFIG --cflags`"
+ fi
+ 
+ AC_MSG_CHECKING(for OpenAL compilation)
+@@ -248,13 +249,13 @@
          ])
  fi
       

@@ -20,7 +20,8 @@ BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		aa.1:${PORTSDIR}/graphics/aalib \
-		openal.0:${PORTSDIR}/audio/openal
+		openal.0:${PORTSDIR}/audio/openal \
+		alut.0:${PORTSDIR}/audio/freealut
 
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes
@@ -156,7 +157,8 @@ CONFIGURE_ARGS+=	--without-bfd
 .endif
 
 pre-configure:
-	@${REINPLACE_CMD} -e 's,sdl-config,sdl11-config,g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's,sdl-config,sdl11-config,g; \
+		s,86\*),86\*|amd64|ia64),' ${WRKSRC}/configure
 
 post-configure:
 .if defined(NOPORTDOCS)

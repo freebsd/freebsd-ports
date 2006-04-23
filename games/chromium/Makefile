@@ -18,11 +18,15 @@ COMMENT=	An arcade-style, top-scrolling space shooter
 
 LIB_DEPENDS=	vorbis.3:${PORTSDIR}/audio/libvorbis \
 		smpeg.1:${PORTSDIR}/multimedia/smpeg \
-		openal.0:${PORTSDIR}/audio/openal
+		openal.0:${PORTSDIR}/audio/openal \
+		alut.0:${PORTSDIR}/audio/freealut
 
 USE_GL=		yes
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/Chromium-0.9
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-lopenal|& -lalut|g' ${WRKSRC}/configure
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/chromium ${PREFIX}/bin

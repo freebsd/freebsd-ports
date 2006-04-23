@@ -15,7 +15,8 @@ DISTNAME=	PyOpenAL-${PORTVERSION}
 MAINTAINER=	acardenas@bsd.org.pe
 COMMENT=	PyOpenAL is a binding of OpenAL for Python
 
-LIB_DEPENDS=	openal.0:${PORTSDIR}/audio/openal
+LIB_DEPENDS=	openal.0:${PORTSDIR}/audio/openal \
+		alut.0:${PORTSDIR}/audio/freealut
 
 DIST_SUBDIR=	python
 USE_REINPLACE=	yes
