@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	virtualmin
-PORTVERSION=	2.610
+PORTVERSION=	2.611
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.webmin.com/download/virtualmin/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	webadmin
 DISTNAME=	virtual-server-${PORTVERSION}
 EXTRACT_SUFX=	.wbm.gz
 
