@@ -574,6 +574,7 @@
     SUBDIR += lrmi
     SUBDIR += lua50-app
     SUBDIR += lua50-compat51
+    SUBDIR += lua50-dfui
     SUBDIR += lua50-filename
     SUBDIR += lua50-posix
     SUBDIR += lua50-pty
