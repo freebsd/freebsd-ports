@@ -17,10 +17,9 @@ COMMENT=	A module for working with UNIX-flavoured mailboxes
 
 BUILD_DEPENDS=	${SITE_PERL}/MIME/Tools.pm:${PORTSDIR}/mail/p5-MIME-Tools \
 		${SITE_PERL}//${PERL_ARCH}/MIME/QuotedPrint.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
+		${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp \
 		${SITE_PERL}/Mail/Mbox/MessageParser.pm:${PORTSDIR}/mail/p5-Mail-Mbox-MessageParser
 RUN_DEPENDS=	${BUILD_DEPENDS}
-
-BROKEN=		Incorrect pkg-plist
 
 PERL_CONFIGURE=	yes
 
@@ -32,7 +31,7 @@ MAN3=		Mail::MboxParser.3 Mail::MboxParser::Base.3 \
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500601
-IGNORE=		This port requires perl 5.6.x or later. Install lang/perl5 then try again
+IGNORE=		requires perl 5.6.x or later. Install lang/perl5 then try again
 .endif
 
 .include <bsd.port.post.mk>
