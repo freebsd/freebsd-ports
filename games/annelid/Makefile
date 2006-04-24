@@ -7,6 +7,7 @@
 
 PORTNAME=	annelid
 PORTVERSION=	1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.garthgillespie.com/annelid/ \
 		${MASTER_SITE_LOCAL}
@@ -23,8 +24,6 @@ USE_ZIP=	yes
 USE_GMAKE=	yes
 USE_SDL=	sdl
 USE_GL=		yes
-USE_REINPLACE=	yes
-
 NO_WRKSUBDIR=	yes
 
 OPTIONS=	OPTIMIZED_CFLAGS "Enable compilation optimizations" on
@@ -36,35 +35,35 @@ DATAFILES=	annelid.dat apple.tga apple.wav backd.tga backn.tga font.dat \
 		score.wav segment.tga shrink.wav slow.wav speed.wav title.tga \
 		vortex.wav
 
-do-install:
-# Script
-	@${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}-sh ${PREFIX}/bin/${PORTNAME}
-
-# Program
-	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/libexec
-
-# Data
-	@${MKDIR} ${DATADIR}
-.for f in ${DATAFILES}
-	@${INSTALL_DATA} ${WRKSRC}/${f} ${DATADIR}
-.endfor
-
 .include <bsd.port.pre.mk>
 
 post-patch:
-# Fix Makefile
+# Fix Makefile.
 	@${REINPLACE_CMD} -e 's|%%CFLAGS%%|${CFLAGS}| ; \
-			s|%%X11BASE%%|${X11BASE}| ; \
-			s|sdl-config|${SDL_CONFIG}|' \
-				${WRKSRC}/${MAKEFILE}
+		s|%%X11BASE%%|${X11BASE}| ; \
+		s|sdl-config|${SDL_CONFIG}|' \
+		${WRKSRC}/${MAKEFILE}
 
-# Fix SDL include statement
+# Fix SDL include statement.
 	@${REINPLACE_CMD} -e 's|\(#include.*\)SDL/\(SDL.*\)|\1\2|' \
-				${WRKSRC}/*.cpp ${WRKSRC}/*.h
+		${WRKSRC}/*.cpp ${WRKSRC}/*.h
 
-# Enable/disable compilation optimizations
-.if !defined(WITH_OPTIMIZED_CFLAGS)
+# Enable/disable compilation optimizations.
+.if defined(WITHOUT_OPTIMIZED_CFLAGS)
 	@${REINPLACE_CMD} -e 's|$$(OPT)||' ${WRKSRC}/${MAKEFILE}
 .endif
+
+do-install:
+# Script.
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}-sh ${PREFIX}/bin/${PORTNAME}
+
+# Program.
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/libexec
+
+# Data.
+	${MKDIR} ${DATADIR}
+.for f in ${DATAFILES}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DATADIR}
+.endfor
 
 .include <bsd.port.post.mk>
