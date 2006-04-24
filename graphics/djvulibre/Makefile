@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	djvulibre
-PORTVERSION=	3.5.16
-PORTREVISION=	2
+PORTVERSION=	3.5.17
 CATEGORIES=	graphics www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	djvu
@@ -20,6 +19,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 USE_ICONV=	yes
+USE_GNOME=	gnomehack
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	JPEG_CFLAGS="-I${LOCALBASE}/include" \
@@ -40,8 +40,7 @@ MAN1=		bzz.1 c44.1 cjb2.1 cpaldjvu.1 csepdjvu.1 ddjvu.1 djvm.1 \
 MAN1EXTRA=	any2djvu.1 djvutoxml.1 djvuxml.1 djvuxmlparser.1 djvudigital.1
 MAN1+=		${MAN1EXTRA}
 
-PORTDOCS=	djvu2spec.djvu djvu3changes.txt lizard2002.djvu \
-		lizard2003-navm.djvu lizard2005-antz.djvu
+PORTDOCS=	djvu2spec.djvu lizard2002.djvu
 
 .if !defined(WITHOUT_X11)
 USE_QT_VER=	3
@@ -55,6 +54,8 @@ PLIST_SUB+=	X11='@comment '
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|$${libdir}/pkgconfig|${PREFIX}/libdata/pkgconfig|' \
+		${WRKSRC}/libdjvu/Makefile.in
 	@${REINPLACE_CMD} -e '/-O\*/d ; \
 		 s|$$OPTS -O3|$$OPTS|g ; \
 		 s|$$OPTS -O2|$$OPTS|g ; \

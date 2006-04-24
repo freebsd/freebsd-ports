@@ -23,7 +23,8 @@ include/libdjvu/miniexp.h
 %%X11%%lib/djvulibre/plugins/nsdejavu.so
 lib/libdjvulibre.la
 lib/libdjvulibre.so
-lib/libdjvulibre.so.16
+lib/libdjvulibre.so.17
+libdata/pkgconfig/ddjvuapi.pc
 share/djvu/languages.xml
 %%X11%%share/djvu/osi/de/djview.qm
 share/djvu/osi/de/libdjvu++.xml
@@ -58,11 +59,11 @@ share/djvu/pubtext/DjVuXML-s.dtd
 @dirrm share/djvu/osi/de
 @dirrm share/djvu/osi
 @dirrm share/djvu
-@dirrm lib/djvulibre/plugins
-@dirrm lib/djvulibre
+%%X11%%@dirrm lib/djvulibre/plugins
+%%X11%%@dirrm lib/djvulibre
 @dirrm include/libdjvu
 @dirrmtry man/fr/man1
 @dirrmtry man/fr
 @dirrmtry man/de/man1
 @dirrmtry man/de
-@unexec rmdir %%X11BASE%%/lib/browser_plugins 2>/dev/null || true
+%%X11%%@dirrmtry lib/browser_plugins
