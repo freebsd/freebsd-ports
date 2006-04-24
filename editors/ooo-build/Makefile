@@ -26,7 +26,6 @@ OOOBUILD_TAG=src680-m${MILESTONE}
 OOOBUILD=	ooo-build-src680.${MILESTONE}.0
 OOOBUILD_SOURCE=${OOOBUILD}.tar.gz
 OOO_CAIRO=	cairo-1.0.2.tar.gz
-OOO_MDBTOOLS=	mdbtools-0.6pre1.tar.gz
 OOO_EXTRA_ARTWORK=extras-2.tar.bz2
 OOO_CRYSTAL_IMAGES=	ooo_crystal_images-1.tar.gz
 OOO_OPENCLIPART=	openclipart-0.18-full.tar.gz
@@ -37,7 +36,6 @@ OOOBUILD_TAG=oob680-m5
 OOOBUILD=	ooo-build-${OOOBUILD_VERSION}
 OOOBUILD_SOURCE=${OOOBUILD}.tar.gz
 OOO_CAIRO=	cairo-1.0.2.tar.gz
-OOO_MDBTOOLS=	mdbtools-0.6pre1.tar.gz
 OOO_EXTRA_ARTWORK=extras-2.tar.bz2
 OOO_CRYSTAL_IMAGES=	ooo_crystal_images-1.tar.gz
 OOO_OPENCLIPART=	openclipart-0.18-full.tar.gz
@@ -65,7 +63,6 @@ pre-configure:
 .endif
 	@cd ${WRKDIR}/${OOOBUILD}/patches ; ${PERL} apply.pl ${WRKDIR}/${OOOBUILD}/patches/${OOO_PATCHDIR} ${WRKSRC} --distro=FreeBSD --distro=Binfilter --tag=${OOOBUILD_TAG}
 	${MKDIR} ${WRKSRC}/cairo/download ; ${CP} ${DISTDIR}/${DIST_SUBDIR}/${OOO_CAIRO} ${WRKSRC}/cairo/download
-	@${MKDIR} ${WRKSRC}/mdbtools/download ; ${CP} ${DISTDIR}/${DIST_SUBDIR}/${OOO_MDBTOOLS} ${WRKSRC}/mdbtools/download
 	@${CP} ${WRKDIR}/${OOOBUILD}/src/evolocal.odb ${WRKSRC}/extras/source/database/
 .if !defined(DEVELOPER_VER)
 	@${CP} ${WRKDIR}/${OOOBUILD}/src/go-oo-team.png ${WRKSRC}/default_images/sw/res
