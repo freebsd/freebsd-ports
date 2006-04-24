@@ -1,0 +1,14 @@
+--- src/arpack/Makefile.in.orig	Mon Feb  6 00:28:49 2006
++++ src/arpack/Makefile.in	Mon Feb  6 00:29:34 2006
+@@ -91,9 +91,9 @@
+ am_libarpack_a_OBJECTS = $(am__objects_1)
+ libarpack_a_OBJECTS = $(am_libarpack_a_OBJECTS)
+ DEFAULT_INCLUDES = -I. -I$(srcdir)
+-F77COMPILE = $(F77) $(AM_FFLAGS) $(FFLAGS)
++F77COMPILE = $(F77) $(AM_FFLAGS) $(FFLAGS) -fPIC
+ F77LD = $(F77)
+-F77LINK = $(F77LD) $(AM_FFLAGS) $(FFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o \
++F77LINK = $(F77LD) $(AM_FFLAGS) $(FFLAGS) -fPIC $(AM_LDFLAGS) $(LDFLAGS) -o \
+ 	$@
+ COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
+ 	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)

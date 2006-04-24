@@ -1,0 +1,5 @@
+BLAS and some Libraries from Scalapack used by Elmer FEM package.
+
+These libraries, as most Elmer packages, are built with a F90 compiler.
+
+WWW: http://www.csc.fi/elmer/

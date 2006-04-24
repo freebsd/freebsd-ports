@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Mon Feb  6 00:15:44 2006
++++ src/Makefile.in	Mon Feb  6 00:16:14 2006
+@@ -83,7 +83,7 @@
+ EGREP = @EGREP@
+ EXEEXT = @EXEEXT@
+ F77 = @F77@
+-FFLAGS = @FFLAGS@
++FFLAGS = @FFLAGS@ -fPIC
+ GREP = @GREP@
+ INSTALL_DATA = @INSTALL_DATA@
+ INSTALL_PROGRAM = @INSTALL_PROGRAM@
