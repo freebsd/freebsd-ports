@@ -7,6 +7,7 @@
 
 PORTNAME=	pmars
 PORTVERSION=	0.9.2
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	corewar
@@ -31,27 +32,11 @@ MAN6=		pmars.6
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITH_CURSES) && !defined(WITH_SERVER) && !defined(WITH_X11)
-IGNORE=		Please select at least one interface
+.if defined(WITHOUT_CURSES) && defined(WITHOUT_SERVER) && defined(WITHOUT_X11)
+IGNORE=		needs at least one interface (CURSES, SERVER or X11)
 .endif
 
-.if defined(WITH_ICWS94)
-MAKE_ARGS+=	CFLAGS+="-DEXT94"
-.endif
-
-.if defined(WITH_OPTIMIZED_CFLAGS)
-MAKE_ARGS+=	CFLAGS+="-O3 -fomit-frame-pointer"
-.endif
-
-.if defined(WITH_PERMUTATE)
-MAKE_ARGS+=	CFLAGS+="-DPERMUTATE"
-.endif
-
-.if defined(WITH_SMALLMEM)
-MAKE_ARGS+=	CFLAGS+="-DSMALLMEM"
-.endif
-
-.if defined(WITH_CURSES)
+.if !defined(WITHOUT_CURSES)
 TARGETS+=	curses
 CURSES_ARGS+=	CFLAGS+="-DGRAPHX" \
 		LIB+="-lcurses"
@@ -60,7 +45,19 @@ PLIST_SUB+=	CURSES=""
 PLIST_SUB+=	CURSES="@comment "
 .endif
 
-.if defined(WITH_SERVER)
+.if !defined(WITHOUT_ICWS94)
+MAKE_ARGS+=	CFLAGS+="-DEXT94"
+.endif
+
+.if !defined(WITHOUT_OPTIMIZED_CFLAGS)
+MAKE_ARGS+=	CFLAGS+="-O3 -fomit-frame-pointer"
+.endif
+
+.if !defined(WITHOUT_PERMUTATE)
+MAKE_ARGS+=	CFLAGS+="-DPERMUTATE"
+.endif
+
+.if !defined(WITHOUT_SERVER)
 TARGETS+=	server
 SERVER_ARGS+=	CFLAGS+="-DSERVER"
 PLIST_SUB+=	SERVER=""
@@ -68,7 +65,11 @@ PLIST_SUB+=	SERVER=""
 PLIST_SUB+=	SERVER="@comment "
 .endif
 
-.if defined(WITH_X11)
+.if defined(WITH_SMALLMEM)
+MAKE_ARGS+=	CFLAGS+="-DSMALLMEM"
+.endif
+
+.if !defined(WITHOUT_X11)
 USE_XLIB=	yes
 TARGETS+=	x11
 X11_ARGS+=	CFLAGS+="-DXWINGRAPHX" \
@@ -88,14 +89,14 @@ do-build:
 
 do-install:
 .for f in ${TARGETS}
-	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME}-${f} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME}-${f} ${PREFIX}/bin
 .endfor
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	${MKDIR} ${DOCSDIR}
 .   for f in README config doc warriors
-	@${CP} -R ${WRKSRC}/../${f} ${DOCSDIR}
+	${CP} -R ${WRKSRC}/../${f} ${DOCSDIR}
 .   endfor
-	@${INSTALL_MAN} ${WRKSRC}/../doc/pmars.6 ${PREFIX}/man/man6
+	${INSTALL_MAN} ${WRKSRC}/../doc/pmars.6 ${PREFIX}/man/man6
 .endif
 
 .include <bsd.port.post.mk>
