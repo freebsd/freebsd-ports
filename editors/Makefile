@@ -73,7 +73,6 @@
     SUBDIR += iiimecf
     SUBDIR += impress
     SUBDIR += jed
-    SUBDIR += jed-devel
     SUBDIR += jedit
     SUBDIR += jedit-devel
     SUBDIR += jext
