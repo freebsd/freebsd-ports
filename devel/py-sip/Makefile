@@ -5,9 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	sip
-PORTVERSION=	4.3.2
+PORTVERSION=	4.4.2
 CATEGORIES=	devel python
-MASTER_SITES=	http://www.river-bank.demon.co.uk/download/sip/ \
+MASTER_SITES=	http://www.riverbankcomputing.com/Downloads/sip4/ \
 		http://freebsd.ricin.com/ports/distfiles/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	sip-${PORTVERSION}
@@ -29,7 +29,7 @@ OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 
 SPEC=		${LOCALBASE}/share/qt/mkspecs/freebsd-g++
 ARGS=		-b ${PREFIX}/bin -d ${PYTHONPREFIX_SITELIBDIR} \
-		-e ${PYTHON_INCLUDEDIR} -v ${DATADIR}
+		-e ${PYTHONPREFIX_INCLUDEDIR} -v ${DATADIR}
 
 .include <bsd.port.pre.mk>
 
@@ -55,10 +55,14 @@ do-configure:
 post-install:
 .if !defined(NOPORTDOCS) && !defined(WITHOUT_DOCS)
 	( ${MKDIR} -m 0755 ${DOCSDIR} && cd ${WRKSRC} && ${INSTALL_DATA} \
-		doc/default.css doc/sipref.txt NEWS LICENSE ${DOCSDIR} )
+		doc/default.css doc/sipref.txt doc/sipref.html \
+		NEWS LICENSE ${DOCSDIR} )
 .endif
 	( ${MKDIR} -m 0755 ${DATADIR} && \
+		cd ${PYTHONPREFIX_SITELIBDIR} && \
 		${PYTHON_CMD} -c "import sipconfig" && \
-		${PYTHON_CMD} -O -c "import sipconfig" )
+		${PYTHON_CMD} -O -c "import sipconfig" && \
+		${PYTHON_CMD} -c "import sipdistutils" && \
+		${PYTHON_CMD} -O -c "import sipdistutils" )
 
 .include <bsd.port.post.mk>
