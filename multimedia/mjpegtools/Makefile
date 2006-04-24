@@ -16,7 +16,6 @@ MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Set of tools to record/playback/edit videos in MPEG format
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 CONFLICTS=	mplex-*
 USE_GMAKE=	yes
@@ -173,9 +172,6 @@ post-patch:
 		${WRKSRC}/lavtools/liblavplay.c \
 		${WRKSRC}/lavtools/yuvplay.c \
 		${WRKSRC}/lavtools/lavplay.c
-	@${REINPLACE_CMD} -e 's|/bin/bash|${LOCALBASE}/bin/bash|' \
-		${WRKSRC}/scripts/lav2avi.sh \
-		${WRKSRC}/scripts/lav2mpeg ${WRKSRC}/scripts/mpegtranscode
 # a bug that is happening with configure. It's not detecting that
 # FreeBSD has pthreads. It might happen in other OSes but I'm not
 # risking such a general patch
