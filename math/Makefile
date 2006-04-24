@@ -45,6 +45,7 @@
     SUBDIR += drgeo
     SUBDIR += e
     SUBDIR += eispack
+    SUBDIR += elmer-umfpack
     SUBDIR += emacs-calc
     SUBDIR += emc2
     SUBDIR += entropy
