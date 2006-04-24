@@ -73,13 +73,13 @@ pre-install:
 		${XARGS} -0 ${RM}
 
 do-install:
-	@${MKDIR} ${DATADIR}
-	@${CP} -R ${WRKSRC}/src/game ${DATADIR}
-	@${INSTALL_DATA} ${FILESDIR}/Makefile.game ${DATADIR}/game/Makefile
+	${MKDIR} ${DATADIR}
+	${CP} -R ${WRKSRC}/src/game ${DATADIR}
+	${INSTALL_DATA} ${FILESDIR}/Makefile.game ${DATADIR}/game/Makefile
 .for f in ctf rogue xatrix
 .   if defined(WITH_${f:U})
-	@${CP} -R ${WRKSRC}/src/${f} ${DATADIR}
-	@${INSTALL_DATA} ${FILESDIR}/Makefile.${f} ${DATADIR}/${f}/Makefile
+	${CP} -R ${WRKSRC}/src/${f} ${DATADIR}
+	${INSTALL_DATA} ${FILESDIR}/Makefile.${f} ${DATADIR}/${f}/Makefile
 .   endif
 .endfor
 
