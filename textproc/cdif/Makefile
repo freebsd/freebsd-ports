@@ -7,13 +7,13 @@
 #
 
 PORTNAME=		cdif
-PORTVERSION=		1.15
+PORTVERSION=		1.19
 CATEGORIES=		textproc
-MASTER_SITES=		ftp://ftp.iij.ad.jp/pub/IIJ/dist/utashiro/perl/
+MASTER_SITES=		http://www.srekcah.org/~utashiro/perl/scripts/cdif/
 EXTRACT_SUFX=		# empty
 
 MAINTAINER=		sanpei@FreeBSD.org
-COMMENT=	Display word context diff
+COMMENT=		Word context diff
 
 USE_PERL5=		yes
 
