@@ -1,15 +1,15 @@
---- Makefile.in.orig	Fri Dec 31 03:17:42 2004
-+++ Makefile.in	Wed Jan 26 22:20:17 2005
-@@ -1153,10 +1153,10 @@
+--- Makefile.in.orig	Sun Apr  9 04:46:33 2006
++++ Makefile.in	Tue Apr 11 15:12:05 2006
+@@ -1824,10 +1824,10 @@
  	-test -z "$(noinst_PROGRAMS)" || rm -f $(noinst_PROGRAMS)
- monotone$(EXEEXT): $(monotone_OBJECTS) $(monotone_DEPENDENCIES) 
- 	@rm -f monotone$(EXEEXT)
--	$(CXXLINK) $(monotone_LDFLAGS) $(monotone_OBJECTS) $(monotone_LDADD) $(LIBS)
-+	$(CXXLINK) $(monotone_LDFLAGS) $(monotone_OBJECTS) $(monotone_LDADD) $(LIBS) $(LIBINTL) $(LIBICONV)
+ mtn$(EXEEXT): $(mtn_OBJECTS) $(mtn_DEPENDENCIES) 
+ 	@rm -f mtn$(EXEEXT)
+-	$(CXXLINK) $(mtn_LDFLAGS) $(mtn_OBJECTS) $(mtn_LDADD) $(LIBS)
++	$(CXXLINK) $(mtn_LDFLAGS) $(mtn_OBJECTS) $(mtn_LDADD) $(LIBS) $(LIBINTL) $(LIBICONV)
  unit_tests$(EXEEXT): $(unit_tests_OBJECTS) $(unit_tests_DEPENDENCIES) 
  	@rm -f unit_tests$(EXEEXT)
 -	$(CXXLINK) $(unit_tests_LDFLAGS) $(unit_tests_OBJECTS) $(unit_tests_LDADD) $(LIBS)
 +	$(CXXLINK) $(unit_tests_LDFLAGS) $(unit_tests_OBJECTS) $(unit_tests_LDADD) $(LIBS) $(LIBINTL) $(LIBICONV)
- 
- mostlyclean-compile:
- 	-rm -f *.$(OBJEXT)
+ contrib/$(am__dirstamp):
+ 	@$(mkdir_p) contrib
+ 	@: > contrib/$(am__dirstamp)
