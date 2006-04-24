@@ -6,30 +6,29 @@
 #
 
 PORTNAME=	iso-codes
-PORTVERSION=	0.48
+PORTVERSION=	0.50
 CATEGORIES=	misc
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	kwm
+MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
+DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rainer.alves@gmail.com
 COMMENT=	Lists of the country, language and currency iso names
 
 BUILD_DEPENDS=	xmlproc_parse:${PORTSDIR}/textproc/py-xml
 
-USE_BZIP2=	yes
 USE_PYTHON_BUILD=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	aclocal:19 autoconf:259 automake:19
+AUTOMAKE_ARGS+=	--add-missing --foreign --copy
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|!/usr/bin/python|!${LOCALBASE}/bin/python|g' \
 		${WRKSRC}/iso2pot.py ${WRKSRC}/iso2tab.py \
 		${WRKSRC}/iso_3166/iso3166tab.py ${WRKSRC}/iso_639/iso639tab.py
-	@${REINPLACE_CMD} -e 's|(datadir)/pkgconfig|(prefix)/libdata/pkgconfig|g' \
-		${WRKSRC}/Makefile.in
 
 post-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/iso_3166/iso_3166_2/iso_3166_2.tab \
