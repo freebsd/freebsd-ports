@@ -188,7 +188,6 @@
     SUBDIR += gcdmaster
     SUBDIR += gcombust
     SUBDIR += gconf-editor
-    SUBDIR += gdesklets-multitail
     SUBDIR += gdmap
     SUBDIR += gfslicer
     SUBDIR += ghasher
