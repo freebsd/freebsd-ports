@@ -16,6 +16,8 @@ COMMENT=	Unsymmetric-pattern MultiFrontal Package
 
 LIB_DEPENDS=	atlas.1:${PORTSDIR}/math/atlas
 
+CONFLICTS=	elmer-umfpack-4*
+
 WRKSRC=		${WRKDIR}/${DISTNAME}/UMFPACK
 ALL_TARGET=	lib
 
