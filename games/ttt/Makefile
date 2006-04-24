@@ -7,6 +7,7 @@
 
 PORTNAME=	ttt
 PORTVERSION=	2003.03.14
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.billsgames.com/unix/x/ttt/
 
@@ -15,7 +16,6 @@ COMMENT=	Simple one or two player Tic Tac Toe game
 
 USE_GMAKE=	yes
 USE_SDL=	mixer sdl
-USE_REINPLACE=	yes
 
 OPTIONS=	OPTIMIZED_CFLAGS "Enable compilation optimizations" on
 
@@ -26,36 +26,36 @@ NO_LATEST_LINK=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:
-# Fix Makefile
+# Fix Makefile.
 	@${REINPLACE_CMD} -e 's|sdl-config|${SDL_CONFIG}| ; \
-			s|\(-Wall\)|${CFLAGS} \1|' \
-				${WRKSRC}/${MAKEFILE}
+		s|\(-Wall\)|${CFLAGS} \1|' \
+		${WRKSRC}/${MAKEFILE}
 
-# Enable/disable compilation optimizations
-.if !defined(WITH_OPTIMIZED_CFLAGS)
+# Enable/disable compilation optimizations.
+.if defined(WITHOUT_OPTIMIZED_CFLAGS)
 	@${REINPLACE_CMD} -e 's|-O2||' ${WRKSRC}/${MAKEFILE}
 .endif
 
-# Fix paths to ${DATADIR}
+# Fix paths to ${DATADIR}.
 	@${REINPLACE_CMD} -e 's|\(images/\)|${DATADIR}/\1| ; \
-			s|\(sounds/\)|${DATADIR}/\1|' \
-				${WRKSRC}/ttt.c
+		s|\(sounds/\)|${DATADIR}/\1|' \
+		${WRKSRC}/ttt.c
 
 do-install:
-# Program
+# Program.
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 
-# Data
+# Data.
 	${MKDIR} ${DATADIR}
 .for d in images sounds
 	${CP} -R ${WRKSRC}/${d} ${DATADIR}
 .endfor
 
-# Fix wrong permissions
-	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}
-	${FIND} ${DATADIR} -type f -print0 | \
+# Fix wrong permissions.
+	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}
+	@${FIND} ${DATADIR} -type f -print0 | \
 		${XARGS} -0 ${CHMOD} ${SHAREMODE}
-	${FIND} ${DATADIR} -type d -print0 | \
+	@${FIND} ${DATADIR} -type d -print0 | \
 		${XARGS} -0 ${CHMOD} ${BINMODE}
 
 .include <bsd.port.post.mk>
