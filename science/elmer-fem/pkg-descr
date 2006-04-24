@@ -1,0 +1,9 @@
+ElmerSolver - the Solution of Partial Differential Equations.
+
+ElmerSolver is thus an independent module that processes the computational
+mesh and the model input file containing references to the selected
+equations and model parameters. ElmerSolver makes the equations into a
+discrete form, handles coupled systems, non-linearities and
+time-dependences, and provides output data for visualization.
+
+WWW:	http://www.csc.fi/elmer/elmersolve/
