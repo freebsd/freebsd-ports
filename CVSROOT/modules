@@ -2053,6 +2053,7 @@ elm		ports/mail/elm
 elm+ME		ports/mail/elm+ME
 elmer-eio	ports/science/elmer-eio
 elmer-matc	ports/science/elmer-matc
+elmer-mathlibs	ports/math/elmer-mathlibs
 elmer-meshgen2d	ports/science/elmer-meshgen2d
 elmer-umfpack	ports/math/elmer-umfpack
 elmergrid	ports/science/elmergrid
