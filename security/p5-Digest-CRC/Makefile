@@ -4,7 +4,7 @@
 # $FreeBSD$
 
 PORTNAME=	Digest-CRC
-PORTVERSION=	0.09
+PORTVERSION=	0.10
 CATEGORIES=	security perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Digest
@@ -17,4 +17,10 @@ PERL_CONFIGURE=	yes
 
 MAN3=	Digest::CRC.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+IGNORE=		perl 5.6 or newer required, install lang/perl5 or lang/perl5.8 and try again
+.endif
+
+.include <bsd.port.post.mk>
