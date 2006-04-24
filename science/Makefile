@@ -24,6 +24,7 @@
     SUBDIR += elmer-meshgen2d
     SUBDIR += elmerfront
     SUBDIR += elmergrid
+    SUBDIR += elmerpost
     SUBDIR += euler
     SUBDIR += fastcap
     SUBDIR += fasthenry
