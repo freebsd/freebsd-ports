@@ -1,0 +1,11 @@
+--- digikam/showfoto/Makefile.in.orig	Mon Apr 24 17:10:55 2006
++++ digikam/showfoto/Makefile.in	Mon Apr 24 17:11:14 2006
+@@ -403,7 +403,7 @@
+ xdg_appsdir = @xdg_appsdir@
+ xdg_directorydir = @xdg_directorydir@
+ xdg_menudir = @xdg_menudir@
+-SUBDIRS = pics mimetypes
++SUBDIRS = pics
+ #>- METASOURCES = AUTO  
+ INCLUDES = -I$(top_srcdir)/digikam/utilities/imageeditor \
+ 	   -I$(top_srcdir)/digikam/libs/thumbbar/ \
