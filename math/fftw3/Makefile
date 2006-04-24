@@ -9,8 +9,7 @@ PORTNAME=	fftw3
 PORTVERSION=	3.0.1
 PORTREVISION?=	5
 CATEGORIES=	math
-MASTER_SITES=	ftp://ftp.fftw.org/pub/fftw/ 		\
-		http://www.fftw.org/
+MASTER_SITES=	ftp://ftp.fftw.org/pub/fftw/old/
 PKGNAMESUFFIX=	${FFTW3_PKGNAMESUFFIX}
 DISTNAME=	fftw-${PORTVERSION}
 
