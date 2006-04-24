@@ -18,25 +18,15 @@ COMMENT=	Sega Master System emulator
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 
 ONLY_FOR_ARCHS=	i386
-
 USE_ZIP=	yes
 USE_GMAKE=	yes
 USE_SDL=	sdl
-USE_REINPLACE=	yes
-
 NO_WRKSUBDIR=	yes
 
 OPTIONS=	OPTIMIZED_CFLAGS "Enable compilation optimizations" on
 
 PLIST_FILES=	bin/osmose
 PORTDOCS=	readme.txt
-
-do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/readme.txt ${DOCSDIR}
-.endif
 
 .include <bsd.port.pre.mk>
 
@@ -45,18 +35,25 @@ EXTRA_PATCHES=	${FILESDIR}/extra-patch-freebsd4
 .endif
 
 post-patch:
-# Fix Makefile
+# Fix Makefile.
 	@${REINPLACE_CMD} -e 's|\(-Dlinux\)|${CFLAGS} \1| ; \
-			s|sdl-config|${SDL_CONFIG}|' \
-				${WRKSRC}/${MAKEFILE}
+		s|sdl-config|${SDL_CONFIG}|' \
+		${WRKSRC}/${MAKEFILE}
 
-# Fix SDL include statement
+# Fix SDL include statement.
 	@${REINPLACE_CMD} -e 's|\(#include.*\)SDL/\(SDL.*\)|\1\2|' \
-				${WRKSRC}/*.h
+		${WRKSRC}/*.h
 
-# Enable/disable compilation optimizations
+# Enable/disable compilation optimizations.
 .if defined(WITHOUT_OPTIMIZED_CFLAGS)
 	@${REINPLACE_CMD} -e 's|-O3||g' ${WRKSRC}/${MAKEFILE}
+.endif
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/readme.txt ${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>
