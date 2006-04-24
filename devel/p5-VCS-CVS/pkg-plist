@@ -1,5 +1,2 @@
 %%SITE_PERL%%/VCS/CVS.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/VCS/CVS/.packlist
 @dirrm %%SITE_PERL%%/VCS
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/VCS/CVS
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/VCS
