@@ -10,29 +10,30 @@ PORTVERSION=	0.7.7
 CATEGORIES=	java devel
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		http://www.antlr.org/download/:antlr
-MASTER_SITE_SUBDIR=     classpath
+MASTER_SITE_SUBDIR=	classpath
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 		${ANTLR}.jar:antlr
-EXTRACT_ONLY=   ${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
+EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	A documentation generation framework; javadoc alternative
 
-BUILD_DEPENDS+=	gcj41:${PORTSDIR}/lang/gcc41
-BUILD_DEPENDS+=	gcp:${PORTSDIR}/sysutils/coreutils
+BUILD_DEPENDS=	gcj41:${PORTSDIR}/lang/gcc41 \
+		gcp:${PORTSDIR}/sysutils/coreutils
 
-ANTLRVER=2.7.5
-ANTLR=antlr-${ANTLRVER}
+ANTLRVER=	2.7.5
+ANTLR=		antlr-${ANTLRVER}
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--with-antlr-jar=${ANTLR}.jar
-CONFIGURE_ENV+=	PATH="${WRKDIR}/bin:${PATH}"
-MAKE_ENV+=      PATH="${WRKDIR}/bin:${PATH}"
-SCRIPT_ENV+=    PATH="${WRKDIR}/bin:${PATH}"
+INSTALLS_SHLIB=	yes
+CONFIGURE_ARGS=	--with-antlr-jar=${ANTLR}.jar
+CONFIGURE_ENV=	PATH="${WRKDIR}/bin:${PATH}" LDFLAGS="${PTHREAD_LIBS}"
+MAKE_ENV=	PATH="${WRKDIR}/bin:${PATH}"
+SCRIPT_ENV=	PATH="${WRKDIR}/bin:${PATH}"
+PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
-.include <bsd.port.pre.mk>
-
-MAN1=                    gjdoc.1
+MAN1=		gjdoc.1
+INFO=		gjdoc
 
 post-extract:
 	@${CP} ${DISTDIR}/${ANTLR}.jar ${WRKSRC}
@@ -41,4 +42,4 @@ post-extract:
 	@${LN} -s ${LOCALBASE}/bin/gij41 ${WRKDIR}/bin/gij
 	@${LN} -s ${LOCALBASE}/bin/fastjar41 ${WRKDIR}/bin/fastjar
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
