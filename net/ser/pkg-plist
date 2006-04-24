@@ -12,6 +12,7 @@ lib/ser/modules/auth_diameter.so
 %%RADIUS%%lib/ser/modules/auth_radius.so
 lib/ser/modules/avp.so
 lib/ser/modules/avp_db.so
+%%RADIUS%%lib/ser/modules/avp_radius.so
 lib/ser/modules/avpops.so
 lib/ser/modules/check_ua.so
 lib/ser/modules/dbtext.so
@@ -24,6 +25,7 @@ lib/ser/modules/ext.so
 lib/ser/modules/flatstore.so
 lib/ser/modules/gflags.so
 lib/ser/modules/group.so
+%%RADIUS%%lib/ser/modules/group_radius.so
 lib/ser/modules/mangler.so
 lib/ser/modules/maxfwd.so
 lib/ser/modules/msilo.so
@@ -46,6 +48,7 @@ lib/ser/modules/textops.so
 lib/ser/modules/tm.so
 lib/ser/modules/uri.so
 lib/ser/modules/uri_db.so
+%%RADIUS%%lib/ser/modules/uri_radius.so
 lib/ser/modules/usrloc.so
 lib/ser/modules/xlog.so
 sbin/gen_ha1
@@ -65,6 +68,7 @@ sbin/serunix
 %%RADIUS%%%%DOCSDIR%%/README.auth_radius
 %%DOCSDIR%%/README.avp
 %%DOCSDIR%%/README.avp_db
+%%RADIUS%%%%DOCSDIR%%/README.avp_radius
 %%DOCSDIR%%/README.avpops
 %%DOCSDIR%%/README.dbtext
 %%DOCSDIR%%/README.dispatcher
@@ -76,6 +80,7 @@ sbin/serunix
 %%DOCSDIR%%/README.flatstore
 %%DOCSDIR%%/README.gflags
 %%DOCSDIR%%/README.group
+%%RADIUS%%%%DOCSDIR%%/README.group_radius
 %%DOCSDIR%%/README.mangler
 %%DOCSDIR%%/README.maxfwd
 %%DOCSDIR%%/README.msilo
@@ -96,6 +101,7 @@ sbin/serunix
 %%DOCSDIR%%/README.tm
 %%DOCSDIR%%/README.uri
 %%DOCSDIR%%/README.uri_db
+%%RADIUS%%%%DOCSDIR%%/README.uri_radius
 %%DOCSDIR%%/README.usrloc
 %%DOCSDIR%%/README.xlog
 @dirrm %%DOCSDIR%%
