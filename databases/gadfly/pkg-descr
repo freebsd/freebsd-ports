@@ -5,3 +5,5 @@ engine. Gadfly stores the active database in memory, with recovery
 logging to a file system. It supports an optional TCP/IP based
 client server mode and log based failure recovery for system or
 software failures (but not for disk failures).
+
+WWW: http://gadfly.sourceforge.net/
