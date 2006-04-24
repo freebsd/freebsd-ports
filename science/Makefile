@@ -17,6 +17,7 @@
     SUBDIR += dcl
     SUBDIR += devisor
     SUBDIR += dft++
+    SUBDIR += elmer-eio
     SUBDIR += elmer-meshgen2d
     SUBDIR += elmergrid
     SUBDIR += euler
