@@ -1,0 +1,5 @@
+include/amd.h
+include/umfpack.h
+lib/libamd.a
+lib/libamdf77.a
+lib/libumfpack.a
