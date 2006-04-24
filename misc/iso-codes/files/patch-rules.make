@@ -1,6 +1,6 @@
---- iso_3166/Makefile.in.orig	Mon Oct  3 16:51:05 2005
-+++ iso_3166/Makefile.in	Thu Oct 13 09:53:50 2005
-@@ -507,7 +507,8 @@ install-data-hook: $(mofiles)
+--- rules.make.orig	Sat Apr 15 06:19:19 2006
++++ rules.make	Sat Apr 15 06:20:57 2006
+@@ -12,7 +12,8 @@
  		cat=`basename $$cat`; \
  		lang=`echo $$cat | sed 's/\.mo$$//'`; \
  		dir=$(DESTDIR)$(localedir)/$$lang/LC_MESSAGES; \
