@@ -501,6 +501,7 @@
     SUBDIR += qcamview
     SUBDIR += qcomicbook
     SUBDIR += qcread
+    SUBDIR += qgis
     SUBDIR += qglviewer
     SUBDIR += qiv
     SUBDIR += qslim
