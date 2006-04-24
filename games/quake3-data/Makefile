@@ -7,6 +7,7 @@
 
 PORTNAME=	data
 DISTVERSION=	1.32b-3
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_IDSOFTWARE}
 MASTER_SITE_SUBDIR=	quake3/linux
@@ -25,7 +26,6 @@ OPTIONS=	TEAMARENA "Install Quake III Team Arena data files" on
 DATADIR=	${Q3DIR}
 
 SUB_FILES=	pkg-message
-PKGMESSAGE=	${WRKDIR}/pkg-message
 
 do-extract:
 	@${RM} -rf ${WRKDIR}
@@ -37,7 +37,7 @@ do-extract:
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_TEAMARENA)
+.if !defined(WITHOUT_TEAMARENA)
 PLIST_SUB+=	TEAMARENA=""
 .else
 PLIST_SUB+=	TEAMARENA="@comment "
@@ -48,7 +48,7 @@ do-install:
 	@${CP} -R ${WRKSRC}/baseq3 ${DATADIR}
 	@${MKDIR} ${PREFIX}/share/pixmaps
 	@${INSTALL_DATA} ${WRKSRC}/quake3.xpm ${PREFIX}/share/pixmaps
-.if defined(WITH_TEAMARENA)
+.if !defined(WITHOUT_TEAMARENA)
 	@${CP} -R ${WRKSRC}/missionpack ${DATADIR}
 .endif
 
