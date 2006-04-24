@@ -7,6 +7,7 @@
 
 PORTNAME=	adns
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	ftp://ftp.chiark.greenend.org.uk/users/ian/adns/ \
 		http://www.chiark.greenend.org.uk/~ian/adns/ftp/
@@ -18,7 +19,7 @@ GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 USE_GMAKE=	yes
 
-LIBVERSION=	12
+LIBVERSION=	1
 PLIST_SUB+=	LIBVERSION="${LIBVERSION}"
 
 DOCS=		COPYING GPL-vs-LGPL INSTALL LICENCE.WAIVERS README README.html TODO changelog

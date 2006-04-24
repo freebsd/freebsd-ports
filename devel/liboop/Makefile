@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	distfiles
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A low-level event loop management library for POSIX-based OS
 
-LIB_DEPENDS=	adns.12:${PORTSDIR}/dns/adns \
+LIB_DEPENDS=	adns.1:${PORTSDIR}/dns/adns \
 		tcl84.1:${PORTSDIR}/lang/tcl84 \
 		wwwcore.1:${PORTSDIR}/www/libwww
 

@@ -108,7 +108,7 @@ CONFIGURE_ARGS+=	--enable-snmp=no --with-ucd-snmp=no --with-net-snmp=no
 .endif
 
 .if !defined(WITHOUT_ADNS) && !defined(LITE)
-LIB_DEPENDS+=	adns.12:${PORTSDIR}/dns/adns
+LIB_DEPENDS+=	adns.1:${PORTSDIR}/dns/adns
 CONFIGURE_ARGS+=	--with-adns=${LOCALBASE}/lib
 .else
 CONFIGURE_ARGS+=	--with-adns=no

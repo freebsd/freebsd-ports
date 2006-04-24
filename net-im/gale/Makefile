@@ -17,7 +17,7 @@ COMMENT=	A secure instant messaging system
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libgc.a:${PORTSDIR}/devel/boehm-gc
 LIB_DEPENDS=	wwwcore.1:${PORTSDIR}/www/libwww \
-		adns.12:${PORTSDIR}/dns/adns
+		adns.1:${PORTSDIR}/dns/adns
 
 USE_ICONV=	yes
 USE_GNOME=	glib12
