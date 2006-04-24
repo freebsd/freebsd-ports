@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	sunterlib
-PORTVERSION=	0.7
+PORTVERSION=	0.8
 CATEGORIES=	devel scheme
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	laszlof@vonostingroup.com
 COMMENT=	Contributed libraries for Scheme 48 and scsh
 
 RUN_DEPENDS=	${LOCALBASE}/lib/scsh/scsh-install-pkg:${PORTSDIR}/devel/scsh-install-lib
