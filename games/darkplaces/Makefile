@@ -7,6 +7,7 @@
 
 PORTNAME=	darkplaces
 PORTVERSION=	20050818
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://offload1.icculus.org/twilight/darkplaces/files/
 DISTNAME=	${PORTNAME}engine${PORTVERSION}
@@ -34,18 +35,18 @@ PLIST_DIRS=	%%DATADIR%%
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITH_CLIENT) && !defined(WITH_SDL_CLIENT) && \
-    !defined(WITH_DEDICATED)
-IGNORE=		please select at least one of CLIENT, SDL_CLIENT and DEDICATED
+.if defined(WITHOUT_CLIENT) && defined(WITHOUT_SDL_CLIENT) && \
+    defined(WITHOUT_DEDICATED)
+IGNORE=		needs at least one of CLIENT, SDL_CLIENT and DEDICATED options
 .endif
 
-.if defined(WITH_CLIENT) || defined(WITH_SDL_CLIENT)
+.if !defined(WITHOUT_CLIENT) || !defined(WITHOUT_SDL_CLIENT)
 # Loads libraries at run-time, thus RUN_DEPENDS.
 RUN_DEPENDS+=	${LOCALBASE}/lib/libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		${LOCALBASE}/lib/libvorbis.so:${PORTSDIR}/audio/libvorbis
 .endif
 
-.if defined(WITH_CLIENT)
+.if !defined(WITHOUT_CLIENT)
 USE_GL=		yes
 ALL_TARGET+=	cl-release
 EXE_TARGETS+=	${PORTNAME}-glx
@@ -53,17 +54,17 @@ PLIST_SUB+=	CLIENT=""
 PLIST_FILES+=	bin/${PORTNAME}-glx
 .endif
 
-.if defined(WITH_DEDICATED)
+.if !defined(WITHOUT_DEDICATED)
 ALL_TARGET+=	sv-release
 EXE_TARGETS+=	${PORTNAME}-dedicated
 PLIST_FILES+=	bin/${PORTNAME}-dedicated
 .endif
 
-.if defined(WITH_OPTIMIZED_CFLAGS)
+.if !defined(WITHOUT_OPTIMIZED_CFLAGS)
 MAKE_ENV+=	WITH_OPTIMIZED_CFLAGS=YES
 .endif
 
-.if defined(WITH_SDL_CLIENT)
+.if !defined(WITHOUT_SDL_CLIENT)
 USE_SDL=	sdl
 ALL_TARGET+=	sdl-release
 EXE_TARGETS+=	${PORTNAME}-sdl
