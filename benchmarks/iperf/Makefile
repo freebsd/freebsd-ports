@@ -15,18 +15,17 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	mnag@FreeBSD.org
 COMMENT=	A tool to measure maximum TCP and UDP bandwidth
 
-NO_CDROM=	"can't charge a fee for the software"
+NO_CDROM=	can't charge a fee for the software
 
-HAS_CONFIGURE=	yes
+GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/iperf
+PORTDOCS=	*
 
 OPTIONS=	IPV6	"Enable support to IPv6" 	on \
 		THREADS	"Enable threads support"	on
 
 .include <bsd.port.pre.mk>
-
-CONFIGURE_ARGS+=	--prefix=${PREFIX}
 
 .if defined(WITHOUT_IPV6)
 CONFIGURE_ARGS+=	--disable-ipv6
@@ -34,18 +33,16 @@ CONFIGURE_ARGS+=	--disable-ipv6
 
 .if defined(WITHOUT_THREADS)
 CONFIGURE_ARGS+=	--disable-threads
-.endif
-
-.if !defined(NOPORTDOCS)
-PORTDOCS=	*
+.else
+CONFIGURE_ENV+=		CFLAGS=${PTHREAD_LIBS}
 .endif
 
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.for FILE in ${WRKSRC}/doc/*.html ${WRKSRC}/doc/*.gif
-	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
+.for f in ${WRKSRC}/doc/*.html ${WRKSRC}/doc/*.gif
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
 
