@@ -7,7 +7,7 @@
 
 PORTNAME=	freedroidrpg
 PORTVERSION=	0.9.13
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	freedroid
@@ -32,10 +32,10 @@ OPTIONS=	BACKTRACE "Use backtrace() to generate nice bug reports" on \
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-BROKEN=		"does not compile (missing fenv.h)"
+IGNORE=		does not compile on FreeBSD < 5.X (missing fenv.h)
 .endif
 
-.if defined(WITH_BACKTRACE)
+.if !defined(WITHOUT_BACKTRACE)
 LIB_DEPENDS+=	execinfo.1:${PORTSDIR}/devel/libexecinfo
 CONFIGURE_ARGS+=--enable-backtrace
 STRIP=		# keep debugging symbols
@@ -43,7 +43,7 @@ STRIP=		# keep debugging symbols
 CONFIGURE_ARGS+=--disable-backtrace
 .endif
 
-.if defined(WITH_EDITORS)
+.if !defined(WITHOUT_EDITORS)
 USE_GNOME+=	gtk12
 CONFIGURE_ARGS+=--enable-editors
 PLIST_SUB+=	EDITORS=""
@@ -52,7 +52,7 @@ CONFIGURE_ARGS+=--disable-editors
 PLIST_SUB+=	EDITORS="@comment "
 .endif
 
-.if defined(WITH_OPENGL)
+.if !defined(WITHOUT_OPENGL)
 USE_GL=		yes
 CONFIGURE_ARGS+=--enable-opengl
 .else
