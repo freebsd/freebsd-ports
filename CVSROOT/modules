@@ -4773,7 +4773,6 @@ jdk15-doc	ports/java/jdk15-doc
 jdom		ports/java/jdom
 jdresolve	ports/www/jdresolve
 jed		ports/editors/jed
-jed-devel	ports/editors/jed-devel
 jedit		ports/editors/jedit
 jedit-devel	ports/editors/jedit-devel
 jep		ports/devel/jep
