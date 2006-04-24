@@ -86,7 +86,7 @@ do-install:
 	${MKDIR} ${DOCSDIR}/docs
 	${INSTALL_DATA} ${WRKSRC}/docs/* ${DOCSDIR}/docs
 .   for f in IDEAS NOTES README TODO
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/IDEAS
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .   endfor
 .endif
 
