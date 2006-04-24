@@ -7,6 +7,7 @@
 
 PORTNAME=	pmars
 PORTVERSION=	0.9.2
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.cs.helsinki.fi/u/jpihlaja/cw/pmars-sdl/
 PKGNAMESUFFIX=	-sdl
@@ -33,26 +34,26 @@ MAKE_ARGS+=	CFLAGS+="${CFLAGS}" \
 
 PLIST_FILES=	bin/${PORTNAME}${PKGNAMESUFFIX}
 
-do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} \
-		${PREFIX}/bin/${PORTNAME}${PKGNAMESUFFIX}
-
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_ICWS94)
+.if !defined(WITHOUT_ICWS94)
 MAKE_ARGS+=	CFLAGS+="-DEXT94"
 .endif
 
-.if defined(WITH_OPTIMIZED_CFLAGS)
+.if !defined(WITHOUT_OPTIMIZED_CFLAGS)
 MAKE_ARGS+=	CFLAGS+="-O3 -fomit-frame-pointer"
 .endif
 
-.if defined(WITH_PERMUTATE)
+.if !defined(WITHOUT_PERMUTATE)
 MAKE_ARGS+=	CFLAGS+="-DPERMUTATE"
 .endif
 
 .if defined(WITH_SMALLMEM)
 MAKE_ARGS+=	CFLAGS+="-DSMALLMEM"
 .endif
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} \
+		${PREFIX}/bin/${PORTNAME}${PKGNAMESUFFIX}
 
 .include <bsd.port.post.mk>
