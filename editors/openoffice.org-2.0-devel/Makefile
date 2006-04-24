@@ -48,7 +48,7 @@ WITHOUT_CPU_CFLAGS=	true
 
 ONLY_FOR_ARCHS=	i386
 
-.if !defined(WITHOUT_JAVA) && !defined(WITH_GNUGCJ)
+.if !defined(WITH_GNUGCJ)
 USE_JAVA=	yes
 JAVA_VERSION=	1.4+
 JAVA_BUILD=	jdk
@@ -120,7 +120,7 @@ BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip \
 		bison2:${PORTSDIR}/devel/bison2 \
 		imake:${X_IMAKE_PORT}
-.if !defined(WITHOUT_JAVA) && !defined(WITH_GNUGCJ)
+.if !defined(WITH_GNUGCJ)
 BUILD_DEPENDS+=	ant:${PORTSDIR}/devel/apache-ant
 .else
 LIB_DEPENDS+=	xslt.2:${PORTSDIR}/textproc/libxslt
