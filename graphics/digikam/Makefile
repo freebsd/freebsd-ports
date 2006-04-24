@@ -7,7 +7,7 @@
 
 PORTNAME=	digikam
 PORTVERSION=	0.8.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,20 +22,16 @@ LIB_DEPENDS=	kexif.1:${PORTSDIR}/graphics/libkexif \
 		sqlite3.8:${PORTSDIR}/databases/sqlite3
 RUN_DEPENDS=	dcraw:${PORTSDIR}/graphics/dcraw
 
-BROKEN=		Incorrect pkg-plist
-
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 USE_KDELIBS_VER=3
-USE_REINPLACE=	yes
+USE_GETTEXT=	yes
 CONFIGURE_ARGS+=--program-prefix=''
 INSTALLS_SHLIB=	yes
-
-.include <bsd.port.pre.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2||g' ${WRKSRC}/${CONFIGURE_SCRIPT}
 	@${REINPLACE_CMD} -e 's@-lpthread@${PTHREAD_LIBS}@g' ${WRKSRC}/${CONFIGURE_SCRIPT}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

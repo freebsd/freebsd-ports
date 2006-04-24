@@ -359,7 +359,6 @@ share/locale/sv/LC_MESSAGES/digikam.mo
 share/locale/ta/LC_MESSAGES/digikam.mo
 share/locale/tr/LC_MESSAGES/digikam.mo
 share/locale/zh_CN/LC_MESSAGES/digikam.mo
-share/mimelnk/image/x-raw.desktop
 share/services/digikamalbums.protocol
 share/services/digikamdates.protocol
 share/services/digikamimageplugin_core.desktop
