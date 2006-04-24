@@ -11027,6 +11027,7 @@ qextmdi		ports/devel/qextmdi
 qfaxreader	ports/comms/qfaxreader
 qfsm		ports/cad/qfsm
 qgfe		ports/math/qgfe
+qgis		ports/graphics/qgis
 qglviewer	ports/graphics/qglviewer
 qgo		ports/games/qgo
 qhacc		ports/finance/qhacc
