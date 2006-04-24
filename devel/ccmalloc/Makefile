@@ -25,6 +25,10 @@ PLIST_SUB=	CXX="${CXX}"
 
 .include <bsd.port.pre.mk>
 
+.if ${CC} != "cc" || ${CXX} != "c++"
+BROKEN=		Does not build with CC or CXX set
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|CFLAGS=".*"|CFLAGS="${CFLAGS}"|; \
 		s|CXXFLAGS=".*"|CXXFLAGS="${CXXFLAGS}"|' ${WRKSRC}/configure
