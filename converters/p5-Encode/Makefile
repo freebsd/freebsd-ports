@@ -28,4 +28,8 @@ post-patch:
 	${PERL} -pi -e '$$_="" if $$.>=18 && $$.<=20' ${WRKSRC}/Makefile.PL
 .endif
 
+post-configure:
+	@${FIND} ${WRKSRC}/ -name Makefile -exec \
+		${REINPLACE_CMD} -e 's,^CC =,CC ?=,' {} \;
+
 .include <bsd.port.post.mk>
