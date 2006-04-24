@@ -7,6 +7,7 @@
 
 PORTNAME=	data
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.ijs.si/~lesi/distfiles/doom/
 PKGNAMEPREFIX=	${DMPKGNAMEPREFIX}
@@ -27,7 +28,6 @@ OPTIONS=	DOOM "Install Doom shareware data" on \
 		STRIFE "Install Strife shareware data" off
 
 SUB_FILES=	pkg-message
-PKGMESSAGE=	${WRKDIR}/pkg-message
 
 LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}
 DATADIR=	${DMDIR}
@@ -44,7 +44,7 @@ STRIFE_WAD=	strife0.wad
 .include <bsd.port.pre.mk>
 
 .for f in ${LIST}
-.   if defined(WITH_${f})
+.   if defined(WITH_${f}) || !defined(WITHOUT_${f})
 DISTFILES+=	${${f}_WAD}${EXTRACT_SUFX}
 PLIST_SUB+=	${f}=""
 .   else
@@ -59,7 +59,7 @@ PLIST_SUB+=	${f}="@comment "
 do-extract:
 	@${MKDIR} ${WRKDIR}
 .for f in ${LIST}
-.   if defined(WITH_${f})
+.   if defined(WITH_${f}) || !defined(WITHOUT_${f})
 	@${BZIP2_CMD} -dc ${_DISTDIR}/${${f}_WAD}${EXTRACT_SUFX} > \
 		${WRKDIR}/${${f}_WAD}
 .   endif
@@ -68,8 +68,8 @@ do-extract:
 do-install:
 	@${MKDIR} ${DATADIR}
 .for f in ${LIST}
-.   if defined(WITH_${f})
-	@${INSTALL_DATA} ${WRKSRC}/${${f}_WAD} ${DATADIR}
+.   if defined(WITH_${f}) || !defined(WITHOUT_${f})
+	${INSTALL_DATA} ${WRKSRC}/${${f}_WAD} ${DATADIR}
 .   endif
 .endfor
 
