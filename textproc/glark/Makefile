@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	glark
-PORTVERSION=	1.7.8
+PORTVERSION=	1.7.9
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.incava.org/pub/glark/
 
@@ -18,10 +18,13 @@ USE_RUBY=	yes
 NO_BUILD=	yes
 
 MAN1=		glark.1
-PLIST_FILES=	bin/glark
+PLIST_FILES=	bin/glark share/glark/glark.rb
+PLIST_DIRS=	share/glark
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/glark ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/glark ${PREFIX}/bin
+	${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/share/glark/glark.rb ${DATADIR}/glark.rb
 	${INSTALL_MAN} ${WRKSRC}/glark.1 ${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
