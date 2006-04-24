@@ -8,7 +8,7 @@
 
 PORTNAME=	evince
 PORTVERSION=	0.4.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics print gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.4
@@ -74,7 +74,7 @@ DJVU_DIR?=	-nox11
 .endif
 
 .if defined(WITH_DJVU)
-LIB_DEPENDS+=		djvulibre.16:${PORTSDIR}/graphics/djvulibre${DJVU_DIR}
+LIB_DEPENDS+=		djvulibre.17:${PORTSDIR}/graphics/djvulibre${DJVU_DIR}
 CONFIGURE_ARGS+=	--enable-djvu
 GCONF_SCHEMAS+=		evince-thumbnailer-djvu.schemas
 .else
