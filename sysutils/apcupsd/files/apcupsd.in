@@ -25,7 +25,7 @@ load_rc_config $name
 : ${apcupsd_enable="NO"}
 : ${apcupsd_flags="--kill-on-powerfail"}
 : ${apcupsd_pidfile="/var/run/apcupsd.pid"}
-: ${apcupsd_lockfile"/var/spool/lock/apcupsd.lock"}
+: ${apcupsd_lockfile="/var/spool/lock/apcupsd.lock"}
 
 pidfile="/var/run/apcupsd.pid"
 required_files="%%PREFIX%%/etc/apcupsd/apcupsd.conf"
