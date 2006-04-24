@@ -6,6 +6,16 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20060424:
+  AFFECTS: users of devel/monotone
+  AUTHOR: lapo@lapo.it
+
+  Version 0.26 of monotone has many differences with past versions, there are
+  changes in executable name, in repository and workspace format and also
+  in the 'netsync' network protocol.
+  A centralized "flagday" migration is needed in order to change format.
+  Refer to ${PREFIX}/share/doc/monotone/UPGRADE for migration instructions.
+
 20060418:
   AFFECTS: users of net/{ipw,iwi}-firmware
   AUTHOR: flz@FreeBSD.org
