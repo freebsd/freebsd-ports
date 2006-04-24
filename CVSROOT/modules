@@ -2052,6 +2052,7 @@ elk		ports/lang/elk
 elm		ports/mail/elm
 elm+ME		ports/mail/elm+ME
 elmer-eio	ports/science/elmer-eio
+elmer-fem	ports/science/elmer-fem
 elmer-hutiter	ports/science/elmer-hutiter
 elmer-matc	ports/science/elmer-matc
 elmer-mathlibs	ports/math/elmer-mathlibs
