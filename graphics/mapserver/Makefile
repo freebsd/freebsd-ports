@@ -7,7 +7,7 @@
 
 PORTNAME=		mapserver
 PORTVERSION=		4.4.1
-PORTREVISION=		0
+PORTREVISION=		1
 CATEGORIES=		graphics www
 MASTER_SITES=		http://cvs.gis.umn.edu/dist/
 
@@ -47,7 +47,7 @@ CONFIGURE_ARGS+=	--without-tiff
 .endif
 
 .if defined(WITH_MING)
-LIB_DEPENDS+=		ming.3:${PORTSDIR}/graphics/ming
+LIB_DEPENDS+=		ming.4:${PORTSDIR}/graphics/ming
 CONFIGURE_ARGS+=	--with-ming=${LOCALBASE}
 .endif
 
