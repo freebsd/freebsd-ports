@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	logmon
-PORTVERSION=	0.4.3
+PORTVERSION=	0.4.4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.edespot.com/code/LogMon/
 DISTNAME=	LogMon-${PORTVERSION}
-EXTRACT_SUFX=	.src.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	freebsd@unixfreunde.de
 COMMENT=	An ncurses-based split window log monitoring program
 
+USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/logmon %%EXAMPLESDIR%%/logmon.conf.example
 PLIST_DIRS=	%%EXAMPLESDIR%%
