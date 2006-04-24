@@ -5,9 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	qt
-PORTVERSION=	3.15.1
+PORTVERSION=	3.16
 CATEGORIES=	x11-toolkits python
-MASTER_SITES=	http://www.river-bank.demon.co.uk/download/PyQt/ \
+MASTER_SITES=	http://www.riverbankcomputing.com/Downloads/PyQt3/GPL/ \
 		http://freebsd.ricin.com/ports/distfiles/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	PyQt-x11-gpl-${PORTVERSION}
@@ -16,12 +16,12 @@ MAINTAINER=	danny@ricin.com
 COMMENT=	Python bindings for the Qt toolkit
 
 LIB_DEPENDS=	qscintilla.6:${PORTSDIR}/x11-toolkits/qscintilla
-BUILD_DEPENDS=	${LOCALBASE}/bin/sip:${PORTSDIR}/devel/py-sip
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${LOCALBASE}/bin/sip:${PORTSDIR}/devel/py-sip
+BUILD_DEPENDS=	${RUN_DEPENDS} \
+		qmake:${PORTSDIR}/devel/qmake
 
 USE_QT_VER=	3
 USE_PYTHON=	yes
-USE_REINPLACE=	yes
 
 OPTIONS=	DEBUG "Enable debugging symbols" off \
 		DOCS "Install documentation" on \
@@ -33,6 +33,7 @@ DATADIR=	${PREFIX}/share/py-sip
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
+SPEC=		${LOCALBASE}/share/qt/mkspecs/freebsd-g++
 ARGS=		-b ${PREFIX}/bin -d ${PYTHONPREFIX_SITELIBDIR} \
 		-o ${X11BASE}/lib -v ${DATADIR}
 
@@ -63,7 +64,9 @@ ARGS+=		-r
 .endif
 
 do-configure:
-	( cd ${WRKSRC} && ${ECHO} "yes" | ${PYTHON_CMD} configure.py ${ARGS} )
+	( cd ${WRKSRC} && ${ECHO} "yes" | \
+		${SETENV} QTDIR=${QT_PREFIX} QMAKESPEC=${SPEC} \
+		${PYTHON_CMD} configure.py ${ARGS} )
 
 post-build:
 .if !defined(WITHOUT_EXAMPLES)
@@ -72,7 +75,8 @@ post-build:
 .endif
 
 post-install:
-	( ${PYTHON_CMD} -c "import pyqtconfig" && \
+	( cd ${PYTHONPREFIX_SITELIBDIR} && \
+		${PYTHON_CMD} -c "import pyqtconfig" && \
 		${PYTHON_CMD} -O -c "import pyqtconfig" )
 .if !defined(NOPORTDOCS) && !defined(WITHOUT_DOCS)
 	( cd ${WRKSRC} && \
