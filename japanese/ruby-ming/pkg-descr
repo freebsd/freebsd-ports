@@ -1,0 +1,10 @@
+Ming/Ruby is yet another implementation of Ming embedding for Ruby
+extension library without SWIG. Ming/Ruby also supports JaMing which
+is an improvement of Ming to display Japanese characters and to play
+sounds. To use Japanese fonts with JaMing, the letters must be
+followed the UTF-8 formats. Uconv, which is an UTF-8 extension library
+for Ruby, can be used to convert other Kanji encodings into Unicode.
+
+WWW: http://mingruby.rubyforge.org/
+
+Author: Daisuke Ikegami <ikegami@madscientist.jp>
