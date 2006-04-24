@@ -16,7 +16,9 @@ DISTFILES=	lapack.tgz manpages.tgz
 MAINTAINER=	jmz@FreeBSD.org
 COMMENT=	A library of Fortran 77 subroutines for linear algebra
 
-LIB_DEPENDS=    blas.1:${PORTSDIR}/math/blas
+LIB_DEPENDS=	blas.1:${PORTSDIR}/math/blas
+
+CONFLICTS=	elmer-mathlibs-1*
 
 DIST_SUBDIR=	lapack
 
@@ -213,7 +215,7 @@ MANL=	cbdsqr.l cgbbrd.l cgbcon.l cgbequ.l cgbmv.l cgbrfs.l cgbsv.l cgbsvx.l \
 CONFIGURE_ENV+=	OSVERSION=${OSVERSION}
 
 .if ${OSVERSION} < 600000 && defined(NOPROFILE)
-NO_PROFILE= true
+NO_PROFILE=	true
 .endif
 
 pre-fetch:
