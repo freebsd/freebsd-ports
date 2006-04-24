@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vor
-PORTVERSION=	0.3
+PORTVERSION=	0.4
 CATEGORIES=	games
 MASTER_SITES=	http://qualdan.com/vor/
 
@@ -18,35 +18,33 @@ BUILD_DEPENDS=	${LOCALBASE}/include/argp.h:${PORTSDIR}/devel/argp-standalone
 USE_SDL=	mixer image sdl
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
+
+PORTDOCS=	README
+
+.include <bsd.port.pre.mk>
 
 post-patch:
-.for file in main.c shape.h sound.h
-	@${REINPLACE_CMD} -e 's|SDL/|SDL11/|' ${WRKSRC}/${file}
-.endfor
-.for file in shape.h score.c score.h debug.c
-	@${REINPLACE_CMD} -e 's|<stdint.h>|<inttypes.h>|' ${WRKSRC}/${file}
-.endfor
+	@${REINPLACE_CMD} -e 's|SDL/||' ${WRKSRC}/sound.c
 	@${REINPLACE_CMD} -e 's|sdl-config|${SDL_CONFIG}|g' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|^\(my_objects.*\)$$|\1 ${LOCALBASE}/lib/libargp.a|' ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e 's|/usr/share/vor|${PREFIX}/share/vor|g' ${WRKSRC}/config.h
+	@${REINPLACE_CMD} -e 's|/usr/share/vor|${DATADIR}|' ${WRKSRC}/Makefile
+.if (${OSVERSION} < 500000)
+	@${REINPLACE_CMD} -e 's|UINT32_MAX|0xffffffffU|' ${WRKSRC}/mt.c
+	@${REINPLACE_CMD} -e 's|INT32_MIN|(-0x7fffffff-1)|' ${WRKSRC}/mt.c
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/vor ${PREFIX}/bin
-	${MKDIR} ${DATADIR}
-	${MKDIR} ${DATADIR}/banners
-	${MKDIR} ${DATADIR}/fonts
-	${MKDIR} ${DATADIR}/icons
-	${MKDIR} ${DATADIR}/indicators
-	${MKDIR} ${DATADIR}/music
-	${MKDIR} ${DATADIR}/sounds
-	${MKDIR} ${DATADIR}/sprites
-	${INSTALL_DATA} ${WRKSRC}/data/banners/* ${DATADIR}/banners/
-	${INSTALL_DATA} ${WRKSRC}/data/fonts/* ${DATADIR}/fonts/
-	${INSTALL_DATA} ${WRKSRC}/data/icons/* ${DATADIR}/icons/
-	${INSTALL_DATA} ${WRKSRC}/data/indicators/* ${DATADIR}/indicators/
-	${INSTALL_DATA} ${WRKSRC}/data/music/* ${DATADIR}/music/
-	${INSTALL_DATA} ${WRKSRC}/data/sounds/* ${DATADIR}/sounds/
-	${INSTALL_DATA} ${WRKSRC}/data/sprites/* ${DATADIR}/sprites/
+.for d in banners fonts icons indicators music sounds sprites
+	${MKDIR} ${DATADIR}/${d}
+	${INSTALL_DATA} ${WRKSRC}/data/${d}/* ${DATADIR}/${d}/
+.endfor
 
-.include <bsd.port.mk>
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+.for f in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+.endfor
+.endif
+
+.include <bsd.port.post.mk>
