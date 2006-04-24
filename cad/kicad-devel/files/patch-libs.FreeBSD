@@ -1,5 +1,5 @@
---- libs.FreeBSD.orig	Tue Mar 28 23:00:35 2006
-+++ libs.FreeBSD	Tue Mar 28 23:01:27 2006
+--- libs.FreeBSD.orig	Mon Apr 24 20:33:28 2006
++++ libs.FreeBSD	Mon Apr 24 20:39:35 2006
 @@ -1,6 +1,6 @@
  
  #Configuration for build kicad
@@ -81,14 +81,15 @@
  else
  #or use "standard command" for wxWidgets
 -WXSYSLIB= `wx-config --libs`
--WXSYSLIB_WITH_GL= `wx-config --libs gl`
+-WXSYSLIB_WITH_GL= `wx-config --libs std,gl`
 +WXSYSLIB= `${WX_CONFIG} --libs`
 +WXSYSLIB_WITH_GL= `${WX_CONFIG} --libs std,gl`
  endif
  
  
- # attention à l'ordre des libairies
+-# attention à l'ordre des libairies
 -LIBS = -L/usr/local/lib -L/usr/X11R6/lib\
++# attention à l'ordre des librairies
 +LIBS = -L${LOCALBASE}/lib -L${X11BASE}/lib\
  	$(EXTRALIBS) $(WXSYSLIB)\
  	$(LIBSTDC)

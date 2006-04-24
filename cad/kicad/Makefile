@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		kicad
-DISTVERSION=		2006-03-28
+DISTVERSION=		2006-04-24
 CATEGORIES=		cad
 MASTER_SITES=		ftp://iut-tice.ujf-grenoble.fr/cao/:dat		\
 			ftp://ftp.lis.inpg.fr/uploads/kicad/:dat	\
@@ -25,11 +25,8 @@ COMMENT=		Schematic and PCB editing software
 LIB_DEPENDS=	wx_gtk2_core-2.6.0:${PORTSDIR}/x11-toolkits/wxgtk26
 
 .if !defined(NOPORTDOCS)
-DISTFILES+=	doc_components-${DOCVERSION}${EXTRACT_SUFX}:dat
-DOCVERSION=	2006-03-07
-. if defined(PACKAGE_BUILDING)	# unzip is used during post-install:
-RUN_DEPENDS+=	${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
-. endif
+DISTFILES+=	doc_components-${DOCVERSION}.tgz:dat
+DOCVERSION=	2006-04-24
 .endif
 
 WRKSRC=		${WRKDIR}/kicad-dev
@@ -97,13 +94,12 @@ pre-install:
 post-install:
 	${LN} -sf ${BINS:S|^|${PREFIX}/${INSTDIR}/${OPSYS}/|} ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
-	${UNZIP_CMD} -oq ${_DISTDIR}/doc_components-${DOCVERSION}${EXTRACT_SUFX} \
-		-d ${PREFIX}/${INSTDIR}/library
+	${TAR} -xf ${_DISTDIR}/doc_components-${DOCVERSION}.tgz \
+		-C ${PREFIX}/${INSTDIR}/library
 	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/${INSTDIR}/library/doc
 .else
 	${RM} -rf ${PREFIX}/${INSTDIR}/library/doc
 .endif
-	${RMDIR} ${PREFIX}/${INSTDIR}/internat/pl	# Prune empty dir
 	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}
