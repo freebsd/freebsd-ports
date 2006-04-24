@@ -14,12 +14,13 @@ PKGNAMEPREFIX?=	thunderbird-
 MAINTAINER=	ale@FreeBSD.org
 COMMENT?=	A GnuPG extension for the Thunderbird mail client
 
-EXTRACT_DEPENDS=${GECKO_WRKSRC}/Makefile:${PORTSDIR}/${GECKO_PORTDIR}:configure \
-		zip:${PORTSDIR}/archivers/zip \
-		gmake:${PORTSDIR}/devel/gmake \
-		intltool-extract:${PORTSDIR}/textproc/intltool
+EXTRACT_DEPENDS=${GECKO_WRKSRC}/configure:${PORTSDIR}/${GECKO_PORTDIR}:patch
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
-LIB_DEPENDS=	nspr4:${PORTSDIR}/devel/nspr
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+		png.5:${PORTSDIR}/graphics/png \
+		nspr4:${PORTSDIR}/devel/nspr \
+		nss3:${PORTSDIR}/security/nss \
+		Xft.2:${PORTSDIR}/x11-fonts/libXft
 RUN_DEPENDS=	${GECKO}:${PORTSDIR}/${GECKO_PORTDIR} \
 		gpg:${PORTSDIR}/security/gnupg
 
@@ -34,8 +35,11 @@ WRKSRC=		${WRKDIR}/mozilla
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
-USE_GNOME=	gtk20 libidl
+USE_GCC=	3.4+
+USE_GNOME=	gtk20 libidl desktopfileutils
+HAS_CONFIGURE=	yes
+CONFIGURE_ENV=	LOCALBASE=${LOCALBASE}
+CFLAGS+=	-I${X11BASE}/include
 
 XPI_FILE=	${DISTNAME}-${GECKO}-freebsd-${ARCH}.xpi
 PLIST_FILES=	%%DATADIR%%/${XPI_FILE}
@@ -48,10 +52,6 @@ do-extract:
 	@for f in ${EXTRACT_ONLY}; do \
 		cd ${WRKSRC}/mailnews/extensions && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/$$f ${EXTRACT_AFTER_ARGS}; \
 	done
-
-pre-patch:
-	@${REINPLACE_CMD} -e "s|${GECKO_PORTDIR}|mail/enigmail-${GECKO}|g" \
-		`${FIND} ${WRKSRC} -name autoconf.mk`
 
 do-build:
 	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} export)
