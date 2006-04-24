@@ -5,6 +5,7 @@ bin/xmorph
 include/xmorph/RgbaImage.h
 include/xmorph/mesh-getext.h
 include/xmorph/mesh.h
+include/xmorph/mesh_t.h
 include/xmorph/my_malloc.h
 include/xmorph/relax.h
 include/xmorph/resample.h
@@ -30,6 +31,8 @@ lib/libmorph.so.1
 %%PORTDOCS%%%%EXAMPLESDIR%%/AA/grid.ppm
 %%PORTDOCS%%%%EXAMPLESDIR%%/AA/grid.ppm.mesh
 %%PORTDOCS%%%%EXAMPLESDIR%%/AA/gtkmorph.session
+%%PORTDOCS%%%%EXAMPLESDIR%%/AD/1-to-2.mesh
+%%PORTDOCS%%%%EXAMPLESDIR%%/AD/2-to-1.mesh
 %%PORTDOCS%%%%EXAMPLESDIR%%/AD/README
 %%PORTDOCS%%%%EXAMPLESDIR%%/AD/gtkmorph.session
 %%PORTDOCS%%%%EXAMPLESDIR%%/AD/image1.png
@@ -49,8 +52,9 @@ lib/libmorph.so.1
 %%PORTDOCS%%%%EXAMPLESDIR%%/AD_freeborder/image2.png
 %%PORTDOCS%%%%EXAMPLESDIR%%/AD_freeborder/image2.png.mesh
 %%PORTDOCS%%%%EXAMPLESDIR%%/AD_freeborder/image2.png.meshtmp
+%%NLS%%share/locale/fr/LC_MESSAGES/xmorph.mo
 %%NLS%%share/locale/it/LC_MESSAGES/xmorph.mo
-%%GNOME:%%%%DATADIR%%/mpeg.param
+%%DATADIR%%/mpeg.param
 %%DATADIR%%/pixmaps/cursor_left.xpm
 %%DATADIR%%/pixmaps/eraser.xpm
 %%DATADIR%%/pixmaps/example.xpm

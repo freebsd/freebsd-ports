@@ -1,9 +1,9 @@
---- Makefile.in.orig	Tue Jan 13 00:29:21 2004
-+++ Makefile.in	Sun Mar 14 02:13:28 2004
-@@ -763,12 +763,6 @@
+--- Makefile.in.orig	Sun Mar  5 20:54:29 2006
++++ Makefile.in	Sun Apr 23 15:13:07 2006
+@@ -795,12 +795,6 @@
+ 	      $(INSTALL_DATA) $$pixmap $(DESTDIR)$(pkgdatadir)/pixmaps; \
  	    fi \
- 	  done \
- 	fi 
+ 	  done 
 -	cd example; for i in * ;\
 -	 	do $(INSTALL) -d $(DESTDIR)$(pkgdatadir)/example/$$i ;\
 -		for j in $$i/* ;\
@@ -12,4 +12,4 @@
 -	done
  
  dist-hook:
- 	if test -d pixmaps; then \
+ 	cp -a example pixmaps debian $(distdir)/
