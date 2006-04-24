@@ -7,6 +7,7 @@
 
 PORTNAME=	source
 PORTVERSION=	1.01
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_IDSOFTWARE}
 MASTER_SITE_SUBDIR=	source
@@ -28,10 +29,9 @@ LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_QUAKEWORLD)
+.if !defined(WITHOUT_QUAKEWORLD)
 MASTER_SITES+=	${MASTER_SITE_IDSOFTWARE:S|$|quakeworld/unix/:qw|}
 DISTFILES+=	qwsv-2.30-glibc-i386-unknown-linux2.0${EXTRACT_SUFX}:qw
-USE_REINPLACE=	yes
 PLIST_SUB+=	QUAKEWORLD=""
 .else
 PLIST_SUB+=	QUAKEWORLD="@comment "
@@ -46,13 +46,13 @@ post-patch:
 	@${RM} ${WRKSRC}/send/v101qc/progs.src.orig
 
 do-install:
-	@${MKDIR} ${DATADIR}
-	@${CP} -R ${WRKSRC}/send/v101qc ${DATADIR}
-.if defined(WITH_QUAKEWORLD)
-	@${MKDIR} ${DATADIR}/qw
+	${MKDIR} ${DATADIR}
+	${CP} -R ${WRKSRC}/send/v101qc ${DATADIR}
+.if !defined(WITHOUT_QUAKEWORLD)
+	${MKDIR} ${DATADIR}/qw
 .   for f in *.h *.qc *.src
 	@${REINPLACE_CMD} -e "s|`${ECHO_CMD} -e '\r'`$$||" ${WRKSRC}/qw/${f}
-	@${INSTALL_DATA} ${WRKSRC}/qw/${f} ${DATADIR}/qw
+	${INSTALL_DATA} ${WRKSRC}/qw/${f} ${DATADIR}/qw
 .   endfor
 .endif
 
