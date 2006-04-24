@@ -1,0 +1,8 @@
+--- src/f-spot.in.orig	Wed Mar  1 02:51:19 2006
++++ src/f-spot.in	Mon Apr 24 09:31:17 2006
+@@ -17,4 +17,4 @@
+ 	echo "*** Running F-Spot in Debug Mode ***"
+ esac
+ 
+-exec -a @PACKAGE@ mono $MONO_OPTIONS $EXE_TO_RUN "$@"
++exec mono $MONO_OPTIONS $EXE_TO_RUN "$@"
