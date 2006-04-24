@@ -26,6 +26,7 @@ include/xmedcon/m-init.h
 include/xmedcon/m-intf.h
 include/xmedcon/m-inw.h
 include/xmedcon/m-matrix.h
+include/xmedcon/m-nifti.h
 include/xmedcon/m-pixels.h
 include/xmedcon/m-png.h
 include/xmedcon/m-progress.h
