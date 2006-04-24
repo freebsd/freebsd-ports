@@ -23,13 +23,14 @@ COMMENT=	Argand Library: large eigenvalue subroutines (serial version)
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libblas.a:${PORTSDIR}/math/blas
 
+CONFLICTS=	elmer-mathlibs-1*
+
 WRKSRC=		${WRKDIR}/ARPACK
 ALL_TARGET=	lib
 
 BLAS_LIBS?=	${LOCALBASE}/lib/libblas.a
 
 INSTALLS_SHLIB=	yes
-USE_REINPLACE=	yes
 
 pre-patch:
 	@(cd ${WRKSRC}; ${TAR} -xzf ${DISTDIR}/${DIST_SUBDIR}/patch.tar.gz)
