@@ -18,6 +18,7 @@
     SUBDIR += devisor
     SUBDIR += dft++
     SUBDIR += elmer-meshgen2d
+    SUBDIR += elmergrid
     SUBDIR += euler
     SUBDIR += fastcap
     SUBDIR += fasthenry
