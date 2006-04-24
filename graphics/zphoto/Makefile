@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	umeno@rr.iij4u.or.jp
 COMMENT=	Zooming photo album generator
 
-LIB_DEPENDS=	ming.3:${PORTSDIR}/graphics/ming \
+LIB_DEPENDS=	ming.4:${PORTSDIR}/graphics/ming \
 		Imlib2.3:${PORTSDIR}/graphics/imlib2 \
 		popt.0:${PORTSDIR}/devel/popt
 .if !defined (WITHOUT_AVIPLAY)

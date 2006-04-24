@@ -16,7 +16,7 @@ MAINTAINER=	kanou@khdd.net
 COMMENT=	Convert bitmap to vector graphics
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
-		ming.3:${PORTSDIR}/graphics/ming \
+		ming.4:${PORTSDIR}/graphics/ming \
 		Magick.9:${PORTSDIR}/graphics/ImageMagick \
 		pstoedit.0:${PORTSDIR}/graphics/pstoedit
 
@@ -25,7 +25,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib" \
 		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/ming"
 USE_XLIB=	yes
-USE_REINPLACE=	yes
 
 MAN1=		autotrace.1
 
