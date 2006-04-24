@@ -7,6 +7,7 @@
 
 PORTNAME=	exmars
 PORTVERSION=	0.01
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	pav
@@ -14,55 +15,51 @@ MASTER_SITE_SUBDIR=	pav
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Memory Array Redcode Simulator, just like exhaust and pMARS
 
-USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ''
-
 ALL_TARGET=	${PORTNAME}
 
-OPTIONS=	OPTIMIZED_CFLAGS "Use optimized cflags (for FreeBSD >= 5.X)" on
+OPTIONS=	OPTIMIZED_CFLAGS "Enable compilaton optimizations (>= 5.X)" on
 
 do-install:
-# Program
-	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+# Program.
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 
-# Data
-	@${MKDIR} ${DATADIR}
-	@${CP} -R ${WRKSRC}/warriors ${DATADIR}
-	@${INSTALL_SCRIPT} ${WRKSRC}/bench.sh ${DATADIR}
+# Data.
+	${MKDIR} ${DATADIR}
+	${CP} -R ${WRKSRC}/warriors ${DATADIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/bench.sh ${DATADIR}
 
 .include <bsd.port.pre.mk>
 
-# Adjust optimization flags for all architectures
+# Adjust optimization flags for all architectures.
 .if ${ARCH} != "i386"
 BADCFLAGS+=	-malign-double
 .endif
-
 .if ${ARCH} != "amd64" && ${ARCH} != "i386"
 BADCFLAGS+=	-maccumulate-outgoing-args \
 		-minline-all-stringops \
 		-mno-align-stringops
 .endif
-
 .if ${ARCH} == "alpha"
 BADCFLAGS+=	-ffast-math \
 		-fprefetch-loop-arrays
 .endif
 
 post-patch:
-# Fix bench.sh
+# Fix bench.sh.
 	@${REINPLACE_CMD} -e 's|pmars|pmars-server| ; \
-			s|\./exmars|exmars|' \
-				${WRKSRC}/bench.sh
+		s|\./exmars|exmars|' \
+		${WRKSRC}/bench.sh
 
-# Fix Makefile
+# Fix Makefile.
 	@${REINPLACE_CMD} -e 's|\($${OPT}\)|${CFLAGS} \1|' ${WRKSRC}/${MAKEFILE}
 
-# Enable/disable compilation optimizations
-.if !defined(WITH_OPTIMIZED_CFLAGS) || ${OSVERSION} < 500035
+# Enable/disable compilation optimizations.
+.if defined(WITHOUT_OPTIMIZED_CFLAGS) || ${OSVERSION} < 500035
 	@${REINPLACE_CMD} -e 's|$${OPT}||' ${WRKSRC}/${MAKEFILE}
 .endif
 
-# Adjust optimization flags for all architectures
+# Adjust optimization flags for all architectures.
 .for f in ${BADCFLAGS}
 	@${REINPLACE_CMD} -e 's|${f}||g' ${WRKSRC}/${MAKEFILE}
 .endfor
