@@ -18,11 +18,10 @@ COMMENT=	Perl5 module for SASL authentication
 
 BUILD_DEPENDS=	\
 	p5-Digest-MD5>0:${PORTSDIR}/security/p5-Digest-MD5 \
-	p5-Digest-HMAC>0:${PORTSDIR}/security/p5-Digest-HMAC \
-	p5-GSSAPI>0:${PORTSDIR}/security/p5-GSSAPI
-RUN_DEPENDS=	${BUILD_DEPENDS}
+	p5-Digest-HMAC>0:${PORTSDIR}/security/p5-Digest-HMAC
 
 PERL_CONFIGURE=	yes
+CONFIGURE_ENV+=	AUTOMATED_TESTING=yes
 
 MAN3+=	Authen::SASL.3
 MAN3+=	Authen::SASL::Perl.3
@@ -39,5 +38,10 @@ MAN3+=	Authen::SASL::Perl::PLAIN.3
 .if ${PERL_LEVEL} < 500600
 IGNORE=		requires perl 5.6.0 or later. Install lang/perl5.8 and try again
 .endif
+
+.if !defined(WITHOUT_KERBEROS)
+BUILD_DEPENDS+=	p5-GSSAPI>0:${PORTSDIR}/security/p5-GSSAPI
+.endif
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 .include <bsd.port.post.mk>
