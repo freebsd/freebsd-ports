@@ -66,29 +66,29 @@ bin/gfserver
 %%PYTHON_SITELIBDIR%%/gadfly/store.py
 %%PYTHON_SITELIBDIR%%/gadfly/store.pyc
 %%PYTHON_SITELIBDIR%%/gadfly/store.pyo
-%%PORTDOCS%%share/doc/gadfly/CHANGES.txt
-%%PORTDOCS%%share/doc/gadfly/COPYRIGHT.txt
-%%PORTDOCS%%share/doc/gadfly/announcement.txt
-%%PORTDOCS%%share/doc/gadfly/build_html.py
-%%PORTDOCS%%share/doc/gadfly/faq.txt
-%%PORTDOCS%%share/doc/gadfly/gadfly.txt
-%%PORTDOCS%%share/doc/gadfly/gfplus.txt
-%%PORTDOCS%%share/doc/gadfly/index.txt
-%%PORTDOCS%%share/doc/gadfly/installation.txt
-%%PORTDOCS%%share/doc/gadfly/kjbuckets.txt
-%%PORTDOCS%%share/doc/gadfly/kwParsing.txt
-%%PORTDOCS%%share/doc/gadfly/network.txt
-%%PORTDOCS%%share/doc/gadfly/recover.txt
-%%PORTDOCS%%share/doc/gadfly/sql.txt
-%%PORTDOCS%%share/doc/gadfly/structure.txt
-%%PORTDOCS%%share/examples/gadfly/kjParsing/DLispShort.py
-%%PORTDOCS%%share/examples/gadfly/kjParsing/DumbLispGen.py
-%%PORTDOCS%%share/examples/gadfly/kjParsing/idl.py
-%%PORTDOCS%%share/examples/gadfly/kjParsing/pygram.py
-%%PORTDOCS%%share/examples/gadfly/kjParsing/pylint.py
-%%PORTDOCS%%share/examples/gadfly/kjParsing/relalg.py
-%%PORTDOCS%%@dirrm share/examples/gadfly/kjParsing
-%%PORTDOCS%%@dirrm share/examples/gadfly
-%%PORTDOCS%%@dirrm share/doc/gadfly
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES.txt
+%%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT.txt
+%%PORTDOCS%%%%DOCSDIR%%/announcement.txt
+%%PORTDOCS%%%%DOCSDIR%%/build_html.py
+%%PORTDOCS%%%%DOCSDIR%%/faq.txt
+%%PORTDOCS%%%%DOCSDIR%%/gadfly.txt
+%%PORTDOCS%%%%DOCSDIR%%/gfplus.txt
+%%PORTDOCS%%%%DOCSDIR%%/index.txt
+%%PORTDOCS%%%%DOCSDIR%%/installation.txt
+%%PORTDOCS%%%%DOCSDIR%%/kjbuckets.txt
+%%PORTDOCS%%%%DOCSDIR%%/kwParsing.txt
+%%PORTDOCS%%%%DOCSDIR%%/network.txt
+%%PORTDOCS%%%%DOCSDIR%%/recover.txt
+%%PORTDOCS%%%%DOCSDIR%%/sql.txt
+%%PORTDOCS%%%%DOCSDIR%%/structure.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/kjParsing/DLispShort.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/kjParsing/DumbLispGen.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/kjParsing/idl.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/kjParsing/pygram.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/kjParsing/pylint.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/kjParsing/relalg.py
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/kjParsing
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/gadfly/scripts
 @dirrm %%PYTHON_SITELIBDIR%%/gadfly
