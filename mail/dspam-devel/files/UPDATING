@@ -11,6 +11,44 @@ in the port directory:
 make extract;  more `find . -type f -maxdepth 2 -name UPGRADING`
 
 ###########################################################################
+# dspam-devel-3.6.4.20060421.2101
+#
+
+Bug-fixes:
+- invalid read/segfault (dspam.c)
+- segfault on problems establishing connectivity to clamav (dspam.c)
+- segfault on NULL username (mysql_drv.c)
+- bug causing writing of flat-file preferences to fail (pref.c)
+- fragment file overwritten on retrain (cgi)
+- corrects the output of "dspam_admin aggr pref" (tools/dspam_admin.c)
+- prevent quarantining of message when delivering summary
+
+WebUI: a lot of fixes and improvements
+
+PostgeSQL: improvements to purge scripts and object creation script
+
+Port changes:
+-------------
+
+Add MySQL 5.1 as backend. [1]
+Default MySQL version is now 5.0
+
+Optionally depend on LightHTTPD instead of Apache if WITH_CGI=on [2]
+
+Fix OPTIONS handling for INDEX (describe); this is a long standing bug
+and a *big* pontyhat for me; it affected _only_ dependecies recorded in
+INDEX _if_ OPTIONS were not set (like for package building); however,
+the package itself was always built right, dependecies recorded OK, etc.
+
+Add SCE-tindy as MASTER_SITE, much faster site that my other server. [3]
+
+Requested by:	Odhiambo WASHINGTON <odhiambo.raburu@wananchi.com> [1]
+Submitted by:	"Daniel S. Haischt" 
+		<me@daniel.stefan.haischt.name> [2] (based on)
+My thanks again to Joey Freeland for this machine and the bandwidth [3]
+
+
+###########################################################################
 # dspam-devel-3.6.4.20060315.1518
 #
 
