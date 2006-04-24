@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	kbarcode
-PORTVERSION=	2.0.0
+PORTVERSION=	2.0.1
 CATEGORIES=	graphics kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A barcode and label printing application for KDE
+
+LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
 USE_KDELIBS_VER=	3
 USE_GMAKE=	yes
