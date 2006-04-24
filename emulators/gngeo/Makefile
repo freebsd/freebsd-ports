@@ -9,7 +9,6 @@ PORTNAME=	gngeo
 PORTVERSION=	0.6.11
 CATEGORIES=	emulators
 MASTER_SITES=	http://m.peponas.free.fr/gngeo/download/
-DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	acardenas@bsd.org.pe
 COMMENT=	NeoGeo emulator
@@ -73,7 +72,8 @@ CONFIGURE_ARGS+=	--enable-gen68k
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|sdl-config|${SDL_CONFIG}|' \
-		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT} \
+		${WRKSRC}/src/generator68k/Makefile.in
 
 post-install:
 	${MKDIR} ${EXAMPLESDIR}
