@@ -540,6 +540,7 @@ bin/kdepyuic
 %%DOCS%%%%DOCSDIR%%/classref/kabc/KABC.Picture.html
 %%DOCS%%%%DOCSDIR%%/classref/kabc/KABC.Plugin.html
 %%DOCS%%%%DOCSDIR%%/classref/kabc/KABC.Resource.html
+%%DOCS%%%%DOCSDIR%%/classref/kabc/KABC.ResourceFile.html
 %%DOCS%%%%DOCSDIR%%/classref/kabc/KABC.ResourceSelectDialog.html
 %%DOCS%%%%DOCSDIR%%/classref/kabc/KABC.Secrecy.html
 %%DOCS%%%%DOCSDIR%%/classref/kabc/KABC.SortMode.html
@@ -683,6 +684,10 @@ bin/kdepyuic
 %%DOCS%%%%DOCSDIR%%/classref/kdecore/KStdAccel.ShortcutList.html
 %%DOCS%%%%DOCSDIR%%/classref/kdecore/KStdAccel.html
 %%DOCS%%%%DOCSDIR%%/classref/kdecore/KStringHandler.html
+%%DOCS%%%%DOCSDIR%%/classref/kdecore/KTimezone.html
+%%DOCS%%%%DOCSDIR%%/classref/kdecore/KTimezoneDetails.html
+%%DOCS%%%%DOCSDIR%%/classref/kdecore/KTimezoneSource.html
+%%DOCS%%%%DOCSDIR%%/classref/kdecore/KTimezones.html
 %%DOCS%%%%DOCSDIR%%/classref/kdecore/KTempDir.html
 %%DOCS%%%%DOCSDIR%%/classref/kdecore/KTempFile.html
 %%DOCS%%%%DOCSDIR%%/classref/kdecore/KURL.List.html
@@ -703,6 +708,7 @@ bin/kdepyuic
 %%DOCS%%%%DOCSDIR%%/classref/kdecore/NETRootInfo.html
 %%DOCS%%%%DOCSDIR%%/classref/kdecore/NETRootInfo2.html
 %%DOCS%%%%DOCSDIR%%/classref/kdecore/NETRootInfo3.html
+%%DOCS%%%%DOCSDIR%%/classref/kdecore/NETRootInfo4.html
 %%DOCS%%%%DOCSDIR%%/classref/kdecore/NETSize.html
 %%DOCS%%%%DOCSDIR%%/classref/kdecore/NETStrut.html
 %%DOCS%%%%DOCSDIR%%/classref/kdecore/NETWinInfo.html
@@ -874,6 +880,7 @@ bin/kdepyuic
 %%DOCS%%%%DOCSDIR%%/classref/kdeui/KRootPermsIcon.html
 %%DOCS%%%%DOCSDIR%%/classref/kdeui/KRootPixmap.html
 %%DOCS%%%%DOCSDIR%%/classref/kdeui/KRuler.html
+%%DOCS%%%%DOCSDIR%%/classref/kdeui/KScrollView.html
 %%DOCS%%%%DOCSDIR%%/classref/kdeui/KSelectAction.html
 %%DOCS%%%%DOCSDIR%%/classref/kdeui/KSelector.html
 %%DOCS%%%%DOCSDIR%%/classref/kdeui/KSeparator.html
@@ -893,6 +900,7 @@ bin/kdepyuic
 %%DOCS%%%%DOCSDIR%%/classref/kdeui/KTextBrowser.html
 %%DOCS%%%%DOCSDIR%%/classref/kdeui/KTextEdit.html
 %%DOCS%%%%DOCSDIR%%/classref/kdeui/KTimeWidget.html
+%%DOCS%%%%DOCSDIR%%/classref/kdeui/KTimezoneWidget.html
 %%DOCS%%%%DOCSDIR%%/classref/kdeui/KTipDatabase.html
 %%DOCS%%%%DOCSDIR%%/classref/kdeui/KTipDialog.html
 %%DOCS%%%%DOCSDIR%%/classref/kdeui/KToggleAction.html
@@ -1100,6 +1108,7 @@ bin/kdepyuic
 %%DOCS%%%%DOCSDIR%%/classref/khtml/KHTMLView.html
 %%DOCS%%%%DOCSDIR%%/classref/khtml/index.html
 %%DOCS%%%%DOCSDIR%%/classref/khtml/khtml-globals.html
+%%DOCS%%%%DOCSDIR%%/classref/kio/KACL.html
 %%DOCS%%%%DOCSDIR%%/classref/kio/KAr.html
 %%DOCS%%%%DOCSDIR%%/classref/kio/KArchive.html
 %%DOCS%%%%DOCSDIR%%/classref/kio/KArchiveDirectory.html

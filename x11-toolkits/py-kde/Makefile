@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	kde
-PORTVERSION=	3.15.0
+PORTVERSION=	3.15.2
 PORTEPOCH=	1
 CATEGORIES=	x11-toolkits python kde
 MASTER_SITES=	http://www.riverbankcomputing.com/Downloads/PyKDE3/ \
 		http://freebsd.ricin.com/ports/distfiles/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	PyKDE-snapshot20060122
+DISTNAME=	PyKDE-snapshot20060422
 
 MAINTAINER=	danny@ricin.com
 COMMENT=	Python Bindings for KDE3
@@ -22,7 +22,6 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USE_KDELIBS_VER=3
 USE_PYTHON=	yes
-USE_REINPLACE=	yes
 NO_FILTER_SHLIBS=	yes
 
 OPTIONS=	DEBUG "Enable debugging symbols" off \
@@ -35,16 +34,17 @@ DATADIR=	${PREFIX}/share/py-sip
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
-ARGS=		-k ${LOCALBASE} -v ${DATADIR} -d ${PYTHONPREFIX_SITELIBDIR}
+CONCAT=		4
+ARGS=		-k ${LOCALBASE} -v ${DATADIR} -j ${CONCAT} -d ${PYTHONPREFIX_SITELIBDIR}
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "i386"
-.if ${ARCH} == "sparc64"
-ARGS+=		-j 3
+.if ${OSVERSION} < 500000
+BROKEN=		Does not compile. ERROR: \
+		sipkdecorepart1.cpp:8662: invalid use of undefined type `struct _XDisplay' \
+		/usr/X11R6/include/qwindowdefs.h:141: forward declaration of `struct _XDisplay'
 .endif
-ARGS+=		-j 2
-.endif
+
 .if defined(WITH_DEBUG)
 ARGS+=		-u
 .endif
@@ -68,21 +68,8 @@ ARGS+=		-r
 .endif
 
 post-patch:
-	( ${REINPLACE_CMD} -e 's|/usr/bin/python|${SETENV} python|' \
-		${WRKSRC}/postproc )
-.if !defined(NOPORTDOCS) && !defined(WITHOUT_DOCS)
-	( cd ${WRKSRC}/doc/classref && \
-		${REINPLACE_CMD} -e 's|../allclasses.html|allclasses.html|' \
-			allclasses.html && \
-		for i in `ls */*.html`; do \
-			${REINPLACE_CMD} -e \
-			's|file:/home/jim/PyKDE350/doc/classref/index.html|../../index.html|' \
-			$${i} ; done && \
-		for i in allclasses.html index.html; do \
-			${REINPLACE_CMD} -e \
-			's|file:/home/jim/PyKDE350/doc/classref/index.html|../index.html|' \
-			$${i} ; done )
-.endif
+	@${REINPLACE_CMD} -e 's|/usr/bin/python|${SETENV} python|' \
+		${WRKSRC}/postproc
 
 do-configure:
 	( cd ${WRKSRC} && ${PYTHON_CMD} configure.py ${ARGS} )
