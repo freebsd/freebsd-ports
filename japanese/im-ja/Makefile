@@ -6,32 +6,30 @@
 #
 
 PORTNAME=	im-ja
-PORTVERSION=	1.4
-PORTREVISION=	2
+PORTVERSION=	1.5
 CATEGORIES=	japanese x11-toolkits
 MASTER_SITES=	http://im-ja.sourceforge.net/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Japanese input module for GTK2
 
-OPTIONS+=	ANTHY	"Use Anthy" on
-OPTIONS+=	CANNA	"Use Canna" on
-OPTIONS+=	WNN	"Use FreeWnn" on
+OPTIONS+=	ANTHY		"Use Anthy" on
+OPTIONS+=	CANNA		"Use Canna" on
+OPTIONS+=	WNN		"Use FreeWnn" on
+OPTIONS+=	GNOMEPANEL	"Build GNOME Panel Applet" off
 
-USE_PERL5_BUILD=	yes
 USE_X_PREFIX=	yes
+USE_GNOME=	gconf2 gnomehack gnomeprefix gnometarget intlhack libglade2
+USE_PERL5_BUILD=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack gnomepanel lthack intlhack
 GNU_CONFIGURE=	yes
-
-LIBS+=		-L${LOCALBASE}/lib -L${X11BASE}/lib
-CPPFLAGS+=	-I${LOCALBASE}/include -I${X11BASE}/include
-CPPFLAGS+=	-DNO_MALLOC_H
-CONFIGURE_ENV+=	LIBS="${LIBS}" CPPFLAGS="${CPPFLAGS}"
-CONFIGURE_ENV+=	INTLTOOL_PERL="${PERL}"
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 MAN1=		im-ja-conf.1 im-ja-xim-server.1
 GCONF_SCHEMAS=	im-ja.schemas
+
+CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include -DNO_MALLOC_H
+LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib
 
 .include <bsd.port.pre.mk>
 
@@ -40,15 +38,25 @@ CONFIGURE_ARGS+=	--disable-anthy
 .else
 LIB_DEPENDS+=	anthy.1:${PORTSDIR}/japanese/anthy
 .endif
+
 .if defined(WITHOUT_CANNA)
 CONFIGURE_ARGS+=	--disable-canna
 .else
 LIB_DEPENDS+=	RKC.1:${PORTSDIR}/japanese/Canna
 .endif
+
 .if defined(WITHOUT_WNN)
 CONFIGURE_ARGS+=	--disable-wnn
 .else
 LIB_DEPENDS+=	wnn.0:${PORTSDIR}/japanese/FreeWnn-lib
+.endif
+
+.if defined(WITH_GNOMEPANEL)
+USE_GNOME+=	gnomepanel      
+PLIST_SUB+=	GNOMEPANEL=""   
+.else
+CONFIGURE_ARGS+=	--disable-gnome
+PLIST_SUB+=	GNOMEPANEL="@comment "
 .endif
 
 post-patch:
@@ -58,6 +66,8 @@ post-patch:
 	${FIND} ${WRKSRC} -name config.h.in | ${XARGS} ${TOUCH}
 	${FIND} ${WRKSRC} -name Makefile.am | ${XARGS} ${TOUCH}
 	${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${TOUCH}
+	@${REINPLACE_CMD} -e 's|$$(datadir)/gconf|$$(sysconfdir)/gconf|g' \
+		${WRKSRC}/data/Makefile.in
 
 post-install:
 	${X11BASE}/bin/gtk-query-immodules-2.0 > \
