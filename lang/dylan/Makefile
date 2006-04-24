@@ -7,6 +7,7 @@
 
 PORTNAME=	dylan
 PORTVERSION=	2.4.0
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.gwydiondylan.org/downloads/src/tar/         \
 		http://www.gwydiondylan.org/downloads/binaries/FreeBSD/x86/ \
@@ -54,15 +55,10 @@ MAN1=		d2c.1 dybug.1 make-dylan-app.1 melange.1 mindy.1 mindycomp.1 \
 MAN5=		platforms.descr.5
 MAN7=		dylan.7 gwydion.7
 
-USE_REINPLACE=	yes
 CONFIGURE_ARGS+=--without-gtk
 
 post-extract:
 	${GUNZIP_CMD} -c ${DISTDIR}/d2c-${PORTVERSION}-FreeBSD.gz >${WRKDIR}/d2c
 	${CHMOD} ugo+x ${WRKDIR}/d2c
-
-pre-patch:
-	${REINPLACE_CMD} -e 's|libtool$$|${LIBTOOL_LIBEXECDIR}/libtool|' \
-		${WRKSRC}/d2c/compiler/platforms.descr
 
 .include <bsd.port.mk>
