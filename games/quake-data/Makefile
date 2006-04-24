@@ -7,6 +7,7 @@
 
 PORTNAME=	data
 PORTVERSION=	1.0.6
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.libsdl.org/projects/quake/data/:qs
 PKGNAMEPREFIX=	${Q1PKGNAMEPREFIX}
@@ -43,13 +44,13 @@ PLIST_SUB+=	FULL=""
 PLIST_SUB+=	FULL="@comment "
 .endif
 
-.if defined(WITH_QUAKEWORLD)
+.if !defined(WITHOUT_QUAKEWORLD)
 MASTER_SITES+=	${MASTER_SITE_IDSOFTWARE:S|$|quakeworld/unix/:qw|}
 DISTFILES+=	${PROGFILE}:qw
 EXTRACT_ONLY+=	${PROGFILE}
 PLIST_SUB+=	QUAKEWORLD=""
 
-.if defined(WITH_QUAKEWORLD_SKINS)
+.if !defined(WITHOUT_QUAKEWORLD_SKINS)
 MASTER_SITES+=	${MASTER_SITE_IDSOFTWARE:S|$|quakeworld/skins/:skins|}
 DISTFILES+=	${SKINFILES:S/$/:skins/}
 EXTRACT_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
@@ -60,7 +61,7 @@ PLIST_SUB+=	QUAKEWORLD_SKINS="@comment "
 
 .else
 PLIST_SUB+=	QUAKEWORLD="@comment "
-.endif	# WITH_QUAKEWORLD
+.endif	# !WITHOUT_QUAKEWORLD
 
 pre-fetch:
 .if defined(WITH_FULL) && !exists(${DISTDIR}/${DIST_SUBDIR}/pak1.pak)
@@ -71,23 +72,22 @@ pre-fetch:
 .endif
 
 do-install:
-	@${MKDIR} ${DATADIR}
-	@${MKDIR} ${DATADIR}/id1
-	@${INSTALL_DATA} ${WRKSRC}/id1/pak0.pak ${DATADIR}/id1
+	${MKDIR} ${DATADIR}/id1
+	${INSTALL_DATA} ${WRKSRC}/id1/pak0.pak ${DATADIR}/id1
 .if defined(WITH_FULL)
-	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/pak1.pak ${DATADIR}/id1
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/pak1.pak ${DATADIR}/id1
 .endif
-.if defined(WITH_QUAKEWORLD)
+.if !defined(WITHOUT_QUAKEWORLD)
 	@${MKDIR} ${DATADIR}/qw
 	@${INSTALL_DATA} ${WRKSRC}/qw/qwprogs.dat ${DATADIR}/qw
 	@${MKDIR} ${DATADIR}/qw/skins
 	@${INSTALL_SCRIPT} ${WRKSRC}/qw/skins/fixskins.sh ${DATADIR}/qw/skins
-.   if defined(WITH_QUAKEWORLD_SKINS)
-.	for f in ${SKINFILES}
-		@${UNZIP_CMD} -nq ${DISTDIR}/${DIST_SUBDIR}/${f} -d ${DATADIR}/qw/skins
-.	endfor
-		@(cd ${DATADIR}/qw/skins && LANG=C ./fixskins.sh *)
-.   endif
-.endif	# WITH_QUAKEWORLD
+. if !defined(WITHOUT_QUAKEWORLD_SKINS)
+.   for f in ${SKINFILES}
+	@${UNZIP_CMD} -nq ${DISTDIR}/${DIST_SUBDIR}/${f} -d ${DATADIR}/qw/skins
+.   endfor
+	@(cd ${DATADIR}/qw/skins && LANG=C ./fixskins.sh *)
+. endif
+.endif	# !WITHOUT_QUAKEWORLD
 
 .include <bsd.port.post.mk>
