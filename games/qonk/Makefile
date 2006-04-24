@@ -21,27 +21,27 @@ OPTIONS=	OPTIMIZED_CFLAGS "Enable compilation optimizations" on
 .include <bsd.port.pre.mk>
 
 post-patch:
-# Fix Makefile
+# Fix Makefile.
 	@${REINPLACE_CMD} -e 's|g++|${CXX}| ; \
-			s|sdl-config|${SDL_CONFIG}| ; \
-			s|\(-O3\)|${CFLAGS} \1|' \
-				${WRKSRC}/${MAKEFILE}
+		s|sdl-config|${SDL_CONFIG}| ; \
+		s|\(-O3\)|${CFLAGS} \1|' \
+		${WRKSRC}/${MAKEFILE}
 
-# Fix paths to ${DATADIR}
+# Fix paths to ${DATADIR}.
 	@${REINPLACE_CMD} -e 's|\(font\.ttf\)|${DATADIR}/\1|' \
-				${WRKSRC}/main.cpp ${WRKSRC}/messages.cpp
+		${WRKSRC}/main.cpp ${WRKSRC}/messages.cpp
 
-# Enable/disable compilation optimizations
+# Enable/disable compilation optimizations.
 .if defined(WITHOUT_OPTIMIZED_CFLAGS)
 	@${REINPLACE_CMD} -e 's|-O3||' \
-				${WRKSRC}/${MAKEFILE}
+		${WRKSRC}/${MAKEFILE}
 .endif
 
 do-install:
-# Program
+# Program.
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 
-# Data
+# Data.
 	${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/font.ttf ${DATADIR}
 
