@@ -18,6 +18,7 @@
     SUBDIR += devisor
     SUBDIR += dft++
     SUBDIR += elmer-eio
+    SUBDIR += elmer-fem
     SUBDIR += elmer-hutiter
     SUBDIR += elmer-matc
     SUBDIR += elmer-meshgen2d
