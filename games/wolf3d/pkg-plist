@@ -4,6 +4,9 @@ libexec/wolf3d/sdlwolf3d-ss
 libexec/wolf3d/sdlwolf3d-wf
 libexec/wolf3d/sdlwolf3d-ws
 %%PORTDOCS%%%%DOCSDIR%%/IDEAS
+%%PORTDOCS%%%%DOCSDIR%%/NOTES
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/docs/goodstuf.txt
 %%PORTDOCS%%%%DOCSDIR%%/docs/release.txt
 %%WOLF_SW%%%%DATADIR%%/audiohed.wl1
