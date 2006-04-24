@@ -72,7 +72,6 @@ sbin/update-alternatives
 %%NLS%%share/locale/ru/LC_MESSAGES/dpkg.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/dpkg.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/dpkg.mo
-%%NLS%%share/locale/tl/LC_MESSAGES/dpkg.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/dpkg.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/dpkg.mo
 @dirrm var/dpkg/updates

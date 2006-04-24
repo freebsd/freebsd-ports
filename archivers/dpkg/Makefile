@@ -6,6 +6,7 @@
 
 PORTNAME=	dpkg
 PORTVERSION=	1.10.28
+PORTREVISION=	1
 CATEGORIES=	archivers sysutils
 MASTER_SITES=	${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/main/d/dpkg
@@ -42,5 +43,9 @@ PLIST_SUB+=	NLS=""
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
+
+post-patch:
+	${REINPLACE_CMD} -e 's,^\(ALL_LINGUAS.*\)tl \(.*\)$$,\1\2,g' \
+		${WRKSRC}/configure.in
 
 .include <bsd.port.mk>
