@@ -7,6 +7,7 @@
 
 PORTNAME=	hr
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.planetmirror.com/pub/idgames/themes/hr/ \
 		ftp://ftp.fu-berlin.de/pc/msdos/games/idgames/themes/hr/ \
@@ -37,14 +38,14 @@ post-extract:
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_DEMO_NM)
+.if !defined(WITHOUT_DEMO_NM)
 DISTFILES+=	hrhelp${EXTRACT_SUFX}
 PLIST_SUB+=	DEMO_NM=""
 .else
 PLIST_SUB+=	DEMO_NM="@comment "
 .endif
 
-.if defined(WITH_DEMO_UV)
+.if !defined(WITHOUT_DEMO_UV)
 DISTFILES+=	hruvlmp2${EXTRACT_SUFX}
 PLIST_SUB+=	DEMO_UV=""
 .else
@@ -52,14 +53,14 @@ PLIST_SUB+=	DEMO_UV="@comment "
 .endif
 
 do-install:
-	@${MKDIR} ${DATADIR}
-	@${INSTALL_DATA} ${WRKSRC}/*.wad ${DATADIR}
-.if defined(WITH_DEMO_NM) || defined(WITH_DEMO_UV)
-	@${INSTALL_DATA} ${WRKSRC}/*.lmp ${DATADIR}
+	${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/*.wad ${DATADIR}
+.if !defined(WITHOUT_DEMO_NM) || !defined(WITHOUT_DEMO_UV)
+	${INSTALL_DATA} ${WRKSRC}/*.lmp ${DATADIR}
 .endif
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/*.txt ${DOCSDIR}
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.txt ${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>
