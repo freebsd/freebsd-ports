@@ -14,27 +14,25 @@ MASTER_SITE_SUBDIR=	alleg
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	A cross-platform library for games and multimedia programming
 
+USE_AUTOTOOLS=	autoconf:259
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 USE_XLIB=	yes
 WANT_GNOME=	yes
 
-USE_AUTOTOOLS=	autoconf:259
-
-.include "Makefile.man"
-
-INFO=		allegro
-
 OPTIONS=	ARTS "Enable Arts support" off \
-		DEBUG_LIB "Build debugging library" off \
-		DEV_UTILS "Build development utilities" on \
+		DEBUG "Build debugging library" off \
+		DEVEL "Build development utilities" on \
 		ESOUND "Enable Esound support" off \
 		OPTIMIZED_CFLAGS "Enable compilation optimizations" on \
-		PROFILE_LIB "Build profiling library" off \
+		PROFILE "Build profiling library" off \
 		THREADS "Enable threads" on
 
 MAKEFILE=	makefile
 ALL_TARGET=	full-build
+
+.include "Makefile.man"
+
+INFO=		allegro
 
 INSTALLS_SHLIB=	yes
 SHLIB_VER=	42
@@ -47,54 +45,54 @@ DEMO=		demo.c demo.dat demo.h music.txt ../readme.txt
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-include-allegro-inline-fmaths.in
 .endif
 
-.if defined(WITH_ARTS) || exists(${LOCALBASE}/lib/libartsc.so.0)
+.if defined(WITH_ARTS)
 LIB_DEPENDS+=	artsc.0:${PORTSDIR}/audio/arts
-CONFIGURE_ARGS+=	--enable-artsdigi
+CONFIGURE_ARGS+=--enable-artsdigi
 PLIST_SUB+=	ARTS=""
 .else
-CONFIGURE_ARGS+=	--disable-artsdigi
+CONFIGURE_ARGS+=--disable-artsdigi
 PLIST_SUB+=	ARTS="@comment "
 .endif
 
-.if defined(WITH_DEBUG_LIB)
-CONFIGURE_ARGS+=	--enable-dbglib
-PLIST_SUB+=	DEBUG_LIB=""
+.if defined(WITH_DEBUG)
+CONFIGURE_ARGS+=--enable-dbglib
+PLIST_SUB+=	DEBUG=""
 .else
-CONFIGURE_ARGS+=	--disable-dbglib
-PLIST_SUB+=	DEBUG_LIB="@comment "
+CONFIGURE_ARGS+=--disable-dbglib
+PLIST_SUB+=	DEBUG="@comment "
 .endif
 
-.if !defined(WITHOUT_DEV_UTILS)
+.if !defined(WITHOUT_DEVEL)
 INSTALL_TARGET=	full-install install-man install-info
-PLIST_SUB+=	DEV_UTILS=""
+PLIST_SUB+=	DEVEL=""
 .else
 INSTALL_TARGET=	mini-install install-man install-info
-PLIST_SUB+=	DEV_UTILS="@comment "
+PLIST_SUB+=	DEVEL="@comment "
 .endif
 
-.if defined(WITH_ESOUND) || ${HAVE_GNOME:Mesound}!=""
+.if defined(WITH_ESOUND)
 USE_GNOME+=	esound
-CONFIGURE_ARGS+=	--enable-esddigi
+CONFIGURE_ARGS+=--enable-esddigi
 PLIST_SUB+=	ESOUND=""
 .else
-CONFIGURE_ARGS+=	--disable-esddigi
+CONFIGURE_ARGS+=--disable-esddigi
 PLIST_SUB+=	ESOUND="@comment "
 .endif
 
-.if defined(WITH_PROFILE_LIB)
-CONFIGURE_ARGS+=	--enable-proflib
-PLIST_SUB+=	PROFILE_LIB=""
+.if defined(WITH_PROFILE)
+CONFIGURE_ARGS+=--enable-proflib
+PLIST_SUB+=	PROFILE=""
 .else
-CONFIGURE_ARGS+=	--disable-proflib
-PLIST_SUB+=	PROFILE_LIB="@comment "
+CONFIGURE_ARGS+=--disable-proflib
+PLIST_SUB+=	PROFILE="@comment "
 .endif
 
 .if !defined(WITHOUT_THREADS)
-CONFIGURE_ARGS+=	--enable-pthreads
+CONFIGURE_ARGS+=--enable-pthreads
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS} -DHAVE_LIBPTHREAD" \
 		LDFLAGS="${PTHREAD_LIBS}"
 .else
-CONFIGURE_ARGS+=	--disable-pthreads
+CONFIGURE_ARGS+=--disable-pthreads
 .endif
 
 post-patch:
@@ -118,7 +116,7 @@ post-patch:
 		s|-ffast-math||g ; \
 		s|-fomit-frame-pointer||g ; \
 		s|-funroll-loops||g' \
-			${CONFIGURE_WRKSRC}/configure.in
+		${CONFIGURE_WRKSRC}/configure.in
 .endif
 
 post-install:
