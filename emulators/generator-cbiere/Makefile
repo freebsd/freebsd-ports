@@ -7,7 +7,7 @@
 
 PORTNAME=	generator
 PORTVERSION=	0.35.r2
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.ghostwhitecrab.com/generator/ \
@@ -31,7 +31,7 @@ OPTIONS=	OPTIMIZED_CFLAGS "Enable compilation optimizations" on \
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-transform-name=s/${PORTNAME}/${PORTNAME}${PKGNAMESUFFIX}/
-CONFIGURE_ARGS+=	--with-gtk
+CONFIGURE_ARGS+=--with-gtk
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
@@ -39,26 +39,26 @@ PLIST_FILES=	bin/${PORTNAME}${PKGNAMESUFFIX}-gtk
 
 LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
 
-post-install:
-	@${ECHO_CMD}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_CMD}
-
 .include <bsd.port.pre.mk>
 
 .if defined(WITHOUT_OPTIMIZED_CFLAGS)
 CONFIGURE_ARGS+=	--without-gcc
 .endif
 
-.if defined(WITH_RAZE) && ${ARCH} == "i386"
-BUILD_DEPENDS+=		nasm:${PORTSDIR}/devel/nasm
-CONFIGURE_ARGS+=	--with-raze
+.if !defined(WITHOUT_RAZE) && ${ARCH} == "i386"
+BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm
+CONFIGURE_ARGS+=--with-raze
 .else
-CONFIGURE_ARGS+=	--with-cmz80
+CONFIGURE_ARGS+=--with-cmz80
 .endif
 
 .if defined(WITH_SDL_AUDIO)
-CONFIGURE_ARGS+=	--with-sdl-audio
+CONFIGURE_ARGS+=--with-sdl-audio
 .endif
+
+post-install:
+	@${ECHO_CMD}
+	@${CAT} ${PKGMESSAGE}
+	@${ECHO_CMD}
 
 .include <bsd.port.post.mk>
