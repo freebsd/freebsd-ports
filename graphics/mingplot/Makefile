@@ -7,13 +7,14 @@
 
 PORTNAME=	mingplot
 PORTVERSION=	0.3
+PORTREVISION=	1
 CATEGORIES=	graphics www
 MASTER_SITES=	http://namazu.org/~satoru/mingplot/
 
 MAINTAINER=	umeno@rr.iij4u.or.jp
 COMMENT=	A tool to generate a flash-based chart
 
-RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/ming/ming.so:${PORTSDIR}/graphics/ruby-ming
+RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/ming/mingc.so:${PORTSDIR}/graphics/ruby-ming
 
 USE_RUBY=	yes
 USE_RUBY_FEATURES=	iconv
