@@ -2058,6 +2058,7 @@ elmer-matc	ports/science/elmer-matc
 elmer-mathlibs	ports/math/elmer-mathlibs
 elmer-meshgen2d	ports/science/elmer-meshgen2d
 elmer-umfpack	ports/math/elmer-umfpack
+elmerfront	ports/science/elmerfront
 elmergrid	ports/science/elmergrid
 elmo		ports/mail/elmo
 elmo-devel	ports/mail/elmo-devel
