@@ -22,6 +22,7 @@
     SUBDIR += elmer-hutiter
     SUBDIR += elmer-matc
     SUBDIR += elmer-meshgen2d
+    SUBDIR += elmerfront
     SUBDIR += elmergrid
     SUBDIR += euler
     SUBDIR += fastcap
