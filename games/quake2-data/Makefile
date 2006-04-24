@@ -7,7 +7,7 @@
 
 PORTNAME=	data
 PORTVERSION=	3.20
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_IDSOFTWARE}
 MASTER_SITE_SUBDIR=	quake2
@@ -38,7 +38,7 @@ Q2CTF=		ctf/q2ctf150.zip
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_CTF) && !defined(WITH_SHAREWARE)
+.if !defined(WITHOUT_CTF) && !defined(WITH_SHAREWARE)
 DISTFILES+=	${Q2CTF}
 PLIST_SUB+=	CTF=""
 .else
@@ -67,7 +67,7 @@ do-extract:
 .if defined(WITH_SHAREWARE)
 	@${RM} ${WRKDIR}/baseq2/pak[^0].pak
 .endif
-.if defined(WITH_CTF) && defined(WITHOUT_SHAREWARE)
+.if !defined(WITHOUT_CTF) && !defined(WITH_SHAREWARE)
 	@${UNZIP_CMD} -aq -d ${WRKDIR}/ctf \
 		${DISTDIR}/${DIST_SUBDIR}/${Q2CTF} \
 		-x *.dll *.ico
@@ -86,10 +86,10 @@ do-extract:
 do-install:
 	@${MKDIR} ${DATADIR}
 	@${CP} -R ${WRKSRC}/baseq2 ${DATADIR}
-.if defined(WITHOUT_SHAREWARE)
+.if !defined(WITH_SHAREWARE)
 	@${MKDIR} ${DATADIR}/rogue ${DATADIR}/xatrix
 .endif
-.if defined(WITH_CTF) && defined(WITHOUT_SHAREWARE)
+.if !defined(WITHOUT_CTF) && !defined(WITH_SHAREWARE)
 	@${MKDIR} ${DATADIR}/ctf
 .   for f in *.cfg *.pak
 	@${INSTALL_DATA} ${WRKSRC}/ctf/${f} ${DATADIR}/ctf
@@ -98,14 +98,14 @@ do-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${CP} -R ${WRKSRC}/DOCS ${DOCSDIR}/manual
-.   if defined(WITH_CTF) && defined(WITHOUT_SHAREWARE)
+.   if !defined(WITHOUT_CTF) && !defined(WITH_SHAREWARE)
 	@${MKDIR} ${DOCSDIR}/ctf
 	@${INSTALL_DATA} ${WRKSRC}/ctf/*.txt ${DOCSDIR}/ctf
 .   endif
 .endif
 
 post-install:
-.if defined(WITHOUT_SHAREWARE)
+.if !defined(WITH_SHAREWARE)
 	@${ECHO_CMD}
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_CMD}
