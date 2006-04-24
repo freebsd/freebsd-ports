@@ -10,7 +10,12 @@ PORTNAME=	autodia
 PORTVERSION=	2.02
 PORTREVISION= 	1
 CATEGORIES=	devel perl5
-MASTER_SITES=	http://droogs.org/autodia/download/
+# fernan - 23.Apr.2006
+# the droogs.org domain has expired, and the registrar is redirecting
+# the traffic for this domain. I am hosting the distfile temporarily.
+# MASTER_SITES=	http://droogs.org/autodia/download/
+MASTER_SITES=	http://omega.iib.unsam.edu.ar/ \
+		http://personales.ciudad.com.ar/fernan/
 DISTNAME=	Autodia-${PORTVERSION}
 
 MAINTAINER=	fernan@iib.unsam.edu.ar
