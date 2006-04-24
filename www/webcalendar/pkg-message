@@ -3,8 +3,9 @@ Post-installation instructions:
 
 To make WebCalendar workable, please read
 %%DOCSDIR%%/WebCalendar-SysAdmin.html
-for information about creating the database and installing
-the database tables.
+for information about creating the database, installing
+the database tables and other post-installation tasks,
+such as setting up email reminders.
 
 Then copy
 %%PREFIX%%/%%WEBWCDIR%%/includes/settings.php.orig to
