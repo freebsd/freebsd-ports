@@ -31,7 +31,7 @@ CONFIGURE_ENV=	"CFLAGS=${CFLAGS} -I${LOCALBASE}/include" \
 ALL_TARGET=	all sv
 USE_SDL=	mixer sdl
 USE_GL=		yes
-ONLY_FOR_ARCHS=	i386
+#ONLY_FOR_ARCHS=	i386
 
 .ifdef (WITH_OPTIMIZED_CFLAGS)
 CFLAGS+=	-O3 -ffast-math -fomit-frame-pointer
@@ -121,6 +121,7 @@ pre-everything::
 	@${ECHO_CMD} ""
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|ALubyte|ALchar|' ${WRKSRC}/source/s_al.cpp
 	@${REINPLACE_CMD} -i '' -e 's|SDL\/||g' ${WRKSRC}/source/*.cpp
 	@${REINPLACE_CMD} -e 's|<malloc.h>|<stdlib.h>|' \
 		${WRKSRC}/utils/acc/parse.c ${WRKSRC}/utils/acc/strlist.c
