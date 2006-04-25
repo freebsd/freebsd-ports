@@ -9,8 +9,7 @@ PORTNAME=	gnubg
 PORTVERSION=	0.14.1
 PORTREVISION=	4
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_GNU_ALPHA} \
-		http://triaez.kaisei.org/~kaoru/misc/%SUBDIR%/
+MASTER_SITES=	${MASTER_SITE_GNU_ALPHA}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTFILES=	${DISTNAME}.tar.gz	\
 		gnubg.weights-${GNUBG_WEIGHTS_VERSION}.gz	\
@@ -18,7 +17,7 @@ DISTFILES=	${DISTNAME}.tar.gz	\
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTNAME}.tar.gz
 
-MAINTAINER=	kaoru@kaisei.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU Backgammon
 
 MAN6=	gnubg.6
