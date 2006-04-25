@@ -1,14 +1,27 @@
---- Makefile.orig	Sat Nov  6 16:09:09 2004
-+++ Makefile	Sat Nov  6 16:09:24 2004
-@@ -1,9 +1,8 @@
+--- Makefile	Fri Apr 21 11:25:01 2006
++++ Makefile	Fri Apr 21 13:23:24 2006
+@@ -1,18 +1,18 @@
  # Makefile
  
 -VERSION=$(shell grep package_version src/version.h | cut -f2)
--
-+all: compile
- compile: 
--	cd src && $(MAKE) -$(MAKEFLAGS) 
-+	cd src && $(MAKE) 
++VERSION=2.0.7
  
- install: compile
- 	./install.sub
+-compile: 
+-	cd src && $(MAKE) -$(MAKEFLAGS) 
++all:
++	cd src && $(MAKE) $(MAKEFLAGS) 
+ 
+-install: compile
+-	./install.sh
++install: 
++	@$(SH) ./install.sh
+ 
+ uninstall: 
+ 	./uninstall.sh
+ 
+ clean:
+-	cd src && $(MAKE) -$(MAKEFLAGS) clean
++	cd src && $(MAKE) $(MAKEFLAGS) clean
+ 
+ package: compile clean
+ 	./package.sh

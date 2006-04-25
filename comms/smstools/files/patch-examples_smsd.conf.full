@@ -1,24 +1,63 @@
---- examples/smsd.conf.full.orig	Sat Nov  6 16:11:35 2004
-+++ examples/smsd.conf.full	Sat Nov  6 16:16:54 2004
+--- examples/smsd.conf.full	Fri Apr 21 11:25:01 2006
++++ examples/smsd.conf.full	Fri Apr 21 15:00:32 2006
+@@ -6,20 +6,20 @@
+ #failed = /var/spool/sms/failed
+ incoming = /var/spool/sms/incoming
+ #sent = /var/spool/sms/sent
+-mypath = /usr/local/bin
+-#logfile = /var/log/smsd.log
++mypath = %%PREFIX%%/bin
++logfile = /var/log/smsd.log
+ loglevel = 7
+-#alarmhandler = /usr/local/bin/alarmevent
++#alarmhandler = %%PREFIX%%/bin/alarmevent
+ alarmlevel = 4
+ delaytime = 10
+ errorsleeptime = 10
+ blocktime = 3600
+-#eventhandler = /usr/local/bin/smsevent
++#eventhandler = %%PREFIX%%/bin/smsevent
+ #stats = /var/log/smsd_stats
+ #stats_interval = 3600
+-#blacklist = /etc/smsd.black
+-#whitelist = /etc/smsd.white
+-#checkhandler = /usr/local/bin/smscheck
++#blacklist = %%PREFIX%%/etc/smsd.black
++#whitelist = %%PREFIX%%/etc/smsd.white
++#checkhandler = %%PREFIX%%/bin/smscheck
+ receive_before_send = no
+ number_parts = yes
+ 
 @@ -45,8 +45,8 @@
  
  [GSM1]
  init = ATE0+CPMS="SM"+CNMI=2,0,0,2,1
 -# Windows: /dev/com1, Solaris: /dev/cua/a, Linux /dev/ttyS0
 -device = /dev/ttyS0
-+# Windows: /dev/com1, Solaris: /dev/cua/a, Linux /dev/ttyS0, FreeBSD5: /dev/cuaa0
-+device = /dev/cuaa0
++# Windows: /dev/com1, Solaris: /dev/cua/a, Linux /dev/ttyS0, FreeBSD /dev/cuad0
++device = /dev/cuad0
  incoming = yes
  queues = OTHER
  #You don't need a PIN for mobile phones
-@@ -61,8 +61,8 @@
+@@ -58,12 +58,12 @@
+ cs_convert = yes
+ report = no
+ memory_start = 1
+-#eventhandler = /usr/local/bin/smsevent
++#eventhandler = %%PREFIX%%/bin/smsevent
  
  [GSM2]
  init = ATE0
 -# Windows: /dev/com2, Solaris: /dev/cua/b, Linux /dev/ttyS1
 -device = /dev/ttyS1
-+# Windows: /dev/com2, Solaris: /dev/cua/b, Linux /dev/ttyS1, FreeBSD5: /dev/cuaa1
-+device = /dev/cuaa1
++# Windows: /dev/com2, Solaris: /dev/cua/b, Linux /dev/ttyS1, FreeBSD /dev/cuad1
++device = /dev/cuad1
  incoming = yes
  queues = OTHER
  #You don't need a PIN for mobile phones
+@@ -75,4 +75,4 @@
+ cs_convert = yes
+ report = no
+ memory_start = 1
+-#eventhandler = /usr/local/bin/smsevent
++#eventhandler = %%PREFIX%%/bin/smsevent

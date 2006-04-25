@@ -1,103 +1,28 @@
-@comment $FreeBSD$
-bin/email2sms
 bin/sendsms
-bin/smsresend
+bin/sms2html
+bin/sms2unicode
+bin/sms2xml
 bin/smsd
-bin/getsms
-bin/putsms
-bin/mysmsd
-bin/smsevent
-etc/rc.d/smsd.sh.sample
-etc/smsd.conf
+bin/unicode2sms
+etc/rc.d/smsd.sh
+etc/smsd.conf.sample
+%%EXAMPLESDIR%%/email2sms
+%%EXAMPLESDIR%%/mysmsd
+%%EXAMPLESDIR%%/operator_logo1.sms
 %%EXAMPLESDIR%%/operator_logo2.sms
 %%EXAMPLESDIR%%/received_report.sms
 %%EXAMPLESDIR%%/received_sms.sms
 %%EXAMPLESDIR%%/send_sms.sms
-%%EXAMPLESDIR%%/smsd.black
+%%EXAMPLESDIR%%/send_sms_unicode.sms
 %%EXAMPLESDIR%%/smsd.conf.easy
 %%EXAMPLESDIR%%/smsd.conf.full
+%%EXAMPLESDIR%%/smsevent
 %%EXAMPLESDIR%%/sql_demo
-%%EXAMPLESDIR%%/smsd.conf.easy.orig
-%%EXAMPLESDIR%%/smsd.conf.full.orig
-%%EXAMPLESDIR%%/smsd.conf.full.bak
-%%EXAMPLESDIR%%/smsd.conf.easy.bak
-%%EXAMPLESDIR%%/operator_logo1.sms
-%%PORTDOCS%%%%DOCSDIR%%/html/slideshow/status.gif
-%%PORTDOCS%%%%DOCSDIR%%/html/slideshow/eventhandler.gif
-%%PORTDOCS%%%%DOCSDIR%%/html/slideshow/logfile.gif
-%%PORTDOCS%%%%DOCSDIR%%/html/slideshow/modem.gif
-%%PORTDOCS%%%%DOCSDIR%%/html/slideshow/move_l.gif
-%%PORTDOCS%%%%DOCSDIR%%/html/slideshow/move_r.gif
-%%PORTDOCS%%%%DOCSDIR%%/html/slideshow/page1.html
-%%PORTDOCS%%%%DOCSDIR%%/html/slideshow/page2.html
-%%PORTDOCS%%%%DOCSDIR%%/html/slideshow/page3.html
-%%PORTDOCS%%%%DOCSDIR%%/html/slideshow/page4.html
-%%PORTDOCS%%%%DOCSDIR%%/html/slideshow/page5.html
-%%PORTDOCS%%%%DOCSDIR%%/html/slideshow/page6.html
-%%PORTDOCS%%%%DOCSDIR%%/html/slideshow/page7.html
-%%PORTDOCS%%%%DOCSDIR%%/html/slideshow/page8.html
-%%PORTDOCS%%%%DOCSDIR%%/html/slideshow/queue.gif
-%%PORTDOCS%%%%DOCSDIR%%/html/slideshow/sms.gif
-%%PORTDOCS%%%%DOCSDIR%%/html/slideshow/statistic.gif
-%%PORTDOCS%%%%DOCSDIR%%/html/slideshow/blacklist.gif
-%%PORTDOCS%%%%DOCSDIR%%/html/blacklist.html
-%%PORTDOCS%%%%DOCSDIR%%/html/book.html
-%%PORTDOCS%%%%DOCSDIR%%/html/butterfly.gif
-%%PORTDOCS%%%%DOCSDIR%%/html/compiling.html
-%%PORTDOCS%%%%DOCSDIR%%/html/configure.html
-%%PORTDOCS%%%%DOCSDIR%%/html/configure2.html
-%%PORTDOCS%%%%DOCSDIR%%/html/contact.html
-%%PORTDOCS%%%%DOCSDIR%%/html/costs.html
-%%PORTDOCS%%%%DOCSDIR%%/html/download.html
-%%PORTDOCS%%%%DOCSDIR%%/html/email.png
-%%PORTDOCS%%%%DOCSDIR%%/html/book.html~
-%%PORTDOCS%%%%DOCSDIR%%/html/eventhandler.html
-%%PORTDOCS%%%%DOCSDIR%%/html/faq.html
-%%PORTDOCS%%%%DOCSDIR%%/html/fileformat.html
-%%PORTDOCS%%%%DOCSDIR%%/html/gpl.html
-%%PORTDOCS%%%%DOCSDIR%%/html/gpl_de.html
-%%PORTDOCS%%%%DOCSDIR%%/html/gsmmodem.html
-%%PORTDOCS%%%%DOCSDIR%%/html/hardwarecomp.html
-%%PORTDOCS%%%%DOCSDIR%%/html/history.html
-%%PORTDOCS%%%%DOCSDIR%%/html/index.html
-%%PORTDOCS%%%%DOCSDIR%%/html/index.html~
-%%PORTDOCS%%%%DOCSDIR%%/html/key.png
-%%PORTDOCS%%%%DOCSDIR%%/html/license.html
-%%PORTDOCS%%%%DOCSDIR%%/html/links.html
-%%PORTDOCS%%%%DOCSDIR%%/html/logging.html
-%%PORTDOCS%%%%DOCSDIR%%/html/mnp.html
-%%PORTDOCS%%%%DOCSDIR%%/html/news.html
-%%PORTDOCS%%%%DOCSDIR%%/html/public_key_stefan_frings.txt
-%%PORTDOCS%%%%DOCSDIR%%/html/quotes.html
-%%PORTDOCS%%%%DOCSDIR%%/html/redundancy.html
-%%PORTDOCS%%%%DOCSDIR%%/html/referenzen.html
-%%PORTDOCS%%%%DOCSDIR%%/html/run.html
-%%PORTDOCS%%%%DOCSDIR%%/html/softwarecomp.html
-%%PORTDOCS%%%%DOCSDIR%%/html/sql.html
-%%PORTDOCS%%%%DOCSDIR%%/html/sql2.html
-%%PORTDOCS%%%%DOCSDIR%%/html/statformat.html
-%%PORTDOCS%%%%DOCSDIR%%/html/statusmonitor.html
-%%PORTDOCS%%%%DOCSDIR%%/html/tc35.gif
-%%PORTDOCS%%%%DOCSDIR%%/html/thanks.html
-%%PORTDOCS%%%%DOCSDIR%%/html/twist.gif
-%%PORTDOCS%%%%DOCSDIR%%/html/windows.html
-%%PORTDOCS%%%%DOCSDIR%%/html/thanks.gif
-%%PORTDOCS%%%%DOCSDIR%%/html/alarmhandler.html
-%%PORTDOCS%%%%DOCSDIR%%/html/shippingdetails.html
-%%PORTDOCS%%%%DOCSDIR%%/html/book.jpg
-%%PORTDOCS%%%%DOCSDIR%%/html/bugs.html
-%%PORTDOCS%%%%DOCSDIR%%/html/compiling.html~
-%%PORTDOCS%%%%DOCSDIR%%/html/download.html~
-%%PORTDOCS%%%%DOCSDIR%%/html/european.html
-%%PORTDOCS%%%%DOCSDIR%%/html/hardwarecomp.html~
-%%PORTDOCS%%%%DOCSDIR%%/html/history.html~
-%%PORTDOCS%%%%DOCSDIR%%/html/postpaid.html
-%%PORTDOCS%%%%DOCSDIR%%/html/shippingdetails.html~
-%%PORTDOCS%%%%DOCSDIR%%/html/whypaypal.html
-%%PORTDOCS%%%%DOCSDIR%%/html/windows.html~
-%%PORTDOCS%%%%DOCSDIR%%/license.txt
-%%PORTDOCS%%%%DOCSDIR%%/manual.html
-@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/slideshow
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+share/nls/POSIX
+share/nls/en_US.US-ASCII
+@dirrm share/examples/smstools
+@cwd /
+@dirrm var/spool/sms/outgoing
+@dirrm var/spool/sms/incoming
+@dirrm var/spool/sms/checked
+@dirrm var/spool/sms
