@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	scummvm
-PORTVERSION=	0.8.0
+PORTVERSION=	0.8.2
 CATEGORIES=	games emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,10 +15,9 @@ MAINTAINER=	freebsd.alex@trull.org
 COMMENT=	Graphical Adventure Game Virtual Machine
 
 USE_BZIP2=	yes
-USE_GCC=	3.3+
+#USE_GCC=	3.3+
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
-USE_REINPLACE=	yes
 USE_SDL=	sdl
 
 CONFIGURE_ARGS=--with-sdl-prefix=${LOCALBASE} \
@@ -36,11 +35,11 @@ MAN6=		scummvm.6
 PORTDOCS=	NEWS README TODO
 PLIST_FILES=	bin/scummvm
 
+.include <bsd.port.pre.mk>
+
 .if defined(WITH_MPEG2)
 WITH_VORBIS=	yes
 .endif
-
-.include <bsd.port.pre.mk>
 
 .if defined(WITH_VORBIS)
 LIB_DEPENDS+=	ogg.5:${PORTSDIR}/audio/libogg \
