@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pugs
-PORTVERSION=	6.2.8
-PORTREVISION=	1
+PORTVERSION=	6.2.11
 CATEGORIES=	lang devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/A/AU/AUTRIJUS
@@ -46,7 +45,7 @@ post-install:
 .endif
 
 .if ${PERL_LEVEL} < 500601
-IGNORE=		This port requires perl 5.6.x or later.
+IGNORE=		requires perl 5.6.x or later
 .endif
 
 .include <bsd.port.post.mk>
