@@ -34,6 +34,35 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="8b683bea-d49c-11da-a672-000e0c2e438a">
+    <topic>asterisk -- denial of service vulnerability, local system
+      access</topic>
+    <affects>
+      <package>
+	<name>asterisk</name>
+	<range><lt>1.2.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Emmanouel Kellenis reports a denial of service vulnerability
+	  within asterisk.  The vulnerability is caused by a buffer
+	  overflow in "format_jpeg.c".  A large JPEG image could
+	  trigger this bug, potentially allowing a local attacker to
+	  execute arbitrary code.</p>
+      </body>
+    </description>
+    <references>
+      <bid>17561</bid>
+      <cvename>CVE-2006-1827</cvename>
+      <url>http://www.cipher.org.uk/index.php?p=advisories/Asterisk_Codec_Integer_Overflow_07-04-2006.advisory</url>
+    </references>
+    <dates>
+      <discovery>2006-04-07</discovery>
+      <entry>2006-04-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a813a219-d2d4-11da-a672-000e0c2e438a">
     <topic>zgv, xzgv -- heap overflow vulnerability</topic>
     <affects>
