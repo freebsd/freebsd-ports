@@ -691,6 +691,7 @@
     SUBDIR += p5-Template-Plugin-Clickable-Email
     SUBDIR += p5-Template-Plugin-Comma
     SUBDIR += p5-Template-Plugin-MP3
+    SUBDIR += p5-Template-Plugin-Markdown
     SUBDIR += p5-Template-Plugin-Monta
     SUBDIR += p5-Template-Plugin-Number-Format
     SUBDIR += p5-Template-Plugin-Subst
