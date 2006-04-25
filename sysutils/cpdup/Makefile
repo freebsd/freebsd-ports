@@ -7,6 +7,7 @@
 
 PORTNAME=	cpdup
 PORTVERSION=	1.05
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://apollo.backplane.com/FreeBSDPorts/
 #MASTER_SITE_SUBDIR=	cp
