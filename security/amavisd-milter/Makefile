@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	amavisd-milter
-PORTVERSION=	1.1.1
+PORTVERSION=	1.1.2
 CATEGORIES=	security mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,12 +16,23 @@ COMMENT=	Milter for amavisd-new
 
 RUN_DEPENDS=	amavisd:${PORTSDIR}/security/amavisd-new
 
+##
+# Use the following quirks to choose which sendmail to use (ports or system):
+#
+#   WITH_SENDMAIL_BASE=yes
+# or
+#   WITH_SENDMAIL_PORT=yes
+#
+# If unspecified, check for an up-to-date system version but give an
+# installed port preference over it.
+##
+
 # Shared defaults with security/amavisd-new
 AMAVISUSER?=	vscan
 AMAVISDIR?=	/var/amavis
 
 GNU_CONFIGURE=	yes
-USE_RCORDER=	${PORTNAME}.sh
+USE_RC_SUBR=	${PORTNAME}.sh
 
 SUB_FILES=	pkg-message
 SUB_LIST=	AMAVISUSER=${AMAVISUSER} \
@@ -34,6 +45,23 @@ PLIST_SUB=	RC_DIR=${RC_DIR} \
 
 MAN8=		amavisd-milter.8
 
+.include <bsd.port.pre.mk>
+
+.if !defined(WITH_SENDMAIL_BASE) && \
+    !defined(WITH_SENDMAIL_PORT) && \
+    !exists(${LOCALBASE}/lib/libmilter.a)
+WITH_SENDMAIL_BASE=yes
+.endif
+
+.if defined(WITH_SENDMAIL_BASE)
+.if !exists(/usr/lib/libmilter.a)
+BROKEN=		Base system sendmail not found or too old, rebuild with WITH_SENDMAIL_PORT=yes
+.endif
+.else
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libmilter.a:${PORTSDIR}/mail/sendmail
+CONFIGURE_ARGS+=--with-sendmail=${LOCALBASE}
+.endif
+
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
@@ -43,4 +71,4 @@ post-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
