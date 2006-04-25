@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	ejabberd
-PORTVERSION=	1.0.0
-PORTREVISION=	2
+PORTVERSION=	1.1.0
 CATEGORIES=	net-im
-MASTER_SITES=	http://www.jabber.ru/files/ejabberd/ \
-		http://www.process-one.net/en/projects/ejabberd/download/${PORTVERSION}/
+MASTER_SITES=	http://www.process-one.net/en/projects/ejabberd/download/${PORTVERSION}/
 
 MAINTAINER=	shaun@inerd.com
 COMMENT=	Free and Open Source distributed fault-tolerant Jabber server
