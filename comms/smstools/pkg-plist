@@ -4,7 +4,6 @@ bin/sms2unicode
 bin/sms2xml
 bin/smsd
 bin/unicode2sms
-etc/rc.d/smsd.sh
 etc/smsd.conf.sample
 %%EXAMPLESDIR%%/email2sms
 %%EXAMPLESDIR%%/mysmsd
@@ -18,8 +17,6 @@ etc/smsd.conf.sample
 %%EXAMPLESDIR%%/smsd.conf.full
 %%EXAMPLESDIR%%/smsevent
 %%EXAMPLESDIR%%/sql_demo
-share/nls/POSIX
-share/nls/en_US.US-ASCII
 @dirrm share/examples/smstools
 @cwd /
 @dirrm var/spool/sms/outgoing
