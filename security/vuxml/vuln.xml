@@ -6786,11 +6786,14 @@ Note:  Please add new entries to the beginning of this file.
 	<range><lt>1.2.3</lt></range>
       </package>
       <package>
+	<name>paraview</name>
+	<range><lt>2.4.3</lt></range>
+      </package>
+      <package>
 	<name>fractorama</name>
 	<name>iv</name>
 	<name>ja-iv</name>
 	<name>ja-libimg</name>
-	<name>paraview</name>
 	<range><gt>0</gt></range>
       </package>
     </affects>
@@ -14770,11 +14773,14 @@ Note:  Please add new entries to the beginning of this file.
 	<range><lt>1.2.3</lt></range>
       </package>
       <package>
+	<name>paraview</name>
+	<range><lt>2.4.3</lt></range>
+      </package>
+      <package>
 	<name>fractorama</name>
 	<name>iv</name>
 	<name>ja-iv</name>
 	<name>ja-libimg</name>
-	<name>paraview</name>
 	<range><gt>0</gt></range>
       </package>
     </affects>
@@ -15651,11 +15657,14 @@ http_access deny Gopher</pre>
 	<range><lt>1.2.3</lt></range>
       </package>
       <package>
+	<name>paraview</name>
+	<range><lt>2.4.3</lt></range>
+      </package>
+      <package>
 	<name>fractorama</name>
 	<name>iv</name>
 	<name>ja-iv</name>
 	<name>ja-libimg</name>
-	<name>paraview</name>
 	<range><gt>0</gt></range>
       </package>
     </affects>
@@ -19032,11 +19041,14 @@ http_access deny Gopher</pre>
 	<range><lt>1.2.3</lt></range>
       </package>
       <package>
+	<name>paraview</name>
+	<range><lt>2.4.3</lt></range>
+      </package>
+      <package>
 	<name>fractorama</name>
 	<name>iv</name>
 	<name>ja-iv</name>
 	<name>ja-libimg</name>
-	<name>paraview</name>
 	<range><gt>0</gt></range>
       </package>
     </affects>
@@ -19141,11 +19153,14 @@ http_access deny Gopher</pre>
 	<range><lt>1.2.3</lt></range>
       </package>
       <package>
+	<name>paraview</name>
+	<range><lt>2.4.3</lt></range>
+      </package>
+      <package>
 	<name>fractorama</name>
 	<name>iv</name>
 	<name>ja-iv</name>
 	<name>ja-libimg</name>
-	<name>paraview</name>
 	<range><gt>0</gt></range>
       </package>
     </affects>
