@@ -1667,6 +1667,7 @@ devtodo		ports/devel/devtodo
 dfileserver	ports/www/dfileserver
 dfm		ports/x11-fm/dfm
 dft++		ports/science/dft++
+dfuife-curses	ports/devel/dfuife-curses
 dgd		ports/net/dgd
 dgd-lpmud	ports/net/dgd-lpmud
 dgd-net		ports/net/dgd-net
