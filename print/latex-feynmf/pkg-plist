@@ -5,7 +5,7 @@ bin/feynmf.pl
 %%PORTDOCS%%%%DOCSDIR%%/Feynman.Diagrams
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/Tutorial
-%%PORTDOCS%%%%DOCSDIR%%/manual.ps.gz
+%%PORTDOCS%%%%DOCSDIR%%/manual.ps
 %%PORTDOCS%%%%DOCSDIR%%/template.tex
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%CLASSDIR%%/feynmf.dtx
@@ -22,5 +22,5 @@ bin/feynmf.pl
 %%MPDIR%%/manpics.2
 %%MPDIR%%/manpics.3
 @dirrm %%MPDIR%%
-@exec %%MKTEXLSR%%
-@unexec %%MKTEXLSR%%
+@exec %%MKTEXLSR%% %D/%%TEXMFDIR%%
+@unexec %%MKTEXLSR%% %D/%%TEXMFDIR%%

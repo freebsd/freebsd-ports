@@ -6,7 +6,7 @@
 
 PORTNAME=	latex-feynmf
 PORTVERSION=	1.08.19961202
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR=	macros/latex/contrib/feynmf
@@ -19,24 +19,21 @@ EXTRACT_ONLY=	#empty
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A LaTeX package for drawing of Feynman diagrams
 
-BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX-base \
-		${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal
-RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base \
-		${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal
+BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX-base
+RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base
 
-PLIST_SUB=	TEXMFLOCAL=${TEXMFLOCAL} MKTEXLSR=${MKTEXLSR} \
+PLIST_SUB=	TEXMFDIR=${TEXMFDIR} MKTEXLSR=${MKTEXLSR} \
 		CLASSDIR=${CLASSDIR} FONTDIR=${FONTDIR} MPDIR=${MPDIR}
 
-TEXMFLOCAL=	share/texmf-local
-TEXMFLOCAL_LSR=	${LOCALBASE}/${TEXMFLOCAL}/ls-R
+TEXMFDIR=	share/texmf
 MKTEXLSR=	${LOCALBASE}/bin/mktexlsr
 TEX_BIN=	${LOCALBASE}/bin/etex
-CLASSDIR=	${TEXMFLOCAL}/tex/latex/${PORTNAME:S/^latex-//}
-FONTDIR=	${TEXMFLOCAL}/fonts/source/public/${PORTNAME:S/^latex-//}
-MPDIR=		${TEXMFLOCAL}/metapost/${PORTNAME:S/^latex-//}
+CLASSDIR=	${TEXMFDIR}/tex/latex/${PORTNAME:S/^latex-//}
+FONTDIR=	${TEXMFDIR}/fonts/source/public/${PORTNAME:S/^latex-//}
+MPDIR=		${TEXMFDIR}/metapost/${PORTNAME:S/^latex-//}
 
 DOC_FILES=	Announce COPYING Feynman.Diagrams README \
-		Tutorial manual.ps.gz template.tex
+		Tutorial manual.ps template.tex
 
 CLASS_FILES=	feynmf.dtx feynmf.ins feynmf209.ins \
 		feynmf.sty feynmp.sty
@@ -68,6 +65,6 @@ do-install:
 .endif
 
 post-install:
-	${MKTEXLSR}
+	${MKTEXLSR} ${PREFIX}/${TEXMFDIR}
 
 .include <bsd.port.mk>
