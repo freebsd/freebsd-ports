@@ -9112,6 +9112,7 @@ p5-Template-Plugin-Clickable	ports/www/p5-Template-Plugin-Clickable
 p5-Template-Plugin-Clickable-Email	ports/www/p5-Template-Plugin-Clickable-Email
 p5-Template-Plugin-Comma	ports/www/p5-Template-Plugin-Comma
 p5-Template-Plugin-MP3	ports/www/p5-Template-Plugin-MP3
+p5-Template-Plugin-Markdown	ports/www/p5-Template-Plugin-Markdown
 p5-Template-Plugin-Monta	ports/www/p5-Template-Plugin-Monta
 p5-Template-Plugin-Number-Format	ports/www/p5-Template-Plugin-Number-Format
 p5-Template-Plugin-Subst	ports/www/p5-Template-Plugin-Subst
