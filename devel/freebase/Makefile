@@ -6,7 +6,6 @@
 #
 
 PORTNAME=	freebase
-PORTREVISION=	1
 
 COMMENT=	Plugin subsystem of FreeRIDE
 

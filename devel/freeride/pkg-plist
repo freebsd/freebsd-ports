@@ -10,6 +10,10 @@ bin/freeride
 %%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_tools_source_parser/plugin.yaml
 %%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_tools_source_parser/basic_source_parser.rb
 %%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_tools_source_parser/basic_parser.rb
+%%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_tools_fox_project_explorer/property_viewer.rb
+%%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_tools_fox_project_explorer/prop_view_helpers.rb
+%%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_tools_fox_project_explorer/plugin.yaml
+%%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_tools_fox_project_explorer/fox_project_explorer.rb
 %%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_tools_rrb/rrb_plugin.rb
 %%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_tools_rrb/plugin.yaml
 %%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_tools_fox_source_browser/source_tree.rb
@@ -20,6 +24,10 @@ bin/freeride
 %%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_tools_fox_source_browser/icons/module.png
 %%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_tools_fox_source_browser/icons/method.png
 %%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_tools_fox_source_browser/icons/class.png
+%%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_tools_fox_source_browser/icons/project.png
+%%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_tools_fox_source_browser/icons/folder.png
+%%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_tools_fox_source_browser/icons/document.png
+%%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_tools_fox_source_browser/directory_source_tree.rb
 %%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_tools_fox_script_runner/script_starter_with_pause.rb
 %%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_tools_fox_script_runner/script_starter.rb
 %%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_tools_fox_script_runner/script_runner.rb
@@ -60,6 +68,7 @@ bin/freeride
 %%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_tools_fox_debugger/plugin.yaml
 %%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_tools_fox_debugger/fox_debugger_configurator.rb
 %%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_tools_fox_debugger/fox_debugger.rb
+%%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_tools_fox_debugger/fox_ruby_configurator.rb
 %%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_tools_fox_debugger/icons/viewBreakpoints.png
 %%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_tools_fox_debugger/icons/suspend.png
 %%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_tools_fox_debugger/icons/stepOver.png
@@ -82,6 +91,9 @@ bin/freeride
 %%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_tools_debugger/breakpoint.rb
 %%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_tools_configurator/plugin.yaml
 %%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_tools_configurator/configurator.rb
+%%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_tools_block_commenter/plugin.yaml
+%%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_tools_block_commenter/block_commenter.rb
+%%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_project/new_project_dialog.rb
 %%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_project/projects.yaml
 %%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_project/project_manager.rb
 %%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_project/project.rb
@@ -184,6 +196,7 @@ bin/freeride
 @dirrm %%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_tools_fox_source_browser
 @dirrm %%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_tools_fox_script_runner/icons
 @dirrm %%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_tools_fox_script_runner
+@dirrm %%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_tools_fox_project_explorer
 @dirrm %%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_tools_fox_ri/icons
 @dirrm %%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_tools_fox_ri/fxri/lib/icons
 @dirrm %%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_tools_fox_ri/fxri/lib
@@ -199,6 +212,7 @@ bin/freeride
 @dirrm %%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_tools_fox_configurator
 @dirrm %%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_tools_debugger
 @dirrm %%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_tools_configurator
+@dirrm %%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_tools_block_commenter
 @dirrm %%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_project
 @dirrm %%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_gui
 @dirrm %%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_fox_gui/icons
