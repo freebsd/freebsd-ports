@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Perl-MinimumVersion
-PORTVERSION=	0.11
+PORTVERSION=	0.13
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Perl
@@ -29,7 +29,7 @@ MAN3=	Perl::MinimumVersion.3
 
 .include <bsd.port.pre.mk>
 .if ${PERL_LEVEL} < 500801
-IGNORE=	requires Perl 5.8.1 or newer. Install lang/perl5.8 and try again.
+IGNORE=	requires Perl 5.8.1 or newer. Install lang/perl5.8 and try again
 .endif
 
 post-patch:
