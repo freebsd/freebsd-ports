@@ -17,16 +17,13 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	A vector graphics tool for GNUstep
 
-GNUSTEP_PREFIX?=	${LOCALBASE}/GNUstep
-PREFIX=		${GNUSTEP_PREFIX}
-NO_MTREE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNUSTEP=	yes
+USE_GNUSTEP_PREFIX=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
-USE_REINPLACE=	yes
 
 WRKSRC=		${WRKDIR}/Cenon
 MAKEFILE=	GNUmakefile
@@ -34,10 +31,6 @@ MAKEFILE=	GNUmakefile
 OPTIONS=	FULL_LIBRARY	"Install complete Cenon Library" off
 
 .include <bsd.port.pre.mk>
-
-.if ${CC} == "gcc40" || ${CC} == "gcc41" || ${CC} == "gcc42"
-BROKEN=		Does not compile
-.endif
 
 .if defined(WITH_FULL_LIBRARY)
 DISTFILES+=	CenonLibrary-${PORTVERSION}-1${EXTRACT_SUFX}
