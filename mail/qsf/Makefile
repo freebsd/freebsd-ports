@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	qsf
-PORTVERSION=	1.1.2
+PORTVERSION=	1.1.7
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	freebsd@unixfreunde.de
 COMMENT=	A small fast spam filter intended to be used with procmail
 
 OPTIONS=	GDBM "GDBM support" off \
@@ -20,7 +20,6 @@ OPTIONS=	GDBM "GDBM support" off \
 
 USE_BZIP2=	yes
 USE_GETOPT_LONG=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
