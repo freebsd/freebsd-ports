@@ -1,0 +1,22 @@
+#!/bin/sh
+#
+# PROVIDE: hydra
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# $FreeBSD$
+#
+
+hydra_enable=${hydra_enable-"NO"}
+
+. %%RC_SUBR%%
+
+load_rc_config hydra
+
+name=hydra
+rcvar=`set_rcvar`
+
+command=%%PREFIX%%/bin/${name}
+
+load_rc_config ${name}
+run_rc_command "$1"
