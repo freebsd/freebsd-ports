@@ -15,9 +15,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension providing access to the GSSAPIv2 library
 
-PERL_CONFIGURE=	yes
-
 BUILD_DEPENDS=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
+
+PERL_CONFIGURE=	yes
 
 MAN3=	GSSAPI.3 \
 	GSSAPI::OID.3 \
