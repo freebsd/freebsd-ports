@@ -23,6 +23,8 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	sobomax@FreeBSD.org
 COMMENT=	An Open Source PBX and telephony toolkit
 
+FORBIDDEN=	http://vuxml.freebsd.org/8b683bea-d49c-11da-a672-000e0c2e438a.html
+
 BUILD_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 LIB_DEPENDS=	speex.3:${PORTSDIR}/audio/speex \
 		newt.51:${PORTSDIR}/devel/newt \
