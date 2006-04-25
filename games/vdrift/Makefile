@@ -7,6 +7,7 @@
 
 PORTNAME=	vdrift
 PORTVERSION=	20060221
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,7 +18,8 @@ MAINTAINER=	acardenas@bsd.org.pe
 COMMENT=	Open source driving simulation
 
 BUILD_DEPENDS=	scons:${PORTSDIR}/devel/scons
-LIB_DEPENDS=	openal.0:${PORTSDIR}/audio/openal
+LIB_DEPENDS=	openal.0:${PORTSDIR}/audio/openal \
+		alut.0:${PORTSDIR}/audio/freealut
 RUN_DEPENDS=	${X11BASE}/share/${PORTNAME}/settings/VDrift.config:${PORTSDIR}/games/vdrift-data
 
 USE_BZIP2=	yes
@@ -53,6 +55,7 @@ post-patch:
 	@${FIND} ${WRKSRC}/include/* -type f -exec ${REINPLACE_CMD} -e 's|SDL/|SDL11/|g' "{}" \;
 	@${REINPLACE_CMD} -e 's|-O2||g' ${WRKSRC}/SConstruct
 	@${REINPLACE_CMD} -e 's|sdl-config|sdl11-config|g' ${WRKSRC}/src/SConscript
+	@${REINPLACE_CMD} -e "s|'openal'|'openal','alut'|g" ${WRKSRC}/SConstruct
 
 do-build:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} scons ${SCONS_ARGS}
