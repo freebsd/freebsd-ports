@@ -37,11 +37,14 @@ share/xastir/config/language-Italian.sys
 share/xastir/config/language-Portuguese.sys
 share/xastir/config/language-Spanish.sys
 share/xastir/config/nwsc_ddmmyy.dbfawk
-share/xastir/config/nwsfz_ddmmyy.dbfawk
 share/xastir/config/nwsmzddmmyy.dbfawk
+share/xastir/config/nwsmzoddmmyy.dbfawk
 share/xastir/config/nwsozddmmyy.dbfawk
 share/xastir/config/nwsw_ddmmyy.dbfawk
 share/xastir/config/nwsz_ddmmyy.dbfawk
+share/xastir/config/nwszoddmmyy.dbfawk
+share/xastir/config/predefined_EVENT.sys
+share/xastir/config/predefined_SAR.sys
 share/xastir/config/tgr2shp.dbfawk
 share/xastir/config/tgr2shppoly.dbfawk
 share/xastir/config/tgrcty.dbfawk
