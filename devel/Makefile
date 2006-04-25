@@ -216,6 +216,7 @@
     SUBDIR += desktop-file-utils
     SUBDIR += devhelp
     SUBDIR += devtodo
+    SUBDIR += dfuife-curses
     SUBDIR += dia2code
     SUBDIR += dialyzer
     SUBDIR += diffconvert
