@@ -41,7 +41,7 @@ RUN_DEPENDS+=	mmencode:${PORTSDIR}/mail/metamail
 
 # Additionally, exmh will use the following ports if present:
 # lang/expect
-# misc/glimpse
+# textproc/glimpse
 # security/gnupg
 # security/pgp
 # security/pgp5
