@@ -16,13 +16,21 @@ MAINTAINER=	wxs@csh.rit.edu
 COMMENT=	Libpcap-based Ethernet packet generator, with PCAP editor
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+MAKE_ARGS+=	CC="${CC}" CFLAGS="${CFLAGS}"
 
 MAN1=		bittwist.1 bittwistb.1 bittwiste.1
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-IGNORE=		does not build under 4.x
+# 5.3 is the first version to have round().
+.if ${OSVERSION} < 503001
+IGNORE=	does not build under 5.2 and older (no round())
+.endif
+
+# 5.3 and up do not have a new enough libpcap but does have round().
+# 6.0 and up have both a new enough libpcap and round().
+.if ${OSVERSION} >= 503001 && ${OSVERSION} < 600100
+BUILD_DEPENDS=	${LOCALBASE}/lib/libpcap.a:${PORTSDIR}/net/libpcap
 .endif
 
 .include <bsd.port.post.mk>
