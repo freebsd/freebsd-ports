@@ -122,6 +122,7 @@
     SUBDIR += freebsd-update
     SUBDIR += fressh
     SUBDIR += fsh
+    SUBDIR += fswatch
     SUBDIR += ftimes
     SUBDIR += ftpmap
     SUBDIR += fuzz
