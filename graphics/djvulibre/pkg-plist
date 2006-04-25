@@ -66,4 +66,4 @@ share/djvu/pubtext/DjVuXML-s.dtd
 @dirrmtry man/fr
 @dirrmtry man/de/man1
 @dirrmtry man/de
-%%X11%%@dirrmtry lib/browser_plugins
+@unexec rmdir %%X11BASE%%/lib/browser_plugins 2>/dev/null || true
