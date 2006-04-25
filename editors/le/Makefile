@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	le
-PORTVERSION=	1.12.5
+PORTVERSION=	1.13.0
 CATEGORIES=	editors
-MASTER_SITES=	ftp://ftp.yars.free.net/pub/source/le/
+MASTER_SITES=	ftp://ftp.yars.free.net/pub/source/le/ \
+		ftp://ftp.yar.ru/pub/source/le/
 
 MAINTAINER=	az@FreeBSD.org
 COMMENT=	Text editor
