@@ -11,17 +11,22 @@ PORTVERSION=	0.4.0
 CATEGORIES=	devel lang
 MASTER_SITES=	http://www.tortall.net/projects/yasm/releases/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	shaun@inerd.com
 COMMENT=	A complete rewrite of the NASM assembler
 
-USE_REINPLACE=	yes
 USE_ICONV=	yes
 USE_AUTOTOOLS=	autoconf:259 libltdl:15
-USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 INSTALLS_SHLIB=	yes
+
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=--disable-nls
+.else
+USE_GETTEXT=	yes
+.endif
+
 .if !defined(NOPORTDOCS)
 INSTALL_TARGET=	install install-man
 MAN1=		yasm.1
