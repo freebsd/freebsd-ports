@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	gkrellmbgchg2
-PORTVERSION=	0.1.3
-PORTREVISION=	2
+PORTVERSION=	0.1.6
 CATEGORIES=	misc
 MASTER_SITES=	http://www.bender-suhl.de/stefan/comp/sources/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	freebsd@unixfreunde.de
 COMMENT=	A plugin for GKrellM, which changes the desktop's background image
 
 BUILD_DEPENDS=	${X11BASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
@@ -19,7 +18,6 @@ RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk20
-USE_REINPLACE=	yes
 
 PLIST_FILES=	libexec/gkrellm2/plugins/gkrellmbgchg.so
 
