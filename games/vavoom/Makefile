@@ -31,7 +31,7 @@ CONFIGURE_ENV=	"CFLAGS=${CFLAGS} -I${LOCALBASE}/include" \
 ALL_TARGET=	all sv
 USE_SDL=	mixer sdl
 USE_GL=		yes
-#ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386
 
 .ifdef (WITH_OPTIMIZED_CFLAGS)
 CFLAGS+=	-O3 -ffast-math -fomit-frame-pointer
