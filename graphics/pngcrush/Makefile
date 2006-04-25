@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pngcrush
-PORTVERSION=	1.5.10
+PORTVERSION=	1.6.3
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pmt
@@ -14,10 +14,15 @@ MASTER_SITE_SUBDIR=	pmt
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An optimizer for PNG files
 
-MAKEFILE=	Makefile.gcc
+USE_BZIP2=	yes
+USE_GMAKE=	yes
+MAKEFILE=	Makefile.ext-zlib
+MAKE_ARGS+=	CC="${CC}" CFLAGS="${CFLAGS}" LD="${CC}" LIBS="-lz -lm" \
+		ZINC="" ZLIB=""
+
 PLIST_FILES=	bin/pngcrush
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/pngcrush ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/pngcrush-zlib ${PREFIX}/bin/pngcrush
 
 .include <bsd.port.mk>
