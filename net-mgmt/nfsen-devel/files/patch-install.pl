@@ -4,26 +4,26 @@ $FreeBSD$
 --- install.pl.orig
 +++ install.pl
 @@ -1,4 +1,4 @@
--#!/usr/bin/perl -I installer-items
+-#!/usr/bin/perl
 +#!%%PERL%% -I %%PREFIX%%/libexec/nfsen
  #
  #
  #  Copyright (c) 2004, SWITCH - Teleinformatikdienste fuer Lehre und Forschung
-@@ -56,33 +56,7 @@
+@@ -81,33 +81,7 @@
  # Get Perl
  sub GetPerl {
  
 -	my $whichperl;
 -	my $ans;
--	chomp($whichperl = `which perl`);
--	if ( length $whichperl ) {
+-	$whichperl = FindCommand("perl");
+-	if ( defined $whichperl ) {
 -		print "Perl to use: [$whichperl] ";
 -		chomp($ans = <STDIN>);
 -		if ( length $ans ) {
 -			$whichperl = $ans;
 -		}
 -	} else {
--		print "No Perl found in PATH. Please specify where to find perl [] ";
+-		print "No Perl found in your PATH. Please specify where to find perl [] ";
 -		chomp($whichperl = <STDIN>);
 -	}
 -

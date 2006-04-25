@@ -1,21 +1,22 @@
 bin/nfsen
-bin/nfsen-reconfigure
-bin/nfsen-run
 bin/nfsen.rc
-bin/pid_check.pl
+bin/nfsend
 bin/testPlugin
 @unexec if cmp -s %D/etc/nfsen.conf %D/etc/nfsen-dist.conf; then rm -f %D/etc/nfsen.conf; fi
-etc/nfsen-dist.conf
 @exec [ -f %D/etc/nfsen.conf ] || cp %D/etc/nfsen-dist.conf %D/etc/nfsen.conf
-etc/nfsen-shell-param
+etc/nfsen-dist.conf
 libexec/%%PORTNAME%%/CopyRecursive.pm
 libexec/%%PORTNAME%%/GenGraph.pl
 libexec/%%PORTNAME%%/Log.pm
 libexec/%%PORTNAME%%/NfConf.pm
 libexec/%%PORTNAME%%/NfProfile.pm
 libexec/%%PORTNAME%%/NfSen.pm
+libexec/%%PORTNAME%%/NfSenRC.pm
 libexec/%%PORTNAME%%/NfSenRRD.pm
+libexec/%%PORTNAME%%/Nfcomm.pm
+libexec/%%PORTNAME%%/Nfsources.pm
 libexec/%%PORTNAME%%/Notification.pm
+libexec/%%PORTNAME%%/RRDconvertv1.pm
 libexec/%%PORTNAME%%/plugins/demoplugin.pm
 www/%%PORTNAME%%/conf.php
 www/%%PORTNAME%%/EmptyGraph.gif
@@ -47,7 +48,6 @@ www/%%PORTNAME%%/doc/DisabledSources.png
 www/%%PORTNAME%%/doc/InputEnd.png
 www/%%PORTNAME%%/doc/Navigating.png
 www/%%PORTNAME%%/doc/NewProfile.png
-www/%%PORTNAME%%/doc/NfSen.html
 www/%%PORTNAME%%/doc/OutOfData.png
 www/%%PORTNAME%%/doc/ProcessingControls.png
 www/%%PORTNAME%%/doc/ProcessingOutput.png
@@ -66,6 +66,7 @@ www/%%PORTNAME%%/doc/dirstruct.png
 www/%%PORTNAME%%/doc/edit.png
 www/%%PORTNAME%%/doc/exiisting.png
 www/%%PORTNAME%%/doc/flows.png
+www/%%PORTNAME%%/doc/index.html
 www/%%PORTNAME%%/doc/linegraph.png
 www/%%PORTNAME%%/doc/nfsen-options.png
 www/%%PORTNAME%%/doc/overview.png
@@ -80,21 +81,7 @@ www/%%PORTNAME%%/doc/views.png
 @dirrm www/%%PORTNAME%%/doc
 @dirrm www/%%PORTNAME%%
 @exec mkdir -p %D/var/%%PORTNAME%%/profiles/live/upstream1
-var/%%PORTNAME%%/profiles/live/flows.rrd
-var/%%PORTNAME%%/profiles/live/flows_tcp.rrd
-var/%%PORTNAME%%/profiles/live/flows_udp.rrd
-var/%%PORTNAME%%/profiles/live/flows_icmp.rrd
-var/%%PORTNAME%%/profiles/live/flows_other.rrd
-var/%%PORTNAME%%/profiles/live/packets.rrd
-var/%%PORTNAME%%/profiles/live/packets_tcp.rrd
-var/%%PORTNAME%%/profiles/live/packets_udp.rrd
-var/%%PORTNAME%%/profiles/live/packets_icmp.rrd
-var/%%PORTNAME%%/profiles/live/packets_other.rrd
-var/%%PORTNAME%%/profiles/live/traffic.rrd
-var/%%PORTNAME%%/profiles/live/traffic_tcp.rrd
-var/%%PORTNAME%%/profiles/live/traffic_udp.rrd
-var/%%PORTNAME%%/profiles/live/traffic_icmp.rrd
-var/%%PORTNAME%%/profiles/live/traffic_other.rrd
+var/%%PORTNAME%%/profiles/live/upstream1.rrd
 var/%%PORTNAME%%/profiles/live/profile.dat
 @exec mkdir -p %D/var/%%PORTNAME%%/run
 @exec mkdir -p %D/var/%%PORTNAME%%/filters
