@@ -7,7 +7,7 @@
 
 PORTNAME=	openal
 PORTVERSION=	20060211
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://openal.org/openal_webstf/downloads/
 DISTVERSION=	0.0.8
@@ -81,7 +81,9 @@ post-patch:
 		${WRKSRC}/src/extensions/al_ext_mp3.c
 	@${REINPLACE_CMD} -e 's|"mixaudio16_mmx_prk.h"|"arch/i386/mixaudio16_mmx_prk.h"|' \
 		${WRKSRC}/src/mixaudio16.h
-	@${REINPLACE_CMD} -e 's|@requirements@||' \
+	@${REINPLACE_CMD} -e 's|@requirements@||; \
+		s|Libs: |&${PTHREAD_LIBS} |;\
+		s|Cflags: |&${PTHREAD_CFLAGS} |' \
 		${WRKSRC}/admin/pkgconfig/openal.pc.in
 
 .include <bsd.port.post.mk>
