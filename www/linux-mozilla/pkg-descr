@@ -1,10 +1,8 @@
-This is the Mozilla suite (Web browser, HTML editor, mail user
-agent, news reader, and IRC client) pre-compiled for Linux.  Instead
-of using this port, another way to run plugins which are only
-available as Linux binaries is to install the linuxpluginwrapper
-port.
+This is the current release of the Mozilla open source web browser. It should
+be fully compliant with all W3C standards, including HTML, CSS, XML, XSL,
+JavaScript, MathML, SVG and RDF.
 
-This port works with the Java plugin from the java/linux-blackdown-jdk14
-port (and perhaps with others).
+This is a pre-compiled Linux/i386 version, able to run plugins from that
+platform.
 
-WWW:  http://mozilla.org/products/mozilla1.x
+WWW: http://www.mozilla.org/products/mozilla1.x/
