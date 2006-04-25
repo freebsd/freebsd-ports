@@ -1,5 +1,5 @@
---- mrtg.old	Fri Feb  3 07:33:33 2006
-+++ mrtg	Mon Apr  3 11:30:45 2006
+--- bin/mrtg.old	Fri Feb  3 07:33:33 2006
++++ bin/mrtg	Mon Apr  3 11:30:45 2006
 @@ -172,11 +172,17 @@
      my $gid = $(;
  
