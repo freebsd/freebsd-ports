@@ -1,0 +1,12 @@
+-----------------------------------------------------------------
+thank you for choosing fswatch. if you have any questions you can
+simply email me or post message to forum at project home page.
+
+default fswatch.conf checks directories:
+  /etc /bin /sbin /lib /libexec /usr/bin /usr/sbin /usr/lib
+  /usr/libexec /usr/libdata /usr/local/etc /usr/local/bin
+  /usr/local/sbin /usr/local/lib /usr/local/libexec
+  /usr/local/libdata
+
+see fswatch(7) .
+-----------------------------------------------------------------
