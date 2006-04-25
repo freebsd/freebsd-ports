@@ -1,24 +1,27 @@
---- Makefile.in.orig	Tue May 24 01:52:43 2005
-+++ Makefile.in	Wed Jul 13 11:09:49 2005
-@@ -17,14 +17,14 @@
- SUBDIRS = @mod_irc@ @mod_pubsub@ @mod_muc@ @eldap@ @web@ stringprep @tls@ @odbc@
- ERLSHLIBS = expat_erl.so
+--- Makefile.in.orig	Sat Apr  1 13:06:36 2006
++++ Makefile.in	Tue Apr 25 07:43:19 2006
+@@ -32,15 +32,15 @@
+ SOURCES = $(wildcard *.erl)
+ BEAMS = $(SOURCES:.erl=.beam)
  
--DESTDIR =
+-DESTDIR = 
+-
+-EJABBERDDIR = $(DESTDIR)@prefix@/var/lib/ejabberd
 +DESTDIR = @prefix@
- 
--EJABBERDDIR = $(DESTDIR)/var/lib/ejabberd
++  
 +EJABBERDDIR = $(DESTDIR)/lib/erlang/lib/ejabberd-$(PORTVERSION)
  BEAMDIR = $(EJABBERDDIR)/ebin
  PRIVDIR = $(EJABBERDDIR)/priv
  SODIR = $(PRIVDIR)/lib
  MSGSDIR = $(PRIVDIR)/msgs
--LOGDIR = $(DESTDIR)/var/log/ejabberd
+-LOGDIR = $(DESTDIR)@prefix@/var/log/ejabberd
+-ETCDIR = $(DESTDIR)@prefix@/etc/ejabberd
 +LOGDIR = /var/log/ejabberd
- ETCDIR = $(DESTDIR)/etc/ejabberd
++ETCDIR = $(DESTDIR)/etc/ejabberd
  
- all: $(ERLSHLIBS) compile-beam all-recursive
-@@ -60,7 +60,7 @@
+ ASN_FLAGS = -bber_bin +der +compact_bit_string +optimize +noobj
+ 
+@@ -82,7 +82,7 @@
  	install -d $(MSGSDIR)
  	install -m 644 msgs/*.msg $(MSGSDIR)
  	install -d $(ETCDIR)

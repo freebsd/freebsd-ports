@@ -6,7 +6,7 @@ fi
 
 USER=ejabberd
 GROUP=${USER}
-UID=522
+UID=544
 GID=${UID}
 USERS_HOME="/var/spool/ejabberd"
 

@@ -43,12 +43,7 @@ ejabberd_status()
 ejabberd_start()
 {
     echo -n "Starting $name: "
-    if ejabberd_status; then
-	echo " already running."
-	exit 1
-    else
-	su $EJABBERDUSER -c "$EJABBERD -noshell -detached"
-    fi
+    su $EJABBERDUSER -c "$EJABBERD -s -noshell -detached"
     echo "$name."
 }
 
@@ -56,16 +51,8 @@ ejabberd_stop()
 {
     echo -n "Stopping $name: "
     if su $EJABBERDUSER -c "$EJABBERDCTL ejabberd@`hostname -s` stop"; then
-	cnt=0
-        while ejabberd_status; do
-            cnt=`expr $cnt + 1`
-            if [ $cnt -gt 60 ]; then
-                echo -n " failed "
-                break
-            fi
-            sleep 1
-            echo -n "."
-        done
+        sleep 2
+        killall -u ejabberd -kill
     else
         echo -n " failed "
     fi
