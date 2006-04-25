@@ -6167,6 +6167,7 @@ mailfront	ports/mail/mailfront
 mailgraph	ports/mail/mailgraph
 mailman		ports/mail/mailman
 mailmgr		ports/mail/mailmgr
+mailrep		ports/mail/mailrep
 mailscanner	ports/mail/mailscanner
 mailscanner-devel	ports/mail/mailscanner-devel
 mailscanner-mrtg	ports/mail/mailscanner-mrtg
