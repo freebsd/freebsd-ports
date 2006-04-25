@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	kqemu
-PORTVERSION=	1.3.0.p5
-PORTREVISION=	0
+PORTVERSION=	1.3.0.p6
 CATEGORIES=	emulators
 MASTER_SITES=	http://fabrice.bellard.free.fr/qemu/
 PKGNAMESUFFIX=	-kmod
