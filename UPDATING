@@ -6,6 +6,14 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20060425:
+  AFFECTS: Users of net-im/ejabberd
+  AUTHOR: shaun@inerd.com
+
+  ejabberd's UID and GID have changed. Users are advised to check all
+  configuration files and data in /var/spool/ejabberd to ensure
+  everything has the correct owner/group.
+
 20060424:
   AFFECTS: users of devel/monotone
   AUTHOR: lapo@lapo.it
