@@ -28,9 +28,10 @@ Database_Include_MAINTAINER=	ports@FreeBSD.org
 # BROKEN_WITH_MYSQL
 #				- This variable can be defined if the ports doesn't support
 #				  one or more version of MySQL.
-# MYSQL_VER		- Internal variable for MySQL version.
 # WITH_MYSQL_VER
 #				- User defined variable to set MySQL version.
+# MYSQL_VER
+#				- Detected MySQL version.
 ##
 # USE_PGSQL		- Add PostgreSQL client dependency.
 #				  If no version is given (by the maintainer via the port or
@@ -46,6 +47,8 @@ Database_Include_MAINTAINER=	ports@FreeBSD.org
 # BROKEN_WITH_PGSQL
 #				- This variable can be defined if the ports doesn't support
 #				  one or more versions of PostgreSQL.
+# PGSQL_VER
+#				- Detected PostgreSQL version.
 ##
 # USE_BDB		- Add Berkeley DB library dependency.
 #                 If no version is given (by the maintainer via the port or
@@ -69,11 +72,12 @@ Database_Include_MAINTAINER=	ports@FreeBSD.org
 #			  (default: ${LOCALBASE}/include/db41)
 # BDB_LIB_DIR		- This variable is automatically set to the location of
 #			  the Berkeley DB library directory.
-#
+# BDB_VER		- Detected Berkeley DB version.
 ##
 # USE_SQLITE	- Add dependency on sqlite library. Valid values are:
 #				  3 and 2. If version is not specified directly then
 #				  sqlite3 is used (if USE_SQLITE= yes).
+# SQLITE_VER		- Detected sqlite version.
 
 .if defined(USE_MYSQL)
 DEFAULT_MYSQL_VER?=	41
@@ -215,24 +219,24 @@ _WANT_BDB_VER=	41+
 .endif
 
 # Detect bdb version
-_FOUND=	no
+_BDB_VER=	no
 _BDB_BROKEN=	no
 
 # Override the user defined WITH_BDB_VER with the WANT_BDB_VER
 .if defined(WANT_BDB_VER)
 .for bdb in ${_DB_PORTS}
-.if ${WANT_BDB_VER} == "${bdb}" && ${_FOUND} == "no"
-_FOUND=	${WANT_BDB_VER}
+.if ${WANT_BDB_VER} == "${bdb}" && ${_BDB_VER} == "no"
+_BDB_VER=	${WANT_BDB_VER}
 .endif
 .endfor
 USE_BDB=	${WANT_BDB_VER}
 .else
 .for bdb in ${_DB_PORTS}
-.if ${_WANT_BDB_VER} == "${bdb}" && ${_FOUND} == "no"
+.if ${_WANT_BDB_VER} == "${bdb}" && ${_BDB_VER} == "no"
 _MATCHED_DB_VER:=	${bdb:S/+//}
 . if ${_MATCHED_DB_VER} == "${bdb}"
 # USE_BDB is exactly specified
-_FOUND=	${bdb}
+_BDB_VER=	${bdb}
 .else
 # USE_BDB is specified as VER+
 .  for dbx in ${_DB_${_MATCHED_DB_VER}P}
@@ -250,17 +254,17 @@ _BRKDB= yes
 .    if ${_BRKDB} == no
 .     if defined(WITH_BDB_HIGHEST)
 # Use the highest version of Berkeley DB found
-_FOUND=	${dbx}
-.     elif ${_FOUND} == no
+_BDB_VER=	${dbx}
+.     elif ${_BDB_VER} == no
 # Use the first Berkeley DB found
-_FOUND=	${dbx}
+_BDB_VER=	${dbx}
 .     endif
 .    endif
 .   endif
 .  endfor
-.  if ${_FOUND} == "no"
+.  if ${_BDB_VER} == "no"
 # No existing db4 version is detected in system
-_FOUND=	${_MATCHED_DB_VER}
+_BDB_VER=	${_MATCHED_DB_VER}
 .  endif
 . endif
 .endif
@@ -268,7 +272,7 @@ _FOUND=	${_MATCHED_DB_VER}
 .endif
 
 # USE_BDB is specified incorrectly, so mark this as IGNORE
-.if ${_FOUND} == "no"
+.if ${_BDB_VER} == "no"
 IGNORE=	cannot install: unknown bdb version: ${USE_BDB}
 .else
 # Now check if we can use it
@@ -277,51 +281,52 @@ IGNORE=	cannot install: unknown bdb version: ${USE_BDB}
 _CHK_PLUS:=	${VER:S/+//}
 # INVALID_BDB_VER is specified as VER+
 .   if ${_CHK_PLUS}  != "${VER}"
-.    if ${_FOUND} == "${_CHK_PLUS}
+.    if ${_BDB_VER} == "${_CHK_PLUS}
 _BDB_BROKEN=	yes
 .    else
 .     for VER_P in ${_DB_${_CHK_PLUS}P}
-.      if ${_FOUND} == "${VER_P}"
+.      if ${_BDB_VER} == "${VER_P}"
 _BDB_BROKEN=	yes
 .      endif
 .     endfor
 .    endif
-.   elif ${_FOUND} == "${VER}"
+.   elif ${_BDB_VER} == "${VER}"
 _BDB_BROKEN=	yes
 .   endif
 .  endfor
 . endif
 . if ${_BDB_BROKEN} == "yes"
-IGNORE= cannot install: does not work with bdb version: ${_FOUND} (${INVALID_BDB_VER} not supported)
+IGNORE= cannot install: does not work with bdb version: ${_BDB_VER} (${INVALID_BDB_VER} not supported)
 . else
-# Now add the dependancy on Berkeley DB ${_FOUND) version
+# Now add the dependancy on Berkeley DB ${_BDB_VER) version
 .if defined(BDB_BUILD_DEPENDS)
-BUILD_DEPENDS+=	${db${_FOUND}_FIND}:${db${_FOUND}_DEPENDS:C/^db.*://}
+BUILD_DEPENDS+=	${db${_BDB_VER}_FIND}:${db${_BDB_VER}_DEPENDS:C/^db.*://}
 .else
-LIB_DEPENDS+=	${db${_FOUND}_DEPENDS}
+LIB_DEPENDS+=	${db${_BDB_VER}_DEPENDS}
 .endif
-.  if ${_FOUND} == 40
+.  if ${_BDB_VER} == 40
 BDB_LIB_NAME=		db4
 BDB_LIB_CXX_NAME=	db4_cxx
 BDB_INCLUDE_DIR=	${LOCALBASE}/include/db4
-.  elif ${_FOUND} == 42
+.  elif ${_BDB_VER} == 42
 BDB_LIB_NAME=		db-4.2
 BDB_LIB_CXX_NAME=	db_cxx-4.2
 BDB_LIB_DIR=		${LOCALBASE}/lib/db42
-.  elif ${_FOUND} == 43
+.  elif ${_BDB_VER} == 43
 BDB_LIB_NAME=		db-4.3
 BDB_LIB_CXX_NAME=	db_cxx-4.3
 BDB_LIB_DIR=		${LOCALBASE}/lib/db43
-.  elif ${_FOUND} == 44
+.  elif ${_BDB_VER} == 44
 BDB_LIB_NAME=		db-4.4
 BDB_LIB_CXX_NAME=	db_cxx-4.4
 BDB_LIB_DIR=		${LOCALBASE}/lib/db44
 .  endif
-BDB_LIB_NAME?=		db${_FOUND}
-BDB_LIB_CXX_NAME?=	db${_FOUND}_cxx
-BDB_INCLUDE_DIR?=	${LOCALBASE}/include/db${_FOUND}
+BDB_LIB_NAME?=		db${_BDB_VER}
+BDB_LIB_CXX_NAME?=	db${_BDB_VER}_cxx
+BDB_INCLUDE_DIR?=	${LOCALBASE}/include/db${_BDB_VER}
 BDB_LIB_DIR?=		${LOCALBASE}/lib
 . endif
+BDB_VER=	${_BDB_VER}
 .endif
 
 # Obsolete variables
@@ -355,8 +360,10 @@ _SQLITE_VER=	${USE_SQLITE}
 # USE_SQLITE is specified incorrectly, so mark this as IGNORE
 .if ${_SQLITE_VER} == "3"
 LIB_DEPENDS+=	sqlite${_SQLITE_VER}:${PORTSDIR}/databases/sqlite${_SQLITE_VER}
+SQLITE_VER=	${_SQLITE_VER}
 .elif ${_SQLITE_VER} == "2"
 LIB_DEPENDS+=	sqlite.${_SQLITE_VER}:${PORTSDIR}/databases/sqlite${_SQLITE_VER}
+SQLITE_VER=	${_SQLITE_VER}
 .else
 IGNORE=	cannot install: unknown sqlite version: ${_SQLITE_VER}
 .endif
