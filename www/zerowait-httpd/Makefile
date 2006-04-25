@@ -6,28 +6,21 @@
 #
 
 PORTNAME=	zerowait-httpd
-PORTVERSION=	0.7m
+PORTVERSION=	0.7n
 CATEGORIES=	www
 MASTER_SITES=	http://www.0w.ru/httpd/
 DISTNAME=	0W-httpd-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	laszlof@vonostingroup.com
 COMMENT=	Lightweight and fast http server
 
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
-USE_RC_SUBR=	yes
+USE_RC_SUBR=	0W-httpd
 
 MAKE_ARGS=	CFLAGS="${CFLAGS}" CPPFLAGS=-I..
-WWW_USER?=	${WWWOWN}
-WWW_GROUP?=	${WWWGRP}
-
-pre-build:
-	@${SED} -e 's,%%PREFIX%%,${PREFIX},g' -e 's,%%RC_SUBR%%,${RC_SUBR},' \
-			${FILESDIR}/0W-httpd.sh > ${WRKDIR}/0W-httpd.sh
-	@${SH} -c 'cd ${WRKSRC} && ./configure --prefix=${PREFIX} --owner=${WWW_USER} --group=${WWW_GROUP}'
-
-post-install:
-	@${INSTALL_SCRIPT} -m 755 ${WRKDIR}/0W-httpd.sh ${PREFIX}/etc/rc.d/0W-httpd.sh
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	--prefix=${PREFIX} --owner=${WWWOWN} --group=${WWWGRP}
+PLIST_SUB=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 
 .include <bsd.port.mk>
