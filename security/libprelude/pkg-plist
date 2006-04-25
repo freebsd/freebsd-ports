@@ -105,6 +105,7 @@ share/aclocal/libprelude.m4
 %%PORTDOCS%%%%DOCSDIR%%/libprelude-prelude-timer.html
 %%PORTDOCS%%%%DOCSDIR%%/libprelude-prelude.html
 %%PORTDOCS%%%%DOCSDIR%%/libprelude.devhelp
+%%PORTDOCS%%%%DOCSDIR%%/libprelude.devhelp2
 %%PORTDOCS%%%%DOCSDIR%%/pt01.html
 %%PORTDOCS%%%%DOCSDIR%%/pt02.html
 %%PORTDOCS%%%%DOCSDIR%%/pt03.html
