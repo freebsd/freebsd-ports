@@ -7,6 +7,7 @@
 
 PORTNAME=	modplug
 PORTVERSION=	2.0.5
+PORTREVISION=	1
 CATEGORIES?=	audio
 MASTER_SITES=	ftp://ftp.dvo.ru/pub/Gentoo/distfiles/ \
 		ftp://ftp.cb.spb.ru/.6/Linux-Distrib/Gentoo/distfiles/ \
