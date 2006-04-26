@@ -16,9 +16,11 @@ bin/smtpfront-reject
 %%PORTDOCS%%%%DOCSDIR%%/mailfront.html
 %%PORTDOCS%%%%DOCSDIR%%/mailrules.html
 %%PORTDOCS%%%%DOCSDIR%%/mailrulesx.html
+%%PORTDOCS%%%%DOCSDIR%%/msa.html
 %%PORTDOCS%%%%DOCSDIR%%/patterns.html
 %%PORTDOCS%%%%DOCSDIR%%/pop3front.html
 %%PORTDOCS%%%%DOCSDIR%%/qmail-backend.html
 %%PORTDOCS%%%%DOCSDIR%%/qmail-validate.html
 %%PORTDOCS%%%%DOCSDIR%%/smtpfront.html
+%%PORTDOCS%%%%DOCSDIR%%/std-handle.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
