@@ -10874,6 +10874,7 @@ py-sgflib	ports/games/py-sgflib
 py-sgfsummary	ports/games/py-sgfsummary
 py-sgrep	ports/textproc/py-sgrep
 py-shellac	ports/audio/py-shellac
+py-simplejson	ports/devel/py-simplejson
 py-simpleparse	ports/devel/py-simpleparse
 py-simpy	ports/devel/py-simpy
 py-sip		ports/devel/py-sip
