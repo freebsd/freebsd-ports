@@ -1492,6 +1492,7 @@
     SUBDIR += py-roxlib
     SUBDIR += py-sendfile
     SUBDIR += py-setuptools
+    SUBDIR += py-simplejson
     SUBDIR += py-simpleparse
     SUBDIR += py-simpy
     SUBDIR += py-sip

@@ -1,0 +1,15 @@
+simplejson is a simple, fast, extensible JSON encoder/decoder for Python
+
+simplejson is compatible with Python 2.3 and later with no external 
+dependencies. It covers the full JSON specification for both encoding and 
+decoding, with unicode support. By default, encoding is done in an encoding 
+neutral fashion (plain ASCII with \uXXXX escapes for unicode characters).
+
+The encoder may be subclassed to provide serialization in any kind of 
+situation, without any special support by the objects to be serialized 
+(somewhat like pickle).
+
+The decoder can handle incoming JSON strings of any specified encoding 
+(UTF-8 by default).
+
+WWW: http://svn.red-bean.com/bob/simplejson/
