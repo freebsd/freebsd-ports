@@ -20,6 +20,6 @@ UIM_SLAVE=	yes
 
 do-install:
 	(cd ${WRKSRC}/gtk && ${GMAKE} install)
-	(cd ${WRKSRC}/helper && ${GMAKE} install)
+	(cd ${WRKSRC}/helper && ${GMAKE} install-binPROGRAMS install-exec-hook-gtk2)
 
 .include "${MASTERDIR}/Makefile"
