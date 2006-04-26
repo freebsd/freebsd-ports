@@ -1,0 +1,6 @@
+lib/linux-flashplugin7/flashplayer.xpt
+lib/linux-flashplugin7/libflashplayer.so
+%%PORTDOCS%%%%DOCSDIR%%/Readme.txt
+%%PORTDOCS%%%%DOCSDIR%%/Readme.htm
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm lib/linux-flashplugin7
