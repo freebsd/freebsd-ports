@@ -33,14 +33,16 @@ bin/xasy
 %%DATADIR%%/roundedpath.asy
 %%DATADIR%%/shipout.asy
 %%DATADIR%%/simplex.asy
+%%DATADIR%%/slide.asy
 %%DATADIR%%/solids.asy
 %%DATADIR%%/stats.asy
 %%DATADIR%%/strings.asy
+%%DATADIR%%/texcolors.asy
 %%DATADIR%%/three.asy
-%%DATADIR%%/transforms.asy
 %%DATADIR%%/tree.asy
 %%DATADIR%%/unicode.asy
 %%DATADIR%%/version.asy
+%%DATADIR%%/x11colors.asy
 %%PORTDOCS%%%%DOCSDIR%%/asymptote.pdf
 %%EXAMPLESDIR%%/Bode.asy
 %%EXAMPLESDIR%%/Gouraud.asy
@@ -50,6 +52,7 @@ bin/xasy
 %%EXAMPLESDIR%%/animations/wheel.asy
 %%EXAMPLESDIR%%/asy-mode.el
 %%EXAMPLESDIR%%/asy.vim
+%%EXAMPLESDIR%%/asymptote.py
 %%EXAMPLESDIR%%/axis3.asy
 %%EXAMPLESDIR%%/bezier.asy
 %%EXAMPLESDIR%%/bigsquare.asy
@@ -59,6 +62,7 @@ bin/xasy
 %%EXAMPLESDIR%%/circles.asy
 %%EXAMPLESDIR%%/coag.asy
 %%EXAMPLESDIR%%/colons.asy
+%%EXAMPLESDIR%%/colors.asy
 %%EXAMPLESDIR%%/conicurv.asy
 %%EXAMPLESDIR%%/cos2theta.asy
 %%EXAMPLESDIR%%/cosaddition.asy
@@ -82,6 +86,7 @@ bin/xasy
 %%EXAMPLESDIR%%/fermi.asy
 %%EXAMPLESDIR%%/fjortoft.asy
 %%EXAMPLESDIR%%/flow.asy
+%%EXAMPLESDIR%%/flowchart.asy
 %%EXAMPLESDIR%%/generalaxis.asy
 %%EXAMPLESDIR%%/generalaxis3.asy
 %%EXAMPLESDIR%%/grid.asy
@@ -141,6 +146,7 @@ bin/xasy
 %%EXAMPLESDIR%%/sin1x.asy
 %%EXAMPLESDIR%%/sinc.asy
 %%EXAMPLESDIR%%/sinxlex.asy
+%%EXAMPLESDIR%%/slidedemo.asy
 %%EXAMPLESDIR%%/sphere.asy
 %%EXAMPLESDIR%%/spiral.asy
 %%EXAMPLESDIR%%/spring.asy
