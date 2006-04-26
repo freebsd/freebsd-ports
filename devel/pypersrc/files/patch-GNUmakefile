@@ -1,5 +1,5 @@
 --- GNUmakefile.orig	Sun Mar  5 10:32:34 2006
-+++ GNUmakefile	Tue Apr 18 20:57:06 2006
++++ GNUmakefile	Thu Apr 27 00:12:07 2006
 @@ -6,13 +6,7 @@
  include GNUmakefile.config
  
@@ -15,12 +15,32 @@
  
  INSTALL			= install
  INSTALL_OWNER	=
-@@ -114,7 +108,7 @@
- 	$(CC) -c -o $@ $(CC_FLAGS) $(subst $(OUT_DIR)/,$(CC_SRC_DIR)/,$<)
+@@ -82,8 +76,8 @@
+ CC_OBJS			= $(addprefix $(OUT_DIR)/,$(CC_OBJS_))
+ EXTRA_HH_SRCS	= $(addprefix $(HH_SRC_DIR)/,$(EXTRA_HH_SRCS_))
+ HH_SRCS         = $(CC_SRCS:.cc=.hh) $(EXTRA_HH_SRCS)
+-CC				= g++
+-LD				= $(CC)
++CXX				?= g++
++LD				= $(CXX)
+ ifeq ($(PROFILE),1)
+ CC_FLAGS		+= -pg -O0
+ LD_FLAGS		+= -pg -O0
+@@ -111,13 +105,14 @@
+ 	$(LD) -o $@ $(LD_FLAGS) $(CC_OBJS) $(LD_LIB_FLAGS) $(LIBS)
+ 
+ $(OUT_DIR)/%.o:  $(CC_SRC_DIR)/%.cc  $(HH_SRCS)
+-	$(CC) -c -o $@ $(CC_FLAGS) $(subst $(OUT_DIR)/,$(CC_SRC_DIR)/,$<)
++	$(CXX) -c -o $@ $(CC_FLAGS) $(subst $(OUT_DIR)/,$(CC_SRC_DIR)/,$<)
  
  $(CTAGS_LIB): $(CTAGS_SRC_DIR)/config.status $(CTAGS_SRCS)
 -	make -C $(CTAGS_SRC_DIR) $(MAKECMDGOALS)
 +	$(MAKE) -C $(CTAGS_SRC_DIR) $(MAKECMDGOALS)
  
  $(CTAGS_SRC_DIR)/config.status:
- 	cd $(CTAGS_SRC_DIR) && ./configure
+-	cd $(CTAGS_SRC_DIR) && ./configure
++	cd $(CTAGS_SRC_DIR) && CC="$(CC)" CXX="$(CXX)" CFLAGS="$(CFLAGS)" \
++		CPPFLAGS="$(CPPFLAGS)" LDFLAGS="$(LDFLAGS)" ./configure
+ 
+ define CAT_PYTHON
+ 	$(PYTHON) $(TOOLS_DIR)/check.py -tabs $^
