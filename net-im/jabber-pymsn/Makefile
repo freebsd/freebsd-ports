@@ -6,8 +6,11 @@
 
 PORTNAME=	pymsn
 PORTVERSION=	0.11a
+PORTREVISION=	1
 CATEGORIES=	net-im
-MASTER_SITES=	http://msn-transport.jabberstudio.org/tarballs/
+MASTER_SITES=	http://msn-transport.jabberstudio.org/tarballs/ \
+		${MASTER_SITE_GENTOO}
+MASTER_SITE_SUBDIR=	distfiles
 PKGNAMEPREFIX=	jabber-
 PKGNAMESUFFIX=	-transport
 DISTNAME=	${PORTNAME}t-${PORTVERSION}
@@ -39,15 +42,17 @@ PORTDOCS=	COPYING README TODO
 
 .if defined(WITH_EJABBERD)
 JABBER_USER?=	ejabberd
+SUB_LIST+=	JABBER_REQUIRE=ejabberd
 .else
 JABBER_USER?=	jabber
+SUB_LIST+=	JABBER_REQUIRE=jabberd
 .endif
+
+SUB_LIST+=	JABBER_USER=${JABBER_USER}
 
 .if !defined(WITHOUT_X11)
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging
 .endif
-
-SUB_LIST+=	JABBER_USER=${JABBER_USER}
 
 post-extract:
 	@${FIND} ${WRKSRC}/ -type d \( -name CVS -or -name .svn \) | ${XARGS} ${RM} -rf
