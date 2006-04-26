@@ -490,16 +490,6 @@
 %%GEMS_DIR%%/net-ssh-%%PORTVERSION%%/doc/LICENSE-BSD
 %%GEMS_DIR%%/net-ssh-%%PORTVERSION%%/doc/LICENSE-GPL
 %%GEMS_DIR%%/net-ssh-%%PORTVERSION%%/doc/LICENSE-RUBY
-%%GEMS_DIR%%/net-ssh-%%PORTVERSION%%/doc/manual-html/chapter-1.html
-%%GEMS_DIR%%/net-ssh-%%PORTVERSION%%/doc/manual-html/chapter-2.html
-%%GEMS_DIR%%/net-ssh-%%PORTVERSION%%/doc/manual-html/chapter-3.html
-%%GEMS_DIR%%/net-ssh-%%PORTVERSION%%/doc/manual-html/chapter-4.html
-%%GEMS_DIR%%/net-ssh-%%PORTVERSION%%/doc/manual-html/chapter-5.html
-%%GEMS_DIR%%/net-ssh-%%PORTVERSION%%/doc/manual-html/chapter-6.html
-%%GEMS_DIR%%/net-ssh-%%PORTVERSION%%/doc/manual-html/chapter-7.html
-%%GEMS_DIR%%/net-ssh-%%PORTVERSION%%/doc/manual-html/index.html
-%%GEMS_DIR%%/net-ssh-%%PORTVERSION%%/doc/manual-html/stylesheets/manual.css
-%%GEMS_DIR%%/net-ssh-%%PORTVERSION%%/doc/manual-html/stylesheets/ruby.css
 %%GEMS_DIR%%/net-ssh-%%PORTVERSION%%/doc/manual/chapter.erb
 %%GEMS_DIR%%/net-ssh-%%PORTVERSION%%/doc/manual/example.erb
 %%GEMS_DIR%%/net-ssh-%%PORTVERSION%%/doc/manual/index.erb
@@ -717,8 +707,6 @@
 @dirrm %%GEMS_DIR%%/net-ssh-%%PORTVERSION%%/examples
 @dirrm %%GEMS_DIR%%/net-ssh-%%PORTVERSION%%/doc/manual/stylesheets
 @dirrm %%GEMS_DIR%%/net-ssh-%%PORTVERSION%%/doc/manual/parts
-@dirrm %%GEMS_DIR%%/net-ssh-%%PORTVERSION%%/doc/manual-html/stylesheets
-@dirrm %%GEMS_DIR%%/net-ssh-%%PORTVERSION%%/doc/manual-html
 @dirrm %%GEMS_DIR%%/net-ssh-%%PORTVERSION%%/doc/manual
 @dirrm %%GEMS_DIR%%/net-ssh-%%PORTVERSION%%/doc
 @dirrm %%GEMS_DIR%%/net-ssh-%%PORTVERSION%%
