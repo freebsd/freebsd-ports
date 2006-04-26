@@ -29,6 +29,8 @@ BUILD_DEPENDS=	${LOCALBASE}/mpich/lib/libmpich.a:${PORTSDIR}/net/mpich \
 LIB_DEPENDS=	lapack:${PORTSDIR}/math/lapack \
 		atlas:${PORTSDIR}/math/atlas
 
+CONFLICTS=	elmer-mathlibs-1*
+
 F77?=	f77
 USE_REINPLACE=	yes
 
