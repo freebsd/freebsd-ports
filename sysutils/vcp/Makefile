@@ -1,7 +1,6 @@
-# ex:ts=8
-# Ports collection makefile for:  vcp
-# Date created:                Tue Feb 11, 2003
-# Whom:                        Michael L. Hostbaek (mich@freebsdcluster.org)
+# Ports collection makefile for:	vcp
+# Date created:		Tue Feb 11, 2003
+# Whom:			Michael L. Hostbaek (mich@freebsdcluster.org)
 #
 # $FreeBSD$
 #
@@ -14,9 +13,9 @@ MASTER_SITES=	http://freebsdcluster.org/~mich/software/
 MAINTAINER=	mich@FreeBSD.org
 COMMENT=	Copy files in curses interface
 
-USE_REINPLACE=	yes
-
 MAN1=		${PORTNAME}.1
+CONFLICTS=	p5-VCP-[0-9]* \
+		p5-VCP-autrijus-[0-9]*
 
 LDFLAGS+=	-lncurses
 
@@ -37,13 +36,13 @@ do-build:
 	${CC} ${CFLAGS} -o ${PORTNAME} main.o copyall.o copy.o screen.o log.o path.o misc.o color.o ${LDFLAGS}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/vcp.conf.sample ${PREFIX}/etc/vcp.conf.sample
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
+	${INSTALL_DATA} ${WRKSRC}/vcp.conf.sample ${PREFIX}/etc/
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${PREFIX}/man/man1/
 
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/README
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>
