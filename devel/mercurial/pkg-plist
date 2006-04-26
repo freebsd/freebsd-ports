@@ -171,6 +171,7 @@ bin/hgmerge
 %%PYTHON_SITELIBDIR%%/mercurial/version.py
 %%PYTHON_SITELIBDIR%%/mercurial/version.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/version.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/mercurial/templates/static
 @dirrm %%PYTHON_SITELIBDIR%%/mercurial/templates
 @dirrm %%PYTHON_SITELIBDIR%%/mercurial
 @dirrm %%PYTHON_SITELIBDIR%%/hgext
