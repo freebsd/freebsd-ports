@@ -27,8 +27,8 @@ lib/sweep/libnormalise.so
 lib/sweep/libreverse.a
 lib/sweep/libreverse.la
 lib/sweep/libreverse.so
-share/gnome/apps/Multimedia/sweep.desktop
-share/gnome/pixmaps/sweep.png
+share/gnome/applications/sweep.desktop
+share/gnome/pixmaps/sweep.svg
 share/gnome/sweep/sweep_logo.ppm
 share/locale/de/LC_MESSAGES/sweep.mo
 share/locale/el/LC_MESSAGES/sweep.mo
@@ -42,3 +42,5 @@ share/locale/ru/LC_MESSAGES/sweep.mo
 @dirrm share/gnome/sweep
 @dirrm lib/sweep
 @dirrm include/sweep
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
