@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qlas
-PORTVERSION=	1.91
+PORTVERSION=	1.93
 CATEGORIES=	misc
 MASTER_SITES=	http://lev.serebryakov.spb.ru/download/qlas/
 
