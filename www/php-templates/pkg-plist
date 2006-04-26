@@ -1,6 +1,2 @@
 lib/php/%%PHP_EXT_DIR%%/templates.so
-%%PORTDOCS%%share/doc/php-templates/CHANGELOG
-%%PORTDOCS%%share/doc/php-templates/php_templates-eng.html
-%%PORTDOCS%%share/doc/php-templates/php_templates.css
 @dirrmtry lib/php/%%PHP_EXT_DIR%%
-%%PORTDOCS%%@dirrm share/doc/php-templates
