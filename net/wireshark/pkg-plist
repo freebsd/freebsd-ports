@@ -1,5 +1,6 @@
 %%CAPINFOS%%
 %%DFTEST%%
+%%DUMPCAP%%
 %%EDITCAP%%
 %%ETHEREAL%%
 %%IDL2ETH%%
@@ -72,6 +73,7 @@ lib/libwiretap.so.0
 %%DATADIR%%/cfilters
 %%DATADIR%%/colorfilters
 %%DATADIR%%/dfilters
+%%DATADIR%%/dumpcap.html
 %%DATADIR%%/diameter/TGPPSh.xml
 %%DATADIR%%/diameter/chargecontrol.xml
 %%DATADIR%%/diameter/dictionary.dtd
