@@ -9,10 +9,13 @@ PORTNAME=	knzb
 PORTVERSION=	0.5
 PORTREVISION=	1
 CATEGORIES=	news
-MASTER_SITES=	http://dmp.org.uk/linux/knzb/download/
+MASTER_SITES=	# http://dmp.org.uk/linux/knzb/download/
 
 MAINTAINER=	twelch@thepentagon.org
 COMMENT=	KDE binary newsgroup download tool
+
+DEPRECATED=	This seems to be abandonware. Try news/klibido
+EXPIRATION_DATE=2006-06-01
 
 RUN_DEPENDS=	${LOCALBASE}/bin/uudeview:${PORTSDIR}/converters/uudeview
 
