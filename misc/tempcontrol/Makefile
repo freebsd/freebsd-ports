@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://www.lemis.com/grog/brewing/src/brewing/tempcontrol/
 
-MAINTAINER=	grog@lemis.com
+MAINTAINER=	grog@FreeBSD.org
 COMMENT=	Temperature control for fermenting beer and other applications
 
 NO_WRKSUBDIR=	YES
