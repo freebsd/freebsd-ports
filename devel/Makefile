@@ -1436,6 +1436,7 @@
     SUBDIR += pwlib152
     SUBDIR += py-anonfunc
     SUBDIR += py-asn1
+    SUBDIR += py-astng
     SUBDIR += py-bison
     SUBDIR += py-celementtree
     SUBDIR += py-cheetah
