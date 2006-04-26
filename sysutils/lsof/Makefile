@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	lsof
-PORTVERSION=	4.76.2
+PORTVERSION=	4.77
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://lsof.itap.purdue.edu/pub/tools/unix/lsof/  \
 		ftp://lsof.itap.purdue.edu/pub/tools/unix/lsof/NEW/ \
@@ -22,7 +22,7 @@ MASTER_SITES=	ftp://lsof.itap.purdue.edu/pub/tools/unix/lsof/  \
 		ftp://ftp.cert.dfn.de/pub/tools/admin/lsof/  \
 		ftp://ftp.cert.dfn.de/pub/tools/admin/lsof/NEW/ \
 		ftp://ftp.tau.ac.il/pub/unix/admin/
-FIXUP_RELEASE=
+#FIXUP_RELEASE=
 .if defined(FIXUP_RELEASE)
 DISTNAME=	${PORTNAME}_4.77D.freebsd
 .else
@@ -51,7 +51,7 @@ SRCBALL_NAME=	${DISTNAME:S/_W$//}_src
 .if !defined(FIXUP_RELEASE)
 post-extract:
 	@( cd ${WRKDIR}/${DISTNAME} ; \
-	EXPMD5=`${GREP} MD5 README.${DISTNAME} | ${SED} 's/[ 	]*//'` ; \
+	EXPMD5=`${GREP} -m 1 MD5 README.${DISTNAME} | ${SED} 's/[ 	]*//'` ; \
 	CALCMD5=`${MD5} ${SRCBALL_NAME}.tar` ; \
 	if [ "$${EXPMD5}"X != "$${CALCMD5}"X ]; then \
 		${ECHO} "Expected and calculated MD5 signatures don't agree." ; \
