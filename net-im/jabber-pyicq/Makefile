@@ -6,6 +6,7 @@
 
 PORTNAME=	pyicq
 PORTVERSION=	0.7a
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.blathersource.org/download.php/pyicq-t/
 PKGNAMEPREFIX=	jabber-
@@ -37,15 +38,17 @@ PORTDOCS=	COPYING README NEWS
 
 .if defined(WITH_EJABBERD)
 JABBER_USER?=	ejabberd
+SUB_LIST+=	JABBER_REQUIRE=ejabberd
 .else
 JABBER_USER?=	jabber
+SUB_LIST+=	JABBER_REQUIRE=jabberd
 .endif
+
+SUB_LIST+=	JABBER_USER=${JABBER_USER}
 
 .if !defined(WITHOUT_X11)
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging
 .endif
-
-SUB_LIST+=	JABBER_USER=${JABBER_USER}
 
 post-extract:
 	@${FIND} ${WRKSRC}/src -type d -name '.svn' | ${XARGS} ${RM} -rf

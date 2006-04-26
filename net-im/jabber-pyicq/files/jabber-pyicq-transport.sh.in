@@ -3,7 +3,7 @@
 # $FreeBSD$
 #
 # PROVIDE: jabber_pyicq
-# REQUIRE: DAEMON
+# REQUIRE: DAEMON %%JABBER_REQUIRE%%
 # BEFORE: LOGIN
 # KEYWORD: shutdown
 #
