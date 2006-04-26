@@ -7,23 +7,23 @@
 
 PORTNAME=	asterisk-oh323
 PORTVERSION=	0.7.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://www.inaccessnetworks.com/projects/asterisk-oh323/download/
 
 MAINTAINER=	bamby@portaone.com
 COMMENT=	A H.323 support module for the Asterisk soft PBX
 
-BUILD_DEPENDS= 	${NONEXISTENT}:${PORTSDIR}/devel/pwlib152:build \
-	    	${NONEXISTENT}:${PORTSDIR}/net/openh323-112:build \
-	    	${LOCALBASE}/sbin/asterisk:${PORTSDIR}/net/asterisk
+BUILD_DEPENDS= 	${LOCALBASE}/sbin/asterisk:${PORTSDIR}/net/asterisk
+LIB_DEPENDS= 	pt_r.1:${PORTSDIR}/devel/pwlib\
+	    	h323_r.1:${PORTSDIR}/net/openh323
 
 USE_GMAKE=	yes
 MAKE_ENV=	MKDIR="${MKDIR}" \
-		PWLIBDIR=${WRKDIRPREFIX}${PORTSDIR}/devel/pwlib152/work/pwlib \
-		OPENH323DIR=${WRKDIRPREFIX}${PORTSDIR}/net/openh323-112/work/openh323 \
+		PWLIBDIR=${LOCALBASE}/share/pwlib \
+		OPENH323DIR=${LOCALBASE}/share/openh323 \
 		CPP="${CXX}" \
-		USE_OLD_CAPABILITIES_API="yes"
+		SYSLIBDIR=${LOCALBASE}/lib
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
