@@ -15,13 +15,11 @@ COMMENT=	A Haskell-style language
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc \
 		happy:${PORTSDIR}/devel/hs-happy
 
-USE_REINPLACE=	yes
-
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}/src
 MAKE_ARGS=	GHC=ghc INSTALL_PATH='\"${DATADIR}/\"'
 
 post-patch:
-	${REINPLACE_CMD} 's/gcc -O3/${CC} ${CFLAGS}/' ${WRKSRC}/Solvers/Makefile
+	${REINPLACE_CMD} 's|gcc -O3|${CC} ${CFLAGS}|' ${WRKSRC}/Solvers/Makefile
 	@${RMDIR} ${WRKSRC}/../lib/Haskell98
 
 do-install:
