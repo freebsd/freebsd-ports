@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clamav
-PORTVERSION=	20060406
+PORTVERSION=	20060426
 CATEGORIES=	security
 MASTER_SITES=	http://www.clamav.net/snapshot/ \
 		http://www.galle.com.br/~garga/clamav-devel/
@@ -49,6 +49,7 @@ CONFIGURE_ARGS=	--with-dbdir=${DBDIR} \
 		--enable-readdir_r \
 		--disable-dependency-tracking
 CPPFLAGS+=	-I${LOCALBASE}/include \
+		-I../libclamav \
 		${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib \
 		${PTHREAD_LIBS}
