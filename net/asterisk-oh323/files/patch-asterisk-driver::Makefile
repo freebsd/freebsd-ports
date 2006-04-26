@@ -1,5 +1,33 @@
---- asterisk-driver/Makefile.orig	Wed Jan 18 11:43:28 2006
-+++ asterisk-driver/Makefile	Wed Jan 18 11:55:34 2006
+--- asterisk-driver/Makefile.orig	Fri Sep  9 16:35:25 2005
++++ asterisk-driver/Makefile	Thu Apr 13 14:22:51 2006
+@@ -40,9 +40,9 @@
+ 		endif
+ 	else
+ 		ifeq ($(OH323BUILDTYPE),debug) # Shared, debug
+-			LIBPTPATH=$(word 1,$(shell ls $(PWLIBDIR)/lib/libpt*d.so))
++			LIBPTPATH=$(word 1,$(shell ls $(SYSLIBDIR)/libpt*d.so))
+ 		else                           # Shared, opt
+-			LIBPTPATH=$(word 1,$(shell ls $(PWLIBDIR)/lib/libpt*r.so))
++			LIBPTPATH=$(word 1,$(shell ls $(SYSLIBDIR)/libpt*r.so))
+ 		endif
+ 	endif
+ 	LIBPTNAME=$(subst lib,,$(basename $(notdir $(LIBPTPATH))))
+@@ -69,12 +69,12 @@
+ 		endif
+ 	else
+ 		ifeq ($(OH323BUILDTYPE),debug)   # Shared, debug
+-			LIBH323PATH=$(word 1,$(shell ls $(OPENH323DIR)/lib/libh323*d.so))
++			LIBH323PATH=$(word 1,$(shell ls $(SYSLIBDIR)/libh323*d.so))
+ 		else
+ 			ifeq ($(OH323BUILDTYPE),opt) # Shared, opt
+-				LIBH323PATH=$(word 1,$(shell ls $(OPENH323DIR)/lib/libh323*r.so))
++				LIBH323PATH=$(word 1,$(shell ls $(SYSLIBDIR)/libh323*r.so))
+ 			else                         # Shared, opt, no trace
+-				LIBH323PATH=$(word 1,$(shell ls $(OPENH323DIR)/lib/libh323*n.so))
++				LIBH323PATH=$(word 1,$(shell ls $(SYSLIBDIR)/libh323*n.so))
+ 			endif
+ 		endif
+ 	endif
 @@ -90,7 +90,7 @@
  LIBH323=$(LIBH323NAME)
  

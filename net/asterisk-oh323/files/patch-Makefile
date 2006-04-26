@@ -1,5 +1,5 @@
---- Makefile.orig	Wed Jan 18 10:54:59 2006
-+++ Makefile	Wed Jan 18 11:50:59 2006
+--- Makefile.orig	Fri Sep  9 17:03:53 2005
++++ Makefile	Thu Apr 13 13:52:00 2006
 @@ -41,7 +41,7 @@
  # Install everything under this directory. If this is empty, then everything
  # will be installed under /
@@ -52,3 +52,12 @@
  
  #
  # Set WRAPTRACING to 1 to enable tracing information from the OpenH323Wrap
+@@ -120,7 +120,7 @@
+ # With this flag on the channel driver is huge, in size, but Asterisk boots
+ # faster!
+ #
+-OH323STAT=1
++#OH323STAT=1
+ 
+ #
+ # Define options that were used during Asterisk compilation. It is
