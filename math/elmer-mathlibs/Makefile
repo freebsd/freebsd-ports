@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.funet.fi/pub/sci/physics/elmer/
 PKGNAMEPREFIX=	elmer-
 
 MAINTAINER=	giffunip@asme.org
-COMMENT=	Math libraries build with F90 for used by ELMER FEM
+COMMENT=	Math libraries build with F90 for used in ELMER FEM
 
 BUILD_DEPENDS=	${FC}:${PORTSDIR}/lang/gfortran
 
