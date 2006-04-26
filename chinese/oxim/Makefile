@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	oxim
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	chinese textproc
 MASTER_SITES=	ftp://apt.nc.hcc.edu.tw/pub/mirror/opendesktop.org.tw/OXIM/Source/ \
+		ftp://ftp4.tnc.edu.tw/pub3/opendesktop-tw/odp/ \
 		ftp://140.111.128.66/odp/OXIM/Source/
 
 MAINTAINER=	rafan@infor.org
@@ -63,8 +64,6 @@ CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 post-patch:
 	${REINPLACE_CMD} 's|%%PREFIX%%|${PREFIX}|' \
 			${WRKSRC}/src/gtk-immodule/gtkintl.h
-	${REINPLACE_CMD} 's|^(defint|(define|' \
-			${WRKSRC}/etc/oxim.conf.in
 
 post-install:
 .if !defined(WITHOUT_GTK2)
