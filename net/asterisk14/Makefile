@@ -6,24 +6,23 @@
 #
 
 PORTNAME=	asterisk
-PORTVERSION=	1.2.4
-PORTREVISION=	2
+PORTVERSION=	1.2.7.1
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.digium.com/pub/asterisk/ \
 		http://ftp.digium.com/pub/asterisk/old-releases/ \
 		ftp://ftp.asterisk.org/pub/telephony/asterisk/ \
 		ftp://ftp.asterisk.org/pub/telephony/asterisk/old-releases/
 
-PATCHFILES=	${PORTNAME}-${PORTVERSION}-${BRIVER}.patch.gz\
-		asterisk124_codec_negotiation-20060202_2-${BRIVER}.diff.gz
-PATCH_SITES=	${MASTER_SITE_LOCAL}
-PATCH_SITE_SUBDIR=	fjoe/
-PATCH_DIST_STRIP=	-p1
+PATCHFILES=	asterisk127_codec_negotiation-20060419.diff.gz
+PATCH_SITES=	http://unofficial.portaone.com/~bamby/public/
+
+#		${PORTNAME}-1.2.4-${BRIVER}.patch.gz:bristuff
+#		${MASTER_SITE_LOCAL:S,$,:bristuff,}
+#PATCH_SITE_SUBDIR=	fjoe/:bristuff
+#BRIVER=		bristuff-0.3.0-PRE-1l
 
 MAINTAINER=	sobomax@FreeBSD.org
 COMMENT=	An Open Source PBX and telephony toolkit
-
-FORBIDDEN=	http://vuxml.freebsd.org/8b683bea-d49c-11da-a672-000e0c2e438a.html
 
 BUILD_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 LIB_DEPENDS=	speex.3:${PORTSDIR}/audio/speex \
@@ -33,7 +32,6 @@ RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 
 ONLY_FOR_ARCHS=	i386 sparc64 amd64
 
-BRIVER=		bristuff-0.3.0-PRE-1l
 GNU_CONFIGURE=	yes
 CONFIGURE_WRKSRC=	${WRKSRC}/editline
 USE_GMAKE=	yes
@@ -43,17 +41,14 @@ USE_REINPLACE=	yes
 MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}" \
 		MKDIR="${MKDIR}" \
-		PWLIBDIR=${PWLIBDIR} \
-		OPENH323DIR=${OPENH323DIR} \
+		PWLIBDIR=${LOCALBASE}/share/pwlib \
+		OPENH323DIR=${LOCALBASE}/share/openh323 \
 		OSVERSION=${OSVERSION} \
 		CXX="${CXX}"
-
+PLIST_SUB=	BRISTUFF="@comment "
 MAN8=		asterisk.8 astgenkey.8 autosupport.8 safe_asterisk.8
 
 .include <bsd.port.pre.mk>
-
-PWLIBDIR!=	cd ${PORTSDIR}/devel/pwlib152; make -V WRKSRC
-OPENH323DIR!=	cd ${PORTSDIR}/net/openh323-112; make -V WRKSRC
 
 .if ${ARCH} != "i386"
 WITHOUT_H323=	1
@@ -63,8 +58,8 @@ WITHOUT_ZAPTEL=	1
 .if defined(WITHOUT_H323)
 PLIST_SUB+=	WITH_H323="@comment "
 .else
-BUILD_DEPENDS+=	${NONEXISTENT}:${PORTSDIR}/devel/pwlib152:build \
-		${NONEXISTENT}:${PORTSDIR}/net/openh323-112:build
+LIB_DEPENDS+=	pt_r.1:${PORTSDIR}/devel/pwlib\
+		h323_r.1:${PORTSDIR}/net/openh323
 PLIST_SUB+=	WITH_H323=""
 MAKE_ENV+=	WITH_H323=1
 .endif

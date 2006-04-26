@@ -3,19 +3,17 @@ $FreeBSD$
 
 --- channels/Makefile.orig
 +++ channels/Makefile
-@@ -48,9 +48,9 @@
+@@ -48,8 +48,8 @@
  endif
  
  ifeq (${OSARCH},FreeBSD)
 -  PTLIB=-lpt_FreeBSD_x86_r
 -  H323LIB=-lh323_FreeBSD_x86_r
--  CHANH323LIB=-pthread
-+  PTLIB=-lpt_FreeBSD_x86_r_s
-+  H323LIB=-lh323_FreeBSD_x86_r_s
-+  CHANH323LIB=
++  PTLIB=-lpt_r
++  H323LIB=-lh323_r
+   CHANH323LIB=-pthread
  endif
  
- ifeq (${OSARCH},NetBSD)
 @@ -73,11 +73,11 @@
    SOLINK+=-lrt
  endif

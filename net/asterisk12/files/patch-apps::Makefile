@@ -61,7 +61,7 @@ $FreeBSD$
 +endif
 +
  app_sql_postgres.o: app_sql_postgres.c
--	$(CC) -pipe -I/usr/local/pgsql/include $(CFLAGS) -c -o app_sql_postgres.o app_sql_postgres.c
+-	$(CC) -pipe -I$(CROSS_COMPILE_TARGET)/usr/local/pgsql/include -I$(CROSS_COMPILE_TARGET)/usr/include/postgresql $(CFLAGS) -c -o app_sql_postgres.o app_sql_postgres.c
 +	$(CC) -I$(LOCALBASE)/include/pgsql $(CFLAGS) -c -o app_sql_postgres.o app_sql_postgres.c
  
  app_sql_postgres.so: app_sql_postgres.o
