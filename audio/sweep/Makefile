@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	sweep
-PORTVERSION=	0.8.4
-PORTREVISION=	1
+PORTVERSION=	0.9.0
 CATEGORIES=	audio gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A sound editor for the GNOME/GTK 1.2 desktop
+MAINTAINER=	freebsd@unixfreunde.de
+COMMENT=	A sound editor for the GNOME/GTK 2.0 desktop
 
 LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile \
 		samplerate.1:${PORTSDIR}/audio/libsamplerate \
@@ -22,7 +21,7 @@ LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile \
 		mad.2:${PORTSDIR}/audio/mad
 
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomehack gnomeprefix gnometarget gtk12
+USE_GNOME=	gnomehack gnomeprefix gnometarget gtk20
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
