@@ -1,0 +1,16 @@
+ldapvi is tool to update LDAP entries with a text editor.
+
+It is:
+# Written in C.
+# Reasonably fast and small. The ldapvi client needs about as much time for
+  receiving entries as the OpenLDAP server needs to sends them, which should be
+  fast enough.
+# Shows a summary of changes before committing them. Details of the changes can
+  be previewed in LDIF format.
+# Uses an LDIF-like format in the editor (which should be easier to use
+  interactively than standard LDIF).
+# Can rename entries.
+# Does not give up easily. On error, you can edit the file again or rebind to
+  the server and try again.
+
+WWW: http://www.lichteblau.com/ldapvi.html
