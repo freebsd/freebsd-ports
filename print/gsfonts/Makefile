@@ -9,8 +9,10 @@ PORTNAME=	gsfonts
 PORTVERSION=	8.11
 PORTREVISION=	2
 CATEGORIES=	print x11-fonts
-MASTER_SITES=	ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/fonts/
-DISTFILES=	${GS_FONTS_STD} ${GS_FONTS_OTHER}
+MASTER_SITES=	ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/fonts/ \
+		${MASTER_SITE_TEX_CTAN:S/$/:CTAN/}
+MASTER_SITE_SUBDIR=	support/ghostscript/fonts/:CTAN
+DISTFILES=	${GS_FONTS_STD:S/$/:DEFAULT,CTAN/} ${GS_FONTS_OTHER:S/$/:DEFAULT,CTAN/}
 DIST_SUBDIR=	ghostscript
 
 MAINTAINER=	ports@FreeBSD.org

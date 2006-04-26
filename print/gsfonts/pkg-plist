@@ -152,10 +152,10 @@
 %%FONTSDIR%%/z003034l.afm
 %%FONTSDIR%%/z003034l.pfb
 %%FONTSDIR%%/z003034l.pfm
-%%PORTDOCS%%share/doc/gsfonts/ChangeLog
-%%PORTDOCS%%share/doc/gsfonts/README
-%%PORTDOCS%%share/doc/gsfonts/README.tweaks
-%%PORTDOCS%%share/doc/gsfonts/TODO
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.tweaks
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%FONTSDIR%%
-%%PORTDOCS%%@dirrm share/doc/gsfonts
 @dirrmtry share/ghostscript
