@@ -5,7 +5,7 @@
  #include "spline.h"
  #include "output-swf.h"
 -#include <ming.h>
-+#include <ming/ming.h>
++#include <ming/libming.h>
  
  #define FPS 24.0
  #define IMGID 1
