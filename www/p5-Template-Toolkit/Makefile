@@ -186,13 +186,15 @@ MAN3=	Template.3 \
 post-patch:
 	${PERL} -pi -e 's,/usr/local/tt2,${PREFIX}/share/tt2,g' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
-.if ${PERL_LEVEL} < 500601
+.if ${PERL_LEVEL} < 500600
 	${FIND} ${WRKSRC} -name '*.orig' -delete
 
-EXTRA_PATCHES=	${PATCHDIR}/5.005-lib-Template-Document.pm
-.endif
+post-configure:
+	${PERL} -pi -e 's/-I\S+PERL\S+ //g if m{PERL_DL_NONLAZY}' ${WRKSRC}/Makefile
 
-.if ${PERL_LEVEL} >= 500800
+BUILD_DEPENDS+=	${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm
+EXTRA_PATCHES=	${PATCHDIR}/5.005-lib-Template-Document.pm
+.else
 MAN3+=	Template::Config.3
 .endif
 
