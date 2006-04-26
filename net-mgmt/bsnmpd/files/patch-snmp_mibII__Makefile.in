@@ -1,0 +1,11 @@
+--- snmp_mibII/Makefile.in.orig	Tue Apr 25 14:52:11 2006
++++ snmp_mibII/Makefile.in	Tue Apr 25 14:52:53 2006
+@@ -10,7 +10,7 @@
+ SRCS=	${MOD}_tree.c mibII.c mibII_ifmib.c mibII_ip.c			\
+ 	mibII_interfaces.c mibII_ipaddr.c mibII_ifstack.c		\
+ 	mibII_rcvaddr.c mibII_nettomedia.c mibII_tcp.c mibII_udp.c	\
+-	mibII_route.c
++	mibII_route.c mibII_begemot.c
+ INCS=	snmp_${MOD}.h
+ DEFS=	mibII_tree.def
+ MAN3=	snmp_mibII.3

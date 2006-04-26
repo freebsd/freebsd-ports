@@ -1,0 +1,22 @@
+--- configure.ac.orig	Mon Feb 27 13:03:16 2006
++++ configure.ac	Mon Apr 24 23:18:56 2006
+@@ -78,10 +78,6 @@
+ # check for getaddrinfo
+ AC_CHECK_FUNCS(getaddrinfo)
+ 
+-# check for a usable tree.h
+-AC_CHECK_HEADER(sys/tree.h,
+-   AC_DEFINE(HAVE_SYS_TREE_H))
+-
+ # check whether we have posix stdint.h or at least inttypes.h
+ AC_CHECK_HEADER(stdint.h,
+    AC_DEFINE(HAVE_STDINT_H))
+@@ -126,6 +122,8 @@
+    AC_DEFINE_UNQUOTED(QUADXFMT, ${ac_cv_quad_fmt}"x")
+ fi
+ 
++AC_EGREP_HEADER(ifi_link_state, net/if.h,
++	AC_DEFINE(HAVE_MIB_LINKSTATE))
+ 
+ AC_CONFIG_FILES([
+ 	Makefile:config/Makefile.pre:Makefile.in

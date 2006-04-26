@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	bsnmpd
-PORTVERSION=	1.11
-PORTREVISION=	3
+PORTVERSION=	1.12
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://people.freebsd.org/~harti/bsnmp/
-DISTNAME=	bsnmp-${PORTVERSION}a
+DISTNAME=	bsnmp-${PORTVERSION}
 
 MAINTAINER=	bu7cher@yandex.ru
 COMMENT=	A mini-SNMP daemon
@@ -21,9 +20,8 @@ LIB_DEPENDS=	begemot.1:${PORTSDIR}/devel/libbegemot \
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libbegemot=${LOCALBASE}
+USE_AUTOTOOLS=	autoconf:259
 
-# Currently autotools is not needed
-#USE_AUTOTOOLS=	automake:19 autoconf:259
 INSTALLS_SHLIB=		yes
 
 USE_GCC=	3.2+
@@ -38,8 +36,6 @@ MAN3=	asn1.3 bsnmplib.3 bsnmpclient.3 bsnmpagent.3 snmpmod.3 \
 .if ${OSVERSION} > 600000
 IGNORE=	bsnmpd already in base system
 .endif
-
-#run-autotools:: run-autotools-aclocal run-autotools-autoconf
 
 post-install:
 	@${MKDIR} ${PREFIX}/etc
