@@ -25,7 +25,7 @@ PATCH_DIST_STRIP=	-p1
 PKGNAMESUFFIX+=	-with-htdig
 .endif
 
-MAINTAINER?=	ports@freebsd.org
+MAINTAINER?=	jmelo@FreeBSD.org
 COMMENT?=	A mailing list manager (MLM) with a user-friendly web front-end
 
 RUN_DEPENDS=	lynx:${PORTSDIR}/www/lynx
