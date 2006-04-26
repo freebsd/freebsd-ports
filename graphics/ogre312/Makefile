@@ -7,6 +7,7 @@
 
 PORTNAME=	ogre3d
 PORTVERSION=	1.0.7
+PORTREVISION=	1
 CATEGORIES=	graphics devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=ogre
@@ -15,7 +16,7 @@ DISTNAME=	ogre-linux_osx-v${PORTVERSION:S/./-/g}
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	A scene-oriented, flexible 3D engine written in C++
 
-LIB_DEPENDS=	zzip.10:${PORTSDIR}/devel/zziplib \
+LIB_DEPENDS=	zzip.13:${PORTSDIR}/devel/zziplib \
 		CEGUIBase.0:${PORTSDIR}/graphics/cegui
 
 WRKSRC=		${WRKDIR}/ogrenew
