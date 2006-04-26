@@ -1,5 +1,5 @@
---- Makefile.orig	Sat Feb 25 12:53:36 2006
-+++ Makefile	Sat Feb 25 12:56:28 2006
+--- Makefile.orig	Wed Jan 11 02:19:14 2006
++++ Makefile	Wed Apr 26 02:47:21 2006
 @@ -27,7 +27,7 @@
  # Uncomment if you want libpri to count number of Q921/Q931 sent/received
  #LIBPRI_COUNTERS=-DLIBPRI_COUNTERS
@@ -9,7 +9,7 @@
  
  OSARCH=$(shell uname -s)
  PROC?=$(shell uname -m)
-@@ -35,12 +35,12 @@
+@@ -35,13 +35,13 @@
  TOBJS=testpri.o
  T2OBJS=testprilib.o
  STATIC_LIBRARY=libpri.a
@@ -17,15 +17,17 @@
 +DYNAMIC_LIBRARY=libpri.so.1
  STATIC_OBJS=copy_string.o pri.o q921.o prisched.o q931.o pri_facility.o
  DYNAMIC_OBJS=copy_string.lo pri.lo q921.lo prisched.lo q931.lo pri_facility.lo
--CFLAGS=-Wall -Wstrict-prototypes -Wmissing-prototypes -g $(ALERTING) $(LIBPRI_COUNTERS) -DRELAX_TRB
+-CFLAGS=-Wall -Werror -Wstrict-prototypes -Wmissing-prototypes -g $(ALERTING) $(LIBPRI_COUNTERS)
 -INSTALL_PREFIX?=
 -INSTALL_BASE=/usr
-+CFLAGS+=-Wall -Wstrict-prototypes -Wmissing-prototypes -g $(ALERTING) $(LIBPRI_COUNTERS) -DRELAX_TRB
-+INSTALL_PREFIX=$(PREFIX)
+-SOFLAGS = -Wl,-hlibpri.so.1.0
++CFLAGS+=-Wall -Werror -Wstrict-prototypes -Wmissing-prototypes -g $(ALERTING) $(LIBPRI_COUNTERS)
++INSTALL_PREFIX?=$(PREFIX)
 +INSTALL_BASE=
- SOFLAGS = -Wl,-hlibpri.so.1.0
++SOFLAGS = -Wl,-hlibpri.so.1
  LDCONFIG = /sbin/ldconfig
  ifeq (${OSARCH},Linux)
+ LDCONFIG_FLAGS=-n
 @@ -84,12 +84,11 @@
  	mkdir -p $(INSTALL_PREFIX)$(INSTALL_BASE)/lib
  	mkdir -p $(INSTALL_PREFIX)$(INSTALL_BASE)/include
