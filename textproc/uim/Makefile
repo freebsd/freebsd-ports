@@ -7,7 +7,7 @@
 
 PORTNAME=	uim
 PORTVERSION=	1.0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES?=	textproc
 MASTER_SITES=	http://uim.freedesktop.org/releases/
 
@@ -22,11 +22,14 @@ USE_GNOME+=	gnometarget glib20
 USE_GMAKE=	yes
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
+.if !defined(UIM_SLAVE)
+USE_GNOME+=	gtk20
+.endif
 
 LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/libXft
 
 .if !defined(UIM_SLAVE)
-CONFIGURE_ARGS=	--enable-emacs
+CONFIGURE_ARGS=	--enable-emacs --with-gtk2
 .endif
 CONFIGURE_ENV+=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib  -L${LOCALBASE}/lib"
@@ -78,6 +81,15 @@ pre-everything::
 
 post-patch:
 	${REINPLACE_CMD} -e 's,%%LOCALBASE%%,${LOCALBASE},' ${WRKSRC}/scm/skk-custom.scm
+
+do-install:
+.if !defined(UIM_SLAVE)
+	cd ${WRKSRC} && ${GMAKE} install-data-am
+.for d in uim scm xim po fep emacs pixmaps
+	cd ${WRKSRC}/${d} && ${GMAKE} install
+.endfor
+	cd ${WRKSRC}/helper && ${GMAKE} install-libexecPROGRAMS
+.endif
 
 .if !defined(UIM_SLAVE) && !defined(NOPORTDOCS)
 post-install:
