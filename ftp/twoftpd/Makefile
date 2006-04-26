@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	twoftpd
-PORTVERSION=	1.20
-PORTREVISION=	1
+PORTVERSION=	1.21
 CATEGORIES=	ftp
 MASTER_SITES=	http://untroubled.org/${PORTNAME}/
 
@@ -17,8 +16,8 @@ COMMENT=	A simple, secure, efficient FTP server
 BUILD_DEPENDS=	${BGLIBS_LIB}/libbg-unix.a:${PORTSDIR}/devel/bglibs \
 		${LOCALBASE}/lib/libcvm-client.a:${PORTSDIR}/security/cvm
 
-USE_REINPLACE=	yes
-
+USE_GPG=	yes
+SIG_SUFFIX=	.sig
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-s -L${LOCALBASE}/lib
 BGLIBS_LIB=	${LOCALBASE}/lib/bglibs
@@ -38,9 +37,8 @@ do-configure:
 	${ECHO_CMD} "${BGLIBS_INCLUDE}"	> ${WRKSRC}/conf-bgincs
 	${ECHO_CMD} "${BGLIBS_LIB}"	> ${WRKSRC}/conf-bglibs
 
-do-install:
-	cd ${WRKSRC} && ./installer
 .if !defined(NOPORTDOCS)
+post-install:
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
