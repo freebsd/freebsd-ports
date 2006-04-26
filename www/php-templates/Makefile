@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	php-templates
-PORTVERSION=	1.7
+PORTVERSION=	1.7.2
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -23,14 +23,13 @@ WRKSRC=		${WRKDIR}/templates
 
 USE_PHP=	yes
 USE_PHPIZE=	yes
+BROKEN_WITH_PHP=5
 
 CONFIGURE_ARGS=	--enable-templates=shared
 
-PKGMESSAGE=	${WRKDIR}/pkg-message
+SUB_FILES=	pkg-message
 
-post-build:
-	@${SED} "s|%%LOCALBASE%%|${LOCALBASE}|g;s|%%PREFIX%%|${PREFIX}|g;s|%%PHP_EXT_DIR%%|${PHP_EXT_DIR}|g" \
-		${.CURDIR}/pkg-message > ${PKGMESSAGE}
+PORTDOCS=	*
 
 do-install:
 	@${MKDIR} ${PREFIX}/lib/php/${PHP_EXT_DIR}
