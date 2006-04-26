@@ -7,6 +7,7 @@
 
 PORTNAME=	cmus
 PORTVERSION=	2.0.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://onion.dynserv.net/~timo/files/ \
 		http://mirror.greaterscope.net/cmus/
@@ -22,7 +23,6 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
 HAS_CONFIGURE=	yes
-USE_REINPLACE=	yes
 CONFIGURE_ARGS+=--prefix=${PREFIX}
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

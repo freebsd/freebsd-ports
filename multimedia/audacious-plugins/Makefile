@@ -7,6 +7,7 @@
 
 PORTNAME=	audacious
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://audacious-media-player.org/release/ \
 		${MASTER_SITE_LOCAL}
