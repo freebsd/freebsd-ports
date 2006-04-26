@@ -6,13 +6,11 @@
 #
 
 PORTNAME=	cmake
-PORTVERSION=	2.3.4
-PORTREVISION=	1
+PORTVERSION=	2.4.0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.cmake.org/files/v${PORTVERSION:C/\.[[:digit:]]+$//}/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=lofi
-DISTNAME=	${PORTNAME}-${PORTVERSION}-20060317
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	A cross-platform make
