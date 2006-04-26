@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	chemtool
-PORTVERSION=	1.6.7
-PORTREVISION=	1
+PORTVERSION=	1.6.9
 CATEGORIES=	science
 MASTER_SITES=	http://ruby.chemie.uni-freiburg.de/~martin/chemtool/
 
