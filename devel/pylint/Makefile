@@ -7,6 +7,7 @@
 
 PORTNAME=	pylint
 PORTVERSION=	0.11.0
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	ftp://ftp.logilab.org/pub/pylint/
 PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
@@ -14,7 +15,7 @@ PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	Analyzes python source code looking for bugs and signs of poor quality
 
-RUN_DEPENDS=	${PYTHONPREFIX_SITELIBDIR}/logilab/__init__.py:${PORTSDIR}/devel/py-logilab-common
+RUN_DEPENDS=	${PYTHONPREFIX_SITELIBDIR}/logilab/astng/__init__.py:${PORTSDIR}/devel/py-astng
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
