@@ -160,15 +160,6 @@ $FreeBSD$
    ASTCFLAGS+=-DZAPTEL_OPTIMIZATIONS
  endif
  
-@@ -323,7 +320,7 @@
-     ASTERISKVERSIONNUM=999999
-     ASTERISKVERSION=SVN-$(shell build_tools/make_svn_branch_name)
-   else
--    ASTERISKVERSIONNUM=000000
-+    ASTERISKVERSIONNUM?=000000
-   endif
- endif
- 
 @@ -388,10 +385,10 @@
  endif
  
@@ -221,6 +212,21 @@ $FreeBSD$
  
  ifneq ($(wildcard .depend),)
    include .depend
+@@ -470,10 +467,10 @@
+ 
+ manpage: asterisk.8
+ 
+-asterisk.8: asterisk.sgml
+-	rm -f asterisk.8
+-	docbook2man asterisk.sgml
+-	mv ./*.8 asterisk.8
++#asterisk.8: asterisk.sgml
++#	rm -f asterisk.8
++#	docbook2man asterisk.sgml
++#	mv ./*.8 asterisk.8
+ 
+ asterisk.pdf: asterisk.sgml
+ 	docbook2pdf asterisk.sgml
 @@ -510,14 +507,14 @@
  cygwin_a:
  	$(MAKE) -C cygwin all
@@ -241,7 +247,7 @@ $FreeBSD$
 @@ -539,38 +536,38 @@
  
  datafiles: all
- 	if [ x`whoami` = xroot ]; then sh mkpkgconfig $(DESTDIR)/usr/lib/pkgconfig; fi
+ 	if [ x`$(ID) -un` = xroot ]; then sh mkpkgconfig $(DESTDIR)/usr/lib/pkgconfig; fi
 -	mkdir -p $(DESTDIR)$(ASTVARLIBDIR)/sounds/digits
 -	mkdir -p $(DESTDIR)$(ASTVARLIBDIR)/sounds/priv-callerintros
 +	$(MKDIR) $(DESTDIR)$(ASTVARLIBDIR)/sounds/digits
@@ -310,7 +316,7 @@ $FreeBSD$
  
  update: 
  	@if [ -d .svn ]; then \
-@@ -618,75 +615,53 @@
+@@ -618,73 +615,51 @@
  OLDHEADERS=$(filter-out $(NEWHEADERS),$(notdir $(wildcard $(DESTDIR)$(ASTHEADERDIR)/*.h)))
  
  bininstall: all
@@ -359,7 +365,6 @@ $FreeBSD$
  	if [ -n "$(OLDHEADERS)" ]; then \
  		rm -f $(addprefix $(DESTDIR)$(ASTHEADERDIR)/,$(OLDHEADERS)) ;\
  	fi
- 	rm -f $(DESTDIR)$(ASTVARLIBDIR)/sounds/voicemail
 -	mkdir -p $(DESTDIR)$(ASTVARLIBDIR)/sounds
 -	mkdir -p $(DESTDIR)$(ASTLOGDIR)/cdr-csv
 -	mkdir -p $(DESTDIR)$(ASTLOGDIR)/cdr-custom
@@ -392,7 +397,6 @@ $FreeBSD$
  	else \
  		echo "You need to do cvs update -d not just cvs update" ; \
  	fi 
- 	( cd $(DESTDIR)$(ASTVARLIBDIR)/sounds  ; ln -s $(ASTSPOOLDIR)/voicemail . )
 -	if [ -f mpg123-0.59r/mpg123 ]; then $(MAKE) -C mpg123-0.59r install; fi
 -	@echo " +---- Asterisk Installation Complete -------+"  
 -	@echo " +                                           +"
