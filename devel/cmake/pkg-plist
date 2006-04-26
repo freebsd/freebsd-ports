@@ -2,13 +2,7 @@ bin/ccmake
 bin/cmake
 bin/cpack
 bin/ctest
-%%DOCSDIR%%/Copyright.txt
-%%DOCSDIR%%/ccmake.html
-%%DOCSDIR%%/ccmake.txt
-%%DOCSDIR%%/cmake.html
-%%DOCSDIR%%/cmake.txt
-%%DOCSDIR%%/ctest.html
-%%DOCSDIR%%/ctest.txt
+%%DATADIR%%/Modules/AddFileDependencies.cmake
 %%DATADIR%%/Modules/CMake.cmake
 %%DATADIR%%/Modules/CMakeBackwardCompatibilityC.cmake
 %%DATADIR%%/Modules/CMakeBackwardCompatibilityCXX.cmake
@@ -19,6 +13,7 @@ bin/ctest
 %%DATADIR%%/Modules/CMakeCXXCompiler.cmake.in
 %%DATADIR%%/Modules/CMakeCXXInformation.cmake
 %%DATADIR%%/Modules/CMakeCommonLanguageInclude.cmake
+%%DATADIR%%/Modules/CMakeConfigurableFile.in
 %%DATADIR%%/Modules/CMakeDetermineCCompiler.cmake
 %%DATADIR%%/Modules/CMakeDetermineCXXCompiler.cmake
 %%DATADIR%%/Modules/CMakeDetermineFortranCompiler.cmake
@@ -27,6 +22,7 @@ bin/ctest
 %%DATADIR%%/Modules/CMakeDetermineSystem.cmake
 %%DATADIR%%/Modules/CMakeExportBuildSettings.cmake
 %%DATADIR%%/Modules/CMakeFindFrameworks.cmake
+%%DATADIR%%/Modules/CMakeFindWMake.cmake
 %%DATADIR%%/Modules/CMakeFindXCode.cmake
 %%DATADIR%%/Modules/CMakeFortranCompiler.cmake.in
 %%DATADIR%%/Modules/CMakeFortranInformation.cmake
@@ -34,6 +30,8 @@ bin/ctest
 %%DATADIR%%/Modules/CMakeImportBuildSettings.cmake
 %%DATADIR%%/Modules/CMakeJavaCompiler.cmake.in
 %%DATADIR%%/Modules/CMakeJavaInformation.cmake
+%%DATADIR%%/Modules/CMakeMSYSFindMake.cmake
+%%DATADIR%%/Modules/CMakeMinGWFindMake.cmake
 %%DATADIR%%/Modules/CMakeNMakeFindMake.cmake
 %%DATADIR%%/Modules/CMakePrintSystemInformation.cmake
 %%DATADIR%%/Modules/CMakeRCCompiler.cmake.in
@@ -55,6 +53,10 @@ bin/ctest
 %%DATADIR%%/Modules/CMakeVS7BackwardCompatibility.cmake
 %%DATADIR%%/Modules/CMakeVS7FindMake.cmake
 %%DATADIR%%/Modules/CMakeVS8FindMake.cmake
+%%DATADIR%%/Modules/CPack.Description.plist.in
+%%DATADIR%%/Modules/CPack.Info.plist.in
+%%DATADIR%%/Modules/CPack.STGZ_Header.sh.in
+%%DATADIR%%/Modules/CPack.cmake
 %%DATADIR%%/Modules/CTest.cmake
 %%DATADIR%%/Modules/CTestTargets.cmake
 %%DATADIR%%/Modules/CheckCSourceCompiles.cmake
@@ -99,6 +101,8 @@ bin/ctest
 %%DATADIR%%/Modules/FindJPEG.cmake
 %%DATADIR%%/Modules/FindJava.cmake
 %%DATADIR%%/Modules/FindKDE.cmake
+%%DATADIR%%/Modules/FindKDE3.cmake
+%%DATADIR%%/Modules/FindKDE4.cmake
 %%DATADIR%%/Modules/FindLATEX.cmake
 %%DATADIR%%/Modules/FindMFC.cmake
 %%DATADIR%%/Modules/FindMPEG.cmake
@@ -140,7 +144,10 @@ bin/ctest
 %%DATADIR%%/Modules/FindZLIB.cmake
 %%DATADIR%%/Modules/FindwxWidgets.cmake
 %%DATADIR%%/Modules/FindwxWindows.cmake
+%%DATADIR%%/Modules/InstallRequiredSystemLibraries.cmake
+%%DATADIR%%/Modules/KDE3Macros.cmake
 %%DATADIR%%/Modules/MacOSXBundleInfo.plist.in
+%%DATADIR%%/Modules/NSIS.template.in
 %%DATADIR%%/Modules/Platform/AIX.cmake
 %%DATADIR%%/Modules/Platform/BSDOS.cmake
 %%DATADIR%%/Modules/Platform/CYGWIN-g77.cmake
@@ -152,6 +159,7 @@ bin/ctest
 %%DATADIR%%/Modules/Platform/IRIX.cmake
 %%DATADIR%%/Modules/Platform/IRIX64.cmake
 %%DATADIR%%/Modules/Platform/Linux-como.cmake
+%%DATADIR%%/Modules/Platform/Linux-icpc.cmake
 %%DATADIR%%/Modules/Platform/Linux-ifort.cmake
 %%DATADIR%%/Modules/Platform/Linux.cmake
 %%DATADIR%%/Modules/Platform/MP-RAS.cmake
@@ -166,23 +174,22 @@ bin/ctest
 %%DATADIR%%/Modules/Platform/Tru64.cmake
 %%DATADIR%%/Modules/Platform/ULTRIX.cmake
 %%DATADIR%%/Modules/Platform/UNIX_SV.cmake
+%%DATADIR%%/Modules/Platform/UnixPaths.cmake
 %%DATADIR%%/Modules/Platform/UnixWare.cmake
 %%DATADIR%%/Modules/Platform/Windows-bcc32.cmake
 %%DATADIR%%/Modules/Platform/Windows-cl.cmake
 %%DATADIR%%/Modules/Platform/Windows-cl.cmake.in
+%%DATADIR%%/Modules/Platform/Windows-g++.cmake
 %%DATADIR%%/Modules/Platform/Windows-g77.cmake
 %%DATADIR%%/Modules/Platform/Windows-gcc.cmake
 %%DATADIR%%/Modules/Platform/Windows-icl.cmake
 %%DATADIR%%/Modules/Platform/Windows-ifort.cmake
+%%DATADIR%%/Modules/Platform/Windows-wcl386.cmake
 %%DATADIR%%/Modules/Platform/Windows.cmake
+%%DATADIR%%/Modules/Platform/WindowsPaths.cmake
 %%DATADIR%%/Modules/Platform/Xenix.cmake
 %%DATADIR%%/Modules/Platform/g77.cmake
 %%DATADIR%%/Modules/Platform/gcc.cmake
-%%DATADIR%%/Modules/Platform/Linux-icpc.cmake
-%%DATADIR%%/Modules/Platform/UnixPaths.cmake
-%%DATADIR%%/Modules/Platform/Windows-g++.cmake
-%%DATADIR%%/Modules/Platform/Windows-wcl386.cmake
-%%DATADIR%%/Modules/Platform/WindowsPaths.cmake
 %%DATADIR%%/Modules/Platform/kFreeBSD.cmake
 %%DATADIR%%/Modules/TestBigEndian.c
 %%DATADIR%%/Modules/TestBigEndian.cmake
@@ -191,8 +198,11 @@ bin/ctest
 %%DATADIR%%/Modules/TestForANSIStreamHeaders.cmake
 %%DATADIR%%/Modules/TestForANSIStreamHeaders.cxx
 %%DATADIR%%/Modules/TestForAnsiForScope.cxx
+%%DATADIR%%/Modules/TestForSSTREAM.cmake
+%%DATADIR%%/Modules/TestForSSTREAM.cxx
 %%DATADIR%%/Modules/TestForSTDNamespace.cmake
 %%DATADIR%%/Modules/TestForSTDNamespace.cxx
+%%DATADIR%%/Modules/UsePkgConfig.cmake
 %%DATADIR%%/Modules/UseQt4.cmake
 %%DATADIR%%/Modules/UseSWIG.cmake
 %%DATADIR%%/Modules/UseVTK40.cmake
@@ -201,26 +211,16 @@ bin/ctest
 %%DATADIR%%/Modules/Use_wxWindows.cmake
 %%DATADIR%%/Modules/UsewxWidgets.cmake
 %%DATADIR%%/Modules/VTKCompatibility.cmake
-%%DATADIR%%/Modules/readme.txt
-%%DATADIR%%/Modules/CMakeConfigurableFile.in
-%%DATADIR%%/Modules/CMakeFindWMake.cmake
-%%DATADIR%%/Modules/CMakeMSYSFindMake.cmake
-%%DATADIR%%/Modules/CMakeMinGWFindMake.cmake
-%%DATADIR%%/Modules/CPack.Description.plist.in
-%%DATADIR%%/Modules/CPack.Info.plist.in
-%%DATADIR%%/Modules/CPack.cmake
-%%DATADIR%%/Modules/FindKDE3.cmake
-%%DATADIR%%/Modules/FindKDE4.cmake
-%%DATADIR%%/Modules/InstallRequiredSystemLibraries.cmake
-%%DATADIR%%/Modules/KDE3Macros.cmake
-%%DATADIR%%/Modules/NSIS.template.in
-%%DATADIR%%/Modules/TestForSSTREAM.cmake
-%%DATADIR%%/Modules/TestForSSTREAM.cxx
-%%DATADIR%%/Modules/UsePkgConfig.cmake
 %%DATADIR%%/Modules/kde3init_dummy.cpp.in
 %%DATADIR%%/Modules/kde3uic.cmake
+%%DATADIR%%/Modules/readme.txt
+%%DATADIR%%/Templates/CMakeLists.txt
 %%DATADIR%%/Templates/CMakeVisualStudio6Configurations.cmake
 %%DATADIR%%/Templates/CMakeWindowsSystemConfig.cmake
+%%DATADIR%%/Templates/CPack.GenericDescription.txt
+%%DATADIR%%/Templates/CPack.GenericLicense.txt
+%%DATADIR%%/Templates/CPack.GenericWelcome.txt
+%%DATADIR%%/Templates/CPackConfig.cmake.in
 %%DATADIR%%/Templates/DLLFooter.dsptemplate
 %%DATADIR%%/Templates/DLLHeader.dsptemplate
 %%DATADIR%%/Templates/EXEFooter.dsptemplate
@@ -231,15 +231,17 @@ bin/ctest
 %%DATADIR%%/Templates/UtilityHeader.dsptemplate
 %%DATADIR%%/Templates/staticLibFooter.dsptemplate
 %%DATADIR%%/Templates/staticLibHeader.dsptemplate
-%%DATADIR%%/Templates/CMakeLists.txt
-%%DATADIR%%/Templates/CPack.GenericDescription.txt
-%%DATADIR%%/Templates/CPack.GenericLicense.txt
-%%DATADIR%%/Templates/CPack.GenericWelcome.txt
-%%DATADIR%%/Templates/CPackConfig.cmake.in
 %%DATADIR%%/include/cmCPluginAPI.h
+%%DOCSDIR%%/Copyright.txt
+%%DOCSDIR%%/ccmake.html
+%%DOCSDIR%%/ccmake.txt
+%%DOCSDIR%%/cmake.html
+%%DOCSDIR%%/cmake.txt
+%%DOCSDIR%%/ctest.html
+%%DOCSDIR%%/ctest.txt
+@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/include
 @dirrm %%DATADIR%%/Templates
 @dirrm %%DATADIR%%/Modules/Platform
 @dirrm %%DATADIR%%/Modules
 @dirrm %%DATADIR%%
-@dirrm %%DOCSDIR%%
