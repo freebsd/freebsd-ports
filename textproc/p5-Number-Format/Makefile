@@ -6,17 +6,27 @@
 #
 
 PORTNAME=		Number-Format
-PORTVERSION=		1.45
+PORTVERSION=		1.51
 CATEGORIES=		textproc perl5
 MASTER_SITES=		${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Number
 PKGNAMEPREFIX=		p5-
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=		perl@FreeBSD.org
 COMMENT=		Perl extension for formatting numbers
 
 PERL_CONFIGURE=		yes
 
 MAN3=			Number::Format.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+post-patch:
+.if ${PERL_LEVEL} < 500800
+	${PERL} -pi -e '$$_="" if m{5.008}' ${WRKSRC}/Format.pm
+.endif
+.if ${PERL_LEVEL} < 500600
+	${PERL} -pi -e 's/^our\s+([\$$\@\%]\w+)/use vars qw($$1);$$1/;' ${WRKSRC}/Format.pm
+.endif
+
+.include <bsd.port.post.mk>
