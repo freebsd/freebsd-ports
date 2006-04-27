@@ -1,17 +1,26 @@
---- install.sh.orig	Mon Feb  6 13:02:45 2006
-+++ install.sh	Tue Feb  7 21:26:31 2006
-@@ -108,8 +108,8 @@
+--- install.sh.orig	Tue Apr 11 12:23:52 2006
++++ install.sh	Thu Apr 20 11:33:45 2006
+@@ -106,7 +106,7 @@
  
+     test "${prefix}" || prefix="${str_defaultprefix}"
+ 
+-    share_dir="${prefix}/share/opera"
++    share_dir="${prefix}/share/opera-devel"
      if test ${os} = 'FreeBSD' -o ${os} = 'OpenBSD'; then
-         wrapper_dir="${prefix}/bin"
--        doc_dir="${prefix}/share/doc/opera"
--        share_dir="${prefix}/share/opera"
-+        doc_dir="${prefix}/share/doc/opera-devel"
-+        share_dir="${prefix}/share/opera-devel"
          exec_dir="${share_dir}/bin"
          plugin_dir="${share_dir}/plugins"
-     else
-@@ -381,7 +381,7 @@
+@@ -114,8 +114,8 @@
+ 	exec_dir="${prefix}/lib/opera/$opera_version"
+ 	plugin_dir="${prefix}/lib/opera/plugins"
+     fi
+-    man_dir="${prefix}/share/man"
+-    doc_dir="${prefix}/share/doc/opera"
++    man_dir="${prefix}/man"
++    doc_dir="${prefix}/share/doc/opera-devel"
+     wrapper_dir="${prefix}/bin"
+ }
+ 
+@@ -397,7 +397,7 @@
  	    mvv=''    # SunOS mv (no -v verbose option)
  	;;
  
@@ -20,7 +29,7 @@
  		cpf='-f'
  		if test "$verbose" -gt '1'
  		then
-@@ -771,7 +771,7 @@
+@@ -789,7 +789,7 @@
      debug_msg 0 "in generate_wrapper()"
  
      case "${machine}:${os}" in
@@ -29,7 +38,7 @@
  	    wrapper_ibmjava="
  	    IBMJava2-142/jre \\
  	    IBMJava2-141/jre \\
-@@ -806,10 +806,16 @@
+@@ -824,7 +824,7 @@
  		error 'os'
  	;;
      esac
@@ -38,16 +47,7 @@
  
      wrapper_contain="#!/bin/sh
  
-+# Location of locale data
-+if [ -f %%LOCALBASE%%/share/compat/locale/UTF-8/LC_CTYPE ]; then
-+    PATH_LOCALE=%%LOCALBASE%%/share/compat/locale
-+    export PATH_LOCALE
-+fi
-+
- # Location of the Opera binaries
- OPERA_BINARYDIR=${str_localdirexec}
- export OPERA_BINARYDIR
-@@ -865,6 +871,9 @@
+@@ -887,6 +887,9 @@
  OPERA_LD_PRELOAD=\"\${LD_PRELOAD}\"
  export OPERA_LD_PRELOAD
  
@@ -57,7 +57,7 @@
  # Native Java enviroment
  if test -f \"\${OPERA_PERSONALDIR}/javapath.txt\"; then
      INIJAVA=\`cat \${OPERA_PERSONALDIR}/javapath.txt\`
-@@ -888,69 +897,12 @@
+@@ -910,69 +913,12 @@
  
  if test ! \"\${OPERA_JAVA_DIR}\"; then
  
@@ -131,7 +131,7 @@
  	; do
  	for PREFIX in \${PREFIXES}; do
  	    if test -f \"\${PREFIX}/\${SUNJAVA}/lib/${wrapper_sunjava_machine}/libjava.so\"; then OPERA_JAVA_DIR=\"\${PREFIX}/\${SUNJAVA}/lib/${wrapper_sunjava_machine}\" && break; fi
-@@ -1001,11 +953,8 @@
+@@ -1023,11 +969,8 @@
  
  # Acrobat Reader
  for BINDIR in \\
@@ -145,7 +145,7 @@
      ; do
      if test -d \${BINDIR} ; then PATH=\${PATH}:\${BINDIR}; fi
  done
-@@ -1016,12 +965,13 @@
+@@ -1038,12 +981,13 @@
  LD_LIBRARY_PATH=\"\${OPERA_BINARYDIR}\${LD_LIBRARY_PATH:+:}\${LD_LIBRARY_PATH}\"
  export LD_LIBRARY_PATH
  
@@ -161,7 +161,7 @@
          LD_LIBRARY_PATH=\"\${LD_LIBRARY_PATH}:\${LIBASPELL_DIR}\"
      fi
  done"
-@@ -1123,7 +1073,7 @@
+@@ -1153,7 +1097,7 @@
      chop "${OPERADESTDIR}" "str_localdirshare"
      chop "${OPERADESTDIR}" "str_localdirplugin"
  
@@ -170,16 +170,25 @@
  
      # Executable
      debug_msg 1 "Executable"
-@@ -1161,7 +1111,7 @@
+@@ -1191,7 +1135,7 @@
  
      #cp $cpv $cpf wrapper.sh $wrapper_dir/opera
      generate_wrapper
 -    chmod $chmodv 755 $wrapper_dir/opera
 +    chmod $chmodv 755 $wrapper_dir/opera-devel
  
+     # Manual page
+     debug_msg 1 "Manual page"
+@@ -1200,7 +1144,7 @@
+     chmod $chmodv 755 ${man_dir}
+     mkdir $mkdirv $mkdirp ${man_dir}/man1
+     chmod $chmodv 755 ${man_dir}/man1
+-    cp $cpv $cpf man/opera.1 ${man_dir}/man1
++    cp $cpv $cpf man/opera.1 ${man_dir}/man1/opera-devel.1
+ 
      # Documentation
      debug_msg 1 "Documentation"
-@@ -1338,41 +1288,9 @@
+@@ -1377,41 +1321,9 @@
  
      if test -z "${OPERADESTDIR}"
      then
@@ -221,7 +230,7 @@
  	if test "${bool_icons}" -ne 0
  	then
  	    xdg
-@@ -1407,13 +1325,13 @@
+@@ -1448,13 +1360,13 @@
  {
      # arg1 = location
  
@@ -229,7 +238,7 @@
 +    wmconfig_file="$1/opera-devel"
  
 -    wmconfig_contain='opera name "Opera"
-+    wmconfig_contain='opera name "Opera Technical Preview"
++    wmconfig_contain='opera name "Opera Beta"
  opera description "Opera Web Browser"
 -opera icon "opera.xpm"
 -opera mini-icon "opera.xpm"
@@ -240,7 +249,7 @@
  opera group "Internet"'
  
      echo "${wmconfig_contain}" > ${wmconfig_file}
-@@ -1425,19 +1343,19 @@
+@@ -1466,19 +1378,19 @@
      # arg1 = location
      # arg2 = type
  
@@ -259,11 +268,11 @@
  	desktop_contain="${desktop_contain}
  Encoding=UTF-8
 -Name=Opera
-+Name=Opera Technical Preview
++Name=Opera Beta
  Name[af]=opera
  Name[eo]=Opero
  Name[zu]=I Opera
-@@ -1461,7 +1379,7 @@
+@@ -1502,7 +1414,7 @@
  GenericName[ven]=Buronza ya Webu
  GenericName[xh]=Umkhangeli Zincwadi Zokubhaliweyo
  GenericName[zu]=Umkhangeli zincwadi we Web
@@ -272,7 +281,7 @@
  Terminal=false"
  
  # Application is not a category, according to
-@@ -1476,19 +1394,19 @@
+@@ -1517,19 +1429,19 @@
  	if test "${2}" = "xdg"; then
  	    desktop_contain="${desktop_contain}
  Categories=Application;Qt;Network;WebBrowser;X-Ximian-Main;X-Ximian-Toplevel
@@ -291,13 +300,13 @@
 -Name=Opera
 -Exec=opera
 -Icon=opera.xpm
-+Name=Opera Technical Preview
++Name=Opera Beta
 +Exec=opera-devel
 +Icon=opera-devel.xpm
  Terminal=0"
      fi
  
-@@ -1582,48 +1500,43 @@
+@@ -1623,48 +1535,43 @@
      # This function searches for common gnome icon paths.
      debug_msg 1 "in gnome()"
  
@@ -369,7 +378,7 @@
  
      elif test -d /usr/share/gnome/
      then
-@@ -1634,10 +1547,10 @@
+@@ -1675,10 +1582,10 @@
  	    then
  		mkdir $mkdirv $mkdirp /usr/share/gnome/pixmaps/
  		chmod $chmodv 755 /usr/share/gnome/pixmaps
@@ -382,7 +391,7 @@
  	fi
  	# end /usr/share/gnome icon
  
-@@ -1671,45 +1584,45 @@
+@@ -1712,45 +1619,45 @@
      # This function searches for common kde2 and kde 3 icon paths.
      debug_msg 1 "in kde()"
  
@@ -443,39 +452,52 @@
  	    fi
  	fi
      fi
-@@ -1778,34 +1691,9 @@
+@@ -1834,45 +1741,9 @@
  }
  
  xdg()
 -{   # http://standards.freedesktop.org
--    if update-desktop-database --help >/dev/null 2>&1; then
--
--	for ICON_DIR in ${XDG_DATA_DIRS}/icons/hicolor /usr/share/pixmaps/hicolor; do test -d ${ICON_DIR} && break; done
+-    UDD=''
+-    for BIN_DIR in `pathdirs`; do
+-	test -x ${BIN_DIR}/update-desktop-database || continue
+-	UDD=${BIN_DIR}/update-desktop-database; break
+-    done
+-    
+-    # http://standards.freedesktop.org/icon-theme-spec/icon-theme-spec-latest.html
+-    if test "$UDD"; then
+-	for ICON_DIR in `echo ${XDG_DATA_DIRS}:/usr/local/share:/usr/share|tr : '\012'|sed -e '/^$/d;s:$:/icons/hicolor:'` /usr/share/pixmaps/hicolor; do
+-	    test -d ${ICON_DIR} && break
+-	done
 -
 -	if   test ! -d ${ICON_DIR}; then echo "Could not find icon installation directory, icons not installed." >&2
 -	elif test ! -w ${ICON_DIR}; then echo "Directory \"${ICON_DIR}\" not writable by user \"${USER}\", icons not installed." >&2
 -	else
--	    test -d ${ICON_DIR}/48x48/apps && test -w ${ICON_DIR}/48x48/apps && cp $cpv $share_dir/images/opera_48x48.png $DIR_HI/48x48/apps/opera.png
--	    test -d ${ICON_DIR}/32x32/apps && test -w ${ICON_DIR}/32x32/apps && cp $cpv $share_dir/images/opera_32x32.png $DIR_HI/32x32/apps/opera.png
--	    test -d ${ICON_DIR}/22x22/apps && test -w ${ICON_DIR}/22x22/apps && cp $cpv $share_dir/images/opera_22x22.png $DIR_HI/22x22/apps/opera.png
+-	    for RESOLUTION in 48x48 32x32 22x22; do
+-		TO_DIR=${ICON_DIR}/${RESOLUTION}/apps
+-		test -d ${TO_DIR} && test -w ${TO_DIR} && cp $cpv $share_dir/images/opera_${RESOLUTION}.png ${TO_DIR}/opera.png
+-	    done
 -	fi
--
--	for SHORTCUT_DIR in ${XDG_DATA_HOME}/applications /usr/local/share/applications /usr/share/applications; do test -d ${SHORTCUT_DIR} && break; done
--
+-	
+-	for SHORTCUT_DIR in ${XDG_DATA_HOME}/applications /usr/local/share/applications /usr/share/applications; do
+-	    test -d ${SHORTCUT_DIR} && break;
+-	done
+-	
 -	if   test ! -d ${SHORTCUT_DIR}; then echo "Could not find shortcut installation directory, desktop entry not installed." >&2; return
 -	elif test ! -w ${SHORTCUT_DIR}; then echo "Directory \"${SHORTCUT_DIR}\" not writable by user \"${USER}\", desktop entry not installed." >&2; return
 -	fi
 -	generate_desktop ${SHORTCUT_DIR} xdg
--	update-desktop-database
+-	${UDD}
 -    else
 -	icons
-+{
- 	gnome
- 	kde 3
+-	gnome
+-	kde 3
 -	kde 2
 -	kde1
 -	mandrake
 -    fi
++{   
++    gnome
++    kde 3
  }
  
  # These are the only variables the needs to be changed
