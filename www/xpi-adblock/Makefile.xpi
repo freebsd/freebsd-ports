@@ -16,55 +16,61 @@
 # will also need to be defined manually, which helps keep the
 # infrastructure simpler.
 #
-# PKGNAMESUFFIX will probably follow the mozilla.org pattern
-# (fx for firefox, mz for mozilla) extended by abbreviations of
-# linux and devel versions, and some other things.
-#
-# An xpi compatibility with different browsers will be determined
-# from DISTVERSIONSUFFIX or manually by maintainer.
-#
-# Browsers that user want an xpi installed in can be defined by
-# WITH_XPI_BROWSERS. Employing symlinks or hardlinks may be
-# considered later, but it will complicate matters.
+# Gecko 1.8 xpi engine tries to detect various compatibility
+# issues all by itself. Thus, xpi's are installed into
+# $LOCALBASE/xpi/$XPI_ID by default and links are made to all
+# apps which have the engine (firefox, thunderbird and flock
+# at the moment). relink and relink-all targets can be invoked
+# to refarm the links of a single extensions or all installed
+# extensions accordingly.
 #
 # In case an xpi does not have chrome.manifest, it should be
 # generated manually by a maintainer and placed in files, where
 # it will be noticed. 
 
+# xpi ports do not depend on their master applications. You
+# can install an extension before the app and run relink when
+# the app is present.
+
 MASTER_SITES?=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR?=	extensions/${PORTNAME}
 PKGNAMEPREFIX?=	xpi-
-PKGNAMESUFFIX?=	-fx
 EXTRACT_SUFX?=	.xpi
 DIST_SUBDIR?=	xpi
+LATEST_LINK?=	${PKGNAMEPREFIX}${PORTNAME:S/_//g}${PKGNAMESUFFIX}
 
-USE_X_PREFIX=	yes
 NO_BUILD=	yes
 USE_ZIP=	yes
 EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
 
-WITH_XPI_BROWSERS?=	firefox		# Try adding linux-firefox
-
 XPI_DIRS?=	chrome components defaults/preferences defaults
+WITH_XPI_APPS?=	*firefox* *thunderbird* *flock*
+XPI_APPS?=	${WITH_XPI_APPS:S.^.${X11BASE}/lib/.:S.$./extensions.}
 
-.for _BROWSER in ${WITH_XPI_BROWSERS}
-RUN_DEPENDS+=	${_BROWSER}:${PORTSDIR}/www/${_BROWSER}
-TARGET_DIRS+=	lib/${_BROWSER}/extensions/${XPI_ID}
-.endfor
-
-.for _TD in ${TARGET_DIRS}
-PLIST_FILES+=	${XPI_FILES:S.^.${_TD}/.}
-PLIST_DIRS+=	${XPI_DIRS:S.^.${_TD}/.}
-PLIST_DIRS+=	${_TD}
-.endfor
+_TD=		lib/xpi/${XPI_ID}
+_TD_FULL=	${PREFIX}/${_TD}
+_Q=		2>/dev/null || true
+PLIST_FILES_CMD+='@exec for _app in ${XPI_APPS} ; { ${LN} -sf ${_TD_FULL} $$_app ${_Q}; }'
+PLIST_FILES_CMD+='@unexec for _app in ${XPI_APPS} ; { ${RM} -f $$_app/${XPI_ID} ; }'
+PLIST_FILES+=	${XPI_FILES:S!^!${_TD}/!}
+PLIST_FILES+=	${PLIST_FILES_CMD:S/ /%%SPACE%%/g}
+PLIST_DIRS+=	${XPI_DIRS:S!^!${_TD}/!}
+PLIST_DIRS+=	${_TD} lib/xpi
+PLIST_SUB+=	SPACE=" "
 
 do-install:
-.for _TD in ${TARGET_DIRS}
-	@${INSTALL} -d ${PREFIX}/${_TD}
-	@${CP} -Rp ${WRKSRC}/ ${PREFIX}/${_TD}/
+	@${INSTALL} -d ${_TD_FULL}
+	@${CP} -Rp ${WRKSRC}/ ${_TD_FULL}/
 	@if [ -d ${FILESDIR} -a -f ${FILESDIR}/chrome.manifest ] ; \
-		then ${CP} -p ${FILESDIR}/chrome.manifest ${PREFIX}/${_TD}/ ; fi
-.endfor
+		then ${CP} -p ${FILESDIR}/chrome.manifest ${_TD_FULL}/ ; fi
+	@for _app in ${XPI_APPS} ; { ${LN} -sf ${_TD_FULL} $$_app ${_Q} ; }
+
+relink:
+	@-for _app in ${XPI_APPS} ; { ${LN} -sf ${_TD_FULL} $$_app ${_Q} ; }
+
+relink-all:
+	@-for _app in ${XPI_APPS} ; { for _xpi in ${PREFIX}/lib/xpi/\{*\} ; { \
+		${LN} -sf $$_xpi $$_app ${_Q} ; } ; }
 
 # Maintainer section
 xpi-gen:	extract
@@ -79,3 +85,5 @@ xpi-gen:	extract
 	@${ECHO_CMD} -n 'XPI_DIRS='
 	@cd ${WRKSRC} && ${FIND} -ds . -not -name . -type d | cut -f2- -d/ | ${TR} '\n' ' '
 	@${ECHO_CMD}
+
+
