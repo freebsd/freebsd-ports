@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	desktopbsd-tools
-PORTVERSION=	1.0
+PORTVERSION=	1.0.1
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.desktopbsd.net/
 
