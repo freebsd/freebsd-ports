@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	cream
-PORTVERSION=	0.33.1
-PORTREVISION=	1
+PORTVERSION=	0.35
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -78,20 +77,16 @@ CREAM_DOCS=	CHANGELOG.txt COPYING.txt DEVELOPER.txt \
 		TODO.txt WINDOWS.txt
 
 CREAM_HTML=	contribute.html cream.png \
-		downloads.html faq.html favicon.png features.html \
+		faq.html favicon.png features.html \
 		index.html installation.html \
 		keyboardshortcuts.html license.html links.html \
-		maillist.html main.css otherfiles.html \
+		maillists.html main.css \
 		screenshot-popup.png screenshot1-thumb.png screenshot1.png \
 		screenshot2-thumb.png screenshot2.png screenshot3-thumb.png \
 		screenshot3.png screenshot4-thumb.png screenshot4.png \
-		screenshot5-thumb.png screenshot5.png screenshot6-thumb.png \
-		screenshot6.png screenshot7-thumb.png screenshot7.png \
-		screenshot8-thumb.png screenshot8.png screenshots.html \
+		screenshots.html \
 		screenshots1-closeup.html screenshots2-closeup.html \
 		screenshots3-closeup.html screenshots4-closeup.html \
-		screenshots5-closeup.html screenshots6-closeup.html \
-		screenshots7-closeup.html screenshots8-closeup.html \
 		spellcheck.html statusline-closeup.html statusline-thumb.png \
 		statusline.png vim.html
 
