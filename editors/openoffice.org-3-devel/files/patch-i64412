@@ -1,3 +1,4 @@
+cws freebsd06
 Index: config_office/set_soenv.in
 ===================================================================
 RCS file: /cvs/tools/config_office/set_soenv.in,v
