@@ -6,6 +6,6 @@ SHLIB_NAME=	lpty.so
 SRCS=		pty.c %%COMPATDIR%%/compat-5.1.c
 
 CFLAGS+=	-I${PREFIX}/include
-LDFLAGS+=	-lutil
+LDFLAGS+=	-L/usr/lib -lutil
 
 .include <bsd.lib.mk>
