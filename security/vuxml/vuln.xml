@@ -34,6 +34,36 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="79c1154d-d5a5-11da-8098-00123ffe8333">
+    <topic>cacti -- ADOdb "server.php" Insecure Test Script Security Issue</topic>
+    <affects>
+      <package>
+	<name>cacti</name>
+	<range><lt>0.8.6h</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/18276/">
+	  <p>Cacti have a security issue, which can be exploited by malicious
+	    people to execute arbitrary SQL code and potentially compromise a
+	    vulnerable system.</p>
+	  <p>The problem is caused due to the presence of the insecure
+	    "server.php" test script.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://secunia.com/advisories/18276/</url>
+      <url>http://secunia.com/advisories/17418/</url>
+    </references>
+    <dates>
+      <discovery>2006-01-09</discovery>
+      <entry>2006-04-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="dc930435-d59f-11da-8098-00123ffe8333">
     <topic>amaya -- Attribute Value Buffer Overflow Vulnerabilities</topic>
     <affects>
