@@ -29,6 +29,8 @@ LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/libXft \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 
+FORBIDDEN=	http://www.vuxml.org/freebsd/dc930435-d59f-11da-8098-00123ffe8333.html
+
 WRKSRC=		${WRKDIR}/Amaya/obj
 
 USE_GMAKE=	yes
