@@ -20,6 +20,7 @@ MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A template framework for PHP
 
 WRKSRC=		${WRKDIR}/templates
+USE_DOS2UNIX=	yes
 
 USE_PHP=	yes
 USE_PHPIZE=	yes
