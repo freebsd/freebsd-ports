@@ -15,14 +15,14 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Makefile.PL to Build.PL converter
 
-BUILD_DEPENDS=	Test-More:${PORTSDIR}/devel/p5-Test-Simple \
-		Test-Pod:${PORTSDIR}/devel/p5-Test-Pod \
-		Test-Pod-Coverage:${PORTSDIR}/devel/p5-Test-Pod-Coverage
-RUN_DEPENDS=	Data-Dumper:${PORTSDIR}/devel/p5-Data-Dumper \
-		ExtUtils-MakeMaker:${PORTSDIR}/devel/p5-ExtUtils-MakeMaker \
-		File-Spec:${PORTSDIR}/devel/p5-PathTools \
-		File-Slurp:${PORTSDIR}/devel/p5-File-Slurp \
-		File-HomeDir:${PORTSDIR}/devel/p5-File-HomeDir
+BUILD_DEPENDS=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple \
+		${SITE_PERL}/Test/Pod.pm:${PORTSDIR}/devel/p5-Test-Pod \
+		${SITE_PERL}/Test/Pod/Coverage.pm:${PORTSDIR}/devel/p5-Test-Pod-Coverage
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Data/Dumper.pm:${PORTSDIR}/devel/p5-Data-Dumper \
+		${SITE_PERL}/ExtUtils/MakeMaker.pm:${PORTSDIR}/devel/p5-ExtUtils-MakeMaker \
+		${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-PathTools \
+		${SITE_PERL}/File/Slurp.pm:${PORTSDIR}/devel/p5-File-Slurp \
+		${SITE_PERL}/File/HomeDir.pm:${PORTSDIR}/devel/p5-File-HomeDir
 
 PERL_MODBUILD=	yes
 
