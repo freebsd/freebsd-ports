@@ -99,6 +99,7 @@
     SUBDIR += py-twistedWords
     SUBDIR += ruby-xmpp4r
     SUBDIR += sendxmpp
+    SUBDIR += sim-im-devel
     SUBDIR += simicq
     SUBDIR += sulci
     SUBDIR += tik
