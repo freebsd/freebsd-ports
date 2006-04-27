@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gdmap
-PORTVERSION=	0.7.0
-PORTREVISION=	1
+PORTVERSION=	0.7.5
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gdmap
@@ -21,14 +20,13 @@ USE_X_PREFIX=	yes
 USE_GNOME=	gnomeprefix gnomehack gtk20
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 
 MAN1=	gdmap.1
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-BROKEN=	"Doesn't build on FreeBSD < 5.x"
+BROKEN=	Doesn't build on FreeBSD < 5.x
 .endif
 
 post-patch:
