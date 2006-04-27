@@ -7,6 +7,7 @@
 
 PORTNAME=	MailScanner
 PORTVERSION=	4.52.2
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.sng.ecs.soton.ac.uk/mailscanner/files/4/tar/
 DISTNAME=	${PORTNAME}-install-${PORTVERSION}-${PATCHLEVEL}
@@ -62,6 +63,10 @@ MLINKS=		MailScanner.8 mailscanner.8 \
 		MailScanner.conf.5 mailscanner.conf.5
 
 .include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+IGNORE=		dependency requires newer Perl
+.endif
 
 .if defined(WITH_SPAMASSASSIN)
 RUN_DEPENDS+=	spamassassin:${PORTSDIR}/mail/p5-Mail-SpamAssassin
@@ -146,7 +151,8 @@ do-build:
 		${WRKSRC}/bin/update_virus_scanners
 	${PERL} -pi -e \
 		's,/bin/bash,${LOCALBASE}/bin/bash,g; \
-		s,/opt/MailScanner/bin,${PREFIX}/libexec/MailScanner,g;' \
+		s,/opt/MailScanner/bin,${PREFIX}/libexec/MailScanner,g; \
+		s,%%RC_SUBR%%,${RC_SUBR},g;' \
 		${WRKSRC}/bin/cron/update_virus_scanners.cron
 	${PERL} -pi -e \
 		's,/bin/bash,${LOCALBASE}/bin/bash,g; \
@@ -154,7 +160,8 @@ do-build:
 		${WRKSRC}/bin/update_phishing_sites
 	${PERL} -pi -e \
 		's,/bin/bash,${LOCALBASE}/bin/bash,g; \
-		s,/opt/MailScanner/bin,${PREFIX}/libexec/MailScanner,g;' \
+		s,/opt/MailScanner/bin,${PREFIX}/libexec/MailScanner,g; \
+		s,%%RC_SUBR%%,${RC_SUBR},g;' \
 		${WRKSRC}/bin/cron/update_phishing_sites.cron
 	${PERL} -pi -e \
 		's,/etc/MailScanner/MailScanner.conf,${PREFIX}/etc/MailScanner/MailScanner.conf,g;' \
