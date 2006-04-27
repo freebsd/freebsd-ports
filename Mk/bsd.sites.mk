@@ -597,6 +597,27 @@ MASTER_SITE_KDE+=	\
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,X/kde/&,}
 .endif
 
+.if !defined(IGNORE_MASTER_SITE_MOZDEV)
+MASTER_SITE_MOZDEV+= \
+	http://ftp.scarlet.be/pub/mozdev/%SUBDIR%/ \
+	http://ftp.rz.tu-bs.de/pub/mirror/downloads.mozdev.org/%SUBDIR%/ \
+	http://mozdev.dns4.com/%SUBDIR%/ \
+	http://ftp.ntua.gr/pub/www/mozdev/%SUBDIR%/ \
+	http://ftp.heanet.ie/pub/mozdev/%SUBDIR%/ \
+	http://mozdev.oregonstate.edu/%SUBDIR%/ \
+	http://mozdev.xmundo.net/%SUBDIR%/ \
+	http://mirror.meisterwerk.net/rmozdev/%SUBDIR%/ \
+	http://ftp.ntua.gr/pub/www/mozdev/%SUBDIR%/ \
+	http://www.devlib.org/mozdev/%SUBDIR%/ \
+	http://mozdev.archive.hk/%SUBDIR%/ \
+	http://ftp.iasi.roedu.net/mirrors/mozdev.org/%SUBDIR%/ \
+	ftp://mozdev.secsup.org/pub/software/mozdev/%SUBDIR%/ \
+	ftp://ftp.heanet.ie/pub/mozdev/%SUBDIR%/ \
+	ftp://ftp.iasi.roedu.net/pub/mirrors/mozdev.org/%SUBDIR%/ \
+	http://mirrors.ibiblio.org/pub/mirrors/mozdev.org/%SUBDIR%/ \
+	http://ftp.osuosl.org/pub/mozdev/%SUBDIR%/
+.endif
+
 .if !defined(IGNORE_MASTER_SITE_MOZILLA)
 MASTER_SITE_MOZILLA+= \
 	http://ftp.mozilla.org/pub/mozilla.org/%SUBDIR%/ \
