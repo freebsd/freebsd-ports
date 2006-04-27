@@ -6730,6 +6730,7 @@ mrtg-mysql-load	ports/databases/mrtg-mysql-load
 mrtg-ping-probe	ports/net/mrtg-ping-probe
 mrundlg		ports/deskutils/mrundlg
 mrxvt		ports/x11/mrxvt
+mrxvt-devel	ports/x11/mrxvt-devel
 ms-aspell	ports/textproc/ms-aspell
 mscompress	ports/archivers/mscompress
 msend		ports/net/msend
