@@ -35,6 +35,10 @@ OPTIONS=	GRASS "Enable GRASS support" Off \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 500000
+BROKEN=		Does not build on FreeBSD versions prior to 5
+.endif
+
 .if !defined (QTDIR)
 QTDIR=		${X11BASE}
 .endif
