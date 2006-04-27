@@ -34,6 +34,53 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="21c223f2-d596-11da-8098-00123ffe8333">
+    <topic>ethereal -- Multiple Protocol Dissector Vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>ethereal</name>
+	<name>ethereal-lite</name>
+	<name>tethereal</name>
+	<name>tethereal-lite</name>
+	<range><ge>0.8.5</ge><lt>0.99.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/19769/">
+	  <p>Multiple vulnerabilities have been reported in Ethereal, which
+	    can be exploited by malicious people to cause a DoS (Denial of
+	    Service) or compromise a vulnerable system.</p>
+	  <p>The vulnerabilities are caused due to various types of errors
+	    including boundary errors, an off-by-one error, an infinite loop
+	    error, and several unspecified errors in a multitude of protocol
+	    dissectors.</p>
+	  <p>Successful exploitation causes Ethereal to stop responding,
+	    consume a large amount of system resources, crash, or execute
+	    arbitrary code.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.ethereal.com/appnotes/enpa-sa-00023.html</url>
+      <url>http://secunia.com/advisories/19769/</url>
+      <cvename>CVE-2006-1932</cvename>
+      <cvename>CVE-2006-1933</cvename>
+      <cvename>CVE-2006-1934</cvename>
+      <cvename>CVE-2006-1935</cvename>
+      <cvename>CVE-2006-1936</cvename>
+      <cvename>CVE-2006-1937</cvename>
+      <cvename>CVE-2006-1938</cvename>
+      <cvename>CVE-2006-1939</cvename>
+      <cvename>CVE-2006-1940</cvename>
+    </references>
+    <dates>
+      <discovery>2006-04-25</discovery>
+      <entry>2006-04-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8b683bea-d49c-11da-a672-000e0c2e438a">
     <topic>asterisk -- denial of service vulnerability, local system
       access</topic>
