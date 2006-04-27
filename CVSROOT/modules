@@ -3353,6 +3353,7 @@ gone		ports/misc/gone
 gonvert		ports/misc/gonvert
 gonzui		ports/devel/gonzui
 goobox		ports/audio/goobox
+google-ctemplate	ports/textproc/google-ctemplate
 google-sitemapgen	ports/www/google-sitemapgen
 google-sparsehash	ports/devel/google-sparsehash
 googolplex	ports/net/googolplex
