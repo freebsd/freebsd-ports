@@ -18,6 +18,8 @@ COMMENT=	A tabbed version of rxvt
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 
+CONFLICTS=	mrxvt-0.5.*
+
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 
