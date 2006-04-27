@@ -1,0 +1,21 @@
+bin/mrxvt
+share/pixmaps/mrxvt-csh.png
+share/pixmaps/mrxvt-csh.xpm
+share/pixmaps/mrxvt-root.png
+share/pixmaps/mrxvt-root.xpm
+share/pixmaps/mrxvt.png
+share/pixmaps/mrxvt.xpm
+%%EXAMPLESDIR%%/scripts/mrxvtset.pl
+%%EXAMPLESDIR%%/scripts/settitle.c
+%%DOCSDIR%%/README.greek
+%%DOCSDIR%%/README.xvt
+%%DOCSDIR%%/hack-mrxvt.txt
+%%DOCSDIR%%/rxvtRef.txt
+%%DOCSDIR%%/README.menu
+%%DOCSDIR%%/behind_mrxvt.txt
+%%DOCSDIR%%/mrxvt_seq.txt
+%%DOCSDIR%%/xterm-ctlseqs.txt
+@dirrmtry share/pixmaps
+@dirrm %%EXAMPLESDIR%%/scripts
+@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
