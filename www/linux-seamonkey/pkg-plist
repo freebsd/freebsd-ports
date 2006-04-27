@@ -386,6 +386,7 @@ lib/%%BROWSER_NAME%%/plugins/libnullplugin.so
 lib/%%BROWSER_NAME%%/plugins/libunixprintplugin.so
 lib/%%BROWSER_NAME%%/regchrome
 lib/%%BROWSER_NAME%%/regxpcom
+lib/%%BROWSER_NAME%%/regxpcom.log
 lib/%%BROWSER_NAME%%/res/EditorOverride.css
 lib/%%BROWSER_NAME%%/res/arrow.gif
 lib/%%BROWSER_NAME%%/res/arrowd.gif
@@ -459,7 +460,6 @@ lib/%%BROWSER_NAME%%/res/viewsource.css
 lib/%%BROWSER_NAME%%/run-mozilla.sh
 lib/%%BROWSER_NAME%%/seamonkey
 lib/%%BROWSER_NAME%%/seamonkey-bin
-lib/%%BROWSER_NAME%%/seamonkey-config
 lib/%%BROWSER_NAME%%/searchplugins/dmoz.gif
 lib/%%BROWSER_NAME%%/searchplugins/dmoz.src
 lib/%%BROWSER_NAME%%/searchplugins/google.gif
