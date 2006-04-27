@@ -69,7 +69,7 @@ if [ \( "$_mta_osversion" -lt "600101" \) -o \
 	\( \( $_mta_osversion -ge 700000 \) -a \
 		\( $_mta_osversion -lt 700007 \) \) ]
 then
-	$_mta_rc_script="{$_mta_rc_script}.sh"
+	_mta_rc_script="${_mta_rc_script}.sh"
 fi
 
 load_rc_config $name

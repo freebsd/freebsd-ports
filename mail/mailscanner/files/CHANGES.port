@@ -1,6 +1,14 @@
+Version 4.52.2_1
+=================
+- fixed bug in mta.sh script
+- fixed rc.subr reference in update_phishing_sites.cron and 
+  update_virus_scanners.cron --> now dynamically rewritten to correct
+  location
+- Exim 4.61 changed queue file format which was incompatible with 4.52.2 --> patched
+
 Version 4.52.2
 =================
-- Upgrade to MailScanenr 4.52
+- Upgrade to MailScanner 4.52
 
 Version 4.51.5
 =================
