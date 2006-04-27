@@ -51,7 +51,7 @@ SRCBALL_NAME=	${DISTNAME:S/_W$//}_src
 .if !defined(FIXUP_RELEASE)
 post-extract:
 	@( cd ${WRKDIR}/${DISTNAME} ; \
-	EXPMD5=`${GREP} -m 1 MD5 README.${DISTNAME} | ${SED} 's/[ 	]*//'` ; \
+	EXPMD5=`${SED} -n 's/^[[:blank:]]*\(MD5*=*\)/\1/p' README.${DISTNAME}` ; \
 	CALCMD5=`${MD5} ${SRCBALL_NAME}.tar` ; \
 	if [ "$${EXPMD5}"X != "$${CALCMD5}"X ]; then \
 		${ECHO} "Expected and calculated MD5 signatures don't agree." ; \
