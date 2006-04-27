@@ -34,6 +34,41 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="dc930435-d59f-11da-8098-00123ffe8333">
+    <topic>amaya -- Attribute Value Buffer Overflow Vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>amaya</name>
+	<range><lt>9.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/19670/">
+	  <p>Amaya have two vulnerabilities, which can be exploited by
+	    malicious people to compromise a user's system.</p>
+	  <p>The vulnerabilities are caused due to boundary errors within the
+	    parsing of various attribute values. This can be exploited to cause
+	    stack-based buffer overflows when a user opens a specially crafted
+	    HTML document containing certain tags with overly long attribute
+	    values.</p>
+	  <p>Successful exploitation allows execution of arbitrary code.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-1900</cvename>
+      <url>http://morph3us.org/advisories/20060412-amaya-94.txt</url>
+      <url>http://morph3us.org/advisories/20060412-amaya-94-2.txt</url>
+      <url>http://secunia.com/advisories/19670/</url>
+    </references>
+    <dates>
+      <discovery>2006-04-14</discovery>
+      <entry>2006-04-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="116b0820-d59c-11da-8098-00123ffe8333">
     <topic>lifetype -- ADOdb "server.php" Insecure Test Script Security Issue</topic>
     <affects>
