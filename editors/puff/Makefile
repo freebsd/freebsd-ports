@@ -8,7 +8,8 @@
 PORTNAME=	puff
 PORTVERSION=	0.43
 CATEGORIES=	editors
-MASTER_SITES=	http://www.freebsdbrasil.com.br/~jmelo/
+MASTER_SITES=	http://devpit.org/puff/ \
+		http://www.freebsdbrasil.com.br/~jmelo/
 
 MAINTAINER=	jmelo@FreeBSD.org
 COMMENT=	Simple and efficient text editor
