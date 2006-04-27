@@ -1,0 +1,4 @@
+bin/make2build
+%%SITE_PERL%%/Module/Build/Convert.pm
+@dirrmtry %%SITE_PERL%%/Module/Build
+@dirrmtry %%SITE_PERL%%/Module
