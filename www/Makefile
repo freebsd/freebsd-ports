@@ -122,6 +122,7 @@
     SUBDIR += fhttpd
     SUBDIR += firefox
     SUBDIR += firefox-devel
+    SUBDIR += firefox-flp
     SUBDIR += firefox-remote
     SUBDIR += firefox10
     SUBDIR += flashplugin
