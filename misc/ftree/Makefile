@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ftree
-PORTVERSION=	1.9
-PORTREVISION=	2
+PORTVERSION=	2.0
 CATEGORIES=	misc linux
 MASTER_SITES=	http://www.vjet.demon.co.uk/ftree/ \
 		http://www.unknown.nu/ports/
