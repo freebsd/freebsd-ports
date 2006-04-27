@@ -1059,6 +1059,7 @@
     SUBDIR += p5-Memoize-ExpireLRU
     SUBDIR += p5-Mknod
     SUBDIR += p5-Module-Build
+    SUBDIR += p5-Module-Build-Convert
     SUBDIR += p5-Module-CoreList
     SUBDIR += p5-Module-Find
     SUBDIR += p5-Module-Info

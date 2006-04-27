@@ -1,0 +1,11 @@
+Module::Build::Convert - Makefile.PL to Build.PL converter
+
+ExtUtils::MakeMaker has been a de-facto standard for the common
+distribution of Perl modules; Module::Build is expected to supersede
+ExtUtils::MakeMaker in some time (part of the Perl core as of 5.10?)
+
+The transition takes place slowly, as the converting process manually
+achieved is yet an uncommon practice. The Module::Build::Convert
+Makefile.PL parser is intended to ease the transition process.
+
+WWW: http://search.cpan.org/dist/Module-Build-Convert/
