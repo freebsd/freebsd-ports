@@ -137,6 +137,7 @@
     SUBDIR += mgapdesk
     SUBDIR += mlterm
     SUBDIR += mrxvt
+    SUBDIR += mrxvt-devel
     SUBDIR += multi-aterm
     SUBDIR += multi-gnome-terminal
     SUBDIR += mxico
