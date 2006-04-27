@@ -189,6 +189,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Generic_002dFunction-sb_002dbsd_002dsockets_003asocket_002dopen_002dp.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Generic_002dFunction-sb_002dbsd_002dsockets_003asocket_002dpeername.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Generic_002dFunction-sb_002dbsd_002dsockets_003asocket_002dreceive.html
+%%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Generic_002dFunction-sb_002dbsd_002dsockets_003asocket_002dsend.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Generic_002dFunction-sb_002dgray_003astream_002dadvance_002dto_002dcolumn.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Generic_002dFunction-sb_002dgray_003astream_002dclear_002dinput.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Generic_002dFunction-sb_002dgray_003astream_002dclear_002doutput.html
@@ -405,6 +406,8 @@ lib/sbcl/sb-bsd-sockets/split.lisp
 lib/sbcl/sb-bsd-sockets/test-passed
 lib/sbcl/sb-bsd-sockets/tests.fasl
 lib/sbcl/sb-bsd-sockets/tests.lisp
+lib/sbcl/sb-bsd-sockets/win32-constants.lisp
+lib/sbcl/sb-bsd-sockets/win32-sockets.lisp
 lib/sbcl/sb-cltl2/.cvsignore
 lib/sbcl/sb-cltl2/Makefile
 lib/sbcl/sb-cltl2/compiler-let.fasl

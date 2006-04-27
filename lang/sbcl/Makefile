@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sbcl
-PORTVERSION=	0.9.11
+PORTVERSION=	0.9.12
 CATEGORIES=	lang lisp
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sbcl
@@ -28,7 +28,7 @@ LISP_CMD=	""
 BUILD_DEPENDS=	lisp:${PORTSDIR}/lang/cmucl
 LISP_CMD=	"lisp -noinit -batch"
 .else
-BOOT_VERSION=	0.9.9
+BOOT_VERSION=	0.9.11
 .endif
 
 USE_BZIP2=	yes
@@ -44,14 +44,6 @@ INFO=		asdf sbcl
 INFODIR=	${PREFIX}/${INFO_PATH}
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502124
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-contrib_asdf-install_installer.lisp
-.endif
-
-.if ${OSVERSION} >= 600022
-RUN_DEPENDS+=	gtar:${PORTSDIR}/archivers/gtar
-.endif
 
 .if defined(BOOT_VERSION)
 BOOT_ARCH=	${ARCH:S/i386/x86/}
