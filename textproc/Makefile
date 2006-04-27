@@ -144,6 +144,7 @@
     SUBDIR += gnome-translate
     SUBDIR += gnomedocutils
     SUBDIR += gnomespell
+    SUBDIR += google-ctemplate
     SUBDIR += gpp
     SUBDIR += grap
     SUBDIR += gsed
