@@ -5,6 +5,9 @@ share/pixmaps/mrxvt-root.png
 share/pixmaps/mrxvt-root.xpm
 share/pixmaps/mrxvt.png
 share/pixmaps/mrxvt.xpm
+etc/mrxvt/mrxvtrc.sample
+etc/mrxvt/default.menu.sample
+etc/mrxvt/submenus.menu.sample
 %%EXAMPLESDIR%%/scripts/mrxvtset.pl
 %%EXAMPLESDIR%%/scripts/settitle.c
 %%DOCSDIR%%/README.greek
@@ -15,7 +18,7 @@ share/pixmaps/mrxvt.xpm
 %%DOCSDIR%%/behind_mrxvt.txt
 %%DOCSDIR%%/mrxvt_seq.txt
 %%DOCSDIR%%/xterm-ctlseqs.txt
-@dirrmtry share/pixmaps
+@dirrm etc/mrxvt
 @dirrm %%EXAMPLESDIR%%/scripts
 @dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
