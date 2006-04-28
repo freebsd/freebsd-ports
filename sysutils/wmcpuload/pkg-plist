@@ -1,4 +1,0 @@
-bin/wmcpuload
-%%PORTDOCS%%share/doc/wmcpuload/ChangeLog
-%%PORTDOCS%%share/doc/wmcpuload/README
-%%PORTDOCS%%@dirrm share/doc/wmcpuload
