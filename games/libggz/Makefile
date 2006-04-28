@@ -7,12 +7,12 @@
 #
 
 PORTNAME=	libggz
-PORTVERSION=	0.0.12
-PORTREVISION=	2
+PORTVERSION=	0.0.13
 CATEGORIES=	games
 MASTER_SITES=	http://mirrors.dotsrc.org/ggzgamingzone/ggz/%SUBDIR%/ \
 		http://ftp.ggzgamingzone.org/pub/ggz/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTVERSION}
+DIST_SUBDIR=	ggz
 
 MAINTAINER=	yinjieh@csie.nctu.edu.tw
 COMMENT=	The GGZ Gaming Zone - Base Library
@@ -36,4 +36,10 @@ USE_OPENSSL=	yes
 CONFIGURE_ARGS+=	--with-tls=OpenSSL
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		does not compile
+.endif
+
+.include <bsd.port.post.mk>
