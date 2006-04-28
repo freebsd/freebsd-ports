@@ -1,5 +1,6 @@
 @comment $FreeBSD$
 bin/wxmaxima
+share/locale/de/LC_MESSAGES/wxMaxima.mo
 share/locale/es/LC_MESSAGES/wxMaxima.mo
 share/locale/fr/LC_MESSAGES/wxMaxima.mo
 share/locale/it/LC_MESSAGES/wxMaxima.mo
