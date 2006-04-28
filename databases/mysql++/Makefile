@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	mysql++
-PORTVERSION=	2.0.7
-PORTREVISION=	1
+PORTVERSION=	2.1.1
+PORTREVISION=	0
 CATEGORIES=	databases devel
 MASTER_SITES=	http://tangentsoft.net/mysql++/releases/
 PKGNAMESUFFIX=	-mysql${MYSQL_VER}
@@ -15,15 +15,19 @@ PKGNAMESUFFIX=	-mysql${MYSQL_VER}
 MAINTAINER=	sergey@network-asp.biz
 COMMENT=	Complex C++ API for MySQL${MYSQL_VER}
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
-
 USE_MYSQL=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS=	--with-mysql=${LOCALBASE} --disable-examples
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
 
+USE_GMAKE=      yes
+
 CONFLICTS=	${PORTNAME}*-1.*
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	*
+.endif
 
 .include <bsd.port.pre.mk>
 
@@ -32,6 +36,8 @@ USE_GCC=	3.4
 .endif
 
 post-install:
+	@${RM} -f ${PREFIX}/lib/libmysqlpp.so.3
+	@${LN} -s ${PREFIX}/lib/libmysqlpp.so ${PREFIX}/lib/libmysqlpp.so.3
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}/userman/html ${DOCSDIR}/refman/html
 	@${INSTALL_DATA} ${WRKSRC}/doc/userman/html/* ${DOCSDIR}/userman/html
