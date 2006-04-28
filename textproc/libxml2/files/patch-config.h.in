@@ -4,7 +4,7 @@
  /* config.h.in.  Generated from configure.in by autoheader.  */
 +
 +/* XXX */
-+#define GAVE_VFSCANF
++#define HAVE_VFSCANF
 +
  #undef PACKAGE
  #undef VERSION
