@@ -16,6 +16,7 @@ COMMENT=	A C++ library of common design patterns
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_GCC=	3.4+
 
 DOCS=		README CHANGES doc/html/* doc/flex/* doc/yasli/*
 
