@@ -7,7 +7,7 @@
 
 PORTNAME=	avahi
 PORTVERSION=	0.6.9
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES=	net dns
 MASTER_SITES=	http://www.avahi.org/download/
 
@@ -24,7 +24,7 @@ USE_GMAKE=	yes
 USE_AUTOTOOLS=  libtool:15
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS?=--with-distro=freebsd \
-		--with-dbus-system-address=unix:path=/var/run/dbus.pipe \
+		--with-dbus-system-address=unix:path=/var/run/dbus/dbus.pipe \
 		--disable-qt3 \
 		--disable-qt4 \
 		--disable-python \
