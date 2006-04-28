@@ -6,20 +6,22 @@
 #
 
 PORTNAME=	wmfire
-PORTVERSION=	0.0.3.9
+PORTVERSION=	1.2.3
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR= jedgar
-DISTNAME=	wmfire-0.0.3.9pre4
+MASTER_SITES=	http://www.swanson.ukfsn.org/wmfire/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Window Maker dock app showing load average as a flame
 
+LIB_DEPENDS=	gtop-2.0.2:${PORTSDIR}/devel/libgtop2
+
 USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_GNOME=	gnometarget gtk20
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-x
-CONFIGURE_ENV=	CFLAGS="-I${PREFIX}/include ${CFLAGS}" \
-		LIBS="-L${PREFIX}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+
+MAN1=		wmfire.1
+PLIST_FILES=	bin/wmfire
 
 .include <bsd.port.mk>
