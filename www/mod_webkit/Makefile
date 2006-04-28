@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mod_webkit
-PORTVERSION=	0.9
+PORTVERSION=	0.9.1
 CATEGORIES=	www
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -17,7 +17,6 @@ COMMENT=	A apache module for WebWare WebKit AppServer
 PATCH_DEPENDS=	${NONEXISTENT}:${WEBWARE_PORT}:extract
 
 USE_APACHE=	13
-USE_REINPLACE=	yes
 
 WEBWARE_PORT=	${PORTSDIR}/www/py-webware
 WRKSRC=		${WRKDIR}/../../../www/py-webware/work/Webware-${PORTVERSION}/WebKit/Adapters/${PORTNAME}
