@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	Locale-Maketext-Simple
-PORTVERSION=	0.13
+PORTVERSION=	0.14
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Locale
+MASTER_SITE_SUBDIR=	../../authors/id/A/AU/AUTRIJUS
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	rafan@infor.org
@@ -19,10 +19,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Locale::Maketext::Simple.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=		requires Perl 5.6.x or later. Install lang/perl5 then try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
