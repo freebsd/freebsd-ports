@@ -1,0 +1,8 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Flock (Linux binary)
+Exec=linux-flock %U
+StartupNotify=false
+Type=Application
+Categories=Application;Network;
+MimeType=text/html;text/xml;application/xthml+xml;
