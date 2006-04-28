@@ -1,0 +1,19 @@
+--- Makefile.orig	Wed Apr 12 19:46:10 2006
++++ Makefile	Fri Apr 28 02:48:06 2006
+@@ -156,6 +156,16 @@
+ 	@echo FFLAGS = \${CFLAGS}               >> Makefile.incl
+ 	@echo RM = /bin/rm -f                 >> Makefile.incl
+ 
++freebsd:	strip-for-g77
++	@cp Makefile.template Makefile.incl
++	@echo OS = freebsd                    >> Makefile.incl
++	@echo CC = ${CC}                      >> Makefile.incl
++	@echo CFLAGS = ${CFLAGS}              >> Makefile.incl
++	@echo FC = f77                        >> Makefile.incl
++	@echo FFLAGS = ${FFLAGS}              >> Makefile.incl
++	@echo RM = /bin/rm -f                 >> Makefile.incl
++	@echo OSDEFS =  -DLINUX -DNETWORKBYTEORDER       >> Makefile.incl
++	@echo include Makefile.package        >> Makefile.incl
+ 
+ strip-for-g77: render.f.bak normal3d.f.bak rastep.f.bak
+ render.f.bak:
