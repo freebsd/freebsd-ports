@@ -7,7 +7,7 @@
 
 PORTNAME?=	xscreensaver-gnome
 PORTVERSION=	4.24
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	x11 gnome
 MASTER_SITES=	http://www.jwz.org/xscreensaver/
 DISTNAME=	xscreensaver-${PORTVERSION}
@@ -24,6 +24,7 @@ USE_XPM=	yes
 USE_GL=		yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
+USE_PERL5_RUN=	yes
 USE_GNOME=	gnomehier libglade2 gnomehack
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gl --with-gle --with-xpm --with-xml \
