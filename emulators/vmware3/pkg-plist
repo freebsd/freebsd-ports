@@ -1,4 +1,5 @@
 bin/vmware
+bin/vmware-wizard
 etc/rc.d/001.vmware.sh
 lib/vmware/modules/vmmon_smp.ko
 %%FREEBSD5%%lib/vmware/modules/linker.hints
@@ -303,14 +304,14 @@ lib/vmware/smb/codepages/codepage.932
 lib/vmware/smb/codepages/codepage.936
 lib/vmware/smb/codepages/codepage.949
 lib/vmware/smb/codepages/codepage.950
-share/doc/vmware/ChangeLog.FreeBSD
-share/doc/vmware/MultipleInstances.FreeBSD
-share/doc/vmware/Hints.FreeBSD
-share/doc/vmware/README.FreeBSD
-share/doc/vmware/open_source_licenses.txt
-share/doc/vmware/EULA
-share/doc/vmware/INSTALL
-share/doc/vmware/README
+%%DOCSDIR%%/ChangeLog.FreeBSD
+%%DOCSDIR%%/MultipleInstances.FreeBSD
+%%DOCSDIR%%/Hints.FreeBSD
+%%DOCSDIR%%/README.FreeBSD
+%%DOCSDIR%%/open_source_licenses.txt
+%%DOCSDIR%%/EULA
+%%DOCSDIR%%/INSTALL
+%%DOCSDIR%%/README
 @exec mkdir -p %%LINUXBASE%%/dev;for n in 0 1 2 3 4 5 6 7 8 9; do ln -s /dev/ttyv$n %%LINUXBASE%%/dev/tty$n;done
 @exec ln -s /dev/ttyva %%LINUXBASE%%/dev/tty10
 @exec ln -s /dev/ttyvb %%LINUXBASE%%/dev/tty11
@@ -335,4 +336,4 @@ share/doc/vmware/README
 @dirrm lib/vmware/smb/codepages
 @dirrm lib/vmware/smb
 @dirrm lib/vmware
-@dirrm share/doc/vmware
+@dirrm %%DOCSDIR%%

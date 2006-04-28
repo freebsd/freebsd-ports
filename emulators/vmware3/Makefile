@@ -7,7 +7,7 @@
 
 PORTNAME=	vmware3
 PORTVERSION=	3.2.1.2242
-PORTREVISION=	12
+PORTREVISION=	13
 PORTEPOCH=	1
 CATEGORIES=	emulators linux
 MASTER_SITES=	http://download3.vmware.com/software/wkst/:vmware \
@@ -24,7 +24,7 @@ COMMENT=	A virtual machine emulator - a full PC in a window
 
 RUN_DEPENDS=	/dev/rtc:${PORTSDIR}/emulators/rtc
 
-RESTRICTED=	"Not sure if we can redistribute it"
+RESTRICTED=	Not sure if we can redistribute it
 
 VMWARE_MIRROR_SITES=	\
 		http://vmware-svca.www.conxion.com/software/:vmware \
@@ -49,15 +49,15 @@ MODULES=	vmmon vmnet
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 480102
-IGNORE=		"Systems prior to FreeBSD 480102 currently out of support"
+IGNORE=		systems prior to FreeBSD 480102 currently out of support
 .endif
 
 .if !defined(HAVE_LINPROCFS) && !exists(/modules/linprocfs.ko) && !exists(/boot/kernel/linprocfs.ko) && !exists(${PREFIX}/modules/linprocfs.ko) && !exists(/compat/linux/proc/version)
-IGNORE=		"linprocfs is required, please build the module and/or add it to your kernel"
+IGNORE=		linprocfs is required, please build the module and/or add it to your kernel
 .endif
 
 .if !exists(${SRC_BASE}/Makefile)
-IGNORE=		"Kernel source files required"
+IGNORE=		kernel source files required
 .endif
 
 .if ${OSVERSION} < 500023
@@ -152,6 +152,13 @@ setoptions:
 		-e 's;@@LINUXBASE@@;${LINUXBASE};' \
 		${FILESDIR}/vmware > ${WRKDIR}/vmware
 
+	 ${SED}  -e 's;@@PREFIX@@;${PREFIX};' \
+		 -e 's;@@LINUXBASE@@;${LINUXBASE};' \
+		${FILESDIR}/vmware-wizard > ${WRKDIR}/vmware-wizard
+
+	${SED}  -e 's;@@PREFIX@@;${PREFIX};' \
+		${FILESDIR}/pkg-message.in > ${PKGMESSAGE}
+
 pre-install: setoptions
 	${INSTALL_MAN} ${WRKSRC}/man/man1/vmware.1 ${MANPREFIX}/man/man1
 	${MKDIR} ${VMDIR}/modules
@@ -197,6 +204,7 @@ pre-install: setoptions
 		${VMDIR}/licenses/user
 	${INSTALL_SCRIPT} -m 4555 ${WRKSRC}/bin/vmware ${VMDIR}/bin
 	${INSTALL_SCRIPT} ${WRKDIR}/vmware ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKDIR}/vmware-wizard ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/lib/config ${VMDIR}
 	${MKDIR} ${VMDIR}/help
 	${INSTALL_DATA} ${WRKSRC}/lib/help/* ${VMDIR}/help
@@ -214,10 +222,10 @@ pre-install: setoptions
 	${MKDIR} ${VMDIR}/messages/jive
 	${INSTALL_DATA} ${WRKSRC}/lib/messages/jive/* ${VMDIR}/messages/jive
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/vmware
-	${INSTALL_DATA} ${WRKSRC}/doc/* ${PREFIX}/share/doc/vmware
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
 .for f in README.FreeBSD Hints.FreeBSD MultipleInstances.FreeBSD ChangeLog.FreeBSD
-	${INSTALL_DATA} ${FILESDIR}/${f} ${PREFIX}/share/doc/vmware
+	${INSTALL_DATA} ${FILESDIR}/${f} ${DOCSDIR}
 .endfor
 .endif
 
