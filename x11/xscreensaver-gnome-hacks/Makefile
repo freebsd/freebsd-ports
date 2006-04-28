@@ -6,6 +6,7 @@
 #
 
 PORTNAME=	xscreensaver-gnome-hacks
+PORTREVISION=	1
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Screensaver modules for use with xscreensaver and gnome-screensaver
@@ -19,6 +20,10 @@ CONFLICTS=	xscreensaver-[0-9]* xscreensaver-gnome-[0-9]*
 OPTIONS=	ALL_FORTUNES "Enable support for all fortunes" off
 
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-nodriver
+
+SS_SCRIPTS=	xscreensaver-getimage-desktop xscreensaver-getimage-file \
+		xscreensaver-getimage xscreensaver-getimage-video \
+		xscreensaver-text
 
 MAN1=	anemone.1 apollonian.1 atlantis.1 attraction.1 blaster.1 \
 	blitspin.1 bouboule.1 boxed.1 braid.1 bsod.1 bubble3d.1 bubbles.1 \
@@ -53,6 +58,21 @@ MAN1=	anemone.1 apollonian.1 atlantis.1 attraction.1 blaster.1 \
 	intermomentary.1 pinion.1 substrate.1 boing.1 boxfit.1 carousel.1 \
 	antmaze.1 crackberg.1 interaggregate.1 tangram.1 celtic.1 \
 	cube21.1 glhanoi.1 juggler3d.1 timetunnel.1 \
-	fiberlamp.1 fliptext.1 xscreensaver-gl-helper.1
+	fiberlamp.1 fliptext.1 xscreensaver-gl-helper.1 \
+	xscreensaver-getimage-desktop.1 xscreensaver-getimage-file.1 \
+	xscreensaver-getimage-video.1 xscreensaver-getimage.1 \
+	xscreensaver-text.1
+
+post-build:
+	@cd ${WRKSRC}/driver && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
+		Makefile ${MAKE_ARGS} xscreensaver-getimage
+
+post-install:
+	${MKDIR} ${PREFIX}/bin
+.for sf in ${SS_SCRIPTS}
+	${INSTALL_SCRIPT} ${WRKSRC}/driver/${sf} ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/driver/${sf}.man \
+		${MAN1PREFIX}/man/man1/${sf}.1
+.endfor
 
 .include "${MASTERDIR}/Makefile"
