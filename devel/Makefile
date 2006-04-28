@@ -570,6 +570,7 @@
     SUBDIR += log4cxx
     SUBDIR += log4j
     SUBDIR += log4sh
+    SUBDIR += loki
     SUBDIR += looks
     SUBDIR += lrmi
     SUBDIR += lua50-app
