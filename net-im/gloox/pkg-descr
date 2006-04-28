@@ -1,0 +1,8 @@
+gloox is a full-featured Jabber/XMPP client without GUI, written
+in C++ and implemented as a shared library. It makes writing
+spec-compliant clients easy and allows for hassle-free integration
+of Jabber/XMPP functionality into extisting applications. gloox
+is released under the GNU GPL. Commercial licensing and support
+are available.
+
+WWW: http://camaya.net/gloox

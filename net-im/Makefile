@@ -32,6 +32,7 @@
     SUBDIR += gale
     SUBDIR += gicq
     SUBDIR += ginsu
+    SUBDIR += gloox
     SUBDIR += gnome-jabber
     SUBDIR += gnomeicu2
     SUBDIR += gossip
