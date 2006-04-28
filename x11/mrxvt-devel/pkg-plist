@@ -18,7 +18,7 @@ etc/mrxvt/submenus.menu.sample
 %%DOCSDIR%%/behind_mrxvt.txt
 %%DOCSDIR%%/mrxvt_seq.txt
 %%DOCSDIR%%/xterm-ctlseqs.txt
-@dirrm etc/mrxvt
+@dirrmtry etc/mrxvt
 @dirrm %%EXAMPLESDIR%%/scripts
 @dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
