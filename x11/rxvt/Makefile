@@ -21,6 +21,8 @@ MASTER_SITE_SUBDIR=	. old devel
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	A low memory usage xterm replacement that supports color
 
+FETCH_DEPENDS=	wget:${PORTSDIR}/ftp/wget
+
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 GNU_CONFIGURE=	yes
@@ -29,6 +31,13 @@ CONFIGURE_ARGS=	--enable-utmp --enable-wtmp \
 USE_BZIP2=	yes
 MAN1=		rxvt.1
 PLIST_FILES=	bin/rxvt
+
+# fetch(1) is misbehaving with these MASTER_SITES
+FETCH_CMD=	${LOCALBASE}/bin/wget
+FETCH_REGET=	0
+DISABLE_SIZE=	yes
+FETCH_BEFORE_ARGS=
+FETCH_AFTER_ARGS=
 
 # enable big5 support
 .if defined(WITH_BIG5)

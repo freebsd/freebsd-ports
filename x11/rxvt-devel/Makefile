@@ -22,6 +22,8 @@ DISTNAME=	rxvt-${PORTVERSION}
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	A low memory usage xterm replacement that supports color
 
+FETCH_DEPENDS=	wget:${PORTSDIR}/ftp/wget
+
 USE_PERL5_BUILD=yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
@@ -33,6 +35,13 @@ INSTALLS_SHLIB=	yes
 USE_BZIP2=	yes
 
 MAN1=		rxvt.1
+
+# fetch(1) is misbehaving with these MASTER_SITES
+FETCH_CMD=	${LOCALBASE}/bin/wget
+FETCH_REGET=	0
+DISABLE_SIZE=	yes
+FETCH_BEFORE_ARGS=
+FETCH_AFTER_ARGS=
 
 # disable backspace key
 .if defined(WITHOUT_BACKSPACE_KEY)
