@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hash
-DISTVERSION=	1.2
+DISTVERSION=	1.3
 CATEGORIES=	security www
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
