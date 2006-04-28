@@ -27,7 +27,7 @@ LATEST_LINK=	rat30
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 501000
+.if ${OSVERSION} >= 700000
 BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
 .endif
 
