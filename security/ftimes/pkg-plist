@@ -10,6 +10,7 @@
 %%HASHDIG_TOOLS%%bin/hashdig-resolve-sunsolve.pl
 %%HASHDIG_TOOLS%%bin/hashdig-stat.pl
 %%HASHDIG_TOOLS%%bin/hashdig-weed.pl
+%%MAP_TOOLS%%bin/ftimes-cmp2dbi.pl
 %%MAP_TOOLS%%bin/ftimes-map2dbi.pl
 %%MAP_TOOLS%%bin/ftimes-map2mac.pl
 bin/ftimes
@@ -18,4 +19,3 @@ etc/diglean.cfg.sample
 etc/get.cfg.sample
 etc/mapfull.cfg.sample
 etc/maplean.cfg.sample
-etc/put.cfg.sample
