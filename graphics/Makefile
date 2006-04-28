@@ -356,6 +356,7 @@
     SUBDIR += lphoto
     SUBDIR += makehuman
     SUBDIR += mapserver
+    SUBDIR += mapyrus
     SUBDIR += maverik
     SUBDIR += megapov
     SUBDIR += mesa-demos
