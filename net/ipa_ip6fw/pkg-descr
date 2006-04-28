@@ -9,7 +9,7 @@ Main features:
   Firewall rules byte counters;
 - It is possible to distinguish IPv6 Firewall rules with the same
   numbers;
-- IPv6 Firewall rules can be dynamically added to and removed from
+- IPv6 Firewall rules can be dynamically added to and deleted from
   the system, the module correctly works in such situations.
 
 WWW: http://ipa-system.sourceforge.net/modules/ipa_ip6fw/
