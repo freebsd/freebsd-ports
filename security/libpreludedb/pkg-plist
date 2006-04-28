@@ -60,6 +60,9 @@ share/aclocal/libpreludedb.m4
 %%PORTDOCS%%%%DOCSDIR%%/style.css
 %%PORTDOCS%%%%DOCSDIR%%/up.png
 %%PORTDOCS%%%%DOCSDIR%%/libpreludedb.devhelp2
+%%WITH_MYSQL%%@dirrmtry lib/libpreludedb/plugins/sql
+%%WITH_PGSQL%%@dirrmtry lib/libpreludedb/plugins/sql
+%%WITH_SQLITE%%@dirrmtry lib/libpreludedb/plugins/sql
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/classic
 @dirrm %%DATADIR%%
