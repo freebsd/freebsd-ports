@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	rssyl
-PORTVERSION=	0.3
+DISTVERSION=	0.4cvs6
 CATEGORIES=	mail
-MASTER_SITES=	http://ticho.yweb.sk/rssyl/ \
-		${MASTER_SITE_GENTOO}
+MASTER_SITES=	http://claws.sylpheed.org/downloads/plugins/
 MASTER_SITE_SUBDIR=	distfiles
 
 MAINTAINER=	v.velox@vvelox.net
@@ -19,11 +18,8 @@ LIB_DEPENDS=	curl.3:${PORTSDIR}/ftp/curl
 BUILD_DEPENDS=	sylpheed-claws:${PORTSDIR}/mail/sylpheed-claws
 RUN_DEPENDS=	sylpheed-claws:${PORTSDIR}/mail/sylpheed-claws
 
-BROKEN=		Does not compile
-
 USE_X_PREFIX=	yes
 USE_AUTOTOOLS=	autoconf:259
-USE_REINPLACE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/100\.93/100/' ${WRKSRC}/configure.ac
