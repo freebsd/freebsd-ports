@@ -7,7 +7,7 @@
 
 PORTNAME=	smpeg
 PORTVERSION=	0.4.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia
 MASTER_SITES=	ftp://sunsite.auc.dk/pub/os/linux/loki/open-source/smpeg/ \
 		${MASTER_SITE_GENTOO}
@@ -17,7 +17,6 @@ MAINTAINER=	acardenas@bsd.org.pe
 COMMENT=	A free MPEG1 video player library with sound support
 
 WANT_GNOME=	yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_SDL=	sdl
@@ -37,8 +36,10 @@ MAN1=		gtv.1 plaympeg.1
 
 .if ${HAVE_GNOME:Mgtk12}!=""
 USE_GNOME+=	gtk12
+PLIST_SUB+=	GNOME=""
 .else
 CONFIGURE_ARGS+=	--disable-gtk-player
+PLIST_SUB+=	GNOME="@comment "
 .endif
 
 post-patch:
