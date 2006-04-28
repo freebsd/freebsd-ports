@@ -35,8 +35,9 @@ PLIST_FILES=	include/huti_defs.h include/huti_fdefs.h lib/libhuti.a
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"
 CFLAGS+=	-fPIC
 FFLAGS+=	-fPIC
+
 post-configure:
-	@${REINPLACE_CMD} -e 's+-O +-O -fPIC+g;' ${WRKSRC}/src/Makefile
+	@${REINPLACE_CMD} -e 's+-O +-O -fPIC +g;' ${WRKSRC}/src/Makefile
 
 .endif
 
