@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Thunderbird (Linux binary)
+GenericName=Mail Client
+Comment=Mail client and News Reader
+Exec=linux-thunderbird %U
+Icon=thunderbird
+StartupNotify=false
+Terminal=false
+Type=Application
+Categories=Application;Network;
