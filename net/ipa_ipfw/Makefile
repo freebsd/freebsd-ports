@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	ipa_ipfw
-PORTVERSION=	1.0
+PORTVERSION=	1.0.1
 CATEGORIES=	net
 MASTER_SITES=	http://ipa-system.sourceforge.net/modules/ipa_ipfw/
 
 MAINTAINER=	simon@comsys.ntu-kpi.kiev.ua
 COMMENT=	IPA accounting module for FreeBSD IP Firewall
 
-NO_PACKAGE=	"Needs to be built uniquely for each host"
+NO_PACKAGE=	Needs to be built uniquely for each host
 
 USE_BZIP2=	yes
 
@@ -24,7 +24,7 @@ OPTIONS=	PTHREAD "Build pthread safe module" off \
 
 .include <bsd.port.pre.mk>
 
-.ifdef WITH_PTHREAD
+.if defined(WITH_PTHREAD)
 MAKE_ENV+=	WITH_PTHREAD=yes
 CFLAGS+=	${PTHREAD_CFLAGS}
 .endif
@@ -35,26 +35,25 @@ MAKE_ENV+=	IPFW2=yes
 . endif
 .endif
 
-.ifdef WITHOUT_DEBUG_INFO
+.if !defined(WITH_DEBUG_INFO)
 MAKE_ENV+=	DEBUG_FLAGS=""
 .endif
 
-BUILD_DEPENDS=	${PREFIX}/include/ipa_mod.h:${PORTSDIR}/sysutils/ipa
+BUILD_DEPENDS+=	${PREFIX}/include/ipa_mod.h:${PORTSDIR}/sysutils/ipa
 
 PLIST_FILES=	lib/ipa_ipfw.so
 
 MANCOMPRESSED=	yes
 MAN8=		ipa_ipfw.8
 MANLANG=	""
-.ifdef WITH_MAN_KOI8_R
+.if defined(WITH_MAN_KOI8_R)
 MANLANG+=	ru.KOI8-R
 .endif
 
 do-install:
-	cd ${WRKSRC} && make install
-	echo ${MANLANG}
-.ifdef WITH_MAN_KOI8_R
-	cd ${WRKSRC}/man && make LANG_DIR_SRC=ru.KOI8-R clean all install
+	cd ${WRKSRC} && ${MAKE} install
+.if defined(WITH_MAN_KOI8_R)
+	cd ${WRKSRC}/man && ${MAKE} LANG_DIR_SRC=ru.KOI8-R clean all install
 .endif
 
 .include <bsd.port.post.mk>
