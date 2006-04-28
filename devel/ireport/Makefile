@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ireport
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
 CATEGORIES=	devel databases java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -33,24 +33,22 @@ PLIST_SUB=	VER=${PORTVERSION} VERMAN=0.2.0
 
 JARFILES=	LICENSE.asm-attr.txt LICENSE.asm.txt LICENSE.barbecue-1.1.txt	\
 		LICENSE.jta.txt asm-attrs.jar asm.jar barbecue-1.1.jar		\
-		cglib-2.1.jar ehcache-1.1.jar groovy-all-1.0-beta-10.jar	\
-		hibernate3.jar iReport.jar jdt-compiler.jar			\
-		jr-bsh-compiler.jar jr-groovy-compiler.jar			\
-		jsmoothgen-ant-0.9.7.jar jta.jar jxl.jar pngencoder.jar		\
-		toniclf.jar
+		cglib-2.1.jar commons-javaflow-20060411.jar ehcache-1.1.jar	\
+		groovy-all-1.0-beta-10.jar hibernate3.jar iReport.jar		\
+		jdt-compiler.jar jr-bsh-compiler.jar jsmoothgen-ant-0.9.7.jar	\
+		jta.jar jxl.jar nsisant-1.1.jar png-encoder-1.5.jar toniclf.jar
 BASEFILES=	Changelog.txt notice.txt relnotes${PORTVERSION}.html
 SUBDIRS=	fonts plugins templates
 
 # Jarfiles to be included in classpath
-CLSSPTH=	antlr asm-attrs asm.jar barbecue-1.1 bsh cglib-2.1	\
-		commons-beanutils commons-collections commons-digester	\
-		commons-logging commons-logging-api dom4j ehcache-1.1	\
-		groovy-all-1.0-beta-10 hibernate3 iReport itext		\
-		jasperreports jcmdline jcommon jdt-compiler		\
-		jfreechart jr-bsh-compiler jr-groovy-compiler		\
-		jsmoothgen-ant-0.9.7 jta jxl log4j looks		\
-		mysql-connector-java pngencoder poi postgresql tinylaf	\
-		toniclf xalan xercesImpl xml-apis ${CLSSHSQLDB}
+CLSSPTH=	antlr asm-attrs asm barbecue-1.1 bsh cglib-2.1 commons-beanutils\
+		commons-collections commons-digester commons-javaflow-20060411	\
+		commons-logging commons-logging-api dom4j ehcache-1.1		\
+		groovy-all-1.0-beta-10 hibernate3 iReport itext	jasperreports	\
+		jcmdline jcommon jdt-compiler jfreechart jr-bsh-compiler	\
+		jsmoothgen-ant-0.9.7 jta jxl log4j looks mysql-connector-java	\
+		nsisant-1.1 png-encoder-1.5 poi postgresql tinylaf toniclf xalan\
+		xercesImpl xml-apis ${CLSSHSQLDB}
 
 .if !defined(NOPORTDOCS)
 SUBDIRS+=	docs
