@@ -15,12 +15,21 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	apeiron@comcast.net
 COMMENT=	Call module plugins in a specified order
 
-BUILD_DEPENDS=	${SITE_PERL}/Module/Pluggable.pm:${PORTSDIR}/devel/p5-Module-Pluggable \
-		${SITE_PERL}/UNIVERSAL/require.pm:${PORTSDIR}/devel/p5-UNIVERSAL-exports
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${SITE_PERL}/Module/Pluggable.pm:${PORTSDIR}/devel/p5-Module-Pluggable \
+		${SITE_PERL}/UNIVERSAL/require.pm:${PORTSDIR}/devel/p5-UNIVERSAL-require
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS+=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
 
 PERL_CONFIGURE=	yes
 
 MAN3=		Module::Pluggable::Ordered.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathTools
+post-configure:
+	${PERL} -pi -e 's/-I\S+PERL\S+ //g if m{PERL_DL_NONLAZY}' ${WRKSRC}/Makefile
+.endif
+
+.include <bsd.port.post.mk>
