@@ -5983,6 +5983,7 @@ linux-sun-jdk13	ports/java/linux-sun-jdk13
 linux-sun-jdk14	ports/java/linux-sun-jdk14
 linux-sun-jdk15	ports/java/linux-sun-jdk15
 linux-sunbird	ports/deskutils/linux-sunbird
+linux-thunderbird	ports/mail/linux-thunderbird
 linux-tiff	ports/graphics/linux-tiff
 linux-unace	ports/archivers/linux-unace
 linux-ungif	ports/graphics/linux-ungif
