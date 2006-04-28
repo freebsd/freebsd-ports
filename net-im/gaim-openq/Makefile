@@ -7,11 +7,15 @@
 
 PORTNAME=	openq
 PORTVERSION=	0.3.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	net-im
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=	gaim-
+
+PATCH_SITES=	ftp://local-distfiles.freebsd.org.cn/pub/china-ports/hamigua/
+PATCHFILES=	openq-0.3.2.qq2006.group.patch.gz
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	hamigua@hotpop.com
 COMMENT=	A QQ-liked protocol plugin for Gaim
