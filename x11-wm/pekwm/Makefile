@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	pekwm
-PORTVERSION=	20060222
+PORTVERSION=	20060417
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://bsd-unix.org/downloads/ \
 		http://pekwm.org/files/
-DISTNAME=	${PORTNAME}-0.1.4
+DISTNAME=	${PORTNAME}-0.1.5
 
 MAINTAINER=	xcas@cox.net
 COMMENT=	A windowmanager based on aewm++
@@ -25,13 +25,11 @@ USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 
-MAN1=		pekwm.1
-
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--enable-shape --enable-xinerama --enable-xrandr \
 		--enable-xft --disable-pcre --enable-image-xpm \
-		--enable-image-jpeg  --enable-image-png --disable-debug \
+		--enable-image-jpeg --enable-image-png --disable-debug \
 		--disable-pedantic --enable-menus --enable-harbour
 
 post-install:
