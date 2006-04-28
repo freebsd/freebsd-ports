@@ -9,24 +9,30 @@ PORTNAME=	wmcpuload
 PORTVERSION=	1.0.1
 PORTREVISION=	1
 CATEGORIES=	sysutils windowmaker
-MASTER_SITES=	http://www.sh.rim.or.jp/~ssato/src/
+MASTER_SITES=	http://seiichisato.jp/dockapps/src/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An "lcd" dockapp for windowmaker, which displays the current cpuload
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-GNU_CONFIGURE=	yes
 USE_XPM=	yes
-CONFIGURE_ARGS=	--program-prefix=""
+USE_GNOME=	gnometarget
+GNU_CONFIGURE=	yes
 
 MAN1=		wmcpuload.1
+PORTDOCS=	ChangeLog README
+PLIST_FILES=	bin/wmcpuload
+
+post-patch:
+	@${REINPLACE_CMD} -e '/^DEFS/s|-I\.\.$$|-I.. -I../libdockapp/|g ; \
+		 /^CFLAGS/s|-I../libdockapp/||g' ${WRKSRC}/src/Makefile.in
 
 post-install:
-.ifndef(NOPORTDOCS)
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in ChangeLog README
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.for file in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif # !NOPORTDOCS
 
