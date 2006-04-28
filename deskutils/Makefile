@@ -133,6 +133,7 @@
     SUBDIR += rox-memo
     SUBDIR += rubrica
     SUBDIR += sliderule
+    SUBDIR += snotes
     SUBDIR += splashsetter
     SUBDIR += sugarcrm
     SUBDIR += sunbird
