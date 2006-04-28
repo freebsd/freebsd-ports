@@ -6,22 +6,29 @@
 #
 
 PORTNAME=	nevow
-PORTVERSION=	0.4.1
+PORTVERSION=	0.8.0
 CATEGORIES=	www python devel
-MASTER_SITES=	http://nevow.com/releases/${PORTVERSION}/
+MASTER_SITES=	http://divmod.org/trac/attachment/wiki/SoftwareReleases/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	Nevow-${PORTVERSION}
+EXTRACT_SUFX=	.tar.gz?format=raw
 
 MAINTAINER=	root@comdongin.com
 COMMENT=	A web application templating system, based on the the Twisted Woven
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/web/__init__.py:${PORTSDIR}/www/py-twistedWeb \
-		${PYTHON_SITELIBDIR}/docutils/__init__.py:${PORTSDIR}/textproc/py-docutils
-
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+USE_TWISTED=	yes
+USE_GETTEXT=	yes
+NO_BUILD=	yes
 
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKSRC}/pkg-message
+
+.if !defined(NOPORTDOCS)
+BUILD_DEPENDS+=		${PYTHON_SITELIBDIR}/twisted/web/__init__.py:${PORTSDIR}/www/py-twistedWeb \
+			${PYTHON_SITELIBDIR}/docutils/__init__.py:${PORTSDIR}/textproc/py-docutils
+.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
