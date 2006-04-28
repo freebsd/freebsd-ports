@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Thu Apr 27 01:35:21 2006
++++ Makefile.in	Thu Apr 27 01:35:41 2006
+@@ -209,7 +209,7 @@
+ library_includedir = $(includedir)/synaptics
+ library_include_HEADERS = pad.h Shm_0_14_4 synaptics.h syndebug.h synparams.h synshm.h version.h
+ syntest_SOURCES = syntest.cpp synaptics.h
+-syntest_LDADD = libsynaptics.la
++syntest_LDADD = libsynaptics.la %%PTHREAD_LIBS%%
+ all: all-am
+ 
+ .SUFFIXES:
