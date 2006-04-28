@@ -31,6 +31,8 @@ POST-INSTALL)
 			exit 1
 		fi
 	fi
+
+	/usr/bin/install -d -o ${USER} -g ${GROUP} /var/run/dbus
 	exit 0
 	;;
 esac
