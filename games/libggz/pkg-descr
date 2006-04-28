@@ -1,3 +1,7 @@
+============================
+The GGZ Gaming Zone - libggz
+============================
+
 This is the GGZ base library libggz, used by the GGZ Gaming Zone server
 (ggzd), the ggzcore library and other components.
 
