@@ -7,7 +7,7 @@
 
 PORTNAME=	dbus
 PORTVERSION=	0.61
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	devel gnome
 MASTER_SITES=	http://dbus.freedesktop.org/releases/
 
@@ -27,8 +27,8 @@ CONFIGURE_ARGS?=--disable-gtk \
 		--disable-mono \
 		--disable-mono-docs \
 		--localstatedir=/var \
-		--with-system-pid-file=/var/run/dbus.pid \
-		--with-system-socket=/var/run/dbus.pipe \
+		--with-system-pid-file=/var/run/dbus/dbus.pid \
+		--with-system-socket=/var/run/dbus/dbus.pipe \
 		--with-session-socket-dir=/var/tmp \
 		--disable-doxygen-docs \
 		--disable-xml-docs
@@ -64,16 +64,13 @@ post-patch:
 .if !defined(DBUS_SLAVE)
 pre-su-install:
 	@for i in 15 9 ; do \
-		if [ -f /var/run/dbus.pid ]; then \
-			kill -$${i} $$(${CAT} /var/run/dbus.pid) 2>/dev/null || ${TRUE} ; \
+		if [ -f /var/run/dbus/dbus.pid ]; then \
+			kill -$${i} $$(${CAT} /var/run/dbus/dbus.pid) 2>/dev/null || ${TRUE} ; \
 			sleep 3 ; \
 		fi ; \
 	done
-	@if [ -f /var/run/dbus.pid ]; then \
-		${RM} -f /var/run/dbus.pid ; \
-	fi
-	@if [ -S /var/run/dbus ]; then \
-		${RM} -f /var/run/dbus ; \
+	@if [ -f /var/run/dbus/dbus.pid ]; then \
+		${RM} -f /var/run/dbus/dbus.pid ; \
 	fi
 .endif
 
