@@ -5915,6 +5915,7 @@ linux-esound	ports/audio/linux-esound
 linux-expat	ports/textproc/linux-expat
 linux-firefox	ports/www/linux-firefox
 linux-flashplugin7	ports/www/linux-flashplugin7
+linux-flock	ports/www/linux-flock
 linux-fontconfig	ports/x11-fonts/linux-fontconfig
 linux-gdk-pixbuf	ports/graphics/linux-gdk-pixbuf
 linux-geepee32	ports/emulators/linux-geepee32
