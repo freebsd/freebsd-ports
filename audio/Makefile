@@ -105,6 +105,7 @@
     SUBDIR += epos-devel
     SUBDIR += ermixer
     SUBDIR += esound
+    SUBDIR += espeak
     SUBDIR += etktab
     SUBDIR += extace
     SUBDIR += ezstream

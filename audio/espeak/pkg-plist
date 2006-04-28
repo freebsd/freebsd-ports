@@ -1,0 +1,51 @@
+@comment $FreeBSD$
+bin/speak
+%%PORTDOCS%%%%DOCSDIR%%/commands.html
+%%PORTDOCS%%%%DOCSDIR%%/dictionary.html
+%%PORTDOCS%%%%DOCSDIR%%/phonemes.html
+%%PORTDOCS%%%%DOCSDIR%%/voices.html
+%%DATADIR%%/data/english_extra
+%%DATADIR%%/data/english_list
+%%DATADIR%%/data/english_rules
+%%DATADIR%%/data/esperanto_list
+%%DATADIR%%/data/esperanto_rules
+%%DATADIR%%/data/german_list
+%%DATADIR%%/data/german_rules
+%%DATADIR%%/espeak-data/english_1
+%%DATADIR%%/espeak-data/english_2
+%%DATADIR%%/espeak-data/esperanto_1
+%%DATADIR%%/espeak-data/esperanto_2
+%%DATADIR%%/espeak-data/german_1
+%%DATADIR%%/espeak-data/german_2
+%%DATADIR%%/espeak-data/phondata
+%%DATADIR%%/espeak-data/phonindex
+%%DATADIR%%/espeak-data/phontab
+%%DATADIR%%/espeak-data/voices/default
+%%DATADIR%%/espeak-data/voices/en
+%%DATADIR%%/espeak-data/voices/en-b
+%%DATADIR%%/espeak-data/voices/en-c
+%%DATADIR%%/espeak-data/voices/en-c2
+%%DATADIR%%/espeak-data/voices/en-c3
+%%DATADIR%%/espeak-data/voices/en-d
+%%DATADIR%%/espeak-data/voices/en-f
+%%DATADIR%%/espeak-data/voices/en-fb
+%%DATADIR%%/espeak-data/voices/en-fc
+%%DATADIR%%/espeak-data/voices/en-fd
+%%DATADIR%%/espeak-data/voices/en1
+%%DATADIR%%/espeak-data/voices/en1a
+%%DATADIR%%/espeak-data/voices/en2
+%%DATADIR%%/espeak-data/voices/en3
+%%DATADIR%%/espeak-data/voices/en4
+%%DATADIR%%/espeak-data/voices/en5
+%%DATADIR%%/espeak-data/voices/en6
+%%DATADIR%%/espeak-data/voices/en7
+%%DATADIR%%/espeak-data/voices/en8
+%%DATADIR%%/espeak-data/voices/esperanto
+%%DATADIR%%/espeak-data/voices/german
+%%DATADIR%%/espeak-data/voices/test
+%%DATADIR%%/espeak-data/voices/testtone
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%/data
+@dirrm %%DATADIR%%/espeak-data/voices
+@dirrm %%DATADIR%%/espeak-data
+@dirrm %%DATADIR%%
