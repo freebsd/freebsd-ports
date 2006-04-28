@@ -1,6 +1,6 @@
 # New ports collection makefile for:   puff
 # Date created:        10 April 2003
-# Whom:                Leif Pedersen <bilbo@developerpit.com>
+# Whom:                Leif Pedersen <bilbo@devpit.org>
 #
 # $FreeBSD$
 #
