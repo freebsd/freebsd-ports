@@ -12191,6 +12191,7 @@ snort_inline	ports/security/snort_inline
 snortreport	ports/security/snortreport
 snortsms	ports/security/snortsms
 snortsnarf	ports/security/snortsnarf
+snotes		ports/deskutils/snotes
 snowflake	ports/misc/snowflake
 snowlog		ports/sysutils/snowlog
 snownews	ports/www/snownews
