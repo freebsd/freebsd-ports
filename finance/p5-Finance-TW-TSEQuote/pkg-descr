@@ -1,0 +1,5 @@
+This module provides interface to stock information available from Taiwan
+Security Exchange. You could resolve company name to stock symbol, as well
+as getting the real time quote.
+
+WWW: http://search.cpan.org/dist/Finance-TW-TSEQuote/
