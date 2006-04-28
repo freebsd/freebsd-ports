@@ -15,7 +15,7 @@ DISTNAME=	asWedit-4.0-i386.linux
 MAINTAINER=	brett@peloton.runet.edu
 COMMENT=	An easy to use HTML and text editor
 
-RESTRICTED=	"Commercial software"
+RESTRICTED=	Commercial software
 
 ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes
@@ -29,11 +29,13 @@ do-build:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/asWedit ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/asWedit.hlp ${PREFIX}/lib
-	@${MKDIR} ${PREFIX}/share/doc/asWedit
-	${INSTALL_DATA} ${WRKSRC}/LICENSE ${PREFIX}/share/doc/asWedit
 
 post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/LICENSE ${DOCSDIR}
 	@${ECHO_MSG} "Be sure to read the license agreement in"
 	@${ECHO_MSG} "${PREFIX}/share/doc/asWedit/LICENSE."
+.endif
 
 .include <bsd.port.mk>
