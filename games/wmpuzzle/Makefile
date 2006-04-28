@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	wmpuzzle
-PORTVERSION=	0.4.0
-PORTREVISION=	1
+PORTVERSION=	0.5.0
 CATEGORIES=	games windowmaker afterstep
 MASTER_SITES=	http://www.godisch.de/debian/wmpuzzle/
 
@@ -29,5 +28,9 @@ PLIST_FILES=	bin/wmpuzzle
 
 CPPFLAGS=	-I${X11BASE}/include -DBSD
 LDFLAGS=	-L${X11BASE}/lib
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/wmpuzzle ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/wmpuzzle.6 ${MAN6PREFIX}/man/man6
 
 .include <bsd.port.mk>
