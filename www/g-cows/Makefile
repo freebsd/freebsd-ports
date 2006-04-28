@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	g-cows
-PORTVERSION=	1.8
+PORTVERSION=	1.9.1
 CATEGORIES=	www
-MASTER_SITES=	http://www.g-cows.org/download/${PORTVERSION}/
+MASTER_SITES=	http://www.g-cows.org/download/1.9/
 
 MAINTAINER=	as@g-cows.org
 COMMENT=	Scripting language for creation of web sites
