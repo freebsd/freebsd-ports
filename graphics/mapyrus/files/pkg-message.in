@@ -2,7 +2,7 @@
 
     Start Mapyrus from a terminal window with a command like:
 
-%%JAVA%% -classpath %%DATADIR%%/%%MAPYRUSJAR%% org.mapyrus.Mapyrus myfile.mapyrus
+java -classpath %%DATADIR%%/%%MAPYRUSJAR%% org.mapyrus.Mapyrus myfile.mapyrus
 
     or simply:
 
