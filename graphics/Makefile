@@ -511,6 +511,7 @@
     SUBDIR += quat-gui
     SUBDIR += quesa
     SUBDIR += qvplay
+    SUBDIR += raster3d
     SUBDIR += ray++
     SUBDIR += rayshade
     SUBDIR += reallyslick
