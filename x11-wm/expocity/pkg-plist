@@ -2,9 +2,6 @@ bin/metacity
 bin/metacity-message
 bin/metacity-theme-viewer
 bin/metacity-window-demo
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/metacity.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/metacity.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/metacity.schemas > /dev/null || /usr/bin/true
 include/metacity-1/metacity-private/common.h
 include/metacity-1/metacity-private/gradient.h
 include/metacity-1/metacity-private/preview-widget.h
