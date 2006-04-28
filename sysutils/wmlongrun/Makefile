@@ -8,23 +8,25 @@
 PORTNAME=	wmlongrun
 PORTVERSION=	0.2.0
 CATEGORIES=	sysutils windowmaker
-MASTER_SITES=	http://www.sh.rim.or.jp/~ssato/src/
+MASTER_SITES=	http://seiichisato.jp/dockapps/src/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A dockapp to monitor the LongRun(tm) status on Crusoe
 
 USE_X_PREFIX=	yes
-GNU_CONFIGURE=	yes
 USE_XPM=	yes
-CONFIGURE_ARGS=	--program-prefix=""
+USE_GNOME=	gnometarget
+GNU_CONFIGURE=	yes
 
 MAN1=		wmlongrun.1
+PORTDOCS=	ChangeLog README
+PLIST_FILES=	bin/wmlongrun
 
-.ifndef(NOPORTDOCS)
 post-install:
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in ChangeLog README
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.for file in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif # !NOPORTDOCS
 
