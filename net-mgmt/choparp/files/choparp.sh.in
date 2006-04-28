@@ -8,7 +8,7 @@
 choparp_enable=${choparp_enable-"NO"}
 choparp_iface=${choparp_iface-}
 choparp_macaddr=${choparp_macaddr-"auto"}
-choparp_network=${choparp_interface-}
+choparp_network=${choparp_network-}
 
 . %%RC_SUBR%%
 
