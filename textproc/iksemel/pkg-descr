@@ -1,0 +1,7 @@
+This is an XML parser library mainly designed for Jabber applications.
+It provides SAX, DOM, and special Jabber stream APIs. Library is coded
+in ANSI C except the network code (which is POSIX compatible), thus
+highly portable. Iksemel is released under GNU Lesser General Public
+License. A copy of the license is included in the COPYING file.
+
+WWW: http://iksemel.jabberstudio.org/
