@@ -1,3 +1,7 @@
+bin/xscreensaver-getimage
+bin/xscreensaver-getimage-desktop
+bin/xscreensaver-getimage-file
+bin/xscreensaver-getimage-video
 bin/xscreensaver-gl-helper
 bin/xscreensaver-hacks/anemone
 bin/xscreensaver-hacks/anemotaxis
@@ -204,6 +208,7 @@ bin/xscreensaver-hacks/xspirograph
 bin/xscreensaver-hacks/xsublim
 bin/xscreensaver-hacks/xteevee
 bin/xscreensaver-hacks/zoom
+bin/xscreensaver-text
 share/xscreensaver/config/anemone.xml
 share/xscreensaver/config/anemotaxis.xml
 share/xscreensaver/config/antinspect.xml
