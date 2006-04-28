@@ -38,8 +38,8 @@ USE_GCC=	3.4+
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "sparc64"
-BROKEN=	does not configure due to the lack of CDraw libraries for sparc64
+.if ${ARCH} != "i386" && ${ARCH} != "amd64" && ${ARCH} != "powerpc"
+BROKEN=	does not configure due to the lack of CDraw libraries for ${ARCH}
 .endif
 
 PROG=	XaraLX${PKGNAMESUFFIX}
