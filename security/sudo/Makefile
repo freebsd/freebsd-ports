@@ -24,7 +24,6 @@ DISTNAME=	${PORTNAME}-1.6.8p12
 MAINTAINER=	mharo@FreeBSD.org
 COMMENT=	Allow others to run commands as root
 
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
@@ -36,7 +35,17 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 		--with-long-otp-prompt \
 		--with-pam
 
+OPTIONS=	LDAP	"With LDAP support" off \
+		OPIE	"With OPIE support" off \
+		SHELL_SETS_HOME "Set $HOME to target user in shell mode" off
+
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_LDAP)
+USE_OPENLDAP=yes
+CONFIGURE_ARGS+=--with-ldap=${PREFIX}
+CONFIGURE_ARGS+=--with-ldap-conf-file=${PREFIX}/etc/ldap.conf
+.endif
 
 .if defined(WITH_OPIE) || ${OSVERSION} > 500021
 CONFIGURE_ARGS+=--with-opie
@@ -59,5 +68,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/sample.sudoers ${PREFIX}/etc/sudoers.sample
 	${INSTALL_DATA} ${WRKSRC}/sudoers ${PREFIX}/etc/sudoers.default
 	${RM} ${PREFIX}/libexec/sudo_noexec.la
+	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
