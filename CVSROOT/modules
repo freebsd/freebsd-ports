@@ -4044,6 +4044,7 @@ iiimf-x-lib	ports/textproc/iiimf-x-lib
 iip		ports/irc/iip
 ija		ports/news/ija
 ike-scan	ports/security/ike-scan
+iksemel		ports/textproc/iksemel
 ilbc		ports/net/ilbc
 ilohamail	ports/mail/ilohamail
 im		ports/mail/im
