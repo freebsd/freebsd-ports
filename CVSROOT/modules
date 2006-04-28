@@ -6214,6 +6214,7 @@ mapchan		ports/sysutils/mapchan
 mapedit		ports/www/mapedit
 maplay		ports/audio/maplay
 mapserver	ports/graphics/mapserver
+mapyrus		ports/graphics/mapyrus
 mar		ports/archivers/mar
 maradns		ports/dns/maradns
 marathon-evil	ports/games/marathon-evil
