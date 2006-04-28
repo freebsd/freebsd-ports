@@ -6,30 +6,27 @@
 #
 
 PORTNAME=	linux_base-gentoo-stage1
-PORTVERSION=	2005.0
+PORTVERSION=	2006.0
 CATEGORIES=	emulators linux
 MASTER_SITES=	${MASTER_SITE_GENTOO}
 EXTRACT_ONLY=
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gkovesdan@t-hosting.hu
 COMMENT=	Files from Gentoo distribution, for Linux compatibility
 
-RESTRICTED=	"binaries licensed under GNU GPL without accompanying source"
-
-BROKEN=		Incorrect pkg-plist
+RESTRICTED=	binaries licensed under GNU GPL without accompanying source
 
 CONFLICTS=	linux_base-7* linux_base-8* linux_base-debian* \
-		linux_base-rh* linux_base-suse*
+		linux_base-rh* linux_base-suse* linux_base-fc*
 
-DIST_SUBDIR=	gentoo-linux
-MD5_FILE=	${MASTERDIR}/distinfo.${ARCH}
-NO_BUILD=	y
-NO_FILTER_SHLIBS=y
-NO_MTREE=	y
-ONLY_FOR_ARCHS=	alpha amd64 ia64 i386
-PLIST=		${WRKDIR}/pkg-plist
-PREFIX=		${LINUXBASE}
-USE_BZIP2=	y
+DIST_SUBDIR=		gentoo-linux
+NO_BUILD=		YES
+NO_FILTER_SHLIBS=	YES
+NO_MTREE=		YES
+ONLY_FOR_ARCHS=		alpha amd64 ia64 i386
+PLIST=			${WRKDIR}/pkg-plist
+PREFIX=			${LINUXBASE}
+USE_BZIP2=		YES
 
 .include <bsd.port.pre.mk>
 
@@ -39,10 +36,12 @@ LATEST_LINK=	${PORTNAME:C/linux_base/linux32_base/}
 
 .if (${ARCH} == "alpha")
 MASTER_SITE_SUBDIR=	releases/alpha/${PORTVERSION}/stages
-DISTNAME=	stage1-alpha-${PORTVERSION}
-.elif (${ARCH} == "i386" || ${ARCH} == "amd64" || ${ARCH} == "ia64")
-MASTER_SITE_SUBDIR=	releases/x86/${PORTVERSION}/stages/x86
+DISTNAME=		stage1-alpha-${PORTVERSION}
+MD5_FILE=       	${MASTERDIR}/distinfo.alpha
+.else
+MASTER_SITE_SUBDIR=	releases/x86/${PORTVERSION}/stages
 DISTNAME=		stage1-x86-${PORTVERSION}
+MD5_FILE=       	${MASTERDIR}/distinfo.i386
 .endif
 
 do-extract:
