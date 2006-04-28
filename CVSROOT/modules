@@ -3096,6 +3096,7 @@ glob2		ports/games/glob2
 global		ports/devel/global
 globus4		ports/net/globus4
 glom		ports/databases/glom
+gloox		ports/net-im/gloox
 glpk		ports/math/glpk
 glpng		ports/graphics/glpng
 glpuzzle	ports/games/glpuzzle
