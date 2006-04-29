@@ -6,21 +6,19 @@
 #
 
 PORTNAME=	VCS-CVS
-PORTVERSION=	2.04
+PORTVERSION=	2.05
 CATEGORIES=	devel perl5
-MASTER_SITES=	http://savage.net.au/Perl-modules/
+MASTER_SITES=	http://savage.net.au/Perl-modules/ \
+		http://tolid.eu.org/VCSCVS/
 PKGNAMEPREFIX=	p5-
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	tolid@plab.ku.dk
 COMMENT=	Perl module that provides a simple interface to CVS
 
-BUILD_DEPENDS=  ${SITE_PERL}/Module/Build.pm:${PORTSDIR}/devel/p5-Module-Build\
-		${SITE_PERL}/Test/Pod.pm:${PORTSDIR}/devel/p5-Test-Pod
-RUN_DEPENDS=    ${BUILD_DEPENDS}
+BUILD_DEPENDS=	${SITE_PERL}/Test/Pod.pm:${PORTSDIR}/devel/p5-Test-Pod
 
-PERL_MODBUILD=  yes
-
+PERL_MODBUILD=	yes
 MAN3=		VCS::CVS.3
 
 .include <bsd.port.mk>
