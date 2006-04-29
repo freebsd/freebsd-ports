@@ -13,6 +13,7 @@ bin/imc
 %%PORTDOCS%%share/examples/imc/basic.imc
 %%PORTDOCS%%share/examples/imc/basic2.imc
 %%PORTDOCS%%share/examples/imc/basicjpg.imc
+%%PORTDOCS%%share/examples/imc/basicgif.imc
 %%PORTDOCS%%share/examples/imc/closedarc.imc
 %%PORTDOCS%%share/examples/imc/closedarc2.imc
 %%PORTDOCS%%share/examples/imc/fill.imc
@@ -22,7 +23,9 @@ bin/imc
 %%PORTDOCS%%share/examples/imc/imagerotate.imc
 %%PORTDOCS%%share/examples/imc/imcmp.pl
 %%PORTDOCS%%share/examples/imc/next.jpg
+%%PORTDOCS%%share/examples/imc/next.gif
 %%PORTDOCS%%share/examples/imc/next.png
+%%PORTDOCS%%share/examples/imc/origin.imc
 %%PORTDOCS%%share/examples/imc/piechart.imc
 %%PORTDOCS%%share/examples/imc/ref/Makefile.in
 %%PORTDOCS%%share/examples/imc/ref/Makefile.am
@@ -30,6 +33,7 @@ bin/imc
 %%PORTDOCS%%share/examples/imc/ref/basic.png.ref
 %%PORTDOCS%%share/examples/imc/ref/basic2.png.ref
 %%PORTDOCS%%share/examples/imc/ref/basicjpg.png.ref
+%%PORTDOCS%%share/examples/imc/ref/basicgif.png.ref
 %%PORTDOCS%%share/examples/imc/ref/closedarc.png.ref
 %%PORTDOCS%%share/examples/imc/ref/closedarc2.png.ref
 %%PORTDOCS%%share/examples/imc/ref/fill.png.ref
@@ -37,6 +41,7 @@ bin/imc
 %%PORTDOCS%%share/examples/imc/ref/imagealign1.png.ref
 %%PORTDOCS%%share/examples/imc/ref/imagealign2.png.ref
 %%PORTDOCS%%share/examples/imc/ref/imagerotate.png.ref
+%%PORTDOCS%%share/examples/imc/ref/origin.png.ref
 %%PORTDOCS%%share/examples/imc/ref/piechart.png.ref
 %%PORTDOCS%%share/examples/imc/ref/text.png.ref
 %%PORTDOCS%%share/examples/imc/ref/textalign1.png.ref
