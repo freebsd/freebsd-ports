@@ -523,6 +523,7 @@
     SUBDIR += swaks
     SUBDIR += sylpheed
     SUBDIR += sylpheed-claws
+    SUBDIR += sylpheed-claws-att_remover
     SUBDIR += sylpheed-claws-cachesaver
     SUBDIR += sylpheed-claws-etpan_privacy
     SUBDIR += sylpheed-claws-fetchinfo
