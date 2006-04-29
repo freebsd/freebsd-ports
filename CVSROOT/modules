@@ -11359,6 +11359,7 @@ ripole		ports/textproc/ripole
 ris		ports/net/ris
 rkhunter	ports/security/rkhunter
 rkive		ports/news/rkive
+rkward		ports/math/rkward
 rl		ports/textproc/rl
 rlpr		ports/print/rlpr
 rlwrap		ports/devel/rlwrap
