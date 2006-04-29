@@ -23,10 +23,6 @@ PLIST_FILES=	libexec/gkrellm2/plugins/gkrellmbgchg.so
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN=		Does not compile
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O3||g' ${WRKSRC}/Makefile
 
