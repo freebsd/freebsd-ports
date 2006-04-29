@@ -6,15 +6,12 @@
 #
 
 PORTNAME=	abills
-PORTVERSION=	0.24b
+PORTVERSION=	0.31
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	${PORTNAME}
-
-PATCH_SITES=	http://vibrators.ru/abills/
-PATCHFILES=	patches-aa.tar.bz2
 
 MAINTAINER=	liettneff@bk.ru
 COMMENT=	Billing system for dialup and VPN users
@@ -26,7 +23,6 @@ RUN_DEPENDS=	radiusd:${PORTSDIR}/net/freeradius \
 		${SITE_PERL}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1 \
 		${SITE_PERL}/${PERL_ARCH}/Crypt/DES.pm:${PORTSDIR}/security/p5-Crypt-DES
 
-USE_REINPLACE=	yes
 USE_PERL5_RUN=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
@@ -41,9 +37,6 @@ pre-everything::
 	@ ${ECHO} ""
 	@ ${ECHO} "	Define WITH_GRAPHICS if you want traffic graphs (experimental)"
 	@ ${ECHO} ""
-
-post-extract:
-	@ ${MKDIR} ${WRKSRC}/var/log/q ${WRKSRC}/var/log/devices ${WRKSRC}/cgi-bin/admin/nets ${WRKSRC}/cgi-bin/admin/graphics ${WRKSRC}/backup
 
 post-patch:
 	@ ${FIND} ${WRKSRC} -type f -name '*.orig' -exec ${RM} {} \;

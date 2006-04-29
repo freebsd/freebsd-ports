@@ -1,28 +1,101 @@
-@exec mkdir -p %D/abills/backup
-@exec mkdir -p %D/abills/cgi-bin/admin/graphics
-@exec mkdir -p %D/abills/cgi-bin/admin/nets
-@exec mkdir -p %D/abills/libexec/ext_acct
-@exec mkdir -p %D/abills/var/q
-@exec mkdir -p %D/abills/var/log/q
-@exec mkdir -p %D/abills/var/devices
-@exec mkdir -p %D/abills/var/log/devices
-@exec mkdir -p %D/abills/miniserv/var
+abills/Abills/Base.pm
+abills/Abills/DES.pm
+abills/Abills/HTML.pm
+abills/Abills/MSCHAP.pm
+abills/Abills/Radius.pm
+abills/Abills/SQL.pm
+abills/Abills/XML.pm
+abills/Abills/defs.conf
+abills/Abills/dictionary
+abills/Abills/modules/Abon/config
+abills/Abills/modules/Abon/templates/abon_tp.tpl
+abills/Abills/modules/Abon/webinterface
+abills/Abills/modules/BSR1000/config
+abills/Abills/modules/BSR1000/webinterface
+abills/Abills/modules/Cards/config
+abills/Abills/modules/Cards/templates/cards_add.tpl
+abills/Abills/modules/Cards/templates/cards_payment_add.tpl
+abills/Abills/modules/Cards/templates/cards_payments.tpl
+abills/Abills/modules/Cards/webinterface
+abills/Abills/modules/Docs/config
+abills/Abills/modules/Docs/lng_english.pl
+abills/Abills/modules/Docs/lng_ukraine.pl
+abills/Abills/modules/Docs/templates/docs_account.tpl
+abills/Abills/modules/Docs/templates/docs_account_add.tpl
+abills/Abills/modules/Docs/webinterface
+abills/Abills/modules/Dunes/config
+abills/Abills/modules/Dunes/webinterface
+abills/Abills/modules/Dv/config
+abills/Abills/modules/Dv/templates/dv_session_detail.tpl
+abills/Abills/modules/Dv/templates/dv_tp.tpl
+abills/Abills/modules/Dv/templates/dv_tt.tpl
+abills/Abills/modules/Dv/templates/dv_user.tpl
+abills/Abills/modules/Dv/templates/dv_user_info.tpl
+abills/Abills/modules/Dv/templates/dv_users_warning_messages.tpl
+abills/Abills/modules/Dv/webinterface
+abills/Abills/modules/Ipn/config
+abills/Abills/modules/Ipn/trafdstats
+abills/Abills/modules/Ipn/traffic2sql
+abills/Abills/modules/Ipn/webinterface
+abills/Abills/modules/Mail/config
+abills/Abills/modules/Mail/templates/mail_access.tpl
+abills/Abills/modules/Mail/templates/mail_alias.tpl
+abills/Abills/modules/Mail/templates/mail_box.tpl
+abills/Abills/modules/Mail/templates/mail_domain.tpl
+abills/Abills/modules/Mail/templates/mail_transport.tpl
+abills/Abills/modules/Mail/webinterface
+abills/Abills/modules/Mdelivery/config
+abills/Abills/modules/Mdelivery/templates/mdelivery_form.tpl
+abills/Abills/modules/Mdelivery/webinterface
+abills/Abills/modules/Sqlcmd/config
+abills/Abills/modules/Sqlcmd/templates/sqlcmd.tpl
+abills/Abills/modules/Sqlcmd/webinterface
+abills/Abills/modules/Voip/config
+abills/Abills/modules/Voip/lng_english.pl
+abills/Abills/modules/Voip/templates/voip_route.tpl
+abills/Abills/modules/Voip/templates/voip_session_detail.tpl
+abills/Abills/modules/Voip/templates/voip_tp.tpl
+abills/Abills/modules/Voip/templates/voip_user.tpl
+abills/Abills/modules/Voip/templates/voip_user_info.tpl
+abills/Abills/modules/Voip/webinterface
+abills/Abills/mysql/Abon.pm
+abills/Abills/mysql/Accounts.pm
+abills/Abills/mysql/Acct.pm
+abills/Abills/mysql/Admins.pm
+abills/Abills/mysql/Auth.pm
+abills/Abills/mysql/Billing.pm
+abills/Abills/mysql/Bills.pm
+abills/Abills/mysql/Companies.pm
+abills/Abills/mysql/Customers.pm
+abills/Abills/mysql/Docs.pm
+abills/Abills/mysql/Dunes.pm
+abills/Abills/mysql/Dv.pm
+abills/Abills/mysql/Dv_Sessions.pm
+abills/Abills/mysql/Fees.pm
+abills/Abills/mysql/Finance.pm
+abills/Abills/mysql/Help.pm
+abills/Abills/mysql/Ipn.pm
+abills/Abills/mysql/Mail.pm
+abills/Abills/mysql/Mdelivery.pm
+abills/Abills/mysql/Nas.pm
+abills/Abills/mysql/Payments.pm
+abills/Abills/mysql/Shedule.pm
+abills/Abills/mysql/Sqlcmd.pm
+abills/Abills/mysql/Tariffs.pm
+abills/Abills/mysql/Users.pm
+abills/Abills/mysql/Voip.pm
+abills/Abills/mysql/Voip_Sessions.pm
+abills/Abills/mysql/Voip_aaa.pm
+abills/Abills/mysql/main.pm
+abills/Abills/nas.pl
+abills/Abills/templates.pl
+abills/Abills/templates/user_info
+abills/COPYING
 abills/abills.sql
-abills/bin/abcm
-abills/bin/showstats
-abills/bin/uc
-abills/bin/uc.conf
-abills/bin/urdiff
-abills/cgi-bin/admin/Abdocs.pm
-abills/cgi-bin/admin/Abwconf.pm.default
-abills/cgi-bin/admin/docs.cgi
-abills/cgi-bin/admin/grapher.cgi
-abills/cgi-bin/admin/messages.pl
-abills/cgi-bin/admin/networks.cgi
-abills/cgi-bin/admin/postfix.cgi
-abills/cgi-bin/admin/users.cgi
-abills/cgi-bin/excel.cgi
-abills/cgi-bin/img.cgi
+abills/cgi-bin/admin/help.cgi
+abills/cgi-bin/admin/index.cgi
+abills/cgi-bin/admin/tpls/user_info
+abills/cgi-bin/functions.js
 abills/cgi-bin/img/down_pointer.png
 abills/cgi-bin/img/email-g.gif
 abills/cgi-bin/img/host.gif
@@ -40,10 +113,10 @@ abills/cgi-bin/img/vertblue.gif
 abills/cgi-bin/img/vertgreen.gif
 abills/cgi-bin/img/vertred.gif
 abills/cgi-bin/img/vertyellow.gif
-abills/cgi-bin/manager.cgi
-abills/cgi-bin/templates/account.tpl
-abills/cgi-bin/users.cgi
-abills/cgi-bin/win_dunes.cgi
+abills/cgi-bin/index.cgi
+abills/convert_02_to_03.pl
+abills/db/Cards.sql
+abills/db/Dunes.sql
 abills/docs/img/inpayments.gif
 abills/docs/img/nas_servers.gif
 abills/docs/img/online.gif
@@ -58,60 +131,66 @@ abills/docs/mail.htm
 abills/docs/misc.htm
 abills/docs/mpd.htm
 abills/docs/nas.htm
-abills/dunes.sql
 abills/language/bulgarian.pl
 abills/language/english.pl
 abills/language/russian-koi8-r.pl
 abills/language/russian.pl
 abills/language/ukraine.pl
-abills/libexec/Base.pm
-abills/libexec/DES.pm
-abills/libexec/MSCHAP.pm
 abills/libexec/billd
 abills/libexec/config.pl.default
+abills/libexec/ext_acct/README
 abills/libexec/linkupdown
-abills/libexec/mail.pl
-abills/libexec/modules/pm25.pl
-abills/libexec/modules/pppd.pl
-abills/libexec/modules/usr.pl
-abills/libexec/nas.pl
 abills/libexec/periodic
-abills/libexec/pppcons
 abills/libexec/racct.pl
 abills/libexec/radtest.sh
 abills/libexec/rauth.pl
-abills/libexec/sql.pl
+abills/migrate_02_to_03.sql
 abills/miniserv/etc/miniserv.pem
 abills/miniserv/etc/miniserv.users
 abills/miniserv/mime.types
 abills/miniserv/miniserv.conf
 abills/miniserv/miniserv.pem
 abills/miniserv/miniserv.pl
+abills/misc/usr-trafic
 abills/soft/exppp_asm-0.2.4.tar.gz
 abills/soft/expppd-0.2.1.tar.gz
-abills/soft/radpppd.tar.gz
 abills/soft/kha0s-mpd.tar.gz
-@dirrm abills/var/q
-@dirrm abills/var/log/q
-@dirrm abills/var/log/devices
-@dirrm abills/var/log
-@dirrm abills/var/devices
-@dirrm abills/var
+abills/soft/radpppd.tar.gz
 @dirrm abills/soft
+@dirrm abills/misc
 @dirrm abills/miniserv/etc
 @dirrm abills/miniserv
-@dirrm abills/libexec/modules
 @dirrm abills/libexec/ext_acct
 @dirrm abills/libexec
 @dirrm abills/language
 @dirrm abills/docs/img
 @dirrm abills/docs
-@dirrm abills/cgi-bin/templates
+@dirrm abills/db
 @dirrm abills/cgi-bin/img
-@dirrm abills/cgi-bin/admin/nets
-@dirrm abills/cgi-bin/admin/graphics
+@dirrm abills/cgi-bin/admin/tpls
 @dirrm abills/cgi-bin/admin
 @dirrm abills/cgi-bin
-@dirrm abills/bin
-@dirrm abills/backup
+@dirrm abills/Abills/templates
+@dirrm abills/Abills/mysql
+@dirrm abills/Abills/modules/Voip/templates
+@dirrm abills/Abills/modules/Voip
+@dirrm abills/Abills/modules/Sqlcmd/templates
+@dirrm abills/Abills/modules/Sqlcmd
+@dirrm abills/Abills/modules/Mdelivery/templates
+@dirrm abills/Abills/modules/Mdelivery
+@dirrm abills/Abills/modules/Mail/templates
+@dirrm abills/Abills/modules/Mail
+@dirrm abills/Abills/modules/Ipn
+@dirrm abills/Abills/modules/Dv/templates
+@dirrm abills/Abills/modules/Dv
+@dirrm abills/Abills/modules/Dunes
+@dirrm abills/Abills/modules/Docs/templates
+@dirrm abills/Abills/modules/Docs
+@dirrm abills/Abills/modules/Cards/templates
+@dirrm abills/Abills/modules/Cards
+@dirrm abills/Abills/modules/BSR1000
+@dirrm abills/Abills/modules/Abon/templates
+@dirrm abills/Abills/modules/Abon
+@dirrm abills/Abills/modules
+@dirrm abills/Abills
 @dirrm abills

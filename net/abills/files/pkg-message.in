@@ -6,5 +6,11 @@ For configuration and upgrade, please read file:
 
 NOTE: please look for changes in abills.sql when upgrading!
 
+WARNING!!!  WARNING!!!  WARNING!!!  WARNING!!!  WARNING!!!
+
+There are many changes in version 0.30 and above. Please
+refer to http://abills.asmodeus.com.ua/ when upgrading
+from earlier versions of Abills.
+
 ************************************************************
 
