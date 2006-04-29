@@ -10,6 +10,7 @@ bin/osbf-util
 %%PORTDOCS%%%%DOCSDIR%%/QUICKREF.txt
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/classify_details.txt
+%%PORTDOCS%%%%DOCSDIR%%/inoc_passwd.txt
 %%PORTDOCS%%%%DOCSDIR%%/COLOPHON.txt
 %%PORTDOCS%%%%DOCSDIR%%/knownbugs.txt
 %%PORTDOCS%%%%DOCSDIR%%/things_to_do.txt
@@ -21,6 +22,7 @@ bin/osbf-util
 %%EXAMPLESDIR%%/inserttest_b.crm
 %%EXAMPLESDIR%%/learntest.crm
 %%EXAMPLESDIR%%/mailfilter.crm
+%%EXAMPLESDIR%%/mailtrainer.crm
 %%EXAMPLESDIR%%/matchtest.crm
 %%EXAMPLESDIR%%/overalterisolatedtest.crm
 %%EXAMPLESDIR%%/windowtest.crm
