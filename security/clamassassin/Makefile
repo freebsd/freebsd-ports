@@ -8,7 +8,8 @@
 PORTNAME=	clamassassin
 PORTVERSION=	1.2.3
 CATEGORIES=	security
-MASTER_SITES=	http://drivel.com/clamassassin/
+MASTER_SITES=	http://drivel.com/clamassassin/ \
+		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
 
 MAINTAINER=	shaun@inerd.com
 COMMENT=	A simple virus filter wrapper for ClamAV

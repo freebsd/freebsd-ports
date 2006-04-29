@@ -8,7 +8,8 @@
 PORTNAME=	bin86
 PORTVERSION=	0.16.17
 CATEGORIES=	devel
-MASTER_SITES=	http://homepage.ntlworld.com/robert.debath/dev86/
+MASTER_SITES=	http://homepage.ntlworld.com/robert.debath/dev86/ \
+		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
 
 MAINTAINER=	shaun@inerd.com
 COMMENT=	16-bit assembler and loader (conflicts with devel/bcc)

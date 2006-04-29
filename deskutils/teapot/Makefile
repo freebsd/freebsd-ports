@@ -8,7 +8,8 @@
 PORTNAME=	teapot
 PORTVERSION=	1.09
 CATEGORIES=	deskutils
-MASTER_SITES=	http://www.moria.de/~michael/teapot/
+MASTER_SITES=	http://www.moria.de/~michael/teapot/ \
+		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
 
 MAINTAINER=	shaun@inerd.com
 COMMENT=	Full-screen curses based spread sheet program

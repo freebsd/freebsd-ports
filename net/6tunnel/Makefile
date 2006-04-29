@@ -8,7 +8,8 @@
 PORTNAME=	6tunnel
 DISTVERSION=	0.11rc2
 CATEGORIES=	net ipv6
-MASTER_SITES=	http://toxygen.net/6tunnel/
+MASTER_SITES=	http://toxygen.net/6tunnel/ \
+		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
 
 MAINTAINER=	shaun@inerd.com
 COMMENT=	TCP proxy for applications that don't speak IPv6

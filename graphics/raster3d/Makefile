@@ -8,7 +8,8 @@
 PORTNAME=	raster3d
 DISTVERSION=	2.7d
 CATEGORIES=	graphics biology
-MASTER_SITES=	http://skuld.bmsc.washington.edu/${PORTNAME}/
+MASTER_SITES=	http://skuld.bmsc.washington.edu/${PORTNAME}/ \
+		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
 DISTNAME=	Raster3D_${DISTVERSION}
 
 MAINTAINER=	shaun@inerd.com

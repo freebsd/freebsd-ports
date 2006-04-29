@@ -8,7 +8,8 @@
 PORTNAME=	ejabberd
 PORTVERSION=	1.1.0
 CATEGORIES=	net-im
-MASTER_SITES=	http://www.process-one.net/en/projects/ejabberd/download/${PORTVERSION}/
+MASTER_SITES=	http://www.process-one.net/en/projects/ejabberd/download/${PORTVERSION}/ \
+		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
 
 MAINTAINER=	shaun@inerd.com
 COMMENT=	Free and Open Source distributed fault-tolerant Jabber server
