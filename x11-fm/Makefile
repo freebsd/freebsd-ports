@@ -18,6 +18,7 @@
     SUBDIR += gnome-commander
     SUBDIR += gnome-commander2
     SUBDIR += gprename
+    SUBDIR += jaffm
     SUBDIR += krusader
     SUBDIR += mtoolsfm
     SUBDIR += nautilus2

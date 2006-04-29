@@ -1,0 +1,7 @@
+Jaffm is a lightweight wxWindows (GTK+ interface) file manager for
+Unix, written in C++. It is aimed at nonsense-free file management. It
+is mostly inspired by the List View in Mac OS Finder, but also has
+Unix-handy features such as an interactive location bar with Bash-style
+tab completion, and a simple but elegant user interface.
+
+WWW: http://jaffm.binary.is/
