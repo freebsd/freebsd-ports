@@ -23,8 +23,7 @@ share/gtk-doc/html/liboil/home.png
 share/gtk-doc/html/liboil/index.html
 share/gtk-doc/html/liboil/index.sgml
 share/gtk-doc/html/liboil/left.png
-share/gtk-doc/html/liboil/liboil-OilFunction.html
-share/gtk-doc/html/liboil/liboil-liboil.html
+share/gtk-doc/html/liboil/liboil-liboilclass-unstable.html
 share/gtk-doc/html/liboil/liboil-liboilcpu.html
 share/gtk-doc/html/liboil/liboil-liboildebug.html
 share/gtk-doc/html/liboil/liboil-liboilfuncs-conv.html
@@ -34,12 +33,17 @@ share/gtk-doc/html/liboil/liboil-liboilfuncs-doc.html
 share/gtk-doc/html/liboil/liboil-liboilfuncs-math.html
 share/gtk-doc/html/liboil/liboil-liboilfuncs-math8x8.html
 share/gtk-doc/html/liboil/liboil-liboilfuncs-pixel.html
+share/gtk-doc/html/liboil/liboil-liboilimpl-unstable.html
+share/gtk-doc/html/liboil/liboil-liboilinit-unstable.html
+share/gtk-doc/html/liboil/liboil-liboilinit.html
+share/gtk-doc/html/liboil/liboil-liboiljunk.html
 share/gtk-doc/html/liboil/liboil-liboilmacros.html
 share/gtk-doc/html/liboil/liboil-liboilparameter.html
 share/gtk-doc/html/liboil/liboil-liboilprofile.html
 share/gtk-doc/html/liboil/liboil-liboilprototype.html
 share/gtk-doc/html/liboil/liboil-liboilrandom.html
 share/gtk-doc/html/liboil/liboil-liboiltest.html
+share/gtk-doc/html/liboil/liboil-liboiltypes.html
 share/gtk-doc/html/liboil/liboil.devhelp
 share/gtk-doc/html/liboil/right.png
 share/gtk-doc/html/liboil/style.css
