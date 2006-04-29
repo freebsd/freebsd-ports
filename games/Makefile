@@ -654,6 +654,7 @@
     SUBDIR += viruskiller
     SUBDIR += volleyball
     SUBDIR += vor
+    SUBDIR += vultures-claw
     SUBDIR += wanderer
     SUBDIR += wargus
     SUBDIR += warzone2100
