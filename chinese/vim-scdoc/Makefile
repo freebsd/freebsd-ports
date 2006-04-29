@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME:S/-s//}
 DISTNAME=	${PORTNAME:S/-s//}-${PORTVERSION}
 
-MAINTAINER=	hamigua@hotpop.com
+MAINTAINER=	liu_yinghong@yahoo.com.cn
 COMMENT=	Vim documentation Simplified Chinese
 
 RUN_DEPENDS=	vim:${PORTSDIR}/editors/vim

@@ -17,7 +17,7 @@ EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}.tar.bz2 \
 		${PORTNAME}-books-${PORTVERSION}.tar.bz2 \
 		${PORTNAME}-dicts-${PORTVERSION}.tar.bz2
 
-MAINTAINER=	hamigua@cuc.cn
+MAINTAINER=	liu_yinghong@yahoo.com.cn
 COMMENT=	Education software to help people to study English
 
 USE_ICONV=	yes

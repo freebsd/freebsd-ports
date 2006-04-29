@@ -17,7 +17,7 @@ PATCH_SITES=	ftp://local-distfiles.freebsd.org.cn/pub/china-ports/hamigua/
 PATCHFILES=	openq-0.3.2.qq2006.group.patch.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	hamigua@hotpop.com
+MAINTAINER=	liu_yinghong@yahoo.com.cn
 COMMENT=	A QQ-liked protocol plugin for Gaim
 
 BUILD_DEPENDS=	${X11BASE}/include/gaim/config.h:${PORTSDIR}/net-im/gaim
