@@ -1,0 +1,5 @@
+The IRC transport is a dynamic gateway that allows XMPP/Jabber
+users to connect to IRC using their Groupchat and MUC clients.
+It is based on xmpppy and irclib Python libraries.
+
+WWW: http://xmpppy.sourceforge.net/irc/
