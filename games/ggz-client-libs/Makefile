@@ -7,28 +7,28 @@
 #
 
 PORTNAME=	ggz-client-libs
-PORTVERSION=	0.0.12
-PORTREVISION=	2
+PORTVERSION=	0.0.13
 CATEGORIES=	games
 MASTER_SITES=	http://mirrors.dotsrc.org/ggzgamingzone/ggz/%SUBDIR%/ \
 		http://ftp.ggzgamingzone.org/pub/ggz/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTVERSION}
+DIST_SUBDIR=	ggz
 
 MAINTAINER=	yinjieh@csie.nctu.edu.tw
 COMMENT=	The GGZ Gaming Zone - Core Client Libraries
 
-LIB_DEPENDS=	ggz.3:${PORTSDIR}/games/libggz \
+LIB_DEPENDS=	ggz.4:${PORTSDIR}/games/libggz \
 		expat.6:${PORTSDIR}/textproc/expat2
 
 USE_GNOME=	gnometarget
 USE_GETOPT_LONG=	yes
 USE_GETTEXT=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--disable-debug
 INSTALLS_SHLIB=	yes
 
+MAN1=	ggzwrap.1
 MAN3=	ggzcore_h.3 ggzmod_h.3
 MAN5=	ggz.modules.5
 MAN6=	ggz-config.6 ggz-wrapper.6
@@ -36,9 +36,23 @@ MAN6=	ggz-config.6 ggz-wrapper.6
 CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.else
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|LIBGGZ_INCLUDES=.*$$|LIBGGZ_INCLUDES=|g ; \
 		 s|LIBGGZ_LDFLAGS=.*$$|LIBGGZ_LDFLAGS=|g ; \
 		 s|libggz.la|libggz.so|g' ${WRKSRC}/configure
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+IGNORE=	depends on libggz which does not build on 4.x
+.endif
+
+.include <bsd.port.post.mk>
