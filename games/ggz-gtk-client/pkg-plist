@@ -1,4 +1,10 @@
 bin/ggz-gtk
+include/ggz-embed.h
+include/ggz-gtk.h
+lib/libggz-gtk.so.0
+lib/libggz-gtk.so
+lib/libggz-gtk.la
+lib/libggz-gtk.a
 share/applications/ggz-gtk.desktop
 share/ggz/ggz-gtk/about_bg.png
 share/ggz/ggz-gtk/ggz_gtk_admin.svg
@@ -15,11 +21,11 @@ share/ggz/ggz-gtk/help/ggz-gtk-handbook.html
 share/ggz/ggz-gtk/help/ggz-gtk-login.png
 share/ggz/ggz-gtk/help/ggz-gtk-chat.png
 share/ggz/ggz-gtk/help/ggz-gtk-launch.png
-share/locale/de/LC_MESSAGES/ggz-gtk.mo
-share/locale/es/LC_MESSAGES/ggz-gtk.mo
-share/locale/pt_BR/LC_MESSAGES/ggz-gtk.mo
-share/locale/sv/LC_MESSAGES/ggz-gtk.mo
-@dirrmtry share/applications
+%%NLS%%share/locale/de/LC_MESSAGES/ggz-gtk.mo
+%%NLS%%share/locale/es/LC_MESSAGES/ggz-gtk.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/ggz-gtk.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/ggz-gtk.mo
 @dirrm share/ggz/ggz-gtk/help
 @dirrm share/ggz/ggz-gtk
+@dirrmtry share/applications
 @dirrmtry share/ggz
