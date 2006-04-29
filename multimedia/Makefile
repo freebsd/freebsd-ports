@@ -152,6 +152,7 @@
     SUBDIR += ppm2fli
     SUBDIR += projectx
     SUBDIR += pvr250
+    SUBDIR += pwcbsd
     SUBDIR += py-gstreamer
     SUBDIR += qdvdauthor
     SUBDIR += quodlibet
