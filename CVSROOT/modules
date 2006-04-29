@@ -13307,6 +13307,7 @@ vttest		ports/sysutils/vttest
 vtun		ports/net/vtun
 vtwm		ports/x11-wm/vtwm
 vulnerability-test-port	ports/security/vulnerability-test-port
+vultures-claw	ports/games/vultures-claw
 vuxml		ports/security/vuxml
 vvv		ports/graphics/vvv
 vx68k		ports/emulators/vx68k
