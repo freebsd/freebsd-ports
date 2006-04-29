@@ -1,0 +1,8 @@
+**************************************************************
+
+To enable rc.d script add scand_enable="YES" in your rc.conf
+
+Don't forget to add IPDIVERT option in your kernel or load
+ipdivert.ko module.
+
+**************************************************************
