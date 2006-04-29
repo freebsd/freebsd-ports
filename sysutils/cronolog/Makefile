@@ -10,7 +10,7 @@ PORTVERSION=	1.6.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://cronolog.org/download/
 
-MAINTAINER=	freebsd-ports@blackmans.org
+MAINTAINER=	shaun@inerd.com
 COMMENT=	A web log rotation utility that provides datestamp filenames
 
 INFO=		cronolog
