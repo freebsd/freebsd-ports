@@ -7,7 +7,7 @@
 
 PORTNAME=	webmin
 PORTVERSION=	1.270
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webmin.com/updates/:up \
 		${MASTER_SITE_SOURCEFORGE:S/$/:sf/} \
@@ -30,6 +30,7 @@ USE_REINPLACE=	yes
 SUB_LIST=	PERL5=${PERL}
 
 WEBMIN_MODULES=	apache-1.270-3.wbm.gz \
+		file-1.270-4.wbm.gz \
 		ldap-useradmin-1.270-1.wbm.gz
 
 post-extract:
