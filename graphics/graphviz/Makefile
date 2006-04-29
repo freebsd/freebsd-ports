@@ -9,7 +9,8 @@ PORTNAME=	graphviz
 PORTVERSION=	2.6
 PORTREVISION=	4
 CATEGORIES=	graphics tk84
-MASTER_SITES=	http://www.graphviz.org/pub/graphviz/ARCHIVE/
+MASTER_SITES=	http://www.graphviz.org/pub/graphviz/ARCHIVE/ \
+		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
 
 MAINTAINER=	shaun@inerd.com
 COMMENT=	Graph Visualization Software from AT&T and Bell Labs
@@ -25,7 +26,6 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 USE_BISON=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
-USE_REINPLACE=	yes
 USE_XPM=	yes
 USE_AUTOTOOLS=	libltdl:15
 GNU_CONFIGURE=	yes
