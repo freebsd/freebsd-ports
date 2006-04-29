@@ -187,6 +187,7 @@
     SUBDIR += jailaudit
     SUBDIR += jce_policy14
     SUBDIR += john
+    SUBDIR += kedpm
     SUBDIR += keychain
     SUBDIR += keynote
     SUBDIR += keyprint
