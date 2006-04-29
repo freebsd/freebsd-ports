@@ -19,7 +19,7 @@ DISTFILES=	ezm3-${PORTVERSION}-src.tar.bz2:src
 
 .if ${ARCH} == "amd64"
 DISTFILES+=	ezm3-${PORTVERSION}-${TARGET}-boot.tar.bz2:amdb \
-		ezm3-amd64-patchset.tar.bz2:amdp
+		ezm3-amd64-patchset-2.tar.bz2:amdp
 .else
 DISTFILES+=	ezm3-${PORTVERSION}-${TARGET}-boot.tar.bz2:src
 .endif
@@ -36,7 +36,6 @@ PLIST_SUB+=	ARCH=${ARCH} TARGET=${TARGET} WORDSIZE=${WORDSIZE} \
 SCRIPTS_ENV+=	TARGET=${TARGET}
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 
 PROGS=		bin/m3build \
 		bin/m3bundle \
@@ -91,9 +90,6 @@ post-patch:
 .if ${ARCH} == "sparc64" && ${OSVERSION} < 502107
 	@${REINPLACE_CMD} -E -e 's|(^.*time_t.*=.*)int64_t;|\1int32_t;|' \
 		${WRKSRC}/libs/m3core/src/unix/freebsd-4.sparc64/Utypes.i3
-.elif ${ARCH} == "amd64"
-	@${CP} ${WRKSRC}/libs/m3core/src/unix/freebsd-4.alpha/Unix.i3 \
-	    ${WRKSRC}/libs/m3core/src/unix/freebsd-4.amd64/Unix.i3
 .endif
 
 do-build:
