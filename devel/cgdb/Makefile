@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cgdb
-PORTVERSION=	0.5.3
+PORTVERSION=	0.6.2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,19 +14,16 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	gslin@gslin.org
 COMMENT=	A curses-based interface to the GNU Debugger
 
-GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
-
+INFO=		cgdb
+MAN1=		cgdb.1
 PLIST_FILES=	bin/cgdb
+
+GNU_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500018
-# This port requires readline 4.2 or newer, which is only available
-# in the base system in FreeBSD 5.x or later.
-BUILD_DEPENDS+=		${LOCALBASE}/lib/libreadline.so.5:${PORTSDIR}/devel/readline
-RUN_DEPENDS+=		${LOCALBASE}/lib/libreadline.so.5:${PORTSDIR}/devel/readline
-CONFIGURE_ARGS+=	--with-readline=${LOCALBASE}
+.if ${OSVERSION} < 700016
+LIB_DEPENDS+=	readline.5:${PORTSDIR}/devel/readline
 .endif
 
 post-patch:
