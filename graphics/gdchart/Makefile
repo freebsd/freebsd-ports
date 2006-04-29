@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gdchart
-PORTVERSION=	0.11.4
-PORTREVISION=	1
+PORTVERSION=	0.11.5
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.fred.net/brv/chart/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
@@ -20,12 +19,11 @@ LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd \
 		jpeg:${PORTSDIR}/graphics/jpeg \
 		freetype:${PORTSDIR}/print/freetype2
 
-USE_REINPLACE=	yes
 MAKEFILE=	${FILESDIR}/Makefile
 MAKE_ARGS=	PREFIX="${PREFIX}" LOCALBASE="${LOCALBASE}"
 INSTALLS_SHLIB=	yes
 
-DOCS=		README
+DOCS=		README.txt
 EXAMPLES=	ft_samp.c gdc_pie_samp.c gdc_samp1.c gdc_samp2.c
 
 .if defined(NOPROFILE)

@@ -10,13 +10,11 @@ SRCS=		array_alloc.c \
 		gdc.c \
 		gdc_pie.c \
 		gdchart.c \
-		gifencode.c \
 		price_conv.c
 INCS=		gdc.h \
 		gdchart.h \
-		gdcpie.h \
-		gifencode.h
-NOMAN=		YES
+		gdcpie.h
+NO_MAN=		YES
 PREFIX?=	/usr/local
 LOCALBASE?=	/usr/local
 LIBDIR=		${PREFIX}/lib
