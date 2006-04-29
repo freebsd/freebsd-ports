@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xlockmore
-PORTVERSION=	5.21
-PORTREVISION=	1
+PORTVERSION=	5.22
 CATEGORIES?=	x11
 MASTER_SITES=	ftp://ftp.tux.org/pub/tux/bagleyd/xlockmore/ \
 		http://www.tux.org/~bagleyd/latest/
@@ -16,7 +15,6 @@ MAINTAINER?=	ports@FreeBSD.org
 COMMENT=	Like XLock session locker/screen saver, but just more
 
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-gl --without-motif --without-sx \
 		--without-editres --without-dtsaver --without-rplay \
