@@ -16,7 +16,7 @@ COMMENT=	A modular open source user-space load balancing system
 
 LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre \
 		gnutls.15:${PORTSDIR}/security/gnutls \
-		ggz.3:${PORTSDIR}/games/libggz
+		ggz.4:${PORTSDIR}/games/libggz
 
 CFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include
 MAKE_ARGS+=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
