@@ -12542,7 +12542,7 @@ synce-rra	ports/palm/synce-rra
 synce-serial	ports/palm/synce-serial
 synce-trayicon	ports/palm/synce-trayicon
 syndigator	ports/www/syndigator
-synergy 	ports/sysutils/synergy
+synergy		ports/sysutils/synergy
 synonym		ports/mail/synonym
 sysbench	ports/benchmarks/sysbench
 sysconftool	ports/devel/sysconftool
