@@ -1,32 +1,25 @@
-# New ports collection makefile for:   gnonlin
-# Date created:			2 June 2005
-# Whom:				Koop Mast <kwm@FreeBSD.org>
+# New ports collection makefile for:	gstreamer-plugins-gnonlin
+# Date created:		2006-04-25
+# Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#
+#    $MCom: ports/multimedia/gstreamer-plugins-gnonlin/Makefile,v 1.2 2006/04/25 20:54:56 ahze Exp $
 
-PORTNAME=	gnonlin
-PORTVERSION=	0.2.2
-PORTREVISION=	2
+PORTNAME=	gstreamer-plugins-gnonlin
+PORTVERSION=	0.10.3
 CATEGORIES=	multimedia
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	http://gstreamer.freedesktop.org/src/gnonlin/
+DISTNAME=	gnonlin-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	GStreamer extension library for non-linear editing
+MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	Gstreamer lib for writing non-linear audio and video
 
-LIB_DEPENDS=	gstreamer-0.8.5:${PORTSDIR}/multimedia/gstreamer
-
-CONFLICTS=	pitivi-0.1.1*
-
-USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomehack gnometarget
-USE_GMAKE=	yes
+USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+USE_GSTREAMER=	yes
 
-MAN1=		gnonlin-config.1
+PLIST_FILES=	lib/gstreamer-0.10/libgnl.a lib/gstreamer-0.10/libgnl.la \
+		lib/gstreamer-0.10/libgnl.so
 
 .include <bsd.port.mk>
