@@ -1,0 +1,8 @@
+MDB file migration driver for Kexi.
+
+MDB files are the native database format of MS Access (and 
+also some other MS applications).  This driver can be used
+by Kexi's migration framework to convert simple Access 
+databases to native Kexi databases.
+
+WWW: http://www.kexi-project.org

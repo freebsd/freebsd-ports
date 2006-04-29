@@ -198,6 +198,8 @@ share/locale/de/LC_MESSAGES/example.mo
 share/locale/de/LC_MESSAGES/karbon.mo
 share/locale/de/LC_MESSAGES/kchart.mo
 share/locale/de/LC_MESSAGES/kexi.mo
+share/locale/de/LC_MESSAGES/kfile_abiword.mo
+share/locale/de/LC_MESSAGES/kfile_gnumeric.mo
 share/locale/de/LC_MESSAGES/kfile_koffice.mo
 share/locale/de/LC_MESSAGES/kfile_ooo.mo
 share/locale/de/LC_MESSAGES/kformdesigner.mo
@@ -206,6 +208,7 @@ share/locale/de/LC_MESSAGES/kivio.mo
 share/locale/de/LC_MESSAGES/koconverter.mo
 share/locale/de/LC_MESSAGES/koffice.mo
 share/locale/de/LC_MESSAGES/kofficefilters.mo
+share/locale/de/LC_MESSAGES/koproperty.mo
 share/locale/de/LC_MESSAGES/koshell.mo
 share/locale/de/LC_MESSAGES/kounavail.mo
 share/locale/de/LC_MESSAGES/kplato.mo

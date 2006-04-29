@@ -1,3 +1,19 @@
+share/doc/HTML/nl/karbon/common
+share/doc/HTML/nl/karbon/index.cache.bz2
+share/doc/HTML/nl/karbon/index.docbook
+share/doc/HTML/nl/kchart/common
+share/doc/HTML/nl/kchart/index.cache.bz2
+share/doc/HTML/nl/kchart/index.docbook
+share/doc/HTML/nl/kexi/basics.docbook
+share/doc/HTML/nl/kexi/building.docbook
+share/doc/HTML/nl/kexi/common
+share/doc/HTML/nl/kexi/configuration.docbook
+share/doc/HTML/nl/kexi/credits.docbook
+share/doc/HTML/nl/kexi/database.docbook
+share/doc/HTML/nl/kexi/index.cache.bz2
+share/doc/HTML/nl/kexi/index.docbook
+share/doc/HTML/nl/kexi/intro.docbook
+share/doc/HTML/nl/kexi/menus.docbook
 share/doc/HTML/nl/kformula/additional_fonts1.png
 share/doc/HTML/nl/kformula/ambiguous-string.png
 share/doc/HTML/nl/kformula/common
@@ -45,6 +61,15 @@ share/doc/HTML/nl/koffice/index.docbook
 share/doc/HTML/nl/koshell/common
 share/doc/HTML/nl/koshell/index.cache.bz2
 share/doc/HTML/nl/koshell/index.docbook
+share/doc/HTML/nl/kplato/commands.docbook
+share/doc/HTML/nl/kplato/common
+share/doc/HTML/nl/kplato/definitions.docbook
+share/doc/HTML/nl/kplato/index.cache.bz2
+share/doc/HTML/nl/kplato/index.docbook
+share/doc/HTML/nl/kplato/mainwindow.docbook
+share/doc/HTML/nl/kplato/options.docbook
+share/doc/HTML/nl/kplato/wbs.docbook
+share/doc/HTML/nl/kpresenter/a11y.docbook
 share/doc/HTML/nl/kpresenter/barstyle1.png
 share/doc/HTML/nl/kpresenter/barstyle2.png
 share/doc/HTML/nl/kpresenter/barstyle3.png
@@ -114,6 +139,30 @@ share/doc/HTML/nl/kpresenter/tut21.png
 share/doc/HTML/nl/kpresenter/tut22.png
 share/doc/HTML/nl/kpresenter/tut23.png
 share/doc/HTML/nl/kpresenter/tutorial.docbook
+share/doc/HTML/nl/krita/commands-dialogs.docbook
+share/doc/HTML/nl/krita/commands-menus.docbook
+share/doc/HTML/nl/krita/commands-palettes.docbook
+share/doc/HTML/nl/krita/commands-toolbars.docbook
+share/doc/HTML/nl/krita/commands.docbook
+share/doc/HTML/nl/krita/common
+share/doc/HTML/nl/krita/credits.docbook
+share/doc/HTML/nl/krita/developers.docbook
+share/doc/HTML/nl/krita/faq.docbook
+share/doc/HTML/nl/krita/index.cache.bz2
+share/doc/HTML/nl/krita/index.docbook
+share/doc/HTML/nl/krita/installation.docbook
+share/doc/HTML/nl/krita/introduction.docbook
+share/doc/HTML/nl/krita/scripting.docbook
+share/doc/HTML/nl/krita/settings.docbook
+share/doc/HTML/nl/krita/tutorial-quick-starts.docbook
+share/doc/HTML/nl/krita/tutorial-select-layer.docbook
+share/doc/HTML/nl/krita/tutorial-starting.docbook
+share/doc/HTML/nl/krita/tutorial.docbook
+share/doc/HTML/nl/krita/using-colorspaces.docbook
+share/doc/HTML/nl/krita/using-filters.docbook
+share/doc/HTML/nl/krita/using-layers.docbook
+share/doc/HTML/nl/krita/using-selections.docbook
+share/doc/HTML/nl/kspread/a11y.docbook
 share/doc/HTML/nl/kspread/advanced.docbook
 share/doc/HTML/nl/kspread/basics.docbook
 share/doc/HTML/nl/kspread/celformat0.png
@@ -138,6 +187,18 @@ share/doc/HTML/nl/kspread/shortcut2.png
 share/doc/HTML/nl/kspread/shortcut3.png
 share/doc/HTML/nl/kspread/sort1.png
 share/doc/HTML/nl/kspread/starting1.png
+share/doc/HTML/nl/kugar/common
+share/doc/HTML/nl/kugar/datadtd.docbook
+share/doc/HTML/nl/kugar/dataref.docbook
+share/doc/HTML/nl/kugar/designer.docbook
+share/doc/HTML/nl/kugar/index.cache.bz2
+share/doc/HTML/nl/kugar/index.docbook
+share/doc/HTML/nl/kugar/progguide.docbook
+share/doc/HTML/nl/kugar/starting.docbook
+share/doc/HTML/nl/kugar/template-elements.docbook
+share/doc/HTML/nl/kugar/template.docbook
+share/doc/HTML/nl/kugar/templatedtd.docbook
+share/doc/HTML/nl/kugar/tutorial.docbook
 share/doc/HTML/nl/kword/ChooseTempDia.png
 share/doc/HTML/nl/kword/Tut1.png
 share/doc/HTML/nl/kword/Tut11a.png
@@ -159,6 +220,7 @@ share/doc/HTML/nl/kword/Tut3.png
 share/doc/HTML/nl/kword/Tut4.png
 share/doc/HTML/nl/kword/Tut7.png
 share/doc/HTML/nl/kword/Tut8.png
+share/doc/HTML/nl/kword/a11y.docbook
 share/doc/HTML/nl/kword/addentry.png
 share/doc/HTML/nl/kword/addrecord.png
 share/doc/HTML/nl/kword/alignBlock.png
@@ -401,6 +463,8 @@ share/locale/nl/LC_MESSAGES/example.mo
 share/locale/nl/LC_MESSAGES/karbon.mo
 share/locale/nl/LC_MESSAGES/kchart.mo
 share/locale/nl/LC_MESSAGES/kexi.mo
+share/locale/nl/LC_MESSAGES/kfile_abiword.mo
+share/locale/nl/LC_MESSAGES/kfile_gnumeric.mo
 share/locale/nl/LC_MESSAGES/kfile_koffice.mo
 share/locale/nl/LC_MESSAGES/kfile_ooo.mo
 share/locale/nl/LC_MESSAGES/kformdesigner.mo
@@ -409,6 +473,7 @@ share/locale/nl/LC_MESSAGES/kivio.mo
 share/locale/nl/LC_MESSAGES/koconverter.mo
 share/locale/nl/LC_MESSAGES/koffice.mo
 share/locale/nl/LC_MESSAGES/kofficefilters.mo
+share/locale/nl/LC_MESSAGES/koproperty.mo
 share/locale/nl/LC_MESSAGES/koshell.mo
 share/locale/nl/LC_MESSAGES/kounavail.mo
 share/locale/nl/LC_MESSAGES/kplato.mo
@@ -425,9 +490,15 @@ share/locale/nl/LC_MESSAGES/kword.mo
 share/locale/nl/LC_MESSAGES/thesaurus_tool.mo
 @dirrm share/doc/HTML/nl/thesaurus
 @dirrm share/doc/HTML/nl/kword
+@dirrm share/doc/HTML/nl/kugar
 @dirrm share/doc/HTML/nl/kspread
+@dirrm share/doc/HTML/nl/krita
 @dirrm share/doc/HTML/nl/kpresenter
+@dirrm share/doc/HTML/nl/kplato
 @dirrm share/doc/HTML/nl/koshell
 @dirrm share/doc/HTML/nl/koffice
 @dirrm share/doc/HTML/nl/kivio
 @dirrm share/doc/HTML/nl/kformula
+@dirrm share/doc/HTML/nl/kexi
+@dirrm share/doc/HTML/nl/kchart
+@dirrm share/doc/HTML/nl/karbon

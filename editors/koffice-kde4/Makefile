@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	koffice
-PORTVERSION=	1.4.2
-PORTREVISION=	3
+PORTVERSION=	1.5.0
 PORTEPOCH=	1
 CATEGORIES=	editors kde
 MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/${PORTNAME}-${PORTVERSION:S/.0//:S/a//}/src
+MASTER_SITE_SUBDIR=	stable/${PORTNAME}-${PORTVERSION:S/a//}/src
 DIST_SUBDIR=	KDE/koffice
 
 MAINTAINER=	kde@FreeBSD.org
@@ -21,6 +20,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libpqxx.a:${PORTSDIR}/databases/postgresql-libpq
 		Magick-config:${PORTSDIR}/graphics/ImageMagick
 LIB_DEPENDS=	art_lgpl_2.5:${PORTSDIR}/graphics/libart_lgpl2 \
 		aspell:${PORTSDIR}/textproc/aspell \
+		exif.12:${PORTSDIR}/graphics/libexif \
 		fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
 		freetype:${PORTSDIR}/print/freetype2 \
 		lcms:${PORTSDIR}/graphics/lcms \
@@ -31,7 +31,7 @@ LIB_DEPENDS=	art_lgpl_2.5:${PORTSDIR}/graphics/libart_lgpl2 \
 		xslt:${PORTSDIR}/textproc/libxslt
 RUN_DEPENDS=	${LOCALBASE}/lib/libpqxx.a:${PORTSDIR}/databases/postgresql-libpqxx
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=  libtool:15
 INSTALLS_SHLIB=	yes
 PREFIX=		${KDE_PREFIX}
 USE_BZIP2=	yes
@@ -39,6 +39,7 @@ USE_GMAKE=	yes
 USE_KDELIBS_VER=3
 USE_MYSQL=	yes
 USE_PYTHON=	yes
+USE_RUBY=	yes
 USE_PGSQL=	yes
 
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
@@ -49,15 +50,14 @@ CONFIGURE_ARGS+=--with-pgsqlincdir=${LOCALBASE}/include \
 
 .if ${OSVERSION} < 500035
 EXTRA_PATCHES=	${PATCHDIR}/extrapatch-kexi-main-keximainwindowimpl.cpp
+CONFIGURE_ARGS+= --disable-final
 .endif
-
-post-patch:
-	${CP} ${FILESDIR}/karbon_factory_init.cc ${WRKSRC}/karbon
 
 post-configure:
 .if ${OSVERSION} < 500035
 	${REINPLACE_CMD} -e 's|\(^CPPFLAGS =.*\)|\1 -I${LOCALBASE}/include/stlport|g' \
 	-e 's|\(^LDFLAGS =.*\)|\1 -L${LOCALBASE}/lib -lstlport_gcc ${PTHREAD_LIBS}|g' \
+		${WRKSRC}/filters/krita/tiff/Makefile \
 		${WRKSRC}/filters/kspread/excel/sidewinder/Makefile \
 		${WRKSRC}/kchart/Makefile \
 		${WRKSRC}/kchart/kdchart/Makefile \

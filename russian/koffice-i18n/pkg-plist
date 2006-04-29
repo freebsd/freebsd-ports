@@ -11,6 +11,9 @@ share/doc/HTML/ru/kivio/index.docbook
 share/doc/HTML/ru/kivio/introduction.docbook
 share/doc/HTML/ru/kivio/usage.docbook
 share/doc/HTML/ru/kivio/working.docbook
+share/doc/HTML/ru/koffice/common
+share/doc/HTML/ru/koffice/index.cache.bz2
+share/doc/HTML/ru/koffice/index.docbook
 share/doc/HTML/ru/koshell/common
 share/doc/HTML/ru/koshell/index.cache.bz2
 share/doc/HTML/ru/koshell/index.docbook
@@ -102,6 +105,7 @@ share/locale/ru/LC_MESSAGES/kivio.mo
 share/locale/ru/LC_MESSAGES/koconverter.mo
 share/locale/ru/LC_MESSAGES/koffice.mo
 share/locale/ru/LC_MESSAGES/kofficefilters.mo
+share/locale/ru/LC_MESSAGES/koproperty.mo
 share/locale/ru/LC_MESSAGES/koshell.mo
 share/locale/ru/LC_MESSAGES/kounavail.mo
 share/locale/ru/LC_MESSAGES/kplato.mo
@@ -122,6 +126,7 @@ share/locale/ru/LC_MESSAGES/thesaurus_tool.mo
 @dirrm share/doc/HTML/ru/kspread
 @dirrm share/doc/HTML/ru/kpresenter
 @dirrm share/doc/HTML/ru/koshell
+@dirrm share/doc/HTML/ru/koffice
 @dirrm share/doc/HTML/ru/kivio
 @dirrm share/doc/HTML/ru/kformula
 @dirrm share/doc/HTML/ru/kchart

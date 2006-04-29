@@ -263,7 +263,6 @@ share/doc/HTML/fr/kword/chapnumb.docbook
 share/doc/HTML/fr/kword/chstylebut.png
 share/doc/HTML/fr/kword/colorseldlg.png
 share/doc/HTML/fr/kword/columns.docbook
-share/doc/HTML/fr/kword/common
 share/doc/HTML/fr/kword/ctab2.png
 share/doc/HTML/fr/kword/doccomments.docbook
 share/doc/HTML/fr/kword/doclinks.docbook
@@ -308,8 +307,6 @@ share/doc/HTML/fr/kword/fundimentals.docbook
 share/doc/HTML/fr/kword/graphics.docbook
 share/doc/HTML/fr/kword/headerfooter.docbook
 share/doc/HTML/fr/kword/horizline.docbook
-share/doc/HTML/fr/kword/index.cache.bz2
-share/doc/HTML/fr/kword/index.docbook
 share/doc/HTML/fr/kword/inscoldlg.png
 share/doc/HTML/fr/kword/insdate.png
 share/doc/HTML/fr/kword/insertfile.docbook
@@ -391,6 +388,8 @@ share/locale/fr/LC_MESSAGES/example.mo
 share/locale/fr/LC_MESSAGES/karbon.mo
 share/locale/fr/LC_MESSAGES/kchart.mo
 share/locale/fr/LC_MESSAGES/kexi.mo
+share/locale/fr/LC_MESSAGES/kfile_abiword.mo
+share/locale/fr/LC_MESSAGES/kfile_gnumeric.mo
 share/locale/fr/LC_MESSAGES/kfile_koffice.mo
 share/locale/fr/LC_MESSAGES/kfile_ooo.mo
 share/locale/fr/LC_MESSAGES/kformdesigner.mo
@@ -399,6 +398,7 @@ share/locale/fr/LC_MESSAGES/kivio.mo
 share/locale/fr/LC_MESSAGES/koconverter.mo
 share/locale/fr/LC_MESSAGES/koffice.mo
 share/locale/fr/LC_MESSAGES/kofficefilters.mo
+share/locale/fr/LC_MESSAGES/koproperty.mo
 share/locale/fr/LC_MESSAGES/koshell.mo
 share/locale/fr/LC_MESSAGES/kounavail.mo
 share/locale/fr/LC_MESSAGES/kplato.mo
