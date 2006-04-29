@@ -17,7 +17,7 @@ COMMENT=	A software speech synthesizer
 
 LIB_DEPENDS=	portaudio:${PORTSDIR}/audio/portaudio
 
-CONFLICTS=	speak-1*
+CONFLICTS=	speak-1.[0-9]
 
 MAKE_ENV+=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}" CPPFLAGS="${CPPFLAGS}" \
