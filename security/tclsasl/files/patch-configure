@@ -1,0 +1,11 @@
+--- configure.orig	Sat Jun  8 11:10:07 2002
++++ configure	Wed Apr 26 13:13:38 2006
+@@ -2917,7 +2917,7 @@
+     
+ 
+ 
+-PKG_TCL=${TCL_PACKAGE_PATH}/sasl-${VERSION}
++PKG_TCL=${TCL_PACKAGE_PATH}/tclsasl
+ 
+ 
+ # Check whether --with-cyrus-sasl or --without-cyrus-sasl was given.

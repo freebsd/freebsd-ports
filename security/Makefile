@@ -603,6 +603,7 @@
     SUBDIR += super
     SUBDIR += swatch
     SUBDIR += symbion-sslproxy
+    SUBDIR += tclsasl
     SUBDIR += tea-total
     SUBDIR += termlog
     SUBDIR += tinc
