@@ -12514,6 +12514,7 @@ sybtcl		ports/databases/sybtcl
 syck		ports/textproc/syck
 sylpheed	ports/mail/sylpheed
 sylpheed-claws	ports/mail/sylpheed-claws
+sylpheed-claws-smime	ports/mail/sylpheed-claws-smime
 sylpheed2	ports/mail/sylpheed2
 sylpheed2-devel	ports/mail/sylpheed2-devel
 symbion-sslproxy	ports/security/symbion-sslproxy
