@@ -29,6 +29,7 @@ include/guichan/sdl.hpp
 include/guichan/sdl/sdlgraphics.hpp
 include/guichan/sdl/sdlimageloader.hpp
 include/guichan/sdl/sdlinput.hpp
+include/guichan/sdl/sdlpixel.hpp
 include/guichan/widget.hpp
 include/guichan/widgets/button.hpp
 include/guichan/widgets/checkbox.hpp
