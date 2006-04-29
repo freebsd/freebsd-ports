@@ -5059,6 +5059,7 @@ keitairc	ports/irc/keitairc
 kenny		ports/misc/kenny
 kermit		ports/comms/kermit
 kexchange	ports/finance/kexchange
+keximdb		ports/databases/keximdb
 keychain	ports/security/keychain
 keylaunch	ports/x11/keylaunch
 keynote		ports/security/keynote
@@ -5204,15 +5205,20 @@ koffice-i18n-et	ports/misc/koffice-i18n-et
 koffice-i18n-eu ports/misc/koffice-i18n-eu
 koffice-i18n-fa	ports/misc/koffice-i18n-fa
 koffice-i18n-fi	ports/misc/koffice-i18n-fi
+koffice-i18n-ga ports/misc/koffice-i18n-ga
+koffice-i18n-hi ports/misc/koffice-i18n-hi
 koffice-i18n-hsb ports/misc/koffice-i18n-hsb
+koffice-i18n-is ports/misc/koffice-i18n-is
 koffice-i18n-it	ports/misc/koffice-i18n-it
 koffice-i18n-lo	ports/misc/koffice-i18n-lo
 koffice-i18n-lt	ports/misc/koffice-i18n-lt
 koffice-i18n-lv	ports/misc/koffice-i18n-lv
+koffice-i18n-mk ports/misc/koffice-i18n-mk
 koffice-i18n-mt	ports/misc/koffice-i18n-mt
 koffice-i18n-nb	ports/misc/koffice-i18n-nb
 koffice-i18n-nl	ports/misc/koffice-i18n-nl
 koffice-i18n-nn	ports/misc/koffice-i18n-nn
+koffice-i18n-ro ports/misc/koffice-i18n-ro
 koffice-i18n-se	ports/misc/koffice-i18n-se
 koffice-i18n-sk	ports/misc/koffice-i18n-sk
 koffice-i18n-sl	ports/misc/koffice-i18n-sl
@@ -5223,6 +5229,7 @@ koffice-i18n-ta	ports/misc/koffice-i18n-ta
 koffice-i18n-tg	ports/misc/koffice-i18n-tg
 koffice-i18n-th	ports/misc/koffice-i18n-th
 koffice-i18n-tr	ports/misc/koffice-i18n-tr
+koffice-i18n-uz ports/misc/koffice-i18n-uz
 koffice-i18n-ven	ports/misc/koffice-i18n-ven
 koffice-i18n-xh	ports/misc/koffice-i18n-xh
 koffice-i18n-zu	ports/misc/koffice-i18n-zu
