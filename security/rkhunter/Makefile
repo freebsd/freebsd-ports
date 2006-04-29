@@ -7,6 +7,7 @@
 
 PORTNAME=	rkhunter
 PORTVERSION=	1.2.8
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://downloads.rootkit.nl/
 
@@ -35,7 +36,7 @@ do-install:
 	cd ${WRKSRC} && ./installer.sh --installdir ${PREFIX}
 	${INSTALL_MAN} ${WRKSRC}/files/development/rkhunter.8 ${MAN8PREFIX}/man/man8
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/files/|} ${DOCSDIR}
 .endif
 
