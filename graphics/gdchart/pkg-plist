@@ -1,15 +1,14 @@
 include/gdc.h
 include/gdchart.h
 include/gdcpie.h
-include/gifencode.h
 lib/libgdc.a
 lib/libgdc.so
 lib/libgdc.so.1
 %%PROFILE%%lib/libgdc_p.a
-%%PORTDOCS%%share/doc/gdchart/README
-%%PORTDOCS%%@dirrm share/doc/gdchart
-%%PORTDOCS%%share/examples/gdchart/ft_samp.c
-%%PORTDOCS%%share/examples/gdchart/gdc_samp1.c
-%%PORTDOCS%%share/examples/gdchart/gdc_samp2.c
-%%PORTDOCS%%share/examples/gdchart/gdc_pie_samp.c
-%%PORTDOCS%%@dirrm share/examples/gdchart
+%%DOCSDIR%%/README.txt
+@dirrm %%DOCSDIR%%
+%%EXAMPLESDIR%%/ft_samp.c
+%%EXAMPLESDIR%%/gdc_samp1.c
+%%EXAMPLESDIR%%/gdc_samp2.c
+%%EXAMPLESDIR%%/gdc_pie_samp.c
+@dirrm %%EXAMPLESDIR%%
