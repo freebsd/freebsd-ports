@@ -12617,6 +12617,7 @@ tclgetopts	ports/devel/tclgetopts
 tclhttpd	ports/www/tclhttpd
 tcllib		ports/devel/tcllib
 tclmidi		ports/audio/tclmidi
+tclmore		ports/devel/tclmore
 tclock		ports/x11-clocks/tclock
 tclreadline	ports/devel/tclreadline
 tcltls		ports/devel/tcltls
