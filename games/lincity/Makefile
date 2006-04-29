@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	lincity
-PORTVERSION=	1.12.1
+PORTVERSION=	1.13.1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Rich city simulation game for X
+
+LIB_DEPENDS=	png:${PORTSDIR}/graphics/png
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -21,6 +23,9 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN6=		lincity.6
+
+pre-configure:
+	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|g' ${WRKSRC}/readpng.c
 
 .if defined(WITH_SVGALIB)
 LIB_DEPENDS+=	vga.1:${PORTSDIR}/graphics/svgalib
