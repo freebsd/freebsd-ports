@@ -499,6 +499,7 @@
     SUBDIR += service-config
     SUBDIR += setcdboot
     SUBDIR += setquota
+    SUBDIR += sfdisk
     SUBDIR += sformat
     SUBDIR += sge
     SUBDIR += sge53
