@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	zthread
-PORTVERSION=	2.3.1
-PORTREVISION=	1
+PORTVERSION=	2.3.2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -23,9 +22,7 @@ MAKE_ARGS+=	INSTALL_PROGRAM="${INSTALL_SCRIPT}"
 MAKE_ENV+=	SED=sed # req'd for LIBTOOL?!
 INSTALLS_SHLIB=	yes
 
-.if !defined(NOPORTDOCS)
-PORTDOCS=	*
-.endif
+PORTDOCS=	AUTHORS ChangeLog NEWS README TODO
 
 .include <bsd.port.pre.mk>
 
@@ -36,16 +33,13 @@ USE_GCC=	3.3+
 post-extract:
 	@${FIND} ${WRKSRC} -name CVS -type d -delete
 
+post-patch:
+	@${FIND} ${WRKSRC} \( -name '*.orig' -or -name '*.swp' \) -delete
+
 post-install:
-	@${FIND} ${PREFIX}/include/zthread -type f | \
-		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
-	@${ECHO_CMD} "@dirrm include/zthread" >> ${TMPPLIST}
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}/html
-.for docfile in AUTHORS ChangeLog NEWS README TODO
-	${INSTALL_DATA} ${WRKSRC}/${docfile} ${DOCSDIR}
-.endfor
-	${CP} -R ${WRKSRC}/doc/html/ ${DOCSDIR}/html
+	@${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>
