@@ -533,6 +533,7 @@
     SUBDIR += sylpheed-claws-notification
     SUBDIR += sylpheed-claws-perl
     SUBDIR += sylpheed-claws-smime
+    SUBDIR += sylpheed-claws-vcalendar
     SUBDIR += sylpheed2
     SUBDIR += sympa
     SUBDIR += sympa-elixus
