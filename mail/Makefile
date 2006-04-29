@@ -524,6 +524,7 @@
     SUBDIR += sylpheed
     SUBDIR += sylpheed-claws
     SUBDIR += sylpheed-claws-cachesaver
+    SUBDIR += sylpheed-claws-etpan_privacy
     SUBDIR += sylpheed-claws-fetchinfo
     SUBDIR += sylpheed-claws-mailmbox
     SUBDIR += sylpheed-claws-perl
