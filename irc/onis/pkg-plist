@@ -1,22 +1,39 @@
 %%DATADIR%%/CHANGELOG
 %%DATADIR%%/COPYING
+%%DATADIR%%/FAQ
+%%DATADIR%%/MANIFEST
 %%DATADIR%%/README
 %%DATADIR%%/THANKS
-%%DATADIR%%/config
-%%DATADIR%%/onis
-%%DATADIR%%/users.conf
+%%DATADIR%%/TODO
+%%DATADIR%%/contrib/systemwide-patch/systemwide-patch.diff
+%%DATADIR%%/debian/README.Debian
+%%DATADIR%%/debian/changelog
+%%DATADIR%%/debian/compat
+%%DATADIR%%/debian/conffiles
+%%DATADIR%%/debian/control
+%%DATADIR%%/debian/copyright
+%%DATADIR%%/debian/dirs
+%%DATADIR%%/debian/docs
+%%DATADIR%%/debian/files
+%%DATADIR%%/debian/preinst
+%%DATADIR%%/debian/rules
 %%DATADIR%%/lang/english.lang
 %%DATADIR%%/lang/german.lang
 %%DATADIR%%/lang/norwegian.lang
+%%DATADIR%%/lang/spanish.lang
+%%DATADIR%%/lang/swedish.lang
 %%DATADIR%%/lib/Onis/Config.pm
-%%DATADIR%%/lib/Onis/Html.pm
-%%DATADIR%%/lib/Onis/Language.pm
-%%DATADIR%%/lib/Onis/Users.pm
 %%DATADIR%%/lib/Onis/Data/Core.pm
 %%DATADIR%%/lib/Onis/Data/Persistent.pm
+%%DATADIR%%/lib/Onis/Data/Persistent/Dbm.pm
+%%DATADIR%%/lib/Onis/Data/Persistent/None.pm
+%%DATADIR%%/lib/Onis/Data/Persistent/Storable.pm
+%%DATADIR%%/lib/Onis/Html.pm
+%%DATADIR%%/lib/Onis/Language.pm
 %%DATADIR%%/lib/Onis/Parser/Dancer.pm
 %%DATADIR%%/lib/Onis/Parser/Dircproxy.pm
 %%DATADIR%%/lib/Onis/Parser/Eggdrop.pm
+%%DATADIR%%/lib/Onis/Parser/Energymech.pm
 %%DATADIR%%/lib/Onis/Parser/Irssi.pm
 %%DATADIR%%/lib/Onis/Parser/Mirc.pm
 %%DATADIR%%/lib/Onis/Parser/Persistent.pm
@@ -25,44 +42,62 @@
 %%DATADIR%%/lib/Onis/Plugins/Conversations.pm
 %%DATADIR%%/lib/Onis/Plugins/Core.pm
 %%DATADIR%%/lib/Onis/Plugins/Interestingnumbers.pm
+%%DATADIR%%/lib/Onis/Plugins/Longterm.pm
 %%DATADIR%%/lib/Onis/Plugins/Nicks.pm
 %%DATADIR%%/lib/Onis/Plugins/Topics.pm
 %%DATADIR%%/lib/Onis/Plugins/Urls.pm
 %%DATADIR%%/lib/Onis/Plugins/Userdetails.pm
+%%DATADIR%%/lib/Onis/Plugins/Weekdays.pm
 %%DATADIR%%/lib/Onis/Plugins/Words.pm
+%%DATADIR%%/lib/Onis/Users.pm
+%%DATADIR%%/onis
+%%DATADIR%%/onis.conf
+%%DATADIR%%/onis.spec
 %%DATADIR%%/reports/dark-theme/h-blue.png
 %%DATADIR%%/reports/dark-theme/h-green.png
 %%DATADIR%%/reports/dark-theme/h-red.png
 %%DATADIR%%/reports/dark-theme/h-yellow.png
+%%DATADIR%%/reports/dark-theme/style.css
+%%DATADIR%%/reports/dark-theme/unknown.png
 %%DATADIR%%/reports/dark-theme/v-blue.png
 %%DATADIR%%/reports/dark-theme/v-green.png
 %%DATADIR%%/reports/dark-theme/v-red.png
 %%DATADIR%%/reports/dark-theme/v-yellow.png
-%%DATADIR%%/reports/dark-theme/style.css
 %%DATADIR%%/reports/light-theme/blue.png
 %%DATADIR%%/reports/light-theme/green.png
 %%DATADIR%%/reports/light-theme/red.png
 %%DATADIR%%/reports/light-theme/stripes.png
+%%DATADIR%%/reports/light-theme/style.css
 %%DATADIR%%/reports/light-theme/unknown.png
 %%DATADIR%%/reports/light-theme/yellow.png
-%%DATADIR%%/reports/light-theme/style.css
 %%DATADIR%%/reports/liner-theme/h-blue.png
 %%DATADIR%%/reports/liner-theme/h-gold.png
 %%DATADIR%%/reports/liner-theme/h-green.png
 %%DATADIR%%/reports/liner-theme/h-purple.png
+%%DATADIR%%/reports/liner-theme/style.css
+%%DATADIR%%/reports/liner-theme/unknown.png
 %%DATADIR%%/reports/liner-theme/v-blue.png
 %%DATADIR%%/reports/liner-theme/v-gold.png
 %%DATADIR%%/reports/liner-theme/v-green.png
 %%DATADIR%%/reports/liner-theme/v-purple.png
-%%DATADIR%%/reports/liner-theme/style.css
-@dirrm %%DATADIR%%/lang
-@dirrm %%DATADIR%%/lib/Onis/Data
-@dirrm %%DATADIR%%/lib/Onis/Parser
+%%DATADIR%%/themes/dark.theme
+%%DATADIR%%/themes/light.theme
+%%DATADIR%%/themes/liner.theme
+%%DATADIR%%/users.conf
+@dirrm %%DATADIR%%/var
+@dirrm %%DATADIR%%/themes
+@dirrm %%DATADIR%%/reports/liner-theme
+@dirrm %%DATADIR%%/reports/light-theme
+@dirrm %%DATADIR%%/reports/dark-theme
+@dirrm %%DATADIR%%/reports
 @dirrm %%DATADIR%%/lib/Onis/Plugins
+@dirrm %%DATADIR%%/lib/Onis/Parser
+@dirrm %%DATADIR%%/lib/Onis/Data/Persistent
+@dirrm %%DATADIR%%/lib/Onis/Data
 @dirrm %%DATADIR%%/lib/Onis
 @dirrm %%DATADIR%%/lib
-@dirrm %%DATADIR%%/reports/dark-theme
-@dirrm %%DATADIR%%/reports/light-theme
-@dirrm %%DATADIR%%/reports/liner-theme
-@dirrm %%DATADIR%%/reports
+@dirrm %%DATADIR%%/lang
+@dirrm %%DATADIR%%/debian
+@dirrm %%DATADIR%%/contrib/systemwide-patch
+@dirrm %%DATADIR%%/contrib
 @dirrm %%DATADIR%%
