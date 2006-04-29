@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	koffice-i18n
-PORTVERSION=	1.4.2
+PORTVERSION=	1.5.0
 CATEGORIES?=	french kde
 MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/koffice-${PORTVERSION:S/.0//}/src/koffice-l10n
+MASTER_SITE_SUBDIR=	stable/koffice-${PORTVERSION}/src/koffice-l10n
 PKGNAMEPREFIX=	fr-
 DIST_SUBDIR=	KDE
 

@@ -1,16 +1,15 @@
 bin/karbon
 bin/kchart
 bin/kexi
-bin/keximigratetest
-bin/kformdesigner
 bin/kformula
 bin/kivio
 bin/koconverter
-bin/koscript
 bin/koshell
+bin/kplato
 bin/kprconverter.pl
 bin/kpresenter
 bin/krita
+bin/krossrunner
 bin/kspread
 bin/ksqlite
 bin/ksqlite2
@@ -21,7 +20,7 @@ bin/kugar
 bin/kword
 include/KDChartAxisParams.h
 include/KDChartCustomBox.h
-include/KDChartData.h
+include/KDChartDataIntern.h
 include/KDChartDataRegion.h
 include/KDChartEnums.h
 include/KDChartGlobal.h
@@ -35,12 +34,79 @@ include/KDChartVectorTable.h
 include/KDChartWidget.h
 include/KDFrame.h
 include/KDFrameProfileSection.h
+include/KoApplication.h
 include/KoApplicationIface.h
+include/KoBrush.h
+include/KoCharSelectDia.h
+include/KoChild.h
+include/KoCommandHistory.h
+include/KoContainerHandler.h
+include/KoContextCelp.h
+include/KoDocument.h
+include/KoDocumentChild.h
 include/KoDocumentIface.h
+include/KoDocumentInfo.h
+include/KoDocumentInfoDlg.h
+include/KoDom.h
+include/KoEditPath.h
+include/KoFactory.h
+include/KoFilter.h
+include/KoFilterChain.h
+include/KoFilterManager.h
+include/KoFrame.h
+include/KoGenStyles.h
+include/KoGeneralPropertyUi.h
+include/KoGlobal.h
+include/KoGuideLineDia.h
+include/KoGuides.h
+include/KoImageResource.h
+include/KoInsertLink.h
+include/KoKoolBar.h
+include/KoMainWindow.h
 include/KoMainWindowIface.h
+include/KoOasisLoadingContext.h
+include/KoOasisSettings.h
+include/KoOasisStyles.h
+include/KoOpenPane.h
+include/KoPageLayout.h
+include/KoPageLayoutColumns.h
+include/KoPageLayoutDia.h
+include/KoPageLayoutHeader.h
+include/KoPageLayoutSize.h
+include/KoPartSelectAction.h
+include/KoPartSelectDia.h
+include/KoPen.h
+include/KoPicture.h
+include/KoPictureCollection.h
+include/KoPictureFilePreview.h
+include/KoPictureKey.h
+include/KoPoint.h
+include/KoQueryTrader.h
+include/KoRuler.h
+include/KoSelectAction.h
+include/KoSpeaker.h
+include/KoStore.h
+include/KoStoreDevice.h
+include/KoStyleStack.h
+include/KoTabBar.h
+include/KoTabChooser.h
+include/KoTemplateChooseDia.h
+include/KoTemplateCreateDia.h
+include/KoTooluButton.h
+include/KoUnit.h
+include/KoUnitWidgets.h
+include/KoView.h
 include/KoViewIface.h
-include/handler.h
+include/KoXmlNS.h
+include/KoXmlWriter.h
+include/KoZoomAction.h
+include/KoZoomHandler.h
+include/KoZoomMode.h
+include/Kolinestyleaction.h
+include/Kolinewidthaction.h
+include/Koversiondialog.h
 include/kcoloractions.h
+include/kdchart_export.h
 include/kexidb/connection.h
 include/kexidb/connectiondata.h
 include/kexidb/cursor.h
@@ -54,95 +120,164 @@ include/kexidb/global.h
 include/kexidb/indexschema.h
 include/kexidb/kexidb_export.h
 include/kexidb/keximigrate.h
+include/kexidb/keximigratedata.h
 include/kexidb/migratemanager.h
 include/kexidb/object.h
 include/kexidb/parser.h
+include/kexidb/preparedstatement.h
 include/kexidb/queryschema.h
 include/kexidb/relationship.h
 include/kexidb/schemadata.h
 include/kexidb/tableschema.h
 include/kexidb/transaction.h
-include/kexidb/tristate.h
-include/koApplication.h
-include/koCharSelectDia.h
+include/kexiutils/identifier.h
+include/kexiutils/kexiutils_export.h
+include/kexiutils/tristate.h
+include/kexiutils/utils.h
+include/kexiutils/validator.h
+include/kis_adjustment_layer.h
+include/kis_alpha_mask.h
+include/kis_annotation.h
+include/kis_autobrush_resource.h
+include/kis_autogradient_resource.h
+include/kis_background.h
+include/kis_basic_histogram_producers.h
+include/kis_boundary.h
+include/kis_brush.h
+include/kis_canvas_controller.h
+include/kis_canvas_observer.h
+include/kis_canvas_subject.h
+include/kis_channelinfo.h
+include/kis_cmb_composite.h
+include/kis_cmb_idlist.h
+include/kis_color.h
+include/kis_color_cup.h
+include/kis_colorspace.h
+include/kis_command.h
+include/kis_composite_op.h
+include/kis_config.h
+include/kis_convolution_painter.h
+include/kis_cursor.h
+include/kis_doc.h
+include/kis_doc_iface.h
+include/kis_double_click_event.h
+include/kis_double_widget.h
+include/kis_exif_info.h
+include/kis_exif_value.h
+include/kis_f16half_base_colorspace.h
+include/kis_f32_base_colorspace.h
+include/kis_fill_painter.h
+include/kis_filter.h
+include/kis_filter_config_widget.h
+include/kis_filter_configuration.h
+include/kis_filter_manager.h
+include/kis_filter_registry.h
+include/kis_filters_listview.h
+include/kis_generic_registry.h
+include/kis_global.h
+include/kis_gradient.h
+include/kis_gradient_chooser.h
+include/kis_gradient_painter.h
+include/kis_gradient_slider_widget.h
+include/kis_histogram.h
+include/kis_histogram_producer.h
+include/kis_histogram_view.h
+include/kis_icon_item.h
+include/kis_iconwidget.h
+include/kis_id.h
+include/kis_image.h
+include/kis_image_iface.h
+include/kis_imagepipe_brush.h
+include/kis_input_device.h
+include/kis_int_spinbox.h
+include/kis_integer_maths.h
+include/kis_itemchooser.h
+include/kis_iterator.h
+include/kis_iteratorpixeltrait.h
+include/kis_iterators_pixel.h
+include/kis_label_zoom.h
+include/kis_layer.h
+include/kis_layerbox.h
+include/kis_layerlist.h
+include/kis_matrix_widget.ui.h
+include/kis_meta_registry.h
+include/kis_move_event.h
+include/kis_multi_bool_filter_widget.h
+include/kis_multi_double_filter_widget.h
+include/kis_multi_integer_filter_widget.h
+include/kis_nameserver.h
+include/kis_paint_device.h
+include/kis_paint_device_iface.h
+include/kis_painter.h
+include/kis_paintop.h
+include/kis_paintop_box.h
+include/kis_paintop_registry.h
+include/kis_palette.h
+include/kis_palette_widget.h
+include/kis_pattern.h
+include/kis_point.h
+include/kis_previewdialog.h
+include/kis_previewwidget.h
+include/kis_profile.h
+include/kis_progress_display_interface.h
+include/kis_progress_subject.h
+include/kis_rect.h
+include/kis_resource.h
+include/kis_selection.h
+include/kis_shared_ptr_vector.h
+include/kis_tileddatamanager.h
+include/kis_tool.h
+include/kis_tool_controller.h
+include/kis_tool_dummy.h
+include/kis_tool_factory.h
+include/kis_tool_freehand.h
+include/kis_tool_manager.h
+include/kis_tool_non_paint.h
+include/kis_tool_paint.h
+include/kis_tool_registry.h
+include/kis_tool_types.h
+include/kis_transaction.h
+include/kis_types.h
+include/kis_u16_base_colorspace.h
+include/kis_u8_base_colorspace.h
+include/kis_undo_adapter.h
+include/kis_vec.h
+include/kis_view.h
+include/kkbdaccessextensions.h
 include/koChart.h
-include/koChild.h
-include/koDocument.h
-include/koDocumentChild.h
-include/koDocumentInfo.h
-include/koDocumentInfoDlg.h
-include/koFactory.h
-include/koFilter.h
-include/koFilterChain.h
-include/koFilterManager.h
-include/koFrame.h
-include/koGenStyles.h
-include/koGlobal.h
-include/koInsertLink.h
-include/koKoolBar.h
-include/koMainWindow.h
-include/koOasisSettings.h
-include/koOasisStyles.h
-include/koPageLayout.h
-include/koPageLayoutDia.h
-include/koPartSelectAction.h
-include/koPartSelectDia.h
-include/koPicture.h
-include/koPictureCollection.h
-include/koPictureFilePreview.h
-include/koPictureKey.h
-include/koPoint.h
-include/koQueryTrader.h
-include/koRect.h
-include/koRuler.h
-include/koSize.h
-include/koStore.h
-include/koStoreDevice.h
-include/koStyleStack.h
-include/koTabChooser.h
-include/koTemplateChooseDia.h
-include/koTemplateCreateDia.h
-include/koToolBox.h
-include/koUnit.h
-include/koUnitWidgets.h
-include/koView.h
-include/kocommandhistory.h
-include/kocontexthelp.h
-include/kodom.h
-include/koeditpath.h
+include/kobirdeyepanel.h
 include/koffice_export.h
 include/kofficeversion.h
-include/kolinestyleaction.h
-include/kolinewidthaction.h
-include/koselectaction.h
-include/kotabbar.h
-include/kotoolbutton.h
-include/kotooldockbase.h
-include/kotooldockmanager.h
-include/kotooldockmovemanager.h
-include/koversiondialog.h
-include/koxmlns.h
-include/koxmlwriter.h
-include/kozoomaction.h
-include/kreportviewer.h
-include/kugar.h
-include/kugarqt.h
-include/kword/mailmerge_interface.h
-include/mcalcobject.h
-include/mdatabasereportengine.h
-include/mfieldobject.h
-include/mlabelobject.h
-include/mlineobject.h
-include/mpagecollection.h
-include/mpagedisplay.h
-include/mreportdetail.h
-include/mreportengine.h
-include/mreportobject.h
-include/mreportsection.h
-include/mreportviewer.h
-include/mspecialobject.h
-include/mutil.h
-include/sqlcursor.h
+include/kopalettemanager.h
+include/kross/api/argument.h
+include/kross/api/callable.h
+include/kross/api/class.h
+include/kross/api/dict.h
+include/kross/api/event.h
+include/kross/api/eventaction.h
+include/kross/api/eventscript.h
+include/kross/api/eventsignal.h
+include/kross/api/eventslot.h
+include/kross/api/exception.h
+include/kross/api/function.h
+include/kross/api/interpreter.h
+include/kross/api/list.h
+include/kross/api/module.h
+include/kross/api/object.h
+include/kross/api/proxy.h
+include/kross/api/qtobject.h
+include/kross/api/script.h
+include/kross/api/value.h
+include/kross/api/variant.h
+include/kross/main/krossconfig.h
+include/kross/main/mainmodule.h
+include/kross/main/manager.h
+include/kross/main/scriptaction.h
+include/kross/main/scriptcontainer.h
+include/kross/main/scriptguiclient.h
+include/kross/main/wdgscriptsmanager.h
+include/kross/main/wdgscriptsmanagerbase.h
+include/kword/KWMailMergeDataSource.h
 include/tkaction.h
 include/tkcoloractions.h
 include/tkcombobox.h
@@ -150,12 +285,12 @@ include/tktoolbarbutton.h
 lib/kde3/clipartthumbnail.a
 lib/kde3/clipartthumbnail.la
 lib/kde3/clipartthumbnail.so
-lib/kde3/containers.a
-lib/kde3/containers.la
-lib/kde3/containers.so
 lib/kde3/karbon.a
 lib/kde3/karbon.la
 lib/kde3/karbon.so
+lib/kde3/karbon_defaulttools.a
+lib/kde3/karbon_defaulttools.la
+lib/kde3/karbon_defaulttools.so
 lib/kde3/karbon_flattenpathplugin.a
 lib/kde3/karbon_flattenpathplugin.la
 lib/kde3/karbon_flattenpathplugin.so
@@ -195,9 +330,9 @@ lib/kde3/kexidb_sqlite2driver.so
 lib/kde3/kexidb_sqlite3driver.a
 lib/kde3/kexidb_sqlite3driver.la
 lib/kde3/kexidb_sqlite3driver.so
-lib/kde3/kexidbwidgets.a
-lib/kde3/kexidbwidgets.la
-lib/kde3/kexidbwidgets.so
+lib/kde3/kexihandler_csv_importexport.a
+lib/kde3/kexihandler_csv_importexport.la
+lib/kde3/kexihandler_csv_importexport.so
 lib/kde3/kexihandler_form.a
 lib/kde3/kexihandler_form.la
 lib/kde3/kexihandler_form.so
@@ -222,12 +357,27 @@ lib/kde3/keximigrate_mysql.so
 lib/kde3/keximigrate_pqxx.a
 lib/kde3/keximigrate_pqxx.la
 lib/kde3/keximigrate_pqxx.so
+lib/kde3/kfile_abiword.a
+lib/kde3/kfile_abiword.la
+lib/kde3/kfile_abiword.so
+lib/kde3/kfile_gnumeric.a
+lib/kde3/kfile_gnumeric.la
+lib/kde3/kfile_gnumeric.so
 lib/kde3/kfile_koffice.a
 lib/kde3/kfile_koffice.la
 lib/kde3/kfile_koffice.so
 lib/kde3/kfile_ooo.a
 lib/kde3/kfile_ooo.la
 lib/kde3/kfile_ooo.so
+lib/kde3/kformdesigner_containers.a
+lib/kde3/kformdesigner_containers.la
+lib/kde3/kformdesigner_containers.so
+lib/kde3/kformdesigner_kexidbwidgets.a
+lib/kde3/kformdesigner_kexidbwidgets.la
+lib/kde3/kformdesigner_kexidbwidgets.so
+lib/kde3/kformdesigner_stdwidgets.a
+lib/kde3/kformdesigner_stdwidgets.la
+lib/kde3/kformdesigner_stdwidgets.so
 lib/kde3/kformula.a
 lib/kde3/kformula.la
 lib/kde3/kformula.so
@@ -246,15 +396,42 @@ lib/kde3/kofficethumbnail.so
 lib/kde3/koshell.a
 lib/kde3/koshell.la
 lib/kde3/koshell.so
+lib/kde3/kplato.a
+lib/kde3/kplato.la
+lib/kde3/kplato.so
 lib/kde3/kpresenter.a
 lib/kde3/kpresenter.la
 lib/kde3/kpresenter.so
 lib/kde3/krita.a
 lib/kde3/krita.la
 lib/kde3/krita.so
+lib/kde3/krita_cmyk_u16_plugin.a
+lib/kde3/krita_cmyk_u16_plugin.la
+lib/kde3/krita_cmyk_u16_plugin.so
+lib/kde3/krita_gray_u16_plugin.a
+lib/kde3/krita_gray_u16_plugin.la
+lib/kde3/krita_gray_u16_plugin.so
+lib/kde3/krita_lms_f32_plugin.a
+lib/kde3/krita_lms_f32_plugin.la
+lib/kde3/krita_lms_f32_plugin.so
+lib/kde3/krita_rgb_f16half_plugin.a
+lib/kde3/krita_rgb_f16half_plugin.la
+lib/kde3/krita_rgb_f16half_plugin.so
+lib/kde3/krita_rgb_f32_plugin.a
+lib/kde3/krita_rgb_f32_plugin.la
+lib/kde3/krita_rgb_f32_plugin.so
+lib/kde3/krita_rgb_u16_plugin.a
+lib/kde3/krita_rgb_u16_plugin.la
+lib/kde3/krita_rgb_u16_plugin.so
+lib/kde3/kritabumpmap.a
+lib/kde3/kritabumpmap.la
+lib/kde3/kritabumpmap.so
 lib/kde3/kritacimg.a
 lib/kde3/kritacimg.la
 lib/kde3/kritacimg.so
+lib/kde3/kritacmykplugin.a
+lib/kde3/kritacmykplugin.la
+lib/kde3/kritacmykplugin.so
 lib/kde3/kritacolorrange.a
 lib/kde3/kritacolorrange.la
 lib/kde3/kritacolorrange.so
@@ -273,24 +450,42 @@ lib/kde3/kritadefaultpaintops.so
 lib/kde3/kritadefaulttools.a
 lib/kde3/kritadefaulttools.la
 lib/kde3/kritadefaulttools.so
+lib/kde3/kritadropshadow.a
+lib/kde3/kritadropshadow.la
+lib/kde3/kritadropshadow.so
 lib/kde3/kritaembossfilter.a
 lib/kde3/kritaembossfilter.la
 lib/kde3/kritaembossfilter.so
 lib/kde3/kritaexample.a
 lib/kde3/kritaexample.la
 lib/kde3/kritaexample.so
+lib/kde3/kritafiltersgallery.a
+lib/kde3/kritafiltersgallery.la
+lib/kde3/kritafiltersgallery.so
 lib/kde3/kritagrayplugin.a
 lib/kde3/kritagrayplugin.la
 lib/kde3/kritagrayplugin.so
 lib/kde3/kritahistogram.a
 lib/kde3/kritahistogram.la
 lib/kde3/kritahistogram.so
+lib/kde3/kritahistogramdocker.a
+lib/kde3/kritahistogramdocker.la
+lib/kde3/kritahistogramdocker.so
+lib/kde3/kritaimageenhancement.a
+lib/kde3/kritaimageenhancement.la
+lib/kde3/kritaimageenhancement.so
 lib/kde3/kritaimagesize.a
 lib/kde3/kritaimagesize.la
 lib/kde3/kritaimagesize.so
 lib/kde3/kritaoilpaintfilter.a
 lib/kde3/kritaoilpaintfilter.la
 lib/kde3/kritaoilpaintfilter.so
+lib/kde3/kritaperftest.a
+lib/kde3/kritaperftest.la
+lib/kde3/kritaperftest.so
+lib/kde3/kritapixelizefilter.a
+lib/kde3/kritapixelizefilter.la
+lib/kde3/kritapixelizefilter.so
 lib/kde3/kritaraindropsfilter.a
 lib/kde3/kritaraindropsfilter.la
 lib/kde3/kritaraindropsfilter.so
@@ -300,15 +495,33 @@ lib/kde3/kritargbplugin.so
 lib/kde3/kritarotateimage.a
 lib/kde3/kritarotateimage.la
 lib/kde3/kritarotateimage.so
+lib/kde3/kritaroundcornersfilter.a
+lib/kde3/kritaroundcornersfilter.la
+lib/kde3/kritaroundcornersfilter.so
 lib/kde3/kritascreenshot.a
 lib/kde3/kritascreenshot.la
 lib/kde3/kritascreenshot.so
+lib/kde3/kritascripting.a
+lib/kde3/kritascripting.la
+lib/kde3/kritascripting.so
 lib/kde3/kritaselectiontools.a
 lib/kde3/kritaselectiontools.la
 lib/kde3/kritaselectiontools.so
+lib/kde3/kritaseparatechannels.a
+lib/kde3/kritaseparatechannels.la
+lib/kde3/kritaseparatechannels.so
 lib/kde3/kritashearimage.a
 lib/kde3/kritashearimage.la
 lib/kde3/kritashearimage.so
+lib/kde3/kritasmalltilesfilter.a
+lib/kde3/kritasmalltilesfilter.la
+lib/kde3/kritasmalltilesfilter.so
+lib/kde3/kritasmearybrush.a
+lib/kde3/kritasmearybrush.la
+lib/kde3/kritasmearybrush.so
+lib/kde3/kritasobelfilter.a
+lib/kde3/kritasobelfilter.la
+lib/kde3/kritasobelfilter.so
 lib/kde3/kritatoolcrop.a
 lib/kde3/kritatoolcrop.la
 lib/kde3/kritatoolcrop.so
@@ -321,12 +534,33 @@ lib/kde3/kritatoolpolygon.so
 lib/kde3/kritatoolpolyline.a
 lib/kde3/kritatoolpolyline.la
 lib/kde3/kritatoolpolyline.so
+lib/kde3/kritatoolselectsimilar.a
+lib/kde3/kritatoolselectsimilar.la
+lib/kde3/kritatoolselectsimilar.so
 lib/kde3/kritatoolstar.a
 lib/kde3/kritatoolstar.la
 lib/kde3/kritatoolstar.so
 lib/kde3/kritatooltransform.a
 lib/kde3/kritatooltransform.la
 lib/kde3/kritatooltransform.so
+lib/kde3/kritawetplugin.a
+lib/kde3/kritawetplugin.la
+lib/kde3/kritawetplugin.so
+lib/kde3/krosskexiapp.a
+lib/kde3/krosskexiapp.la
+lib/kde3/krosskexiapp.so
+lib/kde3/krosskexidb.a
+lib/kde3/krosskexidb.la
+lib/kde3/krosskexidb.so
+lib/kde3/krosskritacore.a
+lib/kde3/krosskritacore.la
+lib/kde3/krosskritacore.so
+lib/kde3/krosspython.a
+lib/kde3/krosspython.la
+lib/kde3/krosspython.so
+lib/kde3/krossruby.a
+lib/kde3/krossruby.la
+lib/kde3/krossruby.so
 lib/kde3/kspread.a
 lib/kde3/kspread.la
 lib/kde3/kspread.so
@@ -405,6 +639,9 @@ lib/kde3/libgnumericexport.so
 lib/kde3/libgnumericimport.a
 lib/kde3/libgnumericimport.la
 lib/kde3/libgnumericimport.so
+lib/kde3/libhancomwordimport.a
+lib/kde3/libhancomwordimport.la
+lib/kde3/libhancomwordimport.so
 lib/kde3/libhtmlexport.a
 lib/kde3/libhtmlexport.la
 lib/kde3/libhtmlexport.so
@@ -441,6 +678,15 @@ lib/kde3/libkarbonsvgimport.so
 lib/kde3/libkarbonxcfexport.a
 lib/kde3/libkarbonxcfexport.la
 lib/kde3/libkarbonxcfexport.so
+lib/kde3/libkchartbmpexport.a
+lib/kde3/libkchartbmpexport.la
+lib/kde3/libkchartbmpexport.so
+lib/kde3/libkchartjpegexport.a
+lib/kde3/libkchartjpegexport.la
+lib/kde3/libkchartjpegexport.so
+lib/kde3/libkchartmngexport.a
+lib/kde3/libkchartmngexport.la
+lib/kde3/libkchartmngexport.so
 lib/kde3/libkchartpart.a
 lib/kde3/libkchartpart.la
 lib/kde3/libkchartpart.so
@@ -450,6 +696,12 @@ lib/kde3/libkchartpngexport.so
 lib/kde3/libkchartsvgexport.a
 lib/kde3/libkchartsvgexport.la
 lib/kde3/libkchartsvgexport.so
+lib/kde3/libkchartxbmexport.a
+lib/kde3/libkchartxbmexport.la
+lib/kde3/libkchartxbmexport.so
+lib/kde3/libkchartxpmexport.a
+lib/kde3/libkchartxpmexport.la
+lib/kde3/libkchartxpmexport.so
 lib/kde3/libkfolatexexport.a
 lib/kde3/libkfolatexexport.la
 lib/kde3/libkfolatexexport.so
@@ -462,24 +714,81 @@ lib/kde3/libkfomathmlimport.so
 lib/kde3/libkfopngexport.a
 lib/kde3/libkfopngexport.la
 lib/kde3/libkfopngexport.so
-lib/kde3/libkformdesigner_part.a
-lib/kde3/libkformdesigner_part.la
-lib/kde3/libkformdesigner_part.so
 lib/kde3/libkformulapart.a
 lib/kde3/libkformulapart.la
 lib/kde3/libkformulapart.so
+lib/kde3/libkfosvgexport.a
+lib/kde3/libkfosvgexport.la
+lib/kde3/libkfosvgexport.so
+lib/kde3/libkivioconnectortool.a
+lib/kde3/libkivioconnectortool.la
+lib/kde3/libkivioconnectortool.so
+lib/kde3/libkivioimageexport.a
+lib/kde3/libkivioimageexport.la
+lib/kde3/libkivioimageexport.so
 lib/kde3/libkiviopart.a
 lib/kde3/libkiviopart.la
 lib/kde3/libkiviopart.so
+lib/kde3/libkivioselecttool.a
+lib/kde3/libkivioselecttool.la
+lib/kde3/libkivioselecttool.so
+lib/kde3/libkiviotargettool.a
+lib/kde3/libkiviotargettool.la
+lib/kde3/libkiviotargettool.so
+lib/kde3/libkiviotexttool.a
+lib/kde3/libkiviotexttool.la
+lib/kde3/libkiviotexttool.so
+lib/kde3/libkiviozoomtool.a
+lib/kde3/libkiviozoomtool.la
+lib/kde3/libkiviozoomtool.so
 lib/kde3/libkounavailpart.a
 lib/kde3/libkounavailpart.la
 lib/kde3/libkounavailpart.so
+lib/kde3/libkplatopart.a
+lib/kde3/libkplatopart.la
+lib/kde3/libkplatopart.so
+lib/kde3/libkpresenterbmpexport.a
+lib/kde3/libkpresenterbmpexport.la
+lib/kde3/libkpresenterbmpexport.so
+lib/kde3/libkpresenterjpegexport.a
+lib/kde3/libkpresenterjpegexport.la
+lib/kde3/libkpresenterjpegexport.so
+lib/kde3/libkpresentermngexport.a
+lib/kde3/libkpresentermngexport.la
+lib/kde3/libkpresentermngexport.so
 lib/kde3/libkpresenterpart.a
 lib/kde3/libkpresenterpart.la
 lib/kde3/libkpresenterpart.so
+lib/kde3/libkpresenterpngexport.a
+lib/kde3/libkpresenterpngexport.la
+lib/kde3/libkpresenterpngexport.so
+lib/kde3/libkpresentersvgexport.a
+lib/kde3/libkpresentersvgexport.la
+lib/kde3/libkpresentersvgexport.so
+lib/kde3/libkpresenterxbmexport.a
+lib/kde3/libkpresenterxbmexport.la
+lib/kde3/libkpresenterxbmexport.so
+lib/kde3/libkpresenterxpmexport.a
+lib/kde3/libkpresenterxpmexport.la
+lib/kde3/libkpresenterxpmexport.so
 lib/kde3/libkprkword.a
 lib/kde3/libkprkword.la
 lib/kde3/libkprkword.so
+lib/kde3/libkrita_openexr_export.a
+lib/kde3/libkrita_openexr_export.la
+lib/kde3/libkrita_openexr_export.so
+lib/kde3/libkrita_openexr_import.a
+lib/kde3/libkrita_openexr_import.la
+lib/kde3/libkrita_openexr_import.so
+lib/kde3/libkrita_raw_import.a
+lib/kde3/libkrita_raw_import.la
+lib/kde3/libkrita_raw_import.so
+lib/kde3/libkritajpegexport.a
+lib/kde3/libkritajpegexport.la
+lib/kde3/libkritajpegexport.so
+lib/kde3/libkritajpegimport.a
+lib/kde3/libkritajpegimport.la
+lib/kde3/libkritajpegimport.so
 lib/kde3/libkritamagickexport.a
 lib/kde3/libkritamagickexport.la
 lib/kde3/libkritamagickexport.so
@@ -489,6 +798,18 @@ lib/kde3/libkritamagickimport.so
 lib/kde3/libkritapart.a
 lib/kde3/libkritapart.la
 lib/kde3/libkritapart.so
+lib/kde3/libkritapngexport.a
+lib/kde3/libkritapngexport.la
+lib/kde3/libkritapngexport.so
+lib/kde3/libkritapngimport.a
+lib/kde3/libkritapngimport.la
+lib/kde3/libkritapngimport.so
+lib/kde3/libkritatiffexport.a
+lib/kde3/libkritatiffexport.la
+lib/kde3/libkritatiffexport.so
+lib/kde3/libkritatiffimport.a
+lib/kde3/libkritatiffimport.la
+lib/kde3/libkritatiffimport.so
 lib/kde3/libkspreadhtmlexport.a
 lib/kde3/libkspreadhtmlexport.la
 lib/kde3/libkspreadhtmlexport.so
@@ -528,9 +849,9 @@ lib/kde3/libmswriteexport.so
 lib/kde3/libmswriteimport.a
 lib/kde3/libmswriteimport.la
 lib/kde3/libmswriteimport.so
-lib/kde3/libolefilter.a
-lib/kde3/libolefilter.la
-lib/kde3/libolefilter.so
+lib/kde3/liboodrawimport.a
+lib/kde3/liboodrawimport.la
+lib/kde3/liboodrawimport.so
 lib/kde3/libooimpressexport.a
 lib/kde3/libooimpressexport.la
 lib/kde3/libooimpressexport.so
@@ -558,6 +879,9 @@ lib/kde3/libpalmdocimport.so
 lib/kde3/libpdfimport.a
 lib/kde3/libpdfimport.la
 lib/kde3/libpdfimport.so
+lib/kde3/libpowerpointimport.a
+lib/kde3/libpowerpointimport.la
+lib/kde3/libpowerpointimport.so
 lib/kde3/libqproimport.a
 lib/kde3/libqproimport.la
 lib/kde3/libqproimport.so
@@ -594,20 +918,21 @@ lib/kde3/libxsltexport.so
 lib/kde3/libxsltimport.a
 lib/kde3/libxsltimport.la
 lib/kde3/libxsltimport.so
-lib/kde3/stdwidgets.a
-lib/kde3/stdwidgets.la
-lib/kde3/stdwidgets.so
 lib/kde3/straight_connector.a
 lib/kde3/straight_connector.la
 lib/kde3/straight_connector.so
-lib/libkarbonbase.a
-lib/libkarbonbase.la
-lib/libkarbonbase.so
-lib/libkarbonbase.so.2
+lib/libkarboncommon.a
+lib/libkarboncommon.la
+lib/libkarboncommon.so
+lib/libkarboncommon.so.0
 lib/libkchartcommon.a
 lib/libkchartcommon.la
 lib/libkchartcommon.so
 lib/libkchartcommon.so.2
+lib/libkchartimageexport.a
+lib/libkchartimageexport.la
+lib/libkchartimageexport.so
+lib/libkchartimageexport.so.4
 lib/libkdchart.a
 lib/libkdchart.la
 lib/libkdchart.so
@@ -630,6 +955,9 @@ lib/libkdeinit_kivio.so
 lib/libkdeinit_koshell.a
 lib/libkdeinit_koshell.la
 lib/libkdeinit_koshell.so
+lib/libkdeinit_kplato.a
+lib/libkdeinit_kplato.la
+lib/libkdeinit_kplato.so
 lib/libkdeinit_kpresenter.a
 lib/libkdeinit_kpresenter.la
 lib/libkdeinit_kpresenter.so
@@ -654,11 +982,11 @@ lib/libkdeinit_kword.so
 lib/libkexicore.a
 lib/libkexicore.la
 lib/libkexicore.so
-lib/libkexicore.so.0
+lib/libkexicore.so.1
 lib/libkexidatatable.a
 lib/libkexidatatable.la
 lib/libkexidatatable.so
-lib/libkexidatatable.so.0
+lib/libkexidatatable.so.1
 lib/libkexidb.a
 lib/libkexidb.la
 lib/libkexidb.so
@@ -666,35 +994,31 @@ lib/libkexidb.so.0
 lib/libkexidbparser.a
 lib/libkexidbparser.la
 lib/libkexidbparser.so
-lib/libkexidbparser.so.0
+lib/libkexidbparser.so.1
 lib/libkexiextendedwidgets.a
 lib/libkexiextendedwidgets.la
 lib/libkexiextendedwidgets.so
-lib/libkexiextendedwidgets.so.0
+lib/libkexiextendedwidgets.so.1
 lib/libkexiformutils.a
 lib/libkexiformutils.la
 lib/libkexiformutils.so
-lib/libkexiformutils.so.0
+lib/libkexiformutils.so.1
 lib/libkexiguiutils.a
 lib/libkexiguiutils.la
 lib/libkexiguiutils.so
-lib/libkexiguiutils.so.0
+lib/libkexiguiutils.so.1
 lib/libkeximain.a
 lib/libkeximain.la
 lib/libkeximain.so
-lib/libkeximain.so.0
+lib/libkeximain.so.1
 lib/libkeximigrate.a
 lib/libkeximigrate.la
 lib/libkeximigrate.so
-lib/libkeximigrate.so.0
-lib/libkexipropertyeditor.a
-lib/libkexipropertyeditor.la
-lib/libkexipropertyeditor.so
-lib/libkexipropertyeditor.so.0
+lib/libkeximigrate.so.1
 lib/libkexirelationsview.a
 lib/libkexirelationsview.la
 lib/libkexirelationsview.so
-lib/libkexirelationsview.so.0
+lib/libkexirelationsview.so.1
 lib/libkexisql2.a
 lib/libkexisql2.la
 lib/libkexisql2.so
@@ -703,33 +1027,22 @@ lib/libkexisql3.a
 lib/libkexisql3.la
 lib/libkexisql3.so
 lib/libkexisql3.so.3
+lib/libkexiutils.a
+lib/libkexiutils.la
+lib/libkexiutils.so
+lib/libkexiutils.so.1
 lib/libkformdesigner.a
 lib/libkformdesigner.la
 lib/libkformdesigner.so
-lib/libkformdesigner.so.0
+lib/libkformdesigner.so.1
 lib/libkformulalib.a
 lib/libkformulalib.la
 lib/libkformulalib.so
-lib/libkformulalib.so.3
+lib/libkformulalib.so.4
 lib/libkiviocommon.a
 lib/libkiviocommon.la
 lib/libkiviocommon.so
 lib/libkiviocommon.so.0
-lib/libkivioconnectortool.a
-lib/libkivioconnectortool.la
-lib/libkivioconnectortool.so
-lib/libkivioselecttool.a
-lib/libkivioselecttool.la
-lib/libkivioselecttool.so
-lib/libkiviotargettool.a
-lib/libkiviotargettool.la
-lib/libkiviotargettool.so
-lib/libkiviotexttool.a
-lib/libkiviotexttool.la
-lib/libkiviotexttool.so
-lib/libkiviozoomtool.a
-lib/libkiviozoomtool.la
-lib/libkiviozoomtool.so
 lib/libkochart.a
 lib/libkochart.la
 lib/libkochart.so
@@ -737,31 +1050,99 @@ lib/libkochart.so.1
 lib/libkofficecore.a
 lib/libkofficecore.la
 lib/libkofficecore.so
-lib/libkofficecore.so.2
+lib/libkofficecore.so.3
 lib/libkofficeui.a
 lib/libkofficeui.la
 lib/libkofficeui.so
-lib/libkofficeui.so.2
+lib/libkofficeui.so.3
 lib/libkopainter.a
 lib/libkopainter.la
 lib/libkopainter.so
-lib/libkopainter.so.1
-lib/libkoscript.a
-lib/libkoscript.la
-lib/libkoscript.so
-lib/libkoscript.so.2
+lib/libkopainter.so.2
+lib/libkopalette.a
+lib/libkopalette.la
+lib/libkopalette.so
+lib/libkopalette.so.1
+lib/libkoproperty.a
+lib/libkoproperty.la
+lib/libkoproperty.so
+lib/libkoproperty.so.0
 lib/libkotext.a
 lib/libkotext.la
 lib/libkotext.so
-lib/libkotext.so.2
+lib/libkotext.so.3
 lib/libkowmf.a
 lib/libkowmf.la
 lib/libkowmf.so
-lib/libkowmf.so.1
+lib/libkowmf.so.2
+lib/libkpresenterimageexport.a
+lib/libkpresenterimageexport.la
+lib/libkpresenterimageexport.so
+lib/libkpresenterimageexport.so.4
+lib/libkpresenterprivate.a
+lib/libkpresenterprivate.la
+lib/libkpresenterprivate.so
+lib/libkpresenterprivate.so.4
+lib/libkrita_cmyk_u16.a
+lib/libkrita_cmyk_u16.la
+lib/libkrita_cmyk_u16.so
+lib/libkrita_cmyk_u16.so.0
+lib/libkrita_gray_u16.a
+lib/libkrita_gray_u16.la
+lib/libkrita_gray_u16.so
+lib/libkrita_gray_u16.so.0
+lib/libkrita_lms_f32.a
+lib/libkrita_lms_f32.la
+lib/libkrita_lms_f32.so
+lib/libkrita_lms_f32.so.0
+lib/libkrita_rgb_f16half.a
+lib/libkrita_rgb_f16half.la
+lib/libkrita_rgb_f16half.so
+lib/libkrita_rgb_f16half.so.0
+lib/libkrita_rgb_f32.a
+lib/libkrita_rgb_f32.la
+lib/libkrita_rgb_f32.so
+lib/libkrita_rgb_f32.so.0
+lib/libkrita_rgb_u16.a
+lib/libkrita_rgb_u16.la
+lib/libkrita_rgb_u16.so
+lib/libkrita_rgb_u16.so.0
+lib/libkritacolor.a
+lib/libkritacolor.la
+lib/libkritacolor.so
+lib/libkritacolor.so.1
 lib/libkritacommon.a
 lib/libkritacommon.la
 lib/libkritacommon.so
 lib/libkritacommon.so.1
+lib/libkritagrayscale.a
+lib/libkritagrayscale.la
+lib/libkritagrayscale.so
+lib/libkritagrayscale.so.0
+lib/libkritaimage.a
+lib/libkritaimage.la
+lib/libkritaimage.so
+lib/libkritaimage.so.1
+lib/libkritargb.a
+lib/libkritargb.la
+lib/libkritargb.so
+lib/libkritargb.so.0
+lib/libkritascripting.a
+lib/libkritascripting.la
+lib/libkritascripting.so
+lib/libkritascripting.so.0
+lib/libkritaui.a
+lib/libkritaui.la
+lib/libkritaui.so
+lib/libkritaui.so.1
+lib/libkrossapi.a
+lib/libkrossapi.la
+lib/libkrossapi.so
+lib/libkrossapi.so.1
+lib/libkrossmain.a
+lib/libkrossmain.la
+lib/libkrossmain.so
+lib/libkrossmain.so.1
 lib/libkspreadcommon.a
 lib/libkspreadcommon.la
 lib/libkspreadcommon.so
@@ -769,7 +1150,7 @@ lib/libkspreadcommon.so.0
 lib/libkstore.a
 lib/libkstore.la
 lib/libkstore.so
-lib/libkstore.so.2
+lib/libkstore.so.3
 lib/libkudesignercore.a
 lib/libkudesignercore.la
 lib/libkudesignercore.so
@@ -784,22 +1165,31 @@ lib/libkwmailmerge_interface.so.4
 lib/libkwmf.a
 lib/libkwmf.la
 lib/libkwmf.so
-lib/libkwmf.so.2
+lib/libkwmf.so.3
 lib/libkwordexportfilters.a
 lib/libkwordexportfilters.la
 lib/libkwordexportfilters.so
 lib/libkwordexportfilters.so.1
-share/applications/kde/kexi.desktop
-share/applications/kde/kformdesigner.desktop
+lib/libkwordprivate.a
+lib/libkwordprivate.la
+lib/libkwordprivate.so
+lib/libkwordprivate.so.4
 share/applications/kde/kivio.desktop
 share/applications/kde/krita.desktop
 share/applnk/Office/KThesaurus.desktop
 share/applnk/Office/karbon.desktop
 share/applnk/Office/kchart.desktop
+share/applnk/Office/kexi.desktop
 share/applnk/Office/kformula.desktop
 share/applnk/Office/koshell.desktop
+share/applnk/Office/kplato.desktop
 share/applnk/Office/kpresenter.desktop
+share/applnk/Office/krita_jpeg.desktop
 share/applnk/Office/krita_magick.desktop
+share/applnk/Office/krita_openexr.desktop
+share/applnk/Office/krita_png.desktop
+share/applnk/Office/krita_raw.desktop
+share/applnk/Office/krita_tiff.desktop
 share/applnk/Office/kspread.desktop
 share/applnk/Office/kudesigner.desktop
 share/applnk/Office/kugar.desktop
@@ -857,7 +1247,11 @@ share/apps/karbon/icons/crystalsvg/22x22/actions/gradientdlg.png
 share/apps/karbon/icons/crystalsvg/22x22/actions/outlinedlg.png
 share/apps/karbon/icons/crystalsvg/22x22/actions/pagesetup.png
 share/apps/karbon/icons/crystalsvg/22x22/actions/solidfilldlg.png
+share/apps/karbon/icons/crystalsvg/48x48/actions/template_empty.png
+share/apps/karbon/icons/crystalsvg/scalable/actions/template_empty.svgz
+share/apps/karbon/icons/hicolor/16x16/actions/linestyle.png
 share/apps/karbon/icons/hicolor/16x16/apps/karbon.png
+share/apps/karbon/icons/hicolor/22x22/actions/linestyle.png
 share/apps/karbon/icons/hicolor/22x22/apps/karbon.png
 share/apps/karbon/icons/hicolor/32x32/apps/karbon.png
 share/apps/karbon/icons/hicolor/48x48/apps/karbon.png
@@ -865,12 +1259,13 @@ share/apps/karbon/icons/hicolor/scalable/apps/karbon.svgz
 share/apps/karbon/karbon.rc
 share/apps/karbon/karbon_readonly.rc
 share/apps/karbon/kpartplugins/flattenpathplugin.rc
-share/apps/karbon/kpartplugins/imagetoolplugin.rc
 share/apps/karbon/kpartplugins/insertknotsplugin.rc
 share/apps/karbon/kpartplugins/roundcornersplugin.rc
 share/apps/karbon/kpartplugins/shadoweffectplugin.rc
 share/apps/karbon/kpartplugins/whirlpinchplugin.rc
-share/apps/karbon/kpartplugins/zoomtoolplugin.rc
+share/apps/karbon/templates/Basic/.directory
+share/apps/karbon/templates/Basic/.source/empty.karbon
+share/apps/karbon/templates/Basic/empty.desktop
 share/apps/kchart/icons/crystalsvg/16x16/actions/chart_area.png
 share/apps/kchart/icons/crystalsvg/16x16/actions/chart_area_3d.png
 share/apps/kchart/icons/crystalsvg/16x16/actions/chart_bar.png
@@ -990,23 +1385,30 @@ share/apps/kchart/templates/chart/.source/Empty.chrt
 share/apps/kchart/templates/chart/BarChart.desktop
 share/apps/kchart/templates/chart/Empty.desktop
 share/apps/kexi/icons/crystalsvg/128x128/actions/form_action.png
+share/apps/kexi/icons/crystalsvg/16x16/actions/add_field.png
 share/apps/kexi/icons/crystalsvg/16x16/actions/aofit.png
 share/apps/kexi/icons/crystalsvg/16x16/actions/aogrid.png
 share/apps/kexi/icons/crystalsvg/16x16/actions/aopos2grid.png
 share/apps/kexi/icons/crystalsvg/16x16/actions/autonumber.png
 share/apps/kexi/icons/crystalsvg/16x16/actions/business_user.png
 share/apps/kexi/icons/crystalsvg/16x16/actions/button.png
-share/apps/kexi/icons/crystalsvg/16x16/actions/button_no.png
+share/apps/kexi/icons/crystalsvg/16x16/actions/check.png
 share/apps/kexi/icons/crystalsvg/16x16/actions/clear_table_contents.png
-share/apps/kexi/icons/crystalsvg/16x16/actions/db.png
+share/apps/kexi/icons/crystalsvg/16x16/actions/database.png
+share/apps/kexi/icons/crystalsvg/16x16/actions/database_import.png
 share/apps/kexi/icons/crystalsvg/16x16/actions/delete_table_row.png
 share/apps/kexi/icons/crystalsvg/16x16/actions/form.png
 share/apps/kexi/icons/crystalsvg/16x16/actions/form_action.png
 share/apps/kexi/icons/crystalsvg/16x16/actions/form_newobj.png
-share/apps/kexi/icons/crystalsvg/16x16/actions/forms.png
 share/apps/kexi/icons/crystalsvg/16x16/actions/grid.png
 share/apps/kexi/icons/crystalsvg/16x16/actions/insert_table_row.png
 share/apps/kexi/icons/crystalsvg/16x16/actions/key.png
+share/apps/kexi/icons/crystalsvg/16x16/actions/line.png
+share/apps/kexi/icons/crystalsvg/16x16/actions/line_horizontal.png
+share/apps/kexi/icons/crystalsvg/16x16/actions/line_vertical.png
+share/apps/kexi/icons/crystalsvg/16x16/actions/lineedit.png
+share/apps/kexi/icons/crystalsvg/16x16/actions/mouse_pointer.png
+share/apps/kexi/icons/crystalsvg/16x16/actions/multiple_obj.png
 share/apps/kexi/icons/crystalsvg/16x16/actions/navigator_first.png
 share/apps/kexi/icons/crystalsvg/16x16/actions/navigator_last.png
 share/apps/kexi/icons/crystalsvg/16x16/actions/navigator_new.png
@@ -1014,27 +1416,29 @@ share/apps/kexi/icons/crystalsvg/16x16/actions/navigator_next.png
 share/apps/kexi/icons/crystalsvg/16x16/actions/navigator_prev.png
 share/apps/kexi/icons/crystalsvg/16x16/actions/new_sign.png
 share/apps/kexi/icons/crystalsvg/16x16/actions/pixmaplabel.png
-share/apps/kexi/icons/crystalsvg/16x16/actions/queries.png
 share/apps/kexi/icons/crystalsvg/16x16/actions/query.png
 share/apps/kexi/icons/crystalsvg/16x16/actions/query_newobj.png
+share/apps/kexi/icons/crystalsvg/16x16/actions/radio.png
 share/apps/kexi/icons/crystalsvg/16x16/actions/relation.png
 share/apps/kexi/icons/crystalsvg/16x16/actions/report.png
 share/apps/kexi/icons/crystalsvg/16x16/actions/report_newobj.png
-share/apps/kexi/icons/crystalsvg/16x16/actions/reports.png
 share/apps/kexi/icons/crystalsvg/16x16/actions/script.png
 share/apps/kexi/icons/crystalsvg/16x16/actions/script_newobj.png
 share/apps/kexi/icons/crystalsvg/16x16/actions/select_item.png
 share/apps/kexi/icons/crystalsvg/16x16/actions/sort_az.png
 share/apps/kexi/icons/crystalsvg/16x16/actions/sort_za.png
 share/apps/kexi/icons/crystalsvg/16x16/actions/spring.png
+share/apps/kexi/icons/crystalsvg/16x16/actions/spring_vertical.png
 share/apps/kexi/icons/crystalsvg/16x16/actions/state_data.png
 share/apps/kexi/icons/crystalsvg/16x16/actions/state_edit.png
 share/apps/kexi/icons/crystalsvg/16x16/actions/state_sql.png
 share/apps/kexi/icons/crystalsvg/16x16/actions/state_text.png
 share/apps/kexi/icons/crystalsvg/16x16/actions/table.png
 share/apps/kexi/icons/crystalsvg/16x16/actions/table_newobj.png
-share/apps/kexi/icons/crystalsvg/16x16/actions/tables.png
+share/apps/kexi/icons/crystalsvg/16x16/actions/tabwidget.png
 share/apps/kexi/icons/crystalsvg/16x16/actions/test_it.png
+share/apps/kexi/icons/crystalsvg/16x16/actions/textedit.png
+share/apps/kexi/icons/crystalsvg/16x16/actions/widgets.png
 share/apps/kexi/icons/crystalsvg/22x22/actions/alignobjs.png
 share/apps/kexi/icons/crystalsvg/22x22/actions/aobottom.png
 share/apps/kexi/icons/crystalsvg/22x22/actions/aofit.png
@@ -1052,9 +1456,12 @@ share/apps/kexi/icons/crystalsvg/22x22/actions/button.png
 share/apps/kexi/icons/crystalsvg/22x22/actions/check.png
 share/apps/kexi/icons/crystalsvg/22x22/actions/clear_table_contents.png
 share/apps/kexi/icons/crystalsvg/22x22/actions/combo.png
+share/apps/kexi/icons/crystalsvg/22x22/actions/database.png
+share/apps/kexi/icons/crystalsvg/22x22/actions/database_import.png
 share/apps/kexi/icons/crystalsvg/22x22/actions/dateedit.png
 share/apps/kexi/icons/crystalsvg/22x22/actions/datetimeedit.png
 share/apps/kexi/icons/crystalsvg/22x22/actions/delete_table_row.png
+share/apps/kexi/icons/crystalsvg/22x22/actions/form.png
 share/apps/kexi/icons/crystalsvg/22x22/actions/form_action.png
 share/apps/kexi/icons/crystalsvg/22x22/actions/form_edit.png
 share/apps/kexi/icons/crystalsvg/22x22/actions/frame.png
@@ -1064,11 +1471,14 @@ share/apps/kexi/icons/crystalsvg/22x22/actions/insert_table_row.png
 share/apps/kexi/icons/crystalsvg/22x22/actions/key.png
 share/apps/kexi/icons/crystalsvg/22x22/actions/label.png
 share/apps/kexi/icons/crystalsvg/22x22/actions/line.png
+share/apps/kexi/icons/crystalsvg/22x22/actions/line_horizontal.png
+share/apps/kexi/icons/crystalsvg/22x22/actions/line_vertical.png
 share/apps/kexi/icons/crystalsvg/22x22/actions/lineedit.png
 share/apps/kexi/icons/crystalsvg/22x22/actions/listbox.png
 share/apps/kexi/icons/crystalsvg/22x22/actions/listview.png
 share/apps/kexi/icons/crystalsvg/22x22/actions/lower.png
 share/apps/kexi/icons/crystalsvg/22x22/actions/mouse_pointer.png
+share/apps/kexi/icons/crystalsvg/22x22/actions/multiple_obj.png
 share/apps/kexi/icons/crystalsvg/22x22/actions/new_sign.png
 share/apps/kexi/icons/crystalsvg/22x22/actions/pixmaplabel.png
 share/apps/kexi/icons/crystalsvg/22x22/actions/progress.png
@@ -1081,6 +1491,7 @@ share/apps/kexi/icons/crystalsvg/22x22/actions/sort_az.png
 share/apps/kexi/icons/crystalsvg/22x22/actions/sort_za.png
 share/apps/kexi/icons/crystalsvg/22x22/actions/spin.png
 share/apps/kexi/icons/crystalsvg/22x22/actions/spring.png
+share/apps/kexi/icons/crystalsvg/22x22/actions/spring_vertical.png
 share/apps/kexi/icons/crystalsvg/22x22/actions/state_data.png
 share/apps/kexi/icons/crystalsvg/22x22/actions/state_edit.png
 share/apps/kexi/icons/crystalsvg/22x22/actions/state_sql.png
@@ -1092,48 +1503,68 @@ share/apps/kexi/icons/crystalsvg/22x22/actions/test_it.png
 share/apps/kexi/icons/crystalsvg/22x22/actions/textedit.png
 share/apps/kexi/icons/crystalsvg/22x22/actions/timeedit.png
 share/apps/kexi/icons/crystalsvg/22x22/actions/urlrequest.png
+share/apps/kexi/icons/crystalsvg/22x22/actions/widgets.png
 share/apps/kexi/icons/crystalsvg/22x22/actions/widgetstack.png
 share/apps/kexi/icons/crystalsvg/32x32/actions/business_user.png
 share/apps/kexi/icons/crystalsvg/32x32/actions/clear_table_contents.png
+share/apps/kexi/icons/crystalsvg/32x32/actions/database.png
+share/apps/kexi/icons/crystalsvg/32x32/actions/database_import.png
 share/apps/kexi/icons/crystalsvg/32x32/actions/delete_table_row.png
+share/apps/kexi/icons/crystalsvg/32x32/actions/form.png
 share/apps/kexi/icons/crystalsvg/32x32/actions/form_action.png
 share/apps/kexi/icons/crystalsvg/32x32/actions/grid.png
 share/apps/kexi/icons/crystalsvg/32x32/actions/insert_table_row.png
 share/apps/kexi/icons/crystalsvg/32x32/actions/key.png
 share/apps/kexi/icons/crystalsvg/32x32/actions/new_sign.png
 share/apps/kexi/icons/crystalsvg/32x32/actions/pixmaplabel.png
+share/apps/kexi/icons/crystalsvg/32x32/actions/query.png
 share/apps/kexi/icons/crystalsvg/32x32/actions/spring.png
 share/apps/kexi/icons/crystalsvg/32x32/actions/state_data.png
 share/apps/kexi/icons/crystalsvg/32x32/actions/state_sql.png
 share/apps/kexi/icons/crystalsvg/32x32/actions/state_text.png
 share/apps/kexi/icons/crystalsvg/32x32/actions/table.png
 share/apps/kexi/icons/crystalsvg/32x32/actions/table_newobj.png
+share/apps/kexi/icons/crystalsvg/48x48/actions/database_import.png
 share/apps/kexi/icons/crystalsvg/48x48/actions/form_action.png
 share/apps/kexi/icons/crystalsvg/48x48/actions/key.png
 share/apps/kexi/icons/crystalsvg/64x64/actions/business_user.png
+share/apps/kexi/icons/crystalsvg/64x64/actions/database.png
 share/apps/kexi/icons/crystalsvg/64x64/actions/form_action.png
-share/apps/kexi/kexidatatableui.rc
 share/apps/kexi/kexiformpartinstui.rc
 share/apps/kexi/kexiformpartui.rc
 share/apps/kexi/kexiquerypartinstui.rc
 share/apps/kexi/kexiquerypartui.rc
-share/apps/kexi/kexirelationhandlerui.rc
+share/apps/kexi/kexirelationpartinstui.rc
 share/apps/kexi/kexirelationpartui.rc
-share/apps/kexi/kexirelationsview.rc
-share/apps/kexi/kexireportpartinstui.rc
-share/apps/kexi/kexireportpartui.rc
 share/apps/kexi/kexiscriptpartinstui.rc
 share/apps/kexi/kexiscriptpartui.rc
 share/apps/kexi/kexitablepartinstui.rc
 share/apps/kexi/kexitablepartui.rc
-share/apps/kexi/kexitableview.rc
 share/apps/kexi/kexiui.rc
+share/apps/kexi/kross/python/kexiapp/__init__.py
 share/apps/kexi/pics/cp-wiz.png
-share/apps/kexi/readme_en
-share/apps/kformdesigner/kfd_mainwindow.rc
-share/apps/kformdesigner_part/kformdesigner_part.rc
-share/apps/kformdesigner_part/kformdesigner_part_shell.rc
+share/apps/kexi/pics/imagebox.png
+share/apps/kexi/scripts/copycenter/CopyCenter.py
+share/apps/kexi/scripts/copycenter/CopyCenter.rc
+share/apps/kexi/scripts/copycenter/CopyCenterPluginKexiDB.py
+share/apps/kexi/scripts/copycenter/CopyCenterPluginQtSQL.py
+share/apps/kexi/scripts/copycenter/readme.html
+share/apps/kexi/scripts/exportxhtml/ExportXHTML.py
+share/apps/kexi/scripts/exportxhtml/ExportXHTML.rc
+share/apps/kexi/scripts/importxhtml/ImportXHTML.py
+share/apps/kexi/scripts/importxhtml/ImportXHTML.rc
+share/apps/kexi/scripts/projectdocumentor/ProjectDocumentor.py
+share/apps/kexi/scripts/projectdocumentor/ProjectDocumentor.rc
 share/apps/kformula/dtd/kformula.dtd
+share/apps/kformula/fonts/cmbx10.ttf
+share/apps/kformula/fonts/cmex10.ttf
+share/apps/kformula/fonts/cmmi10.ttf
+share/apps/kformula/fonts/cmr10.ttf
+share/apps/kformula/fonts/cmsy10.ttf
+share/apps/kformula/fonts/fonts.dir
+share/apps/kformula/fonts/fonts.scale
+share/apps/kformula/fonts/msam10.ttf
+share/apps/kformula/fonts/msbm10.ttf
 share/apps/kformula/kformula.rc
 share/apps/kformula/kformula_readonly.rc
 share/apps/kformula/tips
@@ -1154,6 +1585,9 @@ share/apps/kivio/icons/crystalsvg/48x48/actions/template_empty.png
 share/apps/kivio/icons/crystalsvg/scalable/actions/template_basicworkflow.svgz
 share/apps/kivio/icons/crystalsvg/scalable/actions/template_empty.svgz
 share/apps/kivio/icons/hicolor/16x16/actions/add_stencil.png
+share/apps/kivio/icons/hicolor/16x16/actions/align_bottom.png
+share/apps/kivio/icons/hicolor/16x16/actions/align_top.png
+share/apps/kivio/icons/hicolor/16x16/actions/align_vcenter.png
 share/apps/kivio/icons/hicolor/16x16/actions/bring_stencil_to_front.png
 share/apps/kivio/icons/hicolor/16x16/actions/copy_stencil.png
 share/apps/kivio/icons/hicolor/16x16/actions/cut_stencil.png
@@ -2344,6 +2778,15 @@ share/apps/kivio/stencils/Miscellaneous/Buildings/Office.xpm
 share/apps/kivio/stencils/Miscellaneous/Buildings/Office2.xpm
 share/apps/kivio/stencils/Miscellaneous/Buildings/desc
 share/apps/kivio/stencils/Miscellaneous/Buildings/icon.xpm
+share/apps/kivio/stencils/Miscellaneous/ER/attribute.sml
+share/apps/kivio/stencils/Miscellaneous/ER/derivedattribute.sml
+share/apps/kivio/stencils/Miscellaneous/ER/desc
+share/apps/kivio/stencils/Miscellaneous/ER/entity.sml
+share/apps/kivio/stencils/Miscellaneous/ER/icon.png
+share/apps/kivio/stencils/Miscellaneous/ER/multivaluedattribute.sml
+share/apps/kivio/stencils/Miscellaneous/ER/relationship.sml
+share/apps/kivio/stencils/Miscellaneous/ER/weakentity.sml
+share/apps/kivio/stencils/Miscellaneous/ER/weakrelationship.sml
 share/apps/kivio/stencils/Miscellaneous/NassiShneiderman/block.png
 share/apps/kivio/stencils/Miscellaneous/NassiShneiderman/block.sml
 share/apps/kivio/stencils/Miscellaneous/NassiShneiderman/box.png
@@ -2448,6 +2891,7 @@ share/apps/koffice/hyphdicts/hyph_sv.dic
 share/apps/koffice/hyphdicts/hyph_uk.dic
 share/apps/koffice/icons/crystalsvg/16x16/actions/borderoutline.png
 share/apps/koffice/icons/crystalsvg/16x16/actions/bring_forward.png
+share/apps/koffice/icons/crystalsvg/16x16/actions/button_no.png
 share/apps/koffice/icons/crystalsvg/16x16/actions/color_fill.png
 share/apps/koffice/icons/crystalsvg/16x16/actions/color_line.png
 share/apps/koffice/icons/crystalsvg/16x16/actions/delete_table_col.png
@@ -2472,6 +2916,9 @@ share/apps/koffice/icons/crystalsvg/16x16/actions/kdb_form.png
 share/apps/koffice/icons/crystalsvg/16x16/actions/kdb_table.png
 share/apps/koffice/icons/crystalsvg/16x16/actions/linewidth.png
 share/apps/koffice/icons/crystalsvg/16x16/actions/send_backward.png
+share/apps/koffice/icons/crystalsvg/16x16/actions/spacedouble.png
+share/apps/koffice/icons/crystalsvg/16x16/actions/spacesimple.png
+share/apps/koffice/icons/crystalsvg/16x16/actions/spacetriple.png
 share/apps/koffice/icons/crystalsvg/16x16/actions/tab_first.png
 share/apps/koffice/icons/crystalsvg/16x16/actions/tab_last.png
 share/apps/koffice/icons/crystalsvg/16x16/actions/tab_left.png
@@ -2542,6 +2989,9 @@ share/apps/koffice/icons/crystalsvg/22x22/actions/shadowRB.png
 share/apps/koffice/icons/crystalsvg/22x22/actions/shadowRU.png
 share/apps/koffice/icons/crystalsvg/22x22/actions/shadowU.png
 share/apps/koffice/icons/crystalsvg/22x22/actions/slide.png
+share/apps/koffice/icons/crystalsvg/22x22/actions/spacedouble.png
+share/apps/koffice/icons/crystalsvg/22x22/actions/spacesimple.png
+share/apps/koffice/icons/crystalsvg/22x22/actions/spacetriple.png
 share/apps/koffice/icons/crystalsvg/22x22/actions/sub.png
 share/apps/koffice/icons/crystalsvg/22x22/actions/super.png
 share/apps/koffice/icons/crystalsvg/22x22/actions/toggle_docbrowser.png
@@ -2558,15 +3008,24 @@ share/apps/koffice/icons/crystalsvg/32x32/actions/insert_table_col.png
 share/apps/koffice/icons/crystalsvg/32x32/actions/insert_table_row.png
 share/apps/koffice/icons/crystalsvg/32x32/actions/send_backward.png
 share/apps/koffice/icons/crystalsvg/32x32/actions/sort_az.png
+share/apps/koffice/icons/crystalsvg/32x32/actions/spacedouble.png
+share/apps/koffice/icons/crystalsvg/32x32/actions/spacesimple.png
+share/apps/koffice/icons/crystalsvg/32x32/actions/spacetriple.png
 share/apps/koffice/icons/crystalsvg/32x32/actions/view_remove.png
 share/apps/koffice/icons/crystalsvg/32x32/apps/go.png
 share/apps/koffice/icons/crystalsvg/48x48/actions/bring_forward.png
 share/apps/koffice/icons/crystalsvg/48x48/actions/fontsizedown.png
 share/apps/koffice/icons/crystalsvg/48x48/actions/fontsizeup.png
 share/apps/koffice/icons/crystalsvg/48x48/actions/send_backward.png
+share/apps/koffice/icons/crystalsvg/48x48/actions/spacedouble.png
+share/apps/koffice/icons/crystalsvg/48x48/actions/spacesimple.png
+share/apps/koffice/icons/crystalsvg/48x48/actions/spacetriple.png
 share/apps/koffice/icons/crystalsvg/48x48/apps/key_bindings.png
 share/apps/koffice/icons/crystalsvg/scalable/actions/bring_forward.svgz
 share/apps/koffice/icons/crystalsvg/scalable/actions/send_backward.svgz
+share/apps/koffice/icons/crystalsvg/scalable/actions/spacedouble.svgz
+share/apps/koffice/icons/crystalsvg/scalable/actions/spacesimple.svgz
+share/apps/koffice/icons/crystalsvg/scalable/actions/spacetriple.svgz
 share/apps/koffice/koffice_shell.rc
 share/apps/koffice/pics/koKoolBarDown.png
 share/apps/koffice/pics/koKoolBarUp.png
@@ -2575,7 +3034,12 @@ share/apps/koffice/pics/koPortrait.png
 share/apps/koffice/pics/koRulerFirst.png
 share/apps/koffice/pics/koRulerLeft.png
 share/apps/koffice/pics/koffice-logo.png
+share/apps/kofficewidgets/pics/kounitdoublecombobox.png
+share/apps/kofficewidgets/pics/kounitdoublelineedit.png
+share/apps/kofficewidgets/pics/kounitdoublespinbox2.png
+share/apps/kofficewidgets/pics/kounitdoublespincombobox.png
 share/apps/konqueror/servicemenus/karbon_konqi.desktop
+share/apps/konqueror/servicemenus/kchart_konqi.desktop
 share/apps/konqueror/servicemenus/kexi_konqi.desktop
 share/apps/konqueror/servicemenus/kformula_konqi.desktop
 share/apps/konqueror/servicemenus/kivio_konqi.desktop
@@ -2584,6 +3048,31 @@ share/apps/konqueror/servicemenus/krita_konqi.desktop
 share/apps/konqueror/servicemenus/kspread_konqi.desktop
 share/apps/konqueror/servicemenus/kword_konqi.desktop
 share/apps/koshell/koshellui.rc
+share/apps/kplato/icons/crystalsvg/22x22/actions/accounts.png
+share/apps/kplato/icons/crystalsvg/22x22/actions/add_milestone.png
+share/apps/kplato/icons/crystalsvg/22x22/actions/add_sub_task.png
+share/apps/kplato/icons/crystalsvg/22x22/actions/add_task.png
+share/apps/kplato/icons/crystalsvg/22x22/actions/gantt_chart.png
+share/apps/kplato/icons/crystalsvg/22x22/actions/indent_task.png
+share/apps/kplato/icons/crystalsvg/22x22/actions/move_task_down.png
+share/apps/kplato/icons/crystalsvg/22x22/actions/move_task_up.png
+share/apps/kplato/icons/crystalsvg/22x22/actions/pert_chart.png
+share/apps/kplato/icons/crystalsvg/22x22/actions/project_calculate.png
+share/apps/kplato/icons/crystalsvg/22x22/actions/resources.png
+share/apps/kplato/icons/crystalsvg/22x22/actions/unindent_task.png
+share/apps/kplato/icons/crystalsvg/48x48/actions/template_timechart.png
+share/apps/kplato/icons/crystalsvg/scalable/actions/template_timechart.svgz
+share/apps/kplato/kplato.rc
+share/apps/kplato/kplato_readonly.rc
+share/apps/kplato/reports/.source/resourcelist.ktf
+share/apps/kplato/reports/.source/tasklist.ktf
+share/apps/kplato/reports/resourcelist.desktop
+share/apps/kplato/reports/tasklist.desktop
+share/apps/kplato/templates/Simple/.directory
+share/apps/kplato/templates/Simple/.source/8HourDay-40HourWeek.kplatot
+share/apps/kplato/templates/Simple/.source/Plain.kplatot
+share/apps/kplato/templates/Simple/8HourDay-40HourWeek.desktop
+share/apps/kplato/templates/Simple/Plain.desktop
 share/apps/kpresenter/autoforms/.autoforms
 share/apps/kpresenter/autoforms/Arrows/.directory
 share/apps/kpresenter/autoforms/Arrows/.icon/ArrowDown.png
@@ -2648,7 +3137,27 @@ share/apps/kpresenter/autoforms/Connections/Connection7.desktop
 share/apps/kpresenter/autoforms/Connections/Connection8.desktop
 share/apps/kpresenter/autoforms/Connections/Connection9.desktop
 share/apps/kpresenter/dtd/kpresenter.dtd
+share/apps/kpresenter/icons/crystalsvg/16x16/actions/alignobjs.png
+share/apps/kpresenter/icons/crystalsvg/16x16/actions/alignobjs.svg
+share/apps/kpresenter/icons/crystalsvg/16x16/actions/autoform.png
+share/apps/kpresenter/icons/crystalsvg/16x16/actions/circle.png
+share/apps/kpresenter/icons/crystalsvg/16x16/actions/closed_cubicbeziercurve.png
+share/apps/kpresenter/icons/crystalsvg/16x16/actions/closed_freehand.png
+share/apps/kpresenter/icons/crystalsvg/16x16/actions/closed_polyline.png
+share/apps/kpresenter/icons/crystalsvg/16x16/actions/closed_quadricbeziercurve.png
+share/apps/kpresenter/icons/crystalsvg/16x16/actions/cubicbeziercurve.png
+share/apps/kpresenter/icons/crystalsvg/16x16/actions/effect.png
+share/apps/kpresenter/icons/crystalsvg/16x16/actions/freehand.png
+share/apps/kpresenter/icons/crystalsvg/16x16/actions/line.png
+share/apps/kpresenter/icons/crystalsvg/16x16/actions/penbrush.png
+share/apps/kpresenter/icons/crystalsvg/16x16/actions/pie.png
+share/apps/kpresenter/icons/crystalsvg/16x16/actions/polygon.png
+share/apps/kpresenter/icons/crystalsvg/16x16/actions/polyline.png
+share/apps/kpresenter/icons/crystalsvg/16x16/actions/quadricbeziercurve.png
+share/apps/kpresenter/icons/crystalsvg/16x16/actions/rectangle.png
+share/apps/kpresenter/icons/crystalsvg/16x16/actions/slide_effect.png
 share/apps/kpresenter/icons/crystalsvg/22x22/actions/alignobjs.png
+share/apps/kpresenter/icons/crystalsvg/22x22/actions/alignobjs.svg
 share/apps/kpresenter/icons/crystalsvg/22x22/actions/arrange.png
 share/apps/kpresenter/icons/crystalsvg/22x22/actions/autoform.png
 share/apps/kpresenter/icons/crystalsvg/22x22/actions/cakes.png
@@ -2715,7 +3224,44 @@ share/apps/kpresenter/icons/crystalsvg/22x22/actions/polygon.png
 share/apps/kpresenter/icons/crystalsvg/22x22/actions/polyline.png
 share/apps/kpresenter/icons/crystalsvg/22x22/actions/quadricbeziercurve.png
 share/apps/kpresenter/icons/crystalsvg/22x22/actions/rectangle.png
+share/apps/kpresenter/icons/crystalsvg/22x22/actions/slide_effect.png
 share/apps/kpresenter/icons/crystalsvg/22x22/actions/webpres.png
+share/apps/kpresenter/icons/crystalsvg/32x32/actions/alignobjs.png
+share/apps/kpresenter/icons/crystalsvg/32x32/actions/autoform.png
+share/apps/kpresenter/icons/crystalsvg/32x32/actions/circle.png
+share/apps/kpresenter/icons/crystalsvg/32x32/actions/closed_cubicbeziercurve.png
+share/apps/kpresenter/icons/crystalsvg/32x32/actions/closed_freehand.png
+share/apps/kpresenter/icons/crystalsvg/32x32/actions/closed_polyline.png
+share/apps/kpresenter/icons/crystalsvg/32x32/actions/closed_quadricbeziercurve.png
+share/apps/kpresenter/icons/crystalsvg/32x32/actions/cubicbeziercurve.png
+share/apps/kpresenter/icons/crystalsvg/32x32/actions/effect.png
+share/apps/kpresenter/icons/crystalsvg/32x32/actions/freehand.png
+share/apps/kpresenter/icons/crystalsvg/32x32/actions/line.png
+share/apps/kpresenter/icons/crystalsvg/32x32/actions/penbrush.png
+share/apps/kpresenter/icons/crystalsvg/32x32/actions/pie.png
+share/apps/kpresenter/icons/crystalsvg/32x32/actions/polygon.png
+share/apps/kpresenter/icons/crystalsvg/32x32/actions/polyline.png
+share/apps/kpresenter/icons/crystalsvg/32x32/actions/quadricbeziercurve.png
+share/apps/kpresenter/icons/crystalsvg/32x32/actions/rectangle.png
+share/apps/kpresenter/icons/crystalsvg/32x32/actions/slide_effect.png
+share/apps/kpresenter/icons/crystalsvg/48x48/actions/alignobjs.png
+share/apps/kpresenter/icons/crystalsvg/48x48/actions/autoform.png
+share/apps/kpresenter/icons/crystalsvg/48x48/actions/circle.png
+share/apps/kpresenter/icons/crystalsvg/48x48/actions/closed_cubicbeziercurve.png
+share/apps/kpresenter/icons/crystalsvg/48x48/actions/closed_freehand.png
+share/apps/kpresenter/icons/crystalsvg/48x48/actions/closed_polyline.png
+share/apps/kpresenter/icons/crystalsvg/48x48/actions/closed_quadricbeziercurve.png
+share/apps/kpresenter/icons/crystalsvg/48x48/actions/cubicbeziercurve.png
+share/apps/kpresenter/icons/crystalsvg/48x48/actions/effect.png
+share/apps/kpresenter/icons/crystalsvg/48x48/actions/freehand.png
+share/apps/kpresenter/icons/crystalsvg/48x48/actions/line.png
+share/apps/kpresenter/icons/crystalsvg/48x48/actions/penbrush.png
+share/apps/kpresenter/icons/crystalsvg/48x48/actions/pie.png
+share/apps/kpresenter/icons/crystalsvg/48x48/actions/polygon.png
+share/apps/kpresenter/icons/crystalsvg/48x48/actions/polyline.png
+share/apps/kpresenter/icons/crystalsvg/48x48/actions/quadricbeziercurve.png
+share/apps/kpresenter/icons/crystalsvg/48x48/actions/rectangle.png
+share/apps/kpresenter/icons/crystalsvg/48x48/actions/slide_effect.png
 share/apps/kpresenter/icons/crystalsvg/48x48/actions/template_emptylandscape.png
 share/apps/kpresenter/icons/crystalsvg/48x48/actions/template_emptyportrait.png
 share/apps/kpresenter/icons/crystalsvg/48x48/actions/template_onecolumnlandscape.png
@@ -2735,17 +3281,35 @@ share/apps/kpresenter/icons/crystalsvg/scalable/actions/template_twocolumnportra
 share/apps/kpresenter/icons/hicolor/48x48/actions/template_bluebreezedouble.png
 share/apps/kpresenter/icons/hicolor/48x48/actions/template_bluebreezepicture.png
 share/apps/kpresenter/icons/hicolor/48x48/actions/template_bluebreezesingle.png
+share/apps/kpresenter/icons/hicolor/48x48/actions/template_classroom.png
 share/apps/kpresenter/icons/hicolor/48x48/actions/template_copperplain.png
 share/apps/kpresenter/icons/hicolor/48x48/actions/template_gradientbluered.png
 share/apps/kpresenter/icons/hicolor/48x48/actions/template_kde.png
 share/apps/kpresenter/icons/hicolor/48x48/actions/template_kde2.png
 share/apps/kpresenter/icons/hicolor/48x48/actions/template_kde3.png
+share/apps/kpresenter/icons/hicolor/48x48/actions/template_savannah.png
 share/apps/kpresenter/icons/hicolor/48x48/actions/template_screenplain.png
 share/apps/kpresenter/icons/hicolor/48x48/actions/template_snowymountains.png
 share/apps/kpresenter/icons/hicolor/48x48/actions/template_totallynewproduct.png
 share/apps/kpresenter/kpartplugins/scan-kpresenter.rc
 share/apps/kpresenter/kpresenter.rc
 share/apps/kpresenter/kpresenter_readonly.rc
+share/apps/kpresenter/pics/rotate/bl.png
+share/apps/kpresenter/pics/rotate/bldn.png
+share/apps/kpresenter/pics/rotate/bm.png
+share/apps/kpresenter/pics/rotate/bmdn.png
+share/apps/kpresenter/pics/rotate/br.png
+share/apps/kpresenter/pics/rotate/brdn.png
+share/apps/kpresenter/pics/rotate/ml.png
+share/apps/kpresenter/pics/rotate/mldn.png
+share/apps/kpresenter/pics/rotate/mr.png
+share/apps/kpresenter/pics/rotate/mrdn.png
+share/apps/kpresenter/pics/rotate/tl.png
+share/apps/kpresenter/pics/rotate/tldn.png
+share/apps/kpresenter/pics/rotate/tm.png
+share/apps/kpresenter/pics/rotate/tmdn.png
+share/apps/kpresenter/pics/rotate/tr.png
+share/apps/kpresenter/pics/rotate/trdn.png
 share/apps/kpresenter/pics/webslideshow-sidebar.png
 share/apps/kpresenter/slideshow/first.png
 share/apps/kpresenter/slideshow/home.png
@@ -2784,23 +3348,25 @@ share/apps/kpresenter/templates/Screenpresentations/.source/BlueBreezePicture.kp
 share/apps/kpresenter/templates/Screenpresentations/.source/BlueBreezeSingle.kpt
 share/apps/kpresenter/templates/Screenpresentations/.source/CopperPlain.kpt
 share/apps/kpresenter/templates/Screenpresentations/.source/GradientBlueRed.kpt
-share/apps/kpresenter/templates/Screenpresentations/.source/Plain.kpt
 share/apps/kpresenter/templates/Screenpresentations/.source/SnowyMountains.kpt
 share/apps/kpresenter/templates/Screenpresentations/.source/TotallyNewProduct.kpt
+share/apps/kpresenter/templates/Screenpresentations/.source/classroom.kpt
 share/apps/kpresenter/templates/Screenpresentations/.source/kde.kpt
 share/apps/kpresenter/templates/Screenpresentations/.source/kde2.kpt
 share/apps/kpresenter/templates/Screenpresentations/.source/kde3.kpt
+share/apps/kpresenter/templates/Screenpresentations/.source/savannah.kpt
 share/apps/kpresenter/templates/Screenpresentations/BlueBreezeDouble.desktop
 share/apps/kpresenter/templates/Screenpresentations/BlueBreezePicture.desktop
 share/apps/kpresenter/templates/Screenpresentations/BlueBreezeSingle.desktop
 share/apps/kpresenter/templates/Screenpresentations/CopperPlain.desktop
 share/apps/kpresenter/templates/Screenpresentations/GradientBlueRed.desktop
-share/apps/kpresenter/templates/Screenpresentations/Plain.desktop
 share/apps/kpresenter/templates/Screenpresentations/SnowyMountains.desktop
 share/apps/kpresenter/templates/Screenpresentations/TotallyNewProduct.desktop
+share/apps/kpresenter/templates/Screenpresentations/classroom.desktop
 share/apps/kpresenter/templates/Screenpresentations/kde.desktop
 share/apps/kpresenter/templates/Screenpresentations/kde2.desktop
 share/apps/kpresenter/templates/Screenpresentations/kde3.desktop
+share/apps/kpresenter/templates/Screenpresentations/savannah.desktop
 share/apps/kpresenter/templates/legal/.directory
 share/apps/kpresenter/templates/legal/.source/OneColumnLandscape.kpt
 share/apps/kpresenter/templates/legal/.source/OneColumnPortrait.kpt
@@ -2863,6 +3429,8 @@ share/apps/krita/brushes/9fcircle.gbr
 share/apps/krita/brushes/DStar11.gbr
 share/apps/krita/brushes/DStar17.gbr
 share/apps/krita/brushes/DStar25.gbr
+share/apps/krita/brushes/Makefile.am
+share/apps/krita/brushes/Makefile.in
 share/apps/krita/brushes/SketchBrush-16.gih
 share/apps/krita/brushes/SketchBrush-32.gih
 share/apps/krita/brushes/SketchBrush-64.gih
@@ -2872,6 +3440,24 @@ share/apps/krita/brushes/callig3.gbr
 share/apps/krita/brushes/callig4.gbr
 share/apps/krita/brushes/confetti.gbr
 share/apps/krita/brushes/confetti.gih
+share/apps/krita/brushes/cursor.gbr
+share/apps/krita/brushes/cursor_big_lb.gbr
+share/apps/krita/brushes/cursor_big_lw.gbr
+share/apps/krita/brushes/cursor_big_rb.gbr
+share/apps/krita/brushes/cursor_big_rw.gbr
+share/apps/krita/brushes/cursor_lw.gbr
+share/apps/krita/brushes/cursor_resize_diag_1.gbr
+share/apps/krita/brushes/cursor_resize_diag_2.gbr
+share/apps/krita/brushes/cursor_resize_hor.gbr
+share/apps/krita/brushes/cursor_resize_vert.gbr
+share/apps/krita/brushes/cursor_rw.gbr
+share/apps/krita/brushes/cursor_small_lb.gbr
+share/apps/krita/brushes/cursor_small_lw.gbr
+share/apps/krita/brushes/cursor_small_rb.gbr
+share/apps/krita/brushes/cursor_small_rw.gbr
+share/apps/krita/brushes/cursor_tiny_lw.gbr
+share/apps/krita/brushes/cursor_tiny_rw.gbr
+share/apps/krita/brushes/cursor_up.gbr
 share/apps/krita/brushes/dunes.gbr
 share/apps/krita/brushes/feltpen.gih
 share/apps/krita/brushes/galaxy.gbr
@@ -2960,37 +3546,22 @@ share/apps/krita/gradients/Wood_1.ggr
 share/apps/krita/gradients/Wood_2.ggr
 share/apps/krita/gradients/Yellow_Contrast.ggr
 share/apps/krita/gradients/Yellow_Orange.ggr
-share/apps/krita/icons/crystalsvg/48x48/actions/template_empty.png
+share/apps/krita/icons/crystalsvg/48x48/actions/template_cmyk_empty.png
 share/apps/krita/icons/crystalsvg/48x48/actions/template_gray_empty.png
 share/apps/krita/icons/crystalsvg/48x48/actions/template_rgb_empty.png
-share/apps/krita/icons/crystalsvg/scalable/actions/template_empty.svgz
+share/apps/krita/icons/crystalsvg/scalable/actions/template_cmyk_empty.svgz
 share/apps/krita/icons/crystalsvg/scalable/actions/template_gray_empty.svgz
 share/apps/krita/icons/crystalsvg/scalable/actions/template_rgb_empty.svgz
-share/apps/krita/kpartplugins/colorrange.rc
-share/apps/krita/kpartplugins/colorsfilters.rc
-share/apps/krita/kpartplugins/colorspaceconversion.rc
-share/apps/krita/kpartplugins/histogram.rc
-share/apps/krita/kpartplugins/imagesize.rc
-share/apps/krita/kpartplugins/kritacimg.rc
-share/apps/krita/kpartplugins/kritaconvolutionfilters.rc
-share/apps/krita/kpartplugins/kritadefaulttools.rc
-share/apps/krita/kpartplugins/kritaembossfilter.rc
-share/apps/krita/kpartplugins/kritaexample.rc
-share/apps/krita/kpartplugins/kritaoilpaintfilter.rc
-share/apps/krita/kpartplugins/kritaraindropsfilter.rc
-share/apps/krita/kpartplugins/kritaselectiontools.rc
-share/apps/krita/kpartplugins/kritatoolcrop.rc
-share/apps/krita/kpartplugins/kritatoolfilter.rc
-share/apps/krita/kpartplugins/kritatoolpolygon.rc
-share/apps/krita/kpartplugins/kritatoolpolyline.rc
-share/apps/krita/kpartplugins/kritatoolstar.rc
-share/apps/krita/kpartplugins/kritatooltransform.rc
-share/apps/krita/kpartplugins/rotateimage.rc
+share/apps/krita/images/airbrush.png
+share/apps/krita/images/eraser.png
+share/apps/krita/images/paintbrush.png
+share/apps/krita/images/pencil.png
+share/apps/krita/images/previewfilter.png
 share/apps/krita/kpartplugins/scan-krita.rc
-share/apps/krita/kpartplugins/screenshot-krita.rc
-share/apps/krita/kpartplugins/shearimage.rc
 share/apps/krita/krita.rc
 share/apps/krita/krita_readonly.rc
+share/apps/krita/palettes/40_Colors.gpl
+share/apps/krita/palettes/Anchor.gpl
 share/apps/krita/palettes/Bears.gpl
 share/apps/krita/palettes/Bgold.gpl
 share/apps/krita/palettes/Blues.gpl
@@ -3002,6 +3573,7 @@ share/apps/krita/palettes/China.gpl
 share/apps/krita/palettes/Coldfire.gpl
 share/apps/krita/palettes/Cool_Colors.gpl
 share/apps/krita/palettes/Cranes.gpl
+share/apps/krita/palettes/DMC.gpl
 share/apps/krita/palettes/Dark_pastels.gpl
 share/apps/krita/palettes/Default.gpl
 share/apps/krita/palettes/Ega.gpl
@@ -3014,11 +3586,15 @@ share/apps/krita/palettes/Greens.gpl
 share/apps/krita/palettes/Hilite.gpl
 share/apps/krita/palettes/Khaki.gpl
 share/apps/krita/palettes/Lights.gpl
+share/apps/krita/palettes/Madeira.gpl
+share/apps/krita/palettes/Makefile.am
+share/apps/krita/palettes/Makefile.in
 share/apps/krita/palettes/Muted.gpl
 share/apps/krita/palettes/Named_Colors.gpl
 share/apps/krita/palettes/News3.gpl
 share/apps/krita/palettes/Op2.gpl
 share/apps/krita/palettes/Paintjet.gpl
+share/apps/krita/palettes/Pantone_Coated_Approx.gpl
 share/apps/krita/palettes/Pastels.gpl
 share/apps/krita/palettes/Plasma.gpl
 share/apps/krita/palettes/Reds.gpl
@@ -3030,6 +3606,7 @@ share/apps/krita/palettes/Visibone_2.gpl
 share/apps/krita/palettes/Volcano.gpl
 share/apps/krita/palettes/Warm_Colors.gpl
 share/apps/krita/palettes/Web.gpl
+share/apps/krita/palettes/new_kde.gpl
 share/apps/krita/patterns/3dgreen.pat
 share/apps/krita/patterns/Craters.pat
 share/apps/krita/patterns/Moonfoot.pat
@@ -3090,34 +3667,63 @@ share/apps/krita/patterns/wood4.pat
 share/apps/krita/patterns/wood5.pat
 share/apps/krita/pics/closedhand_cursor.xpm
 share/apps/krita/pics/deletelayer.png
-share/apps/krita/pics/ellipse.png
-share/apps/krita/pics/gradient.png
-share/apps/krita/pics/line.png
 share/apps/krita/pics/linked.png
 share/apps/krita/pics/locked.png
 share/apps/krita/pics/lowerlayer.png
 share/apps/krita/pics/newlayer.png
 share/apps/krita/pics/novisible.png
 share/apps/krita/pics/openhand_cursor.xpm
-share/apps/krita/pics/polygon.png
 share/apps/krita/pics/polyline.png
 share/apps/krita/pics/raiselayer.png
-share/apps/krita/pics/rectangle.png
+share/apps/krita/pics/rotate_cursor.xpm
+share/apps/krita/pics/tablet.png
 share/apps/krita/pics/tool_brush_selection.png
+share/apps/krita/pics/tool_brush_selection_cursor.png
+share/apps/krita/pics/tool_contiguous_selection.png
+share/apps/krita/pics/tool_contiguous_selection_cursor.png
+share/apps/krita/pics/tool_crop_cursor.png
+share/apps/krita/pics/tool_duplicate_cursor.png
+share/apps/krita/pics/tool_ellipse.png
+share/apps/krita/pics/tool_ellipse_cursor.png
 share/apps/krita/pics/tool_elliptical_selection.png
+share/apps/krita/pics/tool_elliptical_selection_cursor.png
 share/apps/krita/pics/tool_eraser_selection.png
-share/apps/krita/pics/tool_free_form_selection.png
+share/apps/krita/pics/tool_eraser_selection_cursor.png
+share/apps/krita/pics/tool_fill_cursor.png
+share/apps/krita/pics/tool_filter.png
+share/apps/krita/pics/tool_filter_cursor.png
+share/apps/krita/pics/tool_freehand.png
+share/apps/krita/pics/tool_freehand_cursor.png
+share/apps/krita/pics/tool_gradient.png
+share/apps/krita/pics/tool_gradient_cursor.png
+share/apps/krita/pics/tool_line.png
+share/apps/krita/pics/tool_line_cursor.png
+share/apps/krita/pics/tool_outline_selection.png
+share/apps/krita/pics/tool_outline_selection_cursor.png
 share/apps/krita/pics/tool_pan.png
-share/apps/krita/pics/tool_picker_selection.png
+share/apps/krita/pics/tool_polygon.png
+share/apps/krita/pics/tool_polygon_cursor.png
 share/apps/krita/pics/tool_polygonal_selection.png
+share/apps/krita/pics/tool_polygonal_selection_cursor.png
+share/apps/krita/pics/tool_polyline_cursor.png
 share/apps/krita/pics/tool_rect_selection.png
+share/apps/krita/pics/tool_rectangle.png
+share/apps/krita/pics/tool_rectangle_cursor.png
+share/apps/krita/pics/tool_rectangular_selection_cursor.png
 share/apps/krita/pics/tool_screenshot.png
+share/apps/krita/pics/tool_similar_selection.png
+share/apps/krita/pics/tool_similar_selection_minus_cursor.png
+share/apps/krita/pics/tool_similar_selection_plus_cursor.png
 share/apps/krita/pics/tool_star.png
+share/apps/krita/pics/tool_star_cursor.png
 share/apps/krita/pics/tool_text.png
-share/apps/krita/pics/tool_wizard_selection.png
+share/apps/krita/pics/tool_text_cursor.png
+share/apps/krita/pics/tool_zoom_minus_cursor.png
+share/apps/krita/pics/tool_zoom_plus_cursor.png
 share/apps/krita/pics/unlinked.png
 share/apps/krita/pics/unlocked.png
 share/apps/krita/pics/visible.png
+share/apps/krita/profiles/Adobe.icm
 share/apps/krita/profiles/Apple.icm
 share/apps/krita/profiles/CIE.icm
 share/apps/krita/profiles/CMY.icm
@@ -3134,12 +3740,27 @@ share/apps/krita/profiles/sRGB.icm
 share/apps/krita/profiles/srgb_color_space_profile.icm
 share/apps/krita/profiles/srgbspac.icm
 share/apps/krita/profiles/tifflab8spac.icm
-share/apps/krita/profiles/tr01_d50.icm
 share/apps/krita/profiles/ycc601.icm
 share/apps/krita/profiles/ycc709.icm
-share/apps/krita/templates/empty/.directory
-share/apps/krita/templates/empty/.source/empty.kra
-share/apps/krita/templates/empty/empty.desktop
+share/apps/krita/scripts/changecs/changecs.rb
+share/apps/krita/scripts/changecs/changecs.rc
+share/apps/krita/scripts/filterstest/filterstest.rb
+share/apps/krita/scripts/filterstest/filterstest.rc
+share/apps/krita/scripts/invertpython/invert.py
+share/apps/krita/scripts/invertpython/invertpython.rc
+share/apps/krita/scripts/invertruby/invert.rb
+share/apps/krita/scripts/invertruby/invertruby.rc
+share/apps/krita/scripts/randompaint/randompaint.rb
+share/apps/krita/scripts/randompaint/randompaint.rc
+share/apps/krita/scripts/reshapehisto/reshapehisto.py
+share/apps/krita/scripts/reshapehisto/reshapehisto.rc
+share/apps/krita/scripts/torturefilters/torture-filters.rb
+share/apps/krita/scripts/torturefilters/torture-filters.rc
+share/apps/krita/scripts/torturepainting/torture-painting.rb
+share/apps/krita/scripts/torturepainting/torture-painting.rc
+share/apps/krita/templates/cmyk/.directory
+share/apps/krita/templates/cmyk/.source/white_2000x800.kra
+share/apps/krita/templates/cmyk/white_2000x800.desktop
 share/apps/krita/templates/gray/.directory
 share/apps/krita/templates/gray/.source/white_640x480.kra
 share/apps/krita/templates/gray/white_640x480.desktop
@@ -3160,6 +3781,31 @@ share/apps/krita/templates/rgb/white_1024x768.desktop
 share/apps/krita/templates/rgb/white_1280x1024.desktop
 share/apps/krita/templates/rgb/white_1600x1200.desktop
 share/apps/krita/templates/rgb/white_640x480.desktop
+share/apps/kritaplugins/colorrange.rc
+share/apps/kritaplugins/colorspaceconversion.rc
+share/apps/kritaplugins/dropshadow.rc
+share/apps/kritaplugins/histogram.rc
+share/apps/kritaplugins/imageseparate.rc
+share/apps/kritaplugins/imagesize.rc
+share/apps/kritaplugins/kritafiltersgallery.rc
+share/apps/kritaplugins/kritahistogramdocker.rc
+share/apps/kritaplugins/perftest.rc
+share/apps/kritaplugins/rotateimage.rc
+share/apps/kritaplugins/screenshot-krita.rc
+share/apps/kritaplugins/scripting.rc
+share/apps/kritaplugins/shearimage.rc
+share/apps/kritaplugins/wetplugin.rc
+share/apps/kross/python/RestrictedPython/Eval.py
+share/apps/kross/python/RestrictedPython/Guards.py
+share/apps/kross/python/RestrictedPython/Limits.py
+share/apps/kross/python/RestrictedPython/MutatingWalker.py
+share/apps/kross/python/RestrictedPython/PrintCollector.py
+share/apps/kross/python/RestrictedPython/RCompile.py
+share/apps/kross/python/RestrictedPython/RestrictionMutator.py
+share/apps/kross/python/RestrictedPython/SelectCompiler.py
+share/apps/kross/python/RestrictedPython/Utilities.py
+share/apps/kross/python/RestrictedPython/__init__.py
+share/apps/kross/python/gui.py
 share/apps/kspread/dtd/kspread.dtd
 share/apps/kspread/extensions/builtin.xml
 share/apps/kspread/extensions/conversion.xml
@@ -3169,7 +3815,6 @@ share/apps/kspread/extensions/engineering.xml
 share/apps/kspread/extensions/financial.xml
 share/apps/kspread/extensions/information.xml
 share/apps/kspread/extensions/logic.xml
-share/apps/kspread/extensions/math.ks
 share/apps/kspread/extensions/math.xml
 share/apps/kspread/extensions/reference.xml
 share/apps/kspread/extensions/statistical.xml
@@ -3206,6 +3851,8 @@ share/apps/kspread/icons/crystalsvg/16x16/actions/insertcell.png
 share/apps/kspread/icons/crystalsvg/16x16/actions/insertcellcopy.png
 share/apps/kspread/icons/crystalsvg/16x16/actions/inserttable.png
 share/apps/kspread/icons/crystalsvg/16x16/actions/mergecell.png
+share/apps/kspread/icons/crystalsvg/16x16/actions/mergecell/horizontal.png
+share/apps/kspread/icons/crystalsvg/16x16/actions/mergecell/vertical.png
 share/apps/kspread/icons/crystalsvg/16x16/actions/middle.png
 share/apps/kspread/icons/crystalsvg/16x16/actions/money.png
 share/apps/kspread/icons/crystalsvg/16x16/actions/multirow.png
@@ -3243,6 +3890,8 @@ share/apps/kspread/icons/crystalsvg/22x22/actions/funct.png
 share/apps/kspread/icons/crystalsvg/22x22/actions/insert_chart.png
 share/apps/kspread/icons/crystalsvg/22x22/actions/insert_link.png
 share/apps/kspread/icons/crystalsvg/22x22/actions/mergecell.png
+share/apps/kspread/icons/crystalsvg/22x22/actions/mergecell/horizontal.png
+share/apps/kspread/icons/crystalsvg/22x22/actions/mergecell/vertical.png
 share/apps/kspread/icons/crystalsvg/22x22/actions/middle.png
 share/apps/kspread/icons/crystalsvg/22x22/actions/money.png
 share/apps/kspread/icons/crystalsvg/22x22/actions/multirow.png
@@ -3294,12 +3943,12 @@ share/apps/kspread/icons/crystalsvg/scalable/actions/template_worksheet.svgz
 share/apps/kspread/kpartplugins/insertcalendar.rc
 share/apps/kspread/kspread.rc
 share/apps/kspread/kspread_readonly.rc
-share/apps/kspread/tablestyles/standard1.ksts
-share/apps/kspread/tablestyles/standard1.png
-share/apps/kspread/tablestyles/standard1.xml
-share/apps/kspread/tablestyles/standard2.ksts
-share/apps/kspread/tablestyles/standard2.png
-share/apps/kspread/tablestyles/standard2.xml
+share/apps/kspread/sheetstyles/standard1.ksts
+share/apps/kspread/sheetstyles/standard1.png
+share/apps/kspread/sheetstyles/standard1.xml
+share/apps/kspread/sheetstyles/standard2.ksts
+share/apps/kspread/sheetstyles/standard2.png
+share/apps/kspread/sheetstyles/standard2.xml
 share/apps/kspread/templates/Business/.directory
 share/apps/kspread/templates/Business/.source/BalanceSheet.kst
 share/apps/kspread/templates/Business/.source/ExpenseReport.kst
@@ -3403,18 +4052,19 @@ share/apps/kudesigner/templates/General/NPageSize.desktop
 share/apps/kudesigner/templates/General/Tabloid.desktop
 share/apps/kugar/dtd/kugartemplate.dtd
 share/apps/kugar/kugarpart.rc
-share/apps/kugar/templates/sample1.kud
-share/apps/kugar/templates/sample1.kut
-share/apps/kugar/templates/sample2.kud
-share/apps/kugar/templates/sample2.kut
-share/apps/kugar/templates/sample3.kud
-share/apps/kugar/templates/sample3.kut
+share/apps/kugar/templates/sample1.kdf
+share/apps/kugar/templates/sample1.ktf
+share/apps/kugar/templates/sample2.kdf
+share/apps/kugar/templates/sample2.ktf
+share/apps/kugar/templates/sample3.kdf
+share/apps/kugar/templates/sample3.ktf
 share/apps/kword/dtd/framestyles.dtd
 share/apps/kword/dtd/kword.dtd
 share/apps/kword/dtd/tablestyles.dtd
 share/apps/kword/dtd/tabletemplates.dtd
 share/apps/kword/expression/expression.xml
 share/apps/kword/framestyles.xml
+share/apps/kword/icons/crystalsvg/128x128/actions/template_colorful.png
 share/apps/kword/icons/crystalsvg/22x22/actions/run_bounding.png
 share/apps/kword/icons/crystalsvg/22x22/actions/run_not.png
 share/apps/kword/icons/crystalsvg/22x22/actions/run_skip.png
@@ -3424,7 +4074,7 @@ share/apps/kword/icons/crystalsvg/22x22/actions/sl_delentry.png
 share/apps/kword/icons/crystalsvg/22x22/actions/sl_delrecord.png
 share/apps/kword/icons/crystalsvg/48x48/actions/template_a4.png
 share/apps/kword/icons/crystalsvg/48x48/actions/template_businesscards10.png
-share/apps/kword/icons/crystalsvg/48x48/actions/template_empty.png
+share/apps/kword/icons/crystalsvg/48x48/actions/template_colorful.png
 share/apps/kword/icons/crystalsvg/48x48/actions/template_envelopec6.png
 share/apps/kword/icons/crystalsvg/48x48/actions/template_envelopedl.png
 share/apps/kword/icons/crystalsvg/48x48/actions/template_fax.png
@@ -3432,11 +4082,9 @@ share/apps/kword/icons/crystalsvg/48x48/actions/template_labelsl16.png
 share/apps/kword/icons/crystalsvg/48x48/actions/template_letter.png
 share/apps/kword/icons/crystalsvg/48x48/actions/template_memo.png
 share/apps/kword/icons/crystalsvg/48x48/actions/template_plaintext.png
-share/apps/kword/icons/crystalsvg/48x48/actions/template_simplelayout.png
 share/apps/kword/icons/crystalsvg/48x48/actions/template_twocolumns.png
 share/apps/kword/icons/crystalsvg/scalable/actions/template_a4.svgz
 share/apps/kword/icons/crystalsvg/scalable/actions/template_businesscards10.svgz
-share/apps/kword/icons/crystalsvg/scalable/actions/template_empty.svgz
 share/apps/kword/icons/crystalsvg/scalable/actions/template_envelopec6.svgz
 share/apps/kword/icons/crystalsvg/scalable/actions/template_envelopedl.svgz
 share/apps/kword/icons/crystalsvg/scalable/actions/template_fax.svgz
@@ -3444,7 +4092,6 @@ share/apps/kword/icons/crystalsvg/scalable/actions/template_labelsl16.svgz
 share/apps/kword/icons/crystalsvg/scalable/actions/template_letter.svgz
 share/apps/kword/icons/crystalsvg/scalable/actions/template_memo.svgz
 share/apps/kword/icons/crystalsvg/scalable/actions/template_plaintext.svgz
-share/apps/kword/icons/crystalsvg/scalable/actions/template_simplelayout.svgz
 share/apps/kword/icons/crystalsvg/scalable/actions/template_twocolumns.svgz
 share/apps/kword/kpartplugins/scan-kword.rc
 share/apps/kword/kword.rc
@@ -3463,22 +4110,28 @@ share/apps/kword/templates/Envelopes/EnvelopeC6.desktop
 share/apps/kword/templates/Envelopes/EnvelopeDL.desktop
 share/apps/kword/templates/Normal/.directory
 share/apps/kword/templates/Normal/.source/A4.kwt
+share/apps/kword/templates/Normal/.source/ColorfulA4.odt
+share/apps/kword/templates/Normal/.source/ColorfulLetter.odt
+share/apps/kword/templates/Normal/.source/FaxA4.odt
+share/apps/kword/templates/Normal/.source/FaxLetter.odt
 share/apps/kword/templates/Normal/.source/Letter.kwt
 share/apps/kword/templates/Normal/.source/Memo.kwt
 share/apps/kword/templates/Normal/.source/PlainText.kwt
+share/apps/kword/templates/Normal/.source/ProfessionalA4.odt
+share/apps/kword/templates/Normal/.source/ProfessionalLetter.odt
 share/apps/kword/templates/Normal/.source/TwoColumns.kwt
+share/apps/kword/templates/Normal/.source/TwoColumnsLetter.kwt
 share/apps/kword/templates/Normal/A4.desktop
+share/apps/kword/templates/Normal/ColorfulA4.desktop
+share/apps/kword/templates/Normal/ColorfulLetter.desktop
+share/apps/kword/templates/Normal/FaxA4.desktop
+share/apps/kword/templates/Normal/FaxLetter.desktop
 share/apps/kword/templates/Normal/Letter.desktop
 share/apps/kword/templates/Normal/Memo.desktop
-share/apps/kword/templates/Normal/PlainText.desktop
+share/apps/kword/templates/Normal/ProfessionalA4.desktop
+share/apps/kword/templates/Normal/ProfessionalLetter.desktop
 share/apps/kword/templates/Normal/TwoColumns.desktop
-share/apps/kword/templates/Publishing/.directory
-share/apps/kword/templates/Publishing/.source/Empty.kwt
-share/apps/kword/templates/Publishing/.source/SimpleLayout.kwt
-share/apps/kword/templates/Publishing/.source/fax.kwt
-share/apps/kword/templates/Publishing/Empty.desktop
-share/apps/kword/templates/Publishing/SimpleLayout.desktop
-share/apps/kword/templates/Publishing/fax.desktop
+share/apps/kword/templates/Normal/TwoColumnsLetter.desktop
 share/apps/thesaurus/thesaurus.txt
 share/apps/xsltfilter/export/kword/xslfo/kword2xslfo-table.xsl
 share/apps/xsltfilter/export/kword/xslfo/main.xsl
@@ -3486,6 +4139,9 @@ share/config.kcfg/kivio.kcfg
 share/config.kcfg/koshell.kcfg
 share/config/kexirc
 share/config/magic/kexi.magic
+share/doc/HTML/en/karbon/common
+share/doc/HTML/en/karbon/index.cache.bz2
+share/doc/HTML/en/karbon/index.docbook
 share/doc/HTML/en/kchart/common
 share/doc/HTML/en/kchart/cr22-action-chart_line.png
 share/doc/HTML/en/kchart/cr22-action-data.png
@@ -3518,14 +4174,24 @@ share/doc/HTML/en/kchart/kchart-example1-9.png
 share/doc/HTML/en/kchart/kchart-kspread-bar.png
 share/doc/HTML/en/kchart/kchart-kspread.png
 share/doc/HTML/en/kchart/kchart-startupdialog.png
+share/doc/HTML/en/kchart/kchart-wizard0.png
 share/doc/HTML/en/kchart/kchart-wizard1.png
 share/doc/HTML/en/kchart/kchart-wizard2.png
 share/doc/HTML/en/kchart/kchart-wizard3.png
 share/doc/HTML/en/kchart/kchart-wizard4.png
-share/doc/HTML/en/kchart/kchart.tar.gz
 share/doc/HTML/en/kchart/shortcut.png
 share/doc/HTML/en/kchart/toolbars.png
-share/doc/HTML/en/kformula/additional_fonts1.png
+share/doc/HTML/en/kexi/basics.docbook
+share/doc/HTML/en/kexi/building.docbook
+share/doc/HTML/en/kexi/common
+share/doc/HTML/en/kexi/configuration.docbook
+share/doc/HTML/en/kexi/contact-example.png
+share/doc/HTML/en/kexi/credits.docbook
+share/doc/HTML/en/kexi/database.docbook
+share/doc/HTML/en/kexi/index.cache.bz2
+share/doc/HTML/en/kexi/index.docbook
+share/doc/HTML/en/kexi/intro.docbook
+share/doc/HTML/en/kexi/menus.docbook
 share/doc/HTML/en/kformula/ambiguous-string.png
 share/doc/HTML/en/kformula/common
 share/doc/HTML/en/kformula/correct_index_location.png
@@ -3539,15 +4205,16 @@ share/doc/HTML/en/kformula/incorrect_index_location.png
 share/doc/HTML/en/kformula/index.cache.bz2
 share/doc/HTML/en/kformula/index.docbook
 share/doc/HTML/en/kformula/index_smear.png
-share/doc/HTML/en/kformula/kfontinst-right.png
 share/doc/HTML/en/kformula/kfontinst1.png
 share/doc/HTML/en/kformula/kfontinst2.png
 share/doc/HTML/en/kformula/kfontinst3.png
 share/doc/HTML/en/kformula/kfontinst4.png
 share/doc/HTML/en/kformula/kfontinst5.png
+share/doc/HTML/en/kformula/kfontinst6.png
 share/doc/HTML/en/kformula/lower-index.png
 share/doc/HTML/en/kformula/matrix-view.png
 share/doc/HTML/en/kformula/matrix.png
+share/doc/HTML/en/kformula/negative_thin_space.png
 share/doc/HTML/en/kformula/path-integral.png
 share/doc/HTML/en/kformula/rk-edit0.png
 share/doc/HTML/en/kformula/rk-edit1.png
@@ -3566,8 +4233,7 @@ share/doc/HTML/en/kivio/index.docbook
 share/doc/HTML/en/kivio/introduction.docbook
 share/doc/HTML/en/kivio/usage.docbook
 share/doc/HTML/en/kivio/working.docbook
-share/doc/HTML/en/koffice-apidocs/common
-share/doc/HTML/en/koffice/README.documentation
+share/doc/HTML/en/koffice/CookBook.odt
 share/doc/HTML/en/koffice/TODO
 share/doc/HTML/en/koffice/common
 share/doc/HTML/en/koffice/index.cache.bz2
@@ -3575,50 +4241,105 @@ share/doc/HTML/en/koffice/index.docbook
 share/doc/HTML/en/koshell/common
 share/doc/HTML/en/koshell/index.cache.bz2
 share/doc/HTML/en/koshell/index.docbook
+share/doc/HTML/en/koshell/koshell1.png
+share/doc/HTML/en/koshell/main-view.png
+share/doc/HTML/en/koshell/new-dialog.png
+share/doc/HTML/en/koshell/side-pane.png
+share/doc/HTML/en/kplato/commands.docbook
+share/doc/HTML/en/kplato/common
+share/doc/HTML/en/kplato/configure-wbs.png
+share/doc/HTML/en/kplato/configure1.png
+share/doc/HTML/en/kplato/configure2.1.png
+share/doc/HTML/en/kplato/configure2.png
+share/doc/HTML/en/kplato/definitions.docbook
+share/doc/HTML/en/kplato/edit-accounts.png
+share/doc/HTML/en/kplato/edit-accounts1.png
+share/doc/HTML/en/kplato/edit-calendar.png
+share/doc/HTML/en/kplato/edit-calendar1.png
+share/doc/HTML/en/kplato/edit-calendar2.png
+share/doc/HTML/en/kplato/edit-resources.png
+share/doc/HTML/en/kplato/edit-resources1.png
+share/doc/HTML/en/kplato/edit-worktime.png
+share/doc/HTML/en/kplato/index.cache.bz2
+share/doc/HTML/en/kplato/index.docbook
+share/doc/HTML/en/kplato/mainwindow.docbook
+share/doc/HTML/en/kplato/mainwindow1.png
+share/doc/HTML/en/kplato/options.docbook
+share/doc/HTML/en/kplato/project-settings.png
+share/doc/HTML/en/kplato/wbs.docbook
+share/doc/HTML/en/kplato/wbs.png
+share/doc/HTML/en/kplato/wbs1.png
+share/doc/HTML/en/kplato/wbs2.png
+share/doc/HTML/en/kplato/wbs3.png
+share/doc/HTML/en/kpresenter/a11y.docbook
+share/doc/HTML/en/kpresenter/autocorrection1.png
+share/doc/HTML/en/kpresenter/autocorrection2.png
+share/doc/HTML/en/kpresenter/autocorrection3.png
+share/doc/HTML/en/kpresenter/autocorrection4.png
 share/doc/HTML/en/kpresenter/barstyle1.png
 share/doc/HTML/en/kpresenter/barstyle3.png
 share/doc/HTML/en/kpresenter/barstyle4.png
 share/doc/HTML/en/kpresenter/barstyle5.png
 share/doc/HTML/en/kpresenter/barstyle6.png
 share/doc/HTML/en/kpresenter/barstyle7.png
+share/doc/HTML/en/kpresenter/break.png
+share/doc/HTML/en/kpresenter/changeformat.png
 share/doc/HTML/en/kpresenter/common
+share/doc/HTML/en/kpresenter/completion.png
+share/doc/HTML/en/kpresenter/configure1.png
+share/doc/HTML/en/kpresenter/configure2.png
+share/doc/HTML/en/kpresenter/configure3.png
+share/doc/HTML/en/kpresenter/configure4.png
+share/doc/HTML/en/kpresenter/configure4a.png
+share/doc/HTML/en/kpresenter/configure4a1.png
+share/doc/HTML/en/kpresenter/configure4b.png
+share/doc/HTML/en/kpresenter/configure4c.png
+share/doc/HTML/en/kpresenter/configure5.png
+share/doc/HTML/en/kpresenter/configure6.png
+share/doc/HTML/en/kpresenter/configure6b.png
+share/doc/HTML/en/kpresenter/configure6c.png
+share/doc/HTML/en/kpresenter/configure6d.png
+share/doc/HTML/en/kpresenter/configure6e.png
+share/doc/HTML/en/kpresenter/configure7.png
 share/doc/HTML/en/kpresenter/faq.docbook
 share/doc/HTML/en/kpresenter/great-presentations.docbook
 share/doc/HTML/en/kpresenter/guides.docbook
-share/doc/HTML/en/kpresenter/htmlshow00.png
-share/doc/HTML/en/kpresenter/htmlshow01.png
-share/doc/HTML/en/kpresenter/htmlshow02.png
-share/doc/HTML/en/kpresenter/htmlshow02a.png
-share/doc/HTML/en/kpresenter/htmlshow03.png
-share/doc/HTML/en/kpresenter/htmlshow04.png
-share/doc/HTML/en/kpresenter/htmlshow05.png
-share/doc/HTML/en/kpresenter/htmlshow07.png
+share/doc/HTML/en/kpresenter/htmlshow1.png
+share/doc/HTML/en/kpresenter/htmlshow2.png
+share/doc/HTML/en/kpresenter/htmlshow3.png
+share/doc/HTML/en/kpresenter/htmlshow4.png
+share/doc/HTML/en/kpresenter/htmlshow5.png
+share/doc/HTML/en/kpresenter/htmlshow6.png
+share/doc/HTML/en/kpresenter/htmlshow7.png
+share/doc/HTML/en/kpresenter/htmlshow8.png
+share/doc/HTML/en/kpresenter/htmlshow9.png
 share/doc/HTML/en/kpresenter/index.cache.bz2
 share/doc/HTML/en/kpresenter/index.docbook
+share/doc/HTML/en/kpresenter/kbd-focus-ext.png
+share/doc/HTML/en/kpresenter/link.png
 share/doc/HTML/en/kpresenter/menus.docbook
+share/doc/HTML/en/kpresenter/mousenav.png
 share/doc/HTML/en/kpresenter/msexport1.png
 share/doc/HTML/en/kpresenter/msexport2.png
+share/doc/HTML/en/kpresenter/msexport2b.png
 share/doc/HTML/en/kpresenter/msexport3.png
 share/doc/HTML/en/kpresenter/msexport4.png
 share/doc/HTML/en/kpresenter/options.docbook
+share/doc/HTML/en/kpresenter/properties.png
 share/doc/HTML/en/kpresenter/screen.docbook
 share/doc/HTML/en/kpresenter/settings01.png
 share/doc/HTML/en/kpresenter/settings03.png
 share/doc/HTML/en/kpresenter/settings04.png
-share/doc/HTML/en/kpresenter/settings05.png
-share/doc/HTML/en/kpresenter/settings06.png
 share/doc/HTML/en/kpresenter/template02.png
 share/doc/HTML/en/kpresenter/template03.png
 share/doc/HTML/en/kpresenter/template04.png
 share/doc/HTML/en/kpresenter/template05.png
 share/doc/HTML/en/kpresenter/template06.png
 share/doc/HTML/en/kpresenter/template07.png
-share/doc/HTML/en/kpresenter/textmenu01.png
-share/doc/HTML/en/kpresenter/textmenu02.png
-share/doc/HTML/en/kpresenter/textmenu03.png
-share/doc/HTML/en/kpresenter/textmenu03a.png
-share/doc/HTML/en/kpresenter/textmenu04.png
+share/doc/HTML/en/kpresenter/textmenu1.png
+share/doc/HTML/en/kpresenter/textmenu2.png
 share/doc/HTML/en/kpresenter/toolsmenu01.png
+share/doc/HTML/en/kpresenter/tts.png
 share/doc/HTML/en/kpresenter/tut01.png
 share/doc/HTML/en/kpresenter/tut02.png
 share/doc/HTML/en/kpresenter/tut03.png
@@ -3642,7 +4363,191 @@ share/doc/HTML/en/kpresenter/tut20.png
 share/doc/HTML/en/kpresenter/tut21.png
 share/doc/HTML/en/kpresenter/tut22.png
 share/doc/HTML/en/kpresenter/tut23.png
+share/doc/HTML/en/kpresenter/tut24.png
+share/doc/HTML/en/kpresenter/tut25.png
+share/doc/HTML/en/kpresenter/tut26.png
 share/doc/HTML/en/kpresenter/tutorial.docbook
+share/doc/HTML/en/kpresenter/zoomfactor.png
+share/doc/HTML/en/krita/commands-dialogs.docbook
+share/doc/HTML/en/krita/commands-menus.docbook
+share/doc/HTML/en/krita/commands-palettes.docbook
+share/doc/HTML/en/krita/commands-toolbars.docbook
+share/doc/HTML/en/krita/commands.docbook
+share/doc/HTML/en/krita/common
+share/doc/HTML/en/krita/createdocument.png
+share/doc/HTML/en/krita/credits.docbook
+share/doc/HTML/en/krita/crocusses-bumpmap.png
+share/doc/HTML/en/krita/crocusses-edgebottom.png
+share/doc/HTML/en/krita/crocusses-edgeleft.png
+share/doc/HTML/en/krita/crocusses-edgeright.png
+share/doc/HTML/en/krita/crocusses-embossall.png
+share/doc/HTML/en/krita/crocusses-embosshorvert.png
+share/doc/HTML/en/krita/crocusses-embossvariable.png
+share/doc/HTML/en/krita/crocusses-gaussianblur.png
+share/doc/HTML/en/krita/crocusses-invert.png
+share/doc/HTML/en/krita/crocusses-meanremoval.png
+share/doc/HTML/en/krita/crocusses-oilpaint.png
+share/doc/HTML/en/krita/crocusses-pixelize.png
+share/doc/HTML/en/krita/crocusses-raindrops.png
+share/doc/HTML/en/krita/crocusses-roundcorners.png
+share/doc/HTML/en/krita/crocusses-sharpen.png
+share/doc/HTML/en/krita/crocusses-simplenoise.png
+share/doc/HTML/en/krita/crocusses-sobel.png
+share/doc/HTML/en/krita/crocusses-tiles.png
+share/doc/HTML/en/krita/crocusses-topedge.png
+share/doc/HTML/en/krita/crocusses.png
+share/doc/HTML/en/krita/developers.docbook
+share/doc/HTML/en/krita/dialogs-addpalette.png
+share/doc/HTML/en/krita/dialogs-brightnesscontrast.png
+share/doc/HTML/en/krita/dialogs-bumpmap.png
+share/doc/HTML/en/krita/dialogs-coloradjustment.png
+share/doc/HTML/en/krita/dialogs-colorrange.png
+share/doc/HTML/en/krita/dialogs-convertimagetype.png
+share/doc/HTML/en/krita/dialogs-convertlayertype.png
+share/doc/HTML/en/krita/dialogs-cubism.png
+share/doc/HTML/en/krita/dialogs-customconvolution.png
+share/doc/HTML/en/krita/dialogs-documentinformation.png
+share/doc/HTML/en/krita/dialogs-dropshadow.png
+share/doc/HTML/en/krita/dialogs-emboss.png
+share/doc/HTML/en/krita/dialogs-filtersgallery.png
+share/doc/HTML/en/krita/dialogs-histogram.png
+share/doc/HTML/en/krita/dialogs-imageproperties.png
+share/doc/HTML/en/krita/dialogs-imagerestoration.png
+share/doc/HTML/en/krita/dialogs-imagesize.png
+share/doc/HTML/en/krita/dialogs-layerproperties.png
+share/doc/HTML/en/krita/dialogs-layersize.png
+share/doc/HTML/en/krita/dialogs-newadjustmentlayer.png
+share/doc/HTML/en/krita/dialogs-newlayer.png
+share/doc/HTML/en/krita/dialogs-oilpaint.png
+share/doc/HTML/en/krita/dialogs-pixelize.png
+share/doc/HTML/en/krita/dialogs-raindrops.png
+share/doc/HTML/en/krita/dialogs-rotateimage.png
+share/doc/HTML/en/krita/dialogs-rotatelayer.png
+share/doc/HTML/en/krita/dialogs-roundcorners.png
+share/doc/HTML/en/krita/dialogs-separateimage.png
+share/doc/HTML/en/krita/dialogs-shearimage.png
+share/doc/HTML/en/krita/dialogs-shearlayer.png
+share/doc/HTML/en/krita/dialogs-smalltiles.png
+share/doc/HTML/en/krita/dialogs-sobel.png
+share/doc/HTML/en/krita/faq.docbook
+share/doc/HTML/en/krita/index.cache.bz2
+share/doc/HTML/en/krita/index.docbook
+share/doc/HTML/en/krita/installation.docbook
+share/doc/HTML/en/krita/introduction.docbook
+share/doc/HTML/en/krita/mainscreen.png
+share/doc/HTML/en/krita/newimage.png
+share/doc/HTML/en/krita/palettes-colors-gray.png
+share/doc/HTML/en/krita/palettes-colors-hsv.png
+share/doc/HTML/en/krita/palettes-colors-palettes.png
+share/doc/HTML/en/krita/palettes-colors-rgb.png
+share/doc/HTML/en/krita/palettes-colors-watercolors.png
+share/doc/HTML/en/krita/palettes-controlbox-brush.png
+share/doc/HTML/en/krita/palettes-controlbox-colorpicker.png
+share/doc/HTML/en/krita/palettes-controlbox-contiguousfill.png
+share/doc/HTML/en/krita/palettes-controlbox-crop.png
+share/doc/HTML/en/krita/palettes-controlbox-gradient.png
+share/doc/HTML/en/krita/palettes-controlbox-histogram.png
+share/doc/HTML/en/krita/palettes-controlbox-line.png
+share/doc/HTML/en/krita/palettes-controlbox-overview.png
+share/doc/HTML/en/krita/palettes-controlbox-paintwithfilters.png
+share/doc/HTML/en/krita/palettes-controlbox-polygon.png
+share/doc/HTML/en/krita/palettes-controlbox-rectangle.png
+share/doc/HTML/en/krita/palettes-controlbox-select.png
+share/doc/HTML/en/krita/palettes-controlbox-selectcontiguous.png
+share/doc/HTML/en/krita/palettes-controlbox-selectsimilar.png
+share/doc/HTML/en/krita/palettes-controlbox-star.png
+share/doc/HTML/en/krita/palettes-controlbox-text.png
+share/doc/HTML/en/krita/palettes-controlbox-transform.png
+share/doc/HTML/en/krita/palettes-layers-layers.png
+share/doc/HTML/en/krita/palettes-layers-scriptsmanager.png
+share/doc/HTML/en/krita/preferences-color.png
+share/doc/HTML/en/krita/preferences-display.png
+share/doc/HTML/en/krita/preferences-general.png
+share/doc/HTML/en/krita/preferences-grid.png
+share/doc/HTML/en/krita/preferences-performance.png
+share/doc/HTML/en/krita/preferences-sidebar.png
+share/doc/HTML/en/krita/preferences-tablet.png
+share/doc/HTML/en/krita/scripting.docbook
+share/doc/HTML/en/krita/settings.docbook
+share/doc/HTML/en/krita/tool-brush.png
+share/doc/HTML/en/krita/tool-colorpicker.png
+share/doc/HTML/en/krita/tool-contiguousfill.png
+share/doc/HTML/en/krita/tool-crop.png
+share/doc/HTML/en/krita/tool-duplicate.png
+share/doc/HTML/en/krita/tool-ellipse.png
+share/doc/HTML/en/krita/tool-eraseselection.png
+share/doc/HTML/en/krita/tool-gradient.png
+share/doc/HTML/en/krita/tool-line.png
+share/doc/HTML/en/krita/tool-move.png
+share/doc/HTML/en/krita/tool-paintselection.png
+share/doc/HTML/en/krita/tool-paintwithfilters.png
+share/doc/HTML/en/krita/tool-pan.png
+share/doc/HTML/en/krita/tool-polygon.png
+share/doc/HTML/en/krita/tool-polyline.png
+share/doc/HTML/en/krita/tool-rectangle.png
+share/doc/HTML/en/krita/tool-selectcontiguous.png
+share/doc/HTML/en/krita/tool-selectelliptical.png
+share/doc/HTML/en/krita/tool-selectoutline.png
+share/doc/HTML/en/krita/tool-selectpolygonal.png
+share/doc/HTML/en/krita/tool-selectrectangular.png
+share/doc/HTML/en/krita/tool-selectsimilar.png
+share/doc/HTML/en/krita/tool-star.png
+share/doc/HTML/en/krita/tool-text.png
+share/doc/HTML/en/krita/tool-transform.png
+share/doc/HTML/en/krita/tool-zoom.png
+share/doc/HTML/en/krita/toolbar-brushes-brushshapes-autobrush.png
+share/doc/HTML/en/krita/toolbar-brushes-brushshapes-custombrush.png
+share/doc/HTML/en/krita/toolbar-brushes-brushshapes-predefined.png
+share/doc/HTML/en/krita/toolbar-brushes-gradients.png
+share/doc/HTML/en/krita/toolbar-brushes-patterns-custompattern.png
+share/doc/HTML/en/krita/toolbar-brushes-patterns.png
+share/doc/HTML/en/krita/toolbar-brushesandstuff.png
+share/doc/HTML/en/krita/toolbar-edit.png
+share/doc/HTML/en/krita/toolbar-file.png
+share/doc/HTML/en/krita/toolbar-krita.png
+share/doc/HTML/en/krita/toolbar-navigation.png
+share/doc/HTML/en/krita/toolbar-transformationtools.png
+share/doc/HTML/en/krita/tutorial-quick-starts.docbook
+share/doc/HTML/en/krita/tutorial-quick-starts1.png
+share/doc/HTML/en/krita/tutorial-quick-starts10.png
+share/doc/HTML/en/krita/tutorial-quick-starts11.png
+share/doc/HTML/en/krita/tutorial-quick-starts12.png
+share/doc/HTML/en/krita/tutorial-quick-starts2.png
+share/doc/HTML/en/krita/tutorial-quick-starts3.png
+share/doc/HTML/en/krita/tutorial-quick-starts4.png
+share/doc/HTML/en/krita/tutorial-quick-starts5.png
+share/doc/HTML/en/krita/tutorial-quick-starts6.png
+share/doc/HTML/en/krita/tutorial-quick-starts7.png
+share/doc/HTML/en/krita/tutorial-quick-starts8.png
+share/doc/HTML/en/krita/tutorial-quick-starts9.png
+share/doc/HTML/en/krita/tutorial-select-layer-1.png
+share/doc/HTML/en/krita/tutorial-select-layer-10.png
+share/doc/HTML/en/krita/tutorial-select-layer-11.png
+share/doc/HTML/en/krita/tutorial-select-layer-12.png
+share/doc/HTML/en/krita/tutorial-select-layer-13.png
+share/doc/HTML/en/krita/tutorial-select-layer-2.png
+share/doc/HTML/en/krita/tutorial-select-layer-3.png
+share/doc/HTML/en/krita/tutorial-select-layer-4.png
+share/doc/HTML/en/krita/tutorial-select-layer-5.png
+share/doc/HTML/en/krita/tutorial-select-layer-6.png
+share/doc/HTML/en/krita/tutorial-select-layer-7.png
+share/doc/HTML/en/krita/tutorial-select-layer-8.png
+share/doc/HTML/en/krita/tutorial-select-layer-9.png
+share/doc/HTML/en/krita/tutorial-select-layer-sample.png
+share/doc/HTML/en/krita/tutorial-select-layer.docbook
+share/doc/HTML/en/krita/tutorial-starting.docbook
+share/doc/HTML/en/krita/tutorial.docbook
+share/doc/HTML/en/krita/using-colorspaces.docbook
+share/doc/HTML/en/krita/using-filters.docbook
+share/doc/HTML/en/krita/using-layers.docbook
+share/doc/HTML/en/krita/using-selections-1.png
+share/doc/HTML/en/krita/using-selections-2.png
+share/doc/HTML/en/krita/using-selections-3.png
+share/doc/HTML/en/krita/using-selections-4.png
+share/doc/HTML/en/krita/using-selections-5.png
+share/doc/HTML/en/krita/using-selections-6.png
+share/doc/HTML/en/krita/using-selections.docbook
+share/doc/HTML/en/kspread/a11y.docbook
 share/doc/HTML/en/kspread/advanced.docbook
 share/doc/HTML/en/kspread/basics.docbook
 share/doc/HTML/en/kspread/cellformat0.png
@@ -3651,22 +4556,46 @@ share/doc/HTML/en/kspread/cellformat2.png
 share/doc/HTML/en/kspread/cellformat3.png
 share/doc/HTML/en/kspread/cellformat4.png
 share/doc/HTML/en/kspread/cellformat5.png
+share/doc/HTML/en/kspread/cellformat6.png
+share/doc/HTML/en/kspread/cellformat7.png
+share/doc/HTML/en/kspread/cellprotection1.png
+share/doc/HTML/en/kspread/cellprotection2.png
 share/doc/HTML/en/kspread/chart1.png
 share/doc/HTML/en/kspread/commands.docbook
 share/doc/HTML/en/kspread/common
 share/doc/HTML/en/kspread/config.docbook
 share/doc/HTML/en/kspread/configdialog.docbook
+share/doc/HTML/en/kspread/configure1.png
+share/doc/HTML/en/kspread/configure2.png
+share/doc/HTML/en/kspread/configure3.png
+share/doc/HTML/en/kspread/configure4.png
+share/doc/HTML/en/kspread/configure5.png
+share/doc/HTML/en/kspread/configure6.png
 share/doc/HTML/en/kspread/copy1.png
+share/doc/HTML/en/kspread/currency.png
+share/doc/HTML/en/kspread/decreasedecimal.png
 share/doc/HTML/en/kspread/faq.docbook
 share/doc/HTML/en/kspread/format.docbook
+share/doc/HTML/en/kspread/hideformula1.png
+share/doc/HTML/en/kspread/hideformula2.png
+share/doc/HTML/en/kspread/hideformula3.png
+share/doc/HTML/en/kspread/hideformula4.png
+share/doc/HTML/en/kspread/hideformula5.png
 share/doc/HTML/en/kspread/importexport.docbook
+share/doc/HTML/en/kspread/increasedecimal.png
 share/doc/HTML/en/kspread/index.cache.bz2
 share/doc/HTML/en/kspread/index.docbook
+share/doc/HTML/en/kspread/kbd-focus-ext.png
+share/doc/HTML/en/kspread/mousenav.png
+share/doc/HTML/en/kspread/newdocument.png
+share/doc/HTML/en/kspread/percent.png
+share/doc/HTML/en/kspread/sheetproperties.png
 share/doc/HTML/en/kspread/shortcut1.png
 share/doc/HTML/en/kspread/shortcut2.png
 share/doc/HTML/en/kspread/shortcut3.png
 share/doc/HTML/en/kspread/sort1.png
 share/doc/HTML/en/kspread/starting1.png
+share/doc/HTML/en/kspread/tts.png
 share/doc/HTML/en/kugar/add_detail.png
 share/doc/HTML/en/kugar/add_detail_footer.png
 share/doc/HTML/en/kugar/add_detail_header.png
@@ -3714,6 +4643,7 @@ share/doc/HTML/en/kword/Tut3.png
 share/doc/HTML/en/kword/Tut4.png
 share/doc/HTML/en/kword/Tut7.png
 share/doc/HTML/en/kword/Tut8.png
+share/doc/HTML/en/kword/a11y.docbook
 share/doc/HTML/en/kword/addentry.png
 share/doc/HTML/en/kword/addrecord.png
 share/doc/HTML/en/kword/alignBlock.png
@@ -3776,6 +4706,7 @@ share/doc/HTML/en/kword/editpaste.png
 share/doc/HTML/en/kword/edittb.png
 share/doc/HTML/en/kword/end.png
 share/doc/HTML/en/kword/enumlist.png
+share/doc/HTML/en/kword/exoffset.png
 share/doc/HTML/en/kword/expression.png
 share/doc/HTML/en/kword/expressions.docbook
 share/doc/HTML/en/kword/exst.png
@@ -3783,6 +4714,8 @@ share/doc/HTML/en/kword/exul.png
 share/doc/HTML/en/kword/fchardlg.png
 share/doc/HTML/en/kword/fchardlg2.png
 share/doc/HTML/en/kword/fchardlg3.png
+share/doc/HTML/en/kword/fchardlg4.png
+share/doc/HTML/en/kword/fchardlg5.png
 share/doc/HTML/en/kword/filefloppy.png
 share/doc/HTML/en/kword/filenew2.png
 share/doc/HTML/en/kword/fileopen.png
@@ -3854,6 +4787,7 @@ share/doc/HTML/en/kword/intro2.png
 share/doc/HTML/en/kword/intro3.png
 share/doc/HTML/en/kword/ital.png
 share/doc/HTML/en/kword/joincell.png
+share/doc/HTML/en/kword/kbd-focus-ext.png
 share/doc/HTML/en/kword/kformappcol.png
 share/doc/HTML/en/kword/kformapprow.png
 share/doc/HTML/en/kword/kforminscol.png
@@ -3882,6 +4816,7 @@ share/doc/HTML/en/kword/mmergeab1.png
 share/doc/HTML/en/kword/mmergekspread1.png
 share/doc/HTML/en/kword/mmergesql1.png
 share/doc/HTML/en/kword/mmergesql2.png
+share/doc/HTML/en/kword/mousenav.png
 share/doc/HTML/en/kword/numtxtbut.png
 share/doc/HTML/en/kword/opendlg.png
 share/doc/HTML/en/kword/opt.docbook
@@ -3924,7 +4859,6 @@ share/doc/HTML/en/kword/spelldlg.png
 share/doc/HTML/en/kword/stkout.png
 share/doc/HTML/en/kword/storeprint.docbook
 share/doc/HTML/en/kword/styldlg1.png
-share/doc/HTML/en/kword/styldlg2.png
 share/doc/HTML/en/kword/styleimport.png
 share/doc/HTML/en/kword/styles.docbook
 share/doc/HTML/en/kword/subscbut.png
@@ -3948,6 +4882,7 @@ share/doc/HTML/en/kword/textstyex.png
 share/doc/HTML/en/kword/tfcreatebut.png
 share/doc/HTML/en/kword/thesaurus.png
 share/doc/HTML/en/kword/toc.docbook
+share/doc/HTML/en/kword/tts.png
 share/doc/HTML/en/kword/tutorial.docbook
 share/doc/HTML/en/kword/undl.png
 share/doc/HTML/en/kword/undo.png
@@ -3961,6 +4896,7 @@ share/doc/HTML/en/kword/zoom.png
 share/doc/HTML/en/thesaurus/common
 share/doc/HTML/en/thesaurus/index.cache.bz2
 share/doc/HTML/en/thesaurus/index.docbook
+share/icons/crystalsvg/128x128/apps/kplato.png
 share/icons/crystalsvg/16x16/actions/abs.png
 share/icons/crystalsvg/16x16/actions/brackets.png
 share/icons/crystalsvg/16x16/actions/frac.png
@@ -3980,6 +4916,7 @@ share/icons/crystalsvg/16x16/actions/rsup.png
 share/icons/crystalsvg/16x16/actions/sqrt.png
 share/icons/crystalsvg/16x16/actions/sum.png
 share/icons/crystalsvg/16x16/actions/under.png
+share/icons/crystalsvg/16x16/apps/kplato.png
 share/icons/crystalsvg/16x16/mimetypes/kexiproject_sqlite.png
 share/icons/crystalsvg/16x16/mimetypes/kexiproject_sqlite2.png
 share/icons/crystalsvg/16x16/mimetypes/kugardata.png
@@ -4006,6 +4943,7 @@ share/icons/crystalsvg/22x22/actions/rsup.png
 share/icons/crystalsvg/22x22/actions/sqrt.png
 share/icons/crystalsvg/22x22/actions/sum.png
 share/icons/crystalsvg/22x22/actions/under.png
+share/icons/crystalsvg/22x22/apps/kplato.png
 share/icons/crystalsvg/32x32/actions/abs.png
 share/icons/crystalsvg/32x32/actions/brackets.png
 share/icons/crystalsvg/32x32/actions/frac.png
@@ -4025,10 +4963,14 @@ share/icons/crystalsvg/32x32/actions/rsup.png
 share/icons/crystalsvg/32x32/actions/sqrt.png
 share/icons/crystalsvg/32x32/actions/sum.png
 share/icons/crystalsvg/32x32/actions/under.png
+share/icons/crystalsvg/32x32/apps/kplato.png
 share/icons/crystalsvg/32x32/mimetypes/kexiproject_shortcut.png
 share/icons/crystalsvg/32x32/mimetypes/kexiproject_sqlite.png
 share/icons/crystalsvg/32x32/mimetypes/kexiproject_sqlite2.png
 share/icons/crystalsvg/32x32/mimetypes/kugardata.png
+share/icons/crystalsvg/48x48/apps/kplato.png
+share/icons/crystalsvg/64x64/apps/kplato.png
+share/icons/crystalsvg/scalable/apps/kplato.svgz
 share/icons/hicolor/128x128/apps/koshell.png
 share/icons/hicolor/128x128/apps/krita.png
 share/icons/hicolor/16x16/apps/karbon.png
@@ -4081,10 +5023,13 @@ share/icons/hicolor/scalable/apps/kexi.svgz
 share/icons/hicolor/scalable/apps/koshell.svgz
 share/icons/locolor/16x16/apps/kudesigner.png
 share/icons/locolor/32x32/apps/kudesigner.png
+share/mimelnk/application/x-kexi-connectiondata.desktop
 share/mimelnk/application/x-kexiproject-shortcut.desktop
 share/mimelnk/application/x-kexiproject-sqlite.desktop
 share/mimelnk/application/x-kexiproject-sqlite2.desktop
 share/mimelnk/application/x-kexiproject-sqlite3.desktop
+share/nls/POSIX
+share/nls/en_US.US-ASCII
 share/services/clipartthumbnail.desktop
 share/services/generic_filter.desktop
 share/services/karbon_ai_import.desktop
@@ -4092,6 +5037,7 @@ share/services/karbon_eps_export.desktop
 share/services/karbon_eps_import.desktop
 share/services/karbon_kontour_import.desktop
 share/services/karbon_msod_import.desktop
+share/services/karbon_oodraw_import.desktop
 share/services/karbon_png_export.desktop
 share/services/karbon_ps_import.desktop
 share/services/karbon_svg_export.desktop
@@ -4099,15 +5045,23 @@ share/services/karbon_svg_import.desktop
 share/services/karbon_wmf_export.desktop
 share/services/karbon_wmf_import.desktop
 share/services/karbon_xcf_export.desktop
+share/services/karbondefaulttools.desktop
+share/services/karbonimagetool.desktop
 share/services/karbonpart.desktop
+share/services/karbonzoomtool.desktop
+share/services/kchart_bmp_export.desktop
+share/services/kchart_jpeg_export.desktop
+share/services/kchart_mng_export.desktop
 share/services/kchart_png_export.desktop
 share/services/kchart_svg_export.desktop
+share/services/kchart_xbm_export.desktop
+share/services/kchart_xpm_export.desktop
 share/services/kchartpart.desktop
+share/services/kexi/kexicsv_importexporthandler.desktop
 share/services/kexi/kexiformhandler.desktop
 share/services/kexi/keximigrationhandler.desktop
 share/services/kexi/kexiqueryhandler.desktop
 share/services/kexi/kexirelationhandler.desktop
-share/services/kexi/kexireporthandler.desktop
 share/services/kexi/kexiscripthandler.desktop
 share/services/kexi/kexitablehandler.desktop
 share/services/kexidb_mysqldriver.desktop
@@ -4116,17 +5070,20 @@ share/services/kexidb_sqlite2driver.desktop
 share/services/kexidb_sqlite3driver.desktop
 share/services/keximigrate_mysql.desktop
 share/services/keximigrate_pqxx.desktop
+share/services/kfile_abiword.desktop
+share/services/kfile_gnumeric.desktop
 share/services/kfile_koffice.desktop
 share/services/kfile_ooo.desktop
-share/services/kformdesigner/containerfactory.desktop
-share/services/kformdesigner/kexidbfactory.desktop
-share/services/kformdesigner/stdwidgets.desktop
-share/services/kformdesigner_part.desktop
+share/services/kformdesigner/kformdesigner_containers.desktop
+share/services/kformdesigner/kformdesigner_kexidbfactory.desktop
+share/services/kformdesigner/kformdesigner_stdwidgets.desktop
 share/services/kformula_latex_export.desktop
 share/services/kformula_mathml_export.desktop
 share/services/kformula_mathml_import.desktop
 share/services/kformula_png_export.desktop
+share/services/kformula_svg_export.desktop
 share/services/kformulapart.desktop
+share/services/kivio_image_export.desktop
 share/services/kivioconnectortool.desktop
 share/services/kiviopart.desktop
 share/services/kivioselecttool.desktop
@@ -4136,31 +5093,82 @@ share/services/kiviozoomtool.desktop
 share/services/kodocinfopropspage.desktop
 share/services/kofficethumbnail.desktop
 share/services/kounavail.desktop
+share/services/kplatopart.desktop
+share/services/kpresenter_bmp_export.desktop
+share/services/kpresenter_jpeg_export.desktop
+share/services/kpresenter_mng_export.desktop
 share/services/kpresenter_ooimpress_export.desktop
 share/services/kpresenter_ooimpress_import.desktop
+share/services/kpresenter_png_export.desktop
+share/services/kpresenter_powerpoint_import.desktop
+share/services/kpresenter_svg_export.desktop
+share/services/kpresenter_xbm_export.desktop
+share/services/kpresenter_xpm_export.desktop
 share/services/kpresenterpart.desktop
 share/services/kprkword.desktop
+share/services/krita_cmyk_u16_plugin.desktop
+share/services/krita_gray_u16_plugin.desktop
+share/services/krita_jpeg_export.desktop
+share/services/krita_jpeg_import.desktop
+share/services/krita_lms_f32_plugin.desktop
 share/services/krita_magick_export.desktop
 share/services/krita_magick_import.desktop
+share/services/krita_openexr_export.desktop
+share/services/krita_openexr_import.desktop
+share/services/krita_png_export.desktop
+share/services/krita_png_import.desktop
+share/services/krita_raw_import.desktop
+share/services/krita_rgb_f16half_plugin.desktop
+share/services/krita_rgb_f32_plugin.desktop
+share/services/krita_rgb_u16_plugin.desktop
+share/services/krita_tiff_export.desktop
+share/services/krita_tiff_import.desktop
+share/services/kritabumpmapfilter.desktop
 share/services/kritacimg.desktop
+share/services/kritacmykplugin.desktop
+share/services/kritacolorrange.desktop
+share/services/kritacolorsfilter.desktop
+share/services/kritacolorspaceconversion.desktop
+share/services/kritaconvolutionfilters.desktop
 share/services/kritadefaultpaintops.desktop
 share/services/kritadefaulttools.desktop
+share/services/kritadropshadow.desktop
+share/services/kritaembossfilter.desktop
+share/services/kritaexample.desktop
+share/services/kritafiltersgallery.desktop
 share/services/kritagrayplugin.desktop
+share/services/kritahistogram.desktop
+share/services/kritahistogramdocker.desktop
+share/services/kritaimageenhancement.desktop
+share/services/kritaimagesize.desktop
+share/services/kritaoilpaintfilter.desktop
 share/services/kritapart.desktop
+share/services/kritaperftest.desktop
+share/services/kritapixelizefilter.desktop
+share/services/kritaraindropsfilter.desktop
 share/services/kritargbplugin.desktop
+share/services/kritarotateimage.desktop
+share/services/kritaroundcornersfilter.desktop
+share/services/kritascreenshot.desktop
+share/services/kritascripting.desktop
 share/services/kritaselectiontools.desktop
+share/services/kritaseparatechannels.desktop
+share/services/kritashearimage.desktop
+share/services/kritasmalltilesfilter.desktop
+share/services/kritasmearybrush.desktop
+share/services/kritasobelfilter.desktop
 share/services/kritatoolcrop.desktop
 share/services/kritatoolfilter.desktop
 share/services/kritatoolpolygon.desktop
 share/services/kritatoolpolyline.desktop
-share/services/kritatoolselectpicker.desktop
+share/services/kritatoolselectsimilar.desktop
 share/services/kritatoolstar.desktop
 share/services/kritatooltransform.desktop
+share/services/kritawetplugin.desktop
 share/services/kspread_applixspread_import.desktop
 share/services/kspread_csv_export.desktop
 share/services/kspread_csv_import.desktop
 share/services/kspread_dbase_import.desktop
-share/services/kspread_excel_export.desktop
 share/services/kspread_excel_import.desktop
 share/services/kspread_gnumeric_export.desktop
 share/services/kspread_gnumeric_import.desktop
@@ -4182,6 +5190,7 @@ share/services/kword_applixword_import.desktop
 share/services/kword_ascii_export.desktop
 share/services/kword_ascii_import.desktop
 share/services/kword_docbook_export.desktop
+share/services/kword_hancomword_import.desktop
 share/services/kword_html_export.desktop
 share/services/kword_html_import.desktop
 share/services/kword_kword1dot3_import.desktop
@@ -4203,27 +5212,20 @@ share/services/kword_wp_import.desktop
 share/services/kwordpart.desktop
 share/services/kwserialletter_classic.desktop
 share/services/kwserialletter_qtsqldb_power.desktop
-share/services/ole_excel97_import.desktop
-share/services/ole_hancomword_import.desktop
-share/services/ole_powerpoint97_import.desktop
-share/services/ole_winword97_import.desktop
 share/services/thesaurustool.desktop
 share/services/xslt_export.desktop
 share/services/xslt_import.desktop
+share/servicetypes/karbon_module.desktop
 share/servicetypes/kexidb_driver.desktop
-share/servicetypes/kexifileimportfilter.desktop
 share/servicetypes/kexihandler.desktop
-share/servicetypes/kexiimportfilter.desktop
 share/servicetypes/keximigration_driver.desktop
-share/servicetypes/kexiserverimportfilter.desktop
-share/servicetypes/kexitablefilter.desktop
 share/servicetypes/kochart.desktop
 share/servicetypes/kofficepart.desktop
 share/servicetypes/kofilter.desktop
 share/servicetypes/kofilterwrapper.desktop
 share/servicetypes/koplugin.desktop
+share/servicetypes/krita_colorspace.desktop
 share/servicetypes/krita_filter.desktop
-share/servicetypes/krita_module.desktop
 share/servicetypes/krita_paintop.desktop
 share/servicetypes/krita_plugin.desktop
 share/servicetypes/krita_tool.desktop
@@ -4239,40 +5241,102 @@ share/templates/SpreadSheet.desktop
 share/templates/TextDocument.desktop
 @exec /bin/mkdir -p %D/share/doc/HTML/en/koffice-apidocs/lib/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/koffice-apidocs/lib/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/koffice-apidocs/kword/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/koffice-apidocs/kword/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/koffice-apidocs/kspread/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/koffice-apidocs/kspread/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/koffice-apidocs/krita/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/koffice-apidocs/krita/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/koffice-apidocs/kpresenter/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/koffice-apidocs/kpresenter/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/koffice-apidocs/kplato/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/koffice-apidocs/kplato/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/koffice-apidocs/koshell/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/koffice-apidocs/koshell/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/koffice-apidocs/kivio/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/koffice-apidocs/kivio/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/koffice-apidocs/kformula/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/koffice-apidocs/kformula/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/koffice-apidocs/kexi/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/koffice-apidocs/kexi/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/koffice-apidocs/kdgantt/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/koffice-apidocs/kdgantt/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/koffice-apidocs/kchart/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/koffice-apidocs/kchart/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/koffice-apidocs/karbon/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/koffice-apidocs/karbon/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/koffice-apidocs/interfaces/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/koffice-apidocs/interfaces/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/koffice-apidocs/filters/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/koffice-apidocs/filters/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/koffice-apidocs/lib/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/koffice-apidocs/interfaces/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/koffice-apidocs/karbon/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/koffice-apidocs/kchart/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/koffice-apidocs/kdgantt/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/koffice-apidocs/kformula/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/koffice-apidocs/kivio/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/koffice-apidocs/koshell/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/koffice-apidocs/kpresenter/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/koffice-apidocs/krita/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/koffice-apidocs/kspread/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/koffice-apidocs/kword/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/koffice-apidocs/kplato/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/koffice-apidocs/kexi/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/koffice-apidocs/filters/html
 @dirrm share/services/kformdesigner
 @dirrm share/services/kexi
 @dirrm share/doc/HTML/en/thesaurus
 @dirrm share/doc/HTML/en/kword
 @dirrm share/doc/HTML/en/kugar
 @dirrm share/doc/HTML/en/kspread
+@dirrm share/doc/HTML/en/krita
 @dirrm share/doc/HTML/en/kpresenter
+@dirrm share/doc/HTML/en/kplato
 @dirrm share/doc/HTML/en/koshell
 @dirrm share/doc/HTML/en/koffice-apidocs/lib/html
 @dirrm share/doc/HTML/en/koffice-apidocs/lib
+@dirrm share/doc/HTML/en/koffice-apidocs/kword/html
+@dirrm share/doc/HTML/en/koffice-apidocs/kword
 @dirrm share/doc/HTML/en/koffice-apidocs/kspread/html
 @dirrm share/doc/HTML/en/koffice-apidocs/kspread
+@dirrm share/doc/HTML/en/koffice-apidocs/krita/html
+@dirrm share/doc/HTML/en/koffice-apidocs/krita
+@dirrm share/doc/HTML/en/koffice-apidocs/kpresenter/html
+@dirrm share/doc/HTML/en/koffice-apidocs/kpresenter
+@dirrm share/doc/HTML/en/koffice-apidocs/kplato/html
+@dirrm share/doc/HTML/en/koffice-apidocs/kplato
+@dirrm share/doc/HTML/en/koffice-apidocs/koshell/html
+@dirrm share/doc/HTML/en/koffice-apidocs/koshell
+@dirrm share/doc/HTML/en/koffice-apidocs/kivio/html
+@dirrm share/doc/HTML/en/koffice-apidocs/kivio
+@dirrm share/doc/HTML/en/koffice-apidocs/kformula/html
+@dirrm share/doc/HTML/en/koffice-apidocs/kformula
+@dirrm share/doc/HTML/en/koffice-apidocs/kexi/html
+@dirrm share/doc/HTML/en/koffice-apidocs/kexi
 @dirrm share/doc/HTML/en/koffice-apidocs/kdgantt/html
 @dirrm share/doc/HTML/en/koffice-apidocs/kdgantt
+@dirrm share/doc/HTML/en/koffice-apidocs/kchart/html
+@dirrm share/doc/HTML/en/koffice-apidocs/kchart
+@dirrm share/doc/HTML/en/koffice-apidocs/karbon/html
+@dirrm share/doc/HTML/en/koffice-apidocs/karbon
+@dirrm share/doc/HTML/en/koffice-apidocs/interfaces/html
+@dirrm share/doc/HTML/en/koffice-apidocs/interfaces
+@dirrm share/doc/HTML/en/koffice-apidocs/filters/html
+@dirrm share/doc/HTML/en/koffice-apidocs/filters
 @dirrm share/doc/HTML/en/koffice-apidocs
 @dirrm share/doc/HTML/en/koffice
 @dirrm share/doc/HTML/en/kivio
 @dirrm share/doc/HTML/en/kformula
+@dirrm share/doc/HTML/en/kexi
 @dirrm share/doc/HTML/en/kchart
+@dirrm share/doc/HTML/en/karbon
 @dirrm share/config/magic
 @dirrm share/apps/xsltfilter/export/kword/xslfo
 @dirrm share/apps/xsltfilter/export/kword
 @dirrm share/apps/xsltfilter/export
 @dirrm share/apps/xsltfilter
 @dirrm share/apps/thesaurus
-@dirrm share/apps/kword/templates/Publishing/.source
-@dirrm share/apps/kword/templates/Publishing
 @dirrm share/apps/kword/templates/Normal/.source
 @dirrm share/apps/kword/templates/Normal
 @dirrm share/apps/kword/templates/Envelopes/.source
@@ -4287,6 +5351,8 @@ share/templates/TextDocument.desktop
 @dirrm share/apps/kword/icons/crystalsvg/48x48
 @dirrm share/apps/kword/icons/crystalsvg/22x22/actions
 @dirrm share/apps/kword/icons/crystalsvg/22x22
+@dirrm share/apps/kword/icons/crystalsvg/128x128/actions
+@dirrm share/apps/kword/icons/crystalsvg/128x128
 @dirrm share/apps/kword/icons/crystalsvg
 @dirrm share/apps/kword/icons
 @dirrm share/apps/kword/expression
@@ -4314,7 +5380,7 @@ share/templates/TextDocument.desktop
 @dirrm share/apps/kspread/templates/Business/.source
 @dirrm share/apps/kspread/templates/Business
 @dirrm share/apps/kspread/templates
-@dirrm share/apps/kspread/tablestyles
+@dirrm share/apps/kspread/sheetstyles
 @dirrm share/apps/kspread/kpartplugins
 @dirrm share/apps/kspread/icons/crystalsvg/scalable/actions
 @dirrm share/apps/kspread/icons/crystalsvg/scalable
@@ -4322,8 +5388,10 @@ share/templates/TextDocument.desktop
 @dirrm share/apps/kspread/icons/crystalsvg/48x48
 @dirrm share/apps/kspread/icons/crystalsvg/32x32/actions
 @dirrm share/apps/kspread/icons/crystalsvg/32x32
+@dirrm share/apps/kspread/icons/crystalsvg/22x22/actions/mergecell
 @dirrm share/apps/kspread/icons/crystalsvg/22x22/actions
 @dirrm share/apps/kspread/icons/crystalsvg/22x22
+@dirrm share/apps/kspread/icons/crystalsvg/16x16/actions/mergecell
 @dirrm share/apps/kspread/icons/crystalsvg/16x16/actions
 @dirrm share/apps/kspread/icons/crystalsvg/16x16
 @dirrm share/apps/kspread/icons/crystalsvg
@@ -4331,18 +5399,32 @@ share/templates/TextDocument.desktop
 @dirrm share/apps/kspread/extensions
 @dirrm share/apps/kspread/dtd
 @dirrm share/apps/kspread
+@dirrm share/apps/kross/python/RestrictedPython
+@dirrm share/apps/kross/python
+@dirrm share/apps/kross
+@dirrm share/apps/kritaplugins
 @dirrm share/apps/krita/templates/rgb/.source
 @dirrm share/apps/krita/templates/rgb
 @dirrm share/apps/krita/templates/gray/.source
 @dirrm share/apps/krita/templates/gray
-@dirrm share/apps/krita/templates/empty/.source
-@dirrm share/apps/krita/templates/empty
+@dirrm share/apps/krita/templates/cmyk/.source
+@dirrm share/apps/krita/templates/cmyk
 @dirrm share/apps/krita/templates
+@dirrm share/apps/krita/scripts/torturepainting
+@dirrm share/apps/krita/scripts/torturefilters
+@dirrm share/apps/krita/scripts/reshapehisto
+@dirrm share/apps/krita/scripts/randompaint
+@dirrm share/apps/krita/scripts/invertruby
+@dirrm share/apps/krita/scripts/invertpython
+@dirrm share/apps/krita/scripts/filterstest
+@dirrm share/apps/krita/scripts/changecs
+@dirrm share/apps/krita/scripts
 @dirrm share/apps/krita/profiles
 @dirrm share/apps/krita/pics
 @dirrm share/apps/krita/patterns
 @dirrm share/apps/krita/palettes
 @dirrm share/apps/krita/kpartplugins
+@dirrm share/apps/krita/images
 @dirrm share/apps/krita/icons/crystalsvg/scalable/actions
 @dirrm share/apps/krita/icons/crystalsvg/scalable
 @dirrm share/apps/krita/icons/crystalsvg/48x48/actions
@@ -4365,6 +5447,7 @@ share/templates/TextDocument.desktop
 @dirrm share/apps/kpresenter/templates/A4
 @dirrm share/apps/kpresenter/templates
 @dirrm share/apps/kpresenter/slideshow
+@dirrm share/apps/kpresenter/pics/rotate
 @dirrm share/apps/kpresenter/pics
 @dirrm share/apps/kpresenter/kpartplugins
 @dirrm share/apps/kpresenter/icons/hicolor/48x48/actions
@@ -4374,8 +5457,12 @@ share/templates/TextDocument.desktop
 @dirrm share/apps/kpresenter/icons/crystalsvg/scalable
 @dirrm share/apps/kpresenter/icons/crystalsvg/48x48/actions
 @dirrm share/apps/kpresenter/icons/crystalsvg/48x48
+@dirrm share/apps/kpresenter/icons/crystalsvg/32x32/actions
+@dirrm share/apps/kpresenter/icons/crystalsvg/32x32
 @dirrm share/apps/kpresenter/icons/crystalsvg/22x22/actions
 @dirrm share/apps/kpresenter/icons/crystalsvg/22x22
+@dirrm share/apps/kpresenter/icons/crystalsvg/16x16/actions
+@dirrm share/apps/kpresenter/icons/crystalsvg/16x16
 @dirrm share/apps/kpresenter/icons/crystalsvg
 @dirrm share/apps/kpresenter/icons
 @dirrm share/apps/kpresenter/dtd
@@ -4387,7 +5474,23 @@ share/templates/TextDocument.desktop
 @dirrm share/apps/kpresenter/autoforms/Arrows
 @dirrm share/apps/kpresenter/autoforms
 @dirrm share/apps/kpresenter
+@dirrm share/apps/kplato/templates/Simple/.source
+@dirrm share/apps/kplato/templates/Simple
+@dirrm share/apps/kplato/templates
+@dirrm share/apps/kplato/reports/.source
+@dirrm share/apps/kplato/reports
+@dirrm share/apps/kplato/icons/crystalsvg/scalable/actions
+@dirrm share/apps/kplato/icons/crystalsvg/scalable
+@dirrm share/apps/kplato/icons/crystalsvg/48x48/actions
+@dirrm share/apps/kplato/icons/crystalsvg/48x48
+@dirrm share/apps/kplato/icons/crystalsvg/22x22/actions
+@dirrm share/apps/kplato/icons/crystalsvg/22x22
+@dirrm share/apps/kplato/icons/crystalsvg
+@dirrm share/apps/kplato/icons
+@dirrm share/apps/kplato
 @dirrm share/apps/koshell
+@dirrm share/apps/kofficewidgets/pics
+@dirrm share/apps/kofficewidgets
 @dirrm share/apps/koffice/pics
 @dirrm share/apps/koffice/icons/crystalsvg/scalable/actions
 @dirrm share/apps/koffice/icons/crystalsvg/scalable
@@ -4416,6 +5519,7 @@ share/templates/TextDocument.desktop
 @dirrm share/apps/kivio/stencils/Miscellaneous/Transport
 @dirrm share/apps/kivio/stencils/Miscellaneous/People
 @dirrm share/apps/kivio/stencils/Miscellaneous/NassiShneiderman
+@dirrm share/apps/kivio/stencils/Miscellaneous/ER
 @dirrm share/apps/kivio/stencils/Miscellaneous/Buildings
 @dirrm share/apps/kivio/stencils/Miscellaneous/Arrows
 @dirrm share/apps/kivio/stencils/Miscellaneous
@@ -4466,11 +5570,18 @@ share/templates/TextDocument.desktop
 @dirrm share/apps/kivio/icons
 @dirrm share/apps/kivio/autoloadStencils
 @dirrm share/apps/kivio
+@dirrm share/apps/kformula/fonts
 @dirrm share/apps/kformula/dtd
 @dirrm share/apps/kformula
-@dirrm share/apps/kformdesigner_part
-@dirrm share/apps/kformdesigner
+@dirrm share/apps/kexi/scripts/projectdocumentor
+@dirrm share/apps/kexi/scripts/importxhtml
+@dirrm share/apps/kexi/scripts/exportxhtml
+@dirrm share/apps/kexi/scripts/copycenter
+@dirrm share/apps/kexi/scripts
 @dirrm share/apps/kexi/pics
+@dirrm share/apps/kexi/kross/python/kexiapp
+@dirrm share/apps/kexi/kross/python
+@dirrm share/apps/kexi/kross
 @dirrm share/apps/kexi/icons/crystalsvg/64x64/actions
 @dirrm share/apps/kexi/icons/crystalsvg/64x64
 @dirrm share/apps/kexi/icons/crystalsvg/48x48/actions
@@ -4506,6 +5617,9 @@ share/templates/TextDocument.desktop
 @dirrm share/apps/kchart/icons/crystalsvg
 @dirrm share/apps/kchart/icons
 @dirrm share/apps/kchart
+@dirrm share/apps/karbon/templates/Basic/.source
+@dirrm share/apps/karbon/templates/Basic
+@dirrm share/apps/karbon/templates
 @dirrm share/apps/karbon/kpartplugins
 @dirrm share/apps/karbon/icons/hicolor/scalable/apps
 @dirrm share/apps/karbon/icons/hicolor/scalable
@@ -4514,10 +5628,16 @@ share/templates/TextDocument.desktop
 @dirrm share/apps/karbon/icons/hicolor/32x32/apps
 @dirrm share/apps/karbon/icons/hicolor/32x32
 @dirrm share/apps/karbon/icons/hicolor/22x22/apps
+@dirrm share/apps/karbon/icons/hicolor/22x22/actions
 @dirrm share/apps/karbon/icons/hicolor/22x22
 @dirrm share/apps/karbon/icons/hicolor/16x16/apps
+@dirrm share/apps/karbon/icons/hicolor/16x16/actions
 @dirrm share/apps/karbon/icons/hicolor/16x16
 @dirrm share/apps/karbon/icons/hicolor
+@dirrm share/apps/karbon/icons/crystalsvg/scalable/actions
+@dirrm share/apps/karbon/icons/crystalsvg/scalable
+@dirrm share/apps/karbon/icons/crystalsvg/48x48/actions
+@dirrm share/apps/karbon/icons/crystalsvg/48x48
 @dirrm share/apps/karbon/icons/crystalsvg/22x22/actions
 @dirrm share/apps/karbon/icons/crystalsvg/22x22
 @dirrm share/apps/karbon/icons/crystalsvg/16x16/actions
@@ -4527,4 +5647,8 @@ share/templates/TextDocument.desktop
 @dirrm share/apps/karbon/gradients
 @dirrm share/apps/karbon
 @dirrm include/kword
+@dirrm include/kross/main
+@dirrm include/kross/api
+@dirrm include/kross
+@dirrm include/kexiutils
 @dirrm include/kexidb

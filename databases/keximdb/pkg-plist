@@ -1,0 +1,4 @@
+lib/kde3/keximigrate_mdb.a
+lib/kde3/keximigrate_mdb.la
+lib/kde3/keximigrate_mdb.so
+share/services/keximigrate_mdb.desktop
