@@ -13,6 +13,7 @@ sbin/udpsvd
 %%PORTDOCS%%%%DOCSDIR%%/ipsvd-instruct.5.html
 %%PORTDOCS%%%%DOCSDIR%%/ipsvd.7.html
 %%PORTDOCS%%%%DOCSDIR%%/sslio.8.html
+%%PORTDOCS%%%%DOCSDIR%%/sslsvd.8.html
 %%PORTDOCS%%%%DOCSDIR%%/tcpsvd.8.html
 %%PORTDOCS%%%%DOCSDIR%%/udpsvd.8.html
 %%PORTDOCS%%%%DOCSDIR%%/upgrade.html

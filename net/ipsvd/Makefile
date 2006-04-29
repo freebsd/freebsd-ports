@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ipsvd
-PORTVERSION=	0.11.1
+PORTVERSION=	0.12.1
 CATEGORIES=	net
 MASTER_SITES=	http://smarden.org/ipsvd/
 
@@ -18,7 +18,7 @@ ALL_TARGET=	default
 
 MAN5=		ipsvd-instruct.5
 MAN7=		ipsvd.7
-MAN8=		ipsvd-cdb.8 sslio.8 tcpsvd.8 udpsvd.8
+MAN8=		ipsvd-cdb.8 sslio.8 sslsvd.8 tcpsvd.8 udpsvd.8
 DOCS=		package/CHANGES package/COPYING package/README doc/*.html
 
 do-configure:
