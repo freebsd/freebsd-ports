@@ -18,7 +18,7 @@ USE_XLIB=	yes
 USE_GETOPT_LONG=yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
+INSTALLS_SHLIB=	yes
 
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=		--disable-manage-devices --with-devdir=/var/lirc
@@ -33,8 +33,9 @@ PLIST_SUB+=	SMODE2=
 .else
 PLIST_SUB+=	SMODE2="@comment "
 .endif
+
 .if defined(WITH_IRMAN)
-BUILD_DEPENDS=		${LOCALBASE}/lib/libirman.a:${PORTSDIR}/comms/libirman
+BUILD_DEPENDS+=		${LOCALBASE}/lib/libirman.a:${PORTSDIR}/comms/libirman
 CONFIGURE_ARGS+=	--with-driver=irman
 .if ${OSVERSION} >= 500041
 # These are already included in the getopt_long case on < 50041
