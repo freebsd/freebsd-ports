@@ -98,6 +98,8 @@
     SUBDIR += psi
     SUBDIR += py-jabber
     SUBDIR += py-twistedWords
+    SUBDIR += py-xmpppy
+    SUBDIR += py-xmpppy-irc
     SUBDIR += ruby-xmpp4r
     SUBDIR += sendxmpp
     SUBDIR += sim-im-devel
