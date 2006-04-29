@@ -11981,6 +11981,7 @@ settitle	ports/x11/settitle
 sex		ports/games/sex
 seyon		ports/comms/seyon
 sfbol		ports/games/sfbol
+sfdisk		ports/sysutils/sfdisk
 sfio		ports/devel/sfio
 sflowtool	ports/net/sflowtool
 sformat		ports/sysutils/sformat
