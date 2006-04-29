@@ -10980,6 +10980,8 @@ py-xmltools	ports/textproc/py-xmltools
 py-xmltv	ports/textproc/py-xmltv
 py-xmms		ports/audio/py-xmms
 py-xmms2	ports/audio/py-xmms2
+py-xmpppy	ports/net-im/py-xmpppy
+py-xmpppy-irc	ports/net-im/py-xmpppy-irc
 py-xoltar-toolkit	ports/devel/py-xoltar-toolkit
 py-yaml		ports/devel/py-yaml
 py-yapsnmp	ports/net-mgmt/py-yapsnmp
