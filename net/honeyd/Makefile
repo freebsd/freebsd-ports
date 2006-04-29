@@ -6,26 +6,25 @@
 #
 
 PORTNAME=	honeyd
-PORTVERSION=	1.0
-PORTREVISION=	1
+PORTVERSION=	1.5a
 CATEGORIES=	net
 MASTER_SITES=	http://www.citi.umich.edu/u/provos/honeyd/ \
 		http://niels.xtdnet.nl/honeyd/
 
-MAINTAINER=	yb@bashibuzuk.net
+MAINTAINER=	wxs@csh.rit.edu
 COMMENT=	Simulate virtual network hosts (honeypots)
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libdnet.a:${PORTSDIR}/net/libdnet \
-		${LOCALBASE}/lib/libevent.a:${PORTSDIR}/devel/libevent
+		${LOCALBASE}/lib/libevent.a:${PORTSDIR}/devel/libevent \
+		${LOCALBASE}/lib/libdnsres.a:${PORTSDIR}/devel/libdnsres \
+		${LOCALBASE}/lib/libpcre.a:${PORTSDIR}/devel/pcre
 
-#OPTIONS=	PYTHON "Enable Python support" off
-USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-libdnet=${LOCALBASE} \
 		--with-libevent=${LOCALBASE} \
-		--with-pcap
+		--with-libdnsres=${LOCALBASE}
 
 .if defined(WITH_PYTHON)
 USE_PYTHON=	yes
@@ -38,6 +37,7 @@ MAN1=		honeydctl.1
 MAN8=		honeyd.8
 
 .include <bsd.port.pre.mk>
+
 .if ${OSVERSION} < 500000
 LIB_DEPENDS+=	edit.6:${PORTSDIR}/devel/libedit
 .endif
@@ -53,6 +53,11 @@ pre-everything::
 post-configure:
 	@${REINPLACE_CMD} -e 's|LIBS = |LIBS = ${PTHREAD_LIBS}|' \
 		${WRKSRC}/Makefile
+
+# Have to make this directory, the Makefile is stupid and tries to
+# install stuff here without making it.
+pre-install:
+	@${MKDIR} ${DATADIR}/webserver
 
 post-install:
 	@${MKDIR} ${DATADIR}/scripts/snmp
