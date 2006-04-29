@@ -1,0 +1,52 @@
+bin/fishsupper
+%%DATADIR%%/images/font1.png
+%%DATADIR%%/images/font2.png
+%%DATADIR%%/images/fs_image_00.png
+%%DATADIR%%/images/fs_image_01.png
+%%DATADIR%%/images/fs_image_02.png
+%%DATADIR%%/images/fs_image_03.png
+%%DATADIR%%/images/fs_image_04.png
+%%DATADIR%%/images/fs_image_05.png
+%%DATADIR%%/images/fs_image_06.png
+%%DATADIR%%/images/fs_image_07.png
+%%DATADIR%%/images/fs_image_08.png
+%%DATADIR%%/images/fs_image_09.png
+%%DATADIR%%/images/fs_image_10.png
+%%DATADIR%%/images/fs_image_11.png
+%%DATADIR%%/images/fs_image_12.png
+%%DATADIR%%/images/fs_image_13.png
+%%DATADIR%%/images/fs_image_14.png
+%%DATADIR%%/images/fs_image_15.png
+%%DATADIR%%/images/fs_image_16.png
+%%DATADIR%%/images/fs_image_17.png
+%%DATADIR%%/images/fs_image_18.png
+%%DATADIR%%/images/fs_image_19.png
+%%DATADIR%%/images/fs_image_20.png
+%%DATADIR%%/images/fs_image_21.png
+%%DATADIR%%/images/fs_image_22.png
+%%DATADIR%%/images/fs_image_23.png
+%%DATADIR%%/images/fs_image_24.png
+%%DATADIR%%/images/fs_image_25.png
+%%DATADIR%%/images/fs_image_26.png
+%%DATADIR%%/images/get_ready_bg.png
+%%DATADIR%%/images/hiscores.png
+%%DATADIR%%/images/hiscores_h.png
+%%DATADIR%%/images/intro_screen.png
+%%DATADIR%%/images/play.png
+%%DATADIR%%/images/play_h.png
+%%DATADIR%%/images/quit.png
+%%DATADIR%%/images/quit_h.png
+%%DATADIR%%/images/settings.png
+%%DATADIR%%/images/settings_h.png
+%%DATADIR%%/levels/level_01.fsl
+%%DATADIR%%/levels/level_02.fsl
+%%DATADIR%%/levels/level_03.fsl
+%%DATADIR%%/levels/level_04.fsl
+%%DATADIR%%/sounds/miaow.wav
+%%DATADIR%%/sounds/ping.wav
+%%DATADIR%%/sounds/river.wav
+%%DATADIR%%/sounds/splash.wav
+@dirrm %%DATADIR%%/images
+@dirrm %%DATADIR%%/levels
+@dirrm %%DATADIR%%/sounds
+@dirrm %%DATADIR%%

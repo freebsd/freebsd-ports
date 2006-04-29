@@ -170,6 +170,7 @@
     SUBDIR += fgsd
     SUBDIR += fillets-ng
     SUBDIR += filters
+    SUBDIR += fishsupper
     SUBDIR += fkiss
     SUBDIR += flightgear
     SUBDIR += flightgear-aircrafts
