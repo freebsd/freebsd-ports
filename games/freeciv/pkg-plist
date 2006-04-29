@@ -297,9 +297,6 @@ bin/civmanual
 %%DATADIR%%/isophex/terrain2.spec
 %%DATADIR%%/isophex/tiles.png
 %%DATADIR%%/isophex/tiles.spec
-%%XAW%%%%DATADIR%%/Freeciv
-%%GTK%%%%DATADIR%%/freeciv.rc
-%%GTK2%%%%DATADIR%%/freeciv.rc-2.0
 share/locale/da/LC_MESSAGES/freeciv.mo
 share/locale/ca/LC_MESSAGES/freeciv.mo
 share/locale/cs/LC_MESSAGES/freeciv.mo
