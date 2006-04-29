@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jwm
-PORTVERSION=	1.6
+PORTVERSION=	1.7
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://joewing.net/programs/jwm/ \
 		http://www.unixified.net/distfiles/
