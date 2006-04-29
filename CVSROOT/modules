@@ -4128,6 +4128,7 @@ ipa_ip6fw	ports/net/ipa_ip6fw
 ipa_ipfw	ports/net/ipa_ipfw
 ipa_sdb		ports/databases/ipa_sdb
 ipacctd		ports/net-mgmt/ipacctd
+ipager		ports/x11/ipager
 ipaudit		ports/net-mgmt/ipaudit
 ipcad		ports/net-mgmt/ipcad
 ipcalc		ports/net-mgmt/ipcalc
