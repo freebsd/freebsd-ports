@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	flightgear-mb339-pan
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	games
 MASTER_SITES=	http://hcilab.uniud.it/pan/downloads/
 DISTNAME=	MB339-PAN
@@ -20,10 +20,8 @@ PREFIX?=	${X11BASE}	# USE_X_PREFIX would pull in USE_XLIB
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
-RESTRICTED=	"Redistribution prohibited"
+RESTRICTED=	Redistribution prohibited
 PLIST=		${WRKDIR}/.plist
-
-IGNORE=		is incompatible with the latest FlightGear release
 
 pre-install:
 	@${RM} -f ${PLIST}
