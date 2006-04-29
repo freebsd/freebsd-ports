@@ -12620,6 +12620,7 @@ tclmidi		ports/audio/tclmidi
 tclmore		ports/devel/tclmore
 tclock		ports/x11-clocks/tclock
 tclreadline	ports/devel/tclreadline
+tclsasl		ports/security/tclsasl
 tcltls		ports/devel/tcltls
 tcltutor	ports/lang/tcltutor
 tclwebtest	ports/www/tclwebtest
