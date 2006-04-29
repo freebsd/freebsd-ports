@@ -1,14 +1,20 @@
 @comment $FreeBSD$
+bin/adr2vcf
+bin/apoconv
 bin/scmxx
+bin/smi
 share/locale/de/LC_MESSAGES/scmxx.mo
 share/locale/fr/LC_MESSAGES/scmxx.mo
 share/locale/it/LC_MESSAGES/scmxx.mo
 share/locale/ru/LC_MESSAGES/scmxx.mo
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README_WIN32.txt
-%%PORTDOCS%%%%DOCSDIR%%/gsmcharset.txt
-%%PORTDOCS%%%%DOCSDIR%%/gsm0338.txt
+%%PORTDOCS%%%%DOCSDIR%%/adr.txt
+%%PORTDOCS%%%%DOCSDIR%%/apo.txt
 %%PORTDOCS%%%%DOCSDIR%%/doc_sources.txt
+%%PORTDOCS%%%%DOCSDIR%%/gsm0338.txt
+%%PORTDOCS%%%%DOCSDIR%%/gsmcharset.txt
+%%PORTDOCS%%%%DOCSDIR%%/smi.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%EXAMPLESDIR%%/sms.txt
 %%EXAMPLESDIR%%/vCalendar.vcs
