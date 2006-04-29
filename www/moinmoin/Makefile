@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	moinmoin
-PORTVERSION=	1.5.2
+PORTVERSION=	1.5.3
 CATEGORIES=	www python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	moin
@@ -38,7 +38,7 @@ MOINSCRIPT=	${MOINDIR}/server/moin.fcg
 .elif ${MOINTYPE} == "CGI"
 MOINSCRIPT=	${MOINDIR}/server/moin.cgi
 .else
-BROKEN=		"MOINTYPE must be a STANDALONE, FCGI, MOD_PYTHON or CGI."
+BROKEN=		MOINTYPE must be a STANDALONE, FCGI, MOD_PYTHON or CGI.
 .endif
 
 pre-everything::

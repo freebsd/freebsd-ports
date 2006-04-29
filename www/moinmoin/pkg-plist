@@ -1,11 +1,4 @@
-bin/cachecleaner
-bin/globaledit
-bin/moin-build-index
-bin/moin-dump
-bin/moin-optimize-index
-bin/pagescleaner
-bin/print-stats
-bin/repair-language
+bin/moin
 %%PYTHON_SITELIBDIR%%/MoinMoin/Page.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/Page.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/Page.pyo
@@ -33,30 +26,18 @@ bin/repair-language
 %%PYTHON_SITELIBDIR%%/MoinMoin/_tests/test_PageEditor.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/_tests/test_PageEditor.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/_tests/test_PageEditor.pyo
-%%PYTHON_SITELIBDIR%%/MoinMoin/_tests/test_converter_text_html_text_x_moin.py
-%%PYTHON_SITELIBDIR%%/MoinMoin/_tests/test_converter_text_html_text_x_moin.pyc
-%%PYTHON_SITELIBDIR%%/MoinMoin/_tests/test_converter_text_html_text_x_moin.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/_tests/test_error.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/_tests/test_error.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/_tests/test_error.pyo
-%%PYTHON_SITELIBDIR%%/MoinMoin/_tests/test_formatter.py
-%%PYTHON_SITELIBDIR%%/MoinMoin/_tests/test_formatter.pyc
-%%PYTHON_SITELIBDIR%%/MoinMoin/_tests/test_formatter.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/_tests/test_i18n.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/_tests/test_i18n.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/_tests/test_i18n.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/_tests/test_packages.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/_tests/test_packages.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/_tests/test_packages.pyo
-%%PYTHON_SITELIBDIR%%/MoinMoin/_tests/test_parser_wiki.py
-%%PYTHON_SITELIBDIR%%/MoinMoin/_tests/test_parser_wiki.pyc
-%%PYTHON_SITELIBDIR%%/MoinMoin/_tests/test_parser_wiki.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/_tests/test_pysupport.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/_tests/test_pysupport.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/_tests/test_pysupport.pyo
-%%PYTHON_SITELIBDIR%%/MoinMoin/_tests/test_repair_language.py
-%%PYTHON_SITELIBDIR%%/MoinMoin/_tests/test_repair_language.pyc
-%%PYTHON_SITELIBDIR%%/MoinMoin/_tests/test_repair_language.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/_tests/test_request.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/_tests/test_request.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/_tests/test_request.pyo
@@ -141,6 +122,12 @@ bin/repair-language
 %%PYTHON_SITELIBDIR%%/MoinMoin/action/links.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/action/links.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/action/links.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/login.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/login.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/login.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/logout.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/logout.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/logout.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/action/newpage.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/action/newpage.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/action/newpage.pyo
@@ -150,6 +137,9 @@ bin/repair-language
 %%PYTHON_SITELIBDIR%%/MoinMoin/action/titleindex.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/action/titleindex.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/action/titleindex.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/userprefs.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/userprefs.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/userprefs.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/auth.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/auth.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/auth.pyo
@@ -171,6 +161,57 @@ bin/repair-language
 %%PYTHON_SITELIBDIR%%/MoinMoin/failure.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/failure.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/failure.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/EXIF.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/EXIF.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/EXIF.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/__init__.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/__init__.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/__init__.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/application_msword.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/application_msword.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/application_msword.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/application_octet_stream.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/application_octet_stream.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/application_octet_stream.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/application_pdf.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/application_pdf.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/application_pdf.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/application_vnd_ms_excel.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/application_vnd_ms_excel.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/application_vnd_ms_excel.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/application_vnd_sun_xml.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/application_vnd_sun_xml.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/application_vnd_sun_xml.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/application_vnd_sun_xml_calc.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/application_vnd_sun_xml_calc.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/application_vnd_sun_xml_calc.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/application_vnd_sun_xml_writer.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/application_vnd_sun_xml_writer.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/application_vnd_sun_xml_writer.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/audio.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/audio.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/audio.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/image.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/image.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/image.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/image_jpeg.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/image_jpeg.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/image_jpeg.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/text.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/text.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/text.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/text_html.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/text_html.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/text_html.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/text_rtf.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/text_rtf.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/text_rtf.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/text_xml.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/text_xml.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/text_xml.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/video.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/video.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/video.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/formatter/__init__.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/formatter/__init__.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/formatter/__init__.pyo
@@ -204,6 +245,9 @@ bin/repair-language
 %%PYTHON_SITELIBDIR%%/MoinMoin/i18n/__init__.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/i18n/__init__.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/i18n/__init__.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/bg.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/bg.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/bg.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/i18n/ca.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/i18n/ca.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/i18n/ca.pyo
@@ -252,9 +296,6 @@ bin/repair-language
 %%PYTHON_SITELIBDIR%%/MoinMoin/i18n/ko.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/i18n/ko.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/i18n/ko.pyo
-%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/linkpo2wiki.py
-%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/linkpo2wiki.pyc
-%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/linkpo2wiki.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/i18n/lv.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/i18n/lv.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/i18n/lv.pyo
@@ -366,12 +407,21 @@ bin/repair-language
 %%PYTHON_SITELIBDIR%%/MoinMoin/macro/GetText.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/macro/GetText.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/macro/GetText.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/ImageLink.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/ImageLink.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/ImageLink.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/macro/Include.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/macro/Include.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/macro/Include.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/macro/LikePages.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/macro/LikePages.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/macro/LikePages.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/Login.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/Login.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/Login.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/MissingPageHint.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/MissingPageHint.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/MissingPageHint.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/macro/MonthCalendar.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/macro/MonthCalendar.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/macro/MonthCalendar.pyo
@@ -471,141 +521,168 @@ bin/repair-language
 %%PYTHON_SITELIBDIR%%/MoinMoin/request.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/request.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/request.pyo
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/__init__.py
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/__init__.pyc
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/__init__.pyo
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/_util.py
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/_util.pyc
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/_util.pyo
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/accounts/__init__.py
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/accounts/__init__.pyc
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/accounts/__init__.pyo
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/accounts/moin_usercheck-jh-new.py
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/accounts/moin_usercheck-jh-new.pyc
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/accounts/moin_usercheck-jh-new.pyo
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/accounts/moin_usercheck.py
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/accounts/moin_usercheck.pyc
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/accounts/moin_usercheck.pyo
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/cachecleaner.py
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/cachecleaner.pyc
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/cachecleaner.pyo
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/globaledit.py
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/globaledit.pyc
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/globaledit.pyo
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/import/IrcLogImporter.py
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/import/IrcLogImporter.pyc
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/import/IrcLogImporter.pyo
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/import/__init__.py
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/import/__init__.pyc
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/import/__init__.pyo
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/migration/12_to_13_mig01.py
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/migration/12_to_13_mig01.pyc
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/migration/12_to_13_mig01.pyo
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/migration/12_to_13_mig02.py
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/migration/12_to_13_mig02.pyc
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/migration/12_to_13_mig02.pyo
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/migration/12_to_13_mig03.py
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/migration/12_to_13_mig03.pyc
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/migration/12_to_13_mig03.pyo
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/migration/12_to_13_mig04.py
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/migration/12_to_13_mig04.pyc
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/migration/12_to_13_mig04.pyo
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/migration/12_to_13_mig05.py
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/migration/12_to_13_mig05.pyc
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/migration/12_to_13_mig05.pyo
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/migration/12_to_13_mig06.py
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/migration/12_to_13_mig06.pyc
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/migration/12_to_13_mig06.pyo
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/migration/12_to_13_mig07.py
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/migration/12_to_13_mig07.pyc
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/migration/12_to_13_mig07.pyo
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/migration/12_to_13_mig08.py
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/migration/12_to_13_mig08.pyc
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/migration/12_to_13_mig08.pyo
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/migration/12_to_13_mig09.py
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/migration/12_to_13_mig09.pyc
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/migration/12_to_13_mig09.pyo
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/migration/12_to_13_mig10.py
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/migration/12_to_13_mig10.pyc
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/migration/12_to_13_mig10.pyo
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/migration/12_to_13_mig11.py
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/migration/12_to_13_mig11.pyc
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/migration/12_to_13_mig11.pyo
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/migration/__init__.py
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/migration/__init__.pyc
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/migration/__init__.pyo
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/migration/migutil.py
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/migration/migutil.pyc
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/migration/migutil.pyo
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/moin_build_index.py
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/moin_build_index.pyc
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/moin_build_index.pyo
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/moin_dump.py
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/moin_dump.pyc
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/moin_dump.pyo
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/moin_optimize_index.py
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/moin_optimize_index.pyc
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/moin_optimize_index.pyo
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/packages/__init__.py
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/packages/__init__.pyc
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/packages/__init__.pyo
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/packages/create_pagepacks.py
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/packages/create_pagepacks.pyc
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/packages/create_pagepacks.pyo
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/pagescleaner.py
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/pagescleaner.pyc
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/pagescleaner.pyo
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/print_stats.py
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/print_stats.pyc
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/print_stats.pyo
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/reducewiki/__init__.py
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/reducewiki/__init__.pyc
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/reducewiki/__init__.pyo
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/reducewiki/reducewiki.py
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/reducewiki/reducewiki.pyc
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/reducewiki/reducewiki.pyo
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/repair_language.py
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/repair_language.pyc
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/repair_language.pyo
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/unicode/__init__.py
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/unicode/__init__.pyc
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/unicode/__init__.pyo
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/unicode/mk_chartypes.py
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/unicode/mk_chartypes.pyc
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/unicode/mk_chartypes.pyo
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/xmlrpc-tools/HelloWorld.py
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/xmlrpc-tools/HelloWorld.pyc
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/xmlrpc-tools/HelloWorld.pyo
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/xmlrpc-tools/UpdateGroupTest.py
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/xmlrpc-tools/UpdateGroupTest.pyc
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/xmlrpc-tools/UpdateGroupTest.pyo
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/xmlrpc-tools/WhoAmI.py
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/xmlrpc-tools/WhoAmI.pyc
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/xmlrpc-tools/WhoAmI.pyo
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/xmlrpc-tools/__init__.py
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/xmlrpc-tools/__init__.pyc
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/xmlrpc-tools/__init__.pyo
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/xmlrpc-tools/get_es_pages.py
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/xmlrpc-tools/get_es_pages.pyc
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/xmlrpc-tools/get_es_pages.pyo
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/xmlrpc-tools/getmasterpages2.py
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/xmlrpc-tools/getmasterpages2.pyc
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/xmlrpc-tools/getmasterpages2.pyo
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/xmlrpc-tools/getsystempages.py
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/xmlrpc-tools/getsystempages.pyc
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/xmlrpc-tools/getsystempages.pyo
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/xmlrpc-tools/getsystempages2.py
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/xmlrpc-tools/getsystempages2.pyc
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/xmlrpc-tools/getsystempages2.pyo
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/xmlrpc-tools/putPageTest.py
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/xmlrpc-tools/putPageTest.pyc
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/xmlrpc-tools/putPageTest.pyo
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/xmlrpc-tools/wikibackup.py
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/xmlrpc-tools/wikibackup.pyc
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/xmlrpc-tools/wikibackup.pyo
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/xmlrpc-tools/wikirestore.py
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/xmlrpc-tools/wikirestore.pyc
-%%PYTHON_SITELIBDIR%%/MoinMoin/scripts/xmlrpc-tools/wikirestore.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/__init__.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/__init__.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/__init__.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/_util.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/_util.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/_util.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/account/__init__.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/account/__init__.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/account/__init__.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/account/check.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/account/check.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/account/check.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/account/create.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/account/create.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/account/create.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/account/disable.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/account/disable.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/account/disable.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/cli/__init__.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/cli/__init__.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/cli/__init__.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/cli/show.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/cli/show.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/cli/show.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/export/__init__.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/export/__init__.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/export/__init__.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/export/dump.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/export/dump.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/export/dump.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/import/__init__.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/import/__init__.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/import/__init__.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/import/irclog.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/import/irclog.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/import/irclog.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/lupy/__init__.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/lupy/__init__.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/lupy/__init__.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/lupy/build.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/lupy/build.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/lupy/build.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/lupy/optimize.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/lupy/optimize.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/lupy/optimize.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/maint/__init__.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/maint/__init__.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/maint/__init__.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/maint/cleancache.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/maint/cleancache.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/maint/cleancache.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/maint/cleanpage.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/maint/cleanpage.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/maint/cleanpage.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/maint/globaledit.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/maint/globaledit.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/maint/globaledit.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/maint/mkpagepacks.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/maint/mkpagepacks.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/maint/mkpagepacks.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/maint/reducewiki.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/maint/reducewiki.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/maint/reducewiki.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1050300.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1050300.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1050300.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1050301.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1050301.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1050301.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/__init__.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/__init__.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/__init__.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/data.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/data.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/data.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/migutil.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/migutil.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/migutil.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/moin.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/moin.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/moin.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/__init__.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/__init__.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/__init__.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/migration/12_to_13_mig01.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/migration/12_to_13_mig01.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/migration/12_to_13_mig01.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/migration/12_to_13_mig02.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/migration/12_to_13_mig02.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/migration/12_to_13_mig02.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/migration/12_to_13_mig03.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/migration/12_to_13_mig03.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/migration/12_to_13_mig03.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/migration/12_to_13_mig04.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/migration/12_to_13_mig04.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/migration/12_to_13_mig04.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/migration/12_to_13_mig05.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/migration/12_to_13_mig05.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/migration/12_to_13_mig05.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/migration/12_to_13_mig06.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/migration/12_to_13_mig06.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/migration/12_to_13_mig06.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/migration/12_to_13_mig07.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/migration/12_to_13_mig07.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/migration/12_to_13_mig07.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/migration/12_to_13_mig08.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/migration/12_to_13_mig08.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/migration/12_to_13_mig08.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/migration/12_to_13_mig09.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/migration/12_to_13_mig09.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/migration/12_to_13_mig09.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/migration/12_to_13_mig10.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/migration/12_to_13_mig10.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/migration/12_to_13_mig10.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/migration/12_to_13_mig11.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/migration/12_to_13_mig11.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/migration/12_to_13_mig11.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/migration/152_to_1050300.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/migration/152_to_1050300.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/migration/152_to_1050300.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/migration/__init__.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/migration/__init__.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/migration/__init__.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/print_stats.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/print_stats.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/print_stats.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/repair_language.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/repair_language.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/repair_language.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/xmlrpc-tools/HelloWorld.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/xmlrpc-tools/HelloWorld.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/xmlrpc-tools/HelloWorld.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/xmlrpc-tools/UpdateGroupTest.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/xmlrpc-tools/UpdateGroupTest.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/xmlrpc-tools/UpdateGroupTest.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/xmlrpc-tools/WhoAmI.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/xmlrpc-tools/WhoAmI.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/xmlrpc-tools/WhoAmI.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/xmlrpc-tools/__init__.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/xmlrpc-tools/__init__.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/xmlrpc-tools/__init__.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/xmlrpc-tools/get_es_pages.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/xmlrpc-tools/get_es_pages.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/xmlrpc-tools/get_es_pages.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/xmlrpc-tools/getmasterpages2.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/xmlrpc-tools/getmasterpages2.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/xmlrpc-tools/getmasterpages2.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/xmlrpc-tools/getsystempages.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/xmlrpc-tools/getsystempages.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/xmlrpc-tools/getsystempages.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/xmlrpc-tools/getsystempages2.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/xmlrpc-tools/getsystempages2.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/xmlrpc-tools/getsystempages2.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/xmlrpc-tools/putPageTest.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/xmlrpc-tools/putPageTest.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/xmlrpc-tools/putPageTest.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/xmlrpc-tools/wikibackup.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/xmlrpc-tools/wikibackup.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/xmlrpc-tools/wikibackup.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/xmlrpc-tools/wikirestore.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/xmlrpc-tools/wikirestore.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/xmlrpc-tools/wikirestore.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/search.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/search.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/search.pyo
@@ -762,12 +839,12 @@ bin/repair-language
 %%PYTHON_SITELIBDIR%%/MoinMoin/util/chartypes.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/util/chartypes.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/util/chartypes.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/util/chartypes_create.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/util/chartypes_create.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/util/chartypes_create.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/util/dataset.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/util/dataset.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/util/dataset.pyo
-%%PYTHON_SITELIBDIR%%/MoinMoin/util/datetime.py
-%%PYTHON_SITELIBDIR%%/MoinMoin/util/datetime.pyc
-%%PYTHON_SITELIBDIR%%/MoinMoin/util/datetime.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/util/diff.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/util/diff.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/util/diff.pyo
@@ -795,6 +872,9 @@ bin/repair-language
 %%PYTHON_SITELIBDIR%%/MoinMoin/util/sessionParser.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/util/sessionParser.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/util/sessionParser.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/util/timefuncs.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/util/timefuncs.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/util/timefuncs.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/util/web.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/util/web.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/util/web.pyo
@@ -876,6 +956,7 @@ bin/repair-language
 %%PYTHON_SITELIBDIR%%/MoinMoin/xmlrpc/putClientInfo.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/xmlrpc/putClientInfo.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/xmlrpc/putClientInfo.pyo
+share/moin/config/more_samples/ldap_smb_farmconfig.py
 share/moin/config/wikiconfig.py
 share/moin/config/wikifarm/farmconfig.py
 share/moin/config/wikifarm/mywiki.py
@@ -887,6 +968,7 @@ share/moin/data/pages/BadContent/current
 share/moin/data/pages/BadContent/revisions/00000001
 share/moin/data/plugin/__init__.py
 share/moin/data/plugin/action/__init__.py
+share/moin/data/plugin/filter/__init__.py
 share/moin/data/plugin/formatter/__init__.py
 share/moin/data/plugin/macro/__init__.py
 share/moin/data/plugin/parser/__init__.py
@@ -1610,6 +1692,7 @@ share/moin/htdocs/applets/moinFCKplugins/selection/fckplugin.js
 share/moin/htdocs/applets/moinfckconfig.js
 share/moin/htdocs/applets/moinfckstyles.xml
 share/moin/htdocs/classic/css/common.css
+share/moin/htdocs/classic/css/common.css.orig
 share/moin/htdocs/classic/css/print.css
 share/moin/htdocs/classic/css/projection.css
 share/moin/htdocs/classic/css/screen.css
@@ -1765,6 +1848,7 @@ share/moin/htdocs/modern/img/thumbs-up.png
 share/moin/htdocs/modern/img/tired.png
 share/moin/htdocs/modern/img/tongue.png
 share/moin/htdocs/rightsidebar/css/common.css
+share/moin/htdocs/rightsidebar/css/common.css.orig
 share/moin/htdocs/rightsidebar/css/print.css
 share/moin/htdocs/rightsidebar/css/projection.css
 share/moin/htdocs/rightsidebar/css/screen.css
@@ -1952,6 +2036,7 @@ share/moin/server/moinwsgi.py
 @dirrm share/moin/data/plugin/parser
 @dirrm share/moin/data/plugin/macro
 @dirrm share/moin/data/plugin/formatter
+@dirrm share/moin/data/plugin/filter
 @dirrm share/moin/data/plugin/action
 @dirrm share/moin/data/plugin
 @dirrm share/moin/data/pages/BadContent/revisions
@@ -1961,8 +2046,8 @@ share/moin/server/moinwsgi.py
 @dirrm share/moin/data/cache
 @dirrm share/moin/data
 @dirrm share/moin/config/wikifarm
+@dirrm share/moin/config/more_samples
 @dirrm share/moin/config
-@dirrm share/moin
 @dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/xmlrpc
 @dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/wikixml
 @dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/widget
@@ -1975,20 +2060,24 @@ share/moin/server/moinwsgi.py
 @dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/support
 @dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/stats
 @dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/server
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/scripts/xmlrpc-tools
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/scripts/unicode
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/scripts/reducewiki
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/scripts/packages
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/scripts/migration
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/scripts/import
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/scripts/accounts
-@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/scripts
+@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/script/old/xmlrpc-tools
+@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/script/old/migration
+@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/script/old
+@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/script/migration
+@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/script/maint
+@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/script/lupy
+@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/script/import
+@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/script/export
+@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/script/cli
+@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/script/account
+@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/script
 @dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/processor
 @dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/parser
 @dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/macro
 @dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/logfile
 @dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/i18n
 @dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/formatter
+@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/filter
 @dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/converter
 @dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/action
 @dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/_tests
