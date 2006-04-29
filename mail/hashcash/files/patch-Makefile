@@ -1,5 +1,5 @@
---- Makefile.orig	Wed Jul 13 12:10:52 2005
-+++ Makefile	Mon Jul 18 12:23:12 2005
+--- Makefile.orig	Sat Apr 29 17:33:19 2006
++++ Makefile	Sat Apr 29 17:34:26 2006
 @@ -2,9 +2,9 @@
  CHANGEME1 = 1 # put PACKAGER = EBUILD|RPM etc here
  CHANGEME2 = 2
@@ -16,9 +16,9 @@
 @@ -16,7 +16,7 @@
  # 	REGEXP = 
  REGEXP=-DREGEXP_POSIX
- COPT_DEBUG = -g
+ COPT_DEBUG = -g -DDEBUG
 -COPT_GENERIC = -O3
 +#COPT_GENERIC = -O3
  COPT_GNU = -O3 -funroll-loops
- COPT_X86 = -O3 -funroll-loops -march=i386 -mcpu=pentium -mmmx \
+ COPT_X86 = -O3 -funroll-loops -march=pentium-mmx -mmmx \
  	-D_REENTRANT -D_THREAD_SAFE -fPIC

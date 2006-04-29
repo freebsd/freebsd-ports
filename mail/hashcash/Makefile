@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hashcash
-PORTVERSION=	1.18
+PORTVERSION=	1.22
 CATEGORIES=	mail
 MASTER_SITES=	http://www.hashcash.org/source/
 EXTRACT_SUFX=	.tgz
@@ -20,8 +20,6 @@ PORTDOCS=	CHANGELOG LICENSE README
 ALL_TARGET=	generic
 
 .if defined(NOPORTDOCS)
-
-USE_REINPLACE=	yes
 
 post-patch:
 	${REINPLACE_CMD} -e '/DOC_INSTALL_PATH/d' ${WRKSRC}/Makefile
