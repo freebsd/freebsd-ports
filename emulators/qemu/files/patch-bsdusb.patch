@@ -41,11 +41,11 @@ Index: qemu/Makefile.target
  endif
  
  # USB layer
--VL_OBJS+= usb.o usb-uhci.o usb-linux.o usb-hid.o
-+VL_OBJS+= usb.o usb-uhci.o usb-$(HOST_USB).o usb-hid.o
+-VL_OBJS+= usb.o usb-hub.o usb-uhci.o usb-linux.o usb-hid.o
++VL_OBJS+= usb.o usb-hub.o usb-uhci.o usb-$(HOST_USB).o usb-hid.o
  
- ifeq ($(TARGET_BASE_ARCH), i386)
- # Hardware support
+ # PCI network cards
+ VL_OBJS+= ne2000.o rtl8139.o
 Index: qemu/usb-stub.c
 @@ -0,0 +1,11 @@
 +#include "vl.h"
