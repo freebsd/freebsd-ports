@@ -1,6 +1,6 @@
---- configure.orig	Fri Oct 11 23:43:36 2002
-+++ configure	Fri Oct 11 23:44:16 2002
-@@ -418,7 +418,7 @@
+--- configure.orig	Thu Apr 27 07:48:08 2006
++++ configure	Thu Apr 27 07:48:23 2006
+@@ -430,7 +430,7 @@
  PACKAGE_BUGREPORT=
  
  ac_unique_file="src/nd.h"
@@ -9,12 +9,3 @@
  # Factoring default headers for most tests.
  ac_includes_default="\
  #include <stdio.h>
-@@ -2634,7 +2634,7 @@
- 
- 
- 
--subdirs="$subdirs libltdl"
-+subdirs="$subdirs"
- 
- 
- 

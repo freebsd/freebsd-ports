@@ -7,13 +7,12 @@
 #
 
 PORTNAME=	netdude
-PORTVERSION=	0.4.5
-PORTREVISION=	1
+PORTVERSION=	0.4.6
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	yb@bashibuzuk.net
+MAINTAINER=	wxs@csh.rit.edu
 COMMENT=	NETwork DUmp data Displayer and Editor for tcpdump tracefiles
 
 LIB_DEPENDS=	netdude.0:${PORTSDIR}/net/libnetdude
@@ -27,7 +26,6 @@ CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -lltdl"
 USE_GMAKE=	yes
 USE_GNOME=	glib12 gtk12
 INSTALLS_SHLIB=	yes
-USE_REINPLACE=	yes
 
 MAN1=	netdude.1
 

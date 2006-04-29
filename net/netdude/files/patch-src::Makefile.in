@@ -1,6 +1,6 @@
---- src/Makefile.in.orig	Sun Jan 25 21:02:59 2004
-+++ src/Makefile.in	Sun Jan 25 21:03:36 2004
-@@ -196,8 +196,7 @@
+--- src/Makefile.in.orig	Thu Apr 27 09:43:27 2006
++++ src/Makefile.in	Thu Apr 27 09:43:39 2006
+@@ -171,8 +171,7 @@
  	gtkhex.c gtkhex.h
  
  
@@ -10,7 +10,7 @@
  
  subdir = src
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
-@@ -218,7 +217,6 @@
+@@ -193,7 +192,6 @@
  	callbacks.$(OBJEXT) interface.$(OBJEXT) support.$(OBJEXT) \
  	gtkhex.$(OBJEXT)
  netdude_OBJECTS = $(am_netdude_OBJECTS)
