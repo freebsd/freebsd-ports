@@ -1,14 +1,8 @@
---- src/plparse/totem-disc.c.orig	Sun Mar 13 08:37:57 2005
-+++ src/plparse/totem-disc.c	Wed Mar 23 03:29:26 2005
-@@ -34,18 +34,40 @@
- #include <stdio.h>
- #include <stdlib.h>
- #include <errno.h>
--#include <mntent.h>
- #include <string.h>
- 
- #include <sys/ioctl.h>
- #include <sys/stat.h>
+--- src/plparse/totem-disc.c.orig	Thu Nov 24 16:53:02 2005
++++ src/plparse/totem-disc.c	Sun Dec 18 13:34:12 2005
+@@ -43,7 +43,29 @@
+ #include <glib/gi18n.h>
+ #include <libgnomevfs/gnome-vfs.h>
  
 +#ifdef __FreeBSD__
 +#include <sys/cdio.h>
@@ -31,16 +25,8 @@
 +#define ENOMEDIUM ENODEV
 +#define CDROM_GET_CAPABILITY CDIOCCLRDEBUG
 +#else
-+#include <mntent.h>
-+#include <linux/cdrom.h>
+ #include <linux/cdrom.h>
 +#endif
-+
- #include <glib.h>
- #include <glib/gi18n.h>
- #include <libgnomevfs/gnome-vfs.h>
  
--#include <linux/cdrom.h>
--
  #include "totem-disc.h"
  
- typedef struct _CdCache {

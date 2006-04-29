@@ -3,16 +3,17 @@
 # Whom:				Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/graphics/gstreamer-plugins-cairo/Makefile,v 1.2 2005/10/14 20:39:57 adamw Exp $
+#    $MCom: ports/graphics/gstreamer-plugins-cairo80/Makefile,v 1.2 2006/02/24 18:50:32 marcus Exp $
+#   $MCom: ports/graphics/gstreamer-plugins-cairo80/Makefile,v 1.2 2006/02/24 18:50:32 marcus Exp $
 #
 
 CATEGORIES=	graphics
-PORTREVISION=	1
+PORTREVISION=	2
 
 COMMENT=	Gstreamer vector graphics plugin
 
 GST_PLUGIN=	cairo
 
-MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins
+MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins80
 
 .include "${MASTERDIR}/Makefile"

@@ -26,15 +26,14 @@ RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/mozilla-plugin${HEADERS_SUFX}.pc:${POR
 
 BROKEN=		Does not compile
 
-USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_SDL=	sdl
 USE_GNOME=	gnomehack gtk20 libartlgpl2
-USE_GSTREAMER=	gconf
-USE_GETOPT_LONG=yes
+USE_GSTREAMER80=	gconf
+USE_GETOPT_LONG=	yes
 USE_REINPLACE=	yes
 USE_AUTOTOOLS=	libtool:15
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -I${LOCALBASE}/include/nspr" \
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 .if defined(WITH_MOZILLA) && ${WITH_MOZILLA}=="firefox"

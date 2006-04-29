@@ -19,9 +19,8 @@ LIB_DEPENDS=		vorbis:${PORTSDIR}/audio/libvorbis \
 			tag:${PORTSDIR}/audio/taglib
 
 USE_X_PREFIX=		yes
-USE_REINPLACE=		yes
 USE_GNOME=		gnomehack gnomeprefix libgnomeui
-USE_GSTREAMER=		gconf
+USE_GSTREAMER80=		gconf
 GNU_CONFIGURE=		yes
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"

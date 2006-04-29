@@ -1,0 +1,20 @@
+--- tools/Makefile.in.orig	Thu Jan 19 14:34:47 2006
++++ tools/Makefile.in	Thu Jan 19 14:36:45 2006
+@@ -73,17 +73,10 @@
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = $(top_builddir)/config.h
+ CONFIG_CLEAN_FILES =
+-@GST_DISABLE_REGISTRY_FALSE@am__EXEEXT_1 = gst-register$(EXEEXT)
+ @GST_DISABLE_REGISTRY_FALSE@am__EXEEXT_2 = gst-register-@GST_MAJORMINOR@$(EXEEXT)
+-@GST_DISABLE_LOADSAVE_FALSE@am__EXEEXT_3 = gst-complete$(EXEEXT) \
+-@GST_DISABLE_LOADSAVE_FALSE@	gst-compprep$(EXEEXT) \
+-@GST_DISABLE_LOADSAVE_FALSE@	gst-xmllaunch$(EXEEXT)
+ @GST_DISABLE_LOADSAVE_FALSE@am__EXEEXT_4 = gst-complete-@GST_MAJORMINOR@$(EXEEXT) \
+ @GST_DISABLE_LOADSAVE_FALSE@	gst-compprep-@GST_MAJORMINOR@$(EXEEXT) \
+ @GST_DISABLE_LOADSAVE_FALSE@	gst-xmllaunch-@GST_MAJORMINOR@$(EXEEXT)
+-am__EXEEXT_5 = gst-feedback$(EXEEXT) gst-inspect$(EXEEXT) \
+-	gst-launch$(EXEEXT) gst-md5sum$(EXEEXT) gst-typefind$(EXEEXT) \
+-	gst-xmlinspect$(EXEEXT)
+ am__EXEEXT_6 = gst-inspect-@GST_MAJORMINOR@$(EXEEXT) \
+ 	gst-launch-@GST_MAJORMINOR@$(EXEEXT) \
+ 	gst-md5sum-@GST_MAJORMINOR@$(EXEEXT) \

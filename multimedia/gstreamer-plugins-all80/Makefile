@@ -3,11 +3,11 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/multimedia/gstreamer-plugins-all/Makefile,v 1.3 2005/10/22 06:20:02 ahze Exp $
+#    $MCom: ports/multimedia/gstreamer-plugins-all80/Makefile,v 1.2 2006/01/20 14:27:43 ahze Exp $
 #
 
-PORTNAME=	gstreamer-plugins-all
-PORTVERSION=	1.0.${GST_VERSION}.${GST_SHLIB_VERSION}
+PORTNAME=	gstreamer-plugins-all80
+PORTVERSION=	1.1.${GST80_VERSION}.${GST80_SHLIB_VERSION}
 CATEGORIES=	multimedia
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -17,7 +17,7 @@ MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Meta-port of all gstreamer plugins with options
 
 NO_BUILD=	yes
-USE_GSTREAMER=	yes
+USE_GSTREAMER80=	yes
 OPTIONS=	# Hacky.. but it works the way it is set up...
 
 .include <bsd.port.pre.mk>
@@ -46,7 +46,7 @@ WITHOUT_JPEG-MMX=	yes
 .endif
 
 # Remove core, yes
-PLUGS=	${_USE_GSTREAMER_ALL:S/core//:S/yes//}
+PLUGS=	${_USE_GSTREAMER80_ALL:S/core//:S/yes//}
 
 .for all in ${PLUGS}
 OPTIONS+=	${all:U} "${all} plugin " on
@@ -54,7 +54,7 @@ OPTIONS+=	${all:U} "${all} plugin " on
 
 .for f in ${PLUGS}
 .if !defined(WITHOUT_${f:U})
-USE_GSTREAMER+=	${f}
+USE_GSTREAMER80+=	${f}
 .endif
 .endfor
 

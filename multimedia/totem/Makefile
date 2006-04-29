@@ -6,24 +6,25 @@
 #
 
 PORTNAME=	totem
-PORTVERSION=	1.2.1
-PORTREVISION=	2
+PORTVERSION=	1.4.0
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R}
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER?=	hendrik@scholz.net
 COMMENT?=	A Xine-based video player for the Gnome 2 Desktop
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
+LIB_DEPENDS=	musicbrainz:${PORTSDIR}/audio/libmusicbrainz
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
 
-USE_REINPLACE=	yes
 USE_BZIP2=	yes
+USE_GETTEXT=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomeprefix intlhack gnomehack gnomedesktop desktopfileutils \
 		nautiluscdburner
+GNOME_DESKTOP_VERSION=2
 WANT_GSTREAMER=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -40,11 +41,9 @@ OPTIONS?=	DVDNAV "Enable DVD support" on \
 MAN1=	totem.1 totem-video-thumbnailer.1
 GCONF_SCHEMAS=	totem-handlers.schemas totem-video-thumbnail.schemas \
 		totem.schemas
-CONFLICTS=	totem-gstreamer-[0-9]*
+CONFLICTS?=	totem-gstreamer-[0-9]*
 
 .include <bsd.port.pre.mk>
-
-LIB_DEPENDS+=	musicbrainz:${PORTSDIR}/audio/libmusicbrainz
 
 .if defined(WITH_MOZILLA_PLUGIN)
 USE_GECKO=	firefox mozilla seamonkey
@@ -58,9 +57,7 @@ CONFIGURE_ARGS+=--disable-mozilla
 .endif
 
 .if defined(WITH_GSTREAMER)
-BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
-RUN_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
-CONFIGURE_ARGS+=--enable-gstreamer
+CONFIGURE_ARGS+=--enable-gstreamer=0.10
 USE_GSTREAMER+=	gnomevfs core gconf
 WITHOUT_DVDNAV=	yes
 PLIST_SUB+=	GSTREAMER=""

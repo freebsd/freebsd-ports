@@ -7,10 +7,10 @@
 
 PORTNAME=	gstreamer
 PORTVERSION=	0.8.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst-ffmpeg/
-PKGNAMESUFFIX=	-ffmpeg
+PKGNAMESUFFIX=	-ffmpeg80
 DISTNAME=	gst-ffmpeg-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -18,21 +18,19 @@ COMMENT=	GStreamer plug-in for manipulating MPEG video streams
 
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget
-USE_GSTREAMER=	yes
+USE_GSTREAMER80=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PKG_CONFIG=${PKG_CONFIG} \
 		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		CFLAGS="${CFLAGS} -fno-force-addr" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 PLIST_SUB=	\
-		VERSION="${GST_VERSION}"
+		VERSION="${GST80_VERSION}"
 WITHOUT_CPU_CFLAGS=	yes
 
 PKG_CONFIG?="${LOCALBASE}/bin/pkg-config"
-GST_VERSION=${PORTVERSION:C/..$//}
 
 .include <bsd.port.pre.mk>
 
@@ -47,7 +45,7 @@ post-patch:
 
 post-install:
 # register plugins
-	-@${X11BASE}/bin/gst-register-${GST_VERSION} \
-		--gst-registry=${PREFIX}/share/gnome/cache/gstreamer-${GST_VERSION}/registry.xml 2>/dev/null
+	-@${X11BASE}/bin/gst-register-${GST80_VERSION} \
+		--gst-registry=${PREFIX}/share/gnome/cache/gstreamer-${GST80_VERSION}/registry.xml 2>/dev/null
 
 .include <bsd.port.post.mk>

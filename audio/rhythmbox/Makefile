@@ -3,11 +3,12 @@
 # Whom:			Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/audio/rhythmbox/Makefile,v 1.40 2005/10/28 08:03:53 jylefort Exp $
+#   $MCom: ports/audio/rhythmbox/Makefile,v 1.54 2006/04/25 17:52:32 marcus Exp $
 #
 
 PORTNAME=	rhythmbox
 PORTVERSION=	0.9.4.1
+PORTREVISION=	1
 CATEGORIES=	audio gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.9
@@ -18,7 +19,7 @@ COMMENT=	Audio player for the Gnome 2 desktop environment
 
 LIB_DEPENDS=	musicbrainz.4:${PORTSDIR}/audio/libmusicbrainz \
 		id3tag.0:${PORTSDIR}/audio/libid3tag \
-		totem-plparser.1:${PORTSDIR}/multimedia/totem-gstreamer \
+		totem-plparser.2:${PORTSDIR}/multimedia/totem-gstreamer \
 		dbus-1.2:${PORTSDIR}/devel/dbus \
 		sexy.1:${PORTSDIR}/x11-toolkits/libsexy \
 		gnome-media-profiles.0:${PORTSDIR}/audio/gnomemedia2
@@ -31,7 +32,7 @@ USE_GNOME=	gnomehack intlhack gnomeprefix libgnomeui nautiluscdburner
 WANT_GNOME=	yes
 USE_GSTREAMER=	flac mad gnomevfs gconf jpeg
 USE_AUTOTOOLS=	libtool:15
-CONFIGURE_ARGS=	--enable-nautilus-menu
+CONFIGURE_ARGS=	--enable-nautilus-menu --with-playback=gstreamer-0-10
 CONFIGURE_ENV=	LIBS="-lm" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include"
@@ -65,12 +66,12 @@ USE_GSTREAMER+=		faad
 .endif
 
 .if defined(WITH_DAAP)
-CONFIGURE_ARGS+=	--enable-daap  --with-mdns=howl
+CONFIGURE_ARGS+=	--enable-daap  --with-mdns=avahi
 LIB_DEPENDS+=		soup-2.2.8:${PORTSDIR}/devel/libsoup \
-			howl.0:${PORTSDIR}/net/howl
+			avahi-client:${PORTSDIR}/net/avahi
 .else
-.if exists(${LOCALBASE}/lib/libhowl.a)
-LIB_DEPENDS+=		howl.0:${PORTSDIR}/net/howl
+.if exists(${LOCALBASE}/lib/libavahi-client.a)
+LIB_DEPENDS+=		avahi-client:${PORTSDIR}/net/avahi
 .endif
 CONFIGURE_ARGS+=	--disable-daap
 .endif

@@ -3,6 +3,7 @@
 # Whom:				Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
+#    $MCom: ports/audio/gstreamer-plugins-shout280/Makefile,v 1.1 2006/01/20 02:55:54 ahze Exp $
 #
 
 CATEGORIES=	audio
@@ -12,6 +13,6 @@ COMMENT=	Gstreamer icecast plugin
 
 GST_PLUGIN=	shout2
 
-MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins
+MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins80
 
 .include "${MASTERDIR}/Makefile"

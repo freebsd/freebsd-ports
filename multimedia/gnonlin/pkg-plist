@@ -14,6 +14,6 @@ lib/gstreamer-0.8/libgnl.so
 lib/gstreamer-0.8/libgnl.so.0
 libdata/pkgconfig/gnonlin.pc
 @dirrm include/gnl
-@unexec /bin/rmdir %D/share/gtk-doc/html/gnonlin 2>/dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/gtk-doc/html 2>/dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/gtk-doc 2>/dev/null || /usr/bin/true
+@dirrmtry share/gtk-doc/html/gnonlin
+@dirrmtry share/gtk-doc/html
+@dirrmtry share/gtk-doc

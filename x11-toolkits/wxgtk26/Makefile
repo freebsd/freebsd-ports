@@ -20,8 +20,7 @@ LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png\
 		jpeg.9:${PORTSDIR}/graphics/jpeg\
 		tiff.4:${PORTSDIR}/graphics/tiff\
 		expat.6:${PORTSDIR}/textproc/expat2\
-		mspack.1:${PORTSDIR}/archivers/libmspack\
-		gstinterfaces-0.8.1:${PORTSDIR}/multimedia/gstreamer-plugins
+		mspack.1:${PORTSDIR}/archivers/libmspack
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
@@ -29,6 +28,7 @@ USE_GL=		yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_GNOME=	gtk20
+USE_GSTREAMER80=yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libpng=sys\
 		--with-libjpeg=sys\

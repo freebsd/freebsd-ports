@@ -8,6 +8,7 @@
 
 PORTNAME=	swfdec
 PORTVERSION=	0.3.6
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.schleef.org/swfdec/download/
 
@@ -20,7 +21,7 @@ LIB_DEPENDS=	mad.2:${PORTSDIR}/audio/libmad \
 USE_X_PREFIX=	yes
 USE_SDL=	sdl
 USE_GNOME=	gnomehack gtk20 libartlgpl2
-USE_GSTREAMER=	gconf
+USE_GSTREAMER80=	gconf
 USE_GETOPT_LONG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \

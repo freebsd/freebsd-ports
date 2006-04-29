@@ -1,6 +1,2 @@
-@exec %D/bin/gst-register --gst-registry=%D/share/gnome/cache/gstreamer-%%VERSION%%/registry.xml 2>/dev/null || true
 lib/gstreamer-%%VERSION%%/libgstffmpeg.la
 lib/gstreamer-%%VERSION%%/libgstffmpeg.so
-lib/gstreamer-%%VERSION%%/libgstpostproc.la
-lib/gstreamer-%%VERSION%%/libgstpostproc.so
-@unexec %D/bin/gst-register --gst-registry=%D/share/gnome/cache/gstreamer-%%VERSION%%/registry.xml 2>/dev/null || true

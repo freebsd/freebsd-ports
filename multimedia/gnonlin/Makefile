@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GStreamer extension library for non-linear editing
 
-LIB_DEPENDS=	gstreamer-0.8.5:${PORTSDIR}/multimedia/gstreamer
+LIB_DEPENDS=	gstreamer-0.8.5:${PORTSDIR}/multimedia/gstreamer80
 
 CONFLICTS=	pitivi-0.1.1*
 

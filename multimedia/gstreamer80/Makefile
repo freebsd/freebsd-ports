@@ -3,15 +3,17 @@
 # Whom:			Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 #
 # $FreeBSD$
+#    $MCom: ports/multimedia/gstreamer80/Makefile,v 1.40 2006/04/23 22:58:42 mezz Exp $
 #
 
 PORTNAME=	gstreamer
-PORTVERSION=	0.8.11
-PORTREVISION=	2
+PORTVERSION=	0.8.12
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_GNOME} \
 		http://gstreamer.freedesktop.org/src/gstreamer/
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${GST_VERSION}
+PKGNAMESUFFIX=	80
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -24,6 +26,7 @@ USE_BISON=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 WANT_GNOME=	yes
+USE_GETTEXT=	yes
 USE_GNOME=	gnomehack \
 		gnomeprefix \
 		glib20 \

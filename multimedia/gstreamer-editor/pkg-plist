@@ -39,24 +39,18 @@ share/gnome/gst-editor/gnome/help/gst-editor/C/gst-editor-manual.xml
 share/gnome/gst-editor/gnome/help/gst-editor/C/legal.xml
 share/gnome/gst-editor/gst-editor.png
 share/gnome/omf/gst-editor/gst-editor-manual-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gst-editor/gst-editor-manual-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/gst-editor.png
 share/gnome/pixmaps/gst-inspect.png
 share/gnome/pixmaps/gst-launch.png
-@dirrmtry share/gnome/pixmaps
 @dirrm share/gnome/omf/gst-editor
-@dirrmtry share/gnome/omf
 @dirrm share/gnome/gst-editor/gnome/help/gst-editor/C
 @dirrm share/gnome/gst-editor/gnome/help/gst-editor
 @dirrm share/gnome/gst-editor/gnome/help
 @dirrm share/gnome/gst-editor/gnome
 @dirrm share/gnome/gst-editor
-@dirrmtry share/gnome/applications
-@dirrmtry share/gnome
 @dirrm include/gst-editor-%%VERSION%%/gst/element-ui
 @dirrm include/gst-editor-%%VERSION%%/gst/element-browser
 @dirrm include/gst-editor-%%VERSION%%/gst/editor
 @dirrm include/gst-editor-%%VERSION%%/gst/debug-ui
 @dirrm include/gst-editor-%%VERSION%%/gst
 @dirrm include/gst-editor-%%VERSION%%
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gst-editor/gst-editor-manual-C.omf 2>/dev/null || /usr/bin/true

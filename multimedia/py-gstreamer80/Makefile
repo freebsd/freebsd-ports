@@ -13,6 +13,7 @@ MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst-python/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	kwm
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+PKGNAMESUFFIX=	80
 DISTNAME=	gst-python-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -27,9 +28,8 @@ USE_GMAKE=	yes
 USE_GNOME=	pygtk2 \
 		gnomehack \
 		pkgconfig
-USE_GSTREAMER=	yes
+USE_GSTREAMER80=	yes
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
 		LDFLAGS="-L${X11BASE}"
 

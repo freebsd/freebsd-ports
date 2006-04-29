@@ -1,29 +1,48 @@
-%%PYTHON_SITELIBDIR%%/gst/__init__.py
-%%PYTHON_SITELIBDIR%%/gst/__init__.pyc
-%%PYTHON_SITELIBDIR%%/gst/__init__.pyo
-%%PYTHON_SITELIBDIR%%/gst/_gst.la
-%%PYTHON_SITELIBDIR%%/gst/_gst.so
-%%PYTHON_SITELIBDIR%%/gst/interfaces.la
-%%PYTHON_SITELIBDIR%%/gst/interfaces.so
-%%PYTHON_SITELIBDIR%%/gst/play.la
-%%PYTHON_SITELIBDIR%%/gst/play.so
-libdata/pkgconfig/gst-python-0.8.pc
-share/gst-python/2.0/defs/gst-extrafuncs.defs
-share/gst-python/2.0/defs/gst-types.defs
-share/gst-python/examples/audioconcat.py
-share/gst-python/examples/bps.py
-share/gst-python/examples/cp.py
-share/gst-python/examples/f2f.py
-share/gst-python/examples/filesrc.py
-share/gst-python/examples/gst123
-share/gst-python/examples/gstfile.py
-share/gst-python/examples/play.py
-share/gst-python/examples/player.py
-share/gst-python/examples/videoplayer.py
-share/gst-python/examples/vorbisplay.py
-@dirrm share/gst-python/examples
-@dirrm share/gst-python/2.0/defs
-@dirrm share/gst-python/2.0
-@dirrm share/gst-python
-@dirrm %%DOCSDIR%%
-@dirrm %%PYTHON_SITELIBDIR%%/gst
+%%PYTHON_SITELIBDIR%%/gst-0.10/gst/__init__.py
+%%PYTHON_SITELIBDIR%%/gst-0.10/gst/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gst-0.10/gst/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gst-0.10/gst/_gst.la
+%%PYTHON_SITELIBDIR%%/gst-0.10/gst/_gst.so
+%%PYTHON_SITELIBDIR%%/gst-0.10/gst/extend/__init__.py
+%%PYTHON_SITELIBDIR%%/gst-0.10/gst/extend/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gst-0.10/gst/extend/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gst-0.10/gst/extend/discoverer.py
+%%PYTHON_SITELIBDIR%%/gst-0.10/gst/extend/discoverer.pyc
+%%PYTHON_SITELIBDIR%%/gst-0.10/gst/extend/discoverer.pyo
+%%PYTHON_SITELIBDIR%%/gst-0.10/gst/extend/pygobject.py
+%%PYTHON_SITELIBDIR%%/gst-0.10/gst/extend/pygobject.pyc
+%%PYTHON_SITELIBDIR%%/gst-0.10/gst/extend/pygobject.pyo
+%%PYTHON_SITELIBDIR%%/gst-0.10/gst/extend/utils.py
+%%PYTHON_SITELIBDIR%%/gst-0.10/gst/extend/utils.pyc
+%%PYTHON_SITELIBDIR%%/gst-0.10/gst/extend/utils.pyo
+%%PYTHON_SITELIBDIR%%/gst-0.10/gst/interfaces.la
+%%PYTHON_SITELIBDIR%%/gst-0.10/gst/interfaces.so
+%%PYTHON_SITELIBDIR%%/pygst.pth
+%%PYTHON_SITELIBDIR%%/pygst.py
+libdata/pkgconfig/gst-python-0.10.pc
+share/gst-python/0.10/defs/base.defs
+share/gst-python/0.10/defs/gst-extrafuncs.defs
+share/gst-python/0.10/defs/gst-types.defs
+share/gst-python/0.10/defs/libs.defs
+share/gst-python/0.10/examples/audio-controller.py
+share/gst-python/0.10/examples/audioconcat.py
+share/gst-python/0.10/examples/bps.py
+share/gst-python/0.10/examples/cp.py
+share/gst-python/0.10/examples/debugslider.py
+share/gst-python/0.10/examples/f2f.py
+share/gst-python/0.10/examples/filesrc.py
+share/gst-python/0.10/examples/fvumeter.py
+share/gst-python/0.10/examples/gst123
+share/gst-python/0.10/examples/gstfile.py
+share/gst-python/0.10/examples/pipeline-tester
+share/gst-python/0.10/examples/play.py
+share/gst-python/0.10/examples/sinkelement.py
+share/gst-python/0.10/examples/vorbisplay.py
+share/gst-python/0.10/examples/vumeter.py
+@dirrm share/gst-python/0.10/examples
+@dirrm share/gst-python/0.10/defs
+@dirrm share/gst-python/0.10
+@dirrmtry share/gst-python
+@dirrm %%PYTHON_SITELIBDIR%%/gst-0.10/gst/extend
+@dirrm %%PYTHON_SITELIBDIR%%/gst-0.10/gst
+@dirrm %%PYTHON_SITELIBDIR%%/gst-0.10

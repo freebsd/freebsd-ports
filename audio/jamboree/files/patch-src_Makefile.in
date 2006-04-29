@@ -1,0 +1,12 @@
+--- src/Makefile.in.orig	Tue Sep 28 05:07:49 2004
++++ src/Makefile.in	Sat Jan 28 01:02:06 2006
+@@ -279,8 +279,7 @@
+ target_alias = @target_alias@
+ INCLUDES = @JAMBOREE_CFLAGS@ \
+         -DDATADIR=\""$(datadir)"\" \
+-	-DGDK_DISABLE_DEPRECATED -DG_DISABLE_DEPRECATED -DGNOME_DISABLE_DEPRECATED \
+-	$(WARN_CFLAGS)
++	-DGDK_DISABLE_DEPRECATED -DG_DISABLE_DEPRECATED $(WARN_CFLAGS)
+ 
+ @HAVE_DBUS_TRUE@dbus_sources = dbus.c dbus.h
+ jamboree_built_headers = jamboree-marshal.h
