@@ -1,0 +1,6 @@
+lib/libtclsasl.so.1
+lib/libtclsasl.so
+lib/libtclsasl.la
+lib/tclsasl/pkgIndex.tcl
+lib/tclsasl/test.tcl
+@dirrm lib/tclsasl

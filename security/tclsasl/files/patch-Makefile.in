@@ -1,0 +1,28 @@
+--- Makefile.in.orig	Sat Jun  8 11:10:07 2002
++++ Makefile.in	Wed Apr 26 13:14:22 2006
+@@ -137,7 +137,7 @@
+ WISH_PROG = @WISH_PROG@
+ tclsasl_LIB_FILE = @tclsasl_LIB_FILE@
+ 
+-LIB_TCL = -ltcl83
++LIB_TCL = $(TCL_STUB_LIB_SPEC)
+ LIB_SASL = @CYRUS_LIBS@
+ 
+ tclsasl_version = 1:0:0
+@@ -367,7 +367,7 @@
+ install: install-am
+ uninstall-am: uninstall-libLTLIBRARIES
+ uninstall: uninstall-am
+-all-am: Makefile $(LTLIBRARIES)
++all-am: $(LTLIBRARIES)
+ all-redirect: all-am
+ install-strip:
+ 	$(MAKE) $(AM_MAKEFLAGS) AM_INSTALL_PROGRAM_FLAGS=-s install
+@@ -437,7 +437,6 @@
+ 	sed -e 's%load .libs/libtclsasl.so%package require sasl%' \
+ 	    < test.tcl      					     \
+ 	    > @PKG_TCL@/test.tcl
+-	cp doc/tclsasl.html @PKG_TCL@/
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
