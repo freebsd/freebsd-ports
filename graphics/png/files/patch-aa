@@ -1,13 +1,17 @@
---- scripts/makefile.freebsd.orig	Sat May 18 18:46:45 2002
-+++ scripts/makefile.freebsd	Mon Apr 24 17:59:39 2006
-@@ -8,26 +8,26 @@
+--- scripts/makefile.freebsd.orig	Sat May 18 22:46:45 2002
++++ scripts/makefile.freebsd	Thu Apr 27 23:54:36 2006
+@@ -8,26 +8,31 @@
  LIB=		png
  SHLIB_MAJOR=	${SHLIB_VER}
  SHLIB_MINOR=	0
--NOPROFILE=	YES
--NOOBJ=          YES
++.if (${OSVERSION} > 600007)
 +NO_PROFILE=	YES
 +NO_OBJ=		YES
++.else
+ NOPROFILE=	YES
+-NOOBJ=          YES
++NOOBJ=		YES
++.endif
  
  # where make install puts libpng.a and png.h
 -DESTDIR=	${PREFIX}
@@ -36,7 +40,7 @@
  
  SRCS=	png.c pngset.c pngget.c pngrutil.c pngtrans.c pngwutil.c \
  	pngread.c pngrio.c pngwio.c pngwrite.c pngrtran.c \
-@@ -44,5 +44,23 @@
+@@ -44,5 +49,23 @@
  DOCS = ANNOUNCE CHANGES INSTALL KNOWNBUG LICENSE README TODO Y2KINFO
  writelock:
  	chmod a-w *.[ch35] $(DOCS) scripts/*
