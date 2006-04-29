@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Mon Apr  3 22:53:12 2006
++++ Makefile.in	Mon Apr  3 22:54:11 2006
+@@ -213,7 +213,7 @@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+ SUBDIRS = po src pixmaps data
+-llk_linuxdocdir = ${prefix}/doc/llk_linux
++llk_linuxdocdir = $(PACKAGE_DATA_DIR)/doc/llk_linux
+ llk_linuxdoc_DATA = \
+ 	README\
+ 	COPYING\
