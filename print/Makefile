@@ -255,6 +255,7 @@
     SUBDIR += pup
     SUBDIR += py-fonttools
     SUBDIR += py-freetype
+    SUBDIR += py-pyscript
     SUBDIR += py-reportlab
     SUBDIR += py-rtf
     SUBDIR += rlpr
