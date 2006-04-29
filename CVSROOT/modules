@@ -4674,6 +4674,7 @@ jad		ports/java/jad
 jade		ports/textproc/jade
 jadetex		ports/print/jadetex
 jaf		ports/java/jaf
+jaffm		ports/x11-fm/jaffm
 jags		ports/net/jags
 jahshaka	ports/multimedia/jahshaka
 jai		ports/java/jai
