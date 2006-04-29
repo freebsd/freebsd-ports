@@ -6,8 +6,7 @@
 #
 
 PORTNAME?=	xmame
-PORTVERSION?=	0.103
-PORTREVISION=	1
+PORTVERSION?=	0.104
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.franksworld.org/dist/xmame/:xmame \
 		http://x.mame.net/download/:xmame \
@@ -30,7 +29,7 @@ COMMENT?=	UNIX/X11 port of the Multi Arcade Machine Emulator (MAME)
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
-#BROKEN=		Unfetchable
+NO_CDROM=	License does not permit selling
 
 USE_BZIP2=	yes
 USE_PERL5=	yes
@@ -139,7 +138,7 @@ PLIST_SUB+=	DATFILES=""
 EXTRACT_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
 HIVER=		0100
-HISTVER=	1_05c
+HISTVER=	1_06a
 
 DISTFILES+=	uhsdat${HIVER}.zip:highscore \
 		history${HISTVER}.zip:history \
@@ -316,15 +315,6 @@ post-install:
 	${INSTALL_DATA} ${WRKDIR}/hiscore.dat ${DATADIR}
 	${INSTALL_DATA} ${WRKDIR}/history.dat ${DATADIR}
 	${INSTALL_DATA} ${WRKDIR}/cheat.dat ${DATADIR}
-.endif
-.if defined(WITH_OPENGL)
-	@${ECHO_MSG}
-	@${ECHO_MSG}	"**************************************************************"
-	@${ECHO_MSG}    "* HEADSUP: The OpenGL code is now built on top of the X11"
-	@${ECHO_MSG}    "* drivers. You can enable OpenGL rendering with the -vidmod 2"
-	@${ECHO_MSG}    "* option."
-	@${ECHO_MSG}    "**************************************************************"
-	@${ECHO_MSG}
 .endif
 
 .include <bsd.port.post.mk>

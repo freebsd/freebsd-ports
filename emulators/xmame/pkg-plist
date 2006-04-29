@@ -60,4 +60,4 @@ etc/%%MAMEMESS%%rc.sample
 @exec mkdir -p %%SPOOLGAMES%%/%%MAMEMESS%% || true
 @exec chown root:games %%SPOOLGAMES%%/%%MAMEMESS%% || true
 @exec chmod 775 %%SPOOLGAMES%%/%%MAMEMESS%% || true
-@unexec rmdir %%SPOOLGAMES%%/%%MAMEMESS%% 2>/dev/null || true
+@dirrmtry %%SPOOLGAMES%%/%%MAMEMESS%%
