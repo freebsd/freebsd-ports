@@ -2,6 +2,6 @@ bin/ggz-txt
 etc/ggz.modules
 lib/ggz/tttxt
 share/applications/ggz-txt.desktop
-share/locale/de/LC_MESSAGES/ggz-txt.mo
+%%NLS%%share/locale/de/LC_MESSAGES/ggz-txt.mo
 @dirrmtry share/applications
 @dirrmtry lib/ggz

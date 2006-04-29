@@ -1,3 +1,7 @@
+=============================================
+The GGZ Gaming Zone - Console (Text) Frontend
+=============================================
+
 This core client is not only useful for environments where no
 graphical desktop is available, but does also serve as a reference
 implementation of the ggzcore functionality.
