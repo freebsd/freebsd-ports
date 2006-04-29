@@ -18,6 +18,7 @@ SRCS=	abshorz.c \
         fontdata.c \
         globals.c \
         grpsyl.c \
+	ifgram.c \
         lex.c \
         locvar.c \
         lyrics.c \
