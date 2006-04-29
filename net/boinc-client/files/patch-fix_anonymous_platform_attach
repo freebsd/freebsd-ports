@@ -1,33 +1,10 @@
---- client/cs_account.C.orig	Mon Oct  3 20:05:58 2005
-+++ client/cs_account.C	Wed Mar  8 18:41:37 2006
-@@ -346,7 +346,7 @@
- }
- 
- int CLIENT_STATE::add_project(const char* master_url, const char* _auth) {
--    char path[256], canonical_master_url[256], auth[256];
-+    char path[256], canonical_master_url[256], auth[256], dir[256];
-     PROJECT* project;
-     FILE* f;
-     int retval;
-@@ -366,7 +366,7 @@
-         return ERR_AUTHENTICATOR;
-     }
- 
--    // check if this project is already running
-+    // check if we're already attached to this project
+--- client/cs_account.C.orig	Fri Mar  3 22:34:00 2006
++++ client/cs_account.C	Wed Apr 12 10:58:15 2006
+@@ -403,7 +403,14 @@
      //
-     if (lookup_project(canonical_master_url)) {
-         msg_printf(0, MSG_ERROR, "Already attached to %s", canonical_master_url);
-@@ -392,8 +392,21 @@
-     if (retval) return retval;
- 
-     // remove any old files
-+    // (unless PROJECT/app_info.xml is found, so that
-+    // people using anonymous platform don't have to get apps again)
-     //
--    retval = remove_project_dir(*project);
-+    get_project_dir(project, dir);
-+    sprintf(path, "%s/%s", dir, APP_INFO_FILE_NAME);
+     get_project_dir(project, dir);
+     sprintf(path, "%s/%s", dir, APP_INFO_FILE_NAME);
+-    if (!boinc_file_exists(path)) {
 +    if (boinc_file_exists(path)) {
 +	project->anonymous_platform = true;
 +	f = fopen(path, "r");
@@ -36,8 +13,6 @@
 +	    fclose(f);
 +	}
 +    } else {
-+        retval = remove_project_dir(*project);
-+    }
+         retval = remove_project_dir(*project);
+     }
  
-     retval = make_project_dir(*project);
-     if (retval) return retval;
