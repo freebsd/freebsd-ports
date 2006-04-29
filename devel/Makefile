@@ -1742,6 +1742,7 @@
     SUBDIR += xxl
     SUBDIR += yasm
     SUBDIR += z80-asm
+    SUBDIR += ztcl
     SUBDIR += zthread
     SUBDIR += zziplib
 
