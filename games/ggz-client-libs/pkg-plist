@@ -4,6 +4,7 @@ etc/xdg/menus/applications-merged/ggz.merge.menu
 etc/xdg/menus/ggz.menu
 include/ggzcore.h
 include/ggzmod.h
+lib/ggz/ggzwrap
 lib/libggzcore.a
 lib/libggzcore.la
 lib/libggzcore.so
@@ -14,7 +15,9 @@ lib/libggzmod.so
 lib/libggzmod.so.4
 share/desktop-directories/ggz-games.directory
 share/desktop-directories/ggz.directory
-share/locale/de/LC_MESSAGES/ggz-config.mo
+%%NLS%%share/locale/de/LC_MESSAGES/ggz-config.mo
+%%NLS%%share/locale/de/LC_MESSAGES/ggzcore.mo
+@dirrm lib/ggz
 @dirrmtry share/desktop-directories
 @dirrmtry etc/xdg/menus/applications-merged
 @dirrmtry etc/xdg/menus
