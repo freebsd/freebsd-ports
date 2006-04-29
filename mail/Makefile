@@ -529,6 +529,7 @@
     SUBDIR += sylpheed-claws-fetchinfo
     SUBDIR += sylpheed-claws-mailmbox
     SUBDIR += sylpheed-claws-newmail
+    SUBDIR += sylpheed-claws-notification
     SUBDIR += sylpheed-claws-perl
     SUBDIR += sylpheed-claws-smime
     SUBDIR += sylpheed2
