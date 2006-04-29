@@ -9,7 +9,8 @@
 PORTNAME=	ragel
 PORTVERSION=	5.6
 CATEGORIES=	devel
-MASTER_SITES=	http://www.cs.queensu.ca/home/thurston/ragel/
+MASTER_SITES=	http://www.cs.queensu.ca/home/thurston/ragel/ \
+		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
 
 MAINTAINER=	shaun@inerd.com
 COMMENT=	Compile regular languages into executable C/C++ code
