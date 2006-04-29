@@ -6,18 +6,17 @@
 #
 
 PORTNAME=	libpcapnav
-PORTVERSION=	0.5
+PORTVERSION=	0.7
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	netdude
 
-MAINTAINER=	yb@bashibuzuk.net
+MAINTAINER=	wxs@csh.rit.edu
 COMMENT=	A libpcap wrapper library
 
 CONFIGURE_ARGS=	--disable-gtk-doc --with-html-dir=${DOCSDIR}
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
-USE_REINPLACE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|DOC_MODULE = pcapnav|DOC_MODULE =|' \
