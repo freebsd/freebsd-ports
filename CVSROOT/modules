@@ -14575,6 +14575,7 @@ zsh+euc_hack	ports/shells/zsh+euc_hack
 zsnes		ports/emulators/zsnes
 zssh		ports/comms/zssh
 zsync		ports/net/zsync
+ztcl		ports/devel/ztcl
 ztelnet		ports/net/ztelnet
 zthread		ports/devel/zthread
 ztrack		ports/games/ztrack
