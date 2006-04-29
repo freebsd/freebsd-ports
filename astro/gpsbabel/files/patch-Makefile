@@ -1,0 +1,13 @@
+--- work/gpsbabel-1.2.7/Makefile	Fri Aug 26 19:59:24 2005
++++ ../gpsbabel-1.2.7/Makefile	Fri Apr 28 20:41:30 2006
+@@ -27,8 +27,8 @@
+ OPTIMIZATION=-O $(EXTRA_OPTIMIZATION)
+ DEBUGGING=-g $(EXTRA_DEBUGGING)
+ # add -DDEBUG_MEM to turn on memory allocation logging
+-CFLAGS=$(EXTRA_CFLAGS) $(DEBUGGING) -Icoldsync $(INHIBIT_EXPAT) $(INHIBIT_USB) $(OPTIMIZATION)
+-INSTALL_TARGETDIR=/usr/local/
++CFLAGS=$(EXTRA_CFLAGS) $(DEBUGGING) -Icoldsync $(INHIBIT_EXPAT) $(INHIBIT_USB) $(OPTIMIZATION) -I$(PREFIX)/include -L$(PREFIX)/lib
++INSTALL_TARGETDIR=$(PREFIX)
+ 
+ FMTS=magproto.o gpx.o geo.o mapsend.o mapsource.o garmin_tables.o \
+ 	gpsutil.o pcx.o cetus.o copilot.o gpspilot.o magnav.o \
