@@ -131,10 +131,10 @@ WEB_USER?=	www
 WEB_GROUP?=	www
 LIBS_GROUP?=	wheel
 
-.if defined(UPGRADE_RT30) || defined(UPGRADE_RT32)
+.if defined(UPGRADE_RT30)
 UPGRADES=	3.1.0 3.1.15 3.1.17
 .endif
-.if defined(UPGRADE_RT32)
+.if defined(UPGRADE_RT30) || defined(UPGRADE_RT32)
 UPGRADES+=	3.3.0 3.3.11
 .endif
 
