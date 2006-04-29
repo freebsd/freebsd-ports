@@ -340,6 +340,7 @@
     SUBDIR += lexter
     SUBDIR += lgeneral
     SUBDIR += lgeneral-data
+    SUBDIR += lianliankan
     SUBDIR += libdungeonmaker
     SUBDIR += libfov
     SUBDIR += libggz
