@@ -12514,6 +12514,7 @@ sybtcl		ports/databases/sybtcl
 syck		ports/textproc/syck
 sylpheed	ports/mail/sylpheed
 sylpheed-claws	ports/mail/sylpheed-claws
+sylpheed-claws-cachesaver	ports/mail/sylpheed-claws-cachesaver
 sylpheed-claws-fetchinfo	ports/mail/sylpheed-claws-fetchinfo
 sylpheed-claws-mailmbox	ports/mail/sylpheed-claws-mailmbox
 sylpheed-claws-perl	ports/mail/sylpheed-claws-perl
