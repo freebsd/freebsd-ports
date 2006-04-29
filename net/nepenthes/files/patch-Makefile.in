@@ -5,7 +5,7 @@
  #tools
  EXTRA_DIST = configure.ac CHANGES doc/README doc/README.VFS doc/logo-shaded.svg doc/nepenthes.8 conf/nepenthes.conf.dist
 -docdir = $(prefix)/share/doc
-+docdir = $(prefix)/share/doc/nepenthes
++docdir = $(prefix)/share/nepenthes
  doc_DATA = doc/README doc/README.VFS doc/logo-shaded.svg
  
  #sysconf_DATA = conf/nepenthes.conf.dist
