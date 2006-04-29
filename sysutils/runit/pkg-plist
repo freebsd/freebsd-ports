@@ -10,13 +10,9 @@ sbin/runit
 sbin/runit-init
 sbin/runsv
 sbin/runsvchdir
-sbin/runsvctrl
 sbin/runsvdir
-sbin/runsvstat
 sbin/sv
 sbin/svlogd
-sbin/svwaitdown
-sbin/svwaitup
 sbin/utmpset
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
@@ -25,6 +21,7 @@ sbin/utmpset
 %%PORTDOCS%%%%DOCSDIR%%/benefits.html
 %%PORTDOCS%%%%DOCSDIR%%/chpst.8.html
 %%PORTDOCS%%%%DOCSDIR%%/dependencies.html
+%%PORTDOCS%%%%DOCSDIR%%/faq.html
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/install.html
 %%PORTDOCS%%%%DOCSDIR%%/replaceinit.html
