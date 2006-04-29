@@ -12524,6 +12524,7 @@ sylpheed-claws-newmail	ports/mail/sylpheed-claws-newmail
 sylpheed-claws-notification	ports/mail/sylpheed-claws-notification
 sylpheed-claws-perl	ports/mail/sylpheed-claws-perl
 sylpheed-claws-smime	ports/mail/sylpheed-claws-smime
+sylpheed-claws-vcalendar	ports/mail/sylpheed-claws-vcalendar
 sylpheed2	ports/mail/sylpheed2
 sylpheed2-devel	ports/mail/sylpheed2-devel
 symbion-sslproxy	ports/security/symbion-sslproxy
