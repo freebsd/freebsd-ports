@@ -64,6 +64,7 @@ share/applications/lincity-ng.desktop
 %%DATADIR%%/gui/roadup.xml
 %%DATADIR%%/gui/rocketup.xml
 %%DATADIR%%/gui/schoolup.xml
+%%DATADIR%%/gui/savegame.xml
 %%DATADIR%%/gui/shfire-oc.xml
 %%DATADIR%%/gui/shfire-uc.xml
 %%DATADIR%%/gui/solarpowerup.xml
@@ -92,6 +93,7 @@ share/applications/lincity-ng.desktop
 %%DATADIR%%/help/en/health.xml
 %%DATADIR%%/help/en/help.xml
 %%DATADIR%%/help/en/housing.xml
+%%DATADIR%%/help/en/index.xml
 %%DATADIR%%/help/en/industryh.xml
 %%DATADIR%%/help/en/industryl.xml
 %%DATADIR%%/help/en/jobs.xml
@@ -516,6 +518,9 @@ share/applications/lincity-ng.desktop
 %%DATADIR%%/images/mainmenu/buttons/quit-clicked.png
 %%DATADIR%%/images/mainmenu/buttons/quit-hover.png
 %%DATADIR%%/images/mainmenu/buttons/quit.png
+%%DATADIR%%/images/mainmenu/buttons/save.png
+%%DATADIR%%/images/mainmenu/buttons/save-hover.png
+%%DATADIR%%/images/mainmenu/buttons/save-clicked.png
 %%DATADIR%%/images/mainmenu/buttons/start-clicked.png
 %%DATADIR%%/images/mainmenu/buttons/start-hover.png
 %%DATADIR%%/images/mainmenu/buttons/start.png

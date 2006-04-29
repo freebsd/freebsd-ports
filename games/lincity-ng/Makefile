@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	lincity-ng
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	games
-MASTER_SITES=	http://download.berlios.de/lincity-ng/
+MASTER_SITES=	http://download2.berlios.de/lincity-ng/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	az@FreeBSD.org
