@@ -1,4 +1,5 @@
 bin/graphicboot
+bin/sendgbmsg
 @cwd /etc/Xboot
 Xserver
 Xresources
@@ -9,3 +10,7 @@ Xsplash.jpg
 @cwd /etc/rc.d
 startgraphicboot
 endgraphicboot
+MSG.NETWORKING
+MSG.LOGIN
+MSG.DAEMON
+MSG.SERVER
