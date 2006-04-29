@@ -4,10 +4,10 @@ etc/nepenthes/download-curl.conf
 etc/nepenthes/download-link.conf
 etc/nepenthes/download-nepenthes.conf
 etc/nepenthes/download-tftp.conf
+etc/nepenthes/geolocation-ip2location.conf
 etc/nepenthes/log-download.conf
 etc/nepenthes/log-irc.conf
 etc/nepenthes/log-surfnet.conf
-etc/nepenthes/geolocation-ip2location.conf
 etc/nepenthes/module-portwatch.conf
 etc/nepenthes/nepenthes.conf
 etc/nepenthes/nepenthes.conf.dist
@@ -23,9 +23,9 @@ etc/nepenthes/vuln-dcom.conf
 etc/nepenthes/vuln-iis.conf
 etc/nepenthes/vuln-kuang2.conf
 etc/nepenthes/vuln-lsass.conf
+etc/nepenthes/vuln-msdtc.conf
 etc/nepenthes/vuln-msmq.conf
 etc/nepenthes/vuln-mssql.conf
-etc/nepenthes/vuln-msdtc.conf
 etc/nepenthes/vuln-mydoom.conf
 etc/nepenthes/vuln-netbiosname.conf
 etc/nepenthes/vuln-netdde.conf
@@ -38,9 +38,6 @@ etc/nepenthes/vuln-upnp.conf
 etc/nepenthes/vuln-veritas.conf
 etc/nepenthes/vuln-wins.conf
 etc/nepenthes/x-2.conf
-lib/nepenthes/vulnmsdtc.so
-lib/nepenthes/vulnmsdtc.la
-lib/nepenthes/vulnmsdtc.a
 lib/nepenthes/dnsresolveadns.a
 lib/nepenthes/dnsresolveadns.la
 lib/nepenthes/dnsresolveadns.so
@@ -65,6 +62,9 @@ lib/nepenthes/downloadlink.so
 lib/nepenthes/downloadnepenthes.a
 lib/nepenthes/downloadnepenthes.la
 lib/nepenthes/downloadnepenthes.so
+lib/nepenthes/downloadrcp.a
+lib/nepenthes/downloadrcp.la
+lib/nepenthes/downloadrcp.so
 lib/nepenthes/downloadtftp.a
 lib/nepenthes/downloadtftp.la
 lib/nepenthes/downloadtftp.so
@@ -131,6 +131,9 @@ lib/nepenthes/vulnkuang2.so
 lib/nepenthes/vulnlsass.a
 lib/nepenthes/vulnlsass.la
 lib/nepenthes/vulnlsass.so
+lib/nepenthes/vulnmsdtc.a
+lib/nepenthes/vulnmsdtc.la
+lib/nepenthes/vulnmsdtc.so
 lib/nepenthes/vulnmsmq.a
 lib/nepenthes/vulnmsmq.la
 lib/nepenthes/vulnmsmq.so
@@ -194,11 +197,9 @@ lib/nepenthes/x7.so
 lib/nepenthes/x8.a
 lib/nepenthes/x8.la
 lib/nepenthes/x8.so
-share/doc/nepenthes/README
-share/doc/nepenthes/README.VFS
-share/doc/nepenthes/logo-shaded.svg
-@dirrm share/doc/nepenthes
+%%DATADIR%%/README
+%%DATADIR%%/README.VFS
+%%DATADIR%%/logo-shaded.svg
 @dirrm etc/nepenthes
 @dirrm lib/nepenthes
-@dirrm share/nepenthes
-@dirrm var/cache/nepenthes
+@dirrm %%DATADIR%%

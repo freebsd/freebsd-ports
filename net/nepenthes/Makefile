@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	nepenthes
-PORTVERSION=	0.1.5
-PORTREVISION=	1
+PORTVERSION=	0.1.6
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	nepenthes
@@ -29,16 +28,12 @@ DOCS=		README README.VFS logo-shaded.svg
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "i386"
-BROKEN=		"Does not compile on !i386"
+.if ${OSVERSION} < 500000
+BROKEN=		Does not compile
 .endif
 
-#post-install:
-#.if !defined(NOPORTDOCS)
-#	${MKDIR} ${DOCSDIR}
-#.for f in ${DOCS}
-#	${INSTALL_DATA} ${WRKSRC}/doc/${f} ${DOCSDIR}
-#.endfor
-#.endif
+.if ${ARCH} != "i386"
+BROKEN=		Does not compile on !i386
+.endif
 
 .include <bsd.port.post.mk>
