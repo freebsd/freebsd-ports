@@ -5054,6 +5054,7 @@ kdiff3		ports/textproc/kdiff3
 kdirstat	ports/sysutils/kdirstat
 kdissert	ports/deskutils/kdissert
 kdmtheme	ports/x11-themes/kdmtheme
+kedpm		ports/security/kedpm
 keepalived	ports/net/keepalived
 keitairc	ports/irc/keitairc
 kenny		ports/misc/kenny
