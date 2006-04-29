@@ -1,0 +1,27 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: scand
+# REQUIRE: DAEMON
+# KEYWORD: FreeBSD
+#
+# Add the following line to /etc/rc.conf to enable scand:
+#
+# scand_enable="YES"
+#
+
+. %%RC_SUBR%%
+
+name=scand
+rcvar=${name}_enable
+
+load_rc_config $name
+
+: ${scand_enable="NO"}
+: ${scand_flags="-p 9999 -B /var/net/log/block -o '5 5 3' -W '140 140 140'"}
+
+command="/usr/local/bin/scand"
+command_args=" > /dev/null"
+
+run_rc_command "$1"
