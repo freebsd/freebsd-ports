@@ -523,6 +523,7 @@
     SUBDIR += swaks
     SUBDIR += sylpheed
     SUBDIR += sylpheed-claws
+    SUBDIR += sylpheed-claws-mailmbox
     SUBDIR += sylpheed-claws-perl
     SUBDIR += sylpheed-claws-smime
     SUBDIR += sylpheed2
