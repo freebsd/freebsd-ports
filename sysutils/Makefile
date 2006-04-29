@@ -224,6 +224,7 @@
     SUBDIR += grub
     SUBDIR += gstopd
     SUBDIR += gstreamer-plugins-cdio
+    SUBDIR += gstreamer-plugins-cdio80
     SUBDIR += gtk-imonc
     SUBDIR += gtk-send-pr
     SUBDIR += gtoaster

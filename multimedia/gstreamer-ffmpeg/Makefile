@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gstreamer
-PORTVERSION=	0.8.7
-PORTREVISION=	2
+PORTVERSION=	0.10.1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst-ffmpeg/
 PKGNAMESUFFIX=	-ffmpeg
@@ -18,7 +17,6 @@ COMMENT=	GStreamer plug-in for manipulating MPEG video streams
 
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget
 USE_GSTREAMER=	yes
@@ -44,10 +42,5 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|make|${GMAKE}|' \
 		${WRKSRC}/gst-libs/ext/Makefile.in
-
-post-install:
-# register plugins
-	-@${X11BASE}/bin/gst-register-${GST_VERSION} \
-		--gst-registry=${PREFIX}/share/gnome/cache/gstreamer-${GST_VERSION}/registry.xml 2>/dev/null
 
 .include <bsd.port.post.mk>

@@ -3,12 +3,11 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/multimedia/gstreamer-plugins-core/Makefile,v 1.8 2005/07/13 06:48:22 ahze Exp $
-#
+#    $MCom: ports/multimedia/gstreamer-plugins-core80/Makefile,v 1.4 2006/01/24 18:49:48 marcus Exp $
 
-PORTNAME=	gstreamer-plugins-core
-PORTVERSION=	0.8
-PORTREVISION=	6
+PORTNAME=	gstreamer-plugins-core80
+PORTVERSION=	0.8.11
+PORTREVISION=	7
 CATEGORIES=	multimedia audio
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -20,7 +19,7 @@ COMMENT=	Core set of typical audio and video gstreamer-plugins
 USE_X_PREFIX=	yes
 NO_BUILD=	yes
 
-GST_DIR=	lib/gstreamer-${PORTVERSION}
+GST_DIR=	lib/gstreamer-${GST80_VERSION}
 PLIST_FILES=	${GST_DIR}/.gstreamer-plugins-core.keep
 
 WANT_GSTREAMER=	yes
@@ -28,27 +27,27 @@ WANT_GSTREAMER=	yes
 .include <bsd.port.pre.mk>
 
 # Audio plugins
-USE_GSTREAMER+=	mad vorbis
+USE_GSTREAMER80+=	mad vorbis
 
 # Graphics plugins
-USE_GSTREAMER+=	libpng
+USE_GSTREAMER80+=	libpng
 
 # Misc plugins
-USE_GSTREAMER+=	pango
+USE_GSTREAMER80+=	pango
 
 # Multimedia plugins
-USE_GSTREAMER+=	ffmpeg
+USE_GSTREAMER80+=	ffmpeg
 
 .if ${OSVERSION} > 500035 || defined(WITH_XVID)
-USE_GSTREAMER+=	xvid
+USE_GSTREAMER80+=	xvid
 .endif
 
 .if !defined(WITHOUT_DVD)
 # Audio plugins
-USE_GSTREAMER+=	a52dec
+USE_GSTREAMER80+=	a52dec
 
 # Multimedia plugins
-USE_GSTREAMER+=	dts dvd
+USE_GSTREAMER80+=	dts dvd
 .endif
 
 pre-everything::

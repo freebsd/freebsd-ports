@@ -3,11 +3,11 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/multimedia/gstreamer-plugins-all/Makefile,v 1.3 2005/10/22 06:20:02 ahze Exp $
+#    $MCom: ports/multimedia/gstreamer-plugins-all/Makefile,v 1.8 2006/01/25 18:54:32 ahze Exp $
 #
 
 PORTNAME=	gstreamer-plugins-all
-PORTVERSION=	1.0.${GST_VERSION}.${GST_SHLIB_VERSION}
+PORTVERSION=	1.2.${GST_VERSION}.${GST_SHLIB_VERSION}
 CATEGORIES=	multimedia
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -27,22 +27,10 @@ OPTIONS=	# Hacky.. but it works the way it is set up...
 WITHOUT_FAAC=	yes	# Mp4 Dolby license , no package
 WITHOUT_LAME=	yes	# MP3 License , no package
 .endif
+WITHOUT_LADSPA=	yes	# Broken
 WITHOUT_MPEG2ENC=yes	# Broken from updated mjpegtools
 .if ${OSVERSION} < 500000
 WITHOUT_LIBVISUAL=yes	# Broken on 4.x
-WITHOUT_POLYPAUDIO=yes	# Broken on 4.x
-.endif
-# Shout & Shout2 Conflict
-.if !defined(WITHOUT_SHOUT) && !defined(WITHOUT_SHOUT2)
-WITHOUT_SHOUT=	yes
-.endif
-# Jpeg & Jpeg-mmx Conflict
-.if ${ARCH}!="i386"
-WITHOUT_JPEG-MMX=	yes
-.else
-.if !defined(WITHOUT_JPEG) && !defined(WITHOUT_JPEG-MMX)
-WITHOUT_JPEG-MMX=	yes
-.endif
 .endif
 
 # Remove core, yes

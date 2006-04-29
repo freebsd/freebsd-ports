@@ -3,15 +3,16 @@
 # Whom:				Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
+#    $MCom: ports/audio/gstreamer-plugins-esound80/Makefile,v 1.2 2006/02/23 18:05:30 marcus Exp $
 #
 
 CATEGORIES=	audio
-PORTREVISION=	1
+PORTREVISION=	2
 
 COMMENT=	Gstreamer enlightenment sound library plugin
 
 GST_PLUGIN=	esound
 
-MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins
+MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins80
 
 .include "${MASTERDIR}/Makefile"

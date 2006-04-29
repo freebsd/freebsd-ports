@@ -3,15 +3,16 @@
 # Whom:				Koop Mast <kwm@FreeBSD.org>
 #
 # $FreeBSD$
+#    $MCom: ports/sysutils/gstreamer-plugins-cdio80/Makefile,v 1.2 2006/02/25 00:19:56 marcus Exp $
 #
 
 CATEGORIES=	sysutils
-PORTREVISION=	1
+PORTREVISION=	2
 
 COMMENT=	Gstreamer compact disc input and control library
 
 GST_PLUGIN=	cdio
 
-MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins
+MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins80
 
 .include "${MASTERDIR}/Makefile"

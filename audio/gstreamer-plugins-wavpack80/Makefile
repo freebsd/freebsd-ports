@@ -3,13 +3,14 @@
 # Whom:				Koop Mast <kwm@FreeBSD.org>
 #
 # $FreeBSD$
+#    $MCom: ports/audio/gstreamer-plugins-wavpack80/Makefile,v 1.2 2006/02/23 18:05:35 marcus Exp $
 #
 
 CATEGORIES=	audio
-PORTREVISION=	1
+PORTREVISION=	2
 
 GST_PLUGIN=	wavpack
 
-MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins
+MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins80
 
 .include "${MASTERDIR}/Makefile"

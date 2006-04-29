@@ -7,20 +7,21 @@
 
 PORTNAME=	quodlibet
 PORTVERSION=	0.17.1
+PORTREVISION=	1
 CATEGORIES=	multimedia audio python gnome
 MASTER_SITES=	http://www.sacredchao.net/~piman/software/
 
 MAINTAINER=	changbom.yoon@gmail.com
 COMMENT=	A GTK+-based audio player written in Python
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/gst/__init__.py:${PORTSDIR}/multimedia/py-gstreamer
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gst/__init__.py:${PORTSDIR}/multimedia/py-gstreamer
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/gst/__init__.py:${PORTSDIR}/multimedia/py-gstreamer80
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gst/__init__.py:${PORTSDIR}/multimedia/py-gstreamer80
 
 USE_PYTHON=	2.3+
 USE_GNOME=	pygtk2
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-USE_GSTREAMER=	gconf
+USE_GSTREAMER80=	gconf
 
 MAN1=		exfalso.1 quodlibet.1
 
@@ -33,29 +34,29 @@ WANT_QUODLIBET_${format:U}=	yes
 .if defined(WANT_QUODLIBET_OGG)
 BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/ogg/_ogg.so:${PORTSDIR}/audio/py-ogg
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/ogg/_ogg.so:${PORTSDIR}/audio/py-ogg
-USE_GSTREAMER+=	ogg
+USE_GSTREAMER80+=	ogg
 .endif
 
 .if defined(WANT_QUODLIBET_VORBIS)
 BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/ogg/vorbis.so:${PORTSDIR}/audio/py-vorbis
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/ogg/vorbis.so:${PORTSDIR}/audio/py-vorbis
-USE_GSTREAMER+=	vorbis
+USE_GSTREAMER80+=	vorbis
 .endif
 
 .if defined(WANT_QUODLIBET_MAD)
 BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/madmodule.so:${PORTSDIR}/audio/py-mad
 RUN_DEPNDS+=	${PYTHON_SITELIBDIR}/madmodule.so:${PORTSDIR}/audio/py-mad
-USE_GSTREAMER+=	mad
+USE_GSTREAMER80+=	mad
 .endif
 
 .if defined(WANT_QUODLIBET_FLAC)
-USE_GSTREAMER+=	flac
+USE_GSTREAMER80+=	flac
 .endif
 
 .if defined(WANT_QUODLIBET_REMOTE)
 BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/feedparser.py:${PORTSDIR}/textproc/py-feedparser
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/feedparser.py:${PORTSDIR}/textproc/py-feedparser
-USE_GSTREAMER+=	gnomevfs
+USE_GSTREAMER80+=	gnomevfs
 .endif
 
 .if defined(WITH_EXTENSIONS)

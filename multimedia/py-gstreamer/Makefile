@@ -6,12 +6,10 @@
 #
 
 PORTNAME=	gstreamer
-PORTVERSION=	0.8.2
-PORTREVISION=	2
+PORTVERSION=	0.10.3
+PORTREVISION=	1
 CATEGORIES=	multimedia python gnome
-MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst-python/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	kwm
+MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst-python/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	gst-python-${PORTVERSION}
 
@@ -29,7 +27,6 @@ USE_GNOME=	pygtk2 \
 		pkgconfig
 USE_GSTREAMER=	yes
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
 		LDFLAGS="-L${X11BASE}"
 

@@ -3,15 +3,16 @@
 # Whom:				Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
+#    $MCom: ports/devel/gstreamer-plugins-sdl80/Makefile,v 1.2 2006/02/24 18:24:52 marcus Exp $
 #
 
 CATEGORIES=	devel
-PORTREVISION=	1
+PORTREVISION=	2
 
 COMMENT=	Gstreamer SDL plugin
 
 GST_PLUGIN=	sdl
 
-MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins
+MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins80
 
 .include "${MASTERDIR}/Makefile"

@@ -168,6 +168,7 @@
     SUBDIR += gsk
     SUBDIR += gspoof
     SUBDIR += gstreamer-plugins-libmms
+    SUBDIR += gstreamer-plugins-libmms80
     SUBDIR += gtic
     SUBDIR += gutenfetch
     SUBDIR += happystats

@@ -3,23 +3,24 @@
 # Whom:			Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 #
 # $FreeBSD$
+#    $MCom: ports/multimedia/gstreamer-plugins80/Makefile,v 1.60 2006/04/23 22:55:30 mezz Exp $
 #
 
 PORTNAME=	gstreamer
-PORTVERSION=	0.8.11
-PORTREVISION?=	2
+PORTVERSION=	0.8.12
+PORTREVISION?=	1
 CATEGORIES?=	multimedia audio
 MASTER_SITES=	${MASTER_SITE_GNOME} \
 		http://gstreamer.freedesktop.org/src/gst-plugins/
 MASTER_SITE_SUBDIR=	sources/gst-plugins/0.8
-PKGNAMESUFFIX=	-plugins${GST_PLUGIN_SUFFIX}
+PKGNAMESUFFIX=	-plugins${GST_PLUGIN_SUFFIX}80
 DISTNAME=	gst-plugins-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT?=	GStreamer written collection of plugins handling several media types
 
-LIB_DEPENDS+=	gstreamer-0.8.5:${PORTSDIR}/multimedia/gstreamer \
+LIB_DEPENDS+=	gstreamer-0.8.5:${PORTSDIR}/multimedia/gstreamer80 \
 		popt.0:${PORTSDIR}/devel/popt
 
 SHLIB_VERSION=	1
@@ -29,11 +30,11 @@ WANT_GSTREAMER=	yes
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_GETTEXT=	yes
 USE_GNOME+=	gnomehack \
 		gnomeprefix \
 		gnometarget \
 		pkgconfig
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 GST_PLUGIN?=	base
 

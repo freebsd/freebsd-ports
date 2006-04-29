@@ -24,6 +24,6 @@ share/gst-python/examples/vorbisplay.py
 @dirrm share/gst-python/examples
 @dirrm share/gst-python/2.0/defs
 @dirrm share/gst-python/2.0
-@dirrm share/gst-python
+@dirrmtry share/gst-python
 @dirrm %%DOCSDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/gst

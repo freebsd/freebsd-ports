@@ -6,7 +6,7 @@
 
 PORTNAME=		istanbul
 PORTVERSION=		0.1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=		multimedia
 MASTER_SITES=		http://live.hujjat.org/
 
@@ -14,17 +14,16 @@ MAINTAINER=		dominique.goncalves@gmail.com
 COMMENT=		Istanbul is a desktop session recorder for the Free Desktop
 
 RUN_DEPENDS=		icecast:${PORTSDIR}/audio/icecast2 \
-			${PYTHON_SITELIBDIR}/gst/__init__.py:${PORTSDIR}/multimedia/py-gstreamer
-BUILD_DEPENDS=		${PYTHON_SITELIBDIR}/gst/__init__.py:${PORTSDIR}/multimedia/py-gstreamer
+			${PYTHON_SITELIBDIR}/gst/__init__.py:${PORTSDIR}/multimedia/py-gstreamer80
+BUILD_DEPENDS=		${PYTHON_SITELIBDIR}/gst/__init__.py:${PORTSDIR}/multimedia/py-gstreamer80
 
 USE_GNOME=		pygtk2
 USE_GMAKE=		yes
-GNU_CONFIGURE=	yes
+GNU_CONFIGURE=		yes
 USE_PYTHON=		2.4+
 USE_BZIP2=		yes
 USE_X_PREFIX=		yes
-USE_GSTREAMER=		shout2 theora ogg
-USE_REINPLACE=		yes
+USE_GSTREAMER80=		shout2 theora ogg
 
 .include <bsd.port.pre.mk>
 

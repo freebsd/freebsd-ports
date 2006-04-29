@@ -24,7 +24,7 @@ GNU_CONFIGURE=		yes
 USE_GMAKE=		yes
 INSTALLS_OMF=		yes
 USE_GCC=		3.4+
-USE_GSTREAMER=		vorbis mad flac
+USE_GSTREAMER80=		vorbis mad flac
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 

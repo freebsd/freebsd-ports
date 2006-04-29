@@ -3,12 +3,11 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/multimedia/gstreamer-plugins-core/Makefile,v 1.8 2005/07/13 06:48:22 ahze Exp $
-#
+#    $MCom: ports/multimedia/gstreamer-plugins-core/Makefile,v 1.14 2006/01/21 21:22:18 ahze Exp $
 
 PORTNAME=	gstreamer-plugins-core
-PORTVERSION=	0.8
-PORTREVISION=	6
+PORTVERSION=	0.10
+PORTREVISION=	4
 CATEGORIES=	multimedia audio
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -28,7 +27,7 @@ WANT_GSTREAMER=	yes
 .include <bsd.port.pre.mk>
 
 # Audio plugins
-USE_GSTREAMER+=	mad vorbis
+USE_GSTREAMER+=	mad ogg vorbis
 
 # Graphics plugins
 USE_GSTREAMER+=	libpng
@@ -37,28 +36,17 @@ USE_GSTREAMER+=	libpng
 USE_GSTREAMER+=	pango
 
 # Multimedia plugins
-USE_GSTREAMER+=	ffmpeg
-
-.if ${OSVERSION} > 500035 || defined(WITH_XVID)
-USE_GSTREAMER+=	xvid
-.endif
+USE_GSTREAMER+=	ffmpeg good theora
 
 .if !defined(WITHOUT_DVD)
 # Audio plugins
 USE_GSTREAMER+=	a52dec
-
-# Multimedia plugins
-USE_GSTREAMER+=	dts dvd
 .endif
 
 pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} " Disable DVD plugins by defining WITHOUT_DVD"
 	@${ECHO_MSG} ""
-.if ${OSVERSION} < 500035 && !defined(WITH_XVID)
-	@${ECHO_MSG} " Enable XVID plugins by defining WITH_XVID"
-	@${ECHO_MSG} ""
-.endif
 
 do-install:
 	if [ ! -d ${PREFIX}/${GST_DIR} ]; then \

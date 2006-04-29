@@ -3,7 +3,7 @@
 # Whom:			Michael Johnson <ahze@ahze.net>
 #
 # $FreeBSD$
-#
+#    $MCom: ports/audio/tunesbrowser/Makefile,v 1.7 2006/04/29 10:51:51 pav Exp $
 
 PORTNAME=	tunesbrowser
 PORTVERSION=	0.3.0
@@ -20,7 +20,7 @@ USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomeprefix gnometarget libglade2
 WANT_GNOME=	yes
-USE_GSTREAMER=	mad
+USE_GSTREAMER80=	mad
 GNU_CONFIGURE=	yes
 
 MAN1=		tunesbrowser.1
@@ -30,7 +30,7 @@ OPTIONS=	FAAD "Enable AAC/MP4 Audio output" Off
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_FAAD)
-USE_GSTREAMER+=	faad
+USE_GSTREAMER80+=	faad
 .endif
 
 .if ${HAVE_GNOME:Mlibgnome}!=""

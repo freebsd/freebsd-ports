@@ -3,15 +3,16 @@
 # Whom:				Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
+#    $MCom: ports/multimedia/gstreamer-plugins-dv80/Makefile,v 1.2 2006/01/25 02:18:17 ahze Exp $
 #
 
 CATEGORIES=	multimedia
-PORTREVISION=	1
+PORTREVISION=	2
 
 COMMENT=	Gstreamer dv plugin
 
 GST_PLUGIN=	dv
 
-MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins
+MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins80
 
 .include "${MASTERDIR}/Makefile"

@@ -1,8 +1,5 @@
 bin/monkey-bubble
 bin/monkey-srv
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/monkey-bubble.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/monkey-bubble.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/monkey-bubble.schemas > /dev/null || /usr/bin/true
 share/gnome/applications/monkey-bubble.desktop
 share/gnome/help/monkey-bubble/C/empty.xml
 share/gnome/help/monkey-bubble/C/monkey-bubble.xml

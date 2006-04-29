@@ -6,7 +6,7 @@
 
 PORTNAME=	marlin
 PORTVERSION=	0.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,7 +20,7 @@ LIB_DEPENDS=	musicbrainz.4:${PORTSDIR}/audio/libmusicbrainz \
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack gnometarget intlhack libgnomeui nautiluscdburner
-USE_GSTREAMER=	flac gconf mad vorbis
+USE_GSTREAMER80=	flac gconf mad vorbis
 INSTALLS_OMF=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes

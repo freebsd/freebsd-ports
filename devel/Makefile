@@ -356,8 +356,11 @@
     SUBDIR += gputils
     SUBDIR += gsoap
     SUBDIR += gstreamer-plugins-gconf
+    SUBDIR += gstreamer-plugins-gconf80
     SUBDIR += gstreamer-plugins-gnomevfs
+    SUBDIR += gstreamer-plugins-gnomevfs80
     SUBDIR += gstreamer-plugins-sdl
+    SUBDIR += gstreamer-plugins-sdl80
     SUBDIR += gtgt
     SUBDIR += gtkmozedit
     SUBDIR += gtranslator
