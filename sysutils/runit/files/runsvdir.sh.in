@@ -35,7 +35,7 @@ runsvdir_start()
 
 runsvdir_post_stop()
 {
-	%%PREFIX%%/sbin/runsvctrl exit ${runsvdir_path}/* 
+	%%PREFIX%%/sbin/sv exit ${runsvdir_path}/* 
 }
 
 # read configuration and set defaults
