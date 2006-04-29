@@ -9,7 +9,7 @@ PORTNAME=	tunesbrowser
 PORTVERSION=	0.3.0
 PORTREVISION=	2
 CATEGORIES=	audio
-MASTER_SITES=	http://craz.net/programs/itunes/files/
+MASTER_SITES=	http://crazney.net/programs/itunes/files/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple iTunes-like music player
