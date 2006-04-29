@@ -88,6 +88,7 @@
     SUBDIR += gxset
     SUBDIR += idesk
     SUBDIR += imwheel
+    SUBDIR += ipager
     SUBDIR += kb2mb2
     SUBDIR += kde-lite
     SUBDIR += kde3
