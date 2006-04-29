@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	qemu
-PORTVERSION=	0.8.0s.20060414
-PORTREVISION=	0
+PORTVERSION=	0.8.0s.20060426
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.qemu.org/:release \
 		http://people.fruitsalad.org/nox/qemu/:snapshot \
@@ -15,7 +14,7 @@ MASTER_SITES=	http://www.qemu.org/:release \
 		http://qemu.dad-answers.com/download/qemu/:snapshot \
 		http://people.brandeis.edu/~jcoiner/qemu_idedma/:idedma \
 		http://people.freebsd.org/~maho/qemu/:misc
-DISTNAME=	${PORTNAME}-snapshot-2006-04-14_23
+DISTNAME=	${PORTNAME}-snapshot-2006-04-26_23
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:snapshot
 .if defined (WITH_HACKS_CIRRUS) || defined (WITH_HACKS)
 DISTFILES+=	patch3_cirrus:misc
