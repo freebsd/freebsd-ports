@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	libRmath
-PORTVERSION=	2.2.1
+PORTVERSION=	2.3.0
 CATEGORIES=	math
 MASTER_SITES=	http://cran.r-project.org/src/base/R-2/ \
 		ftp://cran.r-project.org/pub/R/src/base/R-2/ \
@@ -34,8 +34,8 @@ COMMENT=	The standalone math library from R
 
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
-
-CONFIGURE_ARGS+=	--without-x
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS+=--without-x
 
 PLIST_FILES=	include/Rmath.h lib/libRmath.a lib/libRmath.so lib/libRmath.so.0
 
