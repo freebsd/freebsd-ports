@@ -16,7 +16,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 		wordbooks-utf8.tar.gz
 
-MAINTAINER=	hamigua@cuc.cn
+MAINTAINER=	liu_yinghong@yahoo.com.cn
 COMMENT=	A tool for the Chinese people to study foreign language
 
 GNU_CONFIGURE=	yes

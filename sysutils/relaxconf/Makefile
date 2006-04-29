@@ -11,7 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	relaxbsd
 
-MAINTAINER=	relaxbsd@gmail.com
+MAINTAINER=	liu_yinghong@yahoo.com.cn
 COMMENT=	A set of text menu based utilities for configuring RelaxBSD LiveCD
 
 BUILD_DEPENDS=	cdialog:${PORTSDIR}/devel/cdialog

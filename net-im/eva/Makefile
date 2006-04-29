@@ -12,7 +12,7 @@ CATEGORIES=	net-im kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	evaq
 
-MAINTAINER=	hamigua@cuc.cn
+MAINTAINER=	liu_yinghong@yahoo.com.cn
 COMMENT=	QQ IM Client for KDE3
 
 USE_KDELIBS_VER=3
