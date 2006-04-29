@@ -9,7 +9,8 @@ PORTNAME=	noip
 PORTVERSION=	2.1.1
 PORTREVISION=	1
 CATEGORIES=	dns
-MASTER_SITES=	http://www.no-ip.com/client/linux/
+MASTER_SITES=	http://www.no-ip.com/client/linux/ \
+		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	No-IP.com's dynamic DNS update client
