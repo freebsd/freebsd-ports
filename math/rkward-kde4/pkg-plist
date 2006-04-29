@@ -1,0 +1,157 @@
+bin/rkward
+bin/rkward.bin
+share/applnk/Applications/rkward.desktop
+share/apps/katepart/syntax/rkward.xml
+share/apps/rkward/00means/00ttests/00independent_samples/code.php
+share/apps/rkward/00means/00ttests/00independent_samples/description.xml
+share/apps/rkward/00saveload/load/load/code.php
+share/apps/rkward/00saveload/load/load/description.xml
+share/apps/rkward/00saveload/load/readtable/code.php
+share/apps/rkward/00saveload/load/readtable/description.xml
+share/apps/rkward/00saveload/load/source/code.php
+share/apps/rkward/00saveload/load/source/description.xml
+share/apps/rkward/00saveload/save/save/code.php
+share/apps/rkward/00saveload/save/save/description.xml
+share/apps/rkward/00saveload/save/skeleton/code.php
+share/apps/rkward/00saveload/save/skeleton/description.xml
+share/apps/rkward/00saveload/save/write/code.php
+share/apps/rkward/00saveload/save/write/description.xml
+share/apps/rkward/02plots/scatterplot/code.php
+share/apps/rkward/02plots/scatterplot/description.xml
+share/apps/rkward/20descriptive/code.php
+share/apps/rkward/20descriptive/description.xml
+share/apps/rkward/all.pluginmap
+share/apps/rkward/corr_matrix/code.php
+share/apps/rkward/corr_matrix/description.xml
+share/apps/rkward/detachedwindowcontainer.rc
+share/apps/rkward/distributions.pluginmap
+share/apps/rkward/distributions/binomial_probabilities.php
+share/apps/rkward/distributions/binomial_probabilities.xml
+share/apps/rkward/distributions/binomial_quantiles.php
+share/apps/rkward/distributions/binomial_quantiles.xml
+share/apps/rkward/distributions/binomial_tail_probabilities.php
+share/apps/rkward/distributions/binomial_tail_probabilities.xml
+share/apps/rkward/distributions/chi_squared_probabilities.php
+share/apps/rkward/distributions/chi_squared_probabilities.xml
+share/apps/rkward/distributions/chi_squared_quantiles.php
+share/apps/rkward/distributions/chi_squared_quantiles.xml
+share/apps/rkward/distributions/f_probabilities.php
+share/apps/rkward/distributions/f_probabilities.xml
+share/apps/rkward/distributions/f_quantiles.php
+share/apps/rkward/distributions/f_quantiles.xml
+share/apps/rkward/distributions/normal_probabilities.php
+share/apps/rkward/distributions/normal_probabilities.xml
+share/apps/rkward/distributions/normal_quantiles.php
+share/apps/rkward/distributions/normal_quantiles.xml
+share/apps/rkward/distributions/plot_binomial_distribution.php
+share/apps/rkward/distributions/plot_binomial_distribution.xml
+share/apps/rkward/distributions/plot_chi_squared_distribution.php
+share/apps/rkward/distributions/plot_chi_squared_distribution.xml
+share/apps/rkward/distributions/plot_f_distribution.php
+share/apps/rkward/distributions/plot_f_distribution.xml
+share/apps/rkward/distributions/plot_normal_distribution.php
+share/apps/rkward/distributions/plot_normal_distribution.xml
+share/apps/rkward/distributions/plot_poisson_distribution.php
+share/apps/rkward/distributions/plot_poisson_distribution.xml
+share/apps/rkward/distributions/plot_t_distribution.php
+share/apps/rkward/distributions/plot_t_distribution.xml
+share/apps/rkward/distributions/poisson_probabilities.php
+share/apps/rkward/distributions/poisson_probabilities.xml
+share/apps/rkward/distributions/t_probabilities.php
+share/apps/rkward/distributions/t_probabilities.xml
+share/apps/rkward/distributions/t_quantiles.php
+share/apps/rkward/distributions/t_quantiles.xml
+share/apps/rkward/icons/rkward_logo.png
+share/apps/rkward/phpfiles/common.php
+share/apps/rkward/plots.pluginmap
+share/apps/rkward/plots/box_plot.php
+share/apps/rkward/plots/box_plot.xml
+share/apps/rkward/plots/histogram.php
+share/apps/rkward/plots/histogram.xml
+share/apps/rkward/plots/plot_options.php
+share/apps/rkward/plots/plot_options.xml
+share/apps/rkward/rkcommandeditorwindowpart.rc
+share/apps/rkward/rkconsolepart.rc
+share/apps/rkward/rkeditordataframepart.rc
+share/apps/rkward/rkhelpwindow.rc
+share/apps/rkward/rkoutputwindow.rc
+share/apps/rkward/rkwardui.rc
+share/apps/rkward/simple_anova/code.php
+share/apps/rkward/simple_anova/description.xml
+share/apps/rkward/uni1.2/code.php
+share/apps/rkward/uni1.2/description.xml
+share/apps/rkward/writetable/code.php
+share/apps/rkward/writetable/description.xml
+%%PORTDOCS%%%%DOCSDIR%%/common
+%%PORTDOCS%%%%DOCSDIR%%/index.cache.bz2
+%%PORTDOCS%%%%DOCSDIR%%/index.docbook
+%%PORTDOCS%%%%DOCSDIR%%/menu_hierarchy_example.png
+%%PORTDOCS%%%%DOCSDIR%%/t_test_plugin_example.png
+%%PORTDOCS%%%%DOCSDIR%%/writing_plugins_introduction.docbook
+share/icons/crystalsvg/128x128/apps/rkward.png
+share/icons/crystalsvg/16x16/apps/rkward.png
+share/icons/crystalsvg/22x22/apps/rkward.png
+share/icons/crystalsvg/32x32/apps/rkward.png
+share/icons/crystalsvg/48x48/apps/rkward.png
+share/icons/crystalsvg/64x64/apps/rkward.png
+share/icons/locolor/16x16/apps/rkward.png
+share/icons/locolor/32x32/apps/rkward.png
+%%NLS%%share/locale/de/LC_MESSAGES/rkward.mo
+%%NLS%%share/locale/es/LC_MESSAGES/rkward.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/rkward.mo
+%%NLS%%share/locale/it/LC_MESSAGES/rkward.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/rkward.mo
+%%NLS%%@dirrmtry share/locale/pl/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/pl
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm share/apps/rkward/writetable
+@dirrm share/apps/rkward/uni1.2
+@dirrm share/apps/rkward/simple_anova
+@dirrm share/apps/rkward/plots
+@dirrm share/apps/rkward/phpfiles
+@dirrm share/apps/rkward/icons
+@dirrm share/apps/rkward/distributions
+@dirrm share/apps/rkward/corr_matrix
+@dirrm share/apps/rkward/20descriptive
+@dirrm share/apps/rkward/02plots/scatterplot
+@dirrm share/apps/rkward/02plots
+@dirrm share/apps/rkward/00saveload/save/write
+@dirrm share/apps/rkward/00saveload/save/skeleton
+@dirrm share/apps/rkward/00saveload/save/save
+@dirrm share/apps/rkward/00saveload/save
+@dirrm share/apps/rkward/00saveload/load/source
+@dirrm share/apps/rkward/00saveload/load/readtable
+@dirrm share/apps/rkward/00saveload/load/load
+@dirrm share/apps/rkward/00saveload/load
+@dirrm share/apps/rkward/00saveload
+@dirrm share/apps/rkward/00means/00ttests/00independent_samples
+@dirrm share/apps/rkward/00means/00ttests
+@dirrm share/apps/rkward/00means
+@dirrm share/apps/rkward
+@dirrmtry share/apps/katepart/syntax
+@dirrmtry share/apps/katepart
+@cwd %%LOCALBASE%%
+lib/R/library/rkward/DESCRIPTION
+lib/R/library/rkward/Meta/package.rds
+lib/R/library/rkward/Meta/Rd.rds
+lib/R/library/rkward/Meta/hsearch.rds
+lib/R/library/rkward/libs/rkward.so
+lib/R/library/rkward/R/rkward
+lib/R/library/rkward/man/rkward.Rd.gz
+lib/R/library/rkward/help/AnIndex
+lib/R/library/rkward/help/public
+lib/R/library/rkward/html/00Index.html
+lib/R/library/rkward/html/public.html
+lib/R/library/rkward/latex/public.tex
+lib/R/library/rkward/R-ex/public.R
+lib/R/library/rkward/CONTENTS
+lib/R/library/rkward/INDEX
+@dirrm lib/R/library/rkward/man
+@dirrm lib/R/library/rkward/libs
+@dirrm lib/R/library/rkward/latex
+@dirrm lib/R/library/rkward/html
+@dirrm lib/R/library/rkward/help
+@dirrm lib/R/library/rkward/R-ex
+@dirrm lib/R/library/rkward/R
+@dirrm lib/R/library/rkward/Meta
+@dirrm lib/R/library/rkward
