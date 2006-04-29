@@ -2429,6 +2429,7 @@ firestring	ports/misc/firestring
 firetalk	ports/net-im/firetalk
 firewalk	ports/security/firewalk
 fisg		ports/irc/fisg
+fishsupper	ports/games/fishsupper
 fist		ports/textproc/fist
 fityk		ports/math/fityk
 fix-mime-charset	ports/converters/fix-mime-charset
