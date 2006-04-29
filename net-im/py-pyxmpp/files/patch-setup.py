@@ -1,12 +1,13 @@
---- setup.py.orig	Fri Mar  4 16:06:45 2005
-+++ setup.py	Fri Mar  4 16:07:37 2005
-@@ -32,7 +32,8 @@
-             'ext/xmlextra.c',
-             ],
-             libraries =     ['xml2'],
--            include_dirs =  ['libxml2addon','/usr/include/libxml2','/usr/local/include/libxml2'],
-+            include_dirs =  ['libxml2addon','/usr/include/libxml2','/usr/local/include/libxml2','/usr/local/include'],
-+            library_dirs = ['/usr/local/lib'],
-             extra_compile_args = ['-g2'],
-         ),
-     ],
+--- ./setup.py.orig	Wed Apr 19 18:58:34 2006
++++ ./setup.py	Wed Apr 19 18:59:59 2006
+@@ -26,8 +26,8 @@
+         include_dirs = [r'd:\libs\include', r'd:\libs\include\libxml']
+         library_dirs = [r'd:\libs\lib']
+     else:
+-        include_dirs = ['/usr/include/libxml2','/usr/local/include/libxml2']
+-        library_dirs = []
++        include_dirs = ['/usr/include/libxml2','/usr/local/include/libxml2','/usr/local/include']
++        library_dirs = ['/usr/local/lib']
+     ext_modules = [
+         Extension(
+             'pyxmpp._xmlextra',
