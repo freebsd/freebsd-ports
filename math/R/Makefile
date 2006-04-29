@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	R
-PORTVERSION=	2.2.1
-PORTREVISION=	1
+PORTVERSION=	2.3.0
 CATEGORIES=	math lang
 MASTER_SITES=	http://cran.r-project.org/src/base/R-2/ \
 		ftp://cran.r-project.org/pub/R/src/base/R-2/ \
@@ -50,12 +49,12 @@ INSTALLS_SHLIB=	yes
 INSTALL_TARGET=	install install-libR
 ALL_TARGET=	all
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GETTEXT=	yes
 USE_ICONV=	yes
 USE_PERL5=	yes
 
-CONFIGURE_ENV=	FFLAGS="${FFLAGS}" \
-		INSTALL_DATA="${INSTALL} ${COPY} ${_SHROWNGRP} -m 644"
+CONFIGURE_ENV=	INSTALL_DATA="${INSTALL} ${COPY} ${_SHROWNGRP} -m 644"
 CONFIGURE_ARGS=	--enable-R-shlib --with-system-bzlib --with-system-zlib \
 		rdocdir=${DOCSDIR}
 
@@ -141,12 +140,6 @@ INSTALL_TARGET+=install-pdf
 .if !defined(WITHOUT_INFO_MANUALS)
 ALL_TARGET+=	info
 INFO=		R-FAQ R-admin R-data R-exts R-intro R-lang
-
-post-install:
-	(cd ${WRKSRC}/doc/manual; \
-	for infofile in ${INFO}; do \
-		${INSTALL_DATA} $${infofile}.info* ${PREFIX}/${INFO_PATH}/; \
-	done)
 .endif
 
 .if defined(WITH_LETTER_PAPER)
@@ -160,6 +153,16 @@ CONFIGURE_ARGS+=	--disable-mbcs
 .if ${OSVERSION} < 600000
 CONFIGURE_ENV+=	MAKEINFO_CMD=${LOCALBASE}/bin/makeinfo
 BUILD_DEPENDS+=	${LOCALBASE}/bin/makeinfo:${PORTSDIR}/print/texinfo
+.endif
+
+post-install:
+	${MV} ${PREFIX}/lib/libR.so ${PREFIX}/lib/libR.so.0
+	${LN} -sf ${PREFIX}/lib/libR.so.0 ${PREFIX}/lib/libR.so
+.if !defined(WITHOUT_INFO_MANUALS)
+	(cd ${WRKSRC}/doc/manual; \
+	for infofile in ${INFO}; do \
+		${INSTALL_DATA} $${infofile}.info* ${PREFIX}/${INFO_PATH}/; \
+	done)
 .endif
 
 .include <bsd.port.post.mk>
