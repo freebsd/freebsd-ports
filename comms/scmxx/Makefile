@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	scmxx
-PORTVERSION=	0.8.1
+PORTVERSION=	0.9.0
 CATEGORIES=	comms
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,6 +15,7 @@ MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Data exchange utility for Siemens mobile phones
 
 USE_BZIP2=	yes
+USE_GCC=	3.4+
 USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_GETTEXT=	yes
@@ -29,6 +30,10 @@ MAN1=		scmxx.1
 MANLANG=	"" ru de it
 DOCS=		README docs/*.txt
 EXAMPLES=	sms.txt vCalendar.vcs vCard.vcf
+
+post-patch:
+	@${FIND} ${WRKSRC} -name 'Makefile*' | ${XARGS} \
+		${REINPLACE_CMD} -e "s|CFLAGS=|CFLAGS+=|g"
 
 post-install:
 	@${MKDIR} ${EXAMPLESDIR}
