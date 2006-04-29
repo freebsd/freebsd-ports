@@ -23,6 +23,7 @@ RUN_DEPENDS=	zh-libchewing>=0.2.6:${PORTSDIR}/chinese/libchewing \
 
 OPTIONS=	GTK2 "Enable GTK2 input method module" On
 
+USE_GCC=	3.2+
 USE_ICONV=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=
