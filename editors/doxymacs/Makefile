@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	doxymacs
-PORTVERSION=	1.6.0
+PORTVERSION=	1.7.0
 CATEGORIES=	editors elisp
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://dryice.name/computer/FreeBSD/distfiles/
