@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	mup
-PORTVERSION=	5.1
-PORTREVISION=	1
+PORTVERSION=	5.2
 CATEGORIES=	print audio
 MASTER_SITES=	ftp://ftp.arkkra.com/pub/unix/
-DISTFILES=	mup51src.tar.gz mup51doc.tar.gz
+DISTFILES=	mup52src.tar.gz mup52doc.tar.gz
 
 MAINTAINER=	darius@dons.net.au
 COMMENT=	A shareware program for typesetting music
