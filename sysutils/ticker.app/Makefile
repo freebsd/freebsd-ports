@@ -8,7 +8,7 @@
 PORTNAME=	ticker.app
 PORTVERSION=	0.5.0
 CATEGORIES=	sysutils windowmaker
-MASTER_SITES=	http://www.sh.rim.or.jp/~ssato/src/
+MASTER_SITES=	http://seiichisato.jp/dockapps/src/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ticker dockapp for Window Maker
@@ -16,16 +16,19 @@ COMMENT=	Ticker dockapp for Window Maker
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
+USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--program-prefix=""
 
 MAN1=		ticker.app.1
+PORTDOCS=	ChangeLog README
+PLIST_FILES=	bin/ticker.app
 
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README ${WRKSRC}/ChangeLog \
-		${DOCSDIR}
+.for file in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
 .endif
 
 .include <bsd.port.mk>
