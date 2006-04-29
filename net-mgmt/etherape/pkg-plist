@@ -1,10 +1,10 @@
 bin/etherape
 etc/etherape/services
-share/etherape/glade/etherape.glade2
-share/etherape/glade/etherape.png
-share/etherape/glade/pause.xpm
-share/etherape/glade/play.xpm
-share/etherape/glade/stop.xpm
+%%DATADIR%%/glade/etherape.glade2
+%%DATADIR%%/glade/etherape.png
+%%DATADIR%%/glade/pause.xpm
+%%DATADIR%%/glade/play.xpm
+%%DATADIR%%/glade/stop.xpm
 share/gnome/apps/Applications/etherape.desktop
 share/gnome/help/etherape/C/topic.dat
 share/locale/es/LC_MESSAGES/etherape.mo
@@ -13,8 +13,8 @@ share/locale/nl/LC_MESSAGES/etherape.mo
 share/locale/tr/LC_MESSAGES/etherape.mo
 share/pixmaps/etherape.png
 @dirrm etc/etherape
-@dirrm share/etherape/glade
-@dirrm share/etherape
+@dirrm %%DATADIR%%/glade
+@dirrm %%DATADIR%%
 @dirrm share/gnome/help/etherape/C/stylesheet-images
 @dirrm share/gnome/help/etherape/C
 @dirrm share/gnome/help/etherape
