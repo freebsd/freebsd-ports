@@ -22,4 +22,7 @@ INSTALLS_SHLIB=	yes
 
 MAN1=		ktoblzcheck.1
 
+pre-configure:
+	@${REINPLACE_CMD}=	-e 's,\$$LIBKTOBLZCHECK_CURRENT-LIBKTOBLZCHECK_AGE,\$$LIBKTOBLZCHECK_CURRENT-\$$LIBKTOBLZCHECK_AGE,' ${WRKSRC}/configure
+
 .include <bsd.port.mk>
