@@ -1,5 +1,6 @@
 bin/rkhunter
-etc/rkhunter.conf
+@unexec if cmp -s %D/etc/rkhunter.conf %D/etc/rkhunter.conf.sample; then rm -f %D/etc/rkhunter.conf; fi
+etc/rkhunter.conf.sample
 lib/rkhunter/db/backdoorports.dat
 lib/rkhunter/db/defaulthashes.dat
 lib/rkhunter/db/md5blacklist.dat
