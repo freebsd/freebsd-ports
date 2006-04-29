@@ -24,4 +24,11 @@ pre-install:
 	@${REINPLACE_CMD} -e \
 		's|/usr/bin/perl|${PERL}|' ${WRKSRC}/script/scandeps.pl
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+# workaround
+.if ${PERL_LEVEL} < 500600
+IGNORE=		requires perl 5.6.0 or above to build and run
+.endif
+
+.include <bsd.port.post.mk>
