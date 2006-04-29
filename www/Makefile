@@ -79,6 +79,7 @@
     SUBDIR += clearsilver-python
     SUBDIR += cocoon
     SUBDIR += comclear
+    SUBDIR += conkeror
     SUBDIR += coppermine
     SUBDIR += crawl
     SUBDIR += crp
