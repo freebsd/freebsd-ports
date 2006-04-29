@@ -8,6 +8,7 @@
 
 PORTNAME=	socat
 PORTVERSION=	1.4.3.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.dest-unreach.org/socat/download/
 
@@ -20,9 +21,11 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 
 MAN1=		socat.1
+
 .if !defined(NOPORTDOCS)
 PORTDOCS=	EXAMPLES README SECURITY FAQ
 .endif
+
 PLIST_FILES=	bin/filan bin/procan bin/socat
 
 OPTIONS=	SSL "OpenSSL support" on
@@ -36,9 +39,9 @@ OPTIONS=	SSL "OpenSSL support" on
 CONFIGURE_ARGS+=	--disable-openssl
 .endif
 
-.if !defined(NOPORTDOCS)
 post-install:
-	${MKDIR} ${DOCSDIR}
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 
