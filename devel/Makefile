@@ -1686,6 +1686,7 @@
     SUBDIR += tclcl
     SUBDIR += tclgetopts
     SUBDIR += tcllib
+    SUBDIR += tclmore
     SUBDIR += tclreadline
     SUBDIR += tcltls
     SUBDIR += tclxml
