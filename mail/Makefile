@@ -523,6 +523,7 @@
     SUBDIR += swaks
     SUBDIR += sylpheed
     SUBDIR += sylpheed-claws
+    SUBDIR += sylpheed-claws-smime
     SUBDIR += sylpheed2
     SUBDIR += sympa
     SUBDIR += sympa-elixus
