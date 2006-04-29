@@ -119,6 +119,7 @@ share/apps/kggz/kcmggz/icons/game.png
 share/apps/kggz/kcmggz/icons/game_console.png
 share/apps/kggz/kcmggz/icons/game_gnome.png
 share/apps/kggz/kcmggz/icons/game_grubby.png
+share/apps/kggz/kcmggz/icons/game_java.png
 share/apps/kggz/kcmggz/icons/game_kde.png
 share/apps/kggz/kcmggz/icons/game_sdl.png
 share/apps/kggz/kcmggz/icons/game_x11.png
@@ -215,12 +216,14 @@ share/locale/de/LC_MESSAGES/kggz.mo
 share/locale/de/LC_MESSAGES/kgrubby.mo
 share/locale/de/LC_MESSAGES/shadowbridge.mo
 share/locale/es/LC_MESSAGES/kggz.mo
+share/locale/fr/LC_MESSAGES/compcal.mo
 share/locale/fr/LC_MESSAGES/ggzap.mo
 share/locale/pt_BR/LC_MESSAGES/kggz.mo
 share/services/ggz.protocol
 share/services/ggzmeta.protocol
 @dirrm share/doc/ggzcore++/html
 @dirrm share/doc/ggzcore++
+@dirrm share/doc/HTML/en/kioslave
 @dirrm share/doc/HTML/en/kggz
 @dirrm share/doc/HTML/de/kggz
 @dirrm share/apps/kgrubby

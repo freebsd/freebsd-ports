@@ -5,7 +5,7 @@
  _ACEOF
  
 -		HOWL_INCLUDES="-I/usr/include/howl"
-+		HOWL_INCLUDES="-I/usr/include/howl -I/usr/local/include/howl"
++		HOWL_INCLUDES="-I/usr/include/howl -I%%LOCALBASE%%/include/howl"
  		LIB_HOWL="-lhowl -lpthread"
  
  
