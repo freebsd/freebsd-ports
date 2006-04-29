@@ -7,11 +7,11 @@
 
 PORTNAME=	crystalentitylayer
 PORTVERSION=	0.99
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	cel
-DISTNAME=	cel-pseudo-stable-2005-09-03
+DISTNAME=	cel-pseudo-stable-2006-01-27
 
 MAINTAINER=	acardenas@bsd.org.pe
 COMMENT=	CEL is a layer that sits on top of Crystal Space 3D Engine
@@ -22,7 +22,6 @@ BUILD_DEPENDS=	jam:${PORTSDIR}/devel/jam \
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 
 LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib
 CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include
