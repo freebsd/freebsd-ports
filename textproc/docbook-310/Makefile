@@ -22,6 +22,7 @@ RUN_DEPENDS=	${ISOCAT}:${PORTSDIR}/textproc/iso8879 \
 		${XMLCATMGR}:${PORTSDIR}/textproc/xmlcatmgr
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
+USE_ZIP=	yes
 NO_MTREE=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
