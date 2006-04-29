@@ -5,7 +5,7 @@
  AM_CFLAGS = $(AM_CPPFLAGS)
  AM_CXXFLAGS = $(AM_CPPFLAGS)
 -AM_LDFLAGS = 
-+AM_LDFLAGS = -L$(top_srcdir)/lib -L$(top_srcdir)/api -L$(top_srcdir)/db -L$(top_srcdir)/client -L$(top_srcdir)/tools -L$(top_srcdir)/sched
++AM_LDFLAGS = -L$(top_srcdir)/lib -L$(top_srcdir)/api -L$(top_srcdir)/client
  
  # dependencies to make sure libs gets compiled before
  # programs linking to them:
@@ -16,7 +16,7 @@
  AM_CFLAGS = $(AM_CPPFLAGS)
  AM_CXXFLAGS = $(AM_CPPFLAGS)
 -AM_LDFLAGS = 
-+AM_LDFLAGS = -L$(top_srcdir)/lib -L$(top_srcdir)/api -L$(top_srcdir)/db -L$(top_srcdir)/client -L$(top_srcdir)/tools -L$(top_srcdir)/sched
++AM_LDFLAGS = -L$(top_srcdir)/lib -L$(top_srcdir)/api -L$(top_srcdir)/client
  
  # dependencies to make sure libs gets compiled before
  # programs linking to them:
