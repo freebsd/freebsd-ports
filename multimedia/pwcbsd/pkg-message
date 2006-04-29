@@ -1,0 +1,17 @@
+===============================================================================
+
+This port has installed the pwc kernel module.
+
+To load the kernel module immediately, type the following command:
+
+	kldload pwc
+
+If your webcam was already plugged in before the kernel module
+was loaded you may have to unplug it first.
+
+To load the kernel module at boot, add the following line to
+/boot/loader.conf:
+
+	pwc_load="YES"
+
+===============================================================================

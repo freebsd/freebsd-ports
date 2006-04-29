@@ -1,0 +1,5 @@
+This port provides a FreeBSD kernel module that
+video4linux enabled and raw yuv420p applications
+can use to access several USB based webcams.
+
+WWW: http://www.saillard.org/linux/pwc/
