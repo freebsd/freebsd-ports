@@ -374,7 +374,6 @@
     SUBDIR += mingplot
     SUBDIR += morpheus
     SUBDIR += moth
-    SUBDIR += mrsidviewer
     SUBDIR += multivideo
     SUBDIR += mxp
     SUBDIR += netpbm
