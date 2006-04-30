@@ -62,6 +62,5 @@ post-install:
 	cd ${PREFIX}/share/gnome/gnome-screensaver/themes/xscreensaver && \
 		${FIND} -s ${XSCREENSAVER_DIR} -maxdepth 1 -type f -name "*.xml" | \
 			${XARGS} ${WRKSRC}/data/migrate-xscreensaver-config.sh
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
