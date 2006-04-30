@@ -1,9 +1,9 @@
---- dualserver.h.orig	Mon Dec 12 10:40:55 2005
-+++ dualserver.h	Mon Dec 12 10:41:23 2005
-@@ -94,7 +94,7 @@
- 			BYTE rcode:4;
- 			BYTE z:3;
- 			BYTE ra:1;
+--- dualserver.h.orig	Sun Apr 30 11:33:14 2006
++++ dualserver.h	Sun Apr 30 11:33:37 2006
+@@ -98,7 +98,7 @@
+ 			BYTE rcode: 4;
+ 			BYTE z: 3;
+ 			BYTE ra: 1;
 -		};
 +		} flags;
  	};
