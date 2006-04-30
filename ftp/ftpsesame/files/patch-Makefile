@@ -1,0 +1,12 @@
+--- Makefile.orig	Mon May  1 01:32:30 2006
++++ Makefile	Mon May  1 01:39:28 2006
+@@ -8,7 +8,7 @@
+ LDADD+=	-lpcap
+ 
+ install:
+-	install -s -o root -g bin -m 555 ftpsesame /usr/local/bin
+-	install -o root -g bin -m 444 ftpsesame.cat8 /usr/local/man/cat8/ftpsesame.0
++	install -s -o root -g bin -m 555 ftpsesame ${PREFIX}/bin
++	install -o root -g bin -m 444 ftpsesame.8 ${MANPREFIX}/man/man8
+ 
+ .include <bsd.prog.mk>
