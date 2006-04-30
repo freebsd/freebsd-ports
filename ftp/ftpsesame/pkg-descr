@@ -1,0 +1,6 @@
+ftpsesame helps the FTP protocol get through your pf firewall.
+It does this by passively analysing FTP control connections
+and adding rules into a pf anchor when an FTP data connection
+is about to commence.
+
+WWW: http://www.sentia.org/projects/ftpsesame/
