@@ -4,7 +4,7 @@
 # $FreeBSD$
 
 PORTNAME=	dualserver
-PORTVERSION=	1.0
+PORTVERSION=	2.0
 CATEGORIES=	dns net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	dhcp-dns-server
@@ -13,7 +13,6 @@ DISTNAME=	${PORTNAME}V${PORTVERSION}
 MAINTAINER=	gkovesdan@t-hosting.hu
 COMMENT=	Combined DHCP/DNS server for small LANs
 
-USE_REINPLACE=	YES
 USE_RC_SUBR=	dualserver.sh
 WRKSRC=		${WRKDIR}/${PORTNAME}
 PLIST_FILES=	sbin/dualserver etc/dualserver.conf.sample
@@ -25,10 +24,8 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-dualserver.h \
 		${FILESDIR}/extra-patch-dualserver.cpp
 .endif
 
-post-patch:
-	${REINPLACE_CMD} 's/[[:cntrl:]]*$$//' ${WRKSRC}/dualserver.cpp
-	${REINPLACE_CMD} 's/[[:cntrl:]]*$$//' ${WRKSRC}/dualserver.h
-	${REINPLACE_CMD} 's/[[:cntrl:]]*$$//' ${WRKSRC}/dualserver.ini
+pre-patch:
+	${REINPLACE_CMD} 's/[[:cntrl:]]*$$//' ${WRKSRC}/*
 	${REINPLACE_CMD} 's|/etc/dualserver.ini|${PREFIX}/etc/dualserver.conf|' ${WRKSRC}/dualserver.cpp
 	${REINPLACE_CMD} 's|/etc/dualserver.state|/var/run/dualserver.state|' ${WRKSRC}/dualserver.cpp
 
