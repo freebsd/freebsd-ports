@@ -40,10 +40,6 @@ OPTIONS=	DEBUG	"Build with debugging information"	off \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 504000
-BROKEN=		Does not build on FreeBSD >= 5.x
-.endif
-
 .if!defined(WITHOUT_DEBUG)
 CONFIGURE_ARGS+=	--enable-debug=yes
 .else
