@@ -134,6 +134,8 @@ lib/gstreamer-%%VERSION%%/libgstfreeze.so
 lib/gstreamer-%%VERSION%%/libgstgamma.a
 lib/gstreamer-%%VERSION%%/libgstgamma.la
 lib/gstreamer-%%VERSION%%/libgstgamma.so
+lib/gstreamer-%%VERSION%%/libgstgoom.a
+lib/gstreamer-%%VERSION%%/libgstgoom.la
 lib/gstreamer-%%VERSION%%/libgstgoom.so
 lib/gstreamer-%%VERSION%%/libgstidct.a
 lib/gstreamer-%%VERSION%%/libgstidct.la
@@ -296,6 +298,7 @@ lib/gstreamer-%%VERSION%%/libgstvideobox.la
 lib/gstreamer-%%VERSION%%/libgstvideobox.so
 lib/gstreamer-%%VERSION%%/libgstvideocrop.a
 lib/gstreamer-%%VERSION%%/libgstvideocrop.la
+lib/gstreamer-%%VERSION%%/libgstvideocrop.so
 lib/gstreamer-%%VERSION%%/libgstvideodrop.a
 lib/gstreamer-%%VERSION%%/libgstvideodrop.la
 lib/gstreamer-%%VERSION%%/libgstvideodrop.so
