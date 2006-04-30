@@ -2253,7 +2253,7 @@ security/nessus-devel||2006-04-17|Has expired: Development version of nessus is 
 security/nessus-libnasl-devel||2006-04-17|Has expired: Development version of nessus is no longer available in sources
 security/nessus-libraries-devel||2006-04-17|Has expired: Development version of nessus is no longer available in sources
 security/nessus-plugins-devel||2006-04-17|Has expired: Development version of nessus is no longer available in sources
-audio/gstreamer-plugins-polypaudio|audio/gstreamer-plugins-polyp|2006-04-21|The port name has been changed to match its correct name
+audio/gstreamer-plugins-polypaudio|audio/gstreamer-plugins-polyp80|2006-04-21|The port name has been changed to match its correct name
 devel/cvspadm||2006-04-24|Development ceased, please use devel/cvsdadm
 editors/jed-devel||2006-04-24|No more development version for a while, please, use editors/jed
 sysutils/gdesklets-multitail||2006-04-24|Project is too long dead
