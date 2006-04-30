@@ -1,0 +1,10 @@
+bin/mountsmb2
+bin/smb2nsmbrc
+bin/smb2awk
+%%PORTDOCS%%%%EXAMPLESDIR%%/sudoers
+%%PORTDOCS%%%%EXAMPLESDIR%%/.login
+%%PORTDOCS%%%%EXAMPLESDIR%%/.nsmbrc
+%%PORTDOCS%%%%EXAMPLESDIR%%/.mssmbrc
+%%PORTDOCS%%%%DOCSDIR%%/README.FreeBSD
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
