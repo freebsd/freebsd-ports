@@ -20,7 +20,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS} \
 		${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
 RUN_DEPENDS=	${SITE_PERL}/Class/DBI.pm:${PORTSDIR}/databases/p5-Class-DBI \
 		${SITE_PERL}/Lingua/EN/Inflect.pm:${PORTSDIR}/textproc/p5-Lingua-EN-Inflect \
-		${SITE_PERL}/Class/DBI/Loader/Pg.pm:${PORTSDIR}/databases/p5-Class-DBI-Pg \ 
+		${SITE_PERL}/Class/DBI/Loader/Pg.pm:${PORTSDIR}/databases/p5-Class-DBI-Pg \
 		${SITE_PERL}/Class/DBI/Loader/mysql.pm:${PORTSDIR}/databases/p5-Class-DBI-mysql \
 		${SITE_PERL}/Class/DBI/Loader/SQLite.pm:${PORTSDIR}/databases/p5-Class-DBI-SQLite
 
