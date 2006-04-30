@@ -7,6 +7,7 @@
 
 PORTNAME=	redet
 PORTVERSION=	7.3
+PORTREVISION=	1
 CATEGORIES=	textproc tk84
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	vsevolod
@@ -14,7 +15,8 @@ MASTER_SITE_SUBDIR=	vsevolod
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Visual regexp constructors with many regexp types support
 
-RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
+RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84 \
+		${LOCALBASE}/lib/iwidgets/iwidgets.tcl:${PORTSDIR}/x11-toolkits/iwidgets
 
 NO_BUILD=	yes
 USE_REINPLACE=	yes
