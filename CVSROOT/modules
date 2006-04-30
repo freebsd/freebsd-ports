@@ -6443,6 +6443,7 @@ mimedefang	ports/mail/mimedefang
 mimelib		ports/converters/mimelib
 mimir		ports/devel/mimir
 minc		ports/science/minc
+minc2		ports/science/minc2
 minder		ports/net-p2p/minder
 mindfocus	ports/games/mindfocus
 mindguard	ports/games/mindguard
