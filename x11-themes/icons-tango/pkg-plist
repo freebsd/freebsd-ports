@@ -25,6 +25,7 @@ share/icons/Tango/16x16/actions/edit-find-replace.png
 share/icons/Tango/16x16/actions/edit-find.png
 share/icons/Tango/16x16/actions/edit-paste.png
 share/icons/Tango/16x16/actions/edit-redo.png
+share/icons/Tango/16x16/actions/edit-select-all.png
 share/icons/Tango/16x16/actions/edit-undo.png
 share/icons/Tango/16x16/actions/editclear.png
 share/icons/Tango/16x16/actions/editcopy.png
@@ -138,6 +139,7 @@ share/icons/Tango/16x16/actions/list-remove.png
 share/icons/Tango/16x16/actions/lock.png
 share/icons/Tango/16x16/actions/mail-forward.png
 share/icons/Tango/16x16/actions/mail-mark-junk.png
+share/icons/Tango/16x16/actions/mail-mark-not-junk.png
 share/icons/Tango/16x16/actions/mail-message-new.png
 share/icons/Tango/16x16/actions/mail-reply-all.png
 share/icons/Tango/16x16/actions/mail-reply-sender.png
@@ -210,6 +212,7 @@ share/icons/Tango/16x16/actions/stock_new-dir.png
 share/icons/Tango/16x16/actions/stock_new-tab.png
 share/icons/Tango/16x16/actions/stock_new-text.png
 share/icons/Tango/16x16/actions/stock_new-window.png
+share/icons/Tango/16x16/actions/stock_not-spam.png
 share/icons/Tango/16x16/actions/stock_paste.png
 share/icons/Tango/16x16/actions/stock_print-preview.png
 share/icons/Tango/16x16/actions/stock_print.png
@@ -250,6 +253,7 @@ share/icons/Tango/16x16/actions/text_under.png
 share/icons/Tango/16x16/actions/top.png
 share/icons/Tango/16x16/actions/undo.png
 share/icons/Tango/16x16/actions/up.png
+share/icons/Tango/16x16/actions/view-fullscreen.png
 share/icons/Tango/16x16/actions/view-refresh.png
 share/icons/Tango/16x16/actions/window-new.png
 share/icons/Tango/16x16/actions/window_new.png
@@ -260,7 +264,6 @@ share/icons/Tango/16x16/apps/accessibility-directory.png
 share/icons/Tango/16x16/apps/accessories-calculator.png
 share/icons/Tango/16x16/apps/accessories-character-map.png
 share/icons/Tango/16x16/apps/accessories-text-editor.png
-share/icons/Tango/16x16/apps/arts.png
 share/icons/Tango/16x16/apps/background.png
 share/icons/Tango/16x16/apps/browser.png
 share/icons/Tango/16x16/apps/calc.png
@@ -271,8 +274,8 @@ share/icons/Tango/16x16/apps/email.png
 share/icons/Tango/16x16/apps/file-manager.png
 share/icons/Tango/16x16/apps/fonts.png
 share/icons/Tango/16x16/apps/gnome-calculator.png
+share/icons/Tango/16x16/apps/gnome-character-map.png
 share/icons/Tango/16x16/apps/gnome-help.png
-share/icons/Tango/16x16/apps/gnome-mixer.png
 share/icons/Tango/16x16/apps/gnome-monitor.png
 share/icons/Tango/16x16/apps/gnome-remote-desktop.png
 share/icons/Tango/16x16/apps/gnome-session.png
@@ -295,7 +298,6 @@ share/icons/Tango/16x16/apps/internet-web-browser.png
 share/icons/Tango/16x16/apps/kcalc.png
 share/icons/Tango/16x16/apps/kcharselect.png
 share/icons/Tango/16x16/apps/kcmkwm.png
-share/icons/Tango/16x16/apps/kcmsound.png
 share/icons/Tango/16x16/apps/kedit.png
 share/icons/Tango/16x16/apps/key_bindings.png
 share/icons/Tango/16x16/apps/kfm.png
@@ -309,8 +311,6 @@ share/icons/Tango/16x16/apps/kuser.png
 share/icons/Tango/16x16/apps/kwin.png
 share/icons/Tango/16x16/apps/locale.png
 share/icons/Tango/16x16/apps/mail_generic.png
-share/icons/Tango/16x16/apps/multimedia-volume-control.png
-share/icons/Tango/16x16/apps/multimedia.png
 share/icons/Tango/16x16/apps/office-calendar.png
 share/icons/Tango/16x16/apps/openterm.png
 share/icons/Tango/16x16/apps/preferences-desktop-accessibility.png
@@ -343,13 +343,14 @@ share/icons/Tango/16x16/apps/system-software-update.png
 share/icons/Tango/16x16/apps/system-users.png
 share/icons/Tango/16x16/apps/terminal.png
 share/icons/Tango/16x16/apps/text-editor.png
+share/icons/Tango/16x16/apps/update-manager.png
 share/icons/Tango/16x16/apps/utilities-system-monitor.png
 share/icons/Tango/16x16/apps/utilities-terminal.png
-share/icons/Tango/16x16/apps/volume-knob.png
 share/icons/Tango/16x16/apps/wallpaper.png
 share/icons/Tango/16x16/apps/web-browser.png
 share/icons/Tango/16x16/apps/ximian-evolution-calendar.png
 share/icons/Tango/16x16/apps/xscreensaver.png
+share/icons/Tango/16x16/apps/zen-icon.png
 share/icons/Tango/16x16/categories/applications-accessories.png
 share/icons/Tango/16x16/categories/applications-development.png
 share/icons/Tango/16x16/categories/applications-games.png
@@ -464,14 +465,13 @@ share/icons/Tango/16x16/devices/mouse.png
 share/icons/Tango/16x16/devices/multimedia-player.png
 share/icons/Tango/16x16/devices/network-wired.png
 share/icons/Tango/16x16/devices/network-wireless.png
-share/icons/Tango/16x16/devices/nm-device-wired.png
-share/icons/Tango/16x16/devices/nm-device-wireless.png
 share/icons/Tango/16x16/devices/printer-remote.png
 share/icons/Tango/16x16/devices/printer.png
 share/icons/Tango/16x16/devices/printer1.png
 share/icons/Tango/16x16/devices/printmgr.png
 share/icons/Tango/16x16/devices/stock_mic.png
 share/icons/Tango/16x16/devices/stock_printers.png
+share/icons/Tango/16x16/devices/system-floppy.png
 share/icons/Tango/16x16/devices/system.png
 share/icons/Tango/16x16/devices/usbpendrive_unmount.png
 share/icons/Tango/16x16/devices/video-display.png
@@ -523,15 +523,27 @@ share/icons/Tango/16x16/mimetypes/gnome-mime-application-rtf.png
 share/icons/Tango/16x16/mimetypes/gnome-mime-application-vnd.lotus-1-2-3.png
 share/icons/Tango/16x16/mimetypes/gnome-mime-application-vnd.ms-excel.png
 share/icons/Tango/16x16/mimetypes/gnome-mime-application-vnd.ms-powerpoint.png
+share/icons/Tango/16x16/mimetypes/gnome-mime-application-vnd.oasis.opendocument.graphics-template.png
+share/icons/Tango/16x16/mimetypes/gnome-mime-application-vnd.oasis.opendocument.graphics.png
+share/icons/Tango/16x16/mimetypes/gnome-mime-application-vnd.oasis.opendocument.image.png
+share/icons/Tango/16x16/mimetypes/gnome-mime-application-vnd.oasis.opendocument.presentation-template.png
 share/icons/Tango/16x16/mimetypes/gnome-mime-application-vnd.oasis.opendocument.presentation.png
+share/icons/Tango/16x16/mimetypes/gnome-mime-application-vnd.oasis.opendocument.spreadsheet-template.png
 share/icons/Tango/16x16/mimetypes/gnome-mime-application-vnd.oasis.opendocument.spreadsheet.png
+share/icons/Tango/16x16/mimetypes/gnome-mime-application-vnd.oasis.opendocument.text-template.png
+share/icons/Tango/16x16/mimetypes/gnome-mime-application-vnd.oasis.opendocument.text-web.png
 share/icons/Tango/16x16/mimetypes/gnome-mime-application-vnd.oasis.opendocument.text.png
 share/icons/Tango/16x16/mimetypes/gnome-mime-application-vnd.stardivision.calc.png
 share/icons/Tango/16x16/mimetypes/gnome-mime-application-vnd.stardivision.impress.png
 share/icons/Tango/16x16/mimetypes/gnome-mime-application-vnd.stardivision.writer.png
 share/icons/Tango/16x16/mimetypes/gnome-mime-application-vnd.sun.xml.calc.png
+share/icons/Tango/16x16/mimetypes/gnome-mime-application-vnd.sun.xml.calc.template.png
+share/icons/Tango/16x16/mimetypes/gnome-mime-application-vnd.sun.xml.draw.png
+share/icons/Tango/16x16/mimetypes/gnome-mime-application-vnd.sun.xml.draw.template.png
 share/icons/Tango/16x16/mimetypes/gnome-mime-application-vnd.sun.xml.impress.png
+share/icons/Tango/16x16/mimetypes/gnome-mime-application-vnd.sun.xml.impress.template.png
 share/icons/Tango/16x16/mimetypes/gnome-mime-application-vnd.sun.xml.writer.png
+share/icons/Tango/16x16/mimetypes/gnome-mime-application-vnd.sun.xml.writer.template.png
 share/icons/Tango/16x16/mimetypes/gnome-mime-application-wordperfect.png
 share/icons/Tango/16x16/mimetypes/gnome-mime-application-x-7z-compressed.png
 share/icons/Tango/16x16/mimetypes/gnome-mime-application-x-abiword.png
@@ -556,10 +568,13 @@ share/icons/Tango/16x16/mimetypes/gnome-mime-application-x-font-sunos-news.png
 share/icons/Tango/16x16/mimetypes/gnome-mime-application-x-font-ttf.png
 share/icons/Tango/16x16/mimetypes/gnome-mime-application-x-gnumeric.png
 share/icons/Tango/16x16/mimetypes/gnome-mime-application-x-gzip.png
+share/icons/Tango/16x16/mimetypes/gnome-mime-application-x-jar.png
 share/icons/Tango/16x16/mimetypes/gnome-mime-application-x-killustrator.png
 share/icons/Tango/16x16/mimetypes/gnome-mime-application-x-kpresenter.png
 share/icons/Tango/16x16/mimetypes/gnome-mime-application-x-kspread.png
 share/icons/Tango/16x16/mimetypes/gnome-mime-application-x-kword.png
+share/icons/Tango/16x16/mimetypes/gnome-mime-application-x-lha.png
+share/icons/Tango/16x16/mimetypes/gnome-mime-application-x-lhz.png
 share/icons/Tango/16x16/mimetypes/gnome-mime-application-x-ms-dos-executable.png
 share/icons/Tango/16x16/mimetypes/gnome-mime-application-x-perl.png
 share/icons/Tango/16x16/mimetypes/gnome-mime-application-x-php.png
@@ -568,6 +583,7 @@ share/icons/Tango/16x16/mimetypes/gnome-mime-application-x-rar.png
 share/icons/Tango/16x16/mimetypes/gnome-mime-application-x-rpm.png
 share/icons/Tango/16x16/mimetypes/gnome-mime-application-x-shellscript.png
 share/icons/Tango/16x16/mimetypes/gnome-mime-application-x-shockwave-flash.png
+share/icons/Tango/16x16/mimetypes/gnome-mime-application-x-stuffit.png
 share/icons/Tango/16x16/mimetypes/gnome-mime-application-x-tar.png
 share/icons/Tango/16x16/mimetypes/gnome-mime-application-x-tarz.png
 share/icons/Tango/16x16/mimetypes/gnome-mime-application-x-tex.png
@@ -620,12 +636,18 @@ share/icons/Tango/16x16/mimetypes/video.png
 share/icons/Tango/16x16/mimetypes/www.png
 share/icons/Tango/16x16/mimetypes/x-office-address-book.png
 share/icons/Tango/16x16/mimetypes/x-office-calendar.png
+share/icons/Tango/16x16/mimetypes/x-office-document-template.png
 share/icons/Tango/16x16/mimetypes/x-office-document.png
+share/icons/Tango/16x16/mimetypes/x-office-drawing-template.png
+share/icons/Tango/16x16/mimetypes/x-office-drawing.png
+share/icons/Tango/16x16/mimetypes/x-office-presentation-template.png
 share/icons/Tango/16x16/mimetypes/x-office-presentation.png
+share/icons/Tango/16x16/mimetypes/x-office-spreadsheet-template.png
 share/icons/Tango/16x16/mimetypes/x-office-spreadsheet.png
 share/icons/Tango/16x16/mimetypes/zip.png
 share/icons/Tango/16x16/places/application-x-gnome-saved-search.png
 share/icons/Tango/16x16/places/desktop.png
+share/icons/Tango/16x16/places/distributor-logo.png
 share/icons/Tango/16x16/places/emptytrash.png
 share/icons/Tango/16x16/places/folder-remote.png
 share/icons/Tango/16x16/places/folder-saved-search.png
@@ -653,6 +675,7 @@ share/icons/Tango/16x16/places/network-server.png
 share/icons/Tango/16x16/places/network-workgroup.png
 share/icons/Tango/16x16/places/network.png
 share/icons/Tango/16x16/places/network_local.png
+share/icons/Tango/16x16/places/novell-button.png
 share/icons/Tango/16x16/places/redhat-network-server.png
 share/icons/Tango/16x16/places/server.png
 share/icons/Tango/16x16/places/start-here.png
@@ -708,6 +731,9 @@ share/icons/Tango/16x16/status/network-receive.png
 share/icons/Tango/16x16/status/network-transmit-receive.png
 share/icons/Tango/16x16/status/network-transmit.png
 share/icons/Tango/16x16/status/network-wireless-encrypted.png
+share/icons/Tango/16x16/status/nm-adhoc.png
+share/icons/Tango/16x16/status/nm-device-wired.png
+share/icons/Tango/16x16/status/nm-device-wireless.png
 share/icons/Tango/16x16/status/nm-no-connection.png
 share/icons/Tango/16x16/status/overcast.png
 share/icons/Tango/16x16/status/printer-error.png
@@ -773,6 +799,7 @@ share/icons/Tango/22x22/actions/edit-find-replace.png
 share/icons/Tango/22x22/actions/edit-find.png
 share/icons/Tango/22x22/actions/edit-paste.png
 share/icons/Tango/22x22/actions/edit-redo.png
+share/icons/Tango/22x22/actions/edit-select-all.png
 share/icons/Tango/22x22/actions/edit-undo.png
 share/icons/Tango/22x22/actions/editclear.png
 share/icons/Tango/22x22/actions/editcopy.png
@@ -886,6 +913,7 @@ share/icons/Tango/22x22/actions/list-remove.png
 share/icons/Tango/22x22/actions/lock.png
 share/icons/Tango/22x22/actions/mail-forward.png
 share/icons/Tango/22x22/actions/mail-mark-junk.png
+share/icons/Tango/22x22/actions/mail-mark-not-junk.png
 share/icons/Tango/22x22/actions/mail-message-new.png
 share/icons/Tango/22x22/actions/mail-reply-all.png
 share/icons/Tango/22x22/actions/mail-reply-sender.png
@@ -958,6 +986,7 @@ share/icons/Tango/22x22/actions/stock_new-dir.png
 share/icons/Tango/22x22/actions/stock_new-tab.png
 share/icons/Tango/22x22/actions/stock_new-text.png
 share/icons/Tango/22x22/actions/stock_new-window.png
+share/icons/Tango/22x22/actions/stock_not-spam.png
 share/icons/Tango/22x22/actions/stock_paste.png
 share/icons/Tango/22x22/actions/stock_print-preview.png
 share/icons/Tango/22x22/actions/stock_print.png
@@ -998,6 +1027,7 @@ share/icons/Tango/22x22/actions/text_under.png
 share/icons/Tango/22x22/actions/top.png
 share/icons/Tango/22x22/actions/undo.png
 share/icons/Tango/22x22/actions/up.png
+share/icons/Tango/22x22/actions/view-fullscreen.png
 share/icons/Tango/22x22/actions/view-refresh.png
 share/icons/Tango/22x22/actions/window-new.png
 share/icons/Tango/22x22/actions/window_new.png
@@ -1008,7 +1038,6 @@ share/icons/Tango/22x22/apps/accessibility-directory.png
 share/icons/Tango/22x22/apps/accessories-calculator.png
 share/icons/Tango/22x22/apps/accessories-character-map.png
 share/icons/Tango/22x22/apps/accessories-text-editor.png
-share/icons/Tango/22x22/apps/arts.png
 share/icons/Tango/22x22/apps/background.png
 share/icons/Tango/22x22/apps/browser.png
 share/icons/Tango/22x22/apps/calc.png
@@ -1019,8 +1048,8 @@ share/icons/Tango/22x22/apps/email.png
 share/icons/Tango/22x22/apps/file-manager.png
 share/icons/Tango/22x22/apps/fonts.png
 share/icons/Tango/22x22/apps/gnome-calculator.png
+share/icons/Tango/22x22/apps/gnome-character-map.png
 share/icons/Tango/22x22/apps/gnome-help.png
-share/icons/Tango/22x22/apps/gnome-mixer.png
 share/icons/Tango/22x22/apps/gnome-monitor.png
 share/icons/Tango/22x22/apps/gnome-remote-desktop.png
 share/icons/Tango/22x22/apps/gnome-session.png
@@ -1043,7 +1072,6 @@ share/icons/Tango/22x22/apps/internet-web-browser.png
 share/icons/Tango/22x22/apps/kcalc.png
 share/icons/Tango/22x22/apps/kcharselect.png
 share/icons/Tango/22x22/apps/kcmkwm.png
-share/icons/Tango/22x22/apps/kcmsound.png
 share/icons/Tango/22x22/apps/kedit.png
 share/icons/Tango/22x22/apps/key_bindings.png
 share/icons/Tango/22x22/apps/kfm.png
@@ -1057,8 +1085,6 @@ share/icons/Tango/22x22/apps/kuser.png
 share/icons/Tango/22x22/apps/kwin.png
 share/icons/Tango/22x22/apps/locale.png
 share/icons/Tango/22x22/apps/mail_generic.png
-share/icons/Tango/22x22/apps/multimedia-volume-control.png
-share/icons/Tango/22x22/apps/multimedia.png
 share/icons/Tango/22x22/apps/office-calendar.png
 share/icons/Tango/22x22/apps/openterm.png
 share/icons/Tango/22x22/apps/preferences-desktop-accessibility.png
@@ -1091,13 +1117,14 @@ share/icons/Tango/22x22/apps/system-software-update.png
 share/icons/Tango/22x22/apps/system-users.png
 share/icons/Tango/22x22/apps/terminal.png
 share/icons/Tango/22x22/apps/text-editor.png
+share/icons/Tango/22x22/apps/update-manager.png
 share/icons/Tango/22x22/apps/utilities-system-monitor.png
 share/icons/Tango/22x22/apps/utilities-terminal.png
-share/icons/Tango/22x22/apps/volume-knob.png
 share/icons/Tango/22x22/apps/wallpaper.png
 share/icons/Tango/22x22/apps/web-browser.png
 share/icons/Tango/22x22/apps/ximian-evolution-calendar.png
 share/icons/Tango/22x22/apps/xscreensaver.png
+share/icons/Tango/22x22/apps/zen-icon.png
 share/icons/Tango/22x22/categories/applications-accessories.png
 share/icons/Tango/22x22/categories/applications-development.png
 share/icons/Tango/22x22/categories/applications-games.png
@@ -1212,14 +1239,13 @@ share/icons/Tango/22x22/devices/mouse.png
 share/icons/Tango/22x22/devices/multimedia-player.png
 share/icons/Tango/22x22/devices/network-wired.png
 share/icons/Tango/22x22/devices/network-wireless.png
-share/icons/Tango/22x22/devices/nm-device-wired.png
-share/icons/Tango/22x22/devices/nm-device-wireless.png
 share/icons/Tango/22x22/devices/printer-remote.png
 share/icons/Tango/22x22/devices/printer.png
 share/icons/Tango/22x22/devices/printer1.png
 share/icons/Tango/22x22/devices/printmgr.png
 share/icons/Tango/22x22/devices/stock_mic.png
 share/icons/Tango/22x22/devices/stock_printers.png
+share/icons/Tango/22x22/devices/system-floppy.png
 share/icons/Tango/22x22/devices/system.png
 share/icons/Tango/22x22/devices/usbpendrive_unmount.png
 share/icons/Tango/22x22/devices/video-display.png
@@ -1271,15 +1297,27 @@ share/icons/Tango/22x22/mimetypes/gnome-mime-application-rtf.png
 share/icons/Tango/22x22/mimetypes/gnome-mime-application-vnd.lotus-1-2-3.png
 share/icons/Tango/22x22/mimetypes/gnome-mime-application-vnd.ms-excel.png
 share/icons/Tango/22x22/mimetypes/gnome-mime-application-vnd.ms-powerpoint.png
+share/icons/Tango/22x22/mimetypes/gnome-mime-application-vnd.oasis.opendocument.graphics-template.png
+share/icons/Tango/22x22/mimetypes/gnome-mime-application-vnd.oasis.opendocument.graphics.png
+share/icons/Tango/22x22/mimetypes/gnome-mime-application-vnd.oasis.opendocument.image.png
+share/icons/Tango/22x22/mimetypes/gnome-mime-application-vnd.oasis.opendocument.presentation-template.png
 share/icons/Tango/22x22/mimetypes/gnome-mime-application-vnd.oasis.opendocument.presentation.png
+share/icons/Tango/22x22/mimetypes/gnome-mime-application-vnd.oasis.opendocument.spreadsheet-template.png
 share/icons/Tango/22x22/mimetypes/gnome-mime-application-vnd.oasis.opendocument.spreadsheet.png
+share/icons/Tango/22x22/mimetypes/gnome-mime-application-vnd.oasis.opendocument.text-template.png
+share/icons/Tango/22x22/mimetypes/gnome-mime-application-vnd.oasis.opendocument.text-web.png
 share/icons/Tango/22x22/mimetypes/gnome-mime-application-vnd.oasis.opendocument.text.png
 share/icons/Tango/22x22/mimetypes/gnome-mime-application-vnd.stardivision.calc.png
 share/icons/Tango/22x22/mimetypes/gnome-mime-application-vnd.stardivision.impress.png
 share/icons/Tango/22x22/mimetypes/gnome-mime-application-vnd.stardivision.writer.png
 share/icons/Tango/22x22/mimetypes/gnome-mime-application-vnd.sun.xml.calc.png
+share/icons/Tango/22x22/mimetypes/gnome-mime-application-vnd.sun.xml.calc.template.png
+share/icons/Tango/22x22/mimetypes/gnome-mime-application-vnd.sun.xml.draw.png
+share/icons/Tango/22x22/mimetypes/gnome-mime-application-vnd.sun.xml.draw.template.png
 share/icons/Tango/22x22/mimetypes/gnome-mime-application-vnd.sun.xml.impress.png
+share/icons/Tango/22x22/mimetypes/gnome-mime-application-vnd.sun.xml.impress.template.png
 share/icons/Tango/22x22/mimetypes/gnome-mime-application-vnd.sun.xml.writer.png
+share/icons/Tango/22x22/mimetypes/gnome-mime-application-vnd.sun.xml.writer.template.png
 share/icons/Tango/22x22/mimetypes/gnome-mime-application-wordperfect.png
 share/icons/Tango/22x22/mimetypes/gnome-mime-application-x-7z-compressed.png
 share/icons/Tango/22x22/mimetypes/gnome-mime-application-x-abiword.png
@@ -1304,10 +1342,13 @@ share/icons/Tango/22x22/mimetypes/gnome-mime-application-x-font-sunos-news.png
 share/icons/Tango/22x22/mimetypes/gnome-mime-application-x-font-ttf.png
 share/icons/Tango/22x22/mimetypes/gnome-mime-application-x-gnumeric.png
 share/icons/Tango/22x22/mimetypes/gnome-mime-application-x-gzip.png
+share/icons/Tango/22x22/mimetypes/gnome-mime-application-x-jar.png
 share/icons/Tango/22x22/mimetypes/gnome-mime-application-x-killustrator.png
 share/icons/Tango/22x22/mimetypes/gnome-mime-application-x-kpresenter.png
 share/icons/Tango/22x22/mimetypes/gnome-mime-application-x-kspread.png
 share/icons/Tango/22x22/mimetypes/gnome-mime-application-x-kword.png
+share/icons/Tango/22x22/mimetypes/gnome-mime-application-x-lha.png
+share/icons/Tango/22x22/mimetypes/gnome-mime-application-x-lhz.png
 share/icons/Tango/22x22/mimetypes/gnome-mime-application-x-ms-dos-executable.png
 share/icons/Tango/22x22/mimetypes/gnome-mime-application-x-perl.png
 share/icons/Tango/22x22/mimetypes/gnome-mime-application-x-php.png
@@ -1316,6 +1357,7 @@ share/icons/Tango/22x22/mimetypes/gnome-mime-application-x-rar.png
 share/icons/Tango/22x22/mimetypes/gnome-mime-application-x-rpm.png
 share/icons/Tango/22x22/mimetypes/gnome-mime-application-x-shellscript.png
 share/icons/Tango/22x22/mimetypes/gnome-mime-application-x-shockwave-flash.png
+share/icons/Tango/22x22/mimetypes/gnome-mime-application-x-stuffit.png
 share/icons/Tango/22x22/mimetypes/gnome-mime-application-x-tar.png
 share/icons/Tango/22x22/mimetypes/gnome-mime-application-x-tarz.png
 share/icons/Tango/22x22/mimetypes/gnome-mime-application-x-tex.png
@@ -1368,12 +1410,18 @@ share/icons/Tango/22x22/mimetypes/video.png
 share/icons/Tango/22x22/mimetypes/www.png
 share/icons/Tango/22x22/mimetypes/x-office-address-book.png
 share/icons/Tango/22x22/mimetypes/x-office-calendar.png
+share/icons/Tango/22x22/mimetypes/x-office-document-template.png
 share/icons/Tango/22x22/mimetypes/x-office-document.png
+share/icons/Tango/22x22/mimetypes/x-office-drawing-template.png
+share/icons/Tango/22x22/mimetypes/x-office-drawing.png
+share/icons/Tango/22x22/mimetypes/x-office-presentation-template.png
 share/icons/Tango/22x22/mimetypes/x-office-presentation.png
+share/icons/Tango/22x22/mimetypes/x-office-spreadsheet-template.png
 share/icons/Tango/22x22/mimetypes/x-office-spreadsheet.png
 share/icons/Tango/22x22/mimetypes/zip.png
 share/icons/Tango/22x22/places/application-x-gnome-saved-search.png
 share/icons/Tango/22x22/places/desktop.png
+share/icons/Tango/22x22/places/distributor-logo.png
 share/icons/Tango/22x22/places/emptytrash.png
 share/icons/Tango/22x22/places/folder-remote.png
 share/icons/Tango/22x22/places/folder-saved-search.png
@@ -1401,6 +1449,7 @@ share/icons/Tango/22x22/places/network-server.png
 share/icons/Tango/22x22/places/network-workgroup.png
 share/icons/Tango/22x22/places/network.png
 share/icons/Tango/22x22/places/network_local.png
+share/icons/Tango/22x22/places/novell-button.png
 share/icons/Tango/22x22/places/redhat-network-server.png
 share/icons/Tango/22x22/places/server.png
 share/icons/Tango/22x22/places/start-here.png
@@ -1456,6 +1505,9 @@ share/icons/Tango/22x22/status/network-receive.png
 share/icons/Tango/22x22/status/network-transmit-receive.png
 share/icons/Tango/22x22/status/network-transmit.png
 share/icons/Tango/22x22/status/network-wireless-encrypted.png
+share/icons/Tango/22x22/status/nm-adhoc.png
+share/icons/Tango/22x22/status/nm-device-wired.png
+share/icons/Tango/22x22/status/nm-device-wireless.png
 share/icons/Tango/22x22/status/nm-no-connection.png
 share/icons/Tango/22x22/status/overcast.png
 share/icons/Tango/22x22/status/printer-error.png
@@ -1521,6 +1573,7 @@ share/icons/Tango/24x24/actions/edit-find-replace.png
 share/icons/Tango/24x24/actions/edit-find.png
 share/icons/Tango/24x24/actions/edit-paste.png
 share/icons/Tango/24x24/actions/edit-redo.png
+share/icons/Tango/24x24/actions/edit-select-all.png
 share/icons/Tango/24x24/actions/edit-undo.png
 share/icons/Tango/24x24/actions/editclear.png
 share/icons/Tango/24x24/actions/editcopy.png
@@ -1634,6 +1687,7 @@ share/icons/Tango/24x24/actions/list-remove.png
 share/icons/Tango/24x24/actions/lock.png
 share/icons/Tango/24x24/actions/mail-forward.png
 share/icons/Tango/24x24/actions/mail-mark-junk.png
+share/icons/Tango/24x24/actions/mail-mark-not-junk.png
 share/icons/Tango/24x24/actions/mail-message-new.png
 share/icons/Tango/24x24/actions/mail-reply-all.png
 share/icons/Tango/24x24/actions/mail-reply-sender.png
@@ -1706,6 +1760,7 @@ share/icons/Tango/24x24/actions/stock_new-dir.png
 share/icons/Tango/24x24/actions/stock_new-tab.png
 share/icons/Tango/24x24/actions/stock_new-text.png
 share/icons/Tango/24x24/actions/stock_new-window.png
+share/icons/Tango/24x24/actions/stock_not-spam.png
 share/icons/Tango/24x24/actions/stock_paste.png
 share/icons/Tango/24x24/actions/stock_print-preview.png
 share/icons/Tango/24x24/actions/stock_print.png
@@ -1746,6 +1801,7 @@ share/icons/Tango/24x24/actions/text_under.png
 share/icons/Tango/24x24/actions/top.png
 share/icons/Tango/24x24/actions/undo.png
 share/icons/Tango/24x24/actions/up.png
+share/icons/Tango/24x24/actions/view-fullscreen.png
 share/icons/Tango/24x24/actions/view-refresh.png
 share/icons/Tango/24x24/actions/window-new.png
 share/icons/Tango/24x24/actions/window_new.png
@@ -1754,7 +1810,6 @@ share/icons/Tango/24x24/apps/accessibility-directory.png
 share/icons/Tango/24x24/apps/accessories-calculator.png
 share/icons/Tango/24x24/apps/accessories-character-map.png
 share/icons/Tango/24x24/apps/accessories-text-editor.png
-share/icons/Tango/24x24/apps/arts.png
 share/icons/Tango/24x24/apps/background.png
 share/icons/Tango/24x24/apps/browser.png
 share/icons/Tango/24x24/apps/calc.png
@@ -1765,8 +1820,8 @@ share/icons/Tango/24x24/apps/email.png
 share/icons/Tango/24x24/apps/file-manager.png
 share/icons/Tango/24x24/apps/fonts.png
 share/icons/Tango/24x24/apps/gnome-calculator.png
+share/icons/Tango/24x24/apps/gnome-character-map.png
 share/icons/Tango/24x24/apps/gnome-help.png
-share/icons/Tango/24x24/apps/gnome-mixer.png
 share/icons/Tango/24x24/apps/gnome-monitor.png
 share/icons/Tango/24x24/apps/gnome-remote-desktop.png
 share/icons/Tango/24x24/apps/gnome-session.png
@@ -1789,7 +1844,6 @@ share/icons/Tango/24x24/apps/internet-web-browser.png
 share/icons/Tango/24x24/apps/kcalc.png
 share/icons/Tango/24x24/apps/kcharselect.png
 share/icons/Tango/24x24/apps/kcmkwm.png
-share/icons/Tango/24x24/apps/kcmsound.png
 share/icons/Tango/24x24/apps/kedit.png
 share/icons/Tango/24x24/apps/key_bindings.png
 share/icons/Tango/24x24/apps/kfm.png
@@ -1803,8 +1857,6 @@ share/icons/Tango/24x24/apps/kuser.png
 share/icons/Tango/24x24/apps/kwin.png
 share/icons/Tango/24x24/apps/locale.png
 share/icons/Tango/24x24/apps/mail_generic.png
-share/icons/Tango/24x24/apps/multimedia-volume-control.png
-share/icons/Tango/24x24/apps/multimedia.png
 share/icons/Tango/24x24/apps/office-calendar.png
 share/icons/Tango/24x24/apps/openterm.png
 share/icons/Tango/24x24/apps/preferences-desktop-accessibility.png
@@ -1837,13 +1889,14 @@ share/icons/Tango/24x24/apps/system-software-update.png
 share/icons/Tango/24x24/apps/system-users.png
 share/icons/Tango/24x24/apps/terminal.png
 share/icons/Tango/24x24/apps/text-editor.png
+share/icons/Tango/24x24/apps/update-manager.png
 share/icons/Tango/24x24/apps/utilities-system-monitor.png
 share/icons/Tango/24x24/apps/utilities-terminal.png
-share/icons/Tango/24x24/apps/volume-knob.png
 share/icons/Tango/24x24/apps/wallpaper.png
 share/icons/Tango/24x24/apps/web-browser.png
 share/icons/Tango/24x24/apps/ximian-evolution-calendar.png
 share/icons/Tango/24x24/apps/xscreensaver.png
+share/icons/Tango/24x24/apps/zen-icon.png
 share/icons/Tango/24x24/categories/applications-accessories.png
 share/icons/Tango/24x24/categories/applications-development.png
 share/icons/Tango/24x24/categories/applications-games.png
@@ -1958,14 +2011,13 @@ share/icons/Tango/24x24/devices/mouse.png
 share/icons/Tango/24x24/devices/multimedia-player.png
 share/icons/Tango/24x24/devices/network-wired.png
 share/icons/Tango/24x24/devices/network-wireless.png
-share/icons/Tango/24x24/devices/nm-device-wired.png
-share/icons/Tango/24x24/devices/nm-device-wireless.png
 share/icons/Tango/24x24/devices/printer-remote.png
 share/icons/Tango/24x24/devices/printer.png
 share/icons/Tango/24x24/devices/printer1.png
 share/icons/Tango/24x24/devices/printmgr.png
 share/icons/Tango/24x24/devices/stock_mic.png
 share/icons/Tango/24x24/devices/stock_printers.png
+share/icons/Tango/24x24/devices/system-floppy.png
 share/icons/Tango/24x24/devices/system.png
 share/icons/Tango/24x24/devices/usbpendrive_unmount.png
 share/icons/Tango/24x24/devices/video-display.png
@@ -2017,15 +2069,27 @@ share/icons/Tango/24x24/mimetypes/gnome-mime-application-rtf.png
 share/icons/Tango/24x24/mimetypes/gnome-mime-application-vnd.lotus-1-2-3.png
 share/icons/Tango/24x24/mimetypes/gnome-mime-application-vnd.ms-excel.png
 share/icons/Tango/24x24/mimetypes/gnome-mime-application-vnd.ms-powerpoint.png
+share/icons/Tango/24x24/mimetypes/gnome-mime-application-vnd.oasis.opendocument.graphics-template.png
+share/icons/Tango/24x24/mimetypes/gnome-mime-application-vnd.oasis.opendocument.graphics.png
+share/icons/Tango/24x24/mimetypes/gnome-mime-application-vnd.oasis.opendocument.image.png
+share/icons/Tango/24x24/mimetypes/gnome-mime-application-vnd.oasis.opendocument.presentation-template.png
 share/icons/Tango/24x24/mimetypes/gnome-mime-application-vnd.oasis.opendocument.presentation.png
+share/icons/Tango/24x24/mimetypes/gnome-mime-application-vnd.oasis.opendocument.spreadsheet-template.png
 share/icons/Tango/24x24/mimetypes/gnome-mime-application-vnd.oasis.opendocument.spreadsheet.png
+share/icons/Tango/24x24/mimetypes/gnome-mime-application-vnd.oasis.opendocument.text-template.png
+share/icons/Tango/24x24/mimetypes/gnome-mime-application-vnd.oasis.opendocument.text-web.png
 share/icons/Tango/24x24/mimetypes/gnome-mime-application-vnd.oasis.opendocument.text.png
 share/icons/Tango/24x24/mimetypes/gnome-mime-application-vnd.stardivision.calc.png
 share/icons/Tango/24x24/mimetypes/gnome-mime-application-vnd.stardivision.impress.png
 share/icons/Tango/24x24/mimetypes/gnome-mime-application-vnd.stardivision.writer.png
 share/icons/Tango/24x24/mimetypes/gnome-mime-application-vnd.sun.xml.calc.png
+share/icons/Tango/24x24/mimetypes/gnome-mime-application-vnd.sun.xml.calc.template.png
+share/icons/Tango/24x24/mimetypes/gnome-mime-application-vnd.sun.xml.draw.png
+share/icons/Tango/24x24/mimetypes/gnome-mime-application-vnd.sun.xml.draw.template.png
 share/icons/Tango/24x24/mimetypes/gnome-mime-application-vnd.sun.xml.impress.png
+share/icons/Tango/24x24/mimetypes/gnome-mime-application-vnd.sun.xml.impress.template.png
 share/icons/Tango/24x24/mimetypes/gnome-mime-application-vnd.sun.xml.writer.png
+share/icons/Tango/24x24/mimetypes/gnome-mime-application-vnd.sun.xml.writer.template.png
 share/icons/Tango/24x24/mimetypes/gnome-mime-application-wordperfect.png
 share/icons/Tango/24x24/mimetypes/gnome-mime-application-x-7z-compressed.png
 share/icons/Tango/24x24/mimetypes/gnome-mime-application-x-abiword.png
@@ -2050,10 +2114,13 @@ share/icons/Tango/24x24/mimetypes/gnome-mime-application-x-font-sunos-news.png
 share/icons/Tango/24x24/mimetypes/gnome-mime-application-x-font-ttf.png
 share/icons/Tango/24x24/mimetypes/gnome-mime-application-x-gnumeric.png
 share/icons/Tango/24x24/mimetypes/gnome-mime-application-x-gzip.png
+share/icons/Tango/24x24/mimetypes/gnome-mime-application-x-jar.png
 share/icons/Tango/24x24/mimetypes/gnome-mime-application-x-killustrator.png
 share/icons/Tango/24x24/mimetypes/gnome-mime-application-x-kpresenter.png
 share/icons/Tango/24x24/mimetypes/gnome-mime-application-x-kspread.png
 share/icons/Tango/24x24/mimetypes/gnome-mime-application-x-kword.png
+share/icons/Tango/24x24/mimetypes/gnome-mime-application-x-lha.png
+share/icons/Tango/24x24/mimetypes/gnome-mime-application-x-lhz.png
 share/icons/Tango/24x24/mimetypes/gnome-mime-application-x-ms-dos-executable.png
 share/icons/Tango/24x24/mimetypes/gnome-mime-application-x-perl.png
 share/icons/Tango/24x24/mimetypes/gnome-mime-application-x-php.png
@@ -2062,6 +2129,7 @@ share/icons/Tango/24x24/mimetypes/gnome-mime-application-x-rar.png
 share/icons/Tango/24x24/mimetypes/gnome-mime-application-x-rpm.png
 share/icons/Tango/24x24/mimetypes/gnome-mime-application-x-shellscript.png
 share/icons/Tango/24x24/mimetypes/gnome-mime-application-x-shockwave-flash.png
+share/icons/Tango/24x24/mimetypes/gnome-mime-application-x-stuffit.png
 share/icons/Tango/24x24/mimetypes/gnome-mime-application-x-tar.png
 share/icons/Tango/24x24/mimetypes/gnome-mime-application-x-tarz.png
 share/icons/Tango/24x24/mimetypes/gnome-mime-application-x-tex.png
@@ -2114,12 +2182,18 @@ share/icons/Tango/24x24/mimetypes/video.png
 share/icons/Tango/24x24/mimetypes/www.png
 share/icons/Tango/24x24/mimetypes/x-office-address-book.png
 share/icons/Tango/24x24/mimetypes/x-office-calendar.png
+share/icons/Tango/24x24/mimetypes/x-office-document-template.png
 share/icons/Tango/24x24/mimetypes/x-office-document.png
+share/icons/Tango/24x24/mimetypes/x-office-drawing-template.png
+share/icons/Tango/24x24/mimetypes/x-office-drawing.png
+share/icons/Tango/24x24/mimetypes/x-office-presentation-template.png
 share/icons/Tango/24x24/mimetypes/x-office-presentation.png
+share/icons/Tango/24x24/mimetypes/x-office-spreadsheet-template.png
 share/icons/Tango/24x24/mimetypes/x-office-spreadsheet.png
 share/icons/Tango/24x24/mimetypes/zip.png
 share/icons/Tango/24x24/places/application-x-gnome-saved-search.png
 share/icons/Tango/24x24/places/desktop.png
+share/icons/Tango/24x24/places/distributor-logo.png
 share/icons/Tango/24x24/places/emptytrash.png
 share/icons/Tango/24x24/places/folder-remote.png
 share/icons/Tango/24x24/places/folder-saved-search.png
@@ -2147,6 +2221,7 @@ share/icons/Tango/24x24/places/network-server.png
 share/icons/Tango/24x24/places/network-workgroup.png
 share/icons/Tango/24x24/places/network.png
 share/icons/Tango/24x24/places/network_local.png
+share/icons/Tango/24x24/places/novell-button.png
 share/icons/Tango/24x24/places/redhat-network-server.png
 share/icons/Tango/24x24/places/server.png
 share/icons/Tango/24x24/places/start-here.png
@@ -2202,6 +2277,9 @@ share/icons/Tango/24x24/status/network-receive.png
 share/icons/Tango/24x24/status/network-transmit-receive.png
 share/icons/Tango/24x24/status/network-transmit.png
 share/icons/Tango/24x24/status/network-wireless-encrypted.png
+share/icons/Tango/24x24/status/nm-adhoc.png
+share/icons/Tango/24x24/status/nm-device-wired.png
+share/icons/Tango/24x24/status/nm-device-wireless.png
 share/icons/Tango/24x24/status/nm-no-connection.png
 share/icons/Tango/24x24/status/overcast.png
 share/icons/Tango/24x24/status/printer-error.png
@@ -2268,6 +2346,7 @@ share/icons/Tango/scalable/actions/edit-find-replace.svg
 share/icons/Tango/scalable/actions/edit-find.svg
 share/icons/Tango/scalable/actions/edit-paste.svg
 share/icons/Tango/scalable/actions/edit-redo.svg
+share/icons/Tango/scalable/actions/edit-select-all.svg
 share/icons/Tango/scalable/actions/edit-undo.svg
 share/icons/Tango/scalable/actions/editclear.svg
 share/icons/Tango/scalable/actions/editcopy.svg
@@ -2493,6 +2572,7 @@ share/icons/Tango/scalable/actions/text_under.svg
 share/icons/Tango/scalable/actions/top.svg
 share/icons/Tango/scalable/actions/undo.svg
 share/icons/Tango/scalable/actions/up.svg
+share/icons/Tango/scalable/actions/view-fullscreen.svg
 share/icons/Tango/scalable/actions/view-refresh.svg
 share/icons/Tango/scalable/actions/window-new.svg
 share/icons/Tango/scalable/actions/window_new.svg
@@ -2501,7 +2581,6 @@ share/icons/Tango/scalable/apps/accessibility-directory.svg
 share/icons/Tango/scalable/apps/accessories-calculator.svg
 share/icons/Tango/scalable/apps/accessories-character-map.svg
 share/icons/Tango/scalable/apps/accessories-text-editor.svg
-share/icons/Tango/scalable/apps/arts.svg
 share/icons/Tango/scalable/apps/background.svg
 share/icons/Tango/scalable/apps/browser.svg
 share/icons/Tango/scalable/apps/calc.svg
@@ -2512,8 +2591,8 @@ share/icons/Tango/scalable/apps/email.svg
 share/icons/Tango/scalable/apps/file-manager.svg
 share/icons/Tango/scalable/apps/fonts.svg
 share/icons/Tango/scalable/apps/gnome-calculator.svg
+share/icons/Tango/scalable/apps/gnome-character-map.svg
 share/icons/Tango/scalable/apps/gnome-help.svg
-share/icons/Tango/scalable/apps/gnome-mixer.svg
 share/icons/Tango/scalable/apps/gnome-monitor.svg
 share/icons/Tango/scalable/apps/gnome-remote-desktop.svg
 share/icons/Tango/scalable/apps/gnome-session.svg
@@ -2536,7 +2615,6 @@ share/icons/Tango/scalable/apps/internet-web-browser.svg
 share/icons/Tango/scalable/apps/kcalc.svg
 share/icons/Tango/scalable/apps/kcharselect.svg
 share/icons/Tango/scalable/apps/kcmkwm.svg
-share/icons/Tango/scalable/apps/kcmsound.svg
 share/icons/Tango/scalable/apps/kedit.svg
 share/icons/Tango/scalable/apps/key_bindings.svg
 share/icons/Tango/scalable/apps/kfm.svg
@@ -2550,8 +2628,6 @@ share/icons/Tango/scalable/apps/kuser.svg
 share/icons/Tango/scalable/apps/kwin.svg
 share/icons/Tango/scalable/apps/locale.svg
 share/icons/Tango/scalable/apps/mail_generic.svg
-share/icons/Tango/scalable/apps/multimedia-volume-control.svg
-share/icons/Tango/scalable/apps/multimedia.svg
 share/icons/Tango/scalable/apps/office-calendar.svg
 share/icons/Tango/scalable/apps/openterm.svg
 share/icons/Tango/scalable/apps/preferences-desktop-accessibility.svg
@@ -2584,13 +2660,14 @@ share/icons/Tango/scalable/apps/system-software-update.svg
 share/icons/Tango/scalable/apps/system-users.svg
 share/icons/Tango/scalable/apps/terminal.svg
 share/icons/Tango/scalable/apps/text-editor.svg
+share/icons/Tango/scalable/apps/update-manager.svg
 share/icons/Tango/scalable/apps/utilities-system-monitor.svg
 share/icons/Tango/scalable/apps/utilities-terminal.svg
-share/icons/Tango/scalable/apps/volume-knob.svg
 share/icons/Tango/scalable/apps/wallpaper.svg
 share/icons/Tango/scalable/apps/web-browser.svg
 share/icons/Tango/scalable/apps/ximian-evolution-calendar.svg
 share/icons/Tango/scalable/apps/xscreensaver.svg
+share/icons/Tango/scalable/apps/zen-icon.svg
 share/icons/Tango/scalable/categories/applications-accessories.svg
 share/icons/Tango/scalable/categories/applications-development.svg
 share/icons/Tango/scalable/categories/applications-games.svg
@@ -2705,14 +2782,13 @@ share/icons/Tango/scalable/devices/mouse.svg
 share/icons/Tango/scalable/devices/multimedia-player.svg
 share/icons/Tango/scalable/devices/network-wired.svg
 share/icons/Tango/scalable/devices/network-wireless.svg
-share/icons/Tango/scalable/devices/nm-device-wired.svg
-share/icons/Tango/scalable/devices/nm-device-wireless.svg
 share/icons/Tango/scalable/devices/printer-remote.svg
 share/icons/Tango/scalable/devices/printer.svg
 share/icons/Tango/scalable/devices/printer1.svg
 share/icons/Tango/scalable/devices/printmgr.svg
 share/icons/Tango/scalable/devices/stock_mic.svg
 share/icons/Tango/scalable/devices/stock_printers.svg
+share/icons/Tango/scalable/devices/system-floppy.svg
 share/icons/Tango/scalable/devices/system.svg
 share/icons/Tango/scalable/devices/usbpendrive_unmount.svg
 share/icons/Tango/scalable/devices/video-display.svg
@@ -2764,15 +2840,27 @@ share/icons/Tango/scalable/mimetypes/gnome-mime-application-rtf.svg
 share/icons/Tango/scalable/mimetypes/gnome-mime-application-vnd.lotus-1-2-3.svg
 share/icons/Tango/scalable/mimetypes/gnome-mime-application-vnd.ms-excel.svg
 share/icons/Tango/scalable/mimetypes/gnome-mime-application-vnd.ms-powerpoint.svg
+share/icons/Tango/scalable/mimetypes/gnome-mime-application-vnd.oasis.opendocument.graphics-template.svg
+share/icons/Tango/scalable/mimetypes/gnome-mime-application-vnd.oasis.opendocument.graphics.svg
+share/icons/Tango/scalable/mimetypes/gnome-mime-application-vnd.oasis.opendocument.image.svg
+share/icons/Tango/scalable/mimetypes/gnome-mime-application-vnd.oasis.opendocument.presentation-template.svg
 share/icons/Tango/scalable/mimetypes/gnome-mime-application-vnd.oasis.opendocument.presentation.svg
+share/icons/Tango/scalable/mimetypes/gnome-mime-application-vnd.oasis.opendocument.spreadsheet-template.svg
 share/icons/Tango/scalable/mimetypes/gnome-mime-application-vnd.oasis.opendocument.spreadsheet.svg
+share/icons/Tango/scalable/mimetypes/gnome-mime-application-vnd.oasis.opendocument.text-template.svg
+share/icons/Tango/scalable/mimetypes/gnome-mime-application-vnd.oasis.opendocument.text-web.svg
 share/icons/Tango/scalable/mimetypes/gnome-mime-application-vnd.oasis.opendocument.text.svg
 share/icons/Tango/scalable/mimetypes/gnome-mime-application-vnd.stardivision.calc.svg
 share/icons/Tango/scalable/mimetypes/gnome-mime-application-vnd.stardivision.impress.svg
 share/icons/Tango/scalable/mimetypes/gnome-mime-application-vnd.stardivision.writer.svg
 share/icons/Tango/scalable/mimetypes/gnome-mime-application-vnd.sun.xml.calc.svg
+share/icons/Tango/scalable/mimetypes/gnome-mime-application-vnd.sun.xml.calc.template.svg
+share/icons/Tango/scalable/mimetypes/gnome-mime-application-vnd.sun.xml.draw.svg
+share/icons/Tango/scalable/mimetypes/gnome-mime-application-vnd.sun.xml.draw.template.svg
 share/icons/Tango/scalable/mimetypes/gnome-mime-application-vnd.sun.xml.impress.svg
+share/icons/Tango/scalable/mimetypes/gnome-mime-application-vnd.sun.xml.impress.template.svg
 share/icons/Tango/scalable/mimetypes/gnome-mime-application-vnd.sun.xml.writer.svg
+share/icons/Tango/scalable/mimetypes/gnome-mime-application-vnd.sun.xml.writer.template.svg
 share/icons/Tango/scalable/mimetypes/gnome-mime-application-wordperfect.svg
 share/icons/Tango/scalable/mimetypes/gnome-mime-application-x-7z-compressed.svg
 share/icons/Tango/scalable/mimetypes/gnome-mime-application-x-abiword.svg
@@ -2797,10 +2885,13 @@ share/icons/Tango/scalable/mimetypes/gnome-mime-application-x-font-sunos-news.sv
 share/icons/Tango/scalable/mimetypes/gnome-mime-application-x-font-ttf.svg
 share/icons/Tango/scalable/mimetypes/gnome-mime-application-x-gnumeric.svg
 share/icons/Tango/scalable/mimetypes/gnome-mime-application-x-gzip.svg
+share/icons/Tango/scalable/mimetypes/gnome-mime-application-x-jar.svg
 share/icons/Tango/scalable/mimetypes/gnome-mime-application-x-killustrator.svg
 share/icons/Tango/scalable/mimetypes/gnome-mime-application-x-kpresenter.svg
 share/icons/Tango/scalable/mimetypes/gnome-mime-application-x-kspread.svg
 share/icons/Tango/scalable/mimetypes/gnome-mime-application-x-kword.svg
+share/icons/Tango/scalable/mimetypes/gnome-mime-application-x-lha.svg
+share/icons/Tango/scalable/mimetypes/gnome-mime-application-x-lhz.svg
 share/icons/Tango/scalable/mimetypes/gnome-mime-application-x-ms-dos-executable.svg
 share/icons/Tango/scalable/mimetypes/gnome-mime-application-x-perl.svg
 share/icons/Tango/scalable/mimetypes/gnome-mime-application-x-php.svg
@@ -2809,6 +2900,7 @@ share/icons/Tango/scalable/mimetypes/gnome-mime-application-x-rar.svg
 share/icons/Tango/scalable/mimetypes/gnome-mime-application-x-rpm.svg
 share/icons/Tango/scalable/mimetypes/gnome-mime-application-x-shellscript.svg
 share/icons/Tango/scalable/mimetypes/gnome-mime-application-x-shockwave-flash.svg
+share/icons/Tango/scalable/mimetypes/gnome-mime-application-x-stuffit.svg
 share/icons/Tango/scalable/mimetypes/gnome-mime-application-x-tar.svg
 share/icons/Tango/scalable/mimetypes/gnome-mime-application-x-tarz.svg
 share/icons/Tango/scalable/mimetypes/gnome-mime-application-x-tex.svg
@@ -2861,12 +2953,18 @@ share/icons/Tango/scalable/mimetypes/video.svg
 share/icons/Tango/scalable/mimetypes/www.svg
 share/icons/Tango/scalable/mimetypes/x-office-address-book.svg
 share/icons/Tango/scalable/mimetypes/x-office-calendar.svg
+share/icons/Tango/scalable/mimetypes/x-office-document-template.svg
 share/icons/Tango/scalable/mimetypes/x-office-document.svg
+share/icons/Tango/scalable/mimetypes/x-office-drawing-template.svg
+share/icons/Tango/scalable/mimetypes/x-office-drawing.svg
+share/icons/Tango/scalable/mimetypes/x-office-presentation-template.svg
 share/icons/Tango/scalable/mimetypes/x-office-presentation.svg
+share/icons/Tango/scalable/mimetypes/x-office-spreadsheet-template.svg
 share/icons/Tango/scalable/mimetypes/x-office-spreadsheet.svg
 share/icons/Tango/scalable/mimetypes/zip.svg
 share/icons/Tango/scalable/places/application-x-gnome-saved-search.svg
 share/icons/Tango/scalable/places/desktop.svg
+share/icons/Tango/scalable/places/distributor-logo.svg
 share/icons/Tango/scalable/places/emptytrash.svg
 share/icons/Tango/scalable/places/folder-remote.svg
 share/icons/Tango/scalable/places/folder-saved-search.svg
@@ -2896,6 +2994,7 @@ share/icons/Tango/scalable/places/network-server.svg
 share/icons/Tango/scalable/places/network-workgroup.svg
 share/icons/Tango/scalable/places/network.svg
 share/icons/Tango/scalable/places/network_local.svg
+share/icons/Tango/scalable/places/novell-button.svg
 share/icons/Tango/scalable/places/redhat-network-server.svg
 share/icons/Tango/scalable/places/server.svg
 share/icons/Tango/scalable/places/start-here.svg
@@ -2921,7 +3020,6 @@ share/icons/Tango/scalable/status/folder-drag-accept.svg
 share/icons/Tango/scalable/status/folder-open.svg
 share/icons/Tango/scalable/status/folder-visiting.icon
 share/icons/Tango/scalable/status/folder-visiting.svg
-share/icons/Tango/scalable/status/folder_open.icon
 share/icons/Tango/scalable/status/folder_open.svg
 share/icons/Tango/scalable/status/gnome-dev-wavelan-encrypted.svg
 share/icons/Tango/scalable/status/gnome-fs-directory-accept.icon
@@ -2957,6 +3055,9 @@ share/icons/Tango/scalable/status/network-receive.svg
 share/icons/Tango/scalable/status/network-transmit-receive.svg
 share/icons/Tango/scalable/status/network-transmit.svg
 share/icons/Tango/scalable/status/network-wireless-encrypted.svg
+share/icons/Tango/scalable/status/nm-adhoc.svg
+share/icons/Tango/scalable/status/nm-device-wired.svg
+share/icons/Tango/scalable/status/nm-device-wireless.svg
 share/icons/Tango/scalable/status/nm-no-connection.svg
 share/icons/Tango/scalable/status/overcast.svg
 share/icons/Tango/scalable/status/printer-error.svg
@@ -2995,7 +3096,6 @@ share/icons/Tango/scalable/status/weather-showers-scattered.svg
 share/icons/Tango/scalable/status/weather-showers.svg
 share/icons/Tango/scalable/status/weather-snow.svg
 share/icons/Tango/scalable/status/weather-storm.svg
-@unexec rm %D/share/icons/Tango/icon-theme.cache 2>/dev/null || true
 @dirrm share/icons/Tango/scalable/status
 @dirrm share/icons/Tango/scalable/places
 @dirrm share/icons/Tango/scalable/mimetypes
@@ -3038,5 +3138,6 @@ share/icons/Tango/scalable/status/weather-storm.svg
 @dirrm share/icons/Tango/16x16/animations
 @dirrm share/icons/Tango/16x16/actions
 @dirrm share/icons/Tango/16x16
+@unexec rm %D/share/icons/Tango/icon-theme.cache 2>/dev/null || true
 @dirrm share/icons/Tango
 @dirrmtry share/icons
