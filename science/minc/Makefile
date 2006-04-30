@@ -35,6 +35,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ARGS=	--enable-static=yes --enable-shared=yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
+CONFLICTS=	minc-2*
+
 MAN1=	dcm2mnc.1 \
 	ecattominc.1 \
 	invert_raw_image.1 \

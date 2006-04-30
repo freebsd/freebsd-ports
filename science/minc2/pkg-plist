@@ -5,11 +5,14 @@ bin/minc_modify_header
 bin/mincaverage
 bin/minccalc
 bin/mincconcat
+bin/mincconvert
 bin/minccopy
 bin/mincdiff
+bin/mincdump
 bin/mincedit
 bin/mincexpand
 bin/mincextract
+bin/mincgen
 bin/mincheader
 bin/minchistory
 bin/mincinfo
@@ -36,6 +39,8 @@ bin/xfmconcat
 bin/xfminvert
 include/ParseArgv.h
 include/minc.h
+include/minc2.h
+include/minc_compat.h
 include/minc_simple.h
 include/nd_loop.h
 include/time_stamp.h
@@ -57,12 +62,12 @@ include/volume_io/vol_io_prototypes.h
 include/volume_io/volume.h
 include/volume_io/volume_cache.h
 include/voxel_loop.h
-lib/libminc.a
-lib/libminc.la
-lib/libminc.so
-lib/libminc.so.1
-lib/libvolume_io.a
-lib/libvolume_io.la
-lib/libvolume_io.so
-lib/libvolume_io.so.0
+lib/libminc2.a
+lib/libminc2.la
+lib/libminc2.so
+lib/libminc2.so.2
+lib/libvolume_io2.a
+lib/libvolume_io2.la
+lib/libvolume_io2.so
+lib/libvolume_io2.so.2
 @dirrm include/volume_io
