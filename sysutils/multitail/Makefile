@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	multitail
-PORTVERSION=	3.8.10
+PORTVERSION=	4.0.3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.vanheusden.com/multitail/
 EXTRACT_SUFX=	.tgz
@@ -14,10 +14,15 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	obraun@FreeBSD.org
 COMMENT=	Tail multiple files on console with ncurses
 
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 
 MAN1=		multitail.1
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+EXTRA_PATCHES=	${FILESDIR}/e-patch-config.c ${FILESDIR}/e-patch-cv.c
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^CC/d ; s/^CFLAGS=/CFLAGS+=/' ${WRKSRC}/Makefile
@@ -34,4 +39,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/license.txt ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
