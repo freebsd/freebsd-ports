@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	openal
-DISTVERSION=	0.0-0.2.20040726
-PORTREVISION=	1
+DISTVERSION=	0.0.9-0.3.20060226cvs.fc3
 CATEGORIES=	audio linux
-MASTER_SITE_SUBDIR=	../extras/3/${LINUX_RPM_ARCH}/
+MASTER_SITE_SUBDIR=	../extras/${LINUX_DIST_VER}/${LINUX_RPM_ARCH}/
 
 MAINTAINER=	jylefort@FreeBSD.org
 COMMENT=	A 3D positional spatialized sound library (Linux version)
@@ -24,6 +23,8 @@ RUN_DEPENDS=	${LINUXBASE}/lib/libasound.so.2:${PORTSDIR}/audio/linux-alsa-lib \
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX_RPM=	yes
+LINUX_DIST_VER=	3
+MASTER_SITE_SRC_SUBDIR=	../extras/${LINUX_DIST_VER}/SRPMS
 INSTALLS_SHLIB=	yes
 AUTOMATIC_PLIST=yes
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
