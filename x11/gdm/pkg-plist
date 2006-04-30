@@ -11,9 +11,9 @@ etc/gdm/PostSession/Default
 etc/gdm/PreSession/Default
 etc/gdm/XKeepsCrashing
 etc/gdm/Xsession
-@unexec if cmp -s %D/etc/gdm/gdm.conf %D/etc/gdm/factory-gdm.conf; then rm -f %D/etc/gdm/gdm.conf; fi
-etc/gdm/factory-gdm.conf
-@exec [ -f %B/gdm.conf ] || cp %B/%f %B/gdm.conf
+@unexec if cmp -s %D/etc/gdm/custom.conf %D/etc/gdm/custom.conf.default; then rm -f %D/etc/gdm/custom.conf; fi
+etc/gdm/custom.conf.default
+@exec [ -f %B/custom.conf ] || cp %B/%f %B/custom.conf
 etc/gdm/locale.alias
 @unexec if cmp -s %D/etc/gdm/modules/AccessDwellMouseEvents %D/etc/gdm/modules/factory-AccessDwellMouseEvents; then rm -f %D/etc/gdm/modules/AccessDwellMouseEvents; fi
 etc/gdm/modules/factory-AccessDwellMouseEvents
@@ -29,8 +29,8 @@ lib/gtk-2.0/modules/libkeymouselistener.la
 lib/gtk-2.0/modules/libkeymouselistener.so
 %%PAM_MISC%%libexec/gdmaskpass
 libexec/gdmchooser
-libexec/gdmlogin
 libexec/gdmgreeter
+libexec/gdmlogin
 libexec/gdmtranslate
 sbin/gdm
 sbin/gdm-binary
@@ -43,6 +43,8 @@ share/gnome/applications/gdmflexiserver.desktop
 share/gnome/applications/gdmphotosetup.desktop
 share/gnome/applications/gdmsetup.desktop
 share/gnome/gdm/BuiltInSessions/default.desktop
+share/gnome/gdm/defaults.conf
+share/gnome/gdm/factory-defaults.conf
 share/gnome/gdm/gdmchooser.glade
 share/gnome/gdm/gdmphotosetup.glade
 share/gnome/gdm/gdmsetup.glade
@@ -55,22 +57,16 @@ share/gnome/gdm/themes/circles/options.png
 share/gnome/gdm/themes/circles/screenshot.png
 share/gnome/gdm/themes/happygnome-list/GdmGreeterTheme.desktop
 share/gnome/gdm/themes/happygnome-list/background.svg
-share/gnome/gdm/themes/happygnome-list/disconnect.png
-share/gnome/gdm/themes/happygnome-list/gnome-logo.png
+share/gnome/gdm/themes/happygnome-list/gnome-logo.svg
 share/gnome/gdm/themes/happygnome-list/happygnome.xml
 share/gnome/gdm/themes/happygnome-list/options.png
 share/gnome/gdm/themes/happygnome-list/screenshot.png
-share/gnome/gdm/themes/happygnome-list/session.png
-share/gnome/gdm/themes/happygnome-list/system.png
 share/gnome/gdm/themes/happygnome/GdmGreeterTheme.desktop
 share/gnome/gdm/themes/happygnome/background.svg
-share/gnome/gdm/themes/happygnome/disconnect.png
-share/gnome/gdm/themes/happygnome/gnome-logo.png
+share/gnome/gdm/themes/happygnome/gnome-logo.svg
 share/gnome/gdm/themes/happygnome/happygnome.xml
 share/gnome/gdm/themes/happygnome/options.png
 share/gnome/gdm/themes/happygnome/screenshot.png
-share/gnome/gdm/themes/happygnome/session.png
-share/gnome/gdm/themes/happygnome/system.png
 share/gnome/help/gdm/C/gdm.xml
 share/gnome/help/gdm/C/legal.xml
 share/gnome/help/gdm/de/figures/gdm_window.png
@@ -94,6 +90,8 @@ share/gnome/help/gdm/ko/legal.xml
 share/gnome/help/gdm/sv/figures/gdm_window.png
 share/gnome/help/gdm/sv/gdm.xml
 share/gnome/help/gdm/sv/legal.xml
+share/gnome/help/gdm/uk/gdm.xml
+share/gnome/help/gdm/uk/legal.xml
 share/gnome/help/gdm/zh_CN/figures/gdm_window.png
 share/gnome/help/gdm/zh_CN/gdm.xml
 share/gnome/help/gdm/zh_CN/legal.xml
@@ -111,6 +109,7 @@ share/gnome/omf/gdm/gdm-it.omf
 share/gnome/omf/gdm/gdm-ja.omf
 share/gnome/omf/gdm/gdm-ko.omf
 share/gnome/omf/gdm/gdm-sv.omf
+share/gnome/omf/gdm/gdm-uk.omf
 share/gnome/omf/gdm/gdm-zh_CN.omf
 share/gnome/omf/gdm/gdm-zh_HK.omf
 share/gnome/omf/gdm/gdm-zh_TW.omf
@@ -162,6 +161,7 @@ share/locale/cs/LC_MESSAGES/gdm.mo
 share/locale/cy/LC_MESSAGES/gdm.mo
 share/locale/da/LC_MESSAGES/gdm.mo
 share/locale/de/LC_MESSAGES/gdm.mo
+share/locale/dz/LC_MESSAGES/gdm.mo
 share/locale/el/LC_MESSAGES/gdm.mo
 share/locale/en_CA/LC_MESSAGES/gdm.mo
 share/locale/en_GB/LC_MESSAGES/gdm.mo
@@ -182,6 +182,7 @@ share/locale/id/LC_MESSAGES/gdm.mo
 share/locale/is/LC_MESSAGES/gdm.mo
 share/locale/it/LC_MESSAGES/gdm.mo
 share/locale/ja/LC_MESSAGES/gdm.mo
+share/locale/ka/LC_MESSAGES/gdm.mo
 share/locale/ko/LC_MESSAGES/gdm.mo
 share/locale/ku/LC_MESSAGES/gdm.mo
 share/locale/lt/LC_MESSAGES/gdm.mo
@@ -196,7 +197,6 @@ share/locale/nb/LC_MESSAGES/gdm.mo
 share/locale/ne/LC_MESSAGES/gdm.mo
 share/locale/nl/LC_MESSAGES/gdm.mo
 share/locale/nn/LC_MESSAGES/gdm.mo
-share/locale/no/LC_MESSAGES/gdm.mo
 share/locale/nso/LC_MESSAGES/gdm.mo
 share/locale/pa/LC_MESSAGES/gdm.mo
 share/locale/pl/LC_MESSAGES/gdm.mo
@@ -219,11 +219,27 @@ share/locale/vi/LC_MESSAGES/gdm.mo
 share/locale/wa/LC_MESSAGES/gdm.mo
 share/locale/xh/LC_MESSAGES/gdm.mo
 share/locale/zh_CN/LC_MESSAGES/gdm.mo
+share/locale/zh_HK/LC_MESSAGES/gdm.mo
 share/locale/zh_TW/LC_MESSAGES/gdm.mo
 share/locale/zu/LC_MESSAGES/gdm.mo
+@dirrmtry share/locale/zu/LC_MESSAGES
+@dirrmtry share/locale/zu
+@dirrmtry share/locale/xh/LC_MESSAGES
+@dirrmtry share/locale/xh
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
+@dirrmtry share/locale/nso/LC_MESSAGES
+@dirrmtry share/locale/nso
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
+@dirrmtry share/locale/mi/LC_MESSAGES
+@dirrmtry share/locale/mi
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
 @dirrm share/gnome/xsessions
+@dirrm share/gnome/pixmaps/faces
 @dirrm share/gnome/omf/gdm
 @dirrm share/gnome/help/gdm/zh_TW/figures
 @dirrm share/gnome/help/gdm/zh_TW
@@ -231,6 +247,7 @@ share/locale/zu/LC_MESSAGES/gdm.mo
 @dirrm share/gnome/help/gdm/zh_HK
 @dirrm share/gnome/help/gdm/zh_CN/figures
 @dirrm share/gnome/help/gdm/zh_CN
+@dirrm share/gnome/help/gdm/uk
 @dirrm share/gnome/help/gdm/sv/figures
 @dirrm share/gnome/help/gdm/sv
 @dirrm share/gnome/help/gdm/ko/figures
@@ -247,13 +264,12 @@ share/locale/zu/LC_MESSAGES/gdm.mo
 @dirrm share/gnome/help/gdm/de
 @dirrm share/gnome/help/gdm/C
 @dirrm share/gnome/help/gdm
-@dirrm share/gnome/gdm/themes/happygnome
 @dirrm share/gnome/gdm/themes/happygnome-list
+@dirrm share/gnome/gdm/themes/happygnome
 @dirrm share/gnome/gdm/themes/circles
 @dirrm share/gnome/gdm/themes
 @dirrm share/gnome/gdm/BuiltInSessions
 @dirrm share/gnome/gdm
-@dirrm share/gnome/pixmaps/faces
 @dirrm etc/pam.d
 @dirrm etc/gdm/modules
 @dirrm etc/gdm/Sessions
@@ -262,10 +278,10 @@ share/locale/zu/LC_MESSAGES/gdm.mo
 @dirrm etc/gdm/PostLogin
 @dirrm etc/gdm/Init
 @dirrm etc/gdm
-@unexec /bin/rmdir %D/etc/dm/Sessions 2>/dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/etc/dm 2>/dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/sbin 2>/dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/gnome/log/gdm 2>/dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/gnome/log 2>/dev/null || /usr/bin/true
+@dirrmtry etc/dm/Sessions
+@dirrmtry etc/dm
+@dirrmtry sbin
+@dirrmtry share/gnome/log/gdm
+@dirrmtry share/gnome/log
 @unexec /bin/rm -rf /var/gdm 2>/dev/null || /usr/bin/true
 @unexec /bin/rm -rf /var/log/gdm 2>/dev/null || /usr/bin/true

@@ -117,9 +117,11 @@ share/locale/it/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/ja/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/kn/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/ko/LC_MESSAGES/libbonoboui-2.0.mo
+share/locale/ku/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/li/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/lt/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/lv/LC_MESSAGES/libbonoboui-2.0.mo
+share/locale/mk/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/ml/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/mn/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/mr/LC_MESSAGES/libbonoboui-2.0.mo
@@ -153,10 +155,13 @@ share/locale/wa/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/xh/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/yi/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/libbonoboui-2.0.mo
+share/locale/zh_HK/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/zu/LC_MESSAGES/libbonoboui-2.0.mo
 @dirrmtry share/locale/zu/LC_MESSAGES
 @dirrmtry share/locale/zu
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
 @dirrm lib/bonobo-2.0/samples
 @dirrm lib/bonobo-2.0
 @dirrm include/libbonoboui-2.0/bonobo

@@ -3,30 +3,29 @@
 # Whom:                Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
+#    $MCom: ports/x11/gdm/Makefile,v 1.29 2006/04/26 19:40:44 marcus Exp $
 #
 
 PORTNAME=	gdm
-PORTVERSION=	2.8.0.7
-PORTREVISION=	3
+PORTVERSION=	2.14.4
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=		sources/${PORTNAME:S/2$//}/2.8
+MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME 2 version of xdm display manager
 
 USE_BZIP2=	yes
+USE_GETTEXT=	yes
 USE_X_PREFIX=	yes
 INSTALLS_OMF=	yes
-USE_RC_SUBR=	gdm.sh
+INSTALLS_ICONS=	yes
+USE_RC_SUBR=	gdm
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack intlhack gnomehier libgnomeui librsvg2
+USE_GNOME=	gnomehack intlhack gnomehier libgnomeui librsvg2 gnomedocutils \
+		gnomeprefix
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
-CONFIGURE_ARGS=	--localstatedir=/var --datadir=${PREFIX}/share/gnome \
-		--with-html-dir=${GNOME_HTML_DIR} \
-		--disable-gtk-doc \
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		GTKDOC="false"
@@ -34,9 +33,11 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 GDMDIR?=	${PREFIX}/etc/gdm
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
+GNOME_LOCALSTATEDIR=	/var
+
 MAN1=		gdm.1
 
-OPTIONS=	IPV6 "Enable IPv6 support" off
+OPTIONS=	IPV6 "Enable IPv6 support" on
 
 .include <bsd.port.pre.mk>
 
@@ -52,7 +53,7 @@ PLIST_SUB+=	PAM_MISC=""
 PLIST_SUB+=	PAM_MISC="@comment "
 .endif
 
-.if defined(WITH_IPV6)
+.if !defined(WITHOUT_IPV6)
 CONFIGURE_ARGS+=	--enable-ipv6
 .else
 CONFIGURE_ARGS+=	--disable-ipv6
@@ -70,6 +71,8 @@ post-install:
 .if !defined(PACKAGE_BUILDING)
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .endif
+	${INSTALL_DATA} ${WRKSRC}/config/gdm.conf-custom \
+		${PREFIX}/etc/gdm/custom.conf.default
 	@${MKDIR} ${PREFIX}/etc/gdm/Sessions
 	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g' < ${PKGDIR}/pkg-message \
 		| /usr/bin/fmt 75 79 > ${PKGMESSAGE}

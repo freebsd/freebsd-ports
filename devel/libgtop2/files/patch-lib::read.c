@@ -1,5 +1,5 @@
---- lib/read.c.orig	Mon Apr 11 03:25:32 2005
-+++ lib/read.c	Mon Apr 11 03:27:06 2005
+--- lib/read.c.orig	Mon Apr 10 04:41:46 2006
++++ lib/read.c	Mon Apr 10 15:12:31 2006
 @@ -22,6 +22,7 @@
  */
  
@@ -7,9 +7,9 @@
 +#include <errno.h>
  #include <glibtop/read.h>
  #include <glibtop/error.h>
- #include "libgtop-i18n.h"
-@@ -56,14 +57,18 @@
- 	fprintf (stderr, "LIBRARY: really reading %d bytes.\n", size);
+ #include <glib/gi18n-lib.h>
+@@ -56,14 +57,18 @@ glibtop_read_l (glibtop *server, size_t 
+ 	fprintf (stderr, "LIBRARY: really reading %d bytes.\n", (int)size);
  #endif
  
 +retry:
@@ -24,7 +24,7 @@
  				server,
  				ngettext ("read %d byte",
  					  "read %d bytes", size),
- 				size);
+ 				(int)size);
 +		}
  	}
  }

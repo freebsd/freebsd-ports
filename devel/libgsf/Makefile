@@ -3,15 +3,15 @@
 # Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/devel/libgsf/Makefile,v 1.17 2005/10/11 22:08:17 marcus Exp $
+#   $MCom: ports/devel/libgsf/Makefile,v 1.22 2006/04/23 22:42:46 mezz Exp $
 #
 
 PORTNAME=	libgsf
-PORTVERSION=	1.13.3
-PORTREVISION?=	1
+PORTVERSION=	1.14.0
+PORTREVISION?=	0
 CATEGORIES?=	devel
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R}
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -24,6 +24,7 @@ LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_GETTEXT=	yes
 INSTALLS_SHLIB=	yes
 USE_GNOME?=	gnomehack glib20 libxml2 gconf2 ltverhack intlhack
 USE_AUTOTOOLS=	libtool:15

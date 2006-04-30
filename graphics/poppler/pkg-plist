@@ -1,11 +1,16 @@
+bin/pdffonts
+bin/pdfimages
+bin/pdfinfo
+bin/pdftohtml
+bin/pdftoppm
+bin/pdftops
+bin/pdftotext
 include/poppler/Annot.h
 include/poppler/Array.h
 include/poppler/BaseFile.h
 include/poppler/BuiltinFont.h
 include/poppler/BuiltinFontTables.h
 include/poppler/CMap.h
-include/poppler/CairoFontEngine.h
-include/poppler/CairoOutputDev.h
 include/poppler/Catalog.h
 include/poppler/CharCodeToUnicode.h
 include/poppler/CharTypes.h
@@ -38,25 +43,26 @@ include/poppler/PSOutputDev.h
 include/poppler/PSTokenizer.h
 include/poppler/Page.h
 include/poppler/Parser.h
+include/poppler/ProfileData.h
+include/poppler/SecurityHandler.h
 include/poppler/SplashOutputDev.h
 include/poppler/Stream-CCITT.h
 include/poppler/Stream.h
 include/poppler/TextOutputDev.h
 include/poppler/UTF8.h
+include/poppler/UGooString.h
 include/poppler/UnicodeMap.h
 include/poppler/UnicodeMapTables.h
 include/poppler/UnicodeTypeTable.h
 include/poppler/XRef.h
-include/poppler/glib/poppler-action.h
-include/poppler/glib/poppler-document.h
-include/poppler/glib/poppler-enums.h
-include/poppler/glib/poppler-page.h
-include/poppler/glib/poppler.h
+include/poppler/XpdfPluginAPI.h
+include/poppler/goo/FixedPoint.h
 include/poppler/goo/GooHash.h
 include/poppler/goo/GooList.h
 include/poppler/goo/GooMutex.h
 include/poppler/goo/GooString.h
 include/poppler/goo/GooTimer.h
+include/poppler/goo/GooVector.h
 include/poppler/goo/gfile.h
 include/poppler/goo/gmem.h
 include/poppler/goo/gtypes.h
@@ -84,19 +90,13 @@ include/poppler/splash/SplashT1FontFile.h
 include/poppler/splash/SplashTypes.h
 include/poppler/splash/SplashXPath.h
 include/poppler/splash/SplashXPathScanner.h
-lib/libpoppler-glib.a
-lib/libpoppler-glib.la
-lib/libpoppler-glib.so
-lib/libpoppler-glib.so.0
 lib/libpoppler.a
 lib/libpoppler.la
 lib/libpoppler.so
-lib/libpoppler.so.0
+lib/libpoppler.so.1
 libdata/pkgconfig/poppler-cairo.pc
-libdata/pkgconfig/poppler-glib.pc
 libdata/pkgconfig/poppler-splash.pc
 libdata/pkgconfig/poppler.pc
 @dirrm include/poppler/splash
 @dirrm include/poppler/goo
-@dirrm include/poppler/glib
 @dirrm include/poppler

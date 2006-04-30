@@ -35,6 +35,7 @@ share/locale/az/LC_MESSAGES/gconf-editor.mo
 share/locale/be/LC_MESSAGES/gconf-editor.mo
 share/locale/bg/LC_MESSAGES/gconf-editor.mo
 share/locale/bn/LC_MESSAGES/gconf-editor.mo
+share/locale/br/LC_MESSAGES/gconf-editor.mo
 share/locale/bs/LC_MESSAGES/gconf-editor.mo
 share/locale/ca/LC_MESSAGES/gconf-editor.mo
 share/locale/cs/LC_MESSAGES/gconf-editor.mo
@@ -98,6 +99,7 @@ share/locale/uk/LC_MESSAGES/gconf-editor.mo
 share/locale/vi/LC_MESSAGES/gconf-editor.mo
 share/locale/xh/LC_MESSAGES/gconf-editor.mo
 share/locale/zh_CN/LC_MESSAGES/gconf-editor.mo
+share/locale/zh_HK/LC_MESSAGES/gconf-editor.mo
 share/locale/zh_TW/LC_MESSAGES/gconf-editor.mo
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
@@ -105,6 +107,8 @@ share/locale/zh_TW/LC_MESSAGES/gconf-editor.mo
 @dirrmtry share/locale/ug
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
+@dirrmtry share/locale/br/LC_MESSAGES
+@dirrmtry share/locale/br
 @dirrm share/gnome/pixmaps/gconf-editor
 @dirrm share/gnome/omf/gconf-editor
 @dirrm share/gnome/help/gconf-editor/uk/figures

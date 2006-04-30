@@ -1,11 +1,37 @@
---- gnome-session/Makefile.in.orig	Tue Nov 30 14:07:39 2004
-+++ gnome-session/Makefile.in	Tue Nov 30 14:07:51 2004
-@@ -209,7 +209,7 @@
+--- gnome-session/Makefile.in.orig	Sun Apr 23 23:01:30 2006
++++ gnome-session/Makefile.in	Sun Apr 23 23:06:41 2006
+@@ -67,7 +67,7 @@ am_gnome_session_OBJECTS = manager.$(OBJ
+ 	remote.$(OBJEXT) logout.$(OBJEXT) splash-widget.$(OBJEXT) \
+ 	gsm-xrandr.$(OBJEXT) gsm-keyring.$(OBJEXT) gsm-gsd.$(OBJEXT) \
+ 	gsm-protocol.$(OBJEXT) gsm-remote-desktop.$(OBJEXT) \
+-	gsm-sound.$(OBJEXT) gsm-at-startup.$(OBJEXT) \
++	gsm-sound.$(OBJEXT) gsm-at-startup.$(OBJEXT) gsm-dbus.$(OBJEXT) \
+ 	gsm-multiscreen.$(OBJEXT) gsm-typebuiltins.$(OBJEXT) \
+ 	gdm-logout-action.$(OBJEXT) util.$(OBJEXT) $(am__objects_1)
+ gnome_session_OBJECTS = $(am_gnome_session_OBJECTS)
+@@ -310,7 +310,7 @@ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
  target_alias = @target_alias@
  NULL = 
- 
 -defaultdir = $(datadir)/gnome
 +defaultdir = $(datadir)
- 
  INCLUDES = \
  	$(GNOME_SESSION_CFLAGS)				\
+ 	$(STANDARD_PROPERTIES_CFLAGS)			\
+@@ -386,6 +386,8 @@ gnome_session_SOURCES = \
+ 	splash-widget.h		\
+ 	gsm-xrandr.c		\
+ 	gsm-xrandr.h		\
++	gsm-dbus.c		\
++	gsm-dbus.h		\
+ 	gsm-keyring.c		\
+ 	gsm-keyring.h		\
+ 	gsm-gsd.c		\
+@@ -610,6 +612,7 @@ distclean-compile:
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gsm-sound.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gsm-typebuiltins.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gsm-xrandr.Po@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gsm-dbus.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ice.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/logout-test.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/logout.Po@am__quote@

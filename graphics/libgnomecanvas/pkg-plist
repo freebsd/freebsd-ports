@@ -83,6 +83,7 @@ share/locale/it/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/ja/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/kn/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/ko/LC_MESSAGES/libgnomecanvas-2.0.mo
+share/locale/ku/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/li/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/lt/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/lv/LC_MESSAGES/libgnomecanvas-2.0.mo
@@ -111,15 +112,23 @@ share/locale/sr@ije/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/sv/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/ta/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/tr/LC_MESSAGES/libgnomecanvas-2.0.mo
+share/locale/tt/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/uk/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/vi/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/wa/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/xh/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/yi/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/libgnomecanvas-2.0.mo
+share/locale/zh_HK/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/libgnomecanvas-2.0.mo
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/xh/LC_MESSAGES
 @dirrmtry share/locale/xh
+@dirrmtry share/locale/tt/LC_MESSAGES
+@dirrmtry share/locale/tt
+@dirrmtry share/locale/ku/LC_MESSAGES
+@dirrmtry share/locale/ku
 @dirrmtry share/locale/ang/LC_MESSAGES
 @dirrmtry share/locale/ang
 @dirrm %%DOCSDIR%%

@@ -1,6 +1,6 @@
---- libgnome/gnome-program.c.orig	Mon May 31 16:37:02 2004
-+++ libgnome/gnome-program.c	Mon May 31 16:37:05 2004
-@@ -895,17 +895,17 @@
+--- libgnome/gnome-program.c.orig	Tue Apr  4 06:55:12 2006
++++ libgnome/gnome-program.c	Mon Apr 10 21:07:02 2006
+@@ -936,17 +936,17 @@ gnome_program_locate_file (GnomeProgram 
  	attr_rel = "";
  	break;
      case GNOME_FILE_DOMAIN_DATADIR:
@@ -21,7 +21,7 @@
  	attr_name = GNOME_PARAM_GNOME_DATADIR;
  	attr_rel = "/pixmaps";
  	break;
-@@ -917,7 +917,7 @@
+@@ -958,7 +958,7 @@ gnome_program_locate_file (GnomeProgram 
      case GNOME_FILE_DOMAIN_HELP:
  	prefix_rel = "/share/gnome/help";
  	attr_name = GNOME_PARAM_GNOME_DATADIR;
@@ -30,7 +30,7 @@
  	break;
      case GNOME_FILE_DOMAIN_APP_LIBDIR:
  	prefix_rel = "/lib";
-@@ -926,19 +926,19 @@
+@@ -967,19 +967,19 @@ gnome_program_locate_file (GnomeProgram 
  	search_path = FALSE;
  	break;
      case GNOME_FILE_DOMAIN_APP_DATADIR:
@@ -53,18 +53,3 @@
  	attr_name = GNOME_PARAM_APP_DATADIR;
  	attr_rel = "/pixmaps";
  	search_path = FALSE;
-@@ -959,12 +959,12 @@
- 
- 	attr_name = GNOME_PARAM_APP_DATADIR;
- 
--	len = strlen ("/gnome/help/") + 
-+	len = strlen ("/help/") + 
- 		strlen (program->_priv->app_id) + 1;
- 	attr_rel = g_alloca (len);
- 	if (attr_rel == NULL /* bad things */)
- 		return NULL;
--	g_snprintf (attr_rel, len, "/gnome/help/%s", program->_priv->app_id);
-+	g_snprintf (attr_rel, len, "/help/%s", program->_priv->app_id);
- 
- 	search_path = FALSE;
- 	break;

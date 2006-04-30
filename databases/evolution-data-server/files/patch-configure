@@ -1,8 +1,8 @@
---- configure.orig	Fri Jul 29 17:13:44 2005
-+++ configure	Fri Jul 29 17:15:52 2005
-@@ -23461,6 +23461,13 @@
-     DL_LIB=''
+--- configure.orig	Sun Dec 25 01:57:35 2005
++++ configure	Sun Dec 25 01:58:23 2005
+@@ -23542,6 +23542,14 @@
      SOFTOKN3_LIB=''
+     LIBEXECDIR_IN_SERVER_FILE='../../../libexec'
      ;;
 +*freebsd*)
 +    os_win32=no
@@ -10,11 +10,12 @@
 +    SOCKET_LIBS=''
 +    DL_LIB=''
 +    SOFTOKN3_LIB='-lsoftokn3'
++    LIBEXECDIR_IN_SERVER_FILE="$libexecdir"
 +    ;;
  *)  os_win32=no
      NO_UNDEFINED=''
      SOCKET_LIBS=''
-@@ -27135,7 +27142,7 @@
+@@ -27317,7 +27325,7 @@
  		#include <sys/socket.h>
  		#include <netinet/in.h>
  		#include <netdb.h>
@@ -23,7 +24,7 @@
  
  int
  main ()
-@@ -27873,7 +27880,7 @@
+@@ -27565,7 +27573,7 @@
  	LDFLAGS_save="$LDFLAGS"
  
  	mitlibs="-lkrb5 -lk5crypto -lcom_err -lgssapi_krb5"
@@ -32,7 +33,7 @@
  	echo "$as_me:$LINENO: checking for Kerberos 5" >&5
  echo $ECHO_N "checking for Kerberos 5... $ECHO_C" >&6
  if test "${ac_cv_lib_kerberos5+set}" = set; then
-@@ -31176,7 +31183,7 @@
+@@ -31483,7 +31491,7 @@
  imagesdir="$datadir/pixmaps/evolution-data-server-$BASE_VERSION"
  
  

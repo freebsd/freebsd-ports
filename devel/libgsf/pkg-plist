@@ -46,7 +46,7 @@ include/libgsf-1/gsf/gsf.h
 lib/libgsf-1.a
 lib/libgsf-1.la
 lib/libgsf-1.so
-lib/libgsf-1.so.113
+lib/libgsf-1.so.114
 libdata/pkgconfig/libgsf-1.pc
 share/doc/gsf/GsfBlob.html
 share/doc/gsf/GsfClipData.html
@@ -72,6 +72,7 @@ share/doc/gsf/gsf-metadata.html
 share/doc/gsf/gsf-users.html
 share/doc/gsf/gsf-utils.html
 share/doc/gsf/gsf.devhelp
+share/doc/gsf/gsf.devhelp2
 share/doc/gsf/history.html
 share/doc/gsf/home.png
 share/doc/gsf/index.html
@@ -87,6 +88,7 @@ share/doc/gsf/sources.html
 share/doc/gsf/style.css
 share/doc/gsf/up.png
 share/locale/es/LC_MESSAGES/libgsf.mo
+share/locale/sv/LC_MESSAGES/libgsf.mo
 @dirrm share/doc/gsf
 @dirrm include/libgsf-1/gsf-win32
 @dirrm include/libgsf-1/gsf

@@ -3,15 +3,14 @@
 # Whom:					Adam Weinberger, based off kiesel's ximian-exchange port
 #
 # $FreeBSD$
-#   $MCom: ports/mail/evolution-exchange/Makefile,v 1.39 2005/10/04 04:32:19 marcus Exp $
+#   $MCom: ports/mail/evolution-exchange/Makefile,v 1.59 2006/04/13 07:52:36 bland Exp $
 #
 
 PORTNAME=	evolution-exchange
-PORTVERSION=	2.4.2
-PORTREVISION=	1
+PORTVERSION=	2.6.1
 CATEGORIES=	mail gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}${PKGNAMESUFFIX}/2.4
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}${PKGNAMESUFFIX}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	kiesel@schlund.de
@@ -21,21 +20,20 @@ BUILD_DEPENDS=	evolution-${EVO_VERSION}:${PORTSDIR}/mail/evolution
 RUN_DEPENDS=	evolution-${EVO_VERSION}:${PORTSDIR}/mail/evolution
 
 USE_BZIP2=	yes
+USE_GETTEXT=	yes
 USE_X_PREFIX=	yes
-
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_OPENLDAP=	yes
 USE_GNOME=	gnomeprefix intlhack gnomehack gnometarget
-USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-openldap=${LOCALBASE} \
 		--with-static-ldap=no \
 		--disable-compile-warnings
 
-EVO_VERSION=	2.4
-PLIST_SUB=	VERSION="2.4" EVO_VERSION=${EVO_VERSION} EDS_VERSION="1.2" \
+EVO_VERSION=	2.6
+PLIST_SUB=	VERSION="2.6" EVO_VERSION=${EVO_VERSION} EDS_VERSION="1.2" \
 		OLDDOCSDIR="share/doc/ximian-connector"
 
 .include <bsd.port.pre.mk>

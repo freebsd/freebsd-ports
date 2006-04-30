@@ -1,0 +1,10 @@
+--- configure.orig	Sat Mar 11 13:14:03 2006
++++ configure	Sat Mar 11 13:14:17 2006
+@@ -7249,6 +7249,7 @@ echo "${ECHO_T}found xgettext program is
+        echo "$as_me:$LINENO: checking for catalogs to be installed" >&5
+ echo $ECHO_N "checking for catalogs to be installed... $ECHO_C" >&6
+        NEW_LINGUAS=
++       unset LINGUAS
+        for presentlang in $ALL_LINGUAS; do
+          useit=no
+          if test "%UNSET%" != "${LINGUAS-%UNSET%}"; then

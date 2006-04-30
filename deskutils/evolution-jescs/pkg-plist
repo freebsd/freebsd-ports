@@ -1,8 +1,3 @@
-lib/evolution/%%EVO_VERSION%%/libwcapcalendar.a
-lib/evolution/%%EVO_VERSION%%/libwcapcalendar.la
-lib/evolution/%%EVO_VERSION%%/libwcapcalendar.so
-lib/evolution/%%EVO_VERSION%%/libwcapcalendar.so.0
-lib/evolution-data-server-%%EDS_VERSION%%/camel-providers/libcamelsunone.a
 lib/evolution-data-server-%%EDS_VERSION%%/camel-providers/libcamelsunone.la
 lib/evolution-data-server-%%EDS_VERSION%%/camel-providers/libcamelsunone.so
 lib/evolution-data-server-%%EDS_VERSION%%/camel-providers/libcamelsunone.urls
@@ -21,6 +16,7 @@ share/locale/en_CA/LC_MESSAGES/evolution-jescs-%%VERSION%%.mo
 share/locale/en_GB/LC_MESSAGES/evolution-jescs-%%VERSION%%.mo
 share/locale/es/LC_MESSAGES/evolution-jescs-%%VERSION%%.mo
 share/locale/fr/LC_MESSAGES/evolution-jescs-%%VERSION%%.mo
+share/locale/fi/LC_MESSAGES/evolution-jescs-%%VERSION%%.mo
 share/locale/it/LC_MESSAGES/evolution-jescs-%%VERSION%%.mo
 share/locale/ja/LC_MESSAGES/evolution-jescs-%%VERSION%%.mo
 share/locale/ko/LC_MESSAGES/evolution-jescs-%%VERSION%%.mo
@@ -34,6 +30,7 @@ share/locale/sk/LC_MESSAGES/evolution-jescs-%%VERSION%%.mo
 share/locale/sq/LC_MESSAGES/evolution-jescs-%%VERSION%%.mo
 share/locale/sv/LC_MESSAGES/evolution-jescs-%%VERSION%%.mo
 share/locale/uk/LC_MESSAGES/evolution-jescs-%%VERSION%%.mo
+share/locale/vi/LC_MESSAGES/evolution-jescs-%%VERSION%%.mo
 share/locale/zh_CN/LC_MESSAGES/evolution-jescs-%%VERSION%%.mo
 share/locale/zh_HK/LC_MESSAGES/evolution-jescs-%%VERSION%%.mo
 share/locale/zh_TW/LC_MESSAGES/evolution-jescs-%%VERSION%%.mo

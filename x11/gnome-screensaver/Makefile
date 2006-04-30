@@ -3,15 +3,14 @@
 # Whom:			Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/x11/gnome-screensaver/Makefile,v 1.23 2005/11/03 19:04:24 marcus Exp $
+#   $MCom: ports/x11/gnome-screensaver/Makefile,v 1.36 2006/04/13 07:52:40 bland Exp $
 #
 
 PORTNAME=	gnome-screensaver
-PORTVERSION=	0.0.24
-PORTREVISION=	1
+PORTVERSION=	2.14.1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.0
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME screen saver and locker
@@ -22,11 +21,10 @@ RUN_DEPENDS=	xscreensaver-gl-helper:${PORTSDIR}/x11/xscreensaver-gnome-hacks
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeui gnomemenus
 CONFIGURE_ARGS=	--disable-pam \
-		--with-gdm-config=${X11BASE}/etc/gdm/gdm.conf \
+		--with-gdm-config=${X11BASE}/etc/gdm/custom.conf \
 		--with-xscreensaverdir=${XSCREENSAVER_DIR} \
 		--with-xscreensaverhackdir=${X11BASE}/bin/xscreensaver-hacks
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
@@ -41,7 +39,7 @@ XSCREENSAVER_DIR=	${X11BASE}/share/xscreensaver/config
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-BROKEN=	"Does not build on 4.X"
+BROKEN=	Does not build on 4.X
 .endif
 
 post-patch:

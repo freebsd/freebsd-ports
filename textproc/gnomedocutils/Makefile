@@ -3,14 +3,15 @@
 # Whom:					Adam Weinberger <adamw@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/textproc/gnomedocutils/Makefile,v 1.21 2005/10/12 19:50:19 marcus Exp $
+#   $MCom: ports/textproc/gnomedocutils/Makefile,v 1.32 2006/03/14 03:06:20 marcus Exp $
 #
 
 PORTNAME=	gnomedocutils
-PORTVERSION=	0.4.4
+PORTVERSION=	0.6.0
+PORTREVISION=	1
 CATEGORIES=	textproc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/gnome-doc-utils/0.4
+MASTER_SITE_SUBDIR=	sources/gnome-doc-utils/0.6
 DISTNAME=	gnome-doc-utils-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -24,6 +25,7 @@ PREFIX?=	${X11BASE}
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_GETTEXT=	yes
 USE_GNOME=	gnomehier gnometarget gnomehack libxslt
 USE_PYTHON=	yes
 INSTALLS_OMF=	yes

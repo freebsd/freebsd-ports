@@ -1,7 +1,7 @@
 #!/bin/sh
 #
 # $FreeBSD$
-#   $MCom: ports/x11/libgnome/files/pkg-deinstall.in,v 1.2 2005/07/04 00:15:01 marcus Exp $
+#   $MCom: ports/x11/libgnome/files/pkg-deinstall.in,v 1.4 2005/11/16 00:04:58 ahze Exp $
 #
 # Restore gconf keys of gnomevfs2.
 

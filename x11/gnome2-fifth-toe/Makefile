@@ -3,7 +3,7 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/x11/gnome2-fifth-toe/Makefile,v 1.73 2005/08/26 03:21:23 marcus Exp $
+#   $MCom: ports/x11/gnome2-fifth-toe/Makefile,v 1.77 2006/02/03 05:53:28 marcus Exp $
 #
 
 PORTREVISION=	0
@@ -34,8 +34,7 @@ RUN_DEPENDS=	pan:${PORTSDIR}/news/pan2 \
 		nautilus-sendto:${PORTSDIR}/deskutils/nautilus-sendto \
 		goobox:${PORTSDIR}/audio/goobox \
 		inkscape:${PORTSDIR}/graphics/inkscape \
-		gpdf:${PORTSDIR}/graphics/gpdf \
-		ggv:${PORTSDIR}/print/ggv
+		atomix:${PORTSDIR}/games/atomix
 
 MASTERDIR=	${.CURDIR}/../gnome2
 GNOME_SLAVE=	yes

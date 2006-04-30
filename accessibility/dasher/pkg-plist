@@ -75,6 +75,7 @@ share/gnome/dasher/alphabet.dtd
 share/gnome/dasher/alphabet.dutch.xml
 share/gnome/dasher/alphabet.english.xml
 share/gnome/dasher/alphabet.englishC.xml
+share/gnome/dasher/alphabet.englishLC.xml
 share/gnome/dasher/alphabet.ethiopic.xml
 share/gnome/dasher/alphabet.ewe.xml
 share/gnome/dasher/alphabet.faroese.xml
@@ -91,6 +92,7 @@ share/gnome/dasher/alphabet.hiragana2.xml
 share/gnome/dasher/alphabet.hungarian.xml
 share/gnome/dasher/alphabet.ipa.xml
 share/gnome/dasher/alphabet.italian.xml
+share/gnome/dasher/alphabet.japanese.canna.xml
 share/gnome/dasher/alphabet.kazakh.xml
 share/gnome/dasher/alphabet.kirghiz.xml
 share/gnome/dasher/alphabet.kirundi.xml
@@ -144,11 +146,15 @@ share/gnome/dasher/colour.rainbow.xml
 share/gnome/dasher/colour.vowels.xml
 share/gnome/dasher/colour.vowels2.xml
 share/gnome/dasher/colour.xml
+share/gnome/dasher/controllabels.dtd
+share/gnome/dasher/controllabels.xml
 share/gnome/dasher/dasher.glade
+share/gnome/dasher/dashermaemo.glade
 share/gnome/dasher/training_albanian_SQ.txt
 share/gnome/dasher/training_basque_EU.txt
 share/gnome/dasher/training_bengali_BD.txt
 share/gnome/dasher/training_bengali_bn.txt
+share/gnome/dasher/training_canna_JP.txt
 share/gnome/dasher/training_czech_CS.txt
 share/gnome/dasher/training_danish_DK.txt
 share/gnome/dasher/training_dutch_NL.txt
@@ -170,6 +176,7 @@ share/gnome/dasher/training_russian_RU.txt
 share/gnome/dasher/training_spanish_ES.txt
 share/gnome/dasher/training_swahili_KE.txt
 share/gnome/dasher/training_swedish_SE.txt
+share/gnome/dasher/training_turkish_TR.txt
 share/gnome/dasher/training_welsh_GB.txt
 share/gnome/help/dasher/C/dasher.xml
 share/gnome/help/dasher/C/figures/figure2.png
@@ -189,20 +196,23 @@ share/gnome/help/dasher/eu/figures/prefs3.png
 share/gnome/help/dasher/eu/figures/prefs4.png
 share/gnome/help/dasher/eu/figures/prefs5.png
 share/gnome/help/dasher/eu/version.xml
-share/gnome/icons/dasher.png
 share/gnome/omf/dasher/dasher-C.omf
 share/gnome/omf/dasher/dasher-eu.omf
+share/icons/hicolor/48x48/apps/dasher.png
+share/icons/hicolor/scalable/apps/dasher.svg
 share/locale/ar/LC_MESSAGES/dasher.mo
 share/locale/az/LC_MESSAGES/dasher.mo
 share/locale/be/LC_MESSAGES/dasher.mo
 share/locale/bg/LC_MESSAGES/dasher.mo
 share/locale/bn/LC_MESSAGES/dasher.mo
+share/locale/br/LC_MESSAGES/dasher.mo
 share/locale/bs/LC_MESSAGES/dasher.mo
 share/locale/ca/LC_MESSAGES/dasher.mo
 share/locale/cs/LC_MESSAGES/dasher.mo
 share/locale/cy/LC_MESSAGES/dasher.mo
 share/locale/da/LC_MESSAGES/dasher.mo
 share/locale/de/LC_MESSAGES/dasher.mo
+share/locale/dz/LC_MESSAGES/dasher.mo
 share/locale/el/LC_MESSAGES/dasher.mo
 share/locale/en_CA/LC_MESSAGES/dasher.mo
 share/locale/en_GB/LC_MESSAGES/dasher.mo
@@ -222,7 +232,9 @@ share/locale/hu/LC_MESSAGES/dasher.mo
 share/locale/id/LC_MESSAGES/dasher.mo
 share/locale/it/LC_MESSAGES/dasher.mo
 share/locale/ja/LC_MESSAGES/dasher.mo
+share/locale/ka/LC_MESSAGES/dasher.mo
 share/locale/ko/LC_MESSAGES/dasher.mo
+share/locale/ky/LC_MESSAGES/dasher.mo
 share/locale/lt/LC_MESSAGES/dasher.mo
 share/locale/mk/LC_MESSAGES/dasher.mo
 share/locale/mn/LC_MESSAGES/dasher.mo
@@ -244,14 +256,25 @@ share/locale/sr/LC_MESSAGES/dasher.mo
 share/locale/sr@Latn/LC_MESSAGES/dasher.mo
 share/locale/sv/LC_MESSAGES/dasher.mo
 share/locale/ta/LC_MESSAGES/dasher.mo
+share/locale/th/LC_MESSAGES/dasher.mo
 share/locale/tk/LC_MESSAGES/dasher.mo
 share/locale/tr/LC_MESSAGES/dasher.mo
 share/locale/ug/LC_MESSAGES/dasher.mo
 share/locale/uk/LC_MESSAGES/dasher.mo
+share/locale/vi/LC_MESSAGES/dasher.mo
 share/locale/zh_CN/LC_MESSAGES/dasher.mo
+share/locale/zh_HK/LC_MESSAGES/dasher.mo
 share/locale/zh_TW/LC_MESSAGES/dasher.mo
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/ug/LC_MESSAGES
 @dirrmtry share/locale/ug
+@dirrmtry share/locale/ky/LC_MESSAGES
+@dirrmtry share/locale/ky
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
+@dirrmtry share/locale/br/LC_MESSAGES
+@dirrmtry share/locale/br
 @dirrm share/gnome/omf/dasher
 @dirrm share/gnome/help/dasher/eu/figures
 @dirrm share/gnome/help/dasher/eu

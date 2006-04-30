@@ -1,33 +1,19 @@
---- configure.orig	Wed Jul 13 19:29:53 2005
-+++ configure	Wed Jul 13 19:36:36 2005
-@@ -1931,9 +1931,9 @@
- 
- # libtool versioning
- LT_RELEASE=$LIBGTOP_MAJOR_VERSION.$LIBGTOP_MINOR_VERSION
--LT_CURRENT=$LIBGTOP_CURRENT
--LT_REVISION=$LIBGTOP_REVISION
--LT_AGE=$LIBGTOP_AGE
-+LT_CURRENT=2
-+LT_REVISION=0
-+LT_AGE=0
- LT_VERSION_INFO="-version-info ${LT_CURRENT}:${LT_REVISION}:${LT_AGE}"
+--- configure.orig	Mon Apr 10 15:28:24 2006
++++ configure	Mon Apr 10 15:30:40 2006
+@@ -20568,6 +20568,7 @@ else
+ 	    for def in nothing KERNEL _KERNEL; do
+ 	      cat >conftest.$ac_ext <<_ACEOF
+ #define $def
++#include <sys/types.h>
+ #include <sys/ipc.h>
+ #include <sys/msg.h>
+ #include <stdio.h>
+@@ -23458,7 +23459,7 @@ fi
  
  
-@@ -23654,6 +23654,8 @@
- fi
+ case "$host_os" in
+-     solaris*)
++     solaris*|freebsd*)
  
- done
-+;;
-+esac
- 
- 
- 
-@@ -23792,8 +23794,6 @@
- 
- fi
- 
--     ;;
--esac
- 
- 
- echo "$as_me:$LINENO: checking for vm_statistics in -lmach" >&5
+ echo "$as_me:$LINENO: checking for kstat_open in -lkstat" >&5
+ echo $ECHO_N "checking for kstat_open in -lkstat... $ECHO_C" >&6

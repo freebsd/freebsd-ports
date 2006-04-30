@@ -32,6 +32,26 @@ include/avahi-common/strlst.h
 include/avahi-common/thread-watch.h
 include/avahi-common/timeval.h
 include/avahi-common/watch.h
+include/avahi-compat-howl/corby/buffer.h
+include/avahi-compat-howl/corby/channel.h
+include/avahi-compat-howl/corby/corby.h
+include/avahi-compat-howl/corby/message.h
+include/avahi-compat-howl/corby/object.h
+include/avahi-compat-howl/corby/orb.h
+include/avahi-compat-howl/discovery/discovery.h
+include/avahi-compat-howl/discovery/text_record.h
+include/avahi-compat-howl/howl.h
+include/avahi-compat-howl/rendezvous/rendezvous.h
+include/avahi-compat-howl/rendezvous/text_record.h
+include/avahi-compat-howl/salt/address.h
+include/avahi-compat-howl/salt/debug.h
+include/avahi-compat-howl/salt/interface.h
+include/avahi-compat-howl/salt/platform.h
+include/avahi-compat-howl/salt/salt.h
+include/avahi-compat-howl/salt/signal.h
+include/avahi-compat-howl/salt/socket.h
+include/avahi-compat-howl/salt/time.h
+include/avahi-compat-libdns_sd/dns_sd.h
 include/avahi-core/core.h
 include/avahi-core/log.h
 include/avahi-core/lookup.h
@@ -55,7 +75,17 @@ lib/libavahi-glib.a
 lib/libavahi-glib.la
 lib/libavahi-glib.so
 lib/libavahi-glib.so.1
+lib/libdns_sd.a
+lib/libdns_sd.la
+lib/libdns_sd.so
+lib/libdns_sd.so.1
+lib/libhowl.a
+lib/libhowl.la
+lib/libhowl.so
+lib/libhowl.so.0
 libdata/pkgconfig/avahi-client.pc
+libdata/pkgconfig/avahi-compat-howl.pc
+libdata/pkgconfig/avahi-compat-libdns_sd.pc
 libdata/pkgconfig/avahi-core.pc
 libdata/pkgconfig/avahi-glib.pc
 sbin/avahi-daemon
@@ -77,6 +107,12 @@ sbin/avahi-dnsconfd
 @dirrm %%DATADIR%%
 @dirrm include/avahi-glib
 @dirrm include/avahi-core
+@dirrm include/avahi-compat-libdns_sd
+@dirrm include/avahi-compat-howl/salt
+@dirrm include/avahi-compat-howl/rendezvous
+@dirrm include/avahi-compat-howl/discovery
+@dirrm include/avahi-compat-howl/corby
+@dirrm include/avahi-compat-howl
 @dirrm include/avahi-common
 @dirrm include/avahi-client
 @dirrm etc/avahi/services

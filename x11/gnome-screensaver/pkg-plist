@@ -2,6 +2,7 @@ bin/gnome-screensaver
 bin/gnome-screensaver-command
 bin/gnome-screensaver-preferences
 etc/xdg/menus/gnome-screensavers.menu
+libdata/pkgconfig/gnome-screensaver.pc
 libexec/gnome-screensaver-dialog
 libexec/gnome-screensaver/floaters
 libexec/gnome-screensaver/popsquares
@@ -24,26 +25,40 @@ share/gnome/pixmaps/backgrounds/cosmos/sombrero.jpg
 share/gnome/pixmaps/backgrounds/cosmos/whirlpool.jpg
 share/gnome/pixmaps/gnome-logo-white.svg
 share/locale/bg/LC_MESSAGES/gnome-screensaver.mo
+share/locale/bn/LC_MESSAGES/gnome-screensaver.mo
 share/locale/ca/LC_MESSAGES/gnome-screensaver.mo
 share/locale/cs/LC_MESSAGES/gnome-screensaver.mo
+share/locale/cy/LC_MESSAGES/gnome-screensaver.mo
+share/locale/da/LC_MESSAGES/gnome-screensaver.mo
 share/locale/de/LC_MESSAGES/gnome-screensaver.mo
+share/locale/dz/LC_MESSAGES/gnome-screensaver.mo
+share/locale/el/LC_MESSAGES/gnome-screensaver.mo
 share/locale/en_CA/LC_MESSAGES/gnome-screensaver.mo
 share/locale/en_GB/LC_MESSAGES/gnome-screensaver.mo
 share/locale/es/LC_MESSAGES/gnome-screensaver.mo
+share/locale/et/LC_MESSAGES/gnome-screensaver.mo
 share/locale/fi/LC_MESSAGES/gnome-screensaver.mo
 share/locale/fr/LC_MESSAGES/gnome-screensaver.mo
 share/locale/gl/LC_MESSAGES/gnome-screensaver.mo
 share/locale/gu/LC_MESSAGES/gnome-screensaver.mo
+share/locale/hi/LC_MESSAGES/gnome-screensaver.mo
 share/locale/hu/LC_MESSAGES/gnome-screensaver.mo
 share/locale/it/LC_MESSAGES/gnome-screensaver.mo
 share/locale/ja/LC_MESSAGES/gnome-screensaver.mo
+share/locale/ka/LC_MESSAGES/gnome-screensaver.mo
+share/locale/ko/LC_MESSAGES/gnome-screensaver.mo
+share/locale/ku/LC_MESSAGES/gnome-screensaver.mo
 share/locale/lt/LC_MESSAGES/gnome-screensaver.mo
+share/locale/mk/LC_MESSAGES/gnome-screensaver.mo
 share/locale/nb/LC_MESSAGES/gnome-screensaver.mo
 share/locale/nl/LC_MESSAGES/gnome-screensaver.mo
 share/locale/no/LC_MESSAGES/gnome-screensaver.mo
 share/locale/pa/LC_MESSAGES/gnome-screensaver.mo
+share/locale/pl/LC_MESSAGES/gnome-screensaver.mo
+share/locale/pt/LC_MESSAGES/gnome-screensaver.mo
 share/locale/pt_BR/LC_MESSAGES/gnome-screensaver.mo
 share/locale/sk/LC_MESSAGES/gnome-screensaver.mo
+share/locale/sq/LC_MESSAGES/gnome-screensaver.mo
 share/locale/sr/LC_MESSAGES/gnome-screensaver.mo
 share/locale/sr@Latn/LC_MESSAGES/gnome-screensaver.mo
 share/locale/sv/LC_MESSAGES/gnome-screensaver.mo
@@ -51,7 +66,10 @@ share/locale/th/LC_MESSAGES/gnome-screensaver.mo
 share/locale/uk/LC_MESSAGES/gnome-screensaver.mo
 share/locale/vi/LC_MESSAGES/gnome-screensaver.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-screensaver.mo
+share/locale/zh_HK/LC_MESSAGES/gnome-screensaver.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-screensaver.mo
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
 @dirrm share/gnome/pixmaps/backgrounds/cosmos
 @dirrm share/gnome/pixmaps/backgrounds
 @dirrm libexec/gnome-screensaver

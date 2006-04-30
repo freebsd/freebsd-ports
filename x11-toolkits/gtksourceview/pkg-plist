@@ -27,6 +27,7 @@ libdata/pkgconfig/gtksourceview-1.0.pc
 %%DOCSDIR%%/gtksourceview-GtkSourceTagStyle.html
 %%DOCSDIR%%/gtksourceview-Searching-in-a-GtkSourceBuffer.html
 %%DOCSDIR%%/gtksourceview.devhelp
+%%DOCSDIR%%/gtksourceview.devhelp2
 %%DOCSDIR%%/home.png
 %%DOCSDIR%%/index.html
 %%DOCSDIR%%/index.sgml
@@ -38,6 +39,7 @@ libdata/pkgconfig/gtksourceview-1.0.pc
 share/gnome/gtksourceview-1.0/language-specs/R.lang
 share/gnome/gtksourceview-1.0/language-specs/ada.lang
 share/gnome/gtksourceview-1.0/language-specs/c.lang
+share/gnome/gtksourceview-1.0/language-specs/changelog.lang
 share/gnome/gtksourceview-1.0/language-specs/cpp.lang
 share/gnome/gtksourceview-1.0/language-specs/csharp.lang
 share/gnome/gtksourceview-1.0/language-specs/css.lang
@@ -57,12 +59,14 @@ share/gnome/gtksourceview-1.0/language-specs/lua.lang
 share/gnome/gtksourceview-1.0/language-specs/makefile.lang
 share/gnome/gtksourceview-1.0/language-specs/msil.lang
 share/gnome/gtksourceview-1.0/language-specs/nemerle.lang
+share/gnome/gtksourceview-1.0/language-specs/octave.lang
 share/gnome/gtksourceview-1.0/language-specs/pascal.lang
 share/gnome/gtksourceview-1.0/language-specs/perl.lang
 share/gnome/gtksourceview-1.0/language-specs/php.lang
 share/gnome/gtksourceview-1.0/language-specs/po.lang
 share/gnome/gtksourceview-1.0/language-specs/python.lang
 share/gnome/gtksourceview-1.0/language-specs/ruby.lang
+share/gnome/gtksourceview-1.0/language-specs/scheme.lang
 share/gnome/gtksourceview-1.0/language-specs/sh.lang
 share/gnome/gtksourceview-1.0/language-specs/sql.lang
 share/gnome/gtksourceview-1.0/language-specs/tcl.lang
@@ -82,6 +86,7 @@ share/locale/cs/LC_MESSAGES/gtksourceview-1.0.mo
 share/locale/cy/LC_MESSAGES/gtksourceview-1.0.mo
 share/locale/da/LC_MESSAGES/gtksourceview-1.0.mo
 share/locale/de/LC_MESSAGES/gtksourceview-1.0.mo
+share/locale/dz/LC_MESSAGES/gtksourceview-1.0.mo
 share/locale/el/LC_MESSAGES/gtksourceview-1.0.mo
 share/locale/en_CA/LC_MESSAGES/gtksourceview-1.0.mo
 share/locale/en_GB/LC_MESSAGES/gtksourceview-1.0.mo
@@ -130,11 +135,16 @@ share/locale/uk/LC_MESSAGES/gtksourceview-1.0.mo
 share/locale/vi/LC_MESSAGES/gtksourceview-1.0.mo
 share/locale/xh/LC_MESSAGES/gtksourceview-1.0.mo
 share/locale/zh_CN/LC_MESSAGES/gtksourceview-1.0.mo
+share/locale/zh_HK/LC_MESSAGES/gtksourceview-1.0.mo
 share/locale/zh_TW/LC_MESSAGES/gtksourceview-1.0.mo
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/xh/LC_MESSAGES
 @dirrmtry share/locale/xh
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
 @dirrm share/gnome/gtksourceview-1.0/language-specs
 @dirrm share/gnome/gtksourceview-1.0
 @dirrm %%DOCSDIR%%

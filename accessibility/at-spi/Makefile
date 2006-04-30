@@ -3,30 +3,35 @@
 # Whom:				Maxim Sobolev <sobomax@FreeBSD.org>
 #
 # $FreeBSD$
+#   $MCom: ports/accessibility/at-spi/Makefile,v 1.43 2006/04/13 07:52:28 bland Exp $
 #
 
 PORTNAME=	at-spi
-PORTVERSION=	1.6.6
-PORTREVISION=	2
+PORTVERSION=	1.7.7
 CATEGORIES=	accessibility x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.6
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	An Assistive Technology Service Provider Interface
 
 USE_BZIP2=	yes
+USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomehier intltool gail libbonobo \
 		intlhack
 USE_X_PREFIX=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--enable-static
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
+
+post-extract:
+	@${RM} -f ${WRKSRC}/registryd/Accessibility_Registry.server
 
 post-patch:
 	@${REINPLACE_CMD} -e "/^SUBDIRS =/s/test//" ${WRKSRC}/Makefile.in

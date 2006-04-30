@@ -1,21 +1,28 @@
---- sysdeps/freebsd/fsusage.c.orig	Mon Feb 28 03:54:41 2005
-+++ sysdeps/freebsd/fsusage.c	Tue May 24 01:49:42 2005
-@@ -9,6 +9,12 @@
+--- sysdeps/freebsd/jfsusage.c.orig	Sun Apr  9 12:52:45 2006
++++ sysdeps/freebsd/fsusage.c	Mon Apr 10 15:34:42 2006
+@@ -9,10 +9,12 @@
+ 
  #include <unistd.h>
  #include <sys/param.h>
+-#if defined (HAVE_SYS_STATVFS_H)
+-#include <sys/statvfs.h>
+-#else
  #include <sys/mount.h>
 +#if __FreeBSD_version >= 600000
 +#include <libgeom.h>
 +#include <sys/resource.h>
 +#include <devstat.h>
 +#include <sys/devicestat.h>
-+#endif
+ #endif
  
  #include <stdio.h>
- #include <string.h>
-@@ -27,15 +33,107 @@ _glibtop_freebsd_get_fsusage_read_write(
+@@ -31,24 +33,108 @@ _glibtop_freebsd_get_fsusage_read_write(
+ 				      const char *path)
  {
  	int result;
+-#if defined (STAT_STATVFS)
+-	struct statvfs sfs;
+-#else
  	struct statfs sfs;
 +#if __FreeBSD_version >= 600000
 +	struct devstat *ds;
@@ -26,14 +33,18 @@
 +	struct gmesh gmp;
 +	double etime;
 +	uint64_t ld[2];
-+#endif
+ #endif
  
+-#if defined (STAT_STATVFS)
+-	result = statvfs (path, &sfs);
+-#else
  	result = statfs (path, &sfs);
+-#endif
  
  	if (result == -1) {
 +		glibtop_warn_io_r (server, "statfs");
- 		return;
- 	}
++		return;
++	}
 +#if __FreeBSD_version >= 600000
 +	ld[0] = 0;
 +	ld[1] = 0;
@@ -55,9 +66,9 @@
 +		glibtop_warn_io_r (server, "geom_stats_snapshot_get()");
 +		geom_stats_close ();
 +		geom_deletetree (&gmp);
-+		return;
-+	}
-+
+ 		return;
+ 	}
+ 
 +	geom_stats_snapshot_timestamp (sc, &ts);
 +	etime = ts.tv_sec + (ts.tv_nsec * 1e-9);
 +	geom_stats_snapshot_reset (sc);
@@ -107,7 +118,7 @@
 +			break;
 +		}
 +	}
- 
++ 
 +	geom_stats_snapshot_free (sc);
 +	geom_stats_close ();
 +	geom_deletetree (&gmp);

@@ -3,15 +3,14 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/www/gtkhtml3/Makefile,v 1.62 2005/10/03 15:21:56 ahze Exp $
+#   $MCom: ports/www/gtkhtml3/Makefile,v 1.77 2006/04/13 07:52:39 bland Exp $
 #
 
 PORTNAME=	gtkhtml3
-PORTVERSION=	3.8.2
-PORTREVISION=	1
+PORTVERSION=	3.10.1
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/3$//}/3.8
+MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/3$//}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 DISTNAME=	${PORTNAME:S/3$//}-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
@@ -20,13 +19,14 @@ COMMENT=	Lightweight HTML rendering/printing/editing engine
 
 LIB_DEPENDS=	soup-2.2.8:${PORTSDIR}/devel/libsoup
 
+USE_GETTEXT=	yes
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack gail libgnomeui \
 		libgnomeprintui ltverhack
 INSTALLS_SHLIB=	yes
-USE_AUTOTOOLS=  libtool:15
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

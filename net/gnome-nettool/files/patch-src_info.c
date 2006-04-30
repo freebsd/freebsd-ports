@@ -1,15 +1,17 @@
---- src/info.c.orig	Thu Jan 27 18:26:53 2005
-+++ src/info.c	Sun Jul  3 17:46:31 2005
-@@ -20,6 +20,8 @@
+--- src/info.c.orig	Mon Apr  3 15:41:33 2006
++++ src/info.c	Sun Apr 23 21:57:39 2006
+@@ -20,6 +20,10 @@
  #include <gtk/gtk.h>
  #include <glib/gi18n.h>
  #include <glib/gprintf.h>
 +#include <sys/types.h>
 +#include <string.h>
++#include <errno.h>
++#include <unistd.h>
  
  #ifdef HAVE_CONFIG_H
  #  include <config.h>
-@@ -38,6 +40,11 @@
+@@ -38,6 +42,11 @@
  #include <sys/ioctl.h>
  #include <stdlib.h>
  #include <net/if.h>
@@ -21,7 +23,7 @@
  
  #include "info.h"
  #include "utils.h"
-@@ -58,6 +65,7 @@ static InfoInterfaceDescription info_ifa
+@@ -58,6 +67,7 @@ static InfoInterfaceDescription info_ifa
  	{ N_("Ethernet Interface"),      INFO_INTERFACE_ETH,     "16_ethernet.xpm", "eth",        NULL },
  	{ N_("Wireless Interface"),      INFO_INTERFACE_WLAN,    "wavelan-16.png",  "wlan",       NULL },
  	{ N_("Modem Interface"),         INFO_INTERFACE_PPP,     "16_ppp.xpm",      "ppp",        NULL },
@@ -29,7 +31,7 @@
  	{ N_("Parallel Line Interface"), INFO_INTERFACE_PLIP,    "16_plip.xpm",     "plip",       NULL },
  	{ N_("Infrared Interface"),      INFO_INTERFACE_IRLAN,   "irda-16.png",     "irlan",      NULL },
  	{ N_("Loopback Interface"),      INFO_INTERFACE_LO,      "16_loopback.xpm", "lo",         NULL },
-@@ -128,9 +136,42 @@ info_get_interface_from_dev_name (const 
+@@ -128,9 +138,42 @@ info_get_interface_from_dev_name (const 
  {
  	gint i;
  	gchar *path;
@@ -71,10 +73,10 @@
  	for (i = 0; info_iface_desc[i].name; i++)
 -		if (strstr (dev_name, info_iface_desc[i].prefix) == dev_name) {
 +		if (strstr (dev_type, info_iface_desc[i].prefix) == dev_type) {
- 			(*iface) = g_strdup_printf ("%s (%s)", info_iface_desc[i].name, dev_name);
+ 			(*iface) = g_strdup_printf ("%s (%s)", _(info_iface_desc[i].name), dev_name);
  			if (info_iface_desc[i].pixbuf == NULL) {
  				path = g_build_filename (PIXMAPS_DIR, info_iface_desc[i].icon, NULL);
-@@ -217,38 +258,87 @@ info_nic_update_stats (gpointer data)
+@@ -217,38 +260,87 @@ info_nic_update_stats (gpointer data)
  	gchar tx[10], tx_error[10], tx_drop[10], tx_ovr[10]; 
  	*/
  	gchar iface[30]; /*, flags[30]; */
@@ -168,7 +170,7 @@
  
  		if (g_ascii_strcasecmp (iface, text) == 0) {
  			/*
-@@ -276,7 +366,9 @@ info_nic_update_stats (gpointer data)
+@@ -276,7 +368,9 @@ info_nic_update_stats (gpointer data)
  	}
  	
  	g_io_channel_unref (io);
@@ -179,24 +181,29 @@
  
  	return TRUE;
  }
-@@ -405,8 +497,16 @@ info_get_nic_information (const gchar *n
+@@ -405,8 +499,20 @@ info_get_nic_information (const gchar *n
  	InfoIpAddr *ip;
  	gint flags;
  	mii_data_result data;
 +#ifdef __FreeBSD__
-+	gint hwmib[6], hwlen;
++	gint hwmib[6];
++	size_t hwlen;
 +	gchar *hwbuf;
 +	guchar *hwptr;
 +	struct if_msghdr *hwifm;
 +	struct sockaddr_dl *hwsinptr;
 +#endif
  
- 	getifaddrs (&ifa0);
+-	getifaddrs (&ifa0);
++	if (getifaddrs (&ifa0) != 0) {
++		g_warning ("getifaddrs failed: %s", g_strerror (errno));
++		goto fail;
++	}
 +	memset (&data, 0, sizeof (data));
  
  	for (ifr6 = ifa0; ifr6; ifr6 = ifr6->ifa_next) {
  		if (strcmp (ifr6->ifa_name, nic) != 0) {
-@@ -452,7 +552,9 @@ info_get_nic_information (const gchar *n
+@@ -452,7 +558,9 @@ info_get_nic_information (const gchar *n
  			ifc.ifc_req = (struct ifreq *) buf;
  			ioctl (sockfd, SIOCGIFCONF, &ifc);
  
@@ -206,7 +213,7 @@
  
  			for (ptr = buf; ptr < buf + ifc.ifc_len;) {
  				ifr = (struct ifreq *) ptr;
-@@ -483,6 +585,45 @@ info_get_nic_information (const gchar *n
+@@ -483,6 +591,45 @@ info_get_nic_information (const gchar *n
  				   (int) ((guchar *) &ifrcopy.ifr_hwaddr.sa_data)[3],
  				   (int) ((guchar *) &ifrcopy.ifr_hwaddr.sa_data)[4],
  				   (int) ((guchar *) &ifrcopy.ifr_hwaddr.sa_data)[5]);
@@ -252,3 +259,12 @@
  #else
  			g_sprintf (dst, NOT_AVAILABLE);
  #endif /* SIOCGIFHWADDR */
+@@ -595,6 +742,8 @@ info_get_nic_information (const gchar *n
+ 	}
+ 
+ 	freeifaddrs (ifa0);
++fail:
++	;
+ }
+ 
+ static gint *

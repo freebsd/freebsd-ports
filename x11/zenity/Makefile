@@ -3,14 +3,14 @@
 # Whom:					Franz Klammer <klammer@webonaut.com>
 #
 # $FreeBSD$
-#   $MCom: ports/x11/zenity/Makefile,v 1.46 2005/10/30 23:07:09 marcus Exp $
+#   $MCom: ports/x11/zenity/Makefile,v 1.59 2006/04/13 07:52:41 bland Exp $
 #
 
 PORTNAME=	zenity
-PORTVERSION=	2.12.1
+PORTVERSION=	2.14.1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.12
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -24,8 +24,8 @@ USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack libgnomecanvas gconf2 gnomedocutils
 USE_BZIP2=	yes
+USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 INSTALLS_OMF=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"

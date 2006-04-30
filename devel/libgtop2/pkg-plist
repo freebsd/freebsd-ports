@@ -44,7 +44,7 @@ include/libgtop-2.0/libgtopconfig.h
 lib/libgtop-2.0.a
 lib/libgtop-2.0.la
 lib/libgtop-2.0.so
-lib/libgtop-2.0.so.2
+lib/libgtop-2.0.so.7
 libdata/pkgconfig/libgtop-2.0.pc
 share/locale/am/LC_MESSAGES/libgtop-2.0.mo
 share/locale/ar/LC_MESSAGES/libgtop-2.0.mo
@@ -77,6 +77,7 @@ share/locale/hu/LC_MESSAGES/libgtop-2.0.mo
 share/locale/id/LC_MESSAGES/libgtop-2.0.mo
 share/locale/it/LC_MESSAGES/libgtop-2.0.mo
 share/locale/ja/LC_MESSAGES/libgtop-2.0.mo
+share/locale/ka/LC_MESSAGES/libgtop-2.0.mo
 share/locale/ko/LC_MESSAGES/libgtop-2.0.mo
 share/locale/ku/LC_MESSAGES/libgtop-2.0.mo
 share/locale/ky/LC_MESSAGES/libgtop-2.0.mo
@@ -107,6 +108,7 @@ share/locale/sr/LC_MESSAGES/libgtop-2.0.mo
 share/locale/sr@Latn/LC_MESSAGES/libgtop-2.0.mo
 share/locale/sv/LC_MESSAGES/libgtop-2.0.mo
 share/locale/ta/LC_MESSAGES/libgtop-2.0.mo
+share/locale/th/LC_MESSAGES/libgtop-2.0.mo
 share/locale/tr/LC_MESSAGES/libgtop-2.0.mo
 share/locale/uk/LC_MESSAGES/libgtop-2.0.mo
 share/locale/vi/LC_MESSAGES/libgtop-2.0.mo

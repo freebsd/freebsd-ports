@@ -1,14 +1,23 @@
---- src/nettool.c.orig	Fri Jan  7 23:13:56 2005
-+++ src/nettool.c	Mon Jan 24 21:03:48 2005
-@@ -22,6 +22,7 @@
- #include <glib/gi18n.h>
+--- src/nettool.c.orig	Tue May 10 18:14:48 2005
++++ src/nettool.c	Sun Apr 23 22:00:13 2006
+@@ -24,6 +24,7 @@
+ #include <string.h>
  #include <sys/types.h>
  #include <sys/socket.h>
 +#include <netinet/in.h>
  #include <signal.h>
  #include <errno.h>
  #include <sys/wait.h>
-@@ -357,6 +358,10 @@
+@@ -315,7 +316,7 @@ netinfo_io_text_buffer_dialog (GIOChanne
+ 			       GIOCondition condition, gpointer data)
+ {
+ 	gchar *text = NULL;
+-	gint len;
++	gsize len;
+ 	Netinfo *netinfo = (Netinfo *) data;
+ 
+ 	g_return_val_if_fail (channel != NULL, FALSE);
+@@ -360,6 +361,10 @@ netinfo_io_text_buffer_dialog (GIOChanne
  						 	len, NULL);
  			}
  
@@ -19,7 +28,7 @@
  		} else if (status == G_IO_STATUS_AGAIN) {
  			char buf[1];
  
-@@ -368,12 +373,13 @@
+@@ -371,12 +376,13 @@ netinfo_io_text_buffer_dialog (GIOChanne
  				}
  				g_string_append_c (netinfo->command_output, buf[0]);
  			}

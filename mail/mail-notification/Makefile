@@ -70,10 +70,11 @@ CONFIGURE_ARGS+=	--disable-evolution
 PLIST_SUB+=		EVOLUTION="@comment "
 .else
 BUILD_DEPENDS+=		${NONEXISTENT}:${PORTSDIR}/mail/evolution:patch \
-			${X11BASE}/libdata/pkgconfig/evolution-plugin-2.4.pc:${PORTSDIR}/mail/evolution
-RUN_DEPENDS+=		${X11BASE}/libdata/pkgconfig/evolution-plugin-2.4.pc:${PORTSDIR}/mail/evolution
+			${X11BASE}/libdata/pkgconfig/evolution-plugin-2.6.pc:${PORTSDIR}/mail/evolution
+RUN_DEPENDS+=		${X11BASE}/libdata/pkgconfig/evolution-plugin-2.6.pc:${PORTSDIR}/mail/evolution
 EVOLUTION_WRKSRC!=	cd ${PORTSDIR}/mail/evolution && ${MAKE} -V WRKSRC
 CONFIGURE_ARGS+=	--with-evolution-source-dir="${EVOLUTION_WRKSRC}"
+LDFLAGS+=		-Wl,-export-dynamic
 PLIST_SUB+=		EVOLUTION="" LITERAL_PREFIX="${PREFIX}"
 .endif
 .if defined(WITHOUT_SYLPHEED)
@@ -100,7 +101,7 @@ LIB_DEPENDS+=		sasl2:${PORTSDIR}/security/cyrus-sasl2
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|evolution-plugin-2.2|evolution-plugin-2.4|' \
+	@${REINPLACE_CMD} -e 's|evolution-plugin-2.2|evolution-plugin-2.6|' \
 		${WRKSRC}/configure
 
 .include <bsd.port.post.mk>

@@ -1,0 +1,37 @@
+--- glib/Makefile.in.orig	Wed Mar  8 20:40:26 2006
++++ glib/Makefile.in	Wed Mar  8 20:42:17 2006
+@@ -65,7 +65,6 @@ LTLIBRARIES = $(lib_LTLIBRARIES)
+ am__DEPENDENCIES_1 =
+ @BUILD_CAIRO_OUTPUT_TRUE@am__DEPENDENCIES_2 = $(am__DEPENDENCIES_1)
+ libpoppler_glib_la_DEPENDENCIES =  \
+-	$(top_builddir)/poppler/libpoppler.la \
+ 	$(top_builddir)/poppler/libpoppler-cairo.la \
+ 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
+ 	$(am__DEPENDENCIES_2)
+@@ -78,7 +77,7 @@ PROGRAMS = $(noinst_PROGRAMS)
+ am_test_poppler_glib_OBJECTS = test-poppler-glib.$(OBJEXT)
+ test_poppler_glib_OBJECTS = $(am_test_poppler_glib_OBJECTS)
+ test_poppler_glib_DEPENDENCIES =  \
+-	$(top_builddir)/poppler/libpoppler.la libpoppler-glib.la \
++	$(top_builddir)/poppler/libpoppler-cairo.la libpoppler-glib.la \
+ 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
+ 	$(am__DEPENDENCIES_2)
+ DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir) -I$(top_builddir)/poppler
+@@ -306,7 +305,7 @@ libpoppler_glib_la_SOURCES = \
+ 	poppler-private.h
+ 
+ libpoppler_glib_la_LIBADD = \
+-	$(top_builddir)/poppler/libpoppler.la		\
++	-lpoppler					\
+ 	$(top_builddir)/poppler/libpoppler-cairo.la	\
+ 	$(POPPLER_GLIB_LIBS)				\
+ 	$(FREETYPE_LIBS)				\
+@@ -317,7 +316,7 @@ test_poppler_glib_SOURCES = \
+        test-poppler-glib.c
+ 
+ test_poppler_glib_LDADD = \
+-	$(top_builddir)/poppler/libpoppler.la	\
++	-lpoppler				\
+ 	libpoppler-glib.la			\
+ 	$(POPPLER_GLIB_LIBS)			\
+ 	$(FREETYPE_LIBS)			\

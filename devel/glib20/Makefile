@@ -3,20 +3,19 @@
 # Whom:				Vanilla I. Shu <vanilla@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/devel/glib20/Makefile,v 1.55 2005/10/03 17:39:56 mezz Exp $
+#   $MCom: ports/devel/glib20/Makefile,v 1.75 2006/04/13 07:57:40 bland Exp $
 #
 
 PORTNAME=	glib
-PORTVERSION=	2.8.6
-PORTREVISION=	1
+PORTVERSION=	2.10.2
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,sources/${PORTNAME}/2.8,} \
-		ftp://ftp.gtk.org/pub/gtk/v2.8/ \
+MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,sources/${PORTNAME}/2.10,} \
+		ftp://ftp.gtk.org/pub/gtk/v${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}/ \
 		ftp://ftp.gimp.org/pub/%SUBDIR%/ \
 		ftp://ftp.cs.umn.edu/pub/gimp/%SUBDIR%/ \
 		http://www.ameth.org/gimp/%SUBDIR%/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,graphics/gimp/%SUBDIR%,}
-MASTER_SITE_SUBDIR=	gtk/v${PORTVERSION:R}
+MASTER_SITE_SUBDIR=	gtk/v${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -27,7 +26,6 @@ LATEST_LINK=	glib20
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_AUTOTOOLS=	libtool:15
-USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig ltverhack
 USE_GMAKE=	yes

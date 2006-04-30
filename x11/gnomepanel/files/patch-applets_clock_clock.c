@@ -1,5 +1,5 @@
---- applets/clock/clock.c.orig	Tue Jan 13 11:55:58 2004
-+++ applets/clock/clock.c	Wed Jan 14 15:43:39 2004
+--- applets/clock/clock.c.orig	Mon Oct 24 02:25:11 2005
++++ applets/clock/clock.c	Tue Nov 22 02:47:05 2005
 @@ -47,7 +47,9 @@
  #include <dirent.h>
  #include <string.h>
@@ -10,7 +10,7 @@
  
  #include <panel-applet.h>
  #include <panel-applet-gconf.h>
-@@ -539,7 +541,11 @@
+@@ -545,7 +547,11 @@ clock_locale_format (void)
  {
          const char *am;
  

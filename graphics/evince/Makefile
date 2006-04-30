@@ -3,24 +3,24 @@
 # Whom:					Adam Weinberger <adamw@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/graphics/evince/Makefile,v 1.35 2005/10/20 01:37:54 ahze Exp $
+#   $MCom: ports/graphics/evince/Makefile,v 1.50 2006/04/24 00:54:32 ahze Exp $
 #
 
 PORTNAME=	evince
-PORTVERSION=	0.4.0
-PORTREVISION=	4
+PORTVERSION=	0.5.2
+PORTREVISION=	2
 CATEGORIES=	graphics print gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.4
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.5
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME 2 multi-format document viewer
 
-LIB_DEPENDS=	poppler.0:${PORTSDIR}/graphics/poppler
+LIB_DEPENDS=	poppler-glib.1:${PORTSDIR}/graphics/poppler-gtk
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
+USE_GETTEXT=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GHOSTSCRIPT=yes
@@ -35,8 +35,9 @@ GCONF_SCHEMAS=	evince.schemas evince-thumbnailer.schemas
 OPTIONS=	DVI		"Enable DVI viewer support"		off \
 		T1LIB		"Enable T1LIB for TYPE1 fonts to DVI (Enables DVI)"	off \
 		NAUTILUS	"Enable Nautilus plugin"		on  \
-		DBUS		"Enable D-BUS support"			off \
-		DJVU		"Enable DJVU support"			off
+		DBUS		"Enable D-BUS support"			on \
+		COMICS		"Enable comic book archives support"	off
+#		DJVU		"Enable DJVU support"			off
 
 .include <bsd.port.pre.mk>
 
@@ -73,20 +74,30 @@ DJVU_DIR?=	# empty
 DJVU_DIR?=	-nox11
 .endif
 
-.if defined(WITH_DJVU)
-LIB_DEPENDS+=		djvulibre.17:${PORTSDIR}/graphics/djvulibre${DJVU_DIR}
-CONFIGURE_ARGS+=	--enable-djvu
-GCONF_SCHEMAS+=		evince-thumbnailer-djvu.schemas
-.else
+# DJVU is broken, need older version of djvu
+#.if defined(WITH_DJVU)
+#LIB_DEPENDS+=		djvulibre.17:${PORTSDIR}/graphics/djvulibre${DJVU_DIR}
+#CONFIGURE_ARGS+=	--enable-djvu
+#GCONF_SCHEMAS+=		evince-thumbnailer-djvu.schemas
+#.else
 CONFIGURE_ARGS+=	--disable-djvu
-.endif
+#.endif
 
-.if defined(WITH_DBUS)
+.if !defined(WITHOUT_DBUS)
 LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus
 .endif
 
+.if defined(WITH_COMICS)
+CONFIGURE_ARGS+=	--enable-comics
+GCONF_SCHEMAS+=	evince-thumbnailer-comics.schemas
+
+RUN_DEPENDS=	unrar:${PORTSDIR}/archivers/unrar \
+		unzip:${PORTSDIR}/archivers/unzip
+.endif
+
 post-patch:
-	@${REINPLACE_CMD} -e 's|-lt1lib|-lt1 -lm|' \
+	@${REINPLACE_CMD} -e 's|-lt1lib|-lt1 -lm| ; \
+		s|execinfo.h|#|g' \
 		${WRKSRC}/configure \
 		${WRKSRC}/dvi/mdvi-lib/Makefile.in
 

@@ -3,15 +3,14 @@
 # Whom:				Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/devel/libgtop2/Makefile,v 1.49 2005/09/05 19:23:42 ahze Exp $
+#   $MCom: ports/devel/libgtop2/Makefile,v 1.70 2006/04/15 05:49:08 marcus Exp $
 #
 
 PORTNAME=	libgtop2
-PORTVERSION=	2.12.2
-PORTREVISION=	1
+PORTVERSION=	2.14.1
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/2.12
+MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 DISTNAME=	libgtop-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
@@ -21,13 +20,13 @@ COMMENT=	GNOME 2 top library
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
 USE_BZIP2=	yes
-USE_PERL5=	yes
+USE_PERL5_BUILD=yes
+USE_GETTEXT=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack glib20
-USE_REINPLACE=	yes
+USE_GNOME=	gnomehack glib20 ltverhack
 INSTALLS_SHLIB=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
@@ -38,8 +37,6 @@ INFO=		libgtop2
 .if ${OSVERSION} >= 600000
 PKGMESSAGE=	${FILESDIR}/pkg-message
 EXTRA_PATCHES+=	${FILESDIR}/extra-67-patch-sysdeps_freebsd_Makefile.in
-.else
-EXTRA_PATCHES+=	${FILESDIR}/extra-45-patch-sysdeps_freebsd_Makefile.in
 .endif
 
 post-patch:

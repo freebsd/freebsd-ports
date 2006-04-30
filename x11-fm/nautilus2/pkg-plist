@@ -6,6 +6,7 @@ include/nautilus/libnautilus-extension/nautilus-column.h
 include/nautilus/libnautilus-extension/nautilus-extension-types.h
 include/nautilus/libnautilus-extension/nautilus-file-info.h
 include/nautilus/libnautilus-extension/nautilus-info-provider.h
+include/nautilus/libnautilus-extension/nautilus-location-widget-provider.h
 include/nautilus/libnautilus-extension/nautilus-menu-item.h
 include/nautilus/libnautilus-extension/nautilus-menu-provider.h
 include/nautilus/libnautilus-extension/nautilus-property-page-provider.h
@@ -14,10 +15,6 @@ lib/libnautilus-extension.a
 lib/libnautilus-extension.la
 lib/libnautilus-extension.so
 lib/libnautilus-extension.so.1
-lib/libnautilus-private.a
-lib/libnautilus-private.la
-lib/libnautilus-private.so
-lib/libnautilus-private.so.2
 libdata/bonobo/servers/Nautilus_shell.server
 libdata/pkgconfig/libnautilus-extension.pc
 share/gnome/applications/nautilus-computer.desktop
@@ -32,7 +29,6 @@ share/gnome/nautilus/glade/nautilus-bookmarks-window.glade
 share/gnome/nautilus/glade/nautilus-file-management-properties.glade
 share/gnome/nautilus/nautilus-extras.placeholder
 share/gnome/nautilus/nautilus-suggested.placeholder
-share/gnome/nautilus/patterns/.striated.png
 share/gnome/nautilus/patterns/blue_gray_rough.png
 share/gnome/nautilus/patterns/blue_ridge.png
 share/gnome/nautilus/patterns/blue_type.png
@@ -115,6 +111,8 @@ share/locale/id/LC_MESSAGES/nautilus.mo
 share/locale/is/LC_MESSAGES/nautilus.mo
 share/locale/it/LC_MESSAGES/nautilus.mo
 share/locale/ja/LC_MESSAGES/nautilus.mo
+share/locale/ka/LC_MESSAGES/nautilus.mo
+share/locale/km/LC_MESSAGES/nautilus.mo
 share/locale/ko/LC_MESSAGES/nautilus.mo
 share/locale/ku/LC_MESSAGES/nautilus.mo
 share/locale/li/LC_MESSAGES/nautilus.mo
@@ -156,12 +154,19 @@ share/locale/wa/LC_MESSAGES/nautilus.mo
 share/locale/xh/LC_MESSAGES/nautilus.mo
 share/locale/yi/LC_MESSAGES/nautilus.mo
 share/locale/zh_CN/LC_MESSAGES/nautilus.mo
+share/locale/zh_HK/LC_MESSAGES/nautilus.mo
 share/locale/zh_TW/LC_MESSAGES/nautilus.mo
 share/locale/zu/LC_MESSAGES/nautilus.mo
+share/mime/application/x-gnome-saved-search.xml
+share/mime/packages/nautilus.xml
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/xh/LC_MESSAGES
 @dirrmtry share/locale/xh
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
+@dirrmtry share/locale/km/LC_MESSAGES
+@dirrmtry share/locale/km
 @dirrm share/gnome/pixmaps/nautilus
 @dirrm share/gnome/nautilus/ui
 @dirrm share/gnome/nautilus/patterns
@@ -170,6 +175,8 @@ share/locale/zu/LC_MESSAGES/nautilus.mo
 @dirrm include/nautilus/libnautilus-extension
 @dirrm include/nautilus
 @exec /bin/mkdir -p %D/lib/nautilus/extensions-1.0
-@unexec /bin/rmdir %D/lib/nautilus/extensions-1.0 2>/dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/lib/nautilus 2>/dev/null || /usr/bin/true
+@dirrmtry lib/nautilus/extensions-1.0
+@dirrmtry lib/nautilus
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
+@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime

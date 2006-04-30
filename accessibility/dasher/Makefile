@@ -3,26 +3,25 @@
 # Whom:					lewiz <purple@lewiz.net>
 #
 # $FreeBSD$
-#   $MCom: ports/accessibility/dasher/Makefile,v 1.18 2005/10/29 22:31:15 marcus Exp $
+#   $MCom: ports/accessibility/dasher/Makefile,v 1.34 2006/04/13 07:52:29 bland Exp $
 #
 
 PORTNAME=	dasher
-PORTVERSION=	3.2.18
-PORTREVISION=	1
+PORTVERSION=	4.0.2
 PORTEPOCH=	1
 CATEGORIES=	accessibility editors x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/3.2
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	lewiz@compsoc.man.ac.uk
 COMMENT=	Information efficient text-entry interface
 
 BUILD_DEPENDS=	scrollkeeper-config:${PORTSDIR}/textproc/scrollkeeper
-LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 RUN_DEPENDS=	scrollkeeper-config:${PORTSDIR}/textproc/scrollkeeper
 
 USE_BZIP2=	yes
+USE_GETTEXT=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack gnomehier libgnomeui atspi \
@@ -30,7 +29,7 @@ USE_GNOME=	gnomeprefix gnomehack intlhack gnomehier libgnomeui atspi \
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_OMF=	yes
-USE_REINPLACE=	yes
+INSTALLS_ICONS=	yes
 USE_GCC=	3.4+
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
@@ -41,8 +40,7 @@ MAN1=		dasher.1
 
 .if ${HAVE_GNOME:Mgnomespeech}!=""
 USE_GNOME+=	gnomespeech
-.else
-CONFIGURE_ARGS+=--without-speech
+CONFIGURE_ARGS+=--enable-speech
 .endif
 
 post-patch:

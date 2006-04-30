@@ -14,15 +14,18 @@ share/gnome/yelp/icons/yelp-watermark-blockquote-201C.png
 share/gnome/yelp/icons/yelp-watermark-blockquote-201D.png
 share/gnome/yelp/icons/yelp-watermark-blockquote-201E.png
 share/gnome/yelp/important_docs.xml
+share/gnome/yelp/info.xml
 share/gnome/yelp/man.xml
 share/gnome/yelp/scrollkeeper.xml
 share/gnome/yelp/toc.xml
+share/gnome/yelp/ui/yelp-search-ui.xml
 share/gnome/yelp/ui/yelp-ui.xml
 share/gnome/yelp/ui/yelp.glade
 share/gnome/yelp/xslt/db-title.xsl
 share/gnome/yelp/xslt/db2html.xsl
 share/gnome/yelp/xslt/info2html.xsl
 share/gnome/yelp/xslt/man2html.xsl
+share/gnome/yelp/xslt/search2html.xsl
 share/gnome/yelp/xslt/toc2html.xsl
 share/gnome/yelp/xslt/yelp-common.xsl
 share/gnome/yelp/yelp.js
@@ -34,12 +37,14 @@ share/locale/az/LC_MESSAGES/yelp.mo
 share/locale/be/LC_MESSAGES/yelp.mo
 share/locale/bg/LC_MESSAGES/yelp.mo
 share/locale/bn/LC_MESSAGES/yelp.mo
+share/locale/br/LC_MESSAGES/yelp.mo
 share/locale/bs/LC_MESSAGES/yelp.mo
 share/locale/ca/LC_MESSAGES/yelp.mo
 share/locale/cs/LC_MESSAGES/yelp.mo
 share/locale/cy/LC_MESSAGES/yelp.mo
 share/locale/da/LC_MESSAGES/yelp.mo
 share/locale/de/LC_MESSAGES/yelp.mo
+share/locale/dz/LC_MESSAGES/yelp.mo
 share/locale/el/LC_MESSAGES/yelp.mo
 share/locale/en_CA/LC_MESSAGES/yelp.mo
 share/locale/en_GB/LC_MESSAGES/yelp.mo
@@ -65,6 +70,7 @@ share/locale/ka/LC_MESSAGES/yelp.mo
 share/locale/kn/LC_MESSAGES/yelp.mo
 share/locale/ko/LC_MESSAGES/yelp.mo
 share/locale/ku/LC_MESSAGES/yelp.mo
+share/locale/ky/LC_MESSAGES/yelp.mo
 share/locale/li/LC_MESSAGES/yelp.mo
 share/locale/lt/LC_MESSAGES/yelp.mo
 share/locale/lv/LC_MESSAGES/yelp.mo
@@ -79,6 +85,7 @@ share/locale/nl/LC_MESSAGES/yelp.mo
 share/locale/nn/LC_MESSAGES/yelp.mo
 share/locale/no/LC_MESSAGES/yelp.mo
 share/locale/nso/LC_MESSAGES/yelp.mo
+share/locale/or/LC_MESSAGES/yelp.mo
 share/locale/pa/LC_MESSAGES/yelp.mo
 share/locale/pl/LC_MESSAGES/yelp.mo
 share/locale/pt/LC_MESSAGES/yelp.mo
@@ -102,6 +109,7 @@ share/locale/vi/LC_MESSAGES/yelp.mo
 share/locale/wa/LC_MESSAGES/yelp.mo
 share/locale/xh/LC_MESSAGES/yelp.mo
 share/locale/zh_CN/LC_MESSAGES/yelp.mo
+share/locale/zh_HK/LC_MESSAGES/yelp.mo
 share/locale/zh_TW/LC_MESSAGES/yelp.mo
 share/locale/zu/LC_MESSAGES/yelp.mo
 @dirrmtry share/locale/zu/LC_MESSAGES
@@ -112,8 +120,14 @@ share/locale/zu/LC_MESSAGES/yelp.mo
 @dirrmtry share/locale/nso
 @dirrmtry share/locale/mr/LC_MESSAGES
 @dirrmtry share/locale/mr
+@dirrmtry share/locale/ky/LC_MESSAGES
+@dirrmtry share/locale/ky
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
+@dirrmtry share/locale/br/LC_MESSAGES
+@dirrmtry share/locale/br
 @dirrm share/gnome/yelp/xslt
 @dirrm share/gnome/yelp/ui
 @dirrm share/gnome/yelp/icons

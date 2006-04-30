@@ -3,14 +3,14 @@
 # Whom:				Maxim Sobolev <sobomax@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports-stable/x11-toolkits/pango/Makefile,v 1.5 2006/03/05 18:31:28 marcus Exp $
+#   $MCom: ports/x11-toolkits/pango/Makefile,v 1.60 2006/04/27 11:12:49 ahze Exp $
 #
 
 PORTNAME=	pango
-PORTVERSION=	1.10.4
+PORTVERSION=	1.12.2
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,sources/${PORTNAME}/1.10,} \
-		ftp://ftp.gtk.org/pub/gtk/v2.7/
+MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,sources/${PORTNAME}/1.12,} \
+		ftp://ftp.gtk.org/pub/gtk/v2.10/
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -25,9 +25,8 @@ USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
-USE_AUTOTOOLS=  libtool:15
+USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnomehack glib20 ltverhack
 CONFIGURE_ARGS=	--with-qt=no \
 		--with-html-dir=${PREFIX}/share/doc \
@@ -38,7 +37,7 @@ PKGINSTALL=	${WRKDIR}/pkg-install
 # stuff, with Bad Results[tm]
 #
 GLIB2_CFLAGS=	`pkg-config glib-2.0 --cflags`
-PLIST_SUB=	VERSION="1.4.0"
+PLIST_SUB=	VERSION="1.5.0"
 
 FONTSCALE=	${X11BASE}/lib/X11/fonts/TTF/luximb.ttf
 FONTENCOD=	${X11BASE}/lib/X11/fonts/encodings/encodings.dir
@@ -58,10 +57,6 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include/freetype2 \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 .endif
 
-post-patch:
-	@${FIND} ${WRKSRC}/pango/opentype -name "*.[ch]" | ${XARGS} \
-		${REINPLACE_CMD} -e 's|internal/tterrors\.h|fterrors.h| ; \
-		s|TT_Err_|FT_Err_|g'
 post-install:
 	@${SED} -e 's|%%X11BASE%%|${X11BASE}|' < ${FILESDIR}/pkg-install.in \
 		> ${PKGINSTALL}

@@ -1,17 +1,17 @@
---- configure.orig	Sat Jun 11 03:35:18 2005
-+++ configure	Sat Jun 11 03:43:21 2005
-@@ -22412,6 +22412,8 @@
+--- configure.orig	Wed Mar 29 13:51:40 2006
++++ configure	Wed Mar 29 14:15:56 2006
+@@ -22965,6 +22965,8 @@ _ACEOF
  cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
 +#include <sys/types.h>
 +#include <sys/socket.h>
  $ac_includes_default
- int
- main ()
-@@ -30210,6 +30212,13 @@
-         SUSPEND_COMMAND="/usr/openwin/bin/sys-suspend -n"
+ #include <$ac_header>
+ _ACEOF
+@@ -32415,6 +32417,13 @@ case "$host" in
          XSESSION_SHELL=/bin/ksh
+         SOUND_PROGRAM=/usr/bin/audioplay
          ;;
 +*freebsd*)
 +	GDM_USER_PATH="/bin:/usr/bin"

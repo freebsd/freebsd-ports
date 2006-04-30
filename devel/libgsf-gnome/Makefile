@@ -3,7 +3,7 @@
 # Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/devel/libgsf-gnome/Makefile,v 1.8 2005/09/08 17:53:00 marcus Exp $
+#   $MCom: ports/devel/libgsf-gnome/Makefile,v 1.10 2006/03/05 21:26:56 marcus Exp $
 #
 
 CATEGORIES=	devel gnome

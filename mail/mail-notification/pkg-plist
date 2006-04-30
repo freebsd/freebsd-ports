@@ -32,8 +32,8 @@ share/locale/ru/LC_MESSAGES/mail-notification.mo
 share/locale/sr/LC_MESSAGES/mail-notification.mo
 share/locale/sr@Latn/LC_MESSAGES/mail-notification.mo
 %%EVOLUTION%%@cwd %%X11BASE%%
-%%EVOLUTION%%lib/evolution/2.4/plugins/liborg-gnome-mail-notification.so
-%%EVOLUTION%%lib/evolution/2.4/plugins/org-gnome-mail-notification.eplug
+%%EVOLUTION%%lib/evolution/2.6/plugins/liborg-gnome-mail-notification.so
+%%EVOLUTION%%lib/evolution/2.6/plugins/org-gnome-mail-notification.eplug
 %%EVOLUTION%%@cwd %%LITERAL_PREFIX%%
 @dirrm share/gnome/omf/mail-notification
 @dirrm share/gnome/mail-notification/ui

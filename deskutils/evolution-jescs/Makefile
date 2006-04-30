@@ -3,15 +3,14 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/deskutils/evolution-jescs/Makefile,v 1.1 2005/09/08 14:22:13 marcus Exp $
+#   $MCom: ports/deskutils/evolution-jescs/Makefile,v 1.9 2006/04/13 07:52:31 bland Exp $
 #
 
 PORTNAME=	jescs
-PORTVERSION=	2.4.3
-PORTREVISION=	1
+PORTVERSION=	2.5.3
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PKGNAMEPREFIX}${PORTNAME}/2.4
+MASTER_SITE_SUBDIR=	sources/${PKGNAMEPREFIX}${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 PKGNAMEPREFIX=	evolution-
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 
@@ -24,14 +23,15 @@ RUN_DEPENDS=	evolution-${EVO_VERSION}:${PORTSDIR}/mail/evolution
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_GETTEXT=	yes
 USE_PERL=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack gnometarget
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-EVO_VERSION=	2.4
-PLIST_SUB=	EVO_VERSION=${EVO_VERSION} EDS_VERSION="1.2" VERSION="2.4"
+EVO_VERSION=	2.6
+PLIST_SUB=	EVO_VERSION=${EVO_VERSION} EDS_VERSION="1.2" VERSION="2.6"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|libdir/bonobo/servers|prefix/libdata/bonobo/servers|g' \

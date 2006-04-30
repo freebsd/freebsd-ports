@@ -94,6 +94,7 @@ share/locale/cs/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
 share/locale/cy/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
 share/locale/da/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
 share/locale/de/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
+share/locale/dz/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
 share/locale/el/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
 share/locale/en_CA/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
 share/locale/en_GB/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
@@ -113,7 +114,9 @@ share/locale/hu/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
 share/locale/id/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
 share/locale/it/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
 share/locale/ja/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
+share/locale/ka/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
 share/locale/ko/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
+share/locale/ku/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
 share/locale/lt/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
 share/locale/lv/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
 share/locale/mk/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
@@ -138,12 +141,18 @@ share/locale/sr/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
 share/locale/sr@Latn/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
 share/locale/sv/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
 share/locale/ta/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
+share/locale/th/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
 share/locale/tr/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
 share/locale/uk/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
 share/locale/vi/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
 share/locale/xh/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
 share/locale/zh_CN/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
+share/locale/zh_HK/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
 share/locale/zh_TW/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
+@dirrmtry share/locale/ku/LC_MESSAGES
+@dirrmtry share/locale/ku
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
 @dirrm share/gnome/gtkhtml-%%VERSION%%/icons
 @dirrm share/gnome/gtkhtml-%%VERSION%%
 @dirrm lib/gtkhtml

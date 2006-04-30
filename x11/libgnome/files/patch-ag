@@ -1,7 +1,3 @@
-
-$FreeBSD$
-  $MCom: ports/x11/libgnome/files/patch-ag,v 1.18 2005/07/04 00:15:01 marcus Exp $
-
 --- libgnome/gnome-util.c	2002/03/19 17:16:21	1.1
 +++ libgnome/gnome-util.c	2002/03/19 17:21:31
 @@ -67,11 +67,11 @@

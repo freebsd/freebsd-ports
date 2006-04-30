@@ -76,6 +76,7 @@ share/locale/cs/LC_MESSAGES/eog.mo
 share/locale/cy/LC_MESSAGES/eog.mo
 share/locale/da/LC_MESSAGES/eog.mo
 share/locale/de/LC_MESSAGES/eog.mo
+share/locale/dz/LC_MESSAGES/eog.mo
 share/locale/el/LC_MESSAGES/eog.mo
 share/locale/en_CA/LC_MESSAGES/eog.mo
 share/locale/en_GB/LC_MESSAGES/eog.mo
@@ -96,6 +97,7 @@ share/locale/id/LC_MESSAGES/eog.mo
 share/locale/is/LC_MESSAGES/eog.mo
 share/locale/it/LC_MESSAGES/eog.mo
 share/locale/ja/LC_MESSAGES/eog.mo
+share/locale/ka/LC_MESSAGES/eog.mo
 share/locale/kn/LC_MESSAGES/eog.mo
 share/locale/ko/LC_MESSAGES/eog.mo
 share/locale/ku/LC_MESSAGES/eog.mo
@@ -140,8 +142,6 @@ share/locale/zh_TW/LC_MESSAGES/eog.mo
 share/locale/zu/LC_MESSAGES/eog.mo
 @dirrmtry share/locale/zu/LC_MESSAGES
 @dirrmtry share/locale/zu
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/xh/LC_MESSAGES
 @dirrmtry share/locale/xh
 @dirrmtry share/locale/ug/LC_MESSAGES
@@ -152,6 +152,8 @@ share/locale/zu/LC_MESSAGES/eog.mo
 @dirrmtry share/locale/nso
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
 @dirrm share/gnome/pixmaps/eog
 @dirrm share/gnome/omf/eog
 @dirrm share/gnome/help/eog/zh_TW/figures

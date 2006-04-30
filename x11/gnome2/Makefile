@@ -3,11 +3,11 @@
 # Whom:			Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/x11/gnome2/Makefile,v 1.122 2005/10/06 01:26:06 marcus Exp $
+#   $MCom: ports/x11/gnome2/Makefile,v 1.142 2006/04/23 20:10:22 marcus Exp $
 #
 
 PORTNAME=	gnome2
-PORTVERSION=	2.12.3
+PORTVERSION=	2.14.1
 PORTREVISION?=	0
 CATEGORIES?=	x11 gnome
 MASTER_SITES=	# empty
@@ -45,21 +45,23 @@ RUN_DEPENDS?=	${X11BASE}/libexec/gweather-applet-2:${PORTSDIR}/x11/gnomeapplets2
 		gnopernicus:${PORTSDIR}/accessibility/gnopernicus \
 		${X11BASE}/libexec/gnome-netstatus-applet:${PORTSDIR}/net/gnomenetstatus \
 		dasher:${PORTSDIR}/accessibility/dasher \
-		evolution-2.4:${PORTSDIR}/mail/evolution \
+		evolution-2.6:${PORTSDIR}/mail/evolution \
 		${X11BASE}/libexec/evolution-webcal:${PORTSDIR}/www/evolution-webcal \
 		network-admin:${PORTSDIR}/sysutils/gnomesystemtools \
 		gnome-nettool:${PORTSDIR}/net/gnomenettool \
 		vino-session:${PORTSDIR}/net/vino \
-		ximian-connector-setup-2.4:${PORTSDIR}/mail/evolution-exchange \
-		${X11BASE}/lib/gstreamer-0.8/.gstreamer-plugins-core.keep:${PORTSDIR}/multimedia/gstreamer-plugins-core \
-		${X11BASE}/lib/gstreamer-0.8/libgstgconfelements.so:${PORTSDIR}/devel/gstreamer-plugins-gconf \
+		ximian-connector-setup-2.6:${PORTSDIR}/mail/evolution-exchange \
+		${X11BASE}/lib/gstreamer-0.10/.gstreamer-plugins-core.keep:${PORTSDIR}/multimedia/gstreamer-plugins-core \
+		${X11BASE}/lib/gstreamer-0.10/libgstgconfelements.so:${PORTSDIR}/devel/gstreamer-plugins-gconf \
 		totem:${PORTSDIR}/multimedia/totem-gstreamer \
 		gnome-control-center:${PORTSDIR}/sysutils/gnomecontrolcenter2 \
 		${X11BASE}/share/gnome/gnome-background-properties/gnome-branded.xml:${PORTSDIR}/x11-themes/gnome-backgrounds \
 		sound-juicer:${PORTSDIR}/audio/sound-juicer \
 		gnome-keyring-manager:${PORTSDIR}/security/gnomekeyringmanager \
 		${X11BASE}/libdata/pkgconfig/libgtkhtml-2.0.pc:${PORTSDIR}/www/libgtkhtml \
-		evince:${PORTSDIR}/graphics/evince
+		evince:${PORTSDIR}/graphics/evince \
+		${X11BASE}/libexec/fast-user-switch-applet:${PORTSDIR}/x11/fast-user-switch-applet \
+		${X11BASE}/lib/deskbar-applet/deskbar-applet:${PORTSDIR}/deskutils/deskbar-applet
 
 NO_BUILD=	yes
 
@@ -73,7 +75,7 @@ pre-configure:
 .endif
 
 .if !defined(GNOME_SLAVE) || ${.CURDIR:T}=="gnome2-lite"
-OPTIONS=	GNOME_SCREENSAVER "Use gnome-screensaver as screensaver app" off
+OPTIONS=	XSCREENSAVER "Use xscreensaver as screen saver app" off
 .endif
 
 do-install:	# empty
@@ -84,10 +86,15 @@ do-install:	# empty
 .if ${ARCH} == "i386" || ${OSVERSION} > 500035
 RUN_DEPENDS+=	epiphany:${PORTSDIR}/www/epiphany
 .endif
+.if ${.CURDIR:T}!="gnome2-lite"
+.if ${ARCH}!="sparc64" || ${OSVERSION} >= 700003
+RUN_DEPENDS+=	ekiga:${PORTSDIR}/net/ekiga
+.endif
+.endif
 .endif
 
 .if ${.CURDIR}==${MASTERDIR} || ${.CURDIR:T}=="gnome2-lite"
-.if !defined(WITH_GNOME_SCREENSAVER)
+.if defined(WITH_XSCREENSAVER)
 RUN_DEPENDS+=	${X11BASE}/share/gnome/applications/gnome-screensaver-properties.desktop:${PORTSDIR}/x11/xscreensaver-gnome
 .else
 RUN_DEPENDS+=	gnome-screensaver:${PORTSDIR}/x11/gnome-screensaver

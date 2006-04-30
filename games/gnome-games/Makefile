@@ -3,15 +3,14 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/games/gnomegames2/Makefile,v 1.89 2005/10/03 15:30:09 ahze Exp $
+#   $MCom: ports/games/gnomegames2/Makefile,v 1.111 2006/04/13 07:52:34 bland Exp $
 #
 
 PORTNAME=	gnomegames2
-PORTVERSION=	2.12.3
-PORTREVISION=	1
+PORTVERSION=	2.14.1
 CATEGORIES=	games gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/gnome-games/2.12
+MASTER_SITE_SUBDIR=	sources/gnome-games/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 DISTNAME=	gnome-games-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
@@ -22,6 +21,7 @@ LIB_DEPENDS=	guile.15:${PORTSDIR}/lang/guile
 
 USE_BZIP2=	yes
 USE_PYTHON=	yes
+USE_GETTEXT=	yes
 INSTALLS_OMF=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
@@ -32,17 +32,18 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 GCONF_SCHEMAS=	aisleriot.schemas blackjack.schemas gataxx.schemas \
-		glines.schemas gnect.schemas gnibbles.schemas gnobots2.schemas \
-		gnome-stones.schemas gnometris.schemas gnomine.schemas \
-		gnotravex.schemas gnotski.schemas gtali.schemas iagno.schemas \
-		libgnomegames.schemas mahjongg.schemas same-gnome.schemas
+		glines.schemas gnect.schemas gnibbles.schemas \
+		gnobots2.schemas gnometris.schemas gnomine.schemas \
+		gnotravex.schemas gnotski.schemas gtali.schemas \
+		iagno.schemas libgnomegames.schemas mahjongg.schemas \
+		same-gnome.schemas
 
 CONFLICTS=	sol-1.0.*
 
 .include <bsd.port.pre.mk>
 
-.if exists(${LOCALBASE}/lib/libhowl.so) || defined(WITH_MDNS)
-LIB_DEPENDS+=	howl:${PORTSDIR}/net/howl
+.if exists(${LOCALBASE}/lib/libavahi-client.a) || defined(WITH_MDNS)
+LIB_DEPENDS+=	avahi-client:${PORTSDIR}/net/avahi
 .endif
 
 post-patch:
@@ -50,6 +51,11 @@ post-patch:
 		's|malloc\.h|stdlib.h|g'
 	@${REINPLACE_CMD} -e 's|bin/python|bin/env python|g' \
 		${WRKSRC}/libgames-support/games-server.py
+	@${REINPLACE_CMD} -e 's|howl|avahi-compat-howl|' \
+		${WRKSRC}/configure
+#	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
+#		's|664|666|g ; \
+#		 s|2555|0555|g'
 
 post-install:
 	@-update-desktop-database

@@ -8,16 +8,3 @@
  #include <arpa/inet.h>
  #include "procman.h"
  #include "openfiles.h"
-@@ -152,10 +153,10 @@
- {
- 	ProcInfo *info;
- 	GtkTreeModel *model;
--	glibtop_open_files_entry *openfiles;
--	glibtop_proc_open_files procmap;
- 	GHashTable *new_maps;
- 	gint i;
-+	glibtop_open_files_entry *openfiles;
-+	glibtop_proc_open_files procmap;
- 
- 	info = g_object_get_data (G_OBJECT (tree), "selected_info");
- 	g_return_if_fail (info);

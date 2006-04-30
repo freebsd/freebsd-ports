@@ -3,10 +3,10 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/editors/gnome2-office/Makefile,v 1.39 2005/08/11 02:55:29 marcus Exp $
+#   $MCom: ports/editors/gnome2-office/Makefile,v 1.41 2006/04/12 22:11:33 marcus Exp $
 #
 
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	editors gnome
 PKGNAMESUFFIX=	-office
 

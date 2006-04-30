@@ -3,27 +3,26 @@
 # Whom:                 		Ade Lovett <ade@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/x11-toolkits/eel/Makefile,v 1.21 2005/10/03 15:22:10 ahze Exp $
+#   $MCom: ports/x11-toolkits/eel/Makefile,v 1.35 2006/04/13 07:52:42 bland Exp $
 #
 
 PORTNAME=	eel
-PORTVERSION=	2.12.2
-PORTREVISION=	1
+PORTVERSION=	2.14.1
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.12
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Generally useful classes and extensions to GNOME
 
+USE_GETTEXT=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 GNOME_DESKTOP_VERSION=2
 USE_GNOME=	gnomeprefix gnomehack gail gnomedesktop gnomemenus ltverhack
-USE_AUTOTOOLS=  libtool:15
-USE_REINPLACE=	yes
+USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--enable-shared --enable-static
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

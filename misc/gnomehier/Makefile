@@ -3,11 +3,13 @@
 # Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
 #
 # $FreeBSD$
+#    $MCom: ports/misc/gnomehier/Makefile,v 1.11 2006/03/14 03:05:32 marcus Exp $
 #
+# !!DON'T BUMP PORTREVISION ON MTREE CHANGES ANYMORE!!
 
 PORTNAME=	gnomehier
-PORTVERSION=	2.0
-PORTREVISION=	7
+PORTVERSION=	2.1
+PORTREVISION=	2
 CATEGORIES=	misc gnome
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -20,10 +22,9 @@ PLIST?=		${WRKDIR}/pkg-plist
 PKGINSTALL=	${WRKDIR}/pkg-install
 
 GNOME_MTREE=	BSD.gnome-x11.dist
+GNOME_MTREE_ARGS=${MTREE_ARGS:S|${MTREE_FILE}|${PREFIX}/etc/mtree/${GNOME_MTREE}|}
 
 USE_X_PREFIX=	yes
-
-GNOME_MTREE_ARGS=${MTREE_ARGS:S|${MTREE_FILE}|${PREFIX}/etc/mtree/${GNOME_MTREE}|}
 
 do-fetch:
 	@${DO_NADA}
@@ -47,7 +48,6 @@ pre-install:
 pre-su-install:
 	${CHGRP} games ${WRKSRC}/share/gnome/games
 	${CHMOD} g=rwXs ${WRKSRC}/share/gnome/games
-	${MTREE_CMD} ${MTREE_ARGS} ${WRKSRC}/
 	cd ${WRKSRC} && \
 		${MTREE_CMD} -U -d -n -i -c -k "uname, gname, mode" \
 			> ${WRKDIR}/${GNOME_MTREE}

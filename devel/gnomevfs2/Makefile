@@ -3,15 +3,14 @@
 # Whom:					Ade Lovett <ade@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/devel/gnomevfs2/Makefile,v 1.115 2005/10/31 00:12:01 marcus Exp $
+#   $MCom: ports/devel/gnomevfs2/Makefile,v 1.137 2006/04/20 14:00:03 marcus Exp $
 #
 
 PORTNAME=	gnomevfs2
-PORTVERSION=	2.12.2
-PORTREVISION=	2
+PORTVERSION=	2.14.1
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/gnome-vfs/2.12
+MASTER_SITE_SUBDIR=	sources/gnome-vfs/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 DISTNAME=	gnome-vfs-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
@@ -22,15 +21,16 @@ RUN_DEPENDS=	${LOCALBASE}/share/mime/magic:${PORTSDIR}/misc/shared-mime-info
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_GETTEXT=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack gnomemimedata gconf2 \
 		libbonobo ltverhack
-USE_REINPLACE=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_OPENSSL=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--enable-openssl \
-		--disable-gnutls
+		--disable-gnutls \
+		--disable-howl
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
 		BSD_PTHREAD_LIBS=${PTHREAD_LIBS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
@@ -40,8 +40,7 @@ PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 
 GCONF_SCHEMAS=	desktop_default_applications.schemas \
 		desktop_gnome_url_handlers.schemas system_dns_sd.schemas \
-		system_http_proxy.schemas system_smb.schemas \
-		system_storage.schemas
+		system_http_proxy.schemas system_smb.schemas
 
 OPTIONS=	SAMBA "Enable SMB volume support" on \
 		MDNS "Enable Bonjour/Rendezvous support" on
@@ -65,9 +64,9 @@ CONFIGURE_ARGS+=--disable-samba
 .endif
 
 .if !defined(WITHOUT_MDNS)
-LIB_DEPENDS+=	howl:${PORTSDIR}/net/howl
+LIB_DEPENDS+=	avahi-client:${PORTSDIR}/net/avahi
 .else
-CONFIGURE_ARGS+=--disable-howl
+CONFIGURE_ARGS+=--disable-avahi
 .endif
 
 post-patch:

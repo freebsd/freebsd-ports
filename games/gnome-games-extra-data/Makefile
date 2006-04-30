@@ -3,14 +3,14 @@
 # Whom:					Adam Weinberger <adamw@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/games/gnomegames2-extra-data/Makefile,v 1.6 2005/09/07 15:01:43 adamw Exp $
+#   $MCom: ports/games/gnomegames2-extra-data/Makefile,v 1.8 2006/04/22 18:07:24 marcus Exp $
 #
 
 PORTNAME=	gnomegames2-extra-data
-PORTVERSION=	2.12.0
+PORTVERSION=	2.14.0
 CATEGORIES=	games gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/gnome-games-extra-data/2.12
+MASTER_SITE_SUBDIR=	sources/gnome-games-extra-data/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 DISTNAME=	gnome-games-extra-data-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
@@ -23,7 +23,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomehack gnomeprefix
+USE_GNOME=	gnomehack gnomeprefix gnometarget
 CONFIGURE_ARGS=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

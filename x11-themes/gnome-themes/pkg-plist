@@ -961,33 +961,7 @@ share/icons/LowContrastLargePrint/48x48/apps/gnome-mixer-applet.png
 share/icons/LowContrastLargePrint/48x48/apps/gnome-mixer.png
 share/icons/LowContrastLargePrint/48x48/apps/gnome-multimedia.png
 share/icons/LowContrastLargePrint/48x48/apps/gnome-panel.png
-share/icons/LowContrastLargePrint/48x48/apps/gnome-run.png
-share/icons/LowContrastLargePrint/48x48/apps/gnome-screenshot.png
-share/icons/LowContrastLargePrint/48x48/apps/gnome-searchtool-animation-rest.png
-share/icons/LowContrastLargePrint/48x48/apps/gnome-searchtool-animation.png
-share/icons/LowContrastLargePrint/48x48/apps/gnome-searchtool.png
-share/icons/LowContrastLargePrint/48x48/apps/gnome-session.png
-share/icons/LowContrastLargePrint/48x48/apps/gnome-settings-accessibility-keyboard.png
-share/icons/LowContrastLargePrint/48x48/apps/gnome-settings-accessibility-technologies.png
-share/icons/LowContrastLargePrint/48x48/apps/gnome-settings-background.png
-share/icons/LowContrastLargePrint/48x48/apps/gnome-settings-default-applications.png
-share/icons/LowContrastLargePrint/48x48/apps/gnome-settings-font.png
-share/icons/LowContrastLargePrint/48x48/apps/gnome-settings-keybindings.png
-share/icons/LowContrastLargePrint/48x48/apps/gnome-settings-sound.png
-share/icons/LowContrastLargePrint/48x48/apps/gnome-settings-theme.png
-share/icons/LowContrastLargePrint/48x48/apps/gnome-settings-ui-behavior.png
-share/icons/LowContrastLargePrint/48x48/apps/gnome-settings.png
-share/icons/LowContrastLargePrint/48x48/apps/gnome-starthere.png
-share/icons/LowContrastLargePrint/48x48/apps/gnome-system.png
-share/icons/LowContrastLargePrint/48x48/apps/gnome-terminal.png
-share/icons/LowContrastLargePrint/48x48/apps/gnome-util.png
-share/icons/LowContrastLargePrint/48x48/apps/gnome-window-manager.png
-share/icons/LowContrastLargePrint/48x48/apps/gnome-windows.png
-share/icons/LowContrastLargePrint/48x48/apps/gnome-workspace.png
-share/icons/LowContrastLargePrint/48x48/apps/gucharmap.png
-share/icons/LowContrastLargePrint/48x48/apps/launcher-program.png
-share/icons/LowContrastLargePrint/48x48/apps/perfmeter.png
-share/icons/LowContrastLargePrint/48x48/apps/window-capplet.png
+share/icons/LowContrastLargePrint/48x48/apps/gnome-remote-desktop.png
 share/icons/LowContrastLargePrint/48x48/devices/gnome-dev-cdrom-audio.png
 share/icons/LowContrastLargePrint/48x48/devices/gnome-dev-cdrom.png
 share/icons/LowContrastLargePrint/48x48/devices/gnome-dev-dvd.png
@@ -1065,6 +1039,7 @@ share/icons/LowContrastLargePrint/48x48/mimetypes/gnome-mime-application-x-backu
 share/icons/LowContrastLargePrint/48x48/mimetypes/gnome-mime-application-x-bzip.png
 share/icons/LowContrastLargePrint/48x48/mimetypes/gnome-mime-application-x-compress.png
 share/icons/LowContrastLargePrint/48x48/mimetypes/gnome-mime-application-x-core-file.png
+share/icons/LowContrastLargePrint/48x48/mimetypes/gnome-mime-application-x-core.png
 share/icons/LowContrastLargePrint/48x48/mimetypes/gnome-mime-application-x-dc-rom.png
 share/icons/LowContrastLargePrint/48x48/mimetypes/gnome-mime-application-x-deb.png
 share/icons/LowContrastLargePrint/48x48/mimetypes/gnome-mime-application-x-dia-diagram.png
@@ -1244,6 +1219,8 @@ share/locale/is/LC_MESSAGES/gnome-themes.mo
 share/locale/it/LC_MESSAGES/gnome-themes.mo
 share/locale/ja/LC_MESSAGES/gnome-themes.mo
 share/locale/ko/LC_MESSAGES/gnome-themes.mo
+share/locale/ku/LC_MESSAGES/gnome-themes.mo
+share/locale/ky/LC_MESSAGES/gnome-themes.mo
 share/locale/li/LC_MESSAGES/gnome-themes.mo
 share/locale/lt/LC_MESSAGES/gnome-themes.mo
 share/locale/lv/LC_MESSAGES/gnome-themes.mo
@@ -1943,6 +1920,10 @@ share/themes/Traditional/index.theme
 @dirrm share/themes/Clearlooks
 @dirrmtry share/locale/ug/LC_MESSAGES
 @dirrmtry share/locale/ug
+@dirrmtry share/locale/ku/LC_MESSAGES
+@dirrmtry share/locale/ku
+@dirrmtry share/locale/ky/LC_MESSAGES
+@dirrmtry share/locale/ky
 @dirrm share/icons/Smokey-Red/96x96/filesystems
 @dirrm share/icons/Smokey-Red/96x96
 @dirrm share/icons/Smokey-Red/72x72/filesystems
@@ -2055,4 +2036,4 @@ share/themes/Traditional/index.theme
 @dirrm share/gnome/themes/Glider
 @dirrm share/gnome/themes/Clearlooks/metacity-1
 @dirrm share/gnome/themes/Clearlooks
-@unexec /bin/rmdir %D/share/icons 2>/dev/null || /usr/bin/true
+@dirrmtry share/icons

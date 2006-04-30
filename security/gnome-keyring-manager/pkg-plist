@@ -8,13 +8,16 @@ share/gnome/gnome-keyring-manager/stock_new-key.png
 share/gnome/gnome-keyring-manager/stock_new-keyring.png
 share/gnome/help/gnome-keyring-manager/C/gnome-keyring-manager.xml
 share/gnome/help/gnome-keyring-manager/C/legal.xml
+share/gnome/help/gnome-keyring-manager/es/gnome-keyring-manager.xml
 share/gnome/help/gnome-keyring-manager/uk/gnome-keyring-manager.xml
 share/gnome/omf/gnome-keyring-manager/gnome-keyring-manager-C.omf
+share/gnome/omf/gnome-keyring-manager/gnome-keyring-manager-es.omf
 share/gnome/omf/gnome-keyring-manager/gnome-keyring-manager-uk.omf
 share/locale/bg/LC_MESSAGES/gnome-keyring-manager.mo
 share/locale/bn/LC_MESSAGES/gnome-keyring-manager.mo
 share/locale/ca/LC_MESSAGES/gnome-keyring-manager.mo
 share/locale/cs/LC_MESSAGES/gnome-keyring-manager.mo
+share/locale/cy/LC_MESSAGES/gnome-keyring-manager.mo
 share/locale/da/LC_MESSAGES/gnome-keyring-manager.mo
 share/locale/de/LC_MESSAGES/gnome-keyring-manager.mo
 share/locale/el/LC_MESSAGES/gnome-keyring-manager.mo
@@ -52,10 +55,15 @@ share/locale/sv/LC_MESSAGES/gnome-keyring-manager.mo
 share/locale/th/LC_MESSAGES/gnome-keyring-manager.mo
 share/locale/tr/LC_MESSAGES/gnome-keyring-manager.mo
 share/locale/uk/LC_MESSAGES/gnome-keyring-manager.mo
+share/locale/vi/LC_MESSAGES/gnome-keyring-manager.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-keyring-manager.mo
+share/locale/zh_HK/LC_MESSAGES/gnome-keyring-manager.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-keyring-manager.mo
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
 @dirrm share/gnome/omf/gnome-keyring-manager
 @dirrm share/gnome/help/gnome-keyring-manager/uk
+@dirrm share/gnome/help/gnome-keyring-manager/es
 @dirrm share/gnome/help/gnome-keyring-manager/C
 @dirrm share/gnome/help/gnome-keyring-manager
 @dirrm share/gnome/gnome-keyring-manager

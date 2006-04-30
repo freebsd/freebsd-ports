@@ -1,13 +1,17 @@
---- deskbar/deskbar-applet.py.orig	Sat Nov 19 14:15:58 2005
-+++ deskbar/deskbar-applet.py	Thu Dec  8 22:23:00 2005
-@@ -34,8 +34,8 @@
- gettext.bindtextdomain('deskbar-applet', abspath(join(deskbar.defs.DATA_DIR, "locale")))
+--- deskbar/deskbar-applet.py.orig	Mon Mar 13 23:23:20 2006
++++ deskbar/deskbar-applet.py	Mon Mar 13 23:23:52 2006
+@@ -42,10 +42,10 @@
+ 	gettext.bind_textdomain_codeset('deskbar-applet','UTF-8')
  gettext.textdomain('deskbar-applet')
  
 -locale.bindtextdomain('deskbar-applet', abspath(join(deskbar.defs.DATA_DIR, "locale")))
+-if hasattr(locale, 'bind_textdomain_codeset'):
+-	locale.bind_textdomain_codeset('deskbar-applet','UTF-8')
 -locale.textdomain('deskbar-applet')
 +#locale.bindtextdomain('deskbar-applet', abspath(join(deskbar.defs.DATA_DIR, "locale")))
++#if hasattr(locale, 'bind_textdomain_codeset'):
++#	locale.bind_textdomain_codeset('deskbar-applet','UTF-8')
 +#locale.textdomain('deskbar-applet')
  
- def applet_factory(applet, iid):
- 	print 'Starting Deskbar instance:', applet, iid
+ import gtkexcepthook
+ 

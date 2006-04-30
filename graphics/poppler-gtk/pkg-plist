@@ -1,0 +1,28 @@
+include/poppler/glib/poppler-action.h
+include/poppler/glib/poppler-attachment.h
+include/poppler/glib/poppler-document.h
+include/poppler/glib/poppler-enums.h
+include/poppler/glib/poppler-page.h
+include/poppler/glib/poppler.h
+lib/libpoppler-glib.a
+lib/libpoppler-glib.la
+lib/libpoppler-glib.so
+lib/libpoppler-glib.so.1
+libdata/pkgconfig/poppler-glib.pc
+%%DOCSDIR%%/poppler/ch01.html
+%%DOCSDIR%%/poppler/home.png
+%%DOCSDIR%%/poppler/index.html
+%%DOCSDIR%%/poppler/index.sgml
+%%DOCSDIR%%/poppler/left.png
+%%DOCSDIR%%/poppler/poppler-poppler-action.html
+%%DOCSDIR%%/poppler/poppler-poppler-document.html
+%%DOCSDIR%%/poppler/poppler-poppler-enums.html
+%%DOCSDIR%%/poppler/poppler-poppler-page.html
+%%DOCSDIR%%/poppler/poppler-poppler.html
+%%DOCSDIR%%/poppler/poppler.devhelp
+%%DOCSDIR%%/poppler/right.png
+%%DOCSDIR%%/poppler/style.css
+%%DOCSDIR%%/poppler/up.png
+@dirrmtry %%DOCSDIR%%/poppler
+@dirrmtry %%DOCSDIR%%
+@dirrm include/poppler/glib

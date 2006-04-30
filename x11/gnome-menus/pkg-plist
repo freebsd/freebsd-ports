@@ -31,11 +31,14 @@ share/gnome/desktop-directories/System-Settings.directory
 share/gnome/desktop-directories/System-Tools.directory
 share/locale/ar/LC_MESSAGES/gnome-menus.mo
 share/locale/bg/LC_MESSAGES/gnome-menus.mo
+share/locale/bn/LC_MESSAGES/gnome-menus.mo
+share/locale/br/LC_MESSAGES/gnome-menus.mo
 share/locale/ca/LC_MESSAGES/gnome-menus.mo
 share/locale/cs/LC_MESSAGES/gnome-menus.mo
 share/locale/cy/LC_MESSAGES/gnome-menus.mo
 share/locale/da/LC_MESSAGES/gnome-menus.mo
 share/locale/de/LC_MESSAGES/gnome-menus.mo
+share/locale/dz/LC_MESSAGES/gnome-menus.mo
 share/locale/el/LC_MESSAGES/gnome-menus.mo
 share/locale/en_CA/LC_MESSAGES/gnome-menus.mo
 share/locale/en_GB/LC_MESSAGES/gnome-menus.mo
@@ -54,8 +57,13 @@ share/locale/hy/LC_MESSAGES/gnome-menus.mo
 share/locale/id/LC_MESSAGES/gnome-menus.mo
 share/locale/it/LC_MESSAGES/gnome-menus.mo
 share/locale/ja/LC_MESSAGES/gnome-menus.mo
+share/locale/ka/LC_MESSAGES/gnome-menus.mo
 share/locale/ko/LC_MESSAGES/gnome-menus.mo
+share/locale/ku/LC_MESSAGES/gnome-menus.mo
+share/locale/ky/LC_MESSAGES/gnome-menus.mo
 share/locale/lt/LC_MESSAGES/gnome-menus.mo
+share/locale/lv/LC_MESSAGES/gnome-menus.mo
+share/locale/mg/LC_MESSAGES/gnome-menus.mo
 share/locale/mk/LC_MESSAGES/gnome-menus.mo
 share/locale/mr/LC_MESSAGES/gnome-menus.mo
 share/locale/ms/LC_MESSAGES/gnome-menus.mo
@@ -76,21 +84,38 @@ share/locale/sq/LC_MESSAGES/gnome-menus.mo
 share/locale/sr/LC_MESSAGES/gnome-menus.mo
 share/locale/sr@Latn/LC_MESSAGES/gnome-menus.mo
 share/locale/sv/LC_MESSAGES/gnome-menus.mo
+share/locale/te/LC_MESSAGES/gnome-menus.mo
 share/locale/th/LC_MESSAGES/gnome-menus.mo
 share/locale/tr/LC_MESSAGES/gnome-menus.mo
+share/locale/ug/LC_MESSAGES/gnome-menus.mo
 share/locale/uk/LC_MESSAGES/gnome-menus.mo
 share/locale/vi/LC_MESSAGES/gnome-menus.mo
 share/locale/xh/LC_MESSAGES/gnome-menus.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-menus.mo
+share/locale/zh_HK/LC_MESSAGES/gnome-menus.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-menus.mo
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/xh/LC_MESSAGES
 @dirrmtry share/locale/xh
+@dirrmtry share/locale/ug/LC_MESSAGES
+@dirrmtry share/locale/ug
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
 @dirrmtry share/locale/mr/LC_MESSAGES
 @dirrmtry share/locale/mr
+@dirrmtry share/locale/mg/LC_MESSAGES
+@dirrmtry share/locale/mg
+@dirrmtry share/locale/ky/LC_MESSAGES
+@dirrmtry share/locale/ky
+@dirrmtry share/locale/ku/LC_MESSAGES
+@dirrmtry share/locale/ku
 @dirrmtry share/locale/hy/LC_MESSAGES
 @dirrmtry share/locale/hy
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
+@dirrmtry share/locale/br/LC_MESSAGES
+@dirrmtry share/locale/br
 @dirrm share/gnome/desktop-directories
 @dirrm include/gnome-menus
 @dirrm etc/xdg/menus

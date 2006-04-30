@@ -1,6 +1,6 @@
---- configure.orig	Wed Feb 25 02:26:37 2004
-+++ configure	Wed Feb 25 02:27:22 2004
-@@ -22282,6 +22282,7 @@
+--- configure.orig	Wed Dec 14 09:07:01 2005
++++ configure	Wed Dec 14 09:07:01 2005
+@@ -22216,6 +22216,7 @@
  if eval "test \"\${$as_ac_var+set}\" = set"; then
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
@@ -8,32 +8,11 @@
    cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -22371,6 +22372,7 @@
+@@ -22304,6 +22305,7 @@
    cat >>confdefs.h <<_ACEOF
  #define `echo "HAVE_$ac_func" | $as_tr_cpp` 1
  _ACEOF
 +LIBS="-lintl $LIBS"
  
- else
-   { { echo "$as_me:$LINENO: error: ngettext function is required to build gedit." >&5
-@@ -22405,17 +22407,17 @@
- if test "x${prefix}" = "xNONE"; then
- 
- cat >>confdefs.h <<_ACEOF
--#define PIXMAPS_DIR "${ac_default_prefix}/${DATADIRNAME}/${PACKAGE}/pixmaps"
-+
- _ACEOF
- 
-   pixmapsdir="${ac_default_prefix}/${DATADIRNAME}/${PACKAGE}/pixmaps"
- else
- 
- cat >>confdefs.h <<_ACEOF
--#define PIXMAPS_DIR "${prefix}/${DATADIRNAME}/${PACKAGE}/pixmaps"
-+#define PIXMAPS_DIR "${datadir}/pixmaps"
- _ACEOF
- 
--  pixmapsdir="${prefix}/${DATADIRNAME}/${PACKAGE}/pixmaps"
-+  pixmapsdir="${datadir}/pixmaps"
  fi
- 
- 
+ done

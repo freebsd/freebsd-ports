@@ -1,4 +1,5 @@
 bin/pango-querymodules
+bin/pango-view
 etc/pango/pango.modules
 etc/pango/pangox.aliases
 include/pango-1.0/pango/pango-attributes.h
@@ -98,6 +99,7 @@ libdata/pkgconfig/pangoxft.pc
 %%DOCSDIR%%/layout.gif
 %%DOCSDIR%%/left.png
 %%DOCSDIR%%/lowlevel.html
+%%DOCSDIR%%/pango-ATSUI-Fonts.html
 %%DOCSDIR%%/pango-Cairo-Rendering.html
 %%DOCSDIR%%/pango-Coverage-Maps.html
 %%DOCSDIR%%/pango-Engines.html

@@ -1,15 +1,11 @@
-
-$FreeBSD$
-  $MCom: ports/x11-toolkits/eel/files/patch-Makefile.in,v 1.4 2005/06/28 05:40:14 adamw Exp $
-
---- Makefile.in	2002/06/13 16:05:09	1.1
-+++ Makefile.in	2002/06/13 16:05:18
-@@ -119,7 +119,7 @@
- 
+--- Makefile.in.orig	Mon Jan 16 12:53:35 2006
++++ Makefile.in	Mon Jan 16 12:54:04 2006
+@@ -239,7 +239,7 @@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
  NULL = 
- 
 -SUBDIRS = eel test po
 +SUBDIRS = eel po
- 
- EXTRA_DIST =  	COPYING.LIB					HACKING						MAINTAINERS					eel.spec.in					$(NULL)
- 
+ EXTRA_DIST = \
+ 	COPYING.LIB				\
+ 	HACKING					\
