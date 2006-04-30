@@ -4028,6 +4028,7 @@ icon		ports/lang/icon
 icon-bluecurve-theme	ports/x11-themes/icon-bluecurve-theme
 icon-naming-utils	ports/x11-themes/icon-naming-utils
 icon-slicer	ports/graphics/icon-slicer
+icons-human-azul	ports/x11-themes/icons-human-azul
 icons-tango	ports/x11-themes/icons-tango
 icontact	ports/graphics/icontact
 iconv		ports/converters/iconv
