@@ -148,6 +148,7 @@
     SUBDIR += py-fltk
     SUBDIR += py-fox
     SUBDIR += py-gnome
+    SUBDIR += py-gnome-desktop
     SUBDIR += py-gnome-extras
     SUBDIR += py-gnome2
     SUBDIR += py-gtk
