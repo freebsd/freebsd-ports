@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTML-Widget
-PORTVERSION=	1.06
+PORTVERSION=	1.07
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/C/CF/CFRANKS
@@ -18,6 +18,7 @@ COMMENT=	HTML Widget And Validation Framework
 BUILD_DEPENDS=	p5-HTML-Tree>=0:${PORTSDIR}/www/p5-HTML-Tree \
 		p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-Class-Accessor-Chained>=0:${PORTSDIR}/devel/p5-Class-Accessor-Chained \
+		p5-Class-Data-Accessor>=0:${PORTSDIR}/devel/p5-Class-Data-Accessor \
 		p5-HTML-Scrubber>=0:${PORTSDIR}/www/p5-HTML-Scrubber \
 		p5-Storable>=0:${PORTSDIR}/devel/p5-Storable \
 		p5-Module-Pluggable-Fast>=0:${PORTSDIR}/devel/p5-Module-Pluggable-Fast \
@@ -55,6 +56,7 @@ MAN3=	HTML::Widget.3 \
 	HTML::Widget::Constraint::Time.3 \
 	HTML::Widget::Container.3 \
 	HTML::Widget::Element.3 \
+	HTML::Widget::Element::Button.3 \
 	HTML::Widget::Element::Checkbox.3 \
 	HTML::Widget::Element::Hidden.3 \
 	HTML::Widget::Element::Password.3 \
