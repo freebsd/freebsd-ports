@@ -214,6 +214,11 @@ PLIST_SUB+=	LDAP_PTLOADER="@comment "
 EXTRA_PATCHES+=	${FILESDIR}/pass8bit.diff
 .endif
 
+.if (!defined(MAKE_KERBEROS5) && ${OSVERSION} <= 500105) || \
+	!exists(/usr/lib/libkrb5.a)
+CONFIGURE_ARGS+=--disable-gssapi
+.endif
+
 CYRUS_USER?=	cyrus
 CYRUS_GROUP?=	cyrus
 
