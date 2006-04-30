@@ -3529,6 +3529,7 @@ gstreamer-plugins-flac80	ports/audio/gstreamer-plugins-flac80
 gstreamer-plugins-gconf		ports/devel/gstreamer-plugins-gconf
 gstreamer-plugins-gconf80	ports/devel/gstreamer-plugins-gconf80
 gstreamer-plugins-gdkpixbuf80	ports/graphics/gstreamer-plugins-gdkpixbuf80
+gstreamer-plugins-gnonlin 	ports/multimedia/gstreamer-plugins-gnonlin
 gstreamer-plugins-gnomevfs	ports/devel/gstreamer-plugins-gnomevfs
 gstreamer-plugins-gnomevfs80	ports/devel/gstreamer-plugins-gnomevfs80
 gstreamer-plugins-gsm		ports/audio/gstreamer-plugins-gsm
