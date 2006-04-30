@@ -43,22 +43,12 @@ USER=		www
 GROUP=		www
 
 .include <bsd.port.pre.mk>
-#
-# Change install directory by JDK version
-#
-.if defined(JAVA_PORT_VERSION) && (${JAVA_PORT_VERSION} == "1.4.1")
-LIB_SUBDIR=		endorsed
-.else
-LIB_SUBDIR=		ext
-.endif
-JAR_INSTALL_DEST_DIR=	${JAVA_HOME}/jre/lib/${LIB_SUBDIR}
 
 #
 # Install procedure
 #
-SYSTEM_JARS=	jaxrpc.jar saaj.jar
-PLIST_SUB=	PREFIX=${PREFIX} WEBAPPS=${WEBAPPDIR} JRE_HOME="${JAVA_HOME}/jre" \
-		LIB_SUBDIR=${LIB_SUBDIR} USER=${USER} GROUP=${GROUP}
+SYSTEM_JARS=	axis.jar jaxrpc.jar saaj.jar
+PLIST_SUB+=	PREFIX=${PREFIX} WEBAPPS=${WEBAPPDIR} USER=${USER} GROUP=${GROUP}
 
 .if !defined(NOPORTDOCS)
 SAMPLECLASSES=''
@@ -67,9 +57,9 @@ SAMPLECLASSES=classes
 .endif
 
 do-install:
-	${MKDIR} ${JAR_INSTALL_DEST_DIR}
 .for i in ${SYSTEM_JARS}
-	${INSTALL_DATA} ${WRKSRC}/lib/${i} ${JAR_INSTALL_DEST_DIR}
+	${MKDIR} ${JAVAJARDIR}/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/lib/${i} ${JAVAJARDIR}/${PORTNAME}
 .endfor
 	(cd ${WRKSRC}/webapps ; tar cf - --exclude "${SAMPLECLASSES}" axis) | (cd ${WEBAPPDIR} ; tar xvf -)
 	${CHOWN} -R ${USER}:${GROUP} ${WEBAPPDIR}/axis
