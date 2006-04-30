@@ -1,19 +1,20 @@
 bin/secpanel
-share/secpanel/convert_history.tcl
-share/secpanel/default.config
-share/secpanel/default.profile
-share/secpanel/gui.tcl
-share/secpanel/listserver.tcl
-share/secpanel/secpanel.dist
-share/secpanel/secpanel.wait
-share/secpanel/images/arrow_left.gif
-share/secpanel/images/arrow_right.gif
-share/secpanel/images/configs.gif
-share/secpanel/images/connects.gif
-share/secpanel/images/folder.gif
-share/secpanel/images/keys.gif
-share/secpanel/images/profiles.gif
-share/secpanel/images/scp.gif
-share/secpanel/images/sscreen.gif
-@dirrm share/secpanel/images
-@dirrm share/secpanel
+%%DATADIR%%/convert_history.tcl
+%%DATADIR%%/default.config
+%%DATADIR%%/default.profile
+%%DATADIR%%/gui.tcl
+%%DATADIR%%/listserver.tcl
+%%DATADIR%%/secpanel.dist
+%%DATADIR%%/secpanel.wait
+%%DATADIR%%/images/arrow_left.gif
+%%DATADIR%%/images/arrow_right.gif
+%%DATADIR%%/images/back.gif
+%%DATADIR%%/images/configs.gif
+%%DATADIR%%/images/connects.gif
+%%DATADIR%%/images/folder.gif
+%%DATADIR%%/images/keys.gif
+%%DATADIR%%/images/profiles.gif
+%%DATADIR%%/images/scp.gif
+%%DATADIR%%/images/sscreen.gif
+@dirrm %%DATADIR%%/images
+@dirrm %%DATADIR%%
