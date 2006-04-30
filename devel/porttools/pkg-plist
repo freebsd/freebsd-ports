@@ -1,11 +1,15 @@
 @comment $FreeBSD$
 bin/port
+%%DATADIR%%/cmd_commit
 %%DATADIR%%/cmd_create
 %%DATADIR%%/cmd_diff
 %%DATADIR%%/cmd_fetch
+%%DATADIR%%/cmd_getpr
 %%DATADIR%%/cmd_help
+%%DATADIR%%/cmd_install
 %%DATADIR%%/cmd_submit
 %%DATADIR%%/cmd_test
+%%DATADIR%%/cmd_upgrade
 %%DATADIR%%/util_diff
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/README

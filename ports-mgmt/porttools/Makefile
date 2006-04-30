@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	porttools
-PORTVERSION=	0.63
-PORTREVISION=	3
+PORTVERSION=	0.75
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,7 +20,7 @@ RUN_DEPENDS=	portlint:${PORTSDIR}/devel/portlint \
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_NEWFILE) || exists(${LOCALBASE}/bin/newfile)
+.if !defined(WITHOUT_NEWFILE)
 RUN_DEPENDS+=	${LOCALBASE}/bin/newfile:${PORTSDIR}/devel/newfile
 .endif
 
