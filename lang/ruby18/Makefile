@@ -125,11 +125,13 @@ OBSOLETED_MODULES=	bigfloat \
 			zlib
 
 pre-everything::
+.if !defined(WITH_PTHREADS)
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "NOTE:"
 	@${ECHO_MSG} "You can enable pthread support by defining WITH_PTHREADS variable,"
 	@${ECHO_MSG} "but not recommended since this might break some ruby apps."
 	@${ECHO_MSG} ""
+.endif
 
 post-extract:
 	${MV} ${WRKSRC}/ext/dl/h2rb ${WRKSRC}/bin/
