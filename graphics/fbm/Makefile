@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fuzzy Pixmap Manipulation utilities
 
+LIB_DEPENDS=	rle.1:${PORTSDIR}/graphics/urt
+
 NO_WRKSUBDIR=	yes
 NO_LATEST_LINK=	yes
 

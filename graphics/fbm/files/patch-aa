@@ -1,5 +1,5 @@
---- Makefile.orig	Fri Jun  4 01:30:50 1993
-+++ Makefile	Thu Apr 27 03:27:43 2000
+--- Makefile.orig	Thu Jun  3 16:30:50 1993
++++ Makefile	Thu Jan 13 16:54:56 2005
 @@ -63,32 +63,33 @@
  #
  ################################################################
@@ -16,8 +16,8 @@
  MANEXT= l
 +MAN= $(PREFIX)/man/man$(MANEXT)/
 +FTP= /usr/mlm/ftp/
-+TIFINC= $(LOCALBASE)/include/
-+TIFLIB= $(LOCALBASE)/lib/
++TIFINC= -I$(LOCALBASE)/include/
++TIFLIB= -L$(LOCALBASE)/lib -ltiff 
  
  # Make the C compiler behave on the NeXT
 -DBG= -g -D__STRICT_BSD__
@@ -37,13 +37,15 @@
  
  #----------------Utah RLE linkage----------------
  # If you don't have the Utah RLE library, use these two lines
- RLE=
- RLIB= 
+-RLE=
+-RLIB= 
++#RLE=
++#RLIB=
  # If you have the Utah RLE library, use the next lines instead
 -#RLE= -DRLE -I/usr/mlm/include
 -#RLIB= -L. -lfbm -L/usr/mlm/lib -lrle
-+#RLE= -DRLE -I$(LOCALBASE)/include
-+#RLIB= -L. -lfbm -L$(LOCALBASE)/lib -lrle
++RLE=	-DRLE -I$(LOCALBASE)/include
++RLIB=	-L. -lfbm -L$(LOCALBASE)/lib -lrle
  
  LIB= -L. -lfbm $(JLIB) $(RLIB)
  
