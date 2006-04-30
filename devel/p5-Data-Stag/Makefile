@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	Data-Stag
-PORTVERSION=	0.08
+PORTVERSION=	0.10
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Data
@@ -15,6 +15,9 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	fernan@iib.unsam.edu.ar
 COMMENT=	Structured Tags datastructures
+
+RUN_DEPENDS=	${SITE_PERL}/IO/String.pm:${PORTSDIR}/devel/p5-IO-String
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
@@ -35,6 +38,13 @@ MAN3=		Data::Stag::GraphHandler.3 Data::Stag::PodParser.3 \
 		Data::Stag::BaseHandler.3 Data::Stag::BaseGenerator.3 \
 		Data::Stag::DTDWriter.3 Data::Stag::ITextParser.3 \
 		Data::Stag::PerlWriter.3 Data::Stag::XMLParser.3 \
+		Data::Stag::IndentParser.3 Data::Stag::IndentWriter.3 \
 		Data::Stag.3 Data::Stag::XSLTHandler.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+IGNORE=		requires perl 5.6.0 or later. Install lang/perl5.8 and try again
+.endif
+
+.include <bsd.port.post.mk>
