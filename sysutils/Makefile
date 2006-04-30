@@ -335,6 +335,7 @@
     SUBDIR += monitord
     SUBDIR += most
     SUBDIR += mount.app
+    SUBDIR += mountsmb2
     SUBDIR += msyslog
     SUBDIR += mtxorbd
     SUBDIR += multitail

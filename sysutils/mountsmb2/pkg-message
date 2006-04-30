@@ -1,0 +1,22 @@
+***********************************************************
+
+Please, read %%EXAMPLESDIR%%/README.FreeBSD
+*B*E*F*O*R*E* the FIRST RUN of Mountsmb2!
+
+In order to run Mountsmb2 properly, be sure that:
+
+1. Your kernel is configured properly
+2. Your /etc/nsmb.conf file is configured properly
+3. Your .nsmbrc file is configured properly (this means, that
+   the password to *ANY* server in your network is recorded in
+   this file. For semi-automatic creation of .nsmbrc you can use
+   the smb2nsmbrc script)
+4. Your .mssmbrc file is created and filled properly
+
+Keep in mind, that:
+
+1. Mountsmb2 only calls mount_smbfs to mount shares with params, described in
+   a .mssmbrc file
+2. DO NOT DISTURB ME ABOUT FreeBSD's SMB IMPLEMENTATION!
+
+************************************************************
