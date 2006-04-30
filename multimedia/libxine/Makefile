@@ -41,7 +41,6 @@ USE_GNOME=	gnomehack gnometarget
 USE_GMAKE=	yes
 USE_GL=		yes
 USE_SDL=	sdl
-USE_REINPLACE=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -fno-force-addr -I${LOCALBASE}/include -I${LOCALBASE}/include/dvdread -I${X11BASE}/include" \
 		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
@@ -68,6 +67,7 @@ LIB_DEPENDS+=	artsc.0:${PORTSDIR}/audio/arts
 PLIST_SUB+=	WITH_ARTS=""
 .else
 PLIST_SUB+=	WITH_ARTS="@comment "
+CONFIGURE_ARGS+=	--disable-arts --disable-artstest
 .endif
 
 .if !defined(WITHOUT_CACA) && (exists(${LOCALBASE}/lib/libcaca.a) || defined(WITH_CACA))
@@ -75,6 +75,7 @@ BUILD_DEPENDS+=	caca-config:${PORTSDIR}/graphics/libcaca
 PLIST_SUB+=	WITH_CACA=""
 .else
 PLIST_SUB+=	WITH_CACA="@comment "
+CONFIGURE_ARGS+=	--disable-caca --disable-cacatest
 .endif
 
 .if !defined(WITHOUT_ESOUND) && (${HAVE_GNOME:Mesound} != "" || defined(WITH_ESOUND))
@@ -82,6 +83,7 @@ USE_GNOME+=	esound
 PLIST_SUB+=	WITH_ESOUND=""
 .else
 PLIST_SUB+=	WITH_ESOUND="@comment "
+CONFIGURE_ARGS+=	--disable-esd --disable-esdtest
 .endif
 
 .if !defined(WITHOUT_GNOMEVFS2) && (${HAVE_GNOME:Mgnomevfs2} != "" || defined(WITH_GNOMEVFS2))
@@ -89,6 +91,7 @@ USE_GNOME+=	gnomevfs2
 PLIST_SUB+=	WITH_GNOMEVFS2=""
 .else
 PLIST_SUB+=	WITH_GNOMEVFS2="@comment "
+CONFIGURE_ARGS+=	--disable-gnome
 .endif
 
 .if !defined(WITHOUT_POLYPAUDIO) && (exists(${LOCALBASE}/lib/libpolyp-0.7.so.0) || defined(WITH_POLYPAUDIO))
@@ -96,12 +99,14 @@ LIB_DEPENDS+=	polyp-0.7.0:${PORTSDIR}/audio/polypaudio
 PLIST_SUB+=	WITH_POLYPAUDIO=""
 .else
 PLIST_SUB+=	WITH_POLYPAUDIO="@comment "
+CONFIGURE_ARGS+=	--disable-polypaudio
 .endif
 
 .if ${ARCH} == "i386"
 PLIST_SUB+=	WITH_VIDIX=""
 .else
 PLIST_SUB+=	WITH_VIDIX="@comment "
+CONFIGURE_ARGS+=	--disable-vidix
 .endif
 
 .if !defined(WITHOUT_XVMC) && (exists(${X11BASE}/lib/libXvMCNVIDIA.so.1) || defined(WITH_XVMC))
@@ -117,6 +122,7 @@ LIB_DEPENDS+=	theora.1:${PORTSDIR}/multimedia/libtheora
 PLIST_SUB+=	WITH_THEORA=""
 .else
 PLIST_SUB+=	WITH_THEORA="@comment "
+CONFIGURE_ARGS+=	--disable-theoratest
 .endif
 
 .if !defined(WITHOUT_SMB) && (exists(${LOCALBASE}/lib/libsmbclient.so.0) || defined (WITH_SMB))
@@ -124,6 +130,7 @@ LIB_DEPENDS+=	smbclient.0:${PORTSDIR}/net/samba-libsmbclient
 PLIST_SUB+=	WITH_SMB=""
 .else
 PLIST_SUB+=	WITH_SMB="@comment "
+CONFIGURE_ARGS+=	--disable-samba
 .endif
 
 pre-everything::
@@ -186,6 +193,8 @@ post-patch:
 		  s|-malign-jumps|-falign-jumps|g ; \
 		  s|-malign-functions|-falign-functions|g' ${WRKSRC}/configure
 .endif
+
+pre-build:
 	${CP} ${LTMAIN} ${WRKSRC}/ltmain.sh
 
 .include <bsd.port.post.mk>
