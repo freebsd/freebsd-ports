@@ -816,6 +816,7 @@ bmeps		ports/graphics/bmeps
 bmf		ports/mail/bmf
 bmon		ports/net/bmon
 bmp-alarm	ports/x11-clocks/bmp-alarm
+bmp-crossfade	ports/audio/bmp-crossfade
 bmp-docklet	ports/deskutils/bmp-docklet
 bmp-extra-plugins	ports/multimedia/bmp-extra-plugins
 bmp-faad	ports/audio/bmp-faad
