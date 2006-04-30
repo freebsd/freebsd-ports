@@ -2287,3 +2287,4 @@ graphics/gstreamer-plugins-jpeg-mmx|graphics/gstreamer-plugins-jpeg-mmx80|2006-0
 audio/gstreamer-plugins-polyp|audio/gstreamer-plugins-polyp80|2006-04-29|Not part of gstreamer 0.10 yet
 www/evolution-caldav||2006-04-29|Now included in evolution-data-server and evolution
 graphics/mrsidviewer||2006-04-30|Removed (distribution no longer available from vendor)
+graphics/kimdaba|graphics/kphotoalbum|2006-04-30|renamed

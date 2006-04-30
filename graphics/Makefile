@@ -283,12 +283,12 @@
     SUBDIR += kbarcode
     SUBDIR += kdc2tiff
     SUBDIR += kdegraphics3
-    SUBDIR += kimdaba
     SUBDIR += kipi-plugins
     SUBDIR += kisomandel
     SUBDIR += kix-kmod
     SUBDIR += kludge3d
     SUBDIR += kooka
+    SUBDIR += kphotoalbum
     SUBDIR += kudu
     SUBDIR += kuickshow
     SUBDIR += landscape
