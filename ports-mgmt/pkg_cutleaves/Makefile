@@ -6,18 +6,15 @@
 #
 
 PORTNAME=	pkg_cutleaves
-PORTVERSION=	20051228
+PORTVERSION=	20060430
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.gegenunendlich.de/projects/${PORTNAME}/
 
 MAINTAINER=	sw@gegenunendlich.de
 COMMENT=	Interactive script for deinstalling 'leaf' packages
 
-RUN_DEPENDS=	${LOCALBASE}/sbin/pkg_deinstall:${PORTSDIR}/sysutils/portupgrade
-
 NO_BUILD=	yes
 USE_PERL5=	yes
-USE_REINPLACE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
@@ -33,7 +30,7 @@ post-patch:
 	  's,/usr/local/etc/pkg_leaves.exclude,${PREFIX}/etc/pkg_leaves.exclude,' \
 	  ${WRKSRC}/pkg_cutleaves
 	@${REINPLACE_CMD} -e \
-	  's,/usr/local/sbin/pkg_deinstall,${LOCALBASE}/sbin/pkg_deinstall,' \
+	  's,/usr/sbin/pkg_delete,${PKG_DELETE},' \
 	  ${WRKSRC}/pkg_cutleaves
 	@${REINPLACE_CMD} -e \
 	  's,/usr/local/sbin/pkgdb,${LOCALBASE}/sbin/pkgdb,' \
