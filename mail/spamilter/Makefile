@@ -25,7 +25,6 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/libmilter.a:${PORTSDIR}/mail/${SENDMAIL_MILTER_
 
 SENDMAIL_MILTER_PORT?=	sendmail
 WRKSRC=		${WRKDIR}/${PORTNAME}
-USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
 CFLAGS+=	${PTHREAD_CFLAGS:S=""==}
 LDFLAGS+=	${PTHREAD_LIBS}
@@ -53,6 +52,7 @@ CONFIGURE_ARGS+=	--with-pam
 
 .if ${OSVERSION} >= 700014
 CONFIGURE_ARGS+=	--have-resn
+BROKEN=			res_update.h: No such file or directory
 .endif
 
 PLIST_FILES+=	bin/dnsblchk bin/dnsblupd bin/ipfwmtad bin/mxlookup \
