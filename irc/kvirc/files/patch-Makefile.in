@@ -1,0 +1,11 @@
+--- data/protocols/Makefile.in.bak	Wed Feb 15 10:36:43 2006
++++ data/protocols/Makefile.in	Fri Feb 25 21:34:49 2005
+@@ -183,7 +183,7 @@
+ 
+ tmpdir = $(kdeservicesdir)
+ 
+-tmp_DATA = irc.protocol irc6.protocol
++tmp_DATA = kvirc.protocol kvirc6.protocol
+ 
+ EXTRA_DIST = $(tmp_DATA)
+ subdir = data/protocols

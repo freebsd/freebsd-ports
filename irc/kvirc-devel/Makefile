@@ -7,7 +7,7 @@
 
 PORTNAME=	kvirc
 PORTVERSION=	3.2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	irc kde
 MASTER_SITES=	ftp://ftp.kvirc.net/pub/%SUBDIR%/ \
 		ftp://ftp.kvirc.de/pub/%SUBDIR%/ \
@@ -17,8 +17,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTVERSION}/source
 
 MAINTAINER=	mranner@inode.at
 COMMENT=	IRC client for QT and KDE
-
-CONFLICTS=	kdenetwork-3.5.[0-9]*
 
 USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
@@ -70,5 +68,8 @@ post-patch:
 		-e "s,.SS_KDE_GENERAL_DIR/share/mimelnk,${PREFIX}/share/mimelnk," \
 		-e "s,kdeservicesdir=\".SS_KDE_SERVICESDIR\",kdeservicesdir=\"${PREFIX}/share/services\"," \
 		${WRKSRC}/configure
+post-configure:
+	@${MV} ${WRKSRC}/data/protocols/irc.protocol ${WRKSRC}/data/protocols/kvirc.protocol
+	@${MV} ${WRKSRC}/data/protocols/irc6.protocol ${WRKSRC}/data/protocols/kvirc6.protocol
 
 .include <bsd.port.post.mk>
