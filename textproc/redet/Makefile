@@ -6,37 +6,37 @@
 #
 
 PORTNAME=	redet
-PORTVERSION=	7.3
-PORTREVISION=	1
+PORTVERSION=	8.10
 CATEGORIES=	textproc tk84
-MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITES=	http://bsd1.csme.ru/myports/ \
+		http://bsd2.csme.ru/myports/ \
+		http://bsd3.csme.ru/myports/ \
+		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	vsevolod
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	infofarmer@gmail.com
 COMMENT=	Visual regexp constructors with many regexp types support
 
-RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84 \
-		${LOCALBASE}/lib/iwidgets/iwidgets.tcl:${PORTSDIR}/x11-toolkits/iwidgets
+RUN_DEPENDS=	${LOCALBASE}/lib/iwidgets/iwidgets.tcl:${PORTSDIR}/x11-toolkits/iwidgets
 
 NO_BUILD=	yes
-USE_REINPLACE=	yes
+USE_BZIP2=	yes
+USE_TK=		84
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-PORTDOCS=	BUGS COPYING CREDITS LICENSE README-General
+PORTDOCS=	AUTHORS COPYING CREDITS LICENSE README-General
 MAN1=		redet.1
 PLIST_FILES=	bin/redet
 
 post-patch:
-	@${REINPLACE_CMD} -e 's/wish/wish8.4/' ${WRKSRC}/redet.tcl
+	@${REINPLACE_CMD} -e "s@exec wish@exec ${WISH}@" ${WRKSRC}/redet.tcl
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/redet.tcl ${PREFIX}/bin/redet
-	${INSTALL_DATA} ${WRKSRC}/${MAN1} ${MAN1PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${MAN1PREFIX}/man/man1/
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-. for doc in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
-. endfor
+	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>
