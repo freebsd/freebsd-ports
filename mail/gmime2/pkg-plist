@@ -52,7 +52,7 @@ lib/gmimeConf.sh
 lib/libgmime-2.0.a
 lib/libgmime-2.0.la
 lib/libgmime-2.0.so
-lib/libgmime-2.0.so.3
+lib/libgmime-2.0.so.4
 libdata/pkgconfig/gmime-2.0.pc
 @dirrm include/gmime-2.0/gmime
 @dirrm include/gmime-2.0
