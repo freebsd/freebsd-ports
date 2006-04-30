@@ -1,8 +1,0 @@
-**************************************************************************
-Gnome-screensaver requires a D-BUS-enabled desktop session.  Consult the
-FreeBSD GNOME FAQ for instructions on setting up your desktop session
-through D-BUS:
-
-             http://www.freebsd.org/gnome/docs/faq2.html#q25
-
-**************************************************************************
