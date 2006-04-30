@@ -47,6 +47,7 @@
     SUBDIR += beep
     SUBDIR += bladeenc
     SUBDIR += blop
+    SUBDIR += bmp-crossfade
     SUBDIR += bmp-faad
     SUBDIR += bmp-fc
     SUBDIR += bmp-festalon
