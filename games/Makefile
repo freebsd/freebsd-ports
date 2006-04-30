@@ -544,6 +544,7 @@
     SUBDIR += rubix
     SUBDIR += ruby-exmars
     SUBDIR += sarien
+    SUBDIR += sauerbraten
     SUBDIR += scare
     SUBDIR += scid
     SUBDIR += scorched3d
