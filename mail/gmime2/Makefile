@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	gmime
-PORTVERSION=	2.1.19
-PORTREVISION?=	2
+PORTVERSION=	2.2.1
+PORTREVISION?=	0
 CATEGORIES?=	mail
-MASTER_SITES=	http://spruce.sourceforge.net/gmime/sources/v2.1/
+MASTER_SITES=	http://spruce.sourceforge.net/gmime/sources/v${PORTVERSION:C/([0-9]\.[0-9]).*/\1/}/
 
 MAINTAINER?=	mnag@FreeBSD.org
 COMMENT?=	Library (written in C) for parsing and creating messages using MIME
