@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	mozilla
-PORTVERSION=	1.7.12
-PORTREVISION=	1
+PORTVERSION=	1.7.13
+PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	japanese www
-MASTER_SITES=	ftp://ftp.mozilla-japan.org/pub/mozilla-japan/mozilla/releases/${PORTVERSION}/ \
+MASTER_SITES=	ftp://ftp.mozilla-japan.org/pub/mozilla/mozilla-japan/mozilla/releases/${PORTVERSION}/ \
 		${MASTER_SITE_LOCAL:S,%SUBDIR%,maho/mozilla/&,}
 PKGNAMESUFFIX=	-jlp
 DISTNAME=	mozilla-${PORTVERSION}.ja-JP.langpack
