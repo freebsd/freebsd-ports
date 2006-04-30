@@ -4,27 +4,31 @@
 #
 # $FreeBSD$
 
-PORTNAME=		kimdaba
-PORTVERSION=		2.1
-PORTREVISION=		3
+PORTNAME=		kphotoalbum
+PORTVERSION=		2.2
 CATEGORIES=		graphics kde
-MASTER_SITES=		http://ktown.kde.org/kphotoalbum/download/
+MASTER_SITES=		http://www.kphotoalbum.org/download/
 
 MAINTAINER=		markus@FreeBSD.org
 COMMENT=		Image database for KDE
 
-RUN_DEPENDS=		kipidcrawclient:${PORTSDIR}/graphics/kipi-plugins
+LIB_DEPENDS=		kipi.1:${PORTSDIR}/graphics/libkipi
+
+RUN_DEPENDS=		exiv2:${PORTSDIR}/graphics/exiv2
 BUILD_DEPENDS=		${RUN_DEPENDS}
 
 USE_KDELIBS_VER=	3
 USE_BZIP2=		yes
 USE_GMAKE=		yes
 USE_AUTOTOOLS=		libtool:15
-USE_REINPLACE=		yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/-O2//g' ${WRKSRC}/${CONFIGURE_SCRIPT}
-	@${FIND} ${WRKSRC}/translations -name Makefile.in | ${XARGS} \
-		${REINPLACE_CMD} -e 's|LANG)/doc|LANG)/kimdaba|g'
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=			Does not compile
+.endif
+
+.include <bsd.port.post.mk>
