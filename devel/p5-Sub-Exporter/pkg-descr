@@ -1,0 +1,5 @@
+The biggest benefit of Sub::Exporter over existing exporters (including the
+ubiquitous Exporter.pm) is its ability to build new coderefs for export, rather
+than to simply export code identical to that found in the exporting package.
+
+WWW: http://search.cpan.org/dist/Sub-Exporter/
