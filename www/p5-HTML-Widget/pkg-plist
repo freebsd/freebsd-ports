@@ -24,6 +24,7 @@
 %%SITE_PERL%%/HTML/Widget/Constraint/Time.pm
 %%SITE_PERL%%/HTML/Widget/Container.pm
 %%SITE_PERL%%/HTML/Widget/Element.pm
+%%SITE_PERL%%/HTML/Widget/Element/Button.pm
 %%SITE_PERL%%/HTML/Widget/Element/Checkbox.pm
 %%SITE_PERL%%/HTML/Widget/Element/Hidden.pm
 %%SITE_PERL%%/HTML/Widget/Element/Password.pm
