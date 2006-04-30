@@ -1,0 +1,11 @@
+--- configure.in.orig	Tue Jan 17 23:49:11 2006
++++ configure.in	Tue Jan 17 23:49:55 2006
+@@ -62,7 +62,7 @@
+ 
+ AC_CHECK_LIB(mac, DecompressFile, [])
+ 
+-#MAC_LIBS="-lmac"
++MAC_LIBS="-lmac -lpthread"
+ #MAC_INCLUDES="-I/usr/include/mac"
+ MAC_CXXFLAGS="-s -O3 -Wall -pedantic -DBUILD_CROSS_PLATFORM"
+ 

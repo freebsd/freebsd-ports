@@ -53,6 +53,7 @@
     SUBDIR += bmp-festalon
     SUBDIR += bmp-flac
     SUBDIR += bmp-htmlplaylist
+    SUBDIR += bmp-mac
     SUBDIR += bmp-modplug
     SUBDIR += bmp-scrobbler
     SUBDIR += bmp-songchange
