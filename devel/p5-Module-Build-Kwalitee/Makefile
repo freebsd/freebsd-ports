@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Module-Build-Kwalitee
-PORTVERSION=	0.20
+PORTVERSION=	0.21
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/S/ST/STIG
@@ -16,10 +16,10 @@ MAINTAINER=	ychsiao@ychsiao.org
 COMMENT=	Module::Build subclass with prepackaged tests
 
 BUILD_DEPENDS=	p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML \
-		p5-Module-Build>=0.2609:${PORTSDIR}/devel/p5-Module-Build \
+		p5-Module-Build>=0.26.09:${PORTSDIR}/devel/p5-Module-Build \
 		p5-Test-Pod>=0:${PORTSDIR}/devel/p5-Test-Pod \
 		p5-Test-Pod-Coverage>=0:${PORTSDIR}/devel/p5-Test-Pod-Coverage
-RUN_DEPENDS=	p5-File-Fine-Rule>=0:${PORTSDIR}/devel/p5-File-Find-Rule
+RUN_DEPENDS=	p5-File-Find-Rule>=0:${PORTSDIR}/devel/p5-File-Find-Rule
 
 PERL_MODBUILD=	yes
 
