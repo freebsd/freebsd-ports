@@ -6704,6 +6704,7 @@ moth		ports/graphics/moth
 motion		ports/multimedia/motion
 motor		ports/devel/motor
 mount.app	ports/sysutils/mount.app
+mountsmb2	ports/sysutils/mountsmb2
 mouseclock	ports/x11-clocks/mouseclock
 movemail	ports/mail/movemail
 moviedb		ports/misc/moviedb
