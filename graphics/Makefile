@@ -474,6 +474,8 @@
     SUBDIR += pngrewrite
     SUBDIR += pngwriter
     SUBDIR += poppler
+    SUBDIR += poppler-gtk
+    SUBDIR += poppler-qt
     SUBDIR += pornview
     SUBDIR += potrace
     SUBDIR += potracegui
