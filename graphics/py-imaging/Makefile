@@ -7,6 +7,7 @@
 
 PORTNAME=	imaging
 PORTVERSION=	1.1.5
+PORTREVISION=	1
 CATEGORIES=	graphics python
 MASTER_SITES=	http://effbot.org/downloads/ \
 	        http://www.pythonware.net/storage/
@@ -16,29 +17,41 @@ DISTNAME=	Imaging-${PORTVERSION}
 MAINTAINER=	mainland@apeiron.net
 COMMENT=	The Python Imaging Library
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		freetype.9:${PORTSDIR}/print/freetype2
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
 
-DIST_SUBDIR=	 python
-USE_PYTHON=	 yes
+LATEST_LINK=	py-${PORTNAME}
+
+DIST_SUBDIR=	python
+USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
-DOCDIRS=		${PREFIX}/share/doc/py-imaging
+PORTDOCS=	*
+
+DOCDIRS=	${PREFIX}/share/doc/py-imaging
 EXAMPLESDIR=	${PREFIX}/share/examples/py-imaging
 
+OPTIONS=	TKINTER "Build with tkinter for X support" off
+
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_TKINTER) || exists(${PYTHON_SITELIBDIR}/_tkinter.so)
+BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
+PLIST_SUB+=	TKINTER=""
+.else
+PLIST_SUB+=	TKINTER="@comment "
+.endif
 
 post-install:
 .for file in ImPlatform.h Imaging.h
 	${INSTALL_DATA} ${WRKSRC}/libImaging/${file} ${PYTHON_INCLUDEDIR}
 .endfor
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/Scripts/* ${EXAMPLESDIR}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/Docs/* ${DOCSDIR}
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/Scripts/* ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.post.mk>
