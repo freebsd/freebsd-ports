@@ -6782,7 +6782,6 @@ mprime		ports/math/mprime
 mprof		ports/devel/mprof
 mr-aspell	ports/textproc/mr-aspell
 mreport		ports/mail/mreport
-mrsidviewer	ports/graphics/mrsidviewer
 mrt		ports/net/mrt
 mrtg		ports/net-mgmt/mrtg
 mrtg-mysql-load	ports/databases/mrtg-mysql-load
