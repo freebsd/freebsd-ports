@@ -528,6 +528,7 @@
     SUBDIR += sylpheed-claws-etpan_privacy
     SUBDIR += sylpheed-claws-fetchinfo
     SUBDIR += sylpheed-claws-gtkhtml2_viewer
+    SUBDIR += sylpheed-claws-maildir
     SUBDIR += sylpheed-claws-mailmbox
     SUBDIR += sylpheed-claws-newmail
     SUBDIR += sylpheed-claws-notification
