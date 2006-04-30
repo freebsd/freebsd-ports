@@ -7,6 +7,7 @@
 
 PORTNAME=	gstreamer
 PORTVERSION=	0.10.5
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_GNOME} \
 		http://gstreamer.freedesktop.org/src/gstreamer/
@@ -31,7 +32,8 @@ CONFIGURE_ARGS=	--disable-tests \
 		--disable-docs-build \
 		--disable-failing-tests
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" \
+		ac_cv_func_register_printf_function="no"
 PLIST_SUB=	VERSION="${GST_VERSION}"
 INSTALLS_SHLIB=	yes
 GST_VERSION=	0.10
