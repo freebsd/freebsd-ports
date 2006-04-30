@@ -72,4 +72,8 @@ pre-fetch:
 .endif
 .endif
 
+post-patch:
+	cd ${WRKSRC}; ${FIND} . -name Makefile.in | \
+		${XARGS} ${REINPLACE_CMD} -e 's/@program_transform_name@//'
+
 .include <bsd.port.post.mk>
