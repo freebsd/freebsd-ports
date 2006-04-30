@@ -1,23 +1,77 @@
+%%WITH_KDE%%bin/TaskJugglerUI
 bin/taskjuggler
-bin/tjx2gantt
-%%DOCSDIR%%/Examples/BigProject/Common/Resources.tjsp
-%%DOCSDIR%%/Examples/BigProject/Project1/Project1-Interface.tjsp
+lib/libtaskjuggler.a
+lib/libtaskjuggler.la
+lib/libtaskjuggler.so
+lib/libtaskjuggler.so.3
+%%WITH_KDE%%share/applications/kde/taskjuggler.desktop
+%%WITH_KDE%%share/apps/katepart/syntax/taskjuggler.xml
+%%WITH_KDE%%share/apps/taskjuggler/icons/crystalsvg/16x16/actions/tj_modified.png
+%%WITH_KDE%%share/apps/taskjuggler/icons/crystalsvg/16x16/actions/tj_not_ok.png
+%%WITH_KDE%%share/apps/taskjuggler/icons/crystalsvg/16x16/actions/tj_ok.png
+%%WITH_KDE%%share/apps/taskjuggler/icons/crystalsvg/22x22/actions/tj_milestone.png
+%%WITH_KDE%%share/apps/taskjuggler/icons/crystalsvg/22x22/actions/tj_resource.png
+%%WITH_KDE%%share/apps/taskjuggler/icons/crystalsvg/22x22/actions/tj_schedule.png
+%%WITH_KDE%%share/apps/taskjuggler/icons/crystalsvg/22x22/actions/tj_task.png
+%%WITH_KDE%%share/apps/taskjuggler/icons/crystalsvg/22x22/actions/tj_task_group.png
+%%WITH_KDE%%share/apps/taskjuggler/icons/crystalsvg/32x32/actions/tj_account.png
+%%WITH_KDE%%share/apps/taskjuggler/icons/crystalsvg/32x32/actions/tj_account_group.png
+%%WITH_KDE%%share/apps/taskjuggler/icons/crystalsvg/32x32/actions/tj_account_report.png
+%%WITH_KDE%%share/apps/taskjuggler/icons/crystalsvg/32x32/actions/tj_calendar_report.png
+%%WITH_KDE%%share/apps/taskjuggler/icons/crystalsvg/32x32/actions/tj_csv_reports.png
+%%WITH_KDE%%share/apps/taskjuggler/icons/crystalsvg/32x32/actions/tj_editor.png
+%%WITH_KDE%%share/apps/taskjuggler/icons/crystalsvg/32x32/actions/tj_error.png
+%%WITH_KDE%%share/apps/taskjuggler/icons/crystalsvg/32x32/actions/tj_export_reports.png
+%%WITH_KDE%%share/apps/taskjuggler/icons/crystalsvg/32x32/actions/tj_file_list.png
+%%WITH_KDE%%share/apps/taskjuggler/icons/crystalsvg/32x32/actions/tj_file_tji.png
+%%WITH_KDE%%share/apps/taskjuggler/icons/crystalsvg/32x32/actions/tj_file_tjp.png
+%%WITH_KDE%%share/apps/taskjuggler/icons/crystalsvg/32x32/actions/tj_html_reports.png
+%%WITH_KDE%%share/apps/taskjuggler/icons/crystalsvg/32x32/actions/tj_ical_reports.png
+%%WITH_KDE%%share/apps/taskjuggler/icons/crystalsvg/32x32/actions/tj_interactive_reports.png
+%%WITH_KDE%%share/apps/taskjuggler/icons/crystalsvg/32x32/actions/tj_keyword_help.png
+%%WITH_KDE%%share/apps/taskjuggler/icons/crystalsvg/32x32/actions/tj_next_problem.png
+%%WITH_KDE%%share/apps/taskjuggler/icons/crystalsvg/32x32/actions/tj_note.png
+%%WITH_KDE%%share/apps/taskjuggler/icons/crystalsvg/32x32/actions/tj_previous_problem.png
+%%WITH_KDE%%share/apps/taskjuggler/icons/crystalsvg/32x32/actions/tj_report.png
+%%WITH_KDE%%share/apps/taskjuggler/icons/crystalsvg/32x32/actions/tj_report_list.png
+%%WITH_KDE%%share/apps/taskjuggler/icons/crystalsvg/32x32/actions/tj_resource.png
+%%WITH_KDE%%share/apps/taskjuggler/icons/crystalsvg/32x32/actions/tj_resource_group.png
+%%WITH_KDE%%share/apps/taskjuggler/icons/crystalsvg/32x32/actions/tj_resource_report.png
+%%WITH_KDE%%share/apps/taskjuggler/icons/crystalsvg/32x32/actions/tj_status_report.png
+%%WITH_KDE%%share/apps/taskjuggler/icons/crystalsvg/32x32/actions/tj_task_report.png
+%%WITH_KDE%%share/apps/taskjuggler/icons/crystalsvg/32x32/actions/tj_tutorial.png
+%%WITH_KDE%%share/apps/taskjuggler/icons/crystalsvg/32x32/actions/tj_warning.png
+%%WITH_KDE%%share/apps/taskjuggler/icons/crystalsvg/32x32/actions/tj_xml_reports.png
+%%WITH_KDE%%share/apps/taskjuggler/katefiletyperc
+%%WITH_KDE%%share/apps/taskjuggler/taskjugglerui.rc
+%%WITH_KDE%%share/apps/taskjuggler/templates/en_US/Blank_File.tji
+%%WITH_KDE%%share/apps/taskjuggler/templates/en_US/Blank_Project.tjp
+%%WITH_KDE%%share/apps/taskjuggler/templates/en_US/Large_Project.tjp
+%%WITH_KDE%%share/apps/taskjuggler/templates/en_US/Simple_Project.tjp
+%%WITH_KDE%%share/apps/taskjuggler/tips
+%%WITH_KDE%%share/config/taskjugglerrc
+%%PORTDOCS%%%%WITH_KDE%%share/doc/HTML/en/taskjuggler/ChangeLog.xml
+%%PORTDOCS%%%%WITH_KDE%%share/doc/HTML/en/taskjuggler/Example.xml
+%%PORTDOCS%%%%WITH_KDE%%share/doc/HTML/en/taskjuggler/FirstProject.xml
+%%PORTDOCS%%%%WITH_KDE%%share/doc/HTML/en/taskjuggler/GenPropertyReference.xml
+%%PORTDOCS%%%%WITH_KDE%%share/doc/HTML/en/taskjuggler/PropertyReference.xml
+%%PORTDOCS%%%%WITH_KDE%%share/doc/HTML/en/taskjuggler/SyntaxReference.xml
+%%PORTDOCS%%%%WITH_KDE%%share/doc/HTML/en/taskjuggler/UsageGuide.xml
+%%PORTDOCS%%%%WITH_KDE%%share/doc/HTML/en/taskjuggler/index.cache.bz2
+%%PORTDOCS%%%%WITH_KDE%%share/doc/HTML/en/taskjuggler/index.docbook
+%%PORTDOCS%%%%WITH_KDE%%share/doc/HTML/en/taskjuggler/taskjuggler.xml
+%%DOCSDIR%%/Examples/BigProject/Common/Resources.tji
+%%DOCSDIR%%/Examples/BigProject/Project1/Project1-Interface.tji
 %%DOCSDIR%%/Examples/BigProject/Project1/Project1.html
 %%DOCSDIR%%/Examples/BigProject/Project1/Project1.tjp
+%%DOCSDIR%%/Examples/BigProject/Project2/AccountingReport.html
 %%DOCSDIR%%/Examples/BigProject/Project2/Project2.html
 %%DOCSDIR%%/Examples/BigProject/Project2/Project2.tjp
 %%DOCSDIR%%/Examples/BigProject/README
 %%DOCSDIR%%/Examples/FirstProject/Accounting.html
 %%DOCSDIR%%/Examples/FirstProject/AccountingSoftware.tjp
-%%DOCSDIR%%/Examples/FirstProject/AccountingSoftware.tjx
 %%DOCSDIR%%/Examples/FirstProject/Calendar.html
-%%DOCSDIR%%/Examples/FirstProject/Staff-Details.html
-%%DOCSDIR%%/Examples/FirstProject/Staff-Overview.html
 %%DOCSDIR%%/Examples/FirstProject/Status-Report.html
-%%DOCSDIR%%/Examples/FirstProject/Tasks-Details.html
-%%DOCSDIR%%/Examples/FirstProject/Tasks-Overview.html
-%%DOCSDIR%%/Examples/FirstProject/acso.eps
-%%DOCSDIR%%/Examples/FirstProject/acso_poster.eps
 %%DOCSDIR%%/Examples/ShiftSchedule/Calendar-anders.html
 %%DOCSDIR%%/Examples/ShiftSchedule/Calendar-joe.html
 %%DOCSDIR%%/Examples/ShiftSchedule/Calendar-khaled.html
@@ -28,16 +82,31 @@ bin/tjx2gantt
 %%DOCSDIR%%/Examples/ShiftSchedule/ShiftTimes-06-03.html
 %%DOCSDIR%%/Examples/ShiftSchedule/ShiftTimes-06-10.html
 %%DOCSDIR%%/Examples/ShiftSchedule/TaskCoverage-Jun.html
-%%DOCSDIR%%/tjx2gantt/README
-%%DOCSDIR%%/tjx2gantt/TODO
-%%DOCSDIR%%/tjx2gantt/testProject.tjp
-@dirrm %%DOCSDIR%%/Examples/FirstProject
-@dirrm %%DOCSDIR%%/Examples/BigProject/Common
-@dirrm %%DOCSDIR%%/Examples/BigProject/Project1
-@dirrm %%DOCSDIR%%/Examples/BigProject/Project2
-@dirrm %%DOCSDIR%%/Examples/BigProject
+%%WITH_KDE%%share/icons/crystalsvg/32x32/mimetypes/taskjuggler_tji.png
+%%WITH_KDE%%share/icons/crystalsvg/32x32/mimetypes/taskjuggler_tjp.png
+%%WITH_KDE%%share/icons/crystalsvg/32x32/mimetypes/taskjuggler_tjx.png
+%%WITH_KDE%%share/icons/hicolor/16x16/apps/taskjuggler.png
+%%WITH_KDE%%share/icons/hicolor/32x32/apps/taskjuggler.png
+%%WITH_KDE%%share/mimelnk/application/x-tji.desktop
+%%WITH_KDE%%share/mimelnk/application/x-tjp.desktop
+%%WITH_KDE%%share/mimelnk/application/x-tjx.desktop
 @dirrm %%DOCSDIR%%/Examples/ShiftSchedule
+@dirrm %%DOCSDIR%%/Examples/FirstProject
+@dirrm %%DOCSDIR%%/Examples/BigProject/Project2
+@dirrm %%DOCSDIR%%/Examples/BigProject/Project1
+@dirrm %%DOCSDIR%%/Examples/BigProject/Common
+@dirrm %%DOCSDIR%%/Examples/BigProject
 @dirrm %%DOCSDIR%%/Examples
-@dirrm %%DOCSDIR%%/manual
-@dirrm %%DOCSDIR%%/tjx2gantt
 @dirrm %%DOCSDIR%%
+%%PORTDOCS%%%%WITH_KDE%%@dirrm share/doc/HTML/en/taskjuggler
+%%WITH_KDE%%@dirrm share/apps/taskjuggler/templates/en_US
+%%WITH_KDE%%@dirrm share/apps/taskjuggler/templates
+%%WITH_KDE%%@dirrm share/apps/taskjuggler/icons/crystalsvg/32x32/actions
+%%WITH_KDE%%@dirrm share/apps/taskjuggler/icons/crystalsvg/32x32
+%%WITH_KDE%%@dirrm share/apps/taskjuggler/icons/crystalsvg/22x22/actions
+%%WITH_KDE%%@dirrm share/apps/taskjuggler/icons/crystalsvg/22x22
+%%WITH_KDE%%@dirrm share/apps/taskjuggler/icons/crystalsvg/16x16/actions
+%%WITH_KDE%%@dirrm share/apps/taskjuggler/icons/crystalsvg/16x16
+%%WITH_KDE%%@dirrm share/apps/taskjuggler/icons/crystalsvg
+%%WITH_KDE%%@dirrm share/apps/taskjuggler/icons
+%%WITH_KDE%%@dirrm share/apps/taskjuggler
