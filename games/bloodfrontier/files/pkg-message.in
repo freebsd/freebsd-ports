@@ -1,0 +1,9 @@
+###############################################################################
+
+1) First time, sauerbraten create ~/.sauerbraten directory and symlinks
+2) Config files are into ~/.sauerbraten directory.
+3) See %%DATADIR%%/data/keymap.cfg, if you want add new bind into 
+   ~/.sauerbraten/config.cfg
+4) Enjoy it ;)
+
+###############################################################################

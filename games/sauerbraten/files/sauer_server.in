@@ -1,0 +1,16 @@
+#!/bin/sh
+
+# The executable needs to be run from its data directory, and needs to store
+# configuration in it. We therefore mirror the data directory hierarchy in
+# ~/.sauerbraten, and create symlinks to the data files.
+
+if [ -d "~/.sauerbraten" ]; then
+	cd ~/.sauerbraten || exit 1
+	exec %%PREFIX%%/libexec/sauer_server
+else
+	cd %%DATADIR%% || exit 1
+	find * -type d -exec mkdir -p ~/.sauerbraten/{} \; || exit 1
+	find * -type f -exec ln -s %%DATADIR%%/{} ~/.sauerbraten/{} \; 2>/dev/null || exit 1
+	cd ~/.sauerbraten || exit 1
+	exec %%PREFIX%%/libexec/sauer_server
+fi
