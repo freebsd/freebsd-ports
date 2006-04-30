@@ -268,8 +268,8 @@ share/icons/hicolor/48x48/apps/kvirc.png
 share/icons/hicolor/48x48/mimetypes/kvs.png
 share/icons/hicolor/64x64/apps/kvirc.png
 share/icons/hicolor/64x64/mimetypes/kvs.png
-share/services/irc.protocol
-share/services/irc6.protocol
+share/services/kvirc.protocol
+share/services/kvirc6.protocol
 share/mimelnk/text/x-kvs.desktop
 %%DATADIR%%/%%VER%%/config/modules/libkvinotifier.kvc
 %%DATADIR%%/%%VER%%/config/modules/libkvitip.kvc
