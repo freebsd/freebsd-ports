@@ -47,6 +47,8 @@ MAN1=		pdffonts.1 \
 		pdftotext.1
 MAN5=		xpdfrc.5
 
+CONFLICTS=	poppler-[0-9]*
+
 .if defined(WITHOUT_X11)
 PKGNAMESUFFIX+=		-nox11
 CONFIGURE_ARGS+=	--without-x
