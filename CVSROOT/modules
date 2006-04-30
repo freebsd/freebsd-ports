@@ -6055,6 +6055,7 @@ linux-winetools	ports/emulators/linux-winetools
 linux-x-plane	ports/games/linux-x-plane
 linux-x-plane-net-installer	ports/games/linux-x-plane-net-installer
 linux-xmovie		ports/multimedia/linux-xmovie
+linux-xorg-libs	ports/x11/linux-xorg-libs
 linux-ymessenger	ports/net-im/linux-ymessenger
 linux_base	ports/emulators/linux_base
 linux_base-8	ports/emulators/linux_base-8
