@@ -9152,6 +9152,7 @@ p5-String-ShowDiff	ports/textproc/p5-String-ShowDiff
 p5-String-Similarity	ports/devel/p5-String-Similarity
 p5-String-Strip	ports/textproc/p5-String-Strip
 p5-String-Tokenizer	ports/textproc/p5-String-Tokenizer
+p5-Sub-Install	ports/devel/p5-Sub-Install
 p5-Sub-Installer	ports/devel/p5-Sub-Installer
 p5-Sub-Name	ports/devel/p5-Sub-Name
 p5-Sub-Override	ports/devel/p5-Sub-Override
