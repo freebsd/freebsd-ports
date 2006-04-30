@@ -134,6 +134,7 @@
     SUBDIR += libxklavier
     SUBDIR += linux-XFree86-libs
     SUBDIR += linux-gnomelibs
+    SUBDIR += linux-xorg-libs
     SUBDIR += lupe
     SUBDIR += mgapdesk
     SUBDIR += mlterm
