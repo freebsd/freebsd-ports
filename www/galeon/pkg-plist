@@ -12,6 +12,10 @@ share/gnome/galeon/bookmarks-editor.glade
 share/gnome/galeon/bookmarks.glade
 share/gnome/galeon/bug.png
 share/gnome/galeon/certificate-dialogs.glade
+share/gnome/galeon/chrome/branding/brand.dtd
+share/gnome/galeon/chrome/branding/brand.properties
+share/gnome/galeon/chrome/galeon.manifest
+share/gnome/galeon/chrome/global/about.xhtml
 share/gnome/galeon/debian.png
 share/gnome/galeon/default-bookmarks.xbel
 share/gnome/galeon/default-prefs.js
@@ -212,7 +216,10 @@ share/locale/uk/LC_MESSAGES/galeon-2.0.mo
 share/locale/vi/LC_MESSAGES/galeon-2.0.mo
 share/locale/wa/LC_MESSAGES/galeon-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/galeon-2.0.mo
+share/locale/zh_HK/LC_MESSAGES/galeon-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/galeon-2.0.mo
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
 @dirrm share/gnome/sounds/galeon
@@ -222,6 +229,9 @@ share/locale/zh_TW/LC_MESSAGES/galeon-2.0.mo
 @dirrm share/gnome/help/galeon/C/figures
 @dirrm share/gnome/help/galeon/C
 @dirrm share/gnome/help/galeon
+@dirrm share/gnome/galeon/chrome/global
+@dirrm share/gnome/galeon/chrome/branding
+@dirrm share/gnome/galeon/chrome
 @dirrm share/gnome/galeon
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
