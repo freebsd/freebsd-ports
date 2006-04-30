@@ -3,7 +3,7 @@
 #
 # $FreeBSD$
 #	$NetBSD: $
-#     $MCom: ports/Mk/bsd.gnome.mk,v 1.334 2005/10/23 16:37:47 marcus Exp $
+#     $MCom: ports/Mk/bsd.gnome.mk,v 1.370 2006/04/27 01:40:22 ahze Exp $
 #
 # Please view me with 4 column tabs!
 
@@ -39,6 +39,11 @@ Gnome_Pre_Include=			bsd.gnome.mk
 #					  file and add apropriate @exec/@unexec directives for
 #					  each .omf file found to track OMF registration database.
 #
+# INSTALLS_ICONS	- If your port installs Freedesktop-style icons to
+#					  ${LOCALBASE}/share/icons or ${X11BASE}/share/icons, then
+#					  you should use this macro. If the icons are not cached,
+#					  they will not be displayed.
+#
 
 # non-version specific components
 _USE_GNOME_ALL= esound intlhack intltool lthack ltverhack gnomehack \
@@ -59,7 +64,7 @@ _USE_GNOME_ALL+= atk atspi desktopfileutils eel2 evolutiondataserver \
 		libgnomecanvas libgnomedb libgnomeprint libgnomeprintui \
 		libgnomeui libgsf libgsf_gnome libgtkhtml libidl librsvg2 libwnck \
 		libxml2 libxslt libzvt linc metacity nautilus2 nautiluscdburner \
-		orbit2 pango pygnome2 pygnomeextras pygtk2 vte
+		orbit2 pango pygnome2 pygnomeextras pygtk2 vte pygnomedesktop
 
 SCROLLKEEPER_DIR=	/var/db/scrollkeeper
 gnomehack_PRE_PATCH=	${FIND} ${WRKSRC} -name "Makefile.in*" -type f | ${XARGS} ${REINPLACE_CMD} -e \
@@ -90,15 +95,17 @@ gnomehack_PRE_PATCH=	${FIND} ${WRKSRC} -name "Makefile.in*" -type f | ${XARGS} $
 lthack_PRE_PATCH=	${FIND} ${WRKSRC} -name "configure" -type f | ${XARGS} ${REINPLACE_CMD} -e \
 				'/^LIBTOOL_DEPS="$$ac_aux_dir\/ltmain.sh"$$/s|$$|; $$ac_aux_dir/ltconfig $$LIBTOOL_DEPS;|'
 
-GNOME_MTREE=		${X11BASE}/etc/mtree/BSD.gnome-x11.dist
-gnomehier_DETECT=	${GNOME_MTREE}
+GNOME_MTREE_FILE?=		${X11BASE}/etc/mtree/BSD.gnome-x11.dist
+gnomehier_DETECT=	${GNOME_MTREE_FILE}
 gnomehier_RUN_DEPENDS=	${gnomehier_DETECT}:${PORTSDIR}/misc/gnomehier
 
 GNOME_HTML_DIR?=	${PREFIX}/share/doc
-GCONF_CONFIG_OPTIONS?=
-GCONF_CONFIG_SOURCE?=xml:${GCONF_CONFIG_OPTIONS}:${PREFIX}/etc/gconf/gconf.xml.defaults
+GCONF_CONFIG_OPTIONS?=	merged
+GCONF_CONFIG_DIRECTORY?=etc/gconf/gconf.xml.defaults
+GCONF_CONFIG_SOURCE?=xml:${GCONF_CONFIG_OPTIONS}:${PREFIX}/${GCONF_CONFIG_DIRECTORY}
+GNOME_LOCALSTATEDIR?=	${PREFIX}/share/gnome
 gnomeprefix_CONFIGURE_ENV=GTKDOC="false"
-gnomeprefix_CONFIGURE_ARGS=--localstatedir=${PREFIX}/share/gnome \
+gnomeprefix_CONFIGURE_ARGS=--localstatedir=${GNOME_LOCALSTATEDIR} \
 			   --datadir=${PREFIX}/share/gnome \
 			   --with-html-dir=${GNOME_HTML_DIR} \
 			   --with-help-dir=${PREFIX}/share/gnome/help \
@@ -106,7 +113,7 @@ gnomeprefix_CONFIGURE_ARGS=--localstatedir=${PREFIX}/share/gnome \
 			   --with-gconf-source=${GCONF_CONFIG_SOURCE}
 gnomeprefix_USE_GNOME_IMPL=gnomehier
 
-gnometarget_CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+gnometarget_CONFIGURE_TARGET=--build=${ARCH}-portbld-freebsd${OSREL}
 
 ESD_CONFIG?=		${LOCALBASE}/bin/esd-config
 esound_LIB_DEPENDS=	esd.2:${PORTSDIR}/audio/esound
@@ -241,12 +248,12 @@ gtkhtml_LIB_DEPENDS=	gtkhtml-1.1.3:${PORTSDIR}/www/gtkhtml
 gtkhtml_DETECT=		${X11BASE}/etc/gtkhtmlConf.sh
 gtkhtml_USE_GNOME_IMPL=	glibwww gal libghttp libcapplet
 
-pygtk_DETECT=			${PYTHON_SITELIBDIR}/gtk-1.2/gtk.py
+pygtk_DETECT=			${LOCALBASE}/bin/pygtk-codegen-1.2
 pygtk_BUILD_DEPENDS=	${pygtk_DETECT}:${PORTSDIR}/x11-toolkits/py-gtk
 pygtk_RUN_DEPENDS=		${pygtk_DETECT}:${PORTSDIR}/x11-toolkits/py-gtk
 pygtk_USE_GNOME_IMPL=	gnomelibs gdkpixbuf libglade
 
-pygnome_DETECT=			${PYTHON_SITELIBDIR}/gtk-1.2/gnome/__init__.py
+pygnome_DETECT=			${LOCALBASE}/share/pygtk/1.2/defs/applet.defs
 pygnome_BUILD_DEPENDS=	${pygnome_DETECT}:${PORTSDIR}/x11-toolkits/py-gnome
 pygnome_RUN_DEPENDS=	${pygnome_DETECT}:${PORTSDIR}/x11-toolkits/py-gnome
 pygnome_USE_GNOME_IMPL=	gtkhtml pygtk
@@ -356,7 +363,7 @@ libwnck_LIB_DEPENDS=	wnck-1.18:${PORTSDIR}/x11-toolkits/libwnck
 libwnck_DETECT=		${X11BASE}/libdata/pkgconfig/libwnck-1.0.pc
 libwnck_USE_GNOME_IMPL=	gtk20
 
-vte_LIB_DEPENDS=	vte.8:${PORTSDIR}/x11-toolkits/vte
+vte_LIB_DEPENDS=	vte.4:${PORTSDIR}/x11-toolkits/vte
 vte_DETECT=		${X11BASE}/libdata/pkgconfig/vte.pc
 vte_USE_GNOME_IMPL=	gtk20
 
@@ -366,7 +373,7 @@ libzvt_USE_GNOME_IMPL=	gtk20
 
 librsvg2_LIB_DEPENDS=	rsvg-2.2:${PORTSDIR}/graphics/librsvg2
 librsvg2_DETECT=	${X11BASE}/libdata/pkgconfig/librsvg-2.0.pc
-librsvg2_USE_GNOME_IMPL=libartlgpl2 libgsf gtk20
+librsvg2_USE_GNOME_IMPL=libgsf gtk20
 
 eel2_LIB_DEPENDS=	eel-2.2:${PORTSDIR}/x11-toolkits/eel
 eel2_DETECT=		${X11BASE}/libdata/pkgconfig/eel-2.0.pc
@@ -374,17 +381,17 @@ eel2_USE_GNOME_IMPL=	gnomemenus gnomedesktop gail
 
 gnomepanel_LIB_DEPENDS=	panel-applet-2.0:${PORTSDIR}/x11/gnomepanel
 gnomepanel_DETECT=	${X11BASE}/libdata/pkgconfig/libpanelapplet-2.0.pc
-gnomepanel_USE_GNOME_IMPL=gnomedesktop libwnck
+gnomepanel_USE_GNOME_IMPL=gnomedesktop libwnck gnomemenus gnomedocutils
 gnomepanel_GNOME_DESKTOP_VERSION=2
 
 nautilus2_LIB_DEPENDS=	nautilus-extension.1:${PORTSDIR}/x11-fm/nautilus2
 nautilus2_DETECT=	${X11BASE}/libdata/pkgconfig/libnautilus-extension.pc
-nautilus2_USE_GNOME_IMPL=librsvg2 eel2 gnomedesktop
+nautilus2_USE_GNOME_IMPL=librsvg2 eel2 gnomedesktop desktopfileutils
 nautilus2_GNOME_DESKTOP_VERSION=2
 
 metacity_LIB_DEPENDS=	metacity-private.0:${PORTSDIR}/x11-wm/metacity
 metacity_DETECT=	${X11BASE}/libdata/pkgconfig/libmetacity-private.pc
-metacity_USE_GNOME_IMPL=gconf2 glade2
+metacity_USE_GNOME_IMPL=gconf2
 
 gal2_LIB_DEPENDS=	gal-2.4.0:${PORTSDIR}/x11-toolkits/gal2
 gal2_DETECT=		${X11BASE}/libdata/pkgconfig/gal-2.4.pc
@@ -392,7 +399,7 @@ gal2_USE_GNOME_IMPL=gnomeui libgnomeprintui
 
 gnomecontrolcenter2_LIB_DEPENDS=gnome-window-settings.1:${PORTSDIR}/sysutils/gnomecontrolcenter2
 gnomecontrolcenter2_DETECT=${X11BASE}/libdata/pkgconfig/gnome-window-settings-2.0.pc
-gnomecontrolcenter2_USE_GNOME_IMPL=gnomedesktop metacity nautilus2
+gnomecontrolcenter2_USE_GNOME_IMPL=desktopfileutils gnomedesktop gnomemenus metacity nautilus2 desktopfileutils
 
 libgda2_LIB_DEPENDS=	gda-2.3:${PORTSDIR}/databases/libgda2
 libgda2_DETECT=			${X11BASE}/libdata/pkgconfig/libgda.pc
@@ -414,20 +421,20 @@ pkgconfig_DETECT=			${LOCALBASE}/bin/pkg-config
 pkgconfig_BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 pkgconfig_RUN_DEPENDS=		pkg-config:${PORTSDIR}/devel/pkgconfig
 
-libgsf_LIB_DEPENDS=			gsf-1.113:${PORTSDIR}/devel/libgsf
+libgsf_LIB_DEPENDS=			gsf-1.114:${PORTSDIR}/devel/libgsf
 libgsf_DETECT=			${X11BASE}/libdata/pkgconfig/libgsf-1.pc
-libgsf_USE_GNOME_IMPL=		glib20 libxml2
+libgsf_USE_GNOME_IMPL=		gconf2 glib20 libxml2
 
-libgsf_gnome_LIB_DEPENDS=	gsf-gnome-1.113:${PORTSDIR}/devel/libgsf-gnome
+libgsf_gnome_LIB_DEPENDS=	gsf-gnome-1.114:${PORTSDIR}/devel/libgsf-gnome
 libgsf_gnome_DETECT=		${X11BASE}/libdata/pkgconfig/libgsf-gnome-1.pc
 libgsf_gnome_USE_GNOME_IMPL=	libgsf gnomevfs2
 
-pygtk2_DETECT=			${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py
+pygtk2_DETECT=			${LOCALBASE}/libdata/pkgconfig/pygtk-2.0.pc
 pygtk2_BUILD_DEPENDS=	${pygtk2_DETECT}:${PORTSDIR}/x11-toolkits/py-gtk2
 pygtk2_RUN_DEPENDS=		${pygtk2_DETECT}:${PORTSDIR}/x11-toolkits/py-gtk2
 pygtk2_USE_GNOME_IMPL=	libglade2
 
-pygnome2_DETECT=		${PYTHON_SITELIBDIR}/gtk-2.0/gnome/__init__.py
+pygnome2_DETECT=		${LOCALBASE}/libdata/pkgconfig/gnome-python-2.0.pc
 pygnome2_BUILD_DEPENDS=	${pygnome2_DETECT}:${PORTSDIR}/x11-toolkits/py-gnome2
 pygnome2_RUN_DEPENDS=	${pygnome2_DETECT}:${PORTSDIR}/x11-toolkits/py-gnome2
 pygnome2_USE_GNOME_IMPL=libgnomeui pygtk2
@@ -450,15 +457,15 @@ gnomespeech_LIB_DEPENDS=gnomespeech.7:${PORTSDIR}/accessibility/gnomespeech
 gnomespeech_DETECT=		${LOCALBASE}/libdata/pkgconfig/gnome-speech-1.0.pc
 gnomespeech_USE_GNOME_IMPL=libbonobo
 
-evolutiondataserver_LIB_DEPENDS=edataserver-1.2.4:${PORTSDIR}/databases/evolution-data-server
+evolutiondataserver_LIB_DEPENDS=edataserver-1.2.7:${PORTSDIR}/databases/evolution-data-server
 evolutiondataserver_DETECT=		${X11BASE}/libdata/pkgconfig/evolution-data-server-1.2.pc
-evolutiondataserver_USE_GNOME_IMPL=libgnome
+evolutiondataserver_USE_GNOME_IMPL=libgnomeui
 
 desktopfileutils_RUN_DEPENDS=update-desktop-database:${PORTSDIR}/devel/desktop-file-utils
 desktopfileutils_DETECT=	${LOCALBASE}/bin/update-desktop-database
 desktopfileutils_USE_GNOME_IMPL=glib20
 
-nautiluscdburner_LIB_DEPENDS=nautilus-burn.2:${PORTSDIR}/sysutils/nautilus-cd-burner
+nautiluscdburner_LIB_DEPENDS=nautilus-burn.3:${PORTSDIR}/sysutils/nautilus-cd-burner
 nautiluscdburner_DETECT=	${X11BASE}/libdata/pkgconfig/libnautilus-burn.pc
 nautiluscdburner_USE_GNOME_IMPL=nautilus2
 
@@ -466,15 +473,20 @@ gnomemenus_LIB_DEPENDS=		gnome-menu.2:${PORTSDIR}/x11/gnome-menus
 gnomemenus_DETECT=			${X11BASE}/libdata/pkgconfig/libgnome-menu.pc
 gnomemenus_USE_GNOME_IMPL=	gnomevfs2
 
-pygnomeextras_DETECT=		${PYTHON_SITELIBDIR}/gtk-2.0/egg/__init__.py
+pygnomeextras_DETECT=		${LOCALBASE}/libdata/pkgconfig/gnome-python-extras-2.0.pc
 pygnomeextras_BUILD_DEPENDS=	${pygnomeextras_DETECT}:${PORTSDIR}/x11-toolkits/py-gnome-extras
 pygnomeextras_RUN_DEPENDS=	${pygnomeextras_DETECT}:${PORTSDIR}/x11-toolkits/py-gnome-extras
-pygnomeextras_USE_GNOME_IMPL=pygnome2 libgnomeprintui libgtkhtml gnomepanel gtksourceview libwnck nautiluscdburner
+pygnomeextras_USE_GNOME_IMPL=pygnome2 libgtkhtml
 
 gnomedocutils_DETECT=	${X11BASE}/libdata/pkgconfig/gnome-doc-utils.pc
 gnomedocutils_BUILD_DEPENDS=${gnomedocutils_DETECT}:${PORTSDIR}/textproc/gnomedocutils
 gnomedocutils_RUN_DEPENDS=${gnomedocutils_DETECT}:${PORTSDIR}/textproc/gnomedocutils
 gnomedocutils_USE_GNOME_IMPL=libxslt
+
+pygnomedesktop_DETECT=		${LOCALBASE}/libdata/pkgconfig/gnome-python-desktop-2.0.pc
+pygnomedesktop_BUILD_DEPENDS=	${pygnomedesktop_DETECT}:${PORTSDIR}/x11-toolkits/py-gnome-desktop
+pygnomedesktop_RUN_DEPENDS=	${pygnomedesktop_DETECT}:${PORTSDIR}/x11-toolkits/py-gnome-desktop
+pygnomedesktop_USE_GNOME_IMPL=pygnome2 libgnomeprintui gtksourceview gnomepanel libwnck nautiluscdburner metacity
 
 # End component definition section
 
@@ -625,9 +637,9 @@ ltverhack_PRE_PATCH=	${CP} -pf ${LTMAIN} ${WRKDIR}/gnome-ltmain.sh && \
 								${PATCH_WRKSRC}/$$file; \
 						done;
 .else
-.if ${USE_GNOME:Mltverhack}!=""
-BROKEN= ${PORTNAME} uses the ltverhack GNOME component but does not use libtool
-.endif
+.  if ${USE_GNOME:Mltverhack}!=""
+BROKEN=	${PORTNAME} uses the ltverhack GNOME component but does not use libtool
+.  endif
 .endif
 
 ltverhack_PATCH_DEPENDS=${LIBTOOL_DEPENDS}
@@ -649,8 +661,7 @@ PATCH_DEPENDS+=	${${component}_PATCH_DEPENDS}
 FETCH_DEPENDS+=	${${component}_FETCH_DEPENDS}
 EXTRACT_DEPENDS+=${${component}_EXTRACT_DEPENDS}
 BUILD_DEPENDS+=	${${component}_BUILD_DEPENDS}
-LIB_DEPENDS+=	${${component}_LIB_DEPENDS}
-RUN_DEPENDS+=	${${component}_RUN_DEPENDS}
+#######################################################
 
 CONFIGURE_ARGS+=${${component}_CONFIGURE_ARGS}
 CONFIGURE_ENV+=	${${component}_CONFIGURE_ENV}
@@ -668,12 +679,6 @@ GNOME_PRE_PATCH+=	; ${${component}_PRE_PATCH}
 . endfor
 .endif
 
-.if defined(_USE_GNOME)
-.if ${_USE_GNOME:Mgnomeprefix}!=""
-MTREE_FILE?=	${GNOME_MTREE}
-.endif
-.endif
-
 .if defined(GNOME_PRE_PATCH)
 
 pre-patch: gnome-pre-patch
@@ -684,18 +689,18 @@ gnome-pre-patch:
 
 .if defined(WANT_GNOME)
 USE_GNOME?=
-.if ${_USE_GNOME_SAVED}==${USE_GNOME}
+.  if ${_USE_GNOME_SAVED}==${USE_GNOME}
 PLIST_SUB+=	GNOME:="@comment " NOGNOME:=""
-.else
+.  else
 PLIST_SUB+=	GNOME:="" NOGNOME:="@comment "
-.if defined(GNOME_DESKTOP_VERSION)
-.if ${_USE_GNOME_DESKTOP}=="yes"
+.    if defined(GNOME_DESKTOP_VERSION)
+.      if ${_USE_GNOME_DESKTOP}=="yes"
 PLIST_SUB+=	GNOMEDESKTOP:="" NOGNOMEDESKTOP:="@comment "
-.else
+.      else
 PLIST_SUB+=	GNOMEDESKTOP:="@comment " NOGNOMEDESKTOP:=""
-.endif
-.endif
-.endif
+.      endif
+.    endif
+.  endif
 .endif
 
 .if ${MAINTAINER}=="gnome@FreeBSD.org"
@@ -703,11 +708,15 @@ CONFIGURE_FAIL_MESSAGE= "Please run the gnomelogalyzer, available from \"http://
 .endif
 
 
-.if defined(GCONF_SCHEMAS) || defined(INSTALLS_OMF) || defined(INSTALLS_ICONS)
+.if defined(GCONF_SCHEMAS) || defined(INSTALLS_OMF) || defined(INSTALLS_ICONS) \
+	|| (defined(_USE_GNOME) && ${_USE_GNOME:Mgnomeprefix}!="")
 pre-su-install: gnome-pre-su-install
 post-install: gnome-post-install
 
 gnome-pre-su-install:
+.if defined(_USE_GNOME) && ${_USE_GNOME:Mgnomeprefix}!="" && !defined(NO_MTREE)
+	@${MTREE_CMD} ${MTREE_ARGS:S/${MTREE_FILE}/${GNOME_MTREE_FILE}/} ${PREFIX}/ >/dev/null
+.endif
 .if defined(GCONF_SCHEMAS)
 	@${MKDIR} ${PREFIX}/etc/gconf/gconf.xml.defaults/
 .else
@@ -717,10 +726,10 @@ gnome-pre-su-install:
 gnome-post-install:
 .  if defined(GCONF_SCHEMAS)
 	@for i in ${GCONF_SCHEMAS}; do \
-		${ECHO_CMD} "@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/$${i} > /dev/null || /usr/bin/true" \
+		${ECHO_CMD} "@unexec env GCONF_CONFIG_SOURCE=xml:${GCONF_CONFIG_OPTIONS}:%D/${GCONF_CONFIG_DIRECTORY} gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/$${i} > /dev/null || /usr/bin/true" \
 			>> ${TMPPLIST}; \
 		${ECHO_CMD} "etc/gconf/schemas/$${i}" >> ${TMPPLIST}; \
-		${ECHO_CMD} "@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/$${i} > /dev/null || /usr/bin/true" \
+		${ECHO_CMD} "@exec env GCONF_CONFIG_SOURCE=xml:${GCONF_CONFIG_OPTIONS}:%D/${GCONF_CONFIG_DIRECTORY} gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/$${i} > /dev/null || /usr/bin/true" \
 			>> ${TMPPLIST}; \
 	done
 .  endif
