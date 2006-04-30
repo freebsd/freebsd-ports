@@ -21,7 +21,7 @@ MAN1=		multitail.1
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-EXTRA_PATCHES=	${FILESDIR}/e-patch-config.c ${FILESDIR}/e-patch-cv.c
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-config.c ${FILESDIR}/extra-patch-cv.c
 .endif
 
 post-patch:
