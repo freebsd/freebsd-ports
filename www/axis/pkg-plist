@@ -1,7 +1,3 @@
-@cwd %%JRE_HOME%%
-lib/%%LIB_SUBDIR%%/saaj.jar
-lib/%%LIB_SUBDIR%%/jaxrpc.jar
-@dirrm lib/%%LIB_SUBDIR%%
 @cwd %%WEBAPPS%%
 axis/EchoHeaders.jws
 axis/SOAPMonitorApplet.java
@@ -199,7 +195,11 @@ axis/index.html
 @dirrm axis/WEB-INF
 @dirrm axis
 @cwd %%PREFIX%%
+%%JAVAJARDIR%%/axis/axis.jar
+%%JAVAJARDIR%%/axis/jaxrpc.jar
+%%JAVAJARDIR%%/axis/saaj.jar
 %%PORTDOCS%%share/doc/axis/AxisJMSSample.pdf
+@dirrm %%JAVAJARDIR%%/axis
 %%PORTDOCS%%share/doc/axis/AxisTestRedesign.html
 %%PORTDOCS%%share/doc/axis/TestsNeeded.html
 %%PORTDOCS%%share/doc/axis/ant/ant.html
