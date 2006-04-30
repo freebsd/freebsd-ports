@@ -3,6 +3,7 @@ bin/help2man
 %%NLS%%share/locale/fi/LC_MESSAGES/help2man.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/help2man.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/help2man.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/help2man.mo
 %%NLS%%@dirrmtry man/fi/man1
 %%NLS%%@dirrmtry man/fi
 %%NLS%%@dirrmtry man/fr/man1
