@@ -15,8 +15,8 @@ upgrades.
   Instead, use the following simple recipe:
 
 pkgdb -Ff
-portupgrade -f howl -o net/avahi
-portupgrade -f xscreensaver-gnome -o x11/gnome-screensaver
+portupgrade -o net/avahi -f howl
+portupgrade -o x11/gnome-screensaver -f xscreensaver-gnome
 portupgrade -a
 
 20060425:
