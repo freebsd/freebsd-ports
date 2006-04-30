@@ -37,8 +37,8 @@
      "$places",
 -    "db41/db.h db4/db.h db.h",
 -    "db-4.1 db41 db4 db"
-+    "db41/dh.h",
-+    "db-41"
++    "db41/db.h",
++    "db41"
    )
    if test "$apu_have_db" = "1"; then
      apu_db_version=4
