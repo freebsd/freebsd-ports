@@ -2259,3 +2259,29 @@ editors/jed-devel||2006-04-24|No more development version for a while, please, u
 sysutils/gdesklets-multitail||2006-04-24|Project is too long dead
 java/diablo-jdk13||2006-04-24|Removed due to security problems and no longer being distributed
 java/diablo-jre13||2006-04-24|Removed due to security problems and no longer being distributed
+audio/gstreamer-plugins-artsd|audio/gstreamer-plugins-artsd80|2006-04-29|Not part of gstreamer 0.10 yet
+audio/gstreamer-plugins-audiofile|audio/gstreamer-plugins-audiofile80|2006-04-29|Not part of gstreamer 0.10 yet
+audio/gstreamer-plugins-cdaudio|audio/gstreamer-plugins-cdaudio80|2006-04-29|Not part of gstreamer 0.10 yet
+sysutils/gstreamer-plugins-cdio|sysutils/gstreamer-plugins-cdio80|2006-04-29|Not part of gstreamer 0.10 yet
+multimedia/gstreamer-plugins-dirac|multimedia/gstreamer-plugins-dirac80|2006-04-29|Not part of gstreamer 0.10 yet
+multimedia/gstreamer-plugins-dts|multimedia/gstreamer-plugins-dts80|2006-04-29|Not part of gstreamer 0.10 yet
+multimedia/gstreamer-plugins-dvd|multimedia/gstreamer-plugins-dvd80|2006-04-29|Not part of gstreamer 0.10 yet
+graphics/gstreamer-plugins-gdkpixbuf|graphics/gstreamer-plugins-gdkpixbuf80|2006-04-29|Not part of gstreamer 0.10 yet
+graphics/gstreamer-plugins-hermes|graphics/gstreamer-plugins-hermes80|2006-04-29|Not part of gstreamer 0.10 yet
+audio/gstreamer-plugins-jack|audio/gstreamer-plugins-jack80|2006-04-29|Not part of gstreamer 0.10 yet
+multimedia/gstreamer-plugins-libfame|multimedia/gstreamer-plugins-libfame80|2006-04-29|Not part of gstreamer 0.10 yet
+graphics/gstreamer-plugins-libmng|graphics/gstreamer-plugins-libmng80|2006-04-29|Not part of gstreamer 0.10 yet
+audio/gstreamer-plugins-mikmod|audio/gstreamer-plugins-mikmod80|2006-04-29|Not part of gstreamer 0.10 yet
+multimedia/gstreamer-plugins-mpeg2enc|multimedia/gstreamer-plugins-mpeg2enc80|2006-04-29|Not part of gstreamer 0.10 yet
+multimedia/gstreamer-plugins-mplex|multimedia/gstreamer-plugins-mplex80|2006-04-29|Not part of gstreamer 0.10 yet
+audio/gstreamer-plugins-musicbrainz|audio/gstreamer-plugins-musicbrainz80|2006-04-29|Not part of gstreamer 0.10 yet
+audio/gstreamer-plugins-nas|audio/gstreamer-plugins-nas80|2006-04-29|Not part of gstreamer 0.10 yet
+audio/gstreamer-plugins-polypaudio|audio/gstreamer-plugins-polypaudio80|2006-04-29|Not part of gstreamer 0.10 yet
+audio/gstreamer-plugins-shout|audio/gstreamer-plugins-shout80|2006-04-29|Not part of gstreamer 0.10 yet
+audio/gstreamer-plugins-smoothwave|audio/gstreamer-plugins-smoothwave80|2006-04-29|Not part of gstreamer 0.10 yet
+audio/gstreamer-plugins-sndfile|audio/gstreamer-plugins-sndfile80|2006-04-29|Not part of gstreamer 0.10 yet
+graphics/gstreamer-plugins-swfdec|graphics/gstreamer-plugins-swfdec80|2006-04-29|Not part of gstreamer 0.10 yet
+multimedia/gstreamer-plugins-x264|multimedia/gstreamer-plugins-x26480|2006-04-29|Not part of gstreamer 0.10 yet
+multimedia/gstreamer-plugins-xvid|multimedia/gstreamer-plugins-xvid80|2006-04-29|Not part of gstreamer 0.10 yet
+graphics/gstreamer-plugins-jpeg-mmx|graphics/gstreamer-plugins-jpeg-mmx80|2006-04-29|Not part of gstreamer 0.10 yet
+audio/gstreamer-plugins-polyp|audio/gstreamer-plugins-polyp80|2006-04-29|Not part of gstreamer 0.10 yet
