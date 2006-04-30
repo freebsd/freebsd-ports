@@ -30,6 +30,10 @@ MAN1=		kst.1
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 500000
+LIB_DEPENDS+=	readline.5:${PORTSDIR}/devel/readline
+.endif
+
 .if defined(WITH_NETCDF)
 LIB_DEPENDS+=	netcdf.1:${PORTSDIR}/science/netcdf
 PLIST_SUB+=	NETCDF=""
@@ -47,6 +51,7 @@ PLIST_SUB+=	CDF="@comment "
 .endif
 
 post-patch:
+	@${TOUCH} ${WRKSRC}/kst/kst/ksttimers.h.in
 	@${REINPLACE_CMD} -e 's|-O2||g' ${WRKSRC}/${CONFIGURE_SCRIPT}
 .if !defined(WITH_NETCDF)
 	@${REINPLACE_CMD} -e 's| netcdf||g' ${WRKSRC}/kst/kst/datasources/Makefile.in
