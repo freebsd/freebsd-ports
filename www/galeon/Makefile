@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	galeon
-PORTVERSION=	2.0.0
+PORTVERSION=	2.0.1
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://osdn.dl.sourceforge.net/sourceforge/galeon/
@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME:S/2$//}
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A GNOME 2 Web browser based on gecko (the Mozilla rendering engine)
 
-USE_GECKO=	firefox mozilla seamonkey
+USE_GECKO=	firefox mozilla seamonkey xulrunner
 WRKSRC=		${WRKDIR}/${PORTNAME:S/2$//}-${PORTVERSION:S/a$//}
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
@@ -25,7 +25,7 @@ USE_GNOME=	gnomeprefix intlhack gnomehack libgnomeui desktopfileutils \
 		gnomedesktop
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
+USE_GETTEXT=	yes
 CONFIGURE_ARGS=	--enable-nautilus-view=no \
 		--with-mozilla=${GECKO}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
