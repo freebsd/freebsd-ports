@@ -146,6 +146,7 @@
     SUBDIR += sapphire-themes
     SUBDIR += sawfish-themes
     SUBDIR += thinice
+    SUBDIR += ubuntulooks
     SUBDIR += whistlerk
     SUBDIR += xenophilia
     SUBDIR += xenostep

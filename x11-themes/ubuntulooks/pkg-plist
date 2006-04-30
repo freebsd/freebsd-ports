@@ -1,0 +1,5 @@
+lib/gtk-2.0/2.4.0/engines/libubuntulooks.so
+lib/gtk-2.0/2.4.0/engines/libubuntulooks.la
+share/themes/Human/gtk-2.0/gtkrc
+@dirrm share/themes/Human/gtk-2.0
+@dirrm share/themes/Human
