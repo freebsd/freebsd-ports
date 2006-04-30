@@ -46,7 +46,7 @@ pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "	WITH_MW_HOST=host	Define the default Sametime community host server"
 	@${ECHO_MSG} "	WITH_MW_PORT=port	Define the default Sametime community port (default: 1533)"
-	@${ECHO_MSG} "	WITH_MW_CLIENT=client	Define the default SAmetime client identifier (default: mwLogin_MEANWHILE)"
+	@${ECHO_MSG} "	WITH_MW_CLIENT=client	Define the default Sametime client identifier (default: mwLogin_MEANWHILE)"
 	@${ECHO_MSG} ""
 
 .include <bsd.port.mk>
