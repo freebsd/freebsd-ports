@@ -2210,7 +2210,6 @@ evilfinder	ports/games/evilfinder
 evilwm		ports/x11-wm/evilwm
 evince		ports/graphics/evince
 evolution	ports/mail/evolution
-evolution-caldav	ports/www/evolution-caldav
 evolution-data-server	ports/databases/evolution-data-server
 evolution-exchange	ports/mail/evolution-exchange
 evolution-gconf-tools	ports/devel/evolution-gconf-tools
@@ -9811,6 +9810,7 @@ perlsh		ports/shells/perlsh
 perltidy	ports/devel/perltidy
 permute		ports/textproc/permute
 personality	ports/sysutils/personality
+pessulus	ports/sysutils/pessulus
 petsc		ports/math/petsc
 petsc-mpich	ports/math/petsc-mpich
 pexts		ports/lang/pexts
@@ -10254,6 +10254,8 @@ popfile		ports/mail/popfile
 poppassd	ports/mail/poppassd
 popper		ports/mail/popper
 poppler		ports/graphics/poppler
+poppler-gtk	ports/graphics/poppler-gtk
+poppler-qt	ports/graphics/poppler-qt
 poppwd		ports/mail/poppwd
 poppy		ports/mail/poppy
 popt		ports/devel/popt
@@ -10734,6 +10736,7 @@ py-gdchart	ports/graphics/py-gdchart
 py-gdchart2	ports/graphics/py-gdchart2
 py-getargs	ports/devel/py-getargs
 py-gnome	ports/x11-toolkits/py-gnome
+py-gnome-desktop	ports/x11-toolkits/py-gnome-desktop
 py-gnome-extras	ports/x11-toolkits/py-gnome-extras
 py-gnome2	ports/x11-toolkits/py-gnome2
 py-gnupg	ports/security/py-gnupg
