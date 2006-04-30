@@ -1,6 +1,6 @@
 
 $FreeBSD$
-  $MCom: ports-stable/x11-toolkits/pango/files/patch-ac,v 1.3 2006/02/27 01:17:11 marcus Exp $
+  $MCom: ports/x11-toolkits/pango/files/patch-ac,v 1.18 2006/03/13 05:45:48 mezz Exp $
 
 --- Makefile.in.orig	Mon Aug  2 19:12:56 2004
 +++ Makefile.in	Mon Aug  2 19:13:11 2004

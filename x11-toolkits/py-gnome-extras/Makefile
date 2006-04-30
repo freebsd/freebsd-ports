@@ -3,12 +3,11 @@
 # Whom:					Koop Mast <kwm@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/x11-toolkits/py-gnome-extras/Makefile,v 1.26 2005/11/29 16:07:33 marcus Exp $
+#    $MCom: ports/x11-toolkits/py-gnome-extras/Makefile,v 1.36 2006/03/12 23:45:37 marcus Exp $
 #
 
 PORTNAME=	gnome
-PORTVERSION=	2.12.1
-PORTREVISION=	2
+PORTVERSION=	2.14.0
 CATEGORIES=	x11-toolkits python gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-python-extras/${PORTVERSION:C/..$//}
@@ -21,19 +20,15 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A set of Python bindings for GNOME 2
 
 LIB_DEPENDS=	gtkspell.0:${PORTSDIR}/textproc/gtkspell2 \
-		gtop-2.0.2:${PORTSDIR}/devel/libgtop2 \
-		totem-plparser.1:${PORTSDIR}/multimedia/totem-gstreamer \
 		gksu1.2.0:${PORTSDIR}/sysutils/libgksu \
 		gksuui1.0.1:${PORTSDIR}/sysutils/libgksuui \
-		gnome-media-profiles.0:${PORTSDIR}/audio/gnomemedia2 \
 		gdl-1.0:${PORTSDIR}/x11-toolkits/gdl
 
 USE_GECKO=	firefox mozilla seamonkey
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_PYTHON=	yes
-USE_GNOME=	gnomehack libgnomeprintui libgtkhtml gnomepanel \
-		gtksourceview libwnck nautiluscdburner pygnome2
+USE_GNOME=	gnomehack libgtkhtml pygnome2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gtkmozembed=${GECKO}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -53,8 +48,6 @@ DOCSDIR=	${WRKSRC}/share/doc/py-gnome-extras
 post-patch:
 	@${FIND} ${WRKSRC}/docs -name Makefile.in | ${XARGS} ${REINPLACE_CMD} \
 		-e 's|^HTML_DIR =.*|HTML_DIR = ${DOCSDIR}|g'
-	@${REINPLACE_CMD} -e 's|-DHAVE_GNOMEPRINT28||g' \
-		${WRKSRC}/configure
 
 .if !defined(NOPORTDOCS)
 post-install:

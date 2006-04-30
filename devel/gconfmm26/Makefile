@@ -3,15 +3,14 @@
 # Whom:                 Alexander Nedotsukov <bland@mail.ru>
 #
 # $FreeBSD$
-#   $MCom: ports/devel/gconfmm26/Makefile,v 1.7 2005/10/29 22:31:16 marcus Exp $
+#   $MCom: ports/devel/gconfmm26/Makefile,v 1.10 2006/04/13 07:52:32 bland Exp $
 #
 
 PORTNAME=	gconfmm
-PORTVERSION=	2.12.0
-PORTREVISION=	1
+PORTVERSION=	2.14.0
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R}
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	bland@FreeBSD.org

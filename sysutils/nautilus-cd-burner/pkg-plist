@@ -2,16 +2,18 @@ bin/nautilus-cd-burner
 etc/gnome-vfs-2.0/modules/mapping-modules.conf
 include/libnautilus-burn/nautilus-burn-drive-selection.h
 include/libnautilus-burn/nautilus-burn-drive.h
+include/libnautilus-burn/nautilus-burn-features.h
 include/libnautilus-burn/nautilus-burn-recorder.h
 lib/gnome-vfs-2.0/modules/libmapping.la
 lib/gnome-vfs-2.0/modules/libmapping.so
 lib/libnautilus-burn.la
 lib/libnautilus-burn.so
-lib/libnautilus-burn.so.2
+lib/libnautilus-burn.so.3
 lib/nautilus/extensions-1.0/libnautilus-burn-extension.la
 lib/nautilus/extensions-1.0/libnautilus-burn-extension.so
 libdata/pkgconfig/libnautilus-burn.pc
 libexec/mapping-daemon
+share/gnome/applications/nautilus-cd-burner.desktop
 share/gnome/nautilus-cd-burner/cdburn.glade
 share/gnome/nautilus-cd-burner/cdspin1.png
 share/gnome/nautilus-cd-burner/cdspin2.png
@@ -53,6 +55,7 @@ share/locale/id/LC_MESSAGES/nautilus-cd-burner.mo
 share/locale/is/LC_MESSAGES/nautilus-cd-burner.mo
 share/locale/it/LC_MESSAGES/nautilus-cd-burner.mo
 share/locale/ja/LC_MESSAGES/nautilus-cd-burner.mo
+share/locale/ka/LC_MESSAGES/nautilus-cd-burner.mo
 share/locale/ko/LC_MESSAGES/nautilus-cd-burner.mo
 share/locale/lt/LC_MESSAGES/nautilus-cd-burner.mo
 share/locale/lv/LC_MESSAGES/nautilus-cd-burner.mo
@@ -87,8 +90,13 @@ share/locale/uk/LC_MESSAGES/nautilus-cd-burner.mo
 share/locale/vi/LC_MESSAGES/nautilus-cd-burner.mo
 share/locale/xh/LC_MESSAGES/nautilus-cd-burner.mo
 share/locale/zh_CN/LC_MESSAGES/nautilus-cd-burner.mo
+share/locale/zh_HK/LC_MESSAGES/nautilus-cd-burner.mo
 share/locale/zh_TW/LC_MESSAGES/nautilus-cd-burner.mo
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/ug/LC_MESSAGES
 @dirrmtry share/locale/ug
+@dirrmtry share/locale/te/LC_MESSAGES
+@dirrmtry share/locale/te
 @dirrm share/gnome/nautilus-cd-burner
 @dirrm include/libnautilus-burn

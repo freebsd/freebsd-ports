@@ -1,7 +1,9 @@
 bin/rsvg
+bin/rsvg-convert
 bin/rsvg-view
 include/librsvg-2/librsvg/librsvg-enum-types.h
 include/librsvg-2/librsvg/librsvg-features.h
+include/librsvg-2/librsvg/rsvg-cairo.h
 include/librsvg-2/librsvg/rsvg.h
 %%PLUGIN%%lib/browser_plugins/libmozsvgdec.a
 %%PLUGIN%%lib/browser_plugins/libmozsvgdec.la
@@ -17,26 +19,8 @@ lib/librsvg-2.la
 lib/librsvg-2.so
 lib/librsvg-2.so.2
 libdata/pkgconfig/librsvg-2.0.pc
-share/doc/librsvg/html/home.png
-share/doc/librsvg/html/index.html
-share/doc/librsvg/html/index.sgml
-share/doc/librsvg/html/ix01.html
-share/doc/librsvg/html/left.png
-share/doc/librsvg/html/right.png
-share/doc/librsvg/html/rn01.html
-share/doc/librsvg/html/rn02.html
-share/doc/librsvg/html/rn03.html
-share/doc/librsvg/html/rsvg-Convenience-Functions.html
-share/doc/librsvg/html/rsvg-Core-API.html
-share/doc/librsvg/html/rsvg-Creating-a-SVGZ-reader.html
-share/doc/librsvg/html/rsvg.devhelp
-share/doc/librsvg/html/rsvg.html
-share/doc/librsvg/html/up.png
 share/gnome/pixmaps/svg-viewer.svg
-@dirrm share/doc/librsvg/html
-@dirrm share/doc/librsvg
 @dirrm include/librsvg-2/librsvg
 @dirrm include/librsvg-2
 @exec %D/bin/gdk-pixbuf-query-loaders > /dev/null 2>&1 && %D/bin/gdk-pixbuf-query-loaders > %D/etc/gtk-2.0/gdk-pixbuf.loaders 2>/dev/null || /usr/bin/true
 @unexec %D/bin/gdk-pixbuf-query-loaders > /dev/null 2>&1 && %D/bin/gdk-pixbuf-query-loaders > %D/etc/gtk-2.0/gdk-pixbuf.loaders 2>/dev/null || /usr/bin/true
-%%PLUGIN%%@unexec rmdir %D/lib/browser_plugins 2>/dev/null || /usr/bin/true

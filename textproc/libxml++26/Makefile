@@ -4,15 +4,14 @@
 # Whom:				Ying-Chieh Liao <ijliao@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/textproc/libxml++26/Makefile,v 1.7 2005/10/14 20:39:58 adamw Exp $
+#   $MCom: ports/textproc/libxml++26/Makefile,v 1.13 2006/04/13 07:52:38 bland Exp $
 #
 
 PORTNAME=	libxml++
-PORTVERSION=	2.12.0
-PORTREVISION=	1
+PORTVERSION=	2.14.0
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R}
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 
 MAINTAINER=	bland@FreeBSD.org
 COMMENT=	XML API for C++
@@ -26,10 +25,9 @@ USE_GMAKE=	yes
 USE_GCC=	3.4
 USE_GNOME=	gnomehack gnometarget libxml2 pkgconfig
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 
-PLIST_SUB=	VERSION="2.6" API_VERSION="2.6"
+PLIST_SUB=	VERSION="2.6" API_VERSION="2.6" DOC_VERSION=${PORTVERSION:R}
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS =/s/examples//' \

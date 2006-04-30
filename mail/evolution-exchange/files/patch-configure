@@ -1,6 +1,6 @@
---- configure.orig	Fri Aug 20 15:26:49 2004
-+++ configure	Fri Aug 20 15:27:21 2004
-@@ -23754,8 +23754,8 @@
+--- configure.orig	Thu Nov 10 17:41:52 2005
++++ configure	Thu Nov 10 17:43:52 2005
+@@ -24837,8 +24837,8 @@
  				# libldap might depend on OpenSSL... We need to pull
  				# in the dependency libs explicitly here since we're
  				# not using libtool for the configure test.
@@ -11,12 +11,3 @@
  				fi
  			else
  				LDAP_LIBS="-llber $LDAP_LIBS"
-@@ -24006,7 +24006,7 @@
- 
- 
- mitlibs="-lkrb5 -lk5crypto -lcom_err -lgssapi_krb5"
--heimlibs="-lkrb5 -lcrypto -lasn1 -lcom_err -lroken -lgssapi"
-+heimlibs="-lkrb5 -lcrypt -lcrypto -lasn1 -lcom_err -lroken -lgssapi"
- echo "$as_me:$LINENO: checking for Kerberos 5" >&5
- echo $ECHO_N "checking for Kerberos 5... $ECHO_C" >&6
- if test "${ac_cv_lib_kerberos5+set}" = set; then

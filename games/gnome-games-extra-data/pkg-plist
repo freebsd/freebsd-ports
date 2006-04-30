@@ -1,6 +1,7 @@
 share/gnome/gnome-games/same-gnome/themes/2.10/blink.png
 share/gnome/gnome-games/same-gnome/themes/2.10/glass.png
 share/gnome/gnome-games/same-gnome/themes/2.10/marbles.png
+share/gnome/gnome-games/same-gnome/themes/2.10/matrix.png
 share/gnome/gnome-games/same-gnome/themes/2.10/rotate.svg
 share/gnome/pixmaps/glines/classic.png
 share/gnome/pixmaps/glines/dots.png
@@ -9,9 +10,9 @@ share/gnome/pixmaps/glines/pulse.png
 share/gnome/pixmaps/gnobots2/cows.png
 share/gnome/pixmaps/gnobots2/eggs.png
 share/gnome/pixmaps/gnobots2/mice.png
-share/gnome/pixmaps/gnobots2/windows.png
 share/gnome/pixmaps/gnome-games-common/cards/bellot.svg
 share/gnome/pixmaps/gnome-games-common/cards/dondorf.svg
+share/gnome/pixmaps/gnome-games-common/cards/ornamental.svg
 share/gnome/pixmaps/gnometris/5blocks-tig.png
 share/gnome/pixmaps/gnometris/5blocks-tim.png
 share/gnome/pixmaps/gnometris/5blocks.png

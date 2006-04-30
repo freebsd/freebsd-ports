@@ -3,15 +3,15 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/sysutils/gnomecontrolcenter2/Makefile,v 1.85 2005/10/03 15:29:07 ahze Exp $
+#   $MCom: ports/sysutils/gnomecontrolcenter2/Makefile,v 1.109 2006/04/18 02:28:56 marcus Exp $
 #
 
 PORTNAME=	gnomecontrolcenter2
-PORTVERSION=	2.12.3
-PORTREVISION=	1
+PORTVERSION=	2.14.1
+PORTREVISION=	2
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/control-center/2.12
+MASTER_SITE_SUBDIR=	sources/control-center/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 DISTNAME=	control-center-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
@@ -21,16 +21,20 @@ COMMENT=	Control center for GNOME 2 project
 LIB_DEPENDS=	xklavier.10:${PORTSDIR}/x11/libxklavier
 
 USE_BZIP2=	yes
+USE_GETTEXT=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 GNOME_DESKTOP_VERSION=2
-USE_GSTREAMER=	yes
+USE_GSTREAMER=	good
 WANT_GNOME=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack metacity nautilus2 \
-		gnomemenus desktopfileutils
+		gnomemenus desktopfileutils nautilus2
 GNU_CONFIGURE=	yes
 INSTALLS_OMF=	yes
+INSTALLS_ICONS=	yes
 INSTALLS_SHLIB=	yes
+CONFIGURE_ARGS= --enable-gstreamer=0.10 \
+		--disable-hal
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
@@ -48,10 +52,6 @@ WITH_GNOME=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN=	Does not build on 4.X
-.endif
-
 .if ${HAVE_GNOME:Mevolutiondataserver}!=""
 USE_GNOME+=	evolutiondataserver
 CONFIGURE_ARGS+=--enable-aboutme
@@ -64,8 +64,6 @@ PLIST_SUB+=	ABOUTME="@comment "
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|[{]prefix[}]/share/pixmaps|{datadir}/pixmaps|g'
-	@${REINPLACE_CMD} -e 's|mozilla-thunderbird|thunderbird|g' \
-		${WRKSRC}/capplets/default-applications/gnome-default-applications-properties-structs.c
 	@${REINPLACE_CMD} -e 's|/bin/tar|/usr/bin/tar|g ; \
 		s|/bin/gzip|/usr/bin/gzip|g' \
 		${WRKSRC}/capplets/theme-switcher/gnome-theme-installer.c

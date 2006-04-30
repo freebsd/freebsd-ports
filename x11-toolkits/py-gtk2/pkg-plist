@@ -1,6 +1,5 @@
 bin/pygtk-codegen-2.0
 bin/pygtk-demo
-include/pygtk-2.0/pygobject.h
 include/pygtk-2.0/pygtk/pygtk.h
 lib/pygtk/2.0/demos/__init__.py
 lib/pygtk/2.0/demos/__init__.pyc
@@ -88,11 +87,6 @@ lib/pygtk/2.0/pygtk-demo.pyc
 lib/pygtk/2.0/pygtk-demo.pyo
 %%PYTHON_SITELIBDIR%%/gtk-2.0/atk.la
 %%PYTHON_SITELIBDIR%%/gtk-2.0/atk.so
-%%PYTHON_SITELIBDIR%%/gtk-2.0/dsextras.py
-%%PYTHON_SITELIBDIR%%/gtk-2.0/dsextras.pyc
-%%PYTHON_SITELIBDIR%%/gtk-2.0/dsextras.pyo
-%%PYTHON_SITELIBDIR%%/gtk-2.0/gobject.la
-%%PYTHON_SITELIBDIR%%/gtk-2.0/gobject.so
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gtk/__init__.py
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gtk/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gtk/__init__.pyo
@@ -110,11 +104,6 @@ lib/pygtk/2.0/pygtk-demo.pyo
 %%PYTHON_SITELIBDIR%%/gtk-2.0/pango.so
 %%PYTHON_SITELIBDIR%%/gtk-2.0/pangocairo.la
 %%PYTHON_SITELIBDIR%%/gtk-2.0/pangocairo.so
-%%PYTHON_SITELIBDIR%%/pygtk.pth
-%%PYTHON_SITELIBDIR%%/pygtk.py
-%%PYTHON_SITELIBDIR%%/pygtk.pyc
-%%PYTHON_SITELIBDIR%%/pygtk.pyo
-libdata/pkgconfig/pygobject-2.0.pc
 libdata/pkgconfig/pygtk-2.0.pc
 %%PORTDOCS%%share/doc/py-gtk/MAPPING
 %%PORTDOCS%%share/doc/py-gtk/THREADS
@@ -130,7 +119,10 @@ libdata/pkgconfig/pygtk-2.0.pc
 %%PORTDOCS%%share/examples/py-gtk/glade/test2.glade
 %%PORTDOCS%%share/examples/py-gtk/gobject/properties.py
 %%PORTDOCS%%share/examples/py-gtk/gobject/signal.py
+%%PORTDOCS%%share/examples/py-gtk/gtk/bin.py
 %%PORTDOCS%%share/examples/py-gtk/gtk/filechooser.py
+%%PORTDOCS%%share/examples/py-gtk/gtk/scrollable.py
+%%PORTDOCS%%share/examples/py-gtk/gtk/sizegroup.py
 %%PORTDOCS%%share/examples/py-gtk/gtk/uimanager.py
 %%PORTDOCS%%share/examples/py-gtk/gtk/widget.py
 %%PORTDOCS%%share/examples/py-gtk/ide/README
@@ -265,10 +257,8 @@ share/pygtk/2.0/defs/pangocairo.override
 %%PORTDOCS%%@dirrm share/examples/py-gtk
 %%PORTDOCS%%@dirrm share/doc/py-gtk
 @dirrm %%PYTHON_SITELIBDIR%%/gtk-2.0/gtk
-@dirrm %%PYTHON_SITELIBDIR%%/gtk-2.0
 @dirrm lib/pygtk/2.0/demos/images
 @dirrm lib/pygtk/2.0/demos
 @dirrm lib/pygtk/2.0
 @dirrm lib/pygtk
 @dirrm include/pygtk-2.0/pygtk
-@dirrm include/pygtk-2.0

@@ -3,15 +3,16 @@
 # Whom:				Adam Weinberger <adamw@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/net/gnomenettool/Makefile,v 1.11 2005/10/04 03:12:16 ahze Exp $
+#   $MCom: ports/net/gnomenettool/Makefile,v 1.23 2006/04/24 02:02:46 marcus Exp $
 #
 
 PORTNAME=	gnomenettool
-PORTVERSION=	1.4.1
+PORTVERSION=	2.14.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/gnome-nettool/1.4
+MASTER_SITE_SUBDIR=	sources/gnome-nettool/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 DISTNAME=	gnome-nettool-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
@@ -22,6 +23,7 @@ USE_X_PREFIX=	yes
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack intlhack gnomeprefix libglade2 gconf2
 USE_GMAKE=	yes
+USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

@@ -1,6 +1,6 @@
---- configure.orig	Wed Oct  5 10:56:02 2005
-+++ configure	Mon Nov 28 13:34:48 2005
-@@ -23119,6 +23119,8 @@
+--- configure.orig	Mon Nov 14 11:43:13 2005
++++ configure	Mon Nov 28 13:52:39 2005
+@@ -23123,6 +23123,8 @@
  if eval "test \"\${$as_ac_var+set}\" = set"; then
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
@@ -9,7 +9,7 @@
    cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -23201,6 +23203,7 @@
+@@ -23205,6 +23207,7 @@
  fi
  rm -f conftest.err conftest.$ac_objext \
        conftest$ac_exeext conftest.$ac_ext
@@ -17,7 +17,7 @@
  fi
  echo "$as_me:$LINENO: result: `eval echo '${'$as_ac_var'}'`" >&5
  echo "${ECHO_T}`eval echo '${'$as_ac_var'}'`" >&6
-@@ -24292,6 +24295,7 @@
+@@ -24296,6 +24299,7 @@
    cat >>confdefs.h <<_ACEOF
  #define `echo "HAVE_$ac_func" | $as_tr_cpp` 1
  _ACEOF
@@ -25,7 +25,7 @@
   have_ngettext=yes
  else
    echo "$as_me:$LINENO: checking for ngettext in -lintl" >&5
-@@ -33558,7 +33562,7 @@
+@@ -33559,7 +33563,7 @@
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
  
@@ -34,7 +34,7 @@
  		cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -36964,6 +36968,9 @@
+@@ -37107,6 +37111,9 @@
  cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
@@ -44,7 +44,7 @@
  #include <sys/statfs.h>
  #include <sys/fstyp.h>
  _ACEOF
-@@ -37005,6 +37012,9 @@
+@@ -37148,6 +37155,9 @@
  cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
@@ -54,7 +54,7 @@
  #include <sys/statfs.h>
  #include <sys/vmount.h>
  _ACEOF
-@@ -38439,6 +38449,7 @@
+@@ -38604,6 +38614,7 @@
  s,@ORBIT_IDL@,$ORBIT_IDL,;t t
  s,@BONOBO_IDLDIR@,$BONOBO_IDLDIR,;t t
  s,@WARN_CFLAGS@,$WARN_CFLAGS,;t t

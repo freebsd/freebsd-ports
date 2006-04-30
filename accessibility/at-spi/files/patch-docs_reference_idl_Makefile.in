@@ -1,0 +1,11 @@
+--- docs/reference/idl/Makefile.in.orig	Fri Mar 31 17:43:05 2006
++++ docs/reference/idl/Makefile.in	Fri Mar 31 17:43:28 2006
+@@ -233,7 +233,7 @@ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+ doxygen_configfile = Doxyfile
+ EXTRA_DIST = Doxyfile README html
+-referencetopdir = $(datadir)/doc/at-spi-$(VERSION)/reference
++referencetopdir = $(prefix)/share/doc/at-spi-$(VERSION)/reference
+ referencedir = $(referencetopdir)/html
+ all: all-am
+ 

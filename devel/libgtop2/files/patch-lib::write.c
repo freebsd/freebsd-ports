@@ -1,5 +1,5 @@
---- lib/write.c.orig	Mon Apr 11 03:28:12 2005
-+++ lib/write.c	Mon Apr 11 03:29:00 2005
+--- lib/write.c.orig	Mon Apr 10 04:41:46 2006
++++ lib/write.c	Mon Apr 10 15:37:00 2006
 @@ -22,7 +22,7 @@
  */
  
@@ -8,9 +8,9 @@
 +#include <errno.h>
  #include <glibtop/write.h>
  #include <glibtop/error.h>
- #include "libgtop-i18n.h"
-@@ -42,12 +42,16 @@
- 	fprintf (stderr, "LIBRARY: really writing %d bytes.\n", size);
+ #include <glib/gi18n-lib.h>
+@@ -42,15 +42,19 @@ glibtop_write_l (glibtop *server, size_t
+ 	fprintf (stderr, "LIBRARY: really writing %d bytes.\n", (int)size);
  #endif
  
 +retry:
@@ -24,6 +24,9 @@
 +	if (ret < 0) {
 +		if (errno == EINTR)
 +			goto retry;
- 		glibtop_error_io_r (server, ngettext ("wrote %d byte", "wrote %d bytes", size), size);
+ 		glibtop_error_io_r (server,
+ 				    ngettext("wrote %d byte",
+ 					     "wrote %d bytes", size),
+ 				    (int) size);
 +	}
  }

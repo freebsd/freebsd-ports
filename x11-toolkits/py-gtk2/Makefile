@@ -3,15 +3,14 @@
 # Whom:					marc@informatik.uni-bremen.de
 #
 # $FreeBSD$
-#   $MCom: ports/x11-toolkits/py-gtk2/Makefile,v 1.29 2005/10/09 19:52:49 marcus Exp $
+#   $MCom: ports/x11-toolkits/py-gtk2/Makefile,v 1.38 2006/04/13 07:52:43 bland Exp $
 #
 
 PORTNAME=	gtk
-PORTVERSION=	2.8.2
-PORTREVISION=	1
+PORTVERSION=	2.8.6
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/pygtk/2.8
+MASTER_SITE_SUBDIR=	sources/pygtk/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pygtk-${PORTVERSION}
 DIST_SUBDIR=	gnome2
@@ -19,9 +18,11 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A set of Python bindings for GTK
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/cairo/__init__.py:${PORTSDIR}/graphics/py-cairo
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/cairo/__init__.py:${PORTSDIR}/graphics/py-cairo \
+		${PYTHON_SITELIBDIR}/gtk-2.0/gobject.so:${PORTSDIR}/devel/py-gobject
 RUN_DEPENDS=	${PYNUMERIC} \
-		${PYTHON_SITELIBDIR}/cairo/__init__.py:${PORTSDIR}/graphics/py-cairo
+		${PYTHON_SITELIBDIR}/cairo/__init__.py:${PORTSDIR}/graphics/py-cairo \
+		${PYTHON_SITELIBDIR}/gtk-2.0/gobject.so:${PORTSDIR}/devel/py-gobject
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -36,7 +37,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 EG_SRC_DIR=	${WRKSRC}/examples
 EG_DST_DIR=	${PREFIX}/share/examples/py-gtk
 
-CONFLICTS=	py*-gtk-0* py*-gobject-[0-9]*
+CONFLICTS=	py*-gtk-0*
 
 #
 # Use the same way as the Python port to determine if we want

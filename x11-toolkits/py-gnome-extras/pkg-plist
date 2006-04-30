@@ -5,6 +5,8 @@
 %%PYTHON_SITELIBDIR%%/gtk-2.0/egg/recent.so
 %%PYTHON_SITELIBDIR%%/gtk-2.0/egg/trayicon.la
 %%PYTHON_SITELIBDIR%%/gtk-2.0/egg/trayicon.so
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gdl.la
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gdl.so
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gksu/__init__.py
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gksu/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gksu/__init__.pyo
@@ -12,145 +14,42 @@
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gksu/_gksu.so
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gksu/ui.la
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gksu/ui.so
-%%PYTHON_SITELIBDIR%%/gtk-2.0/gnome/applet.py
-%%PYTHON_SITELIBDIR%%/gtk-2.0/gnome/applet.pyc
-%%PYTHON_SITELIBDIR%%/gtk-2.0/gnome/applet.pyo
-%%PYTHON_SITELIBDIR%%/gtk-2.0/gnomeapplet.la
-%%PYTHON_SITELIBDIR%%/gtk-2.0/gnomeapplet.so
-%%PYTHON_SITELIBDIR%%/gtk-2.0/gnomeprint/__init__.py
-%%PYTHON_SITELIBDIR%%/gtk-2.0/gnomeprint/__init__.pyc
-%%PYTHON_SITELIBDIR%%/gtk-2.0/gnomeprint/__init__.pyo
-%%PYTHON_SITELIBDIR%%/gtk-2.0/gnomeprint/_print.la
-%%PYTHON_SITELIBDIR%%/gtk-2.0/gnomeprint/_print.so
-%%PYTHON_SITELIBDIR%%/gtk-2.0/gnomeprint/ui.la
-%%PYTHON_SITELIBDIR%%/gtk-2.0/gnomeprint/ui.so
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gtkhtml2.la
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gtkhtml2.so
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gtkmozembed.la
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gtkmozembed.so
-%%PYTHON_SITELIBDIR%%/gtk-2.0/gtksourceview.la
-%%PYTHON_SITELIBDIR%%/gtk-2.0/gtksourceview.so
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gtkspell.la
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gtkspell.so
-%%PYTHON_SITELIBDIR%%/gtk-2.0/gtop.la
-%%PYTHON_SITELIBDIR%%/gtk-2.0/gtop.so
-%%PYTHON_SITELIBDIR%%/gtk-2.0/mediaprofiles.la
-%%PYTHON_SITELIBDIR%%/gtk-2.0/mediaprofiles.so
-%%PYTHON_SITELIBDIR%%/gtk-2.0/nautilusburn.la
-%%PYTHON_SITELIBDIR%%/gtk-2.0/nautilusburn.so
-%%PYTHON_SITELIBDIR%%/gtk-2.0/totem/__init__.py
-%%PYTHON_SITELIBDIR%%/gtk-2.0/totem/__init__.pyc
-%%PYTHON_SITELIBDIR%%/gtk-2.0/totem/__init__.pyo
-%%PYTHON_SITELIBDIR%%/gtk-2.0/totem/plparser.la
-%%PYTHON_SITELIBDIR%%/gtk-2.0/totem/plparser.so
-%%PYTHON_SITELIBDIR%%/gtk-2.0/wnck.la
-%%PYTHON_SITELIBDIR%%/gtk-2.0/wnck.so
 libdata/pkgconfig/gnome-python-extras-2.0.pc
-%%PORTDOCS%%%%DOCSDIR%%/pygnomeprint/class-gnomeprintconfig.html
-%%PORTDOCS%%%%DOCSDIR%%/pygnomeprint/class-gnomeprintcontext.html
-%%PORTDOCS%%%%DOCSDIR%%/pygnomeprint/class-gnomeprintfont.html
-%%PORTDOCS%%%%DOCSDIR%%/pygnomeprint/class-gnomeprintfontface.html
-%%PORTDOCS%%%%DOCSDIR%%/pygnomeprint/class-gnomeprintglyphlist.html
-%%PORTDOCS%%%%DOCSDIR%%/pygnomeprint/class-gnomeprintjob.html
-%%PORTDOCS%%%%DOCSDIR%%/pygnomeprint/gnomeprint-class-reference.html
-%%PORTDOCS%%%%DOCSDIR%%/pygnomeprint/index.html
-%%PORTDOCS%%%%DOCSDIR%%/pygnomeprint/index.sgml
-%%PORTDOCS%%%%DOCSDIR%%/pygnomeprint/pygnomeprint.devhelp
-%%PORTDOCS%%%%DOCSDIR%%/pygnomeprintui/class-gnomeprintuidialog.html
-%%PORTDOCS%%%%DOCSDIR%%/pygnomeprintui/class-gnomeprintuifontdialog.html
-%%PORTDOCS%%%%DOCSDIR%%/pygnomeprintui/class-gnomeprintuifontpreview.html
-%%PORTDOCS%%%%DOCSDIR%%/pygnomeprintui/class-gnomeprintuifontselection.html
-%%PORTDOCS%%%%DOCSDIR%%/pygnomeprintui/class-gnomeprintuijobpreview.html
-%%PORTDOCS%%%%DOCSDIR%%/pygnomeprintui/class-gnomeprintuipaperselector.html
-%%PORTDOCS%%%%DOCSDIR%%/pygnomeprintui/class-gnomeprintuipreview.html
-%%PORTDOCS%%%%DOCSDIR%%/pygnomeprintui/gnomeprintui-class-reference.html
-%%PORTDOCS%%%%DOCSDIR%%/pygnomeprintui/index.html
-%%PORTDOCS%%%%DOCSDIR%%/pygnomeprintui/index.sgml
-%%PORTDOCS%%%%DOCSDIR%%/pygnomeprintui/pygnomeprintui.devhelp
 %%PORTDOCS%%%%DOCSDIR%%/pygtkmozembed/class-gtkmozembed.html
 %%PORTDOCS%%%%DOCSDIR%%/pygtkmozembed/gtkmozembed-class-reference.html
 %%PORTDOCS%%%%DOCSDIR%%/pygtkmozembed/index.html
 %%PORTDOCS%%%%DOCSDIR%%/pygtkmozembed/index.sgml
 %%PORTDOCS%%%%DOCSDIR%%/pygtkmozembed/pygtkmozembed.devhelp
-%%PORTDOCS%%%%DOCSDIR%%/pygtksourceview/class-gtksourcebuffer.html
-%%PORTDOCS%%%%DOCSDIR%%/pygtksourceview/class-gtksourcelanguage.html
-%%PORTDOCS%%%%DOCSDIR%%/pygtksourceview/class-gtksourcelanguagesmanager.html
-%%PORTDOCS%%%%DOCSDIR%%/pygtksourceview/class-gtksourcemarker.html
-%%PORTDOCS%%%%DOCSDIR%%/pygtksourceview/class-gtksourceprintjob.html
-%%PORTDOCS%%%%DOCSDIR%%/pygtksourceview/class-gtksourcestylescheme.html
-%%PORTDOCS%%%%DOCSDIR%%/pygtksourceview/class-gtksourcetag.html
-%%PORTDOCS%%%%DOCSDIR%%/pygtksourceview/class-gtksourcetagstyle.html
-%%PORTDOCS%%%%DOCSDIR%%/pygtksourceview/class-gtksourcetagtable.html
-%%PORTDOCS%%%%DOCSDIR%%/pygtksourceview/class-gtksourceview.html
-%%PORTDOCS%%%%DOCSDIR%%/pygtksourceview/gtksourcesview-class-reference.html
-%%PORTDOCS%%%%DOCSDIR%%/pygtksourceview/index.html
-%%PORTDOCS%%%%DOCSDIR%%/pygtksourceview/index.sgml
-%%PORTDOCS%%%%DOCSDIR%%/pygtksourceview/pygtksourceview.devhelp
 %%PORTDOCS%%%%DOCSDIR%%/pygtkspell/class-gtkspell.html
 %%PORTDOCS%%%%DOCSDIR%%/pygtkspell/gtkspell-class-reference.html
 %%PORTDOCS%%%%DOCSDIR%%/pygtkspell/index.html
 %%PORTDOCS%%%%DOCSDIR%%/pygtkspell/index.sgml
 %%PORTDOCS%%%%DOCSDIR%%/pygtkspell/pygtkspell.devhelp
-%%PORTDOCS%%share/examples/py-gnome/applet/GNOME_PythonAppletSample.server
-%%PORTDOCS%%share/examples/py-gnome/applet/README
-%%PORTDOCS%%share/examples/py-gnome/applet/applet.py
 %%PORTDOCS%%share/examples/py-gnome/egg/recent/Bonobo_Sample_Hello.xml
 %%PORTDOCS%%share/examples/py-gnome/egg/recent/bonobo-view.py
 %%PORTDOCS%%share/examples/py-gnome/egg/recent/gtk-view.py
 %%PORTDOCS%%share/examples/py-gnome/egg/recent/populate-recent.py
 %%PORTDOCS%%share/examples/py-gnome/egg/trayicon.py
 %%PORTDOCS%%share/examples/py-gnome/gdl/gdl_test.py
-%%PORTDOCS%%share/examples/py-gnome/gnomeprint/README
-%%PORTDOCS%%share/examples/py-gnome/gnomeprint/example_01.py
-%%PORTDOCS%%share/examples/py-gnome/gnomeprint/example_02.py
-%%PORTDOCS%%share/examples/py-gnome/gnomeprint/example_03.py
-%%PORTDOCS%%share/examples/py-gnome/gnomeprint/example_04.py
-%%PORTDOCS%%share/examples/py-gnome/gnomeprint/example_05.py
-%%PORTDOCS%%share/examples/py-gnome/gnomeprint/example_06.py
-%%PORTDOCS%%share/examples/py-gnome/gnomeprint/example_08.py
-%%PORTDOCS%%share/examples/py-gnome/gnomeprint/example_09.py
-%%PORTDOCS%%share/examples/py-gnome/gnomeprint/example_10.glade
-%%PORTDOCS%%share/examples/py-gnome/gnomeprint/example_10.py
-%%PORTDOCS%%share/examples/py-gnome/gnomeprint/example_11.py
-%%PORTDOCS%%share/examples/py-gnome/gnomeprint/sample-image.png
-%%PORTDOCS%%share/examples/py-gnome/gnomeprint/test-print.py
 %%PORTDOCS%%share/examples/py-gnome/gtkhtml2/simple-browser.py
-%%PORTDOCS%%share/examples/py-gnome/gtksourceview/test-widget.py
 %%PORTDOCS%%share/examples/py-gnome/gtkspell/gtkspell.py
 %%PORTDOCS%%share/examples/py-gnome/gtkspell/test.py
-%%PORTDOCS%%share/examples/py-gnome/mediaprofiles/profiles.py
-%%PORTDOCS%%share/examples/py-gnome/nautilusburn/blank_disc.py
-%%PORTDOCS%%share/examples/py-gnome/nautilusburn/drive_selection.py
-%%PORTDOCS%%share/examples/py-gnome/nautilusburn/write_iso.py
-share/pygtk/2.0/defs/applet.defs
-share/pygtk/2.0/defs/art.defs
 share/pygtk/2.0/defs/gtkhtml2.defs
 share/pygtk/2.0/defs/gtkmozembed.defs
-share/pygtk/2.0/defs/gtksourceview.defs
-share/pygtk/2.0/defs/mediaprofiles.defs
-share/pygtk/2.0/defs/nautilus_burn.defs
-share/pygtk/2.0/defs/nb_drive_selection.defs
-share/pygtk/2.0/defs/print.defs
-share/pygtk/2.0/defs/printui.defs
 share/pygtk/2.0/defs/trayicon.defs
-share/pygtk/2.0/defs/wnck.defs
-%%PORTDOCS%%@dirrm share/examples/py-gnome/nautilusburn
-%%PORTDOCS%%@dirrm share/examples/py-gnome/mediaprofiles
 %%PORTDOCS%%@dirrm share/examples/py-gnome/gtkspell
-%%PORTDOCS%%@dirrm share/examples/py-gnome/gtksourceview
 %%PORTDOCS%%@dirrm share/examples/py-gnome/gtkhtml2
-%%PORTDOCS%%@dirrm share/examples/py-gnome/gnomeprint
 %%PORTDOCS%%@dirrm share/examples/py-gnome/gdl
 %%PORTDOCS%%@dirrm share/examples/py-gnome/egg/recent
 %%PORTDOCS%%@dirrm share/examples/py-gnome/egg
-%%PORTDOCS%%@dirrm share/examples/py-gnome/applet
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/pygtkspell
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/pygtksourceview
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/pygtkmozembed
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/pygnomeprintui
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/pygnomeprint
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%PYTHON_SITELIBDIR%%/gtk-2.0/totem
-@dirrm %%PYTHON_SITELIBDIR%%/gtk-2.0/gnomeprint
 @dirrm %%PYTHON_SITELIBDIR%%/gtk-2.0/gksu
 @dirrm %%PYTHON_SITELIBDIR%%/gtk-2.0/egg

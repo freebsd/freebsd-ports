@@ -3,15 +3,14 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/databases/evolution-data-server/Makefile,v 1.64 2005/10/09 20:44:42 marcus Exp $
+#   $MCom: ports/databases/evolution-data-server/Makefile,v 1.83 2006/04/13 07:52:30 bland Exp $
 #
 
 PORTNAME=	evolution-data-server
-PORTVERSION=	1.4.2.1
-PORTREVISION=	3
+PORTVERSION=	1.6.1
 CATEGORIES=	databases gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.4
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -24,11 +23,11 @@ LIB_DEPENDS=	soup-2.2.8:${PORTSDIR}/devel/libsoup \
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_BISON=	yes
+USE_GETTEXT=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack gnometarget libgnomeui \
 		ltverhack
 USE_OPENLDAP=	yes
-USE_REINPLACE=	yes
 USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--enable-static \
@@ -42,7 +41,7 @@ CONFIGURE_ARGS=	--enable-static \
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
-PLIST_SUB=	VERSION="1.4" EVO_VERSION="1.2"
+PLIST_SUB=	VERSION="1.6" EVO_VERSION="1.2"
 
 .include <bsd.port.pre.mk>
 

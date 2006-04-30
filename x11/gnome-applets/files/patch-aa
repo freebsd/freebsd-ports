@@ -1,6 +1,6 @@
---- configure.orig	Sat Jul 16 12:55:48 2005
-+++ configure	Sat Jul 16 13:04:33 2005
-@@ -23272,8 +23272,7 @@
+--- configure.orig	Sun Feb 12 14:11:21 2006
++++ configure	Sun Feb 12 14:12:00 2006
+@@ -23361,8 +23361,7 @@
  
    test "x$prefix" = xNONE && prefix="$ac_default_prefix"
    test "x$exec_prefix" = xNONE && exec_prefix='${prefix}'
@@ -10,44 +10,35 @@
    GNOMELOCALEDIR="$ac_define_dir"
  
  
-@@ -25126,7 +25125,7 @@
+@@ -25392,7 +25391,7 @@
  
  	   ;;
         # list of supported OS cores that do not use libapm
--       i386-*-freebsd*|*-*-netbsd*|*-*-openbsd*)
-+       i386-*-freebsd*|amd64-*-freebsd*|*-*-netbsd*|*-*-openbsd*)
+-       i386-*-freebsd*|*-*-netbsd*|*-*-openbsd*|*-*kfreebsd*-gnu)
++       i386-*-freebsd*|amd64-*-freebsd*|*-*-netbsd*|*-*-openbsd*|*-*kfreebsd*-gnu)
            if  -n "${OS_SYS}" ; then
  	       ACPIINC="-I${OS_SYS}"
  	   else
-@@ -25406,7 +25405,7 @@
-   APPLET_MIXER_FALSE=
- fi
- 
--if test x"$P_MIXER" == x"mixer"; then
-+if test x"$P_MIXER" = x"mixer"; then
- 	echo "$as_me:$LINENO: result: yes" >&5
- echo "${ECHO_T}yes" >&6
- else
-@@ -25983,7 +25982,7 @@
+@@ -26469,7 +26468,7 @@
  fi
  
  
 -if test "x$SU_TOOL" == "x" -o "x$HAVE_LIBUTIL" != "xtrue" -o "x$P_MODEMLIGHTS" != "xmodemlights"; then
 +if test "x$SU_TOOL" = "x" -o "x$HAVE_LIBUTIL" != "xtrue" -o "x$P_MODEMLIGHTS" != "xmodemlights"; then
-   { echo "$as_me:$LINENO: WARNING: *** \`modemlights' applet will not be built ***" >&5
- echo "$as_me: WARNING: *** \`modemlights' applet will not be built ***" >&2;}
+   { echo "$as_me:$LINENO: WARNING: *** modemlights applet will not be built ***" >&5
+ echo "$as_me: WARNING: *** modemlights applet will not be built ***" >&2;}
  else
-@@ -26119,6 +26118,9 @@
- echo "${ECHO_T}yes" >&6
+@@ -26633,6 +26632,9 @@
+       *linux*)
           build_cpufreq_applet=yes
  	 ;;
 +      i386-*-freebsd*|amd64-*-freebsd*)
 +         build_cpufreq_applet=yes
 +	 ;;
        *)
-          echo "warning: ${host} is not supported by cpufreq applet, not building" >&2
- 	 build_cpufreq_applet=no
-@@ -26409,7 +26411,7 @@
+          { echo "$as_me:$LINENO: WARNING: ${host} is not supported by cpufreq applet, not building" >&5
+ echo "$as_me: WARNING: ${host} is not supported by cpufreq applet, not building" >&2;}
+@@ -27109,7 +27111,7 @@
  ACLOCAL_AMFLAGS="\${ACLOCAL_FLAGS}"
  
  
@@ -56,7 +47,7 @@
  
  pixmapsdir="${datadir}/pixmaps"
  
-@@ -26423,8 +26425,7 @@
+@@ -27123,8 +27125,7 @@
  
    test "x$prefix" = xNONE && prefix="$ac_default_prefix"
    test "x$exec_prefix" = xNONE && exec_prefix='${prefix}'
@@ -66,7 +57,7 @@
    GNOME_ICONDIR="$ac_define_dir"
  
  
-@@ -26436,8 +26437,7 @@
+@@ -27136,8 +27137,7 @@
  
    test "x$prefix" = xNONE && prefix="$ac_default_prefix"
    test "x$exec_prefix" = xNONE && exec_prefix='${prefix}'
@@ -76,7 +67,7 @@
    GNOME_PIXMAPSDIR="$ac_define_dir"
  
  
-@@ -26449,8 +26449,7 @@
+@@ -27149,8 +27149,7 @@
  
    test "x$prefix" = xNONE && prefix="$ac_default_prefix"
    test "x$exec_prefix" = xNONE && exec_prefix='${prefix}'
@@ -86,7 +77,7 @@
    GNOME_GLADEDIR="$ac_define_dir"
  
  
-@@ -26462,8 +26461,7 @@
+@@ -27162,8 +27161,7 @@
  
    test "x$prefix" = xNONE && prefix="$ac_default_prefix"
    test "x$exec_prefix" = xNONE && exec_prefix='${prefix}'
@@ -96,7 +87,7 @@
    DATADIR="$ac_define_dir"
  
  
-@@ -26475,8 +26473,7 @@
+@@ -27175,8 +27173,7 @@
  
    test "x$prefix" = xNONE && prefix="$ac_default_prefix"
    test "x$exec_prefix" = xNONE && exec_prefix='${prefix}'
@@ -106,7 +97,7 @@
    SYSCONFDIR="$ac_define_dir"
  
  
-@@ -26488,8 +26485,7 @@
+@@ -27188,8 +27185,7 @@
  
    test "x$prefix" = xNONE && prefix="$ac_default_prefix"
    test "x$exec_prefix" = xNONE && exec_prefix='${prefix}'
@@ -116,7 +107,7 @@
    LIBDIR="$ac_define_dir"
  
  
-@@ -26501,8 +26497,7 @@
+@@ -27201,8 +27197,7 @@
  
    test "x$prefix" = xNONE && prefix="$ac_default_prefix"
    test "x$exec_prefix" = xNONE && exec_prefix='${prefix}'

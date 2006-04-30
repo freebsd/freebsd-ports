@@ -1,20 +1,11 @@
---- configure.orig	Mon Nov 25 21:02:50 2002
-+++ configure	Fri Nov 29 20:30:44 2002
-@@ -3731,7 +3731,7 @@
- 
- 
- cat >>confdefs.h <<_ACEOF
--#define GNOME_ICONDIR "${prefix}/share/pixmaps"
-+#define GNOME_ICONDIR "${datadir}/pixmaps"
- _ACEOF
- 
- 
-@@ -6630,7 +6630,7 @@
- s,@WARN_CFLAGS@,$WARN_CFLAGS,;t t
+--- configure.orig	Wed Dec 14 19:11:33 2005
++++ configure	Wed Dec 14 19:11:33 2005
+@@ -25028,7 +25028,7 @@
  s,@PKG_CONFIG@,$PKG_CONFIG,;t t
+ s,@ac_pt_PKG_CONFIG@,$ac_pt_PKG_CONFIG,;t t
  s,@PROCMAN_CFLAGS@,$PROCMAN_CFLAGS,;t t
 -s,@PROCMAN_LIBS@,$PROCMAN_LIBS,;t t
 +s,@PROCMAN_LIBS@, $PROCMAN_LIBS,;t t
  s,@GCONF_SCHEMA_CONFIG_SOURCE@,$GCONF_SCHEMA_CONFIG_SOURCE,;t t
  s,@GCONF_SCHEMA_FILE_DIR@,$GCONF_SCHEMA_FILE_DIR,;t t
- s,@GETTEXT_PACKAGE@,$GETTEXT_PACKAGE,;t t
+ s,@GCONF_SCHEMAS_INSTALL_TRUE@,$GCONF_SCHEMAS_INSTALL_TRUE,;t t

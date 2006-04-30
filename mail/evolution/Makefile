@@ -3,15 +3,14 @@
 # Whom:					Ade Lovett <ade@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/mail/evolution/Makefile,v 1.76 2005/10/09 11:09:15 kwm Exp $
+#   $MCom: ports/mail/evolution/Makefile,v 1.98 2006/04/13 07:52:35 bland Exp $
 #
 
 PORTNAME=	evolution
-PORTVERSION=	2.4.2.1
-PORTREVISION=	1
+PORTVERSION=	2.6.1
 CATEGORIES=	mail gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.4
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -23,12 +22,14 @@ RUN_DEPENDS=	${X11BASE}/lib/gnome-spell/libgnome-spell-component-0.3.so:${PORTSD
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_BISON=	yes
+USE_GETTEXT=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack evolutiondataserver \
 		gtkhtml3 desktopfileutils
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_OMF=	yes
+INSTALLS_SHLIB=	yes
+LDCONFIG_DIRS=	%%PREFIX%%/lib/evolution/%%VERSION%%
 CONFIGURE_ARGS=	--enable-nss=yes \
 		--with-nss-includes=${LOCALBASE}/include/nss/nss \
 		--with-nss-libs=${LOCALBASE}/lib \
@@ -41,13 +42,13 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 GCONF_SCHEMAS=	apps_evolution_addressbook-${EVO_VERSION}.schemas \
 		apps_evolution_calendar-${EVO_VERSION}.schemas \
-		apps-evolution-mail-prompts-checkdefault-2.4.schemas \
+		apps-evolution-mail-prompts-checkdefault-2.6.schemas \
 		apps_evolution_shell-${EVO_VERSION}.schemas \
 		evolution-mail-${EVO_VERSION}.schemas
 
-EVO_VERSION=	2.4
+EVO_VERSION=	2.6
 PLIST_SUB=	VERSION=${EVO_VERSION} \
-		PORTVERSION=2.4
+		PORTVERSION=2.6
 
 OPTIONS=	PILOT "Enable Palm Pilot sync support" off \
 		LDAP "Enable LDAP support" on \
@@ -55,9 +56,8 @@ OPTIONS=	PILOT "Enable Palm Pilot sync support" off \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN=	"Does not build on 4.X"
-.endif
+USE_LDCONFIG=	${PREFIX}/lib/evolution/${EVO_VERSION}
+.include "${PORTSDIR}/misc/ldconfig_compat/bsd.ldconfig.mk"
 
 .if defined(PACKAGE_BUILDING) || defined(PARALLEL_PACKAGE_BUILD)
 WITH_GSTREAMER=	yes
@@ -93,7 +93,7 @@ RUN_DEPENDS+=	spamassassin:${PORTSDIR}/mail/p5-Mail-SpamAssassin
 .endif
 
 .if defined(WITH_GSTREAMER)
-LIB_DEPENDS+=	gstreamer-0.8.5:${PORTSDIR}/multimedia/gstreamer
+LIB_DEPENDS+=	gstreamer-0.8.5:${PORTSDIR}/multimedia/gstreamer80
 PLIST_SUB+=	GSTREAMER=""
 .else
 PLIST_SUB+=	GSTREAMER="@comment "
@@ -118,19 +118,9 @@ CONFIGURE_ARGS+=	--with-krb5=${LOCALBASE}
 .endif
 .endif
 
-post-patch:
-	@${SED} -e 's|%%PREFIX%%|${PREFIX}| ; \
-		s|%%EVO_VERSION%%|${EVO_VERSION}|' \
-		${FILESDIR}/evolibs.sh > ${WRKDIR}/evolibs.sh
-	@${REINPLACE_CMD} -e "s|gal-2.4|gal-2.6|g" \
-		${WRKSRC}/evolution-shell.pc.in \
-		${WRKSRC}/evolution-plugin.pc.in
-
-post-install:
+post-install: install-ldconfig-file
 	@${LN} -sf ${PREFIX}/bin/evolution-${EVO_VERSION} \
 		${PREFIX}/bin/evolution
-	@${INSTALL_SCRIPT} -m 555 ${WRKDIR}/evolibs.sh \
-		${PREFIX}/etc/rc.d/000.evolibs.sh
 	-@update-desktop-database
 
 .include <bsd.port.post.mk>

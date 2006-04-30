@@ -3,16 +3,15 @@
 # Whom:					Anders Nordby <anders@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/archivers/fileroller/Makefile,v 1.79 2005/10/03 21:14:16 mezz Exp $
+#   $MCom: ports/archivers/fileroller/Makefile,v 1.95 2006/04/18 18:52:18 ahze Exp $
 #
 
 PORTNAME=	fileroller
-PORTVERSION=	2.12.3
-PORTREVISION=	1
+PORTVERSION=	2.14.2
 PORTEPOCH=	1
 CATEGORIES=	archivers gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/file-roller/2.12
+MASTER_SITE_SUBDIR=	sources/file-roller/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 DISTNAME=	file-roller-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
@@ -25,12 +24,14 @@ COMMENT=	An archive manager for zip files, tar, etc
 RUN_DEPENDS=	${LOCALBASE}/bin/gtar:${PORTSDIR}/archivers/gtar
 
 USE_BZIP2=	yes
+USE_GETTEXT=	yes
 INSTALLS_OMF=	yes
+INSTALLS_ICONS=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix intlhack gnomehack desktopfileutils nautilus2 \
 		gnomedocutils
-GNU_CONFIGURE=  yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

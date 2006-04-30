@@ -1,6 +1,6 @@
---- configure.orig	Mon Nov 10 22:08:05 2003
-+++ configure	Mon Nov 10 22:08:05 2003
-@@ -12979,7 +12979,7 @@
+--- configure.orig	Mon Apr 10 20:37:17 2006
++++ configure	Mon Apr 10 20:38:17 2006
+@@ -25674,7 +25674,7 @@
  
  CORE_LIBS="`$PKG_CONFIG --libs $CORE_MODULES` $CDDA_LIBS $LIBJPEG $x_libs"
  
@@ -8,13 +8,13 @@
 +CORE_IDL_INCLUDES="`$PKG_CONFIG --variable=idldir $CORE_MODULES | xargs -n1 echo -n ' -I '`"
  
  
- COMPONENT_MODULES="eel-2.0 libbonoboui-2.0 gnome-vfs-module-2.0 gnome-desktop-2.0"
-@@ -13959,7 +13959,7 @@
- s,@PKG_CONFIG@,$PKG_CONFIG,;t t
+ DISABLE_DEPRECATED_CFLAGS=""
+@@ -26832,7 +26832,7 @@
  s,@STARTUP_NOTIFICATION_PACKAGE@,$STARTUP_NOTIFICATION_PACKAGE,;t t
+ s,@ac_pt_PKG_CONFIG@,$ac_pt_PKG_CONFIG,;t t
  s,@ALL_CFLAGS@,$ALL_CFLAGS,;t t
 -s,@ALL_LIBS@,$ALL_LIBS,;t t
 +s~@ALL_LIBS@~$ALL_LIBS~;t t
+ s,@CONFIG_STATUS_DEPENDENCIES@,$CONFIG_STATUS_DEPENDENCIES,;t t
  s,@GETTEXT_PACKAGE@,$GETTEXT_PACKAGE,;t t
  s,@USE_NLS@,$USE_NLS,;t t
- s,@MSGFMT@,$MSGFMT,;t t

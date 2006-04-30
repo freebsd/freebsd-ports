@@ -1,0 +1,24 @@
+#!/bin/sh
+# $FreeBSD$
+#    $MCom: ports/x11/gdm/files/gdm.in,v 1.5 2006/03/06 19:02:27 marcus Exp $
+
+# PROVIDE: gdm
+# REQUIRE: LOGIN cleanvar moused
+#
+# Add the following to /etc/rc.conf to start GDM at boot time:
+#
+# gdm_enable="YES"
+#
+
+gdm_enable=${gdm_enable-"NO"}
+
+. %%RC_SUBR%%
+
+name=gdm
+rcvar=`set_rcvar`
+command="%%PREFIX%%/sbin/${name}"
+pidfile="/var/run/${name}.pid"
+procname="%%PREFIX%%/sbin/gdm-binary"
+
+load_rc_config ${name}
+run_rc_command "$1"

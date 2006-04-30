@@ -95,6 +95,7 @@ share/locale/ne/LC_MESSAGES/libwnck.mo
 share/locale/nl/LC_MESSAGES/libwnck.mo
 share/locale/nn/LC_MESSAGES/libwnck.mo
 share/locale/no/LC_MESSAGES/libwnck.mo
+share/locale/or/LC_MESSAGES/libwnck.mo
 share/locale/pa/LC_MESSAGES/libwnck.mo
 share/locale/pl/LC_MESSAGES/libwnck.mo
 share/locale/pt/LC_MESSAGES/libwnck.mo
@@ -122,8 +123,6 @@ share/locale/zh_TW/LC_MESSAGES/libwnck.mo
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/ky/LC_MESSAGES
 @dirrmtry share/locale/ky
-@dirrmtry share/locale/ku/LC_MESSAGES
-@dirrmtry share/locale/ku
 @dirrm %%DOCSDIR%%
 @dirrm include/libwnck-1.0/libwnck
 @dirrm include/libwnck-1.0

@@ -1,6 +1,6 @@
---- configure.orig	Fri Apr 30 09:05:01 2004
-+++ configure	Tue May  4 12:52:56 2004
-@@ -31818,6 +31819,8 @@
+--- configure.orig	Sun Jan 29 13:06:22 2006
++++ configure	Sun Jan 29 13:06:48 2006
+@@ -34462,6 +34461,8 @@
           ;;
      esac
    fi

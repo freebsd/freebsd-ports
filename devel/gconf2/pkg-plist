@@ -79,6 +79,7 @@ share/locale/hi/LC_MESSAGES/GConf2.mo
 share/locale/hr/LC_MESSAGES/GConf2.mo
 share/locale/hu/LC_MESSAGES/GConf2.mo
 share/locale/id/LC_MESSAGES/GConf2.mo
+share/locale/is/LC_MESSAGES/GConf2.mo
 share/locale/it/LC_MESSAGES/GConf2.mo
 share/locale/ja/LC_MESSAGES/GConf2.mo
 share/locale/ko/LC_MESSAGES/GConf2.mo
@@ -115,9 +116,12 @@ share/locale/vi/LC_MESSAGES/GConf2.mo
 share/locale/xh/LC_MESSAGES/GConf2.mo
 share/locale/yi/LC_MESSAGES/GConf2.mo
 share/locale/zh_CN/LC_MESSAGES/GConf2.mo
+share/locale/zh_HK/LC_MESSAGES/GConf2.mo
 share/locale/zh_TW/LC_MESSAGES/GConf2.mo
 share/sgml/gconf/gconf-1.0.dtd
 @dirrm share/sgml/gconf
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
 @dirrm share/doc/gconf
@@ -127,4 +131,4 @@ share/sgml/gconf/gconf-1.0.dtd
 @dirrm include/gconf/2/gconf
 @dirrm include/gconf/2
 @dirrm etc/gconf/2
-@unexec /bin/rmdir %D/share/sgml 2>/dev/null || /usr/bin/true
+@dirrmtry share/sgml

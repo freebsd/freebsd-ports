@@ -3,14 +3,14 @@
 # Whom:                 		Adam Weinberger <adamw@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports-stable/devel/glibmm/Makefile,v 1.1 2006/03/08 14:38:06 marcus Exp $
+#   $MCom: ports/devel/glibmm/Makefile,v 1.31 2006/04/14 21:55:21 mezz Exp $
 #
 
 PORTNAME=	glibmm
-PORTVERSION=	2.8.6
+PORTVERSION=	2.10.1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R}
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -23,7 +23,6 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GCC=	3.4
 USE_GNOME=	gnomehack gnometarget glib20
-USE_REINPLACE=	yes
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes

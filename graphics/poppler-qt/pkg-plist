@@ -1,0 +1,7 @@
+include/poppler/poppler-page-transition.h
+include/poppler/poppler-qt.h
+lib/libpoppler-qt.a
+lib/libpoppler-qt.la
+lib/libpoppler-qt.so
+lib/libpoppler-qt.so.1
+libdata/pkgconfig/poppler-qt.pc

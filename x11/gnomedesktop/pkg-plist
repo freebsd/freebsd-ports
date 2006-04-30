@@ -7,6 +7,20 @@ lib/libgnome-desktop-2.la
 lib/libgnome-desktop-2.so
 lib/libgnome-desktop-2.so.2
 libdata/pkgconfig/gnome-desktop-2.0.pc
+share/doc/gnome-desktop/GnomeDItemEdit.html
+share/doc/gnome-desktop/GnomeHint.html
+share/doc/gnome-desktop/ch01.html
+share/doc/gnome-desktop/gnome-desktop-GnomeDesktopItem.html
+share/doc/gnome-desktop/gnome-desktop.devhelp
+share/doc/gnome-desktop/gnome-desktop.devhelp2
+share/doc/gnome-desktop/home.png
+share/doc/gnome-desktop/index.html
+share/doc/gnome-desktop/index.sgml
+share/doc/gnome-desktop/intro.html
+share/doc/gnome-desktop/left.png
+share/doc/gnome-desktop/right.png
+share/doc/gnome-desktop/style.css
+share/doc/gnome-desktop/up.png
 share/gnome/applications/gnome-about.desktop
 share/gnome/gnome-about/gnome-64.png
 share/gnome/gnome-about/gnome-version.xml
@@ -21,26 +35,44 @@ share/gnome/gnome-about/headers/header-bg-snow01.png
 share/gnome/gnome-about/headers/header-bg-sunset01.png
 share/gnome/help/fdl/C/fdl.xml
 share/gnome/help/fdl/es/fdl.xml
+share/gnome/help/fdl/fr/fdl.xml
+share/gnome/help/fdl/uk/fdl.xml
 share/gnome/help/gnome-feedback/C/gnome-feedback.xml
 share/gnome/help/gnome-feedback/es/gnome-feedback.xml
+share/gnome/help/gnome-feedback/fr/gnome-feedback.xml
+share/gnome/help/gnome-feedback/it/gnome-feedback.xml
+share/gnome/help/gnome-feedback/uk/gnome-feedback.xml
 share/gnome/help/gpl/C/gpl.xml
 share/gnome/help/gpl/es/gpl.xml
 share/gnome/help/gpl/fi/gpl.xml
+share/gnome/help/gpl/fr/gpl.xml
 share/gnome/help/gpl/pa/gpl.xml
+share/gnome/help/gpl/uk/gpl.xml
 share/gnome/help/lgpl/C/lgpl.xml
 share/gnome/help/lgpl/es/lgpl.xml
+share/gnome/help/lgpl/fr/lgpl.xml
 share/gnome/help/lgpl/pa/lgpl.xml
+share/gnome/help/lgpl/uk/lgpl.xml
 share/gnome/omf/fdl/fdl-C.omf
 share/gnome/omf/fdl/fdl-es.omf
+share/gnome/omf/fdl/fdl-fr.omf
+share/gnome/omf/fdl/fdl-uk.omf
 share/gnome/omf/gnome-feedback/gnome-feedback-C.omf
 share/gnome/omf/gnome-feedback/gnome-feedback-es.omf
+share/gnome/omf/gnome-feedback/gnome-feedback-fr.omf
+share/gnome/omf/gnome-feedback/gnome-feedback-it.omf
+share/gnome/omf/gnome-feedback/gnome-feedback-uk.omf
 share/gnome/omf/gpl/gpl-C.omf
 share/gnome/omf/gpl/gpl-es.omf
 share/gnome/omf/gpl/gpl-fi.omf
+share/gnome/omf/gpl/gpl-fr.omf
 share/gnome/omf/gpl/gpl-pa.omf
+share/gnome/omf/gpl/gpl-uk.omf
 share/gnome/omf/lgpl/lgpl-C.omf
 share/gnome/omf/lgpl/lgpl-es.omf
+share/gnome/omf/lgpl/lgpl-fr.omf
 share/gnome/omf/lgpl/lgpl-pa.omf
+share/gnome/omf/lgpl/lgpl-uk.omf
 share/gnome/pixmaps/apple-green.png
 share/gnome/pixmaps/apple-red.png
 share/gnome/pixmaps/gnome-aorta.png
@@ -128,6 +160,7 @@ share/locale/cs/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/cy/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/da/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/de/LC_MESSAGES/gnome-desktop-2.0.mo
+share/locale/dz/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/el/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/en_CA/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/en_GB/LC_MESSAGES/gnome-desktop-2.0.mo
@@ -150,9 +183,11 @@ share/locale/id/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/is/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/it/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/ja/LC_MESSAGES/gnome-desktop-2.0.mo
+share/locale/ka/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/kn/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/ko/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/ku/LC_MESSAGES/gnome-desktop-2.0.mo
+share/locale/ky/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/li/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/lt/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/lv/LC_MESSAGES/gnome-desktop-2.0.mo
@@ -200,24 +235,38 @@ share/locale/zu/LC_MESSAGES/gnome-desktop-2.0.mo
 @dirrmtry share/locale/yo
 @dirrmtry share/locale/ug/LC_MESSAGES
 @dirrmtry share/locale/ug
+@dirrmtry share/locale/ky/LC_MESSAGES
+@dirrmtry share/locale/ky
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
 @dirrmtry share/locale/hy/LC_MESSAGES
 @dirrmtry share/locale/hy
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
 @dirrm share/gnome/omf/lgpl
 @dirrm share/gnome/omf/gpl
 @dirrm share/gnome/omf/gnome-feedback
 @dirrm share/gnome/omf/fdl
+@dirrm share/gnome/help/lgpl/uk
 @dirrm share/gnome/help/lgpl/pa
+@dirrm share/gnome/help/lgpl/fr
 @dirrm share/gnome/help/lgpl/es
+@dirrm share/gnome/help/gpl/uk
 @dirrm share/gnome/help/gpl/pa
+@dirrm share/gnome/help/gpl/fr
 @dirrm share/gnome/help/gpl/fi
 @dirrm share/gnome/help/gpl/es
-@dirrm share/gnome/help/fdl/es
+@dirrm share/gnome/help/gnome-feedback/uk
+@dirrm share/gnome/help/gnome-feedback/it
+@dirrm share/gnome/help/gnome-feedback/fr
 @dirrm share/gnome/help/gnome-feedback/es
 @dirrm share/gnome/help/gnome-feedback/C
 @dirrm share/gnome/help/gnome-feedback
+@dirrm share/gnome/help/fdl/uk
+@dirrm share/gnome/help/fdl/fr
+@dirrm share/gnome/help/fdl/es
 @dirrm share/gnome/gnome-about/headers
+@dirrm share/doc/gnome-desktop
 @dirrm include/gnome-desktop-2.0/libgnomeui
 @dirrm include/gnome-desktop-2.0/libgnome
 @dirrm include/gnome-desktop-2.0

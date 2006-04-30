@@ -6,6 +6,6 @@ include/libgsf-1/gsf-gnome/gsf-shared-bonobo-stream.h
 lib/libgsf-gnome-1.a
 lib/libgsf-gnome-1.la
 lib/libgsf-gnome-1.so
-lib/libgsf-gnome-1.so.113
+lib/libgsf-gnome-1.so.114
 libdata/pkgconfig/libgsf-gnome-1.pc
 @dirrm include/libgsf-1/gsf-gnome

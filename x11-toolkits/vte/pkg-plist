@@ -6,7 +6,7 @@ include/vte/vteaccess.h
 lib/libvte.a
 lib/libvte.la
 lib/libvte.so
-lib/libvte.so.8
+lib/libvte.so.4
 lib/vte/decset
 lib/vte/interpret
 lib/vte/iso8859mode
@@ -31,6 +31,7 @@ libexec/gnome-pty-helper
 %%DOCSDIR%%/style.css
 %%DOCSDIR%%/up.png
 %%DOCSDIR%%/vte.devhelp
+%%DOCSDIR%%/vte.devhelp2
 share/gnome/vte/termcap/xterm
 share/locale/am/LC_MESSAGES/vte.mo
 share/locale/ang/LC_MESSAGES/vte.mo
@@ -45,6 +46,7 @@ share/locale/cs/LC_MESSAGES/vte.mo
 share/locale/cy/LC_MESSAGES/vte.mo
 share/locale/da/LC_MESSAGES/vte.mo
 share/locale/de/LC_MESSAGES/vte.mo
+share/locale/dz/LC_MESSAGES/vte.mo
 share/locale/el/LC_MESSAGES/vte.mo
 share/locale/en_CA/LC_MESSAGES/vte.mo
 share/locale/en_GB/LC_MESSAGES/vte.mo
@@ -66,6 +68,7 @@ share/locale/is/LC_MESSAGES/vte.mo
 share/locale/it/LC_MESSAGES/vte.mo
 share/locale/ja/LC_MESSAGES/vte.mo
 share/locale/ka/LC_MESSAGES/vte.mo
+share/locale/kn/LC_MESSAGES/vte.mo
 share/locale/ko/LC_MESSAGES/vte.mo
 share/locale/ku/LC_MESSAGES/vte.mo
 share/locale/ky/LC_MESSAGES/vte.mo
@@ -115,6 +118,8 @@ share/locale/zh_TW/LC_MESSAGES/vte.mo
 @dirrmtry share/locale/ky
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
 @dirrmtry share/locale/ang/LC_MESSAGES
 @dirrmtry share/locale/ang
 @dirrm share/gnome/vte/termcap

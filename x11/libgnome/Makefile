@@ -3,15 +3,14 @@
 # Whom:					Yukihiro Nakai <Nakai@technologist.com>
 #
 # $FreeBSD$
-#   $MCom: ports/x11/libgnome/Makefile,v 1.61 2005/09/07 16:21:36 marcus Exp $
+#   $MCom: ports/x11/libgnome/Makefile,v 1.78 2006/04/13 07:52:41 bland Exp $
 #
 
 PORTNAME=	libgnome
-PORTVERSION=	2.12.0.1
-PORTREVISION=	1
+PORTVERSION=	2.14.1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.12
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -20,16 +19,16 @@ COMMENT=	Libraries for GNOME, a GNU desktop environment
 BUILD_DEPENDS=	scrollkeeper-config:${PORTSDIR}/textproc/scrollkeeper
 RUN_DEPENDS=	scrollkeeper-config:${PORTSDIR}/textproc/scrollkeeper
 
+USE_GETTEXT=	yes
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
 USE_XPM=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack esound \
 		gnomevfs2 libxslt ltverhack
 USE_BISON=	yes
 INSTALLS_SHLIB=	yes
-USE_AUTOTOOLS=  libtool:15
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
@@ -54,6 +53,7 @@ GCONF_SCHEMAS=	desktop_gnome_accessibility_keyboard.schemas \
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
 		${WRKSRC}/libgnome/libgnome-2.0.pc.in
+	@${REINPLACE_CMD} -e '/^$$/d' ${WRKSRC}/po/POTFILES.in
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e 's|gnome-data po doc|gnome-data po|g' \
 		${WRKSRC}/Makefile.in

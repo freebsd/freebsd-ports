@@ -42,6 +42,7 @@ include/glib-2.0/glib/grand.h
 include/glib-2.0/glib/grel.h
 include/glib-2.0/glib/gscanner.h
 include/glib-2.0/glib/gshell.h
+include/glib-2.0/glib/gslice.h
 include/glib-2.0/glib/gslist.h
 include/glib-2.0/glib/gspawn.h
 include/glib-2.0/glib/gstdio.h
@@ -112,6 +113,7 @@ share/locale/cs/LC_MESSAGES/glib20.mo
 share/locale/cy/LC_MESSAGES/glib20.mo
 share/locale/da/LC_MESSAGES/glib20.mo
 share/locale/de/LC_MESSAGES/glib20.mo
+share/locale/dz/LC_MESSAGES/glib20.mo
 share/locale/el/LC_MESSAGES/glib20.mo
 share/locale/en_CA/LC_MESSAGES/glib20.mo
 share/locale/en_GB/LC_MESSAGES/glib20.mo
@@ -133,7 +135,9 @@ share/locale/id/LC_MESSAGES/glib20.mo
 share/locale/is/LC_MESSAGES/glib20.mo
 share/locale/it/LC_MESSAGES/glib20.mo
 share/locale/ja/LC_MESSAGES/glib20.mo
+share/locale/ka/LC_MESSAGES/glib20.mo
 share/locale/ko/LC_MESSAGES/glib20.mo
+share/locale/ku/LC_MESSAGES/glib20.mo
 share/locale/lt/LC_MESSAGES/glib20.mo
 share/locale/lv/LC_MESSAGES/glib20.mo
 share/locale/mk/LC_MESSAGES/glib20.mo
@@ -165,6 +169,7 @@ share/locale/te/LC_MESSAGES/glib20.mo
 share/locale/th/LC_MESSAGES/glib20.mo
 share/locale/tl/LC_MESSAGES/glib20.mo
 share/locale/tr/LC_MESSAGES/glib20.mo
+share/locale/tt/LC_MESSAGES/glib20.mo
 share/locale/uk/LC_MESSAGES/glib20.mo
 share/locale/vi/LC_MESSAGES/glib20.mo
 share/locale/wa/LC_MESSAGES/glib20.mo
@@ -173,12 +178,18 @@ share/locale/yi/LC_MESSAGES/glib20.mo
 share/locale/zh_CN/LC_MESSAGES/glib20.mo
 share/locale/zh_HK/LC_MESSAGES/glib20.mo
 share/locale/zh_TW/LC_MESSAGES/glib20.mo
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
+@dirrmtry share/locale/ku/LC_MESSAGES
+@dirrmtry share/locale/ku
 @dirrmtry share/locale/ne/LC_MESSAGES
 @dirrmtry share/locale/ne
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
 @dirrmtry share/locale/sr@ije/LC_MESSAGES
 @dirrmtry share/locale/sr@ije
+@dirrmtry share/locale/tt/LC_MESSAGES
+@dirrmtry share/locale/tt
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
 @dirrmtry share/locale/tl/LC_MESSAGES

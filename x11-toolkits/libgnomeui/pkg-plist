@@ -79,6 +79,7 @@ libexec/gnome_segv2
 %%DOCSDIR%%/GnomeIconEntry.html
 %%DOCSDIR%%/GnomeIconList.html
 %%DOCSDIR%%/GnomeIconSelection.html
+%%DOCSDIR%%/GnomeIconTextItem.html
 %%DOCSDIR%%/GnomeMDI.html
 %%DOCSDIR%%/GnomeMDIChild.html
 %%DOCSDIR%%/GnomeMDIGenericChild.html
@@ -96,8 +97,12 @@ libexec/gnome_segv2
 %%DOCSDIR%%/index.html
 %%DOCSDIR%%/index.sgml
 %%DOCSDIR%%/left.png
+%%DOCSDIR%%/libgnomeui-GnomeAuthentication.html
+%%DOCSDIR%%/libgnomeui-GnomeIce.html
 %%DOCSDIR%%/libgnomeui-GnomeIconLookup.html
 %%DOCSDIR%%/libgnomeui-GnomeIconTheme.html
+%%DOCSDIR%%/libgnomeui-GnomeMultiScreen.html
+%%DOCSDIR%%/libgnomeui-GnomePassword.html
 %%DOCSDIR%%/libgnomeui-GnomeThemeFile.html
 %%DOCSDIR%%/libgnomeui-GnomeThumbnail.html
 %%DOCSDIR%%/libgnomeui-gnome-app-helper.html
@@ -110,6 +115,7 @@ libexec/gnome_segv2
 %%DOCSDIR%%/libgnomeui-gnome-ui-init.html
 %%DOCSDIR%%/libgnomeui-gnome-uidefs.html
 %%DOCSDIR%%/libgnomeui-gnome-vfs-util.html
+%%DOCSDIR%%/libgnomeui-gnome-window-icon.html
 %%DOCSDIR%%/libgnomeui-gnome-window.html
 %%DOCSDIR%%/libgnomeui-gnometypebuiltins.html
 %%DOCSDIR%%/libgnomeui-objects.html
@@ -169,6 +175,7 @@ share/locale/cs/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/cy/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/da/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/de/LC_MESSAGES/libgnomeui-2.0.mo
+share/locale/dz/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/el/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/en_CA/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/en_GB/LC_MESSAGES/libgnomeui-2.0.mo
@@ -190,6 +197,7 @@ share/locale/id/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/is/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/it/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/ja/LC_MESSAGES/libgnomeui-2.0.mo
+share/locale/ka/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/kn/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/ko/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/ku/LC_MESSAGES/libgnomeui-2.0.mo
@@ -227,6 +235,7 @@ share/locale/te/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/th/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/tk/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/tr/LC_MESSAGES/libgnomeui-2.0.mo
+share/locale/tt/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/uk/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/vi/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/wa/LC_MESSAGES/libgnomeui-2.0.mo
@@ -238,11 +247,15 @@ share/locale/zh_TW/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/zu/LC_MESSAGES/libgnomeui-2.0.mo
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/tt/LC_MESSAGES
+@dirrmtry share/locale/tt
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
 @dirrm %%DOCSDIR%%
+@dirrm lib/gtk-2.0/%%GTK_VERSION%%/filesystems
 @dirrm include/libgnomeui-2.0/libgnomeui
 @dirrm include/libgnomeui-2.0
-@dirrm lib/gtk-2.0/%%GTK_VERSION%%/filesystems

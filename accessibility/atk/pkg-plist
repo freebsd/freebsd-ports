@@ -29,9 +29,38 @@ lib/libatk-1.0.la
 lib/libatk-1.0.so
 lib/libatk-1.0.so.0
 libdata/pkgconfig/atk.pc
+%%DOCSDIR%%/AtkAction.html
+%%DOCSDIR%%/AtkComponent.html
+%%DOCSDIR%%/AtkDocument.html
+%%DOCSDIR%%/AtkEditableText.html
+%%DOCSDIR%%/AtkGObjectAccessible.html
+%%DOCSDIR%%/AtkHyperlink.html
+%%DOCSDIR%%/AtkHypertext.html
+%%DOCSDIR%%/AtkImage.html
+%%DOCSDIR%%/AtkNoOpObject.html
+%%DOCSDIR%%/AtkNoOpObjectFactory.html
+%%DOCSDIR%%/AtkObject.html
+%%DOCSDIR%%/AtkObjectFactory.html
+%%DOCSDIR%%/AtkRegistry.html
+%%DOCSDIR%%/AtkRelation.html
+%%DOCSDIR%%/AtkRelationSet.html
+%%DOCSDIR%%/AtkSelection.html
+%%DOCSDIR%%/AtkStreamableContent.html
+%%DOCSDIR%%/AtkTable.html
+%%DOCSDIR%%/AtkText.html
+%%DOCSDIR%%/AtkUtil.html
+%%DOCSDIR%%/AtkValue.html
+%%DOCSDIR%%/atk-AtkState.html
+%%DOCSDIR%%/atk-AtkStateSet.html
+%%DOCSDIR%%/atk.devhelp
+%%DOCSDIR%%/atk.devhelp2
+%%DOCSDIR%%/atk.html
 %%DOCSDIR%%/home.png
+%%DOCSDIR%%/index.html
+%%DOCSDIR%%/index.sgml
 %%DOCSDIR%%/left.png
 %%DOCSDIR%%/right.png
+%%DOCSDIR%%/style.css
 %%DOCSDIR%%/up.png
 share/locale/af/LC_MESSAGES/atk10.mo
 share/locale/am/LC_MESSAGES/atk10.mo
@@ -68,6 +97,7 @@ share/locale/id/LC_MESSAGES/atk10.mo
 share/locale/is/LC_MESSAGES/atk10.mo
 share/locale/it/LC_MESSAGES/atk10.mo
 share/locale/ja/LC_MESSAGES/atk10.mo
+share/locale/ka/LC_MESSAGES/atk10.mo
 share/locale/kn/LC_MESSAGES/atk10.mo
 share/locale/ko/LC_MESSAGES/atk10.mo
 share/locale/li/LC_MESSAGES/atk10.mo
@@ -83,6 +113,7 @@ share/locale/ne/LC_MESSAGES/atk10.mo
 share/locale/nl/LC_MESSAGES/atk10.mo
 share/locale/nn/LC_MESSAGES/atk10.mo
 share/locale/no/LC_MESSAGES/atk10.mo
+share/locale/or/LC_MESSAGES/atk10.mo
 share/locale/pa/LC_MESSAGES/atk10.mo
 share/locale/pl/LC_MESSAGES/atk10.mo
 share/locale/pt/LC_MESSAGES/atk10.mo
@@ -101,6 +132,7 @@ share/locale/ta/LC_MESSAGES/atk10.mo
 share/locale/th/LC_MESSAGES/atk10.mo
 share/locale/tk/LC_MESSAGES/atk10.mo
 share/locale/tr/LC_MESSAGES/atk10.mo
+share/locale/tt/LC_MESSAGES/atk10.mo
 share/locale/ug/LC_MESSAGES/atk10.mo
 share/locale/uk/LC_MESSAGES/atk10.mo
 share/locale/vi/LC_MESSAGES/atk10.mo
@@ -108,20 +140,68 @@ share/locale/wa/LC_MESSAGES/atk10.mo
 share/locale/xh/LC_MESSAGES/atk10.mo
 share/locale/yi/LC_MESSAGES/atk10.mo
 share/locale/zh_CN/LC_MESSAGES/atk10.mo
+share/locale/zh_HK/LC_MESSAGES/atk10.mo
 share/locale/zh_TW/LC_MESSAGES/atk10.mo
-@dirrm %%DOCSDIR%%
-@exec mkdir -p %D/%%DOCSDIR%%
-@dirrmtry share/locale/as/LC_MESSAGES
-@dirrmtry share/locale/as
-@dirrmtry share/locale/gl/LC_MESSAGES
-@dirrmtry share/locale/gl
-@dirrmtry share/locale/li/LC_MESSAGES
-@dirrmtry share/locale/li
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
-@dirrmtry share/locale/tk/LC_MESSAGES
-@dirrmtry share/locale/tk
+@dirrmtry share/locale/zh_TW/LC_MESSAGES
+@dirrmtry share/locale/zh_TW
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/zh_CN/LC_MESSAGES
+@dirrmtry share/locale/zh_CN
+@dirrmtry share/locale/yi/LC_MESSAGES
+@dirrmtry share/locale/yi
+@dirrmtry share/locale/xh/LC_MESSAGES
+@dirrmtry share/locale/xh
+@dirrmtry share/locale/uk/LC_MESSAGES
+@dirrmtry share/locale/uk
 @dirrmtry share/locale/ug/LC_MESSAGES
 @dirrmtry share/locale/ug
+@dirrmtry share/locale/tt/LC_MESSAGES
+@dirrmtry share/locale/tt
+@dirrmtry share/locale/tk/LC_MESSAGES
+@dirrmtry share/locale/tk
+@dirrmtry share/locale/sr@ije/LC_MESSAGES
+@dirrmtry share/locale/sr@ije
+@dirrmtry share/locale/sr/LC_MESSAGES
+@dirrmtry share/locale/sr
+@dirrmtry share/locale/sl/LC_MESSAGES
+@dirrmtry share/locale/sl
+@dirrmtry share/locale/sk/LC_MESSAGES
+@dirrmtry share/locale/sk
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
+@dirrmtry share/locale/ro/LC_MESSAGES
+@dirrmtry share/locale/ro
+@dirrmtry share/locale/pt/LC_MESSAGES
+@dirrmtry share/locale/pt
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/no/LC_MESSAGES
+@dirrmtry share/locale/no
+@dirrmtry share/locale/nn/LC_MESSAGES
+@dirrmtry share/locale/nn
+@dirrmtry share/locale/ne/LC_MESSAGES
+@dirrmtry share/locale/ne
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
+@dirrmtry share/locale/li/LC_MESSAGES
+@dirrmtry share/locale/li
+@dirrmtry share/locale/ko/LC_MESSAGES
+@dirrmtry share/locale/ko
+@dirrmtry share/locale/gl/LC_MESSAGES
+@dirrmtry share/locale/gl
+@dirrmtry share/locale/fi/LC_MESSAGES
+@dirrmtry share/locale/fi
+@dirrmtry share/locale/el/LC_MESSAGES
+@dirrmtry share/locale/el
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs
+@dirrmtry share/locale/ca/LC_MESSAGES
+@dirrmtry share/locale/ca
+@dirrmtry share/locale/be/LC_MESSAGES
+@dirrmtry share/locale/be
+@dirrmtry share/locale/as/LC_MESSAGES
+@dirrmtry share/locale/as
+@dirrm %%DOCSDIR%%
 @dirrm include/atk-1.0/atk
 @dirrm include/atk-1.0

@@ -217,6 +217,7 @@ share/locale/is/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/it/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/ja/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/ko/LC_MESSAGES/libbonobo-2.0.mo
+share/locale/ku/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/li/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/lt/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/lv/LC_MESSAGES/libbonobo-2.0.mo
@@ -264,7 +265,9 @@ share/locale/zh_TW/LC_MESSAGES/libbonobo-2.0.mo
 @dirrm include/bonobo-activation-2.0/bonobo-activation
 @dirrm include/bonobo-activation-2.0
 @dirrm etc/bonobo-activation
-@unexec /bin/rmdir %D/lib/bonobo/monikers 2>/dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/lib/bonobo 2>/dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/locale/li/LC_MESSAGES 2>/dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/locale/li 2>/dev/null || /usr/bin/true
+@dirrmtry lib/bonobo/monikers
+@dirrmtry lib/bonobo
+@dirrmtry share/locale/li/LC_MESSAGES
+@dirrmtry share/locale/li
+@dirrmtry share/locale/ku/LC_MESSAGES
+@dirrmtry share/locale/ku

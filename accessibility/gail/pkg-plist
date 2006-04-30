@@ -80,18 +80,18 @@ share/locale/ta/LC_MESSAGES/gail.mo
 share/locale/th/LC_MESSAGES/gail.mo
 share/locale/tk/LC_MESSAGES/gail.mo
 share/locale/tr/LC_MESSAGES/gail.mo
-share/locale/vi/LC_MESSAGES/gail.mo
 share/locale/uk/LC_MESSAGES/gail.mo
+share/locale/vi/LC_MESSAGES/gail.mo
 share/locale/xh/LC_MESSAGES/gail.mo
 share/locale/zh_CN/LC_MESSAGES/gail.mo
 share/locale/zh_HK/LC_MESSAGES/gail.mo
 share/locale/zh_TW/LC_MESSAGES/gail.mo
-@dirrm include/gail-1.0/libgail-util
-@dirrm include/gail-1.0
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as
-@dirrm share/doc//gail-libgail-util
+@dirrm share/doc/gail-libgail-util
+@dirrm include/gail-1.0/libgail-util
+@dirrm include/gail-1.0

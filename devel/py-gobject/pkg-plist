@@ -1,4 +1,7 @@
 include/pygtk-2.0/pygobject.h
+%%PYTHON_SITELIBDIR%%/gtk-2.0/dsextras.py
+%%PYTHON_SITELIBDIR%%/gtk-2.0/dsextras.pyc
+%%PYTHON_SITELIBDIR%%/gtk-2.0/dsextras.pyo
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gobject.la
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gobject.so
 %%PYTHON_SITELIBDIR%%/pygtk.pth

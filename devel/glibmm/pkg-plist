@@ -133,7 +133,6 @@ share/aclocal/glibmm_check_perl.m4
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/classGlib_1_1Cond-members.html
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/classGlib_1_1Cond.html
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/classGlib_1_1Container__Helpers_1_1ArrayHandleIterator.html
-%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/classGlib_1_1Container__Helpers_1_1ListHandleIterator-members.html
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/classGlib_1_1Container__Helpers_1_1ListHandleIterator.html
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/classGlib_1_1Container__Helpers_1_1SListHandleIterator.html
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/classGlib_1_1ConvertError-members.html
@@ -427,6 +426,7 @@ share/aclocal/glibmm_check_perl.m4
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/convert_8h.html
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/date_8h.html
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/debug_8h.html
+%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/deprecated.html
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/dispatcher_8h.html
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/doxygen.css
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/doxygen.png

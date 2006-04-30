@@ -1,20 +1,20 @@
---- moz-plugin/Makefile.in.orig	Fri Sep  9 23:59:09 2005
-+++ moz-plugin/Makefile.in	Sat Sep 10 00:01:22 2005
-@@ -204,7 +204,7 @@
+--- moz-plugin/Makefile.in.orig	Sat Apr  1 15:25:20 2006
++++ moz-plugin/Makefile.in	Sat Apr  1 15:27:58 2006
+@@ -246,7 +246,7 @@ sbindir = @sbindir@
  sharedstatedir = @sharedstatedir@
  sysconfdir = @sysconfdir@
  target_alias = @target_alias@
 -plugindir = $(libdir)/mozilla/plugins/
 +plugindir = $(libdir)/browser_plugins/
  @WITH_MOZILLA_FALSE@plugin_LTLIBRARIES = 
- 
  @WITH_MOZILLA_TRUE@plugin_LTLIBRARIES = libmozsvgdec.la
-@@ -253,7 +253,7 @@
- pluginLTLIBRARIES_INSTALL = $(INSTALL)
+ INCLUDES = $(MOZILLA_CFLAGS) -DBINDIR=\"$(bindir)/\" $(GLIB_CFLAGS) $(GDK_X11_CFLAGS)
+@@ -289,7 +289,7 @@ $(ACLOCAL_M4): @MAINTAINER_MODE_TRUE@ $(
+ 	cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh
  install-pluginLTLIBRARIES: $(plugin_LTLIBRARIES)
  	@$(NORMAL_INSTALL)
--	$(mkinstalldirs) $(DESTDIR)$(plugindir)
-+@WITH_MOZILLA_TRUE@	$(mkinstalldirs) $(DESTDIR)$(plugindir)
+-	test -z "$(plugindir)" || $(mkdir_p) "$(DESTDIR)$(plugindir)"
++@WITH_MOZILLA_TRUE@	test -z "$(plugindir)" || $(mkdir_p) "$(DESTDIR)$(plugindir)"
  	@list='$(plugin_LTLIBRARIES)'; for p in $$list; do \
  	  if test -f $$p; then \
- 	    f="`echo $$p | sed -e 's|^.*/||'`"; \
+ 	    f=$(am__strip_dir) \

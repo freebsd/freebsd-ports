@@ -1,6 +1,5 @@
 bin/evolution
 bin/evolution-%%VERSION%%
-etc/rc.d/000.evolibs.sh
 include/evolution-%%VERSION%%/a11y/e-table/gal-a11y-e-cell-popup.h
 include/evolution-%%VERSION%%/a11y/e-table/gal-a11y-e-cell-registry.h
 include/evolution-%%VERSION%%/a11y/e-table/gal-a11y-e-cell-text.h
@@ -27,12 +26,9 @@ include/evolution-%%VERSION%%/addressbook/gui/widgets/eab-popup.h
 include/evolution-%%VERSION%%/calendar/gui/e-cal-config.h
 include/evolution-%%VERSION%%/e-conduit/e-pilot-map.h
 include/evolution-%%VERSION%%/e-conduit/e-pilot-util.h
-include/evolution-%%VERSION%%/e-util/e-account-list.h
-include/evolution-%%VERSION%%/e-util/e-account.h
 include/evolution-%%VERSION%%/e-util/e-bconf-map.h
 include/evolution-%%VERSION%%/e-util/e-bit-array.h
 include/evolution-%%VERSION%%/e-util/e-categories-config.h
-include/evolution-%%VERSION%%/e-util/e-component-listener.h
 include/evolution-%%VERSION%%/e-util/e-config-listener.h
 include/evolution-%%VERSION%%/e-util/e-config.h
 include/evolution-%%VERSION%%/e-util/e-corba-utils.h
@@ -47,11 +43,7 @@ include/evolution-%%VERSION%%/e-util/e-gtk-utils.h
 include/evolution-%%VERSION%%/e-util/e-gui-utils.h
 include/evolution-%%VERSION%%/e-util/e-html-utils.h
 include/evolution-%%VERSION%%/e-util/e-icon-factory.h
-include/evolution-%%VERSION%%/e-util/e-iconv.h
 include/evolution-%%VERSION%%/e-util/e-import.h
-include/evolution-%%VERSION%%/e-util/e-iterator.h
-include/evolution-%%VERSION%%/e-util/e-list-iterator.h
-include/evolution-%%VERSION%%/e-util/e-list.h
 include/evolution-%%VERSION%%/e-util/e-menu.h
 include/evolution-%%VERSION%%/e-util/e-mktemp.h
 include/evolution-%%VERSION%%/e-util/e-plugin.h
@@ -66,12 +58,9 @@ include/evolution-%%VERSION%%/e-util/e-sorter.h
 include/evolution-%%VERSION%%/e-util/e-text-event-processor-emacs-like.h
 include/evolution-%%VERSION%%/e-util/e-text-event-processor-types.h
 include/evolution-%%VERSION%%/e-util/e-text-event-processor.h
-include/evolution-%%VERSION%%/e-util/e-time-utils.h
-include/evolution-%%VERSION%%/e-util/e-uid.h
 include/evolution-%%VERSION%%/e-util/e-util-marshal.h
 include/evolution-%%VERSION%%/e-util/e-util.h
 include/evolution-%%VERSION%%/e-util/e-xml-utils.h
-include/evolution-%%VERSION%%/e-util/md5-utils.h
 include/evolution-%%VERSION%%/mail/Evolution-Mail.h
 include/evolution-%%VERSION%%/mail/em-composer-utils.h
 include/evolution-%%VERSION%%/mail/em-config.h
@@ -162,6 +151,7 @@ include/evolution-%%VERSION%%/misc/e-url-entry.h
 include/evolution-%%VERSION%%/misc/gal-combo-box.h
 include/evolution-%%VERSION%%/misc/gal-combo-text.h
 include/evolution-%%VERSION%%/shell/Evolution.h
+include/evolution-%%VERSION%%/shell/e-component-view.h
 include/evolution-%%VERSION%%/shell/e-shell-utils.h
 include/evolution-%%VERSION%%/shell/e-user-creatable-items-handler.h
 include/evolution-%%VERSION%%/shell/es-event.h
@@ -324,8 +314,8 @@ lib/evolution/%%VERSION%%/plugins/libmail-account-disable.la
 lib/evolution/%%VERSION%%/plugins/libmail-account-disable.so
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-addressbook-file.la
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-addressbook-file.so
-lib/evolution/%%VERSION%%/plugins/liborg-gnome-audio-inline.la
-lib/evolution/%%VERSION%%/plugins/liborg-gnome-audio-inline.so
+%%GSTREAMER%%lib/evolution/%%VERSION%%/plugins/liborg-gnome-audio-inline.la
+%%GSTREAMER%%lib/evolution/%%VERSION%%/plugins/liborg-gnome-audio-inline.so
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-calendar-file.la
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-calendar-file.so
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-calendar-http.la
@@ -340,6 +330,12 @@ lib/evolution/%%VERSION%%/plugins/liborg-gnome-default-source.la
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-default-source.so
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-evolution-bbdb.la
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-evolution-bbdb.so
+lib/evolution/%%VERSION%%/plugins/liborg-gnome-evolution-caldav.la
+lib/evolution/%%VERSION%%/plugins/liborg-gnome-evolution-caldav.so
+lib/evolution/%%VERSION%%/plugins/liborg-gnome-evolution-hula-account-setup.la
+lib/evolution/%%VERSION%%/plugins/liborg-gnome-evolution-hula-account-setup.so
+lib/evolution/%%VERSION%%/plugins/liborg-gnome-evolution-mail-attachments-import-ics.la
+lib/evolution/%%VERSION%%/plugins/liborg-gnome-evolution-mail-attachments-import-ics.so
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-evolution-startup-wizard.la
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-evolution-startup-wizard.so
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-exchange-operations.la
@@ -364,6 +360,8 @@ lib/evolution/%%VERSION%%/plugins/liborg-gnome-plugin-manager.la
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-plugin-manager.so
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-print-message.la
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-print-message.so
+lib/evolution/%%VERSION%%/plugins/liborg-gnome-publish-calendar.la
+lib/evolution/%%VERSION%%/plugins/liborg-gnome-publish-calendar.so
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-sa-junk-plugin.la
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-sa-junk-plugin.so
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-save-calendar.la
@@ -373,7 +371,7 @@ lib/evolution/%%VERSION%%/plugins/liborg-gnome-select-one-source.so
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-subject-thread.la
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-subject-thread.so
 lib/evolution/%%VERSION%%/plugins/org-gnome-addressbook-file.eplug
-lib/evolution/%%VERSION%%/plugins/org-gnome-audio-inline.eplug
+%%GSTREAMER%%lib/evolution/%%VERSION%%/plugins/org-gnome-audio-inline.eplug
 lib/evolution/%%VERSION%%/plugins/org-gnome-calendar-file.eplug
 lib/evolution/%%VERSION%%/plugins/org-gnome-calendar-http.eplug
 lib/evolution/%%VERSION%%/plugins/org-gnome-calendar-weather.eplug
@@ -382,6 +380,9 @@ lib/evolution/%%VERSION%%/plugins/org-gnome-copy-tool.eplug
 lib/evolution/%%VERSION%%/plugins/org-gnome-default-mailer.eplug
 lib/evolution/%%VERSION%%/plugins/org-gnome-default-source.eplug
 lib/evolution/%%VERSION%%/plugins/org-gnome-evolution-bbdb.eplug
+lib/evolution/%%VERSION%%/plugins/org-gnome-evolution-caldav.eplug
+lib/evolution/%%VERSION%%/plugins/org-gnome-evolution-hula-account-setup.eplug
+lib/evolution/%%VERSION%%/plugins/org-gnome-evolution-mail-attachments-import-ics.eplug
 lib/evolution/%%VERSION%%/plugins/org-gnome-evolution-startup-wizard.eplug
 lib/evolution/%%VERSION%%/plugins/org-gnome-exchange-ab-subscription.xml
 lib/evolution/%%VERSION%%/plugins/org-gnome-exchange-cal-subscription.xml
@@ -394,6 +395,7 @@ lib/evolution/%%VERSION%%/plugins/org-gnome-gw-account-setup.eplug
 lib/evolution/%%VERSION%%/plugins/org-gnome-itip-formatter.eplug
 lib/evolution/%%VERSION%%/plugins/org-gnome-mail-account-disable.eplug
 lib/evolution/%%VERSION%%/plugins/org-gnome-mail-to-task.eplug
+lib/evolution/%%VERSION%%/plugins/org-gnome-mail-to-task.xml
 lib/evolution/%%VERSION%%/plugins/org-gnome-mailing-list-actions.eplug
 lib/evolution/%%VERSION%%/plugins/org-gnome-mailing-list-actions.xml
 lib/evolution/%%VERSION%%/plugins/org-gnome-mark-all-read.eplug
@@ -403,10 +405,13 @@ lib/evolution/%%VERSION%%/plugins/org-gnome-plugin-manager.eplug
 lib/evolution/%%VERSION%%/plugins/org-gnome-plugin-manager.xml
 lib/evolution/%%VERSION%%/plugins/org-gnome-print-message.eplug
 lib/evolution/%%VERSION%%/plugins/org-gnome-print-message.xml
+lib/evolution/%%VERSION%%/plugins/org-gnome-publish-calendar.eplug
+lib/evolution/%%VERSION%%/plugins/org-gnome-publish-calendar.xml
 lib/evolution/%%VERSION%%/plugins/org-gnome-sa-junk-plugin.eplug
 lib/evolution/%%VERSION%%/plugins/org-gnome-save-calendar.eplug
 lib/evolution/%%VERSION%%/plugins/org-gnome-select-one-source.eplug
 lib/evolution/%%VERSION%%/plugins/org-gnome-subject-thread.eplug
+lib/evolution/%%VERSION%%/plugins/publish-calendar.glade
 libdata/bonobo/servers/GNOME_Evolution_Addressbook_%%VERSION%%.server
 libdata/bonobo/servers/GNOME_Evolution_Calendar_%%VERSION%%.server
 libdata/bonobo/servers/GNOME_Evolution_Calendar_AlarmNotify_%%VERSION%%.server
@@ -419,12 +424,16 @@ libexec/evolution/%%VERSION%%/evolution-addressbook-clean
 libexec/evolution/%%VERSION%%/evolution-addressbook-export
 libexec/evolution/%%VERSION%%/evolution-alarm-notify
 libexec/evolution/%%VERSION%%/killev
-share/gnome/applications/evolution-%%VERSION%%.desktop
+share/gnome/applications/evolution.desktop
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 share/gnome/evolution/%%VERSION%%/addresstypes.xml
 share/gnome/evolution/%%VERSION%%/default/C/mail/local/Inbox
 share/gnome/evolution/%%VERSION%%/default/de/mail/local/Inbox
+share/gnome/evolution/%%VERSION%%/default/fi/mail/local/Inbox
+share/gnome/evolution/%%VERSION%%/default/fr/mail/local/Inbox
 share/gnome/evolution/%%VERSION%%/default/ja/mail/local/Inbox
+share/gnome/evolution/%%VERSION%%/default/lt/mail/local/Inbox
+share/gnome/evolution/%%VERSION%%/default/mk/mail/local/Inbox
 share/gnome/evolution/%%VERSION%%/default/nl/mail/local/Inbox
 share/gnome/evolution/%%VERSION%%/default/pt/mail/local/Inbox
 share/gnome/evolution/%%VERSION%%/default/zh_CN/mail/local/Inbox
@@ -450,6 +459,7 @@ share/gnome/evolution/%%VERSION%%/etspec/e-cal-list-view.etspec
 share/gnome/evolution/%%VERSION%%/etspec/e-calendar-table.etspec
 share/gnome/evolution/%%VERSION%%/etspec/e-contact-list-editor.etspec
 share/gnome/evolution/%%VERSION%%/etspec/e-meeting-time-sel.etspec
+share/gnome/evolution/%%VERSION%%/etspec/e-memo-table.etspec
 share/gnome/evolution/%%VERSION%%/etspec/message-list.etspec
 share/gnome/evolution/%%VERSION%%/filtertypes.xml
 share/gnome/evolution/%%VERSION%%/glade/alarm-dialog.glade
@@ -475,6 +485,7 @@ share/gnome/evolution/%%VERSION%%/glade/event-page.glade
 share/gnome/evolution/%%VERSION%%/glade/exchange-change-password.glade
 share/gnome/evolution/%%VERSION%%/glade/exchange-delegates.glade
 share/gnome/evolution/%%VERSION%%/glade/exchange-folder-tree.glade
+share/gnome/evolution/%%VERSION%%/glade/exchange-passwd-expiry.glade
 share/gnome/evolution/%%VERSION%%/glade/exchange-permissions-dialog.glade
 share/gnome/evolution/%%VERSION%%/glade/filter.glade
 share/gnome/evolution/%%VERSION%%/glade/fulladdr.glade
@@ -490,6 +501,7 @@ share/gnome/evolution/%%VERSION%%/glade/junk-settings.glade
 share/gnome/evolution/%%VERSION%%/glade/ldap-config.glade
 share/gnome/evolution/%%VERSION%%/glade/mail-config.glade
 share/gnome/evolution/%%VERSION%%/glade/mail-dialogs.glade
+share/gnome/evolution/%%VERSION%%/glade/memo-page.glade
 share/gnome/evolution/%%VERSION%%/glade/meeting-page.glade
 share/gnome/evolution/%%VERSION%%/glade/properties.glade
 share/gnome/evolution/%%VERSION%%/glade/proxy-add-dialog.glade
@@ -500,7 +512,6 @@ share/gnome/evolution/%%VERSION%%/glade/schedule-page.glade
 share/gnome/evolution/%%VERSION%%/glade/smime-ui.glade
 share/gnome/evolution/%%VERSION%%/glade/task-details-page.glade
 share/gnome/evolution/%%VERSION%%/glade/task-page.glade
-share/gnome/evolution/%%VERSION%%/glade/url-editor-dialog.glade
 share/gnome/evolution/%%VERSION%%/help/quickref/C/quickref.pdf
 share/gnome/evolution/%%VERSION%%/images/about-box.png
 share/gnome/evolution/%%VERSION%%/images/bcg.png
@@ -508,19 +519,24 @@ share/gnome/evolution/%%VERSION%%/images/evolution-contacts-mini.png
 share/gnome/evolution/%%VERSION%%/images/monkey-16.png
 share/gnome/evolution/%%VERSION%%/images/offline.png
 share/gnome/evolution/%%VERSION%%/images/online.png
+share/gnome/evolution/%%VERSION%%/images/query-free-busy.png
 share/gnome/evolution/%%VERSION%%/images/world_map-960.png
 share/gnome/evolution/%%VERSION%%/searchtypes.xml
 share/gnome/evolution/%%VERSION%%/ui/evolution-addressbook.xml
 share/gnome/evolution/%%VERSION%%/ui/evolution-calendar.xml
 share/gnome/evolution/%%VERSION%%/ui/evolution-composer-entries.xml
-share/gnome/evolution/%%VERSION%%/ui/evolution-executive-summary.xml
+share/gnome/evolution/%%VERSION%%/ui/evolution-editor.xml
+share/gnome/evolution/%%VERSION%%/ui/evolution-event-editor.xml
 share/gnome/evolution/%%VERSION%%/ui/evolution-mail-global.xml
 share/gnome/evolution/%%VERSION%%/ui/evolution-mail-list.xml
 share/gnome/evolution/%%VERSION%%/ui/evolution-mail-message.xml
 share/gnome/evolution/%%VERSION%%/ui/evolution-mail-messagedisplay.xml
+share/gnome/evolution/%%VERSION%%/ui/evolution-memo-editor.xml
+share/gnome/evolution/%%VERSION%%/ui/evolution-memos.xml
 share/gnome/evolution/%%VERSION%%/ui/evolution-message-composer.xml
 share/gnome/evolution/%%VERSION%%/ui/evolution-signature-editor.xml
 share/gnome/evolution/%%VERSION%%/ui/evolution-subscribe.xml
+share/gnome/evolution/%%VERSION%%/ui/evolution-task-editor.xml
 share/gnome/evolution/%%VERSION%%/ui/evolution-tasks.xml
 share/gnome/evolution/%%VERSION%%/ui/evolution.xml
 share/gnome/evolution/%%VERSION%%/vfoldertypes.xml
@@ -537,6 +553,8 @@ share/gnome/evolution/%%VERSION%%/views/mail/By_Status.galview
 share/gnome/evolution/%%VERSION%%/views/mail/By_Subject.galview
 share/gnome/evolution/%%VERSION%%/views/mail/Messages.galview
 share/gnome/evolution/%%VERSION%%/views/mail/galview.xml
+share/gnome/evolution/%%VERSION%%/views/memos/Memos.galview
+share/gnome/evolution/%%VERSION%%/views/memos/galview.xml
 share/gnome/evolution/%%VERSION%%/views/tasks/Tasks.galview
 share/gnome/evolution/%%VERSION%%/views/tasks/With_DueDate.galview
 share/gnome/evolution/%%VERSION%%/views/tasks/With_Status.galview
@@ -552,6 +570,7 @@ share/gnome/evolution/%%VERSION%%/weather/category_weather_tstorm_16.png
 %%PILOT:%%share/gnome/gnome-pilot/conduits/e-calendar-%%VERSION%%.conduit
 %%PILOT:%%share/gnome/gnome-pilot/conduits/e-todo-%%VERSION%%.conduit
 share/gnome/help/evolution-%%VERSION%%/C/evolution-%%VERSION%%.xml
+share/gnome/help/evolution-%%VERSION%%/C/figures/Screenshot-Free-Busy.png
 share/gnome/help/evolution-%%VERSION%%/C/figures/calendar.png
 share/gnome/help/evolution-%%VERSION%%/C/figures/config-cal.png
 share/gnome/help/evolution-%%VERSION%%/C/figures/config-mail.png
@@ -606,8 +625,8 @@ share/gnome/idl/evolution-%%VERSION%%/Evolution-Mail.idl
 share/gnome/idl/evolution-%%VERSION%%/Evolution-Shell.idl
 share/gnome/idl/evolution-%%VERSION%%/Evolution.idl
 share/gnome/idl/evolution-%%VERSION%%/evolution-calendar.idl
-share/gnome/mime-info/evolution-%%VERSION%%.keys
-share/gnome/mime-info/evolution-%%VERSION%%.mime
+share/gnome/mime-info/evolution.keys
+share/gnome/mime-info/evolution.mime
 share/gnome/omf/evolution/evolution-%%VERSION%%-C.omf
 share/gnome/pixmaps/evolution-%%VERSION%%.png
 share/locale/am/LC_MESSAGES/evolution-%%VERSION%%.mo
@@ -616,12 +635,14 @@ share/locale/az/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/be/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/bg/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/bn/LC_MESSAGES/evolution-%%VERSION%%.mo
+share/locale/br/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/bs/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/ca/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/cs/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/cy/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/da/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/de/LC_MESSAGES/evolution-%%VERSION%%.mo
+share/locale/dz/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/el/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/en_AU/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/en_CA/LC_MESSAGES/evolution-%%VERSION%%.mo
@@ -636,15 +657,19 @@ share/locale/ga/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/gl/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/gu/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/he/LC_MESSAGES/evolution-%%VERSION%%.mo
+share/locale/hi/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/hr/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/hu/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/id/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/is/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/it/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/ja/LC_MESSAGES/evolution-%%VERSION%%.mo
+share/locale/ka/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/ko/LC_MESSAGES/evolution-%%VERSION%%.mo
+share/locale/ku/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/lt/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/lv/LC_MESSAGES/evolution-%%VERSION%%.mo
+share/locale/mk/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/mn/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/ms/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/nb/LC_MESSAGES/evolution-%%VERSION%%.mo
@@ -665,6 +690,7 @@ share/locale/sq/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/sr/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/sr@Latn/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/sv/LC_MESSAGES/evolution-%%VERSION%%.mo
+share/locale/ta/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/te/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/th/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/tr/LC_MESSAGES/evolution-%%VERSION%%.mo
@@ -673,7 +699,14 @@ share/locale/vi/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/wa/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/xh/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/zh_CN/LC_MESSAGES/evolution-%%VERSION%%.mo
+share/locale/zh_HK/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/zh_TW/LC_MESSAGES/evolution-%%VERSION%%.mo
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/ku/LC_MESSAGES
+@dirrmtry share/locale/ku
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
 @dirrm share/gnome/omf/evolution
 @dirrm share/gnome/idl/evolution-%%VERSION%%
 @dirrm share/gnome/help/evolution-%%VERSION%%/C/figures
@@ -681,6 +714,7 @@ share/locale/zh_TW/LC_MESSAGES/evolution-%%VERSION%%.mo
 @dirrm share/gnome/help/evolution-%%VERSION%%
 @dirrm share/gnome/evolution/%%VERSION%%/weather
 @dirrm share/gnome/evolution/%%VERSION%%/views/tasks
+@dirrm share/gnome/evolution/%%VERSION%%/views/memos
 @dirrm share/gnome/evolution/%%VERSION%%/views/mail
 @dirrm share/gnome/evolution/%%VERSION%%/views/calendar
 @dirrm share/gnome/evolution/%%VERSION%%/views/addressbook
@@ -703,9 +737,21 @@ share/locale/zh_TW/LC_MESSAGES/evolution-%%VERSION%%.mo
 @dirrm share/gnome/evolution/%%VERSION%%/default/nl/mail/local
 @dirrm share/gnome/evolution/%%VERSION%%/default/nl/mail
 @dirrm share/gnome/evolution/%%VERSION%%/default/nl
+@dirrm share/gnome/evolution/%%VERSION%%/default/mk/mail/local
+@dirrm share/gnome/evolution/%%VERSION%%/default/mk/mail
+@dirrm share/gnome/evolution/%%VERSION%%/default/mk
+@dirrm share/gnome/evolution/%%VERSION%%/default/lt/mail/local
+@dirrm share/gnome/evolution/%%VERSION%%/default/lt/mail
+@dirrm share/gnome/evolution/%%VERSION%%/default/lt
 @dirrm share/gnome/evolution/%%VERSION%%/default/ja/mail/local
 @dirrm share/gnome/evolution/%%VERSION%%/default/ja/mail
 @dirrm share/gnome/evolution/%%VERSION%%/default/ja
+@dirrm share/gnome/evolution/%%VERSION%%/default/fr/mail/local
+@dirrm share/gnome/evolution/%%VERSION%%/default/fr/mail
+@dirrm share/gnome/evolution/%%VERSION%%/default/fr
+@dirrm share/gnome/evolution/%%VERSION%%/default/fi/mail/local
+@dirrm share/gnome/evolution/%%VERSION%%/default/fi/mail
+@dirrm share/gnome/evolution/%%VERSION%%/default/fi
 @dirrm share/gnome/evolution/%%VERSION%%/default/de/mail/local
 @dirrm share/gnome/evolution/%%VERSION%%/default/de/mail
 @dirrm share/gnome/evolution/%%VERSION%%/default/de

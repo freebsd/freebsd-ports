@@ -1,20 +1,11 @@
---- src/Makefile.in.orig	Tue Aug 23 20:23:29 2005
-+++ src/Makefile.in	Tue Aug 23 20:23:57 2005
-@@ -63,7 +63,7 @@
- 	sj-about.$(OBJEXT) sj-extracting.$(OBJEXT) \
- 	bacon-volume.$(OBJEXT) $(am__objects_1) $(am__objects_2)
+--- src/Makefile.in.orig	Mon Apr  3 23:40:45 2006
++++ src/Makefile.in	Mon Apr  3 23:40:45 2006
+@@ -77,7 +77,7 @@ am_sound_juicer_OBJECTS = dummy.$(OBJEXT
+ 	gconf-bridge.$(OBJEXT) bacon-volume.$(OBJEXT) $(am__objects_2) \
+ 	$(am__objects_3) $(am__objects_4)
  sound_juicer_OBJECTS = $(am_sound_juicer_OBJECTS)
 -sound_juicer_LDADD = $(LDADD)
 +sound_juicer_LDADD = $(LDADD) -lcam
  DEFAULT_INCLUDES = -I. -I$(srcdir) -I.
  depcomp = $(SHELL) $(top_srcdir)/depcomp
  am__depfiles_maybe = depfiles
-@@ -257,7 +257,7 @@
- target_alias = @target_alias@
- 
- # General compiler flags
--AM_CFLAGS = -Wall -export-dynamic -W -Wno-unused-parameter
-+AM_CFLAGS = -Wall -export-dynamic -W
- 
- # General CPP flags. When I can demand automake 1.8, this can become
- # sound_juicer_CPPFLAGS.

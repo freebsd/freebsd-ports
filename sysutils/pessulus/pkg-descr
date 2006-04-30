@@ -1,0 +1,6 @@
+Pessulus is a lockdown editor for GNOME, written in python. It enables
+administrators to set mandatory settings in GConf. The users can not change
+these settings. Use of pessulus can be useful on computers that are open to
+use by everyone, e.g. in an internet cafe.
+
+WWW: http://www.gnome.org/~vuntz/pessulus/

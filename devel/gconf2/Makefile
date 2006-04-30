@@ -3,15 +3,14 @@
 # Whom:					Ade Lovett <ade@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/devel/gconf2/Makefile,v 1.62 2005/11/03 18:43:02 mezz Exp $
+#   $MCom: ports/devel/gconf2/Makefile,v 1.72 2006/04/13 07:52:32 bland Exp $
 #
 
 PORTNAME=	gconf2
-PORTVERSION=	2.12.1
-PORTREVISION=	1
+PORTVERSION=	2.14.0
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/GConf/2.12
+MASTER_SITE_SUBDIR=	sources/GConf/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 DISTNAME=	GConf-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
@@ -20,6 +19,7 @@ COMMENT=	A configuration database system for GNOME
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_GETTEXT=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehier gnomehack orbit2 gtk20 libxml2 linc ltverhack
 INSTALLS_SHLIB=	yes

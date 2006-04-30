@@ -1,6 +1,6 @@
---- Makefile.in.orig	Fri Aug 19 16:03:13 2005
-+++ Makefile.in	Fri Aug 19 16:03:31 2005
-@@ -146,7 +146,7 @@
+--- Makefile.in.orig	Mon Jan 16 19:14:25 2006
++++ Makefile.in	Mon Jan 16 19:15:36 2006
+@@ -148,7 +148,7 @@
  am__quote = @am__quote@
  gnomelocaledir = @gnomelocaledir@
  install_sh = @install_sh@

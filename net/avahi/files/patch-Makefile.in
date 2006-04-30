@@ -1,5 +1,5 @@
---- Makefile.in.orig	Sun Jan 29 13:36:41 2006
-+++ Makefile.in	Sun Jan 29 13:37:37 2006
+--- Makefile.in.orig	Mon Jan 30 13:05:47 2006
++++ Makefile.in	Mon Jan 30 13:07:36 2006
 @@ -1037,6 +1037,8 @@
  avahi-core.pc: avahi-core.pc.in
  	sed -e 's,@prefix\@,$(prefix),g' \
@@ -9,3 +9,19 @@
  	    -e 's,@PACKAGE_VERSION\@,$(PACKAGE_VERSION),g' $< > $@
  
  @HAVE_DBUS_TRUE@avahi-client.pc: avahi-client.pc.in
+@@ -1047,11 +1049,15 @@
+ @ENABLE_COMPAT_HOWL_TRUE@@HAVE_DBUS_TRUE@avahi-compat-howl.pc: avahi-compat-howl.pc.in
+ @ENABLE_COMPAT_HOWL_TRUE@@HAVE_DBUS_TRUE@	sed -e 's,@prefix\@,$(prefix),g' \
+ @ENABLE_COMPAT_HOWL_TRUE@@HAVE_DBUS_TRUE@	    -e 's,@libdir\@,$(libdir),g' \
++@ENABLE_COMPAT_HOWL_TRUE@@HAVE_DBUS_TRUE@	    -e 's,@PTHREAD_CFLAGS\@,$(PTHREAD_CFLAGS),g' \
++@ENABLE_COMPAT_HOWL_TRUE@@HAVE_DBUS_TRUE@	    -e 's,@PTHREAD_LIBS\@,$(PTHREAD_LIBS),g' \
+ @ENABLE_COMPAT_HOWL_TRUE@@HAVE_DBUS_TRUE@	    -e 's,@HOWL_COMPAT_VERSION\@,$(HOWL_COMPAT_VERSION),g' $< > $@
+ 
+ @ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@avahi-compat-libdns_sd.pc: avahi-compat-libdns_sd.pc.in
+ @ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@	sed -e 's,@prefix\@,$(prefix),g' \
+ @ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@	    -e 's,@libdir\@,$(libdir),g' \
++@ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@	    -e 's,@PTHREAD_CFLAGS\@,$(PTHREAD_CFLAGS),g' \
++@ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@	    -e 's,@PTHREAD_LIBS\@,$(PTHREAD_LIBS),g' \
+ @ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@	    -e 's,@PACKAGE_VERSION\@,$(PACKAGE_VERSION),g' $< > $@
+ 
+ @HAVE_DBUS_TRUE@@HAVE_MONO_TRUE@avahi-sharp.pc: avahi-sharp.pc.in

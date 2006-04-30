@@ -1,0 +1,21 @@
+--- configure.orig	Mon Jan  9 15:02:42 2006
++++ configure	Mon Jan  9 15:04:48 2006
+@@ -21635,11 +21635,17 @@
+ 	TTYNAME_2="/dev/cua/c"
+ 	TTYNAME_3="/dev/cua/d"
+ 	;;
+-    FreeBSD-*)
++    FreeBSD-4*|FreeBSD-5*)
+ 	TTYNAME_0="/dev/cuaa0"
+ 	TTYNAME_1="/dev/cuaa1"
+ 	TTYNAME_2="/dev/cuaa2"
+ 	TTYNAME_3="/dev/cuaa3"
++	;;
++    FreeBSD-*)
++    	TTYNAME_0="/dev/cuad0"
++	TTYNAME_1="/dev/cuad1"
++	TTYNAME_2="/dev/cuaU0"
++	TTYNAME_3="/dev/cuaU1"
+ 	;;
+     *)
+ 	echo "Can't figure out the name of the serial port on this OS"

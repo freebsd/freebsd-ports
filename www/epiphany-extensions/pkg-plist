@@ -1,30 +1,41 @@
-lib/epiphany/%%VERSION%%/extensions/actions.xml
-lib/epiphany/%%VERSION%%/extensions/auto-scroller.xml
-lib/epiphany/%%VERSION%%/extensions/bookmarks-tray.xml
-lib/epiphany/%%VERSION%%/extensions/certificates.xml
-lib/epiphany/%%VERSION%%/extensions/dashboard.xml
-lib/epiphany/%%VERSION%%/extensions/error-viewer.xml
-lib/epiphany/%%VERSION%%/extensions/extensions-manager-ui.xml
-lib/epiphany/%%VERSION%%/extensions/gestures.xml
+lib/epiphany/%%VERSION%%/extensions/actions.ephy-extension
+%%ADBLOCK%%lib/epiphany/%%VERSION%%/extensions/adblock.ephy-extension
+lib/epiphany/%%VERSION%%/extensions/auto-reload.ephy-extension
+lib/epiphany/%%VERSION%%/extensions/auto-scroller.ephy-extension
+lib/epiphany/%%VERSION%%/extensions/certificates.ephy-extension
+%%PYTHON%%lib/epiphany/%%VERSION%%/extensions/console.py
+%%PYTHON%%lib/epiphany/%%VERSION%%/extensions/console.pyc
+%%PYTHON%%lib/epiphany/%%VERSION%%/extensions/console.pyo
+lib/epiphany/%%VERSION%%/extensions/error-viewer.ephy-extension
+lib/epiphany/%%VERSION%%/extensions/extensions-manager-ui.ephy-extension
+%%PYTHON%%lib/epiphany/%%VERSION%%/extensions/favicon.ephy-extension
+%%PYTHON%%lib/epiphany/%%VERSION%%/extensions/favicon.py
+%%PYTHON%%lib/epiphany/%%VERSION%%/extensions/favicon.pyc
+%%PYTHON%%lib/epiphany/%%VERSION%%/extensions/favicon.pyo
+lib/epiphany/%%VERSION%%/extensions/gestures.ephy-extension
+lib/epiphany/%%VERSION%%/extensions/java-console.ephy-extension
 lib/epiphany/%%VERSION%%/extensions/libactionsextension.la
 lib/epiphany/%%VERSION%%/extensions/libactionsextension.so
-lib/epiphany/%%VERSION%%/extensions/libactionsextension.so.0
+%%ADBLOCK%%lib/epiphany/%%VERSION%%/extensions/libadblockextension.la
+%%ADBLOCK%%lib/epiphany/%%VERSION%%/extensions/libadblockextension.so
+lib/epiphany/%%VERSION%%/extensions/libautoreloadextension.la
+lib/epiphany/%%VERSION%%/extensions/libautoreloadextension.so
 lib/epiphany/%%VERSION%%/extensions/libautoscrollerextension.la
 lib/epiphany/%%VERSION%%/extensions/libautoscrollerextension.so
-lib/epiphany/%%VERSION%%/extensions/libbookmarkstrayextension.la
-lib/epiphany/%%VERSION%%/extensions/libbookmarkstrayextension.so
 lib/epiphany/%%VERSION%%/extensions/libcertificatesextension.la
 lib/epiphany/%%VERSION%%/extensions/libcertificatesextension.so
-lib/epiphany/%%VERSION%%/extensions/libdashboardextension.la
-lib/epiphany/%%VERSION%%/extensions/libdashboardextension.so
 lib/epiphany/%%VERSION%%/extensions/liberrorviewerextension.la
 lib/epiphany/%%VERSION%%/extensions/liberrorviewerextension.so
 lib/epiphany/%%VERSION%%/extensions/libextensionsmanageruiextension.la
 lib/epiphany/%%VERSION%%/extensions/libextensionsmanageruiextension.so
 lib/epiphany/%%VERSION%%/extensions/libgesturesextension.la
 lib/epiphany/%%VERSION%%/extensions/libgesturesextension.so
+lib/epiphany/%%VERSION%%/extensions/libjavaconsoleextension.la
+lib/epiphany/%%VERSION%%/extensions/libjavaconsoleextension.so
 lib/epiphany/%%VERSION%%/extensions/libpageinfoextension.la
 lib/epiphany/%%VERSION%%/extensions/libpageinfoextension.so
+lib/epiphany/%%VERSION%%/extensions/libpushscrollerextension.la
+lib/epiphany/%%VERSION%%/extensions/libpushscrollerextension.so
 lib/epiphany/%%VERSION%%/extensions/libselectstylesheetextension.la
 lib/epiphany/%%VERSION%%/extensions/libselectstylesheetextension.so
 lib/epiphany/%%VERSION%%/extensions/libsidebarextension.la
@@ -35,22 +46,46 @@ lib/epiphany/%%VERSION%%/extensions/libtabgroupsextension.la
 lib/epiphany/%%VERSION%%/extensions/libtabgroupsextension.so
 lib/epiphany/%%VERSION%%/extensions/libtabstatesextension.la
 lib/epiphany/%%VERSION%%/extensions/libtabstatesextension.so
-lib/epiphany/%%VERSION%%/extensions/libtabstatesextension.so.0
-lib/epiphany/%%VERSION%%/extensions/page-info.xml
-lib/epiphany/%%VERSION%%/extensions/select-stylesheet.xml
-lib/epiphany/%%VERSION%%/extensions/sidebar.xml
-lib/epiphany/%%VERSION%%/extensions/smart-bookmarks.xml
-lib/epiphany/%%VERSION%%/extensions/tab-groups.xml
-lib/epiphany/%%VERSION%%/extensions/tab-states.xml
+lib/epiphany/%%VERSION%%/extensions/page-info.ephy-extension
+lib/epiphany/%%VERSION%%/extensions/push-scroller.ephy-extension
+%%PYTHON%%lib/epiphany/%%VERSION%%/extensions/python-console.ephy-extension
+lib/epiphany/%%VERSION%%/extensions/select-stylesheet.ephy-extension
+lib/epiphany/%%VERSION%%/extensions/sidebar.ephy-extension
+lib/epiphany/%%VERSION%%/extensions/smart-bookmarks.ephy-extension
+lib/epiphany/%%VERSION%%/extensions/tab-groups.ephy-extension
+lib/epiphany/%%VERSION%%/extensions/tab-states.ephy-extension
+%%ADBLOCK%%share/gnome/epiphany-extensions/adblock-patterns
+%%ADBLOCK%%share/gnome/epiphany-extensions/adblock-statusbar-icon.svg
 share/gnome/epiphany-extensions/ephy-gestures.xml
 share/gnome/epiphany-extensions/glade/action-properties.glade
 share/gnome/epiphany-extensions/glade/actions-editor.glade
 share/gnome/epiphany-extensions/glade/error-viewer.glade
 share/gnome/epiphany-extensions/glade/extensions-manager-ui.glade
 share/gnome/epiphany-extensions/glade/page-info.glade
-share/gnome/epiphany-extensions/xml/ephy-bookmarks-tray-ui.xml
 share/gnome/epiphany-extensions/xml/epiphany-sidebar-ui.xml
 share/gnome/epiphany-extensions/xml/page-info-context-ui.xml
+share/gnome/help/epiphany-extensions/C/epiphany-extensions.xml
+share/gnome/help/epiphany-extensions/C/figures/epi-ext-action-create.png
+share/gnome/help/epiphany-extensions/C/figures/epi-ext-adblocker.png
+share/gnome/help/epiphany-extensions/C/figures/epi-ext-gestures-back.png
+share/gnome/help/epiphany-extensions/C/figures/epi-ext-gestures-close-2.png
+share/gnome/help/epiphany-extensions/C/figures/epi-ext-gestures-close.png
+share/gnome/help/epiphany-extensions/C/figures/epi-ext-gestures-forward.png
+share/gnome/help/epiphany-extensions/C/figures/epi-ext-gestures-fullscreen.png
+share/gnome/help/epiphany-extensions/C/figures/epi-ext-gestures-homepage.png
+share/gnome/help/epiphany-extensions/C/figures/epi-ext-gestures-new-tab.png
+share/gnome/help/epiphany-extensions/C/figures/epi-ext-gestures-new-window.png
+share/gnome/help/epiphany-extensions/C/figures/epi-ext-gestures-next-tab.png
+share/gnome/help/epiphany-extensions/C/figures/epi-ext-gestures-prev-tab.png
+share/gnome/help/epiphany-extensions/C/figures/epi-ext-gestures-reload.png
+share/gnome/help/epiphany-extensions/C/figures/epi-ext-gestures-stop.png
+share/gnome/help/epiphany-extensions/C/figures/epi-ext-gestures-up.png
+share/gnome/help/epiphany-extensions/C/figures/epi-ext-gestures-view-source-2.png
+share/gnome/help/epiphany-extensions/C/figures/epi-ext-gestures-view-source.png
+share/gnome/help/epiphany-extensions/C/figures/epi-ext-sidebar.png
+share/gnome/help/epiphany-extensions/C/figures/epi-ext-tabgroups.png
+share/gnome/help/epiphany-extensions/C/legal.xml
+share/gnome/omf/epiphany-extensions/epiphany-extensions-C.omf
 share/locale/bg/LC_MESSAGES/epiphany-extensions-%%EPHY_VERSION%%.mo
 share/locale/ca/LC_MESSAGES/epiphany-extensions-%%EPHY_VERSION%%.mo
 share/locale/cs/LC_MESSAGES/epiphany-extensions-%%EPHY_VERSION%%.mo
@@ -69,6 +104,7 @@ share/locale/it/LC_MESSAGES/epiphany-extensions-%%EPHY_VERSION%%.mo
 share/locale/ja/LC_MESSAGES/epiphany-extensions-%%EPHY_VERSION%%.mo
 share/locale/ko/LC_MESSAGES/epiphany-extensions-%%EPHY_VERSION%%.mo
 share/locale/lt/LC_MESSAGES/epiphany-extensions-%%EPHY_VERSION%%.mo
+share/locale/nb/LC_MESSAGES/epiphany-extensions-%%EPHY_VERSION%%.mo
 share/locale/ne/LC_MESSAGES/epiphany-extensions-%%EPHY_VERSION%%.mo
 share/locale/nl/LC_MESSAGES/epiphany-extensions-%%EPHY_VERSION%%.mo
 share/locale/no/LC_MESSAGES/epiphany-extensions-%%EPHY_VERSION%%.mo
@@ -84,14 +120,20 @@ share/locale/sr/LC_MESSAGES/epiphany-extensions-%%EPHY_VERSION%%.mo
 share/locale/sr@Latn/LC_MESSAGES/epiphany-extensions-%%EPHY_VERSION%%.mo
 share/locale/sv/LC_MESSAGES/epiphany-extensions-%%EPHY_VERSION%%.mo
 share/locale/uk/LC_MESSAGES/epiphany-extensions-%%EPHY_VERSION%%.mo
+share/locale/vi/LC_MESSAGES/epiphany-extensions-%%EPHY_VERSION%%.mo
 share/locale/wa/LC_MESSAGES/epiphany-extensions-%%EPHY_VERSION%%.mo
 share/locale/zh_CN/LC_MESSAGES/epiphany-extensions-%%EPHY_VERSION%%.mo
 share/locale/zh_TW/LC_MESSAGES/epiphany-extensions-%%EPHY_VERSION%%.mo
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
+@dirrm share/gnome/omf/epiphany-extensions
+@dirrm share/gnome/help/epiphany-extensions/C/figures
+@dirrm share/gnome/help/epiphany-extensions/C
+@dirrm share/gnome/help/epiphany-extensions
 @dirrm share/gnome/epiphany-extensions/xml
 @dirrm share/gnome/epiphany-extensions/glade
 @dirrm share/gnome/epiphany-extensions
 @dirrmtry lib/epiphany/%%VERSION%%/extensions
+@dirrmtry lib/epiphany/%%VERSION%%/plugins
 @dirrmtry lib/epiphany/%%VERSION%%
 @dirrmtry lib/epiphany

@@ -1,0 +1,11 @@
+--- configure.orig	Wed Apr 12 12:53:56 2006
++++ configure	Wed Apr 12 13:06:36 2006
+@@ -24849,7 +24849,7 @@
+     fi
+ fi
+ 
+-if test "x$have_qt" == "xyes"; then
++if test "x$have_qt" = "xyes"; then
+     POPPLER_QT_CXXFLAGS="-I$qt_incdir"
+     POPPLER_QT_LIBS="$qt_libdir/$qt_test_library"
+     :
