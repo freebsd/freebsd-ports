@@ -12,6 +12,8 @@
 #			(default: on)
 # WITHOUT_ZSH_MAILDIR=yes disable support for Maildirs in MAIL and MAILPATH
 #			(default: on)
+# WITHOUT_ZSH_MULTIBYTE=yes disable multibyte character support 
+# 			(default: on)
 # ZSH_ETCDIR=<dir>	directory for zsh system-wide configuration files:
 #			zshenv, zlogin, zprofile, zshrc, zlogout.
 #			e.g. use this to put config files inside ${PREFIX}
@@ -25,7 +27,7 @@
 #			NOTE: does NOT have to be inside ${PREFIX} tree
 
 PORTNAME=	zsh
-PORTVERSION=	4.2.6
+PORTVERSION=	4.3.2
 CATEGORIES=	shells
 MASTER_SITES=	\
 		http://archive.progeny.com/zsh/ \
@@ -61,7 +63,6 @@ CONFLICTS=	zsh-devel-[0-9]* zsh-4.1.*
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-curses-terminfo --with-tcsetpgrp \
@@ -75,6 +76,10 @@ CONFIGURE_ARGS+=	--enable-zsh-mem --enable-zsh-secure-free
 
 .if !defined(WITHOUT_ZSH_MAILDIR)
 CONFIGURE_ARGS+=	--enable-maildir-support
+.endif
+
+.if !defined(WITHOUT_ZSH_MULTIBYTE)
+CONFIGURE_ARGS+=	--enable-multibyte
 .endif
 
 .if defined(NOSHARED)
@@ -97,10 +102,10 @@ PLIST_SUB+=	ZSH_VER="${ZSH_VER}" ZSHETCDIR="${ZSH_ETCDIR}" \
 
 MAN1=		zsh.1 zshbuiltins.1 zshcompctl.1 zshcompwid.1 zshcompsys.1 \
 		zshcontrib.1 zshexpn.1 zshmisc.1 zshmodules.1 zshoptions.1 \
-		zshparam.1 zshtcpsys.1 zshzftpsys.1 zshzle.1 zshall.1
+		zshparam.1 zshroadmap.1 zshtcpsys.1 zshzftpsys.1 zshzle.1 \
+		zshall.1
 DOCS=		LICENCE META-FAQ README Etc/BUGS Etc/CONTRIBUTORS Etc/FAQ \
-		Etc/completion-style-guide \
-		Doc/zsh*.html Doc/zsh.dvi Doc/zsh_a4.ps Doc/zsh_us.ps
+		Etc/completion-style-guide Doc/zsh*.html Doc/zsh.dvi
 EXAMPLES=	zlogin zshenv zshrc
 
 .include <bsd.port.pre.mk>
@@ -125,14 +130,12 @@ post-build:
 	${MV} ${WRKSRC}/Doc/zshall.1 ${WRKSRC}/Doc/zshall.1.source
 	cd ${WRKSRC} && /usr/bin/soelim ${WRKSRC}/Doc/zshall.1.source > \
 		${WRKSRC}/Doc/zshall.1
-
 .if !defined(NOPORTDOCS)
-INFO=	zsh
-
-pre-install:
 	@${MKDIR} ${PREFIX}/info
-	makeinfo --no-split --output=${PREFIX}/info/zsh.info \
+	makeinfo --no-split --output=${WRKSRC}/Doc/zsh.info \
 		${WRKSRC}/Doc/zsh.texi
+
+INFO=	zsh
 .endif
 
 post-install:
@@ -144,6 +147,7 @@ post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/Doc/zsh.info ${PREFIX}/info/zsh.info
 .endif
 	@${ECHO_MSG} "Updating /etc/shells"
 	@${CP} /etc/shells /etc/shells.bak
