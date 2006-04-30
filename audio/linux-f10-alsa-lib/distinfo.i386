@@ -1,3 +1,7 @@
-MD5 (alsa-lib-1.0.6-8.FC3.i386.rpm) = 35377c586c8021e86117fad58f19c1a4
-SHA256 (alsa-lib-1.0.6-8.FC3.i386.rpm) = 5bcfe63440fe4a40a744caa351fd69dd7ecb994a0ce3b17511e75d1e6ac95d81
-SIZE (alsa-lib-1.0.6-8.FC3.i386.rpm) = 309665
+MD5 (rpm/i386/fedora/3/alsa-lib-1.0.6-8.FC3.i386.rpm) = 35377c586c8021e86117fad58f19c1a4
+SHA256 (rpm/i386/fedora/3/alsa-lib-1.0.6-8.FC3.i386.rpm) = 5bcfe63440fe4a40a744caa351fd69dd7ecb994a0ce3b17511e75d1e6ac95d81
+SIZE (rpm/i386/fedora/3/alsa-lib-1.0.6-8.FC3.i386.rpm) = 309665
+MD5 (rpm/i386/fedora/3/alsa-lib-1.0.6-8.FC3.src.rpm) = f13f1e1e8dd76d97a32a9414122fc9f9
+SHA256 (rpm/i386/fedora/3/alsa-lib-1.0.6-8.FC3.src.rpm) = bd93dbcb2d2b02e95109003f7f0a51ae207389aad3a6503e17c45d2747cf25da
+SIZE (rpm/i386/fedora/3/alsa-lib-1.0.6-8.FC3.src.rpm) = 681514
+
