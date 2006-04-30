@@ -12577,6 +12577,7 @@ sylpheed-claws-cachesaver	ports/mail/sylpheed-claws-cachesaver
 sylpheed-claws-etpan_privacy	ports/mail/sylpheed-claws-etpan_privacy
 sylpheed-claws-fetchinfo	ports/mail/sylpheed-claws-fetchinfo
 sylpheed-claws-gtkhtml2_viewer	ports/mail/sylpheed-claws-gtkhtml2_viewer
+sylpheed-claws-maildir	ports/mail/sylpheed-claws-maildir
 sylpheed-claws-mailmbox	ports/mail/sylpheed-claws-mailmbox
 sylpheed-claws-newmail	ports/mail/sylpheed-claws-newmail
 sylpheed-claws-notification	ports/mail/sylpheed-claws-notification
