@@ -1,4 +1,13 @@
-An XMMS Output plugin that allows you to crossfade between different tunes.
+A Crossfading/Gapless Output Plugin featuring:
+
+    * Crossfading
+    * Fadein/Fadeout
+    * Continuous output
+    * Gap-Killer
+    * Automatic detection of live albums
+    * High quality
+    * Secondary effect plugin
+    * Compatibility with bmp and audacious
 
 WWW: http://www.eisenlohr.org/xmms-crossfade/index.html
 Author: Peter Eisenlohr <p.eisenlohr@gmx.net>
