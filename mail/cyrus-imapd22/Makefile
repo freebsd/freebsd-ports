@@ -39,49 +39,48 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 		--with-openssl=${OPENSSLBASE} \
 		--with-perl=${PERL5}
 
-OPTIONS=	AUTH_KRB5	"Use Kerberos5 authorization module"	off
 .if defined(WITH_BDB_VER)
 USE_BDB_VER=	${WITH_BDB_VER}
 .else
 USE_BDB_VER=	3
 .endif
 .if ${USE_BDB_VER} == 3
-OPTIONS+=	BDB_3		"Use BerkeleyDB v3"	on \
+OPTIONS=	BDB_3		"Use BerkeleyDB v3"	on \
 		BDB_4		"Use BerkeleyDB v4"	off \
 		BDB_41		"Use BerkeleyDB v4.1"	off \
 		BDB_42		"Use BerkeleyDB v4.2"	off \
 		BDB_43		"Use BerkeleyDB v4.3"	off \
 		BDB_44		"Use BerkeleyDB v4.4"	off
 .elif ${USE_BDB_VER} == 4
-OPTIONS+=	BDB_3		"Use BerkeleyDB v3"	off \
+OPTIONS=	BDB_3		"Use BerkeleyDB v3"	off \
 		BDB_4		"Use BerkeleyDB v4"	on \
 		BDB_41		"Use BerkeleyDB v4.1"	off \
 		BDB_42		"Use BerkeleyDB v4.2"	off \
 		BDB_43		"Use BerkeleyDB v4.3"	off \
 		BDB_44		"Use BerkeleyDB v4.4"	off
 .elif ${USE_BDB_VER} == 41
-OPTIONS+=	BDB_3		"Use BerkeleyDB v3"	off \
+OPTIONS=	BDB_3		"Use BerkeleyDB v3"	off \
 		BDB_4		"Use BerkeleyDB v4"	off \
 		BDB_41		"Use BerkeleyDB v4.1"	on \
 		BDB_42		"Use BerkeleyDB v4.2"	off \
 		BDB_43		"Use BerkeleyDB v4.3"	off \
 		BDB_44		"Use BerkeleyDB v4.4"	off
 .elif ${USE_BDB_VER} == 42
-OPTIONS+=	BDB_3		"Use BerkeleyDB v3"	off \
+OPTIONS=	BDB_3		"Use BerkeleyDB v3"	off \
 		BDB_4		"Use BerkeleyDB v4"	off \
 		BDB_41		"Use BerkeleyDB v4.1"	off \
 		BDB_42		"Use BerkeleyDB v4.2"	on \
 		BDB_43		"Use BerkeleyDB v4.3"	off \
 		BDB_44		"Use BerkeleyDB v4.4"	off
 .elif ${USE_BDB_VER} == 43
-OPTIONS+=	BDB_3		"Use BerkeleyDB v3"	off \
+OPTIONS=	BDB_3		"Use BerkeleyDB v3"	off \
 		BDB_4		"Use BerkeleyDB v4"	off \
 		BDB_41		"Use BerkeleyDB v4.1"	off \
 		BDB_42		"Use BerkeleyDB v4.2"	off \
 		BDB_43		"Use BerkeleyDB v4.3"	on \
 		BDB_44		"Use BerkeleyDB v4.4"	off
 .elif ${USE_BDB_VER} == 44
-OPTIONS+=	BDB_3		"Use BerkeleyDB v3"	off \
+OPTIONS=	BDB_3		"Use BerkeleyDB v3"	off \
 		BDB_4		"Use BerkeleyDB v4"	off \
 		BDB_41		"Use BerkeleyDB v4.1"	off \
 		BDB_42		"Use BerkeleyDB v4.2"	off \
@@ -206,18 +205,11 @@ CONFIGURE_ARGS+=--with-snmp=${LOCALBASE}
 CONFIGURE_ARGS+=--with-snmp=no
 .endif
 
-.if defined(WITH_AUTH_KRB5) && defined(WITH_LDAP_PTLOADER)
-BROKEN=		"AUTH_KRB5 and LDAP_PTLOADER are exclusive.  Run 'make config' again!"
-.endif
 .if defined(WITH_LDAP_PTLOADER)
 USE_OPENLDAP=	yes
-CONFIGURE_ARGS+=--with-auth=pts --with-pts=ldap --with-ldap=${LOCALBASE}
+CONFIGURE_ARGS+=--with-ldap=${LOCALBASE}
 PLIST_SUB+=	LDAP_PTLOADER=""
-.elif defined(WITH_AUTH_KRB5)
-CONFIGURE_ARGS+=--with-auth=krb5
-PLIST_SUB+=	LDAP_PTLOADER="@comment "
 .else
-CONFIGURE_ARGS+=--with-auth=unix
 PLIST_SUB+=	LDAP_PTLOADER="@comment "
 .endif
 
