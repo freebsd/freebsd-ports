@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	Catalyst
-PORTVERSION=	5.66
+PORTVERSION=	5.682
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/M/MR/MRAMBERG
@@ -25,7 +25,7 @@ BUILD_DEPENDS=	p5-UNIVERSAL-require>=0.10:${PORTSDIR}/devel/p5-UNIVERSAL-require
 		p5-File-Modified>=0:${PORTSDIR}/devel/p5-File-Modified \
 		p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-HTTP-Body>=0.5:${PORTSDIR}/www/p5-HTTP-Body \
-		p5-libwww>=5.801:${PORTSDIR}/www/p5-libwww \
+		p5-libwww>=5.805:${PORTSDIR}/www/p5-libwww \
 		p5-HTTP-Request-AsCGI>=0.5:${PORTSDIR}/www/p5-HTTP-Request-AsCGI \
 		p5-MIME-Types>=0:${PORTSDIR}/mail/p5-MIME-Types \
 		p5-Module-Pluggable-Fast>=0.16:${PORTSDIR}/devel/p5-Module-Pluggable-Fast \
@@ -97,8 +97,6 @@ post-install:
 
 post-extract:
 	@${PERL} -i.bak -ne 'print unless m,^feature, .. m,;$$,' ${WRKSRC}/Makefile.PL
-	@${PERL} -i.bak -ne 'print unless m,HTTP\.pm\.rej$$,' ${WRKSRC}/MANIFEST
-	@${RM} ${WRKSRC}/lib/Catalyst/Engine/HTTP.pm.rej
 
 .include <bsd.port.pre.mk>
 .if ${PERL_LEVEL} < 500801
