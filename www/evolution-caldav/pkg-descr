@@ -1,8 +1,0 @@
-Evolution-caldav is a CalDAV provider for Evolution.  CalDAV is an extension
-of WebDAV that offers additional calendaring features such as fanout,
-recurrance, and notifications.
-
-See http://ietf.webdav.org/caldav/home.html for more details on the
-technology.
-
-WWW: http://ietf.webdav.org/caldav/home.html

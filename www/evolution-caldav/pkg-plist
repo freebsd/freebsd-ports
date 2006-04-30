@@ -1,8 +1,0 @@
-lib/evolution/%%EVO_VERSION%%/plugins/liborg-gnome-evolution-caldav.a
-lib/evolution/%%EVO_VERSION%%/plugins/liborg-gnome-evolution-caldav.la
-lib/evolution/%%EVO_VERSION%%/plugins/liborg-gnome-evolution-caldav.so
-lib/evolution/%%EVO_VERSION%%/plugins/org-gnome-evolution-caldav.eplug
-lib/evolution-data-server-%%EDS_VERSION%%/extensions/libecalbackendcaldav.a
-lib/evolution-data-server-%%EDS_VERSION%%/extensions/libecalbackendcaldav.la
-lib/evolution-data-server-%%EDS_VERSION%%/extensions/libecalbackendcaldav.so
-share/locale/de/LC_MESSAGES/evolution-caldav-%%EVO_VERSION%%.mo

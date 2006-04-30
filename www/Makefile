@@ -115,7 +115,6 @@
     SUBDIR += epiphany-extensions
     SUBDIR += erwn
     SUBDIR += eventum
-    SUBDIR += evolution-caldav
     SUBDIR += evolution-webcal
     SUBDIR += fcgi
     SUBDIR += feedonfeeds
