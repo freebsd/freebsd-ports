@@ -1,5 +1,5 @@
---- configure.orig	Sun Dec 11 03:18:42 2005
-+++ configure	Sun Dec 11 03:23:42 2005
+--- configure.orig	Tue Nov 15 20:40:27 2005
++++ configure	Mon May  1 01:33:08 2006
 @@ -26269,7 +26269,7 @@
                   "ac_cv_lib_avcodec_pp_get_context" \
                   "ac_cv_lib_postproc_pp_get_context" \
@@ -18,3 +18,12 @@
        cat >conftest.$ac_ext <<_ACEOF
  #include <avcodec.h>
  #include <postprocess.h>
+@@ -35293,6 +35293,8 @@
+ fi
+        CFLAGS="$ac_save_CFLAGS"
+        LIBS="$ac_save_LIBS"
++else
++no_theora=yes
+   fi
+ 
+   if test "x$no_theora" = x ; then

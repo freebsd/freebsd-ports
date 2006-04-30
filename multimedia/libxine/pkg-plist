@@ -32,6 +32,7 @@ include/xine/xineintl.h
 include/xine/xineutils.h
 include/xine/xmllexer.h
 include/xine/xmlparser.h
+lib/libxine.la
 lib/libxine.so
 lib/libxine.so.15
 lib/xine/plugins/1.1.1/post/xineplug_post_audio_filters.so
@@ -167,42 +168,42 @@ share/locale/it/LC_MESSAGES/libxine1.mo
 share/locale/pl/LC_MESSAGES/libxine1.mo
 share/locale/pt_BR/LC_MESSAGES/libxine1.mo
 share/locale/sk/LC_MESSAGES/libxine1.mo
-share/xine/libxine1/fonts/cc-16.xinefont.gz
-share/xine/libxine1/fonts/cc-20.xinefont.gz
-share/xine/libxine1/fonts/cc-24.xinefont.gz
-share/xine/libxine1/fonts/cc-32.xinefont.gz
-share/xine/libxine1/fonts/cc-48.xinefont.gz
-share/xine/libxine1/fonts/cc-64.xinefont.gz
-share/xine/libxine1/fonts/cci-16.xinefont.gz
-share/xine/libxine1/fonts/cci-20.xinefont.gz
-share/xine/libxine1/fonts/cci-24.xinefont.gz
-share/xine/libxine1/fonts/cci-32.xinefont.gz
-share/xine/libxine1/fonts/cci-48.xinefont.gz
-share/xine/libxine1/fonts/cci-64.xinefont.gz
-share/xine/libxine1/fonts/cetus-16.xinefont.gz
-share/xine/libxine1/fonts/cetus-20.xinefont.gz
-share/xine/libxine1/fonts/cetus-24.xinefont.gz
-share/xine/libxine1/fonts/cetus-32.xinefont.gz
-share/xine/libxine1/fonts/cetus-48.xinefont.gz
-share/xine/libxine1/fonts/cetus-64.xinefont.gz
-share/xine/libxine1/fonts/mono-16.xinefont.gz
-share/xine/libxine1/fonts/mono-20.xinefont.gz
-share/xine/libxine1/fonts/mono-24.xinefont.gz
-share/xine/libxine1/fonts/mono-32.xinefont.gz
-share/xine/libxine1/fonts/mono-48.xinefont.gz
-share/xine/libxine1/fonts/mono-64.xinefont.gz
-share/xine/libxine1/fonts/sans-16.xinefont.gz
-share/xine/libxine1/fonts/sans-20.xinefont.gz
-share/xine/libxine1/fonts/sans-24.xinefont.gz
-share/xine/libxine1/fonts/sans-32.xinefont.gz
-share/xine/libxine1/fonts/sans-48.xinefont.gz
-share/xine/libxine1/fonts/sans-64.xinefont.gz
-share/xine/libxine1/fonts/serif-16.xinefont.gz
-share/xine/libxine1/fonts/serif-20.xinefont.gz
-share/xine/libxine1/fonts/serif-24.xinefont.gz
-share/xine/libxine1/fonts/serif-32.xinefont.gz
-share/xine/libxine1/fonts/serif-48.xinefont.gz
-share/xine/libxine1/fonts/serif-64.xinefont.gz
+%%DATADIR%%/libxine1/fonts/cc-16.xinefont.gz
+%%DATADIR%%/libxine1/fonts/cc-20.xinefont.gz
+%%DATADIR%%/libxine1/fonts/cc-24.xinefont.gz
+%%DATADIR%%/libxine1/fonts/cc-32.xinefont.gz
+%%DATADIR%%/libxine1/fonts/cc-48.xinefont.gz
+%%DATADIR%%/libxine1/fonts/cc-64.xinefont.gz
+%%DATADIR%%/libxine1/fonts/cci-16.xinefont.gz
+%%DATADIR%%/libxine1/fonts/cci-20.xinefont.gz
+%%DATADIR%%/libxine1/fonts/cci-24.xinefont.gz
+%%DATADIR%%/libxine1/fonts/cci-32.xinefont.gz
+%%DATADIR%%/libxine1/fonts/cci-48.xinefont.gz
+%%DATADIR%%/libxine1/fonts/cci-64.xinefont.gz
+%%DATADIR%%/libxine1/fonts/cetus-16.xinefont.gz
+%%DATADIR%%/libxine1/fonts/cetus-20.xinefont.gz
+%%DATADIR%%/libxine1/fonts/cetus-24.xinefont.gz
+%%DATADIR%%/libxine1/fonts/cetus-32.xinefont.gz
+%%DATADIR%%/libxine1/fonts/cetus-48.xinefont.gz
+%%DATADIR%%/libxine1/fonts/cetus-64.xinefont.gz
+%%DATADIR%%/libxine1/fonts/mono-16.xinefont.gz
+%%DATADIR%%/libxine1/fonts/mono-20.xinefont.gz
+%%DATADIR%%/libxine1/fonts/mono-24.xinefont.gz
+%%DATADIR%%/libxine1/fonts/mono-32.xinefont.gz
+%%DATADIR%%/libxine1/fonts/mono-48.xinefont.gz
+%%DATADIR%%/libxine1/fonts/mono-64.xinefont.gz
+%%DATADIR%%/libxine1/fonts/sans-16.xinefont.gz
+%%DATADIR%%/libxine1/fonts/sans-20.xinefont.gz
+%%DATADIR%%/libxine1/fonts/sans-24.xinefont.gz
+%%DATADIR%%/libxine1/fonts/sans-32.xinefont.gz
+%%DATADIR%%/libxine1/fonts/sans-48.xinefont.gz
+%%DATADIR%%/libxine1/fonts/sans-64.xinefont.gz
+%%DATADIR%%/libxine1/fonts/serif-16.xinefont.gz
+%%DATADIR%%/libxine1/fonts/serif-20.xinefont.gz
+%%DATADIR%%/libxine1/fonts/serif-24.xinefont.gz
+%%DATADIR%%/libxine1/fonts/serif-32.xinefont.gz
+%%DATADIR%%/libxine1/fonts/serif-48.xinefont.gz
+%%DATADIR%%/libxine1/fonts/serif-64.xinefont.gz
 @dirrm include/xine
 @dirrm lib/xine/plugins/1.1.1/vidix
 @dirrm lib/xine/plugins/1.1.1/post
@@ -214,6 +215,6 @@ share/xine/libxine1/fonts/serif-64.xinefont.gz
 @dirrm %%DOCSDIR%%
 @dirrmtry share/locale/pl_PL/LC_MESSAGES
 @dirrmtry share/locale/pl_PL
-@dirrm share/xine/libxine1/fonts
-@dirrm share/xine/libxine1
-@dirrm share/xine
+@dirrm %%DATADIR%%/libxine1/fonts
+@dirrm %%DATADIR%%/libxine1
+@dirrm %%DATADIR%%
