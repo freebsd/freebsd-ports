@@ -9,9 +9,9 @@ etc/kazehakase/kzrc
 etc/kazehakase/mozilla/encodings.xml
 etc/kazehakase/proxyrc
 etc/kazehakase/smartbookmarks.xml
-lib/libkazehakase.la
-lib/libkazehakase.so
-lib/libkazehakase.so.0
+lib/kazehakase/libkazehakase.la
+lib/kazehakase/libkazehakase.so
+lib/kazehakase/libkazehakase.so.0
 share/gnome/applications/kazehakase.desktop
 share/gnome/kazehakase/icons/autoscroll.xpm
 share/gnome/kazehakase/icons/kz-anchor.png
