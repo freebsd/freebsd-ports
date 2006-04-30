@@ -11869,6 +11869,7 @@ sasp		ports/security/sasp
 satellite	ports/net-mgmt/satellite
 sather		ports/lang/Sather
 sattrack	ports/astro/sattrack
+sauerbraten	ports/games/sauerbraten
 savelogs	ports/sysutils/savelogs
 sawfish-themes	ports/x11-themes/sawfish-themes
 sawfish2	ports/x11-wm/sawfish2
