@@ -45,6 +45,8 @@ bin/stag-query.pl
 %%SITE_PERL%%/Data/Stag/SxprParser.pm
 %%SITE_PERL%%/Data/Stag/SAX2Stag.pm
 %%SITE_PERL%%/Data/Stag/XSLTHandler.pm
+%%SITE_PERL%%/Data/Stag/IndentParser.pm
+%%SITE_PERL%%/Data/Stag/IndentWriter.pm
 %%SITE_PERL%%/Data/Stag/Base.pm
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
 @dirrm %%SITE_PERL%%/Data/Stag
