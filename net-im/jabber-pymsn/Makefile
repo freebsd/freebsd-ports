@@ -20,12 +20,12 @@ MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Python MSN-Transport for Jabber
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/OpenSSL/__init__.py:${PORTSDIR}/security/py-openssl \
-		${PYTHON_SITELIBDIR}/twisted/__init__.py:${PORTSDIR}/devel/py-twisted
+		${PYTHON_SITELIBDIR}/twisted/__init__.py:${PORTSDIR}/devel/py-twisted \
+		${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging
 
 WRKSRC=		${WRKDIR}/${PORTNAME}t-0.11
 
-OPTIONS=	EJABBERD "Use transport with ejabberd" off \
-		X11 "Use X11 (required to non-PNG avatars)" on
+OPTIONS=	EJABBERD "Use transport with ejabberd" off
 
 NO_BUILD=	yes
 USE_PYTHON=	yes
@@ -49,10 +49,6 @@ SUB_LIST+=	JABBER_REQUIRE=jabberd
 .endif
 
 SUB_LIST+=	JABBER_USER=${JABBER_USER}
-
-.if !defined(WITHOUT_X11)
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging
-.endif
 
 post-extract:
 	@${FIND} ${WRKSRC}/ -type d \( -name CVS -or -name .svn \) | ${XARGS} ${RM} -rf
