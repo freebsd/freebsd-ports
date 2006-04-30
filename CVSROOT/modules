@@ -5117,7 +5117,6 @@ kickpim		ports/deskutils/kickpim
 kiki		ports/games/kiki
 kile		ports/editors/kile
 kiltdown	ports/mail/kiltdown
-kimdaba		ports/graphics/kimdaba
 kimwitu		ports/devel/kimwitu
 kimwitu++	ports/devel/kimwitu++
 kinemage	ports/biology/kinemage
@@ -5286,6 +5285,7 @@ koth		ports/games/koth
 kover		ports/print/kover
 kp		ports/misc/kp
 kphone		ports/net/kphone
+kphotoalbum	ports/graphics/kphotoalbum
 kpicframer	ports/games/kpicframer
 kpictorial	ports/games/kpictorial
 kplayer		ports/multimedia/kplayer
