@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	PPI
-PORTVERSION=	1.110
+PORTVERSION=	1.112
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/A/AD/ADAMK
@@ -19,7 +19,7 @@ BUILD_DEPENDS=	\
 		p5-Clone>=0.17:${PORTSDIR}/devel/p5-Clone \
 		p5-Scalar-List-Utils>=0.17:${PORTSDIR}/lang/p5-Scalar-List-Utils \
 		p5-List-MoreUtils>=0.13:${PORTSDIR}/lang/p5-List-MoreUtils \
-		p5-Params-Util>=0.05:${PORTSDIR}/devel/p5-Params-Util \
+		p5-Params-Util>=0.10:${PORTSDIR}/devel/p5-Params-Util \
 		p5-IO-stringy>=2.105:${PORTSDIR}/devel/p5-IO-stringy \
 		p5-Digest-MD5>=2.27:${PORTSDIR}/security/p5-Digest-MD5 \
 		p5-Storable>=2.14:${PORTSDIR}/devel/p5-Storable \
