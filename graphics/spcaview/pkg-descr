@@ -9,6 +9,7 @@ USB Cameras based SPCA5xx Utilities for NetBSD
 2. Supported USB cameras
 	Vendor	Device	Product Name
 	------	------	------------
+	0x041e	0x4036	Creative WebCam Live!
 	0x041e	0x403a  Creative webcam nx pro
 	0x046d  0x0928  Logitech QuickCam Express II
 	0x046d  0x092c  Logitech QuickCam chat
@@ -19,8 +20,9 @@ USB Cameras based SPCA5xx Utilities for NetBSD
 	0x0923  0x010f  SNAKE EYE SI-8480/8481
 	0x0923  0x010f  PC CAM CP03(global sources)
 	0x0923  0x010f  WEB Camera PBC0006(persol)
-	0x093a  0x2468  Trust WB-1400T [Testing...]
+	0x093a  0x2468  Trust WB-1400T [Trying..., but nobody is testing, help!]
 	0x0ac8	0x301b  LOAS MCM-H06SL
+	0x0c45	0x6005	Generic webcam based SN9C101
 	0x0c45  0x6025  LOAS MCM-S02SL
 	0x0c45	0x6029  Raccoon AM-ST3
 	0xabcd	0xcdee	SIGMA-APO Petcam
