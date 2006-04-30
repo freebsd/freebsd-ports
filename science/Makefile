@@ -55,6 +55,7 @@
     SUBDIR += mbdyn
     SUBDIR += mcstas
     SUBDIR += minc
+    SUBDIR += minc2
     SUBDIR += mmtk
     SUBDIR += mpb
     SUBDIR += mpqc
