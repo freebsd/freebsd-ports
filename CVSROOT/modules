@@ -824,6 +824,7 @@ bmp-fc		ports/audio/bmp-fc
 bmp-festalon	ports/audio/bmp-festalon
 bmp-flac	ports/audio/bmp-flac
 bmp-htmlplaylist	ports/audio/bmp-htmlplaylist
+bmp-mac		ports/audio/bmp-mac
 bmp-modplug	ports/audio/bmp-modplug
 bmp-rootvis	ports/graphics/bmp-rootvis
 bmp-scrobbler	ports/audio/bmp-scrobbler
