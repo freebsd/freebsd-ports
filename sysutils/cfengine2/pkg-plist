@@ -1,5 +1,6 @@
 @comment $FreeBSD$
 sbin/cfagent
+sbin/cfconvert
 sbin/cfdoc
 sbin/cfenvd
 sbin/cfenvgraph
