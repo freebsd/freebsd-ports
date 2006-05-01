@@ -1,569 +1,180 @@
+%%INSTIKIDIR%%CHANGELOG
+%%INSTIKIDIR%%README
+%%INSTIKIDIR%%app/controllers/admin_controller.rb
+%%INSTIKIDIR%%app/controllers/application.rb
+%%INSTIKIDIR%%app/controllers/file_controller.rb
+%%INSTIKIDIR%%app/controllers/revision_sweeper.rb
+%%INSTIKIDIR%%app/controllers/wiki_controller.rb
+%%INSTIKIDIR%%app/helpers/application_helper.rb
+%%INSTIKIDIR%%app/helpers/wiki_helper.rb
+%%INSTIKIDIR%%app/models/author.rb
+%%INSTIKIDIR%%app/models/page.rb
+%%INSTIKIDIR%%app/models/page_observer.rb
+%%INSTIKIDIR%%app/models/page_set.rb
+%%INSTIKIDIR%%app/models/revision.rb
+%%INSTIKIDIR%%app/models/system.rb
+%%INSTIKIDIR%%app/models/web.rb
+%%INSTIKIDIR%%app/models/wiki.rb
+%%INSTIKIDIR%%app/models/wiki_file.rb
+%%INSTIKIDIR%%app/models/wiki_reference.rb
+%%INSTIKIDIR%%app/views/admin/create_system.rhtml
+%%INSTIKIDIR%%app/views/admin/create_web.rhtml
+%%INSTIKIDIR%%app/views/admin/edit_web.rhtml
+%%INSTIKIDIR%%app/views/file/file.rhtml
+%%INSTIKIDIR%%app/views/file/import.rhtml
+%%INSTIKIDIR%%app/views/layouts/default.rhtml
+%%INSTIKIDIR%%app/views/markdown_help.rhtml
+%%INSTIKIDIR%%app/views/mixed_help.rhtml
+%%INSTIKIDIR%%app/views/navigation.rhtml
+%%INSTIKIDIR%%app/views/rdoc_help.rhtml
+%%INSTIKIDIR%%app/views/textile_help.rhtml
+%%INSTIKIDIR%%app/views/wiki/_inbound_links.rhtml
+%%INSTIKIDIR%%app/views/wiki/authors.rhtml
+%%INSTIKIDIR%%app/views/wiki/edit.rhtml
+%%INSTIKIDIR%%app/views/wiki/export.rhtml
+%%INSTIKIDIR%%app/views/wiki/feeds.rhtml
+%%INSTIKIDIR%%app/views/wiki/list.rhtml
+%%INSTIKIDIR%%app/views/wiki/locked.rhtml
+%%INSTIKIDIR%%app/views/wiki/login.rhtml
+%%INSTIKIDIR%%app/views/wiki/new.rhtml
+%%INSTIKIDIR%%app/views/wiki/page.rhtml
+%%INSTIKIDIR%%app/views/wiki/print.rhtml
+%%INSTIKIDIR%%app/views/wiki/published.rhtml
+%%INSTIKIDIR%%app/views/wiki/recently_revised.rhtml
+%%INSTIKIDIR%%app/views/wiki/revision.rhtml
+%%INSTIKIDIR%%app/views/wiki/rollback.rhtml
+%%INSTIKIDIR%%app/views/wiki/rss_feed.rxml
+%%INSTIKIDIR%%app/views/wiki/search.rhtml
+%%INSTIKIDIR%%app/views/wiki/tex.rhtml
+%%INSTIKIDIR%%app/views/wiki/tex_web.rhtml
+%%INSTIKIDIR%%app/views/wiki/web_list.rhtml
+%%INSTIKIDIR%%app/views/wiki_words_help.rhtml
+%%INSTIKIDIR%%config/boot.rb
+%%INSTIKIDIR%%config/database.yml
+%%INSTIKIDIR%%config/environment.rb
+%%INSTIKIDIR%%config/environments/development.rb
+%%INSTIKIDIR%%config/environments/production.rb
+%%INSTIKIDIR%%config/environments/test.rb
+%%INSTIKIDIR%%config/routes.rb
+%%INSTIKIDIR%%db/migrate/001_beta1_schema.rb
+%%INSTIKIDIR%%db/migrate/002_beta2_changes_bulk.rb
+%%INSTIKIDIR%%db/default.db.sqlite3
+%%INSTIKIDIR%%db/schema.rb
+%%INSTIKIDIR%%instiki
+%%INSTIKIDIR%%instiki.cmd
+%%INSTIKIDIR%%instiki.rb
+%%INSTIKIDIR%%instiki.sh
+%%INSTIKIDIR%%lib/bluecloth_tweaked.rb
+%%INSTIKIDIR%%lib/chunks/category.rb
+%%INSTIKIDIR%%lib/chunks/chunk.rb
+%%INSTIKIDIR%%lib/chunks/engines.rb
+%%INSTIKIDIR%%lib/chunks/include.rb
+%%INSTIKIDIR%%lib/chunks/literal.rb
+%%INSTIKIDIR%%lib/chunks/nowiki.rb
+%%INSTIKIDIR%%lib/chunks/test.rb
+%%INSTIKIDIR%%lib/chunks/uri.rb
+%%INSTIKIDIR%%lib/chunks/wiki.rb
+%%INSTIKIDIR%%lib/diff.rb
+%%INSTIKIDIR%%lib/instiki_errors.rb
+%%INSTIKIDIR%%lib/native/linux/libsqlite3.so
+%%INSTIKIDIR%%lib/native/win32/sqlite3.dll
+%%INSTIKIDIR%%lib/native/win32/sqlite3_api.so
+%%INSTIKIDIR%%lib/page_renderer.rb
+%%INSTIKIDIR%%lib/rdocsupport.rb
+%%INSTIKIDIR%%lib/redcloth.rb
+%%INSTIKIDIR%%lib/redcloth_for_tex.rb
+%%INSTIKIDIR%%lib/url_generator.rb
+%%INSTIKIDIR%%lib/wiki_content.rb
+%%INSTIKIDIR%%lib/wiki_words.rb
+%%INSTIKIDIR%%lib/zip/ioextras.rb
+%%INSTIKIDIR%%lib/zip/stdrubyext.rb
+%%INSTIKIDIR%%lib/zip/tempfile_bugfixed.rb
+%%INSTIKIDIR%%lib/zip/zip.rb
+%%INSTIKIDIR%%lib/zip/zipfilesystem.rb
+%%INSTIKIDIR%%lib/zip/ziprequire.rb
+%%INSTIKIDIR%%log/production.log
+%%INSTIKIDIR%%natives/osx/desktop_launcher/AppDelegate.h
+%%INSTIKIDIR%%natives/osx/desktop_launcher/AppDelegate.mm
+%%INSTIKIDIR%%natives/osx/desktop_launcher/Credits.html
+%%INSTIKIDIR%%natives/osx/desktop_launcher/English.lproj/InfoPlist.strings
 %%INSTIKIDIR%%natives/osx/desktop_launcher/English.lproj/MainMenu.nib/classes.nib
 %%INSTIKIDIR%%natives/osx/desktop_launcher/English.lproj/MainMenu.nib/info.nib
 %%INSTIKIDIR%%natives/osx/desktop_launcher/English.lproj/MainMenu.nib/objects.nib
-%%INSTIKIDIR%%natives/osx/desktop_launcher/English.lproj/InfoPlist.strings
-%%INSTIKIDIR%%natives/osx/desktop_launcher/Instiki.xcode/project.pbxproj
-%%INSTIKIDIR%%natives/osx/desktop_launcher/Credits.html
 %%INSTIKIDIR%%natives/osx/desktop_launcher/Info.plist
+%%INSTIKIDIR%%natives/osx/desktop_launcher/Instiki.xcode/project.pbxproj
 %%INSTIKIDIR%%natives/osx/desktop_launcher/Instiki_Prefix.pch
-%%INSTIKIDIR%%natives/osx/desktop_launcher/main.mm
 %%INSTIKIDIR%%natives/osx/desktop_launcher/MakeDMG.sh
-%%INSTIKIDIR%%natives/osx/desktop_launcher/AppDelegate.h
+%%INSTIKIDIR%%natives/osx/desktop_launcher/main.mm
 %%INSTIKIDIR%%natives/osx/desktop_launcher/version.plist
-%%INSTIKIDIR%%natives/osx/desktop_launcher/AppDelegate.mm
-%%INSTIKIDIR%%vendor/madeleine-0.7.1/lib/madeleine/automatic.rb
-%%INSTIKIDIR%%vendor/madeleine-0.7.1/lib/madeleine/clock.rb
-%%INSTIKIDIR%%vendor/madeleine-0.7.1/lib/madeleine/files.rb
-%%INSTIKIDIR%%vendor/madeleine-0.7.1/lib/madeleine/zmarshal.rb
-%%INSTIKIDIR%%vendor/madeleine-0.7.1/lib/madeleine.rb
-%%INSTIKIDIR%%vendor/madeleine-0.7.1/docs/designRules.html
-%%INSTIKIDIR%%vendor/madeleine-0.7.1/docs/docs.css
-%%INSTIKIDIR%%vendor/madeleine-0.7.1/samples/clock_click.rb
-%%INSTIKIDIR%%vendor/madeleine-0.7.1/samples/dictionary_client.rb
-%%INSTIKIDIR%%vendor/madeleine-0.7.1/samples/dictionary_server.rb
-%%INSTIKIDIR%%vendor/madeleine-0.7.1/samples/painter.rb
-%%INSTIKIDIR%%vendor/madeleine-0.7.1/test/test_zmarshal.rb
-%%INSTIKIDIR%%vendor/madeleine-0.7.1/test/test_automatic.rb
-%%INSTIKIDIR%%vendor/madeleine-0.7.1/test/test_clocked.rb
-%%INSTIKIDIR%%vendor/madeleine-0.7.1/test/test_command_log.rb
-%%INSTIKIDIR%%vendor/madeleine-0.7.1/test/test_executer.rb
-%%INSTIKIDIR%%vendor/madeleine-0.7.1/test/test_persistence.rb
-%%INSTIKIDIR%%vendor/madeleine-0.7.1/test/test_platforms.rb
-%%INSTIKIDIR%%vendor/madeleine-0.7.1/test/test.rb
-%%INSTIKIDIR%%vendor/madeleine-0.7.1/contrib/batched.rb
-%%INSTIKIDIR%%vendor/madeleine-0.7.1/contrib/benchmark.rb
-%%INSTIKIDIR%%vendor/madeleine-0.7.1/contrib/test_batched.rb
-%%INSTIKIDIR%%vendor/madeleine-0.7.1/contrib/test_scalability.rb
-%%INSTIKIDIR%%vendor/madeleine-0.7.1/contrib/threaded_benchmark.rb
-%%INSTIKIDIR%%vendor/madeleine-0.7.1/NEWS
-%%INSTIKIDIR%%vendor/madeleine-0.7.1/README
-%%INSTIKIDIR%%vendor/madeleine-0.7.1/TODO
-%%INSTIKIDIR%%vendor/madeleine-0.7.1/COPYING
-%%INSTIKIDIR%%vendor/madeleine-0.7.1/generate_rdoc.rb
-%%INSTIKIDIR%%vendor/madeleine-0.7.1/install.rb
-%%INSTIKIDIR%%vendor/madeleine-0.7.1/madeleine.gemspec
-%%INSTIKIDIR%%vendor/rails/railties/doc/README_FOR_APP
-%%INSTIKIDIR%%vendor/rails/railties/test/generators/missing_class/missing_class_generator.rb
-%%INSTIKIDIR%%vendor/rails/railties/test/script/generators/working/working_generator.rb
-%%INSTIKIDIR%%vendor/rails/railties/test/mocks/dispatcher.rb
-%%INSTIKIDIR%%vendor/rails/railties/test/mocks/fcgi.rb
-%%INSTIKIDIR%%vendor/rails/railties/test/dispatcher_test.rb
-%%INSTIKIDIR%%vendor/rails/railties/test/rails_generator_test.rb
-%%INSTIKIDIR%%vendor/rails/railties/test/fcgi_dispatcher_test.rb
-%%INSTIKIDIR%%vendor/rails/railties/test/webrick_dispatcher_test.rb
-%%INSTIKIDIR%%vendor/rails/railties/configs/apache.conf
-%%INSTIKIDIR%%vendor/rails/railties/configs/database.yml
-%%INSTIKIDIR%%vendor/rails/railties/configs/empty.log
-%%INSTIKIDIR%%vendor/rails/railties/configs/routes.rb
-%%INSTIKIDIR%%vendor/rails/railties/dispatches/dispatch.fcgi
-%%INSTIKIDIR%%vendor/rails/railties/dispatches/dispatch.rb
-%%INSTIKIDIR%%vendor/rails/railties/dispatches/gateway.cgi
-%%INSTIKIDIR%%vendor/rails/railties/html/javascripts/controls.js
-%%INSTIKIDIR%%vendor/rails/railties/html/javascripts/dragdrop.js
-%%INSTIKIDIR%%vendor/rails/railties/html/javascripts/effects.js
-%%INSTIKIDIR%%vendor/rails/railties/html/javascripts/prototype.js
-%%INSTIKIDIR%%vendor/rails/railties/html/404.html
-%%INSTIKIDIR%%vendor/rails/railties/html/500.html
-%%INSTIKIDIR%%vendor/rails/railties/html/favicon.ico
-%%INSTIKIDIR%%vendor/rails/railties/html/index.html
-%%INSTIKIDIR%%vendor/rails/railties/environments/development.rb
-%%INSTIKIDIR%%vendor/rails/railties/environments/environment.rb
-%%INSTIKIDIR%%vendor/rails/railties/environments/production.rb
-%%INSTIKIDIR%%vendor/rails/railties/environments/test.rb
-%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/scripts/destroy.rb
-%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/scripts/generate.rb
-%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/scripts/update.rb
-%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/applications/app/app_generator.rb
-%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/applications/app/USAGE
-%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/controller/templates/controller.rb
-%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/controller/templates/functional_test.rb
-%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/controller/templates/helper.rb
-%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/controller/templates/view.rhtml
-%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/controller/controller_generator.rb
-%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/controller/USAGE
-%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/mailer/templates/fixture.rhtml
-%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/mailer/templates/mailer.rb
-%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/mailer/templates/unit_test.rb
-%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/mailer/templates/view.rhtml
-%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/mailer/mailer_generator.rb
-%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/mailer/USAGE
-%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/migration/templates/migration.rb
-%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/migration/migration_generator.rb
-%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/migration/USAGE
-%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/model/templates/fixtures.yml
-%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/model/templates/model.rb
-%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/model/templates/unit_test.rb
-%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/model/model_generator.rb
-%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/model/USAGE
-%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/scaffold/templates/view_show.rhtml
-%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/scaffold/templates/form.rhtml
-%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/scaffold/templates/form_scaffolding.rhtml
-%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/scaffold/templates/functional_test.rb
-%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/scaffold/templates/helper.rb
-%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/scaffold/templates/layout.rhtml
-%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/scaffold/templates/style.css
-%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/scaffold/templates/view_edit.rhtml
-%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/scaffold/templates/view_list.rhtml
-%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/scaffold/templates/view_new.rhtml
-%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/scaffold/templates/controller.rb
-%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/scaffold/scaffold_generator.rb
-%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/scaffold/USAGE
-%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/web_service/templates/api_definition.rb
-%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/web_service/templates/controller.rb
-%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/web_service/templates/functional_test.rb
-%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/web_service/USAGE
-%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/web_service/web_service_generator.rb
-%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/lookup.rb
-%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/manifest.rb
-%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/options.rb
-%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/scripts.rb
-%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/simple_logger.rb
-%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/base.rb
-%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/spec.rb
-%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/commands.rb
-%%INSTIKIDIR%%vendor/rails/railties/lib/breakpoint.rb
-%%INSTIKIDIR%%vendor/rails/railties/lib/breakpoint_client.rb
-%%INSTIKIDIR%%vendor/rails/railties/lib/code_statistics.rb
-%%INSTIKIDIR%%vendor/rails/railties/lib/console_sandbox.rb
-%%INSTIKIDIR%%vendor/rails/railties/lib/dispatcher.rb
-%%INSTIKIDIR%%vendor/rails/railties/lib/fcgi_handler.rb
-%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator.rb
-%%INSTIKIDIR%%vendor/rails/railties/lib/rubyprof_ext.rb
-%%INSTIKIDIR%%vendor/rails/railties/lib/binding_of_caller.rb
-%%INSTIKIDIR%%vendor/rails/railties/lib/webrick_server.rb
-%%INSTIKIDIR%%vendor/rails/railties/bin/update
-%%INSTIKIDIR%%vendor/rails/railties/bin/breakpointer
-%%INSTIKIDIR%%vendor/rails/railties/bin/breakpointer_for_gem
-%%INSTIKIDIR%%vendor/rails/railties/bin/console
-%%INSTIKIDIR%%vendor/rails/railties/bin/console_sandbox
-%%INSTIKIDIR%%vendor/rails/railties/bin/destroy
-%%INSTIKIDIR%%vendor/rails/railties/bin/generate
-%%INSTIKIDIR%%vendor/rails/railties/bin/listener
-%%INSTIKIDIR%%vendor/rails/railties/bin/profiler
-%%INSTIKIDIR%%vendor/rails/railties/bin/rails
-%%INSTIKIDIR%%vendor/rails/railties/bin/runner
-%%INSTIKIDIR%%vendor/rails/railties/bin/server
-%%INSTIKIDIR%%vendor/rails/railties/bin/tracker
-%%INSTIKIDIR%%vendor/rails/railties/bin/benchmarker
-%%INSTIKIDIR%%vendor/rails/railties/helpers/application.rb
-%%INSTIKIDIR%%vendor/rails/railties/helpers/application_helper.rb
-%%INSTIKIDIR%%vendor/rails/railties/helpers/test_helper.rb
-%%INSTIKIDIR%%vendor/rails/railties/fresh_rakefile
-%%INSTIKIDIR%%vendor/rails/railties/MIT-LICENSE
-%%INSTIKIDIR%%vendor/rails/railties/Rakefile
-%%INSTIKIDIR%%vendor/rails/railties/README
-%%INSTIKIDIR%%vendor/rails/railties/CHANGELOG
-%%INSTIKIDIR%%vendor/rails/actionpack/examples/debate/index.rhtml
-%%INSTIKIDIR%%vendor/rails/actionpack/examples/debate/new_topic.rhtml
-%%INSTIKIDIR%%vendor/rails/actionpack/examples/debate/topic.rhtml
-%%INSTIKIDIR%%vendor/rails/actionpack/examples/address_book/index.rhtml
-%%INSTIKIDIR%%vendor/rails/actionpack/examples/address_book/layout.rhtml
-%%INSTIKIDIR%%vendor/rails/actionpack/examples/address_book_controller.fcgi
-%%INSTIKIDIR%%vendor/rails/actionpack/examples/address_book_controller.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/examples/address_book_controller.rbx
-%%INSTIKIDIR%%vendor/rails/actionpack/examples/benchmark.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/examples/benchmark_with_ar.fcgi
-%%INSTIKIDIR%%vendor/rails/actionpack/examples/blog_controller.cgi
-%%INSTIKIDIR%%vendor/rails/actionpack/examples/debate_controller.cgi
-%%INSTIKIDIR%%vendor/rails/actionpack/examples/address_book_controller.cgi
-%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/cgi_ext/cgi_ext.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/cgi_ext/cgi_methods.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/cgi_ext/cookie_performance_fix.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/cgi_ext/multipart_progress.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/cgi_ext/raw_post_data_fix.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/templates/rescues/routing_error.rhtml
-%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/templates/rescues/layout.rhtml
-%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/templates/rescues/missing_template.rhtml
-%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/templates/rescues/diagnostics.rhtml
-%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/templates/rescues/template_error.rhtml
-%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/templates/rescues/unknown_action.rhtml
-%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/templates/rescues/_request_and_response.rhtml
-%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/templates/scaffolds/edit.rhtml
-%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/templates/scaffolds/layout.rhtml
-%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/templates/scaffolds/list.rhtml
-%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/templates/scaffolds/new.rhtml
-%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/templates/scaffolds/show.rhtml
-%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/vendor/html-scanner/html/document.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/vendor/html-scanner/html/node.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/vendor/html-scanner/html/tokenizer.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/vendor/html-scanner/html/version.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/vendor/xml_simple.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/session/active_record_store.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/session/drb_server.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/session/drb_store.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/session/mem_cache_store.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/caching.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/cgi_process.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/code_generation.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/components.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/cookies.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/dependencies.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/deprecated_assertions.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/deprecated_renders_and_redirects.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/filters.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/flash.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/helpers.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/layout.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/pagination.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/request.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/rescue.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/response.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/routing.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/base.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/scaffolding.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/session.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/streaming.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/test_process.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/upload_progress.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/url_rewriter.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/assertions.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/verification.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/auto_complete.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/benchmarking.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_view/helpers/javascripts/controls.js
-%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_view/helpers/javascripts/dragdrop.js
-%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_view/helpers/javascripts/effects.js
-%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_view/helpers/javascripts/prototype.js
-%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_view/helpers/asset_tag_helper.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_view/helpers/benchmark_helper.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_view/helpers/cache_helper.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_view/helpers/capture_helper.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_view/helpers/date_helper.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_view/helpers/debug_helper.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_view/helpers/form_helper.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_view/helpers/form_options_helper.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_view/helpers/form_tag_helper.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_view/helpers/javascript_helper.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_view/helpers/number_helper.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_view/helpers/pagination_helper.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_view/helpers/tag_helper.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_view/helpers/text_helper.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_view/helpers/upload_progress_helper.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_view/helpers/active_record_helper.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_view/helpers/url_helper.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_view/vendor/builder/blankslate.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_view/vendor/builder/xmlbase.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_view/vendor/builder/xmlevents.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_view/vendor/builder/xmlmarkup.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_view/vendor/builder.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_view/base.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_view/partials.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_view/template_error.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_view.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/test/controller/verification_test.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/test/controller/active_record_assertions_test.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/test/controller/active_record_store_test.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/test/controller/addresses_render_test.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/test/controller/base_tests.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/test/controller/caching_filestore.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/test/controller/capture_test.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/test/controller/cgi_test.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/test/controller/components_test.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/test/controller/cookie_test.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/test/controller/custom_handler_test.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/test/controller/filters_test.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/test/controller/flash_test.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/test/controller/helper_test.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/test/controller/multipart_progress_testx.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/test/controller/new_render_test.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/test/controller/raw_post_test.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/test/controller/redirect_test.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/test/controller/render_test.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/test/controller/request_test.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/test/controller/routing_test.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/test/controller/send_file_test.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/test/controller/test_test.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/test/controller/upload_progress_testx.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/test/controller/action_pack_assertions_test.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/test/fixtures/addresses/list.rhtml
-%%INSTIKIDIR%%vendor/rails/actionpack/test/fixtures/fun/games/hello_world.rhtml
-%%INSTIKIDIR%%vendor/rails/actionpack/test/fixtures/helpers/fun/games_helper.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/test/fixtures/helpers/abc_helper.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/test/fixtures/layouts/builder.rxml
-%%INSTIKIDIR%%vendor/rails/actionpack/test/fixtures/layouts/standard.rhtml
-%%INSTIKIDIR%%vendor/rails/actionpack/test/fixtures/scope/test/modgreet.rhtml
-%%INSTIKIDIR%%vendor/rails/actionpack/test/fixtures/test/_partial_only.rhtml
-%%INSTIKIDIR%%vendor/rails/actionpack/test/fixtures/test/greeting.rhtml
-%%INSTIKIDIR%%vendor/rails/actionpack/test/fixtures/test/hello.rxml
-%%INSTIKIDIR%%vendor/rails/actionpack/test/fixtures/test/hello_world.rhtml
-%%INSTIKIDIR%%vendor/rails/actionpack/test/fixtures/test/hello_xml_world.rxml
-%%INSTIKIDIR%%vendor/rails/actionpack/test/fixtures/test/list.rhtml
-%%INSTIKIDIR%%vendor/rails/actionpack/test/fixtures/test/update_element_with_capture.rhtml
-%%INSTIKIDIR%%vendor/rails/actionpack/test/fixtures/test/_customer.rhtml
-%%INSTIKIDIR%%vendor/rails/actionpack/test/fixtures/test/capturing.rhtml
-%%INSTIKIDIR%%vendor/rails/actionpack/test/template/url_helper_test.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/test/template/asset_tag_helper_test.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/test/template/benchmark_helper_test.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/test/template/date_helper_test.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/test/template/form_helper_test.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/test/template/form_options_helper_test.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/test/template/form_tag_helper_test.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/test/template/javascript_helper_test.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/test/template/number_helper_test.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/test/template/tag_helper_test.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/test/template/text_helper_test.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/test/template/upload_progress_helper_testx.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/test/template/active_record_helper_test.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/test/abstract_unit.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/Rakefile
-%%INSTIKIDIR%%vendor/rails/actionpack/README
-%%INSTIKIDIR%%vendor/rails/actionpack/RUNNING_UNIT_TESTS
-%%INSTIKIDIR%%vendor/rails/actionpack/MIT-LICENSE
-%%INSTIKIDIR%%vendor/rails/actionpack/install.rb
-%%INSTIKIDIR%%vendor/rails/actionpack/CHANGELOG
-%%INSTIKIDIR%%vendor/rails/actionwebservice/lib/action_web_service/dispatcher/abstract.rb
-%%INSTIKIDIR%%vendor/rails/actionwebservice/lib/action_web_service/dispatcher/action_controller_dispatcher.rb
-%%INSTIKIDIR%%vendor/rails/actionwebservice/lib/action_web_service/container/action_controller_container.rb
-%%INSTIKIDIR%%vendor/rails/actionwebservice/lib/action_web_service/container/delegated_container.rb
-%%INSTIKIDIR%%vendor/rails/actionwebservice/lib/action_web_service/container/direct_container.rb
-%%INSTIKIDIR%%vendor/rails/actionwebservice/lib/action_web_service/client/base.rb
-%%INSTIKIDIR%%vendor/rails/actionwebservice/lib/action_web_service/client/soap_client.rb
-%%INSTIKIDIR%%vendor/rails/actionwebservice/lib/action_web_service/client/xmlrpc_client.rb
-%%INSTIKIDIR%%vendor/rails/actionwebservice/lib/action_web_service/support/class_inheritable_options.rb
-%%INSTIKIDIR%%vendor/rails/actionwebservice/lib/action_web_service/support/signature_types.rb
-%%INSTIKIDIR%%vendor/rails/actionwebservice/lib/action_web_service/templates/scaffolds/layout.rhtml
-%%INSTIKIDIR%%vendor/rails/actionwebservice/lib/action_web_service/templates/scaffolds/methods.rhtml
-%%INSTIKIDIR%%vendor/rails/actionwebservice/lib/action_web_service/templates/scaffolds/parameters.rhtml
-%%INSTIKIDIR%%vendor/rails/actionwebservice/lib/action_web_service/templates/scaffolds/result.rhtml
-%%INSTIKIDIR%%vendor/rails/actionwebservice/lib/action_web_service/protocol/soap_protocol/marshaler.rb
-%%INSTIKIDIR%%vendor/rails/actionwebservice/lib/action_web_service/protocol/abstract.rb
-%%INSTIKIDIR%%vendor/rails/actionwebservice/lib/action_web_service/protocol/discovery.rb
-%%INSTIKIDIR%%vendor/rails/actionwebservice/lib/action_web_service/protocol/soap_protocol.rb
-%%INSTIKIDIR%%vendor/rails/actionwebservice/lib/action_web_service/protocol/xmlrpc_protocol.rb
-%%INSTIKIDIR%%vendor/rails/actionwebservice/lib/action_web_service/invocation.rb
-%%INSTIKIDIR%%vendor/rails/actionwebservice/lib/action_web_service/protocol.rb
-%%INSTIKIDIR%%vendor/rails/actionwebservice/lib/action_web_service/scaffolding.rb
-%%INSTIKIDIR%%vendor/rails/actionwebservice/lib/action_web_service/struct.rb
-%%INSTIKIDIR%%vendor/rails/actionwebservice/lib/action_web_service/api.rb
-%%INSTIKIDIR%%vendor/rails/actionwebservice/lib/action_web_service/test_invoke.rb
-%%INSTIKIDIR%%vendor/rails/actionwebservice/lib/action_web_service/base.rb
-%%INSTIKIDIR%%vendor/rails/actionwebservice/lib/action_web_service/casting.rb
-%%INSTIKIDIR%%vendor/rails/actionwebservice/lib/action_web_service/client.rb
-%%INSTIKIDIR%%vendor/rails/actionwebservice/lib/action_web_service/container.rb
-%%INSTIKIDIR%%vendor/rails/actionwebservice/lib/action_web_service/dispatcher.rb
-%%INSTIKIDIR%%vendor/rails/actionwebservice/lib/action_web_service.rb
-%%INSTIKIDIR%%vendor/rails/actionwebservice/test/apis/auto_load_api.rb
-%%INSTIKIDIR%%vendor/rails/actionwebservice/test/apis/broken_auto_load_api.rb
-%%INSTIKIDIR%%vendor/rails/actionwebservice/test/abstract_dispatcher.rb
-%%INSTIKIDIR%%vendor/rails/actionwebservice/test/abstract_unit.rb
-%%INSTIKIDIR%%vendor/rails/actionwebservice/test/api_test.rb
-%%INSTIKIDIR%%vendor/rails/actionwebservice/test/base_test.rb
-%%INSTIKIDIR%%vendor/rails/actionwebservice/test/casting_test.rb
-%%INSTIKIDIR%%vendor/rails/actionwebservice/test/client_soap_test.rb
-%%INSTIKIDIR%%vendor/rails/actionwebservice/test/client_xmlrpc_test.rb
-%%INSTIKIDIR%%vendor/rails/actionwebservice/test/container_test.rb
-%%INSTIKIDIR%%vendor/rails/actionwebservice/test/dispatcher_action_controller_soap_test.rb
-%%INSTIKIDIR%%vendor/rails/actionwebservice/test/dispatcher_action_controller_xmlrpc_test.rb
-%%INSTIKIDIR%%vendor/rails/actionwebservice/test/gencov
-%%INSTIKIDIR%%vendor/rails/actionwebservice/test/invocation_test.rb
-%%INSTIKIDIR%%vendor/rails/actionwebservice/test/run
-%%INSTIKIDIR%%vendor/rails/actionwebservice/test/scaffolded_controller_test.rb
-%%INSTIKIDIR%%vendor/rails/actionwebservice/test/struct_test.rb
-%%INSTIKIDIR%%vendor/rails/actionwebservice/test/abstract_client.rb
-%%INSTIKIDIR%%vendor/rails/actionwebservice/test/test_invoke_test.rb
-%%INSTIKIDIR%%vendor/rails/actionwebservice/examples/googlesearch/autoloading/google_search_api.rb
-%%INSTIKIDIR%%vendor/rails/actionwebservice/examples/googlesearch/autoloading/google_search_controller.rb
-%%INSTIKIDIR%%vendor/rails/actionwebservice/examples/googlesearch/delegated/google_search_service.rb
-%%INSTIKIDIR%%vendor/rails/actionwebservice/examples/googlesearch/delegated/search_controller.rb
-%%INSTIKIDIR%%vendor/rails/actionwebservice/examples/googlesearch/direct/google_search_api.rb
-%%INSTIKIDIR%%vendor/rails/actionwebservice/examples/googlesearch/direct/search_controller.rb
-%%INSTIKIDIR%%vendor/rails/actionwebservice/examples/googlesearch/README
-%%INSTIKIDIR%%vendor/rails/actionwebservice/examples/metaWeblog/apis/blogger_api.rb
-%%INSTIKIDIR%%vendor/rails/actionwebservice/examples/metaWeblog/apis/blogger_service.rb
-%%INSTIKIDIR%%vendor/rails/actionwebservice/examples/metaWeblog/apis/meta_weblog_api.rb
-%%INSTIKIDIR%%vendor/rails/actionwebservice/examples/metaWeblog/apis/meta_weblog_service.rb
-%%INSTIKIDIR%%vendor/rails/actionwebservice/examples/metaWeblog/controllers/xmlrpc_controller.rb
-%%INSTIKIDIR%%vendor/rails/actionwebservice/examples/metaWeblog/README
-%%INSTIKIDIR%%vendor/rails/actionwebservice/Rakefile
-%%INSTIKIDIR%%vendor/rails/actionwebservice/README
-%%INSTIKIDIR%%vendor/rails/actionwebservice/setup.rb
-%%INSTIKIDIR%%vendor/rails/actionwebservice/CHANGELOG
-%%INSTIKIDIR%%vendor/rails/actionwebservice/TODO
-%%INSTIKIDIR%%vendor/rails/actionwebservice/install.rb
-%%INSTIKIDIR%%vendor/rails/actionwebservice/MIT-LICENSE
-%%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/connection_adapters/oci_adapter.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/connection_adapters/db2_adapter.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/connection_adapters/mysql_adapter.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/connection_adapters/abstract_adapter.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/connection_adapters/postgresql_adapter.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/connection_adapters/sqlite_adapter.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/connection_adapters/sqlserver_adapter.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/associations/association_collection.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/associations/association_proxy.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/associations/belongs_to_association.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/associations/has_and_belongs_to_many_association.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/associations/has_many_association.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/associations/has_one_association.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/vendor/db2.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/vendor/mysql.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/vendor/mysql411.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/vendor/simple.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/wrappers/yaml_wrapper.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/acts/list.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/acts/nested_set.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/acts/tree.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/deprecated_associations.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/deprecated_finders.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/fixtures.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/locking.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/migration.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/observer.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/query_cache.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/reflection.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/timestamp.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/transactions.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/validations.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/wrappings.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/aggregations.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/associations.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/base.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/callbacks.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/benchmarks/benchmark.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/benchmarks/mysql_benchmark.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/examples/associations.png
-%%INSTIKIDIR%%vendor/rails/activerecord/examples/associations.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/examples/shared_setup.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/examples/validation.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/bad_fixtures/attr_with_numeric_first_char
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/bad_fixtures/attr_with_spaces
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/bad_fixtures/blank_line
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/bad_fixtures/duplicate_attributes
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/bad_fixtures/missing_value
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/subscribers/first
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/subscribers/second
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/migrations/1_people_have_last_names.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/migrations/2_we_need_reminders.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/migrations/3_innocent_jointable.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/naked/csv/accounts.csv
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/naked/yml/accounts.yml
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/naked/yml/companies.yml
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/naked/yml/courses.yml
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/developers_projects/david_action_controller
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/developers_projects/david_active_record
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/developers_projects/jamis_active_record
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/db_definitions/sqlserver2.sql
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/db_definitions/create_oracle_db.sh
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/db_definitions/db2.drop.sql
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/db_definitions/db2.sql
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/db_definitions/db22.drop.sql
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/db_definitions/db22.sql
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/db_definitions/mysql.drop.sql
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/db_definitions/mysql.sql
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/db_definitions/mysql2.drop.sql
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/db_definitions/mysql2.sql
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/db_definitions/oci.drop.sql
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/db_definitions/oci.sql
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/db_definitions/oci2.drop.sql
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/db_definitions/oci2.sql
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/db_definitions/postgresql.drop.sql
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/db_definitions/postgresql.sql
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/db_definitions/postgresql2.drop.sql
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/db_definitions/postgresql2.sql
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/db_definitions/sqlite.drop.sql
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/db_definitions/sqlite.sql
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/db_definitions/sqlite2.sql
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/db_definitions/sqlite2.drop.sql
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/db_definitions/sqlserver.drop.sql
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/db_definitions/sqlserver.sql
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/db_definitions/sqlserver2.drop.sql
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/db_definitions/create_oracle_db.bat
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/categories.yml
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/categories_posts.yml
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/category.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/column_name.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/comment.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/comments.yml
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/companies.yml
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/company.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/company_in_module.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/computer.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/computers.yml
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/course.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/courses.yml
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/customer.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/customers.yml
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/default.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/developer.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/developers.yml
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/developers_projects.yml
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/entrant.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/entrants.yml
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/fk_test_has_fk.yml
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/fk_test_has_pk.yml
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/mixin.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/mixins.yml
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/movie.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/movies.yml
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/people.yml
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/person.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/post.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/posts.yml
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/project.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/projects.yml
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/reply.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/subscriber.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/task.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/tasks.yml
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/topic.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/accounts.yml
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/topics.yml
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/associations.png
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/author.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/authors.yml
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/auto_id.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/binary.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/test/connections/native_sqlite/connection.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/test/connections/native_mysql/connection.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/test/connections/native_oci/connection.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/test/connections/native_postgresql/connection.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/test/connections/native_db2/connection.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/test/connections/native_sqlite3/connection.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/test/connections/native_sqlserver/connection.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/test/connections/native_sqlserver_odbc/connection.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/test/active_schema_mysql.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/test/aggregations_test.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/test/all.sh
-%%INSTIKIDIR%%vendor/rails/activerecord/test/associations_go_eager_test.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/test/associations_test.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/test/association_callbacks_test.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/test/association_inheritance_reload.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/test/base_test.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/test/binary_test.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/test/callbacks_test.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/test/class_inheritable_attributes_test.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/test/column_alias_test.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/test/deprecated_associations_test.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/test/deprecated_finder_test.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/test/finder_test.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures_test.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/test/inheritance_test.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/test/lifecycle_test.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/test/locking_test.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/test/migration_test.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/test/mixin_nested_set_test.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/test/mixin_test.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/test/modules_test.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/test/multiple_db_test.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/test/pk_test.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/test/reflection_test.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/test/schema_test_postgresql.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/test/threaded_connections_test.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/test/thread_safety_test.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/test/transactions_test.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/test/unconnected_test.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/test/aaa_create_tables_test.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/test/validations_test.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/test/abstract_unit.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/install.rb
-%%INSTIKIDIR%%vendor/rails/activerecord/MIT-LICENSE
-%%INSTIKIDIR%%vendor/rails/activerecord/Rakefile
-%%INSTIKIDIR%%vendor/rails/activerecord/README
-%%INSTIKIDIR%%vendor/rails/activerecord/RUNNING_UNIT_TESTS
-%%INSTIKIDIR%%vendor/rails/activerecord/CHANGELOG
+%%INSTIKIDIR%%public/.htaccess
+%%INSTIKIDIR%%public/404.html
+%%INSTIKIDIR%%public/500.html
+%%INSTIKIDIR%%public/dispatch.cgi
+%%INSTIKIDIR%%public/dispatch.fcgi
+%%INSTIKIDIR%%public/dispatch.rb
+%%INSTIKIDIR%%public/favicon.ico
+%%INSTIKIDIR%%public/images/.images_go_here
+%%INSTIKIDIR%%public/javascripts/controls.js
+%%INSTIKIDIR%%public/javascripts/dragdrop.js
+%%INSTIKIDIR%%public/javascripts/edit_web.js
+%%INSTIKIDIR%%public/javascripts/effects.js
+%%INSTIKIDIR%%public/javascripts/prototype.js
+%%INSTIKIDIR%%public/javascripts/scriptaculous.js
+%%INSTIKIDIR%%public/javascripts/slider.js
+%%INSTIKIDIR%%public/robots.txt
+%%INSTIKIDIR%%public/stylesheets/instiki.css
+%%INSTIKIDIR%%rakefile.rb
+%%INSTIKIDIR%%script/benchmarker
+%%INSTIKIDIR%%script/breakpointer
+%%INSTIKIDIR%%script/console
+%%INSTIKIDIR%%script/destroy
+%%INSTIKIDIR%%script/generate
+%%INSTIKIDIR%%script/import_storage
+%%INSTIKIDIR%%script/profiler
+%%INSTIKIDIR%%script/reset_references
+%%INSTIKIDIR%%script/runner
+%%INSTIKIDIR%%script/server
+%%INSTIKIDIR%%test/fixtures/pages.yml
+%%INSTIKIDIR%%test/fixtures/rails.gif
+%%INSTIKIDIR%%test/fixtures/revisions.yml
+%%INSTIKIDIR%%test/fixtures/system.yml
+%%INSTIKIDIR%%test/fixtures/webs.yml
+%%INSTIKIDIR%%test/fixtures/wiki_references.yml
+%%INSTIKIDIR%%test/functional/admin_controller_test.rb
+%%INSTIKIDIR%%test/functional/application_test.rb
+%%INSTIKIDIR%%test/functional/file_controller_test.rb
+%%INSTIKIDIR%%test/functional/routes_test.rb
+%%INSTIKIDIR%%test/functional/wiki_controller_test.rb
+%%INSTIKIDIR%%test/test_helper.rb
+%%INSTIKIDIR%%test/unit/chunks/category_test.rb
+%%INSTIKIDIR%%test/unit/chunks/nowiki_test.rb
+%%INSTIKIDIR%%test/unit/chunks/wiki_test.rb
+%%INSTIKIDIR%%test/unit/diff_test.rb
+%%INSTIKIDIR%%test/unit/page_renderer_test.rb
+%%INSTIKIDIR%%test/unit/page_test.rb
+%%INSTIKIDIR%%test/unit/redcloth_for_tex_test.rb
+%%INSTIKIDIR%%test/unit/uri_test.rb
+%%INSTIKIDIR%%test/unit/web_test.rb
+%%INSTIKIDIR%%test/unit/wiki_file_test.rb
+%%INSTIKIDIR%%test/unit/wiki_words_test.rb
+%%INSTIKIDIR%%test/watir/e2e.rb
+%%INSTIKIDIR%%vendor/rails/actionmailer/CHANGELOG
+%%INSTIKIDIR%%vendor/rails/actionmailer/MIT-LICENSE
+%%INSTIKIDIR%%vendor/rails/actionmailer/README
+%%INSTIKIDIR%%vendor/rails/actionmailer/Rakefile
+%%INSTIKIDIR%%vendor/rails/actionmailer/install.rb
+%%INSTIKIDIR%%vendor/rails/actionmailer/lib/action_mailer.rb
+%%INSTIKIDIR%%vendor/rails/actionmailer/lib/action_mailer/adv_attr_accessor.rb
+%%INSTIKIDIR%%vendor/rails/actionmailer/lib/action_mailer/base.rb
+%%INSTIKIDIR%%vendor/rails/actionmailer/lib/action_mailer/helpers.rb
+%%INSTIKIDIR%%vendor/rails/actionmailer/lib/action_mailer/mail_helper.rb
+%%INSTIKIDIR%%vendor/rails/actionmailer/lib/action_mailer/part.rb
+%%INSTIKIDIR%%vendor/rails/actionmailer/lib/action_mailer/part_container.rb
+%%INSTIKIDIR%%vendor/rails/actionmailer/lib/action_mailer/quoting.rb
+%%INSTIKIDIR%%vendor/rails/actionmailer/lib/action_mailer/utils.rb
 %%INSTIKIDIR%%vendor/rails/actionmailer/lib/action_mailer/vendor/text/format.rb
-%%INSTIKIDIR%%vendor/rails/actionmailer/lib/action_mailer/vendor/tmail/utils.rb
+%%INSTIKIDIR%%vendor/rails/actionmailer/lib/action_mailer/vendor/tmail.rb
+%%INSTIKIDIR%%vendor/rails/actionmailer/lib/action_mailer/vendor/tmail/address.rb
 %%INSTIKIDIR%%vendor/rails/actionmailer/lib/action_mailer/vendor/tmail/attachments.rb
 %%INSTIKIDIR%%vendor/rails/actionmailer/lib/action_mailer/vendor/tmail/base64.rb
 %%INSTIKIDIR%%vendor/rails/actionmailer/lib/action_mailer/vendor/tmail/config.rb
@@ -584,28 +195,17 @@
 %%INSTIKIDIR%%vendor/rails/actionmailer/lib/action_mailer/vendor/tmail/scanner_r.rb
 %%INSTIKIDIR%%vendor/rails/actionmailer/lib/action_mailer/vendor/tmail/stringio.rb
 %%INSTIKIDIR%%vendor/rails/actionmailer/lib/action_mailer/vendor/tmail/tmail.rb
-%%INSTIKIDIR%%vendor/rails/actionmailer/lib/action_mailer/vendor/tmail/address.rb
-%%INSTIKIDIR%%vendor/rails/actionmailer/lib/action_mailer/vendor/tmail.rb
-%%INSTIKIDIR%%vendor/rails/actionmailer/lib/action_mailer/base.rb
-%%INSTIKIDIR%%vendor/rails/actionmailer/lib/action_mailer/helpers.rb
-%%INSTIKIDIR%%vendor/rails/actionmailer/lib/action_mailer/mail_helper.rb
-%%INSTIKIDIR%%vendor/rails/actionmailer/lib/action_mailer/adv_attr_accessor.rb
-%%INSTIKIDIR%%vendor/rails/actionmailer/lib/action_mailer/part_container.rb
-%%INSTIKIDIR%%vendor/rails/actionmailer/lib/action_mailer/quoting.rb
-%%INSTIKIDIR%%vendor/rails/actionmailer/lib/action_mailer/utils.rb
-%%INSTIKIDIR%%vendor/rails/actionmailer/lib/action_mailer/part.rb
-%%INSTIKIDIR%%vendor/rails/actionmailer/lib/action_mailer.rb
-%%INSTIKIDIR%%vendor/rails/actionmailer/test/fixtures/templates/signed_up.rhtml
+%%INSTIKIDIR%%vendor/rails/actionmailer/lib/action_mailer/vendor/tmail/utils.rb
+%%INSTIKIDIR%%vendor/rails/actionmailer/lib/action_mailer/version.rb
 %%INSTIKIDIR%%vendor/rails/actionmailer/test/fixtures/helper_mailer/use_helper.rhtml
 %%INSTIKIDIR%%vendor/rails/actionmailer/test/fixtures/helper_mailer/use_helper_method.rhtml
 %%INSTIKIDIR%%vendor/rails/actionmailer/test/fixtures/helper_mailer/use_mail_helper.rhtml
 %%INSTIKIDIR%%vendor/rails/actionmailer/test/fixtures/helper_mailer/use_test_helper.rhtml
 %%INSTIKIDIR%%vendor/rails/actionmailer/test/fixtures/helpers/test_helper.rb
-%%INSTIKIDIR%%vendor/rails/actionmailer/test/fixtures/test_mailer/implicitly_multipart_example.text.html.rhtml
-%%INSTIKIDIR%%vendor/rails/actionmailer/test/fixtures/test_mailer/implicitly_multipart_example.text.plain.rhtml
-%%INSTIKIDIR%%vendor/rails/actionmailer/test/fixtures/test_mailer/implicitly_multipart_example.text.yaml.rhtml
-%%INSTIKIDIR%%vendor/rails/actionmailer/test/fixtures/test_mailer/signed_up.rhtml
 %%INSTIKIDIR%%vendor/rails/actionmailer/test/fixtures/raw_email
+%%INSTIKIDIR%%vendor/rails/actionmailer/test/fixtures/raw_email10
+%%INSTIKIDIR%%vendor/rails/actionmailer/test/fixtures/raw_email11
+%%INSTIKIDIR%%vendor/rails/actionmailer/test/fixtures/raw_email12
 %%INSTIKIDIR%%vendor/rails/actionmailer/test/fixtures/raw_email2
 %%INSTIKIDIR%%vendor/rails/actionmailer/test/fixtures/raw_email3
 %%INSTIKIDIR%%vendor/rails/actionmailer/test/fixtures/raw_email4
@@ -614,416 +214,991 @@
 %%INSTIKIDIR%%vendor/rails/actionmailer/test/fixtures/raw_email7
 %%INSTIKIDIR%%vendor/rails/actionmailer/test/fixtures/raw_email8
 %%INSTIKIDIR%%vendor/rails/actionmailer/test/fixtures/raw_email9
-%%INSTIKIDIR%%vendor/rails/actionmailer/test/fixtures/raw_email10
-%%INSTIKIDIR%%vendor/rails/actionmailer/test/fixtures/raw_email11
+%%INSTIKIDIR%%vendor/rails/actionmailer/test/fixtures/templates/signed_up.rhtml
+%%INSTIKIDIR%%vendor/rails/actionmailer/test/fixtures/test_mailer/implicitly_multipart_example.text.html.rhtml
+%%INSTIKIDIR%%vendor/rails/actionmailer/test/fixtures/test_mailer/implicitly_multipart_example.text.plain.rhtml
+%%INSTIKIDIR%%vendor/rails/actionmailer/test/fixtures/test_mailer/implicitly_multipart_example.text.yaml.rhtml
+%%INSTIKIDIR%%vendor/rails/actionmailer/test/fixtures/test_mailer/signed_up.rhtml
 %%INSTIKIDIR%%vendor/rails/actionmailer/test/mail_helper_test.rb
+%%INSTIKIDIR%%vendor/rails/actionmailer/test/mail_render_test.rb
 %%INSTIKIDIR%%vendor/rails/actionmailer/test/mail_service_test.rb
-%%INSTIKIDIR%%vendor/rails/actionmailer/CHANGELOG
-%%INSTIKIDIR%%vendor/rails/actionmailer/Rakefile
-%%INSTIKIDIR%%vendor/rails/actionmailer/README
-%%INSTIKIDIR%%vendor/rails/actionmailer/MIT-LICENSE
-%%INSTIKIDIR%%vendor/rails/actionmailer/install.rb
-%%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/values/time_zone.rb
-%%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/core_ext/string/conversions.rb
-%%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/core_ext/string/inflections.rb
-%%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/core_ext/numeric/bytes.rb
-%%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/core_ext/numeric/time.rb
-%%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/core_ext/hash/indifferent_access.rb
-%%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/core_ext/hash/keys.rb
-%%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/core_ext/cgi/escape_skipping_slashes.rb
-%%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/core_ext/date/conversions.rb
-%%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/core_ext/fixnum/even_odd.rb
-%%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/core_ext/time/calculations.rb
-%%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/core_ext/time/conversions.rb
-%%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/core_ext/array/to_param.rb
-%%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/core_ext/numeric.rb
-%%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/core_ext/object_and_class.rb
-%%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/core_ext/string.rb
-%%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/core_ext/time.rb
-%%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/core_ext/array.rb
-%%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/core_ext/cgi.rb
-%%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/core_ext/date.rb
-%%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/core_ext/fixnum.rb
-%%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/core_ext/hash.rb
-%%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/core_ext/kernel.rb
-%%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/core_ext/load_error.rb
+%%INSTIKIDIR%%vendor/rails/actionmailer/test/quoting_test.rb
+%%INSTIKIDIR%%vendor/rails/actionmailer/test/tmail_test.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/CHANGELOG
+%%INSTIKIDIR%%vendor/rails/actionpack/MIT-LICENSE
+%%INSTIKIDIR%%vendor/rails/actionpack/README
+%%INSTIKIDIR%%vendor/rails/actionpack/RUNNING_UNIT_TESTS
+%%INSTIKIDIR%%vendor/rails/actionpack/Rakefile
+%%INSTIKIDIR%%vendor/rails/actionpack/examples/.htaccess
+%%INSTIKIDIR%%vendor/rails/actionpack/examples/address_book/index.rhtml
+%%INSTIKIDIR%%vendor/rails/actionpack/examples/address_book/layout.rhtml
+%%INSTIKIDIR%%vendor/rails/actionpack/examples/address_book_controller.cgi
+%%INSTIKIDIR%%vendor/rails/actionpack/examples/address_book_controller.fcgi
+%%INSTIKIDIR%%vendor/rails/actionpack/examples/address_book_controller.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/examples/address_book_controller.rbx
+%%INSTIKIDIR%%vendor/rails/actionpack/examples/benchmark.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/examples/benchmark_with_ar.fcgi
+%%INSTIKIDIR%%vendor/rails/actionpack/examples/blog_controller.cgi
+%%INSTIKIDIR%%vendor/rails/actionpack/examples/debate/index.rhtml
+%%INSTIKIDIR%%vendor/rails/actionpack/examples/debate/new_topic.rhtml
+%%INSTIKIDIR%%vendor/rails/actionpack/examples/debate/topic.rhtml
+%%INSTIKIDIR%%vendor/rails/actionpack/examples/debate_controller.cgi
+%%INSTIKIDIR%%vendor/rails/actionpack/install.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/assertions.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/base.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/benchmarking.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/caching.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/cgi_ext/cgi_ext.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/cgi_ext/cgi_methods.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/cgi_ext/cookie_performance_fix.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/cgi_ext/multipart_progress.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/cgi_ext/raw_post_data_fix.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/cgi_process.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/code_generation.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/components.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/cookies.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/dependencies.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/deprecated_assertions.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/deprecated_redirects.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/filters.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/flash.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/helpers.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/layout.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/macros/auto_complete.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/macros/in_place_editing.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/pagination.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/request.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/rescue.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/response.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/routing.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/scaffolding.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/session/active_record_store.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/session/drb_server.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/session/drb_store.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/session/mem_cache_store.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/session_management.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/streaming.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/templates/rescues/_request_and_response.rhtml
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/templates/rescues/_trace.rhtml
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/templates/rescues/diagnostics.rhtml
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/templates/rescues/layout.rhtml
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/templates/rescues/missing_template.rhtml
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/templates/rescues/routing_error.rhtml
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/templates/rescues/template_error.rhtml
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/templates/rescues/unknown_action.rhtml
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/templates/scaffolds/edit.rhtml
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/templates/scaffolds/layout.rhtml
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/templates/scaffolds/list.rhtml
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/templates/scaffolds/new.rhtml
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/templates/scaffolds/show.rhtml
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/test_process.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/upload_progress.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/url_rewriter.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/vendor/html-scanner/html/document.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/vendor/html-scanner/html/node.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/vendor/html-scanner/html/tokenizer.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/vendor/html-scanner/html/version.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/vendor/xml_simple.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/verification.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_pack.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_pack/version.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_view.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_view/base.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_view/compiled_templates.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_view/helpers/active_record_helper.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_view/helpers/asset_tag_helper.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_view/helpers/benchmark_helper.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_view/helpers/cache_helper.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_view/helpers/capture_helper.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_view/helpers/date_helper.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_view/helpers/debug_helper.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_view/helpers/form_helper.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_view/helpers/form_options_helper.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_view/helpers/form_tag_helper.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_view/helpers/java_script_macros_helper.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_view/helpers/javascript_helper.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_view/helpers/javascripts/controls.js
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_view/helpers/javascripts/dragdrop.js
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_view/helpers/javascripts/effects.js
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_view/helpers/javascripts/prototype.js
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_view/helpers/number_helper.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_view/helpers/pagination_helper.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_view/helpers/tag_helper.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_view/helpers/text_helper.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_view/helpers/upload_progress_helper.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_view/helpers/url_helper.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_view/partials.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_view/template_error.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_view/vendor/builder.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_view/vendor/builder/blankslate.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_view/vendor/builder/xmlbase.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_view/vendor/builder/xmlevents.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/lib/action_view/vendor/builder/xmlmarkup.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/test/abstract_unit.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/test/controller/action_pack_assertions_test.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/test/controller/active_record_assertions_test.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/test/controller/active_record_store_test.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/test/controller/addresses_render_test.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/test/controller/base_test.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/test/controller/benchmark_test.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/test/controller/caching_filestore.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/test/controller/capture_test.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/test/controller/cgi_test.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/test/controller/components_test.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/test/controller/cookie_test.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/test/controller/custom_handler_test.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/test/controller/fake_controllers.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/test/controller/filters_test.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/test/controller/flash_test.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/test/controller/fragment_store_setting_test.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/test/controller/helper_test.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/test/controller/multipart_progress_testx.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/test/controller/new_render_test.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/test/controller/raw_post_test.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/test/controller/redirect_test.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/test/controller/render_test.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/test/controller/request_test.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/test/controller/routing_test.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/test/controller/send_file_test.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/test/controller/session_management_test.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/test/controller/test_test.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/test/controller/upload_progress_testx.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/test/controller/url_rewriter_test.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/test/controller/verification_test.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/test/fixtures/addresses/list.rhtml
+%%INSTIKIDIR%%vendor/rails/actionpack/test/fixtures/fun/games/hello_world.rhtml
+%%INSTIKIDIR%%vendor/rails/actionpack/test/fixtures/helpers/abc_helper.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/test/fixtures/helpers/fun/games_helper.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/test/fixtures/helpers/fun/pdf_helper.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/test/fixtures/layouts/builder.rxml
+%%INSTIKIDIR%%vendor/rails/actionpack/test/fixtures/layouts/standard.rhtml
+%%INSTIKIDIR%%vendor/rails/actionpack/test/fixtures/layouts/talk_from_action.rhtml
+%%INSTIKIDIR%%vendor/rails/actionpack/test/fixtures/layouts/yield.rhtml
+%%INSTIKIDIR%%vendor/rails/actionpack/test/fixtures/multipart/binary_file
+%%INSTIKIDIR%%vendor/rails/actionpack/test/fixtures/multipart/large_text_file
+%%INSTIKIDIR%%vendor/rails/actionpack/test/fixtures/multipart/mixed_files
+%%INSTIKIDIR%%vendor/rails/actionpack/test/fixtures/multipart/single_parameter
+%%INSTIKIDIR%%vendor/rails/actionpack/test/fixtures/multipart/text_file
+%%INSTIKIDIR%%vendor/rails/actionpack/test/fixtures/scope/test/modgreet.rhtml
+%%INSTIKIDIR%%vendor/rails/actionpack/test/fixtures/test/_customer.rhtml
+%%INSTIKIDIR%%vendor/rails/actionpack/test/fixtures/test/_customer_greeting.rhtml
+%%INSTIKIDIR%%vendor/rails/actionpack/test/fixtures/test/_hash_object.rhtml
+%%INSTIKIDIR%%vendor/rails/actionpack/test/fixtures/test/_partial_only.rhtml
+%%INSTIKIDIR%%vendor/rails/actionpack/test/fixtures/test/_person.rhtml
+%%INSTIKIDIR%%vendor/rails/actionpack/test/fixtures/test/action_talk_to_layout.rhtml
+%%INSTIKIDIR%%vendor/rails/actionpack/test/fixtures/test/capturing.rhtml
+%%INSTIKIDIR%%vendor/rails/actionpack/test/fixtures/test/content_for.rhtml
+%%INSTIKIDIR%%vendor/rails/actionpack/test/fixtures/test/greeting.rhtml
+%%INSTIKIDIR%%vendor/rails/actionpack/test/fixtures/test/hello.rxml
+%%INSTIKIDIR%%vendor/rails/actionpack/test/fixtures/test/hello_world.rhtml
+%%INSTIKIDIR%%vendor/rails/actionpack/test/fixtures/test/hello_xml_world.rxml
+%%INSTIKIDIR%%vendor/rails/actionpack/test/fixtures/test/list.rhtml
+%%INSTIKIDIR%%vendor/rails/actionpack/test/fixtures/test/potential_conflicts.rhtml
+%%INSTIKIDIR%%vendor/rails/actionpack/test/fixtures/test/render_file_with_ivar.rhtml
+%%INSTIKIDIR%%vendor/rails/actionpack/test/fixtures/test/render_file_with_locals.rhtml
+%%INSTIKIDIR%%vendor/rails/actionpack/test/fixtures/test/render_to_string_test.rhtml
+%%INSTIKIDIR%%vendor/rails/actionpack/test/fixtures/test/update_element_with_capture.rhtml
+%%INSTIKIDIR%%vendor/rails/actionpack/test/template/active_record_helper_test.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/test/template/asset_tag_helper_test.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/test/template/benchmark_helper_test.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/test/template/compiled_templates_tests.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/test/template/date_helper_test.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/test/template/form_helper_test.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/test/template/form_options_helper_test.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/test/template/form_tag_helper_test.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/test/template/java_script_macros_helper_test.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/test/template/javascript_helper_test.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/test/template/number_helper_test.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/test/template/tag_helper_test.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/test/template/text_helper_test.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/test/template/upload_progress_helper_testx.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/test/template/url_helper_test.rb
+%%INSTIKIDIR%%vendor/rails/actionpack/test/testing_sandbox.rb
+%%INSTIKIDIR%%vendor/rails/actionwebservice/CHANGELOG
+%%INSTIKIDIR%%vendor/rails/actionwebservice/MIT-LICENSE
+%%INSTIKIDIR%%vendor/rails/actionwebservice/README
+%%INSTIKIDIR%%vendor/rails/actionwebservice/Rakefile
+%%INSTIKIDIR%%vendor/rails/actionwebservice/TODO
+%%INSTIKIDIR%%vendor/rails/actionwebservice/examples/googlesearch/README
+%%INSTIKIDIR%%vendor/rails/actionwebservice/examples/googlesearch/autoloading/google_search_api.rb
+%%INSTIKIDIR%%vendor/rails/actionwebservice/examples/googlesearch/autoloading/google_search_controller.rb
+%%INSTIKIDIR%%vendor/rails/actionwebservice/examples/googlesearch/delegated/google_search_service.rb
+%%INSTIKIDIR%%vendor/rails/actionwebservice/examples/googlesearch/delegated/search_controller.rb
+%%INSTIKIDIR%%vendor/rails/actionwebservice/examples/googlesearch/direct/google_search_api.rb
+%%INSTIKIDIR%%vendor/rails/actionwebservice/examples/googlesearch/direct/search_controller.rb
+%%INSTIKIDIR%%vendor/rails/actionwebservice/examples/metaWeblog/README
+%%INSTIKIDIR%%vendor/rails/actionwebservice/examples/metaWeblog/apis/blogger_api.rb
+%%INSTIKIDIR%%vendor/rails/actionwebservice/examples/metaWeblog/apis/blogger_service.rb
+%%INSTIKIDIR%%vendor/rails/actionwebservice/examples/metaWeblog/apis/meta_weblog_api.rb
+%%INSTIKIDIR%%vendor/rails/actionwebservice/examples/metaWeblog/apis/meta_weblog_service.rb
+%%INSTIKIDIR%%vendor/rails/actionwebservice/examples/metaWeblog/controllers/xmlrpc_controller.rb
+%%INSTIKIDIR%%vendor/rails/actionwebservice/install.rb
+%%INSTIKIDIR%%vendor/rails/actionwebservice/lib/action_web_service.rb
+%%INSTIKIDIR%%vendor/rails/actionwebservice/lib/action_web_service/api.rb
+%%INSTIKIDIR%%vendor/rails/actionwebservice/lib/action_web_service/base.rb
+%%INSTIKIDIR%%vendor/rails/actionwebservice/lib/action_web_service/casting.rb
+%%INSTIKIDIR%%vendor/rails/actionwebservice/lib/action_web_service/client.rb
+%%INSTIKIDIR%%vendor/rails/actionwebservice/lib/action_web_service/client/base.rb
+%%INSTIKIDIR%%vendor/rails/actionwebservice/lib/action_web_service/client/soap_client.rb
+%%INSTIKIDIR%%vendor/rails/actionwebservice/lib/action_web_service/client/xmlrpc_client.rb
+%%INSTIKIDIR%%vendor/rails/actionwebservice/lib/action_web_service/container.rb
+%%INSTIKIDIR%%vendor/rails/actionwebservice/lib/action_web_service/container/action_controller_container.rb
+%%INSTIKIDIR%%vendor/rails/actionwebservice/lib/action_web_service/container/delegated_container.rb
+%%INSTIKIDIR%%vendor/rails/actionwebservice/lib/action_web_service/container/direct_container.rb
+%%INSTIKIDIR%%vendor/rails/actionwebservice/lib/action_web_service/dispatcher.rb
+%%INSTIKIDIR%%vendor/rails/actionwebservice/lib/action_web_service/dispatcher/abstract.rb
+%%INSTIKIDIR%%vendor/rails/actionwebservice/lib/action_web_service/dispatcher/action_controller_dispatcher.rb
+%%INSTIKIDIR%%vendor/rails/actionwebservice/lib/action_web_service/invocation.rb
+%%INSTIKIDIR%%vendor/rails/actionwebservice/lib/action_web_service/protocol.rb
+%%INSTIKIDIR%%vendor/rails/actionwebservice/lib/action_web_service/protocol/abstract.rb
+%%INSTIKIDIR%%vendor/rails/actionwebservice/lib/action_web_service/protocol/discovery.rb
+%%INSTIKIDIR%%vendor/rails/actionwebservice/lib/action_web_service/protocol/soap_protocol.rb
+%%INSTIKIDIR%%vendor/rails/actionwebservice/lib/action_web_service/protocol/soap_protocol/marshaler.rb
+%%INSTIKIDIR%%vendor/rails/actionwebservice/lib/action_web_service/protocol/xmlrpc_protocol.rb
+%%INSTIKIDIR%%vendor/rails/actionwebservice/lib/action_web_service/scaffolding.rb
+%%INSTIKIDIR%%vendor/rails/actionwebservice/lib/action_web_service/struct.rb
+%%INSTIKIDIR%%vendor/rails/actionwebservice/lib/action_web_service/support/class_inheritable_options.rb
+%%INSTIKIDIR%%vendor/rails/actionwebservice/lib/action_web_service/support/signature_types.rb
+%%INSTIKIDIR%%vendor/rails/actionwebservice/lib/action_web_service/templates/scaffolds/layout.rhtml
+%%INSTIKIDIR%%vendor/rails/actionwebservice/lib/action_web_service/templates/scaffolds/methods.rhtml
+%%INSTIKIDIR%%vendor/rails/actionwebservice/lib/action_web_service/templates/scaffolds/parameters.rhtml
+%%INSTIKIDIR%%vendor/rails/actionwebservice/lib/action_web_service/templates/scaffolds/result.rhtml
+%%INSTIKIDIR%%vendor/rails/actionwebservice/lib/action_web_service/test_invoke.rb
+%%INSTIKIDIR%%vendor/rails/actionwebservice/lib/action_web_service/version.rb
+%%INSTIKIDIR%%vendor/rails/actionwebservice/setup.rb
+%%INSTIKIDIR%%vendor/rails/actionwebservice/test/abstract_client.rb
+%%INSTIKIDIR%%vendor/rails/actionwebservice/test/abstract_dispatcher.rb
+%%INSTIKIDIR%%vendor/rails/actionwebservice/test/abstract_unit.rb
+%%INSTIKIDIR%%vendor/rails/actionwebservice/test/api_test.rb
+%%INSTIKIDIR%%vendor/rails/actionwebservice/test/apis/auto_load_api.rb
+%%INSTIKIDIR%%vendor/rails/actionwebservice/test/apis/broken_auto_load_api.rb
+%%INSTIKIDIR%%vendor/rails/actionwebservice/test/base_test.rb
+%%INSTIKIDIR%%vendor/rails/actionwebservice/test/casting_test.rb
+%%INSTIKIDIR%%vendor/rails/actionwebservice/test/client_soap_test.rb
+%%INSTIKIDIR%%vendor/rails/actionwebservice/test/client_xmlrpc_test.rb
+%%INSTIKIDIR%%vendor/rails/actionwebservice/test/container_test.rb
+%%INSTIKIDIR%%vendor/rails/actionwebservice/test/dispatcher_action_controller_soap_test.rb
+%%INSTIKIDIR%%vendor/rails/actionwebservice/test/dispatcher_action_controller_xmlrpc_test.rb
+%%INSTIKIDIR%%vendor/rails/actionwebservice/test/gencov
+%%INSTIKIDIR%%vendor/rails/actionwebservice/test/invocation_test.rb
+%%INSTIKIDIR%%vendor/rails/actionwebservice/test/run
+%%INSTIKIDIR%%vendor/rails/actionwebservice/test/scaffolded_controller_test.rb
+%%INSTIKIDIR%%vendor/rails/actionwebservice/test/struct_test.rb
+%%INSTIKIDIR%%vendor/rails/actionwebservice/test/test_invoke_test.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/CHANGELOG
+%%INSTIKIDIR%%vendor/rails/activerecord/MIT-LICENSE
+%%INSTIKIDIR%%vendor/rails/activerecord/README
+%%INSTIKIDIR%%vendor/rails/activerecord/RUNNING_UNIT_TESTS
+%%INSTIKIDIR%%vendor/rails/activerecord/Rakefile
+%%INSTIKIDIR%%vendor/rails/activerecord/benchmarks/benchmark.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/benchmarks/mysql_benchmark.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/examples/associations.png
+%%INSTIKIDIR%%vendor/rails/activerecord/examples/associations.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/examples/shared_setup.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/examples/validation.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/install.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/acts/list.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/acts/nested_set.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/acts/tree.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/aggregations.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/associations.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/associations/association_collection.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/associations/association_proxy.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/associations/belongs_to_association.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/associations/has_and_belongs_to_many_association.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/associations/has_many_association.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/associations/has_one_association.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/base.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/callbacks.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/connection_specification.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/database_statements.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/quoting.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/schema_definitions.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/schema_statements.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/connection_adapters/abstract_adapter.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/connection_adapters/db2_adapter.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/connection_adapters/firebird_adapter.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/connection_adapters/mysql_adapter.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/connection_adapters/oci_adapter.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/connection_adapters/postgresql_adapter.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/connection_adapters/sqlite_adapter.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/connection_adapters/sqlserver_adapter.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/deprecated_associations.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/deprecated_finders.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/fixtures.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/locking.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/migration.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/observer.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/query_cache.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/reflection.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/schema.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/schema_dumper.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/timestamp.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/transactions.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/validations.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/vendor/db2.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/vendor/mysql.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/vendor/simple.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/version.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/wrappers/yaml_wrapper.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/wrappings.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/test/aaa_create_tables_test.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/test/abstract_unit.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/test/active_schema_mysql.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/test/adapter_test.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/test/aggregations_test.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/test/all.sh
+%%INSTIKIDIR%%vendor/rails/activerecord/test/ar_schema_test.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/test/association_callbacks_test.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/test/association_inheritance_reload.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/test/associations_extensions_test.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/test/associations_go_eager_test.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/test/associations_test.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/test/base_test.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/test/binary_test.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/test/callbacks_test.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/test/class_inheritable_attributes_test.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/test/column_alias_test.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/test/connections/native_db2/connection.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/test/connections/native_firebird/connection.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/test/connections/native_mysql/connection.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/test/connections/native_oci/connection.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/test/connections/native_postgresql/connection.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/test/connections/native_sqlite/connection.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/test/connections/native_sqlite3/connection.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/test/connections/native_sqlite3/in_memory_connection.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/test/connections/native_sqlserver/connection.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/test/connections/native_sqlserver_odbc/connection.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/test/copy_table_sqlite.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/test/default_test_firebird.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/test/deprecated_associations_test.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/test/deprecated_finder_test.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/test/finder_test.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/accounts.yml
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/author.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/authors.yml
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/auto_id.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/bad_fixtures/attr_with_numeric_first_char
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/bad_fixtures/attr_with_spaces
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/bad_fixtures/blank_line
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/bad_fixtures/duplicate_attributes
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/bad_fixtures/missing_value
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/binary.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/categories.yml
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/categories_ordered.yml
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/categories_posts.yml
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/category.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/column_name.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/comment.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/comments.yml
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/companies.yml
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/company.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/company_in_module.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/computer.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/computers.yml
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/course.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/courses.yml
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/customer.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/customers.yml
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/db_definitions/create_oracle_db.bat
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/db_definitions/create_oracle_db.sh
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/db_definitions/db2.drop.sql
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/db_definitions/db2.sql
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/db_definitions/db22.drop.sql
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/db_definitions/db22.sql
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/db_definitions/firebird.drop.sql
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/db_definitions/firebird.sql
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/db_definitions/firebird2.drop.sql
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/db_definitions/firebird2.sql
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/db_definitions/mysql.drop.sql
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/db_definitions/mysql.sql
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/db_definitions/mysql2.drop.sql
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/db_definitions/mysql2.sql
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/db_definitions/oci.drop.sql
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/db_definitions/oci.sql
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/db_definitions/oci2.drop.sql
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/db_definitions/oci2.sql
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/db_definitions/postgresql.drop.sql
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/db_definitions/postgresql.sql
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/db_definitions/postgresql2.drop.sql
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/db_definitions/postgresql2.sql
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/db_definitions/sqlite.drop.sql
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/db_definitions/sqlite.sql
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/db_definitions/sqlite2.drop.sql
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/db_definitions/sqlite2.sql
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/db_definitions/sqlserver.drop.sql
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/db_definitions/sqlserver.sql
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/db_definitions/sqlserver2.drop.sql
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/db_definitions/sqlserver2.sql
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/default.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/developer.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/developers.yml
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/developers_projects.yml
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/developers_projects/david_action_controller
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/developers_projects/david_active_record
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/developers_projects/jamis_active_record
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/entrant.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/entrants.yml
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/fk_test_has_fk.yml
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/fk_test_has_pk.yml
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/flowers.jpg
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/keyboard.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/migrations/1_people_have_last_names.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/migrations/2_we_need_reminders.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/migrations/3_innocent_jointable.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/migrations_with_duplicate/1_people_have_last_names.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/migrations_with_duplicate/2_we_need_reminders.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/migrations_with_duplicate/3_foo.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/migrations_with_duplicate/3_innocent_jointable.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/mixin.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/mixins.yml
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/movie.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/movies.yml
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/naked/csv/accounts.csv
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/naked/yml/accounts.yml
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/naked/yml/companies.yml
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/naked/yml/courses.yml
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/order.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/people.yml
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/person.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/post.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/posts.yml
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/project.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/projects.yml
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/reply.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/subject.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/subscriber.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/subscribers/first
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/subscribers/second
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/task.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/tasks.yml
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/topic.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/topics.yml
+%%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures_test.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/test/inheritance_test.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/test/lifecycle_test.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/test/locking_test.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/test/method_scoping_test.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/test/migration_test.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/test/mixin_nested_set_test.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/test/mixin_test.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/test/modules_test.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/test/multiple_db_test.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/test/pk_test.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/test/readonly_test.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/test/reflection_test.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/test/schema_dumper_test.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/test/schema_test_postgresql.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/test/synonym_test_oci.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/test/threaded_connections_test.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/test/transactions_test.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/test/unconnected_test.rb
+%%INSTIKIDIR%%vendor/rails/activerecord/test/validations_test.rb
+%%INSTIKIDIR%%vendor/rails/activesupport/CHANGELOG
+%%INSTIKIDIR%%vendor/rails/activesupport/README
+%%INSTIKIDIR%%vendor/rails/activesupport/Rakefile
+%%INSTIKIDIR%%vendor/rails/activesupport/install.rb
+%%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support.rb
+%%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/binding_of_caller.rb
+%%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/breakpoint.rb
 %%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/class_attribute_accessors.rb
 %%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/class_inheritable_attributes.rb
 %%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/clean_logger.rb
 %%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/core_ext.rb
+%%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/core_ext/array.rb
+%%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/core_ext/array/conversions.rb
+%%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/core_ext/blank.rb
+%%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/core_ext/cgi.rb
+%%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/core_ext/cgi/escape_skipping_slashes.rb
+%%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/core_ext/date.rb
+%%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/core_ext/date/conversions.rb
+%%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/core_ext/enumerable.rb
+%%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/core_ext/exception.rb
+%%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/core_ext/hash.rb
+%%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/core_ext/hash/indifferent_access.rb
+%%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/core_ext/hash/keys.rb
+%%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/core_ext/hash/reverse_merge.rb
+%%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/core_ext/integer.rb
+%%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/core_ext/integer/even_odd.rb
+%%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/core_ext/integer/inflections.rb
+%%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/core_ext/kernel.rb
+%%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/core_ext/load_error.rb
+%%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/core_ext/numeric.rb
+%%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/core_ext/numeric/bytes.rb
+%%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/core_ext/numeric/time.rb
+%%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/core_ext/object_and_class.rb
+%%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/core_ext/range.rb
+%%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/core_ext/range/conversions.rb
+%%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/core_ext/string.rb
+%%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/core_ext/string/access.rb
+%%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/core_ext/string/conversions.rb
+%%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/core_ext/string/inflections.rb
+%%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/core_ext/string/starts_ends_with.rb
+%%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/core_ext/time.rb
+%%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/core_ext/time/calculations.rb
+%%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/core_ext/time/conversions.rb
 %%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/dependencies.rb
+%%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/inflections.rb
 %%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/inflector.rb
-%%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/misc.rb
 %%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/module_attribute_accessors.rb
-%%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/binding_of_caller.rb
+%%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/ordered_options.rb
+%%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/values/time_zone.rb
+%%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/version.rb
 %%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/whiny_nil.rb
-%%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/breakpoint.rb
-%%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support.rb
-%%INSTIKIDIR%%vendor/rails/activesupport/test/core_ext/time_ext_test.rb
+%%INSTIKIDIR%%vendor/rails/activesupport/test/class_inheritable_attributes_test.rb
+%%INSTIKIDIR%%vendor/rails/activesupport/test/clean_logger_test.rb
+%%INSTIKIDIR%%vendor/rails/activesupport/test/core_ext/array_ext_test.rb
+%%INSTIKIDIR%%vendor/rails/activesupport/test/core_ext/blank_test.rb
 %%INSTIKIDIR%%vendor/rails/activesupport/test/core_ext/cgi_ext_test.rb
 %%INSTIKIDIR%%vendor/rails/activesupport/test/core_ext/date_ext_test.rb
-%%INSTIKIDIR%%vendor/rails/activesupport/test/core_ext/fixnum_ext_test.rb
+%%INSTIKIDIR%%vendor/rails/activesupport/test/core_ext/enumerable_test.rb
+%%INSTIKIDIR%%vendor/rails/activesupport/test/core_ext/exception_test.rb
 %%INSTIKIDIR%%vendor/rails/activesupport/test/core_ext/hash_ext_test.rb
+%%INSTIKIDIR%%vendor/rails/activesupport/test/core_ext/integer_ext_test.rb
+%%INSTIKIDIR%%vendor/rails/activesupport/test/core_ext/kernel_test.rb
 %%INSTIKIDIR%%vendor/rails/activesupport/test/core_ext/load_error_tests.rb
 %%INSTIKIDIR%%vendor/rails/activesupport/test/core_ext/numeric_ext_test.rb
 %%INSTIKIDIR%%vendor/rails/activesupport/test/core_ext/object_and_class_ext_test.rb
+%%INSTIKIDIR%%vendor/rails/activesupport/test/core_ext/range_ext_test.rb
 %%INSTIKIDIR%%vendor/rails/activesupport/test/core_ext/string_ext_test.rb
-%%INSTIKIDIR%%vendor/rails/activesupport/test/core_ext/array_ext_test.rb
+%%INSTIKIDIR%%vendor/rails/activesupport/test/core_ext/time_ext_test.rb
 %%INSTIKIDIR%%vendor/rails/activesupport/test/dependencies/service_one.rb
 %%INSTIKIDIR%%vendor/rails/activesupport/test/dependencies/service_two.rb
+%%INSTIKIDIR%%vendor/rails/activesupport/test/dependencies_test.rb
+%%INSTIKIDIR%%vendor/rails/activesupport/test/inflector_test.rb
 %%INSTIKIDIR%%vendor/rails/activesupport/test/loading_module/admin/access_controller.rb
 %%INSTIKIDIR%%vendor/rails/activesupport/test/loading_module/admin/content_controller.rb
 %%INSTIKIDIR%%vendor/rails/activesupport/test/loading_module/admin/user_controller.rb
 %%INSTIKIDIR%%vendor/rails/activesupport/test/loading_module/content_controller.rb
 %%INSTIKIDIR%%vendor/rails/activesupport/test/loading_module/resource_controller.rb
 %%INSTIKIDIR%%vendor/rails/activesupport/test/loading_module_components/list/list_controller.rb
-%%INSTIKIDIR%%vendor/rails/activesupport/test/misc_test.rb
-%%INSTIKIDIR%%vendor/rails/activesupport/test/time_zone_test.rb
-%%INSTIKIDIR%%vendor/rails/activesupport/test/class_inheritable_attributes_test.rb
-%%INSTIKIDIR%%vendor/rails/activesupport/test/whiny_nil_test.rb
-%%INSTIKIDIR%%vendor/rails/activesupport/test/dependencies_test.rb
-%%INSTIKIDIR%%vendor/rails/activesupport/test/inflector_test.rb
 %%INSTIKIDIR%%vendor/rails/activesupport/test/loading_module_tests.rb
-%%INSTIKIDIR%%vendor/rails/activesupport/CHANGELOG
-%%INSTIKIDIR%%vendor/rails/activesupport/install.rb
-%%INSTIKIDIR%%vendor/rails/activesupport/Rakefile
-%%INSTIKIDIR%%vendor/rails/activesupport/README
-%%INSTIKIDIR%%vendor/rails/pushgems.rb
+%%INSTIKIDIR%%vendor/rails/activesupport/test/ordered_options_test.rb
+%%INSTIKIDIR%%vendor/rails/activesupport/test/time_zone_test.rb
+%%INSTIKIDIR%%vendor/rails/activesupport/test/whiny_nil_test.rb
 %%INSTIKIDIR%%vendor/rails/cleanlogs.sh
+%%INSTIKIDIR%%vendor/rails/pushgems.rb
+%%INSTIKIDIR%%vendor/rails/railties/CHANGELOG
+%%INSTIKIDIR%%vendor/rails/railties/MIT-LICENSE
+%%INSTIKIDIR%%vendor/rails/railties/README
+%%INSTIKIDIR%%vendor/rails/railties/Rakefile
+%%INSTIKIDIR%%vendor/rails/railties/bin/about
+%%INSTIKIDIR%%vendor/rails/railties/bin/breakpointer
+%%INSTIKIDIR%%vendor/rails/railties/bin/console
+%%INSTIKIDIR%%vendor/rails/railties/bin/destroy
+%%INSTIKIDIR%%vendor/rails/railties/bin/generate
+%%INSTIKIDIR%%vendor/rails/railties/bin/performance/benchmarker
+%%INSTIKIDIR%%vendor/rails/railties/bin/performance/profiler
+%%INSTIKIDIR%%vendor/rails/railties/bin/plugin
+%%INSTIKIDIR%%vendor/rails/railties/bin/process/reaper
+%%INSTIKIDIR%%vendor/rails/railties/bin/process/spawner
+%%INSTIKIDIR%%vendor/rails/railties/bin/process/spinner
+%%INSTIKIDIR%%vendor/rails/railties/bin/rails
+%%INSTIKIDIR%%vendor/rails/railties/bin/runner
+%%INSTIKIDIR%%vendor/rails/railties/bin/server
+%%INSTIKIDIR%%vendor/rails/railties/builtin/controllers/rails_info_controller.rb
+%%INSTIKIDIR%%vendor/rails/railties/configs/apache.conf
+%%INSTIKIDIR%%vendor/rails/railties/configs/database.yml
+%%INSTIKIDIR%%vendor/rails/railties/configs/empty.log
+%%INSTIKIDIR%%vendor/rails/railties/configs/lighttpd.conf
+%%INSTIKIDIR%%vendor/rails/railties/configs/routes.rb
+%%INSTIKIDIR%%vendor/rails/railties/dispatches/dispatch.fcgi
+%%INSTIKIDIR%%vendor/rails/railties/dispatches/dispatch.rb
+%%INSTIKIDIR%%vendor/rails/railties/dispatches/gateway.cgi
+%%INSTIKIDIR%%vendor/rails/railties/doc/README_FOR_APP
+%%INSTIKIDIR%%vendor/rails/railties/environments/boot.rb
+%%INSTIKIDIR%%vendor/rails/railties/environments/development.rb
+%%INSTIKIDIR%%vendor/rails/railties/environments/environment.rb
+%%INSTIKIDIR%%vendor/rails/railties/environments/production.rb
+%%INSTIKIDIR%%vendor/rails/railties/environments/test.rb
+%%INSTIKIDIR%%vendor/rails/railties/fresh_rakefile
+%%INSTIKIDIR%%vendor/rails/railties/helpers/application.rb
+%%INSTIKIDIR%%vendor/rails/railties/helpers/application_helper.rb
+%%INSTIKIDIR%%vendor/rails/railties/helpers/test_helper.rb
+%%INSTIKIDIR%%vendor/rails/railties/html/404.html
+%%INSTIKIDIR%%vendor/rails/railties/html/500.html
+%%INSTIKIDIR%%vendor/rails/railties/html/favicon.ico
+%%INSTIKIDIR%%vendor/rails/railties/html/images/rails.png
+%%INSTIKIDIR%%vendor/rails/railties/html/index.html
+%%INSTIKIDIR%%vendor/rails/railties/html/javascripts/controls.js
+%%INSTIKIDIR%%vendor/rails/railties/html/javascripts/dragdrop.js
+%%INSTIKIDIR%%vendor/rails/railties/html/javascripts/effects.js
+%%INSTIKIDIR%%vendor/rails/railties/html/javascripts/prototype.js
+%%INSTIKIDIR%%vendor/rails/railties/html/robots.txt
+%%INSTIKIDIR%%vendor/rails/railties/lib/binding_of_caller.rb
+%%INSTIKIDIR%%vendor/rails/railties/lib/breakpoint.rb
+%%INSTIKIDIR%%vendor/rails/railties/lib/breakpoint_client.rb
+%%INSTIKIDIR%%vendor/rails/railties/lib/code_statistics.rb
+%%INSTIKIDIR%%vendor/rails/railties/lib/commands.rb
+%%INSTIKIDIR%%vendor/rails/railties/lib/commands/about.rb
+%%INSTIKIDIR%%vendor/rails/railties/lib/commands/breakpointer.rb
+%%INSTIKIDIR%%vendor/rails/railties/lib/commands/console.rb
+%%INSTIKIDIR%%vendor/rails/railties/lib/commands/destroy.rb
+%%INSTIKIDIR%%vendor/rails/railties/lib/commands/generate.rb
+%%INSTIKIDIR%%vendor/rails/railties/lib/commands/ncgi/listener
+%%INSTIKIDIR%%vendor/rails/railties/lib/commands/ncgi/tracker
+%%INSTIKIDIR%%vendor/rails/railties/lib/commands/performance/benchmarker.rb
+%%INSTIKIDIR%%vendor/rails/railties/lib/commands/performance/profiler.rb
+%%INSTIKIDIR%%vendor/rails/railties/lib/commands/plugin.rb
+%%INSTIKIDIR%%vendor/rails/railties/lib/commands/process/reaper.rb
+%%INSTIKIDIR%%vendor/rails/railties/lib/commands/process/spawner.rb
+%%INSTIKIDIR%%vendor/rails/railties/lib/commands/process/spinner.rb
+%%INSTIKIDIR%%vendor/rails/railties/lib/commands/runner.rb
+%%INSTIKIDIR%%vendor/rails/railties/lib/commands/server.rb
+%%INSTIKIDIR%%vendor/rails/railties/lib/commands/servers/lighttpd.rb
+%%INSTIKIDIR%%vendor/rails/railties/lib/commands/servers/webrick.rb
+%%INSTIKIDIR%%vendor/rails/railties/lib/commands/update.rb
+%%INSTIKIDIR%%vendor/rails/railties/lib/console_sandbox.rb
+%%INSTIKIDIR%%vendor/rails/railties/lib/dispatcher.rb
+%%INSTIKIDIR%%vendor/rails/railties/lib/fcgi_handler.rb
+%%INSTIKIDIR%%vendor/rails/railties/lib/initializer.rb
+%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator.rb
+%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/base.rb
+%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/commands.rb
+%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/applications/app/USAGE
+%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/applications/app/app_generator.rb
+%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/controller/USAGE
+%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/controller/controller_generator.rb
+%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/controller/templates/controller.rb
+%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/controller/templates/functional_test.rb
+%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/controller/templates/helper.rb
+%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/controller/templates/view.rhtml
+%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/mailer/USAGE
+%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/mailer/mailer_generator.rb
+%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/mailer/templates/fixture.rhtml
+%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/mailer/templates/mailer.rb
+%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/mailer/templates/unit_test.rb
+%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/mailer/templates/view.rhtml
+%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/migration/USAGE
+%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/migration/migration_generator.rb
+%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/migration/templates/migration.rb
+%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/model/USAGE
+%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/model/model_generator.rb
+%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/model/templates/fixtures.yml
+%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/model/templates/model.rb
+%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/model/templates/unit_test.rb
+%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/plugin/USAGE
+%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/plugin/plugin_generator.rb
+%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/plugin/templates/README
+%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/plugin/templates/Rakefile
+%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/plugin/templates/USAGE
+%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/plugin/templates/generator.rb
+%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/plugin/templates/init.rb
+%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/plugin/templates/plugin.rb
+%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/plugin/templates/tasks.rake
+%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/plugin/templates/unit_test.rb
+%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/scaffold/USAGE
+%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/scaffold/scaffold_generator.rb
+%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/scaffold/templates/controller.rb
+%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/scaffold/templates/form.rhtml
+%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/scaffold/templates/form_scaffolding.rhtml
+%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/scaffold/templates/functional_test.rb
+%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/scaffold/templates/helper.rb
+%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/scaffold/templates/layout.rhtml
+%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/scaffold/templates/style.css
+%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/scaffold/templates/view_edit.rhtml
+%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/scaffold/templates/view_list.rhtml
+%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/scaffold/templates/view_new.rhtml
+%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/scaffold/templates/view_show.rhtml
+%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/session_migration/USAGE
+%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/session_migration/session_migration_generator.rb
+%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/session_migration/templates/migration.rb
+%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/web_service/USAGE
+%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/web_service/templates/api_definition.rb
+%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/web_service/templates/controller.rb
+%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/web_service/templates/functional_test.rb
+%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/web_service/web_service_generator.rb
+%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/lookup.rb
+%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/manifest.rb
+%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/options.rb
+%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/scripts.rb
+%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/scripts/destroy.rb
+%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/scripts/generate.rb
+%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/scripts/update.rb
+%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/simple_logger.rb
+%%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/spec.rb
+%%INSTIKIDIR%%vendor/rails/railties/lib/rails_info.rb
+%%INSTIKIDIR%%vendor/rails/railties/lib/rails_version.rb
+%%INSTIKIDIR%%vendor/rails/railties/lib/railties_path.rb
+%%INSTIKIDIR%%vendor/rails/railties/lib/rubyprof_ext.rb
+%%INSTIKIDIR%%vendor/rails/railties/lib/tasks/databases.rake
+%%INSTIKIDIR%%vendor/rails/railties/lib/tasks/documentation.rake
+%%INSTIKIDIR%%vendor/rails/railties/lib/tasks/framework.rake
+%%INSTIKIDIR%%vendor/rails/railties/lib/tasks/javascripts.rake
+%%INSTIKIDIR%%vendor/rails/railties/lib/tasks/misc.rake
+%%INSTIKIDIR%%vendor/rails/railties/lib/tasks/rails.rb
+%%INSTIKIDIR%%vendor/rails/railties/lib/tasks/statistics.rake
+%%INSTIKIDIR%%vendor/rails/railties/lib/tasks/testing.rake
+%%INSTIKIDIR%%vendor/rails/railties/lib/test_help.rb
+%%INSTIKIDIR%%vendor/rails/railties/lib/webrick_server.rb
+%%INSTIKIDIR%%vendor/rails/railties/test/dispatcher_test.rb
+%%INSTIKIDIR%%vendor/rails/railties/test/fcgi_dispatcher_test.rb
+%%INSTIKIDIR%%vendor/rails/railties/test/fixtures/environment_with_constant.rb
+%%INSTIKIDIR%%vendor/rails/railties/test/fixtures/plugins/default/stubby/init.rb
+%%INSTIKIDIR%%vendor/rails/railties/test/fixtures/plugins/default/stubby/lib/stubby_mixin.rb
+%%INSTIKIDIR%%vendor/rails/railties/test/generators/missing_class/missing_class_generator.rb
+%%INSTIKIDIR%%vendor/rails/railties/test/generators/working/working_generator.rb
+%%INSTIKIDIR%%vendor/rails/railties/test/initializer_test.rb
+%%INSTIKIDIR%%vendor/rails/railties/test/mocks/dispatcher.rb
+%%INSTIKIDIR%%vendor/rails/railties/test/mocks/fcgi.rb
+%%INSTIKIDIR%%vendor/rails/railties/test/plugin_test.rb
+%%INSTIKIDIR%%vendor/rails/railties/test/rails_generator_test.rb
+%%INSTIKIDIR%%vendor/rails/railties/test/rails_info_controller_test.rb
+%%INSTIKIDIR%%vendor/rails/railties/test/rails_info_test.rb
+%%INSTIKIDIR%%vendor/rails/railties/test/webrick_dispatcher_test.rb
 %%INSTIKIDIR%%vendor/rails/release.rb
-%%INSTIKIDIR%%vendor/RedCloth-3.0.3/bin/redcloth
-%%INSTIKIDIR%%vendor/RedCloth-3.0.3/doc/CHANGELOG
-%%INSTIKIDIR%%vendor/RedCloth-3.0.3/doc/COPYING
-%%INSTIKIDIR%%vendor/RedCloth-3.0.3/doc/make.rb
-%%INSTIKIDIR%%vendor/RedCloth-3.0.3/doc/README
-%%INSTIKIDIR%%vendor/RedCloth-3.0.3/doc/REFERENCE
-%%INSTIKIDIR%%vendor/RedCloth-3.0.3/tests/textism.yml
-%%INSTIKIDIR%%vendor/RedCloth-3.0.3/tests/images.yml
-%%INSTIKIDIR%%vendor/RedCloth-3.0.3/tests/instiki.yml
-%%INSTIKIDIR%%vendor/RedCloth-3.0.3/tests/links.yml
-%%INSTIKIDIR%%vendor/RedCloth-3.0.3/tests/lists.yml
-%%INSTIKIDIR%%vendor/RedCloth-3.0.3/tests/markdown.yml
-%%INSTIKIDIR%%vendor/RedCloth-3.0.3/tests/poignant.yml
-%%INSTIKIDIR%%vendor/RedCloth-3.0.3/tests/table.yml
-%%INSTIKIDIR%%vendor/RedCloth-3.0.3/tests/code.yml
-%%INSTIKIDIR%%vendor/RedCloth-3.0.3/lib/redcloth.rb
-%%INSTIKIDIR%%vendor/RedCloth-3.0.3/RedCloth.gemspec
-%%INSTIKIDIR%%vendor/RedCloth-3.0.3/run-tests.rb
-%%INSTIKIDIR%%vendor/RedCloth-3.0.3/install.rb
-%%INSTIKIDIR%%vendor/rubyzip-0.5.8/samples/example.rb
-%%INSTIKIDIR%%vendor/rubyzip-0.5.8/samples/example_filesystem.rb
-%%INSTIKIDIR%%vendor/rubyzip-0.5.8/samples/gtkRubyzip.rb
-%%INSTIKIDIR%%vendor/rubyzip-0.5.8/samples/write_simple.rb
-%%INSTIKIDIR%%vendor/rubyzip-0.5.8/samples/zipfind.rb
-%%INSTIKIDIR%%vendor/rubyzip-0.5.8/test/data/zipWithDirs.zip
-%%INSTIKIDIR%%vendor/rubyzip-0.5.8/test/data/file1.txt.deflatedData
-%%INSTIKIDIR%%vendor/rubyzip-0.5.8/test/data/file2.txt
-%%INSTIKIDIR%%vendor/rubyzip-0.5.8/test/data/notzippedruby.rb
-%%INSTIKIDIR%%vendor/rubyzip-0.5.8/test/data/rubycode.zip
-%%INSTIKIDIR%%vendor/rubyzip-0.5.8/test/data/rubycode2.zip
-%%INSTIKIDIR%%vendor/rubyzip-0.5.8/test/data/testDirectory.bin
-%%INSTIKIDIR%%vendor/rubyzip-0.5.8/test/data/file1.txt
-%%INSTIKIDIR%%vendor/rubyzip-0.5.8/test/gentestfiles.rb
-%%INSTIKIDIR%%vendor/rubyzip-0.5.8/test/ioextrastest.rb
-%%INSTIKIDIR%%vendor/rubyzip-0.5.8/test/stdrubyexttest.rb
-%%INSTIKIDIR%%vendor/rubyzip-0.5.8/test/zipfilesystemtest.rb
-%%INSTIKIDIR%%vendor/rubyzip-0.5.8/test/ziprequiretest.rb
-%%INSTIKIDIR%%vendor/rubyzip-0.5.8/test/alltests.rb
-%%INSTIKIDIR%%vendor/rubyzip-0.5.8/test/ziptest.rb
-%%INSTIKIDIR%%vendor/rubyzip-0.5.8/lib/zip/ioextras.rb
-%%INSTIKIDIR%%vendor/rubyzip-0.5.8/lib/zip/stdrubyext.rb
-%%INSTIKIDIR%%vendor/rubyzip-0.5.8/lib/zip/tempfile_bugfixed.rb
-%%INSTIKIDIR%%vendor/rubyzip-0.5.8/lib/zip/zip.rb
-%%INSTIKIDIR%%vendor/rubyzip-0.5.8/lib/zip/zipfilesystem.rb
-%%INSTIKIDIR%%vendor/rubyzip-0.5.8/lib/zip/ziprequire.rb
-%%INSTIKIDIR%%vendor/rubyzip-0.5.8/Rakefile
-%%INSTIKIDIR%%vendor/rubyzip-0.5.8/README
-%%INSTIKIDIR%%vendor/rubyzip-0.5.8/ChangeLog
-%%INSTIKIDIR%%vendor/rubyzip-0.5.8/TODO
-%%INSTIKIDIR%%vendor/rubyzip-0.5.8/install.rb
-%%INSTIKIDIR%%vendor/rubyzip-0.5.8/NEWS
-%%INSTIKIDIR%%config/environments/development.rb
-%%INSTIKIDIR%%config/environments/production.rb
-%%INSTIKIDIR%%config/environments/test.rb
-%%INSTIKIDIR%%config/environment.rb
-%%INSTIKIDIR%%config/routes.rb
-%%INSTIKIDIR%%script/breakpointer
-%%INSTIKIDIR%%script/debug_storage
-%%INSTIKIDIR%%script/server
-%%INSTIKIDIR%%public/javascripts/edit_web.js
-%%INSTIKIDIR%%public/javascripts/prototype.js
-%%INSTIKIDIR%%public/stylesheets/instiki.css
-%%INSTIKIDIR%%public/404.html
-%%INSTIKIDIR%%public/favicon.ico
-%%INSTIKIDIR%%public/500.html
-%%INSTIKIDIR%%public/dispatch.rb
-%%INSTIKIDIR%%app/controllers/admin_controller.rb
-%%INSTIKIDIR%%app/controllers/application.rb
-%%INSTIKIDIR%%app/controllers/file_controller.rb
-%%INSTIKIDIR%%app/controllers/wiki_controller.rb
-%%INSTIKIDIR%%app/helpers/application_helper.rb
-%%INSTIKIDIR%%app/models/chunks/wiki.rb
-%%INSTIKIDIR%%app/models/chunks/chunk.rb
-%%INSTIKIDIR%%app/models/chunks/engines.rb
-%%INSTIKIDIR%%app/models/chunks/include.rb
-%%INSTIKIDIR%%app/models/chunks/literal.rb
-%%INSTIKIDIR%%app/models/chunks/nowiki.rb
-%%INSTIKIDIR%%app/models/chunks/test.rb
-%%INSTIKIDIR%%app/models/chunks/uri.rb
-%%INSTIKIDIR%%app/models/chunks/category.rb
-%%INSTIKIDIR%%app/models/file_yard.rb
-%%INSTIKIDIR%%app/models/page.rb
-%%INSTIKIDIR%%app/models/page_lock.rb
-%%INSTIKIDIR%%app/models/page_set.rb
-%%INSTIKIDIR%%app/models/revision.rb
-%%INSTIKIDIR%%app/models/web.rb
-%%INSTIKIDIR%%app/models/wiki_content.rb
-%%INSTIKIDIR%%app/models/wiki_service.rb
-%%INSTIKIDIR%%app/models/author.rb
-%%INSTIKIDIR%%app/models/wiki_words.rb
-%%INSTIKIDIR%%app/views/layouts/default.rhtml
-%%INSTIKIDIR%%app/views/file/file.rhtml
-%%INSTIKIDIR%%app/views/file/import.rhtml
-%%INSTIKIDIR%%app/views/wiki/web_list.rhtml
-%%INSTIKIDIR%%app/views/wiki/edit.rhtml
-%%INSTIKIDIR%%app/views/wiki/export.rhtml
-%%INSTIKIDIR%%app/views/wiki/feeds.rhtml
-%%INSTIKIDIR%%app/views/wiki/list.rhtml
-%%INSTIKIDIR%%app/views/wiki/locked.rhtml
-%%INSTIKIDIR%%app/views/wiki/login.rhtml
-%%INSTIKIDIR%%app/views/wiki/new.rhtml
-%%INSTIKIDIR%%app/views/wiki/page.rhtml
-%%INSTIKIDIR%%app/views/wiki/print.rhtml
-%%INSTIKIDIR%%app/views/wiki/published.rhtml
-%%INSTIKIDIR%%app/views/wiki/recently_revised.rhtml
-%%INSTIKIDIR%%app/views/wiki/revision.rhtml
-%%INSTIKIDIR%%app/views/wiki/rollback.rhtml
-%%INSTIKIDIR%%app/views/wiki/rss_feed.rhtml
-%%INSTIKIDIR%%app/views/wiki/search.rhtml
-%%INSTIKIDIR%%app/views/wiki/tex.rhtml
-%%INSTIKIDIR%%app/views/wiki/tex_web.rhtml
-%%INSTIKIDIR%%app/views/wiki/authors.rhtml
-%%INSTIKIDIR%%app/views/admin/create_system.rhtml
-%%INSTIKIDIR%%app/views/admin/create_web.rhtml
-%%INSTIKIDIR%%app/views/admin/edit_web.rhtml
-%%INSTIKIDIR%%app/views/rdoc_help.rhtml
-%%INSTIKIDIR%%app/views/textile_help.rhtml
-%%INSTIKIDIR%%app/views/wiki_words_help.rhtml
-%%INSTIKIDIR%%app/views/markdown_help.rhtml
-%%INSTIKIDIR%%app/views/mixed_help.rhtml
-%%INSTIKIDIR%%app/views/navigation.rhtml
-%%INSTIKIDIR%%lib/active_record_stub.rb
-%%INSTIKIDIR%%lib/bluecloth_tweaked.rb
-%%INSTIKIDIR%%lib/diff.rb
-%%INSTIKIDIR%%lib/instiki_errors.rb
-%%INSTIKIDIR%%lib/rdocsupport.rb
-%%INSTIKIDIR%%lib/redcloth_for_tex.rb
-%%INSTIKIDIR%%instiki.rb
-%%INSTIKIDIR%%README
-%%INSTIKIDIR%%instiki
-%%INSTIKIDIR%%CHANGELOG
-@exec mkdir -p %D/%%INSTIKIDIR%%vendor/rails/railties/test/generators/missing_class/templates
-@exec mkdir -p %D/%%INSTIKIDIR%%vendor/rails/railties/test/generators/missing_generator/templates
-@exec mkdir -p %D/%%INSTIKIDIR%%vendor/rails/railties/test/generators/missing_templates
-@exec mkdir -p %D/%%INSTIKIDIR%%public/images
-@exec mkdir -p %D/%%INSTIKIDIR%%storage/2500
-@dirrm %%INSTIKIDIR%%natives/osx/desktop_launcher/English.lproj/MainMenu.nib
-@dirrm %%INSTIKIDIR%%natives/osx/desktop_launcher/English.lproj
-@dirrm %%INSTIKIDIR%%natives/osx/desktop_launcher/Instiki.xcode
-@dirrm %%INSTIKIDIR%%natives/osx/desktop_launcher
-@dirrm %%INSTIKIDIR%%natives/osx
-@dirrm %%INSTIKIDIR%%natives
-@dirrm %%INSTIKIDIR%%vendor/madeleine-0.7.1/lib/madeleine
-@dirrm %%INSTIKIDIR%%vendor/madeleine-0.7.1/lib
-@dirrm %%INSTIKIDIR%%vendor/madeleine-0.7.1/docs
-@dirrm %%INSTIKIDIR%%vendor/madeleine-0.7.1/samples
-@dirrm %%INSTIKIDIR%%vendor/madeleine-0.7.1/test
-@dirrm %%INSTIKIDIR%%vendor/madeleine-0.7.1/contrib
-@dirrm %%INSTIKIDIR%%vendor/madeleine-0.7.1
-@dirrm %%INSTIKIDIR%%vendor/rails/railties/doc
-@dirrm %%INSTIKIDIR%%vendor/rails/railties/test/generators/missing_class/templates
-@dirrm %%INSTIKIDIR%%vendor/rails/railties/test/generators/missing_class
+%%INSTIKIDIR%%vendor/sqlite3-ruby/sqlite3.rb
+%%INSTIKIDIR%%vendor/sqlite3-ruby/sqlite3/constants.rb
+%%INSTIKIDIR%%vendor/sqlite3-ruby/sqlite3/database.rb
+%%INSTIKIDIR%%vendor/sqlite3-ruby/sqlite3/driver/dl/api.rb
+%%INSTIKIDIR%%vendor/sqlite3-ruby/sqlite3/driver/dl/driver.rb
+%%INSTIKIDIR%%vendor/sqlite3-ruby/sqlite3/driver/native/driver.rb
+%%INSTIKIDIR%%vendor/sqlite3-ruby/sqlite3/errors.rb
+%%INSTIKIDIR%%vendor/sqlite3-ruby/sqlite3/pragmas.rb
+%%INSTIKIDIR%%vendor/sqlite3-ruby/sqlite3/resultset.rb
+%%INSTIKIDIR%%vendor/sqlite3-ruby/sqlite3/statement.rb
+%%INSTIKIDIR%%vendor/sqlite3-ruby/sqlite3/translator.rb
+%%INSTIKIDIR%%vendor/sqlite3-ruby/sqlite3/value.rb
+%%INSTIKIDIR%%vendor/sqlite3-ruby/sqlite3/version.rb
+@dirrm share/nls/en_US.US-ASCII
+@dirrm share/nls/POSIX
+@dirrm %%INSTIKIDIR%%vendor/sqlite3-ruby/sqlite3/driver/native
+@dirrm %%INSTIKIDIR%%vendor/sqlite3-ruby/sqlite3/driver/dl
+@dirrm %%INSTIKIDIR%%vendor/sqlite3-ruby/sqlite3/driver
+@dirrm %%INSTIKIDIR%%vendor/sqlite3-ruby/sqlite3
+@dirrm %%INSTIKIDIR%%vendor/sqlite3-ruby
+@dirrm %%INSTIKIDIR%%vendor/rails/railties/test/mocks
+@dirrm %%INSTIKIDIR%%vendor/rails/railties/test/generators/working
+@dirrm %%INSTIKIDIR%%vendor/rails/railties/test/generators/missing_templates
 @dirrm %%INSTIKIDIR%%vendor/rails/railties/test/generators/missing_generator/templates
 @dirrm %%INSTIKIDIR%%vendor/rails/railties/test/generators/missing_generator
-@dirrm %%INSTIKIDIR%%vendor/rails/railties/test/generators/missing_templates
+@dirrm %%INSTIKIDIR%%vendor/rails/railties/test/generators/missing_class/templates
+@dirrm %%INSTIKIDIR%%vendor/rails/railties/test/generators/missing_class
 @dirrm %%INSTIKIDIR%%vendor/rails/railties/test/generators
-@dirrm %%INSTIKIDIR%%vendor/rails/railties/test/script/generators/working
-@dirrm %%INSTIKIDIR%%vendor/rails/railties/test/script/generators
-@dirrm %%INSTIKIDIR%%vendor/rails/railties/test/script
-@dirrm %%INSTIKIDIR%%vendor/rails/railties/test/mocks
+@dirrm %%INSTIKIDIR%%vendor/rails/railties/test/fixtures/plugins/default/stubby/lib
+@dirrm %%INSTIKIDIR%%vendor/rails/railties/test/fixtures/plugins/default/stubby
+@dirrm %%INSTIKIDIR%%vendor/rails/railties/test/fixtures/plugins/default/empty
+@dirrm %%INSTIKIDIR%%vendor/rails/railties/test/fixtures/plugins/default/acts/acts_as_chunky_bacon/lib
+@dirrm %%INSTIKIDIR%%vendor/rails/railties/test/fixtures/plugins/default/acts/acts_as_chunky_bacon
+@dirrm %%INSTIKIDIR%%vendor/rails/railties/test/fixtures/plugins/default/acts
+@dirrm %%INSTIKIDIR%%vendor/rails/railties/test/fixtures/plugins/default
+@dirrm %%INSTIKIDIR%%vendor/rails/railties/test/fixtures/plugins/alternate/a/lib
+@dirrm %%INSTIKIDIR%%vendor/rails/railties/test/fixtures/plugins/alternate/a
+@dirrm %%INSTIKIDIR%%vendor/rails/railties/test/fixtures/plugins/alternate
+@dirrm %%INSTIKIDIR%%vendor/rails/railties/test/fixtures/plugins
+@dirrm %%INSTIKIDIR%%vendor/rails/railties/test/fixtures
 @dirrm %%INSTIKIDIR%%vendor/rails/railties/test
-@dirrm %%INSTIKIDIR%%vendor/rails/railties/configs
-@dirrm %%INSTIKIDIR%%vendor/rails/railties/dispatches
-@dirrm %%INSTIKIDIR%%vendor/rails/railties/html/javascripts
-@dirrm %%INSTIKIDIR%%vendor/rails/railties/html
-@dirrm %%INSTIKIDIR%%vendor/rails/railties/environments
+@dirrm %%INSTIKIDIR%%vendor/rails/railties/lib/tasks
 @dirrm %%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/scripts
-@dirrm %%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/applications/app
-@dirrm %%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/applications
-@dirrm %%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/controller/templates
-@dirrm %%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/controller
-@dirrm %%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/mailer/templates
-@dirrm %%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/mailer
-@dirrm %%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/migration/templates
-@dirrm %%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/migration
-@dirrm %%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/model/templates
-@dirrm %%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/model
-@dirrm %%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/scaffold/templates
-@dirrm %%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/scaffold
 @dirrm %%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/web_service/templates
 @dirrm %%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/web_service
+@dirrm %%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/session_migration/templates
+@dirrm %%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/session_migration
+@dirrm %%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/scaffold/templates
+@dirrm %%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/scaffold
+@dirrm %%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/plugin/templates
+@dirrm %%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/plugin
+@dirrm %%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/model/templates
+@dirrm %%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/model
+@dirrm %%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/migration/templates
+@dirrm %%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/migration
+@dirrm %%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/mailer/templates
+@dirrm %%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/mailer
+@dirrm %%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/controller/templates
+@dirrm %%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components/controller
 @dirrm %%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/components
+@dirrm %%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/applications/app
+@dirrm %%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators/applications
 @dirrm %%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator/generators
 @dirrm %%INSTIKIDIR%%vendor/rails/railties/lib/rails_generator
+@dirrm %%INSTIKIDIR%%vendor/rails/railties/lib/commands/servers
+@dirrm %%INSTIKIDIR%%vendor/rails/railties/lib/commands/process
+@dirrm %%INSTIKIDIR%%vendor/rails/railties/lib/commands/performance
+@dirrm %%INSTIKIDIR%%vendor/rails/railties/lib/commands/ncgi
+@dirrm %%INSTIKIDIR%%vendor/rails/railties/lib/commands
 @dirrm %%INSTIKIDIR%%vendor/rails/railties/lib
-@dirrm %%INSTIKIDIR%%vendor/rails/railties/bin
+@dirrm %%INSTIKIDIR%%vendor/rails/railties/html/javascripts
+@dirrm %%INSTIKIDIR%%vendor/rails/railties/html/images
+@dirrm %%INSTIKIDIR%%vendor/rails/railties/html
 @dirrm %%INSTIKIDIR%%vendor/rails/railties/helpers
+@dirrm %%INSTIKIDIR%%vendor/rails/railties/environments
+@dirrm %%INSTIKIDIR%%vendor/rails/railties/doc
+@dirrm %%INSTIKIDIR%%vendor/rails/railties/dispatches
+@dirrm %%INSTIKIDIR%%vendor/rails/railties/configs
+@dirrm %%INSTIKIDIR%%vendor/rails/railties/builtin/controllers
+@dirrm %%INSTIKIDIR%%vendor/rails/railties/builtin
+@dirrm %%INSTIKIDIR%%vendor/rails/railties/bin/process
+@dirrm %%INSTIKIDIR%%vendor/rails/railties/bin/performance
+@dirrm %%INSTIKIDIR%%vendor/rails/railties/bin
 @dirrm %%INSTIKIDIR%%vendor/rails/railties
-@dirrm %%INSTIKIDIR%%vendor/rails/actionpack/examples/debate
-@dirrm %%INSTIKIDIR%%vendor/rails/actionpack/examples/address_book
-@dirrm %%INSTIKIDIR%%vendor/rails/actionpack/examples
-@dirrm %%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/cgi_ext
-@dirrm %%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/templates/rescues
-@dirrm %%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/templates/scaffolds
-@dirrm %%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/templates
-@dirrm %%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/vendor/html-scanner/html
-@dirrm %%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/vendor/html-scanner
-@dirrm %%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/vendor
-@dirrm %%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/session
-@dirrm %%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller
-@dirrm %%INSTIKIDIR%%vendor/rails/actionpack/lib/action_view/helpers/javascripts
-@dirrm %%INSTIKIDIR%%vendor/rails/actionpack/lib/action_view/helpers
-@dirrm %%INSTIKIDIR%%vendor/rails/actionpack/lib/action_view/vendor/builder
-@dirrm %%INSTIKIDIR%%vendor/rails/actionpack/lib/action_view/vendor
-@dirrm %%INSTIKIDIR%%vendor/rails/actionpack/lib/action_view
-@dirrm %%INSTIKIDIR%%vendor/rails/actionpack/lib
-@dirrm %%INSTIKIDIR%%vendor/rails/actionpack/test/controller
-@dirrm %%INSTIKIDIR%%vendor/rails/actionpack/test/fixtures/addresses
-@dirrm %%INSTIKIDIR%%vendor/rails/actionpack/test/fixtures/fun/games
-@dirrm %%INSTIKIDIR%%vendor/rails/actionpack/test/fixtures/fun
-@dirrm %%INSTIKIDIR%%vendor/rails/actionpack/test/fixtures/helpers/fun
-@dirrm %%INSTIKIDIR%%vendor/rails/actionpack/test/fixtures/helpers
-@dirrm %%INSTIKIDIR%%vendor/rails/actionpack/test/fixtures/layouts
-@dirrm %%INSTIKIDIR%%vendor/rails/actionpack/test/fixtures/scope/test
-@dirrm %%INSTIKIDIR%%vendor/rails/actionpack/test/fixtures/scope
-@dirrm %%INSTIKIDIR%%vendor/rails/actionpack/test/fixtures/test
-@dirrm %%INSTIKIDIR%%vendor/rails/actionpack/test/fixtures
-@dirrm %%INSTIKIDIR%%vendor/rails/actionpack/test/template
-@dirrm %%INSTIKIDIR%%vendor/rails/actionpack/test
-@dirrm %%INSTIKIDIR%%vendor/rails/actionpack
-@dirrm %%INSTIKIDIR%%vendor/rails/actionwebservice/lib/action_web_service/dispatcher
-@dirrm %%INSTIKIDIR%%vendor/rails/actionwebservice/lib/action_web_service/container
-@dirrm %%INSTIKIDIR%%vendor/rails/actionwebservice/lib/action_web_service/client
-@dirrm %%INSTIKIDIR%%vendor/rails/actionwebservice/lib/action_web_service/support
-@dirrm %%INSTIKIDIR%%vendor/rails/actionwebservice/lib/action_web_service/templates/scaffolds
-@dirrm %%INSTIKIDIR%%vendor/rails/actionwebservice/lib/action_web_service/templates
-@dirrm %%INSTIKIDIR%%vendor/rails/actionwebservice/lib/action_web_service/protocol/soap_protocol
-@dirrm %%INSTIKIDIR%%vendor/rails/actionwebservice/lib/action_web_service/protocol
-@dirrm %%INSTIKIDIR%%vendor/rails/actionwebservice/lib/action_web_service
-@dirrm %%INSTIKIDIR%%vendor/rails/actionwebservice/lib
-@dirrm %%INSTIKIDIR%%vendor/rails/actionwebservice/test/apis
-@dirrm %%INSTIKIDIR%%vendor/rails/actionwebservice/test
-@dirrm %%INSTIKIDIR%%vendor/rails/actionwebservice/examples/googlesearch/autoloading
-@dirrm %%INSTIKIDIR%%vendor/rails/actionwebservice/examples/googlesearch/delegated
-@dirrm %%INSTIKIDIR%%vendor/rails/actionwebservice/examples/googlesearch/direct
-@dirrm %%INSTIKIDIR%%vendor/rails/actionwebservice/examples/googlesearch
-@dirrm %%INSTIKIDIR%%vendor/rails/actionwebservice/examples/metaWeblog/apis
-@dirrm %%INSTIKIDIR%%vendor/rails/actionwebservice/examples/metaWeblog/controllers
-@dirrm %%INSTIKIDIR%%vendor/rails/actionwebservice/examples/metaWeblog
-@dirrm %%INSTIKIDIR%%vendor/rails/actionwebservice/examples
-@dirrm %%INSTIKIDIR%%vendor/rails/actionwebservice
-@dirrm %%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/connection_adapters
-@dirrm %%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/associations
-@dirrm %%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/vendor
-@dirrm %%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/wrappers
-@dirrm %%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/acts
-@dirrm %%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record
-@dirrm %%INSTIKIDIR%%vendor/rails/activerecord/lib
-@dirrm %%INSTIKIDIR%%vendor/rails/activerecord/benchmarks
-@dirrm %%INSTIKIDIR%%vendor/rails/activerecord/examples
-@dirrm %%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/bad_fixtures
-@dirrm %%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/subscribers
-@dirrm %%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/migrations
-@dirrm %%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/naked/csv
-@dirrm %%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/naked/yml
-@dirrm %%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/naked
-@dirrm %%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/developers_projects
-@dirrm %%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/db_definitions
-@dirrm %%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures
-@dirrm %%INSTIKIDIR%%vendor/rails/activerecord/test/connections/native_sqlite
-@dirrm %%INSTIKIDIR%%vendor/rails/activerecord/test/connections/native_mysql
-@dirrm %%INSTIKIDIR%%vendor/rails/activerecord/test/connections/native_oci
-@dirrm %%INSTIKIDIR%%vendor/rails/activerecord/test/connections/native_postgresql
-@dirrm %%INSTIKIDIR%%vendor/rails/activerecord/test/connections/native_db2
-@dirrm %%INSTIKIDIR%%vendor/rails/activerecord/test/connections/native_sqlite3
-@dirrm %%INSTIKIDIR%%vendor/rails/activerecord/test/connections/native_sqlserver
-@dirrm %%INSTIKIDIR%%vendor/rails/activerecord/test/connections/native_sqlserver_odbc
-@dirrm %%INSTIKIDIR%%vendor/rails/activerecord/test/connections
-@dirrm %%INSTIKIDIR%%vendor/rails/activerecord/test
-@dirrm %%INSTIKIDIR%%vendor/rails/activerecord
-@dirrm %%INSTIKIDIR%%vendor/rails/actionmailer/lib/action_mailer/vendor/text
-@dirrm %%INSTIKIDIR%%vendor/rails/actionmailer/lib/action_mailer/vendor/tmail
-@dirrm %%INSTIKIDIR%%vendor/rails/actionmailer/lib/action_mailer/vendor
-@dirrm %%INSTIKIDIR%%vendor/rails/actionmailer/lib/action_mailer
-@dirrm %%INSTIKIDIR%%vendor/rails/actionmailer/lib
-@dirrm %%INSTIKIDIR%%vendor/rails/actionmailer/test/fixtures/templates
-@dirrm %%INSTIKIDIR%%vendor/rails/actionmailer/test/fixtures/helper_mailer
-@dirrm %%INSTIKIDIR%%vendor/rails/actionmailer/test/fixtures/helpers
-@dirrm %%INSTIKIDIR%%vendor/rails/actionmailer/test/fixtures/test_mailer
-@dirrm %%INSTIKIDIR%%vendor/rails/actionmailer/test/fixtures
-@dirrm %%INSTIKIDIR%%vendor/rails/actionmailer/test
-@dirrm %%INSTIKIDIR%%vendor/rails/actionmailer
+@dirrm %%INSTIKIDIR%%vendor/rails/activesupport/test/loading_module_components/list
+@dirrm %%INSTIKIDIR%%vendor/rails/activesupport/test/loading_module_components
+@dirrm %%INSTIKIDIR%%vendor/rails/activesupport/test/loading_module/admin
+@dirrm %%INSTIKIDIR%%vendor/rails/activesupport/test/loading_module
+@dirrm %%INSTIKIDIR%%vendor/rails/activesupport/test/dependencies
+@dirrm %%INSTIKIDIR%%vendor/rails/activesupport/test/core_ext
+@dirrm %%INSTIKIDIR%%vendor/rails/activesupport/test
 @dirrm %%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/values
-@dirrm %%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/core_ext/string
-@dirrm %%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/core_ext/numeric
-@dirrm %%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/core_ext/hash
-@dirrm %%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/core_ext/cgi
-@dirrm %%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/core_ext/date
-@dirrm %%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/core_ext/fixnum
 @dirrm %%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/core_ext/time
+@dirrm %%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/core_ext/string
+@dirrm %%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/core_ext/range
+@dirrm %%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/core_ext/numeric
+@dirrm %%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/core_ext/integer
+@dirrm %%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/core_ext/hash
+@dirrm %%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/core_ext/date
+@dirrm %%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/core_ext/cgi
 @dirrm %%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/core_ext/array
 @dirrm %%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support/core_ext
 @dirrm %%INSTIKIDIR%%vendor/rails/activesupport/lib/active_support
 @dirrm %%INSTIKIDIR%%vendor/rails/activesupport/lib
-@dirrm %%INSTIKIDIR%%vendor/rails/activesupport/test/core_ext
-@dirrm %%INSTIKIDIR%%vendor/rails/activesupport/test/dependencies
-@dirrm %%INSTIKIDIR%%vendor/rails/activesupport/test/loading_module/admin
-@dirrm %%INSTIKIDIR%%vendor/rails/activesupport/test/loading_module
-@dirrm %%INSTIKIDIR%%vendor/rails/activesupport/test/loading_module_components/list
-@dirrm %%INSTIKIDIR%%vendor/rails/activesupport/test/loading_module_components
-@dirrm %%INSTIKIDIR%%vendor/rails/activesupport/test
 @dirrm %%INSTIKIDIR%%vendor/rails/activesupport
+@dirrm %%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/subscribers
+@dirrm %%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/naked/yml
+@dirrm %%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/naked/csv
+@dirrm %%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/naked
+@dirrm %%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/migrations_with_duplicate
+@dirrm %%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/migrations
+@dirrm %%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/developers_projects
+@dirrm %%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/db_definitions
+@dirrm %%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures/bad_fixtures
+@dirrm %%INSTIKIDIR%%vendor/rails/activerecord/test/fixtures
+@dirrm %%INSTIKIDIR%%vendor/rails/activerecord/test/connections/native_sqlserver_odbc
+@dirrm %%INSTIKIDIR%%vendor/rails/activerecord/test/connections/native_sqlserver
+@dirrm %%INSTIKIDIR%%vendor/rails/activerecord/test/connections/native_sqlite3
+@dirrm %%INSTIKIDIR%%vendor/rails/activerecord/test/connections/native_sqlite
+@dirrm %%INSTIKIDIR%%vendor/rails/activerecord/test/connections/native_postgresql
+@dirrm %%INSTIKIDIR%%vendor/rails/activerecord/test/connections/native_oci
+@dirrm %%INSTIKIDIR%%vendor/rails/activerecord/test/connections/native_mysql
+@dirrm %%INSTIKIDIR%%vendor/rails/activerecord/test/connections/native_firebird
+@dirrm %%INSTIKIDIR%%vendor/rails/activerecord/test/connections/native_db2
+@dirrm %%INSTIKIDIR%%vendor/rails/activerecord/test/connections
+@dirrm %%INSTIKIDIR%%vendor/rails/activerecord/test
+@dirrm %%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/wrappers
+@dirrm %%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/vendor
+@dirrm %%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/connection_adapters/abstract
+@dirrm %%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/connection_adapters
+@dirrm %%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/associations
+@dirrm %%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record/acts
+@dirrm %%INSTIKIDIR%%vendor/rails/activerecord/lib/active_record
+@dirrm %%INSTIKIDIR%%vendor/rails/activerecord/lib
+@dirrm %%INSTIKIDIR%%vendor/rails/activerecord/examples
+@dirrm %%INSTIKIDIR%%vendor/rails/activerecord/benchmarks
+@dirrm %%INSTIKIDIR%%vendor/rails/activerecord
+@dirrm %%INSTIKIDIR%%vendor/rails/actionwebservice/test/apis
+@dirrm %%INSTIKIDIR%%vendor/rails/actionwebservice/test
+@dirrm %%INSTIKIDIR%%vendor/rails/actionwebservice/lib/action_web_service/templates/scaffolds
+@dirrm %%INSTIKIDIR%%vendor/rails/actionwebservice/lib/action_web_service/templates
+@dirrm %%INSTIKIDIR%%vendor/rails/actionwebservice/lib/action_web_service/support
+@dirrm %%INSTIKIDIR%%vendor/rails/actionwebservice/lib/action_web_service/protocol/soap_protocol
+@dirrm %%INSTIKIDIR%%vendor/rails/actionwebservice/lib/action_web_service/protocol
+@dirrm %%INSTIKIDIR%%vendor/rails/actionwebservice/lib/action_web_service/dispatcher
+@dirrm %%INSTIKIDIR%%vendor/rails/actionwebservice/lib/action_web_service/container
+@dirrm %%INSTIKIDIR%%vendor/rails/actionwebservice/lib/action_web_service/client
+@dirrm %%INSTIKIDIR%%vendor/rails/actionwebservice/lib/action_web_service
+@dirrm %%INSTIKIDIR%%vendor/rails/actionwebservice/lib
+@dirrm %%INSTIKIDIR%%vendor/rails/actionwebservice/examples/metaWeblog/controllers
+@dirrm %%INSTIKIDIR%%vendor/rails/actionwebservice/examples/metaWeblog/apis
+@dirrm %%INSTIKIDIR%%vendor/rails/actionwebservice/examples/metaWeblog
+@dirrm %%INSTIKIDIR%%vendor/rails/actionwebservice/examples/googlesearch/direct
+@dirrm %%INSTIKIDIR%%vendor/rails/actionwebservice/examples/googlesearch/delegated
+@dirrm %%INSTIKIDIR%%vendor/rails/actionwebservice/examples/googlesearch/autoloading
+@dirrm %%INSTIKIDIR%%vendor/rails/actionwebservice/examples/googlesearch
+@dirrm %%INSTIKIDIR%%vendor/rails/actionwebservice/examples
+@dirrm %%INSTIKIDIR%%vendor/rails/actionwebservice
+@dirrm %%INSTIKIDIR%%vendor/rails/actionpack/test/template
+@dirrm %%INSTIKIDIR%%vendor/rails/actionpack/test/fixtures/test
+@dirrm %%INSTIKIDIR%%vendor/rails/actionpack/test/fixtures/scope/test
+@dirrm %%INSTIKIDIR%%vendor/rails/actionpack/test/fixtures/scope
+@dirrm %%INSTIKIDIR%%vendor/rails/actionpack/test/fixtures/multipart
+@dirrm %%INSTIKIDIR%%vendor/rails/actionpack/test/fixtures/layouts
+@dirrm %%INSTIKIDIR%%vendor/rails/actionpack/test/fixtures/helpers/fun
+@dirrm %%INSTIKIDIR%%vendor/rails/actionpack/test/fixtures/helpers
+@dirrm %%INSTIKIDIR%%vendor/rails/actionpack/test/fixtures/fun/games
+@dirrm %%INSTIKIDIR%%vendor/rails/actionpack/test/fixtures/fun
+@dirrm %%INSTIKIDIR%%vendor/rails/actionpack/test/fixtures/addresses
+@dirrm %%INSTIKIDIR%%vendor/rails/actionpack/test/fixtures
+@dirrm %%INSTIKIDIR%%vendor/rails/actionpack/test/controller
+@dirrm %%INSTIKIDIR%%vendor/rails/actionpack/test
+@dirrm %%INSTIKIDIR%%vendor/rails/actionpack/lib/action_view/vendor/builder
+@dirrm %%INSTIKIDIR%%vendor/rails/actionpack/lib/action_view/vendor
+@dirrm %%INSTIKIDIR%%vendor/rails/actionpack/lib/action_view/helpers/javascripts
+@dirrm %%INSTIKIDIR%%vendor/rails/actionpack/lib/action_view/helpers
+@dirrm %%INSTIKIDIR%%vendor/rails/actionpack/lib/action_view
+@dirrm %%INSTIKIDIR%%vendor/rails/actionpack/lib/action_pack
+@dirrm %%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/vendor/html-scanner/html
+@dirrm %%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/vendor/html-scanner
+@dirrm %%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/vendor
+@dirrm %%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/templates/scaffolds
+@dirrm %%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/templates/rescues
+@dirrm %%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/templates
+@dirrm %%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/session
+@dirrm %%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/macros
+@dirrm %%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller/cgi_ext
+@dirrm %%INSTIKIDIR%%vendor/rails/actionpack/lib/action_controller
+@dirrm %%INSTIKIDIR%%vendor/rails/actionpack/lib
+@dirrm %%INSTIKIDIR%%vendor/rails/actionpack/examples/debate
+@dirrm %%INSTIKIDIR%%vendor/rails/actionpack/examples/address_book
+@dirrm %%INSTIKIDIR%%vendor/rails/actionpack/examples
+@dirrm %%INSTIKIDIR%%vendor/rails/actionpack
+@dirrm %%INSTIKIDIR%%vendor/rails/actionmailer/test/fixtures/test_mailer
+@dirrm %%INSTIKIDIR%%vendor/rails/actionmailer/test/fixtures/templates
+@dirrm %%INSTIKIDIR%%vendor/rails/actionmailer/test/fixtures/helpers
+@dirrm %%INSTIKIDIR%%vendor/rails/actionmailer/test/fixtures/helper_mailer
+@dirrm %%INSTIKIDIR%%vendor/rails/actionmailer/test/fixtures
+@dirrm %%INSTIKIDIR%%vendor/rails/actionmailer/test
+@dirrm %%INSTIKIDIR%%vendor/rails/actionmailer/lib/action_mailer/vendor/tmail
+@dirrm %%INSTIKIDIR%%vendor/rails/actionmailer/lib/action_mailer/vendor/text
+@dirrm %%INSTIKIDIR%%vendor/rails/actionmailer/lib/action_mailer/vendor
+@dirrm %%INSTIKIDIR%%vendor/rails/actionmailer/lib/action_mailer
+@dirrm %%INSTIKIDIR%%vendor/rails/actionmailer/lib
+@dirrm %%INSTIKIDIR%%vendor/rails/actionmailer
 @dirrm %%INSTIKIDIR%%vendor/rails
-@dirrm %%INSTIKIDIR%%vendor/RedCloth-3.0.3/bin
-@dirrm %%INSTIKIDIR%%vendor/RedCloth-3.0.3/doc
-@dirrm %%INSTIKIDIR%%vendor/RedCloth-3.0.3/tests
-@dirrm %%INSTIKIDIR%%vendor/RedCloth-3.0.3/lib
-@dirrm %%INSTIKIDIR%%vendor/RedCloth-3.0.3
-@dirrm %%INSTIKIDIR%%vendor/rubyzip-0.5.8/samples
-@dirrm %%INSTIKIDIR%%vendor/rubyzip-0.5.8/test/data
-@dirrm %%INSTIKIDIR%%vendor/rubyzip-0.5.8/test
-@dirrm %%INSTIKIDIR%%vendor/rubyzip-0.5.8/lib/zip
-@dirrm %%INSTIKIDIR%%vendor/rubyzip-0.5.8/lib
-@dirrm %%INSTIKIDIR%%vendor/rubyzip-0.5.8
 @dirrm %%INSTIKIDIR%%vendor
+@dirrm %%INSTIKIDIR%%test/watir
+@dirrm %%INSTIKIDIR%%test/unit/chunks
+@dirrm %%INSTIKIDIR%%test/unit
+@dirrm %%INSTIKIDIR%%test/mocks/test
+@dirrm %%INSTIKIDIR%%test/mocks/development
+@dirrm %%INSTIKIDIR%%test/mocks
+@dirrm %%INSTIKIDIR%%test/functional
+@dirrm %%INSTIKIDIR%%test/fixtures
+@dirrm %%INSTIKIDIR%%test
+@dirrm %%INSTIKIDIR%%storage
+@dirrm %%INSTIKIDIR%%script
+@dirrm %%INSTIKIDIR%%public/wiki/files
+@dirrm %%INSTIKIDIR%%public/wiki
+@dirrm %%INSTIKIDIR%%public/stylesheets
+@dirrm %%INSTIKIDIR%%public/javascripts
+@dirrm %%INSTIKIDIR%%public/images
+@dirrm %%INSTIKIDIR%%public
+@dirrm %%INSTIKIDIR%%natives/osx/desktop_launcher/Instiki.xcode
+@dirrm %%INSTIKIDIR%%natives/osx/desktop_launcher/English.lproj/MainMenu.nib
+@dirrm %%INSTIKIDIR%%natives/osx/desktop_launcher/English.lproj
+@dirrm %%INSTIKIDIR%%natives/osx/desktop_launcher
+@dirrm %%INSTIKIDIR%%natives/osx
+@dirrm %%INSTIKIDIR%%natives
+@dirrm %%INSTIKIDIR%%log
+@dirrm %%INSTIKIDIR%%lib/zip
+@dirrm %%INSTIKIDIR%%lib/native/win32
+@dirrm %%INSTIKIDIR%%lib/native/linux
+@dirrm %%INSTIKIDIR%%lib/native
+@dirrm %%INSTIKIDIR%%lib/chunks
+@dirrm %%INSTIKIDIR%%lib
+@dirrm %%INSTIKIDIR%%db/migrate
+@dirrmtry %%INSTIKIDIR%%db
 @dirrm %%INSTIKIDIR%%config/environments
 @dirrm %%INSTIKIDIR%%config
-@dirrm %%INSTIKIDIR%%script
-@dirrm %%INSTIKIDIR%%public/images
-@dirrm %%INSTIKIDIR%%public/javascripts
-@dirrm %%INSTIKIDIR%%public/stylesheets
-@dirrm %%INSTIKIDIR%%public
-@dirrm %%INSTIKIDIR%%app/controllers
-@dirrm %%INSTIKIDIR%%app/helpers
-@dirrm %%INSTIKIDIR%%app/models/chunks
-@dirrm %%INSTIKIDIR%%app/models
+@dirrm %%INSTIKIDIR%%components
+@dirrm %%INSTIKIDIR%%app/views/wiki
 @dirrm %%INSTIKIDIR%%app/views/layouts
 @dirrm %%INSTIKIDIR%%app/views/file
-@dirrm %%INSTIKIDIR%%app/views/wiki
 @dirrm %%INSTIKIDIR%%app/views/admin
 @dirrm %%INSTIKIDIR%%app/views
+@dirrm %%INSTIKIDIR%%app/models
+@dirrm %%INSTIKIDIR%%app/helpers
+@dirrm %%INSTIKIDIR%%app/controllers
+@dirrm %%INSTIKIDIR%%app/apis
 @dirrm %%INSTIKIDIR%%app
-@dirrm %%INSTIKIDIR%%lib
-@dirrmtry %%INSTIKIDIR%%storage/2500
-@dirrmtry %%INSTIKIDIR%%storage
 @dirrmtry %%INSTIKIDIR%%
