@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	xrdesktop
-PORTVERSION=	1.0
-PORTREVISION=	1
+PORTVERSION=	1.2
+PORTREVISION=	0
 CATEGORIES=	net
 MASTER_SITES=	http://luggage.linux0wnsyou.com/xrdesktop/
 
