@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Authen/TypeKey.pm
+@dirrmtry %%SITE_PERL%%/Authen
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen/TypeKey/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen/TypeKey
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen

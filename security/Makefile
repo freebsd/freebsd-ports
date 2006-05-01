@@ -290,6 +290,7 @@
     SUBDIR += p5-Authen-Smb
     SUBDIR += p5-Authen-TacacsPlus
     SUBDIR += p5-Authen-Ticket
+    SUBDIR += p5-Authen-TypeKey
     SUBDIR += p5-Business-PayPal-EWP
     SUBDIR += p5-CSP
     SUBDIR += p5-Crypt-Anubis
