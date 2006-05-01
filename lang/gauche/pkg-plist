@@ -10,9 +10,13 @@ lib/gauche/%%VERSION%%/%%TARGET%%/binary.so
 lib/gauche/%%VERSION%%/%%TARGET%%/fcntl.so
 lib/gauche/%%VERSION%%/%%TARGET%%/file-util-lib.so
 lib/gauche/%%VERSION%%/%%TARGET%%/gauche-cesconv
+lib/gauche/%%VERSION%%/%%TARGET%%/gauche-collection-lib.so
 lib/gauche/%%VERSION%%/%%TARGET%%/gauche-config
+lib/gauche/%%VERSION%%/%%TARGET%%/gauche-hook-lib.so
 lib/gauche/%%VERSION%%/%%TARGET%%/gauche-install
 lib/gauche/%%VERSION%%/%%TARGET%%/gauche-package
+lib/gauche/%%VERSION%%/%%TARGET%%/gauche-parameter-lib.so
+lib/gauche/%%VERSION%%/%%TARGET%%/gauche-sequence-lib.so
 lib/gauche/%%VERSION%%/%%TARGET%%/gosh
 lib/gauche/%%VERSION%%/%%TARGET%%/libcharconv.so
 lib/gauche/%%VERSION%%/%%TARGET%%/libgauche-uvector.so
