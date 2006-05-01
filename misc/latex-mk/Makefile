@@ -7,12 +7,12 @@
 #
 
 PORTNAME=	latex-mk
-PORTVERSION=	1.4
+PORTVERSION=	1.6
 CATEGORIES=	misc print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	freebsd@unixfreunde.de
 COMMENT=	A collection of makefile and scripts for LaTeX documents
 
 BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX
