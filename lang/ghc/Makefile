@@ -48,20 +48,27 @@ MAINTAINER=	simonmar@microsoft.com
 COMMENT=	A Compiler for the functional language Haskell
 
 USE_PERL5=	yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
 .if defined(WITHOUT_X11)
-CONFIGURE_ARGS+=--without-x --without-x11 --without-openal --without-hgl --without-opengl --without-glut
-PLIST_SUB+=	X11="@comment " OPENAL="@comment "
+CONFIGURE_ARGS+=--without-x --without-x11 --without-hgl --without-opengl --without-glut
+PLIST_SUB+=	X11="@comment "
 PKGNAMESUFFIX=	-nox11
 .else
-LIB_DEPENDS+=	glut.4:${PORTSDIR}/graphics/libglut \
-		openal.0:${PORTSDIR}/audio/openal
+LIB_DEPENDS+=	glut.4:${PORTSDIR}/graphics/libglut
 USE_GL=		yes
-PLIST_SUB+=	X11="" OPENAL=""
+PLIST_SUB+=	X11=""
+.endif
+
+.if defined(WITH_OPENAL)
+BROKEN=		Unsupported/does not build
+PLIST_SUB+=	OPENAL=""
+LIB_DEPENDS+=	openal.0:${PORTSDIR}/audio/openal
 CONFIGURE_ARGS+=--enable-openal
+.else
+CONFIGURE_ARGS+=--without-openal
+PLIST_SUB+=	OPENAL="@comment "
 .endif
 
 PLIST_SUB+=	GHC_VERSION=${PORTVERSION}
