@@ -1,6 +1,6 @@
 #!/bin/sh
 # $FreeBSD$
-# formerly $ FreeBSD: ports/mail/dspam-devel/files/dspam.rc,v 1.2 2005/02/25 03:09:26 leeym Exp $
+#
 
 # PROVIDE: dspam
 # REQUIRE: DAEMON %%MYSQL%% %%PGSQL%% %%CLAMD%%
@@ -9,33 +9,38 @@
 
 #
 # Add the following lines to /etc/rc.conf[.local] to enable dspam:
-#
 # dspam_enable="YES"
+#
+# dspam_debug="YES" will start dspam with debug logging (you need ar least WITH_DEBUG)
+# you can also set the pid file via dspam_pidfile
 #
 
 . %%RC_SUBR%%
 
-name=dspam
-rcvar=`set_rcvar`
+name="dspam"
+rcvar=${name}_enable
 
 command=%%PREFIX%%/bin/${name}
-command_args="--daemon  > /dev/null 2>&1 &"
+if checkyesno dspam_debug
+then
+	command_args="--daemon --debug > /dev/null 2>&1 &"
+else
+	command_args="--daemon > /dev/null 2>&1 &"
+fi
 required_dirs=%%DSPAM_HOME%%
 required_files=%%PREFIX%%/etc/${name}.conf
 
 extra_commands=reload
-
 reload()
 {
  kill -HUP `cat $pidfile`
 }
 
-# set defaults
-
-dspam_enable=${dspam_enable:-"NO"}
-#dspam_flags=${dspam_flags:-"--daemon &"}
-
 load_rc_config $name
-pidfile=${dspam_pidfile:-/var/run/dspam.pid}
+
+#defaults
+: ${dspam_enable="NO"}
+: ${dspam_debug="NO"}
+: ${dspam_pidfile:-/var/run/dspam.pid}
 
 run_rc_command "$1"
