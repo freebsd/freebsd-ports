@@ -17,8 +17,7 @@ MAINTAINER=	jylefort@FreeBSD.org
 COMMENT?=	The MBROLA ${VOICE} voice (${VOICEDESC}) for Festival
 
 RUN_DEPENDS=	${LOCALBASE}/share/festival/lib/dicts/cmu/cmulex.scm:${PORTSDIR}/audio/festlex-cmu \
-		mbrola:${PORTSDIR}/audio/linux-mbrola \
-		${LOCALBASE}/share/mbrolavox/${VOICE}/${VOICE}:${PORTSDIR}/audio/mbrolavox
+		mbrola:${PORTSDIR}/audio/linux-mbrola
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
@@ -33,10 +32,18 @@ PLIST_SUB=	VOICE="${VOICE}" VOICEDIR_REL="${VOICEDIR_REL}"
 
 MD5_FILE=	${.CURDIR}/distinfo
 
+.include <bsd.port.pre.mk>
+
+.if exists(${LOCALBASE}/share/mbrolavox/${VOICE}/${VOICE})
+RUN_DEPENDS+=	${LOCALBASE}/share/mbrolavox/${VOICE}/${VOICE}:${PORTSDIR}/audio/mbrolavox
+.else
+IGNORE=		requires the ${VOICE} MBROLA voice. Install the audio/mbrolavox port and enable the ${VOICE} voice in the options dialog, then install this port
+.endif
+
 do-install:
 	cd ${WRKSRC} && \
 	${FIND} * -type d -exec ${MKDIR} "${PREFIX}/share/{}" \; && \
 	${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${PREFIX}/share/{}" \;
 	${LN} -sf ${LOCALBASE}/share/mbrolavox/${VOICE} ${VOICEDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
