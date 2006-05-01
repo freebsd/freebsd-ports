@@ -1,0 +1,31 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: pcfdate
+# BEFORE:  SERVERS
+# KEYWORD: FreeBSD
+#
+# Define these pcfdate_* variables in one of these files:
+#	/etc/rc.conf
+#	/etc/rc.conf.local
+#	/etc/rc.conf.d/pcfdate
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+#
+
+. %%RC_SUBR%%
+
+name="pcfdate"
+rcvar=${name}_enable
+
+load_rc_config $name
+
+: ${pcfdate_enable="NO"}		# Enable pcfdate
+: ${pcfdate_flags="-sv"}		# Flags to pcfdate program
+
+command="%%PREFIX%%/sbin/pcfdate"
+required_files="/dev/pcfclock0"
+stop_cmd=":"
+
+run_rc_command "$1"
