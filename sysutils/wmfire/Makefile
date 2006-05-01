@@ -7,13 +7,14 @@
 
 PORTNAME=	wmfire
 PORTVERSION=	1.2.3
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.swanson.ukfsn.org/wmfire/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Window Maker dock app showing load average as a flame
 
-LIB_DEPENDS=	gtop-2.0.2:${PORTSDIR}/devel/libgtop2
+LIB_DEPENDS=	gtop-2.0.7:${PORTSDIR}/devel/libgtop2
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gnometarget gtk20
