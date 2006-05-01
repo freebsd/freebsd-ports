@@ -184,7 +184,7 @@ USE_AUTOTOOLS=	libltdl:15
 .endif
 
 .if ${PHP_MODNAME} == "mcve"
-LIB_DEPENDS+=	mcve.3:${PORTSDIR}/devel/libmcve
+LIB_DEPENDS+=	mcve.5:${PORTSDIR}/devel/libmcve
 
 CONFIGURE_ARGS+=--with-mcve=${LOCALBASE} \
                 --with-openssl-dir=${OPENSSLBASE}
