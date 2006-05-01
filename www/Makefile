@@ -27,6 +27,7 @@
     SUBDIR += apache21
     SUBDIR += apache22
     SUBDIR += aria
+    SUBDIR += aria2
     SUBDIR += ashe           # requires Motif
     SUBDIR += asp2php
     SUBDIR += aswedit

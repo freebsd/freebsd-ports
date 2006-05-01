@@ -1,0 +1,13 @@
+Aria2 is an utility for downloading files with nice features:
+* Command-line interface
+* Download files through HTTP/HTTPS/FTP/BitTorrent
+* HTTP Proxy support
+* FTP though HTTP proxy
+* HTTP BASIC authentication support
+* HTTP Proxy authentication support
+* Segmented downloading
+* Cookie support(currently aria2 ignores "expires")
+* Run as a daemon process.
+* Selective download in multi-file torrent
+
+WWW: http://aria2.sourceforge.net/
