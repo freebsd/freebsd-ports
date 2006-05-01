@@ -18,9 +18,11 @@ bin/delp
 bin/fpc
 bin/fpcmake
 bin/fpcmkcfg
+bin/fpcres
 bin/fpcsubst
 bin/fpdoc
 bin/fprcp
+bin/fppkg
 bin/h2pas
 bin/h2paspp
 bin/makeskel
@@ -46,6 +48,9 @@ lib/fpc/%%PORTVERSION%%/msg/errorpl.msg
 lib/fpc/%%PORTVERSION%%/msg/errorpli.msg
 lib/fpc/%%PORTVERSION%%/msg/errorr.msg
 lib/fpc/%%PORTVERSION%%/msg/errorrw.msg
+lib/fpc/%%PORTVERSION%%/msg/errorptd.msg
+lib/fpc/%%PORTVERSION%%/msg/errorptw.msg
+lib/fpc/%%PORTVERSION%%/msg/errorues.msg
 lib/fpc/%%PORTVERSION%%/ppc386
 lib/fpc/%%PORTVERSION%%/samplecfg
 lib/fpc/%%PORTVERSION%%/units/i386-freebsd/lexyacc/Package.fpc
@@ -75,6 +80,8 @@ lib/fpc/%%PORTVERSION%%/units/i386-freebsd/rtl/cthreads.o
 lib/fpc/%%PORTVERSION%%/units/i386-freebsd/rtl/cthreads.ppu
 lib/fpc/%%PORTVERSION%%/units/i386-freebsd/rtl/ctypes.o
 lib/fpc/%%PORTVERSION%%/units/i386-freebsd/rtl/ctypes.ppu
+lib/fpc/%%PORTVERSION%%/units/i386-freebsd/rtl/cwstring.o
+lib/fpc/%%PORTVERSION%%/units/i386-freebsd/rtl/cwstring.ppu
 lib/fpc/%%PORTVERSION%%/units/i386-freebsd/rtl/dateutils.o
 lib/fpc/%%PORTVERSION%%/units/i386-freebsd/rtl/dateutils.ppu
 lib/fpc/%%PORTVERSION%%/units/i386-freebsd/rtl/dl.o
@@ -85,6 +92,8 @@ lib/fpc/%%PORTVERSION%%/units/i386-freebsd/rtl/dynlibs.o
 lib/fpc/%%PORTVERSION%%/units/i386-freebsd/rtl/dynlibs.ppu
 lib/fpc/%%PORTVERSION%%/units/i386-freebsd/rtl/errors.o
 lib/fpc/%%PORTVERSION%%/units/i386-freebsd/rtl/errors.ppu
+lib/fpc/%%PORTVERSION%%/units/i386-freebsd/rtl/fpmkunit.o
+lib/fpc/%%PORTVERSION%%/units/i386-freebsd/rtl/fpmkunit.ppu
 lib/fpc/%%PORTVERSION%%/units/i386-freebsd/rtl/getopts.o
 lib/fpc/%%PORTVERSION%%/units/i386-freebsd/rtl/getopts.ppu
 lib/fpc/%%PORTVERSION%%/units/i386-freebsd/rtl/gprt0.o
@@ -108,11 +117,13 @@ lib/fpc/%%PORTVERSION%%/units/i386-freebsd/rtl/libpcpu.a
 lib/fpc/%%PORTVERSION%%/units/i386-freebsd/rtl/libpcrt.a
 lib/fpc/%%PORTVERSION%%/units/i386-freebsd/rtl/libpcthreads.a
 lib/fpc/%%PORTVERSION%%/units/i386-freebsd/rtl/libpctypes.a
+lib/fpc/%%PORTVERSION%%/units/i386-freebsd/rtl/libpcwstring.a
 lib/fpc/%%PORTVERSION%%/units/i386-freebsd/rtl/libpdateutils.a
 lib/fpc/%%PORTVERSION%%/units/i386-freebsd/rtl/libpdl.a
 lib/fpc/%%PORTVERSION%%/units/i386-freebsd/rtl/libpdos.a
 lib/fpc/%%PORTVERSION%%/units/i386-freebsd/rtl/libpdynlibs.a
 lib/fpc/%%PORTVERSION%%/units/i386-freebsd/rtl/libperrors.a
+lib/fpc/%%PORTVERSION%%/units/i386-freebsd/rtl/libpfpmkunit.a
 lib/fpc/%%PORTVERSION%%/units/i386-freebsd/rtl/libpgetopts.a
 lib/fpc/%%PORTVERSION%%/units/i386-freebsd/rtl/libpgraph.a
 lib/fpc/%%PORTVERSION%%/units/i386-freebsd/rtl/libpheaptrc.a
