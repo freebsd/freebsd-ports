@@ -1,0 +1,7 @@
+usr/bin/xmlwf
+usr/lib/libexpat.so.0
+usr/lib/libexpat.so.0.5.0
+usr/share/doc/expat-1.95.7/COPYING
+usr/share/doc/expat-1.95.7/README
+usr/share/man/man1/xmlwf.1.gz
+@dirrm usr/share/doc/expat-1.95.7

@@ -6,15 +6,18 @@
 #
 
 PORTNAME=	gnomelibs
-PORTVERSION=	1.2.8
-PORTREVISION=	4
+PORTVERSION=	1.4.1.2.90
 CATEGORIES=	x11 linux
+DISTNAME=	gnome-libs-${PORTVERSION}-44
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	RPM of gnome-libs
 
-RPM_SET=	gnome-libs-${PORTVERSION}-11.${ARCH}.rpm
+USE_LINUX_RPM=	yes
+LINUX_DIST_VER=	3
+INSTALLS_SHLIB=	yes
+PLIST=		pkg-plist.${LINUX_RPM_ARCH}
+INSTALLS_SHLIB=	yes
+BRANDELF_DIRS=	usr/bin usr/sbin
 
-.include "../../x11-toolkits/linux-gtk/Makefile"
-
-MASTER_SITES+= ftp://ftp.redhat.com/pub/redhat/linux/7.1/en/os/${ARCH}/RedHat/RPMS/
+.include <bsd.port.mk>

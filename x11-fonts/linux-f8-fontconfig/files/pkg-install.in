@@ -1,9 +1,0 @@
-#!/bin/sh
-
-PATH=%%PREFIX%%/bin:%%PREFIX%%/sbin:%%PREFIX%%/usr/bin:%%PREFIX%%/usr/sbin:%%PREFIX%%/usr/X11R6/bin
-export PATH
-
-if [ "$2" = "POST-INSTALL" ]; then
-    echo "Running fc-cache to build fontconfig cache..."
-    %%PREFIX%%/usr/bin/fc-cache -f -v
-fi

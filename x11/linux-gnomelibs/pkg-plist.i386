@@ -32,20 +32,31 @@ usr/bin/gnome-name-service
 usr/bin/gnome_segv
 usr/bin/goad-browser
 usr/bin/loadshlib
+usr/bin/new-object
+usr/lib/libart_lgpl.so.2
 usr/lib/libart_lgpl.so.2.2.0
-usr/lib/libgnome.so.32.4.1
+usr/lib/libgnome.so.32
+usr/lib/libgnome.so.32.4.3
+usr/lib/libgnomesupport.so.0
 usr/lib/libgnomesupport.so.0.0.0
-usr/lib/libgnomeui.so.32.12.1
+usr/lib/libgnomeui.so.32
+usr/lib/libgnomeui.so.32.14.1
+usr/lib/libgnorba.so.27
 usr/lib/libgnorba.so.27.1.8
+usr/lib/libgnorbagtk.so.0
 usr/lib/libgnorbagtk.so.0.0.0
+usr/lib/libgtkxmhtml.so.1
 usr/lib/libgtkxmhtml.so.1.0.1
-usr/lib/libzvt.so.2.2.9
+usr/lib/libzvt.so.2
+usr/lib/libzvt.so.2.2.10
 usr/sbin/gnome-pty-helper
-usr/share/doc/gnome-libs-1.2.8/AUTHORS
-usr/share/doc/gnome-libs-1.2.8/COPYING
-usr/share/doc/gnome-libs-1.2.8/ChangeLog
-usr/share/doc/gnome-libs-1.2.8/NEWS
-usr/share/doc/gnome-libs-1.2.8/README
+usr/share/doc/gnome-libs-1.4.1.2.90/AUTHORS
+usr/share/doc/gnome-libs-1.4.1.2.90/COPYING
+usr/share/doc/gnome-libs-1.4.1.2.90/ChangeLog
+usr/share/doc/gnome-libs-1.4.1.2.90/LICENSE
+usr/share/doc/gnome-libs-1.4.1.2.90/NEWS
+usr/share/doc/gnome-libs-1.4.1.2.90/README
+usr/share/doc/gnome-libs-1.4.1.2.90/changelog
 usr/share/idl/GnomeObject.idl
 usr/share/idl/Table.idl
 usr/share/idl/desktop-editor.idl
@@ -53,6 +64,7 @@ usr/share/idl/desktop-textviewer.idl
 usr/share/idl/gnome-factory.idl
 usr/share/idl/gnome-unknown.idl
 usr/share/idl/name-service.idl
+usr/share/locale/az/LC_MESSAGES/gnome-libs.mo
 usr/share/locale/ca/LC_MESSAGES/gnome-libs.mo
 usr/share/locale/cs/LC_MESSAGES/gnome-libs.mo
 usr/share/locale/da/LC_MESSAGES/gnome-libs.mo
@@ -72,6 +84,8 @@ usr/share/locale/it/LC_MESSAGES/gnome-libs.mo
 usr/share/locale/ja/LC_MESSAGES/gnome-libs.mo
 usr/share/locale/ko/LC_MESSAGES/gnome-libs.mo
 usr/share/locale/lt/LC_MESSAGES/gnome-libs.mo
+usr/share/locale/lv/LC_MESSAGES/gnome-libs.mo
+usr/share/locale/ms/LC_MESSAGES/gnome-libs.mo
 usr/share/locale/nl/LC_MESSAGES/gnome-libs.mo
 usr/share/locale/nn/LC_MESSAGES/gnome-libs.mo
 usr/share/locale/no/LC_MESSAGES/gnome-libs.mo
@@ -85,45 +99,38 @@ usr/share/locale/sl/LC_MESSAGES/gnome-libs.mo
 usr/share/locale/sp/LC_MESSAGES/gnome-libs.mo
 usr/share/locale/sr/LC_MESSAGES/gnome-libs.mo
 usr/share/locale/sv/LC_MESSAGES/gnome-libs.mo
+usr/share/locale/ta/LC_MESSAGES/gnome-libs.mo
 usr/share/locale/tr/LC_MESSAGES/gnome-libs.mo
+usr/share/locale/uk/LC_MESSAGES/gnome-libs.mo
+usr/share/locale/vi/LC_MESSAGES/gnome-libs.mo
 usr/share/locale/wa/LC_MESSAGES/gnome-libs.mo
 usr/share/locale/zh_CN.GB2312/LC_MESSAGES/gnome-libs.mo
-usr/share/locale/zh_TW.Big5/LC_MESSAGES/gnome-libs.mo
+usr/share/locale/zh_TW/LC_MESSAGES/gnome-libs.mo
 usr/share/mime-info/gnome.mime
 usr/share/pixmaps/calculator-font.png
-usr/share/pixmaps/gnome-default-dlg.png
-usr/share/pixmaps/gnome-error.png
-usr/share/pixmaps/gnome-info.png
-usr/share/pixmaps/gnome-question.png
-usr/share/pixmaps/gnome-warning.png
 usr/share/pixmaps/no.xpm
 usr/share/pixmaps/yes.xpm
 usr/share/type-convert/type.convert
-usr/bin/new-object
-usr/lib/libart_lgpl.so.2
-usr/lib/libgnome.so.32
-usr/lib/libgnomesupport.so.0
-usr/lib/libgnomeui.so.32
-usr/lib/libgnorba.so.27
-usr/lib/libgnorbagtk.so.0
-usr/lib/libgtkxmhtml.so.1
-usr/lib/libzvt.so.2
 @dirrm usr/share/type-convert
 @dirrm usr/share/mime-info
+@dirrmtry usr/share/locale/vi/LC_MESSAGES
+@dirrmtry usr/share/locale/vi
+@dirrmtry usr/share/locale/ta/LC_MESSAGES
+@dirrmtry usr/share/locale/ta
+@dirrmtry usr/share/locale/sp/LC_MESSAGES
+@dirrmtry usr/share/locale/sp
+@dirrmtry usr/share/locale/nn/LC_MESSAGES
+@dirrmtry usr/share/locale/nn
+@dirrmtry usr/share/locale/lv/LC_MESSAGES
+@dirrmtry usr/share/locale/lv
+@dirrmtry usr/share/locale/lt/LC_MESSAGES
+@dirrmtry usr/share/locale/lt
+@dirrmtry usr/share/locale/eu/LC_MESSAGES
+@dirrmtry usr/share/locale/eu
+@dirrmtry usr/share/locale/az/LC_MESSAGES
+@dirrmtry usr/share/locale/az
 @dirrm usr/share/idl
-@dirrm usr/share/doc/gnome-libs-1.2.8
+@dirrm usr/share/doc/gnome-libs-1.4.1.2.90
 @dirrm etc/sound/events
 @dirrm etc/sound
 @dirrm etc/gnome
-@dirrmtry usr/share/locale/eu/LC_MESSAGES
-@dirrmtry usr/share/locale/eu
-@dirrmtry usr/share/locale/ga/LC_MESSAGES
-@dirrmtry usr/share/locale/ga
-@dirrmtry usr/share/locale/lt/LC_MESSAGES
-@dirrmtry usr/share/locale/lt
-@dirrmtry usr/share/locale/nn/LC_MESSAGES
-@dirrmtry usr/share/locale/nn
-@dirrmtry usr/share/locale/sp/LC_MESSAGES
-@dirrmtry usr/share/locale/sp
-@dirrmtry usr/share/locale/zh_TW.Big5/LC_MESSAGES
-@dirrmtry usr/share/locale/zh_TW.Big5

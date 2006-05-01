@@ -1,10 +1,10 @@
-usr/lib/libglade-gnome.so.0.4.0
-usr/lib/libglade.so.0.4.0
-usr/share/doc/libglade-0.14/AUTHORS
-usr/share/doc/libglade-0.14/COPYING
-usr/share/doc/libglade-0.14/ChangeLog
-usr/share/doc/libglade-0.14/NEWS
-usr/share/doc/libglade-0.14/README
+usr/lib/libglade-gnome.so.%%LIBVERSION%%
+usr/lib/libglade.so.%%LIBVERSION%%
+usr/share/doc/libglade-%%PORTVERSION%%/AUTHORS
+usr/share/doc/libglade-%%PORTVERSION%%/COPYING
+usr/share/doc/libglade-%%PORTVERSION%%/ChangeLog
+usr/share/doc/libglade-%%PORTVERSION%%/NEWS
+usr/share/doc/libglade-%%PORTVERSION%%/README
 usr/lib/libglade-gnome.so.0
 usr/lib/libglade.so.0
-@dirrm usr/share/doc/libglade-0.14
+@dirrm usr/share/doc/libglade-%%PORTVERSION%%

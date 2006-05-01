@@ -7,19 +7,17 @@
 
 PORTNAME=	libaudiofile
 PORTVERSION=	0.2.6
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	audio linux
-MASTER_SITES=	${MASTER_SITE_FEDORA_LINUX}
-MASTER_SITE_SUBDIR=	3/i386/os/Fedora/RPMS 3/SRPMS
-
-.if defined(PACKAGE_BUILDING)
-SRC_DISTFILES+=		audiofile-${PORTVERSION}-1.src.rpm
-ALWAYS_KEEP_DISTFILES=	yes
-.endif
+DISTNAME=	audiofile-${PORTVERSION}-1
 
 MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	RPM of audiofile
 
-RPM_SET=	audiofile-${PORTVERSION}-1.${ARCH}.rpm
+USE_LINUX_RPM=	yes
+LINUX_DIST_VER=	3
+INSTALLS_SHLIB=	yes
+BRANDELF_DIRS=	usr/bin
+PLIST=		pkg-plist.${LINUX_RPM_ARCH}
 
-.include "../../x11-toolkits/linux-gtk/Makefile"
+.include <bsd.port.mk>

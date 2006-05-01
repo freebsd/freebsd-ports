@@ -4,19 +4,19 @@
 # $FreeBSD$
 #
 PORTNAME=	ungif
-PORTVERSION=	4.1.0
-PORTREVISION=	3
+PORTVERSION=	4.1.3
 CATEGORIES=	graphics linux
+DISTNAME=	libungif-${PORTVERSION}-1
 
 MAINTAINTER=	maho@FreeBSD.org
 COMMENT=	RPM of the ungif lib
 
 NOT_FOR_ARCHS=	amd64
 
-.if (${MACHINE_ARCH} == "i386")
-RPM_SET=	libungif-4.1.0-7.${MACHINE_ARCH}.rpm
-.else
-RPM_SET=	libungif-4.1.0-8.${MACHINE_ARCH}.rpm
-.endif
+USE_LINUX_RPM=	yes
+LINUX_DIST_VER=	3
+INSTALLS_SHLIB=	yes
+PLIST=		pkg-plist.${LINUX_RPM_ARCH}
+PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 
-.include "../../x11-toolkits/linux-gtk/Makefile"
+.include <bsd.port.mk>

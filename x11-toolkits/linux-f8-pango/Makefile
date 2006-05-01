@@ -7,13 +7,12 @@
 
 PORTNAME=	pango
 PORTVERSION=	1.6.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits linux
+DISTNAME=	${PORTNAME}-${PORTVERSION}-7
 
 MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	Linux pango binary
-MASTER_SITES=	${MASTER_SITE_FEDORA_LINUX}
-MASTER_SITE_SUBDIR=	3/i386/os/Fedora/RPMS
 
 # these libraries are required by pango-querymodules
 RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libX11.so.6:${PORTSDIR}/x11/linux-XFree86-libs \
@@ -23,12 +22,13 @@ RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libX11.so.6:${PORTSDIR}/x11/linux-XFree8
 
 USE_XLIB=	yes
 ONLY_FOR_ARCHS=	i386 amd64
-PLIST=		${PKGDIR}/pkg-plist
-RPM_SET=	pango-${PORTVERSION}-7.i386.rpm
+USE_LINUX_RPM=	yes
+LINUX_DIST_VER=	3
+INSTALLS_SHLIB=	yes
+BRANDELF_DIRS=	usr/bin
 PLIST_SUB+=	LIBVERSION="600.0" PORTVERSION="${PORTVERSION}"
 
 post-install:
-	@${BRANDELF} -t Linux ${PREFIX}/usr/bin/pango-querymodules-32
 	@${PREFIX}/usr/bin/pango-querymodules-32 > ${PREFIX}/etc/pango/i386-redhat-linux-gnu/pango.modules
 
-.include "../linux-gtk/Makefile"
+.include <bsd.port.mk>

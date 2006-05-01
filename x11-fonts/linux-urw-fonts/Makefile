@@ -6,25 +6,20 @@
 #
 
 PORTNAME=		urw-fonts
-PORTVERSION=		2.0
-PORTREVISION=		4
+PORTVERSION=		2.3
 CATEGORIES=		x11-fonts linux
+DISTNAME=	${PORTNAME}-${PORTVERSION}-1
+EXTRACT_SUFX=	.noarch.rpm
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Truetype fonts for use with Linux programs
 
-BASEVERSION=	9
+USE_LINUX_RPM=	yes
+LINUX_DIST_VER=	4
 MD5_FILE=	${MASTERDIR}/distinfo
-PLIST=		${WRKDIR}/plist
-RPM_SET=	urw-fonts-2.0-29.noarch.rpm
 
 pre-install:
-	${RM} -rf ${WRKSRC}/tmp
-	${MKDIR} ${WRKSRC}/tmp
-	cd ${WRKSRC}/tmp; \
-		rpm2cpio < ${DISTDIR}/${DIST_SUBDIR}/${RPM_SET} | cpio -id; \
-		${FIND} * -type f -o -type l > ${PLIST}; \
-		${FIND} -d * -type d | ${GREP} -E 'urw|default' | \
-		${SED} -e 's:^:@dirrm :' >> ${PLIST};
+	@cd ${MASTERDIR}/files; \
+	cp fonts.* ${WRKSRC}/usr/share/fonts/default/Type1
 
-.include "../../x11-toolkits/linux-gtk/Makefile"
+.include <bsd.port.mk>

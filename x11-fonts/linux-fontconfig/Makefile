@@ -7,43 +7,29 @@
 
 PORTNAME=	fontconfig
 PORTVERSION=	2.2.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-fonts linux
-MASTER_SITES=	${MASTER_SITE_FEDORA_LINUX}
-MASTER_SITE_SUBDIR=3/x86_64/os/Fedora/RPMS
+DISTNAME=	${PORTNAME}-${PORTVERSION}-5
 
 MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	Linux/i386 binary of Fontconfig
 
-EXTRACT_DEPENDS=rpm2cpio:${PORTSDIR}/archivers/rpm
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libexpat.so.0:${PORTSDIR}/textproc/linux-expat
 
 USE_REINPLACE=	yes
-BASEVERSION=	9
 ONLY_FOR_ARCHS=	i386 amd64
-RPM_SET=	fontconfig-2.2.3-5.i386.rpm
-PLIST=		${PKGDIR}/pkg-plist
+USE_LINUX_RPM=	yes
+LINUX_DIST_VER=	3
+INSTALLS_SHLIB=	yes
 
-#PKGINSTALL=	${WRKDIR}/pkg-install
-
-do-extract:
-	@${RM} -rf ${WRKSRC}/tmp
-	@${MKDIR} ${WRKSRC}/tmp
-	@cd ${WRKSRC}/tmp; \
-		rpm2cpio < ${DISTDIR}/${DIST_SUBDIR}/${RPM_SET} | ${CPIO} -id;
+BRANDELF_DIRS=	usr/bin
 
 post-patch:
 	@${REINPLACE_CMD} -i ""  -e 's:/usr/share/fonts:${X11BASE}/lib/X11/fonts:g ; \
 		s:/usr/X11R6/lib/X11/fonts/OTF:${X11BASE}/lib/X11/fonts/bitstream-vera:g' \
-		${WRKSRC}/tmp/etc/fonts/fonts.conf
+		${WRKSRC}/etc/fonts/fonts.conf
 
 post-install:
-	@${INSTALL_DATA} ${WRKSRC}/tmp/etc/fonts/fonts.conf ${PREFIX}/etc/fonts/
-	@${BRANDELF} -t Linux ${PREFIX}/usr/bin/fc-cache ${PREFIX}/usr/bin/fc-list
-#	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g' < ${FILESDIR}/pkg-install.in \
-#		> ${PKGINSTALL}
-#.if !defined(PACKAGE_BUILDING)
-#	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-#.endif
+	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
-.include "../../x11-toolkits/linux-gtk/Makefile"
+.include <bsd.port.mk>

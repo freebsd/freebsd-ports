@@ -6,13 +6,17 @@
 #
 
 PORTNAME=	libglade
-PORTVERSION=	0.14
-PORTREVISION=	3
+PORTVERSION=	0.17
 CATEGORIES=	devel linux
+DISTNAME=	${PORTNAME}-${PORTVERSION}-15
 
 MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	RPM of libglade
 
-RPM_SET=	libglade-${PORTVERSION}-3.${ARCH}.rpm
+USE_LINUX_RPM=	yes
+LINUX_DIST_VER=	3
+INSTALLS_SHLIB=	yes
+PLIST=		pkg-plist.${LINUX_RPM_ARCH}
+PLIST_SUB=	LIBVERSION="0.4.2" PORTVERSION="${PORTVERSION}"
 
-.include "../../x11-toolkits/linux-gtk/Makefile"
+.include <bsd.port.mk>

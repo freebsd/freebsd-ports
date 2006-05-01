@@ -7,19 +7,16 @@
 
 PORTNAME=	libxml
 PORTVERSION=	1.8.17
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	textproc linux
-MASTER_SITES=	${MASTER_SITE_FEDORA_LINUX}
-MASTER_SITE_SUBDIR=	3/i386/os/Fedora/RPMS 3/SRPMS
-
-.if defined(PACKAGE_BUILDING)
-SRC_DISTFILES+=	libxml-${PORTVERSION}-11.src.rpm
-ALWAYS_KEEP_DISTFILES=  yes
-.endif
+DISTNAME=	${PORTNAME}-${PORTVERSION}-11
 
 MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	RPM of libxml
 
-RPM_SET=	libxml-${PORTVERSION}-11.${ARCH}.rpm
+USE_LINUX_RPM=	yes
+LINUX_DIST_VER=	3
+INSTALLS_SHLIB=	yes
+PLIST=		pkg-plist.${LINUX_RPM_ARCH}
 
-.include "../../x11-toolkits/linux-gtk/Makefile"
+.include <bsd.port.mk>

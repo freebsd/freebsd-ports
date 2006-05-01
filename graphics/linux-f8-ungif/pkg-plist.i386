@@ -1,20 +1,14 @@
-usr/lib/libungif.so.3.1.0
-usr/lib/libungif.so.4.1.0
-usr/share/doc/libungif-4.1.0/COPYING
-usr/share/doc/libungif-4.1.0/NEWS
-usr/share/doc/libungif-4.1.0/ONEWS
-usr/share/doc/libungif-4.1.0/README
-usr/share/doc/libungif-4.1.0/UNCOMPRESSED_GIF
-@exec ln -sf %D/usr/lib/libgif.so.3.1.0 %D/usr/lib/libgif.so.3
-@exec ln -sf %D/usr/lib/libgif.so.4.1.0 %D/usr/lib/libgif.so.4
-@exec ln -sf %D/usr/lib/libungif.so.3.1.0 %D/usr/lib/libgif.so.3.1.0
-@exec ln -sf %D/usr/lib/libungif.so.3.1.0 %D/usr/lib/libungif.so.3
-@exec ln -sf %D/usr/lib/libungif.so.4.1.0 %D/usr/lib/libgif.so.4.1.0
-@exec ln -sf %D/usr/lib/libungif.so.4.1.0 %D/usr/lib/libungif.so.4
-@unexec rm -f %D/usr/lib/libgif.so.3
-@unexec rm -f %D/usr/lib/libgif.so.3.1.0
-@unexec rm -f %D/usr/lib/libgif.so.4
-@unexec rm -f %D/usr/lib/libgif.so.4.1.0
-@unexec rm -f %D/usr/lib/libungif.so.3
-@unexec rm -f %D/usr/lib/libungif.so.4
-@dirrm usr/share/doc/libungif-4.1.0
+usr/lib/libgif.so.4
+usr/lib/libgif.so.%%PORTVERSION%%
+usr/lib/libungif.so.4
+usr/lib/libungif.so.%%PORTVERSION%%
+usr/share/doc/libungif-%%PORTVERSION%%/AUTHORS
+usr/share/doc/libungif-%%PORTVERSION%%/BUGS
+usr/share/doc/libungif-%%PORTVERSION%%/COPYING
+usr/share/doc/libungif-%%PORTVERSION%%/ChangeLog
+usr/share/doc/libungif-%%PORTVERSION%%/NEWS
+usr/share/doc/libungif-%%PORTVERSION%%/ONEWS
+usr/share/doc/libungif-%%PORTVERSION%%/README
+usr/share/doc/libungif-%%PORTVERSION%%/TODO
+usr/share/doc/libungif-%%PORTVERSION%%/UNCOMPRESSED_GIF
+@dirrm usr/share/doc/libungif-%%PORTVERSION%%

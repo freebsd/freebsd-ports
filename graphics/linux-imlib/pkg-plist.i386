@@ -2,8 +2,8 @@ etc/im_palette-small.pal
 etc/im_palette-tiny.pal
 etc/im_palette.pal
 etc/imrc
-usr/lib/libImlib.so.1.9.8
-usr/lib/libgdk_imlib.so.1.9.8
+usr/lib/libImlib.so.11.0.0
+usr/lib/libgdk_imlib.so.%%PORTVERSION%%
 usr/lib/libimlib-bmp.so
 usr/lib/libimlib-gif.so
 usr/lib/libimlib-jpeg.so
@@ -12,10 +12,10 @@ usr/lib/libimlib-ppm.so
 usr/lib/libimlib-ps.so
 usr/lib/libimlib-tiff.so
 usr/lib/libimlib-xpm.so
-usr/share/doc/imlib-1.9.8.1/AUTHORS
-usr/share/doc/imlib-1.9.8.1/ChangeLog
-usr/share/doc/imlib-1.9.8.1/NEWS
-usr/share/doc/imlib-1.9.8.1/README
-usr/lib/libImlib.so.1
+usr/share/doc/imlib-%%PORTVERSION%%/AUTHORS
+usr/share/doc/imlib-%%PORTVERSION%%/ChangeLog
+usr/share/doc/imlib-%%PORTVERSION%%/NEWS
+usr/share/doc/imlib-%%PORTVERSION%%/README
+usr/lib/libImlib.so.11
 usr/lib/libgdk_imlib.so.1
-@dirrm usr/share/doc/imlib-1.9.8.1
+@dirrm usr/share/doc/imlib-%%PORTVERSION%%
