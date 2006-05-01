@@ -7,7 +7,7 @@
 
 PORTNAME=		link-monitor-applet
 PORTVERSION=		1.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=		net ipv6
 MASTER_SITES=		${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	link-monitor
@@ -20,7 +20,7 @@ USE_GNOME=		gnomehack gnomeprefix gnomepanel eel2
 GNU_CONFIGURE=		yes
 USE_GMAKE=		yes
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+			LDFLAGS="-L${LOCALBASE}/lib -Wl,-export-dynamic"
 
 GCONF_SCHEMAS=		link-monitor-applet.schemas
 INSTALLS_OMF=		yes
