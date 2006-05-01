@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libmms
-PORTVERSION=	0.1
-PORTREVISION=	3
+PORTVERSION=	0.2
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,7 +14,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for parsing mms:// and mmsh:// type network streams
 
-USE_REINPLACE=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig glib20
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes

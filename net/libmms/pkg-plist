@@ -1,5 +1,7 @@
 include/libmms/bswap.h
 include/libmms/mms.h
+include/libmms/mmsh.h
+include/libmms/mmsio.h
 lib/libmms.a
 lib/libmms.la
 lib/libmms.so
