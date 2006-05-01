@@ -3566,6 +3566,7 @@ gstreamer-plugins-mad80		ports/audio/gstreamer-plugins-mad80
 gstreamer-plugins-mikmod80	ports/audio/gstreamer-plugins-mikmod80
 gstreamer-plugins-mpeg2dec	ports/multimedia/gstreamer-plugins-mpeg2dec
 gstreamer-plugins-mpeg2dec80	ports/multimedia/gstreamer-plugins-mpeg2dec80
+gstreamer-plugins-mpeg2enc80	ports/multimedia/gstreamer-plugins-mpeg2enc80
 gstreamer-plugins-mplex80	ports/multimedia/gstreamer-plugins-mplex80
 gstreamer-plugins-musepack	ports/audio/gstreamer-plugins-musepack
 gstreamer-plugins-musepack80	ports/audio/gstreamer-plugins-musepack80
