@@ -66,6 +66,7 @@
     SUBDIR += courier-authlib
     SUBDIR += courier-authlib-base
     SUBDIR += courierpassd
+    SUBDIR += courierpasswd
     SUBDIR += cops
     SUBDIR += cp2fwb
     SUBDIR += crack
