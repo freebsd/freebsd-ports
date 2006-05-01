@@ -8,6 +8,7 @@
 
 PORTNAME=	balsa
 PORTVERSION=	2.3.12
+PORTREVISION=	1
 CATEGORIES=	mail gnome
 MASTER_SITES=	http://www.theochem.kth.se/~pawsa/balsa/
 DISTNAME=	balsa-${PORTVERSION}
@@ -18,7 +19,7 @@ COMMENT=	A mail reader for the GNOME 2 desktop
 LIB_DEPENDS=	aspell.16:${PORTSDIR}/textproc/aspell \
 		pcre.0:${PORTSDIR}/devel/pcre \
 		esmtp.6:${PORTSDIR}/mail/libesmtp \
-		gmime-2.0.3:${PORTSDIR}/mail/gmime2
+		gmime-2.0.4:${PORTSDIR}/mail/gmime2
 
 USE_GMAKE=	yes
 USE_BZIP2=	yes
@@ -30,7 +31,6 @@ USE_OPENSSL=	yes
 USE_GNOME=	gnomeprefix intlhack gnomehack libgnomeui libgnomeprintui \
 		gtkhtml3
 USE_AUTOTOOLS=	libltdl:15
-USE_REINPLACE=	yes
 USE_GCC=	3.4+
 GNU_CONFIGURE=	yes
 USE_ICONV=	yes

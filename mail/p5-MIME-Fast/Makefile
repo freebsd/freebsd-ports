@@ -7,7 +7,7 @@
 
 PORTNAME=	MIME-Fast
 PORTVERSION=	1.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	MIME
@@ -17,7 +17,7 @@ MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Create, edit and parse MIME messages (via gmime2 C library)
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Scalar/Util.pm:${PORTSDIR}/lang/p5-Scalar-List-Utils
-LIB_DEPENDS=	gmime-2.0:${PORTSDIR}/mail/gmime2
+LIB_DEPENDS=	gmime-2.0.4:${PORTSDIR}/mail/gmime2
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
