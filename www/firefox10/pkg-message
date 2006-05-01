@@ -21,7 +21,7 @@ bug reports to any other addresses.
 
 Please include the following information with any bug report:
 * Output from 'uname -a'.
-* Date/time stamp from www/firefox/Makefile.
+* Date/time stamp from www/firefox10/Makefile.
 * Where/when did the problem occur: configuring, building, or
 	running firefox
 * How can you reproduce the problem?
