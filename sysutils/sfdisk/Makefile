@@ -18,6 +18,8 @@ USE_BZIP2=	yes
 PLIST_FILES=	sbin/sfdisk
 MAKEFILE=	Makefile.bsd
 
+NOT_FOR_ARCHS=	ia64
+
 .if ${MACHINE} == "pc98"
 CFLAGS+=	-DPC98
 .endif
