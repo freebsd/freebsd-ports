@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mmix
-PORTVERSION=	20030622
+PORTVERSION=	20060324
 CATEGORIES=	lang
 MASTER_SITES=	http://www-cs-faculty.stanford.edu/~knuth/programs/
 
@@ -17,7 +17,6 @@ BUILD_DEPENDS=	ctangle:${PORTSDIR}/devel/cweb
 
 NO_WRKSUBDIR=	yes
 FILES=		mmix.1 mmix.mp silly.out silly.run
-USE_REINPLACE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,^CFLAGS,#CFLAGS,g" ${WRKSRC}/Makefile
