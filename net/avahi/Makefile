@@ -7,7 +7,7 @@
 
 PORTNAME=	avahi
 PORTVERSION=	0.6.9
-PORTREVISION?=	4
+PORTREVISION?=	5
 CATEGORIES?=	net dns
 MASTER_SITES=	http://www.avahi.org/download/
 
@@ -33,15 +33,14 @@ CONFIGURE_ARGS?=--with-distro=freebsd \
 		--disable-doxygen-doc \
 		--disable-doxygen-dot \
 		--localstatedir=/var \
-		--enable-compat-howl \
-		--enable-compat-libdns_sd
+		--enable-compat-howl
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
 .if !defined(AVAHI_SLAVE)
-CONFLICTS=	howl-[0-9]* mDNSResponder-[0-9]*
+CONFLICTS=	howl-[0-9]*
 
 MAN1=	avahi-browse-domains.1 avahi-browse.1 avahi-publish-address.1 \
 	avahi-publish-service.1 avahi-publish.1 avahi-resolve-address.1 \
