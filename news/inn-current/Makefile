@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	clement
 PKGNAMESUFFIX=	-${BRANCH}
 DISTNAME=	${PORTNAME}-${BRANCH:U}-${SNAPSHOT}
 
-MAINTAINER=	clement@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	InterNetNews -- the Internet meets Netnews
 
 BRANCH=		current
