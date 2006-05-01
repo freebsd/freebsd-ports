@@ -1,0 +1,115 @@
+How to Upgrade Your SugarCRM Installation
+=========================================
+
+This document outlines how to upgrade your SugarCRM installation on FreeBSD
+from 2.5.1b to 3.5.1.  The upgrade process mainly depends on the SugarCRM
+upgrade scripts, but this document describes how to tie this into the
+FreeBSD ports system.
+
+This process will upgrade contacts, database information, templates, popups
+and all other supported SugarCRM modifications.
+
+
+Risk
+----
+
+Upgrades are risky business, and no guarantees are given that this upgrade
+process won't damage your data irreparably.  Please ensure that all of your
+data is backed up beforehand and that you have a functional back-out plan if
+things go badly.
+
+The author of this FreeBSD port explicitly disclaims all responsibility and
+liability for any damage caused to your data, regardless of cause.  In other
+words, if things go wrong, that's your problem.
+
+
+Preparation
+-----------
+
+For the purpose of upgrading, you will need to have a working installation
+of SugarCRM 2.5.1b, tied in to a MySQL database.  Please ensure that you
+have the following information at hand:
+
+	- MySQL SugarCRM username
+	- MySQL SugarCRM password
+	- MySQL SugarCRM database name
+	- MySQL privileged username
+	- MySQL password
+	- Your old SugarCRM "config.php" file, (normally found in
+		/usr/local/www/sugarcrm/config.php)
+
+
+Procedure
+---------
+
+0.  Make a backup of your old database.  If you don't take a backup at this
+    stage, you seriously risk losing your entire customer database.
+
+      !!!!!!  DO NOT CONTINUE UNLESS YOU HAVE MADE A DATABASE BACKUP  !!!!!!!
+
+1.  Do not upgrade SugarCRM using "portupgrade".  SugarCRM needs both the
+    old version and the new version installed at the same time so that it
+    can migrate data files and configuration information to the new setup.
+
+2.  Install the new version of SugarCRM.  This will be installed in a new
+    directory (%%PREFIX%%/%%SUGARCRMDIR%%).  Please note that you need to
+    have the both versions of SugarCRM installed simultaneously; if you
+    don't, your upgrade will go horribly wrong and you may break out in
+    spots.
+
+3.  Update your Apache or other web server configuration to point SugarCRM
+    to the new installation.  You'll probably need to have a line which
+    reads something like this:
+
+Alias "/sugarcrm" "%%PREFIX%%/%%SUGARCRMDIR%%"
+
+4.  Copy your old "config.php" file into the new SugarCRM installation
+    directory.  You can find this file in the base directory of your old
+    SugarCRM installation, which will probably be something like
+
+	/usr/local/www/sugarcrm/config.php
+	/usr/local/share/sugarcrm-2.5.1b/config.php
+
+5.  Change the permissions on the old SugarCRM installation so that all
+    files are writable by the web user, and that the config.php file in your
+    new installation is also writable.
+
+# chown -R www:www /usr/local/www/sugarcrm/ %%PREFIX%%/%%SUGARCRMDIR%%
+# chmod -R u+rw /usr/local/www/sugarcrm/ %%PREFIX%%/%%SUGARCRMDIR%%
+
+6.  Open up a web browser and point it at:
+
+	http://www.web-server-name.tld/sugarcrm/upgrade/
+
+    If an error appears at this stage about not being able to make a
+    peardatabase connection, then you have probably not copied over your
+    config.php to the correct directory.  Please see the previous step.
+
+7.  Click the "I'm Ready" tickbox and click "Next".
+
+8.  Change the "Current Sugar Directory" field to the directory where your
+    old SugarCRM installation was located (probably something like
+    "/usr/local/www/sugarcrm" or "/usr/local/share/sugarcrm-2.5.1".  Change
+    the "Sugar 3.5.1 Directory" field to be "%%PREFIX%%/%%SUGARCRMDIR%%". 
+    Ensure that the "Privileged Database User Name" and "Privileged Database
+    User Password" are correct.
+
+9.  Follow all of the upgrade steps as hinted by the upgrade procedure until
+    you reach the end.  If things screw up along the way, or the upgrade
+    procedure stalls for some reason, you will need a restart using a clean
+    installation of your old version of SugarCRM, a clean installation of
+    your new version, and you will need to restore your database from the
+    backup you took (you took a backup, right?  If you didn't, you either
+    need need to learn how to read or else need to have your head examined). 
+    You can ignore any waying about "register_globals" which might appear
+    along the way.
+
+10. Remove the old version of SugarCRM using pkg_delete.  Do _not_ use
+    "pkg_delete -f", as this may forcefully delete the installed
+    documentation.  This process will almost certainly leave relic files in
+    the old installation directory which need to be removed manually.
+
+11. Check that the new installation works properly. If it does, delete the
+    old SugarCRM installation directory using something like:
+
+# rm -rf /usr/local/www/sugarcrm
