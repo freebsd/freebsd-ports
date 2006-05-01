@@ -6,6 +6,34 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20060501:
+  AFFECTS: users of www/instiki
+  AUTHOR: arsptr@optusnet.com.au
+
+  The instiki port has changed storage methods to use an SQL database.
+  The README contains instructions on how to migrate existing wiki data to the
+  new storage methods.  The following is a copy of the relevant information,
+  tailored for FreeBSD port users:
+
+  1. cd /usr/ports/www/instiki; make extract
+  2. Execute
+      ruby work/instiki-0.11.0/script/import_storage \
+          -t /usr/local/instiki/storage/2500 \
+          -i /usr/local/instiki \
+          -d sqlite \
+          -o [some location]/instiki_import.sql
+  3. This will produce instiki_import.sql file in the specified location.
+     Open it in a text editor and inspect carefully.
+  4. Upgrade your instiki port normally (eg portupgrade)
+  5. Connect to your production database, eg:
+       sqlite3 /usr/local/instiki/db/production.db.sqlite3
+     and have it execute instiki_import.sql, eg:
+       .read [some location]/instiki_import.sql
+  6. Execute
+       ruby /usr/local/instiki/script/reset_references production
+     (this script parses all pages for crosslinks between them, so it
+     may take a few minutes)
+
 20060429:
   AFFECTS: All GNOME users
   AUTHOR: gnome@FreeBSD.org
@@ -20,7 +48,7 @@ portupgrade -o x11/gnome-screensaver -f xscreensaver-gnome
 portupgrade -a
 
 20060425:
-  AFFECTS: Users of net-im/ejabberd
+  AFFECTS: users of net-im/ejabberd
   AUTHOR: shaun@inerd.com
 
   ejabberd's UID and GID have changed. Users are advised to check all
