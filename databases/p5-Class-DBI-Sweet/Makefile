@@ -1,6 +1,6 @@
 # New ports collection makefile for:	Class-DBI-Sweet
 # Date created:		6 Jul 2005
-# Whom:			Lars Balker Rasmussen <lars@balker.dk
+# Whom:			Lars Balker Rasmussen <lbr@FreeBSD.org
 #
 # $FreeBSD$
 #
@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Class
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lars@balker.dk
+MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	Extra sweet features for Class::DBI
 
 BUILD_DEPENDS=	p5-Class-DBI>=3.0.12:${PORTSDIR}/databases/p5-Class-DBI \

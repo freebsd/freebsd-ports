@@ -1,6 +1,6 @@
 # New ports collection makefile for:	Algorithm-C3
 # Date created:	   25 Feb 2006
-# Whom:		   Lars Balker Rasmussen <lars@balker.dk>
+# Whom:		   Lars Balker Rasmussen <lbr@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Algorithm
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lars@balker.dk
+MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	A module for merging hierarchies using the C3 algorithm
 
 BUILD_DEPENDS=	p5-Test-Simple>=0.47:${PORTSDIR}/devel/p5-Test-Simple

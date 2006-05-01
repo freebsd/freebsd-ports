@@ -1,6 +1,6 @@
 # New ports collection makefile for:	www/p5-Catalyst-Plugin-I18N
 # Date created:				2 Dec 2005
-# Whom:					Lars Balker Rasmussen <lars@balker.dk>
+# Whom:					Lars Balker Rasmussen <lbr@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/C/CH/CHANSEN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lars@balker.dk
+MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	I18N for Catalyst
 
 BUILD_DEPENDS=	p5-Catalyst>=2.99:${PORTSDIR}/www/p5-Catalyst \

@@ -1,6 +1,6 @@
 # New ports collection makefile for:	www/p5-Catalyst-Example-InstantCRUD
 # Date created:				11 Feb 2006
-# Whom:					Lars Balker Rasmussen <lars@balker.dk>
+# Whom:					Lars Balker Rasmussen <lbr@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/Z/ZB/ZBY
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lars@balker.dk
+MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	Create a working CRUD Catalyst example with the least of effort
 
 BUILD_DEPENDS=	\

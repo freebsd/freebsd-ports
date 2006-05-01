@@ -1,7 +1,7 @@
 # ex:ts=8
 # Ports collection makefile for:	p5-HTTP-Body
 # Date created:			Nov 15, 2005
-# Whom:				Lars Balker Rasmussen <lars@balker.dk>
+# Whom:				Lars Balker Rasmussen <lbr@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	HTTP
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lars@balker.dk
+MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	HTTP Body Parser
 
 BUILD_DEPENDS=	p5-File-Temp>=0.14:${PORTSDIR}/devel/p5-File-Temp \

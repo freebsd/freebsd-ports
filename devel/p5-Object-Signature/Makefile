@@ -1,6 +1,6 @@
 # New ports collection makefile for:	p5-Object-Signature
 # Date created:	   26 Dec 2005
-# Whom:		   Lars Balker Rasmussen <lars@balker.dk>
+# Whom:		   Lars Balker Rasmussen <lbr@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Object
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lars@balker.dk
+MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	Generate cryptographic signatures for objects
 
 BUILD_DEPENDS=	p5-Storable>=2.11:${PORTSDIR}/devel/p5-Storable \

@@ -1,7 +1,7 @@
 # ex:ts=8
 # Ports collection makefile for:	p5-HTTP-Request-AsCGI
 # Date created:			Nov 16, 2005
-# Whom:				Lars Balker Rasmussen <lars@balker.dk>
+# Whom:				Lars Balker Rasmussen <lbr@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	HTTP
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lars@balker.dk
+MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	Setup a CGI enviroment from a HTTP::Request
 
 BUILD_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \

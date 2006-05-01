@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	../by-authors/id/P/PA/PATL
 PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-0.50_91
 
-MAINTAINER=	lars@balker.dk
+MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	Write Perl subroutines and classes in Java
 
 BUILD_DEPENDS=	p5-Inline>=0.44:${PORTSDIR}/devel/p5-Inline \

@@ -1,6 +1,6 @@
 # New ports collection makefile for:	www/p5-Catalyst-Model-DBIC-Schema
 # Date created:				13 Feb 2005
-# Whom:					Lars Balker Rasmussen <lars@balker.dk>
+# Whom:					Lars Balker Rasmussen <lbr@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Catalyst
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lars@balker.dk
+MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	DBIx::Class::Schema Model Class
 
 BUILD_DEPENDS=	\
