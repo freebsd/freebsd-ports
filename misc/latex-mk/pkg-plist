@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/ieee-copyout
 bin/latex-mk
 %%DATADIR%%/dated_draft.ps
@@ -19,10 +18,12 @@ bin/latex-mk
 %%DATADIR%%/latex-mk.ps
 %%DATADIR%%/latex.gmk
 %%DATADIR%%/latex.mk
+%%DATADIR%%/latex.subdir.gmk
+%%DATADIR%%/latex.subdir.mk
+%%DATADIR%%/lgrind.gmk
+%%DATADIR%%/lgrind.mk
 %%DATADIR%%/tgif.gmk
 %%DATADIR%%/tgif.mk
-%%DATADIR%%/lgrind.mk
-%%DATADIR%%/lgrind.gmk
 %%DATADIR%%/xfig.gmk
 %%DATADIR%%/xfig.mk
 @dirrm %%DATADIR%%/example/tgif
