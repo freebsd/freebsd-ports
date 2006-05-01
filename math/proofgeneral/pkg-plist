@@ -1,12 +1,15 @@
+bin/coqtags
+bin/interface
+bin/legotags
 bin/proofgeneral
 %%EMACS_SITE_LISPDIR%%/proofgeneral/acl2/acl2.el
 %%EMACS_SITE_LISPDIR%%/proofgeneral/acl2/acl2.elc
 %%EMACS_SITE_LISPDIR%%/proofgeneral/acl2/x-symbol-acl2.el
 %%EMACS_SITE_LISPDIR%%/proofgeneral/acl2/x-symbol-acl2.elc
-%%EMACS_SITE_LISPDIR%%/proofgeneral/coq/coq-abbrev-V7.el
-%%EMACS_SITE_LISPDIR%%/proofgeneral/coq/coq-abbrev-V7.elc
 %%EMACS_SITE_LISPDIR%%/proofgeneral/coq/coq-abbrev.el
 %%EMACS_SITE_LISPDIR%%/proofgeneral/coq/coq-abbrev.elc
+%%EMACS_SITE_LISPDIR%%/proofgeneral/coq/coq-autotest.el
+%%EMACS_SITE_LISPDIR%%/proofgeneral/coq/coq-autotest.elc
 %%EMACS_SITE_LISPDIR%%/proofgeneral/coq/coq-indent.el
 %%EMACS_SITE_LISPDIR%%/proofgeneral/coq/coq-indent.elc
 %%EMACS_SITE_LISPDIR%%/proofgeneral/coq/coq-syntax.el
@@ -20,15 +23,21 @@ bin/proofgeneral
 %%EMACS_SITE_LISPDIR%%/proofgeneral/demoisa/demoisa.el
 %%EMACS_SITE_LISPDIR%%/proofgeneral/demoisa/demoisa.elc
 %%EMACS_SITE_LISPDIR%%/proofgeneral/generic/_pkg.elc
-%%EMACS_SITE_LISPDIR%%/proofgeneral/generic/holes.el
-%%EMACS_SITE_LISPDIR%%/proofgeneral/generic/holes.elc
 %%EMACS_SITE_LISPDIR%%/proofgeneral/generic/pg-assoc.el
 %%EMACS_SITE_LISPDIR%%/proofgeneral/generic/pg-assoc.elc
+%%EMACS_SITE_LISPDIR%%/proofgeneral/generic/pg-autotest.el
+%%EMACS_SITE_LISPDIR%%/proofgeneral/generic/pg-autotest.elc
 %%EMACS_SITE_LISPDIR%%/proofgeneral/generic/pg-goals.el
 %%EMACS_SITE_LISPDIR%%/proofgeneral/generic/pg-goals.elc
 %%EMACS_SITE_LISPDIR%%/proofgeneral/generic/pg-metadata.elc
+%%EMACS_SITE_LISPDIR%%/proofgeneral/generic/pg-pbrpm.el
+%%EMACS_SITE_LISPDIR%%/proofgeneral/generic/pg-pbrpm.elc
+%%EMACS_SITE_LISPDIR%%/proofgeneral/generic/pg-pgip-old.el
+%%EMACS_SITE_LISPDIR%%/proofgeneral/generic/pg-pgip-old.elc
 %%EMACS_SITE_LISPDIR%%/proofgeneral/generic/pg-pgip.el
 %%EMACS_SITE_LISPDIR%%/proofgeneral/generic/pg-pgip.elc
+%%EMACS_SITE_LISPDIR%%/proofgeneral/generic/pg-resolve.el
+%%EMACS_SITE_LISPDIR%%/proofgeneral/generic/pg-resolve.elc
 %%EMACS_SITE_LISPDIR%%/proofgeneral/generic/pg-response.el
 %%EMACS_SITE_LISPDIR%%/proofgeneral/generic/pg-response.elc
 %%EMACS_SITE_LISPDIR%%/proofgeneral/generic/pg-thymodes.el
@@ -41,8 +50,6 @@ bin/proofgeneral
 %%EMACS_SITE_LISPDIR%%/proofgeneral/generic/pg-xml.elc
 %%EMACS_SITE_LISPDIR%%/proofgeneral/generic/proof-autoloads.el
 %%EMACS_SITE_LISPDIR%%/proofgeneral/generic/proof-autoloads.elc
-%%EMACS_SITE_LISPDIR%%/proofgeneral/generic/proof-compat.el
-%%EMACS_SITE_LISPDIR%%/proofgeneral/generic/proof-compat.elc
 %%EMACS_SITE_LISPDIR%%/proofgeneral/generic/proof-config.el
 %%EMACS_SITE_LISPDIR%%/proofgeneral/generic/proof-config.elc
 %%EMACS_SITE_LISPDIR%%/proofgeneral/generic/proof-depends.el
@@ -75,14 +82,6 @@ bin/proofgeneral
 %%EMACS_SITE_LISPDIR%%/proofgeneral/generic/proof-x-symbol.elc
 %%EMACS_SITE_LISPDIR%%/proofgeneral/generic/proof.el
 %%EMACS_SITE_LISPDIR%%/proofgeneral/generic/proof.elc
-%%EMACS_SITE_LISPDIR%%/proofgeneral/generic/span-extent.el
-%%EMACS_SITE_LISPDIR%%/proofgeneral/generic/span-extent.elc
-%%EMACS_SITE_LISPDIR%%/proofgeneral/generic/span-overlay.el
-%%EMACS_SITE_LISPDIR%%/proofgeneral/generic/span-overlay.elc
-%%EMACS_SITE_LISPDIR%%/proofgeneral/generic/span.el
-%%EMACS_SITE_LISPDIR%%/proofgeneral/generic/span.elc
-%%EMACS_SITE_LISPDIR%%/proofgeneral/generic/texi-docstring-magic.el
-%%EMACS_SITE_LISPDIR%%/proofgeneral/generic/texi-docstring-magic.elc
 %%EMACS_SITE_LISPDIR%%/proofgeneral/hol98/hol98.el
 %%EMACS_SITE_LISPDIR%%/proofgeneral/hol98/hol98.elc
 %%EMACS_SITE_LISPDIR%%/proofgeneral/hol98/x-symbol-hol98.el
@@ -142,6 +141,8 @@ bin/proofgeneral
 %%EMACS_SITE_LISPDIR%%/proofgeneral/isa/x-symbol-isa.elc
 %%EMACS_SITE_LISPDIR%%/proofgeneral/isa/x-symbol-isabelle.el
 %%EMACS_SITE_LISPDIR%%/proofgeneral/isa/x-symbol-isabelle.elc
+%%EMACS_SITE_LISPDIR%%/proofgeneral/isar/isar-autotest.el
+%%EMACS_SITE_LISPDIR%%/proofgeneral/isar/isar-autotest.elc
 %%EMACS_SITE_LISPDIR%%/proofgeneral/isar/isar-keywords.el
 %%EMACS_SITE_LISPDIR%%/proofgeneral/isar/isar-keywords.elc
 %%EMACS_SITE_LISPDIR%%/proofgeneral/isar/isar-mmm.el
@@ -160,6 +161,22 @@ bin/proofgeneral
 %%EMACS_SITE_LISPDIR%%/proofgeneral/lego/lego.elc
 %%EMACS_SITE_LISPDIR%%/proofgeneral/lego/x-symbol-lego.el
 %%EMACS_SITE_LISPDIR%%/proofgeneral/lego/x-symbol-lego.elc
+%%EMACS_SITE_LISPDIR%%/proofgeneral/lib/holes-load.el
+%%EMACS_SITE_LISPDIR%%/proofgeneral/lib/holes-load.elc
+%%EMACS_SITE_LISPDIR%%/proofgeneral/lib/holes.el
+%%EMACS_SITE_LISPDIR%%/proofgeneral/lib/holes.elc
+%%EMACS_SITE_LISPDIR%%/proofgeneral/lib/proof-compat.el
+%%EMACS_SITE_LISPDIR%%/proofgeneral/lib/proof-compat.elc
+%%EMACS_SITE_LISPDIR%%/proofgeneral/lib/span-extent.el
+%%EMACS_SITE_LISPDIR%%/proofgeneral/lib/span-extent.elc
+%%EMACS_SITE_LISPDIR%%/proofgeneral/lib/span-overlay.el
+%%EMACS_SITE_LISPDIR%%/proofgeneral/lib/span-overlay.elc
+%%EMACS_SITE_LISPDIR%%/proofgeneral/lib/span.el
+%%EMACS_SITE_LISPDIR%%/proofgeneral/lib/span.elc
+%%EMACS_SITE_LISPDIR%%/proofgeneral/lib/texi-docstring-magic.el
+%%EMACS_SITE_LISPDIR%%/proofgeneral/lib/texi-docstring-magic.elc
+%%EMACS_SITE_LISPDIR%%/proofgeneral/lib/xml-fixed.el
+%%EMACS_SITE_LISPDIR%%/proofgeneral/lib/xml-fixed.elc
 %%EMACS_SITE_LISPDIR%%/proofgeneral/mmm/mmm-auto.el
 %%EMACS_SITE_LISPDIR%%/proofgeneral/mmm/mmm-auto.elc
 %%EMACS_SITE_LISPDIR%%/proofgeneral/mmm/mmm-class.el
@@ -190,10 +207,12 @@ bin/proofgeneral
 %%EMACS_SITE_LISPDIR%%/proofgeneral/phox/phox-font.elc
 %%EMACS_SITE_LISPDIR%%/proofgeneral/phox/phox-fun.el
 %%EMACS_SITE_LISPDIR%%/proofgeneral/phox/phox-fun.elc
+%%EMACS_SITE_LISPDIR%%/proofgeneral/phox/phox-lang.el
+%%EMACS_SITE_LISPDIR%%/proofgeneral/phox/phox-lang.elc
 %%EMACS_SITE_LISPDIR%%/proofgeneral/phox/phox-outline.el
 %%EMACS_SITE_LISPDIR%%/proofgeneral/phox/phox-outline.elc
-%%EMACS_SITE_LISPDIR%%/proofgeneral/phox/phox-sym-lock.el
-%%EMACS_SITE_LISPDIR%%/proofgeneral/phox/phox-sym-lock.elc
+%%EMACS_SITE_LISPDIR%%/proofgeneral/phox/phox-pbrpm.el
+%%EMACS_SITE_LISPDIR%%/proofgeneral/phox/phox-pbrpm.elc
 %%EMACS_SITE_LISPDIR%%/proofgeneral/phox/phox-tags.el
 %%EMACS_SITE_LISPDIR%%/proofgeneral/phox/phox-tags.elc
 %%EMACS_SITE_LISPDIR%%/proofgeneral/phox/phox.el
@@ -215,6 +234,8 @@ bin/proofgeneral
 %%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/README.x-symbol-for-ProofGeneral
 %%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/Makefile.emacs
 %%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/RIP.xbm
+%%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/bigfonts/README
+%%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/bigfonts/fonts.tar
 %%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/colormap138.xpm
 %%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/drawing.xbm
 %%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/escherknot.xbm
@@ -231,8 +252,12 @@ bin/proofgeneral
 %%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/fonts/nilxs.bdf
 %%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/fonts/xsymb0_12.bdf
 %%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/fonts/xsymb0_14.bdf
+%%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/fonts/xsymb0_18.bdf
+%%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/fonts/xsymb0_24.bdf
 %%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/fonts/xsymb1_12.bdf
 %%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/fonts/xsymb1_14.bdf
+%%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/fonts/xsymb1_18.bdf
+%%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/fonts/xsymb1_24.bdf
 %%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/genfonts/2helvR12sub.bdf
 %%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/genfonts/2helvR12sup.bdf
 %%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/genfonts/2helvR14sub.bdf
@@ -249,6 +274,10 @@ bin/proofgeneral
 %%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/genfonts/helvR12sup.bdf
 %%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/genfonts/helvR14sub.bdf
 %%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/genfonts/helvR14sup.bdf
+%%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/genfonts/helvR18sub.bdf
+%%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/genfonts/helvR18sup.bdf
+%%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/genfonts/helvR24sub.bdf
+%%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/genfonts/helvR24sup.bdf
 %%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/genfonts/heriR12sub.bdf
 %%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/genfonts/heriR12sup.bdf
 %%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/genfonts/heriR14sub.bdf
@@ -257,13 +286,23 @@ bin/proofgeneral
 %%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/genfonts/xsymb0_12sup.bdf
 %%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/genfonts/xsymb0_14sub.bdf
 %%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/genfonts/xsymb0_14sup.bdf
+%%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/genfonts/xsymb0_18sub.bdf
+%%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/genfonts/xsymb0_18sup.bdf
+%%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/genfonts/xsymb0_24sub.bdf
+%%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/genfonts/xsymb0_24sup.bdf
 %%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/genfonts/xsymb1_12sub.bdf
 %%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/genfonts/xsymb1_12sup.bdf
 %%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/genfonts/xsymb1_14sub.bdf
 %%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/genfonts/xsymb1_14sup.bdf
+%%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/genfonts/xsymb1_18sub.bdf
+%%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/genfonts/xsymb1_18sup.bdf
+%%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/genfonts/xsymb1_24sub.bdf
+%%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/genfonts/xsymb1_24sup.bdf
 %%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/hourglass.xbm
 %%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/origfonts/helvR12.bdf
 %%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/origfonts/helvR14.bdf
+%%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/origfonts/helvR18.bdf
+%%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/origfonts/helvR24.bdf
 %%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/pcf/2helvR12.pcf
 %%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/pcf/2helvR12sub.pcf
 %%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/pcf/2helvR12sup.pcf
@@ -287,6 +326,10 @@ bin/proofgeneral
 %%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/pcf/helvR12sup.pcf
 %%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/pcf/helvR14sub.pcf
 %%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/pcf/helvR14sup.pcf
+%%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/pcf/helvR18sub.pcf
+%%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/pcf/helvR18sup.pcf
+%%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/pcf/helvR24sub.pcf
+%%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/pcf/helvR24sup.pcf
 %%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/pcf/heriR12.pcf
 %%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/pcf/heriR12sub.pcf
 %%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/pcf/heriR12sup.pcf
@@ -300,12 +343,24 @@ bin/proofgeneral
 %%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/pcf/xsymb0_14.pcf
 %%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/pcf/xsymb0_14sub.pcf
 %%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/pcf/xsymb0_14sup.pcf
+%%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/pcf/xsymb0_18.pcf
+%%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/pcf/xsymb0_18sub.pcf
+%%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/pcf/xsymb0_18sup.pcf
+%%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/pcf/xsymb0_24.pcf
+%%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/pcf/xsymb0_24sub.pcf
+%%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/pcf/xsymb0_24sup.pcf
 %%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/pcf/xsymb1_12.pcf
 %%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/pcf/xsymb1_12sub.pcf
 %%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/pcf/xsymb1_12sup.pcf
 %%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/pcf/xsymb1_14.pcf
 %%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/pcf/xsymb1_14sub.pcf
 %%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/pcf/xsymb1_14sup.pcf
+%%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/pcf/xsymb1_18.pcf
+%%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/pcf/xsymb1_18sub.pcf
+%%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/pcf/xsymb1_18sup.pcf
+%%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/pcf/xsymb1_24.pcf
+%%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/pcf/xsymb1_24sub.pcf
+%%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/pcf/xsymb1_24sup.pcf
 %%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/recycle.xbm
 %%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/termlock.xbm
 %%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/info/x-symbol.info
@@ -352,12 +407,14 @@ bin/proofgeneral
 @dirrm %%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/origfonts
 @dirrm %%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/genfonts
 @dirrm %%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/fonts
+@dirrm %%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc/bigfonts
 @dirrm %%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol/etc
 @dirrm %%EMACS_SITE_LISPDIR%%/proofgeneral/x-symbol
 @dirrm %%EMACS_SITE_LISPDIR%%/proofgeneral/twelf
 @dirrm %%EMACS_SITE_LISPDIR%%/proofgeneral/plastic
 @dirrm %%EMACS_SITE_LISPDIR%%/proofgeneral/phox
 @dirrm %%EMACS_SITE_LISPDIR%%/proofgeneral/mmm
+@dirrm %%EMACS_SITE_LISPDIR%%/proofgeneral/lib
 @dirrm %%EMACS_SITE_LISPDIR%%/proofgeneral/lego
 @dirrm %%EMACS_SITE_LISPDIR%%/proofgeneral/lclam
 @dirrm %%EMACS_SITE_LISPDIR%%/proofgeneral/isar

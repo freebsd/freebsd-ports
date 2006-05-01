@@ -1,5 +1,5 @@
---- Makefile.orig	Sun Apr 18 01:23:53 2004
-+++ Makefile	Sat Aug 13 13:50:43 2005
+--- Makefile.orig	Thu Dec  8 07:07:44 2005
++++ Makefile	Thu Dec  8 07:36:00 2005
 @@ -15,7 +15,7 @@
  
  # Set this to "emacs" or "xemacs" according to your version of Emacs.
@@ -19,26 +19,17 @@
  
  PWD=$(shell pwd)
  
-@@ -65,7 +64,8 @@
+@@ -69,8 +68,7 @@
  ##	     compiles.
  ##
  compile: .byte-compile
 -	lastemacs=`cat .byte-compile`; if [ "$$lastemacs" != "$(EMACS)" ]; then rm -f .byte-compile; make .byte-compile; fi
+-
 +	lastemacs=`cat .byte-compile`; if [ "$$lastemacs" != "${EMACS_NAME}" ]; then rm -f .byte-compile; $(MAKE) .byte-compile; fi
-+	$(BYTECOMP) generic/proof-menu.el
- 
  
  .byte-compile: $(EL) x-symbol/lisp/*.el
-@@ -78,7 +78,7 @@
- 	rm -f $(BROKENELC)
- 	@echo " Byte compiling X-Symbol..."
- 	(cd x-symbol/lisp; rm -f *.elc; $(MAKE) EMACS="$(EMACS) -q -no-site-file")
--	echo $(EMACS) > $(@)
-+	echo ${EMACS_NAME} > $(@)
  	@echo "*************************************************"
- 	@echo " Finished."
- 	@echo "*************************************************"
-@@ -123,41 +123,36 @@
+@@ -127,41 +125,36 @@
  # Set Elisp directories according to paths used in Red Hat RPMs
  # (which may or may not be official Emacs policy).  We generate
  # a pg-init.el file which loads the appropriate proof-site.el.
@@ -56,11 +47,10 @@
  DEST_ELISP=${DEST_PREFIX}/${ELISPP}
  
  BINDIR=${PREFIX}/bin
--DESKTOP=${PREFIX}/share
+ DESKTOP=${PREFIX}/share
 -DOCDIR=${PREFIX}/share/doc/ProofGeneral
 -MANDIR=${PREFIX}/share/man/man1
 -INFODIR=${PREFIX}/share/info/
-+DESKTOP=${DESKTOP_PREFIX}/share
 +DOCDIR=${DOCSDIR}
 +MANDIR=${PREFIX}/man/man1
 +INFODIR=${PREFIX}/info/
@@ -69,33 +59,40 @@
 +install: install-desktop install-elisp install-bin install-init install-doc
  
  install-desktop:
- 	mkdir -p ${DESKTOP}/icons/hicolor/16x16
+-	mkdir -p ${DESKTOP}/icons/hicolor/16x16
 -	cp etc/desktop/icons/16x16/proofgeneral.png ${DESKTOP}/icons/hicolor/16x16
-+	${BSD_INSTALL_DATA} etc/desktop/icons/16x16/proofgeneral.png ${DESKTOP}/icons/hicolor/16x16
- 	mkdir -p ${DESKTOP}/icons/hicolor/32x32
+-	mkdir -p ${DESKTOP}/icons/hicolor/32x32
 -	cp etc/desktop/icons/32x32/proofgeneral.png ${DESKTOP}/icons/hicolor/32x32
-+	${BSD_INSTALL_DATA} etc/desktop/icons/32x32/proofgeneral.png ${DESKTOP}/icons/hicolor/32x32
- 	mkdir -p ${DESKTOP}/icons/hicolor/48x48
+-	mkdir -p ${DESKTOP}/icons/hicolor/48x48
 -	cp etc/desktop/icons/48x48/proofgeneral.png ${DESKTOP}/icons/hicolor/48x48
-+	${BSD_INSTALL_DATA} etc/desktop/icons/48x48/proofgeneral.png ${DESKTOP}/icons/hicolor/48x48
- 	mkdir -p ${DESKTOP}/pixmaps
+-	mkdir -p ${DESKTOP}/pixmaps
 -	cp etc/desktop/icons/48x48/proofgeneral.png ${DESKTOP}/pixmaps
-+	${BSD_INSTALL_DATA} etc/desktop/icons/48x48/proofgeneral.png ${DESKTOP}/pixmaps
- 	mkdir -p ${DESKTOP}/applications
+-	mkdir -p ${DESKTOP}/applications
 -	cp etc/desktop/proofgeneral.desktop ${DESKTOP}/applications
-+	${BSD_INSTALL_DATA} etc/desktop/proofgeneral.desktop ${DESKTOP}/applications
- 	mkdir -p ${DESKTOP}/mime-info
+-	mkdir -p ${DESKTOP}/mime-info
 -	cp etc/desktop/mime-info/proofgeneral.mime ${DESKTOP}/mime-info
 -	cp etc/desktop/mime-info/proofgeneral.keys ${DESKTOP}/mime-info
+-	mkdir -p ${DESKTOP}/application-registry
+-	cp etc/desktop/application-registry/proofgeneral.applications ${DESKTOP}/application-registry
++	mkdir -p ${DESKTOP}/icons/hicolor/16x16
++	${BSD_INSTALL_DATA} etc/desktop/icons/16x16/proofgeneral.png ${DESKTOP}/icons/hicolor/16x16
++	mkdir -p ${DESKTOP}/icons/hicolor/32x32
++	${BSD_INSTALL_DATA} etc/desktop/icons/32x32/proofgeneral.png ${DESKTOP}/icons/hicolor/32x32
++	mkdir -p ${DESKTOP}/icons/hicolor/48x48
++	${BSD_INSTALL_DATA} etc/desktop/icons/48x48/proofgeneral.png ${DESKTOP}/icons/hicolor/48x48
++	mkdir -p ${DESKTOP}/pixmaps
++	${BSD_INSTALL_DATA} etc/desktop/icons/48x48/proofgeneral.png ${DESKTOP}/pixmaps
++	mkdir -p ${DESKTOP}/applications
++	${BSD_INSTALL_DATA} etc/desktop/proofgeneral.desktop ${DESKTOP}/applications
++	mkdir -p ${DESKTOP}/mime-info
 +	${BSD_INSTALL_DATA} etc/desktop/mime-info/proofgeneral.mime ${DESKTOP}/mime-info
 +	${BSD_INSTALL_DATA} etc/desktop/mime-info/proofgeneral.keys ${DESKTOP}/mime-info
- 	mkdir -p ${DESKTOP}/application-registry
--	cp etc/desktop/application-registry/proofgeneral.applications ${DESKTOP}/application-registry
++	mkdir -p ${DESKTOP}/application-registry
 +	${BSD_INSTALL_DATA} etc/desktop/application-registry/proofgeneral.applications ${DESKTOP}/application-registry
  
  # NB: .el files are not strictly necessary, but we package/install them
  # for the time being to help with debugging, or for users to recompile.
-@@ -172,14 +167,30 @@
+@@ -176,14 +169,30 @@
  install-el:
  	mkdir -p ${ELISP}
  	for f in ${ELISP_DIRS} ${EXTRA_DIRS}; do mkdir -p ${ELISP}/$$f; done
@@ -130,7 +127,7 @@
  
  install-init:
  	mkdir -p ${ELISP_START}
-@@ -189,18 +200,16 @@
+@@ -193,18 +202,16 @@
  
  install-bin: scripts
  	mkdir -p ${BINDIR}
@@ -154,16 +151,16 @@
  
  ##
  ## scripts: try to patch bash and perl scripts with correct paths
-@@ -243,7 +252,7 @@
+@@ -247,7 +254,7 @@
  
  # Set PGHOME path in scripts back to default location.
  cleanpgscripts:
 -	make pgscripts DEST_ELISP='$$$$HOME/ProofGeneral'
-+    $(MAKE) pgscripts DEST_ELISP='$$$$HOME/ProofGeneral'
++	$(MAKE) pgscripts DEST_ELISP='$$$$HOME/ProofGeneral'
  
  
  ##
-@@ -253,11 +262,11 @@
+@@ -257,11 +264,11 @@
  ##
  
  devel.%:

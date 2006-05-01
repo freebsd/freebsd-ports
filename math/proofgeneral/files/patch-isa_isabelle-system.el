@@ -1,6 +1,6 @@
---- isa/isabelle-system.el.orig	Thu Sep  8 12:43:45 2005
-+++ isa/isabelle-system.el	Thu Sep  8 12:45:12 2005
-@@ -73,10 +73,6 @@
+--- isa/isabelle-system.el.orig	Thu Dec  8 07:43:17 2005
++++ isa/isabelle-system.el	Thu Dec  8 07:43:38 2005
+@@ -74,10 +74,6 @@
  with full path."
    (interactive)
    (unless (or isatool-not-found (file-executable-p isa-isatool-command))

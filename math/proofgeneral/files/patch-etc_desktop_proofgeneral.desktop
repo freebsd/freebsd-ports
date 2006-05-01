@@ -1,11 +1,11 @@
---- etc/desktop/proofgeneral.desktop.orig	Sat Aug 13 14:19:29 2005
-+++ etc/desktop/proofgeneral.desktop	Sat Aug 13 14:19:46 2005
-@@ -2,7 +2,7 @@
+--- etc/desktop/proofgeneral.desktop.orig	Thu Dec  8 07:40:38 2005
++++ etc/desktop/proofgeneral.desktop	Thu Dec  8 07:41:03 2005
+@@ -5,7 +5,7 @@
  Name=Proof General
- Comment=Organise Your Proofs!
- Exec=proofgeneral %F
+ GenericName=Theorem proving environment
+ Comment=Organise your proofs!
 -Icon=proofgeneral.png
 +Icon=%%PREFIX%%/share/pixmaps/proofgeneral.png
- Terminal=false
- Type=Application
- Encoding=UTF-8
+ FilePattern=proofgeneral
+ TryExec=proofgeneral
+ Exec=proofgeneral %F

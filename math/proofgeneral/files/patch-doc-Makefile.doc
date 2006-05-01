@@ -1,17 +1,17 @@
---- doc/Makefile.doc.orig	Sun Apr 18 09:39:58 2004
-+++ doc/Makefile.doc	Fri Jul 22 22:10:05 2005
-@@ -152,10 +152,10 @@
+--- doc/Makefile.doc.orig	Thu Dec  8 07:39:33 2005
++++ doc/Makefile.doc	Thu Dec  8 07:39:46 2005
+@@ -153,10 +153,10 @@
  ## texi: update magic comments in texi from docstrings in code.
  ##	  (developer use only!)
  ##
 -$(DOCNAME).texi: ../*/*.el 
 -	$(MAKE) magic
 -magic:
--	$(EMACS) -l docstring-magic.el $(DOCNAME).texi -f texi-docstring-magic -f save-buffer
+-	$(EMACS) $(EMACSFLAGS) -l docstring-magic.el $(DOCNAME).texi -f texi-docstring-magic -f save-buffer
 +#$(DOCNAME).texi: ../*/*.el 
 +#	$(MAKE) magic
 +#magic:
-+#	$(EMACS) -batch -l ../generic/texi-docstring-magic.el -l ../generic/proof-site.el -l ../generic/pg-user.el $(DOCNAME).texi -f texi-docstring-magic -f save-buffer
++#	$(EMACS) $(EMACSFLAGS) -l docstring-magic.el $(DOCNAME).texi -f texi-docstring-magic -f save-buffer
  
  
  
