@@ -7,7 +7,7 @@
 
 PORTNAME=		mail-notification
 PORTVERSION=		2.0
-PORTREVISION=		4
+PORTREVISION=		5
 CATEGORIES=		mail ipv6
 MASTER_SITES=		${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	mailnotify
@@ -20,7 +20,7 @@ USE_GNOME=		gnomeprefix gnomehack eel2
 GNU_CONFIGURE=	yes
 USE_GMAKE=		yes
 CPPFLAGS=		-I${LOCALBASE}/include
-LDFLAGS=		-L${LOCALBASE}/lib
+LDFLAGS=		-L${LOCALBASE}/lib -Wl,-export-dynamic
 CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 GCONF_SCHEMAS=		mail-notification.schemas
 INSTALLS_OMF=		yes
@@ -73,7 +73,6 @@ BUILD_DEPENDS+=		${NONEXISTENT}:${PORTSDIR}/mail/evolution:patch \
 RUN_DEPENDS+=		${X11BASE}/libdata/pkgconfig/evolution-plugin-2.6.pc:${PORTSDIR}/mail/evolution
 EVOLUTION_WRKSRC!=	cd ${PORTSDIR}/mail/evolution && ${MAKE} -V WRKSRC
 CONFIGURE_ARGS+=	--with-evolution-source-dir="${EVOLUTION_WRKSRC}"
-LDFLAGS+=		-Wl,-export-dynamic
 PLIST_SUB+=		EVOLUTION="" LITERAL_PREFIX="${PREFIX}"
 .endif
 .if defined(WITHOUT_SYLPHEED)
