@@ -1,5 +1,5 @@
 bin/carthage
 bin/carthago
-%%PORTDOCS%%share/doc/carthage/README
-%%PORTDOCS%%share/doc/carthage/README.SPQR
-%%PORTDOCS%%@dirrm share/doc/carthage
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.SPQR
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
