@@ -8,7 +8,7 @@
 
 PORTNAME=	rhythmbox
 PORTVERSION=	0.9.4.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.9
@@ -22,10 +22,12 @@ LIB_DEPENDS=	musicbrainz.4:${PORTSDIR}/audio/libmusicbrainz \
 		totem-plparser.2:${PORTSDIR}/multimedia/totem-gstreamer \
 		dbus-1.2:${PORTSDIR}/devel/dbus \
 		sexy.1:${PORTSDIR}/x11-toolkits/libsexy \
+		soup-2.2.8:${PORTSDIR}/devel/libsoup \
 		gnome-media-profiles.0:${PORTSDIR}/audio/gnomemedia2
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
+USE_GETTEXT=	yes
 INSTALLS_OMF=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack intlhack gnomeprefix libgnomeui nautiluscdburner
@@ -67,8 +69,7 @@ USE_GSTREAMER+=		faad
 
 .if defined(WITH_DAAP)
 CONFIGURE_ARGS+=	--enable-daap  --with-mdns=avahi
-LIB_DEPENDS+=		soup-2.2.8:${PORTSDIR}/devel/libsoup \
-			avahi-client:${PORTSDIR}/net/avahi
+LIB_DEPENDS+=		 avahi-client:${PORTSDIR}/net/avahi
 .else
 .if exists(${LOCALBASE}/lib/libavahi-client.a)
 LIB_DEPENDS+=		avahi-client:${PORTSDIR}/net/avahi
