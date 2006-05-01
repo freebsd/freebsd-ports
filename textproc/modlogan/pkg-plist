@@ -95,18 +95,18 @@ lib/libmla_processor_telecom.a
 lib/libmla_processor_telecom.so
 lib/libmla_processor_web.a
 lib/libmla_processor_web.so
-%%PORTDOCS%%share/doc/modlogan/faq.txt
-%%PORTDOCS%%share/doc/modlogan/glosar
-%%PORTDOCS%%share/doc/modlogan/manual.txt
-%%PORTDOCS%%share/doc/modlogan/translations.txt
-%%PORTDOCS%%share/doc/modlogan/using-plugins.txt
-%%PORTDOCS%%share/doc/modlogan/writing-plugins.txt
-share/examples/modlogan/convert_history_to_07x.pl
-share/examples/modlogan/convert_to_055.pl
-share/examples/modlogan/convert_to_060.pl
-share/examples/modlogan/footer.ihtml
-share/examples/modlogan/header.ihtml
-share/examples/modlogan/output.tmpl
+%%PORTDOCS%%%%DOCSDIR%%/faq.txt
+%%PORTDOCS%%%%DOCSDIR%%/glosar
+%%PORTDOCS%%%%DOCSDIR%%/manual.txt
+%%PORTDOCS%%%%DOCSDIR%%/translations.txt
+%%PORTDOCS%%%%DOCSDIR%%/using-plugins.txt
+%%PORTDOCS%%%%DOCSDIR%%/writing-plugins.txt
+%%EXAMPLESDIR%%/convert_history_to_07x.pl
+%%EXAMPLESDIR%%/convert_to_055.pl
+%%EXAMPLESDIR%%/convert_to_060.pl
+%%EXAMPLESDIR%%/footer.ihtml
+%%EXAMPLESDIR%%/header.ihtml
+%%EXAMPLESDIR%%/output.tmpl
 share/locale/cs/LC_MESSAGES/modlogan.mo
 share/locale/de/LC_MESSAGES/modlogan.mo
 share/locale/es/LC_MESSAGES/modlogan.mo
@@ -115,5 +115,5 @@ share/locale/hu/LC_MESSAGES/modlogan.mo
 share/locale/it/LC_MESSAGES/modlogan.mo
 share/locale/pl/LC_MESSAGES/modlogan.mo
 share/locale/ru/LC_MESSAGES/modlogan.mo
-@dirrm share/doc/modlogan
-@dirrm share/examples/modlogan
+@dirrm %%DOCSDIR%%
+@dirrm %%EXAMPLESDIR%%
