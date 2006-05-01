@@ -26,6 +26,11 @@ EXAMPLES=	vncviewer.zbd vncserver.zbd server.key server.id client1.key \
 		client2.key clients.id
 DOCS=		README.txt LICENCE.txt CHANGES.txt zebedee.html ftpgw.tcl.html
 
+post-patch:
+	@${REINPLACE_CMD} \
+		-e 's| gcc| ${CC}|' \
+		${BUILD_WRKSRC}/${MAKEFILE}
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/zebedee ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/ftpgw.tcl ${PREFIX}/bin
