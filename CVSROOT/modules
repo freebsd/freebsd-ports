@@ -13491,6 +13491,7 @@ wget4web	ports/www/wget4web
 wgetpro		ports/ftp/wgetpro
 whatmask	ports/net-mgmt/whatmask
 whatpix		ports/sysutils/whatpix
+when		ports/deskutils/when
 whichman	ports/misc/whichman
 whirlgif	ports/graphics/whirlgif
 whistlerk	ports/x11-themes/whistlerk
