@@ -1494,6 +1494,7 @@
     SUBDIR += py-psyco
     SUBDIR += py-px
     SUBDIR += py-pydasm
+    SUBDIR += py-pytz
     SUBDIR += py-repl
     SUBDIR += py-resourcepackage
     SUBDIR += py-reverse
