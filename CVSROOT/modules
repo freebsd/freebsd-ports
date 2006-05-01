@@ -3509,6 +3509,7 @@ gstreamer-plugins-all		ports/multimedia/gstreamer-plugins-all
 gstreamer-plugins-all80		ports/multimedia/gstreamer-plugins-all80
 gstreamer-plugins-artsd80	ports/audio/gstreamer-plugins-artsd80
 gstreamer-plugins-audiofile80	ports/audio/gstreamer-plugins-audiofile80
+gstreamer-plugins-bad	ports/multimedia/gstreamer-plugins-bad
 gstreamer-plugins-cairo		ports/graphics/gstreamer-plugins-cairo
 gstreamer-plugins-cairo80	ports/graphics/gstreamer-plugins-cairo80
 gstreamer-plugins-cdaudio80	ports/audio/gstreamer-plugins-cdaudio80
