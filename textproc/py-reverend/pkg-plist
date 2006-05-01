@@ -1,0 +1,31 @@
+@comment $FreeBSD$
+%%PYTHON_SITELIBDIR%%/reverend/__init__.py
+%%PYTHON_SITELIBDIR%%/reverend/__init__.pyc
+%%PYTHON_SITELIBDIR%%/reverend/__init__.pyo
+%%PYTHON_SITELIBDIR%%/reverend/guessers/__init__.py
+%%PYTHON_SITELIBDIR%%/reverend/guessers/__init__.pyc
+%%PYTHON_SITELIBDIR%%/reverend/guessers/__init__.pyo
+%%PYTHON_SITELIBDIR%%/reverend/guessers/email.py
+%%PYTHON_SITELIBDIR%%/reverend/guessers/email.pyc
+%%PYTHON_SITELIBDIR%%/reverend/guessers/email.pyo
+%%PYTHON_SITELIBDIR%%/reverend/thomas.py
+%%PYTHON_SITELIBDIR%%/reverend/thomas.pyc
+%%PYTHON_SITELIBDIR%%/reverend/thomas.pyo
+%%PYTHON_SITELIBDIR%%/reverend/ui/__init__.py
+%%PYTHON_SITELIBDIR%%/reverend/ui/__init__.pyc
+%%PYTHON_SITELIBDIR%%/reverend/ui/__init__.pyo
+%%PYTHON_SITELIBDIR%%/reverend/ui/tester.py
+%%PYTHON_SITELIBDIR%%/reverend/ui/tester.pyc
+%%PYTHON_SITELIBDIR%%/reverend/ui/tester.pyo
+%%PYTHON_SITELIBDIR%%/reverend/ui/trainer.py
+%%PYTHON_SITELIBDIR%%/reverend/ui/trainer.pyc
+%%PYTHON_SITELIBDIR%%/reverend/ui/trainer.pyo
+%%PYTHON_SITELIBDIR%%/reverend/ui/util.py
+%%PYTHON_SITELIBDIR%%/reverend/ui/util.pyc
+%%PYTHON_SITELIBDIR%%/reverend/ui/util.pyo
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/emailtrainer.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/readme.txt
+@dirrm %%PYTHON_SITELIBDIR%%/reverend/guessers
+@dirrm %%PYTHON_SITELIBDIR%%/reverend/ui
+@dirrm %%PYTHON_SITELIBDIR%%/reverend
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
