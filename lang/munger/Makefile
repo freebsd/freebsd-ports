@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	munger
-PORTVERSION=	4.97
+PORTVERSION=	4.99
 CATEGORIES=	lang
 MASTER_SITES=	http://www.jamesbailie.com/
 
