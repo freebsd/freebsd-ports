@@ -4194,6 +4194,7 @@ ipfw2dshield	ports/security/ipfw2dshield
 ipgrab		ports/net/ipgrab
 ipguard		ports/security/ipguard
 iplog		ports/net/iplog
+ipmi-kmod	ports/sysutils/ipmi-kmod
 ipmitool	ports/sysutils/ipmitool
 ipplan		ports/net-mgmt/ipplan
 ipsc		ports/sysutils/ipsc
