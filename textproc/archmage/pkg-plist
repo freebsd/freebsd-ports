@@ -1,5 +1,5 @@
 bin/archmage
-etc/arch.conf
+etc/archmage/arch.conf
 %%DATADIR%%/templates/arch_contents.html
 %%DATADIR%%/templates/arch_frameset.html
 %%DATADIR%%/templates/arch_header.html
@@ -48,18 +48,17 @@ etc/arch.conf
 %%DATADIR%%/templates/icons/7.gif
 %%DATADIR%%/templates/icons/8.gif
 %%DATADIR%%/templates/icons/9.gif
-%%PYTHON_SITELIBDIR%%/archmage.pth
-%%PYTHON_SITELIBDIR%%/archmage/CHM.py
-%%PYTHON_SITELIBDIR%%/archmage/CHM.pyc
-%%PYTHON_SITELIBDIR%%/archmage/CHM.pyo
-%%PYTHON_SITELIBDIR%%/archmage/_chmlib.so
-%%PYTHON_SITELIBDIR%%/archmage/chmlib.py
-%%PYTHON_SITELIBDIR%%/archmage/chmlib.pyc
-%%PYTHON_SITELIBDIR%%/archmage/chmlib.pyo
-%%PYTHON_SITELIBDIR%%/archmage/mod_chm.py
-%%PYTHON_SITELIBDIR%%/archmage/mod_chm.pyc
-%%PYTHON_SITELIBDIR%%/archmage/mod_chm.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/archmage
+%%PYTHON_SITELIBDIR%%/archmod/CHM.py
+%%PYTHON_SITELIBDIR%%/archmod/CHM.pyc
+%%PYTHON_SITELIBDIR%%/archmod/CHM.pyo
+%%PYTHON_SITELIBDIR%%/archmod/__init__.py
+%%PYTHON_SITELIBDIR%%/archmod/__init__.pyc
+%%PYTHON_SITELIBDIR%%/archmod/__init__.pyo
+%%PYTHON_SITELIBDIR%%/archmod/mod_chm.py
+%%PYTHON_SITELIBDIR%%/archmod/mod_chm.pyc
+%%PYTHON_SITELIBDIR%%/archmod/mod_chm.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/archmod
 @dirrm %%DATADIR%%/templates/icons
 @dirrm %%DATADIR%%/templates
 @dirrm %%DATADIR%%
+@dirrmtry etc/archmage
