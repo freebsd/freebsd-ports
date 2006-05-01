@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Cache-Memcached
-PORTVERSION=	1.15
+PORTVERSION=	1.17
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
 		http://www.danga.com/memcached/dist/
