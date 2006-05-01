@@ -28,6 +28,8 @@ INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>
 
+BROKEN=	Installs files during "make all"
+
 .if ${ARCH} != "i386"
 BROKEN=		"Configure fails on !i386"
 .endif
