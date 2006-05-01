@@ -6,13 +6,10 @@
 #
 
 PORTNAME=	proofgeneral
-PORTVERSION=	3.5
+PORTVERSION=	3.6
 CATEGORIES=	math elisp
-MASTER_SITES=	http://proofgeneral.inf.ed.ac.uk/releases/ \
-		http://www.cl.cam.ac.uk/Research/HVG/Isabelle/dist/contrib/ \
-		http://isabelle.in.tum.de/dist/contrib/ \
-		http://mirror.cse.unsw.edu.au/pub/isabelle/contrib/
-DISTNAME=	ProofGeneral-3.5
+MASTER_SITES=	http://proofgeneral.inf.ed.ac.uk/releases/
+DISTNAME=	ProofGeneral-3.6pre051004
 
 MAINTAINER=	timbob@bigpond.com
 COMMENT=	A generic interface for proof assistants
@@ -70,16 +67,12 @@ BUILD_DEPENDS+=	${LOCALBASE}/bin/texi2pdf:${PORTSDIR}/print/teTeX-base
 .endif
 
 post-patch:
-	@${TOUCH} -m -r ${WRKSRC}/generic/proof-menu.el.orig \
-	${WRKSRC}/generic/proof-menu.el
 	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},' \
 		${WRKSRC}/etc/desktop/proofgeneral.desktop
+	${TOUCH} ${WRKSRC}/.byte-compile
 
 pre-build:
 .if defined(BYTE_COMPILE)
-	@${ECHO_CMD} "************************************************************"
-	@${ECHO_CMD} "* Byte compilation may not work properly for all files...  *"
-	@${ECHO_CMD} "************************************************************"
 	@${RM} ${WRKSRC}/.byte-compile
 .endif
 
