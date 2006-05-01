@@ -1339,6 +1339,7 @@ courier-authlib-vchkpw	ports/mail/courier-authlib-vchkpw
 courier-imap	ports/mail/courier-imap
 couriergraph	ports/mail/couriergraph
 courierpassd	ports/security/courierpassd
+courierpasswd	ports/security/courierpasswd
 coverhunter	ports/audio/coverhunter
 cowbell		ports/audio/cowbell
 cowsay		ports/games/cowsay
