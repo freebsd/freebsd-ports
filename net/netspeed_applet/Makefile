@@ -7,7 +7,7 @@
 
 PORTNAME=	netspeed_applet
 PORTVERSION=	0.12.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net gnome
 MASTER_SITES=	http://www.wh-hms.uni-ulm.de/~mfcn/shared/netspeed/
 
