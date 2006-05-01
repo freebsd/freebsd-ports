@@ -39,7 +39,7 @@ lib/dpkg/parsechangelog/debian
 sbin/cleanup-info
 sbin/dpkg-divert
 sbin/dpkg-statoverride
-sbin/install-info
+sbin/dpkg-install-info
 sbin/start-stop-daemon
 sbin/update-alternatives
 %%DOCSDIR%%/ChangeLog
