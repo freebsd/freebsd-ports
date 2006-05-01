@@ -1,4 +1,5 @@
 bin/bib2html
+bin/bib2xml
 %%SITE_PERL%%/Bib2HTML/Checker/Names.pm
 %%SITE_PERL%%/Bib2HTML/General/Error.pm
 %%SITE_PERL%%/Bib2HTML/General/HTML.pm
@@ -11,6 +12,7 @@ bin/bib2html
 %%SITE_PERL%%/Bib2HTML/Generator/HTMLGen.pm
 %%SITE_PERL%%/Bib2HTML/Generator/Lang/English.pm
 %%SITE_PERL%%/Bib2HTML/Generator/Lang/French.pm
+%%SITE_PERL%%/Bib2HTML/Generator/Lang/Italian.pm
 %%SITE_PERL%%/Bib2HTML/Generator/Lang/Portuguese.pm
 %%SITE_PERL%%/Bib2HTML/Generator/Lang/Spanish.pm
 %%SITE_PERL%%/Bib2HTML/Generator/Lang.pm
