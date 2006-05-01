@@ -2770,6 +2770,7 @@ gal2		ports/x11-toolkits/gal2
 galax		ports/textproc/galax
 galaxis		ports/games/galaxis
 galaxyhack	ports/games/galaxyhack
+galaxymage	ports/games/galaxymage
 galculator	ports/math/galculator
 gale		ports/net-im/gale
 galeon		ports/www/galeon
