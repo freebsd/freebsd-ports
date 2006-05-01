@@ -98,3 +98,5 @@ share/locale/zh_TW/LC_MESSAGES/pessulus.mo
 @dirrm share/gnome/pessulus
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/Pessulus
+@dirrmtry %%PYTHON_SITELIBDIR%%
+@dirrmtry %%PYTHON_LIBDIR%%
