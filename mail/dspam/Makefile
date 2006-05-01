@@ -2,14 +2,14 @@
 # Date created:				3 August 2003
 # Whom:					Dominic Marks <dom@wirespeed.org.uk>
 #
+# $Tecnik: ports/mail/dspam/Makefile,v 1.12 2006/04/30 10:04:15 itetcu Exp $
 # $FreeBSD$
-# $Tecnik: ports/mail/dspam/Makefile,v 1.10 2006/02/09 22:20:22 itetcu Exp $
 #
 
 # Note to commiters: If don't commit a maintainer patch and as a result PKGNAME
 # or user variables (WITH*) changes please add an entry in ${FILESDIR}/UPDATING and
-# modify _UPD_LINE_NO=(no_of_added_lines-1) in this Makefile
-# else the port will be broken. Thanks.
+# modify _UPD_LINE_NO=(no_of_added_lines-1) in this Makefile.
+# Else the port will be broken. Thanks.
 
 PORTNAME=	dspam
 PORTVERSION=	${PORTVER_MAJ}${SNAP_DATE}
@@ -20,40 +20,44 @@ MASTER_SITES=	# set later
 MAINTAINER=	itetcu@people.tecnik93.com
 COMMENT=	Bayesian spam filter - stable maintenance version
 
-PORTVER_MAJ=	3.6.4
-#SNAP_DATE=	.20051211.2134
+PORTVER_MAJ=	3.6.5
+#SNAP_DATE=	.20060421.2101
+_UPD_LINE_NO=	51
 
-MIN_OPTIONS_VER=	${PORTNAME}-3.6.4
+MIN_OPTIONS_VER=	${PORTNAME}-3.6.5
 
 .ifdef(SNAP_DATE)
-MASTER_SITES=	http://people.tecnik93.com/~itetcu/FreeBSD/ports/${PORTNAME}/sources/
+MASTER_SITES=	http://sce-tindy.tecnik93.com/FreeBSD/ports/${PORTNAME}/sources/ \
+		http://people.tecnik93.com/~itetcu/FreeBSD/ports/${PORTNAME}/sources/
 WRKSRC=		${WRKDIR}/dspam-${SNAP_DATE}
 .else
 MASTER_SITES=	http://dspam.irontec.com/sources/ \
 	http://dspam.nuclearelephant.com/sources/ \
 	http://dspam.systemadministrator.org/sources/ \
 	http://dspam.sourceforge.net/sources/ \
+	http://sce-tindy.tecnik93.com/FreeBSD/ports/${PORTNAME}/sources/ \
 	http://people.tecnik93.com/~itetcu/FreeBSD/ports/${PORTNAME}/sources/
 .endif
 
-_UPD_LINE_NO=	13
-
 ## debug / log / admin options
-OPTIONS=	DEBUG "Enable debugging logging" on
+OPTIONS=	SYSLOG "Logs via syslog" on
+OPTIONS+=	DEBUG "Enable debugging logging" on
 OPTIONS+=	VERBOSE_DEBUG "Enable debug in LOGDIR/dspam.debug" off
 OPTIONS+=	BNR_DEBUG "Enable debug for BNR" off
 OPTIONS+=	PREF_EXT "Preferences in database not in files" off
 OPTIONS+=	DAEMON "Daemonize dspam; speaks LMTP or DLMTP" on
+
 #
 OPTIONS+=	CLAMAV "Enable clamav support" on
 OPTIONS+=	CLAMAV_DEVEL "Enable clamav support" off
 OPTIONS+=	CLAMAV_LOCAL "RUN_DEPEND on selected clamav" on
 #
 OPTIONS+=	MYSQL40 "Use MySQL 4.0.x as back-end" off
-OPTIONS+=	MYSQL41 "Use MySQL 4.1.x as back-end" on
-OPTIONS+=	MYSQL50 "Use MySQL 5.0.x as back-end" off
+OPTIONS+=	MYSQL41 "Use MySQL 4.1.x as back-end" off
+OPTIONS+=	MYSQL50 "Use MySQL 5.0.x as back-end" on
+OPTIONS+=	MYSQL51 "Use MySQL 5.1.x as back-end" off
 OPTIONS+=	MYSQL_COMPRESS "Compress dspam <--> MySQL" off
-OPTIONS+=	MYSQL_LOCAL "RUN_DEPEND on MySQL server selected version" off
+OPTIONS+=	MYSQL_LOCAL "RUN_DEPEND on selected MySQL server ver." off
 OPTIONS+=	POSTGRESQL "Use PostgreSQL as back-end" on
 OPTIONS+=	POSTGRESQL_LOCAL "RUN_DEPEND on PostgreSQL server" off
 OPTIONS+=	ORACLE "Use Oracle as back-end (BROKEN)" off
@@ -84,7 +88,8 @@ OPTIONS+=	SENDMAIL "Play nice with sendmail server" off
 OPTIONS+=	POSTFIX_MBC "Dspam as mailbox_command in Postfix" off
 OPTIONS+=	QMAIL "Play nice with Qmail mail server" off
 
-OPTIONS+=	CGI "Install CGI (pulls in apache)" off
+OPTIONS+=	CGI "Install CGI (pulls in Apache or see below)" off
+OPTIONS+=	LIGHTTPD "RUN_DEPEND on LightHTTPD, not Apache" off
 
 USE_PERL5=	yes
 USE_AUTOTOOLS=	libtool:15
@@ -110,6 +115,7 @@ SIGNATURE_LIFE?=	15
 
 _VAR_DIR=	/var
 LOG_DIR?=	${_VAR_DIR}/log/dspam
+LOGFILE?=	${LOG_DIR}/dspam.log
 
 DSPAM_MODE?=	4510
 DSPAM_OWNER?=	root
@@ -143,7 +149,14 @@ _SED_SCRIPT=	-e 's,%%DOCSDIR%%,${DOCSDIR},g' \
 		-e '/^%%FreeBSD/D' \
 		-e '/^%%Tecnik%%/D'
 
-.ifdef(WITH_DEBUG)
+.ifndef(WITHOUT_SYSLOG)
+CONFIGURE_ARGS+=	--enable-syslog
+.else
+CONFIGURE_ARGS+=	--disable-syslog
+CONFIGURE_ARGS+=	--with-logfile=${LOGFILE}
+.endif
+
+.ifndef(WITHOUT_DEBUG)
 CONFIGURE_ARGS+=	--enable-debug
 .endif
 
@@ -159,7 +172,7 @@ CONFIGURE_ARGS+=	--enable-bnr-debug
 CONFIGURE_ARGS+=	--enable-preferences-extension
 .endif
 
-.ifdef(WITH_DAEMON)
+.ifndef(WITHOUT_DAEMON)
 CONFIGURE_ARGS+=	--enable-daemon
 USE_RC_SUBR=	${PORTNAME}
 _SED_SCRIPT+=	-e 's,%%DAEMON%%,,g'
@@ -168,17 +181,17 @@ SUB_LIST+=	DSPAM_HOME=${DSPAM_HOME}
 _SED_SCRIPT+=	-e '/%%DAEMON%%/D'
 .endif
 
-.ifdef(WITH_CLAMAV) && defined(WITH_CLAMAV_LOCAL)
+.ifndef(WITHOUT_CLAMAV) && !defined(WITHOUT_CLAMAV_LOCAL)
 CONFIGURE_ARGS+=	--enable-clamav
 RUN_DEPENDS+=	clamav>=0:${PORTSDIR}/security/clamav
 SUB_LIST+=	CLAMD=clamd
 .endif
-.ifdef(WITH_CLAMAV_DEVEL)  && defined(WITH_CLAMAV_LOCAL)
+.ifdef(WITH_CLAMAV_DEVEL)  && !defined(WITHOUT_CLAMAV_LOCAL)
 CONFIGURE_ARGS+=	--enable-clamav
 RUN_DEPENDS+=	clamav-devel>=0:${PORTSDIR}/security/clamav-devel
 SUB_LIST+=	CLAMD=clamd
 .endif
-.ifndef(WITH_CLAMAV_LOCAL)
+.ifdef(WITHOUT_CLAMAV_LOCAL)
 SUB_LIST+=	CLAMD=
 .endif
 
@@ -188,7 +201,7 @@ _DBDRV_COUNT=	# blank, but defined so we can check against it
 # above won't work because ORACLE support is broken so
 _DBDRV=		pgsql_drv,libdb41_drv,sqlite3_drv,sqlite_drv,hash_drv,mysql_drv,
 
-.if defined(WITH_POSTGRESQL)
+.ifndef(WITHOUT_POSTGRESQL)
 USE_PGSQL=	yes
 CONFIGURE_ARGS+=	--with-pgsql-includes=${LOCALBASE}/include \
 		--with-pgsql-libraries=${LOCALBASE}/lib
@@ -216,7 +229,7 @@ _DBDRV:=	${_DBDRV:S/pgsql_drv,//}
 #_DBDRV:=	${_DBDRV:S/ora_drv,//}
 .endif
 
-.if defined(WITH_BDB4)
+.ifdef(WITH_BDB4)
 # change me when we have BDB_VERSOIN in bsd.databases.mk
 USE_BDB=	41
 CONFIGURE_ARGS+=	--with-db4-includes=${LOCALBASE}/include/db41
@@ -228,7 +241,7 @@ _DBDRV:=	${_DBDRV:S/libdb41_drv,//}
 PLIST_SUB+=	DB4="@comment "
 .endif
 
-.if defined(WITH_SQLITE3)
+.ifndef(WITHOUT_SQLITE3)
 USE_SQLITE=	3
 _DBDRV_COUNT:=	${_DBDRV_COUNT}o
 .else
@@ -250,7 +263,7 @@ PLIST_SUB+=	SQLITE=""
 PLIST_SUB+=	SQLITE="@comment "
 .endif
 
-.ifdef(WITH_HASH)
+.ifndef(WITHOUT_HASH)
 PLIST_SUB+=	HASH=""
 #PKGNAMESUFFIX=	-css
 _DBDRV_COUNT:=	${_DBDRV_COUNT}o
@@ -265,12 +278,16 @@ WANT_MYSQL_VER=	40
 .elifdef(WITH_MYSQL41)
 WANT_MYSQL_VER=	41
 #PKGNAMESUFFIX=	-mysql41
-.elifdef(WITH_MYSQL50)
+.elifndef(WITHOUT_MYSQL50)
 WANT_MYSQL_VER=	50
 #PKGNAMESUFFIX=	-mysql50
+.elifdef(WITH_MYSQL51)
+WANT_MYSQL_VER=	51
+#PKGNAMESUFFIX=	-mysql51
 .endif
 
-.if defined(WITH_MYSQL40) || defined(WITH_MYSQL41) || defined(WITH_MYSQL50)
+.if defined(WITH_MYSQL40) || defined(WITH_MYSQL41) || \
+	!defined(WITHOUT_MYSQL50) || defined(WITH_MYSQL51)
 USE_MYSQL=	yes
 CONFIGURE_ARGS+=	--with-mysql-includes=${LOCALBASE}/include/mysql \
 		--with-mysql-libraries=${LOCALBASE}/lib/mysql
@@ -395,7 +412,11 @@ CONFIGURE_ARGS+=	--with-dspam-mode=${DSPAM_MODE}
 .endif
 
 .ifdef(WITH_CGI)
+.	if defined(WITH_LIGHTTPD)
+RUN_DEPENDS+=	${LOCALBASE}/sbin/lighttpd:${PORTSDIR}/www/lighttpd
+.	else
 USE_APACHE=	1.3+
+.	endif
 LIB_DEPENDS+=	gd.4:${PORTSDIR}/graphics/gd
 RUN_DEPENDS+=	${SITE_PERL}/mach/GD.pm:${PORTSDIR}/graphics/p5-GD
 RUN_DEPENDS+=	${SITE_PERL}/GD/Graph.pm:${PORTSDIR}/graphics/p5-GD-Graph
@@ -455,6 +476,9 @@ pre-extract:	check-options-version
 	@${ECHO_CMD} "DSPAM_HOME_GROUP=${DSPAM_HOME_GROUP}"
 	@${ECHO_CMD} "DSPAM_HOME_MODE=${DSPAM_HOME_MODE} (default: 0770)"
 	@${ECHO_CMD} "LOG_DIR=${LOG_DIR} (default: ${_VAR_DIR}/log/dspam)"
+.	ifdef(WITHOUT_SYSLOG)
+	@${ECHO_CMD} "LOGFILE=${LOGFILE} (default: ${_VAR_DIR}/log/dspam/dspam.log)"
+.	endif
 .	ifdef(WITH_CGI)
 		@${ECHO_CMD} "Define CGI_PATH before make-ing if you need the CGI files"
 		@${ECHO_CMD} "installed in other place that this installation's default"
@@ -492,26 +516,26 @@ pre-configure:
 	@${FALSE}
 .endif
 .if defined(WITH_VIRT_USERS) && !(defined(USE_MYSQL) || \
-	defined(WITH_POSTGRESQL) || defined(WITH_ORACLE) || defined(WITH_HASH) )
-	@${ECHO_CMD} "You need MySQL, POSTGRESQL or ORACLE for virtual users."
+	!defined(WITHOUT_POSTGRESQL) || defined(WITH_ORACLE) || !defined(WITHOUT_HASH) )
+	@${ECHO_CMD} "You need MySQL, POSTGRESQL, HASH or ORACLE for virtual users."
 	@${FALSE}
 .endif
 .if defined(WITH_PREF_EXT) && !( defined(USE_MYSQL) || \
-	defined(WITH_POSTGRESQL) )
+	!defined(WITHOUT_POSTGRESQL) )
 	@${ECHO_CMD} "You need MySQL or Postgres for preferences extension"
 	@${FALSE}
 .endif
-.if defined(WITH_DAEMON) && !( defined(USE_MYSQL) || \
-	defined(WITH_POSTGRESQL) || defined(WITH_HASH) )
-	@${ECHO_CMD} "You need MySQL or Postgres for Daemon mode, because multithreading support is needed"
+.ifndef(WITHOUT_DAEMON) && !( defined(USE_MYSQL) || \
+	!defined(WITHOUT_POSTGRESQL) || !defined(WITHOUT_HASH) )
+	@${ECHO_CMD} "You need MySQL, PostgreSQL or Hash for Daemon mode, because multithreading support is needed"
 	@${FALSE}
 .endif
-.if ( defined(WITH_MYSQL40) && defined(WITH_MYSQL50) && defined(WITH_MYSQL41) )
+.if ( defined(WITH_MYSQL40) && defined(WITH_MYSQL41) && !defined(WITHOUT_MYSQL50) && defined(WITH_MYSQL51))
 	@${ECHO_CMD} "You can compile with only one MySQL version driver."
 	@${FALSE}
 .endif
 .if defined(WITH_LDAP) && !( defined(USE_MYSQL) || \
-	defined(WITH_POSTGRESQL) || defined(USE_SQLITE) )
+	!defined(WITHOUT_POSTGRESQL) || defined(USE_SQLITE) )
 	@${ECHO_CMD} "You need MySQL, Postgres or SQLITE for LDAP."
 	@${FALSE}
 .endif
@@ -522,6 +546,16 @@ pre-configure:
 .if defined(WITH_DOMAIN_SCALE) && defined(WITH_LARGE_SCALE)
 	@${ECHO_CMD} "DOMAIN_SCALE and LARGE_SCALE are incopatible"
 	@${FALSE}
+.endif
+.if defined(WITH_LIGHTHTTPD) && !defined(WITH_CGI)
+	@${ECHO_CMD} "There's no reason to depend on LightHTTPD if you're not using CGI"
+	@${FALSE}
+.endif
+.ifdef(SNAP_DATE)
+	@${ECHO_CMD}
+	@${ECHO_CMD} "You can safely ignore the following auto*  errors"
+	@${ECHO_CMD}
+	@(cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ./autogen.sh)
 .endif
 
 post-install:
@@ -547,7 +581,7 @@ post-install:
 			virtual_user_aliases.sql \
 			virtual_users.sql ${EXAMPLESDIR}/mysql
 .endif
-.ifdef(WITH_POSTGRESQL)
+.ifndef(WITHOUT_POSTGRESQL)
 	@${MKDIR} ${EXAMPLESDIR}/pgsql
 	@cd  ${WRKSRC}/src/tools.pgsql_drv && \
 		${INSTALL_DATA} *.sql ${EXAMPLESDIR}/pgsql
