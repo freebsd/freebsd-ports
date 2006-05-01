@@ -441,6 +441,7 @@ argus		ports/net-mgmt/argus
 argus-clients	ports/net-mgmt/argus-clients
 ari-yahoo	ports/net-im/ari-yahoo
 aria		ports/www/aria
+aria2		ports/www/aria2
 ariadne		ports/biology/ariadne
 arirang		ports/security/arirang
 arj		ports/archivers/arj
