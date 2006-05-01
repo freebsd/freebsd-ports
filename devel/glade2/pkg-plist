@@ -83,3 +83,5 @@ share/locale/zh_TW/LC_MESSAGES/glade-2.0.mo
 @dirrm share/gnome/help/glade-2
 @dirrm share/gnome/glade-2/gtk
 @dirrm share/gnome/glade-2
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
