@@ -1,0 +1,79 @@
+--- bindings/Makefile.in.orig	Sun Apr  9 16:26:50 2006
++++ bindings/Makefile.in	Sun Apr  9 20:26:15 2006
+@@ -270,7 +270,7 @@
+ prefix = @prefix@
+ program_transform_name = @program_transform_name@
+ pyexecdir = @pyexecdir@
+-pythondir = $(prefix)/lib/python
++pythondir = @pyexecdir@
+ sbindir = @sbindir@
+ sharedstatedir = @sharedstatedir@
+ subdirs = @subdirs@
+@@ -283,13 +283,13 @@
+ ##########################################
+ # Tcl binding
+ tcl_ltlib = hamlibtcl.la
+-tcldir = $(prefix)/lib/tcl
++tcldir = $(TCL_BIN_DIR)
+ PKG_VER = 1.0
+ DLL = hamlibtcl-$(PKG_VER)@TCL_SHLIB_SUFFIX@
+ nodist_hamlibtcl_la_SOURCES = hamlibtcl_wrap.c
+ hamlibtcl_la_LDFLAGS = -no-undefined -module -release $(PKG_VER) -avoid-version @TCL_LIB_SPEC@
+ hamlibtcl_la_LIBADD = $(top_builddir)/src/libhamlib.la
+-hamlibtcl_ladir = $(tcldir)
++hamlibtcl_ladir = $(tcldir)/hamlib
+ hamlibtcl_la_DATA = pkgIndex.tcl
+ 
+ ##########################################
+@@ -302,7 +302,8 @@
+ python_PYTHON = Hamlib.py
+ 
+ ##########################################
+-lib_LTLIBRARIES = $(tcl_ltlib) $(python_ltlib)
++#lib_LTLIBRARIES = $(tcl_ltlib) $(python_ltlib)
++lib_LTLIBRARIES = @BINDING_LIB_TARGETS@
+ EXTRA_DIST = hamlib.swg ignore.swg rig.swg rotator.swg \
+ 			Makefile.PL perltest.pl tcltest.tcl pytest.py
+ 
+@@ -421,6 +422,7 @@
+ 	-rm -f libtool
+ uninstall-info-am:
+ install-pythonPYTHON: $(python_PYTHON)
++install-py:
+ 	@$(NORMAL_INSTALL)
+ 	test -z "$(pythondir)" || $(mkdir_p) "$(DESTDIR)$(pythondir)"
+ 	@list='$(python_PYTHON)'; dlist=''; for p in $$list; do\
+@@ -449,6 +451,7 @@
+ 	  rm -f "$(DESTDIR)$(pythondir)/$${f}o"; \
+ 	done
+ install-hamlibtcl_laDATA: $(hamlibtcl_la_DATA)
++install-tcl: install-libLTLIBRARIES
+ 	@$(NORMAL_INSTALL)
+ 	test -z "$(hamlibtcl_ladir)" || $(mkdir_p) "$(DESTDIR)$(hamlibtcl_ladir)"
+ 	@list='$(hamlibtcl_la_DATA)'; for p in $$list; do \
+@@ -551,7 +554,8 @@
+ 	  test -z "$$dir" || $(mkdir_p) "$$dir"; \
+ 	done
+ install: $(BUILT_SOURCES)
+-	$(MAKE) $(AM_MAKEFLAGS) install-am
++#	$(MAKE) $(AM_MAKEFLAGS) install-am
++	$(MAKE) $(AM_MAKEFLAGS) $(BINDING_INSTALL_EXEC)
+ install-exec: install-exec-am
+ install-data: install-data-am
+ uninstall: uninstall-am
+@@ -698,7 +702,6 @@
+ check-tcl: all-tcl
+ 	TCLLIBPATH=$(builddir)/.libs $(srcdir)/tcltest.tcl || echo "Tcl test failed" 1>&2
+ 
+-install-tcl: 
+ clean-tcl:
+ distclean-tcl: clean-tcl
+ uninstall-tcl: 
+@@ -713,7 +716,6 @@
+ check-py: all-py
+ 	$(srcdir)/pytest.py || echo "Python test failed" 1>&2
+ 
+-install-py:
+ clean-py:
+ distclean-py:
+ uninstall-py: 
