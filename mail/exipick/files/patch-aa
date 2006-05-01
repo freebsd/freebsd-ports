@@ -1,5 +1,5 @@
---- exipick.20050604.orig	Mon May  2 01:10:13 2005
-+++ exipick.20050604.1	Mon May  2 01:10:34 2005
+--- exipick.20060307.1.orig	Mon May  1 17:45:32 2006
++++ exipick.20060307.1	Mon May  1 17:45:54 2006
 @@ -1,7 +1,7 @@
  #!/usr/bin/perl
  
