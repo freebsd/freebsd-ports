@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cuttlefish
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.caida.org/tools/visualization/cuttlefish/code/
 
