@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	carthage
-PORTVERSION=	1.0 # Cannot find any version information
+PORTVERSION=	1.0 # No version information on WWW
 PORTREVISION=	1
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.tei-c.org/Software/carthage/
+MASTER_SITES=	http://www.tei-c.org/Software/carthage/ \
+		http://www.tei-c.org.uk/Software/carthage/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
