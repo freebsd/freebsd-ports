@@ -1,0 +1,3 @@
+Backport of ipmi driver from FreeBSD 7-CURRENT for FreeBSD 6.x.
+
+WWW: http://dpw.threerings.net/projects/ipmi-kmod/

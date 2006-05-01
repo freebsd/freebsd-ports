@@ -242,6 +242,7 @@
     SUBDIR += idled
     SUBDIR += installwatch
     SUBDIR += ipa
+    SUBDIR += ipmi-kmod
     SUBDIR += ipmitool
     SUBDIR += ipsc
     SUBDIR += jailadmin

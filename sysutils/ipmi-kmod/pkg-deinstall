@@ -1,0 +1,20 @@
+#!/bin/sh
+#
+# Unload ipmi module if necessary, then remove the file
+#
+# $FreeBSD$
+#
+
+if [ "x$2" != "xDEINSTALL" ]; then
+	exit 0
+fi
+
+echo "Unloading ipmi kernel module."
+
+# Unload the module if it is currently loaded.
+kldstat -n ipmi 2>/dev/null >/dev/null && kldunload ipmi
+
+# Now remove the .ko file
+KMODDIR="/boot/modules"
+[ -f ${KMODDIR}/ipmi.ko ] && rm -f ${KMODDIR}/ipmi.ko
+
