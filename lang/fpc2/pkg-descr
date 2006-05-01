@@ -1,5 +1,6 @@
 Originally named FPK-Pascal, the Free Pascal compiler is a 32 bit
 Turbo Pascal compatible Pascal compiler for DOS, Linux, Win32, OS/2,
-(based on an older version) the AmigaOS, FreeBSD/ELF, and BeOS.
+(based on an older version) the AmigaOS, FreeBSD/ELF, BeOS, Darwin(OSX)
+and others.
 
 WWW: http://www.freepascal.org/
