@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.sentia.org/downloads/ \
 MASTER_SITE_SUBDIR=	sem
 
 MAINTAINER=	sem@FreeBSD.org
-COMMENT=	Helper for the FTP protocol to get through your pf firewall
+COMMENT=	Helper for pf firewall to pass FTP protocol
 
 MAN8=		ftpsesame.8
 PLIST_FILES=	bin/ftpsesame
