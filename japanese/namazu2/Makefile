@@ -7,6 +7,7 @@
 
 PORTNAME=	namazu
 PORTVERSION=	2.0.16
+PORTREVISION=	1
 CATEGORIES=	japanese databases www textproc
 MASTER_SITES=	# empty
 PKGNAMESUFFIX=	2
@@ -17,15 +18,17 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Meta-port of Namazu and Japanese support modules
 
 LIB_DEPENDS=	nmz.7:${PORTSDIR}/databases/namazu2
-RUN_DEPENDS=	${PM_BASE}/${PERL_ARCH}/NKF.pm:${PORTSDIR}/japanese/p5-nkf \
-		${PM_BASE}/${PERL_ARCH}/Text/${MODULE_NAME}.pm:${PORTSDIR}/japanese/p5-Text-${MODULE_NAME}
+RUN_DEPENDS=	${PM_BASE}/${PERL_ARCH}/NKF.pm:${PORTSDIR}/japanese/p5-nkf
 
 PM_BASE=	${SITE_PERL}
+PLIST=		"@comment this plist is intentionally left empty"
 
-.if defined(WITH_CHASEN)
-MODULE_NAME=	ChaSen
+.if defined(WITH_MECAB)
+RUN_DEPENDS+=	${PM_BASE}/${PERL_ARCH}/MeCab.pm:${PORTSDIR}/japanese/p5-MeCab
+.elif defined(WITH_CHASEN)
+RUN_DEPENDS+=	${PM_BASE}/${PERL_ARCH}/Text/ChaSen.pm:${PORTSDIR}/japanese/p5-Text-ChaSen
 .else
-MODULE_NAME=	Kakasi
+RUN_DEPENDS+=	${PM_BASE}/${PERL_ARCH}/Text/Kakasi.pm:${PORTSDIR}/japanese/p5-Text-Kakasi
 .endif
 
 NO_BUILD=	yes
