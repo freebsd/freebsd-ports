@@ -22,7 +22,7 @@ MAKEFILE=	makefile
 INSTALLS_SHLIB=	yes
 # Known to work on atleast sparc64 & i386
 #ONLY_FOR_ARCHS=	i386 sparc64
-NOT_FOR_ARCHS=	amd64 ia64
+#NOT_FOR_ARCHS=	amd64 ia64
 
 PLIST_FILES=	lib/libml.a \
 		lib/libml.so \
@@ -43,6 +43,10 @@ PORTDOCS=	128bdoc.html
 .endif
 
 post-patch:
+.if ${ARCH}!="sparc64"
+	@${REINPLACE_CMD} -e 's|-msoft-quad-float||' \
+		${WRKSRC}/${MAKEFILE}
+.endif
 	@${REINPLACE_CMD} -e 's|%%CC%%|${CC}|; s|%%CFLAGS%%|${CFLAGS}|' \
 		${WRKSRC}/${MAKEFILE}
 
