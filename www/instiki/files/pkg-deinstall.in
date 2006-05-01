@@ -1,0 +1,18 @@
+#!/bin/sh
+#
+
+if [ "$2" != "DEINSTALL" ]; then
+    exit 0
+fi
+
+echo "comparing databases in %%PREFIX%%/%%INSTIKIDIR%%/db"
+
+cd %%PREFIX%%/%%INSTIKIDIR%%/db || exit 1
+if ! cmp -s -z production.db.sqlite3 default.db.sqlite3; then
+    echo "production.db.sqlite3 changed from default, not removing"
+else
+    echo "production.db.sqlite3 unchanged from default, removing"
+    rm production.db.sqlite3
+fi
+
+exit 0
