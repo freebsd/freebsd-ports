@@ -1,6 +1,6 @@
 # New ports collection makefile for:	www/p5-Catalyst-Plugin-Session-Store-Memcached
 # Date created:				2 Jan 2006
-# Whom:					Lars Balker Rasmussen <lars@balker.dk>
+# Whom:					Lars Balker Rasmussen <lbr@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Catalyst
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lars@balker.dk
+MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	Memcached storage backend for session data
 
 BUILD_DEPENDS=	p5-Catalyst>=5.0:${PORTSDIR}/www/p5-Catalyst \

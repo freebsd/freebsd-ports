@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Class
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lars@balker.dk
+MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	Dynamic definition of Class::DBI sub classes
 
 BUILD_DEPENDS=	${RUN_DEPENDS} \

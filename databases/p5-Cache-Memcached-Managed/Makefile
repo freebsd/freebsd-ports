@@ -1,6 +1,6 @@
 # New ports collection makefile for:	p5-Cache-Memcached-Managed
 # Date created:		2006-01-02
-# Whom:			Lars Balker Rasmussen <lars@balker.dk>
+# Whom:			Lars Balker Rasmussen <lbr@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Cache
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lars@balker.dk
+MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	Provide API for managing cached information
 
 BUILD_DEPENDS=	p5-Cache-Memcached>=0:${PORTSDIR}/databases/p5-Cache-Memcached \

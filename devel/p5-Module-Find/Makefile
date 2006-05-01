@@ -1,6 +1,6 @@
 # New ports collection makefile for:	Module-Find
 # Date created:	   26 Sep 2005
-# Whom:		   Lars Balker Rasmussen <lars@balker.dk>
+# Whom:		   Lars Balker Rasmussen <lbr@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Module
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lars@balker.dk
+MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	Lets you find and use modules in categories
 
 BUILD_DEPENDS=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple \

@@ -1,6 +1,6 @@
 # New ports collection makefile for:	databases/p5-DBIx-Class-Loader
 # Date created:				16 Nov 2005
-# Whom:					Lars Balker Rasmussen <lars@balker.dk>
+# Whom:					Lars Balker Rasmussen <lbr@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DBIx
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lars@balker.dk
+MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	Dynamic definition of DBIx::Class sub classes
 
 BUILD_DEPENDS=	p5-DBI>=1.3:${PORTSDIR}/databases/p5-DBI \

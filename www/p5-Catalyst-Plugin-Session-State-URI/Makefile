@@ -1,6 +1,6 @@
 # Ports collection makefile for:	p5-Catalyst-Plugin-Session-State-URI
 # Date created:				Nov 16, 2005
-# Whom:					Lars Balker Rasmussen <lars@balker.dk>
+# Whom:					Lars Balker Rasmussen <lbr@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Catalyst
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lars@balker.dk
+MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	Saves Catalyst Session IDs by rewriting URIs
 
 BUILD_DEPENDS=	p5-Catalyst-Plugin-Session>=0.01:${PORTSDIR}/www/p5-Catalyst-Plugin-Session \

@@ -1,6 +1,6 @@
 # Ports collection makefile for:	p5-Catalyst-Plugin-Unicode
 # Date created:				Mar 26, 2006
-# Whom:					Lars Balker Rasmussen <lars@balker.dk>
+# Whom:					Lars Balker Rasmussen <lbr@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Catalyst
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lars@balker.dk
+MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	Unicode aware Catalyst
 
 BUILD_DEPENDS=	p5-Catalyst>=0:${PORTSDIR}/www/p5-Catalyst

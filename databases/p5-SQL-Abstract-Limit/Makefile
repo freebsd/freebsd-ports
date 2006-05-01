@@ -1,6 +1,6 @@
 # New ports collection makefile for:	SQL-Abstract-Limit
 # Date created:		14 Aug 2005
-# Whom:			Lars Balker Rasmussen <lars@balker.dk>
+# Whom:			Lars Balker Rasmussen <lbr@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	../by-authors/id/D/DA/DAVEBAIRD
 PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-0.12
 
-MAINTAINER=	lars@balker.dk
+MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	SQL Portability layer for LIMIT emulation
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \

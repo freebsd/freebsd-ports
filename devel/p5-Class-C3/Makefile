@@ -1,6 +1,6 @@
 # New ports collection makefile for:	Class-C3
 # Date created:	   1 Dec 2005
-# Whom:		   Lars Balker Rasmussen <lars@balker.dk>
+# Whom:		   Lars Balker Rasmussen <lbr@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Class
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lars@balker.dk
+MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	A pragma to use the C3 method resolution order algorithm
 
 BUILD_DEPENDS=	p5-Test-Simple>=0.47:${PORTSDIR}/devel/p5-Test-Simple \

@@ -1,6 +1,6 @@
 # New ports collection makefile for:	p5-UNIVERSAL-isa
 # Date Created:				16 Nov, 2005
-# Whom:					Lars Balker Rasmussen <lars@balker.dk>
+# Whom:					Lars Balker Rasmussen <lbr@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/C/CH/CHROMATIC
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lars@balker.dk
+MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	Try to recover from people calling UNIVERSAL::isa as a function
 
 BUILD_DEPENDS=	p5-Scalar-List-Utils>=0:${PORTSDIR}/lang/p5-Scalar-List-Utils

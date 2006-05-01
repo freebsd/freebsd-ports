@@ -1,6 +1,6 @@
 # New ports collection makefile for:	DBIx-Class-WebForm
 # Date created:		11 Feb 2006
-# Whom:			Lars Balker Rasmussen <lars@balker.dk>
+# Whom:			Lars Balker Rasmussen <lbr@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DBIx
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lars@balker.dk
+MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	CRUD methods for DBIx::Class
 
 BUILD_DEPENDS=	p5-DBIx-Class>=0:${PORTSDIR}/databases/p5-DBIx-Class \
