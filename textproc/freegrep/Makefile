@@ -9,8 +9,7 @@ PORTNAME=	freegrep
 PORTVERSION=	0.16
 PORTREVISION=	1
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.vocito.com/downloads/software/grep/ \
-		ftp://ftp.vocito.com/pub/vocito.com/software/grep/
+MASTER_SITES=	http://www.vocito.com/downloads/software/grep/
 DISTNAME=	grep-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
