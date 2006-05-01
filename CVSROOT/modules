@@ -3691,6 +3691,7 @@ gtkmathview	ports/x11-toolkits/gtkmathview
 gtkmm24		ports/x11-toolkits/gtkmm24
 gtkmozedit	ports/devel/gtkmozedit
 gtkpasman	ports/security/gtkpasman
+gtkperf		ports/benchmarks/gtkperf
 gtkpod		ports/audio/gtkpod
 gtkpool		ports/games/gtkpool
 gtkportscan	ports/security/gtkportscan
