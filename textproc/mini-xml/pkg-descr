@@ -16,7 +16,7 @@ Mini-XML provides the following functionality:
 - Functions for creating and managing trees of data.
 - "Find" and "walk" functions for easily locating and navigating trees of data.
 
-WWW: http://www.easysw.com/~mike/mxml
+WWW: http://www.easysw.com/~mike/mxml/
 
 - Michael Sweet
 mxml@easysw.com

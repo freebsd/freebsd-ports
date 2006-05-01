@@ -8,14 +8,16 @@ PORTVERSION=	2.2.2
 PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://ftp.easysw.com/pub/mxml/${PORTVERSION}/ \
-		http://www.nu6.org/_/mirror/ftp.easysw.com/pub/mxml/${PORTVERSION}/
+		ftp://ftp3.easysw.com/pub/mxml/${PORTVERSION}/ \
+		http://ftp.funet.fi/pub/mirrors/ftp.easysw.com/pub/mxml/${PORTVERSION}/ \
+		ftp://ftp.funet.fi/pub/mirrors/ftp.easysw.com/pub/mxml/${PORTVERSION}/ \
+		ftp://ftp.easysw.com/pub/mxml/${PORTVERSION}/
 DISTNAME=	mxml-${PORTVERSION}
 
 MAINTAINER=	oc@cynic.ru
 COMMENT=	Lightweight XML parsing library
 
 USE_GNOME=	gnometarget pkgconfig
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-docdir=${DOCSDIR}
 
