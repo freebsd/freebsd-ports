@@ -1,65 +1,36 @@
---- etc/settings.orig	Tue Jun  8 10:29:49 2004
-+++ etc/settings	Fri Aug 12 17:22:30 2005
-@@ -13,61 +13,12 @@
- # binaries.  Do not invent new ML system names unless you know what
- # you are doing.  Only one of the sections below should be activated.
+--- etc/settings.orig	Thu Nov 24 21:53:10 2005
++++ etc/settings	Thu Nov 24 22:07:36 2005
+@@ -16,33 +16,11 @@
+ # not invent new ML system names unless you know what you are doing.
+ # Only one of the sections below should be activated.
  
--
--# try finding the poly packages from the Isabelle site in the usual places
--POLYML_HOME=$(choosefrom \
--  "$ISABELLE_HOME/contrib/polyml" \
--  "$ISABELLE_HOME/../polyml" \
--  "/usr/share/polyml" \
--  "/usr/local/polyml" \
--  "/opt/polyml")
--
--if [ -n "$POLYML_HOME" -a -e "$POLYML_HOME/bin/polyml-version" ]; then
--  # looks like Isabelle poly packages
--  ML_SYSTEM=$("$POLYML_HOME/bin/polyml-version" 2>/dev/null || echo polyml)
--  ML_PLATFORM=$("$POLYML_HOME/bin/polyml-platform" 2>/dev/null || echo unknown-platform)
--  ML_HOME="$POLYML_HOME/$ML_PLATFORM"
--  ML_OPTIONS="-h 15000"
--elif [ -e /usr/bin/poly -a -e /usr/lib/poly ]; then
--  # maybe a shrink-wrapped polyml on x86-linux ...
--
--  # Poly/ML 4.0, 4.1, 4.1.x
--  # include version number, needed for choosing right options
--  ML_SYSTEM=polyml-4.1.3    
--  # processor/OS type
--  ML_PLATFORM=x86-linux
--  # where to find binaries
--  ML_HOME=/usr/bin
--  # where to find the standard database
--  ML_DBASE=/usr/lib/poly/ML_dbase
--  # options to pass to poly
--  ML_OPTIONS="-h 15000"
--fi
+-# Poly/ML 4.x
+-POLY_HOME="$(type -p poly)"; [ -n "$POLY_HOME" ] && POLY_HOME="$(dirname "$POLY_HOME")"
+-ML_PLATFORM=$("$ISABELLE_HOME/lib/scripts/polyml-platform")
+-ML_HOME=$(choosefrom \
+-  "$ISABELLE_HOME/contrib/polyml/$ML_PLATFORM" \
+-  "$ISABELLE_HOME/../polyml/$ML_PLATFORM" \
+-  "/usr/local/polyml/$ML_PLATFORM" \
+-  "/usr/share/polyml/$ML_PLATFORM" \
+-  "/opt/polyml/$ML_PLATFORM" \
+-  $POLY_HOME)
+-ML_SYSTEM=$("$ISABELLE_HOME/lib/scripts/polyml-version")
+-ML_OPTIONS="-H 80"
+-ML_DBASE=""
 -
 -# Standard ML of New Jersey 110 or later
+-#SMLNJ_CYGWIN_RUNTIME=1
 -#ML_SYSTEM=smlnj-110
--#ML_HOME="$ISABELLE_HOME/../smlnj/bin"
+-#ML_HOME="$ISABELLE_HOME/contrib/smlnj/bin"
 -#ML_OPTIONS="@SMLdebug=/dev/null"
 -#ML_PLATFORM=$(eval $("$ML_HOME/.arch-n-opsys" 2>/dev/null); echo "$HEAP_SUFFIX")
 -
--# MLWorks 2.0
--#ML_SYSTEM=mlworks
--#ML_HOME="$ISABELLE_HOME/../mlworks/bin"
--#ML_OPTIONS=""
--#ML_PLATFORM=""
--
 -# Moscow ML 2.00 or later (experimental!)
 -#ML_SYSTEM=mosml
--#ML_HOME="$ISABELLE_HOME/../mosml/bin"
+-#ML_HOME="$ISABELLE_HOME/contrib/mosml/bin"
 -#ML_PLATFORM=""
 -#ML_OPTIONS=""
 -
--# Standard ML of New Jersey 0.93
--#ML_SYSTEM=smlnj-0.93
--#ML_HOME=/usr/local/ldist/DIR/sml-0.93/src
--#ML_OPTIONS=""
--#ML_PLATFORM=""
--
-+# %%ML_COMMENT%%
 +ML_SYSTEM=%%ML_SYSTEM%%
 +ML_HOME=%%ML_HOME%%
 +ML_OPTIONS=%%ML_OPTIONS%%
@@ -67,56 +38,21 @@
 +ML_DBASE=%%ML_DBASE%%
  
  ###
- ### Compilation options for isatool usedir
-@@ -79,7 +30,6 @@
- # for overriding proof objects in HOL image
- HOL_PROOF_OBJECTS=""
- 
--
- ###
- ### Document preparation
- ###
-@@ -155,7 +105,7 @@
+ ### Compilation options (cf. isatool usedir)
+@@ -116,7 +94,7 @@
  ###
  
- #Where to look for docs (multiple dirs separated by ':').
+ # Where to look for docs (multiple dirs separated by ':').
 -ISABELLE_DOCS="$ISABELLE_HOME/doc"
 +ISABELLE_DOCS="%%PREFIX%%/share/doc/isabelle"
  
- #The dvi file viewer
- DVI_VIEWER=xdvi
-@@ -181,12 +131,7 @@
- 
- # Proof General path, look in a variety of places
- ISABELLE_INTERFACE=$(choosefrom \
--  "$ISABELLE_HOME/contrib/ProofGeneral/isar/interface" \
--  "$ISABELLE_HOME/../ProofGeneral/isar/interface" \
--  "/usr/share/ProofGeneral/isar/interface" \
--  "/usr/local/ProofGeneral/isar/interface" \
--  "/opt/ProofGeneral/isar/interface" \
--  "/usr/share/emacs/ProofGeneral/isar/interface" \
+ # Preferred document format
+ ISABELLE_DOC_FORMAT=pdf
+@@ -152,6 +130,7 @@
+   "/usr/share/ProofGeneral/isar/interface" \
+   "/opt/ProofGeneral/isar/interface" \
+   "/usr/share/emacs/ProofGeneral/isar/interface" \
 +  "%%PREFIX%%/bin/proofgeneral" \
    "$ISABELLE_INTERFACE")
  
- # Options to pass to Isabelle command when PG is selected as interface
-@@ -196,20 +141,9 @@
- # try xemacs first, else emacs
- type -path xemacs >/dev/null || PROOFGENERAL_OPTIONS="-p emacs $PROOFGENERAL_OPTIONS"
- 
--
--# X-Symbol installation location (for Proof General, obsolete for PG >= 3.5)
--XSYMBOL_HOME=$(choosefrom \
--  "$ISABELLE_HOME/contrib/x-symbol" \
--  "$ISABELLE_HOME/../x-symbol" \
--  "/usr/share/x-symbol" \
--  "/usr/local/x-symbol" \
--  "/opt/x-symbol" \
--  "")
--
- # Executed before xemacs with ProofGeneral is called.
- # Required for remote fonts only.
- #XSYMBOL_INSTALLFONTS="xset fp+ tcp/isafonts.informatik.tu-muenchen.de:7200"
--
- 
- ###
- ### External reasoning tools
+ PROOFGENERAL_OPTIONS=""

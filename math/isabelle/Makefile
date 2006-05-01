@@ -6,46 +6,47 @@
 #
 
 PORTNAME=	isabelle
-PORTVERSION=	2004
+PORTVERSION=	2005
 CATEGORIES=	math
-MASTER_SITES=	http://isabelle.in.tum.de/dist/packages/ \
-		http://www.cl.cam.ac.uk/Research/HVG/Isabelle/dist/packages/ \
-		http://mirror.cse.unsw.edu.au/pub/isabelle/packages/
-DISTNAME=	Isabelle2004
+MASTER_SITES=	http://isabelle.in.tum.de/dist/ \
+		http://www.cl.cam.ac.uk/Research/HVG/Isabelle/dist/ \
+		http://mirror.cse.unsw.edu.au/pub/isabelle/dist/
+DISTNAME=	Isabelle2005
 .if !defined(NOPORTDOCS)
-DISTFILES=	Isabelle2004.tar.gz \
-		Isabelle2004_library.tar.gz \
-		Isabelle2004_pdf.tar.gz
+DISTFILES=	Isabelle2005.tar.gz \
+		Isabelle2005_library.tar.gz \
+		Isabelle2005_pdf.tar.gz
 .endif
 
 MAINTAINER=	timbob@bigpond.com
 COMMENT=	A generic proof assistant
 
+OPTIONS=	SMLNJ "Use SML/NJ (devel) instead of the faster Poly/ML" Off
+
+.include <bsd.port.pre.mk>
+
 .if defined(WITH_SMLNJ)
-ML_COMMENT=	Standard ML of New Jersey 110 or later
 ML_SYSTEM=	smlnj-110
-ML_HOME=	${LOCALBASE}/lib/sml-nj/bin
+ML_HOME=	${LOCALBASE}/smlnj/bin
 ML_OPTIONS=	@SMLdebug=/dev/null
-ML_DBASE=
 .else
-# Poly/ML 4.0, 4.1, 4.1.x
-ML_COMMENT=	Poly/ML 4.0, 4.1, 4.1.x
-ML_SYSTEM=	polyml-4.1.3
+ML_SYSTEM=	polyml-4.2.0
 ML_HOME=	${LOCALBASE}/lib/polyml/
-ML_OPTIONS=	-h 15000
-ML_DBASE=	${LOCALBASE}/lib/polyml/ML_dbase
+ML_OPTIONS=	-H 80
+ML_DBASE=	""
 .endif
 
 USE_PERL5=	yes
-HAS_CONFIGURE=	yes
 BUILD_DEPENDS+=	bash:${PORTSDIR}/shells/bash
 RUN_DEPENDS+=	proofgeneral:${PORTSDIR}/math/proofgeneral
 
-PORTDOCS=	Contents index.html *.pdf *.eps *.ps *.dvi
+DOCFILES=	Contents *.pdf *.eps *.ps *.dvi
+
+PLIST_SUB=	HEAPSUBDIR=${ML_SYSTEM}_x86-bsd
 
 .if defined(WITH_SMLNJ)
-BUILD_DEPENDS+=	sml:${PORTSDIR}/lang/sml-nj
-RUN_DEPENDS+=	sml:${PORTSDIR}/lang/sml-nj
+BUILD_DEPENDS+=	sml:${PORTSDIR}/lang/sml-nj-devel
+RUN_DEPENDS+=	sml:${PORTSDIR}/lang/sml-nj-devel
 .else
 BUILD_DEPENDS+=	poly:${PORTSDIR}/lang/polyml
 RUN_DEPENDS+=	poly:${PORTSDIR}/lang/polyml
@@ -55,11 +56,12 @@ NO_INSTALL_MANPAGES=yes
 
 post-extract:
 	@${CP} ${FILESDIR}/Makefile ${WRKSRC}
+	@${CP} ${FILESDIR}/polyml-4.1.4-patch.ML ${WRKSRC}/src/Pure/ML-Systems/
+	@${CP} ${FILESDIR}/polyml-4.2.0.ML ${WRKSRC}/src/Pure/ML-Systems/
 
 post-patch:
 	@${MV} ${WRKSRC}/etc/settings ${WRKSRC}/etc/settings.presed
-	@${SED} "s|%%ML_COMMENT%%|${ML_COMMENT}|;	\
-		 s|%%ML_SYSTEM%%|${ML_SYSTEM}|;		\
+	@${SED} "s|%%ML_SYSTEM%%|${ML_SYSTEM}|;		\
 		 s|%%ML_HOME%%|${ML_HOME}|;		\
 		 s|%%ML_OPTIONS%%|\"${ML_OPTIONS}\"|;	\
 		 s|%%ML_DBASE%%|${ML_DBASE}|;		\
@@ -80,7 +82,7 @@ post-install:
 	${WRKSRC}/bin/isatool ${INSTALL} -d ${PREFIX}/share/isabelle -p ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-.for file in ${PORTDOCS}
+.for file in ${DOCFILES}
 	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${DOCSDIR}
 .endfor
 	(cd ${WRKSRC}; \
@@ -88,4 +90,4 @@ post-install:
 	 ${FIND} -d browser_info -type f -exec ${INSTALL_DATA} {} ${DOCSDIR}/{} \;)
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
