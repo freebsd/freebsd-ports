@@ -3591,6 +3591,7 @@ gstreamer-plugins-speex80	ports/audio/gstreamer-plugins-speex80
 gstreamer-plugins-swfdec80	ports/graphics/gstreamer-plugins-swfdec80
 gstreamer-plugins-theora	ports/multimedia/gstreamer-plugins-theora
 gstreamer-plugins-theora80	ports/multimedia/gstreamer-plugins-theora80
+gstreamer-plugins-ugly	ports/multimedia/gstreamer-plugins-ugly
 gstreamer-plugins-vorbis	ports/audio/gstreamer-plugins-vorbis
 gstreamer-plugins-vorbis80	ports/audio/gstreamer-plugins-vorbis80
 gstreamer-plugins-wavpack	ports/audio/gstreamer-plugins-wavpack
