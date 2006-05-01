@@ -218,6 +218,9 @@ share/apache2/build/instdso.sh
 share/apache2/build/library.mk
 share/apache2/build/libtool
 share/apache2/build/ltlib.mk
+share/apache2/build/make_exports.awk
+share/apache2/build/make_var_export.awk
+share/apache2/build/mkdir.sh
 share/apache2/build/program.mk
 share/apache2/build/rules.mk
 share/apache2/build/special.mk

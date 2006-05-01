@@ -1,6 +1,6 @@
---- srclib/apr-util/xml/expat/buildconf.sh	Tue Jun 17 20:51:47 2003
-+++ srclib/apr-util/xml/expat/buildconf.sh	Tue Mar  9 07:52:57 2004
-@@ -3,13 +3,13 @@
+--- srclib/apr-util/xml/expat/buildconf.sh.orig	Sat Mar 25 21:41:35 2006
++++ srclib/apr-util/xml/expat/buildconf.sh	Mon May  1 12:11:04 2006
+@@ -3,7 +3,7 @@
  #
  # Build aclocal.m4 from libtool's libtool.m4
  #
@@ -9,7 +9,9 @@
  if [ "x$libtoolize" = "x" ]; then
      echo "libtoolize not found in path"
      exit 1
- fi
+@@ -16,7 +16,7 @@
+ rm -rf aclocal.m4 libtool.m4 ltsugar.m4 autom4te*.cache
+ 
  ltpath=`dirname $libtoolize`
 -ltfile=${LIBTOOL_M4-`cd $ltpath/../share/aclocal ; pwd`/libtool.m4}
 +ltfile=${LIBTOOL_M4-`cd $ltpath/../../share/aclocal ; pwd`/libtool${LIBTOOL_VERSION}.m4}
