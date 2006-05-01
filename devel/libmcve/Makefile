@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	libmcve
-PORTVERSION=	4.2.2
+PORTVERSION=	5.2
 CATEGORIES=	devel
-DISTNAME=	libmonetra-${PORTVERSION}
 MASTER_SITES=	ftp://ftp.mcve.com/pub/libmonetra/
+DISTNAME=	libmonetra-${PORTVERSION}
 
 MAINTAINER=	brad@mcve.com
 COMMENT=	Library to allow credit card processing through MCVE
@@ -18,8 +18,5 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--without-pthread
-
-post-install:
-	@${LN} -fs libmcve.so.4 ${PREFIX}/lib/libmcve.so.3
 
 .include <bsd.port.mk>
