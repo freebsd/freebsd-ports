@@ -9,8 +9,7 @@ PORTNAME=	latte
 PORTVERSION=	2.1
 PORTREVISION=	1
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.latte.org/ \
-		ftp://ftp.brasslantern.com/pub/zanshin/latte/
+MASTER_SITES=	http://www.latte.org/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple language for marking up text in a very expressive way
