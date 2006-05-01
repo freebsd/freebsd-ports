@@ -9,9 +9,7 @@ PORTNAME=	modlogan
 PORTVERSION=	0.8.13
 PORTREVISION=	3
 CATEGORIES=	textproc www
-MASTER_SITES=	http://jan.kneschke.de/projects/modlogan/download/ \
-		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	modlogan
+MASTER_SITES=	http://jan.kneschke.de/projects/modlogan/download/
 
 MAINTAINER=	netchild@FreeBSD.org
 COMMENT=	A modular log file analysis program
@@ -34,7 +32,6 @@ LIB_DEPENDS+=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 # updated in the ports collection the comments may be removed.
 # They serve as a reminder.
 INSTALLS_SHLIB=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-ltdl-install=no --with-gd=${LOCALBASE}/include \
 		--program-transform-name=\'\'
