@@ -1,26 +1,16 @@
---- Makefile.orig	Sat Oct 19 15:38:34 2002
-+++ Makefile	Sat Oct 19 15:40:04 2002
-@@ -9,8 +9,8 @@
+--- ./Makefile.orig	Mon May  1 14:39:51 2006
++++ ./Makefile	Mon May  1 14:40:05 2006
+@@ -9,8 +9,7 @@
  LIBS	= -lztxt
  INCLUDE	= -I../common -I.
  
 -CC	= gcc
 -CFLAGS	= -Wall -O2 -pipe $(INCLUDE)
-+CC	?= cc
-+CFLAGS	+= -Wall $(INCLUDE)
++CFLAGS	= -Wall $(INCLUDE)
  # GNU make is mandatory
  #MAKE	= make
  
-@@ -29,7 +29,7 @@
- # more featureful and faster (on large strings) than POSIX regex.
- # But... maybe you don't have GNU regex.
- # In particular, if compiling with Cygwin, you need this.
--#USEPOSIX = 1
-+USEPOSIX = 1
- 
- # DOS, in all its infinite wisdom, decided long ago to differentiate between
- # text files and binary files.  Text files get their \n converted to \r\n and
-@@ -44,7 +44,7 @@
+@@ -44,7 +43,7 @@
  
  # If you're on a system that does not have getopt.h or does not have the
  # getopt_long() function, comment this out.  Regular getopt() will be used.
