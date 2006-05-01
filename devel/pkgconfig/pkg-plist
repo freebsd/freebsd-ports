@@ -1,2 +1,5 @@
 bin/pkg-config
 share/aclocal/pkg.m4
+@dirrmtry lib/pkgconfig
+@unexec rmdir %%LOCALBASE%%/lib/pkgconfig 2>/dev/null || true
+@unexec rmdir %%X11BASE%%/lib/pkgconfig 2>/dev/null || true

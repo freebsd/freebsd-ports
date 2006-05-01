@@ -6,8 +6,10 @@ the end-user.
 pkg-config retrieves information about packages from special metadata files.
 These files are named after the package, with the extension .pc. By default,
 pkg-config looks for these files in the following directories:
-${PREFIX}/libdata/pkgconfig, ${LOCALBASE}/libdata/pkgconfig and
-${X11BASE}/libdata/pkgconfig; it will also look in the list of directories
-specified by the PKG_CONFIG_PATH environment variable.
+${PREFIX}/libdata/pkgconfig, ${PREFIX}/lib/pkgconfig,
+${LOCALBASE}/libdata/pkgconfig, ${LOCALBASE}/lib/pkgconfig,
+${X11BASE}/libdata/pkgconfig, and ${X11BASE}/lib/pkgconfig; it will also look
+in the list of directories specified by the PKG_CONFIG_PATH environment
+variable.
 
 WWW: http://pkgconfig.freedesktop.org/wiki/
