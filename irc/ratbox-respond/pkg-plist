@@ -1,0 +1,8 @@
+bin/ratbox-respond
+bin/makekeypair
+%%EXAMPLESDIR%%/client-scripts/challenge-epic.irc
+%%EXAMPLESDIR%%/client-scripts/challenge-irssi.pl
+%%EXAMPLESDIR%%/client-scripts/challenge-xchat.pl
+%%EXAMPLESDIR%%/client-scripts/README
+@dirrm %%EXAMPLESDIR%%/client-scripts
+@dirrm %%EXAMPLESDIR%%
