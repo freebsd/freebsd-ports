@@ -5,6 +5,7 @@ bin/mmotype
 %%DATADIR%%/README
 %%DATADIR%%/abstime.w
 %%DATADIR%%/boilerplate.w
+%%DATADIR%%/coolcomb.mms
 %%DATADIR%%/copy.mms
 %%DATADIR%%/cp.mms
 %%DATADIR%%/crypto.mms
