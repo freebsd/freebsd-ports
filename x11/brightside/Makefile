@@ -7,7 +7,7 @@
 
 PORTNAME=	brightside
 PORTVERSION=	1.4.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	http://catmur.co.uk/~ed/main/brightside/download/
 
