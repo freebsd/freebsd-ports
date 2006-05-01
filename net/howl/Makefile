@@ -30,6 +30,8 @@ RC_SCRIPTS_SUB=	RC_SUBR=${RC_SUBR} PREFIX=${PREFIX}
 
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${PTHREAD_LIBS}"
 
+CONFLICTS=	avahi-[0-9]*
+
 post-extract:
 	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${FILESDIR}/mdnsresponder.sh > ${WRKSRC}/mdnsresponder.sh
