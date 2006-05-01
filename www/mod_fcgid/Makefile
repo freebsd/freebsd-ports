@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mod_fcgid
-PORTVERSION=	1.08
+PORTVERSION=	1.09
 CATEGORIES=	www
 MASTER_SITES=	http://fastcgi.coremail.cn/ \
 		${MASTER_SITE_LOCAL}
