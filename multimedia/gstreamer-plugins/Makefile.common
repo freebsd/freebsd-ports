@@ -248,6 +248,9 @@ PLIST_FILES=	${GST_LIB_DIR}/libgstpng.so \
 .if ${GST_PLUGIN}=="libvisual"
 LIB_DEPENDS+=	visual.0:${PORTSDIR}/graphics/libvisual
 DIST=	base
+.if ${OSVERSION} < 500000
+BROKEN=	Does not build on 4.x
+.endif
 .endif
 
 # mad
