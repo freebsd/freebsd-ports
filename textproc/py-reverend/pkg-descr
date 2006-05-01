@@ -1,0 +1,14 @@
+Divmod Reverend is a simple, general purpose Bayesian classifier,
+written in Python.
+It is designed to be easy to adapt and extend for your application.
+
+Stuff you can do with the Reverend:
+
+    * classify RSS stories
+    * classify recipes by cuisine
+    * who do you write like? Shakespeare, Dickens or Austen
+    * detect the language of a document
+    * is your code more like Guido's or Peter's
+
+Author:	Amir Bakhtiar <amir@divmod.org>
+WWW:	http://www.divmod.org/trac/wiki/DivmodReverend
