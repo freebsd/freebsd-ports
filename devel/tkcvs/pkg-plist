@@ -1,6 +1,8 @@
 bin/tkcvs
 bin/tkdiff
 lib/tkcvs/annotate.tcl
+lib/tkcvs/bitmaps/Anglerfish.icns
+lib/tkcvs/bitmaps/Ticklefish.icns
 lib/tkcvs/bitmaps/add.gif
 lib/tkcvs/bitmaps/adir.gif
 lib/tkcvs/bitmaps/amod.gif
@@ -102,12 +104,10 @@ lib/tkcvs/static.tcl
 lib/tkcvs/svn-import.tcl
 lib/tkcvs/svn.tcl
 lib/tkcvs/tclIndex
+lib/tkcvs/tkcvs.tcl
 lib/tkcvs/tkcvs_def.tcl
 lib/tkcvs/tooltips.tcl
 lib/tkcvs/vendor_merge.tcl
 lib/tkcvs/workdir.tcl
-%%PORTDOCS%%%%DOCSDIR%%/FAQ
-%%PORTDOCS%%%%DOCSDIR%%/vendor5readme.pdf
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/tkcvs/bitmaps
 @dirrm lib/tkcvs
