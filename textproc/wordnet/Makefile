@@ -9,8 +9,7 @@ PORTNAME=	WordNet
 PORTVERSION=	2.1
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.cogsci.princeton.edu/pub/wordnet/${PORTVERSION}/ \
-		http://www.cogsci.princeton.edu/${PORTVERSION}/ \
-		ftp://ftp.ims.uni-stuttgart.de/pub/WordNet/${PORTVERSION}/
+		http://wordnet.princeton.edu/${PORTVERSION}/
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Dictionaries and thesauri with devel. libraries (C, TCL) and browsers
