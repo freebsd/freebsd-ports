@@ -27,4 +27,3 @@ etc/apcupsd/offbattery
 %%CGI%%etc/apcupsd/cgi/upsstats.cgi
 %%CGI%%@dirrm etc/apcupsd/cgi
 @dirrmtry etc/apcupsd
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

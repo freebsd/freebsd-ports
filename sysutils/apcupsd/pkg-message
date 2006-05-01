@@ -10,7 +10,7 @@ Sample files are installed in ${PREFIX}/etc/apcupsd. These files
 must be copied and/or configured for a proper working apcupsd.
 You need to modify ${PREFIX}/etc/apcupsd/apcupsd.conf as follows:
 
-  For serial cable: DEVICE /dev/cuaadX (or /dev/cuaaX for [45.]x) 
+  For serial cable: DEVICE /dev/cuadX (or /dev/cuaaX for [45.]x) 
   For USB cable: DEVICE (yes, leave it blank after DEVICE)
 
 NOTE that for USB cable you must comment out the line

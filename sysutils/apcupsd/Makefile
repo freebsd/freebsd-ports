@@ -4,10 +4,10 @@
 #
 # $FreeBSD$
 #
-# $Tecnik: ports/sysutils/apcupsd/Makefile,v 1.7 2006/04/20 16:43:54 itetcu Exp $
+# $Tecnik: ports/sysutils/apcupsd/Makefile,v 1.9 2006/04/30 11:36:52 itetcu Exp $
 
 PORTNAME=	apcupsd
-PORTVERSION=	3.12.2
+PORTVERSION=	3.12.3
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:src_sf/g} \
 		http://sce-tindy.tecnik93.com/FreeBSD/ports/${PORTNAME}/sources/:src_bk \
@@ -44,6 +44,7 @@ OPTIONS+=	USB "Compile with USB Support (READ MANUAL!)" on
 OPTIONS+=	SNMP "Compile with SNMP Support (READ MANUAL!)" on
 OPTIONS+=	PTHREADS "Compile without pthreads support (READ MANUAL!)" off
 
+IGNOREFILES=	${PORTNAME}.pdf
 PORTDOCS=	${PORTNAME}.pdf
 
 .include <bsd.port.pre.mk>
