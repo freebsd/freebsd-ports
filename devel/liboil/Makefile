@@ -15,7 +15,6 @@ COMMENT=	Library of optimized inner loops
 
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
-USE_GCC=	3.4
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--disable-gtk-doc
 
