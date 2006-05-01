@@ -14,9 +14,9 @@ DISTFILES=
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Virtual Paper document storage and viewing software
 
-BUILD_DEPENDS=	${L1}libm3vbtkit${L2}:${PORTSDIR}/lang/pm3-forms
-RUN_DEPENDS=	${L1}libm3vbtkit${L2}:${PORTSDIR}/lang/pm3-forms
-DEPENDS=	${PORTSDIR}/lang/pm3-base:configure
+BUILD_DEPENDS=	${L1}libm3formsvbt${L2}:${PORTSDIR}/lang/pm3-forms \
+		/nonexistent:${PORTSDIR}/lang/pm3-base:configure
+RUN_DEPENDS=	${L1}libm3formsvbt${L2}:${PORTSDIR}/lang/pm3-forms
 
 DIST_SUBDIR=	pm3
 INSTALL_TARGET=	all
@@ -40,6 +40,7 @@ PROGS=		bin/BuildLectern \
 SOVERSION=	7
 # hack to work around bsd.port.mk problem
 USE_BZIP2=	yes
+USE_GMAKE=	yes
 
 .include <bsd.port.pre.mk>
 
