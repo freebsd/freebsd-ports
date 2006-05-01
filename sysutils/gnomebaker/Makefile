@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=		gnomebaker
-PORTVERSION=		0.5.0
-PORTREVISION=		3
+PORTVERSION=		0.5.1
 CATEGORIES=		sysutils gnome
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gnomebaker
@@ -19,12 +18,14 @@ OPTIONS=		DVD "Enable DVD support" off \
 			CJK "Use cdrtools-cjk instead of cdrtools" off
 
 USE_X_PREFIX=		yes
+USE_BZIP2=		yes
 USE_GNOME=		gnomeprefix gnomehack libgnomeui desktopfileutils
 GNU_CONFIGURE=		yes
 USE_GMAKE=		yes
 INSTALLS_OMF=		yes
 USE_GCC=		3.4+
-USE_GSTREAMER80=		vorbis mad flac
+USE_GETTEXT=		yes
+USE_GSTREAMER80=	vorbis mad flac
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
@@ -41,6 +42,12 @@ RUN_DEPENDS+=		cdrecord:${PORTSDIR}/sysutils/cdrtools
 .if defined(WITH_DVD)
 RUN_DEPENDS+=		growisofs:${PORTSDIR}/sysutils/dvd+rw-tools
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|docdir = $(datadir)/gnome/help/$(docname)/$(lang)|docdir = $(datadir)/help/$(docname)/$(lang)|' \
+		${WRKSRC}/help/C/Makefile.in
+	@${REINPLACE_CMD} -e 's|Icon=@prefix@/share/gnomebaker/gnomebaker-48.png|Icon=@prefix@/share/gnome/gnomebaker/gnomebaker-48.png|' \
+		${WRKSRC}/gnomebaker.desktop.in
 
 post-install:
 	@-update-desktop-database

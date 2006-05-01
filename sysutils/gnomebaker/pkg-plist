@@ -1,14 +1,37 @@
 bin/gnomebaker
-%%DOCSDIR%%/AUTHORS
-%%DOCSDIR%%/COPYING
-%%DOCSDIR%%/ChangeLog
-%%DOCSDIR%%/INSTALL
-%%DOCSDIR%%/NEWS
-%%DOCSDIR%%/README
-%%DOCSDIR%%/TODO
-%%DOCSDIR%%/omf.make
-%%DOCSDIR%%/xmldocs.make
-share/applications/gnomebaker.desktop
+share/gnome/applications/gnomebaker.desktop
+share/gnome/gnomebaker/BurnFailed.wav
+share/gnome/gnomebaker/BurnOk.wav
+share/gnome/gnomebaker/baker-add-dir.png
+share/gnome/gnomebaker/baker-add-files.png
+share/gnome/gnomebaker/baker-audio-copy.png
+share/gnome/gnomebaker/baker-blank-cdrw.png
+share/gnome/gnomebaker/baker-blank-dvdrw.png
+share/gnome/gnomebaker/baker-burn-cd.png
+share/gnome/gnomebaker/baker-cd-iso.png
+share/gnome/gnomebaker/baker-cd.png
+share/gnome/gnomebaker/baker-cue-image.png
+share/gnome/gnomebaker/baker-data-copy.png
+share/gnome/gnomebaker/baker-dvd-iso.png
+share/gnome/gnomebaker/baker-import-session.png
+share/gnome/gnomebaker/baker-remove-files.png
+share/gnome/gnomebaker/gnomebaker-48.png
+share/gnome/gnomebaker/gnomebaker.glade
+share/gnome/gnomebaker/splash_2.png
+share/gnome/gnomebaker/state00.png
+share/gnome/gnomebaker/state01.png
+share/gnome/gnomebaker/state02.png
+share/gnome/gnomebaker/state03.png
+share/gnome/gnomebaker/state04.png
+share/gnome/gnomebaker/state05.png
+share/gnome/gnomebaker/state06.png
+share/gnome/gnomebaker/state07.png
+share/gnome/gnomebaker/state08.png
+share/gnome/gnomebaker/state09.png
+share/gnome/gnomebaker/state10.png
+share/gnome/gnomebaker/state11.png
+share/gnome/gnomebaker/state12.png
+share/gnome/gnomebaker/state13.png
 share/gnome/help/gnomebaker/C/figures/gnomebaker-blank-cdrw.png
 share/gnome/help/gnomebaker/C/figures/gnomebaker-burn-iso.png
 share/gnome/help/gnomebaker/C/figures/gnomebaker-copy-audio-cd.png
@@ -21,64 +44,116 @@ share/gnome/help/gnomebaker/C/figures/gnomebaker_window.png
 share/gnome/help/gnomebaker/C/gnomebaker.xml
 share/gnome/help/gnomebaker/C/legal.xml
 share/gnome/omf/gnomebaker/gnomebaker-C.omf
-%%DATADIR%%/baker-add-dir.png
-%%DATADIR%%/baker-add-files.png
-%%DATADIR%%/baker-audio-copy.png
-%%DATADIR%%/baker-blank-cdrw.png
-%%DATADIR%%/baker-blank-dvdrw.png
-%%DATADIR%%/baker-burn-cd.png
-%%DATADIR%%/baker-cd-iso.png
-%%DATADIR%%/baker-cd.png
-%%DATADIR%%/baker-cue-image.png
-%%DATADIR%%/baker-data-copy.png
-%%DATADIR%%/baker-dvd-iso.png
-%%DATADIR%%/baker-import-session.png
-%%DATADIR%%/baker-remove-files.png
-%%DATADIR%%/gnomebaker-48.png
-%%DATADIR%%/gnomebaker.glade
-%%DATADIR%%/media/BurnFailed.wav
-%%DATADIR%%/media/BurnOk.wav
-%%DATADIR%%/splash_2.png
 share/locale/af/LC_MESSAGES/gnomebaker.mo
+share/locale/az/LC_MESSAGES/gnomebaker.mo
 share/locale/bg/LC_MESSAGES/gnomebaker.mo
+share/locale/bo/LC_MESSAGES/gnomebaker.mo
+share/locale/ca/LC_MESSAGES/gnomebaker.mo
 share/locale/cs/LC_MESSAGES/gnomebaker.mo
 share/locale/da/LC_MESSAGES/gnomebaker.mo
 share/locale/de/LC_MESSAGES/gnomebaker.mo
+share/locale/de_AT/LC_MESSAGES/gnomebaker.mo
+share/locale/de_CH/LC_MESSAGES/gnomebaker.mo
+share/locale/de_DE/LC_MESSAGES/gnomebaker.mo
+share/locale/el/LC_MESSAGES/gnomebaker.mo
+share/locale/en/LC_MESSAGES/gnomebaker.mo
+share/locale/en_AU/LC_MESSAGES/gnomebaker.mo
+share/locale/en_CA/LC_MESSAGES/gnomebaker.mo
 share/locale/en_US/LC_MESSAGES/gnomebaker.mo
+share/locale/eo/LC_MESSAGES/gnomebaker.mo
 share/locale/es/LC_MESSAGES/gnomebaker.mo
+share/locale/es_AR/LC_MESSAGES/gnomebaker.mo
+share/locale/es_CO/LC_MESSAGES/gnomebaker.mo
+share/locale/es_CR/LC_MESSAGES/gnomebaker.mo
 share/locale/es_ES/LC_MESSAGES/gnomebaker.mo
+share/locale/es_MX/LC_MESSAGES/gnomebaker.mo
+share/locale/et/LC_MESSAGES/gnomebaker.mo
 share/locale/eu/LC_MESSAGES/gnomebaker.mo
+share/locale/eu_ES/LC_MESSAGES/gnomebaker.mo
+share/locale/fa/LC_MESSAGES/gnomebaker.mo
+share/locale/fi/LC_MESSAGES/gnomebaker.mo
 share/locale/fr/LC_MESSAGES/gnomebaker.mo
+share/locale/fr_CH/LC_MESSAGES/gnomebaker.mo
+share/locale/fr_FR/LC_MESSAGES/gnomebaker.mo
+share/locale/gl/LC_MESSAGES/gnomebaker.mo
 share/locale/he/LC_MESSAGES/gnomebaker.mo
 share/locale/hr/LC_MESSAGES/gnomebaker.mo
+share/locale/hu/LC_MESSAGES/gnomebaker.mo
+share/locale/is/LC_MESSAGES/gnomebaker.mo
+share/locale/it/LC_MESSAGES/gnomebaker.mo
+share/locale/it_IT/LC_MESSAGES/gnomebaker.mo
 share/locale/ja/LC_MESSAGES/gnomebaker.mo
+share/locale/ka/LC_MESSAGES/gnomebaker.mo
 share/locale/ko/LC_MESSAGES/gnomebaker.mo
+share/locale/lt/LC_MESSAGES/gnomebaker.mo
 share/locale/lv/LC_MESSAGES/gnomebaker.mo
+share/locale/mk/LC_MESSAGES/gnomebaker.mo
+share/locale/ml/LC_MESSAGES/gnomebaker.mo
 share/locale/ms/LC_MESSAGES/gnomebaker.mo
+share/locale/nb/LC_MESSAGES/gnomebaker.mo
+share/locale/nl/LC_MESSAGES/gnomebaker.mo
+share/locale/nl_BE/LC_MESSAGES/gnomebaker.mo
 share/locale/nl_NL/LC_MESSAGES/gnomebaker.mo
 share/locale/no/LC_MESSAGES/gnomebaker.mo
+share/locale/pa/LC_MESSAGES/gnomebaker.mo
 share/locale/pl/LC_MESSAGES/gnomebaker.mo
 share/locale/pt/LC_MESSAGES/gnomebaker.mo
 share/locale/pt_BR/LC_MESSAGES/gnomebaker.mo
+share/locale/pt_PT/LC_MESSAGES/gnomebaker.mo
 share/locale/ro/LC_MESSAGES/gnomebaker.mo
 share/locale/ru/LC_MESSAGES/gnomebaker.mo
 share/locale/sk/LC_MESSAGES/gnomebaker.mo
+share/locale/sl/LC_MESSAGES/gnomebaker.mo
+share/locale/sr/LC_MESSAGES/gnomebaker.mo
+share/locale/st/LC_MESSAGES/gnomebaker.mo
 share/locale/sv/LC_MESSAGES/gnomebaker.mo
 share/locale/sv_SE/LC_MESSAGES/gnomebaker.mo
+share/locale/te/LC_MESSAGES/gnomebaker.mo
+share/locale/tl/LC_MESSAGES/gnomebaker.mo
 share/locale/tr/LC_MESSAGES/gnomebaker.mo
+share/locale/uk/LC_MESSAGES/gnomebaker.mo
+share/locale/urd/LC_MESSAGES/gnomebaker.mo
+share/locale/yi/LC_MESSAGES/gnomebaker.mo
+share/locale/zh/LC_MESSAGES/gnomebaker.mo
 share/locale/zh_CN/LC_MESSAGES/gnomebaker.mo
-@unexec /bin/rmdir %D/share/locale/nl_NL/LC_MESSAGES 2>/dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/locale/nl_NL 2>/dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/locale/en_US/LC_MESSAGES 2>/dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/locale/en_US 2>/dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/locale/sv_SE/LC_MESSAGES 2>/dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/locale/sv_SE 2>/dev/null || /usr/bin/true
-@dirrm %%DATADIR%%/media
-@dirrm %%DATADIR%%
+share/locale/zh_HK/LC_MESSAGES/gnomebaker.mo
+share/locale/zh_TW/LC_MESSAGES/gnomebaker.mo
+@dirrmtry share/locale/bo/LC_MESSAGES
+@dirrmtry share/locale/bo
+@dirrmtry share/locale/de_CH/LC_MESSAGES
+@dirrmtry share/locale/de_CH
+@dirrmtry share/locale/de_DE/LC_MESSAGES
+@dirrmtry share/locale/de_DE
+@dirrmtry share/locale/es_AR/LC_MESSAGES
+@dirrmtry share/locale/es_AR
+@dirrmtry share/locale/es_CO/LC_MESSAGES
+@dirrmtry share/locale/es_CO
+@dirrmtry share/locale/es_CR/LC_MESSAGES
+@dirrmtry share/locale/es_CR
+@dirrmtry share/locale/eu_ES/LC_MESSAGES
+@dirrmtry share/locale/eu_ES
+@dirrmtry share/locale/fr_CH/LC_MESSAGES
+@dirrmtry share/locale/fr_CH
+@dirrmtry share/locale/it_IT/LC_MESSAGES
+@dirrmtry share/locale/it_IT
+@dirrmtry share/locale/st/LC_MESSAGES
+@dirrmtry share/locale/st
+@dirrmtry share/locale/nl_BE/LC_MESSAGES
+@dirrmtry share/locale/nl_BE
+@dirrmtry share/locale/tl/LC_MESSAGES
+@dirrmtry share/locale/tl
+@dirrmtry share/locale/urd/LC_MESSAGES
+@dirrmtry share/locale/urd
+@dirrmtry share/locale/en_US/LC_MESSAGES
+@dirrmtry share/locale/en_US
+@dirrmtry share/locale/nl_NL/LC_MESSAGES
+@dirrmtry share/locale/nl_NL
+@dirrmtry share/locale/sv_SE/LC_MESSAGES
+@dirrmtry share/locale/sv_SE
 @dirrm share/gnome/omf/gnomebaker
 @dirrm share/gnome/help/gnomebaker/C/figures
 @dirrm share/gnome/help/gnomebaker/C
 @dirrm share/gnome/help/gnomebaker
-@dirrm %%DOCSDIR%%
+@dirrm share/gnome/gnomebaker
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
