@@ -2,24 +2,9 @@
 
 CMK=${WRKSRC}/config.mk
 
-read_yn() {
-	read res                                        
-	case "$res" in                                     
-		y*) done=y ;;
-		*)  res=n ;;
-	esac
-}
-
-
-echo -n "Do you want to include 866 codepage support ? [n]"
-read_yn
-use866=$res
-
 echo "SRCTREE=/usr/src" > $CMK
 echo "PREFIX="$PREFIX >> $CMK
 echo "BUILDKLD=yes" >> $CMK
 
-if [ $use866 = y ]; then
-	echo "NCP_NLS_KOI_866=" >> $CMK
-	echo "NCP_NLS_DEFAULT=NCP_NLS_KOI_866" >> $CMK
-fi
+echo "NCP_NLS_KOI_866=" >> $CMK
+echo "NCP_NLS_DEFAULT=NCP_NLS_KOI_866" >> $CMK
