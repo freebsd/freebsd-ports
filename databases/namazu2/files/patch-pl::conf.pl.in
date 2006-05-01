@@ -1,5 +1,5 @@
 --- pl/conf.pl.in.orig	Fri Nov 25 15:04:26 2005
-+++ pl/conf.pl.in	Mon Mar 13 22:16:41 2006
++++ pl/conf.pl.in	Tue May  2 00:12:10 2006
 @@ -197,19 +197,19 @@
  #
  # Network Kanji Filter nkf v1.71 or later
@@ -23,13 +23,22 @@
  
  #
  # ChaSen 2.02 or later (with noun words extraction)
-@@ -224,7 +224,8 @@
+@@ -219,13 +219,14 @@
  #
- # Default Japanese processer: KAKASI or ChaSen.
+ # MeCab
+ #
+-$MECAB = "@DO_MECAB@";
++$MECAB = "module_mecab";
+ 
+ #
+-# Default Japanese processer: KAKASI or ChaSen.
++# Default Japanese processer: KAKASI or ChaSen or MeCab.
  #
 -$WAKATI  = $@OPT_WAKATI_DEFAULT@;
+-
 +$WAKATI  = $KAKASI;
 +$WAKATI  = $CHASEN;
- 
++$WAKATI  = $MECAB;
  
  #===================================================================
+ #
