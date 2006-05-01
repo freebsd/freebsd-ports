@@ -8,6 +8,7 @@
 
 PORTNAME=	pkgconfig
 PORTVERSION=	0.20
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://pkgconfig.freedesktop.org/releases/
 DISTNAME=	pkg-config-${PORTVERSION}
@@ -25,11 +26,14 @@ MAN1=		pkg-config.1
 .include <bsd.port.pre.mk>
 
 PC_PATH=${PREFIX}/libdata/pkgconfig
+PC_PATH:=${PREFIX}/lib/pkgconfig
 .if ${LOCALBASE} != ${PREFIX}
 PC_PATH:=	${PC_PATH}:${LOCALBASE}/libdata/pkgconfig
+PC_PATH:=	${PC_PATH}:${LOCALBASE}/lib/pkgconfig
 .endif
 .if ${X11BASE} != ${PREFIX}
 PC_PATH:=	${PC_PATH}:${X11BASE}/libdata/pkgconfig
+PC_PATH:=	${PC_PATH}:${X11BASE}/lib/pkgconfig
 .endif
 
 CONFIGURE_ARGS=	--disable-threads \
