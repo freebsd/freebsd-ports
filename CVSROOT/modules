@@ -11288,6 +11288,7 @@ rast		ports/textproc/rast
 raster3d	ports/graphics/raster3d
 rat		ports/mbone/rat
 rat30		ports/mbone/rat30
+ratbox-respond	ports/irc/ratbox-respond
 rate		ports/net-mgmt/rate
 ratfor		ports/lang/ratfor
 ratmenu		ports/x11-wm/ratmenu
