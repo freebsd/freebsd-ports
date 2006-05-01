@@ -1,0 +1,15 @@
+--- help/Makefile.in.orig	Wed Jun 15 15:21:39 2005
++++ help/Makefile.in	Sat Jan 28 23:15:11 2006
+@@ -10,10 +10,10 @@
+ SUBDIRS=alis main operbot chanserv userserv jupeserv operserv nickserv global banserv
+ 
+ install: 
+-	$(INSTALL) -m 750 -d $(DESTDIR)$(helpdir)
++	$(INSTALL) -d $(DESTDIR)$(helpdir)
+ 
+ 	@for i in $(SUBDIRS); do \
+-		$(INSTALL) -m 750 -d $(DESTDIR)$(helpdir)/$$i; \
++		$(INSTALL) -d $(DESTDIR)$(helpdir)/$$i; \
+ 		for j in $$i/*; do \
+ 			if [ -f $$j ]; then \
+ 				$(INSTALL_DATA) $$j $(DESTDIR)$(helpdir)/$$i; \

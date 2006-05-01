@@ -1,0 +1,12 @@
+------------------------------------------------------------------------
+ratbox-services has been successfully installed.
+
+You should now copy %%PREFIX%%/etc/ratbox-services.conf.sample to
+%%PREFIX%%/etc/ratbox-services.conf, and edit it as per the ratbox-services
+documentation. This file is required to start the server.
+
+Once you have added ratbox_services_enable="YES" to /etc/rc.conf, the
+server can be started by running:
+
+	%%PREFIX%%/etc/rc.d/ratbox-services.sh start
+------------------------------------------------------------------------
