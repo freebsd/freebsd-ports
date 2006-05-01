@@ -201,6 +201,7 @@
     SUBDIR += fuhquake
     SUBDIR += galaxis
     SUBDIR += galaxyhack
+    SUBDIR += galaxymage
     SUBDIR += garith
     SUBDIR += gbottler
     SUBDIR += gcompris2
