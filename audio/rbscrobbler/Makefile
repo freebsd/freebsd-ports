@@ -8,7 +8,7 @@ PORTNAME=	rbscrobbler
 PORTVERSION=	0.0.9
 PORTREVISION=	1
 CATEGORIES=	audio gnome
-MASTER_SITES=	http://members.cox.net/alexrevo/
+MASTER_SITES=	http://ftp.osuosl.org/pub/FreeBSD/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Rhythmbox plugin for Audioscrobbler
@@ -17,7 +17,6 @@ RUN_DEPENDS=	rhythmbox:${PORTSDIR}/audio/rhythmbox
 
 USE_GNOME=	pygnomeextras
 USE_PYTHON=	yes
-USE_REINPLACE=	yes
 
 MAN1=		rbscrobbler.1
 
