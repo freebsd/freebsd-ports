@@ -18,7 +18,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Threaded GNOME 2 newsreader based on Agent for Windows
 
 LIB_DEPENDS=	gnet-2.0.0:${PORTSDIR}/net/gnet2 \
-		pcre.0:${PORTSDIR}/devel/pcre
+		pcre.0:${PORTSDIR}/devel/pcre-utf8
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes

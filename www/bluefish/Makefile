@@ -18,7 +18,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTML editor designed for the experienced web designer
 
-LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre \
+LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre-utf8 \
 		aspell.16:${PORTSDIR}/textproc/aspell
 
 .if !defined(WITHOUT_WEBLINT)
