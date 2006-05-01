@@ -8,13 +8,17 @@ PORTNAME=	nicetext
 PORTVERSION=	0.9
 PORTREVISION=	2
 CATEGORIES=	textproc
-MASTER_SITES=	http://wiretapped.securax.org/security/steganography/nicetext/ \
-		http://www.nicetext.com/pub/ctgi/nicetext/src/
+MASTER_SITES=	http://www.mirrors.wiretapped.net/security/steganography/nicetext/ \
+		http://www.remoteassessment.com/archive/crypt/stego/SourceCode/ \
+		http://www.packetstormsecurity.org/crypt/stego/SourceCode/ \
+		http://www.theargon.com/achilles/steganography/SourceCode/ \
+		http://packetstorm.linuxexposed.com/crypt/stego/SourceCode/ \
+		http://sunsite.mff.cuni.cz/MIRRORS/utopia.hacktic.nl/pub/security/steganography/nicetext/ \
+		http://archiv.egocrew.de/packet/crypt/stego/SourceCode/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert files to pseudo-natural-language text and back again
 
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 CFLAGS+=	-fpermissive
 
