@@ -1,6 +1,6 @@
 bin/dmake
+share/dmake/startup/config.mk
 share/dmake/startup/startup.mk
-share/dmake/startup/template.mk
 share/dmake/startup/unix/linux/macros.mk
 share/dmake/startup/unix/macros.mk
 share/dmake/startup/unix/recipes.mk

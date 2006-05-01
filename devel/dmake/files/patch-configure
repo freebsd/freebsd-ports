@@ -1,6 +1,6 @@
---- configure.orig	Tue Oct 12 21:47:46 2004
-+++ configure	Fri Mar 24 22:06:28 2006
-@@ -6206,12 +6206,13 @@
+--- configure.old	Thu Apr 20 22:28:24 2006
++++ configure	Thu Apr 20 22:32:50 2006
+@@ -6420,12 +6420,13 @@
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
  $ac_includes_default
@@ -15,21 +15,3 @@
  	  && stat ("conftest.data", &t) == 0
  	  && t.st_mtime >= s.st_mtime
  	  && t.st_mtime - s.st_mtime < 120));
-@@ -6669,7 +6670,7 @@
- 
- 
- if test "${prefix}" != NONE; then
--	DMAKEROOT=${prefix}/share/startup/startup.mk
-+	DMAKEROOT=${prefix}/share/dmake/startup/startup.mk
- 	export DMAKEROOT
- else
- 	DMAKEROOT=startup.mk
-@@ -8108,7 +8109,7 @@
- 
- if test x$prefix != x; then
-    if test x$OS_TYPE = xunix; then
--       echo '"DMAKEROOT := '$prefix'/share/startup",' >> $outfile
-+       echo '"DMAKEROOT := '$prefix'/share/dmake/startup",' >> $outfile
-    fi
-    echo '"OS := '${OS_VERSION}'",' >> $outfile
- fi
