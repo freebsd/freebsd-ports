@@ -7,7 +7,7 @@
 
 PORTNAME=		gnome-translate
 PORTVERSION=		0.99
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=		textproc
 MASTER_SITES=		${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	libtranslate
@@ -24,7 +24,7 @@ USE_GNOME=		gnomehack gnomeprefix eel2 intlhack
 USE_GMAKE=		yes
 GNU_CONFIGURE=		yes
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+			LDFLAGS="-L${LOCALBASE}/lib -Wl,-export-dynamic"
 
 OPTIONS=		LANGUAGE_DETECTION "language detection" on
 
