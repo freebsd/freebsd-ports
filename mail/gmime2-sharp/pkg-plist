@@ -1,8 +1,8 @@
-lib/mono/gac/gmime-sharp/2.1.0.0__677013d4cb5910f0/gmime-sharp.dll
-lib/mono/gac/gmime-sharp/2.1.0.0__677013d4cb5910f0/gmime-sharp.dll.config
+lib/mono/gac/gmime-sharp/2.2.0.0__677013d4cb5910f0/gmime-sharp.dll
+lib/mono/gac/gmime-sharp/2.2.0.0__677013d4cb5910f0/gmime-sharp.dll.config
 lib/mono/gmime-sharp/gmime-sharp.dll
 libdata/pkgconfig/gmime-sharp.pc
 share/gapi-2.0/gmime-api.xml
 @dirrm lib/mono/gmime-sharp
-@dirrm lib/mono/gac/gmime-sharp/2.1.0.0__677013d4cb5910f0
+@dirrm lib/mono/gac/gmime-sharp/2.2.0.0__677013d4cb5910f0
 @dirrm lib/mono/gac/gmime-sharp
