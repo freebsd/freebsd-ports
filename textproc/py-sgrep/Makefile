@@ -9,8 +9,7 @@
 PORTNAME=	sgrep
 PORTVERSION=	${SGREP_VER}	# dont know ver, so I decide to choose sgrep ver
 CATEGORIES=	textproc python
-MASTER_SITES=	http://www.rexx.com/~dkuhlman/ \
-		ftp://ftp.cs.helsinki.fi/pub/Software/Local/Sgrep/
+MASTER_SITES=	http://www.rexx.com/~dkuhlman/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTFILES=	pysgrep.tar.gz sgrep-${SGREP_VER}.tar.gz
 EXTRACT_ONLY=	sgrep-1.92a.tar.gz
