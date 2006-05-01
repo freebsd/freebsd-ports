@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	anjuta
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Integrated Development Environment for C and C++
 
-LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre-utf8
 RUN_DEPENDS=	${LOCALBASE}/gnu-autotools/bin/autoconf:${PORTSDIR}/devel/gnu-autoconf \
 		${LOCALBASE}/gnu-autotools/bin/automake:${PORTSDIR}/devel/gnu-automake \
 		${LOCALBASE}/gnu-autotools/bin/libtool:${PORTSDIR}/devel/gnu-libtool
