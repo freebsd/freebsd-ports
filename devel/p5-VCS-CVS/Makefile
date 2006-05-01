@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	VCS-CVS
-PORTVERSION=	2.05
+PORTVERSION=	2.06
 CATEGORIES=	devel perl5
 MASTER_SITES=	http://savage.net.au/Perl-modules/ \
 		http://tolid.eu.org/VCSCVS/
