@@ -9,6 +9,9 @@ include/hamlib/riglist.h
 include/hamlib/rotator.h
 include/hamlib/rotclass.h
 include/hamlib/rotlist.h
+%%PYTHON_TCL%%lib/_Hamlib.a
+%%PYTHON_TCL%%lib/_Hamlib.la
+%%PYTHON_TCL%%lib/_Hamlib.so
 lib/hamlib-alinco.a
 lib/hamlib-alinco.la
 lib/hamlib-alinco.so
@@ -54,6 +57,9 @@ lib/hamlib-microtune.so
 lib/hamlib-pcr.a
 lib/hamlib-pcr.la
 lib/hamlib-pcr.so
+lib/hamlib-racal.a
+lib/hamlib-racal.la
+lib/hamlib-racal.so
 lib/hamlib-rft.a
 lib/hamlib-rft.la
 lib/hamlib-rft.so
@@ -78,12 +84,18 @@ lib/hamlib-tapr.so
 lib/hamlib-tentec.a
 lib/hamlib-tentec.la
 lib/hamlib-tentec.so
+lib/hamlib-tuner.a
+lib/hamlib-tuner.la
+lib/hamlib-tuner.so
 lib/hamlib-uniden.a
 lib/hamlib-uniden.la
 lib/hamlib-uniden.so
 lib/hamlib-winradio.a
 lib/hamlib-winradio.la
 lib/hamlib-winradio.so
+lib/hamlib-wj.a
+lib/hamlib-wj.la
+lib/hamlib-wj.so
 lib/hamlib-yaesu.a
 lib/hamlib-yaesu.la
 lib/hamlib-yaesu.so
@@ -91,22 +103,29 @@ lib/hamlib-yaesu.so
 %%TCL%%lib/hamlibtcl.a
 %%TCL%%lib/hamlibtcl.la
 %%TCL%%lib/hamlibtcl.so
-lib/libhamlib++-1.2.2.so
-lib/libhamlib++-1.2.2.so.2
+%%TCL%%lib/tcl8.4/hamlib/pkgIndex.tcl
+lib/libhamlib++-%%VER%%.so
+lib/libhamlib++-%%VER%%.so.2
 lib/libhamlib++.a
 lib/libhamlib++.la
 lib/libhamlib++.so
-lib/libhamlib-1.2.2.so
-lib/libhamlib-1.2.2.so.2
+lib/libhamlib-%%VER%%.so
+lib/libhamlib-%%VER%%.so.2
 lib/libhamlib.a
 lib/libhamlib.la
 lib/libhamlib.so
-%%PYTHON%%lib/python/Hamlib.py
-%%PYTHON%%lib/python/Hamlib.pyc
-%%PYTHON%%lib/python/Hamlib.pyo
-%%TCL%%lib/tcl/pkgIndex.tcl
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Hamlib/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Hamlib/Hamlib.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Hamlib/Hamlib.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/Hamlib.pm
+%%SITE_PERL%%/mach/perltest.pl
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/Hamlib.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/Hamlib.pyc
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/Hamlib.pyo
 libdata/pkgconfig/hamlib.pc
 sbin/rpc.rigd
 sbin/rpc.rotd
 share/aclocal/hamlib.m4
+%%TCL%%@dirrm lib/tcl8.4/hamlib
+@dirrm %%SITE_PERL%%/mach/auto/Hamlib
 @dirrm include/hamlib
