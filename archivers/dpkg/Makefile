@@ -48,4 +48,7 @@ post-patch:
 	${REINPLACE_CMD} -e 's,^\(ALL_LINGUAS.*\)tl \(.*\)$$,\1\2,g' \
 		${WRKSRC}/configure.in
 
+post-install:
+	${MV} ${PREFIX}/sbin/install-info ${PREFIX}/sbin/dpkg-install-info
+
 .include <bsd.port.mk>
