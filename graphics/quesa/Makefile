@@ -6,13 +6,11 @@
 #
 
 PORTNAME=	quesa
-PORTVERSION=	1.6d19
-PORTREVISION=	1
+PORTVERSION=	1.7
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}lib-${PORTVERSION}
-.ifdef (WITH_QUESA_EXAMPLES)
+.ifdef (WITH_EXAMPLES)
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${PORTNAME}examples-${PORTVERSION}${EXTRACT_SUFX}
 .endif
@@ -20,32 +18,31 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 MAINTAINER=	ip@doom.homeunix.org
 COMMENT=	High level 3D graphics library compatible with Apple's QuickDraw(TM)
 
-USE_REINPLACE=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GL=		yes
 USE_X_PREFIX=	yes
-.ifdef (WITH_QUESA_EXAMPLES)
+.ifdef (WITH_EXAMPLES)
 USE_GNOME=	gtk12
 .endif
 INSTALLS_SHLIB=	yes
 
 WRKSRC_EXAMPLES=	${WRKDIR}/${PORTNAME}examples-${PORTVERSION}
 
-.if !defined (WITH_QUESA_EXAMPLES)
-PLIST_SUB=	WITH_QUESA_EXAMPLES="@comment "
+.if !defined (WITH_EXAMPLES)
+PLIST_SUB=	WITH_EXAMPLES="@comment "
 .else
-PLIST_SUB=	WITH_QUESA_EXAMPLES=""
+PLIST_SUB=	WITH_EXAMPLES=""
 .endif
 
-.ifndef (WITH_QUESA_EXAMPLES)
+.ifndef (WITH_EXAMPLES)
 pre-everything::
 	@${ECHO_CMD} ""
-	@${ECHO_CMD} "Define WITH_QUESA_EXAMPLES=yes to build and install Quesa example programs"
+	@${ECHO_CMD} "Define WITH_EXAMPLES=yes to build and install Quesa example programs"
 	@${ECHO_CMD} ""
 .endif
 
-.ifdef (WITH_QUESA_EXAMPLES)
+.ifdef (WITH_EXAMPLES)
 post-patch:
 	@${REINPLACE_CMD} -e 's|-I/usr/local/include/quesa|-I${WRKSRC}/APIincludes|g; \
 			      s|-L/usr/local/lib|-L${LOCALBASE}/lib -L${WRKSRC}|g; \
@@ -59,7 +56,7 @@ pre-configure:
 		${WRKSRC}/Source/Core/System/E3IOData.c \
 		${WRKSRC}/Source/Core/System/E3View.c
 
-.ifdef (WITH_QUESA_EXAMPLES)
+.ifdef (WITH_EXAMPLES)
 post-configure:
 	cd ${WRKSRC_EXAMPLES} && \
 	${SETENV} ${CONFIGURE_ENV} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}
