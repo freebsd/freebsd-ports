@@ -11,28 +11,21 @@ CATEGORIES=	net
 MASTER_SITES=	http://rbp.chat.ru/pub/nwlib/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Client for Novell NetWare servers
-
-BROKEN=		Incorrect pkg-plist
+COMMENT=	Utilites to work with Novell NetWare servers
 
 .if !exists(/usr/src/sys/kern/vnode_if.src)
 IGNORE=		requires kernel source
 .endif
 
-IS_INTERACTIVE=	true
-
 MANCOMPRESSED=	yes
-
-.include <bsd.port.pre.mk>
 
 MAN1=	ncpasswd.1 ncprint.1 ncpsend.1 ncpurge.1
 MAN8=	ipxping.8
 
-.if ${OSVERSION} >= 400000
-PLIST=	${PKGDIR}/pkg-plist.4
-.else
-MAN1+=	ncplist.1 ncplogin.1 ncplogout.1
-MAN8+=	mount_nwfs.8
+post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

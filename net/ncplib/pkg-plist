@@ -1,12 +1,9 @@
+bin/ipxping
 bin/ncpasswd
-bin/ncplist
-bin/ncplogin
-bin/ncplogout
 bin/ncplpd
 bin/ncprint
 bin/ncpsend
 bin/ncpurge
 sbin/ncpsvc
-@cwd /
-modules/nwfs.ko
-sbin/mount_nwfs
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
