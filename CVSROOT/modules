@@ -10939,6 +10939,7 @@ py-rdflib	ports/textproc/py-rdflib
 py-repl		ports/devel/py-repl
 py-reportlab	ports/print/py-reportlab
 py-resourcepackage	ports/devel/py-resourcepackage
+py-reverend	ports/textproc/py-reverend
 py-reverse	ports/devel/py-reverse
 py-rijndael	ports/security/py-rijndael
 py-rlcompleter2	ports/devel/py-rlcompleter2
