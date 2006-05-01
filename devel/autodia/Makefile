@@ -7,22 +7,18 @@
 #
 
 PORTNAME=	autodia
-PORTVERSION=	2.02
-PORTREVISION= 	1
+PORTVERSION=	2.03
 CATEGORIES=	devel perl5
-# fernan - 23.Apr.2006
-# the droogs.org domain has expired, and the registrar is redirecting
-# the traffic for this domain. I am hosting the distfile temporarily.
-# MASTER_SITES=	http://droogs.org/autodia/download/
-MASTER_SITES=	http://omega.iib.unsam.edu.ar/ \
-		http://personales.ciudad.com.ar/fernan/
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	Tree/TEEJAY
+	
 DISTNAME=	Autodia-${PORTVERSION}
 
 MAINTAINER=	fernan@iib.unsam.edu.ar
 COMMENT=	Automatic Dia XML - from Source Code and Data
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Template.pm:${PORTSDIR}/www/p5-Template-Toolkit \
-		p5-Inline-Java>=0:${PORTSDIR}/devel/p5-Inline-Java \
+		${SITE_PERL}/${PERL_ARCH}/Inline/Java.pm:${PORTSDIR}/devel/p5-Inline-Java \
 		${SITE_PERL}/GraphViz.pm:${PORTSDIR}/graphics/p5-GraphViz \
 		${SITE_PERL}/VCG.pm:${PORTSDIR}/graphics/p5-VCG \
 		${SITE_PERL}/XML/Simple.pm:${PORTSDIR}/textproc/p5-XML-Simple \
