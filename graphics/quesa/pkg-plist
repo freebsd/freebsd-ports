@@ -1,48 +1,49 @@
-include/quesalib/Quesa.h
-include/quesalib/QuesaCamera.h
-include/quesalib/QuesaController.h
-include/quesalib/QuesaCustomElements.h
-include/quesalib/QuesaDrawContext.h
-include/quesalib/QuesaErrors.h
-include/quesalib/QuesaExtension.h
-include/quesalib/QuesaGeometry.h
-include/quesalib/QuesaGroup.h
-include/quesalib/QuesaIO.h
-include/quesalib/QuesaLight.h
-include/quesalib/QuesaMath.h
-include/quesalib/QuesaMemory.h
-include/quesalib/QuesaPick.h
-include/quesalib/QuesaRenderer.h
-include/quesalib/QuesaSet.h
-include/quesalib/QuesaShader.h
-include/quesalib/QuesaStorage.h
-include/quesalib/QuesaString.h
-include/quesalib/QuesaStyle.h
-include/quesalib/QuesaTransform.h
-include/quesalib/QuesaView.h
-include/quesalib/QuesaViewer.h
+include/quesa/CQ3ObjectRef.h
+include/quesa/Quesa.h
+include/quesa/QuesaCamera.h
+include/quesa/QuesaController.h
+include/quesa/QuesaCustomElements.h
+include/quesa/QuesaDrawContext.h
+include/quesa/QuesaErrors.h
+include/quesa/QuesaExtension.h
+include/quesa/QuesaGeometry.h
+include/quesa/QuesaGroup.h
+include/quesa/QuesaIO.h
+include/quesa/QuesaLight.h
+include/quesa/QuesaMath.h
+include/quesa/QuesaMemory.h
+include/quesa/QuesaPick.h
+include/quesa/QuesaRenderer.h
+include/quesa/QuesaSet.h
+include/quesa/QuesaShader.h
+include/quesa/QuesaStorage.h
+include/quesa/QuesaString.h
+include/quesa/QuesaStyle.h
+include/quesa/QuesaTransform.h
+include/quesa/QuesaView.h
+include/quesa/QuesaViewer.h
 lib/libquesa.a
 lib/libquesa.la
 lib/libquesa.so
 lib/libquesa.so.0
-%%WITH_QUESA_EXAMPLES%%%%EXAMPLESDIR%%/Images/1.tga
-%%WITH_QUESA_EXAMPLES%%%%EXAMPLESDIR%%/Images/2.tga
-%%WITH_QUESA_EXAMPLES%%%%EXAMPLESDIR%%/Images/3.tga
-%%WITH_QUESA_EXAMPLES%%%%EXAMPLESDIR%%/Images/4.tga
-%%WITH_QUESA_EXAMPLES%%%%EXAMPLESDIR%%/Images/5.tga
-%%WITH_QUESA_EXAMPLES%%%%EXAMPLESDIR%%/Images/6.tga
-%%WITH_QUESA_EXAMPLES%%%%EXAMPLESDIR%%/Images/Quesa.tga
-%%WITH_QUESA_EXAMPLES%%%%EXAMPLESDIR%%/Models/F15.3dmf
-%%WITH_QUESA_EXAMPLES%%%%EXAMPLESDIR%%/Models/F18.3dmf
-%%WITH_QUESA_EXAMPLES%%%%EXAMPLESDIR%%/Models/PodRacer.3dmf
-%%WITH_QUESA_EXAMPLES%%%%EXAMPLESDIR%%/Models/QuesaLogo.3dmf
-%%WITH_QUESA_EXAMPLES%%%%EXAMPLESDIR%%/bin/cameratest
-%%WITH_QUESA_EXAMPLES%%%%EXAMPLESDIR%%/bin/dumpgroup
-%%WITH_QUESA_EXAMPLES%%%%EXAMPLESDIR%%/bin/geomtest
-%%WITH_QUESA_EXAMPLES%%%%EXAMPLESDIR%%/bin/importtest
-%%WITH_QUESA_EXAMPLES%%%%EXAMPLESDIR%%/bin/lighttest
-%%WITH_QUESA_EXAMPLES%%@dirrm %%EXAMPLESDIR%%/bin
-%%WITH_QUESA_EXAMPLES%%@dirrm %%EXAMPLESDIR%%/Models
-%%WITH_QUESA_EXAMPLES%%@dirrm %%EXAMPLESDIR%%/Images
-%%WITH_QUESA_EXAMPLES%%@dirrm %%EXAMPLESDIR%%
-@dirrm include/quesalib
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/Images/1.tga
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/Images/2.tga
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/Images/3.tga
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/Images/4.tga
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/Images/5.tga
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/Images/6.tga
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/Images/Quesa.tga
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/Models/F15.3dmf
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/Models/F18.3dmf
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/Models/PodRacer.3dmf
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/Models/QuesaLogo.3dmf
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/bin/cameratest
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/bin/dumpgroup
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/bin/geomtest
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/bin/importtest
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/bin/lighttest
+%%WITH_EXAMPLES%%@dirrm %%EXAMPLESDIR%%/bin
+%%WITH_EXAMPLES%%@dirrm %%EXAMPLESDIR%%/Models
+%%WITH_EXAMPLES%%@dirrm %%EXAMPLESDIR%%/Images
+%%WITH_EXAMPLES%%@dirrm %%EXAMPLESDIR%%
+@dirrm include/quesa
