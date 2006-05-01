@@ -8,20 +8,23 @@
 PORTNAME=	ftpsesame
 PORTVERSION=	0.95
 CATEGORIES=	ftp
-MASTER_SITES=	http://www.sentia.org/downloads/
+MASTER_SITES=	http://www.sentia.org/downloads/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	sem
 
 MAINTAINER=	sem@FreeBSD.org
-COMMENT=	Helper for the FTP protocol get through your pf firewall
+COMMENT=	Helper for the FTP protocol to get through your pf firewall
 
 MAN8=		ftpsesame.8
 PLIST_FILES=	bin/ftpsesame
+USE_RC_SUBR=	ftpsesame.sh
 
 MAKE_ARGS=	PREFIX=${PREFIX} MANPREFIX=${MANPREFIX}
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 502106
-IGNORE=		There is no pf(4) in the base system
+IGNORE=		there is no pf(4) in the base system
 .endif
 
 .include <bsd.port.post.mk>

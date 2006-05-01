@@ -1,0 +1,47 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: ftpsesame
+# REQUIRE: NETWORKING
+# KEYWORD: shutdown
+
+#
+# Add the following line to /etc/rc.conf to enable ftpsesame
+#
+# ftpsesame_enable (bool):	Set to "NO" by default.
+#				Set it to "YES" to enable.
+# ftpsesame_interface (str):	Interface name where ftp sessions will listen.
+#				(Usualy an external interface)
+# ftpsesame_flags (str):	Additional options (See ftpsesame(8)).
+#
+
+. %%RC_SUBR%%
+
+name=ftpsesame
+rcvar=`set_rcvar`
+command=%%PREFIX%%/bin/${name}
+pidfile="/var/run/${name}.pid"
+
+start_postcmd=start_postcmd
+stop_postcmd=stop_postcmd
+
+start_postcmd()
+{
+   ps -axo pid,comm | awk '/ftpsesame/ {print $1}' > ${pidfile}
+}
+
+stop_postcmd()
+{
+   rm -f ${pidfile}
+}
+
+# set defaults
+ftpsesame_enable=${ftpsesame_enable:-"NO"}
+ftpsesame_interface=${ftpsesame_interface-""}
+ftpsesame_flags=${ftpsesame_flags-""}
+
+load_rc_config $name
+command_args=${ftpsesame_interface:+"-i ${ftpsesame_interface}"}
+run_rc_command "$1"
