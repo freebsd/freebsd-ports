@@ -12,6 +12,7 @@
     SUBDIR += dkftpbench
     SUBDIR += flops
     SUBDIR += forkbomb
+    SUBDIR += gtkperf
     SUBDIR += himenobench
     SUBDIR += hpl
     SUBDIR += httperf
