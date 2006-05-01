@@ -7,24 +7,16 @@
 
 PORTNAME=		ttfonts-ja
 PORTVERSION=		1.2
-PORTREVISION=		4
+PORTREVISION=		5
 CATEGORIES=		japanese x11-fonts linux
+DISTNAME=	${PORTNAME}-${PORTVERSION}-36
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Japanese Truetype fonts for use with Linux emulation
 
-BASEVERSION=	9
+USE_LINUX_RPM=	yes
+LINUX_DIST_VER=	3
+EXTRACT_SUFX=	.noarch.rpm
 MD5_FILE=	${MASTERDIR}/distinfo
-PLIST=		${WRKDIR}/plist
-RPM_SET=	ttfonts-ja-1.2-21.noarch.rpm
 
-pre-install:
-	${RM} -rf ${WRKSRC}/tmp
-	${MKDIR} ${WRKSRC}/tmp
-	cd ${WRKSRC}/tmp; \
-		rpm2cpio < ${DISTDIR}/${DIST_SUBDIR}/${RPM_SET} | ${CPIO} -id; \
-		${FIND} * -type f -o -type l > ${PLIST}; \
-		${FIND} -d * -type d | ${GREP} ja | ${SED} -e 's:^:@dirrm :' \
-		>> ${PLIST};
-
-.include "../../x11-toolkits/linux-gtk/Makefile"
+.include <bsd.port.mk>

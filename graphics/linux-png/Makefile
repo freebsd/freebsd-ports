@@ -7,18 +7,18 @@
 
 PORTNAME=	png
 PORTVERSION=	1.2.8
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	graphics linux
-MASTER_SITES=	${MASTER_SITE_FEDORA_LINUX}
-MASTER_SITE_SUBDIR=	updates/3/${ARCH}
+DISTNAME=	libpng-${PORTVERSION}-1.fc3
 
 MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	RPM of the PNG lib
 
-DIST_SUBDIR=	rpm/i386/fc3
 # no alpha rpm is available
 ONLY_FOR_ARCHS=	i386 amd64
-RPM_SET=	libpng-${PORTVERSION}-1.fc3.${ARCH}.rpm
+USE_LINUX_RPM=	yes
+LINUX_DIST_VER=	3
+INSTALLS_SHLIB=	yes
 
 PLIST_FILES=	\
 		usr/lib/libpng.so.3 \
@@ -29,4 +29,4 @@ PLIST_FILES=	\
 DOCSDIR=	${PREFIX}/usr/share/doc/libpng-${PORTVERSION}
 PORTDOCS=	CHANGES LICENSE README TODO example.c libpng.txt
 
-.include "../../x11-toolkits/linux-gtk/Makefile"
+.include <bsd.port.mk>

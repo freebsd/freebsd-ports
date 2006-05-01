@@ -1,0 +1,45 @@
+usr/share/doc/ttfonts-ja-1.2/COPYING
+usr/share/doc/ttfonts-ja-1.2/README.RedHat
+usr/share/doc/ttfonts-ja-1.2/README.ja
+usr/share/doc/ttfonts-ja-1.2/docs/README
+usr/share/doc/ttfonts-ja-1.2/docs/ayu20gothic/README.txt
+usr/share/doc/ttfonts-ja-1.2/docs/k14goth/BUGS
+usr/share/doc/ttfonts-ja-1.2/docs/k14goth/Changelog
+usr/share/doc/ttfonts-ja-1.2/docs/k14goth/INSTALL
+usr/share/doc/ttfonts-ja-1.2/docs/k14goth/README
+usr/share/doc/ttfonts-ja-1.2/docs/k14goth/THANKS
+usr/share/doc/ttfonts-ja-1.2/docs/kappa20/README
+usr/share/doc/ttfonts-ja-1.2/docs/shinonome12/AUTHORS
+usr/share/doc/ttfonts-ja-1.2/docs/shinonome12/BUGS
+usr/share/doc/ttfonts-ja-1.2/docs/shinonome12/Changelog
+usr/share/doc/ttfonts-ja-1.2/docs/shinonome12/README
+usr/share/doc/ttfonts-ja-1.2/docs/shinonome12/THANKS
+usr/share/doc/ttfonts-ja-1.2/docs/shinonome12/TODO
+usr/share/doc/ttfonts-ja-1.2/docs/shinonome16/AUTHORS
+usr/share/doc/ttfonts-ja-1.2/docs/shinonome16/BUGS
+usr/share/doc/ttfonts-ja-1.2/docs/shinonome16/Changelog
+usr/share/doc/ttfonts-ja-1.2/docs/shinonome16/README
+usr/share/doc/ttfonts-ja-1.2/docs/shinonome16/THANKS
+usr/share/doc/ttfonts-ja-1.2/docs/shinonome16/TODO
+usr/share/doc/ttfonts-ja-1.2/docs/wadalab/README
+usr/share/doc/ttfonts-ja-1.2/docs/wadalab/README.ja
+usr/share/fonts/ja/TrueType/fonts.alias
+usr/share/fonts/ja/TrueType/kochi-gothic-subst.ttf
+usr/share/fonts/ja/TrueType/kochi-gothic-subst.tti
+usr/share/fonts/ja/TrueType/kochi-mincho-subst.ttf
+usr/share/fonts/ja/TrueType/kochi-mincho-subst.tti
+usr/share/ghostscript/7.07/lib/CIDFnmap.ja
+@dirrm usr/share/ghostscript/7.07/lib
+@dirrm usr/share/ghostscript/7.07
+@dirrm usr/share/ghostscript
+@dirrm usr/share/fonts/ja/TrueType
+@dirrm usr/share/fonts/ja
+@dirrmtry usr/share/fonts
+@dirrm usr/share/doc/ttfonts-ja-1.2/docs/wadalab
+@dirrm usr/share/doc/ttfonts-ja-1.2/docs/shinonome16
+@dirrm usr/share/doc/ttfonts-ja-1.2/docs/shinonome12
+@dirrm usr/share/doc/ttfonts-ja-1.2/docs/kappa20
+@dirrm usr/share/doc/ttfonts-ja-1.2/docs/k14goth
+@dirrm usr/share/doc/ttfonts-ja-1.2/docs/ayu20gothic
+@dirrm usr/share/doc/ttfonts-ja-1.2/docs
+@dirrm usr/share/doc/ttfonts-ja-1.2

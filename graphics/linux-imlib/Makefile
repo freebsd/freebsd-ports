@@ -6,13 +6,18 @@
 #
 
 PORTNAME=	imlib
-PORTVERSION=	1.9.8.1
-PORTREVISION=	2
+PORTVERSION=	1.9.13
 CATEGORIES=	graphics linux
+DISTNAME=	${PORTNAME}-${PORTVERSION}-21
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	RPM of imlib
 
-RPM_SET=	imlib-${PORTVERSION}-2.${ARCH}.rpm
+USE_LINUX_RPM=	yes
+LINUX_DIST_VER=	3
+INSTALLS_SHLIB=	yes
+BRANDELF_DIRS=	usr/bin
+PLIST=		pkg-plist.${LINUX_RPM_ARCH}
+PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 
-.include "../../x11-toolkits/linux-gtk/Makefile"
+.include <bsd.port.mk>

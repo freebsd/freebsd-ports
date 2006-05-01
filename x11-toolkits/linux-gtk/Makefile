@@ -7,75 +7,21 @@
 # $FreeBSD$
 #
 
-PORTNAME?=	gtk
-PORTVERSION?=	1.2.10
-PORTREVISION?=	0
-CATEGORIES?=	x11-toolkits linux
-MASTER_SITES?=	${FEDORALEGACY_MIRRORS:S/__DIR__/${FEDORADIR}/g} ${RPM_MIRRORS:S/__DIR__/${STDDIR}/g}
-PKGNAMEPREFIX=	linux-
-DISTFILES=	${RPM_SET} ${SRC_DISTFILES}
+PORTNAME=	gtk
+PORTVERSION=	1.2.10
+PORTREVISION=	1
+CATEGORIES=	x11-toolkits linux
+DISTNAME=	gtk+-${PORTVERSION}-33
 
-MAINTAINER?=	freebsd-emulation@FreeBSD.org
-COMMENT?=	RPM of the Gtk lib
+MAINTAINER=	freebsd-emulation@FreeBSD.org
+COMMENT=	RPM of the Gtk lib
 
-BUILD_DEPENDS+=	rpm:${PORTSDIR}/archivers/rpm
-# XXX: I haven't checked if every port which includes this Makefile needs
-#      USE_XLIB, so let it be a RUN_DEPENDS?= until the refactoring of the
-#      RPM bits.
-RUN_DEPENDS?=	${LINUXBASE}/usr/X11R6/lib/libX11.so.6:${PORTSDIR}/x11/linux-XFree86-libs
+ONLY_FOR_ARCHS=	i386 amd64
 
-ONLY_FOR_ARCHS?=	i386 alpha amd64
+USE_LINUX_RPM=	yes
+LINUX_DIST_VER=	3
+INSTALLS_SHLIB=	yes
+PLIST=		pkg-plist.${LINUX_RPM_ARCH}
+USE_XLIB=	yes
 
-USE_LINUX=		yes
-USE_LINUX_PREFIX=	yes
-
-.include <bsd.port.pre.mk>
-
-.if (${ARCH} == "amd64")
-ARCH=		i386
-RPMFLAGS+=	--ignorearch
-.endif
-DIST_SUBDIR?=	rpm
-EXTRACT_ONLY=
-NO_BUILD=	yes
-PLIST?=		${PKGDIR}/pkg-plist.${ARCH}
-MD5_FILE?=	${MASTERDIR}/distinfo.${ARCH}
-LINUX_LDCONFIG?=${LINUXBASE}/sbin/ldconfig
-
-# Let's avoid hardcoding 'en' as the language.
-LANG=		en
-# Set the version of linux_base
-BASEVERSION?=	8.0
-RPM_MIRRORS=	\
-	ftp://ftp.redhat.com/pub/redhat/__DIR__/ \
-	ftp://ftp.nluug.nl/site/ftp.redhat.com/redhat/__DIR__/
-FEDORALEGACY_MIRRORS=	\
-	http://download.fedoralegacy.org/redhat/__DIR__/
-STDDIR=		linux/${BASEVERSION}/${LANG}/os/${ARCH}/RedHat/RPMS
-UPDDIR=		linux/updates/${BASEVERSION}/${LANG}/os/${ARCH}
-FEDORADIR=	${BASEVERSION}/os/${ARCH}
-.if (${ARCH} == "i386")
-RPM_SET?=	gtk+-1.2.10-22.${ARCH}.rpm
-.endif
-DBPATH=		/var/lib/rpm
-RPMFLAGS+=	--ignoreos --root ${PREFIX} --dbpath ${DBPATH} \
-		--nodeps --replacepkgs --oldpackage
-RPMDIR=		${DISTDIR}/${DIST_SUBDIR}
-
-do-install:
-	@for R in ${RPM_SET}; do \
-		${ECHO_MSG} $$R; \
-		rpm -U ${RPMFLAGS} ${RPMDIR}/$$R || true ; \
-	done
-	@${LINUX_LDCONFIG}
-
-new-plist:
-	@${RM} -rf ${WRKSRC}/tmp
-	@${MKDIR} ${WRKSRC}/tmp
-	@cd ${WRKSRC}/tmp; \
-		rpm2cpio < ${DISTDIR}/${DIST_SUBDIR}/${RPM_SET} | ${CPIO} -id; \
-		${FIND} * -type f -o -type l > ${PLIST}.new; \
-		${FIND} -d * -type d | ${SED} -e 's:^:@dirrm :' \
-		>> ${PLIST}.new
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
