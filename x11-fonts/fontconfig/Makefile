@@ -8,7 +8,7 @@
 
 PORTNAME=	fontconfig
 PORTVERSION=	2.3.2
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://fontconfig.org/release/
@@ -27,7 +27,8 @@ USE_GNOME=	gnomehack gnometarget pkgconfig
 CONFIGURE_ARGS=	--with-confdir=${PREFIX}/etc/fonts \
 		--with-expat-includes=${LOCALBASE}/include \
 		--with-expat-lib=${LOCALBASE}/lib \
-		--with-default-fonts=${X11BASE}/lib/X11/fonts
+		--with-default-fonts=${X11BASE}/lib/X11/fonts \
+		--without-add-fonts
 CONFIGURE_ENV=	HASDOCBOOK=no
 MAKE_ENV=	LC_ALL=C
 PKGINSTALL=	${WRKDIR}/pkg-install
@@ -168,8 +169,8 @@ MAN5=		fonts-conf.5
 
 .if defined(WITH_CJK)
 PATCH_SITES+=	http://lwj-hinet.myweb.hinet.net/ \
-                ftp://local-distfiles.freebsd.org.cn/pub/china-ports/hamigua/ \
-                http://bsdchat.com/dist/firefly-cjk-patchset/
+		ftp://local-distfiles.freebsd.org.cn/pub/china-ports/hamigua/ \
+		http://bsdchat.com/dist/firefly-cjk-patchset/
 PATCHFILES+=	cjk-fontconfig-2.3.2-20051217.patch.gz
 PATCH_DIST_STRIP+=	-p1
 .endif
