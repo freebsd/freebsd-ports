@@ -20,6 +20,8 @@
 # milterdkim_socket (str):    Path to the milter socket.
 # milterdkim_domain (str):    Domainpart of From: in mails to sign.
 # milterdkim_key (str):       Path to the private key file to sign with.
+# milterdkim_selector (str):  Selector to use when signing
+# milterdkim_alg (str):       Algorithm to use when signing
 # milterdkim_flags (str):     Flags passed to start command.
 #
 # milterdkim_${profile}_* :   Variables per profile.
@@ -32,9 +34,10 @@ milterdkim_profiles=${milterdkim_profiles:-}
 milterdkim_socket=${milterdkim_socket:-"local:/var/run/dkim-filter"}
 milterdkim_domain=${milterdkim_domain:-"example.com"}
 milterdkim_key=${milterdkim_key:-"/var/db/domainkeys/default.key.pem"}
+milterdkim_selector=${milterdkim_selector:-"default"}
+milterdkim_alg=${milterdkim_alg:-"rsa-sha1"}
 ## milterdkim_flags expands escaped variables later.
-milterdkim_flags=${milterdkim_flags:-"-d \${milterdkim_domain\} -c nowsp -m MSA \
--s \${milterdkim_key\} -S default"}
+milterdkim_flags=${milterdkim_flags:-'-d ${milterdkim_domain} -c simple -m MSA -s ${milterdkim_selector} -k ${milterdkim_key} -S ${milterdkim_alg}'}
 
 . %%RC_SUBR%%
 
