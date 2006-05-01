@@ -8,8 +8,8 @@
  uname -a, dspam --version, %%_VAR_DIR%%/db/ports/%%PORTNAME%%/options, MTA setup.
 
 Asking about updates or telling me there is one: not only I am active on the
-mailing lists but I also track dspam CSV so I already know; either there is a
-problem with the new version or I didn't have enough time to patch the port
+mailing lists and IRC but I also track dspam CVS so I already know; either there
+is a problem with the new version or I didn't have enough time to patch the port
 and _test_ the new version; please report your succes/failure if you run the
 new version or the cvs version.
 

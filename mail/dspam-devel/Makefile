@@ -2,7 +2,7 @@
 # Date created:		24 Jun 2004
 # Whom:			Ion-Mihai "IOnut" Tetcu <itetcu@people.tecnik93.com>
 #
-# $Tecnik: ports/mail/dspam-devel/Makefile,v 1.44 2006/04/22 12:43:37 itetcu Exp $
+# $Tecnik: ports/mail/dspam-devel/Makefile,v 1.49 2006/04/30 10:44:28 itetcu Exp $
 # $FreeBSD$
 #
 
@@ -13,6 +13,7 @@
 
 PORTNAME=	dspam-devel
 PORTVERSION=	${PORTVER_MAJ}${SNAP_DATE}
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	# set later
 
@@ -21,9 +22,9 @@ COMMENT=	Bayesian spam filter - development version
 
 PORTVER_MAJ=	3.6.5
 #SNAP_DATE=	.20060421.2101
-_UPD_LINE_NO=	44
+_UPD_LINE_NO=	8
 
-MIN_OPTIONS_VER=	${PORTNAME}-3.6.4..20060421.2101
+MIN_OPTIONS_VER=	${PORTNAME}-3.6.5
 
 .ifdef(SNAP_DATE)
 MASTER_SITES=	http://sce-tindy.tecnik93.com/FreeBSD/ports/${PORTNAME}/sources/ \
@@ -177,8 +178,7 @@ CONFIGURE_ARGS+=	--enable-preferences-extension
 
 .ifndef(WITHOUT_DAEMON)
 CONFIGURE_ARGS+=	--enable-daemon
-RC_SUFX=	.sh
-USE_RC_SUBR=	${PORTNAME}${RC_SUFX}
+USE_RC_SUBR=	${PORTNAME}
 _SED_SCRIPT+=	-e 's,%%DAEMON%%,,g'
 SUB_LIST+=	DSPAM_HOME=${DSPAM_HOME}
 .else
@@ -420,7 +420,7 @@ CONFIGURE_ARGS+=	--with-dspam-mode=${DSPAM_MODE}
 RUN_DEPENDS+=	${LOCALBASE}/sbin/lighttpd:${PORTSDIR}/www/lighttpd
 .	else
 USE_APACHE=	1.3+
-.endif
+.	endif
 LIB_DEPENDS+=	gd.4:${PORTSDIR}/graphics/gd
 RUN_DEPENDS+=	${SITE_PERL}/mach/GD.pm:${PORTSDIR}/graphics/p5-GD
 RUN_DEPENDS+=	${SITE_PERL}/GD/Graph.pm:${PORTSDIR}/graphics/p5-GD-Graph
@@ -531,7 +531,7 @@ pre-configure:
 .endif
 .ifndef(WITHOUT_DAEMON) && !( defined(USE_MYSQL) || \
 	!defined(WITHOUT_POSTGRESQL) || !defined(WITHOUT_HASH) )
-	@${ECHO_CMD} "You need MySQL, PostgreSQL ot Hash for Daemon mode, because multithreading support is needed"
+	@${ECHO_CMD} "You need MySQL, PostgreSQL or Hash for Daemon mode, because multithreading support is needed"
 	@${FALSE}
 .endif
 .if ( defined(WITH_MYSQL40) && defined(WITH_MYSQL41) && !defined(WITHOUT_MYSQL50) && defined(WITH_MYSQL51))
@@ -652,7 +652,7 @@ check-options-version:
 .ifdef(_OPTIONS_READ)
 	@(if ${PKG_VERSION} -t ${_OPTIONS_READ} ${MIN_OPTIONS_VER} | ${GREP} -q '<'; \
 	 then ${ECHO_CMD} "You have unsupported (old) OPTIONS, please do a 'make config; make'\n" \
-			exit 1; \
+		exit 1; \
 	 fi)
 .endif
 
