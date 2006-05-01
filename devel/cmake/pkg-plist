@@ -147,6 +147,7 @@ bin/ctest
 %%DATADIR%%/Modules/InstallRequiredSystemLibraries.cmake
 %%DATADIR%%/Modules/KDE3Macros.cmake
 %%DATADIR%%/Modules/MacOSXBundleInfo.plist.in
+%%DATADIR%%/Modules/NSIS.InstallOptions.ini.in
 %%DATADIR%%/Modules/NSIS.template.in
 %%DATADIR%%/Modules/Platform/AIX.cmake
 %%DATADIR%%/Modules/Platform/BSDOS.cmake
@@ -202,6 +203,7 @@ bin/ctest
 %%DATADIR%%/Modules/TestForSSTREAM.cxx
 %%DATADIR%%/Modules/TestForSTDNamespace.cmake
 %%DATADIR%%/Modules/TestForSTDNamespace.cxx
+%%DATADIR%%/Modules/UseEcos.cmake
 %%DATADIR%%/Modules/UsePkgConfig.cmake
 %%DATADIR%%/Modules/UseQt4.cmake
 %%DATADIR%%/Modules/UseSWIG.cmake
@@ -221,6 +223,7 @@ bin/ctest
 %%DATADIR%%/Templates/CPack.GenericLicense.txt
 %%DATADIR%%/Templates/CPack.GenericWelcome.txt
 %%DATADIR%%/Templates/CPackConfig.cmake.in
+%%DATADIR%%/Templates/CTestScript.cmake.in
 %%DATADIR%%/Templates/DLLFooter.dsptemplate
 %%DATADIR%%/Templates/DLLHeader.dsptemplate
 %%DATADIR%%/Templates/EXEFooter.dsptemplate
