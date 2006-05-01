@@ -43,7 +43,7 @@ upgrades.
   Instead, use the following simple recipe:
 
 pkgdb -Ff
-portupgrade -o net/avahi -f howl -f mDNSResponder
+portupgrade -o net/avahi -f howl
 portupgrade -o x11/gnome-screensaver -f xscreensaver-gnome
 portupgrade -a
 
