@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	cgiirc
-PORTVERSION=	0.5.7
+PORTVERSION=	0.5.8
 CATEGORIES=	irc www perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	cgiirc
 
 MAINTAINER=	shaun@inerd.com
-COMMENT=	IRC web gate written on perl
+COMMENT=	IRC web gateway written in Perl
 
 USE_PERL5=	yes
 NO_BUILD=	yes

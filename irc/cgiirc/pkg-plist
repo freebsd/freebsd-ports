@@ -9,6 +9,7 @@ www/cgiirc/docs/COPYING
 www/cgiirc/docs/TODO
 www/cgiirc/docs/decode.pl
 www/cgiirc/docs/help.html
+www/cgiirc/docs/help.ru.html
 www/cgiirc/docs/identd.pl
 www/cgiirc/docs/identd.xinetd
 www/cgiirc/docs/viewconnects.pl
@@ -16,6 +17,10 @@ www/cgiirc/formats/dark
 www/cgiirc/formats/default
 www/cgiirc/formats/gothic
 www/cgiirc/formats/mirc
+www/cgiirc/formats/romanian
+www/cgiirc/formats/norwegian
+www/cgiirc/formats/german
+www/cgiirc/formats/dutch
 www/cgiirc/formats/russian
 www/cgiirc/images/actmsg.wav
 www/cgiirc/images/actsound.gif
