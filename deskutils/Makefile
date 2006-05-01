@@ -147,6 +147,7 @@
     SUBDIR += treeline
     SUBDIR += tuxcards
     SUBDIR += vym
+    SUBDIR += when
     SUBDIR += wmpinboard
     SUBDIR += xcalendar
     SUBDIR += xchm
