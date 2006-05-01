@@ -1,0 +1,160 @@
+bin/ircd-shortcut
+etc/ratbox-services.conf.sample
+sbin/ratbox-services
+%%DATADIR%%/schema.sql
+%%DATADIR%%/help/alis/general
+%%DATADIR%%/help/alis/index
+%%DATADIR%%/help/alis/list
+%%DATADIR%%/help/main/u-boot
+%%DATADIR%%/help/main/u-connect
+%%DATADIR%%/help/main/u-die
+%%DATADIR%%/help/main/u-events
+%%DATADIR%%/help/main/u-flags
+%%DATADIR%%/help/main/u-quit
+%%DATADIR%%/help/main/u-rehash
+%%DATADIR%%/help/main/u-service
+%%DATADIR%%/help/main/u-stats
+%%DATADIR%%/help/main/u-status
+%%DATADIR%%/help/main/u-who
+%%DATADIR%%/help/operbot/general
+%%DATADIR%%/help/operbot/index
+%%DATADIR%%/help/operbot/index-admin
+%%DATADIR%%/help/operbot/invite
+%%DATADIR%%/help/operbot/objoin
+%%DATADIR%%/help/operbot/obpart
+%%DATADIR%%/help/operbot/op
+%%DATADIR%%/help/operbot/u-objoin
+%%DATADIR%%/help/operbot/u-obpart
+%%DATADIR%%/help/chanserv/addban
+%%DATADIR%%/help/chanserv/adduser
+%%DATADIR%%/help/chanserv/chandrop
+%%DATADIR%%/help/chanserv/chaninfo
+%%DATADIR%%/help/chanserv/chanlist
+%%DATADIR%%/help/chanserv/chanregister
+%%DATADIR%%/help/chanserv/chansuspend
+%%DATADIR%%/help/chanserv/chanunsuspend
+%%DATADIR%%/help/chanserv/clearallops
+%%DATADIR%%/help/chanserv/clearbans
+%%DATADIR%%/help/chanserv/clearmodes
+%%DATADIR%%/help/chanserv/clearops
+%%DATADIR%%/help/chanserv/delban
+%%DATADIR%%/help/chanserv/deluser
+%%DATADIR%%/help/chanserv/general
+%%DATADIR%%/help/chanserv/getkey
+%%DATADIR%%/help/chanserv/index
+%%DATADIR%%/help/chanserv/index-admin
+%%DATADIR%%/help/chanserv/info
+%%DATADIR%%/help/chanserv/invite
+%%DATADIR%%/help/chanserv/listbans
+%%DATADIR%%/help/chanserv/listusers
+%%DATADIR%%/help/chanserv/modauto
+%%DATADIR%%/help/chanserv/modban
+%%DATADIR%%/help/chanserv/moduser
+%%DATADIR%%/help/chanserv/op
+%%DATADIR%%/help/chanserv/set
+%%DATADIR%%/help/chanserv/register
+%%DATADIR%%/help/chanserv/suspend
+%%DATADIR%%/help/chanserv/u-chandrop
+%%DATADIR%%/help/chanserv/u-chaninfo
+%%DATADIR%%/help/chanserv/u-chanregister
+%%DATADIR%%/help/chanserv/u-chansuspend
+%%DATADIR%%/help/chanserv/u-chanunsuspend
+%%DATADIR%%/help/chanserv/unban
+%%DATADIR%%/help/chanserv/unsuspend
+%%DATADIR%%/help/chanserv/voice
+%%DATADIR%%/help/userserv/general
+%%DATADIR%%/help/userserv/index
+%%DATADIR%%/help/userserv/index-admin
+%%DATADIR%%/help/userserv/info
+%%DATADIR%%/help/userserv/login
+%%DATADIR%%/help/userserv/logout
+%%DATADIR%%/help/userserv/register
+%%DATADIR%%/help/userserv/set
+%%DATADIR%%/help/userserv/u-userdrop
+%%DATADIR%%/help/userserv/u-userinfo
+%%DATADIR%%/help/userserv/u-userregister
+%%DATADIR%%/help/userserv/u-usersetpass
+%%DATADIR%%/help/userserv/u-usersuspend
+%%DATADIR%%/help/userserv/u-userunsuspend
+%%DATADIR%%/help/userserv/userdrop
+%%DATADIR%%/help/userserv/userinfo
+%%DATADIR%%/help/userserv/userlist
+%%DATADIR%%/help/userserv/userregister
+%%DATADIR%%/help/userserv/usersetpass
+%%DATADIR%%/help/userserv/usersuspend
+%%DATADIR%%/help/userserv/userunsuspend
+%%DATADIR%%/help/jupeserv/calljupe
+%%DATADIR%%/help/jupeserv/callunjupe
+%%DATADIR%%/help/jupeserv/general
+%%DATADIR%%/help/jupeserv/index
+%%DATADIR%%/help/jupeserv/index-admin
+%%DATADIR%%/help/jupeserv/jupe
+%%DATADIR%%/help/jupeserv/pending
+%%DATADIR%%/help/jupeserv/u-jupe
+%%DATADIR%%/help/jupeserv/u-unjupe
+%%DATADIR%%/help/jupeserv/unjupe
+%%DATADIR%%/help/operserv/general
+%%DATADIR%%/help/operserv/index
+%%DATADIR%%/help/operserv/index-admin
+%%DATADIR%%/help/operserv/omode
+%%DATADIR%%/help/operserv/osjoin
+%%DATADIR%%/help/operserv/ospart
+%%DATADIR%%/help/operserv/takeover
+%%DATADIR%%/help/operserv/u-omode
+%%DATADIR%%/help/operserv/u-osjoin
+%%DATADIR%%/help/operserv/u-ospart
+%%DATADIR%%/help/operserv/u-takeover
+%%DATADIR%%/help/nickserv/drop
+%%DATADIR%%/help/nickserv/general
+%%DATADIR%%/help/nickserv/index
+%%DATADIR%%/help/nickserv/index-admin
+%%DATADIR%%/help/nickserv/info
+%%DATADIR%%/help/nickserv/nickdrop
+%%DATADIR%%/help/nickserv/regain
+%%DATADIR%%/help/nickserv/register
+%%DATADIR%%/help/nickserv/release
+%%DATADIR%%/help/nickserv/set
+%%DATADIR%%/help/nickserv/u-nickdrop
+%%DATADIR%%/help/global/general
+%%DATADIR%%/help/global/index
+%%DATADIR%%/help/global/index-admin
+%%DATADIR%%/help/global/netmsg
+%%DATADIR%%/help/global/u-netmsg
+%%DATADIR%%/help/banserv/findkline
+%%DATADIR%%/help/banserv/findresv
+%%DATADIR%%/help/banserv/findxline
+%%DATADIR%%/help/banserv/general
+%%DATADIR%%/help/banserv/index
+%%DATADIR%%/help/banserv/index-admin
+%%DATADIR%%/help/banserv/kline
+%%DATADIR%%/help/banserv/resv
+%%DATADIR%%/help/banserv/sync
+%%DATADIR%%/help/banserv/u-findkline
+%%DATADIR%%/help/banserv/u-findresv
+%%DATADIR%%/help/banserv/u-findxline
+%%DATADIR%%/help/banserv/u-kline
+%%DATADIR%%/help/banserv/u-resv
+%%DATADIR%%/help/banserv/u-sync
+%%DATADIR%%/help/banserv/u-unkline
+%%DATADIR%%/help/banserv/u-unresv
+%%DATADIR%%/help/banserv/u-unxline
+%%DATADIR%%/help/banserv/u-xline
+%%DATADIR%%/help/banserv/unkline
+%%DATADIR%%/help/banserv/unresv
+%%DATADIR%%/help/banserv/unxline
+%%DATADIR%%/help/banserv/xline
+@dirrm %%DATADIR%%/help/alis
+@dirrm %%DATADIR%%/help/main
+@dirrm %%DATADIR%%/help/operbot
+@dirrm %%DATADIR%%/help/chanserv
+@dirrm %%DATADIR%%/help/userserv
+@dirrm %%DATADIR%%/help/jupeserv
+@dirrm %%DATADIR%%/help/operserv
+@dirrm %%DATADIR%%/help/nickserv
+@dirrm %%DATADIR%%/help/global
+@dirrm %%DATADIR%%/help/banserv
+@dirrm %%DATADIR%%/help
+@dirrm %%DATADIR%%
+@dirrmtry %%DBDIR%%
+@unexec f="/var/log/ratbox-services.log"; if [ ! -s "$f" ]; then rm -f "$f"; fi
+@unexec f="/var/run/ratbox-services.pid"; if [ ! -s "$f" ]; then rm -f "$f"; fi

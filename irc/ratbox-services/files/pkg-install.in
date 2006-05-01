@@ -1,0 +1,126 @@
+#!/bin/sh
+#
+# Adapted from irc/ircd-hybrid's script
+#
+
+ask() {
+	local question default answer
+
+	question=$1
+	default=$2
+	if [ -z "${PACKAGE_BUILDING}" ]; then
+		read -p "${question} [${default}]? " answer
+	fi
+	if [ x${answer} = x ]; then
+		answer=${default}
+	fi
+	echo ${answer}
+}
+
+yesno() {
+	local dflt question answer
+
+	question=$1
+	dflt=$2
+	while :; do
+		answer=$(ask "${question}" "${dflt}")
+		case "${answer}" in
+		[Yy]*)          return 0;;
+		[Nn]*)          return 1;;
+		esac
+		echo "Please answer yes or no."
+	done
+}
+
+#-----------------------------------------------------------------------
+if [ "x$2" = "xPRE-INSTALL" ]; then
+#-----------------------------------------------------------------------
+
+if which -s pw ; then
+	:
+else
+	cat <<EOF
+Your system does not include the "pw" utility.  You should upgrade
+to a newer version of FreeBSD.  Without "pw" this script will not
+run.
+EOF
+	exit 1
+fi
+
+echo ""
+if pw groupshow ircservices 2> /dev/null ; then
+	echo "You already have a group \"ircservices\", so I will use it."
+else
+	if pw groupshow 73 2> /dev/null ; then
+		echo "You already have a gid \"73\".  Please create a user \"ircservices\""
+		echo "with a default group of \"ircservices\"."
+		exit 1
+	fi
+	echo "You need a group \"ircservices\"."
+	if which -s pw && yesno "Would you like me to create it" y; then
+		pw groupadd ircservices -g 73 || exit
+		echo "Done."
+	else
+		echo "Please create it, and try again."
+		if ! pw usershow ircservices 2> /dev/null ; then
+			echo "While you're at it, please create a user \"ircservices\""
+			echo 'too, with a default group of "ircservices".'
+		fi
+		exit 1
+	fi
+fi
+
+if pw usershow ircservices 2> /dev/null ; then
+	echo "You already have a user \"ircservices\", so I will use it."
+else
+        if pw usershow 73 2> /dev/null ; then
+                echo "You already have a uid \"73\".  Please create a user \"irc
+d\""
+                echo "with a default group of \"ircservices\"."
+                exit 1
+        fi
+	echo "You need a user \"ircservices\"."
+	if which -s pw && yesno "Would you like me to create it" y; then
+		pw useradd ircservices -g ircservices -u 73 -h - -d /nonexistent \
+			-s /nonexistent -c "IRC services" || exit
+		echo "Done."
+	else
+		echo "Please create it, and try again."
+		exit 1
+	fi
+fi
+
+#-----------------------------------------------------------------------
+elif [ "x$2" = "xPOST-INSTALL" ]; then
+#-----------------------------------------------------------------------
+
+lf="%%LOGDIR%%/ratbox-services.log"
+
+touch $lf				\
+&& chown ircservices:ircservices $lf	\
+&& chmod 640 $lf
+
+mkdir -p %%DBDIR%%
+
+db="%%DBDIR%%/ratbox-services.db"
+
+if [ ! -f $db ]; then
+	echo "Initialising services database..."
+	%%LOCALBASE%%/bin/sqlite $db < %%DATADIR%%/schema.sql
+fi
+
+# Secure permissions if we think this is a fresh install
+
+if [ ! -f ${PKG_PREFIX}/ratbox-services.conf ]; then
+	chown -R ircservices:ircservices %%DBDIR%%
+	chown ircservices:ircservices ${PKG_PREFIX}/etc/ratbox-services.conf.sample
+	chmod 750 %%DBDIR%%
+	chmod 640 $db
+	chmod 640 ${PKG_PREFIX}/etc/ratbox-services.conf.sample
+fi
+
+#-----------------------------------------------------------------------
+fi
+#-----------------------------------------------------------------------
+
+exit 0

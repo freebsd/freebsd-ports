@@ -86,6 +86,7 @@
     SUBDIR += py-supybot-plugins
     SUBDIR += quirc
     SUBDIR += ratbox-respond
+    SUBDIR += ratbox-services
     SUBDIR += rbot
     SUBDIR += riece
     SUBDIR += riece-emacs20
