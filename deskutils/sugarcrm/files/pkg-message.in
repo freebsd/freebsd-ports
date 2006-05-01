@@ -8,19 +8,28 @@ Notes:
 
 memory_limit = 10M	; Maximum amount of memory a script may consume 
 
-2.  To complete installation of SugarCRM, please point your browser to
+2.  In order to get Apache or your preferred web server to recognise
+    SugarCRM's location on your disk, you'll need to put the following line
+    (or the equivalent) into the web server configuration:
+
+Alias "/sugarcrm" "%%PREFIX%%/%%SUGARCRMDIR%%"
+
+3.  If you're installing SugarCRM on your system for the first time, in
+    order to complete installation, please point your browser to
     http://localhost/sugarcrm/ and set up your database and configuration
     parameters.  Once you have finished the installation procedure, you
     should remove the installation directory and make the SugarCRM
     configuration file (config.php) non writable.  You can do these things
     be executing the following commands:
 
-rm -rf %%PREFIX%%/%%SUGARCRMDIR%%/install
 chown root:wheel %%PREFIX%%/%%SUGARCRMDIR%%/config.php
 
-3.  Please see the documentation directory (%%DOCSDIR%%)
+4.  If you are upgrading SugarCRM from a previous version, please follow the
+    instructions in %%DOCSDIR%%/UPGRADE-FreeBSD.txt.
+
+5.  Please see the documentation directory (%%DOCSDIR%%)
     for full documentation on how to get the best out of SugarCRM.
 
-4.  Enjoy!
+6.  Enjoy!
 
 ##

@@ -5,37 +5,47 @@
 # $FreeBSD$
 
 PORTNAME=	sugarcrm
-PORTVERSION=	2.5.1b
-PORTREVISION=	1
+PORTVERSION=	3.5.1
 CATEGORIES=	deskutils www
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTFILES=	SugarSuite-Full-2_5_1b.zip \
-		Sugar_Open_Source_User_Guide_v25_MSWord_2005-01-31.zip
+MASTER_SITES=	${SCRM_DISPATCHER}/392/:src \
+		${SCRM_DISPATCHER}/387/:userdoc \
+		${SCRM_DISPATCHER}/389/:installdoc
+DISTFILES=	${USERDOCFILE}:userdoc \
+		${INSTALLDOCFILE}:installdoc \
+		${SRCNAME}${EXTRACT_SUFX}:src
+DIST_SUBDIR=	${PORTNAME}
+EXTRACT_ONLY=	${SRCNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	nick@foobar.org
 COMMENT=	A web based customer relationship management suite
 
-USE_PHP=	gd mysql session pcre
+USE_PHP=	gd mysql session pcre xml
+USE_PHP=	gd mysql session pcre xml
 USE_ZIP=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 SUGARCRMDIR?=	www/${PORTNAME}
 
-INSTFILES=	config.php export.php index.php install.php json.php \
-		leadCapture.php pdf.php phprint.php soap.php \
-		sugar_version.php vCard.php robots.txt log4php.properties
+SCRM_DISPATCHER=	http://sugarforge.org/frs/download.php
+SRCNAME=	SugarSuite-${PORTVERSION}
+USERDOCFILE=	Sugar_Open_Source_User_Guide_v35.pdf
+INSTALLDOCFILE=	Sugar_Open_Source_Installation_Guide_v35.pdf
 
-INSTDIRS=	XTemplate custom data examples include install jscalendar \
-		log4php modules soap themes
+INSTFILES=	acceptDecline.php campaign_tracker.php config.php \
+		dictionary.php emailmandelivery.php export.php index.php \
+		install.php json.php json_server.php leadCapture.php \
+		log4php.properties log_file_restricted.html maintenance.php \
+		metagen.php pdf.php phprint.php removeme.php robots.txt \
+		soap.php sugar_version.php vCard.php vcal_server.php \
+		LICENSE.txt .htaccess
 
-INSTDOCS=	INSTALLATION.txt LICENSE.txt README.txt
+INSTDIRS=	ModuleInstall XTemplate cache custom data examples include \
+		install jscalendar log4php metadata modules soap themes upgrade
 
-# empty directories to be created and chowned to www user
-CACHEDIRS=	custom_fields dyn_lay feeds images import layout pdf upload xml
+INSTDOCS=	INSTALLATION.txt LICENSE.txt PATCH.txt README.txt UPGRADE.TXT UPGRADE-FreeBSD.txt
 
 # files and directories to be chown -R'ed to www user
-WWWFILES=	config.php custom data modules
+WWWFILES=	config.php custom data modules .htaccess cache
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
@@ -45,26 +55,26 @@ PLIST_SUB+=	SUGARCRMDIR="${SUGARCRMDIR}" \
 		CACHEDIRS="${CACHEDIRS}" \
 		WWWGRP="${WWWGRP}" \
 		WWWOWN="${WWWOWN}" \
-		WWWFILES="${WWWFILES}"
+		WWWFILES="${WWWFILES}" \
+		USERDOCFILE="${USERDOCFILE}" \
+		INSTALLDOCFILE="${INSTALLDOCFILE}"
+
+post-patch:
+	${CP} ${FILESDIR}/UPGRADE-FreeBSD.txt ${WRKSRC}
+	@${REINPLACE_CMD}	-e 's|%%PREFIX%%|${PREFIX}|' \
+				-e 's|%%SUGARCRMDIR%%|${SUGARCRMDIR}|' \
+				${WRKSRC}/UPGRADE-FreeBSD.txt
 
 do-install:
-	@${FIND} ${WRKSRC} -name .cvsignore -delete
-
 	@${MKDIR} ${PREFIX}/${SUGARCRMDIR}
 
 .for i in ${INSTFILES} ${INSTDIRS}
-	@cd ${WRKSRC} && \
+	cd ${WRKSRC} && \
 		${FIND} ${i} -type d -exec ${MKDIR} ${PREFIX}/${SUGARCRMDIR}/{} \; ; \
 		${FIND} ${i} \! -type d -exec ${INSTALL_DATA} {} ${PREFIX}/${SUGARCRMDIR}/{} \;
 .endfor
 
-.for i in ${CACHEDIRS}
-	${MKDIR} ${PREFIX}/${SUGARCRMDIR}/cache/${i}
-	@${CHOWN} ${WWWOWN}:${WWWGRP} ${PREFIX}/${SUGARCRMDIR}/cache/${i}
-.endfor
-
-	@${INSTALL_DATA} ${WRKSRC}/cache/custom_fields/custom_fields_def.php \
-		${PREFIX}/${SUGARCRMDIR}/cache/custom_fields
+	@${MKDIR} ${PREFIX}/${SUGARCRMDIR}/cache/dynamic_fields
 
 .for i in ${WWWFILES}
 	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${SUGARCRMDIR}/${i}
@@ -72,8 +82,10 @@ do-install:
 
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/Sugar\ Open\ Source\ User\ Guide\ v25.doc \
-		${DOCSDIR}/Sugar_Open_Source_User_Guide_v25.doc
+	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${USERDOCFILE} \
+		${DOCSDIR}/${USERDOCFILE}
+	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${INSTALLDOCFILE} \
+		${DOCSDIR}/${INSTALLDOCFILE}
 .for i in ${INSTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
