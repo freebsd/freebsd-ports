@@ -8,8 +8,7 @@
 PORTNAME=	pcrs
 PORTVERSION=	0.0.3
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.oesterhelt.org/pcrs/\
-		http://distfiles.master.finkmirrors.net/\
+MASTER_SITES=	http://distfiles.master.finkmirrors.net/\
 		http://download.mirror.ac.uk/mirror/master.us.finkmirrors.net/distfiles/\
 		http://mirror.phy.olemiss.edu/mirror/fink/distfiles/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
