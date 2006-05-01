@@ -3,18 +3,23 @@
 case $2 in
     POST-INSTALL)
     if [ ! -c /dev/pcfclock0 ]; then
-	rv=1
 	if [ -x /dev/MAKEDEV ]; then
+	    # FreeBSD 4.x
 	    ( cd /dev && ./MAKEDEV pcfclock0 )
 	    rv=$?
-	fi
 
-	if [ ${rv} = 0 ]; then
-	    echo "$2: Device special file /dev/pcfclock0 created"
+	    if [ ${rv} = 0 ]; then
+		echo "$2: Device special file /dev/pcfclock0 created"
+	    else
+		echo "$2: Unexpected failure creating /dev/pcfclock0"
+		echo "$2: Try 'cd /dev ; mknod pcfclock0 c 140 0 root:wheel'"
+	    fi
 	else
-	    echo "$2: Unexpected failure creating /dev/pcfclock0"
-	    echo "$2: Try 'cd /dev ; mknod pcfclock0 c 140 0 root:wheel'"
+	    # FreeBSD 5.x or later
+	    echo "$2: No pcfclock device found"
+	    echo "$2: Ensure to have pcfclock support enabled for your kernel"
 	fi
     fi
+
     ;;
 esac
