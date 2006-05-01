@@ -208,6 +208,7 @@ sbin/htdbm
 sbin/htdigest
 sbin/htpasswd
 sbin/httpd
+sbin/httxt2dbm
 sbin/logresolve
 sbin/rotatelogs
 %%MOD_SUEXEC%%sbin/suexec
