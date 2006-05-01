@@ -1,5 +1,5 @@
 bin/c2html
-share/doc/c2html/AUTHORS
-share/doc/c2html/NEWS
-share/doc/c2html/README
-@dirrm share/doc/c2html
+%%DOCSDIR%%/AUTHORS
+%%DOCSDIR%%/NEWS
+%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
