@@ -7,5 +7,5 @@ fastcgi server as soon as possible.
 mod_fcgid is binary-compatible with mod_fastcgi so your existing fastcgi
 programs do not need to be recompiled.  mod_fcgid supports suEXEC.
 
-Licence: GPL
+License: GPL
 WWW: http://fastcgi.coremail.cn/
