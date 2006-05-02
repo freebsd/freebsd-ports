@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	galaxymage
-PORTVERSION=	0.2.1
+PORTVERSION=	0.3.0
 CATEGORIES=	games python
 MASTER_SITES=	http://download.gna.org/tactics/
 
@@ -19,8 +19,8 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/Numeric/_numpy.so:${PORTSDIR}/math/py-numeric 
 
 USE_X_PREFIX=	yes
 USE_PYTHON=	yes
+USE_TWISTED=	yes
 USE_GETTEXT=	yes
-USE_DOS2UNIX=	yes
 NO_BUILD=	yes
 
 OPTIONS=	PSYCO	"Use just-in-time Python compiler" off
@@ -33,7 +33,6 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/psyco/_psyco.so:${PORTSDIR}/devel/py-psyco
 
 post-configure:
 	@${REINPLACE_CMD} -e 's@%%DATADIR%%@${DATADIR}@g' ${WRKSRC}/GalaxyMage.py ${WRKSRC}/src/Resources.py
-	@${REINPLACE_CMD} -e 's@%%DOCSDIR%%@${DOCSDIR}@g' ${WRKSRC}/src/Main.py
 	@${REINPLACE_CMD} -e 's@%%X11BASE%%@${X11BASE}@g' ${WRKSRC}/src/Translate.py
 
 do-install:
@@ -42,23 +41,20 @@ do-install:
 .for DIRE in src data
 	@cd ${WRKSRC}/${DIRE} && \
 		${FIND} * -type d -exec ${MKDIR} "${DATADIR}/{}" \; && \
-		${FIND} -E * -type f -iregex ".*\.(py|pyc|txt|TXT|ogg|wav|png|ttf)" -exec ${INSTALL_DATA} "{}" \
+		${FIND} -E * -type f -iregex ".*\.(py|pyc|txt|TXT|ogg|wav|png|ttf|conf)" -exec ${INSTALL_DATA} "{}" \
 			"${DATADIR}/{}" \;
 .endfor
 
-.for FILE in en fr sp
+.for FILE in de en fr nl sp
 	@${MKDIR} ${PREFIX}/share/locale/${FILE}/LC_MESSAGES && \
-		${INSTALL_DATA} ${WRKSRC}/locale/${FILE}/LC_MESSAGES/GalaxyMage.mo \
-			${WRKSRC}/locale/${FILE}/LC_MESSAGES/GalaxyMage.pot ${PREFIX}/share/locale/${FILE}/LC_MESSAGES
+		${INSTALL_DATA} ${WRKSRC}/locale/${FILE}/LC_MESSAGES/* \
+			${PREFIX}/share/locale/${FILE}/LC_MESSAGES
 .endfor
-
+.if !defined(NOPORTDOCS)
 	@cd ${WRKSRC}/doc && \
 		${FIND} * -type d -exec ${MKDIR} "${DOCSDIR}/{}" \; && \
 		${FIND} -E * -type f -iregex ".*\.(html|css|txt|png)" -exec ${INSTALL_DATA} "{}" \
 			"${DOCSDIR}/{}" \;
-
-.if !defined(NOPORTDOCS)
 	@${INSTALL_DATA} ${WRKSRC}/CREDITS.txt ${WRKSRC}/README.txt ${DOCSDIR}
 .endif
-
 .include <bsd.port.post.mk>
