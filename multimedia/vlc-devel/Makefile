@@ -228,10 +228,10 @@
 #
 
 PORTNAME=	vlc
-DISTVERSION=	0.8.5.20060423-test3
+DISTVERSION=	0.8.5.20060423-test4
 PORTREVISION=	0
 CATEGORIES=	multimedia audio ipv6 net www
-MASTER_SITES=	http://download.videolan.org/pub/videolan/testing/vlc-0.8.5-test3/
+MASTER_SITES=	http://download.videolan.org/pub/videolan/testing/vlc-0.8.5-test4/
 #		http://nightlies.videolan.org/build/source/
 #		http://download.videolan.org/pub/videolan/vlc/${PORTVERSION}/ \
 #		http://ftp.snt.utwente.nl/pub/software/videolan/vlc/${PORTVERSION}/ \
