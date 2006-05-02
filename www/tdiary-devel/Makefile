@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tdiary
-PORTVERSION=	2.1.3
+PORTVERSION=	2.1.4
 CATEGORIES?=	www ruby
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.tdiary.org/download/
@@ -18,14 +18,13 @@ MAINTAINER=	jfkimura@yahoo.co.jp
 COMMENT=	A Web-based diary system (like weblog) written in Ruby
 
 NO_BUILD=	yes
-CONFLICTS?=	ja-tdiary-devel-[0-9]*
 PKGMESSAGE=	${WRKDIR}/pkg-message
 USE_RUBY=	yes
 RUBY_VER=	1.8
 #TDIARY_LANG	ja:Japanese en:English zh:Traditional-Chinese
 
 RUBY_SHEBANG_FILES=	index.rb update.rb misc/convert2.rb misc/plugin/squeeze.rb \
-			misc/plugin/amazon/amazonimg.rb misc/plugin/rast-register.rb \
+			misc/plugin/amazon/amazonimg.rb \
 			misc/plugin/trackback/tb.rb misc/style/etdiary/etdiary_test.rb \
 			misc/plugin/pingback/pb.rb misc/plugin/xmlrpc/xmlrpc.rb
 
@@ -45,7 +44,7 @@ RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/web/escape_ext.so:${PORTSDIR}/www/ruby-nora
 .include <bsd.port.pre.mk>
 
 .if ${RUBY_VERSION_CODE} < 182
-IGNORE=		Needs ruby 1.8.2 or higher, install lang/ruby18 and try again
+IGNORE=		needs ruby 1.8.2 or higher, install lang/ruby18 and try again
 .endif
 
 do-install:
