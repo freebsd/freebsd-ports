@@ -2,6 +2,7 @@ etc/im_palette-small.pal
 etc/im_palette-tiny.pal
 etc/im_palette.pal
 etc/imrc
+usr/bin/imlib_config
 usr/lib/libImlib.so.11.0.0
 usr/lib/libgdk_imlib.so.%%PORTVERSION%%
 usr/lib/libimlib-bmp.so

@@ -7,10 +7,11 @@
 
 PORTNAME=	imlib
 PORTVERSION=	1.9.13
+PORTREVISION=	1
 CATEGORIES=	graphics linux
 DISTNAME=	${PORTNAME}-${PORTVERSION}-21
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	RPM of imlib
 
 USE_LINUX_RPM=	yes
