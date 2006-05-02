@@ -8,7 +8,8 @@
 PORTNAME=	moztraybiff
 PORTVERSION=	1.2.1
 CATEGORIES=	mail gnome
-MASTER_SITES=	http://mozdev.oregonstate.edu/moztraybiff/
+MASTER_SITES=	${MASTER_SITE_MOZDEV}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	mozTrayBiff-${PORTVERSION}
 
 MAINTAINER=	adamw@FreeBSD.org
