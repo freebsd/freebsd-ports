@@ -7,7 +7,7 @@
 
 PORTNAME=	CGI-SpeedyCGI
 PORTVERSION=	2.22
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	CGI
@@ -18,24 +18,16 @@ COMMENT=	Speed up perl CGI scripts by running them persistently
 
 PERL_CONFIGURE=	yes
 
+OPTIONS=	APACHE "Enable mod_speedycgi" On
+
 .include <bsd.port.pre.mk>
 
-# define WITHOUT_APACHE to prevent mod_speedycgi from being built even if Apache is installed
-
-.if !exists(${APXS}) || defined(WITHOUT_APACHE)
+.if !defined(WITHOUT_APACHE)
+USE_APACHE=	1.3+
+PLIST_SUB+=	APACHE=""
+.else
 PLIST_SUB+=	APACHE="@comment "
 CONFIGURE_ENV+=	WITHOUT_APACHE=yes
-.else
-PLIST_SUB+=	APACHE=""
-.if exists(${APXS})
-APXS_WORKS!=	${APXS} -q TARGET 2>/dev/null || ${ECHO} no
-.endif
-.if exists(${APXS}) && ${APXS_WORKS} != no
-AP_LIBEXEC!=	${APXS} -q LIBEXECDIR
-.else
-AP_LIBEXEC?=	${PREFIX}/libexec/apache
-.endif
-PLIST_SUB+=	AP_LIBEXEC=${AP_LIBEXEC:S/^${PREFIX}\///}
 .endif
 
 post-patch:
