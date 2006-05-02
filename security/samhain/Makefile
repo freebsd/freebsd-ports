@@ -5,11 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	samhain
-PORTVERSION=	2.1.2
-PORTREVISION=	1
+PORTVERSION=	2.2.0
 CATEGORIES=	security
 MASTER_SITES=	http://la-samhna.de/archive/ \
-		http://cold.darkambient.net/
+		http://redundancy.redundancy.org/mirror/
 DISTNAME=	samhain_signed-${PORTVERSION}
 
 MAINTAINER=	lx@redundancy.redundancy.org
@@ -146,8 +145,7 @@ post-install:
 .endif
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/docs/MANUAL-2_0.ps ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/docs/MANUAL-2_0.html.tar ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/docs/MANUAL-2_2.pdf ${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/docs/HOWTO-client+server.html ${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/docs/HOWTO-client+server-troubleshooting.html ${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/docs/HOWTO-samhain+GnuPG.html ${DOCSDIR}
