@@ -31,7 +31,7 @@ fi
 if [ -f ${REGCHROME} ]; then
 	./run-mozilla.sh ${REGCHROME} || true
 fi
-if [ -f ${MOZBIN} -a "${1%-*}" == "nvu" ]; then
+if [ -f ${MOZBIN} -a "${1%-*}" = "nvu" ]; then
 	./run-mozilla.sh ${MOZBIN} -register > /dev/null 2>&1
 fi
 if [ ! -d %%PREFIX%%/lib/browser_plugins ]; then
