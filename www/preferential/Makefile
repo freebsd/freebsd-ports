@@ -9,9 +9,8 @@ PORTNAME?=	preferential
 PORTVERSION=	0.7.1
 PORTREVISION?=	1
 CATEGORIES=	www
-MASTER_SITES=	http://downloads.mozdev.org/preferential/versions/	\
-		http://ftp.ntua.gr/pub/www/mozdev/preferential/versions/	\
-		http://ftp.iasi.roedu.net/mirrors/mozdev.org/preferential/versions/
+MASTER_SITES=	${MASTER_SITE_MOZDEV}
+MASTER_SITE_SUBDIR=	${PORTNAME}/versions
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER?=	ports@FreeBSD.org

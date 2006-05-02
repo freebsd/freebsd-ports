@@ -8,8 +8,8 @@
 PORTNAME=	mozex
 PORTVERSION=	1.9.0
 CATEGORIES=	www
-MASTER_SITES=	http://mozdev.oregonstate.edu/mozex/	\
-		http://downloads.mozdev.org/mozex/
+MASTER_SITES=	${MASTER_SITE_MOZDEV}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mozex allows Firefox's users to use external programs for mail, news, etc.
