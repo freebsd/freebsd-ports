@@ -47,6 +47,7 @@ bin/meta
 %%SITE_PERL%%/Acme/MetaSyntactic/octothorpe.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/opcodes.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/oulipo.pm
+%%SITE_PERL%%/Acme/MetaSyntactic/pantagruel.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/pasta.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/peanuts.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/phonetic.pm

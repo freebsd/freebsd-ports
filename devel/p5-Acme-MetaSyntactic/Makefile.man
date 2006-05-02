@@ -49,6 +49,7 @@ MAN3+=	Acme::MetaSyntactic::monty_spam.3
 MAN3+=	Acme::MetaSyntactic::octothorpe.3
 MAN3+=	Acme::MetaSyntactic::opcodes.3
 MAN3+=	Acme::MetaSyntactic::oulipo.3
+MAN3+=	Acme::MetaSyntactic::pantagruel.3
 MAN3+=	Acme::MetaSyntactic::pasta.3
 MAN3+=	Acme::MetaSyntactic::peanuts.3
 MAN3+=	Acme::MetaSyntactic::phonetic.3
