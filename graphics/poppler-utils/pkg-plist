@@ -1,0 +1,7 @@
+bin/pdffonts
+bin/pdfimages
+bin/pdfinfo
+bin/pdftohtml
+bin/pdftoppm
+bin/pdftops
+bin/pdftotext
