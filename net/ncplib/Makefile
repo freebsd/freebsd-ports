@@ -20,7 +20,7 @@ IGNORE=		requires kernel source
 MANCOMPRESSED=	yes
 
 MAN1=	ncpasswd.1 ncprint.1 ncpsend.1 ncpurge.1
-MAN8=	ipxping.8
+MAN8=	ipxping.8 ncpsvc.8
 
 post-install:
 .if !defined(NOPORTDOCS)
