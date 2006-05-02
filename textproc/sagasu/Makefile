@@ -7,15 +7,14 @@
 PORTNAME=	sagasu
 PORTVERSION=	2.0.8
 CATEGORIES=	textproc gnome
-MASTER_SITES=	http://www3.sympatico.ca/sarrazip/dev/ \
-		http://demian.dyndns.org/src/
+MASTER_SITES=	http://www3.sympatico.ca/sarrazip/dev/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GNOME tool to find strings in a set of files
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomeprefix libgnomeui
-USE_REINPLACE=	yes
+USE_GETTEXT=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
