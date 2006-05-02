@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	p7zip
-PORTVERSION=	4.37
+PORTVERSION=	4.39
 CATEGORIES=	archivers
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,18 +19,18 @@ USE_BZIP2=	yes
 MAKEFILE=	makefile
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}
 PORTDOCS=	*
-MAN1=		7z.1 7za.1
+MAN1=		7z.1 7za.1 7zr.1
 MANCOMPRESSED=	no
 
 DLLDIR=		${PREFIX}/libexec/p7zip
 
 PLIST_SUB=	MODULES=""
-ALL_TARGET=	7z 7za sfx
-7ZBIN=		7z 7za 7zCon.sfx
+ALL_TARGET=	7z 7za 7zr sfx
+7ZBIN=		7z 7za 7zr 7zCon.sfx
 .if defined(WITHOUT_MODULES)
 PLIST_SUB=	MODULES="@comment "
-ALL_TARGET=	7za sfx
-7ZBIN=		7za 7zCon.sfx
+ALL_TARGET=	7za 7zr sfx
+7ZBIN=		7za 7zr 7zCon.sfx
 .endif
 
 .include <bsd.port.pre.mk>
@@ -56,17 +56,18 @@ post-patch:
 		${WRKSRC}/man1/*
 
 do-install:
-	${MKDIR} ${DLLDIR}
+	${INSTALL} -d ${DLLDIR}
 .for f in ${7ZBIN}
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/${f} ${DLLDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/${f} ${DLLDIR}/
 .endfor
-	${INSTALL_SCRIPT} ${FILESDIR}/7z ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${FILESDIR}/7z ${PREFIX}/bin/
 	${LN} -sf 7z ${PREFIX}/bin/7za
-	${INSTALL_SCRIPT} ${FILESDIR}/p7zip ${PREFIX}/bin
+	${LN} -sf 7z ${PREFIX}/bin/7zr
+	${INSTALL_SCRIPT} ${FILESDIR}/p7zip ${PREFIX}/bin/
 .if !defined(WITHOUT_MODULES)
 .for f in Codecs Formats
-	${MKDIR} ${DLLDIR}/${f}
-	${INSTALL_DATA} ${WRKSRC}/bin/${f}/* ${DLLDIR}/${f}
+	${INSTALL} -d ${DLLDIR}/${f}
+	${INSTALL_DATA} ${WRKSRC}/bin/${f}/* ${DLLDIR}/${f}/
 .endfor
 .endif
 .if !defined(NOPORTDOCS)
@@ -77,8 +78,6 @@ do-install:
 	${FIND} ${DOCSDIR} -type d | ${XARGS} ${CHMOD} 755
 	${FIND} ${DOCSDIR} -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
 .endif
-.for m in ${MAN1}
-	${INSTALL} ${WRKSRC}/man1/${m} ${MAN1PREFIX}/man/man1
-.endfor
+	${INSTALL_MAN} ${MAN1:S,^,${WRKSRC}/man1/,} ${MAN1PREFIX}/man/man1/
 
 .include <bsd.port.post.mk>
