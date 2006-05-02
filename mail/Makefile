@@ -154,6 +154,7 @@
     SUBDIR += kiltdown
     SUBDIR += kshowmail
     SUBDIR += lbdb
+    SUBDIR += lens
     SUBDIR += libdomainkeys
     SUBDIR += libesmtp
     SUBDIR += libetpan

@@ -1,0 +1,12 @@
+bin/lens
+%%RUBY_SITELIBDIR%%/lens/classify.rb
+%%RUBY_SITELIBDIR%%/lens/lens.rb
+%%RUBY_SITELIBDIR%%/lens/maildir.rb
+%%RUBY_SITELIBDIR%%/lens/message.rb
+%%RUBY_SITELIBDIR%%/lens/parsedate.rb
+@dirrm %%RUBY_SITELIBDIR%%/lens
+%%EXAMPLESDIR%%/dot.commandmailrc
+%%EXAMPLESDIR%%/dot.lensrc
+@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
