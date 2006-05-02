@@ -21,7 +21,6 @@ USE_X_PREFIX=	yes
 USE_GNOME=	desktopfileutils gnomehack gnomemenus gnomeprefix gnometarget \
 		gtksourceview intlhack libgnomeprintui libgnomeui libgtkhtml
 USE_XPM=	yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -45,7 +44,10 @@ CONFIGURE_ARGS+=	--enable-enchant
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|$${DATADIRNAME}/$${PACKAGE}|$${DATADIRNAME}/gnome/$${PACKAGE}|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|$${DATADIRNAME}/$${PACKAGE}|$${DATADIRNAME}/gnome/$${PACKAGE}|g ; \
+		s|-DGNOME_DISABLE_DEPRECATED||g ; \
+		s|-DGNOMEUI_DISABLE_DEPRECATED||g ; \
+		s|-DGTK_DISABLE_DEPRECATED||g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|\&\& make|\&\& $$(MAKE)|g' ${WRKSRC}/tests/Makefile.in
 
 .include <bsd.port.mk>
