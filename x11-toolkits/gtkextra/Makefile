@@ -14,7 +14,7 @@ MASTER_SITES=	http://gtkextra.sourceforge.net/src/ \
 MASTER_SITE_SUBDIR=	scigraphica
 DISTNAME=	${PORTNAME:S/gtk/gtk+/}-${PORTVERSION}
 
-MAINTAINER=	gnome@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A useful widget set complementary to GTK+
 
 USE_X_PREFIX=	yes
