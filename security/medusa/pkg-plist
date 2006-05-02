@@ -1,0 +1,11 @@
+@comment $FreeBSD$
+bin/medusa
+lib/medusa/modules/telnet.mod
+lib/medusa/modules/smbnt.mod
+lib/medusa/modules/http.mod
+lib/medusa/modules/ssh.mod
+lib/medusa/modules/mssql.mod
+lib/medusa/modules/pop3.mod
+lib/medusa/modules/mysql.mod
+@dirrm lib/medusa/modules
+@dirrm lib/medusa
