@@ -10336,6 +10336,7 @@ popper		ports/mail/popper
 poppler		ports/graphics/poppler
 poppler-gtk	ports/graphics/poppler-gtk
 poppler-qt	ports/graphics/poppler-qt
+poppler-utils	ports/graphics/poppler-utils
 poppwd		ports/mail/poppwd
 poppy		ports/mail/poppy
 popt		ports/devel/popt
