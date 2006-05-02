@@ -14,5 +14,5 @@ updated or newly created files and stores unchanged files as hard
 links to the files of the previous day's snapshot for saving a disk
 space.
 
-WWW:	http://namazu.org/~satoru/pdumpfs/index.html.en
+WWW:	http://0xcc.net/pdumpfs/
 Author:	Satoru Takabayashi <satoru@namazu.org>
