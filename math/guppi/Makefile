@@ -13,11 +13,12 @@ MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/Guppi/0.40
 DISTNAME=	Guppi-${PORTVERSION}
 
-MAINTAINER=	gnome@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A plotting program for GNOME
 
 LIB_DEPENDS=	guile.15:${PORTSDIR}/lang/guile
 
+USE_GETTEXT=	yes
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
