@@ -241,6 +241,7 @@
     SUBDIR += md5coll
     SUBDIR += md5deep
     SUBDIR += mdcrack
+    SUBDIR += medusa
     SUBDIR += metasploit
     SUBDIR += mhash
     SUBDIR += mindterm-binary
