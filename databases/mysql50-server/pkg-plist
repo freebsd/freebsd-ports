@@ -17,10 +17,12 @@ bin/mysqld_safe
 %%NDB%%bin/ndb_desc
 %%NDB%%bin/ndb_drop_index
 %%NDB%%bin/ndb_drop_table
+%%NDB%%bin/ndb_error_reporter
 %%NDB%%bin/ndb_mgm
 %%NDB%%bin/ndb_restore
 %%NDB%%bin/ndb_select_all
 %%NDB%%bin/ndb_select_count
+%%NDB%%bin/ndb_size.pl
 %%NDB%%bin/ndb_show_tables
 %%NDB%%bin/ndb_test_platform
 %%NDB%%bin/ndb_waiter
@@ -123,6 +125,7 @@ libexec/mysqld
 %%DATADIR%%/mysql-log-rotate
 %%DATADIR%%/mysql.server
 %%DATADIR%%/ndb-config-2-node.ini
+%%NDB%%%%DATADIR%%/ndb_size.tmpl
 %%DATADIR%%/norwegian-ny/errmsg.sys
 %%DATADIR%%/norwegian/errmsg.sys
 %%DATADIR%%/polish/errmsg.sys
