@@ -2288,3 +2288,4 @@ audio/gstreamer-plugins-polyp|audio/gstreamer-plugins-polyp80|2006-04-29|Not par
 www/evolution-caldav||2006-04-29|Now included in evolution-data-server and evolution
 graphics/mrsidviewer||2006-04-30|Removed (distribution no longer available from vendor)
 graphics/kimdaba|graphics/kphotoalbum|2006-04-30|renamed
+sysutils/sge53||2006-05-02|Has expired: SGE 5.3 is no longer maintained.  Please consider sysutils/sge instead
