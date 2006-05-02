@@ -5455,6 +5455,7 @@ leim20		ports/editors/leim20
 leim21		ports/editors/leim21
 lemmatizer	ports/textproc/lemmatizer
 lemon		ports/devel/lemon
+lens		ports/mail/lens
 leo		ports/editors/leo
 leoarg		ports/devel/leoarg
 leocad		ports/cad/leocad
