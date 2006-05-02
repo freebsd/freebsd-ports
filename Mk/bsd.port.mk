@@ -1831,7 +1831,7 @@ USE_SUBMAKE=	yes
 
 .if defined(USE_XLIB)
 .	if defined(USE_LINUX)
-RUN_DEPENDS+=	${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-XFree86-libs
+RUN_DEPENDS+=	${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-xorg-libs
 .	else
 LIB_DEPENDS+=	X11.6:${X_LIBRARIES_PORT}
 .	endif
@@ -1914,7 +1914,11 @@ MAKE_ENV+=		PREFIX=${PREFIX} LOCALBASE=${LOCALBASE} X11BASE=${X11BASE} MOTIFLIB=
 
 .if ${OSVERSION} < 500016
 PTHREAD_CFLAGS?=	-D_THREAD_SAFE
+. if ${CC} == "icc"
+PTHREAD_LIBS?=		-mt
+. else
 PTHREAD_LIBS?=		-pthread
+. endif
 .elif ${OSVERSION} < 502102
 PTHREAD_CFLAGS?=	-D_THREAD_SAFE
 PTHREAD_LIBS?=		-lc_r
