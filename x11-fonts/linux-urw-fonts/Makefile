@@ -14,6 +14,9 @@ EXTRACT_SUFX=	.noarch.rpm
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Truetype fonts for use with Linux programs
 
+DEPRECATED=	"The linuxolator uses the fonts from the X-server or font-server, so there is no need to install fonts into LINUXBASE"
+EXPIRATION_DATE=2006-06-01
+
 USE_LINUX_RPM=	yes
 LINUX_DIST_VER=	4
 MD5_FILE=	${MASTERDIR}/distinfo
