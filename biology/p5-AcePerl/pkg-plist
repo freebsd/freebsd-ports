@@ -1,3 +1,4 @@
+bin/ace.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Ace.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Ace/Browser/AceSubs.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Ace/Browser/GeneSubs.pm
@@ -52,6 +53,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/Object/_insert.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/Object/_special_dump.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/Object/_to_ace_date.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/Object/_xmlNumber.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/Object/add_row.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/Object/add_tree.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/Object/asAce.al
@@ -87,10 +89,10 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/autosplit.ix
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/class_count.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/classes.al
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/count.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/date.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/date_style.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/datetime.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/debug.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/fetch_many.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/find.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/freeprotect.al
@@ -106,6 +108,8 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/split.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/status.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/timestamps.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/title.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/version.al
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/Sequence/Feature
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/Sequence
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/RPC
