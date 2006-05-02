@@ -1,0 +1,6 @@
+----------------------------- 8< -----------------------------------------
+Please note that this program requires that libsqlite3 (databases/sqlite3)
+has threads enabled. This is not happening by default, and if you
+install it from a package you don't have threads support. Reinstall
+databases/sqlite3 if you don't have this.
+----------------------------- 8< -----------------------------------------
