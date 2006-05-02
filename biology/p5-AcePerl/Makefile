@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	AcePerl
-PORTVERSION=	1.83
+PORTVERSION=	1.89
 CATEGORIES=	biology databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Ace
@@ -15,11 +15,14 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	pgollucci@p6m7g8.com
 COMMENT=	Perl5 interface to the ACEDB genome database system
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
+		${SITE_PERL}/${PERL_ARCH}/Scalar/Util.pm:${PORTSDIR}/lang/p5-Scalar-List-Utils \
+		${SITE_PERL}/Cache/Cache.pm:${PORTSDIR}/devel/p5-Cache-Cache
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
+MAN1=		ace.pl.1
 MAN3=		Ace.3 Ace::Browser::AceSubs.3 Ace::Browser::SearchSubs.3 \
 		Ace::Browser::SiteDefs.3 Ace::Graphics::Fk.3 \
 		Ace::Graphics::Glyph.3 Ace::Graphics::Glyph::anchored_arrow.3 \
@@ -42,12 +45,16 @@ MAN3=		Ace.3 Ace::Browser::AceSubs.3 Ace::Browser::SearchSubs.3 \
 
 .include <bsd.port.pre.mk>
 
+.if ${PERL_LEVEL} < 500600
+IGNORE=		requires Perl 5.6.0
+.endif
+
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"
-BROKEN=		"Does not compile on amd64 or ia64 (missing -fPIC)"
+BROKEN=		Does not compile on amd64 or ia64 (missing -fPIC)
 .endif
 
 post-patch:
 	@ ${SED} -e 's|XX__CC__XX|${CC}|' < ${FILESDIR}/FREEBSD_DEF \
-	  > ${WRKSRC}/ace/wmake/FREEBSD_DEF
+	  > ${WRKSRC}/acelib/wmake/FREEBSD_DEF
 
 .include <bsd.port.post.mk>

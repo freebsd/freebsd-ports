@@ -1,0 +1,33 @@
+--- Ace.pm.orig	Tue May  2 17:32:55 2006
++++ Ace.pm	Tue May  2 17:33:12 2006
+@@ -2,7 +2,7 @@
+ 
+ use strict;
+ use Carp qw(croak carp cluck);
+-use WeakRef;
++use Scalar::Util qw(weaken);
+ 
+ use vars qw($VERSION @ISA @EXPORT @EXPORT_OK $Error);
+ 
+--- ChangeLog.orig	Tue May  2 17:33:12 2006
++++ ChangeLog	Tue May  2 17:33:22 2006
+@@ -1,7 +1,7 @@
+ 1.89	Wed Mar  9 18:25:45 EST 2005
+ 	1. Added caching code.
+ 	2. Now requires ace binaries 4_9s or later.
+-	3. Requires CACHE::CACHE and WeakRef for caching.
++	3. Requires CACHE::CACHE and Scalar::Util for caching.
+ 	
+ 1.87  10/3/03
+ 	1. Fixed unreadable GIF images produced by recent versions of GifAceServer.
+--- Makefile.PL.orig	Tue May  2 17:33:22 2006
++++ Makefile.PL	Tue May  2 17:33:32 2006
+@@ -35,7 +35,7 @@
+ 	      'INC'	     => "-I$headers",
+ 	      PREREQ_PM      => {
+ 				 'Digest::MD5'   => 2.0,
+-				 'WeakRef'       => 0.01,
++				 'Scalar::Util'  => 1,
+ 				 'Cache::Cache'  => 1.03,
+ 				},
+ 	      'dist'         => {'COMPRESS'=>'gzip -9f', 
