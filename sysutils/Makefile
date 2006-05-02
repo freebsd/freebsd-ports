@@ -505,7 +505,6 @@
     SUBDIR += sfdisk
     SUBDIR += sformat
     SUBDIR += sge
-    SUBDIR += sgeee53
     SUBDIR += shlock
     SUBDIR += sjog
     SUBDIR += skill
