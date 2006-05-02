@@ -1,5 +1,4 @@
 bin/magicfilter
-etc/mf.magic
 libexec/magicfilter/bj10e
 libexec/magicfilter/bj200
 libexec/magicfilter/bj600
