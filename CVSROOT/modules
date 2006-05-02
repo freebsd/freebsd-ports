@@ -12058,7 +12058,6 @@ sfslite-dbg	ports/devel/sfslite-dbg
 sfslite-noopt	ports/devel/sfslite-noopt
 sgb		ports/devel/sgb
 sge		ports/sysutils/sge
-sge53		ports/sysutils/sge53
 sgeee53		ports/sysutils/sgeee53
 sgf2tex		ports/print/sgf2tex
 sgifonts	ports/x11-fonts/sgifonts
