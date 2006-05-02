@@ -19,6 +19,7 @@ PLIST=		${.CURDIR}/pkg-plist
 
 USE_GNOME=	gnomehack lthack gnometarget libxslt
 USE_PYTHON=	yes
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc \
 		--with-python=${LOCALBASE}
 
