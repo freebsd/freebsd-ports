@@ -6,39 +6,37 @@
 #
 
 PORTNAME=	cphone
-PORTVERSION=	0.3.1
-PORTREVISION=	2
+DISTVERSION=	0.3.2.cvs.20060407
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	ftp://ftp.frm2.tum.de/pub/jpulz/FreeBSD/distfiles/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	Joerg.Pulz@frm2.tum.de
 COMMENT=	H323 Video Conferencing Program which uses QT
 
-BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/net/openh323-112:build \
-		qmake:${PORTSDIR}/devel/qmake
-
-NOCLEANDEPENDS=	yes
+LIB_DEPENDS=	h323_r.1:${PORTSDIR}/net/openh323
+BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 
 PLIST_FILES=	bin/cphone
 USE_BZIP2=	yes
 USE_BISON=	yes
 USE_QT_VER=	3
 USE_GMAKE=	yes
-ALL_TARGET=	optnoshared
+ALL_TARGET=	optshared
 MAKE_ENV=	QTDIR=${X11BASE} \
-		PWLIBDIR=${WRKDIRPREFIX}${.CURDIR}/../../devel/pwlib152/work/pwlib \
-		OPENH323DIR=${WRKDIRPREFIX}${.CURDIR}/../openh323-112/work/openh323
-THE_MACHTYPE=	${ARCH:S/i386/x86/}
-MAKE_ARGS=	OSTYPE=${OPSYS} MACHTYPE=${THE_MACHTYPE} OSRELEASE=${OSVERSION} CPLUS=${CXX}
+		PWLIBDIR=${LOCALBASE}/share/pwlib \
+		OPENH323DIR=${LOCALBASE}/share/openh323 \
+		SYSLIBDIR=${LOCALBASE}/lib
+MAKE_ARGS=	OSTYPE=${OPSYS} MACHTYPE=${ARCH:S/i386/x86/} \
+		OSRELEASE=${OSVERSION} CPLUS=${CXX}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
+post-patch:
+	@${REINPLACE_CMD} -e '/graphdisplay.h/d' -e '/videodisplay.h/d' \
+		-e '/labeldisplay.h/d' ${WRKSRC}/mainwindow.ui \
+		${WRKSRC}/settings.ui ${WRKSRC}/statistics.ui
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/obj_${OPSYS}_${THE_MACHTYPE}_r/cphone ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/obj_r/cphone ${PREFIX}/bin
 
 .include <bsd.port.post.mk>
