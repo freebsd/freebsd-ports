@@ -9,14 +9,8 @@
 PORTNAME=	thunderbird-dictionaries
 PORTVERSION=	20060220
 CATEGORIES=	mail
-MASTER_SITES=	http://mozdev.dns4.com/dictionaries/ \
-		http://ftp.heanet.ie/pub/mozdev/dictionaries/ \
-		http://mozdev.oregonstate.edu/dictionaries/ \
-		http://mirror.meisterwerk.net/rmozdev/dictionaries/ \
-		http://ftp.ntua.gr/pub/www/mozdev/dictionaries/ \
-		http://www.devlib.org/mozdev/dictionaries/ \
-		http://ftp.iasi.roedu.net/mirrors/mozdev.org/dictionaries/ \
-		http://mozdev.archive.hk/dictionaries/
+MASTER_SITES=	${MASTER_SITE_MOZDEV}
+MASTER_SITE_SUBDIR=	dictionaries
 DISTFILES=	# filled in later after options
 DIST_SUBDIR=	thunderbird
 
