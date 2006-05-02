@@ -7,7 +7,7 @@
 
 PORTNAME=	Mail-SpamAssassin
 PORTVERSION=	3.1.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_APACHE:S/$/:apache/} ${MASTER_SITE_PERL_CPAN:S/$/:cpan/}
 MASTER_SITE_SUBDIR=	spamassassin/source/:apache Mail/:cpan
@@ -69,11 +69,11 @@ RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-P
 .endif
 
 .if defined(WITH_RAZOR)
-RUN_DEPENDS+=	razor-client:${PORTSDIR}/mail/razor-agents
+RUN_DEPENDS+=	razor-agents>=2.81:${PORTSDIR}/mail/razor-agents
 .endif
 
 .if defined(WITH_DOMAINKEYS)
-RUN_DEPENDS+=	${SITE_PERL}/Mail/DomainKeys.pm:${PORTSDIR}/mail/p5-Mail-DomainKeys
+RUN_DEPENDS+=	p5-Mail-DomainKeys>=0.80:${PORTSDIR}/mail/p5-Mail-DomainKeys
 .endif
 
 .if defined(WITH_RELAY_COUNTRY)
@@ -211,7 +211,7 @@ post-install:
 	@${SED} -e 's#PREFIX#${PREFIX}#' ${PKGMESSAGE}
 
 .if ${PERL_LEVEL} < 500600
-IGNORE=	Needs perl 5.6.1 or higher, install lang/perl5.8 and try again
+IGNORE=	needs perl 5.6.1 or higher, install lang/perl5.8 and try again
 .endif
 
 .if ${PERL_LEVEL} < 500800
