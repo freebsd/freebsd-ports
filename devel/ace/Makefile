@@ -40,7 +40,7 @@ BROKEN=		does not support
 .endif
 
 .if ${OSVERSION} > 700015
-EXTRA_PATCHES=	extra-ace-OS_NS_netdb.inl
+EXTRA_PATCHES=	${FILESDIR}/extra-ace-OS_NS_netdb.inl
 .endif
 
 post-extract:
