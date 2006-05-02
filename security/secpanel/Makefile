@@ -11,7 +11,7 @@ PORTEPOCH=	1
 CATEGORIES=	security tcl84 tk84
 MASTER_SITES=	http://www.pingx.net/secpanel/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	infofarmer@gmail.com
 COMMENT=	GUI for managing and running ssh and related utilities
 
 RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84 \
