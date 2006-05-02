@@ -54,6 +54,30 @@ pkgname()
 	make -C ${PORTSDIR}/${1} -V PKGNAME
 }
 
+# return category/port if arg is directly port's directory on the filesystem
+find_catport()
+{
+	arg=${1}
+
+	if [ -d "${PORTSDIR}/${arg}" ] ; then
+		# arg is category/port
+		echo ${arg}
+	elif [ -d "${arg}" ] ; then
+		# arg is the port's directory somewhere in the filesystem
+		# either absolute or relative
+
+		# get the full path
+		rp=`realpath ${arg}`
+
+		category=`basename \`dirname ${rp}\``
+		port=`basename ${rp}`
+		echo ${category}/${port}
+	else
+		echo "What do you mean by \`${arg}'?" >&2
+		exit 1
+	fi
+}
+
 find_expired()
 {
 	EXPVAR=EXPIRATION_DATE
@@ -274,7 +298,7 @@ if [ ${1} = "-d" ] ; then
 	if [ ${#} -ne 2 ] ; then
 		usage
 	fi
-	catport=${2}
+	catport=`find_catport ${2}`
 	check_dep ${catport} 0 ${catport}
 	exit
 fi
@@ -293,6 +317,8 @@ cd ${codir}
 co_common
 
 for catport in $* ; do
+	# convert to category/port
+	catport=`find_catport ${catport}`
 	cat=`dirname ${catport}`
 	port=`basename ${catport}`
 	# remove any trailing slashes
