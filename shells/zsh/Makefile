@@ -78,10 +78,6 @@ CONFIGURE_ARGS+=	--enable-zsh-mem --enable-zsh-secure-free
 CONFIGURE_ARGS+=	--enable-maildir-support
 .endif
 
-.if !defined(WITHOUT_ZSH_MULTIBYTE)
-CONFIGURE_ARGS+=	--enable-multibyte
-.endif
-
 .if defined(NOSHARED)
 CONFIGURE_ENV=		LDFLAGS="${LDFLAGS} -static"
 CONFIGURE_ARGS+=	--disable-dynamic
@@ -109,6 +105,10 @@ DOCS=		LICENCE META-FAQ README Etc/BUGS Etc/CONTRIBUTORS Etc/FAQ \
 EXAMPLES=	zlogin zshenv zshrc
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500000 && !defined(WITHOUT_ZSH_MULTIBYTE)
+CONFIGURE_ARGS+=	--enable-multibyte
+.endif
 
 .if ${OSVERSION} >= 503000
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-bsdtar
