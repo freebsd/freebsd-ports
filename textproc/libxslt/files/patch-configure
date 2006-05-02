@@ -1,0 +1,29 @@
+--- configure.orig	Tue May  2 18:32:39 2006
++++ configure	Tue May  2 18:34:50 2006
+@@ -21701,7 +21701,7 @@ except: print 0"`
+ 	   -d $with_python/lib/python$PYTHON_VERSION/site-packages
+ 	then
+ 	    PYTHON_INCLUDES=$with_python/include/python$PYTHON_VERSION
+-	    PYTHON_SITE_PACKAGES='$(libdir)/lib/python$(PYTHON_VERSION)/site-packages'
++	    PYTHON_SITE_PACKAGES=$with_python/lib/python$PYTHON_VERSION/site-packages
+ 	else
+ 	    if test -r $prefix/include/python$PYTHON_VERSION/Python.h
+ 	    then
+@@ -21724,7 +21724,7 @@ except: print 0"`
+     fi
+     if test "$with_python" != ""
+     then
+-        pythondir=$(PYTHON_SITE_PACKAGES)
++        pythondir='$(PYTHON_SITE_PACKAGES)'
+     else
+         pythondir='$(libdir)/python$(PYTHON_VERSION)/site-packages'
+     fi
+@@ -22057,7 +22057,7 @@ fi
+ 
+ 
+ 
+-if test "$WITH_MODULES" == "1"; then
++if test "$WITH_MODULES" = "1"; then
+   WITH_MODULES_TRUE=
+   WITH_MODULES_FALSE='#'
+ else
