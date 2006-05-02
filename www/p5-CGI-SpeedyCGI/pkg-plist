@@ -1,4 +1,4 @@
-%%APACHE%%%%AP_LIBEXEC%%/mod_speedycgi.so
+%%APACHE%%%%APACHEMODDIR%%/mod_speedycgi.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/SpeedyCGI/.packlist
 %%SITE_PERL%%/CGI/SpeedyCGI.pm
 bin/speedy
