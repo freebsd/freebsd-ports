@@ -1,0 +1,377 @@
+# New ports collection makefile for:	p5-bioperl-run
+# Date created:		21 February 2006
+# Whom:	      		Mauricio Herrera Cuadra <mauricio@arareko.net>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	bioperl-run
+PORTVERSION=	1.4
+CATEGORIES=	biology perl5
+MASTER_SITES=	http://bioperl.org/DIST/ \
+		${MASTER_SITE_PERL_CPAN}
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	mauricio@arareko.net
+COMMENT=	Wrapper modules for common bioinformatics tools
+
+BUILD_DEPENDS=	p5-bioperl=1.4:${PORTSDIR}/biology/p5-bioperl \
+		${SITE_PERL}/Algorithm/Diff.pm:${PORTSDIR}/devel/p5-Algorithm-Diff
+RUN_DEPENDS=	${BUILD_DEPENDS}
+
+CONFLICTS=	p5-bioperl-run-1.[13579]*
+
+PERL_CONFIGURE=	YES
+
+MAN3=		Bio::Factory::EMBOSS.3 \
+		Bio::Tools::Run::Alignment::Blat.3 \
+		Bio::Tools::Run::Alignment::Clustalw.3 \
+		Bio::Tools::Run::Alignment::DBA.3 \
+		Bio::Tools::Run::Alignment::Lagan.3 \
+		Bio::Tools::Run::Alignment::Sim4.3 \
+		Bio::Tools::Run::Alignment::StandAloneFasta.3 \
+		Bio::Tools::Run::Alignment::TCoffee.3 \
+		Bio::Tools::Run::Analysis.3 \
+		Bio::Tools::Run::Analysis::soap.3 \
+		Bio::Tools::Run::AnalysisFactory.3 \
+		Bio::Tools::Run::AnalysisFactory::Pise.3 \
+		Bio::Tools::Run::AnalysisFactory::soap.3 \
+		Bio::Tools::Run::Coil.3 \
+		Bio::Tools::Run::EMBOSSApplication.3 \
+		Bio::Tools::Run::EMBOSSacd.3 \
+		Bio::Tools::Run::Eponine.3 \
+		Bio::Tools::Run::FootPrinter.3 \
+		Bio::Tools::Run::Genewise.3 \
+		Bio::Tools::Run::Genscan.3 \
+		Bio::Tools::Run::Hmmer.3 \
+		Bio::Tools::Run::Hmmpfam.3 \
+		Bio::Tools::Run::Mdust.3 \
+		Bio::Tools::Run::Phylo::Molphy::ProtML.3 \
+		Bio::Tools::Run::Phylo::PAML::Codeml.3 \
+		Bio::Tools::Run::Phylo::PAML::Yn00.3 \
+		Bio::Tools::Run::Phylo::Phylip::Base.3 \
+		Bio::Tools::Run::Phylo::Phylip::Consense.3 \
+		Bio::Tools::Run::Phylo::Phylip::DrawGram.3 \
+		Bio::Tools::Run::Phylo::Phylip::DrawTree.3 \
+		Bio::Tools::Run::Phylo::Phylip::Neighbor.3 \
+		Bio::Tools::Run::Phylo::Phylip::PhylipConf.3 \
+		Bio::Tools::Run::Phylo::Phylip::ProtDist.3 \
+		Bio::Tools::Run::Phylo::Phylip::ProtPars.3 \
+		Bio::Tools::Run::Phylo::Phylip::SeqBoot.3 \
+		Bio::Tools::Run::PiseApplication.3 \
+		Bio::Tools::Run::PiseApplication::CSR.3 \
+		Bio::Tools::Run::PiseApplication::Puzzle.3 \
+		Bio::Tools::Run::PiseApplication::abiview.3 \
+		Bio::Tools::Run::PiseApplication::addquart.3 \
+		Bio::Tools::Run::PiseApplication::align2model.3 \
+		Bio::Tools::Run::PiseApplication::alistat.3 \
+		Bio::Tools::Run::PiseApplication::antigenic.3 \
+		Bio::Tools::Run::PiseApplication::assp.3 \
+		Bio::Tools::Run::PiseApplication::backtranseq.3 \
+		Bio::Tools::Run::PiseApplication::bambe.3 \
+		Bio::Tools::Run::PiseApplication::banana.3 \
+		Bio::Tools::Run::PiseApplication::bionj.3 \
+		Bio::Tools::Run::PiseApplication::biosed.3 \
+		Bio::Tools::Run::PiseApplication::bl2seq.3 \
+		Bio::Tools::Run::PiseApplication::blast2.3 \
+		Bio::Tools::Run::PiseApplication::blimps.3 \
+		Bio::Tools::Run::PiseApplication::blimps_block.3 \
+		Bio::Tools::Run::PiseApplication::blimps_matrix.3 \
+		Bio::Tools::Run::PiseApplication::boxshade.3 \
+		Bio::Tools::Run::PiseApplication::btwisted.3 \
+		Bio::Tools::Run::PiseApplication::cai.3 \
+		Bio::Tools::Run::PiseApplication::cap.3 \
+		Bio::Tools::Run::PiseApplication::cds.3 \
+		Bio::Tools::Run::PiseApplication::chaos.3 \
+		Bio::Tools::Run::PiseApplication::charge.3 \
+		Bio::Tools::Run::PiseApplication::checktrans.3 \
+		Bio::Tools::Run::PiseApplication::chips.3 \
+		Bio::Tools::Run::PiseApplication::cirdna.3 \
+		Bio::Tools::Run::PiseApplication::clique.3 \
+		Bio::Tools::Run::PiseApplication::clustalw.3 \
+		Bio::Tools::Run::PiseApplication::clustalw_convert.3 \
+		Bio::Tools::Run::PiseApplication::codcmp.3 \
+		Bio::Tools::Run::PiseApplication::coderet.3 \
+		Bio::Tools::Run::PiseApplication::codnocod.3 \
+		Bio::Tools::Run::PiseApplication::codontree.3 \
+		Bio::Tools::Run::PiseApplication::codonw.3 \
+		Bio::Tools::Run::PiseApplication::comalign.3 \
+		Bio::Tools::Run::PiseApplication::combat.3 \
+		Bio::Tools::Run::PiseApplication::compseq.3 \
+		Bio::Tools::Run::PiseApplication::con_filter.3 \
+		Bio::Tools::Run::PiseApplication::confmat.3 \
+		Bio::Tools::Run::PiseApplication::cons.3 \
+		Bio::Tools::Run::PiseApplication::consense.3 \
+		Bio::Tools::Run::PiseApplication::consensus.3 \
+		Bio::Tools::Run::PiseApplication::cpgplot.3 \
+		Bio::Tools::Run::PiseApplication::cpgreport.3 \
+		Bio::Tools::Run::PiseApplication::cusp.3 \
+		Bio::Tools::Run::PiseApplication::cutseq.3 \
+		Bio::Tools::Run::PiseApplication::dan.3 \
+		Bio::Tools::Run::PiseApplication::dca.3 \
+		Bio::Tools::Run::PiseApplication::decorate.3 \
+		Bio::Tools::Run::PiseApplication::degapseq.3 \
+		Bio::Tools::Run::PiseApplication::descseq.3 \
+		Bio::Tools::Run::PiseApplication::dialign2.3 \
+		Bio::Tools::Run::PiseApplication::diffseq.3 \
+		Bio::Tools::Run::PiseApplication::digest.3 \
+		Bio::Tools::Run::PiseApplication::distmat.3 \
+		Bio::Tools::Run::PiseApplication::distquart.3 \
+		Bio::Tools::Run::PiseApplication::dnadist.3 \
+		Bio::Tools::Run::PiseApplication::dnapars.3 \
+		Bio::Tools::Run::PiseApplication::dollop.3 \
+		Bio::Tools::Run::PiseApplication::domainer.3 \
+		Bio::Tools::Run::PiseApplication::dotmatcher.3 \
+		Bio::Tools::Run::PiseApplication::dotpath.3 \
+		Bio::Tools::Run::PiseApplication::dottup.3 \
+		Bio::Tools::Run::PiseApplication::drawgram.3 \
+		Bio::Tools::Run::PiseApplication::drawpyr.3 \
+		Bio::Tools::Run::PiseApplication::drawtree.3 \
+		Bio::Tools::Run::PiseApplication::dreg.3 \
+		Bio::Tools::Run::PiseApplication::druid.3 \
+		Bio::Tools::Run::PiseApplication::dsc.3 \
+		Bio::Tools::Run::PiseApplication::dssp.3 \
+		Bio::Tools::Run::PiseApplication::einverted.3 \
+		Bio::Tools::Run::PiseApplication::emma.3 \
+		Bio::Tools::Run::PiseApplication::emowse.3 \
+		Bio::Tools::Run::PiseApplication::environ.3 \
+		Bio::Tools::Run::PiseApplication::eprimer3.3 \
+		Bio::Tools::Run::PiseApplication::equicktandem.3 \
+		Bio::Tools::Run::PiseApplication::est2genome.3 \
+		Bio::Tools::Run::PiseApplication::etandem.3 \
+		Bio::Tools::Run::PiseApplication::extractfeat.3 \
+		Bio::Tools::Run::PiseApplication::extractseq.3 \
+		Bio::Tools::Run::PiseApplication::fasta.3 \
+		Bio::Tools::Run::PiseApplication::fastdnaml.3 \
+		Bio::Tools::Run::PiseApplication::fastrna.3 \
+		Bio::Tools::Run::PiseApplication::filtersites.3 \
+		Bio::Tools::Run::PiseApplication::findkm.3 \
+		Bio::Tools::Run::PiseApplication::fitch.3 \
+		Bio::Tools::Run::PiseApplication::fmtseq.3 \
+		Bio::Tools::Run::PiseApplication::freak.3 \
+		Bio::Tools::Run::PiseApplication::fuzznuc.3 \
+		Bio::Tools::Run::PiseApplication::fuzzpro.3 \
+		Bio::Tools::Run::PiseApplication::fuzztran.3 \
+		Bio::Tools::Run::PiseApplication::gb2xml.3 \
+		Bio::Tools::Run::PiseApplication::geecee.3 \
+		Bio::Tools::Run::PiseApplication::genscan.3 \
+		Bio::Tools::Run::PiseApplication::getblock.3 \
+		Bio::Tools::Run::PiseApplication::getorf.3 \
+		Bio::Tools::Run::PiseApplication::gff2ps.3 \
+		Bio::Tools::Run::PiseApplication::gibbs.3 \
+		Bio::Tools::Run::PiseApplication::gibbs_scan.3 \
+		Bio::Tools::Run::PiseApplication::golden.3 \
+		Bio::Tools::Run::PiseApplication::grailclnt.3 \
+		Bio::Tools::Run::PiseApplication::gruppi.3 \
+		Bio::Tools::Run::PiseApplication::helixturnhelix.3 \
+		Bio::Tools::Run::PiseApplication::hmmalign.3 \
+		Bio::Tools::Run::PiseApplication::hmmbuild.3 \
+		Bio::Tools::Run::PiseApplication::hmmcalibrate.3 \
+		Bio::Tools::Run::PiseApplication::hmmconvert.3 \
+		Bio::Tools::Run::PiseApplication::hmmemit.3 \
+		Bio::Tools::Run::PiseApplication::hmmer2sam.3 \
+		Bio::Tools::Run::PiseApplication::hmmfetch.3 \
+		Bio::Tools::Run::PiseApplication::hmmpfam.3 \
+		Bio::Tools::Run::PiseApplication::hmmscore.3 \
+		Bio::Tools::Run::PiseApplication::hmmsearch.3 \
+		Bio::Tools::Run::PiseApplication::hmoment.3 \
+		Bio::Tools::Run::PiseApplication::homology.3 \
+		Bio::Tools::Run::PiseApplication::html4blast.3 \
+		Bio::Tools::Run::PiseApplication::iep.3 \
+		Bio::Tools::Run::PiseApplication::infoalign.3 \
+		Bio::Tools::Run::PiseApplication::infoseq.3 \
+		Bio::Tools::Run::PiseApplication::interface.3 \
+		Bio::Tools::Run::PiseApplication::isochore.3 \
+		Bio::Tools::Run::PiseApplication::kitsch.3 \
+		Bio::Tools::Run::PiseApplication::lassap.3 \
+		Bio::Tools::Run::PiseApplication::lgicsearch.3 \
+		Bio::Tools::Run::PiseApplication::lindna.3 \
+		Bio::Tools::Run::PiseApplication::listor.3 \
+		Bio::Tools::Run::PiseApplication::loadseq.3 \
+		Bio::Tools::Run::PiseApplication::lvb.3 \
+		Bio::Tools::Run::PiseApplication::makehist.3 \
+		Bio::Tools::Run::PiseApplication::map.3 \
+		Bio::Tools::Run::PiseApplication::marscan.3 \
+		Bio::Tools::Run::PiseApplication::maskfeat.3 \
+		Bio::Tools::Run::PiseApplication::maskseq.3 \
+		Bio::Tools::Run::PiseApplication::matcher.3 \
+		Bio::Tools::Run::PiseApplication::megamerger.3 \
+		Bio::Tools::Run::PiseApplication::melting.3 \
+		Bio::Tools::Run::PiseApplication::merger.3 \
+		Bio::Tools::Run::PiseApplication::mfold.3 \
+		Bio::Tools::Run::PiseApplication::mix.3 \
+		Bio::Tools::Run::PiseApplication::modelfromalign.3 \
+		Bio::Tools::Run::PiseApplication::most.3 \
+		Bio::Tools::Run::PiseApplication::mreps.3 \
+		Bio::Tools::Run::PiseApplication::msa.3 \
+		Bio::Tools::Run::PiseApplication::msbar.3 \
+		Bio::Tools::Run::PiseApplication::mspcrunch.3 \
+		Bio::Tools::Run::PiseApplication::mview_alig.3 \
+		Bio::Tools::Run::PiseApplication::mview_blast.3 \
+		Bio::Tools::Run::PiseApplication::mwfilter.3 \
+		Bio::Tools::Run::PiseApplication::needle.3 \
+		Bio::Tools::Run::PiseApplication::neighbor.3 \
+		Bio::Tools::Run::PiseApplication::newcpgreport.3 \
+		Bio::Tools::Run::PiseApplication::newcpgseek.3 \
+		Bio::Tools::Run::PiseApplication::newseq.3 \
+		Bio::Tools::Run::PiseApplication::njdist.3 \
+		Bio::Tools::Run::PiseApplication::nnssp.3 \
+		Bio::Tools::Run::PiseApplication::notseq.3 \
+		Bio::Tools::Run::PiseApplication::nrscope.3 \
+		Bio::Tools::Run::PiseApplication::nthseq.3 \
+		Bio::Tools::Run::PiseApplication::octanol.3 \
+		Bio::Tools::Run::PiseApplication::oddcomp.3 \
+		Bio::Tools::Run::PiseApplication::palindrome.3 \
+		Bio::Tools::Run::PiseApplication::pam.3 \
+		Bio::Tools::Run::PiseApplication::parciquart.3 \
+		Bio::Tools::Run::PiseApplication::pars.3 \
+		Bio::Tools::Run::PiseApplication::pasteseq.3 \
+		Bio::Tools::Run::PiseApplication::patmatdb.3 \
+		Bio::Tools::Run::PiseApplication::patmatmotifs.3 \
+		Bio::Tools::Run::PiseApplication::patser.3 \
+		Bio::Tools::Run::PiseApplication::pdbsearch.3 \
+		Bio::Tools::Run::PiseApplication::pepcoil.3 \
+		Bio::Tools::Run::PiseApplication::pepinfo.3 \
+		Bio::Tools::Run::PiseApplication::pepnet.3 \
+		Bio::Tools::Run::PiseApplication::pepstats.3 \
+		Bio::Tools::Run::PiseApplication::pepwheel.3 \
+		Bio::Tools::Run::PiseApplication::pepwindow.3 \
+		Bio::Tools::Run::PiseApplication::pepwindowall.3 \
+		Bio::Tools::Run::PiseApplication::pestfind.3 \
+		Bio::Tools::Run::PiseApplication::pftools.3 \
+		Bio::Tools::Run::PiseApplication::phiblast.3 \
+		Bio::Tools::Run::PiseApplication::pima.3 \
+		Bio::Tools::Run::PiseApplication::plotcon.3 \
+		Bio::Tools::Run::PiseApplication::plotorf.3 \
+		Bio::Tools::Run::PiseApplication::plsearch.3 \
+		Bio::Tools::Run::PiseApplication::polydot.3 \
+		Bio::Tools::Run::PiseApplication::pratt.3 \
+		Bio::Tools::Run::PiseApplication::predator.3 \
+		Bio::Tools::Run::PiseApplication::preg.3 \
+		Bio::Tools::Run::PiseApplication::prettyalign.3 \
+		Bio::Tools::Run::PiseApplication::prettyplot.3 \
+		Bio::Tools::Run::PiseApplication::prettyseq.3 \
+		Bio::Tools::Run::PiseApplication::primersearch.3 \
+		Bio::Tools::Run::PiseApplication::primo.3 \
+		Bio::Tools::Run::PiseApplication::prodom.3 \
+		Bio::Tools::Run::PiseApplication::profit.3 \
+		Bio::Tools::Run::PiseApplication::prophecy.3 \
+		Bio::Tools::Run::PiseApplication::prophet.3 \
+		Bio::Tools::Run::PiseApplication::prose.3 \
+		Bio::Tools::Run::PiseApplication::prot_nucml.3 \
+		Bio::Tools::Run::PiseApplication::protal2dna.3 \
+		Bio::Tools::Run::PiseApplication::protdist.3 \
+		Bio::Tools::Run::PiseApplication::protpars.3 \
+		Bio::Tools::Run::PiseApplication::pscan.3 \
+		Bio::Tools::Run::PiseApplication::psiblast.3 \
+		Bio::Tools::Run::PiseApplication::psort2.3 \
+		Bio::Tools::Run::PiseApplication::pyramids.3 \
+		Bio::Tools::Run::PiseApplication::pyreval.3 \
+		Bio::Tools::Run::PiseApplication::qstar.3 \
+		Bio::Tools::Run::PiseApplication::quicktree.3 \
+		Bio::Tools::Run::PiseApplication::readnexus.3 \
+		Bio::Tools::Run::PiseApplication::readseq.3 \
+		Bio::Tools::Run::PiseApplication::recoder.3 \
+		Bio::Tools::Run::PiseApplication::redata.3 \
+		Bio::Tools::Run::PiseApplication::remap.3 \
+		Bio::Tools::Run::PiseApplication::repeats.3 \
+		Bio::Tools::Run::PiseApplication::restover.3 \
+		Bio::Tools::Run::PiseApplication::restrict.3 \
+		Bio::Tools::Run::PiseApplication::revseq.3 \
+		Bio::Tools::Run::PiseApplication::rnadistance.3 \
+		Bio::Tools::Run::PiseApplication::rnaeval.3 \
+		Bio::Tools::Run::PiseApplication::rnafold.3 \
+		Bio::Tools::Run::PiseApplication::rnaga.3 \
+		Bio::Tools::Run::PiseApplication::rnaheat.3 \
+		Bio::Tools::Run::PiseApplication::rnainverse.3 \
+		Bio::Tools::Run::PiseApplication::rnapdist.3 \
+		Bio::Tools::Run::PiseApplication::rnasubopt.3 \
+		Bio::Tools::Run::PiseApplication::sam2hmmer.3 \
+		Bio::Tools::Run::PiseApplication::sampleseqs.3 \
+		Bio::Tools::Run::PiseApplication::saps.3 \
+		Bio::Tools::Run::PiseApplication::satellites.3 \
+		Bio::Tools::Run::PiseApplication::scan_for_matches.3 \
+		Bio::Tools::Run::PiseApplication::scope.3 \
+		Bio::Tools::Run::PiseApplication::scopparse.3 \
+		Bio::Tools::Run::PiseApplication::seqboot.3 \
+		Bio::Tools::Run::PiseApplication::seqgen.3 \
+		Bio::Tools::Run::PiseApplication::seqmatchall.3 \
+		Bio::Tools::Run::PiseApplication::seqsblast.3 \
+		Bio::Tools::Run::PiseApplication::seqstat.3 \
+		Bio::Tools::Run::PiseApplication::showalign.3 \
+		Bio::Tools::Run::PiseApplication::showfeat.3 \
+		Bio::Tools::Run::PiseApplication::showorf.3 \
+		Bio::Tools::Run::PiseApplication::showseq.3 \
+		Bio::Tools::Run::PiseApplication::shuffleseq.3 \
+		Bio::Tools::Run::PiseApplication::sigcleave.3 \
+		Bio::Tools::Run::PiseApplication::siggen.3 \
+		Bio::Tools::Run::PiseApplication::sigscan.3 \
+		Bio::Tools::Run::PiseApplication::silent.3 \
+		Bio::Tools::Run::PiseApplication::sirna.3 \
+		Bio::Tools::Run::PiseApplication::splitter.3 \
+		Bio::Tools::Run::PiseApplication::sreformat.3 \
+		Bio::Tools::Run::PiseApplication::stretcher.3 \
+		Bio::Tools::Run::PiseApplication::stride.3 \
+		Bio::Tools::Run::PiseApplication::stssearch.3 \
+		Bio::Tools::Run::PiseApplication::supermatcher.3 \
+		Bio::Tools::Run::PiseApplication::syco.3 \
+		Bio::Tools::Run::PiseApplication::tacg.3 \
+		Bio::Tools::Run::PiseApplication::tfscan.3 \
+		Bio::Tools::Run::PiseApplication::tipdate.3 \
+		Bio::Tools::Run::PiseApplication::tmap.3 \
+		Bio::Tools::Run::PiseApplication::toppred.3 \
+		Bio::Tools::Run::PiseApplication::tranalign.3 \
+		Bio::Tools::Run::PiseApplication::transeq.3 \
+		Bio::Tools::Run::PiseApplication::treealign.3 \
+		Bio::Tools::Run::PiseApplication::trimest.3 \
+		Bio::Tools::Run::PiseApplication::trimseq.3 \
+		Bio::Tools::Run::PiseApplication::trnascan.3 \
+		Bio::Tools::Run::PiseApplication::twofeat.3 \
+		Bio::Tools::Run::PiseApplication::unroot.3 \
+		Bio::Tools::Run::PiseApplication::vectorstrip.3 \
+		Bio::Tools::Run::PiseApplication::water.3 \
+		Bio::Tools::Run::PiseApplication::weighbor.3 \
+		Bio::Tools::Run::PiseApplication::whichdb.3 \
+		Bio::Tools::Run::PiseApplication::wise2.3 \
+		Bio::Tools::Run::PiseApplication::wobble.3 \
+		Bio::Tools::Run::PiseApplication::wordcount.3 \
+		Bio::Tools::Run::PiseApplication::wordmatch.3 \
+		Bio::Tools::Run::PiseApplication::wublast2.3 \
+		Bio::Tools::Run::PiseApplication::xblast.3 \
+		Bio::Tools::Run::PiseApplication::xpound.3 \
+		Bio::Tools::Run::PiseJob.3 \
+		Bio::Tools::Run::PiseJobParser.3 \
+		Bio::Tools::Run::PiseWorkflow.3 \
+		Bio::Tools::Run::Primate.3 \
+		Bio::Tools::Run::Primer3.3 \
+		Bio::Tools::Run::Prints.3 \
+		Bio::Tools::Run::Profile.3 \
+		Bio::Tools::Run::Promoterwise.3 \
+		Bio::Tools::Run::Pseudowise.3 \
+		Bio::Tools::Run::RepeatMasker.3 \
+		Bio::Tools::Run::Seg.3 \
+		Bio::Tools::Run::Signalp.3 \
+		Bio::Tools::Run::Tmhmm.3 \
+		Bio::Tools::Run::TribeMCL.3 \
+		Bio::Tools::Run::Vista.3
+
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+IGNORE=		requires Perl 5.6 or better
+.endif
+
+# now install all extra stuff (docs, examples, scripts)
+post-install:
+	${MKDIR} ${DATADIR}
+	@${CP} -Rv ${WRKSRC}/scripts ${DATADIR}
+	${MKDIR} ${EXAMPLESDIR}
+	@${CP} -Rv ${WRKSRC}/examples/* ${EXAMPLESDIR}
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+.for doc in AUTHORS Changes INSTALL.PROGRAMS README
+	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
+.endfor
+.endif
+
+.include <bsd.port.post.mk>

@@ -50,6 +50,7 @@
     SUBDIR += p5-Bio-Das
     SUBDIR += p5-bioperl
     SUBDIR += p5-bioperl-devel
+    SUBDIR += p5-bioperl-run
     SUBDIR += paml
     SUBDIR += phylip
     SUBDIR += platon
