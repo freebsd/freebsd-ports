@@ -1,0 +1,21 @@
+--- bounce.c.orig	Tue May  2 10:14:42 2006
++++ bounce.c	Tue May  2 10:16:02 2006
+@@ -220,6 +220,7 @@
+         exit(-1);
+     }
+     listen(srv_fd,QLEN);
++    srv_addr.sin_port=0;
+ 
+     signal(SIGCHLD, sigchld);
+     printf("Ready to bounce connections from port %i to %s on port %i\n",
+@@ -252,6 +253,10 @@
+ 	  default:			    /* parent process */
+ 	    close(srv_fd);                  /* close original socket */
+ 	    if ((cl_fd=socket(PF_INET, SOCK_STREAM, 0))<0) {
++		close(rem_fd);
++		exit(-1);
++	    }
++	    if (bind(cl_fd,(struct sockaddr *)&srv_addr,sizeof(srv_addr))<0) {
+ 		close(rem_fd);
+ 		exit(-1);
+ 	    }
