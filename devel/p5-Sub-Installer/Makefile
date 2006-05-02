@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	Sub-Installer
-PORTVERSION=	0.0.2
+PORTVERSION=	0.0.3
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Sub
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
-MAINTAINER=	tobez@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Sub::Installer - A clean way to (re)install package subroutines
 
 BUILD_DEPENDS=	p5-version>0:${PORTSDIR}/devel/p5-version
