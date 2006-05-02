@@ -20,7 +20,8 @@ share/locale/fi/LC_MESSAGES/evolution-jescs-%%VERSION%%.mo
 share/locale/it/LC_MESSAGES/evolution-jescs-%%VERSION%%.mo
 share/locale/ja/LC_MESSAGES/evolution-jescs-%%VERSION%%.mo
 share/locale/ko/LC_MESSAGES/evolution-jescs-%%VERSION%%.mo
-share/locale/no/LC_MESSAGES/evolution-jescs-%%VERSION%%.mo
+share/locale/nb/LC_MESSAGES/evolution-jescs-%%VERSION%%.mo
+share/locale/nl/LC_MESSAGES/evolution-jescs-%%VERSION%%.mo
 share/locale/pl/LC_MESSAGES/evolution-jescs-%%VERSION%%.mo
 share/locale/pt/LC_MESSAGES/evolution-jescs-%%VERSION%%.mo
 share/locale/pt_BR/LC_MESSAGES/evolution-jescs-%%VERSION%%.mo
