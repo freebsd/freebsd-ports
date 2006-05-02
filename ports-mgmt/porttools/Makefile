@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	porttools
-PORTVERSION=	0.75
+PORTVERSION=	0.76
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,10 +18,8 @@ RUN_DEPENDS=	portlint:${PORTSDIR}/devel/portlint \
 		cdiff:${PORTSDIR}/textproc/cdiff \
 		sudo:${PORTSDIR}/security/sudo
 
-.include <bsd.port.pre.mk>
-
 .if !defined(WITHOUT_NEWFILE)
-RUN_DEPENDS+=	${LOCALBASE}/bin/newfile:${PORTSDIR}/devel/newfile
+RUN_DEPENDS+=	newfile:${PORTSDIR}/devel/newfile
 .endif
 
 .if !defined(NOPORTDOCS)
@@ -32,4 +30,4 @@ MAKE_ENV=	DATADIR="${DATADIR}" DOCSDIR="${DOCSDIR}"
 MAN1=		port.1
 MAN5=		porttools.5
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
