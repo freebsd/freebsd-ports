@@ -6,6 +6,8 @@
 #
 
 # The following compile-time options are available:
+# WITH_AUTHLIB=yes	Enable optional support for Courier Auth Library
+# WITH_FAM=yes		Enable optional support for File Alteration Monitor
 # WITH_GDBM=yes		Enable database extensions using GDBM (default: off)
 # MAILDROP_SUID=<uid>,
 # MAILDROP_SGID=<gid>	Maildrop will be installed with suid permissions for
@@ -13,10 +15,9 @@
 # MAILDROP_TRUSTED_USERS=<user> Specify users allowed to use the -d option
 # NO_MAILWRAPPER=yes	If defined, let configure guess which sendmail binary
 #			to use
-# WITH_AUTHLIB=yes	Enable optional support for Courier Auth Library
 
 PORTNAME=	maildrop
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.2
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	courier
@@ -24,6 +25,8 @@ MASTER_SITE_SUBDIR=	courier
 MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	Mail delivery agent (MDA) with filtering abilities
 
+USE_GPG=	yes
+SIG_SUFFIX=	.sig
 USE_BZIP2=	yes
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
@@ -69,8 +72,8 @@ CONFIGURE_ARGS+=	--enable-maildrop-gid="${MAILDROP_SGID}"
 CONFIGURE_ARGS+=	--enable-sendmail=/usr/sbin/sendmail
 .endif
 
-.if exists(${LOCALBASE}/lib/libfam.so.0)
-LIB_DEPENDS+=	fam.0:${PORTSDIR}/devel/fam
+.if defined(WITH_FAM) || exists(${LOCALBASE}/lib/libfam.so.0)
+USE_FAM=	yes
 .endif
 
 .if defined(MAILDROP_TRUSTED_USERS)
@@ -83,7 +86,6 @@ CONFIGURE_ARGS+=	--enable-trusted-users="${MAILDROP_TRUSTED_USERS}"
 .endif
 BUILD_DEPENDS+=	courierauthconfig:${PORTSDIR}/security/courier-authlib-base
 RUN_DEPENDS+=	courierauthconfig:${PORTSDIR}/security/courier-authlib-base
-USE_REINPLACE=	yes
 CONFIGURE_ARGS+=	--enable-authlib
 
 post-patch:
@@ -110,6 +112,8 @@ DOCS=	AUTHORS INSTALL INSTALL.html README README.html README.postfix \
 	UPGRADE UPGRADE.html maildroptips.txt maildir/README.*
 
 post-install:
+	${INSTALL_DATA} ${WRKSRC}/maildir/quotawarnmsg \
+		${PREFIX}/etc/quotawarnmsg.sample
 .if !defined(NOPORTDOCS)
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
