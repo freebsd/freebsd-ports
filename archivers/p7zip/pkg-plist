@@ -1,9 +1,12 @@
 @unexec /bin/rm -f %D/bin/7za
+@unexec /bin/rm -f %D/bin/7zr
 bin/7z
 bin/p7zip
 @exec /bin/ln -sf 7z %D/bin/7za
+@exec /bin/ln -sf 7z %D/bin/7zr
 %%MODULES%%libexec/p7zip/7z
 libexec/p7zip/7za
+libexec/p7zip/7zr
 libexec/p7zip/7zCon.sfx
 %%MODULES%%libexec/p7zip/Codecs/7zAES.so
 %%MODULES%%libexec/p7zip/Codecs/AES.so
