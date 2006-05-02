@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	NetAddr-IP
-PORTVERSION=	3.028
-PORTREVISION=	1
+PORTVERSION=	3.32
 CATEGORIES=	net-mgmt perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/L/LU/LUISMUNOZ
@@ -25,7 +24,8 @@ MAN3=		NetAddr::IP.3
 .if ${PERL_LEVEL} < 500601
 IGNORE=		This port requires perl 5.6.x or later version
 .elif ${PERL_LEVEL} < 500800
-BUILD_DEPENDS=	${SITE_PERL}/Math/BigInt.pm:${PORTSDIR}/math/p5-Math-BigInt
+BUILD_DEPENDS=	${SITE_PERL}/Math/BigInt.pm:${PORTSDIR}/math/p5-Math-BigInt \
+		${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable
 RUN_DEPENDS=	${BUILD_DEPENDS}
 .endif
 
