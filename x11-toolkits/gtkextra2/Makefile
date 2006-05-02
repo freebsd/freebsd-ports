@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	scigraphica
 DISTNAME=	${PORTNAME:S/gtk/gtk+/}-${PORTVERSION}
 
-MAINTAINER=	gnome@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A useful widget set complementary to GTK+ 2.0
 
 USE_X_PREFIX=	yes
