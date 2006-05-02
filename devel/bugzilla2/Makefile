@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	bugzilla
-PORTVERSION?=	2.20.1
+PORTVERSION?=	2.22
 CATEGORIES?=	devel
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	webtools webtools/archived
@@ -14,14 +14,16 @@ MASTER_SITE_SUBDIR=	webtools webtools/archived
 MAINTAINER?=	skv@FreeBSD.org
 COMMENT?=	Bug-tracking system developed by Mozilla Project
 
-OPTIONS=	CHARTING_MODULES "Bug charting support" on \
+OPTIONS=	MYSQL "MySQL database support" on \
+		PGSQL "PostgreSQL database support" off \
+		CHARTING_MODULES "Bug charting support" on \
 		GRAPHVIZ "Use GraphViz" off \
 		EMAIL_GATEWAY "Use email gateway" off \
 		EXPORT_IMPORT "Import/export bugs (via XML)" off \
 		CONTRIB	"Install user-contributed scripts" off \
 		LDAP "Enable LDAP support" off
 
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql \
+RUN_DEPENDS+=	\
 		${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm \
 		${SITE_PERL}/AppConfig.pm:${PORTSDIR}/devel/p5-AppConfig \
 		${SITE_PERL}/Date/Parse.pm:${PORTSDIR}/devel/p5-TimeDate \
@@ -34,7 +36,6 @@ RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DB
 CONFLICTS?=	ja-bugzilla-2.*
 
 USE_PERL5=	yes
-USE_REINPLACE=	yes
 
 BINMODE=	700
 PKGMESSAGE=	${WRKDIR}/pkg-message
@@ -55,6 +56,18 @@ DATA_DIRS_LIST=	images js skins/standard skins/standard/global \
 
 .include <bsd.port.pre.mk>
 
+.ifdef WITH_MYSQL
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
+USE_MYSQL=	yes
+DEFAULT_MYSQL_VER=	41
+BROKEN_WITH_MYSQL=	323
+.endif
+
+.ifdef WITH_PGSQL
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
+USE_PGSQL=	yes
+.endif
+
 .ifdef WITH_CHARTING_MODULES
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD \
 		${SITE_PERL}/Chart/Base.pm:${PORTSDIR}/graphics/p5-chart \
@@ -71,7 +84,8 @@ RUN_DEPENDS+=	${SITE_PERL}/MIME/Parser.pm:${PORTSDIR}/mail/p5-MIME-Tools
 .endif
 
 .ifdef WITH_EXPORT_IMPORT
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \
+		${SITE_PERL}/XML/Twig.pm:${PORTSDIR}/textproc/p5-XML-Twig
 .endif
 
 .ifdef WITH_CONTRIB
