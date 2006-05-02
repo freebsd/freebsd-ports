@@ -11,8 +11,7 @@
 %%SAMHAIN%%etc/samhainrc.sample
 %%SAMHAIN%%@unexec rmdir /var/lib/samhain 2>/dev/null || true
 %%SETPWD%%sbin/samhain_setpwd
-%%PORTDOCS%%%%DOCSDIR%%/MANUAL-2_0.ps
-%%PORTDOCS%%%%DOCSDIR%%/MANUAL-2_0.html.tar
+%%PORTDOCS%%%%DOCSDIR%%/MANUAL-2_2.pdf
 %%PORTDOCS%%%%DOCSDIR%%/HOWTO-client+server.html
 %%PORTDOCS%%%%DOCSDIR%%/HOWTO-client+server-troubleshooting.html
 %%PORTDOCS%%%%DOCSDIR%%/HOWTO-write-modules.html
