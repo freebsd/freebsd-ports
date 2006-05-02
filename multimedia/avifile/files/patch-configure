@@ -1,5 +1,5 @@
 --- configure.orig	Tue Oct  5 14:25:48 2004
-+++ configure	Tue Oct  5 14:26:14 2004
++++ configure	Mon Feb 27 20:58:48 2006
 @@ -3768,7 +3768,7 @@
  
  case "$target" in
@@ -9,3 +9,15 @@
  
  cat >>confdefs.h <<\_ACEOF
  #define ARCH_X86 1
+@@ -32127,7 +32127,10 @@
+   AMM_USE_ARTSC_FALSE=
+ fi
+ 
+-last_cvs_update=`find . -name Entries -printf '%Ty%Tm%Td-%TH:%TM\n' | sort | tail -1`
++#
++# find(1) doesn't support the `printf` argument on FreeBSD
++#
++# last_cvs_update=`find . -name Entries -printf '%Ty%Tm%Td-%TH:%TM\n' | sort | tail -1`
+ if test $? -ne 0 -o -z "$last_cvs_update" ; then
+     # probably no gnu date installed(?), use current date
+     # or this is release
