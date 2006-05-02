@@ -8,7 +8,7 @@
 
 PORTNAME=	poppler
 PORTVERSION=	0.5.1
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	graphics print
 MASTER_SITES=	http://poppler.freedesktop.org/
 
@@ -17,7 +17,6 @@ COMMENT?=	A PDF rendering library
 
 LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo
 
-CONFLICTS=	xpdf-[0-9]*
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
@@ -45,12 +44,17 @@ BUILD_WRKSRC=	${WRKSRC}/qt
 INSTALL_WRKSRC=	${WRKSRC}/qt
 # blah.. USE_QT_VER can't be defined after bsd.port.pre.mk
 .include "${PORTSDIR}/Mk/bsd.kde.mk"
+.elif ${SLAVEPORT}=="utils"
+CONFIGURE_ARGS+=--enable-utils
+CONFLICTS=	xpdf-[0-9]*
+BUILD_WRKSRC=	${WRKSRC}/utils
+INSTALL_WRKSRC=	${WRKSRC}/utils
+MAN1=	pdffonts.1 pdfimages.1 pdfinfo.1 \
+	pdftohtml.1  pdftops.1 pdftotext.1 pdftoppm.1
 .endif
 .else
 CONFIGURE_ARGS+=--disable-poppler-glib --disable-poppler-qt \
-		--disable-poppler-qt4
-MAN1=	pdffonts.1 pdfimages.1 pdfinfo.1 \
-	pdftohtml.1  pdftops.1 pdftotext.1 pdftoppm.1
+		--disable-poppler-qt4 --disable-utils
 .endif
 
 post-patch:
