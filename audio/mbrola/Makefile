@@ -49,7 +49,7 @@ do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/mbrola-linux-alpha ${PREFIX}/bin/mbrola
 .elif (${ARCH} == "i386")
 	@${INSTALL_PROGRAM} ${WRKSRC}/mbrola-linux-i386 ${PREFIX}/bin/mbrola
-.elif (${ARCH} == "ppc")
+.elif (${ARCH} == "powerpc")
 	@${INSTALL_PROGRAM} ${WRKSRC}/mbrola206a-linux-ppc ${PREFIX}/bin/mbrola
 .elif (${ARCH} == "sparc64")
 	@${INSTALL_PROGRAM} ${WRKSRC}/mbrola-SuSElinux-ultra1.dat \
