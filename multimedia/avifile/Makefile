@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	avifile
-PORTVERSION=	0.7.41
-PORTREVISION=	1
+PORTVERSION=	0.7.43
 PORTEPOCH=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -20,10 +19,11 @@ COMMENT=	AVI player/converter with numerous codecs, including MPEG-4(DivX ;-))
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 
 USE_SUBMAKE=	yes
-USE_REINPLACE=	yes
+USE_BZIP2=	yes
 USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
+USE_ICONV=	yes
 INSTALLS_SHLIB=	yes
 
 LIBTOOLFILES=	acinclude.m4
@@ -46,8 +46,6 @@ CODEC_DETECTION_FILE!=	${MAKE} -f ${CODEC_PORT}/Makefile -V CODEC_DETECTION_FILE
 
 LIB_VERSION=	3
 VERSION=	0.7
-DIFF?=		/usr/bin/diff
-FMT?=		/usr/bin/fmt
 
 # qt -- USE_QT_VER has to happen befor bsd.port.pre.mk
 .if !defined(WITHOUT_QT)
@@ -71,7 +69,7 @@ WITH_OPTIMIZED_CFLAGS=	yes
 
 .if (${ARCH} != "i386") && (${ARCH} != "amd64")
 WITHOUT_A52=yes
-BROKEN=		"Does not compile on !i386"
+BROKEN=		Does not compile on !i386
 .endif
 
 # compilation optimizations

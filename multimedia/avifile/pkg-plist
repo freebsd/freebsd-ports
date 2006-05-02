@@ -117,43 +117,43 @@ lib/libaviplayavformat.so.0
 %%QT%%lib/libqavm.so.0
 libdata/pkgconfig/avifile.pc
 share/aclocal/avifile.m4
-share/avifile/action.cfg
-share/doc/avifile/avicap/avicap.html
-share/doc/avifile/avicap/configuration.html
-share/doc/avifile/avicap/epg.html
-share/doc/avifile/avicap/shutdown_resume.html
-share/doc/avifile/avicap/timertable.html
-share/doc/avifile/COPYING
-share/doc/avifile/CREDITS
-share/doc/avifile/EXCEPTIONS
-share/doc/avifile/FreeBSD
-share/doc/avifile/ChangeLog
-share/doc/avifile/KNOWN_BUGS
-share/doc/avifile/LICENSING
-share/doc/avifile/README
-share/doc/avifile/README.ac3pass
-share/doc/avifile/README-DEVEL
-share/doc/avifile/TODO
-share/doc/avifile/VIDEO-PERFORMANCE
-share/doc/avifile/WARNINGS
-share/avifile/pixmaps/about.ppm
-share/avifile/pixmaps/bottom.ppm
-share/avifile/pixmaps/down.ppm
-share/avifile/pixmaps/mute.ppm
-share/avifile/pixmaps/open.ppm
-share/avifile/pixmaps/opena.ppm
-share/avifile/pixmaps/opens.ppm
-share/avifile/pixmaps/pause.ppm
-share/avifile/pixmaps/play.ppm
-share/avifile/pixmaps/stop.ppm
-share/avifile/pixmaps/test.png
-share/avifile/pixmaps/test.xpm
-share/avifile/pixmaps/top.ppm
-share/avifile/pixmaps/up.ppm
-@dirrm share/doc/avifile/avicap
-@dirrm share/doc/avifile
-@dirrm share/avifile/pixmaps
-@dirrm share/avifile
+%%DATADIR%%/action.cfg
+%%DOCSDIR%%/avicap/avicap.html
+%%DOCSDIR%%/avicap/configuration.html
+%%DOCSDIR%%/avicap/epg.html
+%%DOCSDIR%%/avicap/shutdown_resume.html
+%%DOCSDIR%%/avicap/timertable.html
+%%DOCSDIR%%/COPYING
+%%DOCSDIR%%/CREDITS
+%%DOCSDIR%%/EXCEPTIONS
+%%DOCSDIR%%/FreeBSD
+%%DOCSDIR%%/ChangeLog
+%%DOCSDIR%%/KNOWN_BUGS
+%%DOCSDIR%%/LICENSING
+%%DOCSDIR%%/README
+%%DOCSDIR%%/README.ac3pass
+%%DOCSDIR%%/README-DEVEL
+%%DOCSDIR%%/TODO
+%%DOCSDIR%%/VIDEO-PERFORMANCE
+%%DOCSDIR%%/WARNINGS
+%%DATADIR%%/pixmaps/about.ppm
+%%DATADIR%%/pixmaps/bottom.ppm
+%%DATADIR%%/pixmaps/down.ppm
+%%DATADIR%%/pixmaps/mute.ppm
+%%DATADIR%%/pixmaps/open.ppm
+%%DATADIR%%/pixmaps/opena.ppm
+%%DATADIR%%/pixmaps/opens.ppm
+%%DATADIR%%/pixmaps/pause.ppm
+%%DATADIR%%/pixmaps/play.ppm
+%%DATADIR%%/pixmaps/stop.ppm
+%%DATADIR%%/pixmaps/test.png
+%%DATADIR%%/pixmaps/test.xpm
+%%DATADIR%%/pixmaps/top.ppm
+%%DATADIR%%/pixmaps/up.ppm
+@dirrm %%DOCSDIR%%/avicap
+@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%/pixmaps
+@dirrm %%DATADIR%%
 @dirrmtry lib/avifile/vidix
 @dirrm lib/avifile
 @dirrm include/avifile
