@@ -1,0 +1,131 @@
+--- spamd/grey.c	Wed Apr 13 03:22:17 2005
++++ spamd/grey.c	Mon Mar 20 15:26:18 2006
+@@ -39,6 +39,10 @@
+ #include <unistd.h>
+ #include <netdb.h>
+ 
++#ifdef IPFW
++#include <netinet/ip_fw.h>
++#endif
++
+ #include "grey.h"
+ 
+ extern time_t passtime, greyexp, whiteexp, trapexp;
+@@ -65,13 +69,17 @@
+ char *traplist_msg = "\"Your address %A has mailed to spamtraps here\\n\"";
+ 
+ pid_t db_pid = -1;
+-int pfdev;
+ int spamdconf;
+ 
++#ifdef IPFW
++extern int tabno;
++#else
++int pfdev;
+ static char *pargv[11]= {
+ 	"pfctl", "-p", "/dev/pf", "-q", "-t",
+ 	"spamd-white", "-T", "replace", "-f" "-", NULL
+ };
++#endif
+ 
+ /* If the parent gets a signal, kill off the children and exit */
+ /* ARGSUSED */
+@@ -104,6 +112,7 @@
+ 	return(0);
+ }
+ 
++#ifndef IPFW
+ int
+ configure_pf(char **addrs, int count)
+ {
+@@ -166,11 +175,54 @@
+ 	for (i = 0; i < count; i++)
+ 		if (addrs[i] != NULL)
+ 			fprintf(pf, "%s/32\n", addrs[i]);
++
+ 	fclose(pf);
+ 	waitpid(pid, NULL, 0);
+ 	sigaction(SIGCHLD, &sa, NULL);
+ 	return(0);
+ }
++#else
++int
++configure_pf(char **addrs, int count)
++{
++	static int s = -1;
++	ipfw_table_entry ent;
++	int i;
++
++	if (s == -1)
++		s = socket(AF_INET, SOCK_RAW, IPPROTO_RAW);
++	if (s < 0)
++	{
++		syslog_r(LOG_INFO, &sdata, "IPFW socket unavailable (%m)");
++		return(-1);
++	}
++
++	/* flush the table */	
++	ent.tbl = tabno;
++	if (setsockopt(s, IPPROTO_IP, IP_FW_TABLE_FLUSH,  &ent.tbl, sizeof(ent.tbl)) < 0)
++	{
++		syslog_r(LOG_INFO, &sdata, "IPFW setsockopt(IP_FW_TABLE_FLUSH) (%m)");
++		return(-1);
++	}
++
++	for (i = 0; i < count; i++)
++		if (addrs[i] != NULL)
++	{
++		/* add addrs[i] to tabno */
++		ent.tbl = tabno;
++		ent.masklen = 32;
++		ent.value = 0;
++		inet_aton(addrs[i], (struct in_addr *)&ent.addr);
++		if (setsockopt(s, IPPROTO_IP, IP_FW_TABLE_ADD,  &ent, sizeof(ent)) < 0)
++		{
++			syslog_r(LOG_INFO, &sdata, "IPFW setsockopt(IP_FW_TABLE_ADD) (%m)");
++			return(-1);
++		}
++	}
++
++	return(0);
++}
++#endif
+ 
+ void
+ freeaddrlists(void)
+@@ -590,11 +642,13 @@
+ 	int i;
+ 	struct sigaction sa;
+ 
++#ifndef IPFW
+ 	pfdev = open("/dev/pf", O_RDWR);
+ 	if (pfdev == -1) {
+ 		syslog_r(LOG_ERR, &sdata, "open of /dev/pf failed (%m)");
+ 		exit(1);
+ 	}
++#endif
+ 
+ 	/* check to see if /var/db/spamd exists, if not, create it */
+ 	if ((i = open(PATH_SPAMD_DB, O_RDWR, 0)) == -1 && errno == ENOENT) {
+@@ -636,7 +690,9 @@
+ 		 * child, talks to jailed spamd over greypipe,
+ 		 * updates db. has no access to pf.
+ 		 */
++#ifndef IPFW
+ 		close(pfdev);
++#endif
+ 		setproctitle("(%s update)", PATH_SPAMD_DB);
+ 		greyreader();
+ 		/* NOTREACHED */
+@@ -655,7 +711,11 @@
+ 	sigaction(SIGCHLD, &sa, NULL);
+ 	sigaction(SIGINT, &sa, NULL);
+ 
++#ifndef IPFW
+ 	setproctitle("(pf <spamd-white> update)");
++#else
++	setproctitle("(ipfw white table update)");
++#endif
+ 	greyscanner();
+ 	/* NOTREACHED */
+ 	exit(1);

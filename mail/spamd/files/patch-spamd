@@ -1,0 +1,48 @@
+--- spamd/spamd.c	Thu Mar 16 20:56:45 2006
++++ spamd/spamd.c	Thu Mar 16 21:07:11 2006
+@@ -123,6 +123,10 @@
+ pid_t jail_pid = -1;
+ u_short cfg_port;
+ 
++#ifdef IPFW
++int tabno=1;
++#endif
++
+ extern struct sdlist *blacklists;
+ 
+ int conffd = -1;
+@@ -153,6 +157,10 @@
+ 	    "             [-G mins:hours:hours] [-n name] [-p port]\n");
+ 	fprintf(stderr,
+ 	    "             [-r reply] [-s secs] [-w window]\n");
++#ifdef IPFW
++	fprintf(stderr,
++	    "             [-t table_no]\n");
++#endif
+ 	exit(1);
+ }
+ 
+@@ -958,7 +966,11 @@
+ 	if (gethostname(hostname, sizeof hostname) == -1)
+ 		err(1, "gethostname");
+ 
++#ifdef IPFW
++	while ((ch = getopt(argc, argv, "45b:c:B:p:dgG:r:s:n:vw:t:")) != -1) {
++#else
+ 	while ((ch = getopt(argc, argv, "45b:c:B:p:dgG:r:s:n:vw:")) != -1) {
++#endif
+ 		switch (ch) {
+ 		case '4':
+ 			nreply = "450";
+@@ -1015,6 +1027,11 @@
+ 		case 'v':
+ 			verbose = 1;
+ 			break;
++#ifdef IPFW
++		case 't':
++			tabno = atoi(optarg);
++			break;
++#endif
+ 		case 'w':
+ 			window = atoi(optarg);
+ 			if (window <= 0)

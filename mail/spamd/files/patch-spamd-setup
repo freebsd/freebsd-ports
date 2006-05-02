@@ -1,0 +1,115 @@
+--- spamd-setup/spamd-setup.c	Wed Apr 13 03:18:59 2005
++++ spamd-setup/spamd-setup.c	Fri Mar 17 16:19:25 2006
+@@ -41,9 +41,14 @@
+ #include <netdb.h>
+ #include <zlib.h>
+ 
++#ifdef IPFW
++#include <net/if.h>
++#include <netinet/ip_fw.h>
++#endif
++
+ #define PATH_FTP		"/usr/bin/ftp"
+-#define PATH_PFCTL		"%%LOCAL_PFCTL%%"
+-#define PATH_SPAMD_CONF		"%%LOCAL_SPAMD_CONF%%"
++#define PATH_PFCTL		""
++#define PATH_SPAMD_CONF		"/usr/local/etc/spamd.conf"
+ #define SPAMD_ARG_MAX		256 /* max # of args to an exec */
+ 
+ struct cidr {
+@@ -93,6 +98,11 @@
+ int		debug;
+ int		dryrun;
+ 
++#ifdef IPFW
++int tabno=2;
++#endif
++
++
+ u_int32_t
+ imask(u_int8_t b)
+ {
+@@ -630,6 +640,7 @@
+ }
+ 
+ 
++#ifndef IPFW
+ int
+ configure_pf(struct cidr **blacklists)
+ {
+@@ -676,6 +687,51 @@
+ 	}
+ 	return(0);
+ }
++#else
++int
++configure_pf(struct cidr **blacklists)
++{
++	static int s = -1;
++	ipfw_table_entry ent;
++
++	if (s == -1)
++		s = socket(AF_INET, SOCK_RAW, IPPROTO_RAW);
++	if (s < 0)
++	{
++		err(1, "IPFW socket unavailable");
++		return(-1);
++	}
++
++	/* flush the table */   
++	ent.tbl = tabno;
++	if (setsockopt(s, IPPROTO_IP, IP_FW_TABLE_FLUSH,  &ent.tbl, sizeof(ent.tbl)) < 0)
++	{
++		err(1, "IPFW setsockopt(IP_FW_TABLE_FLUSH)");
++		return(-1);
++	}
++
++	while (*blacklists != NULL) {
++		struct cidr *b = *blacklists;
++
++		while (b->addr != 0) {
++			/* add b to tabno */
++			ent.tbl = tabno;
++			ent.masklen = b->bits;
++			ent.value = 0;
++			inet_aton(atop(b->addr), (struct in_addr *)&ent.addr);
++			if (setsockopt(s, IPPROTO_IP, IP_FW_TABLE_ADD,  &ent, sizeof(ent)) < 0)
++			{
++				err(1, "IPFW setsockopt(IP_FW_TABLE_ADD)");
++				return(-1);
++			}
++			b++;
++		}
++		blacklists++;
++	}
++
++	return(0);
++}
++#endif
+ 
+ int
+ getlist(char ** db_array, char *name, struct blacklist *blist,
+@@ -773,7 +829,11 @@
+ 	struct servent *ent;
+ 	int i, ch;
+ 
++#ifndef IPFW
+ 	while ((ch = getopt(argc, argv, "nd")) != -1) {
++#else
++	while ((ch = getopt(argc, argv, "ndt")) != -1) {
++#endif
+ 		switch (ch) {
+ 		case 'n':
+ 			dryrun = 1;
+@@ -781,6 +841,11 @@
+ 		case 'd':
+ 			debug = 1;
+ 			break;
++#ifdef IPFW
++		case 't':
++			tabno = atoi(optarg);
++			break;
++#endif
+ 		default:
+ 			break;
+ 		}

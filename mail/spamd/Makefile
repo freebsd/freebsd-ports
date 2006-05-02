@@ -7,6 +7,7 @@
 
 PORTNAME=	spamd
 PORTVERSION=	3.7
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	delphij
@@ -19,16 +20,20 @@ USE_BZIP2=	yes
 
 .include <bsd.port.pre.mk>
 
+.if defined(WITH_IPFW)
+CFLAGS+= -DIPFW
+.if ${OSVERSION} < 490000
+BROKEN=		IPFW with Tables is required for this port to function properly
+.endif
+.else
 .if ${OSVERSION} < 502117
-IGNORE=		OpenBSD 3.5 pf/pfctl is necessary for this port to function properly.
+BROKEN=		OpenBSD 3.5 pf/pfctl is necessary for this port to function properly.
 .else
 LOCAL_PFCTL=	/sbin/pfctl
 .endif
+.endif
 
-USE_RC_SUBR=	yes
-RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
-
-USE_REINPLACE=	yes
+USE_RC_SUBR=	pfspamd.sh
 
 .if !defined(BATCH) && !defined(PACKAGE_BUILDING)
 IS_INTERACTIVE=	yes
@@ -45,8 +50,6 @@ post-patch:
 	    ${WRKSRC}/spamd-setup/spamd-setup.c
 	@${REINPLACE_CMD} -e 's|/etc/spamd.conf|${PREFIX}/etc/spamd.conf|' \
 	    ${WRKSRC}/spamd/spamd.8 ${WRKSRC}/spamd-setup/spamd-setup.8
-	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${FILESDIR}/pfspamd.sh > ${WRKDIR}/pfspamd.sh
 
 pre-su-install:
 .if !defined(BATCH) && !defined(PACKAGE_BUILDING)
@@ -63,7 +66,6 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/spamd-setup/spamd-setup.8 ${PREFIX}/man/man8
 	${INSTALL_MAN} ${WRKSRC}/spamdb/spamdb.8 ${PREFIX}/man/man8
 	${INSTALL_MAN} ${WRKSRC}/spamlogd/spamlogd.8 ${PREFIX}/man/man8
-	@${INSTALL_SCRIPT} -m 555 ${WRKDIR}/pfspamd.sh ${PREFIX}/etc/rc.d/pfspamd.sh
 	@if [ ! -f ${SAMPLE_SPAMD_CONF} ]; then			\
 		${ECHO_MSG} "Installing ${SAMPLE_SPAMD_CONF} file."; \
 		${INSTALL_DATA} ${WRKSRC}/doc/spamd.conf	\

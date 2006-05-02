@@ -1,0 +1,89 @@
+--- spamd/spamd.8	Wed Apr 13 03:21:48 2005
++++ spamd/spamd.8	Mon Mar 20 15:12:10 2006
+@@ -49,6 +49,8 @@
+ daemon which rejects false mail.
+ If the
+ .Xr pf 4
++or
++.Xr ipfw 4
+ packet filter is configured to redirect port 25 (SMTP) to this daemon,
+ it will attempt to waste the time and resources of the spam sender.
+ .Pp
+@@ -151,11 +153,15 @@
+ which processes a list of spammers' addresses, and applies appropriate
+ .Xr pfctl 8
+ .Em rdr
++or
++.Xr ipfw 8
++.Em fwd
+ rules.
+ .Xr spamd-setup 8
+ is run from
+ .Xr cron 8 .
+ .Sh REDIRECTING SMTP CONNECTIONS
++.Ss "When using PF"
+ With
+ .Xr pf 4 ,
+ connections to port 25 (SMTP) can be redirected to another host or port,
+@@ -189,6 +195,8 @@
+ can also be used to load addresses into the
+ .Em <spamd>
+ table.
++
++
+ .Xr spamd-setup 8
+ also has the added benefit of being able to remove addresses from
+ blacklists, and will connect to
+@@ -203,6 +211,52 @@
+ This is important as it allows legitimate mail
+ senders to pressure spam sources into behaving properly so that they
+ may be removed from the relevant blacklists.
++
++.Ss "If compiled with IPFW"
++With
++.Xr ipfw 4 ,
++the syntax for redirection of TCP sessions is quite different
++from that of
++.Xr pf 4 .
++The
++.Em fwd
++rule used for this purpose are described in
++.Xr ipfw 8 .
++The rules should be added to the ruleset called by /etc/rc.firewall
++to be present at boot time.
++.Bd -literal -offset 4n
++fwd 127.0.0.1,8025 tcp from table(2) to me 25 in
++allow tcp from table(1) to me 25 in
++fwd 127.0.0.1,8025 tcp from any to me 25 in
++.Ed
++.Pp
++Any addresses in the blacklist table
++.Em 2
++and not in the whitelist table
++.Em 1
++are then redirected to
++.Nm
++running on port 8025.
++Addresses can be loaded into the blacklist
++.Em table ,
++like:
++.Bd -literal -offset 4n
++# ipfw table 1 add a.b.c.d/x
++.Ed
++.Pp
++.Xr spamd-setup 8
++can also be used to load addresses into the blacklist table
++.Em 2 .
++.Pp
++The 
++.Op Fl t Ar table_no
++option to 
++.Em spamd 
++and 
++.Em spamd-setup 
++can be used to change the default table
++numbers.
++
+ .Sh CONFIGURATION CONNECTIONS
+ .Nm
+ listens for configuration connections on the port identified by the
