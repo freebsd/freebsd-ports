@@ -1,5 +1,5 @@
 --- bus/dir-watch.c.orig	Tue Jun 14 22:31:38 2005
-+++ bus/dir-watch.c	Sun Jul  3 02:07:14 2005
++++ bus/dir-watch.c	Tue May  2 12:52:08 2006
 @@ -28,17 +28,25 @@
  #include <stdlib.h>
  #include <unistd.h>
@@ -28,7 +28,7 @@
  /* use a static array to avoid handling OOM */
  static int fds[MAX_DIRS_TO_WATCH];
  static int num_fds = 0;
-@@ -92,6 +100,144 @@ bus_drop_all_directory_watches (void)
+@@ -92,6 +100,147 @@ bus_drop_all_directory_watches (void)
  	}
      }
    
@@ -58,6 +58,10 @@
 +  pid_t pid;
 +
 +  res = kevent (kq, NULL, 0, &ev, 1, &nullts);
++
++  /* Sleep for half a second to avoid a race when files are install(1)'d
++   * to system.d. */
++  usleep(500000);
 +
 +  if (res > 0)
 +    {
@@ -139,8 +143,7 @@
 +    }
 +
 +  EV_SET (&ev, fd, EVFILT_VNODE, EV_ADD | EV_ENABLE | EV_CLEAR,
-+          NOTE_DELETE | NOTE_EXTEND | NOTE_WRITE | NOTE_LINK | NOTE_RENAME |
-+	  NOTE_REVOKE, 0, 0);
++          NOTE_DELETE | NOTE_EXTEND | NOTE_WRITE | NOTE_RENAME, 0, 0);
 +  if (kevent (kq, &ev, 1, NULL, 0, NULL) == -1)
 +    {
 +      _dbus_warn ("Cannot setup a kevent for '%s'; error '%s'\n", dir, _dbus_strerror (errno));
