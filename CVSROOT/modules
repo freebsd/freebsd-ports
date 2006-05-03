@@ -2733,6 +2733,7 @@ fxhtml		ports/www/fxhtml
 fxscintilla	ports/x11-toolkits/fxscintilla
 fxscintilla-fox10	ports/x11-toolkits/fxscintilla-fox10
 fxscintilla-fox12	ports/x11-toolkits/fxscintilla-fox12
+fxsudoku	ports/games/fxsudoku
 fxt		ports/math/fxt
 fxtv		ports/multimedia/fxtv
 fyre		ports/graphics/fyre
