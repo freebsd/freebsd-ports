@@ -2,6 +2,8 @@ bin/soundtracker
 %%GNOME:%%share/gnome/apps/Multimedia/soundtracker.desktop
 %%NLS%%share/locale/da/LC_MESSAGES/soundtracker.mo
 %%NLS%%share/locale/de/LC_MESSAGES/soundtracker.mo
+%%NLS%%share/locale/en@boldquot/LC_MESSAGES/soundtracker.mo
+%%NLS%%share/locale/en@quot/LC_MESSAGES/soundtracker.mo
 %%NLS%%share/locale/es/LC_MESSAGES/soundtracker.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/soundtracker.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/soundtracker.mo
@@ -11,9 +13,12 @@ bin/soundtracker
 %%NLS%%share/locale/no/LC_MESSAGES/soundtracker.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/soundtracker.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/soundtracker.mo
+%%NLS%%share/locale/rw/LC_MESSAGES/soundtracker.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/soundtracker.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/soundtracker.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/soundtracker.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/soundtracker.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/soundtracker.mo
 %%DATADIR%%/downarrow.xpm
 %%DATADIR%%/flat.xpm
 %%DATADIR%%/lock.xpm
@@ -25,3 +30,9 @@ bin/soundtracker
 %%DATADIR%%/soundtracker_splash.png
 %%DATADIR%%/stop.xpm
 @dirrm %%DATADIR%%
+%%NLS%%@dirrm share/locale/rw/LC_MESSAGES
+%%NLS%%@dirrm share/locale/rw
+%%NLS%%@dirrm share/locale/en@quot/LC_MESSAGES
+%%NLS%%@dirrm share/locale/en@quot
+%%NLS%%@dirrm share/locale/en@boldquot/LC_MESSAGES
+%%NLS%%@dirrm share/locale/en@boldquot
