@@ -14222,6 +14222,7 @@ xperfmon3	ports/sysutils/xperfmon3
 xphoon		ports/astro/xphoon
 xphotohunter	ports/games/xphotohunter
 xpi-adblock	ports/www/xpi-adblock
+xpi-adblock_plus	ports/www/xpi-adblock_plus
 xpi-colorfultabs	ports/www/xpi-colorfultabs
 xpi-fasterfox	ports/www/xpi-fasterfox
 xpi-noscript	ports/www/xpi-noscript
