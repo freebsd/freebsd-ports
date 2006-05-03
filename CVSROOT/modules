@@ -12037,6 +12037,7 @@ sendxmpp	ports/net-im/sendxmpp
 senken		ports/games/senken
 senna		ports/textproc/senna
 senso		ports/games/senso
+sensors-applet	ports/sysutils/sensors-applet
 sentinel	ports/mail/sentinel
 seq2		ports/misc/seq2
 seqio		ports/biology/seqio
