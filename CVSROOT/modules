@@ -14226,6 +14226,7 @@ xpi-adblock_plus	ports/www/xpi-adblock_plus
 xpi-colorfultabs	ports/www/xpi-colorfultabs
 xpi-fasterfox	ports/www/xpi-fasterfox
 xpi-noscript	ports/www/xpi-noscript
+xpi-pdf_download	ports/www/xpi-pdf_download
 xpi-tabmixplus	ports/www/xpi-tabmixplus
 xpilot		ports/games/xpilot
 xpilot-ng-client	ports/games/xpilot-ng-client
