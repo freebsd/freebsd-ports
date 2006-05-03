@@ -308,3 +308,5 @@ usr/X11R6/lib/libxkbui.so.1.0
 @dirrm usr/X11R6/lib/X11/locale/C
 @dirrm usr/X11R6/lib/X11/locale
 @dirrm usr/X11R6/lib/X11
+@comment The following needs to be revised when the default linux base is FC4 or newer
+@dirrmtry etc/ld.so.conf.d
