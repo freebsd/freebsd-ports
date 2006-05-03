@@ -6,21 +6,23 @@
 #
 
 PORTNAME=	antlr
-PORTVERSION=	2.7.5
+PORTVERSION=	2.7.6
 CATEGORIES=	devel java
 MASTER_SITES=	http://www.antlr.org/download/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rainer.alves@gmail.com
 COMMENT=	ANother Tool for Language Recognition
 
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 
-CONFLICTS=	pccts*
+CONFLICTS=	pccts-[0-9]*
 
 USE_GCC=	3.2+
 USE_GMAKE=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.4+
+
+OPTIONS=	PYTHON "Include Python runtime support" off
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	JAVAC="${JAVAC}" JAR="${JAR}" JAVA="${JAVA}" CLASSPATH="${PORT_CLASSPATH}"
@@ -38,16 +40,31 @@ PORTDOCS=	ANTLRException.gif closure.gif cpp-runtime.html \
 		stream.splitter.gif streams.html subrule.gif trees.html \
 		vocab.html
 .endif
-PLIST_FILES=	bin/antlr %%JAVAJARDIR%%/antlr.jar
 
 .include <bsd.port.pre.mk>
 
+.if defined(WITH_PYTHON)
+USE_PYTHON=	2.2+
+# we need to manually include this, because USE_PYTHON is defined
+# after including bsd.port.pre.mk
+.include "${PORTSDIR}/Mk/bsd.python.mk"
+PORTDOCS+=	python-runtime.html
+ANTLR_PYTHON=	${WRKSRC}/lib/python
+PLIST_SUB+=	WITH_PYTHON=""
+.else
+PLIST_SUB+=	WITH_PYTHON="@comment "
+.endif
+
 post-extract:
-	(cd ${WRKSRC} && ${CP} antlr-${PORTVERSION}.jar antlrall.jar)
-	${CHMOD} -R +w ${WRKSRC}
+	(cd ${WRKSRC} && ${CP} antlr.jar antlrall.jar)
 
 post-configure:
-	@${SED} "s|%%JAVAJARDIR%%|${JAVAJARDIR}| ; s|%%LOCALBASE%%|${LOCALBASE}| ; s|%%JAVA_VERSION%%|${JAVA_VERSION}|" ${FILESDIR}/antlr.sh >${WRKDIR}/antlr.sh
+	${SED} -e 's|%%JAVAJARDIR%%|${JAVAJARDIR}|' \
+	-e 's|%%LOCALBASE%%|${LOCALBASE}|' \
+	-e 's|%%JAVA_VERSION%%|${JAVA_VERSION}|' ${FILESDIR}/antlr.sh > ${WRKDIR}/antlr.sh
+.if defined(WITH_PYTHON)
+	(cd ${ANTLR_PYTHON} && ${PYTHON_CMD} setup.py config)
+.endif
 
 .if defined(WITH_BUILT_JAVA_LIB)
 pre-build:
@@ -55,10 +72,16 @@ pre-build:
 	(cd ${WRKSRC} && ${JAVA} -classpath "${PORT_CLASSPATH}" antlr.build.Tool jar)
 .endif
 
+.if defined(WITH_PYTHON)
+post-build:
+	(cd ${ANTLR_PYTHON} && ${PYTHON_CMD} setup.py build && \
+	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${ANTLR_PYTHON})
+.endif
+
 do-install:
 	@${ECHO_MSG} -n ">> Installing JAR as ${JAVAJARDIR}/${PORTNAME}.jar..."
 	@${MKDIR} ${JAVAJARDIR}
-	@${INSTALL_DATA} ${WRKSRC}/antlr-${PORTVERSION}.jar ${JAVAJARDIR}/${PORTNAME}.jar
+	@${INSTALL_DATA} ${WRKSRC}/antlr.jar ${JAVAJARDIR}/${PORTNAME}.jar
 	@${ECHO_MSG} " [ DONE ]"
 	@${ECHO_MSG} -n ">> Installing antlr script as ${PREFIX}/bin/${PORTNAME}..."
 	@${INSTALL_SCRIPT} ${WRKDIR}/antlr.sh ${PREFIX}/bin/antlr
@@ -66,23 +89,16 @@ do-install:
 	@${ECHO_MSG} ">> Installing native files..."
 	@(cd ${WRKSRC}/lib/cpp && ${GMAKE} install)
 	@${ECHO_MSG} "   [ DONE ]"
+.if defined(WITH_PYTHON)
+	@${ECHO_MSG} -n ">> Installing Python runtime files..."
+	@(cd ${ANTLR_PYTHON} && ${PYTHON_CMD} setup.py install)
+	@${ECHO_MSG} "   [ DONE ]"
+.endif
 .if !defined(NOPORTDOCS)
 	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}..."
 	@${MKDIR} ${DOCSDIR}
 	@cd ${WRKSRC}/doc && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
 	@${ECHO_MSG} " [ DONE ]"
 .endif
-	@${ECHO_MSG} -n ">> Installing examples in ${EXAMPLESDIR}..."
-	@${MKDIR} ${EXAMPLESDIR}
-	@cd ${WRKSRC}/examples && ${FIND} ${EXAMPLES} \
-	  | ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR} > /dev/null 2>&1
-	@${ECHO_MSG} " [ DONE ]"
-
-post-install:
-	@${FIND} -s ${EXAMPLES:S,^,${WRKSRC}/examples/,} -not -type d | \
-		${SED} -ne 's,^${WRKSRC}/examples,${EXAMPLESDIR:S,${PREFIX}/,,},p' >> ${TMPPLIST}
-	@${FIND} -s -d ${EXAMPLES:S,^,${WRKSRC}/examples/,} -type d | \
-		${SED} -ne 's,^${WRKSRC}/examples,@dirrm ${EXAMPLESDIR:S,${PREFIX}/,,},p' >> ${TMPPLIST}
-	@${ECHO} "@dirrm ${EXAMPLESDIR:S,${PREFIX}/,,}" >> ${TMPPLIST}
 
 .include <bsd.port.post.mk>
