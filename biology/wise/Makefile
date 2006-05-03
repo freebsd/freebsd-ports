@@ -16,7 +16,6 @@ COMMENT=	Intelligent algorithms for DNA searches
 
 WRKTOP=		${WRKDIR}/${DISTNAME}
 WRKSRC=		${WRKTOP}/src
-USE_REINPLACE=	yes
 MAKEFILE=	makefile
 
 #

@@ -16,7 +16,6 @@ COMMENT=	Network benchmark
 
 WRKSRC=		${WRKDIR}
 USE_ZIP=	yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 PLIST_FILES=	bin/netio
 

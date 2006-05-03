@@ -15,7 +15,6 @@ COMMENT=	A measurement tool for available bandwidth estimation
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 
 PLIST_FILES=	bin/pathchirp_rcv bin/pathchirp_snd bin/pathchirp_run
 PORTDOCS=	README

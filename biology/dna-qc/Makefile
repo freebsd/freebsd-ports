@@ -16,7 +16,6 @@ MAINTAINER=	tonymaher@optusnet.com.au
 COMMENT=	A quality control algorithm for DNA sequencing projects
 
 NO_WRKSUBDIR=	true
-USE_REINPLACE=	yes
 
 EXAMPLES=	README script.compare script.limits \
 		bact.all chromosomeIII.all human.all worm.all

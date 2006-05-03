@@ -20,7 +20,6 @@ COMMENT=	Simple yet powerful tool to generate POV from a PDB file
 RUN_DEPENDS=	povray:${PORTSDIR}/graphics/povray
 
 NO_WRKSUBDIR=	yes
-USE_REINPLACE=	yes
 DIST_SUBDIR=	povchem
 
 DEFS=		-DDATADIR=\"${PREFIX}/share/povchem\" \

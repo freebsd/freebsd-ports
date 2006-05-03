@@ -16,7 +16,6 @@ COMMENT=	Displays a periodic table of the elements
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehier gtk20
-USE_REINPLACE=	yes
 ALL_TARGET=	${PORTNAME}
 
 LANGS=		da fr pl sv tr

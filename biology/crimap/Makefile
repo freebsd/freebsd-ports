@@ -16,7 +16,6 @@ MAINTAINER=	tonymaher@optusnet.com.au
 COMMENT=	Creation of multilocus linkage maps
 
 NO_WRKSUBDIR=	true
-USE_REINPLACE=	yes
 
 PROGRAMS=	crimap
 EXAMPLES=	chr7a.gen demo.dat

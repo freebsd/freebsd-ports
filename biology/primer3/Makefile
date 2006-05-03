@@ -14,7 +14,6 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	tonymaher@optusnet.com.au
 COMMENT=	Primer3 helps to choose primers for PCR reactions
 
-USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 DOCUMENTS=	README example
 

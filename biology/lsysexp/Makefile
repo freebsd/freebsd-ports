@@ -19,7 +19,6 @@ WRKSRC=		${WRKDIR}/lsysexp-0.67
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e \

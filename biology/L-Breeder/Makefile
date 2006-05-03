@@ -26,7 +26,6 @@ USE_ZIP=	yes
 USE_X_PREFIX=	yes
 USE_GL=		yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 
 WX_CONFIG=	${X11BASE}/bin/wxgtk2-2.4-config
 

@@ -19,7 +19,6 @@ MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Molecular viewer, editor and visualization program
 
 USE_XLIB=	yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	# empty
 

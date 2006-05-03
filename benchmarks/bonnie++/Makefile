@@ -17,7 +17,6 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Performance Test of Filesystem I/O
 
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
 MAN1=	bon_csv2html.1 bon_csv2txt.1 generate_randfile.1

@@ -18,7 +18,6 @@ HAS_CONFIGURE=	yes
 ALL_TARGET=	${PORTNAME}
 PLIST_FILES=	sbin/tmetric
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 
 MAN8=		tmetric.8
 

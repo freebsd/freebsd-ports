@@ -15,7 +15,6 @@ MAINTAINER=	dbader@ece.unm.edu
 COMMENT=	Genome Rearrangements Analysis and Phylogeny Software
 
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 
 PLIST_FILES=	bin/grappa bin/invdist bin/distmat
 

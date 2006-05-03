@@ -16,7 +16,6 @@ COMMENT=	An ANSI C version of the SciMark2 benchmark
 
 PLIST_FILES=	bin/scimark2
 WRKSRC=		${WRKDIR}
-USE_REINPLACE=	yes
 USE_ZIP=	yes
 
 MALLOC2STD=	kernel.c Stopwatch.c Random.c array.c
