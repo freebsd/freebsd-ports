@@ -39,4 +39,4 @@ export CLASSPATH
 POSEIDON_ADDITIONAL_JAVA_ARGS="-Xms64m -Xmx160m"
 POSEIDON_PLATFORM_JAVA_ARGS=
 
-"$JAVACMD" $POSEIDON_PLATFORM_JAVA_ARGS $POSEIDON_ADDITIONAL_JAVA_ARGS -Dposeidon.java.home="$JAVA_HOME" -Dposeidon.user.dir.%%EDITION%%="$POSEIDON_HOME" com.gentleware.poseidon.Poseidon "$project"
+exec "$JAVACMD" $POSEIDON_PLATFORM_JAVA_ARGS $POSEIDON_ADDITIONAL_JAVA_ARGS -Dposeidon.java.home="$JAVA_HOME" -Dposeidon.user.dir.%%EDITION%%="$POSEIDON_HOME" com.gentleware.poseidon.Poseidon "$project"
