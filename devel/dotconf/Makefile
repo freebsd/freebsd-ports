@@ -7,10 +7,9 @@
 #
 
 PORTNAME=	dotconf
-PORTVERSION=	1.0.13
-PORTREVISION=	1
+PORTVERSION=	1.1.0
 CATEGORIES=	devel
-MASTER_SITES=	http://www.azzit.de/dotconf/download/v1.0/
+MASTER_SITES=	http://www.azzit.de/dotconf/download/v1.1/
 
 MAINTAINER=	clement@FreeBSD.org
 COMMENT=	A simple, powerful configuration-file parser
