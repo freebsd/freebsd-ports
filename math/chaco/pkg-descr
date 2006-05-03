@@ -1,0 +1,22 @@
+Before a calculation can be performed on a parallel computer, it must first be
+decomposed into tasks which are assigned to different processors. Efficient use
+of the machine requires that each processor have about the same amount of work
+to do and that the quantity of interprocessor communication is kept small.
+Finding an optimal decomposition is provably hard, but due to its practical
+importance, a great deal of effort has been devoted to developing heuristics
+for this problem.
+The decomposition problem can be addressed in terms of graph partitioning. Rob
+Leland and I have developed a variety of algorithms for graph partitioning and
+implemented them into a package we call Chaco. The code is being used at most
+of the major parallel computing centers around the world to simplify the
+development of parallel applications, and to ensure that high performance is
+obtained. Chaco has contributed to a wide variety of computational studies
+including investigation of the molecular structure of liquid crystals,
+evaluating the design of a chemical vapor deposition reactor and modeling
+automobile collisions.
+
+WWW:	 http://www.cs.sandia.gov/~bahendr/chaco.html
+___
+Bruce Hendrickson
+
+Note: this port includes a patch provided by Walter Landry for use within MBDyn
