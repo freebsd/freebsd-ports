@@ -1,0 +1,10 @@
+--- bus/system.conf.in.orig	Wed May  3 02:08:16 2006
++++ bus/system.conf.in	Wed May  3 02:09:58 2006
+@@ -52,6 +52,7 @@
+   <!-- Config files are placed here that among other things, punch 
+        holes in the above policy for specific services. -->
+   <includedir>system.d</includedir>
++  <includedir>%%X11BASE%%/etc/dbus-1/system.d</includedir>
+ 
+   <!-- This is included last so local configuration can override what's 
+        in this standard file -->
