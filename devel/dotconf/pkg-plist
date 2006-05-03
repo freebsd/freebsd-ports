@@ -4,13 +4,19 @@ include/dotconf.h
 include/libpool.h
 lib/libdotconf.a
 lib/libdotconf.so
-lib/libdotconf.so.10
+lib/libdotconf.so.0
 libdata/pkgconfig/dotconf.pc
 lib/libpool.a
 share/aclocal/dotconf.m4
 %%PORTDOCS%%%%DOCSDIR%%/dotconf-api.txt
 %%PORTDOCS%%%%DOCSDIR%%/dotconf-features.txt
 %%PORTDOCS%%%%EXAMPLESDIR%%/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/argdouble/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/argdouble/argdouble.conf
+%%PORTDOCS%%%%EXAMPLESDIR%%/argdouble/example_argdouble.dsp
+%%PORTDOCS%%%%EXAMPLESDIR%%/argdouble/output
+%%PORTDOCS%%%%EXAMPLESDIR%%/argdouble/testoutput
+%%PORTDOCS%%%%EXAMPLESDIR%%/argdouble/argdouble.c
 %%PORTDOCS%%%%EXAMPLESDIR%%/caseinsensitive/Makefile
 %%PORTDOCS%%%%EXAMPLESDIR%%/caseinsensitive/caseinsensitive.c
 %%PORTDOCS%%%%EXAMPLESDIR%%/caseinsensitive/caseinsensitive.conf
@@ -64,6 +70,7 @@ share/aclocal/dotconf.m4
 %%PORTDOCS%%%%EXAMPLESDIR%%/noinline/testoutput
 %%PORTDOCS%%%%EXAMPLESDIR%%/maketest.sh
 %%PORTDOCS%%@dirrm share/doc/dotconf
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/argdouble
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/context
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/errorhandler
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/noinline
