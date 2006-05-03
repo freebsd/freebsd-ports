@@ -2540,6 +2540,7 @@ fotaq		ports/games/fotaq
 fox		ports/x11-toolkits/fox
 fox-devel		ports/x11-toolkits/fox-devel
 fox12		ports/x11-toolkits/fox12
+fox16		ports/x11-toolkits/fox16
 fpc		ports/lang/fpc
 fpc-base	ports/lang/fpc-base
 fpc-demo	ports/lang/fpc-demo
