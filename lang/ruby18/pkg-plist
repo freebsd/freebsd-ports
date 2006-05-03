@@ -39,14 +39,17 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBY_ARCHLIBDIR%%/missing.h
 %%RUBY_ARCHLIBDIR%%/nkf.so
 %%RUBY_ARCHLIBDIR%%/node.h
+%%ONIGURUMA%%%%RUBY_ARCHLIBDIR%%/oniguruma.h
 %%RUBY_ARCHLIBDIR%%/openssl.so
 %%RUBY_ARCHLIBDIR%%/pty.so
 %%RUBY_ARCHLIBDIR%%/racc/cparse.so
 %%RUBY_ARCHLIBDIR%%/rbconfig.rb
 %%RUBY_ARCHLIBDIR%%/re.h
 %%RUBY_ARCHLIBDIR%%/readline.so
+%%ONIGURUMA%%%%RUBY_ARCHLIBDIR%%/regenc.h
 %%RUBY_ARCHLIBDIR%%/regex.h
 %%ONIGURUMA%%%%RUBY_ARCHLIBDIR%%/regint.h
+%%ONIGURUMA%%%%RUBY_ARCHLIBDIR%%/regparse.h
 %%RUBY_ARCHLIBDIR%%/ruby.h
 %%RUBY_ARCHLIBDIR%%/rubyio.h
 %%RUBY_ARCHLIBDIR%%/rubysig.h
@@ -1788,6 +1791,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%%%RUBY_RIDIR%%/Kernel/local_variables-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Kernel/loop-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Kernel/method_missing-i.yaml
+%%ONIGURUMA%%%%PORTDOCS%%%%RUBY_RIDIR%%/Kernel/onig_stat_print-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Kernel/open-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Kernel/p-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Kernel/print-i.yaml
