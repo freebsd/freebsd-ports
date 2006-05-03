@@ -18,7 +18,6 @@ COMMENT=	Library to play Commodore 64 SID-tunes cycle accurate
 
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 USE_AUTOTOOLS=	libtool:15
 LIBTOOLFILES=	builders/hardsid-builder/configure \
 		builders/resid-builder/configure \

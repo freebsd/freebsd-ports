@@ -30,7 +30,6 @@ RUN_DEPENDS+=	ogg123:${PORTSDIR}/audio/vorbis-tools
 .endif
 
 LATEST_LINK=	gqmpeg-devel
-USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk20
 GNU_CONFIGURE=  yes

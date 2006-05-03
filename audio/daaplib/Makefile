@@ -17,7 +17,6 @@ COMMENT=	A C++ library for DAAP memory streams
 
 USE_ZIP=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/daaplib/src
 MAKEFILE=	makefile
 ALL_TARGET=

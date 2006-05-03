@@ -22,7 +22,6 @@ PLIST_FILES=	lib/xmms/Input/libsid.so
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
 post-patch:

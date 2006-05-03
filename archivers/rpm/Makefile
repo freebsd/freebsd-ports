@@ -21,7 +21,6 @@ CONFLICTS=	rpm-4.*
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	automake:14 autoconf:213 libtool:15
-USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--with-glob
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -lintl -liconv"

@@ -19,7 +19,6 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 USE_MOTIF=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/GUI/xephem
 

@@ -18,7 +18,6 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	gkovesdan@t-hosting.hu
 COMMENT=	A compression utility designed to be a replacement for compress
 
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 

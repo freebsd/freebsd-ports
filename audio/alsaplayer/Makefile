@@ -18,7 +18,6 @@ COMMENT=	Audio player with pitch control and a GNOME GUI
 LIB_DEPENDS=	mad.2:${PORTSDIR}/audio/mad \
 		sndfile.1:${PORTSDIR}/audio/libsndfile
 
-USE_REINPLACE=	yes
 USE_GNOME=	glib12 gnomehack gnometarget
 WANT_GNOME=	yes
 USE_GETOPT_LONG=yes

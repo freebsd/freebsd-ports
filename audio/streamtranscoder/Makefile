@@ -19,7 +19,6 @@ LIB_DEPENDS=	ogg:${PORTSDIR}/audio/libogg \
 		curl:${PORTSDIR}/ftp/curl \
 		mp3lame:${PORTSDIR}/audio/lame
 
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 

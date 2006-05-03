@@ -14,7 +14,6 @@ MASTER_SITES=	http://www.ne.jp/asahi/linux/timecop/software/
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	An audio mixer for the WindowMaker dock with TV-like OSD
 
-USE_REINPLACE=	yes
 PLIST_FILES=	bin/wmix
 ALL_TARGET=	${PORTNAME}
 USE_XPM=	yes

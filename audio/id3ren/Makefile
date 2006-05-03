@@ -15,7 +15,6 @@ MAINTAINER=	roam@FreeBSD.org
 COMMENT=	Mpeg Audio Layer 3 util: rename files, edit tags, search, etc
 
 PLIST_FILES=	bin/id3ren
-USE_REINPLACE=	yes
 MAN1=		id3ren.1
 MANCOMPRESSED=	yes
 

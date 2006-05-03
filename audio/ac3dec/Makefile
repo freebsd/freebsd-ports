@@ -15,7 +15,6 @@ COMMENT=	Software for research in digital audio coding/decoding
 
 ONLY_FOR_ARCHS=	i386 alpha
 
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
 PORTDOCS=	README

@@ -27,7 +27,6 @@ USE_GMAKE=	yes
 USE_GNOME+=	pkgconfig
 GNU_CONFIGURE=  yes
 CONFLICTS=	libshout-1.0.7
-USE_REINPLACE=	yes
 
 pre-configure:
 	@ ${REINPLACE_CMD} -e "s|-ffast-math||g" ${WRKSRC}/configure

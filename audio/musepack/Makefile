@@ -21,7 +21,6 @@ BINS=		mppdec mppenc replaygain
 ALL_TARGET=	${BINS}
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/sv7
 
 .include <bsd.port.pre.mk>

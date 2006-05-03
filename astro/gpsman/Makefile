@@ -18,7 +18,6 @@ COMMENT=	A Tcl/Tk-based GPS management utility
 RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-USE_REINPLACE=	yes
 NO_BUILD=	yes
 
 # MAN1=		gpsman.1

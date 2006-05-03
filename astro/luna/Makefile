@@ -25,8 +25,6 @@ NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/luna
 MAKEFILE=	makefile
 
-USE_REINPLACE=	yes
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|varargs.h|stdarg.h|' ${WRKSRC}/iprintf/idoprnt.c
 

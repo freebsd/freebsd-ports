@@ -20,7 +20,6 @@ COMMENT=	MP3 frame level editor
 WRKSRC=		${WRKDIR}/${PORTNAME}-0.1
 
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 

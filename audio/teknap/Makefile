@@ -24,7 +24,6 @@ BUILD_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 .endif
 
 WRKSRC=		${WRKDIR}/TekNap
-USE_REINPLACE=	yes
 
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 

@@ -19,7 +19,6 @@ COMMENT=	Eric A. Welsh's collection of Gravis Ultrasound MIDI patches
 RESTRICTED=	Some of the patches are marked no-commercial-use
 
 NO_BUILD=	yes
-USE_REINPLACE=	yes
 
 PATCH_SUBDIRS=	ethnic mazpat/fx gsdrum08 gsdrum25 gsdrum40 gus power sfx wime
 DOC_SUBDIRS=	ethnic gsdrum08 gsdrum25 gsdrum40 power wime

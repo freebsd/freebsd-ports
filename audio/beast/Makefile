@@ -21,7 +21,6 @@ LIB_DEPENDS=	vorbisfile:${PORTSDIR}/audio/libvorbis \
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 USE_GNOME=	gnomehack gnomeprefix intlhack libgnomecanvas
 GNU_CONFIGURE=  yes
 INSTALLS_SHLIB=	yes

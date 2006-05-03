@@ -26,7 +26,6 @@ LIB_DEPENDS=	samplerate:${PORTSDIR}/audio/libsamplerate \
 
 USE_X_PREFIX=	yes
 USE_QT_VER=	3
-USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
 
 CONFIGURE_WRKSRC=	${WRKSRC}/src

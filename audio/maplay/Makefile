@@ -15,7 +15,6 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MPEG audio player/decoder decoding layer I and II MPEG audio streams
 
-USE_REINPLACE=	yes
 NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	bin/maplay

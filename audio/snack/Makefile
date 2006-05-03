@@ -21,7 +21,6 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/unix
 
 OPTIONS=	VORBIS "Support for OGG/Vorbis Audio" off
 
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-tcl=${LOCALBASE}/lib/tcl8.4 \

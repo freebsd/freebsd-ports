@@ -24,7 +24,6 @@ RUN_DEPENDS=	lame:${PORTSDIR}/audio/lame \
 USE_GPG?=	yes
 SIG_FILES=	${DISTNAME}${EXTRACT_SUFX}.asc
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 USE_PERL5_RUN=	yes
 NO_BUILD=	yes
 USE_RC_SUBR=	gnump3d.sh

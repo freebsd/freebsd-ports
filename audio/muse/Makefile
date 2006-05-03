@@ -21,7 +21,6 @@ LIB_DEPENDS=	mp3lame.0:${PORTSDIR}/audio/lame \
 		vorbis.3:${PORTSDIR}/audio/libvorbis
 
 USE_GETOPT_LONG=	yes
-USE_REINPLACE=	yes
 USE_GNOME=	gnometarget
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

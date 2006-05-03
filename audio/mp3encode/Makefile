@@ -19,7 +19,6 @@ RESTRICTED=	"Condition is not clear"
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/lsf/encoder
 
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 MAKE_ARGS+=	CC="${CC}"

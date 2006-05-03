@@ -21,7 +21,6 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
 INSTALLS_SHLIB=	yes
-USE_REINPLACE=	yes
 
 PLIST_FILES=	lib/xmms/General/libmailnotify.so \
 		lib/xmms/General/alert.wav

@@ -25,7 +25,6 @@ RUN_DEPENDS+=	mpg321:${PORTSDIR}/audio/mpg321
 RUN_DEPENDS+=	mpg123:${PORTSDIR}/audio/mpg123
 .endif
 
-USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gdkpixbuf
 WANT_GNOME=	yes

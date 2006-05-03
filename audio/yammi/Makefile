@@ -29,7 +29,6 @@ USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CXXFLAGS="${CXXFLAGS} ${PTHREAD_CFLAGS}" \
 		LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}"
 CONFIGURE_ARGS+=	--program-prefix='' --enable-threading=yes --enable-mt=yes
-USE_REINPLACE=	yes
 USE_KDELIBS_VER=3
 
 .include <bsd.port.pre.mk>

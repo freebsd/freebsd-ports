@@ -15,7 +15,6 @@ DISTNAME=	${PORTNAME}_v${PORTVERSION:S/./_/}
 MAINTAINER=	lofi@freebsd.org
 COMMENT=	Portable cross-platform Audio API
 
-USE_REINPLACE=	yes
 USE_ZIP=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

@@ -26,7 +26,6 @@ PATCHFILES+=	mpg321-0.2.10-scrobbler-01.patch:scrobbler
 PATCH_SITES+=	http://people.FreeBSD.org/~roam/ports/audio/:scrobbler \
 		http://devel.ringlet.net/audio/mpg321-scrobbler/:scrobbler
 
-USE_REINPLACE=	true
 
 MPG321_SCROBBLER_PLUGIN_NAME?=	321
 .endif

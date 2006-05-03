@@ -21,7 +21,6 @@ RUN_DEPENDS=	cd-discid:${PORTSDIR}/audio/cd-discid \
 		lame:${PORTSDIR}/audio/lame \
 		oggenc:${PORTSDIR}/audio/vorbis-tools
 
-USE_REINPLACE=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAN1=		abcde.1 cddb-tool.1

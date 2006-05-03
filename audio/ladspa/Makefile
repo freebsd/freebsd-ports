@@ -17,7 +17,6 @@ COMMENT=	Linux Audio Developer's Simple Plugin API
 
 WRKSRC=		${WRKDIR}/ladspa_sdk
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 PROGRAM_FILES=	analyseplugin applyplugin listplugins
 PLUGIN_FILES=	amp.so delay.so filter.so noise.so sine.so

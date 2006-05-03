@@ -23,7 +23,6 @@ USE_GZIP=	yes
 USE_SDL=	sdl mixer
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
-USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/pysdl_mixer-${PORTVERSION}
 EXAMPLESDIR=	${PREFIX}/share/examples/py-sdl-mixer
 

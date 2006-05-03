@@ -50,7 +50,6 @@ PGREPBASE=	/usr
 .endif
 
 USE_RC_SUBR=	slimserver.sh
-USE_REINPLACE=	yes
 TMP_SLIMDIR=	${WRKDIR}/slimserver
 TMP_DOCSDIR=	${WRKDIR}/doc
 CPANWRKDIR=	${WRKDIR}/cpantemp

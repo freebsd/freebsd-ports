@@ -31,7 +31,6 @@ OPTIONS=	JACK "Jack output plugin" off \
 		XIPH "FLAC/Speex/Vorbis decoder plugin" on
 
 USE_AUTOTOOLS=	libltdl
-USE_REINPLACE=	yes
 USE_AUTOTOOLS=  libtool:15
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-2.0

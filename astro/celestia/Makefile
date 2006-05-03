@@ -26,7 +26,6 @@ PORTDOCS=		AUTHORS CelestiaKeyAssignments.txt ChangeLog \
 USE_GMAKE=		yes
 USE_GL=			yes
 USE_GNOME=
-USE_REINPLACE=		yes
 USE_X_PREFIX=		yes
 
 CONFIGURE_ARGS=		--program-prefix=""

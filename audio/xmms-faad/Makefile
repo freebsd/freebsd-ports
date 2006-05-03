@@ -30,7 +30,6 @@ AUTOMAKE_ARGS=		--add-missing
 USE_X_PREFIX=		yes
 USE_GNOME=		gtk12
 USE_GMAKE=		yes
-USE_REINPLACE=		yes
 
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-xmms --with-mp4v2

@@ -16,7 +16,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Drum machine compiler
 
-USE_REINPLACE=	yes
 USE_SDL=	sdl
 CFLAGS+=	`${SDL_CONFIG} --cflags`
 LIBS+=		`${SDL_CONFIG} --libs`

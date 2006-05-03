@@ -21,7 +21,6 @@ RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 USE_X_PREFIX=	yes
 USE_GNOME=	esound gtk20
 USE_GCC=	3.4
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	LOCALEDIR="${PREFIX}/share/locale"
 

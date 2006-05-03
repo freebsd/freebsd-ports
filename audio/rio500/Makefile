@@ -21,7 +21,6 @@ CONFIGURE_ARGS=	--with-devicepath='/dev' \
 		--with-deviceentry='urio0' \
 		--with-id3support
 
-USE_REINPLACE=	yes
 
 .include <bsd.port.pre.mk>
 

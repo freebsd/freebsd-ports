@@ -22,7 +22,6 @@ COMMENT=	Dockable radio program for the BT848/878 and RadioTrack cards
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
-USE_REINPLACE=	yes
 
 PATCH_ARGS	=-p0 -d ${WRKDIR}
 

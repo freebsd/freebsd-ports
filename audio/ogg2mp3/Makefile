@@ -18,7 +18,6 @@ RUN_DEPENDS=	lame:${PORTSDIR}/audio/lame \
 
 NO_BUILD=	yes
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 
 PLIST_FILES=	bin/ogg2mp3
 

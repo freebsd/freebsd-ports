@@ -24,7 +24,6 @@ RUN_DEPENDS=	id3v2:${PORTSDIR}/audio/id3v2
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 USE_RUBY=	yes
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*

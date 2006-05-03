@@ -17,7 +17,6 @@ COMMENT=	A tool for checking and fixing mp3 archive inconsistencies
 RUN_DEPENDS=	${LOCALBASE}/bin/id3tool:${PORTSDIR}/audio/id3tool \
 		${LOCALBASE}/bin/mp3_check:${PORTSDIR}/audio/mp3_check
 
-USE_REINPLACE=	yes
 USE_PERL5_RUN=	yes
 NO_WRKSUBDIR=	yes
 EXTRACT_CMD=	${CP}

@@ -17,7 +17,6 @@ COMMENT=	Python binding for the LZMA compression library
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
-USE_REINPLACE=	yes
 
 post-patch:
 	${FIND} ${WRKSRC} -name '*.cpp' -or -name '*.c' -or \

@@ -23,7 +23,6 @@ RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 USE_QT_VER=	3
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 USE_GETOPT_LONG=yes
 USE_MYSQL=	yes
 CONFIGURE_ARGS+=--with-qtdir=${X11BASE} --with-id3-libs=${LOCALBASE}\

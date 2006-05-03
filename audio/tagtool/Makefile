@@ -19,7 +19,6 @@ LIB_DEPENDS=	id3-3.8.3:${PORTSDIR}/audio/id3lib \
 		vorbis.3:${PORTSDIR}/audio/libvorbis
 
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

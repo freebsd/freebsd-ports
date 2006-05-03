@@ -30,7 +30,6 @@ PORTNAMESUFX=	${PLUGIN:S/_sink//:S/_decoder//:S/src_//}
 USE_AUTOTOOLS=	libltdl
 USE_AUTOTOOLS=  libtool:15
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/akode-2.0
 INSTALLS_SHLIB=	yes
 

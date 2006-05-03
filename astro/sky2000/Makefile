@@ -15,7 +15,6 @@ MASTER_SITE_SUBDIR=	nova
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A binary representation of the Sky2000 star catalog
 
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
 DATADIR=	${PREFIX}/share/nova

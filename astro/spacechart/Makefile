@@ -17,7 +17,6 @@ COMMENT=	SpaceChart is a star chart viewer for GNOME
 
 USE_GETTEXT=	yes
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomelibs
 CONFIGURE_ARGS=	--without-included-gettext --datadir=${PREFIX}/share

@@ -21,7 +21,6 @@ PLIST_FILES=	bin/ha
 MAKEFILE=	makefile.nix
 ALL_TARGET=	ha
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 
 pre-patch:
 	@${REINPLACE_CMD} -e 's,<malloc.h>,<stdlib.h>,' \

@@ -27,7 +27,6 @@ LIBTOOLFILES=	configure db3/configure db/dist/configure popt/configure \
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_ICONV=	yes
-USE_REINPLACE=	yes
 LATEST_LINK=	rpm4
 CONFLICTS=	beecrypt-* rpm-3.*
 

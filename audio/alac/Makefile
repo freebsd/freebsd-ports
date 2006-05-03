@@ -16,7 +16,6 @@ COMMENT=	Basic decoder for Apple Lossless Audio Codec files (ALAC)
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_decoder
 ALL_TARGET=	alac
-USE_REINPLACE=	yes
 
 PLIST_FILES=	bin/alac
 PORTDOCS=	README

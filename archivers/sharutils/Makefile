@@ -15,7 +15,6 @@ MAINTAINER=	sylvioc@gmail.com
 COMMENT=	Pack, send and unpack shell archives; synchronize via e-mail
 
 USE_PERL5=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=g --disable-uucode
 INSTALL_TARGET=	install install-man

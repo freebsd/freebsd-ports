@@ -20,7 +20,6 @@ LIB_DEPENDS=	ao.3:${PORTSDIR}/audio/libao \
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack libgnomeui gnomeprefix
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	LDFLAGS="-L${LOCALBASE}/lib" CPPFLAGS="-I${LOCALBASE}/include"
 

@@ -13,7 +13,6 @@ MASTER_SITES=	http://www.enderunix.org/voipong/
 MAINTAINER=	siseci@EnderUNIX.org
 COMMENT=	Detect Voice Over IP calls and dump them to separate wave files
 
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
 SUB_FILES=	pkg-message

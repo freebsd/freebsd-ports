@@ -20,7 +20,6 @@ LIB_DEPENDS=	cdaudio.1:${PORTSDIR}/audio/libcdaudio
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gtk20
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

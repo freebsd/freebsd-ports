@@ -19,7 +19,6 @@ COMMENT=	Monkey's Audio lossless audio (de)compressor
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-backward
 

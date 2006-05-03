@@ -17,7 +17,6 @@ COMMENT=	Library for manipulating ID3 tags and Ogg comments
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
-USE_REINPLACE=	yes
 
 CONFIGURE_TARGET=
 CONFIGURE_ARGS+=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
