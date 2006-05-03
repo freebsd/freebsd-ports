@@ -24,7 +24,6 @@ WRKSRC=		${WRKDIR}/tinker/source
 MAKEFILE=	${WRKDIR}/tinker/make/Makefile
 ALL_TARGET=	all listing
 INSTALL_TARGET=	rename
-USE_REINPLACE=	yes
 RESTRICTED=	author requests no distribution except from his FTP site
 
 DOCS=		README *.pdf *.txt release*

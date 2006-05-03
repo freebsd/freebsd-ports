@@ -15,7 +15,6 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Benchmark SMTP/POP servers
 
-USE_REINPLACE=	yes
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

@@ -19,7 +19,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-standard-prefix --datadir=${DATADIR} --enable-viewer
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_PERL5_BUILD=	yes
-USE_REINPLACE=	yes
 
 .if !defined(WITHOUT_QT)
 BUILD_DEPENDS+=	qmake:${PORTSDIR}/devel/qmake

@@ -16,7 +16,6 @@ COMMENT=	Programs to compare protein sequences and profiles
 
 WRKSRC=		${WRKDIR}/SRC-${PORTVERSION}
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}| ; \

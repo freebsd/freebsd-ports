@@ -17,7 +17,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Toolkit for developing bioinformatic related software in C++
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes

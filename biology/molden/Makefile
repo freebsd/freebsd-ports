@@ -25,7 +25,6 @@ RESTRICTED=	"free for academic, non profit usage;"
 NO_CDROM=	"Do not re-distribute source and executable."
 NO_PACKAGE=	"Though the source codes are accessible, the author is hoping for distribution in an original form."
 MAKEFILE=	${WRKSRC}/makefile
-USE_REINPLACE=	yes
 
 .include <bsd.port.pre.mk>
 

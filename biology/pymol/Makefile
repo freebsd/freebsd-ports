@@ -24,7 +24,6 @@ LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut \
 
 WRKSRC=		${WRKDIR}/pymol-${PORTVERSION}
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 USE_PYTHON=	yes
 
 .include <bsd.port.pre.mk>

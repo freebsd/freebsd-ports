@@ -33,7 +33,6 @@ LIB_DEPENDS+=	cblas.1:${PORTSDIR}/math/atlas
 .endif
 
 INSTALLS_SHLIB=	yes
-USE_REINPLACE=	yes
 HPL_ARCH?=	FreeBSD_PIV_CBLAS
 ALL_TARGET=	arch=${HPL_ARCH}
 MAN3=		HPL_abort.3 HPL_all_reduce.3 HPL_barrier.3 HPL_bcast.3 \
