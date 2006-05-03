@@ -6,6 +6,7 @@
 
 PORTNAME=	libgcrypt
 PORTVERSION=	1.2.2
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	libgcrypt
@@ -13,7 +14,7 @@ MASTER_SITE_SUBDIR=	libgcrypt
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	"General purpose crypto library based on code used in GnuPG"
 
-LIB_DEPENDS=	gpg-error.1:${PORTSDIR}/security/libgpg-error
+LIB_DEPENDS=	gpg-error.2:${PORTSDIR}/security/libgpg-error
 
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes

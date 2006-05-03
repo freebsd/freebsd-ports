@@ -7,6 +7,7 @@
 
 PORTNAME=	gnutls-devel
 PORTVERSION=	1.3.4
+PORTREVISION=	1
 CATEGORIES=	security net
 MASTER_SITES=	http://josefsson.org/gnutls/releases/ \
 		${MASTER_SITE_GNUPG} \
@@ -21,7 +22,7 @@ COMMENT=	GNU Transport Layer Security library
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/makeinfo:${PORTSDIR}/print/texinfo
 LIB_DEPENDS=	gcrypt.13:${PORTSDIR}/security/libgcrypt \
-		gpg-error.1:${PORTSDIR}/security/libgpg-error
+		gpg-error.2:${PORTSDIR}/security/libgpg-error
 
 .if defined(WITH_OPENCDK) || exists(${LOCALBASE}/lib/libopencdk.so.8)
 LIB_DEPENDS+=	opencdk.8:${PORTSDIR}/security/opencdk

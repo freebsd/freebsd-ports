@@ -7,7 +7,7 @@
 
 PORTNAME=	gnutls
 PORTVERSION=	1.2.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security net
 MASTER_SITES=	${MASTER_SITE_GNUPG} \
 	http://www.mirrors.wiretapped.net/security/network-security/gnutls/ \
@@ -20,7 +20,7 @@ MAINTAINER=	novel@FreeBSD.org
 COMMENT=	GNU Transport Layer Security library
 
 LIB_DEPENDS=	gcrypt.13:${PORTSDIR}/security/libgcrypt \
-		gpg-error.1:${PORTSDIR}/security/libgpg-error
+		gpg-error.2:${PORTSDIR}/security/libgpg-error
 
 .if defined(WITH_OPENCDK) || exists(${LOCALBASE}/lib/libopencdk.so.8)
 LIB_DEPENDS+=	opencdk.8:${PORTSDIR}/security/opencdk
