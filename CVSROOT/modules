@@ -6172,6 +6172,7 @@ ltxml		ports/textproc/ltxml
 lua		ports/lang/lua
 lua-mode.el	ports/lang/lua-mode.el
 lua4		ports/lang/lua4
+lua50		ports/lang/lua50
 lua50-app	ports/devel/lua50-app
 lua50-compat51	ports/devel/lua50-compat51
 lua50-dfui	ports/devel/lua50-dfui
