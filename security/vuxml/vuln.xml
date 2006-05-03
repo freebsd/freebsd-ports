@@ -34,6 +34,40 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="d9dc2697-dadf-11da-912f-00123ffe8333">
+    <topic>phpwebftp -- "language" Local File Inclusion</topic>
+    <affects>
+      <package>
+	<name>phpwebftp</name>
+	<range><lt>3.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/19706/">
+	  <p>phpWebFTP have a vulnerability, which can be exploited by
+	    malicious people to disclose sensitive information.</p>
+	  <p>Input passed to to the "language" parameter in index.php isn't
+	    properly verified, before it is used to include files. This can be
+	    exploited to include arbitrary files from local resources.</p>
+	  <p>Successful exploitation requires that "magic_quotes_gpc" is
+	    disabled.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-1812</cvename>
+      <cvename>CVE-2006-1813</cvename>
+      <url>https://sourceforge.net/forum/forum.php?forum_id=566199</url>
+      <url>http://secunia.com/advisories/19706/</url>
+    </references>
+    <dates>
+      <discovery>2006-04-18</discovery>
+      <entry>2006-05-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e2476979-da74-11da-a67b-0013d4a4a40e">
     <topic>firefox -- denial of service vulnerability</topic>
     <affects>
