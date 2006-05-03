@@ -30,7 +30,6 @@ GNU_CONFIGURE=	yes
 USE_FREETYPE=	yes
 USE_XLIB=	yes
 INSTALLS_SHLIB=	yes
-USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--with-freetype \
 		--with-freetype-includedir=${PREFIX}/include/freetype1/freetype \
 		--with-freetype-libdir=${PREFIX}/lib

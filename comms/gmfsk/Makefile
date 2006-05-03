@@ -23,7 +23,6 @@ CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib" \
 		CPPFLAGS="-I${LOCALBASE}/include"
 USE_GMAKE=	yes
 USE_GNOME=	libgnomeui gnomehack gnomeprefix
-USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 
 OPTIONS=	HAMLIB "Enable HAMLIB Support" On

@@ -23,7 +23,6 @@ IGNORE=	cannot be installed since the driver has not been updated for 5.x kernel
 .endif
 
 WRKSRC=		${WRKDIR}/ixj_freebsd
-USE_REINPLACE=	yes
 MAKEFILE=	Makefile.BSD
 
 post-patch:

@@ -18,7 +18,6 @@ NO_PACKAGE=	"Different versions definitely cause crash"
 SYSDIR=		/usr/src/sys
 KMODDIR=	${PREFIX}/modules
 PLIST_SUB=	MSDOSFSKO=${MSDOSFSKO}
-USE_REINPLACE=	yes
 NO_WRKSUBDIR=	yes
 
 .include <bsd.port.pre.mk>

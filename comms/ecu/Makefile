@@ -13,8 +13,6 @@ MASTER_SITES=	ftp://tsx-11.mit.edu/pub/linux/sources/usr.bin/Communications/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extended Call Utility
 
-USE_REINPLACE=	yes
-
 do-configure:
 	cd ${WRKSRC}; yes "" | ./Configure
 

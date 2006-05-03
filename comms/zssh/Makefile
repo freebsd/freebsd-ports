@@ -18,7 +18,6 @@ COMMENT=	Interactively transferring files to a remote machine while using ssh
 
 RUN_DEPENDS=	lrz:${PORTSDIR}/comms/lrzsz
 
-USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
 
 PLIST_FILES=	bin/zssh bin/ztelnet

@@ -20,7 +20,6 @@ USE_X_PREFIX=	yes
 USE_GNOME=	gconf gtk12 gnomecanvas
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--disable-nls	# nls not supported yet
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"

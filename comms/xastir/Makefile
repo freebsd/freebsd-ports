@@ -23,7 +23,6 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_MOTIF=	yes
 USE_GETTEXT=	yes
-USE_REINPLACE=	yes
 
 MAN1=		xastir.1
 

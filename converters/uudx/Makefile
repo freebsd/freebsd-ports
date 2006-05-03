@@ -26,7 +26,6 @@ NO_WRKSUBDIR=	yes
 MANLANG=	ja
 MAN1=		uudx.1
 PLIST_FILES=	bin/uudx
-USE_REINPLACE=	yes
 
 pre-patch:
 	@${ECHO_MSG} "===>  Installing custom Makefile for ${DISTNAME}"

@@ -17,7 +17,6 @@ COMMENT=	A library for uu/xx/Base64/BinHex/yEnc de-/encoding
 
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
-USE_REINPLACE=	yes
 
 MAN3=		uulib.3
 

@@ -16,7 +16,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SNPP client/server for sending messages to an alphanumeric pager
 
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 
 MAN1=		qpage.1
 

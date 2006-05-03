@@ -22,7 +22,6 @@ WRKSRC=		${WRKDIR}/iiimf-xcin
 USE_BZIP2=	yes
 USE_XLIB=	yes
 USE_GNOME=	libxml2
-USE_REINPLACE=	yes
 USE_AUTOTOOLS=	automake:19 autoheader:259 autoconf:259 libtool:15
 AUTOMAKE_ARGS=	--add-missing
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

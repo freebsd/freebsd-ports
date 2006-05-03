@@ -25,7 +25,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomeprefix libgnomeui
-USE_REINPLACE=	yes
 
 WORDBOOKS_PATH=	${PREFIX}/share/gnome/${PORTNAME}/wordbooks
 

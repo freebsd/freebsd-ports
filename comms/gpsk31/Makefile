@@ -16,7 +16,6 @@ COMMENT=	A gtk psk31 client
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,-lpthread,${PTHREAD_LIBS},g" ${WRKSRC}/configure

@@ -19,7 +19,6 @@ RUN_DEPENDS=	lrz:${PORTSDIR}/comms/lrzsz \
 		lsz:${PORTSDIR}/comms/lrzsz
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/.src//}
-USE_REINPLACE=	yes
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "

@@ -16,7 +16,6 @@ COMMENT=	The automatic localization for Traditional Chinese zh_TW.Big5 locale
 
 RUN_DEPENDS=	${FASTEST_CVSUP}:${PORTSDIR}/sysutils/fastest_cvsup
 
-USE_REINPLACE=	yes
 NO_BUILD=	yes
 
 PKGINSTALL=	${WRKDIR}/pkg-install

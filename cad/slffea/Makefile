@@ -22,8 +22,6 @@ LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
 
 CONFLICTS=	swi-pl-[0-9]* TenDRA-[0-9]*
 
-USE_REINPLACE=	yes
-
 CFLAGS+=	-I${X11BASE}/include ${PTHREAD_CFLAGS}
 WRKSRC=		${WRKDIR}/${PORTNAME}-1.3
 ALL_TARGET=	everything

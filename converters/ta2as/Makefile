@@ -16,7 +16,6 @@ MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	TASM to AT&T asm syntax converter (GNU AS)
 
 USE_ZIP=	yes
-USE_REINPLACE=	yes
 NO_WRKSUBDIR=	yes
 
 EXTRACT_BEFORE_ARGS=	-q -a -L

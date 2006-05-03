@@ -14,7 +14,6 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	db@db.net
 COMMENT=	Amateur Radio cw (morse code) keyer daemon
 
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-exec
 

@@ -13,7 +13,6 @@ MASTER_SITES=	ftp://banyan.dlut.edu.cn/pub/PEOPLE/saka/
 MAINTAINER=	yinjieh@csie.nctu.edu.tw
 COMMENT=	Intelligent Chinese encoding converter
 
-USE_REINPLACE=	yes
 USE_GETOPT_LONG=	yes
 MAKE_ENV=	CFLAG="${CPPFLAGS}" LIBS="${LDFLAGS}"
 INSTALLS_SHLIB=	yes

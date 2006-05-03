@@ -25,7 +25,6 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
-USE_REINPLACE=	yes
 
 MAKE_ENV+=	CXX=${CXX}
 

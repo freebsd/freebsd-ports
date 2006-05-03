@@ -22,7 +22,6 @@ RUN_DEPENDS+=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 
 WRKSRC=		${WRKDIR}/Hanzim
 ALL_TARGET=	${PORTNAME}
-USE_REINPLACE=	yes
 
 MAN1=		hanzim.1
 

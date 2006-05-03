@@ -17,7 +17,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/./-/g}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Gnu Circuit Analysis Package
 
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 MAKE_ARGS=	CCC="${CXX}" CCFLAGS="${CXXFLAGS}"

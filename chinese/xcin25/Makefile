@@ -34,7 +34,6 @@ USE_ICONV=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
-USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--x-libraries=${X11BASE}/lib \
 		--with-xcin-dir=${PREFIX}/lib/X11/xcin25 \

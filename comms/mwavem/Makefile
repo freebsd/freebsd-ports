@@ -22,7 +22,6 @@ GNU_CONFIGURE=	yes
 STARTUP=	mwavem.sh
 USE_GMAKE=	yes
 SLEEP=		/bin/sleep
-USE_REINPLACE=	yes
 
 .include <bsd.port.pre.mk>
 

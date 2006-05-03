@@ -18,7 +18,6 @@ LATEST_LINK=	zh-chinput3
 USE_XLIB=	yes
 USE_GETTEXT=	yes
 USE_GNOME=	gtk12 imlib
-USE_REINPLACE=	yes
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message

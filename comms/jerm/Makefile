@@ -18,7 +18,6 @@ MAN1=		jerm.1
 OPTIONS=	JUPITER		"With Jupiter support" off
 
 PORTDOCS=	README
-USE_REINPLACE=	yes
 
 .include <bsd.port.pre.mk>
 

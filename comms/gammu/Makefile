@@ -16,7 +16,6 @@ COMMENT=	GNU All Mobile Management Utilities
 MAN1=		gammu.1
 USE_GMAKE=	yes
 USE_GNOME=	pkgconfig
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf:259:env
 INSTALLS_SHLIB=	yes

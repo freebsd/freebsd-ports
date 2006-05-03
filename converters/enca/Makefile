@@ -19,7 +19,6 @@ USE_ICONV=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--with-html-dir=${DOCSDIR} \
 		--without-librecode \

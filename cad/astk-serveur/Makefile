@@ -38,7 +38,6 @@ RUN_DEPENDS+=	${LOCALBASE}bin/pbs_tclsh:${PORTSDIR}/misc/pbs
 
 USE_PYTHON=	yes
 NO_BUILD=	yes
-USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ""
 
 PKGMESSAGE=	${WRKDIR}/pkg-message

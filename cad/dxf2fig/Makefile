@@ -14,8 +14,6 @@ MASTER_SITES=	http://ta.twi.tudelft.nl/ftp/dv/lemmens/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DXF to FIG converter
 
-USE_REINPLACE=	yes
-
 PLIST_FILES=	bin/dxf2fig
 
 post-patch:

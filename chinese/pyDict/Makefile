@@ -24,7 +24,6 @@ NO_BUILD=	yes
 SHAREMODE=	644
 DICTDIR=	${PREFIX}/lib/X11/pyDict
 DOCDIR=		${PREFIX}/share/doc/pyDict
-USE_REINPLACE=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
 

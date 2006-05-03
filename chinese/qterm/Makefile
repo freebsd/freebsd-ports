@@ -17,7 +17,6 @@ COMMENT=	QTerm is a BBS client in Unix
 
 USE_QT_VER=	3
 HAS_CONFIGURE=	yes
-USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--enable-mt --prefix=${PREFIX} \
 		--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include
 

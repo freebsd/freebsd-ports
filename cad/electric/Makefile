@@ -16,7 +16,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Sophisticated electrical CAD system
 
 USE_MOTIF=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
 post-patch:

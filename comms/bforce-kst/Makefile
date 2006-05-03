@@ -18,7 +18,6 @@ MAINTAINER=	anray@FreeBSD.org
 COMMENT=	Simple ifcico like Fidonet technology mailer
 
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
 CONTRIBS=	bfha/README bfha/bfha.pl bflan callout.sh outman timesync.tcl \
