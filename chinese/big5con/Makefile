@@ -16,7 +16,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Big5 Chinese console
 
 ONLY_FOR_ARCHS=	i386
-USE_REINPLACE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/dev/vga,/dev/ttyv0,g' ${WRKSRC}/src/*c

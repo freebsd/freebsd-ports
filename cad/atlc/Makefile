@@ -14,7 +14,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool to calculate the impedance of transmission lines
 
-USE_REINPLACE=	YES
 GNU_CONFIGURE=	YES
 
 MAN1=		atlc.1 coax.1 create_bmp_for_circ_in_circ.1 \

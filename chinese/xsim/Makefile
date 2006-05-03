@@ -18,7 +18,6 @@ COMMENT=	A simple and fast GBK Chinese XIM server
 
 LIB_DEPENDS=	db4:${PORTSDIR}/databases/db4
 
-USE_REINPLACE=	yes
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-cn-locale=eucCN

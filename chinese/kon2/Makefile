@@ -15,7 +15,6 @@ MAINTAINER=	ports@FreeBSD.org
 BUILD_DEPENDS+=	${NONEXISTENT}:${PORTSDIR}/chinese/kcfonts:patch \
 		${NONEXISTENT}:${PORTSDIR}/chinese/cce:extract
 
-USE_REINPLACE=	yes
 KCFONTS_WRKSRC=	`cd ${PORTSDIR}/chinese/kcfonts; make -V WRKSRC`
 CCE_WRKSRC=	`cd ${PORTSDIR}/chinese/cce; make -V WRKSRC`
 

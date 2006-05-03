@@ -19,7 +19,6 @@ LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/libXft
 
 USE_BZIP2=	yes
 USE_XLIB=	yes
-USE_REINPLACE=	yes
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 

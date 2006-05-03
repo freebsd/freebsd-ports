@@ -16,7 +16,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An event-driven logic-level simulator for MOS circuis
 
 USE_XLIB=	yes
-USE_REINPLACE=	yes
 MAN1=		irsim.1
 MAN3=		irsim-analyzer.3
 MAN5=		netchange.5

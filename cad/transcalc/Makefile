@@ -16,7 +16,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A analysis and synthesis tool for RF and microwave transmission lines
 
 USE_GNOME=	gnometarget gtk20
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
 MAN1=	transcalc.1

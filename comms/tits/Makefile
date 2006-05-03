@@ -14,7 +14,6 @@ MASTER_SITES=	http://www.mctavish.co.uk/tits/
 MAINTAINER=	mich@FreeBSD.org
 COMMENT=	A server which provides telnet(1) access to one or more tty ports
 
-USE_REINPLACE=	yes
 MAKE_ENV=	BINDIR=${PREFIX}/sbin MANDIR=${PREFIX}/man/man
 
 MAN8=		tits.8

@@ -16,7 +16,6 @@ MAINTAINER=	db@db.net
 COMMENT=	Amateur Radio Echolink conference bridge
 
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 
 PORTDOCS=	README
 

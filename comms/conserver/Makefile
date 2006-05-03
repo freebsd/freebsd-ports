@@ -21,8 +21,6 @@ COMMENT=	Manage remote serial consoles via TCP/IP
 BUILD_DEPENDS=	makeme:${PORTSDIR}/devel/msrc0 \
 		mkcmd:${PORTSDIR}/devel/mkcmd
 
-USE_REINPLACE=	yes
-
 MAN5=		conserver.cf.5
 MAN8=		autologin.8 console.8 conserver.8
 

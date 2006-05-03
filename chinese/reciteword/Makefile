@@ -31,7 +31,6 @@ USE_GCC=	3.4
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnomeprefix libgnomeui
-USE_REINPLACE=	yes
 
 RECITE_DATADIR=	${PREFIX}/share/gnome/${PORTNAME}
 

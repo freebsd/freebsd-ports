@@ -16,7 +16,6 @@ COMMENT=	The Universal IR Receiver Daemon
 
 USE_GMAKE=	yes
 USE_PERL5=	yes
-USE_REINPLACE=	yes
 
 MAKE_ENV+=	CC="${CC}"
 

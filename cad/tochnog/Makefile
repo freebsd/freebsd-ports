@@ -24,7 +24,6 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/libsuperlu.a:${PORTSDIR}/math/superlu
 .endif
 LIB_DEPENDS=	atlas:${PORTSDIR}/math/atlas
 
-USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
 MAKEFILE=	makefile
 

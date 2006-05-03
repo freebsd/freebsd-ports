@@ -15,7 +15,6 @@ COMMENT=	A openmotif X psk31 client
 
 USE_XPM=	yes
 USE_MOTIF=	yes
-USE_REINPLACE=	yes
 
 MAN1=		psk31.1
 

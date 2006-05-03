@@ -24,7 +24,6 @@ COMMENT=	An electronic CAD system
 NO_WRKSUBDIR=	yes
 USE_XLIB=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 
 .include <bsd.port.pre.mk>
 

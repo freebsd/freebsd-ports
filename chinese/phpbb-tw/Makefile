@@ -41,7 +41,6 @@ WWWGRP?=	www
 #
 WRKSRC=		${WRKDIR}/phpBB2
 NO_BUILD=	yes
-USE_REINPLACE=	yes
 SUB_FILES=	pkg-message
 SUB_LIST=	PHPBB_URL="${PHPBB_URL}" \
 		PHPBBDIR="${PHPBBDIR}" \

@@ -15,7 +15,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An interactive editor for VLSI layouts
 
 USE_XLIB=	yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	CADDIR="${PREFIX}" X11BASE="${X11BASE}"
 ALL_TARGET=	mains

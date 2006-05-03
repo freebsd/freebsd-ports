@@ -18,7 +18,6 @@ MAINTAINER=	maurice@castro.aus.net
 COMMENT=	Transfer data between a Psion Series 5(mx) and Unix
 
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 USE_GCC=	2.95
 
 PLIST_FILES=	bin/ncp bin/rfsv

@@ -61,7 +61,6 @@ CONFIGURE_ARGS+=--nointeractive
 MAKE_ARGS+=	OPTIMIZER="" -EOPTIMIZER
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	ENVOPTS="${CFLAGS}"
-USE_REINPLACE=	yes
 
 MAN1=	edit-faxcover.1 faxalter.1 faxcover.1 faxmail.1 faxrm.1 faxstat.1 \
 	hylafax-client.1 sendfax.1 sendpage.1 sgi2fax.1 textfmt.1

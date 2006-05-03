@@ -22,7 +22,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 DATADIR=	${PREFIX}/lib/pyla
 
 USE_PYTHON=	yes
-USE_REINPLACE=	yes
 PLIST=		${WRKDIR}/pkg-plist
 
 .include <bsd.port.pre.mk>

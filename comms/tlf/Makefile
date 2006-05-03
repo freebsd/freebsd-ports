@@ -15,7 +15,6 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	db@db.net
 COMMENT=	Amateur Radio curses based logging program
 
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LDFLAGS="${PTHREAD_LIBS}"
 

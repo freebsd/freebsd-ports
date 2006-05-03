@@ -19,7 +19,6 @@ LIB_DEPENDS=	pdf.7:${PORTSDIR}/print/pdflib
 
 USE_PYTHON=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
-USE_REINPLACE=	yes
 CFLAGS+=	-fPIC
 
 post-patch:

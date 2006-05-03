@@ -21,7 +21,6 @@ DATADIR=	${PREFIX}/share/qcad/library
 
 USE_X_PREFIX=	yes
 USE_ZIP=	yes
-USE_REINPLACE=	yes
 NO_BUILD=	yes
 PLIST=		${WRKDIR}/pkg-plist
 

@@ -24,7 +24,6 @@ BUILD_DEPENDS+=		unzip:${PORTSDIR}/archivers/unzip
 .endif
 
 USE_GL=		yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 VARKON_ROOT=	${WRKDIR}/${PORTNAME}_${PORTVERSION}
 WRKSRC=		${VARKON_ROOT}/sources

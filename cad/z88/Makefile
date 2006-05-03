@@ -18,7 +18,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A compact Finite Element Analysis System
 
 NO_WRKSUBDIR=	yes
-USE_REINPLACE=	yes
 USE_GL=		yes
 USE_MOTIF=	yes
 

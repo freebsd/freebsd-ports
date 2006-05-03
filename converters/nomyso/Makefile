@@ -15,7 +15,6 @@ MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Convert MASM/TASM files to NASM compatible sources
 
 USE_ZIP=	yes
-USE_REINPLACE=	yes
 USE_PERL5_RUN=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
