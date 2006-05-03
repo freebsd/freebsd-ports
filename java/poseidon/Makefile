@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	poseidon
-PORTVERSION=	4.0.1
+PORTVERSION=	4.1.1
 CATEGORIES=	java devel
 MASTER_SITES=	ftp://ftp.gentleware.org/ \
 		http://download.gentleware.org/ \
@@ -22,9 +22,8 @@ USE_ZIP=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.4+
 JAVA_VENDOR=	${_JAVA_VENDOR_LIST:Nsun}	# the port is broken with Sun JDKs
-USE_REINPLACE=	yes
 NO_BUILD=	yes
-NO_PACKAGE=	"Redistribution is not permitted"
+NO_PACKAGE=	Redistribution is not permitted
 NO_CDROM=	${NO_PACKAGE}
 RESTRICTED=	${NO_PACKAGE}
 
@@ -32,7 +31,7 @@ EDITION=	CE
 .if defined(WITH_EDITION)
 EDITION=	${WITH_EDITION}
 .endif
-DATAFILES=	LICENSE.txt lib
+DATAFILES=	LICENSE.txt lib licenses-3rdparty
 .if ${EDITION} == "PE"
 DATAFILES+=	LICENSE-concurrent.txt
 .endif
