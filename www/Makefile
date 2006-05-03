@@ -974,6 +974,7 @@
     SUBDIR += xitami
     SUBDIR += xpath2rss
     SUBDIR += xpi-adblock
+    SUBDIR += xpi-adblock_plus
     SUBDIR += xpi-colorfultabs
     SUBDIR += xpi-fasterfox
     SUBDIR += xpi-noscript
