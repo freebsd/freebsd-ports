@@ -1,4 +1,4 @@
-# New ports collection makefile for:	fox
+# New ports collection makefile for:	x11-toolkits/fox16
 # Date created:		28 Jul 2005
 # Whom:			Alexander Novitsky <alecn2002@yandex.ru>
 #
@@ -7,7 +7,6 @@
 
 PORTNAME=	fox
 PORTVERSION=	${MAJORVER}.${SHVER}
-PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.fox-toolkit.org/ftp/ \
 		ftp://ftp.fox-toolkit.org/pub/ \
@@ -22,16 +21,14 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		Xft.2:${PORTSDIR}/x11-fonts/libXft
 
 CONFLICTS=	fox-1.0.* fox-1.4.*
+LATEST_LINK=	fox16
 
-LATEST_LINK=	fox12
-
-MAJORVER=	1.2
-SHVER=		16
+MAJORVER=	1.6
+SHVER=		1
 PLIST_SUB+=	MAJORVER=${MAJORVER} SHVER=${SHVER}
 
 USE_GNOME=	lthack
 USE_GL=		yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-opengl --with-x --enable-threadsafe
