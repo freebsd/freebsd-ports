@@ -10944,6 +10944,7 @@ py-pydot	ports/graphics/py-pydot
 py-pyscript	ports/print/py-pyscript
 py-pysqlite20	ports/databases/py-pysqlite20
 py-pysqlite21	ports/databases/py-pysqlite21
+py-pysqlite22	ports/databases/py-pysqlite22
 py-pytz		ports/devel/py-pytz
 py-pyx12	ports/textproc/py-pyx12
 py-pyxmpp	ports/net-im/py-pyxmpp
