@@ -4,8 +4,7 @@ establish security association with other hosts.
 This is the IPSec-tools version of racoon.
 
 Enchancements:
-- Support of NAT-T.
-- Support of IKE fragmentation.
+- Support of NAT-T and IKE fragmentation.
 - Support of many authentication algorithms.
 - Tons of bugfixes.
 
