@@ -8,7 +8,8 @@
 PORTNAME=	instiki
 PORTVERSION=	0.11.0
 CATEGORIES=	www ruby
-MASTER_SITES=	http://rubyforge.org/frs/download.php/9296/
+MASTER_SITES=	http://rubyforge.org/frs/download.php/9296/ \
+		http://rubyforge.rubyuser.de/instiki/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	arsptr@optusnet.com.au
