@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	fastdep
-PORTVERSION=	0.15
-PORTREVISION=	2
+PORTVERSION=	0.16
 CATEGORIES=	devel
 MASTER_SITES=	http://www.irule.be/bvh/c++/fastdep/
 
@@ -16,9 +15,9 @@ MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	Fast dependency generator for C/C++ files
 
 USE_GMAKE=	yes
-USE_GETOPT_LONG= 	yes
+USE_GETOPT_LONG=	yes
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS= --disable-local-gnugetopt
+CONFIGURE_ARGS=	--disable-local-gnugetopt
 MAKE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 DOCS=		AUTHORS CHANGELOG INSTALL README \
