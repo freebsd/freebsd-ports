@@ -1,36 +1,40 @@
---- src/netspeed.c.orig	Sat Apr 15 03:17:56 2006
-+++ src/netspeed.c	Sat Apr 15 03:27:09 2006
-@@ -164,11 +164,17 @@ change_icons(NetspeedApplet *applet)
- 	{
- 		if (strstr(device, "ppp"))
- 			type = gdk_pixbuf_new_from_xpm_data(ICON_PPP);
--		else if (!strcmp(device, "lo"))
-+		else if (strstr(device, "tun"))
-+			type = gdk_pixbuf_new_from_xpm_data(ICON_PPP);
-+		else if (strstr(device, "lo"))
- 			type = gdk_pixbuf_new_from_xpm_data(ICON_LO);
--		else if (strstr(device, "lip"))
-+		else if (strstr(device, "plip"))
- 			type = gdk_pixbuf_new_from_xpm_data(ICON_PLIP);
--		else if (strstr(device, "wlan"))
-+		else if (strstr(device, "ath") || strstr(device, "an") ||
-+			 strstr(device, "awi") || strstr(device, "iwi") ||
-+			 strstr(device, "ipw") || strstr(device, "ndis") ||
-+			 strstr(device, "ral") || strstr(device, "ural") ||
-+			 strstr(device, "wi") || strstr(device, "wl"))
- 			type = gdk_pixbuf_new_from_xpm_data(ICON_WLAN);
- 		else
- 			type = gdk_pixbuf_new_from_xpm_data(ICON_ETH);
-@@ -386,7 +392,7 @@ search_for_up_if(NetspeedApplet *applet)
- 	
+--- src/netspeed.c.orig	Mon May  1 19:36:46 2006
++++ src/netspeed.c	Mon May  1 19:42:28 2006
+@@ -23,6 +23,7 @@
+ #include <panel-applet.h>
+ #include <panel-applet-gconf.h>
+ #include <gconf/gconf-client.h>
++#include <glibtop.h>
+ #include "backend.h"
+ #include "netspeed.h"
+ 
+@@ -391,7 +392,7 @@
+ 
  	devices = get_available_devices();
  	for (tmp = devices; tmp; tmp = g_list_next(tmp)) {
--		if (!g_str_equal(tmp->data, "lo")) {
-+		if (!g_str_equal(tmp->data, "lo0")) {
- 			info = get_device_info(tmp->data);
- 			if (info.running) {
- 				free_device_info(&applet->devinfo);
-@@ -1387,13 +1393,13 @@ netspeed_applet_factory(PanelApplet *app
+-		if (strcmp(tmp->data, "lo") == 0) continue;
++		if (strcmp(tmp->data, "lo0") == 0) continue;
+ 		if (strncmp(tmp->data, "dummy", strlen("dummy")) == 0) continue;
+ 		info = get_device_info(tmp->data);
+ 		if (info.running) {
+@@ -1344,6 +1345,16 @@
+ 	if (strcmp (iid, "OAFIID:GNOME_NetspeedApplet"))
+ 		return FALSE;
+ 
++    /*
++     * Work around a design flaw in libgtop: force an initialisation
++     * of the server, otherwise glibtop_get_netlist() will find that
++     * the server is not needed and glibtop_get_netload() (which needs
++     * the server) will fail.
++     *
++     * Jean-Yves Lefort <jylefort@FreeBSD.org> 20060501
++     */
++    glibtop_init();
++
+     icon_theme = gtk_icon_theme_get_default();
+     gtk_icon_theme_append_search_path(icon_theme, DATADIR"/pixmaps/"PACKAGE);
+ 	
+@@ -1432,13 +1443,13 @@
  		GList *ptr, *devices = get_available_devices();
  		ptr = devices;
  		while (ptr) { 

@@ -1,13 +1,14 @@
 libdata/bonobo/servers/GNOME_NetspeedApplet.server
 libexec/netspeed_applet2
 share/gnome/help/netspeed_applet/C/figures/details.png
-share/gnome/help/netspeed_applet/C/figures/eth_48.png
 share/gnome/help/netspeed_applet/C/figures/eth_sum_48.png
-share/gnome/help/netspeed_applet/C/figures/netspeed_applet_24.png
-share/gnome/help/netspeed_applet/C/figures/netspeed_applet_48.png
-share/gnome/help/netspeed_applet/C/figures/netspeed_applet_48_sum.png
-share/gnome/help/netspeed_applet/C/figures/phone_24.png
+share/gnome/help/netspeed_applet/C/figures/ethernet.png
+share/gnome/help/netspeed_applet/C/figures/loopback.png
+share/gnome/help/netspeed_applet/C/figures/netspeed_applet.png
+share/gnome/help/netspeed_applet/C/figures/plip.png
+share/gnome/help/netspeed_applet/C/figures/ppp.png
 share/gnome/help/netspeed_applet/C/figures/settings.png
+share/gnome/help/netspeed_applet/C/figures/wavelan.png
 share/gnome/help/netspeed_applet/C/legal.xml
 share/gnome/help/netspeed_applet/C/netspeed_applet.xml
 share/gnome/help/netspeed_applet/cs/figures/details.png
@@ -30,6 +31,17 @@ share/gnome/help/netspeed_applet/de/figures/phone_24.png
 share/gnome/help/netspeed_applet/de/figures/settings.png
 share/gnome/help/netspeed_applet/de/legal.xml
 share/gnome/help/netspeed_applet/de/netspeed_applet.xml
+share/gnome/help/netspeed_applet/es/figures/details.png
+share/gnome/help/netspeed_applet/es/figures/eth_sum_48.png
+share/gnome/help/netspeed_applet/es/figures/ethernet.png
+share/gnome/help/netspeed_applet/es/figures/loopback.png
+share/gnome/help/netspeed_applet/es/figures/netspeed_applet.png
+share/gnome/help/netspeed_applet/es/figures/plip.png
+share/gnome/help/netspeed_applet/es/figures/ppp.png
+share/gnome/help/netspeed_applet/es/figures/settings.png
+share/gnome/help/netspeed_applet/es/figures/wavelan.png
+share/gnome/help/netspeed_applet/es/legal.xml
+share/gnome/help/netspeed_applet/es/netspeed_applet.xml
 share/gnome/help/netspeed_applet/ru/figures/details.png
 share/gnome/help/netspeed_applet/ru/figures/eth_48.png
 share/gnome/help/netspeed_applet/ru/figures/eth_sum_48.png
@@ -43,8 +55,12 @@ share/gnome/help/netspeed_applet/ru/netspeed_applet.xml
 share/gnome/omf/netspeed_applet/netspeed_applet-C.omf
 share/gnome/omf/netspeed_applet/netspeed_applet-cs.omf
 share/gnome/omf/netspeed_applet/netspeed_applet-de.omf
+share/gnome/omf/netspeed_applet/netspeed_applet-es.omf
 share/gnome/omf/netspeed_applet/netspeed_applet-ru.omf
 share/gnome/pixmaps/netspeed_applet.png
+share/gnome/pixmaps/netspeed_applet/gnome-dev-loopback.png
+share/gnome/pixmaps/netspeed_applet/gnome-dev-plip.png
+share/gnome/pixmaps/netspeed_applet/gnome-dev-ppp.png
 share/locale/cs/LC_MESSAGES/netspeed_applet.mo
 share/locale/de/LC_MESSAGES/netspeed_applet.mo
 share/locale/es/LC_MESSAGES/netspeed_applet.mo
@@ -60,9 +76,12 @@ share/locale/ru/LC_MESSAGES/netspeed_applet.mo
 share/locale/sv/LC_MESSAGES/netspeed_applet.mo
 share/locale/tr/LC_MESSAGES/netspeed_applet.mo
 share/locale/zh_CN/LC_MESSAGES/netspeed_applet.mo
+@dirrm share/gnome/pixmaps/netspeed_applet
 @dirrm share/gnome/omf/netspeed_applet
 @dirrm share/gnome/help/netspeed_applet/ru/figures
 @dirrm share/gnome/help/netspeed_applet/ru
+@dirrm share/gnome/help/netspeed_applet/es/figures
+@dirrm share/gnome/help/netspeed_applet/es
 @dirrm share/gnome/help/netspeed_applet/de/figures
 @dirrm share/gnome/help/netspeed_applet/de
 @dirrm share/gnome/help/netspeed_applet/cs/figures
