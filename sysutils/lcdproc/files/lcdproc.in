@@ -1,0 +1,24 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: lcdproc
+# REQUIRE: LCDd
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+# SET THEM IN THE /etc/rc.conf FILE
+#
+
+. %%RC_SUBR%%
+
+name="lcdproc"
+rcvar=${name}_enable
+
+load_rc_config $name
+
+: ${lcdproc_enable="NO"}
+: ${lcdproc_flags="-d C S M U"}
+
+command="%%PREFIX%%/bin/lcdproc"
+
+run_rc_command "$1"
