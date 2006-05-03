@@ -199,6 +199,7 @@
     SUBDIR += frozenbubble
     SUBDIR += ftjava
     SUBDIR += fuhquake
+    SUBDIR += fxsudoku
     SUBDIR += galaxis
     SUBDIR += galaxyhack
     SUBDIR += galaxymage

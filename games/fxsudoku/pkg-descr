@@ -1,0 +1,10 @@
+fxsudoku is an implementation of the Sudoku game.
+
+The aim of Sudoku is to enter a numerical digit from 1 through 9
+in each cell of a 99 grid made up of 33 subgrids (called "regions"),
+starting with various digits given in some cells (the "givens").
+Each row, column, and region must contain only one instance of each
+numeral. Completing the puzzle requires patience and logical ability.
+
+Author: Sander Jansen <sander@knology.net>
+WWW: http://www.fifthplanet.net/
