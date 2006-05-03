@@ -7,7 +7,7 @@
 
 PORTNAME=	dbus
 PORTVERSION=	0.61
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES?=	devel gnome
 MASTER_SITES=	http://dbus.freedesktop.org/releases/
 
@@ -59,7 +59,8 @@ PLIST_SUB+=	QT="@comment "
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%X11BASE%%|${X11BASE}|' \
-		${WRKSRC}/bus/session.conf.in
+		${WRKSRC}/bus/session.conf.in \
+		${WRKSRC}/bus/system.conf.in
 
 .if !defined(DBUS_SLAVE)
 pre-su-install:
@@ -78,6 +79,7 @@ post-install:
 .if !defined(PACKAGE_BUILDING)
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .endif
+	${MKDIR} ${X11BASE}/etc/dbus-1/system.d
 	${MKDIR} ${X11BASE}/share/dbus-1/services
 .else
 .if defined(PKGNAMEPREFIX)
