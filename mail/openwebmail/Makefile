@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	openwebmail
-PORTVERSION?=	2.51
+PORTVERSION?=	2.52
 CATEGORIES=	mail
-MASTER_SITES=	http://openwebmail.org/openwebmail/download/%SUBDIR%/ \
-		http://turtle.ee.ncku.edu.tw/openwebmail/download/%SUBDIR%/
+MASTER_SITES=	http://openwebmail.acatysmoof.com/download/%SUBDIR%/ \
+		http://openwebmail.org/openwebmail/download/%SUBDIR%/
 MASTER_SITE_SUBDIR?=	release
 
 MAINTAINER?=	leeym@FreeBSD.org
