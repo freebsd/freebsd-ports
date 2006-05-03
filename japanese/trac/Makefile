@@ -15,6 +15,8 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}-ja-1.zip
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	An enhanced wiki and issue tracking system for software projects
 
+FORBIDDEN=	http://www.vuxml.org/freebsd/400d9d22-d6c5-11da-a14b-00123ffe8333.html
+
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/pysqlite2/__init__.py:${PORTSDIR}/databases/py-pysqlite20 \
 		${PYTHON_SITELIBDIR}/neo_cgi.so:${PORTSDIR}/www/clearsilver-python \
 		${PYTHON_SITELIBDIR}/svn/__init__.py:${PORTSDIR}/devel/subversion-python \
