@@ -34,6 +34,44 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="e2476979-da74-11da-a67b-0013d4a4a40e">
+    <topic>firefox -- denial of service vulnerability</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><gt>1.5.*,1</gt><lt>1.5.0.3,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>1.5.0.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A Mozilla Foundation Security Advisory reports for
+	  deleted object reference when designMode="on"</p>
+	<blockquote cite="http://www.mozilla.org/security/announce/2006/mfsa2006-30.html">
+	  <p>Martijn Wargers and Nick Mott each described crashes that
+	    were discovered to ultimately stem from the same root cause:
+	    attempting to use a deleted controller context when designMode
+	    was turned on. This generally results in crashing the browser,
+	    but in theory references to deleted objects can be abused to
+	    run malicious code.</p>
+	  <p>"splices" reported the same crash at the fan site MozillaZine and
+	    on Bugtraq, incorrectly describing it as a buffer overflow.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-1993</cvename>
+      <cvename>http://www.mozilla.org/security/announce/2006/mfsa2006-30.html</cvename>
+    </references>
+    <dates>
+      <discovery>2006-05-02</discovery>
+      <entry>2006-05-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="400d9d22-d6c5-11da-a14b-00123ffe8333">
     <topic>trac -- Wiki Macro Script Insertion Vulnerability</topic>
     <affects>
