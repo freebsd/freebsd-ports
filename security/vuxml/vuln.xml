@@ -34,6 +34,40 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="400d9d22-d6c5-11da-a14b-00123ffe8333">
+    <topic>trac -- Wiki Macro Script Insertion Vulnerability</topic>
+    <affects>
+      <package>
+	<name>trac</name>
+	<name>ja-trac</name>
+	<range><lt>0.9.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/19870/">
+	  <p>A vulnerability has been reported, which can be exploited by
+	    malicious people to conduct script insertion attacks.</p>
+	  <p>Input passed using the wiki macro isn't properly sanitised before
+	    being used. This can be exploited to inject arbitrary HTML and
+	    script code, which will be executed in a user's browser session in
+	    context of an affected site when the malicious user data is
+	    viewed.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://projects.edgewall.com/trac/wiki/ChangeLog</url>
+      <url>http://jvn.jp/jp/JVN%2384091359/index.html</url>
+      <url>http://secunia.com/advisories/19870/</url>
+    </references>
+    <dates>
+      <discovery>2006-04-28</discovery>
+      <entry>2006-05-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="af2a60ed-da3e-11da-93e0-00123ffe8333">
     <topic>rsync -- "xattrs.diff" Patch Integer Overflow Vulnerability</topic>
     <affects>
