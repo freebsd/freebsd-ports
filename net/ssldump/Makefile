@@ -16,6 +16,8 @@ COMMENT=	SSLv3/TLS network protocol analyzer
 
 USE_OPENSSL=	YES
 
+OPTIONS=	AES "Enable AES support from CVS (EXPERIMENTAL)" off
+
 .include <bsd.port.pre.mk>
 
 GNU_CONFIGURE=	YES
@@ -25,5 +27,9 @@ CONFIGURE_ARGS=	--with-openssl=${OPENSSLBASE} \
 
 MAN1=		ssldump.1
 PLIST_FILES=	bin/ssldump
+
+.if defined (WITH_AES)
+EXTRA_PATCHES+= ${FILESDIR}/extra-patch-aes
+.endif
 
 .include <bsd.port.post.mk>
