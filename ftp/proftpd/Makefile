@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	proftpd
-DISTVERSION=	1.3.0rc3
+DISTVERSION=	1.3.0
 PORTREVISION=	0
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
@@ -32,7 +32,6 @@ PORTDOCS=	${PORTDOCSdoc} ${PORTDOCScontrib}
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 
 USE_RC_SUBR=	proftpd.sh
 
@@ -53,7 +52,7 @@ OPTIONS=	IPV6 "Use IPv6" off \
 		WRAP "Include mod_wrap" on \
 		RADIUS "Include mod_radius" off
 
-MODULES?=	
+MODULES?=
 
 .include <bsd.port.pre.mk>
 
@@ -126,6 +125,10 @@ USE_OPENSSL=	yes
 .include <${PORTSDIR}/Mk/bsd.openssl.mk>
 PROFTPD_LIBS+=	-lssl -lcrypto -L${LOCALBASE}/lib
 MODULES:=${MODULES}:mod_tls
+
+.if defined(WITH_LDAP)
+EXTRA_PATCHES=${FILESDIR}/extra-patch-module-mod_ldap.c
+.endif
 .endif
 
 .if defined(WITH_CTRLS)
