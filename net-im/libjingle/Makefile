@@ -7,7 +7,7 @@
 
 PORTNAME=	libjingle
 PORTVERSION=	0.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -73,9 +73,14 @@ post-configure:
 		${CONFIGURE_WRKSRC}/config.h
 # configure does not handle OSS support
 # force oss
+# force ssl
+.for feature in \
+	FEATURE_ENABLE_SSL \
+	HAVE_SYS_SOUNDCARD_H
 	@${ECHO_CMD} \
-		'#define HAVE_SYS_SOUNDCARD_H 1' >> \
+		'#define ${feature} 1' >> \
 		${CONFIGURE_WRKSRC}/config.h
+.endfor
 
 post-install:
 .ifndef(NOPORTDOCS)
