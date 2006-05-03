@@ -19,7 +19,6 @@ COMMENT=	Read information about mp3s and oggs bitstream
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_GNOME=	gtk20
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 MAKE_ARGS=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
 

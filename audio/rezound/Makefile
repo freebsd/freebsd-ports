@@ -22,7 +22,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}"
 CONFIGURE_ARGS+=	--disable-alsa
-USE_REINPLACE=	yes
 
 OPTIONS=	LARGEFILE	"Enable 64-bit file I/O support (BROKEN!)" off \
 		JACK		"Enable Jack audio server support" on \

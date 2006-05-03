@@ -18,7 +18,6 @@ COMMENT=	C++ class framework for manipulating audio files
 LIB_DEPENDS=	ccgnu2-1.3.1:${PORTSDIR}/devel/commoncpp
 
 USE_GNOME=	gnometarget
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 USE_GCC=	3.4
 INSTALL_TARGET=	install man

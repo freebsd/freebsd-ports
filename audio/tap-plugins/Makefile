@@ -13,7 +13,6 @@ MASTER_SITE_SUBDIR=	tap-plugins
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LADSPA Plugins by Tom Szilagy
 
-USE_REINPLACE=	yes
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -I. -c -fPIC -DPIC" \
 		LDFLAGS="-nostartfiles -shared -Wl,-Bsymbolic -lm"
 

@@ -18,7 +18,6 @@ LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis \
 		FLAC.7:${PORTSDIR}/audio/flac
 RUN_DEPENDS+=	lame:${PORTSDIR}/audio/lame
 
-USE_REINPLACE=	yes
 USE_MOTIF=	yes
 USE_IMAKE=	yes
 PLIST_SUB+=	RELEASE=${OSREL:R:R} ARCH=${ARCH}

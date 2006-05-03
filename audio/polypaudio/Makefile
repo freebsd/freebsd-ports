@@ -20,7 +20,6 @@ LIB_DEPENDS=	samplerate.1:${PORTSDIR}/audio/libsamplerate
 USE_GNOME=	gnometarget gnomehack glib20
 WANT_GNOME=	yes
 USE_XLIB=	yes
-USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 USE_AUTOTOOLS=	libltdl:15
 GNU_CONFIGURE=	yes

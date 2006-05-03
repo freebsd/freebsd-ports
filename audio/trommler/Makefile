@@ -20,7 +20,6 @@ WRKSRC=		${WRKDIR}/Trommler
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 
 post-patch:
 #the third Makefile edit replaces the contents

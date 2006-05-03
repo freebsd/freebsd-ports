@@ -24,7 +24,6 @@ BUILD_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms \
 site_perl=	${SITE_PERL}
 
 PERL_CONFIGURE=	YES
-USE_REINPLACE=	yes
 
 MAN3=		Xmms::Remote.3 \
 		Xmms::SongChange.3 \

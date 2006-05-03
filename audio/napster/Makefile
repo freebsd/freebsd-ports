@@ -17,7 +17,6 @@ COMMENT?=	An MP3 sharing, search, and chat client for the OpenNAP network
 CONFLICTS?=	ru-nap-*
 
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 
 MAN1=	nap.1
 

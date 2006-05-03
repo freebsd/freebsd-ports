@@ -22,7 +22,6 @@ GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnomeprefix
-USE_REINPLACE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e \

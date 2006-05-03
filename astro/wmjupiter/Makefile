@@ -17,7 +17,6 @@ COMMENT=	Dockapp that displays information on jupiter
 PLIST_FILES=	bin/wmJupiter
 WRKSRC=		${WRKDIR}/wmJupiter
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
 USE_XPM=	yes
 USE_GMAKE=	yes
 

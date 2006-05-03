@@ -20,7 +20,6 @@ COMMENT=	Motif based FM tuner (for use with bt848 driver)
 USE_IMAKE=	yes
 USE_XPM=	yes
 USE_MOTIF=	yes
-USE_REINPLACE=	yes
 ONLY_FOR_ARCHS=	i386 ia64
 
 PLIST_FILES=	bin/xmradio lib/X11/app-defaults/XMradio

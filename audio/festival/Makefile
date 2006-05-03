@@ -39,7 +39,6 @@ MAKE_ENV+=	GCC="${CC}" \
 		CXX="${CXX}"
 MAN1=		festival.1 festival_client.1
 WRKSRC=		${WRKDIR}
-USE_REINPLACE=	yes
 
 do-build:
 .for ii in speech_tools festival

@@ -20,7 +20,6 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libid3tag.a:${PORTSDIR}/audio/mad \
 		${LOCALBASE}/lib/libhttpd-persistent.a:${PORTSDIR}/www/libhttpd-persistent
 
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 MAKEFILE=	makefile
 ALL_TARGET=	daapd
 USE_RC_SUBR=	yes

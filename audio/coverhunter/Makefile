@@ -20,7 +20,6 @@ RUN_DEPENDS=		${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imagi
 USE_X_PREFIX=		yes
 USE_GNOME=		pygtk2
 USE_PYTHON=		2.3+
-USE_REINPLACE=		yes
 NO_BUILD=		yes
 
 PYC=			PYTHON="${PYTHON_CMD}" ${SH} ${SCRIPTDIR}/py-compile

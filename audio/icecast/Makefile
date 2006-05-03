@@ -16,7 +16,6 @@ COMMENT=	A streaming mp3 audio server
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libwrap
-USE_REINPLACE=	yes
 
 pre-patch:
 	@${REINPLACE_CMD} -e 's|<history.h>|<readline/history.h>|' \

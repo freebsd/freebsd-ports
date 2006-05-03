@@ -18,7 +18,6 @@ COMMENT=	Free lossless audio codec
 LIB_DEPENDS=	ogg.5:${PORTSDIR}/audio/libogg
 
 USE_ICONV=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=  yes
 CONFIGURE_TARGET=	--target=${ARCH}-unknown-freebsd${OSREL}
 CONFIGURE_ARGS=	--enable-sse \

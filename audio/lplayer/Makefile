@@ -24,7 +24,6 @@ LIB_DEPENDS=	db_cxx-4.3.0:${PORTSDIR}/databases/db43 \
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_QT_VER=	3
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

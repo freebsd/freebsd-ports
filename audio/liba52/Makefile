@@ -16,7 +16,6 @@ MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	A free library for decoding ATSC A/52 streams, aka AC-3
 
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-oss --enable-shared
 INSTALLS_SHLIB=	yes

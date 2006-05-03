@@ -13,7 +13,6 @@ MASTER_SITES=	http://zakalwe.virtuaalipalvelin.net/~shd/foss/xdms/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An Amiga DMS archiver unpacker
 
-USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 ALL_TARGET=	xdms

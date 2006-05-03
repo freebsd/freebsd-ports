@@ -17,7 +17,6 @@ BUILD_DEPENDS=	ant:${PORTSDIR}/devel/apache-ant
 RUN_DEPENDS=	classpath:${PORTSDIR}/java/javavmwrapper
 
 USE_JAVA=	1.4+
-USE_REINPLACE=	YES
 
 PKGMESSAGE=	${WRKSRC}/LICENSE
 

@@ -18,7 +18,6 @@ COMMENT=	Perl extension for Ogg Vorbis streams
 
 LIB_DEPENDS=	vorbis.3:${PORTSDIR}/audio/libvorbis
 
-USE_REINPLACE=	yes
 
 PERL_CONFIGURE=	yes
 

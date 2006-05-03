@@ -20,7 +20,6 @@ LIB_DEPENDS=		tag:${PORTSDIR}/audio/taglib
 
 USE_X_PREFIX=		yes
 USE_GNOME=		gnomehack gnomeprefix libglade2
-USE_REINPLACE=		yes
 GNU_CONFIGURE=		yes
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"

@@ -20,7 +20,6 @@ USE_GETOPT_LONG=yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 
 MAN1=		cdparanoia.1
 

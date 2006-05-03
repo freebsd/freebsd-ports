@@ -15,7 +15,6 @@ COMMENT=	Volume control dock-app for the AfterStep Window Manager
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
 MAN1=		${PORTNAME}.1x

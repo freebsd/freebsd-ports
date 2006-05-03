@@ -18,7 +18,6 @@ COMMENT=	REAL shuffle mode for xmms
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 USE_X_PREFIX=	yes

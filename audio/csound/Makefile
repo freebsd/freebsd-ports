@@ -29,7 +29,6 @@ NO_WRKSUBDIR=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 PLIST=		${WRKDIR}/pkg-plist
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
 
 .include <bsd.port.pre.mk>
 

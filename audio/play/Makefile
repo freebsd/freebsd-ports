@@ -16,7 +16,6 @@ COMMENT=	A simple audio file player
 
 CONFLICTS=	sox-[0-9]*
 
-USE_REINPLACE=	yes
 MAKE_ARGS=	CFLAGS="${CFLAGS}" DESTDIR="${PREFIX}" MANDIR="/man/ja/man"
 
 MANLANG=	ja

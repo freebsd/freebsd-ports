@@ -19,7 +19,6 @@ USE_X_PREFIX=	yes
 USE_QT_VER=	3
 USE_GNOME=	gnometarget
 WANT_GNOME=	yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-qt3 --with-qt-binaries=${X11BASE}/bin

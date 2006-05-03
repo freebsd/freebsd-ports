@@ -16,7 +16,6 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A tool to normalize the gain of MP3 files
 
 PLIST_FILES=	bin/mp3gain
-USE_REINPLACE=	yes
 USE_ZIP=	yes
 
 NO_WRKSUBDIR=	yes

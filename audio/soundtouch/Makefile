@@ -15,7 +15,6 @@ MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	An open-source audio processing library
 
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 USE_ZIP=	yes
 
 WRKSRC=		${WRKDIR}/SoundTouch-${PORTVERSION}

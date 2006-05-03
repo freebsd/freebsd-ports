@@ -19,7 +19,6 @@ RUN_DEPENDS=	${LOCALBASE}/share/eawpats/acbass.pat:${PORTSDIR}/audio/eawpats \
 
 RESTRICTED=	Some of the patches are marked no-commercial-use
 
-USE_REINPLACE=	yes
 NO_WRKSUBDIR=	yes
 
 TIMIDITY_DATADIR=	share/timidity

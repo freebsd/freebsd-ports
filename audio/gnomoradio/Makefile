@@ -25,7 +25,6 @@ LIB_DEPENDS=		sigc-2.0:${PORTSDIR}/devel/libsigc++20 \
 USE_X_PREFIX=		yes
 USE_GCC=		3.4+
 USE_GNOME=		gnomehack gnomeprefix
-USE_REINPLACE=		yes
 INSTALLS_SHLIB=		yes
 USE_AUTOTOOLS=		libtool:15
 LIBTOOLFLAGS=		--tag=CXX

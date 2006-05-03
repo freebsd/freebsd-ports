@@ -14,8 +14,6 @@ MASTER_SITES=	http://www.teaser.fr/~amajorel/deutex/ \
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	WAD file composer for Doom, Heretic, Hexen, and Strife
 
-USE_REINPLACE=	yes
-
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 
 PLIST_FILES=	bin/deusf bin/deutex

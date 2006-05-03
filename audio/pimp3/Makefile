@@ -18,7 +18,6 @@ RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123 \
 
 WRKSRC=		${WRKDIR}/pimp3
 
-USE_REINPLACE=	yes
 NO_BUILD=	yes
 USE_PYTHON=	yes
 

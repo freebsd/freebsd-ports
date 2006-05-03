@@ -25,7 +25,6 @@ USE_X_PREFIX=	yes
 USE_GNOME=	gtk12 gnometarget
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 
 PLIST_FILES=	lib/xmms/Output/libjackout.a \
 		lib/xmms/Output/libjackout.la \

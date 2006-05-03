@@ -16,7 +16,6 @@ MAINTAINER=	dyeske@yahoo.com
 COMMENT=	A SDL audio library and player for some popular sound file formats
 
 USE_SDL=	sdl
-USE_REINPLACE=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

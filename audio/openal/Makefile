@@ -23,7 +23,6 @@ USE_GMAKE=	yes
 USE_GNOME=	pkgconfig gnomehack
 WANT_SDL=	yes
 INSTALLS_SHLIB=	yes
-USE_REINPLACE=	yes
 
 OPTIONS=	ARTS "aRts backend" off \
 		ESD "esd backend" off \

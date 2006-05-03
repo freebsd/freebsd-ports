@@ -20,7 +20,6 @@ RUN_DEPENDS=	gdesklets:${PORTSDIR}/deskutils/gdesklets
 
 USE_PYTHON=	yes
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
 
 NAME=		XMMS
 WRKSRC=		${WRKDIR}/${NAME}

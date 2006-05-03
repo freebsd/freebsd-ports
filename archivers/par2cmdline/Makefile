@@ -17,7 +17,6 @@ COMMENT=	Tools for using Parity v2 Archive files
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 

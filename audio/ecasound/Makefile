@@ -15,7 +15,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multitrack audio processing software
 
 USE_GNOME=	gnometarget
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=  yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"

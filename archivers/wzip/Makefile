@@ -17,7 +17,6 @@ COMMENT=	A preprocessor for lossy data compression
 ALL_TARGET=	wzip
 WRKSRC=		${WRKDIR}/wzip-${PORTVERSION}
 MAN1=		wzip.1
-USE_REINPLACE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} 's|gcc|${CC}|' \

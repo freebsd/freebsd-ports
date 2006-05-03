@@ -29,7 +29,6 @@ AUTOMAKE_ARGS=		--add-missing
 USE_X_PREFIX=		yes
 USE_GMAKE=		yes
 USE_GNOME=		gtk20
-USE_REINPLACE=		yes
 
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-xmms --with-mp4v2

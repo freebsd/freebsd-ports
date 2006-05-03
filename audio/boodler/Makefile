@@ -19,7 +19,6 @@ COMMENT=	A programmable soundscape tool
 RESTRICTED=	no commercial use
 RESTRICTED_FILES=	boodler-snd-021902.tar.gz
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 USE_PYTHON=	yes
 DRIVER?=	oss
 WRKSRC=		${WRKDIR}/${PORTNAME}

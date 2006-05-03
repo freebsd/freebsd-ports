@@ -17,7 +17,6 @@ COMMENT=	A collection of programs to manipulate audio files
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libtsp.a:${PORTSDIR}/audio/afsp
 
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	AFSP_INCLUDE_PATH="${LOCALBASE}/include" \
 		AFSP_LIBRARY_PATH="${LOCALBASE}/lib"
