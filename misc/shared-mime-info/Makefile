@@ -9,7 +9,7 @@ PORTVERSION=	0.17
 PORTREVISION=	1
 CATEGORIES=	misc gnome
 MASTER_SITES=	http://www.marcuscom.com/downloads/ \
-		http://freedesktop.org/~hadess/
+		http://people.freedesktop.org/~hadess/
 DISTNAME=	shared-mime-info-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
