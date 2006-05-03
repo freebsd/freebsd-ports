@@ -59,7 +59,7 @@ CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
 .if defined(WITH_CML)
-LIB_DEPENDS+=		lua.5:${PORTSDIR}/lang/lua
+LIB_DEPENDS+=		lua.5:${PORTSDIR}/lang/lua50
 CONFIGURE_ARGS+=	--with-lua
 CONFIGURE_ENV+=		CFLAGS=-I${LOCALBASE}/include LDFLAGS=-L/${LOCALBASE}/lib
 .endif

@@ -16,10 +16,10 @@ DISTNAME=	lua-dfui-0.1.20050901
 MAINTAINER=	andrew+ports@fubar.geek.nz
 COMMENT=	DFUI binding for Lua 5.0.x
 
-BUILD_DEPENDS=	${LOCALBASE}/include/lua.h:${PORTSDIR}/lang/lua \
+BUILD_DEPENDS=	${LOCALBASE}/include/lua.h:${PORTSDIR}/lang/lua50 \
 		${NONEXISTENT}:${PORTSDIR}/devel/lua50-compat51:extract
 LIB_DEPENDS=	dfui4.4:${PORTSDIR}/devel/libdfui
-RUN_DEPENDS=	${LOCALBASE}/include/lua.h:${PORTSDIR}/lang/lua \
+RUN_DEPENDS=	${LOCALBASE}/include/lua.h:${PORTSDIR}/lang/lua50 \
 		${LOCALBASE}/share/lua/5.0/compat-5.1.lua:${PORTSDIR}/devel/lua50-compat51 \
 		${LOCALBASE}/share/lua/5.0/posix.lua:${PORTSDIR}/devel/lua50-posix
 

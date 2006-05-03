@@ -17,7 +17,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Ruby extension to make Lua script language as a class
 
-LIB_DEPENDS=	lua.5:${PORTSDIR}/lang/lua
+LIB_DEPENDS=	lua.5:${PORTSDIR}/lang/lua50
 
 CONFLICTS=	${RUBY_PKGNAMEPREFIX}lua4-[0-9]*
 

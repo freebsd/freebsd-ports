@@ -15,7 +15,7 @@ EXTRACT_ONLY=
 MAINTAINER=	andrew+ports@fubar.geek.nz
 COMMENT=	Filename-manipulating functions for Lua 5.0.x
 
-RUN_DEPENDS=	${LOCALBASE}/include/lua.h:${PORTSDIR}/lang/lua
+RUN_DEPENDS=	${LOCALBASE}/include/lua.h:${PORTSDIR}/lang/lua50
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes

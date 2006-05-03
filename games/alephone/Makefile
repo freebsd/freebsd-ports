@@ -17,7 +17,7 @@ COMMENT=	The open source version of Bungie's Marathon game
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/function.hpp:${PORTSDIR}/devel/boost
 LIB_DEPENDS=	speex.3:${PORTSDIR}/audio/speex \
-		lua.5:${PORTSDIR}/lang/lua
+		lua.5:${PORTSDIR}/lang/lua50
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gnometarget

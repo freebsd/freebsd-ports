@@ -14,7 +14,7 @@ DISTFILES=	lposix.tar.gz
 MAINTAINER=	andrew+ports@fubar.geek.nz
 COMMENT=	A POSIX layer for Lua
 
-BUILD_DEPENDS=	${LOCALBASE}/include/lua.h:${PORTSDIR}/lang/lua
+BUILD_DEPENDS=	${LOCALBASE}/include/lua.h:${PORTSDIR}/lang/lua50
 
 WRKSRC=		${WRKDIR}/posix
 

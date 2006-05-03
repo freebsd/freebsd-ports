@@ -14,9 +14,9 @@ DISTFILES=	pty.lua?rev=1.2 pty.c?rev=1.25
 MAINTAINER=	andrew+ports@fubar.geek.nz
 COMMENT=	Pty (pseudo-terminal) bindings for Lua 5.0.x
 
-BUILD_DEPENDS=	${LOCALBASE}/include/lua.h:${PORTSDIR}/lang/lua \
+BUILD_DEPENDS=	${LOCALBASE}/include/lua.h:${PORTSDIR}/lang/lua50 \
 		${NONEXISTENT}:${PORTSDIR}/devel/lua50-compat51:extract
-RUN_DEPENDS=	${LOCALBASE}/include/lua.h:${PORTSDIR}/lang/lua \
+RUN_DEPENDS=	${LOCALBASE}/include/lua.h:${PORTSDIR}/lang/lua50 \
 		${LOCALBASE}/share/lua/5.0/compat-5.1.lua:${PORTSDIR}/devel/lua50-compat51
 
 LIBDIR=		${PREFIX}/lib/lua/5.0

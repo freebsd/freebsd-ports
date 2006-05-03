@@ -13,7 +13,7 @@ MASTER_SITES=	http://modeemi.fi/~tuomov/ion/dl/
 MAINTAINER=	ed@fxq.nl
 COMMENT=	The development version of the Ion window manager
 
-LIB_DEPENDS=	lua.5:${PORTSDIR}/lang/lua
+LIB_DEPENDS=	lua.5:${PORTSDIR}/lang/lua50
 RUN_DEPENDS=	run-mailcap:${PORTSDIR}/misc/mime-support
 
 CONFLICTS=	ion-2002* pwm-[0-9]* ion-2*

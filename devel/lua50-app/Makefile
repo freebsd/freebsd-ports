@@ -16,8 +16,8 @@ EXTRACT_ONLY=
 MAINTAINER=	andrew+ports@fubar.geek.nz
 COMMENT=	App framework for Lua 5.0.x
 
-BUILD_DEPENDS=	${LOCALBASE}/include/lua.h:${PORTSDIR}/lang/lua
-RUN_DEPENDS=	${LOCALBASE}/include/lua.h:${PORTSDIR}/lang/lua \
+BUILD_DEPENDS=	${LOCALBASE}/include/lua.h:${PORTSDIR}/lang/lua50
+RUN_DEPENDS=	${LOCALBASE}/include/lua.h:${PORTSDIR}/lang/lua50 \
 		${LOCALBASE}/share/lua/5.0/posix.lua:${PORTSDIR}/devel/lua50-posix \
 		${LOCALBASE}/share/lua/5.0/filename.lua:${PORTSDIR}/devel/lua50-filename \
 		${LOCALBASE}/share/lua/5.0/pty.lua:${PORTSDIR}/devel/lua50-pty

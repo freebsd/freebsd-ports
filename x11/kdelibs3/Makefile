@@ -27,7 +27,7 @@ LIB_DEPENDS=	IlmImf:${PORTSDIR}/graphics/OpenEXR \
 		dns_sd:${PORTSDIR}/net/mDNSResponder \
 		idn:${PORTSDIR}/dns/libidn \
 		jasper:${PORTSDIR}/graphics/jasper \
-		lua.5:${PORTSDIR}/lang/lua \
+		lua.5:${PORTSDIR}/lang/lua50 \
 		pcre:${PORTSDIR}/devel/pcre \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		xml2.5:${PORTSDIR}/textproc/libxml2 \

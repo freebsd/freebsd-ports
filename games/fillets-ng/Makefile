@@ -19,7 +19,7 @@ EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	amdmi3@mail.ru
 COMMENT=	A wonderful puzzle game
 
-LIB_DEPENDS=	lua.5:${PORTSDIR}/lang/lua
+LIB_DEPENDS=	lua.5:${PORTSDIR}/lang/lua50
 
 USE_SDL=	sdl mixer image ttf
 USE_GMAKE=	yes

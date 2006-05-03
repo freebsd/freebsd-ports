@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.tecgraf.puc-rio.br/pub/users/celes/tolua/ \
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	toLua: accessing C/C++ code from Lua
 
-LIB_DEPENDS=	lua:${PORTSDIR}/lang/lua
+LIB_DEPENDS=	lua:${PORTSDIR}/lang/lua50
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-5.0
 USE_GMAKE=	yes
