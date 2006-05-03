@@ -978,6 +978,7 @@
     SUBDIR += xpi-colorfultabs
     SUBDIR += xpi-fasterfox
     SUBDIR += xpi-noscript
+    SUBDIR += xpi-pdf_download
     SUBDIR += xpi-tabmixplus
     SUBDIR += xshttpd
     SUBDIR += xshttpd-devel
