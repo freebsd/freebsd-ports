@@ -7,7 +7,7 @@
 
 PORTNAME?=	mbmon
 PORTVERSION=	205
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.nt.phys.kyushu-u.ac.jp/shimizu/download/xmbmon/
 DISTNAME=	xmbmon${PORTVERSION}
