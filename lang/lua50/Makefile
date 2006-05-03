@@ -25,6 +25,8 @@ ALL_TARGET=	all so
 INSTALL_TARGET=	install soinstall
 INSTALLS_SHLIB=	YES
 
+CONFLICTS=	lua-4* lua-5.1*
+
 do-configure:
 	${REINPLACE_CMD} \
 		-e 's|^\(MYCFLAGS=\).*$$|\1 ${CFLAGS}|' \

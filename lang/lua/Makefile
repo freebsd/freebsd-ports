@@ -22,6 +22,8 @@ MAN1=		lua.1 luac.1
 
 MAKE_ARGS=	bsd
 
+CONFLICTS=	lua-4* lua-5.0*
+
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
