@@ -34,6 +34,46 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="b088bf48-da3b-11da-93e0-00123ffe8333">
+    <topic>clamav -- Freshclam HTTP Header Buffer Overflow Vulnerability</topic>
+    <affects>
+      <package>
+	<name>clamav</name>
+	<range><ge>0.80</ge><lt>0.88.2</lt></range>
+      </package>
+      <package>
+	<name>clamav-devel</name>
+	<range><ge>20040826</ge><lt>20060502</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/19880/">
+	  <p>A vulnerability has been reported in ClamAV, which can be
+	    exploited by malicious people to cause a DoS (Denial of Service)
+	    and potentially to compromise a vulnerable system.</p>
+	  <p>The vulnerability is caused due to a boundary error within the
+	    HTTP client in the Freshclam command line utility. This can be
+	    exploited to cause a stack-based buffer overflow when the HTTP
+	    headers received from a web server exceeds 8KB.</p>
+	  <p>Successful exploitation requires that Freshclam is used to
+	    download virus signature updates from a malicious mirror web
+	    server e.g. via DNS poisoning.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-1989</cvename>
+      <url>http://www.clamav.net/security/0.88.2.html</url>
+      <url>http://secunia.com/advisories/19880/</url>
+    </references>
+    <dates>
+      <discovery>2006-05-01</discovery>
+      <entry>2006-05-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f4af098d-d921-11da-ad4a-00123ffe8333">
     <topic>jabberd -- SASL Negotiation Denial of Service Vulnerability</topic>
     <affects>
