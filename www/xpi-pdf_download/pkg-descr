@@ -1,0 +1,11 @@
+PDF Download, every time you click on a link, checks if the target
+is a pdf file and in this case let you choose what you want to do:
+- open pdf with default viewer
+- open the file inside a new tab
+- download it to the filesystem
+- view it as HTML
+
+WWW: http://www.rabotat.org/firefox/
+
+- Alex Dupre
+ale@FreeBSD.org
