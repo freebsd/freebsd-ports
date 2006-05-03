@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	visual
-PORTVERSION=	3.2.7
-PORTREVISION=	1
+PORTVERSION=	3.2.9
 CATEGORIES=	graphics python
 MASTER_SITES=	http://www.vpython.org/download/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -28,9 +27,11 @@ USE_GNOME=	gtk12
 USE_PYTHON=	2.3+
 USE_XLIB=	yes
 
+OPTIONS=	EXAMPLES "install example files" on
+OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
+
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-html-dir=${DOCSDIR} \
-		--with-example-dir=${EXAMPLESDIR}
+CONFIGURE_ARGS=	--with-html-dir=${DOCSDIR}
 CONFIGURE_ENV=	PYTHONPATH=${PYTHON_LIBDIR}
 .if defined(NOPORTDOCS)
 CONFIGURE_ARGS+=	--disable-docs
@@ -46,6 +47,14 @@ BROKEN=		does not compile
 
 .if ${ARCH} == amd64
 IGNORE=		loops infinitely during build
+.endif
+
+.if !defined(WITH_EXAMPLES)
+CONFIGURE_ARGS+=	--disable-examples
+PLIST_SUB+=	PORTEXAMPLES="@comment "
+.else
+CONFIGURE_ARGS+=	--with-example-dir=${EXAMPLESDIR}
+PLIST_SUB+=	PORTEXAMPLES=""
 .endif
 
 post-patch:

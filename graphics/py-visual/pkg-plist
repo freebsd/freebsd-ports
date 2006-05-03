@@ -85,40 +85,40 @@ bin/vpython
 %%PORTDOCS%%%%DOCSDIR%%/visual/sphere.html
 %%PORTDOCS%%%%DOCSDIR%%/visual/spherebox.gif
 %%PORTDOCS%%%%DOCSDIR%%/visual/vector.html
-%%EXAMPLESDIR%%/Tk-Visual.py
-%%EXAMPLESDIR%%/bounce.py
-%%EXAMPLESDIR%%/bounce2.py
-%%EXAMPLESDIR%%/colorsliders.py
-%%EXAMPLESDIR%%/controlstest.py
-%%EXAMPLESDIR%%/convex.py
-%%EXAMPLESDIR%%/crossproduct.py
-%%EXAMPLESDIR%%/crystal.py
-%%EXAMPLESDIR%%/dipole.py
-%%EXAMPLESDIR%%/doublependulum.py
-%%EXAMPLESDIR%%/drape.py
-%%EXAMPLESDIR%%/faces_cone.py
-%%EXAMPLESDIR%%/faces_heightfield.py
-%%EXAMPLESDIR%%/gas.py
-%%EXAMPLESDIR%%/glinfo.py
-%%EXAMPLESDIR%%/graphtest.py
-%%EXAMPLESDIR%%/gyro.py
-%%EXAMPLESDIR%%/gyro2.py
-%%EXAMPLESDIR%%/hanoi.py
-%%EXAMPLESDIR%%/lathe.py
-%%EXAMPLESDIR%%/lorenz.py
-%%EXAMPLESDIR%%/orbit.py
-%%EXAMPLESDIR%%/planar.py
-%%EXAMPLESDIR%%/randombox.py
-%%EXAMPLESDIR%%/stars.py
-%%EXAMPLESDIR%%/stonehenge.py
-%%EXAMPLESDIR%%/texttest.py
-%%EXAMPLESDIR%%/tictac.py
-%%EXAMPLESDIR%%/tictacdat.py
-%%EXAMPLESDIR%%/toroid.py
-%%EXAMPLESDIR%%/toroid_drag.py
-%%EXAMPLESDIR%%/wave.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Tk-Visual.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bounce.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bounce2.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/colorsliders.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/controlstest.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/convex.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/crossproduct.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/crystal.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dipole.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/doublependulum.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/drape.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/faces_cone.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/faces_heightfield.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gas.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/glinfo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphtest.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gyro.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gyro2.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hanoi.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/lathe.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/lorenz.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/orbit.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/planar.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/randombox.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stars.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stonehenge.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/texttest.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tictac.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tictacdat.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/toroid.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/toroid_drag.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/wave.py
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/visual/icons
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/visual
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/visual
