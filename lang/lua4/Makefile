@@ -24,6 +24,8 @@ WRKSRC=		${WRKDIR}/lua
 ALL_TARGET=	all so
 INSTALLS_SHLIB=	YES
 
+CONFLICTS=	lua-5*
+
 do-install:
 	@ ${MKDIR} ${PREFIX}/share/doc/lua
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/bin/lua ${PREFIX}/bin
