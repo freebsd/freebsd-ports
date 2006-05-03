@@ -1,0 +1,26 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: LCDd
+# REQUIRE: DAEMON
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+# SET THEM IN THE /etc/rc.conf FILE
+#
+
+. %%RC_SUBR%%
+
+name="LCDd"
+rcvar=${name}_enable
+
+load_rc_config $name
+
+: ${LCDd_enable="NO"}
+: ${LCDd_conf="%%PREFIX%%/etc/LCDd.conf"}
+: ${LCDd_flags="-c ${LCDd_conf}"}
+
+required_files=${LCDd_conf}
+command="%%PREFIX%%/sbin/LCDd"
+
+run_rc_command "$1"
