@@ -1098,6 +1098,7 @@ cgiwrap		ports/www/cgiwrap
 cgoban		ports/games/cgoban
 cgoban2		ports/games/cgoban2
 cgprof		ports/devel/cgprof
+chaco		ports/math/chaco
 chameleon	ports/lang/chameleon
 chbg		ports/graphics/chbg
 check_snmp_pkgvuln	ports/net-mgmt/check_snmp_pkgvuln
