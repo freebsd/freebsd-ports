@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gcin
-PORTVERSION=	1.1.8
+PORTVERSION=	1.1.9
 CATEGORIES=	chinese textproc gnome
 MASTER_SITES=	http://www.csie.nctu.edu.tw/~cp76/gcin/download/ \
 		http://edt1023.sayya.org/misc/
@@ -15,7 +15,7 @@ DISTFILES=	${GCINFILE} ${BOSHIAMYFILE}
 EXTRACT_ONLY=	${GCINFILE}
 .endif
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	chinsan.tw@gmail.com
 COMMENT=	A traditional chinese input utility in X
 
 USE_X_PREFIX=	YES
@@ -51,17 +51,9 @@ post-extract:
 		noseeing.cin
 	@${REINPLACE_CMD} -e 's,cj.gtab,cj.gtab noseeing.gtab,' \
 		${WRKSRC}/data/Makefile
-
 .endif
 
-.if defined(WITH_BOSHIAMY)
-post-patch:
-PLIST_SUB+=	BOSHIAMY=""
-.else
-PLIST_SUB+=	BOSHIAMY="@comment "
-.endif
-
-pre-configure:
+pre-patch:
 	@${REINPLACE_CMD} -e 's,gcin.png,${PREFIX}/share/icons/gcin.png,' \
 		${WRKSRC}/menu/gcin-setup.desktop
 	@${REINPLACE_CMD} -e 's/&//; s/bash/sh/; \
@@ -74,6 +66,15 @@ pre-configure:
 	@${REINPLACE_CMD} -e 's/bash/sh/;' ${WRKSRC}/scripts/gcin-user-setup
 	@${REINPLACE_CMD} -e 's/bash/sh/; s/&//; s/opt\/gnome/usr\/X11R6/;' \
 		${WRKSRC}/scripts/utf8-edit
+	@${REINPLACE_CMD} -e 's,gcin-im-client.h,im-client/gcin-im-client.h,' \
+		${WRKSRC}/gtk-im/gtkimcontextgcin.c
+
+.if defined(WITH_BOSHIAMY)
+post-patch:
+PLIST_SUB+=	BOSHIAMY=""
+.else
+PLIST_SUB+=	BOSHIAMY="@comment "
+.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
