@@ -5,7 +5,7 @@ include/gpg-error.h
 lib/libgpg-error.a
 lib/libgpg-error.la
 lib/libgpg-error.so
-lib/libgpg-error.so.1
+lib/libgpg-error.so.2
 share/aclocal/gpg-error.m4
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
@@ -13,4 +13,7 @@ share/aclocal/gpg-error.m4
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%NLS%%share/locale/de/LC_MESSAGES/libgpg-error.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/libgpg-error.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/libgpg-error.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/libgpg-error.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/libgpg-error.mo
