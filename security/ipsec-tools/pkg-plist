@@ -1,4 +1,6 @@
+sbin/plainrsa-gen
 sbin/racoon
+sbin/racoonctl
 sbin/setkey
 include/libipsec/libpfkey.h
 include/racoon/admin.h
@@ -24,8 +26,6 @@ lib/libracoon.a
 lib/libracoon.la
 lib/libracoon.so
 lib/libracoon.so.0
-sbin/plainrsa-gen
-sbin/racoonctl
 %%EXAMPLESDIR%%/psk.txt
 %%EXAMPLESDIR%%/psk.txt.sample
 %%EXAMPLESDIR%%/racoon.conf
@@ -47,4 +47,6 @@ sbin/racoonctl
 @dirrm %%EXAMPLESDIR%%/roadwarrior/client
 @dirrm %%EXAMPLESDIR%%/roadwarrior
 @dirrm %%EXAMPLESDIR%%
-@dirrmtry var/racoon
+@cwd /
+@exec mkdir -p %%STATEDIR%%
+@dirrmtry %%STATEDIR%%

@@ -29,13 +29,17 @@ prefix=%%PREFIX%%
 
 name="racoon"
 rcvar=`set_rcvar`
-command="${prefix}/sbin/racoon"
-pidfile="/var/run/racoon.pid"
-required_files="${prefix}/etc/racoon/racoon.conf"
-stop_postcmd="racoon_poststop"
+command="${prefix}/sbin/${name}"
+pidfile="/var/run/${name}.pid"
+socketfile="%%STATEDIR%%/${name}.sock"
+required_files="${prefix}/etc/${name}/${name}.conf"
+required_dirs="%%STATEDIR%%"
+start_precmd="racoon_cleanup"
+stop_postcmd="racoon_cleanup"
 
-racoon_poststop() {
+racoon_cleanup() {
 	/bin/rm -f ${pidfile}
+	/bin/rm -f ${socketfile}
 }
 
 load_rc_config $name
