@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pysqlite
-PORTVERSION=	2.1.3
-PORTREVISION=	1
+PORTVERSION=	2.2.2
 CATEGORIES=	databases python
 MASTER_SITES=	http://initd.org/pub/software/pysqlite/releases/${PORTVERSION:C/\.[0-9]$//}/${PORTVERSION}/ \
 		${MASTER_SITE_GENTOO}
@@ -47,7 +46,7 @@ post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${MKDIR} ${DOCSDIR}/code
-	@${INSTALL_DATA} ${WRKSRC}/LICENSE ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/LICENSE ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

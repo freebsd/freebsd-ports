@@ -359,6 +359,7 @@
     SUBDIR += py-PySQLite11
     SUBDIR += py-pysqlite20
     SUBDIR += py-pysqlite21
+    SUBDIR += py-pysqlite22
     SUBDIR += py-SQLDict
     SUBDIR += py-axiom
     SUBDIR += py-bsddb
