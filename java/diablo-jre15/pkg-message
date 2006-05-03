@@ -1,0 +1,12 @@
+------------------------------------------------------------------------
+
+Known Problems:
+
+Multiprocessor systems require the use of the -XX:+UseMembar command
+line option to correct a stability problem that results in a SIGBUS
+crash of the jvm.
+
+When NumLock is turned on several keys no longer work such as the keypad
+keys, backspace, tab and space keys.
+
+------------------------------------------------------------------------
