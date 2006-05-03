@@ -53,6 +53,7 @@ libdata/pkgconfig/dbus-glib-1.pc
 @unexec rmdir %%X11BASE%%/share/dbus-1/services 2>/dev/null || true
 @unexec rmdir %%X11BASE%%/share/dbus-1 2>/dev/null || true
 @unexec rmdir %%X11BASE%%/etc/dbus-1/system.d 2>/dev/null || true
+@unexec rmdir %%X11BASE%%/etc/dbus-1 2>/dev/null || true
 @dirrm include/dbus-%%VERSION%%/include/dbus
 @dirrm include/dbus-%%VERSION%%/include
 @dirrm include/dbus-%%VERSION%%/dbus
