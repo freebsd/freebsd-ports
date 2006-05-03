@@ -7,7 +7,7 @@
 
 PORTNAME=	beep-media-player
 PORTVERSION=	0.9.7
-PORTREVISION=	10
+PORTREVISION=	11
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -17,7 +17,7 @@ DISTNAME=	bmp-${PORTVERSION}
 MAINTAINER=	flynn@energyhq.es.eu.org
 COMMENT=	GTK2 mp3 player
 
-USE_GNOME=	gtk20 libglade2
+USE_GNOME=	gtk20 libglade2 desktopfileutils
 WANT_GNOME=	yes
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
@@ -95,6 +95,7 @@ post-patch:
 post-install:
 	@${MKDIR} ${PREFIX}/lib/bmp/General
 	@${MKDIR} ${PREFIX}/share/beep/Skins
+	-@update-desktop-database
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

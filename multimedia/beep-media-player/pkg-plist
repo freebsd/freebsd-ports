@@ -102,3 +102,5 @@ share/locale/zh_CN/LC_MESSAGES/bmp.mo
 @dirrm lib/bmp/General
 @dirrm lib/bmp
 @dirrm include/bmp
+@exec %%LOCALBASE%%/bin/update-desktop-database >/dev/null || true
+@unexec %%LOCALBASE%%/bin/update-desktop-database >/dev/null || true
