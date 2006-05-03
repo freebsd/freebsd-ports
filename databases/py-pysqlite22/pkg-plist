@@ -14,6 +14,12 @@
 %%PYTHON_SITELIBDIR%%/pysqlite2/test/factory.py
 %%PYTHON_SITELIBDIR%%/pysqlite2/test/factory.pyc
 %%PYTHON_SITELIBDIR%%/pysqlite2/test/factory.pyo
+%%PYTHON_SITELIBDIR%%/pysqlite2/test/hooks.py
+%%PYTHON_SITELIBDIR%%/pysqlite2/test/hooks.pyc
+%%PYTHON_SITELIBDIR%%/pysqlite2/test/hooks.pyo
+%%PYTHON_SITELIBDIR%%/pysqlite2/test/regression.py
+%%PYTHON_SITELIBDIR%%/pysqlite2/test/regression.pyc
+%%PYTHON_SITELIBDIR%%/pysqlite2/test/regression.pyo
 %%PYTHON_SITELIBDIR%%/pysqlite2/test/transactions.py
 %%PYTHON_SITELIBDIR%%/pysqlite2/test/transactions.pyc
 %%PYTHON_SITELIBDIR%%/pysqlite2/test/transactions.pyo
