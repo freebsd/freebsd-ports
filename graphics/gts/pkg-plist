@@ -13,6 +13,6 @@ include/gts.h
 include/gtsconfig.h
 lib/libgts.a
 lib/libgts.so
-lib/libgts.so.4
+lib/libgts.so.5
 libdata/pkgconfig/gts.pc
 share/aclocal/gts.m4
