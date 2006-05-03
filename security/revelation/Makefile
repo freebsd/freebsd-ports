@@ -23,7 +23,8 @@ USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GNOME=	pygnome2 pygnomeextras gnomeprefix gnomehack desktopfileutils
+USE_GNOME=	pygnome2 pygnomeextras gnomeprefix gnomehack desktopfileutils \
+		pygnomedesktop
 USE_PYTHON=	yes
 GCONF_SCHEMAS=	revelation.schemas revelation-applet.schemas
 
