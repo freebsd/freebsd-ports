@@ -23,6 +23,7 @@
     SUBDIR += fox
     SUBDIR += fox-devel
     SUBDIR += fox12
+    SUBDIR += fox16
     SUBDIR += fxscintilla
     SUBDIR += fxscintilla-fox10
     SUBDIR += fxscintilla-fox12
