@@ -135,6 +135,7 @@
     SUBDIR += lua
     SUBDIR += lua-mode.el
     SUBDIR += lua4
+    SUBDIR += lua50
     SUBDIR += lush
     SUBDIR += maude
     SUBDIR += mawk

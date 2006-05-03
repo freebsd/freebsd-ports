@@ -19,7 +19,7 @@ MASTER_SITES=	http://www.lua.org/ftp/ \
 MAINTAINER=	him@richardkiss.com
 COMMENT=	Small, compilable scripting language providing easy access to C code
 
-USE_REINPLACE=	yes
+LATEST_LINK=	lua50
 MAN1=		lua.1 luac.1
 ALL_TARGET=	all so
 INSTALL_TARGET=	install soinstall
