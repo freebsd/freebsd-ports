@@ -1,0 +1,22 @@
+--- build/configdetect.orig	Mon Apr  3 08:58:08 2006
++++ build/configdetect	Mon Apr  3 09:09:13 2006
+@@ -18,7 +18,9 @@
+ 	else
+   	CONFIG_FILE="build/config.linux"
+   fi
+-elif [ $OSNAME = "CYGWIN_NT-5.0"] ; then 
++elif [ $OSNAME = "FreeBSD" ] ; then 
++  CONFIG_FILE="build/config.freebsd"
++elif [ $OSNAME = "CYGWIN_NT-5.0" ] ; then 
+   CONFIG_FILE="build/config.cygwin"
+ elif [ $OSNAME = "HP-UX" ] && [ -f build/config.hpux ] ; then
+ 	CONFIG_FILE="build/config.hpux"
+@@ -47,7 +49,7 @@
+             CONFIG_FILE=`echo "${arg}" | cut -d= -f2`
+             if [ ! -f $CONFIG_FILE ] ; then
+                 echo " Error: ${CONFIG_FILE} doesn't exist."
+-                exit -1
++                exit 255
+             fi
+             ;;
+         --enable-debug)

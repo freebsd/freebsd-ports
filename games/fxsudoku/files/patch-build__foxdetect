@@ -1,0 +1,38 @@
+--- build/foxdetect.orig	Mon Apr  3 09:08:19 2006
++++ build/foxdetect	Mon Apr  3 09:08:58 2006
+@@ -60,7 +60,7 @@
+     FOX_PREFIX="$LOCAL_PREFIX"
+   else
+     echo -e " Check FOX Library   : \033[31mNot Found\033[0m"
+-    exit -1
++    exit 255
+   fi
+ fi
+ 
+@@ -96,7 +96,7 @@
+     echo -e " Check FOX Library   : \033[32mFOUND\033[0m"
+   else
+     echo -e " Check FOX Library   : \033[31mNot Found\033[0m"
+-    exit -1
++    exit 255
+   fi
+ 
+   # Check version
+@@ -104,7 +104,7 @@
+     echo -e " Check FOX version   : \033[32m${FOX_VERSION}\033[0m"
+   else
+     echo -e " Check FOX version   : \033[31m${FOX_VERSION}\033[0m (Please install latest FOX $MIN_FOX_MAJOR.$MIN_FOX_MINOR.x release)"
+-    exit -1
++    exit 255
+   fi
+ fi
+ 
+@@ -114,7 +114,7 @@
+   echo -e " Check FOX Header    : \033[32mFOUND\033[0m"
+ else
+   echo -e " Check FOX Header    : \033[31mNot Found\033[0m"
+-  exit -1
++  exit 255
+ fi
+ 
+ CPPFLAGS="${CPPFLAGS} ${FOX_INCLUDE}"

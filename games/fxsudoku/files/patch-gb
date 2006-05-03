@@ -1,0 +1,25 @@
+--- gb.orig	Mon Apr  3 00:53:45 2006
++++ gb	Mon Apr  3 09:25:47 2006
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ #-----------------------------------------------------------
+ # GOGGLES BUILD SYSTEM - 0.5.0
+ #-----------------------------------------------------------
+@@ -92,14 +92,14 @@
+ #Get the settings
+ . "$CONFIG_FILE"
+ 
+-function print_help() {
++print_help() {
+ 	SHOWHELP=1
+ 	echo "Options:"
+ 	echo " "
+ 	echo -e "  \033[32m$0\033[0m       	   \033[1mBuild ${PACKAGE_NAME}\033[0m"
+ 	echo -e "  \033[32m$0 install\033[0m 	   \033[1mInstall ${PACKAGE_NAME}\033[0m"
+ 	echo -e "  \033[32m$0 help\033[0m  	   \033[1mShow this help page.\033[0m"
+-	echo -e "  \033[32m$0 clean\033[0m  	   \033[1mRemove object files.\033[0m"
++	echo -e "  \033[32m$0 clean\033[0m  	   \033[1mRemove object files.\03[0m"
+ 	echo -e "  \033[32m$0 rebuild\033[0m     \033[1mClean and then build.\033[0m"
+ 	echo " "
+ 	echo "Build Options (./gb):"
