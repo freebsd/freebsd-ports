@@ -498,6 +498,7 @@
     SUBDIR += screen
     SUBDIR += sdd
     SUBDIR += sec
+    SUBDIR += sensors-applet
     SUBDIR += serpentine
     SUBDIR += service-config
     SUBDIR += setcdboot
