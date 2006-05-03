@@ -6,28 +6,43 @@
 #
 
 PORTNAME=	lcdproc
-PORTVERSION=	0.4.5
+PORTVERSION=	0.5.0
 CATEGORIES=	sysutils
-MASTER_SITES=	http://lcdproc.omnipotent.net/download/ \
-		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A client/server suite for all kinds of nifty LCD devices
+MAINTAINER=	mmdolze@users.sourceforge.net
+COMMENT=	A client/server suite for LCD devices
 
 ONLY_FOR_ARCHS=	i386
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-drivers=all
 
-MAN1=		lcdproc.1
+USE_GCC=	3.2+
+GNU_CONFIGURE=	yes
+USE_GETOPT_LONG=yes
+USE_RC_SUBR=	LCDd lcdproc
+
+CONFIGURE_ARGS=	--enable-drivers=all \
+		--disable-ldap \
+		--disable-doxygen
+CONFIGURE_ENV=	CFLAGS="${CFLAGS}"
+
+MAN1=		lcdexec.1 lcdproc.1
 MAN8=		LCDd.8
 
-pre-patch:
-	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g' ${FILESDIR}/LCDd.sh.sample \
-		> ${WRKSRC}/LCDd.sh.sample
+.if defined(WITH_USB)
+LIB_DEPENDS+=		usb-0.1.8:${PORTSDIR}/devel/libusb
+CONFIGURE_ARGS+=	--enable-libusb
+PLIST_SUB+=		USB=""
+.else
+CONFIGURE_ARGS+=	--disable-libusb
+PLIST_SUB+=		USB="@comment "
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's!server/drivers!${PREFIX}/lib/lcdproc!' ${WRKSRC}/LCDd.conf
 
 post-install:
-	@${INSTALL_DATA} ${WRKSRC}/LCDd.conf ${PREFIX}/etc/LCDd.conf.sample
-	@${INSTALL_SCRIPT} ${WRKSRC}/LCDd.sh.sample ${PREFIX}/etc/rc.d
+	${INSTALL_DATA} ${WRKSRC}/LCDd.conf ${PREFIX}/etc/LCDd.conf.sample
+	${INSTALL_DATA} ${WRKSRC}/LCDclients.conf ${PREFIX}/etc/LCDclients.conf.sample
 
 .include <bsd.port.mk>
