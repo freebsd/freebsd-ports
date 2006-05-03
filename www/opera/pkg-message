@@ -3,6 +3,16 @@
 If you are running FreeBSD 5.x or 6.x and are experiencing a core dump when 
 starting Opera, try updating the compat4x port.
 
-Plugins do not work in FreeBSD 5.x or higher - please disable them.
+To enable the built-in plug-ins, add the following to /etc/libmap.conf:
+
+# Opera - Motif
+[/usr/X11R6/share/opera/plugins/operamotifwrapper-1]
+libXm.so.1		libXm.so.3
+libXThrStub.so.6	libXtst.so.6
+[/usr/X11R6/share/opera/plugins/operamotifwrapper-2]
+libXm.so.2		libXm.so.3
+libXThrStub.so.6	libXtst.so.6
+[/usr/X11R6/share/opera/plugins/operamotifwrapper-3]
+libXThrStub.so.6	libXtst.so.6
 
 ###########################################################################
