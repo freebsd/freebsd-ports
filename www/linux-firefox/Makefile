@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	firefox
-PORTVERSION=	1.5.0.2
+PORTVERSION=	1.5.0.3
 CATEGORIES?=	www linux
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR?=	firefox/releases/${PORTVERSION}/linux-i686/en-US
@@ -47,9 +47,10 @@ do-install:
 	${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKDIR}/linux-firefox.desktop ${PREFIX}/share/applications
 	${CP} -pR ${WRKSRC}/ ${FDIR}/
+	${CHOWN} -R ${BINOWN}:${BINGRP} ${FDIR}/
 	${INSTALL_SCRIPT} ${WRKDIR}/linkfarm ${FDIR}/
 	${INSTALL_SCRIPT} ${FILESDIR}/run ${PREFIX}/bin/${BROWSER_NAME}
-	${ECHO} 'cd ${PREFIX} && exec ${FDIR}/${PORTNAME}' >> ${PREFIX}/bin/${BROWSER_NAME}
+	${ECHO} 'cd ${PREFIX} && exec ${FDIR}/${PORTNAME} "$$@"' >> ${PREFIX}/bin/${BROWSER_NAME}
 
 post-install:
 	@${SH} ${FDIR}/linkfarm

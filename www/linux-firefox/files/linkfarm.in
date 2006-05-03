@@ -7,7 +7,6 @@ find	%%X11BASE%%/lib/linux-beonex/plugins \
 	%%X11BASE%%/lib/flash \
 	%%X11BASE%%/lib/linux-mozilla/plugins \
 	%%X11BASE%%/lib/linux-netscape*/plugins \
-	%%X11BASE%%/lib/linux-flashplugin6 \
 	%%X11BASE%%/lib/linux-flashplugin7 \
 	%%LOCALBASE%%/linux-sun-jdk1.4.2/jre/plugin/i386/ns610-gcc32 \
 	%%LOCALBASE%%/linux-blackdown-jdk1.3.1/jre/plugin/i386/mozilla \
