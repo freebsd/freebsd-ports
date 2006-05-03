@@ -1,0 +1,12 @@
+Adblock Plus is a content filtering plug-in for the Mozilla and Firefox
+browsers. It allows the user to specify filters, which remove unwanted
+content based on the source-address.
+
+Originally based on Adblock, what now come with Adblock Plus is a
+completely new extension with focus on being easy to use, stable
+and secure.
+
+WWW: http://adblockplus.mozdev.org/
+
+- Alex Dupre
+ale@FreeBSD.org
