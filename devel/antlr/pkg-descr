@@ -3,7 +3,4 @@ language tool that provides a framework for constructing recognizers,
 compilers, and translators from grammatical descriptions containing
 C++ or Java actions.
 
-WWW: http://www.antlr.org/
-
-- Geoffrey Mainland
-mainland@apeiron.net
+WWW: http://www.antlr.org

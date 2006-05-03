@@ -1,3 +1,4 @@
+bin/antlr
 include/antlr/ANTLRException.hpp
 include/antlr/ANTLRUtil.hpp
 include/antlr/AST.hpp
@@ -18,7 +19,6 @@ include/antlr/CommonAST.hpp
 include/antlr/CommonASTWithHiddenTokens.hpp
 include/antlr/CommonHiddenStreamToken.hpp
 include/antlr/CommonToken.hpp
-include/antlr/Parser.hpp
 include/antlr/IOException.hpp
 include/antlr/InputBuffer.hpp
 include/antlr/LLkParser.hpp
@@ -27,6 +27,7 @@ include/antlr/MismatchedCharException.hpp
 include/antlr/MismatchedTokenException.hpp
 include/antlr/NoViableAltException.hpp
 include/antlr/NoViableAltForCharException.hpp
+include/antlr/Parser.hpp
 include/antlr/ParserSharedInputState.hpp
 include/antlr/RecognitionException.hpp
 include/antlr/RefCount.hpp
@@ -49,4 +50,10 @@ include/antlr/TokenStreamSelector.hpp
 include/antlr/TreeParserSharedInputState.hpp
 include/antlr/config.hpp
 lib/libantlr.a
+%%JAVAJARDIR%%/antlr.jar
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/antlr/__init__.py
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/antlr/__init__.pyc
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/antlr/antlr.py
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/antlr/antlr.pyc
+%%WITH_PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/antlr
 @dirrm include/antlr
