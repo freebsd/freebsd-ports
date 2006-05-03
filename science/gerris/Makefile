@@ -8,7 +8,7 @@
 
 PORTNAME=		gerris
 PORTVERSION=		0.6.0
-PORTREVISION=		4
+PORTREVISION=		5
 CATEGORIES=		science math
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gfs
@@ -23,7 +23,7 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=		odunkl@gmx.net
 COMMENT=		A scientific CFD simulator
 
-LIB_DEPENDS=		gts.4:${PORTSDIR}/graphics/gts
+LIB_DEPENDS=		gts.5:${PORTSDIR}/graphics/gts
 
 .if !defined(WITHOUT_DX)
 BUILD_DEPENDS+=		dx:${PORTSDIR}/graphics/opendx
