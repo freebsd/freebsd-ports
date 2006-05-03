@@ -1,0 +1,42 @@
+--- src/Makefile.in.orig	Fri Mar 24 15:54:47 2006
++++ src/Makefile.in	Wed May  3 22:09:21 2006
+@@ -206,21 +206,8 @@
+ 		sensors-applet.h \
+ 		sensors-applet-gconf.c \
+ 		sensors-applet-gconf.h \
+-		acpi-sensors-interface.c \
+-		acpi-sensors-interface.h \
+-		ibm-acpi-sensors-interface.c \
+-		ibm-acpi-sensors-interface.h \
+-		omnibook-sensors-interface.c \
+-		omnibook-sensors-interface.h \
+-		pmu-sys-sensors-interface.c \
+-		pmu-sys-sensors-interface.h \
+-		i8k-sensors-interface.c \
+-		i8k-sensors-interface.h \
+-		hddtemp-sensors-interface.c \
+-		hddtemp-sensors-interface.h \
+-		smu-sys-sensors-interface.c \
+-		smu-sys-sensors-interface.h \
+-		$(sensors_SRC)
++		mbmon-sensors-interface.c \
++		mbmon-sensors-interface.h
+ 
+ subdir = src
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+@@ -250,13 +237,8 @@
+ am_sensors_applet_OBJECTS = main.$(OBJEXT) about-dialog.$(OBJEXT) \
+ 	active-sensor.$(OBJEXT) prefs-dialog.$(OBJEXT) \
+ 	sensor-config-dialog.$(OBJEXT) sensors-applet.$(OBJEXT) \
+-	sensors-applet-gconf.$(OBJEXT) acpi-sensors-interface.$(OBJEXT) \
+-	ibm-acpi-sensors-interface.$(OBJEXT) \
+-	omnibook-sensors-interface.$(OBJEXT) \
+-	pmu-sys-sensors-interface.$(OBJEXT) \
+-	i8k-sensors-interface.$(OBJEXT) \
+-	hddtemp-sensors-interface.$(OBJEXT) \
+-	smu-sys-sensors-interface.$(OBJEXT) $(am__objects_1)
++	sensors-applet-gconf.$(OBJEXT) \
++	mbmon-sensors-interface.$(OBJEXT)
+ sensors_applet_OBJECTS = $(am_sensors_applet_OBJECTS)
+ sensors_applet_LDADD = $(LDADD)
+ sensors_applet_DEPENDENCIES =

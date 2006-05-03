@@ -1,0 +1,9 @@
+GNOME Sensors Applet is an applet for the GNOME Panel to display readings from
+hardware sensors, including CPU temperature, fan speeds and voltage readings.
+
+On FreeBSD, sensor values are obtained from the sysutils/mbmon port.
+
+WWW: http://sensors-applet.sourceforge.net/
+
+- Jean-Yves Lefort
+jylefort@FreeBSD.org

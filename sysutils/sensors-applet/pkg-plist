@@ -1,0 +1,31 @@
+libdata/bonobo/servers/SensorsApplet.server
+libexec/sensors-applet
+share/gnome/gnome-2.0/ui/SensorsApplet.xml
+share/gnome/help/sensors-applet/C/figures/applet_in_panel.png
+share/gnome/help/sensors-applet/C/legal.xml
+share/gnome/help/sensors-applet/C/sensors-applet.xml
+share/gnome/omf/sensors-applet/sensors-applet-C.omf
+share/gnome/pixmaps/sensors-applet/battery-icon.png
+share/gnome/pixmaps/sensors-applet/case-icon.png
+share/gnome/pixmaps/sensors-applet/cpu-icon.png
+share/gnome/pixmaps/sensors-applet/fan-icon.png
+share/gnome/pixmaps/sensors-applet/hdd-icon.png
+share/gnome/pixmaps/sensors-applet/high-temp-icon.png
+share/gnome/pixmaps/sensors-applet/low-temp-icon.png
+share/gnome/pixmaps/sensors-applet/memory-icon.png
+share/gnome/pixmaps/sensors-applet/normal-temp-icon.png
+share/gnome/pixmaps/sensors-applet/sensors-applet-icon.png
+share/gnome/pixmaps/sensors-applet/very-high-temp-icon.png
+share/gnome/pixmaps/sensors-applet/very-low-temp-icon.png
+share/locale/de/LC_MESSAGES/sensors-applet.mo
+share/locale/es/LC_MESSAGES/sensors-applet.mo
+share/locale/fi/LC_MESSAGES/sensors-applet.mo
+share/locale/fr/LC_MESSAGES/sensors-applet.mo
+share/locale/it/LC_MESSAGES/sensors-applet.mo
+share/locale/pl/LC_MESSAGES/sensors-applet.mo
+share/locale/ro/LC_MESSAGES/sensors-applet.mo
+share/locale/ru/LC_MESSAGES/sensors-applet.mo
+@dirrm share/gnome/help/sensors-applet/C/figures
+@dirrm share/gnome/help/sensors-applet/C
+@dirrm share/gnome/omf/sensors-applet
+@dirrm share/gnome/pixmaps/sensors-applet
