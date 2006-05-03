@@ -1,22 +1,33 @@
---- implementation/mailnotify/install_mailnotify.orig	Fri Nov 11 19:34:40 2005
-+++ implementation/mailnotify/install_mailnotify	Fri Jan 13 15:17:45 2006
-@@ -6,12 +6,12 @@
+--- implementation/mailnotify/install_mailnotify.orig	Tue Mar 21 16:06:05 2006
++++ implementation/mailnotify/install_mailnotify	Tue Apr 18 08:51:35 2006
+@@ -8,20 +8,20 @@
+ install -o $ROOT_USER -g $APACHE_GROUP -m 750 campsite_notifyendsubs "$SBIN_DIR"
+ install -o $ROOT_USER -g $APACHE_GROUP -m 750 campsite_notifyevents "$SBIN_DIR"
  
- if $USER_INSTALL; then exit 0; fi
+-if $USER_INSTALL; then exit 0; fi
++#if $USER_INSTALL; then exit 0; fi
  
 -. ${INSTALL_CONF}/cron_functions
++#. ${INSTALL_CONF}/cron_functions
+ 
+ # remove cron tasks from older versions
+-uninstall_cron_task "$BIN_DIR/notifyendsubs" "/etc/cron.d/notifyendsubs" &> /dev/null
+-uninstall_cron_task "$BIN_DIR/notifyevents" "/etc/cron.d/notifyevents" &> /dev/null
 -if [ -f /etc/crontab ]; then
--    uninstall_cron_task "$BIN_DIR/notifyendsubs" /etc/crontab
--    uninstall_cron_task "$BIN_DIR/notifyevents" /etc/crontab
+-    uninstall_cron_task "$BIN_DIR/notifyendsubs" /etc/crontab &> /dev/null
+-    uninstall_cron_task "$BIN_DIR/notifyevents" /etc/crontab &> /dev/null
 -fi
++#uninstall_cron_task "$BIN_DIR/notifyendsubs" "/etc/cron.d/notifyendsubs" &> /dev/null
++#uninstall_cron_task "$BIN_DIR/notifyevents" "/etc/cron.d/notifyevents" &> /dev/null
++#if [ -f /etc/crontab ]; then
++#    uninstall_cron_task "$BIN_DIR/notifyendsubs" /etc/crontab &> /dev/null
++#    uninstall_cron_task "$BIN_DIR/notifyevents" /etc/crontab &> /dev/null
++#fi
+ 
+ # install our cron tasks
 -install_cron_task "0" "*/8" "*" "*" "*" "$ROOT_USER" "$SBIN_DIR/campsite_notifyendsubs" "/etc/cron.d/campsite_notifyendsubs" || exit 1
 -install_cron_task "*/2" "*" "*" "*" "*" "$ROOT_USER" "$SBIN_DIR/campsite_notifyevents" "/etc/cron.d/campsite_notifyevents" || exit 1
 -restart_cron || exit 1
-+#. ${INSTALL_CONF}/cron_functions
-+#if [ -f /etc/crontab ]; then
-+#    uninstall_cron_task "$BIN_DIR/notifyendsubs" /etc/crontab
-+#    uninstall_cron_task "$BIN_DIR/notifyevents" /etc/crontab
-+#fi
 +#install_cron_task "0" "*/8" "*" "*" "*" "$ROOT_USER" "$SBIN_DIR/campsite_notifyendsubs" "/etc/cron.d/campsite_notifyendsubs" || exit 1
 +#install_cron_task "*/2" "*" "*" "*" "*" "$ROOT_USER" "$SBIN_DIR/campsite_notifyevents" "/etc/cron.d/campsite_notifyevents" || exit 1
 +#restart_cron || exit 1
