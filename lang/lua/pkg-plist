@@ -1,18 +1,22 @@
-bin/lua
-bin/luac
-include/lauxlib.h
-include/lua.h
-include/lualib.h
-lib/liblua.a
-lib/liblua.so
-lib/liblua.so.5
-lib/liblualib.a
-lib/liblualib.so
-lib/liblualib.so.5
+@exec mkdir -p %D/lib/lua/5.1
+@exec mkdir -p %D/share/lua/5.1
 %%DOCSDIR%%/contents.html
 %%DOCSDIR%%/logo.gif
+%%DOCSDIR%%/lua.css
 %%DOCSDIR%%/lua.html
 %%DOCSDIR%%/luac.html
 %%DOCSDIR%%/manual.html
 %%DOCSDIR%%/readme.html
+bin/lua
+bin/luac
+include/lauxlib.h
+include/lua.h
+include/lua.hpp
+include/luaconf.h
+include/lualib.h
+lib/liblua.a
 @dirrm %%DOCSDIR%%
+@dirrm share/lua/5.1
+@dirrm share/lua
+@dirrm lib/lua/5.1
+@dirrm lib/lua

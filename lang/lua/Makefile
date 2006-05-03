@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	lua
-PORTVERSION=	5.0.2
-PORTREVISION=	1
+PORTVERSION=	5.1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.lua.org/ftp/ \
 		ftp://ftp.tecgraf.puc-rio.br/pub/lua/ \
@@ -19,30 +18,14 @@ MASTER_SITES=	http://www.lua.org/ftp/ \
 MAINTAINER=	him@richardkiss.com
 COMMENT=	Small, compilable scripting language providing easy access to C code
 
-USE_REINPLACE=	yes
 MAN1=		lua.1 luac.1
-ALL_TARGET=	all so
-INSTALL_TARGET=	install soinstall
-INSTALLS_SHLIB=	YES
 
-do-configure:
-	${REINPLACE_CMD} \
-		-e 's|^\(MYCFLAGS=\).*$$|\1 ${CFLAGS}|' \
-		-e 's|^\(LOADLIB=\).*$$|\1 -DUSE_DLOPEN=1|' \
-		-e 's|^\(CC=\).*$$|\1 ${CC}|' \
-		-e 's|^\(STRIP=\).*$$|\1 ${STRIP_CMD}|' \
-		-e 's|^\(INSTALL_ROOT=\).*$$|\1 ${PREFIX}|' \
-		-e 's|^\(INSTALL_EXEC=\).*$$|\1 ${INSTALL_PROGRAM}|' \
-		-e 's|^\(INSTALL_DATA=\).*$$|\1 ${INSTALL_DATA}|' \
-		-e 's|^#\(USERCONF.*READLINE.*\)$$|\1|' \
-		-e 's|^\(EXTRA_LIBS=\).*$$|\1 -lm -lreadline -lhistory -lncurses|' \
-		-e 's|V=5.0|V=5|' \
-		${WRKSRC}/config
+MAKE_ARGS=	bsd
 
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@cd ${WRKSRC}/doc && ${INSTALL_DATA} *.html *.gif ${DOCSDIR}
+	@cd ${WRKSRC}/doc && ${INSTALL_DATA} *.html *.css *.gif ${DOCSDIR}
 .endif
 
 .if ${MACHINE_ARCH:L} == "amd64"
