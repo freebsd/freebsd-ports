@@ -31,6 +31,7 @@
     SUBDIR += calctool
     SUBDIR += ccmath
     SUBDIR += cgal
+    SUBDIR += chaco
     SUBDIR += chryzodus
     SUBDIR += clarence
     SUBDIR += cln

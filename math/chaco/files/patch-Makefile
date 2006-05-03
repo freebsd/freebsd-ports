@@ -1,0 +1,41 @@
+--- Makefile.orig	Thu Oct  2 12:23:22 1997
++++ Makefile	Mon May  1 22:19:06 2006
+@@ -1,11 +1,13 @@
+ DEST_DIR = 	../exec
+ DEST=		${DEST_DIR}/chaco
+-CC = 		gcc
++CC ?= 		cc
+ IFLAG =		-Imain
+-CFLAGS =	-O2
+-OFLAGS =	-O2
++CFLAGS =	@CFLAGS@
++OFLAGS +=	-O2
+ 
+-FILES.c=	main/user_params.c main/interface.c main/main.c \
++main_file=	 main/main.c
++
++libFILES.c=	main/user_params.c main/interface.c \
+ 		submain/balance.c submain/divide.c submain/submain.c \
+ 		input/input_assign.c \
+ 		input/check_input.c input/input.c input/input_geom.c \
+@@ -87,11 +89,20 @@
+ 		util/update.c  util/vecout.c util/vecran.c \
+                 util/vecscale.c 
+ 
++FILES.c=	$(libFILES.c) $(main_file)
++
+ FILES.o=	$(FILES.c:.c=.o) 
+ 
++libFILES.o=	$(libFILES.c:.c=.o)
++
++all: ${DEST} ${DEST_DIR}/libchaco.a
+ 
+ ${DEST}:	${FILES.o} Makefile
+ 		${CC} ${OFLAGS} ${FILES.o} -lm -o ${DEST}
++
++${DEST_DIR}/libchaco.a:	${libFILES.o} Makefile
++		ar r ${DEST_DIR}/libchaco.a ${libFILES.o}
++		ranlib ${DEST_DIR}/libchaco.a
+ 
+ lint:
+ 		lint ${IFLAG} ${FILES.c} -lm
