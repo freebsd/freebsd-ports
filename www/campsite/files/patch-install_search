@@ -1,19 +1,29 @@
---- implementation/search/install_search.orig	Fri Nov 11 19:34:40 2005
-+++ implementation/search/install_search	Fri Jan 13 15:17:55 2006
-@@ -6,10 +6,10 @@
+--- implementation/search/install_search.orig	Tue Mar 21 16:06:05 2006
++++ implementation/search/install_search	Tue Apr 18 08:54:16 2006
+@@ -8,18 +8,18 @@
+ install -o $ROOT_USER -g $APACHE_GROUP -m 750 campsite_indexer "$SBIN_DIR"
+ [ $? -ne 0 ] && exit 1
  
- if $USER_INSTALL; then exit 0; fi
+-if $USER_INSTALL; then exit 0; fi
++#if $USER_INSTALL; then exit 0; fi
  
 -. ${INSTALL_CONF}/cron_functions
++#. ${INSTALL_CONF}/cron_functions
+ 
+ # remove cron tasks from older versions
+-uninstall_cron_task "$BIN_DIR/gather" /etc/cron.d/campsite_gather &> /dev/null
 -if [ -f /etc/crontab ]; then
--    uninstall_cron_task "$BIN_DIR/gather" /etc/crontab
+-    uninstall_cron_task "$BIN_DIR/gather" /etc/crontab &> /dev/null
 -fi
++#uninstall_cron_task "$BIN_DIR/gather" /etc/cron.d/campsite_gather &> /dev/null
++#if [ -f /etc/crontab ]; then
++#    uninstall_cron_task "$BIN_DIR/gather" /etc/crontab &> /dev/null
++#fi
+ 
+ # install our cron task
 -install_cron_task "0" "*/4" "*" "*" "*" "$ROOT_USER" "$SBIN_DIR/campsite_indexer" /etc/cron.d/campsite_indexer -c || exit 1
 -restart_cron || exit 1
-+#. ${INSTALL_CONF}/cron_functions
-+#if [ -f /etc/crontab ]; then
-+#    uninstall_cron_task "$BIN_DIR/gather" /etc/crontab
-+#fi
 +#install_cron_task "0" "*/4" "*" "*" "*" "$ROOT_USER" "$SBIN_DIR/campsite_indexer" /etc/cron.d/campsite_indexer -c || exit 1
 +#restart_cron || exit 1
+ 
  exit 0

@@ -1,12 +1,8 @@
 --- implementation/management/bin/install_autopublish.orig	Fri Nov 11 19:34:40 2005
-+++ implementation/management/bin/install_autopublish	Fri Jan 13 14:52:04 2006
-@@ -1,12 +1,12 @@
- #!/bin/bash
- 
--[ "$USER_INSTALL" = "" ] && USER_INSTALL=false
--if $USER_INSTALL; then exit 0; fi
-+#[ "$USER_INSTALL" = "" ] && USER_INSTALL=false
-+#if $USER_INSTALL; then exit 0; fi
++++ implementation/management/bin/install_autopublish	Tue Apr 18 08:56:05 2006
+@@ -3,10 +3,10 @@
+ [ "$USER_INSTALL" = "" ] && USER_INSTALL=false
+ if $USER_INSTALL; then exit 0; fi
  
 -. ${INSTALL_CONF}/cron_functions
 -if [ -f /etc/crontab ]; then

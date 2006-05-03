@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	campsite
-PORTVERSION=	2.5.0
+PORTVERSION=	2.5.1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -51,7 +51,7 @@ BROKEN=		does not compile
 
 post-patch:
 	@${FIND} ${WRKSRC} -type f -perm 755 \
-			    -or -name create_instance \
+			    -or -name campsite_create_instance \
 			    -or -name global_functions \
 			    -or -name check4_functions \
 			    -or -name conf_functions | ${XARGS} \
