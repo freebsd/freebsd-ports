@@ -44,7 +44,7 @@ do-configure:
 	@${ECHO_CMD} 'sparc' > ${WRKSRC}/conf-opt
 .endif
 
-pre-install:
+pre-su-install:
 	@${MKDIR} ${PREFIX}/include/${PORTNAME}
 
 do-install:
