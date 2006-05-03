@@ -9419,7 +9419,7 @@ p5-Video-OpenQuicktime	ports/multimedia/p5-Video-OpenQuicktime
 p5-W3C-LinkChecker	ports/www/p5-W3C-LinkChecker
 p5-W3C-LogValidator	ports/www/p5-W3C-LogValidator
 p5-WDDX		ports/textproc/p5-WDDX
-p5-WWW-2ch	ports/www/p5-WWW-2ch
+p5-WWW-2ch	ports/japanese/p5-WWW-2ch
 p5-WWW-Babelfish	ports/www/p5-WWW-Babelfish
 p5-WWW-Curl	ports/www/p5-WWW-Curl
 p5-WWW-Dilbert	ports/www/p5-WWW-Dilbert

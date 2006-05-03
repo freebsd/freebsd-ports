@@ -277,6 +277,7 @@
     SUBDIR += p5-PDFJ
     SUBDIR += p5-Text-ChaSen
     SUBDIR += p5-Text-Kakasi
+    SUBDIR += p5-WWW-2ch
     SUBDIR += p5-jcode.pl
     SUBDIR += p5-manual
     SUBDIR += p5-mkres
