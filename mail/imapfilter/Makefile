@@ -13,7 +13,7 @@ MASTER_SITES=	http://imapfilter.hellug.gr/source/
 MAINTAINER=	lefcha@hellug.gr
 COMMENT=	IMAP mail filtering utility
 
-LIB_DEPENDS=	lua.5:${PORTSDIR}/lang/lua
+LIB_DEPENDS=	lua.5:${PORTSDIR}/lang/lua50
 
 USE_BZIP2=	yes
 USE_OPENSSL=	yes

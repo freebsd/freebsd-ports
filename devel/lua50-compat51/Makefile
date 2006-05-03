@@ -14,7 +14,7 @@ DISTNAME=	compat-${CVER}${CREV}.tar.gz
 MAINTAINER=	andrew+ports@fubar.geek.nz
 COMMENT=	Lua 5.1 package compatibility layer for Lua 5.0.x
 
-BUILD_DEPENDS=	${LOCALBASE}/include/lua.h:${PORTSDIR}/lang/lua
+BUILD_DEPENDS=	${LOCALBASE}/include/lua.h:${PORTSDIR}/lang/lua50
 
 CONFLICTS=	luasocket-2.0
 

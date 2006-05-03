@@ -46,7 +46,7 @@ BROKEN=			"Does not compile on FreeBSD 4.x"
 .endif
 
 .if defined(WITH_LUA)
-LIB_DEPENDS+=		lua.5:${PORTSDIR}/lang/lua
+LIB_DEPENDS+=		lua.5:${PORTSDIR}/lang/lua50
 CONFIGURE_ARGS+=	--with-lua
 .endif
 

@@ -15,7 +15,7 @@ MASTER_SITES=	http://modeemi.fi/~tuomov/ion/dl/
 MAINTAINER=	anthony.ginepro@laposte.net
 COMMENT=	Ion is a tiling tabbed window manager
 
-LIB_DEPENDS=	lua.5:${PORTSDIR}/lang/lua
+LIB_DEPENDS=	lua.5:${PORTSDIR}/lang/lua50
 
 CONFLICTS=	ion-2002* ion-devel-* pwm-*
 

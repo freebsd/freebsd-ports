@@ -16,7 +16,7 @@ MAINTAINER=     hurbold@yahoo.com
 COMMENT=        Plugins for the Verlihub Linux/Unix Direct Connect Hub Software
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/verlihub:${PORTSDIR}/net-p2p/verlihub
-LIB_DEPENDS=	lua.5:${PORTSDIR}/lang/lua
+LIB_DEPENDS=	lua.5:${PORTSDIR}/lang/lua50
 
 WRKSRC=         ${WRKDIR}/vh_plugins-0.1
 

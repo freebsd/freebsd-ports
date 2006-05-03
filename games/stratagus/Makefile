@@ -17,7 +17,7 @@ MAINTAINER=	tlp@liquidx.org
 COMMENT=	Free cross-platform real-time strategy gaming engine
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
-		lua.5:${PORTSDIR}/lang/lua
+		lua.5:${PORTSDIR}/lang/lua50
 
 USE_SDL=	yes
 USE_XLIB=	yes

@@ -14,8 +14,8 @@ MASTER_SITES=	http://luaforge.net/frs/download.php/1097/
 MAINTAINER=	andrew+ports@fubar.geek.nz
 COMMENT=	IPv4 Sockets support for the Lua language
 
-BUILD_DEPENDS=	${LOCALBASE}/include/lua.h:${PORTSDIR}/lang/lua
-RUN_DEPENDS=	${LOCALBASE}/include/lua.h:${PORTSDIR}/lang/lua \
+BUILD_DEPENDS=	${LOCALBASE}/include/lua.h:${PORTSDIR}/lang/lua50
+RUN_DEPENDS=	${LOCALBASE}/include/lua.h:${PORTSDIR}/lang/lua50 \
 		${LOCALBASE}/share/lua/5.0/compat-5.1.lua:${PORTSDIR}/devel/lua50-compat51
 
 USE_GMAKE=	yes

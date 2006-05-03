@@ -18,7 +18,7 @@ COMMENT=	Challenging 2D motocross platform game
 LIB_DEPENDS=	vorbis.3:${PORTSDIR}/audio/libvorbis \
 		png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		lua.5:${PORTSDIR}/lang/lua
+		lua.5:${PORTSDIR}/lang/lua50
 BUILD_DEPENDS=	${X11BASE}/lib/libode.a:${PORTSDIR}/devel/ode
 
 GNU_CONFIGURE=	yes
