@@ -7,7 +7,7 @@
 #
 
 CATEGORIES=	graphics
-PORTREVISION=	2
+PORTREVISION=	4
 
 COMMENT=	Gstreamer png plugin
 
