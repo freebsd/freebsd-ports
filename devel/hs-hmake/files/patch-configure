@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- configure.orig
++++ configure
+@@ -453,7 +453,7 @@
+     then mkdir -p $DESTDIR$CONFDIR/$MACHINE;  echo ' (created)'
+     else echo ' (exists)'
+     fi
+-    cp $DESTDIR$LIBDIR/$MACHINE/runhs $DESTDIR$BINDIR
++    ln -f $DESTDIR$LIBDIR/$MACHINE/runhs $DESTDIR$BINDIR
+     mv $DESTDIR$LIBDIR/$MACHINE/hmakerc $DESTDIR$CONFDIR/$MACHINE || true
+     echo
+   else

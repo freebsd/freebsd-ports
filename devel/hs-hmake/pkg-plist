@@ -2,11 +2,13 @@ bin/harch
 bin/hi
 bin/hmake
 bin/hmake-config
+bin/runhs
 lib/hmake/ix86-FreeBSD/HInteractive
 lib/hmake/ix86-FreeBSD/MkProg
 lib/hmake/ix86-FreeBSD/Older
 lib/hmake/ix86-FreeBSD/config
 lib/hmake/ix86-FreeBSD/MkConfig
 lib/hmake/ix86-FreeBSD/hmakerc
+lib/hmake/ix86-FreeBSD/runhs
 @dirrm lib/hmake/ix86-FreeBSD
 @dirrm lib/hmake

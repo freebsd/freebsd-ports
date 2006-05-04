@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	hmake
-PORTVERSION=	3.10
-PORTREVISION=	2
+PORTVERSION=	3.11
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://www.haskell.org/hmake/ \
 		ftp://ftp.cs.york.ac.uk/pub/haskell/hmake/ \
@@ -16,8 +15,6 @@ PKGNAMEPREFIX=	hs-
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Intelligent compilation management tool for Haskell programs
-
-.include <bsd.port.pre.mk>
 
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 .if exists(${LOCALBASE}/lib/libreadline.so)
@@ -33,8 +30,11 @@ do-install:
 # cheat a bit, otherwise LIBDIR gets clobbered
 	(cd ${WRKSRC} && ./configure --install)
 
+post-install:
+	@${STRIP_CMD} ${PREFIX}/bin/runhs
+
 MAN1=		hmake.1
 
 CONFLICTS=	nhc98-[0-9]*
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
