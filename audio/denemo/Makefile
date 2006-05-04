@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	denemo
-PORTVERSION=	0.7.4
+PORTVERSION=	0.7.5
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,13 +16,13 @@ COMMENT=	Graphical score editor
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gnometarget gtk20 libxml2
+USE_GCC=	3.4+
 USE_BISON=	yes
-USE_GETTEXT=	yes
 USE_GETOPT_LONG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
-CPPFLAGS=	-I${LOCALBASE}/include
+CPPFLAGS=	${CFLAGS} -I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
@@ -31,15 +31,22 @@ LDFLAGS=	-L${LOCALBASE}/lib
 BROKEN=		does not compile on sparc64
 .endif
 
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.else
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.endif
+
 post-patch:
-	@${REINPLACE_CMD} -e 's|CXXFLAGS="$$CFLAGS|CXXFLAGS="$$DENEMO_CFLAGS|g' \
-		-e 's|-Wall -O2|-Wall $$CXXFLAGS|g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e "s|denemo/denemo|denemo|g" ${WRKSRC}/src/kbd-custom.cpp
-	@${REINPLACE_CMD} -e "s|^setkey|dsetkey|g" ${WRKSRC}/src/lyparserfuncs.cpp
-	@${REINPLACE_CMD} -e "s| setkey| dsetkey|g" ${WRKSRC}/src/lyparserfuncs.h
-	@${REINPLACE_CMD} -e "s|malloc.h|stdlib.h|g" ${WRKSRC}/m4/gettext.m4 \
-		${WRKSRC}/ltmain.sh ${WRKSRC}/src/file.cpp ${WRKSRC}/src/lyparser.cpp \
-		${WRKSRC}/src/lyparser.y
+	@${GREP} -lR "<malloc.h>" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
+		's|<malloc\.h>|<stdlib.h>|g'
+	@${REINPLACE_CMD} -e \
+		's|CXXFLAGS="$$CFLAGS|CXXFLAGS="$$DENEMO_CFLAGS|g ; \
+		 s|-Wall -O2|-Wall $$CXXFLAGS|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
+		's|/icons|/pixmaps|g' ${WRKSRC}/pixmaps/Makefile.in
 
 post-install:
 .if !defined(NOPORTDOCS)
