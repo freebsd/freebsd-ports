@@ -1,0 +1,7 @@
+gbk2uni is a command-line applet for TeX writing which is
+used to generate correct PDF bookmark that includes
+Chinese characters. It transforms GBK characters in
+.out file to unicode code.
+
+- Yuan Jue
+yuanjue@yuanjue.net
