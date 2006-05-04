@@ -1,6 +1,6 @@
 --- src/sensors-applet.c.orig	Fri Mar 24 15:42:32 2006
-+++ src/sensors-applet.c	Wed May  3 22:07:12 2006
-@@ -29,22 +29,13 @@
++++ src/sensors-applet.c	Thu May  4 04:57:32 2006
+@@ -29,22 +29,14 @@
  #include "sensors-applet.h"
  #include "active-sensor.h"
  #include "sensors-applet-gconf.h"
@@ -21,10 +21,11 @@
 -#include "smu-sys-sensors-interface.h"
 -#include "hddtemp-sensors-interface.h"
 +#include "mbmon-sensors-interface.h"
++#include "smartctl-sensors-interface.h"
  #include "prefs-dialog.h"
  #include "about-dialog.h"
  
-@@ -754,19 +745,10 @@
+@@ -754,19 +746,11 @@
  }
  
  static void sensors_applet_setup_sensors_interfaces(SensorsApplet *sensors_applet) {
@@ -42,6 +43,7 @@
 -	pmu_sys_sensors_interface_init(sensors_applet);
 -	smu_sys_sensors_interface_init(sensors_applet);
 +	mbmon_sensors_interface_init(sensors_applet);
++	smartctl_sensors_interface_init(sensors_applet);
  }
  
  

@@ -16,15 +16,15 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#ifndef MBMON_SENSORS_INTERFACE_H
-#define MBMON_SENSORS_INTERFACE_H
+#ifndef SMARTCTL_SENSORS_INTERFACE_H
+#define SMARTCTL_SENSORS_INTERFACE_H
 
 #include "sensors-applet.h"
 
-void mbmon_sensors_interface_init (SensorsApplet *sensors_applet);
-double mbmon_sensors_interface_get_sensor_value (const gchar *path, 
-						 const gchar *id, 
-						 SensorType type,
-						 GError **error);
+void smartctl_sensors_interface_init (SensorsApplet *sensors_applet);
+double smartctl_sensors_interface_get_sensor_value (const gchar *path, 
+						    const gchar *id, 
+						    SensorType type,
+						    GError **error);
 
-#endif /* MBMON_SENSORS_INTERFACE_H*/
+#endif /* SMARTCTL_SENSORS_INTERFACE_H*/

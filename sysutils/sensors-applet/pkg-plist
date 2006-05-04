@@ -1,5 +1,6 @@
 libdata/bonobo/servers/SensorsApplet.server
 libexec/sensors-applet
+libexec/smartctl-helper
 share/gnome/gnome-2.0/ui/SensorsApplet.xml
 share/gnome/help/sensors-applet/C/figures/applet_in_panel.png
 share/gnome/help/sensors-applet/C/legal.xml
