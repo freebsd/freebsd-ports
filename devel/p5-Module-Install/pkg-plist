@@ -23,6 +23,7 @@
 %%SITE_PERL%%/Module/Install/Base.pm
 %%SITE_PERL%%/Module/Install/MakeMaker.pm
 %%SITE_PERL%%/Module/Install/Inline.pm
+%%SITE_PERL%%/Module/Install/With.pm
 %%SITE_PERL%%/Module/Install/Admin/Bundle.pm
 %%SITE_PERL%%/Module/Install/Admin/WriteAll.pm
 %%SITE_PERL%%/Module/Install/Admin/Include.pm
