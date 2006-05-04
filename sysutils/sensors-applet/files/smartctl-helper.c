@@ -16,15 +16,38 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#ifndef MBMON_SENSORS_INTERFACE_H
-#define MBMON_SENSORS_INTERFACE_H
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <unistd.h>
 
-#include "sensors-applet.h"
+static void
+smartctl_helper_usage (void)
+{
+  fprintf(stderr, "Usage: smartctl-helper enable|attributes DEVICE\n");
+  exit(1);
+}
 
-void mbmon_sensors_interface_init (SensorsApplet *sensors_applet);
-double mbmon_sensors_interface_get_sensor_value (const gchar *path, 
-						 const gchar *id, 
-						 SensorType type,
-						 GError **error);
+int
+main (int argc, char **argv)
+{
+  if (argc != 3)
+    smartctl_helper_usage();
 
-#endif /* MBMON_SENSORS_INTERFACE_H*/
+  if (! strcmp(argv[1], "enable"))
+    {
+      char *smartctl_argv[] = { "smartctl", "-s", "on", argv[2], NULL };
+      execve(SMARTCTL, smartctl_argv, NULL);
+    }
+  else if (! strcmp(argv[1], "attributes"))
+    {
+      char *smartctl_argv[] = { "smartctl", "-A", argv[2], NULL };
+      execve(SMARTCTL, smartctl_argv, NULL);
+    }
+  else
+    smartctl_helper_usage();
+
+  /* execve failed */
+  fprintf(stderr, "Unable to execute %s\n", SMARTCTL);
+  return 1;
+}

@@ -35,7 +35,7 @@ static struct
 } mbmon_sensors[] = {
   { "TEMP0",	N_("Main Board"),	TEMP_SENSOR,	MEM_ICON	},
   { "TEMP1",	N_("CPU"),		TEMP_SENSOR,	CPU_ICON	},
-  { "TEMP2",	N_("PSU"),		TEMP_SENSOR,	GENERIC_ICON	},
+  { "TEMP2",	N_("PSU"),		TEMP_SENSOR,	CASE_ICON	},
   { "FAN0",	N_("Main Board Fan"),	FAN_SENSOR,	FAN_ICON	},
   { "FAN1",	N_("CPU Fan"),		FAN_SENSOR,	FAN_ICON	},
   { "FAN2",	N_("PSU Fan"),		FAN_SENSOR,	FAN_ICON	},
@@ -49,7 +49,9 @@ static struct
 };
 
 static gboolean
-mbmon_watch_cb (GIOChannel *source, GIOCondition condition, gpointer user_data)
+mbmon_sensors_interface_watch_cb (GIOChannel *source,
+				  GIOCondition condition,
+				  gpointer user_data)
 {
   char *line;
   gsize terminator;
@@ -94,7 +96,7 @@ mbmon_watch_cb (GIOChannel *source, GIOCondition condition, gpointer user_data)
 }
 
 void
-mbmon_sensors_interface_init(SensorsApplet *sensors_applet)
+mbmon_sensors_interface_init (SensorsApplet *sensors_applet)
 {
   GError *err = NULL;
   char *argv[] = { MBMON_EXECUTABLE, "-r", "10", NULL };
@@ -125,7 +127,7 @@ mbmon_sensors_interface_init(SensorsApplet *sensors_applet)
 
   channel = g_io_channel_unix_new(mbmon_stdout);
   g_io_channel_set_flags(channel, G_IO_FLAG_NONBLOCK, NULL);
-  g_io_add_watch(channel, G_IO_IN, mbmon_watch_cb, NULL);
+  g_io_add_watch(channel, G_IO_IN, mbmon_sensors_interface_watch_cb, NULL);
 
   for (i = 0; i < G_N_ELEMENTS(mbmon_sensors); i++)
     {
@@ -144,7 +146,7 @@ mbmon_sensors_interface_init(SensorsApplet *sensors_applet)
     }
 }
 
-gdouble
+double
 mbmon_sensors_interface_get_sensor_value (const gchar *path, 
 					  const gchar *id, 
 					  SensorType type,
