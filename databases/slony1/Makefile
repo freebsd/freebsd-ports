@@ -33,8 +33,10 @@ OPTIONS=	PERLTOOLS "Install perl configuration tools" Off
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_PERLTOOLS)
-USE_PERL5_RUN=	yes
+USE_PERL=	yes
 CONFIGURE_ARGS+=	--with-perltools=${LOCALBASE}/sbin
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
 PLIST_SUB+=	PERLTOOLS=""
 SUB_LIST+=	PERLTOOLS=""
 .else
