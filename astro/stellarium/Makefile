@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	stellarium
-PORTVERSION=	0.7.1
+PORTVERSION=	0.8.0
 CATEGORIES=	astro
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,7 +14,9 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	jylefort@FreeBSD.org
 COMMENT=	A 3D photo-realistic sky renderer
 
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
+BUILD_DEPENDS=	icoconvert:${PORTSDIR}/graphics/icoconvert
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
+		freetype:${PORTSDIR}/print/freetype2
 
 USE_GCC=	3.3+
 USE_GETTEXT=	yes
@@ -29,8 +31,20 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 MAN1=		stellarium.1
 PORTDOCS=	AUTHORS ChangeLog NEWS README TODO
 
-.if !defined(NOPORTDOCS)
+DESKTOP_ENTRIES="Stellarium" \
+		"View the sky" \
+		"stellarium.png" \
+		"stellarium" \
+		"Application;Astronomy;Science;Education;" \
+		false
+
+post-build:
+	@icoconvert ${WRKSRC}/data/stellarium.ico
+
 post-install:
+	${INSTALL_DATA} ${WRKSRC}/data/stellarium_64X64_32bpp.png \
+		${PREFIX}/share/pixmaps/stellarium.png
+.if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
