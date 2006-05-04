@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	htree
-PORTVERSION=	0.3
-PORTREVISION=	1
+PORTVERSION=	0.4.20060326
 CATEGORIES=	textproc www ruby
-MASTER_SITES=	ftp://ftp.rucus.ru.ac.za/pub/FreeBSD/distfiles/ruby/
+MASTER_SITES=	ftp://ftp.idaemons.org/pub/distfiles/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
