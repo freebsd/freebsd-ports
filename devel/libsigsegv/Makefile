@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libsigsegv
-PORTVERSION=	2.2
-PORTREVISION=	1
+PORTVERSION=	2.3
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	libsigsegv
@@ -16,6 +15,7 @@ MAINTAINER=	perky@FreeBSD.org
 COMMENT=	Handling page faults in user mode
 
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 .include <bsd.port.pre.mk>
 
