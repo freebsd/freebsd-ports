@@ -26,7 +26,6 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack glib20 libxslt intlhack
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--without-bdb
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -lintl"

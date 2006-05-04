@@ -16,8 +16,6 @@ COMMENT=	A Tk program browser
 
 RUN_DEPENDS=	wish8.3:${PORTSDIR}/x11-toolkits/tk83
 
-USE_REINPLACE=	yes
-
 # this would do an interactive install:
 #do-install:
 #		(cd ${WRKSRC} && ./install.tcl)

@@ -14,7 +14,6 @@ MASTER_SITES=	http://www.inf.ethz.ch/personal/biere/projects/ccmalloc/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C/C++ memory profiler and memory leak tracer
 
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 

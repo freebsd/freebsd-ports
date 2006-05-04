@@ -17,7 +17,6 @@ COMMENT=	A No Frills Haskell Interface Documentation System
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 
 PLIST_FILES=	bin/idoc
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 MAKE_ARGS=	PREFIX="${PREFIX}"
 

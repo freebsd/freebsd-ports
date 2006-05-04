@@ -16,7 +16,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extracting comments from C++ source and generating HTML
 
 USE_PERL5=	yes
-USE_REINPLACE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}v${PORTVERSION:S/.//g}/src
 MAKEFILE=	mkopt_gcc.mk

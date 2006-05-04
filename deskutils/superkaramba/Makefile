@@ -23,7 +23,6 @@ USE_GMAKE=		yes
 USE_GNOME=		glib12 gtk12
 USE_PYTHON=		yes
 INSTALLS_SHLIB=		yes
-USE_REINPLACE=		yes
 
 CONFIGURE_ARGS+=	--with-pythondir=${PYTHON_INCLUDEDIR}
 

@@ -19,7 +19,6 @@ USE_GNOME=	gnomeprefix gnomehack libgnomeui libglade2
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-USE_REINPLACE=	yes
 USE_GCC=	3.4
 
 post-patch:

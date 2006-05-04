@@ -18,7 +18,6 @@ COMMENT=	The cyrus ACAP (Application Configuration Access Protocol) server
 LIB_DEPENDS=	sasl.8:${PORTSDIR}/security/cyrus-sasl
 BUILD_DEPENDS=	sml:${PORTSDIR}/lang/sml-nj
 
-USE_REINPLACE=	YES
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--with-cyrus-prefix=${PREFIX}/cyrus \
 		--with-sasldir=${LOCALBASE}/lib

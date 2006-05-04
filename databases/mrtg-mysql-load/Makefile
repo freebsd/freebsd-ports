@@ -19,7 +19,6 @@ RUN_DEPENDS=	mrtg:${PORTSDIR}/net-mgmt/mrtg \
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 USE_PERL5_RUN=	yes
-USE_REINPLACE=	yes
 
 MAN1=		${PORTNAME}.1
 

@@ -18,7 +18,6 @@ BUILD_DEPENDS=	ppc386:${PORTSDIR}/lang/fpc
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 ONLY_FOR_ARCHS=	i386
 
 .include <bsd.port.pre.mk>

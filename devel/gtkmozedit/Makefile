@@ -16,7 +16,6 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Text editor widget based on Mozilla's editing functionality
 
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack

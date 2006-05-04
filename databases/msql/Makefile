@@ -17,7 +17,6 @@ CONFLICTS=	msql-3*
 
 INSTALLS_SHLIB=	YES
 USE_PERL5=	YES
-USE_REINPLACE=	YES
 
 # Not free for commercial use.
 RESTRICTED=	"restrictive copyright (no commercial use)"

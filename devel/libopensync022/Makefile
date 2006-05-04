@@ -25,7 +25,6 @@ CONFIGURE_ENV=	LDFLAGS="${PTHREAD_LIBS}"
 GNU_CONFIGURE=	yes
 USE_PYTHON=	yes
 USE_GNOME=	gnomehack glib20 libxml2
-USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>

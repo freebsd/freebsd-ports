@@ -15,7 +15,6 @@ COMMENT=	Standard version of the sfslite library
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 CONFIGURE_ARGS+=--with-sfsuser=sfs \
 		--with-sfsgroup=sfs
 #

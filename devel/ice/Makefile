@@ -18,7 +18,6 @@ LIB_DEPENDS=	db-4.2.2:${PORTSDIR}/databases/db42 \
 		expat.6:${PORTSDIR}/textproc/expat2
 
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 
 CFLAGS+=	-ftemplate-depth-128 -fPIC -DPIC -Wall -D_REENTRANT ${PTHREAD_CFLAGS}

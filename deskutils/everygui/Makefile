@@ -17,7 +17,6 @@ COMMENT=	Dynamic GUI for an OS command
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 USE_GNOME=	libglade2 pygnome2
-USE_REINPLACE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

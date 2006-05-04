@@ -21,7 +21,6 @@ COMMENT=	Callback Framework for C++
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 USE_GNOME=	gnomehack
-USE_REINPLACE=	yes
 
 pre-configure:
 	@${REINPLACE_CMD} -e 's#^sh libtool#${LIBTOOL}#' ${WRKSRC}/configure

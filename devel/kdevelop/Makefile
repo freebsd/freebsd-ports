@@ -51,7 +51,6 @@ CONFIGURE_ARGS+=--with-qtdoc-dir=${X11BASE}/share/doc/qt/html \
 		--with-neon-config=${LOCALBASE}/bin/neon-config
 
 CONFIGURE_ENV+=	PATH=${LOCALBASE}/gnu-autotools/bin:${PATH}
-USE_REINPLACE=	yes
 
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 .include <bsd.port.pre.mk>

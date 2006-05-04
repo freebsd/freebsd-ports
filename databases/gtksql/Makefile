@@ -20,7 +20,6 @@ WITH_MYSQL=	yes
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
-USE_REINPLACE=	yes
 
 .include <bsd.port.pre.mk>
 

@@ -16,7 +16,6 @@ DISTNAME=	${PORTNAME}-C++-${PORTVERSION}
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	A C++ reference implementation of the Atlas protocol
 
-USE_REINPLACE=	YES
 USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	YES
 USE_GCC=	3.4

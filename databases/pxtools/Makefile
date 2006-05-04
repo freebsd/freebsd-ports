@@ -17,7 +17,6 @@ COMMENT=	Collection of tools to work with Paradox databases
 USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
-USE_REINPLACE=	yes
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"

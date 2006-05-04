@@ -54,7 +54,6 @@ PLIST_SUB+=	HAVE_DOXYWIZARD="@comment "
 .endif # !WITHOUT_DOXYWIZARD
 
 USE_PERL5=	yes
-USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
 QT_NONSTANDARD=	yes	# non-standard configure arguments

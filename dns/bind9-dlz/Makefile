@@ -29,7 +29,6 @@ MASTER_SITES_DLZ=	${MASTER_SITE_SOURCEFORGE}
 DLZVERSION=	0.7.0
 USE_SUBMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps --with-openssl \
 		--with-randomdev=/dev/random
 PATCH_STRIP=	-p1

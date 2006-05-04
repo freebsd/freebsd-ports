@@ -18,7 +18,6 @@ COMMENT=	Show and convert the content of dBASE III, IV, and 5.0 files
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 
 PLIST_FILES=	bin/dbf
-USE_REINPLACE=	yes
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" PREFIX="${PREFIX}"
 
 post-patch:

@@ -19,7 +19,6 @@ COMMENT=	An ocaml wrapper for the libevent API
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
 LIB_DEPENDS=	${LIB_EVENT}:${PORTSDIR}/devel/libevent
 
-USE_REINPLACE=	yes
 ALL_TARGET=	all allopt
 USE_GMAKE=	yes
 

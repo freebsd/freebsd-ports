@@ -22,7 +22,6 @@ USE_BZIP2=	yes
 USE_GNOME=	gnomeprefix gnomehack libgnomeui intlhack gtksourceview
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 INSTALLS_OMF=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

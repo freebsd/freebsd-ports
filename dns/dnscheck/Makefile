@@ -14,7 +14,6 @@ MAINTAINER=	jarrod@netleader.com.au
 COMMENT=	DNS zone sanity checker
 
 USE_PERL=	yes
-USE_REINPLACE=	yes
 
 PLIST_FILES=	bin/dnscheck
 

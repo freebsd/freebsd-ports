@@ -25,7 +25,6 @@ BROKEN=		Does not compile
 USE_GMAKE=	yes
 USE_X_PREFIX=	yex
 USE_GETTEXT=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehier \
 		gconf2 \

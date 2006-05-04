@@ -31,7 +31,6 @@ COMMENT=	GNU GDB 5.2.1 modified for Free Pascal
 NO_LATEST_LINK=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--program-suffix=fpc
 AR?=		/usr/bin/ar
 

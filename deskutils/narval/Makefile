@@ -20,7 +20,6 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/xmlrpclib.py:${PORTSDIR}/net/py-xmlrpclib \
 		${PYTHON_SITELIBDIR}/logilab/xmltools/XmlTree.py:${PORTSDIR}/textproc/py-xmltools \
 		${PYTHON_SITELIBDIR}/mx/DateTime/mxDateTime/__init__.py:${PORTSDIR}/lang/py-mx-base
 
-USE_REINPLACE=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 USE_TWISTED=	yes

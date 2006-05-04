@@ -18,7 +18,6 @@ COMMENT=	A library for the creation of CGI-based Web applications
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 

@@ -21,7 +21,6 @@ LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png \
 
 USE_GETTEXT=	yes
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 USE_GNOME=	gnomehack pkgconfig
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes

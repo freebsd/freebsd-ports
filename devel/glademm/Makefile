@@ -15,7 +15,6 @@ MAINTAINER=	bland@FreeBSD.org
 COMMENT=	A C++ code generator backend for glade and glade2
 
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack gnometarget
 GNU_CONFIGURE=	yes

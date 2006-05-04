@@ -38,7 +38,6 @@ USE_GMAKE=		yes
 USE_XLIB=		yes
 USE_XPM=		yes
 USE_GL=			yes
-USE_REINPLACE=		yes
 USE_GNOME=		libxml2
 
 # A lot of additional features are most likely used in high energy physics

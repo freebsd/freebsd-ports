@@ -20,7 +20,6 @@ USE_BISON=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
-USE_REINPLACE=	yes
 
 LB2FIX=		Makefile.in test/Makefile.in xbsql/Makefile.in
 

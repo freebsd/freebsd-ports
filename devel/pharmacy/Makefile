@@ -16,7 +16,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNOME frontend for CVS
 
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	yes
 GNU_CONFIGURE=	yes

@@ -25,8 +25,6 @@ NO_PACKAGE=	"Conflicting dependences between PHP4 and PHP5"
 DEFAULT_PHP_VER=5
 BROKEN_WITH_PHP=4
 
-USE_REINPLACE=	yes
-
 CATEGORY=	PHPUnit2
 FILES=		Extensions/ExceptionTestCase.php \
 		Extensions/PerformanceTestCase.php Extensions/RepeatedTest.php \

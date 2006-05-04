@@ -29,8 +29,6 @@ RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-
 .endif
 
 .if ${PERL_LEVEL} < 500600
-USE_REINPLACE=	yes
-
 post-patch:
 	@${REINPLACE_CMD} -e 's, -P , B<-P> ,g' ${WRKSRC}/mytop
 .endif

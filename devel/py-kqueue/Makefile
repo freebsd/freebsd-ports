@@ -19,7 +19,6 @@ COMMENT=	Python interface to kqueue(2) and kevent(2) system calls
 
 USE_BZIP2=		yes
 USE_PYTHON=		yes
-USE_REINPLACE=		yes
 FILES=			kqsyscallmodule.so KQueue.py KQueue.pyc
 PLIST_FILES=		${FILES:S+^+%%PYTHON_SITELIBDIR%%/+g}
 

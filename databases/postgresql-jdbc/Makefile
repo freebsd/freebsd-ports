@@ -21,7 +21,6 @@ DIST_SUBDIR=	postgresql
 
 USE_ANT=	yes
 USE_JAVA=	yes
-USE_REINPLACE=	yes
 
 PKGMESSAGE=	${WRKDIR}/.pkg-message
 

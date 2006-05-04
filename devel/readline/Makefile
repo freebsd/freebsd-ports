@@ -21,7 +21,6 @@ COMMENT=	A library for editing command lines as they are typed
 
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
-USE_REINPLACE=	yes
 
 INFO=		readline rluserman history
 MAN3=		readline.3 history.3

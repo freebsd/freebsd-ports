@@ -15,7 +15,6 @@ MAINTAINER=	dtynan@kalopa.com
 COMMENT=	DBOW is a database object generator for C, Perl, PHP, etc
 
 USE_MYSQL=	yes
-USE_REINPLACE=	yes
 
 MAN1=		dbow.1
 

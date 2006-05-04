@@ -17,7 +17,6 @@ COMMENT=	An IDE for GNOME desktop
 
 LIB_DEPENDS=	unicode.0:${PORTSDIR}/devel/libunicode
 
-USE_REINPLACE=	yes
 USE_GNOME=	gnomelibs libglade
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes

@@ -22,7 +22,6 @@ LIB_DEPENDS=	tcl84.1:${PORTSDIR}/lang/tcl84
 BUILD_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 .endif
 
-USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/builds
 GNU_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	../unix/configure

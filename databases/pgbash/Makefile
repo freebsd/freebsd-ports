@@ -25,7 +25,6 @@ WRKSRC=		${WRKDIR}/pgbash-7.3/src/bash-2.05a
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 
 CONFIGURE_ARGS=	--pginc-prefix=${LOCALBASE}/include --pglib-prefix=${LOCALBASE}/lib
 

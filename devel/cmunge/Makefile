@@ -21,8 +21,6 @@ MAKE_ARGS=	CC="${CC} ${CFLAGS}"
 PLIST_FILES=	bin/cmunge bin/ctran bin/proc-incl
 PORTDOCS=	*
 
-USE_REINPLACE=	yes
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|/vcpc_users/jhm/bin/cmunger|${PREFIX}|; \
 		s|/usr/ccs/lib/cpp|/usr/bin/cpp|' ${WRKSRC}/cmunge

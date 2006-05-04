@@ -15,7 +15,6 @@ COMMENT=	Splash screen changer for GNOME
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
 USE_PYTHON=	yes
 USE_GNOME=	pygnome2 gnomeprefix
 

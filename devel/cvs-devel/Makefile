@@ -36,8 +36,6 @@ INFO=		cvs cvsclient
 CVS_SITE?=	:pserver:anoncvs@anoncvs.jp.FreeBSD.org:/home/ncvs
 CVS_VER?=	v${PORTVERSION:S/./_/g}
 
-USE_REINPLACE=	yes
-
 post-patch:
 	${REINPLACE_CMD} 's/${PORTVERSION:S/./\./g}/&+IPv6/g' ${WRKSRC}/configure
 	@${CP} ${FILESDIR}/missing ${WRKSRC}

@@ -41,7 +41,6 @@ RUN_DEPENDS+=	${PYEXPAT}
 USE_PYTHON=	yes
 PLIST_SUB+=	PYTHON=""
 .else
-USE_REINPLACE=	yes
 PLIST_SUB+=	PYTHON="@comment "
 
 post-patch:

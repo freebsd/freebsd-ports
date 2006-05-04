@@ -18,7 +18,6 @@ COMMENT=	A timer for your personal activities
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
 MAN1=		gtimer.1

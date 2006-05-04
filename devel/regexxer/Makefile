@@ -26,7 +26,6 @@ LIB_DEPENDS=		gconfmm-2.6:${PORTSDIR}/devel/gconfmm26 \
 
 USE_BZIP2=		yes
 USE_X_PREFIX=		yes
-USE_REINPLACE=		yes
 GNU_CONFIGURE=		yes
 USE_GMAKE=		yes
 USE_GNOME=		gnomehack gnomeprefix gnometarget intltool intlhack

@@ -30,7 +30,6 @@ GCC_REV=	${DISTNAME:S/gcc-//g}
 PLIST_SUB+=	GCC_REV=${GCC_REV}
 USE_PERL5=	yes
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 CFLAGS:=	${CFLAGS:C/-m(arch|cpu)=[a-zA-Z0-9]+//}
 CONFIGURE_ARGS=	--target=${PKGNAMEPREFIX:S/-$//} --enable-languages="c,c++,objc"
 .if defined(DEFAULT_CPU)

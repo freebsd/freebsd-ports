@@ -21,8 +21,6 @@ PLIST_FILES=	bin/TkRef
 
 NO_BUILD=	yes
 
-USE_REINPLACE=	yes
-
 do-patch:
 	${REINPLACE_CMD} -e "s|/usr/local/bin/wish4.1|${LOCALBASE}/bin/wish8.2|;" \
 		${WRKDIR}/TkRef

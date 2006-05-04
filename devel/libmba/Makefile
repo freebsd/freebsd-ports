@@ -17,7 +17,6 @@ COMMENT=	A collection of C modules potentially useful to any project
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	prefix="${PREFIX}" CC="${CC}" \
 		MINVERSION="${SHLIB_MAJOR}" \

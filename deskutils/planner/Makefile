@@ -27,7 +27,6 @@ INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--enable-static \
 		--disable-python \
 		--disable-dotnet

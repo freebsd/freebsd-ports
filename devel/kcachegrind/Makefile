@@ -23,7 +23,6 @@ CONFLICTS=	kdesdk3-[0-9]*
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 USE_KDELIBS_VER=3
-USE_REINPLACE=	yes
 
 OPTIONS=	DOT "Use GraphViz/dot to render call graphs" on
 

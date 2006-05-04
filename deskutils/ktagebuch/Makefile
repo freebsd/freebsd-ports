@@ -22,7 +22,6 @@ USE_BZIP2=		yes
 USE_GMAKE=		yes
 USE_AUTOTOOLS=		libtool:15
 INSTALLS_SHLIB=		yes
-USE_REINPLACE=		yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2|-fPIC|g' ${WRKSRC}/${CONFIGURE_SCRIPT}

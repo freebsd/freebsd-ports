@@ -16,7 +16,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An STL Container Initialization Library
 
 USE_ZIP=	yes
-USE_REINPLACE=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 

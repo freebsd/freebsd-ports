@@ -18,7 +18,6 @@ COMMENT=	Ameliorated interface to the CPAN
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS=	AUTOINSTALL=1
 INSTALL_TARGET=	pure_install
-USE_REINPLACE=	yes
 
 OPTIONS=	TEST_REPORTER "Send reports to cpan-testers" off \
 		YAML "Check reports from cpan-testers" off

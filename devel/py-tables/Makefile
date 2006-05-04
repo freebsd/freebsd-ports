@@ -23,7 +23,6 @@ LIB_DEPENDS=	hdf5.0:${PORTSDIR}/science/hdf5 \
 		ucl.1:${PORTSDIR}/archivers/ucl
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/numarray/__init__.py:${PORTSDIR}/math/py-numarray
 
-USE_REINPLACE=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 

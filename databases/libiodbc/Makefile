@@ -22,7 +22,6 @@ COMMENT=	An ODBC 3.x driver manager, for universal data source access
 CONFLICTS=	unixODBC-[0-9]*
 
 USE_GNOME=	gnomehack gnometarget pkgconfig
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"

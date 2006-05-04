@@ -18,7 +18,6 @@ COMMENT=	General purpose dynamic array
 GNU_CONFIGURE=	yes
 USE_GMAKE=	YES
 INSTALLS_SHLIB=	YES
-USE_REINPLACE=	YES
 
 MAN3=	Judy.3 Judy1.3 Judy1_funcs.3 JudyHS.3 JudyHS_funcs.3 \
 	JudyL.3 JudyL_funcs.3 JudySL.3 JudySL_funcs.3

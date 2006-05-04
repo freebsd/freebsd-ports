@@ -17,7 +17,6 @@ COMMENT=	Extracts documentation from C source code comments
 BUILD_DEPENDS+=	make+:${PORTSDIR}/devel/makeplus
 
 USE_PERL5_RUN=	yes
-USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 CONFIGURE_ENV=	MAKEPLUS_HOME=${MAKEPLUS_HOME}

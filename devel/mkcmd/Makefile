@@ -19,7 +19,6 @@ BUILD_DEPENDS=	makeme:${PORTSDIR}/devel/msrc0
 
 MAKE_FLAGS=
 MAKEFILE=
-USE_REINPLACE=	yes
 
 MAN1=		mkcmd.1
 MAN5=		mkcmd.5

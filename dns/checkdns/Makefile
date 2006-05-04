@@ -14,8 +14,6 @@ MASTER_SITES=	http://www.enderunix.org/checkdns/ \
 MAINTAINER=	joe@joeholden.co.uk
 COMMENT=	A domain name server analysis and reporting tool
 
-USE_REINPLACE=	yes
-
 SUB_FILES=	pkg-message
 
 post-patch:

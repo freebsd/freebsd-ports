@@ -16,7 +16,6 @@ MASTER_SITE_SUBDIR=	devel/lang/c++
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Turbo Vision C++ CUI library for UNIX
 
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes

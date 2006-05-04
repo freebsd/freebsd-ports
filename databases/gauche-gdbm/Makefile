@@ -20,8 +20,6 @@ BUILD_DEPENDS=	gosh:${PORTSDIR}/lang/gauche \
 LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
 RUN_DEPENDS=	gosh:${PORTSDIR}/lang/gauche
 
-USE_REINPLACE=	yes
-
 WRKSRC=		${WRKDIR}/dbm
 MAKE_ARGS=	GOSH=gosh \
 		OPTFLAGS="${CFLAGS} -I${LOCALBASE}/include"

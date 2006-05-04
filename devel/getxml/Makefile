@@ -18,7 +18,6 @@ COMMENT=	An XML internationalization tool
 
 LIB_DEPENDS=	xml.5:${PORTSDIR}/textproc/libxml
 
-USE_REINPLACE=	yes
 USE_GNOME=	glib12
 GNU_CONFIGURE=	yes
 

@@ -13,7 +13,6 @@ MASTER_SITES=	http://www.ods.org/
 MAINTAINER=	geniusj@ods.org
 COMMENT=	ODS Dynamic DNS Client
 
-USE_REINPLACE=	yes
 ALL_TARGET=	odsclient
 
 post-patch:

@@ -51,7 +51,6 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/cvsgraph:${PORTSDIR}/devel/cvsgraph
 
 NO_BUILD=	yes
 USE_APACHE=	1.3+	# needed to test APACHE_VERSION
-USE_REINPLACE=	yes
 
 # Specify where your repository belongs.
 # (You can reconfigure it after installation anyway)

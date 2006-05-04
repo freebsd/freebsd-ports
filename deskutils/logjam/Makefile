@@ -17,7 +17,6 @@ LIB_DEPENDS=	curl.3:${PORTSDIR}/ftp/curl
 
 MAN1=		logjam.1
 
-USE_REINPLACE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 WANT_GNOME=	yes

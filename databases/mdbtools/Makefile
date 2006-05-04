@@ -17,7 +17,6 @@ COMMENT=	Utilities and libraries to export data from MS Access databases (.mdb)
 
 BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk	# To build man-pages
 
-USE_REINPLACE=	yes
 USE_BISON=	yes
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes

@@ -19,7 +19,6 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_PYTHON=	yes
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-nautilus-extdir=${X11BASE}/lib/nautilus/extensions-1.0

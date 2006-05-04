@@ -30,7 +30,6 @@ DOCS=		sample_multiple.php
 DATA=		AT_postcodes.txt CH_postcodes.txt
 DATAFILES=	Validate/AT.php Validate/CH.php
 
-USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ""
 
 .include <bsd.port.pre.mk>

@@ -20,7 +20,6 @@ LIB_DEPENDS=	sigc++-2.0.0:${PORTSDIR}/devel/libsigc++20 \
 
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--with-libgmp-prefix=${LOCALBASE} --without-howl
-USE_REINPLACE=		yes
 INSTALLS_SHLIB=		yes
 
 .if !defined(WITHOUT_NLS)

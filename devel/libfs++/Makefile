@@ -16,7 +16,6 @@ MASTER_SITE_SUBDIR=	. archive
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ library which provides a file_iterator class
 
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes

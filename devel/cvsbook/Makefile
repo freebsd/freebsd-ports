@@ -21,7 +21,6 @@ OPTIONS=	CVSBOOK_INFO		"Install the info version" on \
 		CVSBOOK_POSTSCRIPT	"Install the postscript version" on \
 		CVSBOOK_PDF		"Install the PDF version" on
 
-USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 .include <bsd.port.pre.mk>

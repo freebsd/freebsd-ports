@@ -20,7 +20,6 @@ LIB_DEPENDS=	aa.1:${PORTSDIR}/graphics/aalib
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 
 INSTALLS_SHLIB=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 WANT_GNOME=	yes
 CONFIGURE_ENV=	NASM="${LOCALBASE}/bin/nasm"		\

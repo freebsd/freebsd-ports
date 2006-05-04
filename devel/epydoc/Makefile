@@ -17,7 +17,6 @@ COMMENT=	Python API documentation generation tool
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-USE_REINPLACE=	yes
 
 MAN1=	epydoc.1 epydocgui.1
 

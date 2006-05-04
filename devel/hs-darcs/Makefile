@@ -18,7 +18,6 @@ LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		gmp.6:${PORTSDIR}/math/libgmp4
 
 OPTIONS=	SERVER "install server" off
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${PREFIX}/lib/ ${PTHREAD_LIBS}" \

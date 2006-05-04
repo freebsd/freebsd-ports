@@ -23,7 +23,6 @@ LIB_DEPENDS=	adns.1:${PORTSDIR}/dns/adns \
 USE_BZIP2=	yes
 USE_GNOME=	glib12 glib20 gnomehack gnometarget
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-libwww
 INSTALLS_SHLIB=	yes

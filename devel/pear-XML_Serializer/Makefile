@@ -16,8 +16,6 @@ BUILD_DEPENDS=	${PEARDIR}/XML/Parser.php:${PORTSDIR}/devel/pear-XML_Parser \
 		${PEARDIR}/XML/Util.php:${PORTSDIR}/devel/pear-XML_Util
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-USE_REINPLACE=	yes
-
 CATEGORY=	XML
 FILES=		Serializer.php Unserializer.php
 EXAMPLES=	example.xml serializeAndEncode.php serializeAndReturn.php \

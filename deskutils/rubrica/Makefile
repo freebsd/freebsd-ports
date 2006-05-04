@@ -17,7 +17,6 @@ COMMENT=	An addressbook for the gnome2 desktop
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomeprefix gnometarget libgnomeui
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

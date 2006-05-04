@@ -18,7 +18,6 @@ COMMENT=	Cvsdelta summarizes differences between local and in-cvs files
 
 USE_RUBY=	yes
 NO_BUILD=	yes
-USE_REINPLACE=	yes
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}

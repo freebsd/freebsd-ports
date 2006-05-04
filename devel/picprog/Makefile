@@ -15,7 +15,6 @@ MAINTAINER=	erik@smluc.org
 COMMENT=	Serial port pic16c84 programmer
 
 USE_GETOPT_LONG=	yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 
 MAKE_ENV=	CXX="${CXX}" CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"

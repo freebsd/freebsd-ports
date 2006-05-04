@@ -22,7 +22,6 @@ USE_PERL5=	yes
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 
 BINFILES=	cilly patcher teetwo
 LIBFILES=	Cilly.pm KeptFile.pm OutputFile.pm TempFile.pm

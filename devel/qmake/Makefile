@@ -15,7 +15,6 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	The build utility of the Qt project
 
-USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ""
 WRKSRC=		${WRKDIR}/${DISTNAME}/qmake
 MAKEFILE=	${FILESDIR}/Makefile.bsd

@@ -20,7 +20,6 @@ BUILD_DEPENDS=	${X11BASE}/lib/libqscintilla.so:${PORTSDIR}/x11-toolkits/qscintil
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_PYTHON=	yes
-USE_REINPLACE=	yes
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/eric3 bin/eric3-api bin/eric3-doc bin/eric3-helpviewer \

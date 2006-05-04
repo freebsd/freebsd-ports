@@ -23,7 +23,6 @@ USE_KDELIBS_VER=	3
 USE_GMAKE=	yes
 CONFIGURE_TARGET=
 CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-USE_REINPLACE=	yes
 
 post-patch:
 	${REINPLACE_CMD} -e 's,-lqt,-lqt-mt -pthread,' ${WRKSRC}/configure

@@ -9,8 +9,6 @@ DIST_SUBDIR=	PEAR
 
 RUN_DEPENDS+=	pear:${PORTSDIR}/devel/pear
 
-USE_REINPLACE=	yes
-
 .if !defined(USE_PHPIZE)
 NO_BUILD=	yes
 .endif

@@ -15,8 +15,6 @@ COMMENT=	PEAR simple HTML form package
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-USE_REINPLACE=	yes
-
 CATEGORY=	HTML
 FILES=		Form.php
 TESTS=		form.phpt

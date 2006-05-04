@@ -22,7 +22,6 @@ RUN_DEPENDS=	mono:${PORTSDIR}/lang/mono
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}
 
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	MONO_PATH=${WRKSRC}/lib
 INSTALL_TARGET=	install prefix=${PREFIX}

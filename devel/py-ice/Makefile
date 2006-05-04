@@ -19,7 +19,6 @@ COMMENT=	An Ice (Internet Communications Engine) language mapping for Python
 LIB_DEPENDS=	Ice.30:${PORTSDIR}/devel/ice
 
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 USE_PYTHON=	yes
 
 CFLAGS+=	-ftemplate-depth-128 -fPIC -DPIC -Wall -D_REENTRANT ${PTHREAD_CFLAGS}

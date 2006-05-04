@@ -20,7 +20,6 @@ RUN_DEPENDS=	${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
 
 NO_BUILD=	yes
 USE_PERL5=	yes
-USE_REINPLACE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} 's|^#!/usr/bin/perl|#!${PERL}|; \

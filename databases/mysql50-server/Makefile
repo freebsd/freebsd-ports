@@ -18,7 +18,6 @@ COMMENT?=	Multithreaded SQL database (server)
 
 SLAVEDIRS=	databases/mysql50-client databases/mysql50-scripts
 USE_AUTOTOOLS=	libtool:15
-USE_REINPLACE=	yes
 
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--localstatedir=/var/db/mysql \

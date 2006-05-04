@@ -26,7 +26,6 @@ PLIST=		${.CURDIR}/pkg-plist
 DBUS_SLAVE=	yes
 
 USE_GNOME=	gnomehack gnometarget
-USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--enable-mono \
 		--disable-python \
 		--disable-gcj \

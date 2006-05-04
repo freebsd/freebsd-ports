@@ -16,7 +16,6 @@ COMMENT=	Tk console for Tcl
 
 RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 
-USE_REINPLACE=	yes
 NO_BUILD=	yes
 REINPLACE_ARGS=	-i.bak -E
 

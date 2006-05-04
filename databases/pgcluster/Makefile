@@ -26,7 +26,6 @@ WRKSRC?=	${WRKDIR}/postgresql-${BASEPGSQL}
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf:259
-USE_REINPLACE=	yes
 MAKE_FLAGS=	# empty
 MAKEFILE=	# empty
 CONFLICTS=	postgresql-*

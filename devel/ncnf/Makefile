@@ -19,7 +19,6 @@ LIB_DEPENDS=	strfunc.9:${PORTSDIR}/devel/libstrfunc
 
 INSTALLS_SHLIB=	YES
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	YES
 
 post-patch:
 .ifdef NOPORTDOCS

@@ -29,8 +29,6 @@ NOMAN=		defined
 
 .if ${OSVERSION} < 600102
 
-USE_REINPLACE=	yes
-
 FILES_TO_PATCH=lib/32.fsize.c lib/64.xlatetof.c lib/cook.c lib/gelf.h lib/gelftrans.c
 
 post-patch:

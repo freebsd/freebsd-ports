@@ -18,7 +18,6 @@ LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
 PCRE_CONFIG?=	${LOCALBASE}/bin/pcre-config
 
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

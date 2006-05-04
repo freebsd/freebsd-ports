@@ -17,8 +17,6 @@ COMMENT=	Perl bindings for the PC/SC Lite Framework
 
 LIB_DEPENDS=	pcsclite.1:${PORTSDIR}/devel/pcsc-lite
 
-USE_REINPLACE=	yes
-
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500600

@@ -56,7 +56,6 @@ BROKEN=		"Segfault during build on ia64"
 .endif
 
 .if ${ARCH} != "sparc64"
-USE_REINPLACE=	yes
 post-patch:
 	${REINPLACE_CMD} 's,-fPIC,-fpic,' ${WRKSRC}/config/mh-bsd-gcc
 .endif

@@ -15,7 +15,6 @@ MAINTAINER=		ncopa@users.sourceforge.net
 COMMENT=		A proxy DNS daemon
 
 USE_GMAKE=		yes
-USE_REINPLACE=		yes
 USE_RC_SUBR=		${PORTNAME}.sh
 GNU_CONFIGURE=		yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

@@ -23,7 +23,6 @@ RUN_DEPENDS=	${LOCALBASE}/share/m17n/mdb.dir:${PORTSDIR}/devel/m17n-db
 
 USE_XLIB=	yes
 USE_GNOME=	gnometarget libxml2 pkgconfig
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

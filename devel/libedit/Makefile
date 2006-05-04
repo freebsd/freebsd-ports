@@ -15,7 +15,6 @@ MASTER_SITES=	ftp://ftp.astron.com/pub/libedit/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command line editing library
 
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--disable-readline

@@ -22,7 +22,6 @@ RUN_DEPENDS=	gdesklets:${PORTSDIR}/deskutils/gdesklets \
 USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
 
 NAME=		StarterBar
 DATADIR=	${PREFIX}/share/gnome

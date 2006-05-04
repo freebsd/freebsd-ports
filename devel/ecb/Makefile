@@ -30,7 +30,6 @@ ICONDIR=	${LISPDIR}/ecb-images
 ICONSUBDIRS=	height-10 height-14 height-15 height-16 height-17 height-18 \
 		height-19 height-20 height-21
 
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	ecb
 

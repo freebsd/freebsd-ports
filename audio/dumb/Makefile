@@ -14,7 +14,6 @@ MASTER_SITE_SUBDIR=	dumb
 MAINTAINER=	andreas@syndrom23.de
 COMMENT=	IT, XM, S3M and MOD player library
 
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 
 .include <bsd.port.pre.mk>

@@ -19,7 +19,6 @@ RUN_DEPENDS=	evolution:${PORTSDIR}/mail/evolution
 GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes
 USE_PYTHON=	yes
-USE_REINPLACE=	yes
 USE_GNOME=	gnomeprefix
 
 post-patch:

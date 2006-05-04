@@ -16,7 +16,6 @@ COMMENT=	Networking API that provides reliable UDP prmary for online games
 USE_ZIP=	yes
 WRKSRC=		${WRKDIR}
 
-USE_REINPLACE=		yes
 INSTALLS_SHLIB=		yes
 
 .if !defined(NOPORTDOCS)

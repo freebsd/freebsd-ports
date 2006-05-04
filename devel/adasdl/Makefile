@@ -21,7 +21,6 @@ BUILD_DEPENDS=	gnatmake:${PORTSDIR}/lang/gnat
 
 USE_SDL=	mixer image sdl
 USE_GMAKE=     yes
-USE_REINPLACE= yes
 
 do-patch:
 	for i in `${FIND} ${WRKSRC} -name 'Makefile'`; do \

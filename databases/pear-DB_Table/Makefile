@@ -16,8 +16,6 @@ BUILD_DEPENDS=	${PEARDIR}/DB.php:${PORTSDIR}/databases/pear-DB \
 		${PEARDIR}/Date.php:${PORTSDIR}/devel/pear-Date
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-USE_REINPLACE=	yes
-
 LATEST_LINK=	pear-DB_Table
 OPTIONS=	PEAR_HTML_QUICKFORM "PEAR::HTML_QuickForm support" off
 

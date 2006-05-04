@@ -25,7 +25,6 @@ WRKSRC=		${WRKDIR}/${PORTFAKENAME}
 PORTFAKENAME=	Gauche-sdl
 USE_SDL=	image mixer sdl ttf
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 
 pre-configure:
 .for DIR in . image mixer ttf

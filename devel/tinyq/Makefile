@@ -24,7 +24,6 @@ CONFIGURE_ARGS+=-thread -stl -prefix ${PREFIX}/tinyq
 CONFIGURE_ENV+=	QTDIR="${WRKSRC}"
 MAKE_ENV+=	QTDIR="${WRKSRC}"
 NO_FILTER_SHLIBS=yes
-USE_REINPLACE=	YES
 REINPLACE_ARGS=	-i ''
 
 post-patch:

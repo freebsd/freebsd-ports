@@ -19,7 +19,6 @@ COMMENT=	An interpreted dynamic parser
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 

@@ -15,7 +15,6 @@ COMMENT=	Quick Reference sheets for KDE
 
 USE_KDELIBS_VER=3
 USE_AUTOTOOLS=	libtool:15
-USE_REINPLACE=	yes
 CONFIGURE_ENV=	LDFLAGS="${PTHREAD_LIBS}"
 
 post-extract:

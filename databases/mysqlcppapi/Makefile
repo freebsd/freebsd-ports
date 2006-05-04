@@ -16,7 +16,6 @@ MAINTAINER=	gaoj@cpsc.ucalgary.ca
 COMMENT=	A fork of mysql++ C++ API for MySQL
 
 USE_MYSQL=	yes
-USE_REINPLACE=	yes
 USE_GNOME=	pkgconfig gnomehack
 GNU_CONFIGURE=	yes
 

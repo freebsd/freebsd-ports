@@ -21,7 +21,6 @@ USE_BZIP2=	yes
 USE_SDL=	sdl gui mixer
 USE_GNOME=	gnometarget libxml2 lthack
 USE_GETOPT_LONG=	yes
-USE_REINPLACE=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--disable-lirc

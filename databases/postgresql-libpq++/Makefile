@@ -19,7 +19,6 @@ COMMENT=	C++ interface for  PostgreSQL
 
 USE_PGSQL=	YES
 USE_GMAKE=	YES
-USE_REINPLACE=	YES
 INSTALLS_SHLIB=	YES
 
 post-patch:

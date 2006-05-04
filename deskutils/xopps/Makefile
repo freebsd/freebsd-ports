@@ -16,7 +16,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool which lets you draw Gantt charts
 
 ALL_TARGET=
-USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_MOTIF=	yes
 MAKE_ENV=	'MACH=${OPSYS}'

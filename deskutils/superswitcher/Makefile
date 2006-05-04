@@ -18,7 +18,6 @@ RUN_DEPENDS=	gnome-autogen.sh:${PORTSDIR}/devel/gnomecommon
 
 USE_GMAKE=	yes
 USE_GNOME=	gtk20 libwnck pango
-USE_REINPLACE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/x11//g' ${WRKSRC}/configure

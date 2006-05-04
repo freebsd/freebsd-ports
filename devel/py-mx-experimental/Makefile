@@ -19,7 +19,6 @@ COMMENT=	The eGenix mx Extensions - EXPERIMENTAL Package
 BUILD_DEPENDS=	${LOCALBASE}/include/gmp.h:${PORTSDIR}/math/libgmp4
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/mx/BeeBase/BeeBase.py:${PORTSDIR}/lang/py-mx-base
 
-USE_REINPLACE=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 

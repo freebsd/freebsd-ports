@@ -20,7 +20,6 @@ MAKE_ARGS+=	CC="${CC}" CFLAGS="${CFLAGS} -I${LOCALBASE}/include -DQRC=1" \
 
 PORTDOCS=	AUTHORS CONTRIBUTORS COPYRIGHT INSTALL README WHATSNEW
 PLIST_FILES=	sbin/dhid bin/genkeys etc/dhid.conf.sample etc/rc.d/dhid.sh.sample
-USE_REINPLACE=	yes
 
 DHID_USER=	dhis
 DHID_GROUP=	dhis

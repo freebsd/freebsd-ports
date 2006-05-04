@@ -10,8 +10,6 @@ EXTRACT_SUFX=	.gem
 EXTRACT_ONLY=
 DIST_SUBDIR=	rubygem
 
-USE_REINPLACE=	yes
-
 NO_BUILD=	yes
 
 REV=		1.8

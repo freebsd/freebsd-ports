@@ -23,7 +23,6 @@ USE_PERL5=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	${SQLRELAY_CONFIGURE_ARGS} \
 		--with-pod2man=`which pod2man` \
