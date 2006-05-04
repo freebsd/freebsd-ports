@@ -1,18 +1,29 @@
 bin/denemo
-etc/denemo.conf
-etc/denemo.keymaprc
 include/denemo/denemo.h
+include/denemo/denemo_objects.h
 include/denemo/denemo_version.h
+share/applications/denemo.desktop
+%%DATADIR%%/denemo.conf
+%%DATADIR%%/denemo.keymaprc
+%%DATADIR%%/denemorc.xml
 %%DATADIR%%/denemoui.xml
 %%DATADIR%%/english.keymaprc
 %%DATADIR%%/french.keymaprc
+%%DATADIR%%/instruments.xml
 %%DATADIR%%/italian.keymaprc
 %%DATADIR%%/manual/4fo2denemo.png
+%%DATADIR%%/manual/4for2.abc
+%%DATADIR%%/manual/4for2.ly
 %%DATADIR%%/manual/4for2abc.png
 %%DATADIR%%/manual/4for2abcps.png
 %%DATADIR%%/manual/4for2ly.png
 %%DATADIR%%/manual/4for2new-page1.png
 %%DATADIR%%/manual/4for2new-page2.png
+%%DATADIR%%/manual/4for2new.dvi
+%%DATADIR%%/manual/4for2new.ly
+%%DATADIR%%/manual/4for2new.midi
+%%DATADIR%%/manual/4for2new.pdf
+%%DATADIR%%/manual/4for2new.ps
 %%DATADIR%%/manual/4for2touchedly.png
 %%DATADIR%%/manual/MozBook.css
 %%DATADIR%%/manual/addvc2currentstaff.png
@@ -20,6 +31,7 @@ include/denemo/denemo_version.h
 %%DATADIR%%/manual/choraltemplate1.png
 %%DATADIR%%/manual/churchtemplate2.png
 %%DATADIR%%/manual/clefmenu.png
+%%DATADIR%%/manual/denemo-manual.html
 %%DATADIR%%/manual/denemomain.png
 %%DATADIR%%/manual/displaymenu.png
 %%DATADIR%%/manual/docbook-complete.css
@@ -35,7 +47,7 @@ include/denemo/denemo_version.h
 %%DATADIR%%/manual/keymenu.png
 %%DATADIR%%/manual/lpmode.png
 %%DATADIR%%/manual/manual.xml
-%%DATADIR%%/manual/manualout.html
+%%DATADIR%%/manual/mycustomfils.xsl
 %%DATADIR%%/manual/navigationmenu.png
 %%DATADIR%%/manual/orchestraltemplate5.png
 %%DATADIR%%/manual/othermenu1.png
@@ -179,7 +191,6 @@ include/denemo/denemo_version.h
 %%DATADIR%%/pixmaps/turn.svg
 %%DATADIR%%/pixmaps/upbow.svg
 %%DATADIR%%/speedy.keymaprc
-%%DATADIR%%/templates/Brassband.denemo
 %%DATADIR%%/templates/Brassbandtemplate.denemo
 %%DATADIR%%/templates/brasschoir.template.denemo
 %%DATADIR%%/templates/brasstrio.template.denemo
@@ -192,12 +203,14 @@ include/denemo/denemo_version.h
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
-share/locale/es/LC_MESSAGES/denemo.mo
-share/locale/fr/LC_MESSAGES/denemo.mo
-share/locale/sv/LC_MESSAGES/denemo.mo
+%%NLS%%share/locale/es/LC_MESSAGES/denemo.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/denemo.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/denemo.mo
+share/pixmaps/denemo.png
 @dirrm %%DATADIR%%/templates
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%/manual
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/denemo
+@dirrmtry share/applications

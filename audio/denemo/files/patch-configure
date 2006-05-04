@@ -1,0 +1,11 @@
+--- ./configure.orig	Thu Mar 16 17:32:54 2006
++++ ./configure	Thu May  4 14:45:01 2006
+@@ -1708,7 +1708,7 @@
+ echo "$as_me: WARNING: \`missing' script is too old or missing" >&2;}
+ fi
+ 
+-if mkdir -p --version . >/dev/null 2>&1 && test ! -d ./--version; then
++if mkdir -p -- --version >/dev/null 2>&1 && test -d ./--version; then
+   # We used to keeping the `.' as first argument, in order to
+   # allow $(mkdir_p) to be used without argument.  As in
+   #   $(mkdir_p) $(somedir)
