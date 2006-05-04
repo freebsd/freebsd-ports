@@ -9,6 +9,8 @@
     SUBDIR += boinc-setiathome-enhanced
     SUBDIR += boinc-setiathome-naparst
     SUBDIR += celestia
+    SUBDIR += celestia-gnome
+    SUBDIR += celestia-gtk
     SUBDIR += cfitsio
     SUBDIR += dgpsip
     SUBDIR += ephem
