@@ -458,6 +458,8 @@ PLIST_FILES=	${GST_LIB_DIR}/libgstpng.so \
 		${GST_LIB_DIR}/libgstpng.la \
 		${GST_LIB_DIR}/libgstpng.a \
 		${GST_LIB_DIR}/libgstpng.la \
+		${GST_LIB_DIR}/libgstsnapshot.a \
+		${GST_LIB_DIR}/libgstsnapshot.la \
 		${GST_LIB_DIR}/libgstsnapshot.so
 .endif
 
