@@ -2,6 +2,7 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test_example.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test_mock.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test_naming.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test_record_mode.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test_samples.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test_should_receive.rb
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%

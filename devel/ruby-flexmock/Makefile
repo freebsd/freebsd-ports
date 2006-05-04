@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	flexmock
-PORTVERSION=	0.1.7
+PORTVERSION=	0.2.1
 CATEGORIES=	devel ruby
-MASTER_SITES=	http://rubyforge.org/frs/download.php/7073/
+MASTER_SITES=	http://rubyforge.org/frs/download.php/9301/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
+EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	boumenot@gmail.com
 COMMENT=	A simple mock object for Ruby
 
-USE_ZIP=	yes
 USE_RUBY=	yes
 
 NO_BUILD=	yes
