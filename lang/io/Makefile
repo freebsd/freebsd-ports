@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	io
-PORTVERSION=	0.0.2006.01.27
+PORTVERSION=	0.0.2006.05.02
 CATEGORIES=	lang
 MASTER_SITES=	http://io.urbanape.com/release/ \
 		http://www.sigusr1.org/~steve/
@@ -37,7 +37,6 @@ USE_GCC=	3.4+
 pre-patch:
 	${FIND} ${WRKSRC} -name '.DS_Store*' -delete
 
-	${RM} ${WRKSRC}/vm/base/DynLib_OSX.c
 	cd ${WRKSRC}/libs && for mod in *; do \
 		if [ $$mod != "zlib" ]; then \
 			${RM} -fr $$mod; \
@@ -84,7 +83,7 @@ do-install:
 	${MKDIR} ${DOCSDIR}
 	${TAR} -C ${WRKSRC}/_docs -cf - . | ${TAR} -C ${DOCSDIR} -xf -
 
-.for subdir in ioCode new sampleCode docgen unitTests
+.for subdir in ioCode sampleCode docgen unitTests
 	${MKDIR} ${EXAMPLESDIR}/${subdir}
 	${TAR} -C ${WRKSRC}/vm/_${subdir} -cf - . | \
 		${TAR} -C ${EXAMPLESDIR}/${subdir} -xf -

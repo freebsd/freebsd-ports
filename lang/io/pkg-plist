@@ -2,9 +2,9 @@ bin/io
 bin/io2c
 bin/ioDesktop
 bin/ioServer
-include/io/IoActivationContext.h
 include/io/IoBlock.h
 include/io/IoCFunction.h
+include/io/IoCall.h
 include/io/IoCollector.h
 include/io/IoCompiler.h
 include/io/IoConfig.h
@@ -20,32 +20,30 @@ include/io/IoFile_stat.h
 include/io/IoLexer.h
 include/io/IoList.h
 include/io/IoMap.h
-include/io/IoMark.h
 include/io/IoMessage.h
 include/io/IoMessage_inline.h
 include/io/IoMessage_parser.h
 include/io/IoNumber.h
 include/io/IoObject.h
-include/io/IoObjectGroup.h
-include/io/IoObjectGroup_inline.h
 include/io/IoObject_flow.h
 include/io/IoObject_inline.h
 include/io/IoObject_persistence.h
 include/io/IoObject_struct.h
 include/io/IoRandom.h
+include/io/IoRange.h
+include/io/IoRange_inline.h
 include/io/IoSandbox.h
-include/io/IoScheduler.h
 include/io/IoSeq.h
 include/io/IoSeq_immutable.h
 include/io/IoSeq_inline.h
 include/io/IoSeq_mutable.h
 include/io/IoState.h
 include/io/IoState_callbacks.h
-include/io/IoState_collector.h
 include/io/IoState_coros.h
 include/io/IoState_debug.h
 include/io/IoState_eval.h
 include/io/IoState_exceptions.h
+include/io/IoState_flowControl.h
 include/io/IoState_inline.h
 include/io/IoState_symbols.h
 include/io/IoStore.h
@@ -71,8 +69,10 @@ include/io/base/BStreamTag.h
 include/io/base/Base.h
 include/io/base/ByteArray.h
 include/io/base/ByteArray_inline.h
-include/io/base/CStack.h
-include/io/base/CString.h
+include/io/base/Collector.h
+include/io/base/CollectorMarker.h
+include/io/base/CollectorMarker_inline.h
+include/io/base/Collector_inline.h
 include/io/base/Common.h
 include/io/base/Common_inline.h
 include/io/base/Coro.h
@@ -80,16 +80,11 @@ include/io/base/Date.h
 include/io/base/Datum.h
 include/io/base/Duration.h
 include/io/base/DynLib.h
-include/io/base/DynLib_OSX.h
 include/io/base/Hash.h
 include/io/base/Hash_inline.h
-include/io/base/IoConfig.h
-include/io/base/LinkedList.h
-include/io/base/LinkedList_inline.h
 include/io/base/List.h
 include/io/base/List_inline.h
 include/io/base/MainArgs.h
-include/io/base/NEW_stdint.h
 include/io/base/PHash.h
 include/io/base/PHash_inline.h
 include/io/base/PortableGettimeofday.h
@@ -97,11 +92,9 @@ include/io/base/PortableStrlcpy.h
 include/io/base/PortableStrptime.h
 include/io/base/PortableTruncate.h
 include/io/base/PortableUsleep.h
-include/io/base/Queue.h
-include/io/base/Queue_inline.h
+include/io/base/PortalbleStdint.h
 include/io/base/RandomGen.h
-include/io/base/SDSort.h
-include/io/base/Scheduler.h
+include/io/base/Sorting.h
 include/io/base/Stack.h
 include/io/base/Stack_inline.h
 include/io/base/UTinstant.h
@@ -126,12 +119,10 @@ lib/libIoZlib.a
 %%DOCSDIR%%/guide.html
 %%DOCSDIR%%/guide.pages/.typeAttributes.dict
 %%DOCSDIR%%/guide.pages/Contents/PkgInfo
-%%DOCSDIR%%/guide.pages/color-profile
 %%DOCSDIR%%/guide.pages/index.xml.gz
-%%DOCSDIR%%/guide.pages/thumbs/page_thumb_1-22.tiff
+%%DOCSDIR%%/guide.pages/thumbs/page_thumb_1-3.tiff
 %%DOCSDIR%%/guide.pdf
 %%DOCSDIR%%/guide_files/guide.css
-%%DOCSDIR%%/licenseForCode.txt
 %%DOCSDIR%%/licenseForDocs.txt
 %%DOCSDIR%%/releaseHistory.txt
 %%EXAMPLESDIR%%/docgen/DocsExtractor.io
@@ -146,9 +137,12 @@ lib/libIoZlib.a
 %%EXAMPLESDIR%%/ioCode/Date.io
 %%EXAMPLESDIR%%/ioCode/Directory.io
 %%EXAMPLESDIR%%/ioCode/File.io
+%%EXAMPLESDIR%%/ioCode/Notifier.io
 %%EXAMPLESDIR%%/ioCode/Number.io
 %%EXAMPLESDIR%%/ioCode/P_CGI.io
+%%EXAMPLESDIR%%/ioCode/Range.io
 %%EXAMPLESDIR%%/ioCode/Sandbox.io
+%%EXAMPLESDIR%%/ioCode/Serialize.io
 %%EXAMPLESDIR%%/ioCode/System.io
 %%EXAMPLESDIR%%/ioCode/UnitTest.io
 %%EXAMPLESDIR%%/ioCode/Y_Path.io
@@ -161,45 +155,46 @@ lib/libIoZlib.a
 %%EXAMPLESDIR%%/ioCode/_old/p.io
 %%EXAMPLESDIR%%/ioCode/_test/Compiler.io
 %%EXAMPLESDIR%%/ioCode/_test/System.io
-%%EXAMPLESDIR%%/new/IoObject_flow.c
-%%EXAMPLESDIR%%/new/Iter.c
 %%EXAMPLESDIR%%/sampleCode/Account.io
 %%EXAMPLESDIR%%/sampleCode/Ackerman.io
-%%EXAMPLESDIR%%/sampleCode/ActivateNo.io
-%%EXAMPLESDIR%%/sampleCode/Block.io
 %%EXAMPLESDIR%%/sampleCode/BottlesOfBeer.io
+%%EXAMPLESDIR%%/sampleCode/Brackets.io
 %%EXAMPLESDIR%%/sampleCode/Cards.io
 %%EXAMPLESDIR%%/sampleCode/CommandLineArgs.io
-%%EXAMPLESDIR%%/sampleCode/ConditionTest.io
+%%EXAMPLESDIR%%/sampleCode/ConcurrencyTest.io
 %%EXAMPLESDIR%%/sampleCode/Conditions.io
 %%EXAMPLESDIR%%/sampleCode/Control.io
 %%EXAMPLESDIR%%/sampleCode/ControlFlow.io
 %%EXAMPLESDIR%%/sampleCode/Decompile.io
 %%EXAMPLESDIR%%/sampleCode/Dir.io
-%%EXAMPLESDIR%%/sampleCode/Enums.io
+%%EXAMPLESDIR%%/sampleCode/ErlangChallenge.io
 %%EXAMPLESDIR%%/sampleCode/Foreach.io
 %%EXAMPLESDIR%%/sampleCode/Hanoi.io
 %%EXAMPLESDIR%%/sampleCode/HelloWorld.io
 %%EXAMPLESDIR%%/sampleCode/Inheritance.io
-%%EXAMPLESDIR%%/sampleCode/Jer.io
-%%EXAMPLESDIR%%/sampleCode/LaunchPath.io
 %%EXAMPLESDIR%%/sampleCode/Ping.io
-%%EXAMPLESDIR%%/sampleCode/Ping.io copy
 %%EXAMPLESDIR%%/sampleCode/Sort.io
 %%EXAMPLESDIR%%/sampleCode/Super.io
 %%EXAMPLESDIR%%/sampleCode/WeakLink.io
-%%EXAMPLESDIR%%/sampleCode/_special/Pleac.io
-%%EXAMPLESDIR%%/sampleCode/_special/Words.io
-%%EXAMPLESDIR%%/sampleCode/_tricks/Activate.io
-%%EXAMPLESDIR%%/sampleCode/_tricks/AutoSetterGetter.io
-%%EXAMPLESDIR%%/sampleCode/_tricks/Constants.io
-%%EXAMPLESDIR%%/sampleCode/_tricks/Swap.io
+%%EXAMPLESDIR%%/sampleCode/_speed/SpeedResults
+%%EXAMPLESDIR%%/sampleCode/_speed/SpeedResults.html
+%%EXAMPLESDIR%%/sampleCode/_speed/coro.io
+%%EXAMPLESDIR%%/sampleCode/_speed/list.io
+%%EXAMPLESDIR%%/sampleCode/_speed/speed.io
+%%EXAMPLESDIR%%/sampleCode/_speed/speed.py
+%%EXAMPLESDIR%%/sampleCode/_speed/speed.rebol
+%%EXAMPLESDIR%%/sampleCode/_speed/speed.ruby
+%%EXAMPLESDIR%%/sampleCode/_speed/speedResults.io
+%%EXAMPLESDIR%%/sampleCode/_speed/speedResults2.io
 %%EXAMPLESDIR%%/sampleCode/except.io
 %%EXAMPLESDIR%%/sampleCode/metrics.io
+%%EXAMPLESDIR%%/sampleCode/qsort.io
 %%EXAMPLESDIR%%/unitTests/AlignTest.io
+%%EXAMPLESDIR%%/unitTests/BigSourceFileTest.io
 %%EXAMPLESDIR%%/unitTests/BlockTest.io
 %%EXAMPLESDIR%%/unitTests/CoroutineTest.io
 %%EXAMPLESDIR%%/unitTests/DateTest.io
+%%EXAMPLESDIR%%/unitTests/EmptyTest.io
 %%EXAMPLESDIR%%/unitTests/IfTest.io
 %%EXAMPLESDIR%%/unitTests/ListTest.io
 %%EXAMPLESDIR%%/unitTests/LoopTest.io
@@ -212,10 +207,8 @@ lib/libIoZlib.a
 %%EXAMPLESDIR%%/unitTests/WeakLinkTest.io
 %%EXAMPLESDIR%%/unitTests/run.io
 @dirrm %%EXAMPLESDIR%%/unitTests
-@dirrm %%EXAMPLESDIR%%/sampleCode/_tricks
-@dirrm %%EXAMPLESDIR%%/sampleCode/_special
+@dirrm %%EXAMPLESDIR%%/sampleCode/_speed
 @dirrm %%EXAMPLESDIR%%/sampleCode
-@dirrm %%EXAMPLESDIR%%/new
 @dirrm %%EXAMPLESDIR%%/ioCode/_test
 @dirrm %%EXAMPLESDIR%%/ioCode/_old
 @dirrm %%EXAMPLESDIR%%/ioCode/_new
