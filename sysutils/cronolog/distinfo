@@ -1,3 +1,6 @@
 MD5 (cronolog-1.6.2.tar.gz) = a44564fd5a5b061a5691b9a837d04979
 SHA256 (cronolog-1.6.2.tar.gz) = 65e91607643e5aa5b336f17636fa474eb6669acc89288e72feb2f54a27edb88e
 SIZE (cronolog-1.6.2.tar.gz) = 133591
+MD5 (cronolog-setugid-patch.txt) = 5aa5d56b2ad762fa2e2509e2e785810e
+SHA256 (cronolog-setugid-patch.txt) = ca0061a34aa1291ac61cac07d7718bc2a09421fb931943fa45f33cf7d5a0759b
+SIZE (cronolog-setugid-patch.txt) = 13321
