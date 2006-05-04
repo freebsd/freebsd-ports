@@ -5,26 +5,33 @@
 # $FreeBSD$
 #
 
-PORTNAME=	viewcvs
-PORTVERSION=	0.9.4
+PORTNAME=	viewvc
+PORTVERSION=	1.0.0
 CATEGORIES=	devel python
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	http://viewvc.tigris.org/files/documents/3330/31766/
 
-MAINTAINER=	mnag@FreeBSD.org
-COMMENT=	Python version of Zeller's cvsweb
+MAINTAINER=	jbq@caraldi.com
+COMMENT=	Web-based Version Control Repository Browsing
+
+FETCH_DEPENDS=	wget:${PORTSDIR}/ftp/wget
+
+FETCH_CMD=	${LOCALBASE}/bin/wget -c
+DISABLE_SIZE=	yes	# Need because -S are not recognized by wget
 
 USE_PYTHON=	yes
 NO_BUILD=	yes
+
+SUB_FILES=	pkg-message
+SUB_LIST=	INSTDIR="${PREFIX}/${INSTDIR}"
 PKGMESSAGE=	${WRKDIR}/pkg-message
-INSTDIR?=	${PORTNAME}-${PORTVERSION}
+
+INSTDIR?=	${PORTNAME}
 PLIST_SUB=	INSTDIR=${INSTDIR}
 
 do-install:
-	@(cd ${WRKSRC} && INSTDIR=${PREFIX}/${INSTDIR} ${PYTHON_CMD} viewcvs-install)
+	(cd ${WRKSRC} && ${PYTHON_CMD} viewvc-install --prefix=${PREFIX}/${INSTDIR} --destdir="")
 
 post-install:
-	@ ${SED} -e "s:%%INSTDIR%%:${PREFIX}/${INSTDIR}:g" ${MASTERDIR}/pkg-message >${PKGMESSAGE}
-	@ ${CAT} ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

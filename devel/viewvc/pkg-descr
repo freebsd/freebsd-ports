@@ -1,11 +1,8 @@
-ViewCVS was inspired by cvsweb (Zeller's version).  ViewCVS
-can browse directories, change logs, and specific revisions
-of files. It can display diffs between versions and show
-selections of files based on tags or branches. In addition,
-ViewCVS has "annotation" or "blame" support, and the
-beginnings of Bonsai-like query facilities. 
+ViewVC is a browser interface for CVS and Subversion version control
+repositories. It generates templatized HTML to present navigable directory,
+revision, and change log listings. It can display specific versions of files as
+well as diffs between those versions. Basically, ViewVC provides the bulk of the
+report-like functionality you expect out of your version control tool, but much
+more prettily than the average textual command-line program output.
 
-WWW: http://viewcvs.sourceforge.net/
-Author: Greg Stein <gstein@lyra.org>
-
-- Will <andrews@technologist.com>
+WWW: http://viewvc.tigris.org/
