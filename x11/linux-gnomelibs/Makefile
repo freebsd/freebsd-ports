@@ -15,6 +15,7 @@ COMMENT=	RPM of gnome-libs
 
 DEPRECATED=	This is a very outdated version of GNOME and it is not used by any port.
 EXPIRATION_DATE=2006-06-01
+BROKEN=		files missing in plist
 
 USE_LINUX_RPM=	yes
 LINUX_DIST_VER=	3
