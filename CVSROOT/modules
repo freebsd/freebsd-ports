@@ -13326,6 +13326,7 @@ viewfax		ports/comms/viewfax
 viewglob	ports/shells/viewglob
 viewkit		ports/x11-toolkits/viewkit
 viewklass	ports/x11-toolkits/viewklass
+viewvc		ports/devel/viewvc
 vifm		ports/misc/vifm
 vigor		ports/editors/vigor
 vigra		ports/graphics/vigra
