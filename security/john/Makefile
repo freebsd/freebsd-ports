@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	john
-PORTVERSION=	1.7
-PORTREVISION=	1
+PORTVERSION=	1.7.0.2
 CATEGORIES=	security
-MASTER_SITES=	http://www.openwall.com/john/d/ \
-		ftp://ftp.ru.openwall.com/pub/projects/john/
+MASTER_SITES=	http://www.openwall.com/john/f/ \
+		ftp://ftp.ru.openwall.com/pub/projects/john/${PORTVERSION}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rainer.alves@gmail.com
 COMMENT=	Featureful Unix password cracker
 
 DATAFILES=	all.chr alnum.chr alpha.chr digits.chr lanman.chr password.lst
@@ -20,10 +19,11 @@ PORTDOCS=	CHANGES CONFIG EXAMPLES EXTERNAL FAQ MODES OPTIONS README \
 		RULES CONTACT CREDITS
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
+USE_BZIP2=	yes
 
 .include <bsd.port.pre.mk>
 
-OSNAME=		${OPSYS:S/F/f/:S/N/n/:S/O/o/:S/B/b/:S/S/s/:S/D/d/}
+OSNAME=		${OPSYS:L}
 
 ALL_TARGET=	generic
 .if ${ARCH} == "i386"
@@ -37,9 +37,9 @@ ALL_TARGET=	${OSNAME}-alpha
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|$$JOHN|${DATADIR}|g' \
+	${REINPLACE_CMD} -e 's|$$JOHN|${DATADIR}|g' \
 		${WRKDIR}/${DISTNAME}/run/john.conf
-	@${REINPLACE_CMD} -e \
+	${REINPLACE_CMD} -e \
 		's|%%PREFIX%%|${PREFIX}|g; s|%%DATADIR%%|${DATADIR}|g'\
 			${WRKSRC}/params.h
 

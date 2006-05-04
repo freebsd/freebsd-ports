@@ -1,7 +1,7 @@
---- params.h.orig	Mon Jan  9 15:33:18 2006
-+++ params.h	Sat Feb 18 19:02:07 2006
-@@ -22,12 +22,12 @@
-  * will probably want to set this to 1 for their builds of John.
+--- params.h.orig	Sun Mar 19 20:34:15 2006
++++ params.h	Wed May  3 14:45:51 2006
+@@ -49,15 +49,15 @@
+  * notes above.
   */
  #ifndef JOHN_SYSTEMWIDE
 -#define JOHN_SYSTEMWIDE			0
@@ -9,13 +9,17 @@
  #endif
  
  #if JOHN_SYSTEMWIDE
- #ifndef JOHN_SYSTEMWIDE_EXEC
+ #ifndef JOHN_SYSTEMWIDE_EXEC /* please refer to the notes above */
 -#define JOHN_SYSTEMWIDE_EXEC		"/usr/libexec/john"
 +#define JOHN_SYSTEMWIDE_EXEC		"%%PREFIX%%/bin/john"
  #endif
  #ifndef JOHN_SYSTEMWIDE_HOME
- #define JOHN_SYSTEMWIDE_HOME		"/usr/share/john"
-@@ -74,8 +74,8 @@
+-#define JOHN_SYSTEMWIDE_HOME		"/usr/share/john"
++#define JOHN_SYSTEMWIDE_HOME		"%%DATADIR%%"
+ #endif
+ #define JOHN_PRIVATE_HOME		"~/.john"
+ #endif
+@@ -101,8 +101,8 @@
  /*
   * File names.
   */
@@ -26,7 +30,7 @@
  #if JOHN_SYSTEMWIDE
  #define CFG_PRIVATE_FULL_NAME		JOHN_PRIVATE_HOME "/john.conf"
  #define CFG_PRIVATE_ALT_NAME		JOHN_PRIVATE_HOME "/john.ini"
-@@ -89,7 +89,7 @@
+@@ -116,7 +116,7 @@
  #endif
  #define LOG_SUFFIX			".log"
  #define RECOVERY_SUFFIX			".rec"
