@@ -18,8 +18,13 @@ COMMENT=	GNOME H323 Video Conferencing program, similar to NetMeeting
 LIB_DEPENDS=	h323_r:${PORTSDIR}/net/openh323 \
 		howl:${PORTSDIR}/net/howl
 
+DEPRECATED=	Superseeded by net/ekiga
+EXPIRATION_DATE=2006-06-01
+BROKEN=		conflict between howl for gnomemeeting and avahi for GNOME 2.14
+
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
+USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	libgnomeui libbonobo gnomeprefix gnomehack evolutiondataserver \
 		intlhack
