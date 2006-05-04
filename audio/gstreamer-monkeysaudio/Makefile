@@ -7,7 +7,7 @@
 
 PORTNAME=	gstreamer
 PORTVERSION=	0.8.0
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	audio
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst${PKGNAMESUFFIX}/
 PKGNAMESUFFIX=	-monkeysaudio
@@ -24,9 +24,7 @@ USE_GNOME=	lthack gnomehack gnomeprefix
 USE_GSTREAMER80=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-PLIST_SUB=	VERSION="${GST_VERSION}"
-
-GST_VERSION=${PORTVERSION:C/..$//}
+PLIST_SUB=	VERSION="${GST80_VERSION}"
 
 post-install:
 .if !defined(NOPORTDOCS)
