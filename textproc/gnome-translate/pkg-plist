@@ -30,3 +30,5 @@ share/locale/fr/LC_MESSAGES/gnome-translate.mo
 @dirrm share/gnome/help/gnome-translate/C
 @dirrm share/gnome/help/gnome-translate
 @dirrm share/gnome/omf/gnome-translate
+@dirrmtry share/icons/hicolor/24x24/apps
+@dirrmtry share/icons/hicolor/24x24
