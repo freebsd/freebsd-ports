@@ -5,8 +5,10 @@
 %%SITE_PERL%%/Jifty/DBI/Collection/Unique.pm
 %%SITE_PERL%%/Jifty/DBI/Column.pm
 %%SITE_PERL%%/Jifty/DBI/Filter.pm
+%%SITE_PERL%%/Jifty/DBI/Filter/Date.pm
 %%SITE_PERL%%/Jifty/DBI/Filter/DateTime.pm
 %%SITE_PERL%%/Jifty/DBI/Filter/JiftyRecord.pm
+%%SITE_PERL%%/Jifty/DBI/Filter/Storable.pm
 %%SITE_PERL%%/Jifty/DBI/Filter/Truncate.pm
 %%SITE_PERL%%/Jifty/DBI/Filter/base64.pm
 %%SITE_PERL%%/Jifty/DBI/Filter/utf8.pm
