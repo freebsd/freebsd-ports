@@ -1,6 +1,6 @@
 # New ports collection makefile for:	kedpm
 # Date created:				25 April 2006
-# Whom:					Tim Welch <twelch@thepentagon.org>
+# Whom:					Tim Welch <ports@thepentagon.org>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	kedpm
 
-MAINTAINER=	twelch@thepentagon.org
+MAINTAINER=	ports@thepentagon.org
 COMMENT=	A simple application for managing personal data
 
 RUN_DEPENDS=	${PYTHONPREFIX_SITELIBDIR}/Crypto/__init__.py:${PORTSDIR}/security/py-pycrypto
