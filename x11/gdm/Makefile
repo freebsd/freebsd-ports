@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gdm
-PORTVERSION=	2.14.4
+PORTVERSION=	2.14.5
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -15,6 +15,9 @@ DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME 2 version of xdm display manager
+
+BUILD_DEPENDS=	zenity:${PORTSDIR}/x11/zenity
+RUN_DEPENDS=	zenity:${PORTSDIR}/x11/zenity
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
