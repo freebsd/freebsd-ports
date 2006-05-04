@@ -878,6 +878,7 @@
     SUBDIR += snownews
     SUBDIR += spip
     SUBDIR += spreadlogd
+    SUBDIR += sqstat
     SUBDIR += squid
     SUBDIR += squid_radius_auth
     SUBDIR += squidclients
