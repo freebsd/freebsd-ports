@@ -1,11 +1,11 @@
---- src/svnqt/wc.cpp.orig	Sat Apr 29 00:58:38 2006
-+++ src/svnqt/wc.cpp	Sat Apr 29 00:59:21 2006
-@@ -96,7 +96,7 @@
-     if (error!=0) {
-         throw ClientException(error);
-     }
+--- src/svnqt/wc.cpp.orig	Sat Apr  8 06:36:12 2006
++++ src/svnqt/wc.cpp	Wed May  3 19:53:42 2006
+@@ -103,7 +103,7 @@
+     QString result = "";
+     const svn_wc_entry_t *entry;
+     entry = getEntry( path );
 -    result = entry?QString::fromUtf8(entry->url):"";
 +    result = entry ? QString::fromUtf8(entry->url) : QString::fromLatin1("");
- 
+     
      return result;
    }

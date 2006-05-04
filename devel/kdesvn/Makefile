@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	kdesvn
-PORTVERSION=	0.8.1
+PORTVERSION=	0.8.3
 CATEGORIES=	devel kde
 MASTER_SITES=	http://www.alwins-world.de/programs/download/${PORTNAME}/ \
 		http://www.yuanjue.net/download/
@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.alwins-world.de/programs/download/${PORTNAME}/ \
 MAINTAINER=	yuanjue@yuanjue.net
 COMMENT=	KDE frontend for Subversion
 
-EXTRA_PATCHES=	${.CURDIR}/../../x11/kde3/files/extrapatch-old_configure
+EXTRA_PATCHES=	${PORTSDIR}/x11/kde3/files/extrapatch-old_configure
 
 LIB_DEPENDS+=	apr-1:${PORTSDIR}/devel/apr-svn \
 		svn_client-1:${PORTSDIR}/devel/subversion \
