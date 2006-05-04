@@ -1,0 +1,17 @@
+======================================================================
+- Edit %%PREFIX%%/%%SQSTATDIR%%/sqstat.php file:
+
+set $squidhost, $squidport, $cachemgr_passwd, $resolveip as you like.
+
+- Set up squid:
+
+acl manager proto cache_object
+# replace 10.0.0.1 with your webserver IP
+acl webserver src 10.0.0.1/255.255.255.255
+http_access allow manager webserver
+http_access deny manager
+
+- Set up apache web server:
+
+Alias /sqstat "%%PREFIX%%/%%SQSTATDIR%%/"
+======================================================================
