@@ -1,12 +1,9 @@
 "cronolog" is a simple program that reads log messages from its input
 and writes them to a set of output files, the names of which are
-constructed using template and the current date and time.  The
-template uses the same format specifiers as the Unix date command
-(which are the same as the standard C strftime library function).
+constructed using template and the current date and time.
 
 "cronolog" is intended to be used in conjunction with a Web server, such
-as Apache to split the access log into daily or monthly logs. For
-example the Apache configuration directives:
+as Apache to split the access log into daily or monthly logs. E.g.:
 
 	TransferLog "|/www/sbin/cronolog /www/logs/%Y/%m/%d/access.log"
 	ErrorLog    "|/www/sbin/cronolog /www/logs/%Y/%m/%d/errors.log"
@@ -14,22 +11,14 @@ example the Apache configuration directives:
 would instruct Apache to pipe its access and error log messages into
 separate copies of cronolog, which would create new log files each day
 in a directory hierarchy structured by date, i.e. on 31 December 1996
-messages would be written to
+messages would be written to:
 
 	/www/logs/1996/12/31/access.log
 	/www/logs/1996/12/31/errors.log
 
-after midnight the files
+After midnight the following files would be used:
 
 	/www/logs/1997/01/01/access.log
 	/www/logs/1997/01/01/errors.log
 
-would be used, with the directories 1997, 1997/01 and 1997/01/01 being
-created if they did not already exist.
-
-The most up-to-date version of "cronolog" can be found at:
-
-	WWW: http://cronolog.org/
-
-- Mark Blackman
-tmb@maddog.u-net.com
+WWW: http://cronolog.org/
