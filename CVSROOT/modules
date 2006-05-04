@@ -14503,6 +14503,7 @@ zh-fortunetw	ports/chinese/fortunetw
 zh-gb2jis	ports/chinese/gb2jis
 zh-gb2ps	ports/chinese/gb2ps
 zh-gbfs		ports/chinese/gbfs
+zh-gbk2uni	ports/chinese/gbk2uni
 zh-gbscript	ports/chinese/gbscript
 zh-gcin		ports/chinese/gcin
 zh-gugod-clean	ports/chinese/gugod-clean
