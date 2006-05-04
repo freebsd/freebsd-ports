@@ -32,6 +32,7 @@ lib/libxslt.a
 lib/libxslt.la
 lib/libxslt.so
 lib/libxslt.so.2
+@exec mkdir -p %D/lib/libxslt-plugins
 libdata/pkgconfig/libexslt.pc
 libdata/pkgconfig/libxslt.pc
 share/aclocal/libxslt.m4
@@ -124,5 +125,6 @@ share/aclocal/libxslt.m4
 @dirrm %%DOCSDIR%%/html/EXSLT
 @dirrm %%DOCSDIR%%/html
 @dirrm %%DOCSDIR%%
+@dirrmtry lib/libxslt-plugins
 @dirrm include/libxslt
 @dirrm include/libexslt
