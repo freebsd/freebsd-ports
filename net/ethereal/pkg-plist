@@ -1,6 +1,6 @@
 %%CAPINFOS%%
 %%DFTEST%%
-dumpcap
+bin/dumpcap
 %%EDITCAP%%
 %%ETHEREAL%%
 %%IDL2ETH%%
