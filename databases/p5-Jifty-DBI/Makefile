@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Jifty-DBI
-PORTVERSION=	0.20
+PORTVERSION=	0.21
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Jifty
@@ -42,7 +42,10 @@ MAN3=	Jifty::DBI.3 \
 	Jifty::DBI::Collection::Union.3 \
 	Jifty::DBI::Collection::Unique.3 \
 	Jifty::DBI::Column.3 \
+	Jifty::DBI::Filter::Date.3 \
 	Jifty::DBI::Filter::DateTime.3 \
+	Jifty::DBI::Filter::Storable.3 \
+	Jifty::DBI::Filter::base64.3 \
 	Jifty::DBI::Filter::utf8.3 \
 	Jifty::DBI::Handle.3 \
 	Jifty::DBI::Handle::Informix.3 \
