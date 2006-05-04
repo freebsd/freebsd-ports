@@ -19,7 +19,6 @@ LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre \
 		event-1.1a.1:${PORTSDIR}/devel/libevent
 
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 
 WRKSRC=		${WRKDIR}/release/${DISTNAME}/
 MAKE_ENV=	INCS="-I${LOCALBASE}/include" LIBLOCAL="-L${LOCALBASE}/lib"
@@ -28,7 +27,7 @@ BINDINGS_DEACTIVATE=	Font Image ObjcBridge OpenGL SGML SQLite SQLite3
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64" || ${ARCH} == "sparc64"
-BROKEN=		"Does not compile on ia64 or sparc64"
+BROKEN=		Does not compile on ia64 or sparc64
 .endif
 
 .if ${OSVERSION} < 500000
@@ -67,7 +66,6 @@ post-patch:
 .if ${OSVERSION} < 500000
 	@cd ${WRKSRC} && ${REINPLACE_CMD} -e 's/<stdint.h>/<inttypes.h>/' vm/base/_new/Array/Array.h vm/base/_new/Data.h vm/base/Common.h vm/base/NEW_stdint.h
 .endif
-
 
 do-install:
 .for fname in vm/io2c vm/io binaries/ioDesktop binaries/ioServer
