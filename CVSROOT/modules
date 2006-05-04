@@ -12399,6 +12399,7 @@ sqlite2		ports/databases/sqlite2
 sqlite3		ports/databases/sqlite3
 sqlrelay	ports/databases/sqlrelay
 sqsh		ports/databases/sqsh
+sqstat		ports/www/sqstat
 squall		ports/net-p2p/squall
 squash		ports/audio/squash
 squeak		ports/lang/squeak
