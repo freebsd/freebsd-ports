@@ -1,12 +1,16 @@
-If you would like to set up ViewCVS in a usable manner, all
+*****************************************************************
+
+If you would like to set up ViewVC in a usable manner, all
 you need to do is modify the configuration file, located at
-%%INSTDIR%%/viewcvs.conf, to note where your
+%%INSTDIR%%/viewvc.conf, to note where your
 CVSROOT is, and then copy the actual CGI (located at
-%%INSTDIR%%/cgi/viewcvs.cgi) to your cgi-bin.
+%%INSTDIR%%/bin/cgi/viewvc.cgi) to your cgi-bin.
 Please notice that  configuration files are installed as
 ".dist" and must be copied to their actual names prior to
 be edited, e.g.:
 $ cd %%INSTDIR%%
-$ cp viewcvs.conf.dist viewcvs.conf
+$ cp viewvc.conf.dist viewvc.conf
 $ cp cvsgraph.conf.dist cvsgraph.conf
 It's up to yo to check the ".dist" files after upgrades.
+
+*****************************************************************

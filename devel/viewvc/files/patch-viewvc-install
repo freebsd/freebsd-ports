@@ -1,0 +1,16 @@
+--- viewvc-install.orig	Thu Apr 20 15:14:37 2006
++++ viewvc-install	Thu Apr 20 15:15:46 2006
+@@ -67,11 +67,11 @@
+     ("bin/mod_python/handler.py", "bin/mod_python/handler.py", 0755, 1, 0, 0),
+     ("bin/mod_python/.htaccess", "bin/mod_python/.htaccess", 0755, 0, 0, 0),
+     ("bin/standalone.py", "bin/standalone.py", 0755, 1, 0, 0),
+-    ("viewvc.conf.dist", "viewvc.conf", 0644, 0,
++    ("viewvc.conf.dist", "viewvc.conf.dist", 0644, 0,
+ 	     """Note: If you are upgrading from viewcvs-0.7 or earlier: 
+ The section [text] has been removed from viewcvs.conf.  The functionality
+ went into the new files in subdirectory templates.""", 0),
+-    ("cvsgraph.conf.dist", "cvsgraph.conf", 0644, 0, 1, 0),
++    ("cvsgraph.conf.dist", "cvsgraph.conf.dist", 0644, 0, 1, 0),
+ 
+     ("bin/loginfo-handler", "bin/loginfo-handler", 0755, 1, 0, 0),
+     ("bin/cvsdbadmin", "bin/cvsdbadmin", 0755, 1, 0, 0),

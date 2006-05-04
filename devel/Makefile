@@ -1731,6 +1731,7 @@
     SUBDIR += varconf
     SUBDIR += vb2c
     SUBDIR += viewcvs
+    SUBDIR += viewvc
     SUBDIR += vstr
     SUBDIR += vtcl
     SUBDIR += websvn
