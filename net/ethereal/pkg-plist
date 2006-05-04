@@ -1,6 +1,6 @@
 %%CAPINFOS%%
 %%DFTEST%%
-%%DUMPCAP%%
+dumpcap
 %%EDITCAP%%
 %%ETHEREAL%%
 %%IDL2ETH%%

@@ -6,6 +6,7 @@
 #
 
 LITE=		yes
+PORTREVISION?=	1
 PKGNAMESUFFIX=	-lite
 
 MASTERDIR=	${.CURDIR}/../ethereal

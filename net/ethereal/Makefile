@@ -7,7 +7,7 @@
 
 PORTNAME=	ethereal
 PORTVERSION=	0.99.0
-PORTREVISION=	2
+PORTREVISION?=	2
 CATEGORIES=	net ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.ethereal.com/pub/ethereal/all-versions/
@@ -28,7 +28,7 @@ CONFIGURE_ARGS+=	--program-transform-name=""
 MAKE_ENV=	MIBDIRS="/dev/null"
 INSTALLS_SHLIB=	yes
 
-.for x in capinfos dumpcap editcap idl2eth mergecap text2pcap
+.for x in capinfos editcap idl2eth mergecap text2pcap
 .if defined(LITE)
 PLIST_SUB+=		${x:U}="@comment $x not installed"
 CONFIGURE_ARGS+=	--enable-$x=no
@@ -115,7 +115,7 @@ CONFIGURE_ARGS+=	--with-adns=${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-adns=no
 .endif
 
-MAN1+=	tethereal.1
+MAN1+=	dumpcap.1 tethereal.1
 MAN4+=	ethereal-filter.4
 
 .include <bsd.port.post.mk>
