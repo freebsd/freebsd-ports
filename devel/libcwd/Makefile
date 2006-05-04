@@ -21,7 +21,6 @@ CONFIGURE_ARGS=	--disable-threading
 USE_GMAKE=	yes
 USE_GNOME=	pkgconfig
 INSTALLS_SHLIB=	yes
-USE_REINPLACE=	yes
 USE_GETOPT_LONG=yes
 
 .include <bsd.port.pre.mk>

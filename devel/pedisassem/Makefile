@@ -17,7 +17,6 @@ COMMENT=	A disassembler for Win32 code (PE format)
 NO_WRKSUBDIR=	yes
 
 USE_ZIP=	yes
-USE_REINPLACE=	yes
 MAKEFILE=	${FILESDIR}/Makefile
 
 post-patch:

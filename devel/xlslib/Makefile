@@ -16,7 +16,6 @@ COMMENT=	A C++ library for generation of Excel(TM) files
 
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
-USE_REINPLACE=	yes
 USE_GCC=	3.4+
 
 post-patch:

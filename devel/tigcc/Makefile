@@ -23,7 +23,6 @@ BROKEN=		Size mismatch
 
 IS_INTERACTIVE=	yes
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 NO_WRKSUBDIR=	yes
 
 post-patch:

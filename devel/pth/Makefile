@@ -23,8 +23,6 @@ CONFIGURE_ARGS=	--enable-optimize \
 		--includedir="${PREFIX}/include/pth" \
 		--libdir="${PREFIX}/lib/pth"
 
-USE_REINPLACE=	yes
-
 MAN1=		pth-config.1
 MAN3=		pth.3
 

@@ -20,7 +20,6 @@ COMMENT=	Not Erik's Windowing Toolkit:  console I/O handling library#'
 LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang \
 		popt.0:${PORTSDIR}/devel/popt
 
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 SOVERSION=	51

@@ -18,7 +18,6 @@ RUN_DEPENDS=	postgres:${PORTSDIR}/databases/postgresql${DEFAULT_PGSQL_VER}-serve
 
 USE_PGSQL=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 USE_GNOME=	gtk20 gconf2 glib20 libgnomeui
 
 GNU_CONFIGURE=	yes

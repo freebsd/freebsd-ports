@@ -19,7 +19,6 @@ MAINTAINER=	MrL0Lz@gmail.com
 COMMENT=	Curses Development Kit for speedy development of full screen programs
 
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 NOPRECIOUSMAKEVARS=	yes # Otherwise 'make readmes' is broken
 

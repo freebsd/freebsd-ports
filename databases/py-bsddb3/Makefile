@@ -18,7 +18,6 @@ COMMENT=	Python extension module for BerkeleyDB 3 and 4
 USE_BDB=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-USE_REINPLACE=	yes
 PYDISTUTILS_CONFIGUREARGS=--libs="-l${BDB_LIB_NAME}" --berkeley-db=${LOCALBASE}
 PYDISTUTILS_BUILDARGS=	--libs="-l${BDB_LIB_NAME}" --berkeley-db=${LOCALBASE}
 PYDISTUTILS_INSTALLARGS=-c -O1 --prefix=${PREFIX} --berkeley-db=${LOCALBASE}

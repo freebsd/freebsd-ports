@@ -16,7 +16,6 @@ COMMENT=	GNU patch utility
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=g
-USE_REINPLACE=	yes
 
 MAN1=		gpatch.1
 PLIST_FILES=	bin/gpatch

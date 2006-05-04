@@ -31,7 +31,6 @@ USE_GCC=	3.4+
 JAVA_VERSION=	1.2+
 JAVA_OS=	native
 USE_GNOME=	gnomehack libglade2
-USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--without-gcj-compile
 CONFIGURE_ENV=	CPPFLAGS="-I${JAVA_HOME}/include -I${JAVA_HOME}/include/freebsd"
 

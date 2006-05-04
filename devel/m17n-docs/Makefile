@@ -13,7 +13,6 @@ MASTER_SITES=	http://www.m17n.org/m17n-lib/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The m17n library documentation
 
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
 MAN1=		m17n-config.1 mconv.1 mdate.1 mdump.1 medit.1 \

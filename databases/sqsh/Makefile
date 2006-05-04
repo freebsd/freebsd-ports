@@ -17,7 +17,6 @@ COMMENT=	Interactive tool for querying Sybase database servers
 LIB_DEPENDS=	ct.3:${PORTSDIR}/databases/freetds
 
 USE_GETTEXT=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	SYBASE="${LOCALBASE}"
 CONFIGURE_ARGS=	--with-readline

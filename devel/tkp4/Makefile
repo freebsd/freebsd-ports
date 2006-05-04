@@ -17,7 +17,6 @@ RUN_DEPENDS=	wish${TCL_VER}:${PORTSDIR}/x11-toolkits/tk${TCL_DVER} \
 		p4:${PORTSDIR}/devel/perforce
 
 NO_BUILD=	yes
-USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ""
 TCL_VER=	8.4
 TCL_DVER=	${TCL_VER:S/.//}

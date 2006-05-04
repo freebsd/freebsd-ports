@@ -16,7 +16,6 @@ MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	Garbage collection and memory leak detection for C and C++
 
 USE_GNOME=	lthack
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes

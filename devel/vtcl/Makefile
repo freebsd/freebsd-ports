@@ -20,8 +20,6 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS= ${PREFIX}
 NO_BUILD=	yes
 
-USE_REINPLACE=	yes
-
 pre-configure:
 	@${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/configure
 

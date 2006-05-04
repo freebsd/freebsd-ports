@@ -24,7 +24,6 @@ ONLY_FOR_ARCHS=	i386
 USE_GMAKE=	yes
 USE_GNOME=	pkgconfig
 USE_PERL5_BUILD=yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS+=	autoconf:259 aclocal:19 automake:19
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

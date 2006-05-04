@@ -17,7 +17,6 @@ COMMENT=	Library that provides a generic logging layer
 
 INSTALLS_SHLIB=	YES
 GNU_CONFIGURE=	YES
-USE_REINPLACE=	YES
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,^loop:,loop: ;,' \

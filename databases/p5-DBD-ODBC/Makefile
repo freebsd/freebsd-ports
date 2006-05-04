@@ -18,7 +18,6 @@ COMMENT=	DBD module interfacing the ODBC databases
 
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS+=	-o ${LOCALBASE}
-USE_REINPLACE=	yes
 
 MAN3=		DBD::ODBC.3
 

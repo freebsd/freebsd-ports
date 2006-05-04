@@ -20,8 +20,6 @@ CATEGORY=	HTML
 FILES=		Page2.php Page2/Doctypes.php Page2/Namespaces.php
 EXAMPLES=	Page2_NoDoctype.php Page2_Simple.php Page2_Complex.php
 
-USE_REINPLACE=	yes
-
 post-patch:
 	@${REINPLACE_CMD} -e "s###g" ${WRKSRC}/Page2.php
 

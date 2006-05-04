@@ -27,7 +27,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	AUTOCONF=autoconf253 AUTOHEADER=autoheader253 MAKEINFO=makeinfo
 CONFIGURE_ARGS=	--program-suffix=${BUILD_VERSION}
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-USE_REINPLACE=	yes
 INFO=		automake${BUILD_VERSION}
 
 post-patch:

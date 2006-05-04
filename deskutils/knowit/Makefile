@@ -18,7 +18,6 @@ COMMENT=	A note manager with tree organization that uses RTF for storage
 
 USE_BZIP2=	yes
 USE_KDELIBS_VER=	3
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOHEADER="${TRUE}" \

@@ -21,7 +21,6 @@ WRKSRC=		${WRKDIR}/BloGTK-${PORTVERSION}
 USE_BZIP2=	yes
 USE_GNOME=	pygnomeextras
 USE_PYTHON=	2.3+
-USE_REINPLACE=	yes
 NO_BUILD=	yes
 
 post-patch:

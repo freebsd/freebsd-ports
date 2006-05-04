@@ -20,7 +20,6 @@ USE_GNOME=	gnomehack gnomeprefix gnomepanel intlhack
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GCONF_SCHEMAS=	timer-applet.schemas
 INSTALLS_OMF=	yes

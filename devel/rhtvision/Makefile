@@ -19,7 +19,6 @@ COMMENT=	Complete C++ Text User Interface (TUI) library
 WRKSRC=		${WRKDIR}/tvision
 USE_PERL5=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}

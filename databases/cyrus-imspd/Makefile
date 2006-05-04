@@ -17,7 +17,6 @@ COMMENT=	The cyrus IMSP (Internet Message Support Protocol) server
 
 LIB_DEPENDS=	sasl2.2:${PORTSDIR}/security/cyrus-sasl2
 
-USE_REINPLACE=	YES
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--with-sasldir=${LOCALBASE} \

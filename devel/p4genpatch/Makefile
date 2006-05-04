@@ -20,7 +20,6 @@ NO_BUILD=		yes
 NO_WRKSUBDIR=		yes
 
 USE_PERL5=		yes
-USE_REINPLACE=		yes
 
 SCRIPTS=		bin/p4genpatch bin/p4d2p
 PLIST_FILES=		${SCRIPTS}

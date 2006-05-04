@@ -25,7 +25,6 @@ USE_GMAKE=	yes
 MAKEFILE=	makefile
 MAKE_ENV=	OSTYPE=FreeBSD
 USE_GCC=	2.95
-USE_REINPLACE=	yes
 
 PORTDOCS=	readme.txt
 

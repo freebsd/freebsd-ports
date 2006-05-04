@@ -17,7 +17,6 @@ COMMENT=	A portable process tracer
 
 USE_BZIP2=	yes
 USE_PERL5=	yes # for strace-graph
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 ONLY_FOR_ARCHS=	i386
 

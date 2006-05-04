@@ -14,8 +14,6 @@ MASTER_SITES=	http://freequaos.host.sk/genproto/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generates prototypes from C/C++ code
 
-USE_REINPLACE=	yes
-
 PLIST_FILES=	bin/genproto
 
 post-patch:

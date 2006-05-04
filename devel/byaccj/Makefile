@@ -17,7 +17,6 @@ COMMENT=	A java extension of BSD YACC-compatible parser generator
 
 PLIST_FILES=	bin/byaccj
 WRKSRC=		$(WRKDIR)/byaccj1.1/src
-USE_REINPLACE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's#<malloc.h>#<stdlib.h>#' ${WRKSRC}/defs.h ${WRKSRC}/*c

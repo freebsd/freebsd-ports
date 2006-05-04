@@ -16,7 +16,6 @@ MASTER_SITE_SUBDIR=	arved
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python source code obfuscator
 
-USE_REINPLACE=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 

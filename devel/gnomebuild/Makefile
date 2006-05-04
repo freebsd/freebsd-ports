@@ -23,7 +23,6 @@ USE_X_PREFIX=	yes
 USE_GNOME=	gnomeprefix gnomehack lthack gnometarget libgnomeui gnomevfs2
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
-USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--enable-compile-warnings=no
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -lgnuregex"

@@ -19,7 +19,6 @@ COMMENT=	Provides uniform access to different kinds of data sources
 LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
 
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomeprefix gnomehier gconf bonobo
 USE_GMAKE=	yes

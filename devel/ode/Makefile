@@ -22,7 +22,6 @@ CONFLICTS=	ode-devel-[0-9].*
 USE_X_PREFIX=	yes
 USE_GL=		yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 
 OPTIONS=	OPCODE "Enable code required by TriList (trimesh) class" on
 

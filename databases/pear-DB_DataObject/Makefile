@@ -16,8 +16,6 @@ BUILD_DEPENDS=	${PEARDIR}/DB.php:${PORTSDIR}/databases/pear-DB \
 		${PEARDIR}/Date.php:${PORTSDIR}/devel/pear-Date
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-USE_REINPLACE=	yes
-
 CATEGORY=	DB
 FILES=		DataObject.php DataObject/Cast.php DataObject/Generator.php \
 		DataObject/createTables.php DataObject/Error.php

@@ -16,7 +16,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	seanc@FreeBSD.org
 COMMENT=	Database Independent Abstraction Layer for C
 
-USE_REINPLACE=		yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=		yes
 

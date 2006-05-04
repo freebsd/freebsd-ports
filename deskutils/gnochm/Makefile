@@ -22,7 +22,6 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomeprefix intlhack pygnome2 pygnomeextras
 GNU_CONFIGURE=	yes
 USE_PYTHON=	yes
-USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

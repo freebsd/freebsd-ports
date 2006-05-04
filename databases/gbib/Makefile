@@ -22,7 +22,6 @@ COMMENT=	Editor/browser for BibTeX bibliographic databases
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomelibs
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf:213
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

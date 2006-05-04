@@ -16,7 +16,6 @@ MAINTAINER=	yinjieh@csie.nctu.edu.tw
 COMMENT=	A library which provides OO thread interface for C++ programmers
 
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 MAKE_ENV=	PTHREAD_LIBS=${PTHREAD_LIBS}
 INSTALLS_SHLIB=	yes
 

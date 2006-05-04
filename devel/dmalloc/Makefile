@@ -18,7 +18,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--enable-threads --enable-shlib
 CFLAGS+=	-fPIC
-USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 
 ALL_TARGET=	all heavy

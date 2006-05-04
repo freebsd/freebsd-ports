@@ -18,7 +18,6 @@ COMMENT=	A calendar application
 USE_GNOME=	glib20
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 ALL_TARGET=
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 

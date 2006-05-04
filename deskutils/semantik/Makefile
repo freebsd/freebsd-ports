@@ -21,7 +21,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_BZIP2=	yes
 USE_KDELIBS_VER=	3
-USE_REINPLACE=	yes
 
 .include <bsd.port.pre.mk>
 

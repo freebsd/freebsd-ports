@@ -28,7 +28,6 @@ BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip
 USE_ZIP=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.4+
-USE_REINPLACE=	yes
 
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}-${PORTVERSION}
 DATAFILES=	accessories doc lib license patterns.xml plugins user.properties

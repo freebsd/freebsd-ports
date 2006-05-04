@@ -17,7 +17,6 @@ COMMENT=	Programming Language for writing Python extension modules
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
-USE_REINPLACE=	yes
 
 post-install:
 	@# precompile lexicon pickle

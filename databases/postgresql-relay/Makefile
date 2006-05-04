@@ -18,7 +18,6 @@ PLIST_FILES=	bin/postgresql-relay \
 		etc/postgresql-relay.conf-sample \
 		etc/rc.d/postgresql-relay.sh
 
-USE_REINPLACE=	yes
 USE_RC_SUBR=	yes
 USE_PERL5_BUILD=yes
 SUB_FILES=	postgresql-relay.sh

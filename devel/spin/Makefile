@@ -31,7 +31,6 @@ WRKSRC=		${WRKDIR}/Spin/Src${PORTVERSION}
 MAKEFILE=	makefile
 ALL_TARGET=	spin
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -DNXT"
-USE_REINPLACE=	yes
 
 post-extract:
 	@cd ${WRKDIR}/Spin/Test && ${SH} ${WRKDIR}/Spin/Test/examples

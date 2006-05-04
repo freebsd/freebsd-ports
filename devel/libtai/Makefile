@@ -16,8 +16,6 @@ MASTER_SITES=	http://cr.yp.to/libtai/ \
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	A library for storing and manipulating dates and times in second/attosecond
 
-USE_REINPLACE=	yes
-
 ALL_TARGET=	it
 INSTALLS_SHLIB=	yes
 MAKE_ENV=	LIBVERSION="${LIBVERSION}"

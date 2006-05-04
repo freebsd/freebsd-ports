@@ -23,7 +23,6 @@ USE_GMAKE=		yes
 USE_AUTOTOOLS=	autoconf:259:env libtool:15:env
 GNU_CONFIGURE=		yes
 USE_GCC=		3.4
-USE_REINPLACE=		yes
 
 DOCSDIR=	${PREFIX}/firebird/doc
 

@@ -23,7 +23,6 @@ LIB_DEPENDS=	mk4.0:${PORTSDIR}/databases/metakit \
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/all
 
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-metakit=${LOCALBASE} \

@@ -16,7 +16,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shows information about Java class, dependencies and more
 
-USE_REINPLACE=	yes
 USE_GETOPT_LONG=	yes
 USE_GNOME=	pkgconfig gnomehack
 GNU_CONFIGURE=	yes

@@ -16,7 +16,6 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Nautilus plugin that allows you to encrypt the contents of a folder
 
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	nautilus2
 PKGCONFIGS=	gtk+-2.0 libglade-2.0 libnautilus-extension libgnomeui-2.0

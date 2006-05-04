@@ -18,8 +18,6 @@ COMMENT=	A powerful GUI PostgreSQL database administration tool and toolkit
 
 LIB_DEPENDS=	pgtcl:${PORTSDIR}/databases/postgresql-tcltk
 
-USE_REINPLACE=	yes
-
 TCLVERSION?=	8.4
 DOCSDIR=	${PREFIX}/share/doc/postgresql/${PORTNAME}
 PGACCESSDIR=	${PREFIX}/share/postgresql/${PORTNAME}

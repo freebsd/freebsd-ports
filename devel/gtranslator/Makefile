@@ -27,7 +27,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lgnuregex"
 CONFIGURE_ARGS=	--disable-debug \
 		--enable-compile-warnings=no
-USE_REINPLACE=	yes
 
 MAN1=		gtranslator.1 pozilla.sh.1
 MANCOMPRESSED=	yes

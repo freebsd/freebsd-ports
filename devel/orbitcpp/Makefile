@@ -16,7 +16,6 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	C++ bindings for ORBit, a CORBA 2.2-compliant ORB
 
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 USE_GNOME=	gnomehack lthack orbit2
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes

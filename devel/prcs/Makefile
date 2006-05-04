@@ -16,7 +16,6 @@ COMMENT=	The Project Revision Control System
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 USE_GCC=	3.3
 
 MAN1=		prcs.1

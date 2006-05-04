@@ -15,7 +15,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Literate programming tools for the C language
 
 NO_WRKSUBDIR=	yes
-USE_REINPLACE=	yes
 
 MAN1=		cweb.1
 

@@ -17,7 +17,6 @@ LIB_DEPENDS=		popt:${PORTSDIR}/devel/popt
 
 USE_GNOME=		glib20
 WANT_GNOME=		yes
-USE_REINPLACE=		yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=		--with-lispdir=${PREFIX}/share/emacs/site-lisp
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \

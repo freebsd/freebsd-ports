@@ -23,7 +23,6 @@ USE_QT_VER=	3
 QTDIR?=		${X11BASE}
 MAKE_ENV+=	QTDIR=${QTDIR} QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++
 ALL_TARGET=	install
-USE_REINPLACE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' \

@@ -22,7 +22,6 @@ WRKSRC=			${WRKDIR}/pccts
 ALL_TARGET=
 MAKEFILE=		makefile
 MAKE_ENV=		COPT="${CFLAGS}"
-USE_REINPLACE=		yes
 
 MAN1=			antlr.1 dlg.1
 

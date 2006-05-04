@@ -22,7 +22,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 USE_GETTEXT=	yes
 USE_GNOME=	gtk20
-USE_REINPLACE=	yes
 
 post-extract:
 	@${REINPLACE_CMD} -e 's, -DMTRACE$$,,' -e 's,prefix)/$$(DATADIRNAME,datadir,' \

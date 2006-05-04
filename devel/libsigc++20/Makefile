@@ -24,7 +24,6 @@ LATEST_LINK=	libsigc++20
 INSTALLS_SHLIB=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 
 PLIST_SUB=	VERSION="2.0" API_VERSION="2.0"
 

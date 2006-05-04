@@ -18,7 +18,6 @@ COMMENT=	Property library for gnome and Window Maker
 
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
-USE_REINPLACE=	yes
 
 post-patch:
 	${REINPLACE_CMD} -e "s,mkdir rmdir,mkdir mkstemp rmdir," \

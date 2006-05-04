@@ -17,7 +17,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An C++ networking library and application framework
 
 USE_GNOME=	gnomehack gnometarget pkgconfig
-USE_REINPLACE=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS=	--disable-html-docs --disable-static
 INSTALLS_SHLIB=	yes

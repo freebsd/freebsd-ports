@@ -22,7 +22,6 @@ USE_GMAKE=	yes
 MAKEFILE=	makefile
 ALL_TARGET=	# empty
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's:/unc/walk/lib/sgi_irix:${PREFIX}/lib:g; \

@@ -19,7 +19,6 @@ COMMENT=	An STL Error Message Decryptor for C++
 EXTRACT_CMD=	${TAR}
 EXTRACT_BEFORE_ARGS=	-xf
 EXTRACT_AFTER_ARGS=	# empty
-USE_REINPLACE=	yes
 USE_PERL5_RUN=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

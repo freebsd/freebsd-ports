@@ -23,7 +23,6 @@ INSTALLS_SHLIB=	yes
 
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool:15
-USE_REINPLACE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=		--with-ssl
 

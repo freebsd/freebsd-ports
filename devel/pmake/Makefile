@@ -22,7 +22,6 @@ WRKSRC=		${WRKDIR}/pmake
 MAKEFILE=	makefile
 ALL_TARGET=	pmake
 PMAKE_ENV=	${MAKE_ENV} MAKE=${PREFIX}/bin/pmake
-USE_REINPLACE=	yes
 MAN1=		pmake.1
 
 post-patch:

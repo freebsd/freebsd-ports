@@ -17,7 +17,6 @@ MASTER_SITE_SUBDIR=	libs/graphics
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Type 1 Rasterizer Library for UNIX/X11
 
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

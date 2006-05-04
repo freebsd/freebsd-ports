@@ -16,8 +16,6 @@ COMMENT=	PEAR Database Abstraction Layer
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-USE_REINPLACE=	yes
-
 FILES=		DB.php DB/common.php DB/dbase.php DB/fbsql.php DB/ibase.php \
 		DB/ifx.php DB/msql.php DB/mssql.php DB/mysql.php DB/mysqli.php \
 		DB/oci8.php DB/odbc.php DB/pgsql.php DB/sybase.php DB/storage.php \

@@ -15,7 +15,6 @@ COMMENT=	A simple, easy-to-use web based bug tracking system
 
 RUN_DEPENDS=	${LOCALBASE}/share/adodb/adodb.inc.php:${PORTSDIR}/databases/adodb
 
-USE_REINPLACE=	yes
 USE_PHP=	mysql pcre session
 WANT_PHP_WEB=	yes
 

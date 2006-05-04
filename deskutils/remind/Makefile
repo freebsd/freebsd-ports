@@ -15,7 +15,6 @@ MAINTAINER=	lewiz@compsoc.man.ac.uk
 COMMENT=	Sophisticated calendar and alarm program
 
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 
 MAN1=		kall.1 rem.1 rem2ps.1 remind.1 tkremind.1 cm2rem.1
 

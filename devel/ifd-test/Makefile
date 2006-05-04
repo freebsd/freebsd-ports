@@ -17,7 +17,6 @@ COMMENT=	IFD Test Suite for PC/SC Lite
 LIB_DEPENDS=    pcsclite.1:${PORTSDIR}/devel/pcsc-lite
 
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 
 NOMAN=
 PLIST_FILES=	sbin/ifdtest

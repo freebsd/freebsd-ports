@@ -20,10 +20,8 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 USE_ICONV=	yes
 USE_BISON=	yes
-USE_REINPLACE=	yes
 
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE}

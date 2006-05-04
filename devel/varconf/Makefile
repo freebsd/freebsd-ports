@@ -17,7 +17,6 @@ COMMENT=	A Configuration System for the STAGE Server
 LIB_DEPENDS=	sigc-2.0:${PORTSDIR}/devel/libsigc++20
 
 USE_GCC=	3.4
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 USE_BZIP2=	yes

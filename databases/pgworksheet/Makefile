@@ -21,7 +21,6 @@ USE_BZIP2=	yes
 USE_GNOME=	pygtk2
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
-USE_REINPLACE=	yes
 
 post-patch:
 	${REINPLACE_CMD} -e \

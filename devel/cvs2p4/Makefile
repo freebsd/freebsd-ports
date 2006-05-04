@@ -14,7 +14,6 @@ EXTRACT_SUFX=	.tar
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CVS to Perforce Converter
 
-USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ""
 NO_BUILD=	yes
 SUB_FILES=	pkg-message

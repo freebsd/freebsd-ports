@@ -17,7 +17,6 @@ COMMENT=	Graphical Resource Organizer Kit
 
 BUILD_WRKSRC=	${WRKDIR}/${DISTNAME}/src
 
-USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_MOTIF=	yes
 MAKE_ENV=	MYCC="${CC}" DEBUG="${CFLAGS}" YO="" INCDIR="" \

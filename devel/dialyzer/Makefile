@@ -17,7 +17,6 @@ COMMENT=	Static analysis tool for Erlang/OTP applications
 BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang
 RUN_DEPENDS=	erl:${PORTSDIR}/lang/erlang
 
-USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PLIST_SUB=	VERSION="${PORTVERSION}"

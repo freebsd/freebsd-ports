@@ -18,7 +18,6 @@ COMMENT=	A python library to access freedesktop.org standards
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
-USE_REINPLACE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e \

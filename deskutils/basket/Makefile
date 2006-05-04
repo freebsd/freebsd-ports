@@ -17,7 +17,6 @@ USE_BZIP2=		yes
 USE_KDELIBS_VER=	3
 USE_GMAKE=		yes
 USE_AUTOTOOLS=		libtool:15
-USE_REINPLACE=		yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/-O2//g' ${WRKSRC}/${CONFIGURE_SCRIPT}

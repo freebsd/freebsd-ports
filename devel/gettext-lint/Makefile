@@ -17,7 +17,6 @@ COMMENT=	Check the validity and consistency of PO and POT files
 
 RUN_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
 
-USE_REINPLACE=	yes
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 MAKE_ENV=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR}

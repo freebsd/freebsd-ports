@@ -19,8 +19,6 @@ USE_RUBY=	yes
 RUBY_NO_BUILD_DEPENDS=	yes
 RUBY_NO_RUN_DEPENDS=	yes
 
-USE_REINPLACE=	yes
-
 DOCS=		README		README.html
 
 post-patch:

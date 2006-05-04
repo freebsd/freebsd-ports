@@ -19,7 +19,6 @@ COMMENT=	The Python Regular Expression Debugger
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/qt.so:${PORTSDIR}/x11-toolkits/py-qt
 
-USE_REINPLACE=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 

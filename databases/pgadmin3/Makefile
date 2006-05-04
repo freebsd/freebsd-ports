@@ -16,7 +16,6 @@ COMMENT=	PostgreSQL database design and management system
 
 USE_PGSQL=	yes
 BROKEN_WITH_PGSQL=	73
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-wx=${X11BASE} --with-wx-config=${WX_CONFIG}
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}

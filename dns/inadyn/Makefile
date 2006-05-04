@@ -19,7 +19,6 @@ WRKSRC=		${WRKDIR}/inadyn
 USE_GCC=	3.4
 USE_ZIP=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 MAKEFILE=	makefile
 
 MAN8=		inadyn.8

@@ -16,7 +16,6 @@ MAINTAINER=	krion@FreeBSD.org
 COMMENT=	General-purpose multi-platform x86 assembler
 
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 PLIST_SUB=	VERSION=${PORTVERSION}

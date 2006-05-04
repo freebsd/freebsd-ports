@@ -18,7 +18,6 @@ COMMENT=	A BSDL Regular Expressions library compatible with POSIX/GNU/Perl
 WRKSRC=		${WRKDIR}/${PORTNAME}
 GNU_CONFIGURE=	yes
 #INSTALLS_SHLIB=	yes
-USE_REINPLACE=	yes
 
 DOCS=		HISTORY README doc/*
 

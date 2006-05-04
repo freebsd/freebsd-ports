@@ -19,7 +19,6 @@ MAINTAINER=	barner@FreeBSD.org
 COMMENT=	Free peer-reviewed portable C++ source libraries
 
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 
 MAKE_ENV+=	GCC="${CC} ${CFLAGS}"\

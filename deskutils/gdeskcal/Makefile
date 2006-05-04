@@ -22,7 +22,6 @@ WRKSRC=		${WRKDIR}/gDeskCal-${PORTVERSION}
 USE_PYTHON=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehier
-USE_REINPLACE=	yes
 NO_BUILD=	yes
 
 DATA_DIRS=	code data skins

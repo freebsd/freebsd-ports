@@ -16,7 +16,6 @@ BUILD_DEPENDS=	${PEARDIR}/Log.php:${PORTSDIR}/sysutils/pear-Log
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_PHP=	tokenizer
-USE_REINPLACE=	yes
 
 NO_PACKAGE=     Conflicting dependences between PHP4 and PHP5
 

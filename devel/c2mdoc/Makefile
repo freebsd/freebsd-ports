@@ -18,7 +18,6 @@ RUN_DEPENDS=	cproto:${PORTSDIR}/devel/cproto
 
 NOMAN=
 
-USE_REINPLACE=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 

@@ -24,7 +24,6 @@ GNU_CONFIGURE=	yes
 USE_AUTOTOOLS+=	autoconf:259 aclocal:19 automake:19
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=--enable-maintainer-mode
-USE_REINPLACE=	yes
 USE_PERL5_BUILD=yes
 
 .include <bsd.port.pre.mk>

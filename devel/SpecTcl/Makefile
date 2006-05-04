@@ -19,7 +19,6 @@ COMMENT=	Free drag-and-drop GUI builder for Tk and Java from Sun
 RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 
 NO_BUILD=	yes
-USE_REINPLACE=	yes
 
 WISH=		${LOCALBASE}/bin/wish8.4
 

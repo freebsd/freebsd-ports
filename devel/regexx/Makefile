@@ -20,7 +20,6 @@ LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
-USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 
 post-patch:

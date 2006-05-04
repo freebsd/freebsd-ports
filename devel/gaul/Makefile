@@ -20,7 +20,6 @@ COMMENT=	Genetic Algorithm Utility Library
 LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang
 
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

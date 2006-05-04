@@ -14,7 +14,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to effectively maintain todo lists aimed at developers
 
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 
 # Note: without this define util/regex.c doesn't compile due to redeclaration
 # of malloc and realloc functions. Adding this define was the simplest

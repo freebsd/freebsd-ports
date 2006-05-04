@@ -19,7 +19,6 @@ LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
 
 XML_CONFIG=	${LOCALBASE}/bin/xml2-config
 
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \

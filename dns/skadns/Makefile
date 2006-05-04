@@ -15,8 +15,6 @@ COMMENT=	Asynchronous DNS client software and library
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/skalibs/libstddjb.a:${PORTSDIR}/devel/skalibs
 
-USE_REINPLACE=	yes
-
 LDFLAGS?=	-s
 STRIPFLAGS?=	-x
 

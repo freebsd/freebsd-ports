@@ -27,7 +27,6 @@ EXTRACT_DEPENDS+=	gtar:${PORTSDIR}/archivers/gtar
 TAR=			${LOCALBASE}/bin/gtar
 .endif
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 ONLY_FOR_ARCHS=	i386
 
 PLIST_SUB+=	INSTDIR=lib/fpc/${PORTVERSION}/units/freebsd/ibase \

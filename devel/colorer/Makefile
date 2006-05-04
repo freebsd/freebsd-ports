@@ -23,7 +23,6 @@ BUILD_DEPENDS=	fop:${PORTSDIR}/textproc/fop \
 		${LOCALBASE}/share/xhtml1-xsd/xhtml1-strict.xsd:${PORTSDIR}/textproc/xhtml1-xsd
 
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.4
 USE_ANT=	yes

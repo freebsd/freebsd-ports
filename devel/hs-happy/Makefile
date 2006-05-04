@@ -22,7 +22,6 @@ BUILD_DEPENDS+=	${LOCALBASE}/share/xsl/docbook/html:${PORTSDIR}/textproc/docbook
 .endif
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//g}
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 

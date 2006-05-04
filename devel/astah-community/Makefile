@@ -22,7 +22,6 @@ JAVA_VERSION=	1.4+
 # I haven't tested with the jdks of blackdown or ibm
 JAVA_OS=	native
 NO_BUILD=	yes
-USE_REINPLACE=	yes
 
 RESTRICTED=	"See http://jude.change-vision.com/jude-web/notes/ProductLicenseAgreement.html"
 NO_CDROM=	${RESTRICTED}

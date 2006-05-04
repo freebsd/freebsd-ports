@@ -24,7 +24,6 @@ USE_GNOME=	gnomehack gnometarget
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 
 post-extract:
 	@${REINPLACE_CMD} -e 's|@bindir@/monodoc|monodoc|g' \

@@ -24,7 +24,6 @@ COMMENT=	Source code analyzer and refactoring browser for collections of C progr
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
 NO_LATEST_LINK=	yes
-USE_REINPLACE=	yes
 
 MAN1=	cscout.1 cswc.1
 

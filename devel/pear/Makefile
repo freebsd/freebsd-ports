@@ -23,8 +23,6 @@ USE_PHP=	pcre xml
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-USE_REINPLACE=	yes
-
 post-patch:
 	@${REINPLACE_CMD} "s|%%PREFIX%%|${PREFIX}|" ${WRKSRC}/go-pear
 

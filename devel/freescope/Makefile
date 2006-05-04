@@ -18,7 +18,6 @@ COMMENT=	Source code browsing on UNIX-like operating systems
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 USE_GCC=	2.95
 
