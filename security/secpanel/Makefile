@@ -7,17 +7,21 @@
 
 PORTNAME=	secpanel
 PORTVERSION=	0.5.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	security tcl84 tk84
-MASTER_SITES=	http://www.pingx.net/secpanel/
+MASTER_SITES=	http://www.pingx.net/secpanel/ \
+		http://bsd1.csme.ru/myports/ \
+		http://bsd2.csme.ru/myports/ \
+		http://bsd3.csme.ru/myports/
 
 MAINTAINER=	infofarmer@gmail.com
 COMMENT=	GUI for managing and running ssh and related utilities
 
-RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84 \
-		ssh-askpass:${PORTSDIR}/security/openssh-askpass
+RUN_DEPENDS=	ssh-askpass:${PORTSDIR}/security/openssh-askpass
 
 USE_X_PREFIX=	yes
+USE_TK=		84
 
 NO_BUILD=	yes
 
@@ -27,14 +31,10 @@ post-patch:
 		-e 's!askpassbin askpass!askpassbin ssh-askpass!' ${WRKSRC}/src/bin/secpanel
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/src/bin/secpanel ${PREFIX}/bin
-	@${MKDIR} ${DATADIR}
-.for file in convert_history.tcl default.config default.profile \
-	gui.tcl listserver.tcl secpanel.dist secpanel.wait
-	${INSTALL_SCRIPT} ${WRKSRC}/src/lib/secpanel/${file} ${DATADIR}
-.endfor
-	@${MKDIR} ${DATADIR}/images
-	${INSTALL_DATA} ${WRKSRC}/src/lib/secpanel/images/*.gif \
-		${DATADIR}/images
+	${INSTALL_SCRIPT} ${WRKSRC}/src/bin/secpanel ${PREFIX}/bin/
+	@${INSTALL} -d ${DATADIR}
+	@${CP} -Rp ${WRKSRC}/src/lib/secpanel/ ${DATADIR}/
+	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}/
+	@${CHMOD} -R ${SHAREMODE} ${DATADIR}/
 
 .include <bsd.port.mk>

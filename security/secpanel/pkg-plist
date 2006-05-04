@@ -1,11 +1,14 @@
 bin/secpanel
 %%DATADIR%%/convert_history.tcl
+%%DATADIR%%/convert_profile.tcl
 %%DATADIR%%/default.config
 %%DATADIR%%/default.profile
+%%DATADIR%%/export_profiles.tcl
 %%DATADIR%%/gui.tcl
 %%DATADIR%%/listserver.tcl
 %%DATADIR%%/secpanel.dist
 %%DATADIR%%/secpanel.wait
+%%DATADIR%%/sp_scp.tcl
 %%DATADIR%%/images/arrow_left.gif
 %%DATADIR%%/images/arrow_right.gif
 %%DATADIR%%/images/back.gif
