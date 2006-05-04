@@ -1,0 +1,51 @@
+--- configure.orig	Fri Mar 24 03:46:43 2006
++++ configure	Wed May  3 19:00:36 2006
+@@ -6817,7 +6817,7 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lresolv  $LIBS"
++LIBS="$LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -6876,10 +6876,10 @@
+ echo "${ECHO_T}$ac_cv_lib_resolv_res_mkquery" >&6
+ if test $ac_cv_lib_resolv_res_mkquery = yes; then
+   cat >>confdefs.h <<_ACEOF
+-#define HAVE_LIBRESOLV 1
++#define HAVE_LIBRESOLV 0
+ _ACEOF
+ 
+-  LIBS="-lresolv $LIBS"
++  LIBS="$LIBS"
+ 
+ else
+ 
+@@ -6889,7 +6889,7 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lresolv  $LIBS"
++LIBS="$LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -6951,7 +6951,7 @@
+ #define HAVE_LIBRESOLV 1
+ _ACEOF
+ 
+-  LIBS="-lresolv $LIBS"
++  LIBS="$LIBS"
+ 
+ else
+   { { echo "$as_me:$LINENO: error: No resolver library found" >&5
+@@ -6965,7 +6965,7 @@
+ 
+ fi
+ 
+-LIBS="$LIBS -lresolv"
++LIBS="$LIBS"
+ 
+ echo "$as_me:$LINENO: checking for herror" >&5
+ echo $ECHO_N "checking for herror... $ECHO_C" >&6

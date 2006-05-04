@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	mtr
-PORTVERSION=	0.70
+PORTVERSION=	0.71
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.bitwizard.nl/mtr/ \
-		ftp://ftp.netsw.org/net/ip/audit/packets/ \
-		ftp://ftp.gw.com/mirrors/pub/unix/mtr/
+		http://www.mirrors.wiretapped.net/security/network-mapping/mtr/ \
+		http://gd.tuwien.ac.at/infosys/network/tools/mtr/ \
+		http://mirrors.evolva.ro/util/mtr/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rainer.alves@gmail.com
 COMMENT=	Traceroute and ping in a single graphical network diagnostic tool
 
 GNU_CONFIGURE=	yes
