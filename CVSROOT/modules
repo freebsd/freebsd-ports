@@ -1069,6 +1069,8 @@ cedet		ports/devel/cedet
 ceferino	ports/games/ceferino
 cegui		ports/graphics/cegui
 celestia	ports/astro/celestia
+celestia-gnome	ports/astro/celestia-gnome
+celestia-gtk	ports/astro/celestia-gtk
 cenon		ports/graphics/cenon
 centericq	ports/net-im/centericq
 cfengine2	ports/sysutils/cfengine2
