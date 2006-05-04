@@ -8,6 +8,7 @@
 
 PORTNAME=	pango
 PORTVERSION=	1.12.2
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,sources/${PORTNAME}/1.12,} \
 		ftp://ftp.gtk.org/pub/gtk/v2.10/
@@ -23,7 +24,7 @@ RUN_DEPENDS=	${FONTSCALE}:${X_FONTS_TTF_PORT} \
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
-USE_X_PREFIX=	yes
+PREFIX?=	${X11BASE}
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 USE_AUTOTOOLS=	libtool:15
@@ -49,12 +50,15 @@ CONFIGURE_ARGS+=	--with-x=no
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include/freetype2 \
 				${GLIB2_CFLAGS} -I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+PLIST_SUB+=		X11="@comment "
 .else
+USE_XLIB+=		yes
 LIB_DEPENDS+=		Xft.2:${PORTSDIR}/x11-fonts/libXft
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include/freetype2 \
 				${GLIB2_CFLAGS} -I${LOCALBASE}/include \
 				-I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+PLIST_SUB+=		X11=""
 .endif
 
 post-install:
