@@ -1,0 +1,10 @@
+--- src/celestia/Makefile.in.orig	Thu May  4 13:10:55 2006
++++ src/celestia/Makefile.in	Thu May  4 13:11:07 2006
+@@ -347,6 +347,7 @@
+ 
+ 
+ celestia_LDADD = \
++	$(INTLLIBS) \
+ 	$(celestiaKDELIBS) \
+ 	$(celestiaGTKLIBS) \
+ 	../celengine/libcelengine.a \

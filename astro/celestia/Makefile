@@ -5,152 +5,97 @@
 # $FreeBSD$
 #
 
-PORTNAME=		celestia
-PORTVERSION=		1.3.2
-PORTREVISION=	2
-CATEGORIES=		astro
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
+PORTNAME=	celestia
+PORTVERSION=	1.4.1
+CATEGORIES=	astro
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	celestia
+PKGNAMESUFFIX=	-${CELESTIA_UI}
 
-MAINTAINER=		ports@FreeBSD.org
-COMMENT=		Scriptable space flight simulator for X
+MAINTAINER=	jylefort@FreeBSD.org
+COMMENT=	Scriptable space flight simulator for X
 
-LIB_DEPENDS=		jpeg.9:${PORTSDIR}/graphics/jpeg \
-			png.5:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+		png.5:${PORTSDIR}/graphics/png
 
-USE_AUTOTOOLS=		libtool:15
-PLIST=			${WRKDIR}/plist
-PORTDOCS=		AUTHORS CelestiaKeyAssignments.txt ChangeLog \
-			coding-standards.html devguide.txt \
-			KbdMouseJoyControls.txt README TODO TRANSLATORS
-USE_GMAKE=		yes
-USE_GL=			yes
-USE_GNOME=
-USE_X_PREFIX=		yes
+USE_AUTOTOOLS=	libtool:15
+USE_GMAKE=	yes
+USE_GL=		yes
+USE_GETTEXT=	yes
+WANT_GNOME=	yes
+USE_X_PREFIX=	yes
 
-CONFIGURE_ARGS=		--program-prefix=""
+CONFIGURE_ARGS=	--program-prefix=""
 CONFIGURE_ENV=	\
 	LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib -lm ${PTHREAD_LIBS}" \
 	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include ${PTHREAD_CFLAGS}"
 
-OPTIONS=		LUA "Lua support" off \
-			GLUT "Glut interface" off \
-			GTK "Gtk+ interface" off \
-			GNOME "GNOME interface" off \
-			KDE "KDE interface" off
+UI_LIST=	glut gtk gnome
+CELESTIA_UI?=	glut
+CONFLICTS=	${UI_LIST:S|${CELESTIA_UI}||:S|^|celestia-|:S|$|-[0-9]*|} # lol
+
+.if ${CELESTIA_UI} == "glut"
+CONFIGURE_ARGS+=	--with-glut
+LIB_DEPENDS+=	glut:${PORTSDIR}/graphics/libglut
+.elif ${CELESTIA_UI} == "gtk"
+CONFIGURE_ARGS+=	--with-gtk
+USE_GNOME+=	gtk20
+.elif ${CELESTIA_UI} == "gnome"
+CONFIGURE_ARGS+=	--with-gnome
+USE_GNOME+=	libgnomeui
+GCONF_SCHEMAS=	celestia.schemas
+PKGMESSAGE=	${PKGDIR}/pkg-message.gnome
+.else
+IGNORE=		invalid CELESTIA_UI value "${CELESTIA_UI}" -- valid values are ${UI_LIST}
+.endif
+
+.if ${CELESTIA_UI} == "gtk" || ${CELESTIA_UI} == "gnome"
+USE_GNOME+=	gnomehack
+LIB_DEPENDS+=	gtkglext-x11-1.0:${PORTSDIR}/x11-toolkits/gtkglext
+STARTUP_NOTIFY=	true
+PLIST_FILES+=	share/celestia/celestia-logo.png share/celestia/celestiaui.xml
+.else
+STARTUP_NOTIFY=	false
+.endif
+
+PORTDOCS=	AUTHORS CelestiaKeyAssignments.txt ChangeLog \
+		KbdMouseJoyControls.txt README TODO TRANSLATORS \
+		coding-standards.html devguide.txt
+
+DESKTOP_ENTRIES="Celestia" \
+		"Explore space" \
+		"celestia.png" \
+		"celestia" \
+		"Application;Astronomy;Science;Education;" \
+		${STARTUP_NOTIFY}
+
+OPTIONS=	LUA "Lua support" on
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-BROKEN=			"Does not compile on FreeBSD 4.x"
+IGNORE=		does not compile on FreeBSD 4.x
 .endif
 
 .if defined(WITH_LUA)
-LIB_DEPENDS+=		lua.5:${PORTSDIR}/lang/lua50
+LIB_DEPENDS+=	lua.5:${PORTSDIR}/lang/lua50
 CONFIGURE_ARGS+=	--with-lua
 .endif
 
-.if defined(WITH_GNOME)
-PKGMESSAGE=		${WRKDIR}/message
-WITH_GTK=		yes		# GNOME requires GTK+
-USE_GNOME+=		libgnomeui
-CONFIGURE_ARGS+=	--with-gnome
-GCONF_SCHEMAS=		celestia.schemas
-.endif
-
-.if defined(WITH_GTK)
-USE_GNOME+=		gnomehack gnomeprefix gtk20
-LIB_DEPENDS+=		gtkglext-x11-1.0:${PORTSDIR}/x11-toolkits/gtkglext
-CONFIGURE_ARGS+=	--with-gtk
-PLIST_SUB+=		DATADIR="share/gnome/celestia"
-.else
-PLIST_SUB+=		DATADIR="share/celestia"
-.endif
-
-.if defined(WITH_KDE)
-USE_KDELIBS_VER=	3
-CONFIGURE_ARGS+=	--with-kde
-# KDE_LIBS_VER is defined after including bsd.port.pre.mk, so we need
-# to include bsd.kde.mk manually.
-.include "${PORTSDIR}/Mk/bsd.kde.mk"
-.endif
-
-.if !defined(WITH_KDE) && !defined(WITH_GTK) && !defined(WITH_GNOME)
-WITH_GLUT=		yes		# an UI is required, fallback to Glut
-.endif
-
-.if defined(WITH_GLUT)
-CONFIGURE_ARGS+=	--with-glut
-.endif
-
-.if defined(WITH_GTK) || defined(WITH_GLUT)
-# libglut is only required for Glut and GTK+ interfaces
-LIB_DEPENDS+=		glut:${PORTSDIR}/graphics/libglut
-.endif
-
 pre-patch:
-	@${REINPLACE_CMD} -e \
-		's|-O2||g; \
-		 s|-Wall||g; \
-		 s|-ffast-math||g; \
-		 s|-fexpensive-optimizations||g; \
-		 s|"x" = "y"|"x" = "x"|' \
-		${WRKSRC}/configure
+.for o in -O2 -Wall -ffast-math -fexpensive-optimizations -fomit-frame-pointer
+	@${REINPLACE_CMD} -e 's|${o}||g' ${WRKSRC}/configure
+.endfor
 	@${REINPLACE_CMD} -e 's|COPYING||g' ${WRKSRC}/Makefile.in
-.if !defined(WITH_GNOME)
-	@${REINPLACE_CMD} -e \
-		's|\(install-pkgdataDATA\) install-schemasDATA|\1|; \
-		 s|\$$(DESTDIR)\$$(schemasdir)||' \
-		${WRKSRC}/src/celestia/gtk/data/Makefile.in
-.endif
-
-pre-install:
-	@${RM} -f ${PLIST}
-.if defined(WITH_GNOME)
-	@${ECHO_CMD} "The GConf daemon must be restarted with the commands:" \
-		>> ${PKGMESSAGE}
-	@${ECHO_CMD} "gconftool-2 --shutdown && gconftool-2 --spawn" \
-		>> ${PKGMESSAGE}
-	@${ECHO_CMD} share/gnome/applications/celestia.desktop >> ${PLIST}
-	@${ECHO_CMD} share/gnome/pixmaps/celestia.png >> ${PLIST}
-.endif
-.for ii in bin/celestia %%DATADIR%%/celestia.png %%DATADIR%%/controls.txt
-	@${ECHO_CMD} ${ii} >> ${PLIST}
-.endfor
-	@${FIND} ${WRKSRC}/data/ -name '*.???' | \
-		${SED} -e "s:^${WRKSRC}/:%%DATADIR%%/:g" >> ${PLIST}
-	@${FIND} ${WRKSRC}/extras/ -name '*.ssc' | \
-		${SED} -e "s:^${WRKSRC}/:%%DATADIR%%/:g" >> ${PLIST}
-	@${FIND} ${WRKSRC}/fonts/ -name '*.txf' | \
-		${SED} -e "s:^${WRKSRC}/:%%DATADIR%%/:g" >> ${PLIST}
-.for ii in celestia.cfg demo.cel guide.cel start.cel
-	@${ECHO_CMD} %%DATADIR%%/${ii} >> ${PLIST}
-.endfor
-.if !defined(NOPORTDOCS)
-	@${FIND} ${WRKSRC}/manual/ -name '*.???*' | \
-		${SED} -e "s:^${WRKSRC}/:%%DATADIR%%/:g" >> ${PLIST}
-.endif
-	@${FIND} ${WRKSRC}/models/ -name '*.???*' | \
-		${SED} -e "s:^${WRKSRC}/:%%DATADIR%%/:g" >> ${PLIST}
-	@${FIND} ${WRKSRC}/shaders/ -name '*.fp' | \
-		${SED} -e "s:^${WRKSRC}/:%%DATADIR%%/:g" >> ${PLIST}
-	@${FIND} ${WRKSRC}/shaders/ -name '*.vp' | \
-		${SED} -e "s:^${WRKSRC}/:%%DATADIR%%/:g" >> ${PLIST}
-	@${FIND} ${WRKSRC}/textures/ -name '*.jpg' -o -name '*.png'| \
-		${SED} -e "s:^${WRKSRC}/:%%DATADIR%%/:g" >> ${PLIST}
-.for ii in /data /extras /fonts /manual /models /shaders \
-	/textures/hires /textures/lores /textures/medres /textures /
-	@${ECHO_CMD} @dirrm %%DATADIR%%${ii} >> ${PLIST}
-.endfor
 
 post-install:
+	${INSTALL_DATA} ${WRKSRC}/src/celestia/gtk/data/celestia.png \
+		${PREFIX}/share/pixmaps
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-.for ii in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${ii} ${DOCSDIR}
-.endfor
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
-.if defined(WITH_GNOME)
+.if ${CELESTIA_UI} == "gnome"
 	@${CAT} ${PKGMESSAGE}
 .endif
 
