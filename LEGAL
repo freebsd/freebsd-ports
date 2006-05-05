@@ -466,9 +466,6 @@ PDFlib-Lite-*.tar.gz	print/pdflib		Many odd restrictions on
 perforce/*		devel/perforce		Restricted distribution
 pgp*			security/pgp*		Various locality restrictions
 pim6dd-*.tar.gz		net/pim6dd		Cannot be sold for profit
-plan9port-*		devel/plan9port		Distribution of a font inside
-						the distfile is allowed only
-						with the Plan9 OS
 platon*			biology/platon		US$ 5000 for commercial users,
 						(free for academic)
 pmake-*.tar.Z		devel/pmake		Non-commercial use only

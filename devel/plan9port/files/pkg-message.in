@@ -5,12 +5,14 @@ PATH=$PATH:$PLAN9/bin; export PATH
 BUGS
 This port can cause some problems if you install certain
 ports:
-www/mozilla -> $PLAN9/bin/zip (mozilla doesn't build if
-archivers/zip is not already installed)
-x11/kdebase3 -> build crash in a fish.cpp file
+- www/mozilla need archivers/zip to build. If zip
+is not installed before you build it, this port will
+detect $PLAN9/bin/zip and try to use it unsuccessfully
+because they do not share the same options.
 
+- x11/kdebase3 build crash in a fish.cpp file if you try
+to build it with $PLAN9.
 I suggest you to unset $PLAN9 before building any other ports
 if you don't want to fall into these problems and reset it after.
 
-venti/fmt* commands works only with normal files but the
-author is actually working on it.
+- venti/fmt* commands work only with normal files.

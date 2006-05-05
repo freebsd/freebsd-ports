@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	plan9port
-PORTVERSION=	20060214
+PORTVERSION=	20060402
 CATEGORIES=	devel plan9
 MASTER_SITES=	http://swtch.com/plan9port/ \
 		ftp://quenix2.dyndns.org/FreeBSD/ports/distfiles/
@@ -15,8 +15,6 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	serge.gagnon@b2b2c.ca
 COMMENT=	Port of the bulk of the Plan9 software build environment to Unix
 
-RESTRICTED=	Redistribution is not permitted
-USE_PERL5=	YES
 USE_XLIB=	YES
 WRKSRC=		${WRKDIR}/plan9
 PLIST=		${WRKDIR}/.PLIST
@@ -43,7 +41,8 @@ MAN1=		9term.1 acmeevent.1 ascii.1 acme.1 9p.1 basename.1 cal.1 \
 		sed.1 src.1 tr2post.1 troff2html.1 tweak.1 units.1 vac.1 \
 		web.1 wintext.1 ndb.1 passwd.1 secstored.1 tar.1 pem.1 \
 		readcons.1 rsa.1 ssh-agent.1 netfiles.1 sftpcache.1 \
-		hist.1 venti.1 yesterday.1 hget.1
+		hist.1 venti.1 yesterday.1 hget.1 snarfer.1 htmlroff.1 \
+		resample.1
 
 MAN3=		ioproc.3 bio.3 fmtinstall.3 isalpharune.3 print.3 rune.3 \
 		runestrcat.3 thread.3 9p.3 matrix.3 arith3.3 ctime.3 \
@@ -74,7 +73,7 @@ MAN4=		0intro.4 9pserve.4 acme.4 import.4 plumber.4 ramfs.4 \
 
 MAN7=		utf.7 regexp.7 0intro.7 color.7 face.7 font.7 image.7 \
 		man.7 map.7 ms.7 plot.7 plumb.7 thumbprint.7 ndb.7 \
-		keyboard.7 mpictures.7 venti.7
+		keyboard.7 mpictures.7 venti.7 mhtml.7 htmlroff.7
 MAN8=		listen1.8 vbackup.8 venti-backup.8 venti-fmt.8 venti.8
 
 MAN9=		0intro.9p attach.9p clunk.9p error.9p flush.9p open.9p \
@@ -89,9 +88,15 @@ EMPTY_DIRS=	plan9/log \
 		plan9/dist/debian \
 		plan9/dist/pkg
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		does not compile
+.endif
+
 post-patch:
-	${FIND} ${WRKSRC}/man -type f -regex ".*\.[0-9?]$\" \
-	 | ${XARGS} ${REINPLACE_CMD} -e 's|\\\*9|${PREFIX}|'
+	@${FIND} ${WRKSRC}/man -type f -regex ".*\.[0-9?]$\" \
+	 | ${XARGS} ${REINPLACE_CMD} -e 's|\\\*9|${PREFIX}/plan9|'
 
 do-build:
 	cd ${WRKSRC} && ./INSTALL
@@ -121,4 +126,4 @@ post-install:
 	@${ECHO_CMD} ""
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
