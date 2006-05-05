@@ -5,10 +5,10 @@ These programs licensed under the terms described in the
 Web page http://www.research.att.com/sw/tools/graphviz/license/.
 
 The package contains:
-    dotty - customizable X windows graph viewer written in the Lefty editor
+    dotty  - customizable X windows graph viewer written in the Lefty editor
     tcldot - customizable TCL/tk graph viewer written by John Ellson
-    dot - batch program for drawing directed graphs as hierarchies
-    neato - batch program for drawing undirected graphs using Kamada-Kawai
-        spring models
+    dot    - batch program for drawing directed graphs as hierarchies
+    neato  - batch program for drawing undirected graphs using Kamada-Kawai
+             spring models
 
 WWW: http://www.research.att.com/sw/tools/graphviz/
