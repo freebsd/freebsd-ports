@@ -6,7 +6,7 @@
 
 PORTNAME=	pyicq
 PORTVERSION=	0.7a
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.blathersource.org/download.php/pyicq-t/
 PKGNAMEPREFIX=	jabber-
@@ -46,16 +46,13 @@ SUB_LIST+=	JABBER_REQUIRE=jabberd
 
 SUB_LIST+=	JABBER_USER=${JABBER_USER}
 
-post-extract:
-	@${FIND} ${WRKSRC}/src -type d -name '.svn' | ${XARGS} ${RM} -rf
-
 post-patch:
 	@${REINPLACE_CMD} -e '/spooldir/s|\.|/var/spool/jabber|' \
 		-e '/pid/s|PyICQt.pid|/var/jabberd/pid/PyICQt.pid|' \
 		${WRKSRC}/config_example.xml
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g; s|%%PYTHON_CMD%%|${PYTHON_CMD}|g' \
 		${WRKSRC}/src/main.py
-	@${REINPLACE_CMD} -i "" 's|#!/usr/bin/python|#!${PYTHON_CMD}|' \
+	@${REINPLACE_CMD} -i "" 's|#!/usr/bin/env .*python.*$$|#!${PYTHON_CMD}|' \
 		${WRKSRC}/PyICQt.py
 	@${RM} ${WRKSRC}/src/main.py.*
 
