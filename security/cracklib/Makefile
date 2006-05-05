@@ -19,7 +19,7 @@ MAN3=		cracklib.3
 MLINKS=		cracklib.3 FascistCheck.3
 INSTALLS_SHLIB=	yes
 
-su-pre-install:
+pre-su-install:
 	${INSTALL_DATA} ${WRKSRC}/cracklib/libcrack.a ${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/cracklib/libcrack.so.1 ${PREFIX}/lib
 	${LN} -sf libcrack.so.1 ${PREFIX}/lib/libcrack.so
