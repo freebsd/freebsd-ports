@@ -7,7 +7,7 @@
 
 PORTNAME=	gnutls-devel
 PORTVERSION=	1.3.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security net
 MASTER_SITES=	http://josefsson.org/gnutls/releases/ \
 		${MASTER_SITE_GNUPG} \
@@ -28,8 +28,8 @@ LIB_DEPENDS=	gcrypt.13:${PORTSDIR}/security/libgcrypt \
 LIB_DEPENDS+=	opencdk.8:${PORTSDIR}/security/opencdk
 .endif
 
-.if defined(WITH_LIBTASN1) || exists(${LOCALBASE}/lib/libtasn1.so.2)
-LIB_DEPENDS+=	tasn1.2:${PORTSDIR}/security/libtasn1
+.if defined(WITH_LIBTASN1) || exists(${LOCALBASE}/lib/libtasn1.so.3)
+LIB_DEPENDS+=	tasn1.3:${PORTSDIR}/security/libtasn1
 .endif
 
 CONFLICTS=	gnutls-[0-9]*
@@ -38,7 +38,6 @@ USE_BZIP2=	yes
 USE_ICONV=	yes
 USE_GETTEXT=	yes
 USE_GNOME=	pkgconfig
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
