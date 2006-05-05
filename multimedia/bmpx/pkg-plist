@@ -1,18 +1,11 @@
-bin/bmpx-enqueue-uris
-bin/bmpx-enqueue-files
-bin/bmpx-play-files
-bin/bmpx-web
-bin/bmpx-web-ajax
-bin/bmpx-dbus-introspect
-bin/bmpx-dbus-system-control
-bin/bmpx-dbus-query-list
-bin/bmpx-medialib-browser
-bin/bmpx
-%%PYTHON%%bin/bmpx-client-pygtk
-%%PYTHON%%bin/bmpty
-include/bmpx/dbus.h
-include/libchroma/chroma-list-selection.h
+bin/bmp-enqueue-files-2.0
+bin/bmp-enqueue-uris-2.0
+bin/bmp-play-files-2.0
+bin/beep-media-player-2
+include/bmp-2.0/bmp/dbus.h
+include/bmp-2.0/bmp/metadata.h
 include/libchroma/chroma-list-column.h
+include/libchroma/chroma-list-selection.h
 include/libchroma/chroma-list.h
 include/libchroma/chroma-vscrollbar.h
 include/libchroma/dnd.h
@@ -33,58 +26,53 @@ include/libhrel/libhrel/relation_union.h
 include/libhrel/libhrel/stack.h
 include/libhrel/libhrel/tuple.h
 include/libhrel/libhrel/types.h
-libexec/bmpx-bin
-lib/bmpx/plugins/container/libcontainer_folder.a
-lib/bmpx/plugins/container/libcontainer_folder.so
-lib/bmpx/plugins/container/libcontainer_folder.so.0
-lib/bmpx/plugins/container/libcontainer_m3u.a
-lib/bmpx/plugins/container/libcontainer_m3u.so
-lib/bmpx/plugins/container/libcontainer_m3u.so.0
-lib/bmpx/plugins/container/libcontainer_pls.a
-lib/bmpx/plugins/container/libcontainer_pls.so
-lib/bmpx/plugins/container/libcontainer_pls.so.0
-lib/bmpx/plugins/container/libcontainer_query.a
-lib/bmpx/plugins/container/libcontainer_query.so
-lib/bmpx/plugins/container/libcontainer_query.so.0
-lib/bmpx/plugins/container/libcontainer_xspf.a
-lib/bmpx/plugins/container/libcontainer_xspf.so
-lib/bmpx/plugins/container/libcontainer_xspf.so.0
-lib/bmpx/plugins/flow/libflow_linear.a
-lib/bmpx/plugins/flow/libflow_linear.so
-lib/bmpx/plugins/flow/libflow_linear.so.0
-lib/bmpx/plugins/flow/libflow_shuffle.a
-lib/bmpx/plugins/flow/libflow_shuffle.so
-lib/bmpx/plugins/flow/libflow_shuffle.so.0
-lib/bmpx/plugins/transport/libtransport_cdda.a
-lib/bmpx/plugins/transport/libtransport_cdda.so
-lib/bmpx/plugins/transport/libtransport_cdda.so.0
-lib/bmpx/plugins/transport/libtransport_file.a
-lib/bmpx/plugins/transport/libtransport_file.so
-lib/bmpx/plugins/transport/libtransport_file.so.0
-lib/bmpx/plugins/transport/libtransport_http.a
-lib/bmpx/plugins/transport/libtransport_http.so
-lib/bmpx/plugins/transport/libtransport_http.so.0
-lib/bmpx/plugins/transport/libtransport_query.a
-lib/bmpx/plugins/transport/libtransport_query.so
-lib/bmpx/plugins/transport/libtransport_query.so.0
-lib/libchroma.a
+libexec/beep-media-player-2-bin
+lib/bmp-2.0/plugins/container/libcontainer_folder.la
+lib/bmp-2.0/plugins/container/libcontainer_folder.so
+lib/bmp-2.0/plugins/container/libcontainer_folder.so.0
+lib/bmp-2.0/plugins/container/libcontainer_m3u.la
+lib/bmp-2.0/plugins/container/libcontainer_m3u.so
+lib/bmp-2.0/plugins/container/libcontainer_m3u.so.0
+lib/bmp-2.0/plugins/container/libcontainer_pls.la
+lib/bmp-2.0/plugins/container/libcontainer_pls.so
+lib/bmp-2.0/plugins/container/libcontainer_pls.so.0
+lib/bmp-2.0/plugins/container/libcontainer_query.la
+lib/bmp-2.0/plugins/container/libcontainer_query.so
+lib/bmp-2.0/plugins/container/libcontainer_query.so.0
+lib/bmp-2.0/plugins/container/libcontainer_xspf.la
+lib/bmp-2.0/plugins/container/libcontainer_xspf.so
+lib/bmp-2.0/plugins/container/libcontainer_xspf.so.0
+lib/bmp-2.0/plugins/flow/libflow_linear.la
+lib/bmp-2.0/plugins/flow/libflow_linear.so
+lib/bmp-2.0/plugins/flow/libflow_linear.so.0
+lib/bmp-2.0/plugins/flow/libflow_shuffle.la
+lib/bmp-2.0/plugins/flow/libflow_shuffle.so
+lib/bmp-2.0/plugins/flow/libflow_shuffle.so.0
+lib/bmp-2.0/plugins/transport/libtransport_cdda.la
+lib/bmp-2.0/plugins/transport/libtransport_cdda.so
+lib/bmp-2.0/plugins/transport/libtransport_cdda.so.0
+lib/bmp-2.0/plugins/transport/libtransport_file.la
+lib/bmp-2.0/plugins/transport/libtransport_file.so
+lib/bmp-2.0/plugins/transport/libtransport_file.so.0
+lib/bmp-2.0/plugins/transport/libtransport_http.la
+lib/bmp-2.0/plugins/transport/libtransport_http.so
+lib/bmp-2.0/plugins/transport/libtransport_http.so.0
+lib/bmp-2.0/plugins/transport/libtransport_query.la
+lib/bmp-2.0/plugins/transport/libtransport_query.so
+lib/bmp-2.0/plugins/transport/libtransport_query.so.0
+lib/libchroma.la
 lib/libchroma.so
 lib/libchroma.so.0
-lib/libhrel.a
+lib/libhrel.la
 lib/libhrel.so
 lib/libhrel.so.1
-@comment %%PYTHON_XCHAT%%lib/xchat/plugins/bmpx-xchat.py
+libdata/pkgconfig/bmp-2.0.pc
 libdata/pkgconfig/hrel.pc
+libdata/pkgconfig/libchroma.pc
 share/libhrel/examples/hrel-demo
-share/applications/bmpx.desktop
-share/applications/bmpx_enqueue.desktop
-share/applications/bmpx_play.desktop
-%%PYTHON%%share/bmpx-clients/pygtk/bmpx-client-image.png
-%%PYTHON%%share/bmpx-clients/pygtk/bmpx_client.glade
-%%PYTHON%%share/bmpx-clients/pygtk/bmpx-medialib-browser.in
-%%PYTHON%%share/bmpx-clients/pygtk/bmpx_medialib_browser.glade
-%%DATADIR%%/bmpx-web/functions.js
-%%DATADIR%%/bmpx-web/header.png
+share/applications/bmp-2.0.desktop
+share/applications/bmp-enqueue-2.0.desktop
+share/applications/bmp-play-2.0.desktop
 %%DATADIR%%/data/GPL.txt
 %%DATADIR%%/glade/dialog_add_files.glade
 %%DATADIR%%/glade/dialog_bookmarks.glade
@@ -143,18 +131,22 @@ share/applications/bmpx_play.desktop
 %%DATADIR%%/icons/tray-icons/tray-icon-exit.png
 %%DATADIR%%/icons/tray-icons/tray-icon-paused.png
 %%DATADIR%%/icons/tray-icons/tray-icon-playing.png
-%%DATADIR%%/images/preferences/appearance.png
-%%DATADIR%%/images/preferences/eq.png
-%%DATADIR%%/images/preferences/playback.png
-%%DATADIR%%/images/preferences/playlist.png
-%%DATADIR%%/images/preferences/plugins.png
 %%DATADIR%%/images/about-logo.png
 %%DATADIR%%/images/audio.png
+%%DATADIR%%/images/audioscrobbler.png
 %%DATADIR%%/images/header-bookmarks.png
 %%DATADIR%%/images/header-library.png
 %%DATADIR%%/images/header-streams.png
 %%DATADIR%%/images/icon-bookmark.png
 %%DATADIR%%/images/icon-playlist.png
+%%DATADIR%%/images/lastfm-logo.png
+%%DATADIR%%/images/preferences/appearance.png
+%%DATADIR%%/images/preferences/eq.png
+%%DATADIR%%/images/preferences/lastfm.png
+%%DATADIR%%/images/preferences/library.png
+%%DATADIR%%/images/preferences/playback.png
+%%DATADIR%%/images/preferences/playlist.png
+%%DATADIR%%/images/preferences/plugins.png
 %%DATADIR%%/images/shoutcast.png
 %%DATADIR%%/images/splash.png
 %%DATADIR%%/images/wait.gif
@@ -180,52 +172,52 @@ share/applications/bmpx_play.desktop
 %%DATADIR%%/ui/plmanager.ui
 %%DATADIR%%/ui/tracklist.ui
 %%DATADIR%%/ui/trayicon.ui
-share/icons/hicolor/48x48/apps/bmpx.png
 share/locale/af/LC_MESSAGES/bmpx.mo
 share/locale/bg/LC_MESSAGES/bmpx.mo
 share/locale/cs/LC_MESSAGES/bmpx.mo
 share/locale/de/LC_MESSAGES/bmpx.mo
 share/locale/el/LC_MESSAGES/bmpx.mo
 share/locale/es/LC_MESSAGES/bmpx.mo
+share/locale/et/LC_MESSAGES/bmpx.mo
 share/locale/fi/LC_MESSAGES/bmpx.mo
 share/locale/fr/LC_MESSAGES/bmpx.mo
 share/locale/hu/LC_MESSAGES/bmpx.mo
 share/locale/ja/LC_MESSAGES/bmpx.mo
 share/locale/lt/LC_MESSAGES/bmpx.mo
+share/locale/nl/LC_MESSAGES/bmpx.mo
 share/locale/pl/LC_MESSAGES/bmpx.mo
 share/locale/pt_BR/LC_MESSAGES/bmpx.mo
 share/locale/ru/LC_MESSAGES/bmpx.mo
 share/locale/sv/LC_MESSAGES/bmpx.mo
 share/locale/zh_CN/LC_MESSAGES/bmpx.mo
-@dirrm %%DATADIR%%/bmpx-web
-@dirrm %%DATADIR%%/ui
-@dirrm %%DATADIR%%/skins/default
-@dirrm %%DATADIR%%/skins
+%%DBUS%%%%LOCALBASE%%/share/dbus-1/services/org.beepmediaplayer.bmp.service
+@dirrm %%DATADIR%%/data
+@dirrm %%DATADIR%%/glade
+@dirrm %%DATADIR%%/icons/themes/darksphere
+@dirrm %%DATADIR%%/icons/themes/display
+@dirrm %%DATADIR%%/icons/themes/plastic
+@dirrm %%DATADIR%%/icons/themes/red
+@dirrm %%DATADIR%%/icons/themes
+@dirrm %%DATADIR%%/icons/tray-icons
+@dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%/images/preferences
 @dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%/icons/tray-icons
-@dirrm %%DATADIR%%/icons/themes/red
-@dirrm %%DATADIR%%/icons/themes/plastic
-@dirrm %%DATADIR%%/icons/themes/display
-@dirrm %%DATADIR%%/icons/themes/darksphere
-@dirrm %%DATADIR%%/icons/themes
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%/glade
-@dirrm %%DATADIR%%/data
+@dirrm %%DATADIR%%/skins/default
+@dirrm %%DATADIR%%/skins
+@dirrm %%DATADIR%%/ui
 @dirrm %%DATADIR%%
-@dirrm lib/bmpx/plugins/transport
-@dirrm lib/bmpx/plugins/flow
-@dirrm lib/bmpx/plugins/container
-@dirrm lib/bmpx/plugins
-@dirrm lib/bmpx
+@dirrm lib/bmp-2.0/plugins/container
+@dirrm lib/bmp-2.0/plugins/flow
+@dirrm lib/bmp-2.0/plugins/transport
+@dirrm lib/bmp-2.0/plugins
+@dirrm lib/bmp-2.0
 @dirrm include/libchroma
 @dirrm include/libhrel/libhrel
 @dirrm include/libhrel
-@dirrm include/bmpx
+@dirrm include/bmp-2.0/bmp
+@dirrm include/bmp-2.0
 @dirrm share/libhrel/examples
 @dirrm share/libhrel
-%%PYTHON%%@dirrm share/bmpx-clients/pygtk
-%%PYTHON%%@dirrm share/bmpx-clients
 @dirrmtry share/applications
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
