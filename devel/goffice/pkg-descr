@@ -7,3 +7,5 @@ conceptually simple, but complex to implement fully.
     - undo/redo
 
 Goffice provides a single library for performing such operations.
+
+WWW: http://live.gnome.org/libgoffice
