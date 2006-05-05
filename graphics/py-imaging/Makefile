@@ -7,7 +7,7 @@
 
 PORTNAME=	imaging
 PORTVERSION=	1.1.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics python
 MASTER_SITES=	http://effbot.org/downloads/ \
 	        http://www.pythonware.net/storage/
@@ -31,11 +31,11 @@ PORTDOCS=	*
 DOCDIRS=	${PREFIX}/share/doc/py-imaging
 EXAMPLESDIR=	${PREFIX}/share/examples/py-imaging
 
-OPTIONS=	TKINTER "Build with tkinter for X support" off
+OPTIONS=	TKINTER "Build with tkinter for X support" on
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_TKINTER) || exists(${PYTHON_SITELIBDIR}/_tkinter.so)
+.if !defined(WITHOUT_TKINTER)
 BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
 PLIST_SUB+=	TKINTER=""
