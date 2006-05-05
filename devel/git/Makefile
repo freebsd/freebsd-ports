@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	git
-PORTVERSION=	1.2.6
+PORTVERSION=	1.3.2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.kernel.org/pub/software/scm/git/
 
@@ -25,11 +25,13 @@ CONFLICTS=	cogito-0.1[012] git-4.*
 
 MAN1=		git-add.1 \
 		git-am.1 \
+		git-annotate.1 \
 		git-apply.1 \
 		git-applymbox.1 \
 		git-applypatch.1 \
 		git-archimport.1 \
 		git-bisect.1 \
+		git-blame.1 \
 		git-branch.1 \
 		git-cat-file.1 \
 		git-check-ref-format.1 \
@@ -37,6 +39,7 @@ MAN1=		git-add.1 \
 		git-checkout.1 \
 		git-cherry-pick.1 \
 		git-cherry.1 \
+		git-clean.1 \
 		git-clone-pack.1 \
 		git-clone.1 \
 		git-commit-tree.1 \
@@ -45,6 +48,7 @@ MAN1=		git-add.1 \
 		git-count-objects.1 \
 		git-cvsexportcommit.1 \
 		git-cvsimport.1 \
+		git-cvsserver.1 \
 		git-daemon.1 \
 		git-describe.1 \
 		git-diff-files.1 \
@@ -62,6 +66,7 @@ MAN1=		git-add.1 \
 		git-hash-object.1 \
 		git-http-fetch.1 \
 		git-http-push.1 \
+		git-imap-send.1 \
 		git-index-pack.1 \
 		git-init-db.1 \
 		git-local-fetch.1 \
@@ -72,11 +77,13 @@ MAN1=		git-add.1 \
 		git-ls-tree.1 \
 		git-mailinfo.1 \
 		git-mailsplit.1 \
+		git-merge.1 \
 		git-merge-base.1 \
 		git-merge-index.1 \
 		git-merge-one-file.1 \
-		git-merge.1 \
+		git-merge-tree.1 \
 		git-mktag.1 \
+		git-mktree.1 \
 		git-mv.1 \
 		git-name-rev.1 \
 		git-pack-objects.1 \
@@ -101,6 +108,7 @@ MAN1=		git-add.1 \
 		git-rev-list.1 \
 		git-rev-parse.1 \
 		git-revert.1 \
+		git-rm.1 \
 		git-send-email.1 \
 		git-send-pack.1 \
 		git-sh-setup.1 \
