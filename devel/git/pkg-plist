@@ -1,11 +1,13 @@
 bin/git
 bin/git-add
 bin/git-am
+bin/git-annotate
 bin/git-apply
 bin/git-applymbox
 bin/git-applypatch
 bin/git-archimport
 bin/git-bisect
+bin/git-blame
 bin/git-branch
 bin/git-cat-file
 bin/git-check-ref-format
@@ -13,6 +15,7 @@ bin/git-checkout
 bin/git-checkout-index
 bin/git-cherry
 bin/git-cherry-pick
+bin/git-clean
 bin/git-clone
 bin/git-clone-pack
 bin/git-commit
@@ -21,6 +24,7 @@ bin/git-convert-objects
 bin/git-count-objects
 bin/git-cvsexportcommit
 bin/git-cvsimport
+bin/git-cvsserver
 bin/git-daemon
 bin/git-describe
 bin/git-diff
@@ -38,6 +42,7 @@ bin/git-grep
 bin/git-hash-object
 bin/git-http-fetch
 bin/git-http-push
+bin/git-imap-send
 bin/git-index-pack
 bin/git-init-db
 bin/git-local-fetch
@@ -57,7 +62,9 @@ bin/git-merge-ours
 bin/git-merge-recursive
 bin/git-merge-resolve
 bin/git-merge-stupid
+bin/git-merge-tree
 bin/git-mktag
+bin/git-mktree
 bin/git-mv
 bin/git-name-rev
 bin/git-pack-objects
@@ -82,6 +89,7 @@ bin/git-resolve
 bin/git-rev-list
 bin/git-rev-parse
 bin/git-revert
+bin/git-rm
 bin/git-send-pack
 bin/git-sh-setup
 bin/git-shell
@@ -119,6 +127,7 @@ share/git-core/templates/hooks/post-commit
 share/git-core/templates/hooks/post-update
 share/git-core/templates/hooks/pre-applypatch
 share/git-core/templates/hooks/pre-commit
+share/git-core/templates/hooks/pre-rebase
 share/git-core/templates/hooks/update
 share/git-core/templates/info/exclude
 @dirrm share/git-core/python
