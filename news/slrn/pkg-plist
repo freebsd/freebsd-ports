@@ -39,21 +39,21 @@ bin/slrnpull
 %%NLS%%share/locale/ru/LC_MESSAGES/slrn.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/slrn.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/slrn.mo
-share/slrn/macros/color.sl
-share/slrn/macros/gsort.sl
-share/slrn/macros/ispell.sl
-share/slrn/macros/latin2.sl
-share/slrn/macros/multipart.sl
-share/slrn/macros/nn.sl
-share/slrn/macros/posthook.sl
-share/slrn/macros/search.sl
-share/slrn/macros/tin-art.sl
-share/slrn/macros/tin-group.sl
-share/slrn/macros/ttyprint.sl
-share/slrn/macros/util.sl
-share/slrn/macros/varset.sl
-share/slrn/macros/xcomment.sl
-@dirrm share/slrn/macros
-@dirrm share/slrn
+%%DATADIR%%/macros/color.sl
+%%DATADIR%%/macros/gsort.sl
+%%DATADIR%%/macros/ispell.sl
+%%DATADIR%%/macros/latin2.sl
+%%DATADIR%%/macros/multipart.sl
+%%DATADIR%%/macros/nn.sl
+%%DATADIR%%/macros/posthook.sl
+%%DATADIR%%/macros/search.sl
+%%DATADIR%%/macros/tin-art.sl
+%%DATADIR%%/macros/tin-group.sl
+%%DATADIR%%/macros/ttyprint.sl
+%%DATADIR%%/macros/util.sl
+%%DATADIR%%/macros/varset.sl
+%%DATADIR%%/macros/xcomment.sl
+@dirrm %%DATADIR%%/macros
+@dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/slrnpull
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
