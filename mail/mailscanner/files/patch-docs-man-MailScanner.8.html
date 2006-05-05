@@ -1,0 +1,104 @@
+--- ../MailScanner-install-4.53.7.orig/docs/man/MailScanner.8.html	Wed May  3 21:16:27 2006
++++ docs/man/MailScanner.8.html	Wed May  3 21:33:15 2006
+@@ -1,5 +1,5 @@
+ <!-- Creator     : groff version 1.19 -->
+-<!-- CreationDate: Wed Jan  4 13:45:56 2006 -->
++<!-- CreationDate: Wed May  3 21:32:34 2006 -->
+ <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+ <html>
+@@ -40,7 +40,9 @@
+ <td width="11%"></td>
+ <td width="89%">
+ <p><b>MailScanner</b> [<i>&minus;v</i>]
+-[<i>configfile</i>]</p>
++[<i>&minus;&minus;lint</i>] [<i>&minus;&minus;debug</i>]
++[<i>&minus;&minus;debug&minus;sa</i>]
++[<i>&minus;&minus;help</i>] [<i>configfile</i>]</p>
+ </td>
+ </table>
+ <a name="DESCRIPTION"></a>
+@@ -78,15 +80,81 @@
+        cols="4" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+ <td width="11%"></td>
+-<td width="3%">
++<td width="9%">
+ 
+ <p><b>&minus;v</b></p>
+ </td>
+-<td width="8%"></td>
++<td width="2%"></td>
+ <td width="78%">
+ 
+ <p>Prints version information for Mailscanner and all used
+ perl&minus;modules.</p>
++</td>
++<tr valign="top" align="left">
++<td width="11%"></td>
++<td width="9%">
++
++<p><b>&minus;&minus;lint</b></p>
++</td>
++<td width="2%"></td>
++<td width="78%">
++
++<p>Checks config file, print what virus scanners you have
++chosen to use and check SpamAssassin configuration as
++well.</p>
++</td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="11%"></td>
++<td width="89%">
++<p><b>&minus;&minus;debug</b></p></td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="22%"></td>
++<td width="78%">
++<p>Starts MailScanner in debug mode. See MailScanner.conf
++&quot;Debug=yes&quot;.</p>
++</td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="11%"></td>
++<td width="89%">
++<p><b>&minus;&minus;debug&minus;sa</b></p></td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="22%"></td>
++<td width="78%">
++<p>Starts MailScanner in debug spamassassin mode. See
++MailScanner.conf &quot;Debug SpamAssassin=yes&quot;.</p>
++</td>
++</table>
++<!-- TABS -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="5" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="11%"></td>
++<td width="9%">
++
++<p><b>&minus;&minus;lint</b></p>
++</td>
++<td width="2%"></td>
++<td width="73%">
++
++<p>Test MailScanner config and SpamAssassin config.</p>
++</td>
++<td width="5%">
+ </td>
+ </table>
+ <a name="MTA SETUP"></a>

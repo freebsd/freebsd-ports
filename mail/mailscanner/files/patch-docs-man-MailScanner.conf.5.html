@@ -1,0 +1,594 @@
+--- ../MailScanner-install-4.53.7.orig/docs/man/MailScanner.conf.5.html	Wed May  3 21:16:27 2006
++++ docs/man/MailScanner.conf.5.html	Wed May  3 21:33:08 2006
+@@ -1,5 +1,5 @@
+ <!-- Creator     : groff version 1.19 -->
+-<!-- CreationDate: Wed Jan  4 14:36:14 2006 -->
++<!-- CreationDate: Wed May  3 21:32:34 2006 -->
+ <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+ <html>
+@@ -113,6 +113,13 @@
+ <!-- INDENTATION -->
+ <p>option = value</p>
+ <!-- INDENTATION -->
++<p>The following optional multipliers are supported: You can
++write &quot;50M&quot; instead of &quot;50000000&quot;. The
++multipliers supported are &quot;k&quot;, &quot;m&quot; and
++&quot;g&quot; to denote 1 thousand, 1 million and 1 billion
++(10^9) in upper or lower case. You must *not* put any spaces
++between the number and the multiplier character.</p>
++<!-- INDENTATION -->
+ <p>Many of the options can also be the filename of a
+ ruleset, which can be used to control features depending on
+ the addresses of the message, and/or the IP address where
+@@ -1064,6 +1071,73 @@
+ <tr valign="top" align="left">
+ <td width="11%"></td>
+ <td width="89%">
++<p><b>Use TNEF Contents</b></p></td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="22%"></td>
++<td width="78%">
++<p>Default: replace<br>
++When the TNEF (winmail.dat) attachments are expanded, should
++the attachments contained in there be added to the list of
++attachments in the message? If you set this to
++&quot;add&quot; or &quot;replace&quot; then recipients of
++messages sent in &quot;Outlook Rich Text Format&quot; (TNEF)
++will be able to read the attachments if they are not using
++Microsoft Outlook.</p>
++</td>
++</table>
++<!-- TABS -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="4" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="22%"></td>
++<td width="1%">
++
++<p>&bull;</p>
++</td>
++<td width="5%"></td>
++<td width="72%">
++
++<p>no: Leave winmail.dat TNEF attachments alone.</p>
++</td>
++<tr valign="top" align="left">
++<td width="22%"></td>
++<td width="1%">
++
++<p>&bull;</p>
++</td>
++<td width="5%"></td>
++<td width="72%">
++
++<p>add: Add the contents of winmail.dat as extra
++attachments, but also still include the winmail.dat file
++itself. This will result in TNEF messages being doubled in
++size.</p>
++</td>
++<tr valign="top" align="left">
++<td width="22%"></td>
++<td width="1%">
++
++<p>&bull;</p>
++</td>
++<td width="5%"></td>
++<td width="72%">
++
++<p>replace: Replace the winmail.dat TNEF attachment with
++the files it contains, and delete the original winmail.dat
++file itself. This means the message stays the same size, but
++is usable by non&minus;Outlook recipients.</p>
++</td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="11%"></td>
++<td width="89%">
+ <p><b>Deliver Unparsable TNEF</b></p></td>
+ </table>
+ <!-- INDENTATION -->
+@@ -1072,8 +1146,14 @@
+ <tr valign="top" align="left">
+ <td width="22%"></td>
+ <td width="78%">
+-<p>Default: no</p>
++<p>Default: no</p></td>
++</table>
+ <!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="28%"></td>
++<td width="72%">
+ <p>Rich Text format attachments produced by some versions of
+ Microsoft Outlook cannot be completely decoded at present.
+ Setting this option to yes allows compatibility with the
+@@ -1177,6 +1257,48 @@
+ <tr valign="top" align="left">
+ <td width="11%"></td>
+ <td width="89%">
++<p><b>Gunzip Command</b></p></td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="22%"></td>
++<td width="78%">
++<p>Default: /usr/bin/gunzip</p>
++<!-- INDENTATION -->
++<p>Where the &quot;gunzip&quot; command is installed. This
++is used for expanding .gz files. To disable gzipped file
++checking, set this value to blank and the timeout to 0.</p>
++</td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="11%"></td>
++<td width="89%">
++<p><b>Gunzip Timeout</b></p></td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="22%"></td>
++<td width="78%">
++<p>Default: 50</p>
++<!-- INDENTATION -->
++<p>The maximum length of time the &quot;gunzip&quot; command
++is allowed to run to expand 1 attachment file (in
++seconds).</p>
++</td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="11%"></td>
++<td width="89%">
+ <p><b>Unrar Command</b></p></td>
+ </table>
+ <!-- INDENTATION -->
+@@ -1225,6 +1347,30 @@
+ <tr valign="top" align="left">
+ <td width="11%"></td>
+ <td width="89%">
++<p><b>Find UU&minus;Encoded Files</b></p></td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="22%"></td>
++<td width="78%">
++<p>Default: no<br>
++A few viruses store their infected data in UU&minus;encoded
++files, to try to catch out virus scanners. This rarely
++succeeds at all. Setting this option to yes means that you
++can apply filename and filetype checks to the contents of
++UU&minus;encoded files. This may occasionally be useful, in
++which case you should set to yes. This can also be the
++filename of a ruleset.</p>
++</td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="11%"></td>
++<td width="89%">
+ <p><b>Block Encrypted Messages</b></p></td>
+ </table>
+ <!-- INDENTATION -->
+@@ -1508,7 +1654,7 @@
+ <tr valign="top" align="left">
+ <td width="22%"></td>
+ <td width="78%">
+-<p>Default: yes</p>
++<p>Default: auto</p>
+ <!-- INDENTATION -->
+ <p>Do you want to scan email for viruses? A few people
+ don&rsquo;t have virus scanner licence and so want to
+@@ -1519,7 +1665,9 @@
+ Scanners = none&quot; instead.<br>
+ If you want to be able to switch scanning on/off for
+ different users or different domains, set this to the
+-filename of a ruleset.</p>
++filename of a ruleset. If you set this to auto then it
++searches for and uses every available installed virus
++scanner.</p>
+ </td>
+ </table>
+ <!-- INDENTATION -->
+@@ -1999,6 +2147,61 @@
+ <tr valign="top" align="left">
+ <td width="11%"></td>
+ <td width="89%">
++<p><b>Use Stricter Phishing Net</b></p></td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="22%"></td>
++<td width="78%">
++<p>Default: yes</p>
++<!-- INDENTATION -->
++<p>If this is set to yes, then most of the URL in a link
++must match the destination address it claims to take you to.
++This is the default as it is a much stronger test and is
++very hard to maliciously avoid. If this is set to no, then
++just the company name and country (and any names between the
++two, dependent on the specific country) must match. This is
++not as strict as it will not protect you against internal
++malicious sites based within the company being abused. For
++example, it would not find
++www.nasty.company&minus;name.co.uk pretending to be
++www.nice.company&minus;name.co.uk. But it will still detect
++most phishing attacks of the type www.nasty.co.jp versus
++www.nice.co.jp. Depending on the country code it knows how
++many levels of domain need to be checked. This can also be
++the filename of a ruleset.</p>
++</td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="11%"></td>
++<td width="89%">
++<p><b>Highlight Phishing Fraud</b></p></td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="22%"></td>
++<td width="78%">
++<p>Default: yes</p>
++<!-- INDENTATION -->
++<p>If a phishing fraud is detected, do you want to highlight
++the tag with a message stating that the link may be to a
++fraudulent web site. This can also be the filename of a
++ruleeset.</p>
++</td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="11%"></td>
++<td width="89%">
+ <p><b>Phishing Safe Sites File</b></p></td>
+ </table>
+ <!-- INDENTATION -->
+@@ -2026,6 +2229,35 @@
+ <tr valign="top" align="left">
+ <td width="11%"></td>
+ <td width="89%">
++<p><b>Country Sub&minus;Domains List</b></p></td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="22%"></td>
++<td width="78%">
++<p>Default: %etc&minus;dir%/country.domains.conf</p>
++</td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="11%"></td>
++<td width="89%">
++<p>This file lists all the countries that use
++2nd&minus;level and 3rd&minus;level domain names to classify
++distinct types of website within their country. This cannot
++be the name of a ruleset, it is just a simple
++setting.</p></td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="11%"></td>
++<td width="89%">
+ <p><b>Allow IFrame Tags</b></p></td>
+ </table>
+ <!-- INDENTATION -->
+@@ -2317,7 +2549,7 @@
+ <tr valign="top" align="left">
+ <td width="11%"></td>
+ <td width="89%">
+-<p><b>Allow Object Codebase Tags</b></p></td>
++<p><b>Ignored Web Bug Filenames</b></p></td>
+ </table>
+ <!-- INDENTATION -->
+ <table width="100%" border=0 rules="none" frame="void"
+@@ -2325,7 +2557,7 @@
+ <tr valign="top" align="left">
+ <td width="22%"></td>
+ <td width="78%">
+-<p>Default: no</p></td>
++<p>Default:</p></td>
+ </table>
+ <!-- INDENTATION -->
+ <table width="100%" border=0 rules="none" frame="void"
+@@ -2333,12 +2565,70 @@
+ <tr valign="top" align="left">
+ <td width="28%"></td>
+ <td width="72%">
++<p>This is a list of filenames (or parts of filenames) that
++may appear in the filename of a web bug URL. They are only
++checked in the filename, not any directories or hostnames in
++the URL of the possible web bug. If it appears, then the web
++bug is assumed to be a harmless &quot;spacer&quot; for page
++layout purposes and not a real web bug at all. It should be
++a space&minus; and/or comma&minus;separated list of filename
++parts. Note: Use this with care, as spammers may use this to
++circumvent the web bug trap. It is disabled by default
++because of this problem. This can also be the filename of a
++ruleset.</p>
++</td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="11%"></td>
++<td width="89%">
++<p><b>Web Bug Replacement</b></p></td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="22%"></td>
++<td width="78%">
++<p>Default:
++http://www.sng.ecs.soton.ac.uk/mailscanner/images/1x1spacer.gif</p>
++<!-- INDENTATION -->
++<p>When a web bug is found, what image do you want to
++replace it with? By replacing it with a real image, the page
++layout still works properly, so the formatting and layout of
++the message is correct. The following is a harmless
++untracked 1x1 pixel transparent image. If this is not
++specified, the the old value of
++&quot;MailScannerWebBug&quot; is used, which of course is
++not an image and may well upset layout of the email. This
++can also be the filename of a ruleset.</p>
++</td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="11%"></td>
++<td width="89%">
++<p><b>Allow Object Codebase Tags</b></p></td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="22%"></td>
++<td width="78%">
++<p>Default: no</p>
++<!-- INDENTATION -->
+ <p>Do you want to allow &lt;Object Codebase=...&gt; tags in
+ email messages? This is a bad idea as it leaves you
+ unprotected against various Microsoft&minus;specific
+ security vulnerabilities. But if your users demand it, you
+ can do it. This can also be the filename of a ruleset.
+-Possible values:</p></td>
++Possible values:</p>
++</td>
+ </table>
+ <!-- TABS -->
+ <table width="100%" border=0 rules="none" frame="void"
+@@ -4826,7 +5116,7 @@
+ <tr valign="top" align="left">
+ <td width="22%"></td>
+ <td width="78%">
+-<p>Default: no</p>
++<p>Default: yes</p>
+ <!-- INDENTATION -->
+ <p>Do you want to detect spam using the very good
+ SpamAssassin package? You must have installed SpamAssassin
+@@ -6117,7 +6407,7 @@
+ <tr valign="top" align="left">
+ <td width="11%"></td>
+ <td width="89%">
+-<p><b>SpamAssassin Default Rules Dir</b></p></td>
++<p><b>SpamAssassin Local State Dir</b></p></td>
+ </table>
+ <!-- INDENTATION -->
+ <table width="100%" border=0 rules="none" frame="void"
+@@ -6133,10 +6423,38 @@
+ <tr valign="top" align="left">
+ <td width="28%"></td>
+ <td width="72%">
++<p>The rules created by the &quot;sa&minus;update&quot; tool
++are searched for here. This directory contains the
++spamassassin/3.001001/updates_spamassassin_org directory
++structure beneath it. Only un&minus;comment this setting
++once you have proved that the sa&minus;update cron job has
++run successfully and has created a directory structure under
++the spamassassin directory within this one and has put some
++*.cf files in there. Otherwise it will ignore all your
++current rules!</p>
++</td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="11%"></td>
++<td width="89%">
++<p><b>SpamAssassin Default Rules Dir</b></p></td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="22%"></td>
++<td width="78%">
++<p>Default:</p>
++<!-- INDENTATION -->
+ <p>This tells MailScanner where to look for the default
+ rules. If this is set it adds to the list of places that are
+ searched. MailScanner will always look at the following
+-places (even if this option is not set):</p></td>
++places (even if this option is not set):</p>
++</td>
+ </table>
+ <!-- TABS -->
+ <table width="100%" border=0 rules="none" frame="void"
+@@ -6223,8 +6541,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="5" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="11%"></td>
+-<td width="20%">
++<td width="22%"></td>
++<td width="9%">
+ 
+ <p>%d</p>
+ </td>
+@@ -6236,8 +6554,8 @@
+ <td width="54%">
+ </td>
+ <tr valign="top" align="left">
+-<td width="11%"></td>
+-<td width="20%">
++<td width="22%"></td>
++<td width="9%">
+ 
+ <p>%5.2f</p>
+ </td>
+@@ -6249,8 +6567,8 @@
+ <td width="54%">
+ </td>
+ <tr valign="top" align="left">
+-<td width="11%"></td>
+-<td width="20%">
++<td width="22%"></td>
++<td width="9%">
+ 
+ <p>%05.1f</p>
+ </td>
+@@ -6261,24 +6579,59 @@
+ </td>
+ <td width="54%">
+ </td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+ <td width="11%"></td>
+-<td width="20%">
+-
+-<p><b>Debug</b></p>
+-</td>
+-<td width="1%"></td>
+-<td width="14%"></td>
+-<td width="54%">
+-</td>
++<td width="89%">
++<p><b>SpamAssassin Cache Timings</b></p></td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="22%"></td>
++<td width="78%">
++<p>Default: 1800,300,10800,172800,600</p></td>
+ </table>
+ <!-- INDENTATION -->
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
++<td width="32%"></td>
++<td width="68%">
++<p>Do not change this unless you absolutely have to, these
++numbers have been carefully calculated. They affect the
++length of time that different types of message are stored in
++the SpamAssassin cache which can be configured earlier in
++this file (look for &quot;Cache&quot;). The numbers are all
++set in seconds. They are:<br>
++1. Non&minus;Spam cache lifetime = 30 minutes<br>
++2. Spam (low scoring) cache lifetime = 5 minutes<br>
++3. High&minus;Scoring spam cache lifetime = 3 hours<br>
++4. Viruses cache lifetime = 2 days<br>
++5. How often to check the cache for expired messages = 10
++minutes</p>
++</td>
++</table>
++<!-- TABS -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="5" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
+ <td width="11%"></td>
+-<td width="89%">
+-<p>Default: no</p></td>
++<td width="7%">
++
++<p><b>Debug</b></p>
++</td>
++<td width="4%"></td>
++<td width="16%">
++
++<p>Default: no</p>
++</td>
++<td width="62%">
++</td>
+ </table>
+ <!-- INDENTATION -->
+ <table width="100%" border=0 rules="none" frame="void"
+@@ -6424,6 +6777,31 @@
+ a &quot;side effect&quot; of doing something useful such as
+ logging lots of information about the batch of messages to a
+ file or an SQL database.</p>
++</td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="11%"></td>
++<td width="89%">
++<p><b>Always Looked Up Last After Batch</b></p></td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="22%"></td>
++<td width="78%">
++<p>Default: no</p>
++<!-- INDENTATION -->
++<p>This option is intended for people who want to log
++per&minus;batch information. This is evaluated after the
++&quot;Always Looked Up Last&quot; configuration option for
++each message in the batch. This is looked up once for the
++entire batch. Its value is completely ignored, it is purely
++there to have side effects. If you want to use it, read
++CustomConfig.pm.</p>
+ </td>
+ </table>
+ <!-- INDENTATION -->

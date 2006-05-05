@@ -1,12 +1,23 @@
---- ../MailScanner-install-4.52.2.orig/docs/man/MailScanner.conf.5	Thu Apr 13 09:25:25 2006
-+++ docs/man/MailScanner.conf.5	Thu Apr 13 09:25:46 2006
+--- ../MailScanner-install-4.53.7.orig/docs/man/MailScanner.conf.5	Wed May  3 21:16:27 2006
++++ docs/man/MailScanner.conf.5	Wed May  3 21:33:05 2006
 @@ -1,4 +1,4 @@
 -.TH "MailScanner.conf" "5" "4.50.1" "Julian Field" "Mail"
-+.TH "MailScanner.conf" "5" "4.52.2" "Julian Field" "Mail"
++.TH "MailScanner.conf" "5" "4.53.7" "Julian Field" "Mail"
  .SH "NAME"
  .LP 
  MailScanner.conf \- Main configuration for MailScanner
-@@ -364,6 +364,22 @@
+@@ -24,6 +24,10 @@
+ .br 
+ 
+ .br 
++The following optional multipliers are supported: You can write "50M" instead of "50000000". The multipliers supported are "k", "m" and "g" to denote 1 thousand, 1 million and 1 billion (10^9) in upper or lower case. You must *not* put any spaces between the number and the multiplier character.
++.br 
++
++.br 
+ Many of the options can also be the filename of a ruleset, which can be used to control features depending on the addresses of the message, and/or the IP address where the message came from. You will find some examples of rulesets and an explanation of them in the "rules" directories within the MailScanner installation and in the section "RULESETS" later in this manpage.
+ 
+ .LP 
+@@ -364,6 +368,22 @@
  Should we use a TNEF decoder (external or Perl module)? This should be "yes" unless the scanner you are using (Sophos, McAfee) has the facility built\-in. However, if you set it to "no", then the filenames within the TNEF attachment will not be checked against the filename rules.
  
  .TP 
@@ -29,7 +40,30 @@
  \fBDeliver Unparsable TNEF\fR
  Default: no
  .br 
-@@ -423,6 +439,12 @@
+@@ -405,6 +425,22 @@
+ .br 
+ The maximum length of time the "file" command is allowed to run for one batch of messages (in seconds).
+ 
++.TP 
++\fBGunzip Command\fR
++Default: /usr/bin/gunzip
++.br 
++
++.br 
++Where the "gunzip" command is installed. This is used for expanding .gz files. To disable gzipped file checking, set this value to blank and the timeout to 0.
++
++.TP 
++\fBGunzip Timeout\fR
++Default: 50
++.br 
++
++.br 
++The maximum length of time the "gunzip" command is allowed to run to expand 1 attachment file (in seconds).
++
+ 
+ .TP 
+ \fBUnrar Command\fR
+@@ -423,6 +459,12 @@
  The maximum length of time the "unrar" command is allowed to run for 1 RAR archive (in seconds)
  
  .TP 
@@ -42,7 +76,7 @@
  \fBBlock Encrypted Messages\fR
  Default: no
  .br 
-@@ -521,7 +543,7 @@
+@@ -521,7 +563,7 @@
  .SH "Virus scanning and vulnerability testing"
  .TP 
  \fBVirus Scanning\fR
@@ -51,7 +85,7 @@
  .br 
  
  .br 
-@@ -529,7 +551,7 @@
+@@ -529,7 +571,7 @@
  .br 
  NOTE: Switching this to no completely disables all virus\-scanning functionality. If you just want to switch of actual virus scanning, then set "Virus Scanners = none" instead.
  .br 
@@ -60,7 +94,7 @@
  
  .TP 
  \fBVirus Scanners\fR
-@@ -686,6 +708,23 @@
+@@ -686,6 +728,23 @@
  .br 
  While detecting "Phishing" attacks, do you also want to point out links to numeric IP addresses. Genuine links to totally numeric IP addresses are very rare, so this option is set to "yes" by default. If a numeric IP address is found in a link, the same phishing warning message is used as in the Find Phishing Fraud option above. This value cannot be the name of a ruleset, only a simple yes or no.
  
@@ -84,7 +118,7 @@
  
  .TP 
  \fBPhishing Safe Sites File\fR
-@@ -695,6 +734,15 @@
+@@ -695,6 +754,15 @@
  .br 
  There are some companies, such as banks, that insist on sending out email messages with links in them that are caught by the "Find Phishing Fraud" test described above. This is the name of a file which contains a list of link destinations which should be ignored in the test. This may, for example, contain the known websites of some banks. See the file itself for more information. This can only be the name of the file containing the list, it *cannot* be the filename of a ruleset.
  
@@ -100,7 +134,30 @@
  
  .TP 
  \fBAllow IFrame Tags\fR
-@@ -1682,7 +1730,7 @@
+@@ -773,6 +841,22 @@
+ .RE
+ 
+ .TP 
++\fBIgnored Web Bug Filenames\fR
++Default: 
++.br 
++
++.br 
++This is a list of filenames (or parts of filenames) that may appear in the filename of a web bug URL. They are only checked in the filename, not any directories or hostnames in the URL of the possible web bug. If it appears, then the web bug is assumed to be a harmless "spacer" for page layout purposes and not a real web bug at all. It should be a space\- and/or comma\-separated list of filename parts. Note: Use this with care, as spammers may use this to circumvent the web bug trap. It is disabled by default because of this problem. This can also be the filename of a ruleset.
++
++.TP 
++\fBWeb Bug Replacement\fR
++Default: http://www.sng.ecs.soton.ac.uk/mailscanner/images/1x1spacer.gif
++.br 
++
++.br 
++When a web bug is found, what image do you want to replace it with? By replacing it with a real image, the page layout still works properly, so the formatting and layout of the message is correct. The following is a harmless untracked 1x1 pixel transparent image. If this is not specified, the the old value of "MailScannerWebBug" is used, which of course is not an image and may well upset layout of the email. This can also be the filename of a ruleset.
++
++.TP 
+ \fBAllow Object Codebase Tags\fR
+ Default: no
+ .br 
+@@ -1682,7 +1766,7 @@
  .SH "SpamAssassin"
  .TP 
  \fBUse SpamAssassin\fR
@@ -109,7 +166,23 @@
  .br 
  
  .br 
-@@ -2113,6 +2161,22 @@
+@@ -2076,6 +2160,15 @@
+ .RE
+ 
+ .TP 
++\fBSpamAssassin Local State Dir\fR
++Default:
++.br 
++
++.br 
++The rules created by the "sa\-update" tool are searched for here. This directory contains the spamassassin/3.001001/updates_spamassassin_org directory structure beneath it. Only un\-comment this setting once you have proved that the sa\-update cron job has run successfully and has created a directory structure under the spamassassin directory within this one and has put some *.cf files in there. Otherwise it will ignore all your current rules!
++
++
++.TP 
+ \fBSpamAssassin Default Rules Dir\fR
+ Default:
+ .br 
+@@ -2113,6 +2206,22 @@
  .RE
  
  .TP 
@@ -132,7 +205,7 @@
  \fBDebug\fR
  Default: no
  .br 
-@@ -2167,6 +2231,15 @@
+@@ -2167,6 +2276,15 @@
  
  .br 
  The value of the option is actually never used, but it is evaluated at the end of processing a batch of messages. It is designed to be used in conjunction with a Custom Function. The Custom Function should then be written to have a "side effect" of doing something useful such as logging lots of information about the batch of messages to a file or an SQL database. 
