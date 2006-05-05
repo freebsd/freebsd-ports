@@ -6,18 +6,28 @@
 #
 
 PORTNAME=	slimserver
-DISTVERSION?=	6.2.1
-PORTREVISION=	1
+PORTVERSION=	6.2.2
 CATEGORIES=	audio
-MASTER_SITES=	http://www.slimdevices.com/downloads/${NIGHTLY}SlimServer_v${DISTVERSION}/
-DISTNAME=	SlimServer_v${DISTVERSION}
-DISTFILES=	${DISTNAME}.no-cpan-arch${EXTRACT_SUFX}
+MASTER_SITES=	http://www.slimdevices.com/downloads/SlimServer_v${PORTVERSION}/
+DISTNAME=	SlimServer_v${PORTVERSION}.no-cpan-arch
 DIST_SUBDIR=	slimserver
 
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	Slim Devices audio streaming server
 
+# Defaults support playback of relativly unrestricted formats on SB2 or
+# SB3 devices and wired SB1 devices.
+OPTIONS=	APE "Support Monkey's Audio Codec input" on \
+		FAAD "Support AAC input via FAAD" on \
+		FLAC "Support FLAC output (and inputs on older devices)" on \
+		LAME "Support MP3 output via LAME" off \
+		MUSEPACK "Support musepack input" on \
+		SHORTEN "Support Shorten input" off \
+		VORBIS "Support OGG Vorbis input" on
+
 RESTRICTED=	Contains non-redistributable firmware, documentation, and images
+
+WRKSRC=		${WRKDIR}/SlimServer_v${PORTVERSION}
 
 LIB_DEPENDS+=	expat.6:${PORTSDIR}/textproc/expat2
 RUN_DEPENDS+=	${LOCALBASE}/bin/mDNSResponderPosix:${PORTSDIR}/net/mDNSResponder
@@ -25,8 +35,6 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/mDNSResponderPosix:${PORTSDIR}/net/mDNSResponder
 PKGINSTALL=	${WRKDIR}/pkg-install
 
 USE_PERL5=	yes
-
-.include <bsd.port.pre.mk>
 
 SLIMCPANPKGS=	Compress-Zlib-1.33.tar.gz \
 		DBI-1.46.tar.gz \
@@ -38,12 +46,36 @@ SLIMCPANPKGS=	Compress-Zlib-1.33.tar.gz \
 
 ALLFILES=	${DISTFILES} ${SLIMCPANPKGS}
 
+.include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_APE)
+RUN_DEPENDS+=	mac:${PORTSDIR}/audio/mac
+.endif
+.if !defined(WITHOUT_FAAD)
+RUN_DEPENDS+=	faad:${PORTSDIR}/audio/faad
+.endif
+.if !defined(WITHOUT_FLAC)
+RUN_DEPENDS+=	flac:${PORTSDIR}/audio/flac
+.endif
+.if !defined(WITHOUT_LAME)
+RUN_DEPENDS+=	lame:${PORTSDIR}/audio/lame
+.endif
+.if !defined(WITHOUT_MUSEPACK)
+RUN_DEPENDS+=	mppdec:${PORTSDIR}/audio/musepack
+.endif
+.if !defined(WITHOUT_SHORTEN)
+RUN_DEPENDS+=	shorten:${PORTSDIR}/audio/shorten
+.endif
+.if !defined(WITHOUT_VORBIS)
+RUN_DEPENDS+=	oggdec:${PORTSDIR}/audio/vorbis-tools
+.endif
+
 .if ${PERL_LEVEL} < 500800
-IGNORE=		Perl 5.8 or newer required. Install lang/perl5.8 and try again.
+IGNORE=		perl 5.8 or newer required. Install lang/perl5.8 and try again
 .endif
 
 .if ${OSVERSION} < 502110
-RUN_DEPENDS+=	${LOCALBASE}/bin/pgrep:${PORTSDIR}/sysutils/pkill
+RUN_DEPENDS+=	{LOCALBASE}/bin/pgrep:${PORTSDIR}/sysutils/pkill
 PGREPBASE=	${LOCALBASE}
 .else
 PGREPBASE=	/usr
@@ -107,6 +139,9 @@ do-build:
 .endif
 	${MKDIR} ${CPANWRKDIR}
 	${WRKSRC}/Bin/build-perl-modules.pl
+
+post-build:
+	@${RM} -f ${PLIST}
 .for _CONF in ${CONFFILES}
 	@${ECHO} '@unexec if cmp -s %D/%%SLIMDIR%%/${_CONF} %D/%%SLIMDIR%%/${_CONF}.sample; then rm -f %D/%%SLIMDIR%%/${_CONF}; fi' >> ${PLIST}
 .endfor
@@ -127,7 +162,10 @@ do-build:
 	    ${SED} -e 's|${TMP_DOCSDIR}|@dirrm %%DOCSDIR%%|' | \
 	    ${SORT} -r >> ${PLIST}
 .endif
-	@${ECHO} '@unexec rmdir /var/db/slimserver 2>/dev/null || (echo "Configuration information saved.  If you will *NOT* use this package anymore," && echo "please remove /var/db/slimserver and its contents manually.")' >> ${PLIST}
+	@${ECHO} '@unexec rm -rf /var/db/slimserver/cache 2>&1 >/dev/null || true' >> ${PLIST}
+	@${ECHO} '@dirrmtry /var/db/slimserver/playlists' >> ${PLIST}
+	@${ECHO} '@dirrmtry /var/db/slimserver' >> ${PLIST}
+	@${ECHO} '@unexec test -d /var/db/slimserver && (echo "Configuration information saved.  If you will *NOT* use this package anymore," && echo "please remove /var/db/slimserver and its contents manually.")' >> ${PLIST}
 
 pre-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
