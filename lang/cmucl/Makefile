@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	cmucl
-PORTVERSION=	19b
+PORTVERSION=	19c
 CATEGORIES=	lang lisp
 MASTER_SITES=	ftp://ftp.common-lisp.net/pub/project/cmucl/release/${PORTVERSION}/ \
 		http://www.pmsf.de/pub/cmucl/release/${PORTVERSION}/ \
