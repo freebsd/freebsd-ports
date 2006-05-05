@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnutls-devel
-PORTVERSION=	1.3.4
-PORTREVISION=	2
+PORTVERSION=	1.3.5
 CATEGORIES=	security net
 MASTER_SITES=	http://josefsson.org/gnutls/releases/ \
 		${MASTER_SITE_GNUPG} \
@@ -36,7 +35,6 @@ CONFLICTS=	gnutls-[0-9]*
 
 USE_BZIP2=	yes
 USE_ICONV=	yes
-USE_GETTEXT=	yes
 USE_GNOME=	pkgconfig
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
@@ -46,7 +44,7 @@ MAKE_ARGS=	MAKEINFO="${LOCALBASE}/bin/makeinfo"
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
 		MAKEINFO="${LOCALBASE}/bin/makeinfo"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--with-included-lzo --disable-static
+CONFIGURE_ARGS=	--with-included-lzo --disable-static --disable-nls
 MANCOMPRESSED=	no
 
 .if !defined(NOPORTDOCS)
