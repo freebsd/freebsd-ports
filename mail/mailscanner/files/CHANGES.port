@@ -1,3 +1,9 @@
+Version 4.53.7
+=================
+- Upgrade to MailScanner 4.53
+- changed some patch-names
+- created sa-update.cron in libexece/MailScanner to periodically run sa-update
+
 Version 4.52.2_1
 =================
 - fixed bug in mta.sh script

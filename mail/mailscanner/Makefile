@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	MailScanner
-PORTVERSION=	4.52.2
-PORTREVISION=	1
+PORTVERSION=	4.53.7
 CATEGORIES=	mail
 MASTER_SITES=	http://www.sng.ecs.soton.ac.uk/mailscanner/files/4/tar/
 DISTNAME=	${PORTNAME}-install-${PORTVERSION}-${PATCHLEVEL}
@@ -36,7 +35,8 @@ BUILD_DEPENDS=	\
 	${SITE_PERL}/Getopt/Long.pm:${PORTSDIR}/devel/p5-Getopt-Long \
 	${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable \
 	${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
-	${SITE_PERL}/Time/Zone.pm:${PORTSDIR}/devel/p5-TimeDate
+	${SITE_PERL}/Time/Zone.pm:${PORTSDIR}/devel/p5-TimeDate \
+	${SITE_PERL}/${PERL_ARCH}/Filesys/Df.pm:${PORTSDIR}/devel/p5-Filesys-Statvfs_Df
 
 RUN_DEPENDS=	${BUILD_DEPENDS} \
 		bash:${PORTSDIR}/shells/bash \
@@ -164,6 +164,11 @@ do-build:
 		s,%%RC_SUBR%%,${RC_SUBR},g;' \
 		${WRKSRC}/bin/cron/update_phishing_sites.cron
 	${PERL} -pi -e \
+		's,/bin/bash,${LOCALBASE}/bin/bash,g; \
+		s,/usr/bin/sa-update,${LOCALBASE}/bin/sa-update,g; \
+		s,%%RC_SUBR%%,${RC_SUBR},g;' \
+		${WRKSRC}/bin/cron/sa-update.cron
+	${PERL} -pi -e \
 		's,/etc/MailScanner/MailScanner.conf,${PREFIX}/etc/MailScanner/MailScanner.conf,g;' \
 		${WRKSRC}/bin/clean.SA.cache
 	${PERL} -pi -e \
@@ -219,6 +224,8 @@ do-install:
 		${PREFIX}/libexec/MailScanner/update_virus_scanners
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/cron/update_virus_scanners.cron \
 		${PREFIX}/libexec/MailScanner/update_virus_scanners.cron
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/cron/sa-update.cron \
+		${PREFIX}/libexec/MailScanner/sa-update.cron
 	#
 	# Step 3: Install etc files
 	#

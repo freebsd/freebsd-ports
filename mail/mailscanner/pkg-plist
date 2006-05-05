@@ -57,6 +57,7 @@ libexec/MailScanner/update_phishing_sites
 libexec/MailScanner/update_phishing_sites.cron
 libexec/MailScanner/update_virus_scanners
 libexec/MailScanner/update_virus_scanners.cron
+libexec/MailScanner/sa-update.cron
 libexec/MailScanner/antivir-autoupdate.sample
 libexec/MailScanner/antivir-wrapper.sample
 libexec/MailScanner/avg-autoupdate.sample
@@ -155,7 +156,6 @@ sbin/MailScanner
 %%DATADIR%%/reports/cz/deleted.filename.message.txt.sample
 %%DATADIR%%/reports/cz/deleted.virus.message.txt.sample
 %%DATADIR%%/reports/cz/disinfected.report.txt.sample
-%%DATADIR%%/reports/cz/filename.rules.txt.sample
 %%DATADIR%%/reports/cz/inline.sig.html.sample
 %%DATADIR%%/reports/cz/inline.sig.txt.sample
 %%DATADIR%%/reports/cz/inline.spam.warning.txt.sample
@@ -466,6 +466,8 @@ sbin/MailScanner
 %%DATADIR%%/reports/sk/stored.content.message.txt.sample
 %%DATADIR%%/reports/sk/stored.filename.message.txt.sample
 %%DATADIR%%/reports/sk/stored.virus.message.txt.sample
+%%PORTDOCS%%%%DOCSDIR%%/ellen2.old.jpg
+%%PORTDOCS%%%%DOCSDIR%%/ellenweblogo.png
 %%PORTDOCS%%%%DOCSDIR%%/Book.Dec04-Aug05.pdf
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
@@ -498,7 +500,6 @@ sbin/MailScanner
 %%PORTDOCS%%%%DOCSDIR%%/images/thumb_JulianField5.jpg
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/index.new.html
-%%PORTDOCS%%%%DOCSDIR%%/index.old.html
 %%PORTDOCS%%%%DOCSDIR%%/install/ClamAVModule.shtml
 %%PORTDOCS%%%%DOCSDIR%%/install/OS-virus-scan-web.htm
 %%PORTDOCS%%%%DOCSDIR%%/install/README.trend
@@ -513,6 +514,9 @@ sbin/MailScanner
 %%PORTDOCS%%%%DOCSDIR%%/install/linux.shtml
 %%PORTDOCS%%%%DOCSDIR%%/install/mailscanner.shtml
 %%PORTDOCS%%%%DOCSDIR%%/install/mcafee.shtml
+%%PORTDOCS%%%%DOCSDIR%%/install/mcp/Message.pm.patch.3.1.1
+%%PORTDOCS%%%%DOCSDIR%%/install/mcp/Conf.pm.patch.3.1.1
+%%PORTDOCS%%%%DOCSDIR%%/install/mcp/PerMsgStatus.pm.patch.3.1.1
 %%PORTDOCS%%%%DOCSDIR%%/install/mcp/Conf.pm.patch.2.55
 %%PORTDOCS%%%%DOCSDIR%%/install/mcp/Conf.pm.patch.2.60
 %%PORTDOCS%%%%DOCSDIR%%/install/mcp/Conf.pm.patch.2.61
