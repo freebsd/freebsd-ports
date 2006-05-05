@@ -16,4 +16,6 @@ COMMENT=	Curses-based user interface library for Python
 USE_PYTHON=	2.1+
 USE_PYDISTUTILS=	yes
 
+BROKEN=		Size mismatch
+
 .include <bsd.port.mk>
