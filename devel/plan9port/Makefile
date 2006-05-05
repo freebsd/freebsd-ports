@@ -16,6 +16,7 @@ MAINTAINER=	serge.gagnon@b2b2c.ca
 COMMENT=	Port of the bulk of the Plan9 software build environment to Unix
 
 USE_XLIB=	YES
+USE_PERL5_BUILD=YES
 WRKSRC=		${WRKDIR}/plan9
 PLIST=		${WRKDIR}/.PLIST
 SUB_FILES=	pkg-message
