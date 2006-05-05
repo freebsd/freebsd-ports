@@ -19,6 +19,8 @@ BUILD_DEPENDS=	${X11BASE}/lib/thunderbird/components/libwidget_gtk2.so:${PORTSDI
 		zip:${PORTSDIR}/archivers/zip
 RUN_DEPENDS=	${X11BASE}/lib/thunderbird/components/libwidget_gtk2.so:${PORTSDIR}/mail/thunderbird
 
+BROKEN=		Does not compile
+
 .if !exists(../thunderbird/Makefile)
 BROKEN=		${PORTNAME} needs the Thunderbird port in order to build
 .else
