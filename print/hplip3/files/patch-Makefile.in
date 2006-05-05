@@ -1,0 +1,79 @@
+--- Makefile.in.orig	Thu Mar 23 22:35:33 2006
++++ Makefile.in	Mon Apr 24 09:15:54 2006
+@@ -1973,15 +1973,9 @@
+ #
+ #       Do full install if not rpm_install.
+ 	if [ "$(rpm_install)" = "no" ]; then \
+-	   ln -sf ../$(SOLONG) $(DESTDIR)$(sanedir)/$(SONOVER); \
+-	   ln -sf ../$(SOLONG) $(DESTDIR)$(sanedir)/$(SOSHORT); \
+-	   ln -sf ../$(SOLONG) $(DESTDIR)$(sanedir)/$(SOLONG); \
+-	   if [ -f $(DESTDIR)/etc/sane.d/dll.conf ]; then \
+-	      if ! grep ^hpaio $(DESTDIR)/etc/sane.d/dll.conf >/dev/null 2>/dev/null ; then \
+-	         echo "Adding hpaio entry to /etc/sane.d/dll.conf." ; \
+-	         echo hpaio >>$(DESTDIR)/etc/sane.d/dll.conf ; \
+-	      fi \
+-	   fi \
++	   ln -sf $(prefix)/lib/$(SOSHORT) $(DESTDIR)$(sanedir)/$(SONOVER); \
++	   ln -sf $(prefix)/lib/$(SOSHORT) $(DESTDIR)$(sanedir)/$(SOSHORT); \
++	   ln -sf $(prefix)/lib/$(SOSHORT) $(DESTDIR)$(sanedir)/$(SOLONG); \
+ 	fi
+ 
+ install-data-hook: test-destdir
+@@ -2039,30 +2033,31 @@
+ 	    newname=$${i%.*}; \
+ 	    mv $(DESTDIR)$(hplipdir)/$$i $(DESTDIR)$(hplipdir)/$$newname; \
+ 	    if [ "$(rpm_install)" = "no" ]; then \
+-	      ln -sf ../share/$(PACKAGE)/$$newname $(DESTDIR)$(bindir)/hp-$$newname; \
++	      ln -sf $(prefix)/share/$(PACKAGE)/$$newname $(DESTDIR)$(bindir)/hp-$$newname; \
+ 	    fi \
+ 	done
+ #
+ #       Edit hpiod.conf in destdir.
+ 	echo -e "\n[$(PACKAGE)]\nversion=$(VERSION)\njdprobe=0\n" >> $(DESTDIR)$(hplipdir)/$(PACKAGE).conf
+ 	echo -e "[dirs]\nhome=$(hplipdir)\nrun=$(rundir)\nppd=$(hpppddir)\n" >> $(DESTDIR)$(hplipdir)/$(PACKAGE).conf
+-	echo -ne "# Following values are determined at configure time and cannot be changed.\n[configure]\n" >> $(DESTDIR)$(hplipdir)/$(PACKAGE).conf
++	echo "# Following values are determined at configure time and cannot be changed." >> $(DESTDIR)$(hplipdir)/$(PACKAGE).conf
++	echo "[configure]" >> $(DESTDIR)$(hplipdir)/$(PACKAGE).conf
+ 	if [ "$(rpm_install)" = "yes" ]; then \
+-	   echo -ne "rpm-install=1\n" >> $(DESTDIR)$(hplipdir)/$(PACKAGE).conf; \
++	   echo "rpm-install=1" >> $(DESTDIR)$(hplipdir)/$(PACKAGE).conf; \
+ 	else \
+-	   echo -ne "rpm-install=0\n" >> $(DESTDIR)$(hplipdir)/$(PACKAGE).conf; \
++	   echo "rpm-install=0" >> $(DESTDIR)$(hplipdir)/$(PACKAGE).conf; \
+ 	fi 
+ 	if [ "$(network_build)" = "yes" ]; then \
+-	   echo -ne "network-build=1\n" >> $(DESTDIR)$(hplipdir)/$(PACKAGE).conf; \
++	   echo "network-build=1" >> $(DESTDIR)$(hplipdir)/$(PACKAGE).conf; \
+ 	else \
+-	   echo -ne "network-build=0\n" >> $(DESTDIR)$(hplipdir)/$(PACKAGE).conf; \
++	   echo "network-build=0" >> $(DESTDIR)$(hplipdir)/$(PACKAGE).conf; \
+ 	fi
+ 	if [ "$(pp_build)" = "yes" ]; then \
+-	   echo -ne "pp-build=1\n" >> $(DESTDIR)$(hplipdir)/$(PACKAGE).conf; \
++	   echo "pp-build=1" >> $(DESTDIR)$(hplipdir)/$(PACKAGE).conf; \
+ 	else \
+-	   echo -ne "pp-build=0\n" >> $(DESTDIR)$(hplipdir)/$(PACKAGE).conf; \
++	   echo "pp-build=0" >> $(DESTDIR)$(hplipdir)/$(PACKAGE).conf; \
+ 	fi
+-	echo -ne "internal-tag=$(PACKAGE_BUGREPORT)\n" >> $(DESTDIR)$(hplipdir)/$(PACKAGE).conf;
++	echo "internal-tag=$(PACKAGE_BUGREPORT)" >> $(DESTDIR)$(hplipdir)/$(PACKAGE).conf;
+ 
+ #
+ #       Edit hpiod.sh in destdir.
+@@ -2074,16 +2069,6 @@
+ 	if [ "$(rpm_install)" = "no" ]; then \
+ 	   $(mkinstalldirs) $(DESTDIR)/etc/hp; \
+ 	   $(INSTALL_DATA) $(DESTDIR)$(hplipdir)/$(PACKAGE).conf $(DESTDIR)/etc/hp; \
+-	   if [ -d $(DESTDIR)/etc/init.d ]; then \
+-	      $(INSTALL_SCRIPT) $(DESTDIR)$(hplipdir)/$(PACKAGE) $(DESTDIR)/etc/init.d; \
+-	      if [ "$(DESTDIR)" = "" ]; then \
+-	         if [ "$(INSTALLINITD)" != "" ]; then \
+-	            $(INSTALLINITD) $(PACKAGE); \
+-	         else \
+-	            $(CHKCONFIG) $(PACKAGE) reset; \
+-	         fi \
+-	      fi \
+-	   fi \
+ 	fi
+ #
+ #       For internal testing.

@@ -1,0 +1,41 @@
+#!/bin/sh
+
+USER=hplip
+GROUP=operator
+UID=116
+
+DLLFILE=${PKG_PREFIX}/etc/sane.d/dll.conf
+
+case $2 in
+POST-INSTALL)
+	if pw user show "${USER}" 2>/dev/null; then
+		echo "You already have a user \"${USER}\", so I will use it."
+	else
+		if pw useradd ${USER} -u ${UID} -g ${GROUP} -h - \
+			-d /nonexistent -s /sbin/nologin -c "HPLIP Server"
+		then
+			echo "Added user \"${USER}\"."
+		else
+			echo "Adding user \"${USER}\" failed..."
+			exit 1
+		fi
+	fi
+	echo "hpaio" >> ${DLLFILE}
+	;;
+
+POST-DEINSTALL)
+	if pw user show "${USER}" 2>/dev/null; then
+		if pw userdel ${USER}; then
+			echo "Removed user \"${USER}\"."
+		else
+			echo "Removing user \"${USER}\" failed..."
+			exit 1
+		fi
+	else
+		echo "User \"${USER}\" doesn't exist!"
+	fi
+	cp ${DLLFILE} ${DLLFILE}.orig
+	cat ${DLLFILE}.orig | grep -v hpaio > ${DLLFILE}
+	rm ${DLLFILE}.orig
+	;;
+esac
