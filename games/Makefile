@@ -555,6 +555,7 @@
     SUBDIR += scummvm
     SUBDIR += scummvm-tools
     SUBDIR += sdb
+    SUBDIR += sdlquake2
     SUBDIR += sdlroids
     SUBDIR += seabattle
     SUBDIR += seahaven
