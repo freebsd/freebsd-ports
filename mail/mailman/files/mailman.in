@@ -1,0 +1,36 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: mailman
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable mailman:
+# mailman_enable (bool):        Set it to "YES" to enable mailman.
+#                               Default is "NO".
+
+. %%RC_SUBR%%
+
+name="mailman"
+rcvar=${name}_enable
+
+pidfile="%%PREFIX%%/mailman/data/master-qrunner.pid"
+
+load_rc_config $name
+
+: ${mailman_enable="NO"}
+
+start_cmd=${name}_start
+stop_cmd=${name}_stop
+extra_commands="reload"
+
+mailman_start() {
+	%%PREFIX%%/mailman/bin/mailmanctl -s -q start
+}
+
+mailman_stop() {
+	%%PREFIX%%/mailman/bin/mailmanctl -q stop
+}
+
+run_rc_command "$1"

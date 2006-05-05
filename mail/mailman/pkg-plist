@@ -1994,7 +1994,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/mailman-install.txt
 %%PORTDOCS%%%%DOCSDIR%%/mailman-member.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-etc/rc.d/mailman.sh
 @dirrm %%MMDIR%%/tests/msgs
 @dirrm %%MMDIR%%/tests/bounces
 @dirrm %%MMDIR%%/tests
