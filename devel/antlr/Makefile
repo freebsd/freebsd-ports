@@ -26,6 +26,7 @@ OPTIONS=	PYTHON "Include Python runtime support" off
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	JAVAC="${JAVAC}" JAR="${JAR}" JAVA="${JAVA}" CLASSPATH="${PORT_CLASSPATH}"
+CONFIGURE_ARGS=	--disable-csharp
 
 PORT_CLASSPATH=	${WRKSRC}/antlrall.jar:.
 
