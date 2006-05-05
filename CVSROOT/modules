@@ -11017,6 +11017,7 @@ py-sybase	ports/databases/py-sybase
 py-syck		ports/textproc/py-syck
 py-tables	ports/devel/py-tables
 py-tada		ports/databases/py-tada
+py-taglib	ports/audio/py-taglib
 py-tarfile	ports/archivers/py-tarfile
 py-tconfpy	ports/devel/py-tconfpy
 py-testgears	ports/devel/py-testgears
