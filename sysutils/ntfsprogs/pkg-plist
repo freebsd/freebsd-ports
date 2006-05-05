@@ -24,12 +24,15 @@ include/ntfs/layout.h
 include/ntfs/lcnalloc.h
 include/ntfs/list.h
 include/ntfs/logfile.h
+include/ntfs/logging.h
 include/ntfs/mft.h
 include/ntfs/mst.h
 include/ntfs/ntfstime.h
+include/ntfs/rich.h
 include/ntfs/runlist.h
 include/ntfs/security.h
 include/ntfs/support.h
+include/ntfs/tree.h
 include/ntfs/types.h
 include/ntfs/unistr.h
 include/ntfs/version.h
@@ -37,7 +40,7 @@ include/ntfs/volume.h
 lib/libntfs.a
 lib/libntfs.la
 lib/libntfs.so
-lib/libntfs.so.8
+lib/libntfs.so.9
 sbin/mkntfs
 sbin/mkfs.ntfs
 %%FUSE%%sbin/mount.ntfs-fuse
