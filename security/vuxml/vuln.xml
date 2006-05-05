@@ -184,38 +184,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="af2a60ed-da3e-11da-93e0-00123ffe8333">
-    <topic>rsync -- "xattrs.diff" Patch Integer Overflow Vulnerability</topic>
-    <affects>
-      <package>
-	<name>rsync</name>
-	<range><lt>2.6.8</lt></range>
-      </package>
-    </affects>
-    <description>
-      <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>Secunia reports:</p>
-	<blockquote cite="http://secunia.com/advisories/19920/">
-	  <p>A vulnerability has been reported in rsync, which can be
-	    exploited by malicious users to cause a DoS (Denial of Service)
-	    and potentially compromise a vulnerable system.</p>
-	  <p>The vulnerability is caused due to an integer overflow error in
-	    the "receive_xattr()" function within the xattrs.diff patch. This
-	    can be exploited to cause a buffer overflow and may allow arbitrary
-	    code execution via specially crafted extended attributes.</p>
-	  <p>Successful exploitation requires that the "xattrs.diff" patch has
-	    been applied.</p>
-	</blockquote>
-      </body>
-    </description>
-    <references>
-      <cvename>CVE-2006-2083</cvename>
-      <url>http://samba.anu.edu.au/ftp/rsync/rsync-2.6.8-NEWS</url>
-      <url>http://secunia.com/advisories/19920/</url>
-    </references>
-    <dates>
-      <discovery>2006-05-02</discovery>
-      <entry>2006-05-03</entry>
-    </dates>
+    <cancelled/>
   </vuln>
 
   <vuln vid="b088bf48-da3b-11da-93e0-00123ffe8333">
