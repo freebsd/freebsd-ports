@@ -1,0 +1,2438 @@
+%%INSTALLDIR%%/LICENSE
+%%INSTALLDIR%%/NEWS
+%%INSTALLDIR%%/README
+%%INSTALLDIR%%/README.INSTALL
+%%INSTALLDIR%%/admin/data/admin/addresource/.configxml
+%%INSTALLDIR%%/admin/data/admin/collection/.configxml
+%%INSTALLDIR%%/admin/data/admin/copy/.configxml
+%%INSTALLDIR%%/admin/data/admin/dbforms2/.configxml
+%%INSTALLDIR%%/admin/data/admin/delete/.configxml
+%%INSTALLDIR%%/admin/data/admin/edit/.configxml
+%%INSTALLDIR%%/admin/data/admin/editpopup/.configxml
+%%INSTALLDIR%%/admin/data/admin/images/.configxml
+%%INSTALLDIR%%/admin/data/admin/listview/.configxml
+%%INSTALLDIR%%/admin/data/admin/navi/.configxml
+%%INSTALLDIR%%/admin/data/admin/overview/.configxml
+%%INSTALLDIR%%/admin/data/admin/properties/.configxml
+%%INSTALLDIR%%/admin/data/admin/siteoptions/.configxml
+%%INSTALLDIR%%/admin/data/admin/themes/.configxml
+%%INSTALLDIR%%/admin/lang/js_de.xml
+%%INSTALLDIR%%/admin/lang/js_en.xml
+%%INSTALLDIR%%/admin/lang/master_de.xml
+%%INSTALLDIR%%/admin/lang/master_en.xml
+%%INSTALLDIR%%/admin/lang/plugins/blog_de.xml
+%%INSTALLDIR%%/admin/lang/plugins/blog_en.xml
+%%INSTALLDIR%%/admin/lang/plugins/gallery_de.xml
+%%INSTALLDIR%%/admin/lang/plugins/plugin_file_de.xml
+%%INSTALLDIR%%/admin/lang/plugins/plugin_file_en.xml
+%%INSTALLDIR%%/admin/lang/plugins/siteoptions_de.xml
+%%INSTALLDIR%%/admin/lang/plugins/siteoptions_en.xml
+%%INSTALLDIR%%/admin/sitemap/admin.xml
+%%INSTALLDIR%%/admin/sitemap/blog.xml
+%%INSTALLDIR%%/admin/sitemap/bxe.xml
+%%INSTALLDIR%%/admin/sitemap/dbform.xml
+%%INSTALLDIR%%/admin/sitemap/fck.xml
+%%INSTALLDIR%%/admin/sitemap/file.xml
+%%INSTALLDIR%%/admin/sitemap/formedit.xml
+%%INSTALLDIR%%/admin/sitemap/image.xml
+%%INSTALLDIR%%/admin/sitemap/kupu.xml
+%%INSTALLDIR%%/admin/sitemap/links.xml
+%%INSTALLDIR%%/admin/sitemap/oneform.xml
+%%INSTALLDIR%%/admin/sitemap/ooo.xml
+%%INSTALLDIR%%/admin/sitemap/versioning.xml
+%%INSTALLDIR%%/admin/webinc/approval/index.php
+%%INSTALLDIR%%/admin/webinc/formnavi.php
+%%INSTALLDIR%%/admin/webinc/img/bitfluxlogo.gif
+%%INSTALLDIR%%/admin/webinc/img/closed.gif
+%%INSTALLDIR%%/admin/webinc/img/closed_breit.gif
+%%INSTALLDIR%%/admin/webinc/img/closed_klein.gif
+%%INSTALLDIR%%/admin/webinc/img/empty.gif
+%%INSTALLDIR%%/admin/webinc/img/icons/application/dbform.gif
+%%INSTALLDIR%%/admin/webinc/img/icons/application/pdf.gif
+%%INSTALLDIR%%/admin/webinc/img/icons/delete.gif
+%%INSTALLDIR%%/admin/webinc/img/icons/error.gif
+%%INSTALLDIR%%/admin/webinc/img/icons/fileicon_doc.gif
+%%INSTALLDIR%%/admin/webinc/img/icons/fileicon_eps.gif
+%%INSTALLDIR%%/admin/webinc/img/icons/fileicon_folder.gif
+%%INSTALLDIR%%/admin/webinc/img/icons/fileicon_htm.gif
+%%INSTALLDIR%%/admin/webinc/img/icons/fileicon_img.gif
+%%INSTALLDIR%%/admin/webinc/img/icons/fileicon_php.gif
+%%INSTALLDIR%%/admin/webinc/img/icons/fileicon_ppt.gif
+%%INSTALLDIR%%/admin/webinc/img/icons/fileicon_rtf.gif
+%%INSTALLDIR%%/admin/webinc/img/icons/image/gif.gif
+%%INSTALLDIR%%/admin/webinc/img/icons/image/jpeg.gif
+%%INSTALLDIR%%/admin/webinc/img/icons/image/png.gif
+%%INSTALLDIR%%/admin/webinc/img/icons/loading.gif
+%%INSTALLDIR%%/admin/webinc/img/icons/root.gif
+%%INSTALLDIR%%/admin/webinc/img/icons/text/css.gif
+%%INSTALLDIR%%/admin/webinc/img/icons/text/html.gif
+%%INSTALLDIR%%/admin/webinc/img/icons/text/plain.gif
+%%INSTALLDIR%%/admin/webinc/img/icons/text/text.gif
+%%INSTALLDIR%%/admin/webinc/img/icons/text/xml.gif
+%%INSTALLDIR%%/admin/webinc/img/icons/text/xsl.gif
+%%INSTALLDIR%%/admin/webinc/img/icons/unknown.gif
+%%INSTALLDIR%%/admin/webinc/img/open.gif
+%%INSTALLDIR%%/admin/webinc/img/open_breit.gif
+%%INSTALLDIR%%/admin/webinc/img/open_klein.gif
+%%INSTALLDIR%%/admin/webinc/img/slide.gif
+%%INSTALLDIR%%/admin/webinc/img/slideset.gif
+%%INSTALLDIR%%/admin/webinc/img/space.gif
+%%INSTALLDIR%%/admin/webinc/img/up.gif
+%%INSTALLDIR%%/admin/webinc/js/admin.js
+%%INSTALLDIR%%/admin/webinc/js/adminfields.js
+%%INSTALLDIR%%/admin/webinc/js/adminpopup.js
+%%INSTALLDIR%%/admin/webinc/js/frameset.js
+%%INSTALLDIR%%/admin/webinc/js/navi.js
+%%INSTALLDIR%%/admin/webinc/js/navi.xtree.js
+%%INSTALLDIR%%/admin/webinc/js/overview.js
+%%INSTALLDIR%%/admin/webinc/js/showhidelayers.js
+%%INSTALLDIR%%/admin/webinc/lostpw/index.php
+%%INSTALLDIR%%/admin/webinc/openid/COPYING
+%%INSTALLDIR%%/admin/webinc/openid/ChangeLog
+%%INSTALLDIR%%/admin/webinc/openid/LICENSE
+%%INSTALLDIR%%/admin/webinc/openid/README
+%%INSTALLDIR%%/admin/webinc/openid/association.php
+%%INSTALLDIR%%/admin/webinc/openid/consumer.php
+%%INSTALLDIR%%/admin/webinc/openid/httpclient.php
+%%INSTALLDIR%%/admin/webinc/openid/index.php
+%%INSTALLDIR%%/admin/webinc/openid/interface.php
+%%INSTALLDIR%%/admin/webinc/openid/oid_parse.php
+%%INSTALLDIR%%/admin/webinc/openid/oid_util.php
+%%INSTALLDIR%%/admin/webinc/openid/server.php
+%%INSTALLDIR%%/admin/webinc/openid/trustroot.php
+%%INSTALLDIR%%/admin/webinc/sxip-cookiehandler.php
+%%INSTALLDIR%%/admin/webinc/update/index.php
+%%INSTALLDIR%%/admin/webinc/xlt/images/I.png
+%%INSTALLDIR%%/admin/webinc/xlt/images/L.png
+%%INSTALLDIR%%/admin/webinc/xlt/images/Lminus.png
+%%INSTALLDIR%%/admin/webinc/xlt/images/Lplus.png
+%%INSTALLDIR%%/admin/webinc/xlt/images/T.png
+%%INSTALLDIR%%/admin/webinc/xlt/images/Tminus.png
+%%INSTALLDIR%%/admin/webinc/xlt/images/Tplus.png
+%%INSTALLDIR%%/admin/webinc/xlt/images/blank.png
+%%INSTALLDIR%%/admin/webinc/xlt/images/file.png
+%%INSTALLDIR%%/admin/webinc/xlt/images/foldericon.png
+%%INSTALLDIR%%/admin/webinc/xlt/images/openfoldericon.png
+%%INSTALLDIR%%/admin/webinc/xlt/title-background.png
+%%INSTALLDIR%%/admin/webinc/xlt/xloadtree.js
+%%INSTALLDIR%%/admin/webinc/xlt/xmlextras.js
+%%INSTALLDIR%%/admin/webinc/xlt/xtree.css
+%%INSTALLDIR%%/admin/webinc/xlt/xtree.js
+%%INSTALLDIR%%/bin/blog/b2-to-bxb-import.php
+%%INSTALLDIR%%/bin/blog/convert2loginname.sql
+%%INSTALLDIR%%/bin/blog/kwa-to-bxb-import.php
+%%INSTALLDIR%%/bin/branch-switcher.sh
+%%INSTALLDIR%%/bin/svnBuildUpdate.sh
+%%INSTALLDIR%%/bin/switch-to-1_3-branch.sh
+%%INSTALLDIR%%/bin/switch-to-1_3_0-tag.sh
+%%INSTALLDIR%%/bin/switch-to-1_3_1-tag.sh
+%%INSTALLDIR%%/bin/switch-to-trunk.sh
+%%INSTALLDIR%%/dbforms2/article.xml
+%%INSTALLDIR%%/dbforms2/article_description.xml
+%%INSTALLDIR%%/dbforms2/blogcategories.xml
+%%INSTALLDIR%%/dbforms2/blogcomments.xml
+%%INSTALLDIR%%/dbforms2/bloglinks.xml
+%%INSTALLDIR%%/dbforms2/bloglinkscategories.xml
+%%INSTALLDIR%%/dbforms2/blogposts.xml
+%%INSTALLDIR%%/dbforms2/events.xml
+%%INSTALLDIR%%/dbforms2/group.xml
+%%INSTALLDIR%%/dbforms2/users.xml
+%%INSTALLDIR%%/div/db/bxcms.sql
+%%INSTALLDIR%%/div/db/dbexport.sh
+%%INSTALLDIR%%/div/db/dbexport40.sh
+%%INSTALLDIR%%/div/db/webdavlocks_sqlite.sql
+%%INSTALLDIR%%/div/phpfiles
+%%INSTALLDIR%%/div/phpfiles.old
+%%INSTALLDIR%%/favicon.ico
+%%INSTALLDIR%%/forms/blogcategories/config.xml
+%%INSTALLDIR%%/forms/blogcategories/index.php
+%%INSTALLDIR%%/forms/blogcategories/updatetree.php
+%%INSTALLDIR%%/forms/blogcomments/config.xml
+%%INSTALLDIR%%/forms/blogcomments/index.php
+%%INSTALLDIR%%/forms/bloglinks/config.xml
+%%INSTALLDIR%%/forms/bloglinks/index.php
+%%INSTALLDIR%%/forms/bloglinkscategories/config.xml
+%%INSTALLDIR%%/forms/bloglinkscategories/index.php
+%%INSTALLDIR%%/forms/blogposts/config.xml
+%%INSTALLDIR%%/forms/blogposts/index.php
+%%INSTALLDIR%%/forms/index.php
+%%INSTALLDIR%%/forms/news/config.xml
+%%INSTALLDIR%%/forms/news/index.php
+%%INSTALLDIR%%/forms/users/config.xml
+%%INSTALLDIR%%/forms/users/index.php
+%%INSTALLDIR%%/inc/.filemap
+%%INSTALLDIR%%/inc/.registry/archive_tar.reg
+%%INSTALLDIR%%/inc/.registry/console_getopt.reg
+%%INSTALLDIR%%/inc/.registry/log.reg
+%%INSTALLDIR%%/inc/.registry/mdb2.reg
+%%INSTALLDIR%%/inc/.registry/pear.reg
+%%INSTALLDIR%%/inc/.registry/text_wiki.reg
+%%INSTALLDIR%%/inc/.registry/xml_parser.reg
+%%INSTALLDIR%%/inc/.registry/xml_rpc.reg
+%%INSTALLDIR%%/inc/Archive/Tar.php
+%%INSTALLDIR%%/inc/Auth.php
+%%INSTALLDIR%%/inc/Auth/Auth.php
+%%INSTALLDIR%%/inc/Auth/Container.php
+%%INSTALLDIR%%/inc/Auth/Container/MDB2.php
+%%INSTALLDIR%%/inc/Auth/Container/sxip.php
+%%INSTALLDIR%%/inc/Auth/HTTP.php
+%%INSTALLDIR%%/inc/Cache.php
+%%INSTALLDIR%%/inc/Cache/Container.php
+%%INSTALLDIR%%/inc/Cache/Container/db.php
+%%INSTALLDIR%%/inc/Cache/Container/file.php
+%%INSTALLDIR%%/inc/Cache/Container/shm.php
+%%INSTALLDIR%%/inc/Cache/Container/trifile.php
+%%INSTALLDIR%%/inc/Cache/Error.php
+%%INSTALLDIR%%/inc/Cache/Lite.php
+%%INSTALLDIR%%/inc/Cache/Output.php
+%%INSTALLDIR%%/inc/Cache/OutputCompression.php
+%%INSTALLDIR%%/inc/Config.php
+%%INSTALLDIR%%/inc/Config/Container.php
+%%INSTALLDIR%%/inc/Config/Container/IniFile.php
+%%INSTALLDIR%%/inc/Config/Container/db.php
+%%INSTALLDIR%%/inc/Config/Container/xml.php
+%%INSTALLDIR%%/inc/Date.php
+%%INSTALLDIR%%/inc/Date/Calc.php
+%%INSTALLDIR%%/inc/Date/Human.php
+%%INSTALLDIR%%/inc/Date/Span.php
+%%INSTALLDIR%%/inc/DirectoryIterator.php
+%%INSTALLDIR%%/inc/HTTP/Client.php
+%%INSTALLDIR%%/inc/HTTP/Client/CookieManager.php
+%%INSTALLDIR%%/inc/HTTP/Request.php
+%%INSTALLDIR%%/inc/HTTP/WebDAV/Server.php
+%%INSTALLDIR%%/inc/HTTP/WebDAV/Server/Filesystem.php
+%%INSTALLDIR%%/inc/HTTP/WebDAV/Server/Filesystem/MDB2.php
+%%INSTALLDIR%%/inc/HTTP/WebDAV/Tools/_parse_lockinfo.php
+%%INSTALLDIR%%/inc/HTTP/WebDAV/Tools/_parse_propfind.php
+%%INSTALLDIR%%/inc/HTTP/WebDAV/Tools/_parse_proppatch.php
+%%INSTALLDIR%%/inc/Image/CropCanvas.php
+%%INSTALLDIR%%/inc/Image/CropInterface.php
+%%INSTALLDIR%%/inc/ImageDirectoryIterator.php
+%%INSTALLDIR%%/inc/Log.php
+%%INSTALLDIR%%/inc/Log/composite.php
+%%INSTALLDIR%%/inc/Log/console.php
+%%INSTALLDIR%%/inc/Log/display.php
+%%INSTALLDIR%%/inc/Log/error_log.php
+%%INSTALLDIR%%/inc/Log/file.php
+%%INSTALLDIR%%/inc/Log/mail.php
+%%INSTALLDIR%%/inc/Log/mcal.php
+%%INSTALLDIR%%/inc/Log/null.php
+%%INSTALLDIR%%/inc/Log/observer.php
+%%INSTALLDIR%%/inc/Log/sql.php
+%%INSTALLDIR%%/inc/Log/sqlite.php
+%%INSTALLDIR%%/inc/Log/syslog.php
+%%INSTALLDIR%%/inc/Log/win.php
+%%INSTALLDIR%%/inc/MDB2.php
+%%INSTALLDIR%%/inc/MDB2/Date.php
+%%INSTALLDIR%%/inc/MDB2/Driver/Datatype/Common.php
+%%INSTALLDIR%%/inc/MDB2/Driver/Datatype/fbsql.php
+%%INSTALLDIR%%/inc/MDB2/Driver/Datatype/ibase.php
+%%INSTALLDIR%%/inc/MDB2/Driver/Datatype/mssql.php
+%%INSTALLDIR%%/inc/MDB2/Driver/Datatype/mysql.php
+%%INSTALLDIR%%/inc/MDB2/Driver/Datatype/oci8.php
+%%INSTALLDIR%%/inc/MDB2/Driver/Datatype/pgsql.php
+%%INSTALLDIR%%/inc/MDB2/Driver/Datatype/sqlite.php
+%%INSTALLDIR%%/inc/MDB2/Driver/Manager/Common.php
+%%INSTALLDIR%%/inc/MDB2/Driver/Manager/fbsql.php
+%%INSTALLDIR%%/inc/MDB2/Driver/Manager/ibase.php
+%%INSTALLDIR%%/inc/MDB2/Driver/Manager/mssql.php
+%%INSTALLDIR%%/inc/MDB2/Driver/Manager/mysql.php
+%%INSTALLDIR%%/inc/MDB2/Driver/Manager/oci8.php
+%%INSTALLDIR%%/inc/MDB2/Driver/Manager/pgsql.php
+%%INSTALLDIR%%/inc/MDB2/Driver/Manager/sqlite.php
+%%INSTALLDIR%%/inc/MDB2/Driver/Native/fbsql.php
+%%INSTALLDIR%%/inc/MDB2/Driver/Native/ibase.php
+%%INSTALLDIR%%/inc/MDB2/Driver/Native/mssql.php
+%%INSTALLDIR%%/inc/MDB2/Driver/Native/mysql.php
+%%INSTALLDIR%%/inc/MDB2/Driver/Native/oci8.php
+%%INSTALLDIR%%/inc/MDB2/Driver/Native/pgsql.php
+%%INSTALLDIR%%/inc/MDB2/Driver/Native/sqlite.php
+%%INSTALLDIR%%/inc/MDB2/Driver/Reverse/Common.php
+%%INSTALLDIR%%/inc/MDB2/Driver/Reverse/fbsql.php
+%%INSTALLDIR%%/inc/MDB2/Driver/Reverse/ibase.php
+%%INSTALLDIR%%/inc/MDB2/Driver/Reverse/mssql.php
+%%INSTALLDIR%%/inc/MDB2/Driver/Reverse/mysql.php
+%%INSTALLDIR%%/inc/MDB2/Driver/Reverse/oci8.php
+%%INSTALLDIR%%/inc/MDB2/Driver/Reverse/pgsql.php
+%%INSTALLDIR%%/inc/MDB2/Driver/Reverse/sqlite.php
+%%INSTALLDIR%%/inc/MDB2/Driver/fbsql.php
+%%INSTALLDIR%%/inc/MDB2/Driver/ibase.php
+%%INSTALLDIR%%/inc/MDB2/Driver/mssql.php
+%%INSTALLDIR%%/inc/MDB2/Driver/mysql.php
+%%INSTALLDIR%%/inc/MDB2/Driver/oci8.php
+%%INSTALLDIR%%/inc/MDB2/Driver/pgsql.php
+%%INSTALLDIR%%/inc/MDB2/Driver/querysim.php
+%%INSTALLDIR%%/inc/MDB2/Driver/sqlite.php
+%%INSTALLDIR%%/inc/MDB2/Extended.php
+%%INSTALLDIR%%/inc/MDB2/Iterator.php
+%%INSTALLDIR%%/inc/MDB2/LOB.php
+%%INSTALLDIR%%/inc/MDB2/Tools/Manager.php
+%%INSTALLDIR%%/inc/MDB2/Tools/Parser.php
+%%INSTALLDIR%%/inc/MDB2/Tools/reverse_engineer_xml_schema.php
+%%INSTALLDIR%%/inc/MDB2/Wrapper/peardb.php
+%%INSTALLDIR%%/inc/MP3/Id.php
+%%INSTALLDIR%%/inc/Net/CheckIP.php
+%%INSTALLDIR%%/inc/Net/DNSBL.php
+%%INSTALLDIR%%/inc/Net/DNSBL/SURBL.php
+%%INSTALLDIR%%/inc/Net/DNSBL/SURBLWithDefaultDNS.php
+%%INSTALLDIR%%/inc/Net/SMTP.php
+%%INSTALLDIR%%/inc/Net/Socket.php
+%%INSTALLDIR%%/inc/Net/URL.php
+%%INSTALLDIR%%/inc/OS/Guess.php
+%%INSTALLDIR%%/inc/PEAR.php
+%%INSTALLDIR%%/inc/PEAR/Autoloader.php
+%%INSTALLDIR%%/inc/PEAR/ErrorStack.php
+%%INSTALLDIR%%/inc/PHPUnit2/Util/CodeCoverage/Renderer.php
+%%INSTALLDIR%%/inc/PHPUnit2/Util/CodeCoverage/Renderer/HTML.php
+%%INSTALLDIR%%/inc/PHPUnit2/Util/CodeCoverage/Renderer/Text.php
+%%INSTALLDIR%%/inc/SQL/Tree.php
+%%INSTALLDIR%%/inc/SXIP/Base.php
+%%INSTALLDIR%%/inc/SXIP/Config.php
+%%INSTALLDIR%%/inc/SXIP/Data.php
+%%INSTALLDIR%%/inc/SXIP/Request.php
+%%INSTALLDIR%%/inc/SXIP/Request/Fetch.php
+%%INSTALLDIR%%/inc/SXIP/Request/FetchX.php
+%%INSTALLDIR%%/inc/SXIP/Request/Login.php
+%%INSTALLDIR%%/inc/SXIP/Request/LoginX.php
+%%INSTALLDIR%%/inc/SXIP/Request/Logout.php
+%%INSTALLDIR%%/inc/SXIP/Request/Store.php
+%%INSTALLDIR%%/inc/SXIP/Request/StoreX.php
+%%INSTALLDIR%%/inc/SXIP/Response.php
+%%INSTALLDIR%%/inc/SXIP/XMLResponse.php
+%%INSTALLDIR%%/inc/Services/flickr.php
+%%INSTALLDIR%%/inc/System.php
+%%INSTALLDIR%%/inc/XML/Parser.php
+%%INSTALLDIR%%/inc/XML/RPC.php
+%%INSTALLDIR%%/inc/XML/RPC/Server.php
+%%INSTALLDIR%%/inc/XML/Unserializer.php
+%%INSTALLDIR%%/inc/XML/db2xml.php
+%%INSTALLDIR%%/inc/XML/db2xml/Format.php
+%%INSTALLDIR%%/inc/XML/db2xml/Format/Extended.php
+%%INSTALLDIR%%/inc/XML/db2xml/Format/Extended_NG.php
+%%INSTALLDIR%%/inc/XML/db2xml/Input/Array.php
+%%INSTALLDIR%%/inc/XML/db2xml/Input/Dbresult.php
+%%INSTALLDIR%%/inc/XML/db2xml/Input/Dbresult_NG.php
+%%INSTALLDIR%%/inc/XML/db2xml/Input/File.php
+%%INSTALLDIR%%/inc/XML/db2xml/Input/Http.php
+%%INSTALLDIR%%/inc/XML/db2xml/Input/Sql.php
+%%INSTALLDIR%%/inc/XML/db2xml/Input/Sql_NG.php
+%%INSTALLDIR%%/inc/XML/db2xml/Input/String.php
+%%INSTALLDIR%%/inc/XML/db2xml/Input/XmlObject.php
+%%INSTALLDIR%%/inc/XML/xml2db.php
+%%INSTALLDIR%%/inc/bx/LICENSE
+%%INSTALLDIR%%/inc/bx/autoload.php
+%%INSTALLDIR%%/inc/bx/button.php
+%%INSTALLDIR%%/inc/bx/button/aqua.php
+%%INSTALLDIR%%/inc/bx/button/fonts/LucidaSansDemiBold.ttf
+%%INSTALLDIR%%/inc/bx/button/templates/aquabutton.png
+%%INSTALLDIR%%/inc/bx/button/threeparts.php
+%%INSTALLDIR%%/inc/bx/collection.php
+%%INSTALLDIR%%/inc/bx/collectionconfig.php
+%%INSTALLDIR%%/inc/bx/collections.php
+%%INSTALLDIR%%/inc/bx/component.php
+%%INSTALLDIR%%/inc/bx/config.php
+%%INSTALLDIR%%/inc/bx/config/collection/aggregator.xml
+%%INSTALLDIR%%/inc/bx/config/collection/blog.xml
+%%INSTALLDIR%%/inc/bx/config/default.xml
+%%INSTALLDIR%%/inc/bx/config/generate.php
+%%INSTALLDIR%%/inc/bx/dbforms2/common.php
+%%INSTALLDIR%%/inc/bx/dbforms2/config.php
+%%INSTALLDIR%%/inc/bx/dbforms2/data.php
+%%INSTALLDIR%%/inc/bx/dbforms2/datasource/foreign.php
+%%INSTALLDIR%%/inc/bx/dbforms2/datasource/sql.php
+%%INSTALLDIR%%/inc/bx/dbforms2/field.php
+%%INSTALLDIR%%/inc/bx/dbforms2/fields/checkbox.php
+%%INSTALLDIR%%/inc/bx/dbforms2/fields/color.php
+%%INSTALLDIR%%/inc/bx/dbforms2/fields/date.php
+%%INSTALLDIR%%/inc/bx/dbforms2/fields/date/time.php
+%%INSTALLDIR%%/inc/bx/dbforms2/fields/date/timeutc.php
+%%INSTALLDIR%%/inc/bx/dbforms2/fields/file.php
+%%INSTALLDIR%%/inc/bx/dbforms2/fields/file/image.php
+%%INSTALLDIR%%/inc/bx/dbforms2/fields/fixed.php
+%%INSTALLDIR%%/inc/bx/dbforms2/fields/fixed/datetime.php
+%%INSTALLDIR%%/inc/bx/dbforms2/fields/hidden.php
+%%INSTALLDIR%%/inc/bx/dbforms2/fields/number.php
+%%INSTALLDIR%%/inc/bx/dbforms2/fields/number/float.php
+%%INSTALLDIR%%/inc/bx/dbforms2/fields/number/int.php
+%%INSTALLDIR%%/inc/bx/dbforms2/fields/password.php
+%%INSTALLDIR%%/inc/bx/dbforms2/fields/password/md5.php
+%%INSTALLDIR%%/inc/bx/dbforms2/fields/relation/12n.php
+%%INSTALLDIR%%/inc/bx/dbforms2/fields/relation/n2m.php
+%%INSTALLDIR%%/inc/bx/dbforms2/fields/select.php
+%%INSTALLDIR%%/inc/bx/dbforms2/fields/text.php
+%%INSTALLDIR%%/inc/bx/dbforms2/fields/text/area.php
+%%INSTALLDIR%%/inc/bx/dbforms2/fields/text/area/small.php
+%%INSTALLDIR%%/inc/bx/dbforms2/fields/text/wysiwyg.php
+%%INSTALLDIR%%/inc/bx/dbforms2/form.php
+%%INSTALLDIR%%/inc/bx/dbforms2/group.php
+%%INSTALLDIR%%/inc/bx/dbforms2/groups/xml.php
+%%INSTALLDIR%%/inc/bx/dbforms2/helpers.php
+%%INSTALLDIR%%/inc/bx/dbforms2/liveselect.php
+%%INSTALLDIR%%/inc/bx/dbforms2/nofield.php
+%%INSTALLDIR%%/inc/bx/dbforms2/nofield/text.php
+%%INSTALLDIR%%/inc/bx/dbforms2/sql.php
+%%INSTALLDIR%%/inc/bx/dbforms2/xsl/form.xsl
+%%INSTALLDIR%%/inc/bx/doctypes/default.xhtml
+%%INSTALLDIR%%/inc/bx/doctypes/dreispalt.xhtml
+%%INSTALLDIR%%/inc/bx/doctypes/empty.configxml.xml
+%%INSTALLDIR%%/inc/bx/doctypes/schemas/bxe.rng
+%%INSTALLDIR%%/inc/bx/doctypes/schemas/dreispalt-merged.rng
+%%INSTALLDIR%%/inc/bx/doctypes/schemas/dreispalt.rng
+%%INSTALLDIR%%/inc/bx/doctypes/schemas/patforms.rng
+%%INSTALLDIR%%/inc/bx/doctypes/schemas/xhtml-merged.rng
+%%INSTALLDIR%%/inc/bx/doctypes/schemas/xhtml.rng
+%%INSTALLDIR%%/inc/bx/doctypes/schemas/xhtml/exclude/basic-table.rng
+%%INSTALLDIR%%/inc/bx/doctypes/schemas/xhtml/exclude/basic.rng
+%%INSTALLDIR%%/inc/bx/doctypes/schemas/xhtml/exclude/form.rng
+%%INSTALLDIR%%/inc/bx/doctypes/schemas/xhtml/modules/applet.rng
+%%INSTALLDIR%%/inc/bx/doctypes/schemas/xhtml/modules/attribs.rng
+%%INSTALLDIR%%/inc/bx/doctypes/schemas/xhtml/modules/base.rng
+%%INSTALLDIR%%/inc/bx/doctypes/schemas/xhtml/modules/basic-form.rng
+%%INSTALLDIR%%/inc/bx/doctypes/schemas/xhtml/modules/basic-table.rng
+%%INSTALLDIR%%/inc/bx/doctypes/schemas/xhtml/modules/bdo.rng
+%%INSTALLDIR%%/inc/bx/doctypes/schemas/xhtml/modules/csismap.rng
+%%INSTALLDIR%%/inc/bx/doctypes/schemas/xhtml/modules/datatypes.rng
+%%INSTALLDIR%%/inc/bx/doctypes/schemas/xhtml/modules/edit.rng
+%%INSTALLDIR%%/inc/bx/doctypes/schemas/xhtml/modules/events.rng
+%%INSTALLDIR%%/inc/bx/doctypes/schemas/xhtml/modules/form.rng
+%%INSTALLDIR%%/inc/bx/doctypes/schemas/xhtml/modules/frames.rng
+%%INSTALLDIR%%/inc/bx/doctypes/schemas/xhtml/modules/hypertext.rng
+%%INSTALLDIR%%/inc/bx/doctypes/schemas/xhtml/modules/iframe.rng
+%%INSTALLDIR%%/inc/bx/doctypes/schemas/xhtml/modules/image.rng
+%%INSTALLDIR%%/inc/bx/doctypes/schemas/xhtml/modules/inlstyle.rng
+%%INSTALLDIR%%/inc/bx/doctypes/schemas/xhtml/modules/legacy.rng
+%%INSTALLDIR%%/inc/bx/doctypes/schemas/xhtml/modules/link.rng
+%%INSTALLDIR%%/inc/bx/doctypes/schemas/xhtml/modules/list.rng
+%%INSTALLDIR%%/inc/bx/doctypes/schemas/xhtml/modules/meta.rng
+%%INSTALLDIR%%/inc/bx/doctypes/schemas/xhtml/modules/nameident.rng
+%%INSTALLDIR%%/inc/bx/doctypes/schemas/xhtml/modules/object.rng
+%%INSTALLDIR%%/inc/bx/doctypes/schemas/xhtml/modules/param.rng
+%%INSTALLDIR%%/inc/bx/doctypes/schemas/xhtml/modules/pres.rng
+%%INSTALLDIR%%/inc/bx/doctypes/schemas/xhtml/modules/ruby.rng
+%%INSTALLDIR%%/inc/bx/doctypes/schemas/xhtml/modules/script.rng
+%%INSTALLDIR%%/inc/bx/doctypes/schemas/xhtml/modules/ssismap.rng
+%%INSTALLDIR%%/inc/bx/doctypes/schemas/xhtml/modules/struct.rng
+%%INSTALLDIR%%/inc/bx/doctypes/schemas/xhtml/modules/style.rng
+%%INSTALLDIR%%/inc/bx/doctypes/schemas/xhtml/modules/table.rng
+%%INSTALLDIR%%/inc/bx/doctypes/schemas/xhtml/modules/target.rng
+%%INSTALLDIR%%/inc/bx/doctypes/schemas/xhtml/modules/text.rng
+%%INSTALLDIR%%/inc/bx/doctypes/schemas/xhtml/xhtml-basic.rng
+%%INSTALLDIR%%/inc/bx/doctypes/schemas/xhtml/xhtml-strict.rng
+%%INSTALLDIR%%/inc/bx/doctypes/schemas/xhtml/xhtml.rng
+%%INSTALLDIR%%/inc/bx/domdocs/overview.php
+%%INSTALLDIR%%/inc/bx/editor.php
+%%INSTALLDIR%%/inc/bx/editors/blog.php
+%%INSTALLDIR%%/inc/bx/editors/blog/comment.xsl
+%%INSTALLDIR%%/inc/bx/editors/blog/livesearch.xsl
+%%INSTALLDIR%%/inc/bx/editors/blog/post-fck.xsl
+%%INSTALLDIR%%/inc/bx/editors/blog/post.xsl
+%%INSTALLDIR%%/inc/bx/editors/blog/start.xsl
+%%INSTALLDIR%%/inc/bx/editors/blog/sub.php
+%%INSTALLDIR%%/inc/bx/editors/blog/sub/blogroll.php
+%%INSTALLDIR%%/inc/bx/editors/blog/sub/categories.php
+%%INSTALLDIR%%/inc/bx/editors/blog/sub/comments.php
+%%INSTALLDIR%%/inc/bx/editors/blog/sub/files.php
+%%INSTALLDIR%%/inc/bx/editors/blog/sub/gallery.php
+%%INSTALLDIR%%/inc/bx/editors/blog/sub/options.php
+%%INSTALLDIR%%/inc/bx/editors/blog/sub/xsl/blogroll.xsl
+%%INSTALLDIR%%/inc/bx/editors/blog/sub/xsl/categories.xsl
+%%INSTALLDIR%%/inc/bx/editors/blog/sub/xsl/comments.xsl
+%%INSTALLDIR%%/inc/bx/editors/blog/sub/xsl/files.xsl
+%%INSTALLDIR%%/inc/bx/editors/blog/sub/xsl/gallery.xsl
+%%INSTALLDIR%%/inc/bx/editors/blog/sub/xsl/options.xsl
+%%INSTALLDIR%%/inc/bx/editors/blog/sub/xsl/subeditor.xsl
+%%INSTALLDIR%%/inc/bx/editors/blog/tabs.xsl
+%%INSTALLDIR%%/inc/bx/editors/blog/uploadimage.xsl
+%%INSTALLDIR%%/inc/bx/editors/bxe.php
+%%INSTALLDIR%%/inc/bx/editors/bxe/bxe.xsl
+%%INSTALLDIR%%/inc/bx/editors/bxe/config.xml
+%%INSTALLDIR%%/inc/bx/editors/bxe/config.xsl
+%%INSTALLDIR%%/inc/bx/editors/dbform.php
+%%INSTALLDIR%%/inc/bx/editors/dbform/common.php
+%%INSTALLDIR%%/inc/bx/editors/dbform/main.php
+%%INSTALLDIR%%/inc/bx/editors/dbform/manager.php
+%%INSTALLDIR%%/inc/bx/editors/dbform/xsl/config.xsl
+%%INSTALLDIR%%/inc/bx/editors/dbform/xsl/form.xsl
+%%INSTALLDIR%%/inc/bx/editors/dbform/xsl/formedit.xsl
+%%INSTALLDIR%%/inc/bx/editors/dbform/xsl/imageformats.xsl
+%%INSTALLDIR%%/inc/bx/editors/dbform/xsl/languages.xsl
+%%INSTALLDIR%%/inc/bx/editors/dbform/xsl/selectmaker.xsl
+%%INSTALLDIR%%/inc/bx/editors/fck.php
+%%INSTALLDIR%%/inc/bx/editors/fck/fck.xsl
+%%INSTALLDIR%%/inc/bx/editors/fck/fckconfig.xml
+%%INSTALLDIR%%/inc/bx/editors/fck/fckconfig.xsl
+%%INSTALLDIR%%/inc/bx/editors/file.php
+%%INSTALLDIR%%/inc/bx/editors/file/file.xsl
+%%INSTALLDIR%%/inc/bx/editors/formedit.php
+%%INSTALLDIR%%/inc/bx/editors/image.php
+%%INSTALLDIR%%/inc/bx/editors/image/image.xsl
+%%INSTALLDIR%%/inc/bx/editors/kupu.php
+%%INSTALLDIR%%/inc/bx/editors/kupu/kupu.xsl
+%%INSTALLDIR%%/inc/bx/editors/links.php
+%%INSTALLDIR%%/inc/bx/editors/links/links.xsl
+%%INSTALLDIR%%/inc/bx/editors/oneform.php
+%%INSTALLDIR%%/inc/bx/editors/oneform/oneform.xsl
+%%INSTALLDIR%%/inc/bx/editors/ooo.php
+%%INSTALLDIR%%/inc/bx/editors/ooo/html2odt.xsl
+%%INSTALLDIR%%/inc/bx/editors/ooo/manifest.xml
+%%INSTALLDIR%%/inc/bx/editors/ooo/odt2html.xsl
+%%INSTALLDIR%%/inc/bx/editors/ooo/ooo.xsl
+%%INSTALLDIR%%/inc/bx/editors/ooo/skeleton/META-INF/manifest.xml
+%%INSTALLDIR%%/inc/bx/editors/ooo/skeleton/Thumbnails/thumbnail.png
+%%INSTALLDIR%%/inc/bx/editors/ooo/skeleton/content.xml
+%%INSTALLDIR%%/inc/bx/editors/ooo/skeleton/meta.xml
+%%INSTALLDIR%%/inc/bx/editors/ooo/skeleton/mimetype
+%%INSTALLDIR%%/inc/bx/editors/ooo/skeleton/settings.xml
+%%INSTALLDIR%%/inc/bx/editors/ooo/skeleton/styles.xml
+%%INSTALLDIR%%/inc/bx/editors/versioning.php
+%%INSTALLDIR%%/inc/bx/editors/versioning/versioning.xsl
+%%INSTALLDIR%%/inc/bx/errorhandler.php
+%%INSTALLDIR%%/inc/bx/exceptions/PageNotAllowed.php
+%%INSTALLDIR%%/inc/bx/exceptions/PageNotFound.php
+%%INSTALLDIR%%/inc/bx/filter.php
+%%INSTALLDIR%%/inc/bx/filtermanager.php
+%%INSTALLDIR%%/inc/bx/filters/form2mail.php
+%%INSTALLDIR%%/inc/bx/filters/formwizard.php
+%%INSTALLDIR%%/inc/bx/filters/formwizard/methods/berghilfe.php
+%%INSTALLDIR%%/inc/bx/filters/formwizard/methods/bhsKontakt.php
+%%INSTALLDIR%%/inc/bx/filters/formwizard/methods/blogcomment.php
+%%INSTALLDIR%%/inc/bx/filters/formwizard/methods/mailman.php
+%%INSTALLDIR%%/inc/bx/filters/formwizard/methods/messerli.php
+%%INSTALLDIR%%/inc/bx/filters/formwizard/xml2html.xsl
+%%INSTALLDIR%%/inc/bx/filters/patforms.php
+%%INSTALLDIR%%/inc/bx/filters/patforms/form2mail.php
+%%INSTALLDIR%%/inc/bx/filters/patforms/formhandler.php
+%%INSTALLDIR%%/inc/bx/filters/patforms/hegusearch.php
+%%INSTALLDIR%%/inc/bx/filters/test.php
+%%INSTALLDIR%%/inc/bx/filters/xslt.php
+%%INSTALLDIR%%/inc/bx/global.php
+%%INSTALLDIR%%/inc/bx/helpers/config.php
+%%INSTALLDIR%%/inc/bx/helpers/date.php
+%%INSTALLDIR%%/inc/bx/helpers/db.php
+%%INSTALLDIR%%/inc/bx/helpers/db2xml.php
+%%INSTALLDIR%%/inc/bx/helpers/debug.php
+%%INSTALLDIR%%/inc/bx/helpers/file.php
+%%INSTALLDIR%%/inc/bx/helpers/globals.php
+%%INSTALLDIR%%/inc/bx/helpers/http.php
+%%INSTALLDIR%%/inc/bx/helpers/image.php
+%%INSTALLDIR%%/inc/bx/helpers/int.php
+%%INSTALLDIR%%/inc/bx/helpers/mail.php
+%%INSTALLDIR%%/inc/bx/helpers/moblog.php
+%%INSTALLDIR%%/inc/bx/helpers/pager.php
+%%INSTALLDIR%%/inc/bx/helpers/perm.php
+%%INSTALLDIR%%/inc/bx/helpers/rss.php
+%%INSTALLDIR%%/inc/bx/helpers/simplecache.php
+%%INSTALLDIR%%/inc/bx/helpers/sql.php
+%%INSTALLDIR%%/inc/bx/helpers/string.php
+%%INSTALLDIR%%/inc/bx/helpers/uri.php
+%%INSTALLDIR%%/inc/bx/helpers/users.php
+%%INSTALLDIR%%/inc/bx/helpers/xml.php
+%%INSTALLDIR%%/inc/bx/helpers/xsl/rssmerge.xsl
+%%INSTALLDIR%%/inc/bx/indexer/audio/mpeg.php
+%%INSTALLDIR%%/inc/bx/indexer/image/jpeg.php
+%%INSTALLDIR%%/inc/bx/init.php
+%%INSTALLDIR%%/inc/bx/interfaces/editor.php
+%%INSTALLDIR%%/inc/bx/interfaces/plugin.php
+%%INSTALLDIR%%/inc/bx/interfaces/resource.php
+%%INSTALLDIR%%/inc/bx/log.php
+%%INSTALLDIR%%/inc/bx/metadata.php
+%%INSTALLDIR%%/inc/bx/metadatas/text/datetimefield.php
+%%INSTALLDIR%%/inc/bx/metadatas/text/readonly.php
+%%INSTALLDIR%%/inc/bx/metadatas/text/tags.php
+%%INSTALLDIR%%/inc/bx/metadatas/text/textfield.php
+%%INSTALLDIR%%/inc/bx/metaindex.php
+%%INSTALLDIR%%/inc/bx/notification.php
+%%INSTALLDIR%%/inc/bx/notificationmanager.php
+%%INSTALLDIR%%/inc/bx/notifications/mail.php
+%%INSTALLDIR%%/inc/bx/permm.php
+%%INSTALLDIR%%/inc/bx/permm/auth/common.php
+%%INSTALLDIR%%/inc/bx/permm/auth/http.php
+%%INSTALLDIR%%/inc/bx/permm/auth/pearauth.php
+%%INSTALLDIR%%/inc/bx/permm/perm/common.php
+%%INSTALLDIR%%/inc/bx/permm/perm/simple.php
+%%INSTALLDIR%%/inc/bx/permm/perm/simpleexample.php
+%%INSTALLDIR%%/inc/bx/permm/perm/true.php
+%%INSTALLDIR%%/inc/bx/php/ResizeImage.php
+%%INSTALLDIR%%/inc/bx/php/ResizeImageDynamic.php
+%%INSTALLDIR%%/inc/bx/php/UserFile.php
+%%INSTALLDIR%%/inc/bx/php/browser.php
+%%INSTALLDIR%%/inc/bx/php/dynButton.php
+%%INSTALLDIR%%/inc/bx/php/livesearch.php
+%%INSTALLDIR%%/inc/bx/php/setthemecookie.php
+%%INSTALLDIR%%/inc/bx/plugin.php
+%%INSTALLDIR%%/inc/bx/plugins/address.php
+%%INSTALLDIR%%/inc/bx/plugins/admin.php
+%%INSTALLDIR%%/inc/bx/plugins/admin/addresource.php
+%%INSTALLDIR%%/inc/bx/plugins/admin/assets.php
+%%INSTALLDIR%%/inc/bx/plugins/admin/collection.php
+%%INSTALLDIR%%/inc/bx/plugins/admin/configxml.php
+%%INSTALLDIR%%/inc/bx/plugins/admin/copy.php
+%%INSTALLDIR%%/inc/bx/plugins/admin/dbforms2.php
+%%INSTALLDIR%%/inc/bx/plugins/admin/delete.php
+%%INSTALLDIR%%/inc/bx/plugins/admin/edit.php
+%%INSTALLDIR%%/inc/bx/plugins/admin/editpopup.php
+%%INSTALLDIR%%/inc/bx/plugins/admin/listview.php
+%%INSTALLDIR%%/inc/bx/plugins/admin/navi.php
+%%INSTALLDIR%%/inc/bx/plugins/admin/overview.php
+%%INSTALLDIR%%/inc/bx/plugins/admin/properties.php
+%%INSTALLDIR%%/inc/bx/plugins/admin/siteoptions.php
+%%INSTALLDIR%%/inc/bx/plugins/admin/themes.php
+%%INSTALLDIR%%/inc/bx/plugins/aggregator.php
+%%INSTALLDIR%%/inc/bx/plugins/blog.php
+%%INSTALLDIR%%/inc/bx/plugins/blog/authorarchive.php
+%%INSTALLDIR%%/inc/bx/plugins/blog/categories.php
+%%INSTALLDIR%%/inc/bx/plugins/blog/comments.php
+%%INSTALLDIR%%/inc/bx/plugins/blog/commentsnotification.php
+%%INSTALLDIR%%/inc/bx/plugins/blog/delicious.php
+%%INSTALLDIR%%/inc/bx/plugins/blog/deliciousrdf.php
+%%INSTALLDIR%%/inc/bx/plugins/blog/flickr.php
+%%INSTALLDIR%%/inc/bx/plugins/blog/geoloc.php
+%%INSTALLDIR%%/inc/bx/plugins/blog/gravatar.php
+%%INSTALLDIR%%/inc/bx/plugins/blog/montharchive.php
+%%INSTALLDIR%%/inc/bx/plugins/blog/plazes.php
+%%INSTALLDIR%%/inc/bx/plugins/blog/prevnext.php
+%%INSTALLDIR%%/inc/bx/plugins/blog/spam.php
+%%INSTALLDIR%%/inc/bx/plugins/blog/tagarchive.php
+%%INSTALLDIR%%/inc/bx/plugins/blog/trackback.php
+%%INSTALLDIR%%/inc/bx/plugins/collection.php
+%%INSTALLDIR%%/inc/bx/plugins/db2xml.php
+%%INSTALLDIR%%/inc/bx/plugins/dbform.php
+%%INSTALLDIR%%/inc/bx/plugins/dms.php
+%%INSTALLDIR%%/inc/bx/plugins/empty.php
+%%INSTALLDIR%%/inc/bx/plugins/events.php
+%%INSTALLDIR%%/inc/bx/plugins/file.php
+%%INSTALLDIR%%/inc/bx/plugins/filereader.php
+%%INSTALLDIR%%/inc/bx/plugins/fulltree.php
+%%INSTALLDIR%%/inc/bx/plugins/gallery.php
+%%INSTALLDIR%%/inc/bx/plugins/gallery/config.xml
+%%INSTALLDIR%%/inc/bx/plugins/gallery/preview.php
+%%INSTALLDIR%%/inc/bx/plugins/image.php
+%%INSTALLDIR%%/inc/bx/plugins/links.php
+%%INSTALLDIR%%/inc/bx/plugins/metadata.php
+%%INSTALLDIR%%/inc/bx/plugins/metainfo.php
+%%INSTALLDIR%%/inc/bx/plugins/metasearch.php
+%%INSTALLDIR%%/inc/bx/plugins/navitree.php
+%%INSTALLDIR%%/inc/bx/plugins/openblog.php
+%%INSTALLDIR%%/inc/bx/plugins/rss.php
+%%INSTALLDIR%%/inc/bx/plugins/search.php
+%%INSTALLDIR%%/inc/bx/plugins/sitemap.php
+%%INSTALLDIR%%/inc/bx/plugins/sql2xml.php
+%%INSTALLDIR%%/inc/bx/plugins/structure2xml.php
+%%INSTALLDIR%%/inc/bx/plugins/subcontent.php
+%%INSTALLDIR%%/inc/bx/plugins/tree.php
+%%INSTALLDIR%%/inc/bx/plugins/vote.php
+%%INSTALLDIR%%/inc/bx/plugins/xhtml.php
+%%INSTALLDIR%%/inc/bx/plugins/xmlfile.php
+%%INSTALLDIR%%/inc/bx/plugins/xmlrpc.php
+%%INSTALLDIR%%/inc/bx/plugins/xmlrpc/weblog.php
+%%INSTALLDIR%%/inc/bx/popoon/components/actions/bxcms.php
+%%INSTALLDIR%%/inc/bx/popoon/components/actions/bxcmsadmin.php
+%%INSTALLDIR%%/inc/bx/popoon/components/actions/bxcmsauth.php
+%%INSTALLDIR%%/inc/bx/popoon/components/actions/dbform.php
+%%INSTALLDIR%%/inc/bx/popoon/components/generators/admintree.php
+%%INSTALLDIR%%/inc/bx/popoon/components/generators/bxcms.php
+%%INSTALLDIR%%/inc/bx/popoon/components/generators/bxcmsadmin.php
+%%INSTALLDIR%%/inc/bx/popoon/components/generators/webdavfile.php
+%%INSTALLDIR%%/inc/bx/popoon/components/readers/adminpopup.php
+%%INSTALLDIR%%/inc/bx/popoon/components/readers/webdav/admin.php
+%%INSTALLDIR%%/inc/bx/popoon/components/readers/webdav/bx.php
+%%INSTALLDIR%%/inc/bx/popoon/components/readers/webdavadmin.php
+%%INSTALLDIR%%/inc/bx/popoon/components/readers/webdavbx.php
+%%INSTALLDIR%%/inc/bx/popoon/components/transformers/bxcmsfilter.php
+%%INSTALLDIR%%/inc/bx/propertyconfig.php
+%%INSTALLDIR%%/inc/bx/resource.php
+%%INSTALLDIR%%/inc/bx/resourcemanager.php
+%%INSTALLDIR%%/inc/bx/resources/application/dbform.php
+%%INSTALLDIR%%/inc/bx/resources/file.php
+%%INSTALLDIR%%/inc/bx/resources/image/image.php
+%%INSTALLDIR%%/inc/bx/resources/simple.php
+%%INSTALLDIR%%/inc/bx/resources/simplecollection.php
+%%INSTALLDIR%%/inc/bx/resources/text/address.php
+%%INSTALLDIR%%/inc/bx/resources/text/blogpost.php
+%%INSTALLDIR%%/inc/bx/resources/text/html.php
+%%INSTALLDIR%%/inc/bx/resources/text/wiki.php
+%%INSTALLDIR%%/inc/bx/streams/blog.php
+%%INSTALLDIR%%/inc/bx/streams/blog/html2feed.xsl
+%%INSTALLDIR%%/inc/bx/streams/blog/html2feedfull.xsl
+%%INSTALLDIR%%/inc/bx/streams/blog/html2xml.xsl
+%%INSTALLDIR%%/inc/bx/streams/blog/newentry.xml
+%%INSTALLDIR%%/inc/bx/streams/buffer.php
+%%INSTALLDIR%%/inc/bx/streams/bxconfig.php
+%%INSTALLDIR%%/inc/bx/streams/db2xml.php
+%%INSTALLDIR%%/inc/bx/streams/ooo.php
+%%INSTALLDIR%%/inc/bx/streams/ooo/ooo2html.xsl
+%%INSTALLDIR%%/inc/bx/streams/portlet.php
+%%INSTALLDIR%%/inc/bx/streams/structure2xml.php
+%%INSTALLDIR%%/inc/bx/streams/svn.php
+%%INSTALLDIR%%/inc/bx/streams/wiki.php
+%%INSTALLDIR%%/inc/bx/tests/alltests.php
+%%INSTALLDIR%%/inc/bx/tests/bxwebtestcase.php
+%%INSTALLDIR%%/inc/bx/tests/codecoverage.css
+%%INSTALLDIR%%/inc/bx/tests/config-test.php-dist
+%%INSTALLDIR%%/inc/bx/tests/installertest.php
+%%INSTALLDIR%%/inc/bx/tests/test/test_of_admin.php
+%%INSTALLDIR%%/inc/bx/tests/test/test_of_blog.php
+%%INSTALLDIR%%/inc/bx/tests/test/test_of_bx_helpers_string.php
+%%INSTALLDIR%%/inc/bx/tests/test/test_of_test.php
+%%INSTALLDIR%%/inc/bx/tests/test/test_of_webpage.php
+%%INSTALLDIR%%/inc/bx/tests/testhelper/coverage.php
+%%INSTALLDIR%%/inc/bx/tests/testhelper/runner.php
+%%INSTALLDIR%%/inc/bx/tests/testhelper/scanner.php
+%%INSTALLDIR%%/inc/bx/tools/dbupdate/update.php
+%%INSTALLDIR%%/inc/bx/tools/i18n/i18ngenerator.xsl
+%%INSTALLDIR%%/inc/bx/tools/mdb2forms/README
+%%INSTALLDIR%%/inc/bx/tools/mdb2forms/configsinstall.php
+%%INSTALLDIR%%/inc/bx/tools/mdb2forms/mdbschema2forms.xsl
+%%INSTALLDIR%%/inc/bx/tools/mdb2forms/reverse_engineer_xml_schema.php
+%%INSTALLDIR%%/inc/bx/tools/svnsync
+%%INSTALLDIR%%/inc/bx/tree.php
+%%INSTALLDIR%%/inc/bx/versioning.php
+%%INSTALLDIR%%/inc/bx/versioning/svn.php
+%%INSTALLDIR%%/inc/bx/xml.php
+%%INSTALLDIR%%/inc/bx/xsl/plugin2xml.xsl
+%%INSTALLDIR%%/inc/bx/xsl/tree2kupulibrary.xsl
+%%INSTALLDIR%%/inc/magpie/AUTHORS
+%%INSTALLDIR%%/inc/magpie/CHANGES
+%%INSTALLDIR%%/inc/magpie/ChangeLog
+%%INSTALLDIR%%/inc/magpie/INSTALL
+%%INSTALLDIR%%/inc/magpie/NEWS
+%%INSTALLDIR%%/inc/magpie/README
+%%INSTALLDIR%%/inc/magpie/TROUBLESHOOTING
+%%INSTALLDIR%%/inc/magpie/cookbook
+%%INSTALLDIR%%/inc/magpie/extlib/Snoopy.class.inc
+%%INSTALLDIR%%/inc/magpie/rss_cache.inc
+%%INSTALLDIR%%/inc/magpie/rss_fetch.inc
+%%INSTALLDIR%%/inc/magpie/rss_parse.inc
+%%INSTALLDIR%%/inc/magpie/rss_utils.inc
+%%INSTALLDIR%%/inc/patError.php
+%%INSTALLDIR%%/inc/patErrorManager.php
+%%INSTALLDIR%%/inc/patForms.php
+%%INSTALLDIR%%/inc/patForms/Collection.php
+%%INSTALLDIR%%/inc/patForms/Creator.php
+%%INSTALLDIR%%/inc/patForms/Creator/DB.php
+%%INSTALLDIR%%/inc/patForms/Creator/DB/MySQL.php
+%%INSTALLDIR%%/inc/patForms/Element.php
+%%INSTALLDIR%%/inc/patForms/Element/Date.php
+%%INSTALLDIR%%/inc/patForms/Element/Date/Element.php
+%%INSTALLDIR%%/inc/patForms/Element/Date/Element/Day.php
+%%INSTALLDIR%%/inc/patForms/Element/Date/Element/Hour.php
+%%INSTALLDIR%%/inc/patForms/Element/Date/Element/Meridiem.php
+%%INSTALLDIR%%/inc/patForms/Element/Date/Element/Minute.php
+%%INSTALLDIR%%/inc/patForms/Element/Date/Element/Month.php
+%%INSTALLDIR%%/inc/patForms/Element/Date/Element/Second.php
+%%INSTALLDIR%%/inc/patForms/Element/Date/Element/Year.php
+%%INSTALLDIR%%/inc/patForms/Element/Enum.php
+%%INSTALLDIR%%/inc/patForms/Element/File.php
+%%INSTALLDIR%%/inc/patForms/Element/Group.php
+%%INSTALLDIR%%/inc/patForms/Element/Hidden.php
+%%INSTALLDIR%%/inc/patForms/Element/Number.php
+%%INSTALLDIR%%/inc/patForms/Element/Pool.php
+%%INSTALLDIR%%/inc/patForms/Element/Radio.php
+%%INSTALLDIR%%/inc/patForms/Element/RadioGroup.php
+%%INSTALLDIR%%/inc/patForms/Element/Set.php
+%%INSTALLDIR%%/inc/patForms/Element/String.php
+%%INSTALLDIR%%/inc/patForms/Element/Switch.php
+%%INSTALLDIR%%/inc/patForms/Element/Text.php
+%%INSTALLDIR%%/inc/patForms/Filter.php
+%%INSTALLDIR%%/inc/patForms/Filter/Multiplier.php
+%%INSTALLDIR%%/inc/patForms/Filter/Strtolower.php
+%%INSTALLDIR%%/inc/patForms/Filter/Trim.php
+%%INSTALLDIR%%/inc/patForms/Filter/XSS.php
+%%INSTALLDIR%%/inc/patForms/FormatChecker.php
+%%INSTALLDIR%%/inc/patForms/Observer.php
+%%INSTALLDIR%%/inc/patForms/Observer/ErrorAttributes.php
+%%INSTALLDIR%%/inc/patForms/Observer/ReadonlyFinished.php
+%%INSTALLDIR%%/inc/patForms/Parser.php
+%%INSTALLDIR%%/inc/patForms/Parser/Html.php
+%%INSTALLDIR%%/inc/patForms/Parser/SimpleRenderer.php
+%%INSTALLDIR%%/inc/patForms/Parser/patTemplateRenderer.php
+%%INSTALLDIR%%/inc/patForms/Renderer.php
+%%INSTALLDIR%%/inc/patForms/Renderer/Array.php
+%%INSTALLDIR%%/inc/patForms/Renderer/String.php
+%%INSTALLDIR%%/inc/patForms/Rule.php
+%%INSTALLDIR%%/inc/patForms/Rule/ConditionalEnum.php
+%%INSTALLDIR%%/inc/patForms/Rule/ConditionalRequired.php
+%%INSTALLDIR%%/inc/patForms/Rule/Email.php
+%%INSTALLDIR%%/inc/patForms/Rule/EmailEN.php
+%%INSTALLDIR%%/inc/patForms/Rule/Enum.php
+%%INSTALLDIR%%/inc/patForms/Rule/GermanBLZ.php
+%%INSTALLDIR%%/inc/patForms/Rule/GermanZipCode.php
+%%INSTALLDIR%%/inc/patForms/Rule/Retype.php
+%%INSTALLDIR%%/inc/patForms/Rule/bxTest.php
+%%INSTALLDIR%%/inc/patForms/Storage.php
+%%INSTALLDIR%%/inc/patForms/Storage/CSV.php
+%%INSTALLDIR%%/inc/patForms/Storage/DB.php
+%%INSTALLDIR%%/inc/popoon/ChangeLog
+%%INSTALLDIR%%/inc/popoon/LICENSE
+%%INSTALLDIR%%/inc/popoon/NOTICE
+%%INSTALLDIR%%/inc/popoon/VERSION
+%%INSTALLDIR%%/inc/popoon/autoload.php
+%%INSTALLDIR%%/inc/popoon/classes/browser.php
+%%INSTALLDIR%%/inc/popoon/classes/config.php
+%%INSTALLDIR%%/inc/popoon/classes/externalinput.php
+%%INSTALLDIR%%/inc/popoon/classes/i18n.php
+%%INSTALLDIR%%/inc/popoon/classes/structure2xml.php
+%%INSTALLDIR%%/inc/popoon/component.php
+%%INSTALLDIR%%/inc/popoon/components/action.php
+%%INSTALLDIR%%/inc/popoon/components/actions/davput.php
+%%INSTALLDIR%%/inc/popoon/components/actions/db_query.php
+%%INSTALLDIR%%/inc/popoon/components/actions/httpauth.php
+%%INSTALLDIR%%/inc/popoon/components/actions/mail.php
+%%INSTALLDIR%%/inc/popoon/components/actions/pearauth.php
+%%INSTALLDIR%%/inc/popoon/components/actions/pwforgotten.php
+%%INSTALLDIR%%/inc/popoon/components/actions/querybuilder.php
+%%INSTALLDIR%%/inc/popoon/components/actions/querybuilder.xsl
+%%INSTALLDIR%%/inc/popoon/components/actions/search2sql.php
+%%INSTALLDIR%%/inc/popoon/components/actions/sessionstorer.php
+%%INSTALLDIR%%/inc/popoon/components/actions/simple.php
+%%INSTALLDIR%%/inc/popoon/components/actions/simpleperm.php
+%%INSTALLDIR%%/inc/popoon/components/actions/slidemladmin.php
+%%INSTALLDIR%%/inc/popoon/components/aggregator.php
+%%INSTALLDIR%%/inc/popoon/components/cache.php
+%%INSTALLDIR%%/inc/popoon/components/generator.php
+%%INSTALLDIR%%/inc/popoon/components/generators/db2xml.php
+%%INSTALLDIR%%/inc/popoon/components/generators/directory.php
+%%INSTALLDIR%%/inc/popoon/components/generators/empty.php
+%%INSTALLDIR%%/inc/popoon/components/generators/error.php
+%%INSTALLDIR%%/inc/popoon/components/generators/planet.php
+%%INSTALLDIR%%/inc/popoon/components/generators/s9y.php
+%%INSTALLDIR%%/inc/popoon/components/generators/search/MnogoSearch.php
+%%INSTALLDIR%%/inc/popoon/components/generators/search/SwishE.php
+%%INSTALLDIR%%/inc/popoon/components/generators/structure2xml.php
+%%INSTALLDIR%%/inc/popoon/components/generators/structureslider.php
+%%INSTALLDIR%%/inc/popoon/components/generators/textfile.php
+%%INSTALLDIR%%/inc/popoon/components/generators/webdav/popoon.php
+%%INSTALLDIR%%/inc/popoon/components/generators/webdavfile.php
+%%INSTALLDIR%%/inc/popoon/components/generators/xmlfile.php
+%%INSTALLDIR%%/inc/popoon/components/generators/xmlrpcserver.php
+%%INSTALLDIR%%/inc/popoon/components/matcher.php
+%%INSTALLDIR%%/inc/popoon/components/matchers/always.php
+%%INSTALLDIR%%/inc/popoon/components/matchers/any.php
+%%INSTALLDIR%%/inc/popoon/components/matchers/phpglobals.php
+%%INSTALLDIR%%/inc/popoon/components/matchers/phpglobalvars.php
+%%INSTALLDIR%%/inc/popoon/components/matchers/uri.php
+%%INSTALLDIR%%/inc/popoon/components/reader.php
+%%INSTALLDIR%%/inc/popoon/components/readers/info.php
+%%INSTALLDIR%%/inc/popoon/components/readers/php.php
+%%INSTALLDIR%%/inc/popoon/components/readers/phpsource.php
+%%INSTALLDIR%%/inc/popoon/components/readers/resource.php
+%%INSTALLDIR%%/inc/popoon/components/readers/textsource.php
+%%INSTALLDIR%%/inc/popoon/components/readers/tgz.php
+%%INSTALLDIR%%/inc/popoon/components/schemes/BX_BITLIB_DIR.php
+%%INSTALLDIR%%/inc/popoon/components/schemes/BX_PROJECT_DIR.php
+%%INSTALLDIR%%/inc/popoon/components/schemes/config.php
+%%INSTALLDIR%%/inc/popoon/components/schemes/globals.php
+%%INSTALLDIR%%/inc/popoon/components/schemes/lang.php
+%%INSTALLDIR%%/inc/popoon/components/schemes/options.php
+%%INSTALLDIR%%/inc/popoon/components/schemes/peardb.php
+%%INSTALLDIR%%/inc/popoon/components/schemes/php.php
+%%INSTALLDIR%%/inc/popoon/components/schemes/phpglobals.php
+%%INSTALLDIR%%/inc/popoon/components/schemes/phpglobalsclean.php
+%%INSTALLDIR%%/inc/popoon/components/schemes/popoonmap.php
+%%INSTALLDIR%%/inc/popoon/components/selector.php
+%%INSTALLDIR%%/inc/popoon/components/selectors/any.php
+%%INSTALLDIR%%/inc/popoon/components/selectors/eval.php
+%%INSTALLDIR%%/inc/popoon/components/selectors/phpglobalvars.php
+%%INSTALLDIR%%/inc/popoon/components/selectors/requestmethod.php
+%%INSTALLDIR%%/inc/popoon/components/selectors/uri.php
+%%INSTALLDIR%%/inc/popoon/components/serializer.php
+%%INSTALLDIR%%/inc/popoon/components/serializers/debug.php
+%%INSTALLDIR%%/inc/popoon/components/serializers/empty.php
+%%INSTALLDIR%%/inc/popoon/components/serializers/fo2pdf.php
+%%INSTALLDIR%%/inc/popoon/components/serializers/html.php
+%%INSTALLDIR%%/inc/popoon/components/serializers/html2html.php
+%%INSTALLDIR%%/inc/popoon/components/serializers/html2html/html2html.xsl
+%%INSTALLDIR%%/inc/popoon/components/serializers/htmlwithmailobfuscator.php
+%%INSTALLDIR%%/inc/popoon/components/serializers/text.php
+%%INSTALLDIR%%/inc/popoon/components/serializers/xhtml.php
+%%INSTALLDIR%%/inc/popoon/components/serializers/xml.php
+%%INSTALLDIR%%/inc/popoon/components/serializers/xml2xls.php
+%%INSTALLDIR%%/inc/popoon/components/serializers/xmldom.php
+%%INSTALLDIR%%/inc/popoon/components/serializers/xmlformatted.php
+%%INSTALLDIR%%/inc/popoon/components/serializers/zip.php
+%%INSTALLDIR%%/inc/popoon/components/transformer.php
+%%INSTALLDIR%%/inc/popoon/components/transformers/highlightcode.php
+%%INSTALLDIR%%/inc/popoon/components/transformers/i18n.php
+%%INSTALLDIR%%/inc/popoon/components/transformers/i18n/driver.php
+%%INSTALLDIR%%/inc/popoon/components/transformers/i18n/xml.php
+%%INSTALLDIR%%/inc/popoon/components/transformers/libxslt.php
+%%INSTALLDIR%%/inc/popoon/components/transformers/phpprocessor.php
+%%INSTALLDIR%%/inc/popoon/components/transformers/searchhighlighter.php
+%%INSTALLDIR%%/inc/popoon/components/transformers/sourceview.php
+%%INSTALLDIR%%/inc/popoon/components/transformers/tidy.php
+%%INSTALLDIR%%/inc/popoon/components/transformers/xinclude.php
+%%INSTALLDIR%%/inc/popoon/components/transformers/xmltransformer.php
+%%INSTALLDIR%%/inc/popoon/components/transformers/xslt.php
+%%INSTALLDIR%%/inc/popoon/components/transformers/xslt/directory2zip.xsl
+%%INSTALLDIR%%/inc/popoon/components/transformers/xsltal.php
+%%INSTALLDIR%%/inc/popoon/components/transformers/xsltal/tal2xslt.xsl
+%%INSTALLDIR%%/inc/popoon/div/generatePackage.xml.php
+%%INSTALLDIR%%/inc/popoon/examples/README
+%%INSTALLDIR%%/inc/popoon/examples/XMLT_Image.xml
+%%INSTALLDIR%%/inc/popoon/examples/Xhtml2fo.xsl
+%%INSTALLDIR%%/inc/popoon/examples/action_hello.xsl
+%%INSTALLDIR%%/inc/popoon/examples/action_unknown.xml
+%%INSTALLDIR%%/inc/popoon/examples/docbook.xml
+%%INSTALLDIR%%/inc/popoon/examples/empty.xml
+%%INSTALLDIR%%/inc/popoon/examples/examples.php
+%%INSTALLDIR%%/inc/popoon/examples/examples.xml
+%%INSTALLDIR%%/inc/popoon/examples/examples.xsl
+%%INSTALLDIR%%/inc/popoon/examples/examples_sitemap.xml
+%%INSTALLDIR%%/inc/popoon/examples/htaccess
+%%INSTALLDIR%%/inc/popoon/examples/index.php
+%%INSTALLDIR%%/inc/popoon/examples/index.phps
+%%INSTALLDIR%%/inc/popoon/examples/sitemap1.xml
+%%INSTALLDIR%%/inc/popoon/examples/sitemap2.xml
+%%INSTALLDIR%%/inc/popoon/examples/sitemap3.xml
+%%INSTALLDIR%%/inc/popoon/examples/sitemap_action.xml
+%%INSTALLDIR%%/inc/popoon/examples/sitemap_mod.xml
+%%INSTALLDIR%%/inc/popoon/examples/sitemap_mount.xml
+%%INSTALLDIR%%/inc/popoon/examples/sitemap_mounted.xml
+%%INSTALLDIR%%/inc/popoon/examples/sitemap_part.xml
+%%INSTALLDIR%%/inc/popoon/examples/sitemap_part_http.xml
+%%INSTALLDIR%%/inc/popoon/examples/sitemap_php.xml
+%%INSTALLDIR%%/inc/popoon/examples/sitemap_xmlt.xml
+%%INSTALLDIR%%/inc/popoon/examples/sitemap_xmlt2.xml
+%%INSTALLDIR%%/inc/popoon/examples/slideml.xml
+%%INSTALLDIR%%/inc/popoon/examples/slideml/2html_ext_css.xsl
+%%INSTALLDIR%%/inc/popoon/examples/slideml/htaccess
+%%INSTALLDIR%%/inc/popoon/examples/slideml/img/phpug_logo.gif
+%%INSTALLDIR%%/inc/popoon/examples/slideml/index.php
+%%INSTALLDIR%%/inc/popoon/examples/slideml/sitemap_mod.xml
+%%INSTALLDIR%%/inc/popoon/examples/slideml/slideml.xml
+%%INSTALLDIR%%/inc/popoon/examples/slideml/styles.css
+%%INSTALLDIR%%/inc/popoon/examples/slideml2html.xsl
+%%INSTALLDIR%%/inc/popoon/examples/slideml2html_get.xsl
+%%INSTALLDIR%%/inc/popoon/examples/slideml2html_mod.xsl
+%%INSTALLDIR%%/inc/popoon/examples/slideml2html_php.xsl
+%%INSTALLDIR%%/inc/popoon/examples/slideml2pdf_mod.xsl
+%%INSTALLDIR%%/inc/popoon/examples/slideml2xml_mod.xsl
+%%INSTALLDIR%%/inc/popoon/examples/somepng.png
+%%INSTALLDIR%%/inc/popoon/examples/syntax-handle-errors-sitemap.xml
+%%INSTALLDIR%%/inc/popoon/exceptions/DB.php
+%%INSTALLDIR%%/inc/popoon/exceptions/FileNotFound.php
+%%INSTALLDIR%%/inc/popoon/exceptions/IsNotFile.php
+%%INSTALLDIR%%/inc/popoon/exceptions/PEAR.php
+%%INSTALLDIR%%/inc/popoon/exceptions/XMLParseError.php
+%%INSTALLDIR%%/inc/popoon/exceptions/XSLTParseError.php
+%%INSTALLDIR%%/inc/popoon/functions/common.php
+%%INSTALLDIR%%/inc/popoon/globalContainer.php
+%%INSTALLDIR%%/inc/popoon/helpers/lang.php
+%%INSTALLDIR%%/inc/popoon/helpers/mimetypes.php
+%%INSTALLDIR%%/inc/popoon/helpers/simplecache.php
+%%INSTALLDIR%%/inc/popoon/package.xml
+%%INSTALLDIR%%/inc/popoon/pool.php
+%%INSTALLDIR%%/inc/popoon/popoon.php
+%%INSTALLDIR%%/inc/popoon/sitemap.php
+%%INSTALLDIR%%/inc/popoon/sitemap/outputcache.php
+%%INSTALLDIR%%/inc/popoon/sitemap/sitemap2php.xsl
+%%INSTALLDIR%%/inc/popoon/sitemap/sitemap2phpincludes.xsl
+%%INSTALLDIR%%/inc/popoon/streams/bx.php
+%%INSTALLDIR%%/inc/popoon/streams/imageresize.php
+%%INSTALLDIR%%/inc/popoon/streams/ooo.php
+%%INSTALLDIR%%/inc/popoon/streams/ooo/ooo2html.xsl
+%%INSTALLDIR%%/inc/popoon/streams/storage/dbsax.php
+%%INSTALLDIR%%/inc/popoon/streams/tidy.php
+%%INSTALLDIR%%/inc/popoon/streams/wiki.php
+%%INSTALLDIR%%/inc/popoon/tests/README
+%%INSTALLDIR%%/inc/popoon/tests/run-tests.php4
+%%INSTALLDIR%%/inc/popoon/tests/run-tests.php5
+%%INSTALLDIR%%/inc/popoon/tests/run-tests.sh
+%%INSTALLDIR%%/inc/popoon/tests/tests/001.phpt
+%%INSTALLDIR%%/inc/popoon/tests/tests/002.phpt
+%%INSTALLDIR%%/inc/popoon/tests/tests/003.phpt
+%%INSTALLDIR%%/inc/popoon/tests/tests/004.phpt
+%%INSTALLDIR%%/inc/popoon/tests/tests/005.phpt
+%%INSTALLDIR%%/inc/popoon/tests/tests/005usephp.xsl
+%%INSTALLDIR%%/inc/popoon/tests/tests/006.phpt
+%%INSTALLDIR%%/inc/popoon/tests/tests/007.phpt
+%%INSTALLDIR%%/inc/popoon/tests/tests/008.phpt
+%%INSTALLDIR%%/inc/popoon/tests/tests/009.phpt
+%%INSTALLDIR%%/inc/popoon/tests/tests/010.phpt
+%%INSTALLDIR%%/inc/popoon/tests/tests/empty.xml
+%%INSTALLDIR%%/inc/popoon/tests/tests/init.php
+%%INSTALLDIR%%/inc/popoon/tests/tests/popoon.sql
+%%INSTALLDIR%%/inc/popoon/tests/tests/sample.xml
+%%INSTALLDIR%%/inc/popoon/tests/tests/sample2html.xsl
+%%INSTALLDIR%%/inc/popoon/tests/tests/sitemap001.xml
+%%INSTALLDIR%%/inc/popoon/tests/tests/sitemap002.xml
+%%INSTALLDIR%%/inc/popoon/tests/tests/sitemap003.xml
+%%INSTALLDIR%%/inc/popoon/tests/tests/sitemap004.xml
+%%INSTALLDIR%%/inc/popoon/tests/tests/sitemap005.xml
+%%INSTALLDIR%%/inc/popoon/tests/tests/sitemap006.xml
+%%INSTALLDIR%%/inc/popoon/tests/tests/sitemap007.xml
+%%INSTALLDIR%%/inc/popoon/tests/tests/sitemap008.xml
+%%INSTALLDIR%%/inc/popoon/tests/tests/sitemap009.xml
+%%INSTALLDIR%%/inc/popoon/tests/tests/sitemap009m.xml
+%%INSTALLDIR%%/inc/popoon/tests/tests/sitemap010.xml
+%%INSTALLDIR%%/inc/popoon/tests/tests/slideml.xml
+%%INSTALLDIR%%/inc/popoon/tests/tests/slideml2xml_1page.xsl
+%%INSTALLDIR%%/inc/popoon/xsl/error2html.xsl
+%%INSTALLDIR%%/inc/simpletest/HELP_MY_TESTS_DONT_WORK_ANYMORE
+%%INSTALLDIR%%/inc/simpletest/LICENSE
+%%INSTALLDIR%%/inc/simpletest/README
+%%INSTALLDIR%%/inc/simpletest/VERSION
+%%INSTALLDIR%%/inc/simpletest/authentication.php
+%%INSTALLDIR%%/inc/simpletest/browser.php
+%%INSTALLDIR%%/inc/simpletest/collector.php
+%%INSTALLDIR%%/inc/simpletest/compatibility.php
+%%INSTALLDIR%%/inc/simpletest/dumper.php
+%%INSTALLDIR%%/inc/simpletest/encoding.php
+%%INSTALLDIR%%/inc/simpletest/errors.php
+%%INSTALLDIR%%/inc/simpletest/expectation.php
+%%INSTALLDIR%%/inc/simpletest/extensions/pear_test_case.php
+%%INSTALLDIR%%/inc/simpletest/extensions/phpunit_test_case.php
+%%INSTALLDIR%%/inc/simpletest/form.php
+%%INSTALLDIR%%/inc/simpletest/frames.php
+%%INSTALLDIR%%/inc/simpletest/http.php
+%%INSTALLDIR%%/inc/simpletest/mock_objects.php
+%%INSTALLDIR%%/inc/simpletest/page.php
+%%INSTALLDIR%%/inc/simpletest/parser.php
+%%INSTALLDIR%%/inc/simpletest/reflection_php4.php
+%%INSTALLDIR%%/inc/simpletest/reflection_php5.php
+%%INSTALLDIR%%/inc/simpletest/remote.php
+%%INSTALLDIR%%/inc/simpletest/reporter.php
+%%INSTALLDIR%%/inc/simpletest/runner.php
+%%INSTALLDIR%%/inc/simpletest/scorer.php
+%%INSTALLDIR%%/inc/simpletest/selector.php
+%%INSTALLDIR%%/inc/simpletest/shell_tester.php
+%%INSTALLDIR%%/inc/simpletest/simpletest.php
+%%INSTALLDIR%%/inc/simpletest/socket.php
+%%INSTALLDIR%%/inc/simpletest/tag.php
+%%INSTALLDIR%%/inc/simpletest/test_case.php
+%%INSTALLDIR%%/inc/simpletest/unit_tester.php
+%%INSTALLDIR%%/inc/simpletest/url.php
+%%INSTALLDIR%%/inc/simpletest/user_agent.php
+%%INSTALLDIR%%/inc/simpletest/web_tester.php
+%%INSTALLDIR%%/inc/simpletest/xml.php
+%%INSTALLDIR%%/index.php
+%%INSTALLDIR%%/install/build-shared.xml
+%%INSTALLDIR%%/install/build.xml
+%%INSTALLDIR%%/install/conf-shared/_htaccess_shared
+%%INSTALLDIR%%/install/conf-shared/after.php
+%%INSTALLDIR%%/install/conf-shared/before.php
+%%INSTALLDIR%%/install/conf-shared/config.xml
+%%INSTALLDIR%%/install/conf-shared/include.php
+%%INSTALLDIR%%/install/dist/conf/config.xml
+%%INSTALLDIR%%/install/dist/conf/editors/xhtml.xml
+%%INSTALLDIR%%/install/dist/conf/fck/fckstyles.xml
+%%INSTALLDIR%%/install/dist/conf/htaccess
+%%INSTALLDIR%%/install/dist/conf/include.php
+%%INSTALLDIR%%/install/dist/conf/properties/audio/mpeg.xml
+%%INSTALLDIR%%/install/dist/conf/properties/image/jpeg.xml
+%%INSTALLDIR%%/install/dist/conf/properties/properties.xml
+%%INSTALLDIR%%/install/dist/data/.configxml
+%%INSTALLDIR%%/install/dist/data/.configxml.children
+%%INSTALLDIR%%/install/dist/data/blog/.configxml
+%%INSTALLDIR%%/install/dist/data/blog/index.de.xhtml
+%%INSTALLDIR%%/install/dist/data/contact/.configxml
+%%INSTALLDIR%%/install/dist/data/contact/index.de.xhtml
+%%INSTALLDIR%%/install/dist/data/contact/index.en.xhtml
+%%INSTALLDIR%%/install/dist/data/contact/thanks.de.xhtml
+%%INSTALLDIR%%/install/dist/data/contact/thanks.en.xhtml
+%%INSTALLDIR%%/install/dist/data/files/.configxml
+%%INSTALLDIR%%/install/dist/data/gallery/.configxml
+%%INSTALLDIR%%/install/dist/data/gallery/.configxml.children
+%%INSTALLDIR%%/install/dist/data/gallery/index.de.xhtml
+%%INSTALLDIR%%/install/dist/data/index.de.xhtml
+%%INSTALLDIR%%/install/dist/data/index.en.xhtml
+%%INSTALLDIR%%/install/dist/data/lang/.configxml
+%%INSTALLDIR%%/install/dist/data/themes/.configxml
+%%INSTALLDIR%%/install/dist/files/_galleries/gallery/platzhalter.jpg
+%%INSTALLDIR%%/install/dist/files/images/getfirefox.png
+%%INSTALLDIR%%/install/dist/files/images/lageplan.png
+%%INSTALLDIR%%/install/dist/files/images/xml.png
+%%INSTALLDIR%%/install/dist/htaccess
+%%INSTALLDIR%%/install/dist/lang/contact.xml
+%%INSTALLDIR%%/install/dist/lang/contact_de.xml
+%%INSTALLDIR%%/install/dist/lang/master.xml
+%%INSTALLDIR%%/install/dist/lang/master_de.xml
+%%INSTALLDIR%%/install/dist/lang/master_en.xml
+%%INSTALLDIR%%/install/dist/sitemap/sitemap.xml
+%%INSTALLDIR%%/install/extractProperties.xsl
+%%INSTALLDIR%%/install/index-shared.php
+%%INSTALLDIR%%/install/index.php
+%%INSTALLDIR%%/install/installAll.sh
+%%INSTALLDIR%%/install/lock.sh
+%%INSTALLDIR%%/install/master.sql
+%%INSTALLDIR%%/install/phing/CHANGELOG
+%%INSTALLDIR%%/install/phing/CREDITS
+%%INSTALLDIR%%/install/phing/INSTALL.UNIX
+%%INSTALLDIR%%/install/phing/INSTALL.WIN32
+%%INSTALLDIR%%/install/phing/LICENSE
+%%INSTALLDIR%%/install/phing/README
+%%INSTALLDIR%%/install/phing/TODO
+%%INSTALLDIR%%/install/phing/bin/pear-phing
+%%INSTALLDIR%%/install/phing/bin/pear-phing.bat
+%%INSTALLDIR%%/install/phing/bin/phing
+%%INSTALLDIR%%/install/phing/bin/phing.bat
+%%INSTALLDIR%%/install/phing/bin/phing.php
+%%INSTALLDIR%%/install/phing/build.xml
+%%INSTALLDIR%%/install/phing/classes/phing/BuildEvent.php
+%%INSTALLDIR%%/install/phing/classes/phing/BuildException.php
+%%INSTALLDIR%%/install/phing/classes/phing/BuildListener.php
+%%INSTALLDIR%%/install/phing/classes/phing/IntrospectionHelper.php
+%%INSTALLDIR%%/install/phing/classes/phing/Phing.php
+%%INSTALLDIR%%/install/phing/classes/phing/Project.php
+%%INSTALLDIR%%/install/phing/classes/phing/ProjectComponent.php
+%%INSTALLDIR%%/install/phing/classes/phing/RuntimeConfigurable.php
+%%INSTALLDIR%%/install/phing/classes/phing/Target.php
+%%INSTALLDIR%%/install/phing/classes/phing/Task.php
+%%INSTALLDIR%%/install/phing/classes/phing/TaskAdapter.php
+%%INSTALLDIR%%/install/phing/classes/phing/TaskContainer.php
+%%INSTALLDIR%%/install/phing/classes/phing/UnknownElement.php
+%%INSTALLDIR%%/install/phing/classes/phing/VERSION.TXT
+%%INSTALLDIR%%/install/phing/classes/phing/filters/BaseFilterReader.php
+%%INSTALLDIR%%/install/phing/classes/phing/filters/BaseParamFilterReader.php
+%%INSTALLDIR%%/install/phing/classes/phing/filters/ChainableReader.php
+%%INSTALLDIR%%/install/phing/classes/phing/filters/ExpandProperties.php
+%%INSTALLDIR%%/install/phing/classes/phing/filters/HeadFilter.php
+%%INSTALLDIR%%/install/phing/classes/phing/filters/LineContains.php
+%%INSTALLDIR%%/install/phing/classes/phing/filters/LineContainsRegexp.php
+%%INSTALLDIR%%/install/phing/classes/phing/filters/PrefixLines.php
+%%INSTALLDIR%%/install/phing/classes/phing/filters/ReplaceRegexp.php
+%%INSTALLDIR%%/install/phing/classes/phing/filters/ReplaceTokens.php
+%%INSTALLDIR%%/install/phing/classes/phing/filters/StripLineBreaks.php
+%%INSTALLDIR%%/install/phing/classes/phing/filters/StripLineComments.php
+%%INSTALLDIR%%/install/phing/classes/phing/filters/StripPhpComments.php
+%%INSTALLDIR%%/install/phing/classes/phing/filters/TabToSpaces.php
+%%INSTALLDIR%%/install/phing/classes/phing/filters/TailFilter.php
+%%INSTALLDIR%%/install/phing/classes/phing/filters/TranslateGettext.php
+%%INSTALLDIR%%/install/phing/classes/phing/filters/XsltFilter.php
+%%INSTALLDIR%%/install/phing/classes/phing/filters/util/ChainReaderHelper.php
+%%INSTALLDIR%%/install/phing/classes/phing/filters/util/IniFileTokenReader.php
+%%INSTALLDIR%%/install/phing/classes/phing/input/DefaultInputHandler.php
+%%INSTALLDIR%%/install/phing/classes/phing/input/InputHandler.php
+%%INSTALLDIR%%/install/phing/classes/phing/input/InputRequest.php
+%%INSTALLDIR%%/install/phing/classes/phing/input/MultipleChoiceInputRequest.php
+%%INSTALLDIR%%/install/phing/classes/phing/input/PropertyFileInputHandler.php
+%%INSTALLDIR%%/install/phing/classes/phing/input/YesNoInputRequest.php
+%%INSTALLDIR%%/install/phing/classes/phing/lib/Capsule.php
+%%INSTALLDIR%%/install/phing/classes/phing/lib/Tar.php
+%%INSTALLDIR%%/install/phing/classes/phing/lib/Zip.php
+%%INSTALLDIR%%/install/phing/classes/phing/listener/AnsiColorLogger.php
+%%INSTALLDIR%%/install/phing/classes/phing/listener/BuildLogger.php
+%%INSTALLDIR%%/install/phing/classes/phing/listener/DefaultLogger.php
+%%INSTALLDIR%%/install/phing/classes/phing/listener/HtmlLogger.php
+%%INSTALLDIR%%/install/phing/classes/phing/listener/NoBannerLogger.php
+%%INSTALLDIR%%/install/phing/classes/phing/listener/PearLogger.php
+%%INSTALLDIR%%/install/phing/classes/phing/listener/XmlLogger.php
+%%INSTALLDIR%%/install/phing/classes/phing/listener/defaults.properties
+%%INSTALLDIR%%/install/phing/classes/phing/mappers/FileNameMapper.php
+%%INSTALLDIR%%/install/phing/classes/phing/mappers/FlattenMapper.php
+%%INSTALLDIR%%/install/phing/classes/phing/mappers/GlobMapper.php
+%%INSTALLDIR%%/install/phing/classes/phing/mappers/IdentityMapper.php
+%%INSTALLDIR%%/install/phing/classes/phing/mappers/MergeMapper.php
+%%INSTALLDIR%%/install/phing/classes/phing/mappers/RegexpMapper.php
+%%INSTALLDIR%%/install/phing/classes/phing/parser/AbstractHandler.php
+%%INSTALLDIR%%/install/phing/classes/phing/parser/AbstractSAXParser.php
+%%INSTALLDIR%%/install/phing/classes/phing/parser/DataTypeHandler.php
+%%INSTALLDIR%%/install/phing/classes/phing/parser/ExpatParseException.php
+%%INSTALLDIR%%/install/phing/classes/phing/parser/ExpatParser.php
+%%INSTALLDIR%%/install/phing/classes/phing/parser/Location.php
+%%INSTALLDIR%%/install/phing/classes/phing/parser/NestedElementHandler.php
+%%INSTALLDIR%%/install/phing/classes/phing/parser/ProjectConfigurator.php
+%%INSTALLDIR%%/install/phing/classes/phing/parser/ProjectHandler.php
+%%INSTALLDIR%%/install/phing/classes/phing/parser/RootHandler.php
+%%INSTALLDIR%%/install/phing/classes/phing/parser/TargetHandler.php
+%%INSTALLDIR%%/install/phing/classes/phing/parser/TaskHandler.php
+%%INSTALLDIR%%/install/phing/classes/phing/system/io/BufferedReader.php
+%%INSTALLDIR%%/install/phing/classes/phing/system/io/BufferedWriter.php
+%%INSTALLDIR%%/install/phing/classes/phing/system/io/ConsoleReader.php
+%%INSTALLDIR%%/install/phing/classes/phing/system/io/File.php
+%%INSTALLDIR%%/install/phing/classes/phing/system/io/FileReader.php
+%%INSTALLDIR%%/install/phing/classes/phing/system/io/FileSystem.php
+%%INSTALLDIR%%/install/phing/classes/phing/system/io/FileWriter.php
+%%INSTALLDIR%%/install/phing/classes/phing/system/io/FilterReader.php
+%%INSTALLDIR%%/install/phing/classes/phing/system/io/IOException.php
+%%INSTALLDIR%%/install/phing/classes/phing/system/io/Reader.php
+%%INSTALLDIR%%/install/phing/classes/phing/system/io/StringReader.php
+%%INSTALLDIR%%/install/phing/classes/phing/system/io/TokenReader.php
+%%INSTALLDIR%%/install/phing/classes/phing/system/io/UnixFileSystem.php
+%%INSTALLDIR%%/install/phing/classes/phing/system/io/Win32FileSystem.php
+%%INSTALLDIR%%/install/phing/classes/phing/system/io/WinNTFileSystem.php
+%%INSTALLDIR%%/install/phing/classes/phing/system/io/Writer.php
+%%INSTALLDIR%%/install/phing/classes/phing/system/lang/Character.php
+%%INSTALLDIR%%/install/phing/classes/phing/system/lang/EventObject.php
+%%INSTALLDIR%%/install/phing/classes/phing/system/lang/FileNotFoundException.php
+%%INSTALLDIR%%/install/phing/classes/phing/system/lang/NullPointerException.php
+%%INSTALLDIR%%/install/phing/classes/phing/system/lang/RuntimeException.php
+%%INSTALLDIR%%/install/phing/classes/phing/system/lang/SecurityException.php
+%%INSTALLDIR%%/install/phing/classes/phing/system/util/Message.php
+%%INSTALLDIR%%/install/phing/classes/phing/system/util/Properties.php
+%%INSTALLDIR%%/install/phing/classes/phing/system/util/Register.php
+%%INSTALLDIR%%/install/phing/classes/phing/system/util/Timer.php
+%%INSTALLDIR%%/install/phing/classes/phing/tasks/defaults.properties
+%%INSTALLDIR%%/install/phing/classes/phing/tasks/ext/CapsuleTask.php
+%%INSTALLDIR%%/install/phing/classes/phing/tasks/ext/CreoleSQLExecTask.php
+%%INSTALLDIR%%/install/phing/classes/phing/tasks/ext/CreoleTask.php
+%%INSTALLDIR%%/install/phing/classes/phing/tasks/ext/MDB2SQLExecTask.php
+%%INSTALLDIR%%/install/phing/classes/phing/tasks/ext/MDB2Task.php
+%%INSTALLDIR%%/install/phing/classes/phing/tasks/ext/MailTask.php
+%%INSTALLDIR%%/install/phing/classes/phing/tasks/ext/PackageAsPathTask.php
+%%INSTALLDIR%%/install/phing/classes/phing/tasks/ext/PearPackageTask.php
+%%INSTALLDIR%%/install/phing/classes/phing/tasks/ext/SmartyTask.php
+%%INSTALLDIR%%/install/phing/classes/phing/tasks/ext/TarTask.php
+%%INSTALLDIR%%/install/phing/classes/phing/tasks/ext/ZipTask.php
+%%INSTALLDIR%%/install/phing/classes/phing/tasks/ext/pearpackage/Fileset.php
+%%INSTALLDIR%%/install/phing/classes/phing/tasks/ext/svn/SvnLastRevisionTask.php
+%%INSTALLDIR%%/install/phing/classes/phing/tasks/system/AdhocTask.php
+%%INSTALLDIR%%/install/phing/classes/phing/tasks/system/AdhocTaskdefTask.php
+%%INSTALLDIR%%/install/phing/classes/phing/tasks/system/AdhocTypedefTask.php
+%%INSTALLDIR%%/install/phing/classes/phing/tasks/system/AppendTask.php
+%%INSTALLDIR%%/install/phing/classes/phing/tasks/system/AvailableTask.php
+%%INSTALLDIR%%/install/phing/classes/phing/tasks/system/ChmodTask.php
+%%INSTALLDIR%%/install/phing/classes/phing/tasks/system/ConditionTask.php
+%%INSTALLDIR%%/install/phing/classes/phing/tasks/system/CopyTask.php
+%%INSTALLDIR%%/install/phing/classes/phing/tasks/system/CvsPassTask.php
+%%INSTALLDIR%%/install/phing/classes/phing/tasks/system/CvsTask.php
+%%INSTALLDIR%%/install/phing/classes/phing/tasks/system/DeleteTask.php
+%%INSTALLDIR%%/install/phing/classes/phing/tasks/system/EchoTask.php
+%%INSTALLDIR%%/install/phing/classes/phing/tasks/system/ExecTask.php
+%%INSTALLDIR%%/install/phing/classes/phing/tasks/system/ExitTask.php
+%%INSTALLDIR%%/install/phing/classes/phing/tasks/system/ForeachTask.php
+%%INSTALLDIR%%/install/phing/classes/phing/tasks/system/IncludePathTask.php
+%%INSTALLDIR%%/install/phing/classes/phing/tasks/system/InputTask.php
+%%INSTALLDIR%%/install/phing/classes/phing/tasks/system/MatchingTask.php
+%%INSTALLDIR%%/install/phing/classes/phing/tasks/system/MkdirTask.php
+%%INSTALLDIR%%/install/phing/classes/phing/tasks/system/MoveTask.php
+%%INSTALLDIR%%/install/phing/classes/phing/tasks/system/PhingCallTask.php
+%%INSTALLDIR%%/install/phing/classes/phing/tasks/system/PhingTask.php
+%%INSTALLDIR%%/install/phing/classes/phing/tasks/system/PhpEvalTask.php
+%%INSTALLDIR%%/install/phing/classes/phing/tasks/system/PropertyPromptTask.php
+%%INSTALLDIR%%/install/phing/classes/phing/tasks/system/PropertyTask.php
+%%INSTALLDIR%%/install/phing/classes/phing/tasks/system/ReflexiveTask.php
+%%INSTALLDIR%%/install/phing/classes/phing/tasks/system/ResolvePathTask.php
+%%INSTALLDIR%%/install/phing/classes/phing/tasks/system/TaskdefTask.php
+%%INSTALLDIR%%/install/phing/classes/phing/tasks/system/TouchTask.php
+%%INSTALLDIR%%/install/phing/classes/phing/tasks/system/TypedefTask.php
+%%INSTALLDIR%%/install/phing/classes/phing/tasks/system/UpToDateTask.php
+%%INSTALLDIR%%/install/phing/classes/phing/tasks/system/XsltTask.php
+%%INSTALLDIR%%/install/phing/classes/phing/tasks/system/condition/AndCondition.php
+%%INSTALLDIR%%/install/phing/classes/phing/tasks/system/condition/Condition.php
+%%INSTALLDIR%%/install/phing/classes/phing/tasks/system/condition/ConditionBase.php
+%%INSTALLDIR%%/install/phing/classes/phing/tasks/system/condition/ContainsCondition.php
+%%INSTALLDIR%%/install/phing/classes/phing/tasks/system/condition/EqualsCondition.php
+%%INSTALLDIR%%/install/phing/classes/phing/tasks/system/condition/IsFalseCondition.php
+%%INSTALLDIR%%/install/phing/classes/phing/tasks/system/condition/IsSetCondition.php
+%%INSTALLDIR%%/install/phing/classes/phing/tasks/system/condition/IsTrueCondition.php
+%%INSTALLDIR%%/install/phing/classes/phing/tasks/system/condition/NotCondition.php
+%%INSTALLDIR%%/install/phing/classes/phing/tasks/system/condition/OrCondition.php
+%%INSTALLDIR%%/install/phing/classes/phing/tasks/system/condition/OsCondition.php
+%%INSTALLDIR%%/install/phing/classes/phing/types/AbstractFileSet.php
+%%INSTALLDIR%%/install/phing/classes/phing/types/Commandline.php
+%%INSTALLDIR%%/install/phing/classes/phing/types/DataType.php
+%%INSTALLDIR%%/install/phing/classes/phing/types/Description.php
+%%INSTALLDIR%%/install/phing/classes/phing/types/DirSet.php
+%%INSTALLDIR%%/install/phing/classes/phing/types/FileList.php
+%%INSTALLDIR%%/install/phing/classes/phing/types/FileSet.php
+%%INSTALLDIR%%/install/phing/classes/phing/types/FilterChain.php
+%%INSTALLDIR%%/install/phing/classes/phing/types/Mapper.php
+%%INSTALLDIR%%/install/phing/classes/phing/types/Parameter.php
+%%INSTALLDIR%%/install/phing/classes/phing/types/Parameterizable.php
+%%INSTALLDIR%%/install/phing/classes/phing/types/Path.php
+%%INSTALLDIR%%/install/phing/classes/phing/types/PatternSet.php
+%%INSTALLDIR%%/install/phing/classes/phing/types/PhingFilterReader.php
+%%INSTALLDIR%%/install/phing/classes/phing/types/Reference.php
+%%INSTALLDIR%%/install/phing/classes/phing/types/RegularExpression.php
+%%INSTALLDIR%%/install/phing/classes/phing/types/TokenReader.php
+%%INSTALLDIR%%/install/phing/classes/phing/types/TokenSource.php
+%%INSTALLDIR%%/install/phing/classes/phing/types/defaults.properties
+%%INSTALLDIR%%/install/phing/classes/phing/types/selectors/AndSelector.php
+%%INSTALLDIR%%/install/phing/classes/phing/types/selectors/BaseExtendSelector.php
+%%INSTALLDIR%%/install/phing/classes/phing/types/selectors/BaseSelector.php
+%%INSTALLDIR%%/install/phing/classes/phing/types/selectors/BaseSelectorContainer.php
+%%INSTALLDIR%%/install/phing/classes/phing/types/selectors/ContainsRegexpSelector.php
+%%INSTALLDIR%%/install/phing/classes/phing/types/selectors/ContainsSelector.php
+%%INSTALLDIR%%/install/phing/classes/phing/types/selectors/DateSelector.php
+%%INSTALLDIR%%/install/phing/classes/phing/types/selectors/DependSelector.php
+%%INSTALLDIR%%/install/phing/classes/phing/types/selectors/DepthSelector.php
+%%INSTALLDIR%%/install/phing/classes/phing/types/selectors/ExtendFileSelector.php
+%%INSTALLDIR%%/install/phing/classes/phing/types/selectors/ExtendSelector.php
+%%INSTALLDIR%%/install/phing/classes/phing/types/selectors/FileSelector.php
+%%INSTALLDIR%%/install/phing/classes/phing/types/selectors/FilenameSelector.php
+%%INSTALLDIR%%/install/phing/classes/phing/types/selectors/MajoritySelector.php
+%%INSTALLDIR%%/install/phing/classes/phing/types/selectors/NoneSelector.php
+%%INSTALLDIR%%/install/phing/classes/phing/types/selectors/NotSelector.php
+%%INSTALLDIR%%/install/phing/classes/phing/types/selectors/OrSelector.php
+%%INSTALLDIR%%/install/phing/classes/phing/types/selectors/PresentSelector.php
+%%INSTALLDIR%%/install/phing/classes/phing/types/selectors/SelectSelector.php
+%%INSTALLDIR%%/install/phing/classes/phing/types/selectors/SelectorContainer.php
+%%INSTALLDIR%%/install/phing/classes/phing/types/selectors/SelectorScanner.php
+%%INSTALLDIR%%/install/phing/classes/phing/types/selectors/SelectorUtils.php
+%%INSTALLDIR%%/install/phing/classes/phing/types/selectors/SizeSelector.php
+%%INSTALLDIR%%/install/phing/classes/phing/types/selectors/TypeSelector.php
+%%INSTALLDIR%%/install/phing/classes/phing/util/DirectoryScanner.php
+%%INSTALLDIR%%/install/phing/classes/phing/util/ExtendedFileStream.php
+%%INSTALLDIR%%/install/phing/classes/phing/util/FileUtils.php
+%%INSTALLDIR%%/install/phing/classes/phing/util/LogWriter.php
+%%INSTALLDIR%%/install/phing/classes/phing/util/PathTokenizer.php
+%%INSTALLDIR%%/install/phing/classes/phing/util/SourceFileScanner.php
+%%INSTALLDIR%%/install/phing/classes/phing/util/StringHelper.php
+%%INSTALLDIR%%/install/phing/classes/phing/util/regexp/PregEngine.php
+%%INSTALLDIR%%/install/phing/classes/phing/util/regexp/Regexp.php
+%%INSTALLDIR%%/install/phing/classes/phing/util/regexp/RegexpEngine.php
+%%INSTALLDIR%%/install/properties-shared.xml-dist
+%%INSTALLDIR%%/install/properties.xml
+%%INSTALLDIR%%/install/replace_email.xsl
+%%INSTALLDIR%%/install/sitemap_tidy.xsl
+%%INSTALLDIR%%/install/unlock.sh
+%%INSTALLDIR%%/robots.txt
+%%INSTALLDIR%%/structure/bloglinks.xml
+%%INSTALLDIR%%/structure/news.xml
+%%INSTALLDIR%%/structure/quicklinks.php
+%%INSTALLDIR%%/themes/2-cols/aggregator.xsl
+%%INSTALLDIR%%/themes/2-cols/blog.xsl
+%%INSTALLDIR%%/themes/2-cols/buttons/bxcms.png
+%%INSTALLDIR%%/themes/2-cols/buttons/comments.png
+%%INSTALLDIR%%/themes/2-cols/buttons/fluxcms.png
+%%INSTALLDIR%%/themes/2-cols/buttons/freeflux.png
+%%INSTALLDIR%%/themes/2-cols/buttons/popoon.png
+%%INSTALLDIR%%/themes/2-cols/buttons/rss.png
+%%INSTALLDIR%%/themes/2-cols/buttons/xhtml10.png
+%%INSTALLDIR%%/themes/2-cols/css/bx-additions.css
+%%INSTALLDIR%%/themes/2-cols/css/bxe-additions.css
+%%INSTALLDIR%%/themes/2-cols/css/kupu-additions.css
+%%INSTALLDIR%%/themes/2-cols/css/main.css
+%%INSTALLDIR%%/themes/2-cols/css/main_bird.css
+%%INSTALLDIR%%/themes/2-cols/css/main_mint.css
+%%INSTALLDIR%%/themes/2-cols/css/mobile.css
+%%INSTALLDIR%%/themes/2-cols/css/rss.css
+%%INSTALLDIR%%/themes/2-cols/dms.xsl
+%%INSTALLDIR%%/themes/2-cols/events.xsl
+%%INSTALLDIR%%/themes/2-cols/gallery.xsl
+%%INSTALLDIR%%/themes/2-cols/images/bird.jpg
+%%INSTALLDIR%%/themes/2-cols/images/proto.jpg
+%%INSTALLDIR%%/themes/2-cols/links.xsl
+%%INSTALLDIR%%/themes/2-cols/master.xsl
+%%INSTALLDIR%%/themes/2-cols/pagenotallowed.xsl
+%%INSTALLDIR%%/themes/2-cols/pagenotfound.xsl
+%%INSTALLDIR%%/themes/2-cols/preview/main.jpg
+%%INSTALLDIR%%/themes/2-cols/preview/main_bird.jpg
+%%INSTALLDIR%%/themes/2-cols/preview/main_mint.jpg
+%%INSTALLDIR%%/themes/2-cols/search.xsl
+%%INSTALLDIR%%/themes/2-cols/static.xsl
+%%INSTALLDIR%%/themes/2-cols/template.tal
+%%INSTALLDIR%%/themes/2-cols/templates/default.xhtml
+%%INSTALLDIR%%/themes/2-cols/vote.xsl
+%%INSTALLDIR%%/themes/3-cols/aggregator.xsl
+%%INSTALLDIR%%/themes/3-cols/blog.xsl
+%%INSTALLDIR%%/themes/3-cols/buttons/bxcms.png
+%%INSTALLDIR%%/themes/3-cols/buttons/comments.png
+%%INSTALLDIR%%/themes/3-cols/buttons/fluxcms.png
+%%INSTALLDIR%%/themes/3-cols/buttons/freeflux.png
+%%INSTALLDIR%%/themes/3-cols/buttons/popoon.png
+%%INSTALLDIR%%/themes/3-cols/buttons/rss.png
+%%INSTALLDIR%%/themes/3-cols/buttons/xhtml10.png
+%%INSTALLDIR%%/themes/3-cols/css/bx-additions.css
+%%INSTALLDIR%%/themes/3-cols/css/bxe-additions.css
+%%INSTALLDIR%%/themes/3-cols/css/kupu-additions.css
+%%INSTALLDIR%%/themes/3-cols/css/main.css
+%%INSTALLDIR%%/themes/3-cols/css/main_bird.css
+%%INSTALLDIR%%/themes/3-cols/css/main_mint.css
+%%INSTALLDIR%%/themes/3-cols/css/mobile.css
+%%INSTALLDIR%%/themes/3-cols/css/rss.css
+%%INSTALLDIR%%/themes/3-cols/dms.xsl
+%%INSTALLDIR%%/themes/3-cols/events.xsl
+%%INSTALLDIR%%/themes/3-cols/gallery.xsl
+%%INSTALLDIR%%/themes/3-cols/images/bird.jpg
+%%INSTALLDIR%%/themes/3-cols/images/proto.jpg
+%%INSTALLDIR%%/themes/3-cols/links.xsl
+%%INSTALLDIR%%/themes/3-cols/master.xsl
+%%INSTALLDIR%%/themes/3-cols/pagenotallowed.xsl
+%%INSTALLDIR%%/themes/3-cols/pagenotfound.xsl
+%%INSTALLDIR%%/themes/3-cols/preview/main.jpg
+%%INSTALLDIR%%/themes/3-cols/preview/main_bird.jpg
+%%INSTALLDIR%%/themes/3-cols/preview/main_mint.jpg
+%%INSTALLDIR%%/themes/3-cols/search.xsl
+%%INSTALLDIR%%/themes/3-cols/static.xsl
+%%INSTALLDIR%%/themes/3-cols/template.tal
+%%INSTALLDIR%%/themes/3-cols/templates/default.xhtml
+%%INSTALLDIR%%/themes/3-cols/vote.xsl
+%%INSTALLDIR%%/themes/bxcms/blog.xsl
+%%INSTALLDIR%%/themes/bxcms/buttons/bxcms.png
+%%INSTALLDIR%%/themes/bxcms/buttons/comments.png
+%%INSTALLDIR%%/themes/bxcms/buttons/popoon.png
+%%INSTALLDIR%%/themes/bxcms/buttons/rss.png
+%%INSTALLDIR%%/themes/bxcms/buttons/xhtml10.png
+%%INSTALLDIR%%/themes/bxcms/css/bx-additions.css
+%%INSTALLDIR%%/themes/bxcms/css/bxe-additions.css
+%%INSTALLDIR%%/themes/bxcms/css/main.css
+%%INSTALLDIR%%/themes/bxcms/css/rss.css
+%%INSTALLDIR%%/themes/bxcms/gallery.xsl
+%%INSTALLDIR%%/themes/bxcms/master.xsl
+%%INSTALLDIR%%/themes/bxcms/pagenotallowed.xsl
+%%INSTALLDIR%%/themes/bxcms/pagenotfound.xsl
+%%INSTALLDIR%%/themes/bxcms/preview/main.jpg
+%%INSTALLDIR%%/themes/bxcms/static.xsl
+%%INSTALLDIR%%/themes/bxcms/template.tal
+%%INSTALLDIR%%/themes/bxcms/templates/default.xhtml
+%%INSTALLDIR%%/themes/mobile/blog.xsl
+%%INSTALLDIR%%/themes/mobile/css/main.css
+%%INSTALLDIR%%/themes/mobile/gallery.xsl
+%%INSTALLDIR%%/themes/mobile/master.xsl
+%%INSTALLDIR%%/themes/mobile/pagenotallowed.xsl
+%%INSTALLDIR%%/themes/mobile/pagenotfound.xsl
+%%INSTALLDIR%%/themes/mobile/static.xsl
+%%INSTALLDIR%%/themes/standard/admin/addresource.xsl
+%%INSTALLDIR%%/themes/standard/admin/admin.xsl
+%%INSTALLDIR%%/themes/standard/admin/adminfields.xsl
+%%INSTALLDIR%%/themes/standard/admin/blank.html
+%%INSTALLDIR%%/themes/standard/admin/blog.xsl
+%%INSTALLDIR%%/themes/standard/admin/collection.xsl
+%%INSTALLDIR%%/themes/standard/admin/css/admin.css
+%%INSTALLDIR%%/themes/standard/admin/css/blog.css
+%%INSTALLDIR%%/themes/standard/admin/css/dbforms2.css
+%%INSTALLDIR%%/themes/standard/admin/css/editpopup.css
+%%INSTALLDIR%%/themes/standard/admin/css/formedit.css
+%%INSTALLDIR%%/themes/standard/admin/css/head.css
+%%INSTALLDIR%%/themes/standard/admin/css/listview.css
+%%INSTALLDIR%%/themes/standard/admin/css/login.css
+%%INSTALLDIR%%/themes/standard/admin/css/navi.css
+%%INSTALLDIR%%/themes/standard/admin/css/overview.css
+%%INSTALLDIR%%/themes/standard/admin/css/overviewhome.css
+%%INSTALLDIR%%/themes/standard/admin/delete.xsl
+%%INSTALLDIR%%/themes/standard/admin/edit.xsl
+%%INSTALLDIR%%/themes/standard/admin/formedit.xsl
+%%INSTALLDIR%%/themes/standard/admin/frameset.xsl
+%%INSTALLDIR%%/themes/standard/admin/images/bitfluxlogo.gif
+%%INSTALLDIR%%/themes/standard/admin/images/dbforms2/liveselect_arrowd.gif
+%%INSTALLDIR%%/themes/standard/admin/images/overview/blog.png
+%%INSTALLDIR%%/themes/standard/admin/images/overview/collection.png
+%%INSTALLDIR%%/themes/standard/admin/images/overview/gallery.png
+%%INSTALLDIR%%/themes/standard/admin/images/overview/options.png
+%%INSTALLDIR%%/themes/standard/admin/images/overview/resource.png
+%%INSTALLDIR%%/themes/standard/admin/images/schloss.jpg
+%%INSTALLDIR%%/themes/standard/admin/images/shadow1.png
+%%INSTALLDIR%%/themes/standard/admin/images/shadow2.png
+%%INSTALLDIR%%/themes/standard/admin/images/sxip_in.gif
+%%INSTALLDIR%%/themes/standard/admin/images/wait_bar.gif
+%%INSTALLDIR%%/themes/standard/admin/index.html
+%%INSTALLDIR%%/themes/standard/admin/listview.xsl
+%%INSTALLDIR%%/themes/standard/admin/login.html
+%%INSTALLDIR%%/themes/standard/admin/navi.xsl
+%%INSTALLDIR%%/themes/standard/admin/overview.xsl
+%%INSTALLDIR%%/themes/standard/admin/plugins/dbforms2.xsl
+%%INSTALLDIR%%/themes/standard/admin/plugins/properties.xsl
+%%INSTALLDIR%%/themes/standard/admin/properties.xsl
+%%INSTALLDIR%%/themes/standard/admin/themes.xsl
+%%INSTALLDIR%%/themes/standard/common.xsl
+%%INSTALLDIR%%/themes/standard/copy.xsl
+%%INSTALLDIR%%/themes/standard/pagenotallowed.xsl
+%%INSTALLDIR%%/themes/standard/plugins/aggregator/aggregator.xsl
+%%INSTALLDIR%%/themes/standard/plugins/aggregator/aggregator2rss.xsl
+%%INSTALLDIR%%/themes/standard/plugins/blog.xsl
+%%INSTALLDIR%%/themes/standard/plugins/blog/blog2atom.xsl
+%%INSTALLDIR%%/themes/standard/plugins/blog/blog2rss.xsl
+%%INSTALLDIR%%/themes/standard/plugins/blog/comments2rss.xsl
+%%INSTALLDIR%%/themes/standard/plugins/blog/trackback.xsl
+%%INSTALLDIR%%/themes/standard/plugins/dms/dms.xsl
+%%INSTALLDIR%%/themes/standard/plugins/dms/dms2rss.xsl
+%%INSTALLDIR%%/themes/standard/plugins/gallery.xsl
+%%INSTALLDIR%%/themes/standard/plugins/metainfo/podcast.xsl
+%%INSTALLDIR%%/themes/standard/plugins/metasearch/result2html.xsl
+%%INSTALLDIR%%/themes/standard/plugins/vote/vote.xsl
+%%INSTALLDIR%%/themes/standard/static.xsl
+%%INSTALLDIR%%/themes/standard/text.xsl
+%%INSTALLDIR%%/webinc/bxe.html
+%%INSTALLDIR%%/webinc/bxe/LICENSE
+%%INSTALLDIR%%/webinc/bxe/LICENSE.kupu
+%%INSTALLDIR%%/webinc/bxe/NEWS
+%%INSTALLDIR%%/webinc/bxe/NOTICE
+%%INSTALLDIR%%/webinc/bxe/bxeLoader.js
+%%INSTALLDIR%%/webinc/bxe/css/editor.css
+%%INSTALLDIR%%/webinc/bxe/css/kupudrawerstyles.css
+%%INSTALLDIR%%/webinc/bxe/css/main.css
+%%INSTALLDIR%%/webinc/bxe/div/updateBuildDate.sh
+%%INSTALLDIR%%/webinc/bxe/examples/MathML/config.xml
+%%INSTALLDIR%%/webinc/bxe/examples/MathML/index.html
+%%INSTALLDIR%%/webinc/bxe/examples/MathML/inline.css
+%%INSTALLDIR%%/webinc/bxe/examples/MathML/inline.xml
+%%INSTALLDIR%%/webinc/bxe/examples/MathML/main.css
+%%INSTALLDIR%%/webinc/bxe/examples/MathML/mathml.rng.xml
+%%INSTALLDIR%%/webinc/bxe/examples/MathML/relaxng.xml
+%%INSTALLDIR%%/webinc/bxe/examples/echo-atom/config.xml
+%%INSTALLDIR%%/webinc/bxe/examples/echo-atom/entry.css
+%%INSTALLDIR%%/webinc/bxe/examples/echo-atom/entry.xml
+%%INSTALLDIR%%/webinc/bxe/examples/echo-atom/entry.xsl
+%%INSTALLDIR%%/webinc/bxe/examples/echo-atom/index.html
+%%INSTALLDIR%%/webinc/bxe/examples/echo-atom/relaxng.xml
+%%INSTALLDIR%%/webinc/bxe/examples/inline/config.xml
+%%INSTALLDIR%%/webinc/bxe/examples/inline/images/280line.gif
+%%INSTALLDIR%%/webinc/bxe/examples/inline/images/bitfluxeditor_logo2.gif
+%%INSTALLDIR%%/webinc/bxe/examples/inline/images/footer.gif
+%%INSTALLDIR%%/webinc/bxe/examples/inline/images/nav_rand1black.gif
+%%INSTALLDIR%%/webinc/bxe/examples/inline/images/nav_randblack.gif
+%%INSTALLDIR%%/webinc/bxe/examples/inline/images/spacer.gif
+%%INSTALLDIR%%/webinc/bxe/examples/inline/index.html
+%%INSTALLDIR%%/webinc/bxe/examples/inline/inline.css
+%%INSTALLDIR%%/webinc/bxe/examples/inline/inline.xml
+%%INSTALLDIR%%/webinc/bxe/examples/inline/main.css
+%%INSTALLDIR%%/webinc/bxe/examples/inline/relaxng.xml
+%%INSTALLDIR%%/webinc/bxe/examples/inlineXHTML/config.xml
+%%INSTALLDIR%%/webinc/bxe/examples/inlineXHTML/images.xml
+%%INSTALLDIR%%/webinc/bxe/examples/inlineXHTML/images/280line.gif
+%%INSTALLDIR%%/webinc/bxe/examples/inlineXHTML/images/bitfluxeditor_logo2.gif
+%%INSTALLDIR%%/webinc/bxe/examples/inlineXHTML/images/bxelogo.png
+%%INSTALLDIR%%/webinc/bxe/examples/inlineXHTML/images/footer.gif
+%%INSTALLDIR%%/webinc/bxe/examples/inlineXHTML/images/nav_rand1black.gif
+%%INSTALLDIR%%/webinc/bxe/examples/inlineXHTML/images/nav_randblack.gif
+%%INSTALLDIR%%/webinc/bxe/examples/inlineXHTML/images/spacer.gif
+%%INSTALLDIR%%/webinc/bxe/examples/inlineXHTML/index.html
+%%INSTALLDIR%%/webinc/bxe/examples/inlineXHTML/inline.css
+%%INSTALLDIR%%/webinc/bxe/examples/inlineXHTML/inline.xml
+%%INSTALLDIR%%/webinc/bxe/examples/inlineXHTML/libraries.xml
+%%INSTALLDIR%%/webinc/bxe/examples/inlineXHTML/main.css
+%%INSTALLDIR%%/webinc/bxe/examples/inlineXHTML/pictures.xml
+%%INSTALLDIR%%/webinc/bxe/examples/inlineXHTML/pictures/goodgirl.jpg
+%%INSTALLDIR%%/webinc/bxe/examples/inlineXHTML/pictures/landessender.jpg
+%%INSTALLDIR%%/webinc/bxe/examples/inlineXHTML/relaxng.xml
+%%INSTALLDIR%%/webinc/bxe/examples/inlineXHTML/schema/xhtml/modules/attribs.rng.xml
+%%INSTALLDIR%%/webinc/bxe/examples/inlineXHTML/schema/xhtml/modules/basic-form.rng.xml
+%%INSTALLDIR%%/webinc/bxe/examples/inlineXHTML/schema/xhtml/modules/basic-table.rng.xml
+%%INSTALLDIR%%/webinc/bxe/examples/inlineXHTML/schema/xhtml/modules/datatypes.rng.xml
+%%INSTALLDIR%%/webinc/bxe/examples/inlineXHTML/schema/xhtml/modules/form.rng.xml
+%%INSTALLDIR%%/webinc/bxe/examples/inlineXHTML/schema/xhtml/modules/hypertext.rng.xml
+%%INSTALLDIR%%/webinc/bxe/examples/inlineXHTML/schema/xhtml/modules/inlstyle.rng.xml
+%%INSTALLDIR%%/webinc/bxe/examples/inlineXHTML/schema/xhtml/modules/list.rng.xml
+%%INSTALLDIR%%/webinc/bxe/examples/inlineXHTML/schema/xhtml/modules/nameident.rng.xml
+%%INSTALLDIR%%/webinc/bxe/examples/inlineXHTML/schema/xhtml/modules/object.rng.xml
+%%INSTALLDIR%%/webinc/bxe/examples/inlineXHTML/schema/xhtml/modules/param.rng.xml
+%%INSTALLDIR%%/webinc/bxe/examples/inlineXHTML/schema/xhtml/modules/pres.rng.xml
+%%INSTALLDIR%%/webinc/bxe/examples/inlineXHTML/schema/xhtml/modules/struct.rng.xml
+%%INSTALLDIR%%/webinc/bxe/examples/inlineXHTML/schema/xhtml/modules/target.rng.xml
+%%INSTALLDIR%%/webinc/bxe/examples/inlineXHTML/schema/xhtml/modules/text.rng.xml
+%%INSTALLDIR%%/webinc/bxe/examples/inlineXHTML/schema/xhtml/xhtml-strict.rng.xml
+%%INSTALLDIR%%/webinc/bxe/examples/inlineXHTML/schema/xhtml/xhtml.rng.xml
+%%INSTALLDIR%%/webinc/bxe/examples/uni/config.xml
+%%INSTALLDIR%%/webinc/bxe/examples/uni/content.xml
+%%INSTALLDIR%%/webinc/bxe/examples/uni/css/content-bxeng.css
+%%INSTALLDIR%%/webinc/bxe/examples/uni/css/main.css
+%%INSTALLDIR%%/webinc/bxe/examples/uni/index.bxe.xml
+%%INSTALLDIR%%/webinc/bxe/examples/uni/index.html
+%%INSTALLDIR%%/webinc/bxe/examples/uni/schema/dublincore/dublincore.rng.xml
+%%INSTALLDIR%%/webinc/bxe/examples/uni/schema/homepage.rng.xml
+%%INSTALLDIR%%/webinc/bxe/examples/uni/schema/lenya.rng.xml
+%%INSTALLDIR%%/webinc/bxe/examples/uni/schema/unizh.rng.xml
+%%INSTALLDIR%%/webinc/bxe/examples/uni/schema/xhtml.rng.xml
+%%INSTALLDIR%%/webinc/bxe/examples/uni/schema/xhtml/modules/attribs.rng.xml
+%%INSTALLDIR%%/webinc/bxe/examples/uni/schema/xhtml/modules/basic-form.rng.xml
+%%INSTALLDIR%%/webinc/bxe/examples/uni/schema/xhtml/modules/basic-table.rng.xml
+%%INSTALLDIR%%/webinc/bxe/examples/uni/schema/xhtml/modules/datatypes.rng.xml
+%%INSTALLDIR%%/webinc/bxe/examples/uni/schema/xhtml/modules/form.rng.xml
+%%INSTALLDIR%%/webinc/bxe/examples/uni/schema/xhtml/modules/hypertext.rng.xml
+%%INSTALLDIR%%/webinc/bxe/examples/uni/schema/xhtml/modules/inlstyle.rng.xml
+%%INSTALLDIR%%/webinc/bxe/examples/uni/schema/xhtml/modules/list.rng.xml
+%%INSTALLDIR%%/webinc/bxe/examples/uni/schema/xhtml/modules/nameident.rng.xml
+%%INSTALLDIR%%/webinc/bxe/examples/uni/schema/xhtml/modules/object.rng.xml
+%%INSTALLDIR%%/webinc/bxe/examples/uni/schema/xhtml/modules/param.rng.xml
+%%INSTALLDIR%%/webinc/bxe/examples/uni/schema/xhtml/modules/pres.rng.xml
+%%INSTALLDIR%%/webinc/bxe/examples/uni/schema/xhtml/modules/struct.rng.xml
+%%INSTALLDIR%%/webinc/bxe/examples/uni/schema/xhtml/modules/target.rng.xml
+%%INSTALLDIR%%/webinc/bxe/examples/uni/schema/xhtml/modules/text.rng.xml
+%%INSTALLDIR%%/webinc/bxe/examples/uni/schema/xhtml/xhtml-strict.rng.xml
+%%INSTALLDIR%%/webinc/bxe/examples/uni/schema/xhtml/xhtml.rng.xml
+%%INSTALLDIR%%/webinc/bxe/firefox_extension/build.sh
+%%INSTALLDIR%%/webinc/bxe/firefox_extension/bxehelper-0.1.xpi
+%%INSTALLDIR%%/webinc/bxe/firefox_extension/bxehelper.xpi
+%%INSTALLDIR%%/webinc/bxe/firefox_extension/config_build.sh
+%%INSTALLDIR%%/webinc/bxe/firefox_extension/content/bxehelper.xul
+%%INSTALLDIR%%/webinc/bxe/firefox_extension/content/caret.js
+%%INSTALLDIR%%/webinc/bxe/firefox_extension/content/contents.rdf
+%%INSTALLDIR%%/webinc/bxe/firefox_extension/install.rdf
+%%INSTALLDIR%%/webinc/bxe/images/buttons.png
+%%INSTALLDIR%%/webinc/bxe/images/bxe.png
+%%INSTALLDIR%%/webinc/bxe/images/bxelogo.png
+%%INSTALLDIR%%/webinc/bxe/images/triangle.png
+%%INSTALLDIR%%/webinc/bxe/index.html
+%%INSTALLDIR%%/webinc/bxe/js/bxeConfig.js
+%%INSTALLDIR%%/webinc/bxe/js/bxeFunctions.js
+%%INSTALLDIR%%/webinc/bxe/js/bxeNodeElements.js
+%%INSTALLDIR%%/webinc/bxe/js/bxeXMLDocument.js
+%%INSTALLDIR%%/webinc/bxe/js/bxeXMLNode.js
+%%INSTALLDIR%%/webinc/bxe/js/bxehtmltb.js
+%%INSTALLDIR%%/webinc/bxe/js/eDOMEvents.js
+%%INSTALLDIR%%/webinc/bxe/js/table.js
+%%INSTALLDIR%%/webinc/bxe/js/widget.js
+%%INSTALLDIR%%/webinc/bxe/kupu/kupubasetools.js
+%%INSTALLDIR%%/webinc/bxe/kupu/kupudrawers.js
+%%INSTALLDIR%%/webinc/bxe/kupu/kupudrawers/assetdrawer.xsl
+%%INSTALLDIR%%/webinc/bxe/kupu/kupudrawers/demolibraries.xml
+%%INSTALLDIR%%/webinc/bxe/kupu/kupudrawers/demolibrary1.xml
+%%INSTALLDIR%%/webinc/bxe/kupu/kupudrawers/demolibrary2.xml
+%%INSTALLDIR%%/webinc/bxe/kupu/kupudrawers/imagedrawer.xsl
+%%INSTALLDIR%%/webinc/bxe/kupu/kupudrawers/librarydrawer.xsl
+%%INSTALLDIR%%/webinc/bxe/kupu/kupudrawers/linkdrawer.xsl
+%%INSTALLDIR%%/webinc/bxe/kupu/kupudrawertool.js
+%%INSTALLDIR%%/webinc/bxe/kupu/kupuhelpers.js
+%%INSTALLDIR%%/webinc/bxe/kupu/kupulibrarydrawer.js
+%%INSTALLDIR%%/webinc/bxe/kupu/sarissa.js
+%%INSTALLDIR%%/webinc/bxe/mozile/README.html
+%%INSTALLDIR%%/webinc/bxe/mozile/buttons.png
+%%INSTALLDIR%%/webinc/bxe/mozile/domlevel3.js
+%%INSTALLDIR%%/webinc/bxe/mozile/eDOM.js
+%%INSTALLDIR%%/webinc/bxe/mozile/eDOMXHTML.js
+%%INSTALLDIR%%/webinc/bxe/mozile/jsdav.js
+%%INSTALLDIR%%/webinc/bxe/mozile/mozCE.js
+%%INSTALLDIR%%/webinc/bxe/mozile/mozIECE.js
+%%INSTALLDIR%%/webinc/bxe/mozile/mozWrappers.js
+%%INSTALLDIR%%/webinc/bxe/mozile/mozileSave.js
+%%INSTALLDIR%%/webinc/bxe/mozile/mozileTransportDriver.js
+%%INSTALLDIR%%/webinc/bxe/mozile/mozilekb.js
+%%INSTALLDIR%%/webinc/bxe/mozile/td/file.js
+%%INSTALLDIR%%/webinc/bxe/mozile/td/http.js
+%%INSTALLDIR%%/webinc/bxe/mozile/td/webdav.js
+%%INSTALLDIR%%/webinc/bxe/picturesExample/index.html
+%%INSTALLDIR%%/webinc/bxe/plugins/ClipboardPasteDialog.js
+%%INSTALLDIR%%/webinc/bxe/plugins/Drawer.js
+%%INSTALLDIR%%/webinc/bxe/plugins/Drawer/classes.js
+%%INSTALLDIR%%/webinc/bxe/plugins/XMLSnippets.js
+%%INSTALLDIR%%/webinc/bxe/relaxng/AttributeVDOM.js
+%%INSTALLDIR%%/webinc/bxe/relaxng/DocumentVAL.js
+%%INSTALLDIR%%/webinc/bxe/relaxng/DocumentVDOM.js
+%%INSTALLDIR%%/webinc/bxe/relaxng/ElementVAL.js
+%%INSTALLDIR%%/webinc/bxe/relaxng/ElementVDOM.js
+%%INSTALLDIR%%/webinc/bxe/relaxng/NodeVAL.js
+%%INSTALLDIR%%/webinc/bxe/relaxng/NodeVDOM.js
+%%INSTALLDIR%%/webinc/bxe/relaxng/RelaxNG.js
+%%INSTALLDIR%%/webinc/bxe/scripts/loadsave.php
+%%INSTALLDIR%%/webinc/bxe/td/relaxngtest.js
+%%INSTALLDIR%%/webinc/bxe/util/Doxyfile
+%%INSTALLDIR%%/webinc/bxe/util/JsUnit.css
+%%INSTALLDIR%%/webinc/bxe/util/JsUnitFooter.html
+%%INSTALLDIR%%/webinc/bxe/util/JsUnitHeader.html
+%%INSTALLDIR%%/webinc/bxe/util/js2doxy.pl
+%%INSTALLDIR%%/webinc/bxe/util/jsdoc
+%%INSTALLDIR%%/webinc/bxe/xsl/transformxsl.xsl
+%%INSTALLDIR%%/webinc/bxecms/bxcms.js
+%%INSTALLDIR%%/webinc/editors/fck/fck.js
+%%INSTALLDIR%%/webinc/editors/fck/fckstyles.xml
+%%INSTALLDIR%%/webinc/editors/fck/fcktemplates.xml
+%%INSTALLDIR%%/webinc/editors/image/transbg.png
+%%INSTALLDIR%%/webinc/editors/image/transparentpixel.gif
+%%INSTALLDIR%%/webinc/editors/image/wz_dragdrop.js
+%%INSTALLDIR%%/webinc/editors/oneform/save.js
+%%INSTALLDIR%%/webinc/fck.html
+%%INSTALLDIR%%/webinc/fck/README.patch
+%%INSTALLDIR%%/webinc/fck/editor/css/behaviors/anchor.gif
+%%INSTALLDIR%%/webinc/fck/editor/css/behaviors/anchors.htc
+%%INSTALLDIR%%/webinc/fck/editor/css/behaviors/disablehandles.htc
+%%INSTALLDIR%%/webinc/fck/editor/css/behaviors/hiddenfield.gif
+%%INSTALLDIR%%/webinc/fck/editor/css/behaviors/hiddenfield.htc
+%%INSTALLDIR%%/webinc/fck/editor/css/behaviors/moz-bindings.xml
+%%INSTALLDIR%%/webinc/fck/editor/css/behaviors/showtableborders.htc
+%%INSTALLDIR%%/webinc/fck/editor/css/fck_editorarea.css
+%%INSTALLDIR%%/webinc/fck/editor/css/fck_internal.css
+%%INSTALLDIR%%/webinc/fck/editor/css/fck_showtableborders_gecko.css
+%%INSTALLDIR%%/webinc/fck/editor/css/images/fck_anchor.gif
+%%INSTALLDIR%%/webinc/fck/editor/css/images/fck_flashlogo.gif
+%%INSTALLDIR%%/webinc/fck/editor/dialog/common/fck_dialog_common.css
+%%INSTALLDIR%%/webinc/fck/editor/dialog/common/fck_dialog_common.js
+%%INSTALLDIR%%/webinc/fck/editor/dialog/common/fcknumericfield.htc
+%%INSTALLDIR%%/webinc/fck/editor/dialog/common/images/locked.gif
+%%INSTALLDIR%%/webinc/fck/editor/dialog/common/images/reset.gif
+%%INSTALLDIR%%/webinc/fck/editor/dialog/common/images/unlocked.gif
+%%INSTALLDIR%%/webinc/fck/editor/dialog/common/moz-bindings.xml
+%%INSTALLDIR%%/webinc/fck/editor/dialog/fck_about.html
+%%INSTALLDIR%%/webinc/fck/editor/dialog/fck_about/logo_fckeditor.gif
+%%INSTALLDIR%%/webinc/fck/editor/dialog/fck_about/logo_fredck.gif
+%%INSTALLDIR%%/webinc/fck/editor/dialog/fck_anchor.html
+%%INSTALLDIR%%/webinc/fck/editor/dialog/fck_button.html
+%%INSTALLDIR%%/webinc/fck/editor/dialog/fck_checkbox.html
+%%INSTALLDIR%%/webinc/fck/editor/dialog/fck_colorselector.html
+%%INSTALLDIR%%/webinc/fck/editor/dialog/fck_docprops.html
+%%INSTALLDIR%%/webinc/fck/editor/dialog/fck_docprops/fck_document_preview.html
+%%INSTALLDIR%%/webinc/fck/editor/dialog/fck_find.html
+%%INSTALLDIR%%/webinc/fck/editor/dialog/fck_flash.html
+%%INSTALLDIR%%/webinc/fck/editor/dialog/fck_flash/fck_flash.js
+%%INSTALLDIR%%/webinc/fck/editor/dialog/fck_form.html
+%%INSTALLDIR%%/webinc/fck/editor/dialog/fck_hiddenfield.html
+%%INSTALLDIR%%/webinc/fck/editor/dialog/fck_image.html
+%%INSTALLDIR%%/webinc/fck/editor/dialog/fck_image/fck_image.js
+%%INSTALLDIR%%/webinc/fck/editor/dialog/fck_link.html
+%%INSTALLDIR%%/webinc/fck/editor/dialog/fck_link/fck_link.js
+%%INSTALLDIR%%/webinc/fck/editor/dialog/fck_listprop.html
+%%INSTALLDIR%%/webinc/fck/editor/dialog/fck_paste.html
+%%INSTALLDIR%%/webinc/fck/editor/dialog/fck_radiobutton.html
+%%INSTALLDIR%%/webinc/fck/editor/dialog/fck_replace.html
+%%INSTALLDIR%%/webinc/fck/editor/dialog/fck_select.html
+%%INSTALLDIR%%/webinc/fck/editor/dialog/fck_select/fck_select.js
+%%INSTALLDIR%%/webinc/fck/editor/dialog/fck_smiley.html
+%%INSTALLDIR%%/webinc/fck/editor/dialog/fck_source.html
+%%INSTALLDIR%%/webinc/fck/editor/dialog/fck_specialchar.html
+%%INSTALLDIR%%/webinc/fck/editor/dialog/fck_spellerpages.html
+%%INSTALLDIR%%/webinc/fck/editor/dialog/fck_spellerpages/spellerpages/blank.html
+%%INSTALLDIR%%/webinc/fck/editor/dialog/fck_spellerpages/spellerpages/controlWindow.js
+%%INSTALLDIR%%/webinc/fck/editor/dialog/fck_spellerpages/spellerpages/controls.html
+%%INSTALLDIR%%/webinc/fck/editor/dialog/fck_spellerpages/spellerpages/server-scripts/spellchecker.cfm
+%%INSTALLDIR%%/webinc/fck/editor/dialog/fck_spellerpages/spellerpages/server-scripts/spellchecker.php
+%%INSTALLDIR%%/webinc/fck/editor/dialog/fck_spellerpages/spellerpages/server-scripts/spellchecker.pl
+%%INSTALLDIR%%/webinc/fck/editor/dialog/fck_spellerpages/spellerpages/spellChecker.js
+%%INSTALLDIR%%/webinc/fck/editor/dialog/fck_spellerpages/spellerpages/spellchecker.html
+%%INSTALLDIR%%/webinc/fck/editor/dialog/fck_spellerpages/spellerpages/spellerStyle.css
+%%INSTALLDIR%%/webinc/fck/editor/dialog/fck_spellerpages/spellerpages/wordWindow.js
+%%INSTALLDIR%%/webinc/fck/editor/dialog/fck_table.html
+%%INSTALLDIR%%/webinc/fck/editor/dialog/fck_tablecell.html
+%%INSTALLDIR%%/webinc/fck/editor/dialog/fck_template.html
+%%INSTALLDIR%%/webinc/fck/editor/dialog/fck_template/fck_template_moz-bindings.xml
+%%INSTALLDIR%%/webinc/fck/editor/dialog/fck_template/fck_templateitem.htc
+%%INSTALLDIR%%/webinc/fck/editor/dialog/fck_template/images/template1.gif
+%%INSTALLDIR%%/webinc/fck/editor/dialog/fck_template/images/template2.gif
+%%INSTALLDIR%%/webinc/fck/editor/dialog/fck_template/images/template3.gif
+%%INSTALLDIR%%/webinc/fck/editor/dialog/fck_textarea.html
+%%INSTALLDIR%%/webinc/fck/editor/dialog/fck_textfield.html
+%%INSTALLDIR%%/webinc/fck/editor/dialog/fck_universalkey.html
+%%INSTALLDIR%%/webinc/fck/editor/dialog/fck_universalkey/00.gif
+%%INSTALLDIR%%/webinc/fck/editor/dialog/fck_universalkey/data.js
+%%INSTALLDIR%%/webinc/fck/editor/dialog/fck_universalkey/diacritic.js
+%%INSTALLDIR%%/webinc/fck/editor/dialog/fck_universalkey/dialogue.js
+%%INSTALLDIR%%/webinc/fck/editor/dialog/fck_universalkey/fck_universalkey.css
+%%INSTALLDIR%%/webinc/fck/editor/dialog/fck_universalkey/keyboard_layout.gif
+%%INSTALLDIR%%/webinc/fck/editor/dialog/fck_universalkey/multihexa.js
+%%INSTALLDIR%%/webinc/fck/editor/fckblank.html
+%%INSTALLDIR%%/webinc/fck/editor/fckdialog.html
+%%INSTALLDIR%%/webinc/fck/editor/fckeditor.html
+%%INSTALLDIR%%/webinc/fck/editor/filemanager/browser/default/browser.css
+%%INSTALLDIR%%/webinc/fck/editor/filemanager/browser/default/browser.html
+%%INSTALLDIR%%/webinc/fck/editor/filemanager/browser/default/connectors/php/basexml.php
+%%INSTALLDIR%%/webinc/fck/editor/filemanager/browser/default/connectors/php/commands.php
+%%INSTALLDIR%%/webinc/fck/editor/filemanager/browser/default/connectors/php/config.php
+%%INSTALLDIR%%/webinc/fck/editor/filemanager/browser/default/connectors/php/connector.php
+%%INSTALLDIR%%/webinc/fck/editor/filemanager/browser/default/connectors/php/io.php
+%%INSTALLDIR%%/webinc/fck/editor/filemanager/browser/default/connectors/php/util.php
+%%INSTALLDIR%%/webinc/fck/editor/filemanager/browser/default/frmactualfolder.html
+%%INSTALLDIR%%/webinc/fck/editor/filemanager/browser/default/frmcreatefolder.html
+%%INSTALLDIR%%/webinc/fck/editor/filemanager/browser/default/frmfolders.html
+%%INSTALLDIR%%/webinc/fck/editor/filemanager/browser/default/frmresourceslist.html
+%%INSTALLDIR%%/webinc/fck/editor/filemanager/browser/default/frmresourcetype.html
+%%INSTALLDIR%%/webinc/fck/editor/filemanager/browser/default/frmupload.html
+%%INSTALLDIR%%/webinc/fck/editor/filemanager/browser/default/images/ButtonArrow.gif
+%%INSTALLDIR%%/webinc/fck/editor/filemanager/browser/default/images/Folder.gif
+%%INSTALLDIR%%/webinc/fck/editor/filemanager/browser/default/images/Folder32.gif
+%%INSTALLDIR%%/webinc/fck/editor/filemanager/browser/default/images/FolderOpened.gif
+%%INSTALLDIR%%/webinc/fck/editor/filemanager/browser/default/images/FolderOpened32.gif
+%%INSTALLDIR%%/webinc/fck/editor/filemanager/browser/default/images/FolderUp.gif
+%%INSTALLDIR%%/webinc/fck/editor/filemanager/browser/default/images/icons/32/ai.gif
+%%INSTALLDIR%%/webinc/fck/editor/filemanager/browser/default/images/icons/32/avi.gif
+%%INSTALLDIR%%/webinc/fck/editor/filemanager/browser/default/images/icons/32/bmp.gif
+%%INSTALLDIR%%/webinc/fck/editor/filemanager/browser/default/images/icons/32/cs.gif
+%%INSTALLDIR%%/webinc/fck/editor/filemanager/browser/default/images/icons/32/default.icon.gif
+%%INSTALLDIR%%/webinc/fck/editor/filemanager/browser/default/images/icons/32/dll.gif
+%%INSTALLDIR%%/webinc/fck/editor/filemanager/browser/default/images/icons/32/doc.gif
+%%INSTALLDIR%%/webinc/fck/editor/filemanager/browser/default/images/icons/32/exe.gif
+%%INSTALLDIR%%/webinc/fck/editor/filemanager/browser/default/images/icons/32/fla.gif
+%%INSTALLDIR%%/webinc/fck/editor/filemanager/browser/default/images/icons/32/gif.gif
+%%INSTALLDIR%%/webinc/fck/editor/filemanager/browser/default/images/icons/32/htm.gif
+%%INSTALLDIR%%/webinc/fck/editor/filemanager/browser/default/images/icons/32/html.gif
+%%INSTALLDIR%%/webinc/fck/editor/filemanager/browser/default/images/icons/32/jpg.gif
+%%INSTALLDIR%%/webinc/fck/editor/filemanager/browser/default/images/icons/32/js.gif
+%%INSTALLDIR%%/webinc/fck/editor/filemanager/browser/default/images/icons/32/mdb.gif
+%%INSTALLDIR%%/webinc/fck/editor/filemanager/browser/default/images/icons/32/mp3.gif
+%%INSTALLDIR%%/webinc/fck/editor/filemanager/browser/default/images/icons/32/pdf.gif
+%%INSTALLDIR%%/webinc/fck/editor/filemanager/browser/default/images/icons/32/ppt.gif
+%%INSTALLDIR%%/webinc/fck/editor/filemanager/browser/default/images/icons/32/rdp.gif
+%%INSTALLDIR%%/webinc/fck/editor/filemanager/browser/default/images/icons/32/swf.gif
+%%INSTALLDIR%%/webinc/fck/editor/filemanager/browser/default/images/icons/32/swt.gif
+%%INSTALLDIR%%/webinc/fck/editor/filemanager/browser/default/images/icons/32/txt.gif
+%%INSTALLDIR%%/webinc/fck/editor/filemanager/browser/default/images/icons/32/vsd.gif
+%%INSTALLDIR%%/webinc/fck/editor/filemanager/browser/default/images/icons/32/xls.gif
+%%INSTALLDIR%%/webinc/fck/editor/filemanager/browser/default/images/icons/32/xml.gif
+%%INSTALLDIR%%/webinc/fck/editor/filemanager/browser/default/images/icons/32/zip.gif
+%%INSTALLDIR%%/webinc/fck/editor/filemanager/browser/default/images/icons/ai.gif
+%%INSTALLDIR%%/webinc/fck/editor/filemanager/browser/default/images/icons/avi.gif
+%%INSTALLDIR%%/webinc/fck/editor/filemanager/browser/default/images/icons/bmp.gif
+%%INSTALLDIR%%/webinc/fck/editor/filemanager/browser/default/images/icons/cs.gif
+%%INSTALLDIR%%/webinc/fck/editor/filemanager/browser/default/images/icons/default.icon.gif
+%%INSTALLDIR%%/webinc/fck/editor/filemanager/browser/default/images/icons/dll.gif
+%%INSTALLDIR%%/webinc/fck/editor/filemanager/browser/default/images/icons/doc.gif
+%%INSTALLDIR%%/webinc/fck/editor/filemanager/browser/default/images/icons/exe.gif
+%%INSTALLDIR%%/webinc/fck/editor/filemanager/browser/default/images/icons/fla.gif
+%%INSTALLDIR%%/webinc/fck/editor/filemanager/browser/default/images/icons/gif.gif
+%%INSTALLDIR%%/webinc/fck/editor/filemanager/browser/default/images/icons/htm.gif
+%%INSTALLDIR%%/webinc/fck/editor/filemanager/browser/default/images/icons/html.gif
+%%INSTALLDIR%%/webinc/fck/editor/filemanager/browser/default/images/icons/jpg.gif
+%%INSTALLDIR%%/webinc/fck/editor/filemanager/browser/default/images/icons/js.gif
+%%INSTALLDIR%%/webinc/fck/editor/filemanager/browser/default/images/icons/mdb.gif
+%%INSTALLDIR%%/webinc/fck/editor/filemanager/browser/default/images/icons/mp3.gif
+%%INSTALLDIR%%/webinc/fck/editor/filemanager/browser/default/images/icons/pdf.gif
+%%INSTALLDIR%%/webinc/fck/editor/filemanager/browser/default/images/icons/ppt.gif
+%%INSTALLDIR%%/webinc/fck/editor/filemanager/browser/default/images/icons/rdp.gif
+%%INSTALLDIR%%/webinc/fck/editor/filemanager/browser/default/images/icons/swf.gif
+%%INSTALLDIR%%/webinc/fck/editor/filemanager/browser/default/images/icons/swt.gif
+%%INSTALLDIR%%/webinc/fck/editor/filemanager/browser/default/images/icons/txt.gif
+%%INSTALLDIR%%/webinc/fck/editor/filemanager/browser/default/images/icons/vsd.gif
+%%INSTALLDIR%%/webinc/fck/editor/filemanager/browser/default/images/icons/xls.gif
+%%INSTALLDIR%%/webinc/fck/editor/filemanager/browser/default/images/icons/xml.gif
+%%INSTALLDIR%%/webinc/fck/editor/filemanager/browser/default/images/icons/zip.gif
+%%INSTALLDIR%%/webinc/fck/editor/filemanager/browser/default/images/spacer.gif
+%%INSTALLDIR%%/webinc/fck/editor/filemanager/browser/default/js/common.js
+%%INSTALLDIR%%/webinc/fck/editor/filemanager/browser/default/js/fckxml.js
+%%INSTALLDIR%%/webinc/fck/editor/images/anchor.gif
+%%INSTALLDIR%%/webinc/fck/editor/images/spacer.gif
+%%INSTALLDIR%%/webinc/fck/editor/js/fck_startup.js
+%%INSTALLDIR%%/webinc/fck/editor/js/fckeditorcode_gecko_1.js
+%%INSTALLDIR%%/webinc/fck/editor/js/fckeditorcode_gecko_2.js
+%%INSTALLDIR%%/webinc/fck/editor/js/fckeditorcode_ie_1.js
+%%INSTALLDIR%%/webinc/fck/editor/js/fckeditorcode_ie_2.js
+%%INSTALLDIR%%/webinc/fck/editor/lang/_translationstatus.txt
+%%INSTALLDIR%%/webinc/fck/editor/lang/de.js
+%%INSTALLDIR%%/webinc/fck/editor/lang/en-au.js
+%%INSTALLDIR%%/webinc/fck/editor/lang/en-uk.js
+%%INSTALLDIR%%/webinc/fck/editor/lang/en.js
+%%INSTALLDIR%%/webinc/fck/editor/lang/es.js
+%%INSTALLDIR%%/webinc/fck/editor/lang/fcklanguagemanager.js
+%%INSTALLDIR%%/webinc/fck/editor/lang/fi.js
+%%INSTALLDIR%%/webinc/fck/editor/lang/fr.js
+%%INSTALLDIR%%/webinc/fck/editor/lang/it.js
+%%INSTALLDIR%%/webinc/fck/editor/lang/sv.js
+%%INSTALLDIR%%/webinc/fck/editor/plugins/placeholder/fck_placeholder.html
+%%INSTALLDIR%%/webinc/fck/editor/plugins/placeholder/fckplugin.js
+%%INSTALLDIR%%/webinc/fck/editor/plugins/placeholder/lang/en.js
+%%INSTALLDIR%%/webinc/fck/editor/plugins/placeholder/lang/fr.js
+%%INSTALLDIR%%/webinc/fck/editor/plugins/placeholder/lang/it.js
+%%INSTALLDIR%%/webinc/fck/editor/plugins/placeholder/placeholder.gif
+%%INSTALLDIR%%/webinc/fck/editor/plugins/tablecommands/fckplugin.js
+%%INSTALLDIR%%/webinc/fck/editor/skins/default/fck_contextmenu.css
+%%INSTALLDIR%%/webinc/fck/editor/skins/default/fck_dialog.css
+%%INSTALLDIR%%/webinc/fck/editor/skins/default/fck_editor.css
+%%INSTALLDIR%%/webinc/fck/editor/skins/default/images/toolbar.arrowright.gif
+%%INSTALLDIR%%/webinc/fck/editor/skins/default/images/toolbar.buttonarrow.gif
+%%INSTALLDIR%%/webinc/fck/editor/skins/default/images/toolbar.collapse.gif
+%%INSTALLDIR%%/webinc/fck/editor/skins/default/images/toolbar.end.gif
+%%INSTALLDIR%%/webinc/fck/editor/skins/default/images/toolbar.expand.gif
+%%INSTALLDIR%%/webinc/fck/editor/skins/default/images/toolbar.separator.gif
+%%INSTALLDIR%%/webinc/fck/editor/skins/default/images/toolbar.start.gif
+%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/about.gif
+%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/anchor.gif
+%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/bgcolor.gif
+%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/bold.gif
+%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/bulletedlist.gif
+%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/button.gif
+%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/checkbox.gif
+%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/copy.gif
+%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/cut.gif
+%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/docprops.gif
+%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/find.gif
+%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/flash.gif
+%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/form.gif
+%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/hiddenfield.gif
+%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/image.gif
+%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/imagebutton.gif
+%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/indent.gif
+%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/inserthorizontalrule.gif
+%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/insertorderedlist.gif
+%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/insertunorderedlist.gif
+%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/italic.gif
+%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/justifycenter.gif
+%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/justifyfull.gif
+%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/justifyleft.gif
+%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/justifyright.gif
+%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/link.gif
+%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/newpage.gif
+%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/numberedlist.gif
+%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/outdent.gif
+%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/paste.gif
+%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/pastetext.gif
+%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/pasteword.gif
+%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/preview.gif
+%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/print.gif
+%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/radio.gif
+%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/redo.gif
+%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/removeformat.gif
+%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/replace.gif
+%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/save.gif
+%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/select.gif
+%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/selectall.gif
+%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/showdetails.gif
+%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/showtableborders.gif
+%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/smiley.gif
+%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/source.gif
+%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/specialchar.gif
+%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/spellcheck.gif
+%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/strikethrough.gif
+%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/subscript.gif
+%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/superscript.gif
+%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/table.gif
+%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/tablecell.gif
+%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/tabledeletecells.gif
+%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/tabledeletecolumns.gif
+%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/tabledeleterows.gif
+%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/tableinsertcell.gif
+%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/tableinsertcolumn.gif
+%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/tableinsertrow.gif
+%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/tablemergecells.gif
+%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/tablesplitcell.gif
+%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/templates.gif
+%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/textarea.gif
+%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/textcolor.gif
+%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/textfield.gif
+%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/underline.gif
+%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/undo.gif
+%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/universalkey.gif
+%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/unlink.gif
+%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar/unorderedlist.gif
+%%INSTALLDIR%%/webinc/fck/fckconfig.js
+%%INSTALLDIR%%/webinc/fck/fckeditor.js
+%%INSTALLDIR%%/webinc/fck/fckstyles.xml
+%%INSTALLDIR%%/webinc/fck/fcktemplates.xml
+%%INSTALLDIR%%/webinc/fck/fix-init-issue.patch
+%%INSTALLDIR%%/webinc/js/CalendarPopup.js
+%%INSTALLDIR%%/webinc/js/admin.js
+%%INSTALLDIR%%/webinc/js/bx/helpers.js
+%%INSTALLDIR%%/webinc/js/bx/i18n.js
+%%INSTALLDIR%%/webinc/js/colorpicker.js
+%%INSTALLDIR%%/webinc/js/dms.js
+%%INSTALLDIR%%/webinc/js/editpopup.js
+%%INSTALLDIR%%/webinc/js/formedit.js
+%%INSTALLDIR%%/webinc/js/livesearch.js
+%%INSTALLDIR%%/webinc/js/sarissa.js
+%%INSTALLDIR%%/webinc/js/sarissa_dbform.js
+%%INSTALLDIR%%/webinc/js/spacer.gif
+%%INSTALLDIR%%/webinc/js/vote.js
+%%INSTALLDIR%%/webinc/kupu.html
+%%INSTALLDIR%%/webinc/kupu/README
+%%INSTALLDIR%%/webinc/kupu/common/fulldoc.html
+%%INSTALLDIR%%/webinc/kupu/common/kupu.html
+%%INSTALLDIR%%/webinc/kupu/common/kupubasetools.js
+%%INSTALLDIR%%/webinc/kupu/common/kupucontentfilters.js
+%%INSTALLDIR%%/webinc/kupu/common/kupucontextmenu.js
+%%INSTALLDIR%%/webinc/kupu/common/kupucustom.css
+%%INSTALLDIR%%/webinc/kupu/common/kupudrawers.js
+%%INSTALLDIR%%/webinc/kupu/common/kupudrawers/demolibraries.xml
+%%INSTALLDIR%%/webinc/kupu/common/kupudrawers/demolibrary1.xml
+%%INSTALLDIR%%/webinc/kupu/common/kupudrawers/demolibrary2.xml
+%%INSTALLDIR%%/webinc/kupu/common/kupudrawers/drawer.xsl
+%%INSTALLDIR%%/webinc/kupu/common/kupudrawers/kupublank.html
+%%INSTALLDIR%%/webinc/kupu/common/kupudrawers/librarydrawer.xsl
+%%INSTALLDIR%%/webinc/kupu/common/kupudrawerstyles.css
+%%INSTALLDIR%%/webinc/kupu/common/kupueditor.js
+%%INSTALLDIR%%/webinc/kupu/common/kupuform.html
+%%INSTALLDIR%%/webinc/kupu/common/kupuhelpers.js
+%%INSTALLDIR%%/webinc/kupu/common/kupuimages/background-color.png
+%%INSTALLDIR%%/webinc/kupu/common/kupuimages/bold.png
+%%INSTALLDIR%%/webinc/kupu/common/kupuimages/buttons.png
+%%INSTALLDIR%%/webinc/kupu/common/kupuimages/caret.png
+%%INSTALLDIR%%/webinc/kupu/common/kupuimages/copy.png
+%%INSTALLDIR%%/webinc/kupu/common/kupuimages/create-new.png
+%%INSTALLDIR%%/webinc/kupu/common/kupuimages/cut.png
+%%INSTALLDIR%%/webinc/kupu/common/kupuimages/definitionlist.png
+%%INSTALLDIR%%/webinc/kupu/common/kupuimages/document.png
+%%INSTALLDIR%%/webinc/kupu/common/kupuimages/exthyperlink.png
+%%INSTALLDIR%%/webinc/kupu/common/kupuimages/folder.png
+%%INSTALLDIR%%/webinc/kupu/common/kupuimages/fonts.png
+%%INSTALLDIR%%/webinc/kupu/common/kupuimages/format.png
+%%INSTALLDIR%%/webinc/kupu/common/kupuimages/hr.png
+%%INSTALLDIR%%/webinc/kupu/common/kupuimages/image.png
+%%INSTALLDIR%%/webinc/kupu/common/kupuimages/indent.png
+%%INSTALLDIR%%/webinc/kupu/common/kupuimages/inthyperlink.png
+%%INSTALLDIR%%/webinc/kupu/common/kupuimages/italic.png
+%%INSTALLDIR%%/webinc/kupu/common/kupuimages/justify-center.png
+%%INSTALLDIR%%/webinc/kupu/common/kupuimages/justify-full.png
+%%INSTALLDIR%%/webinc/kupu/common/kupuimages/justify-left.png
+%%INSTALLDIR%%/webinc/kupu/common/kupuimages/justify-right.png
+%%INSTALLDIR%%/webinc/kupu/common/kupuimages/kupu_icon.gif
+%%INSTALLDIR%%/webinc/kupu/common/kupuimages/kupulibrary.png
+%%INSTALLDIR%%/webinc/kupu/common/kupuimages/larger-text.png
+%%INSTALLDIR%%/webinc/kupu/common/kupuimages/link.png
+%%INSTALLDIR%%/webinc/kupu/common/kupuimages/ordered-list.png
+%%INSTALLDIR%%/webinc/kupu/common/kupuimages/outdent.png
+%%INSTALLDIR%%/webinc/kupu/common/kupuimages/paste.png
+%%INSTALLDIR%%/webinc/kupu/common/kupuimages/redo-disabled.png
+%%INSTALLDIR%%/webinc/kupu/common/kupuimages/redo.png
+%%INSTALLDIR%%/webinc/kupu/common/kupuimages/remove.png
+%%INSTALLDIR%%/webinc/kupu/common/kupuimages/save.png
+%%INSTALLDIR%%/webinc/kupu/common/kupuimages/size.png
+%%INSTALLDIR%%/webinc/kupu/common/kupuimages/smaller-text.png
+%%INSTALLDIR%%/webinc/kupu/common/kupuimages/strikethrough.png
+%%INSTALLDIR%%/webinc/kupu/common/kupuimages/subscript.png
+%%INSTALLDIR%%/webinc/kupu/common/kupuimages/superscript.png
+%%INSTALLDIR%%/webinc/kupu/common/kupuimages/table.png
+%%INSTALLDIR%%/webinc/kupu/common/kupuimages/text-check.png
+%%INSTALLDIR%%/webinc/kupu/common/kupuimages/text-color.png
+%%INSTALLDIR%%/webinc/kupu/common/kupuimages/underline.png
+%%INSTALLDIR%%/webinc/kupu/common/kupuimages/undo-disabled.png
+%%INSTALLDIR%%/webinc/kupu/common/kupuimages/undo.png
+%%INSTALLDIR%%/webinc/kupu/common/kupuimages/unlink.png
+%%INSTALLDIR%%/webinc/kupu/common/kupuimages/unordered-list.png
+%%INSTALLDIR%%/webinc/kupu/common/kupuimages/view-source.png
+%%INSTALLDIR%%/webinc/kupu/common/kupuinit.js
+%%INSTALLDIR%%/webinc/kupu/common/kupuinit_experimental.js
+%%INSTALLDIR%%/webinc/kupu/common/kupuinit_form.js
+%%INSTALLDIR%%/webinc/kupu/common/kupuinspector.js
+%%INSTALLDIR%%/webinc/kupu/common/kupuloggers.js
+%%INSTALLDIR%%/webinc/kupu/common/kupumacros.html
+%%INSTALLDIR%%/webinc/kupu/common/kupupopups/image.html
+%%INSTALLDIR%%/webinc/kupu/common/kupupopups/link.html
+%%INSTALLDIR%%/webinc/kupu/common/kupupostsupport.js
+%%INSTALLDIR%%/webinc/kupu/common/kupusaveonpart.js
+%%INSTALLDIR%%/webinc/kupu/common/kupusourceedit.js
+%%INSTALLDIR%%/webinc/kupu/common/kupustart.js
+%%INSTALLDIR%%/webinc/kupu/common/kupustyles.css
+%%INSTALLDIR%%/webinc/kupu/common/popups/image.html
+%%INSTALLDIR%%/webinc/kupu/common/popups/link.html
+%%INSTALLDIR%%/webinc/kupu/common/sarissa.js
+%%INSTALLDIR%%/webinc/kupu/common/striptal.xsl
+%%INSTALLDIR%%/webinc/kupu/kupu-1.2.x.patch
+%%INSTALLDIR%%/webinc/mozile/LICENSEBLOCK.txt
+%%INSTALLDIR%%/webinc/mozile/LICENSESHORT.txt
+%%INSTALLDIR%%/webinc/mozile/buttons.png
+%%INSTALLDIR%%/webinc/mozile/domlevel3.js
+%%INSTALLDIR%%/webinc/mozile/eDOM.js
+%%INSTALLDIR%%/webinc/mozile/eDOMXHTML.js
+%%INSTALLDIR%%/webinc/mozile/mozCE.js
+%%INSTALLDIR%%/webinc/mozile/mozDataTransport.js
+%%INSTALLDIR%%/webinc/mozile/mozIECE.js
+%%INSTALLDIR%%/webinc/mozile/mozWrappers.js
+%%INSTALLDIR%%/webinc/mozile/mozileConfig.xml
+%%INSTALLDIR%%/webinc/mozile/mozileLoader.js
+%%INSTALLDIR%%/webinc/mozile/mozileSave.js
+%%INSTALLDIR%%/webinc/mozile/mozilehtmltb.js
+%%INSTALLDIR%%/webinc/mozile/mozilekb.js
+%%INSTALLDIR%%/webinc/mozile/patch_against_bxe_mozile.diff
+%%INSTALLDIR%%/webinc/php/commentdeactivate.php
+%%INSTALLDIR%%/webinc/plugins/blog/common.js
+%%INSTALLDIR%%/webinc/plugins/blog/empty.html
+%%INSTALLDIR%%/webinc/plugins/blog/fck.js
+%%INSTALLDIR%%/webinc/plugins/blog/kupu.js
+%%INSTALLDIR%%/webinc/plugins/blog/quicktags.js
+%%INSTALLDIR%%/webinc/plugins/dbform/css/admin.css
+%%INSTALLDIR%%/webinc/plugins/dbform/js/formxmlcheck.js
+%%INSTALLDIR%%/webinc/plugins/dbforms2/common.js
+%%INSTALLDIR%%/webinc/plugins/dbforms2/dbforms2.js
+%%INSTALLDIR%%/webinc/plugins/dbforms2/emptyupload.html
+%%INSTALLDIR%%/webinc/plugins/dbforms2/fckconfig.js
+%%INSTALLDIR%%/webinc/plugins/dbforms2/field_text.js
+%%INSTALLDIR%%/webinc/plugins/dbforms2/fields.js
+%%INSTALLDIR%%/webinc/plugins/dbforms2/form.js
+%%INSTALLDIR%%/webinc/plugins/dbforms2/formdata.js
+%%INSTALLDIR%%/webinc/plugins/dbforms2/groups.js
+%%INSTALLDIR%%/webinc/plugins/dbforms2/helpers.js
+%%INSTALLDIR%%/webinc/plugins/dbforms2/liveselect.js
+%%INSTALLDIR%%/webinc/plugins/dbforms2/log.js
+%%INSTALLDIR%%/webinc/plugins/dbforms2/statusline.js
+%%INSTALLDIR%%/webinc/plugins/dbforms2/toolbar.js
+%%INSTALLDIR%%/webinc/plugins/dbforms2/transport.js
+%%INSTALLDIR%%/webinc/plugins/metasearch/livesearch.js
+%%INSTALLDIR%%/webinc/tests/bx_collection.php
+%%INSTALLDIR%%/webinc/tests/index.php
+%%INSTALLDIR%%/webinc/tests/web.php
+%%INSTALLDIR%%/xml/blogcomment.xml
+%%INSTALLDIR%%/xml/contact.xml
+@exec mkdir -p %D/%%INSTALLDIR%%/admin/data/admin/navi/tree
+@exec mkdir -p %D/%%INSTALLDIR%%/inc/bx/editors/ooo/skeleton/Pictures
+@exec mkdir -p %D/%%INSTALLDIR%%/themes/mobile/preview
+@exec chown -R %%WWWOWN%%:%%WWWGRP%% %D/%%INSTALLDIR%%
+@dirrm %%INSTALLDIR%%/xml
+@dirrm %%INSTALLDIR%%/webinc/tests
+@dirrm %%INSTALLDIR%%/webinc/plugins/metasearch
+@dirrm %%INSTALLDIR%%/webinc/plugins/dbforms2
+@dirrm %%INSTALLDIR%%/webinc/plugins/dbform/js
+@dirrm %%INSTALLDIR%%/webinc/plugins/dbform/css
+@dirrm %%INSTALLDIR%%/webinc/plugins/dbform
+@dirrm %%INSTALLDIR%%/webinc/plugins/blog
+@dirrm %%INSTALLDIR%%/webinc/plugins
+@dirrm %%INSTALLDIR%%/webinc/php
+@dirrm %%INSTALLDIR%%/webinc/mozile
+@dirrm %%INSTALLDIR%%/webinc/kupu/common/popups
+@dirrm %%INSTALLDIR%%/webinc/kupu/common/kupupopups
+@dirrm %%INSTALLDIR%%/webinc/kupu/common/kupuimages
+@dirrm %%INSTALLDIR%%/webinc/kupu/common/kupudrawers
+@dirrm %%INSTALLDIR%%/webinc/kupu/common
+@dirrm %%INSTALLDIR%%/webinc/kupu
+@dirrm %%INSTALLDIR%%/webinc/js/bx
+@dirrm %%INSTALLDIR%%/webinc/js
+@dirrm %%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar
+@dirrm %%INSTALLDIR%%/webinc/fck/editor/skins/default/images
+@dirrm %%INSTALLDIR%%/webinc/fck/editor/skins/default
+@dirrm %%INSTALLDIR%%/webinc/fck/editor/skins
+@dirrm %%INSTALLDIR%%/webinc/fck/editor/plugins/tablecommands
+@dirrm %%INSTALLDIR%%/webinc/fck/editor/plugins/placeholder/lang
+@dirrm %%INSTALLDIR%%/webinc/fck/editor/plugins/placeholder
+@dirrm %%INSTALLDIR%%/webinc/fck/editor/plugins
+@dirrm %%INSTALLDIR%%/webinc/fck/editor/lang
+@dirrm %%INSTALLDIR%%/webinc/fck/editor/js
+@dirrm %%INSTALLDIR%%/webinc/fck/editor/images
+@dirrm %%INSTALLDIR%%/webinc/fck/editor/filemanager/browser/default/js
+@dirrm %%INSTALLDIR%%/webinc/fck/editor/filemanager/browser/default/images/icons/32
+@dirrm %%INSTALLDIR%%/webinc/fck/editor/filemanager/browser/default/images/icons
+@dirrm %%INSTALLDIR%%/webinc/fck/editor/filemanager/browser/default/images
+@dirrm %%INSTALLDIR%%/webinc/fck/editor/filemanager/browser/default/connectors/php
+@dirrm %%INSTALLDIR%%/webinc/fck/editor/filemanager/browser/default/connectors
+@dirrm %%INSTALLDIR%%/webinc/fck/editor/filemanager/browser/default
+@dirrm %%INSTALLDIR%%/webinc/fck/editor/filemanager/browser
+@dirrm %%INSTALLDIR%%/webinc/fck/editor/filemanager
+@dirrm %%INSTALLDIR%%/webinc/fck/editor/dialog/fck_universalkey
+@dirrm %%INSTALLDIR%%/webinc/fck/editor/dialog/fck_template/images
+@dirrm %%INSTALLDIR%%/webinc/fck/editor/dialog/fck_template
+@dirrm %%INSTALLDIR%%/webinc/fck/editor/dialog/fck_spellerpages/spellerpages/server-scripts
+@dirrm %%INSTALLDIR%%/webinc/fck/editor/dialog/fck_spellerpages/spellerpages
+@dirrm %%INSTALLDIR%%/webinc/fck/editor/dialog/fck_spellerpages
+@dirrm %%INSTALLDIR%%/webinc/fck/editor/dialog/fck_select
+@dirrm %%INSTALLDIR%%/webinc/fck/editor/dialog/fck_link
+@dirrm %%INSTALLDIR%%/webinc/fck/editor/dialog/fck_image
+@dirrm %%INSTALLDIR%%/webinc/fck/editor/dialog/fck_flash
+@dirrm %%INSTALLDIR%%/webinc/fck/editor/dialog/fck_docprops
+@dirrm %%INSTALLDIR%%/webinc/fck/editor/dialog/fck_about
+@dirrm %%INSTALLDIR%%/webinc/fck/editor/dialog/common/images
+@dirrm %%INSTALLDIR%%/webinc/fck/editor/dialog/common
+@dirrm %%INSTALLDIR%%/webinc/fck/editor/dialog
+@dirrm %%INSTALLDIR%%/webinc/fck/editor/css/images
+@dirrm %%INSTALLDIR%%/webinc/fck/editor/css/behaviors
+@dirrm %%INSTALLDIR%%/webinc/fck/editor/css
+@dirrm %%INSTALLDIR%%/webinc/fck/editor
+@dirrm %%INSTALLDIR%%/webinc/fck
+@dirrm %%INSTALLDIR%%/webinc/editors/oneform
+@dirrm %%INSTALLDIR%%/webinc/editors/image
+@dirrm %%INSTALLDIR%%/webinc/editors/fck
+@dirrm %%INSTALLDIR%%/webinc/editors
+@dirrm %%INSTALLDIR%%/webinc/bxecms
+@dirrm %%INSTALLDIR%%/webinc/bxe/xsl
+@dirrm %%INSTALLDIR%%/webinc/bxe/util
+@dirrm %%INSTALLDIR%%/webinc/bxe/td
+@dirrm %%INSTALLDIR%%/webinc/bxe/scripts
+@dirrm %%INSTALLDIR%%/webinc/bxe/relaxng
+@dirrm %%INSTALLDIR%%/webinc/bxe/plugins/Drawer
+@dirrm %%INSTALLDIR%%/webinc/bxe/plugins
+@dirrm %%INSTALLDIR%%/webinc/bxe/picturesExample
+@dirrm %%INSTALLDIR%%/webinc/bxe/mozile/td
+@dirrm %%INSTALLDIR%%/webinc/bxe/mozile
+@dirrm %%INSTALLDIR%%/webinc/bxe/kupu/kupudrawers
+@dirrm %%INSTALLDIR%%/webinc/bxe/kupu
+@dirrm %%INSTALLDIR%%/webinc/bxe/js
+@dirrm %%INSTALLDIR%%/webinc/bxe/images
+@dirrm %%INSTALLDIR%%/webinc/bxe/firefox_extension/content
+@dirrm %%INSTALLDIR%%/webinc/bxe/firefox_extension
+@dirrm %%INSTALLDIR%%/webinc/bxe/examples/uni/schema/xhtml/modules
+@dirrm %%INSTALLDIR%%/webinc/bxe/examples/uni/schema/xhtml
+@dirrm %%INSTALLDIR%%/webinc/bxe/examples/uni/schema/dublincore
+@dirrm %%INSTALLDIR%%/webinc/bxe/examples/uni/schema
+@dirrm %%INSTALLDIR%%/webinc/bxe/examples/uni/css
+@dirrm %%INSTALLDIR%%/webinc/bxe/examples/uni
+@dirrm %%INSTALLDIR%%/webinc/bxe/examples/inlineXHTML/schema/xhtml/modules
+@dirrm %%INSTALLDIR%%/webinc/bxe/examples/inlineXHTML/schema/xhtml
+@dirrm %%INSTALLDIR%%/webinc/bxe/examples/inlineXHTML/schema
+@dirrm %%INSTALLDIR%%/webinc/bxe/examples/inlineXHTML/pictures
+@dirrm %%INSTALLDIR%%/webinc/bxe/examples/inlineXHTML/images
+@dirrm %%INSTALLDIR%%/webinc/bxe/examples/inlineXHTML
+@dirrm %%INSTALLDIR%%/webinc/bxe/examples/inline/images
+@dirrm %%INSTALLDIR%%/webinc/bxe/examples/inline
+@dirrm %%INSTALLDIR%%/webinc/bxe/examples/echo-atom
+@dirrm %%INSTALLDIR%%/webinc/bxe/examples/MathML
+@dirrm %%INSTALLDIR%%/webinc/bxe/examples
+@dirrm %%INSTALLDIR%%/webinc/bxe/div
+@dirrm %%INSTALLDIR%%/webinc/bxe/css
+@dirrm %%INSTALLDIR%%/webinc/bxe
+@dirrm %%INSTALLDIR%%/webinc
+@dirrm %%INSTALLDIR%%/themes/standard/plugins/vote
+@dirrm %%INSTALLDIR%%/themes/standard/plugins/metasearch
+@dirrm %%INSTALLDIR%%/themes/standard/plugins/metainfo
+@dirrm %%INSTALLDIR%%/themes/standard/plugins/dms
+@dirrm %%INSTALLDIR%%/themes/standard/plugins/blog
+@dirrm %%INSTALLDIR%%/themes/standard/plugins/aggregator
+@dirrm %%INSTALLDIR%%/themes/standard/plugins
+@dirrm %%INSTALLDIR%%/themes/standard/admin/plugins
+@dirrm %%INSTALLDIR%%/themes/standard/admin/images/overview
+@dirrm %%INSTALLDIR%%/themes/standard/admin/images/dbforms2
+@dirrm %%INSTALLDIR%%/themes/standard/admin/images
+@dirrm %%INSTALLDIR%%/themes/standard/admin/css
+@dirrm %%INSTALLDIR%%/themes/standard/admin
+@dirrm %%INSTALLDIR%%/themes/standard
+@dirrm %%INSTALLDIR%%/themes/mobile/preview
+@dirrm %%INSTALLDIR%%/themes/mobile/css
+@dirrm %%INSTALLDIR%%/themes/mobile
+@dirrm %%INSTALLDIR%%/themes/bxcms/templates
+@dirrm %%INSTALLDIR%%/themes/bxcms/preview
+@dirrm %%INSTALLDIR%%/themes/bxcms/css
+@dirrm %%INSTALLDIR%%/themes/bxcms/buttons
+@dirrm %%INSTALLDIR%%/themes/bxcms
+@dirrm %%INSTALLDIR%%/themes/3-cols/templates
+@dirrm %%INSTALLDIR%%/themes/3-cols/preview
+@dirrm %%INSTALLDIR%%/themes/3-cols/images
+@dirrm %%INSTALLDIR%%/themes/3-cols/css
+@dirrm %%INSTALLDIR%%/themes/3-cols/buttons
+@dirrm %%INSTALLDIR%%/themes/3-cols
+@dirrm %%INSTALLDIR%%/themes/2-cols/templates
+@dirrm %%INSTALLDIR%%/themes/2-cols/preview
+@dirrm %%INSTALLDIR%%/themes/2-cols/images
+@dirrm %%INSTALLDIR%%/themes/2-cols/css
+@dirrm %%INSTALLDIR%%/themes/2-cols/buttons
+@dirrm %%INSTALLDIR%%/themes/2-cols
+@dirrm %%INSTALLDIR%%/themes
+@dirrm %%INSTALLDIR%%/structure
+@dirrm %%INSTALLDIR%%/install/phing/classes/phing/util/regexp
+@dirrm %%INSTALLDIR%%/install/phing/classes/phing/util
+@dirrm %%INSTALLDIR%%/install/phing/classes/phing/types/selectors
+@dirrm %%INSTALLDIR%%/install/phing/classes/phing/types
+@dirrm %%INSTALLDIR%%/install/phing/classes/phing/tasks/system/condition
+@dirrm %%INSTALLDIR%%/install/phing/classes/phing/tasks/system
+@dirrm %%INSTALLDIR%%/install/phing/classes/phing/tasks/ext/svn
+@dirrm %%INSTALLDIR%%/install/phing/classes/phing/tasks/ext/pearpackage
+@dirrm %%INSTALLDIR%%/install/phing/classes/phing/tasks/ext
+@dirrm %%INSTALLDIR%%/install/phing/classes/phing/tasks
+@dirrm %%INSTALLDIR%%/install/phing/classes/phing/system/util
+@dirrm %%INSTALLDIR%%/install/phing/classes/phing/system/lang
+@dirrm %%INSTALLDIR%%/install/phing/classes/phing/system/io
+@dirrm %%INSTALLDIR%%/install/phing/classes/phing/system
+@dirrm %%INSTALLDIR%%/install/phing/classes/phing/parser
+@dirrm %%INSTALLDIR%%/install/phing/classes/phing/mappers
+@dirrm %%INSTALLDIR%%/install/phing/classes/phing/listener
+@dirrm %%INSTALLDIR%%/install/phing/classes/phing/lib
+@dirrm %%INSTALLDIR%%/install/phing/classes/phing/input
+@dirrm %%INSTALLDIR%%/install/phing/classes/phing/filters/util
+@dirrm %%INSTALLDIR%%/install/phing/classes/phing/filters
+@dirrm %%INSTALLDIR%%/install/phing/classes/phing
+@dirrm %%INSTALLDIR%%/install/phing/classes
+@dirrm %%INSTALLDIR%%/install/phing/bin
+@dirrm %%INSTALLDIR%%/install/phing
+@dirrm %%INSTALLDIR%%/install/dist/sitemap
+@dirrm %%INSTALLDIR%%/install/dist/lang
+@dirrm %%INSTALLDIR%%/install/dist/files/images
+@dirrm %%INSTALLDIR%%/install/dist/files/_galleries/gallery
+@dirrm %%INSTALLDIR%%/install/dist/files/_galleries
+@dirrm %%INSTALLDIR%%/install/dist/files
+@dirrm %%INSTALLDIR%%/install/dist/data/themes
+@dirrm %%INSTALLDIR%%/install/dist/data/lang
+@dirrm %%INSTALLDIR%%/install/dist/data/gallery
+@dirrm %%INSTALLDIR%%/install/dist/data/files
+@dirrm %%INSTALLDIR%%/install/dist/data/contact
+@dirrm %%INSTALLDIR%%/install/dist/data/blog
+@dirrm %%INSTALLDIR%%/install/dist/data
+@dirrm %%INSTALLDIR%%/install/dist/conf/properties/image
+@dirrm %%INSTALLDIR%%/install/dist/conf/properties/audio
+@dirrm %%INSTALLDIR%%/install/dist/conf/properties
+@dirrm %%INSTALLDIR%%/install/dist/conf/fck
+@dirrm %%INSTALLDIR%%/install/dist/conf/editors
+@dirrm %%INSTALLDIR%%/install/dist/conf
+@dirrm %%INSTALLDIR%%/install/dist
+@dirrm %%INSTALLDIR%%/install/conf-shared
+@dirrm %%INSTALLDIR%%/install
+@dirrm %%INSTALLDIR%%/inc/simpletest/extensions
+@dirrm %%INSTALLDIR%%/inc/simpletest
+@dirrm %%INSTALLDIR%%/inc/popoon/xsl
+@dirrm %%INSTALLDIR%%/inc/popoon/tests/tests
+@dirrm %%INSTALLDIR%%/inc/popoon/tests
+@dirrm %%INSTALLDIR%%/inc/popoon/streams/storage
+@dirrm %%INSTALLDIR%%/inc/popoon/streams/ooo
+@dirrm %%INSTALLDIR%%/inc/popoon/streams
+@dirrm %%INSTALLDIR%%/inc/popoon/sitemap
+@dirrm %%INSTALLDIR%%/inc/popoon/helpers
+@dirrm %%INSTALLDIR%%/inc/popoon/functions
+@dirrm %%INSTALLDIR%%/inc/popoon/exceptions
+@dirrm %%INSTALLDIR%%/inc/popoon/examples/slideml/img
+@dirrm %%INSTALLDIR%%/inc/popoon/examples/slideml
+@dirrm %%INSTALLDIR%%/inc/popoon/examples
+@dirrm %%INSTALLDIR%%/inc/popoon/div
+@dirrm %%INSTALLDIR%%/inc/popoon/components/transformers/xsltal
+@dirrm %%INSTALLDIR%%/inc/popoon/components/transformers/xslt
+@dirrm %%INSTALLDIR%%/inc/popoon/components/transformers/i18n
+@dirrm %%INSTALLDIR%%/inc/popoon/components/transformers
+@dirrm %%INSTALLDIR%%/inc/popoon/components/serializers/html2html
+@dirrm %%INSTALLDIR%%/inc/popoon/components/serializers
+@dirrm %%INSTALLDIR%%/inc/popoon/components/selectors
+@dirrm %%INSTALLDIR%%/inc/popoon/components/schemes
+@dirrm %%INSTALLDIR%%/inc/popoon/components/readers
+@dirrm %%INSTALLDIR%%/inc/popoon/components/matchers
+@dirrm %%INSTALLDIR%%/inc/popoon/components/generators/webdav
+@dirrm %%INSTALLDIR%%/inc/popoon/components/generators/search
+@dirrm %%INSTALLDIR%%/inc/popoon/components/generators
+@dirrm %%INSTALLDIR%%/inc/popoon/components/actions
+@dirrm %%INSTALLDIR%%/inc/popoon/components
+@dirrm %%INSTALLDIR%%/inc/popoon/classes
+@dirrm %%INSTALLDIR%%/inc/popoon
+@dirrm %%INSTALLDIR%%/inc/patForms/Storage
+@dirrm %%INSTALLDIR%%/inc/patForms/Rule
+@dirrm %%INSTALLDIR%%/inc/patForms/Renderer
+@dirrm %%INSTALLDIR%%/inc/patForms/Parser
+@dirrm %%INSTALLDIR%%/inc/patForms/Observer
+@dirrm %%INSTALLDIR%%/inc/patForms/Filter
+@dirrm %%INSTALLDIR%%/inc/patForms/Element/Date/Element
+@dirrm %%INSTALLDIR%%/inc/patForms/Element/Date
+@dirrm %%INSTALLDIR%%/inc/patForms/Element
+@dirrm %%INSTALLDIR%%/inc/patForms/Creator/DB
+@dirrm %%INSTALLDIR%%/inc/patForms/Creator
+@dirrm %%INSTALLDIR%%/inc/patForms
+@dirrm %%INSTALLDIR%%/inc/magpie/extlib
+@dirrm %%INSTALLDIR%%/inc/magpie
+@dirrm %%INSTALLDIR%%/inc/bx/xsl
+@dirrm %%INSTALLDIR%%/inc/bx/versioning
+@dirrm %%INSTALLDIR%%/inc/bx/tools/mdb2forms
+@dirrm %%INSTALLDIR%%/inc/bx/tools/i18n
+@dirrm %%INSTALLDIR%%/inc/bx/tools/dbupdate
+@dirrm %%INSTALLDIR%%/inc/bx/tools
+@dirrm %%INSTALLDIR%%/inc/bx/tests/testhelper
+@dirrm %%INSTALLDIR%%/inc/bx/tests/test
+@dirrm %%INSTALLDIR%%/inc/bx/tests
+@dirrm %%INSTALLDIR%%/inc/bx/streams/ooo
+@dirrm %%INSTALLDIR%%/inc/bx/streams/blog
+@dirrm %%INSTALLDIR%%/inc/bx/streams
+@dirrm %%INSTALLDIR%%/inc/bx/resources/text
+@dirrm %%INSTALLDIR%%/inc/bx/resources/image
+@dirrm %%INSTALLDIR%%/inc/bx/resources/application
+@dirrm %%INSTALLDIR%%/inc/bx/resources
+@dirrm %%INSTALLDIR%%/inc/bx/popoon/components/transformers
+@dirrm %%INSTALLDIR%%/inc/bx/popoon/components/readers/webdav
+@dirrm %%INSTALLDIR%%/inc/bx/popoon/components/readers
+@dirrm %%INSTALLDIR%%/inc/bx/popoon/components/generators
+@dirrm %%INSTALLDIR%%/inc/bx/popoon/components/actions
+@dirrm %%INSTALLDIR%%/inc/bx/popoon/components
+@dirrm %%INSTALLDIR%%/inc/bx/popoon
+@dirrm %%INSTALLDIR%%/inc/bx/plugins/xmlrpc
+@dirrm %%INSTALLDIR%%/inc/bx/plugins/gallery
+@dirrm %%INSTALLDIR%%/inc/bx/plugins/blog
+@dirrm %%INSTALLDIR%%/inc/bx/plugins/admin
+@dirrm %%INSTALLDIR%%/inc/bx/plugins
+@dirrm %%INSTALLDIR%%/inc/bx/php
+@dirrm %%INSTALLDIR%%/inc/bx/permm/perm
+@dirrm %%INSTALLDIR%%/inc/bx/permm/auth
+@dirrm %%INSTALLDIR%%/inc/bx/permm
+@dirrm %%INSTALLDIR%%/inc/bx/notifications
+@dirrm %%INSTALLDIR%%/inc/bx/metadatas/text
+@dirrm %%INSTALLDIR%%/inc/bx/metadatas
+@dirrm %%INSTALLDIR%%/inc/bx/interfaces
+@dirrm %%INSTALLDIR%%/inc/bx/indexer/image
+@dirrm %%INSTALLDIR%%/inc/bx/indexer/audio
+@dirrm %%INSTALLDIR%%/inc/bx/indexer
+@dirrm %%INSTALLDIR%%/inc/bx/helpers/xsl
+@dirrm %%INSTALLDIR%%/inc/bx/helpers
+@dirrm %%INSTALLDIR%%/inc/bx/filters/patforms
+@dirrm %%INSTALLDIR%%/inc/bx/filters/formwizard/methods
+@dirrm %%INSTALLDIR%%/inc/bx/filters/formwizard
+@dirrm %%INSTALLDIR%%/inc/bx/filters
+@dirrm %%INSTALLDIR%%/inc/bx/exceptions
+@dirrm %%INSTALLDIR%%/inc/bx/editors/versioning
+@dirrm %%INSTALLDIR%%/inc/bx/editors/ooo/skeleton/Thumbnails
+@dirrm %%INSTALLDIR%%/inc/bx/editors/ooo/skeleton/Pictures
+@dirrm %%INSTALLDIR%%/inc/bx/editors/ooo/skeleton/META-INF
+@dirrm %%INSTALLDIR%%/inc/bx/editors/ooo/skeleton
+@dirrm %%INSTALLDIR%%/inc/bx/editors/ooo
+@dirrm %%INSTALLDIR%%/inc/bx/editors/oneform
+@dirrm %%INSTALLDIR%%/inc/bx/editors/links
+@dirrm %%INSTALLDIR%%/inc/bx/editors/kupu
+@dirrm %%INSTALLDIR%%/inc/bx/editors/image
+@dirrm %%INSTALLDIR%%/inc/bx/editors/file
+@dirrm %%INSTALLDIR%%/inc/bx/editors/fck
+@dirrm %%INSTALLDIR%%/inc/bx/editors/dbform/xsl
+@dirrm %%INSTALLDIR%%/inc/bx/editors/dbform
+@dirrm %%INSTALLDIR%%/inc/bx/editors/bxe
+@dirrm %%INSTALLDIR%%/inc/bx/editors/blog/sub/xsl
+@dirrm %%INSTALLDIR%%/inc/bx/editors/blog/sub
+@dirrm %%INSTALLDIR%%/inc/bx/editors/blog
+@dirrm %%INSTALLDIR%%/inc/bx/editors
+@dirrm %%INSTALLDIR%%/inc/bx/domdocs
+@dirrm %%INSTALLDIR%%/inc/bx/doctypes/schemas/xhtml/modules
+@dirrm %%INSTALLDIR%%/inc/bx/doctypes/schemas/xhtml/exclude
+@dirrm %%INSTALLDIR%%/inc/bx/doctypes/schemas/xhtml
+@dirrm %%INSTALLDIR%%/inc/bx/doctypes/schemas
+@dirrm %%INSTALLDIR%%/inc/bx/doctypes
+@dirrm %%INSTALLDIR%%/inc/bx/dbforms2/xsl
+@dirrm %%INSTALLDIR%%/inc/bx/dbforms2/nofield
+@dirrm %%INSTALLDIR%%/inc/bx/dbforms2/groups
+@dirrm %%INSTALLDIR%%/inc/bx/dbforms2/fields/text/area
+@dirrm %%INSTALLDIR%%/inc/bx/dbforms2/fields/text
+@dirrm %%INSTALLDIR%%/inc/bx/dbforms2/fields/relation
+@dirrm %%INSTALLDIR%%/inc/bx/dbforms2/fields/password
+@dirrm %%INSTALLDIR%%/inc/bx/dbforms2/fields/number
+@dirrm %%INSTALLDIR%%/inc/bx/dbforms2/fields/fixed
+@dirrm %%INSTALLDIR%%/inc/bx/dbforms2/fields/file
+@dirrm %%INSTALLDIR%%/inc/bx/dbforms2/fields/date
+@dirrm %%INSTALLDIR%%/inc/bx/dbforms2/fields
+@dirrm %%INSTALLDIR%%/inc/bx/dbforms2/datasource
+@dirrm %%INSTALLDIR%%/inc/bx/dbforms2
+@dirrm %%INSTALLDIR%%/inc/bx/config/collection
+@dirrm %%INSTALLDIR%%/inc/bx/config
+@dirrm %%INSTALLDIR%%/inc/bx/button/templates
+@dirrm %%INSTALLDIR%%/inc/bx/button/fonts
+@dirrm %%INSTALLDIR%%/inc/bx/button
+@dirrm %%INSTALLDIR%%/inc/bx
+@dirrm %%INSTALLDIR%%/inc/XML/db2xml/Input
+@dirrm %%INSTALLDIR%%/inc/XML/db2xml/Format
+@dirrm %%INSTALLDIR%%/inc/XML/db2xml
+@dirrm %%INSTALLDIR%%/inc/XML/RPC
+@dirrm %%INSTALLDIR%%/inc/XML
+@dirrm %%INSTALLDIR%%/inc/Services
+@dirrm %%INSTALLDIR%%/inc/SXIP/Request
+@dirrm %%INSTALLDIR%%/inc/SXIP
+@dirrm %%INSTALLDIR%%/inc/SQL
+@dirrm %%INSTALLDIR%%/inc/PHPUnit2/Util/CodeCoverage/Renderer
+@dirrm %%INSTALLDIR%%/inc/PHPUnit2/Util/CodeCoverage
+@dirrm %%INSTALLDIR%%/inc/PHPUnit2/Util
+@dirrm %%INSTALLDIR%%/inc/PHPUnit2
+@dirrm %%INSTALLDIR%%/inc/PEAR
+@dirrm %%INSTALLDIR%%/inc/OS
+@dirrm %%INSTALLDIR%%/inc/Net/DNSBL
+@dirrm %%INSTALLDIR%%/inc/Net
+@dirrm %%INSTALLDIR%%/inc/MP3
+@dirrm %%INSTALLDIR%%/inc/MDB2/Wrapper
+@dirrm %%INSTALLDIR%%/inc/MDB2/Tools
+@dirrm %%INSTALLDIR%%/inc/MDB2/Driver/Reverse
+@dirrm %%INSTALLDIR%%/inc/MDB2/Driver/Native
+@dirrm %%INSTALLDIR%%/inc/MDB2/Driver/Manager
+@dirrm %%INSTALLDIR%%/inc/MDB2/Driver/Datatype
+@dirrm %%INSTALLDIR%%/inc/MDB2/Driver
+@dirrm %%INSTALLDIR%%/inc/MDB2
+@dirrm %%INSTALLDIR%%/inc/Log
+@dirrm %%INSTALLDIR%%/inc/Image
+@dirrm %%INSTALLDIR%%/inc/HTTP/WebDAV/Tools
+@dirrm %%INSTALLDIR%%/inc/HTTP/WebDAV/Server/Filesystem
+@dirrm %%INSTALLDIR%%/inc/HTTP/WebDAV/Server
+@dirrm %%INSTALLDIR%%/inc/HTTP/WebDAV
+@dirrm %%INSTALLDIR%%/inc/HTTP/Client
+@dirrm %%INSTALLDIR%%/inc/HTTP
+@dirrm %%INSTALLDIR%%/inc/Date
+@dirrm %%INSTALLDIR%%/inc/Config/Container
+@dirrm %%INSTALLDIR%%/inc/Config
+@dirrm %%INSTALLDIR%%/inc/Cache/Container
+@dirrm %%INSTALLDIR%%/inc/Cache
+@dirrm %%INSTALLDIR%%/inc/Auth/Container
+@dirrm %%INSTALLDIR%%/inc/Auth
+@dirrm %%INSTALLDIR%%/inc/Archive
+@dirrm %%INSTALLDIR%%/inc/.registry
+@dirrm %%INSTALLDIR%%/inc
+@dirrm %%INSTALLDIR%%/forms/users
+@dirrm %%INSTALLDIR%%/forms/news
+@dirrm %%INSTALLDIR%%/forms/blogposts
+@dirrm %%INSTALLDIR%%/forms/bloglinkscategories
+@dirrm %%INSTALLDIR%%/forms/bloglinks
+@dirrm %%INSTALLDIR%%/forms/blogcomments
+@dirrm %%INSTALLDIR%%/forms/blogcategories
+@dirrm %%INSTALLDIR%%/forms
+@dirrm %%INSTALLDIR%%/div/db
+@dirrm %%INSTALLDIR%%/div
+@dirrm %%INSTALLDIR%%/dbforms2
+@dirrm %%INSTALLDIR%%/bin/blog
+@dirrm %%INSTALLDIR%%/bin
+@dirrm %%INSTALLDIR%%/admin/webinc/xlt/images
+@dirrm %%INSTALLDIR%%/admin/webinc/xlt
+@dirrm %%INSTALLDIR%%/admin/webinc/update
+@dirrm %%INSTALLDIR%%/admin/webinc/openid
+@dirrm %%INSTALLDIR%%/admin/webinc/lostpw
+@dirrm %%INSTALLDIR%%/admin/webinc/js
+@dirrm %%INSTALLDIR%%/admin/webinc/img/icons/text
+@dirrm %%INSTALLDIR%%/admin/webinc/img/icons/image
+@dirrm %%INSTALLDIR%%/admin/webinc/img/icons/application
+@dirrm %%INSTALLDIR%%/admin/webinc/img/icons
+@dirrm %%INSTALLDIR%%/admin/webinc/img
+@dirrm %%INSTALLDIR%%/admin/webinc/approval
+@dirrm %%INSTALLDIR%%/admin/webinc
+@dirrm %%INSTALLDIR%%/admin/sitemap
+@dirrm %%INSTALLDIR%%/admin/lang/plugins
+@dirrm %%INSTALLDIR%%/admin/lang
+@dirrm %%INSTALLDIR%%/admin/data/admin/themes
+@dirrm %%INSTALLDIR%%/admin/data/admin/siteoptions
+@dirrm %%INSTALLDIR%%/admin/data/admin/properties
+@dirrm %%INSTALLDIR%%/admin/data/admin/overview
+@dirrm %%INSTALLDIR%%/admin/data/admin/navi/tree
+@dirrm %%INSTALLDIR%%/admin/data/admin/navi
+@dirrm %%INSTALLDIR%%/admin/data/admin/listview
+@dirrm %%INSTALLDIR%%/admin/data/admin/images
+@dirrm %%INSTALLDIR%%/admin/data/admin/editpopup
+@dirrm %%INSTALLDIR%%/admin/data/admin/edit
+@dirrm %%INSTALLDIR%%/admin/data/admin/delete
+@dirrm %%INSTALLDIR%%/admin/data/admin/dbforms2
+@dirrm %%INSTALLDIR%%/admin/data/admin/copy
+@dirrm %%INSTALLDIR%%/admin/data/admin/collection
+@dirrm %%INSTALLDIR%%/admin/data/admin/addresource
+@dirrm %%INSTALLDIR%%/admin/data/admin
+@dirrm %%INSTALLDIR%%/admin/data
+@dirrm %%INSTALLDIR%%/admin
+@dirrm %%INSTALLDIR%%

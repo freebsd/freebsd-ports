@@ -1,0 +1,18 @@
+Create a new VirtualHost for your fluxcms installation.
+
+Be sure to have AllowOverride and mod_rewrite enabled in Apache.
+A simple VirtualHost entry may look as following: 
+
+	<VirtualHost *:80>
+		DocumentRoot %%PREFIX%%/www/fluxcms
+		ServerName fluxcms.yourdomain.org
+		<Directory %%PREFIX%%/www/fluxcms>
+			AllowOverride All
+		</Directory>     
+	</VirtualHost>
+
+Open up the webbased installer: http://fluxcms.yourdomain.org/install/
+Go through that. If everything works ok, Flux CMS is set up.
+Open your newly installed Flux CMS with http://fluxcms.yourdomain.org/
+The admin can be reached with http://fluxcms/admin/ (the trailing slash is
+important right now). You can log in with the data provided in the installer. 

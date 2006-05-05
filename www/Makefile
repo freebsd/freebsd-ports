@@ -129,6 +129,7 @@
     SUBDIR += flashplugin
     SUBDIR += flashplugin-mozilla
     SUBDIR += flood
+    SUBDIR += fluxcms
     SUBDIR += fnord
     SUBDIR += formication
     SUBDIR += frontpage
