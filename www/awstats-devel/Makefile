@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	webmaster@shopcusa.com
 COMMENT=	Free real-time logfile analyzer to get advanced web statistics
 
+FORBIDDEN=	Command Injection Vulnerability
+
 RUN_DEPENDS=	${SITE_PERL}/Net/XWhois.pm:${PORTSDIR}/net/p5-Net-XWhois
 
 NO_BUILD=	yes
