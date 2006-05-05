@@ -6,6 +6,17 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20060506:
+  AFFECTS: users of lang/lua, especially KDE editor Kite users
+  AUTHOR: pav@FreeBSD.org
+
+  Recently, the port of Lua was updated to version 5.1.  This version is
+  incompatible with the version 5.0, which is used in certain applications,
+  most notable in KDE's editor Kite.  If you're having troubles running
+  Kite, make sure you downgrade your lua installation back to 5.0:
+
+  portupgrade -f -o lang/lua50 lua-5.1
+
 20060501:
   AFFECTS: users of www/instiki
   AUTHOR: arsptr@optusnet.com.au
