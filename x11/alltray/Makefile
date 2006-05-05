@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	alltray
-PORTVERSION=	0.65
+PORTVERSION=	0.66
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	alltray
@@ -15,7 +15,7 @@ MAINTAINER=	acardenas@bsd.org.pe
 COMMENT=	Dock any application with no native tray icon
 
 USE_X_PREFIX=	yes
-USE_GNOME=	gtk20
+USE_GNOME=	gtk20 gconf2
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" LDFLAGS="-L${X11BASE}/lib"
