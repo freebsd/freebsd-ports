@@ -50,8 +50,8 @@ bin/rdfquery.pl
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/RDFStore/Util
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/RDFStore/Vocabulary
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/RDFStore
-@dirrmtry %%SITE_PERL%%/DBD
-@dirrmtry %%SITE_PERL%%/RDQL
-@dirrmtry %%SITE_PERL%%/Util
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/DBD
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/RDQL
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Util
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/RDFStore
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBMS
