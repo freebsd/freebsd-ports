@@ -1,0 +1,16 @@
+--- src/blocks/ajax/samples/sitemap.xmap.orig	Tue Apr 11 18:05:10 2006
++++ src/blocks/ajax/samples/sitemap.xmap	Tue Apr 11 18:05:18 2006
+@@ -19,13 +19,6 @@
+   @version $Id: sitemap.xmap 385331 2006-03-12 18:25:56Z sylvain $
+   -->
+ <map:sitemap xmlns:map="http://apache.org/cocoon/sitemap/1.0">
+-  <map:components>
+-    <map:generators>
+-	  <!-- use the new implementation of JX -->
+-	  <map:generator name="jx" src="org.apache.cocoon.template.JXTemplateGenerator"/>
+-    </map:generators>
+-  </map:components>
+-
+  <map:resources>
+    <!-- this will later become a virtual transformer -->
+    <map:resource name="simple-page2html">
