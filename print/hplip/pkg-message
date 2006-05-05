@@ -1,0 +1,15 @@
+**********************************************************
+Add the following to your rc.conf:
+
+hpiod_enable="YES"
+hpssd_enable="YES"
+
+The default setup runs hpiod as the hplip user and adds 
+hplip to the operator group.  So all you have to do if you
+have a custom ruleset setup is add the following to that
+ruleset in devfs.rules:
+
+add path 'ugen*' group operator
+add path 'ugen*' mode 0660
+
+**********************************************************

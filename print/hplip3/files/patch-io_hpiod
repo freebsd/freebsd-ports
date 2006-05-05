@@ -1,0 +1,24 @@
+diff -ruN io/hpiod.orig/usbext.c io/hpiod/usbext.c
+--- io/hpiod.orig/usbext.c	Sat Apr  1 16:11:45 2006
++++ io/hpiod/usbext.c	Sat Apr  1 16:10:29 2006
+@@ -33,7 +33,7 @@
+   int fd;
+ };
+ 
+-#if defined(__APPLE__) && defined(__MACH__)
++#if defined(__APPLE__) && defined(__MACH__) || defined(__FreeBSD__)
+ 
+ #else
+ 
+diff -ruN io/hpiod.orig/usbext.h io/hpiod/usbext.h
+--- io/hpiod.orig/usbext.h	Sat Apr  1 16:11:45 2006
++++ io/hpiod/usbext.h	Sat Apr  1 16:05:57 2006
+@@ -32,7 +32,7 @@
+ #include <sys/time.h>
+ #include <usb.h>
+ 
+-#if defined(__APPLE__) && defined(__MACH__)
++#if defined(__APPLE__) && defined(__MACH__) || defined(__FreeBSD__)
+ #else
+ #include <linux/usbdevice_fs.h>
+ 
