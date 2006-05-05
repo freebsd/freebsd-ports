@@ -51,7 +51,7 @@ LIB_DEPENDS+=	dbus-1.2:${PORTSDIR}/devel/dbus
 PLIST_SUB+=	DBUS=""
 .endif
 
-.if defined(WITHOUT_GCONF)
+.if defined(WITH_GCONF)
 USE_GNOME+=	gconf2
 CONFIGURE_ARGS+=	--enable-gconf
 GCONF_SCHEMAS=	bmp-2.0.schema
