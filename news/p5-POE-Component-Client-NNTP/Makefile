@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	POE-Component-Client-NNTP
-PORTVERSION=	0.91
+PORTVERSION=	1.01
 CATEGORIES=	news perl5 devel
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	POE
@@ -22,4 +22,10 @@ PERL_CONFIGURE=	yes
 
 MAN3=		POE::Component::Client::NNTP.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+IGNORE=		requires perl 5.6.0 or later. Install lang/perl5 then try again
+.endif
+
+.include <bsd.port.post.mk>
