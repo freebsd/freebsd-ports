@@ -18,8 +18,6 @@ COMMENT=	Java wrapper for Gtk+, Pango, Atk, and Glib
 
 LIB_DEPENDS=	cairojni-${CAIRO_API_VERSION}.1:${PORTSDIR}/graphics/cairo-java
 
-BROKEN=		Tries to install into /api
-
 USE_BZIP2=	yes
 USE_XLIB=	yes
 USE_GMAKE=	yes
@@ -68,7 +66,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/THANKS ${DOCSDIR}
 	${MKDIR} ${DOCSDIR}/api
 	cd ${WRKSRC}/doc/api && ${FIND} . | ${CPIO} -pdmu ${DOCSDIR}/api
-	${TOUCH} ${DOSCDIR}/api/packages.html
+	${TOUCH} ${DOCSDIR}/api/packages.html
 	${MKDIR} ${DOCSDIR}/examples
 	cd ${WRKSRC}/doc/examples && ${FIND} . \
 		| ${CPIO} -pdmu ${DOCSDIR}/examples
