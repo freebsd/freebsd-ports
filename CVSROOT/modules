@@ -6311,6 +6311,7 @@ matchbox	ports/x11-wm/matchbox
 math_atlas	ports/math/atlas
 math_fbm	ports/math/fbm
 math_jags	ports/math/jags
+math_ump	ports/math/ump
 mathfonts	ports/x11-fonts/mathfonts
 mathml-xsd	ports/textproc/mathml-xsd
 mathomatic	ports/math/mathomatic
