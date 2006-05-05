@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	zope
-PORTVERSION=	2.9.1
+PORTVERSION=	2.9.2
 CATEGORIES=	www python zope
 MASTER_SITES=	http://www.zope.org/Products/Zope/${PORTVERSION}/
 DISTNAME=	Zope-${PORTVERSION}
+EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	zope
 
 MAINTAINER=	yasi@yasi.to
@@ -58,8 +59,8 @@ ISBATCH=	""
 .endif
 
 post-patch:
-	${FIND} ${WRKSRC} -name '*.orig' -print0 | ${XARGS} -0 -- ${RM}
-	${REINPLACE_CMD} \
+	@${FIND} ${WRKSRC} -name '*.orig' -print0 | ${XARGS} -0 -- ${RM}
+	@${REINPLACE_CMD} \
 		-e 's,^\(ACCEPTABLE="\).*"$$,\1${PYTHON_PORTVERSION}",g' \
 		-e 's,^\(TARGET="\).*"$$,\1${PYTHON_PORTVERSION}",g' \
 		-e 's,^\(EXENAMES="\).*"$$,\1${PYTHON_VERSION}",g' \

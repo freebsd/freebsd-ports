@@ -1,5 +1,5 @@
---- Dependencies/Products-Zope-2.9.1/Products/SiteAccess/tests/testVirtualHostMonster.py.orig	Sat Jan  7 21:07:42 2006
-+++ Dependencies/Products-Zope-2.9.1/Products/SiteAccess/tests/testVirtualHostMonster.py	Sun Jan 15 13:39:37 2006
+--- Dependencies/Products-Zope-2.9.2/Products/SiteAccess/tests/testVirtualHostMonster.py.orig	Sat Jan  7 21:07:42 2006
++++ Dependencies/Products-Zope-2.9.2/Products/SiteAccess/tests/testVirtualHostMonster.py	Sun Jan 15 13:39:37 2006
 @@ -12,6 +12,7 @@
  
  from Testing.makerequest import makerequest
