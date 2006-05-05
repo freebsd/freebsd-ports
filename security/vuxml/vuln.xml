@@ -34,8 +34,43 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a8d8713e-dc83-11da-a22b-000c6ec775d9">
+    <topic>mysql50-server -- COM_TABLE_DUMP arbitrary code execution</topic>
+    <affects>
+      <package>
+	<name>mysql-server</name>
+	<range><gt>5.0</gt><lt>5.0.21</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Stefano Di Paola reports:</p>
+	<blockquote cite="http://www.wisec.it/vulns.php?page=8">
+	  <p>An authenticated user could remotely execute arbitrary
+            commands by taking advantage of a stack overflow.</p>
+	  <p>To take advantage of these flaws an attacker should have
+            direct access to MySQL server communication layer (port
+            3306 or unix socket).  But if used in conjuction with some
+            web application flaws (i.e. php code injection) an
+            attacker could use socket programming (i.e. php sockets)
+            to gain access to that layer.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-1518</cvename>
+      <url>http://www.wisec.it/vulns.php?page=8</url>
+      <mlist msgid="1146577257.5679.217.camel@first">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=114659633220473</mlist>
+      <url>http://dev.mysql.com/doc/refman/5.0/en/news-5-0-21.html</url>
+    </references>
+    <dates>
+      <discovery>2006-05-02</discovery>
+      <entry>2006-05-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2df297a2-dc74-11da-a22b-000c6ec775d9">
-    <topic>awstat -- arbitrary command execution vulnerability</topic>
+    <topic>awstats -- arbitrary command execution vulnerability</topic>
     <affects>
       <package>
 	<name>awstats</name>
