@@ -781,6 +781,7 @@
     SUBDIR += tex2im
     SUBDIR += texi2db
     SUBDIR += texi2html
+    SUBDIR += textogif
     SUBDIR += tinyxml
     SUBDIR += tkdiff
     SUBDIR += tkxmlive

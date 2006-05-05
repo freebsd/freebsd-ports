@@ -1,0 +1,8 @@
+Converts a LaTeX file containing equations(s) into a GIF file for
+embedding into an HTML document.  The black and white image of the
+equation is created at high resolution and then resampled to the
+target resolution to antialias what would otherwise be jagged
+edges.
+
+Author:	John Walker
+WWW:	http://www.fourmilab/webtools/textogif/
