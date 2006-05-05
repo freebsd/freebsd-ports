@@ -24,6 +24,8 @@ BUILD_DEPENDS+= Xvfb:${X_VFBSERVER_PORT} \
 .endif
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+BROKEN=		Incorrect pkg-plist
+
 USE_GNOME=	pygnomeextras pygnome2
 USE_PYTHON=	yes
 
