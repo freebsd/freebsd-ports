@@ -1,21 +1,21 @@
 bin/lisp
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/release-%%VER%%.txt
-lib/cmucl/lisp.nm
-lib/cmucl/lisp.map
 lib/cmucl/internals.h
 lib/cmucl/internals.inc
-lib/cmucl/sample-wrapper
-lib/cmucl/lib/lisp.core
-lib/cmucl/lib/load-foreign.csh
 lib/cmucl/lib/config
 lib/cmucl/lib/config.lisp
 lib/cmucl/lib/generic-site.lisp
-lib/cmucl/lib/subsystems/gray-streams-library.x86f
+lib/cmucl/lib/lisp.core
+lib/cmucl/lib/load-foreign.csh
 lib/cmucl/lib/subsystems/gray-compat-library.x86f
-lib/cmucl/lib/subsystems/simple-streams-library.x86f
+lib/cmucl/lib/subsystems/gray-streams-library.x86f
 lib/cmucl/lib/subsystems/iodefs-library.x86f
+lib/cmucl/lib/subsystems/simple-streams-library.x86f
+lib/cmucl/lisp.map
+lib/cmucl/lisp.nm
+lib/cmucl/sample-wrapper
+%%DOCSDIR%%/README
+%%DOCSDIR%%/release-19c.txt
+@dirrm %%DOCSDIR%%
 @dirrm lib/cmucl/lib/subsystems
 @dirrm lib/cmucl/lib
 @dirrm lib/cmucl
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
