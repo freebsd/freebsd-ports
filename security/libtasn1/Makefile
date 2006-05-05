@@ -6,13 +6,10 @@
 #
 
 PORTNAME=	libtasn1
-PORTVERSION=	0.2.18
-PORTREVISION=	1
+PORTVERSION=	0.3.1
 CATEGORIES=	security
-MASTER_SITES=	${MASTER_SITE_GNUPG} \
-	http://www.mirrors.wiretapped.net/security/network-security/gnutls/libtasn1/ \
-	ftp://ftp.mirrors.wiretapped.net/security/network-security/gnutls/libtasn1/ \
-	ftp://ftp.gnutls.org/pub/gnutls/libtasn1/
+MASTER_SITES=	ftp://ftp.gnutls.org/pub/gnutls/libtasn1/ \
+		http://josefsson.org/gnutls/releases/libtasn1/
 MASTER_SITE_SUBDIR=	alpha/gnutls/libtasn1
 
 MAINTAINER=	novel@FreeBSD.org
@@ -21,7 +18,6 @@ COMMENT=	ASN.1 structure parser library
 INSTALLS_SHLIB=	yes
 USE_GNOME=	pkgconfig
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 USE_GETOPT_LONG=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
@@ -30,7 +26,9 @@ DOCS=		AUTHORS NEWS README THANKS doc/TODO \
 INFO=		libtasn1
 MAN3=		\
 		asn1_array2tree.3 \
+		asn1_bit_der.3 \
 		asn1_check_version.3 \
+		asn1_copy_node.3 \
 		asn1_create_element.3 \
 		asn1_delete_element.3 \
 		asn1_delete_structure.3 \
@@ -40,8 +38,15 @@ MAN3=		\
 		asn1_der_decoding_startEnd.3 \
 		asn1_expand_any_defined_by.3 \
 		asn1_expand_octet_string.3 \
+		asn1_find_node.3 \
 		asn1_find_structure_from_oid.3 \
+		asn1_get_bit_der.3 \
+		asn1_get_length_der.3 \
+		asn1_get_octet_der.3 \
+		asn1_get_tag_der.3 \
+		asn1_length_der.3 \
 		asn1_number_of_elements.3 \
+		asn1_octet_der.3 \
 		asn1_parser2array.3 \
 		asn1_parser2tree.3 \
 		asn1_print_structure.3 \
