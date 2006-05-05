@@ -500,6 +500,9 @@
 %%ZOPEBASEDIR%%/lib/python/ClientCookie/_urllib2_support.py
 %%ZOPEBASEDIR%%/lib/python/ClientCookie/_urllib2_support.pyc
 %%ZOPEBASEDIR%%/lib/python/ClientCookie/_urllib2_support.pyo
+%%ZOPEBASEDIR%%/lib/python/ClientForm.py
+%%ZOPEBASEDIR%%/lib/python/ClientForm.pyc
+%%ZOPEBASEDIR%%/lib/python/ClientForm.pyo
 %%ZOPEBASEDIR%%/lib/python/ComputedAttribute/DEPENDENCIES.cfg
 %%ZOPEBASEDIR%%/lib/python/ComputedAttribute/SETUP.cfg
 %%ZOPEBASEDIR%%/lib/python/ComputedAttribute/_ComputedAttribute.so
@@ -1020,6 +1023,9 @@
 %%ZOPEBASEDIR%%/lib/python/OFS/tests/testTraverse.py
 %%ZOPEBASEDIR%%/lib/python/OFS/tests/testTraverse.pyc
 %%ZOPEBASEDIR%%/lib/python/OFS/tests/testTraverse.pyo
+%%ZOPEBASEDIR%%/lib/python/OFS/tests/test_XMLExportImport.py
+%%ZOPEBASEDIR%%/lib/python/OFS/tests/test_XMLExportImport.pyc
+%%ZOPEBASEDIR%%/lib/python/OFS/tests/test_XMLExportImport.pyo
 %%ZOPEBASEDIR%%/lib/python/OFS/www/ControlPanel_icon.gif
 %%ZOPEBASEDIR%%/lib/python/OFS/www/Help_icon.gif
 %%ZOPEBASEDIR%%/lib/python/OFS/www/Properties_icon.gif
@@ -3256,6 +3262,9 @@
 %%ZOPEBASEDIR%%/lib/python/Testing/ZopeTestCase/interfaces.py
 %%ZOPEBASEDIR%%/lib/python/Testing/ZopeTestCase/interfaces.pyc
 %%ZOPEBASEDIR%%/lib/python/Testing/ZopeTestCase/interfaces.pyo
+%%ZOPEBASEDIR%%/lib/python/Testing/ZopeTestCase/placeless.py
+%%ZOPEBASEDIR%%/lib/python/Testing/ZopeTestCase/placeless.pyc
+%%ZOPEBASEDIR%%/lib/python/Testing/ZopeTestCase/placeless.pyo
 %%ZOPEBASEDIR%%/lib/python/Testing/ZopeTestCase/profiler.py
 %%ZOPEBASEDIR%%/lib/python/Testing/ZopeTestCase/profiler.pyc
 %%ZOPEBASEDIR%%/lib/python/Testing/ZopeTestCase/profiler.pyo
@@ -3274,6 +3283,9 @@
 %%ZOPEBASEDIR%%/lib/python/Testing/ZopeTestCase/testInterfaces.py
 %%ZOPEBASEDIR%%/lib/python/Testing/ZopeTestCase/testInterfaces.pyc
 %%ZOPEBASEDIR%%/lib/python/Testing/ZopeTestCase/testInterfaces.pyo
+%%ZOPEBASEDIR%%/lib/python/Testing/ZopeTestCase/testPlaceless.py
+%%ZOPEBASEDIR%%/lib/python/Testing/ZopeTestCase/testPlaceless.pyc
+%%ZOPEBASEDIR%%/lib/python/Testing/ZopeTestCase/testPlaceless.pyo
 %%ZOPEBASEDIR%%/lib/python/Testing/ZopeTestCase/testPortalTestCase.py
 %%ZOPEBASEDIR%%/lib/python/Testing/ZopeTestCase/testPortalTestCase.pyc
 %%ZOPEBASEDIR%%/lib/python/Testing/ZopeTestCase/testPortalTestCase.pyo
@@ -4703,6 +4715,9 @@
 %%ZOPEBASEDIR%%/lib/python/persistent/wref.py
 %%ZOPEBASEDIR%%/lib/python/persistent/wref.pyc
 %%ZOPEBASEDIR%%/lib/python/persistent/wref.pyo
+%%ZOPEBASEDIR%%/lib/python/pullparser.py
+%%ZOPEBASEDIR%%/lib/python/pullparser.pyc
+%%ZOPEBASEDIR%%/lib/python/pullparser.pyo
 %%ZOPEBASEDIR%%/lib/python/pytz/LICENSE.txt
 %%ZOPEBASEDIR%%/lib/python/pytz/README.txt
 %%ZOPEBASEDIR%%/lib/python/pytz/__init__.py
@@ -9666,7 +9681,6 @@
 %%ZOPEBASEDIR%%/lib/python/zope/app/utility/vocabulary.py
 %%ZOPEBASEDIR%%/lib/python/zope/app/utility/vocabulary.pyc
 %%ZOPEBASEDIR%%/lib/python/zope/app/utility/vocabulary.pyo
-%%ZOPEBASEDIR%%/lib/python/zope/app/version.txt
 %%ZOPEBASEDIR%%/lib/python/zope/app/wsgi/README.txt
 %%ZOPEBASEDIR%%/lib/python/zope/app/wsgi/__init__.py
 %%ZOPEBASEDIR%%/lib/python/zope/app/wsgi/__init__.pyc
@@ -10061,6 +10075,9 @@
 %%ZOPEBASEDIR%%/lib/python/zope/formlib/interfaces.py
 %%ZOPEBASEDIR%%/lib/python/zope/formlib/interfaces.pyc
 %%ZOPEBASEDIR%%/lib/python/zope/formlib/interfaces.pyo
+%%ZOPEBASEDIR%%/lib/python/zope/formlib/locales/de/LC_MESSAGES/zope.formlib.mo
+%%ZOPEBASEDIR%%/lib/python/zope/formlib/locales/de/LC_MESSAGES/zope.formlib.po
+%%ZOPEBASEDIR%%/lib/python/zope/formlib/locales/zope.formlib.pot
 %%ZOPEBASEDIR%%/lib/python/zope/formlib/namedtemplate.py
 %%ZOPEBASEDIR%%/lib/python/zope/formlib/namedtemplate.pyc
 %%ZOPEBASEDIR%%/lib/python/zope/formlib/namedtemplate.pyo
@@ -11621,9 +11638,6 @@
 %%ZOPEBASEDIR%%/lib/python/zope/tales/tests/test_traverser.py
 %%ZOPEBASEDIR%%/lib/python/zope/tales/tests/test_traverser.pyc
 %%ZOPEBASEDIR%%/lib/python/zope/tales/tests/test_traverser.pyo
-%%ZOPEBASEDIR%%/lib/python/zope/testbrowser/ClientForm.py
-%%ZOPEBASEDIR%%/lib/python/zope/testbrowser/ClientForm.pyc
-%%ZOPEBASEDIR%%/lib/python/zope/testbrowser/ClientForm.pyo
 %%ZOPEBASEDIR%%/lib/python/zope/testbrowser/DEPENDENCIES.cfg
 %%ZOPEBASEDIR%%/lib/python/zope/testbrowser/README.txt
 %%ZOPEBASEDIR%%/lib/python/zope/testbrowser/SETUP.cfg
@@ -11653,9 +11667,6 @@
 %%ZOPEBASEDIR%%/lib/python/zope/testbrowser/interfaces.pyc
 %%ZOPEBASEDIR%%/lib/python/zope/testbrowser/interfaces.pyo
 %%ZOPEBASEDIR%%/lib/python/zope/testbrowser/over_the_wire.txt
-%%ZOPEBASEDIR%%/lib/python/zope/testbrowser/pullparser.py
-%%ZOPEBASEDIR%%/lib/python/zope/testbrowser/pullparser.pyc
-%%ZOPEBASEDIR%%/lib/python/zope/testbrowser/pullparser.pyo
 %%ZOPEBASEDIR%%/lib/python/zope/testbrowser/testing.py
 %%ZOPEBASEDIR%%/lib/python/zope/testbrowser/testing.pyc
 %%ZOPEBASEDIR%%/lib/python/zope/testbrowser/testing.pyo
@@ -12089,6 +12100,9 @@
 @dirrm %%ZOPEBASEDIR%%/lib/python/zope/i18n
 @dirrm %%ZOPEBASEDIR%%/lib/python/zope/hookable/tests
 @dirrm %%ZOPEBASEDIR%%/lib/python/zope/hookable
+@dirrm %%ZOPEBASEDIR%%/lib/python/zope/formlib/locales/de/LC_MESSAGES
+@dirrm %%ZOPEBASEDIR%%/lib/python/zope/formlib/locales/de
+@dirrm %%ZOPEBASEDIR%%/lib/python/zope/formlib/locales
 @dirrm %%ZOPEBASEDIR%%/lib/python/zope/formlib
 @dirrm %%ZOPEBASEDIR%%/lib/python/zope/exceptions/tests
 @dirrm %%ZOPEBASEDIR%%/lib/python/zope/exceptions
@@ -12637,5 +12651,3 @@
 @dirrm %%ZOPEBASEDIR%%/bin
 @dirrm %%ZOPEBASEDIR%%/Products
 @dirrm %%ZOPEBASEDIR%%
-@dirrm share/nls/en_US.US-ASCII
-@dirrm share/nls/POSIX

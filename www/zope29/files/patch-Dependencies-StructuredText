@@ -1,5 +1,5 @@
---- Dependencies/StructuredText-Zope-2.9.1/StructuredText/DocumentWithImages.py.orig	Sat Jan  7 21:07:51 2006
-+++ Dependencies/StructuredText-Zope-2.9.1/StructuredText/DocumentWithImages.py	Sun Jan 15 10:23:46 2006
+--- Dependencies/StructuredText-Zope-2.9.2/StructuredText/DocumentWithImages.py.orig	Sat Jan  7 21:07:51 2006
++++ Dependencies/StructuredText-Zope-2.9.2/StructuredText/DocumentWithImages.py	Sun Jan 15 10:23:46 2006
 @@ -27,7 +27,7 @@
  
      def doc_img(
@@ -9,8 +9,8 @@
          ):
  
  
---- Dependencies/StructuredText-Zope-2.9.1/StructuredText/ST.py.orig	Sat Jan  7 21:07:51 2006
-+++ Dependencies/StructuredText-Zope-2.9.1/StructuredText/ST.py	Sun Jan 15 10:23:46 2006
+--- Dependencies/StructuredText-Zope-2.9.2/StructuredText/ST.py.orig	Sat Jan  7 21:07:51 2006
++++ Dependencies/StructuredText-Zope-2.9.2/StructuredText/ST.py	Sun Jan 15 10:23:46 2006
 @@ -116,6 +116,9 @@
      Structure => [paragraph,[sub-paragraphs]]
      """
@@ -21,8 +21,8 @@
      currentlevel    = 0
      currentindent  = 0
      levels            = {0:0}
---- Dependencies/StructuredText-Zope-2.9.1/StructuredText/DocumentClass.py.orig	Sat Jan  7 21:07:51 2006
-+++ Dependencies/StructuredText-Zope-2.9.1/StructuredText/DocumentClass.py	Sun Jan 15 10:23:46 2006
+--- Dependencies/StructuredText-Zope-2.9.2/StructuredText/DocumentClass.py.orig	Sat Jan  7 21:07:51 2006
++++ Dependencies/StructuredText-Zope-2.9.2/StructuredText/DocumentClass.py	Sun Jan 15 10:23:46 2006
 @@ -786,7 +786,7 @@
  
      def doc_literal(
