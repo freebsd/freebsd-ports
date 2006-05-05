@@ -6,7 +6,6 @@
 
 CONTENTS:
 * VERY IMPORTANT NOTE
-* IMPORTANT NOTE:  Using Mailman with alternate MTAs
 1) General post-installation instructions
 2) Integrating Mailman with your web server
 3) Integrating Mailman with various mail servers
@@ -14,6 +13,7 @@ CONTENTS:
    3.2) Exim
    3.3) Postfix
    3.4) Qmail
+4) Apache configuration
 
 
 VERY IMPORTANT NOTE
@@ -23,23 +23,6 @@ some of these right is CRUCIAL if you want your Mailman installation to work!
 
 To see a list of build time options, go to the Mailman port's directory
 (/usr/ports/mail/mailman by default) and perform a "make options".
-
-
-IMPORTANT NOTE:  Using Mailman with alternate MTAs
-
-By default, the Mailman port is configured to work with Sendmail.  If you
-wish to use Mailman with an alternate MTA, you MUST set the value of MAIL_GID
-correctly when building the port.  Perform a "make options" in the port
-directory (as explained above) to see a list of possible values for MAIL_GID.
-
-If you have installed Mailman from a pre-compiled package (e.g. from
-a FreeBSD distribution CD), chances are that the package had been built with
-the default value for MAIL_GID and will only work with Sendmail.  You will
-probably have to build the Mailman port yourself to get it to work with your
-MTA.
-
-Further down in this document you will find sections dealing with most
-popular MTAs.
 
 
 1) General post-installation instructions
@@ -84,11 +67,12 @@ popular MTAs.
 
 3.1) Sendmail
 
-     No modification of MAIL_GID should be required when building the Mailman
-     port.  The port is designed to work with Sendmail by default.
+     You have to choose SENDMAIL option on config build and port will set 
+     MAIL_GID=mailnull to you. 
 
-     Review the instructions found in mailman-install.txt in the same directory
-     as this file.
+     When your build is finished, please review the instructions found in 
+     mailman-install.txt in the same directory port. The port is designed to 
+     work with Sendmail by default.
 
      No further instructions exist at this time on how to integrate the
      Mailman port with Sendmail.  Please submit any such information to the
@@ -107,15 +91,12 @@ popular MTAs.
        exim_group = mail
 
      For Exim 3.x, the value of MAIL_GID has to be set to 'nobody' (or 65534)
-     when building the Mailman port.
+     when building the Mailman port, so you have to choose EXIM3 on build options
+     to set it to you.
 
      For Exim 4.x, the value of MAIL_GID has to be set to 'mail' (or 6) when
-     building the Mailman port.
-
-     For example, to build and install the Mailman port for Exim4, perform
-     the following in /usr/ports/mail/mailman:
-
-       # make MAIL_GID=6 install
+     building the Mailman port, so you have to choose EXIM4 on build options to
+     set it to you.
 
      Next, follow the instructions in mailman-install.txt found in the same
      directory as this file.  You can add the macros, transport and router
@@ -137,7 +118,7 @@ popular MTAs.
 
      Now, start Mailman's qrunner daemon:
 
-       # /usr/local/etc/rc.d/mailman.sh start
+       # /usr/local/etc/rc.d/mailman start
 
      Troubleshooting:  If you ever see an error message such as the following
      in your Exim's mainlog, it's a sure sign that Exim and Mailman disagree
@@ -154,7 +135,8 @@ popular MTAs.
 3.3) Postfix
 
      The value of MAIL_GID has to be set to 'nobody' (or 65534) when building
-     the Mailman port.
+     the Mailman port, so you have to choose POSTFIX on build options to
+     set it to you.
 
      NOTE: the group needs to be 'mailman' if you are using the Mailman
      integration for generating the postfix virtual and aliases files.
@@ -174,6 +156,21 @@ popular MTAs.
      Mailman port with Qmail.  Please submit any such information to the
      maintainer of the Mailman port.
 
+4) Apache configuration
 
--- Johann Visagie <wjv@FreeBSD.org>
+    You should add the follow lines in you httpd.conf to mailman interface
+    works correctly:
+
+      <Directory "/usr/local/mailman">
+        Options FollowSymLinks ExecCGI
+        AllowOverride None
+        Order allow,deny
+        Allow from all
+     </Directory>
+
+   After that, restart your apache:
+
+     # apachectl restart.
+
+-- Jean Milanez Melo <jmelo@FreeBSD.org>
    (Mailman port maintainer)

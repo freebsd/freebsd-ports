@@ -51,6 +51,8 @@ POST-INSTALL)
 
   echo "---> Checking crontab(5) file for user \"%%USER%%\""
 
+  echo "%%USER%%" >> /var/cron/allow
+
   if /usr/bin/crontab -u "%%USER%%" -l >/tmp/mmctab$$ 2>&1 ; then
       if test -s /tmp/mmctab$$; then
           echo "---> \"%%USER%%\" already has a crontab.  Not overwriting it"
