@@ -137,6 +137,7 @@
     SUBDIR += gdict
     SUBDIR += gdome2
     SUBDIR += gl-aspell
+    SUBDIR += gladtex
     SUBDIR += glark
     SUBDIR += glimpse
     SUBDIR += gmat

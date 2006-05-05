@@ -1,0 +1,26 @@
+$FreeBSD$
+--- Makefile	Wed Oct 30 13:24:34 2002
++++ Makefile.port	Sat Feb  4 21:43:23 2006
+@@ -1,14 +1,17 @@
+-BINPATH = /usr/local/bin
++BINPATH?= /usr/local/bin
++LIBPATH?= /usr/local/lib
++INCPATH?= /usr/local/include
+ 
+-CC = gcc -O2 -DGIF
+-LIB = -lm -lz -lungif -lpng
++CC = gcc
++CFLAGS+= -DGIF ${INCPATH}
++LIB = -lm -lz ${LIBPATH} -lungif -lpng
+ OBJ = eqn2img.o
+ 
+ all:		${OBJ}
+-		${CC} -o eqn2img ${LIB} ${OBJ}
++		${CC} ${CFLAGS} -o eqn2img ${LIB} ${OBJ}
+ 
+ eqn2img.o:	eqn2img.c
+-		${CC} -c eqn2img.c
++		${CC} ${CFLAGS} -c eqn2img.c
+ 
+ install:	all
+ 		install -m 755 -s eqn2img ${BINPATH}
