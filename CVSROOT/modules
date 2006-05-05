@@ -3901,6 +3901,7 @@ hpijs		ports/print/hpijs
 hping		ports/net/hping
 hping-devel	ports/net/hping-devel
 hpl		ports/benchmarks/hpl
+hplip		ports/print/hplip
 hpoj		ports/graphics/hpoj
 hppsmtools	ports/graphics/hppsmtools
 hptools		ports/devel/hptools
