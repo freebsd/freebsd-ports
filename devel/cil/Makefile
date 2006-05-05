@@ -6,11 +6,13 @@
 #
 
 PORTNAME=	cil
-PORTVERSION=	1.3.3
+PORTVERSION=	1.3.4
 CATEGORIES=	devel lang
-MASTER_SITES=	http://manju.cs.berkeley.edu/cil/distrib/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+		http://manju.cs.berkeley.edu/cil/distrib/
+MASTER_SITE_SUBDIR= ${PORTNAME}
 
-MAINTAINER=	netchild@FreeBSD.org
+MAINTAINER=	jkoshy@FreeBSD.org
 COMMENT=	Infrastructure for C Program Analysis and Transformation
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/ocamlopt:${PORTSDIR}/lang/ocaml
@@ -30,7 +32,7 @@ EXECFILES=	cilly.byte.exe machdep.exe
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500601
-IGNORE=		"Does not work with perl < 5.6.1"
+IGNORE=		does not work with perl < 5.6.1
 .endif
 
 post-patch:
@@ -43,17 +45,17 @@ do-install:
 	cd ${WRKSRC}/doc && ${FIND} . -print | \
 		${CPIO} -pdu -R ${BINOWN}:${BINGRP} --quiet ${DOCSDIR}
 .endif
-.for file in ${BINFILES}
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/${file} ${PREFIX}/bin/
+.for f in ${BINFILES}
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/${f} ${PREFIX}/bin/
 .endfor
 	${MKDIR} ${SITE_PERL}/CIL
-.for file in ${LIBFILES}
-	 ${INSTALL_DATA} ${WRKSRC}/lib/${file} ${SITE_PERL}/CIL/
+.for f in ${LIBFILES}
+	 ${INSTALL_DATA} ${WRKSRC}/lib/${f} ${SITE_PERL}/CIL/
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/bin/CilConfig.pm ${SITE_PERL}/
 	${MKDIR} ${PREFIX}/libexec/cil
-.for file in ${EXECFILES}
-	${INSTALL} ${WRKSRC}/obj/x86_LINUX/${file} ${PREFIX}/libexec/cil/
+.for f in ${EXECFILES}
+	${INSTALL} ${WRKSRC}/obj/x86_LINUX/${f} ${PREFIX}/libexec/cil/
 .endfor
 
 .include <bsd.port.post.mk>
