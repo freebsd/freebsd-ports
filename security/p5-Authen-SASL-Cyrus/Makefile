@@ -24,4 +24,10 @@ CONFIGURE_ARGS=	INC="-I${LOCALBASE}/include"
 
 MAN3=		Authen::SASL::Cyrus.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+IGNORE=	perl 5.6 or newer required. Install lang/perl5.8 or lang/perl5 and try again
+.endif
+
+.include <bsd.port.post.mk>
