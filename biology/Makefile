@@ -57,6 +57,7 @@
     SUBDIR += platon
     SUBDIR += povchem
     SUBDIR += primer3
+    SUBDIR += protomol
     SUBDIR += psi88
     SUBDIR += py-biopython
     SUBDIR += pymol

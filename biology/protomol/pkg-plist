@@ -1,0 +1,128 @@
+bin/coords2coords
+bin/coulomb
+bin/dcd2dcd
+bin/iSGProtomol
+bin/protomol
+bin/xyzviz
+%%PORTDOCS%%%%EXAMPLESDIR%%/coulomb_309/309ca.config
+%%PORTDOCS%%%%EXAMPLESDIR%%/coulomb_309/309ca.par
+%%PORTDOCS%%%%EXAMPLESDIR%%/coulomb_309/309ca.pos.xyz
+%%PORTDOCS%%%%EXAMPLESDIR%%/coulomb_309/309ca.psf
+%%PORTDOCS%%%%EXAMPLESDIR%%/alanine_dipeptide_water_184x/alanine.equil.psf
+%%PORTDOCS%%%%EXAMPLESDIR%%/alanine_dipeptide_water_184x/alanine.7ns.namd
+%%PORTDOCS%%%%EXAMPLESDIR%%/alanine_dipeptide_water_184x/alanine.equil.pdb
+%%PORTDOCS%%%%EXAMPLESDIR%%/alanine_dipeptide_water_184x/ala607.pgn
+%%PORTDOCS%%%%EXAMPLESDIR%%/alanine_dipeptide_water_184x/alanine.namd
+%%PORTDOCS%%%%EXAMPLESDIR%%/alanine_dipeptide_water_184x/alanine.pdb
+%%PORTDOCS%%%%EXAMPLESDIR%%/alanine_dipeptide_water_184x/alanine.psf
+%%PORTDOCS%%%%EXAMPLESDIR%%/argon_400/argon.par
+%%PORTDOCS%%%%EXAMPLESDIR%%/argon_400/argon.lf.conf
+%%PORTDOCS%%%%EXAMPLESDIR%%/argon_400/argon.npt.conf
+%%PORTDOCS%%%%EXAMPLESDIR%%/argon_400/argon.pdb
+%%PORTDOCS%%%%EXAMPLESDIR%%/argon_400/argon.psf
+%%PORTDOCS%%%%EXAMPLESDIR%%/argon_400/argon.vel.pdb
+%%PORTDOCS%%%%EXAMPLESDIR%%/bpti_water_1101/bpti.par
+%%PORTDOCS%%%%EXAMPLESDIR%%/bpti_water_1101/bpti.hmc.conf
+%%PORTDOCS%%%%EXAMPLESDIR%%/bpti_water_1101/bpti.lf.conf
+%%PORTDOCS%%%%EXAMPLESDIR%%/bpti_water_1101/bpti.pdb
+%%PORTDOCS%%%%EXAMPLESDIR%%/bpti_water_1101/bpti.psf
+%%PORTDOCS%%%%EXAMPLESDIR%%/bpti_water_1101/bpti.shmc.conf
+%%PORTDOCS%%%%EXAMPLESDIR%%/bpti_water_14281/bpti.shake.conf
+%%PORTDOCS%%%%EXAMPLESDIR%%/bpti_water_14281/bpti.ewald.conf
+%%PORTDOCS%%%%EXAMPLESDIR%%/bpti_water_14281/bpti.mg.conf
+%%PORTDOCS%%%%EXAMPLESDIR%%/bpti_water_14281/bpti.namd
+%%PORTDOCS%%%%EXAMPLESDIR%%/bpti_water_14281/bpti.par
+%%PORTDOCS%%%%EXAMPLESDIR%%/bpti_water_14281/bpti.pbc.conf
+%%PORTDOCS%%%%EXAMPLESDIR%%/bpti_water_14281/bpti.pdb
+%%PORTDOCS%%%%EXAMPLESDIR%%/bpti_water_14281/bpti.psf
+%%PORTDOCS%%%%EXAMPLESDIR%%/butane_4/runButaneTests.sh
+%%PORTDOCS%%%%EXAMPLESDIR%%/butane_4/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/butane_4/UA_butane.conf
+%%PORTDOCS%%%%EXAMPLESDIR%%/butane_4/UA_butane.dhmc.conf
+%%PORTDOCS%%%%EXAMPLESDIR%%/butane_4/UA_butane.hmc.conf
+%%PORTDOCS%%%%EXAMPLESDIR%%/butane_4/UA_butane.lf.conf
+%%PORTDOCS%%%%EXAMPLESDIR%%/butane_4/UA_butane.par
+%%PORTDOCS%%%%EXAMPLESDIR%%/butane_4/UA_butane.pdb
+%%PORTDOCS%%%%EXAMPLESDIR%%/butane_4/UA_butane.psf
+%%PORTDOCS%%%%EXAMPLESDIR%%/butane_4/angleSetDHMC
+%%PORTDOCS%%%%EXAMPLESDIR%%/butane_4/cleanOutput.bash
+%%PORTDOCS%%%%EXAMPLESDIR%%/butane_4/dihedralSetDHMC
+%%PORTDOCS%%%%EXAMPLESDIR%%/butane_4/procDihedralFile.awk
+%%PORTDOCS%%%%EXAMPLESDIR%%/butane_4/runButaneResults.sh
+%%PORTDOCS%%%%EXAMPLESDIR%%/alanine_dipeptide_23/ala_equil.pdb
+%%PORTDOCS%%%%EXAMPLESDIR%%/alanine_dipeptide_23/ala_equil.psf
+%%PORTDOCS%%%%EXAMPLESDIR%%/alanine_dipeptide_23/ala_equilibrated.pdb
+%%PORTDOCS%%%%EXAMPLESDIR%%/alanine_dipeptide_23/ala_equilibrated.pgn
+%%PORTDOCS%%%%EXAMPLESDIR%%/decalanine_66/dihedralIndexSet
+%%PORTDOCS%%%%EXAMPLESDIR%%/decalanine_66/alanine.BSplineMOLLY.conf
+%%PORTDOCS%%%%EXAMPLESDIR%%/decalanine_66/alanine.Equilibrium.conf
+%%PORTDOCS%%%%EXAMPLESDIR%%/decalanine_66/alanine.LF.conf
+%%PORTDOCS%%%%EXAMPLESDIR%%/decalanine_66/alanine.LFwDihedralOut.conf
+%%PORTDOCS%%%%EXAMPLESDIR%%/decalanine_66/alanine.PLF.conf
+%%PORTDOCS%%%%EXAMPLESDIR%%/decalanine_66/alanine.Shake.conf
+%%PORTDOCS%%%%EXAMPLESDIR%%/decalanine_66/alanine.par
+%%PORTDOCS%%%%EXAMPLESDIR%%/decalanine_66/alanine.pdb
+%%PORTDOCS%%%%EXAMPLESDIR%%/decalanine_66/alanine.psf
+%%PORTDOCS%%%%EXAMPLESDIR%%/decalanine_66/alanine.testSet
+%%PORTDOCS%%%%EXAMPLESDIR%%/decalanine_66/alanine.water.pdb
+%%PORTDOCS%%%%EXAMPLESDIR%%/decalanine_66/alanine.water.psf
+%%PORTDOCS%%%%EXAMPLESDIR%%/electrons_22/22el.conf
+%%PORTDOCS%%%%EXAMPLESDIR%%/electrons_22/22el.pos.xyz
+%%PORTDOCS%%%%EXAMPLESDIR%%/electrons_22/22el.psf
+%%PORTDOCS%%%%EXAMPLESDIR%%/electrons_22/22el.vel.xyz
+%%PORTDOCS%%%%EXAMPLESDIR%%/electrons_22/el.par
+%%PORTDOCS%%%%EXAMPLESDIR%%/methane_ethane_xxx/iSGMD_README
+%%PORTDOCS%%%%EXAMPLESDIR%%/methane_ethane_xxx/ethane_methane.par
+%%PORTDOCS%%%%EXAMPLESDIR%%/methane_ethane_xxx/ethane_methane.trans
+%%PORTDOCS%%%%EXAMPLESDIR%%/methane_ethane_xxx/ethane_methane_100.conf
+%%PORTDOCS%%%%EXAMPLESDIR%%/methane_ethane_xxx/ethane_methane_100_Pure_Trappe.coor.xyz
+%%PORTDOCS%%%%EXAMPLESDIR%%/methane_ethane_xxx/ethane_methane_100_Pure_Trappe.psf
+%%PORTDOCS%%%%EXAMPLESDIR%%/methane_ethane_xxx/ethane_methane_100_Pure_Trappe.vel.xyz
+%%PORTDOCS%%%%EXAMPLESDIR%%/methane_ethane_xxx/ethane_methane_100_Pure_Trappe.xsc
+%%PORTDOCS%%%%EXAMPLESDIR%%/methane_ethane_xxx/ethane_methane_300.conf
+%%PORTDOCS%%%%EXAMPLESDIR%%/methane_ethane_xxx/ethane_methane_300_Pure_Trappe.coor.xyz
+%%PORTDOCS%%%%EXAMPLESDIR%%/methane_ethane_xxx/ethane_methane_300_Pure_Trappe.psf
+%%PORTDOCS%%%%EXAMPLESDIR%%/methane_ethane_xxx/ethane_methane_300_Pure_Trappe.vel.xyz
+%%PORTDOCS%%%%EXAMPLESDIR%%/methane_ethane_xxx/ethane_methane_300_Pure_Trappe.xsc
+%%PORTDOCS%%%%EXAMPLESDIR%%/testset/test.tcsh
+%%PORTDOCS%%%%EXAMPLESDIR%%/testset/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/testset/hmc.Bsp_PME.pb.conf
+%%PORTDOCS%%%%EXAMPLESDIR%%/testset/hmc.std.conf
+%%PORTDOCS%%%%EXAMPLESDIR%%/testset/lf.Ewald.pb.conf
+%%PORTDOCS%%%%EXAMPLESDIR%%/testset/lf.MG.conf
+%%PORTDOCS%%%%EXAMPLESDIR%%/testset/lf.PME.pb.conf
+%%PORTDOCS%%%%EXAMPLESDIR%%/testset/lf.std.conf
+%%PORTDOCS%%%%EXAMPLESDIR%%/testset/lf.std.pb.conf
+%%PORTDOCS%%%%EXAMPLESDIR%%/testset/shmc.Bsp_PME.pb.conf
+%%PORTDOCS%%%%EXAMPLESDIR%%/testset/shmc.std.pb.conf
+%%PORTDOCS%%%%EXAMPLESDIR%%/testset/slf.std.pb.conf
+%%PORTDOCS%%%%EXAMPLESDIR%%/water_216/water216.vel.pdb
+%%PORTDOCS%%%%EXAMPLESDIR%%/water_216/water216.conf
+%%PORTDOCS%%%%EXAMPLESDIR%%/water_216/water216.coor.pdb
+%%PORTDOCS%%%%EXAMPLESDIR%%/water_216/water216.new.pos.pdb
+%%PORTDOCS%%%%EXAMPLESDIR%%/water_216/water216.new.vel.pdb
+%%PORTDOCS%%%%EXAMPLESDIR%%/water_216/water216.par
+%%PORTDOCS%%%%EXAMPLESDIR%%/water_216/water216.psf
+%%PORTDOCS%%%%EXAMPLESDIR%%/water_648/water648.tip3.psf
+%%PORTDOCS%%%%EXAMPLESDIR%%/water_648/water648.fluid.conf
+%%PORTDOCS%%%%EXAMPLESDIR%%/water_648/water648.fluid.pos.xyz
+%%PORTDOCS%%%%EXAMPLESDIR%%/water_648/water648.ice.conf
+%%PORTDOCS%%%%EXAMPLESDIR%%/water_648/water648.ice.nvt.conf
+%%PORTDOCS%%%%EXAMPLESDIR%%/water_648/water648.ice.pos.xyz
+%%PORTDOCS%%%%EXAMPLESDIR%%/water_648/water648.spce.par
+%%PORTDOCS%%%%EXAMPLESDIR%%/water_648/water648.spce.psf
+%%PORTDOCS%%%%EXAMPLESDIR%%/water_648/water648.tip3.par
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/coulomb_309
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/alanine_dipeptide_water_184x
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/argon_400
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/bpti_water_1101
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/bpti_water_14281
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/butane_4
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/alanine_dipeptide_23
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/decalanine_66
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/electrons_22
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/methane_ethane_xxx
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/testset
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/water_216
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/water_648
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
