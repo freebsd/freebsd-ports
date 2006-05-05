@@ -7,7 +7,7 @@
 
 PORTNAME=	gnutls
 PORTVERSION=	1.2.10
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security net
 MASTER_SITES=	${MASTER_SITE_GNUPG} \
 	http://www.mirrors.wiretapped.net/security/network-security/gnutls/ \
@@ -26,8 +26,8 @@ LIB_DEPENDS=	gcrypt.13:${PORTSDIR}/security/libgcrypt \
 LIB_DEPENDS+=	opencdk.8:${PORTSDIR}/security/opencdk
 .endif
 
-.if defined(WITH_LIBTASN1) || exists(${LOCALBASE}/lib/libtasn1.so.2)
-LIB_DEPENDS+=	tasn1.2:${PORTSDIR}/security/libtasn1
+.if defined(WITH_LIBTASN1) || exists(${LOCALBASE}/lib/libtasn1.so.3)
+LIB_DEPENDS+=	tasn1.3:${PORTSDIR}/security/libtasn1
 .endif
 
 CONFLICTS=	gnutls-devel-[0-9]*
