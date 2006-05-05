@@ -6464,6 +6464,7 @@ mime		ports/devel/mime
 mime-support	ports/misc/mime-support
 mimedefang	ports/mail/mimedefang
 mimelib		ports/converters/mimelib
+mimetex		ports/www/mimetex
 mimir		ports/devel/mimir
 minc		ports/science/minc
 minc2		ports/science/minc2
