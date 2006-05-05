@@ -6,19 +6,19 @@
 #
 
 PORTNAME=	bmpx
-PORTVERSION=	0.13
+PORTVERSION=	0.14.4
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	beepmp
 
 MAINTAINER=	novel@FreeBSD.org
-COMMENT=	Audio player
+COMMENT=	Media player geared towards usability, technical efficiency and looks
 
 LIB_DEPENDS=	tag.5:${PORTSDIR}/audio/taglib \
-		xine.15:${PORTSDIR}/multimedia/libxine \
+		cairo.2:${PORTSDIR}/graphics/cairo \
+		musicbrainz.4:${PORTSDIR}/audio/libmusicbrainz \
 		neon.25:${PORTSDIR}/www/neon
 
-USE_AUTOTOOLS=	libtool:15
 USE_BISON=	yes
 USE_BZIP2=	yes
 USE_FAM=	yes
@@ -27,16 +27,17 @@ USE_GMAKE=	yes
 USE_GNOME=	gtk20 libglade2 desktopfileutils
 LIBTOOLFILES=	configure libhrel/configure \
 		libchroma/configure libskinned/configure
+USE_GSTREAMER=	mad ogg
+USE_GETTEXT=	yes
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--enable-xine --disable-gst
+CONFIGURE_ARGS+=	--with-pkgconfig-dir=${PREFIX}/libdata/pkgconfig
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
-MAN1=		bmpx.1
+MAN1=		beep-media-player-2.1
 
 .if !defined(WITHOUT_AMAZON)
 CONFIGURE_ARGS+=	--enable-amazon
@@ -44,29 +45,22 @@ CONFIGURE_ARGS+=	--enable-amazon
 
 .if defined(WITHOUT_DBUS)
 CONFIGURE_ARGS+=	--disable-dbus
+PLIST_SUB+=	DBUS="@comment "
 .else
 LIB_DEPENDS+=	dbus-1.2:${PORTSDIR}/devel/dbus
+PLIST_SUB+=	DBUS=""
 .endif
 
-.if !defined(WITHOUT_GCONF)
+.if defined(WITHOUT_GCONF)
 USE_GNOME+=	gconf2
 CONFIGURE_ARGS+=	--enable-gconf
+GCONF_SCHEMAS=	bmp-2.0.schema
 .endif
 
 .if defined(WITHOUT_PERL)
 CONFIGURE_ARGS+=	--disable-perl
 .else
 USE_PERL5_BUILD=	yes
-.endif
-
-.if defined(WITHOUT_PYTHON)
-CONFIGURE_ARGS+=	--disable-python
-PLIST_SUB+=	PYTHON="@comment "
-.else
-USE_PYTHON=	yes
-USE_GNOME+=	pygtk2
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/dbus.pth:${PORTSDIR}/devel/py-dbus
-PLIST_SUB+=	PYTHON=""
 .endif
 
 .if defined(WITHOUT_STARTUP_NOTIFICATION)
