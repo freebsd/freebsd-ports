@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	prewikka
-PORTVERSION=	0.9.4
+PORTVERSION=	0.9.5
 CATEGORIES=	www security python
 MASTER_SITES=	http://www.prelude-ids.org/download/releases/ \
 		http://www.prelude-ids.org/download/releases/old/
@@ -16,7 +16,7 @@ MAINTAINER=	r.gruyters@yirdis.nl
 COMMENT=	Frontend for the Prelude IDS
 
 BUILD_DEPENDS=	cheetah-compile:${PORTSDIR}/devel/py-cheetah
-LIB_DEPENDS=	prelude.7:${PORTSDIR}/security/libprelude \
+LIB_DEPENDS=	prelude.[6-?]:${PORTSDIR}/security/libprelude \
 		preludedb.3:${PORTSDIR}/security/libpreludedb
 
 USE_PYTHON=		2.3+
@@ -25,8 +25,5 @@ USE_PYDISTUTILS=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/bin/env python,${PYTHON_CMD},' \
 		${WRKSRC}/cgi-bin/prewikka.cgi
-
-pre-install:
-	@${RM} ${WRKSRC}/build/lib/__init__.py
 
 .include <bsd.port.mk>
