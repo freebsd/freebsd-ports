@@ -257,6 +257,7 @@
     SUBDIR += mhonarc
     SUBDIR += micro_httpd
     SUBDIR += middleman
+    SUBDIR += mimetex
     SUBDIR += mini_httpd
     SUBDIR += mkapachepw
     SUBDIR += mknmz-wwwoffle
