@@ -1,0 +1,15 @@
+$FreeBSD$
+--- gladtex	Tue Nov  5 18:07:14 2002
++++ gladtex.port	Sat Feb  4 21:37:09 2006
+@@ -116,9 +116,9 @@
+     # remove ./
+     $dest =~ s/\.\///g;
+     # remove //
+-    while($dest =~ s{//}{/}gc) {};
++    while($dest =~ s{//}{/}g) {};
+     # remove ../
+-    while($dest =~ s{/([^/]*/)\.\./}{$1}gc) {};
++    while($dest =~ s{/([^/]*/)\.\./}{$1}g) {};
+     # remove trailing /
+     $dest =~ s/\/$//;
+ 
