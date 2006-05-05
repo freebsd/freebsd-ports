@@ -23,6 +23,8 @@ PATCHFILES=	ump-patch-1.gz ump-patch-2.gz ump-patch-3.gz ump-patch-4.gz
 MAINTAINER=	llwang@infor.org
 COMMENT=	Unix MIDI Plugin based on TiMidity++
 
+CONFLICTS=	ump-0.8.[0-9]*
+
 RUN_DEPENDS=	${LOCALBASE}/bin/timidity:${PORTSDIR}/audio/timidity++
 
 BROKEN=		Does not build
