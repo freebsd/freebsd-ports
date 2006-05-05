@@ -1,0 +1,84 @@
+bin/ump
+@unexec if cmp -s %D/etc/ump.conf %D/etc/ump.conf.dist; then rm -f %D/etc/ump.conf; fi
+etc/ump.conf.dist
+@exec [ -f %B/ump.conf ] || cp %B/%f %B/ump.conf
+%%PORTDOCS%%%%DOCSDIR%%/_3d_get_prop.html
+%%PORTDOCS%%%%DOCSDIR%%/_3d_set_prop.html
+%%PORTDOCS%%%%DOCSDIR%%/abs.html
+%%PORTDOCS%%%%DOCSDIR%%/and.html
+%%PORTDOCS%%%%DOCSDIR%%/arg.html
+%%PORTDOCS%%%%DOCSDIR%%/array.html
+%%PORTDOCS%%%%DOCSDIR%%/color_matrix.html
+%%PORTDOCS%%%%DOCSDIR%%/constant_list.html
+%%PORTDOCS%%%%DOCSDIR%%/coordinate_matrix.html
+%%PORTDOCS%%%%DOCSDIR%%/cos.html
+%%PORTDOCS%%%%DOCSDIR%%/dec.html
+%%PORTDOCS%%%%DOCSDIR%%/degree.html
+%%PORTDOCS%%%%DOCSDIR%%/delete.html
+%%PORTDOCS%%%%DOCSDIR%%/e.html
+%%PORTDOCS%%%%DOCSDIR%%/exit.html
+%%PORTDOCS%%%%DOCSDIR%%/frac.html
+%%PORTDOCS%%%%DOCSDIR%%/function_list.html
+%%PORTDOCS%%%%DOCSDIR%%/gcd.html
+%%PORTDOCS%%%%DOCSDIR%%/get_type.html
+%%PORTDOCS%%%%DOCSDIR%%/hello_world.html
+%%PORTDOCS%%%%DOCSDIR%%/i.html
+%%PORTDOCS%%%%DOCSDIR%%/iSqrt.html
+%%PORTDOCS%%%%DOCSDIR%%/im.html
+%%PORTDOCS%%%%DOCSDIR%%/incompatible.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/insert.html
+%%PORTDOCS%%%%DOCSDIR%%/intro.html
+%%PORTDOCS%%%%DOCSDIR%%/lcm.html
+%%PORTDOCS%%%%DOCSDIR%%/ln.html
+%%PORTDOCS%%%%DOCSDIR%%/log.html
+%%PORTDOCS%%%%DOCSDIR%%/log2.html
+%%PORTDOCS%%%%DOCSDIR%%/mandelbrot.html
+%%PORTDOCS%%%%DOCSDIR%%/matrix_editor.html
+%%PORTDOCS%%%%DOCSDIR%%/matrix_editor_left_inverse.jpeg
+%%PORTDOCS%%%%DOCSDIR%%/matrix_editor_left_side.jpeg
+%%PORTDOCS%%%%DOCSDIR%%/matrix_editor_result.jpeg
+%%PORTDOCS%%%%DOCSDIR%%/matrix_editor_right_side.jpeg
+%%PORTDOCS%%%%DOCSDIR%%/not.html
+%%PORTDOCS%%%%DOCSDIR%%/or.html
+%%PORTDOCS%%%%DOCSDIR%%/pi.html
+%%PORTDOCS%%%%DOCSDIR%%/picture.html
+%%PORTDOCS%%%%DOCSDIR%%/programming.html
+%%PORTDOCS%%%%DOCSDIR%%/radian.html
+%%PORTDOCS%%%%DOCSDIR%%/rand.html
+%%PORTDOCS%%%%DOCSDIR%%/re.html
+%%PORTDOCS%%%%DOCSDIR%%/remove.html
+%%PORTDOCS%%%%DOCSDIR%%/sin.html
+%%PORTDOCS%%%%DOCSDIR%%/style.css
+%%PORTDOCS%%%%DOCSDIR%%/tan.html
+%%PORTDOCS%%%%DOCSDIR%%/time.html
+%%PORTDOCS%%%%DOCSDIR%%/top.html
+%%PORTDOCS%%%%DOCSDIR%%/true_false.html
+%%PORTDOCS%%%%DOCSDIR%%/ump_code.html
+%%PORTDOCS%%%%DOCSDIR%%/variable_types.html
+%%PORTDOCS%%%%DOCSDIR%%/void.html
+%%PORTDOCS%%%%DOCSDIR%%/xor.html
+%%DATADIR%%/ump-files/Black.ump
+%%DATADIR%%/ump-files/Blue.ump
+%%DATADIR%%/ump-files/Gray.ump
+%%DATADIR%%/ump-files/Green.ump
+%%DATADIR%%/ump-files/Orange.ump
+%%DATADIR%%/ump-files/Pink.ump
+%%DATADIR%%/ump-files/Purple.ump
+%%DATADIR%%/ump-files/Red.ump
+%%DATADIR%%/ump-files/White.ump
+%%DATADIR%%/ump-files/Yellow.ump
+%%DATADIR%%/ump-files/factorize.ump
+%%DATADIR%%/ump-files/gcd.ump
+%%DATADIR%%/ump-files/identity.ump
+%%DATADIR%%/ump-files/isMersenne.ump
+%%DATADIR%%/ump-files/isPrime.ump
+%%DATADIR%%/ump-files/lcm.ump
+%%DATADIR%%/ump-files/sign.ump
+%%DATADIR%%/ump-files/trans.ump
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/constants
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/functions
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%/ump-files
+@dirrm %%DATADIR%%

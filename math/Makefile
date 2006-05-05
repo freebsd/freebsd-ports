@@ -286,6 +286,7 @@
     SUBDIR += tvmet
     SUBDIR += umatrix
     SUBDIR += umfpack
+    SUBDIR += ump
     SUBDIR += units
     SUBDIR += unixstat
     SUBDIR += vecfem

@@ -1,0 +1,213 @@
+--- Makefile.orig	Wed Apr  5 14:41:05 2006
++++ Makefile	Thu May  4 16:50:55 2006
+@@ -2,25 +2,24 @@
+ APP_NAME = ump
+ 
+ ## Change this directory name as you like, it's the installation directory
+-BIN_DIR = /usr/bin
+-DATA_DIR = /usr/share/$(APP_NAME)
++BIN_DIR = $(PREFIX)/bin
++DATA_DIR = $(DATADIR)
+ 
+ 
+ ## One of these three flags must be uncommented
+ ##FLAGS = -DUSE_FLOAT
+-FLAGS = -DUSE_DOUBLE
++FLAGS = -DUSE_DOUBLE $(CXXFLAGS)
+ ##FLAGS = -DUSE_LONG_DOUBLE
+ 
+ ## If you don't have OpenGL, comment these lines (the 3D plot support will be disabled)
+ FLAGS += -DPLOT_3D
+ ## You might have to change this path
+-GL_LIB = -lGL -lGLU -L/usr/X11/lib
++GL_LIB = -lGL -lGLU -L$(X11BASE)/lib
+ 
+ 
+ 
+ ## Choose your optimization level
+ ##FLAGS += -O0
+-FLAGS += -O2
+ ##FLAGS += -O3
+ ##FLAGS += -Os
+ 
+@@ -35,7 +34,10 @@
+ ## Uncomment one or both of these if the compilation failes
+ ## due to trunc undefined or log2 undefined
+ ##FLAGS += -DDONT_HAVE_TRUNC
+-##FLAGS += -DDONT_HAVE_LOG2
++FLAGS += -DDONT_HAVE_LOG2
++
++# include X11 libs
++FLAGS += -I$(X11BASE)/include
+ 
+ 
+ 
+@@ -82,7 +84,7 @@
+ # $< means the name of the first prerequisite
+ 
+ $(APP_NAME): Makefile $(OBJ_FILES) main.o $(GUI_OBJ) addon_functions.o $(ASM_FILES)
+-	g++ $(FLAGS) $(GTK_LIB) $(OBJ_FILES) main.o $(GUI_OBJ) addon_functions.o $(ASM_FILES) -o $@ $(GL_LIB)
++	$(CXX) $(FLAGS) $(GTK_LIB) $(OBJ_FILES) main.o $(GUI_OBJ) addon_functions.o $(ASM_FILES) -o $@ $(GL_LIB)
+ 
+ clean:
+ 	-rm -f $(OBJ_FILES)
+@@ -93,18 +95,16 @@
+ 	-rm -f translation_svenska.c
+ 
+ text: Makefile $(OBJ_FILES) addon_functions.text.o $(ASM_FILES)
+-	g++ $(FLAGS) $(FILES) $(OBJ_FILES) addon_functions.text.o $(ASM_FILES) -DNO_GTK -o $(APP_NAME) -DDATA_DIR=\"$(DATA_DIR)\" -DFLAGS="\"$(FLAGS)\"" $(GL_LIB)
++	$(CXX) $(FLAGS) $(FILES) $(OBJ_FILES) addon_functions.text.o $(ASM_FILES) -DNO_GTK -o $(APP_NAME) -DDATA_DIR=\"$(DATA_DIR)\" -DFLAGS="\"$(FLAGS)\"" $(GL_LIB)
+ 
+ 
+ install:
+ 	install -s $(APP_NAME) $(BIN_DIR)/$(APP_NAME)
+-	chmod -c 755 $(BIN_DIR)/$(APP_NAME)
++	chmod 755 $(BIN_DIR)/$(APP_NAME)
+ 	install -d $(DATA_DIR)
+-	install ump.conf $(DATA_DIR)
+-	chmod -c 644 $(DATA_DIR)/ump.conf
+ 	install -d $(DATA_DIR)/ump-files
+ 	install ump-files/* $(DATA_DIR)/ump-files
+-	chmod -c 644 $(DATA_DIR)/ump-files/*
++	chmod 644 $(DATA_DIR)/ump-files/*
+ 
+ uninstall:
+ 	rm -f $(BIN_DIR)/$(APP_NAME)
+@@ -114,106 +114,106 @@
+ 
+ 
+ main.o: $(FILES) Makefile $(GUI_HEADER) $(SRC)/vector.h $(SRC)/integer.h $(SRC)/real.h $(SRC)/complex.h $(SRC)/matrix.h $(SRC)/math2.h $(SRC)/vartypes.h $(SRC)/picture.h $(SRC)/addon_functions.h $(SRC)/ump_3d_viewer.h
+-	g++ $(FLAGS) $(ASM_FLAG) -c $(GTK_CFLAGS) $(FILES) -o $@ -DDATA_DIR=\"$(DATA_DIR)\" -DFLAGS="\"$(FLAGS)\""
++	$(CXX) $(FLAGS) $(ASM_FLAG) -c $(GTK_CFLAGS) $(FILES) -o $@ -DDATA_DIR=\"$(DATA_DIR)\" -DFLAGS="\"$(FLAGS)\""
+ 
+ picture2gtk.o: $(SRC)/picture2gtk.cpp Makefile $(SRC)/picture2gtk.h $(SRC)/vartypes.h $(SRC)/picture.h
+-	g++ $(FLAGS) -c $(GTK_CFLAGS) $< -o $@
++	$(CXX) $(FLAGS) -c $(GTK_CFLAGS) $< -o $@
+ 
+ ump_advancedwin.o: $(SRC)/ump_advancedwin.cpp Makefile $(SRC)/vector.h $(SRC)/integer.h $(SRC)/real.h $(SRC)/complex.h $(SRC)/matrix.h $(SRC)/math2.h $(SRC)/picture.h $(GUI_HEADER) $(SRC)/vartypes.h
+-	g++ $(FLAGS) -c $(GTK_CFLAGS) $< -o $@
++	$(CXX) $(FLAGS) -c $(GTK_CFLAGS) $< -o $@
+ 
+ ump_3d_viewer.o: $(SRC)/ump_3d_viewer.cpp Makefile $(SRC)/ump_3d_viewer.h $(SRC)/main.h $(SRC)/vector.h $(SRC)/integer.h $(SRC)/real.h $(SRC)/complex.h $(SRC)/matrix.h $(SRC)/math2.h $(SRC)/picture.h $(SRC)/vartypes.h
+-	g++ $(FLAGS) -c $< -o $@
++	$(CXX) $(FLAGS) -c $< -o $@
+ 
+ ump_editor.o: $(SRC)/ump_editor.cpp Makefile $(GUI_HEADER) $(SRC)/vartypes.h
+-	g++ $(FLAGS) -c $(GTK_CFLAGS) $< -o $@
++	$(CXX) $(FLAGS) -c $(GTK_CFLAGS) $< -o $@
+ 
+ ump_graphwin.o: $(SRC)/ump_graphwin.cpp Makefile $(GUI_HEADER) $(SRC)/vartypes.h $(SRC)/picture.h $(SRC)/integer.h $(SRC)/real.h $(SRC)/complex.h $(SRC)/matrix.h $(SRC)/math2.h $(SRC)/vector.h
+-	g++ $(FLAGS) -c $(GTK_CFLAGS) $< -o $@
++	$(CXX) $(FLAGS) -c $(GTK_CFLAGS) $< -o $@
+ 
+ ump_prefwin.o: $(SRC)/ump_prefwin.cpp Makefile $(SRC)/vector.h $(SRC)/integer.h $(SRC)/picture.h $(SRC)/real.h $(SRC)/complex.h $(SRC)/matrix.h $(SRC)/math2.h $(GUI_HEADER) $(SRC)/vartypes.h
+-	g++ $(FLAGS) -c $(GTK_CFLAGS) $< -o $@
++	$(CXX) $(FLAGS) -c $(GTK_CFLAGS) $< -o $@
+ 
+ ump_aboutwin.o: $(SRC)/ump_aboutwin.cpp Makefile $(GUI_HEADER) $(SRC)/vartypes.h
+-	g++ $(FLAGS) -c $(GTK_CFLAGS) $< -o $@
++	$(CXX) $(FLAGS) -c $(GTK_CFLAGS) $< -o $@
+ 
+ ump_simplewin.o: $(SRC)/ump_simplewin.cpp Makefile $(SRC)/image_sqrt.c $(SRC)/vector.h $(SRC)/integer.h $(SRC)/real.h $(SRC)/complex.h $(SRC)/matrix.h $(SRC)/math2.h $(GUI_HEADER) $(SRC)/vartypes.h $(SRC)/picture.h
+-	g++ $(FLAGS) -c $(GTK_CFLAGS) $< -o $@
++	$(CXX) $(FLAGS) -c $(GTK_CFLAGS) $< -o $@
+ 
+ matrix_editor.o: $(SRC)/matrix_editor.cpp Makefile $(SRC)/vector.h $(SRC)/integer.h $(SRC)/real.h $(SRC)/complex.h $(SRC)/matrix.h $(SRC)/math2.h $(GUI_HEADER) $(SRC)/vartypes.h $(SRC)/picture.h
+-	g++ $(FLAGS) -c $(GTK_CFLAGS) $< -o $@
++	$(CXX) $(FLAGS) -c $(GTK_CFLAGS) $< -o $@
+ 
+ ump_picturewin.o: $(SRC)/ump_picturewin.cpp Makefile $(SRC)/vector.h $(SRC)/integer.h $(SRC)/real.h $(SRC)/complex.h $(SRC)/matrix.h $(SRC)/math2.h $(GUI_HEADER) $(SRC)/vartypes.h $(SRC)/picture.h
+-	g++ $(FLAGS) -c $(GTK_CFLAGS) $< -o $@
++	$(CXX) $(FLAGS) -c $(GTK_CFLAGS) $< -o $@
+ 
+ addon_functions.o: $(SRC)/addon_functions.cpp Makefile $(SRC)/addon_functions.h $(SRC)/vector.h $(SRC)/integer.h $(SRC)/real.h $(SRC)/complex.h $(SRC)/matrix.h $(SRC)/math2.h $(SRC)/vartypes.h $(SRC)/picture.h $(SRC)/main.h $(SRC)/ump_picturewin.h
+-	g++ $(FLAGS) -c $(GTK_CFLAGS) $< -o $@
++	$(CXX) $(FLAGS) -c $(GTK_CFLAGS) $< -o $@
+ 
+ addon_functions.text.o: $(SRC)/addon_functions.cpp Makefile $(SRC)/addon_functions.h $(SRC)/vector.h $(SRC)/integer.h $(SRC)/real.h $(SRC)/complex.h $(SRC)/matrix.h $(SRC)/math2.h $(SRC)/vartypes.h $(SRC)/picture.h $(SRC)/main.h
+-	g++ $(FLAGS) -c -DNO_GTK $(SRC)/addon_functions.cpp -o $@
++	$(CXX) $(FLAGS) -c -DNO_GTK $(SRC)/addon_functions.cpp -o $@
+ 
+ 
+ 
+ vartypes.o: $(SRC)/vartypes.cpp Makefile $(SRC)/vartypes.h
+-	g++ $(FLAGS) -c $< -o $@
++	$(CXX) $(FLAGS) -c $< -o $@
+ 
+ keyfile_io.o: $(SRC)/keyfile_io.cpp Makefile $(SRC)/vartypes.h
+-	g++ $(FLAGS) -c $< -o $@
++	$(CXX) $(FLAGS) -c $< -o $@
+ 
+ picture.o: $(SRC)/picture.cpp Makefile $(SRC)/picture.h $(SRC)/vartypes.h
+-	g++ $(FLAGS) -c $< -o $@
++	$(CXX) $(FLAGS) -c $< -o $@
+ 
+ integer.o: $(SRC)/integer.cpp Makefile $(SRC)/integer.h $(SRC)/vartypes.h
+-	g++ $(FLAGS) $(ASM_FLAG) -c $< -o $@
++	$(CXX) $(FLAGS) $(ASM_FLAG) -c $< -o $@
+ 
+ real.o: $(SRC)/real.cpp Makefile $(SRC)/integer.h $(SRC)/real.h $(SRC)/vartypes.h
+-	g++ $(FLAGS) -c $< -o $@
++	$(CXX) $(FLAGS) -c $< -o $@
+ 
+ complex.o: $(SRC)/complex.cpp Makefile $(SRC)/integer.h $(SRC)/real.h $(SRC)/complex.h $(SRC)/complex.h $(SRC)/vartypes.h
+-	g++ $(FLAGS) -c $< -o $@
++	$(CXX) $(FLAGS) -c $< -o $@
+ 
+ matrix.o: $(SRC)/matrix.cpp Makefile $(SRC)/vector.h $(SRC)/integer.h $(SRC)/real.h $(SRC)/complex.h $(SRC)/matrix.h $(SRC)/vartypes.h
+-	g++ $(FLAGS) -c $< -o $@
++	$(CXX) $(FLAGS) -c $< -o $@
+ 
+ 
+ 
+ math2.o: $(SRC)/math2.cpp Makefile $(SRC)/vector.h $(SRC)/integer.h $(SRC)/real.h $(SRC)/complex.h $(SRC)/matrix.h $(SRC)/math2.h $(SRC)/math2.intern.h $(SRC)/vartypes.h $(SRC)/picture.h
+-	g++ $(FLAGS) -c $< -o $@
++	$(CXX) $(FLAGS) -c $< -o $@
+ 
+ math2.picture.o: $(SRC)/math2.picture.cpp Makefile $(SRC)/vector.h $(SRC)/integer.h $(SRC)/real.h $(SRC)/complex.h $(SRC)/matrix.h $(SRC)/math2.h $(SRC)/vartypes.h $(SRC)/picture.h
+-	g++ $(FLAGS) -c $< -o $@
++	$(CXX) $(FLAGS) -c $< -o $@
+ 
+ math2.variable.o: $(SRC)/math2.variable.cpp Makefile $(SRC)/vector.h $(SRC)/integer.h $(SRC)/real.h $(SRC)/complex.h $(SRC)/matrix.h $(SRC)/math2.h $(SRC)/vartypes.h $(SRC)/picture.h
+-	g++ $(FLAGS) -c $< -o $@
++	$(CXX) $(FLAGS) -c $< -o $@
+ 
+ math2.variablelist.o: $(SRC)/math2.variablelist.cpp Makefile $(SRC)/vector.h $(SRC)/math2.intern.h $(SRC)/integer.h $(SRC)/real.h $(SRC)/complex.h $(SRC)/matrix.h $(SRC)/math2.h $(SRC)/vartypes.h $(SRC)/picture.h
+-	g++ $(FLAGS) -c $< -o $@
++	$(CXX) $(FLAGS) -c $< -o $@
+ 
+ math2.functionlist.o: $(SRC)/math2.functionlist.cpp Makefile $(SRC)/vector.h $(SRC)/math2.intern.h $(SRC)/integer.h $(SRC)/real.h $(SRC)/complex.h $(SRC)/matrix.h $(SRC)/math2.h $(SRC)/vartypes.h $(SRC)/picture.h
+-	g++ $(FLAGS) -c $< -o $@
++	$(CXX) $(FLAGS) -c $< -o $@
+ 
+ math2.builtin.o: $(SRC)/math2.builtin.cpp Makefile $(SRC)/vector.h $(SRC)/math2.intern.h $(SRC)/integer.h $(SRC)/real.h $(SRC)/complex.h $(SRC)/matrix.h $(SRC)/math2.h $(SRC)/vartypes.h $(SRC)/picture.h
+-	g++ $(FLAGS) -c $< -o $@
++	$(CXX) $(FLAGS) -c $< -o $@
+ 
+ math2.codeline.o: $(SRC)/math2.codeline.cpp Makefile $(SRC)/vector.h $(SRC)/math2.intern.h $(SRC)/integer.h $(SRC)/real.h $(SRC)/complex.h $(SRC)/matrix.h $(SRC)/math2.h $(SRC)/vartypes.h $(SRC)/picture.h
+-	g++ $(FLAGS) -c $< -o $@
++	$(CXX) $(FLAGS) -c $< -o $@
+ 
+ math2.codeblock.o: $(SRC)/math2.codeblock.cpp Makefile $(SRC)/vector.h $(SRC)/math2.intern.h $(SRC)/integer.h $(SRC)/real.h $(SRC)/complex.h $(SRC)/matrix.h $(SRC)/math2.h $(SRC)/vartypes.h $(SRC)/picture.h
+-	g++ $(FLAGS) -c $< -o $@
++	$(CXX) $(FLAGS) -c $< -o $@
+ 
+ math2.array.o: $(SRC)/math2.array.cpp Makefile $(SRC)/vector.h $(SRC)/integer.h $(SRC)/real.h $(SRC)/complex.h $(SRC)/matrix.h $(SRC)/math2.h $(SRC)/vartypes.h $(SRC)/picture.h
+-	g++ $(FLAGS) -c $< -o $@
++	$(CXX) $(FLAGS) -c $< -o $@
+ 
+ 
+ 
+ ## Here we create the converter and convert the Swedish translation file into an inline-file
+ inliner: $(SRC)/inliner.c Makefile
+-	gcc $< -o $@
++	$(CC) $(CFLAGS) $< -o $@
+ 
+ translation_svenska.c: translations/Svenska inliner
+ 	./inliner $< translation_svenska $@
+ 
+ translation_svenska.o: translation_svenska.c
+-	gcc $< -c -o $@
++	$(CC) $(CFLAGS) $< -c -o $@
+ 
+ 
