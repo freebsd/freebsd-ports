@@ -1,0 +1,13 @@
+==============================================================================
+
+SDLQuake2 has been installed.
+
+The binaries have been renamed to "sdlquake2" and "sdlquake2-ded" to avoid
+conflicting with the "games/quake2lnx" port.
+
+The configuration will be written to the "~/.sdlquake2" directory.
+
+The gamma can not be adjusted from the game. You can use "xgamma" to change it
+before running it, and restore it later.
+
+==============================================================================

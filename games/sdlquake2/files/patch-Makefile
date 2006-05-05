@@ -1,0 +1,42 @@
+--- ./Makefile.orig	Thu May 19 17:56:13 2005
++++ ./Makefile	Sun Feb 26 11:24:53 2006
+@@ -1,5 +1,18 @@
+-CC:=gcc
+-CFLAGS:=-O3 -ffast-math -march=athlon-xp -g -Wall $(shell sdl-config --cflags)
++CC?=gcc
++SDL_CONFIG?=sdl-config
++LOCALBASE?=/usr/local
++X11BASE?=/usr/X11R6
++CFLAGS+=-O3 -ffast-math -DDATADIR='"$(Q2DIR)"' -DLIBDIR='"$(LIBDIR)"' $(shell $(SDL_CONFIG) --cflags) -I$(X11BASE)/include
++
++LIBS=-lm -lz
++
++ifeq ($(shell uname),Linux)
++LIBS+=-ldl
++endif
++
++ifeq ($(shell uname),FreeBSD)
++LIBS+=-L$(LOCALBASE)/lib -lexecinfo
++endif
+ 
+ GAMES:=baseq2
+ 
+@@ -43,15 +56,14 @@
+ 	@sed "s@^\(.*\)\.o:@$(dir $*)\1.o:@" < .depends/$*.d > .depends/$*.d.new
+ 	@mv .depends/$*.d.new .depends/$*.d
+ 
+-
+ quake2: $(quake2_OBJ)
+-	$(CC) -g -o $@ $(shell sdl-config --libs) -lz -ldl $^
++	$(CC) -g -o $@ $(shell $(SDL_CONFIG) --libs) $(LIBS) $^
+ 
+ q2ded: $(q2ded_OBJ)
+-	$(CC) -g -o $@ $^ -lz -ldl
++	$(CC) -g -o $@ $^ $(LIBS)
+ 
+ ref_sdlgl.so: $(sdlgl_OBJ)
+-	$(CC) -shared -g -o $@ $(shell sdl-config --libs) -lGL -ljpeg -lpng12 $^
++	$(CC) -shared -g -o $@ $(shell $(SDL_CONFIG) --libs) -L$(X11BASE)/lib -lGL -ljpeg -lpng $^
+ 
+ ALLOBJ:=$(quake2_OBJ) $(sdlgl_OBJ)
+ 

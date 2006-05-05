@@ -1,0 +1,5 @@
+Basically this is a combination of R1Q2 and R1GL with SDL code from
+Quake2Forge. Meaning it's R1Q2 protocol 35 compatible Linux client. Tested on
+Debian Sarge. Both client and dedicated server.
+
+WWW: http://koti.mbnet.fi/~turol/sdlquake2/

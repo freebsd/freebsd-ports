@@ -1,0 +1,6 @@
+bin/sdlquake2
+bin/sdlquake2-ded
+%%LIBDIR%%/baseq2/game.so
+%%LIBDIR%%/ref_sdlgl.so
+@dirrm %%LIBDIR%%/baseq2
+@dirrm %%LIBDIR%%
