@@ -21,8 +21,6 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-X
 		${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-BROKEN=		Incomplete pkg-plist
-
 USE_BDB=	yes
 
 PERL_CONFIGURE=	yes
