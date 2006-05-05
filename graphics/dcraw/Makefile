@@ -6,9 +6,11 @@
 #
 
 PORTNAME=	dcraw
-PORTVERSION=	8.13
+PORTVERSION=	8.15
 CATEGORIES=	graphics
-MASTER_SITES=	http://bsd.gubkin.ru/myports/ \
+MASTER_SITES=	http://bsd1.csme.ru/myports/ \
+		http://bsd2.csme.ru/myports/ \
+		http://bsd3.csme.ru/myports/ \
 		http://www.piwebs.com/distfiles/${PORTNAME}/
 
 MAINTAINER=	infofarmer@gmail.com
