@@ -3076,6 +3076,7 @@ gl2ps		ports/print/gl2ps
 glabels		ports/deskutils/glabels
 glade2		ports/devel/glade2
 glademm		ports/devel/glademm
+gladtex		ports/textproc/gladtex
 glame		ports/audio/glame
 glark		ports/textproc/glark
 glasteroids	ports/games/glasteroids
