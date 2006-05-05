@@ -52,7 +52,7 @@ include/libprelude/prelude.h
 include/libprelude/variable.h
 lib/libprelude.la
 lib/libprelude.so
-lib/libprelude.so.7
+lib/libprelude.so.8
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/Prelude.pm
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Prelude/.packlist
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Prelude/Prelude.bs

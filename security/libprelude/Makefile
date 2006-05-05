@@ -4,7 +4,7 @@
 # $FreeBSD$
 
 PORTNAME=	libprelude
-PORTVERSION=	0.9.7.2
+PORTVERSION=	0.9.8
 CATEGORIES=	security
 MASTER_SITES=	http://www.prelude-ids.org/download/releases/ \
 		http://www.prelude-ids.org/download/releases/old/
@@ -24,28 +24,34 @@ CONFIGURE_ARGS=		--localstatedir=/var
 
 .if defined(WITH_PERL)
 USE_PERL5=		yes
-CONFIGURE_ARGS+=	--enable-perl
+CONFIGURE_ARGS+=	--with-perl
 PLIST_SUB+=		WITH_PERL=""
 .else
-CONFIGURE_ARGS+=	--disable-perl
+CONFIGURE_ARGS+=	--without-perl
 PLIST_SUB+=		WITH_PERL="@comment "
 .endif
 
 .if defined(WITH_PYTHON)
 USE_PYTHON=		yes
-CONFIGURE_ARGS+=	--enable-python
+CONFIGURE_ARGS+=	--with-python
 PLIST_SUB+=		WITH_PYTHON=""
 .else
-CONFIGURE_ARGS+=	--disable-python
+CONFIGURE_ARGS+=	--without-python
 PLIST_SUB+=		WITH_PYTHON="@comment "
 .endif
 
 .if !defined(NOPORTDOCS)
 CONFIGURE_ARGS+=	--with-html-dir=${PREFIX}/share/doc
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=	Doesn't build on FreeBSD < 5.x
+.endif
+
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/api/html/* ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
