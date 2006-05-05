@@ -12,13 +12,12 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Interface to pcap(3) LBL packet capture library
-
-BROKEN=		Incomplete pkg-plist
 
 PERL_CONFIGURE=	yes
 
+MAN1=		pcapinfo.1
 MAN3=		Net::Pcap.3
 
 .include <bsd.port.mk>
