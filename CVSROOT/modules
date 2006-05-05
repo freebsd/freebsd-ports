@@ -9218,6 +9218,7 @@ p5-Template-Toolkit	ports/www/p5-Template-Toolkit
 p5-Term-ANSIColor	ports/devel/p5-Term-ANSIColor
 p5-Term-ANSIScreen	ports/devel/p5-Term-ANSIScreen
 p5-Term-Animation	ports/devel/p5-Term-Animation
+p5-Term-CallEditor	ports/devel/p5-Term-CallEditor
 p5-Term-ProgressBar	ports/devel/p5-Term-ProgressBar
 p5-Term-Prompt	ports/devel/p5-Term-Prompt
 p5-Term-Query	ports/devel/p5-Term-Query
