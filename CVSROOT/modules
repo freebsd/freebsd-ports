@@ -10628,6 +10628,7 @@ pronto		ports/mail/pronto
 proofgeneral	ports/math/proofgeneral
 props		ports/x11/props
 prosper		ports/textproc/prosper
+protomol	ports/biology/protomol
 prototype	ports/devel/prototype
 proxsmtp	ports/mail/proxsmtp
 proxy-connect	ports/net/proxy-connect
