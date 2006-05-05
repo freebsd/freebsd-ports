@@ -13,6 +13,7 @@ bin/slrsh
 %%SITE_PERL%%/Schedule/Load/Hosts/Proc.pm
 %%SITE_PERL%%/Schedule/Load/Reporter.pm
 %%SITE_PERL%%/Schedule/Load/ResourceReq.pm
+%%SITE_PERL%%/Schedule/Load/Safe.pm
 %%SITE_PERL%%/Schedule/Load/Schedule.pm
 %%SITE_PERL%%/auto/Schedule/Load/Hosts/Host/autosplit.ix
 %%SITE_PERL%%/auto/Schedule/Load/Hosts/Proc/autosplit.ix

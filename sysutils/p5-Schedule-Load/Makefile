@@ -29,7 +29,8 @@ MAN3=		Schedule::Load.3 Schedule::Load::Chooser.3 \
 		Schedule::Load::FakeReporter.3 Schedule::Load::Hold.3 \
 		Schedule::Load::Hosts.3 Schedule::Load::Hosts::Host.3 \
 		Schedule::Load::Hosts::Proc.3 Schedule::Load::Reporter.3 \
-		Schedule::Load::ResourceReq.3 Schedule::Load::Schedule.3
+		Schedule::Load::ResourceReq.3 Schedule::Load::Safe.3 \
+		Schedule::Load::Schedule.3
 
 post-install:
 .ifndef(NOPORTDOCS)
