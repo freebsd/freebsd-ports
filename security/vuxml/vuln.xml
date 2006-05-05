@@ -34,6 +34,48 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="2df297a2-dc74-11da-a22b-000c6ec775d9">
+    <topic>awstat -- arbitrary command execution vulnerability</topic>
+    <affects>
+      <package>
+	<name>awstats</name>
+	<range><lt>6.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>OS Reviews reports:</p>
+	<blockquote cite="http://www.osreviews.net/reviews/comm/awstats">
+	  <p>If the update of the stats via web front-end is allowed,
+	    a remote attacker can execute arbitrary code on the server
+	    using a specially crafted request involving the migrate
+	    parameter. Input starting with a pipe character ("|")
+	    leads to an insecure call to Perl's open function and the
+	    rest of the input being executed in a shell. The code is
+	    run in the context of the process running the AWStats
+	    CGI.</p>
+	  <p>Arbitrary code can be executed by uploading a specially
+	    crafted configuration file if an attacker can put a file
+	    on the server with chosen file name and content (e.g. by
+	    using an FTP account on a shared hosting server). In this
+	    configuration file, the LogFile directive can be used to
+	    execute shell code following a pipe character. As above,
+	    an open call on unsanitized input is the source of this
+	    vulnerability.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://awstats.sourceforge.net/awstats_security_news.php</url>
+      <url>http://secunia.com/advisories/19969/</url>
+      <url>http://www.osreviews.net/reviews/comm/awstats</url>
+    </references>
+    <dates>
+      <discovery>2006-05-03</discovery>
+      <entry>2006-05-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d9dc2697-dadf-11da-912f-00123ffe8333">
     <topic>phpwebftp -- "language" Local File Inclusion</topic>
     <affects>
@@ -98,11 +140,12 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <cvename>CVE-2006-1993</cvename>
-      <cvename>http://www.mozilla.org/security/announce/2006/mfsa2006-30.html</cvename>
+      <url>http://www.mozilla.org/security/announce/2006/mfsa2006-30.html</url>
     </references>
     <dates>
       <discovery>2006-05-02</discovery>
       <entry>2006-05-03</entry>
+      <modified>2006-05-05</modified>
     </dates>
   </vuln>
 
