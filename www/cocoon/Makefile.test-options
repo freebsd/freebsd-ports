@@ -26,6 +26,11 @@ BLOCKS+=	fop
 BLOCKS+=	batik
 .endif
 
+.if defined(WITH_FORMS)
+BLOCKS+=	forms
+BLOCKS+=	ajax
+.endif
+
 .if defined(WITH_HSQLDB)
 BLOCKS+=	hsqldb
 BLOCKS+=	databases
@@ -202,9 +207,8 @@ BLOCKS+=	taglib
 BLOCKS+=	xsp
 .endif
 
-.if defined(WITH_FORMS)
-BLOCKS+=	forms
-BLOCKS+=	ajax
+.if defined(WITH_IMAGEOP)
+BLOCKS+=	imageop
 .endif
 
 .if defined(WITH_JAVAFLOW)
@@ -302,6 +306,10 @@ BLOCKS+=	stx
 
 .if defined(WITH_TAGLIB)
 BLOCKS+=	taglib
+.endif
+
+.if defined(WITH_TEMPLATE)
+BLOCKS+=	template
 .endif
 
 .if defined(WITH_TOUR)

@@ -1,0 +1,17 @@
+Index: src/blocks/forms/samples/welcome.xml
+===================================================================
+--- src/blocks/forms/samples/welcome.xml	(revision 393856)
++++ src/blocks/forms/samples/welcome.xml	(working copy)
+@@ -21,12 +21,6 @@
+  <group name="Back">
+   <sample name="Back" href="../..">to Cocoon Samples main page</sample>
+   <sample name="Back" href="..">to Cocoon Blocks Samples main page</sample>
+-  <note>
+-    Cocoon Forms is the upcoming forms framework for Cocoon.
+-    Although it is marked as unstable it is the *only* supported solution - all
+-    other similar approaches will be deprecated soon.
+-    Of course, your feedback is very much welcome on the Cocoon mailing lists.
+-  </note>
+   <sample name="Cocoon Forms Documentation" href="http://cocoon.apache.org/2.1/userdocs/basics/index.html">
+     Documentation is available on the Cocoon site.
+   </sample>
