@@ -26,6 +26,8 @@ USE_GCC=	3.4+
 
 MAN1=		sharpconstruct.1
 
+ONLY_FOR_ARCHS=	i386
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
@@ -41,6 +43,5 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|memalign(b,c)|malloc(c)|' ${WRKSRC}/include/Align.hh
 	@${FIND} ${WRKSRC} -name Makefile.in -print0 | ${XARGS} -0 \
 		${REINPLACE_CMD} -e '/^DEFS / s|$$| -DDATADIR=\\"${DATADIR}\\"|'
-	@${REINPLACE_CMD} -e 's|-msse||' ${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.post.mk>
