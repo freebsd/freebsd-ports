@@ -1,0 +1,8 @@
+**************************************************************************
+
+  You need to add the following two line into your kernel config:
+
+	options	SC_PIXEL_MODE
+	options	VESA		# this line can be replaced by 'kldload vesa'
+
+************************************************************************** 
