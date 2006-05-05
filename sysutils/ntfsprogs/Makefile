@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ntfsprogs
-PORTVERSION=	1.12.1
-PORTREVISION=	1
+PORTVERSION=	1.13.0
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	linux-ntfs
@@ -17,11 +16,11 @@ COMMENT=	Utilities and library to manipulate NTFS partitions
 
 GNU_CONFIGURE=	yes
 USE_GCC=	3.4+
-USE_REINPLACE=	yes
 USE_GETOPT_LONG=yes
 WANT_GNOME=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--program-transform-name=""
+CONFIGURE_ENV=	PKG_CONFIG=${LOCALBASE}/bin/pkg-config
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 OPTIONS=	GNOMEVFS2 "Install GnomeVFS 2.0 libntfs interface" off \
@@ -59,7 +58,7 @@ PLIST_SUB+=	GNOMEVFS2="@comment "
 CONFIGURE_ARGS+=--enable-fuse-module
 PLIST_SUB+=	FUSE=""
 USE_GNOME+=	pkgconfig
-BUILD_DEPENDS+=	fusefs-libs>2.4:${PORTSDIR}/sysutils/fusefs-libs
+BUILD_DEPENDS+=	fusefs-libs>2.5:${PORTSDIR}/sysutils/fusefs-libs
 MLINKS+=	ntfsmount.8 mount.ntfs-fuse.8
 .else
 CONFIGURE_ARGS+=--disable-fuse-module
