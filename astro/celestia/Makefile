@@ -44,7 +44,6 @@ USE_GNOME+=	gtk20
 CONFIGURE_ARGS+=	--with-gnome
 USE_GNOME+=	libgnomeui
 GCONF_SCHEMAS=	celestia.schemas
-PKGMESSAGE=	${PKGDIR}/pkg-message.gnome
 .else
 IGNORE=		invalid CELESTIA_UI value "${CELESTIA_UI}" -- valid values are ${UI_LIST}
 .endif
@@ -94,9 +93,6 @@ post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-.endif
-.if ${CELESTIA_UI} == "gnome"
-	@${CAT} ${PKGMESSAGE}
 .endif
 
 .include <bsd.port.post.mk>
