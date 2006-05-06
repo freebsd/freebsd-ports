@@ -25,7 +25,6 @@
 # WANT_PHP_CLI=yes  - Want the CLI version of PHP.
 # WANT_PHP_CGI=yes  - Want the CGI version of PHP.
 # WANT_PHP_MOD=yes  - Want the Apache Module for PHP.
-# WANT_PHP_SCR=yes  - Want the CLI or the CGI version of PHP.
 # WANT_PHP_WEB=yes  - Want the Apache Module or the CGI version of PHP.
 #
 # You may combine multiple WANT_PHP_* knobs.
@@ -86,63 +85,38 @@ check-makevars::
 		@${ECHO_CMD} "or WANT_PHP_MOD. Use only one of them."
 		@${FALSE}
 .	else
-.	if defined(PHP_VERSION) && ${PHP_SAPI} == "cli"
+.	if defined(PHP_VERSION) && ${PHP_SAPI:Mcgi} == "" && ${PHP_SAPI:Mmod} == ""
 check-makevars::
 		@${ECHO_CMD} "This port requires the Apache Module or the CGI version of PHP, but you have"
-		@${ECHO_CMD} "already installed a conflicting PHP port without them."
-		@${FALSE}
-.	endif
-.	endif
-.else
-
-.if defined(WANT_PHP_SCR)
-.	if defined(WANT_PHP_CGI) || defined(WANT_PHP_CLI)
-check-makevars::
-		@${ECHO_CMD} "If you define WANT_PHP_SCR you cannot set also WANT_PHP_CGI"
-		@${ECHO_CMD} "or WANT_PHP_CLI. Use only one of them."
-		@${FALSE}
-.	else
-.	if defined(PHP_VERSION) && ${PHP_SAPI} == "mod"
-check-makevars::
-		@${ECHO_CMD} "This port requires the CLI or the CGI version of PHP, but you have"
-		@${ECHO_CMD} "already installed a conflicting PHP port without them."
+		@${ECHO_CMD} "already installed a PHP port without them."
 		@${FALSE}
 .	endif
 .	endif
 .else
 
 .if defined(WANT_PHP_CGI)
-.	if defined(WANT_PHP_CLI) || defined(WANT_PHP_MOD)
-check-makevars::
-		@${ECHO_CMD} "The CGI version of PHP avoids the installation of other SAPIs."
-		@${ECHO_CMD} "Do not use WANT_PHP_CGI with other WANT_PHP_* knobs."
-		@${FALSE}
-.	else
-.	if defined(PHP_VERSION) && ${PHP_SAPI} != "cgi"
+.	if defined(PHP_VERSION) && ${PHP_SAPI:Mcgi} == ""
 check-makevars::
 		@${ECHO_CMD} "This port requires the CGI version of PHP, but you have already"
-		@${ECHO_CMD} "installed a conflicting PHP port without CGI."
+		@${ECHO_CMD} "installed a PHP port without CGI."
 		@${FALSE}
-.	else
-PHP_PORT?=	${PORTSDIR}/www/php${PHP_VER}-cgi
-.	endif
 .	endif
 .else
 
 .if defined(WANT_PHP_CLI)
-.	if defined(PHP_VERSION) && ${PHP_SAPI} != "full" && ${PHP_SAPI} != "cli"
+.	if defined(PHP_VERSION) && ${PHP_SAPI:Mcli} == ""
 check-makevars::
 		@${ECHO_CMD} "This port requires the CLI version of PHP, but you have already"
-		@${ECHO_CMD} "installed a conflicting PHP port without CLI."
+		@${ECHO_CMD} "installed a PHP port without CLI."
 		@${FALSE}
 .	endif
 .else
 
 .if defined(WANT_PHP_MOD)
-.	if defined(PHP_VERSION) && (${PHP_SAPI} != "full" && ${PHP_SAPI} != "mod")
+.	if defined(PHP_VERSION) && ${PHP_SAPI:Mmod} == ""
 check-makevars::
 		@${ECHO_CMD} "This port requires the Apache Module for PHP, but you have already"
-		@${ECHO_CMD} "installed a conflicting PHP port without the Apache Module."
+		@${ECHO_CMD} "installed a PHP port without the Apache Module."
 		@${FALSE}
 .	endif
 .endif
@@ -153,9 +127,7 @@ check-makevars::
 
 .endif
 
-.endif
-
-PHP_PORT?=	${PORTSDIR}/lang/php${PHP_VER}
+PHP_PORT=	${PORTSDIR}/lang/php${PHP_VER}
 
 .if defined(USE_PHP_BUILD)
 BUILD_DEPENDS+=	${LOCALBASE}/include/php/main/php.h:${PHP_PORT}

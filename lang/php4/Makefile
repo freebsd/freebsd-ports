@@ -7,7 +7,7 @@
 
 PORTNAME=	php4
 PORTVERSION=	4.4.2
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES?=	lang devel www
 MASTER_SITES=	${MASTER_SITE_PHP:S,$,:release,} \
 		http://downloads.php.net/ilia/:rc \
@@ -22,106 +22,105 @@ COMMENT?=	PHP Scripting Language (Apache Module and CLI)
 LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
 
 USE_BZIP2=	yes
-.if !defined(PKGNAMESUFFIX) || ${PKGNAMESUFFIX} == "-cgi" || ${PKGNAMESUFFIX} == "-cli"
-GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
+.if !defined(PKGNAMESUFFIX)
+USE_AUTOTOOLS=	autoconf:259
 USE_GETOPT_LONG=yes
 
 CONFIGURE_ARGS=	--enable-versioning \
 		--enable-memory-limit \
 		--with-layout=GNU \
 		--with-config-file-scan-dir=${PREFIX}/etc/php \
-		--disable-all
+		--disable-all \
+		--program-prefix=""
 
-.if !defined(WITH_REGEX_TYPE) || ${WITH_REGEX_TYPE} == "php"
-CONFIGURE_ARGS+=--with-regex=php
-.else
-.if ${WITH_REGEX_TYPE} == "system"
-CONFIGURE_ARGS+=--with-regex=system
-.else
-.if ${WITH_REGEX_TYPE} == "apache"
-CONFIGURE_ARGS+=--with-regex=apache
-.endif
-.endif
-.endif
-
-.if !defined(PKGNAMEPREFIX) && !defined(PKGNAMESUFFIX)
-PHP_SAPI=	full
-WITH_APACHE=	yes
-.else
-.if !defined(PKGNAMEPREFIX)
-PHP_SAPI=	${PKGNAMESUFFIX:S/-//}
-.else
-PHP_SAPI=	${PKGNAMEPREFIX:S/_//}
-WITH_APACHE=	yes
-.endif
-.endif
-
-.if defined(WITH_APACHE)
-PKGMESSAGE=	${PKGDIR}/pkg-message.mod
-USE_APACHE=	1.3+
-MODULENAME=	lib${PORTNAME}
-SHORTMODNAME=	${PORTNAME}
-.endif
-
-.if ${PHP_SAPI} == "cgi"
-OPTIONS=	REDIRECT "Enable force-cgi-redirect support" off \
-		DISCARD "Enable discard-path support" off \
-		FASTCGI "Enable fastcgi support" off \
-		PATHINFO "Enable path-info-check support" on
-.endif
-OPTIONS+=	DEBUG "Enable debug" off \
+OPTIONS=	CLI "Build CLI version" on \
+		CGI "Build CGI version" on \
+		APACHE "Build Apache module" off \
+		DEBUG "Enable debug" off \
 		MULTIBYTE "Enable zend multibyte support" off \
 		IPV6 "Enable ipv6 support" on \
+		REDIRECT "Enable force-cgi-redirect support (CGI only)" off \
+		DISCARD "Enable discard-path support (CGI only)" off \
+		FASTCGI "Enable fastcgi support (CGI only)" on \
+		PATHINFO "Enable path-info-check support (CGI only)" on \
 		OPENSSL "Build static OpenSSL extension" off
 
-CONFLICTS?=	php4-cli-4* mod_php4-4* php4-cgi-4*
-CONFLICTS+=	php5-5* php5-cli-5* mod_php5-5* php5-cgi-5*
+CONFLICTS=	php5-5*
 
-.if ${PHP_SAPI} == "cgi" || ${PHP_SAPI} == "mod"
+MAN1=		php-config.1 phpize.1
+
+.include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_CLI)
+PHP_SAPI+=	cli
+PLIST_SUB+=	CLI=""
+MAN1+=		php.1
+.else
+# XXX Temporary hack
+.if !defined(WITHOUT_CGI)
+PLIST_SUB+=	CLI=""
+.else
+PLIST_SUB+=	CLI="@comment "
+.endif
 CONFIGURE_ARGS+=--disable-cli
 .endif
 
-MAN1=		php-config.1 phpize.1
-.if ${PHP_SAPI} != "mod"
-PLIST_SUB+=	CLICGI=""
-.if ${PHP_SAPI} != "cgi"
-MAN1+=		php.1
+.if !defined(WITHOUT_CGI)
+PHP_SAPI+=	cgi
+PLIST_SUB+=	CGI=""
+.if defined(WITH_REDIRECT)
+CONFIGURE_ARGS+=--enable-force-cgi-redirect
+.endif
+.if defined(WITH_DISCARD)
+CONFIGURE_ARGS+=--enable-discard-path
+.endif
+.if !defined(WITHOUT_FASTCGI)
+CONFIGURE_ARGS+=--enable-fastcgi
+.endif
+.if defined(WITHOUT_PATHINFO)
+CONFIGURE_ARGS+=--disable-path-info-check
 .endif
 .else
-PLIST_SUB+=	CLICGI="@comment "
+PLIST_SUB+=	CGI="@comment "
+CONFIGURE_ARGS+=--disable-cgi
 .endif
 
 .if defined(WITH_APACHE)
+PHP_SAPI+=	mod
+USE_APACHE=	1.3+
+.include "${PORTSDIR}/Mk/bsd.apache.mk"
+.if ${APACHE_VERSION} > 13
+CONFIGURE_ARGS+=--with-apxs2=${APXS}
+.else
+CONFIGURE_ARGS+=--with-apxs=${APXS}
+.endif
+PKGMESSAGE=	${PKGDIR}/pkg-message.mod
+MODULENAME=	lib${PORTNAME}
+SHORTMODNAME=	${PORTNAME}
 PLIST_SUB+=	APACHE=""
 .else
 PLIST_SUB+=	APACHE="@comment "
 .endif
 
-.if ${PHP_SAPI} == "cli"
-CONFIGURE_ARGS+=--disable-cgi
+.if !defined(WITH_REGEX_TYPE) || ${WITH_REGEX_TYPE} == "php"
+CONFIGURE_ARGS+=--with-regex=php
+.elif defined(WITH_REGEX_TYPE) && ${WITH_REGEX_TYPE} == "system"
+CONFIGURE_ARGS+=--with-regex=system
+.elif defined(WITH_REGEX_TYPE) && ${WITH_REGEX_TYPE} == "apache"
+CONFIGURE_ARGS+=--with-regex=apache
 .endif
 
-.include <bsd.port.pre.mk>
-
 CONFIGURE_ENV+=	ac_cv_pthreads_lib=${PTHREAD_LIBS} \
-		ac_cv_pthreads_cflags=${PTHREAD_CFLAGS}
+		ac_cv_pthreads_cflags=${PTHREAD_CFLAGS} \
+		pthreads_working="yes"
 
-MAKE_ENV+=	LDFLAGS="${LDFLAGS}"
+ MAKE_ENV+=      LDFLAGS="${LDFLAGS}"
 
 .if defined(WITH_OPENSSL)
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
 CONFIGURE_ARGS+=--with-openssl=${OPENSSLBASE} \
 		--with-openssl-dir=${OPENSSLBASE}
 LDFLAGS+=	-L${OPENSSLLIB} -lcrypto -lssl
-.endif
-
-.if defined(WITH_APACHE)
-.if ${APACHE_VERSION} > 13
-CONFIGURE_ARGS+=--with-apxs2=${APXS}
-.else
-CONFIGURE_ARGS+=--with-apxs=${APXS}
-.endif
 .endif
 
 .if defined(WITH_DEBUG)
@@ -136,44 +135,16 @@ CONFIGURE_ARGS+=--enable-zend-multibyte
 CONFIGURE_ARGS+=--disable-ipv6
 .endif
 
-.if ${PHP_SAPI} == "cgi"
-.if defined(WITH_REDIRECT)
-CONFIGURE_ARGS+=--enable-force-cgi-redirect
-.endif
-.if defined(WITH_DISCARD)
-CONFIGURE_ARGS+=--enable-discard-path
-.endif
-.if defined(WITH_FASTCGI)
-CONFIGURE_ARGS+=--enable-fastcgi
-.endif
-.if defined(WITHOUT_PATHINFO)
-CONFIGURE_ARGS+=--disable-path-info-check
-.endif
-.endif
-
-_PORTSDIR!=	${REALPATH} ${PORTSDIR}
-PHP_PORT=	${.CURDIR:S|^${_PORTSDIR}||:S|^/||}
-
 post-patch:
 	@${TOUCH} ${WRKSRC}/ext/php_config.h
 	@${REINPLACE_CMD} "s|^\(extension_dir\)|; \1|" ${WRKSRC}/php.ini-*
 
-.if ${PHP_SAPI} == "full"
 pre-configure:
-	@${ECHO_CMD} ""
-	@${ECHO_CMD} "You are building the Apache Module and the Command Line Interpreter of PHP."
-	@${ECHO_CMD} ""
-	@${ECHO_CMD} "Use port:"
-	@${ECHO_CMD} "	lang/php4-cli		for Command Line Interpreter only"
-	@${ECHO_CMD} "	www/php4-cgi		for Common Gateway Interface only"
-	@${ECHO_CMD} "	www/mod_php4		for Apache Module only"
-	@${ECHO_CMD} ""
-.endif
+	@${CAT} ${WRKSRC}/acinclude.m4 ${WRKSRC}/build/libtool.m4 > ${WRKSRC}/aclocal.m4
 
 post-build:
 	@${ECHO_CMD} "PHP_VER=4" > ${WRKDIR}/php.conf
 	@${ECHO_CMD} "PHP_VERSION=${PORTVERSION}" >> ${WRKDIR}/php.conf
-	@${ECHO_CMD} "PHP_PORT=\$${PORTSDIR}/${PHP_PORT}" >> ${WRKDIR}/php.conf
 	@${ECHO_CMD} "PHP_SAPI=${PHP_SAPI}" >> ${WRKDIR}/php.conf
 .if defined(WITH_OPENSSL)
 	@${ECHO_CMD} "PHP_EXT_INC=openssl" >> ${WRKDIR}/php.conf
@@ -184,6 +155,10 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/php.ini-recommended ${PREFIX}/etc
 	@${INSTALL_DATA} ${WRKDIR}/php.conf ${PREFIX}/etc
 	@${TOUCH} ${PREFIX}/include/php/ext/php_config.h
+# XXX Temporary hack
+.if !defined(WITHOUT_CGI) && defined(WITHOUT_CLI)
+	@${LN} -sf ${PREFIX}/bin/php-cgi ${PREFIX}/bin/php
+.endif
 .if defined(WITH_APACHE)
 	@${CAT} ${PKGMESSAGE}
 .endif

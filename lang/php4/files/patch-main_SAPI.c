@@ -1,6 +1,6 @@
---- main/SAPI.c.orig	Fri Apr 15 10:50:01 2005
-+++ main/SAPI.c	Fri Apr 15 10:50:14 2005
-@@ -565,7 +565,7 @@
+--- main/SAPI.c.orig	Sun Jan  1 14:46:59 2006
++++ main/SAPI.c	Fri May  5 08:02:13 2006
+@@ -582,7 +582,7 @@
  					ptr++;
  					len--;
  				}
@@ -9,7 +9,7 @@
  				if(!strncmp(ptr, "image/", sizeof("image/")-1)) {
  					zend_alter_ini_entry("zlib.output_compression", sizeof("zlib.output_compression"), "0", sizeof("0") - 1, PHP_INI_USER, PHP_INI_STAGE_RUNTIME);
  				}
-@@ -712,7 +712,7 @@
+@@ -729,7 +729,7 @@
  		return SUCCESS;
  	}
  

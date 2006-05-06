@@ -1,0 +1,50 @@
+--- configure.in.orig	Wed Apr 26 16:08:26 2006
++++ configure.in	Thu May  4 08:55:35 2006
+@@ -222,7 +222,6 @@
+ dnl .
+ dnl -------------------------------------------------------------------------
+ 
+-PTHREADS_CHECK
+ PHP_HELP_SEPARATOR([SAPI modules:])
+ PHP_SHLIB_SUFFIX_NAMES
+ PHP_SAPI=default
+@@ -247,7 +246,6 @@
+ 
+ if test "$enable_maintainer_zts" = "yes"; then
+   PTHREADS_ASSIGN_VARS
+-  PTHREADS_FLAGS
+ fi
+ 
+ if test "$PHP_ENABLE_FASTCGI" = "yes"; then
+@@ -1248,25 +1246,22 @@
+ INLINE_CFLAGS="$INLINE_CFLAGS $standard_libtool_flag"
+ CXXFLAGS="$CXXFLAGS $standard_libtool_flag"
+ 
+-all_targets="$lcov_target \$(OVERALL_TARGET) \$(PHP_MODULES) \$(PHP_CLI_TARGET)"
+-install_targets="$install_modules install-build install-headers install-programs $install_pear"
++all_targets="$lcov_target \$(OVERALL_TARGET) \$(PHP_MODULES) \$(PHP_CLI_TARGET) \$(PHP_CGI_TARGET)"
++install_targets="$PHP_INSTALL_CLI_TARGET $PHP_INSTALL_CGI_TARGET $install_modules install-build install-headers install-programs $install_pear"
+ 
+ case $PHP_SAPI in
+-  cgi)
++  apache)
+     install_targets="install-sapi $install_targets"
+     ;;
+-  cli)
+-    install_targets="$PHP_INSTALL_CLI_TARGET $install_targets"
+-    ;;
+-  *)
+-    install_targets="install-sapi $PHP_INSTALL_CLI_TARGET $install_targets"
++  apache2handler)
++    install_targets="install-sapi $install_targets"
+     ;;
+ esac
+ 
+ PHP_SUBST(all_targets)
+ PHP_SUBST(install_targets)
+ 
+-PHP_INSTALL_HEADERS([Zend/ TSRM/ include/ main/ main/streams/ regex/])
++PHP_INSTALL_HEADERS([Zend/ TSRM/ main/ main/streams/ regex/ ext/spl/])
+ 
+ PHP_ADD_SOURCES(TSRM, TSRM.c tsrm_strtok_r.c tsrm_virtual_cwd.c)
+ 

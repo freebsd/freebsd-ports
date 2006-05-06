@@ -1,6 +1,6 @@
---- scripts/phpize.in.orig	Wed Jun 15 19:19:41 2005
-+++ scripts/phpize.in	Wed Sep  7 17:52:24 2005
-@@ -94,8 +94,8 @@
+--- scripts/phpize.in.orig	Mon Dec 12 12:51:45 2005
++++ scripts/phpize.in	Wed May  3 09:38:09 2006
+@@ -99,8 +99,8 @@
  
  phpize_check_autotools()
  {
@@ -9,5 +9,5 @@
 +  test -z "$PHP_AUTOCONF" && PHP_AUTOCONF=autoconf259
 +  test -z "$PHP_AUTOHEADER" && PHP_AUTOHEADER=autoheader259
    
-   if ! test -x "`$php_shtool path $PHP_AUTOCONF`"; then
+   if test ! -x "`$php_shtool path $PHP_AUTOCONF`"; then
      cat <<EOF
