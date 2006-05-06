@@ -310,6 +310,19 @@
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Grasshoppaz/test.py
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Grasshoppaz/test.pyc
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Grasshoppaz/test.pyo
+%%PYTHON_SITELIBDIR%%/supybot/plugins/IgnoreFormatting/README.txt
+%%PYTHON_SITELIBDIR%%/supybot/plugins/IgnoreFormatting/__init__.py
+%%PYTHON_SITELIBDIR%%/supybot/plugins/IgnoreFormatting/__init__.pyc
+%%PYTHON_SITELIBDIR%%/supybot/plugins/IgnoreFormatting/__init__.pyo
+%%PYTHON_SITELIBDIR%%/supybot/plugins/IgnoreFormatting/config.py
+%%PYTHON_SITELIBDIR%%/supybot/plugins/IgnoreFormatting/config.pyc
+%%PYTHON_SITELIBDIR%%/supybot/plugins/IgnoreFormatting/config.pyo
+%%PYTHON_SITELIBDIR%%/supybot/plugins/IgnoreFormatting/plugin.py
+%%PYTHON_SITELIBDIR%%/supybot/plugins/IgnoreFormatting/plugin.pyc
+%%PYTHON_SITELIBDIR%%/supybot/plugins/IgnoreFormatting/plugin.pyo
+%%PYTHON_SITELIBDIR%%/supybot/plugins/IgnoreFormatting/test.py
+%%PYTHON_SITELIBDIR%%/supybot/plugins/IgnoreFormatting/test.pyc
+%%PYTHON_SITELIBDIR%%/supybot/plugins/IgnoreFormatting/test.pyo
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Infobot/README.txt
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Infobot/__init__.py
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Infobot/__init__.pyc
@@ -349,6 +362,19 @@
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Lookup/test.py
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Lookup/test.pyc
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Lookup/test.pyo
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Mailbox/README.txt
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Mailbox/__init__.py
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Mailbox/__init__.pyc
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Mailbox/__init__.pyo
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Mailbox/config.py
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Mailbox/config.pyc
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Mailbox/config.pyo
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Mailbox/plugin.py
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Mailbox/plugin.pyc
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Mailbox/plugin.pyo
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Mailbox/test.py
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Mailbox/test.pyc
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Mailbox/test.pyo
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Markov/README.txt
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Markov/__init__.py
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Markov/__init__.pyc
@@ -680,9 +706,11 @@
 @dirrm %%PYTHON_SITELIBDIR%%/supybot/plugins/Minstrel
 @dirrm %%PYTHON_SITELIBDIR%%/supybot/plugins/Memo
 @dirrm %%PYTHON_SITELIBDIR%%/supybot/plugins/Markov
+@dirrm %%PYTHON_SITELIBDIR%%/supybot/plugins/Mailbox
 @dirrm %%PYTHON_SITELIBDIR%%/supybot/plugins/Lookup
 @dirrm %%PYTHON_SITELIBDIR%%/supybot/plugins/Linux
 @dirrm %%PYTHON_SITELIBDIR%%/supybot/plugins/Infobot
+@dirrm %%PYTHON_SITELIBDIR%%/supybot/plugins/IgnoreFormatting
 @dirrm %%PYTHON_SITELIBDIR%%/supybot/plugins/Grasshoppaz
 @dirrm %%PYTHON_SITELIBDIR%%/supybot/plugins/Geekquote
 @dirrm %%PYTHON_SITELIBDIR%%/supybot/plugins/Gateway
