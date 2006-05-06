@@ -34,6 +34,31 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a86f30e7-dce7-11da-bf3f-02e081235dab">
+    <topic>fswiki -- XSS vulnerability</topic>
+    <affects>
+      <package>
+	<name>fswiki</name>
+	<range><lt>3.5.11</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>JVN reports:</p>
+	<blockquote cite="http://jvn.jp/jp/JVN%2335274905/">
+	  <p>FreeStyleWiki has XSS vulnerability.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://jvn.jp/jp/JVN%2335274905/</url>
+    </references>
+    <dates>
+      <discovery>2006-04-18</discovery>
+      <entry>2006-05-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a8d8713e-dc83-11da-a22b-000c6ec775d9">
     <topic>mysql50-server -- COM_TABLE_DUMP arbitrary code execution</topic>
     <affects>
