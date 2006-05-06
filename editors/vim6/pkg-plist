@@ -1,0 +1,22 @@
+@comment $FreeBSD$
+bin/vim
+bin/vimtutor
+bin/xxd
+@comment bin/ex
+@comment bin/gex
+bin/eview
+bin/evim
+bin/gview
+bin/gvim
+bin/rgview
+bin/rgvim
+bin/rview
+bin/rvim
+bin/vimdiff
+bin/gvimdiff
+@comment bin/view
+@exec mkdir -p %D/share/vim/%%VIM_VER%%/lang
+@comment Insert PLIST.share-vim here
+@comment -=[ begin PLIST.share-vim ]=-
+@comment -=[ end PLIST.share-vim ]=-
+@dirrm share/vim

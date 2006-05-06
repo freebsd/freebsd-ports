@@ -1,0 +1,117 @@
+--- Makefile.orig	Sun Jun  1 06:18:29 2003
++++ Makefile	Sat Nov  1 15:39:09 2003
+@@ -256,7 +256,7 @@
+ #DO NOT CHANGE the next line, we need it for configure to find the compiler
+ #instead of using the default from the "make" program.
+ #Use a line further down to change the value for CC.
+-CC=
++#CC=
+ 
+ # Change and use these defines if configure cannot find your Motif stuff.
+ # Unfortunately there is no "standard" location for Motif. {{{
+@@ -288,6 +288,7 @@
+ # of make, will buid Vim.
+ 
+ # CONFIGURE - configure arguments {{{1
++CONF_ARGS = --prefix=$(PREFIX)
+ # You can give a lot of options to configure.
+ # Change this to your desire and do 'make config' afterwards
+ 
+@@ -1794,40 +1795,40 @@
+ installgvimdiff: $(DEST_BIN)/$(GVIMDIFFTARGET)
+ 
+ $(DEST_BIN)/$(EXTARGET):
+-	cd $(DEST_BIN); ln -s $(VIMTARGET) $(EXTARGET)
++	#cd $(DEST_BIN); ln -sf $(VIMTARGET) $(EXTARGET)
+ 
+ $(DEST_BIN)/$(VIEWTARGET):
+-	cd $(DEST_BIN); ln -s $(VIMTARGET) $(VIEWTARGET)
++	#cd $(DEST_BIN); ln -sf $(VIMTARGET) $(VIEWTARGET)
+ 
+ $(DEST_BIN)/$(GVIMTARGET):
+-	cd $(DEST_BIN); ln -s $(VIMTARGET) $(GVIMTARGET)
++	cd $(DEST_BIN); ln -sf $(VIMTARGET) $(GVIMTARGET)
+ 
+ $(DEST_BIN)/$(GVIEWTARGET):
+-	cd $(DEST_BIN); ln -s $(VIMTARGET) $(GVIEWTARGET)
++	cd $(DEST_BIN); ln -sf $(VIMTARGET) $(GVIEWTARGET)
+ 
+ $(DEST_BIN)/$(RVIMTARGET):
+-	cd $(DEST_BIN); ln -s $(VIMTARGET) $(RVIMTARGET)
++	cd $(DEST_BIN); ln -sf $(VIMTARGET) $(RVIMTARGET)
+ 
+ $(DEST_BIN)/$(RVIEWTARGET):
+-	cd $(DEST_BIN); ln -s $(VIMTARGET) $(RVIEWTARGET)
++	cd $(DEST_BIN); ln -sf $(VIMTARGET) $(RVIEWTARGET)
+ 
+ $(DEST_BIN)/$(RGVIMTARGET):
+-	cd $(DEST_BIN); ln -s $(VIMTARGET) $(RGVIMTARGET)
++	cd $(DEST_BIN); ln -sf $(VIMTARGET) $(RGVIMTARGET)
+ 
+ $(DEST_BIN)/$(RGVIEWTARGET):
+-	cd $(DEST_BIN); ln -s $(VIMTARGET) $(RGVIEWTARGET)
++	cd $(DEST_BIN); ln -sf $(VIMTARGET) $(RGVIEWTARGET)
+ 
+ $(DEST_BIN)/$(VIMDIFFTARGET):
+-	cd $(DEST_BIN); ln -s $(VIMTARGET) $(VIMDIFFTARGET)
++	cd $(DEST_BIN); ln -sf $(VIMTARGET) $(VIMDIFFTARGET)
+ 
+ $(DEST_BIN)/$(GVIMDIFFTARGET):
+-	cd $(DEST_BIN); ln -s $(VIMTARGET) $(GVIMDIFFTARGET)
++	cd $(DEST_BIN); ln -sf $(VIMTARGET) $(GVIMDIFFTARGET)
+ 
+ $(DEST_BIN)/$(EVIMTARGET):
+-	cd $(DEST_BIN); ln -s $(VIMTARGET) $(EVIMTARGET)
++	cd $(DEST_BIN); ln -sf $(VIMTARGET) $(EVIMTARGET)
+ 
+ $(DEST_BIN)/$(EVIEWTARGET):
+-	cd $(DEST_BIN); ln -s $(VIMTARGET) $(EVIEWTARGET)
++	cd $(DEST_BIN); ln -sf $(VIMTARGET) $(EVIEWTARGET)
+ 
+ # create links for the manual pages with various names to vim.	This is only
+ # done when the links (or manpages with the same name) don't exist yet.
+@@ -1845,34 +1846,34 @@
+ 			$(DEST_MAN)/$(EVIEWNAME).1
+ 
+ $(DEST_MAN)/$(EXNAME).1:
+-	cd $(DEST_MAN); ln -s $(VIMNAME).1 $(EXNAME).1
++	#cd $(DEST_MAN); ln -sf $(VIMNAME).1 $(EXNAME).1
+ 
+ $(DEST_MAN)/$(VIEWNAME).1:
+-	cd $(DEST_MAN); ln -s $(VIMNAME).1 $(VIEWNAME).1
++	#cd $(DEST_MAN); ln -sf $(VIMNAME).1 $(VIEWNAME).1
+ 
+ $(DEST_MAN)/$(GVIMNAME).1:
+-	cd $(DEST_MAN); ln -s $(VIMNAME).1 $(GVIMNAME).1
++	cd $(DEST_MAN); ln -sf $(VIMNAME).1 $(GVIMNAME).1
+ 
+ $(DEST_MAN)/$(GVIEWNAME).1:
+-	cd $(DEST_MAN); ln -s $(VIMNAME).1 $(GVIEWNAME).1
++	cd $(DEST_MAN); ln -sf $(VIMNAME).1 $(GVIEWNAME).1
+ 
+ $(DEST_MAN)/$(RVIMNAME).1:
+-	cd $(DEST_MAN); ln -s $(VIMNAME).1 $(RVIMNAME).1
++	cd $(DEST_MAN); ln -sf $(VIMNAME).1 $(RVIMNAME).1
+ 
+ $(DEST_MAN)/$(RVIEWNAME).1:
+-	cd $(DEST_MAN); ln -s $(VIMNAME).1 $(RVIEWNAME).1
++	cd $(DEST_MAN); ln -sf $(VIMNAME).1 $(RVIEWNAME).1
+ 
+ $(DEST_MAN)/$(RGVIMNAME).1:
+-	cd $(DEST_MAN); ln -s $(VIMNAME).1 $(RGVIMNAME).1
++	cd $(DEST_MAN); ln -sf $(VIMNAME).1 $(RGVIMNAME).1
+ 
+ $(DEST_MAN)/$(RGVIEWNAME).1:
+-	cd $(DEST_MAN); ln -s $(VIMNAME).1 $(RGVIEWNAME).1
++	cd $(DEST_MAN); ln -sf $(VIMNAME).1 $(RGVIEWNAME).1
+ 
+ $(DEST_MAN)/$(GVIMDIFFNAME).1:
+-	cd $(DEST_MAN); ln -s $(VIMDIFFNAME).1 $(GVIMDIFFNAME).1
++	cd $(DEST_MAN); ln -sf $(VIMDIFFNAME).1 $(GVIMDIFFNAME).1
+ 
+ $(DEST_MAN)/$(EVIEWNAME).1:
+-	cd $(DEST_MAN); ln -s $(EVIMNAME).1 $(EVIEWNAME).1
++	cd $(DEST_MAN); ln -sf $(EVIMNAME).1 $(EVIEWNAME).1
+ 
+ uninstall: uninstall_runtime
+ 	-rm -f $(DEST_BIN)/$(VIMTARGET)

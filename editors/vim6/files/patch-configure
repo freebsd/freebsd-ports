@@ -1,0 +1,11 @@
+--- auto/configure.orig	Sat Oct 15 05:55:10 2005
++++ auto/configure	Sun Oct 23 18:13:17 2005
+@@ -2184,7 +2184,7 @@ echo "configure:2177: checking for locat
+ 	    echo "$ac_t""$try/tclConfig.sh" 1>&6
+ 	    . $try/tclConfig.sh
+ 	    	    TCL_LIBS=`eval echo "$TCL_LIB_SPEC $TCL_LIBS"`
+-	    	    	    TCL_DEFS=`echo $TCL_DEFS | sed -e 's/\ /\X/' | tr ' ' '\012' | sed -e '/^-[^D]/d' -e '/-D[^_]/d' -e 's/-D_/ -D_/' | tr -d '\012'`
++	    	    	    TCL_DEFS=`echo $TCL_DEFS       | tr ' ' '\012' | sed -e '/^[^-]/d' -e '/^-[^D]/d' -e '/-D[^_]/d' -e 's/-D_/ -D_/' | tr -d '\012'`
+ 	    break
+ 	  fi
+ 	done
