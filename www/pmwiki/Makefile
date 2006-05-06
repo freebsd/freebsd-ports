@@ -17,7 +17,6 @@ MAINTAINER=	babak@farrokhi.net
 COMMENT=	A WikiWikiWeb clone using PHP
 
 USE_PHP=	mbstring
-PHP4_PORT?=	www/mod_php4
 WANT_PHP_WEB=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}

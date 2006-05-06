@@ -21,7 +21,6 @@ USE_ZIP=	YES
 
 B2EVO_DATE?=	2005-09-16
 USE_PHP=	mysql pcre session xml xmlrpc
-PHP4_PORT?=	www/mod_php4
 NO_BUILD=	YES
 WANT_PHP_WEB=	YES
 

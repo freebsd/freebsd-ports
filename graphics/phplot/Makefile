@@ -15,11 +15,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	yukinopo@livedoor.com
 COMMENT=	A PHP class for creating scientific and business charts
 
-.if defined(WITH_APACHE2)
-RUN_DEPENDS=   ${LOCALBASE}/libexec/apache2/libphp4.so:${PORTSDIR}/www/mod_php4
-.else
-RUN_DEPENDS=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php4
-.endif
+USE_PHP=	yes
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
 
 NO_BUILD=	YES

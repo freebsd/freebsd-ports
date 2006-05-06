@@ -18,7 +18,6 @@ MAINTAINER=	chinsan.tw@gmail.com
 COMMENT=	Cute and easy blog Tool with Traditional-Chinese(zh_TW.UTF-8)
 
 USE_PHP=	mysql pcre session xml
-PHP4_PORT?=	www/mod_php4
 NO_BUILD=	YES
 WANT_PHP_WEB=	YES
 

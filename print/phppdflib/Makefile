@@ -16,13 +16,8 @@ COMMENT=	An easy to use API for creating PDF files dynamically
 
 USE_PHP=	yes
 WANT_PHP_MOD=	yes
-PHP_PORT?=	${PORTSDIR}/www/mod_php4
 
 BROKEN_WITH_PHP=5
-
-.if defined(WITH_APACHE)
-RUN_DEPENDS+=	${LOCALBASE}/${APACHEMODDIR}/libphp4.so:${PHP_PORT}
-.endif
 
 WRKSRC=		${WRKDIR}/phppdflib
 USE_BZIP2=	yes

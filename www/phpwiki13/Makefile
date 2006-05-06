@@ -20,7 +20,6 @@ LATEST_LINK=	phpwiki13
 USE_PHP=	ctype pcre posix session tokenizer xml zlib
 
 NO_BUILD=	YES
-PHP4_PORT?=	www/mod_php4
 PHPWIKI?=	www/data-dist/phpwiki
 PLIST_SUB+=	PHPWIKI=${PHPWIKI}
 SUB_FILES=	pkg-message

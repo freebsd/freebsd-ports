@@ -21,7 +21,6 @@ USE_PHP=	ctype pcre posix session tokenizer xml zlib
 .endif
 
 NO_BUILD=	YES
-PHP4_PORT?=	www/mod_php4
 PHPBT=		www/data-dist/phpbt
 PLIST_SUB=	PHPBT=${PHPBT}
 

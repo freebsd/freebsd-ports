@@ -22,7 +22,6 @@ IGNOREFILES=	_all_plugins${EXTRACT_SUFX} _all_templates${EXTRACT_SUFX}
 USE_ZIP=	YES
 
 USE_PHP=	ctype mysql pcre session xml
-PHP4_PORT?=	www/mod_php4
 NO_BUILD=	YES
 WANT_PHP_WEB=	YES
 WWWDOCROOT?=	www/data

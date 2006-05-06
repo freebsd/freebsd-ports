@@ -18,7 +18,6 @@ GNU_CONFIGURE=	yes
 USE_PHP=	yes
 USE_APACHE=	1.3+
 WANT_PHP_CGI=	yes
-CONFLICTS=	mod_php4-4* php-4.* mod_php5-5* php-5.*
 
 WITH_LOGFILE?=	/var/log/suphp.log
 PHP_PATH?=	${LOCALBASE}/bin/php

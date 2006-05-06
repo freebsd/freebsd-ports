@@ -17,12 +17,7 @@ COMMENT=	GeekLog is a web content magagement system
 USE_MYSQL=	yes
 
 NO_BUILD=	yes
-RUN_DEPENDS+=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php4
-.if defined(WITH_APACHE2)
-RUN_DEPENDS+=	${LOCALBASE}/libexec/apache2/libphp4.so:${PORTSDIR}/www/mod_php4
-.else
-RUN_DEPENDS+=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php4
-.endif
+USE_PHP=	yes
 
 WWW_DIR=	${PREFIX}/www/data
 
