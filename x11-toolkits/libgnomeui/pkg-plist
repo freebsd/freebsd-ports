@@ -49,9 +49,9 @@ include/libgnomeui-2.0/libgnomeui/gnome-window-icon.h
 include/libgnomeui-2.0/libgnomeui/gnome-window.h
 include/libgnomeui-2.0/libgnomeui/gnometypebuiltins.h
 include/libgnomeui-2.0/libgnomeui/libgnomeui.h
-lib/gtk-2.0/%%GTK_VERSION%%/filesystems/libgnome-vfs.a
-lib/gtk-2.0/%%GTK_VERSION%%/filesystems/libgnome-vfs.la
-lib/gtk-2.0/%%GTK_VERSION%%/filesystems/libgnome-vfs.so
+lib/gtk-2.0/%%GTK2_VERSION%%/filesystems/libgnome-vfs.a
+lib/gtk-2.0/%%GTK2_VERSION%%/filesystems/libgnome-vfs.la
+lib/gtk-2.0/%%GTK2_VERSION%%/filesystems/libgnome-vfs.so
 lib/libglade/2.0/libgnome.a
 lib/libglade/2.0/libgnome.la
 lib/libglade/2.0/libgnome.so
@@ -256,6 +256,6 @@ share/locale/zu/LC_MESSAGES/libgnomeui-2.0.mo
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
 @dirrm %%DOCSDIR%%
-@dirrm lib/gtk-2.0/%%GTK_VERSION%%/filesystems
+@dirrm lib/gtk-2.0/%%GTK2_VERSION%%/filesystems
 @dirrm include/libgnomeui-2.0/libgnomeui
 @dirrm include/libgnomeui-2.0

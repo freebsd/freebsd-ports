@@ -30,6 +30,5 @@ USE_AUTOTOOLS=	libtool:15
 USE_BISON=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
-PLIST_SUB=	GTK_VERSION="2.4.0"
 
 .include <bsd.port.mk>
