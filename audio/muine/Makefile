@@ -50,7 +50,7 @@ CONFIGURE_ARGS+=	--disable-faad2
 CONFIGURE_ARGS+=	--enable-xine=yes
 LIB_DEPENDS+=	xine.15:${PORTSDIR}/multimedia/libxine
 .else
-USE_GSTREAMER+=	gconf
+USE_GSTREAMER80+=	gconf
 .endif
 
 post-patch:
