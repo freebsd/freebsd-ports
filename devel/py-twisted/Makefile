@@ -15,7 +15,6 @@ MASTER_SITES=	http://twisted.sourceforge.net/ \
 MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Twisted_NoDocs-${PORTVERSION}
-WRKSRC=		${WRKDIR}/Twisted-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An event-based Python framework for internet applications
@@ -32,6 +31,8 @@ USE_PYTHON=	2.2+
 USE_PYDISTUTILS=	yes
 
 PLIST_SUB+=	S=${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;}
+
+WRKSRC=		${WRKDIR}/Twisted-${PORTVERSION}
 
 post-install:
 	@ ${MKDIR} ${DATADIR}/admin
