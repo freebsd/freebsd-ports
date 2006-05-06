@@ -6,8 +6,7 @@
 #    $MCom: ports/net/avahi/Makefile,v 1.15 2006/04/28 01:52:15 marcus Exp $
 
 PORTNAME=	avahi
-PORTVERSION=	0.6.9
-PORTREVISION?=	5
+PORTVERSION=	0.6.10
 CATEGORIES?=	net dns
 MASTER_SITES=	http://www.avahi.org/download/
 
@@ -65,6 +64,11 @@ PLIST_SUB+=	GTK=""
 CONFIGURE_ARGS+=--disable-gtk
 PLIST_SUB+=	GTK="@comment "
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-ldl||g' ${WRKSRC}/configure \
+		${WRKSRC}/avahi-client/Makefile.in \
+		${WRKSRC}/avahi-daemon/Makefile.in
 
 post-install:
 .if !defined(PACKAGE_BUILDING)
