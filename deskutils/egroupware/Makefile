@@ -5,11 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	eGroupWare
-PORTVERSION=	1.0.0.009
+PORTVERSION=	1.2
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	egroupware
-DISTNAME=	${PORTNAME}-${PORTVERSION}
+DISTNAME=	${PORTNAME}-${PORTVERSION}-1
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	A web based GroupWare system
@@ -40,9 +40,10 @@ post-extract:
 	@${FIND} ${WRKSRC} -name CVS -type d | ${XARGS} ${RM} -rf
 
 do-install:
-	@${CP} -r ${WRKSRC} ${PREFIX}/www/data-dist/
-	${CHMOD} g+w ${DEST}/phpgwapi/images ${DEST}/fudforum
-	${CHGRP} ${WWWGRP} ${DEST}/phpgwapi/images ${DEST}/fudforum
+	-${MKDIR} ${DEST}
+	@${CP} -r ${WRKSRC}/.htaccess ${WRKSRC}/* ${DEST}/
+	${CHMOD} g+w ${DEST}/phpgwapi/images
+	${CHGRP} ${WWWGRP} ${DEST}/phpgwapi/images
 
 # --- postgresql.conf
 # tcpip_socket = true
