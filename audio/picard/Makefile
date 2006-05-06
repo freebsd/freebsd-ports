@@ -8,7 +8,7 @@
 PORTNAME=	picard
 DISTVERSION=	0.6.0
 CATEGORIES=	audio python
-MASTER_SITES=	#https://helixcommunity.org/
+MASTER_SITES=	https://helixcommunity.org/download.php/1791/
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Next generation MusicBrainzTagger
@@ -66,7 +66,7 @@ pre-everything::
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-IGNORE=	Systems prior to FreeBSD 5.0 do not support Unicode
+IGNORE=	systems prior to FreeBSD 5.0 do not support Unicode
 .endif
 
 .if ${ARCH} != "i386"
@@ -77,20 +77,6 @@ WITHOUT_PSYCO=	yes
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/psyco/_psyco.so:${PORTSDIR}/devel/py-psyco
 
 EXTRA_PATCHES+=	${FILESDIR}/extra-psyco-patch-tagger.py
-.endif
-
-## idea taken from ports/java/jdk14/Makefile written by
-## Alexey Zelkin <phantom@FreeBSD.org>
-#
-# Check for sources
-.if !exists(${DISTDIR}/${SOURCEFILE}) && !defined(PACKAGE_BUILDING)
-ECHO_MSG=/usr/bin/printf
-IGNORE= :\n\
-Because of licensing restrictions, you must fetch the source distribution\n\
-manually. Please access http://musicbrainz.org/wd/PicardDownload\n\
-with a web browser and download the \"Linux tarball\" ${SOURCEFILE}\n\
-just below \"Download Picard\" title.\n\
-Please place this file in ${DISTDIR}.\n
 .endif
 
 .include <bsd.port.post.mk>
