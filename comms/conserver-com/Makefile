@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	conserver
-PORTVERSION=	8.1.13
+PORTVERSION=	8.1.14
 CATEGORIES=	comms
 MASTER_SITES=	http://www.conserver.com/ \
 		ftp://ftp.conserver.com/conserver/
@@ -26,6 +26,5 @@ MAN8=	conserver.8
 
 DEFAULTPORT?=	782
 DEFAULTHOST?=	localhost
-
 
 .include <bsd.port.mk>
