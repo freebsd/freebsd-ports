@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nagios
-PORTVERSION=	2.2
+PORTVERSION=	2.3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	nagios
@@ -91,7 +91,7 @@ USE_PERL5=	yes
 CONFIGURE_ARGS+=	--enable-embedded-perl \
 		--with-perlcache
 .else
-IGNORE=		Embedded Perl requires Perl 5.8 or higher (see lang/perl5.8)
+IGNORE=		embedded Perl requires Perl 5.8 or higher (see lang/perl5.8)
 .endif
 PLIST_SUB+=	EMBEDDED_PERL=""
 .else
@@ -103,7 +103,8 @@ CONFIGURE_ARGS+=	--enable-nanosleep
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e 's#"main.html"#"${NAGIOSHOMEURL:S/\//\\\//g:S/&/\\&/g}"#' ${WRKSRC}/html/index.html.in
+	@${REINPLACE_CMD} -e 's#"main.html"#"${NAGIOSHOMEURL:S/\//\\\//g:S/&/\\&/g}"#' \
+		${WRKSRC}/html/index.html.in
 
 pre-install:
 	@${SH} ${PKGINSTALL} ${DISTNAME} PRE-INSTALL

@@ -3,6 +3,11 @@
 # $FreeBSD$
 #
 
+# PROVIDE: nagios
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+
 #
 # Add the following lines to /etc/rc.conf to enable nagios:
 # nagios_enable (bool):    Set to "NO" by default.
