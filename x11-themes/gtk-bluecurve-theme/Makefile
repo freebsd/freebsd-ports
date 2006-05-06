@@ -32,7 +32,7 @@ GTK2_LIBS=	`${LOCALBASE}/bin/pkg-config --libs gtk+-2.0`
 GTK2_WRKSRC=	${WRKSRC}/art/gtk/Bluecurve
 GTK2_RCDIR=	gtk-2.0
 GTK2_SOURCES=	bluecurve_rc_style.c bluecurve_style.c bluecurve_theme_main.c
-GTK2_ENGINEDIR=	lib/gtk-2.0/2.4.0/engines
+GTK2_ENGINEDIR=	lib/gtk-2.0/${GTK2_VERSION}/engines
 
 PLIST=		${WRKDIR}/pkg-plist
 EXTRA_STYLES=	BerriesAndCream Gnome Grape Lime Slate Strawberry Tangerine
