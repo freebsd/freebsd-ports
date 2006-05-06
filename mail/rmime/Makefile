@@ -19,6 +19,7 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	dd@FreeBSD.org
 COMMENT=	Decode MIME messages inside Emacs (works with RMAIL, VM, and mh-e)
 
+USE_EMACS=	yes
 EMACS_PORT_NAME?=	emacs20
 RUN_DEPENDS=	metamail:${PORTSDIR}/mail/metamail
 

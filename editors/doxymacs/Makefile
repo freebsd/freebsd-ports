@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	dryice@dryice.name
 COMMENT=	Doxymacs is Doxygen + {X}Emacs
 
+USE_EMACS=	yes
 EMACS_PORT_NAME?=	emacs21
 BUILD_DEPENDS=		${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/w3/w3.el:${PORTSDIR}/www/w3-4 \
 			xmllint:${PORTSDIR}/textproc/libxml2

@@ -13,6 +13,7 @@ MASTER_SITES=	http://www-rocq.inria.fr/~acohen/tuareg/mode/
 MAINTAINER=	dd@FreeBSD.org
 COMMENT=	Emacs major mode for editing Caml code
 
+USE_EMACS=	yes
 EMACS_PORT_NAME?=	emacs20
 
 DOC_FILES=	README HISTORY append-tuareg.el custom-tuareg.el
