@@ -1,6 +1,6 @@
 # New ports collection makefile for:    apparix
 # Date created:         16 Apr 2006
-# Whom:                 Frank Steinborn <steinex@gmx.de>
+# Whom:                 Frank Steinborn <steinex@nognu.de>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=	misc
 MASTER_SITES=	http://micans.org/apparix/src/
 DISTNAME=	${PORTNAME}-06-005
 
-MAINTAINER=	steinex@gmx.de
+MAINTAINER=	steinex@nognu.de
 COMMENT=	Bookmark directories and apparate inside them
 
 GNU_CONFIGURE=	yes
