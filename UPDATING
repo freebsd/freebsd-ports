@@ -7,6 +7,22 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 20060506:
+  AFFECTS: users of PHP
+  AUTHOR: ale@FreeBSD.org
+
+  The old PHP slave ports (phpN-cli, phpN-cgi and mod_phpN) were removed
+  in favour of unified PHP ports that allow building any combination of
+  PHP SAPIs (cli, cgi and apache module).
+  The PHP CGI binary was renamed to php-cgi, so you should update
+  the path in your script. To simplify the update process, *only* for
+  this release a 'php' compatibility symlink to php-cgi will be created
+  if you don't select the CLI SAPI.
+  Before the upgrade you *should* run 'make config' in lang/php4 or
+  lang/php5 to configure the SAPIs you want to install.
+  As a consequence the default binary packages include the CLI and the
+  FastCGI SAPIs.
+
+20060506:
   AFFECTS: users of lang/lua, especially KDE editor Kile users
   AUTHOR: pav@FreeBSD.org
 

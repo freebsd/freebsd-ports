@@ -1,4 +1,5 @@
-%%CLICGI%%bin/php
+%%CLI%%bin/php
+%%CGI%%bin/php-cgi
 bin/php-config
 bin/phpize
 etc/php.conf

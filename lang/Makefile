@@ -191,11 +191,9 @@
     SUBDIR += pfe-devel
     SUBDIR += php-mode.el
     SUBDIR += php4
-    SUBDIR += php4-cli
     SUBDIR += php4-extensions
     SUBDIR += php4-overload
     SUBDIR += php5
-    SUBDIR += php5-cli
     SUBDIR += php5-extensions
     SUBDIR += php_doc
     SUBDIR += pike70

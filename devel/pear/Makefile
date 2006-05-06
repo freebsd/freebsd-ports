@@ -17,7 +17,7 @@ COMMENT=	PEAR framework for PHP
 USE_BZIP2=	yes
 NO_BUILD=	yes
 
-WANT_PHP_SCR=	yes
+WANT_PHP_CLI=	yes
 USE_PHP=	pcre xml
 
 SUB_FILES=	pkg-message

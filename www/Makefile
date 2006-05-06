@@ -346,8 +346,6 @@
     SUBDIR += mod_ntlm
     SUBDIR += mod_perl
     SUBDIR += mod_perl2
-    SUBDIR += mod_php4
-    SUBDIR += mod_php5
     SUBDIR += mod_proxy_add_forward
     SUBDIR += mod_proxy_html
     SUBDIR += mod_pubcookie
@@ -759,10 +757,8 @@
     SUBDIR += php-dyn
     SUBDIR += php-screw
     SUBDIR += php-templates
-    SUBDIR += php4-cgi
     SUBDIR += php4-mnogosearch
     SUBDIR += php4-session
-    SUBDIR += php5-cgi
     SUBDIR += php5-session
     SUBDIR += php5-tidy
     SUBDIR += phpSysInfo

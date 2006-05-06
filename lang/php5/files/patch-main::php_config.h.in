@@ -1,6 +1,6 @@
---- main/php_config.h.in.orig	Mon Sep  5 13:16:27 2005
-+++ main/php_config.h.in	Wed Nov 16 09:30:03 2005
-@@ -2454,6 +2454,9 @@
+--- main/php_config.h.in.orig	Wed Jan 11 15:25:52 2006
++++ main/php_config.h.in	Wed May  3 09:38:09 2006
+@@ -2760,6 +2760,9 @@
  /* Define if uint32_t type is present.  */
  #undef HAVE_UINT32_T
  

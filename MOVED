@@ -2290,3 +2290,9 @@ graphics/mrsidviewer||2006-04-30|Removed (distribution no longer available from 
 graphics/kimdaba|graphics/kphotoalbum|2006-04-30|renamed
 sysutils/sge53||2006-05-02|Has expired: SGE 5.3 is no longer maintained.  Please consider sysutils/sge instead
 sysutils/sgeee53||2006-05-02|Slave of sysutils/sge53 which was removed
+lang/php4-cli|lang/php4|2006-05-06|Unification of php slave ports
+lang/php5-cli|lang/php5|2006-05-06|Unification of php slave ports
+www/mod_php4|lang/php4|2006-05-06|Unification of php slave ports
+www/mod_php5|lang/php5|2006-05-06|Unification of php slave ports
+www/php4-cgi|lang/php4|2006-05-06|Unification of php slave ports
+www/php5-cgi|lang/php5|2006-05-06|Unification of php slave ports

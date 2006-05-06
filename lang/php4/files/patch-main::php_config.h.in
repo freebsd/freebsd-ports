@@ -1,6 +1,6 @@
---- main/php_config.h.in.orig	Sun Oct 30 12:06:40 2005
-+++ main/php_config.h.in	Wed Nov 16 09:18:14 2005
-@@ -2606,6 +2606,9 @@
+--- main/php_config.h.in.orig	Thu Jan 12 19:24:28 2006
++++ main/php_config.h.in	Fri May  5 08:02:13 2006
+@@ -2624,6 +2624,9 @@
  /* Whether to build zip as dynamic module */
  #undef COMPILE_DL_ZIP
  
