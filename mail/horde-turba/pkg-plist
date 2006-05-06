@@ -22,7 +22,6 @@
 %%TURBADIR%%/edit.php
 %%TURBADIR%%/index.php
 %%TURBADIR%%/lib/.htaccess
-%%TURBADIR%%/lib/AbstractObject.php
 %%TURBADIR%%/lib/Block/minisearch.php
 %%TURBADIR%%/lib/Block/tree_menu.php
 %%TURBADIR%%/lib/Driver.php
@@ -143,8 +142,9 @@
 %%TURBADIR%%/scripts/sql/turba_objects.pgsql.sql
 %%TURBADIR%%/scripts/sql/turba_objects.sql
 %%TURBADIR%%/scripts/sql/turba_weddingguests.sql
+%%TURBADIR%%/scripts/upgrades/create_default_histories.php
+%%TURBADIR%%/scripts/upgrades/1.2_to_2.0.oci8.sql
 %%TURBADIR%%/scripts/upgrades/1.2_to_2.0.sql
-%%TURBADIR%%/scripts/upgrades/2004-10-26_create_default_histories.php
 %%TURBADIR%%/scripts/upgrades/public_to_horde_share.php
 %%TURBADIR%%/search.php
 %%TURBADIR%%/templates/.htaccess
