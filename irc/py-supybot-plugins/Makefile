@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	supybot-plugins
-PORTVERSION=	20050715
+PORTVERSION=	20050830
 CATEGORIES=	irc python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	supybot
@@ -22,7 +22,7 @@ USE_PYTHON=	2.3+
 USE_BZIP2=	yes
 
 post-extract:
-	${RM} -rf ${WRKSRC}/_darcs
+	@${RM} -rf ${WRKSRC}/_darcs
 
 do-build:
 	cd ${WRKSRC} && ${PYTHON_CMD} -c 'import compileall;compileall.compile_dir(".");' && ${PYTHON_CMD} -O -c 'import compileall;compileall.compile_dir(".");'
