@@ -3,13 +3,14 @@ bin/racc2y
 bin/y2racc
 %%RUBY_SITELIBDIR%%/racc/compat.rb
 %%RUBY_SITELIBDIR%%/racc/compiler.rb
+%%RUBY_SITELIBDIR%%/racc/exception.rb
 %%RUBY_SITELIBDIR%%/racc/grammar.rb
 %%RUBY_SITELIBDIR%%/racc/grammarfileparser.rb
 %%RUBY_SITELIBDIR%%/racc/grammarfilescanner.rb
 %%RUBY_SITELIBDIR%%/racc/info.rb
 %%RUBY_SITELIBDIR%%/racc/iset.rb
 %%RUBY_SITELIBDIR%%/racc/output.rb
-%%RUBY_SITELIBDIR%%/racc/rubyloader.rb
+%%RUBY_SITELIBDIR%%/racc/parser-text.rb
 %%RUBY_SITELIBDIR%%/racc/state.rb
 %%RUBY_SITELIBDIR%%/racc/usercodeparser.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/array.y
