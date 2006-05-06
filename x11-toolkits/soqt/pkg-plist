@@ -15,6 +15,7 @@ include/Inventor/Qt/editors/SoQtColorEditor.h
 include/Inventor/Qt/editors/SoQtMaterialEditor.h
 include/Inventor/Qt/engines/.keep_me
 include/Inventor/Qt/nodes/SoGuiColorEditor.h
+include/Inventor/Qt/nodes/SoGuiMaterialEditor.h
 include/Inventor/Qt/viewers/SoQtConstrainedViewer.h
 include/Inventor/Qt/viewers/SoQtExaminerViewer.h
 include/Inventor/Qt/viewers/SoQtFlyViewer.h
@@ -25,7 +26,7 @@ include/Inventor/Qt/widgets/SoQtPopupMenu.h
 include/Inventor/Qt/widgets/SoQtThumbWheel.h
 lib/libSoQt.la
 lib/libSoQt.so
-lib/libSoQt.so.22
+lib/libSoQt.so.23
 share/Coin/conf/soqt-default.cfg
 share/aclocal/soqt.m4
 @dirrm include/Inventor/Qt/widgets
