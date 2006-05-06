@@ -650,6 +650,7 @@
     SUBDIR += sendsnpp
     SUBDIR += ser
     SUBDIR += serveez
+    SUBDIR += service-discovery-applet
     SUBDIR += sflowtool
     SUBDIR += sharity-light
     SUBDIR += shmux

@@ -1,0 +1,11 @@
+--- servers/Makefile.in.orig	Sat May  6 15:01:00 2006
++++ servers/Makefile.in	Sat May  6 15:01:20 2006
+@@ -367,7 +367,7 @@ uninstall-am: uninstall-info-am uninstal
+ @INTLTOOL_SERVER_RULE@
+ 
+ all: GNOME_ServiceDiscoveryApplet.server
+-	sed -i \
++	sed -i "" \
+ 	-e 's,@bindir\@,$(bindir),g' \
+ 	-e 's,@iconsdir\@,$(ICONSDIR),g' \
+ 	GNOME_ServiceDiscoveryApplet.server
