@@ -23,6 +23,7 @@ RUN_DEPENDS=	uim-el-agent:${PORTSDIR}/textproc/uim
 USE_PERL5_BUILD=yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
+USE_EMACS=	yes
 GNU_CONFIGURE=	yes
 
 EMACS_PORT_NAME?=	emacs21
