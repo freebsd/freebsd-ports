@@ -1,5 +1,6 @@
 @comment $FreeBSD$
 etc/dovecot-example.conf
+lib/dovecot/imap/lib01_acl_plugin.so
 lib/dovecot/imap/lib01_convert_plugin.so
 lib/dovecot/imap/lib01_quota_plugin.so
 lib/dovecot/imap/lib01_zlib_plugin.a
@@ -12,10 +13,14 @@ lib/dovecot/imap/lib02_trash_plugin.so
 @dirrm lib/dovecot/imap
 lib/dovecot/pop3/lib01_convert_plugin.so
 @dirrm lib/dovecot/pop3
+lib/dovecot/lda/lib01_acl_plugin.so
 lib/dovecot/lda/lib01_convert_plugin.so
 lib/dovecot/lda/lib01_quota_plugin.so
 lib/dovecot/lda/lib02_trash_plugin.so
 @dirrm lib/dovecot/lda
+lib/dovecot/lib01_acl_plugin.a
+lib/dovecot/lib01_acl_plugin.la
+lib/dovecot/lib01_acl_plugin.so
 lib/dovecot/lib01_convert_plugin.a
 lib/dovecot/lib01_convert_plugin.la
 lib/dovecot/lib01_convert_plugin.so

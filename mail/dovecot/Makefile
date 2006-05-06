@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	dovecot
-DISTVERSION=	1.0.beta3
-PORTREVISION=	1
+DISTVERSION=	1.0.beta7
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://www.dovecot.org/releases/
 
@@ -35,7 +34,7 @@ PORTDOCS=	USE-WIKI-INSTEAD \
 CONFIGURE_ARGS+=	--without-docs
 .endif
 
-OPTIONS=	KQUEUE		"kqueue(2) support"	on  \
+OPTIONS=	KQUEUE		"kqueue(2) support"	off  \
 		SASL2		"SASL2 support"		off \
 		GSSAPI		"GSSAPI support"	off \
 		VPOPMAIL	"VPopMail support"	off \
