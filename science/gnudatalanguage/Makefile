@@ -7,7 +7,7 @@
 
 PORTNAME=	gnudatalanguage
 PORTVERSION=	0.8.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -32,7 +32,7 @@ COMMENT?=	GDL, a free IDL compatible incremental compiler
 #---------------------------------------------------------------------------
 
 LIB_DEPENDS+=	plplotd.10:${PORTSDIR}/math/plplot	\
-		gsl.7:${PORTSDIR}/math/gsl		\
+		gsl.9:${PORTSDIR}/math/gsl		\
 		readline.5:${PORTSDIR}/devel/readline
 
 USE_XLIB=	yes
@@ -104,7 +104,7 @@ CONFIGURE_ARGS+=--with-fftw=${LOCALBASE}
 .endif
 
 .if ${OSVERSION} < 500000
-BROKEN=	"Does not compile with gcc-2.95"
+BROKEN=	Does not compile with gcc-2.95
 .endif
 
 .if defined(BUILD_PYTHON_MODULE)

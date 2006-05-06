@@ -7,7 +7,7 @@
 
 PORTNAME=		snd
 PORTVERSION=		7.8
-PORTREVISION=		4
+PORTREVISION=		5
 CATEGORIES=		audio
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Multitracking sound editor and utilities
 
-LIB_DEPENDS=		gsl.7:${PORTSDIR}/math/gsl
+LIB_DEPENDS=		gsl.9:${PORTSDIR}/math/gsl
 
 ALL_TARGET=		audinfo snd sndinfo sndplay sndrecord sndsine
 CONFIGURE_ARGS=		--with-float-samples \
@@ -83,7 +83,7 @@ USE_XLIB=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"
-BROKEN=		"Does not compile on sparc64"
+BROKEN=		does not compile on sparc64
 .endif
 
 post-build:
