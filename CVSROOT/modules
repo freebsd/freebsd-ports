@@ -460,6 +460,7 @@ arp-sk		ports/net/arp-sk
 arpack		ports/math/arpack
 arpack++	ports/math/arpack++
 arpd		ports/net/arpd
+arpdig		ports/net/arpdig
 arping		ports/net/arping
 arprelease	ports/net/arprelease
 arpscan		ports/net-mgmt/arpscan
