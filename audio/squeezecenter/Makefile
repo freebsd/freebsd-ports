@@ -7,6 +7,7 @@
 
 PORTNAME=	slimserver
 PORTVERSION=	6.2.2
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.slimdevices.com/downloads/SlimServer_v${PORTVERSION}/
 DISTNAME=	SlimServer_v${PORTVERSION}.no-cpan-arch
@@ -162,7 +163,7 @@ post-build:
 	    ${SED} -e 's|${TMP_DOCSDIR}|@dirrm %%DOCSDIR%%|' | \
 	    ${SORT} -r >> ${PLIST}
 .endif
-	@${ECHO} '@unexec rm -rf /var/db/slimserver/cache 2>&1 >/dev/null || true' >> ${PLIST}
+	@${ECHO} '@unexec rm -rf /var/db/slimserver/cache > /dev/null 2>&1 || true' >> ${PLIST}
 	@${ECHO} '@dirrmtry /var/db/slimserver/playlists' >> ${PLIST}
 	@${ECHO} '@dirrmtry /var/db/slimserver' >> ${PLIST}
 	@${ECHO} '@unexec test -d /var/db/slimserver && (echo "Configuration information saved.  If you will *NOT* use this package anymore," && echo "please remove /var/db/slimserver and its contents manually.")' >> ${PLIST}
