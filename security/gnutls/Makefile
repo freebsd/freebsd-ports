@@ -26,9 +26,9 @@ LIB_DEPENDS=	gcrypt.13:${PORTSDIR}/security/libgcrypt \
 LIB_DEPENDS+=	opencdk.8:${PORTSDIR}/security/opencdk
 .endif
 
-.if defined(WITH_LIBTASN1) || exists(${LOCALBASE}/lib/libtasn1.so.3)
-LIB_DEPENDS+=	tasn1.3:${PORTSDIR}/security/libtasn1
-.endif
+#.if defined(WITH_LIBTASN1) || exists(${LOCALBASE}/lib/libtasn1.so.3)
+#LIB_DEPENDS+=	tasn1.3:${PORTSDIR}/security/libtasn1
+#.endif
 
 CONFLICTS=	gnutls-devel-[0-9]*
 
@@ -43,7 +43,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
 		MAKEINFO="${LOCALBASE}/bin/makeinfo"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS+=	--with-included-lzo
+CONFIGURE_ARGS+=	--with-included-lzo --with-included-libtasn1
 MANCOMPRESSED=	no
 
 .include <bsd.port.pre.mk>
