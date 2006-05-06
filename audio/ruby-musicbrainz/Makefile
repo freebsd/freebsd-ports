@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	musicbrainz
-PORTVERSION=	0.2.0
+PORTVERSION=	0.2.1
 CATEGORIES=	audio ruby
 MASTER_SITES=	http://www.pablotron.org/download/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
