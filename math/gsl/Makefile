@@ -6,17 +6,18 @@
 #
 
 PORTNAME=	gsl
-PORTVERSION=	1.6
-PORTREVISION=	1
+PORTVERSION=	1.8
 CATEGORIES=	math
-MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	${MASTER_SITE_GNU:S/$/:gsl/} \
+		http://www.gnu.org/software/${PORTNAME}/manual/:gslref
+MASTER_SITE_SUBDIR=	${PORTNAME}/:gsl
 .if !defined(NOPORTDOCS)
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${GSLREF}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:gsl \
+		${GSLREF}:gslref
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 .endif
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	rainer.alves@gmail.com
 COMMENT=	The GNU Scientific Library - mathematical libs
 
 INSTALLS_SHLIB=	yes
@@ -32,7 +33,7 @@ GSLREF=		gsl-ref.ps.gz
 IGNOREFILES=	${GSLREF}
 
 post-extract:
-	${RM} -f ${WRKSRC}/doc/gsl-ref.info*
+	@${RM} -f ${WRKSRC}/doc/gsl-ref.info*
 
 post-install:
 .if !defined(NOPORTDOCS)
