@@ -1,0 +1,11 @@
+--- configure.orig	Sat May  6 18:58:28 2006
++++ configure	Sat May  6 18:59:05 2006
+@@ -19179,7 +19179,7 @@ fi
+    # this is useful
+    echo "$as_me:$LINENO: checking whether to check for GCC pthread/shared inconsistencies" >&5
+ echo $ECHO_N "checking whether to check for GCC pthread/shared inconsistencies... $ECHO_C" >&6
+-   if test x"" = x1; then
++   if test x1"" = x1; then
+       echo "$as_me:$LINENO: result: no" >&5
+ echo "${ECHO_T}no" >&6
+    else
