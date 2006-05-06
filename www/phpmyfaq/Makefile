@@ -19,7 +19,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}.${PORTVERSION}
 USE_ZIP=	YES
 
 USE_PHP=	mysql pcre pdf session xml xmlrpc zlib
-PHP4_PORT?=	www/mod_php4
 NO_BUILD=	YES
 WANT_PHP_WEB=	YES
 

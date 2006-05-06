@@ -14,11 +14,12 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A real-time stats parser for Half Life & its mods
 
-RUN_DEPENDS=	php-config:${PORTSDIR}/www/mod_php4 \
+RUN_DEPENDS=	\
 		${SITE_PERL}/${PERL_ARCH}/Mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
 
 NO_BUILD=	yes
 USE_APACHE=	yes
+USE_PHP=	yes
 USE_PERL5_RUN=	yes
 
 do-install:

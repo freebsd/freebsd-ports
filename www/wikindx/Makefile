@@ -19,7 +19,6 @@ USE_PHP=	session mysql
 
 NO_BUILD=	YES
 WRKSRC=		${WRKDIR}/wikindx3
-PHP4_PORT?=	www/mod_php4
 WIKINDX?=	www/data-dist/wikindx
 PLIST_SUB+=	WIKINDX=${WIKINDX}
 ROOTFILES=	config.php index.php rss.php

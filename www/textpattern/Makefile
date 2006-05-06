@@ -15,7 +15,6 @@ COMMENT=	A free, flexible, elegant, easy-to-use content management system
 
 NO_BUILD=	YES
 WANT_PHP_WEB=	YES
-PHP4_PORT?=	www/mod_php4
 WWWOWN?=	www
 WWWGRP?=	www
 TEXTPATTERN?=	www/data-dist/${PORTNAME}

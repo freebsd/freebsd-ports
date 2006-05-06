@@ -20,7 +20,6 @@ COMMENT=	Multi-user version of the famous WordPress blogging application
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
 USE_PHP=	mysql pcre xml
-PHP4_PORT?=	www/mod_php4
 NO_BUILD=	yes
 WANT_PHP_WEB=	yes
 WORDPRESSMU?=	www/data/wordpress-mu

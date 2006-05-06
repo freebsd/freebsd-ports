@@ -18,7 +18,6 @@ COMMENT=	A simple and easy to use wiki, no database required
 
 DIST_VER=	${PORTNAME}-2006-03-09
 USE_PHP=	gd pcre session xml zlib
-PHP4_PORT?=	www/mod_php4
 NO_BUILD=	YES
 WANT_PHP_WEB=	YES
 

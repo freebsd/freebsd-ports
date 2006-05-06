@@ -22,7 +22,6 @@ USE_PHP=	ctype pcre posix session tokenizer xml zlib
 .endif
 
 NO_BUILD=	YES
-PHP4_PORT?=	www/mod_php4
 PHPWIKI?=	www/data-dist/phpwiki
 PLIST_SUB+=	PHPWIKI=${PHPWIKI}
 USERFILES=	admin.php lib/config.php
