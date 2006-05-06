@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	epoz
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.2
 CATEGORIES=	www zope
 MASTER_SITES=	http://mjablonski.zope.de/Epoz/releases/
 PKGNAMEPREFIX=	zope-
@@ -19,24 +19,12 @@ USE_PYTHON=	yes
 USE_ZOPE=	yes
 DIST_SUBDIR=	zope
 
-PLIST=		${WRKDIR}/pkg-plist
 WRKSRC=		${WRKDIR}/Epoz
 
 PRODUCTNAME=	Epoz
 
 do-build:
-	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
-
-pre-install:
-	@${RM} -f ${PLIST}
-	@${TOUCH} ${PLIST}
-	@cd ${WRKDIR} ;\
-	for f in `${FIND} ${PRODUCTNAME} -type f`; do \
-		${ECHO_CMD} %%ZOPEPRODUCTDIR%%/$${f} >> ${PLIST}; \
-	done; \
-	for d in `${FIND} -d ${PRODUCTNAME} -type d`; do \
-		${ECHO_CMD} @dirrm %%ZOPEPRODUCTDIR%%/$${d} >> ${PLIST}; \
-	done; \
+	-@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}/
 
 do-install:
 	@${MKDIR} ${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/

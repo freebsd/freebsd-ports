@@ -1,0 +1,76 @@
+%%ZOPEPRODUCTDIR%%/Epoz/CHANGES.txt
+%%ZOPEPRODUCTDIR%%/Epoz/FAQ.txt
+%%ZOPEPRODUCTDIR%%/Epoz/HISTORY.txt
+%%ZOPEPRODUCTDIR%%/Epoz/LICENSE.txt
+%%ZOPEPRODUCTDIR%%/Epoz/mxTidyHowTo.txt
+%%ZOPEPRODUCTDIR%%/Epoz/README.txt
+%%ZOPEPRODUCTDIR%%/Epoz/TODO.txt
+%%ZOPEPRODUCTDIR%%/Epoz/version.txt
+%%ZOPEPRODUCTDIR%%/Epoz/__init__.py
+%%ZOPEPRODUCTDIR%%/Epoz/Extensions/EpozPostTidy.py
+%%ZOPEPRODUCTDIR%%/Epoz/Extensions/Install.py
+%%ZOPEPRODUCTDIR%%/Epoz/Extensions/__init__.py
+%%ZOPEPRODUCTDIR%%/Epoz/Extensions/EpozPostTidy.pyc
+%%ZOPEPRODUCTDIR%%/Epoz/Extensions/Install.pyc
+%%ZOPEPRODUCTDIR%%/Epoz/Extensions/__init__.pyc
+%%ZOPEPRODUCTDIR%%/Epoz/epoz/epoz_images/epoz_button_anchor.gif
+%%ZOPEPRODUCTDIR%%/Epoz/epoz/epoz_images/epoz_button_bgcolor.gif
+%%ZOPEPRODUCTDIR%%/Epoz/epoz/epoz_images/epoz_button_bold.gif
+%%ZOPEPRODUCTDIR%%/Epoz/epoz/epoz_images/epoz_button_centre.gif
+%%ZOPEPRODUCTDIR%%/Epoz/epoz/epoz_images/epoz_button_hr.gif
+%%ZOPEPRODUCTDIR%%/Epoz/epoz/epoz_images/epoz_button_hyperlink.gif
+%%ZOPEPRODUCTDIR%%/Epoz/epoz/epoz_images/epoz_button_image.gif
+%%ZOPEPRODUCTDIR%%/Epoz/epoz/epoz_images/epoz_button_indent.gif
+%%ZOPEPRODUCTDIR%%/Epoz/epoz/epoz_images/epoz_button_italic.gif
+%%ZOPEPRODUCTDIR%%/Epoz/epoz/epoz_images/epoz_button_left_just.gif
+%%ZOPEPRODUCTDIR%%/Epoz/epoz/epoz_images/epoz_button_list.gif
+%%ZOPEPRODUCTDIR%%/Epoz/epoz/epoz_images/epoz_button_numbered_list.gif
+%%ZOPEPRODUCTDIR%%/Epoz/epoz/epoz_images/epoz_button_outdent.gif
+%%ZOPEPRODUCTDIR%%/Epoz/epoz/epoz_images/epoz_button_redo.gif
+%%ZOPEPRODUCTDIR%%/Epoz/epoz/epoz_images/epoz_button_right_just.gif
+%%ZOPEPRODUCTDIR%%/Epoz/epoz/epoz_images/epoz_button_space.gif
+%%ZOPEPRODUCTDIR%%/Epoz/epoz/epoz_images/epoz_button_strikethrough.gif
+%%ZOPEPRODUCTDIR%%/Epoz/epoz/epoz_images/epoz_button_subscript.gif
+%%ZOPEPRODUCTDIR%%/Epoz/epoz/epoz_images/epoz_button_superscript.gif
+%%ZOPEPRODUCTDIR%%/Epoz/epoz/epoz_images/epoz_button_table.gif
+%%ZOPEPRODUCTDIR%%/Epoz/epoz/epoz_images/epoz_button_textcolor.gif
+%%ZOPEPRODUCTDIR%%/Epoz/epoz/epoz_images/epoz_button_tools.gif
+%%ZOPEPRODUCTDIR%%/Epoz/epoz/epoz_images/epoz_button_underline.gif
+%%ZOPEPRODUCTDIR%%/Epoz/epoz/epoz_images/epoz_button_undo.gif
+%%ZOPEPRODUCTDIR%%/Epoz/epoz/epoz_images/epoz_button_unformat.gif
+%%ZOPEPRODUCTDIR%%/Epoz/epoz/epoz_core/vcXMLRPC.js.dtml
+%%ZOPEPRODUCTDIR%%/Epoz/epoz/epoz_core/epoz_script_widget.js.dtml
+%%ZOPEPRODUCTDIR%%/Epoz/epoz/epoz_core/epoz_script_table.html.dtml
+%%ZOPEPRODUCTDIR%%/Epoz/epoz/epoz_core/epoz_script_main.js.dtml
+%%ZOPEPRODUCTDIR%%/Epoz/epoz/epoz_core/epoz_script_detect.js.dtml
+%%ZOPEPRODUCTDIR%%/Epoz/epoz/epoz_core/epoz_script_color.html.dtml
+%%ZOPEPRODUCTDIR%%/Epoz/epoz/epoz_core/epoz_redirect.js.dtml
+%%ZOPEPRODUCTDIR%%/Epoz/epoz/epoz_core/epoz_iframe_trigger.js.dtml
+%%ZOPEPRODUCTDIR%%/Epoz/epoz/epoz_core/epoz_blank_iframe.html.pt
+%%ZOPEPRODUCTDIR%%/Epoz/epoz/epoz_i18n/epoz_lang_da.js.dtml
+%%ZOPEPRODUCTDIR%%/Epoz/epoz/epoz_i18n/epoz_lang_de.js.dtml
+%%ZOPEPRODUCTDIR%%/Epoz/epoz/epoz_i18n/epoz_lang_en.js.dtml
+%%ZOPEPRODUCTDIR%%/Epoz/epoz/epoz_i18n/epoz_lang_es.js.dtml
+%%ZOPEPRODUCTDIR%%/Epoz/epoz/epoz_i18n/epoz_lang_fi.js.dtml
+%%ZOPEPRODUCTDIR%%/Epoz/epoz/epoz_i18n/epoz_lang_fr.js.dtml
+%%ZOPEPRODUCTDIR%%/Epoz/epoz/epoz_i18n/epoz_lang_hu.js.dtml
+%%ZOPEPRODUCTDIR%%/Epoz/epoz/epoz_i18n/epoz_lang_it.js.dtml
+%%ZOPEPRODUCTDIR%%/Epoz/epoz/epoz_i18n/epoz_lang_nl.js.dtml
+%%ZOPEPRODUCTDIR%%/Epoz/epoz/epoz_i18n/epoz_lang_no.js.dtml
+%%ZOPEPRODUCTDIR%%/Epoz/epoz/epoz_i18n/epoz_lang_pl.js.dtml
+%%ZOPEPRODUCTDIR%%/Epoz/epoz/epoz_i18n/epoz_lang_pt-br.js.dtml
+%%ZOPEPRODUCTDIR%%/Epoz/epoz/epoz_i18n/epoz_lang_pt.js.dtml
+%%ZOPEPRODUCTDIR%%/Epoz/epoz/epoz_i18n/epoz_lang_ru.js.dtml
+%%ZOPEPRODUCTDIR%%/Epoz/epoz/epoz_i18n/epoz_lang_zh-cn.js.dtml
+%%ZOPEPRODUCTDIR%%/Epoz/epoz/epoz_i18n/epoz_lang_sk.js.dtml
+%%ZOPEPRODUCTDIR%%/Epoz/epoz/epoz_plone/epoz_toolbox.pt
+%%ZOPEPRODUCTDIR%%/Epoz/epoz/epoz_plone/epoz_wysiwyg_support.pt
+%%ZOPEPRODUCTDIR%%/Epoz/epoz/epoz_plone/wysiwyg_support.pt
+%%ZOPEPRODUCTDIR%%/Epoz/__init__.pyc
+@dirrm %%ZOPEPRODUCTDIR%%/Epoz/Extensions
+@dirrm %%ZOPEPRODUCTDIR%%/Epoz/epoz/epoz_images
+@dirrm %%ZOPEPRODUCTDIR%%/Epoz/epoz/epoz_core
+@dirrm %%ZOPEPRODUCTDIR%%/Epoz/epoz/epoz_i18n
+@dirrm %%ZOPEPRODUCTDIR%%/Epoz/epoz/epoz_plone
+@dirrm %%ZOPEPRODUCTDIR%%/Epoz/epoz
+@dirrm %%ZOPEPRODUCTDIR%%/Epoz
