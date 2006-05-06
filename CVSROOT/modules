@@ -6663,8 +6663,6 @@ mod_mysqluserdir	ports/www/mod_mysqluserdir
 mod_ntlm	ports/www/mod_ntlm
 mod_perl	ports/www/mod_perl
 mod_perl2	ports/www/mod_perl2
-mod_php4	ports/www/mod_php4
-mod_php5	ports/www/mod_php5
 mod_proxy_add_forward	ports/www/mod_proxy_add_forward
 mod_proxy_html	ports/www/mod_proxy_html
 mod_pubcookie	ports/www/mod_pubcookie
@@ -9970,8 +9968,6 @@ php4		ports/lang/php4
 php4-bcmath	ports/math/php4-bcmath
 php4-bz2	ports/archivers/php4-bz2
 php4-calendar	ports/misc/php4-calendar
-php4-cgi	ports/www/php4-cgi
-php4-cli	ports/lang/php4-cli
 php4-crack	ports/security/php4-crack
 php4-cryptopp	ports/security/php4-cryptopp
 php4-ctype	ports/textproc/php4-ctype
@@ -10034,8 +10030,6 @@ php5		ports/lang/php5
 php5-bcmath	ports/math/php5-bcmath
 php5-bz2	ports/archivers/php5-bz2
 php5-calendar	ports/misc/php5-calendar
-php5-cgi	ports/www/php5-cgi
-php5-cli	ports/lang/php5-cli
 php5-creole	ports/databases/php5-creole
 php5-ctype	ports/textproc/php5-ctype
 php5-curl	ports/ftp/php5-curl
