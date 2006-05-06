@@ -21,7 +21,7 @@ BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		popt.0:${PORTSDIR}/devel/popt \
 		croco-${CROCO_VERSION}.3:${PORTSDIR}/textproc/libcroco
-RUN_DEPENDS=	${X11BASE}/lib/gtk-2.0/${GTK_VERSION}/engines/libmetal.so:${PORTSDIR}/x11-themes/gtk-engines2
+RUN_DEPENDS=	${X11BASE}/lib/gtk-2.0/${GTK2_VERSION}/engines/libmetal.so:${PORTSDIR}/x11-themes/gtk-engines2
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -39,9 +39,6 @@ CONFIGURE_ARGS=	--with-svgz \
 		--enable-gtk-theme
 
 CROCO_VERSION=	0.6
-GTK_VERSION=	2.4.0
-
-PLIST_SUB=	GTK_VERSION=${GTK_VERSION}
 
 MAN1=		rsvg.1
 
