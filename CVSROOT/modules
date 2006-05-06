@@ -12055,6 +12055,7 @@ serialmail	ports/mail/serialmail
 serpentine	ports/sysutils/serpentine
 serveez		ports/net/serveez
 service-config	ports/sysutils/service-config
+service-discovery-applet	ports/net/service-discovery-applet
 servlet-api	ports/www/servlet-api
 ses		ports/math/ses
 session2	ports/www/session2
