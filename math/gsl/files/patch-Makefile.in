@@ -1,11 +1,11 @@
---- Makefile.in.orig	Sat Sep 29 13:07:34 2001
-+++ Makefile.in	Sat Sep 29 13:08:00 2001
-@@ -90,7 +90,7 @@
- 
+--- Makefile.in.orig	Fri Mar 31 14:47:46 2006
++++ Makefile.in	Wed May  3 17:02:20 2006
+@@ -254,7 +254,7 @@
+ SUBLIBS = block/libgslblock.la blas/libgslblas.la complex/libgslcomplex.la cheb/libgslcheb.la dht/libgsldht.la diff/libgsldiff.la deriv/libgslderiv.la eigen/libgsleigen.la err/libgslerr.la fft/libgslfft.la fit/libgslfit.la histogram/libgslhistogram.la ieee-utils/libgslieeeutils.la integration/libgslintegration.la interpolation/libgslinterpolation.la linalg/libgsllinalg.la matrix/libgslmatrix.la min/libgslmin.la monte/libgslmonte.la multifit/libgslmultifit.la multimin/libgslmultimin.la multiroots/libgslmultiroots.la ntuple/libgslntuple.la ode-initval/libgslodeiv.la permutation/libgslpermutation.la combination/libgslcombination.la poly/libgslpoly.la qrng/libgslqrng.la randist/libgslrandist.la rng/libgslrng.la roots/libgslroots.la siman/libgslsiman.la sort/libgslsort.la specfunc/libgslspecfunc.la statistics/libgslstatistics.la sum/libgslsum.la sys/libgslsys.la test/libgsltest.la utils/libutils.la vector/libgslvector.la cdf/libgslcdf.la wavelet/libgslwavelet.la
+ pkginclude_HEADERS = gsl_math.h gsl_pow_int.h gsl_nan.h gsl_machine.h gsl_mode.h gsl_precision.h gsl_types.h gsl_version.h
  bin_SCRIPTS = gsl-config
- 
 -pkgconfigdir = $(libdir)/pkgconfig
 +pkgconfigdir = $(prefix)/libdata/pkgconfig
  pkgconfig_DATA = gsl.pc
- 
- EXTRA_DIST = autogen.sh gsl-config.in gsl.pc.in configure.in THANKS KNOWN-PROBLEMS gsl.spec.in gsl.m4 MACHINES test_gsl_histogram.sh
+ EXTRA_DIST = autogen.sh gsl-config.in gsl.pc.in configure.ac THANKS BUGS SUPPORT gsl.spec.in gsl.m4 test_gsl_histogram.sh
+ lib_LTLIBRARIES = libgsl.la

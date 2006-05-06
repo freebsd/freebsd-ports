@@ -5,7 +5,6 @@ include/gsl/gsl_blas.h
 include/gsl/gsl_blas_types.h
 include/gsl/gsl_block.h
 include/gsl/gsl_block_char.h
-include/gsl/gsl_block_complex.h
 include/gsl/gsl_block_complex_double.h
 include/gsl/gsl_block_complex_float.h
 include/gsl/gsl_block_complex_long_double.h
@@ -218,7 +217,7 @@ include/gsl/gsl_wavelet2d.h
 lib/libgsl.a
 lib/libgsl.la
 lib/libgsl.so
-lib/libgsl.so.7
+lib/libgsl.so.9
 lib/libgslcblas.a
 lib/libgslcblas.la
 lib/libgslcblas.so
