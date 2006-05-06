@@ -41,10 +41,6 @@ PLIST_SUB=	ARCH=${MACHINE_ARCH}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN=		Does not compile on ${OSREL}
-.endif
-
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"
 CFLAGS+=	-fPIC
 FCFLAGS+=	-fPIC
