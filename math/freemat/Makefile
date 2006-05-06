@@ -7,7 +7,7 @@
 
 PORTNAME=		freemat
 PORTVERSION=		1.10
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		math science
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,7 +20,7 @@ MAINTAINER=		ports@FreeBSD.org
 COMMENT=		An environment for rapid engineering and scientific processing
 
 LIB_DEPENDS=		f2c.2:${PORTSDIR}/lang/f2c		\
-			gsl.7:${PORTSDIR}/math/gsl		\
+			gsl.9:${PORTSDIR}/math/gsl		\
 			jpeg.9:${PORTSDIR}/graphics/jpeg	\
 			lapack.3:${PORTSDIR}/math/lapack	\
 			png.5:${PORTSDIR}/graphics/png		\
@@ -29,7 +29,6 @@ BUILD_DEPENDS=		${LOCALBASE}/lib/libarpack.a:${PORTSDIR}/math/arpack	\
 			${LOCALBASE}/lib/libumfpack.a:${PORTSDIR}/math/umfpack
 
 USE_GL=			yes
-USE_REINPLACE=		yes
 GNU_CONFIGURE=		yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=		--with-blas="${lib_blas}"
@@ -70,7 +69,7 @@ DATADIR=	${PREFIX}/share/FreeMat
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-BROKEN=	"Does not compile with gcc-2.95"
+BROKEN=	Does not compile with gcc-2.95
 .endif
 
 .if exists(${LOCALBASE}/bin/balky)
@@ -78,7 +77,7 @@ WITH_MPI=	yes
 .endif
 .if defined(WITH_MPI)
 . if exists(${LOCALBASE}/bin/laminfo)
-BROKEN=	"does not work with net/lam7, please install net/lam"
+BROKEN=	does not work with net/lam7, please install net/lam
 . endif
 BUILD_DEPENDS+=	mpiCC:${PORTSDIR}/net/lam
 RUN_DEPENDS+=	lamboot:${PORTSDIR}/net/lam

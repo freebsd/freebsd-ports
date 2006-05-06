@@ -7,6 +7,7 @@
 
 PORTNAME=	freefem++
 PORTVERSION=	2.7
+PORTREVISION=	1
 CATEGORIES=	math science
 MASTER_SITES=	http://www.freefem.org/ff++/ftp/
 
@@ -15,7 +16,7 @@ COMMENT=	An implementation of a language dedicated to the finite element method
 
 LIB_DEPENDS=	atlas.1:${PORTSDIR}/math/atlas				\
 		f2c.2:${PORTSDIR}/lang/f2c				\
-		gsl.7:${PORTSDIR}/math/gsl				\
+		gsl.9:${PORTSDIR}/math/gsl				\
 		lapack.3:${PORTSDIR}/math/lapack			\
 		fltk.1:${PORTSDIR}/x11-toolkits/fltk-threads		\
 		fftw3.3:${PORTSDIR}/math/fftw3

@@ -7,6 +7,7 @@
 
 PORTNAME=	pspp
 PORTVERSION=	0.4.0
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -29,7 +30,7 @@ INFO=		pspp
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500600
-BROKEN=		"Needs at least Perl 5.6"
+BROKEN=		needs at least Perl 5.6
 .endif
 
 .include <bsd.port.post.mk>

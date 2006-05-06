@@ -7,6 +7,7 @@
 
 PORTNAME=	qtiplot
 PORTVERSION=	0.6.4
+PORTREVISION=	1
 CATEGORIES=	math science
 MASTER_SITES=	http://soft.proindependent.com/src/
 
@@ -14,12 +15,11 @@ MAINTAINER=	gaoj@cpsc.ucalgary.ca
 COMMENT=	An Origin clone for data analysis and scientific plotting
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
-LIB_DEPENDS=	gsl:${PORTSDIR}/math/gsl \
+LIB_DEPENDS=	gsl.9:${PORTSDIR}/math/gsl \
 		qwt:${PORTSDIR}/x11-toolkits/qwt \
 		qwtplot3d:${PORTSDIR}/math/qwtplot3d
 
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/${PORTNAME}-${PORTVERSION}
