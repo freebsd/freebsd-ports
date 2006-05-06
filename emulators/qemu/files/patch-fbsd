@@ -63,12 +63,24 @@ Index: qemu/fpu/softfloat-native.c
  #define llrint(d)		((long long)rint(d))
  #endif
 Index: qemu/fpu/softfloat-native.h
-@@ -1,7 +1,17 @@
+@@ -1,8 +1,28 @@
  /* Native implementation of soft float functions */
  #include <math.h>
--#if defined(_BSD) && !defined(__APPLE__)
-+#if defined(_BSD) && !defined(__APPLE__) && \
-+    (!defined(__FreeBSD__) || __FreeBSD_version < 500000)
+ 
+-#if (defined(_BSD) && !defined(__APPLE__)) || defined(HOST_SOLARIS)
++#ifdef __FreeBSD__
++#include <osreldate.h>
++long double fabsl(long double x);
++long double remainderl(long double x, long double y);
++long double sqrtl(long double x);
++long double rintl(long double x);
++long lrintl(long double x);
++long long llrintl(long double x);
++#endif
++
++#if (defined(_BSD) && !defined(__APPLE__) && \
++     (!defined(__FreeBSD__) || __FreeBSD_version < 500000)) || \
++    defined(HOST_SOLARIS)
  #include <ieeefp.h>
 +#if defined(__FreeBSD__)
 +#define isgreater(x, y)		__builtin_isgreater((x), (y))
@@ -77,29 +89,21 @@ Index: qemu/fpu/softfloat-native.h
 +#define islessequal(x, y)	__builtin_islessequal((x), (y))
 +#define islessgreater(x, y)	__builtin_islessgreater((x), (y))
 +#define isunordered(x, y)	__builtin_isunordered((x), (y))
-+long double fabsl(long double x);
 +#endif
+ #define fabsf(f) ((float)fabs(f))
  #else
  #include <fenv.h>
- #endif
-@@ -33,12 +43,13 @@
+@@ -60,7 +80,9 @@
  /*----------------------------------------------------------------------------
  | Software IEC/IEEE floating-point rounding mode.
  *----------------------------------------------------------------------------*/
--#if defined(_BSD) && !defined(__APPLE__)
-+#if defined(_BSD) && !defined(__APPLE__) && \
-+    (!defined(__FreeBSD__) || __FreeBSD_version < 500000)
+-#if (defined(_BSD) && !defined(__APPLE__)) || defined(HOST_SOLARIS)
++#if (defined(_BSD) && !defined(__APPLE__) && \
++     (!defined(__FreeBSD__) || __FreeBSD_version < 500000)) || \
++    defined(HOST_SOLARIS)
  enum {
      float_round_nearest_even = FP_RN,
--    float_round_down         = FE_RM,
--    float_round_up           = FE_RP,
--    float_round_to_zero      = FE_RZ
-+    float_round_down         = FP_RM,
-+    float_round_up           = FP_RP,
-+    float_round_to_zero      = FP_RZ
- };
- #elif defined(__arm__)
- enum {
+     float_round_down         = FP_RM,
 Index: qemu/fpu/softfloat.h
 @@ -84,7 +84,8 @@
  #define FLOAT128
