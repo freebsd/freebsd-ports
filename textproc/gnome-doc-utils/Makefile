@@ -8,7 +8,7 @@
 
 PORTNAME=	gnomedocutils
 PORTVERSION=	0.6.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-doc-utils/0.6
@@ -19,7 +19,9 @@ COMMENT=	GNOME doc utils
 
 BUILD_DEPENDS=	scrollkeeper-config:${PORTSDIR}/textproc/scrollkeeper
 RUN_DEPENDS=	scrollkeeper-config:${PORTSDIR}/textproc/scrollkeeper \
-		${PYTHON_SITELIBDIR}/libxml2mod.so:${PORTSDIR}/textproc/py-libxml2
+		${PYTHON_SITELIBDIR}/libxml2mod.so:${PORTSDIR}/textproc/py-libxml2 \
+		${LOCALBASE}/share/xml/docbook/4.3/catalog.xml:${PORTSDIR}/textproc/docbook-xml-430 \
+		${LOCALBASE}/share/xml/docbook/4.4/catalog.xml:${PORTSDIR}/textproc/docbook-xml-440
 
 PREFIX?=	${X11BASE}
 
@@ -35,13 +37,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=		xml2po.1
-
-DOCBOOK_VERSION=4.1.2
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|4\.4|${DOCBOOK_VERSION}|g' \
-		${WRKSRC}/doc/xslt/C/gnome-doc-xslt.xml \
-		${WRKSRC}/doc/gnome-doc-make/C/gnome-doc-make.xml
 
 post-install:
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py -l ${PREFIX}/share/xml2po
