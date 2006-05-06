@@ -1,0 +1,5 @@
+Service-discovery-applet is a GNOME applet that interfaces with the Avahi
+mDNS Service Discovery system to graphically show a list of available
+network services.
+
+WWW: http://www.avahi.org/

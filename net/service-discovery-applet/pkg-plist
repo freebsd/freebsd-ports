@@ -1,0 +1,44 @@
+bin/service-discovery-applet
+bin/service-discovery-config
+lib/%%PYTHON_VERSION%%/site-packages/sdapplet/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/sdapplet/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/sdapplet/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/sdapplet/pluginloader.py
+lib/%%PYTHON_VERSION%%/site-packages/sdapplet/pluginloader.pyc
+lib/%%PYTHON_VERSION%%/site-packages/sdapplet/pluginloader.pyo
+lib/%%PYTHON_VERSION%%/site-packages/sdapplet/pluginutils.py
+lib/%%PYTHON_VERSION%%/site-packages/sdapplet/pluginutils.pyc
+lib/%%PYTHON_VERSION%%/site-packages/sdapplet/pluginutils.pyo
+libdata/bonobo/servers/GNOME_ServiceDiscoveryApplet.server
+share/gnome/service-discovery-applet/icons/24x24/_ftp._tcp.png
+share/gnome/service-discovery-applet/icons/24x24/_http._tcp.png
+share/gnome/service-discovery-applet/icons/24x24/_https._tcp.png
+share/gnome/service-discovery-applet/icons/24x24/_rfb._tcp.png
+share/gnome/service-discovery-applet/icons/24x24/_sftp-ssh._tcp.png
+share/gnome/service-discovery-applet/icons/24x24/_ssh._tcp.png
+share/gnome/service-discovery-applet/icons/24x24/service-discovery-applet.png
+share/gnome/service-discovery-applet/icons/48x48/_ftp._tcp.png
+share/gnome/service-discovery-applet/icons/48x48/_http._tcp.png
+share/gnome/service-discovery-applet/icons/48x48/_https._tcp.png
+share/gnome/service-discovery-applet/icons/48x48/_rfb._tcp.png
+share/gnome/service-discovery-applet/icons/48x48/_sftp-ssh._tcp.png
+share/gnome/service-discovery-applet/icons/48x48/_ssh._tcp.png
+share/gnome/service-discovery-applet/icons/48x48/service-discovery-applet.png
+share/gnome/service-discovery-applet/icons/icon-theme.cache
+share/gnome/service-discovery-applet/interfaces/service-discovery-config.glade
+share/gnome/service-discovery-applet/plugins/ekiga.py
+share/gnome/service-discovery-applet/plugins/gconfterminal.py
+share/gnome/service-discovery-applet/plugins/nautilus.py
+share/gnome/service-discovery-applet/plugins/xvncviewer.py
+share/locale/da/LC_MESSAGES/service-discovery-applet.mo
+share/locale/de/LC_MESSAGES/service-discovery-applet.mo
+share/locale/fr/LC_MESSAGES/service-discovery-applet.mo
+@dirrm share/gnome/service-discovery-applet/plugins
+@dirrm share/gnome/service-discovery-applet/interfaces
+@dirrm share/gnome/service-discovery-applet/icons/48x48
+@dirrm share/gnome/service-discovery-applet/icons/24x24
+@dirrm share/gnome/service-discovery-applet/icons
+@dirrm share/gnome/service-discovery-applet
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/sdapplet
+@dirrmtry lib/%%PYTHON_VERSION%%/site-packages
+@dirrmtry lib/%%PYTHON_VERSION%%
