@@ -1,0 +1,6 @@
+SECURITY NOTE: The VIM software has had several remote vulnerabilities
+discovered within VIM's modeline support.  It allowed remote attackers to
+execute arbitrary code as the user running VIM.  All known problems
+have been fixed, but the FreeBSD Security Team advises that VIM users
+use 'set nomodeline' in ~/.vimrc to avoid the possibility of trojaned
+text files.

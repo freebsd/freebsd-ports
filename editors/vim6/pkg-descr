@@ -1,0 +1,24 @@
+Vim is a virtually compatible, extreamly enhanced, version of the UNIX
+text editor vi.
+
+There are a lot of enhancements above Vi: multi level undo, multi-windows
+and buffers, syntax highlighting, command line editing, filename completion,
+on-line help, visual selection, etc..  
+
+Many features above standard vi's have been added:
+    multiple windows and buffers, multi level undo, command line history,
+    filename completion, selection highlighting, block operations (including
+    column/rectangular blocks), syntax highlighting, on-line help, etc.
+	Embeded Perl, Tcl, and Python support.
+	See ":help vi_diff" for a summary of the differences between Vim and Vi.
+
+	An X-windows aware or a full X-windows GUI version can also be built
+	that allows full use of the mouse and pull-down menus
+
+See http://www.vim.org/why.html for a full explanation of Vim's features.
+
+Portability to all UNIX platforms, AmigaOS, Archimedes, Atari MiNT, BeOS,
+M$-DOS, MacOS, OS/2, VMS, WinNT+Win95.
+
+-- David	(obrien@cs.ucdavis.edu)
+WWW: http://www.vim.org/
