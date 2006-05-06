@@ -15,7 +15,15 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Object-Oriented Vector Math Methods in Perl
 
+BUILD_DEPENDS=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
+
 PERL_MODBUILD=	yes
 MAN3=		Math::Vec.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+IGNORE=	requires perl 5.6.0 or later. Install lang/perl5.8 and try again
+.endif
+
+.include <bsd.port.post.mk>
