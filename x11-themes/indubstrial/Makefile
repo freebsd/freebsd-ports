@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.gnome.org/~jdub/2004/indubstrial/
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A clean, clear modification on the Industrial GTK+ and Metacity themes
 
-RUN_DEPENDS=	${X11BASE}/lib/gtk-2.0/2.4.0/engines/libindustrial.so:${PORTSDIR}/x11-themes/gnome-themes-extras \
+RUN_DEPENDS=	${X11BASE}/lib/gtk-2.0/${GTK2_VERSION}/engines/libindustrial.so:${PORTSDIR}/x11-themes/gnome-themes-extras \
 		${X11BASE}/lib/gtk/themes/engines/libindustrial.so:${PORTSDIR}/x11-themes/gtk-industrial-theme
 
 WRKSRC=		${WRKDIR}/Indubstrial
