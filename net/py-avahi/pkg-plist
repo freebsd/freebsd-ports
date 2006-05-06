@@ -1,0 +1,14 @@
+bin/avahi-bookmarks
+bin/avahi-discover
+lib/%%PYTHON_VERSION%%/site-packages/avahi/ServiceTypeDatabase.py
+lib/%%PYTHON_VERSION%%/site-packages/avahi/SimpleGladeApp.py
+lib/%%PYTHON_VERSION%%/site-packages/avahi/SimpleGladeApp.pyc
+lib/%%PYTHON_VERSION%%/site-packages/avahi/SimpleGladeApp.pyo
+lib/%%PYTHON_VERSION%%/site-packages/avahi/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/avahi/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/avahi/__init__.pyo
+share/applications/avahi-discover.desktop
+%%DATADIR%%/service-types
+%%DATADIR%%/service-types.db
+@dirrmtry share/applications
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/avahi
