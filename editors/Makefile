@@ -167,6 +167,7 @@
     SUBDIR += vim
     SUBDIR += vim-lite
     SUBDIR += vim5
+    SUBDIR += vim6
     SUBDIR += vim6+ruby
     SUBDIR += wily
     SUBDIR += winefish
