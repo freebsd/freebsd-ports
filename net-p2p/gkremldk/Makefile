@@ -7,6 +7,7 @@
 
 PORTNAME=	gkremldk
 PORTVERSION=	0.9.7
+PORTREVISION=	1
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://www.tof2k.com/gkremldk/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
@@ -19,8 +20,6 @@ BUILD_DEPENDS=	\
 		pkg-config:${PORTSDIR}/devel/pkgconfig \
 		${X11BASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
-
-BROKEN=		Incorrect pkg-plist
 
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes
