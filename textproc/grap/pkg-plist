@@ -1,27 +1,27 @@
 bin/grap
-%%PORTDOCS%%share/doc/grap/README
-%%PORTDOCS%%share/doc/grap/CHANGES
-%%PORTDOCS%%share/doc/grap/COPYRIGHT
-%%PORTDOCS%%share/doc/grap/grap.man
-share/grap/grap.defines
-share/grap/grap.tex.defines
-share/examples/grap/400mpairs.d
-share/examples/grap/400mtimes.d
-share/examples/grap/400wpairs.d
-share/examples/grap/Makefile
-share/examples/grap/army.d
-share/examples/grap/boyhts.d
-share/examples/grap/example.ms
-share/examples/grap/internet.d
-share/examples/grap/prof2.d
-share/examples/grap/states.d
-share/examples/grap/states2.d
-share/examples/grap/states3.d
-share/examples/grap/usapop.d
-share/examples/grap/cy_fatal.d
-share/examples/grap/result.SQ_MESH.Fail1.S3.R0.Global.Random1500.succ.result
-share/examples/grap/result.SQ_MESH.Fail1.S3.R0.Local.Random1500.succ.result
-share/examples/grap/result.SQ_MESH.Fail1.S3.R0.Hybrid.Random1500.succ.result
-@dirrm share/examples/grap
-@dirrm share/grap
-%%PORTDOCS%%@dirrm share/doc/grap
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
+%%PORTDOCS%%%%DOCSDIR%%/grap.man
+%%DATADIR%%/grap.defines
+%%DATADIR%%/grap.tex.defines
+%%EXAMPLESDIR%%/400mpairs.d
+%%EXAMPLESDIR%%/400mtimes.d
+%%EXAMPLESDIR%%/400wpairs.d
+%%EXAMPLESDIR%%/Makefile
+%%EXAMPLESDIR%%/army.d
+%%EXAMPLESDIR%%/boyhts.d
+%%EXAMPLESDIR%%/example.ms
+%%EXAMPLESDIR%%/internet.d
+%%EXAMPLESDIR%%/prof2.d
+%%EXAMPLESDIR%%/states.d
+%%EXAMPLESDIR%%/states2.d
+%%EXAMPLESDIR%%/states3.d
+%%EXAMPLESDIR%%/usapop.d
+%%EXAMPLESDIR%%/cy_fatal.d
+%%EXAMPLESDIR%%/result.SQ_MESH.Fail1.S3.R0.Global.Random1500.succ.result
+%%EXAMPLESDIR%%/result.SQ_MESH.Fail1.S3.R0.Local.Random1500.succ.result
+%%EXAMPLESDIR%%/result.SQ_MESH.Fail1.S3.R0.Hybrid.Random1500.succ.result
+@dirrm %%EXAMPLESDIR%%
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
