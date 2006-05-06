@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mcabber
-PORTVERSION=	0.7.0
-PORTREVISION=	3
+PORTVERSION=	0.7.6
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.lilotux.net/~mikael/mcabber/files/
 
