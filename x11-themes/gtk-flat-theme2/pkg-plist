@@ -1,5 +1,5 @@
-lib/gtk-2.0/2.4.0/engines/libflat.la
-lib/gtk-2.0/2.4.0/engines/libflat.so
+lib/gtk-2.0/%%GTK2_VERSION%%/engines/libflat.la
+lib/gtk-2.0/%%GTK2_VERSION%%/engines/libflat.so
 share/themes/Flat/ICON.png
 share/themes/Flat/README.html
 share/themes/Flat/gtk-2.0/gtkrc

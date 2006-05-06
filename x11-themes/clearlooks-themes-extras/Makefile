@@ -25,7 +25,7 @@ THEME_DIR=	${PREFIX}/share/themes
 .if exists(${X11BASE}/libdata/pkgconfig/gtk-engines-2.pc) || defined(WITH_GTKENGINE)
 RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/gtk-engines-2.pc:${PORTSDIR}/x11-themes/gtk-engines2
 .else
-RUN_DEPENDS=	${X11BASE}/lib/gtk-2.0/2.4.0/engines/libclearlooks.so:${PORTSDIR}/x11-themes/clearlooks
+RUN_DEPENDS=	${X11BASE}/lib/gtk-2.0/${GTK2_VERSION}/engines/libclearlooks.so:${PORTSDIR}/x11-themes/clearlooks
 .endif
 
 do-extract:

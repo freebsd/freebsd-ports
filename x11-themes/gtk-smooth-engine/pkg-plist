@@ -1,4 +1,4 @@
 %%GTK1:%%lib/gtk/themes/engines/libsmooth.la
 %%GTK1:%%lib/gtk/themes/engines/libsmooth.so
-%%GTK2:%%lib/gtk-2.0/2.4.0/engines/libsmooth.la
-%%GTK2:%%lib/gtk-2.0/2.4.0/engines/libsmooth.so
+%%GTK2:%%lib/gtk-2.0/%%GTK2_VERSION%%/engines/libsmooth.la
+%%GTK2:%%lib/gtk-2.0/%%GTK2_VERSION%%/engines/libsmooth.so
