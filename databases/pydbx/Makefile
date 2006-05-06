@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pydbx
-PORTVERSION=	0.13
+PORTVERSION=	0.14
 CATEGORIES=	databases python
 MASTER_SITES=	http://david.acz.org/pydbx/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
