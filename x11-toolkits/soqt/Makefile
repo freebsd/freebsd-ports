@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	SoQt
-PORTVERSION=	1.2.0
-PORTREVISION=	2
+PORTVERSION=	1.3.0
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://ftp.coin3d.org/coin/src/ \
 		ftp://ftp.coin3d.org/pub/coin/src/
