@@ -10743,6 +10743,7 @@ py-ao		ports/audio/py-ao
 py-asn1		ports/devel/py-asn1
 py-astng	ports/devel/py-astng
 py-asv		ports/textproc/py-asv
+py-avahi	ports/net/py-avahi
 py-axiom	ports/databases/py-axiom
 py-beautifulsoup	ports/www/py-beautifulsoup
 py-biopython	ports/biology/py-biopython
