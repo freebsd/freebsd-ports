@@ -22,6 +22,7 @@
     SUBDIR += arla
     SUBDIR += arp-sk
     SUBDIR += arpd
+    SUBDIR += arpdig
     SUBDIR += arping
     SUBDIR += arprelease
 #XXX move to net-mgmt
