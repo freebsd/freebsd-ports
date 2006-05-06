@@ -7,9 +7,9 @@
 #
 
 PORTNAME?=	vim
-PATCHLEVEL=	6
+PATCHLEVEL=	9
 PORTVERSION=	6.4.${PATCHLEVEL}
-PORTREVISION?=	1
+PORTREVISION?=	0
 CATEGORIES?=	editors
 MASTER_SITES=	${MASTER_SITE_VIM}
 DISTNAME=	vim-${PORTVERSION:C/\.[0-9a-z]*$//}
@@ -185,7 +185,7 @@ cklatest:
 
 find-bad-patches:
 	cd ${DISTDIR} ; egrep -l \
-		'(src/os_win32|src/os_mswin|src/if_ole|src/proto/gui_w32|src/gui_w48|src/gui_mac|src/os_riscos|cyg|vms)'\
+		'(src/os_win32|src/os_mswin|src/if_ole|src/proto/gui_w32|src/gui_w48|src/gui_mac|src/os_(riscos|cyg|vms))'\
 		vim/${PORTVERSION:C/\.[0-9a-z]*$//}*
 
 .include <bsd.port.post.mk>
