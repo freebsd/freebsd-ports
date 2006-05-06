@@ -6,24 +6,31 @@
 #
 
 PORTNAME=	rudiments
-PORTVERSION=	0.28.2
-PORTREVISION=	1
+PORTVERSION=	0.29
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rainer.alves@gmail.com
 COMMENT=	A utility C++ class library for daemons, clients, servers and more
 
-USE_GNOME=		pkgconfig
-USE_GMAKE=		yes
-USE_OPENSSL=		yes
+USE_GNOME=	pkgconfig
+USE_GMAKE=	yes
+USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=		--with-ssl-includes=-I${OPENSSLBASE}/include \
-			--with-ssl-libs=-L${OPENSSLBASE}/lib --disable-pcre
+CONFIGURE_ARGS=	--with-ssl-includes=-I${OPENSSLBASE}/include \
+		--with-ssl-libs=-L${OPENSSLBASE}/lib --disable-pcre
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=		PTHREADINCLUDES="${PTHREAD_CFLAGS}" \
-			PTHREADLIB="${PTHREAD_LIBS}"
+CONFIGURE_ENV=	PTHREADINCLUDES="${PTHREAD_CFLAGS}" \
+		PTHREADLIB="${PTHREAD_LIBS}"
 INSTALLS_SHLIB=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+PLIST_SUB+=	NOT4X="@comment "
+.else
+PLIST_SUB+=	NOT4X=""
+.endif
+
+.include <bsd.port.post.mk>
