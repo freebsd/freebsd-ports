@@ -10,7 +10,6 @@ PORTNAME=	jcalendar
 PORTVERSION=	1.2.2
 CATEGORIES=	java
 MASTER_SITES=	http://www.toedter.com/download/
-DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java Date Chooser
