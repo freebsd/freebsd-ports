@@ -8,6 +8,7 @@ bin/h5dump
 bin/h5import
 bin/h5jam
 bin/h5ls
+bin/h5perf
 bin/h5redeploy
 bin/h5repack
 bin/h5repart
