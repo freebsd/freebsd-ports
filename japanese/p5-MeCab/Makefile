@@ -6,32 +6,28 @@
 #
 
 PORTNAME=	MeCab
-PORTVERSION=	${MECAB_PORTVERSION}
+PORTVERSION=	0.91
 CATEGORIES=	japanese textproc perl5
-MASTER_SITES=	http://chasen.org/~taku/software/mecab/bindings/
-DISTNAME=	${PORTNAME:L}-perl-${PORTVERSION}
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE_JP}
+MASTER_SITE_SUBDIR=	${PORTNAME:L}/${SUB_DIR}
+DISTNAME=		${PORTNAME:L}-perl-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MeCab library module for Perl5
 
-LIB_DEPENDS=	mecab.0:${MECAB_PORTDIR}
+LIB_DEPENDS=	mecab.1:${PORTSDIR}/japanese/mecab
 
 PERL_CONFIGURE=	yes
-
-.include "${.CURDIR}/../mecab/Makefile.common"
+SUB_DIR=	20029
 
 .include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=         requires Perl 5.6.0 or above
-.endif
 
 PKGNAMEPREFIX:=	${PKGNAMEPREFIX}p5-
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/examples/mecab
-	${INSTALL_DATA} ${WRKSRC}/test.pl ${PREFIX}/share/examples/mecab/
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/test.pl ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.post.mk>
