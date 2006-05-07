@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTFILES=	${PORTNAME}-full-${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	sw@gegenunendlich.de
+MAINTAINER=	stefan@FreeBSD.org
 COMMENT=	Skeletal based 3d character animation library written in C++
 
 CONFLICTS=	cal3d-devel-[0-9]*

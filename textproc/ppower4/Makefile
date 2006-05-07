@@ -15,7 +15,7 @@ DISTFILES=	pp4sty.zip pp4p.jar manual.pdf leveldemo.zip
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	pp4sty.zip leveldemo.zip
 
-MAINTAINER=	sw@gegenunendlich.de
+MAINTAINER=	stefan@FreeBSD.org
 COMMENT=	Post processor for PDF presentations made with (La)TeX
 
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX

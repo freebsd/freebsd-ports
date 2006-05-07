@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.maxmind.com/download/geoip/api/python/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}-Python-${PORTVERSION}
 
-MAINTAINER=	sw@gegenunendlich.de
+MAINTAINER=	stefan@FreeBSD.org
 COMMENT=	Mapping of IP addresses/hostnames to country names in Python
 
 LIB_DEPENDS=	GeoIP.4:${PORTSDIR}/net/GeoIP

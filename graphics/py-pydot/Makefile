@@ -11,7 +11,7 @@ CATEGORIES=	graphics python
 MASTER_SITES=	http://dkbza.org/data/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	sw@gegenunendlich.de
+MAINTAINER=	stefan@FreeBSD.org
 COMMENT=	A Python interface to the Graphviz Dot language
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/pyparsing.py:${PORTSDIR}/devel/py-parsing
