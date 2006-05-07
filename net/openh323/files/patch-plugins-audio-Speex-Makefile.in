@@ -1,0 +1,19 @@
+--- plugins/audio/Speex/Makefile.in.orig	Wed Apr  5 23:40:27 2006
++++ plugins/audio/Speex/Makefile.in	Wed Apr  5 23:41:12 2006
+@@ -59,6 +59,7 @@
+ CC=@CC@
+ CXX=@CXX@
+ LDSO=@LDSO@
++LDFLAGS=@LDFLAGS@
+ 
+ ifndef PREFIX
+ PREFIX=/usr/local
+@@ -101,7 +102,7 @@
+ OBJECTS	= $(addprefix $(OBJDIR)/,$(patsubst %.cxx,%.o,$(patsubst %.c,%.o,$(notdir $(SRCS)))))
+ 
+ $(PLUGIN): $(OBJECTS)
+-	$(CC) $(LDSO)$(SONAME) -o $@ $^ $(EXTRALIBS)
++	$(CC) $(LDSO)$(SONAME) -o $@ $^ $(LDFLAGS) $(EXTRALIBS)
+ 
+ install:
+ 	mkdir -p $(DESTDIR)$(LIBDIR)/pwlib/codecs/audio/
