@@ -1,11 +1,11 @@
---- client/clparse.c.orig	Mon Feb 10 01:39:57 2003
-+++ client/clparse.c	Wed Mar  3 01:35:39 2004
-@@ -785,7 +785,7 @@
- 		if (status != ISC_R_SUCCESS)
- 			log_fatal ("Can't record interface %s: %s",
- 				   name, isc_result_totext (status));
--		strcpy (ip -> name, name);
+--- client/clparse.c.orig	Sat May  6 17:42:49 2006
++++ client/clparse.c	Sat May  6 17:43:12 2006
+@@ -777,7 +777,7 @@
+ 			interface_dereference(&ip, MDL);
+ 			return 0;
+ 		}
+-		strcpy(ip->name, name);
 +		strlcpy (ip -> name, name, IFNAMSIZ);
+ 
  		if (dummy_interfaces) {
  			interface_reference (&ip -> next,
- 					     dummy_interfaces, MDL);

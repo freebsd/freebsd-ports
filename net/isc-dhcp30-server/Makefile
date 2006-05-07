@@ -7,8 +7,8 @@
 #
 
 PORTNAME=	dhcp
-PORTVERSION=	3.0.3
-PORTREVISION=	1
+PORTVERSION=	3.0.4
+#PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_ISC}
 MASTER_SITE_SUBDIR=	dhcp dhcp/dhcp-3.0-history
@@ -19,7 +19,6 @@ DISTNAME=	${PORTNAME}-${RELEASE}${VERSION}${PATCHLEVEL}
 MAINTAINER=	Joerg.Pulz@frm2.tum.de
 COMMENT?=	The ISC Dynamic Host Configuration Protocol server
 
-USE_REINPLACE=	yes
 USE_RC_SUBR=	yes
 
 SUBSYS?=	server

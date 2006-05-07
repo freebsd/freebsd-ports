@@ -1,8 +1,8 @@
---- client/dhclient.8.orig	Sun Nov 17 03:25:43 2002
-+++ client/dhclient.8	Wed Mar  3 02:06:52 2004
-@@ -18,6 +18,10 @@
+--- client/dhclient.8.orig	Wed Sep 14 18:03:33 2005
++++ client/dhclient.8	Sat May  6 17:30:28 2006
+@@ -23,6 +23,10 @@
  .\"
- .\" from Id: dhclient.8,v 1.12.2.8 2004/06/10 17:59:12 dhankins Exp
+ .\" $Id: dhclient.8,v 1.12.2.11 2005/09/14 16:03:33 dhankins Exp $
  .\"
 +.\" Portions copyright (c) 2000 David E. O'Brien.
 +.\" All rights reserved.
@@ -11,7 +11,7 @@
  .TH dhclient 8
  .SH NAME
  dhclient - Dynamic Host Configuration Protocol Client
-@@ -28,12 +32,18 @@
+@@ -33,6 +37,9 @@
  .I port
  ]
  [
@@ -21,6 +21,7 @@
  .B -d
  ]
  [
+@@ -43,6 +50,9 @@
  .B -q
  ]
  [
@@ -30,7 +31,7 @@
  .B -1
  ]
  [
-@@ -64,6 +74,10 @@
+@@ -73,6 +83,10 @@
  relay
  ]
  [
@@ -41,7 +42,7 @@
  .B -n
  ]
  [
-@@ -148,6 +162,15 @@
+@@ -157,6 +171,15 @@
  configuration file or on the command line, and will ignore all other
  interfaces.
  .PP
@@ -57,7 +58,7 @@
  If the DHCP client should listen and transmit on a port other than the
  standard (port 68), the
  .B -p
-@@ -171,6 +194,12 @@
+@@ -180,6 +203,12 @@
  flag, followed by the IP address to send.   This is only useful for testing,
  and should not be expected to work in any consistent or useful way.
  .PP
@@ -70,7 +71,7 @@
  The DHCP client will normally run in the foreground until it has
  configured an interface, and then will revert to running in the
  background.   To run force dhclient to always run as a foreground
-@@ -188,6 +217,10 @@
+@@ -206,6 +235,10 @@
  .B -q
  flag prevents any messages other than errors from being printed to the
  standard error descriptor.

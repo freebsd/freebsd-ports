@@ -1,5 +1,5 @@
---- client/dhclient.c.orig	Wed Nov 24 18:39:14 2004
-+++ client/dhclient.c	Tue Mar  8 14:06:59 2005
+--- client/dhclient.c.orig	Thu Apr 27 23:38:29 2006
++++ client/dhclient.c	Sat May  6 17:34:55 2006
 @@ -38,6 +38,13 @@
  #include "dhcpd.h"
  #include "version.h"
@@ -58,11 +58,11 @@
  			/* do not exit if there are no broadcast interfaces. */
  			persist = 1;
 @@ -215,7 +241,16 @@
- 		    if (strlen (argv [i]) > sizeof tmp -> name)
- 			    log_fatal ("%s: interface name too long (max %ld)",
- 				       argv [i], (long)strlen (argv [i]));
-- 		    strcpy (tmp -> name, argv [i]);
-+ 		    strlcpy (tmp -> name, argv [i], IFNAMSIZ);
+ 		    if (strlen(argv[i]) >= sizeof(tmp->name))
+ 			    log_fatal("%s: interface name too long (is %ld)",
+ 				       argv [i], (long)strlen(argv[i]));
+-		    strcpy(tmp->name, argv[i]);
++		    strlcpy (tmp -> name, argv [i], IFNAMSIZ);
 +#if __FreeBSD_version > 502010
 +		    set_ieee80211 (tmp);
 +#endif
@@ -119,7 +119,7 @@
  		   "[-pf pid-file] [-e VAR=val]");
  	log_fatal ("                [-sf script-file] [interface]");
  }
-@@ -881,6 +931,15 @@
+@@ -879,6 +929,15 @@
  	/* Write out the new lease. */
  	write_client_lease (client, client -> new, 0, 0);
  
@@ -135,7 +135,7 @@
  	/* Replace the old active lease with the new one. */
  	if (client -> active)
  		destroy_client_lease (client -> active);
-@@ -895,6 +954,12 @@
+@@ -893,6 +952,12 @@
  	      piaddr (client -> active -> address),
  	      (long)(client -> active -> renewal - cur_time));
  	client -> state = S_BOUND;
@@ -148,7 +148,7 @@
  	reinitialize_interfaces ();
  	go_daemon ();
  	if (client -> config -> do_forward_update) {
-@@ -1359,6 +1424,11 @@
+@@ -1357,6 +1422,11 @@
  	int interval;
  	int increase = 1;
  
@@ -160,7 +160,7 @@
  	/* Figure out how long it's been since we started transmitting. */
  	interval = cur_time - client -> first_sending;
  
-@@ -1464,6 +1534,9 @@
+@@ -1457,6 +1527,9 @@
  	struct client_lease *loop;
  	struct client_lease *lp;
  
@@ -170,7 +170,7 @@
  	loop = lp = client -> active;
  
  	log_info ("No DHCPOFFERS received.");
-@@ -1496,6 +1569,10 @@
+@@ -1489,6 +1562,10 @@
  				log_info ("bound: renewal in %ld %s.",
  					  (long)(client -> active -> renewal -
  						 cur_time), "seconds");
@@ -181,7 +181,7 @@
  				add_timeout (client -> active -> renewal,
  					     state_bound, client, 0, 0);
  			    } else {
-@@ -1503,6 +1580,11 @@
+@@ -1496,6 +1573,11 @@
  				log_info ("bound: immediate renewal.");
  				state_bound (client);
  			    }
@@ -193,7 +193,7 @@
  			    reinitialize_interfaces ();
  			    go_daemon ();
  			    return;
-@@ -1548,6 +1630,12 @@
+@@ -1541,6 +1623,12 @@
  	}
  
  	log_info ("No working leases in persistent database - sleeping.");
@@ -206,7 +206,7 @@
  	script_init (client, "FAIL", (struct string_list *)0);
  	if (client -> alias)
  		script_write_params (client, "alias_", client -> alias);
-@@ -1689,6 +1777,18 @@
+@@ -1682,6 +1770,18 @@
  			client -> packet.secs = htons (65535);
  	}
  
@@ -225,7 +225,7 @@
  	log_info ("DHCPREQUEST on %s to %s port %d",
  	      client -> name ? client -> name : client -> interface -> name,
  	      inet_ntoa (destination.sin_addr),
-@@ -1710,6 +1810,16 @@
+@@ -1703,6 +1803,16 @@
  				      from, &destination,
  				      (struct hardware *)0);
  
@@ -242,7 +242,7 @@
  	add_timeout (cur_time + client -> interval,
  		     send_request, client, 0, 0);
  }
-@@ -2607,6 +2717,13 @@
+@@ -2600,6 +2710,13 @@
  			wstatus = 0;
  		}
  	} else {
@@ -256,7 +256,7 @@
  		execve (scriptName, argv, envp);
  		log_error ("execve (%s, ...): %m", scriptName);
  		exit (0);
-@@ -2793,8 +2910,10 @@
+@@ -2786,8 +2903,10 @@
  			      case S_STOPPED:
  				break;
  			}
@@ -267,7 +267,7 @@
  		}
  	}
  }
-@@ -3022,7 +3141,9 @@
+@@ -3015,7 +3134,9 @@
  		    break;
  
  		  case server_awaken:
@@ -277,7 +277,7 @@
  		    break;
  		}
  	    }
-@@ -3160,3 +3281,265 @@
+@@ -3153,3 +3274,265 @@
  	data_string_forget (&ddns_dhcid, MDL);
  	return rcode;
  }
