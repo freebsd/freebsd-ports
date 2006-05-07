@@ -6140,6 +6140,7 @@ logjam		ports/deskutils/logjam
 logmon		ports/sysutils/logmon
 logo		ports/lang/logo
 logrotate	ports/sysutils/logrotate
+logserial	ports/sysutils/logserial
 logsurfer	ports/misc/logsurfer
 logtool		ports/sysutils/logtool
 logtool-devel	ports/sysutils/logtool-devel
