@@ -8,7 +8,7 @@
 PORTNAME=	nqueens
 PORTVERSION=	1.0
 CATEGORIES=	benchmarks
-MASTER_SITES=	http://www.yuba.is.uec.ac.jp/~kis/nq/package/
+MASTER_SITES=	http://www.arch.cs.titech.ac.jp/~kise/nq/package/
 DISTNAME=	qn24b-version${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
