@@ -6,21 +6,19 @@
 #
 
 PORTNAME=	beep-media-player
-PORTVERSION=	0.9.7
-PORTREVISION=	11
+PORTVERSION=	0.9.7.1
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	beepmp
 DISTNAME=	bmp-${PORTVERSION}
 
-MAINTAINER=	flynn@energyhq.es.eu.org
+MAINTAINER=	mmendez@energyhq.be
 COMMENT=	GTK2 mp3 player
 
 USE_GNOME=	gtk20 libglade2 desktopfileutils
 WANT_GNOME=	yes
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes

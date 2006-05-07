@@ -37,27 +37,23 @@ lib/bmp/Visualization/libbscope.la
 lib/bmp/Visualization/libbscope.so
 libdata/pkgconfig/bmp.pc
 share/applications/bmp.desktop
-share/bmp/Skins/Default/Avs.bmp
-share/bmp/Skins/Default/Balance.bmp
-share/bmp/Skins/Default/Eq_ex.bmp
-share/bmp/Skins/Default/Eqmain.bmp
-share/bmp/Skins/Default/Main.bmp
-share/bmp/Skins/Default/Mb.bmp
-share/bmp/Skins/Default/Monoster.bmp
-share/bmp/Skins/Default/Nums_ex.bmp
-share/bmp/Skins/Default/Pledit.bmp
-share/bmp/Skins/Default/Posbar.bmp
-share/bmp/Skins/Default/Shufrep.bmp
-share/bmp/Skins/Default/Text.bmp
-share/bmp/Skins/Default/Titlebar.bmp
-share/bmp/Skins/Default/Volume.bmp
-share/bmp/Skins/Default/cButtons.bmp
-share/bmp/Skins/Default/pLaypaus.bmp
-share/bmp/Skins/Default/pLedit.txt
-share/bmp/Skins/Default/readme.txt
-share/bmp/Skins/Default/screenshot.bmp
-share/bmp/Skins/Default/vIscolor.txt
-share/icons/bmp.svg
+share/bmp/Skins/Default/balance.bmp
+share/bmp/Skins/Default/eq_ex.bmp
+share/bmp/Skins/Default/eqmain.bmp
+share/bmp/Skins/Default/main.bmp
+share/bmp/Skins/Default/monoster.bmp
+share/bmp/Skins/Default/nums_ex.bmp
+share/bmp/Skins/Default/pledit.bmp
+share/bmp/Skins/Default/posbar.bmp
+share/bmp/Skins/Default/shufrep.bmp
+share/bmp/Skins/Default/text.bmp
+share/bmp/Skins/Default/titlebar.bmp
+share/bmp/Skins/Default/volume.bmp
+share/bmp/Skins/Default/cbuttons.bmp
+share/bmp/Skins/Default/playpaus.bmp
+share/bmp/Skins/Default/pledit.txt
+share/bmp/Skins/Default/viscolor.txt
+share/bmp/Skins/Default/README
 share/bmp/glade/addfiles.glade
 share/bmp/glade/prefswin.glade
 share/bmp/images/appearance.png
@@ -86,6 +82,12 @@ share/locale/ru/LC_MESSAGES/bmp.mo
 share/locale/sk/LC_MESSAGES/bmp.mo
 share/locale/sv/LC_MESSAGES/bmp.mo
 share/locale/zh_CN/LC_MESSAGES/bmp.mo
+share/locale/fi/LC_MESSAGES/bmp.mo
+share/locale/hi/LC_MESSAGES/bmp.mo
+share/locale/ka/LC_MESSAGES/bmp.mo
+share/locale/uk/LC_MESSAGES/bmp.mo
+share/locale/zh_TW/LC_MESSAGES/bmp.mo
+share/pixmaps/bmp.png
 @dirrmtry share/applications
 @exec mkdir -p %D/share/beep/Skins
 @dirrm share/beep/Skins
