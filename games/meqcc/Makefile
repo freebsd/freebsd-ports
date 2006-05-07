@@ -16,7 +16,6 @@ MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	MrElusive's QuakeC compiler
 
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 USE_ZIP=	yes
 
 MAKEFILE=	${WRKSRC}/linux.mak

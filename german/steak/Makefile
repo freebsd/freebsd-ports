@@ -27,7 +27,6 @@ MAKE_ARGS=	-D xsteak
 .endif
 WRKSRC=		${WRKDIR}/Steak
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 
 .if defined(WITHOUT_XSTEAK)
 PLIST_SUB+=	NOXSTEAK:="@comment "

@@ -22,7 +22,6 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 USE_SDL=	yes
 USE_XLIB=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 
 WRKSRC=		${WRKDIR}/stratagus-040702
 

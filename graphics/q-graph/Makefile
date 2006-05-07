@@ -18,7 +18,6 @@ COMMENT=	Q-Graph -- graph library and editor for the Q language
 
 RUN_DEPENDS=	${LOCALBASE}/bin/q:${PORTSDIR}/lang/q
 
-USE_REINPLACE=	yes
 USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
 

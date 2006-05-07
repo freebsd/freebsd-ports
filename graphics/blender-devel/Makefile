@@ -23,7 +23,6 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 
 PLIST_FILES=	bin/blender
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
 USE_PYTHON=	yes
 USE_SDL=	sdl
 USE_GL=		yes

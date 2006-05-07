@@ -14,7 +14,6 @@ MASTER_SITE_SUBDIR=	anholt
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A FreeBSD kernel modules for 3d acceleration with the DRI
 
-USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PKGMESSAGE=	${WRKSRC}/.MESSAGE

@@ -16,7 +16,6 @@ COMMENT=	A tool for GIF89a transparent option and interlace mode
 
 DIST_SUBDIR=	giftrans
 NO_WRKSUBDIR=	yes
-USE_REINPLACE=	yes
 
 MAN1=		giftrans.1
 PLIST_FILES=	bin/giftrans

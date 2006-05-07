@@ -15,7 +15,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple program to generate anagrams
 
 NO_WRKSUBDIR=	yes
-USE_REINPLACE=	yes
 MAKEFILE=	makefile
 ALL_TARGET=	wordplay
 

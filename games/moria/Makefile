@@ -16,7 +16,6 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	A dungeon exploration game
 
-USE_REINPLACE=	yes
 
 MAN6=		moria.6
 WRKSRC=		${WRKDIR}/umoria

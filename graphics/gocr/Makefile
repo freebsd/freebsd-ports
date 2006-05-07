@@ -20,7 +20,6 @@ LIB_DEPENDS=	netpbm.1:${PORTSDIR}/graphics/netpbm
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 CONFIGURE_ARGS+=	--with-netpbm=${LOCALBASE}
 
 .if !defined(WITHOUT_X11)

@@ -19,7 +19,6 @@ FORBIDDEN=	http://vuxml.freebsd.org/a813a219-d2d4-11da-a672-000e0c2e438a.html
 
 USE_X_PREFIX=	yes
 USE_GNOME=	imlib
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 
 MAN1=		xzgv.1

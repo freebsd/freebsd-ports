@@ -23,7 +23,6 @@ LIB_DEPENDS=	lua.5:${PORTSDIR}/lang/lua50
 
 USE_SDL=	sdl mixer image ttf
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ENV=		SDL_CONFIG="${SDL_CONFIG}"

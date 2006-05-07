@@ -28,7 +28,6 @@ LIB_DEPENDS+=	wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk24
 RUN_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 .endif
 
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
 	       	CPPFLAGS="-I${LOCALBASE}/include \

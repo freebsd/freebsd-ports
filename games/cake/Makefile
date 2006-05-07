@@ -28,7 +28,6 @@ LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg
 # in bsd.port.mk.
 PATCH_ARGS=	-d ${PATCH_WRKSRC} -N -s -E ${PATCH_STRIP} -l
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_ZIP=	yes
 

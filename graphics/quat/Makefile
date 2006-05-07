@@ -16,7 +16,6 @@ COMMENT=	A Three-dimensional fractal creator (command line only)
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-gui \
 		--datadir=${PREFIX}/share/doc
-USE_REINPLACE=	yes
 
 .if defined(WITH_OPTIMIZED_CFLAGS)
 CFLAGS+=	-O3 -ffast-math

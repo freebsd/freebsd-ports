@@ -16,7 +16,6 @@ MAINTAINER=	karlj000@unbc.ca
 COMMENT=	MagicCube4D is a four-dimensional analog of Rubik's cube
 
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
 
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-src-${PORTVERSION:S/./_/}

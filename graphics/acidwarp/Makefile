@@ -21,7 +21,6 @@ DOCFILES=	README TODO Thanks
 ONLY_FOR_ARCHS=	i386
 PLIST=		${WRKDIR}/pkg-plist
 REINPLACE_ARGS=	-i'' -E
-USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/acidwarp
 
 post-extract:

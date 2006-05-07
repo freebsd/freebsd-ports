@@ -17,7 +17,6 @@ FETCH_BEFORE_ARGS+=	-o ${DISTNAME}${EXTRACT_SUFX}
 
 USE_GMAKE=	yes
 USE_SDL=	image mixer sdl ttf
-USE_REINPLACE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-1.0
 

@@ -22,7 +22,6 @@ DOCDIR=		share/doc/${PORTNAME}/
 ONLY_FOR_ARCHS=	i386
 PLIST=		${WRKDIR}/pkg-plist
 WRKSRC=		${WRKDIR}/${PORTNAME}
-USE_REINPLACE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e "s:%%PREFIX%%:${PREFIX}:g" ${WRKSRC}/Makefile

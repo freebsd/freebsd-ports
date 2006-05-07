@@ -17,7 +17,6 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A multipurpose X11 plotting program
 
-USE_REINPLACE=	yes
 USE_IMAKE=	yes
 ALL_TARGET=	World
 MAN1=		plotmtv.1

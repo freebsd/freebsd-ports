@@ -21,7 +21,6 @@ CONFLICTS=	criticalmass-*
 USE_BZIP2=	yes
 USE_SDL=	mixer image sdl
 USE_GL=		yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

@@ -16,7 +16,6 @@ MAINTAINER=	tlp@liquidx.org
 COMMENT=	Colorized, small and flexible Tetris(TM)-clone for the console
 
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 
 MAN6=		ctris.6
 MANCOMPRESSED=	yes

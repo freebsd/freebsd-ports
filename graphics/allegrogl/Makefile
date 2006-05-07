@@ -20,7 +20,6 @@ LIB_DEPENDS=	alleg.42:${PORTSDIR}/devel/allegro
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 USE_GL=		yes
 USE_X_PREFIX=	yes
 USE_AUTOTOOLS=	autoconf:253

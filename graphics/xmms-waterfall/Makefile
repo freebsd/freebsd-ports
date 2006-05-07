@@ -19,7 +19,6 @@ LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	lib/xmms/Visualization/libwaterfall.la \

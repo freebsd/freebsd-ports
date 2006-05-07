@@ -16,7 +16,6 @@ COMMENT=	Mastermind game for X Window System
 
 LIB_DEPENDS=		forms.1:${PORTSDIR}/x11-toolkits/xforms
 
-USE_REINPLACE=		yes
 USE_X_PREFIX=		yes
 
 pre-patch:

@@ -23,7 +23,6 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		alut.0:${PORTSDIR}/audio/freealut
 
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 USE_GL=		yes
 USE_SDL=	net sdl
 

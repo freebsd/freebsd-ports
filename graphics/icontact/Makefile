@@ -16,7 +16,6 @@ COMMENT=	Combines multiples images to create a single customisable image
 RUN_DEPENDS=	${LOCALBASE}/bin/ppmmake:${PORTSDIR}/graphics/netpbm \
 		${LOCALBASE}/bin/cjpeg:${PORTSDIR}/graphics/jpeg
 
-USE_REINPLACE=	yes
 MAN1=		icontact.1 xvtoppm.1
 
 post-patch:

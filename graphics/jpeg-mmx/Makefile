@@ -20,7 +20,6 @@ RUN_DEPENDS=	cjpeg:${PORTSDIR}/graphics/jpeg
 ONLY_FOR_ARCHS=	i386
 
 WRKSRC=		${WRKDIR}/jpeg-mmx
-USE_REINPLACE=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes

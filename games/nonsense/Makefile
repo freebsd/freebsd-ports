@@ -15,7 +15,6 @@ MAINTAINER=	roam@FreeBSD.org
 COMMENT=	A nonsense text generator
 
 NO_BUILD=	defined
-USE_REINPLACE=	yes
 
 MAN6=		nonsense.6
 

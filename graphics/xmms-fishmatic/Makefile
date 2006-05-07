@@ -23,7 +23,6 @@ PLIST_FILES=	lib/xmms/Visualization/libfishmatic.so
 USE_X_PREFIX=   yes
 USE_GNOME=      gtk12
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=  yes
 
 CONFIGURE_ENV=	LIBS="-lGL -lXext ${LIBS}"

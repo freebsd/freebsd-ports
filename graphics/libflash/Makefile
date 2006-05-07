@@ -28,7 +28,6 @@ CONFIGURE_WRKSRC=	${WRKDIR}/${DISTNAME}
 USE_BZIP2=	yes
 USE_XLIB=	yes
 INSTALLS_SHLIB=	yes
-USE_REINPLACE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|stdint.h|inttypes.h|' ${WRKSRC}/swf.h

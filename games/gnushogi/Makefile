@@ -15,7 +15,6 @@ DISTNAME=	${GNUSHOGI_DISTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU version of Shogi
 
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-x --without-xshogi
 

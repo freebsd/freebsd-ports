@@ -20,7 +20,6 @@ LIB_DEPENDS=	exif.12:${PORTSDIR}/graphics/libexif
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gdkpixbuf gnomehack gnomeprefix
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

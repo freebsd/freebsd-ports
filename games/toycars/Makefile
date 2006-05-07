@@ -17,7 +17,6 @@ COMMENT=	Physics-based 2D racing game
 USE_SDL=	image sdl
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include"
 

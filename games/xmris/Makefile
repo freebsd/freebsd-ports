@@ -20,7 +20,6 @@ USE_IMAKE=	yes
 MAKE_FLAGS=	XAPPLOADDIR=${PREFIX}/lib/X11/app-defaults -f
 ALL_TARGET=	xmris xmred
 MAN6=		xmred.6 xmris.6 xmsit.6
-USE_REINPLACE=  yes
 
 post-configure:
 	cd ${WRKSRC} && ${REINPLACE_CMD} -e 's/MANSUFFIX = 1/MANSUFFIX = 6/' \

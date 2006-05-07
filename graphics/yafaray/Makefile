@@ -16,7 +16,6 @@ COMMENT=	A fast XML based raytracer
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
 USE_GETOPT_LONG=yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 

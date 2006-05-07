@@ -20,7 +20,6 @@ USE_X_PREFIX=	yes
 WANT_GNOME=	yes
 USE_GNOME=	gnometarget
 USE_XPM=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-nas
 

@@ -19,7 +19,6 @@ USE_BZIP2=	yes
 USE_ICONV=	yes
 USE_SDL=	mixer sdl ttf
 USE_GCC=	3.4
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

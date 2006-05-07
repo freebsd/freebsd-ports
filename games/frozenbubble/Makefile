@@ -21,7 +21,6 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/SDL_perl.pm:${PORTSDIR}/devel/p5-SDL
 
 USE_SDL=	mixer image sdl
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 USE_BZIP2=	yes
 MAKE_ENV=	MKDIR="${MKDIR}" \
 		TAR="${TAR}"

@@ -17,7 +17,6 @@ COMMENT=	A fast-paced, chaotic, and intense multiplayer first person shooter
 
 NO_PACKAGE=	"Package will be 159MB, set FORCE_PACKAGE if you really want to build it"
 
-USE_REINPLACE=	yes
 USE_ZIP=	yes
 
 WRKSRC=		${WRKDIR}/Nexuiz/sources/darkplaces

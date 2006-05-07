@@ -18,7 +18,6 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_KDELIBS_VER=3
-USE_REINPLACE=	yes
 
 .include <bsd.port.pre.mk>
 

@@ -20,7 +20,6 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
-USE_REINPLACE=	yes
 
 MAN1=	tkjpeg-lite.1
 MAN3=	Tk::JPEG::Lite.3

@@ -19,7 +19,6 @@ RUN_DEPENDS=	timidity:${PORTSDIR}/audio/timidity
 
 USE_XLIB=	yes
 USE_SDL=	sdl mixer
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

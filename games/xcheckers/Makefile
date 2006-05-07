@@ -14,7 +14,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A checkers game for X11
 
 USE_IMAKE=	yes
-USE_REINPLACE=	yes
 
 MAN6=		xcheckers.6 simplech.6
 

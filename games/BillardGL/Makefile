@@ -20,7 +20,6 @@ LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_GL=		yes
 

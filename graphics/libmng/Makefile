@@ -20,7 +20,6 @@ LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 
 OPTIONS=	MNG_OPTIMIZE "Use vendor's new optimization flags" no
 
-USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ""
 MAKEFILE=	${FILESDIR}/Makefile.bsd
 MAKE_ARGS+=	-j2 WITH_MNG_OPTIMIZE=${WITH_MNG_OPTIMIZE}

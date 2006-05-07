@@ -15,7 +15,6 @@ COMMENT=	Score points without letting the tiles touch the top of the board
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 USE_SDL=	sdl mixer image ttf
 
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

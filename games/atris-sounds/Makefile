@@ -18,7 +18,6 @@ COMMENT=	Sounds for Atris: Alizarin Tetris
 RUN_DEPENDS=	atris:${PORTSDIR}/games/atris
 
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 
 GNU_CONFIGURE=	yes
 

@@ -22,7 +22,6 @@ RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot \
 		ppmtogif:${PORTSDIR}/graphics/netpbm
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
-USE_REINPLACE=	yes
 PERL_CONFIGURE=	yes
 
 MAN3=	Chart::Graph.3 \

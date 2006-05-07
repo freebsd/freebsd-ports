@@ -15,7 +15,6 @@ COMMENT=	Qt-version of the NetWalk game
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 
 USE_QT_VER=	3
-USE_REINPLACE=	yes
 MAKE_ENV=	QTDIR="${QT_PREFIX}"
 
 MAN6=		qnetwalk.6

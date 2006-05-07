@@ -17,7 +17,6 @@ COMMENT=	Boulder Dash / Digger-like game written using ncurses
 WRKSRC=		${WRKDIR}/phear-${PORTVERSION}/src
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 
 PLIST_DIRS=	share/${PORTNAME}/levels share/${PORTNAME}
 

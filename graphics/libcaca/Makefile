@@ -13,7 +13,6 @@ MASTER_SITES=	http://sam.zoy.org/projects/libcaca/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphics library that outputs text instead of pixels
 
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

@@ -19,7 +19,6 @@ RESTRICTED=	"Beta test period, redistribution prohibited"
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/build
 
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	OPTFLAG=""
 

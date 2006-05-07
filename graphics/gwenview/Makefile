@@ -21,7 +21,6 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_KDELIBS_VER=3
 USE_AUTOTOOLS=	libtool:15
-USE_REINPLACE=	yes
 
 CONFIGURE_ARGS+=	--enable-kipi
 

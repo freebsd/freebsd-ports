@@ -13,7 +13,6 @@ MASTER_SITES=	http://raffi.at/code/aop/
 MAINTAINER=	az_mail@gmx.at
 COMMENT=	A curses based arcade game with only 64 lines of code
 
-USE_REINPLACE=	yes
 DOCS=		COPYING README
 
 post-patch:

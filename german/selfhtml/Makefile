@@ -24,7 +24,6 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	frerich.raabe@gmx.de
 COMMENT=	Extensive german HTML reference
 
-USE_REINPLACE=	yes
 USE_ZIP=	yes
 NO_BUILD=	yes
 

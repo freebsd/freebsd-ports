@@ -20,7 +20,6 @@ LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 USE_GL=		yes
 USE_GNOME=	gtk12
 

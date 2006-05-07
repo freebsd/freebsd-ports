@@ -24,7 +24,6 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomehack glib20 pkgconfig pango
 USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
-USE_REINPLACE=	yes
 
 CONFIGURE_ARGS=	--without-magick --without-x
 

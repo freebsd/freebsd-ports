@@ -16,7 +16,6 @@ MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Quake 1 bots
 
 USE_ZIP=	yes
-USE_REINPLACE=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 

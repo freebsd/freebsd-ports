@@ -20,7 +20,6 @@ LIB_DEPENDS=	vips.14:${PORTSDIR}/graphics/vips \
 USE_GMAKE=	yes
 USE_GNOME=	gnomemimedata glib20 pkgconfig gtk20
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 
 MAN1=		nip2.1
 

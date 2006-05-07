@@ -23,7 +23,6 @@ RUN_DEPENDS=	fig2dev:${PORTSDIR}/print/transfig
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 PKGMESSAGE=	${WRKSRC}/pkg-message
-USE_REINPLACE=	yes
 USE_MOTIF=	yes
 USE_BISON=	yes
 USE_GMAKE=	yes

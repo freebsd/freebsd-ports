@@ -44,7 +44,6 @@ USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 USE_KDELIBS_VER=3
-USE_REINPLACE=	yes
 CONFIGURE_ARGS+=--program-prefix=''
 
 .include <bsd.port.pre.mk>

@@ -23,7 +23,6 @@ LIB_DEPENDS=	xerces-c.26:${PORTSDIR}/textproc/xerces-c2 \
 		alut.0:${PORTSDIR}/audio/freealut
 BUILD_DEPENDS=	jam:${PORTSDIR}/devel/jam
 
-USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_AUTOTOOLS=	automake:15:env autoconf:259:env
 USE_ZIP=	yes

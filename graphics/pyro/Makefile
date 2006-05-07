@@ -18,7 +18,6 @@ COMMENT=	A simple OpenGL-based firework simulator
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		glut.4:${PORTSDIR}/graphics/libglut
 
-USE_REINPLACE=	yes
 USE_GL=		yes
 USE_X_PREFIX=	yes
 

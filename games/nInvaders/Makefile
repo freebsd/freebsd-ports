@@ -16,7 +16,6 @@ DISTNAME=	ninvaders-${PORTVERSION}
 MAINTAINER=	mich@FreeBSD.org
 COMMENT=	The nIvaders game is a Space Invaders clone for ncurses
 
-USE_REINPLACE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|^CC|#CC|g" \

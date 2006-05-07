@@ -21,7 +21,6 @@ LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_SDL=	sdl
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 
 pre-patch:
 	@${FIND} ${WRKSRC}/.. -type d -name CVS | ${XARGS} ${RM} -rf

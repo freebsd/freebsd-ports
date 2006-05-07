@@ -30,7 +30,6 @@ CONFIGURE_SCRIPT=	Configure
 ALL_TARGET=
 
 .if defined (BATCH) || defined(PACKAGE_BUILDING)
-USE_REINPLACE=	yes
 CONFIGURE_ARGS=	< ${WRKDIR}/config.ans
 pre-configure:
 	@${MKDIR} ${PREFIX}/bin

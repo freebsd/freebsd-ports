@@ -17,7 +17,6 @@ COMMENT=	Freedroid is a clone of the classic game "Paradroid"
 
 USE_XLIB=	yes
 USE_SDL=	mixer image sdl
-USE_REINPLACE=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-transform-name=

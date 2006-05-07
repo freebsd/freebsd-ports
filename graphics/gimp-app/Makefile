@@ -33,7 +33,6 @@ CONFLICTS=	gimp-1.* gimpshop-[0-9]*
 
 SHLIBVER?=	200
 
-USE_REINPLACE=	yes
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes

@@ -16,8 +16,6 @@ COMMENT=	A small utility to convert Windows icon files into .xpm and .png files
 
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
 
-USE_REINPLACE=	yes
-
 PLIST_FILES=	bin/icoconvert
 
 post-patch:

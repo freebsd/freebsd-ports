@@ -22,7 +22,6 @@ BUILD_WRKSRC=		${WRKSRC}/src
 USE_X_PREFIX=		yes
 USE_SDL=		sdl mixer
 USE_GMAKE=		yes
-USE_REINPLACE=		yes
 
 MAN6=			tecnoballz.6
 

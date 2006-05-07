@@ -18,7 +18,6 @@ COMMENT=	Return to Castle Wolfenstein for Linux
 
 ONLY_FOR_ARCHS=	i386
 
-USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ""
 USE_LINUX=	yes
 NO_WRKSUBDIR=	yes

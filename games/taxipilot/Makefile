@@ -18,7 +18,6 @@ COMMENT=	A Spacetaxi clone
 LIB_DEPENDS=	artsmodules.0:${PORTSDIR}/multimedia/kdemultimedia3
 
 USE_KDELIBS_VER=3
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes

@@ -16,7 +16,6 @@ COMMENT=	An utility for generating icon and cursor themes
 
 LIB_DEPENDS=	popt:${PORTSDIR}/devel/popt
 
-USE_REINPLACE=	yes
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"

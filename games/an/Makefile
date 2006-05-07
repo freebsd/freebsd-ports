@@ -18,7 +18,6 @@ COMMENT=	Fast anagram generator
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_GETOPT_LONG=	yes
-USE_REINPLACE=	yes
 MAN6=		an.6
 
 post-patch:

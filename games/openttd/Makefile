@@ -19,7 +19,6 @@ DISTVERSIONSUFFIX=	-source
 LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png
 
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 
 pre-everything::
 .if !defined(WITH_MIDI_PLAYER)

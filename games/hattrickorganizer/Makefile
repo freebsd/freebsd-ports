@@ -21,7 +21,6 @@ USE_ZIP=	  yes
 NO_BUILD=	  yes
 USE_JAVA=	  yes
 JAVA_VERSION=	  1.4+
-USE_REINPLACE=	  yes
 
 SUB_FILES=	  hattrickorganizer.sh
 

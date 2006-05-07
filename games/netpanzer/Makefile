@@ -29,7 +29,6 @@ USE_X_PREFIX=	yes
 USE_BZIP2=	yes
 USE_SDL=	sdl net mixer image ttf
 USE_GNOME=	libxml2
-USE_REINPLACE=	yes
 USE_GCC=	3.4
 
 post-patch:

@@ -19,7 +19,6 @@ COMMENT=	An X11 shoot-'em up which requires some lateral thinking
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-scores=/var/games/nighthawk.scores --enable-sound
-USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 USE_GMAKE=	yes

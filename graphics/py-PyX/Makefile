@@ -20,7 +20,6 @@ BUILD_DEPENDS=	kpsewhich:${PORTSDIR}/print/teTeX
 
 USE_PYTHON=	2.1+
 USE_PYDISTUTILS=	yes
-USE_REINPLACE=	yes
 
 PLIST_FILES=	etc/pyxrc
 

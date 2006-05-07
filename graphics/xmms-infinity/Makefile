@@ -22,7 +22,6 @@ PLIST_FILES=	lib/xmms/Visualization/libinfinite.so lib/xmms/Visualization/libinf
 		lib/xmms/Visualization/libinfinite.a share/xmms/infinite_states
 GNU_CONFIGURE=	yes
 USE_SDL=	sdl
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
 USE_X_PREFIX=	yes

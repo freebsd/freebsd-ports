@@ -21,7 +21,6 @@ COMMENT=	Python Computer Graphics Kit
 BUILD_DEPENDS=	bjam:${PORTSDIR}/devel/boost-python scons:${PORTSDIR}/devel/scons
 
 USE_XLIB=	yes
-USE_REINPLACE=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 

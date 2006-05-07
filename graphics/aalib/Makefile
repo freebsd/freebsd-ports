@@ -17,7 +17,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An ascii art library
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-1.4.0
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 INFO=		aalib

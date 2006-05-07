@@ -18,7 +18,6 @@ COMMENT=	A fun construction toy
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_XLIB=	yes
-USE_REINPLACE=	yes
 
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \

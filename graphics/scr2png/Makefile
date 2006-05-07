@@ -18,7 +18,6 @@ COMMENT=	Converts the output of "vidcontrol -p" to PNG
 
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
 
-USE_REINPLACE=	yes
 
 MAN1=		scr2png.1
 MANCOMPRESSED=	yes

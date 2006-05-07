@@ -15,7 +15,6 @@ MASTER_SITES=	http://cairographics.org/snapshots/
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	OpenGL image compositing library
 
-USE_REINPLACE=	yes
 USE_GL=		yes
 USE_GNOME=	pkgconfig gnometarget gnomehack
 GNU_CONFIGURE=	yes

@@ -25,7 +25,6 @@ RUN_DEPENDS=	gphoto2:${PORTSDIR}/graphics/gphoto2 \
 		${PYTHON_SITELIBDIR}/OpenGL/GL/GL__init__.py:${PORTSDIR}/graphics/py-opengl
 #		cdrecord:${PORTSDIR}/sysutils/cdrtools
 
-USE_REINPLACE=	yes
 USE_PYTHON=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

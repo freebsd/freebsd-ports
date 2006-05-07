@@ -15,7 +15,6 @@ MAINTAINER=	jylefort@FreeBSD.org
 COMMENT=	A GTK+ implementation of Conway's Game of Life
 
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
 USE_GNOME=	gtk12
 USE_GMAKE=	yes
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" PREFIX="${PREFIX}" DOCDIR="${DOCSDIR}"

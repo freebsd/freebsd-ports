@@ -23,7 +23,6 @@ CONFIGURE_ARGS=		--x-includes=${X11BASE}/include	\
 			--x-libraries=${X11BASE}/lib
 CONFIGURE_ENV=		CPPFLAGS="-I${X11BASE}/include" LDFLAGS="-lusbhid"
 
-USE_REINPLACE=		yes
 REINPLACE_ARGS=		-i ""
 
 PKGMESSAGE=		${WRKDIR}/pkg-message

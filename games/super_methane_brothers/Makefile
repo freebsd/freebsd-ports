@@ -25,7 +25,6 @@ MAKEFILE=	makefile
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 
 .include <bsd.port.pre.mk>
 

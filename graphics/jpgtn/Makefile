@@ -21,7 +21,6 @@ CONFIGURE_ARGS=	--with-libjpeg=${LOCALBASE}
 
 MAN1=		jpgtn.1
 PLIST_FILES=	bin/jpgtn
-USE_REINPLACE=	yes
 
 WITH_MAXSIZE?=	2048
 WITH_MINSIZE?=	1

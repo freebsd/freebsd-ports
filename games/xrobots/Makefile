@@ -14,7 +14,6 @@ DISTNAME=	${PKGNAME}-ss-10.20
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	Fight off villainous robots (X version)
 
-USE_REINPLACE=	yes
 USE_IMAKE=	yes
 WRKSRC=		${WRKDIR}/xrobots-1.0
 MAN6=		xrobots.6

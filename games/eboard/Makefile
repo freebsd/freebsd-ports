@@ -19,7 +19,6 @@ COMMENT=	GTK+ chess board interface (mainly for FICS and chessd)
 
 HAS_CONFIGURE=	yes
 USE_GNOME=	imlib
-USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 
 CONFIGURE_ARGS=	--prefix=${PREFIX} --extra-inc=${LOCALBASE}/include:${X11BASE}/include --extra-ld=${LOCALBASE}/lib:${X11BASE}/lib

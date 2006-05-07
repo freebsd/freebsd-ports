@@ -19,7 +19,6 @@ EXTRACT_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
 
 USE_SDL=	image mixer sdl
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

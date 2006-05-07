@@ -20,7 +20,6 @@ LIB_DEPENDS=	ggzcore.8:${PORTSDIR}/games/ggz-client-libs
 
 USE_GETOPT_LONG=	yes
 USE_GETTEXT=	yes
-USE_REINPLACE=	yes
 USE_SDL=	image mixer sdl ttf
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"

@@ -16,7 +16,6 @@ COMMENT=	A city simulation game
 
 USE_GNOME=	gnometarget gtk20
 USE_SDL=	image sdl
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
 post-patch:

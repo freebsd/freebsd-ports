@@ -15,7 +15,6 @@ COMMENT=	2D kill-em all with 3D rendered graphics
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 USE_SDL=	sdl mixer image
 
 HISCOREDIR=	/var/games/formido

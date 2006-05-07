@@ -19,7 +19,6 @@ GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
-USE_REINPLACE=	yes
 
 MAN6=		pipenightdreams.6
 

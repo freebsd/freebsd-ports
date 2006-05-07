@@ -17,7 +17,6 @@ COMMENT=	The polished successor to LBreakout
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
 USE_SDL=	mixer net sdl
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"

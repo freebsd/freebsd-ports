@@ -19,7 +19,6 @@ COMMENT=	A platforms game similar to Manic Miner
 USE_SDL=	mixer sdl
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 CPPFLAGS+=	-I${LOCALBASE}/include

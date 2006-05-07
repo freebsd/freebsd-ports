@@ -21,8 +21,6 @@ USE_GHOSTSCRIPT_RUN=	yes
 
 RUN_DEPENDS=	pnmtopng:${PORTSDIR}/graphics/netpbm
 
-USE_REINPLACE=	yes
-
 pre-fetch:
 .if !defined(WITH_GHOSTSCRIPT_AFPL) || ${WITH_GHOSTSCRIPT_AFPL} != yes
 	@${ECHO} ""

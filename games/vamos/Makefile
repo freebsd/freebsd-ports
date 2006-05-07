@@ -24,7 +24,6 @@ LIB_DEPENDS=	cppunit-1.10.2:${PORTSDIR}/devel/cppunit \
 
 USE_GL=		yes
 USE_GETOPT_LONG=	yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

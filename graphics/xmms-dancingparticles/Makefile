@@ -22,7 +22,6 @@ LIB_DEPENDS=	t1.5:${PORTSDIR}/devel/t1lib \
 		xmms.4:${PORTSDIR}/multimedia/xmms
 
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
 USE_GL=		yes
 USE_GNOME=	gtk12
 USE_SDL=	sdl

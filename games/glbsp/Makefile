@@ -20,7 +20,6 @@ LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 .endif
 
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 MAKE_ENV=	CC="${CC}" CXX="${CXX}" CFLAGS="${CFLAGS}" X11BASE="${X11BASE}"
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/[[:alpha:]]//}

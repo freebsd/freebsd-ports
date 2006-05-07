@@ -16,7 +16,6 @@ BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${PEARDIR}/Image/Color.php:${PORTSDIR}/graphics/pear-Image_Color
 
 USE_PHP=	gd
-USE_REINPLACE=	yes
 
 CATEGORY=	Image
 FILES=		Canvas.php Canvas/Color.php Canvas/GD.php \

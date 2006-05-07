@@ -20,7 +20,6 @@ COMMENT=	An Xlib-based two-dimensional drawing tool and hyper-object browser
 RUN_DEPENDS=	giftopnm:${PORTSDIR}/graphics/netpbm
 
 USE_IMAKE=	yes
-USE_REINPLACE=	yes
 MAN1=		tgif.1
 TGIFDOC=	${PREFIX}/share/doc/tgif
 DEMO_FILES=	an-sr-flip-flop.obj launch-demo-1.obj \

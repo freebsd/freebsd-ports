@@ -15,7 +15,6 @@ COMMENT=	Atris: Alizarin Tetris
 
 USE_GMAKE=	yes
 USE_SDL=	sdl ttf
-USE_REINPLACE=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-transform-name=""

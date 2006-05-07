@@ -14,7 +14,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	KDE HEX clone
 
 USE_KDELIBS_VER=3
-USE_REINPLACE=	yes
 USE_AUTOTOOLS=	libtool:15
 
 post-patch:

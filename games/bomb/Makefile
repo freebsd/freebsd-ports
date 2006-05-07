@@ -18,7 +18,6 @@ LIB_DEPENDS=	esd.2:${PORTSDIR}/audio/esound	\
 		vga.1:${PORTSDIR}/graphics/svgalib \
 		quicktime.0:${PORTSDIR}/multimedia/libquicktime
 
-USE_REINPLACE=	yes
 MAKE_ENV=	SCM_CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS} -I${X11BASE}/include -I${LOCALBASE}/include"
 ALL_TARGET=	${PORTNAME}
 

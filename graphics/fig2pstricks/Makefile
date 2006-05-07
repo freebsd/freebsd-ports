@@ -14,7 +14,6 @@ MASTER_SITES=	http://www.vuw.ac.nz/staff/chirok_han/fig2pstricks/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert xfig to pstricks
 
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 
 PLIST_FILES=	bin/fig2pstricks

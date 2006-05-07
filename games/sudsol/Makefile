@@ -15,7 +15,6 @@ COMMENT=	A utility to solve Sudoku puzzles
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 
 PLIST_FILES=	bin/sudsol
 

@@ -20,7 +20,6 @@ LIB_DEPENDS=	t1.5:${PORTSDIR}/devel/t1lib \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
 
-USE_REINPLACE=	yes
 USE_BISON=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

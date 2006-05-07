@@ -13,8 +13,6 @@ MASTER_SITES=	http://www.cs.helsinki.fi/u/jpihlaja/exhaust/
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Redcode simulator easy to embed into applications
 
-USE_REINPLACE=	yes
-
 PLIST_FILES=	bin/${PORTNAME}
 
 do-install:

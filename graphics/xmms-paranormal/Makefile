@@ -29,7 +29,6 @@ INSTALLS_SHLIB=	yes
 USE_GNOME=	gtk12
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|SDL/|SDL11/|g' \

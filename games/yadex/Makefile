@@ -62,7 +62,6 @@ PLIST_SUB+=	3DRENDER="@comment "
 .endif
 
 .if defined(WITH_WHITE_BG)
-USE_REINPLACE=	yes
 post-patch:
 	@${REINPLACE_CMD} -E 's,^#(CXXFLAGS \+= -DWHITE_BACKGROUND)$$,\1,' \
 		${WRKSRC}/${MAKEFILE}

@@ -27,7 +27,6 @@ FREETYPE_CONFIG?=	${LOCALBASE}/bin/freetype-config
 
 USE_GETOPT_LONG=yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
 CPPFLAGS=	-I${X11BASE}/include

@@ -19,7 +19,6 @@ LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" CXXFLAGS="${CFLAGS}"
 
 MAN6=		crack-attack.6

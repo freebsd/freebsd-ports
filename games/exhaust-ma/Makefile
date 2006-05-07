@@ -17,7 +17,6 @@ COMMENT=	Redcode simulator easy to embed into applications
 
 USE_ZIP=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 
 NO_WRKSUBDIR=	yes
 

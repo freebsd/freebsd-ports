@@ -27,7 +27,6 @@ COMMENT=	An excellent QuakeWorld client
 WRKSRC=		${WRKDIR}/source
 
 USE_ZIP=	yes
-USE_REINPLACE=	yes
 
 MAKEFILE=	${FILESDIR}/Makefile
 

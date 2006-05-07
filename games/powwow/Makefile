@@ -14,8 +14,6 @@ MASTER_SITES=	http://linuz.sns.it/~max/powwow/ \
 MAINTAINER=	otis@sk.FreeBSD.org
 COMMENT=	Client to play MUDs
 
-USE_REINPLACE=	yes
-
 MAN6=		powwow.6
 
 post-patch:

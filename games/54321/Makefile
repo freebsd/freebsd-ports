@@ -22,7 +22,6 @@ USE_SDL=	image sdl
 USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile
 ALL_TARGET=	all size
-USE_REINPLACE=	yes
 
 post-extract:
 	@${MKDIR} ${WRKSRC}/archs/FreeBSD
