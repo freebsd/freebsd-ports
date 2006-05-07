@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	IO-Tty
-PORTVERSION=	1.02
+PORTVERSION=	1.03
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	IO
@@ -21,4 +21,10 @@ MAN3=		IO::Pty.3 \
 		IO::Tty.3 \
 		IO::Tty::Constant.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500800
+IGNORE=	requires perl 5.8.0 or higher. Please install lang/perl5.8 and try again
+.endif
+
+.include <bsd.port.post.mk>
