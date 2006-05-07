@@ -599,6 +599,7 @@
     SUBDIR += pear-XML_Beautifier
     SUBDIR += pear-XML_HTMLSax
     SUBDIR += pear-XML_Wddx
+    SUBDIR += pecl-ctemplate
     SUBDIR += pecl-xdiff
     SUBDIR += perl2html
     SUBDIR += permute
