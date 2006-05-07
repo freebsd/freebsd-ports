@@ -17,7 +17,6 @@ COMMENT=	Very configurable FTP server that can do chroot easily
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-pam
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 
 MAN8=		bftpd.8
 

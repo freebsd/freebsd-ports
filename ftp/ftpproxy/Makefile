@@ -16,7 +16,6 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	philippe@le-berre.com
 COMMENT=	A ftp proxy
 
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 
 MAN1=		ftp.proxy.1

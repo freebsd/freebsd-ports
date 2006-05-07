@@ -17,7 +17,6 @@ PATCHFILES=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}.patch
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A set of routines that implement the FTP protocol
 
-USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}/linux
 PATCH_DIST_STRIP=	-p3
 USE_GMAKE=	yes

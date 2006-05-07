@@ -21,7 +21,6 @@ BUILD_DEPENDS=	rexx:${PORTSDIR}/lang/rexx-regina
 LIB_DEPENDS=	curl.3:${PORTSDIR}/ftp/curl
 RUN_DEPENDS=	rexx:${PORTSDIR}/lang/rexx-regina
 
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

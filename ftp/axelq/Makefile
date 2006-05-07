@@ -18,7 +18,6 @@ COMMENT=	A queue manager for the download accelerator axel
 RUN_DEPENDS=	axel:${PORTSDIR}/ftp/axel \
 		bash:${PORTSDIR}/shells/bash2
 
-USE_REINPLACE=	yes
 NO_BUILD=	yes
 
 MAN1=	axelq.1

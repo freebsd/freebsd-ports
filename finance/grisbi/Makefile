@@ -42,10 +42,6 @@ USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .endif
 
-.if defined(NOPORTDOCS)
-USE_REINPLACE=	yes
-.endif
-
 pre-configure:
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e "s|pixmaps help|pixmaps|" ${WRKSRC}/Makefile.in

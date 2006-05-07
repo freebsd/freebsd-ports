@@ -12,7 +12,6 @@ COMMENT=	French verb conjugator/deconjugator (GNOME program and applet)
 LIB_DEPENDS=	verbiste-0.1:${PORTSDIR}/french/verbiste
 
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
 USE_GNOME=	gnomepanel
 CONFIGURE_ARGS=	--with-gnome
 

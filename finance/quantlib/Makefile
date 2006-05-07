@@ -20,7 +20,6 @@ COMMENT=	A comprehensive software framework for quantitative finance
 WRKSRC=		${WRKDIR}/QuantLib-${PORTVERSION}
 
 USE_GCC=	3.3
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" LDFLAGS="${PTHREAD_LIBS}"

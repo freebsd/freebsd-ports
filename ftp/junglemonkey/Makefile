@@ -17,7 +17,6 @@ COMMENT=	A distributed file sharing program for GNOME
 
 LIB_DEPENDS=	gnet.1:${PORTSDIR}/net/gnet
 
-USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomeprefix libglade
 USE_GMAKE=	yes

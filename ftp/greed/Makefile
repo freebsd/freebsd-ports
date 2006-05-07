@@ -16,7 +16,6 @@ COMMENT=	A utility for downloading files with resume capabilities
 
 ALL_TARGET=	freebsd
 WRKSRC=		${WRKDIR}/greed.81p
-USE_REINPLACE=	yes
 
 MANCOMPRESSED=	yes
 MAN1=		greed.1

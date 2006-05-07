@@ -19,7 +19,6 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 USE_QT_VER=	3
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

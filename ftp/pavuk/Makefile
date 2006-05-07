@@ -19,7 +19,6 @@ USE_BZIP2=	yes
 WANT_GNOME=	yes
 USE_GNOME=	gnometarget
 USE_OPENSSL=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-locale-dir=${PREFIX}/share/locale \

@@ -24,7 +24,6 @@ RUN_DEPENDS=	mkfontdir:${X_CLIENTS_PORT}
 
 USE_IMAKE=	yes
 USE_XPM=	yes
-USE_REINPLACE=	yes
 
 MAN1=	xtel.1 xteld.1
 

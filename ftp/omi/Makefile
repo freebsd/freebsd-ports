@@ -16,8 +16,6 @@ MASTER_SITES=	http://www.secnetix.de/~olli/distfiles/ \
 MAINTAINER=	anders@FreeBSD.org
 COMMENT=	"mirror" subtrees of FTP servers
 
-USE_REINPLACE=	yes
-
 WRKSRC=		${WRKDIR}/${PORTNAME}
 ALL_TARGET=	freebsd
 

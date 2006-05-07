@@ -18,7 +18,6 @@ COMMENT=	Management utility for the PureFTPd
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomeprefix libglade2
 USE_FAM=	yes
-USE_REINPLACE=	yes
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"

@@ -16,7 +16,6 @@ MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Modular FTP server configurable online using SITE commands
 
 USE_RC_SUBR=	yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes

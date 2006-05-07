@@ -16,7 +16,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multithreaded anonymous FTP daemon
 
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		pftpd.1 rpad.1
