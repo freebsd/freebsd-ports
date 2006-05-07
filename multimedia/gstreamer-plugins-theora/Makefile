@@ -6,7 +6,7 @@
 #
 
 CATEGORIES=	multimedia
-PORTREVISION=	1
+PORTREVISION=	2
 
 COMMENT=	Gstreamer theora plugin
 

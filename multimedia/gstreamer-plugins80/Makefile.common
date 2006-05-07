@@ -407,7 +407,7 @@ LIB_DEPENDS+=	sndfile.1:${PORTSDIR}/audio/libsndfile
 
 # theora
 .if ${GST_PLUGIN}=="theora"
-LIB_DEPENDS+=	theora.1:${PORTSDIR}/multimedia/libtheora
+LIB_DEPENDS+=	theora.2:${PORTSDIR}/multimedia/libtheora
 .endif
 
 # mad

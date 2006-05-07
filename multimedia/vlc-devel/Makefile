@@ -229,7 +229,7 @@
 
 PORTNAME=	vlc
 DISTVERSION=	0.8.5.20060423-test4
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/testing/vlc-0.8.5-test4/
 #		http://nightlies.videolan.org/build/source/
@@ -602,7 +602,7 @@ CONFIGURE_AGRS+=	--enable-shout
 .endif
 
 .if (defined(WITH_THEORA) || exists(${LOCALBASE}/lib/libtheora.a)) && !defined(WITHOUT_THEORA)
-LIB_DEPENDS+=	theora.1:${PORTSDIR}/multimedia/libtheora
+LIB_DEPENDS+=	theora.2:${PORTSDIR}/multimedia/libtheora
 CONFIGURE_ARGS+=--enable-theora
 .else
 CONFIGURE_ARGS+=--disable-theora
