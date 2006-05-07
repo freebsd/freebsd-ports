@@ -9,7 +9,7 @@ PORTNAME=	kxl
 PORTVERSION=	1.1.7
 PORTREVISION=	1
 CATEGORIES=	devel games
-MASTER_SITES=	http://kxl.hn.org/download/
+MASTER_SITES=	http://kxl.orz.hm/download/
 DISTNAME=	KXL-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
