@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	gajim
-PORTVERSION=	0.9.1
+PORTVERSION=	0.10
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.gajim.org/downloads/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	stephan@spaceboyz.net
 COMMENT=	Gajim is a Jabber client based on a plugin system
 
 LIB_DEPENDS=	gtkspell.0:${PORTSDIR}/textproc/gtkspell2
@@ -20,7 +20,6 @@ USE_X_PREFIX=	yes
 USE_PYTHON=	2.3+
 USE_GMAKE=	yes
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 USE_GNOME=	pygtk2
 
 MAKE_ENV+=	PY_CFLAGS=-I${PYTHON_INCLUDEDIR} \
