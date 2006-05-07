@@ -1,10 +1,10 @@
 [Desktop Entry]
 Encoding=UTF-8
-Name=Thunderbird (Linux binary)
-GenericName=Mail Client
+Name=Thunderbird (Linux)
+GenericName=Mail Client (Linux)
 Comment=Mail client and News Reader
 Exec=linux-thunderbird %U
-Icon=thunderbird
+Icon=%%PREFIX%%/lib/%%APP_NAME%%/chrome/icons/default/default.xpm
 StartupNotify=false
 Terminal=false
 Type=Application

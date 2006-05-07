@@ -1,4 +1,0 @@
-** After adding plugins to (Linux) Mozilla, Firefox
-** Seamonkey or Flock run
-** %%PREFIX%%/lib/%%APP_NAME%%/linkfarm as root
-** to make them available to %%APP_NAME%%

@@ -1,4 +1,0 @@
-** After adding plugins to (Linux) Beonex,
-** Mozilla or Netscape, run
-** %%PREFIX%%/lib/%%BROWSER_NAME%%/linkfarm as root
-** to make them available to %%BROWSER_NAME%%.
