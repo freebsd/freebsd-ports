@@ -1,5 +1,5 @@
---- configure.ac.orig	Wed Feb  1 14:52:36 2006
-+++ configure.ac	Wed Feb  1 15:04:55 2006
+--- configure.ac.orig	Wed Feb 22 12:53:28 2006
++++ configure.ac	Sun May  7 14:19:18 2006
 @@ -136,7 +136,7 @@
     x86 | i686 | i586 | i486 | i386 ) MACHTYPE=x86
                     ;;
@@ -9,7 +9,7 @@
  		   P_64BIT=1 ;
                     LIB64=1 ;
  		   ;;
-@@ -276,7 +276,7 @@
+@@ -278,7 +278,7 @@
  
  AC_MSG_CHECKING(if linker accepts -Wreorder)
  AC_LANG_CONFTEST([[int main(int ac,char **av) { return 0; }]])
@@ -18,7 +18,7 @@
  if test $? = 0 ; then
    AC_MSG_RESULT(yes)
    STDCXXFLAGS="$STDCXXFLAGS -Wreorder"
-@@ -289,7 +289,7 @@
+@@ -291,7 +291,7 @@
  # $CXX $CFLAGS -Woverloaded-virtual conftest.cc > /dev/null 2>&1
  # if test $? = 0 ; then
  #   AC_MSG_RESULT(yes)
@@ -27,7 +27,7 @@
  # else
  #   AC_MSG_RESULT(no)
  # fi
-@@ -318,7 +318,7 @@
+@@ -320,7 +320,7 @@
    AC_MSG_RESULT(yes)
  else
    AC_MSG_RESULT(no)
@@ -36,7 +36,7 @@
  fi
  
  GCSECTIONS=0
-@@ -339,7 +339,7 @@
+@@ -341,7 +341,7 @@
    $CXX $CFLAGS -ffunction-sections -c conftest.cc > /dev/null 2>&1
    if test $? = 0 ; then
      AC_MSG_RESULT(yes)
@@ -45,7 +45,7 @@
      GCSECTIONS=1
    else
      AC_MSG_RESULT(no)
-@@ -355,7 +355,7 @@
+@@ -357,7 +357,7 @@
    dnl $CXX $CFLAGS -fdata-sections -c conftest.cc > /dev/null 2>&1
    dnl if test $? = 0 ; then
    dnl   AC_MSG_RESULT(yes)
@@ -54,7 +54,7 @@
    dnl   GCSECTIONS=1
    dnl else
    dnl   AC_MSG_RESULT(no)
-@@ -368,7 +368,7 @@
+@@ -370,7 +370,7 @@
    dnl $CXX $CFLAGS -fvtable-gc -c conftest.cc > /dev/null 2>&1
    dnl if test $? = 0 ; then
    dnl   AC_MSG_RESULT(yes)
@@ -63,7 +63,7 @@
    dnl   GCSECTIONS=1
    dnl else
    dnl   AC_MSG_RESULT(no)
-@@ -687,18 +687,18 @@
+@@ -689,18 +689,18 @@
  dnl MSWIN_DISPLAY semaphore,Semaphore Support
  dnl MSWIN_DEFINE  semaphore,P_HAS_SEMAPHORES
  
@@ -88,7 +88,7 @@
    fi
  fi
  
-@@ -1251,7 +1251,7 @@
+@@ -1253,7 +1253,7 @@
  else
    AC_CHECK_HEADERS(expat.h, HAS_EXPAT=1)
    if test "${HAS_EXPAT:-unset}" != "unset" ; then
@@ -97,7 +97,7 @@
    else
      AC_CHECK_FILE(/usr/local/include/expat.h, HAS_EXPAT=1)
      if test "${HAS_EXPAT:-unset}" != "unset" ; then
-@@ -1426,7 +1426,8 @@
+@@ -1428,7 +1428,8 @@
    if test $HAS_IPV6 = no ; then
      AC_MSG_RESULT(no)
    else
@@ -107,19 +107,28 @@
                       #include <netdb.h>],
                       [getnameinfo(NULL, 0, NULL, 0, NULL, 0, 0);], HAS_IPV6=yes, HAS_IPV6=no)
      if test $HAS_IPV6 = no ; then
-@@ -1499,9 +1500,9 @@
-     AC_CHECK_LIB(SDL, SDL_CreateYUVOverlay, HAS_SDL=1, HAS_SDL=, -L${X11LIBDIR} -lpthread -lX11 -lXext -laa)
+@@ -1485,7 +1486,7 @@
+ HAS_SDL=
+ if test "$enable_sdl" = "no" ; then
+   AC_MSG_NOTICE(SDL disabled)
+-  AC_DEFINE(P_SDL, 0)
++#  AC_DEFINE(P_SDL, 0)
+ else
+   dnl SDL checks
+   if test "${SDLLIB:-unset}" = "unset" ; then
+@@ -1501,9 +1502,9 @@
+     AC_CHECK_LIB(SDL, SDL_CreateYUVOverlay, HAS_SDL=1, HAS_SDL=, -L${X11LIBDIR} -lpthread -lX11 -lXext)
    fi
  
 -  dnl freeBSD SDL check
 +  dnl FreeBSD SDL check
    if test "${HAS_SDL:-unset}" = "unset" ; then
 -    AC_CHECK_FILE(/usr/local/include/SDL11/SDL.h, HAS_SDL=1)
-+    AC_CHECK_FILE(SDL11/SDL.h, HAS_SDL=1)
++    AC_CHECK_HEADER(SDL11/SDL.h, HAS_SDL=1)
      if test "${HAS_SDL:-unset}" != "unset" ; then
        SDLLIB=SDL-1.1
      fi
-@@ -1525,7 +1526,7 @@
+@@ -1527,7 +1528,7 @@
  dnl ########################################################################
  dnl check for video capture support.
  dnl videodev.h on linux
@@ -128,7 +137,7 @@
  dnl i386/ioctl_meteor on OpenBSD
  dnl dev/ic/bt8xx on NetBSD
  
-@@ -1551,9 +1552,10 @@
+@@ -1553,9 +1554,10 @@
      HAS_VIDEO_CAPTURE=1
    else
      AC_CHECK_HEADER(linux/videodev.h, HAS_VIDEO_CAPTURE=1)
@@ -142,7 +151,7 @@
      if test "${HAS_VIDEO_CAPTURE}z" = "z" ; then
        AC_MSG_NOTICE(No Video Capture support)
        AC_DEFINE([NO_VIDEO_CAPTURE], [], [No video capture])
-@@ -2044,6 +2046,9 @@
+@@ -2046,6 +2048,9 @@
    AC_MSG_NOTICE(C++ exceptions enabled)
    STDCCFLAGS="$STDCCFLAGS -fno-exceptions"
  fi

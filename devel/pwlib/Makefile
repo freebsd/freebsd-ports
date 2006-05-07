@@ -7,6 +7,7 @@
 
 PORTNAME=	pwlib
 PORTVERSION=	1.10.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.voxgratia.org/releases/
@@ -23,6 +24,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}_v${PORTVERSION:S/./_/g}
 USE_BISON=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf:259
+WANT_GNOME=	yes
 WANT_SDL=	yes
 USE_OPENSSL=	yes
 NO_FILTER_SHLIBS=	yes
@@ -75,11 +77,49 @@ CONFIGURE_ENV+=	OPENLDAPLIBDIR="${LOCALBASE}/lib"
 MAKE_ENV+=	OPENLDAPLIBDIR="${LOCALBASE}/lib"
 .endif
 
+#enable esound support
+.if defined(WITH_ESOUND) && ${HAVE_GNOME:Mesound}!=""
+USE_GNOME+=	esound
+CONFIGURE_ARGS+=	--enable-esd
+PLIST_SUB+=	ESD=""
+.else
+CONFIGURE_ARGS+=	--disable-esd
+PLIST_SUB+=	ESD="@comment "
+.endif
+
+# ONLY FOR THE BRAVE!
+# If someone owns a firewire(4) video device and wants to use it for
+# video-conferencing purposes, please download the files:
+# libraw1394.shar.gz, libavc1394.shar.gz and libdc1394.shar.gz from
+# ftp://ftp.frm2.tum.de/pub/jpulz/FreeBSD/ports/
+# Extract the files in ${PORTSDIR}/devel and uncomment the following lines.
+#
+##enable libavc1394
+#.if defined(WITH_AVC1394)
+#LIB_DEPENDS+=	avc1394.2:${PORTSDIR}/devel/libavc1394 \
+#		dv.4:${PORTSDIR}/multimedia/libdv
+#CONFIGURE_ARGS+=	--enable-avc
+#PLIST_SUB+=	AVC1394=""
+#.else
+CONFIGURE_ARGS+=	--disable-avc
+PLIST_SUB+=	AVC1394="@comment "
+#.endif
+#
+##enable libdc1394
+#.if defined(WITH_DC1394)
+#LIB_DEPENDS+=	dc1394_control.13:${PORTSDIR}/devel/libdc1394
+#CONFIGURE_ARGS+=	--enable-dc
+#PLIST_SUB+=	DC1394=""
+#.else
+CONFIGURE_ARGS+=	--disable-dc
+PLIST_SUB+=	DC1394="@comment "
+#.endif
+
 .if (${ARCH} == "amd64") || (${ARCH} == "ia64") || (${ARCH} == "sparc64")
 CFLAGS+=	-fPIC
 .endif
 
-.if (${ARCH} == "i386") || (${ARCH} == "ia64")
+.if (${ARCH} == "i386") || (${ARCH} == "ia64") || (${ARCH} == "amd64")
 PLIST_SUB+=	BSDVIDEO=""
 .else
 PLIST_SUB+=	BSDVIDEO="@comment "

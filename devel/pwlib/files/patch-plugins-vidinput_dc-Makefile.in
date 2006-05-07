@@ -1,0 +1,11 @@
+--- plugins/vidinput_dc/Makefile.in.orig	Thu Apr  6 17:01:27 2006
++++ plugins/vidinput_dc/Makefile.in	Thu Apr  6 17:01:38 2006
+@@ -4,7 +4,7 @@
+ 
+ PLUGIN_NAME	= dc
+ PLUGIN_FAMILY	= device/videoinput
+-PLUGIN_LIBS	= -lraw1394 -ldv -ldc1394_control
++PLUGIN_LIBS	= $(LDFLAGS) -lraw1394 -ldv -ldc1394_control
+ PLUGIN_SOURCES	= video4dc1394.cxx
+ 
+ CFLAGS		= @DC_CFLAGS@
