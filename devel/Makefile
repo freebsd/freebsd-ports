@@ -614,6 +614,7 @@
     SUBDIR += mingw32-bin-msvcrt
     SUBDIR += mingw32-binutils
     SUBDIR += mingw32-gcc
+    SUBDIR += mingw32-pdcurses
     SUBDIR += mips-rtems-binutils
     SUBDIR += mips-rtems-g77
     SUBDIR += mips-rtems-gcc

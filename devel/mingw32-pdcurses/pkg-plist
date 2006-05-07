@@ -1,0 +1,7 @@
+mingw32/include/curses.h
+mingw32/include/curspriv.h
+mingw32/include/panel.h
+mingw32/include/term.h
+mingw32/lib/libcurses.a
+mingw32/lib/libpanel.a
+mingw32/lib/libpdcurses.a
