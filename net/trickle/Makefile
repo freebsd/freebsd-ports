@@ -7,7 +7,7 @@
 
 PORTNAME=	trickle
 PORTVERSION=	1.06
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	http://monkey.org/~marius/trickle/
 
@@ -19,7 +19,8 @@ LIB_DEPENDS=	event-1.1a.1:${PORTSDIR}/devel/libevent
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
-CONFIGURE_ARGS+=--with-libevent=${LOCALBASE}
+CONFIGURE_ARGS+=--with-libevent=${LOCALBASE} \
+		--sysconfdir=${PREFIX}/etc
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
