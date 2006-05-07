@@ -13046,6 +13046,7 @@ trickle		ports/net/trickle
 trickyirc	ports/irc/trickyirc
 tridiavnc	ports/net/tridiavnc
 trigger		ports/games/trigger
+trimines	ports/games/trimines
 trinokiller	ports/security/trinokiller
 trio		ports/devel/trio
 tripwire	ports/security/tripwire
