@@ -15,6 +15,9 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight java-based GIS data viewer
 
+DEPRECATED=		Download unavailable anymore
+EXPIRATION_DATE=	2006-06-07
+
 USE_JAVA=	yes
 JAVA_VERSION=	1.2+
 
