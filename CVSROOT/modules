@@ -4190,6 +4190,7 @@ ipa_sdb		ports/databases/ipa_sdb
 ipacctd		ports/net-mgmt/ipacctd
 ipager		ports/x11/ipager
 ipaudit		ports/net-mgmt/ipaudit
+ipbt		ports/misc/ipbt
 ipcad		ports/net-mgmt/ipcad
 ipcalc		ports/net-mgmt/ipcalc
 ipcheck		ports/dns/ipcheck
