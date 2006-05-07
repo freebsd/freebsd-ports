@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	mathomatic
-PORTVERSION=	12.5.14
+PORTVERSION=	12.5.15
 CATEGORIES=	math
 MASTER_SITES=	http://www.panix.com/~gesslein/
 
@@ -15,6 +15,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Highly portable, general purpose CAS (Computer Algebra System)
 
 USE_BZIP2=	yes
+USE_GCC=	3.4+
+
 MAKEFILE=	makefile
 MAKE_ARGS=	-DREADLINE
 
