@@ -40,7 +40,6 @@ NO_CDROM=	'Must be downloaded direct from Sun via www interface'
 CD_MOUNTPT=	'/cdrom'
 IS_INTERACTIVE=	yes
 NO_BUILD=	yes
-USE_REINPLACE=	yes
 USE_LINUX=	yes
 USE_X_PREFIY=	yes
 DIST_SUBDIR=	staroffice52

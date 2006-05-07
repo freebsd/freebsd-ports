@@ -18,7 +18,6 @@ COMMENT=	A text editor for X
 
 USE_IMAKE=	yes
 USE_XPM=	yes
-USE_REINPLACE=yes
 MAN1=		xed.1
 
 pre-build:

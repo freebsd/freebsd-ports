@@ -18,7 +18,6 @@ COMMENT=	GTK+ based simple text editor
 USE_GNOME=	gtk20 gnomehier desktopfileutils intlhack
 USE_GCC=	3.4
 USE_GETOPT_LONG=	yes
-USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \

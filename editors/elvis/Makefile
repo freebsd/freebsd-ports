@@ -19,7 +19,6 @@ COMMENT=	A clone of the ex/vi text editor
 
 EXTRACT_AFTER_ARGS=	| ${TAR} --exclude guiwin32 -xf -
 
-USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix="${PREFIX}"
 ALL_TARGET=	all doc/elvtags.man

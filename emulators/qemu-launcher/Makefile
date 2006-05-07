@@ -22,7 +22,6 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Gtk2:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
 
 WRKSRC=		${WRKDIR}/trunk
 
-USE_REINPLACE=	yes
 USE_PERL5=	yes
 NO_BUILD=	yes
 

@@ -19,7 +19,6 @@ COMMENT=	Nintendo GameBoy emulator
 LIB_DEPENDS=	vga.1:${PORTSDIR}/graphics/svgalib
 
 USE_SDL=	sdl
-USE_REINPLACE=	yes
 USE_XLIB=	yes
 USE_AUTOTOOLS=	autoconf:259
 GNU_CONFIGURE=	yes

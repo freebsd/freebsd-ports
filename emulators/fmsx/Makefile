@@ -21,7 +21,6 @@ EXTRACT_ONLY=	fMSX30.tar.Z
 MAINTAINER=	dk@farm.org
 COMMENT=	The Portable MSX/MSX2/MSX2+ Emulator
 
-USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ""
 
 USE_XLIB=	yes

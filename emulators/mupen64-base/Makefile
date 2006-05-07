@@ -18,7 +18,6 @@ COMMENT=	Mupen64 is a Nintendo 64 emulator
 
 USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_SDL=	sdl
 USE_GNOME=	gtk12

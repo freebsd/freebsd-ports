@@ -21,7 +21,6 @@ RUN_DEPENDS=	bochs:${PORTSDIR}/emulators/bochs
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	configure.sh
 

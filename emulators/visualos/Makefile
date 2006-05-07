@@ -17,7 +17,6 @@ COMMENT=	A visual simulator of an operating system to help understand how OSes w
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomeprefix libglade
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

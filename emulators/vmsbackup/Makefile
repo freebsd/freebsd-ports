@@ -18,7 +18,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Reads VMS BACKUP tapes
 
 EXTRACT_DEPENDS=unzip:${PORTSDIR}/archivers/unzip
-USE_REINPLACE=  yes
 ALL_TARGET=	vmsbackup
 
 PLIST_FILES=	bin/vmsbackup

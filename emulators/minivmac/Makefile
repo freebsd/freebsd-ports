@@ -15,7 +15,6 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A miniature Macintosh emulator
 
-USE_REINPLACE=	yes
 USE_XLIB=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

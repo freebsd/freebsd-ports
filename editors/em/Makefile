@@ -15,7 +15,6 @@ DISTNAME=	${PORTNAME}-4.0.16-lt
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Full screen editor based on MicroEMACS
 
-USE_REINPLACE=	yes
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" DEFINES=""
 
 pre-patch:

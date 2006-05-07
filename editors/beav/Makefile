@@ -20,7 +20,6 @@ COMMENT=	Binary Editor And Viewer, a full featured binary file editor
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R:S/.//}
 
-USE_REINPLACE=	yes
 ALL_TARGET=	beav
 
 MAN1=		beav.1

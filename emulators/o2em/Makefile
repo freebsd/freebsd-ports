@@ -23,7 +23,6 @@ WRKSRC=			${WRKDIR}/o2em117src
 MAKEFILE=		Makefile.freebsd
 USE_ZIP=		yes
 USE_GMAKE=		yes
-USE_REINPLACE=		yes
 MAKE_ENV=		LDFLAGS="${PTHREAD_LIBS}"
 
 post-extract:

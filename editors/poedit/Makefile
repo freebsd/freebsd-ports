@@ -22,7 +22,6 @@ LIB_DEPENDS=	gtkspell.0:${PORTSDIR}/textproc/gtkspell2	\
 
 USE_X_PREFIX=	yes
 USE_GETTEXT=	yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes

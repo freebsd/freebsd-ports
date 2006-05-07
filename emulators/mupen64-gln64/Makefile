@@ -17,7 +17,6 @@ MAINTAINER?=	tlp@LiquidX.org
 COMMENT=	GlN64 graphics plugin for Mupen64
 
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_SDL=	sdl
 USE_GNOME=	gtk12

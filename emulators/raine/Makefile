@@ -21,7 +21,6 @@ LIB_DEPENDS=	alleg.42:${PORTSDIR}/devel/allegro \
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_SDL=	sdl
 USE_GNOME=	gnomehier

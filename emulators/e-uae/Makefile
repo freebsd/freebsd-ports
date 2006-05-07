@@ -21,7 +21,6 @@ GNU_CONFIGURE=	yes
 USE_XLIB=	yes
 USE_GNOME=	gtk20
 USE_SDL=	sdl
-USE_REINPLACE=	yes
 
 PLIST_FILES=	bin/uae bin/readdisk
 PORTDOCS=	README bsdsocket.txt compiling.txt configuration.txt \

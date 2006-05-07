@@ -26,7 +26,6 @@ RUN_DEPENDS=	tex:${PORTSDIR}/print/teTeX-base
 USE_XLIB=	yes
 USE_PYTHON=	yes
 USE_ICONV=	yes
-USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ""
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
