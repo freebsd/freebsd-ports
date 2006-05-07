@@ -1,0 +1,15 @@
+foo2zjs is an open source printer driver for printers that use the Zenographics
+ZjStream wire protocol for their print data, such as the Minolta/QMS magicolor
+2300 DL or Konica Minolta magicolor 2430 DL. These printers are often
+erroneously referred to as winprinters or GDI printers.
+
+However, Microsoft GDI only mandates the API between an application and the
+printer driver, not the protocol on the wire between the printer driver and the
+printer. In fact, ZjStream printers are raster printers which happen to use a
+very efficient wire protocol which was developed by Zenographics and licensed
+by most major printer manufacturers for at least some of their product lines.
+
+ZjStream is just one of many wire protocols that are in use today, such as
+Postscript, PCL, Epson, etc.
+
+WWW:	http://foo2zjs.rkkda.com/
