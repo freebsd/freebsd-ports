@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sweep
-PORTVERSION=	0.9.0
+PORTVERSION=	0.9.1
 CATEGORIES=	audio gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,7 +20,9 @@ LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile \
 		speex.3:${PORTSDIR}/audio/speex \
 		mad.2:${PORTSDIR}/audio/mad
 
+USE_BZIP2=	yes
 USE_X_PREFIX=	yes
+USE_GETTEXT=	yes
 USE_GNOME=	gnomehack gnomeprefix gnometarget gtk20
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
