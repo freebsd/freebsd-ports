@@ -1,0 +1,28 @@
+--- ode-0.5/Makefile	Sun May  7 12:12:01 2006
++++ ode-0.5/Makefile	Sun May  7 12:12:01 2006
+@@ -329,13 +329,13 @@
+ 	-$(DEL_CMD) OPCODE/*.obj OPCODE/*.o OPCODE/Ice/*.obj OPCODE/Ice/*.o
+ 
+ %$(OBJ): %.c
+-	$(CC) $(C_FLAGS) $(C_INC)$(INCPATH) $(DEFINES) $(C_OPT)1 $(C_OUT)$@ $<
++	$(CC) $(C_INC)$(INCPATH) $(C_FLAGS) -fPIC $(DEFINES) $(C_OUT)$@ $<
+ 
+ %$(OBJ): %.cpp
+-	$(CC) $(C_FLAGS) $(C_INC)$(INCPATH) $(INC_OPCODE) $(DEFINES) $(C_OPT)$(OPT) $(C_OUT)$@ $<
++	$(CC) $(C_INC)$(INCPATH) $(C_FLAGS) -fPIC $(INC_OPCODE) $(DEFINES) $(C_OUT)$@ $<
+ 
+ %.exe: %$(OBJ)
+-	$(CC) $(C_EXEOUT)$@ $< $(ODE_LIB) $(DRAWSTUFF_LIB) $(RESOURCE_FILE) $(LINK_OPENGL) $(LINK_MATH)
++	$(CC) $(C_EXEOUT)$@ $< $(ODE_LIB) $(DRAWSTUFF_LIB) $(RESOURCE_FILE) $(LINK_OPENGL) $(LINK_MATH) ${LDFLAGS}
+ 
+ 
+ # windows specific rules
+@@ -357,7 +357,7 @@
+ 
+ # unix-gcc specific dependency making
+ 
+-DEP_RULE=gcc -M $(C_INC)$(INCPATH) $(DEFINES)
++DEP_RULE=${CC} -M $(C_INC)$(INCPATH) $(DEFINES)
+ depend:
+ 	$(DEP_RULE) $(ODE_SRC) $(ODE_PREGEN_SRC) | tools/process_deps ode/src/ > Makefile.deps
+ 	$(DEP_RULE) $(DRAWSTUFF_SRC) | tools/process_deps drawstuff/src/ >> Makefile.deps

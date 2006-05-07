@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	soya3d
-PORTVERSION=	0.10.2
+PORTVERSION=	0.10.4
 CATEGORIES=	graphics
 MASTER_SITES=	http://download.gna.org/soya/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -36,27 +36,39 @@ USE_GMAKE=	yes
 MANDIR=	${WRKDIR}/${DISTNAME}/manpage/man1
 MAN1=	soya_editor.1
 INSTALL_DIR=	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m ${BINMODE}
+SOYATUTVER=	0.10.2
 
 .if !defined(NOPORTDOCS)
-DISTFILES+=	SoyaTutorial-${PORTVERSION}${EXTRACT_SUFX}
-.endif
-
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64"
-BROKEN=	Does not compile in ${ARCH}
+DISTFILES+=	SoyaTutorial-${SOYATUTVER}${EXTRACT_SUFX}
 .endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		-e 's|%%X11BASE%%|${X11BASE}|g' ${WRKSRC}/setup.py
+	@${REINPLACE_CMD} -e \
+		's|malloc.h|stdlib.h|g' \
+		${WRKSRC}/ode-0.5/configurator.c
+	@${REINPLACE_CMD} -e \
+		's|g++|${CXX}|; \
+		s|-Wall||g; \
+		s|-L/usr/X11/lib|-lXext|; \
+		s|-L/usr/lib/X11R6||; \
+		s|-L/usr/lib/X11||; \
+		s|-L/usr/X11R6/lib|-L${X11BASE}/lib|; \
+		s|-fno-rtti||; \
+		s|-ffast-math|${CXXFLAGS} -I${X11BASE}/include|' \
+		${WRKSRC}/ode-0.5/config/makefile.unix-gcc
+	@${REINPLACE_CMD} -e \
+		's|^BUILD=debug|#BUILD=debug|; \
+		s|^#BUILD=release|BUILD=release|' \
+		${WRKSRC}/ode-0.5/config/user-settings
 
 post-install:
 	@${INSTALL_DIR} ${EXAMPLESDIR}
-	@${CP} -R ${WRKDIR}/SoyaTutorial-${PORTVERSION}/tutorial/* ${EXAMPLESDIR}
+	@${CP} -R ${WRKDIR}/SoyaTutorial-${SOYATUTVER}/tutorial/* ${EXAMPLESDIR}
 .if !defined(NOPORTDOCS)
 	@${INSTALL_DIR} ${DOCSDIR}
-	@${CP} -R ${WRKDIR}/SoyaTutorial-${PORTVERSION}/doc/* ${DOCSDIR}
+	@${CP} -R ${WRKDIR}/SoyaTutorial-${SOYATUTVER}/doc/* ${DOCSDIR}
 	@${FIND} ${EXAMPLESDIR}/* -type f -print0 | \
 		${XARGS} -0 ${CHMOD} ${SHAREMODE}
 .for f in ${MAN1}
@@ -64,4 +76,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
