@@ -12,7 +12,7 @@ include/estraier.h
 lib/libestraier.a
 lib/libestraier.so
 lib/libestraier.so.8
-lib/libestraier.so.8.9.0
+lib/libestraier.so.8.10.0
 libdata/pkgconfig/hyperestraier.pc
 libexec/estseek.cgi
 %%DATADIR%%/COPYING
