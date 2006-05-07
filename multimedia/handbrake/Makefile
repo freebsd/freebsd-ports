@@ -9,7 +9,7 @@ PORTNAME=	handbrake
 PORTVERSION=	0.6.2
 PORTREVISION=	3
 CATEGORIES=	multimedia
-MASTER_SITES=	http://people.via.ecp.fr/~titer/handbrake/
+MASTER_SITES=	http://download.m0k.org/${PORTNAME}/
 DISTNAME=	HandBrake-${PORTVERSION}-src
 
 MAINTAINER=	ports@FreeBSD.org
@@ -34,10 +34,25 @@ PLIST_FILES=	bin/handbrake
 WRKSRC=		${WRKDIR}/HandBrake-${PORTVERSION}
 
 USE_GNOME=	gtk20
-USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 
 SYSCTL_CMD?=	/sbin/sysctl
+
+EXTRACT_AFTER_ARGS=	| ${TAR} -xf - --exclude beos \
+			--exclude macosx \
+			--exclude packageOSX.sh \
+			--exclude contrib/liba52 \
+			--exclude contrib/libavcodec \
+			--exclude contrib/libdvdcss \
+			--exclude contrib/libdvdread \
+			--exclude contrib/libfaac \
+			--exclude contrib/libmp3lame \
+			--exclude contrib/libmp4v2 \
+			--exclude contrib/libmpeg2 \
+			--exclude contrib/libogg \
+			--exclude contrib/libsamplerate \
+			--exclude contrib/libvorbis \
+			--exclude contrib/libxvidcore
 
 .include <bsd.port.pre.mk>
 
@@ -49,18 +64,18 @@ WITH_DVD_DEVICE?=	acd0c
 WITH_DVD_DEVICE?=	acd0
 .endif
 
+# jam -dx, it will giving a verbose of build.
 do-build:
-	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} jam)
+	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} jam -dx)
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gtk2HB ${PREFIX}/bin/handbrake
 
 post-patch:
 	@${REINPLACE_CMD} -e 's:%%PREFIX%%:${LOCALBASE}:g' \
-		-e 's:%%LIBAVCODEC%%:${FFMPEG_SRC_DIR}/libavcodec:g' \
 		-e 's:%%PTHREAD_LIBS%%:${PTHREAD_LIBS}:g' \
 		-e 's:%%CC%%:${CC}:g' -e 's:%%CXX%%:${CXX}:g' \
-		-e 's:%%CFLAGS%%:${CFLAGS}:g' \
+		-e 's:-g ::g' -e 's:%%CFLAGS%%:${CFLAGS}:g' \
 		${BUILD_WRKSRC}/Jamfile ${BUILD_WRKSRC}/core/Jamfile \
 		${BUILD_WRKSRC}/Jamrules
 	@${REINPLACE_CMD} -e 's:%%DVD_DEVICE%%:${WITH_DVD_DEVICE}:g' \
