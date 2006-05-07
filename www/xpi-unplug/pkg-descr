@@ -1,0 +1,8 @@
+Convert embedded plug-ins to html links with this extension. This means you
+have a way of avoiding installation of plug-ins and can easily download
+files which are normally inside a player.
+
+When you click on UnPlug in the tools or context menu, it searches the page
+for and tags and creates a new page with a list of the links which it found.
+
+WWW: https://addons.mozilla.org/firefox/2254/
