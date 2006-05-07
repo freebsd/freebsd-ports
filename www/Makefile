@@ -983,6 +983,7 @@
     SUBDIR += xpi-server_switcher
     SUBDIR += xpi-tabmixplus
     SUBDIR += xpi-unplug
+    SUBDIR += xpi-videodownloader
     SUBDIR += xpi-web_developer
     SUBDIR += xshttpd
     SUBDIR += xshttpd-devel
