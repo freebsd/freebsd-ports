@@ -1,0 +1,17 @@
+#! /bin/sh
+#
+# $FreeBSD$
+#
+# post install for FPC package
+
+PORTVERSION="2.0.2"
+
+if [ $2 = "POST-INSTALL" ]
+then
+    if [ -e "{$PKG_PREFIX}/bin/ppc386" ]
+    then
+	${RM} -f "${PKG_PREFIX}/bin/ppc386"
+    fi
+    ${LN} -s "${PKGPREFIX}/lib/fpc/${PORTVERSION}/ppc386" "${PKG_PREFIX}/bin"
+    ${SH} "${PKG_PREFIX}/lib/fpc/${PORTVERSION}/samplecfg" "${PKG_PREFIX}/lib/fpc/${PORTVERSION}" "${PKG_PREFIX}/etc"
+fi
