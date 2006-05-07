@@ -6,7 +6,7 @@
 # http://maps.google.com/ or http://www.heavens-above.com/
 
 #
-# Style (sorted from east to west): sort -n -r -k 2
+# Style (sorted from east to west): sort -n -r -k2
 # Lat,		Long,		"name"	opt			# location
 
 -41.2124,	174.8870,	"thompsa"			# Wellington, New Zealand
@@ -55,6 +55,7 @@
  55.768764,	37.588938,	"sergei"			# Moscow, Russia
  55.7203,	37.4314,	"sat"				# Moscow, Russia
  44.95,		34.1,		"phantom,ru"			# Simferopol, Ukraine
+ 46.28,		30.44,		"anray"				# Odessa, Ukraine
 -25.80974,	28.27731,	"jhay"				# Pretoria, South Africa
  60.16,		24.87,		"scop"				# Helsinki, Finland
  37.98,		23.73,		"dds"				# Athens, Greece
