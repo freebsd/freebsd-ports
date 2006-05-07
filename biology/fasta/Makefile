@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fasta
-PORTVERSION=	21.u1.d0
+PORTVERSION=	21.u1.d1
 CATEGORIES=	biology
 MASTER_SITES=	http://ftp.virginia.edu/pub/fasta/
 DISTNAME=	fasta${PORTVERSION:S/.//g}
