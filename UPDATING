@@ -6,6 +6,16 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+200605R0728:
+  AFFECTS: users of net/isc-dhcp3-server with failover setup
+  AUTHOR: Joerg.Pulz@frm2.tum.de
+
+  Beginning with isc-dhcp3-server-3.0.4 a new field is added to the
+  lease state structures found in the dhcpd.leases file.
+  Please refer to ${PREFIX}/share/doc/isc-dhcp3-server/RELNOTES for
+  further informations about this change and how you can update your
+  dhcpd.leases file.
+
 20060506:
   AFFECTS: users of PHP
   AUTHOR: ale@FreeBSD.org
