@@ -8,6 +8,7 @@
 
 PORTNAME=	service-discovery-applet
 PORTVERSION=	0.4.1
+PORTREVISION=	1
 CATEGORIES=	net dns gnome
 MASTER_SITES=	http://0pointer.de/~sebest/
 
