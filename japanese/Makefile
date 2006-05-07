@@ -200,6 +200,7 @@
     SUBDIR += man-doc
     SUBDIR += marumoji-fonts
     SUBDIR += mecab
+    SUBDIR += mecab-ipadic
     SUBDIR += mell
     SUBDIR += mendexk-euc
     SUBDIR += mh
