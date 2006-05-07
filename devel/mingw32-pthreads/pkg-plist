@@ -1,0 +1,6 @@
+mingw32/include/pthread.h
+mingw32/include/sched.h
+mingw32/include/semaphore.h
+mingw32/lib/libpthread.a
+mingw32/lib/libpthreadGC2.a
+mingw32/lib/pthreadGC2.dll
