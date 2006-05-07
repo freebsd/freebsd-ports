@@ -73,6 +73,7 @@ share/libhrel/examples/hrel-demo
 share/applications/bmp-2.0.desktop
 share/applications/bmp-enqueue-2.0.desktop
 share/applications/bmp-play-2.0.desktop
+share/icons/hicolor/48x48/apps/bmpx.png
 %%DATADIR%%/data/GPL.txt
 %%DATADIR%%/glade/dialog_add_files.glade
 %%DATADIR%%/glade/dialog_bookmarks.glade
@@ -172,25 +173,25 @@ share/applications/bmp-play-2.0.desktop
 %%DATADIR%%/ui/plmanager.ui
 %%DATADIR%%/ui/tracklist.ui
 %%DATADIR%%/ui/trayicon.ui
-share/locale/af/LC_MESSAGES/bmpx.mo
-share/locale/bg/LC_MESSAGES/bmpx.mo
-share/locale/cs/LC_MESSAGES/bmpx.mo
-share/locale/de/LC_MESSAGES/bmpx.mo
-share/locale/el/LC_MESSAGES/bmpx.mo
-share/locale/es/LC_MESSAGES/bmpx.mo
-share/locale/et/LC_MESSAGES/bmpx.mo
-share/locale/fi/LC_MESSAGES/bmpx.mo
-share/locale/fr/LC_MESSAGES/bmpx.mo
-share/locale/hu/LC_MESSAGES/bmpx.mo
-share/locale/ja/LC_MESSAGES/bmpx.mo
-share/locale/lt/LC_MESSAGES/bmpx.mo
-share/locale/nl/LC_MESSAGES/bmpx.mo
-share/locale/pl/LC_MESSAGES/bmpx.mo
-share/locale/pt_BR/LC_MESSAGES/bmpx.mo
-share/locale/ru/LC_MESSAGES/bmpx.mo
-share/locale/sv/LC_MESSAGES/bmpx.mo
-share/locale/zh_CN/LC_MESSAGES/bmpx.mo
-%%DBUS%%%%LOCALBASE%%/share/dbus-1/services/org.beepmediaplayer.bmp.service
+%%NLS%%share/locale/af/LC_MESSAGES/bmpx.mo
+%%NLS%%share/locale/bg/LC_MESSAGES/bmpx.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/bmpx.mo
+%%NLS%%share/locale/de/LC_MESSAGES/bmpx.mo
+%%NLS%%share/locale/el/LC_MESSAGES/bmpx.mo
+%%NLS%%share/locale/es/LC_MESSAGES/bmpx.mo
+%%NLS%%share/locale/et/LC_MESSAGES/bmpx.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/bmpx.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/bmpx.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/bmpx.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/bmpx.mo
+%%NLS%%share/locale/lt/LC_MESSAGES/bmpx.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/bmpx.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/bmpx.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/bmpx.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/bmpx.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/bmpx.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/bmpx.mo
+%%DBUS%%share/dbus-1/services/org.beepmediaplayer.bmp.service
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%/glade
 @dirrm %%DATADIR%%/icons/themes/darksphere

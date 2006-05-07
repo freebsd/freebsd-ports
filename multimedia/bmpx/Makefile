@@ -7,6 +7,7 @@
 
 PORTNAME=	bmpx
 PORTVERSION=	0.14.4
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	beepmp
@@ -27,8 +28,7 @@ USE_GMAKE=	yes
 USE_GNOME=	gtk20 libglade2 desktopfileutils
 LIBTOOLFILES=	configure libhrel/configure \
 		libchroma/configure libskinned/configure
-USE_GSTREAMER=	mad ogg
-USE_GETTEXT=	yes
+USE_GSTREAMER=	bad good ugly mad ogg
 USE_X_PREFIX=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
@@ -47,6 +47,7 @@ CONFIGURE_ARGS+=	--enable-amazon
 CONFIGURE_ARGS+=	--disable-dbus
 PLIST_SUB+=	DBUS="@comment "
 .else
+CONFIGURE_ARGS+=	--with-dbus-services-dir="${PREFIX}/share/dbus-1/services"
 LIB_DEPENDS+=	dbus-1.2:${PORTSDIR}/devel/dbus
 PLIST_SUB+=	DBUS=""
 .endif
@@ -67,6 +68,14 @@ USE_PERL5_BUILD=	yes
 CONFIGURE_ARGS+=	--disable-sn
 .else
 LIB_DEPENDS+=	startup-notification-1.0:${PORTSDIR}/x11/startup-notification
+.endif
+
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=		NLS="@comment "
+.else
+USE_GETTEXT=		yes
+PLIST_SUB+=		NLS=""
 .endif
 
 .include <bsd.port.pre.mk>
