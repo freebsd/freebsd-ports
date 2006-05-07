@@ -7,18 +7,17 @@
 
 PORTNAME=	senna
 PORTVERSION=	0.${SNAPDATE}
-PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	http://dist.bsdlab.org/ \
 		http://dev.razil.jp/archive/senna/
-DISTNAME=	${PORTNAME}-${SNAPDATE}-svn
+DISTNAME=	${PORTNAME}-${SNAPDATE}
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Embeddable Fulltext Search Engine
 
 LIB_DEPENDS=	mecab:${PORTSDIR}/japanese/mecab
 
-USE_AUTOTOOLS=	automake:14 autoconf:259 libtool:15
+GNU_CONFIGURE=	YES
 USE_GMAKE=	YES
 INSTALLS_SHLIB=	YES
 CONFIGURE_ARGS=	--with-sennahome=${SENNA_HOME}
@@ -26,7 +25,7 @@ CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 MAKE_ARGS=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}"
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-SNAPDATE=	20060130
+SNAPDATE=	20060506
 SENNA_HOME?=	/var/senna
 
 .include <bsd.port.mk>
