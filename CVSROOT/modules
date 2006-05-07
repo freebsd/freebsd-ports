@@ -14247,6 +14247,7 @@ xpi-fasterfox	ports/www/xpi-fasterfox
 xpi-noscript	ports/www/xpi-noscript
 xpi-pdf_download	ports/www/xpi-pdf_download
 xpi-tabmixplus	ports/www/xpi-tabmixplus
+xpi-unplug	ports/www/xpi-unplug
 xpilot		ports/games/xpilot
 xpilot-ng-client	ports/games/xpilot-ng-client
 xpilot-ng-server	ports/games/xpilot-ng-server
