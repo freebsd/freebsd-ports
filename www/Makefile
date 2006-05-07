@@ -978,6 +978,7 @@
     SUBDIR += xpi-fasterfox
     SUBDIR += xpi-noscript
     SUBDIR += xpi-pdf_download
+    SUBDIR += xpi-server_switcher
     SUBDIR += xpi-tabmixplus
     SUBDIR += xpi-unplug
     SUBDIR += xshttpd
