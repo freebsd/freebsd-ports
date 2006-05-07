@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	codeworker
-PORTVERSION=	4.1
+PORTVERSION=	4.2
 CATEGORIES=	devel
 MASTER_SITES=	http://codeworker.free.fr/downloads/
 DISTNAME=	CodeWorker_SRC${PORTVERSION:S/./_/g}
