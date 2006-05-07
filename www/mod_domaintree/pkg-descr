@@ -1,0 +1,6 @@
+mod_domaintree is a hostname to filesystem mapper for Apache2. It
+maps host names like www.example.com to a filesystem tree like
+$prefix/com/example/www/$suffix. It can optionally strip the www
+prefix of host names.
+
+WWW: http://dev.iworks.at/mod_domaintree/
