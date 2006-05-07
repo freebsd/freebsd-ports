@@ -1,0 +1,12 @@
+IPBT (It's Play-Back Time) is a ttyrec player with many features
+that ttyplay lacks. Notable features are:
+
+	* Pausing
+	* Move forward/backward frame by frame
+	* Adjustable play speed (faster/slower)
+	* Jump to beginning/end in a single keystroke
+
+IPBT works by reading the entire input file and running it through
+an internal terminal emulator (the one from PuTTY).
+
+WWW: http://www.chiark.greenend.org.uk/~sgtatham/ipbt/
