@@ -979,6 +979,7 @@
     SUBDIR += xpi-noscript
     SUBDIR += xpi-pdf_download
     SUBDIR += xpi-tabmixplus
+    SUBDIR += xpi-unplug
     SUBDIR += xshttpd
     SUBDIR += xshttpd-devel
     SUBDIR += xulrunner
