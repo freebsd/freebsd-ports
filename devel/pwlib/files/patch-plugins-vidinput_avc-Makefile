@@ -1,0 +1,11 @@
+--- plugins/vidinput_avc/Makefile.orig	Fri Nov 14 07:16:13 2003
++++ plugins/vidinput_avc/Makefile	Thu Apr  6 17:00:31 2006
+@@ -4,7 +4,7 @@
+ 
+ PLUGIN_NAME	= avc
+ PLUGIN_FAMILY	= device/videoinput
+-PLUGIN_LIBS	= -lraw1394 -ldv -lrom1394
++PLUGIN_LIBS	= $(LDFLAGS) -lraw1394 -ldv -lrom1394
+ PLUGIN_SOURCES	= vidinput_avc.cxx
+ 
+ include ../../make/plugins.mak

@@ -158,11 +158,14 @@ lib/libpt_r.so.1
 lib/libpt_r.so.1.10
 lib/libpt_r.so.1.10.0
 lib/pwlib/devices/sound/oss_pwplugin.so
+%%ESD%%lib/pwlib/devices/sound/esd_pwplugin.so
+%%AVC1394%%lib/pwlib/devices/videoinput/avc_pwplugin.so
 %%BSDVIDEO%%lib/pwlib/devices/videoinput/bsdvideo_pwplugin.so
+%%DC1394%%lib/pwlib/devices/videoinput/dc_pwplugin.so
 @dirrm lib/pwlib/devices/sound
 @dirrm lib/pwlib/devices/videoinput
 @dirrm lib/pwlib/devices
-@dirrm lib/pwlib
+@dirrmtry lib/pwlib
 %%DATADIR%%/make/common.mak
 %%DATADIR%%/make/defaultgui.mak
 %%DATADIR%%/make/gui.mak

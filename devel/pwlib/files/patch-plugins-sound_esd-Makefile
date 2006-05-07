@@ -1,0 +1,11 @@
+--- plugins/sound_esd/Makefile.orig	Thu Apr  6 16:47:13 2006
++++ plugins/sound_esd/Makefile	Thu Apr  6 16:50:52 2006
+@@ -4,7 +4,7 @@
+ 
+ PLUGIN_NAME	= esd
+ PLUGIN_FAMILY	= device/sound
+-PLUGIN_LIBS	=
++PLUGIN_LIBS	= $(LDFLAGS) -lesd
+ PLUGIN_SOURCES	= sound_esd.cxx
+ 
+ include ../../make/plugins.mak
