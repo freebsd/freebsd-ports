@@ -79,7 +79,7 @@ include/openh323/x224.h
 include/openh323/x880.h
 @dirrm include/openh323
 %%DATADIR%%/openh323u.mak
-@dirrm %%DATADIR%%
+@dirrmtry %%DATADIR%%
 lib/pwlib/codecs/audio/g726_audio_pwplugin.so
 lib/pwlib/codecs/audio/gsm0610_audio_pwplugin.so
 lib/pwlib/codecs/audio/ilbc_audio_pwplugin.so
