@@ -49,6 +49,7 @@
     SUBDIR += fbdesk
     SUBDIR += fbpanel
     SUBDIR += fbsd-icons
+    SUBDIR += fireflies
     SUBDIR += fixesext
     SUBDIR += fluxbg
     SUBDIR += gcb
