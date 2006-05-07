@@ -1,12 +1,5 @@
---- ddclient.orig	Sun Oct 24 03:45:24 2004
-+++ ddclient	Sun Oct 24 03:47:57 2004
-@@ -1,5 +1,4 @@
--#!/usr/bin/perl -w
--#!/usr/local/bin/perl -w
-+#!%%PERL%% -w
- ######################################################################
- # $Header: /cvsroot/ddclient/ddclient/ddclient,v 1.5 2004/10/17 21:31:31 wimpunk Exp $
- #
+--- ./ddclient.orig	Sun Dec 18 18:03:42 2005
++++ ./ddclient	Tue May  2 18:38:16 2006
 @@ -21,8 +20,8 @@
  $program  =~ s/d$//;
  my $now       = time;

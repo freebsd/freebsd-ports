@@ -1,10 +1,9 @@
-
 ***********************************************************
-Copy
 
-	/usr/local/etc/ddclient.conf.sample
+Copy
+	%%PREFIX%%/etc/ddclient.conf.sample
 to
-	/usr/local/etc/ddclient.conf
+	%%PREFIX%%/etc/ddclient.conf
 
 and edit it to fit your needs.
 
@@ -14,4 +13,3 @@ following line to /etc/rc.conf
 	ddclient_enable="YES"
 
 ***********************************************************
-
