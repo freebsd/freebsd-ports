@@ -19,10 +19,10 @@ PORTVERSION=	0.9.8
 PORTREVISION!=	date -v-1d +%Y%m%d
 .else
 .if !defined(WITH_OPENSSL_BETA) && ( defined(WITH_OPENSSL_097) || defined(WITH_OPENSSL_STABLE) )
-PORTVERSION=	0.9.7i
+PORTVERSION=	0.9.7j
 PORTREVISION?=	0
 .else
-PORTVERSION=	0.9.8a
+PORTVERSION=	0.9.8b
 PORTREVISION?=	0
 .endif
 .endif
@@ -73,7 +73,6 @@ CONFLICTS?=		openssl-beta-0.* openssl-stable-0.*
 MAKE_ENV+=		MANPREFIX=${MANPREFIX}
 NOPRECIOUSMAKEVARS=	Too many _MLINKS for fetch
 NOPRECIOUSSOFTMAKEVARS=	Too many _MLINKS for fetch
-USE_REINPLACE=		yes
 USE_PERL5_BUILD=	yes
 CFLAGS+=		-Wl,-rpath,${LOCALBASE}/lib
 

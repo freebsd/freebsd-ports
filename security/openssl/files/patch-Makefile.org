@@ -1,15 +1,15 @@
---- Makefile.org.orig	Tue Mar 15 10:46:13 2005
-+++ Makefile.org	Wed Mar 23 11:03:41 2005
-@@ -175,7 +175,7 @@
+--- Makefile.org.orig	Mon Apr 24 15:32:57 2006
++++ Makefile.org	Sun May  7 21:18:14 2006
+@@ -194,7 +194,7 @@
  # we might set SHLIB_MARK to '$(SHARED_LIBS)'.
  SHLIB_MARK=
  
--DIRS=   crypto fips ssl $(SHLIB_MARK) sigs apps test tools
-+DIRS=   crypto ssl $(SHLIB_MARK) sigs apps test tools
+-DIRS=   crypto fips-1.0 ssl $(SHLIB_MARK) apps test tools
++DIRS=   crypto ssl $(SHLIB_MARK) apps test tools
  SHLIBDIRS= crypto ssl
  
  # dirs in crypto to build
-@@ -194,7 +194,7 @@
+@@ -213,7 +213,7 @@
  
  MAKEFILE= Makefile
  
@@ -18,10 +18,10 @@
  MAN1=1
  MAN3=3
  MANSUFFIX=
-@@ -305,9 +305,9 @@
+@@ -316,9 +316,9 @@
  		libs="$(LIBKRB5) $$libs"; \
  	fi; \
- 	( set -x; ${CC} ${SHARED_LDFLAGS} \
+ 	( set -x; $${FIPSLD:-${CC}} ${SHARED_LDFLAGS} \
 -		-shared -o lib$$i.so.${SHLIB_MAJOR}.${SHLIB_MINOR} \
 -		-Wl,-soname=lib$$i.so.${SHLIB_MAJOR}.${SHLIB_MINOR} \
 -		-Wl,-Bsymbolic \
@@ -29,9 +29,9 @@
 +		-shared -o lib$$i.so.${SHLIBVER} \
 +		-Wl,-soname=lib$$i.so.${SHLIBVER} \
  		-Wl,--whole-archive lib$$i.a \
- 		-Wl,--no-whole-archive $$libs ${EX_LIBS} -lc ) || exit 1; \
+ 		-Wl,--no-whole-archive $$libs ${EX_LIBS} ) || exit 1; \
  	libs="-l$$i $$libs"; \
-@@ -803,7 +803,7 @@
+@@ -784,7 +784,7 @@
  install_sw:
  	@$(PERL) $(TOP)/util/mkdir-p.pl $(INSTALL_PREFIX)$(INSTALLTOP)/bin \
  		$(INSTALL_PREFIX)$(INSTALLTOP)/lib \
@@ -40,10 +40,10 @@
  		$(INSTALL_PREFIX)$(INSTALLTOP)/include/openssl \
  		$(INSTALL_PREFIX)$(OPENSSLDIR)/misc \
  		$(INSTALL_PREFIX)$(OPENSSLDIR)/certs \
-@@ -875,8 +875,8 @@
- 			mv -f $(INSTALL_PREFIX)$(INSTALLTOP)/lib/$$i.new $(INSTALL_PREFIX)$(INSTALLTOP)/lib/$$i ); \
+@@ -847,8 +847,8 @@
+ 			sed -e '1,/^$$/d' doc/openssl-shared.txt; \
  		fi; \
- 	done;
+ 	fi
 -	cp openssl.pc $(INSTALL_PREFIX)$(INSTALLTOP)/lib/pkgconfig
 -	chmod 644 $(INSTALL_PREFIX)$(INSTALLTOP)/lib/pkgconfig/openssl.pc
 +	cp openssl.pc $(INSTALL_PREFIX)$(INSTALLTOP)/libdata/pkgconfig
