@@ -115,6 +115,14 @@ CONFIGURE_ARGS+=--with-regex=system
 CONFIGURE_ARGS+=--with-regex=apache
 .endif
 
+.if !defined(WITH_ZEND_VM) || ${WITH_ZEND_VM} == "CALL"
+CONFIGURE_ARGS+=--with-zend-vm=CALL
+.elif defined(WITH_ZEND_VM) && ${WITH_ZEND_VM} == "SWITCH"
+CONFIGURE_ARGS+=--with-zend-vm=SWITCH
+.elif defined(WITH_ZEND_VM) && ${WITH_ZEND_VM} == "GOTO"
+CONFIGURE_ARGS+=--with-zend-vm=GOTO
+.endif
+
 CONFIGURE_ENV+=	ac_cv_pthreads_lib=${PTHREAD_LIBS} \
 		ac_cv_pthreads_cflags=${PTHREAD_CFLAGS} \
 		pthreads_working="yes"
