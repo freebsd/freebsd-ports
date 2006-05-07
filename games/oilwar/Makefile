@@ -16,7 +16,6 @@ MAINTAINER=	hendrik@scholz.net
 COMMENT=	Evil army wants to steal your oil
 
 USE_SDL=	image mixer sdl
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
 post-patch:

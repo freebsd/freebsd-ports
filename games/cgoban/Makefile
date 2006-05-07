@@ -18,7 +18,6 @@ COMMENT=	Internet Go Server client and game editor
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf:253
-USE_REINPLACE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}"

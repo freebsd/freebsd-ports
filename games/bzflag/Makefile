@@ -21,7 +21,6 @@ LIB_DEPENDS=	curl.3:${PORTSDIR}/ftp/curl
 USE_BZIP2=	yes
 USE_SDL=	yes
 USE_GL=		yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	yes

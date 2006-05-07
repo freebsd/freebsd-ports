@@ -20,7 +20,6 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	${LOCALBASE}/bin/stratagus:${PORTSDIR}/games/stratagus
 
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

@@ -20,7 +20,6 @@ LIB_DEPENDS=	png:${PORTSDIR}/graphics/png
 
 PLIST_FILES=	bin/kisomandel
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 USE_QT_VER=	3
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}

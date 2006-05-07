@@ -25,7 +25,6 @@ USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GCC=	3.4
-USE_REINPLACE=	yes
 USE_GNOME=	gnomehack libgnomecanvas
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes

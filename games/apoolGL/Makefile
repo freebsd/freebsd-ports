@@ -15,7 +15,6 @@ MAINTAINER=	ip@doom.homeunix.org
 COMMENT=	Another billiard simulator
 
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
 USE_SDL=	sdl
 USE_GL=		yes
 

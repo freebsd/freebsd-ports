@@ -19,7 +19,6 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 
 USE_SDL=	sdl
 USE_GL=		yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

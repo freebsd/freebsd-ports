@@ -21,7 +21,6 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=		--disable-debug
-USE_REINPLACE=	yes
 
 .include <bsd.port.pre.mk>
 

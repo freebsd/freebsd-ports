@@ -20,7 +20,6 @@ NO_CDROM=	requested by IDsoftware
 ONLY_FOR_ARCHS=	i386
 
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 USE_XLIB=	yes
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes

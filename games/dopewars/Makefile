@@ -21,7 +21,6 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk12
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
 
 CONFIGURE_ARGS=	--enable-networking --disable-plugins
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

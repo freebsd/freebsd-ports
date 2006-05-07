@@ -20,7 +20,6 @@ RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 NO_BUILD=	yes
-USE_REINPLACE=	yes
 
 MAN6=		tksol.6
 

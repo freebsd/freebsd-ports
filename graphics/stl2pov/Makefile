@@ -12,8 +12,6 @@ MASTER_SITES=	http://www.xs4all.nl/~rsmith/software/
 MAINTAINER=	rsmith@xs4all.nl
 COMMENT=	Converts STL models to POV-Ray meshes
 
-USE_REINPLACE=	yes
-
 PLIST_FILES=	bin/stl2pov
 
 MAN1=		stl2pov.1

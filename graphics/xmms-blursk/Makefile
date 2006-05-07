@@ -22,7 +22,6 @@ RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 PLIST_FILES=	lib/xmms/Visualization/libblursk.so
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} ${CFLAGS} ${PTHREAD_CFLAGS}"

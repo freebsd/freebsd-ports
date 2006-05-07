@@ -15,7 +15,6 @@ MASTER_SITE_SUBDIR=	libnurbs
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A C++ library for representing curves or surfaces
 
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-transform-name="s/x/x/"
 INSTALLS_SHLIB=	yes

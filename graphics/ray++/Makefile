@@ -20,7 +20,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --enable-fast-handles
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
-USE_REINPLACE=	yes
 
 .include <bsd.port.pre.mk>
 

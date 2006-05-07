@@ -14,7 +14,6 @@ MASTER_SITES=	http://www.artsoft.org/RELEASES/unix/rocksndiamonds/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Colorful Boulderdash'n'Emerald Mine'n'Sokoban'n'Stuff
 
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 MAKE_ARGS=	CC="${CC}" MAKE="${GMAKE}" OPTIONS="${CFLAGS}" \
 		RO_GAME_DIR="${DATADIR}" RW_GAME_DIR="${DATADIR}/scores" \

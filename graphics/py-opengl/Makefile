@@ -26,7 +26,6 @@ RUN_DEPENDS=	${PYNUMERIC} \
 		${PYTHON_SITELIBDIR}/PIL.pth:${PORTSDIR}/graphics/py-imaging
 LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
 
-USE_REINPLACE=	yes
 USE_GL=		yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

@@ -68,7 +68,6 @@ CONFIGURE_ARGS+=--without-snmp
 
 INSTALLS_SHLIB=	yes
 
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_PERL5=	yes
 

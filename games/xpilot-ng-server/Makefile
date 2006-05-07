@@ -18,7 +18,6 @@ COMMENT?=	An enhanced version of XPilot (server program)
 LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2
 
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib

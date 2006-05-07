@@ -19,7 +19,6 @@ COMMENT=	An Opensource 3D modelling application
 
 PLIST_FILES=	bin/gsculpt
 WRKSRC=		${WRKDIR}/gSculpt-${PORTVERSION}
-USE_REINPLACE=	yes
 USE_GNOME=	gtk12
 USE_GMAKE=	yes
 

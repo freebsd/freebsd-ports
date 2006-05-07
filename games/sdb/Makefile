@@ -17,7 +17,6 @@ USE_X_PREFIX=	yes
 USE_SDL=	mixer image sdl
 USE_GL=		yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 USE_GCC=	3.4+
 
 BUILD_WRKSRC=	${WRKSRC}/src

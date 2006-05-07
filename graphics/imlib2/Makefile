@@ -23,7 +23,6 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 
 USE_AUTOTOOLS=	autoconf:259 libltdl:15 libtool:15
 USE_GNOME=	gnomehack pkgconfig gnometarget
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${PREFIX}/include" LDFLAGS="-L${PREFIX}/lib"
 INSTALLS_SHLIB=	yes

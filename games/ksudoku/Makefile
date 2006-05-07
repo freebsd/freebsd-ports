@@ -18,7 +18,6 @@ COMMENT=	A Sudoku generator and solver for KDE
 EXTRA_PATCHES=	${.CURDIR}/../../x11/kde3/files/extrapatch-old_configure
 
 USE_KDELIBS_VER=3
-USE_REINPLACE=	yes
 USE_AUTOTOOLS=	libtool:15
 
 .include <bsd.port.pre.mk>

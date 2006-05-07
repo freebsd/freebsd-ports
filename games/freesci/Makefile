@@ -16,7 +16,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A portable interpreter for SCI games, such as the Space Quest series
 
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 WANT_SDL=	yes

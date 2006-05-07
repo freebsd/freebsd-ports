@@ -17,7 +17,6 @@ COMMENT=	FreeBSD graphics console (VGL) version of the famous Digger game
 ONLY_FOR_ARCHS=	i386	# Alphas don't have libvgl yet...
 
 MAKEFILE=	Makefile.fbsd
-USE_REINPLACE=	yes
 
 .if defined(WITH_SOUND)
 USE_SDL=	yes

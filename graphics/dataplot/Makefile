@@ -23,7 +23,6 @@ LIB_DEPENDS=	gd:${PORTSDIR}/graphics/gd \
 		jpeg:${PORTSDIR}/graphics/jpeg
 
 USE_XLIB=	yes
-USE_REINPLACE=	yes
 NO_WRKSUBDIR=	yes
 MAXOBV?=	20000	# Make bigger if you need more observations/variable
 

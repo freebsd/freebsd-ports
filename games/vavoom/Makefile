@@ -17,7 +17,6 @@ COMMENT=	Doom, Doom II, Heretic, Hexen and Strife source port
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_AUTOTOOLS=	autoconf:259

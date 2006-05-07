@@ -19,7 +19,6 @@ COMMENT=	Educative games for children
 BUILD_DEPENDS=	childsplay:${PORTSDIR}/games/childsplay
 RUN_DEPENDS=	childsplay:${PORTSDIR}/games/childsplay
 
-USE_REINPLACE=	yes
 USE_PYTHON=	yes
 USE_X_PREFIX=	yes
 

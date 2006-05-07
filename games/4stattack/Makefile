@@ -20,7 +20,6 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pygame/__init__.py:${PORTSDIR}/devel/py-game
 
 USE_PYTHON=	yes
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
 NO_BUILD=	yes
 
 PYC=		PYTHON="${PYTHON_CMD}" ${SH} ${SCRIPTDIR}/py-compile

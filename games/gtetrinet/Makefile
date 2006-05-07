@@ -19,7 +19,6 @@ USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	esound gnomehack gnomeprefix gnometarget libgnomeui
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

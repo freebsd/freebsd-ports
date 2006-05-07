@@ -16,7 +16,6 @@ COMMENT=	Application for computing/exploring Mandelbrot set
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_XPM=	yes
-USE_REINPLACE=	yes
 ALL_TARGET=
 
 post-extract:

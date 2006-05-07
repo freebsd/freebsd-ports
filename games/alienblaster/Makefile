@@ -16,7 +16,6 @@ COMMENT=	Alien Blaster
 
 USE_GMAKE=	yes
 USE_SDL=	mixer sdl
-USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ''
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

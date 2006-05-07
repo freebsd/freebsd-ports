@@ -22,7 +22,6 @@ USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
 MAKEFILE=
-USE_REINPLACE=	yes
 
 post-patch:
 	${REINPLACE_CMD} -e 's|)/Makefiles|)/Library/Makefiles|' \

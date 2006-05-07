@@ -25,7 +25,6 @@ USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12 gnomehack
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/imlib --disable-modules
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

@@ -16,7 +16,6 @@ MAINTAINER=	flynn@energyhq.es.eu.org
 COMMENT=	A nice clone of classical Breakout game
 
 USE_SDL=	sdl
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-lcompat"

@@ -19,7 +19,6 @@ RUN_DEPENDS=	tuxpaint:${PORTSDIR}/games/tuxpaint
 
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
-USE_REINPLACE=	yes
 
 MAN1=		tuxpaint-config.1
 MANCOMPRESSED=	yes

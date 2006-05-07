@@ -22,7 +22,6 @@ USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_GL=		yes
 USE_MOTIF=	yes
-USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 
 .if !defined(WITH_EXAMPLES)

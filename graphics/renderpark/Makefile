@@ -31,7 +31,6 @@ WRKSRC2=	${WRKDIR}/Scenes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_MOTIF=	yes
-USE_REINPLACE=	yes
 
 .include <bsd.port.pre.mk>
 

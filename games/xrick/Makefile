@@ -19,7 +19,6 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
 RESTRICTED=	Copyright status of the graphics and sounds is uncertain
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 USE_SDL=	sdl
 
 MAN6=		xrick.6

@@ -17,7 +17,6 @@ COMMENT=	Tessellation puzzle game
 RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-USE_REINPLACE=	yes
 NO_BUILD=	yes
 
 DOC_FILES=	About Bugs Changelog Install Instructions Links Math Readme \

@@ -15,7 +15,6 @@ DISTNAME=	bluemoon-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Blue Moon card solitaire
 
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	bluemoon
 

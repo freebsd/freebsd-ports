@@ -19,7 +19,6 @@ USE_KDELIBS_VER=3
 USE_GNOME=	gnomehack pkgconfig
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
-USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 
 post-patch:

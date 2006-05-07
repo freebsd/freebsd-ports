@@ -16,7 +16,6 @@ COMMENT=	Educational arcade game starring Tux
 
 USE_GMAKE=	yes
 USE_SDL=	image mixer sdl
-USE_REINPLACE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

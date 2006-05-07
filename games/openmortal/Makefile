@@ -18,7 +18,6 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 
 USE_BZIP2=	yes
 USE_PERL5=	yes
-USE_REINPLACE=	yes
 USE_SDL=	mixer image sdl net
 
 GNU_CONFIGURE=	yes

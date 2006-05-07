@@ -19,7 +19,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}/${PORTNAME}
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 USE_SDL=	mixer sdl
 
 .include <bsd.port.pre.mk>

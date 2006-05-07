@@ -23,7 +23,6 @@ LIB_DEPENDS=	aqsis.0:${PORTSDIR}/graphics/aqsis \
 USE_GCC=	3.4
 USE_GL=		yes
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
 MAKEFILE=	Makefile.shared
 MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}"

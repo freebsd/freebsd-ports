@@ -22,7 +22,6 @@ LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo
 RUN_DEPENDS=	${PYNUMERIC}
 
 USE_PYTHON=	yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget gnomehack
 GNU_CONFIGURE=	yes

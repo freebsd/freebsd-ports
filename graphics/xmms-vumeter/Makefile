@@ -21,7 +21,6 @@ LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 USE_X_PREFIX=	yes
 USE_GNOME=	gdkpixbuf
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 
 DATADIR=	${PREFIX}/share/xmms/VU_Meter_skins
 

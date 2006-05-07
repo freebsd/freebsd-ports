@@ -18,7 +18,6 @@ COMMENT=	An enhanced Doom, Heretic and Hexen source port
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	${LOCALBASE}/bin/timidity:${PORTSDIR}/audio/timidity
 
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} `${SDL_CONFIG} --cflags` -I${LOCALBASE}/include -I${X11BASE}/include" \

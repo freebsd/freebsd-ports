@@ -17,7 +17,6 @@ COMMENT=	Multiplayer OpenGL Maze Game
 USE_SDL=	mixer sdl
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
 
 MAN1=		glmaze.1
 

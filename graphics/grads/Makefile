@@ -24,7 +24,6 @@ LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 
-USE_REINPLACE=		yes
 GNU_CONFIGURE=		yes
 CONFIGURE_ENV+=		SUPPLIBS="${LOCALBASE}"
 CONFIGURE_ARGS+=	--enable-dyn-supplibs \

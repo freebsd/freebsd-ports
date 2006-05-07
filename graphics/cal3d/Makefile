@@ -19,7 +19,6 @@ COMMENT=	Skeletal based 3d character animation library written in C++
 CONFLICTS=	cal3d-devel-[0-9]*
 
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 USE_GNOME=	pkgconfig
 USE_AUTOTOOLS=	automake:19 autoheader:259 libtool:15
 AUTOMAKE_ARGS=	"--add-missing"

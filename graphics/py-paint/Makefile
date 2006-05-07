@@ -18,7 +18,6 @@ COMMENT=	Simple and flexible painting adaptor to libart for Python
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
-USE_REINPLACE=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 USE_FREETYPE=	yes

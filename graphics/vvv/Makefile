@@ -21,7 +21,6 @@ COMMENT=	A tutorial tool for understanding viewing and projection in OpenGL
 BUILD_DEPENDS=	${X11BASE}/lib/libglui.a:${PORTSDIR}/devel/glui
 LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
 
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_GL=		yes
 USE_X_PREFIX=	yes

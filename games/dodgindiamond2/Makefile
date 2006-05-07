@@ -18,7 +18,6 @@ COMMENT=		An old school shoot'em up game
 USE_X_PREFIX=		yes
 USE_SDL=		sdl image mixer
 GNU_CONFIGURE=		yes
-USE_REINPLACE=		yes
 CONFIGURE_ARGS=		--localstatedir=/var/games
 
 .include <bsd.port.pre.mk>

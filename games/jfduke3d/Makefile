@@ -21,7 +21,6 @@ BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 
 USE_ZIP=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 USE_SDL=	sdl
 USE_GNOME=	gtk20
 CONFLICTS=	duke3d-200[0-9]*

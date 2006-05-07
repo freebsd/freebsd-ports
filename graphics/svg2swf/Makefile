@@ -20,7 +20,6 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/${PACKAGE_DIR}/sax/saxexts.py:${PORTSDIR}/text
 		${PYTHON_SITELIBDIR}/ming.py:${PORTSDIR}/graphics/py-ming
 
 PLIST_FILES=	bin/svg2swf
-USE_REINPLACE=	yes
 USE_PYTHON=	yes
 NO_BUILD=	yes
 

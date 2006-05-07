@@ -26,7 +26,6 @@ PLIST_SUB=	VERSION="${PORTVERSION}"
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 
 .include <bsd.port.pre.mk>
 

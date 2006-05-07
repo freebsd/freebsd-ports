@@ -22,7 +22,6 @@ BROKEN=		Unfetchable
 
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--with-dps-includes=${X11BASE}/include \
 		--with-dps-libraries=${X11BASE}/lib

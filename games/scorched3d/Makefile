@@ -34,7 +34,6 @@ GNU_CONFIGURE=		yes
 USE_GL=			yes
 USE_GMAKE=		yes
 USE_AUTOTOOLS=	automake:15 autoconf:253
-USE_REINPLACE=		yes
 
 WRKSRC=			${WRKDIR}/scorched
 AUTOMAKE_ARGS=		--foreign

@@ -16,7 +16,6 @@ COMMENT=	A lightweight image viewer
 
 USE_GMAKE=	yes
 MAKE_ARGS=	INSTALLPREFIX="${PREFIX}"
-USE_REINPLACE=	yes
 WANT_GNOME=	yes
 
 OPTIONS=	GTK1 "Build with legacy GTK version (1.2.x)" Off

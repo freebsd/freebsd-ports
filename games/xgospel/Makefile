@@ -17,7 +17,6 @@ LIB_DEPENDS=	Xaw3d:${PORTSDIR}/x11-toolkits/Xaw3d
 USE_XLIB=	yes
 USE_XPM=	yes
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 
 CONFIGURE_ARGS=	--with-x --with-xpm --with-xaw3d
 

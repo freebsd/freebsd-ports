@@ -16,8 +16,6 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A curses-based tool for creating and solving the cryptograms
 
-USE_REINPLACE=	yes
-
 PLIST_FILES=	bin/cryptoslam
 
 do-build:

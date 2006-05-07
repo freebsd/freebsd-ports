@@ -18,7 +18,6 @@ CONFIGURE_ENV+=	CPP="${CPP}"
 CONFIGURE_ARGS+=	--with-builtin="ncenB24.bdf -scale 0.5 -blur 5"
 MAN1=		ppmcaption.1
 PLIST_FILES=	bin/ppmcaption
-USE_REINPLACE=	yes
 
 .include <bsd.port.pre.mk>
 

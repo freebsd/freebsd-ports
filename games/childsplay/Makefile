@@ -21,7 +21,6 @@ RUN_DEPENDS=	${LOCALBASE}/include/${PYTHON_VERSION}/pygame/pygame.h:${PORTSDIR}/
 LIB_DEPENDS=	assetml.0:${PORTSDIR}/devel/libassetml
 
 USE_PYTHON=	yes
-USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 NO_BUILD=	yes
 

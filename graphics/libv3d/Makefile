@@ -18,7 +18,6 @@ COMMENT=	V3D IO Library
 
 LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
 
-USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	UNIX --prefix=${PREFIX}
 USE_GMAKE=	yes

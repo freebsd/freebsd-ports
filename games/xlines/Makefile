@@ -16,7 +16,6 @@ COMMENT=	Remove as many balls from board as you can
 
 USE_QT_VER=	3
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
 NO_WRKSUBDIR=	yes
 MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" PTHREAD_LIBS="${PTHREAD_LIBS}"
 

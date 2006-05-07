@@ -16,7 +16,6 @@ DISTNAME=	gnome-iconedit-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A small GNOME Icon Editor
 
-USE_REINPLACE=	yes
 USE_GNOME=	gnomeprefix gnomehack bonobo gnomeprint
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes

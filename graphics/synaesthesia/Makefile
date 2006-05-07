@@ -15,7 +15,6 @@ COMMENT=	Graphically represents sound in real time
 
 USE_SDL=	sdl
 USE_GMAKE=	Yes
-USE_REINPLACE=	Yes
 USE_X_PREFIX=	Yes
 
 GNU_CONFIGURE=	Yes

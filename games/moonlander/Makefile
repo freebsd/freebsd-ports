@@ -18,7 +18,6 @@ COMMENT=	Land a spacecraft on the moon
 
 USE_SDL=	mixer image sdl
 USE_X_PREFIX=	YES
-USE_REINPLACE=	YES
 
 WRKSRC=		${WRKDIR}/moon-lander
 

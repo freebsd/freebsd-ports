@@ -17,7 +17,6 @@ COMMENT=	A simple to use 3D mesh editor
 
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff
 
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_QT_VER=	3
 USE_GL=		yes

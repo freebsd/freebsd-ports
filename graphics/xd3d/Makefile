@@ -36,7 +36,6 @@ RUN_DEPENDS+=	gifsicle:${PORTSDIR}/graphics/gifsicle
 .endif
 
 USE_XLIB=	yes
-USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ""
 FETCH_CMD=	/usr/bin/fetch
 FETCH_BEFORE_ARGS=	-R -o ${DISTDIR}/${DISTFILES}

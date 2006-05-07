@@ -15,7 +15,6 @@ MAINTAINER=	onatan@gmail.com
 COMMENT=	BSD version of Text-based tetris game
 
 NO_WRKSUBDIR=	yes
-USE_REINPLACE=	yes
 
 MAN6=		bsdtris.6
 

@@ -16,7 +16,6 @@ COMMENT=	A 2D pool game using the GTK+ toolkit
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk12
-USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 MAKE_ARGS=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS} -DHAVE_CONFIG_H -I. -I.. `gtk-config --cflags` `gtk-config --libs`"
 

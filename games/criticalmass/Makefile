@@ -22,7 +22,6 @@ USE_X_PREFIX=	yes
 USE_BZIP2=	yes
 USE_SDL=	image mixer sdl
 USE_GL=		yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--disable-optimize

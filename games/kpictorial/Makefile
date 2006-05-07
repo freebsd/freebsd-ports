@@ -19,7 +19,6 @@ USE_AUTOTOOLS=		libtool:15
 CONFIGURE_TARGET=
 CONFIGURE_ARGS+=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=		yes
-USE_REINPLACE=		yes
 
 post-patch:
 	${REINPLACE_CMD} -e "s,-lpthread,${PTHREAD_LIBS}," ${WRKSRC}/configure

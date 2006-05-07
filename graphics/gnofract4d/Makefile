@@ -19,7 +19,6 @@ USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomeprefix gnometarget intlhack libgnomeui lthack
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
-USE_REINPLACE=	yes
 USE_GCC=	3.4
 
 post-patch:

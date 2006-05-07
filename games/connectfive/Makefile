@@ -24,7 +24,6 @@ ALL_TARGET=	default
 USE_SDL=	sdl
 USE_GL=		yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 
 WRKSRC=	${WRKDIR}/connectFive
 

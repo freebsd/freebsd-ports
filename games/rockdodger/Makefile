@@ -16,7 +16,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Addictive rock-dodging greeblie-killing platform game
 
 USE_SDL=	mixer image sdl
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 
 GAMESDIR?=	/var/games

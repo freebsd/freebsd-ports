@@ -18,7 +18,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Light Color Management System -- a color management library
 
 USE_GNOME=	gnomehack gnometarget lthack
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-jpeg --without-tiff
 INSTALLS_SHLIB=	yes

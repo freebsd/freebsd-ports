@@ -19,7 +19,6 @@ LIB_DEPENDS=	openal.0:${PORTSDIR}/audio/openal \
 		simage.26:${PORTSDIR}/graphics/simage
 
 USE_GL=		yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-pthread=yes --enable-threadsafe \

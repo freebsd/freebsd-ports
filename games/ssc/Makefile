@@ -22,7 +22,6 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GL=		yes
 USE_SDL=	mixer sdl
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${X11BASE}/include" \

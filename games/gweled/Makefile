@@ -19,7 +19,6 @@ LIB_DEPENDS=	mikmod.2:${PORTSDIR}/audio/libmikmod
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomehier libgnomeui librsvg2
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
 post-patch:

@@ -16,8 +16,6 @@ BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${PEARDIR}/Log.php:${PORTSDIR}/sysutils/pear-Log \
 		${PEARDIR}/Image/Canvas.php:${PORTSDIR}/graphics/pear-Image_Canvas
 
-USE_REINPLACE=	yes
-
 CATEGORY=	Image
 FILES=		Graph.php Graph/Axis.php Graph/Common.php Graph/Config.php \
 		Graph/Constants.php Graph/DataPreprocessor.php \

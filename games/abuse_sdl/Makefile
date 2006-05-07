@@ -17,7 +17,6 @@ COMMENT=	An SDL port of the Abuse game engine
 USE_BZIP2=	yes
 USE_GL=		yes
 USE_SDL=	sdl
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \

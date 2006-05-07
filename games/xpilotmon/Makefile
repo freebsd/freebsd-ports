@@ -19,8 +19,6 @@ ALL_TARGET=		xpilotmon
 MAN6=			xpilotmon.6
 PLIST_FILES=		bin/xpilotmon
 
-USE_REINPLACE=		yes
-
 post-patch:
 	@${REINPLACE_CMD} -e "s/exec wish/exec wish8.4/" ${WRKSRC}/xpilotmon.org
 	@${REINPLACE_CMD} -e "s/\$$(INSTALL_DATA)/${INSTALL_MAN}/" ${WRKSRC}/Makefile

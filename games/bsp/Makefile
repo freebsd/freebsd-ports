@@ -15,7 +15,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Node builder for Doom
 
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 
 post-patch:
 	${REINPLACE_CMD} -e "s,-O2 -fomit-frame-pointer -ffast-math,${CFLAGS}," \

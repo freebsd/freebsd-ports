@@ -19,7 +19,6 @@ USE_X_PREFIX=		yes
 USE_SDL=		sdl mixer
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--program-prefix=""
-USE_REINPLACE=		yes
 
 MAN6=			powermanga.6
 

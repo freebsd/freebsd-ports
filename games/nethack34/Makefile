@@ -19,7 +19,6 @@ COMMENT?=	A dungeon explorin', slashin', hackin' game
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	CXX="${CXX}" GRAPHICS="${GRAPHICS}"
 PLIST_SUB=	HACKNAME="${HACKNAME}" \

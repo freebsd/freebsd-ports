@@ -26,7 +26,6 @@ USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 WANT_GNOME=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack libxslt
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 USE_GCC=	3.4
 CONFIGURE_ARGS=	--with-popt

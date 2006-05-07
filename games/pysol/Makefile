@@ -22,7 +22,6 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pysolsoundserver.so:${PORTSDIR}/audio/pysol-so
 
 USE_BZIP2=	yes
 USE_PYTHON=	yes
-USE_REINPLACE=	yes
 NO_BUILD=	yes
 
 MAN6=		pysol.6

@@ -20,7 +20,6 @@ WRKSRC=		${WRKDIR}/traindir-${PORTVERSION}
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
-USE_REINPLACE=	yes
 USE_BZIP2=	yes
 
 post-extract:

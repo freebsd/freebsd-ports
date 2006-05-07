@@ -18,7 +18,6 @@ COMMENT=	Serious Sam - The Second Encounter
 
 NO_BUILD=	yes
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 USE_LINUX=	yes
 USE_X_PREFIX=	yes
 USE_GL=		yes

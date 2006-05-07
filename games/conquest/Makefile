@@ -18,7 +18,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sysconfdir=${LOCALBASE}/etc/conquest \
 		--datadir=${LOCALBASE}/share/conquest \
 		--localstatedir=/var/games
-USE_REINPLACE=	yes
 BINGRP=		conquest
 SHAREGRP=	conquest
 

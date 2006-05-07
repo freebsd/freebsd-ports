@@ -28,7 +28,6 @@ OPTIONS=	SDL "Enable SDL support" off
 
 .if defined(WITH_SDL)
 USE_SDL=	yes
-USE_REINPLACE=	yes
 CFLAGS+=	"-I${LOCALBASE}/include/SDL11"
 .endif
 

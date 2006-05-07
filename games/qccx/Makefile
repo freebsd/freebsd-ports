@@ -16,7 +16,6 @@ MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	A very fast optimizing QuakeC compiler
 
 USE_ZIP=	yes
-USE_REINPLACE=	yes
 
 MAKEFILE=	${FILESDIR}/Makefile
 WRKSRC=		${WRKDIR}

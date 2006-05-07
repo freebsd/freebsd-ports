@@ -36,7 +36,6 @@ RESTRICTED_FILES= \
 		macopix-mascot-HxB-euc-ja-0.10.tar.gz 
 
 USE_GETTEXT=	yes
-USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 .if defined(WITH_GTK1)
 USE_GNOME=	gtk12 gdkpixbuf

@@ -26,7 +26,6 @@ USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_MOTIF=	yes
 INSTALLS_SHLIB=	yes
-USE_REINPLACE=	yes
 ONLY_FOR_ARCHS=	i386
 #PREFIX=		${X11BASE} # not a good manner
 

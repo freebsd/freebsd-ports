@@ -27,7 +27,6 @@ LIB_DEPENDS=	sigc-2.0:${PORTSDIR}/devel/libsigc++20 \
 
 CONFIGURE_ARGS=	--with-png-prefix=${LOCALBASE} --enable-binreloc --program-transform-name= --disable-cppunit
 USE_SDL=	sdl image
-USE_REINPLACE=	YES
 GNU_CONFIGURE=	YES
 INSTALLS_SHLIB=	YES
 USE_GCC=	3.4

@@ -13,7 +13,6 @@ MASTER_SITES=	http://www.artsoft.org/RELEASES/unix/mirrormagic/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An arcade style game with stereo sound for X Window System
 
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 MAKE_ARGS=	CC="${CC}" MAKE="${GMAKE}" OPTIONS="${CFLAGS}" \
 		RO_GAME_DIR="${DATADIR}" RW_GAME_DIR="${DATADIR}/scores" \

@@ -19,7 +19,6 @@ LIB_DEPENDS=	gtkmm-2.0:${PORTSDIR}/x11-toolkits/gtk--2 \
 RUN_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
 
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnometarget

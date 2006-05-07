@@ -19,11 +19,9 @@ COMMENT=	Quake 1 source port with advanced graphics
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
 USE_ZIP=	yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_GL=		yes
 USE_SDL=	yes
-USE_REINPLACE=	yes
 ONLY_FOR_ARCHS=	i386
 
 DATADIR=	${Q1DIR}

@@ -21,7 +21,6 @@ RUN_DEPENDS=	giftopnm:${PORTSDIR}/graphics/netpbm
 
 USE_GETTEXT=	yes
 USE_IMAKE=	yes
-USE_REINPLACE=	yes
 MAN1=		tgif.1
 
 .if !defined(NOPORTDOCS)

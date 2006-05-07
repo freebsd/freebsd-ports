@@ -19,7 +19,6 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehier gtk20
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

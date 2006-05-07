@@ -34,10 +34,6 @@ INSTALL_TARGET=	install_se006e4f8
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 502103
-USE_REINPLACE=	yes
-.endif
-
 pre-everything::
 .if ${HAVE_SDL}
 	@${ECHO_MSG} "This port depends on SDL with OpenGL support."

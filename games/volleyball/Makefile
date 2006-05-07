@@ -19,7 +19,6 @@ USE_GMAKE=	yes
 MAKE_ARGS=	CC="${CC}" CFLAGS="`${SDL_CONFIG} --cflags` ${CFLAGS}" \
 		LDFLAGS="`${SDL_CONFIG} --libs`"
 ALL_TARGET=	volleyball
-USE_REINPLACE=	yes
 
 WRKSRC=	${WRKDIR}/${PORTNAME}/paso_8
 

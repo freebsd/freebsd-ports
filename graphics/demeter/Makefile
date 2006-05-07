@@ -20,7 +20,6 @@ MAINTAINER=	ip@doom.homeunix.org
 COMMENT=	A C++ library to render 3D terrains using OpenGL
 
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 USE_GL=		yes
 USE_X_PREFIX=	yes
 WANT_GNOME=	yes

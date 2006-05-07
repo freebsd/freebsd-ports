@@ -19,7 +19,6 @@ COMMENT=	A photorealistic renderer with Pixar's RenderMan-like interface
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		fltk_gl.1:${PORTSDIR}/x11-toolkits/fltk
 
-USE_REINPLACE=	yes
 USE_GL=		yes
 USE_X_PREFIX=	yes
 USE_AUTOTOOLS=	automake:15:env autoconf:253 libtool:15

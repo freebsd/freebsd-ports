@@ -25,12 +25,10 @@ TARGET_DIR=	${PREFIX}/${PORTNAME}
 USE_JAVA=	yes
 JAVA_VERSION=	1.3+
 USE_ZIP=	yes
-USE_REINPLACE=	yes
 NO_BUILD=	yes
 WANT_GNOME=	yes
 PORTDOCS=	*
 
-USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ""
 
 .include <bsd.port.pre.mk>

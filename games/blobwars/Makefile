@@ -20,7 +20,6 @@ MAKE_ENV=	CXX="${CXX}"
 USE_X_PREFIX=	yes
 USE_SDL=	sdl image mixer ttf
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/blobwars-1.04
 
 .if !defined(NOPORTDOCS)

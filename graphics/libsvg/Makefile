@@ -21,7 +21,6 @@ LIB_DEPENDS=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
 GNU_CONFIGURE=	yes
 USE_GNOME=	libxml2 gnomehack gnometarget
 USE_ICONV=	yes
-USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 
 PLIST_FILES=	include/svg.h \

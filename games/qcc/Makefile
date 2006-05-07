@@ -15,8 +15,6 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	The QuakeC compiler, for building custom games of Quake
 
-USE_REINPLACE=	yes
-
 WRKSRC=		${WRKDIR}/send
 MAKEFILE=	makefile
 

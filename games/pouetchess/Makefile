@@ -19,7 +19,6 @@ USE_X_PREFIX=	yes
 USE_SDL=	sdl image
 USE_GL=		yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 
 WRKSRC=		${WRKDIR}/pouetChess_0.11
 

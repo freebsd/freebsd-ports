@@ -15,7 +15,6 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Boulderdash-like KC85 Digger for X Window System
 
-USE_REINPLACE=	yes
 USE_IMAKE=	yes
 MAN6=		xdigger.6
 

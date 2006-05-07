@@ -16,7 +16,6 @@ DISTNAME=	gLife-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Conway's Game of Life for GNOME
 
-USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomeprefix gnomehack libglade

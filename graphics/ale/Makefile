@@ -20,7 +20,6 @@ OPTIONS=	DOUBLE "64bit Data Precision Support" off \
 		IMAGEMAGICK "ImageMagick Support" on
 
 USE_GCC=	3.4+
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 MAKE_ARGS=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" IOCTL=1
 

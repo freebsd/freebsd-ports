@@ -25,7 +25,6 @@ BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 USE_ZIP=	yes
 USE_CRLF=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 USE_PERL5_BUILD=yes
 USE_GL=		yes
 USE_GCC=	3.2+

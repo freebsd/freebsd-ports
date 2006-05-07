@@ -17,7 +17,6 @@ COMMENT=	An emulation of the game "Chip's Challenge"
 USE_SDL=	sdl
 GNU_CONFIGURE=	YES
 USE_GMAKE=	YES
-USE_REINPLACE=	YES
 ALL_TARGET=	tworld
 
 MAN6=		tworld.6

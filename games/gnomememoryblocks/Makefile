@@ -16,7 +16,6 @@ DISTNAME=	gnome-memblocks-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Memory Blocks game for GNOME
 
-USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomelibs gdkpixbuf
 GNU_CONFIGURE=	yes

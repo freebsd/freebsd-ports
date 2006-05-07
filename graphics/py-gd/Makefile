@@ -19,7 +19,6 @@ LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
 .if defined(WITHOUT_X11)
 USE_XPM=	yes
 .endif
-USE_REINPLACE=  yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 USE_PYTHON_PREFIX=	yes

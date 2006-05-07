@@ -18,7 +18,6 @@ MAINTAINER=	clive@darkarts.co.za
 COMMENT=	A dungeon explorin', slashin', hackin' game
 
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 MAN6=		dgn_comp.6 dlb.6 lev_comp.6 slashem-tty.6 recover.6
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/([A-Z])./\1/g}

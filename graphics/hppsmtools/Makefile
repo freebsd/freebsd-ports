@@ -14,8 +14,6 @@ MASTER_SITES=	http://unimut.fsk.uni-heidelberg.de/demi/photosmart/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for HP PhotoSmart C5340A & Konica Q-EZ digital cameras
 
-USE_REINPLACE=	yes
-
 PORTDOCS=	README
 PLIST_FILES=	bin/psmdel bin/psmdir bin/psmget bin/psmsho
 

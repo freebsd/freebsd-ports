@@ -17,7 +17,6 @@ COMMENT=	Fast paced multiplayer pac-man clone
 
 USE_GMAKE=	yes
 USE_SDL=	mixer image net sdl
-USE_REINPLACE=	yes
 DOC_FILES=	assassin.gif award-2.gif cookie.gif doc-editor.html \
 		doc.html doc2.html door.gif freezer.gif ghactive.gif \
 		ghinactive.gif hunter.gif invisible.gif juice.gif \

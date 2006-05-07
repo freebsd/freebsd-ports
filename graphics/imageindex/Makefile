@@ -20,7 +20,6 @@ RUN_DEPENDS=	\
 	${LOCALBASE}/bin/wrjpgcom:${PORTSDIR}/graphics/jpeg \
 	${SITE_PERL}/Image/Info.pm:${PORTSDIR}/graphics/p5-Image-Info
 
-USE_REINPLACE=	yes
 USE_PERL5_RUN=	yes
 MAKE_ARGS+=	PERLPATH=${PERL}
 

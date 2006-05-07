@@ -22,7 +22,6 @@ BUILD_DEPENDS=	lame:${PORTSDIR}/audio/lame \
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/tools-${PORTVERSION}
 
 .include <bsd.port.pre.mk>

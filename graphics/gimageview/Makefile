@@ -15,7 +15,6 @@ MASTER_SITE_SUBDIR=	gtkmmviewer
 MAINTAINER=	katsu@iec.hiroshima-u.ac.jp
 COMMENT=	Yet another GTK+ based image viewer
 
-USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gdkpixbuf gnomehier

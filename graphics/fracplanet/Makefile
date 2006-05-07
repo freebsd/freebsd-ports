@@ -16,7 +16,6 @@ COMMENT=	An interactive generator of planets and terrain
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 
-USE_REINPLACE=	yes
 USE_GL=		yes
 USE_QT_VER=	3
 USE_X_PREFIX=	yes

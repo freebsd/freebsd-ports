@@ -24,7 +24,6 @@ USE_SDL=	image mm mixer sdl
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 USE_GETOPT_LONG=	yes
 CONFIGURE_ENV=	CPPFLAGS="`${SDL_CONFIG} --cflags`" \

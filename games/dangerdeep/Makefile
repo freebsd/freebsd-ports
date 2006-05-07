@@ -20,7 +20,6 @@ LIB_DEPENDS=	fftw3.3:${PORTSDIR}/math/fftw3
 USE_X_PREFIX=	yes
 USE_GL=		yes
 USE_SDL=	sdl mixer image net
-USE_REINPLACE=	yes
 
 MAKE_ENV=	CC="${CC}" CXX="${CXX}"
 SCONS_ARGS=	installbindir=${PREFIX}/bin installdatadir=${DATADIR}

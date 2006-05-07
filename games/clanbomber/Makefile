@@ -17,7 +17,6 @@ COMMENT=	A bomberman-like multiplayer game
 LIB_DEPENDS=	clanCore.2:${PORTSDIR}/devel/clanlib
 
 USE_XLIB=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ENV=	LIBS="${PTHREAD_LIBS} -L${LOCALBASE}/lib" \

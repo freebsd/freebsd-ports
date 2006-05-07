@@ -26,8 +26,6 @@ PLIST_SUB+=	WRAPPER=""
 PLIST_SUB+=	WRAPPER="@comment "
 .endif
 
-USE_REINPLACE=	yes
-
 pre-everything::
 .if !defined(WITHOUT_WRAPPER)
 	@${ECHO_MSG} "********************************************"

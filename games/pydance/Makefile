@@ -25,7 +25,6 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pygame/__init__.py:${PORTSDIR}/devel/py-game
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 USE_GZIP=	yes
-USE_REINPLACE=	yes
 
 .if !defined(WITHOUT_PYDANCE_SONGS)
 PLIST_SUB=	SONGS=""

@@ -17,7 +17,6 @@ COMMENT=	Digital camera downloading tool for Epson/Sanyo/Olympus/Agfa camera
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/build
 
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	OPTFLAG=""
 MAN1=		camediaplay.1

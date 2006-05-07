@@ -18,7 +18,6 @@ RUN_DEPENDS=	fig2dev:${PORTSDIR}/print/transfig
 
 
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 USE_XPM=	yes
 
 MAN1=		figurine.1

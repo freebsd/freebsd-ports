@@ -14,7 +14,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A calculator for card-draw probabilities
 
 ALL_TARGET=	deal
-USE_REINPLACE=	yes
 
 MAN1=		deal.1
 PLIST_FILES=	bin/deal

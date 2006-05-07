@@ -19,7 +19,6 @@ BUILD_DEPENDS=	texi2html:${PORTSDIR}/textproc/texi2html
 
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 STRIP=
 MAN6=		xboard.6 zic2xpm.6
 INFO=		xboard

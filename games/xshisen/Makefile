@@ -15,7 +15,6 @@ COMMENT=	Shisen-sho puzzle game for X11
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sharedstatedir="${DATADIR}"
 INSTALL_TARGET=	install-prog

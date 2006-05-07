@@ -18,7 +18,6 @@ EXTRACT_DEPENDS=intltoolize:${PORTSDIR}/textproc/intltool
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomeprefix gnometarget intlhack libgnomeui librsvg2
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoheader:259 automake:19 aclocal:19 autoconf:259
 ACLOCAL_ARGS=	-I m4 -I ${ACLOCAL_DIR} -I ${LOCALBASE}/share/aclocal

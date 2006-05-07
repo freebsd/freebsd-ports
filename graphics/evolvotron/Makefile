@@ -21,7 +21,6 @@ USE_QT_VER=	3
 USE_PYTHON=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 
 MAKE_ENV=	QTDIR="${QT_PREFIX}" \
 		QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++

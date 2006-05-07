@@ -26,7 +26,6 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 
 USE_ZIP=	yes
-USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_GL=		yes
 INSTALLS_SHLIB=	yes

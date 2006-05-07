@@ -20,7 +20,6 @@ RUN_DEPENDS=	fgfs:${PORTSDIR}/games/flightgear
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk20
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} "s|-fmessage-length=0|| ; s|-O0|${CFLAGS}|" ${WRKSRC}/fgkicker.mak

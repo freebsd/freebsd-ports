@@ -21,7 +21,6 @@ USE_GNOME=	esound gtk12
 USE_GMAKE=	yes
 USE_XPM=	yes
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 
 MAN6=	xarchon.6
 

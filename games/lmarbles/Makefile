@@ -18,7 +18,6 @@ USE_SDL=	sdl mixer
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var/games
-USE_REINPLACE=	yes
 
 MAN6=		lmarbles.6
 

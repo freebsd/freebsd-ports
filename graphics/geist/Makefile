@@ -20,7 +20,6 @@ LIB_DEPENDS=	Imlib2.3:${PORTSDIR}/graphics/imlib2 \
 XML_CONFIG?=	${LOCALBASE}/bin/xml2-config
 GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
 USE_GNOME=	gtk12
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
 		LIBS="-L${X11BASE}/lib" \

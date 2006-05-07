@@ -26,7 +26,6 @@ PLIST_FILES=	lib/xmms/Visualization/libgoom.so
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gdkpixbuf
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
 WRKSRC=		${WRKDIR}/${PKGNAMEPREFIX}${PORTNAME}_${PORTVERSION}

@@ -16,8 +16,6 @@ COMMENT=	Redcode simulator easy to embed into applications (docs)
 
 NO_BUILD=	yes
 
-USE_REINPLACE=	yes
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|./\(exhaust\)|\1|g' ${WRKSRC}/test.pl
 

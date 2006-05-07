@@ -26,7 +26,6 @@ USE_GMAKE=	unfortunatly
 .if !defined(WITHOUT_X11)
 USE_GNOME=	gtk12
 .endif
-USE_REINPLACE=	i miss patch-xx
 
 post-patch:
 	@${REINPLACE_CMD} -e 's#/usr/local/share/stamp#${DATADIR}#' \
