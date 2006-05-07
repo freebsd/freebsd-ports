@@ -1,0 +1,20 @@
+--- configure.orig	Fri Dec 23 12:57:26 2005
++++ configure	Sun May  7 16:03:41 2006
+@@ -3043,7 +3043,7 @@
+ #define HAVE_PYTHON_H 1
+ _ACEOF
+ 
+-		let have_python+=1
++		have_python=$(($have_python+1))
+ 	fi
+ 
+ 	# Check for Python library path
+@@ -3063,7 +3063,7 @@
+ 		#AC_MSG_ERROR([cannot find Python library path])
+ 		have_python=0
+ 	else
+-		let have_python+=1
++		have_python=$(($have_python+1))
+ 
+ cat >>confdefs.h <<\_ACEOF
+ #define HAVE_LIBPYTHON 1
