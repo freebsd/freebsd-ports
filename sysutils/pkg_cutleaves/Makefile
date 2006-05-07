@@ -10,7 +10,7 @@ PORTVERSION=	20060430
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.gegenunendlich.de/projects/${PORTNAME}/
 
-MAINTAINER=	sw@gegenunendlich.de
+MAINTAINER=	stefan@FreeBSD.org
 COMMENT=	Interactive script for deinstalling 'leaf' packages
 
 NO_BUILD=	yes

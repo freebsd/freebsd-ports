@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR=	nonfree/macros/latex/contrib/${PORTNAME}
 DISTFILES=	foiltex.dtx foiltex.ins
 
-MAINTAINER=	sw@gegenunendlich.de
+MAINTAINER=	stefan@FreeBSD.org
 COMMENT=	A collection of LaTeX files for making foils
 
 BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base

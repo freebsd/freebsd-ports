@@ -12,7 +12,7 @@ CATEGORIES=	graphics www python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	sw@gegenunendlich.de
+MAINTAINER=	stefan@FreeBSD.org
 COMMENT=	Static Image Gallery Generator for web or CD-ROM galleries
 
 USE_PYTHON=	yes

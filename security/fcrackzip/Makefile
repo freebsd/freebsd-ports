@@ -10,7 +10,7 @@ PORTVERSION=	0.3
 CATEGORIES=	security archivers
 MASTER_SITES=	http://www.goof.com/pcg/marc/data/
 
-MAINTAINER=	sw@gegenunendlich.de
+MAINTAINER=	stefan@FreeBSD.org
 COMMENT=	Portable, fast and featureful ZIP password cracker
 
 GNU_CONFIGURE=	yes
