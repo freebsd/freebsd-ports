@@ -975,6 +975,7 @@
     SUBDIR += xpi-adblock
     SUBDIR += xpi-adblock_plus
     SUBDIR += xpi-colorfultabs
+    SUBDIR += xpi-cssviewer
     SUBDIR += xpi-fasterfox
     SUBDIR += xpi-noscript
     SUBDIR += xpi-pdf_download
