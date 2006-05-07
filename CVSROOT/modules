@@ -6492,6 +6492,7 @@ mingw32-bin-msvcrt	ports/devel/mingw32-bin-msvcrt
 mingw32-binutils	ports/devel/mingw32-binutils
 mingw32-gcc	ports/devel/mingw32-gcc
 mingw32-pdcurses	ports/devel/mingw32-pdcurses
+mingw32-pthreads	ports/devel/mingw32-pthreads
 mini-xml	ports/textproc/mini-xml
 mini_httpd	ports/www/mini_httpd
 mini_sendmail	ports/mail/mini_sendmail
