@@ -22,7 +22,6 @@ FETCH_CMD=	/usr/bin/fetch -Rr
 
 USE_MOTIF=	yes
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
 
 # License forbids redistribution
 RESTRICTED=	Redistribution forbidden by license

@@ -25,7 +25,6 @@ IGNOREFILES=	${DISTFILES}
 WRKSRC=		${WRKDIR}/vmware-tools-distrib
 
 ONLY_FOR_ARCHS=	i386
-USE_REINPLACE=	yes
 USE_RC_SUBR=	yes
 RC_SCRIPT=	${PREFIX}/etc/rc.d/vmware-guestd.sh
 RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}

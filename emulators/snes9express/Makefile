@@ -19,7 +19,6 @@ RUN_DEPENDS=	snes9x:${PORTSDIR}/emulators/snes9x
 
 USE_GETTEXT=	yes
 USE_GNOME=	gtk20
-USE_REINPLACE=	yes
 USE_XLIB=	yes
 
 GNU_CONFIGURE=	yes

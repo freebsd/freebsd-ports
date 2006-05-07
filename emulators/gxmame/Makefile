@@ -23,7 +23,6 @@ RUN_DEPENDS=	xmame:${PORTSDIR}/emulators/xmame
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk20 intlhack gnomehack gnomeprefix
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ENV=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"

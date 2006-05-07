@@ -13,7 +13,6 @@ MASTER_SITES=	ftp://ftp.berlios.de/pub/ved/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A small and fast screen-oriented editor
 
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 
 MAN1=		ved.1

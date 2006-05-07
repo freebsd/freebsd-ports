@@ -23,7 +23,6 @@ USE_AUTOTOOLS=	autoconf:259
 CONFIGURE_ARGS=	--enable-sound --enable-vidmode --enable-dga
 USE_XLIB=	yes
 USE_GNOME=	gtk20
-USE_REINPLACE=	yes
 
 CFLAGS+=	${PTHREAD_CFLAGS}
 

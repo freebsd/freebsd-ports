@@ -21,7 +21,6 @@ USE_SDL=	sdl
 USE_GCC=	3.4
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 USE_GETOPT_LONG=yes
 
 PLIST_FILES=	bin/gcube bin/gcmap bin/bin2dol bin/isopack bin/tplx

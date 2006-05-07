@@ -16,7 +16,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Hierarchical NoteBook a data organizer
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 ALL_TARGET=
 

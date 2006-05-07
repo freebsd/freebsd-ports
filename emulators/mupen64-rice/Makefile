@@ -19,7 +19,6 @@ COMMENT=	Rice Daedalus graphics plugin for Mupen64
 BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm
 
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_SDL=	sdl
 USE_GNOME=	gtk12

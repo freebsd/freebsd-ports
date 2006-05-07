@@ -14,7 +14,6 @@ DISTNAME=	${PORTNAME}SDL-${PORTVERSION}
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Yet Another Commodore +4 Emulator
 
-USE_REINPLACE=	yes
 USE_SDL=	sdl
 USE_GMAKE=	yes
 NO_WRKSUBDIR=	yes

@@ -15,7 +15,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A standalone release of gnuserv for GNU Emacs
 
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 
 BINSUFFIX?=	-emacs
 

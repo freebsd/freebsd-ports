@@ -18,7 +18,6 @@ COMMENT=	A simple GNOME i18n editor
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
 USE_GNOME=	gnomelibs gnomeprefix gnomehack gtk12 glib12 orbit
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes

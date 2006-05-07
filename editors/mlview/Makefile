@@ -23,7 +23,6 @@ USE_GNOME=	eel2 gnomehack gnomeprefix gtksourceview
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
-USE_REINPLACE=	yes
 
 GCONF_SCHEMAS=	mlview.schemas
 

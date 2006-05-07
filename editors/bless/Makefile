@@ -23,7 +23,6 @@ USE_GNOME=	gnomehack gnomeprefix gnometarget
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 INSTALLS_OMF=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
 DOCS=		AUTHORS COPYING ChangeLog NEWS README

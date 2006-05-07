@@ -24,7 +24,6 @@ RESTRICTED=	"xf25 contains copyright ROMs and cannot be distributed."
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

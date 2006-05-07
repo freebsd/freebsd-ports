@@ -21,7 +21,6 @@ COMMENT=	Quick access to files and tags in an Emacs frame
 USE_EMACS=	yes
 EMACS_PORT_NAME?=	emacs21
 
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 CONFLICTS=	cedet*
 

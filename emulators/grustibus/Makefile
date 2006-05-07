@@ -19,7 +19,6 @@ RUN_DEPENDS=	xmame:${PORTSDIR}/emulators/xmame
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomecanvas gnomehack gnomeprefix libcapplet
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

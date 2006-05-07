@@ -17,7 +17,6 @@ MAINTAINER=	lx@redundancy.redundancy.org
 COMMENT=	The original vi editor, updated to run on modern OSes
 
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 
 PRESERVEDIR=	/var/preserve/${UNIQUENAME}
 PLIST_SUB=	PRESERVEDIR="${PRESERVEDIR}"

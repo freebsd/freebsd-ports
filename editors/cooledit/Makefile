@@ -18,7 +18,6 @@ COMMENT=	Suite of utilities, including a GUI editor
 USE_XLIB=	yes
 USE_PYTHON=	yes
 USE_GETTEXT=	yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

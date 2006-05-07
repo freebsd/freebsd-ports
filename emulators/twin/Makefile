@@ -24,7 +24,6 @@ ONLY_FOR_ARCHS=	i386 alpha powerpc
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_XLIB=	yes
-USE_REINPLACE=	yes
 USE_AUTOTOOLS=	autoconf:213
 GNU_CONFIGURE=	yes
 .if ${MACHINE_ARCH} == "alpha"

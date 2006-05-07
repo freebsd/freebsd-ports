@@ -24,7 +24,6 @@ NO_LATEST_LINK=	yes
 ONLY_FOR_ARCHS=	i386
 NO_CDROM=	'Must be downloaded direct from Sun via www interface'
 
-USE_REINPLACE=	yes
 USE_LINUX=	yes
 USE_X_PREFIX=	yes
 IS_INTERACTIVE=	yes
