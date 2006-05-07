@@ -6,38 +6,43 @@
 #
 
 PORTNAME=	ohphone
-PORTVERSION=	1.4.1
-PORTREVISION=	2
+PORTVERSION=	1.4.5
 CATEGORIES=	net
-MASTER_SITES=	http://www.openh323.org/bin/ \
-		http://www.de.openh323.org/bin/ \
-		http://www.ru.openh323.org/bin/
-DISTNAME=	${PORTNAME}_${PORTVERSION}
+MASTER_SITES=	ftp://ftp.frm2.tum.de/pub/jpulz/FreeBSD/distfiles/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	Joerg.Pulz@frm2.tum.de
 COMMENT=	H323 Video Conferencing Program, compatible with NetMeeting
 
-BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/net/openh323-112:build
-
-BROKEN=		Incomplete dependency list
-
-WRKSRC=		${WRKDIR}/${PORTNAME}
-
-NOCLEANDEPENDS=	yes
+LIB_DEPENDS=	h323_r.1:${PORTSDIR}/net/openh323
 
 USE_BISON=	yes
 USE_XLIB=	yes
 USE_GMAKE=	yes
-ALL_TARGET=	optnoshared
-MAKE_ENV=	PWLIBDIR=${WRKDIRPREFIX}${.CURDIR}/../../devel/pwlib152/work/pwlib \
-		OPENH323DIR=${WRKDIRPREFIX}${.CURDIR}/../openh323-112/work/openh323
-THE_MACHTYPE=	${ARCH:S/i386/x86/}
-MAKE_ARGS=	OSTYPE=${OPSYS} MACHTYPE=${THE_MACHTYPE} OSRELEASE=${OSVERSION} CPLUS=${CXX}
+ALL_TARGET=	optshared
+MAKE_ENV=	PWLIBDIR=${LOCALBASE}/share/pwlib \
+		OPENH323DIR=${LOCALBASE}/share/openh323 \
+		SYSLIBDIR=${LOCALBASE}/lib
+MAKE_ARGS=	OSTYPE=${OPSYS} MACHTYPE=${ARCH:S/i386/x86/} \
+		OSRELEASE=${OSVERSION} CPLUS=${CXX}
+
 MAN1=		ohphone.1
-PLIST_FILES=	bin/ohphone
+
+PLIST_SUB=	PORTNAME=${PORTNAME}
+DOCSDIR=	${PREFIX}/share/doc/openh323
+EXAMPLESDIR=	${PREFIX}/share/examples/openh323
+
+.include <bsd.port.pre.mk>
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/obj_${OPSYS}_${THE_MACHTYPE}_r/ohphone ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/obj_r/ohphone ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/ohphone.1 ${PREFIX}/man/man1
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/ReadMe.txt ${DOCSDIR}/${PORTNAME}
+.endif
+	${MKDIR} ${EXAMPLESDIR}/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/check_listen.awk ${EXAMPLESDIR}/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/regtest ${EXAMPLESDIR}/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/stresstest ${EXAMPLESDIR}/${PORTNAME}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
