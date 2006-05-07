@@ -1,5 +1,3 @@
-$NetBSD: md5,v 1.2 1999/10/10 23:14:40 proff Exp $
-
 MD5 (festival/festdoc-1.4.0.1.tar.gz) = f99b1aa7c0a95a6f0ed2222a37035792
 SIZE (festival/festdoc-1.4.0.1.tar.gz) = 1265147
 SHA256 (festival/festdoc-1.4.0.1.tar.gz) = f9443f005fc8cd87e1ed291556a741fa77737ad764b566a47e926556d5492617
