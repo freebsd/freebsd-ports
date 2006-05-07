@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	dxf2fig
-PORTVERSION=	2.10
+PORTVERSION=	2.13
 CATEGORIES=	cad
 MASTER_SITES=	http://ta.twi.tudelft.nl/ftp/dv/lemmens/
 
