@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Expect
-PORTVERSION=	1.15
+PORTVERSION=	1.16
 CATEGORIES=	lang perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Expect
@@ -23,4 +23,10 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Expect.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500800
+IGNORE=	requires perl 5.8.0 or higher. Please install lang/perl5.8 and try again
+.endif
+
+.include <bsd.port.post.mk>
