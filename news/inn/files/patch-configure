@@ -1,11 +1,11 @@
---- configure.orig	Tue Sep  2 06:39:30 2003
-+++ configure	Wed Oct 22 15:23:46 2003
-@@ -5826,36 +5826,9 @@
+--- configure.orig	Mon Mar 20 04:14:57 2006
++++ configure	Sat May  6 02:32:58 2006
+@@ -7604,36 +7604,9 @@
  	    done
          done
      fi
 -    if test x"$BERKELEY_DB_DIR" = xyes ; then
--        for v in db41 db4 db3 db2 ; do
+-        for v in db43 db42 db41 db4 db3 db2 ; do
 -            if test -d "/usr/local/include/$v" ; then
 -                BERKELEY_DB_LDFLAGS="-L/usr/local/lib"
 -                BERKELEY_DB_CFLAGS="-I/usr/local/include/$v"
@@ -15,7 +15,7 @@
 -            fi
 -        done
 -        if test x"$BERKELEY_DB_LIB" = x ; then
--            for v in db41 db4 db3 db2 ; do
+-            for v in db43 db42 db41 db4 db3 db2 ; do
 -                if test -d "/usr/include/$v" ; then
 -                    BERKELEY_DB_CFLAGS="-I/usr/include/$v"
 -                    BERKELEY_DB_LIB="-l$v"

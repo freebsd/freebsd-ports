@@ -1,8 +1,8 @@
---- site/Makefile.orig	Sat Jul 12 21:11:02 2003
-+++ site/Makefile	Sun Sep 21 12:53:00 2003
-@@ -23,29 +23,29 @@
- PATH_NNRPAUTH           = ${PATHFILTER}/nnrpd_auth.pl
+--- site/Makefile.orig	Mon Mar 20 04:14:57 2006
++++ site/Makefile	Sat May  6 04:15:50 2006
+@@ -24,29 +24,29 @@
  PATH_NNRPYAUTH          = ${PATHFILTER}/nnrpd_auth.py
+ PATH_NNRPACCESS         = ${PATHFILTER}/nnrpd_access.pl
  
 -PATH_CONFIG		= ${PATHETC}/inn.conf
 -PATH_CONTROLCTL		= ${PATHETC}/control.ctl
@@ -53,7 +53,7 @@
  
  PATH_ACTIVE		= ${PATHDB}/active
  PATH_ACTIVE_TIMES	= ${PATHDB}/active.times
-@@ -71,8 +71,8 @@
+@@ -73,8 +73,8 @@
  	$D$(PATH_NEWSFEEDS) $D$(PATH_INNDHOSTS) \
  	$D$(PATH_NNRPDTRACK) $D$(PATH_NNTPPASS) \
  	$D$(PATH_CONFIG) $D$(PATH_MODERATORS) \
@@ -64,16 +64,27 @@
  	$D$(PATH_CTLWATCH) $D$(PATH_DISTPATS) $D$(PATH_SCHEMA) \
  	$D$(PATH_ACTSYNC_CFG) $D$(PATH_ACTSYNC_IGN) \
  	$D$(PATH_MOTD) $D$(PATH_STORAGECONF) \
-@@ -81,7 +81,7 @@
+@@ -83,7 +83,7 @@
  	$D$(PATH_PERL_FILTER_INND) $D$(PATH_PERL_FILTER_NNRPD) \
  	$D$(PATH_PYTHON_FILTER_INND) $D$(PATH_PYTHON_INN_MODULE) \
  	$D$(PATH_TCL_STARTUP) $D$(PATH_TCL_FILTER) \
 -	$D$(PATH_NNRPAUTH) $D$(PATHETC)/news2mail.cf $D$(PATH_READERSCONF) \
 +	$D$(PATH_NNRPAUTH) $D$(PATHETC)/news2mail.cf.dist $D$(PATH_READERSCONF) \
  	$D$(PATH_RADIUS_CONF) $D$(PATH_NNRPYAUTH) $D$(PATH_OVDB_CONF) \
- 	$D$(PATH_SASL_CONF) $D$(PATH_SUBSCRIPTIONS)
+ 	$D$(PATH_SASL_CONF) $D$(PATH_SUBSCRIPTIONS) $D$(PATH_NNRPACCESS)
  
-@@ -170,9 +170,9 @@
+@@ -136,8 +136,8 @@
+ 	chgrp $(NEWSGROUP) $@
+ 	chmod $(FILEMODE) $@
+ $D$(PATH_HISTORY):
+-	touch $@
+-	$(PATHBIN)/makedbz -i -o
++#	touch $@
++#	$(PATHBIN)/makedbz -i -o
+ 
+ ##  Remove files that are unchanged from the release version.
+ clean:
+@@ -176,9 +176,9 @@
  $D$(PATH_MODERATORS):	moderators	; $(COPY_RPUB) $? $@
  $D$(PATH_DISTPATS):	distrib.pats	; $(COPY_RPUB) $? $@
  $D$(PATH_NNTPPASS):	passwd.nntp	; $(COPY_RPRI) $? $@
