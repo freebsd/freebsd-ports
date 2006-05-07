@@ -20,7 +20,6 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/antlr:${PORTSDIR}/devel/pccts \
 		${LOCALBASE}/bin/dlg:${PORTSDIR}/devel/pccts
 
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
 MP3OGG_LIB_DEPENDS=	ao.3:${PORTSDIR}/audio/libao \
@@ -60,9 +59,12 @@ CONFIGURE_ARGS+=	--with-pcctsbin=${LOCALBASE}/bin \
 			--with-pcctsinc=${LOCALBASE}/include/pccts \
 			--without-posix-threads --with-scglib=pkg
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
-MAKE_ENV=		LANG=C
 
 .include <bsd.port.pre.mk>
+
+CCOM!=		${BASENAME} ${CC}
+MAKE_ENV=	CCOM=${CCOM} LANG=C
+SCSILIBTARGET=	${ARCH}-freebsd-${CCOM}
 
 pre-everything::
 .if ${PORTNAME} != "gcdmaster" && \
@@ -82,9 +84,9 @@ pre-everything::
 .endif
 
 post-extract:
-.if ${ARCH} != "i386" || ${CC} != "cc"
+.if ${SCSILIBTARGET} != "i386-freebsd-cc"
 	@${LN} -sf ${WRKSRC}/scsilib/RULES/i386-freebsd-cc.rul \
-		${WRKSRC}/scsilib/RULES/${ARCH}-freebsd-${CC}.rul
+		${WRKSRC}/scsilib/RULES/${SCSILIBTARGET}.rul
 .endif
 
 post-patch:
