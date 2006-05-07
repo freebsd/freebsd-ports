@@ -1,0 +1,12 @@
+--- config.h.in.orig	Sun May  7 00:54:09 2006
++++ config.h.in	Sun May  7 00:54:46 2006
+@@ -121,6 +121,9 @@
+ /* Define to 1 if you have the <fnmatch.h> header file. */
+ #undef HAVE_FNMATCH_H
+ 
++/* Define to 1 if you have the <sys/sysmacros.h> header file. */
++#undef HAVE_SYS_SYSMACROS_H
++
+ /* Define to 1 if you have the <fstab.h> header file. */
+ #undef HAVE_FSTAB_H
+ 
