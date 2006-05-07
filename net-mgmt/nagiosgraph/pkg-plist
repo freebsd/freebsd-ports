@@ -1,0 +1,15 @@
+etc/nagios/nagiosgraph/map.example
+etc/nagios/nagiosgraph/nagiosgraph.conf.example
+libexec/nagiosgraph/insert.pl
+%%EXAMPLESDIR%%/testentry.pl
+%%NAGIOSWWWDIR%%/cgi-bin/nagiosgraph/show.cgi
+%%NAGIOSWWWDIR%%/cgi-bin/nagiosgraph/testcolor.cgi
+%%NAGIOSWWWDIR%%/stylesheets/nagiosgraph.css
+@dirrm etc/nagios/nagiosgraph
+@dirrmtry etc/nagios
+@dirrm libexec/nagiosgraph
+@dirrm %%EXAMPLESDIR%%
+@dirrm %%NAGIOSWWWDIR%%/cgi-bin/nagiosgraph
+@dirrmtry %%NAGIOSWWWDIR%%/cgi-bin
+@dirrmtry %%NAGIOSWWWDIR%%/stylesheets
+@dirrmtry %%NAGIOSWWWDIR%%
