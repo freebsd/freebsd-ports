@@ -8,11 +8,13 @@
 
 PORTNAME=		fc
 PORTVERSION=		3
-PORTREVISION=		2
+PORTREVISION=		3
 CATEGORIES=		emulators linux
 MASTER_SITES=		${MASTER_SITE_FEDORA_LINUX}
 MASTER_SITE_SUBDIR=	${PORTVERSION}/${LINUX_RPM_ARCH}/os/Fedora/RPMS \
-			${PORTVERSION}/SRPMS
+			updates/${PORTVERSION}/${LINUX_RPM_ARCH} \
+			${PORTVERSION}/SRPMS \
+			updates/${PORTVERSION}/SRPMS
 PKGNAMEPREFIX=		linux_base-
 DISTFILES=		${BIN_DISTFILES} ${SRC_DISTFILES}
 DIST_SUBDIR=		rpm/${LINUX_RPM_ARCH}/fedora/${PORTVERSION}
@@ -22,7 +24,7 @@ MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	Base set of packages needed in Linux mode (for i386/amd64)
 
 BIN_DISTFILES=	basesystem-8.0-4.noarch.rpm \
-		bash-3.0-17.${LINUX_RPM_ARCH}.rpm \
+		bash-3.0-18.${LINUX_RPM_ARCH}.rpm \
 		bzip2-1.0.2-13.${LINUX_RPM_ARCH}.rpm \
 		bzip2-libs-1.0.2-13.${LINUX_RPM_ARCH}.rpm \
 		compat-db-4.1.25-6.${LINUX_RPM_ARCH}.rpm \
@@ -35,30 +37,30 @@ BIN_DISTFILES=	basesystem-8.0-4.noarch.rpm \
 		freetype-2.1.9-1.${LINUX_RPM_ARCH}.rpm \
 		gdbm-1.8.0-24.${LINUX_RPM_ARCH}.rpm \
 		glib-1.2.10-15.${LINUX_RPM_ARCH}.rpm \
-		glibc-2.3.3-74.${LINUX_RPM_ARCH}.rpm \
-		glibc-common-2.3.3-74.${LINUX_RPM_ARCH}.rpm \
+		glibc-2.3.6-0.fc3.1.${LINUX_RPM_ARCH}.rpm \
+		glibc-common-2.3.6-0.fc3.1.${LINUX_RPM_ARCH}.rpm \
 		grep-2.5.1-31.${LINUX_RPM_ARCH}.rpm \
 		info-4.7-5.${LINUX_RPM_ARCH}.rpm \
 		libacl-2.2.23-5.${LINUX_RPM_ARCH}.rpm \
 		libattr-2.4.16-3.${LINUX_RPM_ARCH}.rpm \
-		libgcc-3.4.2-6.fc3.${LINUX_RPM_ARCH}.rpm \
-		libselinux-1.17.14-1.${LINUX_RPM_ARCH}.rpm \
+		libgcc-3.4.4-2.fc3.${LINUX_RPM_ARCH}.rpm \
+		libselinux-1.19.1-8.${LINUX_RPM_ARCH}.rpm \
 		libstdc++-3.4.2-6.fc3.${LINUX_RPM_ARCH}.rpm \
 		libtermcap-2.0.8-39.${LINUX_RPM_ARCH}.rpm \
 		ncurses-5.4-13.${LINUX_RPM_ARCH}.rpm \
-		pcre-4.5-3.${LINUX_RPM_ARCH}.rpm \
+		pcre-4.5-3.1.1.fc3.${LINUX_RPM_ARCH}.rpm \
 		popt-1.9.1-21.${LINUX_RPM_ARCH}.rpm \
 		readline-4.3-13.${LINUX_RPM_ARCH}.rpm \
 		rpm-4.3.2-21.${LINUX_RPM_ARCH}.rpm \
 		setserial-2.17-17.${LINUX_RPM_ARCH}.rpm \
 		setup-2.5.36-1.noarch.rpm \
-		slang-1.4.9-6.${LINUX_RPM_ARCH}.rpm \
-		termcap-5.4-3.noarch.rpm \
-		zlib-1.2.1.2-1.${LINUX_RPM_ARCH}.rpm
+		slang-1.4.9-13.${LINUX_RPM_ARCH}.rpm \
+		termcap-5.4-4fc3.noarch.rpm \
+		zlib-1.2.1.2-3.fc3.${LINUX_RPM_ARCH}.rpm
 
 .if defined(PACKAGE_BUILDING)
 SRC_DISTFILES+= basesystem-8.0-4.src.rpm \
-		bash-3.0-17.src.rpm \
+		bash-3.0-18.src.rpm \
 		bzip2-1.0.2-13.src.rpm \
 		compat-db-4.1.25-6.src.rpm \
 		coreutils-5.2.1-31.src.rpm \
@@ -67,11 +69,12 @@ SRC_DISTFILES+= basesystem-8.0-4.src.rpm \
 		fedora-release-3-8.src.rpm \
 		filesystem-2.3.0-1.src.rpm \
 		freetype-2.1.9-1.src.rpm \
+		gcc-3.4.4-2.fc3.src.rpm \
 		gdbm-1.8.0-24.src.rpm \
 		glib-1.2.10-15.src.rpm \
-		glibc-2.3.3-74.src.rpm \
+		glibc-2.3.6-0.fc3.1.src.rpm \
 		grep-2.5.1-31.src.rpm \
-		libselinux-1.17.14-1.src.rpm \
+		libselinux-1.19.1-8.src.rpm \
 		libtermcap-2.0.8-39.src.rpm \
 		ncurses-5.4-13.src.rpm \
 		pcre-4.5-3.src.rpm \
@@ -79,15 +82,16 @@ SRC_DISTFILES+= basesystem-8.0-4.src.rpm \
 		rpm-4.3.2-21.src.rpm \
 		setserial-2.17-17.src.rpm \
 		setup-2.5.36-1.src.rpm \
-		slang-1.4.9-6.src.rpm \
-		termcap-5.4-3.src.rpm \
-		zlib-1.2.1.2-1.src.rpm
+		slang-1.4.9-13.src.rpm \
+		termcap-5.4-4fc3.src.rpm \
+		zlib-1.2.1.2-3.fc3.src.rpm
 
 ALWAYS_KEEP_DISTFILES=  yes
 .endif
 
 CONFLICTS=		linux_base-7* linux_base-deb* linux_base-gentoo* \
-			linux_base-rh-9* linux_base-suse-9* linux_base-8*
+			linux_base-rh-9* linux_base-suse-9* linux_base-8* \
+			linux-libgcc*
 ONLY_FOR_ARCHS=		i386 amd64
 LINUX_RPM_ARCH=		i386
 PREFIX?=		${LINUXBASE}
@@ -95,6 +99,7 @@ NO_FILTER_SHLIBS=	yes
 NO_MTREE=		yes
 NO_WRKSUBDIR=		yes
 MD5_FILE?=		${MASTERDIR}/distinfo.${LINUX_RPM_ARCH}
+PLIST_SUB=		GLIBCVER="2.3.6"
 
 RPM2CPIO?=			${LOCALBASE}/bin/rpm2cpio
 

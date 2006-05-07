@@ -6,10 +6,10 @@ DEINSTALL)
 	if [ -n "`mount | grep ^linproc`" ] || \
 		[ -d /compat/linux/proc ]; then
 		echo ""
-		echo "You may need to do by hands:"
-		echo "  o  unmount linprocfs;"
-		echo "  o  delete ${PKG_PREFIX}/proc;"
-		echo "  o  remove the description of linprocfs from /etc/fstab."
+		echo "You may need to do by hand:"
+		echo "  o  unmount linprocfs if mounted"
+		echo "  o  delete ${PKG_PREFIX}/proc if present"
+		echo "  o  remove/comment linprocfs from /etc/fstab if present"
 		echo ""
 	fi
 	;;

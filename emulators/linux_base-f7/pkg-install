@@ -16,7 +16,7 @@ PRE-INSTALL)
 POST-INSTALL)
 	if [ -z "`grep ^linproc /etc/fstab`" ]; then
 		echo ''
-		echo '+++ Some programs may need the linprocfs, please add it to /etc/fstab! +++'
+		echo '+++ Some programs may need linprocfs, please add it to /etc/fstab! +++'
 	else
 		if [ -z "`mount | grep -w ^linprocfs`" ]; then
 			echo ''
@@ -31,8 +31,8 @@ POST-INSTALL)
 		cp ${PKG_PREFIX}/etc/yp.conf.sample ${PKG_PREFIX}/etc/yp.conf
 	fi
 #
-# This is needed for updating to ensure that
-# already installed libraries get to ${PKG_PREFIX}/etc/ld.so.cache
+# This is needed when updating to ensure that already installed libraries
+# are recorded in ${PKG_PREFIX}/etc/ld.so.cache
 #
 	echo ''
 	echo 'Running linux ldconfig...'
