@@ -2,6 +2,7 @@ bin/eiciel
 lib/nautilus/extensions-1.0/libeiciel-nautilus.a
 lib/nautilus/extensions-1.0/libeiciel-nautilus.la
 lib/nautilus/extensions-1.0/libeiciel-nautilus.so
+share/gnome/applications/eiciel.desktop
 share/gnome/eiciel/doc/C/eiciel.xml
 share/gnome/eiciel/doc/C/figures/altres-default.png
 share/gnome/eiciel/doc/C/figures/altres.png
@@ -42,8 +43,9 @@ share/gnome/eiciel/img/usuari.png
 %%NLS%%share/locale/ca/LC_MESSAGES/eiciel.mo
 %%NLS%%share/locale/de/LC_MESSAGES/eiciel.mo
 %%NLS%%share/locale/es/LC_MESSAGES/eiciel.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/eiciel.mo
+@dirrm share/gnome/eiciel/img
 @dirrm share/gnome/eiciel/doc/C/figures
 @dirrm share/gnome/eiciel/doc/C
 @dirrm share/gnome/eiciel/doc
-@dirrm share/gnome/eiciel/img
 @dirrm share/gnome/eiciel
