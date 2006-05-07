@@ -1,4 +1,3 @@
-etc/rc.d/innd.sh
 news/bin/actmerge
 news/bin/actsync
 news/bin/actsyncd
@@ -36,6 +35,7 @@ news/bin/filter/filter.tcl
 news/bin/filter/filter_innd.pl
 news/bin/filter/filter_innd.py
 news/bin/filter/filter_nnrpd.pl
+news/bin/filter/nnrpd_access.pl
 news/bin/filter/nnrpd_auth.pl
 news/bin/filter/nnrpd_auth.py
 news/bin/filter/startup.tcl

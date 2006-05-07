@@ -1,0 +1,38 @@
+#!/bin/sh
+#
+# PROVIDE: innd
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# $FreeBSD$
+#
+
+. %%RC_SUBR%%
+
+name=innd
+
+innd_enable=${innd_enable-"NO"}
+innd_user=${innd_user-"news"}
+innd_group=${innd_group-"news"}
+
+required_files="%%PREFIX%%/news/db/history.dir"
+
+load_rc_config ${name}
+
+start_cmd=${name}_start
+stop_cmd=${name}_stop
+
+rcvar=`set_rcvar`
+
+command=%%PREFIX%%/news/bin/rc.news
+
+innd_start() {
+	su -fm ${innd_user} -c "${command} start"
+}
+
+innd_stop() {
+	su -fm ${innd_user} -c "${command} stop"
+}
+
+load_rc_config ${name}
+run_rc_command "$1"
