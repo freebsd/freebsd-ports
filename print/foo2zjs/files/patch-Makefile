@@ -1,0 +1,68 @@
+--- Makefile.orig	Mon May  1 22:35:49 2006
++++ Makefile	Sat May  6 21:35:57 2006
+@@ -6,8 +6,7 @@
+ VERSION=0.0
+ 
+ # Installation prefix...
+-PREFIX=/usr/local
+-PREFIX=/usr
++PREFIX?=
+ 
+ # Pathnames for this package...
+ BIN=$(PREFIX)/bin
+@@ -18,7 +17,7 @@
+ DOCDIR=$(PREFIX)/share/doc/foo2zjs/
+ 
+ # Pathnames for referenced packages...
+-FOODB=/usr/share/foomatic/db/source
++FOODB=$(PREFIX)/share/foomatic/db/source
+ 
+ # User ID's
+ LPuid=-olp
+@@ -155,8 +154,8 @@
+ endif
+ 
+ # Compiler flags
+-CFLAGS +=	-O2 -Wall
+-
++CFLAGS?=
++CC?=
+ #
+ # Rules to create test documents
+ #
+@@ -277,7 +276,7 @@
+ # Installation rules
+ #
+ install: all install-test install-prog install-icc2ps install-extra \
+-	    install-crd install-foo install-ppd install-man install-doc
++	    install-crd install-ppd
+ 	#
+ 	# If you use CUPS, then restart the spooler:
+ 	#	make cups
+@@ -335,8 +334,10 @@
+ 	#
+ 	# Install current database files
+ 	#
++	mkdir -p $(FOODB)
+ 	@if [ -d $(FOODB) ]; then \
+ 	    for dir in driver printer opt; do \
++                install -d $(FOODB)/$$dir/; \
+ 		echo install -m 644 foomatic-db/$$dir/*.xml $(FOODB)/$$dir/; \
+ 		install -c -m 644 foomatic-db/$$dir/*.xml $(FOODB)/$$dir/; \
+ 	    done \
+@@ -421,12 +422,13 @@
+ 	    fi; \
+ 	done
+ 
+-MODEL=/usr/share/cups/model
+-LOCALMODEL=/usr/local/share/cups/model
++MODEL=$(PREFIX)/share/cups/model
++LOCALMODEL=$(PREFIX)/share/cups/model
+ install-ppd:
+ 	#
+ 	# Install PPD files for CUPS
+ 	#
++	mkdir -p $(MODEL)
+ 	if [ -d $(MODEL) ]; then \
+ 	    cd PPD; \
+ 	    for ppd in *.ppd; do \

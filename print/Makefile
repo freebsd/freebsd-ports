@@ -71,6 +71,7 @@
     SUBDIR += flpsed
     SUBDIR += font2svg
     SUBDIR += fontforge
+    SUBDIR += foo2zjs
     SUBDIR += foomatic-db
     SUBDIR += foomatic-db-engine
     SUBDIR += foomatic-db-hpijs
