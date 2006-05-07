@@ -10,7 +10,7 @@
  
  CPPOPTS=	-I. -I$(ARCHDIR) -I$(OINCSDIR) $(INCDIRS:%=-I%) $(OSDEFS)
  COPTS=
-@@ -57,14 +58,13 @@
+@@ -57,14 +58,14 @@
  
  FLOAT_OPTIONS=	
  
@@ -18,8 +18,9 @@
 -LDCC=		@echo "	==> LINKING \"$@\""; gcc
 -DYNLD=		@echo "	==> LINKING dynamic library \"$@\""; gcc
 -RANLIB=		@echo "	==> RANDOMIZING ARCHIVE \"$@\""; ranlib
-+LDCC=		$(CCOM)
-+DYNLD=		$(CCOM)
++CCCOM=		$(CC)
++LDCC=		$(CCCOM)
++DYNLD=		$(CCCOM)
 +RANLIB=		ranlib
  ARFLAGS=	cr
  LORDER=		lorder
@@ -27,5 +28,5 @@
  
  RMDEP=		:
 -MKDEP=		@echo "	==> MAKING DEPENDENCIES \"$@\""; $(RMDEP); gcc -M
-+MKDEP=		$(CCOM) -M
++MKDEP=		$(CCCOM) -M
  MKDEP_OUT=
