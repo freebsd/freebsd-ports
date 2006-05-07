@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	foomatic-db
-PORTVERSION=	20050309
+PORTVERSION=	20060506
 CATEGORIES=	print
 MASTER_SITES=	# custom fetch
 NO_CHECKSUM=	${DISTFILES}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	acardenas@bsd.org.pe
 COMMENT=	Foomatic database
 
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
@@ -23,6 +23,7 @@ USE_BZIP2=	yes
 USE_AUTOTOOLS=	automake:15:env autoconf:259
 
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 .include <bsd.port.pre.mk>
 CVS_CMD?=	cvs -z3
@@ -63,6 +64,5 @@ do-fetch:
 
 pre-configure:
 	@cd ${WRKSRC} && ${ACLOCAL} && ${AUTOCONF}
-		
 
 .include <bsd.port.post.mk>
