@@ -19,6 +19,7 @@ DISTNAME=	bonecho-alpha1-source
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
 
+LATEST_LINK=	firefox2
 MOZILLA=	${PORTNAME}${MOZILLA_SUFX}
 MOZILLA_SUFX=	-devel
 MOZ_OPTIONS=	--program-transform-name='s/firefox/${MOZILLA}/'
