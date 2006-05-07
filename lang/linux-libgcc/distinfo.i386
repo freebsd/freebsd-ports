@@ -1,3 +1,6 @@
 MD5 (rpm/i386/fedora/3/libgcc-3.4.4-2.fc3.i386.rpm) = 0a617a9704b080fd4333d35f2c3da813
 SHA256 (rpm/i386/fedora/3/libgcc-3.4.4-2.fc3.i386.rpm) = 9074ebfbd2672bf7f2e1568ec7dfd642db4fcf7007151fb8144da29b428bb22a
 SIZE (rpm/i386/fedora/3/libgcc-3.4.4-2.fc3.i386.rpm) = 56146
+MD5 (rpm/i386/fedora/3/gcc-3.4.4-2.fc3.src.rpm) = 4bace738841d2f80835672f9308b4011
+SHA256 (rpm/i386/fedora/3/gcc-3.4.4-2.fc3.src.rpm) = 1c814959aafc5ee73785291fd90754a106464df58a827792f4589e53a6244bb2
+SIZE (rpm/i386/fedora/3/gcc-3.4.4-2.fc3.src.rpm) = 26370149
