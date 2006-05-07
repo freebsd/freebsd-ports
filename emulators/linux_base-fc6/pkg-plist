@@ -78,107 +78,107 @@ etc/yum.repos.d/fedora-devel.repo
 etc/yum.repos.d/fedora-updates-testing.repo
 etc/yum.repos.d/fedora-updates.repo
 etc/yum.repos.d/fedora.repo
-lib/ld-2.3.3.so
+lib/ld-%%GLIBCVER%%.so
 lib/ld-linux.so.2
-lib/libBrokenLocale-2.3.3.so
+lib/libBrokenLocale-%%GLIBCVER%%.so
 lib/libBrokenLocale.so.1
-lib/libNoVersion-2.3.3.so
+lib/libNoVersion-%%GLIBCVER%%.so
 lib/libNoVersion.so.1
 lib/libSegFault.so
 lib/libacl.so.1
 lib/libacl.so.1.1.0
-lib/libanl-2.3.3.so
+lib/libanl-%%GLIBCVER%%.so
 lib/libanl.so.1
 lib/libattr.so.1
 lib/libattr.so.1.1.0
-lib/libc-2.3.3.so
+lib/libc-%%GLIBCVER%%.so
 lib/libc.so.6
-lib/libcidn-2.3.3.so
+lib/libcidn-%%GLIBCVER%%.so
 lib/libcidn.so.1
-lib/libcrypt-2.3.3.so
+lib/libcrypt-%%GLIBCVER%%.so
 lib/libcrypt.so.1
 lib/libdb-3.3.so
 lib/libdb-4.1.so
 lib/libdb-4.2.so
 lib/libdb.so.3
 lib/libdb2.so.3
-lib/libdl-2.3.3.so
+lib/libdl-%%GLIBCVER%%.so
 lib/libdl.so.2
-lib/libgcc_s-3.4.2-20041018.so.1
+lib/libgcc_s-3.4.4-20050721.so.1
 lib/libgcc_s.so.1
-lib/libm-2.3.3.so
+lib/libm-%%GLIBCVER%%.so
 lib/libm.so.6
-lib/libnsl-2.3.3.so
+lib/libnsl-%%GLIBCVER%%.so
 lib/libnsl.so.1
-lib/libnss1_compat-2.3.3.so
+lib/libnss1_compat-%%GLIBCVER%%.so
 lib/libnss1_compat.so.1
-lib/libnss1_dns-2.3.3.so
+lib/libnss1_dns-%%GLIBCVER%%.so
 lib/libnss1_dns.so.1
-lib/libnss1_files-2.3.3.so
+lib/libnss1_files-%%GLIBCVER%%.so
 lib/libnss1_files.so.1
-lib/libnss1_nis-2.3.3.so
+lib/libnss1_nis-%%GLIBCVER%%.so
 lib/libnss1_nis.so.1
-lib/libnss_compat-2.3.3.so
+lib/libnss_compat-%%GLIBCVER%%.so
 lib/libnss_compat.so.1
 lib/libnss_compat.so.2
-lib/libnss_dns-2.3.3.so
+lib/libnss_dns-%%GLIBCVER%%.so
 lib/libnss_dns.so.1
 lib/libnss_dns.so.2
-lib/libnss_files-2.3.3.so
+lib/libnss_files-%%GLIBCVER%%.so
 lib/libnss_files.so.1
 lib/libnss_files.so.2
-lib/libnss_hesiod-2.3.3.so
+lib/libnss_hesiod-%%GLIBCVER%%.so
 lib/libnss_hesiod.so.2
-lib/libnss_nis-2.3.3.so
+lib/libnss_nis-%%GLIBCVER%%.so
 lib/libnss_nis.so.1
 lib/libnss_nis.so.2
-lib/libnss_nisplus-2.3.3.so
+lib/libnss_nisplus-%%GLIBCVER%%.so
 lib/libnss_nisplus.so.2
 lib/libpcre.so.0
 lib/libpcre.so.0.0.1
 lib/libpthread-0.10.so
 lib/libpthread.so.0
-lib/libresolv-2.3.3.so
+lib/libresolv-%%GLIBCVER%%.so
 lib/libresolv.so.2
-lib/librt-2.3.3.so
+lib/librt-%%GLIBCVER%%.so
 lib/librt.so.1
 lib/libselinux.so.1
 lib/libtermcap.so.2
 lib/libtermcap.so.2.0.8
 lib/libthread_db-1.0.so
 lib/libthread_db.so.1
-lib/libutil-2.3.3.so
+lib/libutil-%%GLIBCVER%%.so
 lib/libutil.so.1
-lib/tls/i486/libc-2.3.3.so
+lib/tls/i486/libc-%%GLIBCVER%%.so
 lib/tls/i486/libc.so.6
 lib/tls/i486/libdb-4.2.so
-lib/tls/i486/libm-2.3.3.so
+lib/tls/i486/libm-%%GLIBCVER%%.so
 lib/tls/i486/libm.so.6
-lib/tls/i486/libpthread-2.3.3.so
+lib/tls/i486/libpthread-%%GLIBCVER%%.so
 lib/tls/i486/libpthread.so.0
-lib/tls/i486/librt-2.3.3.so
+lib/tls/i486/librt-%%GLIBCVER%%.so
 lib/tls/i486/librt.so.1
 lib/tls/i486/libthread_db-1.0.so
 lib/tls/i486/libthread_db.so.1
-lib/tls/i586/libc-2.3.3.so
+lib/tls/i586/libc-%%GLIBCVER%%.so
 lib/tls/i586/libc.so.6
 lib/tls/i586/libdb-4.2.so
-lib/tls/i586/libm-2.3.3.so
+lib/tls/i586/libm-%%GLIBCVER%%.so
 lib/tls/i586/libm.so.6
-lib/tls/i586/libpthread-2.3.3.so
+lib/tls/i586/libpthread-%%GLIBCVER%%.so
 lib/tls/i586/libpthread.so.0
-lib/tls/i586/librt-2.3.3.so
+lib/tls/i586/librt-%%GLIBCVER%%.so
 lib/tls/i586/librt.so.1
 lib/tls/i586/libthread_db-1.0.so
 lib/tls/i586/libthread_db.so.1
-lib/tls/i686/libc-2.3.3.so
+lib/tls/i686/libc-%%GLIBCVER%%.so
 lib/tls/i686/libc.so.6
 lib/tls/i686/libdb-4.2.so
-lib/tls/i686/libm-2.3.3.so
+lib/tls/i686/libm-%%GLIBCVER%%.so
 lib/tls/i686/libm.so.6
-lib/tls/i686/libpthread-2.3.3.so
+lib/tls/i686/libpthread-%%GLIBCVER%%.so
 lib/tls/i686/libpthread.so.0
-lib/tls/i686/librt-2.3.3.so
+lib/tls/i686/librt-%%GLIBCVER%%.so
 lib/tls/i686/librt.so.1
 lib/tls/i686/libthread_db-1.0.so
 lib/tls/i686/libthread_db.so.1
@@ -206,29 +206,6 @@ usr/bin/chcon
 usr/bin/cksum
 usr/bin/clear
 usr/bin/comm
-usr/bin/compute_av
-usr/bin/compute_create
-usr/bin/compute_relabel
-usr/bin/compute_user
-usr/bin/deftype
-usr/bin/execcon
-usr/bin/getcon
-usr/bin/getconlist
-usr/bin/getenforce
-usr/bin/getenforcemode
-usr/bin/getfilecon
-usr/bin/getpidcon
-usr/bin/getsebool
-usr/bin/matchpathcon
-usr/bin/mkdircon
-usr/bin/policyvers
-usr/bin/selinuxconfig
-usr/bin/selinuxdisable
-usr/bin/selinuxenabled
-usr/bin/setenforce
-usr/bin/setfilecon
-usr/bin/setsebool
-usr/bin/togglesebool
 usr/bin/csplit
 usr/bin/cut
 usr/bin/db1_dump185
@@ -626,6 +603,18 @@ usr/lib/locale/aa_DJ/LC_NUMERIC
 usr/lib/locale/aa_DJ/LC_PAPER
 usr/lib/locale/aa_DJ/LC_TELEPHONE
 usr/lib/locale/aa_DJ/LC_TIME
+usr/lib/locale/aa_DJ.utf8/LC_ADDRESS
+usr/lib/locale/aa_DJ.utf8/LC_COLLATE
+usr/lib/locale/aa_DJ.utf8/LC_CTYPE
+usr/lib/locale/aa_DJ.utf8/LC_IDENTIFICATION
+usr/lib/locale/aa_DJ.utf8/LC_MEASUREMENT
+usr/lib/locale/aa_DJ.utf8/LC_MESSAGES/SYS_LC_MESSAGES
+usr/lib/locale/aa_DJ.utf8/LC_MONETARY
+usr/lib/locale/aa_DJ.utf8/LC_NAME
+usr/lib/locale/aa_DJ.utf8/LC_NUMERIC
+usr/lib/locale/aa_DJ.utf8/LC_PAPER
+usr/lib/locale/aa_DJ.utf8/LC_TELEPHONE
+usr/lib/locale/aa_DJ.utf8/LC_TIME
 usr/lib/locale/aa_ER/LC_ADDRESS
 usr/lib/locale/aa_ER/LC_COLLATE
 usr/lib/locale/aa_ER/LC_CTYPE
@@ -674,6 +663,18 @@ usr/lib/locale/af_ZA/LC_NUMERIC
 usr/lib/locale/af_ZA/LC_PAPER
 usr/lib/locale/af_ZA/LC_TELEPHONE
 usr/lib/locale/af_ZA/LC_TIME
+usr/lib/locale/af_ZA.utf8/LC_ADDRESS
+usr/lib/locale/af_ZA.utf8/LC_COLLATE
+usr/lib/locale/af_ZA.utf8/LC_CTYPE
+usr/lib/locale/af_ZA.utf8/LC_IDENTIFICATION
+usr/lib/locale/af_ZA.utf8/LC_MEASUREMENT
+usr/lib/locale/af_ZA.utf8/LC_MESSAGES/SYS_LC_MESSAGES
+usr/lib/locale/af_ZA.utf8/LC_MONETARY
+usr/lib/locale/af_ZA.utf8/LC_NAME
+usr/lib/locale/af_ZA.utf8/LC_NUMERIC
+usr/lib/locale/af_ZA.utf8/LC_PAPER
+usr/lib/locale/af_ZA.utf8/LC_TELEPHONE
+usr/lib/locale/af_ZA.utf8/LC_TIME
 usr/lib/locale/am_ET/LC_ADDRESS
 usr/lib/locale/am_ET/LC_COLLATE
 usr/lib/locale/am_ET/LC_CTYPE
@@ -698,6 +699,18 @@ usr/lib/locale/an_ES/LC_NUMERIC
 usr/lib/locale/an_ES/LC_PAPER
 usr/lib/locale/an_ES/LC_TELEPHONE
 usr/lib/locale/an_ES/LC_TIME
+usr/lib/locale/an_ES.utf8/LC_ADDRESS
+usr/lib/locale/an_ES.utf8/LC_COLLATE
+usr/lib/locale/an_ES.utf8/LC_CTYPE
+usr/lib/locale/an_ES.utf8/LC_IDENTIFICATION
+usr/lib/locale/an_ES.utf8/LC_MEASUREMENT
+usr/lib/locale/an_ES.utf8/LC_MESSAGES/SYS_LC_MESSAGES
+usr/lib/locale/an_ES.utf8/LC_MONETARY
+usr/lib/locale/an_ES.utf8/LC_NAME
+usr/lib/locale/an_ES.utf8/LC_NUMERIC
+usr/lib/locale/an_ES.utf8/LC_PAPER
+usr/lib/locale/an_ES.utf8/LC_TELEPHONE
+usr/lib/locale/an_ES.utf8/LC_TIME
 usr/lib/locale/ar_AE.utf8/LC_ADDRESS
 usr/lib/locale/ar_AE.utf8/LC_COLLATE
 usr/lib/locale/ar_AE.utf8/LC_CTYPE
@@ -1226,6 +1239,18 @@ usr/lib/locale/br_FR@euro/LC_NUMERIC
 usr/lib/locale/br_FR@euro/LC_PAPER
 usr/lib/locale/br_FR@euro/LC_TELEPHONE
 usr/lib/locale/br_FR@euro/LC_TIME
+usr/lib/locale/br_FR.utf8/LC_ADDRESS
+usr/lib/locale/br_FR.utf8/LC_COLLATE
+usr/lib/locale/br_FR.utf8/LC_CTYPE
+usr/lib/locale/br_FR.utf8/LC_IDENTIFICATION
+usr/lib/locale/br_FR.utf8/LC_MEASUREMENT
+usr/lib/locale/br_FR.utf8/LC_MESSAGES/SYS_LC_MESSAGES
+usr/lib/locale/br_FR.utf8/LC_MONETARY
+usr/lib/locale/br_FR.utf8/LC_NAME
+usr/lib/locale/br_FR.utf8/LC_NUMERIC
+usr/lib/locale/br_FR.utf8/LC_PAPER
+usr/lib/locale/br_FR.utf8/LC_TELEPHONE
+usr/lib/locale/br_FR.utf8/LC_TIME
 usr/lib/locale/bs_BA/LC_ADDRESS
 usr/lib/locale/bs_BA/LC_COLLATE
 usr/lib/locale/bs_BA/LC_CTYPE
@@ -1238,6 +1263,18 @@ usr/lib/locale/bs_BA/LC_NUMERIC
 usr/lib/locale/bs_BA/LC_PAPER
 usr/lib/locale/bs_BA/LC_TELEPHONE
 usr/lib/locale/bs_BA/LC_TIME
+usr/lib/locale/bs_BA.utf8/LC_ADDRESS
+usr/lib/locale/bs_BA.utf8/LC_COLLATE
+usr/lib/locale/bs_BA.utf8/LC_CTYPE
+usr/lib/locale/bs_BA.utf8/LC_IDENTIFICATION
+usr/lib/locale/bs_BA.utf8/LC_MEASUREMENT
+usr/lib/locale/bs_BA.utf8/LC_MESSAGES/SYS_LC_MESSAGES
+usr/lib/locale/bs_BA.utf8/LC_MONETARY
+usr/lib/locale/bs_BA.utf8/LC_NAME
+usr/lib/locale/bs_BA.utf8/LC_NUMERIC
+usr/lib/locale/bs_BA.utf8/LC_PAPER
+usr/lib/locale/bs_BA.utf8/LC_TELEPHONE
+usr/lib/locale/bs_BA.utf8/LC_TIME
 usr/lib/locale/byn_ER/LC_ADDRESS
 usr/lib/locale/byn_ER/LC_COLLATE
 usr/lib/locale/byn_ER/LC_CTYPE
@@ -2762,6 +2799,18 @@ usr/lib/locale/gd_GB/LC_NUMERIC
 usr/lib/locale/gd_GB/LC_PAPER
 usr/lib/locale/gd_GB/LC_TELEPHONE
 usr/lib/locale/gd_GB/LC_TIME
+usr/lib/locale/gd_GB.utf8/LC_ADDRESS
+usr/lib/locale/gd_GB.utf8/LC_COLLATE
+usr/lib/locale/gd_GB.utf8/LC_CTYPE
+usr/lib/locale/gd_GB.utf8/LC_IDENTIFICATION
+usr/lib/locale/gd_GB.utf8/LC_MEASUREMENT
+usr/lib/locale/gd_GB.utf8/LC_MESSAGES/SYS_LC_MESSAGES
+usr/lib/locale/gd_GB.utf8/LC_MONETARY
+usr/lib/locale/gd_GB.utf8/LC_NAME
+usr/lib/locale/gd_GB.utf8/LC_NUMERIC
+usr/lib/locale/gd_GB.utf8/LC_PAPER
+usr/lib/locale/gd_GB.utf8/LC_TELEPHONE
+usr/lib/locale/gd_GB.utf8/LC_TIME
 usr/lib/locale/gez_ER/LC_ADDRESS
 usr/lib/locale/gez_ER/LC_COLLATE
 usr/lib/locale/gez_ER/LC_CTYPE
@@ -3134,6 +3183,18 @@ usr/lib/locale/ka_GE/LC_NUMERIC
 usr/lib/locale/ka_GE/LC_PAPER
 usr/lib/locale/ka_GE/LC_TELEPHONE
 usr/lib/locale/ka_GE/LC_TIME
+usr/lib/locale/ka_GE.utf8/LC_ADDRESS
+usr/lib/locale/ka_GE.utf8/LC_COLLATE
+usr/lib/locale/ka_GE.utf8/LC_CTYPE
+usr/lib/locale/ka_GE.utf8/LC_IDENTIFICATION
+usr/lib/locale/ka_GE.utf8/LC_MEASUREMENT
+usr/lib/locale/ka_GE.utf8/LC_MESSAGES/SYS_LC_MESSAGES
+usr/lib/locale/ka_GE.utf8/LC_MONETARY
+usr/lib/locale/ka_GE.utf8/LC_NAME
+usr/lib/locale/ka_GE.utf8/LC_NUMERIC
+usr/lib/locale/ka_GE.utf8/LC_PAPER
+usr/lib/locale/ka_GE.utf8/LC_TELEPHONE
+usr/lib/locale/ka_GE.utf8/LC_TIME
 usr/lib/locale/kk_KZ/LC_ADDRESS
 usr/lib/locale/kk_KZ/LC_COLLATE
 usr/lib/locale/kk_KZ/LC_CTYPE
@@ -3146,6 +3207,18 @@ usr/lib/locale/kk_KZ/LC_NUMERIC
 usr/lib/locale/kk_KZ/LC_PAPER
 usr/lib/locale/kk_KZ/LC_TELEPHONE
 usr/lib/locale/kk_KZ/LC_TIME
+usr/lib/locale/kk_KZ.utf8/LC_ADDRESS
+usr/lib/locale/kk_KZ.utf8/LC_COLLATE
+usr/lib/locale/kk_KZ.utf8/LC_CTYPE
+usr/lib/locale/kk_KZ.utf8/LC_IDENTIFICATION
+usr/lib/locale/kk_KZ.utf8/LC_MEASUREMENT
+usr/lib/locale/kk_KZ.utf8/LC_MESSAGES/SYS_LC_MESSAGES
+usr/lib/locale/kk_KZ.utf8/LC_MONETARY
+usr/lib/locale/kk_KZ.utf8/LC_NAME
+usr/lib/locale/kk_KZ.utf8/LC_NUMERIC
+usr/lib/locale/kk_KZ.utf8/LC_PAPER
+usr/lib/locale/kk_KZ.utf8/LC_TELEPHONE
+usr/lib/locale/kk_KZ.utf8/LC_TIME
 usr/lib/locale/kl_GL.utf8/LC_ADDRESS
 usr/lib/locale/kl_GL.utf8/LC_COLLATE
 usr/lib/locale/kl_GL.utf8/LC_CTYPE
@@ -3242,6 +3315,18 @@ usr/lib/locale/lg_UG/LC_NUMERIC
 usr/lib/locale/lg_UG/LC_PAPER
 usr/lib/locale/lg_UG/LC_TELEPHONE
 usr/lib/locale/lg_UG/LC_TIME
+usr/lib/locale/lg_UG.utf8/LC_ADDRESS
+usr/lib/locale/lg_UG.utf8/LC_COLLATE
+usr/lib/locale/lg_UG.utf8/LC_CTYPE
+usr/lib/locale/lg_UG.utf8/LC_IDENTIFICATION
+usr/lib/locale/lg_UG.utf8/LC_MEASUREMENT
+usr/lib/locale/lg_UG.utf8/LC_MESSAGES/SYS_LC_MESSAGES
+usr/lib/locale/lg_UG.utf8/LC_MONETARY
+usr/lib/locale/lg_UG.utf8/LC_NAME
+usr/lib/locale/lg_UG.utf8/LC_NUMERIC
+usr/lib/locale/lg_UG.utf8/LC_PAPER
+usr/lib/locale/lg_UG.utf8/LC_TELEPHONE
+usr/lib/locale/lg_UG.utf8/LC_TIME
 usr/lib/locale/lo_LA/LC_ADDRESS
 usr/lib/locale/lo_LA/LC_COLLATE
 usr/lib/locale/lo_LA/LC_CTYPE
@@ -3314,6 +3399,18 @@ usr/lib/locale/mi_NZ/LC_NUMERIC
 usr/lib/locale/mi_NZ/LC_PAPER
 usr/lib/locale/mi_NZ/LC_TELEPHONE
 usr/lib/locale/mi_NZ/LC_TIME
+usr/lib/locale/mi_NZ.utf8/LC_ADDRESS
+usr/lib/locale/mi_NZ.utf8/LC_COLLATE
+usr/lib/locale/mi_NZ.utf8/LC_CTYPE
+usr/lib/locale/mi_NZ.utf8/LC_IDENTIFICATION
+usr/lib/locale/mi_NZ.utf8/LC_MEASUREMENT
+usr/lib/locale/mi_NZ.utf8/LC_MESSAGES/SYS_LC_MESSAGES
+usr/lib/locale/mi_NZ.utf8/LC_MONETARY
+usr/lib/locale/mi_NZ.utf8/LC_NAME
+usr/lib/locale/mi_NZ.utf8/LC_NUMERIC
+usr/lib/locale/mi_NZ.utf8/LC_PAPER
+usr/lib/locale/mi_NZ.utf8/LC_TELEPHONE
+usr/lib/locale/mi_NZ.utf8/LC_TIME
 usr/lib/locale/mk_MK.utf8/LC_ADDRESS
 usr/lib/locale/mk_MK.utf8/LC_COLLATE
 usr/lib/locale/mk_MK.utf8/LC_CTYPE
@@ -3590,6 +3687,18 @@ usr/lib/locale/oc_FR/LC_NUMERIC
 usr/lib/locale/oc_FR/LC_PAPER
 usr/lib/locale/oc_FR/LC_TELEPHONE
 usr/lib/locale/oc_FR/LC_TIME
+usr/lib/locale/oc_FR.utf8/LC_ADDRESS
+usr/lib/locale/oc_FR.utf8/LC_COLLATE
+usr/lib/locale/oc_FR.utf8/LC_CTYPE
+usr/lib/locale/oc_FR.utf8/LC_IDENTIFICATION
+usr/lib/locale/oc_FR.utf8/LC_MEASUREMENT
+usr/lib/locale/oc_FR.utf8/LC_MESSAGES/SYS_LC_MESSAGES
+usr/lib/locale/oc_FR.utf8/LC_MONETARY
+usr/lib/locale/oc_FR.utf8/LC_NAME
+usr/lib/locale/oc_FR.utf8/LC_NUMERIC
+usr/lib/locale/oc_FR.utf8/LC_PAPER
+usr/lib/locale/oc_FR.utf8/LC_TELEPHONE
+usr/lib/locale/oc_FR.utf8/LC_TIME
 usr/lib/locale/om_ET/LC_ADDRESS
 usr/lib/locale/om_ET/LC_COLLATE
 usr/lib/locale/om_ET/LC_CTYPE
@@ -3614,6 +3723,18 @@ usr/lib/locale/om_KE/LC_NUMERIC
 usr/lib/locale/om_KE/LC_PAPER
 usr/lib/locale/om_KE/LC_TELEPHONE
 usr/lib/locale/om_KE/LC_TIME
+usr/lib/locale/om_KE.utf8/LC_ADDRESS
+usr/lib/locale/om_KE.utf8/LC_COLLATE
+usr/lib/locale/om_KE.utf8/LC_CTYPE
+usr/lib/locale/om_KE.utf8/LC_IDENTIFICATION
+usr/lib/locale/om_KE.utf8/LC_MEASUREMENT
+usr/lib/locale/om_KE.utf8/LC_MESSAGES/SYS_LC_MESSAGES
+usr/lib/locale/om_KE.utf8/LC_MONETARY
+usr/lib/locale/om_KE.utf8/LC_NAME
+usr/lib/locale/om_KE.utf8/LC_NUMERIC
+usr/lib/locale/om_KE.utf8/LC_PAPER
+usr/lib/locale/om_KE.utf8/LC_TELEPHONE
+usr/lib/locale/om_KE.utf8/LC_TIME
 usr/lib/locale/pa_IN/LC_ADDRESS
 usr/lib/locale/pa_IN/LC_COLLATE
 usr/lib/locale/pa_IN/LC_CTYPE
@@ -3878,6 +3999,18 @@ usr/lib/locale/so_DJ/LC_NUMERIC
 usr/lib/locale/so_DJ/LC_PAPER
 usr/lib/locale/so_DJ/LC_TELEPHONE
 usr/lib/locale/so_DJ/LC_TIME
+usr/lib/locale/so_DJ.utf8/LC_ADDRESS
+usr/lib/locale/so_DJ.utf8/LC_COLLATE
+usr/lib/locale/so_DJ.utf8/LC_CTYPE
+usr/lib/locale/so_DJ.utf8/LC_IDENTIFICATION
+usr/lib/locale/so_DJ.utf8/LC_MEASUREMENT
+usr/lib/locale/so_DJ.utf8/LC_MESSAGES/SYS_LC_MESSAGES
+usr/lib/locale/so_DJ.utf8/LC_MONETARY
+usr/lib/locale/so_DJ.utf8/LC_NAME
+usr/lib/locale/so_DJ.utf8/LC_NUMERIC
+usr/lib/locale/so_DJ.utf8/LC_PAPER
+usr/lib/locale/so_DJ.utf8/LC_TELEPHONE
+usr/lib/locale/so_DJ.utf8/LC_TIME
 usr/lib/locale/so_ET/LC_ADDRESS
 usr/lib/locale/so_ET/LC_COLLATE
 usr/lib/locale/so_ET/LC_CTYPE
@@ -3902,6 +4035,18 @@ usr/lib/locale/so_KE/LC_NUMERIC
 usr/lib/locale/so_KE/LC_PAPER
 usr/lib/locale/so_KE/LC_TELEPHONE
 usr/lib/locale/so_KE/LC_TIME
+usr/lib/locale/so_KE.utf8/LC_ADDRESS
+usr/lib/locale/so_KE.utf8/LC_COLLATE
+usr/lib/locale/so_KE.utf8/LC_CTYPE
+usr/lib/locale/so_KE.utf8/LC_IDENTIFICATION
+usr/lib/locale/so_KE.utf8/LC_MEASUREMENT
+usr/lib/locale/so_KE.utf8/LC_MESSAGES/SYS_LC_MESSAGES
+usr/lib/locale/so_KE.utf8/LC_MONETARY
+usr/lib/locale/so_KE.utf8/LC_NAME
+usr/lib/locale/so_KE.utf8/LC_NUMERIC
+usr/lib/locale/so_KE.utf8/LC_PAPER
+usr/lib/locale/so_KE.utf8/LC_TELEPHONE
+usr/lib/locale/so_KE.utf8/LC_TIME
 usr/lib/locale/so_SO/LC_ADDRESS
 usr/lib/locale/so_SO/LC_COLLATE
 usr/lib/locale/so_SO/LC_CTYPE
@@ -3914,6 +4059,18 @@ usr/lib/locale/so_SO/LC_NUMERIC
 usr/lib/locale/so_SO/LC_PAPER
 usr/lib/locale/so_SO/LC_TELEPHONE
 usr/lib/locale/so_SO/LC_TIME
+usr/lib/locale/so_SO.utf8/LC_ADDRESS
+usr/lib/locale/so_SO.utf8/LC_COLLATE
+usr/lib/locale/so_SO.utf8/LC_CTYPE
+usr/lib/locale/so_SO.utf8/LC_IDENTIFICATION
+usr/lib/locale/so_SO.utf8/LC_MEASUREMENT
+usr/lib/locale/so_SO.utf8/LC_MESSAGES/SYS_LC_MESSAGES
+usr/lib/locale/so_SO.utf8/LC_MONETARY
+usr/lib/locale/so_SO.utf8/LC_NAME
+usr/lib/locale/so_SO.utf8/LC_NUMERIC
+usr/lib/locale/so_SO.utf8/LC_PAPER
+usr/lib/locale/so_SO.utf8/LC_TELEPHONE
+usr/lib/locale/so_SO.utf8/LC_TIME
 usr/lib/locale/sq_AL.utf8/LC_ADDRESS
 usr/lib/locale/sq_AL.utf8/LC_COLLATE
 usr/lib/locale/sq_AL.utf8/LC_CTYPE
@@ -3938,6 +4095,30 @@ usr/lib/locale/sq_AL/LC_NUMERIC
 usr/lib/locale/sq_AL/LC_PAPER
 usr/lib/locale/sq_AL/LC_TELEPHONE
 usr/lib/locale/sq_AL/LC_TIME
+usr/lib/locale/sr_CS/LC_ADDRESS
+usr/lib/locale/sr_CS/LC_COLLATE
+usr/lib/locale/sr_CS/LC_CTYPE
+usr/lib/locale/sr_CS/LC_IDENTIFICATION
+usr/lib/locale/sr_CS/LC_MEASUREMENT
+usr/lib/locale/sr_CS/LC_MESSAGES/SYS_LC_MESSAGES
+usr/lib/locale/sr_CS/LC_MONETARY
+usr/lib/locale/sr_CS/LC_NAME
+usr/lib/locale/sr_CS/LC_NUMERIC
+usr/lib/locale/sr_CS/LC_PAPER
+usr/lib/locale/sr_CS/LC_TELEPHONE
+usr/lib/locale/sr_CS/LC_TIME
+usr/lib/locale/sr_CS.utf8/LC_ADDRESS
+usr/lib/locale/sr_CS.utf8/LC_COLLATE
+usr/lib/locale/sr_CS.utf8/LC_CTYPE
+usr/lib/locale/sr_CS.utf8/LC_IDENTIFICATION
+usr/lib/locale/sr_CS.utf8/LC_MEASUREMENT
+usr/lib/locale/sr_CS.utf8/LC_MESSAGES/SYS_LC_MESSAGES
+usr/lib/locale/sr_CS.utf8/LC_MONETARY
+usr/lib/locale/sr_CS.utf8/LC_NAME
+usr/lib/locale/sr_CS.utf8/LC_NUMERIC
+usr/lib/locale/sr_CS.utf8/LC_PAPER
+usr/lib/locale/sr_CS.utf8/LC_TELEPHONE
+usr/lib/locale/sr_CS.utf8/LC_TIME
 usr/lib/locale/st_ZA.utf8/LC_ADDRESS
 usr/lib/locale/st_ZA.utf8/LC_COLLATE
 usr/lib/locale/st_ZA.utf8/LC_CTYPE
@@ -4070,6 +4251,18 @@ usr/lib/locale/tg_TJ/LC_NUMERIC
 usr/lib/locale/tg_TJ/LC_PAPER
 usr/lib/locale/tg_TJ/LC_TELEPHONE
 usr/lib/locale/tg_TJ/LC_TIME
+usr/lib/locale/tg_TJ.utf8/LC_ADDRESS
+usr/lib/locale/tg_TJ.utf8/LC_COLLATE
+usr/lib/locale/tg_TJ.utf8/LC_CTYPE
+usr/lib/locale/tg_TJ.utf8/LC_IDENTIFICATION
+usr/lib/locale/tg_TJ.utf8/LC_MEASUREMENT
+usr/lib/locale/tg_TJ.utf8/LC_MESSAGES/SYS_LC_MESSAGES
+usr/lib/locale/tg_TJ.utf8/LC_MONETARY
+usr/lib/locale/tg_TJ.utf8/LC_NAME
+usr/lib/locale/tg_TJ.utf8/LC_NUMERIC
+usr/lib/locale/tg_TJ.utf8/LC_PAPER
+usr/lib/locale/tg_TJ.utf8/LC_TELEPHONE
+usr/lib/locale/tg_TJ.utf8/LC_TIME
 usr/lib/locale/th_TH.utf8/LC_ADDRESS
 usr/lib/locale/th_TH.utf8/LC_COLLATE
 usr/lib/locale/th_TH.utf8/LC_CTYPE
@@ -4142,6 +4335,18 @@ usr/lib/locale/tl_PH/LC_NUMERIC
 usr/lib/locale/tl_PH/LC_PAPER
 usr/lib/locale/tl_PH/LC_TELEPHONE
 usr/lib/locale/tl_PH/LC_TIME
+usr/lib/locale/tl_PH.utf8/LC_ADDRESS
+usr/lib/locale/tl_PH.utf8/LC_COLLATE
+usr/lib/locale/tl_PH.utf8/LC_CTYPE
+usr/lib/locale/tl_PH.utf8/LC_IDENTIFICATION
+usr/lib/locale/tl_PH.utf8/LC_MEASUREMENT
+usr/lib/locale/tl_PH.utf8/LC_MESSAGES/SYS_LC_MESSAGES
+usr/lib/locale/tl_PH.utf8/LC_MONETARY
+usr/lib/locale/tl_PH.utf8/LC_NAME
+usr/lib/locale/tl_PH.utf8/LC_NUMERIC
+usr/lib/locale/tl_PH.utf8/LC_PAPER
+usr/lib/locale/tl_PH.utf8/LC_TELEPHONE
+usr/lib/locale/tl_PH.utf8/LC_TIME
 usr/lib/locale/tr_TR.utf8/LC_ADDRESS
 usr/lib/locale/tr_TR.utf8/LC_COLLATE
 usr/lib/locale/tr_TR.utf8/LC_CTYPE
@@ -4334,6 +4539,18 @@ usr/lib/locale/yi_US/LC_NUMERIC
 usr/lib/locale/yi_US/LC_PAPER
 usr/lib/locale/yi_US/LC_TELEPHONE
 usr/lib/locale/yi_US/LC_TIME
+usr/lib/locale/yi_US.utf8/LC_ADDRESS
+usr/lib/locale/yi_US.utf8/LC_COLLATE
+usr/lib/locale/yi_US.utf8/LC_CTYPE
+usr/lib/locale/yi_US.utf8/LC_IDENTIFICATION
+usr/lib/locale/yi_US.utf8/LC_MEASUREMENT
+usr/lib/locale/yi_US.utf8/LC_MESSAGES/SYS_LC_MESSAGES
+usr/lib/locale/yi_US.utf8/LC_MONETARY
+usr/lib/locale/yi_US.utf8/LC_NAME
+usr/lib/locale/yi_US.utf8/LC_NUMERIC
+usr/lib/locale/yi_US.utf8/LC_PAPER
+usr/lib/locale/yi_US.utf8/LC_TELEPHONE
+usr/lib/locale/yi_US.utf8/LC_TIME
 usr/lib/locale/zh_CN.gb18030/LC_ADDRESS
 usr/lib/locale/zh_CN.gb18030/LC_COLLATE
 usr/lib/locale/zh_CN.gb18030/LC_CTYPE
@@ -4418,6 +4635,18 @@ usr/lib/locale/zh_SG.gbk/LC_NUMERIC
 usr/lib/locale/zh_SG.gbk/LC_PAPER
 usr/lib/locale/zh_SG.gbk/LC_TELEPHONE
 usr/lib/locale/zh_SG.gbk/LC_TIME
+usr/lib/locale/zh_SG.utf8/LC_ADDRESS
+usr/lib/locale/zh_SG.utf8/LC_COLLATE
+usr/lib/locale/zh_SG.utf8/LC_CTYPE
+usr/lib/locale/zh_SG.utf8/LC_IDENTIFICATION
+usr/lib/locale/zh_SG.utf8/LC_MEASUREMENT
+usr/lib/locale/zh_SG.utf8/LC_MESSAGES/SYS_LC_MESSAGES
+usr/lib/locale/zh_SG.utf8/LC_MONETARY
+usr/lib/locale/zh_SG.utf8/LC_NAME
+usr/lib/locale/zh_SG.utf8/LC_NUMERIC
+usr/lib/locale/zh_SG.utf8/LC_PAPER
+usr/lib/locale/zh_SG.utf8/LC_TELEPHONE
+usr/lib/locale/zh_SG.utf8/LC_TIME
 usr/lib/locale/zh_SG/LC_ADDRESS
 usr/lib/locale/zh_SG/LC_COLLATE
 usr/lib/locale/zh_SG/LC_CTYPE
@@ -4529,13 +4758,23 @@ usr/lib/tls/i586/libdb-4.2.so
 usr/lib/tls/i586/libdb_cxx-4.2.so
 usr/lib/tls/i686/libdb-4.2.so
 usr/lib/tls/i686/libdb_cxx-4.2.so
+usr/libexec/getconf/POSIX_V6_ILP32_OFF32
+usr/libexec/getconf/POSIX_V6_ILP32_OFFBIG
 usr/libexec/pt_chown
+usr/sbin/avcstat
 usr/sbin/build-locale-archive
 usr/sbin/chroot
-usr/sbin/glibc_post_upgrade
+usr/sbin/getenforce
+usr/sbin/getsebool
+usr/sbin/glibc_post_upgrade.i386
 usr/sbin/iconvconfig
+usr/sbin/iconvconfig.i386
 usr/sbin/libgcc_post_upgrade
 usr/sbin/rpcinfo
+usr/sbin/selinuxenabled
+usr/sbin/setenforce
+usr/sbin/setsebool
+usr/sbin/togglesebool
 usr/sbin/zdump
 usr/sbin/zic
 usr/share/doc/HTML/css/content.css
@@ -4919,60 +5158,61 @@ usr/share/doc/glib-1.2.10/COPYING
 usr/share/doc/glib-1.2.10/ChangeLog
 usr/share/doc/glib-1.2.10/NEWS
 usr/share/doc/glib-1.2.10/README
-usr/share/doc/glibc-2.3.3/BUGS
-usr/share/doc/glibc-2.3.3/CONFORMANCE
-usr/share/doc/glibc-2.3.3/COPYING
-usr/share/doc/glibc-2.3.3/COPYING.LIB
-usr/share/doc/glibc-2.3.3/FAQ
-usr/share/doc/glibc-2.3.3/INSTALL
-usr/share/doc/glibc-2.3.3/LICENSES
-usr/share/doc/glibc-2.3.3/NEWS
-usr/share/doc/glibc-2.3.3/NOTES
-usr/share/doc/glibc-2.3.3/PROJECTS
-usr/share/doc/glibc-2.3.3/README
-usr/share/doc/glibc-2.3.3/README.hesiod
-usr/share/doc/glibc-2.3.3/README.libm
-usr/share/doc/glibc-common-2.3.3/ChangeLog.1.gz
-usr/share/doc/glibc-common-2.3.3/ChangeLog.10.gz
-usr/share/doc/glibc-common-2.3.3/ChangeLog.11.gz
-usr/share/doc/glibc-common-2.3.3/ChangeLog.12.gz
-usr/share/doc/glibc-common-2.3.3/ChangeLog.13.gz
-usr/share/doc/glibc-common-2.3.3/ChangeLog.14.gz
-usr/share/doc/glibc-common-2.3.3/ChangeLog.2.gz
-usr/share/doc/glibc-common-2.3.3/ChangeLog.3.gz
-usr/share/doc/glibc-common-2.3.3/ChangeLog.4.gz
-usr/share/doc/glibc-common-2.3.3/ChangeLog.5.gz
-usr/share/doc/glibc-common-2.3.3/ChangeLog.6.gz
-usr/share/doc/glibc-common-2.3.3/ChangeLog.7.gz
-usr/share/doc/glibc-common-2.3.3/ChangeLog.8.gz
-usr/share/doc/glibc-common-2.3.3/ChangeLog.9.gz
-usr/share/doc/glibc-common-2.3.3/ChangeLog.gz
-usr/share/doc/glibc-common-2.3.3/ChangeLog.threads.gz
-usr/share/doc/glibc-common-2.3.3/Changes.threads
-usr/share/doc/glibc-common-2.3.3/FAQ-threads.html
-usr/share/doc/glibc-common-2.3.3/README.threads
-usr/share/doc/glibc-common-2.3.3/README.timezone
-usr/share/doc/glibc-common-2.3.3/README.ufc-crypt
-usr/share/doc/glibc-common-2.3.3/examples.threads/Makefile
-usr/share/doc/glibc-common-2.3.3/examples.threads/ex1.c
-usr/share/doc/glibc-common-2.3.3/examples.threads/ex10.c
-usr/share/doc/glibc-common-2.3.3/examples.threads/ex11.c
-usr/share/doc/glibc-common-2.3.3/examples.threads/ex12.c
-usr/share/doc/glibc-common-2.3.3/examples.threads/ex13.c
-usr/share/doc/glibc-common-2.3.3/examples.threads/ex14.c
-usr/share/doc/glibc-common-2.3.3/examples.threads/ex15.c
-usr/share/doc/glibc-common-2.3.3/examples.threads/ex16.c
-usr/share/doc/glibc-common-2.3.3/examples.threads/ex17.c
-usr/share/doc/glibc-common-2.3.3/examples.threads/ex18.c
-usr/share/doc/glibc-common-2.3.3/examples.threads/ex2.c
-usr/share/doc/glibc-common-2.3.3/examples.threads/ex3.c
-usr/share/doc/glibc-common-2.3.3/examples.threads/ex4.c
-usr/share/doc/glibc-common-2.3.3/examples.threads/ex5.c
-usr/share/doc/glibc-common-2.3.3/examples.threads/ex6.c
-usr/share/doc/glibc-common-2.3.3/examples.threads/ex7.c
-usr/share/doc/glibc-common-2.3.3/examples.threads/ex8.c
-usr/share/doc/glibc-common-2.3.3/examples.threads/ex9.c
-usr/share/doc/glibc-common-2.3.3/examples.threads/tststatic.c
+usr/share/doc/glibc-%%GLIBCVER%%/BUGS
+usr/share/doc/glibc-%%GLIBCVER%%/CONFORMANCE
+usr/share/doc/glibc-%%GLIBCVER%%/COPYING
+usr/share/doc/glibc-%%GLIBCVER%%/COPYING.LIB
+usr/share/doc/glibc-%%GLIBCVER%%/FAQ
+usr/share/doc/glibc-%%GLIBCVER%%/INSTALL
+usr/share/doc/glibc-%%GLIBCVER%%/LICENSES
+usr/share/doc/glibc-%%GLIBCVER%%/NEWS
+usr/share/doc/glibc-%%GLIBCVER%%/NOTES
+usr/share/doc/glibc-%%GLIBCVER%%/PROJECTS
+usr/share/doc/glibc-%%GLIBCVER%%/README
+usr/share/doc/glibc-%%GLIBCVER%%/README.hesiod
+usr/share/doc/glibc-%%GLIBCVER%%/README.libm
+usr/share/doc/glibc-common-%%GLIBCVER%%/ChangeLog.1.gz
+usr/share/doc/glibc-common-%%GLIBCVER%%/ChangeLog.10.gz
+usr/share/doc/glibc-common-%%GLIBCVER%%/ChangeLog.11.gz
+usr/share/doc/glibc-common-%%GLIBCVER%%/ChangeLog.12.gz
+usr/share/doc/glibc-common-%%GLIBCVER%%/ChangeLog.13.gz
+usr/share/doc/glibc-common-%%GLIBCVER%%/ChangeLog.14.gz
+usr/share/doc/glibc-common-%%GLIBCVER%%/ChangeLog.15.gz
+usr/share/doc/glibc-common-%%GLIBCVER%%/ChangeLog.2.gz
+usr/share/doc/glibc-common-%%GLIBCVER%%/ChangeLog.3.gz
+usr/share/doc/glibc-common-%%GLIBCVER%%/ChangeLog.4.gz
+usr/share/doc/glibc-common-%%GLIBCVER%%/ChangeLog.5.gz
+usr/share/doc/glibc-common-%%GLIBCVER%%/ChangeLog.6.gz
+usr/share/doc/glibc-common-%%GLIBCVER%%/ChangeLog.7.gz
+usr/share/doc/glibc-common-%%GLIBCVER%%/ChangeLog.8.gz
+usr/share/doc/glibc-common-%%GLIBCVER%%/ChangeLog.9.gz
+usr/share/doc/glibc-common-%%GLIBCVER%%/ChangeLog.gz
+usr/share/doc/glibc-common-%%GLIBCVER%%/ChangeLog.threads.gz
+usr/share/doc/glibc-common-%%GLIBCVER%%/Changes.threads
+usr/share/doc/glibc-common-%%GLIBCVER%%/FAQ-threads.html
+usr/share/doc/glibc-common-%%GLIBCVER%%/README.threads
+usr/share/doc/glibc-common-%%GLIBCVER%%/README.timezone
+usr/share/doc/glibc-common-%%GLIBCVER%%/README.ufc-crypt
+usr/share/doc/glibc-common-%%GLIBCVER%%/examples.threads/Makefile
+usr/share/doc/glibc-common-%%GLIBCVER%%/examples.threads/ex1.c
+usr/share/doc/glibc-common-%%GLIBCVER%%/examples.threads/ex10.c
+usr/share/doc/glibc-common-%%GLIBCVER%%/examples.threads/ex11.c
+usr/share/doc/glibc-common-%%GLIBCVER%%/examples.threads/ex12.c
+usr/share/doc/glibc-common-%%GLIBCVER%%/examples.threads/ex13.c
+usr/share/doc/glibc-common-%%GLIBCVER%%/examples.threads/ex14.c
+usr/share/doc/glibc-common-%%GLIBCVER%%/examples.threads/ex15.c
+usr/share/doc/glibc-common-%%GLIBCVER%%/examples.threads/ex16.c
+usr/share/doc/glibc-common-%%GLIBCVER%%/examples.threads/ex17.c
+usr/share/doc/glibc-common-%%GLIBCVER%%/examples.threads/ex18.c
+usr/share/doc/glibc-common-%%GLIBCVER%%/examples.threads/ex2.c
+usr/share/doc/glibc-common-%%GLIBCVER%%/examples.threads/ex3.c
+usr/share/doc/glibc-common-%%GLIBCVER%%/examples.threads/ex4.c
+usr/share/doc/glibc-common-%%GLIBCVER%%/examples.threads/ex5.c
+usr/share/doc/glibc-common-%%GLIBCVER%%/examples.threads/ex6.c
+usr/share/doc/glibc-common-%%GLIBCVER%%/examples.threads/ex7.c
+usr/share/doc/glibc-common-%%GLIBCVER%%/examples.threads/ex8.c
+usr/share/doc/glibc-common-%%GLIBCVER%%/examples.threads/ex9.c
+usr/share/doc/glibc-common-%%GLIBCVER%%/examples.threads/tststatic.c
 usr/share/doc/grep-2.5.1/ABOUT-NLS
 usr/share/doc/grep-2.5.1/AUTHORS
 usr/share/doc/grep-2.5.1/ChangeLog
@@ -4980,6 +5220,7 @@ usr/share/doc/grep-2.5.1/NEWS
 usr/share/doc/grep-2.5.1/README
 usr/share/doc/grep-2.5.1/THANKS
 usr/share/doc/grep-2.5.1/TODO
+usr/share/doc/libgcc-3.4.4/COPYING.LIB
 usr/share/doc/ncurses-5.4/ANNOUNCE
 usr/share/doc/ncurses-5.4/README
 usr/share/doc/ncurses-5.4/announce.html
@@ -5401,6 +5642,7 @@ usr/share/i18n/locales/so_ET
 usr/share/i18n/locales/so_KE
 usr/share/i18n/locales/so_SO
 usr/share/i18n/locales/sq_AL
+usr/share/i18n/locales/sr_CS
 usr/share/i18n/locales/st_ZA
 usr/share/i18n/locales/sv_FI
 usr/share/i18n/locales/sv_FI@euro
@@ -5442,9 +5684,9 @@ usr/share/i18n/locales/zh_HK
 usr/share/i18n/locales/zh_SG
 usr/share/i18n/locales/zh_TW
 usr/share/i18n/locales/zu_ZA
+usr/share/info/dir
 usr/share/info/bash.info.gz
 usr/share/info/coreutils.info.gz
-usr/share/info/dir
 usr/share/info/grep.info.gz
 usr/share/info/history.info.gz
 usr/share/info/info-stnd.info.gz
@@ -5702,8 +5944,8 @@ usr/share/man/man1/info.1.gz
 usr/share/man/man1/infocmp.1m.gz
 usr/share/man/man1/infokey.1.gz
 usr/share/man/man1/infotocap.1m.gz
-usr/share/man/man1/install-info.1.gz
 usr/share/man/man1/install.1.gz
+usr/share/man/man1/install-info.1.gz
 usr/share/man/man1/jobs.1.gz
 usr/share/man/man1/join.1.gz
 usr/share/man/man1/let.1.gz
@@ -5800,6 +6042,7 @@ usr/share/man/man5/info.5.gz
 usr/share/man/man5/term.5.gz
 usr/share/man/man5/terminfo.5.gz
 usr/share/man/man7/term.7.gz
+usr/share/man/man8/avcstat.8.gz
 usr/share/man/man8/rpm.8.gz
 usr/share/man/man8/rpm2cpio.8.gz
 usr/share/man/man8/booleans.8.gz
@@ -5810,6 +6053,7 @@ usr/share/man/man8/selinuxenabled.8.gz
 usr/share/man/man8/setenforce.8.gz
 usr/share/man/man8/setsebool.8.gz
 usr/share/man/man8/setserial.8.gz
+usr/share/man/man8/togglesebool.8.gz
 usr/share/man/pl/man1/gendiff.1.gz
 usr/share/man/pl/man8/rpm.8.gz
 usr/share/man/pl/man8/rpm2cpio.8.gz
@@ -8637,10 +8881,11 @@ var/mail
 @dirrm usr/share/doc/setserial-2.17
 @dirrm usr/share/doc/rpm-4.3.2
 @dirrm usr/share/doc/ncurses-5.4
+@dirrm usr/share/doc/libgcc-3.4.4
 @dirrm usr/share/doc/grep-2.5.1
-@dirrm usr/share/doc/glibc-common-2.3.3/examples.threads
-@dirrm usr/share/doc/glibc-common-2.3.3
-@dirrm usr/share/doc/glibc-2.3.3
+@dirrm usr/share/doc/glibc-common-%%GLIBCVER%%/examples.threads
+@dirrm usr/share/doc/glibc-common-%%GLIBCVER%%
+@dirrm usr/share/doc/glibc-%%GLIBCVER%%
 @dirrm usr/share/doc/glib-1.2.10
 @dirrm usr/share/doc/gdbm-1.8.0
 @dirrm usr/share/doc/freetype-2.1.9/docs/tutorial
@@ -8679,6 +8924,7 @@ var/mail
 @dirrm usr/share/doc
 @dirrmtry usr/share
 @dirrm usr/sbin
+@dirrm usr/libexec/getconf
 @dirrm usr/libexec
 @dirrm usr/lib/tls/i686
 @dirrm usr/lib/tls/i586
@@ -8702,6 +8948,8 @@ var/mail
 @dirrm usr/lib/locale/zh_TW.euctw
 @dirrm usr/lib/locale/zh_TW
 @dirrm usr/lib/locale/zh_SG/LC_MESSAGES
+@dirrm usr/lib/locale/zh_SG.utf8/LC_MESSAGES
+@dirrm usr/lib/locale/zh_SG.utf8
 @dirrm usr/lib/locale/zh_SG.gbk/LC_MESSAGES
 @dirrm usr/lib/locale/zh_SG.gbk
 @dirrm usr/lib/locale/zh_SG
@@ -8719,6 +8967,8 @@ var/mail
 @dirrm usr/lib/locale/zh_CN
 @dirrm usr/lib/locale/yi_US/LC_MESSAGES
 @dirrm usr/lib/locale/yi_US
+@dirrm usr/lib/locale/yi_US.utf8/LC_MESSAGES
+@dirrm usr/lib/locale/yi_US.utf8
 @dirrm usr/lib/locale/xh_ZA/LC_MESSAGES
 @dirrm usr/lib/locale/xh_ZA.utf8/LC_MESSAGES
 @dirrm usr/lib/locale/xh_ZA.utf8
@@ -8751,6 +9001,8 @@ var/mail
 @dirrm usr/lib/locale/tr_TR
 @dirrm usr/lib/locale/tl_PH/LC_MESSAGES
 @dirrm usr/lib/locale/tl_PH
+@dirrm usr/lib/locale/tl_PH.utf8/LC_MESSAGES
+@dirrm usr/lib/locale/tl_PH.utf8
 @dirrm usr/lib/locale/tig_ER/LC_MESSAGES
 @dirrm usr/lib/locale/tig_ER
 @dirrm usr/lib/locale/ti_ET/LC_MESSAGES
@@ -8763,6 +9015,8 @@ var/mail
 @dirrm usr/lib/locale/th_TH
 @dirrm usr/lib/locale/tg_TJ/LC_MESSAGES
 @dirrm usr/lib/locale/tg_TJ
+@dirrm usr/lib/locale/tg_TJ.utf8/LC_MESSAGES
+@dirrm usr/lib/locale/tg_TJ.utf8
 @dirrm usr/lib/locale/te_IN/LC_MESSAGES
 @dirrm usr/lib/locale/te_IN
 @dirrm usr/lib/locale/ta_IN/LC_MESSAGES
@@ -8783,18 +9037,28 @@ var/mail
 @dirrm usr/lib/locale/st_ZA.utf8/LC_MESSAGES
 @dirrm usr/lib/locale/st_ZA.utf8
 @dirrm usr/lib/locale/st_ZA
+@dirrm usr/lib/locale/sr_CS/LC_MESSAGES
+@dirrm usr/lib/locale/sr_CS
+@dirrm usr/lib/locale/sr_CS.utf8/LC_MESSAGES
+@dirrm usr/lib/locale/sr_CS.utf8
 @dirrm usr/lib/locale/sq_AL/LC_MESSAGES
 @dirrm usr/lib/locale/sq_AL.utf8/LC_MESSAGES
 @dirrm usr/lib/locale/sq_AL.utf8
 @dirrm usr/lib/locale/sq_AL
 @dirrm usr/lib/locale/so_SO/LC_MESSAGES
 @dirrm usr/lib/locale/so_SO
+@dirrm usr/lib/locale/so_SO.utf8/LC_MESSAGES
+@dirrm usr/lib/locale/so_SO.utf8
 @dirrm usr/lib/locale/so_KE/LC_MESSAGES
 @dirrm usr/lib/locale/so_KE
+@dirrm usr/lib/locale/so_KE.utf8/LC_MESSAGES
+@dirrm usr/lib/locale/so_KE.utf8
 @dirrm usr/lib/locale/so_ET/LC_MESSAGES
 @dirrm usr/lib/locale/so_ET
 @dirrm usr/lib/locale/so_DJ/LC_MESSAGES
 @dirrm usr/lib/locale/so_DJ
+@dirrm usr/lib/locale/so_DJ.utf8/LC_MESSAGES
+@dirrm usr/lib/locale/so_DJ.utf8
 @dirrm usr/lib/locale/sl_SI/LC_MESSAGES
 @dirrm usr/lib/locale/sl_SI.utf8/LC_MESSAGES
 @dirrm usr/lib/locale/sl_SI.utf8
@@ -8839,10 +9103,14 @@ var/mail
 @dirrm usr/lib/locale/pa_IN
 @dirrm usr/lib/locale/om_KE/LC_MESSAGES
 @dirrm usr/lib/locale/om_KE
+@dirrm usr/lib/locale/om_KE.utf8/LC_MESSAGES
+@dirrm usr/lib/locale/om_KE.utf8
 @dirrm usr/lib/locale/om_ET/LC_MESSAGES
 @dirrm usr/lib/locale/om_ET
 @dirrm usr/lib/locale/oc_FR/LC_MESSAGES
 @dirrm usr/lib/locale/oc_FR
+@dirrm usr/lib/locale/oc_FR.utf8/LC_MESSAGES
+@dirrm usr/lib/locale/oc_FR.utf8
 @dirrm usr/lib/locale/no_NO/LC_MESSAGES
 @dirrm usr/lib/locale/no_NO.utf8/LC_MESSAGES
 @dirrm usr/lib/locale/no_NO.utf8
@@ -8889,6 +9157,8 @@ var/mail
 @dirrm usr/lib/locale/mk_MK
 @dirrm usr/lib/locale/mi_NZ/LC_MESSAGES
 @dirrm usr/lib/locale/mi_NZ
+@dirrm usr/lib/locale/mi_NZ.utf8/LC_MESSAGES
+@dirrm usr/lib/locale/mi_NZ.utf8
 @dirrm usr/lib/locale/lv_LV/LC_MESSAGES
 @dirrm usr/lib/locale/lv_LV.utf8/LC_MESSAGES
 @dirrm usr/lib/locale/lv_LV.utf8
@@ -8901,6 +9171,8 @@ var/mail
 @dirrm usr/lib/locale/lo_LA
 @dirrm usr/lib/locale/lg_UG/LC_MESSAGES
 @dirrm usr/lib/locale/lg_UG
+@dirrm usr/lib/locale/lg_UG.utf8/LC_MESSAGES
+@dirrm usr/lib/locale/lg_UG.utf8
 @dirrm usr/lib/locale/kw_GB/LC_MESSAGES
 @dirrm usr/lib/locale/kw_GB.utf8/LC_MESSAGES
 @dirrm usr/lib/locale/kw_GB.utf8
@@ -8917,8 +9189,12 @@ var/mail
 @dirrm usr/lib/locale/kl_GL
 @dirrm usr/lib/locale/kk_KZ/LC_MESSAGES
 @dirrm usr/lib/locale/kk_KZ
+@dirrm usr/lib/locale/kk_KZ.utf8/LC_MESSAGES
+@dirrm usr/lib/locale/kk_KZ.utf8
 @dirrm usr/lib/locale/ka_GE/LC_MESSAGES
 @dirrm usr/lib/locale/ka_GE
+@dirrm usr/lib/locale/ka_GE.utf8/LC_MESSAGES
+@dirrm usr/lib/locale/ka_GE.utf8
 @dirrm usr/lib/locale/ja_JP.utf8/LC_MESSAGES
 @dirrm usr/lib/locale/ja_JP.utf8
 @dirrm usr/lib/locale/ja_JP.eucjp/LC_MESSAGES
@@ -8981,6 +9257,8 @@ var/mail
 @dirrm usr/lib/locale/gez_ER
 @dirrm usr/lib/locale/gd_GB/LC_MESSAGES
 @dirrm usr/lib/locale/gd_GB
+@dirrm usr/lib/locale/gd_GB.utf8/LC_MESSAGES
+@dirrm usr/lib/locale/gd_GB.utf8
 @dirrm usr/lib/locale/ga_IE@euro/LC_MESSAGES
 @dirrm usr/lib/locale/ga_IE@euro
 @dirrm usr/lib/locale/ga_IE/LC_MESSAGES
@@ -9235,8 +9513,12 @@ var/mail
 @dirrm usr/lib/locale/byn_ER
 @dirrm usr/lib/locale/bs_BA/LC_MESSAGES
 @dirrm usr/lib/locale/bs_BA
+@dirrm usr/lib/locale/bs_BA.utf8/LC_MESSAGES
+@dirrm usr/lib/locale/bs_BA.utf8
 @dirrm usr/lib/locale/br_FR@euro/LC_MESSAGES
 @dirrm usr/lib/locale/br_FR@euro
+@dirrm usr/lib/locale/br_FR.utf8/LC_MESSAGES
+@dirrm usr/lib/locale/br_FR.utf8
 @dirrm usr/lib/locale/br_FR/LC_MESSAGES
 @dirrm usr/lib/locale/br_FR
 @dirrm usr/lib/locale/bn_IN/LC_MESSAGES
@@ -9325,10 +9607,14 @@ var/mail
 @dirrm usr/lib/locale/ar_AE
 @dirrm usr/lib/locale/an_ES/LC_MESSAGES
 @dirrm usr/lib/locale/an_ES
+@dirrm usr/lib/locale/an_ES.utf8/LC_MESSAGES
+@dirrm usr/lib/locale/an_ES.utf8
 @dirrm usr/lib/locale/am_ET/LC_MESSAGES
 @dirrm usr/lib/locale/am_ET
 @dirrm usr/lib/locale/af_ZA/LC_MESSAGES
 @dirrm usr/lib/locale/af_ZA
+@dirrm usr/lib/locale/af_ZA.utf8/LC_MESSAGES
+@dirrm usr/lib/locale/af_ZA.utf8
 @dirrm usr/lib/locale/aa_ET/LC_MESSAGES
 @dirrm usr/lib/locale/aa_ET
 @dirrm usr/lib/locale/aa_ER@saaho/LC_MESSAGES
@@ -9337,6 +9623,8 @@ var/mail
 @dirrm usr/lib/locale/aa_ER
 @dirrm usr/lib/locale/aa_DJ/LC_MESSAGES
 @dirrm usr/lib/locale/aa_DJ
+@dirrm usr/lib/locale/aa_DJ.utf8/LC_MESSAGES
+@dirrm usr/lib/locale/aa_DJ.utf8
 @dirrm usr/lib/locale
 @dirrm usr/lib/gconv
 @dirrmtry usr/lib
