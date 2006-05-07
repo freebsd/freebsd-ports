@@ -30,9 +30,9 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 EXTRA_PATCHES=	${WRKDIR}/cronolog-setugid-patch.txt
 PATCH_WRKSRC=	${WRKDIR}
 USE_DOS2UNIX=	../cronolog-setugid-patch.txt
-.endif
 
 post-extract:
 	${CP} ${DISTDIR}/cronolog-setugid-patch.txt ${WRKDIR}/
+.endif
 
 .include <bsd.port.post.mk>
