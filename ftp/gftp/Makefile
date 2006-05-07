@@ -22,7 +22,6 @@ CONFIGURE_ARGS=	--without-included-gettext
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
-USE_REINPLACE=	yes
 WANT_GNOME=	yes
 
 OPTIONS=	X11 "Build with X11 frontend" on \

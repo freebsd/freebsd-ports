@@ -17,7 +17,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Wget with "PRO" features
 
 RESTRICTED=	"may implement United States Patent 6,041,345"
-USE_REINPLACE=	yes
 USE_GETOPT_LONG=	yes
 USE_OPENSSL=	yes
 USE_GMAKE=	yes

@@ -15,7 +15,6 @@ MASTER_SITES=	http://tranchant.plus.com/software/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Upload queue manager for non-permanent connections
 
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 MAN1=		ftpq.1

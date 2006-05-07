@@ -33,7 +33,6 @@ RESTRICTED=	"Toute personne chargeant le logiciel GIBI s'engage à ne\
 
 ONLY_FOR_ARCHS=	i386
 
-USE_REINPLACE=	yes
 USE_LINUX=	yes
 USE_X_PREFIX=	yes
 REINPLACE_ARGS=	-i ""

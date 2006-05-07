@@ -13,7 +13,6 @@ MASTER_SITES=	ftp://ftp.netbsd.org/pub/NetBSD/misc/tnftp/
 MAINTAINER=	cejkar@fit.vutbr.cz
 COMMENT=	Enhanced ftp server from NetBSD
 
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 

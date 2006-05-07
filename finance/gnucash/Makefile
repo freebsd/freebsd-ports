@@ -36,7 +36,6 @@ USE_GMAKE=	yes
 USE_XPM=	yes
 USE_PERL5=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomeprint libglade gtkhtml libghttp intltool intlhack
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--with-glib-config=${GLIB_CONFIG} \

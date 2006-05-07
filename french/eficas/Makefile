@@ -19,7 +19,6 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/Pmw:${PORTSDIR}/x11-toolkits/pmw		\
 		${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
 
 USE_PYTHON=	yes
-USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ""
 NO_BUILD=	yes
 

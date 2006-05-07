@@ -17,7 +17,6 @@ COMMENT=	A C++ wrapper for libcurl
 LIB_DEPENDS=	curl.3:${PORTSDIR}/ftp/curl
 
 USE_GCC=	3.4
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

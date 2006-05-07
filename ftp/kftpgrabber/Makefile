@@ -19,7 +19,6 @@ USE_KDELIBS_VER=3
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
 USE_AUTOTOOLS=	libtool:15
-USE_REINPLACE=	yes
 
 OPTIONS=	QSA  "QSA scripting support" on
 

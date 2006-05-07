@@ -22,7 +22,6 @@ BUILD_DEPENDS+=	Xvfb:${X_VFBSERVER_PORT} \
 		${X11BASE}/lib/X11/fonts/misc/8x13O.pcf.gz:${X_FONTS_MISC_PORT}
 .endif
 
-USE_REINPLACE=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 

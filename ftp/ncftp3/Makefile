@@ -30,7 +30,6 @@ LATEST_LINK=	ncftp3
 LATEST_LINK=	ncftp
 .endif
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}
-USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ncurses

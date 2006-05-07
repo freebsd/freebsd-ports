@@ -14,7 +14,6 @@ MASTER_SITES=	http://www.time-travellers.org/oftpd/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A threaded, anonymous only FTP server designed for security
 
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 

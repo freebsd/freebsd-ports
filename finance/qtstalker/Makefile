@@ -18,7 +18,6 @@ BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 LIB_DEPENDS=	db2:${PORTSDIR}/databases/db2
 
 USE_QT_VER=3
-USE_REINPLACE=	yes
 NO_FILTER_SHLIBS=	yes
 INSTALLS_SHLIB=	yes
 

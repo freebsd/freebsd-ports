@@ -24,7 +24,6 @@ BROKEN_WWW=	http://www.montefiore.ulg.ac.be/cgi-bin-ulg/DICO.html
 # Global variables
 #
 
-USE_REINPLACE=	true
 USE_ZIP=	true
 EXTRACT_CMD=	UNZIP= unzip
 WRKSRC=		${WRKDIR}/${PORTNAME}

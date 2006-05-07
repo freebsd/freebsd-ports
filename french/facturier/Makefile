@@ -25,7 +25,6 @@ NO_BUILD=	yes
 USE_APACHE=	yes
 USE_PERL5_RUN=	yes
 USE_MYSQL=	yes
-USE_REINPLACE=	yes
 
 .if defined(WITH_APACHE2)
 APACHE_CNFDIR=	${LOCALBASE}/etc/apache2

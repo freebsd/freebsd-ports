@@ -17,7 +17,6 @@ COMMENT=	Educative games for children. Alphabet sounds package (french)
 BUILD_DEPENDS=	${X11BASE}/bin/childsplay:${PORTSDIR}/games/childsplay
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-USE_REINPLACE=	yes
 USE_PYTHON=	yes
 USE_X_PREFIX=	yes
 
