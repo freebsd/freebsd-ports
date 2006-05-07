@@ -1,5 +1,3 @@
-$NetBSD: md5,v 1.2 1999/10/11 13:26:19 proff Exp $
-
 MD5 (festival/festvox_rablpc8k.tar.gz) = a3b863f437a3bc5be90cbeb224bdc5d9
 SIZE (festival/festvox_rablpc8k.tar.gz) = 3117763
 SHA256 (festival/festvox_rablpc8k.tar.gz) = 59faabe31673158ce9601972596535b9a4ac1b8027b00d7d47e94872443698cd

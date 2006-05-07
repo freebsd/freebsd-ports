@@ -1,5 +1,3 @@
-$NetBSD: md5,v 1.2 1999/10/11 11:10:01 proff Exp $
-
 MD5 (festival/festlex_POSLEX.tar.gz) = 742c266e4c4978fae2b5c1bf6f549eb4
 SIZE (festival/festlex_POSLEX.tar.gz) = 242914
 SHA256 (festival/festlex_POSLEX.tar.gz) = 5ef8cc5d35e9f2141b5a0a4774df82dc9731fe7e9800eb09ecf264f2f8503e7b
