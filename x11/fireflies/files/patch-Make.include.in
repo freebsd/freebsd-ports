@@ -1,0 +1,13 @@
+--- Make.include.in.orig	Thu Apr 17 14:02:52 2003
++++ Make.include.in	Sat Feb 11 15:17:29 2006
+@@ -5,8 +5,8 @@
+ GL_LIBS = @GL_LIBS@
+ OPT_LIBS = @OPT_LIBS@
+ 
+-CFLAGS = -Wall -I../libgfx/include/ $(SDL_CFLAGS) @CFLAGS@
+-LIBS = ../libgfx/src/libgfx.a $(GL_LIBS) $(SDL_LIBS) $(OPT_LIBS) @LIBS@
++CFLAGS = -Wall -I$(X11BASE)/include -I../libgfx/include/ $(SDL_CFLAGS) @CFLAGS@
++LIBS = ../libgfx/src/libgfx.a $(SDL_LIBS) $(OPT_LIBS) -L$(X11BASE)/lib $(GL_LIBS) @LIBS@ 
+ 
+ OBJECTS = arrow.o bait.o firefly.o scene.o tail.o utils.o modes.o @OPT_OBJS@
+ PROGRAM = @PROGRAM@

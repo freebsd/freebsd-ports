@@ -1,0 +1,25 @@
+--- Makefile.orig	Tue May  6 16:00:40 2003
++++ Makefile	Sat Feb 11 14:38:36 2006
+@@ -21,18 +21,17 @@
+ win32/
+ 
+ all:	libgfx/src/libgfx.a
+-	cd src && make
++	cd src && ${MAKE}
+ 
+ libgfx/src/libgfx.a:
+-	gunzip -c libgfx-1.0.1.tar.gz | tar x
+-	cd libgfx && ./configure && cd src && make
++	cd libgfx && ./configure && cd src && ${MAKE}
+ 
+ install: all
+ 	sh ./installit $(DESTDIR)
+ 
+ clean:
+-	make -C src clean
+-	make -C win32 clean
++	${MAKE} -C src clean
++	${MAKE} -C win32 clean
+ 
+ dist:
+ 	rm -rf fireflies-$(VERSION)
