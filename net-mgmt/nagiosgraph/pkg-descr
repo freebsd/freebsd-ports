@@ -1,0 +1,6 @@
+nagiosgraph is an application to collect performance data from nagios
+plugins, insert the data into rrdtool database, and generate webpages
+with rrdtool graphs of the performance data. nagiosgraph is easy to
+configure, and ready to use for many nagios plugins.
+
+WWW: http://nagiosgraph.sourceforge.net/
