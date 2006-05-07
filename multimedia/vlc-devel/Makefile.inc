@@ -1,0 +1,371 @@
+
+# NOTES about VLC Knobs:
+# Below you will see a number of knobs, if it starts with WITHOUT_ it is
+# enabled by default, if it starts with WITH_ it is disabled by default
+# and will be autodetected to enable
+#
+# $FreeBSD$
+#    $MCom: ports/multimedia/vlc-devel/Makefile.inc,v 1.1 2006/05/06 06:06:47 ahze Exp $
+#
+# If you define for example WITH_FAAD and WITHOUT_FAAD
+# the WITHOUT_ will always over ride the WITH_.
+#
+# Interface Knobs:
+#
+# WITH_CORBA
+#  Enable a Corba interface via orbit2
+#
+# WITH_NCURSES=yes
+#  Ncurses (console) interface
+#
+# WITH_SKINS
+#  This Interface supports a skinned gtk2.0 interface
+#  Skins can be found at http://www.videolan.org/vlc/download-skins.html
+#
+# WITHOUT_WXGTK=yes
+#  WxWindows/Gtk 2.x Interface
+#  This is the default and most supported
+#  x11 interface
+#
+# WITH_WXGTK_VER=[2.4|2.6]
+#  Choose a WxGTK version you want to use.
+#  Defaults to 26
+#
+# Audio Knobs:
+#
+# WITH_ARTS=yes
+#  Arts Support
+#
+# WITHOUT_DAAP=yes
+#  Enable libopendaap to connect to iTunes(R) music shares.
+#
+# WITHOUT_DTS=yes
+#  DTS decoder Support
+#  useful for many dvds
+#
+# WITH_ESOUND=yes
+#  Esound Support
+#
+# WITH_FAAC=yes
+#  Faac audio encoder (mp4/aac) Support
+#  ** Only enable this if you compiled multimedia/ffmpeg-devel with WITH_FAAC knob **
+#
+# WITH_FAAD=yes
+#  Faad audio decoder (mp4/aac) Support
+#
+# WITH_FLAC=yes
+#  Flac Support
+#
+# WITHOUT_LAME=yes
+#  Mp3 encoder Support
+#   ** NOT DEFINED if PACKAGE_BUILDING is defined **
+#
+# WITHOUT_A52=yes
+#  liba52 audio Support
+#
+# WITH_REALAUDIO
+#  Real audio(R) support
+#
+# WITH_SHOUT
+#  Libshout2 support
+#
+# WITH_TREMOR
+#  Interger-only Ogg Vorbis decoder
+#   !!experimental!!
+#
+# WITHOUT_MAD=yes
+#  Mad mp3 audio decoder Support
+#
+# WITHOUT_OGG=yes
+#  Ogg audio decoder Support
+#
+# WITHOUT_SPEEX=yes
+#  Speex voice codec Support
+#
+# WITH_TWOLAME=yes
+#  Twolame Mpeg layer 2 audio Support
+#
+# WITHOUT_VORBIS=yes
+#  Vorbis Support
+#
+# Graphics Knobs:
+#
+# WITH_AALIB=yes
+#  Console Graphics Support
+#
+# WITH_CACA=yes
+#  Console Graphics Support (implies WITH_AALIB)
+#
+# WITH_DV=yes
+#  Digital video input
+#
+# WITH_FRIBIDI=yes
+#
+# WITH_GGI=yes
+#
+# WITHOUT_SDL=yes
+#  SDL video output
+#
+# WITH_SVG=yes
+#
+# WITH_SVGALIB=yes
+#  SVGAlib video output
+#
+# WITH_XOSD=yes
+#
+# Multimedia Knobs:
+#
+# WITH_DIRAC
+#  Enable dirac general-purpose video codec
+#
+# WITHOUT_X264
+#  Enable H.264/AVC Video Support
+#
+# WITHOUT_MATROSKA=yes
+#  Matroska Container Format Support
+#
+# WITHOUT_MPEG2=yes
+#  Mpeg-2 A/V Decoder Support
+#
+# WITH_THEORA=yes
+#  Video codec for OGG/Vorbis Support
+#
+# WITH_TRANSCODE=yes
+#  Disable transcode of multimedia via transcode (multimedia/transcode).
+#  This option allows you to convert a media file, dvd, A/V stream, etc
+#  in to another format. This also allows you to transcode multimedia
+#  on-the-fly and stream to a network and/or local playback.
+#
+# Streaming Knobs:
+#
+# WITHOUT_HTTPD=yes
+#  Web interface to control streaming media
+#
+# WITH_LIVEMEDIA=yes
+#  Support for rstp/rtp/sdp protocols
+#  Only versions 2004.11.11 and higher are supported.
+#
+# WITHOUT_STREAM_PLUGINS=yes
+#  Disable build and install of Streaming plugins
+#
+# WITH_WIN32_CODECS=yes
+#  Support for win32 multimedia DLL's
+#
+# Other Knobs:
+#
+# WITHOUT_AVAHI=yes
+#  Avahi (Rendezvous/Bonjour (R) ) networking
+#
+# WITH_DEBUG=yes
+#  Enable debuging support
+#
+# WITHOUT_CDROM=yes
+#  Disable cddb and vcd support
+#   and other cdrom support
+#
+# WITHOUT_CDPARANOIA=yes
+#  Disable Cdparanoia support
+#
+# WITHOUT_DVBPSI=yes
+#  TS MUX and DEMUX support
+#
+# WITHOUT_DVDNAV=yes
+#  Disable DVD (dvd menus) support
+#
+# WITH_DVDREAD=yes
+#  Enable Regular DVD support (non-menu)
+#
+# WITH_GECKO= [firefox|mozilla|seamonkey|nvu]
+# WITH_VLC_MOZILLA_PLUGIN= yes
+#  Enable A mozilla plugin for VLC
+#  See http://www.videolan.org/doc/vlc-user-guide/en/ch07.html#id2529837
+#  for more info on using this plugin.
+#   defaults to www/mozilla
+#
+#  NOTE: The www/mplayer-plugin is much more complete.
+#
+# WITHOUT_GNOMEVFS
+#  GnomeVFS support
+#
+# WITHOUT_HAL=yes
+#  Disable HAL support
+#
+# WITH_OPENGL=yes
+#  Enable OpenGL visual plugin (not playback, play back is default with X11)
+#
+# WITHOUT_SAMBA=yes
+#  Enable SAMBA Access module
+#
+# WITH_SSL=yes
+#  Enable TLS/SSL Support for web (httpd) interface
+#
+# WITHOUT_SLP=yes
+#  Disable SLP service discovery support
+#  * recommended if you want to stream media
+#
+# WITH_OPTIMIZED_CFLAGS=yes
+#  Compile with -O2 -ffast-math -fomit-frame-pointer
+#
+# WITH_DVD_DEVICE=/dev/somedevice
+#  default 5.x and above: /dev/acd0
+#  default 4.x and below: /dev/acd0c
+#  This option changes the default dvd device
+#
+# WITH_CDROM_DEVICE=/dev/somedevice
+#  default 5.x and above: /dev/acd0
+#  default 4.x and below: /dev/acd0c
+#  This option changes the default cdrom device
+#
+# WITHOUT_NLS=yes
+#  Disable Languarge Support
+#
+# WITHOUT_STREAM_PLUGINS=yes
+#  Disable ALL streaming plugins.
+#
+# WITH_VLC_DEFAULT_FONT=/path/to/font
+#  default: ${X11BASE}/lib/X11/fonts/bitstream-vera/Vera.ttf
+#  This option lets you change the default font for subtitles
+#
+# NOPORTDOCS=yes
+#  Do not install Vlc's Documents
+#
+
+pre-everything::
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "Take a careful look at the beginning of the Makefile in order"
+	@${ECHO_MSG} "to learn how to tune VLC to your personal preferences!"
+	@${ECHO_MSG} ""
+.if !defined(BATCH) || !defined(PACKAGE_BUILDING)
+	@sleep 2
+.endif
+
+post-patch:
+# Subtitle default font
+	@${REINPLACE_CMD} -e \
+	's|/usr/share/fonts/truetype/freefont/FreeSerifBold.ttf|${WITH_VLC_DEFAULT_FONT}|' \
+		${WRKSRC}/modules/misc/freetype.c
+# mozilla plugin
+	@${REINPLACE_CMD} -e 's|$$(libdir)/mozilla/plugins|${FAKEDIR}/mozilla|; \
+		s|$$(libdir)/mozilla/components|${FAKEDIR}/mozilla|' \
+			${WRKSRC}/mozilla/Makefile.in
+# skins2 interface, no lrint on < 504000
+.if ${OSVERSION} < 504000
+	@${REINPLACE_CMD} -e 's|lrint|rint|' \
+		${WRKSRC}/modules/gui/skins2/controls/ctrl_list.cpp
+.endif
+# s/Linux/FreeBSD/
+	@${REINPLACE_CMD} -e 's|Linux|FreeBSD|' \
+		${WRKSRC}/po/*
+	@${RM} -f ${WRKSRC}/po/*.bak
+	@${REINPLACE_CMD} -e 's|Linux OSS|FreeBSD OSS|' \
+		${WRKSRC}/modules/audio_output/oss.c
+# pthreads/cflags
+	@${REINPLACE_CMD} -e 's/-lpthread/${PTHREAD_LIBS}/' \
+		-e 's/-lc_r/${PTHREAD_LIBS}/' \
+		-e 's|-mcpu=pentiumpro||' \
+		-e 's|postproc/postprocess.h|ffmpeg/postproc/postprocess.h|' \
+		${WRKSRC}/configure
+# cdrom/dvd support
+	@${REINPLACE_CMD} -e 's|/dev/cdrom|${DEFAULT_CDROM_DEVICE}|; \
+		s|/dev/dvd|${DEFAULT_DVD_DEVICE}|' \
+		${WRKSRC}/include/vlc_config.h
+.if ${ARCH}=="i386" && defined(WITH_WIN32_CODECS)
+	@${REINPLACE_CMD} -e 's|-DWIN32_PATH=\\"\\"|-DWIN32_PATH=\\"${LOCALBASE}/lib/win32\\"|' \
+		${WRKSRC}/loader/Makefile.in
+	@${REINPLACE_CMD} -e 's|/usr/lib/win32|${LOCALBASE}/lib/win32|' \
+		${WRKSRC}/loader/module.c
+.endif
+
+pre-build:
+	@${REINPLACE_CMD} -e 's|/intl/libintl.a|${WRKSRC}/intl/libintl.a|' \
+		${WRKSRC}/vlc-config
+
+pre-install:
+	${RM} -rf ${PLIST} ${FAKEDIR}
+	${MKDIR} ${FAKEDIR}
+	${TOUCH} -f ${PLIST}
+.if defined(WITH_SKINS) && !defined(WITHOUT_SKINS)
+	${ECHO_CMD} "share/pixmaps/gvlc.png" >> ${PLIST}
+	${ECHO_CMD} "share/applications/svlc.desktop" >> ${PLIST}
+.endif
+.if !defined(WITHOUT_WXGTK)
+	${ECHO_CMD} "share/pixmaps/vlc.png" >> ${PLIST}
+	${ECHO_CMD} "share/applications/wxvlc.desktop" >> ${PLIST}
+.endif
+.if !defined(WITHOUT_WXGTK) || defined(WITH_SKINS)
+	${ECHO_CMD} "@unexec ${RMDIR} %D/share/applications 2>/dev/null || ${TRUE}" >> ${PLIST}
+.endif
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
+		${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET} prefix=${FAKEDIR}
+	cd ${FAKEDIR}/bin && ${FIND} -s * | \
+		${SED} -e 's|^|bin/|' >> ${PLIST}
+	cd ${FAKEDIR}/include && ${FIND} -s * -type f -o -type l | \
+		${SED} -e 's|^|include/|' >> ${PLIST} \
+		&& ${FIND} -d * -type d | \
+		${SED} -e 's|^|@dirrm include/|' >> ${PLIST}
+	cd ${FAKEDIR}/lib && ${FIND} -s * -type f -o -type l| \
+		${SED} -e 's|^|lib/|' >> ${PLIST} \
+		&& ${FIND} -d * -type d | \
+		${SED} -e 's|^|@dirrm lib/|' >> ${PLIST}
+.for dir in vlc
+	cd ${FAKEDIR}/share/${dir} && ${FIND} -s * -type f -o -type l | \
+		${SED} -e 's|^|share/${dir}/|' >> ${PLIST} \
+		&& ${FIND} -d * -type d | \
+		${SED} -e 's|^|@dirrm share/${dir}/|' >> ${PLIST}
+.endfor
+.if !defined(NOPORTDOCS)
+	cd ${FAKEDIR}/share/doc && ${FIND} -s * -type f -o -type l | \
+		${SED} -e 's|^|share/doc/|' >> ${PLIST} \
+		 && ${FIND} -d * -type d | \
+		 ${SED} -e 's|^|@dirrm share/doc/|' >> ${PLIST}
+.else
+	${RM} -rf ${FAKEDIR}/share/doc
+.endif
+		${ECHO_MSG} "@dirrm share/vlc" >> ${PLIST}
+.if !defined(WITHOUT_NLS)
+	cd ${FAKEDIR}/share/locale &&  ${FIND} -s * -type f -o -type l | \
+		${SED} -e 's|^|share/locale/|' >> ${PLIST}
+.endif
+.if defined(WITH_VLC_MOZILLA_PLUGIN) && !defined(WITHOUT_VLC_MOZILLA_PLUGIN)
+	cd ${FAKEDIR}/mozilla && ${FIND} -s * | \
+		${SED} -e 's|^|lib/browser_plugins/|' >> ${PLIST}
+.endif
+.for locale in my oc ps tet tl
+	${ECHO_CMD} "@unexec ${RMDIR} %D/share/locale/${locale}/LC_MESSAGES 2>/dev/null || ${TRUE}" >> ${PLIST}
+	${ECHO_CMD} "@unexec ${RMDIR} %D/share/locale/${locale} 2>/dev/null || ${TRUE}" >> ${PLIST}
+.endfor
+
+do-install:
+	@${REINPLACE_CMD} -e 's|${FAKEDIR}|${PREFIX}|' \
+		${FAKEDIR}/bin/vlc-config
+	@${RM} -f ${FAKEDIR}/bin/*.bak
+	cd ${FAKEDIR}/bin && ${FIND} . | \
+		${CPIO} -vpdm -R ${BINOWN}:${BINGRP} ${PREFIX}/bin
+	cd ${FAKEDIR}/include && ${FIND} . | \
+		${CPIO} -vpdm -L -R ${LIBOWN}:${LIBGRP} ${PREFIX}/include
+	cd ${FAKEDIR}/lib && ${FIND} . | \
+		${CPIO} -vpdm -L -R ${LIBOWN}:${LIBGRP} ${PREFIX}/lib
+	cd ${FAKEDIR}/share && ${FIND} . | \
+		${CPIO} -vpdm -L -R ${SHAREOWN} ${PREFIX}/share
+.if defined(WITH_VLC_MOZILLA_PLUGIN) && !defined(WITH_VLC_MOZILLA_PLUGIN)
+	@${MKDIR} ${PREFIX}/lib/browser_plugins
+	${INSTALL_DATA} ${FAKEDIR}/mozilla/* ${PREFIX}/lib/browser_plugins
+.endif
+	${INSTALL_MAN} ${WRKSRC}/doc/vlc.1 ${MANPREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/doc/vlc-config.1 ${MANPREFIX}/man/man1/
+.if defined(WITH_SKINS) || !defined(WITHOUT_WXGTK)
+	if [ ! -d ${PREFIX}/share/applications ]; then \
+		${MKDIR} ${PREFIX}/share/applications ; \
+	fi
+	if [ ! -d ${PREFIX}/share/pixmaps ]; then \
+		${MKDIR} ${PREFIX}/share/pixmaps ; \
+	fi
+.if defined(WITH_SKINS) && !defined(WITHOUT_SKINS)
+	${INSTALL_DATA} ${FILESDIR}/svlc.desktop ${PREFIX}/share/applications
+	${INSTALL_DATA} ${FAKEDIR}/share/vlc/vlc48x48.png ${PREFIX}/share/pixmaps/gvlc.png
+.endif
+.if !defined(WITHOUT_WXGTK)
+	${INSTALL_DATA} ${FILESDIR}/wxvlc.desktop ${PREFIX}/share/applications
+	${INSTALL_DATA} ${FAKEDIR}/share/vlc/vlc48x48.png ${PREFIX}/share/pixmaps/vlc.png
+.endif
+.endif
