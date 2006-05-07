@@ -9,6 +9,8 @@
 PORTNAME=	raidtest
 PORTVERSION=	1.0
 CATEGORIES=	benchmarks
+MASTER_SITES=	# none
+DISTFILES=	# none
 
 MAINTAINER=	pjd@FreeBSD.org
 COMMENT=	Test performance of storage devices
@@ -16,7 +18,7 @@ COMMENT=	Test performance of storage devices
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 501000
-IGNORE=		"supports only FreeBSD 5.1 and above"
+IGNORE=		supports only FreeBSD 5.1 and above
 .endif
 
 NO_WRKSUBDIR=	yes
