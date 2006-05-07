@@ -311,6 +311,7 @@
     SUBDIR += jetpack
     SUBDIR += jfduke3d
     SUBDIR += jfk
+    SUBDIR += joequake
     SUBDIR += jools
     SUBDIR += jtans
     SUBDIR += jumpnbump
