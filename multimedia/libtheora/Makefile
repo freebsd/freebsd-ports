@@ -6,20 +6,16 @@
 #
 
 PORTNAME=	libtheora
-PORTVERSION=	1.0.a4
-PORTREVISION=	1
+DISTVERSION=	1.0alpha5
 CATEGORIES=	multimedia
-MASTER_SITES=	http://downloads.xiph.org/releases/theora/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.a4/alpha4/}
+MASTER_SITES=	http://downloads.xiph.org/releases/theora/ \
+		http://distfiles.master.finkmirrors.net/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rainer.alves@gmail.com
 COMMENT=	Theora video codec for the Ogg multimedia streaming system
 
 LIB_DEPENDS=	vorbis.3:${PORTSDIR}/audio/libvorbis
 
-WRKSRC=		${WRKDIR}/${DISTNAME}
-
-USE_REINPLACE=	yes
 USE_BZIP2=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes

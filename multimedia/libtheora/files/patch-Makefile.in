@@ -1,10 +1,10 @@
---- Makefile.in.orig	Wed Dec 15 21:06:17 2004
-+++ Makefile.in	Thu Jan 13 18:51:47 2005
-@@ -206,11 +206,11 @@
+--- Makefile.in.orig	Sat Aug 20 16:30:42 2005
++++ Makefile.in	Sun Apr 16 06:07:12 2006
+@@ -224,11 +224,11 @@
  target_os = @target_os@
  target_vendor = @target_vendor@
  AUTOMAKE_OPTIONS = foreign 1.6 dist-zip dist-bzip2
--SUBDIRS = lib include doc examples debian
+-SUBDIRS = lib include doc examples debian tests
 +SUBDIRS = lib include debian
  EXTRA_DIST = COPYING autogen.sh win32 libtheora.spec libtheora.spec.in \
  	theora-uninstalled.pc.in
