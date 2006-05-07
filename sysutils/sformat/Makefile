@@ -19,15 +19,15 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	marius@FreeBSD.org
 COMMENT=	Allows formatting/partitioning/analysis/repairing of SCSI disks
 
+LIBSCHILY=	libschily-2.01.01a07.tar.gz
 USE_GMAKE=	yes
-
 MAN1=		sformat.1
 
-LIBSCHILY=	libschily-2.01.01a07.tar.gz
-MAKE_ENV=	CCOM=${CC}
-SFMTTARGET=	${ARCH}-freebsd-${CC}
-
 .include <bsd.port.pre.mk>
+
+CCOM!=		${BASENAME} ${CC}
+MAKE_ENV=	CCOM=${CCOM} LANG=C
+SFMTTARGET=	${ARCH}-freebsd-${CCOM}
 
 post-extract:
 	@cd ${WRKSRC} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
@@ -35,7 +35,7 @@ post-extract:
 .for i in config.guess config.sub
 	@${CP} ${PORTSDIR}/Templates/${i} ${WRKSRC}/conf
 .endfor
-.if ${ARCH} != "i386" || ${CC} != "cc"
+.if ${SFMTTARGET} != "i386-freebsd-cc"
 	@${LN} -sf ${WRKSRC}/RULES/i386-freebsd-cc.rul \
 		${WRKSRC}/RULES/${SFMTTARGET}.rul
 .endif
