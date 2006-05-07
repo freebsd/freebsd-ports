@@ -6966,6 +6966,7 @@ nagios-snmp-plugins	ports/net-mgmt/nagios-snmp-plugins
 nagios-spamd-plugin	ports/net-mgmt/nagios-spamd-plugin
 nagios-statd	ports/sysutils/nagios-statd
 nagios12	ports/net-mgmt/nagios12
+nagiosgraph	ports/net-mgmt/nagiosgraph
 nagiostat	ports/net-mgmt/nagiostat
 nail		ports/mail/nail
 naim		ports/net-im/naim
