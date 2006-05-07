@@ -322,13 +322,6 @@ CONFIGURE_ARGS+=--enable-dv
 CONFIGURE_ARGS+=--disable-dv
 .endif
 
-.if !defined(WITHOUT_HAL)
-LIB_DEPENDS+=	hal.1:${PORTSDIR}/sysutils/hal
-CONFIGURE_ARGS+=	--enable-hal
-.else
-CONFIGURE_ARGS+=	--disable-hal
-.endif
-
 .if defined(WITHOUT_HTTPD)
 CONFIGURE_ARGS+=--disable-httpd
 .endif
