@@ -1,0 +1,19 @@
+A simple, lightweight system for manipulating HTML (and XML, informally) using
+a Pythonic object model.
+
+Features:
+ - Allows program logic and HTML to be completely separated - a graphical
+   designer can design the HTML in a visual HTML editor, without needing to
+   deal with any non-standard syntax or non-standard attribute names.
+ - Designed with common HTML-application programming tasks in mind.
+ - No special requirements for the HTML/XML (or just one: attribute values must
+   be quoted) - so you can use any editor, and your HTML/XML doesn't need to be
+   strictly valid.
+ - Works by string substitution, rather than by decomposing and rebuilding the
+   markup, hence has no impact on the parts of the page you don't manipulate.
+ - Does nothing but manipulating HTML/XML, hence fits in with any other Web
+   toolkits you're using.
+ - Tracebacks always point to the right place - many Python/HTML mixing systems
+   use exec or eval, making bugs hard to track down.
+
+WWW: http://www.entrian.com/PyMeld/index.html

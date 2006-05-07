@@ -804,6 +804,7 @@
     SUBDIR += py-imdbpy
     SUBDIR += py-jonpy
     SUBDIR += py-mechanize
+    SUBDIR += py-meld
     SUBDIR += py-mt
     SUBDIR += py-nevow
     SUBDIR += py-prewikka
