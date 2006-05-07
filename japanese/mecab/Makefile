@@ -5,50 +5,30 @@
 # $FreeBSD$
 #
 
-PORTNAME=	${MECAB_PORTNAME}
-PORTVERSION=	${MECAB_PORTVERSION}
+PORTNAME=	mecab
+PORTVERSION=	0.91
 CATEGORIES=	japanese textproc
-MASTER_SITES=	http://chasen.org/~taku/software/mecab/src/ \
-		http://chasen.naist.jp/stable/ipadic/:ipadic
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		${IPADIC_DISTNAME}${EXTRACT_SUFX}:ipadic
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
+MASTER_SITE_SUBDIR=	${PORTNAME}/${SUB_DIR}
+DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yet Another Part-of-Speech and Morphological Analyzer
 
-IPADIC_DISTNAME=	ipadic-2.5.1
+SUB_DIR=	20027
 
 USE_PERL5_BUILD=	yes
-USE_REINPLACE=		yes
-
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}"
 
-.include "${.CURDIR}/Makefile.common"
-
 MAN1=		mecab.1
 
-EXAMPLES=	example/*
-DOCS=		AUTHORS README doc/*.html doc/*.css
-
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "sparc64"
-BROKEN=		"Does not compile on sparc64"
-.endif
-
-post-extract:
-	${LN} -s ${WRKDIR}/${IPADIC_DISTNAME} ${WRKSRC}/dic/
+DOCS=		AUTHORS README doc/*.html
 
 post-install:
-	${RM} -f ${PREFIX}/lib/libmecab.la
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${EXAMPLESDIR}
-.for f in ${EXAMPLES}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${EXAMPLESDIR}/
-.endfor
 	${MKDIR} ${DOCSDIR}
 .for f in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
@@ -59,4 +39,4 @@ post-patch:
 	${REINPLACE_CMD} -e 's/-lpthread/${PTHREAD_LIBS}/g' \
 			 -e 's/-O3/${CFLAGS}/' ${WRKSRC}/${CONFIGURE_SCRIPT}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
