@@ -1,11 +1,9 @@
-%%ZOPEPRODUCTDIR%%/COREBlog/.DS_Store
 %%ZOPEPRODUCTDIR%%/COREBlog/.project
 %%ZOPEPRODUCTDIR%%/COREBlog/__init__.py
 %%ZOPEPRODUCTDIR%%/COREBlog/AuthBridge.py
 %%ZOPEPRODUCTDIR%%/COREBlog/Category.py
 %%ZOPEPRODUCTDIR%%/COREBlog/changelog.txt
 %%ZOPEPRODUCTDIR%%/COREBlog/COREBlog.py
-%%ZOPEPRODUCTDIR%%/COREBlog/dtml/.DS_Store
 %%ZOPEPRODUCTDIR%%/COREBlog/dtml/additional_css.dtml
 %%ZOPEPRODUCTDIR%%/COREBlog/dtml/coreblog_script_widget.js.dtml
 %%ZOPEPRODUCTDIR%%/COREBlog/dtml/manage_addCategoryForm.dtml
@@ -127,6 +125,15 @@
 %%ZOPEPRODUCTDIR%%/COREBlog/www/coreblog-icon.gif
 %%ZOPEPRODUCTDIR%%/COREBlog/www/corebloglogo_gray.gif
 %%ZOPEPRODUCTDIR%%/COREBlog/www/entry.gif
+%%ZOPEPRODUCTDIR%%/COREBlog/www/skins/JuNya_Skin_10.zexp
+%%ZOPEPRODUCTDIR%%/COREBlog/www/skins/KT.zexp
+%%ZOPEPRODUCTDIR%%/COREBlog/www/skins/SwallowsLab_EN.zexp
+%%ZOPEPRODUCTDIR%%/COREBlog/www/skins/SwallowsLab_UTF8.zexp
+%%ZOPEPRODUCTDIR%%/COREBlog/www/skins/darkling.zexp
+%%ZOPEPRODUCTDIR%%/COREBlog/www/skins/polone.zexp
+%%ZOPEPRODUCTDIR%%/COREBlog/www/skins/sebskin.zexp
+%%ZOPEPRODUCTDIR%%/COREBlog/www/skins/tsukikusa.zexp
+%%ZOPEPRODUCTDIR%%/COREBlog/www/skins/underworld.zexp
 %%ZOPEPRODUCTDIR%%/COREBlog/www/trackback.gif
 %%ZOPEPRODUCTDIR%%/COREBlog/AuthBridge.pyc
 %%ZOPEPRODUCTDIR%%/COREBlog/COREBlog.pyc
@@ -148,5 +155,6 @@
 @dirrm %%ZOPEPRODUCTDIR%%/COREBlog/help
 @dirrm %%ZOPEPRODUCTDIR%%/COREBlog/i18n
 @dirrm %%ZOPEPRODUCTDIR%%/COREBlog/stripogram
+@dirrm %%ZOPEPRODUCTDIR%%/COREBlog/www/skins
 @dirrm %%ZOPEPRODUCTDIR%%/COREBlog/www
 @dirrm %%ZOPEPRODUCTDIR%%/COREBlog
