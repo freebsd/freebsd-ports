@@ -1,17 +1,15 @@
---- core/Jamfile.orig	Wed May 26 05:51:32 2004
-+++ core/Jamfile	Mon Nov 22 20:28:52 2004
-@@ -15,25 +15,12 @@
- Library libhb : $(LIBHB_SRC) ;
-
- # Sadly, we might want to debug our code
--ObjectCcFlags $(LIBHB_SRC) : -g -Wall -W ;
-+ObjectCcFlags $(LIBHB_SRC) : -g -Wall -W -I%%PREFIX%%/include ;
-
+--- core/Jamfile.orig	Sun May  7 11:49:29 2006
++++ core/Jamfile	Sun May  7 11:54:18 2006
+@@ -18,22 +18,19 @@
+ ObjectCcFlags $(LIBHB_SRC) : -g -Wall -W ;
+ 
  # Needed includes
 -ObjectHdrs Ac3Dec.c    : $(TOP)/contrib/liba52 ;
- ObjectHdrs FfmpegEnc.c
--           HandBrake.c
--           MpgaDec.c
+-ObjectHdrs FfmpegEnc.c
++ObjectHdrs Ac3Dec.c
++           FfmpegEnc.c
+            HandBrake.c
+            MpgaDec.c
 -           Scale.c     : $(TOP)/contrib/libavcodec ;
 -ObjectHdrs DVDRead.c
 -           Scan.c      : $(TOP)/contrib/libdvdread ;
@@ -24,9 +22,17 @@
 -ObjectHdrs OgmMux.c
 -           VorbisEnc.c : $(TOP)/contrib/libogg ;
 -ObjectHdrs VorbisEnc.c : $(TOP)/contrib/libvorbis ;
-+	   HandBrake.c
-+	   MpgaDec.c
-+	   Scale.c     : %%LIBAVCODEC%% ;
++           Scale.c
++           DVDRead.c
++           Scan.c
++           FaacEnc.c
++           Mp3Enc.c
++           Mp4Mux.c
++           Mpeg2Dec.c
++           Resample.c
++           OgmMux.c
++           VorbisEnc.c
++           XvidEnc.c   : %%PREFIX%%/include ;
  ObjectHdrs X264Enc.c   : $(TOP)/contrib/libx264 ;
 -ObjectHdrs XvidEnc.c   : $(TOP)/contrib/libxvidcore ;
-
+-

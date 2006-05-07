@@ -1,12 +1,10 @@
-HandBrake is a GPL'd multi-platform, multithreaded DVD to MPEG-4 
-ripper and
-converter. HandBrake was originally available on the BeOS, but now has 
-been
+HandBrake is a GPL'd multi-platform, multithreaded DVD to MPEG-4 ripper and
+converter. HandBrake was originally available on the BeOS, but now has been
 ported over to MacOS X, GNU/Linux and FreeBSD.
 
 Features:
- * Can encode directly from DVDs (even encrypted ones) or from 
-VIDEO_TS folders
+ * Can encode directly from DVDs (even encrypted ones) or from VIDEO_TS
+   folders
  * Supports AC3, LPCM and MPEG audio tracks
  * Outputs MP4, AVI or OGM files
  * Outputs AAC, MP3 or Vorbis audio
