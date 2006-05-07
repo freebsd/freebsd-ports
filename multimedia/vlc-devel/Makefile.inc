@@ -187,9 +187,6 @@
 # WITHOUT_GNOMEVFS
 #  GnomeVFS support
 #
-# WITHOUT_HAL=yes
-#  Disable HAL support
-#
 # WITH_OPENGL=yes
 #  Enable OpenGL visual plugin (not playback, play back is default with X11)
 #
