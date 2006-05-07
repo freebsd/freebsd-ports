@@ -1,0 +1,5 @@
+pthreads-win32 is a pthreads implementation for Microsoft Windows. It
+can be compiled with MSVC, Borland and GCC. This port compiles it using
+MinGW32.
+
+WWW: http://sourceware.org/pthreads-win32/
