@@ -9858,6 +9858,7 @@ pecl-PDO_ODBC	ports/databases/pecl-PDO_ODBC
 pecl-PDO_PGSQL	ports/databases/pecl-PDO_PGSQL
 pecl-PDO_SQLITE	ports/databases/pecl-PDO_SQLITE
 pecl-big_int	ports/math/pecl-big_int
+pecl-ctemplate	ports/textproc/pecl-ctemplate
 pecl-fileinfo	ports/sysutils/pecl-fileinfo
 pecl-filter	ports/security/pecl-filter
 pecl-fribidi	ports/converters/pecl-fribidi
