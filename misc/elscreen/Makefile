@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	elscreen
-PORTVERSION=	1.4.2
+PORTVERSION=	1.4.3
 CATEGORIES=	misc elisp
 MASTER_SITES=	ftp://ftp.morishima.net/pub/morishima.net/naoto/ElScreen/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. old
