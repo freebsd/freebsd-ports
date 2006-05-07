@@ -1,7 +1,8 @@
 [Desktop Entry]
 Encoding=UTF-8
-Name=Flock (Linux binary)
+Name=Flock (Linux)
 Exec=linux-flock %U
+Icon=%%PREFIX%%/lib/%%APP_NAME%%/chrome/icons/default/default.xpm
 StartupNotify=false
 Type=Application
 Categories=Application;Network;

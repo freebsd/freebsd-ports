@@ -1,242 +1,230 @@
-bin/%%BROWSER_NAME%%
-share/applications/%%BROWSER_NAME%%.desktop
-lib/%%BROWSER_NAME%%/.autoreg
-lib/%%BROWSER_NAME%%/browserconfig.properties
-lib/%%BROWSER_NAME%%/chrome/browser.jar
-lib/%%BROWSER_NAME%%/chrome/browser.manifest
-lib/%%BROWSER_NAME%%/chrome/classic.jar
-lib/%%BROWSER_NAME%%/chrome/classic.manifest
-lib/%%BROWSER_NAME%%/chrome/comm.jar
-lib/%%BROWSER_NAME%%/chrome/comm.manifest
-lib/%%BROWSER_NAME%%/chrome/en-US.jar
-lib/%%BROWSER_NAME%%/chrome/en-US.manifest
-lib/%%BROWSER_NAME%%/chrome/fbranding.jar
-lib/%%BROWSER_NAME%%/chrome/fbranding.manifest
-lib/%%BROWSER_NAME%%/chrome/icons/default/default.xpm
-lib/%%BROWSER_NAME%%/chrome/installed-chrome.txt
-lib/%%BROWSER_NAME%%/chrome/pippki.jar
-lib/%%BROWSER_NAME%%/chrome/pippki.manifest
-lib/%%BROWSER_NAME%%/chrome/spellbound.jar
-lib/%%BROWSER_NAME%%/chrome/spellbound.manifest
-lib/%%BROWSER_NAME%%/chrome/tiny_mce.jar
-lib/%%BROWSER_NAME%%/chrome/tiny_mce.manifest
-lib/%%BROWSER_NAME%%/chrome/toolkit.jar
-lib/%%BROWSER_NAME%%/chrome/toolkit.manifest
-lib/%%BROWSER_NAME%%/components/browser.xpt
-lib/%%BROWSER_NAME%%/components/flockCluster.js
-lib/%%BROWSER_NAME%%/components/flockFavoritesQueue.js
-lib/%%BROWSER_NAME%%/components/flockFavoritesService.js
-lib/%%BROWSER_NAME%%/components/flockFavoritesUtils.js
-lib/%%BROWSER_NAME%%/components/flockFavoritesWebServiceBokee.js
-lib/%%BROWSER_NAME%%/components/flockFavoritesWebServiceDelicious.js
-lib/%%BROWSER_NAME%%/components/flockFavoritesWebServiceShadows.js
-lib/%%BROWSER_NAME%%/components/flockFeedProtocol.js
-lib/%%BROWSER_NAME%%/components/flockFeedService.js
-lib/%%BROWSER_NAME%%/components/flockLuceneIndexer.js
-lib/%%BROWSER_NAME%%/components/flockOpmlProtocol.js
-lib/%%BROWSER_NAME%%/components/flockOpmlService.js
-lib/%%BROWSER_NAME%%/components/flockPhotoAPIFlickr.js
-lib/%%BROWSER_NAME%%/components/flockPhotoAPIPhotoBucket.js
-lib/%%BROWSER_NAME%%/components/flockPhotoService.js
-lib/%%BROWSER_NAME%%/components/flockScrapbookService.js
-lib/%%BROWSER_NAME%%/components/flockXPCOMTemplate.js.lib
-lib/%%BROWSER_NAME%%/components/flockXmlRpc.js
-lib/%%BROWSER_NAME%%/components/flockXmlRpcHelper.js.lib
-lib/%%BROWSER_NAME%%/components/jsconsole-clhandler.js
-lib/%%BROWSER_NAME%%/components/libflockFeedService.so
-lib/%%BROWSER_NAME%%/components/libhtml2text.so
-lib/%%BROWSER_NAME%%/components/libhtml2xhtml.so
-lib/%%BROWSER_NAME%%/components/libimgscaler.so
-lib/%%BROWSER_NAME%%/components/libjsd.so
-lib/%%BROWSER_NAME%%/components/libmozgnome.so
-lib/%%BROWSER_NAME%%/components/libmyspell.so
-lib/%%BROWSER_NAME%%/components/libnkgnomevfs.so
-lib/%%BROWSER_NAME%%/components/libspellchecker.so
-lib/%%BROWSER_NAME%%/components/libxpcomclucene.so
-lib/%%BROWSER_NAME%%/components/libxpinstall.so
-lib/%%BROWSER_NAME%%/components/myspell/en-US.aff
-lib/%%BROWSER_NAME%%/components/myspell/en-US.dic
-lib/%%BROWSER_NAME%%/components/nsBrowserContentHandler.js
-lib/%%BROWSER_NAME%%/components/nsBrowserGlue.js
-lib/%%BROWSER_NAME%%/components/nsCloseAllWindows.js
-lib/%%BROWSER_NAME%%/components/nsDefaultCLH.js
-lib/%%BROWSER_NAME%%/components/nsDictionary.js
-lib/%%BROWSER_NAME%%/components/nsExtensionManager.js
-lib/%%BROWSER_NAME%%/components/nsFilePicker.js
-lib/%%BROWSER_NAME%%/components/nsHelperAppDlg.js
-lib/%%BROWSER_NAME%%/components/nsInterfaceInfoToIDL.js
-lib/%%BROWSER_NAME%%/components/nsKillAll.js
-lib/%%BROWSER_NAME%%/components/nsProgressDialog.js
-lib/%%BROWSER_NAME%%/components/nsProxyAutoConfig.js
-lib/%%BROWSER_NAME%%/components/nsResetPref.js
-lib/%%BROWSER_NAME%%/components/nsSetDefaultBrowser.js
-lib/%%BROWSER_NAME%%/components/nsSidebar.js
-lib/%%BROWSER_NAME%%/components/nsUpdateService.js
-lib/%%BROWSER_NAME%%/components/nsXmlRpcClient.js
-lib/%%BROWSER_NAME%%/defaults/autoconfig/platform.js
-lib/%%BROWSER_NAME%%/defaults/autoconfig/prefcalls.js
-lib/%%BROWSER_NAME%%/defaults/pref/browser-prefs.js
-lib/%%BROWSER_NAME%%/defaults/pref/firefox-l10n.js
-lib/%%BROWSER_NAME%%/defaults/pref/flock.js
-lib/%%BROWSER_NAME%%/defaults/profile/bookmarks.html
-lib/%%BROWSER_NAME%%/defaults/profile/chrome/userChrome-example.css
-lib/%%BROWSER_NAME%%/defaults/profile/chrome/userContent-example.css
-lib/%%BROWSER_NAME%%/defaults/profile/localstore.rdf
-lib/%%BROWSER_NAME%%/defaults/profile/mimeTypes.rdf
-lib/%%BROWSER_NAME%%/defaults/profile/prefs.js
-lib/%%BROWSER_NAME%%/defaults/profile/search.rdf
-lib/%%BROWSER_NAME%%/extensions/inspector@mozilla.org/chrome.manifest
-lib/%%BROWSER_NAME%%/extensions/inspector@mozilla.org/chrome/inspector.jar
-lib/%%BROWSER_NAME%%/extensions/inspector@mozilla.org/components/inspector-cmdline.js
-lib/%%BROWSER_NAME%%/extensions/inspector@mozilla.org/components/inspector.xpt
-lib/%%BROWSER_NAME%%/extensions/inspector@mozilla.org/components/libinspector.so
-lib/%%BROWSER_NAME%%/extensions/inspector@mozilla.org/defaults/preferences/inspector.js
-lib/%%BROWSER_NAME%%/extensions/inspector@mozilla.org/install.rdf
-lib/%%BROWSER_NAME%%/extensions/{b01bf10c-302a-11da-b67b-000d60ca027b}/install.rdf
-lib/%%BROWSER_NAME%%/flock
-lib/%%BROWSER_NAME%%/flock-bin
-lib/%%BROWSER_NAME%%/gm
-lib/%%BROWSER_NAME%%/greprefs/all.js
-lib/%%BROWSER_NAME%%/greprefs/security-prefs.js
-lib/%%BROWSER_NAME%%/greprefs/xpinstall.js
-lib/%%BROWSER_NAME%%/icons/document.png
-lib/%%BROWSER_NAME%%/icons/mozicon128.png
-lib/%%BROWSER_NAME%%/icons/mozicon16.xpm
-lib/%%BROWSER_NAME%%/icons/mozicon50.xpm
-lib/%%BROWSER_NAME%%/libmozjs.so
-lib/%%BROWSER_NAME%%/libnspr4.so
-lib/%%BROWSER_NAME%%/libnss3.so
-lib/%%BROWSER_NAME%%/libnssckbi.so
-lib/%%BROWSER_NAME%%/libplc4.so
-lib/%%BROWSER_NAME%%/libplds4.so
-lib/%%BROWSER_NAME%%/libsmime3.so
-lib/%%BROWSER_NAME%%/libsoftokn3.chk
-lib/%%BROWSER_NAME%%/libsoftokn3.so
-lib/%%BROWSER_NAME%%/libssl3.so
-lib/%%BROWSER_NAME%%/libxpcom.so
-lib/%%BROWSER_NAME%%/libxpcom_compat.so
-lib/%%BROWSER_NAME%%/libxpcom_core.so
-lib/%%BROWSER_NAME%%/libxpistub.so
-lib/%%BROWSER_NAME%%/mozilla-xremote-client
-lib/%%BROWSER_NAME%%/plugins/libnullplugin.so
-lib/%%BROWSER_NAME%%/readme.txt
-lib/%%BROWSER_NAME%%/res/EditorOverride.css
-lib/%%BROWSER_NAME%%/res/arrow.gif
-lib/%%BROWSER_NAME%%/res/arrowd.gif
-lib/%%BROWSER_NAME%%/res/broken-image.gif
-lib/%%BROWSER_NAME%%/res/charsetData.properties
-lib/%%BROWSER_NAME%%/res/charsetalias.properties
-lib/%%BROWSER_NAME%%/res/cmessage.txt
-lib/%%BROWSER_NAME%%/res/dtd/mathml.dtd
-lib/%%BROWSER_NAME%%/res/dtd/xhtml11.dtd
-lib/%%BROWSER_NAME%%/res/entityTables/html40Latin1.properties
-lib/%%BROWSER_NAME%%/res/entityTables/html40Special.properties
-lib/%%BROWSER_NAME%%/res/entityTables/html40Symbols.properties
-lib/%%BROWSER_NAME%%/res/entityTables/htmlEntityVersions.properties
-lib/%%BROWSER_NAME%%/res/entityTables/mathml20.properties
-lib/%%BROWSER_NAME%%/res/entityTables/transliterate.properties
-lib/%%BROWSER_NAME%%/res/fonts/fontEncoding.properties
-lib/%%BROWSER_NAME%%/res/fonts/mathfont.properties
-lib/%%BROWSER_NAME%%/res/fonts/mathfontCMEX10.properties
-lib/%%BROWSER_NAME%%/res/fonts/mathfontCMSY10.properties
-lib/%%BROWSER_NAME%%/res/fonts/mathfontMTExtra.properties
-lib/%%BROWSER_NAME%%/res/fonts/mathfontMath1.properties
-lib/%%BROWSER_NAME%%/res/fonts/mathfontMath2.properties
-lib/%%BROWSER_NAME%%/res/fonts/mathfontMath4.properties
-lib/%%BROWSER_NAME%%/res/fonts/mathfontPUA.properties
-lib/%%BROWSER_NAME%%/res/fonts/mathfontSymbol.properties
-lib/%%BROWSER_NAME%%/res/fonts/pangoFontEncoding.properties
-lib/%%BROWSER_NAME%%/res/forms.css
-lib/%%BROWSER_NAME%%/res/grabber.gif
-lib/%%BROWSER_NAME%%/res/hiddenWindow.html
-lib/%%BROWSER_NAME%%/res/html.css
-lib/%%BROWSER_NAME%%/res/html/gopher-audio.gif
-lib/%%BROWSER_NAME%%/res/html/gopher-binary.gif
-lib/%%BROWSER_NAME%%/res/html/gopher-find.gif
-lib/%%BROWSER_NAME%%/res/html/gopher-image.gif
-lib/%%BROWSER_NAME%%/res/html/gopher-menu.gif
-lib/%%BROWSER_NAME%%/res/html/gopher-movie.gif
-lib/%%BROWSER_NAME%%/res/html/gopher-sound.gif
-lib/%%BROWSER_NAME%%/res/html/gopher-telnet.gif
-lib/%%BROWSER_NAME%%/res/html/gopher-text.gif
-lib/%%BROWSER_NAME%%/res/html/gopher-unknown.gif
-lib/%%BROWSER_NAME%%/res/langGroups.properties
-lib/%%BROWSER_NAME%%/res/language.properties
-lib/%%BROWSER_NAME%%/res/loading-image.gif
-lib/%%BROWSER_NAME%%/res/mathml.css
-lib/%%BROWSER_NAME%%/res/quirk.css
-lib/%%BROWSER_NAME%%/res/svg.css
-lib/%%BROWSER_NAME%%/res/table-add-column-after-active.gif
-lib/%%BROWSER_NAME%%/res/table-add-column-after-hover.gif
-lib/%%BROWSER_NAME%%/res/table-add-column-after.gif
-lib/%%BROWSER_NAME%%/res/table-add-column-before-active.gif
-lib/%%BROWSER_NAME%%/res/table-add-column-before-hover.gif
-lib/%%BROWSER_NAME%%/res/table-add-column-before.gif
-lib/%%BROWSER_NAME%%/res/table-add-row-after-active.gif
-lib/%%BROWSER_NAME%%/res/table-add-row-after-hover.gif
-lib/%%BROWSER_NAME%%/res/table-add-row-after.gif
-lib/%%BROWSER_NAME%%/res/table-add-row-before-active.gif
-lib/%%BROWSER_NAME%%/res/table-add-row-before-hover.gif
-lib/%%BROWSER_NAME%%/res/table-add-row-before.gif
-lib/%%BROWSER_NAME%%/res/table-remove-column-active.gif
-lib/%%BROWSER_NAME%%/res/table-remove-column-hover.gif
-lib/%%BROWSER_NAME%%/res/table-remove-column.gif
-lib/%%BROWSER_NAME%%/res/table-remove-row-active.gif
-lib/%%BROWSER_NAME%%/res/table-remove-row-hover.gif
-lib/%%BROWSER_NAME%%/res/table-remove-row.gif
-lib/%%BROWSER_NAME%%/res/ua.css
-lib/%%BROWSER_NAME%%/res/unixcharset.properties
-lib/%%BROWSER_NAME%%/res/viewsource.css
-lib/%%BROWSER_NAME%%/run-mozilla.sh
-lib/%%BROWSER_NAME%%/searchplugins/amazondotcom.png
-lib/%%BROWSER_NAME%%/searchplugins/amazondotcom.src
-lib/%%BROWSER_NAME%%/searchplugins/eBay.gif
-lib/%%BROWSER_NAME%%/searchplugins/eBay.src
-lib/%%BROWSER_NAME%%/searchplugins/google.gif
-lib/%%BROWSER_NAME%%/searchplugins/google.src
-lib/%%BROWSER_NAME%%/searchplugins/jeeves.gif
-lib/%%BROWSER_NAME%%/searchplugins/jeeves.src
-lib/%%BROWSER_NAME%%/searchplugins/shadows.gif
-lib/%%BROWSER_NAME%%/searchplugins/shadows.src
-lib/%%BROWSER_NAME%%/searchplugins/technorati.png
-lib/%%BROWSER_NAME%%/searchplugins/technorati.src
-lib/%%BROWSER_NAME%%/searchplugins/wikipedia.png
-lib/%%BROWSER_NAME%%/searchplugins/wikipedia.src
-lib/%%BROWSER_NAME%%/searchplugins/winkflock.png
-lib/%%BROWSER_NAME%%/searchplugins/winkflock.src
-lib/%%BROWSER_NAME%%/searchplugins/yahoo.gif
-lib/%%BROWSER_NAME%%/searchplugins/yahoo.src
-lib/%%BROWSER_NAME%%/updater
-lib/%%BROWSER_NAME%%/updater.ini
-lib/%%BROWSER_NAME%%/xpicleanup
-lib/%%BROWSER_NAME%%/linkfarm
-@exec %%PREFIX%%/lib/%%BROWSER_NAME%%/linkfarm
-@unexec /usr/bin/find %%PREFIX%%/lib/%%BROWSER_NAME%%/plugins -type l -delete
-@dirrm lib/%%BROWSER_NAME%%/searchplugins
-@dirrm lib/%%BROWSER_NAME%%/defaults/autoconfig
-@dirrm lib/%%BROWSER_NAME%%/defaults/pref
-@dirrm lib/%%BROWSER_NAME%%/defaults/profile/chrome
-@dirrm lib/%%BROWSER_NAME%%/defaults/profile
-@dirrm lib/%%BROWSER_NAME%%/defaults
-@dirrm lib/%%BROWSER_NAME%%/chrome/icons/default
-@dirrm lib/%%BROWSER_NAME%%/chrome/icons
-@dirrm lib/%%BROWSER_NAME%%/chrome
-@dirrm lib/%%BROWSER_NAME%%/components/myspell
-@dirrm lib/%%BROWSER_NAME%%/components
-@dirrm lib/%%BROWSER_NAME%%/plugins
-@dirrm lib/%%BROWSER_NAME%%/greprefs
-@dirrm lib/%%BROWSER_NAME%%/icons
-@dirrm lib/%%BROWSER_NAME%%/extensions/inspector@mozilla.org/defaults/preferences
-@dirrm lib/%%BROWSER_NAME%%/extensions/inspector@mozilla.org/defaults
-@dirrm lib/%%BROWSER_NAME%%/extensions/inspector@mozilla.org/chrome
-@dirrm lib/%%BROWSER_NAME%%/extensions/inspector@mozilla.org/components
-@dirrm lib/%%BROWSER_NAME%%/extensions/inspector@mozilla.org
-@dirrm lib/%%BROWSER_NAME%%/extensions/{b01bf10c-302a-11da-b67b-000d60ca027b}
-@dirrm lib/%%BROWSER_NAME%%/extensions
-@dirrm lib/%%BROWSER_NAME%%/res/entityTables
-@dirrm lib/%%BROWSER_NAME%%/res/fonts
-@dirrm lib/%%BROWSER_NAME%%/res/html
-@dirrm lib/%%BROWSER_NAME%%/res/dtd
-@dirrm lib/%%BROWSER_NAME%%/res
-@dirrm lib/%%BROWSER_NAME%%
+bin/%%APP_NAME%%
+share/applications/%%APP_NAME%%.desktop
+lib/%%APP_NAME%%/.autoreg
+lib/%%APP_NAME%%/browserconfig.properties
+lib/%%APP_NAME%%/chrome/browser.jar
+lib/%%APP_NAME%%/chrome/browser.manifest
+lib/%%APP_NAME%%/chrome/classic.jar
+lib/%%APP_NAME%%/chrome/classic.manifest
+lib/%%APP_NAME%%/chrome/comm.jar
+lib/%%APP_NAME%%/chrome/comm.manifest
+lib/%%APP_NAME%%/chrome/en-US.jar
+lib/%%APP_NAME%%/chrome/en-US.manifest
+lib/%%APP_NAME%%/chrome/fbranding.jar
+lib/%%APP_NAME%%/chrome/fbranding.manifest
+lib/%%APP_NAME%%/chrome/icons/default/default.xpm
+lib/%%APP_NAME%%/chrome/installed-chrome.txt
+lib/%%APP_NAME%%/chrome/pippki.jar
+lib/%%APP_NAME%%/chrome/pippki.manifest
+lib/%%APP_NAME%%/chrome/spellbound.jar
+lib/%%APP_NAME%%/chrome/spellbound.manifest
+lib/%%APP_NAME%%/chrome/tiny_mce.jar
+lib/%%APP_NAME%%/chrome/tiny_mce.manifest
+lib/%%APP_NAME%%/chrome/toolkit.jar
+lib/%%APP_NAME%%/chrome/toolkit.manifest
+lib/%%APP_NAME%%/components/browser.xpt
+lib/%%APP_NAME%%/components/flockCluster.js
+lib/%%APP_NAME%%/components/flockFavoritesQueue.js
+lib/%%APP_NAME%%/components/flockFavoritesService.js
+lib/%%APP_NAME%%/components/flockFavoritesUtils.js
+lib/%%APP_NAME%%/components/flockFavoritesWebServiceBokee.js
+lib/%%APP_NAME%%/components/flockFavoritesWebServiceDelicious.js
+lib/%%APP_NAME%%/components/flockFavoritesWebServiceShadows.js
+lib/%%APP_NAME%%/components/flockFeedProtocol.js
+lib/%%APP_NAME%%/components/flockFeedService.js
+lib/%%APP_NAME%%/components/flockLuceneIndexer.js
+lib/%%APP_NAME%%/components/flockOpmlProtocol.js
+lib/%%APP_NAME%%/components/flockOpmlService.js
+lib/%%APP_NAME%%/components/flockPhotoAPIFlickr.js
+lib/%%APP_NAME%%/components/flockPhotoAPIPhotoBucket.js
+lib/%%APP_NAME%%/components/flockPhotoService.js
+lib/%%APP_NAME%%/components/flockScrapbookService.js
+lib/%%APP_NAME%%/components/flockXPCOMTemplate.js.lib
+lib/%%APP_NAME%%/components/flockXmlRpc.js
+lib/%%APP_NAME%%/components/flockXmlRpcHelper.js.lib
+lib/%%APP_NAME%%/components/jsconsole-clhandler.js
+lib/%%APP_NAME%%/components/libflockFeedService.so
+lib/%%APP_NAME%%/components/libhtml2text.so
+lib/%%APP_NAME%%/components/libhtml2xhtml.so
+lib/%%APP_NAME%%/components/libimgscaler.so
+lib/%%APP_NAME%%/components/libjsd.so
+lib/%%APP_NAME%%/components/libmozgnome.so
+lib/%%APP_NAME%%/components/libmyspell.so
+lib/%%APP_NAME%%/components/libnkgnomevfs.so
+lib/%%APP_NAME%%/components/libspellchecker.so
+lib/%%APP_NAME%%/components/libxpcomclucene.so
+lib/%%APP_NAME%%/components/libxpinstall.so
+lib/%%APP_NAME%%/components/myspell/en-US.aff
+lib/%%APP_NAME%%/components/myspell/en-US.dic
+lib/%%APP_NAME%%/components/nsBrowserContentHandler.js
+lib/%%APP_NAME%%/components/nsBrowserGlue.js
+lib/%%APP_NAME%%/components/nsCloseAllWindows.js
+lib/%%APP_NAME%%/components/nsDefaultCLH.js
+lib/%%APP_NAME%%/components/nsDictionary.js
+lib/%%APP_NAME%%/components/nsExtensionManager.js
+lib/%%APP_NAME%%/components/nsFilePicker.js
+lib/%%APP_NAME%%/components/nsHelperAppDlg.js
+lib/%%APP_NAME%%/components/nsInterfaceInfoToIDL.js
+lib/%%APP_NAME%%/components/nsKillAll.js
+lib/%%APP_NAME%%/components/nsProgressDialog.js
+lib/%%APP_NAME%%/components/nsProxyAutoConfig.js
+lib/%%APP_NAME%%/components/nsResetPref.js
+lib/%%APP_NAME%%/components/nsSetDefaultBrowser.js
+lib/%%APP_NAME%%/components/nsSidebar.js
+lib/%%APP_NAME%%/components/nsUpdateService.js
+lib/%%APP_NAME%%/components/nsXmlRpcClient.js
+lib/%%APP_NAME%%/defaults/autoconfig/platform.js
+lib/%%APP_NAME%%/defaults/autoconfig/prefcalls.js
+lib/%%APP_NAME%%/defaults/pref/browser-prefs.js
+lib/%%APP_NAME%%/defaults/pref/firefox-l10n.js
+lib/%%APP_NAME%%/defaults/pref/flock.js
+lib/%%APP_NAME%%/defaults/profile/bookmarks.html
+lib/%%APP_NAME%%/defaults/profile/chrome/userChrome-example.css
+lib/%%APP_NAME%%/defaults/profile/chrome/userContent-example.css
+lib/%%APP_NAME%%/defaults/profile/localstore.rdf
+lib/%%APP_NAME%%/defaults/profile/mimeTypes.rdf
+lib/%%APP_NAME%%/defaults/profile/prefs.js
+lib/%%APP_NAME%%/defaults/profile/search.rdf
+lib/%%APP_NAME%%/extensions/{b01bf10c-302a-11da-b67b-000d60ca027b}/install.rdf
+lib/%%APP_NAME%%/flock
+lib/%%APP_NAME%%/flock-bin
+lib/%%APP_NAME%%/gm
+lib/%%APP_NAME%%/greprefs/all.js
+lib/%%APP_NAME%%/greprefs/security-prefs.js
+lib/%%APP_NAME%%/greprefs/xpinstall.js
+lib/%%APP_NAME%%/icons/document.png
+lib/%%APP_NAME%%/icons/mozicon128.png
+lib/%%APP_NAME%%/icons/mozicon16.xpm
+lib/%%APP_NAME%%/icons/mozicon50.xpm
+lib/%%APP_NAME%%/libmozjs.so
+lib/%%APP_NAME%%/libnspr4.so
+lib/%%APP_NAME%%/libnss3.so
+lib/%%APP_NAME%%/libnssckbi.so
+lib/%%APP_NAME%%/libplc4.so
+lib/%%APP_NAME%%/libplds4.so
+lib/%%APP_NAME%%/libsmime3.so
+lib/%%APP_NAME%%/libsoftokn3.chk
+lib/%%APP_NAME%%/libsoftokn3.so
+lib/%%APP_NAME%%/libssl3.so
+lib/%%APP_NAME%%/libxpcom.so
+lib/%%APP_NAME%%/libxpcom_compat.so
+lib/%%APP_NAME%%/libxpcom_core.so
+lib/%%APP_NAME%%/libxpistub.so
+lib/%%APP_NAME%%/mozilla-xremote-client
+lib/%%APP_NAME%%/plugins/libnullplugin.so
+lib/%%APP_NAME%%/readme.txt
+lib/%%APP_NAME%%/res/EditorOverride.css
+lib/%%APP_NAME%%/res/arrow.gif
+lib/%%APP_NAME%%/res/arrowd.gif
+lib/%%APP_NAME%%/res/broken-image.gif
+lib/%%APP_NAME%%/res/charsetData.properties
+lib/%%APP_NAME%%/res/charsetalias.properties
+lib/%%APP_NAME%%/res/cmessage.txt
+lib/%%APP_NAME%%/res/dtd/mathml.dtd
+lib/%%APP_NAME%%/res/dtd/xhtml11.dtd
+lib/%%APP_NAME%%/res/entityTables/html40Latin1.properties
+lib/%%APP_NAME%%/res/entityTables/html40Special.properties
+lib/%%APP_NAME%%/res/entityTables/html40Symbols.properties
+lib/%%APP_NAME%%/res/entityTables/htmlEntityVersions.properties
+lib/%%APP_NAME%%/res/entityTables/mathml20.properties
+lib/%%APP_NAME%%/res/entityTables/transliterate.properties
+lib/%%APP_NAME%%/res/fonts/fontEncoding.properties
+lib/%%APP_NAME%%/res/fonts/mathfont.properties
+lib/%%APP_NAME%%/res/fonts/mathfontCMEX10.properties
+lib/%%APP_NAME%%/res/fonts/mathfontCMSY10.properties
+lib/%%APP_NAME%%/res/fonts/mathfontMTExtra.properties
+lib/%%APP_NAME%%/res/fonts/mathfontMath1.properties
+lib/%%APP_NAME%%/res/fonts/mathfontMath2.properties
+lib/%%APP_NAME%%/res/fonts/mathfontMath4.properties
+lib/%%APP_NAME%%/res/fonts/mathfontPUA.properties
+lib/%%APP_NAME%%/res/fonts/mathfontSymbol.properties
+lib/%%APP_NAME%%/res/fonts/pangoFontEncoding.properties
+lib/%%APP_NAME%%/res/forms.css
+lib/%%APP_NAME%%/res/grabber.gif
+lib/%%APP_NAME%%/res/hiddenWindow.html
+lib/%%APP_NAME%%/res/html.css
+lib/%%APP_NAME%%/res/html/gopher-audio.gif
+lib/%%APP_NAME%%/res/html/gopher-binary.gif
+lib/%%APP_NAME%%/res/html/gopher-find.gif
+lib/%%APP_NAME%%/res/html/gopher-image.gif
+lib/%%APP_NAME%%/res/html/gopher-menu.gif
+lib/%%APP_NAME%%/res/html/gopher-movie.gif
+lib/%%APP_NAME%%/res/html/gopher-sound.gif
+lib/%%APP_NAME%%/res/html/gopher-telnet.gif
+lib/%%APP_NAME%%/res/html/gopher-text.gif
+lib/%%APP_NAME%%/res/html/gopher-unknown.gif
+lib/%%APP_NAME%%/res/langGroups.properties
+lib/%%APP_NAME%%/res/language.properties
+lib/%%APP_NAME%%/res/loading-image.gif
+lib/%%APP_NAME%%/res/mathml.css
+lib/%%APP_NAME%%/res/quirk.css
+lib/%%APP_NAME%%/res/svg.css
+lib/%%APP_NAME%%/res/table-add-column-after-active.gif
+lib/%%APP_NAME%%/res/table-add-column-after-hover.gif
+lib/%%APP_NAME%%/res/table-add-column-after.gif
+lib/%%APP_NAME%%/res/table-add-column-before-active.gif
+lib/%%APP_NAME%%/res/table-add-column-before-hover.gif
+lib/%%APP_NAME%%/res/table-add-column-before.gif
+lib/%%APP_NAME%%/res/table-add-row-after-active.gif
+lib/%%APP_NAME%%/res/table-add-row-after-hover.gif
+lib/%%APP_NAME%%/res/table-add-row-after.gif
+lib/%%APP_NAME%%/res/table-add-row-before-active.gif
+lib/%%APP_NAME%%/res/table-add-row-before-hover.gif
+lib/%%APP_NAME%%/res/table-add-row-before.gif
+lib/%%APP_NAME%%/res/table-remove-column-active.gif
+lib/%%APP_NAME%%/res/table-remove-column-hover.gif
+lib/%%APP_NAME%%/res/table-remove-column.gif
+lib/%%APP_NAME%%/res/table-remove-row-active.gif
+lib/%%APP_NAME%%/res/table-remove-row-hover.gif
+lib/%%APP_NAME%%/res/table-remove-row.gif
+lib/%%APP_NAME%%/res/ua.css
+lib/%%APP_NAME%%/res/unixcharset.properties
+lib/%%APP_NAME%%/res/viewsource.css
+lib/%%APP_NAME%%/run-mozilla.sh
+lib/%%APP_NAME%%/searchplugins/amazondotcom.png
+lib/%%APP_NAME%%/searchplugins/amazondotcom.src
+lib/%%APP_NAME%%/searchplugins/eBay.gif
+lib/%%APP_NAME%%/searchplugins/eBay.src
+lib/%%APP_NAME%%/searchplugins/google.gif
+lib/%%APP_NAME%%/searchplugins/google.src
+lib/%%APP_NAME%%/searchplugins/jeeves.gif
+lib/%%APP_NAME%%/searchplugins/jeeves.src
+lib/%%APP_NAME%%/searchplugins/shadows.gif
+lib/%%APP_NAME%%/searchplugins/shadows.src
+lib/%%APP_NAME%%/searchplugins/technorati.png
+lib/%%APP_NAME%%/searchplugins/technorati.src
+lib/%%APP_NAME%%/searchplugins/wikipedia.png
+lib/%%APP_NAME%%/searchplugins/wikipedia.src
+lib/%%APP_NAME%%/searchplugins/winkflock.png
+lib/%%APP_NAME%%/searchplugins/winkflock.src
+lib/%%APP_NAME%%/searchplugins/yahoo.gif
+lib/%%APP_NAME%%/searchplugins/yahoo.src
+lib/%%APP_NAME%%/updater
+lib/%%APP_NAME%%/updater.ini
+lib/%%APP_NAME%%/xpicleanup
+lib/%%APP_NAME%%/linkfarm
+@exec %%PREFIX%%/lib/%%APP_NAME%%/linkfarm
+@unexec /usr/bin/find %%PREFIX%%/lib/%%APP_NAME%%/plugins -type l -delete
+@dirrm lib/%%APP_NAME%%/searchplugins
+@dirrm lib/%%APP_NAME%%/defaults/autoconfig
+@dirrm lib/%%APP_NAME%%/defaults/pref
+@dirrm lib/%%APP_NAME%%/defaults/profile/chrome
+@dirrm lib/%%APP_NAME%%/defaults/profile
+@dirrm lib/%%APP_NAME%%/defaults
+@dirrm lib/%%APP_NAME%%/chrome/icons/default
+@dirrm lib/%%APP_NAME%%/chrome/icons
+@dirrm lib/%%APP_NAME%%/chrome
+@dirrm lib/%%APP_NAME%%/components/myspell
+@dirrm lib/%%APP_NAME%%/components
+@dirrm lib/%%APP_NAME%%/plugins
+@dirrm lib/%%APP_NAME%%/greprefs
+@dirrm lib/%%APP_NAME%%/icons
+@dirrm lib/%%APP_NAME%%/extensions/{b01bf10c-302a-11da-b67b-000d60ca027b}
+@dirrm lib/%%APP_NAME%%/extensions
+@dirrm lib/%%APP_NAME%%/res/entityTables
+@dirrm lib/%%APP_NAME%%/res/fonts
+@dirrm lib/%%APP_NAME%%/res/html
+@dirrm lib/%%APP_NAME%%/res/dtd
+@dirrm lib/%%APP_NAME%%/res
+@dirrm lib/%%APP_NAME%%
 @dirrmtry share/applications
