@@ -1,7 +1,7 @@
---- Makefile.orig	Mon Jan 29 15:10:42 2001
-+++ Makefile	Mon Jan 29 15:15:08 2001
-@@ -3,14 +3,14 @@
- # for mips, also use: -mips2 -O2
+--- Makefile.orig	Sun May  7 22:29:14 2006
++++ Makefile	Sun May  7 22:30:52 2006
+@@ -2,14 +2,14 @@
+ # for SGI also use: -signed
  #
  
 -CC= cc -O
@@ -13,13 +13,13 @@
 +CFLAGS+= -DUNIX -DBIGMEM -DSFCHAR="':'" -DEXPM1 -DPROGRESS -DGAP_OPEN
  LFLAGS= -lm -o
  
--BIN = /seqprg/slib/bin
+-BIN = /seqprg/bin
 +BIN = $(PREFIX)/bin
  #NRAND= nrand
  #IBM RS/6000
- NRAND= nrand48
+ #NRAND= nrand48
 @@ -29,7 +29,7 @@
- sall : $(SPROGS)
+ all : $(PROGS)
  
  install : 
 -	cp $(PROGS) $(BIN)

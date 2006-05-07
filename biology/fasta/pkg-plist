@@ -16,8 +16,6 @@ bin/align
 bin/align0
 bin/bestscor
 bin/crandseq
-bin/fasta
-bin/fastx
 bin/flalign
 bin/fromgb
 bin/garnier
@@ -26,15 +24,9 @@ bin/lalign
 bin/lfasta
 bin/plalign
 bin/plfasta
-bin/prdf
-bin/prss
 bin/psgrease
 bin/randseq
 bin/relate
 bin/revcomp
-bin/ssearch
-bin/tfasta
-bin/tfastx
 bin/tgrease
-bin/zs_exp
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
