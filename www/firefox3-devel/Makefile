@@ -33,8 +33,6 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GCC=	3.4+
 
-NO_LATEST_LINK=	yes
-
 GECKO_PLIST_PRE_FILES=	lib/${MOZILLA}/chrome/icons/default/default.xpm
 GECKO_PLIST_PRE_DIRS=	lib/${MOZILLA}/chrome/icons/default lib/${MOZILLA}/chrome/icons
 
