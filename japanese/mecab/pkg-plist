@@ -1,36 +1,30 @@
+lib/libmecab.la
+lib/libmecab.so.1
+lib/libmecab.so
+lib/libmecab.a
 bin/mecab
 bin/mecab-config
-bin/mkmecabdic
-etc/mecabrc
 include/mecab.h
-lib/libmecab.a
-lib/libmecab.so
-lib/libmecab.so.0
-lib/mecab/dic/ipadic/connect.csv
-lib/mecab/dic/ipadic/da.me
-lib/mecab/dic/ipadic/dic.csv
-lib/mecab/dic/ipadic/dicrc
-lib/mecab/dic/ipadic/feature.me
-lib/mecab/dic/ipadic/info.me
-lib/mecab/dic/ipadic/matrix.me
-lib/mecab/dic/ipadic/token.me
-@dirrm lib/mecab/dic/ipadic
-@dirrm lib/mecab/dic
-@dirrm lib/mecab
-%%PORTDOCS%%%%EXAMPLESDIR%%/a.out
-%%PORTDOCS%%%%EXAMPLESDIR%%/example-thread.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/example-thread2.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/example-win32-dll.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/example.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/example2.cpp
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+libexec/mecab/Util.pm
+libexec/mecab/mecab-cost-train
+libexec/mecab/mecab-dict-gen
+libexec/mecab/mecab-dict-index
+libexec/mecab/mecab-dict-info
+libexec/mecab/mecab-system-eval
+libexec/mecab/mecab-test-gen
+libexec/mecab/mecab-tool
+etc/mecabrc
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/bindings.html
+%%PORTDOCS%%%%DOCSDIR%%/dic-detail.html
 %%PORTDOCS%%%%DOCSDIR%%/dic.html
+%%PORTDOCS%%%%DOCSDIR%%/feature.html
 %%PORTDOCS%%%%DOCSDIR%%/format.html
 %%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/learn.html
 %%PORTDOCS%%%%DOCSDIR%%/libmecab.html
-%%PORTDOCS%%%%DOCSDIR%%/mecab.css
 %%PORTDOCS%%%%DOCSDIR%%/mecab.html
+%%PORTDOCS%%%%DOCSDIR%%/soft.html
+%%PORTDOCS%%%%DOCSDIR%%/unk.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
