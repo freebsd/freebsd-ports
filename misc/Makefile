@@ -157,6 +157,7 @@
     SUBDIR += instant-server
     SUBDIR += instant-tinderbox
     SUBDIR += instant-workstation
+    SUBDIR += ipbt
     SUBDIR += iselect
     SUBDIR += iso-codes
     SUBDIR += jargon
