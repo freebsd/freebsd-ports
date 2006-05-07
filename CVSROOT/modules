@@ -14246,6 +14246,7 @@ xpi-colorfultabs	ports/www/xpi-colorfultabs
 xpi-fasterfox	ports/www/xpi-fasterfox
 xpi-noscript	ports/www/xpi-noscript
 xpi-pdf_download	ports/www/xpi-pdf_download
+xpi-server_switcher	ports/www/xpi-server_switcher
 xpi-tabmixplus	ports/www/xpi-tabmixplus
 xpi-unplug	ports/www/xpi-unplug
 xpilot		ports/games/xpilot
