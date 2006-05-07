@@ -1,0 +1,151 @@
+--- Makefile.linux.orig	Wed Sep  7 20:11:50 2005
++++ Makefile.linux	Sun Jan 15 01:54:54 2006
+@@ -4,14 +4,25 @@
+ # by Slawomir Mazurek <homer13@o2.pl>
+ #
+ 
+-CC 		:= gcc
+-_E 		:= @
++# this nice line comes from the linux kernel makefile
++ARCH := $(shell uname -m | sed -e s/i.86/i386/ -e s/sun4u/sparc/ -e s/sparc64/sparc/ -e s/arm.*/arm/ -e s/sa110/arm/ -e s/alpha/axp/)
++OSTYPE := $(shell uname -s)
++
++CC 		?= gcc
++#_E 		:= @
++LOCALBASE 	?= /usr/local
++X11BASE 	?= /usr/X11R6
++USE_OPTIMIZE 	?= YES
++
++ifeq ($(ARCH),i386)
++USE_X86_ASM 	?= YES
++else
++USE_X86_ASM 	?= NO
++endif
+ 
+ ################
+ 
+-default_target: glx
+-
+-all: glx x11 svga
++all:
+ 
+ ################################
+ # Directories for object files #
+@@ -43,11 +54,12 @@
+ $(GLX_DIR) $(X11_DIR) $(SVGA_DIR):
+ 	$(MKDIR)
+ 
+-CFLAGS += -Did386	-funsigned-char		-O6 \
+-	-D__linux__	-march=pentiumpro	-Wall \
+-	-funroll-loops	-fomit-frame-pointer	-DNDEBUG \
+-	-ffast-math	-fno-strength-reduce	-fexpensive-optimizations \
+-	-I/usr/include
++CFLAGS += -DNDEBUG -DDATADIR='"$(DATADIR)"'
++
++ifeq ($(strip $(USE_OPTIMIZE)),YES)
++CFLAGS += -O1 -funsigned-char -funroll-loops -fomit-frame-pointer \
++	  -ffast-math -fno-strength-reduce -fexpensive-optimizations
++endif
+ 
+ LDFLAGS := -lm
+ 
+@@ -75,19 +87,25 @@
+ 	image		version		security	iplog \
+ 	slist
+ 
++ifeq ($(strip $(USE_X86_ASM)),YES)
+ GLX_S_FILES := \
+ 	math		snd_mixa	sys_x86
++endif
+ 
+ GLX_C_OBJS := $(addprefix $(GLX_DIR)/, $(addsuffix .o, $(GLX_C_FILES)))
+ GLX_S_OBJS := $(addprefix $(GLX_DIR)/, $(addsuffix .o, $(GLX_S_FILES)))
+ 
+ GLX_CFLAGS := $(CFLAGS) \
+-	-DGLQUAKE	-I/usr/X11R6/include
++	-DGLQUAKE	-I$(X11BASE)/include
++
++ifeq ($(strip $(USE_X86_ASM)),YES)
++GLX_CFLAGS += -Did386
++endif
+ 
+ GLX_LDFLAGS := $(LDFLAGS) \
+-	-lGL		-L/usr/X11R6/lib	-lX11 \
+-	-lXext		-lXxf86dga		-lXxf86vm \
+-	-lpng		-ljpeg
++	-L$(X11BASE)/lib	-lGL		-lX11 \
++	-lXext			-lXxf86dga	-lXxf86vm \
++	-L$(LOCALBASE)/lib	-lpng		-ljpeg
+ 
+ glx: _DIR := $(GLX_DIR)
+ glx: _OBJS := $(GLX_C_OBJS) $(GLX_S_OBJS)
+@@ -138,27 +156,37 @@
+ 	snd_linux	image		version		security \
+ 	iplog		slist
+ 
++ifeq ($(strip $(USE_X86_ASM)),YES)
+ X11_S_FILES := \
+ 	d_copy		d_draw		d_draw16	d_parta \
+ 	d_polysa	d_scana		d_spr8		d_varsa \
+ 	math		r_aclipa	r_aliasa	r_drawa \
+ 	r_edgea		r_varsa		snd_mixa	surf8 \
+ 	sys_x86
++endif
+ 
+ X11_C_OBJS := $(addprefix $(X11_DIR)/, $(addsuffix .o, $(X11_C_FILES)))
+ X11_S_OBJS := $(addprefix $(X11_DIR)/, $(addsuffix .o, $(X11_S_FILES)))
+ 
+-X11_CFLAGS := $(CFLAGS)
++X11_CFLAGS := $(CFLAGS) -I$(X11BASE)/include
++
++ifeq ($(strip $(USE_X86_ASM)),YES)
++X11_CFLAGS += -Did386
++endif
+ 
+ X11_LDFLAGS := $(LDFLAGS) \
+-	-L/usr/X11R6/lib	-lX11		-lXext \
+-	-lpng
++	-L$(X11BASE)/lib	-lX11		-lXext \
++	-L$(LOCALBASE)/lib	-lpng
+ 
++ifeq ($(ARCH),i386)
+ x11: _DIR := $(X11_DIR)
+ x11: _OBJS := $(X11_C_OBJS) $(X11_S_OBJS)
+ x11: _LDFLAGS := $(X11_LDFLAGS)
+ x11: _CFLAGS := $(X11_CFLAGS)
+ x11: $(X11_TARGET)
++else
++x11:
++endif
+ 
+ $(X11_TARGET): $(X11_DIR) $(X11_C_OBJS) $(X11_S_OBJS)
+ 	$(BUILD)
+@@ -213,17 +241,25 @@
+ SVGA_C_OBJS := $(addprefix $(SVGA_DIR)/, $(addsuffix .o, $(SVGA_C_FILES)))
+ SVGA_S_OBJS := $(addprefix $(SVGA_DIR)/, $(addsuffix .o, $(SVGA_S_FILES)))
+ 
+-SVGA_CFLAGS := $(CFLAGS)
++SVGA_CFLAGS := $(CFLAGS) -Did386 -I$(LOCALBASE)/include
+ 
+ SVGA_LDFLAGS := $(LDFLAGS) \
+-	-L/usr/X11R6/lib	-lX11		-lpthread \
+-	-lvga			-lpng
++	-L$(X11BASE)/lib	-lX11		-lpthread \
++	-L$(LOCALBASE)/lib	-lvga		-lpng
+ 
++ifeq ($(OSTYPE),Linux)
++  ifeq ($(ARCH),i386)
+ svga: _DIR := $(SVGA_DIR)
+ svga: _OBJS := $(SVGA_C_OBJS) $(SVGA_S_OBJS)
+ svga: _LDFLAGS := $(SVGA_LDFLAGS)
+ svga: _CFLAGS := $(SVGA_CFLAGS)
+ svga: $(SVGA_TARGET)
++  else
++svga:
++  endif
++else
++svga:
++endif
+ 
+ $(SVGA_TARGET): $(SVGA_DIR) $(SVGA_C_OBJS) $(SVGA_S_OBJS)
+ 	$(BUILD)
