@@ -1,0 +1,61 @@
+--- utils/Makefile.in.orig	Sat May  6 22:21:41 2006
++++ utils/Makefile.in	Sat May  6 22:22:56 2006
+@@ -61,42 +61,35 @@ am_pdffonts_OBJECTS = pdffonts.$(OBJEXT)
+ pdffonts_OBJECTS = $(am_pdffonts_OBJECTS)
+ pdffonts_LDADD = $(LDADD)
+ am__DEPENDENCIES_1 =
+-pdffonts_DEPENDENCIES = $(top_builddir)/poppler/libpoppler.la \
+-	$(am__DEPENDENCIES_1)
++pdffonts_DEPENDENCIES = $(am__DEPENDENCIES_1)
+ am_pdfimages_OBJECTS = pdfimages.$(OBJEXT) ImageOutputDev.$(OBJEXT) \
+ 	$(am__objects_1)
+ pdfimages_OBJECTS = $(am_pdfimages_OBJECTS)
+ pdfimages_LDADD = $(LDADD)
+-pdfimages_DEPENDENCIES = $(top_builddir)/poppler/libpoppler.la \
+-	$(am__DEPENDENCIES_1)
++pdfimages_DEPENDENCIES = $(am__DEPENDENCIES_1)
+ am_pdfinfo_OBJECTS = pdfinfo.$(OBJEXT) $(am__objects_1)
+ pdfinfo_OBJECTS = $(am_pdfinfo_OBJECTS)
+ pdfinfo_LDADD = $(LDADD)
+-pdfinfo_DEPENDENCIES = $(top_builddir)/poppler/libpoppler.la \
+-	$(am__DEPENDENCIES_1)
++pdfinfo_DEPENDENCIES = $(am__DEPENDENCIES_1)
+ am_pdftohtml_OBJECTS = pdftohtml.$(OBJEXT) HtmlFonts.$(OBJEXT) \
+ 	HtmlLinks.$(OBJEXT) HtmlOutputDev.$(OBJEXT) $(am__objects_1)
+ pdftohtml_OBJECTS = $(am_pdftohtml_OBJECTS)
+ pdftohtml_LDADD = $(LDADD)
+-pdftohtml_DEPENDENCIES = $(top_builddir)/poppler/libpoppler.la \
+-	$(am__DEPENDENCIES_1)
++pdftohtml_DEPENDENCIES = $(am__DEPENDENCIES_1)
+ am__pdftoppm_SOURCES_DIST = pdftoppm.cc parseargs.c parseargs.h
+ @BUILD_SPLASH_OUTPUT_TRUE@am_pdftoppm_OBJECTS = pdftoppm.$(OBJEXT) \
+ @BUILD_SPLASH_OUTPUT_TRUE@	$(am__objects_1)
+ pdftoppm_OBJECTS = $(am_pdftoppm_OBJECTS)
+ pdftoppm_LDADD = $(LDADD)
+-pdftoppm_DEPENDENCIES = $(top_builddir)/poppler/libpoppler.la \
+-	$(am__DEPENDENCIES_1)
++pdftoppm_DEPENDENCIES = $(am__DEPENDENCIES_1)
+ am_pdftops_OBJECTS = pdftops.$(OBJEXT) $(am__objects_1)
+ pdftops_OBJECTS = $(am_pdftops_OBJECTS)
+ pdftops_LDADD = $(LDADD)
+-pdftops_DEPENDENCIES = $(top_builddir)/poppler/libpoppler.la \
+-	$(am__DEPENDENCIES_1)
++pdftops_DEPENDENCIES = $(am__DEPENDENCIES_1)
+ am_pdftotext_OBJECTS = pdftotext.$(OBJEXT) $(am__objects_1)
+ pdftotext_OBJECTS = $(am_pdftotext_OBJECTS)
+ pdftotext_LDADD = $(LDADD)
+-pdftotext_DEPENDENCIES = $(top_builddir)/poppler/libpoppler.la \
+-	$(am__DEPENDENCIES_1)
++pdftotext_DEPENDENCIES = $(am__DEPENDENCIES_1)
+ DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir) -I$(top_builddir)/poppler
+ depcomp = $(SHELL) $(top_srcdir)/depcomp
+ am__depfiles_maybe = depfiles
+@@ -294,7 +287,7 @@ INCLUDES = \
+ 	$(UTILS_CFLAGS)
+ 
+ LDADD = \
+-	$(top_builddir)/poppler/libpoppler.la	\
++	-lpoppler				\
+ 	$(UTILS_LIBS)
+ 
+ 
