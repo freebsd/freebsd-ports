@@ -34,10 +34,8 @@ MKISOFSDOCS=	README README.compression README.eltorito README.graft_dirs \
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-MAKE_ENV=	CCOM=${CC} LANG=C
 #CFLAGS+=	-DSOURCE_MODIFIED
 PKGMESSAGE=	${WRKDIR}/pkg-message
-CDRTLSTARGET=	${ARCH}-freebsd-${CC}
 
 .if defined(WITH_RSCSI)
 PKGINSTALL=	${PKGDIR}/pkg-install.rscsi
@@ -48,6 +46,10 @@ PLIST_SUB=	RSCSI="@comment "
 .endif
 
 .include <bsd.port.pre.mk>
+
+CCOM!=		${BASENAME} ${CC}
+MAKE_ENV=	CCOM=${CCOM} LANG=C
+CDRTLSTARGET=	${ARCH}-freebsd-${CCOM}
 
 .if ${OSVERSION} >= 501104 && ${OSVERSION} < 502113
 IGNORE=		The mlockall(2) of your FreeBSD 5.x version causes problems when used by cdrecord. Please update FreeBSD to >= 5.3 in order to use this port
@@ -81,7 +83,7 @@ post-extract:
 	@${CP} ${PORTSDIR}/Templates/${i} ${WRKSRC}/conf
 	@${CP} ${PORTSDIR}/Templates/${i} ${WRKSRC}/cdda2wav
 .endfor
-.if ${ARCH} != "i386" || ${CC} != "cc"
+.if ${CDRTLSTARGET} != "i386-freebsd-cc"
 	@${LN} -sf ${WRKSRC}/RULES/i386-freebsd-cc.rul \
 		${WRKSRC}/RULES/${CDRTLSTARGET}.rul
 .endif
