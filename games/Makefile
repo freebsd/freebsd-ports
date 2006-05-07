@@ -626,6 +626,7 @@
     SUBDIR += tractorgen
     SUBDIR += traindirector
     SUBDIR += trigger
+    SUBDIR += trimines
     SUBDIR += trojka
     SUBDIR += trophy
     SUBDIR += tsito
