@@ -2425,6 +2425,7 @@ firebird-client	ports/databases/firebird-client
 firebird-devel	ports/databases/firebird-devel
 firebird-server	ports/databases/firebird-server
 firedns		ports/dns/firedns
+fireflies	ports/x11/fireflies
 firefox		ports/www/firefox
 firefox-devel	ports/www/firefox-devel
 firefox-flp	ports/www/firefox-flp
