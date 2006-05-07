@@ -11,7 +11,7 @@
 -        print "connecting using xvncviewer"
 -	cmdline = ["xvncviewer", "-xrm", "*passwordDialog:true", hostname ]
 +        print "connecting using vncviewer"
-+	cmdline = ["vncviewer", "-xrm", "*passwordDialog:true",]
++	cmdline = ["vncviewer", "-xrm", "*passwordDialog:true", hostname]
  	print cmdline
  	pid = subprocess.Popen(cmdline, close_fds=True).pid
  
