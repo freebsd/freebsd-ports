@@ -1,0 +1,3 @@
+Logserial stores data received from serial device in a file.  Upon receiving
+SIGHUP it reopens the file, thus allowing automated rotation of logs. One
+possible application of logserial is to save logs of PBX.

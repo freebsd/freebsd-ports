@@ -297,6 +297,7 @@
     SUBDIR += log_analysis
     SUBDIR += logmon
     SUBDIR += logrotate
+    SUBDIR += logserial
     SUBDIR += logtool
     SUBDIR += logtool-devel
     SUBDIR += lookat
