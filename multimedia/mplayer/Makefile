@@ -270,7 +270,7 @@
 
 PORTNAME=	mplayer
 PORTVERSION=	0.99.7
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	multimedia audio ipv6
 MASTER_SITES=	http://www1.mplayerhq.hu/MPlayer/releases/ \
 		http://www2.mplayerhq.hu/MPlayer/releases/ \
@@ -403,7 +403,7 @@ WITH_MAD=	yes
 WITH_SVGALIB=	yes
 .endif
 
-.if exists(${LOCALBASE}/lib/libtheora.so.1)
+.if exists(${LOCALBASE}/lib/libtheora.so.2)
 WITH_THEORA=	yes
 .endif
 
@@ -686,7 +686,7 @@ LIB_DEPENDS+=	aa.1:${PORTSDIR}/graphics/aalib
 .endif
 
 .if defined(WITH_THEORA)
-LIB_DEPENDS+=	theora.1:${PORTSDIR}/multimedia/libtheora
+LIB_DEPENDS+=	theora.2:${PORTSDIR}/multimedia/libtheora
 .else
 CONFIGURE_ARGS+=	--disable-theora
 .endif

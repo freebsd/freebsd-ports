@@ -7,7 +7,7 @@
 
 PORTNAME=	transcode
 PORTVERSION=	1.0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://dl.fkb.wormulon.net/transcode/ \
 		http://dl.kel.wormulon.net/transcode/ \
@@ -27,7 +27,6 @@ USE_GETOPT_LONG=yes
 USE_XLIB=	yes
 USE_GNOME=	gtk12
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 WANT_SDL=	yes
 USE_AUTOTOOLS=	libtool:15
@@ -159,7 +158,7 @@ CONFIGURE_ARGS+=	--enable-vorbis=no
 .endif
 
 .if defined(WITH_THEORA)
-LIB_DEPENDS+=	theora.1:${PORTSDIR}/multimedia/libtheora
+LIB_DEPENDS+=	theora.2:${PORTSDIR}/multimedia/libtheora
 CONFIGURE_ARGS+=	--with-theora-prefix=${LOCALBASE} --enable-theora
 .else
 CONFIGURE_ARGS+=	--enable-theora=no

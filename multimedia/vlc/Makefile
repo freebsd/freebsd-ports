@@ -224,7 +224,7 @@
 
 PORTNAME=	vlc
 PORTVERSION=	0.8.4a
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download2.videolan.org/pub/videolan/testing/${PORTNAME}-${DISTVERSION}/ \
 		http://download.videolan.org/pub/videolan/vlc/${PORTVERSION}/ \
@@ -254,7 +254,6 @@ USE_GETTEXT=	yes
 USE_GMAKE=	yes
 WANT_GNOME=	yes
 USE_GNOME=	gnometarget libxml2
-USE_REINPLACE=	yes
 WANT_SDL=	yes
 USE_ICONV=	yes
 USE_PERL5_BUILD=yes
@@ -280,7 +279,7 @@ MAN1=		vlc.1 \
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_VLC_MOZILLA_PLUGIN) && !defined(WITHOUT_VLC_MOZILLA_PLUGIN)
-USE_GECKO=      firefox mozilla seamonkey nvu
+USE_GECKO=	firefox mozilla seamonkey nvu
 .include "${.CURDIR}/../../www/mozilla/bsd.gecko.mk"
 CONFIGURE_ENV+=	MOZILLA_CONFIG="${GECKO_CONFIG}" \
 		XPIDL="${XPIDL}" \
@@ -299,7 +298,7 @@ CPPFLAGS+=	-I${X11BASE}/include/wx-2.6/
 .endif
 
 .if ${PERL_LEVEL} < 500800
-BROKEN=	"Does not compile with perl ${PERL_VERSION}"
+BROKEN=	does not compile with perl ${PERL_VERSION}
 .endif
 
 .if ${ARCH}=="amd64"
@@ -586,7 +585,7 @@ CONFIGURE_ARGS+=	--enable-real
 .endif
 
 .if (defined(WITH_THEORA) || exists(${LOCALBASE}/lib/libtheora.a)) && !defined(WITHOUT_THEORA)
-LIB_DEPENDS+=	theora.1:${PORTSDIR}/multimedia/libtheora
+LIB_DEPENDS+=	theora.2:${PORTSDIR}/multimedia/libtheora
 CONFIGURE_ARGS+=--enable-theora
 .else
 CONFIGURE_ARGS+=--disable-theora

@@ -292,7 +292,7 @@ CONFIGURE_ARGS+=	--disable-ffplay
 .endif
 ## theora
 .ifdef(WITH_THEORA)
-LIB_DEPENDS+=		theora.1:${PORTSDIR}/multimedia/libtheora
+LIB_DEPENDS+=		theora.2:${PORTSDIR}/multimedia/libtheora
 
 CONFIGURE_ARGS+=	--enable-theora
 .endif

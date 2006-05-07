@@ -313,7 +313,7 @@ LIB_DEPENDS+=	speex.3:${PORTSDIR}/audio/speex
 
 # theora
 .if ${GST_PLUGIN}=="theora"
-LIB_DEPENDS+=	theora.1:${PORTSDIR}/multimedia/libtheora
+LIB_DEPENDS+=	theora.2:${PORTSDIR}/multimedia/libtheora
 DIST=	base
 .endif
 
