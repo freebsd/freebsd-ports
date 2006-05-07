@@ -1,0 +1,9 @@
+bin/ohphone
+%%EXAMPLESDIR%%/%%PORTNAME%%/check_listen.awk
+%%EXAMPLESDIR%%/%%PORTNAME%%/regtest
+%%EXAMPLESDIR%%/%%PORTNAME%%/stresstest
+@dirrm %%EXAMPLESDIR%%/%%PORTNAME%%
+@dirrmtry %%EXAMPLESDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/%%PORTNAME%%/ReadMe.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/%%PORTNAME%%
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
