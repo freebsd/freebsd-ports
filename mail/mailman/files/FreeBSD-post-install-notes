@@ -21,9 +21,7 @@ VERY IMPORTANT NOTE
 The Mailman port has a number of build time options.  Getting the values of
 some of these right is CRUCIAL if you want your Mailman installation to work!
 
-To see a list of build time options, go to the Mailman port's directory
-(/usr/ports/mail/mailman by default) and perform a "make options".
-
+To see a list of build time options, edit your port Makefile.
 
 1) General post-installation instructions
 
