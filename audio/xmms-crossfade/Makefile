@@ -15,7 +15,7 @@ MASTER_SITES=	http://www.eisenlohr.org/xmms-crossfade/ \
 PKGNAMEPREFIX=	${APP}-
 DISTNAME=	xmms-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	infofarmer@gmail.com
+MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	A Crossfading/Gapless Plugin
 
 LIB_DEPENDS?=	xmms.4:${PORTSDIR}/multimedia/xmms

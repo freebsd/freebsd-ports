@@ -1,6 +1,6 @@
 # New ports collection makefile for:	linux-hicolor-icon-theme
 # Date created:		7 February 2006
-# Whom:			Andrew Pantyukhin <infofarmer@gmail.com>
+# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ MASTER_SITES=	# empty
 PKGNAMEPREFIX=	linux-
 DISTFILES=	# empty
 
-MAINTAINER=	infofarmer@gmail.com
+MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	A high-color icon theme shell from the FreeDesktop project
 
 RUN_DEPENDS=	${X11BASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme

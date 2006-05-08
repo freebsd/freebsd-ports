@@ -1,6 +1,6 @@
 # New ports collection makefile for:	xmms-modplug
 # Date created:		8 January 2006
-# Whom:			Andrew Pantyukhin <infofarmer@gmail.com>
+# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}-${PKGNAMEPREFIX:S/-//}
 PKGNAMEPREFIX=	xmms-
 DISTNAME=	${PORTNAME}${PKGNAMEPREFIX}2.05
 
-MAINTAINER=	infofarmer@gmail.com
+MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	A modplug-based plugin for XMMS
 
 LIB_DEPENDS?=	xmms.4:${PORTSDIR}/multimedia/xmms

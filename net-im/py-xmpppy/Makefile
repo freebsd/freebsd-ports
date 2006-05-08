@@ -1,6 +1,6 @@
 # Ports collection makefile for:	py-xmpppy
 # Date created:				21 April 2006
-# Whom:					Andrew Pantyukhin <infofarmer@gmail.com>
+# Whom:					Andrew Pantyukhin <infofarmer@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	infofarmer@gmail.com
+MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	A Python library that provides easy scripting with Jabber
 
 USE_PYTHON=	2.3+

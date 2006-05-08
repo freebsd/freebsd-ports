@@ -1,6 +1,6 @@
 # New ports collection makefile for:	linux-flock
 # Date created:		30 March 2006
-# Whom:			Andrew Pantyukhin <infofarmer@gmail.com>
+# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -16,7 +16,7 @@ MASTER_SITES=	http://ftp.acc.umu.se/mirror/%SUBDIR%/ \
 		ftp://ftp.mozilla.org/pub/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}/releases/${PORTVERSION:R}
 
-MAINTAINER=	infofarmer@gmail.com
+MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	The free web browser that makes it easier to share with your friends
 
 .include "${.CURDIR}/../linux-seamonkey/Makefile.common"

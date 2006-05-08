@@ -1,6 +1,6 @@
 # New ports collection makefile for:	xpi-tabmixplus
 # Date created:		29 March 2006
-# Whom:			Andrew Pantyukhin <infofarmer@gmail.com>
+# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -10,7 +10,7 @@ PORTVERSION=	0.3.0.5
 DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 
-MAINTAINER=	infofarmer@gmail.com
+MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	An extension that enhances tab browsing capabilities
 
 XPI_ID=		{dc572301-7619-498c-a57d-39143191b318}

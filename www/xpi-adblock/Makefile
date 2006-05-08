@@ -1,6 +1,6 @@
 # New ports collection makefile for:	xpi-adblock
 # Date created:		28 March 2006
-# Whom:			Andrew Pantyukhin <infofarmer@gmail.com>
+# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -10,7 +10,7 @@ PORTVERSION=	0.5.3.042
 DISTVERSIONSUFFIX=	-fx+fl+mz+ns
 CATEGORIES=	www
 
-MAINTAINER=	infofarmer@gmail.com
+MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	A content filtering extension
 
 XPI_ID=		{34274bf4-1d97-a289-e984-17e546307e4f}

@@ -1,6 +1,6 @@
 # New ports collection makefile for:	bmp-crossfade
 # Date created:		1 January 2006
-# Whom:			Andrew Pantyukhin <infofarmer@gmail.com>
+# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
 #
 # $FreeBSD$
 #

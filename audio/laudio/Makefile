@@ -1,6 +1,6 @@
 # New ports collection makefile for:	laudio
 # Date created:		18 October 2005
-# Whom:			Andrew Pantyukhin <infofarmer@gmail.com>
+# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.lossless-audio.com/ \
 		http://www.csme.ru/filez/
 DISTNAME=	la04
 
-MAINTAINER=	infofarmer@gmail.com
+MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	A free lossless audio codec
 
 ONLY_FOR_ARCHS=	amd64 i386

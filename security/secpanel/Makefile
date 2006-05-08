@@ -15,7 +15,7 @@ MASTER_SITES=	http://www.pingx.net/secpanel/ \
 		http://bsd2.csme.ru/myports/ \
 		http://bsd3.csme.ru/myports/
 
-MAINTAINER=	infofarmer@gmail.com
+MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	GUI for managing and running ssh and related utilities
 
 RUN_DEPENDS=	ssh-askpass:${PORTSDIR}/security/openssh-askpass

@@ -13,7 +13,7 @@ MASTER_SITES=	http://stuff.myrealm.co.uk/htx/ \
 		http://bsd2.csme.ru/myports/ \
 		http://bsd3.csme.ru/myports/
 
-MAINTAINER=	infofarmer@gmail.com
+MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	HTML to XHTML converter
 
 USE_PERL5=	yes

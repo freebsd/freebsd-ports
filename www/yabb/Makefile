@@ -1,6 +1,6 @@
 # New ports collection makefile for:	yabb
 # Date created:		20 October 2005
-# Whom:			Andrew Pantyukhin <infofarmer@gmail.com>
+# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	YaBB_${PORTVERSION}
 
-MAINTAINER=	infofarmer@gmail.com
+MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	The original free open-source forum written in Perl
 
 NO_PACKAGE=	complicated (de)installation paradigm

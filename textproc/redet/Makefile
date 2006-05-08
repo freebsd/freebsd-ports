@@ -14,7 +14,7 @@ MASTER_SITES=	http://bsd1.csme.ru/myports/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	vsevolod
 
-MAINTAINER=	infofarmer@gmail.com
+MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Visual regexp constructors with many regexp types support
 
 RUN_DEPENDS=	${LOCALBASE}/lib/iwidgets/iwidgets.tcl:${PORTSDIR}/x11-toolkits/iwidgets

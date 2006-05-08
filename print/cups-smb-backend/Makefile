@@ -1,6 +1,6 @@
 # New ports collection makefile for:	cups-smb-backend
 # Date created:		12 November 2005
-# Whom:			Andrew Pantyukhin <infofarmer@gmail.com>
+# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=	print
 MASTER_SITES=	# empty
 DISTFILES=	# empty
 
-MAINTAINER=	infofarmer@gmail.com
+MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	A CUPS backend for printing to Windows servers
 
 RUN_DEPENDS=	smbspool:${PORTSDIR}/net/samba3 \

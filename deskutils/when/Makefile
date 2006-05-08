@@ -1,6 +1,6 @@
 # New ports collection makefile for:	when
 # Date created:		1 May 2006
-# Whom:			Andrew Pantyukhin <infofarmer@gmail.com>
+# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ MASTER_SITES=	http://bsd1.csme.ru/myports/ \
 		http://bsd2.csme.ru/myports/ \
 		http://bsd3.csme.ru/myports/
 
-MAINTAINER=	infofarmer@gmail.com
+MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	A very simple personal calendar
 
 USE_BZIP2=	yes
