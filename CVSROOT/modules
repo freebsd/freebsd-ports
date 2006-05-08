@@ -11842,6 +11842,7 @@ rubygem-actionpack	ports/www/rubygem-actionpack
 rubygem-actionwebservice	ports/www/rubygem-actionwebservice
 rubygem-activerecord	ports/databases/rubygem-activerecord
 rubygem-activesupport	ports/devel/rubygem-activesupport
+rubygem-bluecloth	ports/www/rubygem-bluecloth
 rubygem-capistrano	ports/sysutils/rubygem-capistrano
 rubygem-colortools	ports/print/rubygem-colortools
 rubygem-event-loop	ports/devel/rubygem-event-loop
