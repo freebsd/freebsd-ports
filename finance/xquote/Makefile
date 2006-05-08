@@ -5,13 +5,13 @@
 # $FreeBSD$
 
 PORTNAME=	xquote
-PORTVERSION=	2.6.9
+PORTVERSION=	2.6.10
 CATEGORIES=	finance
 MASTER_SITES=	http://xinvest.sunsite.dk/	\
 		${MASTER_SITE_XCONTRIB}
-MASTER_SITE_SUBDIR= applications
+MASTER_SITE_SUBDIR=	applications
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	A quote retrieval tool for X
 
 LIB_DEPENDS=	Xbae.4:${PORTSDIR}/x11-toolkits/xbae
