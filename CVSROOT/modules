@@ -14136,6 +14136,7 @@ xmms-infinity	ports/graphics/xmms-infinity
 xmms-infopipe	ports/audio/xmms-infopipe
 xmms-iris	ports/graphics/xmms-iris
 xmms-jack	ports/audio/xmms-jack
+xmms-jackasyn	ports/audio/xmms-jackasyn
 xmms-jess	ports/graphics/xmms-jess
 xmms-kde	ports/audio/xmms-kde
 xmms-kj		ports/audio/xmms-kj
