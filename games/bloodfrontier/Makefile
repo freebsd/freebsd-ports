@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	sauerbraten
-PORTVERSION=	20060320
+PORTVERSION=	20060426
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sauerbraten
-DISTNAME=	${PORTNAME}_2006_03_20_shader_edition_linux
+DISTNAME=	${PORTNAME}_2006_04_26_occlusion_edition_linux
 
 MAINTAINER=	acardenas@bsd.org.pe
 COMMENT=	First person shooter based on Cube
