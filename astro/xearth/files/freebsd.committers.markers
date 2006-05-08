@@ -139,7 +139,6 @@
  41.6666,	2.3333,		"jesusr"			# Barcelona, Spain
  48.87,		2.33,		"dumbbell,cognet"	align=left	# Paris, France
  48.847135,	2.28514,	"mat"				# Paris, France
- 49.005858,	2.267550,	"flz"				# Saint Prix, France
  48.8391,	2.265565,	"roberto"	align=left	# Paris, France
  48.912,	2.256,		"mich"		align=left	# La Garenne-Colombes, France
  48.836,	2.242,		"blackend"	align=left	# Boulogne-Billancourt, France
@@ -163,6 +162,7 @@
  55.87,		-4.26,		"roger"				# Glasgow, UK
  56.0,		-4.5,		"gary"		align=left	# Glasgow, UK
  53.20,		-6.15,		"dwmalone"	align=left	# Dublin, Ireland
+ 53.286499,	-6.196429,	"flz"				# Stillorgan, Co. Dublin, Ireland
  53.65,		-6.67,		"peadar"	align=above	# Navan, Co. Meath, Ireland
 -15.8,		-47.9,		"lioux"				# Brasilia, DF, Brazil
 -15.8,		-47.9,		"dcs"				# Brasilia, DF, Brazil
