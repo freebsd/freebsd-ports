@@ -355,6 +355,7 @@
     SUBDIR += lincity-ng
     SUBDIR += linux-alienarena
     SUBDIR += linux-americasarmy
+    SUBDIR += linux-doom3
     SUBDIR += linux-doom3-demo
     SUBDIR += linux-enemyterritory
     SUBDIR += linux-enemyterritory-fortress
