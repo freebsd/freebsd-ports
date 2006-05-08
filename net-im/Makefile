@@ -11,6 +11,7 @@
     SUBDIR += ccmsn
     SUBDIR += centericq
     SUBDIR += cicquin
+    SUBDIR += cjc
     SUBDIR += coccinella
     SUBDIR += convey
     SUBDIR += echat
