@@ -1,6 +1,7 @@
 bin/leafpad
 share/gnome/applications/leafpad.desktop
 share/gnome/pixmaps/leafpad.png
+share/gnome/pixmaps/leafpad.xpm
 share/locale/bg/LC_MESSAGES/leafpad.mo
 share/locale/ca/LC_MESSAGES/leafpad.mo
 share/locale/cs/LC_MESSAGES/leafpad.mo

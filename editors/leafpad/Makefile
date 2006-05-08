@@ -1,4 +1,4 @@
-# New ports collection makefile for:	Leafpad
+# New ports collection makefile for:	leafpad
 # Date created:				2004-10-18
 # Whom:					Michael Johnson <ahze@ahze.net>
 #
@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	leafpad
-PORTVERSION=	0.8.4
-PORTREVISION=	1
+PORTVERSION=	0.8.9
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,6 +17,7 @@ COMMENT=	GTK+ based simple text editor
 USE_GNOME=	gtk20 gnomehier desktopfileutils intlhack
 USE_GCC=	3.4
 USE_GETOPT_LONG=	yes
+USE_GETTEXT=	YES
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
@@ -27,9 +27,7 @@ CONFIGURE_ARGS=	--enable-chooser
 CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}
 
-.if !defined(NOPORTDOCS)
 PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL README
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/pixmaps|/gnome/pixmaps|; \
@@ -38,10 +36,8 @@ post-patch:
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for i in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
-.endfor
+	@${INSTALL} -d ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
 .endif
 	-@update-desktop-database
 
