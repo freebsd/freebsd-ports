@@ -55,21 +55,21 @@ share/gnome/workrave/images/workrave-icon-small.png
 share/gnome/workrave/images/workrave-quiet-icon-medium.png
 share/gnome/workrave/images/workrave-suspended-icon-medium.png
 share/gnome/workrave/images/workrave.png
-share/locale/cs/LC_MESSAGES/workrave.po
-share/locale/da/LC_MESSAGES/workrave.po
-share/locale/de/LC_MESSAGES/workrave.po
-share/locale/eo/LC_MESSAGES/workrave.po
-share/locale/es/LC_MESSAGES/workrave.po
-share/locale/eu/LC_MESSAGES/workrave.po
-share/locale/fr/LC_MESSAGES/workrave.po
-share/locale/he/LC_MESSAGES/workrave.po
-share/locale/lt/LC_MESSAGES/workrave.po
-share/locale/nl/LC_MESSAGES/workrave.po
-share/locale/no/LC_MESSAGES/workrave.po
-share/locale/pl/LC_MESSAGES/workrave.po
-share/locale/pt_BR/LC_MESSAGES/workrave.po
-share/locale/ru/LC_MESSAGES/workrave.po
-share/locale/zh_TW/LC_MESSAGES/workrave.po
+share/locale/cs/LC_MESSAGES/workrave.mo
+share/locale/da/LC_MESSAGES/workrave.mo
+share/locale/de/LC_MESSAGES/workrave.mo
+share/locale/eo/LC_MESSAGES/workrave.mo
+share/locale/es/LC_MESSAGES/workrave.mo
+share/locale/eu/LC_MESSAGES/workrave.mo
+share/locale/fr/LC_MESSAGES/workrave.mo
+share/locale/he/LC_MESSAGES/workrave.mo
+share/locale/lt/LC_MESSAGES/workrave.mo
+share/locale/nl/LC_MESSAGES/workrave.mo
+share/locale/no/LC_MESSAGES/workrave.mo
+share/locale/pl/LC_MESSAGES/workrave.mo
+share/locale/pt_BR/LC_MESSAGES/workrave.mo
+share/locale/ru/LC_MESSAGES/workrave.mo
+share/locale/zh_TW/LC_MESSAGES/workrave.mo
 @dirrm share/gnome/workrave/images
 @dirrm share/gnome/workrave/exercises
 @dirrm share/gnome/workrave
