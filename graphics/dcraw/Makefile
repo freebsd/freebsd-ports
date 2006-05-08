@@ -13,7 +13,7 @@ MASTER_SITES=	http://bsd1.csme.ru/myports/ \
 		http://bsd3.csme.ru/myports/ \
 		http://www.piwebs.com/distfiles/${PORTNAME}/
 
-MAINTAINER=	infofarmer@gmail.com
+MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Decoder for RAW files from digital cameras
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \

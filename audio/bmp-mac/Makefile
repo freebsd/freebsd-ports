@@ -1,6 +1,6 @@
 # New ports collection makefile for:	bmp-mac
 # Date Created:		17 January 2006
-# Whom:			Andrew Pantyukhin <infofarmer@gmail.com>
+# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
 #
 # $FreeBSD$
 
@@ -12,7 +12,7 @@ MASTER_SITE_SUBDIR=	mac-port
 PKGNAMEPREFIX=	bmp-
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	infofarmer@gmail.com
+MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Monkey's Audio Codec non-win32 port
 
 LIB_DEPENDS=	beep.2:${PORTSDIR}/multimedia/beep-media-player \

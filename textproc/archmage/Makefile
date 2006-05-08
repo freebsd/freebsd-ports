@@ -11,7 +11,7 @@ CATEGORIES=	textproc python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	infofarmer@gmail.com
+MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Extensible reader/decompiler of files in CHM format
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/chm/chm.py:${PORTSDIR}/textproc/pychm

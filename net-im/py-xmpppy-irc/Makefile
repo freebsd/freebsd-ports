@@ -1,6 +1,6 @@
 # Ports collection makefile for:	py-irc-transport
 # Date created:				21 April 2006
-# Whom:					Andrew Pantyukhin <infofarmer@gmail.com>
+# Whom:					Andrew Pantyukhin <infofarmer@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	xmpppy
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	irc-transport-${PORTVERSION}
 
-MAINTAINER=	infofarmer@gmail.com
+MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	An xmpp to irc transport
 
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/xmpp/__init__.py:${PORTSDIR}/net-im/py-xmpppy \

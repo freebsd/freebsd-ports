@@ -1,6 +1,6 @@
 # New ports collection makefile for:	aria2
 # Date created:		1 May 2006
-# Whom:			Andrew Pantyukhin <infofarmer@gmail.com>
+# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	infofarmer@gmail.com
+MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Yet another download tool
 
 LIB_DEPENDS=	gnutls.15:${PORTSDIR}/security/gnutls \

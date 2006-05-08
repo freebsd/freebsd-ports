@@ -1,6 +1,6 @@
 # New ports collection makefile for:	conkeror
 # Date created:		27 April 2006
-# Whom:			Andrew Pantyukhin <infofarmer@gmail.com>
+# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_MOZDEV}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX?=
 
-MAINTAINER=	infofarmer@gmail.com
+MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	A completely keyboard driven browser based on firefox
 
 RUN_DEPENDS=	${CONK_APP}:${PORTSDIR}/www/${CONK_APP}

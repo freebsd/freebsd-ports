@@ -1,6 +1,6 @@
 # New ports collection makefile for:	bmp-modplug
 # Date created:		2 January 2006
-# Whom:			Andrew Pantyukhin <infofarmer@gmail.com>
+# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -23,7 +23,7 @@ MASTER_SITES=	ftp://ftp.dvo.ru/pub/Gentoo/distfiles/ \
 PKGNAMEPREFIX=	bmp-
 DISTNAME=	${PORTNAME}${PKGNAMEPREFIX}2.05
 
-MAINTAINER=	infofarmer@gmail.com
+MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	A modplug-based plugin for beep-media-player
 
 LIB_DEPENDS?=	beep.2:${PORTSDIR}/multimedia/beep-media-player

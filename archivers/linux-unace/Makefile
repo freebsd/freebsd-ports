@@ -1,6 +1,6 @@
 # New ports collection makefile for: linunace
 # Date created:		9 November 2005
-# Whom:			Andrew Pantyukhin <infofarmer@gmail.com>
+# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	linux-
 DISTNAME=	lin${PORTNAME}${PORTVERSION:S/.//}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	infofarmer@gmail.com
+MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Extract, view & test ACE archives
 
 NO_PACKAGE=	"Distribution is permitted within the original package only"

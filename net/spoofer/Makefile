@@ -1,6 +1,6 @@
 # New ports collection makefile for:	spoofer
 # Date created:		6 February 2006
-# Whom:			Andrew Pantyukhin <infofarmer@gmail.com>
+# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -10,7 +10,7 @@ PORTVERSION=	0.4
 CATEGORIES=	net
 MASTER_SITES=	http://spoofer.csail.mit.edu/
 
-MAINTAINER=	infofarmer@gmail.com
+MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	ANA Spoofer Project testing software
 
 PLIST_FILES=	bin/spoofer
