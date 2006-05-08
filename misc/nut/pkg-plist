@@ -1,9 +1,0 @@
-bin/nut
-etc/nut/FOOD_DES.txt
-etc/nut/NUT_DATA.txt
-etc/nut/WEIGHT.lib
-etc/nut/WEIGHT.txt
-etc/nut/sr18.nut
-%%PORTDOCS%%%%DOCSDIR%%/README
-@dirrm etc/nut
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
