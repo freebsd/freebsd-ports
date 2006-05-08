@@ -7,7 +7,7 @@
 
 PORTNAME=	snmp
 PORTVERSION=	5.2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	net-snmp
@@ -26,9 +26,8 @@ RUN_DEPEND=	${SITE_PERL}/${PERL_ARCH}/Tk.pm:${PORTSDIR}/x11-toolkits/p5-Tk
 .endif
 PATCH_DEPENDS=	${LIBTOOL_DEPENDS}
 
-USE_REINPLACE=	yes
 USE_AUTOTOOLS=	autoconf:259 libtool:15
-USE_RC_SUBR=	yes
+USE_RC_SUBR=	snmpd.sh snmptrapd.sh
 USE_OPENSSL=	yes
 INSTALLS_SHLIB=	yes
 .if !defined(WITHOUT_PERL)
@@ -85,7 +84,6 @@ PLIST_SUB+=	WITH_IPV6="@comment "
 SHLIB_VERSION=	9
 PLIST_SUB+=	SHLIB_VERSION=${SHLIB_VERSION}
 SCRIPTS_SUB=	PREFIX=${PREFIX} PERL=${PERL}
-RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
 
 DEFAULT_SNMP_VERSION?=	3
 NET_SNMP_SYS_CONTACT?=	nobody@nowhere.invalid
@@ -169,7 +167,6 @@ BIN_FILES=	snmpbulkwalk snmpget snmpgetnext snmpnetstat53 snmpset \
 		snmpstatus snmptest snmptranslate snmptrap snmpwalk
 SBIN_FILES=	snmpd snmptrapd
 STARTUP_DIR=	${PREFIX}/etc/rc.d
-STARTUP_FILES=	snmpd.sh snmptrapd.sh
 SCRIPT_FILES=	snmpcheck.def mib2c fixproc ipf-mod.pl snmpconf \
 		traptoemail
 .if defined(WITH_TKMIB)
@@ -207,7 +204,7 @@ pre-everything::
 	@${ECHO_MSG} "				agent"
 	@${ECHO_MSG}
 
-post-patch: patch-autoconf patch-script-files patch-startup-files
+post-patch: patch-autoconf patch-script-files
 
 patch-autoconf:
 	@${AWK} '/@synopsis/,/taken from libtool.m4/' ${WRKSRC}/aclocal.m4 > ${WRKSRC}/aclocal.m4.tmp
@@ -221,12 +218,6 @@ patch-script-files:
 		${WRKSRC}/local/${filename}
 .endfor
 
-patch-startup-files:
-.for filename in ${STARTUP_FILES}
-	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${FILESDIR}/${filename}.sample > ${WRKDIR}/${filename}
-.endfor
-
 post-configure:
 	@${FIND} ${WRKSRC} -name Makefile | \
 	 ${XARGS} ${REINPLACE_CMD} -E -e '/^INSTALL[ 	]+=/s|$$| -m 755|'
@@ -236,23 +227,19 @@ post-build:
 	${FIND} ${WRKSRC}/perl -name Makefile | \
 	${XARGS} ${REINPLACE_CMD} -E -e '\
 		s!^(PREFIX) = .*!\1 = ${PREFIX}!; \
-		s!^(INSTALLMAN3DIR) = .*!\1 = ${MAN3PERLPREFIX}/man/man3!; \
+		s!^(INSTALLMAN3DIR|INSTALLSITEMAN3DIR) = .*!\1 = ${MAN3PERLPREFIX}/man/man3!; \
+		s!^(INSTALLSITELIB|INSTALLSITEARCH) = /usr/local/(.*)!\1 = ${PREFIX}/\2!; \
 		s! doc_(perl|site|\$$\(INSTALLDIRS\))_install$$!!; \
 		'
 .else
 	${REINPLACE_CMD} -e 's| perlinstall||' ${WRKSRC}/Makefile
 .endif
 
-post-install: strip-files install-startup-files install-config-files install-doc-files display-message
+post-install: strip-files install-config-files install-doc-files display-message
 
 strip-files:
 	@cd ${PREFIX}/bin; ${STRIP_CMD} ${BIN_FILES}
 	@cd ${PREFIX}/sbin; ${STRIP_CMD} ${SBIN_FILES}
-
-install-startup-files:
-.for filename in ${STARTUP_FILES}
-	@${INSTALL_SCRIPT} ${WRKDIR}/${filename} ${STARTUP_DIR}
-.endfor
 
 install-config-files:
 	@${INSTALL_DATA} ${WRKSRC}/EXAMPLE.conf ${DATADIR}/snmpd.conf.example
