@@ -8,7 +8,8 @@
 PORTNAME=	flip
 PORTVERSION=	1.19
 CATEGORIES=	textproc
-MASTER_SITES=	http://ftp.sayclub.co.kr/pub/packages/aixpdslib/flip/RISC/4.3/src/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	itetcu
 DISTNAME=	${PORTNAME}.${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
 
