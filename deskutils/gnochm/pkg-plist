@@ -14,10 +14,13 @@ share/gnome/pixmaps/gnochm_logo.png
 share/locale/cs/LC_MESSAGES/gnochm.mo
 share/locale/de/LC_MESSAGES/gnochm.mo
 share/locale/it/LC_MESSAGES/gnochm.mo
+share/locale/ja/LC_MESSAGES/gnochm.mo
+share/locale/pl/LC_MESSAGES/gnochm.mo
 share/locale/pt_BR/LC_MESSAGES/gnochm.mo
 share/locale/ru/LC_MESSAGES/gnochm.mo
 share/locale/tr/LC_MESSAGES/gnochm.mo
 share/locale/zh_CN/LC_MESSAGES/gnochm.mo
+share/locale/zh_TW/LC_MESSAGES/gnochm.mo
 share/mime/application/x-chm.xml
 share/mime/packages/gnochm.xml
 @dirrm share/gnome/omf/gnochm
