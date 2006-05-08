@@ -21,18 +21,17 @@ INSTALLDIR=	${PREFIX}/${FLUXCMSDIR}
 
 PLIST_SUB=	INSTALLDIR=${FLUXCMSDIR} WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 
-OPTIONS=	GD "Use GD support instead of ImageMagick" off \
+OPTIONS=	GD "Use GD support instead of ImageMagick" on \
 		TIDY "Configure with tidy support" off
 
 USE_PHP=	dom xml simplexml iconv mysql xsl session pcre
 
+BROKEN_WITH_PHP=	4
 DEFAULT_PHP_VER=	5
 
 .include <bsd.port.pre.mk>
 
-WITH_PHP5=	yes
-
-.if defined(WITH_GD)
+.if !defined(WITHOUT_GD)
 RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/gd.so:${PORTSDIR}/${gd_DEPENDS}
 .else
 RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/imagick.so:${PORTSDIR}/${imagick_DEPENDS}
