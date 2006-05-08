@@ -1,46 +1,45 @@
-@comment $FreeBSD$
 bin/dopewars
-%%PORTDOCS%%share/doc/dopewars/LICENCE
-%%PORTDOCS%%share/doc/dopewars/aiplayer.html
-%%PORTDOCS%%share/doc/dopewars/clientplay.html
-%%PORTDOCS%%share/doc/dopewars/commandline.html
-%%PORTDOCS%%share/doc/dopewars/configfile.html
-%%PORTDOCS%%share/doc/dopewars/contribute.html
-%%PORTDOCS%%share/doc/dopewars/credits.html
-%%PORTDOCS%%share/doc/dopewars/developer.html
-%%PORTDOCS%%share/doc/dopewars/example-cfg
-%%PORTDOCS%%share/doc/dopewars/help/cops.html
-%%PORTDOCS%%share/doc/dopewars/help/drugs.html
-%%PORTDOCS%%share/doc/dopewars/help/general.html
-%%PORTDOCS%%share/doc/dopewars/help/guns.html
-%%PORTDOCS%%share/doc/dopewars/help/locations.html
-%%PORTDOCS%%share/doc/dopewars/help/server.html
-%%PORTDOCS%%share/doc/dopewars/help/sounds.html
-%%PORTDOCS%%share/doc/dopewars/i18n.html
-%%PORTDOCS%%share/doc/dopewars/index.html
-%%PORTDOCS%%share/doc/dopewars/installation.html
-%%PORTDOCS%%share/doc/dopewars/metaserver.html
-%%PORTDOCS%%share/doc/dopewars/protocol.html
-%%PORTDOCS%%share/doc/dopewars/server.html
-%%PORTDOCS%%share/doc/dopewars/servercommands.html
-%%PORTDOCS%%share/doc/dopewars/windows.html
-share/dopewars/dopewars.sco
-share/dopewars/bye.wav
-share/dopewars/colt.wav
-share/dopewars/die.wav
-share/dopewars/gun.wav
-share/dopewars/jet.wav
-share/dopewars/losebitch.wav
-share/dopewars/message.wav
-share/dopewars/murmur.wav
-share/dopewars/punch.wav
-share/dopewars/run.wav
-share/dopewars/shotdown.wav
-share/dopewars/train.wav
-@unexec if [ ! -s %D/share/dopewars/dopewars.sco.bak ]; then rm -f %D/share/dopewars/dopewars.sco.bak; fi
-share/dopewars/pixmaps/dopewars-pill.png
-share/dopewars/pixmaps/dopewars-shot.png
-share/dopewars/pixmaps/dopewars-weed.png
+%%PORTDOCS%%%%DOCSDIR%%/aiplayer.html
+%%PORTDOCS%%%%DOCSDIR%%/clientplay.html
+%%PORTDOCS%%%%DOCSDIR%%/commandline.html
+%%PORTDOCS%%%%DOCSDIR%%/configfile.html
+%%PORTDOCS%%%%DOCSDIR%%/contribute.html
+%%PORTDOCS%%%%DOCSDIR%%/credits.html
+%%PORTDOCS%%%%DOCSDIR%%/developer.html
+%%PORTDOCS%%%%DOCSDIR%%/example-cfg
+%%PORTDOCS%%%%DOCSDIR%%/example-igneous
+%%PORTDOCS%%%%DOCSDIR%%/help/cops.html
+%%PORTDOCS%%%%DOCSDIR%%/help/drugs.html
+%%PORTDOCS%%%%DOCSDIR%%/help/general.html
+%%PORTDOCS%%%%DOCSDIR%%/help/guns.html
+%%PORTDOCS%%%%DOCSDIR%%/help/locations.html
+%%PORTDOCS%%%%DOCSDIR%%/help/server.html
+%%PORTDOCS%%%%DOCSDIR%%/help/sounds.html
+%%PORTDOCS%%%%DOCSDIR%%/i18n.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/installation.html
+%%PORTDOCS%%%%DOCSDIR%%/metaserver.html
+%%PORTDOCS%%%%DOCSDIR%%/protocol.html
+%%PORTDOCS%%%%DOCSDIR%%/server.html
+%%PORTDOCS%%%%DOCSDIR%%/servercommands.html
+%%PORTDOCS%%%%DOCSDIR%%/windows.html
+%%DATADIR%%/dopewars.sco
+%%DATADIR%%/bye.wav
+%%DATADIR%%/colt.wav
+%%DATADIR%%/die.wav
+%%DATADIR%%/gun.wav
+%%DATADIR%%/jet.wav
+%%DATADIR%%/losebitch.wav
+%%DATADIR%%/message.wav
+%%DATADIR%%/murmur.wav
+%%DATADIR%%/punch.wav
+%%DATADIR%%/run.wav
+%%DATADIR%%/shotdown.wav
+%%DATADIR%%/train.wav
+@unexec if [ ! -s %D/%%DATADIR%%/dopewars.sco.bak ]; then rm -f %D/%%DATADIR%%/dopewars.sco.bak; fi
+%%DATADIR%%/pixmaps/dopewars-pill.png
+%%DATADIR%%/pixmaps/dopewars-shot.png
+%%DATADIR%%/pixmaps/dopewars-weed.png
 share/locale/de/LC_MESSAGES/dopewars.mo
 share/locale/es/LC_MESSAGES/dopewars.mo
 share/locale/fr/LC_MESSAGES/dopewars.mo
@@ -51,7 +50,6 @@ share/gnome/apps/Games/dopewars.desktop
 @dirrmtry share/gnome/apps/Games
 @dirrmtry share/gnome/apps
 @dirrmtry share/gnome
-@dirrm share/dopewars/pixmaps
-@dirrm share/dopewars
-%%PORTDOCS%%@dirrm share/doc/dopewars/help
-%%PORTDOCS%%@dirrm share/doc/dopewars
+@dirrm %%DATADIR%%/pixmaps
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/help
