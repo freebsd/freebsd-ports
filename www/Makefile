@@ -979,6 +979,7 @@
     SUBDIR += xpi-colorfultabs
     SUBDIR += xpi-cssviewer
     SUBDIR += xpi-fasterfox
+    SUBDIR += xpi-mldonkey
     SUBDIR += xpi-no-referrer
     SUBDIR += xpi-noscript
     SUBDIR += xpi-pdf_download
