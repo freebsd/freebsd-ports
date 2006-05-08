@@ -33,7 +33,7 @@ OPTIONS=	RC_NG		"install RC_NG script"		off \
 USE_RC_SUBR=	vsftpd.sh
 .endif
 
-.if !defined(WITHOUT_SSL) && defined(WITH_VSFTPD_SSL)
+.if defined(WITH_VSFTPD_SSL) && !defined(WITHOUT_SSL)
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
 SSL_SUFFIX=	-ssl
 CFLAGS+=	-I${OPENSSLINC}
