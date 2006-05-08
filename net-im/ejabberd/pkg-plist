@@ -125,6 +125,7 @@ lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/msgs/uk.msg
 %%PORTDOCS%%%%DOCSDIR%%/release_notes_0.9.8.txt
 %%PORTDOCS%%%%DOCSDIR%%/release_notes_0.9.txt
 %%PORTDOCS%%%%DOCSDIR%%/release_notes_1.0.0.txt
+%%PORTDOCS%%%%DOCSDIR%%/release_notes_1.1.0.txt
 %%PORTDOCS%%%%DOCSDIR%%/version.tex
 %%PORTDOCS%%%%DOCSDIR%%/webadmmain.png
 %%PORTDOCS%%%%DOCSDIR%%/webadmmainru.png

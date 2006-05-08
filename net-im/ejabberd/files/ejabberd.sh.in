@@ -26,6 +26,7 @@ start_cmd="ejabberd_start"
 status_cmd="ejabberd_status"
 stop_cmd="ejabberd_stop"
 
+cd %%PREFIX%%		# Why is this needed!?
 
 # Include ejabberd defaults if available
 [ -f %%PREFIX%%/etc/ejabberd/ejabberd.defaults ] && . %%PREFIX%%/etc/ejabberd/ejabberd.defaults
