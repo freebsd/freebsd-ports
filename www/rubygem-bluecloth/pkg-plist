@@ -1,0 +1,71 @@
+%%CACHE_DIR%%/%%DISTNAME%%.gem
+%%GEMS_DIR%%/%%DISTNAME%%/bin/bluecloth
+%%GEMS_DIR%%/%%DISTNAME%%/lib/bluecloth.rb
+%%GEMS_DIR%%/%%DISTNAME%%/CHANGES
+%%GEMS_DIR%%/%%DISTNAME%%/LICENSE
+%%GEMS_DIR%%/%%DISTNAME%%/README
+%%GEMS_DIR%%/%%DISTNAME%%/install.rb
+%%GEMS_DIR%%/%%DISTNAME%%/test.rb
+%%GEMS_DIR%%/%%DISTNAME%%/utils.rb
+%%GEMS_DIR%%/%%DISTNAME%%/tests/00_Class.tests.rb
+%%GEMS_DIR%%/%%DISTNAME%%/tests/05_Markdown.tests.rb
+%%GEMS_DIR%%/%%DISTNAME%%/tests/10_Bug.tests.rb
+%%GEMS_DIR%%/%%DISTNAME%%/tests/15_Contrib.tests.rb
+%%GEMS_DIR%%/%%DISTNAME%%/tests/bctestcase.rb
+%%GEMS_DIR%%/%%DISTNAME%%/tests/data/antsugar.txt
+%%GEMS_DIR%%/%%DISTNAME%%/tests/data/ml-announce.txt
+%%GEMS_DIR%%/%%DISTNAME%%/tests/data/re-overflow.txt
+%%GEMS_DIR%%/%%DISTNAME%%/tests/data/re-overflow2.txt
+%%SPEC_DIR%%/%%DISTNAME%%.gemspec
+%%DOC_DIR%%/%%DISTNAME%%/rdoc/created.rid
+%%DOC_DIR%%/%%DISTNAME%%/rdoc/fr_class_index.html
+%%DOC_DIR%%/%%DISTNAME%%/rdoc/fr_file_index.html
+%%DOC_DIR%%/%%DISTNAME%%/rdoc/fr_method_index.html
+%%DOC_DIR%%/%%DISTNAME%%/rdoc/index.html
+%%DOC_DIR%%/%%DISTNAME%%/rdoc/rdoc-style.css
+%%DOC_DIR%%/%%DISTNAME%%/rdoc/classes/BlueCloth.html
+%%DOC_DIR%%/%%DISTNAME%%/rdoc/classes/BlueCloth/FormatError.html
+%%DOC_DIR%%/%%DISTNAME%%/rdoc/classes/BlueCloth/FormatError.src/M000030.html
+%%DOC_DIR%%/%%DISTNAME%%/rdoc/classes/BlueCloth.src/M000001.html
+%%DOC_DIR%%/%%DISTNAME%%/rdoc/classes/BlueCloth.src/M000002.html
+%%DOC_DIR%%/%%DISTNAME%%/rdoc/classes/BlueCloth.src/M000003.html
+%%DOC_DIR%%/%%DISTNAME%%/rdoc/classes/BlueCloth.src/M000004.html
+%%DOC_DIR%%/%%DISTNAME%%/rdoc/classes/BlueCloth.src/M000005.html
+%%DOC_DIR%%/%%DISTNAME%%/rdoc/classes/BlueCloth.src/M000006.html
+%%DOC_DIR%%/%%DISTNAME%%/rdoc/classes/BlueCloth.src/M000007.html
+%%DOC_DIR%%/%%DISTNAME%%/rdoc/classes/BlueCloth.src/M000008.html
+%%DOC_DIR%%/%%DISTNAME%%/rdoc/classes/BlueCloth.src/M000009.html
+%%DOC_DIR%%/%%DISTNAME%%/rdoc/classes/BlueCloth.src/M000010.html
+%%DOC_DIR%%/%%DISTNAME%%/rdoc/classes/BlueCloth.src/M000011.html
+%%DOC_DIR%%/%%DISTNAME%%/rdoc/classes/BlueCloth.src/M000012.html
+%%DOC_DIR%%/%%DISTNAME%%/rdoc/classes/BlueCloth.src/M000013.html
+%%DOC_DIR%%/%%DISTNAME%%/rdoc/classes/BlueCloth.src/M000014.html
+%%DOC_DIR%%/%%DISTNAME%%/rdoc/classes/BlueCloth.src/M000015.html
+%%DOC_DIR%%/%%DISTNAME%%/rdoc/classes/BlueCloth.src/M000016.html
+%%DOC_DIR%%/%%DISTNAME%%/rdoc/classes/BlueCloth.src/M000017.html
+%%DOC_DIR%%/%%DISTNAME%%/rdoc/classes/BlueCloth.src/M000018.html
+%%DOC_DIR%%/%%DISTNAME%%/rdoc/classes/BlueCloth.src/M000019.html
+%%DOC_DIR%%/%%DISTNAME%%/rdoc/classes/BlueCloth.src/M000020.html
+%%DOC_DIR%%/%%DISTNAME%%/rdoc/classes/BlueCloth.src/M000021.html
+%%DOC_DIR%%/%%DISTNAME%%/rdoc/classes/BlueCloth.src/M000022.html
+%%DOC_DIR%%/%%DISTNAME%%/rdoc/classes/BlueCloth.src/M000023.html
+%%DOC_DIR%%/%%DISTNAME%%/rdoc/classes/BlueCloth.src/M000024.html
+%%DOC_DIR%%/%%DISTNAME%%/rdoc/classes/BlueCloth.src/M000025.html
+%%DOC_DIR%%/%%DISTNAME%%/rdoc/classes/BlueCloth.src/M000026.html
+%%DOC_DIR%%/%%DISTNAME%%/rdoc/classes/BlueCloth.src/M000027.html
+%%DOC_DIR%%/%%DISTNAME%%/rdoc/classes/BlueCloth.src/M000028.html
+%%DOC_DIR%%/%%DISTNAME%%/rdoc/classes/BlueCloth.src/M000029.html
+%%DOC_DIR%%/%%DISTNAME%%/rdoc/files/lib/bluecloth_rb.html
+@dirrm %%GEMS_DIR%%/%%DISTNAME%%/tests/data
+@dirrm %%GEMS_DIR%%/%%DISTNAME%%/tests
+@dirrm %%GEMS_DIR%%/%%DISTNAME%%/lib
+@dirrm %%GEMS_DIR%%/%%DISTNAME%%/bin
+@dirrm %%GEMS_DIR%%/%%DISTNAME%%
+@dirrm %%DOC_DIR%%/%%DISTNAME%%/rdoc/classes/BlueCloth/FormatError.src
+@dirrm %%DOC_DIR%%/%%DISTNAME%%/rdoc/classes/BlueCloth.src
+@dirrm %%DOC_DIR%%/%%DISTNAME%%/rdoc/classes/BlueCloth
+@dirrm %%DOC_DIR%%/%%DISTNAME%%/rdoc/classes
+@dirrm %%DOC_DIR%%/%%DISTNAME%%/rdoc/files/lib
+@dirrm %%DOC_DIR%%/%%DISTNAME%%/rdoc/files
+@dirrm %%DOC_DIR%%/%%DISTNAME%%/rdoc
+@dirrm %%DOC_DIR%%/%%DISTNAME%%
