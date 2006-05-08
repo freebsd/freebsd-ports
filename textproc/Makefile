@@ -69,6 +69,7 @@
     SUBDIR += dbacl
     SUBDIR += denature
     SUBDIR += dict
+    SUBDIR += dictem
     SUBDIR += dictfmt
     SUBDIR += dictionary
     SUBDIR += diff-mode.el

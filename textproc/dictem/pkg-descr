@@ -1,0 +1,9 @@
+DictEm is a dict client for GNU Emacs.
+
+It uses a console dict client (http://sf.net/projects/dict) and
+implements all functions of the client part of DICT protocol
+(RFC-2229, www.dict.org), i.e. looking up words and definitions,
+obtaining information about available strategies, provided databases,
+information about DICT server etc.
+
+WWW: http://freshmeat.net/projects/dictem
