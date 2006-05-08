@@ -63,9 +63,9 @@ libexec/sauer_server
 %%DATADIR%%/packages/base/drianmp4.ogz
 %%DATADIR%%/packages/base/face-capture.cfg
 %%DATADIR%%/packages/base/face-capture.ogz
-%%DATADIR%%/packages/base/face-classic.cfg
-%%DATADIR%%/packages/base/face-classic.ogz
 %%DATADIR%%/packages/base/fanatic01.ogz
+%%DATADIR%%/packages/base/fb_capture.cfg
+%%DATADIR%%/packages/base/fb_capture.ogz
 %%DATADIR%%/packages/base/firstevermap.ogz
 %%DATADIR%%/packages/base/fortress.ogz
 %%DATADIR%%/packages/base/frozen.cfg
@@ -76,10 +76,16 @@ libexec/sauer_server
 %%DATADIR%%/packages/base/jungle.ogz
 %%DATADIR%%/packages/base/k_rpg1.cfg
 %%DATADIR%%/packages/base/k_rpg1.ogz
+%%DATADIR%%/packages/base/katrez.txt
+%%DATADIR%%/packages/base/katrez_d.cfg
+%%DATADIR%%/packages/base/katrez_d.ogz
 %%DATADIR%%/packages/base/killfactory.cfg
 %%DATADIR%%/packages/base/killfactory.ogz
+%%DATADIR%%/packages/base/kmap5.cfg
+%%DATADIR%%/packages/base/kmap5.ogz
 %%DATADIR%%/packages/base/ksauer1.cfg
 %%DATADIR%%/packages/base/ksauer1.ogz
+%%DATADIR%%/packages/base/kurt_license.txt
 %%DATADIR%%/packages/base/ladder.ogz
 %%DATADIR%%/packages/base/legoland.cfg
 %%DATADIR%%/packages/base/legoland.ogz
@@ -146,6 +152,8 @@ libexec/sauer_server
 %%DATADIR%%/packages/base/vootdm2.ogz
 %%DATADIR%%/packages/base/vootdm3.cfg
 %%DATADIR%%/packages/base/vootdm3.ogz
+%%DATADIR%%/packages/base/vr.cfg
+%%DATADIR%%/packages/base/vr.ogz
 %%DATADIR%%/packages/base/wdcd.cfg
 %%DATADIR%%/packages/base/wdcd.ogz
 %%DATADIR%%/packages/base/yesterday.cfg
@@ -341,6 +349,12 @@ libexec/sauer_server
 %%DATADIR%%/packages/egyptsoc/wood17.jpg
 %%DATADIR%%/packages/egyptsoc/woodmgrid1a.jpg
 %%DATADIR%%/packages/fanatic/1.ogg
+%%DATADIR%%/packages/fanatic/10.ogg
+%%DATADIR%%/packages/fanatic/11.ogg
+%%DATADIR%%/packages/fanatic/12.ogg
+%%DATADIR%%/packages/fanatic/13.ogg
+%%DATADIR%%/packages/fanatic/14.ogg
+%%DATADIR%%/packages/fanatic/15.ogg
 %%DATADIR%%/packages/fanatic/2.ogg
 %%DATADIR%%/packages/fanatic/3.ogg
 %%DATADIR%%/packages/fanatic/4.ogg
@@ -349,17 +363,34 @@ libexec/sauer_server
 %%DATADIR%%/packages/fanatic/7.ogg
 %%DATADIR%%/packages/fanatic/8.ogg
 %%DATADIR%%/packages/fanatic/9.ogg
-%%DATADIR%%/packages/fanatic/10.ogg
-%%DATADIR%%/packages/fanatic/11.ogg
-%%DATADIR%%/packages/fanatic/12.ogg
-%%DATADIR%%/packages/fanatic/13.ogg
-%%DATADIR%%/packages/fanatic/14.ogg
-%%DATADIR%%/packages/fanatic/15.ogg
 %%DATADIR%%/packages/fanatic/Track Names.txt
+%%DATADIR%%/packages/g_pack/g-bricks02a.jpg
+%%DATADIR%%/packages/g_pack/g-bricks03.jpg
+%%DATADIR%%/packages/g_pack/g-bricks05.jpg
+%%DATADIR%%/packages/g_pack/g-bricks09.jpg
+%%DATADIR%%/packages/g_pack/g-bricks10.jpg
+%%DATADIR%%/packages/g_pack/g-bricks26.jpg
+%%DATADIR%%/packages/g_pack/g-bricks27.jpg
+%%DATADIR%%/packages/g_pack/g-bricks29.jpg
+%%DATADIR%%/packages/g_pack/g-bricks30.jpg
+%%DATADIR%%/packages/g_pack/g-bricks33.jpg
+%%DATADIR%%/packages/g_pack/g-crate01.jpg
+%%DATADIR%%/packages/g_pack/g-façade01.jpg
+%%DATADIR%%/packages/g_pack/g-floor01.jpg
+%%DATADIR%%/packages/g_pack/g-floor04.jpg
+%%DATADIR%%/packages/g_pack/g-floor10.jpg
+%%DATADIR%%/packages/g_pack/g-metbas0c1.jpg
+%%DATADIR%%/packages/g_pack/g-metbas5b.jpg
+%%DATADIR%%/packages/g_pack/g-metbas6.jpg
+%%DATADIR%%/packages/g_pack/g-metfloor3b.jpg
+%%DATADIR%%/packages/g_pack/g-metfloor5b.jpg
+%%DATADIR%%/packages/g_pack/g-metfloor7b.jpg
+%%DATADIR%%/packages/g_pack/g-mettrim03.jpg
+%%DATADIR%%/packages/g_pack/g-pack_tex_sources_readme.txt
+%%DATADIR%%/packages/g_pack/g-wood02.jpg
 %%DATADIR%%/packages/golgotha/lava.jpg
 %%DATADIR%%/packages/golgotha/water2.jpg
 %%DATADIR%%/packages/golgotha/water2d.jpg
-%%DATADIR%%/packages/ik2k/env/desert_dn.jpg
 %%DATADIR%%/packages/ik2k/env/iklake_bk.jpg
 %%DATADIR%%/packages/ik2k/env/iklake_dn.jpg
 %%DATADIR%%/packages/ik2k/env/iklake_ft.jpg
@@ -456,6 +487,23 @@ libexec/sauer_server
 %%DATADIR%%/packages/jf1/jfrust.jpg
 %%DATADIR%%/packages/jf1/jfstripe.jpg
 %%DATADIR%%/packages/jf1/jfwall.jpg
+%%DATADIR%%/packages/katrez/rb_metal_01.jpg
+%%DATADIR%%/packages/katrez/rb_metal_02.jpg
+%%DATADIR%%/packages/katrez/rb_metal_03.jpg
+%%DATADIR%%/packages/katrez/rb_metal_04.jpg
+%%DATADIR%%/packages/katrez/rb_metal_05.jpg
+%%DATADIR%%/packages/katrez/rb_trim_01.jpg
+%%DATADIR%%/packages/katrez/rb_trim_02.jpg
+%%DATADIR%%/packages/katrez/rb_trim_03.jpg
+%%DATADIR%%/packages/katrez/rb_trim_04.jpg
+%%DATADIR%%/packages/katrez/rb_trim_05.jpg
+%%DATADIR%%/packages/katrez/rb_trim_06.jpg
+%%DATADIR%%/packages/katrez/rb_trim_07.jpg
+%%DATADIR%%/packages/katrez/rb_trim_08.jpg
+%%DATADIR%%/packages/katrez/rb_trim_09.jpg
+%%DATADIR%%/packages/katrez/rb_trim_10.jpg
+%%DATADIR%%/packages/katrez/rb_trim_11.jpg
+%%DATADIR%%/packages/katrez/rb_trim_12.jpg
 %%DATADIR%%/packages/kurt/carpet01.jpg
 %%DATADIR%%/packages/kurt/carpet02.jpg
 %%DATADIR%%/packages/kurt/carpet03.jpg
@@ -464,6 +512,8 @@ libexec/sauer_server
 %%DATADIR%%/packages/kurt/ceil3.jpg
 %%DATADIR%%/packages/kurt/ceil4.jpg
 %%DATADIR%%/packages/kurt/ceil5.jpg
+%%DATADIR%%/packages/kurt/rock01.jpg
+%%DATADIR%%/packages/kurt/snowgrass01.jpg
 %%DATADIR%%/packages/lego/black.png
 %%DATADIR%%/packages/lego/blacklego.png
 %%DATADIR%%/packages/lego/blue.png
@@ -521,6 +571,9 @@ libexec/sauer_server
 %%DATADIR%%/packages/models/bridge/tris.md2
 %%DATADIR%%/packages/models/bullets/skin.jpg
 %%DATADIR%%/packages/models/bullets/tris.md2
+%%DATADIR%%/packages/models/cartridges/license.txt
+%%DATADIR%%/packages/models/cartridges/skin.jpg
+%%DATADIR%%/packages/models/cartridges/tris.md2
 %%DATADIR%%/packages/models/carrot/skin.jpg
 %%DATADIR%%/packages/models/carrot/tris.md2
 %%DATADIR%%/packages/models/dcp/Readme.txt
@@ -620,6 +673,7 @@ libexec/sauer_server
 %%DATADIR%%/packages/models/gibh/gpl_gibs.txt
 %%DATADIR%%/packages/models/gibh/skin.jpg
 %%DATADIR%%/packages/models/gibh/tris.md2
+%%DATADIR%%/packages/models/grenades/license.txt
 %%DATADIR%%/packages/models/grenades/skin.jpg
 %%DATADIR%%/packages/models/grenades/tris.md2
 %%DATADIR%%/packages/models/health/skin.jpg
@@ -629,11 +683,14 @@ libexec/sauer_server
 %%DATADIR%%/packages/models/hudguns/chaing/md2.qc
 %%DATADIR%%/packages/models/hudguns/chaing/skin.jpg
 %%DATADIR%%/packages/models/hudguns/chaing/tris.md2
+%%DATADIR%%/packages/models/hudguns/fist/license.txt
 %%DATADIR%%/packages/models/hudguns/fist/skin.jpg
 %%DATADIR%%/packages/models/hudguns/fist/tris.md2
+%%DATADIR%%/packages/models/hudguns/gl/license.txt
 %%DATADIR%%/packages/models/hudguns/gl/skin.jpg
 %%DATADIR%%/packages/models/hudguns/gl/tris.md2
 %%DATADIR%%/packages/models/hudguns/md2.cfg
+%%DATADIR%%/packages/models/hudguns/pistol/license.txt
 %%DATADIR%%/packages/models/hudguns/pistol/skin.jpg
 %%DATADIR%%/packages/models/hudguns/pistol/tris.md2
 %%DATADIR%%/packages/models/hudguns/rifle/md2.qc
@@ -645,6 +702,7 @@ libexec/sauer_server
 %%DATADIR%%/packages/models/hudguns/shotg/MD2.QC
 %%DATADIR%%/packages/models/hudguns/shotg/skin.jpg
 %%DATADIR%%/packages/models/hudguns/shotg/tris.md2
+%%DATADIR%%/packages/models/makke/license.txt
 %%DATADIR%%/packages/models/makke/nocamp/skin.jpg
 %%DATADIR%%/packages/models/makke/nocamp/tris.md2
 %%DATADIR%%/packages/models/makke/strahler/skin.jpg
@@ -658,8 +716,10 @@ libexec/sauer_server
 %%DATADIR%%/packages/models/makke/tricky/sign4/skin.jpg
 %%DATADIR%%/packages/models/makke/tricky/sign4/tris.md2
 %%DATADIR%%/packages/models/monster/bauul/bauul.txt
+%%DATADIR%%/packages/models/monster/bauul/md2.cfg
 %%DATADIR%%/packages/models/monster/bauul/skin.jpg
 %%DATADIR%%/packages/models/monster/bauul/tris.md2
+%%DATADIR%%/packages/models/monster/goblin/md2.cfg
 %%DATADIR%%/packages/models/monster/goblin/readme.txt
 %%DATADIR%%/packages/models/monster/goblin/skin.jpg
 %%DATADIR%%/packages/models/monster/goblin/tris.md2
@@ -667,6 +727,7 @@ libexec/sauer_server
 %%DATADIR%%/packages/models/monster/hellpig/readme.txt
 %%DATADIR%%/packages/models/monster/hellpig/skin.jpg
 %%DATADIR%%/packages/models/monster/hellpig/tris.md2
+%%DATADIR%%/packages/models/monster/knight/md2.cfg
 %%DATADIR%%/packages/models/monster/knight/readme.txt
 %%DATADIR%%/packages/models/monster/knight/skin.jpg
 %%DATADIR%%/packages/models/monster/knight/tris.md2
@@ -675,11 +736,14 @@ libexec/sauer_server
 %%DATADIR%%/packages/models/monster/ogro/skin.jpg
 %%DATADIR%%/packages/models/monster/ogro/tris.md2
 %%DATADIR%%/packages/models/monster/rat/Ratamahatta.txt
+%%DATADIR%%/packages/models/monster/rat/md2.cfg
 %%DATADIR%%/packages/models/monster/rat/skin.jpg
 %%DATADIR%%/packages/models/monster/rat/tris.md2
+%%DATADIR%%/packages/models/monster/rhino/md2.cfg
 %%DATADIR%%/packages/models/monster/rhino/rhino.txt
 %%DATADIR%%/packages/models/monster/rhino/skin.jpg
 %%DATADIR%%/packages/models/monster/rhino/tris.md2
+%%DATADIR%%/packages/models/monster/slith/md2.cfg
 %%DATADIR%%/packages/models/monster/slith/skin.jpg
 %%DATADIR%%/packages/models/monster/slith/slithMe.txt
 %%DATADIR%%/packages/models/monster/slith/tris.md2
@@ -702,8 +766,12 @@ libexec/sauer_server
 %%DATADIR%%/packages/models/objects/lantern01/tris.md2
 %%DATADIR%%/packages/models/objects/lantern02/skin.jpg
 %%DATADIR%%/packages/models/objects/lantern02/tris.md2
+%%DATADIR%%/packages/models/objects/license.txt
 %%DATADIR%%/packages/models/objects/med_chand/skin.jpg
 %%DATADIR%%/packages/models/objects/med_chand/tris.md2
+%%DATADIR%%/packages/models/objects/minekart/md2.cfg
+%%DATADIR%%/packages/models/objects/minekart/skin.jpg
+%%DATADIR%%/packages/models/objects/minekart/tris.md2
 %%DATADIR%%/packages/models/objects/readme.txt
 %%DATADIR%%/packages/models/objects/sail01/skin.png
 %%DATADIR%%/packages/models/objects/sail01/tris.md2
@@ -727,8 +795,6 @@ libexec/sauer_server
 %%DATADIR%%/packages/models/objects/window02/skin2.png
 %%DATADIR%%/packages/models/objects/window02/window02_1/tris.md2
 %%DATADIR%%/packages/models/objects/window02/window02_2/tris.md2
-%%DATADIR%%/packages/models/objects/window03/skin.jpg
-%%DATADIR%%/packages/models/objects/window03/tris.md2
 %%DATADIR%%/packages/models/objects/woodchop/skin.jpg
 %%DATADIR%%/packages/models/objects/woodchop/tris.md2
 %%DATADIR%%/packages/models/quad/invulner.txt
@@ -740,6 +806,7 @@ libexec/sauer_server
 %%DATADIR%%/packages/models/rrounds/tris.md2
 %%DATADIR%%/packages/models/shells/skin.jpg
 %%DATADIR%%/packages/models/shells/tris.md2
+%%DATADIR%%/packages/models/switch1/kurt_license.txt
 %%DATADIR%%/packages/models/switch1/skin.jpg
 %%DATADIR%%/packages/models/switch1/tris.md2
 %%DATADIR%%/packages/models/switch2/skin.jpg
@@ -815,11 +882,10 @@ libexec/sauer_server
 %%DATADIR%%/packages/models/tree1/tris.md2
 %%DATADIR%%/packages/models/vegetation/bush01/skin.png
 %%DATADIR%%/packages/models/vegetation/bush01/tris.md2
+%%DATADIR%%/packages/models/vegetation/kurt_license.txt
 %%DATADIR%%/packages/models/vegetation/md2.cfg
 %%DATADIR%%/packages/models/vegetation/skin.png
 %%DATADIR%%/packages/models/vegetation/skin02.png
-%%DATADIR%%/packages/models/vegetation/skin03.png
-%%DATADIR%%/packages/models/vegetation/skin04.png
 %%DATADIR%%/packages/models/vegetation/tree00/tris.md2
 %%DATADIR%%/packages/models/vegetation/tree01/tris.md2
 %%DATADIR%%/packages/models/vegetation/tree02/tris.md2
@@ -845,12 +911,6 @@ libexec/sauer_server
 %%DATADIR%%/packages/nieb/morn_lf.jpg
 %%DATADIR%%/packages/nieb/morn_rt.jpg
 %%DATADIR%%/packages/nieb/morn_up.jpg
-%%DATADIR%%/packages/nieb/night_bk.jpg
-%%DATADIR%%/packages/nieb/night_dn.jpg
-%%DATADIR%%/packages/nieb/night_ft.jpg
-%%DATADIR%%/packages/nieb/night_lf.jpg
-%%DATADIR%%/packages/nieb/night_rt.jpg
-%%DATADIR%%/packages/nieb/night_up.jpg
 %%DATADIR%%/packages/nieb/textures/rock01.jpg
 %%DATADIR%%/packages/payne/Box12b.jpg
 %%DATADIR%%/packages/payne/Brick52a.jpg
@@ -959,13 +1019,31 @@ libexec/sauer_server
 %%DATADIR%%/packages/socksky/frozen_lf.jpg
 %%DATADIR%%/packages/socksky/frozen_rt.jpg
 %%DATADIR%%/packages/socksky/frozen_up.jpg
+%%DATADIR%%/packages/socksky/frozendusk_bk.jpg
+%%DATADIR%%/packages/socksky/frozendusk_dn.jpg
+%%DATADIR%%/packages/socksky/frozendusk_ft.jpg
+%%DATADIR%%/packages/socksky/frozendusk_lf.jpg
+%%DATADIR%%/packages/socksky/frozendusk_rt.jpg
+%%DATADIR%%/packages/socksky/frozendusk_up.jpg
 %%DATADIR%%/packages/socksky/mars_bk.jpg
 %%DATADIR%%/packages/socksky/mars_dn.jpg
 %%DATADIR%%/packages/socksky/mars_ft.jpg
 %%DATADIR%%/packages/socksky/mars_lf.jpg
 %%DATADIR%%/packages/socksky/mars_rt.jpg
 %%DATADIR%%/packages/socksky/mars_up.jpg
+%%DATADIR%%/packages/socksky/nightball_bk.jpg
+%%DATADIR%%/packages/socksky/nightball_dn.jpg
+%%DATADIR%%/packages/socksky/nightball_ft.jpg
+%%DATADIR%%/packages/socksky/nightball_lf.jpg
+%%DATADIR%%/packages/socksky/nightball_rt.jpg
+%%DATADIR%%/packages/socksky/nightball_up.jpg
 %%DATADIR%%/packages/socksky/readme.txt
+%%DATADIR%%/packages/socksky/valley_bk.jpg
+%%DATADIR%%/packages/socksky/valley_dn.jpg
+%%DATADIR%%/packages/socksky/valley_ft.jpg
+%%DATADIR%%/packages/socksky/valley_lf.jpg
+%%DATADIR%%/packages/socksky/valley_rt.jpg
+%%DATADIR%%/packages/socksky/valley_up.jpg
 %%DATADIR%%/packages/sounds/aard/bang.wav
 %%DATADIR%%/packages/sounds/aard/die1.wav
 %%DATADIR%%/packages/sounds/aard/die2.wav
@@ -1175,8 +1253,10 @@ libexec/sauer_server
 @dirrm %%DATADIR%%/packages/boxtex/64
 @dirrm %%DATADIR%%/packages/boxtex/128
 @dirrm %%DATADIR%%/packages/boxtex
+@dirrm %%DATADIR%%/packages/g_pack
 @dirrm %%DATADIR%%/packages/ikbase
 @dirrm %%DATADIR%%/packages/than_ind
+@dirrm %%DATADIR%%/packages/katrez
 @dirrm %%DATADIR%%/packages/models/dcp/ivy
 @dirrm %%DATADIR%%/packages/models/dcp/cart
 @dirrm %%DATADIR%%/packages/models/dcp/cask
@@ -1220,6 +1300,7 @@ libexec/sauer_server
 @dirrm %%DATADIR%%/packages/models/nieb/nothing
 @dirrm %%DATADIR%%/packages/models/nieb
 @dirrm %%DATADIR%%/packages/models/quad
+@dirrm %%DATADIR%%/packages/models/cartridges
 @dirrm %%DATADIR%%/packages/models/boost
 @dirrm %%DATADIR%%/packages/models/flags/red
 @dirrm %%DATADIR%%/packages/models/flags/blue
@@ -1275,11 +1356,11 @@ libexec/sauer_server
 @dirrm %%DATADIR%%/packages/models/objects/woodchop
 @dirrm %%DATADIR%%/packages/models/objects/lamp01
 @dirrm %%DATADIR%%/packages/models/objects/lamp02
+@dirrm %%DATADIR%%/packages/models/objects/minekart
 @dirrm %%DATADIR%%/packages/models/objects/window01
 @dirrm %%DATADIR%%/packages/models/objects/window02/window02_1
 @dirrm %%DATADIR%%/packages/models/objects/window02/window02_2
 @dirrm %%DATADIR%%/packages/models/objects/window02
-@dirrm %%DATADIR%%/packages/models/objects/window03
 @dirrm %%DATADIR%%/packages/models/objects/sail01
 @dirrm %%DATADIR%%/packages/models/objects/sign01
 @dirrm %%DATADIR%%/packages/models/objects/torch_cold
