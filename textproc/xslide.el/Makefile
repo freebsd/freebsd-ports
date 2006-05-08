@@ -6,19 +6,17 @@
 #
 
 PORTNAME=	xslide.el
-PORTVERSION=	0.2
+PORTVERSION=	0.2.2
 CATEGORIES=	textproc elisp
-MASTER_SITES=	http://www.menteith.com/xslide/data/
-DISTNAME=	xslide
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	xslide
+DISTNAME=	xslide-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Emacs major mode for editing XSL stylesheets
 
-RUN_DEPENDS=	emacs:${PORTSDIR}/editors/emacs
-
-NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
-USE_ZIP=	yes
+PORTDOCS=	README.TXT TODO NEWS ChangeLog
 
 ELISPDIR=	${PREFIX}/share/emacs/site-lisp
 
@@ -34,8 +32,7 @@ do-install:
 			xslide-initial.xsl \
 			xslide-process.el \
 			${ELISPDIR} && \
-		${INSTALL_DATA} \
-			CHANGELOG.TXT README.TXT ${DOCSDIR} \
+		${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR} \
 		)
 
 post-install:
