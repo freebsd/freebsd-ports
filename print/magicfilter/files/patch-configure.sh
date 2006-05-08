@@ -15,7 +15,7 @@
 -    AC_SUB MAGIC_HEADER ""
 -    AC_SUB MAGIC_LIB ""
 +    AC_SUB MAGIC_HEADER "-I${LOCALBASE}/include"
-+    AC_SUB MAGIC_LIB "-L${LOCALBASE}/lib"
++    AC_SUB MAGIC_LIB "-L${LOCALBASE}/lib -Wl,-rpath -Wl,${LOCALBASE}/lib"
      AC_SUB MAKE_MAGIC ":"
      AC_SUB CFMAGIC	""
  fi
