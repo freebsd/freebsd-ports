@@ -525,6 +525,7 @@
     SUBDIR += racoon2
     SUBDIR += radiusniff
     SUBDIR += rain
+    SUBDIR += rainbowcrack
     SUBDIR += rats
     SUBDIR += rc5pipe
     SUBDIR += rdigest

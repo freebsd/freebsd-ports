@@ -1,0 +1,13 @@
+RainbowCrack is a general propose implementation of Philippe Oechslin's faster
+time-memory trade-off technique.
+
+In short, the RainbowCrack tool is a hash cracker. A traditional brute force
+cracker tries all possible plaintexts one by one in cracking time. It is time
+consuming to break complex passwords this way. The idea of time-memory trade-off
+is to do all cracking time computation in advance and store the result in files
+so called "rainbow table". It does take a long time to precompute the tables.
+But once the one time precomputation is finished, a time-memory trade-off
+cracker can be hundreds of times faster than a brute force cracker, with the
+help of precomputed tables.
+
+WWW: http://www.antsight.com/zsl/rainbowcrack/
