@@ -7,7 +7,7 @@
 
 PORTNAME=	gsl
 PORTVERSION=	1.5.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math ruby
 MASTER_SITES=	http://rubyforge.org/frs/download.php/2108/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -17,7 +17,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Ruby extension library for GSL (GNU Scientific Library)
 
-LIB_DEPENDS=	gsl.7:${.CURDIR}/../gsl
+LIB_DEPENDS=	gsl.9:${PORTSDIR}/math/gsl
 
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
