@@ -1,0 +1,15 @@
+This is a protocol handler for Mozilla and Firefox that forwards
+some link types to a running MLdonkey (see www.mldonkey.net) or
+eMule (see www.emule-project.net) client.
+
+Supported protocols are ed2k:, magnet: and sig2dat:. For eMule,
+only ed2k: is supported, of course.
+
+Also note that eMule support is still beta and has only been
+tested to work with eMule versions 0.45* and 0.46a as of yet.
+Please send eMule specific questions to Dan Fritz.
+
+The protocol handler is implemented in JavaScript and should run
+on any platform supported by Mozilla or Firefox.
+
+WWW: http://www.informatik.uni-oldenburg.de/~dyna/mldonkey/
