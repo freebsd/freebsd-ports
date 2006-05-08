@@ -1,19 +1,17 @@
-# New ports collection makefile for:   Workrave
-# Date created:                        15 Jul 2003
-# Whom:                                Koop Mast <einekoai@chello.nl>
-# Date modified:              	13 Jul 2005
-# Whom:                        		 Alex de Kruijff <freebsd@akruijff.dds.nl>
+# New ports collection makefile for:	workrave
+# Date created:				15 Jul 2003
+# Whom:					Koop Mast <einekoai@chello.nl>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	workrave
-PORTVERSION=	1.8.1
+PORTVERSION=	1.8.2
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	A Gnome RSI prevention tool
 
 LIB_DEPENDS=	gnomeuimm-2.6.1:${PORTSDIR}/x11-toolkits/libgnomeuimm26 \
@@ -21,6 +19,7 @@ LIB_DEPENDS=	gnomeuimm-2.6.1:${PORTSDIR}/x11-toolkits/libgnomeuimm26 \
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
+USE_GETTEXT=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack gnomepanel gconf2 intltool
 USE_GCC=	3.4
 GNU_CONFIGURE=	yes
