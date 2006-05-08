@@ -68,6 +68,7 @@ share/locale/de/LC_MESSAGES/iso_639_3.mo
 share/locale/dv/LC_MESSAGES/iso_3166.mo
 share/locale/dv/LC_MESSAGES/iso_639.mo
 share/locale/dv/LC_MESSAGES/iso_639_3.mo
+share/locale/dz/LC_MESSAGES/iso_3166.mo
 share/locale/el/LC_MESSAGES/iso_3166.mo
 share/locale/el/LC_MESSAGES/iso_3166_2.mo
 share/locale/el/LC_MESSAGES/iso_4217.mo
@@ -179,6 +180,7 @@ share/locale/kk/LC_MESSAGES/iso_639_3.mo
 share/locale/kl/LC_MESSAGES/iso_3166.mo
 share/locale/kl/LC_MESSAGES/iso_639.mo
 share/locale/kl/LC_MESSAGES/iso_639_3.mo
+share/locale/km/LC_MESSAGES/iso_3166.mo
 share/locale/kn/LC_MESSAGES/iso_3166.mo
 share/locale/kn/LC_MESSAGES/iso_639.mo
 share/locale/kn/LC_MESSAGES/iso_639_3.mo
@@ -260,10 +262,10 @@ share/locale/oc/LC_MESSAGES/iso_639_3.mo
 share/locale/om/LC_MESSAGES/iso_3166.mo
 share/locale/om/LC_MESSAGES/iso_639.mo
 share/locale/om/LC_MESSAGES/iso_639_3.mo
+share/locale/pa/LC_MESSAGES/iso_3166.mo
 share/locale/pa/LC_MESSAGES/iso_4217.mo
 share/locale/pa/LC_MESSAGES/iso_639.mo
 share/locale/pa/LC_MESSAGES/iso_639_3.mo
-share/locale/pa_IN/LC_MESSAGES/iso_3166.mo
 share/locale/pl/LC_MESSAGES/iso_3166.mo
 share/locale/pl/LC_MESSAGES/iso_3166_2.mo
 share/locale/pl/LC_MESSAGES/iso_4217.mo
@@ -469,8 +471,6 @@ share/xml/iso-codes/iso_639_3.xml
 @dirrmtry share/locale/ps
 @dirrmtry share/locale/pl/LC_MESSAGES
 @dirrmtry share/locale/pl
-@dirrmtry share/locale/pa_IN/LC_MESSAGES
-@dirrmtry share/locale/pa_IN
 @dirrmtry share/locale/om/LC_MESSAGES
 @dirrmtry share/locale/om
 @dirrmtry share/locale/oc/LC_MESSAGES
@@ -495,6 +495,8 @@ share/xml/iso-codes/iso_639_3.xml
 @dirrmtry share/locale/kok
 @dirrmtry share/locale/ko/LC_MESSAGES
 @dirrmtry share/locale/ko
+@dirrmtry share/locale/km/LC_MESSAGES
+@dirrmtry share/locale/km
 @dirrmtry share/locale/kl/LC_MESSAGES
 @dirrmtry share/locale/kl
 @dirrmtry share/locale/kk/LC_MESSAGES
@@ -517,6 +519,8 @@ share/xml/iso-codes/iso_639_3.xml
 @dirrmtry share/locale/fi
 @dirrmtry share/locale/el/LC_MESSAGES
 @dirrmtry share/locale/el
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
 @dirrmtry share/locale/dv/LC_MESSAGES
 @dirrmtry share/locale/dv
 @dirrmtry share/locale/cs/LC_MESSAGES
