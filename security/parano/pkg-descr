@@ -1,0 +1,4 @@
+Parano is a GNOME program to create, edit and verify hashfiles.
+For now MD5, SHA1 and SFV formats are supported.
+
+WWW: http://parano.berlios.de/
