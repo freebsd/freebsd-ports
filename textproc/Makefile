@@ -70,6 +70,7 @@
     SUBDIR += denature
     SUBDIR += dict
     SUBDIR += dictem
+    SUBDIR += dictem-xemacs21-mule
     SUBDIR += dictfmt
     SUBDIR += dictionary
     SUBDIR += diff-mode.el
