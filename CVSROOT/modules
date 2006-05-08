@@ -1704,6 +1704,7 @@ dialyzer	ports/devel/dialyzer
 dice		ports/lang/dice
 dictd		ports/net/dictd
 dictd-database	ports/net/dictd-database
+dictem		ports/textproc/dictem
 dictfmt		ports/textproc/dictfmt
 diction		ports/misc/diction
 dictionary	ports/textproc/dictionary
