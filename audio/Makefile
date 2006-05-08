@@ -605,6 +605,7 @@
     SUBDIR += xmms-imms
     SUBDIR += xmms-infopipe
     SUBDIR += xmms-jack
+    SUBDIR += xmms-jackasyn
     SUBDIR += xmms-kde
     SUBDIR += xmms-kj
     SUBDIR += xmms-ladspa
