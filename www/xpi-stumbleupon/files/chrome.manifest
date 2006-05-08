@@ -1,0 +1,7 @@
+overlay	chrome://navigator/content/navigator.xul	chrome://stumbleupon/content/stumbleuponOverlay.xul
+overlay	chrome://browser/content/browser.xul	chrome://stumbleupon/content/stumbleuponOverlay.xul
+content	stumbleupon	jar:chrome/stumbleupon.jar!/content/
+
+locale	stumbleupon	en-US	jar:chrome/stumbleupon.jar!/locale/en-US/
+locale	stumbleupon	de-DE	jar:chrome/stumbleupon.jar!/locale/de-DE/
+locale	stumbleupon	fr-FR	jar:chrome/stumbleupon.jar!/locale/fr-FR/

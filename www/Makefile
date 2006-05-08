@@ -985,6 +985,7 @@
     SUBDIR += xpi-noscript
     SUBDIR += xpi-pdf_download
     SUBDIR += xpi-server_switcher
+    SUBDIR += xpi-stumbleupon
     SUBDIR += xpi-tabmixplus
     SUBDIR += xpi-unplug
     SUBDIR += xpi-videodownloader
