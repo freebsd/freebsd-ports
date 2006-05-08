@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	bftpd
-PORTVERSION=	1.0.24
-PORTREVISION=	1
+PORTVERSION=	1.4
 CATEGORIES=	ftp
-MASTER_SITES=	http://bftpd.sourceforge.net/downloads/src/
+MASTER_SITES=	http://bftpd.sourceforge.net/downloads/src/ \
+		http://www.alaskaparadise.com/freebsd/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	beech@mangohealth.org
 COMMENT=	Very configurable FTP server that can do chroot easily
 
 GNU_CONFIGURE=	yes
+
 CONFIGURE_ARGS+=	--enable-pam
-USE_GMAKE=	yes
 
 MAN8=		bftpd.8
 
