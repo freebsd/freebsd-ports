@@ -1,6 +1,6 @@
---- color.c.orig	Sat Sep 28 23:16:31 2002
-+++ color.c	Sat Sep 28 23:16:43 2002
-@@ -25,7 +25,7 @@
+--- ./color.c.orig	Sun Apr 16 15:08:31 2006
++++ ./color.c	Sun Apr 16 15:09:07 2006
+@@ -34,7 +34,7 @@
  
  #include <stdio.h>
  
