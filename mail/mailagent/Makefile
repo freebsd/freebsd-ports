@@ -7,15 +7,16 @@
 
 PORTNAME=		mailagent
 PORTVERSION=		3.0.73
+PORTREVISION=		1
 CATEGORIES=		mail
 MASTER_SITES=		${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/RAM
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	max@FreeBSD.org
 COMMENT=	A sophisticated automatic mail-processing tool
 
 USE_PERL5=	yes
-NO_PACKAGE=	"Correct FQDN needs to be hardcoded"
+NO_PACKAGE=	Correct FQDN needs to be hardcoded
 IS_INTERACTIVE=		yes
 HAS_CONFIGURE=		yes
 CONFIGURE_SCRIPT=	Configure
@@ -52,8 +53,8 @@ post-patch:
 	    misc/news/newsgate)
 
 post-install:
-	@${MKDIR} ${PREFIX}/share/examples/mailagent/misc
-	${CP} -pR ${WRKSRC}/misc/* ${PREFIX}/share/examples/mailagent/misc
-	@${LN} -fs ${PREFIX}/lib/mailagent/examples ${PREFIX}/share/examples/mailagent/agent
+	@${MKDIR} ${EXAMPLESDIR}/misc
+	${CP} -pR ${WRKSRC}/misc/* ${EXAMPLESDIR}/misc
+	@${LN} -fs ${PREFIX}/lib/mailagent/examples ${EXAMPLESDIR}/agent
 
 .include <bsd.port.mk>
