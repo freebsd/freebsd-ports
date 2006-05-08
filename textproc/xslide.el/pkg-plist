@@ -1,9 +1,6 @@
-share/doc/xslide.el/CHANGELOG.TXT
-share/doc/xslide.el/README.TXT
 share/emacs/site-lisp/xslide.el
 share/emacs/site-lisp/xslide-abbrev.el
 share/emacs/site-lisp/xslide-data.el
 share/emacs/site-lisp/xslide-font.el
 share/emacs/site-lisp/xslide-initial.xsl
 share/emacs/site-lisp/xslide-process.el
-@dirrm share/doc/xslide.el
