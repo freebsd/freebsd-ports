@@ -7,7 +7,7 @@
 
 PORTNAME=	Trf
 PORTVERSION=	2.1p2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel tcl${TCL_VER:S/.//}
 MASTER_SITES=	http://www.oche.de/~akupries/soft/trf/download/
 PKGNAMEPREFIX=	tcl-

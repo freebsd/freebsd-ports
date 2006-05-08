@@ -1,0 +1,24 @@
+Patch obtained from the TRF's CVS... Many thanks to Denis Shaposhnikov
+for finding it.
+
+TRF's RIPEMD160 implementation suffered from the same problem, but this
+port does not use it.
+
+	-mi
+
+--- generic/rmd128.c	Wed Aug  9 15:13:18 2000
++++ generic/rmd128.c	Mon May  8 12:52:04 2006
+@@ -46,5 +46,5 @@
+ typedef struct ripemd_context {
+   dword state [5];		/* state variables of ripemd-128 */
+-  byte  buf   [CHUNK_SIZE];	/* buffer of 15-dword's          */
++  byte  buf   [CHUNK_SIZE];	/* buffer of 16-dword's          */
+   byte  byteCount;		/* number of bytes in buffer     */
+   dword lowc;			/* lower half of a 64bit counter */
+@@ -235,5 +235,5 @@
+     } /* k == CHUNK_SIZE => internal buffer was empty, so skip it entirely */
+ 
+-    while (bufLen > CHUNK_SIZE) {
++    while (bufLen >= CHUNK_SIZE) {
+       CountLength (ctx, CHUNK_SIZE);
+ 
