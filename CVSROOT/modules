@@ -9644,6 +9644,7 @@ par		ports/textproc/par
 par2cmdline	ports/archivers/par2cmdline
 paraget		ports/ftp/paraget
 paragui		ports/x11-toolkits/paragui
+parano		ports/security/parano
 paraview	ports/science/paraview
 parchive	ports/archivers/parchive
 pardiff		ports/textproc/pardiff
