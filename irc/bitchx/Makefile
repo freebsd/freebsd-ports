@@ -19,7 +19,6 @@ COMMENT?=	"An alternative ircII color client with optional GTK/GNOME support"
 
 WRKSRC=		${WRKDIR}/BitchX
 USE_PERL5=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 WANT_GNOME=	yes
 USE_GMAKE=	yes

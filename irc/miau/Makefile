@@ -18,8 +18,6 @@ USE_BZIP2=		yes
 USE_ICONV=		yes
 GNU_CONFIGURE=		yes
 
-USE_REINPLACE=		yes
-
 INFO=			miau
 MAN1=			miau.1
 

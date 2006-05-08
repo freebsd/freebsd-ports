@@ -19,7 +19,6 @@ CONFLICTS=	irssi-0.8*
 
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 
 MAN1=		irssi.1

@@ -22,7 +22,6 @@ WRKSRC=		${WRKDIR}/xchat-systray-integration-${PORTVERSION}
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk20
-USE_REINPLACE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-Os|${CFLAGS} -fPIC|' ${WRKSRC}/Makefile

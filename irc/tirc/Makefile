@@ -16,7 +16,6 @@ COMMENT=	Token's 'Internet Relay Chat' Client
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ansi-colours
 MAKE_ARGS=	CONF_ARGS="--prefix=${PREFIX}"

@@ -14,8 +14,6 @@ DISTNAME=	garnax-f1.1
 MAINTAINER=	tlp@liquidx.org
 COMMENT=	A file serving bot for IRC
 
-USE_REINPLACE=	yes
-
 MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" PTHREAD_LIBS="${PTHREAD_LIBS}"
 PLIST_FILES=	bin/garnaxfs etc/garnaxfs.sample
 

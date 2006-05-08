@@ -19,7 +19,6 @@ MAN8=		ircd.8
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 
 USE_RC_SUBR=	ircd-hybrid.sh
 SUB_FILES=	pkg-message

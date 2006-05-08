@@ -20,7 +20,6 @@ BUILD_DEPENDS=	${LOCALBASE}/include/glib-2.0/glib.h:${PORTSDIR}/devel/glib20 \
 RUN_DEPENDS=	irssi:${PORTSDIR}/irc/irssi
 
 USE_ZIP=	yes
-USE_REINPLACE=	yes
 
 PLIST_FILES=	lib/irssi/modules/libfish.so
 PORTDOCS=	FiSH-irssi.txt FiSH-irssi_History.txt

@@ -19,7 +19,6 @@ RUN_DEPENDS=	xchat:${PORTSDIR}/irc/xchat2
 
 USE_X_PREFIX=	yes
 USE_ZIP=	yes
-USE_REINPLACE=	yes
 ALL_TARGET=	freebsd
 CFLAGS+=	-fPIC
 INSTALLS_SHLIB=	yes

@@ -17,7 +17,6 @@ COMMENT=		Easy to use IRC client for KDE
 USE_AUTOTOOLS=		libtool:15
 USE_KDELIBS_VER=	3
 USE_GMAKE=		yes
-USE_REINPLACE=		yes
 
 post-patch:
 	${REINPLACE_CMD} -e "s,-O0,${CFLAGS},g;s,NOOPT_,,g; \

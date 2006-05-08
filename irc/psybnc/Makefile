@@ -19,7 +19,6 @@ COMMENT=	PsyBNC is an extremely powerful IRC bouncer
 WRKSRC=		${WRKDIR}/psybnc
 PSYBASE=	${PREFIX}/psybnc
 
-USE_REINPLACE=	yes
 USE_OPENSSL=	yes
 
 MAKE_ARGS=		PSYBASE=${PSYBASE} PREFIX=$(PREFIX)

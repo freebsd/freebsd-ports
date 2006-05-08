@@ -19,7 +19,6 @@ CONFLICTS=	irssi-devel-[0-9]*
 USE_BZIP2=	yes
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--with-module
 
 MAN1=		irssi.1
