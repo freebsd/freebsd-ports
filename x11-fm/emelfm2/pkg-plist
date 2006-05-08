@@ -1,6 +1,8 @@
 bin/emelfm2
 lib/emelfm2/plugins/e2p_clone.so
+lib/emelfm2/plugins/e2p_config.so
 lib/emelfm2/plugins/e2p_cpbar.so
+lib/emelfm2/plugins/e2p_dircmp.so
 lib/emelfm2/plugins/e2p_du.so
 lib/emelfm2/plugins/e2p_find.so
 lib/emelfm2/plugins/e2p_for_each.so
@@ -10,6 +12,7 @@ lib/emelfm2/plugins/e2p_names_clip.so
 lib/emelfm2/plugins/e2p_pack.so
 lib/emelfm2/plugins/e2p_rename_ext.so
 lib/emelfm2/plugins/e2p_sort_by_ext.so
+lib/emelfm2/plugins/e2p_times.so
 lib/emelfm2/plugins/e2p_unpack.so
 lib/emelfm2/plugins/e2p_upgrade.so
 lib/emelfm2/plugins/e2p_view.so
@@ -23,19 +26,24 @@ share/applications/emelfm2.desktop
 %%PORTDOCS%%%%DOCSDIR%%/HACKING
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/LGPL
-%%PORTDOCS%%%%DOCSDIR%%/PLUGINS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/SPEC
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/USAGE
 %%PORTDOCS%%%%DOCSDIR%%/WARNING
 %%PORTDOCS%%%%DOCSDIR%%/help.txt
+share/locale/de/LC_MESSAGES/emelfm2.mo
+share/locale/fr/LC_MESSAGES/emelfm2.mo
+share/locale/ja/LC_MESSAGES/emelfm2.mo
+share/pixmaps/emelfm2/add_mark_bottom_48.png
+share/pixmaps/emelfm2/add_mark_top_48.png
 share/pixmaps/emelfm2/apply_all_48.png
 share/pixmaps/emelfm2/bookmark_48.png
 share/pixmaps/emelfm2/cl_clear_48.png
 share/pixmaps/emelfm2/copy_as_48.png
 share/pixmaps/emelfm2/delete_48.png
 share/pixmaps/emelfm2/dragsel.png
+share/pixmaps/emelfm2/edit_48.png
 share/pixmaps/emelfm2/emelfm2_24.png
 share/pixmaps/emelfm2/emelfm2_32.png
 share/pixmaps/emelfm2/emelfm2_48.png
@@ -55,7 +63,9 @@ share/pixmaps/emelfm2/owners_48.png
 share/pixmaps/emelfm2/permissions_48.png
 share/pixmaps/emelfm2/plugin_clip_48.png
 share/pixmaps/emelfm2/plugin_clone_48.png
+share/pixmaps/emelfm2/plugin_config_48.png
 share/pixmaps/emelfm2/plugin_copy_48.png
+share/pixmaps/emelfm2/plugin_dircmp_48.png
 share/pixmaps/emelfm2/plugin_du_48.png
 share/pixmaps/emelfm2/plugin_extsort_48.png
 share/pixmaps/emelfm2/plugin_find_48.png
@@ -64,8 +74,10 @@ share/pixmaps/emelfm2/plugin_glob_48.png
 share/pixmaps/emelfm2/plugin_move_48.png
 share/pixmaps/emelfm2/plugin_pack_48.png
 share/pixmaps/emelfm2/plugin_rename_48.png
+share/pixmaps/emelfm2/plugin_timeset_48.png
 share/pixmaps/emelfm2/plugin_unpack_48.png
 share/pixmaps/emelfm2/ps_48.png
+share/pixmaps/emelfm2/save_selection_48.png
 share/pixmaps/emelfm2/split_horiz_48.png
 share/pixmaps/emelfm2/split_vert_48.png
 share/pixmaps/emelfm2/star_48.png
@@ -79,7 +91,7 @@ share/pixmaps/emelfm2/user_commands_48.png
 share/pixmaps/emelfm2/view_48.png
 @dirrm share/pixmaps/emelfm2
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@unexec rmdir %%PREFIX%%/share/applications 2> /dev/null || true
-@unexec rmdir %%PREFIX%%/share/application-registry 2> /dev/null || true
+@dirrmtry share/applications
+@dirrmtry share/application-registry
 @dirrm lib/emelfm2/plugins
 @dirrm lib/emelfm2
