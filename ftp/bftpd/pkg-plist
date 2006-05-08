@@ -1,11 +1,12 @@
 @unexec if cmp -s %D/etc/bftpd.conf %D/etc/bftpd.conf.sample; then rm -f %D/etc/bftpd.conf; fi
 etc/bftpd.conf.sample
 sbin/bftpd
-%%PORTDOCS%%share/doc/bftpd/bftpddoc-en-1.html
-%%PORTDOCS%%share/doc/bftpd/bftpddoc-en-2.html
-%%PORTDOCS%%share/doc/bftpd/bftpddoc-en-3.html
-%%PORTDOCS%%share/doc/bftpd/bftpddoc-en-4.html
-%%PORTDOCS%%share/doc/bftpd/bftpddoc-en-5.html
-%%PORTDOCS%%share/doc/bftpd/bftpddoc-en.html
-%%PORTDOCS%%share/doc/bftpd/bftpddoc-en.txt
-%%PORTDOCS%%@dirrm share/doc/bftpd
+%%PORTDOCS%%%%DOCSDIR%%/bftpddoc-en-1.html
+%%PORTDOCS%%%%DOCSDIR%%/bftpddoc-en-2.html
+%%PORTDOCS%%%%DOCSDIR%%/bftpddoc-en-3.html
+%%PORTDOCS%%%%DOCSDIR%%/bftpddoc-en-4.html
+%%PORTDOCS%%%%DOCSDIR%%/bftpddoc-en-5.html
+%%PORTDOCS%%%%DOCSDIR%%/bftpddoc-en-6.html
+%%PORTDOCS%%%%DOCSDIR%%/bftpddoc-en.html
+%%PORTDOCS%%%%DOCSDIR%%/bftpddoc-en.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
