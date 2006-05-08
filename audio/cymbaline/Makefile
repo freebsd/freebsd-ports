@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cymbaline
-PORTVERSION=	1.3a
+PORTVERSION=	1.3b
 CATEGORIES=	audio python
 MASTER_SITES=	http://www.silmarill.org/files/
 
