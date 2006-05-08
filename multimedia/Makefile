@@ -38,7 +38,6 @@
     SUBDIR += gdvrecv
     SUBDIR += ggrab
     SUBDIR += gmencoder
-    SUBDIR += gnonlin
     SUBDIR += goggles
     SUBDIR += gopchop
     SUBDIR += gpac-libgpac
