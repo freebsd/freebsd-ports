@@ -850,6 +850,7 @@
     SUBDIR += ruby-webunit
     SUBDIR += rubygem-actionpack
     SUBDIR += rubygem-actionwebservice
+    SUBDIR += rubygem-bluecloth
     SUBDIR += rubygem-rails
     SUBDIR += rubygem-redcloth
     SUBDIR += sarg
