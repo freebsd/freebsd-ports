@@ -8,10 +8,7 @@ lib/xarchive/wrappers/rpm-wrap.sh
 lib/xarchive/wrappers/tar-wrap.sh
 lib/xarchive/wrappers/zip-wrap.sh
 share/applications/xarchive.desktop
-share/doc/xarchive/xarchive.1.html
-share/doc/xarchive/xarchive.1.txt
 share/pixmaps/xarchive.xpm
-@dirrm share/doc/xarchive
 @dirrmtry share/applications
 @dirrm lib/xarchive/wrappers
 @dirrm lib/xarchive
