@@ -1,0 +1,22 @@
+--- Makefile.am.orig	Sun May  7 23:30:33 2006
++++ Makefile.am	Mon May  8 10:20:59 2006
+@@ -1,5 +1,10 @@
++# we need -I- to prevent /usr/include/string.h from including our strings.h
++# instead of /usr/include/strings.h
++# Also we are using dlmalloc because the stock libc does not have
++# malloc_usable_size()
+ export XARAFLAGS = -I../PreComp -I../wxOil -I$(TOPDIR)/Kernel -I$(TOPDIR)/wxOil -I$(TOPDIR)/wxOil/Res \
+ 	-I$(TOPDIR)/tools -I$(TOPDIR)/GDraw -I$(TOPDIR)/PreComp -I$(TOPDIR)/wxXtra \
++	-I- -I$(LOCALBASE)/include/dlmalloc $(WX_CPPFLAGS) \
+ 	-DUSE_NATIVE_XLONG -DBUILDSHADOWS -DOLD_MATRIX_TRANSFORMATIONS \
+ 	-DVECTOR_STROKING -DEXCLUDE_FROM_XARALX -DNEW_SHADOW_RENDER -DNO_XARACMS \
+ 	-DNEW_FEATURES -DSHOWPORTNOTE -DDO_EXPORT
+@@ -22,7 +27,7 @@
+     XaraLX_SOURCES	= Kernel/libKernel.a wxOil/libwxOil.a tools/libTools.a wxXtra/libwxXtra.a
+     XaraLX_LDSOURCE = -Wl,--start-group $(XaraLX_SOURCES) -Wl,--end-group
+ endif
+-XaraLX_LDFLAGS		= --debug -L$(srcdir)/$(CDRAW_LIB_DIR) $(WX_LIBS) $(LIBS) $(LIBXML2_LIBS) -lCDraw
++XaraLX_LDFLAGS		= --debug -L$(srcdir)/$(CDRAW_LIB_DIR) $(WX_LIBS) $(LIBS) $(LIBXML2_LIBS) -lCDraw -L$(LOCALBASE) -ldlmalloc
+ XaraLX_LD			= $(CXX)
+ 
+ if STATIC_ENABLE
