@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	xarchive
-PORTVERSION=	0.2.8.2
+PORTVERSION=	0.2.8.6
 CATEGORIES=	archivers
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-0.2.8-2
+DISTNAME=	${PORTNAME}-0.2.8-6
 
 MAINTAINER=	mark@mkproductions.org
 COMMENT=	A GTK+ front end for archiving tools
@@ -22,10 +22,13 @@ MAN1=		xarchive.1
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20
 USE_X_PREFIX=	yes
+MAKE_ARGS=	-E doc_DATA
+MAKE_ENV=	doc_DATA=""
 
 OPTIONS=	7ZIP "Support for 7zip archives" off \
 		ARJ "Support for ARJ archives" off \
 		ACE "Support for ACE archives" off \
+		DEB "Support for DEB archives" off \
 		RAR "Support for RAR archives" off \
 		RPM "Support for RPM archives" off \
 		ZIP "Support for ZIP archives" off
@@ -44,13 +47,18 @@ RUN_DEPENDS+=	arj:${PORTSDIR}/archivers/arj
 RUN_DEPENDS+=	unace:${PORTSDIR}/archivers/unace
 .endif
 
+.if defined (WITH_DEB)
+RUN_DEPENDS+=	dpkg-deb:${PORTSDIR}/archivers/dpkg
+.endif
+
 .if defined (WITH_RAR)
 RUN_DEPENDS+=	rar:${PORTSDIR}/archivers/rar \
 		unrar:${PORTSDIR}/archivers/unrar
 .endif
 
 .if defined (WITH_RPM)
-RUN_DEPENDS+=	rpm:${PORTSDIR}/archivers/rpm4
+RUN_DEPENDS+=	rpm2cpio:${PORTSDIR}/archivers/rpm2cpio \
+		rpm:${PORTSDIR}/archivers/rpm
 .endif
 
 .if defined (WITH_ZIP)
