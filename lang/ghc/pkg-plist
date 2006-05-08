@@ -686,6 +686,8 @@ lib/ghc-%%GHC_VERSION%%/imports/Int.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Int.p_hi
 lib/ghc-%%GHC_VERSION%%/imports/Ix.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Ix.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Language/Haskell/Extension.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Language/Haskell/Extension.p_hi
 lib/ghc-%%GHC_VERSION%%/imports/Language/Haskell/Lexer.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Language/Haskell/Lexer.p_hi
 lib/ghc-%%GHC_VERSION%%/imports/Language/Haskell/ParseMonad.hi
@@ -950,6 +952,8 @@ lib/ghc-%%GHC_VERSION%%/imports/Distribution/Compat/RawSystem.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Distribution/Compat/RawSystem.p_hi
 lib/ghc-%%GHC_VERSION%%/imports/Distribution/Compat/ReadP.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Distribution/Compat/ReadP.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Distribution/Compiler.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Distribution/Compiler.p_hi
 lib/ghc-%%GHC_VERSION%%/imports/Distribution/Extension.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Distribution/Extension.p_hi
 lib/ghc-%%GHC_VERSION%%/imports/Distribution/GetOpt.hi
@@ -970,6 +974,8 @@ lib/ghc-%%GHC_VERSION%%/imports/Distribution/PreProcess/Unlit.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Distribution/PreProcess/Unlit.p_hi
 lib/ghc-%%GHC_VERSION%%/imports/Distribution/PreProcess.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Distribution/PreProcess.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Distribution/Program.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Distribution/Program.p_hi
 lib/ghc-%%GHC_VERSION%%/imports/Distribution/Setup.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Distribution/Setup.p_hi
 lib/ghc-%%GHC_VERSION%%/imports/Distribution/Simple/Build.hi
@@ -1416,6 +1422,7 @@ lib/ghc-%%GHC_VERSION%%/libHSrts.a
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/libHSrts_p.a
 lib/ghc-%%GHC_VERSION%%/libHSrts_debug.a
 lib/ghc-%%GHC_VERSION%%/libHSrts_thr.a
+lib/ghc-%%GHC_VERSION%%/libHSrts_thr_debug.a
 lib/ghc-%%GHC_VERSION%%/libHSrts_thr_p.a
 lib/ghc-%%GHC_VERSION%%/libHStext.a
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/libHStext_p.a
