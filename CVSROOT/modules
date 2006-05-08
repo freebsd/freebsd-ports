@@ -1159,6 +1159,7 @@ cisco_conf	ports/net-mgmt/cisco_conf
 ciscoconf	ports/net-mgmt/ciscoconf
 citadel		ports/net/citadel
 citrix_ica	ports/net/citrix_ica
+cjc		ports/net-im/cjc
 cjk-lyx		ports/print/cjk-lyx
 cksfv		ports/security/cksfv
 cl-asdf		ports/devel/cl-asdf
