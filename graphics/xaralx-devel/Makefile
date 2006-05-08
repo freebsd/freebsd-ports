@@ -5,19 +5,18 @@
 # $FreeBSD$
 #
 
-PORTVERSION=	0.4r925
+PORTVERSION=	0.4r971
 PKGNAMESUFFIX=	-devel
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz
 
 COMMENT=	Top-tier vector/general purpose graphics program (development version)
 
+BUILD_DEPENDS=	xml2-config:${PORTSDIR}/textproc/libxml2
+
 MASTERDIR=	${.CURDIR}/../xaralx
 MD5_FILE=	${.CURDIR}/distinfo
 
-# we need to exclude some of the patches as they are applied upstream
-PATCHDIR=	${NONEXISTENT}
-EXTRA_PATCHES=	${MASTERDIR}/files/patch-Makefile.am \
-		${MASTERDIR}/files/patch-PreComp_Makefile.am \
-		${MASTERDIR}/files/patch-configure.in
+PATCHDIR=	${.CURDIR}/files
+EXTRA_PATCHES=	${MASTERDIR}/files/patch-PreComp_Makefile.am
 
 .include "${MASTERDIR}/Makefile"
