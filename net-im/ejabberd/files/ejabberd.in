@@ -31,5 +31,6 @@ exec erl +K true -sname %%PORTNAME%% \
     -sasl sasl_error_logger \{file,\"$SASL_LOG\"\} \
     -mnesia dir \"$SPOOL\" \
     -kernel inetrc \"${INETRC}\" \
+    -pz "%%LOCALBASE%%/lib/erlang/" \
     $ERL_OPTIONS $ARGS "$@"
 
