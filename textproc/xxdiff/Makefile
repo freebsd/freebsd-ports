@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	xxdiff
-PORTVERSION=	3.0.3
+PORTVERSION=	3.0.4
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	QT interface to view/merge differences between 2 or 3 files
 
 BUILD_DEPENDS=	tmake:${PORTSDIR}/devel/tmake
@@ -21,7 +21,7 @@ USE_GMAKE=	yes
 USE_QT_VER=	3
 TMAKEENV=	TMAKEPATH=${LOCALBASE}/share/tmake/freebsd-g++ QTDIR=${X11BASE}
 MAKE_ENV+=	QTDIR=${X11BASE} PTHREAD_LIBS=${PTHREAD_LIBS}
-WRKSRC=	${WRKDIR}/xxdiff-${PORTVERSION}/src
+WRKSRC=		${WRKDIR}/xxdiff-${PORTVERSION}/src
 
 DOCFILES=	xxdiff-cvs-diff.html xxdiff-doc.html \
 		xxdiff-encrypted.html xxdiff-find-grep-sed.html \
@@ -31,28 +31,17 @@ DOCFILES=	xxdiff-cvs-diff.html xxdiff-doc.html \
 
 SSDIR=		${DOCSDIR}/screenshots
 SSFILES=	allindex.cidx allindex.html dirindex.html sortindex.html \
-		xxdiff-snap-about--thumb.jpg xxdiff-snap-about.desc \
-		xxdiff-snap-about.html xxdiff-snap-about.jpg \
-		xxdiff-snap-dirs2--thumb.jpg xxdiff-snap-dirs2.desc \
-		xxdiff-snap-dirs2.html xxdiff-snap-dirs2.jpg \
-		xxdiff-snap-doc--thumb.jpg xxdiff-snap-doc.desc \
-		xxdiff-snap-doc.html xxdiff-snap-doc.jpg \
-		xxdiff-snap-files2--thumb.jpg xxdiff-snap-files2.desc \
-		xxdiff-snap-files2.html xxdiff-snap-files2.jpg \
-		xxdiff-snap-files3--thumb.jpg xxdiff-snap-files3.desc \
-		xxdiff-snap-files3.html xxdiff-snap-files3.jpg \
-		xxdiff-snap-merged--thumb.jpg xxdiff-snap-merged.desc \
-		xxdiff-snap-merged.html xxdiff-snap-merged.jpg \
-		xxdiff-snap-opt1--thumb.jpg xxdiff-snap-opt1.desc \
-		xxdiff-snap-opt1.html xxdiff-snap-opt1.jpg \
-		xxdiff-snap-opt2--thumb.jpg xxdiff-snap-opt2.desc \
-		xxdiff-snap-opt2.html xxdiff-snap-opt2.jpg \
-		xxdiff-snap-opt3--thumb.jpg xxdiff-snap-opt3.desc \
-		xxdiff-snap-opt3.html xxdiff-snap-opt3.jpg \
-		xxdiff-snap-opt4--thumb.jpg xxdiff-snap-opt4.desc \
-		xxdiff-snap-opt4.html xxdiff-snap-opt4.jpg \
-		xxdiff-snap-opt5--thumb.jpg xxdiff-snap-opt5.desc \
-		xxdiff-snap-opt5.html xxdiff-snap-opt5.jpg
+		${SSSNAPS:S/^/xxdiff-snap-/}
+SSSNAPS=	about--thumb.jpg about.desc about.html about.jpg dirs2--thumb.jpg dirs2.desc \
+		dirs2.html dirs2.jpg doc--thumb.jpg doc.desc doc.html doc.jpg files2--thumb.jpg \
+		files2.desc files2.html files2.jpg files3--thumb.jpg files3.desc files3.html \
+		files3.jpg merged--thumb.jpg merged.desc merged.html merged.jpg opt1--thumb.jpg \
+		opt1.desc opt1.html opt1.jpg opt2--thumb.jpg opt2.desc opt2.html opt2.jpg \
+		opt3--thumb.jpg opt3.desc opt3.html opt3.jpg opt4--thumb.jpg opt4.desc opt4.html \
+		opt4.jpg opt5--thumb.jpg opt5.desc opt5.html opt5.jpg
+
+PLIST_FILES=	bin/xxdiff
+PORTDOCS=	*
 
 .include <bsd.port.pre.mk>
 
@@ -65,8 +54,8 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/../bin/xxdiff ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR} ${SSDIR}
-	${INSTALL_DATA} ${DOCFILES:S,^,${WRKSRC}/../doc/,} ${DOCSDIR}
-	${INSTALL_DATA} ${SSFILES:S,^,${WRKSRC}/../doc/screenshots/,} ${SSDIR}
+	${INSTALL_DATA} ${DOCFILES:S,^,${WRKSRC}/../doc/,} ${DOCSDIR}/
+	${INSTALL_DATA} ${SSFILES:S,^,${WRKSRC}/../doc/screenshots/,} ${SSDIR}/
 .endif
 
 .include <bsd.port.post.mk>
