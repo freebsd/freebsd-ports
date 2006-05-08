@@ -14259,6 +14259,7 @@ xpi-adblock_plus	ports/www/xpi-adblock_plus
 xpi-colorfultabs	ports/www/xpi-colorfultabs
 xpi-cssviewer	ports/www/xpi-cssviewer
 xpi-fasterfox	ports/www/xpi-fasterfox
+xpi-mldonkey	ports/www/xpi-mldonkey
 xpi-no-referrer	ports/www/xpi-no-referrer
 xpi-noscript	ports/www/xpi-noscript
 xpi-pdf_download	ports/www/xpi-pdf_download
