@@ -2523,6 +2523,7 @@ fontconfig	ports/x11-fonts/fontconfig
 fontedit	ports/sysutils/fontedit
 fonteditfs	ports/sysutils/fonteditfs
 fontforge	ports/print/fontforge
+foo2zjs		ports/print/foo2zjs
 foobillard	ports/games/foobillard
 foomatic-db	ports/print/foomatic-db
 foomatic-db-engine	ports/print/foomatic-db-engine
