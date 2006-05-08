@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- ghc/compiler/Makefile.orig
++++ ghc/compiler/Makefile
+@@ -395,7 +395,7 @@
+ SRC_HC_OPTS += -DGHCI -package template-haskell
+ 
+ # Use threaded RTS with GHCi, so threads don't get blocked at the prompt.
+-SRC_HC_OPTS += -threaded
++# SRC_HC_OPTS += -threaded
+ 
+ ALL_DIRS += ghci
+ 

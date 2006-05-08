@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	ghc
-PORTVERSION=	6.4.1
-PORTREVISION=	1
+PORTVERSION=	6.4.2
 CATEGORIES=	lang haskell
 MASTER_SITES=	http://www.haskell.org/ghc/dist/${PORTVERSION}/:source \
 		http://www.haskell.org/ghc/dist/${PORTVERSION}/FreeBSD/:boot
@@ -16,8 +15,8 @@ PATCHFILES=	patch-ghc-libraries_OpenAL.diff
 ONLY_FOR_ARCHS=	i386
 
 SRC_DIST=	ghc-${PORTVERSION}-src${EXTRACT_SUFX}:source
-BOOT_DIST=	ghc-${PORTVERSION}-i386-unknown-freebsd-boot${EXTRACT_SUFX}:boot
-BOOT_DIST5=	ghc-${PORTVERSION}-i386-unknown-freebsd5-boot${EXTRACT_SUFX}:boot
+BOOT_DIST4=	ghc-${PORTVERSION}-i386-unknown-freebsd4-boot${EXTRACT_SUFX}:boot
+BOOT_DIST=	ghc-${PORTVERSION}-i386-unknown-freebsd6-boot${EXTRACT_SUFX}:boot
 
 USE_BZIP2=	yes
 
@@ -28,9 +27,10 @@ OPTIONS=	PROFILE "Compile for profiling as well" on
 DISTFILES=	${SRC_DIST}
 
 .if ${OSVERSION} < 500000
-DISTFILES+=	${BOOT_DIST}
+DISTFILES+=	${BOOT_DIST4}
+IGNORE=		unsupported at the moment
 .else
-DISTFILES+=	${BOOT_DIST5}
+DISTFILES+=	${BOOT_DIST}
 .if ${OSVERSION} >= 600000
 LIB_DEPENDS+=	c.5:${PORTSDIR}/misc/compat5x
 .endif
@@ -108,16 +108,8 @@ post-patch:
 		${WRKSRC}/ghc/rts/package.conf.in
 
 pre-configure:
-	@(cd ${WRKSRC}/libraries/OpenAL && ${AUTOCONF})
 	@(cd ${BOOT_DIR} && ${CONFIGURE_ENV} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS})
 	@(cd ${BOOT_DIR} && ${MAKE} in-place)
-
-post-configure:
-.if defined(WITHOUT_X11)
-.for d in GLUT HGL OpenGL X11
-	${REINPLACE_CMD} -e 's/^\(.*BUILD_PACKAGE\)=yes/\1=no/' ${WRKSRC}/libraries/${d}/config.mk
-.endfor
-.endif
 
 pre-build:
 	@${MKDIR} ${TMPDIR}
