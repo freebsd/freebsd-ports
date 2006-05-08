@@ -558,6 +558,7 @@
     SUBDIR += sdb
     SUBDIR += sdlquake2
     SUBDIR += sdlroids
+    SUBDIR += sdlsand
     SUBDIR += seabattle
     SUBDIR += seahaven
     SUBDIR += senken
