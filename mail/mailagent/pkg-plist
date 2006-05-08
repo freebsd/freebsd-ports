@@ -39,50 +39,50 @@ lib/mailagent/examples/nocmds
 lib/mailagent/examples/profile
 lib/mailagent/examples/rules
 lib/mailagent/examples/vacation
-share/examples/mailagent/misc/README
-share/examples/mailagent/misc/fakesend/README
-share/examples/mailagent/misc/fakesend/fakesend.pl
-share/examples/mailagent/misc/fakesend/freplcomps
-share/examples/mailagent/misc/fakesend/mh_profile
-share/examples/mailagent/misc/getcost/README
-share/examples/mailagent/misc/getcost/getcost
-share/examples/mailagent/misc/getcost/getcost.bak
-share/examples/mailagent/misc/getcost/rules
-share/examples/mailagent/misc/getcost/spamconfig
-share/examples/mailagent/misc/mime/README
-share/examples/mailagent/misc/mime/rules
-share/examples/mailagent/misc/mime/unmime
-share/examples/mailagent/misc/mime/unmime.bak
-share/examples/mailagent/misc/news/README
-share/examples/mailagent/misc/news/ml.map
-share/examples/mailagent/misc/news/newsgate
-share/examples/mailagent/misc/news/newsgate.bak
-share/examples/mailagent/misc/news/rules
-share/examples/mailagent/misc/pbounce/README
-share/examples/mailagent/misc/pbounce/mailagent.cf
-share/examples/mailagent/misc/pbounce/newcmd.cf
-share/examples/mailagent/misc/pbounce/patbounce.pl
-share/examples/mailagent/misc/pbounce/rules
-share/examples/mailagent/misc/shell/README
-share/examples/mailagent/misc/shell/server.cf
-share/examples/mailagent/misc/shell/shell
-share/examples/mailagent/misc/unkit/README
-share/examples/mailagent/misc/unkit/kitok.msg
-share/examples/mailagent/misc/unkit/mailagent.cf
-share/examples/mailagent/misc/unkit/newcmd.cf
-share/examples/mailagent/misc/unkit/rules
-share/examples/mailagent/misc/unkit/unkit.pl
-@exec /bin/ln -sf %D/lib/mailagent/examples %D/share/examples/mailagent/agent
-@unexec /bin/rm -f %D/share/examples/mailagent/agent
-@dirrm share/examples/mailagent/misc/unkit
-@dirrm share/examples/mailagent/misc/shell
-@dirrm share/examples/mailagent/misc/pbounce
-@dirrm share/examples/mailagent/misc/news
-@dirrm share/examples/mailagent/misc/mime
-@dirrm share/examples/mailagent/misc/getcost
-@dirrm share/examples/mailagent/misc/fakesend
-@dirrm share/examples/mailagent/misc
-@dirrm share/examples/mailagent
+%%EXAMPLESDIR%%/misc/README
+%%EXAMPLESDIR%%/misc/fakesend/README
+%%EXAMPLESDIR%%/misc/fakesend/fakesend.pl
+%%EXAMPLESDIR%%/misc/fakesend/freplcomps
+%%EXAMPLESDIR%%/misc/fakesend/mh_profile
+%%EXAMPLESDIR%%/misc/getcost/README
+%%EXAMPLESDIR%%/misc/getcost/getcost
+%%EXAMPLESDIR%%/misc/getcost/getcost.bak
+%%EXAMPLESDIR%%/misc/getcost/rules
+%%EXAMPLESDIR%%/misc/getcost/spamconfig
+%%EXAMPLESDIR%%/misc/mime/README
+%%EXAMPLESDIR%%/misc/mime/rules
+%%EXAMPLESDIR%%/misc/mime/unmime
+%%EXAMPLESDIR%%/misc/mime/unmime.bak
+%%EXAMPLESDIR%%/misc/news/README
+%%EXAMPLESDIR%%/misc/news/ml.map
+%%EXAMPLESDIR%%/misc/news/newsgate
+%%EXAMPLESDIR%%/misc/news/newsgate.bak
+%%EXAMPLESDIR%%/misc/news/rules
+%%EXAMPLESDIR%%/misc/pbounce/README
+%%EXAMPLESDIR%%/misc/pbounce/mailagent.cf
+%%EXAMPLESDIR%%/misc/pbounce/newcmd.cf
+%%EXAMPLESDIR%%/misc/pbounce/patbounce.pl
+%%EXAMPLESDIR%%/misc/pbounce/rules
+%%EXAMPLESDIR%%/misc/shell/README
+%%EXAMPLESDIR%%/misc/shell/server.cf
+%%EXAMPLESDIR%%/misc/shell/shell
+%%EXAMPLESDIR%%/misc/unkit/README
+%%EXAMPLESDIR%%/misc/unkit/kitok.msg
+%%EXAMPLESDIR%%/misc/unkit/mailagent.cf
+%%EXAMPLESDIR%%/misc/unkit/newcmd.cf
+%%EXAMPLESDIR%%/misc/unkit/rules
+%%EXAMPLESDIR%%/misc/unkit/unkit.pl
+@exec /bin/ln -sf %D/lib/mailagent/examples %D/%%EXAMPLESDIR%%/agent
+@unexec /bin/rm -f %D/%%EXAMPLESDIR%%/agent
+@dirrm %%EXAMPLESDIR%%/misc/unkit
+@dirrm %%EXAMPLESDIR%%/misc/shell
+@dirrm %%EXAMPLESDIR%%/misc/pbounce
+@dirrm %%EXAMPLESDIR%%/misc/news
+@dirrm %%EXAMPLESDIR%%/misc/mime
+@dirrm %%EXAMPLESDIR%%/misc/getcost
+@dirrm %%EXAMPLESDIR%%/misc/fakesend
+@dirrm %%EXAMPLESDIR%%/misc
+@dirrm %%EXAMPLESDIR%%
 @dirrm lib/mailagent/examples
 @dirrm lib/mailagent/help
 @dirrm lib/mailagent
