@@ -7,6 +7,7 @@
 
 PORTNAME=	sdlsand
 PORTVERSION=	20060207
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,6 +18,7 @@ COMMENT=	Simulation of falling sand and other materials
 
 USE_ZIP=	yes
 USE_SDL=	sdl
+USE_X_PREFIX=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/SDL\ Sand/SDL\ Sand
 

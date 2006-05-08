@@ -7,6 +7,7 @@
 
 PORTNAME=	trimines
 PORTVERSION=	1.2.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.freewebs.com/trimines/
 
@@ -15,6 +16,7 @@ COMMENT=	Mine sweeper game that uses triangles instead of squares
 
 USE_SDL=	sdl
 USE_GCC=	3.4+
+USE_X_PREFIX=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|data/|${DATADIR}/|' ${WRKSRC}/src/gfx.c
