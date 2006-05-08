@@ -1,0 +1,7 @@
+==============================================================================
+
+To complete the installation of this port you need to copy the files
+"base/pak00[0-4].pk4", from the original Doom III distribution to
+"%%DATADIR%%/base".
+
+==============================================================================

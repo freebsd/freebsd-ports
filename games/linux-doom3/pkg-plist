@@ -1,0 +1,12 @@
+bin/doom3
+bin/doom3-ded
+%%DATADIR%%/base/game01.pk4
+%%DATADIR%%/base/pak005.pk4
+%%NEW%%%%DATADIR%%/base/pak006.pk4
+%%NEW%%%%DATADIR%%/base/pak007.pk4
+%%DATADIR%%/doom.x86
+%%DATADIR%%/doomded.x86
+share/pixmaps/doom3.png
+@dirrmtry share/pixmaps
+@dirrmtry %%DATADIR%%/base
+@unexec rmdir %D/%%DATADIR%% >/dev/null 2>&1 || echo "If you are permanently removing this port, you should remove any configuration files, data files, and mods left in %D/%%DATADIR%%." | fmt
