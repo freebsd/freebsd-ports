@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	SVN-Web
-PORTVERSION=	0.46
+PORTVERSION=	0.47
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	../../authors/id/N/NI/NIKC
+MASTER_SITE_SUBDIR=	SVN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	rafan@infor.org
@@ -21,6 +21,7 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Template.pm:${PORTSDIR}/www/p5-Template
 		${SITE_PERL}/XML/RSS.pm:${PORTSDIR}/textproc/p5-XML-RSS \
 		${SITE_PERL}/Locale/Maketext/Simple.pm:${PORTSDIR}/devel/p5-Locale-Maketext-Simple \
 		${SITE_PERL}/YAML.pm:${PORTSDIR}/textproc/p5-YAML \
+		p5-Cache-Cache>=0:${PORTSDIR}/devel/p5-Cache-Cache \
 		p5-Exception-Class>=1.22:${PORTSDIR}/devel/p5-Exception-Class \
 		p5-Scalar-List-Utils>=0:${PORTSDIR}/lang/p5-Scalar-List-Utils \
 		p5-Locale-Maketext-Lexicon>=0:${PORTSDIR}/devel/p5-Locale-Maketext-Lexicon \
