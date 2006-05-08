@@ -290,6 +290,14 @@ share/applications/sylpheed-claws.desktop
 %%PORTDOCS%%%%DOCSDIR%%/manual/en/sylpheed-claws-manual.pdf
 %%PORTDOCS%%%%DOCSDIR%%/manual/en/sylpheed-claws-manual.ps
 %%PORTDOCS%%%%DOCSDIR%%/manual/en/sylpheed-claws-manual.txt
+%%PORTDOCS%%%%DOCSDIR%%/manual/fr/sylpheed-claws-manual.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/fr/sylpheed-claws-manual.pdf
+%%PORTDOCS%%%%DOCSDIR%%/manual/fr/sylpheed-claws-manual.ps
+%%PORTDOCS%%%%DOCSDIR%%/manual/fr/sylpheed-claws-manual.txt
+%%PORTDOCS%%%%DOCSDIR%%/manual/pl/sylpheed-claws-manual.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/pl/sylpheed-claws-manual.pdf
+%%PORTDOCS%%%%DOCSDIR%%/manual/pl/sylpheed-claws-manual.ps
+%%PORTDOCS%%%%DOCSDIR%%/manual/pl/sylpheed-claws-manual.txt
 %%THEMES%%%%DATADIR%%/themes/Crystal/.sylpheed_themeinfo
 %%THEMES%%%%DATADIR%%/themes/Crystal/close.xpm
 %%THEMES%%%%DATADIR%%/themes/Crystal/continue.xpm
@@ -2054,6 +2062,8 @@ share/applications/sylpheed-claws.desktop
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/manual/en
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/manual/fr
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/manual/pl
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/manual
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/sylpheed-claws/plugins
