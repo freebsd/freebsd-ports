@@ -5705,6 +5705,7 @@ libijs		ports/print/libijs
 libimg		ports/graphics/libimg
 libiodbc	ports/databases/libiodbc
 libirman	ports/comms/libirman
+libjackasyn	ports/audio/libjackasyn
 libjbigi	ports/math/libjbigi
 libjingle	ports/net-im/libjingle
 libjit		ports/lang/libjit
