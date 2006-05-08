@@ -1,0 +1,21 @@
+--- src/Makefile.in.orig	Mon May  8 18:30:25 2006
++++ src/Makefile.in	Mon May  8 18:43:31 2006
+@@ -199,7 +199,6 @@
+ 
+ 
+ bin_PROGRAMS = liferea-bin 
+-bin_SCRIPTS = liferea
+ 
+ liferea_bin_SOURCES = \
+ 	atom10.c atom10.h \
+@@ -369,8 +368,8 @@
+ 	     || test -f $$p1 \
+ 	  ; then \
+ 	    f=`echo "$$p1" | sed 's,^.*/,,;$(transform);s/$$/$(EXEEXT)/'`; \
+-	   echo " $(INSTALL_PROGRAM_ENV) $(LIBTOOL) --mode=install $(binPROGRAMS_INSTALL) $$p $(DESTDIR)$(bindir)/$$f"; \
+-	   $(INSTALL_PROGRAM_ENV) $(LIBTOOL) --mode=install $(binPROGRAMS_INSTALL) $$p $(DESTDIR)$(bindir)/$$f || exit 1; \
++	   echo " $(INSTALL_PROGRAM_ENV) $(LIBTOOL) --mode=install $(binPROGRAMS_INSTALL) $$p $(DESTDIR)$(bindir)/liferea"; \
++	   $(INSTALL_PROGRAM_ENV) $(LIBTOOL) --mode=install $(binPROGRAMS_INSTALL) $$p $(DESTDIR)$(bindir)/liferea || exit 1; \
+ 	  else :; fi; \
+ 	done
+ 
