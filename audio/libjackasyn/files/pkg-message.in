@@ -1,0 +1,35 @@
+###############################################################################
+
+1) To use libjackasyn as a jack's client, you need to set LD_PRELOAD.
+
+   csh:
+   setenv LD_PRELOAD %%PREFIX%%/lib/libjackasyn.so
+
+   bash:
+   export LD_PRELOAD=%%PREFIX%%/lib/libjackasyn.so
+
+   And start jackd (only works using root account)
+
+   # jackd -d oss
+
+2) You need procfs mounted.
+
+   # mount_procfs procfs /proc
+
+   Also you could edit your /etc/fstab file and add this line
+
+   proc		/proc	procfs	rw	0	0
+
+   This to load procfs on boot time, or typing
+
+   # mount /proc
+
+3) Run your program (using root account, jackd and xmms must have the same uid).
+
+   Example: xmms + xmms-jackasyn
+
+   # xmms
+
+   If jackd isn't running, the libjackasyn will use normal oss device
+
+##############################################################################

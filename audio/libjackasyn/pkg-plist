@@ -1,0 +1,5 @@
+bin/jacklaunch
+include/libjackoss.h
+lib/libjackasyn.a
+lib/libjackasyn.so
+lib/libjackasyn.so.0

@@ -1,0 +1,19 @@
+libjackasyn is a library that allows you to use programs written for the OSS
+sound API with the JACK audio server (jackit.sf.net). libjackasyn is a library
+that can be used for two purposes.
+
+First it can be loaded via the LD_PRELOAD variable, turning OSS applications
+automatically into JACK-aware applications.
+
+Second, it can be used to link against the program during build time, making it
+trivial to turn an OSS aware sound application into a JACK aware sound
+application in a short time.
+
+libjackasyn got its name from the asynchronous manner in which it communicates
+with the JACK server, which means by using libjackasyn you will introduce an
+additional delay exactly the size of one JACK audiobuffer (1024 samples or 44
+ms with the JACK default settings). This delay can be reduced by reducing the
+JACK buffersize. It should not matter for sound generating applications, but
+it might introduce phasing effects when doing sound processing.
+
+WWW:	http://gige.xdv.org/libjackasyn/
