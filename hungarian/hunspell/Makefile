@@ -17,7 +17,6 @@ COMMENT=	Improved Hungarian spelling checker
 
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
-USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-1.0-RC2
 
 MAN1=		hunspell.1
