@@ -1,0 +1,20 @@
+--- configure	Tue Aug 24 08:42:36 2004
++++ configure	Mon Mar  6 11:08:00 2006
+@@ -2506,7 +2506,7 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-ljack  $LIBS"
++LIBS="-ljack  %%PTHREAD%% $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -2562,7 +2562,7 @@
+ #define HAVE_LIBJACK 1
+ _ACEOF
+ 
+-  LIBS="-ljack $LIBS"
++  LIBS="-ljack %%PTHREAD%% $LIBS"
+ 
+ else
+   echo please install jack jackit.sf.net;exit

@@ -285,6 +285,7 @@
     SUBDIR += libcddb-doc
     SUBDIR += libgpod
     SUBDIR += libid3tag
+    SUBDIR += libjackasyn
     SUBDIR += libmad
     SUBDIR += libmikmod
     SUBDIR += libmodplug
