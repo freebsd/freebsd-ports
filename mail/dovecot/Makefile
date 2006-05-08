@@ -8,6 +8,7 @@
 
 PORTNAME=	dovecot
 DISTVERSION=	1.0.beta7
+PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://www.dovecot.org/releases/
 
@@ -47,7 +48,7 @@ OPTIONS=	KQUEUE		"kqueue(2) support"	off  \
 
 ## kqueue(2) support
 #
-.if !defined(WITHOUT_KQUEUE)
+.if defined(WITH_KQUEUE) 
 CONFIGURE_ARGS+=	--with-ioloop=kqueue --with-notify=kqueue
 .endif
 
