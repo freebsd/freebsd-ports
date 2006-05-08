@@ -25,7 +25,6 @@ RUN_DEPENDS=	wish8.3:${PORTSDIR}/x11-toolkits/tk83
 .endif
 
 NO_BUILD=	yes
-USE_REINPLACE=	yes
 .if defined(ZIRCON_WITH_TCL84) || defined(ZIRCON_WITH_TK84)
 TCL_VER=	8.4
 .else

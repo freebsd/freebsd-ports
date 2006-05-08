@@ -14,7 +14,6 @@ MASTER_SITES=	http://static.blitzed.org/www.blitzed.org/bopm/files/ \
 MAINTAINER=	aquatique-ports@rambler.ru
 COMMENT=	Open proxy monitor and blocker, designed for use with ircds
 
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc

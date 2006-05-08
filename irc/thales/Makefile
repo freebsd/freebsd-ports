@@ -19,7 +19,6 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_MYSQL=	yes
 USE_RC_SUBR=	thales.sh
-USE_REINPLACE=	yes
 
 # Currently, not all supported IRCDs are handled here, only the ones
 # I could find corresponding RUN_DEPENDS in our Ports Collection.

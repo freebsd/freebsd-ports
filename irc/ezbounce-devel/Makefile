@@ -15,7 +15,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/b/}
 MAINTAINER=	joe@joeholden.co.uk
 COMMENT=	A highly configurable IRC Proxy
 
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
 SUB_FILES=	pkg-message

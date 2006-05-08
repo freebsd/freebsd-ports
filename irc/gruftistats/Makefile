@@ -17,7 +17,6 @@ COMMENT=	Produces a web page of statistics and quotes from IRC channel logs
 
 GNU_CONFIGURE=	YES
 USE_GMAKE=	YES
-USE_REINPLACE=	yes
 
 .if defined(NOPORTDOCS)
 MAKE_ARGS=	NOPORTDOCS=1

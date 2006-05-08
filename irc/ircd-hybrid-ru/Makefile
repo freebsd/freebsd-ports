@@ -23,7 +23,6 @@ CONFLICTS=	ircd-hybrid-7* ircd-ru[0-9]*
 WRKSRC=		${WRKDIR}/${PORTNAME}${PKGNAMESUFFIX}
 USE_OPENSSL=	yes
 USE_BISON=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/ircd-hybrid-ru --enable-kqueue
 

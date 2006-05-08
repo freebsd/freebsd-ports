@@ -13,7 +13,6 @@ MASTER_SITES=	http://www.tnsp.org/files/
 MAINTAINER=	psh@iki.fi
 COMMENT=	Fast IRC statistics generator
 
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 BUILD_WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 

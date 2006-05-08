@@ -20,7 +20,6 @@ RUN_DEPENDS=	xchat:${PORTSDIR}/irc/xchat2
 
 USE_X_PREFIX=	yes
 USE_ZIP=	yes
-USE_REINPLACE=	yes
 NO_WRKSUBDIR=	ys
 
 #

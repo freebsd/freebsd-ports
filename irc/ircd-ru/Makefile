@@ -17,7 +17,6 @@ COMMENT=	An irc daemon with translation schemes and other useful features
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 SUB_FILES=	pkg-message
 USE_RC_SUBR=	ircd.sh
 
