@@ -9,7 +9,9 @@
 PORTNAME=	xmlwrapp
 PORTVERSION=	0.5.0
 CATEGORIES=	textproc
-MASTER_SITES=	http://pmade.org/software/xmlwrapp/download/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A modern style C++ library for working with XML data
@@ -30,5 +32,8 @@ USE_GNOME+=	libxslt
 .else
 CONFIGURE_ARGS+=	--disable-xslt
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} "s:/usr/bin/perl:${PERL}:" ${WRKSRC}/configure.pl
 
 .include <bsd.port.post.mk>
