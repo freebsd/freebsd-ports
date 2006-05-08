@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD$
+# $FreeBSD: /tmp/pcvs/ports/net-mgmt/net-snmp-devel/files/Attic/snmpd.sh.in,v 1.1 2006-05-08 05:00:27 clsung Exp $
 #
 # PROVIDE: snmpd
 # REQUIRE: DAEMON
