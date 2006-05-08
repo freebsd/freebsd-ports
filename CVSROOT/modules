@@ -11310,6 +11310,7 @@ ragel		ports/devel/ragel
 raggle		ports/net/raggle
 raidtest	ports/benchmarks/raidtest
 rain		ports/security/rain
+rainbowcrack	ports/security/rainbowcrack
 raincoat	ports/sysutils/raincoat
 raine		ports/emulators/raine
 raknet		ports/devel/raknet
