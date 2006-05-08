@@ -978,6 +978,7 @@
     SUBDIR += xpi-adblock_plus
     SUBDIR += xpi-colorfultabs
     SUBDIR += xpi-cssviewer
+    SUBDIR += xpi-cutemenus-crystalsvg
     SUBDIR += xpi-fasterfox
     SUBDIR += xpi-mldonkey
     SUBDIR += xpi-no-referrer
