@@ -44,7 +44,6 @@ command="%%PREFIX%%/sbin/%%DRIVERNAME%%control"
 		eval _mode=\$_%%DRIVERNAME%%_file_${i}
 		echo -n " [${i}:${_mode:=bss}]"
 		${command} -i ${i} -d %%FWDIR%% -m ${_mode:=bss}
-		ifconfig ${i} up
 	done
 	echo "."
 }
