@@ -2,6 +2,6 @@ radvd implements IPv6 router advertisements for Linux and FreeBSD
 as specified in RFC 2461. Support for Mobile IPv6 as well as 6to4
 is included.
 
-WWW: http://v6web.litech.org/radvd/
+WWW: http://www.litech.org/radvd/
 
 - Patrick Li <pat@FreeBSD.org>

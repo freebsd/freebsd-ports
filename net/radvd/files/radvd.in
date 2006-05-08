@@ -1,0 +1,25 @@
+#!/bin/sh
+
+# PROVIDE: radvd
+# REQUIRE: NETWORKING
+
+#
+# Add the following line to /etc/rc.conf to enable radvd:
+#
+# radvd_enable="YES"
+#
+
+. %%RC_SUBR%%
+
+name=radvd
+rcvar=`set_rcvar`
+prefix=%%PREFIX%%
+pidfile=/var/run/${name}.pid
+command="${prefix}/sbin/${name}"
+command_args="-p ${pidfile}"
+required_files="${prefix}/etc/${name}.conf"
+
+load_rc_config $name
+: ${radvd_enable="NO"}
+
+run_rc_command "$1"
