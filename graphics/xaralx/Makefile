@@ -16,7 +16,7 @@ COMMENT?=	Top-tier vector/general purpose graphics program (recommended version)
 
 #WXDEP=	${X11BASE}/libwx_baseu-2.6.so.0.3.1
 WXDEP=	wxgtk2-unicode>=2.6.3
-BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig \
+BUILD_DEPENDS+=	pkg-config:${PORTSDIR}/devel/pkgconfig \
 		${WXDEP}:${PORTSDIR}/x11-toolkits/wxgtk26-unicode \
 		${LOCALBASE}/bin/md5sum:${PORTSDIR}/archivers/dpkg \
 		${LOCALBASE}/bin/zip:${PORTSDIR}/archivers/zip
