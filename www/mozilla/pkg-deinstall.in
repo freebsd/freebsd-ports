@@ -23,6 +23,5 @@ rm -f ${MOZDIR}/components.ini
 rm -f ${MOZDIR}/defaults.ini
 rm -f ${MOZDIR}/chrome/app-chrome.manifest
 rm -rf ${MOZDIR}/updates
-rm -rf ${MOZDIR}/extensions
 
 exit 0
