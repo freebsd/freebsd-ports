@@ -12013,6 +12013,7 @@ sdl_ttf		ports/graphics/sdl_ttf
 sdlmm		ports/devel/sdlmm
 sdlquake2	ports/games/sdlquake2
 sdlroids	ports/games/sdlroids
+sdlsand		ports/games/sdlsand
 sdocbook-xml	ports/textproc/sdocbook-xml
 sdpa		ports/math/sdpa
 sdpara		ports/math/sdpara
