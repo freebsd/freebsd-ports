@@ -624,7 +624,6 @@
     SUBDIR += tripwire12
     SUBDIR += tthsum
     SUBDIR += unicornscan
-    SUBDIR += uvscan-dat
     SUBDIR += vida
     SUBDIR += vlock
     SUBDIR += vlog
