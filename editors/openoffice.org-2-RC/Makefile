@@ -158,6 +158,8 @@ EXTRA_PATCHES+=	${FILESDIR}/moz-patch_i59729 #cws pj50
 #EXTRA_PATCHES+=	 ${FILESDIR}/optpatch-freetype
 #.endif
 
+ICONS=	${WRKSRC}/sysui/desktop/icons
+
 .include <${FILESDIR}/Makefile.knobs>
 
 pre-everything::
@@ -237,6 +239,29 @@ post-install:
 	@${LN} -fs ${PREFIX}/bin/${EXECBASE} ${PREFIX}/bin/${EXECBASE}-spadmin
 	@${LN} -fs ${PREFIX}/bin/${EXECBASE} ${PREFIX}/bin/${EXECBASE}-swriter
 	@${PRINTF} "bin/openoffice.org\n" > ${TMPPLIST}
+	@${REINPLACE_CMD} -e 's#${RELEASE_NR}#${OOOVERSION}#g' \
+			-e '/^Exec/s/printeradmin/spadmin/' \
+			${PREFIX}/${INSTALLATION_BASEDIR}/share/xdg/*.desktop
+	@${RM} ${PREFIX}/${INSTALLATION_BASEDIR}/share/xdg/*.desktop.bak
+.if defined(WITH_KDE)
+	@ln -sf ${PREFIX}/${INSTALLATION_BASEDIR}/share/xdg \
+			${PREFIX}/share/applnk/${EXECBASE}
+	@${PRINTF} "share/applnk/${EXECBASE}\n" >> ${TMPPLIST}
+.endif
+	@for dir in `ls ${ICONS}/hicolor | grep -v CVS`; do \
+		for app in base calc draw impress math printeradmin writer; do \
+			if [ -r ${ICONS}/hicolor/$${dir}/apps/$${app}.png ]; then \
+				${CP} ${ICONS}/hicolor/$${dir}/apps/$${app}.png \
+				    ${PREFIX}/share/icons/hicolor/$${dir}/apps/openofficeorg-20-$${app}.png ; \
+				${PRINTF} "share/icons/hicolor/$${dir}/apps/openofficeorg-20-$${app}.png\n" >> ${TMPPLIST} ; \
+			fi \
+		done ; \
+		for file in `cd ${ICONS}/hicolor/$${dir}/mimetypes; ls *.png`; do \
+			${CP} ${ICONS}/hicolor/$${dir}/mimetypes/$${file} \
+			    ${PREFIX}/share/icons/hicolor/$${dir}/mimetypes/ ; \
+			${PRINTF} "share/icons/hiclor/$${dir}/mimetypes/$${file}\n" >> ${TMPPLIST} ; \
+		done ; \
+	done
 	@cd ${PREFIX} ; ${FIND} -s bin -type f | ${GREP} ${EXECBASE} >> ${TMPPLIST}
 	@cd ${PREFIX} ; ${FIND} -s bin -type l | ${GREP} ${EXECBASE} >> ${TMPPLIST}
 	@cd ${PREFIX} ; ${FIND} -s ${INSTALLATION_BASEDIR} -type f >> ${TMPPLIST}
