@@ -22,6 +22,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	A functional programming language from Ericsson
 
+CONFLICTS?=	erlang-lite-r[0-9]*
+
 # The Java applications that are part of the Erlang distribution are
 # not strictly necessary - it is included for completeness sake. A
 # problem with the Erlang build procedure is that it only checks if
