@@ -36,10 +36,10 @@ PATCH_DEPENDS=	${BUILD_DEPENDS}
 CONFLICTS?=	apache+ipv6-1.* apache+ssl-1.* apache-1.* apache-2.* \
 		apache_fp-1.* caudium-devel-1.* caudium10-1.* caudium12-* \
 		ru-apache+mod_ssl-1.* ru-apache-1.* thttpd-2.* w3c-httpd-3.*
-VERSION_APACHE=	1.3.34
-VERSION_MODSSL=	2.8.25
+VERSION_APACHE=	1.3.35
+VERSION_MODSSL=	2.8.26
 VERSION_MODSNMP=	1.3.14.13
-VERSION_MODACCEL=	1.0.31
+VERSION_MODACCEL=	1.0.34
 VERSION_MODDEFLATE=	1.0.21
 USE_OPENSSL=	yes
 HAS_CONFIGURE=	yes
