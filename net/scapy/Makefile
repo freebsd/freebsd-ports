@@ -7,7 +7,7 @@
 # TODO: - configurable --enable-xxx for various additional dependancies
 
 PORTNAME=	scapy
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.4
 CATEGORIES=	net
 MASTER_SITES=	http://secdev.org/projects/scapy/files/
 
