@@ -8,7 +8,7 @@
 PORTNAME=	esf
 PORTVERSION=	1.1.1.b
 PORTREVISION=	1
-MASTER_SITES=	http://38.118.213.152/ichmovniif+/pub2/Half_Life/Modifications/Earths_Special_Forces/
+MASTER_SITES=	http://ftp.games.skynet.be/pub/www.filesnetwork.com/Half-Life/Mods/Earth%60s_Special_Forces/
 DISTNAME=	esfb111
 
 MAINTAINER=	ports@FreeBSD.org
