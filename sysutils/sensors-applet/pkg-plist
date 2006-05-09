@@ -28,5 +28,6 @@ share/locale/ro/LC_MESSAGES/sensors-applet.mo
 share/locale/ru/LC_MESSAGES/sensors-applet.mo
 @dirrm share/gnome/help/sensors-applet/C/figures
 @dirrm share/gnome/help/sensors-applet/C
+@dirrm share/gnome/help/sensors-applet
 @dirrm share/gnome/omf/sensors-applet
 @dirrm share/gnome/pixmaps/sensors-applet
