@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	tkinspect
-PORTVERSION=	5.1.6p9
-CATEGORIES=	devel tcl83 tk83
+PORTVERSION=	5.1.6p10
+CATEGORIES=	devel tcl84 tk84
 MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=tkcon
 
 MAINTAINER=	nox@jelal.kn-bremen.de
 COMMENT=	A Tk program browser
 
-RUN_DEPENDS=	wish8.3:${PORTSDIR}/x11-toolkits/tk83
+RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 
 # this would do an interactive install:
 #do-install:
