@@ -7,11 +7,13 @@
 
 PORTNAME=	alienarena
 PORTVERSION=	2006
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games linux
-MASTER_SITES=	http://www.forsakenweb.com/gamepage/loaders/games/
+MASTER_SITES=	http://www.forsakenweb.com/gamepage/loaders/games/:full \
+		http://offload1.icculus.org/~ravage/alienarena2006/:patch
 PKGNAMEPREFIX=	linux-
-DISTFILES=	${PORTNAME}-${PORTVERSION}-x86.run
+DISTFILES=	${PORTNAME}-${PORTVERSION}-x86.run:full \
+		${PORTNAME}-${PORTVERSION}ge-i386.tar.gz:patch
 
 MAINTAINER=	acardenas@bsd.org.pe
 COMMENT=	Alien Arena 2006 (Linux version)
@@ -70,8 +72,8 @@ do-extract:
 	@cd ${WRKSRC} && \
 		${TAIL} -c +8814 ${_DISTDIR}/${PORTNAME}-${PORTVERSION}-x86.run | ${TAR} xfz -
 	@${TAR} xfj ${WRKSRC}/alienarena-2006ge-data.tar.bz2 -C ${WRKSRC}
-
 	@${CP} -R ${WRKSRC}/engine/${ENGINE_ARCH}/* ${WRKSRC}
+	@${TAR} xfz ${_DISTDIR}/alienarena-2006ge-i386.tar.gz -C ${WRKSRC}
 
 pre-install:
 	@${RM} -f ${PLIST}
