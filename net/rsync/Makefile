@@ -7,6 +7,7 @@
 
 PORTNAME=	rsync
 PORTVERSION=	2.6.8
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://rsync.samba.org/ftp/%SUBDIR%/ \
 		ftp://ftp.samba.org//pub/%SUBDIR%/ \
@@ -20,26 +21,35 @@ MASTER_SITE_SUBDIR=	rsync
 MAINTAINER=	pav@FreeBSD.org
 COMMENT=	A network file distribution/synchronization utility
 
-.if defined(WITH_POPT_PORT)
-LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
-.endif
-
 USE_RC_SUBR=	rsyncd.sh
-GNU_CONFIGURE=	yes
+SUB_LIST=	NAME=rsyncd
 
-CONFIGURE_ARGS=	--disable-debug \
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-debug --enable-ipv6 \
 		--with-rsyncd-conf=${PREFIX}/etc/rsyncd.conf
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
+.if !defined(NOPORTDOCS)
+PORTDOCS=	NEWS README csprotocol.txt tech_report.tex
+.endif
+
+MAN1=		rsync.1
+MAN5=		rsyncd.conf.5
+
+OPTIONS=	POPT_PORT "Use popt from devel/popt instead of bundled one" off \
+		TIMELIMIT "Time limit patch" on \
+		FLAGS "File system flags support patch, adds --flags" on \
+		ACLS "ACL support patch, adds --acl" on \
+		SSH "Use SSH instead of RSH" on
+
+.include <bsd.port.pre.mk>
+
 .if defined(WITH_POPT_PORT)
+LIB_DEPENDS+=	popt.0:${PORTSDIR}/devel/popt
 CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 .else
 CONFIGURE_ARGS+=	--with-included-popt
-.endif
-
-.if !defined(NOPORTDOCS)
-PORTDOCS=	NEWS README csprotocol.txt tech_report.tex
 .endif
 
 .if !defined(WITHOUT_TIMELIMIT)
@@ -47,32 +57,19 @@ EXTRA_PATCHES+=	${WRKSRC}/patches/time-limit.diff
 PATCH_STRIP=	-p1
 .endif
 
-.include <bsd.port.pre.mk>
+.if !defined(WITHOUT_FLAGS)
+EXTRA_PATCHES+=	${WRKSRC}/patches/flags.diff
+PATCH_STRIP=	-p1
+.endif
 
-SUB_LIST+=	NAME=rsyncd
-
-.if ${OSVERSION} < 400016
-WITHOUT_SSH?=	yes
+.if !defined(WITHOUT_ACLS)
+EXTRA_PATCHES+=	${WRKSRC}/patches/acls.diff
+PATCH_STRIP=	-p1
+CONFIGURE_ARGS+=--enable-acl-support
 .endif
 
 .if defined(WITHOUT_SSH)
 CONFIGURE_ARGS+=	--with-rsh=rsh
-.endif
-
-.if ${OSVERSION} >= 400014
-CONFIGURE_ARGS+=	--enable-ipv6
-.else
-CONFIGURE_ARGS+=	--disable-ipv6
-.endif
-
-MAN1=		rsync.1
-MAN5=		rsyncd.conf.5
-
-.if !defined(WITH_POPT_PORT)
-pre-everything::
-	@${ECHO_CMD} "rsync comes with an included version of popt."
-	@${ECHO_CMD} "To build rsync with devel/popt instead,"
-	@${ECHO_CMD} "hit Ctrl-C now and define WITH_POPT_PORT"
 .endif
 
 pre-configure:
