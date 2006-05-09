@@ -106,7 +106,6 @@ EXTRACT_ONLY=	${SCSL_SRCFILE} ${SCSL_BINFILE}
 ONLY_FOR_ARCHS=	i386 amd64
 USE_GMAKE=	YES
 USE_ICONV=	YES
-USE_REINPLACE=	YES
 RESTRICTED=	"Redistribution of pre-compiled binaries is not permitted"
 NO_CDROM=	"Redistribution of pre-compiled binaries is not permitted"
 

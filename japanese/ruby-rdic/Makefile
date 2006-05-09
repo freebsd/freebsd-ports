@@ -28,7 +28,6 @@ RUBY_RD_FILES=	xselection.rd \
 		xselection.rd.jp
 
 USE_XLIB=	yes
-USE_REINPLACE=	yes
 
 INSTALL_TARGET=	site-install
 

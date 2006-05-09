@@ -17,7 +17,6 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	Another kana-kanji conversion system
 
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 USE_GNOME=	gnometarget lthack pkgconfig

@@ -17,7 +17,6 @@ COMMENT=	Python Unicode codecs for Japanese charsets
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
-USE_REINPLACE=	yes
 DOCSDIR=	${PREFIX}/share/doc/ja-pycodec
 
 post-patch:

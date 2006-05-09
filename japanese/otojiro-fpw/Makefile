@@ -23,7 +23,6 @@ BUILD_DEPENDS=	${LOCALBASE}/libexec/freepwing/catdump:${PORTSDIR}/japanese/freep
 RESTRICTED=	"The original dictionary is not free"
 NO_PACKAGE=	"The original dictionary is not free"
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/otojiro-fpw${PORTVERSION:S/.a/a/}
 DICT_PATH?=	/cdrom
 SRCFILE?=	otojiro.txt

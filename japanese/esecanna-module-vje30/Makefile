@@ -20,7 +20,6 @@ COMMENT=	Esecanna module for VJE-Delta 3.0
 RUN_DEPENDS=	${LOCALBASE}/sbin/esecannaserver:${PORTSDIR}/japanese/esecanna
 
 USE_PERL5=	yes
-USE_REINPLACE=	yes
 USE_AUTOTOOLS=	autoconf:213
 USE_GMAKE=	yes
 # VJE-Delta 3.0 is installed under /usr/local fixedly

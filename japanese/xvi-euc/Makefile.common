@@ -14,8 +14,6 @@ MAINTAINER?=	ports@FreeBSD.org
 
 EXTRACT_DEPENDS=lha:${PORTSDIR}/archivers/lha
 
-USE_REINPLACE=	yes
-
 WRKSRC=	${WRKDIR}/xvi-2.19/src
 
 do-extract:

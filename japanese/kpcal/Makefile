@@ -20,7 +20,6 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	yoichi@FreeBSD.org
 COMMENT=	Make Calendar in Postscript format
 
-USE_REINPLACE=	yes
 ALL_TARGET=	kpcal
 MAN1=		kpcal.1
 PLIST_FILES=	bin/kpcal

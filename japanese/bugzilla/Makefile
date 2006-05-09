@@ -45,8 +45,6 @@ PLIST_SUB+=	CONTRIB=""
 PLIST_SUB+=	CONTRIB="@comment "
 .endif
 
-USE_REINPLACE=	yes
-
 NO_BUILD=	yes
 BINMODE=	700
 PKGMESSAGE=	${WRKDIR}/pkg-message

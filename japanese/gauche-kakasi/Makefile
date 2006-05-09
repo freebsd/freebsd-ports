@@ -21,7 +21,6 @@ BUILD_DEPENDS=	gosh:${PORTSDIR}/lang/gauche
 RUN_DEPENDS=	${BUILD_DEPENDS}
 LIB_DEPENDS=	kakasi.3:${PORTSDIR}/japanese/kakasi
 
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-kakasi=${PREFIX}
 DOCSDIR=	${PREFIX}/share/doc/gauche/${PORTNAME}

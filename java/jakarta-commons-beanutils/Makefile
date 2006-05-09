@@ -32,8 +32,6 @@ MAKE_ARGS+=	-Dcommons-collections.api=${COMMONS_COLLECTIONS_API} \
 		-Dcommons-collections.jar=${JAVALIBDIR}/commons-collections.jar \
 		-Dcommons-logging.jar=${JAVALIBDIR}/commons-logging.jar
 
-USE_REINPLACE=	yes
-
 JARFILE=	${PORTNAME}.jar
 PLIST_FILES=	%%JAVAJARDIR%%/${JARFILE}
 .if !defined(NOPORTDOCS)

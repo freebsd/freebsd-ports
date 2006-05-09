@@ -20,7 +20,6 @@ COMMENT=	Pseudo cannaserver which wraps some other input engines
 
 USE_RC_SUBR=	yes
 
-USE_REINPLACE=	yes
 USE_AUTOTOOLS=	autoconf:213
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--with-piddir="${PIDDIR}"

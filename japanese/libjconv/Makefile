@@ -18,7 +18,6 @@ COMMENT=	Japanese charset conversion library powered by iconv(3)
 MAKE_ARGS=	NOPROFILE=true PREFIX=${PREFIX} LOCALBASE=${LOCALBASE}
 INSTALLS_SHLIB=	yes
 USE_ICONV=	yes
-USE_REINPLACE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,!!PREFIX!!,${PREFIX},' ${WRKSRC}/info.c

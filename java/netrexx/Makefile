@@ -18,7 +18,6 @@ COMMENT=	Human-oriented programming language for writing/using Java classes
 NO_BUILD=	yes
 USE_ZIP=	yes
 USE_JAVA=	yes
-USE_REINPLACE=	yes
 
 .include <bsd.port.pre.mk>
 
