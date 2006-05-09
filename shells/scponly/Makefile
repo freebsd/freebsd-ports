@@ -106,6 +106,7 @@ CONFIGURE_ARGS+=--enable-chrooted-binary
 .endif
 
 .if defined(WITH_SCPONLY_RSYNC)
+BROKEN=		The Rsync compatibility is broken
 BUILD_DEPENDS+=	rsync:${PORTSDIR}/net/rsync
 RUN_DEPENDS+=	${BUILD_DEPENDS}
 CONFIGURE_ARGS+=--enable-rsync-compat
