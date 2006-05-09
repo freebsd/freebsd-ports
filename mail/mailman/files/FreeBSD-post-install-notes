@@ -21,8 +21,6 @@ VERY IMPORTANT NOTE
 The Mailman port has a number of build time options.  Getting the values of
 some of these right is CRUCIAL if you want your Mailman installation to work!
 
-To see a list of build time options, edit your port Makefile.
-
 1) General post-installation instructions
 
    You should find two files named "INSTALL" and "README" in the same
