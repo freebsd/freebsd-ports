@@ -7,7 +7,7 @@
 
 PORTNAME=	uvscan
 PORTVERSION=	4.40e
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://download.nai.com/products/evaluation/virusscan/english/cmdline/bsd/v4.40/
 DISTNAME=	vbsd440e
@@ -16,7 +16,6 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	jeh@FreeBSD.org
 COMMENT=	Evaluation version of a DOS/Windows/Linux file virus scanner
 
-RUN_DEPENDS+=	${LOCALBASE}/sbin/update_dat:${PORTSDIR}/security/uvscan-dat
 # misc/compat3x is forbidden, but if it is compiled into the system
 # we may still be good to go.
 LIB_DEPENDS+=	c.3:${PORTSDIR}/misc/compat3x
@@ -40,8 +39,11 @@ PROGFILES=	contact.txt license.dat license.txt messages.dat \
 do-configure:
 	${SED} <${FILESDIR}/uvscan.sh >${WRKSRC}/uvscan.sh \
 		-e 's:@@PREFIX@@:${PREFIX}:g'
+	${SED} -e 's:@PREFIX@:${PREFIX}:g' \
+		<${FILESDIR}/update_dat >${WRKDIR}/update_dat
 
 do-install:
+	${MKDIR} ${PREFIX}/libexec/uvscan
 	${INSTALL_SCRIPT} ${WRKSRC}/uvscan ${PREFIX}/libexec/uvscan
 	${INSTALL_SCRIPT} ${WRKSRC}/uvscan.sh ${PREFIX}/bin/uvscan
 	${INSTALL_SCRIPT} ${WRKSRC}/uvscan_secure ${PREFIX}/bin
@@ -58,9 +60,12 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${filename} ${DOCSDIR}
 .endfor
 .endif
+	${INSTALL_SCRIPT} ${WRKDIR}/update_dat ${PREFIX}/sbin
+	@${CAT} ${PKGMESSAGE}
 
 post-install:
-	${LN} -sf ${PREFIX}/lib/libbsdfv.so.4 \
-		${PREFIX}/lib/libbsdfv.so
+	${LN} -sf ${PREFIX}/lib/libbsdfv.so.4 ${PREFIX}/lib/libbsdfv.so
+	${ECHO_CMD} "Trying to fetch the current DAT file"
+	${SH} ${PREFIX}/sbin/update_dat
 
 .include <bsd.port.mk>

@@ -1,0 +1,3 @@
+NOTE: The update_dat script is useful for automatically downloading
+the latest version of the virus definitions without waiting for the
+port to be updated.
