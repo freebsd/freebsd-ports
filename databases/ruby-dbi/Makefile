@@ -12,9 +12,9 @@ MASTER_SITES=	${RUBY_DBI_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${RUBY_DBI_MASTER_SITE_SUBDIR}
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	${RUBY_DBI_DISTNAME}
-DIST_SUBDIR=	ruby	
+DIST_SUBDIR=	ruby
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	boumenot@gmail.com
 COMMENT=	DBI-for-Ruby - a common interface for SQL-based databases
 
 RUN_DEPENDS=	${RUBY_SITELIBDIR}/aspectr.rb:${PORTSDIR}/devel/ruby-aspectr
@@ -23,7 +23,7 @@ USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
 
 WRKSRC=		${RUBY_DBI_WRKSRC}
-CONFIGURE_ARGS=	--with=bin/commandline,lib/${PORTNAME},lib/wrapper
+CONFIGURE_ARGS=	--with=bin/commandline,${PORTNAME}
 
 DOCS_EN=	README.1st doc/*
 
