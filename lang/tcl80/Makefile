@@ -29,7 +29,6 @@ SHLIB_MAJOR=	1
 SHLIB_MINOR=	5
 MAKEFILE=	makefile
 TCL_LIB=	libtcl80.so
-USE_REINPLACE=	yes
 
 .include <bsd.port.pre.mk>
 

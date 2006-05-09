@@ -22,7 +22,6 @@ CONFIGURE_SCRIPT=	Make
 CONFIGURE_ENV=		CFLAGS="${CFLAGS}" \
 			PREFIX="${PREFIX}"
 CONFIGURE_ARGS=		o all
-USE_REINPLACE=		yes
 
 # configures and builds in one step
 NO_BUILD=		yes

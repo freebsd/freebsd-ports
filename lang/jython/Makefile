@@ -20,7 +20,6 @@ COMMENT=	An implementation of Python Interpreter in Pure Java
 
 USE_JAVA=	1.3+
 NO_BUILD=	yes
-USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ""
 
 INST_PACKAGES?=	demo lib source

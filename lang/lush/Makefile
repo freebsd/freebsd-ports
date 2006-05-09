@@ -19,7 +19,6 @@ USE_X_PREFIX=	yes
 USE_GL=		yes
 USE_SDL=	sdl image
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LIBS="${LIBS} ${PTHREAD_LIBS} -lintl -L${LOCALBASE}/lib"

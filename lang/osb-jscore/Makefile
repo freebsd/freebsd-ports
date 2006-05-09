@@ -16,7 +16,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Javascript interpreter port from Apple's KHTML and part of Gtk-Webcore
 
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 USE_GNOME=	gtk20 gnomehack
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" \

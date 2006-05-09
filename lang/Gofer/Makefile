@@ -23,8 +23,6 @@ DOCSDIR=	${PREFIX}/share/doc/Gofer
 LIBDIR=		${PREFIX}/lib/Gofer
 MAN1=		gofer.1
 
-USE_REINPLACE=	yes
-
 do-install:
 	@${MKDIR} ${LIBDIR}
 	${INSTALL_DATA} ${WRKDIR}/*.prelude ${LIBDIR}

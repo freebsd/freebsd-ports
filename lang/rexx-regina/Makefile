@@ -21,7 +21,6 @@ COMMENT=	A Rexx interpreter
 CONFLICTS=	rexx-imc-* oorexx-[0-9]*
 
 WRKSRC=		${WRKDIR}/Regina-${PORTVERSION}
-USE_REINPLACE=	yes
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

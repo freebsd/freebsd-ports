@@ -20,7 +20,6 @@ COMMENT=	[incr Tcl] (A.K.A. "itcl")
 LIB_DEPENDS=	tcl84:${PORTSDIR}/lang/tcl84
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/itcl
-USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 PKGINSTALL=	${PORTSDIR}/lang/tcl84/pkg-install.tclsh
 PKGDEINSTALL=	${PORTSDIR}/lang/tcl84/pkg-deinstall.tclsh

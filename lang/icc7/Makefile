@@ -26,7 +26,6 @@ ONLY_FOR_ARCHS=		i386
 CONFLICTS=		linux_devtools* ifc*
 
 USE_LINUX=		yes
-USE_REINPLACE=		yes
 NO_WRKSUBDIR=		yes
 
 COMPILERDIR=	compiler70

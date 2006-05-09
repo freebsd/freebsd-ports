@@ -22,7 +22,6 @@ OPTIONS=	TCLTK "Enable Tcl/Tk binding" on
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_GCC=	3.4+
 USE_ICONV=	yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \

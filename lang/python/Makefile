@@ -29,7 +29,6 @@ MAN1=		python.1
 USE_PYTHON=	yes
 PYTHON_VERSION=	python2.4
 PYTHON_NO_DEPENDS=	yes
-USE_REINPLACE=	yes
 
 SHARED_WRKSRC=	${WRKSRC}/build.shared
 PLIST=		${WRKDIR}/pkg-plist

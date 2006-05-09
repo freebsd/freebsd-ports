@@ -15,7 +15,6 @@ COMMENT=	A powerful typeless object-oriented scripting language
 
 CONFLICTS=	rexx-imc-[0-9]* rexx-regina-[0-9]*
 
-USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 MAKE_ENV=	EXAMPLESDIR="${EXAMPLESDIR}"
 MAN1=		rexx.1 rexxc.1 rxmigrate.1 rxsubcom.1 rxqueue.1

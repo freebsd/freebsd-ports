@@ -32,7 +32,6 @@ USE_BISON=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
-USE_REINPLACE=	yes
 
 CONFIGURE_SCRIPT=	../${SRCDIR:C/${WRKDIR}//}/configure
 NOMANCOMPRESS=	yes	# too hard to deal with differences on 5-cur and releng4

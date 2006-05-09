@@ -16,8 +16,6 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DICE - The Amiga/embedded/generic 68000 C compiler
 
-USE_REINPLACE=	yes
-
 post-patch:
 		@for i in ${WRKSRC}/lib/version.h ${WRKSRC}/include/lib/version.h \
 			${WRKSRC}/src/dcpp/main.c ${WRKSRC}/src/dcc/defs.h \

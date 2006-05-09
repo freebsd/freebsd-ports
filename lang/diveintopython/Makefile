@@ -26,7 +26,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A free Python tutorial book that is "not For Dummies(tm)"
 
 NO_BUILD=	YES
-USE_REINPLACE=	YES
 USE_ZIP=	YES
 WRKSRC=		${WRKDIR}/${PORTNAME}-${VERSIONSTR}/html
 DIPDLDIR=	${DOCSDIR}/download

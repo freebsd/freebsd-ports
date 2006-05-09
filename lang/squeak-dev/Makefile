@@ -37,7 +37,6 @@ COMMENT=		Full Smalltalk 80 with portability to UNIX, Mac, and Windows.
 ONLY_FOR_ARCHS= 	i386
 MAN1=			inisqueak.1 squeak.1
 USE_GMAKE=		yes
-USE_REINPLACE=		yes
 HAS_CONFIGURE=		yes
 
 # Don't set USE_ZIP as this breaks EXTRACT_CMD.

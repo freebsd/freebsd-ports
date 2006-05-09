@@ -14,7 +14,6 @@ DISTNAME=	${PORTNAME}-v2.0b0-source
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A scripting implementation of the BASIC language
 
-USE_REINPLACE=	yes
 NO_WRKSUBDIR=	yes
 USE_PERL5=	yes
 CFLAGS+=	-fPIC

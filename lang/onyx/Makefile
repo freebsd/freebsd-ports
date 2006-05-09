@@ -18,7 +18,6 @@ LIB_DEPENDS=	edit.6:${PORTSDIR}/devel/libedit \
 		pcre.0:${PORTSDIR}/devel/pcre
 
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-libedit-prefix=${LOCALBASE} \

@@ -19,8 +19,6 @@ COMMENT=	A fully-fledged compiler for Haskell 98
 
 ONLY_FOR_ARCHS=	i386
 
-USE_REINPLACE=	yes
-
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_GMAKE=	yes

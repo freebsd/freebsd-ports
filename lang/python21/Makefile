@@ -28,7 +28,6 @@ USE_PYTHON=	yes
 PYTHON_VERSION=	python2.1
 PYTHON_NO_DEPENDS=	yes
 LATEST_LINK=	${PYTHON_VERSION:S/.//}
-USE_REINPLACE=	yes
 
 #
 # If you don't want to use Python's thread module, you need to set

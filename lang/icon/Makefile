@@ -15,7 +15,6 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Icon programming language
 
-USE_REINPLACE=	yes
 ALL_TARGET=	All
 
 MAN1=		icont.1

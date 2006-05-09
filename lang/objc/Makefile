@@ -14,7 +14,6 @@ DISTFILES=	objc-bootstrap-${BOOTVERSION}.tar.gz objc-${PORTVERSION}.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portable Object Compiler
 
-USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
 BOOTVERSION=	3.1.33
 

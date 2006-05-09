@@ -19,7 +19,6 @@ COMMENT=	Graphical logo interpreter
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 USE_GNOME=	gdkpixbuf gnometarget
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
