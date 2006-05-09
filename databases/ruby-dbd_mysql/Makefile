@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	${RUBY_DBI_DISTNAME}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	boumenot@gmail.com
 COMMENT=	MySQL driver for DBI-for-Ruby
 
 RUN_DEPENDS=	${RUBY_SITELIBDIR}/dbi.rb:${RUBY_DBI_PORTDIR} \
@@ -27,9 +27,9 @@ SLAVE_PORT=	yes
 MASTER_PORT=	databases/ruby-dbi
 
 WRKSRC=		${RUBY_DBI_WRKSRC}
-CONFIGURE_ARGS=	--with=lib/${PORTNAME}
+CONFIGURE_ARGS=	--with=${PORTNAME}
 
-DOCS_EN=	lib/${PORTNAME}/doc/*
+DOCS_EN=	doc/dbd/mysql/*
 
 .include "${.CURDIR}/../ruby-dbi/Makefile.common"
 
