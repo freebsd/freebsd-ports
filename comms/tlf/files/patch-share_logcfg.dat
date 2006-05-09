@@ -1,0 +1,13 @@
+--- share/logcfg.dat.orig	Mon May  8 14:51:58 2006
++++ share/logcfg.dat	Mon May  8 14:52:09 2006
+@@ -27,8 +27,8 @@
+ #                               #
+ #################################
+ #
+-EDITOR=joe
+-#EDITOR=vi
++#EDITOR=joe
++EDITOR=vi
+ #EDITOR=e3
+ #EDITOR=MC
+ #

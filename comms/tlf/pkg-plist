@@ -1,30 +1,30 @@
 bin/soundlog
 bin/tlf
-share/tlf/arrlsections
-share/tlf/callmaster
-share/tlf/cty.dat
-share/tlf/doc/README
-share/tlf/rules/dxped
-share/tlf/ea_sections
-share/tlf/rules/eusprint
-share/tlf/logcfg.dat
-share/tlf/rules/lzdx
-share/tlf/rules/pacc_dx
-share/tlf/rules/pacc_pa
-share/tlf/paccmults
-share/tlf/rules/qso
-share/tlf/rules/arrldx_dx
-share/tlf/rules/arrldx_usa
-share/tlf/rules/arrlfd
-share/tlf/rules/arrlss
-share/tlf/rules/cqww
-share/tlf/rules/spdx_dx
-share/tlf/rules/spdx_sp
-share/tlf/spdxmults
-share/tlf/rules/ssa_mt
-share/tlf/ssamults
-share/tlf/rules/template
-share/tlf/rules/wpx
-@dirrm share/tlf/doc
-@dirrm share/tlf/rules
-@dirrm share/tlf
+%%DATADIR%%/arrlsections
+%%DATADIR%%/callmaster
+%%DATADIR%%/cty.dat
+%%DATADIR%%/doc/README
+%%DATADIR%%/rules/dxped
+%%DATADIR%%/ea_sections
+%%DATADIR%%/rules/eusprint
+%%DATADIR%%/logcfg.dat
+%%DATADIR%%/rules/lzdx
+%%DATADIR%%/rules/pacc_dx
+%%DATADIR%%/rules/pacc_pa
+%%DATADIR%%/paccmults
+%%DATADIR%%/rules/qso
+%%DATADIR%%/rules/arrldx_dx
+%%DATADIR%%/rules/arrldx_usa
+%%DATADIR%%/rules/arrlfd
+%%DATADIR%%/rules/arrlss
+%%DATADIR%%/rules/cqww
+%%DATADIR%%/rules/spdx_dx
+%%DATADIR%%/rules/spdx_sp
+%%DATADIR%%/spdxmults
+%%DATADIR%%/rules/ssa_mt
+%%DATADIR%%/ssamults
+%%DATADIR%%/rules/template
+%%DATADIR%%/rules/wpx
+@dirrm %%DATADIR%%/doc
+@dirrm %%DATADIR%%/rules
+@dirrm %%DATADIR%%
