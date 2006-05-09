@@ -1,49 +1,60 @@
 bin/gen-ctl-io
 include/ctl.h
+include/ctlgeom-types.h
 include/ctlgeom.h
 lib/libctl.a
+lib/libctl.la
+lib/libctlgeom.a
+lib/libctlgeom.la
+%%DOCSDIR%%/advanced-user.html
+%%DOCSDIR%%/basic-user.html
+%%DOCSDIR%%/developer.html
+%%DOCSDIR%%/guile-links.html
+%%DOCSDIR%%/index.html
+%%DOCSDIR%%/introduction.html
+%%DOCSDIR%%/license.html
+%%DOCSDIR%%/user-ref.html
+%%EXAMPLESDIR%%/.deps/example-ctl-io.Po
+%%EXAMPLESDIR%%/.deps/example-example.Po
+%%EXAMPLESDIR%%/.deps/example-geom.Po
+%%EXAMPLESDIR%%/.deps/example-main.Po
+%%EXAMPLESDIR%%/Makefile
+%%EXAMPLESDIR%%/Makefile.am
+%%EXAMPLESDIR%%/Makefile.in
+%%EXAMPLESDIR%%/README
+%%EXAMPLESDIR%%/ctl-io.c
+%%EXAMPLESDIR%%/ctl-io.h
+%%EXAMPLESDIR%%/example
+%%EXAMPLESDIR%%/example-ctl-io.o
+%%EXAMPLESDIR%%/example-example.o
+%%EXAMPLESDIR%%/example-geom.o
+%%EXAMPLESDIR%%/example-main.o
+%%EXAMPLESDIR%%/example.c
+%%EXAMPLESDIR%%/example.scm
+%%EXAMPLESDIR%%/example.scm.in
+%%EXAMPLESDIR%%/geom.c
+%%EXAMPLESDIR%%/main.c
+%%EXAMPLESDIR%%/run.ctl
 %%DATADIR%%/base/class.scm
-%%DATADIR%%/base/help.scm
-%%DATADIR%%/base/io-vars.scm
-%%DATADIR%%/base/utils.scm
 %%DATADIR%%/base/ctl.scm
-%%DATADIR%%/base/include.scm
-%%DATADIR%%/base/math-utils.scm
-%%DATADIR%%/base/vector3.scm
 %%DATADIR%%/base/extern-funcs.scm
+%%DATADIR%%/base/help.scm
+%%DATADIR%%/base/include.scm
 %%DATADIR%%/base/interaction.scm
+%%DATADIR%%/base/io-vars.scm
+%%DATADIR%%/base/main.c
+%%DATADIR%%/base/math-utils.scm
 %%DATADIR%%/base/matrix3x3.scm
 %%DATADIR%%/base/simplex.scm
-%%DATADIR%%/base/main.c
+%%DATADIR%%/base/utils.scm
+%%DATADIR%%/base/vector3.scm
+%%DATADIR%%/utils/ctl-io.scm
 %%DATADIR%%/utils/geom.c
 %%DATADIR%%/utils/geom.scm
-%%DATADIR%%/utils/ctl-io.scm
-@dirrm %%DATADIR%%/base
 @dirrm %%DATADIR%%/utils
+@dirrm %%DATADIR%%/base
 @dirrm %%DATADIR%%
-%%PORTDOCS%%%%DOCSDIR%%/advanced-user.html
-%%PORTDOCS%%%%DOCSDIR%%/basic-user.html
-%%PORTDOCS%%%%DOCSDIR%%/developer.html
-%%PORTDOCS%%%%DOCSDIR%%/guile-links.html
-%%PORTDOCS%%%%DOCSDIR%%/index.html
-%%PORTDOCS%%%%DOCSDIR%%/introduction.html
-%%PORTDOCS%%%%DOCSDIR%%/license.html
-%%PORTDOCS%%%%DOCSDIR%%/user-ref.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTDOCS%%%%EXAMPLESDIR%%/.example
-%%PORTDOCS%%%%EXAMPLESDIR%%/Makefile
-%%PORTDOCS%%%%EXAMPLESDIR%%/Makefile.in
-%%PORTDOCS%%%%EXAMPLESDIR%%/README
-%%PORTDOCS%%%%EXAMPLESDIR%%/ctl-io.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/ctl-io.h
-%%PORTDOCS%%%%EXAMPLESDIR%%/ctl-io.o
-%%PORTDOCS%%%%EXAMPLESDIR%%/example
-%%PORTDOCS%%%%EXAMPLESDIR%%/example.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/example.o
-%%PORTDOCS%%%%EXAMPLESDIR%%/example.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/geom.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/geom.o
-%%PORTDOCS%%%%EXAMPLESDIR%%/main.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/main.o
-%%PORTDOCS%%%%EXAMPLESDIR%%/run.ctl
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+@dirrm %%EXAMPLESDIR%%/.libs
+@dirrm %%EXAMPLESDIR%%/.deps
+@dirrm %%EXAMPLESDIR%%
+@dirrm %%DOCSDIR%%
