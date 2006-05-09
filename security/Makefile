@@ -517,6 +517,7 @@
     SUBDIR += py-pycrypto
     SUBDIR += py-rijndael
     SUBDIR += py-twofish
+    SUBDIR += py-trustedpickle
     SUBDIR += py-twistedConch
     SUBDIR += py-xmlsec
     SUBDIR += qca-tls
