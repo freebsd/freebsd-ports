@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmotd
-PORTVERSION=	1.16
+DISTVERSION=	1.17.3b
 CATEGORIES=	x11
 MASTER_SITES=	http://www.ee.ryerson.ca/~elf/pub/
 
