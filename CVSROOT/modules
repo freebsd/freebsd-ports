@@ -8194,6 +8194,7 @@ p5-Devel-Trace	ports/devel/p5-Devel-Trace
 p5-Devel-TraceCalls	ports/devel/p5-Devel-TraceCalls
 p5-Devel-TraceSAX	ports/textproc/p5-Devel-TraceSAX
 p5-Devel-ptkdb	ports/devel/p5-Devel-ptkdb
+p5-Device-Gsm	ports/comms/p5-Device-Gsm
 p5-Device-Modem	ports/comms/p5-Device-Modem
 p5-Device-SerialPort	ports/comms/p5-Device-SerialPort
 p5-Dialog	ports/devel/p5-Dialog
