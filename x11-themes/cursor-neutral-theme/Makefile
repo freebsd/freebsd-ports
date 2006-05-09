@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	cursor-neutral-theme
-PORTVERSION=	1.12
+DISTVERSION=	1.13a
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://www.gnome-look.org/content/files/
-DISTNAME=	28310-neutral-${PORTVERSION}
+DISTNAME=	28310-neutral-${DISTVERSION}
 
 MAINTAINER=	babak@farrokhi.net
 COMMENT=	Extended Jaguar X cursor theme

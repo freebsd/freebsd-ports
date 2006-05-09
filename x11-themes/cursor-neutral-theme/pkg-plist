@@ -26,6 +26,7 @@ lib/X11/icons/neutral/cursors/bottom_side
 lib/X11/icons/neutral/cursors/bottom_tee
 lib/X11/icons/neutral/cursors/c7088f0f3e6c8088236ef8e1e3e70000
 lib/X11/icons/neutral/cursors/center_ptr
+lib/X11/icons/neutral/cursors/centre_ptr
 lib/X11/icons/neutral/cursors/circle
 lib/X11/icons/neutral/cursors/copy
 lib/X11/icons/neutral/cursors/cross
@@ -40,6 +41,7 @@ lib/X11/icons/neutral/cursors/dnd-link
 lib/X11/icons/neutral/cursors/dnd-move
 lib/X11/icons/neutral/cursors/dnd-none
 lib/X11/icons/neutral/cursors/dotbox
+lib/X11/icons/neutral/cursors/dot_box_mask
 lib/X11/icons/neutral/cursors/double_arrow
 lib/X11/icons/neutral/cursors/draft_large
 lib/X11/icons/neutral/cursors/draft_small
@@ -55,6 +57,7 @@ lib/X11/icons/neutral/cursors/hand2
 lib/X11/icons/neutral/cursors/help
 lib/X11/icons/neutral/cursors/icon
 lib/X11/icons/neutral/cursors/left_ptr
+lib/X11/icons/neutral/cursors/left_ptr_help
 lib/X11/icons/neutral/cursors/left_ptr_watch
 lib/X11/icons/neutral/cursors/left_side
 lib/X11/icons/neutral/cursors/left_tee
