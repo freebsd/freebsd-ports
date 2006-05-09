@@ -9,8 +9,7 @@ PORTNAME=	abacus
 PORTVERSION=	0.9.13
 PORTREVISION=	2
 CATEGORIES=	deskutils
-MASTER_SITES=	http://www-cad.eecs.berkeley.edu/HomePages/aml/abacus/ \
-		http://tahoe.inesc.pt/~aml/abacus/
+MASTER_SITES=	http://tahoe.inesc.pt/~aml/abacus/
 
 PATCH_SITES=	${MASTER_SITE_LOCAL}
 PATCH_SITE_SUBDIR=	steve
