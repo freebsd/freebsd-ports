@@ -89,3 +89,4 @@ etc/muttng-mime.types
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/muttng.mo
 @dirrm %%EXAMPLESDIR%%/iconv
 @dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

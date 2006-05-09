@@ -1,0 +1,55 @@
+--- doc/Makefile.in.orig	Tue Mar 14 10:36:31 2006
++++ doc/Makefile.in	Tue May  2 15:43:59 2006
+@@ -89,11 +89,11 @@
+ 		$(INSTALL) -m 644 $(srcdir)/$$f $(DESTDIR)$(docdir) ; \
+ 	done
+ 	-$(INSTALL) -m 644 manual.txt $(DESTDIR)$(docdir) || true
+-	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(docdir)/html
+-	-cd html; for file in *.html ; do \
+-		$(INSTALL) -m 644 $$file $(DESTDIR)$(docdir)/html/ || true ;\
+-	done
+-	-$(INSTALL) -m 644 muttng.css $(DESTDIR)$(docdir)/html || true
++#	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(docdir)/html
++#	-cd html; for file in *.html ; do \
++#		$(INSTALL) -m 644 $$file $(DESTDIR)$(docdir)/html/ || true ;\
++#	done
++#	-$(INSTALL) -m 644 muttng.css $(DESTDIR)$(docdir)/html || true
+ 
+ uninstall:
+ 	for f in muttng.1 mutt_dotlock.1 fleang.1 muttng-flea.1 muttngbug.1 ; do \
+@@ -113,12 +113,12 @@
+ 	@HTMLCLEAN_CMD@ $@ || true
+ 
+ manual-chunked stamp-doc-chunked: $(srcdir)/chunk.xsl manual.xml
+-	test -d html || mkdir html
+-	-xsltproc --nonet --stringparam html.stylesheet muttng.css -o html/ $^
+-	touch stamp-doc-chunked
+-	cd html; for file in *.html ; do \
+-	  @HTMLCLEAN_CMD@ $$file || true ; \
+-	done
++#	test -d html || mkdir html
++#	-xsltproc --nonet --stringparam html.stylesheet muttng.css -o html/ $^
++#	touch stamp-doc-chunked
++#	cd html; for file in *.html ; do \
++#	  @HTMLCLEAN_CMD@ $$file || true ; \
++#	done
+ 	
+ manual.pdf: stamp-doc-tex
+ 	-if test -f manual.tex; then pdfjadetex manual.tex; fi
+@@ -182,11 +182,11 @@
+ 	  ln $$file $(distdir) 2> /dev/null \
+ 	  || cp -p $$file $(distdir) ; \
+ 	done
+-	mkdir $(distdir)/html
+-	cd html; for file in *.html ; do \
+-	  ln $$file ../$(distdir)/html 2> /dev/null \
+-	  || cp -p $$file ../$(distdir)/html ; \
+-	done
++#	mkdir $(distdir)/html
++#	cd html; for file in *.html ; do \
++#	  ln $$file ../$(distdir)/html 2> /dev/null \
++#	  || cp -p $$file ../$(distdir)/html ; \
++#	done
+ 
+ ../makedoc$(EXEEXT): $(top_srcdir)/makedoc.c
+ 	(cd .. && $(MAKE) makedoc$(EXEEXT))
