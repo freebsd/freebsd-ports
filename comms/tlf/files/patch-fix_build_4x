@@ -1,0 +1,19 @@
+--- src/readctydata.c.orig	Tue May  9 14:08:25 2006
++++ src/readctydata.c	Tue May  9 14:09:12 2006
+@@ -45,6 +45,7 @@
+ 		char * ituloc;
+ 
+ 	FILE  *fp_db;
++	char *loc;
+ 
+ 	strcpy(ctydb_location, "cty.dat");
+ 	if ( (fp_db  = fopen (ctydb_location, "r")) ==  NULL)
+@@ -91,7 +92,7 @@
+ 			strncpy(buffer, buf, 79);
+ 			buffer[79] = 0;
+ 
+-	  		char *loc = NULL;						//PG4I, 26Jul2005
++	  		loc = NULL;						//PG4I, 26Jul2005
+ 	  		if ((loc = strchr(buffer, '\r')))
+ 	   		*loc = '\0';
+ 
