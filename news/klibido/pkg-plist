@@ -14,9 +14,9 @@ share/apps/klibido/icons/hicolor/16x16/apps/klibido.png
 share/apps/klibido/icons/hicolor/32x32/actions/decode.png
 share/apps/klibido/icons/hicolor/32x32/apps/klibido.png
 share/apps/klibido/klibidoui.rc
-share/doc/HTML/en/klibido/common
-share/doc/HTML/en/klibido/index.cache.bz2
-share/doc/HTML/en/klibido/index.docbook
+%%PORTDOCS%%share/doc/HTML/en/klibido/common
+%%PORTDOCS%%share/doc/HTML/en/klibido/index.cache.bz2
+%%PORTDOCS%%share/doc/HTML/en/klibido/index.docbook
 share/icons/hicolor/16x16/apps/klibido.png
 share/icons/hicolor/32x32/apps/klibido.png
 @dirrm share/apps/klibido/icons/hicolor/16x16/actions
@@ -28,4 +28,4 @@ share/icons/hicolor/32x32/apps/klibido.png
 @dirrm share/apps/klibido/icons/hicolor
 @dirrm share/apps/klibido/icons
 @dirrm share/apps/klibido
-@dirrm share/doc/HTML/en/klibido
+%%PORTDOCS%%@dirrm share/doc/HTML/en/klibido
