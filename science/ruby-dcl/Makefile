@@ -6,13 +6,11 @@
 #
 
 PORTNAME=	dcl
-PORTVERSION=	1.5.0
-PORTREVISION=	2
+PORTVERSION=	1.5.2
 CATEGORIES=	science graphics ruby
 MASTER_SITES=	http://www.gfd-dennou.org/arch/ruby/products/ruby-dcl/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
-DIST_SUBDIR=	ruby
 
 MAINTAINER=	murakami@ahs.scitec.kobe-u.ac.jp
 COMMENT=	A Ruby interface to the scientific graphic library DCL
@@ -46,7 +44,7 @@ DEMODAT=	grph1/scpack/t810630.dat grph1/scpack/t811231.dat \
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"
-BROKEN=	"Does not build on amd64 (Needs to link against shared libraries)"
+BROKEN=	Does not build on amd64 (Needs to link against shared libraries)
 .endif
 
 post-install:
