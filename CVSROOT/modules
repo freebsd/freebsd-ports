@@ -535,6 +535,7 @@ aterm		ports/x11/aterm
 atitd		ports/games/atitd
 atitvout	ports/sysutils/atitvout
 atk		ports/accessibility/atk
+atk-reference	ports/accessibility/atk-reference
 atlantikdesigner	ports/games/atlantikdesigner
 atlas		ports/devel/atlas
 atlas-devel	ports/math/atlas-devel
