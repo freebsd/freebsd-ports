@@ -3,4 +3,3 @@
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
 %%RUBY_SITELIBDIR%%/DBD/Mysql/Mysql.rb
 @dirrm %%RUBY_SITELIBDIR%%/DBD/Mysql
-@dirrmtry %%RUBY_SITELIBDIR%%/DBD
