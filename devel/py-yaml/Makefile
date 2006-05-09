@@ -7,18 +7,22 @@
 #
 
 PORTNAME=	yaml
-PORTVERSION=	0.32
+PORTVERSION=	3.01
 CATEGORIES=	devel python
-MASTER_SITES=	http://pyyaml.org/download/pyyaml-legacy/
+MASTER_SITES=	http://pyyaml.org/download/pyyaml/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	PyYaml-SHowell-${PORTVERSION}
-EXTRACT_SUFX=	.tar.gz
+DISTNAME=	PyYAML-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python YAML parser
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-WRKSRC=		${WRKDIR}/PyYaml
+
+post-install:
+	@${FIND} ${PYTHON_SITELIBDIR}/yaml ! -type d | \
+		${SED} -e "s,^${PREFIX}/,," >> ${TMPPLIST}
+	@${FIND} ${PYTHON_SITELIBDIR}/yaml -type d | ${SORT} -r | \
+		${SED} -e "s,^${PREFIX}/,@dirrm ," >> ${TMPPLIST}
 
 .include <bsd.port.mk>
