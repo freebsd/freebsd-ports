@@ -7,7 +7,6 @@
 
 PORTNAME=	dbd_pg
 PORTVERSION=	${RUBY_DBI_PORTVERSION}
-PORTREVISION=	1
 CATEGORIES=	databases ruby
 MASTER_SITES=	${RUBY_DBI_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${RUBY_DBI_MASTER_SITE_SUBDIR}
@@ -15,7 +14,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	${RUBY_DBI_DISTNAME}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	boumenot@gmail.com
 COMMENT=	PostgreSQL driver for DBI-for-Ruby
 
 RUN_DEPENDS=	${RUBY_SITELIBDIR}/dbi.rb:${RUBY_DBI_PORTDIR} \
@@ -28,9 +27,9 @@ SLAVE_PORT=	yes
 MASTER_PORT=	databases/ruby-dbi
 
 WRKSRC=		${RUBY_DBI_WRKSRC}
-CONFIGURE_ARGS=	--with=lib/${PORTNAME}
+CONFIGURE_ARGS=	--with=${PORTNAME}
 
-DOCS_EN=	lib/${PORTNAME}/doc/*
+DOCS_EN=	doc/dbd/postgresql/*
 
 .include "${.CURDIR}/../ruby-dbi/Makefile.common"
 
