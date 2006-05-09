@@ -2169,6 +2169,7 @@ eric		ports/devel/eric
 eris		ports/devel/eris
 erlang		ports/lang/erlang
 erlang-doc	ports/lang/erlang-doc
+erlang-lite	ports/lang/erlang-lite
 erlang_xmlrpc	ports/net/erlang_xmlrpc
 erlslang	ports/devel/erlslang
 ermixer		ports/audio/ermixer
