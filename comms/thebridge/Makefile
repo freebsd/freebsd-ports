@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	thebridge
-PORTVERSION=	0.72
+PORTVERSION=	0.81
 CATEGORIES=	comms hamradio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	cqinet
@@ -19,13 +19,9 @@ GNU_CONFIGURE=	yes
 
 PORTDOCS=	README
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/FreeBSD/tbd.sh
-	@${MV} ${WRKSRC}/tbd.conf ${WRKSRC}/tbd.conf.sample
-
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 	${INSTALL_SCRIPT} ${WRKSRC}/FreeBSD/tbd.sh ${PREFIX}/etc/rc.d/tbd.sh.sample

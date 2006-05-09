@@ -1,20 +1,19 @@
---- configure.orig	Thu Jun 24 14:32:44 2004
-+++ configure	Thu Jun 24 14:33:09 2004
-@@ -1961,7 +1961,7 @@
- ac_given_srcdir=$srcdir
- ac_given_INSTALL="$INSTALL"
-
--trap 'rm -fr `echo "Makefile src/Makefile common/Makefile inc/Makefile tbdcmd/Makefile zlib/Makefile config.h" | sed "s/:[^ ]*//g"` conftest*; exit 1' 1 2 15
-+trap 'rm -fr `echo "Makefile src/Makefile common/Makefile inc/Makefile tbdcmd/Makefile config.h" | sed "s/:[^ ]*//g"` conftest*; exit 1' 1 2 15
- EOF
- cat >> $CONFIG_STATUS <<EOF
-
-@@ -2054,7 +2054,7 @@
-
- cat >> $CONFIG_STATUS <<EOF
-
--CONFIG_FILES=\${CONFIG_FILES-"Makefile src/Makefile common/Makefile inc/Makefile tbdcmd/Makefile zlib/Makefile"}
-+CONFIG_FILES=\${CONFIG_FILES-"Makefile src/Makefile common/Makefile inc/Makefile tbdcmd/Makefile "}
- EOF
- cat >> $CONFIG_STATUS <<\EOF
- for ac_file in .. $CONFIG_FILES; do if test "x$ac_file" != x..; then
+--- configure.orig	Mon May  8 15:46:41 2006
++++ configure	Mon May  8 15:47:02 2006
+@@ -4352,7 +4352,7 @@
+ _ACEOF
+ 
+ 
+-                                                            ac_config_files="$ac_config_files Makefile src/Makefile common/Makefile inc/Makefile tbdcmd/Makefile zlib/Makefile"
++                                                            ac_config_files="$ac_config_files Makefile src/Makefile common/Makefile inc/Makefile tbdcmd/Makefile"
+ cat >confcache <<\_ACEOF
+ # This file is a shell script that caches the results of configure
+ # tests run on this system so they can be shared between configure
+@@ -4906,7 +4906,6 @@
+   "common/Makefile" ) CONFIG_FILES="$CONFIG_FILES common/Makefile" ;;
+   "inc/Makefile" ) CONFIG_FILES="$CONFIG_FILES inc/Makefile" ;;
+   "tbdcmd/Makefile" ) CONFIG_FILES="$CONFIG_FILES tbdcmd/Makefile" ;;
+-  "zlib/Makefile" ) CONFIG_FILES="$CONFIG_FILES zlib/Makefile" ;;
+   "depfiles" ) CONFIG_COMMANDS="$CONFIG_COMMANDS depfiles" ;;
+   "config.h" ) CONFIG_HEADERS="$CONFIG_HEADERS config.h" ;;
+   *) { { echo "$as_me:$LINENO: error: invalid argument: $ac_config_target" >&5

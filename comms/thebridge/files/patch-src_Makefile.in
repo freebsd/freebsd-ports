@@ -1,0 +1,27 @@
+--- src/Makefile.in.orig	Sat Jan  8 19:01:27 2005
++++ src/Makefile.in	Mon May  8 15:53:09 2006
+@@ -145,11 +145,11 @@
+               eventhook.c eventhook.h avrs.c avrs.h
+ 
+ 
+-tbd_LDADD = $(top_builddir)/common/libcommon.a $(top_builddir)/zlib/libzlib.a \
+-            -lm
++tbd_LDADD = $(top_builddir)/common/libcommon.a \
++            -lz -lm
+ 
+ 
+-AM_CPPFLAGS = -I$(top_srcdir)/inc -I$(top_srcdir)/zlib
++AM_CPPFLAGS = -I$(top_srcdir)/inc -Izlib
+ AM_CFLAGS = -Wall -DSYSCON_DIR=\"$(sysconfdir)\"
+ subdir = src
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+@@ -163,8 +163,7 @@
+ 	dirclient.$(OBJEXT) thebridge.$(OBJEXT) users.$(OBJEXT) \
+ 	hostfile.$(OBJEXT) eventhook.$(OBJEXT) avrs.$(OBJEXT)
+ tbd_OBJECTS = $(am_tbd_OBJECTS)
+-tbd_DEPENDENCIES = $(top_builddir)/common/libcommon.a \
+-	$(top_builddir)/zlib/libzlib.a
++tbd_DEPENDENCIES = $(top_builddir)/common/libcommon.a 
+ tbd_LDFLAGS =
+ 
+ DEFAULT_INCLUDES =  -I. -I$(srcdir) -I$(top_builddir)
