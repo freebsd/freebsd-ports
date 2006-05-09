@@ -5373,6 +5373,7 @@ kyra		ports/devel/kyra
 l0pht-watch	ports/security/l0pht-watch
 l0phtcrack	ports/security/l0phtcrack
 l2a		ports/textproc/l2a
+l2p		ports/graphics/l2p
 l2tpd		ports/net/l2tpd
 l4ip		ports/net/l4ip
 l5		ports/security/l5
