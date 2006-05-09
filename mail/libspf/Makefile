@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libspf
-DISTVERSION=	1.0.0-p3
-PORTREVISION=	2
+DISTVERSION=	1.0.0-p5
 CATEGORIES=	mail
 MASTER_SITES=	http://www.libspf.org/files/src/
 
@@ -15,8 +14,12 @@ MAINTAINER=	mnag@FreeBSD.org
 COMMENT=	Sender Policy Framework (SPF) library and client
 
 USE_BZIP2=	yes
+USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
+
 INSTALLS_SHLIB=	yes
+
+PORTDOCS=	*
 
 OPTIONS=	RFC_RECURSION	"Change SPF recursion to 20 (as per RFC)"	off \
 		LOGFILE_STATS	"Enables logfile stats"				off \
@@ -24,21 +27,21 @@ OPTIONS=	RFC_RECURSION	"Change SPF recursion to 20 (as per RFC)"	off \
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_RFC_RECURSION)
+.if defined(WITH_RFC_RECURSION)
 CONFIGURE_ARGS+=	--enable-rfc-recursion
 .endif
 
-.if !defined(WITHOUT_LOGFILE_STATS)
+.if defined(WITH_LOGFILE_STATS)
 CONFIGURE_ARGS+=	--enable-logfile-stats
 .endif
 
-.if !defined(WITHOUT_DEBUG)
+.if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-debug
 .endif
 
-.if !defined(NOPORTDOCS)
-PORTDOCS=	*
-.endif
+post-patch:
+	@${REINPLACE_CMD} -e "s|CFLAGS =|CFLAGS +=|" \
+		${WRKSRC}/src/libspf/Makefile.in ${WRKSRC}/src/spfqtool/Makefile.in
 
 post-install:
 .if !defined(NOPORTDOCS)

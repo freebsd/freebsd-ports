@@ -1,0 +1,36 @@
+--- configure.orig	Mon May  8 19:08:57 2006
++++ configure	Mon May  8 22:45:47 2006
+@@ -23183,7 +23183,7 @@
+ else
+   echo "$as_me:$LINENO: result: Enabling GCC optimisations" >&5
+ echo "${ECHO_T}Enabling GCC optimisations" >&6
+-  CFLAGS="$CFLAGS -O3 -ffast-math -fomit-frame-pointer"
++  CFLAGS="$CFLAGS"
+ 
+   if [ "x$GCC_VERSION" = "x3" ]; then
+     echo "$as_me:$LINENO: result: Enabling GCC v3 optimizations" >&5
+@@ -24317,7 +24317,7 @@
+ # Generate Makefiles
+ #-------------------------------------------------------------------------------
+ 
+-                                                                      ac_config_files="$ac_config_files Makefile src/Makefile src/libspf/Makefile src/spfqtool/Makefile src/libspf/spf.h src/libspf/util.c src/spfmilter/Makefile"
++                                                                      ac_config_files="$ac_config_files Makefile src/Makefile src/libspf/Makefile src/spfqtool/Makefile src/libspf/spf.h src/libspf/util.c"
+ cat >confcache <<\_ACEOF
+ # This file is a shell script that caches the results of configure
+ # tests run on this system so they can be shared between configure
+@@ -24873,7 +24873,6 @@
+   "src/spfqtool/Makefile" ) CONFIG_FILES="$CONFIG_FILES src/spfqtool/Makefile" ;;
+   "src/libspf/spf.h" ) CONFIG_FILES="$CONFIG_FILES src/libspf/spf.h" ;;
+   "src/libspf/util.c" ) CONFIG_FILES="$CONFIG_FILES src/libspf/util.c" ;;
+-  "src/spfmilter/Makefile" ) CONFIG_FILES="$CONFIG_FILES src/spfmilter/Makefile" ;;
+   "depfiles" ) CONFIG_COMMANDS="$CONFIG_COMMANDS depfiles" ;;
+   "config.h" ) CONFIG_HEADERS="$CONFIG_HEADERS config.h" ;;
+   *) { { echo "$as_me:$LINENO: error: invalid argument: $ac_config_target" >&5
+@@ -25754,7 +25753,6 @@
+ #AC_OUTPUT(src/spfqtool/Makefile)
+ #AC_OUTPUT(src/libspf/spf.h)
+ #AC_OUTPUT(src/libspf/util.c)
+-#AC_OUTPUT(src/spfmilter/Makefile)
+ 
+ echo ""
+ echo ""
