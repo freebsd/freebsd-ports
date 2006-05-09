@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	libctl
-PORTVERSION=	2.2
+PORTVERSION=	3.0.1
 CATEGORIES=	science math
 MASTER_SITES=	http://ab-initio.mit.edu/libctl/
 
@@ -18,7 +18,7 @@ LIB_DEPENDS=	guile.15:${PORTSDIR}/lang/guile
 
 GNU_CONFIGURE=	yes
 
-MAN1=	gen-ctl-io.1
+MAN1=		gen-ctl-io.1
 
 .if !defined(NOPORTDOCS)
 post-install:
