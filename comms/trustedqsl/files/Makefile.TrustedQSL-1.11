@@ -1,8 +1,7 @@
-TQSLLIB=../tqsllib
-TQSLINC=../tqsllib
-TQSL_VERSION_MAJOR = 1
-TQSL_VERSION_MINOR = 11
-OPENSSL=/usr/local
+TQSLLIB=../tqsllib-2.0/.libs
+TQSLINC=../tqsllib-2.0
+TQSL_VERSION_MAJOR = 2 
+TQSL_VERSION_MINOR = 0
 LIBS=-lz -lexpat -lcrypto
 INCDIR = -I$(TQSLINC)
 BUILD = unofficial
@@ -11,7 +10,7 @@ WXLIBS=`wxgtk2-2.6-config --libs`
 DEFS = -DHAVE_CONFIG_H
 CXXFLAGS +=  $(DEFS) $(INCDIR)  -DHAVE_LIBCRYPTO=1 -DSTDC_HEADERS=1 -DHAVE_MKDIR=1 -DHAVE_STRERROR=1  $(WXFLAGS)
 
-LDLIBS = -L$(TQSLLIB) -L$(OPENSSL)/lib -ltqsllib $(LIBS)  $(WXLIBS)
+LDLIBS = -L$(TQSLLIB) -ltqsllib $(LIBS)  $(WXLIBS)
 TQSLLIBFILE=$(TQSLLIB)/libtqsllib.a
 CCDEPMODE = depmode=gcc3
 BINDIR=${PREFIX}/bin
@@ -62,4 +61,3 @@ clean:
 install:
 	${INSTALL} -d $(BINDIR) $(ETCDIR)/tqsl
 	${INSTALL} -C $(TARGETS) $(BINDIR)
-	${INSTALL} -C ../tqsllib/config.xml $(ETCDIR)/tqsl
