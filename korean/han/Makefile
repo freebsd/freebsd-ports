@@ -17,7 +17,6 @@ COMMENT=	A hangul console
 ONLY_FOR_ARCHS=	i386
 
 USE_GMAKE=	YES
-USE_REINPLACE=	yes
 
 .include <bsd.port.pre.mk>
 

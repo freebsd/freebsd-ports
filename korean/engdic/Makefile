@@ -15,7 +15,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An English dictionary utility for Korean
 
 ALL_TARGET=	clean all
-USE_REINPLACE=	yes
 
 post-patch:
 	@for f in ${WRKSRC}/Makefile ${WRKSRC}/engdic.h; do \
