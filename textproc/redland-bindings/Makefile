@@ -10,7 +10,7 @@ PORTVERSION=	1.0.2.1
 CATEGORIES=	textproc
 MASTER_SITES=	http://download.librdf.org/source/
 
-MAINTAINER=	russell@rucus.ru.ac.za
+MAINTAINER=	chuck@pkix.net
 COMMENT=	Language bindings for the Redland package
 
 BROKEN=		Configure fails
