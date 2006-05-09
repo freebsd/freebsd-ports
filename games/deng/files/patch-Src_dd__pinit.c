@@ -1,11 +1,11 @@
 --- Src/dd_pinit.c.orig
 +++ Src/dd_pinit.c
-@@ -227,7 +227,7 @@
+@@ -226,7 +226,7 @@
  	FH_Clear();
  	ArgShutdown();
- 	free(mainzone);
+     Z_Shutdown();
 -	DD_ShutdownDGL();
-+//	DD_ShutdownDGL();
++	//DD_ShutdownDGL();
  
  	// Close the message output file.
  	fclose(outFile);
