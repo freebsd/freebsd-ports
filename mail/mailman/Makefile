@@ -107,6 +107,18 @@ PLIST_SUB+=	SUB_HTDIG=""
 PLIST_SUB+=	SUB_HTDIG="@comment "
 .endif
 
+pre-fetch:
+	@${ECHO} ""
+	@${ECHO} "You may change the following build options:"	
+	@${ECHO} "MM_USERNAME=mailman	The username of the Mailman user."
+	@${ECHO} "MM_USERID=91		The user ID of the Mailman user."
+	@${ECHO} "MM_GROUPNAME=mailman	The group to which the Mailman user will belong."
+	@${ECHO} "MM_GROUPID=MM_USERID	The group ID for the Mailman user."
+	@${ECHO} "MM_DIR=mailman		Mailman will be installed in ${PREFIX}/${MM_DIR}."
+	@${ECHO} "CGI_GID=www		The group name or id under which your web server executes CGI scripts."
+	@${ECHO} "IMGDIR=www/icons	Icon images will be installed in ${PREFIX}/${IMGDIR}."
+	@${ECHO} ""
+
 post-patch:
 	@${REINPLACE_CMD} -e 's#%%LOCALBASE%%#${LOCALBASE}#g' \
 	  ${WRKSRC}/Mailman/Defaults.py.in
