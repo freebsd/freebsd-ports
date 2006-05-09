@@ -1,0 +1,19 @@
+--- programs/xkbcomp/symbols/pc/pc.orig	Fri Aug 12 13:08:49 2005
++++ programs/xkbcomp/symbols/pc/pc	Mon May  8 21:01:25 2006
+@@ -101,16 +101,8 @@
+ 	type= "PC_SYSRQ",
+ 	symbols[Group1]= [ Print, Sys_Req ]
+     };
+-    key <SYRQ> {
+-	type= "PC_SYSRQ",
+-	symbols[Group1]= [ Print, Sys_Req ]
+-    };
+     key <SCLK> {  [  Scroll_Lock	]	};
+     key <PAUS> {
+-	type= "PC_BREAK",
+-	symbols[Group1]= [ Pause, Break ]
+-    };
+-    key <BRK> {
+ 	type= "PC_BREAK",
+ 	symbols[Group1]= [ Pause, Break ]
+     };
