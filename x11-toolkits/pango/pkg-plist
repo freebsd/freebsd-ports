@@ -86,46 +86,6 @@ libdata/pkgconfig/pangocairo.pc
 libdata/pkgconfig/pangoft2.pc
 %%X11%%libdata/pkgconfig/pangox.pc
 %%X11%%libdata/pkgconfig/pangoxft.pc
-%%DOCSDIR%%/PangoEngineLang.html
-%%DOCSDIR%%/PangoEngineShape.html
-%%DOCSDIR%%/PangoFcDecoder.html
-%%DOCSDIR%%/PangoFcFont.html
-%%DOCSDIR%%/PangoFcFontMap.html
-%%DOCSDIR%%/PangoMarkupFormat.html
-%%DOCSDIR%%/home.png
-%%DOCSDIR%%/index.html
-%%DOCSDIR%%/index.sgml
-%%DOCSDIR%%/ix01.html
-%%DOCSDIR%%/layout.gif
-%%DOCSDIR%%/left.png
-%%DOCSDIR%%/lowlevel.html
-%%DOCSDIR%%/pango-ATSUI-Fonts.html
-%%DOCSDIR%%/pango-Cairo-Rendering.html
-%%DOCSDIR%%/pango-Coverage-Maps.html
-%%DOCSDIR%%/pango-Engines.html
-%%DOCSDIR%%/pango-Fonts.html
-%%DOCSDIR%%/pango-FreeType-Fonts-and-Rendering.html
-%%DOCSDIR%%/pango-Glyph-Storage.html
-%%DOCSDIR%%/pango-Layout-Objects.html
-%%DOCSDIR%%/pango-Modules.html
-%%DOCSDIR%%/pango-OpenType-Font-Handling.html
-%%DOCSDIR%%/pango-Scripts.html
-%%DOCSDIR%%/pango-Tab-Stops.html
-%%DOCSDIR%%/pango-Text-Attributes.html
-%%DOCSDIR%%/pango-Text-Processing.html
-%%DOCSDIR%%/pango-Win32-Fonts-and-Rendering.html
-%%DOCSDIR%%/pango-X-Fonts-and-Rendering.html
-%%DOCSDIR%%/pango-Xft-Fonts-and-Rendering.html
-%%DOCSDIR%%/pango-querymodules.html
-%%DOCSDIR%%/pango.devhelp
-%%DOCSDIR%%/pango.html
-%%DOCSDIR%%/rendering.html
-%%DOCSDIR%%/right.png
-%%DOCSDIR%%/rotated-text.png
-%%DOCSDIR%%/style.css
-%%DOCSDIR%%/tools.html
-%%DOCSDIR%%/up.png
-@dirrm %%DOCSDIR%%
 @dirrm lib/pango/%%VERSION%%/modules
 @dirrm lib/pango/%%VERSION%%
 @dirrm lib/pango
