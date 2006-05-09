@@ -9,7 +9,8 @@ PORTNAME=	libnewmail
 PORTVERSION=	0.3
 PORTREVISION=	9
 CATEGORIES=	mail
-MASTER_SITES=	http://www.stud.uni-hamburg.de/~lennart/projects/libnewmail/
+MASTER_SITES=	http://0pointer.de/lennart/projects/libnewmail/ \
+		http://www.stud.uni-hamburg.de/~lennart/projects/libnewmail/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generic mail checking library
