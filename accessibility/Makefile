@@ -5,6 +5,7 @@
 
     SUBDIR += at-spi
     SUBDIR += atk
+    SUBDIR += atk-reference
     SUBDIR += dasher
     SUBDIR += gail
     SUBDIR += gnomemag

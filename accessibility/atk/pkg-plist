@@ -29,39 +29,6 @@ lib/libatk-1.0.la
 lib/libatk-1.0.so
 lib/libatk-1.0.so.0
 libdata/pkgconfig/atk.pc
-%%DOCSDIR%%/AtkAction.html
-%%DOCSDIR%%/AtkComponent.html
-%%DOCSDIR%%/AtkDocument.html
-%%DOCSDIR%%/AtkEditableText.html
-%%DOCSDIR%%/AtkGObjectAccessible.html
-%%DOCSDIR%%/AtkHyperlink.html
-%%DOCSDIR%%/AtkHypertext.html
-%%DOCSDIR%%/AtkImage.html
-%%DOCSDIR%%/AtkNoOpObject.html
-%%DOCSDIR%%/AtkNoOpObjectFactory.html
-%%DOCSDIR%%/AtkObject.html
-%%DOCSDIR%%/AtkObjectFactory.html
-%%DOCSDIR%%/AtkRegistry.html
-%%DOCSDIR%%/AtkRelation.html
-%%DOCSDIR%%/AtkRelationSet.html
-%%DOCSDIR%%/AtkSelection.html
-%%DOCSDIR%%/AtkStreamableContent.html
-%%DOCSDIR%%/AtkTable.html
-%%DOCSDIR%%/AtkText.html
-%%DOCSDIR%%/AtkUtil.html
-%%DOCSDIR%%/AtkValue.html
-%%DOCSDIR%%/atk-AtkState.html
-%%DOCSDIR%%/atk-AtkStateSet.html
-%%DOCSDIR%%/atk.devhelp
-%%DOCSDIR%%/atk.devhelp2
-%%DOCSDIR%%/atk.html
-%%DOCSDIR%%/home.png
-%%DOCSDIR%%/index.html
-%%DOCSDIR%%/index.sgml
-%%DOCSDIR%%/left.png
-%%DOCSDIR%%/right.png
-%%DOCSDIR%%/style.css
-%%DOCSDIR%%/up.png
 share/locale/af/LC_MESSAGES/atk10.mo
 share/locale/am/LC_MESSAGES/atk10.mo
 share/locale/ar/LC_MESSAGES/atk10.mo
@@ -202,6 +169,5 @@ share/locale/zh_TW/LC_MESSAGES/atk10.mo
 @dirrmtry share/locale/be
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as
-@dirrm %%DOCSDIR%%
 @dirrm include/atk-1.0/atk
 @dirrm include/atk-1.0
