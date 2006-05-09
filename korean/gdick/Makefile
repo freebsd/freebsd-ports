@@ -19,7 +19,6 @@ RUN_DEPENDS=	${PYTHONPREFIX_SITELIBDIR}/cjkcodecs.pth:${PORTSDIR}/converters/py-
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
-USE_REINPLACE=	yes
 USE_BZIP2=	yes
 USE_GNOME=	gnomehier pygnome2
 

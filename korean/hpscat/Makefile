@@ -22,7 +22,6 @@ COMMENT=	Hangul Text Printing Utility
 RUN_DEPENDS=    hcode:${PORTSDIR}/korean/hcode
 
 USE_PERL5=	yes
-USE_REINPLACE=	yes
 
 pre-patch:
 	@${REINPLACE_CMD} -e 's,<malloc.h>,<stdlib.h>,' \
