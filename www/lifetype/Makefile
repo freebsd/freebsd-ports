@@ -11,13 +11,14 @@ CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	lifetype
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		_all_plugins${EXTRACT_SUFX} \
-		_all_templates${EXTRACT_SUFX}
+		${PORTVERSION:R}__all_plugins${EXTRACT_SUFX} \
+		${PORTVERSION:R}__all_templates${EXTRACT_SUFX}
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A PHP and MySQL based blogging platform
 
-IGNOREFILES=	_all_plugins${EXTRACT_SUFX} _all_templates${EXTRACT_SUFX}
+IGNOREFILES=	${PORTVERSION:R}__all_plugins${EXTRACT_SUFX} \
+		${PORTVERSION:R}__all_templates${EXTRACT_SUFX}
 
 USE_ZIP=	YES
 
@@ -53,7 +54,7 @@ pre-patch:
 
 post-extract:
 .for x in plugins templates
-	cd ${WRKSRC}/${x} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/_all_${x}${EXTRACT_SUFX}
+	cd ${WRKSRC}/${x} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/${PORTVERSION:R}__all_${x}${EXTRACT_SUFX}
 .endfor
 
 .if defined(WITH_BIG5)
