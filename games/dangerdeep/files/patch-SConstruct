@@ -1,72 +1,10 @@
---- SConstruct.orig	Mon Oct 17 20:45:59 2005
-+++ SConstruct	Sat Oct 29 14:30:06 2005
-@@ -2,6 +2,11 @@
- import os
- import sys
- 
-+################ FreeBSD port variables
-+LOCALBASE = os.environ['LOCALBASE']
-+X11BASE = os.environ['X11BASE']
-+SDL_CONFIG = os.environ['SDL_CONFIG']
-+
- ################ global config values
- version = '0.1.0'
- if ARGUMENTS.get('version', 0):
-@@ -67,10 +72,12 @@
- else:
- 	print "Compiling for Unix/Posix/Linux Environment"
- 	env = Environment(ENV = os.environ)
--	env.Append(CPPPATH = ['/usr/include/SDL', '/usr/include/GL'])
--	libpath = ['/usr/X11R6/lib']
-+	env.Replace(CC = os.environ['CC'])
-+	env.Replace(CXX = os.environ['CXX'])
-+	env.Append(CPPPATH = [LOCALBASE + '/include', LOCALBASE + '/include/SDL11', X11BASE + '/include', X11BASE + '/include/GL'])
-+	libpath = [LOCALBASE + '/lib', X11BASE + '/lib']
+--- SConstruct	Fri Apr 14 05:13:03 2006
++++ SConstruct	Fri Apr 14 16:18:12 2006
+@@ -81,6 +81,7 @@
+ 	libpath = [LOCALBASE + '/lib', X11BASE + '/lib'] 
  	gllibs = ['GL', 'GLU']
--	sdllibs = ['SDL', 'SDL_image']
-+	sdllibs = ['SDL_image']
- 	ccflags = '-Wall `sdl-config --cflags`'
- 	if (debug >= 3):
- 		ccflags += ' -g -pg -O3'	# profiling
-@@ -92,31 +99,28 @@
- 	if (cvedit == 1):
- 		env.Append(CPPDEFINES = ['CVEDIT'])
- 	# check for mmx/sse support
--	cpuinfof = open('/proc/cpuinfo', 'r')
-+	cpuinfof = os.popen('sysctl -n hw.instruction_sse')
+ 	sdllibs = ['SDL_image']
++	extralibs = ['execinfo']
+ 	cpuinfof = os.popen('sysctl -n hw.instruction_sse')
  	cpuinfol = cpuinfof.readlines()
  	mmxsupported = False
- 	ssesupported = False
- 	for i in cpuinfol:
--		if i.startswith('flags'):
--			m = Split(i)
--			for j in m:
--				if j == 'mmx':
--					mmxsupported = True
--				elif j == 'sse':
--					ssesupported = True
--			break
-+		if i == '1\n':
-+			mmxsupported = True
-+			ssesupported = True
- 	if (usex86sse == 0) and (mmxsupported and ssesupported):
- 		usex86sse = 1
- 	if usex86sse >= 1:
- 		env.Append(CPPDEFINES = ['USE_SSE'])
- 		osspecificsrc += ['water_sse.cpp']
- 		print 'Using x86 SSE/MMX optimizations.'
--	env.Append(CCFLAGS = ccflags)
-+	env.Replace(CCFLAGS = os.environ['CFLAGS'])
-+	env.Replace(CXXFLAGS = os.environ['CXXFLAGS'] + ' `' + SDL_CONFIG + ' --cflags`')
-+	env.Append(LINKFLAGS = '`' + SDL_CONFIG + ' --libs`')
- 	datadir = installdatadir
--	build_dir = 'linux'
-+	build_dir = 'freebsd'
- 	# check for broken libGL, ignore undefined symbols then
--	if (os.system('grep glBindProgram /usr/include/GL/gl*.h > /dev/null') == 0):
--		gllibdirs = ['/usr/X11R6/lib/', '/usr/lib/', '/usr/local/lib/']
-+	if (os.system('grep glBindProgram ' + X11BASE + '/include/GL/gl*.h > /dev/null') == 0):
-+		gllibdirs = [X11BASE + '/lib/', '/usr/lib/', LOCALBASE + '/lib/']
- 		gllibdir = ''
- 		for i in gllibdirs:
- 			if (os.system('test -f '+i+'libGL.so') == 0):
