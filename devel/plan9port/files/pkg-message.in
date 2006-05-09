@@ -2,6 +2,11 @@ Add these to your profile environment.
 PLAN9=%%PREFIX%%/plan9; export PLAN9
 PATH=$PATH:$PLAN9/bin; export PATH
 
+This port install a default plumbing file.
+Just cd to the ports directory and type (not as root)
+
+make install-user
+
 BUGS
 This port can cause some problems if you install certain
 ports:

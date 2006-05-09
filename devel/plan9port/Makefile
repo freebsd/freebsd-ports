@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	plan9port
-PORTVERSION=	20060402
+PORTVERSION=	20060507
 CATEGORIES=	devel plan9
 MASTER_SITES=	http://swtch.com/plan9port/ \
 		ftp://quenix2.dyndns.org/FreeBSD/ports/distfiles/
@@ -89,15 +89,9 @@ EMPTY_DIRS=	plan9/log \
 		plan9/dist/debian \
 		plan9/dist/pkg
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		does not compile
-.endif
-
 post-patch:
 	@${FIND} ${WRKSRC}/man -type f -regex ".*\.[0-9?]$\" \
-	 | ${XARGS} ${REINPLACE_CMD} -e 's|\\\*9|${PREFIX}/plan9|'
+		| ${XARGS} ${REINPLACE_CMD} -e 's|\\\*9|${PREFIX}/plan9|'
 
 do-build:
 	cd ${WRKSRC} && ./INSTALL
@@ -124,7 +118,12 @@ post-install:
 		${SH} lib/moveplan9.sh ${WRKSRC}
 	${CHGRP} kmem ${PLAN9}/bin/auxstats
 	${CHMOD} +s ${PLAN9}/bin/auxstats
+	${CHMOD} 4777 ${PLAN9}/news
 	@${ECHO_CMD} ""
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+install-user:
+	@${MKDIR} ${HOME}/lib
+	${INSTALL_DATA} ${PLAN9}/plumb/initial.plumbing ${HOME}/lib/plumbing
+
+.include <bsd.port.mk>
