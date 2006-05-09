@@ -24,6 +24,9 @@ COMMENT=	Some useful routines of C programming (current stable version)
 LATEST_LINK=	glib20
 
 USE_BZIP2=	yes
+
+.if !defined(REFERENCE_PORT)
+
 USE_GETTEXT=	yes
 USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
@@ -50,3 +53,5 @@ post-patch:
 		${WRKSRC}/glib/gutils.c
 
 .include <bsd.port.post.mk>
+
+.endif
