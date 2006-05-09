@@ -26,7 +26,6 @@ MAKE_ENV=	SHORT_TCL_VER=82
 PKGINSTALL=	${PKGDIR}/pkg-install.tclsh
 PKGDEINSTALL=	${PKGDIR}/pkg-deinstall.tclsh
 NOPRECIOUSMAKEVARS=	yes # Otherwise 'make readmes' is broken
-USE_REINPLACE=	YES
 PLIST_SUB=	TCL_VER=8.2 SHORT_TCL_VER=82
 
 .include <bsd.port.pre.mk>

@@ -16,8 +16,6 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An implementation of Ruby Interpreter in Pure Java
 
-USE_REINPLACE=	yes
-
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 NO_BUILD=	yes
 

@@ -15,7 +15,6 @@ DISTFILES=	tcl8.3.5-html.tar.gz tcl8.4.7-html.tar.gz tcl8.5a1-html.tar.gz
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	Documentation for TCL (Tool Command Language)
 
-USE_REINPLACE=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 

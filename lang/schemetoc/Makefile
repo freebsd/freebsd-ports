@@ -15,7 +15,6 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	erik@smluc.org
 COMMENT=	Scheme-to-C, a compiler and interpreter for compiling scheme into C
 
-USE_REINPLACE=	yes
 USE_XLIB=	yes
 USE_GCC=	2.95
 INSTALLS_SHLIB=	yes

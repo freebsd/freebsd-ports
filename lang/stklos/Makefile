@@ -20,7 +20,6 @@ LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4 \
 ONLY_FOR_ARCHS=	i386 amd64
 
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include LDFLAGS=-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-gtk --disable-gnome

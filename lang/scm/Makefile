@@ -19,7 +19,6 @@ COMMENT=	A scheme interpreter
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_ZIP=	yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 ALL_TARGET=	scmlit

@@ -38,7 +38,6 @@ WITHOUT_CPU_CFLAGS= yes
 .endif
 .if ${OSVERSION} >= 500113
 BROKEN=		"Does not compile"
-USE_REINPLACE=	yes
 .endif
 
 .if ${PORTOBJFORMAT} == "elf"

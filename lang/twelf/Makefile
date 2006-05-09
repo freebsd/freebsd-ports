@@ -18,7 +18,6 @@ RUN_DEPENDS=	sml:${PORTSDIR}/lang/sml-nj
 BUILD_DEPENDS=	sml:${PORTSDIR}/lang/sml-nj
 
 WRKSRC=		${WRKDIR}/twelf
-USE_REINPLACE=	yes
 INFO=		twelf
 
 RESTRICTED=	"License is currently indeterminate (expected to be GPL)"

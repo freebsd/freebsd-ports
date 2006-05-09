@@ -39,7 +39,6 @@ LIB_DEPENDS+=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
 .endif
 
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ""
 HAS_CONFIGURE=	yes
 ALL_TARGET=	world.opt

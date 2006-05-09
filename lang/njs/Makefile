@@ -18,10 +18,6 @@ COMMENT=	NJS (NGS) is a standalone JavaScript/ECMAScript interpreter
 
 CONFLICTS=	js-1.5.*
 
-.if defined(NOPORTDOCS)
-USE_REINPLACE=	yes
-.endif
-
 INSTALLS_SHLIB=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS=	--enable-shared

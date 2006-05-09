@@ -21,7 +21,6 @@ LIB_DEPENDS=	utils.1:${PORTSDIR}/lang/libutils
 BROKEN=		Segfault during build
 
 USE_AUTOTOOLS=	libltdl:15
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

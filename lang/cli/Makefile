@@ -22,7 +22,6 @@ IGNORE=		cannot be installed until you read and agree to the license terms
 ONLY_FOR_ARCHS=	i386
 
 USE_PERL5=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	${BUILD_TYPE}
 CONFIGURE_SCRIPT=	portconfigure

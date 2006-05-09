@@ -20,7 +20,6 @@ LIB_DEPENDS=	getline:${PORTSDIR}/devel/libgetline
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 
 CONFIGURE_ARGS=	--with-pcre-dir=${LOCALBASE}/lib \

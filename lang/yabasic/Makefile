@@ -15,7 +15,6 @@ COMMENT=	Yet another Basic for Unix and Windows
 
 USE_XLIB=	yes
 USE_BISON=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 

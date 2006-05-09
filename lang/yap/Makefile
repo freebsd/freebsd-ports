@@ -18,7 +18,6 @@ COMMENT=	A high-performance Prolog compiler
 
 LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
 
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

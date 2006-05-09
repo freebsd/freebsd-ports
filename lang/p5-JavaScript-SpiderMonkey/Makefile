@@ -19,8 +19,6 @@ BUILD_DEPENDS=	${SITE_PERL}/Log/Log4perl.pm:${PORTSDIR}/devel/p5-Log-Log4perl \
 		${LOCALBASE}/lib/libjs.so:${PORTSDIR}/lang/spidermonkey
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-USE_REINPLACE=	yes
-
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS=	INC=-I${LOCALBASE}/include
 INSTALL_TARGET=	pure_install

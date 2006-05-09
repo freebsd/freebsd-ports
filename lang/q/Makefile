@@ -24,7 +24,6 @@ LIB_DEPENDS=	Magick.9:${PORTSDIR}/graphics/ImageMagick \
 		gmp.6:${PORTSDIR}/math/libgmp4 \
 		curl:${PORTSDIR}/ftp/curl
 
-USE_REINPLACE=	yes
 USE_BISON=	yes
 USE_GNOME=	gnometarget libxml2 libxslt
 CFLAGS+=	-I${LOCALBASE}/include

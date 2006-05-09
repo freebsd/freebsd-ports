@@ -16,7 +16,6 @@ COMMENT=	The Shakespeare programming language
 
 USE_BISON=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 
 ALL_EXAMPLES=	Makefile fibonacci.spl fibonacci2.spl guess.spl hello.spl \
 		primes.spl reverse.spl shakesbeer.spl

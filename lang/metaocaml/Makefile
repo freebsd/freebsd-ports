@@ -16,7 +16,6 @@ COMMENT=	The MetaOCaml compiler and programming environment
 
 ONLY_FOR_ARCHS=	i386 amd64 # feel free to test on other archs and send a PR
 
-USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ""
 
 HAS_CONFIGURE=	yes

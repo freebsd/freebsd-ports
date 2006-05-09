@@ -24,7 +24,6 @@ COMMENT=	Fast and portable Forth system
 #
 
 STRIP=		#none
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ENV=	CFLAGS=${CFLAGS:N-O*:N-f*}

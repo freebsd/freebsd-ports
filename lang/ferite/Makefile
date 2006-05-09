@@ -19,7 +19,6 @@ LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \

@@ -18,7 +18,6 @@ BUILD_DEPENDS=		gsed:${PORTSDIR}/textproc/gsed
 
 NEED_JAVAC=		yes
 USE_JAVA=		1.2+
-USE_REINPLACE=		yes
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--enable-kawa-frontend --program-prefix=''
 

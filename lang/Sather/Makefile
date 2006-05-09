@@ -19,7 +19,6 @@ COMMENT=	Sather compiler
 LIB_DEPENDS=	gc.1:${PORTSDIR}/devel/boehm-gc \
 		tk83.1:${PORTSDIR}/x11-toolkits/tk83
 
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	full optional
 MAN1=		sabrowse.1 sacomp.1
