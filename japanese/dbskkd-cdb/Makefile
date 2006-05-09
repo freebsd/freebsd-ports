@@ -18,7 +18,6 @@ COMMENT=Yet another dictionary server for SKK
 BUILD_DEPENDS=	${NONEXISTENT}:${CDBPORTSDIR}:build
 RUN_DEPENDS=	${INSTALLEDJISYO}:${PORTSDIR}/japanese/skk-jisyo-cdb
 
-USE_REINPLACE=	yes
 PLIST_FILES=	libexec/dbskkd-cdb
 
 SKKDIR?=	share/skk

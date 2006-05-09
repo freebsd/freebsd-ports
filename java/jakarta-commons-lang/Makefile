@@ -24,8 +24,6 @@ JAVA_VERSION=	1.2+
 USE_ANT=	yes
 USE_JIKES=	no
 
-USE_REINPLACE=	yes
-
 ALL_TARGET=	jar
 .if !defined(NOPORTDOCS)
 ALL_TARGET+=	javadoc

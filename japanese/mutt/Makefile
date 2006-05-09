@@ -38,7 +38,6 @@ MANUALVERSION=	1.4
 
 FETCH_BEFORE_ARGS=	-A	# ha4.seikyou.ne.jp is running broken httpd
 
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_AUTOTOOLS=	automake:14 autoconf:213

@@ -24,7 +24,6 @@ RUN_DEPENDS=	${LOCALBASE}/bin/groff:${PORTSDIR}/japanese/groff \
 		jless:${PORTSDIR}/japanese/less
 
 MAKE_ENV=	GZCAT=${GZCAT} GZIP_CMD="${GZIP_CMD}"
-USE_REINPLACE=	yes
 
 MANLANG=	"" ja
 MAN1=		jman.1 jmanpath.1 japropos.1 \

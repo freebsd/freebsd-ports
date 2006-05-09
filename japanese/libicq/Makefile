@@ -24,7 +24,6 @@ COMMENT=	Library to add ICQ communication support to your software
 
 USE_GNOME=	glib12
 USE_AUTOTOOLS=	libtool:15
-USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 
 post-patch:

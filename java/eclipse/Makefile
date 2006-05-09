@@ -30,7 +30,6 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.4+
 JAVA_OS=	native
 
-USE_REINPLACE=	yes
 NO_WRKSUBDIR=	yes
 
 PORTDESTDIR=	${PREFIX}/eclipse

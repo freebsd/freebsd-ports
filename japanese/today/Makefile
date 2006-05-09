@@ -24,7 +24,6 @@ EXTRACT_BEFORE_ARGS=	xfqw=${WRKDIR}
 EXTRACT_AFTER_ARGS=	# empty
 
 NO_WRKSUBDIR=	yes
-USE_REINPLACE=	yes
 
 post-extract:
 	@${ECHO_MSG} "===>  Extracting tbl file for ${DISTNAME}"

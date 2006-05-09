@@ -14,8 +14,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java program analyzer and checker
 
-USE_REINPLACE=	YES
-
 .if !defined(NOPORTDOCS)
 PORTDOCS=	manual.pdf
 .endif

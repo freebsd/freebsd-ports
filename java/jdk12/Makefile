@@ -39,7 +39,6 @@ JFC11DIR?=	${WRKDIRPREFIX}${.CURDIR}/../../java/jfc/work/swing-1.1.1fcs
 
 ONLY_FOR_ARCHS=	i386
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 RESTRICTED=	"Redistribution of pre-compiled binaries is not permitted"
 NO_CDROM=	"Redistribution of pre-compiled binaries is not permitted"
 MAKEFILE=	GNUmakefile

@@ -21,7 +21,6 @@ LIB_DEPENDS=	eb.10:${PORTSDIR}/japanese/eb
 CONFLICTS=	ja-ebview-0*
 
 USE_GNOME=	gtk20 gnometarget
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

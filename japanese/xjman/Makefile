@@ -19,7 +19,6 @@ COMMENT=	Japanized X manual from "The X Japanese Documentation Project"
 
 RUN_DEPENDS=	jman:${PORTSDIR}/japanese/man
 
-USE_REINPLACE=	yes
 USE_PERL5=	yes
 NO_MTREE=	yes
 PLIST=		${WRKDIR}/PLIST

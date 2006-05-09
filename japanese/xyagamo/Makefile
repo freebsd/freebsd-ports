@@ -15,7 +15,6 @@ COMMENT=	Japanese version of a four player mahjong game
 
 USE_X_PREFIX=	YES
 USE_XPM=	yes
-USE_REINPLACE=	yes
 
 MAN6=		xyagamo.6
 MANLANG=	ja

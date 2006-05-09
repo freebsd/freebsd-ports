@@ -21,7 +21,6 @@ COMMENT=	The Tk toolkit with a NeXTSTEP look and more
 
 LIB_DEPENDS=	tcl80jp.1:${PORTSDIR}/japanese/tcl80
 
-USE_REINPLACE=	yes
 USE_XLIB=	yes
 USE_XPM=	yes
 USE_AUTOTOOLS=	autoconf:213

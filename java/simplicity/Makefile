@@ -23,7 +23,6 @@ JAVAVM=		${JDK13DIR}/bin/java
 
 RESTRICTED=	"Restrictive license"
 USE_XLIB=	yes
-USE_REINPLACE=	yes
 NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/Simplicity

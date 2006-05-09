@@ -15,7 +15,6 @@ COMMENT=	An IMAP-based webmail system for mobile-phones
 
 USE_RUBY=	yes
 USE_RUBY_FEATURES=	iconv openssl zlib
-USE_REINPLACE=	yes
 
 RUBY_VER=	1.8
 RUBY_SHEBANG_FILES=	mobileimap.in

@@ -19,7 +19,6 @@ USE_IMAKE=		yes
 NO_INSTALL_MANPAGES=	yes
 
 .if defined(USE_SKK10)
-USE_REINPLACE=		yes
 PLIST_SUB=		SKK8="@comment " SKK10=""
 .else
 PLIST_SUB=		SKK8="" SKK10="@comment "

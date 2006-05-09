@@ -57,7 +57,6 @@ MANJADATE=	20040808
 FETCH_BEFORE_ARGS=	-A	# ha4.seikyou.ne.jp is running broken httpd
 
 NO_LATEST_LINK=	yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_AUTOTOOLS=	automake:14 autoconf:213
