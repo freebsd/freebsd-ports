@@ -7,7 +7,7 @@
 
 PORTNAME=	mldonkey
 PORTVERSION=	2.7.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES+=	net-p2p
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED} \
 		${MASTER_SITE_SAVANNAH}
@@ -74,7 +74,7 @@ LIB_DEPENDS+=	gd.4:${PORTSDIR}/graphics/gd \
 
 CONFIGURE_ARGS+=--enable-gui=newgui2
 # we don't need lablgtk as RUN dependency, but we need gtk+glib
-USE_GNOME=	gtk12
+USE_GNOME=	gtk20
 
 MAKE_ENV+=	OCAMLRUNPARAM="l=256M"
 .if defined(WITHOUT_CORE)
@@ -144,7 +144,7 @@ post-patch:
 .endfor
 
 pre-configure:
-	cd ${WRKSRC}/config && ${AUTOCONF}
+	@cd ${WRKSRC}/config && ${AUTOCONF}
 
 post-configure:
 	@${REINPLACE_CMD} -E \

@@ -1,5 +1,5 @@
 --- ./src/networks/bittorrent/bTGlobals.ml.orig	Sat Apr  8 21:26:40 2006
-+++ ./src/networks/bittorrent/bTGlobals.ml	Thu Apr 20 11:04:03 2006
++++ ./src/networks/bittorrent/bTGlobals.ml	Sun May  7 06:39:10 2006
 @@ -252,8 +252,7 @@
        else
          set_trackers file [t.torrent_announce];
