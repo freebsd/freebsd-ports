@@ -139,6 +139,7 @@
     SUBDIR += p5-Tk-TableMatrix
     SUBDIR += p5-qt
     SUBDIR += pango
+    SUBDIR += pango-reference
     SUBDIR += pangoxsl
     SUBDIR += paragui
     SUBDIR += php-gtk
