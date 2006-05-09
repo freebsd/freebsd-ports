@@ -2,4 +2,3 @@
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
 %%RUBY_SITELIBDIR%%/DBD/Pg/Pg.rb
 @dirrm %%RUBY_SITELIBDIR%%/DBD/Pg
-@dirrmtry %%RUBY_SITELIBDIR%%/DBD
