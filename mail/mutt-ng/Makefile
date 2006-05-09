@@ -6,18 +6,17 @@
 #
 
 PORTNAME=	mutt-ng
-PORTVERSION=	20051110
-PORTREVISION=	1
+PORTVERSION=	20060501
 CATEGORIES=	mail
-MASTER_SITES=	http://nion.modprobe.de/mutt-ng/snapshots/
+MASTER_SITES=	http://nion.modprobe.de/mutt-ng/snapshots/		\
+		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
 DISTNAME=	muttng-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	shaun@inerd.com
 COMMENT=	A fork of the mutt with the goal to incorporate all the patches
 
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
-USE_REINPLACE=	yes
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--disable-fcntl --sysconfdir=${PREFIX}/etc \
@@ -30,7 +29,7 @@ USE_GETTEXT=	yes
 USE_ICONV=	yes
 PLIST_SUB+=	NLS=""
 .if defined(WITHOUT_MUTT_ICONV)
-BROKEN=	"The WITHOUT_MUTT_ICONV knob of the mutt port only works if WITHOUT_NLS is also given"
+BROKEN=	The WITHOUT_MUTT_ICONV knob of the mutt port only works if WITHOUT_NLS is also given
 .endif
 .elif !defined(WITHOUT_MUTT_ICONV)
 USE_ICONV=	yes
@@ -40,10 +39,6 @@ PLIST_SUB+=	NLS="@comment "
 PLIST_SUB+=	NLS="@comment "
 CONFIGURE_ARGS+=	--disable-nls
 CONFIGURE_ARGS+=	--disable-iconv
-.endif
-
-.if !defined(NOPORTDOCS)
-BUILD_DEPENDS+=	lynx:${PORTSDIR}/www/lynx
 .endif
 
 OPTIONS=	POP "Enable pop3 support" on \
@@ -65,7 +60,7 @@ OPTIONS=	POP "Enable pop3 support" on \
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_MUTT_MAILDIR_HEADER_CACHE)
-WITH_MUTT_IMAP_HEADER_CACHE=  yes
+WITH_MUTT_IMAP_HEADER_CACHE=	yes
 .endif
 
 .if defined (WITH_POP)
@@ -119,12 +114,12 @@ CONFIGURE_ARGS+=	--with-slang=${LOCALBASE}
 LIB_DEPENDS+=	ncurses.5:${PORTSDIR}/devel/ncurses
 CONFIGURE_ARGS+=	--with-curses=${LOCALBASE}
 .elif defined(WITH_SLANG) && defined(WITH_NCURSES_PORT)
-BROKEN=	"You may not specify both WITH_SLANG and WITH_NCURSES options"
+BROKEN=	You may not specify both WITH_SLANG and WITH_NCURSES options
 .endif
 
 .if defined(WITH_SASL2) || defined(WITH_MUTT_CYRUS_SASL2)
 .if !defined(WITH_POP) && !defined(WITH_IMAP)
-BROKEN=	"SASL2 only is useful for imap or pop"
+BROKEN=	SASL2 only is useful for imap or pop
 .endif
 LIB_DEPENDS+=	sasl2.2:${PORTSDIR}/security/cyrus-sasl2
 CONFIGURE_ARGS+=	--with-sasl2=${LOCALBASE}
@@ -173,10 +168,6 @@ post-install:
 	@${MKDIR} ${DOCSDIR} && ${CHMOD} a+rx ${DOCSDIR}
 	@cd ${WRKSRC}/doc ; ${INSTALL_MAN} manual.txt PGP-Notes.txt \
 		${DOCSDIR}
-	@${FIND} ${DOCSDIR}/html ! -type d | ${SED} -e 's,${PREFIX}/,,' \
-	>> ${TMPPLIST}
-	@${ECHO} "@dirrm share/doc/mutt-ng/html" >> ${TMPPLIST}
-	@${ECHO} "@dirrm ${DOCSDIR:S,${PREFIX},,}" >> ${TMPPLIST}
 .endif
 
 .include <bsd.port.post.mk>
