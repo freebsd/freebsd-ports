@@ -70,6 +70,7 @@
     SUBDIR += mlvwm
     SUBDIR += novawm
     SUBDIR += obconf
+    SUBDIR += obtuner
     SUBDIR += olvwm
     SUBDIR += openbox
     SUBDIR += orion
