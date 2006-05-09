@@ -7,6 +7,7 @@
 
 PORTNAME=	john
 PORTVERSION=	1.7.0.2
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.openwall.com/john/f/ \
 		ftp://ftp.ru.openwall.com/pub/projects/john/${PORTVERSION}/
@@ -24,24 +25,32 @@ USE_BZIP2=	yes
 .include <bsd.port.pre.mk>
 
 OSNAME=		${OPSYS:L}
+CFLAGS+=	-DJOHN_SYSTEMWIDE=1 \
+		-DJOHN_SYSTEMWIDE_HOME=\\"${DATADIR}\\" \
+		-DCFG_FULL_NAME=\\"${PREFIX}/etc/${PORTNAME}.conf\\"
 
 ALL_TARGET=	generic
 .if ${ARCH} == "i386"
-. if ${MACHINE_CPU:Mmmx}
-ALL_TARGET=	${OSNAME}-x86-mmx
-. else
+. if defined(WITHOUT_MMX)
 ALL_TARGET=	${OSNAME}-x86-any
+. else
+ALL_TARGET=	${OSNAME}-x86-mmx
 . endif
 .elif ${ARCH} == "alpha"
 ALL_TARGET=	${OSNAME}-alpha
 .endif
 
+pre-everything::
+.if !defined(WITHOUT_MMX) && ${ARCH} == "i386"
+	@${ECHO_MSG}
+	@${ECHO_MSG} "You can disable MMX optimizations by defining WITHOUT_MMX"
+	@${ECHO_MSG}
+.endif
+
 post-patch:
-	${REINPLACE_CMD} -e 's|$$JOHN|${DATADIR}|g' \
-		${WRKDIR}/${DISTNAME}/run/john.conf
-	${REINPLACE_CMD} -e \
-		's|%%PREFIX%%|${PREFIX}|g; s|%%DATADIR%%|${DATADIR}|g'\
-			${WRKSRC}/params.h
+	${REINPLACE_CMD} -e 's|= gcc|= ${CC}|g' \
+		-e 's|CFLAGS =.*|CFLAGS = -c ${CFLAGS}|g' \
+		${WRKSRC}/Makefile
 
 pre-build:
 	@${ECHO} "Building for ${ALL_TARGET}"
