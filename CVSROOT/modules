@@ -3104,6 +3104,7 @@ glgraph		ports/math/glgraph
 glib-java	ports/devel/glib-java
 glib12		ports/devel/glib12
 glib20		ports/devel/glib20
+glib20-reference	ports/devel/glib20-reference
 glibmm		ports/devel/glibmm
 glibstdc++28	ports/lang/glibstdc++28
 glibwww		ports/www/glibwww
