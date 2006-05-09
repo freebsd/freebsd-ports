@@ -13071,6 +13071,7 @@ trophy		ports/games/trophy
 trove4j		ports/java/trove4j
 trueprint	ports/print/trueprint
 truevision	ports/graphics/truevision
+py-trustedpickle	ports/security/py-trustedpickle
 trustedqsl	ports/comms/trustedqsl
 tsclient	ports/net/tsclient
 tse3		ports/audio/tse3
