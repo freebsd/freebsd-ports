@@ -1,5 +1,5 @@
---- sulci/sulci.conf.example.orig	Sun Sep 18 18:32:13 2005
-+++ sulci/sulci.conf.example	Tue Sep 20 16:02:07 2005
+--- sulci/sulci.conf.example.orig	Mon Feb  6 23:13:27 2006
++++ sulci/sulci.conf.example	Tue Feb 21 17:29:45 2006
 @@ -1,6 +1,6 @@
  <sulci>
   <jabber>
@@ -27,7 +27,7 @@
   </muc>
 @@ -40,9 +40,9 @@
  
-   <vocabulary name="vocabulary"/>
+   <vocabulary db="vocabulary.db"/>
  
 -  <mueller file="/path/to/Mueller24.koi" hashext=".hash" />
 +  <mueller file="/usr/local/share/mueller-dic/Mueller7accentGPL.koi" hashext=".h" />

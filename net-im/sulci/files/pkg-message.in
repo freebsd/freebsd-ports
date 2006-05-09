@@ -21,3 +21,13 @@ and don't forget to chown home/of/the/sulci/the/bot
 
 Note: you have to get the key from Google before using the "google"
 plug-in. See http://api.google.com/ for how to.
+
+WARNING!!! After upgrading from 0.5.a.20050918 version you have to
+convert you vocabulary database to sqlite using
+
+  %%PREFIX%%/libexec/sulci/wtf_convert
+
+and change sulci's configuration file in "vocabulary" directive, see
+
+  %%PREFIX%%/%%EXAMPLESDIR%%/sulci.conf.example
+
