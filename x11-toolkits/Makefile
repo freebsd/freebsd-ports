@@ -50,6 +50,7 @@
     SUBDIR += gtk12-apireference
     SUBDIR += gtk20
     SUBDIR += gtk20-apireference
+    SUBDIR += gtk20-reference
     SUBDIR += gtkada
     SUBDIR += gtkdatabox
     SUBDIR += gtkdatabox2

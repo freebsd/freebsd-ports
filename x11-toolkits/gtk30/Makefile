@@ -23,15 +23,21 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Gimp Toolkit for X11 GUI (current stable version)
 
+USE_BZIP2=	yes
+LATEST_LINK=	gtk20
+PREFIX?=	${X11BASE}
+
+.if !defined(REFERENCE_PORT)
+
+PORTREVISION=	1
+
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 RUN_DEPENDS=	${LOCALBASE}/share/mime/magic:${PORTSDIR}/misc/shared-mime-info \
 		${X11BASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme
 
-USE_BZIP2=	yes
-LATEST_LINK=	gtk20
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_XPM=	yes
 USE_REINPLACE=	yes
 USE_PERL5=	yes
@@ -44,6 +50,11 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/freetype2 \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 GTK_VERSION=	2.4.0
 PLIST_SUB=	GTK_VERSION="${GTK_VERSION}"
+
+gdk_pixbuf_MAN=	gdk-pixbuf-query-loaders.1
+gtk_MAN=	gtk-query-immodules-2.0.1 gtk-update-icon-cache.1
+
+MAN1=		${gdk_pixbuf_MAN} ${gtk_MAN}
 
 # Setting WITH_DEBUG=yes effectively adds -g to $CFLAGS
 # unless doing so would clobber a preexisting $CFLAGS.
@@ -108,5 +119,11 @@ post-install:
 		${PREFIX}/bin/gtk-update-icon-cache -q -f {} \; 2>/dev/null
 	@${MKDIR} ${PREFIX}/lib/gtk-2.0/modules
 	@${MKDIR} ${PREFIX}/lib/gtk-2.0/${GTK_VERSION}/engines
+	${INSTALL_MAN} ${gdk_pixbuf_MAN:S|^|${WRKSRC}/docs/reference/gdk-pixbuf/|} \
+		${PREFIX}/man/man1
+	${INSTALL_MAN} ${gtk_MAN:S|^|${WRKSRC}/docs/reference/gtk/|} \
+		${PREFIX}/man/man1
 
 .include <bsd.port.post.mk>
+
+.endif
