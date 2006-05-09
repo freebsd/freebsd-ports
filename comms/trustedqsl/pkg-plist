@@ -6,6 +6,15 @@ bin/station_loc
 bin/tqsl
 bin/tqslcert
 etc/tqsl/config.xml
+include/tqsllib.h
+include/tqslerrno.h
+include/cabrillo.h
+include/adif.h
+include/tqslconvert.h
+lib/libtqsllib.so.1
+lib/libtqsllib.so
+lib/libtqsllib.la
+lib/libtqsllib.a
 %%PORTDOCS%%share/doc/tqslapp/addcont.bmp
 %%PORTDOCS%%share/doc/tqslapp/addstnl.bmp
 %%PORTDOCS%%share/doc/tqslapp/addstnl0.bmp
@@ -69,6 +78,7 @@ etc/tqsl/config.xml
 %%PORTDOCS%%share/doc/tqslcert/tqslcert.hhp
 %%PORTDOCS%%share/doc/tqslcert/unlock.bmp
 %%PORTDOCS%%share/doc/tqslcert/unlock.htm
+%%PORTDOCS%%share/doc/tqsllib
 %%PORTDOCS%%@dirrm share/doc/tqslcert
 %%PORTDOCS%%@dirrm share/doc/tqslapp
 @dirrm etc/tqsl

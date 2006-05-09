@@ -1,0 +1,12 @@
+--- tqsllib-2.0/Makefile.in.orig	Fri Mar 11 07:58:31 2005
++++ tqsllib-2.0/Makefile.in	Tue Apr 18 15:53:02 2006
+@@ -767,8 +767,7 @@
+ 
+ info-am:
+ 
+-install-data-am: install-dataDATA install-docDATA \
+-	install-includeHEADERS
++install-data-am:	install-includeHEADERS
+ 
+ install-exec-am: install-binPROGRAMS install-exec-local \
+ 	install-libLIBRARIES install-libLTLIBRARIES
