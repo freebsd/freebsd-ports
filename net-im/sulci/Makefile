@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sulci
-PORTVERSION=	0.5.a.20050918
-PORTREVISION=	1
+PORTVERSION=	0.5.a.20060221
 PORTEPOCH=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.jabber.ru/files/sulci/
@@ -41,9 +40,17 @@ OCAML_SITELIBDIR=	${LOCALBASE}/lib/ocaml/site-lib
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME}/${PORTNAME} ${PREFIX}/sbin
 
+	${MKDIR} ${PREFIX}/libexec/${PORTNAME}
+.for i in lang/langcompile tlds/createtlds utils/wtf/wtf_convert
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME}/${i} ${PREFIX}/libexec/${PORTNAME}
+.endfor
+
 	${MKDIR} ${DATADIR}/lang
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}/lang/*.htbl ${WRKSRC}/${PORTNAME}/lang/*.ml ${WRKSRC}/${PORTNAME}/lang/*.msg ${DATADIR}/lang
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}/tlds.db ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}/lang/*.htbl ${WRKSRC}/${PORTNAME}/lang/*.msg ${DATADIR}/lang
+
+.for i in tlds.db tlds.txt
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}/tlds/${i} ${DATADIR}
+.endfor
 
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}/${PORTNAME}.conf.example ${EXAMPLESDIR}

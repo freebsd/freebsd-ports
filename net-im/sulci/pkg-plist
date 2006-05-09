@@ -1,16 +1,17 @@
+libexec/sulci/createtlds
+libexec/sulci/langcompile
+libexec/sulci/wtf_convert
 sbin/sulci
 %%DATADIR%%/tlds.db
+%%DATADIR%%/tlds.txt
 %%DATADIR%%/lang/en.htbl
 %%DATADIR%%/lang/en.msg
-%%DATADIR%%/lang/en_time.ml
 %%DATADIR%%/lang/es.htbl
 %%DATADIR%%/lang/es.msg
-%%DATADIR%%/lang/es_time.ml
 %%DATADIR%%/lang/nl.htbl
 %%DATADIR%%/lang/nl.msg
 %%DATADIR%%/lang/ru.htbl
 %%DATADIR%%/lang/ru.msg
-%%DATADIR%%/lang/ru_time.ml
 %%EXAMPLESDIR%%/sulci.conf.example
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/cmdlist.en.txt
@@ -19,3 +20,4 @@ sbin/sulci
 @dirrm %%DATADIR%%/lang
 @dirrm %%DATADIR%%
 @dirrm %%EXAMPLESDIR%%
+@dirrm libexec/sulci
