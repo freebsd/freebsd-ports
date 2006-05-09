@@ -291,6 +291,7 @@
     SUBDIR += kphotoalbum
     SUBDIR += kudu
     SUBDIR += kuickshow
+    SUBDIR += l2p
     SUBDIR += landscape
     SUBDIR += lcms
     SUBDIR += leafpak
