@@ -9,9 +9,10 @@ PORTNAME=	libexecinfo
 PORTVERSION=	1.1
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	http://www.portaone.com/~sobomax/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	itetcu
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	A library for inspecting program's backtrace
 
 USE_BZIP2=	yes
@@ -19,8 +20,12 @@ INSTALLS_SHLIB=	yes
 MAKE_FLAGS=	LIBDIR=${PREFIX}/lib \
 		INCLUDEDIR=${PREFIX}/include
 
+PORTDOCS=	README
+
 post-install:
+.if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
