@@ -2,11 +2,11 @@ bin/spfqtool
 bin/spfqtool_static
 include/_stdint.h
 include/spf.h
+lib/libspf.so
 lib/libspf-1.0.so
 lib/libspf-1.0.so.0
 lib/libspf.a
 lib/libspf.la
-lib/libspf.so
 %%EXAMPLESDIR%%/examples/Sendmail/sendmail.cf
 %%EXAMPLESDIR%%/examples/Sendmail/sendmail.mc.example
 %%EXAMPLESDIR%%/examples/Sendmail/spf.m4
