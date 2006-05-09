@@ -17,10 +17,14 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A GNOME accessibility toolkit (ATK)
 
 USE_BZIP2=	yes
+
+.if !defined(REFERENCE_PORT)
+
+PORTREVISION=	1
 USE_GETTEXT=	yes
 INSTALLS_SHLIB=	yes
 USE_AUTOTOOLS=	libtool:15
-USE_GNOME=	gnomehack glib20 ltverhack
+USE_GNOME=	gnomehack glib20 ltverhack referencehack
 CONFIGURE_ARGS=	--enable-static \
 		--disable-gtk-doc \
 		--with-html-dir=${PREFIX}/share/doc
@@ -32,3 +36,5 @@ post-patch:
 		${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
+
+.endif
