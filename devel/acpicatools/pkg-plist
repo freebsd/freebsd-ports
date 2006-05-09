@@ -1,4 +1,3 @@
 bin/acpicadb
 bin/iasl
 bin/acpidump
-man/man8/acpidump.8.gz
