@@ -3674,6 +3674,7 @@ gtk12-apireference	ports/x11-toolkits/gtk12-apireference
 gtk2-theme-switch	ports/x11/gtk2-theme-switch
 gtk20		ports/x11-toolkits/gtk20
 gtk20-apireference	ports/x11-toolkits/gtk20-apireference
+gtk20-reference	ports/x11-toolkits/gtk20-reference
 gtkabale	ports/games/gtkabale
 gtkada		ports/x11-toolkits/gtkada
 gtkam		ports/graphics/gtkam
