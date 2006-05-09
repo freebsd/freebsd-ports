@@ -7294,6 +7294,7 @@ obexapp		ports/comms/obexapp
 objc		ports/lang/objc
 obliterate	ports/sysutils/obliterate
 obnc		ports/net/obnc
+obtuner		ports/x11-wm/obtuner
 ocaml		ports/lang/ocaml
 ocaml-camomile	ports/devel/ocaml-camomile
 ocaml-classes	ports/devel/ocaml-classes
