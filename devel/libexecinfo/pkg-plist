@@ -2,5 +2,3 @@ include/execinfo.h
 lib/libexecinfo.a
 lib/libexecinfo.so
 lib/libexecinfo.so.1
-share/doc/libexecinfo/README
-@dirrm share/doc/libexecinfo
