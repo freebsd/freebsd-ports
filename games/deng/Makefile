@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	deng
-PORTVERSION=	1.8.6
-PORTREVISION=	2
+PORTVERSION=	1.9.0b3
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/b/-beta/}
 
 MAINTAINER=	ip@doom.homeunix.org
 COMMENT=	An enhanced Doom, Heretic and Hexen source port
@@ -30,7 +30,8 @@ ONLY_FOR_ARCHS=	i386
 SUB_FILES=	pkg-message
 SUB_LIST=	"PREFIX=${PREFIX}" "DOCSDIR=${DOCSDIR}"
 
-.include "${.CURDIR}/../doom-data/Makefile.include"
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/games/doom-data/Makefile.include"
 
 .if exists(${LOCALBASE}/lib/libopenal.so.0) || defined(WITH_OPENAL)
 WITH_OPENAL=	yes
@@ -67,4 +68,4 @@ post-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
