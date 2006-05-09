@@ -6,6 +6,16 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20060509:
+  AFFECTS: users of net-im/sulci
+  AUTHOR:  Denis Shaposhnikov <dsh@vlink.ru>
+
+  After upgrading from 0.5.a.20050918 version you have to convert your
+  vocabulary database to sqlite using:
+    /usr/local/libexec/sulci/wtf_convert
+  and change sulci's configuration file in "vocabulary" directive, see
+    /usr/local/share/examples/sulci/sulci.conf.example
+
 200605R0728:
   AFFECTS: users of net/isc-dhcp3-server with failover setup
   AUTHOR: Joerg.Pulz@frm2.tum.de
