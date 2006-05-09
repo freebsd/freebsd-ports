@@ -5,11 +5,12 @@
 # $FreeBSD$
 #
 
-PORTNAME=	py-game
+PORTNAME=	game
 PORTVERSION=	1.7.1
 CATEGORIES=	devel python
 MASTER_SITES=	http://pygame.seul.org/ftp/
-DISTNAME=	${PORTNAME:S/-//}-${PORTVERSION}release
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	py${PORTNAME}-${PORTVERSION}release
 
 MAINTAINER=	mva@sysfault.org
 COMMENT=	A module designed to write games in Python
