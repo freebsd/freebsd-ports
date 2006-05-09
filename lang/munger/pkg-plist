@@ -1,6 +1,7 @@
 bin/munger
-lib/libmunger.so.3
+lib/libmunger.so.4
 %%DKNS_BIN%%
+%%DATADIR%%/msh.munger
 %%DATADIR%%/mbox2munger.munger
 %%DATADIR%%/xml2alist.munger
 %%DATADIR%%/xml2sqlite.munger
