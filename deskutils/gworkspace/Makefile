@@ -8,8 +8,7 @@
 PORTNAME=	gworkspace
 PORTVERSION=	0.8.2
 CATEGORIES=	deskutils
-MASTER_SITES=	http://www.gnustep.it/enrico/gworkspace/ \
-		http://www.imago.ro/gworkspace/
+MASTER_SITES=	http://www.gnustep.it/enrico/gworkspace/
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	GNUstep workspace manager
