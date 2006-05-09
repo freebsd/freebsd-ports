@@ -1,0 +1,22 @@
+%%SITE_PERL%%/Device/Gsm/Sms/Token/VP.pm
+%%SITE_PERL%%/Device/Gsm/Sms/Token/UD.pm
+%%SITE_PERL%%/Device/Gsm/Sms/Token/SCTS.pm
+%%SITE_PERL%%/Device/Gsm/Sms/Token/SCA.pm
+%%SITE_PERL%%/Device/Gsm/Sms/Token/PID.pm
+%%SITE_PERL%%/Device/Gsm/Sms/Token/PDUTYPE.pm
+%%SITE_PERL%%/Device/Gsm/Sms/Token/OA.pm
+%%SITE_PERL%%/Device/Gsm/Sms/Token/MR.pm
+%%SITE_PERL%%/Device/Gsm/Sms/Token/DCS.pm
+%%SITE_PERL%%/Device/Gsm/Sms/Token/DA.pm
+%%SITE_PERL%%/Device/Gsm/Sms/Token.pm
+%%SITE_PERL%%/Device/Gsm/Sms/Structure.pm
+%%SITE_PERL%%/Device/Gsm/Sms.pm
+%%SITE_PERL%%/Device/Gsm/Pdu.pm
+%%SITE_PERL%%/Device/Gsm/Charset.pm
+%%SITE_PERL%%/Device/Gsm.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Device/Gsm/.packlist
+@dirrm %%SITE_PERL%%/Device/Gsm/Sms/Token
+@dirrm %%SITE_PERL%%/Device/Gsm/Sms
+@dirrm %%SITE_PERL%%/Device/Gsm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Device/Gsm
+@dirrmtry %%SITE_PERL%%/Device
