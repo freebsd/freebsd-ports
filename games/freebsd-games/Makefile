@@ -47,12 +47,14 @@ MAN6=	\
 
 MANCOMPRESSED=	maybe
 
-PATHNAME_FILES=	atc/pathnames.h \
+PATHNAME_FILES=	atc/atc.6 \
+		atc/pathnames.h \
 		cribbage/pathnames.h \
 		fish/pathnames.h \
 		larn/pathnames.h \
 		quiz/datfiles/index \
 		quiz/pathnames.h \
+		quiz/quiz.6 \
 		wump/pathnames.h
 
 post-extract:
