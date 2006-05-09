@@ -7,6 +7,7 @@
 
 PORTNAME=	healthd
 PORTVERSION=	0.7.9
+PORTREVISION=	1
 CATEGORIES=	sysutils ipv6
 MASTER_SITES=	http://healthd.thehousleys.net/ \
 		http://healthd1.thehousleys.net/
@@ -14,10 +15,8 @@ MASTER_SITES=	http://healthd.thehousleys.net/ \
 MAINTAINER=	jeh@FreeBSD.org
 COMMENT=	A daemon to monitor vital motherboard parameters
 
-ONLY_FOR_ARCHS=	i386
-
 USE_REINPLACE=	yes
-HAS_CONFIGURE=	yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--exec-prefix=${PREFIX}
 #
 # To allow reading the doWarn and doFail scripts remotely uncomment
