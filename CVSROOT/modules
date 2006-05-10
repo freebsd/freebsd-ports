@@ -7835,6 +7835,7 @@ p5-Catalyst-Plugin-Unicode	ports/www/p5-Catalyst-Plugin-Unicode
 p5-Catalyst-Plugin-XMLRPC	ports/www/p5-Catalyst-Plugin-XMLRPC
 p5-Catalyst-View-GraphViz	ports/www/p5-Catalyst-View-GraphViz
 p5-Catalyst-View-HTML-Template	ports/www/p5-Catalyst-View-HTML-Template
+p5-Catalyst-View-JSON	ports/www/p5-Catalyst-View-JSON
 p5-Catalyst-View-Mason	ports/www/p5-Catalyst-View-Mason
 p5-Catalyst-View-TT	ports/www/p5-Catalyst-View-TT
 p5-Catalyst-View-TT-ControllerLocal	ports/www/p5-Catalyst-View-TT-ControllerLocal
@@ -14734,4 +14735,3 @@ zthread		ports/devel/zthread
 ztrack		ports/games/ztrack
 zu-aspell	ports/textproc/zu-aspell
 zziplib		ports/devel/zziplib
-p5-Catalyst-View-JSON	ports/www/p5-Catalyst-View-JSON
