@@ -10,7 +10,7 @@ PORTVERSION=	1.5.0.3
 CATEGORIES=	www
 MASTER_SITE_SUBDIR?=	firefox/releases/${PORTVERSION}/linux-i686/en-US
 
-MAINTAINER=	infofarmer@gmail.com
+MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
 
 .include "${.CURDIR}/../linux-seamonkey/Makefile.common"
