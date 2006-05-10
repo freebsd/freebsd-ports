@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	maildir
-PORTVERSION=	0.20
+PORTVERSION=	0.22
 CATEGORIES=	mail
 MASTER_SITES=	http://claws.sylpheed.org/downloads/plugins/
 PKGNAMEPREFIX=	sylpheed-claws-
