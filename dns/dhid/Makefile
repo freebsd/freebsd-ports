@@ -7,13 +7,14 @@
 
 PORTNAME=	dhid
 PORTVERSION=	5.3
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	ftp://ftp.dhis.org/pub/dhis/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DHIS client for updating dynamic DNS entries in dhisd DNS tables
 
-LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4
 
 MAKE_ARGS+=	CC="${CC}" CFLAGS="${CFLAGS} -I${LOCALBASE}/include -DQRC=1" \
 		LFLAGS="-L${LOCALBASE}/lib"

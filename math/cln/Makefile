@@ -8,6 +8,7 @@
 
 PORTNAME=	cln
 PORTVERSION=	1.1.11
+PORTREVISION=	1
 CATEGORIES=	math devel
 MASTER_SITES=	http://www.ginac.de/CLN/ \
 		http://www.mirrors.wiretapped.net/security/cryptography/libraries/math/cln/ \
@@ -16,7 +17,7 @@ MASTER_SITES=	http://www.ginac.de/CLN/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Class Library for Numbers
 
-LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4
 
 USE_BZIP2=	yes
 USE_GCC=	3.4+

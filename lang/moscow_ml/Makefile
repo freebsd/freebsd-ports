@@ -7,7 +7,7 @@
 
 PORTNAME=	moscow_ml
 PORTVERSION=	2.01
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	http://www.dina.kvl.dk/~sestoft/mosml/
 DISTNAME=	mos201src
@@ -15,7 +15,7 @@ DISTNAME=	mos201src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Moscow ML, a lightweight implementation of Standard ML
 
-LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4 \
+LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4 \
 		gdbm.3:${PORTSDIR}/databases/gdbm
 
 RESTRICTED=	Restrictions on for-profit distribution.

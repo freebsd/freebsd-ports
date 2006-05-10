@@ -7,6 +7,7 @@
 
 PORTNAME=	sfslite
 PORTVERSION=	0.8.4
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://dist.okws.org/dist/
 
@@ -25,7 +26,7 @@ USE_BISON=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} > 500000
-LIB_DEPENDS+=	gmp.6:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS+=	gmp.7:${PORTSDIR}/math/libgmp4
 CONFIGURE_ARGS+=--with-gmp=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--with-gmp=/usr

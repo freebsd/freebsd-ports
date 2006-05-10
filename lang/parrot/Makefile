@@ -7,6 +7,7 @@
 
 PORTNAME=	parrot
 PORTVERSION=	0.4.3
+PORTREVISION=	1
 CATEGORIES=	lang perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/L/LT/LTOETSCH
@@ -15,7 +16,7 @@ MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Parrot - virtual machine for dynamic languages
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
-LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4 \
+LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4 \
 		icudata.34:${PORTSDIR}/devel/icu
 
 BROKEN=		Incorrect pkg-plist

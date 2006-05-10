@@ -7,7 +7,7 @@
 
 PORTNAME=	ndiff
 PORTVERSION=	2.00
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.math.utah.edu/pub/misc/
 PKGNAMEPREFIX=
@@ -19,7 +19,7 @@ COMMENT=	Compare putatively similar files, ignoring small numeric differences
 
 .if !defined(WITHOUT_GMP)
 .if ${OSVERSION} > 500023
-LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 .endif

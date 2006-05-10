@@ -7,6 +7,7 @@
 
 PORTNAME=	stklos
 PORTVERSION=	0.71
+PORTREVISION=	1
 CATEGORIES=	lang scheme
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	yinjieh@csie.nctu.edu.tw
 COMMENT=	The successor of the STk Scheme interpreter
 
-LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4 \
+LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4 \
 		gc.1:${PORTSDIR}/devel/boehm-gc
 
 ONLY_FOR_ARCHS=	i386 amd64

@@ -7,6 +7,7 @@
 
 PORTNAME=	gnustep-base
 PORTVERSION=	1.12.0
+PORTREVISION=	1
 CATEGORIES=	lang devel
 MASTER_SITES=	${MASTER_SITE_GNUSTEP}
 MASTER_SITE_SUBDIR=	core
@@ -16,7 +17,7 @@ COMMENT=	GNUstep Foundation library
 
 LIB_DEPENDS+=	xml2.5:${PORTSDIR}/textproc/libxml2
 LIB_DEPENDS+=	xslt.2:${PORTSDIR}/textproc/libxslt
-LIB_DEPENDS+=	gmp.6:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS+=	gmp.7:${PORTSDIR}/math/libgmp4
 
 ETCDIR=		${LOCALBASE}/etc
 USE_AUTOTOOLS=	autoconf:259

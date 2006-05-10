@@ -51,7 +51,7 @@ while [ "$1" ]; do
 			;;
 		\"gmp\")
 			echo '.if ${OSVERSION} >= 500000' >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
-			echo 'LIB_DEPENDS+=	gmp.6:${PORTSDIR}/math/libgmp4' >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+			echo 'LIB_DEPENDS+=	gmp.7:${PORTSDIR}/math/libgmp4' >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 			echo '.endif' >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 			echo 'CONFIGURE_ARGS+=	--with-gmp' >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 			gmp=1

@@ -7,7 +7,7 @@
 
 PORTNAME=	obby
 PORTVERSION=	0.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://releases.0x539.de/obby/
 
@@ -15,7 +15,7 @@ MAINTAINER=	andreas@syndrom23.de
 COMMENT=	A library for synced document buffers
 
 LIB_DEPENDS=	sigc++-2.0.0:${PORTSDIR}/devel/libsigc++20 \
-		gmp.6:${PORTSDIR}/math/libgmp4 \
+		gmp.7:${PORTSDIR}/math/libgmp4 \
 		net6:${PORTSDIR}/net/net6
 
 GNU_CONFIGURE=		yes

@@ -8,6 +8,7 @@
 
 PORTNAME=	yap
 PORTVERSION=	5.0.1
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.ncc.up.pt/~vsc/Yap/%SUBDIR%/
 MASTER_SITE_SUBDIR=	Yap-${PORTVERSION}
@@ -16,7 +17,7 @@ DISTNAME=	Yap-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A high-performance Prolog compiler
 
-LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
