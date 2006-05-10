@@ -5950,6 +5950,7 @@ lilypond	ports/print/lilypond
 limewire	ports/net-p2p/limewire
 linalg		ports/math/linalg
 linc		ports/net/linc
+linc-reference	ports/net/linc-reference
 lincity		ports/games/lincity
 lincity-ng	ports/games/lincity-ng
 lincvs		ports/devel/lincvs
