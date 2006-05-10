@@ -67,23 +67,10 @@ libdata/pkgconfig/ORBit-CosNaming-2.0.pc
 libdata/pkgconfig/ORBit-idl-2.0.pc
 libdata/pkgconfig/ORBit-imodule-2.0.pc
 share/aclocal/ORBit2.m4
-%%DOCSDIR%%/ORBit2-orbit2-allocators.html
-%%DOCSDIR%%/ORBit2-orbit2-small.html
-%%DOCSDIR%%/ORBit2.devhelp
-%%DOCSDIR%%/ORBit2.devhelp2
-%%DOCSDIR%%/general.html
-%%DOCSDIR%%/home.png
-%%DOCSDIR%%/index.html
-%%DOCSDIR%%/index.sgml
-%%DOCSDIR%%/left.png
-%%DOCSDIR%%/right.png
-%%DOCSDIR%%/style.css
-%%DOCSDIR%%/up.png
 share/idl/orbit-2.0/CosNaming.idl
 @dirrm share/idl/orbit-2.0
 @exec /bin/mkdir -p %D/lib/orbit-2.0/idl-backends
 @dirrmtry share/idl
-@dirrm %%DOCSDIR%%
 @dirrmtry lib/orbit-2.0/idl-backends
 @dirrmtry lib/orbit-2.0
 @dirrm include/orbit-2.0/orbit/util
