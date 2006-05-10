@@ -7,9 +7,9 @@
 #
 
 PORTNAME=	argouml
-PORTVERSION=	0.18.1
+PORTVERSION=	0.20
 CATEGORIES=	devel java
-MASTER_SITES=	http://argouml.tigris.org/files/documents/4/0/argouml-${PORTVERSION}/
+MASTER_SITES=	http://argouml-downloads.tigris.org/nonav/argouml-${PORTVERSION}/
 DISTNAME=	ArgoUML-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 .if !defined(NOPORTDOCS)
