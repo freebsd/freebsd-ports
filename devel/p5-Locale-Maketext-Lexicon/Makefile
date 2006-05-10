@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Locale-Maketext-Lexicon
-PORTVERSION=	0.49
-PORTREVISION=	1
+PORTVERSION=	0.61
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Locale
@@ -24,6 +23,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	YES
 
 MAN3=		Locale::Maketext::Extract.3 \
+		Locale::Maketext::Extract::Run.3 \
 		Locale::Maketext::Lexicon::Auto.3 \
 		Locale::Maketext::Lexicon::Gettext.3 \
 		Locale::Maketext::Lexicon::Msgcat.3 \
