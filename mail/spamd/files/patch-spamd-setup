@@ -1,6 +1,6 @@
---- spamd-setup/spamd-setup.c	Wed Apr 13 03:18:59 2005
-+++ spamd-setup/spamd-setup.c	Fri Mar 17 16:19:25 2006
-@@ -41,9 +41,14 @@
+--- spamd-setup/spamd-setup.c.orig	Wed Apr 13 01:18:59 2005
++++ spamd-setup/spamd-setup.c	Wed May 10 01:55:13 2006
+@@ -41,6 +41,11 @@
  #include <netdb.h>
  #include <zlib.h>
  
@@ -10,13 +10,8 @@
 +#endif
 +
  #define PATH_FTP		"/usr/bin/ftp"
--#define PATH_PFCTL		"%%LOCAL_PFCTL%%"
--#define PATH_SPAMD_CONF		"%%LOCAL_SPAMD_CONF%%"
-+#define PATH_PFCTL		""
-+#define PATH_SPAMD_CONF		"/usr/local/etc/spamd.conf"
- #define SPAMD_ARG_MAX		256 /* max # of args to an exec */
- 
- struct cidr {
+ #define PATH_PFCTL		"%%LOCAL_PFCTL%%"
+ #define PATH_SPAMD_CONF		"%%LOCAL_SPAMD_CONF%%"
 @@ -93,6 +98,11 @@
  int		debug;
  int		dryrun;
