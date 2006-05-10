@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nginx
-PORTVERSION=	0.3.40
+PORTVERSION=	0.3.45
 CATEGORIES=	www
 MASTER_SITES=	http://sysoev.ru/nginx/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
@@ -15,29 +15,30 @@ MASTER_SITE_SUBDIR=	osa
 MAINTAINER=	osa@FreeBSD.org
 COMMENT=	Robust and small WWW server
 
-VARDIR?=	${DESTDIR}/var
-LOGDIR?=	${VARDIR}/log
-RUNDIR?=	${VARDIR}/run
-TMPDIR?=	${VARDIR}/tmp/nginx
+NGINX_VARDIR?=	${DESTDIR}/var
+NGINX_LOGDIR?=	${NGINX_VARDIR}/log
+NGINX_RUNDIR?=	${NGINX_VARDIR}/run
+NGINX_TMPDIR?=	${NGINX_VARDIR}/tmp/nginx
 HTTP_PORT?=	80
 
-USE_RC_SUBR=	yes
+USE_RC_SUBR=	nginx.sh
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=--prefix=${PREFIX}/etc/nginx \
 		--with-cc-opt="-I ${LOCALBASE}/include" \
 		--with-ld-opt="-L ${LOCALBASE}/lib" \
 		--conf-path=${PREFIX}/etc/nginx/nginx.conf \
 		--sbin-path=${PREFIX}/sbin/nginx \
-		--pid-path=${RUNDIR}/nginx.pid \
-		--http-client-body-temp-path=${TMPDIR}/client_body_temp \
-		--http-proxy-temp-path=${TMPDIR}/proxy_temp \
-		--http-fastcgi-temp-path=${TMPDIR}/fastcgi_temp \
-		--http-log-path=${LOGDIR}/nginx-access.log \
-		--error-log-path=${LOGDIR}/nginx-error.log \
+		--pid-path=${NGINX_RUNDIR}/nginx.pid \
+		--http-client-body-temp-path=${NGINX_TMPDIR}/client_body_temp \
+		--http-proxy-temp-path=${NGINX_TMPDIR}/proxy_temp \
+		--http-fastcgi-temp-path=${NGINX_TMPDIR}/fastcgi_temp \
+		--http-log-path=${NGINX_LOGDIR}/nginx-access.log \
+		--error-log-path=${NGINX_LOGDIR}/nginx-error.log \
 		--with-http_stub_status_module \
 		--user=${WWWOWN} --group=${WWWGRP}
 
 .if defined(WITH_DEBUG)
+CFLAGS+=	-g
 CONFIGURE_ARGS+=--with-debug
 STRIP=		#do not strip if nginx with debug information
 .endif
@@ -70,25 +71,7 @@ PLIST_SUB+=	WWWDATA="@comment "
 PLIST_SUB+=	WWWDATA=""
 .endif
 
-.if defined(STOP_BEFORE_REMOVE)
-PLIST_SUB+=	STOP_BEFORE_REMOVE=""
-.else
-PLIST_SUB+=	STOP_BEFORE_REMOVE="@comment "
-.endif
-
-.if defined(START_AFTER_INSTALL)
-PLIST_SUB+=	START_AFTER_INSTALL=""
-.else
-PLIST_SUB+=	START_AFTER_INSTALL="@comment "
-.endif
-
-PLIST_SUB+=	TMPDIR=${TMPDIR} WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
-
-RC_SCRIPTS_SUB=PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
-
-post-extract:
-	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${FILESDIR}/nginx.sh.in > ${WRKSRC}/nginx.sh
+PLIST_SUB+=	NGINX_TMPDIR=${NGINX_TMPDIR} WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 
 post-patch:
 	@${REINPLACE_CMD} 's!%%HTTP_PORT%%!${HTTP_PORT}!; \
@@ -99,9 +82,8 @@ do-build:
 	@cd ${WRKSRC} && ${MAKE}
 
 do-install:
-	${MKDIR} ${PREFIX}/etc/nginx ${TMPDIR}
-	${CHOWN} ${WWWOWN}:${WWWGRP} ${TMPDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/nginx.sh ${PREFIX}/etc/rc.d
+	${MKDIR} ${PREFIX}/etc/nginx ${NGINX_TMPDIR}
+	${CHOWN} ${WWWOWN}:${WWWGRP} ${NGINX_TMPDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/objs/nginx ${PREFIX}/sbin
 	${INSTALL_DATA} ${WRKSRC}/conf/koi-win ${PREFIX}/etc/nginx
 .for i in mime.types nginx.conf
@@ -115,11 +97,6 @@ do-install:
 	${ECHO_CMD} "" >>${PREFIX}/www/nginx-dist/EXAMPLE_DIRECTORY-DONT_ADD_OR_TOUCH_ANYTHING
 	[ -e ${PREFIX}/www/nginx ] || \
 		${LN} -sf ${PREFIX}/www/nginx-dist ${PREFIX}/www/nginx
-.endif
-
-post-install:
-.if defined(START_AFTER_INSTALL)
-	${PREFIX}/etc/rc.d/nginx.sh start
 .endif
 
 .include <bsd.port.mk>
