@@ -270,7 +270,7 @@
 
 PORTNAME=	mplayer
 PORTVERSION=	0.99.7
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	multimedia audio ipv6
 MASTER_SITES=	http://www1.mplayerhq.hu/MPlayer/releases/ \
 		http://www2.mplayerhq.hu/MPlayer/releases/ \
@@ -407,7 +407,7 @@ WITH_SVGALIB=	yes
 WITH_THEORA=	yes
 .endif
 
-.if exists(${LOCALBASE}/lib/libx264.so.1)
+.if exists(${LOCALBASE}/lib/libx264.so.47)
 WITH_X264=	yes
 .endif
 
@@ -692,7 +692,7 @@ CONFIGURE_ARGS+=	--disable-theora
 .endif
 
 .if defined(WITH_X264)
-LIB_DEPENDS+=	x264.1:${PORTSDIR}/multimedia/x264
+LIB_DEPENDS+=	x264.47:${PORTSDIR}/multimedia/x264
 .else
 CONFIGURE_ARGS+=	--disable-x264
 .endif

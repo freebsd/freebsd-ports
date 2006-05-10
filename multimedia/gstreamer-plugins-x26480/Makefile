@@ -7,7 +7,7 @@
 #
 
 CATEGORIES=	multimedia
-PORTREVISION=	1
+PORTREVISION=	2
 
 COMMENT=	Gstreamer x264 plugin
 

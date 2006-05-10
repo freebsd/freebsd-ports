@@ -511,7 +511,7 @@ LIB_DEPENDS+=	wavpack.0:${PORTSDIR}/audio/wavpack
 
 # x264
 .if ${GST_PLUGIN}=="x264"
-LIB_DEPENDS+=	x264.1:${PORTSDIR}/multimedia/x264
+LIB_DEPENDS+=	x264.47:${PORTSDIR}/multimedia/x264
 PLIST_FILES=	${GST_LIB_DIR}/libx264.so \
 		${GST_LIB_DIR}/libx264.a \
 		${GST_LIB_DIR}/libx264.la
