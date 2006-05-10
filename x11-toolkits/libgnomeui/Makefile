@@ -15,16 +15,22 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Libraries for the GNOME GUI, a GNU desktop environment
 
+USE_BZIP2=	yes
+PREFIX?=	${X11BASE}
+
+.if !defined(REFERENCE_PORT)
+
+PORTREVISION=	1
+
 LIB_DEPENDS+=	gnome-keyring.0:${PORTSDIR}/security/gnomekeyring \
 		startup-notification-1.0:${PORTSDIR}/x11/startup-notification
 RUN_DEPENDS=	${X11BASE}/share/icons/gnome/index.theme:${PORTSDIR}/misc/gnome-icon-theme
 
-USE_BZIP2=	yes
 USE_GETTEXT=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_XPM=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack gnomehier libbonoboui ltverhack
+USE_GNOME=	gnomeprefix gnomehack gnomehier libbonoboui ltverhack referencehack
 INSTALLS_SHLIB=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_BISON=	yes
@@ -32,3 +38,5 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
 .include <bsd.port.mk>
+
+.endif

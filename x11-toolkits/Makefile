@@ -90,6 +90,7 @@
     SUBDIR += libgnomeprintui
     SUBDIR += libgnomeprintuimm
     SUBDIR += libgnomeui
+    SUBDIR += libgnomeui-reference
     SUBDIR += libgnomeuimm
     SUBDIR += libgnomeuimm26
     SUBDIR += libgtk-java
