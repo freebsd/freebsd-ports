@@ -114,6 +114,7 @@ MuSE		ports/audio/muse
 NeTraMet	ports/net-mgmt/NeTraMet
 ORBit		ports/devel/ORBit
 ORBit2		ports/devel/ORBit2
+ORBit2-reference	ports/devel/ORBit2-reference
 OpenEXR		ports/graphics/OpenEXR
 PDL		ports/math/PDL
 PicMonger	ports/news/PicMonger
