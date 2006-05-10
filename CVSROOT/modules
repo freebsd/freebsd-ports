@@ -5678,6 +5678,7 @@ libgnome	ports/x11/libgnome
 libgnome-java	ports/x11/libgnome-java
 libgnome-reference	ports/x11/libgnome-reference
 libgnomecanvas	ports/graphics/libgnomecanvas
+libgnomecanvas-reference	ports/graphics/libgnomecanvas-reference
 libgnomecanvasmm	ports/graphics/libgnomecanvasmm
 libgnomecanvasmm26	ports/graphics/libgnomecanvasmm26
 libgnomecups	ports/print/libgnomecups
