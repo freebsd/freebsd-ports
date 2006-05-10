@@ -164,6 +164,6 @@ Exec=linux-seamonkey %U
 StartupNotify=true
 Terminal=false
 Type=Application
-Icon=%%PREFIX%%/lib/linux-seamonkey/chrome/icons/default/default.xpm
+Icon=%%PREFIX%%/lib/%%APP_NAME%%/chrome/icons/default/default.xpm
 Categories=Application;Network;
 MimeType=text/html;text/xml;application/xhtml+xml;

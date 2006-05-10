@@ -1,6 +1,6 @@
 # New ports collection makefile for:   mozilla linux binary ports
 # Date created:		1 May 2006
-# Whom:			Andrew Pantyukhin <infofarmer@gmail.com>
+# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -31,6 +31,10 @@ SUB_LIST+=	APP_NAME=${APP_NAME}
 SUB_FILES=	${APP_NAME}.desktop
 PKGMESSAGE=	${WRKDIR}/pkg-message
 PREFS_FILE=	${WRKSRC}/defaults/pref/browser-prefs.js
+.if defined(PKGNAMESUFFIX) && ${PKGNAMESUFFIX:M*devel*}
+DESKTOP_SUFFIX?=	(Linux, devel)
+.endif
+DESKTOP_SUFFIX?=	(Linux)
 
 UNAME?=	/usr/bin/uname
 
@@ -89,8 +93,8 @@ create-plist:
 
 snatch-desktop:
 	${SED} -E -e 's/${PORTNAME}/${APP_NAME}/' \
-		-e 's/^(Name.*=.+)$$/\1 (Linux)/' \
-		-e 's/^(GenericName.*=.+)$$/\1 (Linux)/' \
+		-e 's/^(Name.*=.+)$$/\1 ${DESKTOP_SUFFIX}/' \
+		-e 's/^(GenericName.*=.+)$$/\1 ${DESKTOP_SUFFIX}/' \
 		-e 's!^Icon=.*$$!Icon=%%PREFIX%%/lib/%%APP_NAME%%/chrome/icons/default/default.xpm!' \
 		${PORTSDIR}/${PKGCATEGORY}/${PORTNAME}/files/${PORTNAME}.desktop.in > \
 		${FILESDIR}/${APP_NAME}.desktop.in
