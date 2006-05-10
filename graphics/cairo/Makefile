@@ -16,6 +16,10 @@ MASTER_SITE_SUBDIR=	ahze
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Vector graphics library with cross-device output support
 
+.if !defined(REFERENCE_PORT)
+
+PORTREVISION=	1
+
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		png.5:${PORTSDIR}/graphics/png \
 		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
@@ -23,7 +27,7 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 CONFIGURE_ARGS=	--with-html-dir=${DOCSDIR} \
 		--enable-pdf \
 		--enable-ps
-USE_GNOME=	gnometarget gnomehack ltverhack
+USE_GNOME=	gnometarget gnomehack ltverhack referencehack
 USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
 
@@ -61,3 +65,5 @@ post-patch:
 		${WRKSRC}/test/Makefile.in
 
 .include <bsd.port.post.mk>
+
+.endif
