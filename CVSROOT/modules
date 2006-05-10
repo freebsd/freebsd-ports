@@ -9947,6 +9947,7 @@ pfflowd		ports/net/pfflowd
 pfinger		ports/net/pfinger
 pflogstats	ports/mail/pflogstats
 pflogsumm	ports/mail/pflogsumm
+pflogx		ports/sysutils/pflogx
 pfpro		ports/net-mgmt/pfpro
 pfqueue		ports/mail/pfqueue
 pfstat		ports/sysutils/pfstat
