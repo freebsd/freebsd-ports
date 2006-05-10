@@ -307,6 +307,7 @@
     SUBDIR += gccxml
     SUBDIR += gconf
     SUBDIR += gconf2
+    SUBDIR += gconf2-reference
     SUBDIR += gconfmm
     SUBDIR += gconfmm26
     SUBDIR += gcvs
