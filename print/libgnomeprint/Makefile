@@ -8,7 +8,6 @@
 
 PORTNAME=	libgnomeprint
 PORTVERSION=	2.12.1
-PORTREVISION=	1
 CATEGORIES=	print gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.12
@@ -17,12 +16,18 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Gnome print support library
 
+USE_BZIP2=	yes
+PREFIX?=	${X11BASE}
+
+.if !defined(REFERENCE_PORT)
+
+PORTREVISION=	2
+
 LIB_DEPENDS=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
 		popt.0:${PORTSDIR}/devel/popt
 
 USE_BISON=	yes
-USE_BZIP2=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 USE_GNOME=	gnomeprefix intlhack gnomehack gnomehier glib20 pango libxml2 \
@@ -57,9 +62,12 @@ post-patch:
 	@${FIND} ${WRKSRC} -name '*.[ch]' | ${XARGS} ${REINPLACE_CMD} -e \
 		's|<malloc[.]h>|<stdlib.h>|'
 	@${REINPLACE_CMD} -e "/^SUBDIRS =/s|tests||" ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e "/^SUBDIRS =/s|doc||" ${WRKSRC}/Makefile.in
 
 post-install:
 	@${MKDIR} ${PREFIX}/etc/gnome/libgnomeprint-2.0/fonts
 	@${TOUCH} ${PREFIX}/etc/gnome/libgnomeprint-2.0/fonts/gnome-print.fontmap
 
 .include <bsd.port.post.mk>
+
+.endif

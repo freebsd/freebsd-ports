@@ -150,6 +150,7 @@
     SUBDIR += lgrind
     SUBDIR += libgnomecups
     SUBDIR += libgnomeprint
+    SUBDIR += libgnomeprint-reference
     SUBDIR += libgnomeprintmm
     SUBDIR += libijs
     SUBDIR += libotf
