@@ -1,0 +1,6 @@
+@comment $FreeBSD$
+bin/pod2latex
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/LaTeX/.packlist
+%%SITE_PERL%%/Pod/LaTeX.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/LaTeX
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod
