@@ -1,16 +1,15 @@
-# New ports collection makefile for:    gwget
-# Date created:                		1 November 2004
-# Whom:                    		Radek Kozlowski <radek@raadradd.com>
+# New ports collection makefile for:	gwget
+# Date created:				1 November 2004
+# Whom:					Radek Kozlowski <radek@raadradd.com>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	gwget
-PORTVERSION=	0.95
-PORTREVISION=	1
+PORTVERSION=	0.98.1
 CATEGORIES=	ftp www gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION}
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	radek@raadradd.com
@@ -20,14 +19,15 @@ RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack gnomeprefix intlhack libgnomeui
+USE_GNOME=	gnomehack gnomeprefix intlhack libgnomeui gconf2
 GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes
+USE_GETTEXT=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-Wl,-export-dynamic -L${LOCALBASE}/lib"
 
 GCONF_SCHEMAS=	gwget.schemas
-EPHY_VER=	1.6
+EPHY_VER?=	2.14
 
 .include <bsd.port.pre.mk>
 
@@ -39,11 +39,11 @@ WITH_EPIPHANY=	yes
 BUILD_DEPENDS+=		epiphany:${PORTSDIR}/www/epiphany
 CONFIGURE_ARGS+=	--enable-epiphany-extension \
 			--with-epiphany-version=${EPHY_VER}
-PLIST_SUB+=		EPIPHANY:="" \
+PLIST_SUB+=		EPIPHANY="" \
 			VERSION="${EPHY_VER}"
 .else
 CONFIGURE_ARGS+=	--disable-epiphany-extension
-PLIST_SUB+=		EPIPHANY:="@comment "
+PLIST_SUB+=		EPIPHANY="@comment "
 .endif # defined(WITH_EPIPHANY)
 
 post-patch:
