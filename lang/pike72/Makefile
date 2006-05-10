@@ -7,6 +7,7 @@
 
 PORTNAME=	pike72
 PORTVERSION=	7.2.570
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.oav.net/pike/7.2/unofficial/ \
 		ftp://ftp.us.caudium.net/pub/pike/7.2/unofficial/ 
@@ -64,7 +65,7 @@ PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 # FreeBSD 5.0 Needs to have libgmp port to support gmp.
 .if ${OSVERSION} >= 500000
-LIB_DEPENDS+=   gmp.6:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS+=   gmp.7:${PORTSDIR}/math/libgmp4
 .endif
 
 .if exists(${LOCALBASE}/lib/libttf.so.4)

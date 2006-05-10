@@ -8,7 +8,7 @@
 
 PORTNAME=	gnunet
 PORTVERSION=	0.6.6b
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://www.ovmj.org/GNUnet/download/ \
 		${MASTER_SITE_GNU}
@@ -18,7 +18,7 @@ DISTNAME=	GNUnet-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An anonymous, distributed, reputation-based network
 
-LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4
 
 USE_AUTOTOOLS=	libltdl:15
 GNU_CONFIGURE=	yes

@@ -6,6 +6,7 @@
 
 PORTNAME=	ghc
 PORTVERSION=	6.4.2
+PORTREVISION=	1
 CATEGORIES=	lang haskell
 MASTER_SITES=	http://www.haskell.org/ghc/dist/${PORTVERSION}/:source \
 		http://www.haskell.org/ghc/dist/${PORTVERSION}/FreeBSD/:boot
@@ -41,7 +42,7 @@ IGNORE=		requires newer version of perl
 .endif
 
 USE_AUTOTOOLS=	autoconf:259:env
-LIB_DEPENDS+=	gmp.6:${PORTSDIR}/math/libgmp4 \
+LIB_DEPENDS+=	gmp.7:${PORTSDIR}/math/libgmp4 \
 		readline.5:${PORTSDIR}/devel/readline
 
 MAINTAINER=	simonmar@microsoft.com

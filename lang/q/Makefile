@@ -7,7 +7,7 @@
 
 PORTNAME=	q
 PORTVERSION=	6.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	q-lang
@@ -21,7 +21,7 @@ LIB_DEPENDS=	Magick.9:${PORTSDIR}/graphics/ImageMagick \
 		gdbm.3:${PORTSDIR}/databases/gdbm \
 		gii.1:${PORTSDIR}/devel/libgii \
 		ggi.2:${PORTSDIR}/graphics/libggi \
-		gmp.6:${PORTSDIR}/math/libgmp4 \
+		gmp.7:${PORTSDIR}/math/libgmp4 \
 		curl:${PORTSDIR}/ftp/curl
 
 USE_BISON=	yes

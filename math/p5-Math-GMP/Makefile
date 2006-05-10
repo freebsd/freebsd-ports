@@ -7,6 +7,7 @@
 
 PORTNAME=	Math-GMP
 PORTVERSION=	2.04
+PORTREVISION=	1
 CATEGORIES=	math perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Math
@@ -15,7 +16,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Perl module that provides an interface to the GMP library
 
-LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4
 
 PERL_CONFIGURE=	yes
 

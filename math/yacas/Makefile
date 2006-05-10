@@ -8,7 +8,7 @@
 
 PORTNAME=	yacas
 PORTVERSION=	1.0.59
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	http://yacas.sourceforge.net/backups/
 
@@ -27,7 +27,7 @@ INSTALLS_SHLIB=	yes
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_GMP)
-LIB_DEPENDS+=	gmp.6:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS+=	gmp.7:${PORTSDIR}/math/libgmp4
 CONFIGURE_ARGS+=	--with-numlib=gmp
 PLIST_SUB+=	GMP="" NOGMP="@comment "
 CPPFLAGS+=	-I${LOCALBASE}/include

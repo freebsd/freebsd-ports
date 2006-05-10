@@ -7,6 +7,7 @@
 
 PORTNAME=	ecl
 PORTVERSION=	0.9g
+PORTREVISION=	1
 CATEGORIES=	lang lisp
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ecls
@@ -14,7 +15,7 @@ MASTER_SITE_SUBDIR=	ecls
 MAINTAINER=	der_julian@web.de
 COMMENT=	An ANSI Common Lisp implementation
 
-LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4
 
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/lib/ecl

@@ -8,6 +8,7 @@
 
 PORTNAME=	gretl
 PORTVERSION=	1.5.0
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,7 +18,7 @@ COMMENT=	Gnu Regression, Econometrics and Time-series Library
 
 BUILD_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
 LIB_DEPENDS=	lapack.3:${PORTSDIR}/math/lapack \
-		gmp.6:${PORTSDIR}/math/libgmp4
+		gmp.7:${PORTSDIR}/math/libgmp4
 RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
 
 USE_BZIP2=	yes

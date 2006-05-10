@@ -7,6 +7,7 @@
 
 PORTNAME=	ntl
 PORTVERSION=	5.4
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://www.shoup.net/ntl/
 
@@ -15,7 +16,7 @@ COMMENT=	Victor Shoup's Number Theory Library
 
 # ntl is faster with libgmp4, but you can disable it
 .if !defined(WITHOUT_GMP)
-LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4
 .endif
 
 USE_PERL5_BUILD=	yes

@@ -7,7 +7,7 @@
 
 PORTNAME=	librep
 PORTVERSION=	0.16.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	lang elisp gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	librep
@@ -45,7 +45,7 @@ BROKEN=		"Does not build on ia64"
 .endif
 
 .if ${OSVERSION} > 500023
-LIB_DEPENDS+=	gmp.6:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS+=	gmp.7:${PORTSDIR}/math/libgmp4
 .else
 EXTRA_PATCHES+=	${FILESDIR}/stable-patch-src_numbers.c
 .endif

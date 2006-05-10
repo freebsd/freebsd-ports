@@ -7,6 +7,7 @@
 
 PORTNAME=		root
 PORTVERSION=		5.02.00
+PORTREVISION=		1
 CATEGORIES=		devel science math
 MASTER_SITES=		ftp://root.cern.ch/root/
 DISTNAME=		${PORTNAME}_v${PORTVERSION}.source
@@ -32,7 +33,7 @@ LIB_DEPENDS=		freetype.9:${PORTSDIR}/print/freetype2
 LIB_DEPENDS+=		jpeg.9:${PORTSDIR}/graphics/jpeg
 LIB_DEPENDS+=		tiff.4:${PORTSDIR}/graphics/tiff
 LIB_DEPENDS+=		png.5:${PORTSDIR}/graphics/png
-LIB_DEPENDS+=		gmp.6:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS+=		gmp.7:${PORTSDIR}/math/libgmp4
 USE_OPENSSL=		yes
 USE_GMAKE=		yes
 USE_XLIB=		yes

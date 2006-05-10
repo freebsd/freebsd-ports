@@ -8,7 +8,7 @@
 
 PORTNAME=	sfs
 PORTVERSION=	0.7.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security net
 MASTER_SITES=	http://www.fs.net/sfswww/dist/
 
@@ -35,7 +35,7 @@ BROKEN=		"Does not compile on !i386"
 .endif
 
 .if ${OSVERSION} > 500000
-LIB_DEPENDS+=	gmp.6:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS+=	gmp.7:${PORTSDIR}/math/libgmp4
 CONFIGURE_ARGS+=--with-gmp=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--with-gmp=/usr

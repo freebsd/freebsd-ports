@@ -12,6 +12,7 @@
 
 PORTNAME=	mlton
 PORTVERSION=	20051202
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://mlton.org/pages/Download/attachments/ \
 		http://mlton.org/pages/Experimental/attachments/
@@ -27,7 +28,7 @@ BUILD_DEPENDS+=	gsed:${PORTSDIR}/textproc/gsed \
 		htmldoc:${PORTSDIR}/textproc/htmldoc \
 		latex:${PORTSDIR}/print/teTeX
 .endif
-LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 SRC_DIST=	${DISTNAME}-1.freebsd.src.tgz

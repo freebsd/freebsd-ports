@@ -7,7 +7,7 @@
 
 PORTNAME=	ghc5
 PORTVERSION=	5.04.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang haskell
 MASTER_SITES=	http://www.haskell.org/ghc/dist/${PORTVERSION}/:source \
 		http://www.haskell.org/ghc/dist/${PORTVERSION}/FreeBSD/:boot
@@ -15,7 +15,7 @@ MASTER_SITES=	http://www.haskell.org/ghc/dist/${PORTVERSION}/:source \
 MAINTAINER=	simonmar@microsoft.com
 COMMENT=	A Compiler for the functional language Haskell
 
-LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4
 
 ONLY_FOR_ARCHS=	i386
 

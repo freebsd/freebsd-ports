@@ -7,6 +7,7 @@
 
 PORTNAME=	clamav
 PORTVERSION=	20060503
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.clamav.net/snapshot/ \
 		http://www.galle.com.br/~garga/clamav-devel/
@@ -16,7 +17,7 @@ DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Command line virus scanner written entirely in C
 
-LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4
 RUN_DEPENDS=	lha:${PORTSDIR}/archivers/lha \
 		unarj:${PORTSDIR}/archivers/unarj \
 		unrar:${PORTSDIR}/archivers/unrar \

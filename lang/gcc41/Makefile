@@ -22,7 +22,7 @@ MAINTAINER?=	gerald@FreeBSD.org
 COMMENT?=	GNU Compiler Collection 4.1
 
 .if defined(WITH_FORTRAN)
-LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4 \
+LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4 \
 		mpfr.1:${PORTSDIR}/math/mpfr
 .endif
 

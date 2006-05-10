@@ -7,7 +7,7 @@
 
 PORTNAME=	ssh
 PORTVERSION=	1.2.33
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.ssh.com/pub/ssh/ \
 		ftp://ftp.nsysu.edu.tw/Unix/Security/ssh/ \
@@ -63,7 +63,7 @@ CONFIGURE_ARGS+=	--without-idea
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} > 500023
-LIB_DEPENDS+=	gmp.6:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS+=	gmp.7:${PORTSDIR}/math/libgmp4
 MAKE_ENV+=	GMPINCDIR="${LOCALBASE}/include" \
 		GMPLIBDIR="${LOCALBASE}/lib"
 .endif
