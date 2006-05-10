@@ -15,4 +15,6 @@ GST_PLUGIN=	faad
 
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins80
 
+BROKEN=		Does not compile
+
 .include "${MASTERDIR}/Makefile"
