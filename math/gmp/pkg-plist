@@ -3,8 +3,8 @@ include/gmpxx.h
 lib/libgmp.a
 lib/libgmp.la
 lib/libgmp.so
-lib/libgmp.so.6
+lib/libgmp.so.7
 lib/libgmpxx.a
 lib/libgmpxx.la
 lib/libgmpxx.so
-lib/libgmpxx.so.3
+lib/libgmpxx.so.4
