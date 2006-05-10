@@ -3717,6 +3717,7 @@ gtkperf		ports/benchmarks/gtkperf
 gtkpod		ports/audio/gtkpod
 gtkpool		ports/games/gtkpool
 gtkportscan	ports/security/gtkportscan
+gtkradiant	ports/games/gtkradiant
 gtkscintilla	ports/x11-toolkits/gtkscintilla
 gtksee		ports/graphics/gtksee
 gtksourceview	ports/x11-toolkits/gtksourceview
