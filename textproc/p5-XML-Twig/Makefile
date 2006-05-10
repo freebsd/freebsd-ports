@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML-Twig
-PORTVERSION=	3.23
+PORTVERSION=	3.24
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	XML
@@ -24,7 +24,6 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Text/Iconv.pm:${PORTSDIR}/converters/p5
 		${SITE_PERL}/XML/SAX/Writer.pm:${PORTSDIR}/textproc/p5-XML-SAX-Writer \
 		${SITE_PERL}/XML/XPath.pm:${PORTSDIR}/textproc/p5-XML-XPath \
 		${SITE_PERL}/XML/Simple.pm:${PORTSDIR}/textproc/p5-XML-Simple \
-		${SITE_PERL}/IO/Stringy.pm:${PORTSDIR}/devel/p5-IO-stringy \
 		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
 		p5-HTML-Tree>3:${PORTSDIR}/www/p5-HTML-Tree
 RUN_DEPENDS=	${BUILD_DEPENDS}
