@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openal
-PORTVERSION=	0.1.5
+PORTVERSION=	0.1.6
 CATEGORIES=	audio python
 MASTER_SITES=	http://download.gna.org/pyopenal/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
