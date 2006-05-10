@@ -2275,6 +2275,7 @@ extract-xiso	ports/emulators/extract-xiso
 exult		ports/games/exult
 eyeclock	ports/x11-clocks/eyeclock
 eyeos		ports/www/eyeos
+eyeos-themes	ports/www/eyeos-themes
 ez-ipupdate	ports/dns/ez-ipupdate
 ezbounce	ports/irc/ezbounce
 ezfm		ports/x11-fm/ezfm
