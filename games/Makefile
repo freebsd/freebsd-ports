@@ -265,6 +265,7 @@
     SUBDIR += gtkballs
     SUBDIR += gtklife
     SUBDIR += gtkpool
+    SUBDIR += gtkradiant
     SUBDIR += gtktetcolor
     SUBDIR += gturing
     SUBDIR += gtypist

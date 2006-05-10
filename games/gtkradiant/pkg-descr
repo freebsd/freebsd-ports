@@ -1,0 +1,17 @@
+GtkRadiant is a level design program developed by id Software and Loki
+Software. It is used to create maps for a number of computer games.
+
+GtkRadiant originated as Q3Radiant, the Quake III Arena level design tool,
+which was a Windows-only application. Two major things are different in
+GtkRadiant: it is based on the GTK+ toolkit, so it also works in Linux and Mac
+OS X, and it's also game engine-independent, with functionality for new games
+added as game packs.
+
+GtkRadiant is an Open Source application. Source code is publicly available
+from id Software's Subversion repository and new additions to the code are
+covered under open source licenses. The core Q3Radiant code, however, was
+originally under id Software's proprietary license. The license for both the
+editor and toolset (notably Q3Map2, the BSP compiler) was changed in February
+2006, and publicly released under the GPL on February 17.
+
+WWW: http://www.qeradiant.com/
