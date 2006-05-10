@@ -30,6 +30,7 @@
     SUBDIR += gai
     SUBDIR += gal
     SUBDIR += gal2
+    SUBDIR += gal2-reference
     SUBDIR += gauche-gtk
     SUBDIR += gdl
     SUBDIR += gnocl
