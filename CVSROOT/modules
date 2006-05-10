@@ -5687,6 +5687,7 @@ libgnomedb	ports/databases/libgnomedb
 libgnomemm	ports/x11/libgnomemm
 libgnomemm26	ports/x11/libgnomemm26
 libgnomeprint	ports/print/libgnomeprint
+libgnomeprint-reference	ports/print/libgnomeprint-reference
 libgnomeprintmm	ports/print/libgnomeprintmm
 libgnomeprintui	ports/x11-toolkits/libgnomeprintui
 libgnomeprintuimm	ports/x11-toolkits/libgnomeprintuimm
