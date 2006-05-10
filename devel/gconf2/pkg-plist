@@ -29,27 +29,6 @@ libexec/gconf-sanity-check-2
 libexec/gconfd-2
 %%LDAP%%share/GConf/schema/evoldap.schema
 share/aclocal/gconf-2.m4
-share/doc/gconf/ch01.html
-share/doc/gconf/gconf-GConfClient.html
-share/doc/gconf/gconf-gconf-backend.html
-share/doc/gconf/gconf-gconf-changeset.html
-share/doc/gconf/gconf-gconf-engine.html
-share/doc/gconf/gconf-gconf-error.html
-share/doc/gconf/gconf-gconf-internals.html
-share/doc/gconf/gconf-gconf-listeners.html
-share/doc/gconf/gconf-gconf-locale.html
-share/doc/gconf/gconf-gconf-schema.html
-share/doc/gconf/gconf-gconf-sources.html
-share/doc/gconf/gconf-gconf-value.html
-share/doc/gconf/gconf-gconf.html
-share/doc/gconf/gconf.devhelp
-share/doc/gconf/home.png
-share/doc/gconf/index.html
-share/doc/gconf/index.sgml
-share/doc/gconf/left.png
-share/doc/gconf/right.png
-share/doc/gconf/style.css
-share/doc/gconf/up.png
 share/locale/am/LC_MESSAGES/GConf2.mo
 share/locale/ar/LC_MESSAGES/GConf2.mo
 share/locale/az/LC_MESSAGES/GConf2.mo
@@ -124,7 +103,6 @@ share/sgml/gconf/gconf-1.0.dtd
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
-@dirrm share/doc/gconf
 %%LDAP%%@dirrm share/GConf/schema
 %%LDAP%%@dirrm share/GConf
 @dirrm lib/GConf/2
