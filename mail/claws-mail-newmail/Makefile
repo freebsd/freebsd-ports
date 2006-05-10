@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	newmail
-PORTVERSION=	0.0.3
+PORTVERSION=	0.0.4
 CATEGORIES=	mail
 MASTER_SITES=	http://claws.sylpheed.org/downloads/plugins/
 PKGNAMEPREFIX=	sylpheed-claws-
