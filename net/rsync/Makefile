@@ -39,7 +39,7 @@ MAN5=		rsyncd.conf.5
 OPTIONS=	POPT_PORT "Use popt from devel/popt instead of bundled one" off \
 		TIMELIMIT "Time limit patch" on \
 		FLAGS "File system flags support patch, adds --flags" on \
-		ACLS "ACL support patch, adds --acl" on \
+		ACLS "ACL support patch, adds --acls" on \
 		SSH "Use SSH instead of RSH" on
 
 .include <bsd.port.pre.mk>
