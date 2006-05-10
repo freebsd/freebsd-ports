@@ -22,8 +22,4 @@ LIB_DEPENDS=	prelude.[6-?]:${PORTSDIR}/security/libprelude \
 USE_PYTHON=		2.3+
 USE_PYDISTUTILS=	yes
 
-post-patch:
-	@${REINPLACE_CMD} -e 's,/usr/bin/env python,${PYTHON_CMD},' \
-		${WRKSRC}/cgi-bin/prewikka.cgi
-
 .include <bsd.port.mk>
