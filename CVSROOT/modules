@@ -4510,6 +4510,7 @@ ja-mecab	ports/japanese/mecab
 ja-mecab-ipadic	ports/japanese/mecab-ipadic
 ja-mell		ports/japanese/mell
 ja-mendexk-euc	ports/japanese/mendexk-euc
+ja-mg		ports/japanese/mg
 ja-mh		ports/japanese/mh
 ja-migemo	ports/japanese/migemo
 ja-migemo-emacs20	ports/japanese/migemo-emacs20
@@ -14733,4 +14734,3 @@ zthread		ports/devel/zthread
 ztrack		ports/games/ztrack
 zu-aspell	ports/textproc/zu-aspell
 zziplib		ports/devel/zziplib
-ja-mg		ports/japanese/mg
