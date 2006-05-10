@@ -99,6 +99,7 @@
     SUBDIR += libsexy
     SUBDIR += libsexymm
     SUBDIR += libwnck
+    SUBDIR += libwnck-reference
     SUBDIR += libxfce4gui
     SUBDIR += libzvt
     SUBDIR += linux-gtk
