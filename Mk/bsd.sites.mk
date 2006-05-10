@@ -104,6 +104,12 @@ MASTER_SITE_APACHE_XML+=	\
 	${MASTER_SITE_APACHE:S,%SUBDIR%,xml/&,}
 .endif
 
+.if !defined(IGNORE_MASTER_SITE_BERLIOS)
+MASTER_SITE_BERLIOS+=	\
+	http://download.berlios.de/%SUBDIR%/ \
+	http://download2.berlios.de/%SUBDIR%/
+.endif
+
 .if !defined(IGNORE_MASTER_SITE_COMP_SOURCES)
 MASTER_SITE_COMP_SOURCES+=	\
 	ftp://gatekeeper.dec.com/pub/usenet/comp.sources.%SUBDIR%/ \
