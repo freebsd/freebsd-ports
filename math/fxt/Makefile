@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	fxt
-PORTVERSION=	2005.11.20
+PORTVERSION=	2006.04.12
 CATEGORIES=	math
 MASTER_SITES=	http://www.jjj.de/fxt/
 EXTRACT_SUFX=	.tgz
@@ -18,7 +18,6 @@ COMMENT=	FFT code and related stuff
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_GCC=	3.4+
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 MAKEFILE=	makefile
 MAKE_ENV=	CXX="${CXX}" OFLAGS="${CXXFLAGS}"
@@ -36,7 +35,7 @@ post-patch:
 		 s|^GFLAGS|#GFLAGS|g ; \
 		 s|^PFLAGS|#PFLAGS|g ; \
 		 s|^FXT_CXXFLAGS|#FXT_CXXFLAGS|g' ${WRKSRC}/makefile
-	@${REINPLACE_CMD} -e 's|sinl|Sin|g' ${WRKSRC}/src/aux0/trigrec.h 
+	@${REINPLACE_CMD} -e 's|sinl|Sin|g' ${WRKSRC}/src/aux0/trigrec.h
 	@${REINPLACE_CMD} -e 's|sinl|sin|g' ${WRKSRC}/src/fht/hartleyshift.h
 
 do-install:
