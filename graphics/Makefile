@@ -38,6 +38,7 @@
     SUBDIR += cadubi
     SUBDIR += cairo
     SUBDIR += cairo-java
+    SUBDIR += cairo-reference
     SUBDIR += cairomm
     SUBDIR += cal3d
     SUBDIR += cal3d-devel
