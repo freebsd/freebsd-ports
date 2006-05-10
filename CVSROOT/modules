@@ -2787,6 +2787,7 @@ gaim-xmms-remote	ports/multimedia/gaim-xmms-remote
 gajim		ports/net-im/gajim
 gal		ports/x11-toolkits/gal
 gal2		ports/x11-toolkits/gal2
+gal2-reference	ports/x11-toolkits/gal2-reference
 galax		ports/textproc/galax
 galaxis		ports/games/galaxis
 galaxyhack	ports/games/galaxyhack
