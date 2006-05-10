@@ -269,6 +269,7 @@
     SUBDIR += libvncserver
     SUBDIR += liferea
     SUBDIR += linc
+    SUBDIR += linc-reference
     SUBDIR += link-monitor-applet
     SUBDIR += linneighborhood
     SUBDIR += linphone
