@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	jmp
-PORTVERSION=	0.49
-PORTREVISION=	1
+PORTVERSION=	0.50.1
 CATEGORIES=	java devel
 MASTER_SITES=	http://www.khelekore.org/jmp/
 
@@ -23,21 +22,6 @@ CONFIGURE_ARGS=	--with-includes="${JAVA_HOME}/include ${LOCALBASE}/include" \
 
 USE_BISON=	yes
 USE_GETTEXT=	yes
-.if defined(WITHOUT_X11)
-CONFIGURE_ARGS+=	--enable-noui
-.else
-USE_XLIB=	yes
-LIB_DEPENDS+=	gtk-x11-2.0:${PORTSDIR}/x11-toolkits/gtk20
-.endif
-
-.if defined(WITH_DEBUG)
-CFLAGS+=	-DJMPDEBUG -g
-.endif
-
-.if defined(WITH_OPTIMIZED_CFLAGS)
-CFLAGS+=	-O3
-.endif
-
 USE_GMAKE=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.2+
@@ -59,4 +43,25 @@ PLIST_FILES=	lib/libjmp.la lib/libjmp.so lib/libjmp.so.0 \
 		share/locale/de/LC_MESSAGES/jmp.mo \
 		share/locale/sv/LC_MESSAGES/jmp.mo
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if defined(WITHOUT_X11)
+CONFIGURE_ARGS+=	--enable-noui
+.else
+USE_XLIB=	yes
+LIB_DEPENDS+=	gtk-x11-2.0:${PORTSDIR}/x11-toolkits/gtk20
+.endif
+
+.if defined(WITH_DEBUG)
+CFLAGS+=	-DJMPDEBUG -g
+.endif
+
+.if defined(WITH_OPTIMIZED_CFLAGS)
+CFLAGS+=	-O3
+.endif
+
+.if ${OSVERSION} < 500000
+BROKEN=	Does not build on FreeBSD < 5.x
+.endif
+
+.include <bsd.port.post.mk>
