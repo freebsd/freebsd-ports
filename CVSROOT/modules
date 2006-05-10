@@ -14304,6 +14304,7 @@ xpi-adblock_plus	ports/www/xpi-adblock_plus
 xpi-colorfultabs	ports/www/xpi-colorfultabs
 xpi-cssviewer	ports/www/xpi-cssviewer
 xpi-cutemenus-crystalsvg	ports/www/xpi-cutemenus-crystalsvg
+xpi-displayquota	ports/mail/xpi-displayquota
 xpi-fasterfox	ports/www/xpi-fasterfox
 xpi-mldonkey	ports/www/xpi-mldonkey
 xpi-no-referrer	ports/www/xpi-no-referrer
