@@ -17,12 +17,17 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	An implementation of the ATK interfaces for GTK+ widgets
 
 USE_BZIP2=	yes
+PREFIX?=	${X11BASE}
+
+.if !defined(REFERENCE_PORT)
+
+PORTREVISION=	1
+
 USE_GETTEXT=	yes
-USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomehack libgnomecanvas lthack
+USE_GNOME=	gnomehack libgnomecanvas lthack referencehack
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--disable-gtk-doc \
@@ -33,3 +38,5 @@ post-patch:
 		${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
+
+.endif

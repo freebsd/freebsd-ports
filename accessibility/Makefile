@@ -8,6 +8,7 @@
     SUBDIR += atk-reference
     SUBDIR += dasher
     SUBDIR += gail
+    SUBDIR += gail-reference
     SUBDIR += gnomemag
     SUBDIR += gnomespeech
     SUBDIR += gnopernicus
