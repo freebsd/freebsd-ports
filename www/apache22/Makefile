@@ -74,10 +74,6 @@ WITH_MPM?=	prefork # or worker, perchild, threadpool, event
 
 WITH_HTTP_PORT?=	80
 
-.if defined (WITH_WINDOWSUPDATEFIX)
-EXTRA_PATCHES+=		${FILESDIR}/exp-windowsupdate.patch
-.endif
-
 .if defined(WITHOUT_IPV6)
 CONFIGURE_ARGS+=	--disable-ipv6
 .else
