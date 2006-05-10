@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	dvd+rw-tools
-PORTVERSION=	6.0
-PORTREVISION=	2
+PORTVERSION=	6.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.franksworld.org/dist/dvd+rw/ \
 		http://www.pkix.net/mirror/fy.chalmers.se/ \
@@ -17,16 +16,13 @@ COMMENT=	DVD burning software
 
 RUN_DEPENDS=	${LOCALBASE}/bin/mkisofs:${PORTSDIR}/sysutils/cdrtools
 
-USE_REINPLACE=	yes
-USE_GMAKE=	yes
-
 MAN1=		growisofs.1
 BIN_FILES=	growisofs dvd+rw-format dvd+rw-booktype dvd+rw-mediainfo dvd-ram-control
 PLIST_FILES=	${BIN_FILES:S|^|bin/|}
 PORTDOCS=	index.html
 
 post-patch:
-	${REINPLACE_CMD} -E \
+	@${REINPLACE_CMD} -E \
 		-e 's/-D_THREAS_SAFE/-D_THREAD_SAFE/' \
 		-e 's/-D_THREAD_SAFE/-D_THREAD_SAFE ${PTHREAD_CFLAGS}/' \
 		-e 's/-pthread/${PTHREAD_LIBS}/' \
@@ -38,9 +34,11 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${PREFIX}/bin
 .endfor
 	${INSTALL_MAN} ${WRKSRC}/growisofs.1 ${MANPREFIX}/man/man1/
+
+post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/index.html ${DOCSDIR}/
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/index.html ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
