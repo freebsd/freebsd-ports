@@ -1,4 +1,6 @@
 @comment $FreeBSD$
+bin/convert3d.py
+bin/info3d.py
 bin/postbake.py
 bin/render.py
 bin/viewer.py
@@ -195,6 +197,12 @@ bin/viewer.py
 %%PYTHON_SITELIBDIR%%/cgkit/glrenderer.py
 %%PYTHON_SITELIBDIR%%/cgkit/glrenderer.pyc
 %%PYTHON_SITELIBDIR%%/cgkit/glrenderer.pyo
+%%PYTHON_SITELIBDIR%%/cgkit/glslangparams.py
+%%PYTHON_SITELIBDIR%%/cgkit/glslangparams.pyc
+%%PYTHON_SITELIBDIR%%/cgkit/glslangparams.pyo
+%%PYTHON_SITELIBDIR%%/cgkit/glslangtokenize.py
+%%PYTHON_SITELIBDIR%%/cgkit/glslangtokenize.pyc
+%%PYTHON_SITELIBDIR%%/cgkit/glslangtokenize.pyo
 %%PYTHON_SITELIBDIR%%/cgkit/gltargetdistantlight.py
 %%PYTHON_SITELIBDIR%%/cgkit/gltargetdistantlight.pyc
 %%PYTHON_SITELIBDIR%%/cgkit/gltargetdistantlight.pyo
@@ -207,6 +215,9 @@ bin/viewer.py
 %%PYTHON_SITELIBDIR%%/cgkit/group.py
 %%PYTHON_SITELIBDIR%%/cgkit/group.pyc
 %%PYTHON_SITELIBDIR%%/cgkit/group.pyo
+%%PYTHON_SITELIBDIR%%/cgkit/hammersley.py
+%%PYTHON_SITELIBDIR%%/cgkit/hammersley.pyc
+%%PYTHON_SITELIBDIR%%/cgkit/hammersley.pyo
 %%PYTHON_SITELIBDIR%%/cgkit/ifsimport.py
 %%PYTHON_SITELIBDIR%%/cgkit/ifsimport.pyc
 %%PYTHON_SITELIBDIR%%/cgkit/ifsimport.pyo
@@ -252,6 +263,12 @@ bin/viewer.py
 %%PYTHON_SITELIBDIR%%/cgkit/lookat.py
 %%PYTHON_SITELIBDIR%%/cgkit/lookat.pyc
 %%PYTHON_SITELIBDIR%%/cgkit/lookat.pyo
+%%PYTHON_SITELIBDIR%%/cgkit/lwob.py
+%%PYTHON_SITELIBDIR%%/cgkit/lwob.pyc
+%%PYTHON_SITELIBDIR%%/cgkit/lwob.pyo
+%%PYTHON_SITELIBDIR%%/cgkit/lwobimport.py
+%%PYTHON_SITELIBDIR%%/cgkit/lwobimport.pyc
+%%PYTHON_SITELIBDIR%%/cgkit/lwobimport.pyo
 %%PYTHON_SITELIBDIR%%/cgkit/maimport.py
 %%PYTHON_SITELIBDIR%%/cgkit/maimport.pyc
 %%PYTHON_SITELIBDIR%%/cgkit/maimport.pyo
@@ -372,6 +389,9 @@ bin/viewer.py
 %%PYTHON_SITELIBDIR%%/cgkit/spotlight3ds.py
 %%PYTHON_SITELIBDIR%%/cgkit/spotlight3ds.pyc
 %%PYTHON_SITELIBDIR%%/cgkit/spotlight3ds.pyo
+%%PYTHON_SITELIBDIR%%/cgkit/stitch.py
+%%PYTHON_SITELIBDIR%%/cgkit/stitch.pyc
+%%PYTHON_SITELIBDIR%%/cgkit/stitch.pyo
 %%PYTHON_SITELIBDIR%%/cgkit/stlimport.py
 %%PYTHON_SITELIBDIR%%/cgkit/stlimport.pyc
 %%PYTHON_SITELIBDIR%%/cgkit/stlimport.pyo

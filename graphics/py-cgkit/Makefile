@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	cgkit
-PORTVERSION=	2.0.0a5
-PORTREVISION=	1
+PORTVERSION=	2.0.0a6
 CATEGORIES=	graphics python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -40,7 +39,7 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/OpenGL:${PORTSDIR}/graphics/py-opengl \
 .include <bsd.port.pre.mk>
 
 .if ( ${OSVERSION} < 502126 )
-BROKEN=	"does not compile"
+BROKEN=	does not compile
 .endif
 
 .if defined(WITH_LIB3DS)
