@@ -234,7 +234,6 @@
     SUBDIR += linux-flashplugin7
     SUBDIR += linux-flock
     SUBDIR += linux-mozilla
-    SUBDIR += linux-mozilla-devel
     SUBDIR += linux-nvu
     SUBDIR += linux-opera
     SUBDIR += linux-seamonkey
