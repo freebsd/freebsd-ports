@@ -1,17 +1,19 @@
 bin/argouml
 %%DATADIR%%/antlrall.jar
+%%DATADIR%%/argouml-mdr.jar
 %%DATADIR%%/argouml-model.jar
 %%DATADIR%%/argouml.jar
 %%DATADIR%%/commons-logging.jar
 %%DATADIR%%/gef.jar
-%%DATADIR%%/i18n.jar
+%%DATADIR%%/java-interfaces.jar
 %%DATADIR%%/jmi.jar
+%%DATADIR%%/jmiutils.jar
 %%DATADIR%%/log4j.jar
-%%DATADIR%%/nsuml.jar
+%%DATADIR%%/mdrapi.jar
+%%DATADIR%%/mof.jar
+%%DATADIR%%/nbmdr.jar
 %%DATADIR%%/ocl-argo.jar
+%%DATADIR%%/openide-util.jar
 %%DATADIR%%/swidgets.jar
 %%DATADIR%%/toolbar.jar
-%%DATADIR%%/xalan.jar
-%%DATADIR%%/xercesImpl.jar
-%%DATADIR%%/xml-apis.jar
 @dirrm %%DATADIR%%
