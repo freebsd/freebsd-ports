@@ -1,408 +1,551 @@
-%%BACKUP%%%%GEKKODIR%%/media/icons/default/48/backup.png
-%%BLOG%%%%GEKKODIR%%/media/icons/default/48/blog.png
-%%CATEGORIES%%%%GEKKODIR%%/media/icons/default/48/categories.png
-%%CONTACT%%%%GEKKODIR%%/media/icons/default/48/contact.png
-%%DOWNLOADS%%%%GEKKODIR%%/media/icons/default/48/downloads.png
-%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/ebuild.png
-%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/txt.png
-%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/doc.png
-%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/deb.png
-%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/gpg.png
-%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/default.png
-%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/tmp.png
-%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/exe.png
-%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/html.png
-%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/midi.png
-%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/c.png
-%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/log.png
-%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/cdr.png
-%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/gf.png
-%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/ttf.png
-%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/pdf.png
-%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/jar.png
-%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/mov.png
-%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/rpm.png
-%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/sh.png
-%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/ps.png
-%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/css.png
-%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/patch.png
-%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/tar.png
-%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/php.png
-%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/video.png
-%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/tpl.png
-%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/gz.png
-%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/pl.png
-%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/image.png
-%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/audio.png
-%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/rm.png
-%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/folder.png
-%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/source.png
-%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/py.png
-%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/cpp.png
-%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/xcf.png
-%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/unknown.png
-%%FILES%%%%GEKKODIR%%/media/icons/default/48/files.png
-%%FORUMS%%%%GEKKODIR%%/media/icons/default/48/forums.png
-%%FRIENDS%%%%GEKKODIR%%/media/icons/default/48/friends.png
-%%GALLERY%%%%GEKKODIR%%/media/icons/default/48/gallery.png
-%%NEWS%%%%GEKKODIR%%/media/icons/default/48/news.png
-%%PAGES%%%%GEKKODIR%%/media/icons/default/48/pages.png
-%%POLLS%%%%GEKKODIR%%/media/icons/default/48/polls.png
-%%PHRASES%%%%GEKKODIR%%/media/icons/default/48/phrases.png
-%%STATISTICS%%%%GEKKODIR%%/media/icons/default/48/statistics.png
-%%TAGBOARD%%%%GEKKODIR%%/media/icons/default/48/tagboard.png
 %%BACKUP%%%%GEKKODIR%%/media/icons/default/16/backup.png
 %%BLOG%%%%GEKKODIR%%/media/icons/default/16/blog.png
 %%CATEGORIES%%%%GEKKODIR%%/media/icons/default/16/categories.png
 %%COMMENTS%%%%GEKKODIR%%/media/icons/default/16/comments.png
 %%CONTACT%%%%GEKKODIR%%/media/icons/default/16/contact.png
 %%DOWNLOADS%%%%GEKKODIR%%/media/icons/default/16/downloads.png
-%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/deb.png
-%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/folder.png
-%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/bin.png
-%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/tmp.png
-%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/html.png
-%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/exe.png
-%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/msg.png
-%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/ttf.png
-%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/folder_open.png
-%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/xcf.png
+%%EXTENSIONS%%%%GEKKODIR%%/media/icons/default/16/extensions.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/16/files.png
 %%FILES%%%%GEKKODIR%%/media/icons/default/16/files/audio.png
-%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/unknown.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/bin.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/c.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/cdr.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/cpp.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/css.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/deb.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/default.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/diff.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/exe.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/folder.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/folder_open.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/gz.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/h.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/html.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/image.png
 %%FILES%%%%GEKKODIR%%/media/icons/default/16/files/jar.png
 %%FILES%%%%GEKKODIR%%/media/icons/default/16/files/log.png
-%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/sxc.png
 %%FILES%%%%GEKKODIR%%/media/icons/default/16/files/mid.png
-%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/readme.png
-%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/pdf.png
-%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/diff.png
-%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/ps.png
-%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/rpm.png
 %%FILES%%%%GEKKODIR%%/media/icons/default/16/files/mov.png
-%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/rm.png
-%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/sh.png
-%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/cpp.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/msg.png
 %%FILES%%%%GEKKODIR%%/media/icons/default/16/files/o.png
-%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/c.png
-%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/h.png
-%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/tar.png
-%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/tpl.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/pdf.png
 %%FILES%%%%GEKKODIR%%/media/icons/default/16/files/php.png
-%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/css.png
 %%FILES%%%%GEKKODIR%%/media/icons/default/16/files/pl.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/ps.png
 %%FILES%%%%GEKKODIR%%/media/icons/default/16/files/py.png
-%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/gz.png
-%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/cdr.png
-%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/default.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/readme.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/rm.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/rpm.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/sh.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/sxc.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/tar.png
 %%FILES%%%%GEKKODIR%%/media/icons/default/16/files/text.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/tmp.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/tpl.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/ttf.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/unknown.png
 %%FILES%%%%GEKKODIR%%/media/icons/default/16/files/video.png
-%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/image.png
-%%FILES%%%%GEKKODIR%%/media/icons/default/16/files.png
-%%FORUMS%%%%GEKKODIR%%/media/icons/default/16/forums.png
-%%FRIENDS%%%%GEKKODIR%%/media/icons/default/16/friends.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/xcf.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/16/forums.png
 %%GALLERY%%%%GEKKODIR%%/media/icons/default/16/gallery.png
+%%MEMOS%%%%GEKKODIR%%/media/icons/default/16/memos.png
+%%MESSAGES%%%%GEKKODIR%%/media/icons/default/16/messages.png
 %%NEWS%%%%GEKKODIR%%/media/icons/default/16/news.png
 %%PAGES%%%%GEKKODIR%%/media/icons/default/16/pages.png
 %%POLLS%%%%GEKKODIR%%/media/icons/default/16/polls.png
-%%PHRASES%%%%GEKKODIR%%/media/icons/default/16/phrases.png
+%%SEARCH%%%%GEKKODIR%%/media/icons/default/16/search.png
 %%STATISTICS%%%%GEKKODIR%%/media/icons/default/16/statistics.png
-%%TAGBOARD%%%%GEKKODIR%%/media/icons/default/16/tagboard.png
+%%BACKUP%%%%GEKKODIR%%/media/icons/default/48/backup.png
+%%BLOG%%%%GEKKODIR%%/media/icons/default/48/blog.png
+%%CATEGORIES%%%%GEKKODIR%%/media/icons/default/48/categories.png
+%%COMMENTS%%%%GEKKODIR%%/media/icons/default/48/comments.png
+%%CONTACT%%%%GEKKODIR%%/media/icons/default/48/contact.png
+%%DOWNLOADS%%%%GEKKODIR%%/media/icons/default/48/downloads.png
+%%EXTENSIONS%%%%GEKKODIR%%/media/icons/default/48/extensions.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/48/files.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/audio.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/c.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/cdr.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/cpp.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/css.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/deb.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/default.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/doc.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/ebuild.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/exe.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/folder.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/gf.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/gpg.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/gz.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/html.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/image.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/jar.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/log.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/midi.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/mov.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/patch.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/pdf.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/php.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/pl.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/ps.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/py.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/rm.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/rpm.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/sh.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/source.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/tar.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/tmp.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/tpl.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/ttf.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/txt.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/unknown.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/video.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/xcf.png
+%%FORUMS%%%%GEKKODIR%%/media/icons/default/48/forums.png
+%%GALLERY%%%%GEKKODIR%%/media/icons/default/48/gallery.png
+%%MEMOS%%%%GEKKODIR%%/media/icons/default/48/memos.png
+%%MESSAGES%%%%GEKKODIR%%/media/icons/default/48/messages.png
+%%NEWS%%%%GEKKODIR%%/media/icons/default/48/news.png
+%%PAGES%%%%GEKKODIR%%/media/icons/default/48/pages.png
+%%POLLS%%%%GEKKODIR%%/media/icons/default/48/polls.png
+%%SEARCH%%%%GEKKODIR%%/media/icons/default/48/search.png
+%%STATISTICS%%%%GEKKODIR%%/media/icons/default/48/statistics.png
 %%BACKUP%%%%GEKKODIR%%/modules/backup/admin.inc.php
-%%BACKUP%%%%GEKKODIR%%/modules/backup/main.act.php
 %%BACKUP%%%%GEKKODIR%%/modules/backup/lang/es/core.php
 %%BACKUP%%%%GEKKODIR%%/modules/backup/lang/es/main.php
-%%BACKUP%%%%GEKKODIR%%/modules/backup/package.xml
+%%BACKUP%%%%GEKKODIR%%/modules/backup/main.act.php
+%%BACKUP%%%%GEKKODIR%%/modules/backup/main.lib.php
 %%BACKUP%%%%GEKKODIR%%/modules/backup/module.inc.php
+%%BACKUP%%%%GEKKODIR%%/modules/backup/package.xml
 %%BLOG%%%%GEKKODIR%%/modules/blog/admin.inc.php
-%%BLOG%%%%GEKKODIR%%/modules/blog/module.inc.php
-%%BLOG%%%%GEKKODIR%%/modules/blog/blocks/categories.php
-%%BLOG%%%%GEKKODIR%%/modules/blog/blocks/archive.php
-%%BLOG%%%%GEKKODIR%%/modules/blog/blocks/recent_posts.php
-%%BLOG%%%%GEKKODIR%%/modules/blog/package.xml
 %%BLOG%%%%GEKKODIR%%/modules/blog/admin.panel.php
-%%BLOG%%%%GEKKODIR%%/modules/blog/mod_categories.inc.php
-%%BLOG%%%%GEKKODIR%%/modules/blog/lang/ca/main.php
+%%BLOG%%%%GEKKODIR%%/modules/blog/blocks/archive.php
+%%BLOG%%%%GEKKODIR%%/modules/blog/blocks/categories.php
+%%BLOG%%%%GEKKODIR%%/modules/blog/blocks/most_popular_posts.php
+%%BLOG%%%%GEKKODIR%%/modules/blog/blocks/recent_posts.php
 %%BLOG%%%%GEKKODIR%%/modules/blog/lang/ca/core.php
-%%BLOG%%%%GEKKODIR%%/modules/blog/lang/es/main.php
+%%BLOG%%%%GEKKODIR%%/modules/blog/lang/ca/main.php
+%%BLOG%%%%GEKKODIR%%/modules/blog/lang/en/core.php
+%%BLOG%%%%GEKKODIR%%/modules/blog/lang/en/main.php
 %%BLOG%%%%GEKKODIR%%/modules/blog/lang/es/core.php
-%%BLOG%%%%GEKKODIR%%/modules/blog/main.inc.php
+%%BLOG%%%%GEKKODIR%%/modules/blog/lang/es/main.php
 %%BLOG%%%%GEKKODIR%%/modules/blog/main.act.php
+%%BLOG%%%%GEKKODIR%%/modules/blog/main.inc.php
 %%BLOG%%%%GEKKODIR%%/modules/blog/main.lib.php
+%%BLOG%%%%GEKKODIR%%/modules/blog/mod_categories.inc.php
+%%BLOG%%%%GEKKODIR%%/modules/blog/mod_search.inc.php
+%%BLOG%%%%GEKKODIR%%/modules/blog/module.inc.php
+%%BLOG%%%%GEKKODIR%%/modules/blog/package.xml
 %%CATEGORIES%%%%GEKKODIR%%/modules/categories/admin.inc.php
-%%CATEGORIES%%%%GEKKODIR%%/modules/categories/main.lib.php
-%%CATEGORIES%%%%GEKKODIR%%/modules/categories/main.act.php
+%%CATEGORIES%%%%GEKKODIR%%/modules/categories/admin.panel.php
 %%CATEGORIES%%%%GEKKODIR%%/modules/categories/lang/ca/core.php
 %%CATEGORIES%%%%GEKKODIR%%/modules/categories/lang/ca/main.php
+%%CATEGORIES%%%%GEKKODIR%%/modules/categories/lang/en/core.php
+%%CATEGORIES%%%%GEKKODIR%%/modules/categories/lang/en/main.php
 %%CATEGORIES%%%%GEKKODIR%%/modules/categories/lang/es/core.php
 %%CATEGORIES%%%%GEKKODIR%%/modules/categories/lang/es/main.php
+%%CATEGORIES%%%%GEKKODIR%%/modules/categories/main.act.php
 %%CATEGORIES%%%%GEKKODIR%%/modules/categories/main.inc.php
-%%CATEGORIES%%%%GEKKODIR%%/modules/categories/admin.panel.php
-%%CATEGORIES%%%%GEKKODIR%%/modules/categories/package.xml
+%%CATEGORIES%%%%GEKKODIR%%/modules/categories/main.lib.php
+%%CATEGORIES%%%%GEKKODIR%%/modules/categories/mod_search.inc.php
 %%CATEGORIES%%%%GEKKODIR%%/modules/categories/module.inc.php
-%%COMMENTS%%%%GEKKODIR%%/modules/comments/main.lib.php
+%%CATEGORIES%%%%GEKKODIR%%/modules/categories/package.xml
+%%COMMENTS%%%%GEKKODIR%%/modules/comments/admin.inc.php
+%%COMMENTS%%%%GEKKODIR%%/modules/comments/admin.panel.php
+%%COMMENTS%%%%GEKKODIR%%/modules/comments/blocks/recent.php
+%%COMMENTS%%%%GEKKODIR%%/modules/comments/lang/ca/core.php
+%%COMMENTS%%%%GEKKODIR%%/modules/comments/lang/ca/main.php
+%%COMMENTS%%%%GEKKODIR%%/modules/comments/lang/es/core.php
+%%COMMENTS%%%%GEKKODIR%%/modules/comments/lang/es/main.php
 %%COMMENTS%%%%GEKKODIR%%/modules/comments/main.act.php
 %%COMMENTS%%%%GEKKODIR%%/modules/comments/main.inc.php
-%%COMMENTS%%%%GEKKODIR%%/modules/comments/lang/es/main.php
-%%COMMENTS%%%%GEKKODIR%%/modules/comments/lang/es/core.php
-%%COMMENTS%%%%GEKKODIR%%/modules/comments/package.xml
-%%COMMENTS%%%%GEKKODIR%%/modules/comments/blocks/recent.php
+%%COMMENTS%%%%GEKKODIR%%/modules/comments/main.lib.php
+%%COMMENTS%%%%GEKKODIR%%/modules/comments/mod_search.inc.php
 %%COMMENTS%%%%GEKKODIR%%/modules/comments/module.inc.php
+%%COMMENTS%%%%GEKKODIR%%/modules/comments/package.xml
+%%COMMENTS%%%%GEKKODIR%%/modules/comments/run/getreplyinfo.php
+%%COMMENTS%%%%GEKKODIR%%/modules/comments/run/reply.php
 %%CONTACT%%%%GEKKODIR%%/modules/contact/admin.inc.php
-%%CONTACT%%%%GEKKODIR%%/modules/contact/main.act.php
 %%CONTACT%%%%GEKKODIR%%/modules/contact/admin.panel.php
+%%CONTACT%%%%GEKKODIR%%/modules/contact/lang/ca/core.php
+%%CONTACT%%%%GEKKODIR%%/modules/contact/lang/ca/feedback.letter
+%%CONTACT%%%%GEKKODIR%%/modules/contact/lang/ca/main.php
 %%CONTACT%%%%GEKKODIR%%/modules/contact/lang/es/core.php
-%%CONTACT%%%%GEKKODIR%%/modules/contact/lang/es/main.php
 %%CONTACT%%%%GEKKODIR%%/modules/contact/lang/es/feedback.letter
-%%CONTACT%%%%GEKKODIR%%/modules/contact/package.xml
+%%CONTACT%%%%GEKKODIR%%/modules/contact/lang/es/main.php
+%%CONTACT%%%%GEKKODIR%%/modules/contact/main.act.php
 %%CONTACT%%%%GEKKODIR%%/modules/contact/main.inc.php
 %%CONTACT%%%%GEKKODIR%%/modules/contact/module.inc.php
-%%DOWNLOADS%%%%GEKKODIR%%/modules/downloads/main.lib.php
-%%DOWNLOADS%%%%GEKKODIR%%/modules/downloads/main.act.php
-%%DOWNLOADS%%%%GEKKODIR%%/modules/downloads/main.inc.php
-%%DOWNLOADS%%%%GEKKODIR%%/modules/downloads/lang/es/main.php
-%%DOWNLOADS%%%%GEKKODIR%%/modules/downloads/lang/es/core.php
-%%DOWNLOADS%%%%GEKKODIR%%/modules/downloads/package.xml
-%%DOWNLOADS%%%%GEKKODIR%%/modules/downloads/blocks/random.php
+%%CONTACT%%%%GEKKODIR%%/modules/contact/package.xml
 %%DOWNLOADS%%%%GEKKODIR%%/modules/downloads/admin.inc.php
 %%DOWNLOADS%%%%GEKKODIR%%/modules/downloads/admin.panel.php
-%%DOWNLOADS%%%%GEKKODIR%%/modules/downloads/module.inc.php
+%%DOWNLOADS%%%%GEKKODIR%%/modules/downloads/blocks/random.php
+%%DOWNLOADS%%%%GEKKODIR%%/modules/downloads/lang/es/core.php
+%%DOWNLOADS%%%%GEKKODIR%%/modules/downloads/lang/es/main.php
+%%DOWNLOADS%%%%GEKKODIR%%/modules/downloads/main.act.php
+%%DOWNLOADS%%%%GEKKODIR%%/modules/downloads/main.inc.php
+%%DOWNLOADS%%%%GEKKODIR%%/modules/downloads/main.lib.php
 %%DOWNLOADS%%%%GEKKODIR%%/modules/downloads/mod_categories.inc.php
-%%FILES%%%%GEKKODIR%%/modules/files/admin.panel.php
-%%FILES%%%%GEKKODIR%%/modules/files/lang/es/main.php
-%%FILES%%%%GEKKODIR%%/modules/files/lang/es/core.php
-%%FILES%%%%GEKKODIR%%/modules/files/main.inc.php
-%%FILES%%%%GEKKODIR%%/modules/files/main.act.php
-%%FILES%%%%GEKKODIR%%/modules/files/main.lib.php
+%%DOWNLOADS%%%%GEKKODIR%%/modules/downloads/mod_search.inc.php
+%%DOWNLOADS%%%%GEKKODIR%%/modules/downloads/module.inc.php
+%%DOWNLOADS%%%%GEKKODIR%%/modules/downloads/package.xml
+%%EXTENSIONS%%%%GEKKODIR%%/modules/extensions/admin.inc.php
+%%EXTENSIONS%%%%GEKKODIR%%/modules/extensions/admin.panel.php
+%%EXTENSIONS%%%%GEKKODIR%%/modules/extensions/blocks/display.php
+%%EXTENSIONS%%%%GEKKODIR%%/modules/extensions/extensions/aggregator/action.php
+%%EXTENSIONS%%%%GEKKODIR%%/modules/extensions/extensions/aggregator/admin.php
+%%EXTENSIONS%%%%GEKKODIR%%/modules/extensions/extensions/aggregator/display.php
+%%EXTENSIONS%%%%GEKKODIR%%/modules/extensions/extensions/aggregator/lang/es.php
+%%EXTENSIONS%%%%GEKKODIR%%/modules/extensions/extensions/aggregator/main.php
+%%EXTENSIONS%%%%GEKKODIR%%/modules/extensions/extensions/aggregator/templates/admin.tpl
+%%EXTENSIONS%%%%GEKKODIR%%/modules/extensions/extensions/aggregator/templates/aggregator.form.tpl
+%%EXTENSIONS%%%%GEKKODIR%%/modules/extensions/extensions/friends/action.php
+%%EXTENSIONS%%%%GEKKODIR%%/modules/extensions/extensions/friends/admin.php
+%%EXTENSIONS%%%%GEKKODIR%%/modules/extensions/extensions/friends/display.php
+%%EXTENSIONS%%%%GEKKODIR%%/modules/extensions/extensions/friends/lang/es.php
+%%EXTENSIONS%%%%GEKKODIR%%/modules/extensions/extensions/friends/main.php
+%%EXTENSIONS%%%%GEKKODIR%%/modules/extensions/extensions/friends/templates/admin.tpl
+%%EXTENSIONS%%%%GEKKODIR%%/modules/extensions/extensions/friends/templates/friend.form.tpl
+%%EXTENSIONS%%%%GEKKODIR%%/modules/extensions/extensions/phrases/action.php
+%%EXTENSIONS%%%%GEKKODIR%%/modules/extensions/extensions/phrases/admin.php
+%%EXTENSIONS%%%%GEKKODIR%%/modules/extensions/extensions/phrases/display.php
+%%EXTENSIONS%%%%GEKKODIR%%/modules/extensions/extensions/phrases/lang/es.php
+%%EXTENSIONS%%%%GEKKODIR%%/modules/extensions/extensions/phrases/main.php
+%%EXTENSIONS%%%%GEKKODIR%%/modules/extensions/extensions/phrases/templates/admin.tpl
+%%EXTENSIONS%%%%GEKKODIR%%/modules/extensions/extensions/phrases/templates/phrase.form.tpl
+%%EXTENSIONS%%%%GEKKODIR%%/modules/extensions/extensions/snapshot/action.php
+%%EXTENSIONS%%%%GEKKODIR%%/modules/extensions/extensions/snapshot/admin.php
+%%EXTENSIONS%%%%GEKKODIR%%/modules/extensions/extensions/snapshot/display.php
+%%EXTENSIONS%%%%GEKKODIR%%/modules/extensions/extensions/snapshot/lang/es.php
+%%EXTENSIONS%%%%GEKKODIR%%/modules/extensions/extensions/snapshot/main.php
+%%EXTENSIONS%%%%GEKKODIR%%/modules/extensions/extensions/snapshot/templates/admin.tpl
+%%EXTENSIONS%%%%GEKKODIR%%/modules/extensions/extensions/snapshot/templates/display.tpl
+%%EXTENSIONS%%%%GEKKODIR%%/modules/extensions/extensions/snapshot/templates/snapshot.form.tpl
+%%EXTENSIONS%%%%GEKKODIR%%/modules/extensions/extensions/tagboard/action.php
+%%EXTENSIONS%%%%GEKKODIR%%/modules/extensions/extensions/tagboard/admin.php
+%%EXTENSIONS%%%%GEKKODIR%%/modules/extensions/extensions/tagboard/display.php
+%%EXTENSIONS%%%%GEKKODIR%%/modules/extensions/extensions/tagboard/lang/es.php
+%%EXTENSIONS%%%%GEKKODIR%%/modules/extensions/extensions/tagboard/main.php
+%%EXTENSIONS%%%%GEKKODIR%%/modules/extensions/extensions/tagboard/templates/admin.tpl
+%%EXTENSIONS%%%%GEKKODIR%%/modules/extensions/extensions/tagboard/templates/display.tpl
+%%EXTENSIONS%%%%GEKKODIR%%/modules/extensions/extensions/weather/action.php
+%%EXTENSIONS%%%%GEKKODIR%%/modules/extensions/extensions/weather/admin.php
+%%EXTENSIONS%%%%GEKKODIR%%/modules/extensions/extensions/weather/display.php
+%%EXTENSIONS%%%%GEKKODIR%%/modules/extensions/extensions/weather/lang/es.php
+%%EXTENSIONS%%%%GEKKODIR%%/modules/extensions/extensions/weather/main.php
+%%EXTENSIONS%%%%GEKKODIR%%/modules/extensions/extensions/weather/templates/admin.tpl
+%%EXTENSIONS%%%%GEKKODIR%%/modules/extensions/extensions/weather/templates/display.tpl
+%%EXTENSIONS%%%%GEKKODIR%%/modules/extensions/extensions/weather/templates/search.form.tpl
+%%EXTENSIONS%%%%GEKKODIR%%/modules/extensions/extensions/weather/templates/weather.form.tpl
+%%EXTENSIONS%%%%GEKKODIR%%/modules/extensions/lang/es/core.php
+%%EXTENSIONS%%%%GEKKODIR%%/modules/extensions/lang/es/main.php
+%%EXTENSIONS%%%%GEKKODIR%%/modules/extensions/main.act.php
+%%EXTENSIONS%%%%GEKKODIR%%/modules/extensions/main.lib.php
+%%EXTENSIONS%%%%GEKKODIR%%/modules/extensions/module.inc.php
+%%EXTENSIONS%%%%GEKKODIR%%/modules/extensions/package.xml
 %%FILES%%%%GEKKODIR%%/modules/files/admin.inc.php
-%%FILES%%%%GEKKODIR%%/modules/files/package.xml
+%%FILES%%%%GEKKODIR%%/modules/files/admin.panel.php
+%%FILES%%%%GEKKODIR%%/modules/files/lang/es/conf.php
+%%FILES%%%%GEKKODIR%%/modules/files/lang/es/core.php
+%%FILES%%%%GEKKODIR%%/modules/files/lang/es/main.php
+%%FILES%%%%GEKKODIR%%/modules/files/main.act.php
+%%FILES%%%%GEKKODIR%%/modules/files/main.inc.php
+%%FILES%%%%GEKKODIR%%/modules/files/main.lib.php
+%%FILES%%%%GEKKODIR%%/modules/files/mod_conf.inc.php
 %%FILES%%%%GEKKODIR%%/modules/files/module.inc.php
+%%FILES%%%%GEKKODIR%%/modules/files/package.xml
 %%FORUMS%%%%GEKKODIR%%/modules/forums/admin.inc.php
-%%FORUMS%%%%GEKKODIR%%/modules/forums/main.lib.php
-%%FORUMS%%%%GEKKODIR%%/modules/forums/main.act.php
+%%FORUMS%%%%GEKKODIR%%/modules/forums/admin.panel.php
+%%FORUMS%%%%GEKKODIR%%/modules/forums/blocks/recent_posts.php
 %%FORUMS%%%%GEKKODIR%%/modules/forums/lang/es/core.php
 %%FORUMS%%%%GEKKODIR%%/modules/forums/lang/es/main.php
+%%FORUMS%%%%GEKKODIR%%/modules/forums/main.act.php
 %%FORUMS%%%%GEKKODIR%%/modules/forums/main.inc.php
-%%FORUMS%%%%GEKKODIR%%/modules/forums/admin.panel.php
-%%FORUMS%%%%GEKKODIR%%/modules/forums/package.xml
+%%FORUMS%%%%GEKKODIR%%/modules/forums/main.lib.php
+%%FORUMS%%%%GEKKODIR%%/modules/forums/mod_search.inc.php
 %%FORUMS%%%%GEKKODIR%%/modules/forums/module.inc.php
-%%FORUMS%%%%GEKKODIR%%/modules/forums/blocks/recent_posts.php
-%%FRIENDS%%%%GEKKODIR%%/modules/friends/admin.inc.php
-%%FRIENDS%%%%GEKKODIR%%/modules/friends/admin.panel.php
-%%FRIENDS%%%%GEKKODIR%%/modules/friends/main.act.php
-%%FRIENDS%%%%GEKKODIR%%/modules/friends/module.inc.php
-%%FRIENDS%%%%GEKKODIR%%/modules/friends/package.xml
-%%FRIENDS%%%%GEKKODIR%%/modules/friends/blocks/my_friends.php
-%%FRIENDS%%%%GEKKODIR%%/modules/friends/lang/es/core.php
-%%FRIENDS%%%%GEKKODIR%%/modules/friends/lang/es/main.php
-%%GALLERY%%%%GEKKODIR%%/modules/gallery/main.lib.php
-%%GALLERY%%%%GEKKODIR%%/modules/gallery/main.act.php
-%%GALLERY%%%%GEKKODIR%%/modules/gallery/main.inc.php
-%%GALLERY%%%%GEKKODIR%%/modules/gallery/lang/ca/main.php
-%%GALLERY%%%%GEKKODIR%%/modules/gallery/lang/ca/core.php
-%%GALLERY%%%%GEKKODIR%%/modules/gallery/lang/es/main.php
-%%GALLERY%%%%GEKKODIR%%/modules/gallery/lang/es/core.php
-%%GALLERY%%%%GEKKODIR%%/modules/gallery/package.xml
-%%GALLERY%%%%GEKKODIR%%/modules/gallery/blocks/random.php
+%%FORUMS%%%%GEKKODIR%%/modules/forums/package.xml
 %%GALLERY%%%%GEKKODIR%%/modules/gallery/admin.inc.php
 %%GALLERY%%%%GEKKODIR%%/modules/gallery/admin.panel.php
+%%GALLERY%%%%GEKKODIR%%/modules/gallery/blocks/random.php
+%%GALLERY%%%%GEKKODIR%%/modules/gallery/lang/ca/core.php
+%%GALLERY%%%%GEKKODIR%%/modules/gallery/lang/ca/main.php
+%%GALLERY%%%%GEKKODIR%%/modules/gallery/lang/es/core.php
+%%GALLERY%%%%GEKKODIR%%/modules/gallery/lang/es/main.php
+%%GALLERY%%%%GEKKODIR%%/modules/gallery/main.act.php
+%%GALLERY%%%%GEKKODIR%%/modules/gallery/main.inc.php
+%%GALLERY%%%%GEKKODIR%%/modules/gallery/main.lib.php
+%%GALLERY%%%%GEKKODIR%%/modules/gallery/mod_search.inc.php
 %%GALLERY%%%%GEKKODIR%%/modules/gallery/module.inc.php
+%%GALLERY%%%%GEKKODIR%%/modules/gallery/package.xml
+%%MEMOS%%%%GEKKODIR%%/modules/memos/admin.inc.php
+%%MEMOS%%%%GEKKODIR%%/modules/memos/admin.panel.php
+%%MEMOS%%%%GEKKODIR%%/modules/memos/blocks/memos.php
+%%MEMOS%%%%GEKKODIR%%/modules/memos/lang/es/core.php
+%%MEMOS%%%%GEKKODIR%%/modules/memos/lang/es/main.php
+%%MEMOS%%%%GEKKODIR%%/modules/memos/main.act.php
+%%MEMOS%%%%GEKKODIR%%/modules/memos/main.lib.php
+%%MEMOS%%%%GEKKODIR%%/modules/memos/memos.js
+%%MEMOS%%%%GEKKODIR%%/modules/memos/module.inc.php
+%%MEMOS%%%%GEKKODIR%%/modules/memos/package.xml
+%%MEMOS%%%%GEKKODIR%%/modules/memos/run/calendar.php
+%%MESSAGES%%%%GEKKODIR%%/modules/messages/blocks/newmessage.php
+%%MESSAGES%%%%GEKKODIR%%/modules/messages/lang/es/core.php
+%%MESSAGES%%%%GEKKODIR%%/modules/messages/lang/es/main.php
+%%MESSAGES%%%%GEKKODIR%%/modules/messages/lang/es/newmessage.block.php
+%%MESSAGES%%%%GEKKODIR%%/modules/messages/main.act.php
+%%MESSAGES%%%%GEKKODIR%%/modules/messages/main.inc.php
+%%MESSAGES%%%%GEKKODIR%%/modules/messages/main.lib.php
+%%MESSAGES%%%%GEKKODIR%%/modules/messages/module.inc.php
+%%MESSAGES%%%%GEKKODIR%%/modules/messages/package.xml
+%%MESSAGES%%%%GEKKODIR%%/modules/messages/user.panel.php
 %%NEWS%%%%GEKKODIR%%/modules/news/admin.inc.php
-%%NEWS%%%%GEKKODIR%%/modules/news/main.lib.php
-%%NEWS%%%%GEKKODIR%%/modules/news/main.act.php
-%%NEWS%%%%GEKKODIR%%/modules/news/main.inc.php
+%%NEWS%%%%GEKKODIR%%/modules/news/admin.panel.php
+%%NEWS%%%%GEKKODIR%%/modules/news/blocks/archive.php
+%%NEWS%%%%GEKKODIR%%/modules/news/blocks/most_read.php
+%%NEWS%%%%GEKKODIR%%/modules/news/blocks/random.php
+%%NEWS%%%%GEKKODIR%%/modules/news/blocks/recent.php
 %%NEWS%%%%GEKKODIR%%/modules/news/lang/es/core.php
 %%NEWS%%%%GEKKODIR%%/modules/news/lang/es/main.php
+%%NEWS%%%%GEKKODIR%%/modules/news/main.act.php
+%%NEWS%%%%GEKKODIR%%/modules/news/main.inc.php
+%%NEWS%%%%GEKKODIR%%/modules/news/main.lib.php
 %%NEWS%%%%GEKKODIR%%/modules/news/mod_categories.inc.php
-%%NEWS%%%%GEKKODIR%%/modules/news/admin.panel.php
-%%NEWS%%%%GEKKODIR%%/modules/news/package.xml
-%%NEWS%%%%GEKKODIR%%/modules/news/blocks/archive.php
-%%NEWS%%%%GEKKODIR%%/modules/news/blocks/recent.php
+%%NEWS%%%%GEKKODIR%%/modules/news/mod_search.inc.php
 %%NEWS%%%%GEKKODIR%%/modules/news/module.inc.php
+%%NEWS%%%%GEKKODIR%%/modules/news/package.xml
 %%PAGES%%%%GEKKODIR%%/modules/pages/admin.inc.php
-%%PAGES%%%%GEKKODIR%%/modules/pages/main.lib.php
-%%PAGES%%%%GEKKODIR%%/modules/pages/main.act.php
-%%PAGES%%%%GEKKODIR%%/modules/pages/main.inc.php
+%%PAGES%%%%GEKKODIR%%/modules/pages/admin.panel.php
 %%PAGES%%%%GEKKODIR%%/modules/pages/lang/es/core.php
 %%PAGES%%%%GEKKODIR%%/modules/pages/lang/es/main.php
+%%PAGES%%%%GEKKODIR%%/modules/pages/main.act.php
+%%PAGES%%%%GEKKODIR%%/modules/pages/main.inc.php
+%%PAGES%%%%GEKKODIR%%/modules/pages/main.lib.php
 %%PAGES%%%%GEKKODIR%%/modules/pages/mod_categories.inc.php
-%%PAGES%%%%GEKKODIR%%/modules/pages/admin.panel.php
-%%PAGES%%%%GEKKODIR%%/modules/pages/package.xml
+%%PAGES%%%%GEKKODIR%%/modules/pages/mod_search.inc.php
 %%PAGES%%%%GEKKODIR%%/modules/pages/module.inc.php
+%%PAGES%%%%GEKKODIR%%/modules/pages/package.xml
 %%POLLS%%%%GEKKODIR%%/modules/polls/admin.inc.php
-%%POLLS%%%%GEKKODIR%%/modules/polls/main.act.php
 %%POLLS%%%%GEKKODIR%%/modules/polls/admin.panel.php
+%%POLLS%%%%GEKKODIR%%/modules/polls/blocks/latest.php
+%%POLLS%%%%GEKKODIR%%/modules/polls/blocks/show.php
 %%POLLS%%%%GEKKODIR%%/modules/polls/lang/es/core.php
 %%POLLS%%%%GEKKODIR%%/modules/polls/lang/es/main.php
-%%POLLS%%%%GEKKODIR%%/modules/polls/package.xml
+%%POLLS%%%%GEKKODIR%%/modules/polls/main.act.php
 %%POLLS%%%%GEKKODIR%%/modules/polls/main.inc.php
 %%POLLS%%%%GEKKODIR%%/modules/polls/main.lib.php
-%%POLLS%%%%GEKKODIR%%/modules/polls/blocks/show.php
+%%POLLS%%%%GEKKODIR%%/modules/polls/mod_search.inc.php
 %%POLLS%%%%GEKKODIR%%/modules/polls/module.inc.php
-%%PHRASES%%%%GEKKODIR%%/modules/phrases/admin.inc.php
-%%PHRASES%%%%GEKKODIR%%/modules/phrases/admin.panel.php
-%%PHRASES%%%%GEKKODIR%%/modules/phrases/main.act.php
-%%PHRASES%%%%GEKKODIR%%/modules/phrases/module.inc.php
-%%PHRASES%%%%GEKKODIR%%/modules/phrases/package.xml
-%%PHRASES%%%%GEKKODIR%%/modules/phrases/blocks/my_phrases.php
-%%PHRASES%%%%GEKKODIR%%/modules/phrases/lang/es/core.php
-%%PHRASES%%%%GEKKODIR%%/modules/phrases/lang/es/main.php
+%%POLLS%%%%GEKKODIR%%/modules/polls/package.xml
+%%SEARCH%%%%GEKKODIR%%/modules/search/blocks/search.php
+%%SEARCH%%%%GEKKODIR%%/modules/search/lang/es/core.php
+%%SEARCH%%%%GEKKODIR%%/modules/search/lang/es/main.php
+%%SEARCH%%%%GEKKODIR%%/modules/search/main.inc.php
+%%SEARCH%%%%GEKKODIR%%/modules/search/main.lib.php
+%%SEARCH%%%%GEKKODIR%%/modules/search/module.inc.php
+%%SEARCH%%%%GEKKODIR%%/modules/search/package.xml
 %%STATISTICS%%%%GEKKODIR%%/modules/statistics/admin.inc.php
-%%STATISTICS%%%%GEKKODIR%%/modules/statistics/main.lib.php
-%%STATISTICS%%%%GEKKODIR%%/modules/statistics/main.act.php
+%%STATISTICS%%%%GEKKODIR%%/modules/statistics/admin.panel.php
+%%STATISTICS%%%%GEKKODIR%%/modules/statistics/blocks/whosonline.php
 %%STATISTICS%%%%GEKKODIR%%/modules/statistics/core.inc.php
 %%STATISTICS%%%%GEKKODIR%%/modules/statistics/lang/es/core.php
 %%STATISTICS%%%%GEKKODIR%%/modules/statistics/lang/es/main.php
-%%STATISTICS%%%%GEKKODIR%%/modules/statistics/admin.panel.php
-%%STATISTICS%%%%GEKKODIR%%/modules/statistics/package.xml
-%%STATISTICS%%%%GEKKODIR%%/modules/statistics/blocks/whosonline.php
+%%STATISTICS%%%%GEKKODIR%%/modules/statistics/main.act.php
+%%STATISTICS%%%%GEKKODIR%%/modules/statistics/main.lib.php
 %%STATISTICS%%%%GEKKODIR%%/modules/statistics/module.inc.php
-%%TAGBOARD%%%%GEKKODIR%%/modules/tagboard/admin.inc.php
-%%TAGBOARD%%%%GEKKODIR%%/modules/tagboard/main.lib.php
-%%TAGBOARD%%%%GEKKODIR%%/modules/tagboard/main.act.php
-%%TAGBOARD%%%%GEKKODIR%%/modules/tagboard/blocks/tagboard.php
-%%TAGBOARD%%%%GEKKODIR%%/modules/tagboard/lang/es/core.php
-%%TAGBOARD%%%%GEKKODIR%%/modules/tagboard/lang/es/main.php
-%%TAGBOARD%%%%GEKKODIR%%/modules/tagboard/admin.panel.php
-%%TAGBOARD%%%%GEKKODIR%%/modules/tagboard/package.xml
-%%TAGBOARD%%%%GEKKODIR%%/modules/tagboard/module.inc.php
-%%BACKUP%%%%GEKKODIR%%/templates/default/backup/index.admin.tpl
-%%BLOG%%%%GEKKODIR%%/templates/default/blog/index.admin.tpl
+%%STATISTICS%%%%GEKKODIR%%/modules/statistics/package.xml
+%%BACKUP%%%%GEKKODIR%%/templates/default/backup/admin.tpl
+%%BLOG%%%%GEKKODIR%%/templates/default/blog/admin.tpl
 %%BLOG%%%%GEKKODIR%%/templates/default/blog/blog.form.tpl
-%%BLOG%%%%GEKKODIR%%/templates/default/blog/post.tpl
+%%BLOG%%%%GEKKODIR%%/templates/default/blog/index.tpl
+%%BLOG%%%%GEKKODIR%%/templates/default/blog/post.inc.tpl
+%%BLOG%%%%GEKKODIR%%/templates/default/blog/view.tpl
 %%CATEGORIES%%%%GEKKODIR%%/templates/default/categories/category.form.tpl
-%%CATEGORIES%%%%GEKKODIR%%/templates/default/categories/index.admin.tpl
 %%CATEGORIES%%%%GEKKODIR%%/templates/default/categories/category.tpl
+%%CATEGORIES%%%%GEKKODIR%%/templates/default/categories/index.admin.tpl
 %%CATEGORIES%%%%GEKKODIR%%/templates/default/categories/index.tpl
-%%COMMENTS%%%%GEKKODIR%%/templates/default/comments/comment.tpl
 %%COMMENTS%%%%GEKKODIR%%/templates/default/comments/comment.form.tpl
-%%CONTACT%%%%GEKKODIR%%/templates/default/contact/send.form.tpl
+%%COMMENTS%%%%GEKKODIR%%/templates/default/comments/comment.tpl
 %%CONTACT%%%%GEKKODIR%%/templates/default/contact/contact.form.tpl
-%%DOWNLOADS%%%%GEKKODIR%%/templates/default/downloads/items.tpl
-%%DOWNLOADS%%%%GEKKODIR%%/templates/default/downloads/index.tpl
-%%DOWNLOADS%%%%GEKKODIR%%/templates/default/downloads/index.admin.tpl
-%%DOWNLOADS%%%%GEKKODIR%%/templates/default/downloads/item.form.tpl
-%%DOWNLOADS%%%%GEKKODIR%%/templates/default/downloads/view.tpl
-%%DOWNLOADS%%%%GEKKODIR%%/templates/default/downloads/category.form.tpl
+%%CONTACT%%%%GEKKODIR%%/templates/default/contact/send.form.tpl
 %%DOWNLOADS%%%%GEKKODIR%%/templates/default/downloads/category.admin.tpl
+%%DOWNLOADS%%%%GEKKODIR%%/templates/default/downloads/category.form.tpl
+%%DOWNLOADS%%%%GEKKODIR%%/templates/default/downloads/category.tpl
+%%DOWNLOADS%%%%GEKKODIR%%/templates/default/downloads/index.admin.tpl
+%%DOWNLOADS%%%%GEKKODIR%%/templates/default/downloads/index.tpl
+%%DOWNLOADS%%%%GEKKODIR%%/templates/default/downloads/item.form.tpl
+%%DOWNLOADS%%%%GEKKODIR%%/templates/default/downloads/item.tpl
+%%EXTENSIONS%%%%GEKKODIR%%/templates/default/extensions/admin.tpl
+%%FILES%%%%GEKKODIR%%/templates/default/files/file.form.tpl
+%%FILES%%%%GEKKODIR%%/templates/default/files/index.admin.tpl
 %%FILES%%%%GEKKODIR%%/templates/default/files/index.tpl
 %%FILES%%%%GEKKODIR%%/templates/default/files/upload.form.tpl
-%%FILES%%%%GEKKODIR%%/templates/default/files/index.admin.tpl
-%%FILES%%%%GEKKODIR%%/templates/default/files/file.form.tpl
-%%FORUMS%%%%GEKKODIR%%/templates/default/forums/category.form.tpl
-%%FORUMS%%%%GEKKODIR%%/templates/default/forums/index.admin.tpl
-%%FORUMS%%%%GEKKODIR%%/templates/default/forums/category.tpl
-%%FORUMS%%%%GEKKODIR%%/templates/default/forums/index.tpl
-%%FORUMS%%%%GEKKODIR%%/templates/default/forums/forum.form.tpl
+%%FORUMS%%%%GEKKODIR%%/templates/default/forums/admin.tpl
 %%FORUMS%%%%GEKKODIR%%/templates/default/forums/category.admin.tpl
-%%FORUMS%%%%GEKKODIR%%/templates/default/forums/thread-index.tpl
+%%FORUMS%%%%GEKKODIR%%/templates/default/forums/category.form.tpl
+%%FORUMS%%%%GEKKODIR%%/templates/default/forums/category.tpl
+%%FORUMS%%%%GEKKODIR%%/templates/default/forums/forum.form.tpl
+%%FORUMS%%%%GEKKODIR%%/templates/default/forums/forum.tpl
+%%FORUMS%%%%GEKKODIR%%/templates/default/forums/index.tpl
+%%FORUMS%%%%GEKKODIR%%/templates/default/forums/path.inc.tpl
 %%FORUMS%%%%GEKKODIR%%/templates/default/forums/post.form.tpl
-%%FORUMS%%%%GEKKODIR%%/templates/default/forums/thread.tpl
 %%FORUMS%%%%GEKKODIR%%/templates/default/forums/summary.tpl
-%%FRIENDS%%%%GEKKODIR%%/templates/default/friends/index.admin.tpl
-%%FRIENDS%%%%GEKKODIR%%/templates/default/friends/friends.form.tpl
-%%GALLERY%%%%GEKKODIR%%/templates/default/gallery/gallery.form.tpl
-%%GALLERY%%%%GEKKODIR%%/templates/default/gallery/index.tpl
-%%GALLERY%%%%GEKKODIR%%/templates/default/gallery/index.admin.tpl
-%%GALLERY%%%%GEKKODIR%%/templates/default/gallery/item.form.tpl
+%%FORUMS%%%%GEKKODIR%%/templates/default/forums/thread.tpl
 %%GALLERY%%%%GEKKODIR%%/templates/default/gallery/gallery.admin.tpl
-%%GALLERY%%%%GEKKODIR%%/templates/default/gallery/view_gallery.tpl
-%%GALLERY%%%%GEKKODIR%%/templates/default/gallery/view_item.tpl
-%%NEWS%%%%GEKKODIR%%/templates/default/news/news.form.tpl
+%%GALLERY%%%%GEKKODIR%%/templates/default/gallery/gallery.form.tpl
+%%GALLERY%%%%GEKKODIR%%/templates/default/gallery/gallery.inc.tpl
+%%GALLERY%%%%GEKKODIR%%/templates/default/gallery/import.admin.tpl
+%%GALLERY%%%%GEKKODIR%%/templates/default/gallery/import.form.tpl
+%%GALLERY%%%%GEKKODIR%%/templates/default/gallery/index.admin.tpl
+%%GALLERY%%%%GEKKODIR%%/templates/default/gallery/index.tpl
+%%GALLERY%%%%GEKKODIR%%/templates/default/gallery/item.form.tpl
+%%GALLERY%%%%GEKKODIR%%/templates/default/gallery/show_items.tpl
+%%GALLERY%%%%GEKKODIR%%/templates/default/gallery/term.tpl
+%%GALLERY%%%%GEKKODIR%%/templates/default/gallery/view.tpl
+%%MEMOS%%%%GEKKODIR%%/templates/default/memos/admin.tpl
+%%MEMOS%%%%GEKKODIR%%/templates/default/memos/memo.block
+%%MEMOS%%%%GEKKODIR%%/templates/default/memos/memos.form.tpl
+%%MESSAGES%%%%GEKKODIR%%/templates/default/messages/admin.tpl
+%%MESSAGES%%%%GEKKODIR%%/templates/default/messages/index.tpl
+%%MESSAGES%%%%GEKKODIR%%/templates/default/messages/message.form.tpl
+%%MESSAGES%%%%GEKKODIR%%/templates/default/messages/view.tpl
+%%NEWS%%%%GEKKODIR%%/templates/default/news/entry.inc.tpl
 %%NEWS%%%%GEKKODIR%%/templates/default/news/index.admin.tpl
+%%NEWS%%%%GEKKODIR%%/templates/default/news/index.tpl
 %%NEWS%%%%GEKKODIR%%/templates/default/news/intro.tpl
+%%NEWS%%%%GEKKODIR%%/templates/default/news/news.form.tpl
 %%NEWS%%%%GEKKODIR%%/templates/default/news/read.tpl
-%%PAGES%%%%GEKKODIR%%/templates/default/pages/editor.form.tpl
-%%PAGES%%%%GEKKODIR%%/templates/default/pages/index.admin.tpl
+%%NEWS%%%%GEKKODIR%%/templates/default/news/view.tpl
+%%PAGES%%%%GEKKODIR%%/templates/default/pages/admin.tpl
+%%PAGES%%%%GEKKODIR%%/templates/default/pages/category.tpl
+%%PAGES%%%%GEKKODIR%%/templates/default/pages/not_found.tpl
+%%PAGES%%%%GEKKODIR%%/templates/default/pages/page.form.tpl
 %%PAGES%%%%GEKKODIR%%/templates/default/pages/page.tpl
-%%POLLS%%%%GEKKODIR%%/templates/default/polls/send.form.tpl
-%%POLLS%%%%GEKKODIR%%/templates/default/polls/contact.form.tpl
 %%POLLS%%%%GEKKODIR%%/templates/default/polls/index.admin.tpl
-%%POLLS%%%%GEKKODIR%%/templates/default/polls/poll.form.tpl
 %%POLLS%%%%GEKKODIR%%/templates/default/polls/index.tpl
-%%POLLS%%%%GEKKODIR%%/templates/default/polls/vote.form.tpl
+%%POLLS%%%%GEKKODIR%%/templates/default/polls/poll.form.tpl
+%%POLLS%%%%GEKKODIR%%/templates/default/polls/send.form.tpl
 %%POLLS%%%%GEKKODIR%%/templates/default/polls/show.block.tpl
-%%PHRASES%%%%GEKKODIR%%/templates/default/phrases/index.admin.tpl
-%%PHRASES%%%%GEKKODIR%%/templates/default/phrases/phrases.form.tpl
+%%POLLS%%%%GEKKODIR%%/templates/default/polls/vote.form.tpl
+%%SEARCH%%%%GEKKODIR%%/templates/default/search/index.tpl
+%%SEARCH%%%%GEKKODIR%%/templates/default/search/search.block.tpl
 %%STATISTICS%%%%GEKKODIR%%/templates/default/statistics/index.admin.tpl
-%%TAGBOARD%%%%GEKKODIR%%/templates/default/tagboard/index.admin.tpl
-%%TAGBOARD%%%%GEKKODIR%%/templates/default/tagboard/post.block.tpl
-%%FILES%%@dirrm %%GEKKODIR%%/media/icons/default/16/files
 %%FILES%%@dirrm %%GEKKODIR%%/media/icons/default/48/files
+%%FILES%%@dirrm %%GEKKODIR%%/media/icons/default/16/files
 %%BACKUP%%@dirrm %%GEKKODIR%%/modules/backup/lang/es
 %%BACKUP%%@dirrm %%GEKKODIR%%/modules/backup/lang
 %%BACKUP%%@dirrm %%GEKKODIR%%/modules/backup
 %%BLOG%%@dirrm %%GEKKODIR%%/modules/blog/blocks
 %%BLOG%%@dirrm %%GEKKODIR%%/modules/blog/lang/ca
+%%BLOG%%@dirrm %%GEKKODIR%%/modules/blog/lang/en
 %%BLOG%%@dirrm %%GEKKODIR%%/modules/blog/lang/es
 %%BLOG%%@dirrm %%GEKKODIR%%/modules/blog/lang
 %%BLOG%%@dirrm %%GEKKODIR%%/modules/blog
 %%CATEGORIES%%@dirrm %%GEKKODIR%%/modules/categories/lang/ca
+%%CATEGORIES%%@dirrm %%GEKKODIR%%/modules/categories/lang/en
 %%CATEGORIES%%@dirrm %%GEKKODIR%%/modules/categories/lang/es
 %%CATEGORIES%%@dirrm %%GEKKODIR%%/modules/categories/lang
 %%CATEGORIES%%@dirrm %%GEKKODIR%%/modules/categories
+%%COMMENTS%%@dirrm %%GEKKODIR%%/modules/comments/blocks
+%%COMMENTS%%@dirrm %%GEKKODIR%%/modules/comments/lang/ca
 %%COMMENTS%%@dirrm %%GEKKODIR%%/modules/comments/lang/es
 %%COMMENTS%%@dirrm %%GEKKODIR%%/modules/comments/lang
-%%COMMENTS%%@dirrm %%GEKKODIR%%/modules/comments/blocks
+%%COMMENTS%%@dirrm %%GEKKODIR%%/modules/comments/run
 %%COMMENTS%%@dirrm %%GEKKODIR%%/modules/comments
+%%COMMENTS%%@dirrm %%GEKKODIR%%/modules/contact/lang/ca
 %%CONTACT%%@dirrm %%GEKKODIR%%/modules/contact/lang/es
 %%CONTACT%%@dirrm %%GEKKODIR%%/modules/contact/lang
 %%CONTACT%%@dirrm %%GEKKODIR%%/modules/contact
+%%DOWNLOADS%%@dirrm %%GEKKODIR%%/modules/downloads/blocks
 %%DOWNLOADS%%@dirrm %%GEKKODIR%%/modules/downloads/lang/es
 %%DOWNLOADS%%@dirrm %%GEKKODIR%%/modules/downloads/lang
-%%DOWNLOADS%%@dirrm %%GEKKODIR%%/modules/downloads/blocks
 %%DOWNLOADS%%@dirrm %%GEKKODIR%%/modules/downloads
+%%EXTENSIONS%%@dirrm %%GEKKODIR%%/modules/extensions/blocks
+%%EXTENSIONS%%@dirrm %%GEKKODIR%%/modules/extensions/lang/es
+%%EXTENSIONS%%@dirrm %%GEKKODIR%%/modules/extensions/lang
+%%EXTENSIONS%%@dirrm %%GEKKODIR%%/modules/extensions/extensions/phrases/templates
+%%EXTENSIONS%%@dirrm %%GEKKODIR%%/modules/extensions/extensions/phrases/lang
+%%EXTENSIONS%%@dirrm %%GEKKODIR%%/modules/extensions/extensions/phrases
+%%EXTENSIONS%%@dirrm %%GEKKODIR%%/modules/extensions/extensions/tagboard/lang
+%%EXTENSIONS%%@dirrm %%GEKKODIR%%/modules/extensions/extensions/tagboard/templates
+%%EXTENSIONS%%@dirrm %%GEKKODIR%%/modules/extensions/extensions/tagboard
+%%EXTENSIONS%%@dirrm %%GEKKODIR%%/modules/extensions/extensions/friends/templates
+%%EXTENSIONS%%@dirrm %%GEKKODIR%%/modules/extensions/extensions/friends/lang
+%%EXTENSIONS%%@dirrm %%GEKKODIR%%/modules/extensions/extensions/friends
+%%EXTENSIONS%%@dirrm %%GEKKODIR%%/modules/extensions/extensions/weather/templates
+%%EXTENSIONS%%@dirrm %%GEKKODIR%%/modules/extensions/extensions/weather/lang
+%%EXTENSIONS%%@dirrm %%GEKKODIR%%/modules/extensions/extensions/weather
+%%EXTENSIONS%%@dirrm %%GEKKODIR%%/modules/extensions/extensions/snapshot/templates
+%%EXTENSIONS%%@dirrm %%GEKKODIR%%/modules/extensions/extensions/snapshot/lang
+%%EXTENSIONS%%@dirrm %%GEKKODIR%%/modules/extensions/extensions/snapshot
+%%EXTENSIONS%%@dirrm %%GEKKODIR%%/modules/extensions/extensions/aggregator/templates
+%%EXTENSIONS%%@dirrm %%GEKKODIR%%/modules/extensions/extensions/aggregator/lang
+%%EXTENSIONS%%@dirrm %%GEKKODIR%%/modules/extensions/extensions/aggregator
+%%EXTENSIONS%%@dirrm %%GEKKODIR%%/modules/extensions/extensions
+%%EXTENSIONS%%@dirrm %%GEKKODIR%%/modules/extensions
 %%FILES%%@dirrm %%GEKKODIR%%/modules/files/lang/es
 %%FILES%%@dirrm %%GEKKODIR%%/modules/files/lang
 %%FILES%%@dirrm %%GEKKODIR%%/modules/files
+%%FORUMS%%@dirrm %%GEKKODIR%%/modules/forums/blocks
 %%FORUMS%%@dirrm %%GEKKODIR%%/modules/forums/lang/es
 %%FORUMS%%@dirrm %%GEKKODIR%%/modules/forums/lang
-%%FORUMS%%@dirrm %%GEKKODIR%%/modules/forums/blocks
 %%FORUMS%%@dirrm %%GEKKODIR%%/modules/forums
-%%FRIENDS%%@dirrm %%GEKKODIR%%/modules/friends/blocks
-%%FRIENDS%%@dirrm %%GEKKODIR%%/modules/friends/lang/es
-%%FRIENDS%%@dirrm %%GEKKODIR%%/modules/friends/lang
-%%FRIENDS%%@dirrm %%GEKKODIR%%/modules/friends
+%%GALLERY%%@dirrm %%GEKKODIR%%/modules/gallery/blocks
 %%GALLERY%%@dirrm %%GEKKODIR%%/modules/gallery/lang/ca
 %%GALLERY%%@dirrm %%GEKKODIR%%/modules/gallery/lang/es
 %%GALLERY%%@dirrm %%GEKKODIR%%/modules/gallery/lang
-%%GALLERY%%@dirrm %%GEKKODIR%%/modules/gallery/blocks
 %%GALLERY%%@dirrm %%GEKKODIR%%/modules/gallery
+%%MEMOS%%@dirrm %%GEKKODIR%%/modules/memos/lang/es
+%%MEMOS%%@dirrm %%GEKKODIR%%/modules/memos/lang
+%%MEMOS%%@dirrm %%GEKKODIR%%/modules/memos/blocks
+%%MEMOS%%@dirrm %%GEKKODIR%%/modules/memos/run
+%%MEMOS%%@dirrm %%GEKKODIR%%/modules/memos
+%%MESSAGES%%@dirrm %%GEKKODIR%%/modules/messages/lang/es
+%%MESSAGES%%@dirrm %%GEKKODIR%%/modules/messages/lang
+%%MESSAGES%%@dirrm %%GEKKODIR%%/modules/messages/blocks
+%%MESSAGES%%@dirrm %%GEKKODIR%%/modules/messages
+%%NEWS%%@dirrm %%GEKKODIR%%/modules/news/blocks
 %%NEWS%%@dirrm %%GEKKODIR%%/modules/news/lang/es
 %%NEWS%%@dirrm %%GEKKODIR%%/modules/news/lang
-%%NEWS%%@dirrm %%GEKKODIR%%/modules/news/blocks
 %%NEWS%%@dirrm %%GEKKODIR%%/modules/news
 %%PAGES%%@dirrm %%GEKKODIR%%/modules/pages/lang/es
 %%PAGES%%@dirrm %%GEKKODIR%%/modules/pages/lang
 %%PAGES%%@dirrm %%GEKKODIR%%/modules/pages
+%%POLLS%%@dirrm %%GEKKODIR%%/modules/polls/blocks
 %%POLLS%%@dirrm %%GEKKODIR%%/modules/polls/lang/es
 %%POLLS%%@dirrm %%GEKKODIR%%/modules/polls/lang
-%%POLLS%%@dirrm %%GEKKODIR%%/modules/polls/blocks
 %%POLLS%%@dirrm %%GEKKODIR%%/modules/polls
-%%PHRASES%%@dirrm %%GEKKODIR%%/modules/phrases/blocks
-%%PHRASES%%@dirrm %%GEKKODIR%%/modules/phrases/lang/es
-%%PHRASES%%@dirrm %%GEKKODIR%%/modules/phrases/lang
-%%PHRASES%%@dirrm %%GEKKODIR%%/modules/phrases
+%%SEARCH%%@dirrm %%GEKKODIR%%/modules/search/blocks
+%%SEARCH%%@dirrm %%GEKKODIR%%/modules/search/lang/es
+%%SEARCH%%@dirrm %%GEKKODIR%%/modules/search/lang
+%%SEARCH%%@dirrm %%GEKKODIR%%/modules/search
+%%STATISTICS%%@dirrm %%GEKKODIR%%/modules/statistics/blocks
 %%STATISTICS%%@dirrm %%GEKKODIR%%/modules/statistics/lang/es
 %%STATISTICS%%@dirrm %%GEKKODIR%%/modules/statistics/lang
-%%STATISTICS%%@dirrm %%GEKKODIR%%/modules/statistics/blocks
 %%STATISTICS%%@dirrm %%GEKKODIR%%/modules/statistics
-%%TAGBOARD%%@dirrm %%GEKKODIR%%/modules/tagboard/blocks
-%%TAGBOARD%%@dirrm %%GEKKODIR%%/modules/tagboard/lang/es
-%%TAGBOARD%%@dirrm %%GEKKODIR%%/modules/tagboard/lang
-%%TAGBOARD%%@dirrm %%GEKKODIR%%/modules/tagboard
 %%BACKUP%%@dirrm %%GEKKODIR%%/templates/default/backup
 %%BLOG%%@dirrm %%GEKKODIR%%/templates/default/blog
 %%CATEGORIES%%@dirrm %%GEKKODIR%%/templates/default/categories
 %%COMMENTS%%@dirrm %%GEKKODIR%%/templates/default/comments
 %%CONTACT%%@dirrm %%GEKKODIR%%/templates/default/contact
 %%DOWNLOADS%%@dirrm %%GEKKODIR%%/templates/default/downloads
+%%EXTENSIONS%%@dirrm %%GEKKODIR%%/templates/default/extensions
 %%FILES%%@dirrm %%GEKKODIR%%/templates/default/files
 %%FORUMS%%@dirrm %%GEKKODIR%%/templates/default/forums
-%%FRIENDS%%@dirrm %%GEKKODIR%%/templates/default/friends
 %%GALLERY%%@dirrm %%GEKKODIR%%/templates/default/gallery
+%%MEMOS%%@dirrm %%GEKKODIR%%/templates/default/memos
+%%MESSAGES%%@dirrm %%GEKKODIR%%/templates/default/messages
 %%NEWS%%@dirrm %%GEKKODIR%%/templates/default/news
 %%PAGES%%@dirrm %%GEKKODIR%%/templates/default/pages
 %%POLLS%%@dirrm %%GEKKODIR%%/templates/default/polls
-%%PHRASES%%@dirrm %%GEKKODIR%%/templates/default/phrases
+%%SEARCH%%@dirrm %%GEKKODIR%%/templates/default/search
 %%STATISTICS%%@dirrm %%GEKKODIR%%/templates/default/statistics
-%%TAGBOARD%%@dirrm %%GEKKODIR%%/templates/default/tagboard
+@dirrmtry www/data-dist/gekko/templates/default
+@dirrmtry www/data-dist/gekko/templates
+@dirrmtry www/data-dist/gekko/modules
+@dirrmtry www/data-dist/gekko/media/icons/default/48
+@dirrmtry www/data-dist/gekko/media/icons/default/16
+@dirrmtry www/data-dist/gekko/media/icons/default
+@dirrmtry www/data-dist/gekko/media/icons
+@dirrmtry www/data-dist/gekko/media
+@dirrmtry www/data-dist/gekko
