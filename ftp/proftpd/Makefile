@@ -7,7 +7,7 @@
 
 PORTNAME=	proftpd
 DISTVERSION=	1.3.0
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
 		ftp://ftp.fastorama.com/mirrors/ftp.proftpd.org/distrib/source/ \
@@ -52,9 +52,9 @@ OPTIONS=	IPV6 "Use IPv6" off \
 		WRAP "Include mod_wrap" on \
 		RADIUS "Include mod_radius" off
 
-MODULES?=
-
 .include <bsd.port.pre.mk>
+
+MODULES?=
 
 .if defined(WITH_RATIO)
 MODULES:=${MODULES}:mod_ratio
@@ -125,10 +125,6 @@ USE_OPENSSL=	yes
 .include <${PORTSDIR}/Mk/bsd.openssl.mk>
 PROFTPD_LIBS+=	-lssl -lcrypto -L${LOCALBASE}/lib
 MODULES:=${MODULES}:mod_tls
-
-.if defined(WITH_LDAP)
-EXTRA_PATCHES=${FILESDIR}/extra-patch-module-mod_ldap.c
-.endif
 .endif
 
 .if defined(WITH_CTRLS)
