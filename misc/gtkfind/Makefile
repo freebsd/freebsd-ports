@@ -20,7 +20,6 @@ USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 
 MAN1=		gtkfind.1
 PLIST_FILES=	bin/gtkfind

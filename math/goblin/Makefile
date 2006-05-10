@@ -20,7 +20,6 @@ LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83
 
 CONFLICTS=	ImageMagick-[0-9]* display-*
 
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 MAKE_ARGS=	CC="${CC}" CCFLAGS="${CFLAGS}" \
 		CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \

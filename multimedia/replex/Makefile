@@ -14,7 +14,6 @@ MASTER_SITES=	http://www.metzlerbros.org/dvb/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Remultiplex an MPEG2 TS into a PS for DVD
 
-USE_REINPLACE=	yes
 USE_GETOPT_LONG=	yes
 USE_GMAKE=	yes
 MAKE_ARGS=	CFLAGS="${CFLAGS}" DEFINES="${CPPFLAGS} -DO_LARGEFILE=0" \

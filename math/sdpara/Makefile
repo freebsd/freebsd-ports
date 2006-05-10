@@ -24,9 +24,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libscalapack.a:${PORTSDIR}/math/scalapack \
 		${LOCALBASE}/lib/libblacs.a:${PORTSDIR}/math/blacs \
 		${LOCALBASE}/mpich/lib/libmpich.a:${PORTSDIR}/net/mpich
 
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 LAPACK=		-lalapack
 CBLAS=		-lcblas -lf77blas -latlas -lg2c

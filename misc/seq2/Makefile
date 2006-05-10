@@ -13,7 +13,6 @@ MASTER_SITES=	http://www.referee.at/unix/
 MAINTAINER=	osa@FreeBSD.org
 COMMENT=	A clone of the UNIX(tm) program called seq
 
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	configure.1
 

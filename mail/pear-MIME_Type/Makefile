@@ -18,8 +18,6 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 LATEST_LINK=	pear-${PORTNAME}
 OPTIONS=	PEAR_SYSTEM_COMMAND "PEAR::System_Command support" off
 
-USE_REINPLACE=	yes
-
 CATEGORY=	MIME
 FILES=		Type.php Type/Parameter.php
 EXAMPLES=	example.php

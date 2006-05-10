@@ -15,7 +15,6 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Greylisting daemon for Postfix
 
-USE_REINPLACE=	yes
 USE_RC_SUBR=	gld
 HAS_CONFIGURE=	yes
 

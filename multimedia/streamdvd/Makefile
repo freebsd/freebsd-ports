@@ -16,7 +16,6 @@ COMMENT=	A fast tool to backup Video DVDs 'on the fly'
 LIB_DEPENDS=	dvdread:${PORTSDIR}/multimedia/libdvdread
 
 WRKSRC=		${WRKDIR}/StreamDVD-${PORTVERSION}
-USE_REINPLACE=	yes
 
 PLIST_FILES=	bin/streamdvd
 PORTDOCS=	README

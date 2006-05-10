@@ -20,7 +20,6 @@ COMMENT=	RFC 822 mail message parsing library and rewriting utilities
 USE_QMAIL_RUN=	yes
 
 NO_PACKAGE=	Violates djb\'s license
-USE_REINPLACE=	yes
 
 ALL_TARGET=	it
 INSTALL_TARGET=	setup check

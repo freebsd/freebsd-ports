@@ -13,7 +13,6 @@ MASTER_SITES=	ftp://ftp.ossp.org/pkg/tool/iselect/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interactive Selection Tool
 
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 

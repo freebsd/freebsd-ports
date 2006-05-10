@@ -19,7 +19,6 @@ RUN_DEPENDS=	ogle:${PORTSDIR}/multimedia/ogle
 
 USE_AUTOTOOLS=	autoconf:259 libtool:15
 USE_KDELIBS_VER=3
-USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--with-ogle-dir=${LOCALBASE}/bin \
 		--with-ogle-includes=${LOCALBASE}/include \
 		--program-transform-name="s|,|,|" \

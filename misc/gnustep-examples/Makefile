@@ -23,7 +23,6 @@ USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
 MAKEFILE=	GNUmakefile
-USE_REINPLACE=	yes
 
 MAKE_APPS=	Finger GFractal GPuzzle HostAddress
 INSTALL_APPS=	Finger GFractal GPuzzle HostAddress

@@ -14,7 +14,6 @@ MASTER_SITES=	http://www.cs.uu.nl/people/henkp/mirmon/src/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Monitor the status of mirrors
 
-USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes

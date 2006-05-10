@@ -22,7 +22,6 @@ GNU_CONFIGURE=	yes
 ONLY_FOR_ARCHS=	arm i386
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
 
 CONFIGURE_ARGS=	--includedir=${X11BASE}/include/ \
 		--libdir=${X11BASE}/lib/ \

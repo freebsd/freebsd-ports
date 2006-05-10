@@ -21,8 +21,6 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_bsddb.so:${PORTSDIR}/databases/py-bsddb
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 
-USE_REINPLACE=		yes
-
 PORTDOCS=	CHANGELOG.txt \
 		LICENSE.txt \
 		NEWTRICKS.txt \

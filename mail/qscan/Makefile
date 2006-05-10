@@ -19,7 +19,6 @@ RUN_DEPENDS=	clamdscan:${PORTSDIR}/security/clamav \
 USE_QMAIL_RUN=	yes
 
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 
 .include <bsd.port.pre.mk>
 

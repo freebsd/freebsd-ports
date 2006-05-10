@@ -25,7 +25,6 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/libmilter.a:${PORTSDIR}/mail/${SENDMAIL_MILTER_
 .endif
 
 SENDMAIL_MILTER_PORT?=	sendmail
-USE_REINPLACE=	yes
 CFLAGS+=	-Wall ${PTHREAD_CFLAGS:S=""==}
 LIBS+=		-lmilter ${PTHREAD_LIBS}
 ANTIVIRUS_DIR?=	/var/spool/antivirus

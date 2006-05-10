@@ -26,7 +26,6 @@ LIB_DEPENDS+=	db41.1:${PORTSDIR}/databases/db41
 .endif
 
 NO_WRKSUBDIR=	yes
-USE_REINPLACE=	yes
 USE_RC_SUBR=	dracd.sh
 
 MAN3=		dracauth.3

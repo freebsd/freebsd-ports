@@ -28,8 +28,6 @@ MAKE_ARGS=	WISH="${PREFIX}/bin/wish8.4" \
 		manformat="{groff -Tlatin1 -te -mandoc}" \
 		manprint="{groff -mandoc -Tps -te -l}"
 
-USE_REINPLACE=	yes
-
 post-patch:
 	@${REINPLACE_CMD} -e "s;/usr/local/bin/wish;${PREFIX}/bin/wish8.4;" \
 		${WRKSRC}/contrib/tkmanclient

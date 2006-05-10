@@ -18,7 +18,6 @@ COMMENT=	Mathematical, signal processing and communication library
 
 LIB_DEPENDS=	atlas.1:${PORTSDIR}/math/atlas
 
-USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	opt
 USE_GMAKE=	yes

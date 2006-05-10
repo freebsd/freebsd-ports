@@ -15,7 +15,6 @@ MASTER_SITES=	http://nbenoit.tuxfamily.org/projects/mmsrip/ \
 MAINTAINER=	munggo@pmy.lv
 COMMENT=	MMSRIP is a client for the proprietary protocol mms://
 
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
 MAN1=		mmsrip.1

@@ -17,7 +17,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yet another GTK-based mail reader for X. Supports IMAP
 
 USE_GETTEXT=	yes
-USE_REINPLACE=	yes
 USE_OPENSSL=	yes
 MAKE_ENV=	MKDIR="${MKDIR}"
 MAKEFILE=	${FILESDIR}/Makefile.bsd

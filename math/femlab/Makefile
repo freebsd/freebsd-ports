@@ -18,7 +18,6 @@ COMMENT=	Interactive program for solving partial differential equations in 2D
 BUILD_DEPENDS=	${X11BASE}/lib/libsx.a:${PORTSDIR}/x11/libsx \
 		xmkmf:${X_IMAKE_PORT}
 
-USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 
 FEMLAB_HOME=	${PREFIX}/lib/X11/femlab

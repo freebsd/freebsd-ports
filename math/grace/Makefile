@@ -34,7 +34,6 @@ MAN1=		convcal.1 grace.1 xmgrace.1 gracebat.1 grconvert.1
 USE_X_PREFIX=	YES
 USE_GMAKE=	YES
 USE_MOTIF=	YES
-USE_REINPLACE=	YES
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	\
 	--with-extra-incpath=${X11BASE}/include/X11:${LOCALBASE}/include \

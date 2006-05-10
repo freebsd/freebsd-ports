@@ -19,7 +19,6 @@ RUN_DEPENDS=	${SITE_PERL}/Net/Server.pm:${PORTSDIR}/net/p5-Net-Server \
 
 USE_PERL5_RUN=	yes
 USE_RC_SUBR=	yes
-USE_REINPLACE=	yes
 NO_BUILD=	yes
 
 ETCFILES=	whitelist_clients whitelist_recipients

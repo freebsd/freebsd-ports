@@ -62,7 +62,6 @@ MAINTAINER=	scott+ports@sabami.seaslug.org
 COMMENT=	A cleaned up MH mailer suite
 
 GNU_CONFIGURE=  yes
-USE_REINPLACE=	yes
 USE_AUTOTOOLS=	autoconf:259
 CONFIGURE_ARGS=	--libdir=${PREFIX}/libexec/nmh \
 		--sysconfdir=${PREFIX}/etc/nmh

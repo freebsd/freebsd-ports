@@ -98,7 +98,6 @@ DOCSDIR=	${PREFIX}/doc
 .endif
 
 NO_MTREE=	yes
-USE_REINPLACE=	yes
 
 OPTIONS+=	QMAILQUEUE_PATCH "run a QMAILQUEUE program" off
 OPTIONS+=	BIG_CONCURRENCY_PATCH "use a concurrency greater than 240" off

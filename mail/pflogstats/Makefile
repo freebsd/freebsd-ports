@@ -23,7 +23,6 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Date/Calc.pm:${PORTSDIR}/devel/p5-Date-Ca
 
 NO_BUILD=	yes
 USE_PERL5=	yes
-USE_REINPLACE=	yes
 SITE_PERL_INST=	${SITE_PERL:S/${LOCALBASE}/${PREFIX}/}
 
 post-patch:

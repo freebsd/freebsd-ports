@@ -18,7 +18,6 @@ COMMENT=	Quick display of FreeBSD port descriptions
 
 USE_ZIP=	YES
 USE_PYTHON=	YES
-USE_REINPLACE=	YES
 NO_BUILD=	YES
 
 PLIST_FILES=	bin/portell

@@ -16,7 +16,6 @@ MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Marsaglia's Diehard Battery of Tests of Randomness
 
 ALL_TARGET=	diehard
-USE_REINPLACE=	YES
 WRKSRC=		${WRKDIR}/${DISTNAME}
 PLIST_SUB=	DOCSDIR="share/doc/${PORTNAME}" DATADIR="share/${PORTNAME}"
 

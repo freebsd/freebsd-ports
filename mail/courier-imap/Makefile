@@ -20,7 +20,6 @@ BUILD_DEPENDS=	courierauthconfig:${PORTSDIR}/security/courier-authlib-base
 RUN_DEPENDS=	courierauthconfig:${PORTSDIR}/security/courier-authlib-base
 
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

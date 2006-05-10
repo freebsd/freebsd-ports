@@ -18,7 +18,6 @@ COMMENT=	A free library for decoding mpeg-2 and mpeg-1 video streams
 USE_GNOME=	lthack
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 
 CONFIGURE_ARGS=	--enable-shared \

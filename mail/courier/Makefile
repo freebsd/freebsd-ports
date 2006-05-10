@@ -67,7 +67,6 @@ USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
 USE_PERL5=	yes
-USE_REINPLACE=	yes
 USE_SUBMAKE=	yes
 
 .if defined(WITH_RCORDER)

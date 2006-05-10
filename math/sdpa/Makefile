@@ -27,9 +27,7 @@ BUILD_DEPENDS=	${LOCALBASE}/intel_cc_80/bin/icc:${PORTSDIR}/lang/icc
 LIB_DEPENDS=	atlas:${PORTSDIR}/math/atlas
 
 OLDVERSION=	6.2.0
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 .if defined(WITH_SMP)
 LAPACK=		-lalapack_r

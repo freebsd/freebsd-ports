@@ -13,7 +13,6 @@ MASTER_SITES=	http://www.tigr.net/afterstep/download/asbutton/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A dockapp that displays 4 or 9 buttons to run apps of your choice
 
-USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 ALL_TARGET=	asbutton

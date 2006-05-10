@@ -16,8 +16,6 @@ MASTER_SITE_SUBDIR=	perky
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	UTF-8 locales support
 
-USE_REINPLACE=	yes
-
 LANGS=		af_ZA be_BY bg_BG ca_ES cs_CZ da_DK de_AT de_CH de_DE el_GR \
 		en_AU en_CA en_IE en_GB en_NZ en_US es_ES et_EE fi_FI fr_BE \
 		fr_CA fr_CH fr_FR hr_HR hu_HU hy_AM is_IS it_CH it_IT ja_JP \

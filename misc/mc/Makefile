@@ -19,7 +19,6 @@ BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
 

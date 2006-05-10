@@ -16,7 +16,6 @@ MAINTAINER=	markus@FreeBSD.org
 COMMENT=	Records MPEG2 streams directly from your Dbox2 over Ethernet
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-USE_REINPLACE=	yes
 
 PLIST_FILES=	bin/ggrab bin/sserver
 

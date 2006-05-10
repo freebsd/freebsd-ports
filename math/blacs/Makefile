@@ -38,7 +38,6 @@ F77?=	f77
 .if !defined(NO_GNUF77)
 F77EXTRAFLAGS=	-w -fno-globals -fugly-complex
 .endif
-USE_REINPLACE=	yes
 DEBUG_LEVEL=	0
 
 .if defined(WITH_OPTIMIZED_FLAGS)

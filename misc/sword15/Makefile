@@ -21,7 +21,6 @@ COMMENT=	A project framework for manipulating Bible texts
 
 USE_GNOME=	pkgconfig
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--without-conf

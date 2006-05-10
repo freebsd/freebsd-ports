@@ -15,7 +15,6 @@ MAINTAINER=	jharris@widomaker.com
 COMMENT=	Granulate is a program for splitting files in place
 
 PLIST_FILES=	bin/granulate
-USE_REINPLACE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s,^CC,#CC,g ; s,^CFLAGS,#CFLAGS,g" \
 	${WRKSRC}/Makefile

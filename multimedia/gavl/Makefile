@@ -19,7 +19,6 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		samplerate.1:${PORTSDIR}/audio/libsamplerate
 
 GNU_CONFIGURE=	yes
-USE_REINPLACE=		yes
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 

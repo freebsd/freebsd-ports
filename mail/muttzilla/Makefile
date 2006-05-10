@@ -15,8 +15,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mutt MUA plugin for Netscape for use on "mailto:" URLs
 
-USE_REINPLACE=	yes
-
 pre-configure:
 	@${REINPLACE_CMD} \
 		-e "s:/etc/muttzilla.conf:${PREFIX}/etc/muttzilla.conf:g"  \

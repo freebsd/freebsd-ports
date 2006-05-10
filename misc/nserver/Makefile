@@ -16,7 +16,6 @@ COMMENT=	Nserver for the Nokia 9000 and 9110 Communicator
 # Original site http://www.users.globalnet.co.uk/~syrinx/9110/nserver.html
 # doesn't exist anymore
 
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 
 PLIST_FILES=	sbin/nserver

@@ -14,7 +14,6 @@ MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	Automatically process qsecretary confirmation requests
 
 USE_PYTHON=	yes
-USE_REINPLACE=	yes
 
 SUB_FILES=	pkg-message
 

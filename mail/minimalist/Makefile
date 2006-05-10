@@ -17,7 +17,6 @@ COMMENT=	A minimalistic mailing list manager
 
 USE_PERL5_RUN=	yes
 NO_BUILD=	yes
-USE_REINPLACE=	yes
 EXTRA_SUB_FILES=docs/README minimalist.conf-sample minimalist.pl \
 		contrib/minimalist_request.pl
 

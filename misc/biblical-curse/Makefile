@@ -19,7 +19,6 @@ COMMENT=	Fake biblical curse generator
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/src
 USE_PERL5_RUN=	yes
-USE_REINPLACE=	yes
 
 SRC=		${.CURDIR}/src
 

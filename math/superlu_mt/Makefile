@@ -22,7 +22,6 @@ COMMENT=	Routines for performing multithreaded sparse factorization
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libblas.a:${PORTSDIR}/math/blas
 
-USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/SuperLU_MT
 ALL_TARGET=	superlulib
 

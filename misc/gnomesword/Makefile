@@ -24,7 +24,6 @@ BROKEN=		Configure fails
 USE_X_PREFIX=	yes
 INSTALLS_OMF=	yes
 USE_GNOME=	gnomehack gnomeprefix gnometarget gal2 gtkhtml3 intlhack
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

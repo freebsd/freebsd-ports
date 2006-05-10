@@ -13,8 +13,6 @@ MASTER_SITES=	http://www.inter7.com/eps/
 MAINTAINER=	ismail@EnderUNIX.org
 COMMENT=	EPS is a Email Parsing System
 
-USE_REINPLACE=	yes
-
 PORTDOCS=	howto
 
 MAKE_ENV+=	DEFS="${CFLAGS}"

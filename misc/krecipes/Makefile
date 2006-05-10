@@ -16,7 +16,6 @@ COMMENT=	Recipe database for cooks
 
 USE_KDELIBS_VER=3
 USE_AUTOTOOLS=	libtool:15
-USE_REINPLACE=	yes
 
 OPTIONS=	SQLITE "Support for SQLite backend" on \
 		MYSQL "Support for MySQL backend" off \

@@ -18,7 +18,6 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gnome/__init__.py:${PORTSDIR}/x11-tool
 USE_X_PREFIX=	yes
 USE_PYTHON=	yes
 NO_BUILD=	yes
-USE_REINPLACE=	yes
 
 do-patch:
 	@${REINPLACE_CMD} 's|/usr/bin/python|${PYTHON_CMD}|' ${WRKSRC}/*.py

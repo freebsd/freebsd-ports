@@ -16,7 +16,6 @@ MASTER_SITE_SUBDIR=	apps/math/calc
 MAINTAINER=	ijliao@FreeBSD.org
 COMMENT=	A shell calculator
 
-USE_REINPLACE=	yes
 USE_GETOPT_LONG=yes
 MAKE_ENV=	CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="${LDFLAGS}"

@@ -14,8 +14,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	oz@nixil.net
 COMMENT=	A highly configureble, secure, auto reply software
 
-USE_REINPLACE=	yes
-
 MAN1=		rom.1
 
 post-patch:

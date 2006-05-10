@@ -21,7 +21,6 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/numarray/__init__.py:${PORTSDIR}/math/py-numar
 USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_GETOPT_LONG=	yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 MAKE_ARGS=	PREFIX="${PREFIX}" \
 		BIN_PREFIX="${PREFIX}/bin" \

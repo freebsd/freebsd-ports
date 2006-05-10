@@ -17,7 +17,6 @@ COMMENT=	The GNU spreadsheet for X11 and terminals
 
 USE_PERL5_BUILD=	yes
 USE_BISON=	yes
-USE_REINPLACE=	yes
 USE_AUTOTOOLS=	autoconf:213
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib"

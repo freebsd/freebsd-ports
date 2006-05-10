@@ -19,7 +19,6 @@ COMMENT=	A collaborative, networked system to detect and block spam
 USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-USE_REINPLACE=		yes
 
 post-patch:
 	${REINPLACE_CMD} -e "s,/usr/bin/python2,${PYTHON_CMD}," \

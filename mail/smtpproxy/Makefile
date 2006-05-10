@@ -13,7 +13,6 @@ MASTER_SITES=	http://quietsche-entchen.de/cgi-bin/wiki.cgi/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SMTP proxy server
 
-USE_REINPLACE=	yes
 MAKEFILE=	makefile
 DISABLE_SIZE=	yes
 

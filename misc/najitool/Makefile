@@ -16,8 +16,6 @@ COMMENT=	A tool that generates, converts, and filters files
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libnaji.a:${PORTSDIR}/devel/libnaji
 
-USE_REINPLACE=	yes
-
 MAKEFILE=	makefile
 
 DISTVERSIONSUFFIX=	.src

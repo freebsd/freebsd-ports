@@ -17,7 +17,6 @@ MAINTAINER=		dinoex@FreeBSD.org
 COMMENT=		Controller for ISDN TK-Anlage (PBX) made by Istec
 
 USE_ZIP=		yes
-USE_REINPLACE=		yes
 #USE_GCC=		2.95
 NO_WRKSUBDIR=		yes
 

@@ -14,7 +14,6 @@ MAINTAINER=	g.gonter@ieee.org
 COMMENT=	Mail to SMS converter
 
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 
 MAN1=		mail2sms.1
 MAN5=		mail2sms.5

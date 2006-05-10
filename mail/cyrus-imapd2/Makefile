@@ -33,7 +33,6 @@ USE_RC_SUBR=	imapd.sh
 
 USE_OPENSSL=	yes
 USE_PERL5=	yes
-USE_REINPLACE=	YES
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--with-cyrus-prefix=${PREFIX}/cyrus \
 		--with-cyrus-user=${CYRUS_USER} \

@@ -17,7 +17,6 @@ COMMENT=	A free spreadsheet with graphical user interface
 PLIST_FILES=	bin/abs
 USE_XLIB=	yes
 USE_XPM=	yes
-USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/abs-src-0.908
 
 post-patch:

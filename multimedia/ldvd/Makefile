@@ -27,7 +27,6 @@ RUN_DEPENDS=	transcode:${PORTSDIR}/multimedia/transcode \
 
 USE_BZIP2=	yes
 USE_PERL=	yes
-USE_REINPLACE=	yes
 DATA=		de.lang en.lang
 PORTDOCS=	AUTHORS HISTORY README.de README.en
 PLIST_FILES=    bin/ldvd bin/ldvd-ls etc/ldvd.conf.sample \

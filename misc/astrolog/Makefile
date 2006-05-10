@@ -22,7 +22,6 @@ DISTFILES=	${EXTRACT_ONLY} ${EPHEM}
 MAINTAINER=	ache@FreeBSD.org
 COMMENT=	An astrology program for X11 and alpha-numeric terminals
 
-USE_REINPLACE=	yes
 .if !defined(WITHOUT_X11)
 USE_XLIB=	yes
 MAKE_ARGS=	-DX11

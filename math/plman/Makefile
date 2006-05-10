@@ -21,7 +21,6 @@ RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 NO_BUILD=	yes
 
 USE_JAVA=	yes
-USE_REINPLACE=	yes
 USE_ZIP=	yes
 
 JAVA_VERSION=	1.4+

@@ -17,7 +17,6 @@ COMMENT=	XBox xdvdfs iso extraction utility
 
 LIB_DEPENDS=	ftp.3:${PORTSDIR}/ftp/ftplib
 
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

@@ -17,7 +17,6 @@ DISTNAME=	${PORTNAME}4-${PORTVERSION}
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	A library for MPEG TS and DVB PSI tables decoding and generation
 
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--enable-release

@@ -21,7 +21,6 @@ LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 RUN_DEPENDS+=	uvscan:${PORTSDIR}/security/vscan
 .endif
 
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_GETOPT_LONG=yes
 MAKE_ENV=	_LDFLAGS="${LDFLAGS}"

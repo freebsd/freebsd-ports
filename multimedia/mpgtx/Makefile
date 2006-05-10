@@ -16,7 +16,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	A command line MPEG audio/video/system file toolbox
 
-USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 ALL_TARGET=	default

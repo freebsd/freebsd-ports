@@ -16,7 +16,6 @@ COMMENT=	Converts telephone number to combinations of valid words
 
 USE_RUBY=	yes
 NO_BUILD=	yes
-USE_REINPLACE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^#!/usr/bin/ruby|#!${RUBY}|; \

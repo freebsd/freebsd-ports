@@ -18,7 +18,6 @@ COMMENT=	Arbitrary-precision calculator for Emacs
 RUN_DEPENDS=	emacs:${PORTSDIR}/editors/emacs
 BUILD_DEPENDS=	emacs:${PORTSDIR}/editors/emacs
 
-USE_REINPLACE=	yes
 INFO=		calc
 
 post-patch:

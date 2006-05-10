@@ -20,7 +20,6 @@ RUN_DEPENDS=	mpeg2enc:${PORTSDIR}/multimedia/mjpegtools \
 		mplayer:${PORTSDIR}/multimedia/mplayer \
 		transcode:${PORTSDIR}/multimedia/transcode
 
-USE_REINPLACE=	yes
 NO_BUILD=	yes
 PLIST_FILES=	bin/mkxvcd
 

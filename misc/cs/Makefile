@@ -19,7 +19,6 @@ COMMENT=	Cross Stitch software
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/PIL/Image.py:${PORTSDIR}/graphics/py-imaging
 
-USE_REINPLACE=	yes
 USE_PYTHON=	yes
 NO_BUILD=	yes
 

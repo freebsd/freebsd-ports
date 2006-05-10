@@ -15,8 +15,6 @@ COMMENT=	Create/Convert/Listen to ringtones and logos for mobile phones
 
 RESTRICTED=	no-commercial-use
 
-USE_REINPLACE=	yes
-
 pre-build:
 	@${REINPLACE_CMD} -e 's|^FLAGS|FLAGS?|' ${WRKSRC}/src/Makefile
 

@@ -16,7 +16,6 @@ MAINTAINER=	psh@iki.fi
 COMMENT=	Programmer's calculator
 
 USE_GNOME=	pygtk2
-USE_REINPLACE=	yes
 USE_PYTHON=	yes
 NO_BUILD=	yes
 MAN1=		clarence.1

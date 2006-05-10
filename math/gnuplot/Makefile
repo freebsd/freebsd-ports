@@ -15,7 +15,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	A command-driven interactive function plotting program
 
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--without-tutorial \

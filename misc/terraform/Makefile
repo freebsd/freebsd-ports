@@ -20,7 +20,6 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libtrio.a:${PORTSDIR}/devel/trio
 
 USE_X_PREFIX=	yes
 USE_BISON=	yes
-USE_REINPLACE=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomeprint
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

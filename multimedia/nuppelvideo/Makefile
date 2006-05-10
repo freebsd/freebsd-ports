@@ -20,7 +20,6 @@ RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 
 USE_XLIB=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 
 PORTDOCS=	README
 

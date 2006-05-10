@@ -32,7 +32,6 @@ CONFLICTS=	sympa-4*
 
 DB_TYPE?=mysql
 
-USE_REINPLACE=	yes
 PORTDOCS=	*
 
 .if defined(WITHOUT_NLS)

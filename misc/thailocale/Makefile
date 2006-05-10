@@ -13,7 +13,6 @@ MASTER_SITES=	http://www.usablelabs.com/download/
 MAINTAINER=	piyawat@usablelabs.com
 COMMENT=	A locale for Thai in Thailand, TIS-620 character set
 
-USE_REINPLACE=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
 

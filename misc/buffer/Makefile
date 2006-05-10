@@ -16,8 +16,6 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	jonny@jonny.eng.br
 COMMENT=	Buffer sporadic I/O for faster tape and pipe throughput
 
-USE_REINPLACE=	yes
-
 MAN1=		buffer.1
 PLIST_FILES=	bin/buffer
 

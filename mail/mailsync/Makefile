@@ -22,7 +22,6 @@ USE_GMAKE=	yes
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-c-client=${LOCALBASE}
-USE_REINPLACE=	yes
 
 MAN1=		mailsync.1
 

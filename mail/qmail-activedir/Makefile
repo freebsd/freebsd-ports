@@ -18,7 +18,6 @@ USE_QMAIL_RUN=	yes
 SUB_FILES=	pkg-message
 SUB_LIST+=	QMAIL_PREFIX=${QMAIL_PREFIX}
 USE_OPENLDAP=	yes
-USE_REINPLACE=	yes
 
 BINARIES=	checkadpassword qmail-adgetpw create_alias_files
 

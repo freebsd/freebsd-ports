@@ -31,7 +31,6 @@ RUN_DEPENDS=	\
 
 IGNORE=		has an incomplete dependency list
 
-USE_REINPLACE=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}
 

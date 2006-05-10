@@ -22,7 +22,6 @@ LIB_DEPENDS=	openquicktime.0:${PORTSDIR}/multimedia/openquicktime
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_SDL=	sdl
-USE_REINPLACE=	yes
 MAKE_ARGS=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

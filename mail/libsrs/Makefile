@@ -17,7 +17,6 @@ COMMENT=	Sender Rewriting Scheme (SRS) library and client
 USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}.3
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 USE_OPENSSL=	yes
 INSTALLS_SHLIB=	yes
 LIBSRS_REV=	1

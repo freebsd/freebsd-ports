@@ -19,7 +19,6 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libccm.so:${PORTSDIR}/math/ccmath
 RUN_DEPENDS=	${LOCALBASE}/lib/libccm.so:${PORTSDIR}/math/ccmath
 
 USE_GMAKE=	yes
-USE_REINPLACE=	yes	# to avoid cumbersome patching: see below
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

@@ -29,7 +29,6 @@ OPTIONS=	BROKEN_PARAMETER "Detect unwanted extensions properly" off \
 			SPAM_STATS "Add spam statistics to messagewallstats" off
 WRKSRC=		${WRKDIR}/messagewall-${PORTVERSION}
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 
 .include <bsd.port.pre.mk>
 

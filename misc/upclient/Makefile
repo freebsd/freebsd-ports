@@ -21,7 +21,6 @@ COMMENT=	The Uptimes project client
 #
 
 USE_GETTEXT=	yes
-USE_REINPLACE=	yes
 USE_RC_SUBR=	yes
 ALL_TARGET=	bsd
 BUILD_WRKSRC=	${WRKSRC}/src

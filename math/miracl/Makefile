@@ -17,7 +17,6 @@ MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Multiprecision Integer and Rational Arithmetic C/C++ Library
 
 USE_ZIP=	yes
-USE_REINPLACE=	yes
 NO_WRKSUBDIR=	ys
 
 EXTRACT_BEFORE_ARGS=	-j -aa -L

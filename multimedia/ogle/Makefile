@@ -20,7 +20,6 @@ LIB_DEPENDS=	a52-devel.0:${PORTSDIR}/audio/liba52-devel \
 		mad.2:${PORTSDIR}/audio/libmad \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 
-USE_REINPLACE=	yes
 USE_SUBMAKE=	yes
 USE_XLIB=	yes
 USE_GMAKE=	yes

@@ -24,7 +24,6 @@ COMMENT=	Batch mail retrieval utility for IMAP/POP2/POP3/ETRN/ODMR
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root.crt:${PORTSDIR}/security/ca-roots
 
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes

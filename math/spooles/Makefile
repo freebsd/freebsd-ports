@@ -31,7 +31,6 @@ BUILD_DEPENDS=	${LOCALBASE}/mpich/lib/libmpich.a:${PORTSDIR}/net/mpich
 .endif
 
 USE_GMAKE=	yes	#BSD make gives problems here
-USE_REINPLACE=	yes
 NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile
 ALL_TARGET=	global

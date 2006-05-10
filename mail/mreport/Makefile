@@ -13,7 +13,6 @@ MASTER_SITES=	http://yenigul.net/mreport/
 MAINTAINER=	ismail@EnderUNIX.org
 COMMENT=	Sendmail logfile summary tool
 
-USE_REINPLACE=	yes
 ALL_TARGET=	ALL
 MAN8=		mreport.8
 PLIST_FILES=	sbin/mreport

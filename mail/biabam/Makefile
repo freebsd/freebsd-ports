@@ -15,7 +15,6 @@ COMMENT=	A command-line attachment mailer
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2
 
-USE_REINPLACE=	yes
 NO_BUILD=	yes
 PLIST_FILES=	bin/biabam
 

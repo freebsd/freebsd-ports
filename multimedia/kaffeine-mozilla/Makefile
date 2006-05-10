@@ -21,7 +21,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include"
 USE_XLIB=	yes
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
 
 post-patch:
 	${REINPLACE_CMD} -e "s,prefix)/plugins,prefix)/lib/browser_plugins," ${WRKSRC}/src/Makefile.in

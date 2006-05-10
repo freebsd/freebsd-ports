@@ -15,7 +15,6 @@ DISTNAME=	Sigit-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool to create random signatures
 
-USE_REINPLACE=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
 WRKSRC=	${WRKDIR}/sigit-${PORTVERSION}

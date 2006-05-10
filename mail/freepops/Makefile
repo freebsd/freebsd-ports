@@ -22,7 +22,6 @@ BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison
 MAN1=		freepopsd.1
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
-USE_REINPLACE=	yes
 CONFIGURE_SCRIPT=	configure.sh
 CONFIGURE_ARGS=	fbsd
 CFLAGS+=	-I${OPENSSLBASE}/include ${PTHREAD_CFLAGS}

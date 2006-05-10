@@ -17,7 +17,6 @@ DISTNAME=	${PORTNAME:L}-${PORTVERSION:S/.p/pre/}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNOME Subtitle Editor is a tool for editing/converting video subtitles
 
-USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomelibs

@@ -15,8 +15,6 @@ COMMENT=	procmail spam filter written in ML using Bayesian classification
 
 BUILD_DEPENDS=	ocaml:${PORTSDIR}/lang/ocaml
 
-USE_REINPLACE=	yes
-
 MAN1=	spamoracle.1
 MAN5=	spamoracle.conf.5
 

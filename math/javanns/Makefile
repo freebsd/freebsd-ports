@@ -24,7 +24,6 @@ LIBSDIR?=	${DATADIR}/lib
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
-USE_REINPLACE=	yes
 
 post-extract:
 	# Permissions in the tar file are whacked

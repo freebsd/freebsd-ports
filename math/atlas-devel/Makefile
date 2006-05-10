@@ -26,7 +26,6 @@ CONFLICTS=	elmer-mathlibs-1*
 USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/ATLAS
 INSTALLS_SHLIB=	yes
-USE_REINPLACE=	yes
 
 .include <bsd.port.pre.mk>
 

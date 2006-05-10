@@ -35,7 +35,6 @@ RUN_DEPENDS+=	${LOCALBASE}/www/cgi-bin:${PORTSDIR}/${APACHE_PORT}
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-USE_REINPLACE=	yes
 USE_PERL5_RUN=	yes
 
 NO_BUILD=	yes

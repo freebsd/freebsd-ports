@@ -30,7 +30,6 @@ TBVER!=		cd ../thunderbird && ${MAKE} -V PORTVERSION
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	libgnome
-USE_REINPLACE=	yes
 MAKE_ARGS+=	MOZILLA_PLATFORM=tbird TBVER=${TBVER}
 
 FILENAME=	mozTrayBiff-${PORTVERSION}-tb${TBVER}.xpi

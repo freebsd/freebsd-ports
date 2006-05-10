@@ -26,7 +26,6 @@ LIB_DEPENDS=	xvidcore:${PORTSDIR}/multimedia/xvid \
 		dvdread:${PORTSDIR}/multimedia/libdvdread \
 		enchant:${PORTSDIR}/textproc/enchant
 
-USE_REINPLACE=	yes
 USE_GNOME=	gtk20 glib20 gconf2 libglade2
 GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes

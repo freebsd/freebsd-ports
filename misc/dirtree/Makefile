@@ -20,7 +20,6 @@ LIB_DEPENDS=	LeoArg.2:${PORTSDIR}/devel/leoarg
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lintl"
-USE_REINPLACE=	yes
 USE_GETTEXT=	yes
 
 .if defined(WITHOUT_NLS)

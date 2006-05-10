@@ -16,7 +16,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Berkeley POP 3 server (now maintained by Qualcomm)
 
 USE_AUTOTOOLS=	autoconf:259
-USE_REINPLACE=	yes
 USE_OPENSSL=	yes
 CONFIGURE_ENV=	LIBS="-lcrypt -lmd -lutil -L${LOCALBASE}/lib" \
 		OS_DEFS="-DSETPROCTITLE ${OS_DEFS}"

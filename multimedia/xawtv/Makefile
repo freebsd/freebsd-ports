@@ -33,7 +33,6 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_XPM=	yes
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
 CONFIGURE_ENV=	LIBS="-L${PREFIX}/lib -L${LOCALBASE}/lib" \
 		CFLAGS="-I${WRKSRC}/common"
 MAKE_ENV=	verbose=yes

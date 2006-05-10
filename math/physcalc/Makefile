@@ -18,7 +18,6 @@ EXTRACT_BEFORE_ARGS=	-aq
 EXTRACT_AFTER_ARGS=	-x physcalc -d ${WRKDIR}
 
 NO_WRKSUBDIR=	yes
-USE_REINPLACE=	yes
 USE_ZIP=	yes
 
 DEFS=		-DSHAREDIR="\"${PREFIX}/share/physcalc/\""

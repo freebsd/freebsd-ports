@@ -17,7 +17,6 @@ COMMENT=	A non-context email filter
 BUILD_DEPENDS=	${LOCALBASE}/lib/libbind_r.a:${PORTSDIR}/dns/bind84
 
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 
 MAKE_ENV+=	PTHREAD_LIBS=${PTHREAD_LIBS}
 

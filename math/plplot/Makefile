@@ -20,7 +20,6 @@ LIB_DEPENDS=	unicode.0:${PORTSDIR}/devel/libunicode \
 		qhull.5:${PORTSDIR}/math/qhull
 
 USE_AUTOTOOLS=	libltdl:15
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

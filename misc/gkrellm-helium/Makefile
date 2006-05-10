@@ -21,7 +21,6 @@ RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 
 PLIST_FILES=	libexec/gkrellm2/plugins/helium.so
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
 
 CFLAGS+=	-fPIC -I${LOCALBASE}/include
 MAKE_ARGS=	CFLAGS="${CFLAGS}"

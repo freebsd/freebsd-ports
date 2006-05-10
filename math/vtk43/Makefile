@@ -26,7 +26,6 @@ COMMENT?=	The Visualization Toolkit shared libs
 BROKEN=		Incorrect pkg-plist
 
 LATEST_LINK=	vtk43
-USE_REINPLACE=	yes
 
 PREFIX=		${LOCALBASE}/vtk43
 

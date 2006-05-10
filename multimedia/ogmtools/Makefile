@@ -16,7 +16,6 @@ COMMENT=	Tools to extract from/get info about/create OGG media streams
 LIB_DEPENDS=	vorbis.3:${PORTSDIR}/audio/libvorbis
 
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ogg-prefix=${LOCALBASE} \
   		--with-vorbis-prefix=${LOCALBASE}

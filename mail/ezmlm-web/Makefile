@@ -25,7 +25,6 @@ RUN_DEPENDS=	ezmlm-idx:${PORTSDIR}/mail/ezmlm-idx \
 CGI_BIN?=	www/cgi-bin.default
 
 USE_PERL5=	YES
-USE_REINPLACE=	YES
 PLIST_SUB=	CGI_BIN=${CGI_BIN}
 
 EXAMPLES=	htaccess.sample webusers.sample index.c

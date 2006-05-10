@@ -14,7 +14,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to generate a procmailrc file with m4 macros
 
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 
 NO_BUILD=	yes
 

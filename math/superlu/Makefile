@@ -23,7 +23,6 @@ COMMENT=	A library of routines for performing sparse factorization
 LIB_DEPENDS=    atlas:${PORTSDIR}/math/atlas
 
 P_VERSION=	3.0
-USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/SuperLU_${P_VERSION}
 ALL_TARGET=	superlulib
 

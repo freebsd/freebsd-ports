@@ -29,7 +29,6 @@ USE_AUTOTOOLS=  libtool:15
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/kdemultimedia-${PORTVERSION}
 INSTALLS_SHLIB=	yes
-USE_REINPLACE=	yes
 
 pre-configure:
 	${REINPLACE_CMD} -e 's/-lc_r/${PTHREAD_LIBS}/g' \

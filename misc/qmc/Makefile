@@ -15,7 +15,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quine-McClusky process simplification tool
 
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 
 PLIST_FILES=	bin/qmc
 

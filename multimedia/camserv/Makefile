@@ -25,7 +25,6 @@ ONLY_FOR_ARCHS=	i386 alpha
 
 USE_X_LIB=	yes
 USE_AUTOTOOLS=	autoconf:259 libtool:15
-USE_REINPLACE=	yes
 
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include \
