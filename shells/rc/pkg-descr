@@ -5,6 +5,4 @@ Bourne shell, but with a much cleaner syntax.
 See the end of the man page, under "INCOMPATABILITIES" for (known?)
 differences from the "real" rc.
 
-WWW: http://www.star.le.ac.uk/~tjg/rc/
-
 Scott Kenney <saken@hotel.rmta.org>
