@@ -1,0 +1,16 @@
+**********************************************************************
+
+  eyeOS has been installed in %%EYEDIR%%
+
+  Make it available via your webserver and visit
+  http://path/to/eyeOS/index.php to complete the installation.
+
+  Additional documentation is available in
+  %%DOCSDIR%%
+
+  Please take your time to read
+  %%DOCSDIR%%/SECURITY MANUAL
+
+  Enjoy eyeOS!
+
+**********************************************************************

@@ -1,0 +1,802 @@
+%%PORTDOCS%%%%DOCSDIR%%/QUICK INSTALL MANUAL
+%%PORTDOCS%%%%DOCSDIR%%/QUICK UPGRADE MANUAL
+%%PORTDOCS%%%%DOCSDIR%%/SECURITY MANUAL
+%%PORTDOCS%%%%DOCSDIR%%/USER MANUAL/ENGLISH
+%%PORTDOCS%%%%DOCSDIR%%/USER MANUAL/JAPANESE
+%%PORTDOCS%%%%DOCSDIR%%/USER MANUAL/POLISH
+%%PORTDOCS%%%%DOCSDIR%%/USER MANUAL/PORTUGUESE
+%%PORTDOCS%%%%DOCSDIR%%/USER MANUAL/SPANISH
+%%PORTDOCS%%%%DOCSDIR%%/gpl-license.txt
+%%EYEDIR%%/apps/eyeApps.eyeapp/aplic.php
+%%EYEDIR%%/apps/eyeApps.eyeapp/ico_a.png
+%%EYEDIR%%/apps/eyeApps.eyeapp/ico_b.png
+%%EYEDIR%%/apps/eyeApps.eyeapp/ico_c.png
+%%EYEDIR%%/apps/eyeApps.eyeapp/index.htm
+%%EYEDIR%%/apps/eyeApps.eyeapp/lang.php
+%%EYEDIR%%/apps/eyeApps.eyeapp/propietats.xml
+%%EYEDIR%%/apps/eyeBoard.eyeapp/aplic.php
+%%EYEDIR%%/apps/eyeBoard.eyeapp/css.css
+%%EYEDIR%%/apps/eyeBoard.eyeapp/ico_a.png
+%%EYEDIR%%/apps/eyeBoard.eyeapp/ico_b.png
+%%EYEDIR%%/apps/eyeBoard.eyeapp/ico_c.png
+%%EYEDIR%%/apps/eyeBoard.eyeapp/index.htm
+%%EYEDIR%%/apps/eyeBoard.eyeapp/lang.php
+%%EYEDIR%%/apps/eyeBoard.eyeapp/propietats.xml
+%%EYEDIR%%/apps/eyeCalc.eyeapp/aplic.php
+%%EYEDIR%%/apps/eyeCalc.eyeapp/gfx/back.png
+%%EYEDIR%%/apps/eyeCalc.eyeapp/gfx/coma.png
+%%EYEDIR%%/apps/eyeCalc.eyeapp/gfx/div.png
+%%EYEDIR%%/apps/eyeCalc.eyeapp/gfx/igual.png
+%%EYEDIR%%/apps/eyeCalc.eyeapp/gfx/menys.png
+%%EYEDIR%%/apps/eyeCalc.eyeapp/gfx/mes.png
+%%EYEDIR%%/apps/eyeCalc.eyeapp/gfx/mult.png
+%%EYEDIR%%/apps/eyeCalc.eyeapp/gfx/num0.png
+%%EYEDIR%%/apps/eyeCalc.eyeapp/gfx/num1.png
+%%EYEDIR%%/apps/eyeCalc.eyeapp/gfx/num2.png
+%%EYEDIR%%/apps/eyeCalc.eyeapp/gfx/num3.png
+%%EYEDIR%%/apps/eyeCalc.eyeapp/gfx/num4.png
+%%EYEDIR%%/apps/eyeCalc.eyeapp/gfx/num5.png
+%%EYEDIR%%/apps/eyeCalc.eyeapp/gfx/num6.png
+%%EYEDIR%%/apps/eyeCalc.eyeapp/gfx/num7.png
+%%EYEDIR%%/apps/eyeCalc.eyeapp/gfx/num8.png
+%%EYEDIR%%/apps/eyeCalc.eyeapp/gfx/num9.png
+%%EYEDIR%%/apps/eyeCalc.eyeapp/gfx/off.png
+%%EYEDIR%%/apps/eyeCalc.eyeapp/gfx/percent.png
+%%EYEDIR%%/apps/eyeCalc.eyeapp/gfx/r.png
+%%EYEDIR%%/apps/eyeCalc.eyeapp/gfx/s.png
+%%EYEDIR%%/apps/eyeCalc.eyeapp/ico_a.png
+%%EYEDIR%%/apps/eyeCalc.eyeapp/ico_b.png
+%%EYEDIR%%/apps/eyeCalc.eyeapp/ico_c.png
+%%EYEDIR%%/apps/eyeCalc.eyeapp/jscript.js
+%%EYEDIR%%/apps/eyeCalc.eyeapp/lang.php
+%%EYEDIR%%/apps/eyeCalc.eyeapp/propietats.xml
+%%EYEDIR%%/apps/eyeCalendar.eyeapp/aplic.php
+%%EYEDIR%%/apps/eyeCalendar.eyeapp/calendar.css
+%%EYEDIR%%/apps/eyeCalendar.eyeapp/calendar.js
+%%EYEDIR%%/apps/eyeCalendar.eyeapp/ico_a.png
+%%EYEDIR%%/apps/eyeCalendar.eyeapp/ico_b.png
+%%EYEDIR%%/apps/eyeCalendar.eyeapp/ico_c.png
+%%EYEDIR%%/apps/eyeCalendar.eyeapp/index.htm
+%%EYEDIR%%/apps/eyeCalendar.eyeapp/lang.php
+%%EYEDIR%%/apps/eyeCalendar.eyeapp/propietats.xml
+%%EYEDIR%%/apps/eyeEdit.eyeapp/aplic.php
+%%EYEDIR%%/apps/eyeEdit.eyeapp/ico_a.png
+%%EYEDIR%%/apps/eyeEdit.eyeapp/ico_b.png
+%%EYEDIR%%/apps/eyeEdit.eyeapp/ico_c.png
+%%EYEDIR%%/apps/eyeEdit.eyeapp/index.htm
+%%EYEDIR%%/apps/eyeEdit.eyeapp/lang.php
+%%EYEDIR%%/apps/eyeEdit.eyeapp/propietats.xml
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/blank.htm
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/langs/en.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/langs/readme.txt
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/license.txt
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/_template/editor_plugin.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/_template/editor_plugin_src.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/_template/images/template.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/_template/langs/en.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/_template/popup.htm
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/_template/readme.txt
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/advhr/css/advhr.css
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/advhr/editor_plugin.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/advhr/editor_plugin_src.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/advhr/images/advhr.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/advhr/jscripts/rule.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/advhr/langs/en.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/advhr/readme.txt
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/advhr/rule.htm
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/advimage/css/advimage.css
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/advimage/editor_plugin.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/advimage/editor_plugin_src.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/advimage/image.htm
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/advimage/images/sample.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/advimage/jscripts/functions.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/advimage/langs/en.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/advimage/readme.txt
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/advlink/css/advlink.css
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/advlink/editor_plugin.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/advlink/editor_plugin_src.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/advlink/jscripts/functions.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/advlink/langs/en.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/advlink/link.htm
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/advlink/readme.txt
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/autosave/editor_plugin.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/autosave/editor_plugin_src.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/autosave/langs/en.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/autosave/readme.txt
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/cleanup/editor_plugin.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/cleanup/editor_plugin_src.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/cleanup/readme.txt
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/contextmenu/css/contextmenu.css
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/contextmenu/editor_plugin.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/contextmenu/editor_plugin_src.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/contextmenu/images/spacer.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/contextmenu/readme.txt
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/directionality/editor_plugin.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/directionality/editor_plugin_src.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/directionality/images/ltr.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/directionality/images/rtl.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/directionality/langs/en.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/directionality/readme.txt
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/emotions/editor_plugin.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/emotions/editor_plugin_src.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/emotions/emotions.htm
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/emotions/images/emotions.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/emotions/images/readme.txt
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/emotions/images/smiley-cool.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/emotions/images/smiley-cry.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/emotions/images/smiley-embarassed.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/emotions/images/smiley-foot-in-mouth.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/emotions/images/smiley-frown.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/emotions/images/smiley-innocent.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/emotions/images/smiley-kiss.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/emotions/images/smiley-laughing.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/emotions/images/smiley-money-mouth.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/emotions/images/smiley-sealed.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/emotions/images/smiley-smile.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/emotions/images/smiley-surprised.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/emotions/images/smiley-tongue-out.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/emotions/images/smiley-undecided.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/emotions/images/smiley-wink.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/emotions/images/smiley-yell.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/emotions/jscripts/functions.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/emotions/langs/en.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/emotions/readme.txt
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/flash/css/content.css
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/flash/css/flash.css
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/flash/editor_plugin.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/flash/editor_plugin_src.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/flash/flash.htm
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/flash/images/flash.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/flash/jscripts/flash.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/flash/langs/en.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/flash/readme.txt
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/fullpage/blank.htm
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/fullpage/css/fullpage.css
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/fullpage/editor_plugin.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/fullpage/editor_plugin_src.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/fullpage/fullpage.htm
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/fullpage/images/add.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/fullpage/images/fullpage.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/fullpage/images/move_down.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/fullpage/images/move_up.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/fullpage/images/remove.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/fullpage/jscripts/fullpage.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/fullpage/langs/en.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/fullscreen/editor_plugin.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/fullscreen/editor_plugin_src.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/fullscreen/fullscreen.htm
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/fullscreen/images/fullscreen.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/fullscreen/langs/en.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/fullscreen/readme.txt
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/iespell/editor_plugin.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/iespell/editor_plugin_src.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/iespell/images/iespell.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/iespell/langs/en.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/iespell/readme.txt
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/inlinepopups/css/inlinepopup.css
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/inlinepopups/editor_plugin.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/inlinepopups/editor_plugin_src.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/inlinepopups/images/spacer.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/inlinepopups/images/window_close.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/inlinepopups/images/window_maximize.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/inlinepopups/images/window_minimize.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/inlinepopups/images/window_resize.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/inlinepopups/jscripts/mcwindows.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/inlinepopups/readme.txt
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/insertdatetime/editor_plugin.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/insertdatetime/editor_plugin_src.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/insertdatetime/images/insertdate.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/insertdatetime/images/inserttime.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/insertdatetime/langs/en.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/insertdatetime/readme.txt
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/noneditable/css/noneditable.css
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/noneditable/editor_plugin.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/noneditable/editor_plugin_src.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/noneditable/readme.txt
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/paste/blank.htm
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/paste/css/blank.css
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/paste/css/pasteword.css
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/paste/editor_plugin.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/paste/editor_plugin_src.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/paste/images/pastetext.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/paste/images/pasteword.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/paste/images/selectall.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/paste/jscripts/pastetext.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/paste/jscripts/pasteword.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/paste/langs/en.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/paste/pastetext.htm
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/paste/pasteword.htm
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/paste/readme.txt
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/preview/editor_plugin.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/preview/editor_plugin_src.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/preview/example.html
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/preview/images/preview.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/preview/langs/en.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/preview/readme.txt
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/print/editor_plugin.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/print/editor_plugin_src.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/print/images/print.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/print/langs/en.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/print/readme.txt
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/readme.txt
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/save/editor_plugin.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/save/editor_plugin_src.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/save/images/save.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/save/langs/en.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/save/readme.txt
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/searchreplace/editor_plugin.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/searchreplace/editor_plugin_src.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/searchreplace/images/replace.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/searchreplace/images/search.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/searchreplace/jscripts/replace.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/searchreplace/jscripts/search.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/searchreplace/langs/en.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/searchreplace/readme.txt
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/searchreplace/replace.htm
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/searchreplace/search.htm
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/table/cell.htm
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/table/css/cell.css
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/table/css/row.css
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/table/css/table.css
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/table/editor_plugin.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/table/editor_plugin_src.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/table/images/buttons.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/table/images/table.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/table/images/table_cell_props.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/table/images/table_delete.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/table/images/table_delete_col.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/table/images/table_delete_row.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/table/images/table_insert_col_after.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/table/images/table_insert_col_before.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/table/images/table_insert_row_after.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/table/images/table_insert_row_before.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/table/images/table_merge_cells.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/table/images/table_row_props.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/table/images/table_split_cells.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/table/jscripts/cell.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/table/jscripts/merge_cells.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/table/jscripts/row.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/table/jscripts/table.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/table/langs/en.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/table/merge_cells.htm
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/table/readme.txt
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/table/row.htm
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/table/table.htm
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/zoom/editor_plugin.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/zoom/editor_plugin_src.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/zoom/readme.txt
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/about.htm
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/anchor.htm
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/charmap.htm
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/color_picker.htm
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/css/editor_content.css
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/css/editor_popup.css
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/css/editor_ui.css
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/docs/en/about.htm
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/docs/en/common_buttons.htm
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/docs/en/create_accessible_content.htm
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/docs/en/images/insert_anchor_window.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/docs/en/images/insert_image_window.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/docs/en/images/insert_link_window.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/docs/en/images/insert_table_window.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/docs/en/index.htm
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/docs/en/insert_anchor_button.htm
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/docs/en/insert_image_button.htm
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/docs/en/insert_link_button.htm
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/docs/en/insert_table_button.htm
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/docs/en/style.css
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/editor_template.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/editor_template_src.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/image.htm
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/images/anchor.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/images/anchor_symbol.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/images/backcolor.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/images/bold.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/images/bold_de_se.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/images/bold_es.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/images/bold_fr.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/images/bold_ru.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/images/bold_tw.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/images/browse.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/images/bullist.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/images/button_menu.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/images/buttons.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/images/cancel_button_bg.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/images/charmap.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/images/cleanup.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/images/close.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/images/code.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/images/color.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/images/copy.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/images/custom_1.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/images/cut.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/images/forecolor.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/images/help.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/images/hr.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/images/image.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/images/indent.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/images/insert_button_bg.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/images/italic.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/images/italic_de_se.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/images/italic_es.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/images/italic_ru.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/images/italic_tw.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/images/justifycenter.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/images/justifyfull.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/images/justifyleft.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/images/justifyright.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/images/link.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/images/menu_check.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/images/newdocument.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/images/numlist.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/images/opacity.png
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/images/outdent.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/images/paste.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/images/redo.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/images/removeformat.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/images/separator.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/images/spacer.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/images/statusbar_resize.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/images/strikethrough.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/images/sub.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/images/sup.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/images/underline.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/images/underline_es.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/images/underline_fr.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/images/underline_ru.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/images/underline_tw.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/images/undo.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/images/unlink.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/images/visualaid.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/images/xp/tab_bg.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/images/xp/tab_end.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/images/xp/tab_sel_bg.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/images/xp/tab_sel_end.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/images/xp/tabs_bg.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/jscripts/about.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/jscripts/anchor.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/jscripts/charmap.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/jscripts/color_picker.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/jscripts/image.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/jscripts/link.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/jscripts/source_editor.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/langs/en.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/link.htm
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/source_editor.htm
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/simple/css/editor_content.css
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/simple/css/editor_popup.css
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/simple/css/editor_ui.css
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/simple/editor_template.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/simple/editor_template_src.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/simple/images/bold.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/simple/images/bold_de_se.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/simple/images/bold_fr.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/simple/images/bold_ru.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/simple/images/bold_tw.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/simple/images/bullist.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/simple/images/buttons.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/simple/images/cleanup.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/simple/images/italic.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/simple/images/italic_de_se.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/simple/images/italic_ru.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/simple/images/italic_tw.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/simple/images/numlist.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/simple/images/redo.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/simple/images/separator.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/simple/images/spacer.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/simple/images/strikethrough.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/simple/images/underline.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/simple/images/underline_fr.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/simple/images/underline_ru.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/simple/images/underline_tw.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/simple/images/undo.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/tiny_mce.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/tiny_mce_popup.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/tiny_mce_src.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/utils/form_utils.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/utils/mclayer.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/utils/mctabs.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/utils/validate.js
+%%EYEDIR%%/apps/eyeHelp.app
+%%EYEDIR%%/apps/eyeHome.eyeapp/aplic.php
+%%EYEDIR%%/apps/eyeHome.eyeapp/ico_a.png
+%%EYEDIR%%/apps/eyeHome.eyeapp/ico_b.png
+%%EYEDIR%%/apps/eyeHome.eyeapp/ico_c.png
+%%EYEDIR%%/apps/eyeHome.eyeapp/index.htm
+%%EYEDIR%%/apps/eyeHome.eyeapp/lang.php
+%%EYEDIR%%/apps/eyeHome.eyeapp/propietats.xml
+%%EYEDIR%%/apps/eyeInfo.eyeapp/aplic.php
+%%EYEDIR%%/apps/eyeInfo.eyeapp/ico_a.png
+%%EYEDIR%%/apps/eyeInfo.eyeapp/ico_b.png
+%%EYEDIR%%/apps/eyeInfo.eyeapp/ico_c.png
+%%EYEDIR%%/apps/eyeInfo.eyeapp/lang.php
+%%EYEDIR%%/apps/eyeInfo.eyeapp/propietats.xml
+%%EYEDIR%%/apps/eyeMessages.eyeapp/aplic.php
+%%EYEDIR%%/apps/eyeMessages.eyeapp/gfx/eyeMessages.css
+%%EYEDIR%%/apps/eyeMessages.eyeapp/ico_a.png
+%%EYEDIR%%/apps/eyeMessages.eyeapp/ico_b.png
+%%EYEDIR%%/apps/eyeMessages.eyeapp/ico_c.png
+%%EYEDIR%%/apps/eyeMessages.eyeapp/index.htm
+%%EYEDIR%%/apps/eyeMessages.eyeapp/lang.php
+%%EYEDIR%%/apps/eyeMessages.eyeapp/propietats.xml
+%%EYEDIR%%/apps/eyeNav.eyeapp/aplic.php
+%%EYEDIR%%/apps/eyeNav.eyeapp/css.css
+%%EYEDIR%%/apps/eyeNav.eyeapp/gfx/addpoint.png
+%%EYEDIR%%/apps/eyeNav.eyeapp/gfx/delete.png
+%%EYEDIR%%/apps/eyeNav.eyeapp/gfx/file.png
+%%EYEDIR%%/apps/eyeNav.eyeapp/gfx/folder.png
+%%EYEDIR%%/apps/eyeNav.eyeapp/gfx/save.png
+%%EYEDIR%%/apps/eyeNav.eyeapp/gfx/subpoint.png
+%%EYEDIR%%/apps/eyeNav.eyeapp/ico_a.png
+%%EYEDIR%%/apps/eyeNav.eyeapp/ico_b.png
+%%EYEDIR%%/apps/eyeNav.eyeapp/ico_c.png
+%%EYEDIR%%/apps/eyeNav.eyeapp/index.htm
+%%EYEDIR%%/apps/eyeNav.eyeapp/lang.php
+%%EYEDIR%%/apps/eyeNav.eyeapp/propietats.xml
+%%EYEDIR%%/apps/eyeOptions.eyeapp/aplic.php
+%%EYEDIR%%/apps/eyeOptions.eyeapp/esborradir.inc.php
+%%EYEDIR%%/apps/eyeOptions.eyeapp/ico_a.png
+%%EYEDIR%%/apps/eyeOptions.eyeapp/ico_b.png
+%%EYEDIR%%/apps/eyeOptions.eyeapp/ico_c.png
+%%EYEDIR%%/apps/eyeOptions.eyeapp/index.htm
+%%EYEDIR%%/apps/eyeOptions.eyeapp/lang.php
+%%EYEDIR%%/apps/eyeOptions.eyeapp/propietats.xml
+%%EYEDIR%%/apps/eyePhones.eyeapp/aplic.php
+%%EYEDIR%%/apps/eyePhones.eyeapp/ico_a.png
+%%EYEDIR%%/apps/eyePhones.eyeapp/ico_b.png
+%%EYEDIR%%/apps/eyePhones.eyeapp/ico_c.png
+%%EYEDIR%%/apps/eyePhones.eyeapp/index.htm
+%%EYEDIR%%/apps/eyePhones.eyeapp/lang.php
+%%EYEDIR%%/apps/eyePhones.eyeapp/propietats.xml
+%%EYEDIR%%/apps/eyeTrash.eyeapp/aplic.php
+%%EYEDIR%%/apps/eyeTrash.eyeapp/empty.png
+%%EYEDIR%%/apps/eyeTrash.eyeapp/full.png
+%%EYEDIR%%/apps/eyeTrash.eyeapp/lang.php
+%%EYEDIR%%/apps/eyeTrash.eyeapp/propietats.xml
+%%EYEDIR%%/apps/eyeViewer.app
+%%EYEDIR%%/desktop.php
+%%EYEDIR%%/etc/index.html
+%%EYEDIR%%/home/index.html
+%%EYEDIR%%/index.php
+%%EYEDIR%%/sysdefs.php
+%%EYEDIR%%/system/archive.php
+%%EYEDIR%%/system/baixar.php
+%%EYEDIR%%/system/config.php
+%%EYEDIR%%/system/css/install.css
+%%EYEDIR%%/system/css/start.css
+%%EYEDIR%%/system/funcions.php
+%%EYEDIR%%/system/gfx/back.png
+%%EYEDIR%%/system/gfx/btn/delete.png
+%%EYEDIR%%/system/gfx/btn/deletesmall.png
+%%EYEDIR%%/system/gfx/btn/download.png
+%%EYEDIR%%/system/gfx/btn/edit.png
+%%EYEDIR%%/system/gfx/btn/help.png
+%%EYEDIR%%/system/gfx/btn/new.png
+%%EYEDIR%%/system/gfx/btn/open.png
+%%EYEDIR%%/system/gfx/btn/opensmall.png
+%%EYEDIR%%/system/gfx/btn/print.png
+%%EYEDIR%%/system/gfx/btn/resize.png
+%%EYEDIR%%/system/gfx/btn/restore.png
+%%EYEDIR%%/system/gfx/btn/save.png
+%%EYEDIR%%/system/gfx/btn/sortDn.png
+%%EYEDIR%%/system/gfx/btn/sortUp.png
+%%EYEDIR%%/system/gfx/btn/upload.png
+%%EYEDIR%%/system/gfx/btn/view.png
+%%EYEDIR%%/system/gfx/index.html
+%%EYEDIR%%/system/gfx/langs/bulgarian.png
+%%EYEDIR%%/system/gfx/langs/catalan.png
+%%EYEDIR%%/system/gfx/langs/chinese.png
+%%EYEDIR%%/system/gfx/langs/danish.png
+%%EYEDIR%%/system/gfx/langs/dutch.png
+%%EYEDIR%%/system/gfx/langs/english.png
+%%EYEDIR%%/system/gfx/langs/finnish.png
+%%EYEDIR%%/system/gfx/langs/french.png
+%%EYEDIR%%/system/gfx/langs/galego.png
+%%EYEDIR%%/system/gfx/langs/german.png
+%%EYEDIR%%/system/gfx/langs/hungarian.png
+%%EYEDIR%%/system/gfx/langs/italian.png
+%%EYEDIR%%/system/gfx/langs/polish.png
+%%EYEDIR%%/system/gfx/langs/portuguese.png
+%%EYEDIR%%/system/gfx/langs/romanian.png
+%%EYEDIR%%/system/gfx/langs/russian.png
+%%EYEDIR%%/system/gfx/langs/spanish.png
+%%EYEDIR%%/system/gfx/langs/swedish.png
+%%EYEDIR%%/system/gfx/langs/turkish.png
+%%EYEDIR%%/system/gfx/login/enter.png
+%%EYEDIR%%/system/gfx/login/fons.png
+%%EYEDIR%%/system/gfx/login/login.png
+%%EYEDIR%%/system/gfx/login/logo.png
+%%EYEDIR%%/system/gfx/tipus/avi.png
+%%EYEDIR%%/system/gfx/tipus/bin.png
+%%EYEDIR%%/system/gfx/tipus/bmp.png
+%%EYEDIR%%/system/gfx/tipus/css.png
+%%EYEDIR%%/system/gfx/tipus/deb.png
+%%EYEDIR%%/system/gfx/tipus/doc.png
+%%EYEDIR%%/system/gfx/tipus/dwg.png
+%%EYEDIR%%/system/gfx/tipus/eml.png
+%%EYEDIR%%/system/gfx/tipus/exe.png
+%%EYEDIR%%/system/gfx/tipus/gif.png
+%%EYEDIR%%/system/gfx/tipus/htm.png
+%%EYEDIR%%/system/gfx/tipus/html.png
+%%EYEDIR%%/system/gfx/tipus/ico.png
+%%EYEDIR%%/system/gfx/tipus/iff.png
+%%EYEDIR%%/system/gfx/tipus/jpeg.png
+%%EYEDIR%%/system/gfx/tipus/jpg.png
+%%EYEDIR%%/system/gfx/tipus/map.png
+%%EYEDIR%%/system/gfx/tipus/mp3.png
+%%EYEDIR%%/system/gfx/tipus/mp4.png
+%%EYEDIR%%/system/gfx/tipus/ogg.png
+%%EYEDIR%%/system/gfx/tipus/old.png
+%%EYEDIR%%/system/gfx/tipus/pdf.png
+%%EYEDIR%%/system/gfx/tipus/png.png
+%%EYEDIR%%/system/gfx/tipus/ppt.png
+%%EYEDIR%%/system/gfx/tipus/psd.png
+%%EYEDIR%%/system/gfx/tipus/rar.png
+%%EYEDIR%%/system/gfx/tipus/rewfewwe.png
+%%EYEDIR%%/system/gfx/tipus/rpm.png
+%%EYEDIR%%/system/gfx/tipus/rtf.png
+%%EYEDIR%%/system/gfx/tipus/sql.png
+%%EYEDIR%%/system/gfx/tipus/svg.png
+%%EYEDIR%%/system/gfx/tipus/sxc.png
+%%EYEDIR%%/system/gfx/tipus/sxi.png
+%%EYEDIR%%/system/gfx/tipus/sxw.png
+%%EYEDIR%%/system/gfx/tipus/tar.png
+%%EYEDIR%%/system/gfx/tipus/tiff.png
+%%EYEDIR%%/system/gfx/tipus/txt.png
+%%EYEDIR%%/system/gfx/tipus/wav.png
+%%EYEDIR%%/system/gfx/tipus/wmv.png
+%%EYEDIR%%/system/gfx/tipus/xcf.png
+%%EYEDIR%%/system/gfx/tipus/xls.png
+%%EYEDIR%%/system/gfx/tipus/zip.png
+%%EYEDIR%%/system/gfx/tipus/zzz.png
+%%EYEDIR%%/system/gfx/ull.ico
+%%EYEDIR%%/system/ilang.php
+%%EYEDIR%%/system/install.php
+%%EYEDIR%%/system/lang.php
+%%EYEDIR%%/system/scripts/gclock.js
+%%EYEDIR%%/system/scripts/x_core.js
+%%EYEDIR%%/system/scripts/x_drag.js
+%%EYEDIR%%/system/scripts/x_event.js
+%%EYEDIR%%/system/scripts/x_eyeOSwin.js
+%%EYEDIR%%/system/syscall.php
+%%EYEDIR%%/system/themes/animus/INFO
+%%EYEDIR%%/system/themes/animus/apps/eyeAmp.eyeapp/ico_a.png
+%%EYEDIR%%/system/themes/animus/apps/eyeAmp.eyeapp/ico_b.png
+%%EYEDIR%%/system/themes/animus/apps/eyeAmp.eyeapp/ico_c.png
+%%EYEDIR%%/system/themes/animus/apps/eyeApps.eyeapp/ico_a.png
+%%EYEDIR%%/system/themes/animus/apps/eyeApps.eyeapp/ico_b.png
+%%EYEDIR%%/system/themes/animus/apps/eyeApps.eyeapp/ico_c.png
+%%EYEDIR%%/system/themes/animus/apps/eyeBoard.eyeapp/ico_a.png
+%%EYEDIR%%/system/themes/animus/apps/eyeBoard.eyeapp/ico_b.png
+%%EYEDIR%%/system/themes/animus/apps/eyeBoard.eyeapp/ico_c.png
+%%EYEDIR%%/system/themes/animus/apps/eyeCalc.eyeapp/ico_a.png
+%%EYEDIR%%/system/themes/animus/apps/eyeCalc.eyeapp/ico_b.png
+%%EYEDIR%%/system/themes/animus/apps/eyeCalc.eyeapp/ico_c.png
+%%EYEDIR%%/system/themes/animus/apps/eyeCalendar.eyeapp/ico_a.png
+%%EYEDIR%%/system/themes/animus/apps/eyeCalendar.eyeapp/ico_b.png
+%%EYEDIR%%/system/themes/animus/apps/eyeCalendar.eyeapp/ico_c.png
+%%EYEDIR%%/system/themes/animus/apps/eyeEdit.eyeapp/ico_a.png
+%%EYEDIR%%/system/themes/animus/apps/eyeEdit.eyeapp/ico_b.png
+%%EYEDIR%%/system/themes/animus/apps/eyeEdit.eyeapp/ico_c.png
+%%EYEDIR%%/system/themes/animus/apps/eyeHome.eyeapp/ico_a.png
+%%EYEDIR%%/system/themes/animus/apps/eyeHome.eyeapp/ico_b.png
+%%EYEDIR%%/system/themes/animus/apps/eyeHome.eyeapp/ico_c.png
+%%EYEDIR%%/system/themes/animus/apps/eyeInfo.eyeapp/ico_a.png
+%%EYEDIR%%/system/themes/animus/apps/eyeInfo.eyeapp/ico_b.png
+%%EYEDIR%%/system/themes/animus/apps/eyeInfo.eyeapp/ico_c.png
+%%EYEDIR%%/system/themes/animus/apps/eyeMessages.eyeapp/ico_a.png
+%%EYEDIR%%/system/themes/animus/apps/eyeMessages.eyeapp/ico_b.png
+%%EYEDIR%%/system/themes/animus/apps/eyeMessages.eyeapp/ico_c.png
+%%EYEDIR%%/system/themes/animus/apps/eyeNav.eyeapp/ico_a.png
+%%EYEDIR%%/system/themes/animus/apps/eyeNav.eyeapp/ico_b.png
+%%EYEDIR%%/system/themes/animus/apps/eyeNav.eyeapp/ico_c.png
+%%EYEDIR%%/system/themes/animus/apps/eyeOptions.eyeapp/ico_a.png
+%%EYEDIR%%/system/themes/animus/apps/eyeOptions.eyeapp/ico_b.png
+%%EYEDIR%%/system/themes/animus/apps/eyeOptions.eyeapp/ico_c.png
+%%EYEDIR%%/system/themes/animus/apps/eyePhones.eyeapp/ico_a.png
+%%EYEDIR%%/system/themes/animus/apps/eyePhones.eyeapp/ico_b.png
+%%EYEDIR%%/system/themes/animus/apps/eyePhones.eyeapp/ico_c.png
+%%EYEDIR%%/system/themes/animus/apps/eyeTrash.eyeapp/empty.png
+%%EYEDIR%%/system/themes/animus/apps/eyeTrash.eyeapp/full.png
+%%EYEDIR%%/system/themes/animus/default.css
+%%EYEDIR%%/system/themes/animus/desktop/clock.png
+%%EYEDIR%%/system/themes/animus/desktop/dock.png
+%%EYEDIR%%/system/themes/animus/desktop/dockmin.png
+%%EYEDIR%%/system/themes/animus/desktop/exit.png
+%%EYEDIR%%/system/themes/animus/eyeos.jpg
+%%EYEDIR%%/system/themes/animus/gfxwin/1.png
+%%EYEDIR%%/system/themes/animus/gfxwin/2.png
+%%EYEDIR%%/system/themes/animus/gfxwin/3.png
+%%EYEDIR%%/system/themes/animus/gfxwin/4.png
+%%EYEDIR%%/system/themes/animus/gfxwin/5.png
+%%EYEDIR%%/system/themes/animus/gfxwin/6.png
+%%EYEDIR%%/system/themes/animus/gfxwin/bar.png
+%%EYEDIR%%/system/themes/animus/gfxwin/close.png
+%%EYEDIR%%/system/themes/animus/gfxwin/max.png
+%%EYEDIR%%/system/themes/animus/gfxwin/min.png
+%%EYEDIR%%/system/themes/animus/gfxwin/resize.png
+%%EYEDIR%%/system/themes/animus/thumb.png
+%%EYEDIR%%/system/themes/default/IE/1.png
+%%EYEDIR%%/system/themes/default/IE/10.png
+%%EYEDIR%%/system/themes/default/IE/11.png
+%%EYEDIR%%/system/themes/default/IE/12.png
+%%EYEDIR%%/system/themes/default/IE/2.png
+%%EYEDIR%%/system/themes/default/IE/3.png
+%%EYEDIR%%/system/themes/default/IE/4.png
+%%EYEDIR%%/system/themes/default/IE/5.png
+%%EYEDIR%%/system/themes/default/IE/6.png
+%%EYEDIR%%/system/themes/default/IE/7.png
+%%EYEDIR%%/system/themes/default/IE/8.png
+%%EYEDIR%%/system/themes/default/IE/9.png
+%%EYEDIR%%/system/themes/default/IE/bar.png
+%%EYEDIR%%/system/themes/default/IE/default.css
+%%EYEDIR%%/system/themes/default/IE/dock.png
+%%EYEDIR%%/system/themes/default/IE/dockmin.png
+%%EYEDIR%%/system/themes/default/IE/resize.png
+%%EYEDIR%%/system/themes/default/INFO
+%%EYEDIR%%/system/themes/default/default.css
+%%EYEDIR%%/system/themes/default/desktop/dock.png
+%%EYEDIR%%/system/themes/default/desktop/dockmin.png
+%%EYEDIR%%/system/themes/default/desktop/exit.png
+%%EYEDIR%%/system/themes/default/eyeos.jpg
+%%EYEDIR%%/system/themes/default/gfxwin/1.png
+%%EYEDIR%%/system/themes/default/gfxwin/2.png
+%%EYEDIR%%/system/themes/default/gfxwin/3.png
+%%EYEDIR%%/system/themes/default/gfxwin/4.png
+%%EYEDIR%%/system/themes/default/gfxwin/5.png
+%%EYEDIR%%/system/themes/default/gfxwin/6.png
+%%EYEDIR%%/system/themes/default/gfxwin/7.png
+%%EYEDIR%%/system/themes/default/gfxwin/bar.png
+%%EYEDIR%%/system/themes/default/gfxwin/close.png
+%%EYEDIR%%/system/themes/default/gfxwin/max.png
+%%EYEDIR%%/system/themes/default/gfxwin/min.png
+%%EYEDIR%%/system/themes/default/thumb.png
+%%EYEDIR%%/usr/index.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/USER MANUAL
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%EYEDIR%%/apps/eyeApps.eyeapp
+@dirrm %%EYEDIR%%/apps/eyeBoard.eyeapp
+@dirrm %%EYEDIR%%/apps/eyeCalc.eyeapp/gfx
+@dirrm %%EYEDIR%%/apps/eyeCalc.eyeapp
+@dirrm %%EYEDIR%%/apps/eyeCalendar.eyeapp
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/langs
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/_template/images
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/_template/langs
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/_template
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/advhr/css
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/advhr/images
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/advhr/jscripts
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/advhr/langs
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/advhr
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/advimage/css
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/advimage/images
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/advimage/jscripts
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/advimage/langs
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/advimage
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/advlink/css
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/advlink/jscripts
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/advlink/langs
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/advlink
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/autosave/langs
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/autosave
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/cleanup
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/contextmenu/css
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/contextmenu/images
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/contextmenu
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/directionality/images
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/directionality/langs
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/directionality
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/emotions/images
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/emotions/jscripts
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/emotions/langs
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/emotions
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/flash/css
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/flash/images
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/flash/jscripts
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/flash/langs
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/flash
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/fullpage/css
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/fullpage/images
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/fullpage/jscripts
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/fullpage/langs
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/fullpage
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/fullscreen/images
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/fullscreen/langs
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/fullscreen
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/iespell/images
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/iespell/langs
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/iespell
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/inlinepopups/css
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/inlinepopups/images
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/inlinepopups/jscripts
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/inlinepopups
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/insertdatetime/images
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/insertdatetime/langs
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/insertdatetime
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/noneditable/css
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/noneditable
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/paste/css
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/paste/images
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/paste/jscripts
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/paste/langs
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/paste
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/preview/images
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/preview/langs
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/preview
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/print/images
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/print/langs
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/print
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/save/images
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/save/langs
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/save
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/searchreplace/images
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/searchreplace/jscripts
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/searchreplace/langs
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/searchreplace
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/table/css
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/table/images
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/table/jscripts
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/table/langs
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/table
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/zoom
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/css
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/docs/en/images
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/docs/en
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/docs
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/images/xp
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/images
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/jscripts
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced/langs
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/advanced
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/simple/css
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/simple/images
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes/simple
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/themes
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/utils
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp
+@dirrm %%EYEDIR%%/apps/eyeHome.eyeapp
+@dirrm %%EYEDIR%%/apps/eyeInfo.eyeapp
+@dirrm %%EYEDIR%%/apps/eyeMessages.eyeapp/gfx
+@dirrm %%EYEDIR%%/apps/eyeMessages.eyeapp
+@dirrm %%EYEDIR%%/apps/eyeNav.eyeapp/gfx
+@dirrm %%EYEDIR%%/apps/eyeNav.eyeapp
+@dirrm %%EYEDIR%%/apps/eyeOptions.eyeapp
+@dirrm %%EYEDIR%%/apps/eyePhones.eyeapp
+@dirrm %%EYEDIR%%/apps/eyeTrash.eyeapp
+@dirrm %%EYEDIR%%/apps
+@dirrm %%EYEDIR%%/system/css
+@dirrm %%EYEDIR%%/system/gfx/btn
+@dirrm %%EYEDIR%%/system/gfx/langs
+@dirrm %%EYEDIR%%/system/gfx/login
+@dirrm %%EYEDIR%%/system/gfx/tipus
+@dirrm %%EYEDIR%%/system/gfx
+@dirrm %%EYEDIR%%/system/scripts
+@dirrm %%EYEDIR%%/system/themes/animus/apps/eyeAmp.eyeapp
+@dirrm %%EYEDIR%%/system/themes/animus/apps/eyeApps.eyeapp
+@dirrm %%EYEDIR%%/system/themes/animus/apps/eyeBoard.eyeapp
+@dirrm %%EYEDIR%%/system/themes/animus/apps/eyeCalc.eyeapp
+@dirrm %%EYEDIR%%/system/themes/animus/apps/eyeCalendar.eyeapp
+@dirrm %%EYEDIR%%/system/themes/animus/apps/eyeEdit.eyeapp
+@dirrm %%EYEDIR%%/system/themes/animus/apps/eyeHome.eyeapp
+@dirrm %%EYEDIR%%/system/themes/animus/apps/eyeInfo.eyeapp
+@dirrm %%EYEDIR%%/system/themes/animus/apps/eyeMessages.eyeapp
+@dirrm %%EYEDIR%%/system/themes/animus/apps/eyeNav.eyeapp
+@dirrm %%EYEDIR%%/system/themes/animus/apps/eyeOptions.eyeapp
+@dirrm %%EYEDIR%%/system/themes/animus/apps/eyePhones.eyeapp
+@dirrm %%EYEDIR%%/system/themes/animus/apps/eyeTrash.eyeapp
+@dirrm %%EYEDIR%%/system/themes/animus/apps
+@dirrm %%EYEDIR%%/system/themes/animus/desktop
+@dirrm %%EYEDIR%%/system/themes/animus/gfxwin
+@dirrm %%EYEDIR%%/system/themes/animus
+@dirrm %%EYEDIR%%/system/themes/default/IE
+@dirrm %%EYEDIR%%/system/themes/default/desktop
+@dirrm %%EYEDIR%%/system/themes/default/gfxwin
+@dirrm %%EYEDIR%%/system/themes/default
+@dirrm %%EYEDIR%%/system/themes
+@dirrm %%EYEDIR%%/system
+@dirrmtry %%EYEDIR%%/etc
+@dirrmtry %%EYEDIR%%/home
+@dirrmtry %%EYEDIR%%/usr
+@dirrmtry %%EYEDIR%%
