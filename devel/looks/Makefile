@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	looks
-PORTVERSION=	1.3.2
+PORTVERSION=	2.0.2
 CATEGORIES=	devel java
-MASTER_SITES=	https://looks.dev.java.net/files/documents/31/${DISTREP}/	\
-		https://www.dev.java.net/files/documents/31/${DISTREP}/
+MASTER_SITES=	https://looks.dev.java.net/files/documents/31/${DISTREP}/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S|.|_|g}-${DISTDATE}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -17,8 +16,8 @@ COMMENT=	The JGoodies Looks improve the appearance of your Java applications
 
 FETCH_DEPENDS=	${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget
 
-DISTDATE=	20050919
-DISTREP=	30147
+DISTDATE=	20060502
+DISTREP=	31518
 
 FETCH_CMD=	${LOCALBASE}/bin/wget
 FETCH_BEFORE_ARGS=	--no-check-certificate
@@ -35,7 +34,7 @@ JARFILE=	${PORTNAME}.jar
 PLIST_FILES=	%%JAVAJARDIR%%/${JARFILE}	\
 		%%JAVAJARDIR%%/LICENSE.${PORTNAME}.txt
 DOCFILES=	README.html RELEASE-NOTES.txt
-EXAMPLES=	demo.jar lib/forms-1.0.5.jar tiny.jar
+EXAMPLES=	demo.jar lib/forms-1.0.6.jar tiny.jar
 PORTDOCS=	*
 
 .if !defined(NOPORTDOCS)
@@ -55,8 +54,8 @@ do-install:
 	@${INSTALL_DATA} ${DOCFILES:S|^|${WRKSRC}/|} ${DOCSDIR}
 	@${CP} -R ${WRKSRC}/docs/* ${DOCSDIR}
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
-	@${INSTALL_DATA} ${EXAMPLES:S|^|${WRKSRC}/examples/|} ${EXAMPLESDIR}
-	@${MV} ${EXAMPLESDIR}/forms-1.0.5.jar ${EXAMPLESDIR}/lib
+	@${INSTALL_DATA} ${EXAMPLES:S|^|${WRKSRC}/demo/|:S|lib|../lib|} ${EXAMPLESDIR}
+	@${MV} ${EXAMPLESDIR}/forms-1.0.6.jar ${EXAMPLESDIR}/lib
 	@${ECHO_MSG} "===> Examples installed in ${EXAMPLESDIR}."
 .endif
 
