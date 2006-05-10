@@ -4,6 +4,3 @@ at Google, with different performance characteristics, including an
 implementation that optimizes for space and one that optimizes for speed.
 
 WWW: http://goog-sparsehash.sourceforge.net
-
-- Vasil Dimov
-vd@datamax.bg
