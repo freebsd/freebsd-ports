@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	keychain
-PORTVERSION=	2.6.1
+PORTVERSION=	2.6.2
 CATEGORIES=	security
 MASTER_SITES=	http://dev.gentoo.org/~agriffis/keychain/
 
@@ -20,9 +20,7 @@ MAN1=		keychain.1
 
 PLIST_FILES=	bin/keychain
 
-.if !defined(NOPORTDOCS)
 PORTDOCS=	ChangeLog README
-.endif
 
 .if !exists(${LOCALBASE}/bin/ssh-agent) && !exists(/usr/bin/ssh-agent)
 RUN_DEPENDS+=	ssh-agent:${PORTSDIR}/security/openssh-portable
