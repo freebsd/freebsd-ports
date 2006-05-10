@@ -1,0 +1,11 @@
+bin/pflogx
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%EXAMPLESDIR%%/export.dtd
+%%PORTDOCS%%%%EXAMPLESDIR%%/export_csv.xsl
+%%PORTDOCS%%%%EXAMPLESDIR%%/export_html.xsl
+%%PORTDOCS%%%%EXAMPLESDIR%%/export_xhtml.xsl
+%%PORTDOCS%%%%EXAMPLESDIR%%/first_date.xsl
+%%PORTDOCS%%%%EXAMPLESDIR%%/last_date.xsl
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%

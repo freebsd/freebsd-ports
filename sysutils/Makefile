@@ -412,6 +412,7 @@
     SUBDIR += perf
     SUBDIR += personality
     SUBDIR += pessulus
+    SUBDIR += pflogx
     SUBDIR += pfstat
     SUBDIR += pftop
     SUBDIR += phantom
