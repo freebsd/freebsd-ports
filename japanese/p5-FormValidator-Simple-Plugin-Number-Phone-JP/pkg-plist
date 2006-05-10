@@ -1,0 +1,11 @@
+%%SITE_PERL%%/FormValidator/Simple/Plugin/Number/Phone/JP.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/FormValidator/Simple/Plugin/Number/Phone/JP/.packlist
+@dirrmtry %%SITE_PERL%%/FormValidator/Simple/Plugin/Number/Phone
+@dirrmtry %%SITE_PERL%%/FormValidator/Simple/Plugin/Number
+@dirrmtry %%SITE_PERL%%/FormValidator/Simple/Plugin
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/FormValidator/Simple/Plugin/Number/Phone/JP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/FormValidator/Simple/Plugin/Number/Phone
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/FormValidator/Simple/Plugin/Number
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/FormValidator/Simple/Plugin
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/FormValidator/Simple
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/FormValidator
