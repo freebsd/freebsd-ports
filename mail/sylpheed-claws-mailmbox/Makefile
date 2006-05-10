@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mailmbox
-PORTVERSION=	1.11
+PORTVERSION=	1.12
 CATEGORIES=	mail
 MASTER_SITES=	http://claws.sylpheed.org/downloads/plugins/
 PKGNAMEPREFIX=	sylpheed-claws-
