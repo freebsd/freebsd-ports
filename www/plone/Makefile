@@ -9,8 +9,8 @@ PORTNAME=	plone
 PORTVERSION=	2.1.2
 PORTREVISION=	1
 CATEGORIES=	www zope
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:src/g} http://plone.org/products/plonehotfix20060410/releases/1.0/:hotfix
-MASTER_SITE_SUBDIR=	plone:src
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/plone\/:src/g} \
+		http://plone.org/products/plonehotfix20060410/releases/1.0/:hotfix
 DISTFILES=	Plone-${PORTVERSION}.tar.gz:src ${HOTFIX}.tar.gz:hotfix
 DIST_SUBDIR=	zope
 
