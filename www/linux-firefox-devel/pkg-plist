@@ -1,0 +1,211 @@
+bin/%%APP_NAME%%
+share/applications/%%APP_NAME%%.desktop
+lib/%%APP_NAME%%/.autoreg
+lib/%%APP_NAME%%/browserconfig.properties
+lib/%%APP_NAME%%/chrome/browser.jar
+lib/%%APP_NAME%%/chrome/browser.manifest
+lib/%%APP_NAME%%/chrome/classic.jar
+lib/%%APP_NAME%%/chrome/classic.manifest
+lib/%%APP_NAME%%/chrome/comm.jar
+lib/%%APP_NAME%%/chrome/comm.manifest
+lib/%%APP_NAME%%/chrome/en-US.jar
+lib/%%APP_NAME%%/chrome/en-US.manifest
+lib/%%APP_NAME%%/chrome/icons/default/default.xpm
+lib/%%APP_NAME%%/chrome/pippki.jar
+lib/%%APP_NAME%%/chrome/pippki.manifest
+lib/%%APP_NAME%%/chrome/reporter.jar
+lib/%%APP_NAME%%/chrome/reporter.manifest
+lib/%%APP_NAME%%/chrome/toolkit.jar
+lib/%%APP_NAME%%/chrome/toolkit.manifest
+lib/%%APP_NAME%%/components/FeedConverter.js
+lib/%%APP_NAME%%/components/FeedProcessor.js
+lib/%%APP_NAME%%/components/WebContentConverter.js
+lib/%%APP_NAME%%/components/browser.xpt
+lib/%%APP_NAME%%/components/jsconsole-clhandler.js
+lib/%%APP_NAME%%/components/libjar50.so
+lib/%%APP_NAME%%/components/libjsd.so
+lib/%%APP_NAME%%/components/libmozgnome.so
+lib/%%APP_NAME%%/components/libnkgnomevfs.so
+lib/%%APP_NAME%%/components/libxpinstall.so
+lib/%%APP_NAME%%/components/nsBrowserContentHandler.js
+lib/%%APP_NAME%%/components/nsBrowserGlue.js
+lib/%%APP_NAME%%/components/nsCloseAllWindows.js
+lib/%%APP_NAME%%/components/nsDictionary.js
+lib/%%APP_NAME%%/components/nsExtensionManager.js
+lib/%%APP_NAME%%/components/nsFilePicker.js
+lib/%%APP_NAME%%/components/nsHelperAppDlg.js
+lib/%%APP_NAME%%/components/nsInterfaceInfoToIDL.js
+lib/%%APP_NAME%%/components/nsMicrosummaryService.js
+lib/%%APP_NAME%%/components/nsProxyAutoConfig.js
+lib/%%APP_NAME%%/components/nsSearchService.js
+lib/%%APP_NAME%%/components/nsSessionStore.js
+lib/%%APP_NAME%%/components/nsSetDefaultBrowser.js
+lib/%%APP_NAME%%/components/nsSidebar.js
+lib/%%APP_NAME%%/components/nsUpdateService.js
+lib/%%APP_NAME%%/components/nsXmlRpcClient.js
+lib/%%APP_NAME%%/components/pluginGlue.js
+lib/%%APP_NAME%%/defaults/autoconfig/platform.js
+lib/%%APP_NAME%%/defaults/autoconfig/prefcalls.js
+lib/%%APP_NAME%%/defaults/pref/browser-prefs.js
+lib/%%APP_NAME%%/defaults/pref/channel-prefs.js
+lib/%%APP_NAME%%/defaults/pref/firefox-l10n.js
+lib/%%APP_NAME%%/defaults/pref/firefox.js
+lib/%%APP_NAME%%/defaults/profile/bookmarks.html
+lib/%%APP_NAME%%/defaults/profile/chrome/userChrome-example.css
+lib/%%APP_NAME%%/defaults/profile/chrome/userContent-example.css
+lib/%%APP_NAME%%/defaults/profile/localstore.rdf
+lib/%%APP_NAME%%/defaults/profile/mimeTypes.rdf
+lib/%%APP_NAME%%/defaults/profile/prefs.js
+lib/%%APP_NAME%%/defaults/profile/search.rdf
+lib/%%APP_NAME%%/extensions/inspector@mozilla.org/chrome.manifest
+lib/%%APP_NAME%%/extensions/inspector@mozilla.org/chrome/inspector.jar
+lib/%%APP_NAME%%/extensions/inspector@mozilla.org/components/inspector-cmdline.js
+lib/%%APP_NAME%%/extensions/inspector@mozilla.org/components/inspector.xpt
+lib/%%APP_NAME%%/extensions/inspector@mozilla.org/components/libinspector.so
+lib/%%APP_NAME%%/extensions/inspector@mozilla.org/defaults/preferences/inspector.js
+lib/%%APP_NAME%%/extensions/inspector@mozilla.org/install.rdf
+lib/%%APP_NAME%%/extensions/talkback@mozilla.org/chrome.manifest
+lib/%%APP_NAME%%/extensions/talkback@mozilla.org/components/libqfaservices.so
+lib/%%APP_NAME%%/extensions/talkback@mozilla.org/components/qfaservices.xpt
+lib/%%APP_NAME%%/extensions/talkback@mozilla.org/components/talkback/XTalkback.ad
+lib/%%APP_NAME%%/extensions/talkback@mozilla.org/components/talkback/master.ini
+lib/%%APP_NAME%%/extensions/talkback@mozilla.org/components/talkback/talkback
+lib/%%APP_NAME%%/extensions/talkback@mozilla.org/components/talkback/talkback.so
+lib/%%APP_NAME%%/extensions/talkback@mozilla.org/install.rdf
+lib/%%APP_NAME%%/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/install.rdf
+lib/%%APP_NAME%%/firefox
+lib/%%APP_NAME%%/firefox-bin
+lib/%%APP_NAME%%/greprefs/all.js
+lib/%%APP_NAME%%/greprefs/security-prefs.js
+lib/%%APP_NAME%%/greprefs/xpinstall.js
+lib/%%APP_NAME%%/icons/document.png
+lib/%%APP_NAME%%/icons/mozicon128.png
+lib/%%APP_NAME%%/icons/mozicon16.xpm
+lib/%%APP_NAME%%/icons/mozicon50.xpm
+lib/%%APP_NAME%%/libfreebl3.chk
+lib/%%APP_NAME%%/libfreebl3.so
+lib/%%APP_NAME%%/libmozjs.so
+lib/%%APP_NAME%%/libnspr4.so
+lib/%%APP_NAME%%/libnss3.so
+lib/%%APP_NAME%%/libnssckbi.so
+lib/%%APP_NAME%%/libplc4.so
+lib/%%APP_NAME%%/libplds4.so
+lib/%%APP_NAME%%/libsmime3.so
+lib/%%APP_NAME%%/libsoftokn3.chk
+lib/%%APP_NAME%%/libsoftokn3.so
+lib/%%APP_NAME%%/libssl3.so
+lib/%%APP_NAME%%/libxpcom.so
+lib/%%APP_NAME%%/libxpcom_core.so
+lib/%%APP_NAME%%/libxpistub.so
+lib/%%APP_NAME%%/mozilla-xremote-client
+lib/%%APP_NAME%%/plugins/libnullplugin.so
+lib/%%APP_NAME%%/readme.txt
+lib/%%APP_NAME%%/removed-files
+lib/%%APP_NAME%%/res/EditorOverride.css
+lib/%%APP_NAME%%/res/arrow.gif
+lib/%%APP_NAME%%/res/arrowd.gif
+lib/%%APP_NAME%%/res/broken-image.gif
+lib/%%APP_NAME%%/res/charsetData.properties
+lib/%%APP_NAME%%/res/charsetalias.properties
+lib/%%APP_NAME%%/res/cmessage.txt
+lib/%%APP_NAME%%/res/dtd/mathml.dtd
+lib/%%APP_NAME%%/res/dtd/xhtml11.dtd
+lib/%%APP_NAME%%/res/entityTables/html40Latin1.properties
+lib/%%APP_NAME%%/res/entityTables/html40Special.properties
+lib/%%APP_NAME%%/res/entityTables/html40Symbols.properties
+lib/%%APP_NAME%%/res/entityTables/htmlEntityVersions.properties
+lib/%%APP_NAME%%/res/entityTables/mathml20.properties
+lib/%%APP_NAME%%/res/entityTables/transliterate.properties
+lib/%%APP_NAME%%/res/fonts/mathfont.properties
+lib/%%APP_NAME%%/res/fonts/mathfontCMEX10.properties
+lib/%%APP_NAME%%/res/fonts/mathfontCMSY10.properties
+lib/%%APP_NAME%%/res/fonts/mathfontMTExtra.properties
+lib/%%APP_NAME%%/res/fonts/mathfontMath1.properties
+lib/%%APP_NAME%%/res/fonts/mathfontMath2.properties
+lib/%%APP_NAME%%/res/fonts/mathfontMath4.properties
+lib/%%APP_NAME%%/res/fonts/mathfontPUA.properties
+lib/%%APP_NAME%%/res/fonts/mathfontSymbol.properties
+lib/%%APP_NAME%%/res/forms.css
+lib/%%APP_NAME%%/res/grabber.gif
+lib/%%APP_NAME%%/res/hiddenWindow.html
+lib/%%APP_NAME%%/res/html.css
+lib/%%APP_NAME%%/res/html/gopher-audio.gif
+lib/%%APP_NAME%%/res/html/gopher-binary.gif
+lib/%%APP_NAME%%/res/html/gopher-find.gif
+lib/%%APP_NAME%%/res/html/gopher-image.gif
+lib/%%APP_NAME%%/res/html/gopher-menu.gif
+lib/%%APP_NAME%%/res/html/gopher-movie.gif
+lib/%%APP_NAME%%/res/html/gopher-sound.gif
+lib/%%APP_NAME%%/res/html/gopher-telnet.gif
+lib/%%APP_NAME%%/res/html/gopher-text.gif
+lib/%%APP_NAME%%/res/html/gopher-unknown.gif
+lib/%%APP_NAME%%/res/langGroups.properties
+lib/%%APP_NAME%%/res/language.properties
+lib/%%APP_NAME%%/res/loading-image.gif
+lib/%%APP_NAME%%/res/mathml.css
+lib/%%APP_NAME%%/res/quirk.css
+lib/%%APP_NAME%%/res/svg.css
+lib/%%APP_NAME%%/res/table-add-column-after-active.gif
+lib/%%APP_NAME%%/res/table-add-column-after-hover.gif
+lib/%%APP_NAME%%/res/table-add-column-after.gif
+lib/%%APP_NAME%%/res/table-add-column-before-active.gif
+lib/%%APP_NAME%%/res/table-add-column-before-hover.gif
+lib/%%APP_NAME%%/res/table-add-column-before.gif
+lib/%%APP_NAME%%/res/table-add-row-after-active.gif
+lib/%%APP_NAME%%/res/table-add-row-after-hover.gif
+lib/%%APP_NAME%%/res/table-add-row-after.gif
+lib/%%APP_NAME%%/res/table-add-row-before-active.gif
+lib/%%APP_NAME%%/res/table-add-row-before-hover.gif
+lib/%%APP_NAME%%/res/table-add-row-before.gif
+lib/%%APP_NAME%%/res/table-remove-column-active.gif
+lib/%%APP_NAME%%/res/table-remove-column-hover.gif
+lib/%%APP_NAME%%/res/table-remove-column.gif
+lib/%%APP_NAME%%/res/table-remove-row-active.gif
+lib/%%APP_NAME%%/res/table-remove-row-hover.gif
+lib/%%APP_NAME%%/res/table-remove-row.gif
+lib/%%APP_NAME%%/res/ua.css
+lib/%%APP_NAME%%/res/unixcharset.properties
+lib/%%APP_NAME%%/res/viewsource.css
+lib/%%APP_NAME%%/run-mozilla.sh
+lib/%%APP_NAME%%/searchplugins/amazondotcom.xml
+lib/%%APP_NAME%%/searchplugins/answers.xml
+lib/%%APP_NAME%%/searchplugins/creativecommons.xml
+lib/%%APP_NAME%%/searchplugins/eBay.xml
+lib/%%APP_NAME%%/searchplugins/google.xml
+lib/%%APP_NAME%%/searchplugins/yahoo.xml
+lib/%%APP_NAME%%/updater
+lib/%%APP_NAME%%/updater.ini
+lib/%%APP_NAME%%/xpicleanup
+lib/%%APP_NAME%%/linkfarm
+@exec %%PREFIX%%/lib/%%APP_NAME%%/linkfarm
+@unexec /usr/bin/find %%PREFIX%%/lib/%%APP_NAME%%/plugins -type l -delete
+@dirrm lib/%%APP_NAME%%/chrome/icons/default
+@dirrm lib/%%APP_NAME%%/chrome/icons
+@dirrm lib/%%APP_NAME%%/chrome
+@dirrm lib/%%APP_NAME%%/defaults/pref
+@dirrm lib/%%APP_NAME%%/defaults/profile/chrome
+@dirrm lib/%%APP_NAME%%/defaults/profile
+@dirrm lib/%%APP_NAME%%/defaults/autoconfig
+@dirrm lib/%%APP_NAME%%/defaults
+@dirrm lib/%%APP_NAME%%/searchplugins
+@dirrm lib/%%APP_NAME%%/components
+@dirrm lib/%%APP_NAME%%/plugins
+@dirrm lib/%%APP_NAME%%/res/fonts
+@dirrm lib/%%APP_NAME%%/res/dtd
+@dirrm lib/%%APP_NAME%%/res/html
+@dirrm lib/%%APP_NAME%%/res/entityTables
+@dirrm lib/%%APP_NAME%%/res
+@dirrm lib/%%APP_NAME%%/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}
+@dirrm lib/%%APP_NAME%%/extensions/inspector@mozilla.org/components
+@dirrm lib/%%APP_NAME%%/extensions/inspector@mozilla.org/chrome
+@dirrm lib/%%APP_NAME%%/extensions/inspector@mozilla.org/defaults/preferences
+@dirrm lib/%%APP_NAME%%/extensions/inspector@mozilla.org/defaults
+@dirrm lib/%%APP_NAME%%/extensions/inspector@mozilla.org
+@dirrm lib/%%APP_NAME%%/extensions/talkback@mozilla.org/components/talkback
+@dirrm lib/%%APP_NAME%%/extensions/talkback@mozilla.org/components
+@dirrm lib/%%APP_NAME%%/extensions/talkback@mozilla.org
+@dirrm lib/%%APP_NAME%%/extensions
+@dirrm lib/%%APP_NAME%%/icons
+@dirrm lib/%%APP_NAME%%/greprefs
+@dirrm lib/%%APP_NAME%%
+@dirrmtry share/applications
