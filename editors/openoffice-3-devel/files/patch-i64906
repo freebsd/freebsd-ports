@@ -1,0 +1,11 @@
+--- sal/osl/unx/security.c~	Wed May 10 20:57:40 2006
++++ sal/osl/unx/security.c	Wed May 10 22:35:43 2006
+@@ -73,7 +73,7 @@
+ static sal_Bool SAL_CALL osl_psz_getConfigDir(oslSecurity Security, sal_Char* pszDirectory, sal_uInt32 nMax);
+ 
+ static oslSecurityImpl * newSecurityImpl(size_t * bufSize) {
+-#ifdef MACOSX
++#if defined (MACOSX) || defined (FREEBSD)
+     /* #i64906#: sysconf(_SC_GETPW_R_SIZE_MAX) returns -1 on Mac OS X */
+     size_t n = 1024;
+ #else
