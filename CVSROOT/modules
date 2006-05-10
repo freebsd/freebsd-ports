@@ -13462,6 +13462,7 @@ vstream-client	ports/multimedia/vstream-client
 vstrip		ports/sysutils/vstrip
 vtcl		ports/devel/vtcl
 vte		ports/x11-toolkits/vte
+vte-reference	ports/x11-toolkits/vte-reference
 vtiger		ports/www/vtiger
 vtk		ports/math/vtk
 vtk-data	ports/math/vtk-data
