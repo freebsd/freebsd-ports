@@ -7633,6 +7633,7 @@ p5-ApacheBench	ports/www/p5-ApacheBench
 p5-ApacheDBILogConfig	ports/databases/p5-ApacheDBILogConfig
 p5-ApacheDBILogger	ports/databases/p5-ApacheDBILogger
 p5-App-CLI	ports/devel/p5-App-CLI
+p5-App-Cache	ports/devel/p5-App-Cache
 p5-App-Info	ports/devel/p5-App-Info
 p5-AppConfig	ports/devel/p5-AppConfig
 p5-AppConfig-Std	ports/devel/p5-AppConfig-Std
