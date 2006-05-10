@@ -35,7 +35,10 @@
 48.9,	2.4,	"ftp.fr.FreeBSD.org"	# Paris, France
 48.9052,2.25947,"anoncvs.fr.FreeBSD.org"	# Courbevoie, France
 50.1,	14.4,	"ftp.cz.FreeBSD.org"	# Czech Republic
-55.7816,37.6324,"ftp2.ru.freebsd.org"	# Moscow, Russia (MAcomnet)
+55.6972,37.5319,"ftp.ru.FreeBSD.org"	# Moscow, Russia (MSU's Computer Center)
+55.7816,37.6324,"ftp2.ru.FreeBSD.org"	# Moscow, Russia (MAcomnet)
+55.7089,37.5761,"ftp3.ru.FreeBSD.org"	# Moscow, Russia (Southern Moscow Backbone)
+55.7211,37.7733,"ftp4.ru.FreeBSD.org"	# Moscow, Russia (Corbina telecom)
 #		"ftp.luth.se"		# Sweden
 #		"ftp.ua.pt"		# Portugal
 #		"ftp.kiae.su"		# Russia
