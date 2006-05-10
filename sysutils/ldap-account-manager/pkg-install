@@ -1,0 +1,14 @@
+#!/bin/sh
+#
+#
+
+if [ "$2" != "POST-INSTALL" ]; then
+	exit 0
+fi
+
+PKG_PREFIX=${PKG_PREFIX:=/usr/local}
+WWWOWN=${WWWOWN:=%%WWWOWN%%}
+WWWGRP=${WWWGRP:=%%WWWGRP%%}
+WWW_ROOT=${PKG_PREFIX}/%%WWW_ROOT%%
+
+chown -R ${WWWOWN}:${WWWGRP} ${WWW_ROOT}/sess ${WWW_ROOT}/tmp ${WWW_ROOT}/config
