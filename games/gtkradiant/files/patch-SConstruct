@@ -1,0 +1,66 @@
+--- SConstruct.orig	Fri Feb 10 19:01:20 2006
++++ SConstruct	Tue Feb 21 12:46:47 2006
+@@ -3,7 +3,6 @@
+ 
+ import commands, re, sys, os, pickle, string, popen2
+ from makeversion import radiant_makeversion, get_version
+-from osx_setup import do_osx_setup
+ 
+ # to access some internal stuff
+ import SCons
+@@ -85,10 +84,10 @@
+ 
+ # default settings -------------------------------
+ 
+-CC='gcc'
+-CXX='g++'
++CC='%%CC%%'
++CXX='%%CXX%%'
+ JOBS='1'
+-BUILD='debug'
++BUILD='release'
+ INSTALL='#install'
+ SETUP='0'
+ g_build_root = 'build'
+@@ -172,9 +171,9 @@
+ # common flags
+ warningFlags = '-W -Wall -Wcast-align -Wcast-qual -Wno-unused-parameter '
+ warningFlagsCXX = '-Wno-non-virtual-dtor -Wreorder ' # -Wold-style-cast
+-CCFLAGS = '' + warningFlags
+-CXXFLAGS = '-pipe -DQ_NO_STLPORT ' + warningFlags + warningFlagsCXX
+-CPPPATH = []
++CCFLAGS = '%%CFLAGS%% '
++CXXFLAGS = '%%CFLAGS%% -pipe -DQ_NO_STLPORT '
++CPPPATH = ['%%LOCALBASE%%/include', '%%X11BASE%%/include']
+ if (BUILD == 'debug'):
+ 	CXXFLAGS += '-g -D_DEBUG '
+ 	CCFLAGS += '-g -D_DEBUG '
+@@ -190,7 +189,7 @@
+ 	print 'Unknown build configuration ' + BUILD
+ 	sys.exit( 0 )
+ 
+-LINKFLAGS = ''
++LINKFLAGS = '-L%%LOCALBASE%%/lib -L%%X11BASE%%/lib '
+ if ( OS == 'Linux' ):
+ 
+   # static
+@@ -270,7 +269,9 @@
+     if ( OS == 'Darwin' ):
+       self['LINKFLAGS'] += '-lpthread -Wl,-stack_size,0x400000 '
+     else:
+-      self['LINKFLAGS'] += '-lpthread '
++      self['CCFLAGS'] += '%%PTHREAD_CFLAGS%% '
++      self['CXXFLAGS'] += '%%PTHREAD_CFLAGS%% '
++      self['LINKFLAGS'] += '%%PTHREAD_LIBS%% '
+ 
+   def CheckLDD(self, target, source, env):
+     file = target[0]
+@@ -278,7 +279,7 @@
+         print('ERROR: CheckLDD: target %s not found\n' % target[0])
+         Exit(1)
+     # not using os.popen3 as I want to check the return code
+-    ldd = popen2.Popen3('`which ldd` -r %s' % target[0], 1)
++    ldd = popen2.Popen3('`which ldd` %s' % target[0], 1)
+     stdout_lines = ldd.fromchild.readlines()
+     stderr_lines = ldd.childerr.readlines()
+     ldd_ret = ldd.wait()

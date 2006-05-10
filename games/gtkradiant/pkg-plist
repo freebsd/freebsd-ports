@@ -1,0 +1,219 @@
+bin/gtkradiant
+%%DATADIR%%/RADIANT_MAJOR
+%%DATADIR%%/RADIANT_MINOR
+%%DATADIR%%/bitmaps/black.bmp
+%%DATADIR%%/bitmaps/brush_flipx.bmp
+%%DATADIR%%/bitmaps/brush_flipy.bmp
+%%DATADIR%%/bitmaps/brush_flipz.bmp
+%%DATADIR%%/bitmaps/brush_rotatex.bmp
+%%DATADIR%%/bitmaps/brush_rotatey.bmp
+%%DATADIR%%/bitmaps/brush_rotatez.bmp
+%%DATADIR%%/bitmaps/cap_bevel.bmp
+%%DATADIR%%/bitmaps/cap_cylinder.bmp
+%%DATADIR%%/bitmaps/cap_endcap.bmp
+%%DATADIR%%/bitmaps/cap_ibevel.bmp
+%%DATADIR%%/bitmaps/cap_iendcap.bmp
+%%DATADIR%%/bitmaps/curve_cap.bmp
+%%DATADIR%%/bitmaps/dontselectcurve.bmp
+%%DATADIR%%/bitmaps/dontselectmodel.bmp
+%%DATADIR%%/bitmaps/ellipsis.bmp
+%%DATADIR%%/bitmaps/file_open.bmp
+%%DATADIR%%/bitmaps/file_save.bmp
+%%DATADIR%%/bitmaps/icon.bmp
+%%DATADIR%%/bitmaps/logo.bmp
+%%DATADIR%%/bitmaps/modify_edges.bmp
+%%DATADIR%%/bitmaps/modify_faces.bmp
+%%DATADIR%%/bitmaps/modify_vertices.bmp
+%%DATADIR%%/bitmaps/noFalloff.bmp
+%%DATADIR%%/bitmaps/notex.bmp
+%%DATADIR%%/bitmaps/patch_bend.bmp
+%%DATADIR%%/bitmaps/patch_drilldown.bmp
+%%DATADIR%%/bitmaps/patch_insdel.bmp
+%%DATADIR%%/bitmaps/patch_showboundingbox.bmp
+%%DATADIR%%/bitmaps/patch_weld.bmp
+%%DATADIR%%/bitmaps/patch_wireframe.bmp
+%%DATADIR%%/bitmaps/popup_selection.bmp
+%%DATADIR%%/bitmaps/scalelockx.bmp
+%%DATADIR%%/bitmaps/scalelocky.bmp
+%%DATADIR%%/bitmaps/scalelockz.bmp
+%%DATADIR%%/bitmaps/select_mouseresize.bmp
+%%DATADIR%%/bitmaps/select_mouserotate.bmp
+%%DATADIR%%/bitmaps/select_mousescale.bmp
+%%DATADIR%%/bitmaps/select_mousetranslate.bmp
+%%DATADIR%%/bitmaps/selection_csgmerge.bmp
+%%DATADIR%%/bitmaps/selection_csgsubtract.bmp
+%%DATADIR%%/bitmaps/selection_makehollow.bmp
+%%DATADIR%%/bitmaps/selection_selectcompletetall.bmp
+%%DATADIR%%/bitmaps/selection_selectinside.bmp
+%%DATADIR%%/bitmaps/selection_selectpartialtall.bmp
+%%DATADIR%%/bitmaps/selection_selecttouching.bmp
+%%DATADIR%%/bitmaps/shadernotex.bmp
+%%DATADIR%%/bitmaps/show_entities.bmp
+%%DATADIR%%/bitmaps/splash.bmp
+%%DATADIR%%/bitmaps/texture_lock.bmp
+%%DATADIR%%/bitmaps/textures_popup.bmp
+%%DATADIR%%/bitmaps/view_cameratoggle.bmp
+%%DATADIR%%/bitmaps/view_cameraupdate.bmp
+%%DATADIR%%/bitmaps/view_change.bmp
+%%DATADIR%%/bitmaps/view_clipper.bmp
+%%DATADIR%%/bitmaps/view_cubicclipping.bmp
+%%DATADIR%%/bitmaps/view_entity.bmp
+%%DATADIR%%/bitmaps/white.bmp
+%%DATADIR%%/bitmaps/window1.bmp
+%%DATADIR%%/bitmaps/window2.bmp
+%%DATADIR%%/bitmaps/window3.bmp
+%%DATADIR%%/bitmaps/window4.bmp
+%%DATADIR%%/doom3.game/base/default_shaderlist.txt
+%%DATADIR%%/doom3.game/default_build_menu.xml
+%%DATADIR%%/et.game/bitmaps/splash.bmp
+%%DATADIR%%/et.game/default_build_menu.txt
+%%DATADIR%%/et.game/default_build_menu.xml
+%%DATADIR%%/et.game/etmain/default_shaderlist.txt
+%%DATADIR%%/et.game/etmain/et_entities.def
+%%DATADIR%%/et.game/etmain/et_entities.ent
+%%DATADIR%%/et.game/game.xlink
+%%DATADIR%%/games/doom3.game
+%%DATADIR%%/games/et.game
+%%DATADIR%%/games/heretic2.game
+%%DATADIR%%/games/hl.game
+%%DATADIR%%/games/hlcs.game
+%%DATADIR%%/games/ja.game
+%%DATADIR%%/games/jabp.game
+%%DATADIR%%/games/jk2.game
+%%DATADIR%%/games/q1.game
+%%DATADIR%%/games/q2.game
+%%DATADIR%%/games/q3.game
+%%DATADIR%%/games/q3bp.game
+%%DATADIR%%/games/q4.game
+%%DATADIR%%/games/sof2.game
+%%DATADIR%%/games/stvef.game
+%%DATADIR%%/games/wolf.game
+%%DATADIR%%/gl/lighting_DBS_XY_Z_arbfp1.cg
+%%DATADIR%%/gl/lighting_DBS_XY_Z_arbvp1.cg
+%%DATADIR%%/gl/lighting_DBS_omni_fp.glp
+%%DATADIR%%/gl/lighting_DBS_omni_fp.glsl
+%%DATADIR%%/gl/lighting_DBS_omni_vp.glp
+%%DATADIR%%/gl/lighting_DBS_omni_vp.glsl
+%%DATADIR%%/gl/zfill_arbfp1.cg
+%%DATADIR%%/gl/zfill_arbvp1.cg
+%%DATADIR%%/gl/zfill_fp.glp
+%%DATADIR%%/gl/zfill_fp.glsl
+%%DATADIR%%/gl/zfill_vp.glp
+%%DATADIR%%/gl/zfill_vp.glsl
+%%DATADIR%%/global.xlink
+%%DATADIR%%/heretic2.game/base/entities.def
+%%DATADIR%%/heretic2.game/default_build_menu.xml
+%%DATADIR%%/heretic2.game/game.xlink
+%%DATADIR%%/heretic2/h2data
+%%DATADIR%%/hl.game/cstrike/halflife-cs.fgd
+%%DATADIR%%/hl.game/default_build_menu.xml
+%%DATADIR%%/hl.game/valve/default_shaderlist.txt
+%%DATADIR%%/hl.game/valve/halflife.fgd
+%%DATADIR%%/ja.game/base/default_shaderlist.txt
+%%DATADIR%%/ja.game/base/mp_entities.def
+%%DATADIR%%/ja.game/base/sp_entities.def
+%%DATADIR%%/ja.game/default_build_menu.xml
+%%DATADIR%%/ja.game/game.xlink
+%%DATADIR%%/jk2.game/BehavEd.bhc
+%%DATADIR%%/jk2.game/ChangeLog.txt
+%%DATADIR%%/jk2.game/base/default_shaderlist.txt
+%%DATADIR%%/jk2.game/base/mp_entities.def
+%%DATADIR%%/jk2.game/base/sp_entities.def
+%%DATADIR%%/jk2.game/default_build_menu.xml
+%%DATADIR%%/jk2.game/game.xlink
+%%DATADIR%%/modules/archivepak.so
+%%DATADIR%%/modules/archivewad.so
+%%DATADIR%%/modules/archivezip.so
+%%DATADIR%%/modules/entity.so
+%%DATADIR%%/modules/image.so
+%%DATADIR%%/modules/imagehl.so
+%%DATADIR%%/modules/imagepng.so
+%%DATADIR%%/modules/imageq2.so
+%%DATADIR%%/modules/mapq3.so
+%%DATADIR%%/modules/mapxml.so
+%%DATADIR%%/modules/md3model.so
+%%DATADIR%%/modules/model.so
+%%DATADIR%%/modules/shaders.so
+%%DATADIR%%/modules/vfspk3.so
+%%DATADIR%%/q1.game/default_build_menu.xml
+%%DATADIR%%/q1.game/id1/entities.ent
+%%DATADIR%%/q2.game/baseq2/entities.def
+%%DATADIR%%/q2.game/default_build_menu.xml
+%%DATADIR%%/q2.game/game.xlink
+%%DATADIR%%/q2map
+%%DATADIR%%/q3.game/baseq3/default_shaderlist.txt
+%%DATADIR%%/q3.game/baseq3/entities.def
+%%DATADIR%%/q3.game/baseq3/entities.ent
+%%DATADIR%%/q3.game/default_build_menu.xml
+%%DATADIR%%/q3.game/game.xlink
+%%DATADIR%%/q3.game/missionpack/default_shaderlist.txt
+%%DATADIR%%/q3.game/missionpack/entities-ta.def
+%%DATADIR%%/q3.game/missionpack/entities-ta.ent
+%%DATADIR%%/q3bp.game/baseq3/default_shaderlist.txt
+%%DATADIR%%/q3bp.game/default_build_menu.xml
+%%DATADIR%%/q3bp.game/game.xlink
+%%DATADIR%%/q3data.qdt
+%%DATADIR%%/q3data.x86
+%%DATADIR%%/q3map2.x86
+%%DATADIR%%/q4.game/default_build_menu.xml
+%%DATADIR%%/q4.game/q4base/default_shaderlist.txt
+%%DATADIR%%/qdata3
+%%DATADIR%%/radiant.x86
+%%DATADIR%%/sof2.game/BehavEd.bhc
+%%DATADIR%%/sof2.game/ChangeLog.txt
+%%DATADIR%%/sof2.game/base/default_shaderlist.txt
+%%DATADIR%%/sof2.game/base/mp_entities.def
+%%DATADIR%%/sof2.game/base/sp_entities.def
+%%DATADIR%%/sof2.game/default_build_menu.xml
+%%DATADIR%%/sof2.game/game.xlink
+%%DATADIR%%/stvef.game/baseEF/default_shaderlist.txt
+%%DATADIR%%/stvef.game/baseEF/hm_entities.def
+%%DATADIR%%/stvef.game/baseEF/mp_entities.def
+%%DATADIR%%/stvef.game/baseEF/sp_entities.def
+%%DATADIR%%/stvef.game/default_build_menu.xml
+%%DATADIR%%/stvef.game/game.xlink
+%%DATADIR%%/wolf.game/default_build_menu.xml
+%%DATADIR%%/wolf.game/game.xlink
+%%DATADIR%%/wolf.game/main/default_shaderlist.txt
+%%DATADIR%%/wolf.game/main/wolf_entities.def
+%%DATADIR%%/wolf.game/main/wolf_entities.ent
+@dirrm %%DATADIR%%/wolf.game/main
+@dirrm %%DATADIR%%/wolf.game
+@dirrm %%DATADIR%%/stvef.game/baseEF
+@dirrm %%DATADIR%%/stvef.game
+@dirrm %%DATADIR%%/sof2.game/base
+@dirrm %%DATADIR%%/sof2.game
+@dirrm %%DATADIR%%/q4.game/q4base
+@dirrm %%DATADIR%%/q4.game
+@dirrm %%DATADIR%%/q3bp.game/baseq3
+@dirrm %%DATADIR%%/q3bp.game
+@dirrm %%DATADIR%%/q3.game/missionpack
+@dirrm %%DATADIR%%/q3.game/baseq3
+@dirrm %%DATADIR%%/q3.game
+@dirrm %%DATADIR%%/q2.game/baseq2
+@dirrm %%DATADIR%%/q2.game
+@dirrm %%DATADIR%%/q1.game/id1
+@dirrm %%DATADIR%%/q1.game
+@dirrm %%DATADIR%%/plugins
+@dirrm %%DATADIR%%/modules
+@dirrm %%DATADIR%%/jk2.game/base
+@dirrm %%DATADIR%%/jk2.game
+@dirrm %%DATADIR%%/jabp.game
+@dirrm %%DATADIR%%/ja.game/base
+@dirrm %%DATADIR%%/ja.game
+@dirrm %%DATADIR%%/hlcs.game
+@dirrm %%DATADIR%%/hl.game/valve
+@dirrm %%DATADIR%%/hl.game/cstrike
+@dirrm %%DATADIR%%/hl.game
+@dirrm %%DATADIR%%/heretic2.game/base
+@dirrm %%DATADIR%%/heretic2.game
+@dirrm %%DATADIR%%/heretic2
+@dirrm %%DATADIR%%/gl
+@dirrm %%DATADIR%%/games
+@dirrm %%DATADIR%%/et.game/etmain
+@dirrm %%DATADIR%%/et.game/bitmaps
+@dirrm %%DATADIR%%/et.game
+@dirrm %%DATADIR%%/doom3.game/base
+@dirrm %%DATADIR%%/doom3.game
+@dirrm %%DATADIR%%/bitmaps
+@dirrm %%DATADIR%%
