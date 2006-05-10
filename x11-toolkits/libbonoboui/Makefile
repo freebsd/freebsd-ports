@@ -17,14 +17,22 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GUI frontend to the libbonobo component of GNOME 2
 
 USE_BZIP2=	yes
+PREFIX?=	${X11BASE}
+
+.if !defined(REFERENCE_PORT)
+
+PORTREVISION=	1
+
 USE_GETTEXT=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomehier intlhack \
-		libgnomecanvas libgnome
+		libgnomecanvas libgnome referencehack
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
 .include <bsd.port.mk>
+
+.endif
