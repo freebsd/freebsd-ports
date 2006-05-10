@@ -1,5 +1,6 @@
 %%SITE_PERL%%/IO/All.pm
 %%SITE_PERL%%/IO/All.pod
+%%SITE_PERL%%/IO/All/Base.pm
 %%SITE_PERL%%/IO/All/DBM.pm
 %%SITE_PERL%%/IO/All/Dir.pm
 %%SITE_PERL%%/IO/All/File.pm
