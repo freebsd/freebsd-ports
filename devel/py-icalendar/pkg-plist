@@ -1,10 +1,10 @@
-%%PORTDOCS%%share/doc/icalendar/example.txt
-%%PORTDOCS%%share/doc/icalendar/groupscheduled.ics
-%%PORTDOCS%%share/doc/icalendar/groupscheduled.txt
-%%PORTDOCS%%share/doc/icalendar/multiple.ics
-%%PORTDOCS%%share/doc/icalendar/multiple.txt
-%%PORTDOCS%%share/doc/icalendar/small.ics
-%%PORTDOCS%%share/doc/icalendar/small.txt
+%%PORTDOCS%%%%DOCSDIR%%/example.txt
+%%PORTDOCS%%%%DOCSDIR%%/groupscheduled.ics
+%%PORTDOCS%%%%DOCSDIR%%/groupscheduled.txt
+%%PORTDOCS%%%%DOCSDIR%%/multiple.ics
+%%PORTDOCS%%%%DOCSDIR%%/multiple.txt
+%%PORTDOCS%%%%DOCSDIR%%/small.ics
+%%PORTDOCS%%%%DOCSDIR%%/small.txt
 %%PYTHON_SITELIBDIR%%/icalendar/__init__.py
 %%PYTHON_SITELIBDIR%%/icalendar/__init__.pyc
 %%PYTHON_SITELIBDIR%%/icalendar/__init__.pyo
@@ -30,4 +30,4 @@
 %%PYTHON_SITELIBDIR%%/icalendar/util.pyc
 %%PYTHON_SITELIBDIR%%/icalendar/util.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/icalendar
-%%PORTDOCS%%@dirrm share/doc/icalendar
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
