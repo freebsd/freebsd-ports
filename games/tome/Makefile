@@ -23,7 +23,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/src
 OPTIONS=		X11 "Turn on support for X" on
 DESKTOP_ENTRIES=	"ToME" "Roguelike game based on JRR Tolkien's work" \
 			"${DATADIR}/xtra/graf/tome-128.png" \
-			"tome -v -g" "Application;Game;RolePlaying" \
+			"tome -v -g" "Application;Game;RolePlaying;" \
 			false
 
 .include <bsd.port.pre.mk>
