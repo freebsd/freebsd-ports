@@ -24,15 +24,14 @@ BUILD_DEPENDS=	${SITE_PERL}/Class/Accessor/Chained/Fast.pm:${PORTSDIR}/devel/p5-
 		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_MOD_BUILD=	yes
 
 MAN3=		Net::OpenDHT.3
 
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500600
-IGNORE=		requires at least Perl 5.6.  Please install lang/perl5 or 
-lang/perl5.8
+IGNORE=		requires Perl 5.8.  Please install lang/perl5 or lang/perl5.8
 .endif
 
 .include <bsd.port.post.mk>
