@@ -6055,7 +6055,6 @@ linux-libvorbis	ports/audio/linux-libvorbis
 linux-libxml	ports/textproc/linux-libxml
 linux-mbrola	ports/audio/linux-mbrola
 linux-mozilla	ports/www/linux-mozilla
-linux-mozilla-devel	ports/www/linux-mozilla-devel
 linux-nvu	ports/www/linux-nvu
 linux-nwnclient	ports/games/linux-nwnclient
 linux-nwserver	ports/games/linux-nwserver
