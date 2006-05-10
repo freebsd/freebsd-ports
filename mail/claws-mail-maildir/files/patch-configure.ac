@@ -1,23 +1,10 @@
---- configure.ac.orig	Mon Feb 13 09:04:05 2006
-+++ configure.ac	Sun Apr 30 00:25:32 2006
-@@ -28,7 +28,11 @@
- # Check for sylpheed-claws
- #
- PKG_CHECK_MODULES(SYLPHEED_CLAWS, sylpheed-claws >= 1.9.100.160)
--SYLPHEED_CLAWS_PLUGINDIR=$( $PKG_CONFIG --variable=plugindir sylpheed-claws )
-+if test -z $prefix ; then
-+  SYLPHEED_CLAWS_PLUGINDIR=$( $PKG_CONFIG --variable=plugindir sylpheed-claws )
-+else
-+  SYLPHEED_CLAWS_PLUGINDIR=$prefix/lib/sylpheed-claws/plugins
-+fi
- AC_SUBST(SYLPHEED_CLAWS_CFLAGS)
- AC_SUBST(SYLPHEED_CLAWS_LIBS)
- AC_SUBST(SYLPHEED_CLAWS_PLUGINDIR)
-@@ -88,7 +92,7 @@
+--- configure.ac.orig	Tue May  9 14:35:01 2006
++++ configure.ac	Tue May  9 14:36:08 2006
+@@ -92,7 +92,7 @@
    case "$DBVERS" in
      3)
      AC_MSG_RESULT([version 3.x or above])
--    for lib in db-4.2 db-4.1 db-4.0 db-4 db4 db-3.2 db-3 db3 db; do
+-    for lib in db-4.4 db-4.3 db-4.2 db-4.1 db-4.0 db-4 db4 db-3.2 db-3 db3 db; do
 +    for lib in db-4.4 db-4.3 db-4.2 db41 db-4.0 db-4 db4 db-3.2 db-3 db3 db; do
        if test "x$DBLINKED" = "x0"; then
  dnl        AC_CHECK_LIB($lib, db_create, [DBLIB="-l$lib"; DBLINKED=1], [])
