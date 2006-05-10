@@ -5684,6 +5684,7 @@ libgnomeprintui	ports/x11-toolkits/libgnomeprintui
 libgnomeprintuimm	ports/x11-toolkits/libgnomeprintuimm
 libgnomesu	ports/security/libgnomesu
 libgnomeui	ports/x11-toolkits/libgnomeui
+libgnomeui-reference	ports/x11-toolkits/libgnomeui-reference
 libgnomeuimm	ports/x11-toolkits/libgnomeuimm
 libgnomeuimm26	ports/x11-toolkits/libgnomeuimm26
 libgnugetopt	ports/devel/libgnugetopt
