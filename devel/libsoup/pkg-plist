@@ -28,32 +28,5 @@ lib/libsoup-%%VERSION%%.la
 lib/libsoup-%%VERSION%%.so
 lib/libsoup-%%VERSION%%.so.8
 libdata/pkgconfig/libsoup-%%VERSION%%.pc
-%%DOCSDIR%%/SoupAddress.html
-%%DOCSDIR%%/SoupAuth.html
-%%DOCSDIR%%/SoupConnection.html
-%%DOCSDIR%%/SoupConnectionNTLM.html
-%%DOCSDIR%%/SoupMessage.html
-%%DOCSDIR%%/SoupServer.html
-%%DOCSDIR%%/SoupServerMessage.html
-%%DOCSDIR%%/SoupSession.html
-%%DOCSDIR%%/SoupSessionAsync.html
-%%DOCSDIR%%/SoupSessionSync.html
-%%DOCSDIR%%/SoupSoapMessage.html
-%%DOCSDIR%%/SoupSocket.html
-%%DOCSDIR%%/ch01.html
-%%DOCSDIR%%/home.png
-%%DOCSDIR%%/index.html
-%%DOCSDIR%%/index.sgml
-%%DOCSDIR%%/ix01.html
-%%DOCSDIR%%/left.png
-%%DOCSDIR%%/libsoup-soup-dns.html
-%%DOCSDIR%%/libsoup-soup-ssl.html
-%%DOCSDIR%%/libsoup-soup-status.html
-%%DOCSDIR%%/libsoup-soup-uri.html
-%%DOCSDIR%%/libsoup.devhelp
-%%DOCSDIR%%/right.png
-%%DOCSDIR%%/style.css
-%%DOCSDIR%%/up.png
-@dirrm %%DOCSDIR%%
 @dirrm include/libsoup-%%VERSION%%/libsoup
 @dirrm include/libsoup-%%VERSION%%

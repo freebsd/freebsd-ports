@@ -540,6 +540,7 @@
     SUBDIR += libslang
     SUBDIR += libslang2
     SUBDIR += libsoup
+    SUBDIR += libsoup-reference
     SUBDIR += libstatgrab
     SUBDIR += libstrfunc
     SUBDIR += libstroke

@@ -16,10 +16,15 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A SOAP (Simple Object Access Protocol) implementation in C
 
+USE_BZIP2=	yes
+
+.if !defined(REFERENCE_PORT)
+
+PORTREVISION=	1
+
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
-USE_BZIP2=	yes
-USE_GNOME=	gnomehack glib20 libxml2 ltverhack
+USE_GNOME=	gnomehack glib20 libxml2 ltverhack referencehack
 INSTALLS_SHLIB=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
@@ -45,3 +50,5 @@ pre-everything::
 	@${ECHO_MSG} ""
 
 .include <bsd.port.post.mk>
+
+.endif
