@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ocrad
-PORTVERSION=	0.13
+PORTVERSION=	0.14
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -27,7 +27,12 @@ MAKE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
 
 .if ${OSVERSION} < 500035
 USE_GCC=	3.4
+post-patch:
+. for f in main.cc rational.cc
+	@${REINPLACE_CMD} 's/std::snprintf/snprintf/g' ${WRKSRC}/$f
+. endfor
 .endif
+
 .if ${OSVERSION} < 500041
 MAKE_ENV+=	CPPFLAGS="${CPPFLAGS} -DHAVE_DECL_GETOPT"
 .endif
