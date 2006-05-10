@@ -1,36 +1,31 @@
---- Makefile.orig	Tue Nov 29 16:45:03 2005
-+++ Makefile	Tue Nov 29 23:17:26 2005
-@@ -16,7 +16,7 @@
+--- Makefile.orig	Tue May  9 16:45:02 2006
++++ Makefile	Tue May  9 22:14:14 2006
+@@ -18,7 +18,7 @@
  endif
  
  # MMX/SSE optims
 -ifeq ($(ARCH),X86)
-+ifdef ARCH_X86
- SRCS   += common/i386/mc-c.c common/i386/dct-c.c common/i386/predict.c
++ifeq ($(ARCH),i386)
+ SRCS   += common/i386/mc-c.c common/i386/dct-c.c common/i386/predict-c.c
  ASMSRC  = common/i386/dct-a.asm common/i386/cpu-a.asm \
            common/i386/pixel-a.asm common/i386/mc-a.asm \
-@@ -60,14 +60,21 @@
- DEP  = depend
+@@ -30,7 +30,7 @@
+ endif
  
- .PHONY: default fprofiled clean distclean install uninstall
--default: $(DEP) x264$(EXE)
-+
-+SHARED_LIB = libx264.so
-+SHARED_LIB_VER = $(SHARED_LIB).1
-+  
-+default: $(DEP) x264$(EXE) $(SHARED_LIB_VER)
+ # MMX/SSE optims
+-ifeq ($(ARCH),X86_64)
++ifeq ($(ARCH),amd64)
+ SRCS   += common/i386/mc-c.c common/i386/dct-c.c common/i386/predict-c.c
+ ASMSRC  = common/amd64/dct-a.asm common/amd64/cpu-a.asm \
+           common/amd64/pixel-a.asm common/amd64/mc-a.asm \
+@@ -47,10 +47,6 @@
+ endif
  
- libx264.a: .depend $(OBJS) $(OBJASM)
- 	ar rc libx264.a $(OBJS) $(OBJASM)
- 	ranlib libx264.a
+ # VIS optims
+-ifeq ($(ARCH),UltraSparc)
+-ASMSRC += common/sparc/pixel.asm
+-OBJASM  = $(ASMSRC:%.asm=%.o)
+-endif
  
--x264$(EXE): libx264.a x264.o matroska.o
--	$(CC) -o $@ x264.o matroska.o libx264.a $(LDFLAGS)
-+x264$(EXE): $(SHARED_LIB_VER) x264.o matroska.o
-+	$(CC) -o $@ x264.o matroska.o $(SHARED_LIB_VER) $(LDFLAGS)
-+ 
-+$(SHARED_LIB_VER): $(OBJS) libx264.a
-+	$(CC) $(CFLAGS) -shared -Wl,-soname,$(SHARED_LIB_VER) -o $(SHARED_LIB_VER) $(OBJS) $(OBJASM) $(LDFLAGS)
- 
- x264vfw.dll: libx264.a $(wildcard vfw/*.c vfw/*.h)
- 	make -C vfw/build/cygwin
+ ifneq ($(HAVE_GETOPT_LONG),1)
+ SRCS += extras/getopt.c
