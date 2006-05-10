@@ -82,30 +82,6 @@ lib/libgnomeprint/%%VERSION%%/modules/transports/libgnomeprint-lpr.a
 lib/libgnomeprint/%%VERSION%%/modules/transports/libgnomeprint-lpr.la
 lib/libgnomeprint/%%VERSION%%/modules/transports/libgnomeprint-lpr.so
 libdata/pkgconfig/libgnomeprint-%%LIBVERSION%%.pc
-%%DOCSDIR%%/home.png
-%%DOCSDIR%%/index.html
-%%DOCSDIR%%/index.sgml
-%%DOCSDIR%%/left.png
-%%DOCSDIR%%/libgnomeprint-Pango-Integration.html
-%%DOCSDIR%%/libgnomeprint-building.html
-%%DOCSDIR%%/libgnomeprint-compiling.html
-%%DOCSDIR%%/libgnomeprint-gnome-font-face.html
-%%DOCSDIR%%/libgnomeprint-gnome-font.html
-%%DOCSDIR%%/libgnomeprint-gnome-glyphlist.html
-%%DOCSDIR%%/libgnomeprint-gnome-pgl.html
-%%DOCSDIR%%/libgnomeprint-gnome-print-config.html
-%%DOCSDIR%%/libgnomeprint-gnome-print-job.html
-%%DOCSDIR%%/libgnomeprint-gnome-print-paper.html
-%%DOCSDIR%%/libgnomeprint-gnome-print-unit.html
-%%DOCSDIR%%/libgnomeprint-gnome-print.html
-%%DOCSDIR%%/libgnomeprint-gnome-rfont.html
-%%DOCSDIR%%/libgnomeprint-resources.html
-%%DOCSDIR%%/libgnomeprint.devhelp
-%%DOCSDIR%%/libgnomeprint.html
-%%DOCSDIR%%/libgnomeprintunsorted.html
-%%DOCSDIR%%/right.png
-%%DOCSDIR%%/style.css
-%%DOCSDIR%%/up.png
 share/gnome/libgnomeprint/%%VERSION%%/globals.xml
 share/gnome/libgnomeprint/%%VERSION%%/models/GNOME-GENERIC-PS.xml
 share/gnome/libgnomeprint/%%VERSION%%/models/GNOME-PDF-WRITER.xml
@@ -195,7 +171,6 @@ share/locale/zh_TW/LC_MESSAGES/libgnomeprint-%%LIBVERSION%%.mo
 @dirrm share/gnome/libgnomeprint/%%VERSION%%/models
 @dirrm share/gnome/libgnomeprint/%%VERSION%%
 @dirrm share/gnome/libgnomeprint
-@dirrm %%DOCSDIR%%
 @dirrm lib/libgnomeprint/%%VERSION%%/modules/transports
 @dirrm lib/libgnomeprint/%%VERSION%%/modules/filters
 @dirrm lib/libgnomeprint/%%VERSION%%/modules
