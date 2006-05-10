@@ -586,6 +586,7 @@
     SUBDIR += xmailbox
     SUBDIR += xmailwatcher
     SUBDIR += xpbiff
+    SUBDIR += xpi-displayquota
     SUBDIR += yuzu
     SUBDIR += zabit
     SUBDIR += zmailer
