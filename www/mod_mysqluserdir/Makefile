@@ -7,7 +7,7 @@
 PORTNAME=	mod_mysqluserdir
 PORTVERSION=	0.1
 CATEGORIES=	www
-MASTER_SITES=	ftp://sys.estpak.ee/pub/ \
+MASTER_SITES=	ftp://sys.estpak.ee/pub/sys_staff/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -28,6 +28,6 @@ do-install:
 	${INSTALL} -d -o root -g wheel -m 0755 ${DOCSDIR}
 	${INSTALL_DATA} ${FILESDIR}/README ${DOCSDIR}/
 .endif
-	${CAT} ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
