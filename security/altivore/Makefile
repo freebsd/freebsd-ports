@@ -8,7 +8,8 @@
 PORTNAME=	altivore
 PORTVERSION=	0.9.3
 CATEGORIES=	security
-MASTER_SITES=	http://samy.kerneled.org/stuff/
+MASTER_SITES=	http://80.237.203.14/media/directory06/uploads/ \
+		http://mirror.inerd.com/FreeBSD/distfiles/altivore/
 DISTNAME=	altivore
 EXTRACT_SUFX=	.c
 
@@ -18,9 +19,10 @@ COMMENT=	A publically disclosed (neither GPL nor open-source) ala Carnivore src
 RESTRICTED=	License does not allow redistribution in any form\
 		(source, code or otherwise)
 
+SUB_FILES=	pkg-message
+
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
-USE_REINPLACE=	yes
 
 do-extract:
 	@${MKDIR} ${WRKDIR}
@@ -30,12 +32,8 @@ post-patch:
 	@${REINPLACE_CMD} -e "s///" ${WRKDIR}/${DISTFILES}
 
 do-install:
-	@${MKDIR} ${PREFIX}/share/examples/${PORTNAME}
-	@${INSTALL_DATA} ${WRKDIR}/${DISTFILES} \
-		${PREFIX}/share/examples/${PORTNAME}
-	@${INSTALL_DATA} ${PKGMESSAGE} \
-		${PREFIX}/share/examples/${PORTNAME}/README
-
-	@${SED} -e "s!/usr/local/!${PREFIX}/!" ${PKGMESSAGE}
+	@${MKDIR} ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKDIR}/${DISTFILES} ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${PKGMESSAGE} ${EXAMPLESDIR}/README
 
 .include <bsd.port.mk>

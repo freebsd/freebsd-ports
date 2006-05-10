@@ -3,7 +3,7 @@ discussing.
 
 A copy of the altivore source code was installed as
 
-/usr/local/share/examples/altivore/altivore.c
+%%EXAMPLESDIR%%/altivore.c
 
 Compiling, or any other use, should be conducted after reading of
 the source's license agreement. Read the source code, it contains

@@ -1,3 +1,3 @@
-share/examples/altivore/README
-share/examples/altivore/altivore.c
-@dirrm share/examples/altivore
+%%EXAMPLESDIR%%/README
+%%EXAMPLESDIR%%/altivore.c
+@dirrm %%EXAMPLESDIR%%
