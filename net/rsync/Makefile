@@ -63,9 +63,11 @@ PATCH_STRIP=	-p1
 .endif
 
 .if !defined(WITHOUT_ACLS)
+.if ${OSVERSION} >= 500000
 EXTRA_PATCHES+=	${WRKSRC}/patches/acls.diff
 PATCH_STRIP=	-p1
 CONFIGURE_ARGS+=--enable-acl-support
+.endif
 .endif
 
 .if defined(WITHOUT_SSH)
