@@ -9,7 +9,7 @@ PORTNAME=	ngpt
 PORTVERSION=	1.0.1
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	http://www.sharma-home.net/people/adsharma/projects/freebsd/
+MASTER_SITES=	http://www.sharma-home.net/people/arun/projects/freebsd/
 MASTER_SITE_SUBDIR=	ngpt-${PORTVERSION}.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
