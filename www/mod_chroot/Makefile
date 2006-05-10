@@ -16,12 +16,12 @@ COMMENT=	The mod_chroot makes running Apache in a chroot easy
 PORTDOCS=	INSTALL CAVEATS README.Apache20 README
 AP_FAST_BUILD=	YES
 AP_GENPLIST=	YES
+USE_APACHE=	13+
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/www/apache20/Makefile.modules.3rd"
+
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
