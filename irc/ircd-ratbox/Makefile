@@ -7,7 +7,7 @@
 # ex: ts=8
 
 PORTNAME=	ircd-ratbox
-PORTVERSION=	2.1.7
+PORTVERSION=	2.1.8
 CATEGORIES=	irc ipv6
 MASTER_SITES=	ftp://ftp.ircd-ratbox.org/pub/ircd-ratbox/	\
 		ftp://ftp.demon.co.uk/pub/mirrors/ircd-ratbox/	\
