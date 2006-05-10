@@ -1,0 +1,4 @@
+This modules adds Japanese phone number validation command to
+FormValidator::Simple.
+
+WWW: http://search.cpan.org/dist/FormValidator-Simple-Plugin-Number-Phone-JP/
