@@ -18,6 +18,7 @@ MAILGROUP?=	mailnull
 MAILLOG?=	/var/log/maillog
 EXACTDIR?=	/var/exact
 
+FETCH_CMD=	/usr/bin/fetch -Rr
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-user=${MAILUSER} \
