@@ -956,6 +956,7 @@
     SUBDIR += p5-File-BasicFlock
     SUBDIR += p5-File-Binary
     SUBDIR += p5-File-Cache
+    SUBDIR += p5-File-Cat
     SUBDIR += p5-File-Copy-Recursive
     SUBDIR += p5-File-DirSync
     SUBDIR += p5-File-FTS
