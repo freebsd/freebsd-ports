@@ -246,7 +246,7 @@ ${ext}_NAME?=		${ext}
 BUILD_DEPENDS+=	${${ext}_GST80_PREFIX}${${ext}_NAME}${${ext}_GST80_SUFX}>=${${ext}_GST80_VERSION}:${PORTSDIR}/${${ext}_DEPENDS}${${ext}_GST80_SUFX}
 RUN_DEPENDS+=	${${ext}_GST80_PREFIX}${${ext}_NAME}${${ext}_GST80_SUFX}>=${${ext}_GST80_VERSION}:${PORTSDIR}/${${ext}_DEPENDS}${${ext}_GST80_SUFX}
 . else
-BROKEN=	"Unknown gstreamer-plugin -- ${ext}"
+BROKEN=	Unknown gstreamer-plugin -- ${ext}
 . endif
 .endfor
 .endif
@@ -256,7 +256,7 @@ BROKEN=	"Unknown gstreamer-plugin -- ${ext}"
 BUILD_DEPENDS+=	${${ext}_GST_PREFIX}${${ext}_NAME}>=${${ext}_GST_VERSION}:${PORTSDIR}/${${ext}_DEPENDS}
 RUN_DEPENDS+=	${${ext}_GST_PREFIX}${${ext}_NAME}>=${${ext}_GST_VERSION}:${PORTSDIR}/${${ext}_DEPENDS}
 . else
-BROKEN=	"Unknown gstreamer-plugin -- ${ext}"
+BROKEN=	Unknown gstreamer-plugin -- ${ext}
 . endif
 .endfor
 .endif
