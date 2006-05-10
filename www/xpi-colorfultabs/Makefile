@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	colorful_tabs
-PORTVERSION=	1.1
+PORTVERSION=	1.4
 DISTVERSIONSUFFIX=	-fx+mz
 CATEGORIES=	www
 
@@ -17,5 +17,5 @@ XPI_ID=		{0545b830-f0aa-4d7e-8820-50a4629a56fe}
 XPI_FILES=	chrome/clrtabs.jar chrome.manifest install.js install.rdf
 XPI_DIRS=	chrome
 
-.include "../xpi-adblock/Makefile.xpi"
+.include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>
