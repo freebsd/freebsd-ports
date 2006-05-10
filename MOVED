@@ -2297,3 +2297,4 @@ www/mod_php5|lang/php5|2006-05-06|Unification of php slave ports
 www/php4-cgi|lang/php4|2006-05-06|Unification of php slave ports
 www/php5-cgi|lang/php5|2006-05-06|Unification of php slave ports
 multimedia/gnonlin|multimedia/gstreamer-plugins-gnonlin|2006-05-08|Merge duplicite ports
+www/linux-mozilla-devel|www/linux-seamonkey-devel|2006-05-10|Mozilla-devel is now Seamonkey
