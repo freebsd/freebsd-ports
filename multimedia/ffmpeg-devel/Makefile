@@ -7,6 +7,7 @@
 
 PORTNAME=	ffmpeg
 DISTVERSION=	0.4.9.cvs.${RELEASE_DATE}
+PORTREVISION=	1
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 #		http://mplayerhq.hu/MPlayer/cvs/
@@ -305,7 +306,7 @@ FFMPEG_CFLAGS+=		-I${LOCALBASE}/include/vorbis
 .endif
 # x264
 .ifdef(WITH_X264)
-LIB_DEPENDS+=		x264.1:${PORTSDIR}/multimedia/x264
+LIB_DEPENDS+=		x264.47:${PORTSDIR}/multimedia/x264
 
 CONFIGURE_ARGS+=	--enable-x264
 .endif
