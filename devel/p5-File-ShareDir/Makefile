@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	File-ShareDir
-PORTVERSION=	0.03
+PORTVERSION=	0.04
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	File
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	tobez@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	File::ShareDir - Locate per-dist and per-module shared files
 
 BUILD_DEPENDS=	\
