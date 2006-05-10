@@ -209,6 +209,7 @@
     SUBDIR += viewkit
     SUBDIR += viewklass
     SUBDIR += vte
+    SUBDIR += vte-reference
     SUBDIR += wmapp
     SUBDIR += wxgtk24
     SUBDIR += wxgtk24-contrib
