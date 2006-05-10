@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ConfigReader-Simple
-PORTVERSION=	1.21
+PORTVERSION=	1.23
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/B/BD/BDFOY
@@ -17,7 +17,6 @@ COMMENT=	Simple configuration file parser
 
 BUILD_DEPENDS=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple \
 		${SITE_PERL}/Test/Warn.pm:${PORTSDIR}/devel/p5-Test-Warn
-RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
