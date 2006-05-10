@@ -458,6 +458,7 @@
     SUBDIR += libbinio
     SUBDIR += libbnr
     SUBDIR += libbonobo
+    SUBDIR += libbonobo-reference
     SUBDIR += libbonobomm
     SUBDIR += libcapsinetwork
     SUBDIR += libccid
