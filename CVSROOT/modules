@@ -11542,6 +11542,7 @@ rpc2		ports/devel/rpc2
 rpl		ports/misc/rpl
 rplay		ports/audio/rplay
 rpm		ports/archivers/rpm
+rpm-spec-mode.el	ports/devel/rpm-spec-mode.el
 rpm2cpio	ports/archivers/rpm2cpio
 rpm4		ports/archivers/rpm4
 rprint		ports/print/rprint
