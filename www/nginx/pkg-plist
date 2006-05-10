@@ -15,10 +15,7 @@ etc/nginx/nginx.conf-dist
 %%WWWDATA%%@exec chmod a-w www/nginx-dist
 %%WWWDATA%%@unexec if [ -L %D/www/nginx ]; then rm -f %D/www/nginx; fi
 %%WWWDATA%%@dirrm www/nginx-dist
-%%STOP_BEFORE_REMOVE%%@unexec %D/etc/rc.d/nginx.sh stop || true
 sbin/nginx
-etc/rc.d/nginx.sh
-@exec [ -d %%TMPDIR%% ] || mkdir -p %%TMPDIR%%
-@exec chown %%WWWOWN%%:%%WWWGRP%% %%TMPDIR%%
-@unexec rm -fr %%TMPDIR%%
-%%START_AFTER_INSTALL%%@exec %D/etc/rc.d/nginx.sh start
+@exec [ -d %%NGINX_TMPDIR%% ] || mkdir -p %%NGINX_TMPDIR%%
+@exec chown %%WWWOWN%%:%%WWWGRP%% %%NGINX_TMPDIR%%
+@unexec rm -fr %%NGINX_TMPDIR%%
