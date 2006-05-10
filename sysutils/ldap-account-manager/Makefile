@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	LDAP-Account-Manager
-PORTVERSION=	0.5.1
+PORTVERSION=	1.0.1
 CATEGORIES=	sysutils www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	lam
-DISTNAME=	${PORTNAME:L}_${PORTVERSION}
+DISTNAME=	${PORTNAME:L}-${PORTVERSION}
 
-MAINTAINER=	clement@FreeBSD.org
+MAINTAINER=	dimma@higis.ru
 COMMENT=	Webfrontend for managing accounts stored in an OpenLDAP server
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Quota.pm:${PORTSDIR}/sysutils/p5-Quota\
@@ -24,9 +24,12 @@ NO_BUILD=	YES
 WRKSRC=		${WRKDIR}/${PORTNAME:L}-${PORTVERSION}
 
 WWW_ROOT?=	www/lam
+WWWOWN?=	www
+WWWGRP?=	www
+PKGINSTALL=	${WRKDIR}/pkg-install
 PLIST_SUB+=	WWWROOT=${WWW_ROOT}
 WWW_DATA=	index.html config graphics help lib locale sess style templates tmp
-MYPORTDOCS=	HISTORY README TODO COPYING copyright docs/*
+MYPORTDOCS=	HISTORY README TODO COPYING INSTALL VERSION copyright docs/*
 LAM_SCRIPTS=	lib/lamdaemon.pl
 PORTDOCS=	*
 
@@ -45,15 +48,19 @@ do-install:
 			${INSTALL_DATA} ${WRKSRC}/config/config.cfg_sample ${PREFIX}/${WWW_ROOT}/config/config.cfg
 	@[ -e ${PREFIX}/${WWW_ROOT}/config/lam.conf ] || \
 			${INSTALL_DATA} ${WRKSRC}/config/lam.conf_sample ${PREFIX}/${WWW_ROOT}/config/lam.conf
+post-patch:
+	@${SED} -e "s;%%WWWOWN%%;${WWWOWN};g" \
+		-e "s;%%WWWGRP%%;${WWWGRP};g" \
+		-e "s;%%WWW_ROOT%%;${WWW_ROOT};g" \
+		${.CURDIR}/pkg-install > ${PKGINSTALL}
+
+post-install:
 	@${ECHO_MSG} "===> Setting correct permissions"
 	@${FIND} ${PREFIX}/${WWW_ROOT} -type f -exec ${CHMOD} 644 {} \;
 	@${FIND} ${PREFIX}/${WWW_ROOT} -type d -exec ${CHMOD} 755 {} \;
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${WWW_ROOT}/sess \
-		${PREFIX}/${WWW_ROOT}/tmp ${PREFIX}/${WWW_ROOT}/config 
 	@cd ${PREFIX}/${WWW_ROOT} ; ${CHMOD} 755 ${LAM_SCRIPTS}
 	@${LN} -sf /etc/shells ${PREFIX}/${WWW_ROOT}/config/shells
-
-post-install:
+	@PKG_PREFIX=${PREFIX} WWWOWN=${WWWOWN} WWWGRP=${WWWGRP} WWW_ROOT=${WWW_ROOT} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

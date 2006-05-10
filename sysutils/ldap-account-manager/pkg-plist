@@ -9,10 +9,14 @@
 %%WWWROOT%%/config/language
 %%WWWROOT%%/config/pdf/default.group.xml
 %%WWWROOT%%/config/pdf/default.host.xml
+%%WWWROOT%%/config/pdf/default.mailAlias.xml
+%%WWWROOT%%/config/pdf/default.smbDomain.xml
 %%WWWROOT%%/config/pdf/default.user.xml
 %%WWWROOT%%/config/pdf/logos/printLogo.jpg
 %%WWWROOT%%/config/profiles/default.group
 %%WWWROOT%%/config/profiles/default.host
+%%WWWROOT%%/config/profiles/default.mailAlias
+%%WWWROOT%%/config/profiles/default.smbDomain
 %%WWWROOT%%/config/profiles/default.user
 %%WWWROOT%%/config/shells
 %%WWWROOT%%/graphics/add.png
@@ -29,6 +33,7 @@
 %%WWWROOT%%/graphics/find.png
 %%WWWROOT%%/graphics/folder.png
 %%WWWROOT%%/graphics/go.png
+%%WWWROOT%%/graphics/group.png
 %%WWWROOT%%/graphics/hard-drive.png
 %%WWWROOT%%/graphics/help.png
 %%WWWROOT%%/graphics/host.png
@@ -39,6 +44,7 @@
 %%WWWROOT%%/graphics/locality.png
 %%WWWROOT%%/graphics/lock.png
 %%WWWROOT%%/graphics/mail.png
+%%WWWROOT%%/graphics/mailAlias.png
 %%WWWROOT%%/graphics/minus.png
 %%WWWROOT%%/graphics/n.png
 %%WWWROOT%%/graphics/network.png
@@ -55,6 +61,8 @@
 %%WWWROOT%%/graphics/select.png
 %%WWWROOT%%/graphics/server-settings.png
 %%WWWROOT%%/graphics/server-small.png
+%%WWWROOT%%/graphics/smbDomain.png
+%%WWWROOT%%/graphics/smile.png
 %%WWWROOT%%/graphics/star.png
 %%WWWROOT%%/graphics/tools-no.png
 %%WWWROOT%%/graphics/tools.png
@@ -63,12 +71,14 @@
 %%WWWROOT%%/graphics/uniquegroup.png
 %%WWWROOT%%/graphics/up.gif
 %%WWWROOT%%/graphics/user.png
+%%WWWROOT%%/graphics/userDefault.png
 %%WWWROOT%%/graphics/warn.png
 %%WWWROOT%%/help/help.inc
 %%WWWROOT%%/index.html
 %%WWWROOT%%/lib/.htaccess
 %%WWWROOT%%/lib/account.inc
 %%WWWROOT%%/lib/baseModule.inc
+%%WWWROOT%%/lib/baseType.inc
 %%WWWROOT%%/lib/cache.inc
 %%WWWROOT%%/lib/config.inc
 %%WWWROOT%%/lib/createntlm.inc
@@ -100,11 +110,13 @@
 %%WWWROOT%%/lib/modules/inetLocalMailRecipient.inc
 %%WWWROOT%%/lib/modules/inetOrgPerson.inc
 %%WWWROOT%%/lib/modules/kolabUser.inc
+%%WWWROOT%%/lib/modules/ldapPublicKey.inc
 %%WWWROOT%%/lib/modules/nisMailAlias.inc
 %%WWWROOT%%/lib/modules/posixAccount.inc
 %%WWWROOT%%/lib/modules/posixGroup.inc
 %%WWWROOT%%/lib/modules/quota.inc
 %%WWWROOT%%/lib/modules/sambaAccount.inc
+%%WWWROOT%%/lib/modules/sambaDomain.inc
 %%WWWROOT%%/lib/modules/sambaGroupMapping.inc
 %%WWWROOT%%/lib/modules/sambaSamAccount.inc
 %%WWWROOT%%/lib/modules/shadowAccount.inc
@@ -112,8 +124,15 @@
 %%WWWROOT%%/lib/pdfstruct.inc
 %%WWWROOT%%/lib/profiles.inc
 %%WWWROOT%%/lib/schema.inc
+%%WWWROOT%%/lib/security.inc
 %%WWWROOT%%/lib/status.inc
 %%WWWROOT%%/lib/tree.inc
+%%WWWROOT%%/lib/types.inc
+%%WWWROOT%%/lib/types/group.inc
+%%WWWROOT%%/lib/types/host.inc
+%%WWWROOT%%/lib/types/mailAlias.inc
+%%WWWROOT%%/lib/types/smbDomain.inc
+%%WWWROOT%%/lib/types/user.inc
 %%WWWROOT%%/lib/ufpdf.php
 %%WWWROOT%%/lib/xml_parser.inc
 %%WWWROOT%%/locale/ca_ES/LC_MESSAGES/messages.mo
@@ -130,22 +149,28 @@
 %%WWWROOT%%/locale/it_IT/LC_MESSAGES/messages.po
 %%WWWROOT%%/locale/ja_JP/LC_MESSAGES/messages.mo
 %%WWWROOT%%/locale/ja_JP/LC_MESSAGES/messages.po
+%%WWWROOT%%/locale/nl_NL/LC_MESSAGES/messages.mo
+%%WWWROOT%%/locale/nl_NL/LC_MESSAGES/messages.po
+%%WWWROOT%%/locale/zh_TW/LC_MESSAGES/messages.mo
+%%WWWROOT%%/locale/zh_TW/LC_MESSAGES/messages.po
+%%WWWROOT%%/sess/.cvsignore
 %%WWWROOT%%/sess/.htaccess
 %%WWWROOT%%/style/layout.css
+%%WWWROOT%%/style/type_group.css
+%%WWWROOT%%/style/type_host.css
+%%WWWROOT%%/style/type_mailAlias.css
+%%WWWROOT%%/style/type_smbDomain.css
+%%WWWROOT%%/style/type_user.css
 %%WWWROOT%%/templates/account/edit.php
 %%WWWROOT%%/templates/config/conflogin.php
 %%WWWROOT%%/templates/config/confmain.php
 %%WWWROOT%%/templates/config/confmodules.php
-%%WWWROOT%%/templates/config/confsave.php
+%%WWWROOT%%/templates/config/conftypes.php
 %%WWWROOT%%/templates/config/profmanage.php
 %%WWWROOT%%/templates/delete.php
-%%WWWROOT%%/templates/domain.php
 %%WWWROOT%%/templates/help.php
 %%WWWROOT%%/templates/initsuff.php
-%%WWWROOT%%/templates/lists/listdomains.php
-%%WWWROOT%%/templates/lists/listgroups.php
-%%WWWROOT%%/templates/lists/listhosts.php
-%%WWWROOT%%/templates/lists/listusers.php
+%%WWWROOT%%/templates/lists/list.php
 %%WWWROOT%%/templates/lists/userlink.php
 %%WWWROOT%%/templates/login.php
 %%WWWROOT%%/templates/logout.php
@@ -190,6 +215,7 @@
 %%WWWROOT%%/templates/tree/tree_view.php
 %%WWWROOT%%/templates/tree/update.php
 %%WWWROOT%%/templates/tree/update_confirm.php
+%%WWWROOT%%/tmp/.cvsignore
 %%WWWROOT%%/tmp/.htaccess
 @dirrm %%WWWROOT%%/tmp
 @dirrm %%WWWROOT%%/templates/tree/templates/creation
@@ -204,6 +230,10 @@
 @dirrm %%WWWROOT%%/templates
 @dirrm %%WWWROOT%%/style
 @dirrm %%WWWROOT%%/sess
+@dirrm %%WWWROOT%%/locale/zh_TW/LC_MESSAGES
+@dirrm %%WWWROOT%%/locale/zh_TW
+@dirrm %%WWWROOT%%/locale/nl_NL/LC_MESSAGES
+@dirrm %%WWWROOT%%/locale/nl_NL
 @dirrm %%WWWROOT%%/locale/ja_JP/LC_MESSAGES
 @dirrm %%WWWROOT%%/locale/ja_JP
 @dirrm %%WWWROOT%%/locale/it_IT/LC_MESSAGES
@@ -219,6 +249,7 @@
 @dirrm %%WWWROOT%%/locale/ca_ES/LC_MESSAGES
 @dirrm %%WWWROOT%%/locale/ca_ES
 @dirrm %%WWWROOT%%/locale
+@dirrm %%WWWROOT%%/lib/types
 @dirrm %%WWWROOT%%/lib/modules
 @dirrm %%WWWROOT%%/lib/font
 @dirrm %%WWWROOT%%/lib
