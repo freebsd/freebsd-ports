@@ -1,6 +1,647 @@
 bin/reciteword
-share/gnome/applications/reciteword.desktop
-share/gnome/applications/rwdict.desktop
+share/applications/reciteword.desktop
+share/applications/rwdict.desktop
 share/locale/zh_CN/LC_MESSAGES/reciteword.mo
-share/gnome/pixmaps/reciteword.png
-share/gnome/pixmaps/rwdict.png
+share/pixmaps/reciteword.png
+share/pixmaps/rwdict.png
+share/reciteword/books/fkbdc/.dirname
+share/reciteword/books/fkbdc/GREzhjjs.bok
+share/reciteword/books/fkbdc/GREzhjjx.bok
+share/reciteword/books/fkbdc/czyych.bok
+share/reciteword/books/fkbdc/dxljch.bok
+share/reciteword/books/fkbdc/dxljch500z1.bok
+share/reciteword/books/fkbdc/dxljch500z2.bok
+share/reciteword/books/fkbdc/dxljch500z3.bok
+share/reciteword/books/fkbdc/dxljch500z4.bok
+share/reciteword/books/fkbdc/dxljch500z5.bok
+share/reciteword/books/fkbdc/dxsjch.bok
+share/reciteword/books/fkbdc/gzyych.bok
+share/reciteword/books/fkbdc/jsjch.bok
+share/reciteword/books/fkbdc/tofel.bok
+share/reciteword/books/fkbdc/yjsrxch.bok
+share/reciteword/books/ljjy/.dirname
+share/reciteword/books/ljjy/dxclzhjy.bok
+share/reciteword/books/ljjy/dxcxjy.bok
+share/reciteword/books/ljjy/dxczjy.bok
+share/reciteword/books/ljjy/dxdbjy.bok
+share/reciteword/books/ljjy/dxlxjy.bok
+share/reciteword/books/ljjy/zxcxjy.bok
+share/reciteword/books/ljjy/zxczjy.bok
+share/reciteword/books/ljjy/zxdbjy.bok
+share/reciteword/books/ljjy/zxlxjy.bok
+share/reciteword/books/qqssbdc/.dirname
+share/reciteword/books/qqssbdc/21sjdx/.dirname
+share/reciteword/books/qqssbdc/21sjdx/Ck-c4.bok
+share/reciteword/books/qqssbdc/21sjdx/ck-c7.bok
+share/reciteword/books/qqssbdc/21sjdx/ck-c8.bok
+share/reciteword/books/qqssbdc/21sjdx/ck-c9.bok
+share/reciteword/books/qqssbdc/AAAyy/.dirname
+share/reciteword/books/qqssbdc/AAAyy/Ck-3c.bok
+share/reciteword/books/qqssbdc/AAAyy/ck-3a.bok
+share/reciteword/books/qqssbdc/AAAyy/ck-3b.bok
+share/reciteword/books/qqssbdc/GMAT/ck-ga.bok
+share/reciteword/books/qqssbdc/GMAT/ck-gg.bok
+share/reciteword/books/qqssbdc/GMAT/ck-gm.bok
+share/reciteword/books/qqssbdc/GMAT/ck-gt.bok
+share/reciteword/books/qqssbdc/GRE/CK-gr.bok
+share/reciteword/books/qqssbdc/GRE/ck-gn.bok
+share/reciteword/books/qqssbdc/GRE/ck-r1.bok
+share/reciteword/books/qqssbdc/GRE/ck-r2.bok
+share/reciteword/books/qqssbdc/GRE/ck-ts.bok
+share/reciteword/books/qqssbdc/IELTS/.dirname
+share/reciteword/books/qqssbdc/IELTS/ck-is.bok
+share/reciteword/books/qqssbdc/MBAdg/.dirname
+share/reciteword/books/qqssbdc/MBAdg/ck-mq.bok
+share/reciteword/books/qqssbdc/TOEFL/CK-tf.bok
+share/reciteword/books/qqssbdc/TOEFL/CK-tl.bok
+share/reciteword/books/qqssbdc/TOEFL/CK-to.bok
+share/reciteword/books/qqssbdc/TOEFL/CK-tt.bok
+share/reciteword/books/qqssbdc/TOEFL/Ck-tz.bok
+share/reciteword/books/qqssbdc/VOCABULARY/ck-cy.bok
+share/reciteword/books/qqssbdc/VOCABULARY/ck-lc.bok
+share/reciteword/books/qqssbdc/VOCABULARY/ck-lw.bok
+share/reciteword/books/qqssbdc/VOCABULARY/ck-ly.bok
+share/reciteword/books/qqssbdc/XXXyy/.dirname
+share/reciteword/books/qqssbdc/XXXyy/Ck-F1.bok
+share/reciteword/books/qqssbdc/bjbcz/.dirname
+share/reciteword/books/qqssbdc/bjbcz/ck-21.bok
+share/reciteword/books/qqssbdc/bjbcz/ck-22.bok
+share/reciteword/books/qqssbdc/bjbcz/ck-23.bok
+share/reciteword/books/qqssbdc/bjbcz/ck-24.bok
+share/reciteword/books/qqssbdc/bjbcz/ck-25.bok
+share/reciteword/books/qqssbdc/bjbcz/ck-26.bok
+share/reciteword/books/qqssbdc/bjbxx/.dirname
+share/reciteword/books/qqssbdc/bjbxx/Ck-k2.bok
+share/reciteword/books/qqssbdc/bjbxx/ck-vv.bok
+share/reciteword/books/qqssbdc/bjbxx/ck-xa.bok
+share/reciteword/books/qqssbdc/bjbxx/ck-xb.bok
+share/reciteword/books/qqssbdc/bjbxx/ck-xe.bok
+share/reciteword/books/qqssbdc/bjbxx/ck-xf.bok
+share/reciteword/books/qqssbdc/bsdcz/.dirname
+share/reciteword/books/qqssbdc/bsdcz/CK-K8.bok
+share/reciteword/books/qqssbdc/bsdcz/Ck-I4.bok
+share/reciteword/books/qqssbdc/bsdcz/Ck-I5.bok
+share/reciteword/books/qqssbdc/cpfjch/.dirname
+share/reciteword/books/qqssbdc/cpfjch/ck-j1.bok
+share/reciteword/books/qqssbdc/cpfjch/ck-j2.bok
+share/reciteword/books/qqssbdc/cpfjch/ck-j3.bok
+share/reciteword/books/qqssbdc/cpfjch/ck-j4.bok
+share/reciteword/books/qqssbdc/cpfjch/ck-j5.bok
+share/reciteword/books/qqssbdc/crgk/.dirname
+share/reciteword/books/qqssbdc/crgk/ck-cr.bok
+share/reciteword/books/qqssbdc/crgk/ck-qz.bok
+share/reciteword/books/qqssbdc/cykych/.dirname
+share/reciteword/books/qqssbdc/cykych/ck-kb.bok
+share/reciteword/books/qqssbdc/cykych/ck-kd.bok
+share/reciteword/books/qqssbdc/cykych/ck-kj.bok
+share/reciteword/books/qqssbdc/cykych/ck-kq.bok
+share/reciteword/books/qqssbdc/cykych/ck-ks.bok
+share/reciteword/books/qqssbdc/dddxyy/.dirname
+share/reciteword/books/qqssbdc/dddxyy/ck-z1.bok
+share/reciteword/books/qqssbdc/ddyy/.dirname
+share/reciteword/books/qqssbdc/ddyy/ck-da.bok
+share/reciteword/books/qqssbdc/ddyy/ck-db.bok
+share/reciteword/books/qqssbdc/ddyy/ck-dd.bok
+share/reciteword/books/qqssbdc/ddyy/ck-dm.bok
+share/reciteword/books/qqssbdc/dxchdg/.dirname
+share/reciteword/books/qqssbdc/dxchdg/ck-v6.bok
+share/reciteword/books/qqssbdc/dxtyyy/.dirname
+share/reciteword/books/qqssbdc/dxtyyy/Ck-%2.bok
+share/reciteword/books/qqssbdc/dxtyyy/Ck-%3.bok
+share/reciteword/books/qqssbdc/dxyyjd/.dirname
+share/reciteword/books/qqssbdc/dxyyjd/ck-5j.bok
+share/reciteword/books/qqssbdc/dxyyjd/ck-6j.bok
+share/reciteword/books/qqssbdc/dxyyjd/ck-d0.bok
+share/reciteword/books/qqssbdc/dxyyjd/ck-d1.bok
+share/reciteword/books/qqssbdc/dxyyjd/ck-d2.bok
+share/reciteword/books/qqssbdc/dxyyjd/ck-d3.bok
+share/reciteword/books/qqssbdc/dxyyjd/ck-d4.bok
+share/reciteword/books/qqssbdc/dxyyjd/ck-d5.bok
+share/reciteword/books/qqssbdc/dxyyzy/.dirname
+share/reciteword/books/qqssbdc/dxyyzy/Ck-ae.bok
+share/reciteword/books/qqssbdc/dzyy/.dirname
+share/reciteword/books/qqssbdc/dzyy/Ck-dp.bok
+share/reciteword/books/qqssbdc/dzyy/ck-du.bok
+share/reciteword/books/qqssbdc/ggyy/.dirname
+share/reciteword/books/qqssbdc/ggyy/CK-P1.bok
+share/reciteword/books/qqssbdc/ggyy/CK-P3.bok
+share/reciteword/books/qqssbdc/ggyy/CK-TQ.bok
+share/reciteword/books/qqssbdc/ggyy/ck-@8.bok
+share/reciteword/books/qqssbdc/ggyy/ck-ky.bok
+share/reciteword/books/qqssbdc/ggyy/ck-p2.bok
+share/reciteword/books/qqssbdc/ggyy/ck-p4.bok
+share/reciteword/books/qqssbdc/ggyy/ck-p5.bok
+share/reciteword/books/qqssbdc/gkch/.dirname
+share/reciteword/books/qqssbdc/gkch/Ck-HN.bok
+share/reciteword/books/qqssbdc/gkch/ck-gn-old.bok
+share/reciteword/books/qqssbdc/gkch/ck-gz.bok
+share/reciteword/books/qqssbdc/gzxx/.dirname
+share/reciteword/books/qqssbdc/gzxx/Ck-$5.bok
+share/reciteword/books/qqssbdc/gzyy/.dirname
+share/reciteword/books/qqssbdc/gzyy/ck-g5.bok
+share/reciteword/books/qqssbdc/gzyy/ck-g6.bok
+share/reciteword/books/qqssbdc/gzyy/ck-g7.bok
+share/reciteword/books/qqssbdc/gzyy/ck-g8.bok
+share/reciteword/books/qqssbdc/gzyy/ck-g9.bok
+share/reciteword/books/qqssbdc/gzyy/ck-gc.bok
+share/reciteword/books/qqssbdc/gzyy/ck-gd.bok
+share/reciteword/books/qqssbdc/gzyy/ck-ge.bok
+share/reciteword/books/qqssbdc/gzyy/ck-gf.bok
+share/reciteword/books/qqssbdc/gzyy/ck-gs.bok
+share/reciteword/books/qqssbdc/gzyy/ck-zh.bok
+share/reciteword/books/qqssbdc/hbbgz/.dirname
+share/reciteword/books/qqssbdc/hbbgz/Ck-I3.bok
+share/reciteword/books/qqssbdc/jqgj/.dirname
+share/reciteword/books/qqssbdc/jqgj/Ck-$8.bok
+share/reciteword/books/qqssbdc/jqseyy/.dirname
+share/reciteword/books/qqssbdc/jqseyy/ck-ja.bok
+share/reciteword/books/qqssbdc/jqseyy/ck-jb.bok
+share/reciteword/books/qqssbdc/jqseyy/ck-je.bok
+share/reciteword/books/qqssbdc/jqseyy/ck-jf.bok
+share/reciteword/books/qqssbdc/jqseyy/ck-jg.bok
+share/reciteword/books/qqssbdc/jqseyy/ck-jh.bok
+share/reciteword/books/qqssbdc/jsjyy/.dirname
+share/reciteword/books/qqssbdc/jsjyy/ck-dc.bok
+share/reciteword/books/qqssbdc/jsjyy/ck-dz.bok
+share/reciteword/books/qqssbdc/jsscz/.dirname
+share/reciteword/books/qqssbdc/jsscz/ck-jj.bok
+share/reciteword/books/qqssbdc/jsscz/ck-kk.bok
+share/reciteword/books/qqssbdc/jsscz/ck-ll.bok
+share/reciteword/books/qqssbdc/jsscz/ck-mm.bok
+share/reciteword/books/qqssbdc/ktxxx/.dirname
+share/reciteword/books/qqssbdc/ktxxx/ck-l1.bok
+share/reciteword/books/qqssbdc/ktxxx/ck-l2.bok
+share/reciteword/books/qqssbdc/ktxxx/ck-l3.bok
+share/reciteword/books/qqssbdc/ktxxx/ck-l4.bok
+share/reciteword/books/qqssbdc/kydg/.dirname
+share/reciteword/books/qqssbdc/kydg/CK-$9.bok
+share/reciteword/books/qqssbdc/kydjks/.dirname
+share/reciteword/books/qqssbdc/kydjks/ck-rr.bok
+share/reciteword/books/qqssbdc/lsxyy/.dirname
+share/reciteword/books/qqssbdc/lsxyy/ck-lt.bok
+share/reciteword/books/qqssbdc/ltseyy/.dirname
+share/reciteword/books/qqssbdc/ltseyy/ck-ee.bok
+share/reciteword/books/qqssbdc/ltseyy/ck-ff.bok
+share/reciteword/books/qqssbdc/mgyyjc/.dirname
+share/reciteword/books/qqssbdc/mgyyjc/ck-ls.bok
+share/reciteword/books/qqssbdc/mgyyjc/ck-lu.bok
+share/reciteword/books/qqssbdc/mgyyjc/ck-lx.bok
+share/reciteword/books/qqssbdc/mgyyjc/ck-lz.bok
+share/reciteword/books/qqssbdc/mgzy/.dirname
+share/reciteword/books/qqssbdc/mgzy/ck-ss.bok
+share/reciteword/books/qqssbdc/njcz/.dirname
+share/reciteword/books/qqssbdc/njcz/Ck-&4.bok
+share/reciteword/books/qqssbdc/njcz/Ck-&5.bok
+share/reciteword/books/qqssbdc/njczyy/.dirname
+share/reciteword/books/qqssbdc/njczyy/Ck-HK.bok
+share/reciteword/books/qqssbdc/njczyy/Ck-i7.bok
+share/reciteword/books/qqssbdc/njczyy/Ck-i8.bok
+share/reciteword/books/qqssbdc/njczyy/Ck-i9.bok
+share/reciteword/books/qqssbdc/njczyy/Ck-k6.bok
+share/reciteword/books/qqssbdc/njczyy/Ck-k7.bok
+share/reciteword/books/qqssbdc/njczyy/Ck-s7.bok
+share/reciteword/books/qqssbdc/njczyy/Ck-s8.bok
+share/reciteword/books/qqssbdc/njczyy/Ck-s9.bok
+share/reciteword/books/qqssbdc/njgzyy/.dirname
+share/reciteword/books/qqssbdc/njgzyy/Ck-oy.bok
+share/reciteword/books/qqssbdc/njgzyy/Ck-oz.bok
+share/reciteword/books/qqssbdc/njgzyy/Ck-pz.bok
+share/reciteword/books/qqssbdc/njgzyy/ck-ox.bok
+share/reciteword/books/qqssbdc/njxxyy/.dirname
+share/reciteword/books/qqssbdc/njxxyy/ck-nh.bok
+share/reciteword/books/qqssbdc/njxxyy/ck-nj.bok
+share/reciteword/books/qqssbdc/njxxyy/ck-oa.bok
+share/reciteword/books/qqssbdc/njxxyy/ck-ob.bok
+share/reciteword/books/qqssbdc/njxxyy/ck-oc.bok
+share/reciteword/books/qqssbdc/njxxyy/ck-od.bok
+share/reciteword/books/qqssbdc/njxxyy/ck-oe.bok
+share/reciteword/books/qqssbdc/njxxyy/ck-of.bok
+share/reciteword/books/qqssbdc/njxxyy/ck-og.bok
+share/reciteword/books/qqssbdc/njxxyy/ck-oh.bok
+share/reciteword/books/qqssbdc/njxxyy/ck-oi.bok
+share/reciteword/books/qqssbdc/njxxyy/ck-oj.bok
+share/reciteword/books/qqssbdc/pgych/.dirname
+share/reciteword/books/qqssbdc/pgych/ck-a1.bok
+share/reciteword/books/qqssbdc/pgych/ck-a2.bok
+share/reciteword/books/qqssbdc/pgych/ck-a3.bok
+share/reciteword/books/qqssbdc/pgych/ck-a4.bok
+share/reciteword/books/qqssbdc/pgych/ck-a5.bok
+share/reciteword/books/qqssbdc/qt/.dirname
+share/reciteword/books/qqssbdc/qt/Ck-x8.bok
+share/reciteword/books/qqssbdc/rjbcz/.dirname
+share/reciteword/books/qqssbdc/rjbcz/ck-b1.bok
+share/reciteword/books/qqssbdc/rjbcz/ck-b2.bok
+share/reciteword/books/qqssbdc/rjbcz/ck-b3.bok
+share/reciteword/books/qqssbdc/rjbxx/.dirname
+share/reciteword/books/qqssbdc/rjbxx/Ck-fh.bok
+share/reciteword/books/qqssbdc/rjbxx/Ck-fi.bok
+share/reciteword/books/qqssbdc/rjbxx/Ck-fj.bok
+share/reciteword/books/qqssbdc/rjbxx/Ck-fk.bok
+share/reciteword/books/qqssbdc/rjbxx/ck-e1.bok
+share/reciteword/books/qqssbdc/rjbxx/ck-e2.bok
+share/reciteword/books/qqssbdc/rjbxx/ck-e3.bok
+share/reciteword/books/qqssbdc/rjbxx/ck-e4.bok
+share/reciteword/books/qqssbdc/rjbxx/ck-e5.bok
+share/reciteword/books/qqssbdc/rjbxx/ck-e6.bok
+share/reciteword/books/qqssbdc/shbjc/.dirname
+share/reciteword/books/qqssbdc/shbjc/ck-h1.bok
+share/reciteword/books/qqssbdc/shbjc/ck-h2.bok
+share/reciteword/books/qqssbdc/shbjc/ck-h3.bok
+share/reciteword/books/qqssbdc/shbjc/ck-h4.bok
+share/reciteword/books/qqssbdc/shbjc/ck-h5.bok
+share/reciteword/books/qqssbdc/shbjc/ck-h6.bok
+share/reciteword/books/qqssbdc/shbjc/ck-h7.bok
+share/reciteword/books/qqssbdc/shbjc/ck-h8.bok
+share/reciteword/books/qqssbdc/shbjc/ck-h9.bok
+share/reciteword/books/qqssbdc/shbjc/ck-ha.bok
+share/reciteword/books/qqssbdc/shbjc/ck-hb.bok
+share/reciteword/books/qqssbdc/shbjc/ck-hc.bok
+share/reciteword/books/qqssbdc/shbjc/ck-hd.bok
+share/reciteword/books/qqssbdc/shbjc/ck-he.bok
+share/reciteword/books/qqssbdc/shbjc/ck-hf.bok
+share/reciteword/books/qqssbdc/shbjc/ck-hg.bok
+share/reciteword/books/qqssbdc/shbjc/ck-hi.bok
+share/reciteword/books/qqssbdc/shbjc/ck-hj.bok
+share/reciteword/books/qqssbdc/shdjks/.dirname
+share/reciteword/books/qqssbdc/shdjks/ck-st.bok
+share/reciteword/books/qqssbdc/swyy/.dirname
+share/reciteword/books/qqssbdc/swyy/ck-sw.bok
+share/reciteword/books/qqssbdc/sxsyy/.dirname
+share/reciteword/books/qqssbdc/sxsyy/CK-s1.bok
+share/reciteword/books/qqssbdc/sxsyy/CK-s2.bok
+share/reciteword/books/qqssbdc/sxsyy/CK-s3.bok
+share/reciteword/books/qqssbdc/tdxl/.dirname
+share/reciteword/books/qqssbdc/tdxl/Ck-nu.bok
+share/reciteword/books/qqssbdc/wmyy/.dirname
+share/reciteword/books/qqssbdc/wmyy/ck-w1.bok
+share/reciteword/books/qqssbdc/wmyy/ck-w2.bok
+share/reciteword/books/qqssbdc/wmyy/ck-w3.bok
+share/reciteword/books/qqssbdc/wmyy/ck-w4.bok
+share/reciteword/books/qqssbdc/xbdxyy/.dirname
+share/reciteword/books/qqssbdc/xbdxyy/Ck-x6.bok
+share/reciteword/books/qqssbdc/xbdxyy/ck-x5.bok
+share/reciteword/books/qqssbdc/xbdxyy/ck-xd.bok
+share/reciteword/books/qqssbdc/xbdxyy/ck-zy.bok
+share/reciteword/books/qqssbdc/xbjbxx/.dirname
+share/reciteword/books/qqssbdc/xbjbxx/ck-93.bok
+share/reciteword/books/qqssbdc/xbjbxx/ck-95.bok
+share/reciteword/books/qqssbdc/xbjbxx/ck-97.bok
+share/reciteword/books/qqssbdc/xbjqse/.dirname
+share/reciteword/books/qqssbdc/xbjqse/Ck-44.bok
+share/reciteword/books/qqssbdc/xbjqse/ck-66.bok
+share/reciteword/books/qqssbdc/xbzgz/.dirname
+share/reciteword/books/qqssbdc/xbzgz/Ck-J8.bok
+share/reciteword/books/qqssbdc/xbzxx/.dirname
+share/reciteword/books/qqssbdc/xbzxx/Ck-@2.bok
+share/reciteword/books/qqssbdc/xbzxx/Ck-@3.bok
+share/reciteword/books/qqssbdc/xbzxx/Ck-@4.bok
+share/reciteword/books/qqssbdc/xbzxx/Ck-@5.bok
+share/reciteword/books/qqssbdc/xbzxx/Ck-@7.bok
+share/reciteword/books/qqssbdc/xbzxx/Ck-I2.bok
+share/reciteword/books/qqssbdc/xbzxx/Ck-k1.bok
+share/reciteword/books/qqssbdc/xbzxx/Ck-xy.bok
+share/reciteword/books/qqssbdc/xdxdg/.dirname
+share/reciteword/books/qqssbdc/xdxdg/ck-lh.bok
+share/reciteword/books/qqssbdc/xdxdg/ck-lj.bok
+share/reciteword/books/qqssbdc/xdxdg/ck-vs.bok
+share/reciteword/books/qqssbdc/xglyy/.dirname
+share/reciteword/books/qqssbdc/xglyy/ck-n5.bok
+share/reciteword/books/qqssbdc/xglyy/ck-n6.bok
+share/reciteword/books/qqssbdc/xglyy/ck-n7.bok
+share/reciteword/books/qqssbdc/xglyy/ck-n8.bok
+share/reciteword/books/qqssbdc/xgzyy/.dirname
+share/reciteword/books/qqssbdc/xgzyy/ck-x7.bok
+share/reciteword/books/qqssbdc/xgzyy/ck-xg.bok
+share/reciteword/books/qqssbdc/xgzyy/ck-xh.bok
+share/reciteword/books/qqssbdc/xgzyy/ck-xz.bok
+share/reciteword/books/qqssbdc/xmbcz/.dirname
+share/reciteword/books/qqssbdc/xmbcz/CK-MX.bok
+share/reciteword/books/qqssbdc/xmbcz/Ck-@1.bok
+share/reciteword/books/qqssbdc/xmbcz/Ck-HM.bok
+share/reciteword/books/qqssbdc/xmbcz/Ck-k3.bok
+share/reciteword/books/qqssbdc/xmbcz/Ck-k4.bok
+share/reciteword/books/qqssbdc/xmbcz/Ck-k5.bok
+share/reciteword/books/qqssbdc/xmbcz/Ck-qq.bok
+share/reciteword/books/qqssbdc/xmbcz/ck-02.bok
+share/reciteword/books/qqssbdc/xmbcz/ck-o1.bok
+share/reciteword/books/qqssbdc/xmbcz/ck-pp.bok
+share/reciteword/books/qqssbdc/xmbcz/ck-x1.bok
+share/reciteword/books/qqssbdc/xmbrj/.dirname
+share/reciteword/books/qqssbdc/xmbrj/Ck-gq.bok
+share/reciteword/books/qqssbdc/xrjbcz/.dirname
+share/reciteword/books/qqssbdc/xrjbcz/ck-na.bok
+share/reciteword/books/qqssbdc/xrjbcz/ck-nb.bok
+share/reciteword/books/qqssbdc/xrjbcz/ck-nc.bok
+share/reciteword/books/qqssbdc/xrjbcz/ck-nd.bok
+share/reciteword/books/qqssbdc/xrjbcz/ck-ne.bok
+share/reciteword/books/qqssbdc/xrjbcz/ck-nf.bok
+share/reciteword/books/qqssbdc/xrjbgz/.dirname
+share/reciteword/books/qqssbdc/xrjbgz/CK-$3.bok
+share/reciteword/books/qqssbdc/xrjbgz/Ck-J7.bok
+share/reciteword/books/qqssbdc/xrjbgz/Ck-qw.bok
+share/reciteword/books/qqssbdc/xrjbgz/Ck-qx.bok
+share/reciteword/books/qqssbdc/xrjbgz/ck-c1.bok
+share/reciteword/books/qqssbdc/xrjbxx/.dirname
+share/reciteword/books/qqssbdc/xrjbxx/Ck-q5.bok
+share/reciteword/books/qqssbdc/xrjbxx/Ck-q6.bok
+share/reciteword/books/qqssbdc/xrjbxx/ck-T4.bok
+share/reciteword/books/qqssbdc/xrjbxx/ck-q1.bok
+share/reciteword/books/qqssbdc/xrjbxx/ck-q3.bok
+share/reciteword/books/qqssbdc/xrjbxx/ck-q4.bok
+share/reciteword/books/qqssbdc/xrjbxx/ck-t1.bok
+share/reciteword/books/qqssbdc/xrjbxx/ck-t2.bok
+share/reciteword/books/qqssbdc/xrjbxx/ck-t3.bok
+share/reciteword/books/qqssbdc/xrjgz/.dirname
+share/reciteword/books/qqssbdc/xrjgz/Ck-%1.bok
+share/reciteword/books/qqssbdc/xsjgz/.dirname
+share/reciteword/books/qqssbdc/xsjgz/Ck-J6.bok
+share/reciteword/books/qqssbdc/xsjgz/Ck-xs.bok
+share/reciteword/books/qqssbdc/xsjxx/.dirname
+share/reciteword/books/qqssbdc/xsjxx/CK-Z8.bok
+share/reciteword/books/qqssbdc/xsjxx/Ck-$7.bok
+share/reciteword/books/qqssbdc/xsjxx/Ck-I6.bok
+share/reciteword/books/qqssbdc/xsjxx/Ck-J9.bok
+share/reciteword/books/qqssbdc/xsjxx/Ck-xx.bok
+share/reciteword/books/qqssbdc/xsydx/.dirname
+share/reciteword/books/qqssbdc/xsydx/Ck-t7.bok
+share/reciteword/books/qqssbdc/xsydx/Ck-t8.bok
+share/reciteword/books/qqssbdc/xsydx/Ck-t9.bok
+share/reciteword/books/qqssbdc/xxxyy2/.dirname
+share/reciteword/books/qqssbdc/xxxyy2/Ck-$1.bok
+share/reciteword/books/qqssbdc/xxxyy2/Ck-$2.bok
+share/reciteword/books/qqssbdc/yhbxx/.dirname
+share/reciteword/books/qqssbdc/yhbxx/Ck-q8.bok
+share/reciteword/books/qqssbdc/yhbxx/Ck-y0.bok
+share/reciteword/books/qqssbdc/yhbxx/Ck-y5.bok
+share/reciteword/books/qqssbdc/yhbxx/Ck-y9.bok
+share/reciteword/books/qqssbdc/yhbxx/ck-y6.bok
+share/reciteword/books/qqssbdc/yhbxx/ck-y7.bok
+share/reciteword/books/qqssbdc/yhbxx/ck-y8.bok
+share/reciteword/books/qqssbdc/yjsyy/.dirname
+share/reciteword/books/qqssbdc/yjsyy/Ck-9u.bok
+share/reciteword/books/qqssbdc/yjsyy/ck-dg.bok
+share/reciteword/books/qqssbdc/yjsyy/ck-yj.bok
+share/reciteword/books/qqssbdc/yjsyy/ck-zt.bok
+share/reciteword/books/qqssbdc/ylbcz/.dirname
+share/reciteword/books/qqssbdc/ylbcz/CK-K9.bok
+share/reciteword/books/qqssbdc/yxyy/.dirname
+share/reciteword/books/qqssbdc/yxyy/ck-y1.bok
+share/reciteword/books/qqssbdc/yxyy/ck-y2.bok
+share/reciteword/books/qqssbdc/yxyy/ck-y3.bok
+share/reciteword/books/qqssbdc/yy/.dirname
+share/reciteword/books/qqssbdc/yy/Ck-$4.bok
+share/reciteword/books/qqssbdc/yy/Ck-$6.bok
+share/reciteword/books/qqssbdc/yy/Ck-g1.bok
+share/reciteword/books/qqssbdc/zbmg/.dirname
+share/reciteword/books/qqssbdc/zbmg/CK-M2.bok
+share/reciteword/books/qqssbdc/zbmg/ck-m1.bok
+share/reciteword/books/qqssbdc/zcyy/.dirname
+share/reciteword/books/qqssbdc/zcyy/ck-zs.bok
+share/reciteword/books/qqssbdc/zcyy/ck-zx.bok
+share/reciteword/books/qqssbdc/zcyy/ck-zz.bok
+share/reciteword/books/qqssbdc/zhyy/.dirname
+share/reciteword/books/qqssbdc/zhyy/ck-zd.bok
+share/reciteword/books/qqssbdc/zhyy/ck-ze.bok
+share/reciteword/books/qqssbdc/zhyy/ck-zf.bok
+share/reciteword/books/qqssbdc/zhyy/ck-zg.bok
+share/reciteword/books/qqssbdc/zk/.dirname
+share/reciteword/books/qqssbdc/zk/Ck-dk.bok
+share/reciteword/books/qqssbdc/zk/ck-bk.bok
+share/reciteword/books/qqssbdc/zk/ck-bs.bok
+share/reciteword/books/qqssbdc/zk/ck-bx.bok
+share/reciteword/books/qqssbdc/zk/ck-cq.bok
+share/reciteword/books/qqssbdc/zk/ck-te.bok
+share/reciteword/books/qqssbdc/zk/ck-zk.bok
+share/reciteword/books/qqssbdc/zk/ck-zl.bok
+share/reciteword/books/qqssbdc/zwwl/.dirname
+share/reciteword/books/qqssbdc/zwwl/ck-la.bok
+share/reciteword/books/qqssbdc/zwwl/ck-lb.bok
+share/reciteword/books/qqssbdc/zwwl/ck-z5.bok
+share/reciteword/books/qqssbdc/zwwl/ck-z6.bok
+share/reciteword/books/qqssbdc/zwwl/ck-z7.bok
+share/reciteword/books/wyabdc/.dirname
+share/reciteword/books/wyabdc/CET56cz.bok
+share/reciteword/books/wyabdc/CZ1_new.bok
+share/reciteword/books/wyabdc/CZ2_new.bok
+share/reciteword/books/wyabdc/CZ3_new.bok
+share/reciteword/books/wyabdc/DXcz.bok
+share/reciteword/books/wyabdc/GRENXAll.bok
+share/reciteword/books/wyabdc/LasyWord.bok
+share/reciteword/books/wyabdc/TOEFLCiHui.bok
+share/reciteword/books/wyabdc/Taisha200207.bok
+share/reciteword/books/wyabdc/XX1_new.bok
+share/reciteword/books/wyabdc/XX2_new.bok
+share/reciteword/books/wyabdc/XX3_new.bok
+share/reciteword/books/wyabdc/XX4_new.bok
+share/reciteword/books/wyabdc/XX5_new.bok
+share/reciteword/books/wyabdc/YJScz.bok
+share/reciteword/books/wyabdc/ZCa.bok
+share/reciteword/books/wyabdc/ZCb.bok
+share/reciteword/books/wyabdc/ZCc.bok
+share/reciteword/books/wyabdc/cet4.bok
+share/reciteword/books/wyabdc/cet6.bok
+share/reciteword/books/wyabdc/commerce.bok
+share/reciteword/books/wyabdc/computer.bok
+share/reciteword/books/wyabdc/cz1.bok
+share/reciteword/books/wyabdc/cz2.bok
+share/reciteword/books/wyabdc/cz3.bok
+share/reciteword/books/wyabdc/cz4.bok
+share/reciteword/books/wyabdc/cz5.bok
+share/reciteword/books/wyabdc/cz6.bok
+share/reciteword/books/wyabdc/gjzx.bok
+share/reciteword/books/wyabdc/gmat.bok
+share/reciteword/books/wyabdc/gre.bok
+share/reciteword/books/wyabdc/grecp.bok
+share/reciteword/books/wyabdc/grecpzm.bok
+share/reciteword/books/wyabdc/gredyc.bok
+share/reciteword/books/wyabdc/gz1.bok
+share/reciteword/books/wyabdc/gz2.bok
+share/reciteword/books/wyabdc/gz3.bok
+share/reciteword/books/wyabdc/ielts.bok
+share/reciteword/books/wyabdc/lyyu365.bok
+share/reciteword/books/wyabdc/nce1.bok
+share/reciteword/books/wyabdc/nce2.bok
+share/reciteword/books/wyabdc/nce3.bok
+share/reciteword/books/wyabdc/nce4.bok
+share/reciteword/books/wyabdc/pp2.bok
+share/reciteword/books/wyabdc/pp2_lbfyc.bok
+share/reciteword/books/wyabdc/pp2_tk.bok
+share/reciteword/books/wyabdc/sjjd1.bok
+share/reciteword/books/wyabdc/sjjd2.bok
+share/reciteword/books/wyabdc/taisha.bok
+share/reciteword/books/wyabdc/toefl.bok
+share/reciteword/books/wyabdc/toeflcz.bok
+share/reciteword/books/wyabdc/wm1.bok
+share/reciteword/books/wyabdc/wm2.bok
+share/reciteword/books/wyabdc/wm3.bok
+share/reciteword/books/wyabdc/wm4.bok
+share/reciteword/books/wyabdc/xx1.bok
+share/reciteword/books/wyabdc/xx2.bok
+share/reciteword/books/wyabdc/xx3.bok
+share/reciteword/books/wyabdc/xx4.bok
+share/reciteword/books/wyabdc/xx6_new.bok
+share/reciteword/books/wyabdc/yjs.bok
+share/reciteword/books/wyabdc/yx1.bok
+share/reciteword/books/wyabdc/yx2.bok
+share/reciteword/books/wyabdc/yx3.bok
+share/reciteword/dicts/xdict.lib
+share/reciteword/dicts/xdicten.idx
+share/reciteword/modules/answerno.wav
+share/reciteword/modules/answerno2.wav
+share/reciteword/modules/answerok.wav
+share/reciteword/modules/back.wav
+share/reciteword/modules/bookedit.zh_CN.txt
+share/reciteword/modules/buttonactive.wav
+share/reciteword/modules/buttondown.wav
+share/reciteword/modules/buttonup.wav
+share/reciteword/modules/choosebook.zh_CN.txt
+share/reciteword/modules/chord.wav
+share/reciteword/modules/ding.wav
+share/reciteword/modules/filling.zh_CN.txt
+share/reciteword/modules/firstrecite.zh_CN.txt
+share/reciteword/modules/gunno.wav
+share/reciteword/modules/gunok.wav
+share/reciteword/modules/hearing.zh_CN.txt
+share/reciteword/modules/know.zh_CN.txt
+share/reciteword/modules/menushow.wav
+share/reciteword/modules/overview.txt
+share/reciteword/modules/overview.zh_CN.txt
+share/reciteword/modules/rest.zh_CN.txt
+share/reciteword/modules/revise.zh_CN.txt
+share/reciteword/modules/sentence.zh_CN.txt
+share/reciteword/modules/shooting.zh_CN.txt
+share/reciteword/modules/type.wav
+share/reciteword/modules/typing.zh_CN.txt
+share/reciteword/modules/wind.wav
+share/reciteword/modules/wordedit.zh_CN.txt
+share/reciteword/skins/bdc/about.png
+share/reciteword/skins/bdc/aboutr.png
+share/reciteword/skins/bdc/choosebook.png
+share/reciteword/skins/bdc/choosebookr.png
+share/reciteword/skins/bdc/chooseword.png
+share/reciteword/skins/bdc/collectword.png
+share/reciteword/skins/bdc/collectwordr.png
+share/reciteword/skins/bdc/dict.png
+share/reciteword/skins/bdc/dictr.png
+share/reciteword/skins/bdc/face.png
+share/reciteword/skins/bdc/facer.png
+share/reciteword/skins/bdc/group.png
+share/reciteword/skins/bdc/groupr.png
+share/reciteword/skins/bdc/gtkrc
+share/reciteword/skins/bdc/help.png
+share/reciteword/skins/bdc/helpr.png
+share/reciteword/skins/bdc/know.png
+share/reciteword/skins/bdc/knowr.png
+share/reciteword/skins/bdc/mark.png
+share/reciteword/skins/bdc/markr.png
+share/reciteword/skins/bdc/record.png
+share/reciteword/skins/bdc/recordr.png
+share/reciteword/skins/bdc/rest.png
+share/reciteword/skins/bdc/restr.png
+share/reciteword/skins/bdc/revise_group.png
+share/reciteword/skins/bdc/revise_groupr.png
+share/reciteword/skins/bdc/revise_skim.png
+share/reciteword/skins/bdc/revise_skimr.png
+share/reciteword/skins/bdc/revise_test.png
+share/reciteword/skins/bdc/revise_testr.png
+share/reciteword/skins/bdc/shooting.png
+share/reciteword/skins/bdc/shootingr.png
+share/reciteword/skins/bdc/skim.png
+share/reciteword/skins/bdc/skimr.png
+share/reciteword/skins/bdc/skin.inf
+share/reciteword/skins/bdc/test.png
+share/reciteword/skins/bdc/testr.png
+share/reciteword/skins/bdc/text.png
+share/reciteword/skins/bdc/typing.png
+share/reciteword/skins/bdc/typingr.png
+@dirrm share/reciteword/skins/bdc
+@dirrm share/reciteword/skins
+@dirrm share/reciteword/modules
+@dirrm share/reciteword/dicts
+@dirrm share/reciteword/books/wyabdc
+@dirrm share/reciteword/books/qqssbdc/zwwl
+@dirrm share/reciteword/books/qqssbdc/zk
+@dirrm share/reciteword/books/qqssbdc/zhyy
+@dirrm share/reciteword/books/qqssbdc/zcyy
+@dirrm share/reciteword/books/qqssbdc/zbmg
+@dirrm share/reciteword/books/qqssbdc/yy
+@dirrm share/reciteword/books/qqssbdc/yxyy
+@dirrm share/reciteword/books/qqssbdc/ylbcz
+@dirrm share/reciteword/books/qqssbdc/yjsyy
+@dirrm share/reciteword/books/qqssbdc/yhbxx
+@dirrm share/reciteword/books/qqssbdc/xxxyy2
+@dirrm share/reciteword/books/qqssbdc/xsydx
+@dirrm share/reciteword/books/qqssbdc/xsjxx
+@dirrm share/reciteword/books/qqssbdc/xsjgz
+@dirrm share/reciteword/books/qqssbdc/xrjgz
+@dirrm share/reciteword/books/qqssbdc/xrjbxx
+@dirrm share/reciteword/books/qqssbdc/xrjbgz
+@dirrm share/reciteword/books/qqssbdc/xrjbcz
+@dirrm share/reciteword/books/qqssbdc/xmbrj
+@dirrm share/reciteword/books/qqssbdc/xmbcz
+@dirrm share/reciteword/books/qqssbdc/xgzyy
+@dirrm share/reciteword/books/qqssbdc/xglyy
+@dirrm share/reciteword/books/qqssbdc/xdxdg
+@dirrm share/reciteword/books/qqssbdc/xbzxx
+@dirrm share/reciteword/books/qqssbdc/xbzgz
+@dirrm share/reciteword/books/qqssbdc/xbjqse
+@dirrm share/reciteword/books/qqssbdc/xbjbxx
+@dirrm share/reciteword/books/qqssbdc/xbdxyy
+@dirrm share/reciteword/books/qqssbdc/wmyy
+@dirrm share/reciteword/books/qqssbdc/tdxl
+@dirrm share/reciteword/books/qqssbdc/sxsyy
+@dirrm share/reciteword/books/qqssbdc/swyy
+@dirrm share/reciteword/books/qqssbdc/shdjks
+@dirrm share/reciteword/books/qqssbdc/shbjc
+@dirrm share/reciteword/books/qqssbdc/rjbxx
+@dirrm share/reciteword/books/qqssbdc/rjbcz
+@dirrm share/reciteword/books/qqssbdc/qt
+@dirrm share/reciteword/books/qqssbdc/pgych
+@dirrm share/reciteword/books/qqssbdc/njxxyy
+@dirrm share/reciteword/books/qqssbdc/njgzyy
+@dirrm share/reciteword/books/qqssbdc/njczyy
+@dirrm share/reciteword/books/qqssbdc/njcz
+@dirrm share/reciteword/books/qqssbdc/mgzy
+@dirrm share/reciteword/books/qqssbdc/mgyyjc
+@dirrm share/reciteword/books/qqssbdc/ltseyy
+@dirrm share/reciteword/books/qqssbdc/lsxyy
+@dirrm share/reciteword/books/qqssbdc/kydjks
+@dirrm share/reciteword/books/qqssbdc/kydg
+@dirrm share/reciteword/books/qqssbdc/ktxxx
+@dirrm share/reciteword/books/qqssbdc/jsscz
+@dirrm share/reciteword/books/qqssbdc/jsjyy
+@dirrm share/reciteword/books/qqssbdc/jqseyy
+@dirrm share/reciteword/books/qqssbdc/jqgj
+@dirrm share/reciteword/books/qqssbdc/hbbgz
+@dirrm share/reciteword/books/qqssbdc/gzyy
+@dirrm share/reciteword/books/qqssbdc/gzxx
+@dirrm share/reciteword/books/qqssbdc/gkch
+@dirrm share/reciteword/books/qqssbdc/ggyy
+@dirrm share/reciteword/books/qqssbdc/dzyy
+@dirrm share/reciteword/books/qqssbdc/dxyyzy
+@dirrm share/reciteword/books/qqssbdc/dxyyjd
+@dirrm share/reciteword/books/qqssbdc/dxtyyy
+@dirrm share/reciteword/books/qqssbdc/dxchdg
+@dirrm share/reciteword/books/qqssbdc/ddyy
+@dirrm share/reciteword/books/qqssbdc/dddxyy
+@dirrm share/reciteword/books/qqssbdc/cykych
+@dirrm share/reciteword/books/qqssbdc/crgk
+@dirrm share/reciteword/books/qqssbdc/cpfjch
+@dirrm share/reciteword/books/qqssbdc/bsdcz
+@dirrm share/reciteword/books/qqssbdc/bjbxx
+@dirrm share/reciteword/books/qqssbdc/bjbcz
+@dirrm share/reciteword/books/qqssbdc/XXXyy
+@dirrm share/reciteword/books/qqssbdc/VOCABULARY
+@dirrm share/reciteword/books/qqssbdc/TOEFL
+@dirrm share/reciteword/books/qqssbdc/MBAdg
+@dirrm share/reciteword/books/qqssbdc/IELTS
+@dirrm share/reciteword/books/qqssbdc/GRE
+@dirrm share/reciteword/books/qqssbdc/GMAT
+@dirrm share/reciteword/books/qqssbdc/AAAyy
+@dirrm share/reciteword/books/qqssbdc/21sjdx
+@dirrm share/reciteword/books/qqssbdc
+@dirrm share/reciteword/books/ljjy
+@dirrm share/reciteword/books/fkbdc
+@dirrm share/reciteword/books
+@dirrm share/reciteword
+@dirrmtry share/applications
