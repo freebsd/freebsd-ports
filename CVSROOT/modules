@@ -14734,3 +14734,4 @@ zthread		ports/devel/zthread
 ztrack		ports/games/ztrack
 zu-aspell	ports/textproc/zu-aspell
 zziplib		ports/devel/zziplib
+p5-Catalyst-View-JSON	ports/www/p5-Catalyst-View-JSON
