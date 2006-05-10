@@ -9031,6 +9031,7 @@ p5-Pod-Constants	ports/textproc/p5-Pod-Constants
 p5-Pod-Coverage	ports/devel/p5-Pod-Coverage
 p5-Pod-DocBook	ports/textproc/p5-Pod-DocBook
 p5-Pod-Escapes	ports/textproc/p5-Pod-Escapes
+p5-Pod-LaTeX	ports/textproc/p5-Pod-LaTeX
 p5-Pod-POM	ports/textproc/p5-Pod-POM
 p5-Pod-POM-View-HTML-Filter	ports/textproc/p5-Pod-POM-View-HTML-Filter
 p5-Pod-Parser	ports/textproc/p5-Pod-Parser
