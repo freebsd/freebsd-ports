@@ -1,40 +1,20 @@
---- configure.orig	Tue May 31 12:27:55 2005
-+++ configure	Tue May 31 12:35:38 2005
-@@ -32,8 +32,8 @@
- vfw="no"
- vis="no"
- 
--CC="gcc"
--CFLAGS="-Wall -I. -O4 -ffast-math -D__X264__"
-+#CC="gcc"
-+CFLAGS="-Wall -I.  -ffast-math -D__X264__"
- LDFLAGS=""
- 
- AS="nasm"
-@@ -85,9 +85,9 @@
-     ARCH="X86"
-     CFLAGS="$CFLAGS -DHAVE_MMXEXT -DHAVE_SSE2"
-     ;;
--  x86_64)
--    ARCH="X86_64"
--    CFLAGS="$CFLAGS -DHAVE_MMXEXT -DHAVE_SSE2"
-+  x86_64 | amd64)
-+    ARCH="amd64"
-+    CFLAGS="$CFLAGS"
-     AS="yasm"
-     ASFLAGS="-f elf -m amd64"
-     ;;
-@@ -100,9 +100,12 @@
-       CFLAGS="$CFLAGS -maltivec -mabi=altivec"
+--- configure.orig	Tue May  9 16:45:02 2006
++++ configure	Tue May  9 22:04:19 2006
+@@ -129,7 +129,7 @@
+       ASFLAGS="$ASFLAGS -f elf"
      fi
      ;;
-+  "Sparc64" | sparc64)
-+    ARCH="SPARC64"
-+    CFLAGS="$CFLAGS"
-+    ;;
+-  x86_64)
++  x86_64 | amd64)
+     ARCH="X86_64"
+     CFLAGS="$CFLAGS -DHAVE_MMXEXT -DHAVE_SSE2"
+     AS="yasm"
+@@ -176,8 +176,6 @@
+     ARCH="PARISC"
+     ;;
    *)
 -    echo "Unknown platform $UNAMEM, edit the configure"
 -    exit 1
-+    CFLAGS="$CFLAGS"
      ;;
  esac
+ 

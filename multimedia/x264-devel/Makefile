@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	x264
-PORTVERSION=	0.0.20060112
-PORTREVISION=	1
+PORTVERSION=	0.0.20060509
 CATEGORIES=	multimedia
 MASTER_SITES=	http://downloads.videolan.org/pub/videolan/x264/snapshots/
 DISTNAME=	${PORTNAME}-snapshot-${PORTVERSION:S/0.0.//}-2245
@@ -18,10 +17,8 @@ COMMENT=	Multimedia library and tool for encoding H.264/AVC video streams
 USE_BZIP2=	yes
 USE_GETOPT_LONG=yes
 WRKSRC=		${WRKDIR}/${DISTNAME}
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	default
-SHLIB_VER=	1
 INSTALLS_SHLIB=	yes
 HAS_CONFIGURE=	yes
 
@@ -29,7 +26,7 @@ PLIST_FILES=	bin/x264 \
 		include/x264.h \
 		lib/libx264.a \
 		lib/libx264.so \
-		lib/libx264.so.${SHLIB_VER} \
+		lib/libx264.so.47 \
 		libdata/pkgconfig/x264.pc
 
 OPTIONS=	GPAC "Enable MPEG-4 Output" On \
@@ -39,7 +36,8 @@ OPTIONS=	GPAC "Enable MPEG-4 Output" On \
 
 CONFIGURE_ARGS+=	--extra-cflags="${CPPFLAGS} ${CFLAGS} -fPIC -I${LOCALBASE}/include -I${X11BASE}/include" \
 			--extra-ldflags="${LDFLAGS} -L${LOCALBASE}/lib -L${X11BASE}/lib" \
-			--disable-pthread
+			--disable-pthread \
+			--enable-shared
 
 .include <bsd.port.pre.mk>
 
@@ -48,7 +46,7 @@ BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm
 MAKE_ENV+=	ARCH_X86="1"
 .endif
 
-.if ${ARCH}=="amd64"
+.if ${ARCH}=="amd64" || ${ARCH}=="sparc64"
 BUILD_DEPENDS+=	yasm:${PORTSDIR}/devel/yasm
 MAKE_ENV+=	ARCH_X86_64="1"
 .endif
@@ -71,20 +69,14 @@ CONFIGURE_ARGS+=	--enable-visualize
 USE_XLIB=		yes
 .endif
 
-#post-patch:
-#	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|' \
-#			${WRKSRC}/configure
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' \
+		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|${PREFIX}/libdata/pkgconfig|' \
+		${WRKSRC}/Makefile
 
 pre-install:
-	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
+	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' \
 		${WRKSRC}/x264.pc
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/x264 ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/x264.h ${PREFIX}/include
-	${INSTALL_DATA} ${WRKSRC}/libx264.a ${PREFIX}/lib
-	${INSTALL_DATA} ${WRKSRC}/libx264.so.${SHLIB_VER} ${PREFIX}/lib
-	${INSTALL_DATA} ${WRKSRC}/x264.pc ${PREFIX}/libdata/pkgconfig
-	${LN} -sf libx264.so.${SHLIB_VER} ${PREFIX}/lib/libx264.so
 
 .include <bsd.port.post.mk>

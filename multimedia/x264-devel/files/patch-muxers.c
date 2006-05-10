@@ -1,6 +1,6 @@
---- x264.c.orig	Sun Oct  2 21:04:20 2005
-+++ x264.c	Sun Oct  2 21:04:34 2005
-@@ -1475,7 +1475,7 @@
+--- muxers.c.orig	Tue May  9 22:04:27 2006
++++ muxers.c	Tue May  9 22:04:37 2006
+@@ -647,7 +647,7 @@
          return -1;
  
      memset(p_mp4, 0, sizeof(mp4_t));
