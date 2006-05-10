@@ -32,6 +32,7 @@ WITHOUT_MPEG2ENC=yes	# Broken from updated mjpegtools
 WITHOUT_LIBVISUAL=yes	# Broken on 4.x
 WITHOUT_POLYPAUDIO=yes	# Broken on 4.x
 .endif
+WITHOUT_FAAD=yes	# Broken
 # Shout & Shout2 Conflict
 .if !defined(WITHOUT_SHOUT) && !defined(WITHOUT_SHOUT2)
 WITHOUT_SHOUT=	yes
