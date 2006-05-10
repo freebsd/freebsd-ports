@@ -1568,6 +1568,7 @@
     SUBDIR += root-doc
     SUBDIR += rote
     SUBDIR += rpc2
+    SUBDIR += rpm-spec-mode.el
     SUBDIR += rtplib
     SUBDIR += ruby-amstd
     SUBDIR += ruby-aspectr
