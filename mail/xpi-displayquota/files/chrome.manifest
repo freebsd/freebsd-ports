@@ -1,0 +1,19 @@
+
+overlay	chrome://messenger/content/messenger.xul	chrome://displayquota/content/displayquotaoverlay.xul
+content	displayquota	jar:chrome/DisplayQuota.jar!/content/displayquota/
+
+skin	displayquota	classic/1.0	jar:chrome/DisplayQuota.jar!/skin/displayquota/
+
+locale	displayquota	en-US	jar:chrome/DisplayQuota.jar!/locale/en-US/displayquota/
+
+locale	displayquota	fr-FR	jar:chrome/DisplayQuota.jar!/locale/fr-FR/displayquota/
+
+locale	displayquota	it-IT	jar:chrome/DisplayQuota.jar!/locale/it-IT/displayquota/
+
+locale	displayquota	es-ES	jar:chrome/DisplayQuota.jar!/locale/es-ES/displayquota/
+
+locale	displayquota	ja-JP	jar:chrome/DisplayQuota.jar!/locale/ja-JP/displayquota/
+
+locale	displayquota	pt-BR	jar:chrome/DisplayQuota.jar!/locale/pt-BR/displayquota/
+
+locale	displayquota	es-AR	jar:chrome/DisplayQuota.jar!/locale/es-AR/displayquota/

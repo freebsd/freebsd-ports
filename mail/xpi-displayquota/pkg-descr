@@ -1,0 +1,12 @@
+This extension will display the current status of your
+IMAP quota in thunderbird's statusbar and will warn you
+when you reach a configurable limit.
+
+It only works with IMAP quotas and servers advertizing
+the quota status via IMAP (the IMAP GETQUOTA command).
+Some mail servers have disk quotas and will send email
+when your mailbox reach its quota. That's not a real
+IMAP quota system and the imap server might not advertize
+it.
+
+WWW: https://addons.mozilla.org/thunderbird/881/
