@@ -1,0 +1,47 @@
+--- lib/DBI/ProxyServer.pm.orig	Wed May 10 11:41:53 2006
++++ lib/DBI/ProxyServer.pm	Wed May 10 11:48:29 2006
+@@ -33,13 +33,6 @@ require Config;
+ package DBI::ProxyServer;
+ 
+ 
+-my $haveFileSpec = eval { require File::Spec };
+-my $tmpDir = $haveFileSpec ? File::Spec->tmpdir() :
+-    ($ENV{'TMP'} || $ENV{'TEMP'} || '/tmp');
+-my $defaultPidFile = $haveFileSpec ?
+-    File::Spec->catdir($tmpDir, "dbiproxy.pid") : "/tmp/dbiproxy.pid";
+-
+-
+ ############################################################################
+ #
+ #   Constants
+@@ -109,7 +102,9 @@ my %DEFAULT_SERVER_OPTIONS;
+     } else {
+ 	$o->{'mode'} = 'single';
+     }
+-    $o->{'pidfile'}    = $defaultPidFile;
++    # No pidfile by default, configuration must provide one if needed
++    # (see CAN-2005-0077)
++    $o->{'pidfile'}    = 'none';
+     $o->{'user'}       = undef;
+ };
+ 
+@@ -520,7 +515,7 @@ mode with "--mode=single".
+ =item I<pidfile> (B<--pidfile=file>)
+ 
+ (UNIX only) If this option is present, a PID file will be created at the
+-given location.
++given location.  Default is do not create a pidfile.
+ 
+ =item I<user> (B<--user=uid>)
+ 
+--- dbiproxy.PL.orig	Wed May 10 11:49:19 2006
++++ dbiproxy.PL	Wed May 10 11:49:44 2006
+@@ -146,7 +146,7 @@ mode with "--mode=single".
+ =item B<--pidfile=file>
+ 
+ (UNIX only) If this option is present, a PID file will be created at the
+-given location.
++given location.  Default is do not create a pidfile.
+ 
+ =item B<--user=uid>
+ 
