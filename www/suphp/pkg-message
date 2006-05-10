@@ -3,7 +3,8 @@ You have installed mod_suphp, a module that provides a wrapper
 for PHP for Apache.
 
 For help on using this module, please see the suPHP homepage:
-    	http://www.suphp.org
+
+    	http://www.suphp.org/
 
 Important hints:
 Using suPHP can break some PHP-scripts, because of Apache's CGI 
