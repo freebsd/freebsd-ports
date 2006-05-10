@@ -15,14 +15,16 @@ MASTER_SITES+=	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/developer/680
 		${MASTER_SITE_APACHE:S,%SUBDIR%/,ant/binaries/:antbin,} \
 		${MASTER_SITE_MOZILLA:S/$/:mozsrc/}
 MASTER_SITE_SUBDIR+=	mozilla/releases/mozilla${MOZILLA_VERSION}/source/:mozsrc
-DISTFILES+=	OOo_SRC680_m${MILESTONE}_source${EXTRACT_SUFX}
+#DISTFILES+=	OOo_SRC680_m${MILESTONE}_source${EXTRACT_SUFX}
+DISTFILES+=	OOo_2.0.${MILESTONE}_src${EXTRACT_SUFX}
 .if defined(WITH_GPC)
 DISTFILES+=     gpc231.tar.Z:gpc
 .endif
 .if defined(WITH_GNUGCJ)
 DISTFILES+=     ${ANT_DISTFILE}:antbin
 .endif
-EXTRACT_ONLY=	OOo_SRC680_m${MILESTONE}_source${EXTRACT_SUFX}
+#EXTRACT_ONLY=	OOo_SRC680_m${MILESTONE}_source${EXTRACT_SUFX}
+EXTRACT_ONLY+=	OOo_2.0.${MILESTONE}_src${EXTRACT_SUFX}
 
 MAINTAINER=	openoffice@FreeBSD.org
 COMMENT?=	Integrated wordprocessor/dbase/spreadsheet/drawing/chart/browser(developer version)
@@ -42,7 +44,7 @@ USE_KDELIBS_VER=        3
 USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_PERL5=	yes
-USE_BZIP2=	yes
+#USE_BZIP2=	yes
 WITHOUT_CPU_CFLAGS=	true
 
 ONLY_FOR_ARCHS=	i386
@@ -63,9 +65,9 @@ IGNORE=		install lang/perl5.8 then try again
 
 CODELINE=		680
 RELEASE_NR=		2.0
-MILESTONE?=		164
+MILESTONE?=		168
 OOOTAG?=		SRC680_m${MILESTONE}
-SNAPDATE=		20060424
+SNAPDATE=		20060510
 INSTALLATION_BASEDIR?=	openoffice.org-${OOOTAG}
 EXECBASE?=		openoffice.org-${OOOTAG}
 DIST_SUBDIR=		openoffice.org2.0
@@ -134,7 +136,7 @@ LIB_DEPENDS=	art_lgpl_2:${PORTSDIR}/graphics/libart_lgpl2
 .endif
 
 GNU_CONFIGURE=	yes
-WRKSRC?=		${WRKDIR}
+WRKSRC?=		${WRKDIR}/SRC680_m${MILESTONE}
 CONFIGURE_WRKSRC=	${WRKSRC}/config_office
 TCSH?=		/bin/tcsh
 PKGMESSAGE=	${WRKDIR}/pkg-message
@@ -246,7 +248,6 @@ post-install:
 	@ln -sf ${PREFIX}/${INSTALLATION_BASEDIR}/share/xdg \
 			${PREFIX}/share/applnk/${EXECBASE}
 	@${PRINTF} "share/applnk/${EXECBASE}\n" >> ${TMPPLIST}
-.endif
 	@for dir in `ls ${ICONS}/hicolor | grep -v CVS`; do \
 		for app in base calc draw impress math printeradmin writer; do \
 			if [ -r ${ICONS}/hicolor/$${dir}/apps/$${app}.png ]; then \
@@ -261,6 +262,7 @@ post-install:
 			${PRINTF} "share/icons/hiclor/$${dir}/mimetypes/$${file}\n" >> ${TMPPLIST} ; \
 		done ; \
 	done
+.endif
 	@cd ${PREFIX} ; ${FIND} -s bin -type f | ${GREP} ${EXECBASE} >> ${TMPPLIST}
 	@cd ${PREFIX} ; ${FIND} -s bin -type l | ${GREP} ${EXECBASE} >> ${TMPPLIST}
 	@cd ${PREFIX} ; ${FIND} -s ${INSTALLATION_BASEDIR} -type f >> ${TMPPLIST}
