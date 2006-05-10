@@ -17,14 +17,20 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME Virtual File System
 
+USE_BZIP2=	yes
+PREFIX?=	${X11BASE}
+
+.if !defined(REFERENCE_PORT)
+
+PORTREVISION=	1
+
 RUN_DEPENDS=	${LOCALBASE}/share/mime/magic:${PORTSDIR}/misc/shared-mime-info
 
-USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack gnomemimedata gconf2 \
-		libbonobo ltverhack
+		libbonobo ltverhack referencehack
 USE_AUTOTOOLS=	libtool:15
 USE_OPENSSL=	yes
 INSTALLS_SHLIB=	yes
@@ -90,3 +96,5 @@ post-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.post.mk>
+
+.endif
