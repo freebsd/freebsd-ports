@@ -7,7 +7,7 @@
 
 PORTNAME=	faac
 PORTVERSION=	1.24
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	faac
@@ -38,7 +38,7 @@ OPTIONS=	MPEG4IP "Enable mpeg4 audio encoding" On
 WITH_MPEG4IP=yes
 .endif
 
-.if defined(WITH_MPEG4IP)
+.if !defined(WITHOUT_MPEG4IP) || defined(WITH_MPEG4IP)
 LIB_DEPENDS+=	mp4v2.0:${PORTSDIR}/multimedia/mpeg4ip-libmp4v2
 .endif
 
