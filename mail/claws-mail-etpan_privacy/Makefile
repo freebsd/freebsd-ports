@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	etpan_privacy
-PORTVERSION=	0.13
+PORTVERSION=	0.14
 CATEGORIES=	mail
-MASTER_SITES=	http://claws.sylpheed.org/downloads/
+MASTER_SITES=	http://claws.sylpheed.org/downloads/plugins/
 PKGNAMEPREFIX=	sylpheed-claws-
 DISTNAME=	etpan-privacy-${PORTVERSION}
 
