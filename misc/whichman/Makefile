@@ -13,7 +13,6 @@ MASTER_SITES=	http://main.linuxfocus.org/~guido.socher/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Approximate matching utilities to search for manpages and files
 
-USE_REINPLACE=	yes
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 
 MAN1=		ftff.1 ftwhich.1 whichman.1

@@ -17,7 +17,6 @@ COMMENT=	This is needed by ogle, which is a DVD player that supports DVD menus
 LIB_DEPENDS=	dvdcss.${DVDCSS_LIBVERSION}:${PORTSDIR}/multimedia/libdvdcss
 
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 
 DOC_FILES=	AUTHORS COPYING NEWS README TODO

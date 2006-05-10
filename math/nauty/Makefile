@@ -18,7 +18,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}20
 MAKEFILE=	makefile
 ALL_TARGET=	nauty
 NO_INSTALL_MANPAGES=yes
-USE_REINPLACE=	yes
 PORTDOCS=	oldmanual.ps read.me
 PLIST_FILES=	bin/dreadnaut bin/dreadnaut1 bin/dreadnautL1 bin/dreadnautB
 

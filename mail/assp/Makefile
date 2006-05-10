@@ -17,7 +17,6 @@ COMMENT=	Anti-Spam SMTP Proxy
 
 USE_ZIP=	yes
 NO_BUILD=	yes
-USE_REINPLACE=	yes
 USE_PERL5_RUN=	yes
 
 MAN8=		assp.8 assplog.8

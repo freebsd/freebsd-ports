@@ -17,8 +17,6 @@ COMMENT=	UCB's MPEG-I video stream encoder
 
 MAN1=		mpeg_encode.1
 
-USE_REINPLACE=	yes
-
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 post-patch:

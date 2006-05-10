@@ -21,7 +21,6 @@ BUILD_DEPENDS+=	wish8.0jp:${PORTSDIR}/japanese/tk80
 RUN_DEPENDS+=	wish8.0jp:${PORTSDIR}/japanese/tk80
 .endif
 
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 PLIST_SUB=	DISTNAME="${DISTNAME}"
 NO_BUILD=	yes

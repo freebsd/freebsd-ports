@@ -18,7 +18,6 @@ COMMENT=	Hyper fast realtime audio/video encoder/converter, streaming server
 USE_GETOPT_LONG=	yes
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 WANT_SDL=	yes
 CONFIGURE_ARGS=	--cc="${CC}" --prefix="${PREFIX}" \
 		--make="${GMAKE}" --enable-shared \

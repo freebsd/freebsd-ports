@@ -14,7 +14,6 @@ MASTER_SITES=	http://namazu.org/~satoru/ttyrec/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tty recorder
 
-USE_REINPLACE=	yes
 MAN1=	ttyplay.1 ttyrec.1
 
 post-patch:

@@ -18,7 +18,6 @@ LIB_DEPENDS=	dvdread.3:${PORTSDIR}/multimedia/libdvdread
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
-USE_REINPLACE=	yes
 PLIST_FILES=	bin/lsdvd
 
 .include <bsd.port.pre.mk>

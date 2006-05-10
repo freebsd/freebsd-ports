@@ -18,7 +18,6 @@ COMMENT=	High quality audio-visual demonstration for text terminal
 LIB_DEPENDS=	aa.1:${PORTSDIR}/graphics/aalib \
 		mikmod.2:${PORTSDIR}/audio/libmikmod
 
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/bb-1.3.0
 MAN1=		bb.1

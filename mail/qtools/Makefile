@@ -23,8 +23,6 @@ INSTALL_TARGET=	setup check
 
 EZMLM_DIR?=	${LOCALBASE}
 
-USE_REINPLACE=	yes
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|02755|0755|g' ${WRKSRC}/hier.c
 

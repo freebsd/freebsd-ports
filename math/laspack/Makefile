@@ -17,7 +17,6 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Package for solving large sparse systems of linear equations
 
-USE_REINPLACE=	yes
 WRKSRC=	${WRKDIR}/${PORTNAME}
 MAKEFILE=	makefile
 

@@ -16,7 +16,6 @@ MASTER_SITE_SUBDIR=	system/mail/pop
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A virtual POP3 server
 
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
 .if defined(WITH_IPVIRTUAL)

@@ -18,7 +18,6 @@ RUN_DEPENDS=	${SITE_PERL}/Net/Netmask.pm:${PORTSDIR}/net-mgmt/p5-Net-Netmask
 
 USE_PERL5=	yes
 USE_APACHE=	yes
-USE_REINPLACE=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

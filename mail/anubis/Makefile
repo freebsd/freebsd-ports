@@ -27,7 +27,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=		sergei@FreeBSD.org
 COMMENT=		Outgoing SMTP mail processor
 
-USE_REINPLACE=		yes
 USE_GETOPT_LONG=	yes
 GNU_CONFIGURE=		yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

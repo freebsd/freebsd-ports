@@ -16,7 +16,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Database of acronyms and abbreviations
 
 NO_BUILD=	yes
-USE_REINPLACE=	yes
 PLIST_FILES=	bin/whats bin/acron share/misc/acron
 
 post-patch:

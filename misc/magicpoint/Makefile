@@ -19,7 +19,6 @@ LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png \
 RUN_DEPENDS+=	pnmscale:${PORTSDIR}/graphics/netpbm
 
 USE_IMAKE=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
 OPTIONS+=	FREETYPE	"With FreeType support" on \

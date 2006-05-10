@@ -23,7 +23,6 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libjs.so:${PORTSDIR}/lang/spidermonkey
 RUN_DEPENDS=	${LOCALBASE}/lib/libjs.so:${PORTSDIR}/lang/spidermonkey
 
 USE_AUTOTOOLS=	automake:19:env autoconf:259:env libtool:15 aclocal:19:env
-USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomeprefix gnomehack gtk20
 WANT_SDL=	yes

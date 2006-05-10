@@ -31,8 +31,6 @@ PATCHFILES=	procmail-authenticate.c-userMaildir.patch
 PATCH_DIST_STRIP=-p
 .endif
 
-USE_REINPLACE=	yes
-
 # It asks for list of directories to do test for file locking
 # (defaults to /tmp and ".", so return should suffice in most cases).
 .if !defined(BATCH) # handled in patch-aa

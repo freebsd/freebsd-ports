@@ -15,7 +15,6 @@ COMMENT=	Extracts attached files out of a MIME encoded email package
 
 PLIST_FILES=	bin/ripmime
 MAN1=		ripmime.1
-USE_REINPLACE=	yes
 
 pre-build:
 	@${REINPLACE_CMD} -e 's!CC=!CC?=!; s!/usr/local!${PREFIX}!; \

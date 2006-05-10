@@ -19,7 +19,6 @@ COMMENT=	Linux binary release of DivX (TM) Codec
 RESTRICTED=	unsure of licensing issues
 
 ONLY_FOR_ARCHS=	i386
-USE_REINPLACE=	yes
 USE_LINUX_PREFIX=	yes
 USE_LINUX=	yes
 WRKSRC=	${WRKDIR}/${PORTNAME}-${RELEASE_DATE}

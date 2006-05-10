@@ -18,7 +18,6 @@ USE_APACHE=	yes
 USE_QMAIL_RUN=	yes
 
 HAS_CONFIGURE=	yes
-USE_REINPLACE=	yes
 
 SVC_DIR=	"${QMAIL_PREFIX}/service/vmailmgrd"
 PHP_DIR=	${PREFIX}/www/data-dist/${PORTNAME}

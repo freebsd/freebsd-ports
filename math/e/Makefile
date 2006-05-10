@@ -15,7 +15,6 @@ COMMENT=	A tiny expression evaluator
 
 MAKEFILE=	makefile
 ALL_TARGET=	e
-USE_REINPLACE=	yes
 
 post-patch:
 	@${RM} ${WRKSRC}/${PORTNAME}

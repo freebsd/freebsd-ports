@@ -23,7 +23,6 @@ FFTW3_SUFX=
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
-USE_REINPLACE=	yes
 USE_PERL5_BUILD=yes
 INSTALLS_SHLIB=	yes
 USE_LDOUBLE=	yes

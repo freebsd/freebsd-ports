@@ -15,7 +15,6 @@ MAINTAINER=	boris@tagnet.ru
 COMMENT=	Virtual-domain capable POP3 server supporting MySQL,PgSQL etc auth
 
 USE_OPENSSL=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-auth-other \
 		--enable-tcp-wrappers \

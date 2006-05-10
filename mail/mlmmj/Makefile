@@ -45,7 +45,6 @@ PLIST_SUB+=	WEB=""
 .endif
 
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--prefix=${PREFIX}

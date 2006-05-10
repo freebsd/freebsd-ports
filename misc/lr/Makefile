@@ -35,8 +35,6 @@ PLIST_SUB+=	LESSPIPE=""
 LDFLAGS+=	-lncurses
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
-USE_REINPLACE=	yes
-
 pre-patch:
 	@${REINPLACE_CMD} -e 's|getenv("LESSOPEN")|"\|${LESSPIPE_PATH}lesspipe.sh"|' ${WRKSRC}/lazyread.c
 

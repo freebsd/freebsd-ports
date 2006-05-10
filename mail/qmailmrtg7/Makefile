@@ -17,8 +17,6 @@ COMMENT=	A program to create mrtg graphs for qmail activity
 RUN_DEPENDS=	mrtg:${PORTSDIR}/net-mgmt/mrtg
 USE_QMAIL=	yes
 
-USE_REINPLACE=	yes
-
 .include <bsd.port.pre.mk>
 
 post-patch:

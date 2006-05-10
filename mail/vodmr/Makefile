@@ -29,7 +29,6 @@ RUN_DEPENDS+=	tcpserver:${PORTSDIR}/sysutils/ucspi-tcp
 
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
-USE_REINPLACE=	yes
 
 SUB_FILES=	pkg-message
 SUB_LIST=	SCRIPT="${PREFIX}/sbin/odmrd"

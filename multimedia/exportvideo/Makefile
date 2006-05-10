@@ -21,7 +21,6 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 USE_GNOME=	gtk12
 USE_XLIB=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--no-avi --prefix=${PREFIX}
 

@@ -29,7 +29,6 @@ RUN_DEPENDS+=	${SITE_PERL}/Archive/Tar.pm:${PORTSDIR}/archivers/p5-Archive-Tar \
 		${LOCALBASE}/bin/makepatch:${PORTSDIR}/textproc/makepatch
 
 USE_PERL5=	yes
-USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 NO_BUILD=	yes
 

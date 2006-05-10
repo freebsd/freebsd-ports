@@ -22,7 +22,6 @@ LIB_DEPENDS=	mpeg2.0:${PORTSDIR}/multimedia/libmpeg2
 
 USE_GNOME=	gnometarget gtk12 intlhack
 USE_GETOPT_LONG=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--disable-sdl

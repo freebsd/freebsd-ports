@@ -19,7 +19,6 @@ NO_PACKAGE=	Forbidden - we have patches to the distribution.
 DISABLE_SIZE=	yes
 ALL_TARGET=
 INSTALL_TARGET=setup check
-USE_REINPLACE=	yes
 
 HEADER_FILES=	complex4.h complex8.h fftc4.h fftc8.h fftfreq.h \
 		fftr4.h fftr8.h real4.h real8.h

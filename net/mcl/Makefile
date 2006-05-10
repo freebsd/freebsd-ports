@@ -20,7 +20,6 @@ BUILD_DEPENDS=	makedepend:${X_IMAKE_PORT} \
 		gdome-config:${PORTSDIR}/textproc/gdome2 \
 		glib-gettextize:${PORTSDIR}/devel/glib20
 
-USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 USE_GMAKE=	yes
 MAN1=		fcast.1 fcastn.1 mclrecv2.1 mclsend2.1

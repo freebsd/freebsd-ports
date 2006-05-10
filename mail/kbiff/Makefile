@@ -16,7 +16,6 @@ COMMENT=	Mail notification utility for KDE with nice features
 
 USE_BZIP2=	yes
 USE_KDELIBS_VER=3
-USE_REINPLACE=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS=	--disable-fast-perl
 

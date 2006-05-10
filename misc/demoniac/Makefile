@@ -17,7 +17,6 @@ COMMENT=	A tool for exploring and animating graphics effects
 
 LIB_DEPENDS=	gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea
 
-USE_REINPLACE=	yes
 USE_GL=		yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes

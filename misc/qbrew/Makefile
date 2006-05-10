@@ -13,7 +13,6 @@ MASTER_SITES=	http://www.usermode.org/code/
 MAINTAINER=	david@usermode.org
 COMMENT=	A homebrewer's recipe calculator
 
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_QT_VER=	3

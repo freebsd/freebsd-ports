@@ -15,7 +15,6 @@ MAINTAINER=	laszlof@vonostingroup.com
 COMMENT=	A programming language for numerical analysis
 
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 
 ALGAE_VERSION=	${PORTVERSION}
 PLIST_SUB=	ALGAE_VERSION=${ALGAE_VERSION}

@@ -20,7 +20,6 @@ RUN_DEPENDS=	growisofs:${PORTSDIR}/sysutils/dvd+rw-tools \
 		vamps:${PORTSDIR}/multimedia/vamps
 
 USE_KDELIBS_VER=3
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

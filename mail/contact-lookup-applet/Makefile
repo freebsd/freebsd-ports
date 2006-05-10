@@ -19,7 +19,6 @@ COMMENT=	Gnome panel applet for easy Evolution contact book access
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 USE_GNOME=	gnomehier gnomeprefix gnomehack gnomepanel \
 		evolutiondataserver gal2
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

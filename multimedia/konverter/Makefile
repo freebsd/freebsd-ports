@@ -21,7 +21,6 @@ LIB_DEPENDS=	xine.15:${PORTSDIR}/multimedia/libxine
 USE_KDELIBS_VER=3
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 
 EXTRA_PATCHES=	${.CURDIR}/../../x11/kde3/files/extrapatch-old_configure
 #EXTRA_PATCHES=	${PORTSDIR}/x11/kde3/files/extrapatch-old_configure

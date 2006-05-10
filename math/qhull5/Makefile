@@ -14,7 +14,6 @@ DISTNAME=	${PORTNAME}-2003.1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qhull computes convex hulls, Delaunay triangulations and halfspaces
 
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes

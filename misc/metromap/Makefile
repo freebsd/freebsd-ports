@@ -16,7 +16,6 @@ COMMENT=	A simple application for finding paths in different subways maps
 USE_PYTHON=	yes
 USE_GNOME=	pygtk2
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 NO_BUILD=	yes
 
 post-patch:

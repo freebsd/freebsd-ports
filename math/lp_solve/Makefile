@@ -19,8 +19,6 @@ USE_BISON=	yes
 
 MAN1=		lp_solve.1
 
-USE_REINPLACE=	yes
-
 post-patch:
 	@${REINPLACE_CMD} -e 's,%%CC%%,${CC},g ; \
 	s,%%CFLAGS%%,${CFLAGS},g'  ${WRKSRC}/Makefile

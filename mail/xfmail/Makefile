@@ -27,7 +27,6 @@ GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 INSTALLS_SHLIB=	yes
-USE_REINPLACE=	yes
 
 .include <bsd.port.pre.mk>
 

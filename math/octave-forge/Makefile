@@ -25,7 +25,6 @@ RUN_DEPENDS=	octave:${PORTSDIR}/math/octave \
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 ALL_TARGET=	# empty
-USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--with-cc=${CC} \
 		--with-cxx=${CXX}
 

@@ -23,7 +23,6 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-
 
 NO_BUILD=	yes
 
-USE_REINPLACE=	yes
 USE_PERL5=	yes
 POD2MAN?=	pod2man
 MAN1=		demime.1

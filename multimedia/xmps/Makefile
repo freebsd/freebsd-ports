@@ -20,7 +20,6 @@ COMMENT=	X MPEG Player System - a media player with a very nice GUI
 USE_SDL=	sdl
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomelibs gdkpixbuf
-USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

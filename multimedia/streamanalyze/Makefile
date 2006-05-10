@@ -16,7 +16,6 @@ COMMENT=	Shrink-factor calculator for StreamDVD
 LIB_DEPENDS=	dvdread:${PORTSDIR}/multimedia/libdvdread
 
 WRKSRC=		${WRKDIR}/StreamAnalyze
-USE_REINPLACE=	yes
 
 PLIST_FILES=	bin/streamanalyze
 PORTDOCS=	README

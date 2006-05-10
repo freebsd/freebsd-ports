@@ -21,8 +21,6 @@ PLIST_FILES=	bin/xdvshow
 GNU_CONFIGURE=		YES
 USE_AUTOTOOLS=	autoconf:253
 
-USE_REINPLACE=		YES
-
 post-patch:
 	@${REINPLACE_CMD} \
 		-e "s|%%PTHREAD_CFLAGS%%|${PTHREAD_CFLAGS}|g" \

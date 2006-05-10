@@ -40,7 +40,6 @@ RUN_DEPENDS=	\
 		bash:${PORTSDIR}/shells/bash \
 		${PYTHON_SITELIBDIR}/wx-2.6-gtk2-ansi/wx/__init__.py:${PORTSDIR}/x11-toolkits/py-wxPython26
 
-USE_REINPLACE=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 GNU_CONFIGURE=	yes

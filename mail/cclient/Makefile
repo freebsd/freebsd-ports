@@ -34,7 +34,6 @@ MAKE_ARGS+=	SSLTYPE=unix.nopwd
 .endif
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
-USE_REINPLACE=	yes
 
 SHLIBBASE=	c-client4
 SHLIBMAJ=	8

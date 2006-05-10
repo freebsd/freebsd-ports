@@ -20,7 +20,6 @@ OPTIONS=	X11 "X11/GTK support" on	\
 		RPLAY "rplay audio support" off	\
 		SOX "Sox audio support" off
 
-USE_REINPLACE=	yes
 WANT_GNOME=	yes
 INSTALLS_SHLIB=	yes
 

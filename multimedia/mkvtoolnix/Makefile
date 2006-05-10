@@ -24,7 +24,6 @@ LIB_DEPENDS=	FLAC.7:${PORTSDIR}/audio/flac \
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-extra-includes=${LOCALBASE}/include \

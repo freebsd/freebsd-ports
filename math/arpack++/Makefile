@@ -24,7 +24,6 @@ RUN_DEPENDS=	${LOCALBASE}/lib/libarpack.a:${PORTSDIR}/math/arpack \
 		gmake:${PORTSDIR}/devel/gmake
 
 NO_BUILD=	yes
-USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ""
 
 DOCS=		README doc/arpackpp.ps.gz doc/bugs.txt doc/structure.txt

@@ -14,7 +14,6 @@ MASTER_SITES=	http://www.mavetju.org/download/
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	Small screen with active mailboxes and bring-to-front-facility
 
-USE_REINPLACE=	yes
 USE_GNOME=      gtk12
 
 MAN1=		mavbiff.1

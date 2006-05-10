@@ -22,7 +22,6 @@ LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre \
 		ncurses:${PORTSDIR}/devel/ncurses
 
 USE_PERL5=	yes
-USE_REINPLACE=	yes
 USE_OPENSSL=	yes
 .if !exists(/usr/include/openssl/idea.h)
 WITH_OPENSSL_PORT=	yes

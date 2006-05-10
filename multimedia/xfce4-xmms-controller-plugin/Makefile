@@ -23,7 +23,6 @@ RUN_DEPENDS=	xfce4-panel:${PORTSDIR}/x11-wm/xfce4-panel
 
 USE_GNOME=	gtk20
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 
 GNU_CONFIGURE=	yes

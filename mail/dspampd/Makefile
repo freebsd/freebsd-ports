@@ -29,7 +29,6 @@ OPTIONS+=	CLAMAV_DEVEL  "Use clamav as antivir module" off
 #OPTIONS+=	TIME_HIRES "" on
 
 NO_BUILD=	YES
-USE_REINPLACE=	YES
 
 CONF_DIR=	${PREFIX}/etc/dspampd
 

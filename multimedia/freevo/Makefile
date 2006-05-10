@@ -29,7 +29,6 @@ RUN_DEPENDS=	aumix:${PORTSDIR}/audio/aumix \
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-USE_REINPLACE=	yes
 PKGINSTALL=	pkg-install
 
 DOCSDIR=	${PREFIX}/share/doc/${DISTNAME}

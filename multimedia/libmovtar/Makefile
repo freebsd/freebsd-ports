@@ -18,7 +18,6 @@ COMMENT=	Supports reading/writing of MJPEG video in YUV 4:2:2 JPEG
 USE_SDL=	sdl
 USE_GNOME=	glib12
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-m4data-prefix=${PREFIX}/share
 CONFIGURE_ENV=	LOCALBASE="${LOCALBASE}"

@@ -19,7 +19,6 @@ BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/x11-toolkits/py-gnome-extras:extract
 
 USE_GNOME=	pygtk2
 USE_PYTHON=	yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 
 .include <bsd.port.pre.mk>

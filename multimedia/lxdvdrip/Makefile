@@ -25,8 +25,6 @@ RUN_DEPENDS=	buffer:${PORTSDIR}/misc/buffer \
 		mplayer:${PORTSDIR}/multimedia/mplayer \
 		transcode:${PORTSDIR}/multimedia/transcode
 
-USE_REINPLACE=	yes
-
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 

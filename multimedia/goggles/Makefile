@@ -19,7 +19,6 @@ RUN_DEPENDS=	ogle:${PORTSDIR}/multimedia/ogle
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 USE_XLIB=	yes
 
 pre-everything::

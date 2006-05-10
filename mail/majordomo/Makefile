@@ -24,7 +24,6 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Dig
 .endif
 
 USE_PERL5=	yes
-USE_REINPLACE=	yes
 
 # Needs to create a user and group
 IS_INTERACTIVE= yes

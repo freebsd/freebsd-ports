@@ -16,8 +16,6 @@ COMMENT=	A FreeBSD Driver for FXO, FXS, BRI and PRI Telephony Cards
 
 LIB_DEPENDS=	newt.51:${PORTSDIR}/devel/newt
 
-USE_REINPLACE=	yes
-
 NO_PACKAGE=	Should be in sync with the kernel to work correctly
 
 ONLY_FOR_ARCHS=	i386

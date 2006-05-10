@@ -16,7 +16,6 @@ MAINTAINER=	dhartmei@FreeBSD.org
 COMMENT=	Milter plugin to sendmail for regular expression filtering
 
 WRKSRC=		${WRKDIR}/milter-regex
-USE_REINPLACE=	yes
 MAILUSER?=	mailnull
 MAN8=		milter-regex.8
 PLIST_FILES=	libexec/milter-regex

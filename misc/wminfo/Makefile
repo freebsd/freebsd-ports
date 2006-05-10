@@ -18,7 +18,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}/${PORTNAME}
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes
-USE_REINPLACE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$(LIBS)$$|& $$(OBJS)|g' \

@@ -13,7 +13,6 @@ MASTER_SITES=	http://www.redterror.net/code/yaunc/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yet another uptimes.net client
 
-USE_REINPLACE=	yes
 ALL_TARGET=	bsd
 CFLAGS+=	-DCONFFILE=\\\"${PREFIX}/etc/yaunc.conf\\\"
 

@@ -20,7 +20,6 @@ LIB_DEPENDS=	noatun:${PORTSDIR}/multimedia/kdemultimedia3
 USE_KDEBASE_VER=3
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2|-fPIC|g' -e "s,-lpthread,${PTHREAD_LIBS},g" \

@@ -16,7 +16,6 @@ COMMENT=	Biff-type program, designed to match AfterStep
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 USE_OPENSSL=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-shaping

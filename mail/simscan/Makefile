@@ -19,7 +19,6 @@ COMMENT=	Fast Content/Anti-virus Scanner for qmail Written in C
 USE_QMAIL_BUILD=	yes
 
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 
 WORKDIR?=	${QMAIL_PREFIX}/${PORTNAME}
 QMAIL_QUEUE=	${QMAIL_PREFIX}/bin/qmail-queue

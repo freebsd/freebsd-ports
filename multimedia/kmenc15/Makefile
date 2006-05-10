@@ -19,7 +19,6 @@ RUN_DEPENDS=	mencoder:${PORTSDIR}/multimedia/mplayer
 
 USE_BZIP2=	yes
 USE_KDELIBS_VER=	3
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 MAKE_ARGS=	QTDIR="${QT_PREFIX}" \
 		KDEDIR="${KDE_PREFIX}" \

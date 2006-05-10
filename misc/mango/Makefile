@@ -27,7 +27,6 @@ PKGNAMESUFFIX=	-nokde
 
 PLIST_FILES=	bin/mango
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 MAKE_ENV+=	QTDIR=${QT_PREFIX} LDFLAGS="-lkextmdi"
 .if defined(WITH_KDE)
 USE_KDELIBS_VER=	3

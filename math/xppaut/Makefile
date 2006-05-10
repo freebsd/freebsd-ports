@@ -16,7 +16,6 @@ COMMENT=	Graphical tool for solving differential equations, etc
 
 MAN1=		xppaut.1
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
 MAKE_ARGS=	CC="${CC}"
 
 WRKSRC=		${WRKDIR}

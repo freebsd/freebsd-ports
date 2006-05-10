@@ -18,7 +18,6 @@ COMMENT=	Convert Type-2 DV codec-encoded AVI streams to mjpeg-encoded AVI
 LIB_DEPENDS=	dv.4:${PORTSDIR}/multimedia/libdv
 
 USE_GNOME=	gdkpixbuf
-USE_REINPLACE=	yes
 MAKEFILE=	makefile
 
 .if defined(WITH_PAL_VIDEO)

@@ -20,7 +20,6 @@ LIB_DEPENDS=	beep.2:${PORTSDIR}/multimedia/beep-media-player \
 
 USE_GNOME=	libglade2 esound
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 

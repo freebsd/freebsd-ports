@@ -24,7 +24,6 @@ FC=		${LOCALBASE}/intel_fc_80/bin/ifort
 FORTRAN_FIXED=
 FORTRAN_FREE=	-free
 FFOPTFLAGS=	-O3 -tpp7 -xKW -Vaxlib
-USE_REINPLACE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,%%FC%%,${FC},g ; \

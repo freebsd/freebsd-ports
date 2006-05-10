@@ -22,7 +22,6 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 USE_BZIP2=	YES
 USE_KDELIBS_VER=3
 USE_PYTHON=	yes
-USE_REINPLACE=	yes
 
 OPTIONS=	DOCS "Install (KDE) documentation" on \
 		MANPAGES "Install btcontrol manpage" on \

@@ -17,7 +17,6 @@ COMMENT=	Y4mscaler scales, crops, and shifts Y'CbCr video
 
 LIB_DEPENDS=	lavjpeg-1.8.0:${PORTSDIR}/multimedia/mjpegtools
 
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

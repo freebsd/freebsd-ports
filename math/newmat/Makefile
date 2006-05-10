@@ -16,7 +16,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A C++ matrix library
 
 NO_WRKSUBDIR=	yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 MAKEFILE=	nm_gnu.mak
 MAKE_ARGS=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"

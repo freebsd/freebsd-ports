@@ -25,7 +25,6 @@ PLIST_FILES=	lib/xmms/Input/libavixmms.so
 USE_X_PREFIX=	yes
 USE_SDL=	sdl
 USE_GNOME=	gtk12
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-win32-path=${LOCALBASE}/lib/win32
 

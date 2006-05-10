@@ -15,7 +15,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU diction and style
 
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 
 PLIST_FILES=	bin/diction bin/style share/diction/C share/diction/de \
 		share/diction/en

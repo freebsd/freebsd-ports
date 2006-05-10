@@ -16,7 +16,6 @@ COMMENT=	A mail filter written in Scheme
 BUILD_DEPENDS=	gosh:${PORTSDIR}/lang/gauche
 RUN_DEPENDS=	${LOCALBASE}/share/gauche/${GAUCHE_VER}/lib/dbm/gdbm.scm:${PORTSDIR}/databases/gauche-gdbm
 
-USE_REINPLACE=	yes
 MAKE_ARGS=	PREFIX="${PREFIX}" DATADIR="${EXAMPLESDIR}"
 
 PORTDOCS=	scbayes-ja.html scbayes.html scmail-ja.html scmail.html

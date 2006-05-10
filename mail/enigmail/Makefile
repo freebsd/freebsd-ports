@@ -36,7 +36,6 @@ IPCVERSION?=	1.1.3
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 USE_GNOME=	gtk20 libidl
 
 WRKSRC=		${WRKDIR}/mozilla

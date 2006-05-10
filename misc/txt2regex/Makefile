@@ -17,7 +17,6 @@ COMMENT=	A Regular Expression "wizard"
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
-USE_REINPLACE=	yes
 NO_BUILD=	yes
 
 MAN1=		txt2regex.1

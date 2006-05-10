@@ -34,7 +34,6 @@ ALL_TARGET?=	all info jinfo
 INSTALL_TARGET?=	install install-info install-jinfo install-etc
 
 # environments
-USE_REINPLACE=	yes
 REINPLACE_ARGS=
 MAKE_ENV+=	EMACS_LIBDIR=${EMACS_LIBDIR} MEW_MAJOR_VER=${MEW_MAJOR_VER}
 PLIST_SUB+=	MEW_MAJOR_VER=${MEW_MAJOR_VER}

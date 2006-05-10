@@ -15,8 +15,6 @@ COMMENT=	EPS (Email Parsing System) sample tools
 BUILD_DEPENDS=	${LOCALBASE}/lib/libeps.a:${PORTSDIR}/mail/eps
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-USE_REINPLACE=	yes
-
 PORTDOCS=	README
 
 MAKE_ENV+=	DEFS="-I${LOCALBASE}/include ${CFLAGS}"

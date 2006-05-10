@@ -27,7 +27,6 @@ LATEST_LINK=	${PORTNAME}22
 USE_RC_SUBR=	imapd.sh
 USE_OPENSSL=	yes
 USE_PERL5=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 		--with-cyrus-prefix=${PREFIX}/cyrus \

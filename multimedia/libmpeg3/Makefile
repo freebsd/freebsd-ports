@@ -16,7 +16,6 @@ MAINTAINER=	ip@doom.homeunix.org
 COMMENT=	Advanced editing and manipulation of MPEG streams
 
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_GCC=	3.4
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

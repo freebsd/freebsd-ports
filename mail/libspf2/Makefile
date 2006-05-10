@@ -17,7 +17,6 @@ COMMENT=	Sender Rewriting Scheme 2 C Implementation
 
 CONFLICTS=	${PORTNAME}-1.0.*
 
-USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 

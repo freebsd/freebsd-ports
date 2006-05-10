@@ -23,7 +23,6 @@ RUN_DEPENDS=	gocr:${PORTSDIR}/graphics/gocr \
 		transcode:${PORTSDIR}/multimedia/transcode
 
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 DOC_FILES=	\

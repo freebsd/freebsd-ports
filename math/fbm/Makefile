@@ -16,7 +16,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Flexible Bayesian Modeling and Markov Chain Sampling
 
 NO_LATEST_LINK=	yes
-USE_REINPLACE=	yes
 
 SCRIPTS =	bvg-circ bvg-wrap dist-circ dist-wrap gp-circ	\
 		gp-wrap dft-circ dft-wrap mix-circ mix-wrap 	\

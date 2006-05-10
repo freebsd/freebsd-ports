@@ -25,8 +25,6 @@ COMMENT?=	The Visualization Toolkit shared libs
 
 BROKEN=		Does not build
 
-USE_REINPLACE=	yes
-
 LIBVER=		1
 VTKSRCDIR=	${WRKDIR}/VTK
 TESTINGDIR=	${EXAMPLESDIR}/Testing

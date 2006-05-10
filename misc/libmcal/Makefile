@@ -19,7 +19,6 @@ COMMENT=	Modular Calendar Access Library
 USE_AUTOTOOLS=	libltdl:15
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--with-mstore --with-icap \
 		--prefix=${PREFIX} --exec-prefix=${PREFIX}
 INSTALLS_SHLIB=	yes

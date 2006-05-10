@@ -20,7 +20,6 @@ COMMENT=	FTN Messages tracker
 LIB_DEPENDS=	smapi.2:${PORTSDIR}/news/husky-smapi
 
 USE_ZIP=	yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	ftrack
 MAKEFILE=	${WRKSRC}/MakeFiles/FreeBSD/Makefile

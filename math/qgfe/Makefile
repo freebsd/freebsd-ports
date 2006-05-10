@@ -18,7 +18,6 @@ BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
 
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 USE_QT_VER=	3
 MAKE_ENV=	QTDIR=${X11BASE} \
 		MOC=${MOC}

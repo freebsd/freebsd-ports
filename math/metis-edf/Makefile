@@ -18,7 +18,6 @@ CONFLICTS=	metis-[0-9]*
 
 ALL_TARGET=	default
 MAKE_ENV+=	CC="${CC}" AR="${AR}" F77="${F77}" FFLAGS="${FFLAGS}"
-USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ""
 
 F77?=		f77

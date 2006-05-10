@@ -16,7 +16,6 @@ COMMENT=	qmail spam filter written in Perl using Bayesian classification
 RUN_DEPENDS=	${SITE_PERL}/MIME/Parser.pm:${PORTSDIR}/mail/p5-MIME-Tools
 
 USE_PERL5=	yes
-USE_REINPLACE=	yes
 NO_BUILD=	yes
 
 FILES_DOCS=	AUTHORS COPYING Changelog INSTALL README TODO \

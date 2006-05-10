@@ -17,7 +17,6 @@ COMMENT=	A conversion utility that allows conversion between many units
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehier pygtk2
 USE_PYTHON=	yes
-USE_REINPLACE=	yes
 NO_BUILD=	yes
 
 post-patch:

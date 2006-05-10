@@ -20,7 +20,6 @@ RUN_DEPENDS=	screen:${PORTSDIR}/sysutils/screen
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 
 PLIST_FILES=	bin/pauseme \
 		bin/screen-open-region-with-program \

@@ -33,7 +33,6 @@ CONFIGURE_ARGS= --with-double
 .endif
 .endif
 
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 ALL_TARGET=	all check-runs
 

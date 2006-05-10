@@ -16,7 +16,6 @@ MAINTAINER=	ismail@EnderUNIX.org
 COMMENT=	A complete parser for RFC822 addresses
 
 USE_GCC=	2.95
-USE_REINPLACE=	yes
 
 PORTDOCS=	readme.html readme.txt user-manual.html user-manual.pdf
 PLIST_FILES=	include/rfc822.hh lib/librfc822.a

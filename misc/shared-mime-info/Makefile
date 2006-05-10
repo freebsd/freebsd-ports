@@ -16,7 +16,6 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A MIME type database from the FreeDesktop project
 
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 USE_GNOME=	glib20 libxml2 intltool gnomehack
 
 MAN1=		update-mime-database.1
