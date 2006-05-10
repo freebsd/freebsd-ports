@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	noscript
-PORTVERSION=	1.1.3.9
-DISTVERSIONSUFFIX=	-fx+fl+mz
+PORTVERSION=	1.1.4.1
+DISTVERSIONSUFFIX=	-fx+fl+mz+zm
 CATEGORIES=	www
 
 MAINTAINER=	infofarmer@FreeBSD.org
@@ -18,5 +18,5 @@ XPI_FILES=	GPL.txt NoScript_License.txt chrome/noscript.jar chrome.manifest \
 		components/.autoreg components/noscriptService.js \
 		defaults/preferences/noscript.js install.js install.rdf
 
-.include "../xpi-adblock/Makefile.xpi"
+.include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>
