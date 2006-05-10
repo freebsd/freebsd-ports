@@ -9,8 +9,10 @@ include/gwget/systray.h
 include/gwget/utils.h
 include/gwget/wget-log.h
 libdata/bonobo/servers/GNOME_Gwget.server
-%%EPIPHANY:%%lib/epiphany-%%VERSION%%/extensions/libgwgetextension.so
-%%EPIPHANY:%%lib/epiphany-%%VERSION%%/extensions/gwget.xml
+%%EPIPHANY%%lib/epiphany/%%VERSION%%/extensions/libgwgetextension.a
+%%EPIPHANY%%lib/epiphany/%%VERSION%%/extensions/libgwgetextension.la
+%%EPIPHANY%%lib/epiphany/%%VERSION%%/extensions/libgwgetextension.so
+%%EPIPHANY%%lib/epiphany/%%VERSION%%/extensions/gwget.xml
 share/gnome/applications/gwget.desktop
 share/gnome/gwget/about.glade
 share/gnome/gwget/downloading.png
@@ -24,6 +26,7 @@ share/gnome/gwget/newdownload.png
 share/gnome/gwget/preferences.glade
 share/gnome/idl/GNOME_Gwget.idl
 share/gnome/pixmaps/gwget.png
+share/locale/ar/LC_MESSAGES/gwget.mo
 share/locale/bg/LC_MESSAGES/gwget.mo
 share/locale/ca/LC_MESSAGES/gwget.mo
 share/locale/cs/LC_MESSAGES/gwget.mo
@@ -40,6 +43,7 @@ share/locale/it/LC_MESSAGES/gwget.mo
 share/locale/ja/LC_MESSAGES/gwget.mo
 share/locale/lt/LC_MESSAGES/gwget.mo
 share/locale/mk/LC_MESSAGES/gwget.mo
+share/locale/ne/LC_MESSAGES/gwget.mo
 share/locale/nl/LC_MESSAGES/gwget.mo
 share/locale/pa/LC_MESSAGES/gwget.mo
 share/locale/pl/LC_MESSAGES/gwget.mo
@@ -52,9 +56,11 @@ share/locale/sk/LC_MESSAGES/gwget.mo
 share/locale/sq/LC_MESSAGES/gwget.mo
 share/locale/sv/LC_MESSAGES/gwget.mo
 share/locale/tr/LC_MESSAGES/gwget.mo
+share/locale/uk/LC_MESSAGES/gwget.mo
 share/locale/zh_CN/LC_MESSAGES/gwget.mo
 share/locale/zh_TW/LC_MESSAGES/gwget.mo
 @dirrm include/gwget
-%%EPIPHANY:%%@dirrmtry lib/epiphany-%%VERSION%%/extensions
-%%EPIPHANY:%%@dirrmtry lib/epiphany-%%VERSION%%
+%%EPIPHANY%%@dirrmtry lib/epiphany/%%VERSION%%/extensions
+%%EPIPHANY%%@dirrmtry lib/epiphany/%%VERSION%%
+%%EPIPHANY%%@dirrmtry lib/epiphany
 @dirrm share/gnome/gwget
