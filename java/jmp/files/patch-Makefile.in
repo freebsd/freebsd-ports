@@ -1,7 +1,7 @@
 $FreeBSD$
 
---- Makefile.in.orig	Sat Oct 29 21:48:51 2005
-+++ Makefile.in	Mon Nov 21 01:20:51 2005
-@@ -332 +332 @@
+--- Makefile.in.orig	Mon May  8 20:06:38 2006
++++ Makefile.in	Mon May  8 20:07:16 2006
+@@ -1044 +1044 @@
 -	  inst=`echo $$inst | sed '$(transform)'`.$$ext; \
 +	  inst=$$inst.$$ext; \
