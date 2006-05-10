@@ -83,6 +83,7 @@
     SUBDIR += libXmu
     SUBDIR += libXt
     SUBDIR += libbonoboui
+    SUBDIR += libbonoboui-reference
     SUBDIR += libbonobouimm
     SUBDIR += libgail-gnome
     SUBDIR += libgdiplus

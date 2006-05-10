@@ -43,41 +43,6 @@ lib/libglade/2.0/libbonobo.so
 libdata/bonobo/servers/Bonobo_Sample_Controls.server
 libdata/bonobo/servers/CanvDemo.server
 libdata/pkgconfig/libbonoboui-2.0.pc
-%%DOCSDIR%%/bonobo-controls.html
-%%DOCSDIR%%/bonobo-support-utilities.html
-%%DOCSDIR%%/bonobo-ui.html
-%%DOCSDIR%%/ch01.html
-%%DOCSDIR%%/control-frame.png
-%%DOCSDIR%%/control.png
-%%DOCSDIR%%/home.png
-%%DOCSDIR%%/index.html
-%%DOCSDIR%%/index.sgml
-%%DOCSDIR%%/left.png
-%%DOCSDIR%%/libbonoboui-bonobo-a11y.html
-%%DOCSDIR%%/libbonoboui-bonobo-control-frame.html
-%%DOCSDIR%%/libbonoboui-bonobo-control.html
-%%DOCSDIR%%/libbonoboui-bonobo-file-selector-util.html
-%%DOCSDIR%%/libbonoboui-bonobo-plug.html
-%%DOCSDIR%%/libbonoboui-bonobo-property-control.html
-%%DOCSDIR%%/libbonoboui-bonobo-selector-widget.html
-%%DOCSDIR%%/libbonoboui-bonobo-selector.html
-%%DOCSDIR%%/libbonoboui-bonobo-socket.html
-%%DOCSDIR%%/libbonoboui-bonobo-ui-component.html
-%%DOCSDIR%%/libbonoboui-bonobo-ui-container.html
-%%DOCSDIR%%/libbonoboui-bonobo-ui-engine-config.html
-%%DOCSDIR%%/libbonoboui-bonobo-ui-engine.html
-%%DOCSDIR%%/libbonoboui-bonobo-ui-node.html
-%%DOCSDIR%%/libbonoboui-bonobo-ui-preferences.html
-%%DOCSDIR%%/libbonoboui-bonobo-ui-sync.html
-%%DOCSDIR%%/libbonoboui-bonobo-ui-util.html
-%%DOCSDIR%%/libbonoboui-bonobo-widget.html
-%%DOCSDIR%%/libbonoboui-bonobo-window.html
-%%DOCSDIR%%/libbonoboui-bonobo-wrapper.html
-%%DOCSDIR%%/libbonoboui-faq.html
-%%DOCSDIR%%/libbonoboui.devhelp
-%%DOCSDIR%%/right.png
-%%DOCSDIR%%/style.css
-%%DOCSDIR%%/up.png
 share/gnome/applications/bonobo-browser.desktop
 share/gnome/gnome-2.0/ui/Bonobo_Sample_Container-ui.xml
 share/gnome/gnome-2.0/ui/Bonobo_Sample_Hello.xml
@@ -166,4 +131,3 @@ share/locale/zu/LC_MESSAGES/libbonoboui-2.0.mo
 @dirrm lib/bonobo-2.0
 @dirrm include/libbonoboui-2.0/bonobo
 @dirrm include/libbonoboui-2.0
-@dirrm %%DOCSDIR%%
