@@ -4580,6 +4580,7 @@ ja-onew-wnn7	ports/japanese/onew-wnn7
 ja-otojiro-fpw	ports/japanese/otojiro-fpw
 ja-p5-Date-Japanese-Era	ports/japanese/p5-Date-Japanese-Era
 ja-p5-Date-Japanese-Holiday	ports/japanese/p5-Date-Japanese-Holiday
+ja-p5-FormValidator-Simple-Plugin-Number-Phone-JP	ports/japanese/p5-FormValidator-Simple-Plugin-Number-Phone-JP
 ja-p5-Jcode	ports/japanese/p5-Jcode
 ja-p5-MeCab	ports/japanese/p5-MeCab
 ja-p5-Number-Phone-JP	ports/japanese/p5-Number-Phone-JP
