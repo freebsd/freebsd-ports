@@ -16,13 +16,18 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	High-performance CORBA ORB with support for the C language
 
+USE_BZIP2=	yes
+
+.if !defined(REFERENCE_PORT)
+
+PORTREVISION=	1
+
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
-USE_BZIP2=	yes
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 USE_AUTOTOOLS=	libtool:15
-USE_GNOME=	gnomehack libidl ltverhack
+USE_GNOME=	gnomehack libidl ltverhack referencehack
 CONFIGURE_ARGS=	--disable-indent \
 		--with-html-dir=${PREFIX}/share/doc \
 		--disable-gtk-doc
@@ -44,3 +49,5 @@ post-install:
 	@${MKDIR} ${PREFIX}/lib/orbit-2.0/idl-backends
 
 .include <bsd.port.mk>
+
+.endif
