@@ -118,6 +118,7 @@
     SUBDIR += eventum
     SUBDIR += evolution-webcal
     SUBDIR += eyeos
+    SUBDIR += eyeos-themes
     SUBDIR += fcgi
     SUBDIR += feedonfeeds
     SUBDIR += ffproxy
