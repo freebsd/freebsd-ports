@@ -203,6 +203,7 @@
     SUBDIR += mecab-ipadic
     SUBDIR += mell
     SUBDIR += mendexk-euc
+    SUBDIR += mg
     SUBDIR += mh
     SUBDIR += migemo
     SUBDIR += migemo-emacs20
