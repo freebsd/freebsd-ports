@@ -7,12 +7,13 @@
 
 PORTNAME=	DBI
 PORTVERSION=	1.37
+PORTREVISION=	1
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DBI
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	The perl5 Database Interface.  Required for DBD::* modules
 
 .if defined(WITH_PROXY)
@@ -51,5 +52,8 @@ pre-everything::
 	@${ECHO_CMD} ""
 	@sleep 1
 .endif
+
+post-patch:
+	@${RM} -f ${WRKSRC}/lib/DBI/ProxyServer.pm.orig
 
 .include <bsd.port.mk>
