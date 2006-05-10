@@ -25,32 +25,6 @@ lib/libgnome-2.so
 lib/libgnome-2.so.0
 libdata/bonobo/servers/GNOME_Moniker_std.server
 libdata/pkgconfig/libgnome-2.0.pc
-%%PORTDOCS%%%%DOCSDIR%%/ch01s02.html
-%%PORTDOCS%%%%DOCSDIR%%/ch01s03.html
-%%PORTDOCS%%%%DOCSDIR%%/ch01s04.html
-%%PORTDOCS%%%%DOCSDIR%%/ch01s05.html
-%%PORTDOCS%%%%DOCSDIR%%/home.png
-%%PORTDOCS%%%%DOCSDIR%%/index.html
-%%PORTDOCS%%%%DOCSDIR%%/index.sgml
-%%PORTDOCS%%%%DOCSDIR%%/left.png
-%%PORTDOCS%%%%DOCSDIR%%/libgnome-gnome-config.html
-%%PORTDOCS%%%%DOCSDIR%%/libgnome-gnome-exec.html
-%%PORTDOCS%%%%DOCSDIR%%/libgnome-gnome-gconf.html
-%%PORTDOCS%%%%DOCSDIR%%/libgnome-gnome-help.html
-%%PORTDOCS%%%%DOCSDIR%%/libgnome-gnome-i18n.html
-%%PORTDOCS%%%%DOCSDIR%%/libgnome-gnome-init.html
-%%PORTDOCS%%%%DOCSDIR%%/libgnome-gnome-program.html
-%%PORTDOCS%%%%DOCSDIR%%/libgnome-gnome-score.html
-%%PORTDOCS%%%%DOCSDIR%%/libgnome-gnome-sound.html
-%%PORTDOCS%%%%DOCSDIR%%/libgnome-gnome-triggers.html
-%%PORTDOCS%%%%DOCSDIR%%/libgnome-gnome-url.html
-%%PORTDOCS%%%%DOCSDIR%%/libgnome-gnome-util.html
-%%PORTDOCS%%%%DOCSDIR%%/libgnome-libgnometypebuiltins.html
-%%PORTDOCS%%%%DOCSDIR%%/libgnome.devhelp
-%%PORTDOCS%%%%DOCSDIR%%/libgnome.html
-%%PORTDOCS%%%%DOCSDIR%%/right.png
-%%PORTDOCS%%%%DOCSDIR%%/style.css
-%%PORTDOCS%%%%DOCSDIR%%/up.png
 share/locale/am/LC_MESSAGES/libgnome-2.0.mo
 share/locale/ar/LC_MESSAGES/libgnome-2.0.mo
 share/locale/az/LC_MESSAGES/libgnome-2.0.mo
@@ -129,4 +103,3 @@ share/locale/zh_TW/LC_MESSAGES/libgnome-2.0.mo
 @dirrmtry share/locale/tt
 @dirrm include/libgnome-2.0/libgnome
 @dirrm include/libgnome-2.0
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
