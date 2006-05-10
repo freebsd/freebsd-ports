@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	google-sparsehash
-PORTVERSION=	0.3
+PORTVERSION=	0.4
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	goog-sparsehash
@@ -20,16 +20,16 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 post-patch:
 .if !defined(NOPORTDOCS)
-	@${REINPLACE_CMD} -e \
-		's|$$(prefix)/doc/$$(PACKAGE)-$$(VERSION)|${DOCSDIR}|' \
+	${REINPLACE_CMD} -e \
+		's|^docdir = .*|docdir = ${DOCSDIR}|' \
 		${WRKSRC}/Makefile.in
 .else
-	@${REINPLACE_CMD} -e \
+	${REINPLACE_CMD} -e \
 		'/install-data-am/ s|install-dist_docDATA||' \
 		${WRKSRC}/Makefile.in
 .endif
 
-tests: build
-	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check)
+check: build
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check
 
 .include <bsd.port.mk>
