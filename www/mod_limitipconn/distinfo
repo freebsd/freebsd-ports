@@ -1,6 +1,3 @@
 MD5 (mod_limitipconn-0.04.tar.gz) = 009dac6ccae20806916ec7aa61a42a1f
 SHA256 (mod_limitipconn-0.04.tar.gz) = ad131bbd5af50bb37450d3bafddffeb81b4a2e8456c2bddb3ba300beca530a94
 SIZE (mod_limitipconn-0.04.tar.gz) = 6267
-MD5 (contrib/sbarta/mod_limitipconn.c) = c05bf21b0e32a168448ea4dac8a53f5c
-SHA256 (contrib/sbarta/mod_limitipconn.c) = a076313794897149f67e2159372987d379bdaa67da0c1c37025952afb4b52543
-SIZE (contrib/sbarta/mod_limitipconn.c) = 9753

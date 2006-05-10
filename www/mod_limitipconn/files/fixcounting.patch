@@ -1,0 +1,184 @@
+--- mod_limitipconn.c	Fri Apr 12 13:54:49 2002
++++ ../../files/mod_limitipconn.c	Thu Jun  5 17:39:10 2003
+@@ -34,7 +34,7 @@
+ #include "scoreboard.h"
+ 
+ #define MODULE_NAME "mod_limitipconn"
+-#define MODULE_VERSION "0.04"
++#define MODULE_VERSION "0.05"
+ 
+ module MODULE_VAR_EXPORT limitipconn_module;
+ 
+@@ -59,62 +59,34 @@
+     return (void *) cfg;
+ }
+ 
+-static int limitipconn_handler(request_rec *r)
++static int is_limitable(limitipconn_dir_config *cfg, request_rec *r, char *uri)
+ {
+-    /* get configuration information */
+-    limitipconn_dir_config *cfg = (limitipconn_dir_config *)
+-	    ap_get_module_config(r->per_dir_config, &limitipconn_module);
++    /* Content-type of the current request */
++    const char *content_type;
+ 
+     /* convert Apache arrays to normal C arrays */
+     char **nolim = (char **) cfg->no_limit->elts;
+     char **exlim = (char **) cfg->excl_limit->elts;
+ 
+-    const char *address;
+-
+     /* loop index variable */
+     int i;
+ 
+-    /* running count of number of connections from this address */
+-    int ip_count = 0;
+-
+-    /* Content-type of the current request */
+-    const char *content_type;
+-
+-    /* scoreboard data structure */
+-    short_score score_record;
+-
+-    /* We decline to handle subrequests: otherwise, in the next step we
+-     * could get into an infinite loop. */
+-    if (!ap_is_initial_req(r)) {
+-	return DECLINED;
+-    }
+-
+     /* Look up the Content-type of this request. We need a subrequest
+      * here since this module might be called before the URI has been
+      * translated into a MIME type. */
+-    content_type = ap_sub_req_lookup_uri(r->uri, r)->content_type;
++    content_type = ap_sub_req_lookup_uri(uri, r)->content_type;
+ 
+     /* If there's no Content-type, use the default. */
+     if (!content_type) {
+ 	content_type = ap_default_type(r);
+     }
+ 
+-#ifdef RECORD_FORWARD
+-    if ((address = ap_table_get(r->headers_in, "X-Forwarded-For")) == NULL)
+-#endif
+-        address = r->connection->remote_ip;
+-
+-    /* A limit value of 0 by convention means no limit. */
+-    if (cfg->limit == 0) {
+-	return OK;
+-    }
+-
+     /* Cycle through the exempt list; if our content_type is exempt,
+-     * return OK */
++     * return 0 */
+     for (i = 0; i < cfg->no_limit->nelts; i++) {
+ 	if ((ap_strcasecmp_match(content_type, nolim[i]) == 0)
+ 	    || (strncmp(nolim[i], content_type, strlen(nolim[i])) == 0)) {
+-	    return OK;
++	  return 0;
+ 	}
+     }
+ 
+@@ -129,9 +101,49 @@
+ 	    }
+ 	}
+ 	if (excused) {
+-	    return OK;
++	  return 0;
+ 	}
+     }
++    return 1;
++}
++
++static int limitipconn_handler(request_rec *r)
++{
++    /* get configuration information */
++    limitipconn_dir_config *cfg = (limitipconn_dir_config *)
++	    ap_get_module_config(r->per_dir_config, &limitipconn_module);
++
++    const char *address;
++
++    /* loop index variable */
++    int i;
++
++    /* running count of number of connections from this address */
++    int ip_count = 0;
++
++    /* scoreboard data structure */
++    short_score score_record;
++
++    /* We decline to handle subrequests: otherwise, in the next step we
++     * could get into an infinite loop. */
++    if (!ap_is_initial_req(r)) {
++	return DECLINED;
++    }
++
++#ifdef RECORD_FORWARD
++    if ((address = ap_table_get(r->headers_in, "X-Forwarded-For")) == NULL)
++#endif
++        address = r->connection->remote_ip;
++
++    /* A limit value of 0 by convention means no limit. */
++    if (cfg->limit == 0) {
++	return OK;
++    }
++
++    /* If the content-type isn't limitable, return OK */
++    if (!is_limitable(cfg, r, r->uri)) {
++        return OK;
++    }
+ 
+     /* Count up the number of connections we are handling right now from
+      * this IP address */
+@@ -153,7 +165,51 @@
+             || (strcmp(address, score_record.fwdclient) == 0)
+ #endif
+             ) {
+-		ip_count++;
++	        /* Try to determine the URI from what's stored of the request in the
++		   scoreboard.  Hopefully we'll get enough of it to be able to determine
++		   the content-type. */
++
++	        /* A copy of the HTTP request from the scoreboard */
++	        char request[64];
++
++	        /* The request's URI */
++		char *uri;
++
++		/* A temporary pointer used to find the end of the URI */
++		char *c;
++
++		/* One if we were unable to find a full URI in the request, zero otherwise */
++		int full_request = 0;
++
++		/* Get a copy of the request line from the scoreboard */
++		strncpy(request, score_record.request, 64);
++		request[63] = 0;
++		
++		/* Separate out the method */
++		for (uri = request; *uri; uri++) {
++		    if (*uri == ' ') {
++		        uri++;
++			break;
++		    }
++		}
++
++		/* Find the space which separates the URI from the HTTP version */
++		for (c = uri; *c; c++) {
++		    if (*c == ' ') {
++		        *c = 0;
++			full_request = 1;
++			break;
++		    }
++		}
++
++		/* If we don't see the full request string, then be stringy
++		   and assume that the request is limitable.  This was the
++		   behavior before the module was modified to try to be
++		   smarter. */
++
++		if (*uri && !full_request || is_limitable(cfg, r, uri)) {
++		    ip_count++;
++		}
+ 	    }
+ 	    break;
+ 	    case

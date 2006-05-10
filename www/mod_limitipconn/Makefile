@@ -10,26 +10,24 @@ PORTVERSION=	0.04
 PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://dominia.org/djao/limit/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
-.if defined(WITH_CONNECTION_COUNT_FIX)
-LMODOVERWRITE=	contrib/sbarta/mod_limitipconn.c
-DISTFILES+=	${LMODOVERWRITE}
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
-.endif
 
 MAINTAINER=	ychsiao@ychsiao.org
 COMMENT=	Limit the number of simultaneous connections from a single client IP address
 
 PLIST_FILES=	libexec/apache/mod_limitipconn.so
 USE_APACHE=	yes
-USE_REINPLACE=	yes
+APACHEMODDIR=	libexec/apache
+PLIST_SUB+=	APACHEMODDIR="${APACHEMODDIR}"
 
-.if defined(WITH_CONNECTION_COUNT_FIX)
-pre-patch:
-	${CP} ${DISTDIR}/${LMODOVERWRITE} ${WRKSRC}
+OPTIONS=	FIXCOUNT "Patch dangling browser connections counting" Off
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_FIXCOUNT)
+EXTRA_PATCHES+=	${PATCHDIR}/fixcounting.patch
 .endif
 
 post-patch:
 	${REINPLACE_CMD} -e 's,^APXS = .*,APXS = ${APXS},' ${WRKSRC}/Makefile
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
