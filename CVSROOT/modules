@@ -2769,6 +2769,7 @@ gai		ports/x11-toolkits/gai
 gai-album	ports/audio/gai-album
 gai-visual-audio	ports/audio/gai-visual-audio
 gail		ports/accessibility/gail
+gail-reference	ports/accessibility/gail-reference
 gaim		ports/net-im/gaim
 gaim-assistant	ports/net-im/gaim-assistant
 gaim-bangexec	ports/net-im/gaim-bangexec
