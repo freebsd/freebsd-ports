@@ -15,34 +15,6 @@ lib/libwnck-1.la
 lib/libwnck-1.so
 lib/libwnck-1.so.18
 libdata/pkgconfig/libwnck-1.0.pc
-%%DOCSDIR%%/ch01.html
-%%DOCSDIR%%/home.png
-%%DOCSDIR%%/index.html
-%%DOCSDIR%%/index.sgml
-%%DOCSDIR%%/intro.html
-%%DOCSDIR%%/left.png
-%%DOCSDIR%%/libwnck-WnckApplication.html
-%%DOCSDIR%%/libwnck-WnckClassGroup.html
-%%DOCSDIR%%/libwnck-WnckPager.html
-%%DOCSDIR%%/libwnck-WnckPagerAccessible.html
-%%DOCSDIR%%/libwnck-WnckPagerAccessibleFactory.html
-%%DOCSDIR%%/libwnck-WnckScreen.html
-%%DOCSDIR%%/libwnck-WnckTasklist.html
-%%DOCSDIR%%/libwnck-WnckWindow.html
-%%DOCSDIR%%/libwnck-WnckWorkspace.html
-%%DOCSDIR%%/libwnck-WnckWorkspaceAccessible.html
-%%DOCSDIR%%/libwnck-WnckWorkspaceAccessibleFactory.html
-%%DOCSDIR%%/libwnck-private.html
-%%DOCSDIR%%/libwnck-util.html
-%%DOCSDIR%%/libwnck-window-action-menu.html
-%%DOCSDIR%%/libwnck-window-menu.html
-%%DOCSDIR%%/libwnck-wnck-enum-types.html
-%%DOCSDIR%%/libwnck-xutils.html
-%%DOCSDIR%%/libwnck.devhelp
-%%DOCSDIR%%/libwnck.devhelp2
-%%DOCSDIR%%/right.png
-%%DOCSDIR%%/style.css
-%%DOCSDIR%%/up.png
 share/locale/am/LC_MESSAGES/libwnck.mo
 share/locale/ar/LC_MESSAGES/libwnck.mo
 share/locale/az/LC_MESSAGES/libwnck.mo
@@ -123,6 +95,5 @@ share/locale/zh_TW/LC_MESSAGES/libwnck.mo
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/ky/LC_MESSAGES
 @dirrmtry share/locale/ky
-@dirrm %%DOCSDIR%%
 @dirrm include/libwnck-1.0/libwnck
 @dirrm include/libwnck-1.0
