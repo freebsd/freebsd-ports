@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	calife
-PORTVERSION=	2.8.6.4
+PORTVERSION=	2.8.6.5
 CATEGORIES=	security
 MASTER_SITES=	ftp://postfix.eu.org/pub/calife/ \
 		ftp://frmug.org/pub/calife/
-DISTNAME=	calife-2.8.6-p4
+DISTNAME=	calife-2.8.6-p5
 
 MAINTAINER=	thomas@FreeBSD.org
 COMMENT=	A lightweight alternative to sudo
