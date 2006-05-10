@@ -5554,6 +5554,7 @@ libbfd		ports/devel/libbfd
 libbinio	ports/devel/libbinio
 libbnr		ports/devel/libbnr
 libbonobo	ports/devel/libbonobo
+libbonobo-reference	ports/devel/libbonobo-reference
 libbonobomm	ports/devel/libbonobomm
 libbonoboui	ports/x11-toolkits/libbonoboui
 libbonobouimm	ports/x11-toolkits/libbonobouimm
