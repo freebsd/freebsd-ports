@@ -5667,6 +5667,7 @@ libgksuui	ports/sysutils/libgksuui
 libglade	ports/devel/libglade
 libglade-java	ports/devel/libglade-java
 libglade2	ports/devel/libglade2
+libglade2-reference	ports/devel/libglade2-reference
 libglademm	ports/devel/libglademm
 libglademm24	ports/devel/libglademm24
 libgltext	ports/graphics/libgltext
