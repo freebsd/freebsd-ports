@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bazaar-ng
-PORTVERSION=	0.7
+PORTVERSION=	0.8
 CATEGORIES=	devel
 MASTER_SITES=	http://bazaar-vcs.org/pkg/ \
 		http://voodoo.bawue.com/download/
@@ -22,9 +22,6 @@ USE_PYTHON=	2.4+
 USE_PYDISTUTILS=	yes
 
 MAN1=		bzr.1
-
-post-build:
-	cd ${WRKSRC} && ${PYTHON_CMD} bzr_man.py
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/bzr.1 ${MAN1PREFIX}/man/man1
