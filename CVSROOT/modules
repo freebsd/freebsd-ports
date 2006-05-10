@@ -5914,6 +5914,7 @@ libvorbis	ports/audio/libvorbis
 libwhisker	ports/security/libwhisker
 libwmf		ports/graphics/libwmf
 libwnck		ports/x11-toolkits/libwnck
+libwnck-reference	ports/x11-toolkits/libwnck-reference
 libworkman	ports/audio/libworkman
 libwpcg		ports/graphics/libwpcg
 libwpd		ports/textproc/libwpd
