@@ -1,5 +1,3 @@
 %%SITE_PERL%%/Smart/Comments.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Smart/Comments/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Smart/Comments
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Smart
 @dirrmtry %%SITE_PERL%%/Smart
