@@ -3301,6 +3301,7 @@ gnomeuserdocs2	ports/misc/gnomeuserdocs2
 gnomeutils2	ports/deskutils/gnomeutils2
 gnomevfs	ports/devel/gnomevfs
 gnomevfs2	ports/devel/gnomevfs2
+gnomevfs2-reference	ports/devel/gnomevfs2-reference
 gnomoradio	ports/audio/gnomoradio
 gnopernicus	ports/accessibility/gnopernicus
 gnosamba	ports/net/gnosamba
