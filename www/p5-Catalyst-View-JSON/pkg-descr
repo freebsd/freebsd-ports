@@ -1,0 +1,4 @@
+Catalyst::View::JSON is a Catalyst View handler that returns stash
+data in JSON format.
+
+WWW: http://search.cpan.org/dist/Catalyst-View-JSON/

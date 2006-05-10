@@ -1,0 +1,8 @@
+%%SITE_PERL%%/Catalyst/View/JSON.pm
+%%SITE_PERL%%/Catalyst/Helper/View/JSON.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/View/JSON/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/View/JSON
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/View
+@dirrmtry %%SITE_PERL%%/Catalyst/View
+@dirrmtry %%SITE_PERL%%/Catalyst/Helper/View
+@dirrmtry %%SITE_PERL%%/Catalyst/Helper
