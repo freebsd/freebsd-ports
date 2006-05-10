@@ -35,8 +35,11 @@ pre-install: gnome-reference-pre-install
 
 gnome-reference-pre-install:
 	@${ECHO_CMD} "This port contains the programming reference for ${REFERENCE_PORT}." > ${DESCR}
-	@${ECHO_CMD} "" >> ${DESCR}
-	@${GREP} "^WWW:" ${PARENTDIR}/pkg-descr >> ${DESCR}
+	@www=`${GREP} "^WWW:" ${PARENTDIR}/pkg-descr` || ${TRUE}; \
+	if [ -n "$$www" ]; then \
+		${ECHO_CMD} "" >> ${DESCR}; \
+		${ECHO_CMD} "$$www" >> ${DESCR}; \
+	fi
 
 .if !target(do-install)
 do-install:
