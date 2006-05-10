@@ -1,0 +1,9 @@
+--- include/ca.h.org	Sun Apr 16 09:51:14 2006
++++ include/ca.h	Thu Apr 20 15:45:58 2006
+@@ -2640,3 +2640,6 @@
+ void mulnbp(VL vl,NBP p1,NBP p2, NBP *rp);
+ void pwrnbp(VL vl,NBP p1,Q n, NBP *rp);
+ int compnbp(VL vl,NBP p1,NBP p2);
++
++/* pari-2.2.16-beta change rename 'prec' -> 'precreal' [ from paripriv.h ] */
++#define prec precreal

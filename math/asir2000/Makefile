@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	asir
-PORTVERSION=	20051010
+PORTVERSION=	20060417
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.jssac.org/pub/distfiles/asir/ \
 		ftp://ftp.asir.org/pub/asir/src/ \
@@ -23,8 +23,8 @@ GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	automake:15 autoconf:253
 USE_XLIB=	yes
 CONFIGURE_ARGS=	--enable-shared --enable-plot --enable-fep --enable-interval --with-pari
-ASIR_SRC_VERSION= 20051010
-ASIR_DOC_VERSION= 20051009
+ASIR_SRC_VERSION= 20060417
+ASIR_DOC_VERSION= 20060417
 GC_VERSION= 6.5
 ASIR_SRC= asir-${ASIR_SRC_VERSION}.tar.gz
 ASIR_DOC= asirdoc-${ASIR_DOC_VERSION}.tar.gz
@@ -41,7 +41,7 @@ LIB_DATA= alpi bfct bgk const cyclic defs.h dfff dmul dmul102 \
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64" || ${ARCH} == "ia64"
-BROKEN=		"Does not compile on sparc64 or ia64"
+BROKEN=		Does not compile on sparc64 or ia64
 .endif
 
 post-extract:

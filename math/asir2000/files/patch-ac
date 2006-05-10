@@ -1,8 +1,8 @@
---- include/version.h.orig      Sun Oct  9 13:46:54 2005
-+++ include/version.h   Mon Oct 10 01:22:03 2005
+--- include/version.h.org	Thu Apr 20 13:24:03 2006
++++ include/version.h	Thu Apr 20 13:24:55 2006
 @@ -48,4 +48,4 @@
-  * $OpenXM: OpenXM_contrib2/asir2000/include/version.h,v 1.215 2005/10/09 04:46:54 noro Exp $ 
+  * $OpenXM: OpenXM_contrib2/asir2000/include/version.h,v 1.251 2006/04/17 04:35:20 noro Exp $ 
  */
- #define ASIR_VERSION 20051009
+ #define ASIR_VERSION 20060417
 -#define ASIR_DISTRIBUTION "Kobe"
 +#define ASIR_DISTRIBUTION "Plotting Group"
