@@ -7,6 +7,7 @@
 
 PORTNAME=	linux_base-gentoo-stage1
 PORTVERSION=	2006.0
+PORTREVISION=	1
 CATEGORIES=	emulators linux
 MASTER_SITES=	${MASTER_SITE_GENTOO}
 EXTRACT_ONLY=
@@ -46,7 +47,7 @@ MD5_FILE=       	${MASTERDIR}/distinfo.i386
 
 do-extract:
 	@${MKDIR} ${WRKSRC}
-	@${TAR} --exclude=./dev -xpy -C ${WRKSRC} \
+	@${TAR} --exclude=./dev --exclude=./proc -xpy -C ${WRKSRC} \
 		-f ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES}
 	@${ECHO_CMD} etc/resolv.conf > ${PLIST}
 	@cd ${WRKSRC} && ${FIND} * -type f -o -type l >> ${PLIST} \
@@ -57,9 +58,9 @@ do-extract:
 do-install:
 	- ${MKDIR} ${PREFIX}
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-	@${TAR} --exclude=./dev -xpy -C ${PREFIX} \
+	@${TAR} --exclude=./dev -xpy --exclude=./proc -C ${PREFIX} \
 		-f ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES}
-	@${FIND} ${PREFIX} -type d -exec ${CHMOD} 755 \{\} \;
+	@${FIND} ${PREFIX} -fstype ufs -type d -exec ${CHMOD} 755 \{\} \;
 	@${CP} -p /etc/resolv.conf ${PREFIX}/etc/
 	@${BRANDELF} -t Linux ${PREFIX}/sbin/ldconfig ${PREFIX}/sbin/sln
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
