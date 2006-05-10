@@ -1,0 +1,36 @@
+#!/bin/sh
+# a deinstallation script for linux_base
+
+case "$2" in
+DEINSTALL)
+	if [ -n "`mount | grep ^linproc`" ] || \
+		[ -d /compat/linux/proc ]; then
+		echo ""
+		echo "You may need to do by hands:"
+		echo "  o  unmount linprocfs;"
+		echo "  o  delete ${PKG_PREFIX}/proc;"
+		echo "  o  remove the description of linprocfs from /etc/fstab."
+		echo ""
+	fi
+	;;
+esac
+
+exit 0
+#!/bin/sh
+# a deinstallation script for linux_base
+
+case "$2" in
+DEINSTALL)
+	if [ -n "`mount | grep ^linproc`" ] || \
+		[ -d /compat/linux/proc ]; then
+		echo ""
+		echo "You may need to do by hands:"
+		echo "  o  unmount linprocfs;"
+		echo "  o  delete ${PKG_PREFIX}/proc;"
+		echo "  o  remove the description of linprocfs from /etc/fstab."
+		echo ""
+	fi
+	;;
+esac
+
+exit 0
