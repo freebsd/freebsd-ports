@@ -9,32 +9,11 @@ lib/libglade-2.0.la
 lib/libglade-2.0.so
 lib/libglade-2.0.so.0
 libdata/pkgconfig/libglade-2.0.pc
-share/doc/libglade/GladeXML.html
-share/doc/libglade/home.png
-share/doc/libglade/index.html
-share/doc/libglade/index.sgml
-share/doc/libglade/left.png
-share/doc/libglade/libglade-Libglade-Build.html
-share/doc/libglade/libglade-Libglade-Initialisation.html
-share/doc/libglade/libglade-Libglade-SAX-Parser.html
-share/doc/libglade/libglade-dtd.html
-share/doc/libglade/libglade-dtd-exceptions.html
-share/doc/libglade/libglade-embedding.html
-share/doc/libglade/libglade-extending.html
-share/doc/libglade/libglade-i18n.html
-share/doc/libglade/libglade-lib.html
-share/doc/libglade/libglade-modules.html
-share/doc/libglade/libglade-notes.html
-share/doc/libglade/libglade.devhelp
-share/doc/libglade/right.png
-share/doc/libglade/style.css
-share/doc/libglade/up.png
 share/xml/libglade/glade-2.0.dtd
 @unexec %%XMLCATALOG%% --noout --del %D/share/xml/libglade/glade-2.0.dtd %%CATALOG_PORTS_XML%% || /usr/bin/true
 @exec %%XMLCATALOG%% --noout --add "system" "http://glade.gnome.org/glade-2.0.dtd" %D/share/xml/libglade/glade-2.0.dtd %%CATALOG_PORTS_XML%% || /usr/bin/true
 @exec mkdir -p %D/lib/libglade/2.0
 @dirrm share/xml/libglade
-@dirrm share/doc/libglade
 @dirrm include/libglade-2.0/glade
 @dirrm include/libglade-2.0
 @dirrm lib/libglade/2.0
