@@ -5846,6 +5846,7 @@ libsndfile	ports/audio/libsndfile
 libsocket++	ports/net/libsocket++
 libsocketcpp	ports/net/libsocketcpp
 libsoup		ports/devel/libsoup
+libsoup-reference	ports/devel/libsoup-reference
 libspectrum	ports/emulators/libspectrum
 libspf		ports/mail/libspf
 libspf-alt	ports/mail/libspf-alt
