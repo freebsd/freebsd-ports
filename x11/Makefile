@@ -71,6 +71,7 @@
     SUBDIR += gnome2-power-tools
     SUBDIR += gnomeapplets2
     SUBDIR += gnomedesktop
+    SUBDIR += gnomedesktop-reference
     SUBDIR += gnomelibs
     SUBDIR += gnomepanel
     SUBDIR += gnomesession

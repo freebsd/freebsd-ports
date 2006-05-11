@@ -18,10 +18,16 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Additional UI API for GNOME 2
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
+PREFIX?=	${X11BASE}
+
+.if !defined(REFERENCE_PORT)
+
+PORTREVISION=	1
+
+USE_XLIB=	yes
 USE_XPM=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeui gnomedocutils \
-		ltverhack
+		ltverhack referencehack
 GNOME_DESKTOP_VERSION=2
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
@@ -37,3 +43,5 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 MAN1=	gnome-about.1
 
 .include <bsd.port.mk>
+
+.endif

@@ -7,20 +7,6 @@ lib/libgnome-desktop-2.la
 lib/libgnome-desktop-2.so
 lib/libgnome-desktop-2.so.2
 libdata/pkgconfig/gnome-desktop-2.0.pc
-share/doc/gnome-desktop/GnomeDItemEdit.html
-share/doc/gnome-desktop/GnomeHint.html
-share/doc/gnome-desktop/ch01.html
-share/doc/gnome-desktop/gnome-desktop-GnomeDesktopItem.html
-share/doc/gnome-desktop/gnome-desktop.devhelp
-share/doc/gnome-desktop/gnome-desktop.devhelp2
-share/doc/gnome-desktop/home.png
-share/doc/gnome-desktop/index.html
-share/doc/gnome-desktop/index.sgml
-share/doc/gnome-desktop/intro.html
-share/doc/gnome-desktop/left.png
-share/doc/gnome-desktop/right.png
-share/doc/gnome-desktop/style.css
-share/doc/gnome-desktop/up.png
 share/gnome/applications/gnome-about.desktop
 share/gnome/gnome-about/gnome-64.png
 share/gnome/gnome-about/gnome-version.xml
@@ -266,7 +252,6 @@ share/locale/zu/LC_MESSAGES/gnome-desktop-2.0.mo
 @dirrm share/gnome/help/fdl/fr
 @dirrm share/gnome/help/fdl/es
 @dirrm share/gnome/gnome-about/headers
-@dirrm share/doc/gnome-desktop
 @dirrm include/gnome-desktop-2.0/libgnomeui
 @dirrm include/gnome-desktop-2.0/libgnome
 @dirrm include/gnome-desktop-2.0
