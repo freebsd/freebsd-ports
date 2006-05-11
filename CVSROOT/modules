@@ -3731,6 +3731,7 @@ gtksee		ports/graphics/gtksee
 gtksourceview	ports/x11-toolkits/gtksourceview
 gtksourceview-sharp	ports/x11-toolkits/gtksourceview-sharp
 gtkspell2	ports/textproc/gtkspell2
+gtkspell2-reference	ports/textproc/gtkspell2-reference
 gtksql		ports/databases/gtksql
 gtkstep		ports/x11-themes/gtkstep
 gtkstep-pastel	ports/x11-themes/gtkstep-pastel
