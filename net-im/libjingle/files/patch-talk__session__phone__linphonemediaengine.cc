@@ -8,6 +8,17 @@
  }
  
  LinphoneMediaChannel::~LinphoneMediaChannel() {
+@@ -118,8 +119,8 @@
+   mute_ = !send;
+ }
+ 
+-float LinphoneMediaChannel::GetCurrentQuality() {}
+-int LinphoneMediaChannel::GetOutputLevel() {}
++float LinphoneMediaChannel::GetCurrentQuality() { return 0; }
++int LinphoneMediaChannel::GetOutputLevel() { return 0; }
+ 
+ LinphoneMediaEngine::LinphoneMediaEngine() {}
+ LinphoneMediaEngine::~LinphoneMediaEngine() {}
 @@ -139,7 +140,7 @@
   
  #ifdef HAVE_SPEEX
@@ -26,3 +37,16 @@
    codecs_.push_back(Codec(0, "PCMU", 2));
    
  return true;
+@@ -163,8 +164,8 @@
+   return new LinphoneMediaChannel();
+ }
+ 
+-int LinphoneMediaEngine::SetAudioOptions(int options) {}
+-int LinphoneMediaEngine::SetSoundDevices(int wave_in_device, int wave_out_device) {}
++int LinphoneMediaEngine::SetAudioOptions(int options) { return 0; }
++int LinphoneMediaEngine::SetSoundDevices(int wave_in_device, int wave_out_device) { return 0; }
+ 
+-float LinphoneMediaEngine::GetCurrentQuality() {}
+-int LinphoneMediaEngine::GetInputLevel() {}
++float LinphoneMediaEngine::GetCurrentQuality() { return 0; }
++int LinphoneMediaEngine::GetInputLevel() { return 0; }

@@ -1,6 +1,23 @@
 --- ./talk/third_party/mediastreamer/msrtprecv.c.orig	Thu Mar 16 18:43:06 2006
-+++ ./talk/third_party/mediastreamer/msrtprecv.c	Fri Apr 21 10:56:34 2006
-@@ -70,6 +70,8 @@
++++ ./talk/third_party/mediastreamer/msrtprecv.c	Thu May 11 00:07:00 2006
+@@ -29,15 +29,10 @@
+ 	if (mp->b_datap->ref_count!=1) return NULL; /* cannot handle properly non-unique buffers*/
+ 	/* create a MSBuffer using the mblk_t buffer */
+ 	msg=ms_message_alloc();
+-	msbuf=ms_buffer_alloc(0);
+-	msbuf->buffer=mp->b_datap->db_base;
+-	msbuf->size=(char*)mp->b_datap->db_lim-(char*)mp->b_datap->db_base;
++	msbuf=ms_buffer_new_with_buf(mp->b_datap->db_base,mp->b_datap->db_lim-mp->b_datap->db_base,freemsg,mp);
+ 	ms_message_set_buf(msg,msbuf);
+ 	msg->size=mp->b_wptr-mp->b_rptr;
+ 	msg->data=mp->b_rptr;
+-	/* free the mblk_t */
+-	g_free(mp->b_datap);
+-	g_free(mp);
+ 	return msg;
+ }
+ 
+@@ -70,6 +65,8 @@
  	memset(r->q_outputs,0,sizeof(MSFifo*)*MSRTPRECV_MAX_OUTPUTS);
  	r->rtpsession=NULL;
  	r->stream_started=0;
@@ -9,7 +26,7 @@
  }
  
  void ms_rtp_recv_class_init(MSRtpRecvClass *klass)
-@@ -120,7 +122,7 @@
+@@ -120,7 +117,7 @@
  		gint got=0;
  		/* we are connected with queues (surely for video)*/
  		/* use the sync system time to compute a timestamp */
@@ -18,7 +35,7 @@
  		if (pt==NULL) {
  			ms_warning("ms_rtp_recv_process(): NULL RtpPayload- skipping.");
  			return;
-@@ -134,10 +136,16 @@
+@@ -134,10 +131,16 @@
  			/*g_message("Got packet with timestamp %u",clock);*/
  			got++;
  			r->stream_started=1;
@@ -39,7 +56,7 @@
  		}
  	}
  }
-@@ -147,10 +155,24 @@
+@@ -147,10 +150,24 @@
  	g_free(obj);
  }
  

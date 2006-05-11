@@ -29,15 +29,19 @@
  	rtp_session_set_jitter_compensation(rtps,jitt_comp);
  	
  	rtpr=rtp_session_new(RTP_SESSION_RECVONLY);
-@@ -158,7 +162,6 @@
+@@ -156,9 +160,9 @@
+ #endif
+ 	rtp_session_set_scheduling_mode(rtpr,0);
  	rtp_session_set_blocking_mode(rtpr,0);
- 	rtp_session_set_payload_type(rtpr,payload);
+-	rtp_session_set_payload_type(rtpr,payload);
++	rtp_session_set_send_payload_type(rtpr,payload);  
++	rtp_session_set_recv_payload_type(rtpr,payload);
  	rtp_session_set_jitter_compensation(rtpr,jitt_comp);
 -	rtp_session_signal_connect(rtpr,"telephone-event",(RtpCallback)on_dtmf_received,NULL);
  	rtp_session_signal_connect(rtpr,"timestamp_jump",(RtpCallback)on_timestamp_jump,NULL);
  	*recv=rtpr;
  	*send=rtps;
-@@ -179,8 +182,6 @@
+@@ -179,8 +183,6 @@
  	rtp_session_signal_connect(rtpr,"telephone-event",(RtpCallback)on_dtmf_received,(gpointer)stream);
  	rtps=rtpr;
  	
@@ -46,7 +50,7 @@
  	stream->rtpsend=ms_rtp_send_new();
  	ms_rtp_send_set_session(MS_RTP_SEND(stream->rtpsend),rtps);
  	stream->rtprecv=ms_rtp_recv_new();
-@@ -217,8 +218,8 @@
+@@ -217,8 +219,8 @@
  	ms_filter_set_property(stream->decoder,MS_FILTER_PROPERTY_FREQ,&pt->clock_rate);
  	ms_filter_set_property(stream->decoder,MS_FILTER_PROPERTY_BITRATE,&pt->normal_bitrate);
  	
@@ -57,3 +61,9 @@
  	/* create the synchronisation source */
  	stream->timer=ms_timer_new();
  	
+@@ -340,4 +342,5 @@
+ {
+ 	ms_rtp_send_dtmf(MS_RTP_SEND(stream->rtpsend), dtmf);
+ 	ms_oss_write_play_dtmf(MS_OSS_WRITE(stream->soundwrite),dtmf);
++	return 0;
+ }
