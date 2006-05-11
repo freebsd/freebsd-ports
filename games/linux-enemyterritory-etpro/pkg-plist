@@ -1,0 +1,32 @@
+bin/et-etpro
+bin/etded-etpro
+%%DATADIR%%/animations/scripts/human_base.script
+%%DATADIR%%/etpro-%%VERSION%%.pk3
+%%DATADIR%%/etpro_cheats.dat
+%%DATADIR%%/etpromapscripts/battery.script
+%%DATADIR%%/etpromapscripts/fueldump.script
+%%DATADIR%%/etpromapscripts/fueldump_lms.script
+%%DATADIR%%/etpromapscripts/goldrush.script
+%%DATADIR%%/etpromapscripts/oasis.script
+%%DATADIR%%/etpromapscripts/oasis_lms.script
+%%DATADIR%%/etpromapscripts/radar.script
+%%DATADIR%%/etpromapscripts/railgun.script
+%%DATADIR%%/etpromapscripts/railgun_lms.script
+%%DATADIR%%/example.cfg
+%%DATADIR%%/maps/battery.script
+%%DATADIR%%/maps/fueldump.script
+%%DATADIR%%/maps/fueldump_lms.script
+%%DATADIR%%/maps/goldrush.script
+%%DATADIR%%/maps/oasis.script
+%%DATADIR%%/maps/oasis_lms.script
+%%DATADIR%%/maps/radar.script
+%%DATADIR%%/maps/railgun.script
+%%DATADIR%%/maps/railgun_lms.script
+%%DATADIR%%/qagame.mp.i386.so
+%%DATADIR%%/qagame_mp_x86.dll
+@dirrm %%DATADIR%%/maps
+@dirrm %%DATADIR%%/etpromapscripts
+@dirrm %%DATADIR%%/configs
+@dirrm %%DATADIR%%/animations/scripts
+@dirrm %%DATADIR%%/animations
+@dirrm %%DATADIR%%
