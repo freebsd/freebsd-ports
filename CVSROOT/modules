@@ -6035,6 +6035,7 @@ linux-enemyterritory-etpro	ports/games/linux-enemyterritory-etpro
 linux-enemyterritory-etpub	ports/games/linux-enemyterritory-etpub
 linux-enemyterritory-fortress	ports/games/linux-enemyterritory-fortress
 linux-enemyterritory-jaymod	ports/games/linux-enemyterritory-jaymod
+linux-enemyterritory-shrub	ports/games/linux-enemyterritory-shrub
 linux-enemyterritory-tce	ports/games/linux-enemyterritory-tce
 linux-esound	ports/audio/linux-esound
 linux-expat	ports/textproc/linux-expat
