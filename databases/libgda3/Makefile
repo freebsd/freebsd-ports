@@ -17,13 +17,19 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Provides uniform access to different kinds of data sources
 
+USE_BZIP2=	yes
+PREFIX?=	${X11BASE}
+
+.if !defined(REFERENCE_PORT)
+
+PORTREVISION=	1
+
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
-USE_BZIP2=	yes
 USE_GETTEXT=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack glib20 libxslt intlhack
+USE_GNOME=	gnomeprefix gnomehack glib20 libxslt intlhack referencehack
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-bdb
@@ -32,8 +38,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 MAN1=		gda-config-tool.1
 MAN5=		gda-config.5
-
-DOCSDIR=	${PREFIX}/share/doc/${PORTNAME:S/3$//}
 
 PLIST_SUB=	VERSION=${PORTVERSION:R}
 
@@ -182,3 +186,5 @@ pre-everything::
 .endif
 
 .include <bsd.port.post.mk>
+
+.endif

@@ -91,6 +91,7 @@
     SUBDIR += libgda2
     SUBDIR += libgda2-reference
     SUBDIR += libgda3
+    SUBDIR += libgda3-reference
     SUBDIR += libgdamm
     SUBDIR += libgnomedb
     SUBDIR += libiodbc
