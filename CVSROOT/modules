@@ -2530,6 +2530,7 @@ fo-aspell	ports/textproc/fo-aspell
 foiltex		ports/textproc/foiltex
 font2svg	ports/print/font2svg
 fontconfig	ports/x11-fonts/fontconfig
+fontconfig-reference	ports/x11-fonts/fontconfig-reference
 fontedit	ports/sysutils/fontedit
 fonteditfs	ports/sysutils/fonteditfs
 fontforge	ports/print/fontforge
