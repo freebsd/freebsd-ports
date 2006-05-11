@@ -15,6 +15,7 @@ PATCH_SITES=	http://get.bitlbee.org/patches/
 MAINTAINER=	peter@dataloss.nl
 COMMENT=	An IRC to other chat networks gateway
 
+SUB_FILES=	pkg-message
 MAN5=		bitlbee.conf.5
 MAN8=		bitlbee.8
 
@@ -32,8 +33,10 @@ CONFIGURE_ARGS=	--mandir=${PREFIX}/man --config=${PREFIX}/etc/bitlbee
 
 .include <bsd.port.pre.mk>
 
+PATCH_DIST_STRIP=	-p1
+
 .if defined(WITH_MSN6_FEATURES)
-PATCHFILES+=	${DISTNAME}-msn6.akke.diff
+PATCHFILES+=	${DISTNAME}-msn6-akke.diff
 .endif
 
 .if defined(WITH_LDAP)
