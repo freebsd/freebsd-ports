@@ -3,9 +3,9 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#
+#    $MCom: ports-experimental/math/fftw3-float/Makefile,v 1.1 2006/03/28 00:08:57 ahze Exp $
 
-PORTREVISION=	2
+PORTREVISION=	0
 
 MAINTAINER=	ahze@ahze.net
 COMMENT=	Fast C routines (Single Percision)
