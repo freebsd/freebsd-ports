@@ -3286,6 +3286,7 @@ gnomemm		ports/x11-toolkits/gnomemm
 gnomenetstatus	ports/net/gnomenetstatus
 gnomenettool	ports/net/gnomenettool
 gnomepanel	ports/x11/gnomepanel
+gnomepanel-reference	ports/x11/gnomepanel-reference
 gnomephotoprinter	ports/print/gnomephotoprinter
 gnomepilot-conduits2	ports/palm/gnomepilot-conduits2
 gnomepilot2	ports/palm/gnomepilot2
