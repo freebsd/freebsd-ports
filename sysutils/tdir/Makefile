@@ -5,11 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	tdir
-PORTVERSION=	1.67
+PORTVERSION=	1.69
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.tundraware.com/Software/tdir/
 
-MAINTAINER=	tundra@tundraware.com
+MAINTAINER=	tdir@tundraware.com
 COMMENT=	Advanced file directory display utility
 
 USE_PYTHON=	yes
