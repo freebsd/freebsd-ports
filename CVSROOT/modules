@@ -5657,6 +5657,7 @@ libgda		ports/databases/libgda
 libgda2		ports/databases/libgda2
 libgda2-reference	ports/databases/libgda2-reference
 libgda3		ports/databases/libgda3
+libgda3-reference	ports/databases/libgda3-reference
 libgdamm	ports/databases/libgdamm
 libgdgeda	ports/graphics/libgdgeda
 libgdiplus	ports/x11-toolkits/libgdiplus
