@@ -4,6 +4,7 @@
     COMMENT = Ports to help disabled users
 
     SUBDIR += at-spi
+    SUBDIR += at-spi-reference
     SUBDIR += atk
     SUBDIR += atk-reference
     SUBDIR += dasher
