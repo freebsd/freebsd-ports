@@ -9,9 +9,7 @@ PORTNAME=	asterisk
 PORTVERSION=	1.2.7.1
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.digium.com/pub/asterisk/ \
-		http://ftp.digium.com/pub/asterisk/old-releases/ \
-		ftp://ftp.asterisk.org/pub/telephony/asterisk/ \
-		ftp://ftp.asterisk.org/pub/telephony/asterisk/old-releases/
+		http://ftp.digium.com/pub/asterisk/old-releases/
 
 PATCHFILES=	asterisk127_codec_negotiation-20060419.diff.gz
 PATCH_SITES=	http://unofficial.portaone.com/~bamby/public/
