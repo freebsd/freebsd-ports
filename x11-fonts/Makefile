@@ -26,6 +26,7 @@
     SUBDIR += etlfonts
     SUBDIR += farsifonts
     SUBDIR += fontconfig
+    SUBDIR += fontconfig-reference
     SUBDIR += freefont-ttf
     SUBDIR += freefonts
     SUBDIR += geminifonts
