@@ -30,7 +30,7 @@ MAN3=		Net::OpenDHT.3
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500600
+.if ${PERL_LEVEL} < 500800
 IGNORE=		requires Perl 5.8.  Please install lang/perl5 or lang/perl5.8
 .endif
 
