@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	configgen
-PORTVERSION=	1.14
+PORTVERSION=	1.15
 CATEGORIES=	devel
 MASTER_SITES=	http://www.marcuscom.com:8080/cgi-bin/cvsweb.cgi/portstools/
 DISTNAME=	${PORTNAME}.sh?rev=${PORTVERSION}
