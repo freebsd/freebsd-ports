@@ -16,9 +16,6 @@ lib/libk9copy.so
 lib/libk9copy.so.0
 share/applnk/Multimedia/k9copy.desktop
 share/apps/k9copy/k9copyui.rc
-%%PORTDOCS%%%%DOCSDIR%%/index.cache.bz2
-%%PORTDOCS%%%%DOCSDIR%%/index.docbook
-%%PORTDOCS%%%%DOCSDIR%%/common
 share/icons/hicolor/16x16/apps/k9copy.png
 share/icons/hicolor/32x32/apps/k9copy.png
 share/icons/hicolor/48x48/apps/k9copy.png
@@ -29,7 +26,7 @@ share/locale/en_GB/LC_MESSAGES/k9copy.mo
 share/locale/es/LC_MESSAGES/k9copy.mo
 share/locale/fr/LC_MESSAGES/k9copy.mo
 share/locale/it/LC_MESSAGES/k9copy.mo
+share/locale/pl/LC_MESSAGES/k9copy.mo
 share/locale/pt_BR/LC_MESSAGES/k9copy.mo
 share/locale/ru/LC_MESSAGES/k9copy.mo
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm share/apps/k9copy
