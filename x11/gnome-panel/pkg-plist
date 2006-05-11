@@ -24,25 +24,6 @@ libexec/clock-applet
 libexec/fish-applet-2
 libexec/notification-area-applet
 libexec/wnck-applet
-share/doc/panel-applet/PanelApplet.html
-share/doc/panel-applet/applet-popups.html
-share/doc/panel-applet/applet-porting.html
-share/doc/panel-applet/applet-writing.html
-share/doc/panel-applet/home.png
-share/doc/panel-applet/index.html
-share/doc/panel-applet/index.sgml
-share/doc/panel-applet/left.png
-share/doc/panel-applet/multi-applets.html
-share/doc/panel-applet/panel-applet-Panel-Applet-GConf-Utilities.html
-share/doc/panel-applet/panel-applet.devhelp
-share/doc/panel-applet/panel-applet.devhelp2
-share/doc/panel-applet/panel-applet.html
-share/doc/panel-applet/panel-signals.html
-share/doc/panel-applet/right.png
-share/doc/panel-applet/server-files.html
-share/doc/panel-applet/session-saving.html
-share/doc/panel-applet/style.css
-share/doc/panel-applet/up.png
 share/gnome/gnome-2.0/ui/GNOME_ClockApplet.xml
 share/gnome/gnome-2.0/ui/GNOME_FishApplet.xml
 share/gnome/gnome-2.0/ui/GNOME_NotificationAreaApplet.xml
@@ -504,5 +485,4 @@ share/locale/zu/LC_MESSAGES/gnome-panel-2.0.mo
 @dirrm share/gnome/help/clock/C/figures
 @dirrm share/gnome/help/clock/C
 @dirrm share/gnome/help/clock
-@dirrm share/doc/panel-applet
 @dirrm include/panel-2.0
