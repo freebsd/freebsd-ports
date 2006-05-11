@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	subclipse
-PORTVERSION=	0.9.105
+PORTVERSION=	1.0.1
 CATEGORIES=	devel java
-MASTER_SITES=	http://subclipse.tigris.org/files/documents/906/29070
-DISTNAME=	site.${PORTVERSION}
+MASTER_SITES=	http://subclipse.tigris.org/files/documents/906/31284
+DISTNAME=	site-${PORTVERSION}
 DIST_SUBDIR=	eclipse
 
 MAINTAINER=	gerrit.beine@gmx.de
