@@ -7,6 +7,7 @@
 
 PORTNAME=	nagcon
 PORTVERSION=	0.0.15
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.vanheusden.com/nagcon/
 EXTRACT_SUFX=	.tgz
