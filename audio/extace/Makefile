@@ -7,6 +7,7 @@
 
 PORTNAME=	extace
 PORTVERSION=	1.9.5
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An Audio Visualization plugin for the X Window System
 
-LIB_DEPENDS=	fftw3.3:${PORTSDIR}/math/fftw3
+LIB_DEPENDS=	fftw3.4:${PORTSDIR}/math/fftw3
 
 USE_X_PREFIX=	yes
 USE_GNOME=	esound imlib gnomehack gnometarget gnomeprefix

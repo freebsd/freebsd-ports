@@ -7,7 +7,7 @@
 
 PORTNAME=	imms
 PORTVERSION=	1.2a
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,7 +21,7 @@ BUILD_DEPENDS=	sox:${PORTSDIR}/audio/sox \
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms \
 		sqlite3:${PORTSDIR}/databases/sqlite3 \
 		pcre.0:${PORTSDIR}/devel/pcre \
-		fftw3f.3:${PORTSDIR}/math/fftw3-float \
+		fftw3f.4:${PORTSDIR}/math/fftw3-float \
 		tag.5:${PORTSDIR}/audio/taglib
 
 USE_BZIP2=	yes
@@ -40,11 +40,11 @@ INSTALLS_SHLIB=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != "i386"
-BROKEN=		"Does not compile"
+BROKEN=		Does not compile
 .endif
 
 .if ${OSVERSION} < 500000
-BROKEN=		"Does not compile"
+BROKEN=		Does not compile
 .endif
 
 post-patch:

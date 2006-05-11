@@ -7,7 +7,7 @@
 
 PORTNAME=	freefem++
 PORTVERSION=	2.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math science
 MASTER_SITES=	http://www.freefem.org/ff++/ftp/
 
@@ -19,7 +19,7 @@ LIB_DEPENDS=	atlas.1:${PORTSDIR}/math/atlas				\
 		gsl.9:${PORTSDIR}/math/gsl				\
 		lapack.3:${PORTSDIR}/math/lapack			\
 		fltk.1:${PORTSDIR}/x11-toolkits/fltk-threads		\
-		fftw3.3:${PORTSDIR}/math/fftw3
+		fftw3.4:${PORTSDIR}/math/fftw3
 BUILD_DEPENDS=	${LOCALBASE}/lib/libumfpack.a:${PORTSDIR}/math/umfpack	\
 		${LOCALBASE}/lib/libarpack.a:${PORTSDIR}/math/arpack	\
 		convert:${PORTSDIR}/graphics/ImageMagick		\

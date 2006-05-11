@@ -7,6 +7,7 @@
 
 PORTNAME=	dangerdeep
 PORTVERSION=	0.1.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	dangerdeep
@@ -15,7 +16,7 @@ MAINTAINER=	acardenas@bsd.org.pe
 COMMENT=	Open source World War II German submarine simulation
 
 BUILD_DEPENDS=	scons:${PORTSDIR}/devel/scons
-LIB_DEPENDS=	fftw3.3:${PORTSDIR}/math/fftw3 \
+LIB_DEPENDS=	fftw3.4:${PORTSDIR}/math/fftw3 \
 		execinfo.1:${PORTSDIR}/devel/libexecinfo
 
 USE_X_PREFIX=	yes

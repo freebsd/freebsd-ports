@@ -8,7 +8,7 @@
 
 PORTNAME=	ale
 PORTVERSION=	0.8.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://auricle.dyndns.org/ALE/download/
 
@@ -28,7 +28,7 @@ PLIST_FILES=	bin/ale
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "alpha"
-BROKEN=		"Does not build on alpha"
+BROKEN=		Does not build on alpha
 .endif
 
 .if ${OSVERSION} < 502114
@@ -40,7 +40,7 @@ MAKE_ARGS+=	COLORS=DOUBLE COORDINATES=DOUBLE
 .endif
 
 .if !defined(WITHOUT_FFTW3)
-LIB_DEPENDS+=	fftw3.3:${PORTSDIR}/math/fftw3
+LIB_DEPENDS+=	fftw3.4:${PORTSDIR}/math/fftw3
 MAKE_ARGS+=	FFTW=1
 .endif
 

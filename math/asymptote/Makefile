@@ -7,6 +7,7 @@
 
 PORTNAME=	asymptote
 PORTVERSION=	1.04
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	nivit@email.it
 COMMENT=	A powerful script-based vector graphics language
 
-LIB_DEPENDS=	fftw3.3:${PORTSDIR}/math/fftw3
+LIB_DEPENDS=	fftw3.4:${PORTSDIR}/math/fftw3
 BUILD_DEPENDS=	${NOEXISTENT}:${PORTSDIR}/devel/boehm-gc:fetch \
 		convert:${PORTSDIR}/graphics/ImageMagick \
 		latex:${PORTSDIR}/print/teTeX \
