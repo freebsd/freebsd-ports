@@ -11294,6 +11294,7 @@ quack		ports/lang/quack
 quagga		ports/net/quagga
 quake-data	ports/games/quake-data
 quake-dpmod	ports/games/quake-dpmod
+quake-extras	ports/games/quake-extras
 quake-reaper	ports/games/quake-reaper
 quake-source	ports/games/quake-source
 quake2-data	ports/games/quake2-data
