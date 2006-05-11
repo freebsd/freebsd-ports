@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gpsman
-PORTVERSION=	6.2.1
+PORTVERSION=	6.3
 CATEGORIES=	astro tk84
 MASTER_SITES=	http://www.ncc.up.pt/gpsman/gpsmanhtml/
 MASTER_SITE_SUBDIR=	science/cartography
@@ -22,6 +22,10 @@ NO_BUILD=	yes
 
 # MAN1=		gpsman.1
 # MANCOMPRESSED=	yes
+
+post-patch:
+	@(cd ${WRKSRC} && ${REINPLACE_CMD} "s|/dev/ttyS0|${GPSMAN_DEFAULT_PORT}|" \
+ 		util/exerciser.tcl manual/html/info/l_realtime.doc.txt gpsman.tcl)
 
 pre-install:
 	@${REINPLACE_CMD} -e "s:%%PREFIX%%:${PREFIX}:g" ${WRKSRC}/gpsman.tcl
@@ -55,3 +59,9 @@ do-install:
 .endif
 
 .include <bsd.port.mk>
+
+.if ${OSVERSION} < 600000
+GPSMAN_DEFAULT_PORT?=	/dev/cuaa0
+.else
+GPSMAN_DEFAULT_PORT?=	/dev/cuad0
+.endif
