@@ -17,7 +17,7 @@ COMMENT=	Allows Apache 2 to log to a MySQL database
 
 RUN_DEPENDS+=	${LOCALBASE}/libexec/apache2/mod_log_config-st.so:${PORTSDIR}/www/mod_log_config-st
 
-WANT_APACHE=	2
+USE_APACHE=	20+
 AP_FAST_BUILD=	YES
 AP_GENPLIST=	YES
 USE_MYSQL=	YES
@@ -25,6 +25,4 @@ USE_MYSQL=	YES
 AP_INC+=	${LOCALBASE}/include/mysql
 AP_LIB+=	${LOCALBASE}/lib/mysql -lmysqlclient
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/www/apache20/Makefile.modules.3rd"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
