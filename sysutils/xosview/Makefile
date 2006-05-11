@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	xosview
-PORTVERSION=	1.8.2
-PORTREVISION=	1
+PORTVERSION=	1.8.3
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,14 +17,9 @@ COMMENT=	A graphical performance meter
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 MAN1=		xosview.1
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700000
-BROKEN=		"Does not compile on FreeBSD >= 7.x"
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,iostream.h,iostream,' \
@@ -49,5 +43,7 @@ post-patch:
 		${WRKSRC}/fieldmetergraph.cc
 	@${REINPLACE_CMD} -e 's,-O4,,' \
 		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's,/share/man,/man,' \
+		${WRKSRC}/config/Makefile.top.in
 
 .include <bsd.port.post.mk>

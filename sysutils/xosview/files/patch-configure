@@ -5,7 +5,7 @@
  			host_dir=bsd
  	host_os=freebsd ;;
 -freebsd[4]*)
-+freebsd[456]*)
++freebsd[4567]*)
          EXTRALIBS="-lkvm $XPMLIB $DEVSTATLIB"
          INSTALL_ARGS='-s -g kmem -m 02555'
  	NetMeter_Default_Setting=True
