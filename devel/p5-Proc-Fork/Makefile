@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	Proc-Fork
-PORTVERSION=	0.20
+PORTVERSION=	0.30
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Proc
 PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/0$//}
 
-MAINTAINER=	tobez@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Proc::Fork - Simple, intuitive interface to the fork() system call
 
 PERL_CONFIGURE=	yes
