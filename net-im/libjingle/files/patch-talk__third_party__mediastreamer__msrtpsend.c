@@ -5,7 +5,7 @@
  	guint32 clockts;
  	/* use the sync system time to compute a timestamp */
 -	PayloadType *pt=rtp_profile_get_payload(r->rtpsession->profile,r->rtpsession->payload_type);
-+	PayloadType *pt=rtp_profile_get_payload(r->rtpsession->profile,r->rtpsession->recv_pt);
++	PayloadType *pt=rtp_profile_get_payload(r->rtpsession->profile,r->rtpsession->send_pt);
  	g_return_val_if_fail(pt!=NULL,0);
  	clockts=(guint32)(((double)synctime * (double)pt->clock_rate)/1000.0);
  	ms_trace("ms_rtp_send_process: sync->time=%i clock=%i",synctime,clockts);

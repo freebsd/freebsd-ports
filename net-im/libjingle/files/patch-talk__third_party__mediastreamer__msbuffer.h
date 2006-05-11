@@ -1,6 +1,21 @@
 --- ./talk/third_party/mediastreamer/msbuffer.h.orig	Thu Mar 16 18:43:06 2006
-+++ ./talk/third_party/mediastreamer/msbuffer.h	Fri Apr 21 10:56:34 2006
-@@ -48,11 +48,12 @@
++++ ./talk/third_party/mediastreamer/msbuffer.h	Thu May 11 00:12:20 2006
+@@ -37,28 +37,28 @@
+ {
+     gchar *buffer;
+     guint32 size;
+-    guint16 ref_count;
+-    guint16 flags;
+-#define MS_BUFFER_CONTIGUOUS (1)
++    gint ref_count;
++    void (*freefn)(void *);
++    void *freearg;
+ }MSBuffer;
+ 
+ MSBuffer * ms_buffer_new(guint32 size);
++MSBuffer *ms_buffer_new_with_buf(char *extbuf, int size,void (*freefn)(void *), void *freearg);
+ void ms_buffer_destroy(MSBuffer *buf);
+ 
  struct _MSMessage
  {
     MSBuffer *buffer; /* points to a MSBuffer */
@@ -14,3 +29,9 @@
  };
  
  typedef struct _MSMessage MSMessage;
+ 
+-
+-MSBuffer *ms_buffer_alloc(gint flags);
+ MSMessage *ms_message_new(gint size);
+ 
+ #define ms_message_set_buf(m,b) do { (b)->ref_count++; (m)->buffer=(b); (m)->data=(b)->buffer; (m)->size=(b)->size; }while(0)
