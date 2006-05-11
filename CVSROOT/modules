@@ -3116,6 +3116,7 @@ glib12		ports/devel/glib12
 glib20		ports/devel/glib20
 glib20-reference	ports/devel/glib20-reference
 glibmm		ports/devel/glibmm
+glibmm-reference	ports/devel/glibmm-reference
 glibstdc++28	ports/lang/glibstdc++28
 glibwww		ports/www/glibwww
 glide3		ports/graphics/glide3
