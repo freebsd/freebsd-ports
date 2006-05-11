@@ -28,8 +28,8 @@ libdata/snortsnarf/SnortSnarf/TimeFilters.pm
 libdata/snortsnarf/ann_xml.pl
 libdata/snortsnarf/web_utils.pl
 libdata/snortsnarf/xml_help.pl
-%%PORTDOCS%%share/doc/snortsnarf/README
-%%PORTDOCS%%share/doc/snortsnarf/Usage
-%%PORTDOCS%%@dirrm share/doc/snortsnarf
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/Usage
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm libdata/snortsnarf/SnortSnarf
 @dirrm libdata/snortsnarf
