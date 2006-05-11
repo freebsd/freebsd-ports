@@ -22,7 +22,6 @@ USE_GMAKE=	yes
 MAKE_ENV+=	SRILM=${WRKSRC}
 ALL_TARGET=	World
 ONLY_FOR_ARCHS=	i386
-USE_REINPLACE=	yes
 NO_PACKAGE=	"not yet"
 
 PROGRAMS=	ngram ngram-count ngram-merge ngram-class disambig anti-ngram \

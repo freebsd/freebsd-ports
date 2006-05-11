@@ -21,7 +21,6 @@ WNHOME?=	${LOCALBASE}/share/WordNet
 
 PERL_CONFIGURE=	yes
 CONFIGURE_ENV=	WNHOME=${WNHOME}
-USE_REINPLACE=	yes
 
 MAN3=		WordNet::QueryData.3
 

@@ -18,7 +18,6 @@ COMMENT=	A text mode RSS newsreader
 USE_PERL5_BUILD=yes
 USE_GMAKE=	yes
 USE_GNOME=	libxml2
-USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
 
 OPTIONS=	OPML		"Outline Processor Markup Support" on
