@@ -244,6 +244,7 @@
     SUBDIR += libxml++
     SUBDIR += libxml++26
     SUBDIR += libxml2
+    SUBDIR += libxml2-reference
     SUBDIR += libxode
     SUBDIR += libxslt
     SUBDIR += link-grammar

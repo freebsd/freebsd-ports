@@ -13,7 +13,6 @@
 
 PORTNAME=	libxml2
 PORTVERSION=	2.6.24
-PORTREVISION?=	0
 CATEGORIES?=	textproc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.6
@@ -23,6 +22,11 @@ MAINTAINER?=	gnome@FreeBSD.org
 COMMENT?=	XML parser library for GNOME
 
 USE_BZIP2=	yes
+
+.if !defined(REFERENCE_PORT)
+
+PORTREVISION?=	1
+
 USE_GMAKE=	yes
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
@@ -64,6 +68,10 @@ CONFIGURE_ARGS+=	--with-thread-alloc
 .endif
 
 post-patch:
+.for d in . doc doc/devhelp doc/examples
+	@${REINPLACE_CMD} -e '/^install-data-am:/ s|install-data-local||' \
+		${WRKSRC}/${d}/Makefile.in
+.endfor
 .for f in catalog.c xmlcatalog.c xmllint.c doc/xmllint.1
 	@${REINPLACE_CMD} -e \
 		's|/etc/xml/catalog|${LOCALBASE}/share/xml/catalog|g; \
@@ -71,3 +79,5 @@ post-patch:
 .endfor
 
 .include <bsd.port.mk>
+
+.endif
