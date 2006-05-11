@@ -6031,6 +6031,7 @@ linux-edonkey-server	ports/net-p2p/linux-edonkey-server
 linux-edonkey-tool-recovermet	ports/net-p2p/linux-edonkey-tool-recovermet
 linux-enemyterritory	ports/games/linux-enemyterritory
 linux-enemyterritory-etpro	ports/games/linux-enemyterritory-etpro
+linux-enemyterritory-etpub	ports/games/linux-enemyterritory-etpub
 linux-enemyterritory-fortress	ports/games/linux-enemyterritory-fortress
 linux-enemyterritory-tce	ports/games/linux-enemyterritory-tce
 linux-esound	ports/audio/linux-esound
