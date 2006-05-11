@@ -94,6 +94,7 @@
     SUBDIR += libgda3-reference
     SUBDIR += libgdamm
     SUBDIR += libgnomedb
+    SUBDIR += libgnomedb-reference
     SUBDIR += libiodbc
     SUBDIR += libmemcache
     SUBDIR += libodbc++

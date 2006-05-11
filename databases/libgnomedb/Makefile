@@ -8,7 +8,6 @@
 
 PORTNAME=	libgnomedb
 PORTVERSION=	1.9.102
-PORTREVISION=	1
 CATEGORIES=	databases gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R}
@@ -18,10 +17,16 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Library components for the GNOME database frontend
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
+PREFIX?=	${X11BASE}
+
+.if !defined(REFERENCE_PORT)
+
+PORTREVISION=	2
+
+USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack libgnomeui libgda3 gtksourceview \
-		intlhack
+		intlhack referencehack
 GNU_CONFIGURE=	yes
 INSTALLS_OMF=	yes
 INSTALLS_SHLIB=	yes
@@ -33,3 +38,5 @@ GCONF_SCHEMAS=	libgnomedb.schemas
 PLIST_SUB=	VERSION=${PORTVERSION:R}
 
 .include <bsd.port.mk>
+
+.endif
