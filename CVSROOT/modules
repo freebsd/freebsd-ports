@@ -5333,6 +5333,7 @@ kooka		ports/graphics/kooka
 koth		ports/games/koth
 kover		ports/print/kover
 kp		ports/misc/kp
+kpdftool	ports/print/kpdftool
 kphone		ports/net/kphone
 kphotoalbum	ports/graphics/kphotoalbum
 kpicframer	ports/games/kpicframer
