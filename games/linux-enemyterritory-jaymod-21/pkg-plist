@@ -1,0 +1,9 @@
+bin/et-jaymod
+bin/etded-jaymod
+%%PORTDOCS%%%%DOCSDIR%%/jaymod-%%VERSION%%.pdf
+%%DATADIR%%/jaymod-%%VERSION%%.pk3
+%%DATADIR%%/jaymod.cfg-sample
+%%DATADIR%%/qagame.mp.i386.so
+%%PORTDOCS%%%%DOCSDIR%%/readme.txt
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
