@@ -15,27 +15,6 @@ lib/libgtksourceview-1.0.la
 lib/libgtksourceview-1.0.so
 lib/libgtksourceview-1.0.so.0
 libdata/pkgconfig/gtksourceview-1.0.pc
-%%DOCSDIR%%/GtkSourceBuffer.html
-%%DOCSDIR%%/GtkSourceLanguage.html
-%%DOCSDIR%%/GtkSourceLanguagesManager.html
-%%DOCSDIR%%/GtkSourcePrintJob.html
-%%DOCSDIR%%/GtkSourceStyleScheme.html
-%%DOCSDIR%%/GtkSourceTag.html
-%%DOCSDIR%%/GtkSourceTagTable.html
-%%DOCSDIR%%/GtkSourceView.html
-%%DOCSDIR%%/gtksourceview-GtkSourceMarker.html
-%%DOCSDIR%%/gtksourceview-GtkSourceTagStyle.html
-%%DOCSDIR%%/gtksourceview-Searching-in-a-GtkSourceBuffer.html
-%%DOCSDIR%%/gtksourceview.devhelp
-%%DOCSDIR%%/gtksourceview.devhelp2
-%%DOCSDIR%%/home.png
-%%DOCSDIR%%/index.html
-%%DOCSDIR%%/index.sgml
-%%DOCSDIR%%/left.png
-%%DOCSDIR%%/right.png
-%%DOCSDIR%%/rn01.html
-%%DOCSDIR%%/style.css
-%%DOCSDIR%%/up.png
 share/gnome/gtksourceview-1.0/language-specs/R.lang
 share/gnome/gtksourceview-1.0/language-specs/ada.lang
 share/gnome/gtksourceview-1.0/language-specs/c.lang
@@ -147,6 +126,5 @@ share/locale/zh_TW/LC_MESSAGES/gtksourceview-1.0.mo
 @dirrmtry share/locale/dz
 @dirrm share/gnome/gtksourceview-1.0/language-specs
 @dirrm share/gnome/gtksourceview-1.0
-@dirrm %%DOCSDIR%%
 @dirrm include/gtksourceview-1.0/gtksourceview
 @dirrm include/gtksourceview-1.0
