@@ -24,8 +24,6 @@ CSUFF=		${USE_GCC:S/.//}
 # needs gcj
 BUILD_DEPENDS=	gcj${CSUFF}:${PORTSDIR}/lang/gcc${CSUFF}
 
-BROKEN=		"Prerequisite gcj is not available from gcc41 at the moment"
-
 USE_GCC=	4.1
 USE_GMAKE=	yes
 USE_ICONV=	yes
