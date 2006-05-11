@@ -1,0 +1,4 @@
+share/devhelp/books/gtkmm-2.4/gtkmm-2.4.devhelp
+@dirrm share/devhelp/books/gtkmm-2.4
+@dirrmtry share/devhelp/books
+@dirrmtry share/devhelp

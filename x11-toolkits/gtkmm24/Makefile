@@ -16,38 +16,35 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	C++ wrapper for Gtk+, Pango, Atk
 
+USE_BZIP2=	yes
+PREFIX?=	${X11BASE}
+LATEST_LINK=	gtkmm24
+
+.if !defined(REFERENCE_PORT)
+
+PORTREVISION=	1
+
 LIB_DEPENDS=	glibmm-2.4.1:${PORTSDIR}/devel/glibmm
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
-LATEST_LINK=	gtkmm24
-
-USE_BZIP2=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_GCC=	3.4
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 USE_GNOME=	gnomehack gtk20
 CONFIGURE_ARGS=	--disable-demos \
+		--disable-docs \
+		--disable-examples \
 		--enable-static=yes \
 		--with-sigc-prefix=${LOCALBASE}
 
 PLIST_SUB=	VERSION="2.4" API_VERSION="2.4"
-
-.if defined(WITH_EXAMPLES)
-CONFIGURE_ARGS+=--enable-examples
-PLIST_SUB+=	EXAMPLES=""
-.else
-CONFIGURE_ARGS+=--disable-examples
-PLIST_SUB+=	EXAMPLES="@comment "
-.endif
-
-.if defined(NOPORTDOCS)
-CONFIGURE_ARGS+=--disable-docs
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS =/s/tests//' \
 		${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
+
+.endif
