@@ -3,6 +3,9 @@ bin/hgmerge
 %%PYTHON_SITELIBDIR%%/hgext/__init__.py
 %%PYTHON_SITELIBDIR%%/hgext/__init__.pyc
 %%PYTHON_SITELIBDIR%%/hgext/__init__.pyo
+%%PYTHON_SITELIBDIR%%/hgext/bugzilla.py
+%%PYTHON_SITELIBDIR%%/hgext/bugzilla.pyc
+%%PYTHON_SITELIBDIR%%/hgext/bugzilla.pyo
 %%PYTHON_SITELIBDIR%%/hgext/gpg.py
 %%PYTHON_SITELIBDIR%%/hgext/gpg.pyc
 %%PYTHON_SITELIBDIR%%/hgext/gpg.pyo
@@ -12,6 +15,9 @@ bin/hgmerge
 %%PYTHON_SITELIBDIR%%/hgext/mq.py
 %%PYTHON_SITELIBDIR%%/hgext/mq.pyc
 %%PYTHON_SITELIBDIR%%/hgext/mq.pyo
+%%PYTHON_SITELIBDIR%%/hgext/notify.py
+%%PYTHON_SITELIBDIR%%/hgext/notify.pyc
+%%PYTHON_SITELIBDIR%%/hgext/notify.pyo
 %%PYTHON_SITELIBDIR%%/hgext/patchbomb.py
 %%PYTHON_SITELIBDIR%%/hgext/patchbomb.pyc
 %%PYTHON_SITELIBDIR%%/hgext/patchbomb.pyo
@@ -27,6 +33,9 @@ bin/hgmerge
 %%PYTHON_SITELIBDIR%%/mercurial/appendfile.py
 %%PYTHON_SITELIBDIR%%/mercurial/appendfile.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/appendfile.pyo
+%%PYTHON_SITELIBDIR%%/mercurial/archival.py
+%%PYTHON_SITELIBDIR%%/mercurial/archival.pyc
+%%PYTHON_SITELIBDIR%%/mercurial/archival.pyo
 %%PYTHON_SITELIBDIR%%/mercurial/bdiff.so
 %%PYTHON_SITELIBDIR%%/mercurial/bundlerepo.py
 %%PYTHON_SITELIBDIR%%/mercurial/bundlerepo.pyc
@@ -129,7 +138,6 @@ bin/hgmerge
 %%PYTHON_SITELIBDIR%%/mercurial/templates/filelogentry-rss.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/filelogentry.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/filerevision-gitweb.tmpl
-%%PYTHON_SITELIBDIR%%/mercurial/templates/filerevision-raw.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/filerevision.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/footer-gitweb.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/footer.tmpl
@@ -168,10 +176,39 @@ bin/hgmerge
 %%PYTHON_SITELIBDIR%%/mercurial/util.py
 %%PYTHON_SITELIBDIR%%/mercurial/util.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/util.pyo
+%%PYTHON_SITELIBDIR%%/mercurial/util_win32.py
+%%PYTHON_SITELIBDIR%%/mercurial/util_win32.pyc
+%%PYTHON_SITELIBDIR%%/mercurial/util_win32.pyo
 %%PYTHON_SITELIBDIR%%/mercurial/version.py
 %%PYTHON_SITELIBDIR%%/mercurial/version.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/version.pyo
+%%SHAREDDIR%%/CONTRIBUTORS
+%%SHAREDDIR%%/COPYING
+%%SHAREDDIR%%/README
+%%SHAREDDIR%%/comparison.txt
+%%SHAREDDIR%%/notes.txt
+%%SHAREDDIR%%/contrib/bash_completion
+%%SHAREDDIR%%/contrib/convert-repo
+%%SHAREDDIR%%/contrib/favicon.ico
+%%SHAREDDIR%%/contrib/hg-menu.vim
+%%SHAREDDIR%%/contrib/hg-ssh
+%%SHAREDDIR%%/contrib/hgdiff
+%%SHAREDDIR%%/contrib/hgk
+%%SHAREDDIR%%/contrib/hgk.py
+%%SHAREDDIR%%/contrib/mercurial.el
+%%SHAREDDIR%%/contrib/tcsh_completion
+%%SHAREDDIR%%/contrib/zsh_completion
+%%SHAREDDIR%%/doc/hg.1.txt
+%%SHAREDDIR%%/doc/hgignore.5.txt
+%%SHAREDDIR%%/doc/hgmerge.1.txt
+%%SHAREDDIR%%/doc/hgrc.5.txt
+%%SHAREDDIR%%/www/hgweb.cgi
+%%SHAREDDIR%%/www/hgwebdir.cgi
 @dirrm %%PYTHON_SITELIBDIR%%/mercurial/templates/static
 @dirrm %%PYTHON_SITELIBDIR%%/mercurial/templates
 @dirrm %%PYTHON_SITELIBDIR%%/mercurial
 @dirrm %%PYTHON_SITELIBDIR%%/hgext
+@dirrm %%SHAREDIR%%/www
+@dirrm %%SHAREDIR%%/doc
+@dirrm %%SHAREDIR%%/contrib
+@dirrm %%SHAREDIR%%
