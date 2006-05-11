@@ -23,7 +23,7 @@ PATCHFILES=	cap60.patch193 cap60.patch194 cap60.patch195 cap60.patch196 \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Columbia AppleTalk Package for UNIX
 
-NO_CDROM=	"Don't sell for profit"
+NO_CDROM=	Don't sell for profit
 WRKSRC=		${WRKDIR}/cap60
 DIST_SUBDIR=	cap60
 ALL_TARGET=	libsmade dummy-libinstall programs
@@ -31,16 +31,20 @@ INSTALL_TARGET=	include libinstall install
 
 CFLAGS+=	-DUSESTRINGDOTH -DUSEDIRENT
 
-USE_REINPLACE=	YES
+SUB_FILES=	pkg-message
 
 MAN1=		AUFS.1 ash.1 atlook.1 atprint.1 cvt2apple.1 getzones.1 \
 		instappl.1 snitch.1
 MAN3=		CAP.3
 MAN5=		atalk.local.5 etalk.local.5
 MAN8=		AUFS.8 CAP.8 UAB.8 aarpd.8 atis.8 lwsrv.8 papif.8
-.if !defined(NOMANCOMPRESS)
-GZ=	.gz
-.endif
+MLINKS=		atlook.1 atpinger.1	atlook.1 atlookws.1	\
+		atprint.1 tlw.1		atprint.1 lwpr.1	\
+		atprint.1 isrv.1	atprint.1 iwpr.1	\
+		cvt2apple.1 cvt2cap.1	CAP.3 libcap.3		\
+		CAP.3 libafpc.3		CAP.3 libafp.3		\
+		papif.8 papof.8
+
 ETC_SAMPLES=	etc/start-cap-servers extras/lib.cap.macusers \
 		etc/list-cap-servers etc/kill-cap-servers \
 		applications/papif/cap.printers
@@ -106,20 +110,9 @@ post-install:
 	@${ECHO_MSG} "===>  Installing manual pages."
 .for sect in 1 3 5 8
 .for man in ${MAN${sect}}
-	@${INSTALL_MAN} ${WRKSRC}/man/${man} ${PREFIX}/man/man${sect}
+	@${INSTALL_MAN} ${WRKSRC}/man/${man} ${MAN${sect}PREFIX}/man/man${sect}
 .endfor
 .endfor
-	@${LN} -fs ${PREFIX}/man/man1/cvt2apple.1${GZ} ${PREFIX}/man/man1/cvt2cap.1${GZ}
-.for f in atpinger atlooklws
-	@${LN} -fs ${PREFIX}/man/man1/atlook.1${GZ} ${PREFIX}/man/man1/${f}.1${GZ}
-.endfor
-.for f in tlw lwpr isrv iwpr
-	@${LN} -fs ${PREFIX}/man/man1/atprint.1${GZ} ${PREFIX}/man/man1/${f}.1${GZ}
-.endfor
-.for f in libcap libafpc libafp
-	@${LN} -fs ${PREFIX}/man/man3/CAP.3${GZ} ${PREFIX}/man/man3/${f}.3${GZ}
-.endfor
-	@${LN} -fs ${PREFIX}/man/man8/papif.8${GZ} ${PREFIX}/man/man8/papof.8${GZ}
-	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
