@@ -3265,6 +3265,7 @@ gnomecontrolcenter2	ports/sysutils/gnomecontrolcenter2
 gnomecrash	ports/devel/gnomecrash
 gnomedb		ports/databases/gnomedb
 gnomedesktop	ports/x11/gnomedesktop
+gnomedesktop-reference	ports/x11/gnomedesktop-reference
 gnomedocutils	ports/textproc/gnomedocutils
 gnomefind	ports/sysutils/gnomefind
 gnomegames2	ports/games/gnomegames2
