@@ -7,23 +7,20 @@
 #
 
 PORTNAME=	trio
-PORTVERSION=	1.10
+PORTVERSION=	1.11
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ctrio
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rainer.alves@gmail.com
 COMMENT=	A fully matured and stable set of printf and string functions
 
 GNU_CONFIGURE=	yes
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|_INCS|INCS|g' ${WRKSRC}/Makefile.in
-
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${FIND} doc html | \
+	cd ${WRKSRC} && ${FIND} doc | \
 		${CPIO} -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
 .endif
 
