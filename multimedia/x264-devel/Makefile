@@ -51,6 +51,8 @@ BUILD_DEPENDS+=	yasm:${PORTSDIR}/devel/yasm
 MAKE_ENV+=	ARCH_X86_64="1"
 .endif
 
+MAKE_ARGS+=	ARCH=${ARCH}
+
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-debug
 .endif
