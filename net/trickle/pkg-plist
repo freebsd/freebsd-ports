@@ -1,6 +1,9 @@
 bin/trickle
 bin/tricklectl
 bin/trickled
+@unexec if cmp -s %D/etc/trickled.conf %D/etc/trickled.conf.default; then rm -f %D/etc/trickled.conf; fi
+etc/trickled.conf.default
+@exec [ -f %B/trickled.conf ] || cp %B/%f %B/trickled.conf
 lib/trickle/trickle-overload.so
 %%PORTDOCS%%%%DOCSDIR%%/README
 @dirrm lib/trickle

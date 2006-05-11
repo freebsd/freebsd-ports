@@ -7,11 +7,11 @@
 
 PORTNAME=	trickle
 PORTVERSION=	1.06
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	http://monkey.org/~marius/trickle/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mezz@FreeBSD.org
 COMMENT=	Lightweight, portable bandwidth shaper
 
 LIB_DEPENDS=	event-1.1a.1:${PORTSDIR}/devel/libevent
@@ -30,6 +30,12 @@ MAN5=		trickled.conf.5
 MAN8=		trickled.8
 
 post-install:
+	if [ ! -f ${PREFIX}/etc/trickled.conf ]; then \
+		${INSTALL_DATA} ${FILESDIR}/trickled.conf ${PREFIX}/etc/trickled.conf; \
+		${INSTALL_DATA} ${FILESDIR}/trickled.conf ${PREFIX}/etc/trickled.conf.default; \
+	else \
+		${INSTALL_DATA} ${FILESDIR}/trickled.conf ${PREFIX}/etc/trickled.conf.default; \
+	fi
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 .for i in README
