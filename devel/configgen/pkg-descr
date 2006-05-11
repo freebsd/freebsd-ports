@@ -10,7 +10,8 @@ or you can specify a command below.
  -bsd       Use FreeBSD auto-tools
               (versions: libtool15, automake15, autoconf253)
  -bsd14     Use FreeBSD auto-tools
-              (versions: libtool13, automake14, autoconf213)
+              (versions: libtool15, automake14, autoconf213)
  -bsd19     Use FreeBSD auto-tools
               (versions: libtool15, automake19, autoconf259)
+ -f         Find config (fall back on generic gnu)
  <config>   Specify a auto-gen configure script
