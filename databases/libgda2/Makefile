@@ -7,7 +7,6 @@
 
 PORTNAME=	libgda2
 PORTVERSION=	1.2.3
-PORTEPOCH=	1
 CATEGORIES=	databases gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/1.2
@@ -17,14 +16,21 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Provides uniform access to different kinds of data sources
 
+USE_BZIP2=	yes
+PREFIX?=	${X11BASE}
+
+.if !defined(REFERENCE_PORT)
+
+PORTREVISION=	1
+PORTEPOCH=	1
+
 BUILD_DEPENDS=	scrollkeeper-config:${PORTSDIR}/textproc/scrollkeeper
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 RUN_DEPENDS=	scrollkeeper-config:${PORTSDIR}/textproc/scrollkeeper
 
-USE_BZIP2=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack glib20 libxslt
+USE_GNOME=	gnomeprefix gnomehack glib20 libxslt referencehack
 INSTALLS_OMF=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
@@ -34,8 +40,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 MAN1=		gda-config-tool.1
 MAN5=		gda-config.5
-
-DOCSDIR=	${PREFIX}/share/doc/${PORTNAME:S/2$//}
 
 PLIST_SUB=	VERSION=${PORTVERSION:R}
 
@@ -184,3 +188,5 @@ pre-everything::
 .endif
 
 .include <bsd.port.post.mk>
+
+.endif

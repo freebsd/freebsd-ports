@@ -89,6 +89,7 @@
     SUBDIR += libdbi-drivers
     SUBDIR += libgda
     SUBDIR += libgda2
+    SUBDIR += libgda2-reference
     SUBDIR += libgda3
     SUBDIR += libgdamm
     SUBDIR += libgnomedb
