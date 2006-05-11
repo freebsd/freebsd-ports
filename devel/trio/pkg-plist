@@ -1,29 +1,18 @@
-@comment $FreeBSD$
 include/trio.h
 include/triodef.h
 include/triop.h
 include/trionan.h
 include/triostr.h
 lib/libtrio.a
-%%PORTDOCS%%share/doc/trio/doc/doc.h
-%%PORTDOCS%%share/doc/trio/doc/doc_dynamic.h
-%%PORTDOCS%%share/doc/trio/doc/doc_printf.h
-%%PORTDOCS%%share/doc/trio/doc/doc_register.h
-%%PORTDOCS%%share/doc/trio/doc/doc_scanf.h
-%%PORTDOCS%%share/doc/trio/doc/doc_static.h
-%%PORTDOCS%%share/doc/trio/doc/footer.html
-%%PORTDOCS%%share/doc/trio/doc/header.html
-%%PORTDOCS%%share/doc/trio/doc/trio.cfg
-%%PORTDOCS%%share/doc/trio/doc/trio.css
-%%PORTDOCS%%share/doc/trio/html/group___dynamic_strings.html
-%%PORTDOCS%%share/doc/trio/html/group___printf.html
-%%PORTDOCS%%share/doc/trio/html/group___scanf.html
-%%PORTDOCS%%share/doc/trio/html/group___special_quantities.html
-%%PORTDOCS%%share/doc/trio/html/group___static_strings.html
-%%PORTDOCS%%share/doc/trio/html/group___user_defined.html
-%%PORTDOCS%%share/doc/trio/html/index.html
-%%PORTDOCS%%share/doc/trio/html/modules.html
-%%PORTDOCS%%share/doc/trio/html/trio.css
-%%PORTDOCS%%@dirrm share/doc/trio/doc
-%%PORTDOCS%%@dirrm share/doc/trio/html
-%%PORTDOCS%%@dirrm share/doc/trio
+%%PORTDOCS%%%%DOCSDIR%%/doc/doc.h
+%%PORTDOCS%%%%DOCSDIR%%/doc/doc_dynamic.h
+%%PORTDOCS%%%%DOCSDIR%%/doc/doc_printf.h
+%%PORTDOCS%%%%DOCSDIR%%/doc/doc_register.h
+%%PORTDOCS%%%%DOCSDIR%%/doc/doc_scanf.h
+%%PORTDOCS%%%%DOCSDIR%%/doc/doc_static.h
+%%PORTDOCS%%%%DOCSDIR%%/doc/footer.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/header.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/trio.cfg
+%%PORTDOCS%%%%DOCSDIR%%/doc/trio.css
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
