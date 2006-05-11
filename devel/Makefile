@@ -331,6 +331,7 @@
     SUBDIR += glib20
     SUBDIR += glib20-reference
     SUBDIR += glibmm
+    SUBDIR += glibmm-reference
     SUBDIR += global
     SUBDIR += glrparser
     SUBDIR += glui
