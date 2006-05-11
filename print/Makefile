@@ -116,6 +116,7 @@
     SUBDIR += kaspaliste
     SUBDIR += kcdlabel
     SUBDIR += kover
+    SUBDIR += kpdftool
     SUBDIR += latex
     SUBDIR += latex-arydshln
     SUBDIR += latex-auto-greek
