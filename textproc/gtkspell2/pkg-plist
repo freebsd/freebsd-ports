@@ -4,13 +4,6 @@ lib/libgtkspell.la
 lib/libgtkspell.so
 lib/libgtkspell.so.0
 libdata/pkgconfig/gtkspell-2.0.pc
-%%DOCSDIR%%/chapter-tutorial.html
-%%DOCSDIR%%/gtkspell-gtkspell.html
-%%DOCSDIR%%/index.html
-%%DOCSDIR%%/index.sgml
-%%DOCSDIR%%/reference.html
-%%DOCSDIR%%/tutorial-building.html
-%%DOCSDIR%%/tutorial.html
 share/locale/be/LC_MESSAGES/gtkspell.mo
 share/locale/de/LC_MESSAGES/gtkspell.mo
 share/locale/el/LC_MESSAGES/gtkspell.mo
@@ -35,7 +28,6 @@ share/locale/vi/LC_MESSAGES/gtkspell.mo
 share/locale/wa/LC_MESSAGES/gtkspell.mo
 share/locale/zh_CN/LC_MESSAGES/gtkspell.mo
 share/locale/zh_TW/LC_MESSAGES/gtkspell.mo
-@dirrm %%DOCSDIR%%
 @dirrm include/gtkspell-2.0/gtkspell
 @dirrm include/gtkspell-2.0
 @dirrmtry share/locale/rm/LC_MESSAGES
