@@ -60,7 +60,6 @@ USE_RC_SUBR=	zabbix_agent.sh
 USE_RC_SUBR+=	zabbix_suckerd.sh
 .endif
 
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include
 

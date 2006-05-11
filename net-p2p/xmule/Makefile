@@ -27,7 +27,6 @@ USE_BZIP2=	yes
 USE_GNOME=	gnomehier \
 		gnomehack \
 		gnomeprefix
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-included-gettext \

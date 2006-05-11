@@ -21,7 +21,6 @@ RUN_DEPENDS=	gaim:${PORTSDIR}/net-im/gaim
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 
 PLIST_FILES=	lib/gaim/se.la lib/gaim/se.so
 

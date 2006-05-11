@@ -17,7 +17,6 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Enables 6to4 IPv6 automatic tunnels
 
-USE_REINPLACE=	yes
 NO_BUILD=	yes
 
 MAN8=		hf6to4.8

@@ -30,7 +30,6 @@ MAKE_ENV+=	PVM_ROOT=${WRKSRC} ARCHCFLAGS="${CFLAGS}"
 MAKE_FLAGS+=	F77=/usr/bin/f77
 ALL_TARGET=	all install
 PVM_ROOT=	${PREFIX}/lib/pvm
-USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ""
 
 MAN1=		aimk.1 pvm.1 pvm_intro.1 pvm_shmd.1 pvmd3.1

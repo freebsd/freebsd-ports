@@ -70,7 +70,6 @@ CONFIGURE_ARGS+=	--with-python
 .endif
 
 .if defined(WITH_TCL)
-USE_REINPLACE=		yes
 CONFIGURE_ARGS+=	--with-tcl=${LOCALBASE}
 BUILD_DEPENDS+=		${LOCALBASE}/include/tcl8.3/tcl.h:${PORTSDIR}/lang/tcl83
 .endif

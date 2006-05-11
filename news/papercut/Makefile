@@ -17,7 +17,6 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/MySQLdb/__init__.py:${PORTSDIR}/databases/py-M
 
 USE_PYTHON=	yes
 NO_BUILD=	yes
-USE_REINPLACE=	yes
 
 do-configure:
 	@${CP} ${FILESDIR}/papercut-wrapper ${WRKDIR}/papercut-wrapper

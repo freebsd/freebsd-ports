@@ -23,8 +23,6 @@ CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 USE_OPENSSL=	yes
 
-USE_REINPLACE=	yes
-
 MAN1=		c3270.1 \
 		x3270if.1 \
 		x3270-script.1 \

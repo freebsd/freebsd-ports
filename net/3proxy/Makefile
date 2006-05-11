@@ -16,7 +16,6 @@ MAINTAINER=	osa@FreeBSD.org
 COMMENT=	Proxy servers set (support HTTP(S), FTP, SOCKS, POP3, TCP & UDP)
 
 NO_WRKSUBDIR=	yes
-USE_REINPLACE=	yes
 USE_RC_SUBR=	yes
 MAKEFILE=	Makefile.unix
 MAKE_ENV=	CC="${CC}" \

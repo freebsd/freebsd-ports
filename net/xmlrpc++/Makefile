@@ -17,7 +17,6 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A C++ implementation of the XML-RPC protocol
 
-USE_REINPLACE=	yes
 USE_GCC=	3.4
 USE_GMAKE=	yes
 

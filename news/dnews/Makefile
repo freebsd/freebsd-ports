@@ -21,7 +21,6 @@ NO_CDROM=	"no answer yet, if we are allowed to put it onto CDROM"
 RESTRICTED=	"only free for non-profit organisations"
 NO_PACKAGE=	"${RESTRICTED}"
 IS_INTERACTIVE=	yes
-USE_REINPLACE=	yes
 ONLY_FOR_ARCHS=	i386
 NO_BUILD=	yes
 

@@ -20,7 +20,6 @@ LIB_DEPENDS=	dbus-1.2:${PORTSDIR}/devel/dbus
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	pkgconfig glib20 gnomehack
-USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

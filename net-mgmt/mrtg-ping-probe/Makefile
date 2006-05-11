@@ -16,7 +16,6 @@ COMMENT=	A Round Trip Time and Packet Loss Probe for MRTG
 RUN_DEPENDS=	${LOCALBASE}/bin/mrtg:${PORTSDIR}/net-mgmt/mrtg
 
 USE_PERL5=	YES
-USE_REINPLACE=	yes
 
 MAN1=		${PORTNAME}.1
 

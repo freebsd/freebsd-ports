@@ -16,7 +16,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An extendable SNMP implementation
 
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 USE_PERL5=	yes
 INSTALLS_SHLIB=	yes
 CFLAGS+=	-fPIC

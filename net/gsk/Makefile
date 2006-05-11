@@ -16,7 +16,6 @@ MAINTAINER=	babak@farrokhi.net
 COMMENT=	A C library for writing servers
 
 USE_GNOME=	glib20 gnomehack gnometarget
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 

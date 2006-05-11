@@ -16,7 +16,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ijliao@FreeBSD.org
 COMMENT=	Graphical traceroute utility
 
-USE_REINPLACE=	yes
 USE_GNOME=	gdkpixbuf libcapplet
 
 post-patch:

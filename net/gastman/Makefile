@@ -17,7 +17,6 @@ COMMENT=	Graphical Manager interface for Asterisk
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk20
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 
 post-patch:

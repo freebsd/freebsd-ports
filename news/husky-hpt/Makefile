@@ -18,8 +18,6 @@ LIB_DEPENDS=	fidoconfig.0:${PORTSDIR}/news/husky-fidoconf
 
 CONFLICTS=	husky-hpt-devel-[0-9]*
 
-USE_REINPLACE=	yes
-
 .if !defined(WITHOUT_PERL)
 MAKE_ARGS+=	PERL=1
 USE_PERL5=	yes

@@ -15,7 +15,6 @@ COMMENT=	Yaph is a proxy scanner
 
 USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 
 post-extract:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \

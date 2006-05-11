@@ -17,7 +17,6 @@ COMMENT=	Local Area Multicomputer MPI implementation
 
 USE_BZIP2=	yes
 USE_PERL5=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-rsh=ssh
 

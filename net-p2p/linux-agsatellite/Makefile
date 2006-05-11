@@ -19,7 +19,6 @@ COMMENT=	Client that allows you to share your music on Audiogalaxy(TM)
 WRKSRC=	${WRKDIR}/${DISTNAME:C/-.*//}
 
 NO_BUILD=	yes
-USE_REINPLACE=	yes
 USE_LINUX=	yes
 USE_X_PREFIX=	yes
 RESTRICTED=	no response from developer on licensing issues

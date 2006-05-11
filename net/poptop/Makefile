@@ -15,7 +15,6 @@ DISTNAME=	pptpd-${PORTVERSION:S/.b/-b/}
 MAINTAINER=	olmi@rentech.ru
 COMMENT=	Windows 9x compatible PPTP (VPN) server
 
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \

@@ -20,7 +20,6 @@ WRKSRC=		${WRKDIR}/tspc2
 MAN5=		tspc.conf.5
 MAN8=		tspc.8
 USE_RC_SUBR=	tspc2.sh
-USE_REINPLACE=	yes
 
 MAKE_ARGS=	target=freebsd installdir=${PREFIX}
 

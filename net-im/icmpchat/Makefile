@@ -14,8 +14,6 @@ MASTER_SITE_SUBDIR=	icmpchat
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple console-based chat that uses the ICMP protocol
 
-USE_REINPLACE=	yes
-
 pre-patch:
 	@${REINPLACE_CMD} -e 's|-O2 -Wall -pedantic|${CFLAGS}|;\
 		s|= gcc|?= gcc|;s|default|all|' ${WRKSRC}/Makefile

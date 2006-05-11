@@ -19,7 +19,6 @@ COMMENT=	Linux UPnP Internet Gateway Device
 LIB_DEPENDS=	upnp.1:${PORTSDIR}/devel/upnp104
 
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/linux-igd
 MAKE_ENV=	PTHREAD_LIBS=${PTHREAD_LIBS}
 

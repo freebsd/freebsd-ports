@@ -19,7 +19,6 @@ RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:${PORTSDIR}/net-mgmt/nagio
 
 GNU_CONFIGURE=	yes
 USE_PERL5=	yes
-USE_REINPLACE=	yes
 USE_RC_SUBR=	yes
 SUB_FILES=	nrpe.sh pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message

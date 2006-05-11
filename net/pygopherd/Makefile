@@ -18,7 +18,6 @@ COMMENT=	Multiprotocol Information Server
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 MAN8=	pygopherd.8

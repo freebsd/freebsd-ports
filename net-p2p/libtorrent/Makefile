@@ -17,7 +17,6 @@ LIB_DEPENDS=	sigc-2.0.0:${PORTSDIR}/devel/libsigc++20
 
 USE_GCC=	3.4
 USE_GNOME=	pkgconfig gnomehack
-USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-debug

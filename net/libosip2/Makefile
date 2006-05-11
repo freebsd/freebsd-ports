@@ -17,7 +17,6 @@ MAINTAINER=	xride@x12.dk
 COMMENT=	A low layer of SIP implementation
 
 USE_GNOME=	gnomehack gnometarget pkgconfig
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-debug --disable-trace
 INSTALLS_SHLIB=	yes

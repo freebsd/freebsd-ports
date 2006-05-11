@@ -22,8 +22,6 @@ RUN_DEPENDS=	${LOCALBASE}/lib/ocaml/cryptokit.cma:${PORTSDIR}/security/ocaml-cry
 # depend when building as well
 BUILD_DEPENDS+=	${RUN_DEPENDS}
 
-USE_REINPLACE=	yes
-
 DATE_VERSION=	20021124
 
 post-configure:

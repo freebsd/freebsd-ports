@@ -17,7 +17,6 @@ COMMENT=	A GNOME 2 desktop weblog aggregator written in Python
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
 USE_GNOME=	libglade2 pygnome2 pygnomeextras
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

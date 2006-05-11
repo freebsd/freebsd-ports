@@ -17,7 +17,6 @@ COMMENT=	The Cisco remote authentication/authorization/accounting server
 USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	yes
-USE_REINPLACE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN5=		tac_plus.conf.5

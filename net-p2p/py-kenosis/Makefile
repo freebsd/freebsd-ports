@@ -22,8 +22,6 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYSETUP=	${PORTNAME}_setup.py
 
-USE_REINPLACE=	yes
-
 post-extract:
 # Avoid name collision and move ds inside kenosis package
 # it is only used by kenosis anyway

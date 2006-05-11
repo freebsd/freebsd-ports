@@ -20,7 +20,6 @@ RUN_DEPENDS=	rrdtool:${PORTSDIR}/net/rrdtool \
 
 USE_PERL5=	yes
 NO_BUILD=	yes
-USE_REINPLACE=	yes
 NO_WRKSUBDIR=	yes
 NAGIOSDIR?=	/var/spool/nagios
 DOC_FILES=	README GPL.txt

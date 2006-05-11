@@ -22,7 +22,6 @@ COMMENT?=	An extended BitTorrent peer-to-peer tool for distributing files
 CONFLICTS=	py??-*[Bb]it[Tt]ornado-core-[0-9]* py??-*[Bb]it[Tt]orrent*-[0-9]* btqueue-[0-9]*
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
-USE_REINPLACE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-CVS
 

@@ -12,8 +12,6 @@ MASTER_SITE_SUBDIR=	proxychains
 MAINTAINER=	mycroft@virgaria.org
 COMMENT=	Multi-proxifier
 
-USE_REINPLACE=	yes
-
 USE_AUTOTOOLS=	automake:14 autoconf:213
 
 INSTALLS_SHLIB=	yes

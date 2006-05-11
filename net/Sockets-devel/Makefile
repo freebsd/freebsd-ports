@@ -18,7 +18,6 @@ USE_GMAKE=	yes
 USE_OPENSSL=	yes
 WITH_OPENSSL_BASE=	yes
 MAKE_ENV=	CXX="${CXX}"
-USE_REINPLACE=	yes
 
 post-patch:
 # PREFIX safeness

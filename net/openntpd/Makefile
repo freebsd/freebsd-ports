@@ -17,7 +17,6 @@ MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	OpenBSD's Network Time Protocol daemon
 
 USE_RC_SUBR=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
 MAN5=		ntpd.conf.5

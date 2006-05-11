@@ -20,7 +20,6 @@ LIB_DEPENDS=	gift.0:${PORTSDIR}/net-p2p/gift
 USE_BZIP2=	yes
 USE_KDELIBS_VER=3
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 USE_AUTOTOOLS=	libtool:15
 
 .include <bsd.port.pre.mk>

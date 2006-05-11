@@ -21,7 +21,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.orig
 PLIST_FILES=	bin/gnosamba
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomelibs
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
 post-patch:

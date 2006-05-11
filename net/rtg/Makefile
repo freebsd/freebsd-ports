@@ -20,7 +20,6 @@ LIB_DEPENDS=	mysqlclient:${PORTSDIR}/databases/mysql41-client \
 
 MAN1=	rtgplot.1 rtgpoll.1
 
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc/rtg
 

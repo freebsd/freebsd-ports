@@ -21,7 +21,6 @@ CONFLICTS=	openbgpd-* zebra-0*
 GNU_CONFIGURE=		yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=		yes
-USE_REINPLACE=		yes
 INSTALLS_SHLIB=		yes
 USE_PERL5_BUILD=	yes
 LIBTOOLFILES=		configure

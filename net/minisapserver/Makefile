@@ -15,7 +15,6 @@ MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	SAP and SLP announcement for the VLC Media Player
 
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes

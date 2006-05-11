@@ -29,7 +29,6 @@ OPTIONS=	GTK	"Build with GTK2+ GUI"	on \
 WANT_GNOME=	yes
 USE_AUTOTOOLS=	libltdl:15
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 
 MAN5=		etter.conf.5
 MAN8=		ettercap.8 ettercap_curses.8 etterfilter.8 etterlog.8

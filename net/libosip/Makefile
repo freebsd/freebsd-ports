@@ -16,7 +16,6 @@ MASTER_SITE_SUBDIR=	osip
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A low layer of SIP implementation
 
-USE_REINPLACE=	yes
 USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
 

@@ -17,7 +17,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plugins for netsaint
 
 USE_SUBMAKE=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sbindir=${PREFIX}/share/netsaint/sbin \
 		--libexecdir=${PREFIX}/libexec/netsaint \

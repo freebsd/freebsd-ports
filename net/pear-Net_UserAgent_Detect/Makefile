@@ -15,8 +15,6 @@ COMMENT=	PEAR class that detects web browser, version and platform
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-USE_REINPLACE=	yes
-
 CATEGORY=	Net
 FILES=		UserAgent/Detect.php
 TESTS=		example.php

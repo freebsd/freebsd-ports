@@ -24,7 +24,6 @@ NETRAMET_DOCS=	usguide.pdf srlguide.pdf ntmref.pdf nm_rc.pdf \
 
 WRKSRC=		${WRKDIR}/NeTraMet${PORTVERSION:S/.//}
 
-USE_REINPLACE=	yes
 USE_AUTOTOOLS=	autoconf:213
 USE_GMAKE=	yes
 

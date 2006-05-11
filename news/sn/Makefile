@@ -20,7 +20,6 @@ PORTDOCS=	README CHANGES FAQ INSTALL INTERNALS \
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 
 MAN8=		sn.8 sncancel.8 sncat.8 sndelgroup.8 sndumpdb.8 \
 		snexpire.8 snfetch.8 snget.8 sngetd.8 snmail.8 \

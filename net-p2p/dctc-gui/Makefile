@@ -23,7 +23,6 @@ USE_GETTEXT=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomelibs gnomeprefix
 USE_XLIB=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--with-gnome=${X11BASE} \

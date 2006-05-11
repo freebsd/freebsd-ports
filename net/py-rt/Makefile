@@ -17,7 +17,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python Routeing Toolkit
 
 USE_PYTHON=	yes
-USE_REINPLACE=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 DOCSDIR=	${PREFIX}/share/doc/py-rt

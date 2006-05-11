@@ -18,7 +18,6 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portable/multi-platform lightweight tcp socket scripting
 
-USE_REINPLACE=	yes
 WANT_GNOME=	yes
 
 .include <bsd.port.pre.mk>

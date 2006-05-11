@@ -30,7 +30,6 @@ MAN1=		ldapsh.1
 MAN3=		Net::LDAP::Shell.3 \
 		Net::LDAP::Shell::Parse.3 Net::LDAP::Shell::Util.3
 
-USE_REINPLACE=	yes
 PERL_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>

@@ -20,7 +20,6 @@ USE_ZIP=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
 
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 
 SUB_FILES=	pkg-message
 USE_RC_SUBR=	bnbt.sh

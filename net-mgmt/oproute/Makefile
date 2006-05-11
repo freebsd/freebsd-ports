@@ -17,7 +17,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool for measuring general performance of the Internet
 
 PLIST_FILES=	bin/oproute
-USE_REINPLACE=	yes
 USE_GCC=	2.95
 
 post-patch:

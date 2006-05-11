@@ -15,7 +15,6 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Usenet News reader for the X Window System
 
-USE_REINPLACE=	yes
 USE_IMAKE=	yes
 MAN1=		xrn.1
 MANCOMPRESSED=	no

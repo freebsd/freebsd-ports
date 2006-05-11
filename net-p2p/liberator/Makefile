@@ -18,7 +18,6 @@ COMMENT=	Command line client to FreeNet Network
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
 
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 ALL_TARGET=	all opt
 
 DATA_FILES=	liber_mimetypes

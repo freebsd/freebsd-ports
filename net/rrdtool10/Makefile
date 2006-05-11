@@ -20,7 +20,6 @@ MAKE_ENV=	PERL=${PERL}
 CONFLICTS=	rrdtool-1.2*
 LATEST_LINK=	rrdtool10
 
-USE_REINPLACE=	yes
 USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--enable-shared --enable-local-zlib \

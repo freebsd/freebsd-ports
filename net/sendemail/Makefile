@@ -18,7 +18,6 @@ COMMENT=	Lightweight, completly command line based, SMTP email agent
 
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
-USE_REINPLACE=	yes
 
 PLIST_FILES=	bin/sendEmail
 PORTDOCS=	CHANGELOG README TODO

@@ -21,7 +21,6 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS \
 		wget:${PORTSDIR}/ftp/wget/
 
 USE_PERL5_RUN=	yes
-USE_REINPLACE=	yes
 
 DATADIR?=	${PREFIX}/lib/${PORTNAME}
 

@@ -16,7 +16,6 @@ COMMENT=	Display bandwidth usage on an interface by host
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-resolver=netdb_1thread
-USE_REINPLACE=	yes
 
 MAN8=		iftop.8
 

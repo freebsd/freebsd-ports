@@ -22,7 +22,6 @@ CONFLICTS=	hping-[0-9]*
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 
 PLIST_DIRS+=	lib/hping
 PLIST_FILES=	sbin/hping lib/hping/hpingstdlib.htcl

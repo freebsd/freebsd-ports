@@ -19,7 +19,6 @@ MAN8=		ifstated.8
 PLIST_FILES=	sbin/ifstated \
 		etc/ifstated.conf etc/rc.d/ifstated.sh
 
-USE_REINPLACE=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 USE_RC_SUBR=	yes

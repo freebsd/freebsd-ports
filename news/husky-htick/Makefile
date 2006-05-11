@@ -16,8 +16,6 @@ COMMENT=	FTN File ticker
 
 LIB_DEPENDS=	fidoconfig.0:${PORTSDIR}/news/husky-fidoconf
 
-USE_REINPLACE=	yes
-
 MAN1=		htick.1
 INFO=		htick
 

@@ -14,7 +14,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Intercept and dump syslog remote log packets
 
 PLIST_FILES=	sbin/passlogd
-USE_REINPLACE=	yes
 
 post-patch:
 	${REINPLACE_CMD} -e "s|.(CXX)|${CC} ${CFLAGS}|g" ${WRKSRC}/Makefile

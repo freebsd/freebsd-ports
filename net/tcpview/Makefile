@@ -17,7 +17,6 @@ COMMENT=	A Motif-based TCP/IP protocol analyzer
 
 USE_BISON=	yes
 USE_MOTIF=	yes
-USE_REINPLACE=	yes
 
 MAN1=		tcpview.1
 

@@ -20,7 +20,6 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 USE_RC_SUBR=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--sysconfdir=${LOCALBASE}/etc --with-localdbdir=/var/db
-USE_REINPLACE=	yes
 
 MAN5=		dhcp6c.conf.5 dhcp6s.conf.5
 MAN8=		dhcp6c.8 dhcp6s.8 dhcp6relay.8 dhcp6ctl.8

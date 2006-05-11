@@ -110,7 +110,6 @@ CONFIGURE_ENV=	LOCALBASE=${LOCALBASE} LDFLAGS="-L${LOCALBASE}/lib" \
 USE_AUTOTOOLS=	automake:19 autoconf:259
 USE_GMAKE=	yes
 USE_PERL5=	yes
-USE_REINPLACE=	yes
 
 post-patch:
 .for file in check_by_ssh.c check_disk.c check_http.c check_load.c \

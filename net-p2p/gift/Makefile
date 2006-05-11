@@ -20,7 +20,6 @@ LIB_DEPENDS=	vorbis.3:${PORTSDIR}/audio/libvorbis
 
 USE_AUTOTOOLS=	libltdl:15
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_PERL5=	yes

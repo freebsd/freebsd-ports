@@ -18,8 +18,6 @@ COMMENT=	GNU version of finger
 
 CONFLICTS=	pfinger-0.*
 
-USE_REINPLACE=	yes
-
 post-patch:
 	${REINPLACE_CMD} -e 's,DEFS="$$DEFS -D_ANSI_SOURCE",,' \
 		${WRKSRC}/configure

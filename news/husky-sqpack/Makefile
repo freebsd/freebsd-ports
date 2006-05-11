@@ -16,8 +16,6 @@ COMMENT=	Message base packer
 
 LIB_DEPENDS=	fidoconfig.0:${PORTSDIR}/news/husky-fidoconf
 
-USE_REINPLACE=	yes
-
 MAN1=		sqpack.1
 MANCOMPRESSED=	yes
 PLIST_FILES=	bin/sqpack

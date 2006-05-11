@@ -16,7 +16,6 @@ MAINTAINER=	leeym@FreeBSD.org
 COMMENT=	UltraVNC repeater
 
 USE_ZIP=	yes
-USE_REINPLACE=	yes
 USE_RC_SUBR=	yes
 WRKSRC=		${WRKDIR}/Ver${PORTVERSION:C/\.//}
 ALL_TARGET=	repeater

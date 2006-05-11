@@ -36,7 +36,6 @@ URL=		http://www.nomachine.com/download/nxsources/1.4.0
 WRKSRC=		${WRKDIR}
 ALL_TARGET=	World
 NXPREFIX?=	${PREFIX}/NX
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_IMAKE=	yes
 NO_FILTER_SHLIBS=	yes

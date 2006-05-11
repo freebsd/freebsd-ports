@@ -19,7 +19,6 @@ COMMENT=	Network Traffic Accounting and Monitoring Software
 NO_PACKAGE=	"Depends on kernel"
 
 USE_SUBMAKE=	yes
-USE_REINPLACE=	yes
 MANCOMPRESSED=	no
 
 SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \

@@ -18,7 +18,6 @@ COMMENT=	FLUTE - File Delivery over Unidirectional Transport implementation
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 USE_OPENSSL=	yes
 
 CFLAGS+=	${PTHREAD_CFLAGS}

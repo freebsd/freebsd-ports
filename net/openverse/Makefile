@@ -18,7 +18,6 @@ RUN_DEPENDS=	tclsh8.2:${PORTSDIR}/lang/tcl82 \
 
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/OpenVerse
-USE_REINPLACE=	yes
 
 STRIP=	# Nothing to Strip
 

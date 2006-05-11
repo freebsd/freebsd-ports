@@ -21,7 +21,6 @@ LIB_DEPENDS+=	gd.4:${PORTSDIR}/graphics/gd
 USE_GMAKE=	YES
 GNU_CONFIGURE=	YES
 USE_ICONV=	YES
-USE_REINPLACE=	YES
 
 post-install:
 	@${INSTALL_SCRIPT} ${FILESDIR}/bandwidthd.sh \

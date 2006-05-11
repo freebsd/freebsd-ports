@@ -19,7 +19,6 @@ MANLANG=	"" ja
 
 USE_RC_SUBR=	stone.sh
 USE_OPENSSL=	yes
-USE_REINPLACE=	yes
 
 .include <bsd.port.pre.mk>
 

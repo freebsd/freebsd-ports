@@ -22,7 +22,6 @@ WRKSRC=		${WRKDIR}/bpft
 MAN1=		traflog.1 trafstat.1
 MAN8=		trafstatd.8 trafd.8
 MANCOMPRESSED=	yes
-USE_REINPLACE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' ${WRKSRC}/include/pathnames.h

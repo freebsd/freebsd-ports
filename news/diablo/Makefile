@@ -17,8 +17,6 @@ COMMENT=	A comprehensive newsfeeding and newsreading software package
 
 BUILD_DEPENDS=	xmake:${PORTSDIR}/devel/xmake
 
-USE_REINPLACE=	yes
-
 MAN5=		diablo-kp.5 diablo-files.5
 MAN8=		dicmd.8 didump.8 dexpireover.8 dfeedinfo.8 dgrpctl.8 \
 		dilookup.8 diloadfromspool.8 doutq.8 dreadart.8 \

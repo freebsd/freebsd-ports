@@ -17,7 +17,6 @@ MAN1=		quoted.1
 MANCOMPRESSED=	no
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 
 USE_RC_SUBR=	 yes
 RC_SUFX=	.sh

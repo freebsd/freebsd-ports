@@ -13,8 +13,6 @@ MASTER_SITES=	http://echat.deep.perm.ru/files/
 MAINTAINER=	sead@mail.ru
 COMMENT=	LAN chat program over the TCP/IP networks
 
-USE_REINPLACE=	yes
-
 MAN1=		echat.1
 
 post-patch:

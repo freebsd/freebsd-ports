@@ -15,7 +15,6 @@ COMMENT=	Graphical configuation utility for the newsreader slrn
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Gtk2.pm:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
 		${SITE_PERL}/Parse/RecDescent.pm:${PORTSDIR}/devel/p5-Parse-RecDescent
 
-USE_REINPLACE=	yes
 USE_BZIP2=	yes
 USE_PERL=	yes
 MAKE_ARGS+=	PREFIX=${PREFIX}

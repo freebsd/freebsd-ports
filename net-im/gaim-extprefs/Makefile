@@ -19,7 +19,6 @@ BUILD_DEPENDS=	${X11BASE}/include/gaim/config.h:${PORTSDIR}/net-im/gaim
 RUN_DEPENDS=	gaim:${PORTSDIR}/net-im/gaim
 
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS+=--enable-static=no

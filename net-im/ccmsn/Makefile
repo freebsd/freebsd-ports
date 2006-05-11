@@ -16,7 +16,6 @@ COMMENT=	A Tcl/Tk-based MSN messenger
 
 RUN_DEPENDS=	wish8.3:${PORTSDIR}/x11-toolkits/tk83
 
-USE_REINPLACE=	yes
 NO_BUILD=	yes
 
 post-patch:

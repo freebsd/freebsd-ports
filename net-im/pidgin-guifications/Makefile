@@ -23,7 +23,6 @@ USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack gtk20
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes

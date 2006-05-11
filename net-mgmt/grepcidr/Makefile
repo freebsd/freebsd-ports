@@ -15,8 +15,6 @@ COMMENT=	Filter IP addresses matching IPv4 CIDR/network specification
 
 PLIST_FILES=	bin/grepcidr
 
-USE_REINPLACE= yes
-
 do-configure:
 	@${REINPLACE_CMD} \
 		-e 's|/usr/local/bin|${PREFIX}/bin|' \

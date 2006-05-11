@@ -20,7 +20,6 @@ BROKEN=		Does not compile
 
 USE_KDELIBS_VER=3
 USE_AUTOTOOLS=	libtool:15
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 
 pre-patch:

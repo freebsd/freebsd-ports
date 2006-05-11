@@ -18,7 +18,6 @@ LIB_DEPENDS=	radiusclient-ng.2:${PORTSDIR}/net/radiusclient
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-tls
 
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	libxml2
 MAKE_ENV=	CC="${CC}" \
