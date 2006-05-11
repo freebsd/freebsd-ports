@@ -5948,6 +5948,7 @@ libxml		ports/textproc/libxml
 libxml++	ports/textproc/libxml++
 libxml++26	ports/textproc/libxml++26
 libxml2		ports/textproc/libxml2
+libxml2-reference	ports/textproc/libxml2-reference
 libxode		ports/textproc/libxode
 libxslt		ports/textproc/libxslt
 libyahoo2	ports/net-im/libyahoo2
