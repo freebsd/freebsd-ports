@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	PenguinTV
-PORTVERSION=	1.60
-PORTREVISION=	1
+PORTVERSION=	1.70
 CATEGORIES=	net audio multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	penguintv
@@ -23,8 +22,6 @@ BUILD_DEPENDS+= Xvfb:${X_VFBSERVER_PORT} \
 		${X11BASE}/lib/X11/fonts/misc/8x13O.pcf.gz:${X_FONTS_MISC_PORT}
 .endif
 RUN_DEPENDS=	${BUILD_DEPENDS}
-
-BROKEN=		Incorrect pkg-plist
 
 USE_GNOME=	pygnomeextras pygnome2
 USE_PYTHON=	yes
