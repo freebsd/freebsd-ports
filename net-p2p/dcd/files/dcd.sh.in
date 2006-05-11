@@ -1,0 +1,33 @@
+#!/bin/sh
+
+# PROVIDE: dcd
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# dcd_enable (bool):   Set to NO by default.
+#               Set it to YES to enable dcd.
+
+. %%RC_SUBR%%
+
+name="dcd"
+rcvar=${name}_enable
+
+command=%%PREFIX%%/sbin/dcd
+sig_stop=-KILL 
+stop_cmd=stop_cmd
+
+load_rc_config $name
+
+stop_cmd()                                                                  
+{                                                                               
+    kill $sig_stop $rc_pid
+    rm -f $pidfile                                                                
+}  
+
+: ${dcd_enable="NO"}
+
+run_rc_command "$1"
+
