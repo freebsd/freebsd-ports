@@ -17,7 +17,6 @@ COMMENT=	Libpcab based fast traffic accounting program
 
 USE_RC_SUBR=	traff.sh
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 
 CFLAGS+=	${PTHREAD_CFLAGS}
 LFLAGS=		${PTHREAD_LIBS}

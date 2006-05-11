@@ -21,7 +21,6 @@ CONFLICTS=	husky-fidoconf-[0-9]*
 INSTALLS_SHLIB=	yes
 NO_FILTER_SHLIBS=	yes
 INSTALL_TARGET=	install install-man
-USE_REINPLACE=	yes
 
 MAN1=		dumpfcfg.1 fconf2.1 linked.1 linkedto.1 tparser.1
 MLINKS=		fconf2.1 fconf2aquaed.1 \

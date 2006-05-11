@@ -15,7 +15,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Suite of tools and library to work with netflow data
 
 USE_PYTHON_RUN=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--localstatedir=${PREFIX}
 

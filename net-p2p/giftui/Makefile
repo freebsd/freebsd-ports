@@ -22,7 +22,6 @@ USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gconf2 gtk20
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
 GCONF_SCHEMAS=	giftui.schemas

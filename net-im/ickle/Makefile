@@ -23,7 +23,6 @@ USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
 WANT_GNOME=	yes
 USE_ICONV=	yes
-USE_REINPLACE=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-sigc-prefix=${LOCALBASE} \

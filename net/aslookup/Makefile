@@ -15,8 +15,6 @@ DISTNAME=	${PORTNAME}-alpha${PORTVERSION}
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Tool that searches the sequence of AS numbers
 
-USE_REINPLACE=	yes
-
 post-patch:
 	@${REINPLACE_CMD} -E -e "s|CFLAGS.*=|CFLAGS +=|" \
 		-e "s|CC.*=|CC ?=|" ${WRKSRC}/Makefile

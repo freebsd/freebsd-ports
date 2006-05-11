@@ -19,7 +19,6 @@ COMMENT=	Console/GTK+ TCP/IP Packets Forger
 BUILD_DEPENDS=	libnet*>=1.1.2,1:${PORTSDIR}/net/libnet
 
 USE_GNOME=	gnometarget gtk20
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libnet-prefix=${LOCALBASE}

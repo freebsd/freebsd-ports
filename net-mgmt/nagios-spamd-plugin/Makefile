@@ -18,7 +18,6 @@ COMMENT=	Nagios plugin for checking SpamAssassins spamd
 RUN_DEPENDS+=	${SITE_PERL}/Getopt/Long.pm:${PORTSDIR}/devel/p5-Getopt-Long
 
 USE_PERL5=	yes
-USE_REINPLACE=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 PLIST_FILES=	${NAGIOS_PLUGIN_DIR}/check_spamd.pl

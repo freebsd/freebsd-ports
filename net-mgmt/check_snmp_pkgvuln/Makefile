@@ -22,7 +22,6 @@ RUN_DEPENDS=	snmpwalk:${PORTSDIR}/net-mgmt/net-snmp \
 NAGIOS_PLUGIN_DIR?=	libexec/nagios
 
 NO_WRKSUBDIR=	yes
-USE_REINPLACE=	yes
 
 PLIST_SUB=	NAGIOS_PLUGIN_DIR=${NAGIOS_PLUGIN_DIR}
 

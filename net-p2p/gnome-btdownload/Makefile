@@ -23,7 +23,6 @@ IGNORE=does not run with BitTorrent 4.x yet
 USE_X_PREFIX=	yes
 USE_GNOME=	desktopfileutils gnomehack gnomeprefix pygnome2
 USE_PYTHON=	yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 

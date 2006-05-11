@@ -19,7 +19,6 @@ LIB_DEPENDS=	event-1.1a.1:${PORTSDIR}/devel/libevent
 
 USE_RC_SUBR=	nylon.sh
 
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 # Necessary for $PREFIX to work:
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

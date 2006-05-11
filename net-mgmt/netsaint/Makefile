@@ -25,7 +25,6 @@ DEPRECATED=	Now developed as Nagios, see net-mgmt/nagios port
 
 USE_PERL5=	yes
 USE_GETOPT_LONG=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-command-user=netsaint \
 		--with-command-grp=www \

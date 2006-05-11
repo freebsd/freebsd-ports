@@ -18,7 +18,6 @@ COMMENT=	TCP interface library
 WRKSRC=		${WRKDIR}/tcp4u.331/src
 PATCH_WRKSRC=	${WRKDIR}/tcp4u.331
 
-USE_REINPLACE=	yes
 USE_ZIP=	yes
 
 do-configure::

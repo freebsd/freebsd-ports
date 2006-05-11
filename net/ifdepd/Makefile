@@ -16,7 +16,6 @@ MAN8=		ifdepd.8
 PLIST_FILES=	bin/ifdepd \
 		etc/rc.d/ifdepd.sh
 
-USE_REINPLACE=	yes
 USE_RC_SUBR=	yes
 
 .include <bsd.port.pre.mk>

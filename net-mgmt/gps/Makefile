@@ -18,7 +18,6 @@ COMMENT=	Ghost Port Scan
 
 BUILD_DEPENDS=	libnet*<=1.1.0,1:${PORTSDIR}/net/libnet10
 
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 USE_GMAKE=	yes

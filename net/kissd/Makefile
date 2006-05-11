@@ -13,7 +13,6 @@ MASTER_SITES=	http://rink.nu/downloads/projects/
 MAINTAINER=	ed@fxq.nl
 COMMENT=	A daemon for providing multimedia files to KiSS DP-50x players
 
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/kissd

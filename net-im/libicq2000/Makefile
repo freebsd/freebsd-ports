@@ -19,7 +19,6 @@ LIB_DEPENDS=	sigc.1:${PORTSDIR}/devel/libsigc++
 
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS=	--disable-static
-USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 
 MAN1=	libicq2000-config.1

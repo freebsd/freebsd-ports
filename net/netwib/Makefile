@@ -20,7 +20,6 @@ BUILD_DEPENDS=	libnet*>=1.1.2,1:${PORTSDIR}/net/libnet
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-src/src
-USE_REINPLACE=	yes
 SHORTPORTVERSION=${PORTVERSION:C/([0-9]*)\.([0-9]*)\.[0-9]*/\1\2/}
 MAN3=		netwib.3 netwib_dat.3 netwib_err.3 netwib_net.3 \
 		netwib_pkt.3 netwib_shw.3 netwib_sys.3

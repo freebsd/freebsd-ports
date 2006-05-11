@@ -15,8 +15,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	mich@FreeBSD.org
 COMMENT=	A simple TCP port forwarder
 
-USE_REINPLACE=	yes
-
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|" ${WRKSRC}/tcpsg.c
 

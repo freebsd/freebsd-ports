@@ -21,8 +21,6 @@ RUN_DEPENDS=	ldapadd:${PORTSDIR}/net/openldap23-client \
 		ldapmodrdn:${PORTSDIR}/net/openldap23-client \
 		ldappasswd:${PORTSDIR}/net/openldap23-client
 
-USE_REINPLACE=	yes
-
 MANLANG=	""
 MANCOMPRESSED=	no
 MAN1=		ldapaddgroup.1 ldapaddmachine.1 ldapadduser.1 ldapaddusertogroup.1 \

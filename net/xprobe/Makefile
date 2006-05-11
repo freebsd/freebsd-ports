@@ -15,7 +15,6 @@ MAINTAINER=	wxs@csh.rit.edu
 COMMENT=	ICMP active OS fingerprint scanner
 
 HAS_CONFIGURE=	yes
-USE_REINPLACE=	yes
 
 MAN1=		xprobe2.1
 

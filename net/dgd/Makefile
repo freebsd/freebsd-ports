@@ -26,7 +26,6 @@ DIST_SUBDIR=	dgd
 WRKSRC=		${WRKDIR}/dgd/src
 PATCH_WRKSRC=	${WRKDIR}/dgd
 ALL_TARGET=	install
-USE_REINPLACE=	yes
 
 .include <bsd.port.pre.mk>
 

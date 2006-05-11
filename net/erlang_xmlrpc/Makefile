@@ -21,7 +21,6 @@ BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang
 RUN_DEPENDS=	erl:${PORTSDIR}/lang/erlang
 
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/xmlrpc-${PORTVERSION}
 
 MAN3=		erlang_xmlrpc.3

@@ -15,7 +15,6 @@ DISTNAME=	${PORTNAME}d-${PORTVERSION}
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	The Internic referral whois server
 
-USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}/lib/rwhois
 MAKE_ENV=	RWHOIS_ROOT_DIR=${PREFIX}/lib/rwhois

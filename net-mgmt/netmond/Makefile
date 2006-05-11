@@ -16,7 +16,6 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	vfom@narod.ru
 COMMENT=	Netmond - IP network monitoring daemon
 
-USE_REINPLACE=	yes
 #MK_IFGRAPH=	yes
 
 .if defined(MK_IFGRAPH)

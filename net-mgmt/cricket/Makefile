@@ -35,7 +35,6 @@ CRICKET_USER?=	wwwadm
 CRICKET_UID?=	81
 CRICKET_GROUP?=	www
 CRICKET_GID?=	80
-USE_REINPLACE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/home/cricket,${PREFIX},g' \

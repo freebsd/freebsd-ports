@@ -21,7 +21,6 @@ COMMENT=	Yahoo! Messenger - Instant messaging client
 BROKEN=		Dynamically linked binary linked to old version of gtkhtml no longer in ports
 
 USE_GNOME=	gtk12 gdkpixbuf
-USE_REINPLACE=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 

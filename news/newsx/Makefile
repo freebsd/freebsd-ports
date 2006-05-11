@@ -22,7 +22,6 @@ BUILD_DEPENDS=	${LOCALBASE}/news/lib/libinn.a:${PORTSDIR}/news/inn
 
 CONFLICTS=	leafnode-1.9.*
 
-USE_REINPLACE=	yes
 .if !defined(WITH_CNEWS)
 .if !defined(WITHOUT_INN_2-X)
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/news/include"

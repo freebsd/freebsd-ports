@@ -21,8 +21,6 @@ BUILD_DEPENDS=	libnet*<=1.1.0,1:${PORTSDIR}/net/libnet10
 
 LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet-config
 
-USE_REINPLACE=	yes
-
 MAN8=		angst.8
 PLIST_FILES=	sbin/angst
 

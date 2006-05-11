@@ -21,7 +21,6 @@ RUN_DEPENDS=	rrdtool:${PORTSDIR}/net/rrdtool \
 BROKEN=		Does not install
 
 NO_BUILD=	yes
-USE_REINPLACE=	yes
 NAGIOSDIR?=	/var/spool/nagios
 DOC_FILES=	README CHANGELOG
 

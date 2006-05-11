@@ -17,7 +17,6 @@ COMMENT=	Voice over misconfigured internet telephones
 BUILD_DEPENDS=	${LOCALBASE}/lib/libevent.a:${PORTSDIR}/devel/libevent \
 		${LOCALBASE}/lib/libdnet.a:${PORTSDIR}/net/libdnet
 
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

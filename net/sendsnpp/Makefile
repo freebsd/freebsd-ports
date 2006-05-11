@@ -16,7 +16,6 @@ COMMENT=	Tool for sending messages through a RFC1861 compliant SNPP server
 
 NO_BUILD=	yes
 USE_PERL_RUN=	yes
-USE_REINPLACE=	yes
 
 PLIST_FILES=	bin/sendSNPP.pl
 

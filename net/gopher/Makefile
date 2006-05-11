@@ -19,7 +19,6 @@ COMMENT=	Gopher client for access to a distributed document service
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 
 MAN1=	gopher.1 gophfilt.1
 MAN5=	gopherrc.5

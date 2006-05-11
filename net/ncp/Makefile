@@ -15,7 +15,6 @@ COMMENT=	A fast file copy tool for LANs
 BUILD_DEPENDS=	${LOCALBASE}/lib/libowfat.a:${PORTSDIR}/devel/libowfat
 
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 USE_GETOPT_LONG=yes
 MANCOMPRESSED=	no
 

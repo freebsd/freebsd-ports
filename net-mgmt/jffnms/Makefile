@@ -22,7 +22,6 @@ RUN_DEPENDS=	neato:${PORTSDIR}/graphics/graphviz \
 
 USE_PHP=	gd snmp sockets
 USE_MYSQL=	yes
-USE_REINPLACE=	yes
 
 JFFNMSDIR?=	share/jffnms
 CRONTAB?=	/usr/bin/crontab

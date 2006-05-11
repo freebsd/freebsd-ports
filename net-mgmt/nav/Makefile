@@ -54,7 +54,6 @@ WITH_APACHE2=	yes
 USE_GMAKE=	yes
 USE_PHP=	yes
 WANT_PHP_MOD=	yes
-USE_REINPLACE=	yes
 NO_PACKAGE=	Requires manual configuration during build
 
 CONFIGURE_ENV=	INSTALL="${LOCALBASE}/bin/ginstall"

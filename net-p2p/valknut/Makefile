@@ -22,7 +22,6 @@ USE_QT_VER=	3
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libdc=${LOCALBASE} \
 		--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include

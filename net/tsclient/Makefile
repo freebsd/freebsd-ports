@@ -27,7 +27,6 @@ RUN_DEPENDS+=	Xnest:${X_NESTSERVER_PORT}
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomepanel
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

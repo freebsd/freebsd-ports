@@ -17,7 +17,6 @@ COMMENT=	A Java multi platform and spyware free gnutella client
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.4+
-USE_REINPLACE=	yes
 USE_ZIP=	yes
 NO_BUILD=	yes
 PLIST_SUB=	JAR_DIR=${JAR_DIR}

@@ -24,7 +24,6 @@ RESTRICTED=	"no monetary gain, tarball OK for CDROM"
 
 DIST_SUBDIR=	dgd
 WRKSRC=		${WRKDIR}/mud
-USE_REINPLACE=	yes
 
 post-extract:
 	@${CP} ${FILESDIR}/oconv.c ${WRKSRC}/

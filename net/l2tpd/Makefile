@@ -15,8 +15,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	sobomax@FreeBSD.org
 COMMENT=	An implementation of the layer two tunneling protocol
 
-USE_REINPLACE=	yes
-
 MAN5=	l2tp-secrets.5 l2tpd.conf.5
 MAN8=	l2tpd.8
 

@@ -16,7 +16,6 @@ COMMENT=	Tunneling TCP connections over ICMP echo request and reply
 
 WRKSRC=		${WRKDIR}/PingTunnel
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 
 PLIST_FILES=	bin/ptunnel
 MAN8=		ptunnel.8

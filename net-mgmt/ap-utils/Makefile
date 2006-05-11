@@ -17,7 +17,6 @@ COMMENT=	A set of utilities to configure and monitor wireless access points
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 CONFIGURE_ENV=	LDFLAGS="-lintl -L${LOCALBASE}/lib"
 MAN8=		ap-trapd.8 ap-mrtg.8 ap-config.8
 

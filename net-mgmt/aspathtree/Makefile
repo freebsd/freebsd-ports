@@ -28,7 +28,6 @@ IGNORE=		"You need to read the license and disclaimer on http://carmen.ipv6.tila
 
 NO_BUILD=	yes
 USE_PERL5=	yes
-USE_REINPLACE=	yes
 SCRIPTS_ENV+=	PERL5=${PERL5}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 CONFIG_FILES=	ASpath-tree.config

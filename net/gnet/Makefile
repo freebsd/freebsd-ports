@@ -14,7 +14,6 @@ MASTER_SITES=	http://www.gnetlibrary.org/src/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple network library built upon Glib
 
-USE_REINPLACE=	yes
 USE_GNOME=	gnomehack glib12
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes

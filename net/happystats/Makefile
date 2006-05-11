@@ -21,7 +21,6 @@ LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre \
 		rrd.2:${PORTSDIR}/net/rrdtool
 
 USE_GETOPT_LONG=	yes
-USE_REINPLACE=	yes
 
 MAN1=		happystats.1
 MANCOMPRESSED=	yes

@@ -26,7 +26,6 @@ CONFLICTS=	smstools-[0-9]*
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 USE_PERL5_RUN=	yes
-USE_REINPLACE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,/usr/bin/perl,${PERL},g" ${WRKSRC}/${PORTNAME}

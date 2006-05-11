@@ -18,7 +18,6 @@ COMMENT=	An LDAP module for python, for OpenLDAP2
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 USE_OPENLDAP=	yes
-USE_REINPLACE=	yes
 
 REPLACE_ARGS=	-e 's=/usr/local/openldap-REL_ENG_2_1/lib=${LOCALBASE}/lib=' \
 		-e 's=/usr/local/openldap-REL_ENG_2_1/include=${LOCALBASE}/include='

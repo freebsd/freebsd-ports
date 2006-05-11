@@ -19,7 +19,6 @@ COMMENT=	Netwox a network testing toolbox
 BUILD_DEPENDS=	netwib-config:${PORTSDIR}/net/netwib
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-src/src
-USE_REINPLACE=	yes
 SHORTPORTVERSION=${PORTVERSION:C/([0-9]*)\.([0-9]*)\.[0-9]*/\1\2/}
 MAN1=		netwox.1 netwox${SHORTPORTVERSION}.1
 

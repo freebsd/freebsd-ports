@@ -23,7 +23,6 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/kenosis/__init__.py:${PORTSDIR}/net-p2p/py-ken
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-USE_REINPLACE=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/bt
 

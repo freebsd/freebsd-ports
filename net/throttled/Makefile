@@ -15,7 +15,6 @@ MAINTAINER=	quest@mac.com
 COMMENT=	Bandwidth shaping and QoS solution
 
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 
 PLIST_FILES=	sbin/throttled sbin/throttled-startup
 

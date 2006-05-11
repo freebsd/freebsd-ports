@@ -20,7 +20,6 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinte
 		${PYTHON_SITELIBDIR}/Pmw:${PORTSDIR}/x11-toolkits/pmw
 
 NO_SIZE=	yes
-USE_REINPLACE=	yes
 USE_PYTHON=	yes
 NO_BUILD=	yes
 

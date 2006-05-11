@@ -25,7 +25,6 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 .include <bsd.port.pre.mk>
 
 MAKE_ENV=	DESTDIR=${PREFIX} MANDIR=/man/man NOMANCOMPRESS=true
-USE_REINPLACE=	yes
 MAN1=		mopprobe.1 moptrace.1 mopchk.1 mopa.out.1
 MAN8=		mopd.8
 

@@ -13,7 +13,6 @@ MASTER_SITES=	http://s-tech.elsat.net.pl/bmtools/
 MAINTAINER=	mich@FreeBSD.org
 COMMENT=	A traffic analysis command-line utility
 
-USE_REINPLACE=	YES
 LDFLAGS+=	-lcompat
 CFLAGS+=	-DOPEN_BSD=1 -DHAVE_REGEX -DSTREAM_ANALYZER -DIOCTL_GETWINSIZE -DAUTOSENSE_DLH
 

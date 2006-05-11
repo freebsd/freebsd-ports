@@ -20,7 +20,6 @@ RUN_DEPENDS=	ptksh:${PORTSDIR}/x11-toolkits/p5-Tk \
 
 NO_BUILD=	yes
 
-USE_REINPLACE=	yes
 USE_PERL5=	yes
 
 makeplist:

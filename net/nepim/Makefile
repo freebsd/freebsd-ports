@@ -17,7 +17,6 @@ COMMENT=	Tool for measuring available bandwidth between hosts
 LIB_DEPENDS=	oop.4:${PORTSDIR}/devel/liboop
 
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 ALL_TARGET=	default
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src

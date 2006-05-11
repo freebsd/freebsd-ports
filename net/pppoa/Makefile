@@ -20,7 +20,6 @@ COMMENT=		Run PPP over Alcatel's USB Speedtouch device
 
 GNU_CONFIGURE=		yes
 USE_GMAKE=		yes
-USE_REINPLACE=		yes
 SPEEDTOUCH=		speedtouch-${PORTVERSION}
 ALCATELDRIVER=		speedmgmt.tar.gz
 RESTRICTED=		"http://www.speedtouchdsl.com/disclaimer_lx.htm"

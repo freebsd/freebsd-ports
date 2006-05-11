@@ -23,7 +23,6 @@ RUN_DEPENDS=	donkey:${PORTSDIR}/net-p2p/linux-edonkey-core
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehier gnometarget gtk20
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 

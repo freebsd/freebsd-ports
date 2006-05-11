@@ -29,7 +29,6 @@ COMMENT=	Secure Internet Live Conferencing (SILC) network server
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-silcd-config-file=${PREFIX}/etc/${PORTNAME}/silcd.conf \
 		--with-etcdir=${PREFIX}/etc/${PORTNAME} \

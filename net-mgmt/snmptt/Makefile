@@ -22,7 +22,6 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/SNMP.pm:${PORTSDIR}/net-mgmt/net-snmp \
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}
 
 USE_PERL5=	yes
-USE_REINPLACE=	yes
 
 USE_RC_SUBR=	snmptt.sh
 

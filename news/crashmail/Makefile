@@ -21,7 +21,6 @@ ALL_TARGET=	linux
 
 USE_ZIP=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} \

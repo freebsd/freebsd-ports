@@ -17,7 +17,6 @@ COMMENT=	Cisco NetFlow awk-like extracting tool
 
 BUILD_DEPENDS=	flow-cat:${PORTSDIR}/net-mgmt/flow-tools
 
-USE_REINPLACE=	yes
 EXTRACT_AFTER_ARGS=	| ${CPIO} -idmu
 
 post-patch:	patch-makefile

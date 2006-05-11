@@ -14,7 +14,6 @@ MASTER_SITES=	http://w.ods.org/tools/haproxy/src/ \
 MAINTAINER=	clement@FreeBSD.org
 COMMENT=	High-performance and highly-robust TCP/HTTP load balancer
 
-USE_REINPLACE=	yes
 USE_RC_SUBR=	yes
 RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
 

@@ -17,7 +17,6 @@ COMMENT=	A flexible command-line Gnutella implementation with advanced features
 
 BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
 
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 MAKEFILES=	Makefile gui/Makefile src/Makefile
 HS_DOCDIR=	${PREFIX}/share/doc/${PORTNAME}

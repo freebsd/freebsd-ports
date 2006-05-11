@@ -17,7 +17,6 @@ COMMENT=	Highly configurable, secure and portable finger daemon
 
 CONFLICTS=	gnu-finger-1.*
 
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 .if !defined(WITHOUT_X11)
 USE_GNOME=	gtk12

@@ -19,7 +19,6 @@ LIB_DEPENDS=	socket[+][+].1:${PORTSDIR}/net/libsocket++
 
 USE_AUTOTOOLS=	automake:19 autoheader:259 autoconf:259
 USE_GETOPT_LONG=yes
-USE_REINPLACE=	yes
 AUTOMAKE_ARGS=	--add-missing
 CONFIGURE_ENV=	CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"

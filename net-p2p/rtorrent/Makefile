@@ -19,7 +19,6 @@ LIB_DEPENDS=	curl.3:${PORTSDIR}/ftp/curl		\
 MAN1=		rtorrent.1
 
 USE_GCC=	3.4
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-debug
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}

@@ -20,7 +20,6 @@ COMMENT=	A Qt GUI for the Direct Connect (TM) dctc text client
 RUN_DEPENDS=	dctc:${PORTSDIR}/net-p2p/dctc
 
 USE_QT_VER=	3
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 PLIST_FILES=	bin/dc_qt

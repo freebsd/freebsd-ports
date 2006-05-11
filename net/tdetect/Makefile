@@ -13,8 +13,6 @@ MASTER_SITES=	# disappeared
 MAINTAINER=	shipley@dis.org
 COMMENT=	Utility for detecting traceroutes and reporting them via syslog
 
-USE_REINPLACE=	yes
-
 .include <bsd.port.pre.mk>
 
 pre-configure:

@@ -18,7 +18,6 @@ COMMENT=	KDE Jabber Client
 USE_KDELIBS_VER=3
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 
 CONFIGURE_ARGS+=--with-extra-includes=${LOCALBASE}/include \
 		--x-includes=${X11BASE}/include \

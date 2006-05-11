@@ -17,7 +17,6 @@ COMMENT=	RDP client for Windows NT/2000/2003 Terminal Server
 
 USE_XLIB=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 DOCS=		doc/AUTHORS doc/TODO doc/*.txt

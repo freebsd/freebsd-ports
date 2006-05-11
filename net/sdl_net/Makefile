@@ -16,7 +16,6 @@ MAINTAINER=	krion@FreeBSD.org
 COMMENT=	A small sample cross-platform networking library
 
 USE_SDL=	sdl
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes

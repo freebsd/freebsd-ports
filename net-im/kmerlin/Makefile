@@ -19,7 +19,6 @@ COMMENT=	An IM (Instant Messenger) KDE client for the Microsoft MSN Network
 USE_KDELIBS_VER=3
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 
 CONFIGURE_ARGS+=	--prefix=${LOCALBASE}
 CONFIGURE_ENV=	LDFLAGS="${PTHREAD_LIBS}"

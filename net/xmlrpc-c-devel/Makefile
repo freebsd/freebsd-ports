@@ -22,7 +22,6 @@ RUN_DEPENDS=	${SITE_PERL}/Frontier/Client.pm:${PORTSDIR}/net/p5-Frontier-RPC
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
-USE_REINPLACE=	yes
 
 MAN1=	meerkat-app-list.1 xml-rpc-api2cpp.1 xmlrpc-c-config.1 \
 	query-meerkat.1 xml-rpc-api2txt.1

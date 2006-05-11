@@ -15,7 +15,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Half-Life game master server daemon
 
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 
 MAN1=		${PORTNAME}.1 ${PORTNAME}.gameserver.1 \
 		${PORTNAME}.filter.1 ${PORTNAME}.list.1

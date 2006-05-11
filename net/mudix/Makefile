@@ -15,7 +15,6 @@ COMMENT=	Ncurses-based MUD client with triggers, aliases, colors
 
 GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/mudix
-USE_REINPLACE=	yes
 ALL_TARGET=	# none
 
 pre-patch:
