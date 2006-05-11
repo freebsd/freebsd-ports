@@ -530,6 +530,7 @@ aswedit		ports/www/aswedit
 aswiki		ports/www/aswiki
 asymptote	ports/math/asymptote
 at-spi		ports/accessibility/at-spi
+at-spi-reference	ports/accessibility/at-spi-reference
 ataidle		ports/sysutils/ataidle
 atari800	ports/emulators/atari800
 aterm		ports/x11/aterm
