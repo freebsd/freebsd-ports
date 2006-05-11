@@ -363,6 +363,7 @@
     SUBDIR += linux-enemyterritory-etpub
     SUBDIR += linux-enemyterritory-fortress
     SUBDIR += linux-enemyterritory-jaymod
+    SUBDIR += linux-enemyterritory-shrub
     SUBDIR += linux-enemyterritory-tce
     SUBDIR += linux-goodway
     SUBDIR += linux-nwnclient
