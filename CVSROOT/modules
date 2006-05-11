@@ -3642,6 +3642,7 @@ gtick		ports/audio/gtick
 gtimer		ports/deskutils/gtimer
 gtk--		ports/x11-toolkits/gtk--
 gtk--2		ports/x11-toolkits/gtk--2
+gtk--2-reference	ports/x11-toolkits/gtk--2-reference
 gtk-Mac2-theme	ports/x11-themes/gtk-Mac2-theme
 gtk-aluminumalloy-cryogenic-theme	ports/x11-themes/gtk-aluminumalloy-cryogenic-theme
 gtk-aluminumalloy-smog-theme	ports/x11-themes/gtk-aluminumalloy-smog-theme
