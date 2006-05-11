@@ -7,14 +7,14 @@
 
 PORTNAME=	vips
 PORTVERSION=	7.10.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.vips.ecs.soton.ac.uk/vips-7.10/
 
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Free image processing system
 
-LIB_DEPENDS=	fftw3.3:${PORTSDIR}/math/fftw3 \
+LIB_DEPENDS=	fftw3.4:${PORTSDIR}/math/fftw3 \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		png.5:${PORTSDIR}/graphics/png \

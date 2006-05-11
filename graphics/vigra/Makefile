@@ -11,7 +11,7 @@
 
 PORTNAME=	vigra
 PORTVERSION=	1.3.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://kogs-www.informatik.uni-hamburg.de/~koethe/vigra/
 DISTNAME=	${PORTNAME}${PORTVERSION}

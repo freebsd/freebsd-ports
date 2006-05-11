@@ -6,6 +6,7 @@
 
 PORTNAME=	swhplugins
 PORTVERSION=	0.4.14
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://plugin.org.uk/releases/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTVERSION}
@@ -16,7 +17,7 @@ COMMENT=	Steve Harris' huge Collection of LADSPA Plugins
 
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa \
 		${LOCALBASE}/include/fftw3.h:${PORTSDIR}/math/fftw3
-LIB_DEPENDS=	fftw3f.3:${PORTSDIR}/math/fftw3-float
+LIB_DEPENDS=	fftw3f.4:${PORTSDIR}/math/fftw3-float
 
 # includes assembler code
 ONLY_FOR_ARCHS=	i386 amd64
