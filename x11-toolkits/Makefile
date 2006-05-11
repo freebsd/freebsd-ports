@@ -65,6 +65,7 @@
     SUBDIR += gtkglextmm
     SUBDIR += gtkmathview
     SUBDIR += gtkmm24
+    SUBDIR += gtkmm24-reference
     SUBDIR += gtkscintilla
     SUBDIR += gtksourceview
     SUBDIR += gtksourceview-reference
