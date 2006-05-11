@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	k9copy
-PORTVERSION=	1.0.3
-PORTREVISION=	1
+PORTVERSION=	1.0.4
 CATEGORIES=	multimedia kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -25,7 +24,6 @@ USE_AUTOTOOLS=	libtool:15
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 INSTALLS_SHLIB=	yes
-DOCSDIR=	${PREFIX}/share/doc/HTML/en/k9copy
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,-O2,,g ; \
@@ -33,10 +31,5 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's,$$(LIB_KDEUI),$$(LIB_KDEUI) $$(LIBPTHREAD) -lcam,g' \
 		${WRKSRC}/src/Makefile.in
-
-post-configure:
-.if defined(NOPORTDOCS)
-	@${REINPLACE_CMD} -e 's|doc libk3bdevice libk9copy po src|libk3bdevice libk9copy po src|g' ${WRKSRC}/Makefile
-.endif
 
 .include <bsd.port.mk>
