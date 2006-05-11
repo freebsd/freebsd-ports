@@ -1,0 +1,40 @@
+bin/et-etpub
+bin/etded-etpub
+%%DATADIR%%/%%CLIENT_PK3%%
+%%DATADIR%%/extra/PHP/xpsave/README.txt
+%%DATADIR%%/extra/PHP/xpsave/xpsave.php
+%%DATADIR%%/extra/PHP/xpsave/xpsave_table.php
+%%DATADIR%%/extra/paks/hiddenvo/README.txt
+%%DATADIR%%/extra/paks/hiddenvo/hiddenvo.pk3
+%%DATADIR%%/qagame.mp.i386.so
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.txt
+%%PORTDOCS%%%%DOCSDIR%%/Install.txt
+%%PORTDOCS%%%%DOCSDIR%%/Upgrade-0.6.txt
+%%PORTDOCS%%%%DOCSDIR%%/docs/Example/Commented/default.cfg
+%%PORTDOCS%%%%DOCSDIR%%/docs/Example/Commented/server.cfg
+%%PORTDOCS%%%%DOCSDIR%%/docs/Example/Commented/shrubbot.cfg
+%%PORTDOCS%%%%DOCSDIR%%/docs/Example/NoComments/default.cfg
+%%PORTDOCS%%%%DOCSDIR%%/docs/Example/NoComments/server.cfg
+%%PORTDOCS%%%%DOCSDIR%%/docs/Example/NoComments/shrubbot.cfg
+%%PORTDOCS%%%%DOCSDIR%%/docs/Example/mapscripts/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/docs/Example/mapscripts/stalingrad.script
+%%PORTDOCS%%%%DOCSDIR%%/docs/index.html
+%%PORTDOCS%%%%DOCSDIR%%/docs/index_de.html
+%%PORTDOCS%%%%DOCSDIR%%/docs/index_fr.html
+%%PORTDOCS%%%%DOCSDIR%%/docs/index_pub.html
+%%PORTDOCS%%%%DOCSDIR%%/docs/index_pub_de.html
+%%PORTDOCS%%%%DOCSDIR%%/docs/index_pub_fr.html
+%%PORTDOCS%%%%DOCSDIR%%/docs/obituaries.html
+%%PORTDOCS%%%%DOCSDIR%%/docs/obituaries_fr.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/Example/mapscripts
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/Example/NoComments
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/Example/Commented
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/Example
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%/extra/paks/hiddenvo
+@dirrm %%DATADIR%%/extra/paks
+@dirrm %%DATADIR%%/extra/PHP/xpsave
+@dirrm %%DATADIR%%/extra/PHP
+@dirrm %%DATADIR%%/extra
+@dirrm %%DATADIR%%
