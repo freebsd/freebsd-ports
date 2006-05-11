@@ -1,6 +1,14 @@
---- record.c.orig	Fri Nov 29 03:33:21 2002
-+++ record.c	Thu Sep  4 22:12:48 2003
-@@ -185,6 +185,10 @@
+--- record.c.orig	Sun Jan 22 00:40:17 2006
++++ record.c	Wed May 10 17:31:45 2006
+@@ -43,7 +43,6 @@
+   int rtn;		  /* For return values of pthread fctns. */
+   /* Maximum priority of FIFO thread.  Should always be rinitialized
+      elsewhere before use.  */
+-  int fifo_max_prio = 0;	  
+   void *au_th_ret;   	  /* Audio thread return pointer. */
+   void *fd_th_ret;	  /* File thread return pointer. */
+   sigset_t all_sigs;      /* Full set of all signals.  */
+@@ -183,6 +182,10 @@
  					  PTHREAD_CREATE_JOINABLE)) ) {
      err_die("BUG: pthread_attr_setdetachstate failed: %s\n", strerror(rtn));
    }
@@ -11,7 +19,7 @@
  #if defined (_POSIX_THREAD_PRIORITY_SCHEDULING) \
      && _POSIX_THREAD_PRIORITY_SCHEDULING != -1 \
      && _POSIX_THREAD_PRIORITY_SCHEDULING != 0
-@@ -204,12 +208,17 @@
+@@ -202,12 +205,17 @@
        err_die("BUG: pthread_attr_setscope failed: %s\n", strerror(rtn));
    }
  #endif
@@ -29,7 +37,7 @@
  #if defined (_POSIX_THREAD_PRIORITY_SCHEDULING) \
      && _POSIX_THREAD_PRIORITY_SCHEDULING != -1 \
      && _POSIX_THREAD_PRIORITY_SCHEDULING != 0
-@@ -227,6 +236,7 @@
+@@ -225,6 +233,7 @@
        err_die("BUG: pthread_attr_setscope failed: %s\n", strerror(rtn));
    }
  #endif
