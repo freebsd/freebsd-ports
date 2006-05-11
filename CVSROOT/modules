@@ -5655,6 +5655,7 @@ libgconf-java	ports/devel/libgconf-java
 libgcrypt	ports/security/libgcrypt
 libgda		ports/databases/libgda
 libgda2		ports/databases/libgda2
+libgda2-reference	ports/databases/libgda2-reference
 libgda3		ports/databases/libgda3
 libgdamm	ports/databases/libgdamm
 libgdgeda	ports/graphics/libgdgeda
