@@ -8,6 +8,7 @@
 
 PORTNAME=	abiword
 PORTVERSION=	2.4.4
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	http://www.abisource.com/downloads/%SUBDIR%/${PORTVERSION}/source/
 MASTER_SITE_SUBDIR=	abiword

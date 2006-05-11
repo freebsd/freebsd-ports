@@ -1,0 +1,12 @@
+diff -r -u abiword-2.4.4.orig/abi/src/af/xap/unix/xap_UnixDlg_FileOpenSaveAs.cpp abiword-2.4.4/abi/src/af/xap/unix/xap_UnixDlg_FileOpenSaveAs.cpp
+--- src/af/xap/unix/xap_UnixDlg_FileOpenSaveAs.cpp	2005-09-27 00:23:02.000000000 +0200
++++ src/af/xap/unix/xap_UnixDlg_FileOpenSaveAs.cpp	2006-05-08 01:17:00.000000000 +0200
+@@ -586,7 +586,7 @@
+ 									(!m_bSave ? GTK_FILE_CHOOSER_ACTION_OPEN : GTK_FILE_CHOOSER_ACTION_SAVE),
+ 									GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
+ 									GTK_STOCK_OK, GTK_RESPONSE_ACCEPT,
+-									NULL)
++									(gchar*)NULL)
+ 							);
+ #endif	
+ 
