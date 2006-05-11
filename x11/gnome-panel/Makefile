@@ -17,16 +17,22 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Panel component for the GNOME 2 Desktop
 
+USE_BZIP2=	yes
+PREFIX?=	${X11BASE}
+
+.if !defined(REFERENCE_PORT)
+
+PORTREVISION=	1
+
 RUN_DEPENDS=	gnome-menu-editor:${PORTSDIR}/deskutils/gnome-menu-editor
 
 USE_GETTEXT=	yes
-USE_BZIP2=	yes
 INSTALLS_OMF=	yes
 INSTALLS_SHLIB=	yes
 INSTALLS_ICONS=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack gnomedesktop \
-		libwnck gnomemenus gnomedocutils ltverhack
+		libwnck gnomemenus gnomedocutils ltverhack referencehack
 WANT_GNOME=	yes
 GNOME_DESKTOP_VERSION=2
 USE_GMAKE=	yes
@@ -66,3 +72,5 @@ post-patch:
 .endif
 
 .include <bsd.port.post.mk>
+
+.endif

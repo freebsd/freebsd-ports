@@ -74,6 +74,7 @@
     SUBDIR += gnomedesktop-reference
     SUBDIR += gnomelibs
     SUBDIR += gnomepanel
+    SUBDIR += gnomepanel-reference
     SUBDIR += gnomesession
     SUBDIR += gnometerminal
     SUBDIR += gpctool
