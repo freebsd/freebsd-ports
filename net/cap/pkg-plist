@@ -44,13 +44,6 @@ include/netat/compat.h
 include/netat/fcntldomv.h
 include/netat/macfile.h
 include/netat/sysvcompat.h
-man/man1/atpinger.1.gz
-man/man1/atlooklws.1.gz
-man/man1/tlw.1.gz
-man/man1/lwpr.1.gz
-man/man1/isrv.1.gz
-man/man1/iwpr.1.gz
-man/man1/cvt2cap.1.gz
 etc/cap/start-cap-servers.sample
 etc/cap/lib.cap.macusers.sample
 etc/cap/list-cap-servers.sample
@@ -63,36 +56,32 @@ lib/cap/LWIIfgFonts.sample
 lib/cap/LWPlusFonts.sample
 lib/cap/query.ps.sample
 lib/cap/afpvols.sample
-man/man3/libcap.3.gz
-man/man3/libafpc.3.gz
-man/man3/libafp.3.gz
-man/man8/papof.8.gz
-%%PORTDOCS%%share/doc/cap/abmisc.doc
-%%PORTDOCS%%share/doc/cap/asp.notes
-%%PORTDOCS%%share/doc/cap/atp.notes
-%%PORTDOCS%%share/doc/cap/cap.auth.doc
-%%PORTDOCS%%share/doc/cap/cap.notes
-%%PORTDOCS%%share/doc/cap/glossary
-%%PORTDOCS%%share/doc/cap/install.ms
-%%PORTDOCS%%share/doc/cap/iptalk.cookbook
-%%PORTDOCS%%share/doc/cap/nbp.ext
-%%PORTDOCS%%share/doc/cap/pap.notes
-%%PORTDOCS%%share/doc/cap/print.cookbook
-%%PORTDOCS%%share/doc/cap/sched.notes
-%%PORTDOCS%%share/doc/cap/uab.desc.ms
-%%PORTDOCS%%share/doc/cap/uar.cookbook
-%%PORTDOCS%%share/doc/cap/CAP.faq
-%%PORTDOCS%%share/doc/cap/CAP60.README
-%%PORTDOCS%%share/doc/cap/NOTICE
-%%PORTDOCS%%share/doc/cap/README
-%%PORTDOCS%%share/doc/cap/papif.README
-%%PORTDOCS%%share/doc/cap/lwsrv.README
-%%PORTDOCS%%share/doc/cap/aufs.README
-%%PORTDOCS%%share/doc/cap/doc.README
-%%PORTDOCS%%share/doc/cap/applications.README
-%%PORTDOCS%%share/doc/cap/uab.README
-%%PORTDOCS%%share/doc/cap/ethertalk.README
+%%PORTDOCS%%%%DOCSDIR%%/abmisc.doc
+%%PORTDOCS%%%%DOCSDIR%%/asp.notes
+%%PORTDOCS%%%%DOCSDIR%%/atp.notes
+%%PORTDOCS%%%%DOCSDIR%%/cap.auth.doc
+%%PORTDOCS%%%%DOCSDIR%%/cap.notes
+%%PORTDOCS%%%%DOCSDIR%%/glossary
+%%PORTDOCS%%%%DOCSDIR%%/install.ms
+%%PORTDOCS%%%%DOCSDIR%%/iptalk.cookbook
+%%PORTDOCS%%%%DOCSDIR%%/nbp.ext
+%%PORTDOCS%%%%DOCSDIR%%/pap.notes
+%%PORTDOCS%%%%DOCSDIR%%/print.cookbook
+%%PORTDOCS%%%%DOCSDIR%%/sched.notes
+%%PORTDOCS%%%%DOCSDIR%%/uab.desc.ms
+%%PORTDOCS%%%%DOCSDIR%%/uar.cookbook
+%%PORTDOCS%%%%DOCSDIR%%/CAP.faq
+%%PORTDOCS%%%%DOCSDIR%%/CAP60.README
+%%PORTDOCS%%%%DOCSDIR%%/NOTICE
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/papif.README
+%%PORTDOCS%%%%DOCSDIR%%/lwsrv.README
+%%PORTDOCS%%%%DOCSDIR%%/aufs.README
+%%PORTDOCS%%%%DOCSDIR%%/doc.README
+%%PORTDOCS%%%%DOCSDIR%%/applications.README
+%%PORTDOCS%%%%DOCSDIR%%/uab.README
+%%PORTDOCS%%%%DOCSDIR%%/ethertalk.README
 @dirrm include/netat
 @dirrm etc/cap
 @dirrm lib/cap
-%%PORTDOCS%%@dirrm share/doc/cap
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
