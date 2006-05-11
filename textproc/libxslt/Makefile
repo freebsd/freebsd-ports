@@ -7,7 +7,6 @@
 
 PORTNAME=	libxslt
 PORTVERSION=	1.1.16
-PORTREVISION?=	1
 CATEGORIES?=	textproc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.1
@@ -17,6 +16,11 @@ MAINTAINER?=	gnome@FreeBSD.org
 COMMENT?=	The XSLT C library for GNOME
 
 USE_BZIP2=	yes
+
+.if !defined(REFERENCE_PORT)
+
+PORTREVISION?=	2
+
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
@@ -60,8 +64,12 @@ pre-everything::
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} -e '/^install-data-am:/ s|install-data-local||' \
+		${WRKSRC}/doc/Makefile.in
 	@${REINPLACE_CMD} -e 's|[$$](bindir)/xsltproc|../xsltproc/xsltproc|g ; \
 		s|[$$](bindir)/xmllint|../xmllint/xmllint|g' \
 		${WRKSRC}/doc/Makefile.in
 
 .include <bsd.port.post.mk>
+
+.endif
