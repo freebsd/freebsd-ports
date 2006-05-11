@@ -247,6 +247,7 @@
     SUBDIR += libxml2-reference
     SUBDIR += libxode
     SUBDIR += libxslt
+    SUBDIR += libxslt-reference
     SUBDIR += link-grammar
     SUBDIR += linux-aspell
     SUBDIR += linux-expat
