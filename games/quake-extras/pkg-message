@@ -1,0 +1,10 @@
+==============================================================================
+
+quake-extras has been installed.
+
+To load a skybox type "loadsky <skybox>", where "<skybox>" can be one of
+"dmcw", "frozendust" and "snow2".
+
+Note that the lits are only for FuhQuake and JoeQuake.
+
+==============================================================================
