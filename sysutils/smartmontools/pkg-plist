@@ -2,7 +2,6 @@
 @unexec /bin/echo "===>" Stopping smartd ...
 @unexec /usr/bin/killall smartd 2>/dev/null || true
 etc/smartd.conf.sample
-etc/rc.d/smartd.sh
 sbin/smartctl
 sbin/smartd
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
