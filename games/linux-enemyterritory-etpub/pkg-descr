@@ -1,0 +1,12 @@
+ET Pub - An Enemy Territory Modification.
+
+Goals of ET Pub:
+
+* Be configuration compatible with shrubet (cvars AND shrubbot.cfg).
+* Match useful shrub features (e.g. Play Dead, Corpse Dragging, etc.).
+* Fix bugs.
+* Add features to try to imporve gameplay on public servers. (e.g. Active
+  Team Balance).
+
+WWW: http://et.tjw.org/etpub/
+WWW: http://www.etpub.org/

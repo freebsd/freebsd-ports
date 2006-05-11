@@ -360,6 +360,7 @@
     SUBDIR += linux-doom3-demo
     SUBDIR += linux-enemyterritory
     SUBDIR += linux-enemyterritory-etpro
+    SUBDIR += linux-enemyterritory-etpub
     SUBDIR += linux-enemyterritory-fortress
     SUBDIR += linux-enemyterritory-tce
     SUBDIR += linux-goodway
