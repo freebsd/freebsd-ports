@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	mmap
-PORTVERSION=	0.2.5
+PORTVERSION=	0.2.6
 CATEGORIES=	devel ruby
 MASTER_SITES=	ftp://moulon.inra.fr/pub/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Ruby interface to manage memory-mapped file objects
 
 USE_RUBY=	yes
