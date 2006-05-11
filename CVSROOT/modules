@@ -3730,6 +3730,7 @@ gtkradiant	ports/games/gtkradiant
 gtkscintilla	ports/x11-toolkits/gtkscintilla
 gtksee		ports/graphics/gtksee
 gtksourceview	ports/x11-toolkits/gtksourceview
+gtksourceview-reference	ports/x11-toolkits/gtksourceview-reference
 gtksourceview-sharp	ports/x11-toolkits/gtksourceview-sharp
 gtkspell2	ports/textproc/gtkspell2
 gtkspell2-reference	ports/textproc/gtkspell2-reference
