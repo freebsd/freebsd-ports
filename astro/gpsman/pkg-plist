@@ -396,9 +396,6 @@ share/gpsman/util/shape2quadr.tcl
 %%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc_61.html
 %%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc_62.html
 %%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc_63.html
-%%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc_64.html
-%%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc_65.html
-%%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc_66.html
 %%PORTDOCS%%%%DOCSDIR%%/html/backgr.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/blank.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/gpsman-logo-small.gif
