@@ -1,0 +1,49 @@
+bin/et-omni-bot
+bin/etded-omni-bot
+%%ETPUB%%@exec cd %D/%%DATADIR%%/etpub && mv qagame.mp.i386.so qagame.mp.i386.so.old
+%%ETPUB%%%%DATADIR%%/etpub/qagame.mp.i386.so
+%%ETPUB%%@unexec cd %D/%%DATADIR%%/etpub && mv qagame.mp.i386.so.old qagame.mp.i386.so
+%%ETPUB%%%%DATADIR%%/etpub/omnibot_etpub.pk3
+%%DATADIR%%/omni-bot/et/nav/et_custom_wps.zip
+%%DATADIR%%/omni-bot/et/nav/et_official_wps.zip
+%%DATADIR%%/omni-bot/et/scripts/def_bot.gm
+%%DATADIR%%/omni-bot/et/scripts/et_autoexec.gm
+%%DATADIR%%/omni-bot/et/scripts/sample.gm
+%%DATADIR%%/omni-bot/omnibot_et.pk3
+%%DATADIR%%/omni-bot/omnibot_et.so
+%%DATADIR%%/omni-bot/qagame.mp.i386.so
+%%PORTDOCS%%%%DOCSDIR%%/credits.txt
+%%PORTDOCS%%%%DOCSDIR%%/docs/english/Basic scripting Guide-Dateien/logo.png
+%%PORTDOCS%%%%DOCSDIR%%/docs/english/Basic scripting Guide.html
+%%PORTDOCS%%%%DOCSDIR%%/docs/english/Omni-bot Commands and Basic Usage-Dateien/logo.png
+%%PORTDOCS%%%%DOCSDIR%%/docs/english/Omni-bot Commands and Basic Usage.html
+%%PORTDOCS%%%%DOCSDIR%%/docs/english/Waypointing Tutorial-Dateien/logo.png
+%%PORTDOCS%%%%DOCSDIR%%/docs/english/Waypointing Tutorial-Dateien/wp_1waylink.jpg
+%%PORTDOCS%%%%DOCSDIR%%/docs/english/Waypointing Tutorial-Dateien/wp_2waylinks.jpg
+%%PORTDOCS%%%%DOCSDIR%%/docs/english/Waypointing Tutorial-Dateien/wp_basic.jpg
+%%PORTDOCS%%%%DOCSDIR%%/docs/english/Waypointing Tutorial.html
+%%PORTDOCS%%%%DOCSDIR%%/docs/german/Omni-bot Kommandos und grundlegende Funktionen-Dateien/logo.png
+%%PORTDOCS%%%%DOCSDIR%%/docs/german/Omni-bot Kommandos und grundlegende Funktionen.html
+%%PORTDOCS%%%%DOCSDIR%%/docs/german/Wegpunkte Tutorial-Dateien/logo.png
+%%PORTDOCS%%%%DOCSDIR%%/docs/german/Wegpunkte Tutorial-Dateien/wp_1waylink.jpg
+%%PORTDOCS%%%%DOCSDIR%%/docs/german/Wegpunkte Tutorial-Dateien/wp_2waylinks.jpg
+%%PORTDOCS%%%%DOCSDIR%%/docs/german/Wegpunkte Tutorial-Dateien/wp_basic.jpg
+%%PORTDOCS%%%%DOCSDIR%%/docs/german/Wegpunkte Tutorial.html
+%%PORTDOCS%%%%DOCSDIR%%/docs_changelog.txt
+%%PORTDOCS%%%%DOCSDIR%%/et_changelog.txt
+%%PORTDOCS%%%%DOCSDIR%%/etpub_changelog.txt
+%%PORTDOCS%%%%DOCSDIR%%/install.de.txt
+%%PORTDOCS%%%%DOCSDIR%%/install.en.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/german/Wegpunkte Tutorial-Dateien
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/german/Omni-bot Kommandos und grundlegende Funktionen-Dateien
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/german
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/english/Waypointing Tutorial-Dateien
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/english/Omni-bot Commands and Basic Usage-Dateien
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/english/Basic scripting Guide-Dateien
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/english
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%/omni-bot/et/scripts
+@dirrm %%DATADIR%%/omni-bot/et/nav
+@dirrm %%DATADIR%%/omni-bot/et
+@dirrm %%DATADIR%%/omni-bot
