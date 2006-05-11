@@ -1,0 +1,14 @@
+Jaymod is an add-on modification to RTCW: Enemy Territory.
+
+The idea for Jaymod came from the main features of Shrubmod. Shrubmod has
+long been out of date and unsupported, and with the instability issues that
+come with Shrubmod, something had to be done to get a Shrub-like server-side
+mod that would provide most of Shrub's features, be stable, and be supported.
+
+This mod has, obviously, outgrown the original objective of being server-side
+only. Some of the ideas I wanted to implement could not be done with server
+code only, so the decision was made to start working on the client end as
+well. I wanted this to be as easy as possible for end users, and now only one
+pak needs to be downloaded (on the fly) to be able to play this mod.
+
+WWW: http://jaymod.clanfu.org/
