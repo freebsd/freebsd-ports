@@ -15,14 +15,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	leeym@FreeBSD.org
 COMMENT=	Access the lines of a disk file via a Perl array
 
+BUILD_DEPENDS=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
+
 PERL_CONFIGURE=	yes
 
 MAN3=		Tie::File.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} > 500703
-IGNORE=		"This port is for perl 5.7.2 and under only."
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
