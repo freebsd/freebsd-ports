@@ -1,8 +1,8 @@
---- Makefile.in.orig	Tue Jan 10 12:21:14 2006
-+++ Makefile.in	Sat Jan 28 15:55:32 2006
-@@ -360,15 +360,7 @@
+--- Makefile.in.orig	Fri Apr 14 02:34:33 2006
++++ Makefile.in	Wed May 10 17:25:32 2006
+@@ -365,15 +365,7 @@
  EXTRA_DIST = INSTALL-SOURCE INSTALL-WIN-SOURCE \
- 			README COPYING EXCEPTIONS-CLIENT
+ 			README COPYING EXCEPTIONS-CLIENT cmakelists.txt
  
 -SUBDIRS = . include @docs_dirs@ @zlib_dir@ @yassl_dir@ \
 -			@readline_topdir@ sql-common \
@@ -12,7 +12,7 @@
 -			@mysql_se_plugins@ \
 -			netware @libmysqld_dirs@ \
 -			@bench_dirs@ support-files @tools_dirs@ \
--			plugin
+-			plugin win
 +SUBDIRS =
  
  DIST_SUBDIRS = . include @docs_dirs@ zlib \
