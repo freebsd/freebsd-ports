@@ -7,6 +7,7 @@
 
 PORTNAME=	pfw
 PORTVERSION=	0.7.2
+PORTREVISION=	1
 CATEGORIES=	security www
 MASTER_SITES=	http://www.allard.nu/pfw/download/
 EXTRACT_SUFX=	.tgz
@@ -18,7 +19,7 @@ RUN_DEPENDS=	sudo:${PORTSDIR}/security/sudo
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_PHP=	session	pcre sqlite
+USE_PHP=	session	pcre # sqlite
 WANT_PHP_WEB=	yes
 DEFAULT_PHP_VER=5
 BROKEN_WITH_PHP=4
@@ -37,6 +38,10 @@ PORTDOCS=	INSTALL README README_TEST
 .if ${OSVERSION} < 502105
 IGNORE=		pf is only in 5.x and newer
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -E 's,id=("theform"),name=\1 id=\1,' \
+		${WRKSRC}/include.inc.php
 
 do-install:
 	${MKDIR} ${PFW_PREFIX}
