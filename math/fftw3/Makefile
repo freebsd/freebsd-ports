@@ -3,13 +3,14 @@
 # Whom:			Lars Koeller <Lars.Koeller@Uni-Bielefeld.DE>
 #
 # $FreeBSD$
-#
+#    $MCom: ports-experimental/math/fftw3/Makefile,v 1.1 2006/03/28 00:08:57 ahze Exp $
 
 PORTNAME=	fftw3
-PORTVERSION=	3.0.1
-PORTREVISION?=	5
+PORTVERSION=	3.1.1
+PORTREVISION?=	0
 CATEGORIES=	math
-MASTER_SITES=	ftp://ftp.fftw.org/pub/fftw/old/
+MASTER_SITES=	ftp://ftp.fftw.org/pub/fftw/ 		\
+		http://www.fftw.org/
 PKGNAMESUFFIX=	${FFTW3_PKGNAMESUFFIX}
 DISTNAME=	fftw-${PORTVERSION}
 
@@ -20,12 +21,10 @@ COMMENT?=	Fast C routines to compute the Discrete Fourier Transform
 FFTW3_FLAVOR?=	default
 FFTW3_SUFX=
 
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_PERL5_BUILD=yes
 INSTALLS_SHLIB=	yes
-USE_LDOUBLE=	yes
 
 CONFIGURE_ARGS=	--enable-shared --enable-threads
 CONFIGURE_ENV=	CPPLAGS="${PTHREAD_CFLAGS}" \
@@ -60,7 +59,9 @@ USE_GCC=	3.4
 .endif
 .endif
 .if ${MACHINE_CPU:M3dnow}
+.if ${FFTW3_FLAVOR}!="float"
 CONFIGURE_ARGS+=--enable-k7
+.endif
 CFLAGS_3DNOW=	${CFLAGS:N-O:N-O*} -O3 -fomit-frame-pointer -fno-schedule-insns \
 		-fstrict-aliasing -mpreferred-stack-boundary=4 -ffast-math
 .if ${ARCH} != "amd64"
@@ -77,9 +78,7 @@ FFTW3_PKGNAMESUFFIX=	-float
 CONFIGURE_ARGS+=--enable-float
 .else
 .if ${FFTW3_FLAVOR}=="long"
-.if ${OSVERSION} < 504000 || defined(USE_LDOUBLE)
 LIB_DEPENDS+=	ml.0:${PORTSDIR}/math/ldouble
-.endif
 FFTW3_SUFX=	l
 FFTW3_PKGNAMESUFFIX=	-long
 CONFIGURE_ARGS+=--enable-long-double
@@ -112,10 +111,8 @@ post-patch:
 			${WRKSRC}/tools/Makefile.in
 .if ${FFTW3_FLAVOR}=="long"
 	@${REINPLACE_CMD} -e 's|cosl sinl tanl||' ${WRKSRC}/configure
-.if ${OSVERSION} < 504000 || defined(USE_LDOUBLE)
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -E -e \
 		's|@LIBS@|-lml @LIBS@|'
-.endif
 .endif
 .endif
 

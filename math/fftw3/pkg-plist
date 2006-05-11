@@ -4,8 +4,8 @@ bin/fftw%%FFTW3_SUFX%%-wisdom
 %%DEF%%include/fftw3.h
 lib/libfftw3%%FFTW3_SUFX%%.a
 lib/libfftw3%%FFTW3_SUFX%%.so
-lib/libfftw3%%FFTW3_SUFX%%.so.3
+lib/libfftw3%%FFTW3_SUFX%%.so.4
 lib/libfftw3%%FFTW3_SUFX%%_threads.a
 lib/libfftw3%%FFTW3_SUFX%%_threads.so
-lib/libfftw3%%FFTW3_SUFX%%_threads.so.3
+lib/libfftw3%%FFTW3_SUFX%%_threads.so.4
 libdata/pkgconfig/fftw3%%FFTW3_SUFX%%.pc
