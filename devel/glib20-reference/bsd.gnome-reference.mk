@@ -8,6 +8,9 @@ REFERENCE_PORT=	${PKGORIGIN:S|-reference$||}
 .if !defined(DOCSDIR)
 DOCSDIR:=	${PREFIX}/share/doc/${PORTNAME}
 .endif
+.if !defined(EXAMPLESDIR)
+EXAMPLESDIR:=	${PREFIX}/share/examples/${PORTNAME}
+.endif
 .if defined(DISTNAME)
 DISTNAME:=	${DISTNAME}
 .else
