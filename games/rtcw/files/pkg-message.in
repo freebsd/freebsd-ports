@@ -1,18 +1,16 @@
-============================================================
+==============================================================================
+
+Return to Castle Wolfenstein has been installed.
 
 To complete the installation of this port you need to copy
-the files "mp_pak0.pk3", "mp_pak1.pk3", "mp_pak2.pk3",
-"pak0.pk3", "sp_pak1.pk3" and "sp_pak2.pk3" (in the "main"
+the files "mp_pak0.pk3", "pak0.pk3", and "sp_pak1.pk3" (in the "main"
 subdirectory) from your RTCW distribution to
 "%%DATADIR%%/main".
 
 Below is the list of pk3 files, including their MD5 checksums:
 
 MD5 (%%DATADIR%%/main/mp_pak0.pk3) = 62641cffd9a8ad0f62cc1cca867d51f8
-MD5 (%%DATADIR%%/main/mp_pak1.pk3) = 22b972974f499a237c96a2200b0d019e
-MD5 (%%DATADIR%%/main/mp_pak2.pk3) = 30f29ffa81748a957e0441af8c14cb56
 MD5 (%%DATADIR%%/main/pak0.pk3) = ce92b11df889cb0a045762bb5fd7cde5
 MD5 (%%DATADIR%%/main/sp_pak1.pk3) = a0d3fe956f85f40c8efd6babe0d09832
-MD5 (%%DATADIR%%/main/sp_pak2.pk3) = 330b272d5261fe19fcf3c3fbc943c7f3
 
-============================================================
+==============================================================================
