@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dcd
-PORTVERSION=	0.5.9
+PORTVERSION=	0.6.5
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://www.dc.ds.pg.gda.pl/download/sources/stable/
 
@@ -15,7 +15,7 @@ COMMENT=	Direct Connect Hub clone for Unix
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
+USE_RC_SUBR=	dcd.sh
 
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" LDFLAGS="${PTHREAD_LIBS}"
 
@@ -29,10 +29,6 @@ SUB_FILES=	pkg-install pkg-deinstall
 SUB_LIST=	CONF_FILES="${CONF_FILES}" CONF_DIR="${PREFIX}/etc/dcd"
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		"Does not compile"
-.endif
 
 post-patch:
 .for f in dcd dcd.console
