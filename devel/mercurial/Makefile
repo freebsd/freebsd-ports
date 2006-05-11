@@ -52,6 +52,6 @@ post-install:
 	done
 	${MKDIR} ${WWWDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.cgi ${WWWDIR}
-        @${CAT} ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
