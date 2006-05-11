@@ -17,15 +17,23 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A text widget that adds syntax highlighting to the GtkTextView widget
 
 USE_BZIP2=	yes
+PREFIX?=	${X11BASE}
+
+.if !defined(REFERENCE_PORT)
+
+PORTREVISION=	1
+
 USE_GETTEXT=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
 USE_GNOME=	gnomeprefix gnomehack libgnome libgnomeprintui intlhack \
-		ltverhack
+		ltverhack referencehack
 CONFIGURE_ARGS=	--enable-compile-warnings=no
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -lgnuregex"
 
 .include <bsd.port.mk>
+
+.endif
