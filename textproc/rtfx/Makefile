@@ -17,7 +17,6 @@ LIB_DEPENDS=	sablot.70:${PORTSDIR}/textproc/sablotron
 
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 
 MAN1=		rtfx.1
 
