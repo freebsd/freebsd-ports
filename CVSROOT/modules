@@ -3722,6 +3722,7 @@ gtklife		ports/games/gtklife
 gtklp		ports/print/gtklp
 gtkmathview	ports/x11-toolkits/gtkmathview
 gtkmm24		ports/x11-toolkits/gtkmm24
+gtkmm24-reference	ports/x11-toolkits/gtkmm24-reference
 gtkmozedit	ports/devel/gtkmozedit
 gtkpasman	ports/security/gtkpasman
 gtkperf		ports/benchmarks/gtkperf
