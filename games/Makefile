@@ -223,6 +223,7 @@
     SUBDIR += glbsp
     SUBDIR += glchess
     SUBDIR += glest
+    SUBDIR += glest-data
     SUBDIR += glife
     SUBDIR += glmaze
     SUBDIR += glob2
