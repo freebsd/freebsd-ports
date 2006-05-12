@@ -6,7 +6,7 @@
 
 PORTNAME=	tinderbox
 PORTVERSION=	2.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	http://tinderbox.marcuscom.com/
 
@@ -22,7 +22,7 @@ OPTIONS=	PGSQL "With pgsql" On \
 		MYSQL "With mysql" Off
 
 NO_BUILD=	yes
-USE_APACHE=	yes
+USE_APACHE=	1.3+
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
@@ -43,7 +43,7 @@ RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-P
 .if defined(WITH_MYSQL)
 USE_PHP+=	mysql
 USE_MYSQL=	yes
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql${MYSQL_VER}
 .endif
 
 .include "${PORTSDIR}/Mk/bsd.php.mk"
@@ -52,6 +52,13 @@ post-extract:
 .for f in inc_ds.php inc_tinderbox.php
 	${MV} ${WRKSRC}/www-exp/${f} ${WRKSRC}/www-exp/${f}-dist
 .endfor
+
+post-patch:
+.if defined(WITH_MYSQL)
+	${REINPLACE_CMD} \
+		-e 's,DB_MAN_PREREQS=.*,DB_MAN_PREREQS="databases/p5-DBD-mysql${MYSQL_VER} databases/mysql${MYSQL_VER}-client",' \
+		${WRKSRC}/lib/setup-mysql.sh
+.endif
 
 do-install:
 	${MKDIR} ${PREFIX}/tinderbox/scripts
