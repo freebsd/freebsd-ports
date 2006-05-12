@@ -129,6 +129,7 @@
 %%KRONOLITHDIR%%/scripts/sql/kronolith.sql
 %%KRONOLITHDIR%%/scripts/upgrades/1.1_to_2.0.mysql.sql
 %%KRONOLITHDIR%%/scripts/upgrades/1.1_to_2.0.pgsql.sql
+%%KRONOLITHDIR%%/scripts/upgrades/1.1_to_2.0.oci8.sql
 %%KRONOLITHDIR%%/scripts/upgrades/2004-05-19_convert_categories_to_strings.php
 %%KRONOLITHDIR%%/scripts/upgrades/2004-12-21_add_event_uid.pgsql.sql
 %%KRONOLITHDIR%%/scripts/upgrades/2004-12-21_add_event_uid.sql
