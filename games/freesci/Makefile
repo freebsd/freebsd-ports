@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	freesci
-PORTVERSION=	0.3.4c
+PORTVERSION=	0.3.5
 CATEGORIES=	games emulators
-MASTER_SITES=	${MASTER_SITE_SAVANNAH} \
+MASTER_SITES=	http://www-plan.cs.colorado.edu/creichen/${PORTNAME}/ \
 		http://teksolv.de/~jameson/
 MASTER_SITE_SUBDIR=${PORTNAME}/stable.pkg/${PORTVERSION}
 
@@ -24,6 +24,12 @@ CONFIGURE_TARGET=
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}"
 
 MAN6=	freesci-tools.6 freesci.6
+
+OPTIONS=	CONSOLE		 "With console support"			off \
+		SDL		 "With SDL support"			off \
+		GGI		 "With GGI support"			off \
+		DIRECTFB	 "With DirectFB support"		off \
+		OPTIMIZED_CFLAGS "Build with code optimizations"	off
 
 .include <bsd.port.pre.mk>
 
@@ -69,23 +75,6 @@ LIB_DEPENDS+=	ggi.2:${PORTSDIR}/graphics/libggi
 CONFIGURE_ARGS+=	--with-ggi-dir=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--without-ggi
-.endif
-
-pre-everything::
-.if !defined(WITH_CONSOLE)
-	@${ECHO_MSG} "Define WITH_CONSOLE to build console support"
-.endif
-.if !defined(WITH_SDL)
-	@${ECHO_MSG} "Define WITH_SDL to build with SDL support"
-.endif
-.if !defined(WITH_GGI)
-	@${ECHO_MSG} "Define WITH_GGI to build with GGI support"
-.endif
-.if !defined(WITH_DIRECTFB)
-	@${ECHO_MSG} "Define WITH_DIRECTFB to build with DirectFB support"
-.endif
-.if !defined(WITH_OPTIMIZED_CFLAGS)
-	@${ECHO_MSG} "Define WITH_OPTIMIZED_CFLAGS to build with extra optimizations"
 .endif
 
 pre-configure:
