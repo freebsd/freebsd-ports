@@ -22,9 +22,11 @@ USB Cameras based SPCA5xx Utilities for NetBSD
 	0x0923  0x010f  WEB Camera PBC0006(persol)
 	0x093a  0x2468  Trust WB-1400T [Trying..., but nobody is testing, help!]
 	0x0ac8	0x301b  LOAS MCM-H06SL
+        0x0ac8  0x301b  Sandberg Nightvision
 	0x0c45	0x6005	Generic webcam based SN9C101
 	0x0c45  0x6025  LOAS MCM-S02SL
 	0x0c45	0x6029  Raccoon AM-ST3
+        0x0c45  0x602e  Genius Messenger
 	0xabcd	0xcdee	SIGMA-APO Petcam
 
 WWW: http://www.medias.ne.jp/~takam/bsd/NetBSD.html#spca561
