@@ -1,0 +1,47 @@
+--- src/blog_lj.c.orig	25 Jun 2005 16:19:28 -0000	1.27
++++ src/blog_lj.c	28 Feb 2006 16:41:41 -0000
+@@ -826,6 +826,11 @@
+ 		
+ 		for (j = 0; j < prop_count; j++)
+ 		{
++			g_snprintf (key, 32, "prop_%d_itemid", j + 1);
++			mesg = drivel_request_value_lookup (dr, key);
++			if (strcmp(mesg,itemid[i])!=0)
++				continue;
++
+ 			g_snprintf (key, 32, "prop_%d_name", j + 1);
+ 			mesg = drivel_request_value_lookup (dr, key);
+ 
+@@ -869,28 +874,28 @@
+ 			{
+ 				prop = journal_prop_new ();
+ 				prop->name = g_strdup ("music");
+-				prop->value = g_strdup (picture[i]);
++				prop->value = g_strdup (music[i]);
+ 				g_array_append_val (entry->properties, prop);
+ 			}
+ 			if (mood[i])
+ 			{
+ 				prop = journal_prop_new ();
+ 				prop->name = g_strdup ("mood");
+-				prop->value = g_strdup (picture[i]);
++				prop->value = g_strdup (mood[i]);
+ 				g_array_append_val (entry->properties, prop);
+ 			}
+ 			if (comments[i])
+ 			{
+ 				prop = journal_prop_new ();
+ 				prop->name = g_strdup ("comments");
+-				prop->value = g_strdup (picture[i]);
++				prop->value = g_strdup (comments[i]);
+ 				g_array_append_val (entry->properties, prop);
+ 			}
+ 			if (autoformat[i])
+ 			{
+ 				prop = journal_prop_new ();
+ 				prop->name = g_strdup ("autoformat");
+-				prop->value = g_strdup (picture[i]);
++				prop->value = g_strdup (autoformat[i]);
+ 				g_array_append_val (entry->properties, prop);
+ 			}
+ 			prop = journal_prop_new ();
