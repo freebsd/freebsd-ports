@@ -7358,6 +7358,7 @@ ocaml-jabbr	ports/net-im/ocaml-jabbr
 ocaml-lablgl	ports/graphics/ocaml-lablgl
 ocaml-lablgtk	ports/x11-toolkits/ocaml-lablgtk
 ocaml-lablgtk2	ports/x11-toolkits/ocaml-lablgtk2
+ocaml-magic	ports/devel/ocaml-magic
 ocaml-mode.el	ports/lang/ocaml-mode.el
 ocaml-net	ports/www/ocaml-net
 ocaml-netclient	ports/net/ocaml-netclient
