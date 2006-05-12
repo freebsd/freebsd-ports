@@ -7,7 +7,7 @@
 
 PORTNAME=	pfw
 PORTVERSION=	0.7.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security www
 MASTER_SITES=	http://www.allard.nu/pfw/download/
 EXTRACT_SUFX=	.tgz
@@ -19,7 +19,7 @@ RUN_DEPENDS=	sudo:${PORTSDIR}/security/sudo
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_PHP=	session	pcre # sqlite
+USE_PHP=	session	pcre sqlite
 WANT_PHP_WEB=	yes
 DEFAULT_PHP_VER=5
 BROKEN_WITH_PHP=4
