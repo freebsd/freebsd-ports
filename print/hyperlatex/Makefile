@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Hyperlatex
-PORTVERSION=	2.7
+DISTVERSION=	2.8b
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=hyperlatex
@@ -14,12 +14,12 @@ MASTER_SITE_SUBDIR=hyperlatex
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Produce HTML and printed documents from LaTeX source
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-2.8
 BUILD_DEPENDS=	emacs:${PORTSDIR}/editors/emacs
 RUN_DEPENDS=	emacs:${PORTSDIR}/editors/emacs \
 		latex:${PORTSDIR}/print/teTeX \
 		ppmtogif:${PORTSDIR}/graphics/netpbm
 
-USE_REINPLACE=	yes
 LATEX_DIR=	${PREFIX}/share/texmf/tex/latex/hyperlatex
 HYPERLATEX_DIR=	${PREFIX}/share/hyperlatex
 
