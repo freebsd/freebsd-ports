@@ -1,0 +1,11 @@
+--- LDAP.schema.orig	Thu May 11 12:49:37 2006
++++ LDAP.schema    Thu May 11 12:50:50 2006
+@@ -406,7 +406,7 @@
+         amavisWarnBadHeaderRecip $ amavisVirusAdmin $ amavisNewVirusAdmin $
+         amavisSpamAdmin $ amavisBannedAdmin $ amavisBadHeaderAdmin $
+         amavisBannedRuleNames $
+-        amavisSpamDsnCutoffLevel $ amavisSpamSubjectTag $
++        amavisSpamDsnCutoffLevel $ amavisSpamQuarantineCutoffLevel $
+         amavisSpamSubjectTag $ amavisSpamSubjectTag2 $
+         cn $ description ) )
+ 

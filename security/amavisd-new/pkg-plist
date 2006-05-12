@@ -9,6 +9,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/README.chroot
 %%PORTDOCS%%%%DOCSDIR%%/README.contributed
 %%PORTDOCS%%%%DOCSDIR%%/README.courier
+%%PORTDOCS%%%%DOCSDIR%%/README.courier-old
 %%PORTDOCS%%%%DOCSDIR%%/README.customize
 %%PORTDOCS%%%%DOCSDIR%%/README.exim_v3
 %%PORTDOCS%%%%DOCSDIR%%/README.exim_v3_app
