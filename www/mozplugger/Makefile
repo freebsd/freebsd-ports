@@ -8,7 +8,8 @@
 PORTNAME=	mozplugger
 PORTVERSION=	1.7.3
 CATEGORIES=	www
-MASTER_SITES=	http://download.mozdev.org/mozplugger/
+MASTER_SITES=	${MASTER_SITE_MOZDEV}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	lorenl@alzatex.com
 COMMENT=	Framework for loading web content in external viewers
