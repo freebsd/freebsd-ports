@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rxtx
-PORTVERSION=	2.1.7p17
+PORTVERSION=	2.1.7r2
 CATEGORIES=	comms java
 MASTER_SITES=	ftp://jarvi.dsl.frii.com/pub/rxtx/
 PKGNAMESUFFIX=	-${JAVA_PORT:S/java\///}
@@ -15,8 +15,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.([^\.]*)$/-\1/:S/p/pre/}
 MAINTAINER=	jb.quenot@caraldi.com
 COMMENT=	Native interface to serial ports in Java
 
-BROKEN=		Does not compile
-
+USE_ZIP=	yes
 USE_GMAKE=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.2+
