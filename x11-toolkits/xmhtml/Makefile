@@ -7,9 +7,9 @@
 
 PORTNAME=	XmHTML
 PORTVERSION=	1.1.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-toolkits www
-MASTER_SITES=	http://www.xs4all.nl/~ripley/XmHTML/dist/
+MASTER_SITES=	${MASTER_SITE_NETBSD}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Motif widget set for displaying HTML 3.2 documents
@@ -38,7 +38,6 @@ post-build:
 do-install:
 	${LIBTOOL} --mode=install ${INSTALL_DATA} \
 		${WRKSRC}/lib/libXmHTML.la ${PREFIX}/lib
-	${RM} -f ${PREFIX}/lib/libXmHTML.la
 	@${MKDIR} ${PREFIX}/include/XmHTML
 	${INSTALL_DATA} ${WRKSRC}/include/XmHTML/*.h ${PREFIX}/include/XmHTML
 .if !defined(NOPORTDOCS)
