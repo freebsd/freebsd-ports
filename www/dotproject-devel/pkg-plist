@@ -2,6 +2,7 @@ www/dotproject/COPYING
 www/dotproject/ChangeLog
 www/dotproject/LICENSE
 www/dotproject/README
+www/dotproject/base.php
 www/dotproject/classes/CustomFields.class.php
 www/dotproject/classes/authenticator.class.php
 www/dotproject/classes/customfieldsparser.class.php
@@ -18,6 +19,7 @@ www/dotproject/db/dotproject.sql
 www/dotproject/db/index.html
 www/dotproject/db/upgrade_101_to_102.sql
 www/dotproject/db/upgrade_102_to_20alpha.sql
+www/dotproject/db/upgrade_201_to_202.sql
 www/dotproject/db/upgrade_20_to_201.sql
 www/dotproject/db/upgrade_20alpha_to_20beta.sql
 www/dotproject/db/upgrade_20beta_to_20.sql
@@ -28,14 +30,8 @@ www/dotproject/db/upgrade_latest.sql
 www/dotproject/db/upgrade_permissions.php
 www/dotproject/db/upgrade_to_20.php
 www/dotproject/db/upgrade_to_201.php
+www/dotproject/db/upgrade_to_202.php
 www/dotproject/db/upgrade_to_20beta.php
-www/dotproject/docs/about.html
-www/dotproject/docs/check.php
-www/dotproject/docs/index.html
-www/dotproject/docs/main.css
-www/dotproject/docs/nav.html
-www/dotproject/docs/phpinfo.php
-www/dotproject/docs/rfc0001.00.html
 www/dotproject/files/.cvsignore
 www/dotproject/files/.htaccess
 www/dotproject/files/index.html
@@ -50,6 +46,7 @@ www/dotproject/functions/projects_func.php
 www/dotproject/functions/tasks_func.php
 www/dotproject/images/arrow-down.gif
 www/dotproject/images/arrow-right.gif
+www/dotproject/images/arrow-up.gif
 www/dotproject/images/block-end-16.png
 www/dotproject/images/block-start-16.png
 www/dotproject/images/calendar.gif
@@ -142,8 +139,16 @@ www/dotproject/includes/sendpass.php
 www/dotproject/includes/session.php
 www/dotproject/includes/version.php
 www/dotproject/index.php
+www/dotproject/install/check_upgrade.php
 www/dotproject/install/db.php
 www/dotproject/install/do_install_db.php
+www/dotproject/install/docs/about.html
+www/dotproject/install/docs/check.php
+www/dotproject/install/docs/index.html
+www/dotproject/install/docs/main.css
+www/dotproject/install/docs/nav.html
+www/dotproject/install/docs/phpinfo.php
+www/dotproject/install/docs/rfc0001.00.html
 www/dotproject/install/dp.png
 www/dotproject/install/index.php
 www/dotproject/install/install.inc.php
@@ -186,9 +191,11 @@ www/dotproject/lib/adodb/datadict/datadict-mssql.inc.php
 www/dotproject/lib/adodb/datadict/datadict-mysql.inc.php
 www/dotproject/lib/adodb/datadict/datadict-oci8.inc.php
 www/dotproject/lib/adodb/datadict/datadict-postgres.inc.php
+www/dotproject/lib/adodb/datadict/datadict-sapdb.inc.php
 www/dotproject/lib/adodb/datadict/datadict-sybase.inc.php
 www/dotproject/lib/adodb/docs/docs-adodb.htm
 www/dotproject/lib/adodb/docs/docs-datadict.htm
+www/dotproject/lib/adodb/docs/docs-oracle.htm
 www/dotproject/lib/adodb/docs/docs-perf.htm
 www/dotproject/lib/adodb/docs/docs-session.htm
 www/dotproject/lib/adodb/docs/old-changelog.htm
@@ -197,6 +204,7 @@ www/dotproject/lib/adodb/docs/tips_portable_sql.htm
 www/dotproject/lib/adodb/docs/tute.htm
 www/dotproject/lib/adodb/drivers/adodb-access.inc.php
 www/dotproject/lib/adodb/drivers/adodb-ado.inc.php
+www/dotproject/lib/adodb/drivers/adodb-ado5.inc.php
 www/dotproject/lib/adodb/drivers/adodb-ado_access.inc.php
 www/dotproject/lib/adodb/drivers/adodb-ado_mssql.inc.php
 www/dotproject/lib/adodb/drivers/adodb-borland_ibase.inc.php
@@ -218,31 +226,42 @@ www/dotproject/lib/adodb/drivers/adodb-oci8.inc.php
 www/dotproject/lib/adodb/drivers/adodb-oci805.inc.php
 www/dotproject/lib/adodb/drivers/adodb-oci8po.inc.php
 www/dotproject/lib/adodb/drivers/adodb-odbc.inc.php
+www/dotproject/lib/adodb/drivers/adodb-odbc_db2.inc.php
 www/dotproject/lib/adodb/drivers/adodb-odbc_mssql.inc.php
 www/dotproject/lib/adodb/drivers/adodb-odbc_oracle.inc.php
 www/dotproject/lib/adodb/drivers/adodb-odbtp.inc.php
 www/dotproject/lib/adodb/drivers/adodb-odbtp_unicode.inc.php
 www/dotproject/lib/adodb/drivers/adodb-oracle.inc.php
 www/dotproject/lib/adodb/drivers/adodb-pdo.inc.php
+www/dotproject/lib/adodb/drivers/adodb-pdo_mssql.inc.php
+www/dotproject/lib/adodb/drivers/adodb-pdo_mysql.inc.php
+www/dotproject/lib/adodb/drivers/adodb-pdo_oci.inc.php
+www/dotproject/lib/adodb/drivers/adodb-pdo_pgsql.inc.php
 www/dotproject/lib/adodb/drivers/adodb-postgres.inc.php
 www/dotproject/lib/adodb/drivers/adodb-postgres64.inc.php
 www/dotproject/lib/adodb/drivers/adodb-postgres7.inc.php
+www/dotproject/lib/adodb/drivers/adodb-postgres8.inc.php
 www/dotproject/lib/adodb/drivers/adodb-proxy.inc.php
 www/dotproject/lib/adodb/drivers/adodb-sapdb.inc.php
 www/dotproject/lib/adodb/drivers/adodb-sqlanywhere.inc.php
 www/dotproject/lib/adodb/drivers/adodb-sqlite.inc.php
 www/dotproject/lib/adodb/drivers/adodb-sqlitepo.inc.php
 www/dotproject/lib/adodb/drivers/adodb-sybase.inc.php
+www/dotproject/lib/adodb/drivers/adodb-sybase_ase.inc.php
 www/dotproject/lib/adodb/drivers/adodb-vfp.inc.php
+www/dotproject/lib/adodb/lang/adodb-ar.inc.php
 www/dotproject/lib/adodb/lang/adodb-bg.inc.php
 www/dotproject/lib/adodb/lang/adodb-bgutf8.inc.php
 www/dotproject/lib/adodb/lang/adodb-ca.inc.php
 www/dotproject/lib/adodb/lang/adodb-cn.inc.php
 www/dotproject/lib/adodb/lang/adodb-cz.inc.php
+www/dotproject/lib/adodb/lang/adodb-da.inc.php
 www/dotproject/lib/adodb/lang/adodb-de.inc.php
 www/dotproject/lib/adodb/lang/adodb-en.inc.php
 www/dotproject/lib/adodb/lang/adodb-es.inc.php
+www/dotproject/lib/adodb/lang/adodb-esperanto.inc.php
 www/dotproject/lib/adodb/lang/adodb-fr.inc.php
+www/dotproject/lib/adodb/lang/adodb-hu.inc.php
 www/dotproject/lib/adodb/lang/adodb-it.inc.php
 www/dotproject/lib/adodb/lang/adodb-nl.inc.php
 www/dotproject/lib/adodb/lang/adodb-pl.inc.php
@@ -250,6 +269,7 @@ www/dotproject/lib/adodb/lang/adodb-pt-br.inc.php
 www/dotproject/lib/adodb/lang/adodb-ro.inc.php
 www/dotproject/lib/adodb/lang/adodb-ru1251.inc.php
 www/dotproject/lib/adodb/lang/adodb-sv.inc.php
+www/dotproject/lib/adodb/lang/adodb-uk1251.inc.php
 www/dotproject/lib/adodb/license.txt
 www/dotproject/lib/adodb/pear/Auth/Container/ADOdb.php
 www/dotproject/lib/adodb/pear/readme.Auth.txt
@@ -269,6 +289,7 @@ www/dotproject/lib/adodb/session/adodb-cryptsession.php
 www/dotproject/lib/adodb/session/adodb-encrypt-mcrypt.php
 www/dotproject/lib/adodb/session/adodb-encrypt-md5.php
 www/dotproject/lib/adodb/session/adodb-encrypt-secret.php
+www/dotproject/lib/adodb/session/adodb-encrypt-sha1.php
 www/dotproject/lib/adodb/session/adodb-sess.txt
 www/dotproject/lib/adodb/session/adodb-session-clob.php
 www/dotproject/lib/adodb/session/adodb-session.php
@@ -280,9 +301,12 @@ www/dotproject/lib/adodb/session/old/adodb-cryptsession.php
 www/dotproject/lib/adodb/session/old/adodb-session-clob.php
 www/dotproject/lib/adodb/session/old/adodb-session.php
 www/dotproject/lib/adodb/session/old/crypt.inc.php
+www/dotproject/lib/adodb/session/session_schema.xml
 www/dotproject/lib/adodb/tests/benchmark.php
+www/dotproject/lib/adodb/tests/cf~testsessions.php
 www/dotproject/lib/adodb/tests/client.php
 www/dotproject/lib/adodb/tests/pdo.php
+www/dotproject/lib/adodb/tests/rr.htm
 www/dotproject/lib/adodb/tests/test-datadict.php
 www/dotproject/lib/adodb/tests/test-perf.php
 www/dotproject/lib/adodb/tests/test-pgblob.php
@@ -305,12 +329,14 @@ www/dotproject/lib/adodb/tests/testpear.php
 www/dotproject/lib/adodb/tests/testsessions.php
 www/dotproject/lib/adodb/tests/time.php
 www/dotproject/lib/adodb/tests/tmssql.php
+www/dotproject/lib/adodb/tests/xmlschema-mssql.xml
 www/dotproject/lib/adodb/tests/xmlschema.xml
 www/dotproject/lib/adodb/toexport.inc.php
 www/dotproject/lib/adodb/tohtml.inc.php
 www/dotproject/lib/adodb/xmlschema.dtd
 www/dotproject/lib/adodb/xsl/convert-0.1-0.2.xsl
 www/dotproject/lib/adodb/xsl/convert-0.2-0.1.xsl
+www/dotproject/lib/adodb/xsl/remove-0.2.xsl
 www/dotproject/lib/calendar/README
 www/dotproject/lib/calendar/calendar-dp.css
 www/dotproject/lib/calendar/calendar.js
@@ -354,6 +380,7 @@ www/dotproject/lib/jpgraph/src/jpgraph_pie.php
 www/dotproject/lib/jpgraph/src/jpgraph_pie3d.php
 www/dotproject/lib/jpgraph/src/jpgraph_plotband.php
 www/dotproject/lib/jpgraph/src/jpgraph_plotmark.inc
+www/dotproject/lib/jpgraph/src/lang/en.inc.php
 www/dotproject/lib/phpgacl/AUTHORS
 www/dotproject/lib/phpgacl/CHANGELOG
 www/dotproject/lib/phpgacl/COPYING.lib
@@ -554,7 +581,6 @@ www/dotproject/modules/admin/vw_inactive_usr.php
 www/dotproject/modules/admin/vw_usr.php
 www/dotproject/modules/admin/vw_usr_log.php
 www/dotproject/modules/admin/vw_usr_perms.php
-www/dotproject/modules/admin/vw_usr_proj.php
 www/dotproject/modules/admin/vw_usr_roles.php
 www/dotproject/modules/calendar/addedit.php
 www/dotproject/modules/calendar/calendar.class.php
@@ -649,7 +675,19 @@ www/dotproject/modules/history/projects_tab.history.php
 www/dotproject/modules/history/setup.php
 www/dotproject/modules/index.html
 www/dotproject/modules/install/images/control-center.png
+www/dotproject/modules/links/addedit.php
+www/dotproject/modules/links/do_link_aed.php
+www/dotproject/modules/links/images/folder5.png
+www/dotproject/modules/links/index.html
+www/dotproject/modules/links/index.php
+www/dotproject/modules/links/index_table.php
+www/dotproject/modules/links/links.class.php
+www/dotproject/modules/links/projects_tab.links.php
+www/dotproject/modules/links/setup.php
+www/dotproject/modules/links/tasks_tab.links.php
 www/dotproject/modules/projects/addedit.php
+www/dotproject/modules/projects/admin_tab.viewuser.projects.php
+www/dotproject/modules/projects/admin_tab.viewuser.projects_gantt.php
 www/dotproject/modules/projects/do_project_aed.php
 www/dotproject/modules/projects/gantt.php
 www/dotproject/modules/projects/gantt2.php
@@ -881,6 +919,7 @@ www/dotproject/style/dp-grey-theme/tabSelectedBg.png
 www/dotproject/style/dp-grey-theme/tabSelectedLeft.png
 www/dotproject/style/dp-grey-theme/tabSelectedRight.png
 www/dotproject/style/index.html
+
 @dirrm www/dotproject/style/dp-grey-theme/images/obj
 @dirrm www/dotproject/style/dp-grey-theme/images
 @dirrm www/dotproject/style/dp-grey-theme
@@ -905,6 +944,8 @@ www/dotproject/style/index.html
 @dirrm www/dotproject/modules/projects/reports
 @dirrm www/dotproject/modules/projects/images
 @dirrm www/dotproject/modules/projects
+@dirrm www/dotproject/modules/links/images
+@dirrm www/dotproject/modules/links
 @dirrm www/dotproject/modules/install/images
 @dirrm www/dotproject/modules/install
 @dirrm www/dotproject/modules/history/images
@@ -949,6 +990,7 @@ www/dotproject/style/index.html
 @dirrm www/dotproject/lib/phpgacl/admin
 @dirrm www/dotproject/lib/phpgacl/Cache_Lite
 @dirrm www/dotproject/lib/phpgacl
+@dirrm www/dotproject/lib/jpgraph/src/lang
 @dirrm www/dotproject/lib/jpgraph/src
 @dirrm www/dotproject/lib/jpgraph
 @dirrm www/dotproject/lib/ezpdf/fonts
@@ -974,6 +1016,7 @@ www/dotproject/style/index.html
 @dirrm www/dotproject/lib/PEAR
 @dirrm www/dotproject/lib
 @dirrm www/dotproject/js
+@dirrm www/dotproject/install/docs
 @dirrm www/dotproject/install
 @dirrm www/dotproject/includes
 @dirrm www/dotproject/images/obj
@@ -982,7 +1025,6 @@ www/dotproject/style/index.html
 @dirrm www/dotproject/functions
 @dirrm www/dotproject/files/temp
 @dirrm www/dotproject/files
-@dirrm www/dotproject/docs
 @dirrm www/dotproject/db
 @dirrm www/dotproject/classes
 @dirrm www/dotproject
