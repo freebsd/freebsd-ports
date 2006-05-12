@@ -5,4 +5,4 @@ sbin/postgreyreport
 etc/rc.d/postgrey.sh
 etc/postfix/dist-postgrey_whitelist_recipients
 etc/postfix/dist-postgrey_whitelist_clients
-@dirrmtry etc/postfix 
+@dirrmtry etc/postfix

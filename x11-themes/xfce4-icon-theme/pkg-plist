@@ -1225,7 +1225,7 @@ share/xfce4/mime/Rodent.mime.xml
 @dirrm share/icons/Rodent/scalable/apps
 @dirrm share/icons/Rodent/scalable/devices
 @dirrm share/icons/Rodent/scalable/emblems
-@dirrm share/icons/Rodent/scalable/filesystems   
+@dirrm share/icons/Rodent/scalable/filesystems
 @dirrm share/icons/Rodent/scalable/mimetypes
 @dirrm share/icons/Rodent/scalable/misc
 @dirrm share/icons/Rodent/scalable/stock

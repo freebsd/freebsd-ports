@@ -2800,10 +2800,10 @@
 @dirrm %%T%%/webapps/xgate/WEB-INF/classes/com
 @dirrm %%T%%/webapps/xgate/WEB-INF/classes
 @dirrm %%T%%/webapps/xgate/META-INF
-@dirrmtry %%T%%/webapps/xgate/WEB-INF/conf   
+@dirrmtry %%T%%/webapps/xgate/WEB-INF/conf
 @dirrmtry %%T%%/webapps/xgate/WEB-INF/address
 @dirrmtry %%T%%/webapps/xgate/WEB-INF/account
-@dirrmtry %%T%%/webapps/xgate/WEB-INF        
-@dirrmtry %%T%%/webapps/xgate                
+@dirrmtry %%T%%/webapps/xgate/WEB-INF
+@dirrmtry %%T%%/webapps/xgate
 @unexec rmdir /var/log/xgate                         2>/dev/null || true
 @exec   install -d -o %%WWWUID%% -g %%WWWGID%% /var/log/xgate

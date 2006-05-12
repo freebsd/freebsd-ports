@@ -4,4 +4,4 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/RC6/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/RC6
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Crypt     
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Crypt
