@@ -1,0 +1,135 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: fetchmail
+# REQUIRE: mail
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable fetchmail:
+#
+# fetchmail_enable="YES"
+#
+# There are two modes:
+#
+#  * Single system-wide fetchmail daemon:
+#    - It is run as user `fetchmail_user' (default: fetchmail)
+#    - All configuration is contained in one global file
+#      `fetchmail_config' (default: %%PREFIX/etc/fetchmailrc),
+#      that must be owned by `fetchmail_user' (mode 700)
+#    - The fetchmail daemon awakes to fetch mail every 
+#      `fetchmail_polling_interval' seconds (default: 900).
+#
+#  * Per-user daemon
+#    - Users for which a fetchmail daemon is to be started must be
+#      listed in `fetchmail_users', e.g. fetchmail_users="user1 user2"
+#    - The config files for the individual users must be located at
+#      ${fetchmail_home_prefix}/${user}/${fetchmail_config_name}. The
+#      default for `fetchmail_home_prefix' is "/home", and that for
+#      `fetchmail_config_name' is ".fetchmailrc".
+#    - Note that "${fetchmail_home_prefix}/${user}" must be writable
+#      for ${user} since it is used to store the per-user PID files!
+#    - There are user-specific versions of `fetchmail_config' and
+#      `fetchmail_polling_interval' that can be used to override the
+#      defaults, i.e. for the user `user1' there are variables
+#      `fetchmail_user1_config' and `fetchmail_user1_polling_interval'
+#    - All commands (e.g. start, stop, awaken (see below)) can be either
+#      passed to all instances of the daemon (if %%PREFIX/etc/rc.d/fetchmail)
+#      is run as root), or just to the instance belonging to the respective
+#      user.
+#
+# Extra commands:
+#
+#  * `awaken': Sends a signal to the daemon(s) to check for new mail
+#     immediately
+
+. /etc/rc.subr
+
+name=fetchmail
+rcvar=`set_rcvar`
+
+command=%%PREFIX%%/bin/${name}
+pidfile=/var/run/${name}.pid
+extra_commands="awaken"
+awaken_cmd="fetchmail_awaken"
+
+# read settings, set default values
+load_rc_config "$name"
+: ${fetchmail_enable="NO"}
+: ${fetchmail_config="%%PREFIX%%/etc/fetchmailrc"}
+: ${fetchmail_polling_interval="900"}
+: ${fetchmail_home_prefix="/home"}
+: ${fetchmail_config_name=".fetchmailrc"}
+
+# send signal to fetchmail process(es) to check for new mail immediately
+fetchmail_awaken()
+{
+	if [ $rc_pid ]; then
+		echo "Forcing fetchmail to check mailbox(es)..."
+		kill -USR1 $rc_pid
+	else
+		echo "$name not running? (check $pidfile)"
+	fi
+
+	return
+}
+
+if [ -n "$2" ]; then
+	# perform action for an instance of fetchmail daemon
+        user="$2"
+        if [ "x${fetchmail_users}" != "x" -o "x$3" = "xGLOBALCONFIG"  ]; then
+		if [ "x${fetchmail_users}" != "x" ]; then
+			# multiuser setup:  determine user specific config and pid file
+			eval fetchmail_config="\${fetchmail_${user}_config:-${fetchmail_home_prefix}/${user}}/${fetchmail_config_name}"
+			eval pidfile="${fetchmail_home_prefix}/${user}/.fetchmail.pid"
+			eval fetchmail_user=$user
+		else
+			eval fetchmail_user=fetchmail
+			eval pidfile=/var/run/fetchmail/fetchmail.pid
+		fi
+		required_files=${fetchmail_config}
+		eval fetchmail_polling_interval="\${fetchmail_${user}_polling_interval:-${fetchmail_polling_interval}}"
+		fetchmail_flags="-f ${fetchmail_config} \
+				--pidfile ${pidfile} \
+				-d ${fetchmail_polling_interval} \
+				--syslog"
+        else
+                echo "$0: extra argument ignored"
+        fi
+else
+	uid=`id -u`
+        if [ "x${fetchmail_users}" != "x" -a "x$1" != "x" -a "$uid" = "0" ]; then
+		# root mode: multiple user profiles are handled by recursive
+		# calls of this script
+		for user in ${fetchmail_users}; do
+			echo "===> fetchmail user: ${user}"
+			%%PREFIX%%/etc/rc.d/fetchmail $1 ${user}
+			retcode="$?"
+			if [ "0${retcode}" -ne 0 ]; then
+				failed="${user} (${retcode}) ${failed:-}"
+			else
+				success="${user} ${success:-}"
+			fi
+		done
+		exit 0
+	else
+		if [ "x${fetchmail_users}" = "x" ]; then
+			# There is only one global configuration file
+			globalconfig=GLOBALCONFIG
+		fi
+		%%PREFIX%%/etc/rc.d/fetchmail $1 `id -u -n` $globalconfig
+		retcode="$?"
+		if [ "0${retcode}" -ne 0 ]; then
+			failed="${user} (${retcode}) ${failed:-}"
+		else
+			success="${user} ${success:-}"
+		fi
+		exit 0
+        fi
+fi
+
+# actually execute the fetchmail program
+run_rc_command "$1"
