@@ -14,30 +14,30 @@ lib/libfcgi.a
 lib/libfcgi.la
 lib/libfcgi.so
 lib/libfcgi.so.0
-%%PORTDOCS%%share/doc/fcgi/fastcgi-prog-guide/ap_guida.htm
-%%PORTDOCS%%share/doc/fcgi/fastcgi-prog-guide/ap_guide.htm
-%%PORTDOCS%%share/doc/fcgi/fastcgi-prog-guide/apaman.htm
-%%PORTDOCS%%share/doc/fcgi/fastcgi-prog-guide/ch1inta1.gif
-%%PORTDOCS%%share/doc/fcgi/fastcgi-prog-guide/ch1intra.gif
-%%PORTDOCS%%share/doc/fcgi/fastcgi-prog-guide/ch1intro.htm
-%%PORTDOCS%%share/doc/fcgi/fastcgi-prog-guide/ch2c.htm
-%%PORTDOCS%%share/doc/fcgi/fastcgi-prog-guide/ch3perl.htm
-%%PORTDOCS%%share/doc/fcgi/fastcgi-prog-guide/ch4tcl.htm
-%%PORTDOCS%%share/doc/fcgi/fastcgi-prog-guide/cover.htm
-%%PORTDOCS%%share/doc/fcgi/fastcgi-prog-guide/covera.gif
-%%PORTDOCS%%share/doc/fcgi/fastcgi-whitepaper/fastcgi.htm
-%%PORTDOCS%%share/doc/fcgi/fastcgi-whitepaper/img00001.gif
-%%PORTDOCS%%share/doc/fcgi/fastcgi-whitepaper/img00002.gif
-%%PORTDOCS%%share/doc/fcgi/fastcgi-whitepaper/img00003.gif
-%%PORTDOCS%%share/doc/fcgi/fcgi-devel-kit.htm
-%%PORTDOCS%%share/doc/fcgi/fcgi-java.htm
-%%PORTDOCS%%share/doc/fcgi/fcgi-perf.htm
-%%PORTDOCS%%share/doc/fcgi/fcgi-perl.htm
-%%PORTDOCS%%share/doc/fcgi/fcgi-spec.html
-%%PORTDOCS%%share/doc/fcgi/fcgi-tcl.htm
-%%PORTDOCS%%share/doc/fcgi/omi-logo.gif
-%%PORTDOCS%%share/doc/fcgi/overview.html
-%%PORTDOCS%%share/doc/fcgi/www5-api-workshop.html
-%%PORTDOCS%%@dirrm share/doc/fcgi/fastcgi-prog-guide
-%%PORTDOCS%%@dirrm share/doc/fcgi/fastcgi-whitepaper
-%%PORTDOCS%%@dirrm share/doc/fcgi
+%%PORTDOCS%%%%DOCSDIR%%/fastcgi-prog-guide/ap_guida.htm
+%%PORTDOCS%%%%DOCSDIR%%/fastcgi-prog-guide/ap_guide.htm
+%%PORTDOCS%%%%DOCSDIR%%/fastcgi-prog-guide/apaman.htm
+%%PORTDOCS%%%%DOCSDIR%%/fastcgi-prog-guide/ch1inta1.gif
+%%PORTDOCS%%%%DOCSDIR%%/fastcgi-prog-guide/ch1intra.gif
+%%PORTDOCS%%%%DOCSDIR%%/fastcgi-prog-guide/ch1intro.htm
+%%PORTDOCS%%%%DOCSDIR%%/fastcgi-prog-guide/ch2c.htm
+%%PORTDOCS%%%%DOCSDIR%%/fastcgi-prog-guide/ch3perl.htm
+%%PORTDOCS%%%%DOCSDIR%%/fastcgi-prog-guide/ch4tcl.htm
+%%PORTDOCS%%%%DOCSDIR%%/fastcgi-prog-guide/cover.htm
+%%PORTDOCS%%%%DOCSDIR%%/fastcgi-prog-guide/covera.gif
+%%PORTDOCS%%%%DOCSDIR%%/fastcgi-whitepaper/fastcgi.htm
+%%PORTDOCS%%%%DOCSDIR%%/fastcgi-whitepaper/img00001.gif
+%%PORTDOCS%%%%DOCSDIR%%/fastcgi-whitepaper/img00002.gif
+%%PORTDOCS%%%%DOCSDIR%%/fastcgi-whitepaper/img00003.gif
+%%PORTDOCS%%%%DOCSDIR%%/fcgi-devel-kit.htm
+%%PORTDOCS%%%%DOCSDIR%%/fcgi-java.htm
+%%PORTDOCS%%%%DOCSDIR%%/fcgi-perf.htm
+%%PORTDOCS%%%%DOCSDIR%%/fcgi-perl.htm
+%%PORTDOCS%%%%DOCSDIR%%/fcgi-spec.html
+%%PORTDOCS%%%%DOCSDIR%%/fcgi-tcl.htm
+%%PORTDOCS%%%%DOCSDIR%%/omi-logo.gif
+%%PORTDOCS%%%%DOCSDIR%%/overview.html
+%%PORTDOCS%%%%DOCSDIR%%/www5-api-workshop.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/fastcgi-prog-guide
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/fastcgi-whitepaper
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
