@@ -36,6 +36,9 @@
 %%PYTHON_SITELIBDIR%%/penguintv/UpdateTasksManager.pyc
 %%PYTHON_SITELIBDIR%%/penguintv/__init__.py
 %%PYTHON_SITELIBDIR%%/penguintv/__init__.pyc
+%%PYTHON_SITELIBDIR%%/penguintv/democracy_moz/__init__.py
+%%PYTHON_SITELIBDIR%%/penguintv/democracy_moz/__init__.pyc
+%%PYTHON_SITELIBDIR%%/penguintv/democracy_moz/MozillaBrowser.so
 %%PYTHON_SITELIBDIR%%/penguintv/feedparser.py
 %%PYTHON_SITELIBDIR%%/penguintv/feedparser.pyc
 %%PYTHON_SITELIBDIR%%/penguintv/penguintv.py
@@ -117,6 +120,7 @@ share/pixmaps/penguintvicon.png
 @dirrmtry share/applications
 @dirrm share/penguintv
 @dirrm %%PYTHON_SITELIBDIR%%/penguintv/ptvbittorrent
+@dirrm %%PYTHON_SITELIBDIR%%/penguintv/democracy_moz
 @dirrm %%PYTHON_SITELIBDIR%%/penguintv
 
 @cwd %%X11BASE%%
