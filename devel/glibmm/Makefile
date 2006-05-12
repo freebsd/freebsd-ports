@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	glibmm
-PORTVERSION=	2.10.1
+PORTVERSION=	2.10.2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -19,8 +19,6 @@ COMMENT=	C++ interfaces for glib2
 USE_BZIP2=	yes
 
 .if !defined(REFERENCE_PORT)
-
-PORTREVISION=	1
 
 LIB_DEPENDS=	sigc-2.0.0:${PORTSDIR}/devel/libsigc++20
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
