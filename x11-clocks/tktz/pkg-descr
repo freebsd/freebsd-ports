@@ -1,0 +1,7 @@
+tktz will help you to guess the current time in another country. It
+reads special timezone description file (/usr/share/zoneinfo/zone.tab)
+and shows you a list of the countries and zone name for each entry.
+
+WWW: http://gromnizki.unixdev.net
+
+- Alexander Gromnizki
