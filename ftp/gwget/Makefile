@@ -19,11 +19,12 @@ RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack gnomeprefix intlhack libgnomeui gconf2
+USE_GNOME=	gnomehack gnomeprefix intlhack libgnomeui libbonobo gconf2
 GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes
 USE_GETTEXT=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LIBBONOBO_IDL="-I${LOCALBASE}/idl/bonobo-2.0" \
 		LDFLAGS="-Wl,-export-dynamic -L${LOCALBASE}/lib"
 
 GCONF_SCHEMAS=	gwget.schemas
