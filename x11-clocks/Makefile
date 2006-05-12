@@ -34,6 +34,7 @@
     SUBDIR += swisswatch
     SUBDIR += t3d
     SUBDIR += tclock
+    SUBDIR += tktz
     SUBDIR += washerdryer
     SUBDIR += wmbday
     SUBDIR += wmbinclock
