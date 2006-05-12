@@ -7,6 +7,7 @@
 
 PORTNAME=	pdnsd
 PORTVERSION=	1.2.4
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	http://www.phys.uu.nl/~rombouts/pdnsd/releases/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-par
@@ -16,7 +17,8 @@ COMMENT=	Caching (permanently, writes to disk on exit) DNS proxy-server
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-CONFIGURE_ARGS=	--with-cachedir=${PDNSDB}
+CONFIGURE_ARGS=	--with-cachedir=${PDNSDB} \
+		--disable-src-addr-disc
 
 OPTIONS=	IPV6	"Enable IPv6 support"	on
 
