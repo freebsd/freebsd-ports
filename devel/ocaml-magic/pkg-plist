@@ -1,0 +1,6 @@
+lib/ocaml/magic.cmi
+lib/ocaml/magic.cmxa
+lib/ocaml/magic.mli
+lib/ocaml/stublibs/dllmagic_stub.so
+@dirrmtry lib/ocaml/stublibs
+@dirrmtry lib/ocaml
