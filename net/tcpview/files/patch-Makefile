@@ -9,7 +9,7 @@
 -INCLUDES = -I..
 -LIB =
 +DEFINES = -DCSLIP -DPPP
-+CCOPT = 
++CCOPT = -O0
 +INCLUDES = -I.. -I$(X11BASE)/include
 +LIB =-ll
  
