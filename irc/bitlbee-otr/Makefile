@@ -55,9 +55,6 @@ USE_OPENLDAP=	yes
 CONFIGURE_ARGS+=--ldap=${LOCALBASE}
 .endif
 
-post-build:
-	@${CAT} pkg-message | ${SED} -e 's|%%PREFIX%%|${PREFIX}|' > ${PKGMESSAGE}
-
 pre-install:
 	@${MKDIR} -m 700 ${PREFIX}/etc/bitlbee
 
