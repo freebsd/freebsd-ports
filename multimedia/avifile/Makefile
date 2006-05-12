@@ -7,6 +7,7 @@
 
 PORTNAME=	avifile
 PORTVERSION=	0.7.43
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -274,6 +275,9 @@ post-patch:
 	@${REINPLACE_CMD} -E \
 		-e 's|^(pkgconfigdir).*|\1=${PREFIX}/libdata/pkgconfig|' \
 		${WRKSRC}/Makefile.in
+# fix pkg-config DB entry, we don't version the include directory
+	@${REINPLACE_CMD} -E -e \
+		'/^includedir/s|-[0-9.]+$$||' ${WRKSRC}/avifile.pc.in
 # do not install man page for v4l
 	@${REINPLACE_CMD} -E \
 		-e 's|kv4lsetup.1||' ${WRKSRC}/doc/Makefile.in
