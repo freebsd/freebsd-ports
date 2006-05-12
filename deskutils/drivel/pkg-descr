@@ -1,7 +1,15 @@
-Drivel the livejournal client for Gnome. 
+Drivel is a GNOME client for working with online journals, also known as
+weblogs or simply blogs. It retains a simple and elegant design while providing
+many powerful features, including:
 
-Its purpose is to retain a simple and elegant design while providing the
-same level of functionality as the offical LiveJournal clients. Drivel also
-integrates tightly with the GNOME Desktop technologies.
+    * Support for LiveJournal, Blogger, MovableType, Advogato, and Atom
+      journals (systems based off these are also supported, including WordPress
+      and Drupal)
+    * The ability to post, edit, delete, and view recent entries
+    * Integrated spellchecking and HTML syntax highlighting
+    * Offline composition and editing
+    * Automatic recovery in the event of a crash
+    * Journal system extensions, including LiveJournal security groups and
+      MovableType categories
 
 WWW: http://www.dropline.net/drivel/

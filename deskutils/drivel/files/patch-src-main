@@ -1,0 +1,11 @@
+--- src/main.c.orig	30 Aug 2005 17:46:19 -0000	1.60
++++ src/main.c	6 Mar 2006 17:05:44 -0000
+@@ -253,7 +253,7 @@
+ 	{
+ 		c = g_utf8_get_char_validated (p, -1);
+ 
+-		if (!g_unichar_isalnum (c) && c != '_' && c!= '-')
++		if (!g_unichar_isalnum (c) && c != '_' && c!= '-' && c!='@' && c!='.')
+ 		{
+ 			retval = FALSE;
+ 			break;
