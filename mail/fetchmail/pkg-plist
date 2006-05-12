@@ -23,3 +23,10 @@ libexec/fetchmailconf.py
 %%NLS%%share/locale/pl/LC_MESSAGES/fetchmail.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/fetchmail.mo
 %%NLS%%share/locale/sq/LC_MESSAGES/fetchmail.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/fetchmail.mo
+@unexec if cmp -s %D/etc/fetchmailrc.sample %D/etc/fetchmailrc; then rm -f %D/etc/fetchmailrc; fi
+etc/fetchmailrc.sample
+@exec if [ ! -f %D/etc/fetchmailrc ] ; then cp -p %D/%F %B/fetchmailrc; fi
+@cwd /
+@unexec rm -f /var/run/fetchmail/fetchmail.pid 2>/dev/null || true
+@dirrm /var/run/fetchmail

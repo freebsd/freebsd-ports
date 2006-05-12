@@ -10,8 +10,7 @@
 # want fetchmailconf to work, define WITH_X11
 
 PORTNAME=	fetchmail
-PORTVERSION=	6.3.2
-PORTREVISION=	1
+PORTVERSION=	6.3.4
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://download.berlios.de/%SUBDIR%/ \
 		http://home.pages.de/~mandree/%SUBDIR%/ \
@@ -22,6 +21,9 @@ MAINTAINER=	barner@FreeBSD.org
 COMMENT=	Batch mail retrieval utility for IMAP/POP2/POP3/ETRN/ODMR
 
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root.crt:${PORTSDIR}/security/ca-roots
+
+USE_RC_SUBR=	fetchmail
+FETCHMAILRC=	${PREFIX}/etc//fetchmailrc
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -98,6 +100,9 @@ pre-configure:
 	@${ECHO_CMD} "You can use -DWITHOUT_NLS to suppress national language support (NLS)."
 .endif
 
+pre-install:
+	@${SETENV} ${SCRIPTS_ENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+
 post-install:
 .if !defined(NOPORTDOCS)
 	${INSTALL} -d -m 555 -o ${DOCOWN} -g ${DOCGRP} ${DOCSDIR}
@@ -106,5 +111,10 @@ post-install:
 
 	${INSTALL_SCRIPT} ${WRKDIR}/fetchmailconf ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/fetchmailconf.py ${PREFIX}/libexec
+	${INSTALL} -d -m 755 -o fetchmail -g fetchmail /var/run/fetchmail
+	${INSTALL} -m 644 -o fetchmail -g fetchmail ${FILESDIR}/fetchmailrc.sample ${PREFIX}/etc/fetchmailrc.sample
+	if [ ! -f ${PREFIX}/etc/fetchmailrc ]; then \
+	        ${CP} -p ${PREFIX}/etc/fetchmailrc.sample ${PREFIX}/etc/fetchmailrc ; \
+	fi
 
 .include <bsd.port.post.mk>

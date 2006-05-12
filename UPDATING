@@ -6,6 +6,20 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20060512:
+  AFFECTS: users of mail/fetchmail
+  AUTHOR:  barner@FreeBSD.org
+
+  Fetchmail now has a rcNG script. It supports two modes:
+
+   - one fetchmail instance per user: Set the `fetchmail_users'
+     variable to a list of users for which you want to start
+     fetchmail.
+   - a global system wide daemon (runs per default as user
+     `fetchmail')
+
+  See $PREFIX/etc/rc.d/fetchmail for details.
+
 20060509:
   AFFECTS: users of net-im/sulci
   AUTHOR:  Denis Shaposhnikov <dsh@vlink.ru>
