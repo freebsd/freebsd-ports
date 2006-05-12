@@ -6,6 +6,7 @@
 
 PORTNAME=	sip
 PORTVERSION=	4.4.3
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.riverbankcomputing.com/Downloads/sip4/ \
 		http://freebsd.ricin.com/ports/distfiles/
@@ -15,19 +16,15 @@ DISTNAME=	sip-${PORTVERSION}
 MAINTAINER=	danny@ricin.com
 COMMENT=	Python to C and C++ bindings generator
 
-BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
-
 USE_PYTHON=	yes
 
 OPTIONS=	DEBUG "Build with debugging symbols" off \
-		DOCS "Install documentation" on \
-		QT "Enable Qt support" on
+		DOCS "Install documentation" on
 
 DATADIR=	${PREFIX}/share/py-${PORTNAME}
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 
-SPEC=		${LOCALBASE}/share/qt/mkspecs/freebsd-g++
 ARGS=		-b ${PREFIX}/bin -d ${PYTHONPREFIX_SITELIBDIR} \
 		-e ${PYTHONPREFIX_INCLUDEDIR} -v ${DATADIR}
 
@@ -41,16 +38,9 @@ PLIST_SUB+=	DOCS=""
 .if defined(WITH_DEBUG)
 ARGS+=		-u
 .endif
-.if defined(WITHOUT_QT)
-ARGS+=		-x
-.else
-BUILD_DEPENDS+=	moc:${PORTSDIR}/x11-toolkits/qt33
-RUN_DEPENDS+=	moc:${PORTSDIR}/x11-toolkits/qt33
-.endif
 
 do-configure:
-	( cd ${WRKSRC} && ${SETENV} QTDIR=${X11BASE} QMAKESPEC=${SPEC} \
-		${PYTHON_CMD} configure.py ${ARGS} )
+	( cd ${WRKSRC} && ${PYTHON_CMD} configure.py ${ARGS} )
 
 post-install:
 .if !defined(NOPORTDOCS) && !defined(WITHOUT_DOCS)
