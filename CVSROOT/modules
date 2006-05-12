@@ -3107,6 +3107,7 @@ gld		ports/mail/gld
 gle		ports/graphics/gle
 glean		ports/graphics/glean
 glest		ports/games/glest
+glest		ports/games/glest-data
 glew		ports/graphics/glew
 glflow		ports/net/glflow
 glfw		ports/graphics/glfw
