@@ -48,7 +48,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/*.txt ${DOCSDIR}
 	${MKDIR} ${CONTRIBDIR}
 	for f in ${CONTRIB_FILES}; do \
-		${CP} -p ${WRKSRC}/contrib/$${f} ${CONTRIBDIR} \
+		${CP} -p ${WRKSRC}/contrib/$${f} ${CONTRIBDIR}; \
 	done
 	${MKDIR} ${WWWDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.cgi ${WWWDIR}
