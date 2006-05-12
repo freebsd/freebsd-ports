@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libtasn1
-PORTVERSION=	0.3.1
+PORTVERSION=	0.3.4
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.gnutls.org/pub/gnutls/libtasn1/ \
 		http://josefsson.org/gnutls/releases/libtasn1/
@@ -24,6 +24,9 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 DOCS=		AUTHORS NEWS README THANKS doc/TODO \
 		doc/libtasn1.html doc/libtasn1.pdf doc/libtasn1.ps
 INFO=		libtasn1
+MAN1=		asn1Parser.1 \
+		asn1Coding.1 \
+		asn1Decoding.1
 MAN3=		\
 		asn1_array2tree.3 \
 		asn1_bit_der.3 \
