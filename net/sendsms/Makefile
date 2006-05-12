@@ -2,19 +2,18 @@
 # Date created:				2005-12-17
 # Whom:			Ion-Mihai "IOnut" Tetcu <itetcu@people.tecnik93.com>
 #
+# $Tecnik: ports/www/sendsms/Makefile,v 1.3 2006/05/12 12:15:34 itetcu Exp $
 # $FreeBSD$
-#
-# $Tecnik: ports/www/sendsms/Makefile,v 1.1 2005/12/17 03:27:10 itetcu Exp $
 
 PORTNAME=	sendsms
-PORTVERSION=	0.2.3
+PORTVERSION=	0.2.4
 CATEGORIES=	net perl5
 MASTER_SITES=	http://caspian.dotconf.net/menu/Software/SendSMS/ \
-		http://people.tecnik93.com/~itetcu/FreeBSD/ports/${PORTNAME}/sources/
+		http://sce-tindy.tecnik93.com/FreeBSD/ports/${PORTNAME}/sources/
 DISTNAME=	sendSMS.pl
 EXTRACT_SUFX=	.gz
 
-MAINTAINER=	itetcu@people.tecnik93.com
+MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	Simple perl command-line utility to send SMS via from on provider site
 
 EXTRACT_AFTER_ARGS=	> ${WRKSRC}/${PORTNAME}
@@ -25,7 +24,7 @@ CONFLICTS=	smstools-[0-9]*
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
-USE_PERL5_RUN=	yes
+USE_PERL5=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,/usr/bin/perl,${PERL},g" ${WRKSRC}/${PORTNAME}

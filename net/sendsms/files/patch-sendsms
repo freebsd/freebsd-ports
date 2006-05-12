@@ -1,0 +1,19 @@
+--- ./sendsms.orig	Fri May 12 14:38:58 2006
++++ ./sendsms	Fri May 12 14:40:33 2006
+@@ -400,6 +400,16 @@
+   'formDataString'    => 'txtNum=$$receiver&txtFrom=$$sender&txtMessage=$$messageBody'
+ );
+ 
++### Verizon Dominicana service parameters:
++%VERIZONDOMINICANA = (
++  'remoteHostName'    => '64.32.115.70',
++  'HTTPRequestMethod' => 'POST',
++  'HTTPRequestString' => '/Portal/Gen3Sync/WISSMS.asp',
++  'HTTPReferer'       => 'http://www1.datamovil.net.do/',
++  'HTTPCookie'        => '',
++  'successString'     => 'Su mensaje fue enviado',
++  'formDataString'    => 'min=$$receiver&msg=$$messageBody&totalCounter=160',
++);
+ 
+ 
+ # Check to be sure we know how to send to the selected service provider...
