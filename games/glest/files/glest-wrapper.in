@@ -1,7 +1,4 @@
 #!/bin/sh
 
-# Prevent et from resetting unsafe settings to their default value (see
-# http://www.splashdamage.com/forums/viewtopic.php?t=3883&highlight=pid).
-
 cd %%PREFIX%%/lib/glest || exit 1
 exec ./glest "$@"
