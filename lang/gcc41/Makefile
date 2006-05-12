@@ -182,7 +182,7 @@ post-install:
 
 cklatest:
 .for SITE in ftp://gcc.gnu.org/pub/gcc/snapshots/
-	@-ncftpls -l ${SITE} | ${GREP} 'LATEST.*4\.1'
+	@-ncftpls -l ${SITE} | ${GREP} "LATEST.*${PORTVERSION:C/.[0-9]+$//}"
 .endfor
 
 .include <bsd.port.post.mk>
