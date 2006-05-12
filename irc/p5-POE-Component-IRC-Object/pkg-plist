@@ -2,7 +2,7 @@
 %%SITE_PERL%%/POE/Component/IRC/Object.pm
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/IRC/Object
 @dirrmtry %%SITE_PERL%%/POE/Component/IRC
-@dirrmtry %%SITE_PERL%%/POE/Component 
+@dirrmtry %%SITE_PERL%%/POE/Component
 @dirrmtry %%SITE_PERL%%/POE
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE
 %%PORTDOCS%%%%EXAMPLESDIR%%/elizabot.pl

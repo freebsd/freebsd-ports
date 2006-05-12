@@ -39,4 +39,4 @@ usr/include/oracle/%%PORTVERSION%%/client/xa.h
 @dirrm usr/share/oracle/%%PORTVERSION%%
 @dirrm usr/share/oracle
 @dirrmtry usr/include
-@dirrmtry usr/share  
+@dirrmtry usr/share

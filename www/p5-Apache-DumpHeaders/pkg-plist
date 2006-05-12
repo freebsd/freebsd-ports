@@ -1,6 +1,6 @@
 %%SITE_PERL%%/Apache/DumpHeaders.pm
 %%SITE_PERL%%/Apache/ProxyPassThru.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/DumpHeaders/.packlist
-@dirrmtry %%SITE_PERL%%/Apache                               
+@dirrmtry %%SITE_PERL%%/Apache
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/DumpHeaders
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache            
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache

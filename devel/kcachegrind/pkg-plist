@@ -40,7 +40,7 @@ share/mimelnk/application/x-kcachegrind.desktop
 @dirrmtry share/icons/hicolor/32x32
 @dirrmtry share/icons/hicolor/48x48/apps
 @dirrmtry share/icons/hicolor/48x48
-@dirrmtry share/icons/hicolor 
+@dirrmtry share/icons/hicolor
 @dirrmtry share/icons/locolor/16x16/apps
 @dirrmtry share/icons/locolor/16x16
 @dirrmtry share/icons/locolor/32x32/apps

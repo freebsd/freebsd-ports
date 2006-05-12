@@ -1,5 +1,5 @@
 %%SITE_PERL%%/DB_File/Lock.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DB_File/Lock/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DB_File/Lock
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DB_File     
-@dirrmtry %%SITE_PERL%%/DB_File                        
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DB_File
+@dirrmtry %%SITE_PERL%%/DB_File

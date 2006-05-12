@@ -3,5 +3,5 @@
 %%SITE_PERL%%/Digest/HMAC_SHA1.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/HMAC/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/HMAC
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest     
-@dirrmtry %%SITE_PERL%%/Digest                        
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest
+@dirrmtry %%SITE_PERL%%/Digest

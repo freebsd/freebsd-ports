@@ -1278,7 +1278,7 @@ bin/cgx
 %%WITH_EXAMPLES%%%%EXAMPLESDIR%%/test/beamabq.dat.ref
 %%WITH_EXAMPLES%%%%EXAMPLESDIR%%/test/beamabq.inp
 %%WITH_EXAMPLES%%%%EXAMPLESDIR%%/test/beamdelay.dat.ref
-%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/test/beamdelay.inp 
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/test/beamdelay.inp
 %%WITH_EXAMPLES%%%%EXAMPLESDIR%%/test/beamdy10.dat.ref
 %%WITH_EXAMPLES%%%%EXAMPLESDIR%%/test/beamdy10.inp
 %%WITH_EXAMPLES%%%%EXAMPLESDIR%%/test/beamdy11.dat.ref

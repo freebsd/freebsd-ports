@@ -7,7 +7,7 @@ bin/relay-ctrl-send
 bin/relay-ctrl-udp
 etc/relay-ctrl/RELAY_CTRL_DIR
 etc/relay-ctrl/RELAY_CTRL_EXPIRY
-@dirrmtry etc/relay-ctrl 
+@dirrmtry etc/relay-ctrl
 %%PORTDOCS%%%%DOCSDIR%%/ANNOUNCEMENT
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README

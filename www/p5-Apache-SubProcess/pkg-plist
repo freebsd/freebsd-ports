@@ -3,5 +3,5 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/SubProcess/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache/SubProcess.pm
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/SubProcess
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache           
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Apache                
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Apache

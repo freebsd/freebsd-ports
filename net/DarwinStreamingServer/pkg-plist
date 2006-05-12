@@ -156,11 +156,11 @@ etc/streaming/streamingserver.xml-dist
 @dirrm %%DATADIR%%/AdminHtml/images
 @dirrm %%DATADIR%%/AdminHtml/html_en
 @dirrm %%DATADIR%%/AdminHtml
-@dirrmtry %%DATADIR%%/movies            
-@dirrmtry %%DATADIR%%                   
+@dirrmtry %%DATADIR%%/movies
+@dirrmtry %%DATADIR%%
 @dirrmtry libexec/StreamingServerModules
 @exec   mkdir %D/libexec/StreamingServerModules 2>/dev/null || true
-@dirrmtry etc/streaming                 
+@dirrmtry etc/streaming
 @unexec rmdir /var/spool/streaming.playlists    2>/dev/null || true
 @exec   mkdir /var/spool/streaming.playlists    2>/dev/null || true
 @unexec rmdir /var/log/streaming                2>/dev/null || true

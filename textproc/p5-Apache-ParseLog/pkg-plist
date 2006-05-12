@@ -1,5 +1,5 @@
 %%SITE_PERL%%/Apache/ParseLog.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/ParseLog/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/ParseLog
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache         
-@dirrmtry %%SITE_PERL%%/Apache                            
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache
+@dirrmtry %%SITE_PERL%%/Apache

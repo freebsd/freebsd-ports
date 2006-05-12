@@ -6,4 +6,4 @@
 %%SITE_PERL%%/Apache/Singleton/Process.pm
 %%SITE_PERL%%/Apache/Singleton/Request.pm
 @dirrm %%SITE_PERL%%/Apache/Singleton
-@dirrmtry %%SITE_PERL%%/Apache 
+@dirrmtry %%SITE_PERL%%/Apache
