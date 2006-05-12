@@ -13011,6 +13011,7 @@ tkshape		ports/x11-toolkits/tkshape
 tksol		ports/games/tksol
 tkstep80	ports/x11-toolkits/tkstep80
 tktable		ports/x11-toolkits/tktable
+tktz		ports/x11-clocks/tktz
 tkxanim		ports/multimedia/tkxanim
 tkxmlive	ports/textproc/tkxmlive
 tl-aspell	ports/textproc/tl-aspell
