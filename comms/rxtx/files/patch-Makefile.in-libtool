@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Fri May  5 10:53:02 2006
++++ Makefile.in	Fri May  5 10:54:08 2006
+@@ -448,7 +448,7 @@
+ 	@$(LIBTOOL_INST) \
+ 	`for i in $(TARGETLIB);do \
+ 		if [ -f $$i ];then \
+-			echo $$i; \
++			echo $(TOP)/$$i; \
+ 		fi; \
+ 	done` $(RXTX_PATH)
+ 	$(BSD_INSTALL_DATA) $(JARTARGET) $(JHOME)/
