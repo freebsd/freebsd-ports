@@ -1,7 +1,6 @@
 bin/hyperlatex
-bin/ps2image
 bin/normalize-eps
-share/texmf/tex/latex/hyperlatex/hyperlatex.sty
+bin/ps2image
 share/hyperlatex/article.hlx
 share/hyperlatex/babel.hlx
 share/hyperlatex/bluepanels.hlx
@@ -14,6 +13,8 @@ share/hyperlatex/fancyhdr.hlx
 share/hyperlatex/frames.hlx
 share/hyperlatex/french.hlx
 share/hyperlatex/german.hlx
+share/hyperlatex/hyperlatex.el
+share/hyperlatex/hyperlatex.elc
 share/hyperlatex/hyperxml.hlx
 share/hyperlatex/italian.hlx
 share/hyperlatex/longtable.hlx
@@ -25,7 +26,9 @@ share/hyperlatex/sequential.hlx
 share/hyperlatex/simplepanels.hlx
 share/hyperlatex/siteinit.hlx
 share/hyperlatex/tabularx.hlx
-share/hyperlatex/hyperlatex.el
-share/hyperlatex/hyperlatex.elc
-@dirrm share/texmf/tex/latex/hyperlatex
-@dirrm share/hyperlatex
+share/texmf/tex/latex/hyperlatex/hyperlatex.sty
+@dirrmtry share/texmf/tex/latex/hyperlatex
+@dirrmtry share/texmf/tex/latex
+@dirrmtry share/texmf/tex
+@dirrmtry share/texmf
+@dirrmtry share/hyperlatex
