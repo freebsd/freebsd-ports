@@ -10,17 +10,17 @@ PORTNAME=	paragui
 PORTVERSION=	1.0.4
 PORTREVISION=	5
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	${MASTER_SITE_SAVANNAH}
-MASTER_SITE_SUBDIR=	${PORTNAME}/stable.pkg/${PORTVERSION}
+MASTER_SITES=	${MASTER_SITE_SAVANNAH} \
+		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	shaun@inerd.com
 COMMENT=	Cross-platform high-level application framework and GUI library
 
 LIB_DEPENDS=	physfs-1.0.1:${PORTSDIR}/devel/physfs \
 		expat.6:${PORTSDIR}/textproc/expat2
 
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_SDL=	sdl image ttf
 CONFIGURE_ENV=	CPPFLAGS="-I${PREFIX}/include -I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
@@ -33,7 +33,7 @@ PLIST_SUB=	SHLIB_VER="${SHLIB_VER}"
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != "i386"
-BROKEN=		"does not build on ${ARCH}"
+BROKEN=		does not build on ${ARCH}
 .endif
 
 post-extract:
