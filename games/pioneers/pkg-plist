@@ -86,40 +86,40 @@ share/gnome/games/pioneers/themes/plain.png
 share/gnome/games/pioneers/themes/sea.png
 share/gnome/games/pioneers/themes/tick.png
 share/gnome/games/pioneers/x.game
-%%LIBGNOME%%share/gnome/help/pioneers/C/images/actions.png
-%%LIBGNOME%%share/gnome/help/pioneers/C/images/chat.png
-%%LIBGNOME%%share/gnome/help/pioneers/C/images/client.png
-%%LIBGNOME%%share/gnome/help/pioneers/C/images/connect-dialog.png
-%%LIBGNOME%%share/gnome/help/pioneers/C/images/desert.png
-%%LIBGNOME%%share/gnome/help/pioneers/C/images/develop-cards.png
-%%LIBGNOME%%share/gnome/help/pioneers/C/images/discard-dialog.png
-%%LIBGNOME%%share/gnome/help/pioneers/C/images/discards.png
-%%LIBGNOME%%share/gnome/help/pioneers/C/images/field.png
-%%LIBGNOME%%share/gnome/help/pioneers/C/images/forest.png
-%%LIBGNOME%%share/gnome/help/pioneers/C/images/gameover-dialog.png
-%%LIBGNOME%%share/gnome/help/pioneers/C/images/hill.png
-%%LIBGNOME%%share/gnome/help/pioneers/C/images/identity.png
-%%LIBGNOME%%share/gnome/help/pioneers/C/images/join-private-dialog.png
-%%LIBGNOME%%share/gnome/help/pioneers/C/images/legend-dialog.png
-%%LIBGNOME%%share/gnome/help/pioneers/C/images/map.png
-%%LIBGNOME%%share/gnome/help/pioneers/C/images/messages.png
-%%LIBGNOME%%share/gnome/help/pioneers/C/images/monopoly-dialog.png
-%%LIBGNOME%%share/gnome/help/pioneers/C/images/mountain.png
-%%LIBGNOME%%share/gnome/help/pioneers/C/images/pasture.png
-%%LIBGNOME%%share/gnome/help/pioneers/C/images/place-robber.png
-%%LIBGNOME%%share/gnome/help/pioneers/C/images/player-summary.png
-%%LIBGNOME%%share/gnome/help/pioneers/C/images/plenty-dialog.png
-%%LIBGNOME%%share/gnome/help/pioneers/C/images/quote.png
-%%LIBGNOME%%share/gnome/help/pioneers/C/images/resources.png
-%%LIBGNOME%%share/gnome/help/pioneers/C/images/sea.png
-%%LIBGNOME%%share/gnome/help/pioneers/C/images/server-create.png
-%%LIBGNOME%%share/gnome/help/pioneers/C/images/servers-dialog.png
-%%LIBGNOME%%share/gnome/help/pioneers/C/images/status.png
-%%LIBGNOME%%share/gnome/help/pioneers/C/images/steal-from.png
-%%LIBGNOME%%share/gnome/help/pioneers/C/images/trade.png
-%%LIBGNOME%%share/gnome/help/pioneers/C/legal.xml
-%%LIBGNOME%%share/gnome/help/pioneers/C/pioneers.xml
-%%LIBGNOME%%share/gnome/omf/pioneers/pioneers-C.omf
+share/gnome/help/pioneers/C/images/actions.png
+share/gnome/help/pioneers/C/images/chat.png
+share/gnome/help/pioneers/C/images/client.png
+share/gnome/help/pioneers/C/images/connect-dialog.png
+share/gnome/help/pioneers/C/images/desert.png
+share/gnome/help/pioneers/C/images/develop-cards.png
+share/gnome/help/pioneers/C/images/discard-dialog.png
+share/gnome/help/pioneers/C/images/discards.png
+share/gnome/help/pioneers/C/images/field.png
+share/gnome/help/pioneers/C/images/forest.png
+share/gnome/help/pioneers/C/images/gameover-dialog.png
+share/gnome/help/pioneers/C/images/hill.png
+share/gnome/help/pioneers/C/images/identity.png
+share/gnome/help/pioneers/C/images/join-private-dialog.png
+share/gnome/help/pioneers/C/images/legend-dialog.png
+share/gnome/help/pioneers/C/images/map.png
+share/gnome/help/pioneers/C/images/messages.png
+share/gnome/help/pioneers/C/images/monopoly-dialog.png
+share/gnome/help/pioneers/C/images/mountain.png
+share/gnome/help/pioneers/C/images/pasture.png
+share/gnome/help/pioneers/C/images/place-robber.png
+share/gnome/help/pioneers/C/images/player-summary.png
+share/gnome/help/pioneers/C/images/plenty-dialog.png
+share/gnome/help/pioneers/C/images/quote.png
+share/gnome/help/pioneers/C/images/resources.png
+share/gnome/help/pioneers/C/images/sea.png
+share/gnome/help/pioneers/C/images/server-create.png
+share/gnome/help/pioneers/C/images/servers-dialog.png
+share/gnome/help/pioneers/C/images/status.png
+share/gnome/help/pioneers/C/images/steal-from.png
+share/gnome/help/pioneers/C/images/trade.png
+share/gnome/help/pioneers/C/legal.xml
+share/gnome/help/pioneers/C/pioneers.xml
+share/gnome/omf/pioneers/pioneers-C.omf
 share/gnome/pixmaps/pioneers-editor.png
 share/gnome/pixmaps/pioneers-server.png
 share/gnome/pixmaps/pioneers.png
@@ -147,8 +147,8 @@ share/locale/sv/LC_MESSAGES/pioneers.mo
 @dirrm share/gnome/games/pioneers/themes/Wesnoth-like
 @dirrm share/gnome/games/pioneers/themes
 @dirrm share/gnome/games/pioneers
-%%LIBGNOME%%@dirrm share/gnome/help/pioneers/C/images
-%%LIBGNOME%%@dirrm share/gnome/help/pioneers/C
-%%LIBGNOME%%@dirrm share/gnome/help/pioneers
-%%LIBGNOME%%@dirrm share/gnome/omf/pioneers
+@dirrm share/gnome/help/pioneers/C/images
+@dirrm share/gnome/help/pioneers/C
+@dirrm share/gnome/help/pioneers
+@dirrm share/gnome/omf/pioneers
 @dirrm share/gnome/pixmaps/pioneers
