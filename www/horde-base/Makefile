@@ -334,6 +334,13 @@ pre-install:
 	${SETENV} ${SCRIPTS_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 .endif
 
+	# Copy RCSID tag from conf.xml into conf.php to stop Horde complaining
+	@if ! ${GREP} -q -e "$$Horde.*conf\.xml" ${WRKSRC}/config/conf.php.dist; then \
+	  ${GREP} -h "$$Horde.*conf\.xml" ${WRKSRC} ${WRKSRC}/config/conf.xml \
+	    | ${SED} -e 's#^ *<!--#//#' -e 's# *--> *$$##g' \
+	    >> ${WRKSRC}/config/conf.php.dist; \
+	fi
+
 do-install:
 	@${MKDIR}  ${HORDEDIR}
 .for REP in ${SUB_DIRS}

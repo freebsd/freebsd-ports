@@ -1454,6 +1454,17 @@
 %%HORDEDIR%%/util/barcode.php
 %%HORDEDIR%%/util/icon_browser.php
 %%HORDEDIR%%/util/regex_test.php
+@exec mkdir -p %D/%%HORDEDIR%%/lib/File/tests
+@exec mkdir -p %D/%%HORDEDIR%%/lib/Horde/Text/tests
+@exec mkdir -p %D/%%HORDEDIR%%/lib/Horde/docs/examples
+@exec mkdir -p %D/%%HORDEDIR%%/lib/Horde/tests
+@exec mkdir -p %D/%%HORDEDIR%%/lib/Text/docs/examples
+@exec mkdir -p %D/%%HORDEDIR%%/lib/Text/tests
+@exec mkdir -p %D/%%HORDEDIR%%/lib/VFS/tests
+@exec mkdir -p %D/%%HORDEDIR%%/lib/XML/docs/examples
+@exec mkdir -p %D/%%HORDEDIR%%/lib/XML/tests
+@exec mkdir -p %D/%%HORDEDIR%%/lib/data
+@exec mkdir -p %D/%%HORDEDIR%%/lib/docs
 @dirrm %%HORDEDIR%%/util
 @dirrm %%HORDEDIR%%/themes/simplex/graphics
 @dirrm %%HORDEDIR%%/themes/simplex
