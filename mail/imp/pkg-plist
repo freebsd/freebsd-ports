@@ -353,7 +353,7 @@
 %%IMPDIR%%/themes/luc/screen.css
 %%IMPDIR%%/themes/lucblue/screen.css
 %%IMPDIR%%/themes/postnuke/screen.css
-%%IMPDIR%%/themes/rtl/screen.css
+%%IMPDIR%%/themes/rtl.css
 %%IMPDIR%%/themes/screen.css
 %%IMPDIR%%/themes/simplex/screen.css
 %%IMPDIR%%/themes/sun/screen.css
@@ -363,7 +363,6 @@
 %%HORDE_INC%%httpd-imp.conf
 @dirrm %%IMPDIR%%/themes/sun
 @dirrm %%IMPDIR%%/themes/simplex
-@dirrm %%IMPDIR%%/themes/rtl
 @dirrm %%IMPDIR%%/themes/postnuke
 @dirrm %%IMPDIR%%/themes/lucblue
 @dirrm %%IMPDIR%%/themes/luc
