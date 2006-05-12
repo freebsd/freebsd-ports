@@ -66,6 +66,9 @@ lib/libmsg_queue.so.0
 lib/libsdp.la
 lib/libsdp.so
 lib/libsdp.so.0
+lib/libsrtpif.la
+lib/libsrtpif.so
+lib/libsrtpif.so.0
 lib/mp4player_plugin/a52_audio_plugin.la
 lib/mp4player_plugin/a52_audio_plugin.so
 lib/mp4player_plugin/a52_audio_plugin.so.0

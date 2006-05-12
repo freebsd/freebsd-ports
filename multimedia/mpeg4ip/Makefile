@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mpeg4ip
-PORTVERSION=	1.4.1
-PORTREVISION=	1
+PORTVERSION=	1.5
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,7 +15,7 @@ PKGNAMESUFFIX=	${PKG_NAME_SUFFIX}
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Standards-based system to encode, stream and play MPEG-4 audio/video
 
-BUILD_DEPENDS=	mpeg4ip-libmp4v2>=1.4:${PORTSDIR}/multimedia/mpeg4ip-libmp4v2
+BUILD_DEPENDS=	mpeg4ip-libmp4v2>=1.5:${PORTSDIR}/multimedia/mpeg4ip-libmp4v2
 LIB_DEPENDS=	faac.0:${PORTSDIR}/audio/faac \
 		faad.0:${PORTSDIR}/audio/faad \
 		mp3lame.0:${PORTSDIR}/audio/lame \
@@ -24,9 +23,8 @@ LIB_DEPENDS=	faac.0:${PORTSDIR}/audio/faac \
 		a52.0:${PORTSDIR}/audio/liba52 \
 		mpeg2.0:${PORTSDIR}/multimedia/libmpeg2	\
 		avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
-		x264.47:${PORTSDIR}/multimedia/x264 \
-		mp4v2.0:${PORTSDIR}/multimedia/mpeg4ip-libmp4v2 \
-		mp4av.0:${PORTSDIR}/multimedia/mpeg4ip-libmp4v2
+		x264.47:${PORTSDIR}/multimedia/x264
+RUN_DEPENDS=	mpeg4ip-libmp4v2>=1.5:${PORTSDIR}/multimedia/mpeg4ip-libmp4v2
 
 USE_GNOME=	gtk20
 USE_SDL=	sdl
@@ -195,30 +193,10 @@ post-install:
 .endfor
 .endif
 
-###
-## Arch extensions detection
-###
-# i386 specifics
-.if ${ARCH} != "i386"
-WITHOUT_MMX=	yes
+.if (defined(MACHINE_CPU) && ${MACHINE_CPU:Mmmx} == "mmx")
+WITH_MMX=yes
 .else
-.if ${OSVERSION} < 470000
-. if (defined(MACHINE_CPU) && ${MACHINE_CPU:Mi486} == "i486")
-OPTIONS+=	OPTIMIZED_BYTESWAP "Enable optimized byteswap routines" On
-. else
-OPTIONS+=	OPTIMIZED_BYTESWAP "Enable optimized byteswap routines" Off
-. endif
-.endif
-
-. if (defined(MACHINE_CPU) && ${MACHINE_CPU:Mmmx} == "mmx")
-OPTIONS+=	MMX "Enable MMX Optimizations" On
-. else
-OPTIONS+=	MMX "Enable MMX Optimizations" Off
-. endif
-
-. if defined(WITH_OPTIMIZED_BYTESWAP)
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-include::mpeg4ip_byteswap.h
-. endif
+WITHOUT_MMX=yes
 .endif
 
 ###
