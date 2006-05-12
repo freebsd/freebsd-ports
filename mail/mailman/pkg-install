@@ -51,7 +51,9 @@ POST-INSTALL)
 
   echo "---> Checking crontab(5) file for user \"%%USER%%\""
 
+  if [ -e /var/cron/allow ]; then
   echo "%%USER%%" >> /var/cron/allow
+  fi
 
   if /usr/bin/crontab -u "%%USER%%" -l >/tmp/mmctab$$ 2>&1 ; then
       if test -s /tmp/mmctab$$; then
