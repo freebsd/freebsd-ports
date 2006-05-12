@@ -13,8 +13,10 @@ DEINSTALL)
       /usr/bin/diff - %%MAILMANDIR%%/cron/crontab.in >/dev/null 2>&1 ; then
       echo "---> Zeroing crontab for \"%%USER%%\""
       /usr/bin/crontab -u "%%USER%%" /dev/null
-      grep -v %%USER%% /var/cron/allow > /var/cron/allow.new
-      mv /var/cron/allow.new /var/cron/allow
+      if [ -e /var/cron/allow ]; then
+         grep -v %%USER%% /var/cron/allow > /var/cron/allow.new
+         mv /var/cron/allow.new /var/cron/allow
+      fi
   else
       echo "---> Crontab for \"%%USER%%\" not removed: please deinstall"
       echo "---> manually if you no-longer wish to use Mailman. eg:"
