@@ -418,7 +418,7 @@ LIB_DEPENDS+=	mad.2:${PORTSDIR}/audio/libmad \
 
 # mpeg2enc
 .if ${GST_PLUGIN}=="mpeg2enc"
-USE_GSTREAMER+=	mplex
+USE_GSTREAMER80+=mplex
 LIB_DEPENDS+=	lavjpeg-1.8.0:${PORTSDIR}/multimedia/mjpegtools
 
 # XXX - make sure CONFIGURE works with mpeg2enc even with "ccache
@@ -493,7 +493,7 @@ LIB_DEPENDS+=	swfdec-0.3.0:${PORTSDIR}/graphics/swfdec
 
 # vorbis
 .if ${GST_PLUGIN}=="vorbis"
-USE_GSTREAMER+=	ogg
+USE_GSTREAMER80+=ogg
 LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
 .endif
 
