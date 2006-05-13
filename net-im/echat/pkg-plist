@@ -1,2 +1,12 @@
 bin/echat
+doc/echat-0.04beta1/.echatrc.sample
+doc/echat-0.04beta1/GPL
+doc/echat-0.04beta1/NEWS
+doc/echat-0.04beta1/README
+doc/echat-0.04beta1/README.ru
+doc/echat-0.04beta1/README.tu
+doc/echat-0.04beta1/TODO
+doc/echat-0.04beta1/ec
 etc/echatrc.sample
+@dirrm doc/echat-0.04beta1
+@dirrm doc
