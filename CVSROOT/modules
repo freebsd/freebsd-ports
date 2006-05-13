@@ -4232,6 +4232,7 @@ ipfm		ports/net-mgmt/ipfm
 ipfmeta		ports/security/ipfmeta
 ipfw-graph	ports/net/ipfw-graph
 ipfw2dshield	ports/security/ipfw2dshield
+ipfwcount	ports/security/ipfwcount
 ipgrab		ports/net/ipgrab
 ipguard		ports/security/ipguard
 iplog		ports/net/iplog
