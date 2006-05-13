@@ -322,7 +322,6 @@ bin/scrollz-%%SCROLLZ_VER%%
 %%DATADIR%%/help/set/status_window
 %%DATADIR%%/help/set/suppress_server_motd
 %%DATADIR%%/help/set/tab_max
-%%DATADIR%%/help/set/translation
 %%DATADIR%%/help/set/truncate_public_channel
 %%DATADIR%%/help/set/underline_video
 %%DATADIR%%/help/set/use_old_msg
@@ -682,41 +681,10 @@ bin/scrollz-%%SCROLLZ_VER%%
 %%DATADIR%%/help/ww
 %%DATADIR%%/help/xecho
 %%DATADIR%%/help/xtype
-%%DATADIR%%/translation/ASCII
-%%DATADIR%%/translation/CP437
-%%DATADIR%%/translation/CP850
-%%DATADIR%%/translation/DANISH
-%%DATADIR%%/translation/DEC_MCS
-%%DATADIR%%/translation/DG_MCS
-%%DATADIR%%/translation/DUTCH
-%%DATADIR%%/translation/FINNISH
-%%DATADIR%%/translation/FRENCH
-%%DATADIR%%/translation/FRENCH_CANADIAN
-%%DATADIR%%/translation/GERMAN
-%%DATADIR%%/translation/HP_MCS
-%%DATADIR%%/translation/IRV
-%%DATADIR%%/translation/ITALIAN
-%%DATADIR%%/translation/JIS
-%%DATADIR%%/translation/MACINTOSH
-%%DATADIR%%/translation/NEXT
-%%DATADIR%%/translation/NORWEGIAN_1
-%%DATADIR%%/translation/NORWEGIAN_2
-%%DATADIR%%/translation/POLISH
-%%DATADIR%%/translation/POLISH_NOPL
-%%DATADIR%%/translation/PORTUGUESE
-%%DATADIR%%/translation/PORTUGUESE_COM
-%%DATADIR%%/translation/RUSSIAN
-%%DATADIR%%/translation/RUSSIAN_ALT
-%%DATADIR%%/translation/RUSSIAN_WIN
-%%DATADIR%%/translation/SPANISH
-%%DATADIR%%/translation/SWEDISH
-%%DATADIR%%/translation/SWEDISH_NAMES
-%%DATADIR%%/translation/SWEDISH_NAMES_COM
-%%DATADIR%%/translation/SWISS
-%%DATADIR%%/translation/UNITED_KINGDOM
-%%DATADIR%%/translation/UNITED_KINGDOM_COM
+%%DATADIR%%/help/set/display_encoding
+%%DATADIR%%/help/set/input_encoding
+%%DATADIR%%/help/set/irc_encoding
 @exec mkdir %D/%%DATADIR%%/script
-@dirrmtry %%DATADIR%%/translation
 @dirrmtry %%DATADIR%%/script
 @dirrmtry %%DATADIR%%/help/bind
 @dirrmtry %%DATADIR%%/help/alias
