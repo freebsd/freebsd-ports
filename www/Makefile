@@ -97,6 +97,7 @@
     SUBDIR += dhttpd
     SUBDIR += dillo
     SUBDIR += dillo-i18n
+    SUBDIR += dokeos
     SUBDIR += dokuwiki
     SUBDIR += dotproject
     SUBDIR += dpsearch
