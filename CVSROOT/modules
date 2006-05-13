@@ -13607,6 +13607,7 @@ whichman	ports/misc/whichman
 whirlgif	ports/graphics/whirlgif
 whistlerk	ports/x11-themes/whistlerk
 white_dune	ports/graphics/white_dune
+whoson		ports/mail/whoson
 whowatch	ports/sysutils/whowatch
 wide-dhcp	ports/net-mgmt/wide-dhcp
 widentd		ports/net/widentd
