@@ -1,6 +1,0 @@
-#!/bin/sh
-
-if [ "$2" = "POST-INSTALL" ]; then
-	echo "Running fc-cache to build fontconfig cache..."
-	${PKG_PREFIX}/usr/bin/fc-cache -f -v
-fi
