@@ -11,6 +11,20 @@ in the port directory:
 make extract;  more `find . -type f -maxdepth 2 -name UPGRADING`
 
 ###########################################################################
+# dspam-devel-3.6.5.20060513.1125
+#
+
+New feature:
+- Fallback domains (see 2.6 in README)
+Bug fixes:
+- trainPristine preference turned "off" now overrides config turned "on"
+- segfault fix for when correcting messages using UIDInSignature 
+Removed features:
+- dspam_corpus (replaced by newer dspam_train)
+- dspam_genaliases (replaced by parse-to-headers, virtual users, etc)
+
+
+###########################################################################
 # dspam-devel-3.6.5_1
 #
 

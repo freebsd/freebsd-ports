@@ -2,7 +2,7 @@
 # Date created:		24 Jun 2004
 # Whom:			Ion-Mihai "IOnut" Tetcu <itetcu@people.tecnik93.com>
 #
-# $Tecnik: ports/mail/dspam-devel/Makefile,v 1.49 2006/04/30 10:44:28 itetcu Exp $
+# $Tecnik: ports/mail/dspam-devel/Makefile,v 1.52 2006/05/13 11:53:53 itetcu Exp $
 # $FreeBSD$
 #
 
@@ -13,22 +13,23 @@
 
 PORTNAME=	dspam-devel
 PORTVERSION=	${PORTVER_MAJ}${SNAP_DATE}
-PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	# set later
 
-MAINTAINER=	itetcu@people.tecnik93.com
+MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	Bayesian spam filter - development version
 
 PORTVER_MAJ=	3.6.5
-#SNAP_DATE=	.20060421.2101
-_UPD_LINE_NO=	8
+SNAP_DATE=	.20060513.1125
+_UPD_LINE_NO=	13
 
 MIN_OPTIONS_VER=	${PORTNAME}-3.6.5
 
 .ifdef(SNAP_DATE)
-MASTER_SITES=	http://sce-tindy.tecnik93.com/FreeBSD/ports/${PORTNAME}/sources/ \
+MASTER_SITES=	${MASTER_SITE_LOCAL} \
+		http://sce-tindy.tecnik93.com/FreeBSD/ports/${PORTNAME}/sources/ \
 		http://people.tecnik93.com/~itetcu/FreeBSD/ports/${PORTNAME}/sources/
+MASTER_SITE_SUBDIR=	itetcu
 .else
 MASTER_SITES=	http://dspam.irontec.com/sources/ \
 	http://dspam.nuclearelephant.com/sources/ \
@@ -651,7 +652,9 @@ post-install:
 check-options-version:
 .ifdef(_OPTIONS_READ)
 	@(if ${PKG_VERSION} -t ${_OPTIONS_READ} ${MIN_OPTIONS_VER} | ${GREP} -q '<'; \
-	 then ${ECHO_CMD} "You have unsupported (old) OPTIONS, please do a 'make config; make'\n" \
+	 then	${ECHO_CMD} ""; \
+		${ECHO_CMD} "===> You have unsupported (old) OPTIONS, please do a 'make config; make'"; \
+		${ECHO_CMD} ""; \
 		exit 1; \
 	 fi)
 .endif
