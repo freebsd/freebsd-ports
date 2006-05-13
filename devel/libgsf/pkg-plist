@@ -48,7 +48,6 @@ lib/libgsf-1.la
 lib/libgsf-1.so
 lib/libgsf-1.so.114
 libdata/pkgconfig/libgsf-1.pc
-share/doc/gsf/GsfBlob.html
 share/doc/gsf/GsfClipData.html
 share/doc/gsf/api.html
 share/doc/gsf/dependencies.html
@@ -59,14 +58,14 @@ share/doc/gsf/gsf-GnomeVFS.html
 share/doc/gsf/gsf-Infile-reading-structed-files.html
 share/doc/gsf/gsf-Input-from-unstructured-files.html
 share/doc/gsf/gsf-MS-OLE2.html
+share/doc/gsf/gsf-OASIS-Open-Document.html
 share/doc/gsf/gsf-Outfile-writing-structed-files.html
 share/doc/gsf/gsf-Output-to-unstructured-files.html
 share/doc/gsf/gsf-Reading-and-Writing-from-local-files-and-directories.html
-share/doc/gsf/gsf-Structured-Blobs.html
 share/doc/gsf/gsf-Text.html
 share/doc/gsf/gsf-XML-and-libxml.html
 share/doc/gsf/gsf-Zip.html
-share/doc/gsf/gsf-gsf-opendoc-utils.html
+share/doc/gsf/gsf-blobs.html
 share/doc/gsf/gsf-memory.html
 share/doc/gsf/gsf-metadata.html
 share/doc/gsf/gsf-users.html
