@@ -6,26 +6,32 @@
 # $FreeBSD$
 #
 
-PORTNAME=       plan
-PORTVERSION=    1.8.4
+PORTNAME=	plan
+PORTVERSION=	1.9
 CATEGORIES=	japanese
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	shaun@inerd.com
 
 MAKE_ENV+=	JAPANESE=yes
 
 MASTERDIR=	${.CURDIR}/../../deskutils/plan
 
 PLIST=	${WRKDIR}/PLIST
-EXTRA_PATCHES=  ${.CURDIR}/files/patch-*
+EXTRA_PATCHES=	${.CURDIR}/files/patch-*
 
 post-build:
-	${ECHO_CMD} share/doc/plan/plan_calEUC.ps > ${WRKDIR}/PLIST
+.if !defined(NOPORTDOCS)
+	${ECHO_CMD} ${DOCSDIR:S|${PREFIX}/||}/plan_calEUC.ps > ${WRKDIR}/PLIST
+.endif
 	${CAT} ${MASTERDIR}/pkg-plist >> ${WRKDIR}/PLIST
 
 post-install:
-	@${MKDIR} ${PREFIX}/share/netplan.dir
-	${CHMOD} 1777 ${PREFIX}/share/netplan.dir
-	${INSTALL_DATA} ${.CURDIR}/files/plan_calEUC.ps ${PREFIX}/share/doc/plan
+	@${MKDIR} ${DATADIR}/netplan.dir
+	${CHMOD} 1777 ${DATADIR}/netplan.dir
+
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${.CURDIR}/files/plan_calEUC.ps ${DOCSDIR}
+.endif
 
 .include	"${MASTERDIR}/Makefile"
