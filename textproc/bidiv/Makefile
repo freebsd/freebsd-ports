@@ -16,7 +16,6 @@ COMMENT=	A bidirectional text filter
 
 LIB_DEPENDS=	fribidi.0:${PORTSDIR}/converters/fribidi
 
-USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/bidiv
 MAN1=		bidiv.1
 MAKE_ENV+=	CC_OPT_FLAGS="${CFLAGS}"

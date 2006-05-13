@@ -17,7 +17,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XML Resume library
 
 USE_JAVA=	yes
-USE_REINPLACE=	yes
 NO_BUILD=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 

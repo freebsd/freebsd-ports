@@ -19,7 +19,6 @@ COMMENT=	A Latin-English Dictionary Program
 BUILD_DEPENDS=	gnatmake:${PORTSDIR}/lang/gnat
 
 USE_ZIP=	yes
-USE_REINPLACE=	yes
 NO_WRKSUBDIR=	yes
 
 GNATMAKE=	gnatmake

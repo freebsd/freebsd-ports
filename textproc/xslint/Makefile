@@ -17,7 +17,6 @@ COMMENT=	XSL(T) stylesheet checker
 RUN_DEPENDS=	${SITE_PERL}/XML/DOM.pm:${PORTSDIR}/textproc/p5-XML-DOM
 
 USE_ZIP=	yes
-USE_REINPLACE=	yes
 USE_PERL5_RUN=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-0.05

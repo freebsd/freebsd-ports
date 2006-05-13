@@ -12,8 +12,6 @@ MASTER_SITES=	http://www.pldaniels.com/ripole/
 MAINTAINER=	fcash@sd73.bc.ca
 COMMENT=	A small program designed to pull attachments out of OLE2 documents
 
-USE_REINPLACE=	yes
-
 ALL_TARGET=	default
 
 PLIST_FILES=	bin/ripole

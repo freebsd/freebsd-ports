@@ -23,7 +23,6 @@ USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_PERL5=	yes
 USE_GNOME=	gnometarget
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--libdir="${PREFIX}/libdata"
 

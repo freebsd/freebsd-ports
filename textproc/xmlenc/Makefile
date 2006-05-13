@@ -15,7 +15,6 @@ COMMENT=	Light-weight XML encoding library for Java
 
 USE_JAVA=	yes
 USE_ANT=	yes
-USE_REINPLACE=	yes
 
 .if defined(NOPORTDOCS)
 ALL_TARGET=	jar

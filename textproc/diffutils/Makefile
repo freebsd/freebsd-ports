@@ -15,7 +15,6 @@ MASTER_SITE_SUBDIR=	diffutils
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The GNU diff utilities
 
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=g
 

@@ -16,7 +16,6 @@ COMMENT=	A KDE3 graphical frontend for diff
 
 USE_KDEBASE_VER=3
 USE_AUTOTOOLS=	libtool:15
-USE_REINPLACE=	yes
 
 CONFIGURE_ENV=	LDFLAGS="${PTHREAD_LIBS}"
 

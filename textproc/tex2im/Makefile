@@ -20,7 +20,6 @@ RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick \
 		bash:${PORTSDIR}/shells/bash2
 
 NO_BUILD=	yes
-USE_REINPLACE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,^#!/bin/bash,#!${LOCALBASE}/bin/bash,g" ${WRKSRC}/tex2im

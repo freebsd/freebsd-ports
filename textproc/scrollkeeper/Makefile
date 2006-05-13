@@ -37,7 +37,6 @@ USE_GETTEXT=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_BISON=	yes
-USE_REINPLACE=	yes
 USE_GNOME=	gnomehack gnomehier gnometarget libxslt intlhack
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--localstatedir=/var --datadir=${PREFIX}/share/gnome \

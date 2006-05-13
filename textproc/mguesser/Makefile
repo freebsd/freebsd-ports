@@ -15,7 +15,6 @@ COMMENT=	A tool for guessing a text's charset and language
 
 CFLAGS+=	-DUDM_GUESSER_STANDALONG -DLMDIR=\"${PREFIX}/share/mguesser\"
 MAKE_ENV+=	CFLAGS="${$CFLAGS}"
-USE_REINPLACE=	yes
 
 post-patch:
 	${REINPLACE_CMD} -E \

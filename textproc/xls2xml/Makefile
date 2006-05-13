@@ -21,7 +21,6 @@ LIB_DEPENDS=	cole.2:${PORTSDIR}/textproc/cole \
 
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
-USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lcole"
 

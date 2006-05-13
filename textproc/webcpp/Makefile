@@ -21,7 +21,6 @@ USE_GCC=	3.4+
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
-USE_REINPLACE=	yes
 
 .if defined(WANT_FINAL)
 CONFIGURE_ARGS+=	--enable-final

@@ -24,7 +24,6 @@ USE_AUTOTOOLS=	automake:19 autoconf:259 libtool:15
 AUTOMAKE_ARGS=		-acf
 GNU_CONFIGURE=		yes
 INSTALLS_SHLIB=		yes
-USE_REINPLACE=		yes
 CONFIGURE_ENV=		CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -lexpat"
 

@@ -20,7 +20,6 @@ USE_GNOME=	pygnome2
 USE_PYTHON=	yes
 USE_X_PREFIX=	yes
 NO_BUILD=	yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 
 MAKEFILE=	GNUmakefile

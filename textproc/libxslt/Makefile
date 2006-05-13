@@ -25,7 +25,6 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 USE_GNOME?=	gnomehack gnometarget libxml2
-USE_REINPLACE=	yes
 CONFIGURE_ARGS?= --with-html-dir=${PREFIX}/share/doc \
 		--without-python
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

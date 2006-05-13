@@ -15,7 +15,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Text column alignment filter
 
 USE_PERL5=	yes
-USE_REINPLACE=	yes
 
 post-patch:
 	${REINPLACE_CMD} -e 's|/usr/local/bin|${PREFIX}/bin|g' ${WRKSRC}/Makefile

@@ -36,7 +36,6 @@ RUN_DEPENDS=	nsgmls:${PORTSDIR}/textproc/jade
 .endif
 RUN_DEPENDS+=	${LOCALBASE}/share/sgml/docbook:${PORTSDIR}/textproc/docbook
 
-USE_REINPLACE=	yes
 USE_IMAKE=	yes
 PREFIX?=	${LOCALBASE}
 USE_XLIB=	yes

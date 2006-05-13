@@ -17,7 +17,6 @@ COMMENT=	XML parser library for GNOME
 
 USE_GMAKE=	yes
 USE_GNOME=	pkgconfig
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 

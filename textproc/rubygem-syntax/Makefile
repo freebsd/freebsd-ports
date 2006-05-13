@@ -21,8 +21,6 @@ RUN_DEPENDS+=	${BUILD_DEPENDS}
 
 PKGNAMEPREFIX=	rubygem-
 
-USE_REINPLACE=	yes
-
 REV=		1.8
 GEMS_BASE_DIR=	lib/ruby/gems/${REV}
 GEMS_DIR=	${GEMS_BASE_DIR}/gems

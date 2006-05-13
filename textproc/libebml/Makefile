@@ -16,7 +16,6 @@ COMMENT=	EBML (Extensible Binary Meta Language), sort of binary version of XML
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 BUILD_WRKSRC=	${WRKSRC}/make/linux
 INSTALL_WRKSRC=	${WRKSRC}/make/linux
 INSTALLS_SHLIB=	yes

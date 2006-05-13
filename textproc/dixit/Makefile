@@ -35,7 +35,6 @@ _DB_D=	${PORTNAME}_qdb.zip
 _DB_F=	${PORTNAME}.qdb
 _DB=	${DB_DIR}/${_DB_F}
 
-USE_REINPLACE=	yes
 USE_QT_VER=	3
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes

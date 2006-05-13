@@ -30,8 +30,6 @@ USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=-without-wlex-compat -without-wlex
 
-USE_REINPLACE=	yes
-
 ALL_TARGET=	all opt
 
 # to avoid a conflict with PACKAGES in bsd.port.mk

@@ -16,7 +16,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Translate GNU info files into man pages
 
 USE_PERL5=	yes
-USE_REINPLACE=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 

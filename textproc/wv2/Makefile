@@ -24,7 +24,6 @@ GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
-USE_REINPLACE=	yes
 
 pre-configure:
 	@${REINPLACE_CMD} "s,-pedantic ,," ${WRKSRC}/configure
