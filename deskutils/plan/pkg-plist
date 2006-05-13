@@ -3,45 +3,46 @@ bin/pland
 bin/netplan
 bin/notifier
 bin/Killpland
-%%DOCSDIR%%/Mkdoc
-%%DOCSDIR%%/Mkdoc.nawk
-%%DOCSDIR%%/plan.help
-%%DOCSDIR%%/plan_cal.ps
-%%DOCSDIR%%/examples/holiday_australia
-%%DOCSDIR%%/examples/holiday_austria
-%%DOCSDIR%%/examples/holiday_bavarian
-%%DOCSDIR%%/examples/holiday_belgium
-%%DOCSDIR%%/examples/holiday_canada
-%%DOCSDIR%%/examples/holiday_combi
-%%DOCSDIR%%/examples/holiday_czech
-%%DOCSDIR%%/examples/holiday_denmark
-%%DOCSDIR%%/examples/holiday_dutch
-%%DOCSDIR%%/examples/holiday_finnish
-%%DOCSDIR%%/examples/holiday_french
-%%DOCSDIR%%/examples/holiday_frswiss
-%%DOCSDIR%%/examples/holiday_german
-%%DOCSDIR%%/examples/holiday_greek
-%%DOCSDIR%%/examples/holiday_hungary
-%%DOCSDIR%%/examples/holiday_italy
-%%DOCSDIR%%/examples/holiday_japan
-%%DOCSDIR%%/examples/holiday_norway
-%%DOCSDIR%%/examples/holiday_portugal
-%%DOCSDIR%%/examples/holiday_quebec
-%%DOCSDIR%%/examples/holiday_slovak
-%%DOCSDIR%%/examples/holiday_spain
-%%DOCSDIR%%/examples/holiday_swedish
-%%DOCSDIR%%/examples/holiday_uk
-%%DOCSDIR%%/examples/holiday_us
-%%DOCSDIR%%/BlackWhite
-%%DOCSDIR%%/Monochrome
-%%DOCSDIR%%/README
-%%DOCSDIR%%/plan.lang.dutch
-%%DOCSDIR%%/plan.lang.english
-%%DOCSDIR%%/plan.lang.french
-%%DOCSDIR%%/plan.lang.german
-%%DOCSDIR%%/plan.lang.italian
-%%DOCSDIR%%/plan.lang.spanish
-@exec /bin/mkdir -p %D/share/netplan.dir
-@dirrm share/netplan.dir
-@dirrm %%DOCSDIR%%/examples
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/Mkdoc
+%%PORTDOCS%%%%DOCSDIR%%/Mkdoc.nawk
+%%PORTDOCS%%%%DOCSDIR%%/plan.help
+%%PORTDOCS%%%%DOCSDIR%%/plan_cal.ps
+%%EXAMPLESDIR%%/holiday_australia
+%%EXAMPLESDIR%%/holiday_austria
+%%EXAMPLESDIR%%/holiday_bavarian
+%%EXAMPLESDIR%%/holiday_belgium
+%%EXAMPLESDIR%%/holiday_canada
+%%EXAMPLESDIR%%/holiday_combi
+%%EXAMPLESDIR%%/holiday_czech
+%%EXAMPLESDIR%%/holiday_denmark
+%%EXAMPLESDIR%%/holiday_dutch
+%%EXAMPLESDIR%%/holiday_finnish
+%%EXAMPLESDIR%%/holiday_french
+%%EXAMPLESDIR%%/holiday_frswiss
+%%EXAMPLESDIR%%/holiday_german
+%%EXAMPLESDIR%%/holiday_greek
+%%EXAMPLESDIR%%/holiday_hungary
+%%EXAMPLESDIR%%/holiday_italy
+%%EXAMPLESDIR%%/holiday_japan
+%%EXAMPLESDIR%%/holiday_norway
+%%EXAMPLESDIR%%/holiday_portugal
+%%EXAMPLESDIR%%/holiday_quebec
+%%EXAMPLESDIR%%/holiday_slovak
+%%EXAMPLESDIR%%/holiday_spain
+%%EXAMPLESDIR%%/holiday_swedish
+%%EXAMPLESDIR%%/holiday_uk
+%%EXAMPLESDIR%%/holiday_us
+%%PORTDOCS%%%%DOCSDIR%%/BlackWhite
+%%PORTDOCS%%%%DOCSDIR%%/Monochrome
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/plan.lang.dutch
+%%PORTDOCS%%%%DOCSDIR%%/plan.lang.english
+%%PORTDOCS%%%%DOCSDIR%%/plan.lang.french
+%%PORTDOCS%%%%DOCSDIR%%/plan.lang.german
+%%PORTDOCS%%%%DOCSDIR%%/plan.lang.italian
+%%PORTDOCS%%%%DOCSDIR%%/plan.lang.spanish
+@exec /bin/mkdir -p %D/%%DATADIR%%/netplan.dir
+@dirrmtry %%DATADIR%%/netplan.dir
+@dirrm %%DATADIR%%
+@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
