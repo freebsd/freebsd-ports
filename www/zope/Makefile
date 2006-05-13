@@ -18,7 +18,6 @@ COMMENT=	An object-based web application platform
 
 USE_PYTHON=	2.3
 USE_RC_SUBR=	yes
-USE_REINPLACE=	yes
 DIST_SUBDIR=	zope
 
 # Note: the notes that follow reflect the decisions of prior maintainers

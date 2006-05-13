@@ -16,7 +16,6 @@ MAINTAINER=	mbr@FreeBSD.org
 COMMENT=	Allows users to use MySQL databases for user authentication
 
 USE_MYSQL=	YES
-USE_REINPLACE=  YES
 
 SHORTMODNAME=   mysql_auth
 AP_FAST_BUILD=  YES

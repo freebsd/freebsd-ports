@@ -20,8 +20,6 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		vga.1:${PORTSDIR}/graphics/svgalib \
 		png.5:${PORTSDIR}/graphics/png
 
-USE_REINPLACE=	yes
-
 PORTDOCS=	AUTHORS Changelog README
 ONLY_FOR_ARCHS=	i386
 

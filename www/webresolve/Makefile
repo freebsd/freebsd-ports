@@ -16,7 +16,6 @@ MAINTAINER=	joseph@randomnetworks.com
 COMMENT=	Webresolve resolves IP addresses to host names in web log files
 
 HAS_CONFIGURE=	yes
-USE_REINPLACE=	yes
 
 ALL_TARGET=	webresolve
 

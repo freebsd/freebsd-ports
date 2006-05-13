@@ -25,7 +25,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
 USE_APACHE=	yes
-USE_REINPLACE=	yes
 
 CGI_DIR?=	${PREFIX}/www/cgi-bin
 SUB_FILES=	pkg-message

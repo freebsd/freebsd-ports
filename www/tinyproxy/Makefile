@@ -16,7 +16,6 @@ COMMENT=	A small, efficient HTTP proxy server
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--bindir=${PREFIX}/sbin \
 		--with-config=${PREFIX}/etc/tinyproxy/tinyproxy.conf \
 		--program-transform-name=""

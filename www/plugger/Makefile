@@ -15,7 +15,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A multimedia front-end plugin for Mozilla or Opera
 
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
 MAN7=		plugger.7

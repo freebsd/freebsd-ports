@@ -18,7 +18,6 @@ COMMENT=	A Squid Report Generator
 USE_GMAKE=	yes
 USE_BISON=	yes
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 USE_GETOPT_LONG=yes
 NO_INSTALL_MANPAGES=	yes
 MAKE_ENV=	CC="${CC}" CXX="${CXX}" \

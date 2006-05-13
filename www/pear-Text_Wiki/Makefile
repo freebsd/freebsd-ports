@@ -15,8 +15,6 @@ COMMENT=	Abstracts parsing and rendering rules for Wiki markup
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-USE_REINPLACE=	yes
-
 CATEGORY=	Text
 FILES=		Wiki.php Wiki/Parse.php Wiki/Parse/Default/Anchor.php \
 		Wiki/Parse/Default/Blockquote.php Wiki/Parse/Default/Bold.php \

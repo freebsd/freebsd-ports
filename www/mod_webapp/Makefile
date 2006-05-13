@@ -19,7 +19,6 @@ COMMENT=	Apache module mounts Tomcat web applications
 
 BUILD_DEPENDS=	${NONEXISTANT}:${PORTSDIR}/devel/apr:configure
 
-USE_REINPLACE=	yes
 USE_APACHE=	yes
 USE_PYTHON_BUILD=yes
 USE_AUTOTOOLS=	automake:19:env autoconf:259:env libtool:15:env

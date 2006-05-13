@@ -24,7 +24,6 @@ RUN_DEPENDS=	gapi2-parser:${PORTSDIR}/x11-toolkits/gtk-sharp20 \
 USE_GECKO=	mozilla firefox
 USE_GNOME=	gnometarget
 LATEST_LINK=	gecko-sharp20
-USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

@@ -17,7 +17,6 @@ COMMENT=	A simple http server for static content
 RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/}
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile
 .if !defined(WITHOUT_OPENSSL)

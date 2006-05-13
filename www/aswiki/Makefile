@@ -20,7 +20,6 @@ RUN_DEPENDS=		${RUBY_SITELIBDIR}/amrita/xml.rb:${PORTSDIR}/textproc/ruby-amrita 
 			${RUBY_SITEARCHLIBDIR}/bdb.so:${PORTSDIR}/databases/ruby-bdb
 
 NO_BUILD=		YES
-USE_REINPLACE=		YES
 
 USE_RUBY=		YES
 RUBY_SHEBANG_FILES=	aswiki.cgi

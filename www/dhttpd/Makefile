@@ -14,8 +14,6 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Minimal secure webserver. Fast and efficient, no cgi-bin support
 
-USE_REINPLACE=	yes
-
 WRKSRC=		${WRKDIR}/${PORTNAME}-1.02-4
 BUILD_WRKSRC=	${WRKSRC}/src
 

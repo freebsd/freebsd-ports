@@ -15,7 +15,6 @@ COMMENT=	Allows Apache to log to a MySQL database
 LATEST_LINK=	mod_log_sql2
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS+=	--with-apxs=${APXS}
 SSL_PLIST=	""

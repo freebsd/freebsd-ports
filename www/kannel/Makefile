@@ -18,7 +18,6 @@ LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
 USE_GNOME=	libxml2
 USE_OPENSSL=	yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-cflags="${CPPFLAGS}" --with-libs="${LDFLAGS}" \

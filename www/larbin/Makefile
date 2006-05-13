@@ -20,7 +20,6 @@ BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash2 \
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 MAKE_ARGS=	CXX=${CXX}
 
 .include <bsd.port.pre.mk>

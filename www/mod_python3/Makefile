@@ -20,7 +20,6 @@ USE_PYTHON=	2.3+
 
 LATEST_LINK=	mod_python3
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 CONFIGURE_ARGS+=--with-apxs="${APXS}" --with-python="${PYTHON_CMD}" \
 		--without-flex
 MAKE_ENV=	EXPR_COMPAT=yes

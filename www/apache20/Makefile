@@ -52,7 +52,6 @@ USE_ICONV=		yes
 USE_AUTOTOOLS=	autoconf:259 libtool:15
 USE_PERL5=		yes
 USE_RC_SUBR=		yes
-USE_REINPLACE=		yes
 USE_APACHE=		common20
 LIBTOOLFILES=		configure
 INSTALLS_SHLIB=		yes

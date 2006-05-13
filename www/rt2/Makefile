@@ -42,7 +42,6 @@ BUILD_DEPENDS=	${LOCALBASE}/libexec/apache/libperl.so:${PORTSDIR}/www/mod_perl \
 		${SITE_PERL}/Tie/IxHash.pm:${PORTSDIR}/devel/p5-Tie-IxHash \
 		${SITE_PERL}/CGI/Cookie.pm:${PORTSDIR}/www/p5-CGI.pm
 
-USE_REINPLACE=	yes
 USE_PERL5=	yes
 ALL_TARGETS=	testdeps fixdeps
 

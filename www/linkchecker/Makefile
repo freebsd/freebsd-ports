@@ -17,7 +17,6 @@ COMMENT=	Check HTML documents for broken links
 
 USE_PYTHON=		2.4
 USE_PYDISTUTILS=	yes
-USE_REINPLACE=		yes
 MAN1=	linkchecker.1
 
 .include <bsd.port.pre.mk>

@@ -18,7 +18,6 @@ COMMENT=	Bookmark Editor
 USE_GNOME=	gtk12 libxml2
 USE_BISON=	yes
 USE_GETOPT_LONG=	yes
-USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
 MAKE_ENV=	LD="${CC}" LDFLAGS="${LDFLAGS}"
 

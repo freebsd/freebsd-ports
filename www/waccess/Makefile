@@ -14,7 +14,6 @@ MAINTAINER=	tundra@tundraware.com
 COMMENT=	Quick-N-Dirty Web Access Log Analyzer
 
 USE_PYTHON=	yes
-USE_REINPLACE=	yes
 
 MAN1=	waccess.1
 MANCOMPRESSED=	yes

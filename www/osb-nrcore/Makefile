@@ -18,7 +18,6 @@ COMMENT=	Gtk-Webcore's browser engine
 LIB_DEPENDS=	jscore.0:${PORTSDIR}/lang/osb-jscore
 
 USE_AUTOTOOLS=	libtool:15
-USE_REINPLACE=	yes
 USE_GNOME=	gtk20 gnomehack
 USE_GCC=	3.4
 INSTALLS_SHLIB=	yes

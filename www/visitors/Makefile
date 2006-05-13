@@ -16,8 +16,6 @@ COMMENT=	Very fast and easy to use web log analyzer
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_0.7
 
-USE_REINPLACE=	yes
-
 PLIST_FILES=	bin/visitors
 PORTDOCS=	doc.html
 

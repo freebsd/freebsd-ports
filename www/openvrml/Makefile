@@ -23,7 +23,6 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
 RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/mozilla-js.pc:${PORTSDIR}/www/mozilla
 
-USE_REINPLACE=	yes
 USE_GL=		yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gtk20

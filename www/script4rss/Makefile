@@ -16,7 +16,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Easily create scripts to convert HTML pages to RSS feeds
 
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 USE_PERL5_RUN=	yes
 NO_BUILD=	yes
 

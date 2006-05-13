@@ -19,7 +19,6 @@ COMMENT=	Library for embedded web servers
 WRKSRC=		${WRKDIR}/${PORTNAME}-${VERSION}-persistent-${LEVEL}
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 CC=		${CXX}
 
 VERSION=	1.3

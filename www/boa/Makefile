@@ -18,7 +18,6 @@ COMMENT=	High performance single-tasking web server
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
 INFO=		boa

@@ -17,7 +17,6 @@ COMMENT=	Small weblog engine for the UNIX command line
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
-USE_REINPLACE=	yes
 NO_BUILD=	yes
 
 SUB_FILES=	pkg-message

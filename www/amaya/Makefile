@@ -34,7 +34,6 @@ FORBIDDEN=	http://www.vuxml.org/freebsd/dc930435-d59f-11da-8098-00123ffe8333.htm
 WRKSRC=		${WRKDIR}/Amaya/obj
 
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 USE_GNOME=	gtk12 imlib
 USE_ICONV=	yes
 

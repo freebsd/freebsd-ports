@@ -24,7 +24,6 @@ NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 BATCH?=		NO
 
-USE_REINPLACE=	yes
 USE_PERL5_RUN=	yes
 
 USE_RC_SUBR=	yes
