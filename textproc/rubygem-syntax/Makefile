@@ -8,6 +8,7 @@ PORTNAME=	syntax
 PORTVERSION=	1.0.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	http://rubyforge.org/frs/download.php/4953/
+PKGNAMEPREFIX=	rubygem-
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A module for using Systax highlighting in Ruby
@@ -18,8 +19,6 @@ COMMENT=	A module for using Systax highlighting in Ruby
 
 BUILD_DEPENDS+=	${RUBYGEMBIN}:${PORTSDIR}/devel/ruby-gems
 RUN_DEPENDS+=	${BUILD_DEPENDS}
-
-PKGNAMEPREFIX=	rubygem-
 
 REV=		1.8
 GEMS_BASE_DIR=	lib/ruby/gems/${REV}

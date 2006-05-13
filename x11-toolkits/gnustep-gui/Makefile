@@ -48,8 +48,8 @@ PLIST_SUB+=	BASEVERSION=${PORTVERSION:C/[.][0-9]*$//1}
 .if defined(WITHOUT_GNUSTEP_FAKEMAIN)
 .if !exists(/proc/curproc)
 IGNORE=		requires procfs mounted to build or run, for details see procfs(5)
-.endif 
-.endif 
+.endif
+.endif
 
 .if !defined(WITHOUT_CUPS)
 LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-base
