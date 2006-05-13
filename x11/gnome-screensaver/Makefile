@@ -45,7 +45,7 @@ BROKEN=	Does not build on 4.X
 .endif
 
 .if !defined(WITH_PAM)
-CONFIGURE_ARGS+=	--without-pam
+CONFIGURE_ARGS+=	--disable-pam
 .endif
 
 post-patch:
