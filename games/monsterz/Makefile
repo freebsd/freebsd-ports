@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	monsterz
-PORTVERSION=	0.6.1
+PORTVERSION=	0.7.0
 CATEGORIES=	games
 MASTER_SITES=	http://sam.zoy.org/monsterz/
 
@@ -17,33 +17,21 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/pygame/__init__.py:${PORTSDIR}/devel/py-game
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_PYTHON=	yes
-NO_BUILD=	yes
+MAKE_ENV=	prefix=${PREFIX}
 
-LINSTDIR?=	share/games/${PORTNAME}
-INSTDIR=	${PREFIX}/${LINSTDIR}
-PLIST_SUB=	LINSTDIR=${LINSTDIR}
-
-PKGMESSAGE=	${WRKDIR}/pkg-message
-SUB_FILES=	pkg-message
+SCOREDIR=	/var/games
+PLIST_SUB=	SCOREDIR=${SCOREDIR}
 
 PORTDOCS=	AUTHORS COPYING INSTALL README TODO
 
-do-install:
-	${MKDIR} ${INSTDIR}/graphics ${INSTDIR}/sound
-	${INSTALL_SCRIPT} ${WRKSRC}/monsterz.py ${INSTDIR}
-	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${INSTDIR}
-	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${INSTDIR}
-.for sd in graphics sound
-	${FIND} ${WRKSRC}/${sd} -type f -exec ${INSTALL_DATA} {} ${INSTDIR}/${sd} \;
-.endfor
-
 post-install:
+	${STRIP_CMD} ${PREFIX}/games/monsterz
+	${LN} -sf ${PREFIX}/games/monsterz ${PREFIX}/bin
+	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${PREFIX}/share/games/monsterz
+	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${PREFIX}/share/games/monsterz
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
-	@${ECHO_MSG}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG}
 
 .include <bsd.port.mk>

@@ -1,24 +1,30 @@
-%%LINSTDIR%%/graphics/background.png
-%%LINSTDIR%%/graphics/bigtiles.png
-%%LINSTDIR%%/graphics/board.png
-%%LINSTDIR%%/graphics/icon.png
-%%LINSTDIR%%/graphics/logo.png
-%%LINSTDIR%%/graphics/tiles.png
-%%LINSTDIR%%/monsterz.py
-%%LINSTDIR%%/monsterz.pyc
-%%LINSTDIR%%/monsterz.pyo
-%%LINSTDIR%%/sound/applause.wav
-%%LINSTDIR%%/sound/boing.wav
-%%LINSTDIR%%/sound/click.wav
-%%LINSTDIR%%/sound/ding.wav
-%%LINSTDIR%%/sound/duh.wav
-%%LINSTDIR%%/sound/grunt.wav
-%%LINSTDIR%%/sound/laugh.wav
-%%LINSTDIR%%/sound/music.s3m
-%%LINSTDIR%%/sound/pop.wav
-%%LINSTDIR%%/sound/warning.wav
-%%LINSTDIR%%/sound/whip.wav
-@dirrm %%LINSTDIR%%/sound
-@dirrm %%LINSTDIR%%/graphics
-@dirrm %%LINSTDIR%%
+bin/monsterz
+games/monsterz
+share/games/monsterz/graphics/background.png
+share/games/monsterz/graphics/bigtiles.png
+share/games/monsterz/graphics/board.png
+share/games/monsterz/graphics/icon.png
+share/games/monsterz/graphics/logo.png
+share/games/monsterz/graphics/tiles.png
+share/games/monsterz/monsterz.py
+share/games/monsterz/monsterz.pyc
+share/games/monsterz/monsterz.pyo
+share/games/monsterz/sound/applause.wav
+share/games/monsterz/sound/boing.wav
+share/games/monsterz/sound/click.wav
+share/games/monsterz/sound/ding.wav
+share/games/monsterz/sound/duh.wav
+share/games/monsterz/sound/grunt.wav
+share/games/monsterz/sound/laugh.wav
+share/games/monsterz/sound/music.s3m
+share/games/monsterz/sound/pop.wav
+share/games/monsterz/sound/warning.wav
+share/games/monsterz/sound/whip.wav
+@dirrm share/games/monsterz/sound
+@dirrm share/games/monsterz/graphics
+@dirrm share/games/monsterz
 @dirrmtry share/games
+@dirrmtry games
+@exec if [ ! -e %%SCOREDIR%% ] ; then mkdir -p -m 775 %%SCOREDIR%% ; fi
+@exec [ -e %%SCOREDIR%%/monsterz ] || touch %%SCOREDIR%%/monsterz && chmod g+w %%SCOREDIR%%/monsterz
+@unexec if [ ! -s %%SCOREDIR%%/monsterz ] ; then rm -f %%SCOREDIR%%/monsterz && rm -r %%SCOREDIR%% || true ; fi
