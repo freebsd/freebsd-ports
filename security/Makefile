@@ -181,6 +181,7 @@
     SUBDIR += ipfilter2dshield
     SUBDIR += ipfmeta
     SUBDIR += ipfw2dshield
+    SUBDIR += ipfwcount
     SUBDIR += ipguard
     SUBDIR += ipsec-tools
     SUBDIR += isakmpd
