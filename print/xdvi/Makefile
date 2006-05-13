@@ -20,7 +20,6 @@ COMMENT=	A DVI Previewer for the X Window System
 CONFLICTS=	teTeX-*
 
 DIST_SUBDIR=	xdvi
-USE_REINPLACE=	yes
 USE_IMAKE=	yes
 USE_GMAKE=	yes
 PKGINSTALL=	${WRKDIR}/pkg-install

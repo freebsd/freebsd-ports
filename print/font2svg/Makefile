@@ -16,7 +16,6 @@ COMMENT=	All font to svg-font converter
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
-USE_REINPLACE=	yes
 USE_GHOSTSCRIPT_RUN=	yes
 NO_BUILD=	yes
 

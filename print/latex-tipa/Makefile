@@ -19,7 +19,6 @@ RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base
 
 NO_INSTALL_MANPAGES=	yes
 NO_BUILD=	yes
-USE_REINPLACE=	yes
 LATEX_BIN=	${LOCALBASE}/bin/latex
 
 post-patch:

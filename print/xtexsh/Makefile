@@ -23,8 +23,6 @@ NO_BUILD=	yes
 MAN1=		xtexsh.1
 MANCOMPRESSED=	yes
 
-USE_REINPLACE=	yes
-
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/bin/wish,${PREFIX}/bin/wish8.4,; \
 		s,/etc,${PREFIX}/etc,; s,bash,sh,' ${WRKSRC}/xtexsh

@@ -15,7 +15,6 @@ MAINTAINER=	arensb+freebsd-ports@ooblick.com
 COMMENT=	Synchronize a PalmPilot with a Unix workstation
 
 USE_GETTEXT=	yes
-USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i "" -E
 
 INSTALLS_SHLIB=	yes

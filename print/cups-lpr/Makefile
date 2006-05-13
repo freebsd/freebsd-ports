@@ -17,8 +17,6 @@ MASTER_SITES=	${CUPS_MASTER_SITES}
 MAINTAINER=	asa@agava.com
 COMMENT=	The CUPS BSD and system V compatibility binaries (lp* commands)
 
-USE_REINPLACE=	yes
-
 MANLANG=	"" es fr
 
 .ifndef CUPS_OVERWRITE_BASE

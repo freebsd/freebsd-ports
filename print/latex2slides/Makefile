@@ -21,7 +21,6 @@ RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick \
 		dvips:${PORTSDIR}/print/teTeX \
 		${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
 
-USE_REINPLACE=	yes
 USE_PYTHON=	yes
 NO_BUILD=	yes
 PLIST_SUB=	PORTNAME="${PORTNAME}" PORTVERSION="${PORTVERSION}"

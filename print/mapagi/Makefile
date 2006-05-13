@@ -18,7 +18,6 @@ BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 
 USE_QT_VER=	3
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 USE_SIZE=	yes
 
 QMAKE?=	${LOCALBASE}/bin/qmake

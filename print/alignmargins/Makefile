@@ -19,7 +19,6 @@ COMMENT=	Utility script to generate custom margins in PPDs for CUPS
 
 NO_BUILD=	yes
 USE_PERL5=	yes
-USE_REINPLACE=	yes
 
 do-extract:
 	@${RM} -rf ${WRKDIR}

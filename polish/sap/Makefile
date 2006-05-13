@@ -14,8 +14,6 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	alex@bsdguru.org
 COMMENT=	A command line Polish-English and English-Polish dictionary
 
-USE_REINPLACE=	yes
-
 do-configure:
 	@${REINPLACE_CMD} -e 's|PREFIX=/usr|PREFIX=${PREFIX}|g' ${WRKSRC}/Makefile
 	${REINPLACE_CMD} -e 's|-O2|${CFLAGS}|' ${WRKSRC}/src/Makefile

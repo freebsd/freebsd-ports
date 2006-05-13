@@ -17,7 +17,6 @@ COMMENT=	A GTK+ printer setup and maintaining tool
 
 PLIST_FILES=	bin/pup
 USE_GNOME=	gtk12
-USE_REINPLACE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}/
 

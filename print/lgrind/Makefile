@@ -42,8 +42,6 @@ COMMENT=	Produce beautiful listings of source code with LaTeX
 BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX
 
-USE_REINPLACE=	yes
-
 MAN1=		lgrind.1
 MAN5=		lgrindef.5
 MANCOMPRESSED=	yes

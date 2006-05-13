@@ -63,7 +63,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 CONFLICTS=	ghostscript-afpl* ghostscript-gpl*
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	CC="${CC}" CXX="${CXX}" CFLAGS_STANDARD="${CFLAGS}" \
 		XCFLAGS="${XCFLAGS}"

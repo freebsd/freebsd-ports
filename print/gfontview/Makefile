@@ -22,7 +22,6 @@ USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomelibs gnomeprefix
 USE_FREETYPE=	yes
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/freetype1/freetype \
 			  -I${LOCALBASE}/include" \
 		SPOOLER="/usr/bin/lpr" \

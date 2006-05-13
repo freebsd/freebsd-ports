@@ -17,7 +17,6 @@ COMMENT=	A C library for dynamically generating PDF
 RESTRICTED=	"many odd restrictions on usage and distribution"
 
 INSTALLS_SHLIB=	yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS=	--with-java=no --with-py=no --with-tcl=no

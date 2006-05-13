@@ -15,7 +15,6 @@ MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Converting texts in figure by tgif to LaTeX commands
 
 USE_PERL5_RUN=	yes
-USE_REINPLACE=	yes
 
 DOCSRC=		how-to-use.aux how-to-use.dvi \
 		how-to-use.log how-to-use.ps how-to-use.tex \

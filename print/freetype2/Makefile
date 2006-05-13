@@ -27,7 +27,6 @@ MAKE_ENV=	TOP=""
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnometarget pkgconfig
-USE_REINPLACE=	yes
 LIBTOOLFILES=	builds/unix/configure
 CONFIGURE_ARGS=	--disable-nls
 CONFIGURE_WRKSRC=	${WRKSRC}/builds/unix

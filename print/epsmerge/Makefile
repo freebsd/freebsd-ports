@@ -15,7 +15,6 @@ MAINTAINER=	bms@FreeBSD.org
 COMMENT=	Merge multiple EPS files into one EPS or PS file
 
 USE_PERL5=	yes
-USE_REINPLACE=	yes
 USE_SUBMAKE=	yes
 NO_BUILD=	yes
 
