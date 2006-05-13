@@ -571,6 +571,7 @@
     SUBDIR += wanderlust-emacs20
     SUBDIR += wanderlust-xemacs21-mule
     SUBDIR += websieve
+    SUBDIR += whoson
     SUBDIR += wmbiff
     SUBDIR += wmmail
     SUBDIR += wmmaiload

@@ -1,0 +1,8 @@
+etc/whoson.conf
+include/whoson.h
+lib/libwhoson.a
+lib/libwhoson.la
+lib/libwhoson.so
+lib/libwhoson.so.0
+sbin/whoson
+sbin/whosond

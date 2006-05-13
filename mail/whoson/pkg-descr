@@ -1,0 +1,13 @@
+This software is supposed to work as a "reference implementation" of the
+suggested "whoson" internet protocol.  The protocol is expected to be
+employed on "spam relay protected" mail servers to allow traveling
+customers still send their email via the protected server.  For this, a
+realtime database of "temporarily trusted" IP addresses is maintained by
+a special daemon program.  The database may be filled by, e.g. POP/IMAP
+servers, and used by SMTP server.  Another possible use of the protocol
+is to have the database filled by RADIUS/TACACS server for all dialup
+clients, and SMTP server using it to put the user identity into the
+"Received" header along with the source IP address.  The protocol itself
+is defined in a separate document "whoson.txt".
+
+WWW: http://whoson.sourceforge.net
