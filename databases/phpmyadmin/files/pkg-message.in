@@ -6,7 +6,16 @@
 Please edit config.inc.php to suit your needs.
 
 To make phpMyAdmin available through your web site, I suggest
-that you add the following to httpd.conf:
+that you add something like the following to httpd.conf:
 
     Alias /phpmyadmin/ "%%PREFIX%%/%%MYADMDIR%%/"
+
+    <Directory "%%PREFIX%%/%%MYADMDIR%%/">
+	Options none
+	AllowOverride Limit
+	
+	Order Deny, Allow
+	Deny from all
+	Allow from 127.0.0.1 .example.com
+    </Directory>
 
