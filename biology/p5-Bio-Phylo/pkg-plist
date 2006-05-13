@@ -1,0 +1,42 @@
+bin/LRmb.pl
+bin/age2bl.pl
+bin/bremer.pl
+bin/dnd2svg.pl
+bin/droptip.pl
+bin/postmb.pl
+%%SITE_PERL%%/Bio/Phylo.pm
+%%SITE_PERL%%/Bio/Phylo/CONSTANT.pm
+%%SITE_PERL%%/Bio/Phylo/Exceptions.pm
+%%SITE_PERL%%/Bio/Phylo/Forest.pm
+%%SITE_PERL%%/Bio/Phylo/Forest/Node.pm
+%%SITE_PERL%%/Bio/Phylo/Forest/Tree.pm
+%%SITE_PERL%%/Bio/Phylo/Generator.pm
+%%SITE_PERL%%/Bio/Phylo/IO.pm
+%%SITE_PERL%%/Bio/Phylo/Listable.pm
+%%SITE_PERL%%/Bio/Phylo/Manual.pod
+%%SITE_PERL%%/Bio/Phylo/Matrices.pm
+%%SITE_PERL%%/Bio/Phylo/Matrices/Alignment.pm
+%%SITE_PERL%%/Bio/Phylo/Matrices/Datum.pm
+%%SITE_PERL%%/Bio/Phylo/Matrices/Matrix.pm
+%%SITE_PERL%%/Bio/Phylo/Matrices/Sequence.pm
+%%SITE_PERL%%/Bio/Phylo/Parsers/Newick.pm
+%%SITE_PERL%%/Bio/Phylo/Parsers/Nexus.pm
+%%SITE_PERL%%/Bio/Phylo/Parsers/Table.pm
+%%SITE_PERL%%/Bio/Phylo/Parsers/Taxlist.pm
+%%SITE_PERL%%/Bio/Phylo/Taxa.pm
+%%SITE_PERL%%/Bio/Phylo/Taxa/Taxon.pm
+%%SITE_PERL%%/Bio/Phylo/Treedrawer.pm
+%%SITE_PERL%%/Bio/Phylo/Treedrawer/SVG.pm
+%%SITE_PERL%%/Bio/Phylo/Unparsers/Newick.pm
+%%SITE_PERL%%/Bio/Phylo/Unparsers/Pagel.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Bio/Phylo/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bio/Phylo
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bio
+@dirrm %%SITE_PERL%%/Bio/Phylo/Unparsers
+@dirrm %%SITE_PERL%%/Bio/Phylo/Treedrawer
+@dirrm %%SITE_PERL%%/Bio/Phylo/Taxa
+@dirrm %%SITE_PERL%%/Bio/Phylo/Parsers
+@dirrm %%SITE_PERL%%/Bio/Phylo/Matrices
+@dirrm %%SITE_PERL%%/Bio/Phylo/Forest
+@dirrm %%SITE_PERL%%/Bio/Phylo
+@dirrmtry %%SITE_PERL%%/Bio
