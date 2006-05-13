@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	phpMyAdmin
-DISTVERSION=	2.8.0.3
+DISTVERSION=	2.8.0.4
 CATEGORIES=	databases www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	phpmyadmin
@@ -100,6 +100,11 @@ pre-everything::
 	${ECHO_MSG} ""
 	${ECHO_MSG} "Note that selecting the MYSQLI option will only work"
 	${ECHO_MSG} "with PHP5 and MySQL 4.1.x"
+	${ECHO_MSG} ""
+	${ECHO_MSG} "If you want to use PHP5, for best results, please"
+	${ECHO_MSG} "install lang/php5 before attempting to install"
+	${ECHO_MSG} "databases/phpmyadmin"
+	${ECHO_MSG} ""
 
 post-patch:
 	${CP} ${FILESDIR}/${CFGFILE}.sample ${WRKSRC}/${CFGFILE}.sample
