@@ -55,6 +55,7 @@ share/gnome/workrave/images/workrave-icon-small.png
 share/gnome/workrave/images/workrave-quiet-icon-medium.png
 share/gnome/workrave/images/workrave-suspended-icon-medium.png
 share/gnome/workrave/images/workrave.png
+share/locale/ca/LC_MESSAGES/workrave.mo
 share/locale/cs/LC_MESSAGES/workrave.mo
 share/locale/da/LC_MESSAGES/workrave.mo
 share/locale/de/LC_MESSAGES/workrave.mo
@@ -69,6 +70,7 @@ share/locale/no/LC_MESSAGES/workrave.mo
 share/locale/pl/LC_MESSAGES/workrave.mo
 share/locale/pt_BR/LC_MESSAGES/workrave.mo
 share/locale/ru/LC_MESSAGES/workrave.mo
+share/locale/sv/LC_MESSAGES/workrave.mo
 share/locale/zh_TW/LC_MESSAGES/workrave.mo
 @dirrm share/gnome/workrave/images
 @dirrm share/gnome/workrave/exercises
