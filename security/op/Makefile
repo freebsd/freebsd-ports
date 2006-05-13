@@ -20,7 +20,6 @@ COMMENT=	Allow others to run commands as root (like sudo but different)
 # Global variables
 #
 
-USE_REINPLACE=	yes
 BINMODE=	4555
 MAKE_ARGS=	BASE="${PREFIX}" \
 		OPTS='-Dbsdi -DOP_ACCESS=\"${CONF_DIR}/${CONF_FILE}\"' \

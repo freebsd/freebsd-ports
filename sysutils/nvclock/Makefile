@@ -17,7 +17,6 @@ MAINTAINER=	sbahra@kerneled.org
 COMMENT=	The nVidia graphic card status and overclocking tool
 
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	pkgconfig

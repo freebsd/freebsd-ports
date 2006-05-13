@@ -16,7 +16,6 @@ COMMENT=	CPU meter for Kicker
 
 USE_KDELIBS_VER=3
 USE_AUTOTOOLS=	libtool:15
-USE_REINPLACE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2||g' -e 's|-lpthread|${PTHREAD_LIBS}|g' \

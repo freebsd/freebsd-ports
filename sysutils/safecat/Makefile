@@ -15,8 +15,6 @@ MASTER_SITE_SUBDIR=	utils/file
 MAINTAINER=	roam@FreeBSD.org
 COMMENT=	Safely write data to a directory using D. J. Bernstein's Maildir ideology
 
-USE_REINPLACE=	yes
-
 MAN1=		safecat.1 maildir.1
 
 do-configure:

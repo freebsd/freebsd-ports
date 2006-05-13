@@ -14,7 +14,6 @@ MAINTAINER=	sumikawa@FreeBSD.org
 COMMENT=	Fast remote command execution
 
 USE_PYTHON=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
 post-patch:

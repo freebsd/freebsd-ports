@@ -23,7 +23,6 @@ LIB_DEPENDS=	atlas.1:${PORTSDIR}/math/atlas \
 		guile.15:${PORTSDIR}/lang/guile
 
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS+=	--with-lapack=-lalapack

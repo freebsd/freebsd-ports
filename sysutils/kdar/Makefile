@@ -21,7 +21,6 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_KDEBASE_VER=3
-USE_REINPLACE=	yes
 
 .include <bsd.port.pre.mk>
 

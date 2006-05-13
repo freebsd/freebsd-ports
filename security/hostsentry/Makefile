@@ -19,7 +19,6 @@ COMMENT=	A Login Anomaly Detector
 RUN_DEPENDS=	${PYTHONPREFIX_SITELIBDIR}/gdbm.so:${PORTSDIR}/databases/py-gdbm
 
 USE_PYTHON=	yes
-USE_REINPLACE=	yes
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 

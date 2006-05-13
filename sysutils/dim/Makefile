@@ -18,7 +18,6 @@ COMMENT=	A directory lister which sorts the file list in 2D
 USE_PERL5_RUN=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
-USE_REINPLACE=	yes
 PLIST_FILES=	bin/dim
 
 post-patch:

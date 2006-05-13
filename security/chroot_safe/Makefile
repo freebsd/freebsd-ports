@@ -14,7 +14,6 @@ MAINTAINER=	gkovesdan@t-hosting.hu
 COMMENT=	A tool to chroot softwares easily
 
 GNU_CONFIGURE=YES
-USE_REINPLACE=YES
 
 MAN1=		chroot_safe.1
 PLIST_FILES=	sbin/chroot_safe libexec/chroot_safe/chroot_safe.so

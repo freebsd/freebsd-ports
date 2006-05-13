@@ -24,7 +24,6 @@ USE_PERL5=	yes
 USE_PHP=	yes
 USE_PHPEXT=	yes
 USE_PHPIZE=	yes
-USE_REINPLACE=	yes
 
 CONFIGURE_ARGS=	--with-cryptopp
 

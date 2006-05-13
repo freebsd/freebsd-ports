@@ -16,7 +16,6 @@ COMMENT=	Application mapper
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 
-USE_REINPLACE=	yes
 USE_OPENSSL=	yes
 
 MAN1=		amap.1

@@ -16,7 +16,6 @@ COMMENT=	ClamAV courier filter
 BUILD_DEPENDS=	courier-config:${PORTSDIR}/mail/courier
 LIB_DEPENDS=	clamav.1:${PORTSDIR}/security/clamav
 
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 

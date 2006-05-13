@@ -13,8 +13,6 @@ MASTER_SITES=	http://cr.yp.to/mac/
 MAINTAINER=	roam@FreeBSD.org
 COMMENT=	The poly1305 message authentication reference implementation using AES
 
-USE_REINPLACE=	yes
-
 MAKE_ENV+=	CC="${CC} ${CPPFLAGS} ${CFLAGS} ${LDFLAGS} ${STRIP}"
 ALL_TARGET=	default
 

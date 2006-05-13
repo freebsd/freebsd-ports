@@ -22,7 +22,6 @@ LIB_DEPENDS+=   atlas.1:${PORTSDIR}/math/atlas
 .endif
 
 ALL_TARGET=	allseq
-USE_REINPLACE=	yes
 
 .if defined(WITHOUT_ATLAS)
 BLAS=		${LOCALBASE}/lib/libblas.a

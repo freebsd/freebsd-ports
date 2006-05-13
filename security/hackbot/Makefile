@@ -14,7 +14,6 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	mich@FreeBSD.org
 COMMENT=	A host exploration tool and bannergrabber
 
-USE_REINPLACE=	YES
 USE_PERL5=	YES
 NO_BUILD=	YES
 WRKSRC=		${WRKDIR}/${PORTNAME}

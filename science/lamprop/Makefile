@@ -13,8 +13,6 @@ MASTER_SITES=	http://www.xs4all.nl/~rsmith/software/
 MAINTAINER=	rsmith@xs4all.nl
 COMMENT=	Calculates properties of fiber reinforced composites
 
-USE_REINPLACE=	yes
-
 PLIST_FILES=	bin/lamprop
 
 MAN1=		lamprop.1

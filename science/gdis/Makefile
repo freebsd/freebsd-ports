@@ -21,7 +21,6 @@ LIB_DEPENDS=	gtkglext-x11-1.0.2:${PORTSDIR}/x11-toolkits/gtkglext
 
 USE_GL=		yes
 USE_GNOME=	gtk20
-USE_REINPLACE=	yes
 
 CFLAGS+=	-DINSTALL=\"\\\"${DATADIR}\\\"\"
 

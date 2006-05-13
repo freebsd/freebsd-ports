@@ -20,7 +20,6 @@ BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-pub-${PORTVERSION}a37
 
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 MAKE_ENV+=	CC="${CC}"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

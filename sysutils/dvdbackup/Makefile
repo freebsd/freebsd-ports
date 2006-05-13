@@ -19,7 +19,6 @@ LIB_DEPENDS=	dvdread.3:${PORTSDIR}/multimedia/libdvdread
 WRKSRC=		${WRKDIR}/${PORTNAME}
 PLIST_FILES=	bin/dvdbackup
 PORTDOCS=	README
-USE_REINPLACE=	yes
 
 do-build:
 	${CC} -o ${WRKSRC}/dvdbackup ${CFLAGS} -I${LOCALBASE}/include \

@@ -15,8 +15,6 @@ MASTER_SITE_SUBDIR=	sentrytools
 MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	Auditing tool for system logs on Unix boxes
 
-USE_REINPLACE=	yes
-
 # Install binaries and config files readable to root only
 BINMODE=	700
 SHAREMODE=	600

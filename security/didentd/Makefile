@@ -15,7 +15,6 @@ COMMENT=	Modular RfC1423 (identd) server sending encrypted audit tokens.
 
 RUN_DEPENDS=	tcpserver:${PORTSDIR}/sysutils/ucspi-tcp
 
-USE_REINPLACE=	yes
 ALL_TARGET=	all
 INSTALL_TARGET=	install
 

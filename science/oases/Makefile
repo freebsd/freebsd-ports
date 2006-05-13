@@ -19,7 +19,6 @@ COMMENT=	Ocean Acoustics and Seismic Exploration Synthesis
 WRKSRC=		${WRKDIR}/Oases_export
 
 USE_XLIB=	yes
-USE_REINPLACE=	yes
 MAKE_ENV=	OASES_ROOT="${WRKSRC}"
 
 SCRIPT=		avbeam bistat cplot mplot mtvplot multmtv oasn oasp oasr \

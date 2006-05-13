@@ -18,7 +18,6 @@ COMMENT=	GNOME 2 password generator
 USE_GNOME=	pygnome2
 USE_PYTHON=	yes
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 
 post-patch:

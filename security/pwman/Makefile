@@ -19,7 +19,6 @@ LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
 RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
 
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 
 MAN1=	pwman.1
 

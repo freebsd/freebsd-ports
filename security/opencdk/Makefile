@@ -26,7 +26,6 @@ GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-libgcrypt-prefix=${LOCALBASE}
-USE_REINPLACE=	yes
 
 DOCS=		AUTHORS NEWS README THANKS doc/opencdk-api.html
 

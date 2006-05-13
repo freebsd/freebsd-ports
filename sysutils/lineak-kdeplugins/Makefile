@@ -24,7 +24,6 @@ USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 CONFIGURE_ARGS+=	--program-prefix=''
-USE_REINPLACE=	yes
 
 MAN1=		lineak_kdeplugins.1
 

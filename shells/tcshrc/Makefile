@@ -14,8 +14,6 @@ MASTER_SITE_SUBDIR=	tcshrc
 MAINTAINER=	seanc@FreeBSD.org
 COMMENT=	A set of configuration scripts for the TCSH shell
 
-USE_REINPLACE=	YES
-
 INSTALL_TARGET=	systeminstall
 MAKE_ARGS=	BIN=${LOCALBASE}/bin SHARETCSHRC=${DATADIR}
 

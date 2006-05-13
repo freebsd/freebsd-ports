@@ -17,7 +17,6 @@ COMMENT=	Schedules periodic jobs on systems that are not permanently up
 
 MAN8=		anacron.8
 MAN5=		anacrontab.5
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_RC_SUBR=	anacron.sh
 SUB_FILES=	pkg-message

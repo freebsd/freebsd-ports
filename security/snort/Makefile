@@ -24,7 +24,6 @@ OPTIONS=	FLEXRESP "Flexible response to events" off \
 
 USE_GPG=	yes
 SIG_SUFFIX=	.sig
-USE_REINPLACE=	yes
 USE_RC_SUBR=	snort.sh
 SUB_FILES=	pkg-message
 GNU_CONFIGURE=	yes

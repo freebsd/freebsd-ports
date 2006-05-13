@@ -18,7 +18,6 @@ COMMENT=	Python module for manipulating POSIX.1e ACLs
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-USE_REINPLACE=	yes
 
 .include <bsd.port.pre.mk>
 

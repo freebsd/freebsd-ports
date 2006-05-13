@@ -26,7 +26,6 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 GNU_CONFIGURE=	yes
 USE_GETOPT_LONG=	yes
 USE_GNOME=	gtk12
-USE_REINPLACE=	yes
 
 MAN1=		nvtv.1x
 MAN8=		nvtvd.8

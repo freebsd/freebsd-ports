@@ -19,7 +19,6 @@ MAN8=		httplog.8
 PLIST_FILES=	sbin/httplog
 PORTDOCS=	ChangeLog README
 
-USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 

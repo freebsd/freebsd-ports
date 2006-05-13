@@ -18,7 +18,6 @@ COMMENT=	Parallel Execution tool ala xargs/apply
 BUILD_DEPENDS=	makeme:${PORTSDIR}/devel/msrc0 \
 		mkcmd:${PORTSDIR}/devel/mkcmd
 
-USE_REINPLACE=	yes
 MAKE_FLAGS=
 MAKEFILE=
 MAN1=		xapply.1

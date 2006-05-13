@@ -16,7 +16,6 @@ COMMENT=	Execute processes with special privileges in a nosuid environment
 
 GNU_CONFIGURE=	yes
 MAN1=		sud.1 suz.1 ilogin.1
-USE_REINPLACE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|g' \

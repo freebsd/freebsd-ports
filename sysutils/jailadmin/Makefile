@@ -16,7 +16,6 @@ MAINTAINER=	kirk@strauser.com
 COMMENT=	A system for managing a set of named jails
 
 USE_PERL5=	yes
-USE_REINPLACE=	yes
 
 PORTDOCS=	INSTALL README
 

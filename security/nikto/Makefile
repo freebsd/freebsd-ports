@@ -21,7 +21,6 @@ COMMENT=	Web and CGI vulnerability scanner with SSL support
 USE_BZIP2=	yes
 USE_PERL5_RUN=	yes
 NO_BUILD=	yes
-USE_REINPLACE=	yes
 
 PORTDOCS=	CHANGES.txt README_plugins.txt nikto_usage.html nikto_usage.txt
 MAN1=		${PORTNAME}.1

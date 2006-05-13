@@ -19,7 +19,6 @@ RUN_DEPENDS=	python:${PORTSDIR}/lang/python
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
-USE_REINPLACE=	yes
 
 pre-patch:
 	${CP} ${WRKSRC}/hmap.py ${WRKSRC}/hmap.py.old

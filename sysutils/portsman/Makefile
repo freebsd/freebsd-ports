@@ -25,7 +25,6 @@ LIB_DEPENDS=	ncurses.5:${PORTSDIR}/devel/ncurses
 MAN1=		portsman.1
 MAN5=		portsmanrc.5
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e "/^pmanrcdir/s|etc$$|etc/portsman|" \

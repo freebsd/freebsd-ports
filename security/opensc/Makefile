@@ -19,7 +19,6 @@ INSTALLS_SHLIB=	yes
 USE_OPENSSL=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 
 MANCOMPRESSED=	no
 MAN1=	pkcs15-crypt.1 pkcs15-init.1 pkcs15-tool.1 opensc-tool.1 \

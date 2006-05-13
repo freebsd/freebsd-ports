@@ -17,7 +17,6 @@ COMMENT=	Utility to both test and create .sfv, .csv and md5sum files
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/fchksum.so:${PORTSDIR}/security/py-fchksum
 
-USE_REINPLACE=	yes
 USE_PYTHON=	yes
 ALL_TARGET=	cfv.wrapper
 INSTALL_TARGET=	install-wrapper

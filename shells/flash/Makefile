@@ -23,7 +23,6 @@ LIB_DEPENDS=	ncurses.5:${PORTSDIR}/devel/ncurses
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -rdynamic" \
 		LDFLAGS="${LDFLAGS} -rdynamic"
 SUB_FILES=	pkg-message

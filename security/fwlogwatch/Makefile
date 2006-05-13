@@ -16,7 +16,6 @@ MAINTAINER=	mranner@inode.at
 COMMENT=	A packet filter and firewall log analyzer
 
 USE_GETTEXT=	yes
-USE_REINPLACE=	yes
 MAKE_ENV=	MKDIR="${MKDIR}"
 INSTALL_TARGET=	install install-config install-i18n
 

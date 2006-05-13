@@ -16,8 +16,6 @@ COMMENT=	The tool for editing wtmp files and converting into this format
 MAN1=		t2w.1
 MANCOMPRESSED=	yes
 
-USE_REINPLACE=	yes
-
 PORTDOCS=	*
 PLIST_FILES=	bin/t2w
 

@@ -21,7 +21,6 @@ CONFLICTS=		krb4-[0-9]* heimdal-[0-9]*
 
 LATEST_LINK=		${PORTNAME}
 KERBEROSV_URL=		http://web.mit.edu/kerberos/
-USE_REINPLACE=		yes
 USE_GMAKE=		yes
 USE_PERL5_BUILD=	yes
 INSTALLS_SHLIB=		yes

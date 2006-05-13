@@ -19,7 +19,6 @@ COMMENT=	An enhanced version of tee(1)
 BUILD_DEPENDS=	makeme:${PORTSDIR}/devel/msrc0 \
 		mkcmd:${PORTSDIR}/devel/mkcmd
 
-USE_REINPLACE=	yes
 MAKE_FLAGS=
 MAKEFILE=
 MAN1=		${PORTNAME}.1

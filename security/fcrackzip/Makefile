@@ -17,7 +17,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GETOPT_LONG=yes
 USE_PERL5_BUILD=yes
-USE_REINPLACE=	yes
 
 PLIST_FILES=	bin/fcrackzip bin/fcrackzipinfo
 .if !defined(NOPORTDOCS)

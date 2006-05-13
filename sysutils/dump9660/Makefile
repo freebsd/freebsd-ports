@@ -18,7 +18,6 @@ COMMENT=	Create an ISO 9660 image, possibly incrementally
 MAN8=		mk9660.8
 MAN5=		proto.5
 MLINKS=		mk9660.8 dump9660.8
-USE_REINPLACE=	yes
 
 ONLY_FOR_ARCHS=	alpha i386 powerpc
 OBJTYPE=	${MACHINE_ARCH:S/i386/386/:S/powerpc/power/}

@@ -18,7 +18,6 @@ COMMENT=	A system for Finite Element Analysis
 
 USE_X_PREFIX=	yes
 USE_GL=		yes
-USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/FElt-${PORTVERSION}
 GNU_CONFIGURE=	yes
 

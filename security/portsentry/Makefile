@@ -16,7 +16,6 @@ COMMENT=	Port scan detection and active defense
 
 SUB_FILES=	portsentry.sh
 ALL_TARGET=	freebsd
-USE_REINPLACE=	yes
 CFLAGS+=	-DPREFIX=\"${PREFIX}\"
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 

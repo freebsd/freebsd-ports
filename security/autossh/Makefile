@@ -15,7 +15,6 @@ MAINTAINER=	leeym@FreeBSD.org
 COMMENT=	Automatically restart SSH sessions and tunnels
 
 MAKEFILE=	Makefile.bsd
-USE_REINPLACE=	yes
 
 PORTDOCS=	CHANGES README
 MAN1=		autossh.1

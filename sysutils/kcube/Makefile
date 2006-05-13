@@ -17,7 +17,6 @@ COMMENT=	Another cpu load kicker applet for KDE
 USE_KDELIBS_VER=3
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 
 post-patch:

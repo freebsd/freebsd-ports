@@ -15,8 +15,6 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Security scanner for Samba
 
-USE_REINPLACE=	yes
-
 post-patch:
 	@${FIND} ${WRKSRC} -name "*.o" -delete
 	@${REINPLACE_CMD} -e 's|-O3|${CFLAGS}|' ${WRKSRC}/Makefile

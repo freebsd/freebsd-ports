@@ -21,7 +21,6 @@ STARTUP=	diskcheckd.sh
 MAN8=		diskcheckd.8
 MLINKS=		diskcheckd.8 diskcheckd.conf.5
 
-USE_REINPLACE=	yes
 NO_WRKSUBDIR=	yes
 
 CFLAGS+=	-D_PATH_CONF='\"${PREFIX}/etc/diskcheckd.conf\"'

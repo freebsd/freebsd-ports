@@ -18,7 +18,6 @@ COMMENT=	A tool for easily running the same commands on multiple hosts
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2
 
 NO_BUILD=	yes
-USE_REINPLACE=	yes
 PORTDOCS=	BUGS CHANGES EXAMPLES README
 PLIST_FILES=	bin/mussh
 WRKSRC=		${WRKDIR}/${PORTNAME}

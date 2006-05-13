@@ -15,7 +15,6 @@ EXTRACT_SUFX=	.src.tar.gz
 MAINTAINER=	rodrigc@FreeBSD.ORG
 COMMENT=	A set of utilities and library to manipulate an xfs filesystem
 
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_AUTOTOOLS=	autoconf:259 libtool:15:env

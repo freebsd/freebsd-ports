@@ -29,7 +29,6 @@ USE_PERL5_BUILD=	yes
 USE_GMAKE=		yes
 USE_GL=			yes
 USE_PYTHON=		yes
-USE_REINPLACE=		yes
 
 NO_PACKAGE=		"License has restrictions"
 NO_CDROM=		"License has restrictions"

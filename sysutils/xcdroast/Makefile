@@ -28,7 +28,6 @@ OPTIONS=	GTK2	"Enable GTK2 support"		off \
 USE_X_PREFIX=	yes
 USE_GETTEXT=	yes
 USE_ICONV=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 WANT_GNOME=	yes
 

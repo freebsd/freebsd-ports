@@ -16,7 +16,6 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ma499@doc.ic.ac.uk
 COMMENT=	Perl extension to authenticate against an SMB server
 
-USE_REINPLACE=	yes
 PERL_CONFIGURE=	yes
 
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}

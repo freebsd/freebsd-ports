@@ -25,7 +25,6 @@ OPTIONS=	GNUTLS	"Enable GNUTLS support"	off	\
 USE_OPENSSL=	yes
 OPENSSL_CFLAGS+=-DXMLSEC_OPENSSL_097=1 -DXMLSEC_CRYPTO_OPENSSL=1
 USE_GNOME=	gnomehack lthack libxslt gnometarget
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 PLIST_FILES=	bin/xmlsec1 bin/xmlsec1-config etc/xmlsec1Conf.sh

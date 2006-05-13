@@ -17,7 +17,6 @@ COMMENT=	XView sysadmin tool for monitoring diskfull situations
 
 LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
 
-USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}

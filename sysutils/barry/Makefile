@@ -20,7 +20,6 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/portsdb:${PORTSDIR}/sysutils/portupgrade
 
 USE_BZIP2=	yes
 USE_KDELIBS_VER=3
-USE_REINPLACE=	yes
 USE_AUTOTOOLS=	libtool:15
 
 post-patch:

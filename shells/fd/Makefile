@@ -17,8 +17,6 @@ DISTNAME=	FD-${PORTVERSION}
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A CUI-based file and directory management tool
 
-USE_REINPLACE=	yes
-
 MANLANG=	"" ja
 MAN1=		fd.1 fdsh.1
 MAKE_ENV=	LANG=ja

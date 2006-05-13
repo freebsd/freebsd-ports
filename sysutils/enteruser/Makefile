@@ -16,7 +16,6 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	dannyman@toldme.com
 COMMENT=	Extensible script for adding new users
 
-USE_REINPLACE=	yes
 USE_PERL5=	yes
 NO_WRKSUBDIR=	true
 NO_BUILD=	true

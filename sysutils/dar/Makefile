@@ -17,7 +17,6 @@ COMMENT=	A full featured command-line backup tool, aimed for disks
 
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 
 CPPFLAGS+=	-DHAVE_DECL_GETOPT=0
 

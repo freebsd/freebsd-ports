@@ -17,7 +17,6 @@ COMMENT=	Printer Job Language library and tool
 
 NO_WRKSUBDIR=	yes
 ALL_TARGET=	libPJL.a
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	CXX="${CXX}"
 

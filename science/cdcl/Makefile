@@ -21,7 +21,6 @@ USE_GNOME=	gtk20
 .endif
 
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --exec-prefix=${PREFIX} --libdir=${PREFIX}/lb/${PORTNAME}-${PORTVERSION} --with-x
 

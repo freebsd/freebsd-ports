@@ -16,7 +16,6 @@ MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Secure shell and telnet client
 
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix
 MAKEFILE=	Makefile.gtk
 CFLAGS+=	-DBSD_PTYS -DOMIT_UTMP

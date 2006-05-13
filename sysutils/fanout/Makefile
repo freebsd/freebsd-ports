@@ -17,7 +17,6 @@ COMMENT=	Tool to run commands on multiple machines
 
 USE_PERL5_RUN=	yes
 NO_BUILD=	yes
-USE_REINPLACE=	yes
 PLIST_FILES=	bin/fanout bin/fanterm bin/fanmux
 .if !defined(NOPORTDOCS)
 PORTDOCS=	README index.html

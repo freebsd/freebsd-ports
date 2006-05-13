@@ -14,7 +14,6 @@ MASTER_SITES=	http://openscep.othello.ch/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source scep server
 
-USE_REINPLACE=	yes
 USE_OPENSSL=	yes
 USE_OPENLDAP=	yes
 USE_APACHE=	yes

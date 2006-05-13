@@ -15,7 +15,6 @@ MASTER_SITES=	http://healthd.thehousleys.net/ \
 MAINTAINER=	jeh@FreeBSD.org
 COMMENT=	A daemon to monitor vital motherboard parameters
 
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--exec-prefix=${PREFIX}
 #

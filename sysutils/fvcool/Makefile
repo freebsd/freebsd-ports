@@ -16,7 +16,6 @@ MAINTAINER=	m.seaman@infracaninophile.co.uk
 COMMENT=	VCool for FreeBSD - Cooling software for AMD Athlon/Duron CPUs
 
 ONLY_FOR_ARCHS=	i386
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	yes
 ALL_TARGET=	fvcool

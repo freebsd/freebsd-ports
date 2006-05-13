@@ -15,7 +15,6 @@ MAINTAINER=	mich@FreeBSD.org
 COMMENT=	Ah-tty is an automatic helper for command prompts and shells
 
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 
 PLIST_FILES=	bin/ah-tty bin/ah-tty.static share/ah-tty.conf
 

@@ -16,7 +16,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Another SSL Wrapper application, which uses SSLEay/OpenSSL
 
 USE_OPENSSL=	YES
-USE_REINPLACE=	YES
 
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION:S/.//g}
 

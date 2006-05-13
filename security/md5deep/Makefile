@@ -15,7 +15,6 @@ MAINTAINER=	laszlof@vonostingroup.com
 COMMENT=	Program to compute various message digests recursively
 
 ALL_TARGET=	unix
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 
 MAN1=		md5deep.1

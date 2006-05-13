@@ -25,7 +25,6 @@ INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS+=	--with-libpopt-prefix=${LOCALBASE} \
 			--with-libiconv-prefix=${LOCALBASE} \
 			--without-cd-paranoia
-USE_REINPLACE=	yes
 USE_PERL5_BUILD=yes
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -liconv"
 

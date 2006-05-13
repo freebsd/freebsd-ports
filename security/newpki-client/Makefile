@@ -25,7 +25,6 @@ USE_OPENSSL=	yes
 WX_CONFIG=	${X11BASE}/bin/wxgtk2-2.4-config
 USE_GNOME=	gnometarget
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${PREFIX}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${PREFIX}/lib" \

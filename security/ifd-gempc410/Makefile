@@ -18,7 +18,6 @@ BUILD_DEPENDS=	${LOCALBASE}/include/ifdhandler.h:${PORTSDIR}/security/ifd-devkit
 LIB_DEPENDS=	pcsclite.1:${PORTSDIR}/devel/pcsc-lite
 
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 
 MAKE_ARGS+=	-CGemPC410
 

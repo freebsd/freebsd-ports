@@ -22,7 +22,6 @@ COMMENT=	Random password generator
 
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
-USE_REINPLACE=	yes
 
 RUN_DEPENDS+=	${SITE_PERL}/Crypt/PasswdMD5.pm:${PORTSDIR}/security/p5-Crypt-PasswdMD5
 

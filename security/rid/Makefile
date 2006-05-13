@@ -17,7 +17,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Configurable remote distributed denial of service tool detector
 
 ALL_TARGET=	rid
-USE_REINPLACE=	yes
 
 pre-configure:
 	@${REINPLACE_CMD} -e 's:config.txt:${PREFIX}/etc/rid.conf:g'  \

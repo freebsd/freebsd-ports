@@ -17,7 +17,6 @@ COMMENT=	A swallowable applet monitors the CPU usage, memory and swap, etc
 
 USE_XPM=	yes
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
 
 BUILD_WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/asmon
 CFLAGS+=	-I${X11BASE}/include

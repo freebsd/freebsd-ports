@@ -27,7 +27,6 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=		--x-includes=${X11BASE}/include --x-libraries=${X11BASE}/lib	\
 			--with-forced-embedded-ffmpeg	# To be removed after 1.1.4pre2?
 USE_GETOPT_LONG=	yes
-USE_REINPLACE=		yes
 
 PLIST_FILES=		bin/xvidcap
 

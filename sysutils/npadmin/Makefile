@@ -19,7 +19,6 @@ MAN1=		npadmin.1
 PLIST_FILES=	bin/npadmin
 
 USE_GETOPT_LONG=yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
 pre-patch:

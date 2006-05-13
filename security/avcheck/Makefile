@@ -14,8 +14,6 @@ MASTER_SITES=	http://www.corpit.ru/ftp/avcheck/
 MAINTAINER=	dsh@vlink.ru
 COMMENT=	A simple antivirus solution for a mail system
 
-USE_REINPLACE=	yes
-
 MAN1=		avcheck.1
 
 PLIST_FILES=	sbin/avcheck sbin/uchroot

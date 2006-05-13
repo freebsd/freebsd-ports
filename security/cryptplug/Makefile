@@ -21,7 +21,6 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libgpgme03.so.9:${PORTSDIR}/security/gpgme03 \
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
-USE_REINPLACE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} 's/gpgme-config/gpgme03-config/g' \

@@ -15,7 +15,6 @@ COMMENT=	A real-time application useful to learn how CPU scheduling works
 
 RUN_DEPENDS=	jgraph:${PORTSDIR}/graphics/jgraph
 
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 

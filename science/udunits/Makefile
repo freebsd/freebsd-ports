@@ -18,7 +18,6 @@ COMMENT=	A library for manipulating units of physical quantities
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 GNU_CONFIGURE=	yes
 USE_PERL5=	yes
-USE_REINPLACE=	yes
 
 CFLAGS+=	-fPIC
 

@@ -20,7 +20,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CFLAGS} -I${X11BASE}/include -I${LOCALBASE}/include"	\
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 USE_GCC=	3.4+
-USE_REINPLACE=	yes
 
 .if defined(WITHOUT_NLS)
 PLIST_SUB+=	NLS="@comment "

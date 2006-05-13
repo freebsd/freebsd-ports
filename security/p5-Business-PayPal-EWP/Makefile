@@ -16,7 +16,6 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	alfred@freebsd.org
 COMMENT=	Perl extension to talk to paypal
 
-USE_REINPLACE=	yes
 PERL_CONFIGURE=	yes
 USE_OPENSSL=	yes
 CONFIGURE_ARGS=	${OPENSSLBASE}

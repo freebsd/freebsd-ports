@@ -16,7 +16,6 @@ COMMENT=	A PAM module to mount SFS home directories
 
 BUILD_DEPENDS=	sfskey:${PORTSDIR}/security/sfs
 
-USE_REINPLACE=	yes
 ALL_TARGET=	pam-sfs
 WRKSRC=		${WRKDIR}/${PORTNAME}
 PLIST_FILES=	lib/pam_sfs.so

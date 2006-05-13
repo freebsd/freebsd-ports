@@ -20,7 +20,6 @@ COMMENT=	Library and tools to support IPMI-capable hardware
 LIB_DEPENDS+=	guile:${PORTSDIR}/lang/guile
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libargp.a:${PORTSDIR}/devel/argp-standalone
 
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_GETOPT_LONG=	yes
 GNU_CONFIGURE=	yes

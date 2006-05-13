@@ -14,7 +14,6 @@ MAINTAINER=	dannyboy@FreeBSD.org
 COMMENT=	Simple 'w'-like program; displays connection type and login shell PID
 
 PLIST_FILES=	bin/yawho
-USE_REINPLACE=	yes
 
 .include <bsd.port.pre.mk>
 

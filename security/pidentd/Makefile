@@ -19,7 +19,6 @@ PATCH_DIST_STRIP=	-p0
 MAINTAINER=	johans@stack.nl
 COMMENT=	An RFC1413 identification server
 
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
 MAN8=		identd.8 idecrypt.8

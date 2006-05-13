@@ -13,8 +13,6 @@ MASTER_SITES=	http://members.elysium.pl/brush/cmd5checkpw/dist/
 MAINTAINER=	clement@FreeBSD.org
 COMMENT=	Checkpassword compatible authentication program that uses CRAM-MD5
 
-USE_REINPLACE=	yes
-
 MAN8=		cmd5checkpw.8
 
 DOCS_FILES=	CHANGES CREDITS INSTALL README rfc1321.txt rfc2104.txt

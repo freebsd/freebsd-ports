@@ -16,7 +16,6 @@ COMMENT=	An FTP proxy that wraps data and control with TLS/SSL
 
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
-USE_REINPLACE=	yes
 
 PLIST_FILES=	bin/tlswrap
 PORTDOCS=	README

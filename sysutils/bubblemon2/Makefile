@@ -19,7 +19,6 @@ LIB_DEPENDS=	gtop-2.0:${PORTSDIR}/devel/libgtop2
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomepanel gnomeprefix gnometarget intlhack
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
