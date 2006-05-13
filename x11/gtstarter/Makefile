@@ -15,7 +15,6 @@ COMMENT=	Start gnome-terminal from a list of configured profiles (incl. Applet)
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
 USE_PYTHON=	yes
 USE_GNOME=	pygnome2 pygnomeextras gnomeprefix
 

@@ -16,7 +16,6 @@ COMMENT=	Allows you to launch shell commands under X with your keyboard
 
 USE_XLIB=	yes
 USE_GNOME=	gnometarget
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

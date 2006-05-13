@@ -16,7 +16,6 @@ MAINTAINER=	alecn2002@yandex.ru
 COMMENT=	A Fox toolkit reimplementation of Scintilla editing widget
 
 USE_AUTOTOOLS=	libtool:15
-USE_REINPLACE=	yes
 CONFIGURE_ARGS+=	--enable-shared --disable-static
 INSTALLS_SHLIB=	yes
 

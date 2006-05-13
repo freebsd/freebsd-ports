@@ -21,7 +21,6 @@ LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix/tk8.4
 INSTALLS_SHLIB=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --enable-sam \
 		--with-tclconfig="${PREFIX}/lib/tcl8.4" \

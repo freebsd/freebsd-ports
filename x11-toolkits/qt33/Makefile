@@ -28,7 +28,6 @@ CONFLICTS=	linguist-0.* qt-2.* qt-3.0.* \
 		xfmail-1.5.5_[1-2]
 
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ""
 USE_X_PREFIX=	yes
 HAS_CONFIGURE=	yes

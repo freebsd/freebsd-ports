@@ -15,7 +15,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Display X11 color names and colors
 
 USE_IMAKE=	yes
-USE_REINPLACE=	yes
 MAN1=		xco.1
 MANCOMPRESSED=	yes
 DOCDIR=		${PREFIX}/share/doc/xco

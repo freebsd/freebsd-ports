@@ -28,7 +28,6 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomeprefix esound gtk12 imlib libxml orbit
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--disable-test-gnome
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"

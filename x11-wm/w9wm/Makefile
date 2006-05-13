@@ -16,7 +16,6 @@ COMMENT=	A hack of 9wm to give virtual screens
 WRKSRC=		${WRKDIR}/${DISTNAME}.orig
 
 USE_IMAKE=	yes
-USE_REINPLACE=	yes
 
 MAN1=		w9wm.1
 PLIST_FILES=	bin/w9wm

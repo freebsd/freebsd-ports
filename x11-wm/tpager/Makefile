@@ -17,7 +17,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 
 PLIST_FILES=	bin/tpager
 

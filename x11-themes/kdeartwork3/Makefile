@@ -23,7 +23,6 @@ PREFIX=		${KDE_PREFIX}
 
 USE_GL=		yes
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 
 USE_AUTOTOOLS=  libtool:15

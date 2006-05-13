@@ -16,7 +16,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small window manager
 
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i'' -E
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes

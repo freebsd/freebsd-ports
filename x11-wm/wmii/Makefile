@@ -14,7 +14,6 @@ MASTER_SITES=	http://wmii.de/download/
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	The next generation of WMI window manager
 
-USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 
 MAKE_ARGS=	PREFIX="${PREFIX}" X11DIR="${X11BASE}" CC="${CC}" \

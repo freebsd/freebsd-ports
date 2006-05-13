@@ -21,7 +21,6 @@ RUN_DEPENDS=	asclock:${PORTSDIR}/x11-clocks/asclock
 NO_LATEST_LINK=	yes
 USE_XPM=	yes
 USE_IMAKE=	yes
-USE_REINPLACE=	yes
 INSTALL_TARGET=	install install.man
 MANCOMPRESSED=	yes
 MAN1=		afterstep.1 Animate.1 Audio.1 Auto.1 Banner.1 Pager.1 Wharf.1

@@ -17,7 +17,6 @@ COMMENT=	A DockApp Graphics Library
 
 USE_XLIB=	yes
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 CFLAGS+=	-I${X11BASE}/include
 ALL_TARGET=	# empty

@@ -19,7 +19,6 @@ COMMENT=	Library components for Zed's Virtual Terminal
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 USE_BISON=	yes
 INSTALLS_SHLIB=	yes
 USE_AUTOTOOLS=	libtool:15

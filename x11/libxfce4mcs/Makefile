@@ -21,7 +21,6 @@ COMMENT=	XFce 4 settings management library used by most XFce 4 modules
 LIB_DEPENDS=	xfce4util.1:${PORTSDIR}/x11/libxfce4util
 
 USE_GNOME=	glib20 gnomehack
-USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}

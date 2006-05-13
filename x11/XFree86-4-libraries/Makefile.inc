@@ -15,7 +15,6 @@
 DIST_SUBDIR=	xc
 WRKSRC?=	${WRKDIR}/xc
 USE_IMAKE=	YES
-USE_REINPLACE=	yes
 XFREE86_HTML_MAN=	yes
 PATCHDIR?=	${.CURDIR}/../../x11/XFree86-4-libraries/files
 SCRIPTS_ENV+=	CC="${CC}" \

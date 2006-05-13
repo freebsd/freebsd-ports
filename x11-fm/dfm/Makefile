@@ -16,7 +16,6 @@ COMMENT=	OS/2 - like Desktop-File-Manager for X Window System
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 USE_GNOME=	imlib

@@ -18,7 +18,6 @@ COMMENT=	wxWindows documentation in HTML
 LATEST_LINK=	wxgtk24_doc
 
 NO_BUILD=	YES
-USE_REINPLACE=	YES
 USE_ZIP=	YES
 
 WXGTKDOCDIR=	${PREFIX}/share/doc/${PORTNAME}/html/

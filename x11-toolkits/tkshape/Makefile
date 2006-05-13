@@ -35,7 +35,6 @@ TK_VER?=		8.4
 WISH?=			wish${TK_VER}
 
 USE_GMAKE=		yes
-USE_REINPLACE=		yes
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--with-tclconf=${LOCALBASE}/lib/tcl${TCL_VER} \
 			--with-tkconf=${LOCALBASE}/lib/tk${TK_VER}

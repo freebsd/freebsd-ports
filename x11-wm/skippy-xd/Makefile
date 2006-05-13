@@ -17,7 +17,6 @@ LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/libXft
 
 USE_BZIP2=	yes
 USE_GNOME=	pkgconfig
-USE_REINPLACE=	yes
 PLIST_FILES=	bin/skippy-xd \
 		%%DATADIR%%/skippy-xd.rc-default
 PLIST_DIRS=	%%DATADIR%%

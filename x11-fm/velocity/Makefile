@@ -19,7 +19,6 @@ WRKSRC=		${WRKDIR}/velocity-0.1.0
 USE_AUTOTOOLS=	libtool:15
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 USE_GNOME=	libgnomeui gnomedesktop librsvg2
 
 post-patch:

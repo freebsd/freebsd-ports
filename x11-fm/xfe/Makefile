@@ -26,7 +26,6 @@ CONFIGURE_ARGS+=--x-includes=${X11BASE}/include \
 		--with-x
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-I/usr/include/fox|-I${LOCALBASE}/include/|g' \

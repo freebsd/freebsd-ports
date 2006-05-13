@@ -20,7 +20,6 @@ LIB_DEPENDS=	guile.15:${PORTSDIR}/lang/guile
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget gdkpixbuf libglade
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--with-gtkgl=no

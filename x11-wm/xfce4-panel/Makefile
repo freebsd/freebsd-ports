@@ -26,7 +26,6 @@ LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
 
 USE_GETTEXT=	yes
 USE_GNOME=	gtk20 gnomehack
-USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes

@@ -24,7 +24,6 @@ COMMENT=	OpenLook Virtual Window manager
 
 LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
 
-USE_REINPLACE=  yes
 REINPLACE_ARGS= -i ""
 NO_WRKSUBDIR=	yes
 USE_IMAKE=	yes

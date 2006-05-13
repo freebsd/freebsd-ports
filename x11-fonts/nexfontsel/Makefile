@@ -20,7 +20,6 @@ COMMENT=	A neXtaw based replacement for xfontsel
 LIB_DEPENDS=	neXtaw:${PORTSDIR}/x11-toolkits/neXtaw
 
 USE_IMAKE=	yes
-USE_REINPLACE=	yes
 
 MAN1=		nexfontsel.1
 

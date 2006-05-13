@@ -32,7 +32,6 @@ PLIST_SUB=	TK_VER=${TK_VER} SHORT_TK_VER=${SHORT_TK_VER}
 PKGINSTALL=	${PKGDIR}/pkg-install.wish
 PKGDEINSTALL=	${PKGDIR}/pkg-deinstall.wish
 TCL82_PORT?=	lang/tcl82
-USE_REINPLACE=	YES
 MANCOMPRESSED=	no
 
 .include <bsd.port.pre.mk>

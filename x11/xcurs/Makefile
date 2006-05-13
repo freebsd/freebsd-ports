@@ -16,7 +16,6 @@ MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	An editor for new XFree86/X.Org style full-color cursors properties
 
 USE_GNOME=	pygtk2
-USE_REINPLACE=	yes
 USE_PYTHON=	yes
 NO_BUILD=	yes
 

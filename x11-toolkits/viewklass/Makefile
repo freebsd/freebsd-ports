@@ -20,7 +20,6 @@ BUILD_DEPENDS=	xmkmf:${X_IMAKE_PORT}
 
 USE_X_PREFIX=	yes
 USE_MOTIF=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
 post-patch:

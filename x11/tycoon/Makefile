@@ -18,7 +18,6 @@ LIB_DEPENDS=	forms.1:${PORTSDIR}/x11-toolkits/xforms
 
 USE_IMAKE=	yes
 USE_XPM=	yes
-USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ""
 
 post-patch:

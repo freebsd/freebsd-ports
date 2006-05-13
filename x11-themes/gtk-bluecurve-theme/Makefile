@@ -12,7 +12,6 @@ COMMENT=	The Bluecurve GTK+ 1.x and 2.x themes
 
 MASTERDIR=	${.CURDIR}/../bluecurve-themes
 
-USE_REINPLACE=	yes
 EXTRA_PATCHES=	${WRKDIR}/redhat-artwork-0.122-padding-fix.patch
 PATCH_STRIP=	-p1
 

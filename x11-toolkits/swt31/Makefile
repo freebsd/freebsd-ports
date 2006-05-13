@@ -29,7 +29,6 @@ PLIST_FILES=	%%JAVAJARDIR%%/swt.jar \
 		lib/libswt-pi-gtk-%%BUILD%%.so
 
 USE_JAVA=	yes
-USE_REINPLACE=	yes
 JAVA_VERSION=	1.4+
 JAVA_OS=	native
 

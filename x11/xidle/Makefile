@@ -27,8 +27,6 @@ MAN1=		xidle.1
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 502104
-USE_REINPLACE=	yes
-
 post-extract:
 	@${REINPLACE_CMD} -e 's|getopt_long_only|getopt_long|' ${WRKSRC}/xidle.c
 .endif

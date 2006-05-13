@@ -25,7 +25,6 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--with-tclinclude=${LOCALBASE}/include/tcl${TK_VER} \
 		--with-tkinclude=${LOCALBASE}/include/tk${TK_VER} \
 		--with-x=${X11BASE}
-USE_REINPLACE=	yes
 
 TK_VER=		8.4
 PLIST_SUB=	DESTDIR=lib/${DISTNAME}

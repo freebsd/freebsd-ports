@@ -18,7 +18,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-1.1
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes
-USE_REINPLACE=	yes
 ALL_TARGET=	xstarroll
 
 MAN1=		xstarroll.1

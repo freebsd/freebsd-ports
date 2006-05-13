@@ -17,7 +17,6 @@ PLIST_FILES=	bin/wmBinClock
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_XPM=	yes
-USE_REINPLACE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|#include <values.h>||' ${WRKSRC}/wmBinClock.c

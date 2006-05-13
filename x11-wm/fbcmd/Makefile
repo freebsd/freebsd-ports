@@ -18,7 +18,6 @@ RUN_DEPENDS=	fluxbox:${PORTSDIR}/x11-wm/fluxbox-devel
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	first
-USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 MAKE_ARGS=	CXX="${CXX}" CFLAGS="${CFLAGS}"
 

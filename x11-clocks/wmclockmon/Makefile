@@ -17,7 +17,6 @@ COMMENT=	A digital clock dockapp with a similar look to wmcpuload
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 USE_GNOME=	gtk12
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 

@@ -27,7 +27,6 @@ LIB_DEPENDS=	dbh-1.0.1:${PORTSDIR}/databases/dbh \
 
 USE_GETTEXT=	yes
 USE_GNOME=	gtk20 gnomehack
-USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 GNU_CONFIGURE=	yes

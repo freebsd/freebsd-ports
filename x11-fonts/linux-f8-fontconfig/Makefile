@@ -16,7 +16,6 @@ COMMENT=	Linux/i386 binary of Fontconfig
 
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libexpat.so.0:${PORTSDIR}/textproc/linux-expat
 
-USE_REINPLACE=	yes
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX_RPM=	yes
 LINUX_DIST_VER=	3

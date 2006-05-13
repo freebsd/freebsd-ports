@@ -17,7 +17,6 @@ MAINTAINER=	flynn@energyhq.es.eu.org
 COMMENT=	QNX-inspired theme for GTK1 and GTK2
 
 WANT_GNOME=	yes
-USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/QNX

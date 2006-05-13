@@ -18,7 +18,6 @@ LIB_DEPENDS=	smpeg.1:${PORTSDIR}/multimedia/smpeg \
 		glut.4:${PORTSDIR}/graphics/libglut
 
 USE_GL=		yes
-USE_REINPLACE=	yes
 USE_SDL=	image sdl
 USE_X_PREFIX=	yes
 

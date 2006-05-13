@@ -64,7 +64,6 @@ KDE_SPLIT_VER?=	${KDE_VERSION}
 # needed for case where src dir name != doc dir name
 KDE_DOC_SPLIT?=	${KDE_SPLIT}
 DISTNAME?=	${KDE_SPLIT_DIST}-${KDE_SPLIT_VER}
-USE_REINPLACE=	yes
 .endif
 # This must always be defined.
 SPLITDEP_PREFIX?=	${PREFIX}/share/applications
@@ -92,7 +91,6 @@ _NO_KDE_FIXPTHREAD=	yes
 .endif
 
 .if !defined(_NO_KDE_FIXPTHREAD)
-USE_REINPLACE=	yes
 CONFIGURE_ENV+=	PTHREAD_LIBS="${PTHREAD_LIBS}"
 
 pre-configure: kde-fix-configure kde-fix-ltmain.sh

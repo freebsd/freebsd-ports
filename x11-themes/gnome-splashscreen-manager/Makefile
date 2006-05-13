@@ -23,7 +23,6 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 WRKSRC=		${WRKDIR}/gnome-art/${PORTNAME}
 USE_RUBY=	yes
-USE_REINPLACE=	yes
 USE_RUBY_SETUP=	yes
 GSPLASH=	${X11BASE}/share/gnome/pixmaps/splash
 SPLASH_ICON=	${DATADIR}/glade/gnome-graphics.png

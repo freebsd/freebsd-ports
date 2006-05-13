@@ -20,7 +20,6 @@ COMMENT=	An analog clock plugin for gkrellm2
 BUILD_DEPENDS=	${X11BASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 
-USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 
 ALL_TARGET=	alltraxclock.so

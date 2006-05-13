@@ -16,7 +16,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}/stable.pkg/${PORTVERSION}/:savannah \
 			mikeh/:local
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:savannah,local
 
-USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ""
 
 MAINTAINER?=	mikeh@FreeBSD.ORG

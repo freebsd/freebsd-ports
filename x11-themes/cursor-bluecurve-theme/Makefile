@@ -14,8 +14,6 @@ BUILD_DEPENDS=	${X11BASE}/libdata/pkgconfig/gdk-pixbuf-2.0.pc:${PORTSDIR}/x11-to
 
 MASTERDIR=	${.CURDIR}/../bluecurve-themes
 
-USE_REINPLACE=	yes
-
 THEMES=		Bluecurve Bluecurve-inverse
 
 .for t in ${THEMES}

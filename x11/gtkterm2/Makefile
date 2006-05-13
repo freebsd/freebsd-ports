@@ -18,7 +18,6 @@ COMMENT=	A simple GTK-2 terminal with tabs
 USE_X_PREFIX=	yes
 USE_GNOME=	gnometarget vte
 USE_GETOPT_LONG=	yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"

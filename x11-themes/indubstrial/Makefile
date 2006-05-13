@@ -20,7 +20,6 @@ RUN_DEPENDS=	${X11BASE}/lib/gtk-2.0/${GTK2_VERSION}/engines/libindustrial.so:${P
 WRKSRC=		${WRKDIR}/Indubstrial
 NO_BUILD=	yes
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
 USE_GNOME=	gnomehack gnomeprefix metacity
 
 do-install:

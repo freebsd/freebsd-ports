@@ -18,7 +18,6 @@ COMMENT=	Make a simple GUI under OpenGL
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 
 USE_SDL=	sdl
-USE_REINPLACE=	yes
 USE_GL=		yes
 USE_GMAKE=	yes
 MAKE_ENV=	OPT="${OPT}" LDFLAGS="${LDFLAGS}"

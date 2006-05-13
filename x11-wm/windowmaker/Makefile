@@ -28,7 +28,6 @@ USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_XPM=	yes
 USE_PERL5=	yes
 USE_GETTEXT=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

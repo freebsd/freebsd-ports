@@ -16,7 +16,6 @@ COMMENT=	Yet another Motif file manager
 USE_IMAKE=	yes
 USE_MOTIF=	yes
 USE_XPM=	yes
-USE_REINPLACE=	yes
 
 MAN1=		xplore.1 xploretype.1
 

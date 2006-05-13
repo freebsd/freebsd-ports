@@ -17,7 +17,6 @@ COMMENT=	A graphical frontend to mtools
 
 RUN_DEPENDS=	mtools:${PORTSDIR}/emulators/mtools
 
-USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes

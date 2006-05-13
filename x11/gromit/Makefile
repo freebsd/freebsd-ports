@@ -15,7 +15,6 @@ MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	"GRaphics Over Miscellaneous Objects (Gromit)"
 
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
 USE_GNOME=	gtk20
 
 DOCS=		AUTHORS ChangeLog README

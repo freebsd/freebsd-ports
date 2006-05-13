@@ -24,7 +24,6 @@ MAN1=		blackbox.1
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack pkgconfig
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 USE_ICONV=	yes
 USE_GCC=	3.3+
 

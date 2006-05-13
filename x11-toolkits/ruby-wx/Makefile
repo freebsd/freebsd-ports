@@ -23,7 +23,6 @@ LIB_DEPENDS=	wx_gtk2-2.4:${PORTSDIR}/x11-toolkits/wxgtk24 \
 USE_ICONV=	yes
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
-USE_REINPLACE=	yes
 
 .include <bsd.port.pre.mk>
 

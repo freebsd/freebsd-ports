@@ -20,7 +20,6 @@ BUILD_DEPENDS=	xmkmf:${X_IMAKE_PORT}
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 

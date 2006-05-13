@@ -18,7 +18,6 @@ COMMENT=	Customise accessibility features for X
 RUN_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82
 
 WRKSRC=		${WRKDIR}/accessx
-USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 
 post-patch:
