@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hercules
-PORTVERSION=	3.03.1
+PORTVERSION=	3.04
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.conmicro.cx/hercules/
 
@@ -45,15 +45,21 @@ IGNORE=	does not compile on FreeBSD 4.x
 .endif
 
 .if defined(WITH_DEBUG)
-CONFIGURE_ENV+=		CFLAGS=-g
+CFLAGS+=		-g
 .endif
 .if defined(WITH_PTHREADS)
 CONFIGURE_ARGS+=	--disable-fthreads
 .endif
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=		GETTEXT="@comment "
 .else
 USE_GETTEXT=		yes
+PLIST_SUB+=		GETTEXT=""
+.endif
+
+.if defined(CFLAGS)
+CONFIGURE_ARGS+=	--enable-optimization="no"
 .endif
 
 .include <bsd.port.post.mk>

@@ -75,5 +75,5 @@ lib/hercules/hdtqeth.so
 %%DATADIR%%/tapeconv.jcl
 %%DATADIR%%/zzsacard.bin
 @dirrm share/hercules
-share/locale/de/LC_MESSAGES/hercules.mo
-share/locale/nl/LC_MESSAGES/hercules.mo
+%%GETTEXT%%share/locale/de/LC_MESSAGES/hercules.mo
+%%GETTEXT%%share/locale/nl/LC_MESSAGES/hercules.mo
