@@ -59,7 +59,6 @@ DATA_DIRS_LIST=	images js skins/standard skins/standard/global \
 .ifdef WITH_MYSQL
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
 USE_MYSQL=	yes
-DEFAULT_MYSQL_VER=	41
 BROKEN_WITH_MYSQL=	323
 .endif
 
