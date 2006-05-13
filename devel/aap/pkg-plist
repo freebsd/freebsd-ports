@@ -87,6 +87,8 @@ lib/aap/Exec-%%PORTVERSION%%/default.aap
 %%PORTDOCS%%lib/aap/Exec-%%PORTVERSION%%/doc/exec.pdf
 %%PORTDOCS%%lib/aap/Exec-%%PORTVERSION%%/doc/html/appendix.html
 %%PORTDOCS%%lib/aap/Exec-%%PORTVERSION%%/doc/html/exec.html
+%%PORTDOCS%%lib/aap/Exec-%%PORTVERSION%%/doc/html/ch39s02.html
+%%PORTDOCS%%lib/aap/Exec-%%PORTVERSION%%/doc/html/ch39s03.html
 %%PORTDOCS%%lib/aap/Exec-%%PORTVERSION%%/doc/html/index.html
 %%PORTDOCS%%lib/aap/Exec-%%PORTVERSION%%/doc/html/license.html
 %%PORTDOCS%%lib/aap/Exec-%%PORTVERSION%%/doc/html/ref-arguments.html
