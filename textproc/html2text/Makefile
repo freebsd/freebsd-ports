@@ -15,7 +15,6 @@ MASTER_SITE_SUBDIR=	apps/www/converters
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts HTML documents into plain text
 
-USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
 MAKE_ARGS=	CXX="${CXX}"
 

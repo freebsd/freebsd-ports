@@ -17,7 +17,6 @@ COMMENT=	Command Line XML Toolkit
 
 USE_GNOME=	libxslt
 USE_ICONV=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libxml-prefix=${LOCALBASE} \
 		--with-libxslt-prefix=${LOCALBASE} \

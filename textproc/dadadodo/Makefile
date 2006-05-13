@@ -14,7 +14,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Text processor which analyses text and generates random sentences
 
 PLIST_FILES=	bin/dadadodo
-USE_REINPLACE=	yes
 
 pre-patch:
 	${REINPLACE_CMD} -E "s/^(CC|CFLAGS).+//" ${WRKSRC}/Makefile

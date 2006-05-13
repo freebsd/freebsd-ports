@@ -14,7 +14,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A converter from RTF to several formats, including HTML and LaTeX
 
-USE_REINPLACE=	yes
 ALL_TARGET=	unrtf
 
 MAN1=		unrtf.1

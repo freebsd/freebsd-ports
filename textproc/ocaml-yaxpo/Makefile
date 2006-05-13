@@ -17,8 +17,6 @@ COMMENT=	Non-validating XML 1.0 + XMLNS processing suite for Objective Caml
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
 
-USE_REINPLACE=	yes
-
 ALL_TARGET=	yaxpo
 
 DATE_VERSION=	20050614

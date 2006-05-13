@@ -19,8 +19,6 @@ COMMENT=	2.11BSD diff utility
 EXTRACT_AFTER_ARGS=	| ${TAR} -xf - bin/diff man/man1/diff.1
 WRKSRC=		${WRKDIR}/bin/diff
 
-USE_REINPLACE=	YES
-
 MAN1=		2diff.1
 
 post-patch:

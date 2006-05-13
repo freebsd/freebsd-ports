@@ -20,7 +20,6 @@ MASTER_SITES=	ftp://ftp.mutt.org/mutt/contrib/ \
 MAINTAINER=	obrien@FreeBSD.org
 COMMENT=	URL extractor/launcher
 
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 MAN1=		urlview.1
 

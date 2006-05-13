@@ -18,7 +18,6 @@ COMMENT=	A highly programmable document processing system
 BUILD_DEPENDS=	bigloo:${PORTSDIR}/lang/bigloo
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-bigloo --prefix=${PREFIX} --docdir=${DOCSDIR}
 USE_GMAKE=	yes

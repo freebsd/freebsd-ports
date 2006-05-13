@@ -15,7 +15,6 @@ MASTER_SITES=	http://0xff.at/download/gpl/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XML Parser and Validator
 
-USE_REINPLACE=	yes
 FETCH_CMD=	/usr/bin/fetch
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

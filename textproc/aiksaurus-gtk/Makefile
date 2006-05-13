@@ -17,7 +17,6 @@ MASTERDIR=	${.CURDIR}/../aiksaurus
 PKGDIR=		${.CURDIR}
 
 USE_GNOME=	gnomehack gtk20
-USE_REINPLACE=	yes
 CONFIGURE_ARGS=--with-gtk
 
 pre-install:

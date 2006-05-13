@@ -15,7 +15,6 @@ MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT?=	Input method library
 
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 WANT_GNOME=	yes
 USE_GNOME+=	gnometarget glib20

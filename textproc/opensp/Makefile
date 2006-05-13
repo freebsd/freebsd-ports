@@ -18,7 +18,6 @@ COMMENT=	This package is a collection of SGML/XML tools called OpenSP
 USE_GETTEXT=	yes
 USE_GMAKE=	YES
 USE_ICONV=	yes
-USE_REINPLACE=	YES
 GNU_CONFIGURE=	yes
 USE_PERL5=	yes
 CONFIGURE_ARGS=	--enable-default-catalog=${PREFIX}/share/sgml/catalog \

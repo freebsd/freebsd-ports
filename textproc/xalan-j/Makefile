@@ -18,8 +18,6 @@ COMMENT=	Apache XSLT processor for transforming XML documents
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper \
 		${JAVALIBDIR}/xml-apis.jar:${PORTSDIR}/textproc/xerces-j
 
-USE_REINPLACE=	yes
-
 USE_JAVA=	yes
 JAVA_VERSION=	1.2 1.3 1.4
 USE_ANT=	yes

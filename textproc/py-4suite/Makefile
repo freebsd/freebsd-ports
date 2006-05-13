@@ -19,7 +19,6 @@ MAINTAINER=	mike@skew.org
 COMMENT=	A collection of Python tools for XML and RDF processing
 
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i "" -E
 USE_PYTHON=	2.2.1+
 USE_PYDISTUTILS=	yes

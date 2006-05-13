@@ -19,8 +19,6 @@ COMMENT=	XML-to-Java-object mapping utility package
 BUILD_DEPENDS=	${JAR_DEPENDS}
 RUN_DEPENDS=	${JAR_DEPENDS}
 
-USE_REINPLACE=	yes
-
 USE_JAVA=	yes
 JAVA_VERSION=	1.2+
 

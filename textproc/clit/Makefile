@@ -27,7 +27,6 @@ MIN_VER=	8
 PLIST_FILES=	bin/clit
 
 USE_ZIP=	yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 
 post-extract:

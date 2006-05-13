@@ -21,7 +21,6 @@ RUN_DEPENDS=	${LOCALBASE}/bin/nsgmls:${PORTSDIR}/textproc/sp		\
 		gv:${PORTSDIR}/print/gv
 
 USE_PERL5_BUILD=yes
-USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ""
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-0.2.4

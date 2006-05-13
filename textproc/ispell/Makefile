@@ -26,8 +26,6 @@ MLINKS=		ispell.1 buildhash.1 \
 		ispell.1 tryaffix.1 \
 		ispell.1 spell.1
 
-USE_REINPLACE=	yes
-
 EXTRACT_ONLY=	${ISPELL_FILES}
 EXTRA_DICT=
 MAKE_FLAGS=	TMPDIR=${WRKDIR} -f

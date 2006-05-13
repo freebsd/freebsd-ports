@@ -32,7 +32,6 @@ USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME?=	gnomehack gnometarget pkgconfig
 INSTALLS_SHLIB=	yes
-USE_REINPLACE=	yes
 CONFIGURE_ARGS?= --with-iconv=${LOCALBASE} \
 		--with-html-dir=${PREFIX}/share/doc \
 		--with-html-subdir=${PORTNAME} \

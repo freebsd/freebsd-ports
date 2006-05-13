@@ -16,7 +16,6 @@ RUN_DEPENDS=	${LOCALBASE}/share/xsl/resume:${PORTSDIR}/textproc/resume \
 		${LOCALBASE}/share/xsl/string/print-n-times.xsl:${PORTSDIR}/textproc/print-n-times \
 		${LOCALBASE}/share/xsl/xhtml/add-css-links.xsl:${PORTSDIR}/textproc/add-css-links
 
-USE_REINPLACE=	yes
 NO_BUILD=	yes
 
 post-patch:

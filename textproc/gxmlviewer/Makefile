@@ -19,7 +19,6 @@ COMMENT=	An xmlviewer with a netscape plugin, and now a bonobo control as well
 USE_X_PREFIX=	yes
 USE_GNOME=	bonobo gnomehack gnomelibs gnomeprefix libxml2
 USE_GETTEXT=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libiconv-prefix="${LOCALBASE}"
 

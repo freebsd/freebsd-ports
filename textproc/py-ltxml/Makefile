@@ -24,7 +24,6 @@ USE_PYDISTUTILS=	yes
 INSTALLS_SHLIB=	yes
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
-USE_REINPLACE=	yes
 
 .include <bsd.port.pre.mk>
 

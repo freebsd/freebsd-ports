@@ -23,7 +23,6 @@ BROKEN=		"does not compile on ${MACHINE_ARCH}"
 USE_SUBMAKE=	yes
 INSTALLS_SHLIB=	yes
 USE_GCC=	2.95
-USE_REINPLACE=	yes
 PORTDOCS=	Makefile archform.htm build.htm catalog catalog.htm \
 		charset.htm features.htm generic.htm ideas.htm index.htm \
 		new.htm nsgmls.htm sgmldecl.htm sgmlnorm.htm sgmlsout.htm \

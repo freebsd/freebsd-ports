@@ -16,7 +16,6 @@ MAINTAINER=	laszlof@vonostingroup.com
 COMMENT=	Morse Code Generator
 
 USE_PYTHON=	yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 MAKEFILE=	makefile
 ALL_TARGET=	ALL

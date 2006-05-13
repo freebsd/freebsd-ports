@@ -18,7 +18,6 @@ COMMENT=	A minimal implementation of the Document Object Model
 LIB_DEPENDS=	xml2:${PORTSDIR}/textproc/libxml2
 
 USE_ICONV=	yes
-USE_REINPLACE=	yes
 USE_GNOME=	glib12
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

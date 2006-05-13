@@ -21,7 +21,6 @@ LIB_DEPENDS=	qdbm.12:${PORTSDIR}/databases/qdbm
 USE_ICONV=	yes
 
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 
 CONFIGURE_ARGS=	--with-sysqdbm \
 		--enable-dlfilter \

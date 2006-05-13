@@ -18,7 +18,6 @@ MAINTAINER=	dd@FreeBSD.org
 COMMENT=	Dictionary Server Protocol (RFC2229) client
 
 USE_BISON=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-local-zlib --with-cflags="${CFLAGS}" \
 		--with-etcdir=${PREFIX}/etc

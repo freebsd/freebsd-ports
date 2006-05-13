@@ -23,8 +23,6 @@ BROKEN=		Configure fails
 #		TCL "Add TCL bindings" off
 LIB_DEPENDS=	rdf.0:${PORTSDIR}/textproc/redland
 
-USE_REINPLACE=	yes
-
 .if defined(WITH_JAVA)
 USE_JAVA=	yes
 JAVA_VERSION=	1.3+

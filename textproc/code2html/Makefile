@@ -16,7 +16,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sourcecode to HTML converter
 
 NO_BUILD=	yes
-USE_REINPLACE=	yes
 USE_PERL5_RUN=	yes
 
 MAN1=		code2html.1
