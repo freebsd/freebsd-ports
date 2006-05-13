@@ -348,7 +348,7 @@ PATCHFILES+=	qmail-discard-double-bounces.patch:doublebounce
 
 .if defined(WITH_SPF_PATCH) && !defined(BARRIER_SPF_PATCH)
 . if defined(SLAVE_TLS)
-MASTER_SITES+=	http://manuel.mausz.at/patches/qmail/:spf_tls
+MASTER_SITES+=	http://manuel.mausz.at/programming/patches/qmail/:spf_tls
 .  if defined(WITH_SMTP_AUTH_PATCH)
 SPF_TLS_PATCH=	qmail-spf-rc5.patch-auth-tls
 .  else
