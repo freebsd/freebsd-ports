@@ -19,7 +19,6 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libsocks5.a:${PORTSDIR}/net/socks5
 .endif
 
 USE_ICONV=	yes
-#USE_GCC=	3.3+
 WRKSRC=		${WRKDIR}/${DISTNAME}
 LICQ_PORT?=	net-im/licq
 
