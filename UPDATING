@@ -57,13 +57,17 @@ upgrades.
   FastCGI SAPIs.
 
 20060506:
-  AFFECTS: users of lang/lua, especially KDE editor Kile users
-  AUTHOR: pav@FreeBSD.org
+  AFFECTS: users of lang/lua, editors/kile, x11/kdelibs3, x11/kdebase3
+  AUTHOR: pav@FreeBSD.org, kde@FreeBSD.org
 
   Recently, the port of Lua was updated to version 5.1.  This version is
-  incompatible with the version 5.0, which is used in certain applications,
-  most notable in the Kile editor.  If you're having troubles running
-  Kile, make sure you downgrade your lua installation back to 5.0:
+  incompatible with the version 5.0, which is used in a number of applications,
+  most notable in the Kile and Kate editors (the latter being part of a base
+  KDE installation).
+  
+  If you're having troubles running those, such as error dialogs saying "Check
+  your KDE installation", make sure to downgrade your lua installation back 
+  to 5.0:
 
   portupgrade -f -o lang/lua50 lua-5.1
 
