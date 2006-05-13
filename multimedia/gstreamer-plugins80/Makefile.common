@@ -454,10 +454,8 @@ LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png
 GST_PLUGIN_DIR= ext/libpng \
                 ext/snapshot
 PLIST_FILES=	${GST_LIB_DIR}/libgstpng.so \
-		${GST_LIB_DIR}/libgstpng.a \
 		${GST_LIB_DIR}/libgstpng.la \
 		${GST_LIB_DIR}/libgstpng.a \
-		${GST_LIB_DIR}/libgstpng.la \
 		${GST_LIB_DIR}/libgstsnapshot.a \
 		${GST_LIB_DIR}/libgstsnapshot.la \
 		${GST_LIB_DIR}/libgstsnapshot.so
