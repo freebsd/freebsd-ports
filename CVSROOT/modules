@@ -1823,6 +1823,7 @@ docsis		ports/net-mgmt/docsis
 doctorj		ports/devel/doctorj
 documancer	ports/misc/documancer
 dodgindiamond2	ports/games/dodgindiamond2
+dokeos		ports/www/dokeos
 dokuwiki	ports/www/dokuwiki
 dolly		ports/sysutils/dolly
 dolly+		ports/sysutils/dolly+
