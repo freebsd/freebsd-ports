@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Params-Util
-PORTVERSION=	0.10
+PORTVERSION=	0.14
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/A/AD/ADAMK
@@ -24,8 +24,10 @@ PERL_CONFIGURE=	yes
 MAN3=	Params::Util.3
 
 post-patch:
-	@${RM} ${WRKSRC}/inc/Module/Install/AutoInstall.pm
-	@${PERL} -pi -e '$$_="" if m/AutoInstall/' ${WRKSRC}/MANIFEST
-	@${PERL} -pi -e '$$_="" if m/Test::More|auto_install/' ${WRKSRC}/Makefile.PL
+	@${PERL} -pi -e '$$_="" if m/Test::More/' ${WRKSRC}/Makefile.PL
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.if ${PERL_LEVEL} <= 500600
+IGNORE=	requires Perl 5.6 or newer. Please install lang/perl5 or lang/perl5.8 and try again
+.endif
+.include <bsd.port.post.mk>
