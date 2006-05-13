@@ -14,7 +14,6 @@ COMMENT=	Print in Russian
 
 MASTERDIR=	${.CURDIR}/../../print/muttprint
 ADD_TRANS=	${.CURDIR}/files/translation-??.pl
-USE_REINPLACE=	yes
 
 pre-build:
 	@${REINPLACE_CMD} '/^\\\\usepackage\[T1\]{fontenc}/d' ${WRKSRC}/${PORTNAME}
