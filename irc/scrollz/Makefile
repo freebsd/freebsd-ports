@@ -6,19 +6,18 @@
 #
 
 PORTNAME=	scrollz
-PORTVERSION=	1.9.5
+PORTVERSION=	1.9.98.1
 CATEGORIES=	irc ipv6
-MASTER_SITES=	ftp://ftp.du.se/pub/mirrors/ScrollZ/source/
+MASTER_SITES=	ftp://ftp.scrollz.com/pub/ScrollZ/source/ \
+		ftp://ftp.du.se/pub/mirrors/ScrollZ/source/
 DISTNAME=	ScrollZ-${PORTVERSION}
 
 MAINTAINER=	damm@yazzy.org
 COMMENT=	Enhanced ircII client that supports scripts, colors, and more
 
 USE_GMAKE=	yes
-USE_PERL5_BUILD=yes
-IS_INTERACTIVE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--enable-ipv6 --with-ssl
+CONFIGURE_ARGS+=	--enable-ipv6 --enable-regexp
 
 MAKE_ENV+=	IRCLIB="${PREFIX}/share/scrollz"
 
@@ -26,13 +25,16 @@ PLIST_SUB+=	SCROLLZ_VER="${PORTVERSION}"
 
 MAN1=	scrollz.1
 
-post-patch:
-	@${PERL} -pi -e 's!^IRCLIB =!IRCLIB ?=!' ${WRKSRC}/Makefile.in
+.if defined(WITH_SSL)
+USE_GNUTLS=	YES
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libgnutls.a:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	gnutls:${PORTSDIR}/security/gnutls
+CONFIGURE_ARGS+=	--with-ssl
+.endif
 
 pre-build:
 .if !defined(BATCH)
-	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${CC} ${CFLAGS} -o SZdist \
-		SZdist.c)
+	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${CC} ${CFLAGS} -o SZdist SZdist.c)
 	@(cd ${WRKSRC}; ./SZdist)
 .endif
 
