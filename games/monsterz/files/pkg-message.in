@@ -1,5 +1,0 @@
-Monsterz has been installed. To run it, type
-
-%%PREFIX%%/share/games/monsterz/monsterz.py&
-
-or launch it with `python -O' or `python -OO'.

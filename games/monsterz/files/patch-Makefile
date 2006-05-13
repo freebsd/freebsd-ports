@@ -1,0 +1,18 @@
+--- Makefile.orig	Fri May 12 18:39:38 2006
++++ Makefile	Sat May 13 19:06:56 2006
+@@ -1,5 +1,5 @@
+ 
+-prefix = /usr/local
++prefix?= /usr/local
+ gamesdir = ${prefix}/games
+ datadir = ${prefix}/share
+ pkgdatadir = $(datadir)/games/monsterz
+@@ -22,7 +22,7 @@
+ all: monsterz
+ 
+ monsterz: monsterz.c
+-	$(CC) -Wall monsterz.c -DDATADIR=\"$(pkgdatadir)\" -DSCOREFILE=\"$(scorefile)\" -o monsterz
++	$(CC) $(CFLAGS) -Wall monsterz.c -DDATADIR=\"$(pkgdatadir)\" -DSCOREFILE=\"$(scorefile)\" -o monsterz
+ 
+ bitmap: $(BITMAP)
+ 
