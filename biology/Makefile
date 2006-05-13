@@ -48,6 +48,7 @@
     SUBDIR += p5-AcePerl
     SUBDIR += p5-Bio-ASN1-EntrezGene
     SUBDIR += p5-Bio-Das
+    SUBDIR += p5-Bio-Phylo
     SUBDIR += p5-bioperl
     SUBDIR += p5-bioperl-devel
     SUBDIR += p5-bioperl-run
