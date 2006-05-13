@@ -19,7 +19,6 @@ COMMENT=	A replacement for Xaw with a nicer 3-D look and some extensions
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
 MAKE_ARGS=	CC="${CC}" FLAGS="${CFLAGS} -fPIC -DHAS_WCHAR_H" \
 		INC_PATH="-I. -I${X11BASE}/include" LIB_PATH="-L${X11BASE}/lib"
 ALL_TARGET=	lib

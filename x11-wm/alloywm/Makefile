@@ -19,7 +19,6 @@ PLIST=		${WRKDIR}/pkg-plist
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 WANT_GNOME=	yes
-USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i'' -E
 SCRIPTS=	${WRKSRC}/scriptdir
 

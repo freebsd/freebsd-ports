@@ -78,7 +78,6 @@ PLIST_SUB+=	PHPEXTDIR="${PHP_EXT_DIR}"
 
 CONFIGURE_ENV=	CPPFLAGS="${ENVSCE}"
 
-USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ""
 
 PIC2FIX=	acinclude.m4 aclocal.m4 configure

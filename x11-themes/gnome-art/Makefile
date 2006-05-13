@@ -18,7 +18,6 @@ RUN_DEPENDS=	gnome-splashscreen-manager:${PORTSDIR}/x11-themes/gnome-splashscree
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/${PORTNAME}
 USE_RUBY=	yes
-USE_REINPLACE=	yes
 USE_RUBY_SETUP=	yes
 GNOMEART_ICON=	${DATADIR}/glade/pixmaps/gnome-graphics.png
 DESKTOP_ENTRIES="${PORTNAME}" "${COMMENT}" "${GNOMEART_ICON}" "${PORTNAME}" "Application;Settings;AdvancedSettings;" true

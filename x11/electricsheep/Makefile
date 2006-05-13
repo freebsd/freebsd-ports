@@ -28,7 +28,6 @@ RUN_DEPENDS+=	xscreensaver:${PORTSDIR}/x11/xscreensaver
 
 USE_X_PREFIX=	yes
 USE_SDL=	sdl
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
 .if !defined(NOPORTDOCS)

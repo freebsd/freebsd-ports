@@ -21,7 +21,6 @@ LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 USE_XLIB=	yes
-USE_REINPLACE=	yes
 
 MAKE_ENV+=	FLTK_HOME=${X11BASE}/include OPENGL_HOME=${X11BASE}/include
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}

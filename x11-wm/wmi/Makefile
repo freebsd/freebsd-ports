@@ -13,7 +13,6 @@ MASTER_SITES=	http://wmii.de/download/
 MAINTAINER=	wxs@csh.rit.edu
 COMMENT=	A window manager designed to be like Ion and LarsWM
 
-USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 

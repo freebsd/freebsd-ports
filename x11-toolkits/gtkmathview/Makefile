@@ -20,7 +20,6 @@ LIB_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv \
 		xml2.5:${PORTSDIR}/textproc/libxml2 \
 		gmetadom_gdome_cpp_smart:${PORTSDIR}/textproc/gmetadom
 
-USE_REINPLACE=	yes
 USE_GETOPT_LONG=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	glib20 gtk20 gnomehack

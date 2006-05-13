@@ -20,7 +20,6 @@ MAINTAINER=	yasu@utahime.org
 COMMENT=	A 7-segment digital clock with some optional features
 
 USE_IMAKE=	yes
-USE_REINPLACE=	yes
 
 WRKSRC=		${WRKDIR}/dclock
 MAN1=		dclock.1

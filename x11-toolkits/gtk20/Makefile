@@ -39,7 +39,6 @@ RUN_DEPENDS=	${LOCALBASE}/share/mime/magic:${PORTSDIR}/misc/shared-mime-info \
 
 USE_XLIB=	yes
 USE_XPM=	yes
-USE_REINPLACE=	yes
 USE_PERL5=	yes
 INSTALLS_SHLIB=	yes
 USE_AUTOTOOLS=  libtool:15

@@ -21,7 +21,6 @@ USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
 WANT_GNOME=	yes
 USE_ICONV=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lgnuregex -liconv" \

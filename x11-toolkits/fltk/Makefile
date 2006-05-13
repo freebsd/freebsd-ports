@@ -44,7 +44,6 @@ CONFIGURE_ENV+=	CC="${CXX}" CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 WRKSRC=		${WRKDIR}/${PORTNAME}-${VERSION}
 USE_X_PREFIX=	yes
 USE_GL=		yes
-USE_REINPLACE=	yes
 
 MAN1=		fluid.1 fltk-config.1
 MAN3=		fltk.3

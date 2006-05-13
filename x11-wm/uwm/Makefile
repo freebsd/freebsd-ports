@@ -19,7 +19,6 @@ COMMENT=	X11R3 window manager
 MAN1=		uwm.1
 PLIST=		${WRKDIR}/pkg-plist
 USE_IMAKE=	yes
-USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i'' -E
 WRKSRC=		${WRKDIR}/X.V11R3/clients/uwm
 

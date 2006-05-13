@@ -19,7 +19,6 @@ BUILD_DEPENDS=	${LOCALBASE}/include/tcl8.4/tcl.h:${PORTSDIR}/lang/tcl84
 
 USE_GMAKE=	yes
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 
 BUILD_WRKSRC=	${WRKSRC}/src

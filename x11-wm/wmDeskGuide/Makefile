@@ -18,7 +18,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomelibs gdkpixbuf
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 
 PORTDOCS=	README

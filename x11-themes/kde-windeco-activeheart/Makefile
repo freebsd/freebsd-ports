@@ -18,7 +18,6 @@ COMMENT=	Nice KDE window decoration with thin borders
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_KDEBASE_VER=3
-USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 USE_AUTOTOOLS=	libtool:15
 WRKSRC=		${WRKDIR}/kwin-${PORTNAME}-${PORTVERSION}

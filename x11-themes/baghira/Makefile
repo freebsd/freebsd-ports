@@ -22,7 +22,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-release
 USE_BZIP2=	yes
 USE_KDEBASE_VER=3
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 USE_AUTOTOOLS=	libtool:15
 
 # XXX - Workaround for a badly rolled tarball.

@@ -23,7 +23,6 @@ LIB_DEPENDS=	dbh-1.0.1:${PORTSDIR}/databases/dbh \
 		xfce4util.1:${PORTSDIR}/x11/libxfce4util
 
 USE_GNOME=	gtk20 gnomehack
-USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}

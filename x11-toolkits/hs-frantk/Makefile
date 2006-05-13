@@ -23,7 +23,6 @@ RUN_DEPENDS=	ghc-5.04.3:${PORTSDIR}/lang/ghc5
 .endif
 
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/FranTk1.1/src
 
 .if defined(WITH_HUGS)

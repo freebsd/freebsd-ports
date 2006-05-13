@@ -20,7 +20,6 @@ OPTIONS=	XAW3D	"Xaw3d support" off \
 		XTEST	"XTEST extensions support" on \
 		I18N	"internationalization" on
 
-USE_REINPLACE=	yes
 USE_IMAKE=	yes
 
 .include <bsd.port.pre.mk>

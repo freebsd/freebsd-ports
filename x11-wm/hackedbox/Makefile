@@ -23,7 +23,6 @@ STYLES=		artwiz bluebox cthulhain deep flux frobozz frobust nyz \
 			steelblue2 the_orange trisb twice
 PLIST=		${WRKDIR}/pkg-plist
 #USE_GMAKE=	yes
-USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-bg-utils

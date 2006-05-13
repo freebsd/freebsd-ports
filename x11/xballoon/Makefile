@@ -15,7 +15,6 @@ COMMENT=	Balloons move on root window
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes
-USE_REINPLACE=	yes
 ALL_TARGET=	xballoon
 
 MAN1=		xballoon.1

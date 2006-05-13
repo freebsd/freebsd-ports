@@ -18,7 +18,6 @@ COMMENT=	A program for viewing several fonts at once
 USE_X_PREFIX=	yes
 USE_GCC=	3.4+
 USE_GNOME=	libgnomeui gnomeprefix
-USE_REINPLACE=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 

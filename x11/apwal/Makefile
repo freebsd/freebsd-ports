@@ -17,7 +17,6 @@ COMMENT=	Simple and powerful application launcher
 USE_GNOME=	gtk20 libxml2
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
 

@@ -17,7 +17,6 @@ COMMENT=	A graphical, highly configurable and powerful file manager
 LIB_DEPENDS=	itcl32:${PORTSDIR}/lang/itcl \
 		tk83.1:${PORTSDIR}/x11-toolkits/tk83
 
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

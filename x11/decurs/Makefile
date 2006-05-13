@@ -30,10 +30,6 @@ BROKEN=		"Does not compile on !i386"
 BROKEN=		"Does not compile on FreeBSD >= 6.0"
 .endif
 
-.if ${OSVERSION} > 500035
-USE_REINPLACE=	yes
-.endif
-
 post-patch:
 	@${SED} -e 's:%%PREFIX%%:${PREFIX}:g' \
 		${FILESDIR}/decurs.exec > ${WRKSRC}/decurs.exec

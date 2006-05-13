@@ -25,7 +25,6 @@ PREFIX?=	${X11BASE}
 PORTREVISION=	2
 
 USE_XLIB=	yes
-USE_REINPLACE=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomeprefix intlhack libgnomeui libgnomeprintui \

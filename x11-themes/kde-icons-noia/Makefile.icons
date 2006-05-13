@@ -12,7 +12,6 @@ DIST_SUBDIR=	KDE
 MAINTAINER?=	lioux@FreeBSD.org
 COMMENT?=	KDE iconset theme
 
-USE_REINPLACE=	yes
 NO_BUILD=	yes
 
 # default installation directory

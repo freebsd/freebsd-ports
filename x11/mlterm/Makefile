@@ -19,7 +19,6 @@ USE_X_PREFIX=	yes
 USE_GNOME=	gtk20 lthack
 USE_AUTOTOOLS=	libtool:15
 LIBTOOLFILES=	configure kiklib/configure mkf/configure
-USE_REINPLACE=	yes
 USE_PERL5_BUILD=yes
 CONFIGURE_ARGS=	--with-imagelib=gdk-pixbuf --enable-utmp \
 		--with-tools="mlclient,mlconfig,mlterm-menu,mlcc,w3mmlconfig"

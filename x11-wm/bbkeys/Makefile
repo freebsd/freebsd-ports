@@ -21,7 +21,6 @@ USE_X_PREFIX=	yes
 USE_PERL5=	yes
 USE_GCC=	3.3+
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="`pkg-config --cflags xft`" \
 		LDFLAGS="`pkg-config --libs xft`"
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

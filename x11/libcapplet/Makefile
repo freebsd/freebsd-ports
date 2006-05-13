@@ -25,7 +25,6 @@ MAKE_ENV=	X11BASE="${X11BASE}" LOCALBASE="${LOCALBASE}" LDFLAGS="${LDFLAGS}"
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500041
-USE_REINPLACE=	yes
 post-build:
 	@${REINPLACE_CMD} -e 's/-lgnugetopt //' ${WRKSRC}/cappletConf.sh
 .endif

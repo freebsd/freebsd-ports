@@ -15,7 +15,6 @@ MASTER_SITE_SUBDIR=	multignometerm
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gnome tabbed terminal emulator
 
-USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 INSTALLS_OMF=	yes
 USE_GNOME=	gnomehack gnomeprefix libglade

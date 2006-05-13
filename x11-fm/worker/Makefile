@@ -15,7 +15,6 @@ COMMENT=	X11 File Manager based on Directory Opus
 
 GNU_CONFIGURE=	yes
 USE_XLIB=	yes
-USE_REINPLACE=	yes
 USE_BZIP2=	yes
 
 MAN1=		worker.1

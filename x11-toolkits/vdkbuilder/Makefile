@@ -20,7 +20,6 @@ LIB_DEPENDS=	vdk.6:${PORTSDIR}/x11-toolkits/vdk
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gnometarget gtk20
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

@@ -24,7 +24,6 @@ USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 
 GTKVERSION=	1.2
-USE_REINPLACE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|$${CONFIG_SHELL-/bin/sh} $$ac_aux_dir|$$ac_aux_dir|' \

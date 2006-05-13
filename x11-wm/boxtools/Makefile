@@ -23,7 +23,6 @@ PLIST_FILES=	bin/bsetbg bin/bsetroot
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 USE_ICONV=	yes
 USE_GCC=	3.3+
 

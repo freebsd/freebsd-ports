@@ -35,7 +35,6 @@ USE_OPENSSL=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_XPM=	yes
-USE_REINPLACE=	yes
 SUB_FILES=	kdm pkg-deinstall pkg-install pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 PKGINSTALL=	${WRKDIR}/pkg-install

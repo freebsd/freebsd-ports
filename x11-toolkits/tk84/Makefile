@@ -34,7 +34,6 @@ PKGINSTALL=	${PKGDIR}/pkg-install.wish
 PKGDEINSTALL=	${PKGDIR}/pkg-deinstall.wish
 NOPRECIOUSMAKEVARS=	yes # Otherwise 'make readmes' is broken
 TCL84_PORT?=	lang/tcl84
-USE_REINPLACE=	YES
 MANCOMPRESSED=	no
 
 .ifdef (WITH_THREADS)

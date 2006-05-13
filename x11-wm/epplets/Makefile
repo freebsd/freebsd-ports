@@ -24,7 +24,6 @@ RUN_DEPENDS=	import:${PORTSDIR}/graphics/ImageMagick \
 USE_X_PREFIX=	yes
 USE_GNOME=	esound lthack
 USE_GL=		yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	EROOT="${X11BASE}/share/enlightenment" \

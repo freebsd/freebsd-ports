@@ -20,7 +20,6 @@ COMMENT=	[incr Tk] (A.K.A. "itk")
 LIB_DEPENDS=	tk84:${PORTSDIR}/x11-toolkits/tk84 \
 		itcl${MAJOR}${MINOR}.1:${PORTSDIR}/lang/itcl
 
-USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/itcl${PORTVERSION}/itk
 INSTALLS_SHLIB=	yes
 MAKE_ENV+=	${PLIST_SUB} \

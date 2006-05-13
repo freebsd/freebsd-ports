@@ -19,7 +19,6 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 
 USE_GL=		yes
 USE_ZIP=	yes
-USE_REINPLACE=	yes
 WRKBASE=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 WRKSRC=		${WRKBASE}/source/Irrlicht
 INSTALLS_SHLIB=	yes

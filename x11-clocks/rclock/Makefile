@@ -24,7 +24,6 @@ COMMENT=	Analog clock for X w/appointment reminder and mail notification
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-DMAIL_SPOOL='\"/var/mail/\"'"
 ALL_TARGET=	clock

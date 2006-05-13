@@ -21,7 +21,6 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	glib20 vte intlhack
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
 
 MAN1=		Terminal.1
 

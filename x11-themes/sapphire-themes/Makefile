@@ -20,7 +20,6 @@ RUN_DEPENDS=	xli:${PORTSDIR}/graphics/xli \
 		sapphire:${PORTSDIR}/x11-wm/sapphire
 
 REINPLACE_ARGS=	-i '' -E
-USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 
 NO_BUILD=	yes

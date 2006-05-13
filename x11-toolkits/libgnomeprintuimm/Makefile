@@ -26,7 +26,6 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack libgnomeprintui
 USE_GCC=	3.4
 INSTALLS_SHLIB=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-static
 

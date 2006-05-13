@@ -23,7 +23,6 @@ USE_X_PREFIX=	yes
 USE_XPM=	yes
 USE_GL=		yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 USE_PERL5_RUN=	yes
 USE_GNOME=	gnomehier libglade2 gnomehack
 GNU_CONFIGURE=	yes

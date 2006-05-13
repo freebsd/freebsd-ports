@@ -16,7 +16,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p12/pre12/}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility to translate mouse wheel actions into X keyboard events
 
-USE_REINPLACE=	yes
 USE_GMAKE=	YES
 USE_X_PREFIX=	YES
 GNU_CONFIGURE=	YES

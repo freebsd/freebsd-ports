@@ -16,7 +16,6 @@ COMMENT=	Use an authentic SNES controller to play games
 USE_GZIP=	yes
 USE_XLIB=	yes
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
 
 .if defined(NOPORTDOCS)
 PLIST_FILES=	bin/padkey

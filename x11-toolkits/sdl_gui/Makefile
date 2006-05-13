@@ -17,7 +17,6 @@ MAINTAINER=	krion@FreeBSD.org
 COMMENT=	A Graphical User Interface library for SDL
 
 USE_SDL=	sdl image ttf
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 

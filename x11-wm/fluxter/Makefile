@@ -17,7 +17,6 @@ COMMENT=	Desktop pager for the Fluxbox Slit
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|/fluxbox|/${PORTNAME}|g" \

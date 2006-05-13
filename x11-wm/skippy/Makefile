@@ -20,7 +20,6 @@ LIB_DEPENDS=	Imlib2.3:${PORTSDIR}/graphics/imlib2 \
 USE_XLIB=	yes
 USE_BZIP2=	yes
 USE_GNOME=	pkgconfig
-USE_REINPLACE=	yes
 PLIST_FILES=	bin/skippy \
 		%%DATADIR%%/skippyrc-default
 PLIST_DIRS=	%%DATADIR%%

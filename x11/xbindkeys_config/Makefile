@@ -17,7 +17,6 @@ COMMENT=	An easy to use gtk program for configuring Xbindkeys
 
 PLIST_FILES=	bin/xbindkeys_config
 USE_GNOME=	gtk20
-USE_REINPLACE=	yes
 MAKE_ENV=	CC="${CC} ${CFLAGS}"
 
 post-patch:

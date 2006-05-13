@@ -14,7 +14,6 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	flz@FreeBSD.org
 COMMENT=	Ridiculously tiny window manager
 
-USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 
 PLIST_FILES=	bin/tinywm

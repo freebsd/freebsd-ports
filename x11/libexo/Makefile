@@ -20,7 +20,6 @@ LIB_DEPENDS=	xfcegui4.3:${PORTSDIR}/x11-toolkits/libxfce4gui
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 USE_GNOME=	glib20
 USE_X_PREFIX=	yes
 INSTALLS_SHLIB=	yes

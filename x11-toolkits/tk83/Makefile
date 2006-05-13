@@ -34,7 +34,6 @@ PKGINSTALL=	${PKGDIR}/pkg-install.wish
 PKGDEINSTALL=	${PKGDIR}/pkg-deinstall.wish
 NOPRECIOUSMAKEVARS=	Too many _MLINKS for README.html
 TCL83_PORT?=	lang/tcl83
-USE_REINPLACE=	YES
 MANCOMPRESSED=	no
 
 .include <bsd.port.pre.mk>

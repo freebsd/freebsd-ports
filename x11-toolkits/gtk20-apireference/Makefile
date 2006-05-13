@@ -20,7 +20,6 @@ IGNOREFILES=	${DISTFILES}
 NO_BUILD=	yes
 PLIST=		${WRKDIR}/plist
 PREFIX=		${X11BASE}	# do not use USE_X_PREFIX, does not depend on X
-USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ""		# do not save backups
 
 MODULES=	glib gobject gdk gdk-pixbuf gtk

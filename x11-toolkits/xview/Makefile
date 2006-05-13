@@ -18,7 +18,6 @@ DISTNAME=	xview3.2p1-X11R6
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X Window-System-based Visual/Integrated Environment for Workstations
 
-USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ""
 USE_IMAKE=	yes
 INSTALLS_SHLIB=	yes
