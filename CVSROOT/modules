@@ -1611,6 +1611,7 @@ ddd		ports/devel/ddd
 ddos_scan	ports/security/ddos_scan
 de-BBBike	ports/german/BBBike
 de-aspell	ports/german/aspell
+de-bsdforen-firefox-searchplugin	ports/german/bsdforen-firefox-searchplugin
 de-citrix_ica	ports/german/citrix_ica
 de-dict		ports/german/dict
 de-ding		ports/german/ding
