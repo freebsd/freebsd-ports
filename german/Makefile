@@ -6,6 +6,7 @@
     SUBDIR += BBBike
     SUBDIR += acroread
     SUBDIR += aspell
+    SUBDIR += bsdforen-firefox-searchplugin
     SUBDIR += citrix_ica
     SUBDIR += dict
     SUBDIR += ding
