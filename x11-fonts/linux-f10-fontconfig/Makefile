@@ -7,7 +7,7 @@
 
 PORTNAME=	fontconfig
 PORTVERSION=	2.2.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-fonts linux
 DISTNAME=	${PORTNAME}-${PORTVERSION}-5
 
@@ -23,12 +23,10 @@ INSTALLS_SHLIB=	yes
 
 BRANDELF_DIRS=	usr/bin
 
-post-patch:
-	@${REINPLACE_CMD} -i ""  -e 's:/usr/share/fonts:${X11BASE}/lib/X11/fonts:g ; \
-		s:/usr/X11R6/lib/X11/fonts/OTF:${X11BASE}/lib/X11/fonts/bitstream-vera:g' \
-		${WRKSRC}/etc/fonts/fonts.conf
+post-extract:
+	${RM} ${WRKSRC}/etc/fonts/fonts.conf
 
 post-install:
-	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	${LN} -s ${X11BASE}/etc/fonts/fonts.conf ${PREFIX}/etc/fonts/fonts.conf
 
 .include <bsd.port.mk>
