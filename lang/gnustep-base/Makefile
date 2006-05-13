@@ -52,7 +52,7 @@ INSTALL_APPS=	SSL
 CONFIGURE_ARGS+=	--enable-fake-main
 .endif
 
-PLIST_SUB+=	BASEVERSION=${PORTVERSION:C/[.][0-9]*$//1} 
+PLIST_SUB+=	BASEVERSION=${PORTVERSION:C/[.][0-9]*$//1}
 EXTRA_PATCHES+=	${FILESDIR}/NSFileManager.m.patch
 
 .include <bsd.port.pre.mk>
