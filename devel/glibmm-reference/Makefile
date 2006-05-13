@@ -1,5 +1,7 @@
 # $FreeBSD$
 
+PORTREVISION=	1
+
 PATCH_DEPENDS=	${NONEXISTENT}:${.CURDIR}/../glibmm:patch
 BUILD_DEPENDS=	${NONEXISTENT}:${.CURDIR}/../glibmm:configure
 
@@ -12,6 +14,8 @@ DOCSDIR=	${PREFIX}/share/doc/glibmm-2.4
 post-patch:
 	@${FIND} ${PARENT_WRKSRC}/examples -name Makefile.in \
 		| ${XARGS} ${REINPLACE_CMD} -e '/^install-am:/ s| all-am||'
+	@${REINPLACE_CMD} -e '/^install-data-am:/ s|install-gmmproc_binSCRIPTS||' \
+		${PARENT_WRKSRC}/docs/reference/Makefile.in
 
 post-build:
 	@${TOUCH} ${PARENT_WRKSRC}/docs/reference/html/index.html
