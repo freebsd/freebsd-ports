@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	POE-Component-EasyDBI
-PORTVERSION=	1.11
+PORTVERSION=	1.13
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	POE
@@ -17,6 +17,7 @@ COMMENT=	POE Component for simplified DBI usage
 
 RUN_DEPENDS=	${SITE_PERL}/POE.pm:${PORTSDIR}/devel/p5-POE \
 		${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable \
+		${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
 		${SITE_PERL}/Error.pm:${PORTSDIR}/lang/p5-Error
 BUILD_DEPENDS=	${RUN_DEPENDS}
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathTools
@@ -29,18 +30,7 @@ MAN3=		POE::Component::EasyDBI.3 \
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500600
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI-137
-
-post-patch:
-	@${PERL} -pi -e 's/^our\s+(\$$\S+)/use vars qw($$1); $$1/g;' \
-		-e 'undef $$_ if /^\s*(no|use) warnings/o;' \
-		${WRKSRC}/lib/POE/Component/EasyDBI.pm \
-		${WRKSRC}/lib/POE/Component/EasyDBI/SubProcess.pm
-
-post-configure:
-	@${PERL} -pi -e 's/-I\S+PERL\S+ //g if m{PERL_DL_NONLAZY}' ${WRKSRC}/Makefile
-.else
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
+IGNORE=	requires perl 5.6 or later. Install lang/perl5 then try again
 .endif
 
 .include <bsd.port.post.mk>
