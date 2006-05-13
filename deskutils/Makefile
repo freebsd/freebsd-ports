@@ -137,7 +137,6 @@
     SUBDIR += splashsetter
     SUBDIR += sugarcrm
     SUBDIR += sunbird
-    SUBDIR += superkaramba
     SUBDIR += superswitcher
     SUBDIR += taskjuggler
     SUBDIR += teapot

@@ -2299,3 +2299,4 @@ www/php5-cgi|lang/php5|2006-05-06|Unification of php slave ports
 multimedia/gnonlin|multimedia/gstreamer-plugins-gnonlin|2006-05-08|Merge duplicite ports
 www/linux-mozilla-devel|www/linux-seamonkey-devel|2006-05-10|Mozilla-devel is now Seamonkey
 games/rtcw-paks||2006-05-11|Not needed because games/rtcw asks for the files (only 3)
+deskutils/superkaramba|misc/kdeutils3|2006-05-13|superkaramba was integrated into the kdeutils3 port
