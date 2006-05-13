@@ -7,10 +7,8 @@ bin/dspamc
 bin/dspam_2sql
 bin/dspam_admin
 bin/dspam_clean
-bin/dspam_corpus
 bin/dspam_crc
 bin/dspam_dump
-bin/dspam_genaliases
 bin/dspam_logrotate
 bin/dspam_merge
 %%PGSQL%%bin/dspam_pg2int8
@@ -81,6 +79,7 @@ libdata/pkgconfig/dspam.pc
 %%MYSQL%%@dirrm %%EXAMPLESDIR%%/mysql
 %%PGSQL%%%%EXAMPLESDIR%%/pgsql/pgsql_objects.sql
 %%PGSQL%%%%EXAMPLESDIR%%/pgsql/purge.sql
+%%PGSQL%%%%EXAMPLESDIR%%/pgsql/purge-pe.sql
 %%PGSQL%%%%EXAMPLESDIR%%/pgsql/virtual_users.sql
 %%PGSQL%%@dirrm %%EXAMPLESDIR%%/pgsql
 %%SQLITE%%%%EXAMPLESDIR%%/sqlite/purge-2.sql

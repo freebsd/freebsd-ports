@@ -20,6 +20,13 @@
 name="dspam"
 rcvar=${name}_enable
 
+load_rc_config $name
+
+#defaults
+: ${dspam_enable="NO"}
+: ${dspam_debug="NO"}
+: ${dspam_pidfile:-/var/run/dspam.pid}
+
 command=%%PREFIX%%/bin/${name}
 if checkyesno dspam_debug
 then
@@ -35,12 +42,5 @@ reload()
 {
  kill -HUP `cat $pidfile`
 }
-
-load_rc_config $name
-
-#defaults
-: ${dspam_enable="NO"}
-: ${dspam_debug="NO"}
-: ${dspam_pidfile:-/var/run/dspam.pid}
 
 run_rc_command "$1"
