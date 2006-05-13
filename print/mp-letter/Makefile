@@ -24,7 +24,6 @@ COMMENT=	A PostScript printing util for ASCII files, email, USENET news articles
 USE_GCC=       3.4
 .endif
 WRKSRC=		${WRKDIR}/mp
-USE_REINPLACE=	yes
 MAN1=		mp.1
 MLINKS=		mp.1 digestp.1	- filep.1	- filofaxp.1 \
 		- franklinp.1	- mailp.1	- newsp.1 \

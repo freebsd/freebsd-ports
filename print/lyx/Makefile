@@ -40,7 +40,6 @@ CONFIGURE_ARGS=	--with-extra-lib="${LOCALBASE}/lib" \
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}"
 MAN1=		lyx.1 tex2lyx.1 lyxclient.1
-USE_REINPLACE=	yes
 
 #post-extract:
 #	# Removing mention of the bundled boost

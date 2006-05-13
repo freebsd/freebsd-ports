@@ -20,7 +20,6 @@ BROKEN=		Needs to be converted to OPTIONS
 
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
-USE_REINPLACE=	yes
 USE_SUBMAKE=	yes
 GNU_CONFIGURE=	yes
 

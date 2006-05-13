@@ -25,7 +25,6 @@ USE_X_PREFIX=	yes
 USE_BISON=	yes
 USE_GNOME=	gnomeprefix gnomehack libgnome
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--with-pisock=${LOCALBASE}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

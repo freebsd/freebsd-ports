@@ -14,7 +14,6 @@ MASTER_SITES=	http://roederberg.dyndns.org/~arnold/file_share/cpp2latex/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert C++ source to a file you can input in an LaTeX-document
 
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 

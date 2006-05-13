@@ -21,7 +21,6 @@ RUN_DEPENDS=	espgs:${PORTSDIR}/print/cups-pstoraster
 
 DISTNAME=	magicolor2430DL-1.1.0
 
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 
 do-configure:

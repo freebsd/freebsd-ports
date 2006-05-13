@@ -20,7 +20,6 @@ BUILD_DEPENDS=	\
 
 BROKEN=		Installs files before 'make install'
 
-USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile

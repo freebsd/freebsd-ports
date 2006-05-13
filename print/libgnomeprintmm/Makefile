@@ -22,7 +22,6 @@ BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 USE_GCC=	3.4
 USE_GNOME=	gnomeprefix gnomehack libgnomeprint
 INSTALLS_SHLIB=	yes

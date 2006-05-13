@@ -17,8 +17,6 @@ COMMENT=	Synchronize your PalmPilot with ical
 LIB_DEPENDS=	pisock.8:${PORTSDIR}/palm/pilot-link
 RUN_DEPENDS=	ical:${PORTSDIR}/deskutils/ical
 
-USE_REINPLACE=	yes
-
 NO_PACKAGE=	patches installed ical port
 
 MAN1=		syncal.1

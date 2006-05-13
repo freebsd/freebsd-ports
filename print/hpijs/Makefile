@@ -16,7 +16,6 @@ COMMENT=	Drivers and support resources for HP Inkjet Printers
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=		--disable-dependency-tracking
 USE_GHOSTSCRIPT_RUN=	yes

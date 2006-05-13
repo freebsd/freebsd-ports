@@ -27,7 +27,6 @@ USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeprintui libgnomeui \
 		desktopfileutils
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

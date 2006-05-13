@@ -60,7 +60,6 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	pstops:${PORTSDIR}/print/psutils-${PAPERSIZE} \
 		${LOCALBASE}/lib/pluginwrapper/pips.so:${PORTSDIR}/www/linuxpluginwrapper
 
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	glib12 gtk12
 USE_GETTEXT=	yes

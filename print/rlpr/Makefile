@@ -21,7 +21,6 @@ USE_GETOPT_LONG=yes
 #USE_GETTEXT=	yes
 #CONFIGURE_ENV=	CPPFLAGS="-I${PREFIX}/include" LDFLAGS="-L${PREFIX}/lib -lintl"
 CONFIGURE_ARGS=	--disable-nls --without-catgets
-USE_REINPLACE=	yes
 
 post-patch:
 	# Replacing references to /etc/rlprrc to ${PREFIX}/etc/rlprrc

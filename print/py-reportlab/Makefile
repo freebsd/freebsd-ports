@@ -21,7 +21,6 @@ COMMENT=	Library to create PDF documents using the Python language
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 USE_PYTHON_PREFIX=	yes
-USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/reportlab_${PORTVERSION:S/./_/}/reportlab
 MAKE_ENV=	PACKAGE_PATH="${REPORTLABDIR}"
 

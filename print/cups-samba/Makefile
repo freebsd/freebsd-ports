@@ -27,7 +27,6 @@ RUN_DEPENDS=	smbspool:${PORTSDIR}/net/samba \
 		${LOCALBASE}/sbin/cupsaddsmb:${PORTSDIR}/print/cups-lpr \
 		espgs:${PORTSDIR}/print/cups-pstoraster
 
-USE_REINPLACE=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 SH=		${LOCALBASE}/bin/bash

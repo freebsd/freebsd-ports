@@ -14,8 +14,6 @@ MASTER_SITES=	ftp://gwdu111.gwdg.de/pub/FreeBSD/misc/ \
 MAINTAINER=	kheuer@gwdu60.gwdg.de
 COMMENT=	Remote printing utility using a raw bidirectional tcp connection
 
-USE_REINPLACE=	yes
-
 MAN1=		rprint.1
 MANCOMPRESSED=	yes
 PLIST_FILES=	bin/rprint

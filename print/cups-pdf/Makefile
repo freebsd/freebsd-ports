@@ -20,7 +20,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
-USE_REINPLACE=	yes
 USE_GHOSTSCRIPT_RUN=	yes
 
 SUBST_CMD=		-e "s,/usr/bin/gs,${LOCALBASE}/bin/gs," \

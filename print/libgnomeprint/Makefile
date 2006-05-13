@@ -29,7 +29,6 @@ LIB_DEPENDS=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
 USE_BISON=	yes
 USE_XLIB=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 USE_GNOME=	gnomeprefix intlhack gnomehack gnomehier glib20 pango libxml2 \
 		libartlgpl2 ltverhack
 INSTALLS_SHLIB=	yes

@@ -21,7 +21,6 @@ COMMENT=	GuitarTeX converts the Chord format into "normal" LaTeX format
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Tk.pm:${PORTSDIR}/x11-toolkits/p5-Tk \
 		latex:${PORTSDIR}/print/latex
 
-USE_REINPLACE=	yes
 USE_PERL5=	yes
 NO_BUILD=	yes
 

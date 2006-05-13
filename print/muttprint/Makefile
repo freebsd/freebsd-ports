@@ -42,7 +42,6 @@ NO_BUILD=	yes
 PLIST_SUB+=	LANGINFO="@comment "
 .endif
 
-USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ""
 USE_GMAKE=	yes
 

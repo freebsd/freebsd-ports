@@ -20,8 +20,6 @@ RUN_DEPENDS+=	gv:${PORTSDIR}/print/gv \
 		tex:${PORTSDIR}/print/teTeX
 .endif
 
-USE_REINPLACE=	yes
-
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 MAN1=		hyphen_show.1 xtem.1

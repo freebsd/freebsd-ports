@@ -27,7 +27,6 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS=	--disable-nls --enable-static --enable-shared
-USE_REINPLACE=	yes
 
 TEXMFMAIN=	${PREFIX}/share/texmf
 

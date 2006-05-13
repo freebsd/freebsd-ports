@@ -15,7 +15,6 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	laszlof@vonostingroup.com
 COMMENT=	PostScript calendar program
 
-USE_REINPLACE=	yes
 MAKE_ENV=	CC="${CC}" HOST_CC="${CC}"
 ALL_TARGET=
 USE_GMAKE=	yes

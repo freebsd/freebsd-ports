@@ -23,7 +23,6 @@ COMMENT=	A free and portable TrueType font rendering engine
 USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--disable-nls --enable-static --enable-shared
-USE_REINPLACE=	yes
 
 .ifdef USE_FREETYPE
 IGNORE=	Cannot install: you have the `USE_FREETYPE' variable defined either in environment or in make(1) arguments. Please undefine and try again

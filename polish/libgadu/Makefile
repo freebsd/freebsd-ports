@@ -13,7 +13,6 @@ MASTER_SITES=	http://bsdguru.org/distfiles/
 MAINTAINER=	alex@BSDGuru.org
 COMMENT=	This library is used by many IMs with Gadu-Gadu support
 
-USE_REINPLACE=		yes
 USE_GMAKE=		yes
 USE_GNOME=		gnomehack pkgconfig
 USE_AUTOTOOLS=		aclocal:15 autoheader:259 autoconf:259
