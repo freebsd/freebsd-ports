@@ -1,5 +1,6 @@
 bin/kscope
 %%DOCSDIR%%/autocomp_dlg.png
+%%DOCSDIR%%/call_graph.png
 %%DOCSDIR%%/call_tree.png
 %%DOCSDIR%%/frontend.png
 %%DOCSDIR%%/index.docbook
