@@ -19,7 +19,6 @@ COMMENT=	A lightweight Wiki engine written in Scheme
 BUILD_DEPENDS=	gosh:${PORTSDIR}/lang/gauche
 RUN_DEPENDS=	${LOCALBASE}/share/gauche/${GAUCHE_VER}/lib/dbm/gdbm.scm:${PORTSDIR}/databases/gauche-gdbm
 
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>

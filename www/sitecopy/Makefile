@@ -20,7 +20,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CC="${CC} -I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -lintl"
 CONFIGURE_ARGS=	--with-neon --with-libxml2
-USE_REINPLACE=	yes
 USE_GETTEXT=	yes
 USE_GNOME=	libxml2
 USE_GETOPT_LONG=	yes

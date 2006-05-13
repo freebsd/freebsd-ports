@@ -19,7 +19,6 @@ COMMENT=	MySQL Squid Access Report
 WRKSRC=		${WRKDIR}/${PORTNAME:L}
 USE_MYSQL=	yes
 USE_PHP=	mysql
-USE_REINPLACE=	yes
 NO_BUILD=	yes
 
 MYSARPREFIX=	mysar

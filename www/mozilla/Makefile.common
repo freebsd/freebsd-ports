@@ -73,7 +73,6 @@ USE_GNOME+=	gtk20 libidl desktopfileutils
 USE_ICONV=	yes
 USE_PERL5_BUILD=yes
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
 
 MOZILLA_SUFX?=	none
 WRKSRC?=	${WRKDIR}/mozilla

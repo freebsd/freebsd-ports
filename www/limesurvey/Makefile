@@ -30,7 +30,6 @@ WWWGRP?=	www
 # Set/override/append to variables from bsd.port.mk:
 #
 NO_BUILD=	yes
-USE_REINPLACE=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 PLIST_SUB+=	PHPSURVEYORDIR=${PHPSURVEYORDIR} WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 

@@ -20,7 +20,6 @@ MAN5=		indexer.conf.5
 INSTALLS_SHLIB=	yes
 USE_GNOME=	lthack
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=--enable-shared \

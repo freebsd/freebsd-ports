@@ -18,7 +18,6 @@ COMMENT=	Simple GTK+-2 HTML editor
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomeprefix gnometarget gtkhtml3 gtksourceview
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
 MAN1=		erwin.1

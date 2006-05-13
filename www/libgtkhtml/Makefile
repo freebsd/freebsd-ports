@@ -20,7 +20,6 @@ COMMENT=	Lightweight HTML rendering/printing/editing engine
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 USE_GNOME=	gnomeprefix gnomehack libxslt gnomevfs2 gail ltverhack
 INSTALLS_SHLIB=	yes
 USE_AUTOTOOLS=  libtool:15

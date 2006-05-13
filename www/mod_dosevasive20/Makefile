@@ -19,7 +19,6 @@ COMMENT=	An Apache 2 module to try to protect HTTP DoS or DDoS attacks
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_REINPLACE=	yes
 WANT_APACHE=	2
 AP_FAST_BUILD=	YES
 AP_GENPLIST=	YES

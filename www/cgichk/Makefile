@@ -17,7 +17,6 @@ COMMENT=	A web site vulnerability scanner
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 ALL_TARGET=	cgichk
-USE_REINPLACE=	yes
 
 post-patch:
 	${REINPLACE_CMD} -e "s/^(CC|CFLAGS).+//g" ${WRKSRC}/Makefile

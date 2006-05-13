@@ -20,7 +20,6 @@ RUN_DEPENDS=	${SITE_PERL}/MP3/Info.pm:${PORTSDIR}/audio/p5-MP3-Info \
 
 USE_ZIP=	yes
 USE_PERL5_RUN=	yes
-USE_REINPLACE=	yes
 
 NO_BUILD=	yes
 

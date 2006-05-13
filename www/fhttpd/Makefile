@@ -14,8 +14,6 @@ MASTER_SITES=	http://www.fhttpd.org/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++-based FTP/HTTP server that supports modules
 
-USE_REINPLACE=	yes
-
 LOGFILE=	share/fhttpd/fhttpd.log
 PLIST_SUB+=	LOGFILE=${LOGFILE}
 

@@ -29,7 +29,6 @@ DISTFILES+=	fp${PORTVERSION:S/.//:C/\..*//}_${_FP_LANG}.tar.Z
 
 .include <bsd.port.pre.mk>
 
-USE_REINPLACE=	yes
 ONLY_FOR_ARCHS=	i386 alpha
 
 NO_WRKSUBDIR=	yes

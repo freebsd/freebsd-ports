@@ -23,9 +23,6 @@ USE_GMAKE=	yes
 USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-.if defined(NOPORTDOCS)
-USE_REINPLACE=	yes
-.endif
 
 MAN1=		netrik.1
 MAN5=		netrikrc.5

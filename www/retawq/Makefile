@@ -16,7 +16,6 @@ MAINTAINER=	laszlof@vonostingroup.com
 COMMENT=	An interactive, multi-threaded web browser for text terminals
 
 USE_GETTEXT=	yes
-USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--path-archprefix=${PREFIX} --path-prefix=${PREFIX} \

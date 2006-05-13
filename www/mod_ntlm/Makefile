@@ -15,7 +15,6 @@ MAINTAINER=	skv@FreeBSD.org
 COMMENT=	NTLM authentication module for the Apache webserver
 
 USE_APACHE=	YES
-USE_REINPLACE=	YES
 MAKE_ENV=	APXS=${APXS}
 
 post-patch:

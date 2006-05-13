@@ -14,8 +14,6 @@ MASTER_SITES=	http://www.stanford.edu/~epop/igal/
 MAINTAINER=	absinthe@pobox.com
 COMMENT=	A static html image gallery generator for *nix
 
-USE_REINPLACE=	yes
-
 RUN_DEPENDS=	${LOCALBASE}/bin/cjpeg:${PORTSDIR}/graphics/jpeg \
 		${LOCALBASE}/include/Magick++.h:${PORTSDIR}/graphics/ImageMagick
 

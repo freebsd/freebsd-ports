@@ -16,7 +16,6 @@ COMMENT=	The backend of mod_log_spread
 LIB_DEPENDS=	spread.1:${PORTSDIR}/net/spread
 
 MAKEFILE=	makefile
-USE_REINPLACE=	yes
 
 USE_RC_SUBR=	spreadlogd.sh
 SUB_FILES=	spreadlogd.sh

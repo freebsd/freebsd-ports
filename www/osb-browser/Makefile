@@ -20,7 +20,6 @@ LIB_DEPENDS=	nrcit.0:${PORTSDIR}/www/osb-nrcit
 USE_X_PREFIX=	yes
 USE_GNOME=	libglade2 gnomehack gnomeprefix
 USE_AUTOTOOLS=	libtool:15
-USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" \
 		LDFLAGS="${PTHREAD_LIBS}"
 

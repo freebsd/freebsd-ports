@@ -23,7 +23,6 @@ WRKSRC=		${WRKDIR}/PostNuke-0.761
 NO_WRKSUBDIR=	yes
 PLIST_SUB=	NUKEDIR=${NUKEDIR}
 PKGMESSAGE=	${WRKDIR}/pkg-message
-USE_REINPLACE=	yes
 
 pre-fetch:
 .if !defined(NUKEDIR)

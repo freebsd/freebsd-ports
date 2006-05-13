@@ -20,7 +20,6 @@ LIB_DEPENDS=	flash.0:${PORTSDIR}/graphics/libflash
 WRKSRC=		${WRKDIR}/${DISTNAME}/plugin
 
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 PLUGIN_DIR=	lib/browser_plugins
 PLIST_SUB+=	PLUGIN_DIR=${PLUGIN_DIR}

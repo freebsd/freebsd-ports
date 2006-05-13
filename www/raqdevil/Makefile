@@ -52,7 +52,6 @@ USE_GNOME=	glib20
 USE_PHP=	pcre session xml
 USE_GMAKE=	yes
 USE_PERL5=	yes
-USE_REINPLACE=	yes
 USE_APACHE=	yes
 
 WITHOUT_X11=	yes

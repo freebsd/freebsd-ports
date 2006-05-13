@@ -18,7 +18,6 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libevent.a:${PORTSDIR}/devel/libevent
 LIB_DEPENDS=	db3.3:${PORTSDIR}/databases/db3
 
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 CONFIGURE_ARGS+=	--with-libevent=${LOCALBASE} --program-transform-name=''
 
 MAN1=	crawl.1

@@ -18,7 +18,6 @@ COMMENT=	Enable Kwiki to work under mod_perl
 BUILD_DEPENDS=	${SITE_PERL}/Kwiki.pm:${PORTSDIR}/www/p5-Kwiki
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-USE_REINPLACE=	yes
 PERL_CONFIGURE=	yes
 
 .if defined(WITH_APACHE2)

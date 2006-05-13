@@ -20,7 +20,6 @@ CGI_UID?=	www
 PKGMESSAGE=	${WRKDIR}/pkg-message
 USE_APACHE=	yes
 USE_PERL5_RUN=	yes
-USE_REINPLACE=	yes
 NO_BUILD=	yes
 
 PORTDOCS=	BLURB COPYING feedback.fcn feedback.html formication.txt

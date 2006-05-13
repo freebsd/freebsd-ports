@@ -94,8 +94,6 @@ MAN3=		Business::Fedex.3 \
 		Vend::UserControl.3 \
 		Vend::UserDB.3
 
-USE_REINPLACE=	yes
-
 MAKE_ARGS+=	NOCPANINSTALL=1 \
 		INSTALLARCHLIB=${PREFIX}/interchange/ \
 		INSTALLPRIVLIB=${PREFIX}/interchange/lib/ \

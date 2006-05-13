@@ -15,7 +15,6 @@ MAINTAINER=	allie@pajunas.com
 COMMENT=	Sends web server log entries to a PostgreSQL database
 
 USE_PGSQL=	yes
-USE_REINPLACE=	yes
 
 post-extract:
 	@${CP} ${FILESDIR}/020.pglogd.sh ${WRKSRC}/020.pglogd.sh

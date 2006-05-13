@@ -20,7 +20,6 @@ WRKSRC=		${WRKDIR}/privoxy-${PORTVERSION}-stable
 
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf:253
-USE_REINPLACE=	yes
 
 USE_RC_SUBR=	privoxy.sh
 SUB_FILES=	pkg-message

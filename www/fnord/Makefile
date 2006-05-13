@@ -16,7 +16,6 @@ COMMENT=	Small and fast webserver with CGI-capability
 
 USE_GMAKE=	yes
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 
 PLIST_FILES=	bin/fnord \
 		bin/fnord-conf \

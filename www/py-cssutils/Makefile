@@ -21,7 +21,6 @@ RUN_DEPENDS=	${PYXML}
 USE_ZIP=	yes
 USE_PYTHON=	2.3+
 USE_PYDISTUTILS=	yes
-USE_REINPLACE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,\((.\)examples\(.\),\1${EXAMPLESDIR:S,${PREFIX}/,,}\2,' \

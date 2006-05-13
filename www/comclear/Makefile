@@ -14,7 +14,6 @@ MASTER_SITES=	http://www.neuro-tech.net/files/
 MAINTAINER=	roam@FreeBSD.org
 COMMENT=	A history cleaner for Netscape Navigator and Communicator
 
-USE_REINPLACE=	yes
 WANT_GNOME=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	automake:14 autoconf:213

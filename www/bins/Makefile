@@ -32,7 +32,6 @@ RUN_DEPENDS=	\
 IS_INTERACTIVE=	yes
 USE_BZIP2=	yes
 USE_PERL5_RUN=	yes
-USE_REINPLACE=	yes
 NO_BUILD=	yes
 
 # perlbase

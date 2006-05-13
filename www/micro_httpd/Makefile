@@ -15,7 +15,6 @@ DISTNAME=	${PORTNAME}_14dec2001
 MAINTAINER=	user@unknown.nu
 COMMENT=	An extremely small web server
 
-USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MAN8=		micro_httpd.8
 PLIST_FILES=	sbin/micro_httpd

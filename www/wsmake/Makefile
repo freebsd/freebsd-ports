@@ -19,7 +19,6 @@ COMMENT=	Software for production and maintenance of web sites
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 
 .if !defined(NOPORTDOCS)
 DISTFILES+=	user-manual-html.tar.gz

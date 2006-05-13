@@ -16,7 +16,6 @@ COMMENT=	Collect information from all over the Internet
 
 USE_BZIP2=		yes
 USE_PERL5=		yes
-USE_REINPLACE=		yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=		yes
 NO_MTREE=		yes

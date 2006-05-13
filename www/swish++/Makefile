@@ -17,7 +17,6 @@ COMMENT=	Simple Web Indexing System for Humans: C++ version
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 
 USE_PERL5=	yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile
 MAKE_ENV=	PTHREAD_LIBS=${PTHREAD_LIBS} \

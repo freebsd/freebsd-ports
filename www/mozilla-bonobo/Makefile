@@ -37,7 +37,6 @@ HEADERS_SUFX=
 USE_X_PREFIX=		yes
 USE_GNOME=		gnomeprefix libgnomeui libgnomeprint
 GNU_CONFIGURE=	yes
-USE_REINPLACE=		yes
 
 CONFIGURE_ARGS=		--with-plugin-install-dir="${PREFIX}/lib/browser_plugins" \
 			--with-mozilla-include-dir="${X11BASE}/include/mozilla${HEADERS_SUFX}"

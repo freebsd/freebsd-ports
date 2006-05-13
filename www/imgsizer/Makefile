@@ -18,7 +18,6 @@ RUN_DEPENDS=		rdjpgcom:${PORTSDIR}/graphics/jpeg \
 			identify:${PORTSDIR}/graphics/ImageMagick
 
 USE_PYTHON=		yes
-USE_REINPLACE=		yes
 NO_BUILD=		yes
 MAN1=			imgsizer.1
 

@@ -19,7 +19,6 @@ COMMENT=	A module that makes Apache CVS aware
 CONFLICTS=	apache-contrib-1.*
 
 USE_APACHE=	yes
-USE_REINPLACE=	yes
 MAKE_ARGS+=	APXS="${APXS}"
 
 post-patch:

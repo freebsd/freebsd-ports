@@ -16,8 +16,6 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	An HTTP proxy server that eliminates ads
 
-USE_REINPLACE=	yes
-
 ALL_TARGET=	# yes, an empty target.
 JDIR=		${PREFIX}/etc/junkbuster
 MAN1=		junkbuster.1

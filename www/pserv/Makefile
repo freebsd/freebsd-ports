@@ -14,7 +14,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A portable and small webserver written in C
 
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
 OPTIONS=	LOG "Enable logging" on \

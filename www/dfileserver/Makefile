@@ -18,7 +18,6 @@ PLIST_FILES=	bin/dfileserver
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 MAKE_ENV=	CXX=${CXX}
-USE_REINPLACE=	yes
 
 .include <bsd.port.pre.mk>
 

@@ -15,7 +15,6 @@ MAINTAINER=	kelley@insidesystems.net
 COMMENT=	PHP-based webmail client
 
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 ISMAILDIR?=	www/data/ismail
 INSTALLDIR=	${PREFIX}/${ISMAILDIR}
 

@@ -31,7 +31,6 @@ RUN_DEPENDS=	\
 
 USE_PERL5=	yes
 USE_RC_SUBR=	yes
-USE_REINPLACE=	yes
 NO_BUILD=	yes
 
 .ifndef(NOPORTDOCS)

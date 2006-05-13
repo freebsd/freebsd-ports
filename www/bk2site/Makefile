@@ -35,7 +35,6 @@ ICONSDIR?=	share/${PORTNAME}
 .endif
 
 MAN1=		bk2site.1
-USE_REINPLACE=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix="${PREFIX}" --enable-standard-datadir

@@ -15,7 +15,6 @@ MAINTAINER=	ychsiao@ychsiao.org
 COMMENT=	Apache module to build the extremely lightweight Weblog environment
 
 USE_APACHE=	yes
-USE_REINPLACE=	yes
 
 post-patch:
 	${REINPLACE_CMD} -e 's,^APXS=.*,APXS=${APXS},' ${WRKSRC}/Makefile

@@ -20,7 +20,6 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache20 \
 		${LOCALBASE}/lib/mysql/libmysqlclient.so:${PORTSDIR}/databases/mysql323-client
 
 WRKSRC=		${WRKDIR}/${DISTNAME}-2
-USE_REINPLACE=	yes
 USE_PERL5_RUN=	yes
 
 .include <bsd.port.pre.mk>
