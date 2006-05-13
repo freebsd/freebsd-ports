@@ -17,7 +17,6 @@ COMMENT=	Client for Cisco 3000 VPN Concentrator
 LIB_DEPENDS=	gcrypt.13:${PORTSDIR}/security/libgcrypt
 
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 ALL_TARGET=	vpnc
 
 PLIST_FILES=	sbin/vpnc \

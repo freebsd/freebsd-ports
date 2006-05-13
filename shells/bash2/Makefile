@@ -32,7 +32,6 @@ COMMENT=	The GNU Bourne Again Shell
 .include <bsd.port.pre.mk>
 
 LATEST_LINK=	${PORTNAME}2
-USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/bash-${PORTVERSION:C/\....$//}
 GNU_CONFIGURE=	Yes
 CONFIGURE_ARGS=	--with-installed-readline

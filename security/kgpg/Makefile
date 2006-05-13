@@ -21,7 +21,6 @@ CONFLICTS=		kdeutils-3.[2-4].*
 USE_GMAKE=		yes
 USE_AUTOTOOLS=		libtool:15
 USE_KDELIBS_VER=	3
-USE_REINPLACE=		yes
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,-lpthread,${PTHREAD_LIBS},g" ${WRKSRC}/configure

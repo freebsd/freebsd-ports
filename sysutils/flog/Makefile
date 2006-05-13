@@ -14,7 +14,6 @@ MASTER_SITES=	http://oss.ezic.com/flog/ \
 MAINTAINER=	anders@FreeBSD.org
 COMMENT=	A small STDIN-to-file logger with support for log rotation
 
-USE_REINPLACE=	yes
 PORTDOCS=	README
 
 post-patch:

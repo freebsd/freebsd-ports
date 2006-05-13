@@ -33,7 +33,6 @@ WRKSRC=		${WRKDIR}/nessus-core
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall.sh
 
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	YES
 USE_RC_SUBR=	YES
 WANT_GNOME=	yes
 .if defined(WITHOUT_NESSUS_GTK) || defined(WITHOUT_GTK)

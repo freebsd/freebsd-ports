@@ -15,7 +15,6 @@ MAINTAINER=	novel@FreeBSD.org
 COMMENT=	An advanced, highly configurable system monitor for X
 
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
 USE_X_PREFIX=	yes
 CONFIGURE_ARGS+=	--disable-portmon --disable-proc-uptime

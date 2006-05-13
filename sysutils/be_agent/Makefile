@@ -21,7 +21,6 @@ RUN_DEPENDS=	${LINUXBASE}/lib/ld-linux.so.2:${PORTSDIR}/emulators/linux_base
 NO_BUILD=	yes
 ONLY_FOR_ARCHS=	i386
 NO_INSTALL_MANPAGES=	yes
-USE_REINPLACE=	yes
 SUB_FILES=	pkg-message
 USE_RC_SUBR=	be-agent.sh
 PLIST_FILES=	bin/agent.be \

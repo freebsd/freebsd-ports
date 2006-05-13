@@ -14,7 +14,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME:S/_/-/}
 MAINTAINER=	anders@FreeBSD.org
 COMMENT=	A pam module for authenticating with MySQL
 
-USE_REINPLACE=	yes
 USE_MYSQL=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-mysql=${LOCALBASE} --with-pam-mods-dir=${PREFIX}/lib --with-pam=/usr

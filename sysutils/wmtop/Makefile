@@ -18,7 +18,6 @@ COMMENT=	Windowmaker dock app to display top 3 CPU consuming processes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 ALL_TARGET=	freebsd
-USE_REINPLACE=	yes
 
 MAN1=		wmtop.1
 PLIST_FILES=	bin/wmtop

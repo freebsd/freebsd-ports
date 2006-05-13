@@ -17,7 +17,6 @@ MAINTAINER=	jim@corebsd.or.id
 COMMENT=	A command-line utility for encrypting and decrypting files and streams
 
 USE_GETOPT_LONG=yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
 MAN1=	ccrypt.1

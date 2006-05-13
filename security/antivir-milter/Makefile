@@ -20,7 +20,6 @@ NO_CDROM=	${RESTRICTED}
 
 ONLY_FOR_ARCHS=	i386
 NO_BUILD=	yes
-USE_REINPLACE=	yes
 # When the avmilter binary is stripped its self-check fails.
 STRIP=
 PKGMESSAGE=	${WRKDIR}/pkg-message

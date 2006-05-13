@@ -18,7 +18,6 @@ COMMENT=	Great cryptography library and sample programs
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 
 # No Manual page
 

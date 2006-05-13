@@ -17,7 +17,6 @@ COMMENT=	The @stake Sleuth Kit for forensic analysis
 CONFLICTS=	ja-ls-[0-9]*
 
 USE_PERL5=	yes
-USE_REINPLACE=	yes
 
 PROGS=		dcalc dcat disk_sreset disk_stat dls dstat ffind \
 		fls fsstat hfind icat ifind ils img_stat istat \

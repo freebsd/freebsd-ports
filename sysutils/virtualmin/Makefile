@@ -20,7 +20,6 @@ RUN_DEPENDS=	${LOCALBASE}/lib/webmin/webmin-init:${PORTSDIR}/sysutils/webmin
 
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/virtual-server
-USE_REINPLACE=	yes
 
 post-extract:
 	@${FIND} ${WRKSRC} -name .xvpics | ${XARGS} ${RM} -r

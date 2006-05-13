@@ -14,7 +14,6 @@ DISTNAME=	dolly${PORTVERSION:S/./_/}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Improved version of dolly harddisk/partition network clone utility
 
-USE_REINPLACE=	yes
 NO_WRKSUBDIR=	yes
 
 PROGRAM_BIN_FILES=	dollyC

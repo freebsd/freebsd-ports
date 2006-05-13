@@ -15,7 +15,6 @@ MAINTAINER=	mharo@FreeBSD.org
 COMMENT=	Print S/Key keys on a piece of paper, twice the size of a credit card
 
 NO_BUILD=	yes
-USE_REINPLACE=	yes
 
 post-patch:
 	${REINPLACE_CMD} -e 's,__PREFIX__,${PREFIX},' ${WRKSRC}/keyprint

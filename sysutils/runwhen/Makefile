@@ -16,7 +16,6 @@ COMMENT=	Tools for running commands at particular times
 BUILD_DEPENDS=	${LOCALBASE}/include/skalibs:${PORTSDIR}/devel/skalibs
 
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 
 WRKSRC=		${WRKDIR}/admin/${DISTNAME}
 ALL_TARGET=	default

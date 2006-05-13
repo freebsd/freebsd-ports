@@ -19,7 +19,6 @@ EXTRA_PATCHES=	${.CURDIR}/../../x11/kde3/files/extrapatch-old_configure
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 USE_KDELIBS_VER=3
 USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes

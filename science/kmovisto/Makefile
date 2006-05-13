@@ -17,7 +17,6 @@ COMMENT=	A real 3-D molecule viewer
 
 USE_QT_VER=	3
 USE_GL=		yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

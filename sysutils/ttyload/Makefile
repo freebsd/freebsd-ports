@@ -14,7 +14,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Give a color-coded graph of load averages over time
 
 PLIST_FILES=	bin/ttyload
-USE_REINPLACE=	yes
 ALL_TARGET=	default
 
 post-patch:

@@ -16,7 +16,6 @@ COMMENT=	Scientific graphic library for geoscience
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --exec-prefix=${PREFIX} --libdir=${PREFIX}/lib/${PORTNAME}-${PORTVERSION}  --disable-gtk2 --disable-gtk --with-x
-USE_REINPLACE=	yes
 
 DOCFILES=	CHECK CREDITS HISTORY README README_clrmap README_gt2dlib \
 		README_itr51 README_pslib README_umfmap

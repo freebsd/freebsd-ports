@@ -17,7 +17,6 @@ COMMENT=	Next-generation of udpscan plus a high-speed TCP scanner
 BUILD_DEPENDS=	libnet*>=1.1.2,1:${PORTSDIR}/net/libnet
 
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 
 MAN1=		unicornscan.1
 

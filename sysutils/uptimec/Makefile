@@ -15,7 +15,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Client for Uptime Project
 
 USE_RC_SUBR=	yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

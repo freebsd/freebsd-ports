@@ -25,7 +25,6 @@ LIB_DEPENDS=	atlas:${PORTSDIR}/math/atlas\
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 LAPACK=		-lalapack -lcblas -lf77blas -lg2c -latlas
 FFTW=		-lfftw
 

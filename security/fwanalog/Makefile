@@ -15,7 +15,6 @@ COMMENT=	A firewall log summarizer that uses Analog
 
 RUN_DEPENDS=	analog:${PORTSDIR}/www/analog
 
-USE_REINPLACE=	yes
 ETCDIR=		${PREFIX}/etc/${PORTNAME}
 PLIST_SUB+=	ETCDIR=${ETCDIR}
 CONFFILES=	fwanalog-dom.tab \

@@ -17,7 +17,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	3ware RAID controller monitoring daemon and web server
 
 USE_RC_SUBR=	3dm2.sh
-USE_REINPLACE=	yes
 
 .include <bsd.port.pre.mk>
 

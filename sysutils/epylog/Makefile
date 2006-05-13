@@ -22,7 +22,6 @@ MAN3=		epylog.3
 MAN5=		epylog-modules.5 epylog.conf.5
 MAN8=		epylog.8
 
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-lynx=${LOCALBASE}/bin/lynx
 USE_PERL5=	yes

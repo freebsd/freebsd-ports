@@ -15,7 +15,6 @@ EXTRACT_SUFX=.tgz
 
 MAINTAINER=		uri@keves.org
 COMMENT=		A Full Screen Syscons Font Editor
-USE_REINPLACE=  yes
 
 MAN1=		fnteditfs.1
 PLIST_FILES=	bin/fnteditfs

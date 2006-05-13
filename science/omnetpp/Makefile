@@ -33,7 +33,6 @@ LIB_DEPENDS=	${TCL_NODOT}:${PORTSDIR}/lang/${TCL_NODOT} \
 COMPONENTS=	libs progs
 
 INSTALLS_SHLIB=	yes
-USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
 
 LIB_FILES=	cmdenv envir nedxml sim_std tkenv

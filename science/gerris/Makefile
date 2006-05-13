@@ -38,7 +38,6 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=		yes
 USE_GNOME=		pkgconfig
 USE_GETOPT_LONG=	yes
-USE_REINPLACE=		yes
 
 CONFIGURE_ARGS+=	--disable-mpi
 

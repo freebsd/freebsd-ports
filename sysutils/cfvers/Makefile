@@ -18,7 +18,6 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/sqlite/main.py:${PORTSDIR}/databases/py-PySQLi
 
 USE_GMAKE=	yes
 USE_PYTHON=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
 MAN1=		cfv.1 cfvadmin.1

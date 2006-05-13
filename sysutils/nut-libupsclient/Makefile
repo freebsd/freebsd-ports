@@ -11,7 +11,6 @@ COMMENT=	Network UPS Tools - upsclient library
 #
 
 USE_GNOME=	pkgconfig
-USE_REINPLACE=	yes
 
 PLIST=		${.CURDIR}/pkg-plist
 SUBSYS=		libupsclient

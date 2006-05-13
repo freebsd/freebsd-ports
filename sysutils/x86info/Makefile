@@ -18,7 +18,6 @@ COMMENT=	Utility to display information about the systems x86 processor(s)
 
 ONLY_FOR_ARCHS=	i386
 PLIST_FILES=	bin/x86info
-USE_REINPLACE=	yes
 MAKE_ARGS=	CFLAGS="${CFLAGS}"
 
 do-install:

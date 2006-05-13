@@ -18,7 +18,6 @@ COMMENT=	Java cryptographic primitives and tools
 BROKEN=		Does not compile
 
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 

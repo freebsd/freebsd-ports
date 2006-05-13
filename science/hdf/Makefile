@@ -29,7 +29,6 @@ CONFLICTS=	netcdf-*
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS+=--with-jpeg="${LOCALBASE}" \
 		--with-szlib="${LOCALBASE}"
-USE_REINPLACE=	yes
 DOCFILES=	HDF41r5_SpecDG.pdf \
 		HDF42r0_RefMan.pdf \
 		HDF42r0_UserGd.pdf

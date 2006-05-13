@@ -16,7 +16,6 @@ COMMENT=	An SSL proxy for securing unsecure connections
 
 USE_OPENSSL=	YES
 USE_GMAKE=	YES
-USE_REINPLACE=	YES
 PLIST_FILES=	sbin/ssl_proxy
 SUB_FILES+=	pkg-message
 

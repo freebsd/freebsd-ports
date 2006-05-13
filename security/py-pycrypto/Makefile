@@ -17,7 +17,6 @@ COMMENT=	The Python Cryptography Toolkit
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
-USE_REINPLACE=	yes
 
 .include <bsd.port.pre.mk>
 

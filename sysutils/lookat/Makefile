@@ -17,7 +17,6 @@ COMMENT=	Lookat is a program to view Un*x text files and manual pages
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 
 MAN1=		lookat.1
 

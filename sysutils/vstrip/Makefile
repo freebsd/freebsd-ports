@@ -17,7 +17,6 @@ COMMENT=	A VOB de-multiplexing tool, splitter and VOB/IFO files processor
 LIB_DEPENDS=	dvdread.3:${PORTSDIR}/multimedia/libdvdread
 
 USE_ZIP=	yes
-USE_REINPLACE=	yes
 MAKE_ENV=	LDFLAGS="${LDFLAGS}"
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

@@ -14,7 +14,6 @@ MAINTAINER=	jims@bluenotch.com
 COMMENT=	Daemon/client to check remote host information for Nagios
 
 USE_PYTHON=	yes
-USE_REINPLACE=	yes
 
 MAN1=		nagios-stat.1
 MAN8=		nagios-statd.8

@@ -13,7 +13,6 @@ MASTER_SITES=	http://srp.stanford.edu/source/
 MAINTAINER=	laszlof@vonostingroup.com
 COMMENT=	Secure Remote Password protocol library, TELNET, and FTP
 
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	INSTALL="/usr/bin/install -C"
 CONFIGURE_ARGS=	--with-openssl=/usr				\

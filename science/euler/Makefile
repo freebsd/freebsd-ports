@@ -17,7 +17,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A program computes with real and complex numbers and matrices
 
 USE_GNOME=	gnometarget gtk20
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
 post-patch:

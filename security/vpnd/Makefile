@@ -16,7 +16,6 @@ COMMENT=	VPN daemon offering transparent blowfish encryption between networks
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 HAS_CONFIGURE=	yes
-USE_REINPLACE=	yes
 USE_RC_SUBR=	yes
 
 PLIST_FILES=	sbin/vpnd etc/rc.d/vpnd.sh etc/vpnd.conf.sample etc/vpnd.chat.sample

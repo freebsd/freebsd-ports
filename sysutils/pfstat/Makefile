@@ -23,8 +23,6 @@ LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
 MAKE_ARGS=	"LD_GD=gd"
 .endif
 
-USE_REINPLACE=	yes
-
 MAN8=		pfstat.8
 
 MANCOMPRESSED=	no

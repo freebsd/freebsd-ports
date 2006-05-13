@@ -25,8 +25,6 @@ COMMENT=	Supplicant (client) for WPA/802.1x protocols
 
 LIB_DEPENDS=	dnet.1:${PORTSDIR}/net/libdnet
 
-USE_REINPLACE=	yes
-
 PLIST_FILES=	sbin/wpa_supplicant \
 		sbin/wpa_passphrase \
 		sbin/wpa_cli

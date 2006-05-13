@@ -14,7 +14,6 @@ MASTER_SITES=	http://people.freebsd.org/~rse/dist/
 MAINTAINER=	gtodd@bellanet.org
 COMMENT=	Convenience frontend tools for the management of UFS2 snapshots
 
-USE_REINPLACE=	yes
 NO_BUILD=	yes
 
 MAN8=		snapshot.8 periodic-snapshot.8

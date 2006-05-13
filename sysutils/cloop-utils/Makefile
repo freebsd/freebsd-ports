@@ -16,7 +16,6 @@ COMMENT=	Compressed loop FS utils
 
 WRKSRC=		${WRKDIR}/cloop-${CLOOP_VERSION}
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 MAKE_ENV=	APPSONLY=yes
 PORTDOCS=	README
 PLIST_FILES=	bin/create_compressed_fs bin/extract_compressed_fs

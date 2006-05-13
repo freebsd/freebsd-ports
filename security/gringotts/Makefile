@@ -21,7 +21,6 @@ LIB_DEPENDS=	gringotts.2:${PORTSDIR}/security/libgringotts \
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 USE_GNOME=	gtk20
 WANT_GNOME=	yes
 CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib" CPPFLAGS="-I${LOCALBASE}/include"

@@ -18,7 +18,6 @@ COMMENT=	A minimalistic tool for keeping filesystems in synchronization
 ALL_TARGET=	default
 USE_GMAKE=	yes
 MAKEFILE=	makefile
-USE_REINPLACE=	yes
 
 MAN1=		ssync.1
 

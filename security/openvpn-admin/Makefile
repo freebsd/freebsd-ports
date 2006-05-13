@@ -24,7 +24,6 @@ RUN_DEPENDS=	mono:${PORTSDIR}/lang/mono \
 USE_GMAKE=	yes
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 
 .include <bsd.port.pre.mk>
 

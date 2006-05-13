@@ -14,7 +14,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to add multiple ssh keys to the authentication agent
 
 USE_PYTHON=	yes
-USE_REINPLACE=	yes
 NO_BUILD=	yes
 MAN1=		ssh-multiadd.1
 PLIST_FILES=	bin/ssh-multiadd

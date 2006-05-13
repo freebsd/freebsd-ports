@@ -15,7 +15,6 @@ MAINTAINER=	jos@catnook.com
 COMMENT=	Portable tools to manage processes and networked services
 
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 USE_BZIP2=	yes
 
 pre-patch:

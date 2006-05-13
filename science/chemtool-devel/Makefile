@@ -19,7 +19,6 @@ LIB_DEPENDS=	EMF.1:${PORTSDIR}/graphics/libemf
 RUN_DEPENDS=	transfig:${PORTSDIR}/print/transfig
 
 WRKSRC=         ${WRKDIR}/${PORTNAME}-1.7alpha15/
-USE_REINPLACE=	yes
 USE_GNOME=	gtk20
 #USE_AUTOTOOLS=	autoconf:213
 GNU_CONFIGURE=	yes

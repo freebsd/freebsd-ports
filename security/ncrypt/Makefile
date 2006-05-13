@@ -15,7 +15,6 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	laszlof@vonostingroup.com
 COMMENT=	Advanced AES file encryption tool
 
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	automake:19 aclocal:19 autoconf:259
 

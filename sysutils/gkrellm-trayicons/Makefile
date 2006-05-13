@@ -20,7 +20,6 @@ COMMENT=	GKrellM2 plugin to display definable icons as notifiers or launchers
 BUILD_DEPENDS=	${X11BASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 
-USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 PLIST_FILES=	libexec/gkrellm2/plugins/trayicons.so
 

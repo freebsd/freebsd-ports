@@ -15,7 +15,6 @@ COMMENT=	GTK2 send-pr tool
 
 LIB_DEPENDS=	esmtp.6:${PORTSDIR}/mail/libesmtp
 
-USE_REINPLACE=	yes
 USE_GNOME=	gtk20
 USE_X_PREFIX=	yes
 

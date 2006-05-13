@@ -20,7 +20,6 @@ COMMENT=	A Virtual Private Network (VPN) daemon
 LIB_DEPENDS=	lzo.1:${PORTSDIR}/archivers/lzo
 
 USE_OPENSSL=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CPPFLAGS+=	-I${LOCALBASE}/include

@@ -14,7 +14,6 @@ MAINTAINER=	bsam@ipt.ru
 COMMENT=	Implementation of the utility "mapchan" from SCO Unix
 
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

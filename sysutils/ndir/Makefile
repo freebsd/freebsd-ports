@@ -17,7 +17,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A featureful directory lister
 
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 ALL_TARGET=	compile
 CFLAGS+=	-DNO_THOUSANDS_GROUPING
 MAN1=		ndir.1

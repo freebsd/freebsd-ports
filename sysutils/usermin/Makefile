@@ -24,7 +24,6 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/SSLeay.pm:${PORTSDIR}/security/p5-Net
 NO_BUILD=	yes
 USE_PERL5=	yes
 USE_RC_SUBR=	usermin.sh
-USE_REINPLACE=	yes
 SUB_LIST=	PERL5=${PERL}
 
 USERMIN_MODULES=file-1.200-4.wbm.gz

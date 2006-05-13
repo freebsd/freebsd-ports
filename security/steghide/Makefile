@@ -28,7 +28,6 @@ CONFIGURE_ARGS=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -lintl -lmcrypt"
-USE_REINPLACE=	yes
 
 MAN1=		steghide.1
 

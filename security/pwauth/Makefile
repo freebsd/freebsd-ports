@@ -13,7 +13,6 @@ MASTER_SITES=	http://www.unixpapa.com/software/
 MAINTAINER=	clement@FreeBSD.org
 COMMENT=	A Unix Web Authenticator
 
-USE_REINPLACE=	yes
 PLIST_FILES=	bin/pwauth bin/checkfaillog
 
 ALL_TARGET=	pwauth checkfaillog

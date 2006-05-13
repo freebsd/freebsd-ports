@@ -15,8 +15,6 @@ MASTER_SITE_SUBDIR=	UNIX/IDS
 MAINTAINER=	dannyboy@FreeBSD.org
 COMMENT=	Displays information in real time about users currently logged on
 
-USE_REINPLACE=	yes
-
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500014

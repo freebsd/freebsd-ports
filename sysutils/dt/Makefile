@@ -17,8 +17,6 @@ DISTNAME=	dt-source
 MAINTAINER=	itetcu@people.tecnik93.com
 COMMENT=	Data Test Program - disk/tape error diagnostic tool
 
-USE_REINPLACE=	yes
-
 WRKSRC=		${WRKDIR}/dt.d
 MAKEFILE=	Makefile.freebsd
 ALL_TARGET=	dt

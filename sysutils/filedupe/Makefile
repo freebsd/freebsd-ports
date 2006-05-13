@@ -17,7 +17,6 @@ COMMENT=	A utility for quickly finding duplicate files
 LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
 
 PLIST_FILES=	bin/filedupe
-USE_REINPLACE=	yes
 
 post-patch:
 	${REINPLACE_CMD} -e 's|filename\[80\]|filename[1024]|g; \

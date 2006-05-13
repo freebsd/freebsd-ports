@@ -20,8 +20,6 @@ MASTER_SITES=	ftp://ftp.pangeia.com.br/pub/seg/pac/ \
 MAINTAINER=	cordeiro@nic.br
 COMMENT=	A tool to locally check for signs of a rootkit
 
-USE_REINPLACE=	yes
-
 ALL_TARGET=	chkrootkit chklastlog chkwtmp chkutmp chkproc chkdirs ifpromisc check_wtmpx strings
 
 PLIST_FILES=	${ALL_TARGET:C,^,sbin/,}

@@ -33,7 +33,6 @@ BUILD_DEPENDS+=	bchunk:${PORTSDIR}/sysutils/bchunk \
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_PYTHON=	yes
-USE_REINPLACE=	yes
 
 pre-everything::
 	@${ECHO_MSG} "===>  You can enable more features by defining WITH_ADDITIONAL_PROGRAMS"

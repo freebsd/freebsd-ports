@@ -50,7 +50,6 @@ PATCH_DIST_STRIP=	-p1
 PATCH_SITES+=	http://www.nrg4u.com/qmail/
 PATCHFILES+=	ucspi-tcp-ssl-20050405.patch.gz
 PATCH_DIST_STRIP=	-p1
-USE_REINPLACE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|#INCS=-I/usr/local/include|INCS=-I${OPENSSLBASE}/include|g; \

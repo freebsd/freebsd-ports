@@ -17,7 +17,6 @@ COMMENT=	An Open Source program library for molecular simulation applications
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/Scientific:${PORTSDIR}/math/py-scientific
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/Scientific:${PORTSDIR}/math/py-scientific
 
-USE_REINPLACE=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 

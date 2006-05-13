@@ -16,7 +16,6 @@ COMMENT=	Simple event (logs) correlator
 
 USE_PERL5_RUN=	YES
 NO_BUILD=	YES
-USE_REINPLACE=	YES
 
 MAN8=		sec.8
 PORTDOCS=	ChangeLog README convert.pl itostream.c

@@ -20,7 +20,6 @@ COMMENT=	Dynamic Library Tracer -- similar to strace, but trace library calls
 # other than i386 in the FreeBSD/ directory as of 2003-18-06.
 ONLY_FOR_ARCHS=	i386
 
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 PLIST_FILES=	bin/ltrace etc/ltrace.conf

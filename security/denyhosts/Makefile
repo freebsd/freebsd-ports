@@ -15,7 +15,6 @@ DISTNAME=	DenyHosts-${PORTVERSION}
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Script to thwart ssh attacks
 
-USE_REINPLACE=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 

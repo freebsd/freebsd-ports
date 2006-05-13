@@ -13,8 +13,6 @@ MASTER_SITES=	http://www.dynamical-systems.org/ipfw/
 MAINTAINER=	frank@dynamical-systems.org
 COMMENT=	A DShield client for ipfw logs
 
-USE_REINPLACE=	yes
-
 PORTDOCS=	CHANGES README.html README.txt
 
 post-patch:

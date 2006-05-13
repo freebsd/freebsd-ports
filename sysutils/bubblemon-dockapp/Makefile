@@ -15,7 +15,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/0$//}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X eye candy for displaying CPU and memory load in a dock
 
-USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk12

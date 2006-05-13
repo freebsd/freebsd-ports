@@ -24,7 +24,6 @@ USE_PYTHON=	yes
 USE_GNOME=	gnomeprefix pygnome2
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 DATADIR=	${PREFIX}/share/gnome
 
 PORTDOCS=	addingandediting.html index.html

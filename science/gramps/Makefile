@@ -22,7 +22,6 @@ USE_PYTHON=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomeprefix pygnome2 desktopfileutils
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 INSTALLS_OMF=	yes
 
 MAN1=		gramps.1

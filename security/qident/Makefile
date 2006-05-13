@@ -15,8 +15,6 @@ COMMENT=	Query a remote IDENT (RFC 1413) server
 
 LIB_DEPENDS=	ident.0:${PORTSDIR}/security/libident
 
-USE_REINPLACE=	yes
-
 MANSECTS=	1
 MAN1=		qident.1
 MANCOMPRESSED=	maybe

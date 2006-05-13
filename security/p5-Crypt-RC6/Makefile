@@ -15,8 +15,6 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl implementation of the RC6 encryption algorithm
 
-USE_REINPLACE=	YES
-
 PERL_CONFIGURE=	yes
 
 MAN3=		Crypt::RC6.3

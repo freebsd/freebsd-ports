@@ -19,7 +19,6 @@ COMMENT=	The freespace for Window Maker
 USE_GETOPT_LONG=yes
 USE_IMAKE=	yes
 USE_XPM=	yes
-USE_REINPLACE=	yes
 MAKE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 post-patch:

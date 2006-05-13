@@ -19,7 +19,6 @@ RUN_DEPENDS=	portupgrade:${PORTSDIR}/sysutils/portupgrade
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk20 desktopfileutils
-USE_REINPLACE=	yes
 
 MAKE_ENV+=	OSTYPE="${OPSYS}"
 

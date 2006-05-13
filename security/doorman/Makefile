@@ -40,7 +40,6 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 GNU_CONFIGURE=	yes
 SUB_FILES=	pkg-message doormand.cf.EXAMPLE
 USE_RC_SUBR=	doorman.sh
-USE_REINPLACE=	yes
 
 pre-patch:
 	@${REINPLACE_CMD} -e 's/[[:cntrl:]]*$$//' \

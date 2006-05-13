@@ -16,8 +16,6 @@ COMMENT=	Quick utility to check files growth rate
 MAN1=		growspd.1
 PLIST_FILES=	bin/growspd
 
-USE_REINPLACE=	yes
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O3|${CFLAGS}|' ${WRKSRC}/Makefile
 

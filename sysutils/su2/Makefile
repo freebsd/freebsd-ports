@@ -14,7 +14,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An enhanced su, allows users to su with own password + more
 
 NO_CDROM=	"Don't sell for profit"
-USE_REINPLACE=	yes
 
 MAN1=		su2.1
 PLIST_FILES=	bin/su2

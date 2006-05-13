@@ -17,7 +17,6 @@ COMMENT=	Graphical certification authority
 LIB_DEPENDS=	db4.0:${PORTSDIR}/databases/db4
 
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 USE_OPENSSL=	yes
 USE_QT_VER=	3
 

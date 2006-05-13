@@ -16,7 +16,6 @@ COMMENT=	An application launcher with simple XML-based configuration syntax
 
 HAS_CONFIGURE=	yes
 USE_GNOME=	gtk12 gdkpixbuf libxml2
-USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 

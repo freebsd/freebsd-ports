@@ -32,7 +32,6 @@ USE_PGSQL=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-v${PORTVERSION}beta
 
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-audit-libdir=${PREFIX}/lib/alat

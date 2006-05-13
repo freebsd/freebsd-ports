@@ -17,7 +17,6 @@ COMMENT=	Common startup and shutdown subroutines used by scripts
 
 USE_BZIP2=	yes
 NO_BUILD=	yes
-USE_REINPLACE=	yes
 
 MAN8=		rc.subr.8
 PLIST_FILES=	etc/rc.subr \

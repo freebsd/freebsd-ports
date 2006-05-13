@@ -16,7 +16,6 @@ COMMENT=	Last File Manager, a simple 'commander'-type file manager
 
 USE_PYTHON=	2.0+
 USE_PYDISTUTILS=	yes
-USE_REINPLACE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e '/DOC_FILES/d' ${WRKSRC}/setup.py

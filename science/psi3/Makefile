@@ -25,7 +25,6 @@ LIB_DEPENDS=	atlas:${PORTSDIR}/math/atlas
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 USE_AUTOTOOLS=	autoconf:259
 
 CONFIGURE_ARGS=	--with-cc=${CC} \

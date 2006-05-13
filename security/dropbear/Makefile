@@ -15,7 +15,6 @@ COMMENT=	An SSH 2 server, designed to be usable in small memory environments
 
 GNU_CONFIGURE=	YES
 USE_GMAKE=	YES
-USE_REINPLACE=	YES
 
 .if defined(WANT_STATIC)
 CONFIGURE_ENV=	LDFLAGS=-static

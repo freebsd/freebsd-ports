@@ -17,7 +17,6 @@ COMMENT=	Represent a file system as a set of concentric segmented-rings
 USE_KDELIBS_VER=3
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 
 post-patch:
 	@${CP} ${FILESDIR}/mntent* ${WRKSRC}/src

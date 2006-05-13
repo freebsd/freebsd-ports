@@ -19,7 +19,6 @@ RUN_DEPENDS=	${SITE_PERL}/Net/FTP.pm:${PORTSDIR}/net/p5-Net
 
 NO_BUILD=	yes
 USE_PERL5=	yes
-USE_REINPLACE=	yes
 
 MAN1=		reoback.1 reoback.pl.1
 MANCOMPRESSED=	yes

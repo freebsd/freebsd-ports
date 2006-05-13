@@ -18,7 +18,6 @@ COMMENT=	Graphical version of the GNU "find" utility
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomeprefix libglade
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-lgnuregex -L${LOCALBASE}/lib"

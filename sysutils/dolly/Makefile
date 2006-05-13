@@ -14,8 +14,6 @@ DISTNAME=	${PORTNAME}.${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A program to clone harddisks/partitions over a fast switched network
 
-USE_REINPLACE=	yes
-
 OPTIONS=	BZIP2	"bzip2 instead of gzip for compressing"	on \
 		HIGHEST_COMPRESSION	"Highest rather than fastest compression"	on
 

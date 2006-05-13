@@ -15,7 +15,6 @@ MAINTAINER=	hoek@FreeBSD.org
 COMMENT=	The pager installed with FreeBSD before less(1) was imported
 
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 NO_WRKSUBDIR=	yes
 
 MAN1=		44bsd-more.1

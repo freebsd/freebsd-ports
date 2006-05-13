@@ -19,7 +19,6 @@ COMMENT=	Generalize listed filenames to csh-extended glob patterns
 BUILD_DEPENDS=	makeme:${PORTSDIR}/devel/msrc0 \
 		mkcmd:${PORTSDIR}/devel/mkcmd
 
-USE_REINPLACE=	yes
 MAKE_FLAGS=
 MAKEFILE=
 MAN1=		${PORTNAME}.1

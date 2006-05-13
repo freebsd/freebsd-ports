@@ -20,7 +20,6 @@ RUN_DEPENDS=	${SITE_PERL}/mach/Term/ReadLine/Gnu.pm:${PORTSDIR}/devel/p5-ReadLin
 
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
-USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ''
 
 SCRIPTS=	msfcli msfconsole msfelfscan msfencode msflogdump msfpayload msfpescan \

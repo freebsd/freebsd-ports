@@ -58,7 +58,6 @@ MAKE_ENV+=	without-gnutls=1 without-ssl=1
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 
 PLIST_SUB=	PREFIX=${PREFIX}
 .if defined(GKRELLM_SERVER_ONLY)

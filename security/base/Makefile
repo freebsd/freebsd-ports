@@ -19,7 +19,6 @@ RUN_DEPENDS=	${LOCALBASE}/bin/snort:${PORTSDIR}/security/snort \
 		${LOCALBASE}/share/pear/Image/Graph.php:${PORTSDIR}/graphics/pear-Image_Graph
 
 USE_PHP=	yes
-USE_REINPLACE=	yes
 
 ADODB_DIR=	${LOCALBASE}/share/adodb
 

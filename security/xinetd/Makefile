@@ -14,7 +14,6 @@ MASTER_SITES=	http://www.xinetd.org/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Replacement for inetd with better control and logging
 
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	yes

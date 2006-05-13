@@ -16,8 +16,6 @@ COMMENT=	A variety of cryptographic primitives for Objective Caml
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
 
-USE_REINPLACE=	yes
-
 ALL_TARGET=	all allopt
 
 .ifndef(NOPORTDOCS)

@@ -17,7 +17,6 @@ COMMENT=	Schily's enhanced rmt implementation
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 MAKE_ENV=	MAKEPROG=${GMAKE} CCOM=${CC}
 MAN1=		srmt.1
 

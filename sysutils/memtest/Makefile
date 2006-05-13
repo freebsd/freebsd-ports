@@ -14,8 +14,6 @@ DISTNAME=	${PORTNAME}er-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility to test for faulty memory subsystem
 
-USE_REINPLACE=	yes
-
 MAN8=		${PORTNAME}.8
 PLIST_FILES=	bin/memtest
 
