@@ -116,6 +116,46 @@ share/doc/HTML/en/tellico/source-options.png
 share/doc/HTML/en/tellico/sru-options.png
 share/doc/HTML/en/tellico/template-options.png
 share/doc/HTML/en/tellico/z3950-options.png
+share/doc/HTML/fr/tellico/advanced.docbook
+share/doc/HTML/fr/tellico/amazon-options.png
+share/doc/HTML/fr/tellico/common
+share/doc/HTML/fr/tellico/configuration.docbook
+share/doc/HTML/fr/tellico/csv-dialog.png
+share/doc/HTML/fr/tellico/details.docbook
+share/doc/HTML/fr/tellico/entry-editor1.png
+share/doc/HTML/fr/tellico/entry-editor3.png
+share/doc/HTML/fr/tellico/entry-editor4.png
+share/doc/HTML/fr/tellico/entry-editor5.png
+share/doc/HTML/fr/tellico/export-bibtex.png
+share/doc/HTML/fr/tellico/export-csv.png
+share/doc/HTML/fr/tellico/export-html.png
+share/doc/HTML/fr/tellico/export-options.png
+share/doc/HTML/fr/tellico/export-pdb.png
+share/doc/HTML/fr/tellico/externalexec-options.png
+share/doc/HTML/fr/tellico/faqs.docbook
+share/doc/HTML/fr/tellico/fetch-dialog.png
+share/doc/HTML/fr/tellico/fields-dialog.png
+share/doc/HTML/fr/tellico/filter-dialog.png
+share/doc/HTML/fr/tellico/filter-view.png
+share/doc/HTML/fr/tellico/freebsd-doc-license.html
+share/doc/HTML/fr/tellico/fundamentals.docbook
+share/doc/HTML/fr/tellico/general-options.png
+share/doc/HTML/fr/tellico/hacking.docbook
+share/doc/HTML/fr/tellico/imdb-options.png
+share/doc/HTML/fr/tellico/importing-exporting.docbook
+share/doc/HTML/fr/tellico/index.cache.bz2
+share/doc/HTML/fr/tellico/index.docbook
+share/doc/HTML/fr/tellico/loan-dialog.png
+share/doc/HTML/fr/tellico/loan-view.png
+share/doc/HTML/fr/tellico/main-window.png
+share/doc/HTML/fr/tellico/menus.docbook
+share/doc/HTML/fr/tellico/openoffice-dialog.png
+share/doc/HTML/fr/tellico/print-options.png
+share/doc/HTML/fr/tellico/report-dialog.png
+share/doc/HTML/fr/tellico/source-options.png
+share/doc/HTML/fr/tellico/sru-options.png
+share/doc/HTML/fr/tellico/template-options.png
+share/doc/HTML/fr/tellico/z3950-options.png
 share/icons/hicolor/128x128/apps/tellico.png
 share/icons/hicolor/128x128/mimetypes/tellico.png
 share/icons/hicolor/16x16/apps/tellico.png
@@ -163,6 +203,7 @@ share/mimelnk/application/x-tellico.desktop
 @dirrmtry share/locale/cs
 @dirrmtry share/locale/ca/LC_MESSAGES
 @dirrmtry share/locale/ca
+@dirrm share/doc/HTML/fr/tellico
 @dirrm share/doc/HTML/en/tellico
 @dirrm share/apps/tellico/report-templates
 @dirrm share/apps/tellico/pics
