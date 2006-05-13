@@ -66,6 +66,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/tutorial/* ${PREFIX}/share/${PORTNAME}/tutorial
 	${MKDIR} ${DOCSDIR}/api
 	cd ${WRKSRC}/doc/api && ${FIND} . | ${CPIO} -pdmu ${DOCSDIR}/api
+	${TOUCH} ${DOCSDIR}/api/packages.html
 	${MKDIR} ${DOCSDIR}/examples
 	cd ${WRKSRC}/doc/examples && ${FIND} . \
 		| ${CPIO} -pdmu ${DOCSDIR}/examples
