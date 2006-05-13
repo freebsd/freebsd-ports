@@ -31,41 +31,41 @@ CFLAGS+=	-DJOHN_SYSTEMWIDE=1 \
 ARCH!=		/usr/bin/uname -p
 OSVERSION!=	/sbin/sysctl -n kern.osreldate
 
-.if ${ARCH} == "i386" || ${ARCH} == "amd64"
+.if ${ARCH} == "i386"
 . if ${OSVERSION} > 500000
-# dumps core with sse2 + gcc 2.95
 OPTIONS=	SSE2 "Enable SSE2 optimizations" off
 . endif
-.endif
-.if ${ARCH} == "i386"
 OPTIONS+=	MMX "Enable MMX optimizations" off
 .endif
 
 .include <bsd.port.pre.mk>
 
-ALL_TARGET=	generic
-
-.if defined(WITH_MMX)
+.if ${ARCH} == "i386"
 . if defined(WITH_SSE2)
 ALL_TARGET=	${OSNAME}-x86-sse2
-. else
+. elif defined(WITH_MMX)
 ALL_TARGET=	${OSNAME}-x86-mmx
+. else
+ALL_TARGET=	${OSNAME}-x86-any
 . endif
-.elif defined(WITH_SSE2)
-ALL_TARGET=	${OSNAME}-x86-sse2
+.elif ${ARCH} == "amd64"
+ALL_TARGET=	${OSNAME}-x86-64
 .elif ${ARCH} == "alpha"
 ALL_TARGET=	${OSNAME}-alpha
 .else
-ALL_TARGET=	${OSNAME}-x86-any
+ALL_TARGET=	generic
 .endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|= gcc|= ${CC}|g' \
 		-e 's|CFLAGS =.*|CFLAGS = -c ${CFLAGS}|g' \
+		-e 's|openbsd-x86-64|${OSNAME}-x86-64|g' \
 		${WRKSRC}/Makefile
 
 pre-build:
+	@${ECHO}
 	@${ECHO} "Building for ${ALL_TARGET}"
+	@${ECHO}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIR}/${DISTNAME}/run/john ${PREFIX}/bin
