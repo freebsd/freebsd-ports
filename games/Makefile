@@ -552,7 +552,6 @@
     SUBDIR += rt2-demo
     SUBDIR += rtb
     SUBDIR += rtcw
-    SUBDIR += rtcw-paks
     SUBDIR += rubix
     SUBDIR += ruby-exmars
     SUBDIR += sarien
