@@ -37,10 +37,12 @@ PLIST_FILES+=	share/${PORTNAME}/${f}
 
 .include <bsd.port.pre.mk>
 
-# FreeBSD has OpenIPMI-compatible driver, ipmi(4),
-# in 7-current after 2006-02-12. On older systems
-# only lan and lanplus interfaces are supported.
 .if exists(/usr/include/sys/ipmi.h)
+OPENIPMI_OPT=	--enable-intf-open
+.elif defined(WITH_IPMI_KMOD) || \
+	exists(${LOCALBASE}/include/sys/ipmi.h)
+BUILD_DEPENDS+=	${LOCALBASE}/include/sys/ipmi.h:${PORTSDIR}/sysutils/ipmi-kmod
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include"
 OPENIPMI_OPT=	--enable-intf-open
 .else
 OPENIPMI_OPT=	--disable-intf-open
