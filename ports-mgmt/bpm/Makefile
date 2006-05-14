@@ -7,7 +7,7 @@
 
 PORTNAME=	bpm
 PORTVERSION=	0.4.1b
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.meowfishies.com/code/bpm/
 EXTRACT_SUFX=	.tgz
@@ -15,7 +15,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	sethk@meowfishies.com
 COMMENT=	A graphical BSD ports collection manager
 
-RUN_DEPENDS=	portupgrade:${PORTSDIR}/sysutils/portupgrade
+RUN_DEPENDS=	portupgrade:${PORTSDIR}/sysutils/portupgrade \
+		gdialog:${PORTSDIR}/x11/zenity
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk20 desktopfileutils
