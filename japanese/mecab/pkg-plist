@@ -13,6 +13,7 @@ libexec/mecab/mecab-dict-info
 libexec/mecab/mecab-system-eval
 libexec/mecab/mecab-test-gen
 libexec/mecab/mecab-tool
+@dirrm libexec/mecab
 etc/mecabrc
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/README

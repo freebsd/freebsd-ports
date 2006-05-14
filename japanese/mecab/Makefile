@@ -7,6 +7,7 @@
 
 PORTNAME=	mecab
 PORTVERSION=	0.91
+PORTREVISION=	1
 CATEGORIES=	japanese textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
 MASTER_SITE_SUBDIR=	${PORTNAME}/${SUB_DIR}
@@ -34,6 +35,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
 .endfor
 .endif
+	@${CAT} ${PKGMESSAGE}
 
 post-patch:
 	${REINPLACE_CMD} -e 's/-lpthread/${PTHREAD_LIBS}/g' \
