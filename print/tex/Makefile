@@ -9,7 +9,7 @@ PORTNAME=	tex
 PORTVERSION=	3.14159
 PORTREVISION=	3
 CATEGORIES=	print
-MASTER_SITES=   ${MASTER_SITE_LOCAL}
+MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	mikeh
 #${MASTER_SITE_TEX_CTAN} XXX distfiles disappeared/moved?
 #MASTER_SITE_SUBDIR=	systems/web2c
@@ -41,11 +41,11 @@ MAKE_FLAGS=	fmts= all_mems=
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64"
-BROKEN=		"Segfault during build on ia64"
+BROKEN=		Segfault during build on ia64
 .endif
 
 pre-configure:
-	cd ${WRKDIR} && ${FIND} . -name \*.gz | ${XARGS} gunzip -f
+	cd ${WRKDIR} && ${FIND} . -name \*.gz | ${XARGS} ${GUNZIP_CMD} -f
 
 post-configure:
 	@cd ${WRKSRC}/web2c; \
