@@ -35,7 +35,7 @@ MKISOFSDOCS=	README README.compression README.eltorito README.graft_dirs \
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 #CFLAGS+=	-DSOURCE_MODIFIED
-PKGMESSAGE=	${WRKDIR}/pkg-message
+SUB_FILES=	pkg-message
 
 .if defined(WITH_RSCSI)
 PKGINSTALL=	${PKGDIR}/pkg-install.rscsi
@@ -104,8 +104,6 @@ post-patch:
 #	@${REINPLACE_CMD} -E -e \
 #		's|#define.+INSERT_YOUR_EMAIL_ADDRESS_HERE|& "${MAINTAINER}"|' \
 #		${WRKSRC}/cdrecord/cdrecord.c
-	@${SED} 's|%%PREFIX%%|${PREFIX}|g' ${PKGDIR}/pkg-message > \
-		${WRKDIR}/pkg-message
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/cdda2wav/OBJ/${CDRTLSTARGET}/cdda2wav \
@@ -164,6 +162,6 @@ do-install:
 post-install:
 	-@if [ -f ${PKGINSTALL} ]; then ${SETENV} PKG_PREFIX=${PREFIX} \
 		${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL; fi
-	@${CAT} ${WRKDIR}/pkg-message
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
