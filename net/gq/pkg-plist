@@ -1,10 +1,11 @@
 bin/gq
-share/gnome/apps/Internet/gq.desktop
-share/gq/bomb.xpm
-share/gq/hide.xpm
-share/gq/line.xpm
-share/gq/logo.xpm
-share/gq/new.xpm
-share/gq/textarea.xpm
-share/gq/warning.xpm
-@dirrm share/gq
+share/applications/gq.desktop
+%%DATADIR%%/bomb.xpm
+%%DATADIR%%/hide.xpm
+%%DATADIR%%/line.xpm
+%%DATADIR%%/logo.xpm
+%%DATADIR%%/new.xpm
+%%DATADIR%%/textarea.xpm
+%%DATADIR%%/warning.xpm
+@dirrm %%DATADIR%%
+@dirrmtry share/applications

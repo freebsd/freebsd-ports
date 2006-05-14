@@ -1,5 +1,5 @@
---- src/xmlparse.c.orig	Thu Jul 29 09:46:26 2004
-+++ src/xmlparse.c	Thu Jul 29 09:47:09 2004
+--- src/xmlparse.c.orig	Wed Apr  5 08:53:55 2006
++++ src/xmlparse.c	Wed Apr 19 10:35:15 2006
 @@ -51,7 +51,7 @@
  #include "xmlparse.h"
  
@@ -16,7 +16,7 @@
 -	e->attrs = calloc(i, sizeof(xmlChar *));
 +	e->attrs = calloc(i+1, sizeof(xmlChar *));
  	for (i = 0 ; attrs[i] ; i++) {
- 	    e->attrs[i] = strdup(attrs[i]);
+ 	    e->attrs[i] = (guchar*)strdup((gchar*)attrs[i]);
  	}
 +	e->attrs[i] = NULL;
      }
