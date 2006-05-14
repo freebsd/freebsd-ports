@@ -18,17 +18,17 @@ DISTFILES=	latex_mf-${PORTVERSION}.tar.gz latex_tfm-${PORTVERSION}.tar.gz \
 MAINTAINER=	jmz@FreeBSD.org
 COMMENT=	TeX macro package
 
-DIST_SUBDIR=    tex
-
-CONFLICTS=	teTeX*
-
 BUILD_DEPENDS=	tex:${PORTSDIR}/print/tex
 RUN_DEPENDS=	tex:${PORTSDIR}/print/tex
+
+DIST_SUBDIR=	tex
+
+CONFLICTS=	teTeX*
 
 NO_WRKSUBDIR=	yes
 
 do-build:
-	@${RM} ${WRKSRC}/tfm/dummy.tfm  ${WRKSRC}/mf/cmex9.mf 
+	@${RM} ${WRKSRC}/tfm/dummy.tfm  ${WRKSRC}/mf/cmex9.mf
 	@(cd ${WRKSRC}/base; TEXINPUTS=${WRKSRC}/base: export TEXINPUT; tex --ini unpack.ins)
 	@(cd ${WRKSRC}/base; TEXINPUTS=${WRKSRC}/base: TEXFONTS=${WRKSRC}/tfm:; export TEXFONTS TEXINPUT; \
 		tex --ini latex.ltx </dev/null)
