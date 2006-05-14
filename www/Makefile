@@ -485,6 +485,7 @@
     SUBDIR += p5-CGI-Ajax
     SUBDIR += p5-CGI-Application
     SUBDIR += p5-CGI-Application-Plugin-DBH
+    SUBDIR += p5-CGI-Application-Plugin-HTDot
     SUBDIR += p5-CGI-Application-Plugin-ValidateRM
     SUBDIR += p5-CGI-Application-ValidateRM
     SUBDIR += p5-CGI-ArgChecker
