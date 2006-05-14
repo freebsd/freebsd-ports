@@ -1,0 +1,12 @@
+Data::Structure::Util - Change nature of data within a structure
+
+Data::Structure::Util is a toolbox to manipulate the data inside
+a data structure. It can process an entire tree and perform the
+operation requested on each appropriate element.
+
+For example: It can transform all strings within a data structure
+to utf8 or transform any utf8 string back to the default encoding.
+It can remove the blessing on any reference. It can collect all
+the objects or detect if there is a circular reference.
+
+It is written in C for decent speed.
