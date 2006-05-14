@@ -6,49 +6,11 @@ VisionEgg/data/az_el.png
 VisionEgg/data/panorama.jpg
 VisionEgg/data/visionegg.bmp
 VisionEgg/data/visionegg.tif
-VisionEgg/demo/GUI/drumDemoGUI.py
-VisionEgg/demo/Pyro/gratingPyroGUI.py
-VisionEgg/demo/Pyro/gratingPyroServer.py
-VisionEgg/demo/Pyro/metaPyroGUI.py
-VisionEgg/demo/Pyro/metaPyroServer.py
-VisionEgg/demo/Pyro/simpleClient.py
-VisionEgg/demo/Pyro/simpleServer.py
-VisionEgg/demo/README.txt
-VisionEgg/demo/color_grating.py
-VisionEgg/demo/daq/trigger_in.py
-VisionEgg/demo/daq/trigger_out.py
-VisionEgg/demo/displayText.py
-VisionEgg/demo/dots.py
-VisionEgg/demo/ephys_gui.py
-VisionEgg/demo/ephys_server.py
-VisionEgg/demo/gabor.py
-VisionEgg/demo/gamma.py
-VisionEgg/demo/grating.py
-VisionEgg/demo/image_sequence_fast.py
-VisionEgg/demo/image_sequence_slow.py
-VisionEgg/demo/lib3ds-demo.py
-VisionEgg/demo/makeMovie.py
-VisionEgg/demo/mouseTarget.py
-VisionEgg/demo/movingPOV.py
-VisionEgg/demo/plaid.py
-VisionEgg/demo/sphereGratingWindowed.py
-VisionEgg/demo/sphereMap.py
-VisionEgg/demo/target.py
-VisionEgg/demo/targetBackground.py
-VisionEgg/demo/tcp/gratingGUI.py
-VisionEgg/demo/tcp/gratingTCP.py
-VisionEgg/demo/texture.py
-VisionEgg/demo/textureDrum.py
-VisionEgg/demo/visual_jitter.py
+VisionEgg/data/water.mov
+VisionEgg/test/conform.py
+VisionEgg/test/display_dc_restoration.py
+VisionEgg/test/display_voltage_regulation.py
 VisionEgg/test/opengl_info.py
-@dirrm VisionEgg/data
-@dirrm VisionEgg/demo/GUI
-@dirrm VisionEgg/demo/Pyro
-@dirrm VisionEgg/demo/daq
-@dirrm VisionEgg/demo/tcp
-@dirrm VisionEgg/demo
-@dirrm VisionEgg/test
-@dirrm VisionEgg
 %%PYTHON_SITELIBDIR%%/VisionEgg/Configuration.py
 %%PYTHON_SITELIBDIR%%/VisionEgg/Configuration.pyc
 %%PYTHON_SITELIBDIR%%/VisionEgg/Configuration.pyo
@@ -64,9 +26,18 @@ VisionEgg/test/opengl_info.py
 %%PYTHON_SITELIBDIR%%/VisionEgg/DaqOverTCP.py
 %%PYTHON_SITELIBDIR%%/VisionEgg/DaqOverTCP.pyc
 %%PYTHON_SITELIBDIR%%/VisionEgg/DaqOverTCP.pyo
+%%PYTHON_SITELIBDIR%%/VisionEgg/Deprecated.py
+%%PYTHON_SITELIBDIR%%/VisionEgg/Deprecated.pyc
+%%PYTHON_SITELIBDIR%%/VisionEgg/Deprecated.pyo
 %%PYTHON_SITELIBDIR%%/VisionEgg/Dots.py
 %%PYTHON_SITELIBDIR%%/VisionEgg/Dots.pyc
 %%PYTHON_SITELIBDIR%%/VisionEgg/Dots.pyo
+%%PYTHON_SITELIBDIR%%/VisionEgg/FlowControl.py
+%%PYTHON_SITELIBDIR%%/VisionEgg/FlowControl.pyc
+%%PYTHON_SITELIBDIR%%/VisionEgg/FlowControl.pyo
+%%PYTHON_SITELIBDIR%%/VisionEgg/GL.py
+%%PYTHON_SITELIBDIR%%/VisionEgg/GL.pyc
+%%PYTHON_SITELIBDIR%%/VisionEgg/GL.pyo
 %%PYTHON_SITELIBDIR%%/VisionEgg/GLTrace.py
 %%PYTHON_SITELIBDIR%%/VisionEgg/GLTrace.pyc
 %%PYTHON_SITELIBDIR%%/VisionEgg/GLTrace.pyo
@@ -82,6 +53,9 @@ VisionEgg/test/opengl_info.py
 %%PYTHON_SITELIBDIR%%/VisionEgg/MoreStimuli.py
 %%PYTHON_SITELIBDIR%%/VisionEgg/MoreStimuli.pyc
 %%PYTHON_SITELIBDIR%%/VisionEgg/MoreStimuli.pyo
+%%PYTHON_SITELIBDIR%%/VisionEgg/ParameterTypes.py
+%%PYTHON_SITELIBDIR%%/VisionEgg/ParameterTypes.pyc
+%%PYTHON_SITELIBDIR%%/VisionEgg/ParameterTypes.pyo
 %%PYTHON_SITELIBDIR%%/VisionEgg/PlatformDependent.py
 %%PYTHON_SITELIBDIR%%/VisionEgg/PlatformDependent.pyc
 %%PYTHON_SITELIBDIR%%/VisionEgg/PlatformDependent.pyo
@@ -151,6 +125,9 @@ VisionEgg/test/opengl_info.py
 %%PYTHON_SITELIBDIR%%/VisionEgg/PyroHelpers.py
 %%PYTHON_SITELIBDIR%%/VisionEgg/PyroHelpers.pyc
 %%PYTHON_SITELIBDIR%%/VisionEgg/PyroHelpers.pyo
+%%PYTHON_SITELIBDIR%%/VisionEgg/QuickTime.py
+%%PYTHON_SITELIBDIR%%/VisionEgg/QuickTime.pyc
+%%PYTHON_SITELIBDIR%%/VisionEgg/QuickTime.pyo
 %%PYTHON_SITELIBDIR%%/VisionEgg/SphereMap.py
 %%PYTHON_SITELIBDIR%%/VisionEgg/SphereMap.pyc
 %%PYTHON_SITELIBDIR%%/VisionEgg/SphereMap.pyo
@@ -163,21 +140,37 @@ VisionEgg/test/opengl_info.py
 %%PYTHON_SITELIBDIR%%/VisionEgg/Textures.py
 %%PYTHON_SITELIBDIR%%/VisionEgg/Textures.pyc
 %%PYTHON_SITELIBDIR%%/VisionEgg/Textures.pyo
+%%PYTHON_SITELIBDIR%%/VisionEgg/ThreeDeeMath.py
+%%PYTHON_SITELIBDIR%%/VisionEgg/ThreeDeeMath.pyc
+%%PYTHON_SITELIBDIR%%/VisionEgg/ThreeDeeMath.pyo
 %%PYTHON_SITELIBDIR%%/VisionEgg/__init__.py
 %%PYTHON_SITELIBDIR%%/VisionEgg/__init__.pyc
 %%PYTHON_SITELIBDIR%%/VisionEgg/__init__.pyo
+%%PYTHON_SITELIBDIR%%/VisionEgg/_draw_in_c.so
 %%PYTHON_SITELIBDIR%%/VisionEgg/_lib3ds.so
-%%PYTHON_SITELIBDIR%%/VisionEgg/darwin_app_stuff.py
-%%PYTHON_SITELIBDIR%%/VisionEgg/darwin_app_stuff.pyc
-%%PYTHON_SITELIBDIR%%/VisionEgg/darwin_app_stuff.pyo
+%%PYTHON_SITELIBDIR%%/VisionEgg/darwin_getrefresh.py
+%%PYTHON_SITELIBDIR%%/VisionEgg/darwin_getrefresh.pyc
+%%PYTHON_SITELIBDIR%%/VisionEgg/darwin_getrefresh.pyo
 %%PYTHON_SITELIBDIR%%/VisionEgg/darwin_maxpriority.py
 %%PYTHON_SITELIBDIR%%/VisionEgg/darwin_maxpriority.pyc
 %%PYTHON_SITELIBDIR%%/VisionEgg/darwin_maxpriority.pyo
+%%PYTHON_SITELIBDIR%%/VisionEgg/gl_qt.py
+%%PYTHON_SITELIBDIR%%/VisionEgg/gl_qt.pyc
+%%PYTHON_SITELIBDIR%%/VisionEgg/gl_qt.pyo
 %%PYTHON_SITELIBDIR%%/VisionEgg/posix_maxpriority.py
 %%PYTHON_SITELIBDIR%%/VisionEgg/posix_maxpriority.pyc
 %%PYTHON_SITELIBDIR%%/VisionEgg/posix_maxpriority.pyo
+%%PYTHON_SITELIBDIR%%/VisionEgg/py_logging.py
+%%PYTHON_SITELIBDIR%%/VisionEgg/py_logging.pyc
+%%PYTHON_SITELIBDIR%%/VisionEgg/py_logging.pyo
+%%PYTHON_SITELIBDIR%%/VisionEgg/win32_getrefresh.py
+%%PYTHON_SITELIBDIR%%/VisionEgg/win32_getrefresh.pyc
+%%PYTHON_SITELIBDIR%%/VisionEgg/win32_getrefresh.pyo
 %%PYTHON_SITELIBDIR%%/VisionEgg/win32_maxpriority.py
 %%PYTHON_SITELIBDIR%%/VisionEgg/win32_maxpriority.pyc
 %%PYTHON_SITELIBDIR%%/VisionEgg/win32_maxpriority.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/VisionEgg/PyroApps
 @dirrm %%PYTHON_SITELIBDIR%%/VisionEgg
+@dirrm VisionEgg/test
+@dirrm VisionEgg/data
+@dirrm VisionEgg
