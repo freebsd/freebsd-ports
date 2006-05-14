@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	volnorm
-PORTVERSION=	0.8.1
+PORTVERSION=	0.8.3
 PORTREVISION=	2
 CATEGORIES=	audio
-MASTER_SITES=	http://volnorm.sourceforge.net/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=	xmms-
 
 MAINTAINER=	ports@FreeBSD.org
@@ -17,11 +18,17 @@ COMMENT=	Volume Normalizer plugin for XMMS
 
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 
-PLIST_FILES=	lib/xmms/Effect/libnormvol.so
 USE_X_PREFIX=	yes
-USE_GNOME=	gtk12
+USE_GNOME=	gnometarget gtk12
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
-INSTALLS_SHLIB=	yes
+
+PLIST_FILES=	lib/xmms/Effect/libnormvol.so
+
+post-patch:
+	@${REINPLACE_CMD} -e '/^SUBDIRS/s|tests||g' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e '/^COMMON/s|-O2|@CFLAGS@|g' ${WRKSRC}/src/Makefile.in
+
+do-install:
+	${INSTALL_DATA} ${WRKSRC}/src/.libs/libnormvol.so ${PREFIX}/lib/xmms/Effect
 
 .include <bsd.port.mk>
