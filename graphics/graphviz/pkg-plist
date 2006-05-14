@@ -380,6 +380,11 @@ libdata/pkgconfig/libgvc.pc
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/pathplan_data
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+@exec mkdir -p %D/lib/graphviz/guile
+@exec mkdir -p %D/lib/graphviz/java
+@exec mkdir -p %D/lib/graphviz/ocaml
+@exec mkdir -p %D/lib/graphviz/php
+@exec mkdir -p %D/lib/graphviz/sharp
 @dirrm %%DATADIR%%/graphs/directed
 @dirrm %%DATADIR%%/graphs/undirected
 @dirrm %%DATADIR%%/graphs

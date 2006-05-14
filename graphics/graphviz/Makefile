@@ -22,22 +22,24 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg		\
 		expat.6:${PORTSDIR}/textproc/expat2		\
 		gd.4:${PORTSDIR}/graphics/gd
 
+USE_TCL=	84
+USE_TK=		84
 USE_BISON=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_XPM=	yes
 USE_AUTOTOOLS=	libltdl:15
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include -I${LOCALBASE}/include/tcl8.4 -I${LOCALBASE}/include/tk8.4" \
+CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include -I${TCL_INCLUDEDIR} -I${TK_INCLUDEDIR}" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"	\
-		TCLCONFIG=${LOCALBASE}/lib/tcl8.4/tclConfig.sh	\
-		TKCONFIG=${LOCALBASE}/lib/tk8.4/tkConfig.sh	\
+		TCLCONFIG=${TCL_LIBDIR}/tclConfig.sh		\
+		TKCONFIG=${TK_LIBDIR}/tkConfig.sh		\
 		MISSING=${TRUE}
 CONFIGURE_ARGS=	--program-transform-name="s/x/x/"		\
 		--enable-dependency-tracking			\
 		--with-iconvlibdir=${LOCALBASE}/lib		\
-		--with-tclsh=${LOCALBASE}/tcl8.4		\
-		--with-wish=${LOCALBASE}/wish8.4		\
+		--with-tclsh=${TCLSH}				\
+		--with-wish=${WISH}				\
 		--with-fontconfigincludedir=${X11BASE}/include	\
 		--with-fontconfiglibdir=${X11BASE}/lib		\
 		--disable-swig --disable-sharp --disable-guile	\
@@ -57,6 +59,10 @@ MLINKS=		dot.1 circo.1		\
 		dot.1 neato.1		\
 		dot.1 twopi.1
 
+PATCH_TCL_SCRIPTS=	tclpkg/gv/Makefile.in tclpkg/tcldot/demo/doted \
+			tclpkg/tclpathplan/demo/pathplan tclpkg/tkspline/demo/spline
+PATCH_TK_SCRIPTS=	${PATCH_TCL_SCRIPTS}
+
 PDOCS_TXT=	AUTHORS NEWS ChangeLog cpl1.0.txt doc/Dot.ref doc/latex_suggestions.txt
 PDOCS_PDF=	doc/*.pdf */*/*.pdf
 PDOCS_HTML=	doc/*.html doc/info/*.html doc/info/*.gif
@@ -68,7 +74,7 @@ USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/misc/ldconfig_compat/bsd.ldconfig.mk"
 
-post-patch:
+pre-patch:
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS}					\
 	  ${REINPLACE_CMD} -e 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|'	\
 	                   -e "s|\([^:]*:.*\) install-pdfDATA\(.*\)|\1\2|g"		\
@@ -86,12 +92,6 @@ post-patch:
 .if ${OSVERSION} < 500000
 	@${REINPLACE_CMD} 's|-Wno-unused-parameter||g' ${WRKSRC}/configure
 .endif
-	@${REINPLACE_CMD} -e 's|tclsh|tclsh8.4|g' ${WRKSRC}/tclpkg/gv/Makefile.in
-	@${REINPLACE_CMD} -e 's|tclsh|tclsh8.4|g'			\
-	                  -e 's|wish|wish8.4|g'				\
-	                  ${WRKSRC}/tclpkg/tcldot/demo/doted		\
-	                  ${WRKSRC}/tclpkg/tclpathplan/demo/pathplan	\
-	                  ${WRKSRC}/tclpkg/tkspline/demo/spline
 
 post-install-script:
 	${INSTALL_MAN} ${WRKSRC}/tclpkg/gdtclft/gdtclft.n   ${MANNPREFIX}/man/mann
