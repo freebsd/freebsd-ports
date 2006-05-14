@@ -6,6 +6,14 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20060514:
+  AFFECTS: users of sysutils/smartmontools, others
+  AUTHOR:  jylefort@FreeBSD.org
+
+  In FreeBSD 6.1, the ata(4) device ABI has changed. After updating to
+  FreeBSD 6.1, ports which access ATA drives directly
+  (sysutils/smartmontools, others) must be rebuilt.
+
 20060512:
   AFFECTS: users of mail/fetchmail
   AUTHOR:  barner@FreeBSD.org
