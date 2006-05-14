@@ -115,6 +115,7 @@
     SUBDIR += notification-daemon
     SUBDIR += offix-trash
     SUBDIR += p5-Data-ICal
+    SUBDIR += p5-Goo
     SUBDIR += pal
     SUBDIR += phpgroupware
     SUBDIR += phpicalendar

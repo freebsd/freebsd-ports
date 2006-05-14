@@ -1,0 +1,177 @@
+bin/goo
+bin/goo.pl
+%%SITE_PERL%%/.gooskel/nanorc
+%%SITE_PERL%%/.gooskel/perltidyrc
+%%SITE_PERL%%/.gooskel/things/goo/blv.goo
+%%SITE_PERL%%/.gooskel/things/goo/bug.goo
+%%SITE_PERL%%/.gooskel/things/goo/care.goo
+%%SITE_PERL%%/.gooskel/things/goo/conf.goo
+%%SITE_PERL%%/.gooskel/things/goo/gml.goo
+%%SITE_PERL%%/.gooskel/things/goo/goo.goo
+%%SITE_PERL%%/.gooskel/things/goo/idea.goo
+%%SITE_PERL%%/.gooskel/things/goo/js.goo
+%%SITE_PERL%%/.gooskel/things/goo/log.goo
+%%SITE_PERL%%/.gooskel/things/goo/person.goo
+%%SITE_PERL%%/.gooskel/things/goo/pl.goo
+%%SITE_PERL%%/.gooskel/things/goo/pm.goo
+%%SITE_PERL%%/.gooskel/things/goo/py.goo
+%%SITE_PERL%%/.gooskel/things/goo/task.goo
+%%SITE_PERL%%/.gooskel/things/goo/tpl.goo
+%%SITE_PERL%%/.gooskel/things/goo/tpm.goo
+%%SITE_PERL%%/.gooskel/things/goo/trail.goo
+%%SITE_PERL%%/.gooskel/things/tpl/clonemodule.tpl
+%%SITE_PERL%%/.gooskel/things/tpl/perl-constructor.tpl
+%%SITE_PERL%%/.gooskel/things/tpl/perl-method.tpl
+%%SITE_PERL%%/.gooskel/things/tpl/perl-module-header.tpl
+%%SITE_PERL%%/.gooskel/things/tpl/perl-program.tpl
+%%SITE_PERL%%/Goo.pm
+%%SITE_PERL%%/Goo/Action.pm
+%%SITE_PERL%%/Goo/BackLinkFinder.pm
+%%SITE_PERL%%/Goo/BackLinkManager.pm
+%%SITE_PERL%%/Goo/CareOMeter.pm
+%%SITE_PERL%%/Goo/CommandLineManager.pm
+%%SITE_PERL%%/Goo/CompressWhitespace.pm
+%%SITE_PERL%%/Goo/ConfigFile.pm
+%%SITE_PERL%%/Goo/Database.pm
+%%SITE_PERL%%/Goo/DatabaseInfo.pm
+%%SITE_PERL%%/Goo/DatabaseObject.pm
+%%SITE_PERL%%/Goo/DatabaseProfileOption.pm
+%%SITE_PERL%%/Goo/DatabaseThing.pm
+%%SITE_PERL%%/Goo/DatabaseThing/Deleter.pm
+%%SITE_PERL%%/Goo/DatabaseThing/Editor.pm
+%%SITE_PERL%%/Goo/DatabaseThing/Maker.pm
+%%SITE_PERL%%/Goo/DatabaseThing/Profiler.pm
+%%SITE_PERL%%/Goo/Date.pm
+%%SITE_PERL%%/Goo/Differ.pm
+%%SITE_PERL%%/Goo/Editor.pm
+%%SITE_PERL%%/Goo/Emailer.pm
+%%SITE_PERL%%/Goo/Environment.pm
+%%SITE_PERL%%/Goo/Exiter.pm
+%%SITE_PERL%%/Goo/FileThing.pm
+%%SITE_PERL%%/Goo/FileThing/Cloner.pm
+%%SITE_PERL%%/Goo/FileThing/Deleter.pm
+%%SITE_PERL%%/Goo/FileThing/Finder.pm
+%%SITE_PERL%%/Goo/FileUtilities.pm
+%%SITE_PERL%%/Goo/Grepper.pm
+%%SITE_PERL%%/Goo/Header.pm
+%%SITE_PERL%%/Goo/JumpManager.pm
+%%SITE_PERL%%/Goo/JumpProfileOption.pm
+%%SITE_PERL%%/Goo/List.pm
+%%SITE_PERL%%/Goo/Lister.pm
+%%SITE_PERL%%/Goo/LiteDatabase.pm
+%%SITE_PERL%%/Goo/Loader.pm
+%%SITE_PERL%%/Goo/Logger.pm
+%%SITE_PERL%%/Goo/Object.pm
+%%SITE_PERL%%/Goo/OptionIndexTable.pm
+%%SITE_PERL%%/Goo/Profile.pm
+%%SITE_PERL%%/Goo/ProfileOption.pm
+%%SITE_PERL%%/Goo/Profiler.pm
+%%SITE_PERL%%/Goo/Prompter.pm
+%%SITE_PERL%%/Goo/Shell.pm
+%%SITE_PERL%%/Goo/ShellCommander.pm
+%%SITE_PERL%%/Goo/SimpleEmailer.pm
+%%SITE_PERL%%/Goo/TabAwareEditor.pm
+%%SITE_PERL%%/Goo/TabConverter.pm
+%%SITE_PERL%%/Goo/TableInfo.pm
+%%SITE_PERL%%/Goo/TeamManager.pm
+%%SITE_PERL%%/Goo/Template.pm
+%%SITE_PERL%%/Goo/TemplateProfileOption.pm
+%%SITE_PERL%%/Goo/Test.pm
+%%SITE_PERL%%/Goo/TextEditor.pm
+%%SITE_PERL%%/Goo/TextTable.pm
+%%SITE_PERL%%/Goo/TextUtilities.pm
+%%SITE_PERL%%/Goo/ThereDocManager.pm
+%%SITE_PERL%%/Goo/Thing.pm
+%%SITE_PERL%%/Goo/Thing/bug/Fixer.pm
+%%SITE_PERL%%/Goo/Thing/bug/Lister.pm
+%%SITE_PERL%%/Goo/Thing/bug/Maker.pm
+%%SITE_PERL%%/Goo/Thing/conf/ConfigProfiler.pm
+%%SITE_PERL%%/Goo/Thing/conf/studly-method-remover.pl
+%%SITE_PERL%%/Goo/Thing/gml/Profiler.pm
+%%SITE_PERL%%/Goo/Thing/gml/Reader.pm
+%%SITE_PERL%%/Goo/Thing/gml/Writer.pm
+%%SITE_PERL%%/Goo/Thing/goo/Maker.pm
+%%SITE_PERL%%/Goo/Thing/js/JSFunctionProfileOption.pm
+%%SITE_PERL%%/Goo/Thing/js/JavascriptProfiler.pm
+%%SITE_PERL%%/Goo/Thing/log/Profiler.pm
+%%SITE_PERL%%/Goo/Thing/pl/ScriptMaker.pm
+%%SITE_PERL%%/Goo/Thing/pm/Adder.pm
+%%SITE_PERL%%/Goo/Thing/pm/Compiler.pm
+%%SITE_PERL%%/Goo/Thing/pm/Editor.pm
+%%SITE_PERL%%/Goo/Thing/pm/ExecDocManager.pm
+%%SITE_PERL%%/Goo/Thing/pm/Maker.pm
+%%SITE_PERL%%/Goo/Thing/pm/Method.pm
+%%SITE_PERL%%/Goo/Thing/pm/MethodMaker.pm
+%%SITE_PERL%%/Goo/Thing/pm/MethodMatcher.pm
+%%SITE_PERL%%/Goo/Thing/pm/MethodProfileOption.pm
+%%SITE_PERL%%/Goo/Thing/pm/PackageProfileOption.pm
+%%SITE_PERL%%/Goo/Thing/pm/Perl5.pm
+%%SITE_PERL%%/Goo/Thing/pm/Perl5Adder.pm
+%%SITE_PERL%%/Goo/Thing/pm/Perl5Compiler.pm
+%%SITE_PERL%%/Goo/Thing/pm/Perl5Editor.pm
+%%SITE_PERL%%/Goo/Thing/pm/Perl5ModuleInspector.pm
+%%SITE_PERL%%/Goo/Thing/pm/Perl5ModuleMaker.pm
+%%SITE_PERL%%/Goo/Thing/pm/Perl5Profiler.pm
+%%SITE_PERL%%/Goo/Thing/pm/Perl5Runner.pm
+%%SITE_PERL%%/Goo/Thing/pm/Perl5ThereDocManager.pm
+%%SITE_PERL%%/Goo/Thing/pm/Perl6Adder.pm
+%%SITE_PERL%%/Goo/Thing/pm/Perl6Compiler.pm
+%%SITE_PERL%%/Goo/Thing/pm/Perl6Editor.pm
+%%SITE_PERL%%/Goo/Thing/pm/Perl6ModuleInspector.pm
+%%SITE_PERL%%/Goo/Thing/pm/Perl6ModuleMaker.pm
+%%SITE_PERL%%/Goo/Thing/pm/Perl6Profiler.pm
+%%SITE_PERL%%/Goo/Thing/pm/Perl6Runner.pm
+%%SITE_PERL%%/Goo/Thing/pm/PerlCoder.pm
+%%SITE_PERL%%/Goo/Thing/pm/PerlTidyManager.pm
+%%SITE_PERL%%/Goo/Thing/pm/Profiler.pm
+%%SITE_PERL%%/Goo/Thing/pm/ProgramCloner.pm
+%%SITE_PERL%%/Goo/Thing/pm/ProgramDeleter.pm
+%%SITE_PERL%%/Goo/Thing/pm/Runner.pm
+%%SITE_PERL%%/Goo/Thing/pm/ScopeMatcher.pm
+%%SITE_PERL%%/Goo/Thing/pm/ThereDocManager.pm
+%%SITE_PERL%%/Goo/Thing/pm/TypeChecker.pm
+%%SITE_PERL%%/Goo/Thing/pm/TypeLessTranslator.pm
+%%SITE_PERL%%/Goo/Thing/task/Finisher.pm
+%%SITE_PERL%%/Goo/Thing/task/Maker.pm
+%%SITE_PERL%%/Goo/Thing/task/TaskEditor.pm
+%%SITE_PERL%%/Goo/Thing/task/TaskLister.pm
+%%SITE_PERL%%/Goo/Thing/task/addtask.html
+%%SITE_PERL%%/Goo/Thing/task/addtask.pl
+%%SITE_PERL%%/Goo/Thing/task/edittask.pl
+%%SITE_PERL%%/Goo/Thing/task/savetask.pl
+%%SITE_PERL%%/Goo/Thing/task/tasklist.pl
+%%SITE_PERL%%/Goo/Thing/tpm/TestLoader.pm
+%%SITE_PERL%%/Goo/Thing/tpm/TestMaker.pm
+%%SITE_PERL%%/Goo/Thing/tpm/TestRunner.pm
+%%SITE_PERL%%/Goo/Thing/tpm/Tester.pm
+%%SITE_PERL%%/Goo/ThingFinder.pm
+%%SITE_PERL%%/Goo/ThingProfileOption.pm
+%%SITE_PERL%%/Goo/TrailGoBack.pm
+%%SITE_PERL%%/Goo/TrailGoBackOne.pm
+%%SITE_PERL%%/Goo/TrailGoForward.pm
+%%SITE_PERL%%/Goo/TrailManager.pm
+%%SITE_PERL%%/Goo/TrailProfiler.pm
+%%SITE_PERL%%/Goo/TypeManager.pm
+%%SITE_PERL%%/Goo/WebDBLite.pm
+%%SITE_PERL%%/Goo/Zone.pm
+%%SITE_PERL%%/Goo/test.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Goo/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Goo
+@dirrm %%SITE_PERL%%/Goo/Thing/tpm
+@dirrm %%SITE_PERL%%/Goo/Thing/task
+@dirrm %%SITE_PERL%%/Goo/Thing/pm
+@dirrm %%SITE_PERL%%/Goo/Thing/pl
+@dirrm %%SITE_PERL%%/Goo/Thing/log
+@dirrm %%SITE_PERL%%/Goo/Thing/js
+@dirrm %%SITE_PERL%%/Goo/Thing/goo
+@dirrm %%SITE_PERL%%/Goo/Thing/gml
+@dirrm %%SITE_PERL%%/Goo/Thing/conf
+@dirrm %%SITE_PERL%%/Goo/Thing/bug
+@dirrm %%SITE_PERL%%/Goo/Thing
+@dirrm %%SITE_PERL%%/Goo/FileThing
+@dirrm %%SITE_PERL%%/Goo/DatabaseThing
+@dirrm %%SITE_PERL%%/Goo
+@dirrm %%SITE_PERL%%/.gooskel/things/tpl
+@dirrm %%SITE_PERL%%/.gooskel/things/goo
+@dirrm %%SITE_PERL%%/.gooskel/things
+@dirrm %%SITE_PERL%%/.gooskel

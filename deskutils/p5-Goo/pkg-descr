@@ -1,0 +1,15 @@
+"The Goo" helps you stick "Things" together in your working environment.
+
+Things include Perl modules, Perl scripts, log files, javascripts, 
+configuration files, database tables, templates etc.
+
+The Goo records a "Trail" as you jump quickly from Thing to Thing in a 
+simple, text-based console. It remembers how you associate Things in your 
+environment.
+
+Accelerate your work by quickly traversing the Trail of associations 
+between Things.
+
+WWW:	http://search.cpan.org/dist/Goo
+	http://thegoo.org/
+Author: Nigel Hamilton <nigel@trexy.com>
