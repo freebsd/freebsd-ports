@@ -274,6 +274,8 @@ share/rmap/factbook/covers/cover2004back.html
 share/rmap/factbook/covers/cover2004front.html
 share/rmap/factbook/covers/cover2005back.html
 share/rmap/factbook/covers/cover2005front.html
+share/rmap/factbook/covers/cover2006back.html
+share/rmap/factbook/covers/cover2006front.html
 share/rmap/factbook/covers/index.html
 share/rmap/factbook/covers/large/00-back.jpg
 share/rmap/factbook/covers/large/00-front.jpg
@@ -287,6 +289,8 @@ share/rmap/factbook/covers/large/04-back.jpg
 share/rmap/factbook/covers/large/04-front.jpg
 share/rmap/factbook/covers/large/05-back.jpg
 share/rmap/factbook/covers/large/05-front.jpg
+share/rmap/factbook/covers/large/06-back.jpg
+share/rmap/factbook/covers/large/06-front.jpg
 share/rmap/factbook/covers/large/86-front.jpg
 share/rmap/factbook/covers/large/87-back.jpg
 share/rmap/factbook/covers/large/87-front.jpg
@@ -327,6 +331,8 @@ share/rmap/factbook/covers/thumbnails/04-back.jpg
 share/rmap/factbook/covers/thumbnails/04-front.jpg
 share/rmap/factbook/covers/thumbnails/05-back.jpg
 share/rmap/factbook/covers/thumbnails/05-front.jpg
+share/rmap/factbook/covers/thumbnails/06-back.jpg
+share/rmap/factbook/covers/thumbnails/06-front.jpg
 share/rmap/factbook/covers/thumbnails/86-front.jpg
 share/rmap/factbook/covers/thumbnails/87-back.jpg
 share/rmap/factbook/covers/thumbnails/87-front.jpg
@@ -371,7 +377,6 @@ share/rmap/factbook/extra/Akrotiri
 share/rmap/factbook/extra/Arctic_Ocean
 share/rmap/factbook/extra/Ashmore_and_Cartier_Islands
 share/rmap/factbook/extra/Atlantic_Ocean
-share/rmap/factbook/extra/Baker_Island
 share/rmap/factbook/extra/Clipperton_Island
 share/rmap/factbook/extra/Coral_Sea_Islands
 share/rmap/factbook/extra/Dhekelia
@@ -379,20 +384,15 @@ share/rmap/factbook/extra/Europa_Island
 share/rmap/factbook/extra/European_Union
 share/rmap/factbook/extra/Gaza_Strip
 share/rmap/factbook/extra/Glorioso_Islands
-share/rmap/factbook/extra/Howland_Island
 share/rmap/factbook/extra/Jan_Mayen
-share/rmap/factbook/extra/Jarvis_Island
-share/rmap/factbook/extra/Johnston_Atoll
 share/rmap/factbook/extra/Juan_de_Nova_Island
-share/rmap/factbook/extra/Kingman_Reef
-share/rmap/factbook/extra/Midway_Islands
 share/rmap/factbook/extra/Navassa_Island
 share/rmap/factbook/extra/Pacific_Ocean
-share/rmap/factbook/extra/Palmyra_Atoll
 share/rmap/factbook/extra/Serbia_and_Montenegro
 share/rmap/factbook/extra/Southern_Ocean
 share/rmap/factbook/extra/Spratly_Islands
 share/rmap/factbook/extra/Tromelin_Island
+share/rmap/factbook/extra/US_Pacific_Islands
 share/rmap/factbook/extra/Wake_Island
 share/rmap/factbook/extra/West_Bank
 share/rmap/factbook/extra/World
@@ -515,7 +515,6 @@ share/rmap/factbook/fields/2154.html
 share/rmap/factbook/fields/2155.html
 share/rmap/factbook/fields/2156.html
 share/rmap/factbook/fields/2157.html
-share/rmap/factbook/fields/2158.html
 share/rmap/factbook/fields/2172.html
 share/rmap/factbook/fields/2173.html
 share/rmap/factbook/fields/2174.html
@@ -535,6 +534,7 @@ share/rmap/factbook/fields/2187.html
 share/rmap/factbook/fields/2188.html
 share/rmap/factbook/fields/2193.html
 share/rmap/factbook/fields/2194.html
+share/rmap/factbook/fields/2195.html
 share/rmap/factbook/flags/aa-flag.gif
 share/rmap/factbook/flags/aa-flag.html
 share/rmap/factbook/flags/aa-lgflag.gif
@@ -1253,6 +1253,9 @@ share/rmap/factbook/flags/ug-lgflag.gif
 share/rmap/factbook/flags/uk-flag.gif
 share/rmap/factbook/flags/uk-flag.html
 share/rmap/factbook/flags/uk-lgflag.gif
+share/rmap/factbook/flags/um-flag.gif
+share/rmap/factbook/flags/um-flag.html
+share/rmap/factbook/flags/um-lgflag.gif
 share/rmap/factbook/flags/up-flag.gif
 share/rmap/factbook/flags/up-flag.html
 share/rmap/factbook/flags/up-lgflag.gif
@@ -1557,6 +1560,7 @@ share/rmap/factbook/geos/tx.html
 share/rmap/factbook/geos/tz.html
 share/rmap/factbook/geos/ug.html
 share/rmap/factbook/geos/uk.html
+share/rmap/factbook/geos/um.html
 share/rmap/factbook/geos/up.html
 share/rmap/factbook/geos/us.html
 share/rmap/factbook/geos/uv.html
@@ -1859,6 +1863,7 @@ share/rmap/factbook/maps/tx-map.gif
 share/rmap/factbook/maps/tz-map.gif
 share/rmap/factbook/maps/ug-map.gif
 share/rmap/factbook/maps/uk-map.gif
+share/rmap/factbook/maps/um-map.gif
 share/rmap/factbook/maps/up-map.gif
 share/rmap/factbook/maps/us-map.gif
 share/rmap/factbook/maps/uv-map.gif
@@ -2130,6 +2135,7 @@ share/rmap/factbook/print/tx.html
 share/rmap/factbook/print/tz.html
 share/rmap/factbook/print/ug.html
 share/rmap/factbook/print/uk.html
+share/rmap/factbook/print/um.html
 share/rmap/factbook/print/up.html
 share/rmap/factbook/print/us.html
 share/rmap/factbook/print/uv.html
@@ -2169,6 +2175,8 @@ share/rmap/factbook/rankorder/2038rank.html
 share/rmap/factbook/rankorder/2038rank.txt
 share/rmap/factbook/rankorder/2042rank.html
 share/rmap/factbook/rankorder/2042rank.txt
+share/rmap/factbook/rankorder/2053rank.html
+share/rmap/factbook/rankorder/2053rank.txt
 share/rmap/factbook/rankorder/2054rank.html
 share/rmap/factbook/rankorder/2054rank.txt
 share/rmap/factbook/rankorder/2066rank.html
@@ -2189,10 +2197,14 @@ share/rmap/factbook/rankorder/2091rank.html
 share/rmap/factbook/rankorder/2091rank.txt
 share/rmap/factbook/rankorder/2092rank.html
 share/rmap/factbook/rankorder/2092rank.txt
+share/rmap/factbook/rankorder/2093rank.html
+share/rmap/factbook/rankorder/2093rank.txt
 share/rmap/factbook/rankorder/2095rank.html
 share/rmap/factbook/rankorder/2095rank.txt
 share/rmap/factbook/rankorder/2102rank.html
 share/rmap/factbook/rankorder/2102rank.txt
+share/rmap/factbook/rankorder/2108rank.html
+share/rmap/factbook/rankorder/2108rank.txt
 share/rmap/factbook/rankorder/2119rank.html
 share/rmap/factbook/rankorder/2119rank.txt
 share/rmap/factbook/rankorder/2121rank.html
