@@ -16,6 +16,7 @@ MAINTAINER=	aaron@FreeBSD.org
 COMMENT=	A program/library that "grows" dungeons for use in isometric games
 
 INSTALLS_SHLIB=	yes
+USE_GCC=	3.2+
 
 SUB_FILES=	pkg-message
 PLIST_SUB+=	HAS_DOCS=${HAS_DOCS}
