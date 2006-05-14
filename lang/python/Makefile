@@ -93,13 +93,13 @@ CFLAGS+=	-DPYTHON_DEFAULT_RECURSION_LIMIT=900
 .endif
 
 .if !defined(WITHOUT_IPV6) && ${OSVERSION} >= 400014
-CONFIGURE_ARGS+= --enable-ipv6
+CONFIGURE_ARGS+=	--enable-ipv6
 .else
-CONFIGURE_ARGS+= --disable-ipv6
+CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
 .if defined(WITH_FPECTL)
-CONFIGURE_ARGS+= --with-fpectl
+CONFIGURE_ARGS+=	--with-fpectl
 .endif
 
 .if ${OSVERSION} >= 700000
