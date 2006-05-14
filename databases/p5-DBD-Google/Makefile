@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DBD
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	shaun@inerd.com
 COMMENT=	Treat Google as a datasource for DBI
 
 BUILD_DEPENDS=	${SITE_PERL}/Net/Google.pm:${PORTSDIR}/net/p5-Net-Google \
