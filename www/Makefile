@@ -607,6 +607,7 @@
     SUBDIR += p5-HTML-Template-Expr
     SUBDIR += p5-HTML-Template-HashWrapper
     SUBDIR += p5-HTML-Template-JIT
+    SUBDIR += p5-HTML-Template-Pluggable
     SUBDIR += p5-HTML-TokeParser-Simple
     SUBDIR += p5-HTML-Tree
     SUBDIR += p5-HTML-Webmake
