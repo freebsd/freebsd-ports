@@ -48,6 +48,7 @@ share/gtk-doc/html/rasqal/rasqal-section-query-results.html
 share/gtk-doc/html/rasqal/rasqal-section-query.html
 share/gtk-doc/html/rasqal/rasqal-section-triple.html
 share/gtk-doc/html/rasqal/rasqal.devhelp
+share/gtk-doc/html/rasqal/rasqal.devhelp2
 share/gtk-doc/html/rasqal/rasqal-section-triples-source.html
 share/gtk-doc/html/rasqal/rasqal-section-variable.html
 share/gtk-doc/html/rasqal/rasqal.html
@@ -84,6 +85,7 @@ share/gtk-doc/html/redland/redland-unicode.html
 share/gtk-doc/html/redland/redland-uri.html
 share/gtk-doc/html/redland/redland-world.html
 share/gtk-doc/html/redland/redland.devhelp
+share/gtk-doc/html/redland/redland.devhelp2
 share/gtk-doc/html/redland/redland.html
 share/gtk-doc/html/redland/right.png
 share/gtk-doc/html/redland/style.css

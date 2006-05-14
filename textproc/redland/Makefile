@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	redland
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.4
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://librdf.org/dist/source/
@@ -18,43 +18,20 @@ COMMENT=	A high-level interface for RDF
 
 LIB_DEPENDS=	raptor.2:${PORTSDIR}/textproc/raptor
 
-# Berkeley DB is also needed, default to using 4.2 if not set otherwise.
-WITH_BDB_VER?=	42
-.if ${WITH_BDB_VER} == 3
-LIB_DEPENDS+=	db3.3:${PORTSDIR}/databases/db3
-.elif ${WITH_BDB_VER} == 4
-LIB_DEPENDS+=	db4.0:${PORTSDIR}/databases/db4
-.elif ${WITH_BDB_VER} == 41
-LIB_DEPENDS+=	db41.1:${PORTSDIR}/databases/db41
-.elif ${WITH_BDB_VER} == 42
-LIB_DEPENDS+=	db-4.2.2:${PORTSDIR}/databases/db42
-.elif ${WITH_BDB_VER} == 43
-LIB_DEPENDS+=	db-4.3.0:${PORTSDIR}/databases/db43
-.else
-.error WITH_BDB_VER must be one of 3, 4, 41, 42 or 43
-.endif
-
+USE_BDB=	yes
+INVALID_BDB_VER=2
 USE_GNOME=	gnomehack gnometarget lthack pkgconfig
 USE_OPENSSL=	yes
 USE_GETOPT_LONG=yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
-CPPFLAGS=	-I${LOCALBASE}/include/db${WITH_BDB_VER} -I${LOCALBASE}/include
+CPPFLAGS=	-I${BDB_INCLUDE_DIR} -I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-raptor=system \
 		--with-rasqal=internal \
 		--with-threestore=no
-
-# optional use of recent MySQL versions
-.if defined(WANT_MYSQL_VER)
-.if ${WANT_MYSQL_VER} < 323
-	@${ECHO} "This port requires WANT_MYSQL_VER=323 or later to use MySQL."
-.else
-CONFIGURE_ARGS+=--with-mysql=yes
-.endif
-.endif
 
 INSTALLS_SHLIB=	yes
 
@@ -62,4 +39,22 @@ MAN1=		rasqal-config.1 rdfproc.1 redland-config.1 \
 		redland-db-upgrade.1 roqet.1
 MAN3=		librasqal.3 redland.3
 
-.include <bsd.port.mk>
+OPTIONS+=	MYSQL "Use MySQL instead of BDB" off
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_MYSQL)
+USE_MYSQL=	yes
+CONFIGURE_ARGS+=--with-mysql=yes
+.endif
+
+pre-everything::
+	@${ECHO_CMD} "You can choose BDB version by setting WITH_BDB_VER to one off:"
+	@${ECHO_CMD} "3 40 41 42 43 44 3+ 40+ 41+ 42+ 43+ 44+ (current: ${BDB_VER})"
+.	if defined(WITH_MYSQL)
+	@${ECHO_CMD} "MySQL version to be used: ${MYSQL_VER}"
+	@${ECHO_CMD} "If you don't have MySQL installed you can stop the build now"
+	@${ECHO_CMD} "and set WITH_MYSQL_VER to the desired version"
+.	endif
+
+.include <bsd.port.post.mk>
