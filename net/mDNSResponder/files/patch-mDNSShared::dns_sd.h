@@ -1,10 +1,10 @@
---- mDNSShared/dns_sd.h.orig	Sat Dec 18 04:14:23 2004
-+++ mDNSShared/dns_sd.h	Mon Feb 14 13:52:41 2005
-@@ -39,6 +39,7 @@
- #define DNSSD_API
+--- mDNSShared/dns_sd.h.orig	Tue Dec 20 22:24:58 2005
++++ mDNSShared/dns_sd.h	Fri Mar 10 14:41:32 2006
+@@ -42,6 +42,7 @@
  #endif
  
+ /* stdint.h does not exist on FreeBSD 4.x; its types are defined in sys/types.h instead */
 +#include <osreldate.h>
  #if defined(__FreeBSD_version) && (__FreeBSD_version < 500000)
- /* stdint.h does not exist on FreeBSD 4.x; its types are defined in sys/types.h instead */
  #include <sys/types.h>
+ 

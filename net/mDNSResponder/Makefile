@@ -7,14 +7,13 @@
 #
 
 PORTNAME=	mDNSResponder
-PORTVERSION=	107.1
-PORTREVISION=	2
+PORTVERSION=	107.5
 CATEGORIES=	net dns
 MASTER_SITES=	http://darwinsource.opendarwin.org/tarballs/apsl/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	"Apple's mDNSResponder"
+COMMENT=	Apple's mDNSResponder
 
 INSTALLS_SHLIB=	YES
 
@@ -30,18 +29,22 @@ EXTRA_PROGS_BIN=mDNSClientPosix \
 		mDNSResponderPosix
 EXTRA_PROGS_SBIN=dnsextd
 
-EXTRAMAN8=	dnsextd.8 mDNSResponder.8
+EXTRAMAN8=	dnsextd.8 mDNSResponderPosix.8
 
 MAN8=		mdnsd.8 ${EXTRAMAN8}
 
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "alpha"
-BROKEN=		"Does not compile on alpha"
+BROKEN=		Does not compile on alpha
 .endif
 
+post-patch:
+	${MV} ${WRKSRC}/mDNSShared/mDNSResponder.8 \
+		${WRKSRC}/mDNSShared/mDNSResponderPosix.8
 pre-build:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
+		-e 's|mDNSResponder.8|mDNSResponderPosix.8|g' \
 		${WRKSRC}/mDNSPosix/Makefile
 
 post-install:
