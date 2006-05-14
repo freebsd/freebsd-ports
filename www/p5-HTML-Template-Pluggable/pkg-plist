@@ -1,0 +1,5 @@
+%%SITE_PERL%%/HTML/Template/Pluggable.pm
+%%SITE_PERL%%/HTML/Template/Plugin/Dot.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Template/Pluggable/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Template/Pluggable
+@dirrmtry %%SITE_PERL%%/HTML/Template/Plugin

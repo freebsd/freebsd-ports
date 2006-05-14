@@ -1,0 +1,12 @@
+Just use this module instead of HTML::Template, then use any plugins, and go on
+with life.
+
+By adding support for the module included, HTML::Template::Plugin::Dot, to
+HTML::Template, the programmers' job of sending data to the template is easier,
+and designers have easier access to more data to display in the template,
+without learning any more tag syntax.
+
+WWW: http://search.cpan.org/dist/HTML-Template-Pluggable
+
+-- Espen Tagestad
+espen@tagestad.no
