@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tileworld
-PORTVERSION=	1.2.1
+PORTVERSION=	1.3.0
 CATEGORIES=	games
 MASTER_SITES=	http://www.muppetlabs.com/~breadbox/pub/software/tworld/
 DISTNAME=	tworld-${PORTVERSION}
@@ -18,6 +18,7 @@ USE_SDL=	sdl
 GNU_CONFIGURE=	YES
 USE_GMAKE=	YES
 ALL_TARGET=	tworld
+DATADIR=	share/tworld
 
 MAN6=		tworld.6
 

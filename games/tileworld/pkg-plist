@@ -1,42 +1,43 @@
 bin/tworld
-share/tworld/sets/intro-ms.dac
-share/tworld/sets/intro-lynx.dac
-share/tworld/sets/cc-ms.dac
-share/tworld/sets/cc-lynx.dac
-share/tworld/sets/CCLP2.dac
-share/tworld/data/intro.dat
-share/tworld/res/rc
-share/tworld/res/tiles.bmp
-share/tworld/res/font.bmp
-share/tworld/res/atiles.bmp
-share/tworld/res/block.wav
-share/tworld/res/traphit.wav
-share/tworld/res/ting.wav
-share/tworld/res/tick.wav
-share/tworld/res/thief.wav
-share/tworld/res/teleport.wav
-share/tworld/res/tada.wav
-share/tworld/res/splash.wav
-share/tworld/res/socket.wav
-share/tworld/res/snick.wav
-share/tworld/res/slurp.wav
-share/tworld/res/skaturn.wav
-share/tworld/res/skate.wav
-share/tworld/res/popup.wav
-share/tworld/res/plip.wav
-share/tworld/res/oof.wav
-share/tworld/res/force.wav
-share/tworld/res/door.wav
-share/tworld/res/ding.wav
-share/tworld/res/derezz.wav
-share/tworld/res/death.wav
-share/tworld/res/crackle.wav
-share/tworld/res/click.wav
-share/tworld/res/chack.wav
-share/tworld/res/bump.wav
-share/tworld/res/bomb.wav
-share/tworld/res/whisk.wav
-@dirrm share/tworld/sets
-@dirrm share/tworld/data
-@dirrm share/tworld/res
-@dirrm share/tworld
+%%DATADIR%%/data/intro.dat
+%%DATADIR%%/res/atiles.bmp
+%%DATADIR%%/res/block.wav
+%%DATADIR%%/res/bomb.wav
+%%DATADIR%%/res/bump.wav
+%%DATADIR%%/res/chack.wav
+%%DATADIR%%/res/click.wav
+%%DATADIR%%/res/crackle.wav
+%%DATADIR%%/res/death.wav
+%%DATADIR%%/res/derezz.wav
+%%DATADIR%%/res/ding.wav
+%%DATADIR%%/res/door.wav
+%%DATADIR%%/res/font.bmp
+%%DATADIR%%/res/force.wav
+%%DATADIR%%/res/oof.wav
+%%DATADIR%%/res/plip.wav
+%%DATADIR%%/res/popup.wav
+%%DATADIR%%/res/rc
+%%DATADIR%%/res/skate.wav
+%%DATADIR%%/res/skaturn.wav
+%%DATADIR%%/res/slurp.wav
+%%DATADIR%%/res/snick.wav
+%%DATADIR%%/res/socket.wav
+%%DATADIR%%/res/splash.wav
+%%DATADIR%%/res/tada.wav
+%%DATADIR%%/res/teleport.wav
+%%DATADIR%%/res/thief.wav
+%%DATADIR%%/res/tick.wav
+%%DATADIR%%/res/tiles.bmp
+%%DATADIR%%/res/ting.wav
+%%DATADIR%%/res/traphit.wav
+%%DATADIR%%/res/unslist.txt
+%%DATADIR%%/res/whisk.wav
+%%DATADIR%%/sets/CCLP2.dac
+%%DATADIR%%/sets/cc-lynx.dac
+%%DATADIR%%/sets/cc-ms.dac
+%%DATADIR%%/sets/intro-lynx.dac
+%%DATADIR%%/sets/intro-ms.dac
+@dirrm %%DATADIR%%/sets
+@dirrm %%DATADIR%%/res
+@dirrm %%DATADIR%%/data
+@dirrm %%DATADIR%%
