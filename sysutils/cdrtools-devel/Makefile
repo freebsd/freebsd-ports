@@ -36,7 +36,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 #CFLAGS+=	-DSOURCE_MODIFIED
 WRKSRC=		${WRKDIR}/${DISTNAME:C/a(.+)$//}
-PKGMESSAGE=	${WRKDIR}/pkg-message
+SUB_FILES=	pkg-message
 
 .if defined(WITH_RSCSI)
 PKGINSTALL=	${PKGDIR}/pkg-install.rscsi
@@ -54,7 +54,7 @@ MAKE_ENV=	CCOM=${CCOM} LANG=C
 CDRTLSTARGET=	${ARCH}-freebsd-${CCOM}
 
 .if ${OSVERSION} >= 501104 && ${OSVERSION} < 502113
-IGNORE=		The mlockall(2) of your FreeBSD 5.x version causes problems when used by cdrecord. Please update FreeBSD to >= 5.3 in order to use this port
+IGNORE=		does not work with mlockall(2) on your version of FreeBSD 5.x. Please update to FreeBSD 5.3 or later in order to use this port
 .endif
 
 .if exists(${LOCALBASE}/lib/libcdio.a) || defined(WITH_CDDB)
@@ -106,8 +106,6 @@ post-patch:
 #	@${REINPLACE_CMD} -E -e \
 #		's|#define.+INSERT_YOUR_EMAIL_ADDRESS_HERE|& "${MAINTAINER}"|' \
 #		${WRKSRC}/cdrecord/cdrecord.c
-	@${SED} 's|%%PREFIX%%|${PREFIX}|g' ${PKGDIR}/pkg-message > \
-		${WRKDIR}/pkg-message
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/btcflash/OBJ/${CDRTLSTARGET}/btcflash \
@@ -169,6 +167,6 @@ do-install:
 post-install:
 	-@if [ -f ${PKGINSTALL} ]; then ${SETENV} PKG_PREFIX=${PREFIX} \
 		${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL; fi
-	@${CAT} ${WRKDIR}/pkg-message
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
