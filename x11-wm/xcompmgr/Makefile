@@ -21,7 +21,7 @@ MAN1=		xcompmgr.1
 .include <bsd.port.pre.mk>
 
 .if ${X_WINDOW_SYSTEM:L} != xorg
-IGNORE=	requires the composite extension, which is unavailable with XFree86.
+IGNORE=	requires the composite extension, which is unavailable with XFree86
 .endif
 
 .include <bsd.port.post.mk>
