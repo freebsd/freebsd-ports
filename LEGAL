@@ -128,6 +128,8 @@ DansGuardian-2.[678]-*	www/dansguardian	Not free for installation by
 						free for commercial use
 DarwinStreamingSrc*.zip	net/DarwinStreamingServer Server License restrictions
 						See http://www.opensource.apple.com/apsl/
+dat-*.tar		security/vscan		Restricted to the license
+						terms set for VirusScan
 dc3play-*		graphics/dc3play	No redistribution due to
 						beta status
 dcl-*-C.tar.gz		science/cdcl		No commercial use
@@ -593,8 +595,6 @@ urchin*.tar.gz		www/urchin5		Commercial software, also comes
 ut2004-lnx-*		games/linux-ut2004-demo	Redistribution limited
 uzap.tar.gz             editors/uzap		Restrictive copyright
 vbsd440e.tar.Z		security/vscan		Commercial software
-dat-*.tar		security/vscan		Restricted to the license
-						terms set for VirusScan
 vdesk-*			x11/vdesk		Distributed without license
 vice-*			emulators/vice		ROMs are copyrighted by
 						Commodore Business Machines
