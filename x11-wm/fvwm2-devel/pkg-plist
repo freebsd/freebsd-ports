@@ -449,8 +449,8 @@ man/man1/xpmroot.1.gz
 %%NLS%%share/locale/sv_SE/LC_MESSAGES/fvwm.mo
 %%NLS%%share/locale/sv_SE/LC_MESSAGES/FvwmTaskBar.mo
 %%NLS%%share/locale/sv_SE/LC_MESSAGES/FvwmScript.mo
-@unexec rmdir %D/share/locale/sv_SE/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/sv_SE 2>/dev/null || true
+@dirrmtry %D/share/locale/sv_SE/LC_MESSAGES
+@dirrmtry %D/share/locale/sv_SE
 @dirrm %%DATADIR%%/perllib/General
 @dirrm %%DATADIR%%/perllib/FVWM/Tracker
 @dirrm %%DATADIR%%/perllib/FVWM/Module
