@@ -34,6 +34,46 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="6d78202e-e2f9-11da-8674-00123ffe8333">
+    <topic>phpldapadmin -- Cross-Site Scripting and Script Insertion</topic>
+    <affects>
+      <package>
+	<name>phpldapadmin098</name>
+	<range><lt>0.9.8.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/19747/">
+	  <p>phpLDAPadmin have some vulnerabilities, which can be exploited by
+	    malicious users to conduct script insertion attacks and by
+	    malicious people to conduct cross-site scripting attacks.</p>
+	  <p>1) Some input isn't properly sanitised before being returned to
+	    the user. This can be exploited to execute arbitrary HTML and
+	    script code in a user's browser session in context of an affected
+	    site.</p>
+	  <p>2) Input passed to the "Container DN", "Machine Name", and "UID
+	    Number" parameters in "template_engine.php" isn't properly
+	    sanitised before being used. This can be exploited to inject
+	    arbitrary HTML and script code, which will be executed in a user's
+	    browser session in context of an affected site when the malicious
+	    user data is viewed.</p>
+ 	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-2016</cvename>
+      <url>http://pridels.blogspot.com/2006/04/phpldapadmin-multiple-vuln.html</url>
+      <url>http://www.frsirt.com/english/advisories/2006/1450</url>
+      <url>http://secunia.com/advisories/19747/</url>
+    </references>
+    <dates>
+      <discovery>2006-04-21</discovery>
+      <entry>2006-05-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a86f30e7-dce7-11da-bf3f-02e081235dab">
     <topic>fswiki -- XSS vulnerability</topic>
     <affects>
