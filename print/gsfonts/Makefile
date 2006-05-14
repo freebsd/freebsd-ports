@@ -23,8 +23,8 @@ NO_BUILD=	yes
 
 PLIST_SUB=	FONTSDIR="${FONTSDIR:S|${PREFIX}/||}"
 
-MSG_FILE=	${PKGDIR}/pkg-message
-PKGMESSAGE=	${WRKDIR}/pkg-message
+SUB_FILES=	pkg-message
+SUB_LIST=	FONTSDIR="${FONTSDIR}"
 
 #
 # Local variables
@@ -37,7 +37,6 @@ GS_FONTS_OTHER=	ghostscript-fonts-other-6.0.tar.gz
 .SILENT:
 
 post-patch:
-	${SED} 's|%%FONTSDIR%%|${FONTSDIR}|g' ${MSG_FILE} > ${PKGMESSAGE}
 	${CP} ${WRKSRC}/fonts/fonts.scale ${WRKSRC}/fonts/fonts.scale.urw
 	${CP} ${FILESDIR}/fonts.scale ${WRKSRC}/fonts/fonts.scale
 	${CP} ${FILESDIR}/fonts.scale ${WRKSRC}/fonts/fonts.dir
@@ -47,7 +46,7 @@ post-patch:
 # Install
 #
 
-do-install: install-fonts install-docs
+do-install: install-fonts install-docs display-message
 
 install-fonts:
 	${MKDIR} ${FONTSDIR}
@@ -70,5 +69,8 @@ install-docs:
 	${INSTALL_DATA} ${WRKSRC}/fonts/README.tweaks ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/fonts/TODO ${DOCSDIR}
 .endif
+
+display-message:
+	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
