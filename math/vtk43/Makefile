@@ -23,8 +23,6 @@ DISTFILES?=	VTK-${PORTVERSION}-cvs${CVSDATE}.tar.gz
 MAINTAINER=	bacon@smithers.neuro.mcw.edu
 COMMENT?=	The Visualization Toolkit shared libs
 
-BROKEN=		Incorrect pkg-plist
-
 LATEST_LINK=	vtk43
 
 PREFIX=		${LOCALBASE}/vtk43
@@ -38,6 +36,7 @@ DOCSDIR=	${PREFIX}/share/doc/${PKGNAME}
 PLIST=		${.CURDIR}/pkg-plist
 FILESDIR=	${.CURDIR}/files
 RESTRICTED=	yes
+NO_MTREE=	yes
 
 VTK_KITS=	Common Filtering Graphics Hybrid IO Imaging Rendering Parallel Patented
 
@@ -74,7 +73,7 @@ INSTALLS_SHLIB=	yes
 TTT=	"${CXXFLAGS}"	# this quotes are VERY important!
 OPTFLAGPRESENT=	${TTT:C/^.*-O[23].*$/yes/}
 .if ${OPTFLAGPRESENT} == "yes"
-USE_GCC=	3.3
+USE_GCC=	3.3+
 .endif
 .endif
 
@@ -200,6 +199,7 @@ patch-common:
 
 install-binaries:
 .if defined(BINARIES)
+	@${MKDIR} ${PREFIX}/bin
 	@${ECHO_MSG} "Installing binaries to ${PREFIX}/bin :"
 .for i in ${BINARIES}
 	@${ECHO_MSG} "Installing ${i} ..."
@@ -208,6 +208,7 @@ install-binaries:
 .endif
 
 install-libs:
+	@${MKDIR} ${PREFIX}/lib
 	@${ECHO_MSG} "Installing shared libraries to ${PREFIX}/lib ..."
 .for i in ${VTK_KITS:S/$/${WRAP}/} ${EXTRA_LIBS}
 	@${ECHO_MSG} "Installing libvtk${i}.so ..."
