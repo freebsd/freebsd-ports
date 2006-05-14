@@ -1,0 +1,7 @@
+Flashblock is an extension for the Mozilla, Firefox, and Netscape browsers that
+takes a pessimistic approach to dealing with Macromedia Flash content on a
+webpage and blocks ALL Flash content from loading. It then leaves placeholders
+on the webpage that allow you to click to download and then view the Flash
+content.
+
+WWW: http://flashblock.mozdev.org/
