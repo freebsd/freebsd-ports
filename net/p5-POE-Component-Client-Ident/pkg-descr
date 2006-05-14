@@ -1,0 +1,9 @@
+POE::Component::Client::Ident is a POE component that provides non-
+blocking Ident lookup services to other components and sessions.
+
+The component takes requests in the form of events, spawns
+POE::Component::Client::Ident::Agent sessions to perform the Ident
+queries and returns the appropriate responses to the requesting
+session.
+
+WWW: http://search.cpan.org/dist/POE-Component-Client-Ident/
