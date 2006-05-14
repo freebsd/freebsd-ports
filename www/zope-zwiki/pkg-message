@@ -2,4 +2,7 @@
   To complete the installation of this port, you need to restart Zope. This
   may be done from the Zope Control Panel in the Zope management interface.
 
+  Be careful upgrade from 0.51.0 or before.  Read CHANGES.txt in your
+  ${ZOPEPRODUCTDIR}/Zwiki directory.
+
   You will now be able to create a "ZWiki Web" object.
