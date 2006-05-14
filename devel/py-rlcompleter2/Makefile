@@ -7,12 +7,12 @@
 #
 
 PORTNAME=	rlcompleter2
-PORTVERSION=	0.95
+PORTVERSION=	0.96
 CATEGORIES=	devel python
 MASTER_SITES=	http://codespeak.net/rlcompleter2/download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	alex@foxybanana.com
 COMMENT=	Python module for readline interactive completion
 
 USE_PYTHON=	2.2+
