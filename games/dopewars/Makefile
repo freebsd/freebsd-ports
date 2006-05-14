@@ -8,9 +8,8 @@
 PORTNAME=	dopewars
 PORTVERSION=	1.5.12
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		http://bellatrix.pcl.ox.ac.uk/~ben/dopewars/
-MASTER_SITE_SUBDIR=	dopewars
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	A UNIX rewrite of a game originally based on "Drug Wars"

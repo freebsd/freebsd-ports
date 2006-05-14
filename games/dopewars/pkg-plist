@@ -42,11 +42,15 @@ bin/dopewars
 %%DATADIR%%/pixmaps/dopewars-weed.png
 share/locale/de/LC_MESSAGES/dopewars.mo
 share/locale/es/LC_MESSAGES/dopewars.mo
+share/locale/es_ES/LC_MESSAGES/dopewars.mo
 share/locale/fr/LC_MESSAGES/dopewars.mo
+share/locale/fr_CA/LC_MESSAGES/dopewars.mo
 share/locale/nn/LC_MESSAGES/dopewars.mo
 share/locale/pl/LC_MESSAGES/dopewars.mo
 share/locale/pt_BR/LC_MESSAGES/dopewars.mo
 share/gnome/apps/Games/dopewars.desktop
+@dirrmtry share/locale/fr_CA/LC_MESSAGES
+@dirrmtry share/locale/fr_CA
 @dirrmtry share/gnome/apps/Games
 @dirrmtry share/gnome/apps
 @dirrmtry share/gnome
