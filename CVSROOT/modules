@@ -13342,7 +13342,6 @@ utserver	ports/games/utserver
 uudeview	ports/converters/uudeview
 uudx		ports/converters/uudx
 uulib		ports/converters/uulib
-uvscan-dat	ports/security/uvscan-dat
 uwatch		ports/sysutils/uwatch
 uwm		ports/x11-wm/uwm
 uz-aspell	ports/textproc/uz-aspell
