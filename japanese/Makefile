@@ -141,6 +141,7 @@
     SUBDIR += k10
     SUBDIR += k12
     SUBDIR += kakasi
+    SUBDIR += kana-no-quiz
     SUBDIR += kanji18
     SUBDIR += kanji26
     SUBDIR += kanjipad
