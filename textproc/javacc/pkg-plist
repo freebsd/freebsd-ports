@@ -10,7 +10,6 @@ bin/jjtree
 %%PORTDOCS%%%%DOCSDIR%%/docindex.html
 %%PORTDOCS%%%%DOCSDIR%%/errorrecovery.html
 %%PORTDOCS%%%%DOCSDIR%%/features.html
-%%PORTDOCS%%%%DOCSDIR%%/getstarted.html
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/installhelp.html
 %%PORTDOCS%%%%DOCSDIR%%/javaccgrm.html
@@ -71,29 +70,37 @@ bin/jjtree
 %%PORTDOCS%%%%EXAMPLESDIR%%/Interpreter/ASTVarDeclaration.java
 %%PORTDOCS%%%%EXAMPLESDIR%%/Interpreter/ASTWhileStatement.java
 %%PORTDOCS%%%%EXAMPLESDIR%%/Interpreter/ASTWriteStatement.java
+%%PORTDOCS%%%%EXAMPLESDIR%%/Interpreter/MyNode.java
 %%PORTDOCS%%%%EXAMPLESDIR%%/Interpreter/Node.java
 %%PORTDOCS%%%%EXAMPLESDIR%%/Interpreter/README
 %%PORTDOCS%%%%EXAMPLESDIR%%/Interpreter/SPL.java
 %%PORTDOCS%%%%EXAMPLESDIR%%/Interpreter/SPL.jjt
-%%PORTDOCS%%%%EXAMPLESDIR%%/Interpreter/SimpleNode.java
 %%PORTDOCS%%%%EXAMPLESDIR%%/Interpreter/fact.spl
 %%PORTDOCS%%%%EXAMPLESDIR%%/Interpreter/odd.spl
 %%PORTDOCS%%%%EXAMPLESDIR%%/Interpreter/sqrt.spl
 %%PORTDOCS%%%%EXAMPLESDIR%%/JJTreeExamples/ASTMyID.java
 %%PORTDOCS%%%%EXAMPLESDIR%%/JJTreeExamples/ASTMyOtherID.java
 %%PORTDOCS%%%%EXAMPLESDIR%%/JJTreeExamples/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/JJTreeExamples/build.xml
 %%PORTDOCS%%%%EXAMPLESDIR%%/JJTreeExamples/eg1.jjt
 %%PORTDOCS%%%%EXAMPLESDIR%%/JJTreeExamples/eg2.jjt
 %%PORTDOCS%%%%EXAMPLESDIR%%/JJTreeExamples/eg3.jjt
 %%PORTDOCS%%%%EXAMPLESDIR%%/JJTreeExamples/eg4.jjt
 %%PORTDOCS%%%%EXAMPLESDIR%%/JJTreeExamples/eg4DumpVisitor.java
 %%PORTDOCS%%%%EXAMPLESDIR%%/JavaCCGrammar/JavaCC.jj
+%%PORTDOCS%%%%EXAMPLESDIR%%/JavaGrammars/1.5/Java1.5.jj
+%%PORTDOCS%%%%EXAMPLESDIR%%/JavaGrammars/1.5/Main.java
+%%PORTDOCS%%%%EXAMPLESDIR%%/JavaGrammars/1.5/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/JavaGrammars/1.5/Test.java
+%%PORTDOCS%%%%EXAMPLESDIR%%/JavaGrammars/1.5/Token.java
+%%PORTDOCS%%%%EXAMPLESDIR%%/JavaGrammars/1.5/build.xml
 %%PORTDOCS%%%%EXAMPLESDIR%%/JavaGrammars/Java1.0.2.jj
 %%PORTDOCS%%%%EXAMPLESDIR%%/JavaGrammars/Java1.0.2LS.jj
 %%PORTDOCS%%%%EXAMPLESDIR%%/JavaGrammars/Java1.1.jj
 %%PORTDOCS%%%%EXAMPLESDIR%%/JavaGrammars/Java1.1noLA.jj
 %%PORTDOCS%%%%EXAMPLESDIR%%/JavaGrammars/OPTIMIZING
 %%PORTDOCS%%%%EXAMPLESDIR%%/JavaGrammars/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/JavaGrammars/Test.java
 %%PORTDOCS%%%%EXAMPLESDIR%%/Lookahead/Example1.jj
 %%PORTDOCS%%%%EXAMPLESDIR%%/Lookahead/Example10.jj
 %%PORTDOCS%%%%EXAMPLESDIR%%/Lookahead/Example2.jj
@@ -151,6 +158,7 @@ bin/jjtree
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Obfuscator
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/MailProcessing
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Lookahead
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/JavaGrammars/1.5
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/JavaGrammars
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/JavaCCGrammar
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/JJTreeExamples

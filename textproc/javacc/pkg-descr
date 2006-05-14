@@ -1,12 +1,9 @@
-JavaCC is a compiler compiler for Java.  It is similar to lex/yacc.
-Your output is a set of Java classes that can parse data defined
-by your grammar.
+Java Compiler Compiler (JavaCC) is a parser generator for use with
+Java applications. A parser generator is a tool that reads a grammar
+specification and converts it to a Java program that can recognize
+matches to the grammar. In addition to the parser generator itself,
+JavaCC provides other standard capabilities related to parser
+generation, such as tree building (via a tool called JJTree included
+with JavaCC), actions, debugging, and more.
 
-This includes JJTree, a preprocessor that greatly simplifies the
-construction of abstract syntax trees.  Also included is JJDoc, a
-tool that can generate documentation for your grammar.
-
-WWW: https://javacc.dev.java.net/
-
-- Andy Gerweck
-gerweck@yahoo.com
+WWW: http://javacc.dev.java.net
