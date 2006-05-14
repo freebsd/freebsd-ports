@@ -63,12 +63,16 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/erc/erc-speak.el
 %%EMACS_VERSION_SITE_LISPDIR%%/erc/erc-speedbar.el
 %%EMACS_VERSION_SITE_LISPDIR%%/erc/erc-speedbar.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/erc/erc-spelling.el
+%%EMACS_VERSION_SITE_LISPDIR%%/erc/erc-spelling.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/erc/erc-stamp.el
 %%EMACS_VERSION_SITE_LISPDIR%%/erc/erc-stamp.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/erc/erc-track.el
 %%EMACS_VERSION_SITE_LISPDIR%%/erc/erc-track.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/erc/erc-truncate.el
 %%EMACS_VERSION_SITE_LISPDIR%%/erc/erc-truncate.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/erc/erc-viper.el
+%%EMACS_VERSION_SITE_LISPDIR%%/erc/erc-viper.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/erc/erc-xdcc.el
 %%EMACS_VERSION_SITE_LISPDIR%%/erc/erc-xdcc.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/erc/erc.el
