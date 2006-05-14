@@ -8994,6 +8994,7 @@ p5-POE-Component-Child	ports/devel/p5-POE-Component-Child
 p5-POE-Component-Client-DNS	ports/dns/p5-POE-Component-Client-DNS
 p5-POE-Component-Client-FTP	ports/ftp/p5-POE-Component-Client-FTP
 p5-POE-Component-Client-HTTP	ports/www/p5-POE-Component-Client-HTTP
+p5-POE-Component-Client-Ident	ports/net/p5-POE-Component-Client-Ident
 p5-POE-Component-Client-Keepalive	ports/net/p5-POE-Component-Client-Keepalive
 p5-POE-Component-Client-NNTP	ports/news/p5-POE-Component-Client-NNTP
 p5-POE-Component-Client-POP3	ports/mail/p5-POE-Component-Client-POP3
