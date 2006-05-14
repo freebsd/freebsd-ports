@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-CATEGORIES=	www
+CATEGORIES=
 
 MAINTAINER=	dinoex@FreeBSD.org
 
