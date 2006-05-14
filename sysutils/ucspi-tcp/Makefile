@@ -19,16 +19,12 @@ OPTIONS=	MAN "Install man(1) pages" on \
 		RSS_DIFF "Patch rblsmtpd for qmail users" off \
 		SSL "Adds support for SSL (Secure Socket Layer)" off
 
-NO_PACKAGE=	"Unsure of djb\'s license"
+NO_PACKAGE=	Unsure of djb's license
 
 ALL_TARGET=	prog install instcheck
 
 SCRIPTS_ENV=	BINOWN="${BINOWN}" BINGRP="${BINGRP}" BINMODE="${BINMODE}" \
 		MANMODE="${MANMODE}" CFLAGS="${CFLAGS}"
-
-.if defined(WITH_SSL)
-USE_OPENSSL=	yes
-.endif
 
 .include <bsd.port.pre.mk>
 
@@ -47,6 +43,8 @@ PATCH_DIST_STRIP=	-p1
 .endif
 
 .if defined(WITH_SSL)
+# we can't use USE_OPENSSL=yes after including bsd.port.pre.mk
+.include "${PORTSDIR}/Mk/bsd.openssl.mk"
 PATCH_SITES+=	http://www.nrg4u.com/qmail/
 PATCHFILES+=	ucspi-tcp-ssl-20050405.patch.gz
 PATCH_DIST_STRIP=	-p1
