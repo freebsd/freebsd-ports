@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	trimines
-PORTVERSION=	1.2.1
-PORTREVISION=	1
+PORTVERSION=	1.3.0
 CATEGORIES=	games
 MASTER_SITES=	http://www.freewebs.com/trimines/
 
@@ -27,7 +26,9 @@ do-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/trimines ${PREFIX}/bin
-	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/data/* ${DATADIR}
+.for dir in counter menu misc triangles
+	${MKDIR} ${DATADIR}/${dir}
+	${INSTALL_DATA} ${WRKSRC}/data/${dir}/* ${DATADIR}/${dir}
+.endfor
 
 .include <bsd.port.mk>
