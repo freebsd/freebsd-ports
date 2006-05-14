@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	cups-pdf
-PORTVERSION=	1.7.4
+PORTVERSION=	2.2.0
 CATEGORIES=	print
-MASTER_SITES=	http://cip.physik.uni-wuerzburg.de/~vrbehr/cups-pdf/src/
+MASTER_SITES=	http://www.physik.uni-wuerzburg.de/~vrbehr/cups-pdf/src/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ports@mark.reidel.info
