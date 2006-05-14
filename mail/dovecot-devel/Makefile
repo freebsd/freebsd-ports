@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	dovecot
-DISTVERSION=	1.0.beta7
-PORTREVISION=	1
+DISTVERSION=	1.0.beta8
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://www.dovecot.org/releases/
 
@@ -24,7 +23,7 @@ CONFIGURE_ARGS=	--without-shadow --localstatedir=/var
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-PKGMESSAGE=	${WRKDIR}/pkg-message
+SUB_FILES=	pkg-message
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	USE-WIKI-INSTEAD \
@@ -48,7 +47,7 @@ OPTIONS=	KQUEUE		"kqueue(2) support"	off  \
 
 ## kqueue(2) support
 #
-.if defined(WITH_KQUEUE) 
+.if defined(WITH_KQUEUE)
 CONFIGURE_ARGS+=	--with-ioloop=kqueue --with-notify=kqueue
 .endif
 
@@ -117,9 +116,6 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/doc/mkcert.sh ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/dovecot-openssl.cnf ${DATADIR}
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-	@${SED} -e 's,%%PREFIX%%,${PREFIX},g' \
-		-e 's,%%DOCSDIR%%,${DOCSDIR},g' \
-		${.CURDIR}/pkg-message >${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
