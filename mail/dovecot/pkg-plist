@@ -12,6 +12,7 @@ lib/dovecot/imap/lib02_imap_quota_plugin.so
 lib/dovecot/imap/lib02_trash_plugin.so
 @dirrm lib/dovecot/imap
 lib/dovecot/pop3/lib01_convert_plugin.so
+lib/dovecot/pop3/lib01_quota_plugin.so
 @dirrm lib/dovecot/pop3
 lib/dovecot/lda/lib01_acl_plugin.so
 lib/dovecot/lda/lib01_convert_plugin.so
