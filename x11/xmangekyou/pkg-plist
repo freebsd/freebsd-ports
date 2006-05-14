@@ -1,6 +1,0 @@
-bin/xmangekyou
-lib/X11/XMangekyou/animation.dat
-lib/X11/XMangekyou/README.euc
-lib/X11/XMangekyou/Makefile
-lib/X11/XMangekyou/COPYRIGHT.euc
-@dirrm lib/X11/XMangekyou
