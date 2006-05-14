@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Test-Harness
-PORTVERSION=	2.56
+PORTVERSION=	2.58
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Test
@@ -21,7 +21,8 @@ INSTALL_TARGET=	pure_install
 MAN1=		prove.1
 MAN3=		Test::Harness.3 Test::Harness::Assert.3 \
 		Test::Harness::Iterator.3 Test::Harness::Point.3 \
-		Test::Harness::Straps.3 Test::Harness::TAP.3
+		Test::Harness::Straps.3 Test::Harness::TAP.3 \
+		Test::Harness::Util.3
 
 .include <bsd.port.pre.mk>
 

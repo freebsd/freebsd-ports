@@ -5,6 +5,7 @@
 %%SITE_PERL%%/Test/Harness/Point.pm
 %%SITE_PERL%%/Test/Harness/Straps.pm
 %%SITE_PERL%%/Test/Harness/TAP.pod
+%%SITE_PERL%%/Test/Harness/Util.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Harness/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Harness
 @dirrm %%SITE_PERL%%/Test/Harness
