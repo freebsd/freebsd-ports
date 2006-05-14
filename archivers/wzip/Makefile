@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	wzip
-PORTVERSION=	1.1
+PORTVERSION=	1.1.1
 CATEGORIES=	archivers
-MASTER_SITES=	http://ftp.debian.org/debian/pool/main/w/wzip/
+MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 DISTNAME=	wzip_${PORTVERSION}
 
 MAINTAINER=	onatan@gmail.com
@@ -17,6 +17,7 @@ COMMENT=	A preprocessor for lossy data compression
 ALL_TARGET=	wzip
 WRKSRC=		${WRKDIR}/wzip-${PORTVERSION}
 MAN1=		wzip.1
+PLIST_FILES=	bin/wzip
 
 post-patch:
 	@${REINPLACE_CMD} 's|gcc|${CC}|' \
