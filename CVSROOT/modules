@@ -8514,6 +8514,7 @@ p5-HTML-Template-Compiled	ports/www/p5-HTML-Template-Compiled
 p5-HTML-Template-Expr	ports/www/p5-HTML-Template-Expr
 p5-HTML-Template-HashWrapper	ports/www/p5-HTML-Template-HashWrapper
 p5-HTML-Template-JIT	ports/www/p5-HTML-Template-JIT
+p5-HTML-Template-Pluggable	ports/www/p5-HTML-Template-Pluggable
 p5-HTML-Tidy	ports/textproc/p5-HTML-Tidy
 p5-HTML-TokeParser-Simple	ports/www/p5-HTML-TokeParser-Simple
 p5-HTML-Tree	ports/www/p5-HTML-Tree
