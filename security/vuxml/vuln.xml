@@ -35,7 +35,7 @@ Note:  Please add new entries to the beginning of this file.
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
   <vuln vid="6d78202e-e2f9-11da-8674-00123ffe8333">
-    <topic>phpldapadmin -- Cross-Site Scripting and Script Insertion</topic>
+    <topic>phpldapadmin -- Cross-Site Scripting and Script Insertion vulnerabilities</topic>
     <affects>
       <package>
 	<name>phpldapadmin098</name>
