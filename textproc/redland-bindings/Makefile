@@ -6,14 +6,12 @@
 #
 
 PORTNAME=	redland-bindings
-PORTVERSION=	1.0.2.1
+PORTVERSION=	1.0.4.1
 CATEGORIES=	textproc
 MASTER_SITES=	http://download.librdf.org/source/
 
 MAINTAINER=	chuck@pkix.net
 COMMENT=	Language bindings for the Redland package
-
-BROKEN=		Configure fails
 
 #OPTIONS=	JAVA "Add Java bindings" off \
 #		PERL "Add Perl bindings" off \
@@ -76,16 +74,15 @@ PLIST_SUB+=	WITH_RUBY="@comment "
 .endif
 .if defined(WITH_TCL)
 .if defined(WITH_TCL83)
-TCL_SHORT_V=	83
+USE_TCL=	83
 TCL_LONG_V=	8.3
 .else
-TCL_SHORT_V=	84
+USE_TCL=	84
 TCL_LONG_V=	8.4
 .endif
 PLIST_SUB+=	WITH_TCL=""
 PLIST_SUB+=	TCL_DIR="lib/tcl${TCL_LONG_V}"
-CONFIGURE_ARGS+=	--with-tcl=${LOCALBASE}/bin/tclsh${TCL_LONG_V}
-LIB_DEPENDS+=	tcl${TCL_SHORT_V}:${PORTSDIR}/lang/tcl${TCL_SHORT_V}
+CONFIGURE_ARGS+=	--with-tcl=${TCLSH}
 .else
 PLIST_SUB+=	WITH_TCL="@comment "
 .endif
