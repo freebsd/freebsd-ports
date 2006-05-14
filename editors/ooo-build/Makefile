@@ -62,10 +62,6 @@ pre-configure:
 	@cd ${WRKDIR}/${OOOBUILD} ; ${PATCH} < ${.CURDIR}/files/ooo-build-patch-devel
 .endif
 	@cd ${WRKDIR}/${OOOBUILD}/patches ; ${PERL} apply.pl ${WRKDIR}/${OOOBUILD}/patches/${OOO_PATCHDIR} ${WRKSRC} --distro=FreeBSD --distro=Binfilter --tag=${OOOBUILD_TAG}
-<<<<<<< Makefile
-=======
-	${MKDIR} ${WRKSRC}/cairo/download ; ${CP} ${DISTDIR}/${DIST_SUBDIR}/${OOO_CAIRO} ${WRKSRC}/cairo/download
->>>>>>> 1.9
 	@${CP} ${WRKDIR}/${OOOBUILD}/src/evolocal.odb ${WRKSRC}/extras/source/database/
 .if !defined(DEVELOPER_VER)
 	@${CP} ${WRKDIR}/${OOOBUILD}/src/go-oo-team.png ${WRKSRC}/default_images/sw/res
