@@ -1,3 +1,6 @@
 MD5 (slang-1.4.9.tar.bz2) = 4fbb1a7f1257e065ca830deefe13d350
 SHA256 (slang-1.4.9.tar.bz2) = fa42e57e902f2161dc2b297e0dcb24ca180024770afa379027db582803ffa2fa
 SIZE (slang-1.4.9.tar.bz2) = 631079
+MD5 (slang-1.4.8-utf8.diff.gz) = 2946c6369edbf6c0c0f587a1fdc7c4cf
+SHA256 (slang-1.4.8-utf8.diff.gz) = b41f6bda4378631c3f76756a92b7819a722e14070aba211a452b45fd86a40bea
+SIZE (slang-1.4.8-utf8.diff.gz) = 6369

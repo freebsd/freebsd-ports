@@ -17,6 +17,8 @@ DISTNAME=	slang-${PORTVERSION}
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Routines for rapid alpha-numeric terminal applications development
 
+OPTIONS=	UTF8	"Enable UTF-8 support"	off
+
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
@@ -33,6 +35,15 @@ PORTDOCS=	*
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_UTF8)
+PATCH_SITES+=	http://www.emaillab.org/mutt/tools/
+PATCHFILES+=	slang-1.4.8-utf8.diff.gz
+PATCH_DIST_STRIP+=	-p1
+
+post-patch:
+	@${REINPLACE_CMD} 's,slang-utf8,slang,' ${WRKSRC}/src/Makefile.in
+.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
