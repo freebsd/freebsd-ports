@@ -1,4 +1,3 @@
-%%RUBY_SITELIBDIR%%/log4r.rb
 %%RUBY_SITELIBDIR%%/log4r/base.rb
 %%RUBY_SITELIBDIR%%/log4r/config.rb
 %%RUBY_SITELIBDIR%%/log4r/configurator.rb
@@ -22,13 +21,16 @@
 %%RUBY_SITELIBDIR%%/log4r/outputter/syslogoutputter.rb
 %%RUBY_SITELIBDIR%%/log4r/repository.rb
 %%RUBY_SITELIBDIR%%/log4r/staticlogger.rb
-@dirrm %%RUBY_SITELIBDIR%%/log4r/outputter
-@dirrm %%RUBY_SITELIBDIR%%/log4r/lib
+%%RUBY_SITELIBDIR%%/log4r/yamlconfigurator.rb
+%%RUBY_SITELIBDIR%%/log4r.rb
 @dirrm %%RUBY_SITELIBDIR%%/log4r/formatter
+@dirrm %%RUBY_SITELIBDIR%%/log4r/lib
+@dirrm %%RUBY_SITELIBDIR%%/log4r/outputter
 @dirrm %%RUBY_SITELIBDIR%%/log4r
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/README
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/customlevels.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/fileroll.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/log4r_yaml.yaml
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/logclient.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/logserver.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/moderate.xml
@@ -39,6 +41,7 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rrsetup.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/simpleconfig.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/xmlconfig.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/yaml.rb
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/logs
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
@@ -53,11 +56,10 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/log4r.css
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/manual.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/blank.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/BasicFormatter.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/BasicFormatter.src/M000069.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/BasicFormatter.src/M000070.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/BasicFormatter.src/M000071.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/BasicFormatter.src/M000073.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/BasicFormatter.src/M000074.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/BasicFormatter.src/M000075.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/ConfigError.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/Configurator.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/Configurator.src/M000003.html
@@ -65,37 +67,32 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/Configurator.src/M000005.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/Configurator.src/M000006.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/Configurator.src/M000007.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/DateFileOutputter.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/DateFileOutputter.src/M000010.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/DefaultFormatter.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/EmailOutputter.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/EmailOutputter.src/M000041.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/EmailOutputter.src/M000042.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/EmailOutputter.src/M000047.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/EmailOutputter.src/M000048.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/FileOutputter.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/FileOutputter.src/M000010.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/FileOutputter.src/M000011.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/Formatter.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/Formatter.src/M000072.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/Formatter.src/M000073.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/Formatter.src/M000076.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/Formatter.src/M000077.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/IOOutputter.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/IOOutputter.src/M000043.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/IOOutputter.src/M000044.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/IOOutputter.src/M000045.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/Log4rConfig.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/IOOutputter.src/M000049.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/IOOutputter.src/M000050.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/IOOutputter.src/M000051.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/Log4rTools.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/Log4rTools.src/M000026.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/Log4rTools.src/M000027.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/Log4rTools.src/M000028.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/Log4rTools.src/M000029.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/Log4rTools.src/M000032.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/Log4rTools.src/M000033.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/Log4rTools.src/M000034.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/Log4rTools.src/M000035.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/LogEvent.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/LogEvent.src/M000001.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/LogServer.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/LogServer.src/M000038.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/LogServer.src/M000039.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/LogServer.src/M000044.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/LogServer.src/M000045.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/Logger.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/Logger.src/M000046.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/Logger.src/M000047.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/Logger.src/M000048.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/Logger.src/M000049.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/Logger.src/M000050.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/Logger.src/M000051.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/Logger.src/M000052.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/Logger.src/M000053.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/Logger.src/M000054.html
@@ -109,12 +106,13 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/Logger.src/M000062.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/Logger.src/M000063.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/Logger.src/M000064.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/Logger/LoggerFactory.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/Logger/Repository.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/Logger.src/M000065.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/Logger.src/M000066.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/Logger.src/M000067.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/Logger.src/M000068.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/ObjectFormatter.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/ObjectFormatter.src/M000009.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/Outputter.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/Outputter.src/M000014.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/Outputter.src/M000015.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/Outputter.src/M000016.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/Outputter.src/M000017.html
@@ -125,97 +123,87 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/Outputter.src/M000022.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/Outputter.src/M000023.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/Outputter.src/M000024.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/Outputter/OutputterFactory.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/Outputter.src/M000025.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/PatternFormatter.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/PatternFormatter.src/M000040.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/ROMPClient.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/ROMPServer.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/PatternFormatter.src/M000046.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/RemoteOutputter.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/RemoteOutputter.src/M000011.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/RemoteOutputter.src/M000012.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/RemoteOutputter.src/M000013.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/RemoteOutputter.src/M000014.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/RollingFileOutputter.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/RollingFileOutputter.src/M000065.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/RollingFileOutputter.src/M000069.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/RootLogger.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/RootLogger.src/M000030.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/RootLogger.src/M000031.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/RootLogger.src/M000032.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/RootLogger.src/M000033.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/RootLogger.src/M000034.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/RootLogger.src/M000035.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/RootLogger.src/M000036.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/RootLogger.src/M000037.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/RootLogger.src/M000038.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/RootLogger.src/M000039.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/RootLogger.src/M000040.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/RootLogger.src/M000041.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/RootLogger.src/M000042.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/RootLogger.src/M000043.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/SimpleFormatter.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/SimpleFormatter.src/M000025.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/SimpleFormatter.src/M000026.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/StderrOutputter.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/StderrOutputter.src/M000002.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/StdoutOutputter.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/StdoutOutputter.src/M000008.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/SyslogOutputter.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/SyslogOutputter.src/M000066.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/SyslogOutputter.src/M000067.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/SyslogOutputter.src/M000068.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/REXML.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/SyslogOutputter.src/M000070.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/SyslogOutputter.src/M000071.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/SyslogOutputter.src/M000072.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/YamlConfigurator.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/YamlConfigurator.src/M000027.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/YamlConfigurator.src/M000028.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/YamlConfigurator.src/M000029.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/YamlConfigurator.src/M000030.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/YamlConfigurator.src/M000031.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/created.rid
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/files/log4r/base_rb.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/files/log4r/config_rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/files/log4r/configurator_rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/files/log4r/formatter/formatter_rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/files/log4r/formatter/patternformatter_rb.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/files/log4r/lib/drbloader_rb.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/files/log4r/lib/xmlloader_rb.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/files/log4r/logevent_rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/files/log4r/logger_rb.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/files/log4r/loggerfactory_rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/files/log4r/logserver_rb.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/files/log4r/outputter/consoleoutputters_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/files/log4r/outputter/datefileoutputter_rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/files/log4r/outputter/emailoutputter_rb.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/files/log4r/outputter/fileoutputter_rb.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/files/log4r/outputter/iooutputter_rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/files/log4r/outputter/outputter_rb.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/files/log4r/outputter/outputterfactory_rb.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/files/log4r/outputter/remoteoutputter_rb.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/files/log4r/outputter/rollingfileoutputter_rb.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/files/log4r/outputter/staticoutputter_rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/files/log4r/outputter/syslogoutputter_rb.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/files/log4r/repository_rb.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/files/log4r/staticlogger_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/files/log4r/yamlconfigurator_rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/files/log4r_rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/fr_class_index.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/fr_file_index.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/fr_method_index.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/index.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/rdoc-style.css
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/rdoc/files/log4r/outputter
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/rdoc/files/log4r/lib
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/rdoc/files/log4r/formatter
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/rdoc/files/log4r
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/rdoc/files
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/SyslogOutputter.src
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/StdoutOutputter.src
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/StderrOutputter.src
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/SimpleFormatter.src
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/RootLogger.src
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/RollingFileOutputter.src
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/RemoteOutputter.src
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/PatternFormatter.src
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/Outputter.src
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/Outputter
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/ObjectFormatter.src
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/Logger.src
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/Logger
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/LogServer.src
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/LogEvent.src
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/Log4rTools.src
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/IOOutputter.src
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/Formatter.src
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/FileOutputter.src
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/EmailOutputter.src
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/Configurator.src
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/BasicFormatter.src
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/rdoc/classes/Log4r
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/rdoc/classes
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/rdoc
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/images/crush
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/images
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/BasicFormatter.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/Configurator.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/DateFileOutputter.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/EmailOutputter.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/FileOutputter.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/Formatter.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/IOOutputter.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/Log4rTools.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/LogEvent.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/LogServer.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/Logger.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/ObjectFormatter.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/Outputter.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/PatternFormatter.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/RemoteOutputter.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/RollingFileOutputter.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/RootLogger.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/SimpleFormatter.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/StderrOutputter.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/StdoutOutputter.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/SyslogOutputter.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/YamlConfigurator.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/rdoc/classes/Log4r
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/rdoc/classes
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/rdoc/files/log4r/formatter
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/rdoc/files/log4r/outputter
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/rdoc/files/log4r
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/rdoc/files
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/rdoc
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
