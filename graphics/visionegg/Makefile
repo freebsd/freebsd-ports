@@ -7,13 +7,12 @@
 #
 
 PORTNAME=	visionegg
-PORTVERSION=	0.9.4
-PORTREVISION=	3
+PORTVERSION=	0.9.9
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	freebsd@unixfreunde.de
 COMMENT=	Visual stimulus creation and control
 
 BUILD_DEPENDS=	\
