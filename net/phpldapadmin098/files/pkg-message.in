@@ -5,15 +5,24 @@
 
 Please edit config.php to suit your needs.
 
-To make phpLDAPadmin available through your web site, 
-I suggest that you add the following to httpd.conf:
+To make phpLDAPadmin available through your web site, I suggest that
+you add something like the following to httpd.conf:
 
     Alias /phpldapadmin/ "%%PREFIX%%/%%PLADIR%%/htdocs"
 
+    <Directory "%%PREFIX%%/%%PLADIR%%/htdocs">
+        Options none
+        AllowOverride none
+
+        Order Deny, Allow
+        Deny from all
+        Allow from 127.0.0.1 .example.com
+    </Directory>
+
 Please note: if you are upgrading from version 0.9.7 or earlier, the
-layout of the %%PKGNAME%% files has been completely reworked. You
-will need to modify your apache configuration and merge the settings
-from your original configuration file:
+layout of the %%PKGNAME%% files has been completely reworked. You will
+need to modify your apache configuration and merge the settings from
+your original configuration file:
 
     %%PREFIX%%/%%PLADIRX%%/config.php
 

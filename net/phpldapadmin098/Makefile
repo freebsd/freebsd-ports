@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	phpldapadmin098
-PORTVERSION=	0.9.8.2
-PORTREVISION=	1
+PORTVERSION=	0.9.8.3
 PORTEPOCH=	1
 CATEGORIES=	net www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -15,14 +14,14 @@ MASTER_SITE_SUBDIR=	phpldapadmin
 DISTNAME=	${PORTNAME:S/098//}-${PORTVERSION}
 
 MAINTAINER=	m.seaman@infracaninophile.co.uk
-COMMENT=	A set of PHP-scripts to administer LDAP servers over the web
+COMMENT=	A set of PHP-scripts to administer LDAP over the web
 
 NO_BUILD=	yes
 USE_PHP=	gettext ldap openssl pcre session
 
 .if defined(WITH_SUPHP)
 
-PKGNAMESUFFIX=	-suphp
+PKGNAMESUFFIX+=	-suphp
 RUN_DEPENDS+=	${LOCALBASE}/sbin/suphp:${PORTSDIR}/www/suphp
 WANT_PHP_CGI=	yes
 
@@ -61,6 +60,10 @@ pre-everything::
 	${ECHO_MSG} ""
 	${ECHO_MSG} "    WITH_SUPHP=yes   Install appropriately for use with"
 	${ECHO_MSG} "                     the www/suphp port [default: no]"
+	${ECHO_MSG} ""
+	${ECHO_MSG} "This port will operate with either PHP4 or PHP5.  If"
+	${ECHO_MSG} "you require PHP5 support, for best results, please"
+	${ECHO_MSG} "install lang/php5 before installing this port."
 	${ECHO_MSG} ""
 
 post-patch:
