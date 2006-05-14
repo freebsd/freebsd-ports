@@ -7,10 +7,8 @@ bin/dspamc
 bin/dspam_2sql
 bin/dspam_admin
 bin/dspam_clean
-bin/dspam_corpus
 bin/dspam_crc
 bin/dspam_dump
-bin/dspam_genaliases
 bin/dspam_logrotate
 bin/dspam_merge
 %%PGSQL%%bin/dspam_pg2int8
