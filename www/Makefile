@@ -988,6 +988,7 @@
     SUBDIR += xpi-cssviewer
     SUBDIR += xpi-cutemenus-crystalsvg
     SUBDIR += xpi-fasterfox
+    SUBDIR += xpi-flashblock
     SUBDIR += xpi-mldonkey
     SUBDIR += xpi-no-referrer
     SUBDIR += xpi-noscript
