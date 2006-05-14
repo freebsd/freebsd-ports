@@ -1,8 +1,8 @@
 Graph Visualization Software from AT&T Laboratories and
 Bell Laboratories (Lucent Technologies)
 
-These programs licensed under the terms described in the 
-Web page http://www.research.att.com/sw/tools/graphviz/license/.
+These programs licensed under the terms described in the web page at:
+http://www.graphviz.org/License.php
 
 The package contains:
     dotty  - customizable X windows graph viewer written in the Lefty editor
@@ -11,4 +11,4 @@ The package contains:
     neato  - batch program for drawing undirected graphs using Kamada-Kawai
              spring models
 
-WWW: http://www.research.att.com/sw/tools/graphviz/
+WWW: http://www.graphviz.org/
