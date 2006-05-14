@@ -7,7 +7,7 @@
 
 PORTNAME=	xrmap
 PORTVERSION=	2.33
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	astro
 MASTER_SITES=	ftp://ftp.ac-grenoble.fr/ge/geosciences/xrmap/data/:data \
 		ftp://ftp.ac-grenoble.fr/ge/geosciences/xrmap/:src
@@ -31,7 +31,7 @@ CIAFILE=	CIA_WDB2.jpd.bz2
 POPFILE=	population.dat.bz2
 SRCFILE=	xrmap-${PORTVERSION}.tar.bz2
 DATAFILES=	anthems-1.2.tar.bz2 earthdata_med_res.tar.bz2 \
-		factbook_text_2005.tar.bz2 factbook_html_2005.tar.bz2 \
+		factbook_text_2006.tar.bz2 factbook_html_2006.tar.bz2 \
 		flags-2.9-eps.tar.bz2 hymns-1.3.tar.bz2 pdfmaps-1.3.tar.bz2
 
 MAN1=		emx.1 xrmap.1
