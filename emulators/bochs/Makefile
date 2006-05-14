@@ -38,6 +38,8 @@ MANCOMPRESSED=	yes
 MAN1=		bochs.1 bochs-dlx.1 bxcommit.1 bximage.1
 MAN5=		bochsrc.5
 
+SUB_FILES=	pkg-message
+
 .if defined(WITH_BOCHS_SMP)
 CONFIGURE_ARGS+=	--enable-smp
 WITH_BOCHS_CPU_LEVEL=	6
@@ -72,9 +74,6 @@ CONFIGURE_ARGS+=	--enable-debugger --enable-disasm
 .if defined(WITH_BOCHS_X86_DEBUGGER)
 CONFIGURE_ARGS+=	--enable-x86-debugger
 .endif
-
-MSG_FILE=	${PKGDIR}/pkg-message
-PKGMESSAGE=	${WRKDIR}/pkg-message
 
 pre-patch::
 	@${ECHO_MSG}
@@ -129,7 +128,6 @@ post-patch:
 		s|/usr/local/share/doc/bochs|${DOCSDIR}|; \
 		' ${WRKSRC}/doc/docbook/user/user.dbk ${WRKSRC}/doc/man/*.1 \
 		${WRKSRC}/doc/man/*.5
-	@${SED} 's|%%DOCSDIR%%|${DOCSDIR}|g' ${MSG_FILE} > ${PKGMESSAGE}
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -138,8 +136,6 @@ post-install:
 	@${MKDIR} ${DOCSDIR}/html
 	@${INSTALL_DATA} ${WRKSRC}/docs-html/*.html ${DOCSDIR}/html
 .endif
-	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG}
 
 .include <bsd.port.mk>
