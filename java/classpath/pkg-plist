@@ -1,0 +1,167 @@
+include/jawt.h
+include/jawt_md.h
+include/jni.h
+include/jni_md.h
+lib/classpath/libjavaio.la
+lib/classpath/libjavaio.so
+lib/classpath/libjavaio.so.0
+lib/classpath/libjavalang.la
+lib/classpath/libjavalang.so
+lib/classpath/libjavalang.so.0
+lib/classpath/libjavalangreflect.la
+lib/classpath/libjavalangreflect.so
+lib/classpath/libjavalangreflect.so.0
+lib/classpath/libjavanet.la
+lib/classpath/libjavanet.so
+lib/classpath/libjavanet.so.0
+lib/classpath/libjavanio.la
+lib/classpath/libjavanio.so
+lib/classpath/libjavanio.so.0
+lib/classpath/libjavautil.la
+lib/classpath/libjavautil.so
+lib/classpath/libjavautil.so.0
+lib/logging.properties
+lib/security/classpath.security
+%%DATADIR%%/examples/Makefile.jawt
+%%DATADIR%%/examples/README
+%%DATADIR%%/examples/examples.zip
+%%DATADIR%%/examples/gnu/classpath/examples/CORBA/NamingService/Demo.java
+%%DATADIR%%/examples/gnu/classpath/examples/CORBA/SimpleCommunication/Demo.java
+%%DATADIR%%/examples/gnu/classpath/examples/CORBA/SimpleCommunication/DemoServer.java
+%%DATADIR%%/examples/gnu/classpath/examples/CORBA/SimpleCommunication/communication/DemoServant.java
+%%DATADIR%%/examples/gnu/classpath/examples/CORBA/SimpleCommunication/communication/DemoTester.java
+%%DATADIR%%/examples/gnu/classpath/examples/CORBA/SimpleCommunication/communication/DirectTest.java
+%%DATADIR%%/examples/gnu/classpath/examples/CORBA/SimpleCommunication/communication/RequestTest.java
+%%DATADIR%%/examples/gnu/classpath/examples/CORBA/SimpleCommunication/communication/StructureToPass.java
+%%DATADIR%%/examples/gnu/classpath/examples/CORBA/SimpleCommunication/communication/StructureToPassHelper.java
+%%DATADIR%%/examples/gnu/classpath/examples/CORBA/SimpleCommunication/communication/StructureToPassHolder.java
+%%DATADIR%%/examples/gnu/classpath/examples/CORBA/SimpleCommunication/communication/StructureToReturn.java
+%%DATADIR%%/examples/gnu/classpath/examples/CORBA/SimpleCommunication/communication/StructureToReturnHelper.java
+%%DATADIR%%/examples/gnu/classpath/examples/CORBA/SimpleCommunication/communication/StructureToReturnHolder.java
+%%DATADIR%%/examples/gnu/classpath/examples/CORBA/SimpleCommunication/communication/TreeNode.java
+%%DATADIR%%/examples/gnu/classpath/examples/CORBA/SimpleCommunication/communication/TreeNodeHelper.java
+%%DATADIR%%/examples/gnu/classpath/examples/CORBA/SimpleCommunication/communication/TreeNodeHolder.java
+%%DATADIR%%/examples/gnu/classpath/examples/CORBA/SimpleCommunication/communication/WeThrowThisException.java
+%%DATADIR%%/examples/gnu/classpath/examples/CORBA/SimpleCommunication/communication/WeThrowThisExceptionHelper.java
+%%DATADIR%%/examples/gnu/classpath/examples/CORBA/SimpleCommunication/communication/_DemoTesterImplBase.java
+%%DATADIR%%/examples/gnu/classpath/examples/CORBA/SimpleCommunication/communication/_DemoTesterStub.java
+%%DATADIR%%/examples/gnu/classpath/examples/CORBA/swing/README.html
+%%DATADIR%%/examples/gnu/classpath/examples/CORBA/swing/x5/CanvasWorld.java
+%%DATADIR%%/examples/gnu/classpath/examples/CORBA/swing/x5/ChatConstants.java
+%%DATADIR%%/examples/gnu/classpath/examples/CORBA/swing/x5/ClientFrame.java
+%%DATADIR%%/examples/gnu/classpath/examples/CORBA/swing/x5/Demo.java
+%%DATADIR%%/examples/gnu/classpath/examples/CORBA/swing/x5/GameManager.java
+%%DATADIR%%/examples/gnu/classpath/examples/CORBA/swing/x5/GameManagerImpl.java
+%%DATADIR%%/examples/gnu/classpath/examples/CORBA/swing/x5/IorReader.java
+%%DATADIR%%/examples/gnu/classpath/examples/CORBA/swing/x5/OrbStarter.java
+%%DATADIR%%/examples/gnu/classpath/examples/CORBA/swing/x5/Player.java
+%%DATADIR%%/examples/gnu/classpath/examples/CORBA/swing/x5/PlayerImpl.java
+%%DATADIR%%/examples/gnu/classpath/examples/CORBA/swing/x5/PlayingDesk.java
+%%DATADIR%%/examples/gnu/classpath/examples/CORBA/swing/x5/State.java
+%%DATADIR%%/examples/gnu/classpath/examples/CORBA/swing/x5/X5Server.java
+%%DATADIR%%/examples/gnu/classpath/examples/CORBA/swing/x5/_GameManagerImpl_Tie.java
+%%DATADIR%%/examples/gnu/classpath/examples/CORBA/swing/x5/_GameManager_Stub.java
+%%DATADIR%%/examples/gnu/classpath/examples/CORBA/swing/x5/_PlayerImpl_Tie.java
+%%DATADIR%%/examples/gnu/classpath/examples/CORBA/swing/x5/_Player_Stub.java
+%%DATADIR%%/examples/gnu/classpath/examples/awt/Demo.java
+%%DATADIR%%/examples/gnu/classpath/examples/datatransfer/Demo.java
+%%DATADIR%%/examples/gnu/classpath/examples/html/Demo.java
+%%DATADIR%%/examples/gnu/classpath/examples/icons/big-fullscreen.png
+%%DATADIR%%/examples/gnu/classpath/examples/icons/big-home.png
+%%DATADIR%%/examples/gnu/classpath/examples/icons/big-warning.png
+%%DATADIR%%/examples/gnu/classpath/examples/icons/stock-copy.png
+%%DATADIR%%/examples/gnu/classpath/examples/icons/stock-cut.png
+%%DATADIR%%/examples/gnu/classpath/examples/icons/stock-go-back.png
+%%DATADIR%%/examples/gnu/classpath/examples/icons/stock-go-down.png
+%%DATADIR%%/examples/gnu/classpath/examples/icons/stock-go-forward.png
+%%DATADIR%%/examples/gnu/classpath/examples/icons/stock-mic.png
+%%DATADIR%%/examples/gnu/classpath/examples/icons/stock-new.png
+%%DATADIR%%/examples/gnu/classpath/examples/icons/stock-open.png
+%%DATADIR%%/examples/gnu/classpath/examples/icons/stock-paste.png
+%%DATADIR%%/examples/gnu/classpath/examples/icons/stock-quit.png
+%%DATADIR%%/examples/gnu/classpath/examples/icons/stock-save-as.png
+%%DATADIR%%/examples/gnu/classpath/examples/icons/stock-save.png
+%%DATADIR%%/examples/gnu/classpath/examples/icons/stock-spell-check.png
+%%DATADIR%%/examples/gnu/classpath/examples/jawt/DemoJAWT.c
+%%DATADIR%%/examples/gnu/classpath/examples/jawt/DemoJAWT.java
+%%DATADIR%%/examples/gnu/classpath/examples/midi/Demo.java
+%%DATADIR%%/examples/gnu/classpath/examples/swing/ButtonDemo.java
+%%DATADIR%%/examples/gnu/classpath/examples/swing/ComboBoxDemo.java
+%%DATADIR%%/examples/gnu/classpath/examples/swing/Demo.java
+%%DATADIR%%/examples/gnu/classpath/examples/swing/FileChooserDemo.java
+%%DATADIR%%/examples/gnu/classpath/examples/swing/GNULookAndFeel.java
+%%DATADIR%%/examples/gnu/classpath/examples/swing/MiniDemo.java
+%%DATADIR%%/examples/gnu/classpath/examples/swing/ProgressBarDemo.java
+%%DATADIR%%/examples/gnu/classpath/examples/swing/ScrollBarDemo.java
+%%DATADIR%%/examples/gnu/classpath/examples/swing/SliderDemo.java
+%%DATADIR%%/examples/gnu/classpath/examples/swing/SpinnerDemo.java
+%%DATADIR%%/examples/gnu/classpath/examples/swing/TableDemo.java
+%%DATADIR%%/examples/gnu/classpath/examples/swing/TextFieldDemo.java
+%%DATADIR%%/glibj.zip
+%%DATADIR%%/tools/gnu/classpath/tools/AbstractMethodGenerator.java
+%%DATADIR%%/tools/gnu/classpath/tools/HelpPrinter.java
+%%DATADIR%%/tools/gnu/classpath/tools/giop/GRMIC.java
+%%DATADIR%%/tools/gnu/classpath/tools/giop/GRMIC.txt
+%%DATADIR%%/tools/gnu/classpath/tools/giop/IorParser.java
+%%DATADIR%%/tools/gnu/classpath/tools/giop/IorParser.txt
+%%DATADIR%%/tools/gnu/classpath/tools/giop/NameService.java
+%%DATADIR%%/tools/gnu/classpath/tools/giop/NameServicePersistent.java
+%%DATADIR%%/tools/gnu/classpath/tools/giop/NameServicePersistent.txt
+%%DATADIR%%/tools/gnu/classpath/tools/giop/NamingService.txt
+%%DATADIR%%/tools/gnu/classpath/tools/giop/README
+%%DATADIR%%/tools/gnu/classpath/tools/giop/grmic/CompilationError.java
+%%DATADIR%%/tools/gnu/classpath/tools/giop/grmic/Generator.java
+%%DATADIR%%/tools/gnu/classpath/tools/giop/grmic/GiopIo.java
+%%DATADIR%%/tools/gnu/classpath/tools/giop/grmic/GiopRmicCompiler.java
+%%DATADIR%%/tools/gnu/classpath/tools/giop/grmic/HashFinder.java
+%%DATADIR%%/tools/gnu/classpath/tools/giop/grmic/MethodGenerator.java
+%%DATADIR%%/tools/gnu/classpath/tools/giop/grmic/templates/ImplTie.jav
+%%DATADIR%%/tools/gnu/classpath/tools/giop/grmic/templates/Stub.jav
+%%DATADIR%%/tools/gnu/classpath/tools/giop/grmic/templates/StubMethod.jav
+%%DATADIR%%/tools/gnu/classpath/tools/giop/grmic/templates/StubMethodVoid.jav
+%%DATADIR%%/tools/gnu/classpath/tools/giop/grmic/templates/Tie.jav
+%%DATADIR%%/tools/gnu/classpath/tools/giop/grmic/templates/TieMethod.jav
+%%DATADIR%%/tools/gnu/classpath/tools/giop/grmic/templates/TieMethodVoid.jav
+%%DATADIR%%/tools/gnu/classpath/tools/giop/nameservice/PersistentContext.java
+%%DATADIR%%/tools/gnu/classpath/tools/giop/nameservice/PersistentContextMap.java
+%%DATADIR%%/tools/gnu/classpath/tools/giop/nameservice/PersistentMap.java
+%%DATADIR%%/tools/gnu/classpath/tools/rmi/RMIC.java
+%%DATADIR%%/tools/gnu/classpath/tools/rmi/RMIC.txt
+%%DATADIR%%/tools/gnu/classpath/tools/rmi/rmic/RmiMethodGenerator.java
+%%DATADIR%%/tools/gnu/classpath/tools/rmi/rmic/RmicCompiler.java
+%%DATADIR%%/tools/gnu/classpath/tools/rmi/rmic/WrapUnWrapper.java
+%%DATADIR%%/tools/gnu/classpath/tools/rmi/rmic/templates/Stub_12.jav
+%%DATADIR%%/tools/gnu/classpath/tools/rmi/rmic/templates/Stub_12Method.jav
+%%DATADIR%%/tools/gnu/classpath/tools/rmi/rmic/templates/Stub_12MethodVoid.jav
+%%DATADIR%%/tools/tools.zip
+@dirrm %%DATADIR%%/tools/gnu/classpath/tools/rmi/rmic/templates
+@dirrm %%DATADIR%%/tools/gnu/classpath/tools/rmi/rmic
+@dirrm %%DATADIR%%/tools/gnu/classpath/tools/rmi
+@dirrm %%DATADIR%%/tools/gnu/classpath/tools/giop/nameservice
+@dirrm %%DATADIR%%/tools/gnu/classpath/tools/giop/grmic/templates
+@dirrm %%DATADIR%%/tools/gnu/classpath/tools/giop/grmic
+@dirrm %%DATADIR%%/tools/gnu/classpath/tools/giop
+@dirrm %%DATADIR%%/tools/gnu/classpath/tools
+@dirrm %%DATADIR%%/tools/gnu/classpath
+@dirrm %%DATADIR%%/tools/gnu
+@dirrm %%DATADIR%%/tools
+@dirrm %%DATADIR%%/examples/gnu/classpath/examples/swing
+@dirrm %%DATADIR%%/examples/gnu/classpath/examples/midi
+@dirrm %%DATADIR%%/examples/gnu/classpath/examples/jawt
+@dirrm %%DATADIR%%/examples/gnu/classpath/examples/icons
+@dirrm %%DATADIR%%/examples/gnu/classpath/examples/html
+@dirrm %%DATADIR%%/examples/gnu/classpath/examples/datatransfer
+@dirrm %%DATADIR%%/examples/gnu/classpath/examples/awt
+@dirrm %%DATADIR%%/examples/gnu/classpath/examples/CORBA/swing/x5
+@dirrm %%DATADIR%%/examples/gnu/classpath/examples/CORBA/swing
+@dirrm %%DATADIR%%/examples/gnu/classpath/examples/CORBA/SimpleCommunication/communication
+@dirrm %%DATADIR%%/examples/gnu/classpath/examples/CORBA/SimpleCommunication
+@dirrm %%DATADIR%%/examples/gnu/classpath/examples/CORBA/NamingService
+@dirrm %%DATADIR%%/examples/gnu/classpath/examples/CORBA
+@dirrm %%DATADIR%%/examples/gnu/classpath/examples
+@dirrm %%DATADIR%%/examples/gnu/classpath
+@dirrm %%DATADIR%%/examples/gnu
+@dirrm %%DATADIR%%/examples
+@dirrm share/classpath
+@dirrm lib/security
+@dirrm lib/classpath
