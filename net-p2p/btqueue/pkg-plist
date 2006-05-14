@@ -116,9 +116,6 @@ bin/btshowmetainfo.py
 %%PYTHON_SITELIBDIR%%/BitTornado/BT1/FileSelector.py
 %%PYTHON_SITELIBDIR%%/BitTornado/BT1/FileSelector.pyc
 %%PYTHON_SITELIBDIR%%/BitTornado/BT1/FileSelector.pyo
-%%PYTHON_SITELIBDIR%%/BitTornado/BT1/Filter.py
-%%PYTHON_SITELIBDIR%%/BitTornado/BT1/Filter.pyc
-%%PYTHON_SITELIBDIR%%/BitTornado/BT1/Filter.pyo
 %%PYTHON_SITELIBDIR%%/BitTornado/BT1/HTTPDownloader.py
 %%PYTHON_SITELIBDIR%%/BitTornado/BT1/HTTPDownloader.pyc
 %%PYTHON_SITELIBDIR%%/BitTornado/BT1/HTTPDownloader.pyo
@@ -224,9 +221,6 @@ bin/btshowmetainfo.py
 %%PYTHON_SITELIBDIR%%/BitTornado/inifile.py
 %%PYTHON_SITELIBDIR%%/BitTornado/inifile.pyc
 %%PYTHON_SITELIBDIR%%/BitTornado/inifile.pyo
-%%PYTHON_SITELIBDIR%%/BitTornado/iprangeparse.py
-%%PYTHON_SITELIBDIR%%/BitTornado/iprangeparse.pyc
-%%PYTHON_SITELIBDIR%%/BitTornado/iprangeparse.pyo
 %%PYTHON_SITELIBDIR%%/BitTornado/launchmanycore.py
 %%PYTHON_SITELIBDIR%%/BitTornado/launchmanycore.pyc
 %%PYTHON_SITELIBDIR%%/BitTornado/launchmanycore.pyo
@@ -248,9 +242,6 @@ bin/btshowmetainfo.py
 %%PYTHON_SITELIBDIR%%/BitTornado/subnetparse.py
 %%PYTHON_SITELIBDIR%%/BitTornado/subnetparse.pyc
 %%PYTHON_SITELIBDIR%%/BitTornado/subnetparse.pyo
-%%PYTHON_SITELIBDIR%%/BitTornado/torrentlistparse.py
-%%PYTHON_SITELIBDIR%%/BitTornado/torrentlistparse.pyc
-%%PYTHON_SITELIBDIR%%/BitTornado/torrentlistparse.pyo
 %%PYTHON_SITELIBDIR%%/BitTornado/zurllib.py
 %%PYTHON_SITELIBDIR%%/BitTornado/zurllib.pyc
 %%PYTHON_SITELIBDIR%%/BitTornado/zurllib.pyo
