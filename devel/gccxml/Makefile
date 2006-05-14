@@ -40,8 +40,4 @@ do-configure:
 BROKEN=		"Build fails on alpha"
 .endif
 
-.if ${OSVERSION} >= 700000
-BROKEN=		"Configure needs updating"
-.endif
-
 .include <bsd.port.post.mk>
