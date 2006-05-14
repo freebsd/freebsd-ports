@@ -1,4 +1,0 @@
-ffsrecov is used to dump data out of the file system by specifing the raw
-inode.  It can also return information on a specific inode and list the
-contents of the directory.  It can also search through directories to find
-the inode numbers of files with a matching name.
