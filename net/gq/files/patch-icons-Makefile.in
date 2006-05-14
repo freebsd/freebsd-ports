@@ -1,0 +1,11 @@
+--- icons/Makefile.in.orig	Mon Apr 10 19:22:45 2006
++++ icons/Makefile.in	Wed Apr 19 10:26:21 2006
+@@ -193,7 +193,7 @@
+ 	warning.xpm
+ 
+ EXTRA_DIST = $(PIXMAPS)
+-pixmapdir = $(datadir)/pixmaps/gq
++pixmapdir = $(datadir)/gq
+ pixmap_DATA = $(PIXMAPS)
+ all: all-am
+ 
