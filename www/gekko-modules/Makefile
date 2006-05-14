@@ -7,6 +7,7 @@
 
 PORTNAME=	gekko-modules
 PORTVERSION=	0.6.4
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gekkoware
@@ -16,11 +17,11 @@ DIST_SUBDIR=	gekkoware
 MAINTAINER=	acardenas@bsd.org.pe
 COMMENT=	Gekko's modules
 
-RUN_DEPENDS=	${LOCALBASE}/www/data-dist/gekko/conf.php:${PORTSDIR}/www/gekko
+RUN_DEPENDS=	${LOCALBASE}/www/gekko/conf.php:${PORTSDIR}/www/gekko
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
-GEKKODIR?=	www/data-dist/gekko
+GEKKODIR?=	www/gekko
 PLIST_SUB=	GEKKODIR=${GEKKODIR}
 
 OPTIONS=	BACKUP	"Backup module"	on \
