@@ -88,7 +88,7 @@
 # The following is only of interest if you have enabled
 # WITHOUT_RUNTIME_CPUDETECTION
 # Further, the correct instruction set of your processor is normally
-# auto-detected, so there is probably no necissity to change them.
+# auto-detected, so there is probably no necessity to change them.
 #
 # WITHOUT_MMX
 # default: autodetected
@@ -230,10 +230,10 @@
 # default: autodetect
 #
 # WITH_LIVEMEDIA
-# default: autotedect
+# default: autodetect
 #
 # WITH_MATROSKA
-# default: autotedect
+# default: autodetect
 #
 # WITH_XVID
 # default: autodetect
