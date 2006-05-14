@@ -1,10 +1,10 @@
 bin/tcshrc_config
-share/tcshrc/tcshrc
-share/tcshrc/tcshrc.alias
-share/tcshrc/tcshrc.bindkey
-share/tcshrc/tcshrc.complete
-share/tcshrc/tcshrc.hosts
-share/tcshrc/tcshrc.local
-share/tcshrc/tcshrc.set
-share/tcshrc/README.txt
-@dirrm share/tcshrc
+%%DATADIR%%/tcshrc
+%%DATADIR%%/tcshrc.alias
+%%DATADIR%%/tcshrc.bindkey
+%%DATADIR%%/tcshrc.complete
+%%DATADIR%%/tcshrc.hosts
+%%DATADIR%%/tcshrc.local
+%%DATADIR%%/tcshrc.set
+%%DATADIR%%/README.txt
+@dirrm %%DATADIR%%
