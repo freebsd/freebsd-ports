@@ -697,4 +697,3 @@
 @dirrm %%GEKKODIR%%/templates/default
 @dirrm %%GEKKODIR%%/templates
 @dirrmtry %%GEKKODIR%%
-@dirrmtry www/data-dist
