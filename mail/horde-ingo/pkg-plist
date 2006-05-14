@@ -15,6 +15,7 @@
 %%INGODIR%%/filters.php
 %%INGODIR%%/forward.php
 %%INGODIR%%/index.php
+%%INGODIR%%/js/stripe.js
 %%INGODIR%%/lib/Block/overview.php
 %%INGODIR%%/lib/Driver.php
 %%INGODIR%%/lib/Driver/ldap.php
@@ -39,8 +40,10 @@
 %%INGODIR%%/locale/de_DE/LC_MESSAGES/ingo.mo
 %%INGODIR%%/locale/de_DE/help.xml
 %%INGODIR%%/locale/en_US/help.xml
+%%INGODIR%%/locale/el_GR/LC_MESSAGES/ingo.mo
 %%INGODIR%%/locale/es_ES/LC_MESSAGES/ingo.mo
 %%INGODIR%%/locale/es_ES/help.xml
+%%INGODIR%%/locale/et_EE/LC_MESSAGES/ingo.mo
 %%INGODIR%%/locale/fi_FI/LC_MESSAGES/ingo.mo
 %%INGODIR%%/locale/fi_FI/help.xml
 %%INGODIR%%/locale/fr_FR/LC_MESSAGES/ingo.mo
@@ -63,7 +66,9 @@
 %%INGODIR%%/po/cs_CZ.po
 %%INGODIR%%/po/da_DK.po
 %%INGODIR%%/po/de_DE.po
+%%INGODIR%%/po/el_GR.po
 %%INGODIR%%/po/es_ES.po
+%%INGODIR%%/po/et_EE.po
 %%INGODIR%%/po/fi_FI.po
 %%INGODIR%%/po/fr_FR.po
 %%INGODIR%%/po/hu_HU.po
@@ -91,7 +96,6 @@
 %%INGODIR%%/templates/filters/filter.html
 %%INGODIR%%/templates/filters/footer.inc
 %%INGODIR%%/templates/filters/header.inc
-%%INGODIR%%/templates/filters/javascript.inc
 %%INGODIR%%/templates/filters/settings.inc
 %%INGODIR%%/templates/forward/forward.inc
 %%INGODIR%%/templates/javascript/new_folder.js
@@ -165,9 +169,13 @@
 @dirrm %%INGODIR%%/locale/fr_FR
 @dirrm %%INGODIR%%/locale/fi_FI/LC_MESSAGES
 @dirrm %%INGODIR%%/locale/fi_FI
+@dirrm %%INGODIR%%/locale/et_EE/LC_MESSAGES
+@dirrm %%INGODIR%%/locale/et_EE
 @dirrm %%INGODIR%%/locale/es_ES/LC_MESSAGES
 @dirrm %%INGODIR%%/locale/es_ES
 @dirrm %%INGODIR%%/locale/en_US
+@dirrm %%INGODIR%%/locale/el_GR/LC_MESSAGES
+@dirrm %%INGODIR%%/locale/el_GR
 @dirrm %%INGODIR%%/locale/de_DE/LC_MESSAGES
 @dirrm %%INGODIR%%/locale/de_DE
 @dirrm %%INGODIR%%/locale/da_DK/LC_MESSAGES
@@ -175,6 +183,7 @@
 @dirrm %%INGODIR%%/locale/cs_CZ/LC_MESSAGES
 @dirrm %%INGODIR%%/locale/cs_CZ
 @dirrm %%INGODIR%%/locale
+@dirrm %%INGODIR%%/js
 @dirrm %%INGODIR%%/lib/Storage
 @dirrm %%INGODIR%%/lib/Script
 @dirrm %%INGODIR%%/lib/IMAP

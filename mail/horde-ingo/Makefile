@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ingo
-PORTVERSION=	1.1
-PORTREVISION=	1
+PORTVERSION=	1.1.1
 CATEGORIES=	mail www
 MASTER_SITES=	ftp://ftp.horde.org/pub/ingo/				\
 		ftp://ftp.planetmirror.com/pub/horde/ingo/		\
@@ -46,7 +45,7 @@ SUB_LIST=	INGODIR=${INGODIR}
 DOCS=		LICENSE README docs/CHANGES docs/CREDITS docs/INSTALL	\
 		docs/RELEASE_NOTES docs/TODO
 CONFFILE=	backends.php fields.php prefs.php
-SUB_DIRS=	config lib locale po scripts templates themes
+SUB_DIRS=	config lib locale po scripts templates themes js
 
 LHORDEDIR?=	www/horde
 LINGODIR=	${LHORDEDIR}/ingo
