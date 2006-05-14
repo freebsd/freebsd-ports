@@ -1,4 +1,4 @@
-# New ports collection makefile for: zope-zwiki
+# New ports collection makefile for:	zope-zwiki
 # Date created:		11 May 2001
 # Whom:			Johann Visagie <johann@egenetics.com>
 #
@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zwiki
-PORTVERSION=	0.51.0
+PORTVERSION=	0.53.0
 CATEGORIES=	www zope
 MASTER_SITES=	http://zwiki.org/releases/
 PKGNAMEPREFIX=	zope-
@@ -25,11 +25,11 @@ ZOPEPRODUCTNAME=	ZWiki
 WRKSRC=		${WRKDIR}/${ZOPEPRODUCTNAME}
 
 do-build:
-	-@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py -x "tools/" ${WRKSRC}
+	-@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
+	@${CHMOD} -R og+rX ${WRKSRC}/
 
 do-install:
 	@${MKDIR} ${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/
-	@${CHMOD} -R og+rX ${WRKSRC}/
 	@${CP} -R ${WRKSRC} ${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/
 
 post-install:

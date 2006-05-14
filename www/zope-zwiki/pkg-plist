@@ -11,10 +11,10 @@
 %%ZOPEPRODUCTDIR%%/ZWiki/CMF_tests.py
 %%ZOPEPRODUCTDIR%%/ZWiki/CMF_tests.pyc
 %%ZOPEPRODUCTDIR%%/ZWiki/CONTRIBUTORS.txt
-%%ZOPEPRODUCTDIR%%/ZWiki/CatalogAwareness.py
-%%ZOPEPRODUCTDIR%%/ZWiki/CatalogAwareness.pyc
-%%ZOPEPRODUCTDIR%%/ZWiki/CatalogAwareness_tests.py
-%%ZOPEPRODUCTDIR%%/ZWiki/CatalogAwareness_tests.pyc
+%%ZOPEPRODUCTDIR%%/ZWiki/Catalog.py
+%%ZOPEPRODUCTDIR%%/ZWiki/Catalog.pyc
+%%ZOPEPRODUCTDIR%%/ZWiki/Catalog_tests.py
+%%ZOPEPRODUCTDIR%%/ZWiki/Catalog_tests.pyc
 %%ZOPEPRODUCTDIR%%/ZWiki/Comments.py
 %%ZOPEPRODUCTDIR%%/ZWiki/Comments.pyc
 %%ZOPEPRODUCTDIR%%/ZWiki/Comments_tests.py
@@ -41,8 +41,8 @@
 %%ZOPEPRODUCTDIR%%/ZWiki/Extensions/mailin_tests.py
 %%ZOPEPRODUCTDIR%%/ZWiki/Extensions/mailin_tests.pyc
 %%ZOPEPRODUCTDIR%%/ZWiki/GPL.txt
-%%ZOPEPRODUCTDIR%%/ZWiki/I18nSupport.py
-%%ZOPEPRODUCTDIR%%/ZWiki/I18nSupport.pyc
+%%ZOPEPRODUCTDIR%%/ZWiki/I18n.py
+%%ZOPEPRODUCTDIR%%/ZWiki/I18n.pyc
 %%ZOPEPRODUCTDIR%%/ZWiki/I18n_tests.py
 %%ZOPEPRODUCTDIR%%/ZWiki/I18n_tests.pyc
 %%ZOPEPRODUCTDIR%%/ZWiki/LICENSE.txt
@@ -69,24 +69,25 @@
 %%ZOPEPRODUCTDIR%%/ZWiki/RSS.pyc
 %%ZOPEPRODUCTDIR%%/ZWiki/Regexps.py
 %%ZOPEPRODUCTDIR%%/ZWiki/Regexps.pyc
+%%ZOPEPRODUCTDIR%%/ZWiki/TODO.txt
 %%ZOPEPRODUCTDIR%%/ZWiki/TextFormatter.py
 %%ZOPEPRODUCTDIR%%/ZWiki/TextFormatter.pyc
-%%ZOPEPRODUCTDIR%%/ZWiki/UI.py
-%%ZOPEPRODUCTDIR%%/ZWiki/UI.pyc
-%%ZOPEPRODUCTDIR%%/ZWiki/UI_tests.py
-%%ZOPEPRODUCTDIR%%/ZWiki/UI_tests.pyc
 %%ZOPEPRODUCTDIR%%/ZWiki/Utils.py
 %%ZOPEPRODUCTDIR%%/ZWiki/Utils.pyc
 %%ZOPEPRODUCTDIR%%/ZWiki/Utils_tests.py
 %%ZOPEPRODUCTDIR%%/ZWiki/Utils_tests.pyc
+%%ZOPEPRODUCTDIR%%/ZWiki/Views.py
+%%ZOPEPRODUCTDIR%%/ZWiki/Views.pyc
+%%ZOPEPRODUCTDIR%%/ZWiki/Views_tests.py
+%%ZOPEPRODUCTDIR%%/ZWiki/Views_tests.pyc
+%%ZOPEPRODUCTDIR%%/ZWiki/Wikis.py
+%%ZOPEPRODUCTDIR%%/ZWiki/Wikis.pyc
+%%ZOPEPRODUCTDIR%%/ZWiki/Wikis_tests.py
+%%ZOPEPRODUCTDIR%%/ZWiki/Wikis_tests.pyc
 %%ZOPEPRODUCTDIR%%/ZWiki/ZWikiPage.py
 %%ZOPEPRODUCTDIR%%/ZWiki/ZWikiPage.pyc
 %%ZOPEPRODUCTDIR%%/ZWiki/ZWikiPage_tests.py
 %%ZOPEPRODUCTDIR%%/ZWiki/ZWikiPage_tests.pyc
-%%ZOPEPRODUCTDIR%%/ZWiki/ZWikiWeb.py
-%%ZOPEPRODUCTDIR%%/ZWiki/ZWikiWeb.pyc
-%%ZOPEPRODUCTDIR%%/ZWiki/ZWikiWeb_tests.py
-%%ZOPEPRODUCTDIR%%/ZWiki/ZWikiWeb_tests.pyc
 %%ZOPEPRODUCTDIR%%/ZWiki/__init__.py
 %%ZOPEPRODUCTDIR%%/ZWiki/__init__.pyc
 %%ZOPEPRODUCTDIR%%/ZWiki/ftests/curltest.py
@@ -95,51 +96,49 @@
 %%ZOPEPRODUCTDIR%%/ZWiki/ftests/test_plone_zwiki_org.pyc
 %%ZOPEPRODUCTDIR%%/ZWiki/ftests/test_zwiki_org.py
 %%ZOPEPRODUCTDIR%%/ZWiki/ftests/test_zwiki_org.pyc
-%%ZOPEPRODUCTDIR%%/ZWiki/i18n/zwiki-af.po
-%%ZOPEPRODUCTDIR%%/ZWiki/i18n/zwiki-ar.po
-%%ZOPEPRODUCTDIR%%/ZWiki/i18n/zwiki-de.po
-%%ZOPEPRODUCTDIR%%/ZWiki/i18n/zwiki-en_GB.po
-%%ZOPEPRODUCTDIR%%/ZWiki/i18n/zwiki-es.po
-%%ZOPEPRODUCTDIR%%/ZWiki/i18n/zwiki-et.po
-%%ZOPEPRODUCTDIR%%/ZWiki/i18n/zwiki-fi.po
-%%ZOPEPRODUCTDIR%%/ZWiki/i18n/zwiki-fr.po
-%%ZOPEPRODUCTDIR%%/ZWiki/i18n/zwiki-he.po
-%%ZOPEPRODUCTDIR%%/ZWiki/i18n/zwiki-hu.po
-%%ZOPEPRODUCTDIR%%/ZWiki/i18n/zwiki-it.po
-%%ZOPEPRODUCTDIR%%/ZWiki/i18n/zwiki-ja.po
+%%ZOPEPRODUCTDIR%%/ZWiki/i18n/af.po
+%%ZOPEPRODUCTDIR%%/ZWiki/i18n/ar.po
+%%ZOPEPRODUCTDIR%%/ZWiki/i18n/de.po
+%%ZOPEPRODUCTDIR%%/ZWiki/i18n/en_GB.po
+%%ZOPEPRODUCTDIR%%/ZWiki/i18n/es.po
+%%ZOPEPRODUCTDIR%%/ZWiki/i18n/et.po
+%%ZOPEPRODUCTDIR%%/ZWiki/i18n/fi.po
+%%ZOPEPRODUCTDIR%%/ZWiki/i18n/fr.po
+%%ZOPEPRODUCTDIR%%/ZWiki/i18n/he.po
+%%ZOPEPRODUCTDIR%%/ZWiki/i18n/hu.po
+%%ZOPEPRODUCTDIR%%/ZWiki/i18n/it.po
+%%ZOPEPRODUCTDIR%%/ZWiki/i18n/ja.po
+%%ZOPEPRODUCTDIR%%/ZWiki/i18n/nl.po
+%%ZOPEPRODUCTDIR%%/ZWiki/i18n/pl.po
+%%ZOPEPRODUCTDIR%%/ZWiki/i18n/plone-de.po
+%%ZOPEPRODUCTDIR%%/ZWiki/i18n/plone-es.po
+%%ZOPEPRODUCTDIR%%/ZWiki/i18n/plone-fi.po
+%%ZOPEPRODUCTDIR%%/ZWiki/i18n/plone-fr.po
+%%ZOPEPRODUCTDIR%%/ZWiki/i18n/plone-he.po
+%%ZOPEPRODUCTDIR%%/ZWiki/i18n/plone-hu.po
+%%ZOPEPRODUCTDIR%%/ZWiki/i18n/plone-it.po
+%%ZOPEPRODUCTDIR%%/ZWiki/i18n/plone-ja.po
+%%ZOPEPRODUCTDIR%%/ZWiki/i18n/plone-nl.po
+%%ZOPEPRODUCTDIR%%/ZWiki/i18n/plone-pl.po
+%%ZOPEPRODUCTDIR%%/ZWiki/i18n/plone-pt.po
+%%ZOPEPRODUCTDIR%%/ZWiki/i18n/plone-pt_BR.po
+%%ZOPEPRODUCTDIR%%/ZWiki/i18n/plone-ru.po
+%%ZOPEPRODUCTDIR%%/ZWiki/i18n/plone-sv.po
+%%ZOPEPRODUCTDIR%%/ZWiki/i18n/plone-tr.po
+%%ZOPEPRODUCTDIR%%/ZWiki/i18n/plone-zh_CN.po
+%%ZOPEPRODUCTDIR%%/ZWiki/i18n/plone-zh_TW.po
+%%ZOPEPRODUCTDIR%%/ZWiki/i18n/pt.po
+%%ZOPEPRODUCTDIR%%/ZWiki/i18n/pt_BR.po
+%%ZOPEPRODUCTDIR%%/ZWiki/i18n/ro.po
+%%ZOPEPRODUCTDIR%%/ZWiki/i18n/ru.po
+%%ZOPEPRODUCTDIR%%/ZWiki/i18n/sv.po
+%%ZOPEPRODUCTDIR%%/ZWiki/i18n/th.po
+%%ZOPEPRODUCTDIR%%/ZWiki/i18n/tr.po
+%%ZOPEPRODUCTDIR%%/ZWiki/i18n/zh_CN.po
+%%ZOPEPRODUCTDIR%%/ZWiki/i18n/zh_TW.po
 %%ZOPEPRODUCTDIR%%/ZWiki/i18n/zwiki-manual.pot
-%%ZOPEPRODUCTDIR%%/ZWiki/i18n/zwiki-nl.po
-%%ZOPEPRODUCTDIR%%/ZWiki/i18n/zwiki-pl.po
-%%ZOPEPRODUCTDIR%%/ZWiki/i18n/zwiki-plone-de.po
-%%ZOPEPRODUCTDIR%%/ZWiki/i18n/zwiki-plone-es.po
-%%ZOPEPRODUCTDIR%%/ZWiki/i18n/zwiki-plone-fi.po
-%%ZOPEPRODUCTDIR%%/ZWiki/i18n/zwiki-plone-fr.po
-%%ZOPEPRODUCTDIR%%/ZWiki/i18n/zwiki-plone-he.po
-%%ZOPEPRODUCTDIR%%/ZWiki/i18n/zwiki-plone-hu.po
-%%ZOPEPRODUCTDIR%%/ZWiki/i18n/zwiki-plone-it.po
-%%ZOPEPRODUCTDIR%%/ZWiki/i18n/zwiki-plone-ja.po
-%%ZOPEPRODUCTDIR%%/ZWiki/i18n/zwiki-plone-nl.po
-%%ZOPEPRODUCTDIR%%/ZWiki/i18n/zwiki-plone-pl.po
-%%ZOPEPRODUCTDIR%%/ZWiki/i18n/zwiki-plone-pt.po
-%%ZOPEPRODUCTDIR%%/ZWiki/i18n/zwiki-plone-pt_BR.po
-%%ZOPEPRODUCTDIR%%/ZWiki/i18n/zwiki-plone-ru.po
-%%ZOPEPRODUCTDIR%%/ZWiki/i18n/zwiki-plone-sv.po
-%%ZOPEPRODUCTDIR%%/ZWiki/i18n/zwiki-plone-tr.po
-%%ZOPEPRODUCTDIR%%/ZWiki/i18n/zwiki-plone-zh_CN.po
-%%ZOPEPRODUCTDIR%%/ZWiki/i18n/zwiki-plone-zh_TW.po
 %%ZOPEPRODUCTDIR%%/ZWiki/i18n/zwiki-plone.pot
-%%ZOPEPRODUCTDIR%%/ZWiki/i18n/zwiki-pt.po
-%%ZOPEPRODUCTDIR%%/ZWiki/i18n/zwiki-pt_BR.po
-%%ZOPEPRODUCTDIR%%/ZWiki/i18n/zwiki-ro.po
-%%ZOPEPRODUCTDIR%%/ZWiki/i18n/zwiki-ru.po
-%%ZOPEPRODUCTDIR%%/ZWiki/i18n/zwiki-sv.po
-%%ZOPEPRODUCTDIR%%/ZWiki/i18n/zwiki-tr.po
-%%ZOPEPRODUCTDIR%%/ZWiki/i18n/zwiki-zh_CN.po
-%%ZOPEPRODUCTDIR%%/ZWiki/i18n/zwiki-zh_TW.po
 %%ZOPEPRODUCTDIR%%/ZWiki/i18n/zwiki.pot
-%%ZOPEPRODUCTDIR%%/ZWiki/images/ZWikiPage_icon.gif
-%%ZOPEPRODUCTDIR%%/ZWiki/images/blank_star.png
-%%ZOPEPRODUCTDIR%%/ZWiki/images/star.png
 %%ZOPEPRODUCTDIR%%/ZWiki/pagetypes/__init__.py
 %%ZOPEPRODUCTDIR%%/ZWiki/pagetypes/__init__.pyc
 %%ZOPEPRODUCTDIR%%/ZWiki/pagetypes/common.py
@@ -188,12 +187,9 @@
 %%ZOPEPRODUCTDIR%%/ZWiki/plugins/tracker/__init__.py
 %%ZOPEPRODUCTDIR%%/ZWiki/plugins/tracker/__init__.pyc
 %%ZOPEPRODUCTDIR%%/ZWiki/plugins/tracker/filterissues.pt
-%%ZOPEPRODUCTDIR%%/ZWiki/plugins/tracker/filterissues_plone.pt
 %%ZOPEPRODUCTDIR%%/ZWiki/plugins/tracker/issuebrowser.pt
-%%ZOPEPRODUCTDIR%%/ZWiki/plugins/tracker/issuebrowser_plone.pt
 %%ZOPEPRODUCTDIR%%/ZWiki/plugins/tracker/issuepropertiesform.dtml
 %%ZOPEPRODUCTDIR%%/ZWiki/plugins/tracker/issuetracker.pt
-%%ZOPEPRODUCTDIR%%/ZWiki/plugins/tracker/issuetracker_plone.pt
 %%ZOPEPRODUCTDIR%%/ZWiki/plugins/tracker/tracker.py
 %%ZOPEPRODUCTDIR%%/ZWiki/plugins/tracker/tracker.pyc
 %%ZOPEPRODUCTDIR%%/ZWiki/plugins/tracker/tracker_tests.py
@@ -205,41 +201,47 @@
 %%ZOPEPRODUCTDIR%%/ZWiki/scripts/toc.py
 %%ZOPEPRODUCTDIR%%/ZWiki/scripts/view_source.dtml
 %%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_plone/README
-%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_plone/backlinks.pt
-%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_plone/contentspage.pt
-%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_plone/diffform.pt
-%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_plone/editform.pt
-%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_plone/recentchanges.pt
-%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_plone/searchwiki.pt
-%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_plone/subscribeform.pt
-%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_plone/useroptions.pt
-%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_plone/wikipage.pt
-%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_plone/wikipage_icon.gif
 %%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_standard/README
 %%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_standard/RecentChanges.dtml
 %%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_standard/SearchPage.dtml
 %%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_standard/UserOptions.dtml
+%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_standard/accesskeys.pt
 %%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_standard/addwikiform.dtml
 %%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_standard/addwikipageform.dtml
 %%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_standard/backlinks.pt
 %%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_standard/badtemplate.pt
+%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_standard/blank_star.png
+%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_standard/commentform.pt
+%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_standard/content.pt
 %%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_standard/contentspage.pt
 %%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_standard/denied.pt
 %%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_standard/diffform.pt
 %%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_standard/editform.pt
+%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_standard/head.pt
+%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_standard/hierarchylinks.pt
+%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_standard/links.pt
+%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_standard/maintemplate.pt
+%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_standard/pageheader.pt
+%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_standard/pagemanagementform.pt
 %%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_standard/recentchanges.pt
 %%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_standard/searchwiki.pt
+%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_standard/siteheader.pt
+%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_standard/star.png
 %%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_standard/stylesheet.css
 %%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_standard/subscribeform.pt
 %%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_standard/subtopics_board.dtml
 %%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_standard/subtopics_outline.dtml
 %%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_standard/useroptions.pt
 %%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_standard/wikipage.pt
+%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_standard/wikipage_icon.gif
+%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_standard/wikipage_plone_icon.gif
 %%ZOPEPRODUCTDIR%%/ZWiki/testsupport.py
 %%ZOPEPRODUCTDIR%%/ZWiki/testsupport.pyc
 %%ZOPEPRODUCTDIR%%/ZWiki/tools/README
 %%ZOPEPRODUCTDIR%%/ZWiki/tools/zwikiexport.py
+%%ZOPEPRODUCTDIR%%/ZWiki/tools/zwikiexport.pyc
 %%ZOPEPRODUCTDIR%%/ZWiki/tools/zwikiimport.py
+%%ZOPEPRODUCTDIR%%/ZWiki/tools/zwikiimport.pyc
 %%ZOPEPRODUCTDIR%%/ZWiki/version.txt
 %%ZOPEPRODUCTDIR%%/ZWiki/wikis/basic/FrontPage.stx
 %%ZOPEPRODUCTDIR%%/ZWiki/wikis/basic/HelpPage.stx
@@ -247,19 +249,19 @@
 %%ZOPEPRODUCTDIR%%/ZWiki/wikis/basic/ZWiki.stx
 %%ZOPEPRODUCTDIR%%/ZWiki/wikis/basic/index_html.dtml
 %%ZOPEPRODUCTDIR%%/ZWiki/wikis/basic/standard_error_message.dtml
-@dirrm %%ZOPEPRODUCTDIR%%/ZWiki/Extensions
-@dirrm %%ZOPEPRODUCTDIR%%/ZWiki/ftests
-@dirrm %%ZOPEPRODUCTDIR%%/ZWiki/i18n
-@dirrm %%ZOPEPRODUCTDIR%%/ZWiki/images
 @dirrm %%ZOPEPRODUCTDIR%%/ZWiki/pagetypes
-@dirrm %%ZOPEPRODUCTDIR%%/ZWiki/plugins/rating
-@dirrm %%ZOPEPRODUCTDIR%%/ZWiki/plugins/tracker
-@dirrm %%ZOPEPRODUCTDIR%%/ZWiki/plugins
 @dirrm %%ZOPEPRODUCTDIR%%/ZWiki/scripts
+@dirrm %%ZOPEPRODUCTDIR%%/ZWiki/i18n
 @dirrm %%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_plone
 @dirrm %%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_standard
 @dirrm %%ZOPEPRODUCTDIR%%/ZWiki/skins
-@dirrm %%ZOPEPRODUCTDIR%%/ZWiki/tools
+@dirrm %%ZOPEPRODUCTDIR%%/ZWiki/Extensions
+@dirrm %%ZOPEPRODUCTDIR%%/ZWiki/plugins/rating
+@dirrm %%ZOPEPRODUCTDIR%%/ZWiki/plugins/tracker
+@dirrm %%ZOPEPRODUCTDIR%%/ZWiki/plugins
 @dirrm %%ZOPEPRODUCTDIR%%/ZWiki/wikis/basic
 @dirrm %%ZOPEPRODUCTDIR%%/ZWiki/wikis
+@dirrm %%ZOPEPRODUCTDIR%%/ZWiki/ftests
+@dirrm %%ZOPEPRODUCTDIR%%/ZWiki/tools
 @dirrm %%ZOPEPRODUCTDIR%%/ZWiki
+@dirrmtry %%ZOPEPRODUCTDIR%%
