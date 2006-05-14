@@ -44,7 +44,6 @@ SUB_LIST=	\
 		APP_HOME=${APP_HOME} \
 		APP_NAME=${APP_NAME} \
 		RC_SUBR=${RC_SUBR} \
-		PREFIX=${PREFIX} \
 		PORT=${PORT} \
 		COCOON_LIB=${COCOON_LIB} \
 		JAVA_HOME=${JAVA_HOME} \
@@ -62,6 +61,7 @@ SUB_FILES=	\
 		pkg-deinstall \
 		${APP_NAME}ctl \
 		${APP_NAME}.sh \
+		upstreams-cocoon.sh \
 		pkg-message
 
 # Load options (before including bsd.port.pre.mk)
@@ -126,9 +126,9 @@ do-install:
 	@${ECHO_MSG} "===> Installing ${COPYDIRS}"
 	@${MKDIR} ${APP_HOME}
 	@cd ${WRKSRC} && ${FIND} -H ${COPYDIRS} | ${CPIO} -pdmuL -R ${LIBOWN}:${LIBGRP} ${APP_HOME}
+	@${INSTALL} ${WRKDIR}/upstreams-cocoon.sh ${APP_HOME}/cocoon.sh
 
 	@${ECHO_MSG} "===> Installing into ${PREFIX}/sbin"
-	@${INSTALL_SCRIPT} ${WRKDIR}/${APP_NAME}.sh ${PREFIX}/sbin
 	@${INSTALL_SCRIPT} ${WRKDIR}/${APP_NAME}ctl ${PREFIX}/sbin
 
 	@${ECHO_MSG} "===> Installing ${PREFIX}/etc/rc.d/${APP_NAME}.sh"

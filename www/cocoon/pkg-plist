@@ -1,5 +1,6 @@
 @comment $FreeBSD$
 sbin/cocoonctl
 etc/rc.d/cocoon.sh
+cocoon/cocoon.sh
 @dirrm cocoon/tools
 @dirrm cocoon

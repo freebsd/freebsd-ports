@@ -140,7 +140,7 @@ if __name__ == '__main__':
     APP_NAME = "%%APP_NAME%%"
     APP_HOME = "%%APP_HOME%%"
     PID_FILE = "%%PID_FILE%%"
-    COMMAND = "%%PREFIX%%/sbin/%%APP_NAME%%.sh"
+    COMMAND = "%%APP_HOME%%/cocoon.sh"
     os.environ["JAVA_OPTIONS"] = " ".join(sys.argv[1:-1])
     ARGS = [COMMAND, "servlet"]
 
