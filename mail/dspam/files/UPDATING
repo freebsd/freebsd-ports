@@ -17,6 +17,18 @@ in the port directory:
 make extract;  more `find . -type f -maxdepth 2 -name UPGRADING`
 
 ###########################################################################
+# dspam-3.6.6
+#
+
+Removed feature:
+- Phased out deprecated Berkeley DB drivers
+- Phased out legacy tools (dspam_corpus, dspam_genaliases)
+Bugfixes:
+- trainPristine preference turned "off" now overrides config turned "on"
+- segfault fix for when correcting messages using UIDInSignature with MySQL
+- when using logfile, write errors result in segfault
+
+###########################################################################
 # dspam-3.6.5
 #
 
