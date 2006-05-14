@@ -107,6 +107,7 @@
     SUBDIR += ipa-ttfonts
     SUBDIR += ipadic
     SUBDIR += ircII
+    SUBDIR += ja6
     SUBDIR += jadetex-ptex
     SUBDIR += japaneseAFM
     SUBDIR += jargon-fpw
