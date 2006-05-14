@@ -1,14 +1,11 @@
-
-$FreeBSD$
-
---- mDNSPosix/Makefile.orig
-+++ mDNSPosix/Makefile
-@@ -369,7 +369,7 @@
+--- mDNSPosix/Makefile.orig	Fri Mar 10 14:35:15 2006
++++ mDNSPosix/Makefile	Fri Mar 10 14:35:31 2006
+@@ -407,7 +407,7 @@
  
- all: setup Daemon libdns_sd Client Responder ProxyResponder Identify NetMonitor dnsextd $(OPTIONALTARG)
+ all: setup Daemon libdns_sd Clients SAClient SAResponder SAProxyResponder Identify NetMonitor dnsextd $(OPTIONALTARG)
  
--install: setup InstalledDaemon InstalledLib InstalledStartup InstalledManPages $(OPTINSTALL)
-+install: setup InstalledDaemon InstalledLib InstalledManPages $(OPTINSTALL)
+-install: setup InstalledDaemon InstalledStartup InstalledLib InstalledManPages InstalledClients $(OPTINSTALL)
++install: setup InstalledDaemon InstalledLib InstalledManPages InstalledClients $(OPTINSTALL)
  
  # 'setup' sets up the build directory structure the way we want
  setup:
