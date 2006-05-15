@@ -1,6 +1,0 @@
-@comment $FreeBSD$
-bin/dbd
-bin/j2d
-bin/jday
-include/jday.h
-lib/libjday.a
