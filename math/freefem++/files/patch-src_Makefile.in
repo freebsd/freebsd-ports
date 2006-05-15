@@ -1,13 +1,13 @@
---- src/Makefile.in.orig	Tue Apr 11 23:08:53 2006
-+++ src/Makefile.in	Tue Apr 11 23:58:23 2006
-@@ -208,8 +208,9 @@
- sharedstatedir = @sharedstatedir@
- sysconfdir = @sysconfdir@
- target_alias = @target_alias@
+--- src/Makefile.in.orig	Mon May 15 19:03:38 2006
++++ src/Makefile.in	Mon May 15 21:13:28 2006
+@@ -150,8 +150,9 @@
+ ff_wget = @ff_wget@
+ install_sh = @install_sh@
+ 
 +# FreeBSD patch: don't install bamg, which is available as math/bamg
  SUBDIRS = bamglib femlib iml Graphics Algo umfpack lglib fflib std x11	\
 -nw mpi agl glx ide bamg bin-win32 
-+nw mpi agl glx ide bin-win32
++nw mpi agl glx ide bin-win32 
  
  EXTRA_DIST = FreeFem++-CoCoa Carbon.r
- all: all-recursive
+ subdir = src
