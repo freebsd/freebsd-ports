@@ -1,0 +1,11 @@
+--- mod_auth_mysql.c.orig	Mon May 15 15:19:50 2006
++++ mod_auth_mysql.c	Mon May 15 15:20:06 2006
+@@ -206,7 +206,7 @@
+   #define SNPRINTF apr_snprintf
+   #define PSTRDUP apr_pstrdup
+   #define PSTRNDUP apr_pstrndup
+-  #define STRCAT ap_pstrcat
++  #define STRCAT apr_pstrcat
+   #define POOL apr_pool_t
+   #include "http_request.h"   /* for ap_hook_(check_user_id | auth_checker)*/
+   #include "ap_compat.h"
