@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	pgpool
-PORTVERSION=	2.6.3
-PORTREVISION=	1
+PORTVERSION=	3.0.1
 CATEGORIES=	databases
-MASTER_SITES=	http://pgfoundry.org/frs/download.php/426/
+MASTER_SITES=	http://pgfoundry.org/frs/download.php/733/
 
 MAINTAINER=	whitekid@gmail.com
 COMMENT=	A connection pool server for PostgreSQL
@@ -20,6 +19,8 @@ GNU_CONFIGURE=	yes
 USE_RC_SUBR=	pgpool
 
 PORTDOCS=	README AUTHORS COPYING ChangeLog INSTALL NEWS TODO README.euc_jp
+
+MAN8=		pgpool.8
 
 post-install:
 .if !defined(NOPORTDOCS)

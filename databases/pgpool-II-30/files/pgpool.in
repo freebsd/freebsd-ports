@@ -13,6 +13,7 @@
 #				Set it to YES to enable pgpool.
 # pgpool_conf (file):		Set location of your config.
 #				Default is "%%PREFIX%%/etc/pgpool.conf"
+# pgpool_user (uid):		User ID to run as (default nobody)
 #
 
 . %%RC_SUBR%%
@@ -24,6 +25,7 @@ load_rc_config $name
 
 : ${pgpool_enable="NO"}
 : ${pgpool_conf="%%PREFIX%%/etc/pgpool.conf"}
+: ${pgpool_user="nobody"}
 
 command="%%PREFIX%%/bin/pgpool"
 command_args="-f ${pgpool_conf}"
