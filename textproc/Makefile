@@ -425,6 +425,7 @@
     SUBDIR += p5-String-Strip
     SUBDIR += p5-String-Tokenizer
     SUBDIR += p5-Syntax-Highlight-Perl-Improved
+    SUBDIR += p5-TeX-Encode
     SUBDIR += p5-TeX-Hyphen
     SUBDIR += p5-Template-Extract
     SUBDIR += p5-Template-Magic
