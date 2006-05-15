@@ -7,8 +7,7 @@
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Net/Multicast/
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Net
-www/beacon-%%VERSION%%/beacon
-@dirrm www/beacon-%%VERSION%%
+bin/beacon
 etc/beacon.conf.sample
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
