@@ -1,0 +1,14 @@
+TwistedSNMP is a set of SNMP protocol implementations for Python's
+Twisted Matrix networking framework using the PySNMP project. It
+provides the following:
+ * get, set, getnext and getbulk Manager-side queries
+ * get, set, getnext and getbulk Agent-side services
+
+Eventual goals of the system:
+ * provide access to all v1 and v2 SNMP functionality for writing
+   Agent and Manager services
+ * provide convenient testing mechanisms for SNMP Agent/Manager
+   development (e.g. mirroring an SNMP Agent's OID tree for local
+   query testing)
+
+WWW: http://twistedsnmp.sourceforge.net/
