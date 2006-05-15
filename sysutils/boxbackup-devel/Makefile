@@ -9,7 +9,7 @@ PORTNAME=	boxbackup
 PORTVERSION=	0.10
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITE_SUBDIR=${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	james@netinertia.co.uk
@@ -19,6 +19,8 @@ USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 USE_PERL5=	yes
 USE_GCC=	3.2+
+USE_AUTOTOOLS=	autoconf:259 aclocal:19 autoheader:259
+ACLOCAL_ARGS+=	-I ${WRKSRC}/infrastructure/m4
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
@@ -32,30 +34,31 @@ OPTIONS=	CLIENT "Install the bbackupd client" On \
 TARGETOS!=	${ECHO_CMD} `${UNAME} -s``${UNAME} -r | ${SED} -e 's/[-(].*//'` | ${TR} A-Z a-z
 
 .if defined(WITH_GNUREADLINE)
-CONFIGURE_ARGS+=	--enable-gnu-readline
-NO_PACKAGE=		GNU GPL prevents distributing binaries linked against GNU readline
+CONFIGURE_ARGS+=--enable-gnu-readline
+NO_PACKAGE=	GNU GPL prevents distributing binaries linked against GNU readline
 .endif
 
 .if defined(WITHOUT_CLIENT) && defined(WITHOUT_SERVER)
-IGNORE=		requires at least CLIENT or SERVER to be defined. Please run 'make config' again
+IGNORE=		requires at least CLIENT or SERVER to be defined.\
+		Please 'make config' again
 .endif
 
 .if defined(WITHOUT_CLIENT)
-PLIST_SUB+=		CLIENT="@comment "
+PLIST_SUB+=	CLIENT="@comment "
 .else
-USE_RC_SUBR+=		bbackupd.sh
-PLIST_SUB+=		CLIENT=""
-ALL_TARGET+=		parcels/${DISTNAME}-backup-client-${TARGETOS}.tgz
-INSTALL_TARGET+=	install-backup-client
+USE_RC_SUBR+=	bbackupd.sh
+PLIST_SUB+=	CLIENT=""
+ALL_TARGET+=	parcels/${DISTNAME}-backup-client-${TARGETOS}.tgz
+INSTALL_TARGET+=install-backup-client
 .endif
 
 .if defined(WITHOUT_SERVER)
-PLIST_SUB+=		SERVER="@comment "
+PLIST_SUB+=	SERVER="@comment "
 .else
-USE_RC_SUBR+=		bbstored.sh
-PLIST_SUB+=		SERVER=""
-ALL_TARGET+=		parcels/${DISTNAME}-backup-server-${TARGETOS}.tgz
-INSTALL_TARGET+=	install-backup-server
+USE_RC_SUBR+=	bbstored.sh
+PLIST_SUB+=	SERVER=""
+ALL_TARGET+=	parcels/${DISTNAME}-backup-server-${TARGETOS}.tgz
+INSTALL_TARGET+=install-backup-server
 .endif
 
 CONFLICTS=	boxbackup-server-[0-9]* boxbackup-client-[0-9]*
@@ -87,7 +90,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,"perl ,PERL_EXECUTABLE " ,g' \
 		${WRKSRC}/test/backupstorefix/testbackupstorefix.cpp
 # Fix hard-coded g++
-	@${REINPLACE_CMD} -e "s|g++|${CXX}|"\
+	@${REINPLACE_CMD} -e 's,g++,${CXX},' \
 		 ${WRKSRC}/infrastructure/makebuildenv.pl
 .if !defined(WITHOUT_CLIENT)
 	@${CAT} ${FILESDIR}/pkg-message.client >> ${PKGMESSAGE}
@@ -96,8 +99,8 @@ post-patch:
 	@${CAT} ${FILESDIR}/pkg-message.server >> ${PKGMESSAGE}
 .endif
 
-pre-install:
 .if !defined(WITHOUT_SERVER)
+pre-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} \
 		${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 .endif
@@ -111,8 +114,8 @@ post-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-test:
 .if defined(WITH_TESTS)
+test:
 	 @${ECHO_CMD} "===> Running tests"
 	 @${MAKE} -C ${WRKSRC} test
 .endif

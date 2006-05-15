@@ -1,0 +1,35 @@
+--- configure.ac.orig	Thu Mar 16 22:26:39 2006
++++ configure.ac	Thu Mar 16 22:28:31 2006
+@@ -2,7 +2,7 @@
+ # Process this file with autoconf to produce a configure script.
+ 
+ AC_PREREQ(2.59)
+-AC_INIT([Box Backup], 0.09, [box@fluffy.co.uk])
++AC_INIT([Box Backup], 0.10, [box@fluffy.co.uk])
+ AC_CONFIG_SRCDIR([lib/common/Box.h])
+ AC_CONFIG_HEADERS([lib/common/BoxConfig.h])
+ 
+@@ -26,6 +26,12 @@
+   # Use -rdynamic if we have gcc. This is needed for backtrace
+   AC_SUBST([LDADD_RDYNAMIC], ['-rdynamic'])
+ fi
++AC_PATH_PROG([PERL], [perl], [no])
++if test "x$PERL" != "xno"; then
++  AC_DEFINE_UNQUOTED([PERL_EXECUTABLE], ["$PERL"], [Location of the perl executable])
++else
++  AC_MSG_ERROR([[perl executable was not found]])
++fi
+ 
+ 
+ ### Checks for libraries.
+@@ -208,8 +214,8 @@
+ 
+ # Configure the Box build system
+ echo
+-perl ./infrastructure/makebuildenv.pl &&
+-  perl ./infrastructure/makeparcels.pl
++$PERL ./infrastructure/makebuildenv.pl &&
++  $PERL ./infrastructure/makeparcels.pl
+ 
+ # Write summary of important info
+ cat <<EOC
