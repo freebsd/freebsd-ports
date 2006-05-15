@@ -6,16 +6,17 @@
 #
 
 PORTNAME=	dataplot
-PORTVERSION=	20050830
+PORTVERSION=	20060425
+PORTREVISION=
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.nist.gov/pub/dataplot/unix/:source \
 		http://www.itl.nist.gov/div898/software/dataplot.html/:doc
-DISTFILES=	dpsrc.08_30_2005.gz:source \
+DISTFILES=	dpsrc.04_25_2006.tar.gz:source \
 		dpsnapsh.pdf:doc
 DIST_SUBDIR=	dataplot
-EXTRACT_ONLY=	dpsrc.08_30_2005.gz
+EXTRACT_ONLY=	dpsrc.04_25_2006.tar.gz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	beech@alaskaparadise.com
 COMMENT=	A free software system for statistical visualization
 
 LIB_DEPENDS=	gd:${PORTSDIR}/graphics/gd \
@@ -29,7 +30,7 @@ MAXOBV?=	20000	# Make bigger if you need more observations/variable
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "alpha"
-BROKEN=		"Does not link on alpha (.got subsegment exceeds 64k)"
+BROKEN=		Does not link on alpha (.got subsegment exceeds 64k)
 .endif
 
 post-extract:
