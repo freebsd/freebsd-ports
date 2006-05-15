@@ -7,7 +7,7 @@
 
 PORTNAME=	mldonkey
 PORTVERSION=	2.7.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES+=	net-p2p
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED} \
 		${MASTER_SITE_SAVANNAH}
@@ -140,6 +140,7 @@ post-patch:
 	src/networks/donkey/donkeyServers.ml
 	@${REINPLACE_CMD} -E \
 		-e 's|http://www.gruk.org/server.met.gz|http://www.jd2k.com/server.met|' \
+		-e 's|http://www.bluetack.co.uk/config/antip2p.txt|http://www.bluetack.co.uk/config/level1.gz|' \
 		${WRKSRC}/${file}
 .endfor
 

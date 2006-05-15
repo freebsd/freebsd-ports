@@ -1,5 +1,5 @@
 --- ./src/networks/fileTP/fileTPGlobals.ml.orig	Mon Apr 10 16:16:13 2006
-+++ ./src/networks/fileTP/fileTPGlobals.ml	Sun May  7 06:39:10 2006
++++ ./src/networks/fileTP/fileTPGlobals.ml	Mon May 15 13:03:12 2006
 @@ -120,7 +120,7 @@
        in
        file.file_file.impl_file_size <- size;
