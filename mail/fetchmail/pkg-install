@@ -42,3 +42,5 @@ if [ x"$2" = xPRE-INSTALL ]; then
 		fi
 	fi
 fi
+
+/usr/bin/install -d -m 755 -o fetchmail -g fetchmail /var/run/fetchmail
