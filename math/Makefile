@@ -187,6 +187,7 @@
     SUBDIR += p5-Math-Random
     SUBDIR += p5-Math-Random-MT
     SUBDIR += p5-Math-Round
+    SUBDIR += p5-Math-Sequence
     SUBDIR += p5-Math-SimpleVariable
     SUBDIR += p5-Math-Spline
     SUBDIR += p5-Math-Symbolic
