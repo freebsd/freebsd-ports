@@ -6,27 +6,34 @@
 #
 
 PORTNAME=	bsdforen-firefox-searchplugin
-PORTVERSION=	0.1
+PORTVERSION=	0.2
 CATEGORIES=	german www
 MASTER_SITES=	http://www.crashmail.de/files/
-DISTFILES=	bsdforen.src bsdforen.png
+DISTFILES=	bsdforen.src bsdforen.png bsdforen-wiki.src bsdforen-wiki.png
 EXTRACT_ONLY=	yes
 
 MAINTAINER=	stefan.tell@crashmail.de
-COMMENT=	A firefox searchplugin for the german BSD board www.bsdforen.de
+COMMENT=	Firefox searchplugins for the www.bsdforen.de board and wiki
 
 USE_X_PREFIX=	yes
 NO_BUILD=	yes
 USE_GECKO=	firefox
 
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/www/mozilla/bsd.gecko.mk"
+
 do-extract:
 	@${MKDIR} ${WRKSRC}
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/bsdforen.src ${WRKSRC}
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/bsdforen.png ${WRKSRC}
+	@${CP} ${DISTDIR}/${DIST_SUBDIR}/bsdforen-wiki.src ${WRKSRC}
+	@${CP} ${DISTDIR}/${DIST_SUBDIR}/bsdforen-wiki.png ${WRKSRC}
 
 do-install:
 	@${MKDIR} ${PREFIX}/lib/firefox/searchplugins
 	${INSTALL_DATA} ${WRKSRC}/bsdforen.src ${PREFIX}/lib/firefox/searchplugins
 	${INSTALL_DATA} ${WRKSRC}/bsdforen.png ${PREFIX}/lib/firefox/searchplugins
+	${INSTALL_DATA} ${WRKSRC}/bsdforen-wiki.src ${PREFIX}/lib/firefox/searchplugins
+	${INSTALL_DATA} ${WRKSRC}/bsdforen-wiki.png ${PREFIX}/lib/firefox/searchplugins
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
