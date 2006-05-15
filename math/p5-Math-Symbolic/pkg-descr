@@ -1,0 +1,52 @@
+Math::Symbolic is intended to offer symbolic calculation capabilities to 
+the Perl programmer without using external (and commercial) libraries 
+and/or applications.
+
+Unless, however, some interested and knowledgable developers turn up to 
+participate in the development, the library will be severely limited by my 
+experience in the area. Symbolic calculations are an active field of 
+research in CS.
+
+There are several ways to construct Math::Symbolic trees. There are no 
+actual Math::Symbolic objects, but rather trees of objects of subclasses 
+of Math::Symbolic. The most general but unfortunately also the least 
+intuitive way of constructing trees is to use the constructors of the 
+Math::Symbolic::Operator, Math::Symbolic::Variable, and 
+Math::Symbolic::Constant classes to create (nested) objects of the 
+corresponding types.
+
+Furthermore, you may use the overloaded interface to apply the standard 
+Perl operators (and functions, see "OVERLOADED OPERATORS") to existing 
+Math::Symbolic trees and standard Perl expressions.
+
+Possibly the most convenient way of constructing Math::Symbolic trees is 
+using the builtin parser to generate trees from expressions such as '2 * 
+x^5'. You may use the Math::Symbolic->parse_from_string() class method for 
+this.
+
+Of course, you may combine the overloaded interface with the parser to 
+generate trees with Perl code such as "$term * 5 * 'sin(omega*t+phi)'" 
+which will create a tree of the existing tree $term times 5 times the sine 
+of the vars omega times t plus phi.
+
+There are several modules in the distribution that contain subroutines 
+related to calculus. These are not loaded by Math::Symbolic by default. 
+Furthermore, there are several extensions to Math::Symbolic availlable 
+from CPAN as separate distributions. Please refer to "SEE ALSO" for an 
+incomplete list of these.
+
+For example, Math::Symbolic::MiscCalculus come with Math::Symbolic and 
+contains routines to compute Taylor Polynomials and the associated errors.
+
+Routines related to vector calculus such as grad, div, rot, and Jacobi- 
+and Hesse matrices are availlable through the 
+Math::Symbolic::VectorCalculus module. This module is also able to compute 
+Taylor Polynomials of functions of two variables, directional derivatives, 
+total differentials, and Wronskian Determinants.
+
+Some basic support for linear algebra can be found in 
+Math::Symbolic::MiscAlgebra. This includes a routine to compute the 
+determinant of a matrix of Math::Symbolic trees.
+
+WWW: http://search.cpan.org/dist/Math-Symbolic
+Author: Steffen Müller <symbolic-module@steffen-mueller.net>
