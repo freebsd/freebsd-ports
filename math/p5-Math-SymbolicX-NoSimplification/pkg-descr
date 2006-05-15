@@ -1,0 +1,17 @@
+This module offers facilities to turn off the builtin Math::Symbolic 
+simplification routines and replace them with routines that just clone the 
+objects. You may want to do this in cases where the simplification 
+routines fail to simplify the Math::Symbolic trees and waste a lot of CPU 
+time. (For example, calculating the first order Taylor polynomial of a 
+moderately complex test function was sped up by 100% on my machine.)
+
+A word of caution, however: If you turn off the simplification routines, 
+some procedures may produce very, very large trees. One such procedure 
+would be the consecutive application of many derivatives to a product 
+without intermediate simplification. This would yield exponential growth 
+of nodes. (And may, in fact, still do if you keep the simplification 
+heuristics turned on because most expressions cannot be simplified 
+significantly.)
+
+WWW: http://search.cpan.org/dist/Math-SymbolicX-NoSimplification
+Author: Steffen Mueller <symbolic-module@steffen-mueller.net>
