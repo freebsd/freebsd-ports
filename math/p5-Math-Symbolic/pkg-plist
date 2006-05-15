@@ -1,0 +1,24 @@
+%%SITE_PERL%%/Math/Symbolic.pm
+%%SITE_PERL%%/Math/Symbolic/AuxFunctions.pm
+%%SITE_PERL%%/Math/Symbolic/Base.pm
+%%SITE_PERL%%/Math/Symbolic/Compiler.pm
+%%SITE_PERL%%/Math/Symbolic/Constant.pm
+%%SITE_PERL%%/Math/Symbolic/Custom.pm
+%%SITE_PERL%%/Math/Symbolic/Custom/Base.pm
+%%SITE_PERL%%/Math/Symbolic/Custom/DefaultDumpers.pm
+%%SITE_PERL%%/Math/Symbolic/Custom/DefaultMods.pm
+%%SITE_PERL%%/Math/Symbolic/Custom/DefaultTests.pm
+%%SITE_PERL%%/Math/Symbolic/Derivative.pm
+%%SITE_PERL%%/Math/Symbolic/ExportConstants.pm
+%%SITE_PERL%%/Math/Symbolic/MiscAlgebra.pm
+%%SITE_PERL%%/Math/Symbolic/MiscCalculus.pm
+%%SITE_PERL%%/Math/Symbolic/Operator.pm
+%%SITE_PERL%%/Math/Symbolic/Parser.pm
+%%SITE_PERL%%/Math/Symbolic/Parser/Precompiled.pm
+%%SITE_PERL%%/Math/Symbolic/Parser/Yapp.pm
+%%SITE_PERL%%/Math/Symbolic/Variable.pm
+%%SITE_PERL%%/Math/Symbolic/VectorCalculus.pm
+@dirrm %%SITE_PERL%%/Math/Symbolic/Parser
+@dirrm %%SITE_PERL%%/Math/Symbolic/Custom
+@dirrm %%SITE_PERL%%/Math/Symbolic
+@dirrmtry %%SITE_PERL%%/Math
