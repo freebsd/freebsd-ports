@@ -240,3 +240,4 @@
 @dirrm %%PGADMDIR%%/classes/database
 @dirrm %%PGADMDIR%%/classes
 @dirrm %%PGADMDIR%%
+@dirrmtry www/data-dist
