@@ -6,8 +6,7 @@
 #    $MCom: ports/accessibility/gok/Makefile,v 1.65 2006/04/27 22:59:43 marcus Exp $
 
 PORTNAME=	gok
-PORTVERSION=	1.0.8
-PORTREVISION=	1
+PORTVERSION=	1.0.10
 PORTEPOCH=	1
 CATEGORIES=	accessibility sysutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
