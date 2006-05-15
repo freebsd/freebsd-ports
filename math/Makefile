@@ -193,6 +193,7 @@
     SUBDIR += p5-Math-Symbolic-Custom-CCompiler
     SUBDIR += p5-Math-Symbolic-Custom-Contains
     SUBDIR += p5-Math-Symbolic-Custom-ErrorPropagation
+    SUBDIR += p5-Math-Symbolic-Custom-LaTeXDumper
     SUBDIR += p5-Math-SymbolicX-BigNum
     SUBDIR += p5-Math-SymbolicX-Complex
     SUBDIR += p5-Math-SymbolicX-Inline
