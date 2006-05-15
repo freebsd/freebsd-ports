@@ -195,6 +195,7 @@
     SUBDIR += p5-Math-Symbolic-Custom-ErrorPropagation
     SUBDIR += p5-Math-Symbolic-Custom-LaTeXDumper
     SUBDIR += p5-Math-Symbolic-Custom-Pattern
+    SUBDIR += p5-Math-Symbolic-Custom-Simplification
     SUBDIR += p5-Math-SymbolicX-BigNum
     SUBDIR += p5-Math-SymbolicX-Complex
     SUBDIR += p5-Math-SymbolicX-Inline
