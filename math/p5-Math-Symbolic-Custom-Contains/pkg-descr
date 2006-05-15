@@ -1,0 +1,6 @@
+This module extends the functionality of Math::Symbolic by offering 
+facilities to test a Math::Symbolic tree for existance of a specific 
+subtree in the Math::Symbolic tree.
+
+WWW: http://search.cpan.org/dist/Math-Symbolic-Custom-Contains
+Author: Steffen Mueller <symbolic-module@steffen-mueller.net>
