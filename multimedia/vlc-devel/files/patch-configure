@@ -1,6 +1,24 @@
---- configure.orig	Sun Jan  1 18:01:13 2006
-+++ configure	Mon Jan  2 14:38:53 2006
-@@ -21195,11 +21195,7 @@
+--- configure.orig	Sat May 13 18:02:16 2006
++++ configure	Sun May 14 22:38:30 2006
+@@ -33569,7 +33569,7 @@
+ 
+ fi;
+ 
+-if test "${enable_hal}" != "no" -a "${SYS}" = "linux"
++if test "${enable_hal}" != "no"
+ then
+ 
+ pkg_failed=no
+@@ -33854,7 +33854,7 @@
+ 
+ fi;
+ 
+-if test "${enable_dbus}" != "no" -a "${SYS}" = "linux"
++if test "${enable_dbus}" != "no"
+ then
+ 
+ pkg_failed=no
+@@ -37289,11 +37289,7 @@
    done
  
      else
@@ -13,7 +31,7 @@
      fi
    else
  
-@@ -21361,8 +21357,7 @@
+@@ -37455,8 +37451,7 @@
          if test -n "${enable_dv}"
          then
            { { echo "$as_me:$LINENO: error: cannot find libraw1394 headers" >&5
@@ -23,7 +41,7 @@
          fi
  
  fi
-@@ -21381,8 +21376,7 @@
+@@ -37475,8 +37470,7 @@
              echo "$as_me:$LINENO: result: no" >&5
  echo "${ECHO_T}no" >&6
        { { echo "$as_me:$LINENO: error: cannot cd to ${real_dv_raw1394_tree}" >&5
@@ -33,7 +51,7 @@
      fi
      if test -f "${real_dv_raw1394_tree}/src/.libs/libraw1394.a"
      then
-@@ -21610,8 +21604,7 @@
+@@ -37704,8 +37698,7 @@
          if test -n "${enable_dv}"
          then
            { { echo "$as_me:$LINENO: error: cannot find libavc1394 headers" >&5
@@ -43,3 +61,12 @@
          fi
  
  fi
+@@ -39199,7 +39192,7 @@
+   enableval="$enable_gnomevfs"
+ 
+ fi;
+-if test "${enable_gnomevfs}" != "no" -a  "${SYS}" = "linux"
++if test "${enable_gnomevfs}" != "no"
+ then
+ 
+ pkg_failed=no

@@ -3,14 +3,13 @@
 # Whom:			Brian Somers <brian@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/multimedia/vlc-devel/Makefile,v 1.6 2006/05/07 22:25:24 ahze Exp $
+#    $MCom: ports/multimedia/vlc-devel/Makefile,v 1.9 2006/05/15 02:56:23 ahze Exp $
 #
 # *** PLEASE READ Makefile.inc for more information on knobs ***
 #
 
 PORTNAME=	vlc
-DISTVERSION=	0.8.6.20060507
-PORTREVISION=	1
+DISTVERSION=	0.8.6.20060514
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://nightlies.videolan.org/build/source/
 #		http://download.videolan.org/pub/videolan/vlc/${PORTVERSION}/ \
@@ -210,6 +209,13 @@ USE_GNOME+=	orbit2
 CONFIGURE_ARGS+=--enable-corba
 .else
 CONFIGURE_ARGS+=--disable-corba
+.endif
+
+.if !defined(WITHOUT_DBUS)
+LIB_DEPENDS+=	dbus:${PORTSDIR}/devel/dbus
+CONFIGURE_ARGS+=	--enable-dbus
+.else
+CONFIGURE_ARGS+=	--disable-dbus
 .endif
 
 .if !defined(WITHOUT_DVBPSI)

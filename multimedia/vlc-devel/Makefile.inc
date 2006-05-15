@@ -5,7 +5,7 @@
 # and will be autodetected to enable
 #
 # $FreeBSD$
-#    $MCom: ports/multimedia/vlc-devel/Makefile.inc,v 1.1 2006/05/06 06:06:47 ahze Exp $
+#    $MCom: ports/multimedia/vlc-devel/Makefile.inc,v 1.2 2006/05/15 02:46:26 ahze Exp $
 #
 # If you define for example WITH_FAAD and WITHOUT_FAAD
 # the WITHOUT_ will always over ride the WITH_.
@@ -155,6 +155,9 @@
 #
 # WITHOUT_AVAHI=yes
 #  Avahi (Rendezvous/Bonjour (R) ) networking
+#
+# WITHOUT_DBUS=yes
+#  Disable d-bus support
 #
 # WITH_DEBUG=yes
 #  Enable debuging support
