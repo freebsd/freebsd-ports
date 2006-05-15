@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	freefem++
-PORTVERSION=	2.7
-PORTREVISION=	2
+DISTVERSION=	2.7-1
 CATEGORIES=	math science
 MASTER_SITES=	http://www.freefem.org/ff++/ftp/
 
@@ -42,7 +41,7 @@ CONFIGURE_ARGS=		--disable-download					\
 			--with-umfpack="-lumfpack"				\
 			--with-arpack="${LIBARPACK}"
 CONFIGURE_ENV=		CPPFLAGS="${MPICFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}"	\
-			LDFLAGS="${MPILDFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+			LDFLAGS="${MPILDFLAGS} -L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}"
 
 LIBBLAS=	-lf2c -lf77blas -latlas -lgslcblas
 LIBARPACK=	-larpack -lalapack ${LIBBLAS}
@@ -70,6 +69,7 @@ RUN_DEPENDS+=	${LOCALBASE}/mpich/bin/mpiCC:${PORTSDIR}/net/mpich
 MPICFLAGS=	-I${LOCALBASE}/mpich/include
 MPILDFLAGS=	-L${LOCALBASE}/mpich/lib
 CONFIGURE_ENV+=	PATH="$$PATH:${LOCALBASE}/mpich/bin"
+CONFIGURE_ARGS+=	--with-mpi=yes
 PLIST_SUB+=	MPI=""
 .else
 PLIST_SUB+=	MPI="@comment "
@@ -77,7 +77,7 @@ PLIST_SUB+=	MPI="@comment "
 
 pre-configure:
 	@${REINPLACE_CMD} -e "s|-lpthread|${PTHREAD_LIBS}|g"		\
-		-e "s|mpiCC.|${LOCALBASE}/mpich/bin/mpiCC|"		\
+		-e "s|=mpiCC|=${LOCALBASE}/mpich/bin/mpiCC|"		\
 		-e "s|/usr/X11R6|${X11BASE}|g"				\
 		${WRKSRC}/${CONFIGURE_SCRIPT}
 	@${REINPLACE_CMD} -e "s|mpiCC|${LOCALBASE}/mpich/bin/mpiCC|"	\
