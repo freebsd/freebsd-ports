@@ -6,23 +6,17 @@
 #
 
 PORTNAME=		ncurses
-PORTVERSION=		5.4
+PORTVERSION=		5.5
 CATEGORIES=		devel
 MASTER_SITES=		${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	ncurses
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=		garga@FreeBSD.org
 COMMENT=		Library for terminal-independent, full-screen output
 
 LIB_DEPENDS=		utf-8:${PORTSDIR}/converters/libutf-8
 
 NO_FILTER_SHLIBS=	no
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 400000
-MANUAL_PACKAGE_BUILD=	conflicts with system ncurses
-.endif
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datadir=${PREFIX}/share/misc --disable-overwrite \
@@ -38,6 +32,8 @@ CONFIGURE_ARGS+=	--with-trace
 
 CONFIGURE_ENV=	gnat_exists="no" \
 		ac_cv_path_LDCONFIG="${LDCONFIG} -m ${PREFIX}/lib"
+
+PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 INSTALLS_SHLIB=	yes
 MANCOMPRESSED=	yes
@@ -187,12 +183,12 @@ MAN3=	COLOR_PAIR.3x PAIR_NUMBER.3x _nc_tracebits.3x _traceattr.3x \
 MAN5=	term.5 terminfo.5
 MAN7=	term.7
 
-PKGMESSAGE=	${WRKDIR}/pkg-message
+PORTDOCS=	*
 
-DOCS=		ANNOUNCE INSTALL NEWS README TO-DO doc/html/announce.html \
-		doc/hackguide.doc doc/html/hackguide.html \
-		doc/html/index.html doc/ncurses-intro.doc \
-		doc/html/ncurses-intro.html
+DOCS=	ANNOUNCE INSTALL NEWS README TO-DO doc/html/announce.html \
+	doc/hackguide.doc doc/html/hackguide.html \
+	doc/html/index.html doc/ncurses-intro.doc \
+	doc/html/ncurses-intro.html
 EXAMPLES=	Makefile README blue.c bs.6 bs.c cardfile.c cardfile.dat \
 		ditto.c dots.c filter.c firework.c firstlast.c gdc.6 \
 		gdc.c hanoi.c hashtest.c knight.c lrtest.c ncurses.c \
@@ -205,30 +201,28 @@ EXAMPLES_CPP=	Makefile NEWS PROBLEMS README-first cursesapp.cc \
 		cursesw.h cursslk.cc cursslk.h demo.cc etip.h \
 		internal.h
 
-pre-configure:
-	${MKDIR} ${WRKDIR}
-	${ECHO_CMD} \
-	"Warning:  source code for this version has not been reviewed!" \
-		> ${PKGMESSAGE}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_CMD} 
-	@${ECHO_CMD} Waiting ten seconds--press control-C to cancel build.
-	@sleep 10
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 400000
+MANUAL_PACKAGE_BUILD=	conflicts with system ncurses
+.endif
 
 post-install:
-	@ ${GZIP_CMD} ${PREFIX}/man/man1/tack.1
-	@ ${MKDIR} ${DOCSDIR} ${EXAMPLESDIR}/c++
-.for file in ${DOCS}
-	@ ${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
-.endfor
-	@ ${INSTALL_DATA} ${WRKSRC}/misc/terminfo.src \
+	${MKDIR} ${EXAMPLESDIR}/c++
+	${INSTALL_DATA} ${WRKSRC}/misc/terminfo.src \
 		${PREFIX}/share/misc/terminfo
-.for file in ${EXAMPLES}
-	@ ${INSTALL_DATA} ${WRKSRC}/test/${file} ${EXAMPLESDIR}
+.for f in ${EXAMPLES}
+	${INSTALL_DATA} ${WRKSRC}/test/${f} ${EXAMPLESDIR}
 .endfor
-	@ ${INSTALL_SCRIPT} ${WRKSRC}/test/tracemunch ${EXAMPLESDIR}
-.for file in ${EXAMPLES_CPP}
-	@ ${INSTALL_DATA} ${WRKSRC}/c++/${file} ${EXAMPLESDIR}/c++
+	${INSTALL_SCRIPT} ${WRKSRC}/test/tracemunch ${EXAMPLESDIR}
+.for f in ${EXAMPLES_CPP}
+	${INSTALL_DATA} ${WRKSRC}/c++/${f} ${EXAMPLESDIR}/c++
 .endfor
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+. for f in ${DOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+. endfor
+.endif
 
 .include <bsd.port.post.mk>
