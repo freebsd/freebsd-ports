@@ -50,9 +50,8 @@ CONFIGURE_ARGS+=	--with-popauth
 CONFIGURE_ARGS+=	--with-pam
 .endif
 
-.if ${OSVERSION} >= 700014
+.if ${OSVERSION} >= 700015
 CONFIGURE_ARGS+=	--have-resn
-BROKEN=			res_update.h: No such file or directory
 .endif
 
 PLIST_FILES+=	bin/dnsblchk bin/dnsblupd bin/ipfwmtad bin/mxlookup \
