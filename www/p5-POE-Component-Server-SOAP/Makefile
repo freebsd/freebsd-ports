@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	POE-Component-Server-SOAP
-PORTVERSION=	1.08
+PORTVERSION=	1.09
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	POE
@@ -32,10 +32,5 @@ post-patch:
 		     -e '$$_ = "" if /use warnings/;' \
 		${WRKSRC}/lib/POE/Component/Server/SOAP.pm \
 		${WRKSRC}/lib/POE/Component/Server/SOAP/Response.pm
-#	@${PERL} -pi -e '$$_ = "" if /use warnings/;' \
-#		     -e '$$_ = "" if /ABSTRACT_FROM/;' \
-#		     -e 's/^our\s+([\$$\@\%]\w+)/use vars qw($$1); $$1/;' \
-#		${WRKSRC}/Makefile.PL \
-#		${WRKSRC}/lib/Class/DBI/DATA/Schema.pm
 .endif
 .include <bsd.port.post.mk>
