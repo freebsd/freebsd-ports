@@ -998,7 +998,7 @@ calcurse	ports/deskutils/calcurse
 calibrator	ports/devel/calibrator
 calife		ports/security/calife
 calife-devel		ports/security/calife-devel
-callgen		ports/net/callgen
+callgen323	ports/net/callgen323
 callgrind	ports/devel/callgrind
 callid		ports/misc/callid
 cam		ports/audio/cam
