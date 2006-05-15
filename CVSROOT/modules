@@ -8808,6 +8808,7 @@ p5-Math-Spline	ports/math/p5-Math-Spline
 p5-Math-Symbolic	ports/math/p5-Math-Symbolic
 p5-Math-Symbolic-Custom-CCompiler	ports/math/p5-Math-Symbolic-Custom-CCompiler
 p5-Math-Symbolic-Custom-Contains	ports/math/p5-Math-Symbolic-Custom-Contains
+p5-Math-Symbolic-Custom-ErrorPropagation	ports/math/p5-Math-Symbolic-Custom-ErrorPropagation
 p5-Math-SymbolicX-BigNum	ports/math/p5-Math-SymbolicX-BigNum
 p5-Math-SymbolicX-Complex	ports/math/p5-Math-SymbolicX-Complex
 p5-Math-SymbolicX-Inline	ports/math/p5-Math-SymbolicX-Inline
