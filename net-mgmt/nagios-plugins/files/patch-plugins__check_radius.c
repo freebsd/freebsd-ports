@@ -1,5 +1,5 @@
---- plugins/check_radius.c.orig	Sun Dec 26 02:17:44 2004
-+++ plugins/check_radius.c	Fri Aug 12 13:53:36 2005
+--- plugins/check_radius.c.orig	Sun Dec 26 09:47:44 2004
++++ plugins/check_radius.c	Fri May 12 23:35:17 2006
 @@ -27,7 +27,7 @@
  #include "utils.h"
  #include "netutils.h"

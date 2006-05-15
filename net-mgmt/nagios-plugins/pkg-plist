@@ -1,5 +1,6 @@
 libexec/nagios/check_breeze
 libexec/nagios/check_by_ssh
+libexec/nagios/check_clamd
 libexec/nagios/check_dhcp
 libexec/nagios/check_dig
 libexec/nagios/check_disk
@@ -27,6 +28,7 @@ libexec/nagios/check_mailq
 libexec/nagios/check_mrtg
 libexec/nagios/check_mrtgtraf
 %%SUB_MYSQL%%libexec/nagios/check_mysql
+%%SUB_MYSQL%%libexec/nagios/check_mysql_query
 libexec/nagios/check_nagios
 libexec/nagios/check_nntp
 libexec/nagios/check_nntps
@@ -63,10 +65,10 @@ libexec/nagios/utils.pm
 libexec/nagios/utils.sh
 @dirrmtry libexec/nagios
 share/nagios/locale/de/LC_MESSAGES/nagios-plugins.mo
-share/nagios/locale/fr/LC_MESSAGES/nagios-plugins.mo
 @dirrm share/nagios/locale/de/LC_MESSAGES
-@dirrm share/nagios/locale/fr/LC_MESSAGES
 @dirrm share/nagios/locale/de
+share/nagios/locale/fr/LC_MESSAGES/nagios-plugins.mo
+@dirrm share/nagios/locale/fr/LC_MESSAGES
 @dirrm share/nagios/locale/fr
 @dirrm share/nagios/locale
 @dirrmtry share/nagios
