@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Math/SymbolicX/Inline.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/SymbolicX/Inline/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/SymbolicX/Inline
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/SymbolicX
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math
+@dirrm %%SITE_PERL%%/Math/SymbolicX
+@dirrmtry %%SITE_PERL%%/Math

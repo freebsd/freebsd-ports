@@ -1,0 +1,10 @@
+This module is an extension to the Math::Symbolic module. A basic 
+familiarity with that module is required.
+
+Math::SymbolicX::Inline allows easy creation of Perl functions from 
+symbolic expressions in the context of Math::Symbolic. That means you can 
+define arbitrary Math::Symbolic trees (including derivatives) and let this 
+module compile them to package subroutines.
+
+WWW: http://search.cpan.org/dist/Math-SymbolicX-Inline
+Author: Steffen Mueller <symbolic-module@steffen-mueller.net>
