@@ -1,0 +1,11 @@
+%%SITE_PERL%%/Math/Symbolic/Custom/Pattern.pm
+%%SITE_PERL%%/Math/Symbolic/Custom/Pattern/Export.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Symbolic/Custom/Pattern/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Symbolic/Custom/Pattern
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Symbolic/Custom
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Symbolic
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math
+@dirrm %%SITE_PERL%%/Math/Symbolic/Custom/Pattern
+@dirrmtry %%SITE_PERL%%/Math/Symbolic/Custom
+@dirrmtry %%SITE_PERL%%/Math/Symbolic
+@dirrmtry %%SITE_PERL%%/Math
