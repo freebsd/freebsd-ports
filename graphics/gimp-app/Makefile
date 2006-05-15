@@ -40,6 +40,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack intltool intlhack gtk20 libartlgpl2 librsvg2
 WANT_GNOME=	yes
+USE_GETTEXT=	yes
 INSTALLS_SHLIB=	yes
 PLIST_SUB=	SHLIBVER="${SHLIBVER}"
 CONFIGURE_ARGS=	--disable-perl \

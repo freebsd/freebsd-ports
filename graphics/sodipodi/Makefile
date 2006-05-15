@@ -20,6 +20,7 @@ LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomeprefix gnomehack libglade2 libartlgpl2 desktopfileutils
+USE_GETTEXT=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS=	--without-gnome-print \
 		--with-popt

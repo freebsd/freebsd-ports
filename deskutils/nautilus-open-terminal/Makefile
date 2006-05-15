@@ -17,6 +17,7 @@ COMMENT=	Nautilus extension which allows you to open a terminal
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	nautilus2 gnomeprefix intlhack gnomehack
+USE_GETTEXT=	yes
 USE_X_PREFIX=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

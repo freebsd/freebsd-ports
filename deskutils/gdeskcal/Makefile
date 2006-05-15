@@ -20,6 +20,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py:${PORTSDIR}/x11-toolki
 WRKSRC=		${WRKDIR}/gDeskCal-${PORTVERSION}
 
 USE_PYTHON=	yes
+USE_GETTEXT=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehier
 NO_BUILD=	yes

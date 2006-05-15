@@ -17,6 +17,7 @@ COMMENT=	An editor for the freedesktop.org menu specification
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/xdg/__init__.py:${PORTSDIR}/devel/py-xdg
 
 USE_GNOME=	pygtk2 pygnome2
+USE_GETTEXT=	yes
 USE_X_PREFIX=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
