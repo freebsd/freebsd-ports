@@ -2391,7 +2391,6 @@ ffcall		ports/devel/ffcall
 ffmpeg		ports/multimedia/ffmpeg
 ffmpeg-devel		ports/multimedia/ffmpeg-devel
 ffproxy		ports/www/ffproxy
-ffsrecov	ports/sysutils/ffsrecov
 fftw		ports/math/fftw
 fftw-float	ports/math/fftw-float
 fftw3		ports/math/fftw3
