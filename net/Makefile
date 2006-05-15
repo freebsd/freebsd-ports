@@ -57,7 +57,7 @@
     SUBDIR += c3270
     SUBDIR += cacti
     SUBDIR += cactid
-    SUBDIR += callgen
+    SUBDIR += callgen323
     SUBDIR += cap
     SUBDIR += ccxstream
     SUBDIR += citadel
