@@ -1,0 +1,9 @@
+This module adds numeric error (or uncertainty) support to the 
+Math::Symbolic parser. It does so by extending the parser grammar of the 
+Math::Symbolic module (that is, the one stored in $Math::Symbolic::Parser) 
+with certain special functions that create constants as Number::WithError 
+objects. (Math::Symbolic::Variable objects have been able to contain 
+objects since the very beginning.)
+
+WWW: http://search.cpan.org/dist/Math-SymbolicX-Error
+Author: Steffen Mueller <symbolic-module@steffen-mueller.net>
