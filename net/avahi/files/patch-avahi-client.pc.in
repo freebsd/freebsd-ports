@@ -1,0 +1,10 @@
+--- avahi-client.pc.in.orig	Mon May 15 02:28:25 2006
++++ avahi-client.pc.in	Mon May 15 02:30:08 2006
+@@ -6,5 +6,5 @@
+ Name: avahi-client
+ Description: Avahi Multicast DNS Responder (Client Support)
+ Version: @PACKAGE_VERSION@
+-Libs: -L${libdir} -lavahi-common -lavahi-client
+-Cflags: -D_REENTRANT -I${includedir}
++Libs: -L${libdir} -lavahi-common -lavahi-client @PTHREAD_LIBS@
++Cflags: -D_REENTRANT @PTHREAD_CFLAGS@ -I${includedir}
