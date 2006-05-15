@@ -1,33 +1,33 @@
-@comment $FreeBSD$
 %%PYTHON_SITELIBDIR%%/FreeImagePy/FreeImagePy.py
-%%PYTHON_SITELIBDIR%%/FreeImagePy/__init__.py
-%%PYTHON_SITELIBDIR%%/FreeImagePy/constants.py
-%%PYTHON_SITELIBDIR%%/FreeImagePy/test/__init__.py
-%%PYTHON_SITELIBDIR%%/FreeImagePy/test/test.py
-%%PYTHON_SITELIBDIR%%/FreeImagePy/test/__init__.pyc
-%%PYTHON_SITELIBDIR%%/FreeImagePy/test/test.pyc
-%%PYTHON_SITELIBDIR%%/FreeImagePy/test/__init__.pyo
-%%PYTHON_SITELIBDIR%%/FreeImagePy/test/test.pyo
-%%PYTHON_SITELIBDIR%%/FreeImagePy/test/freeimage.jpg
-%%PYTHON_SITELIBDIR%%/FreeImagePy/tools/__init__.py
-%%PYTHON_SITELIBDIR%%/FreeImagePy/tools/create_function_List.py
-%%PYTHON_SITELIBDIR%%/FreeImagePy/tools/__init__.pyc
-%%PYTHON_SITELIBDIR%%/FreeImagePy/tools/create_function_List.pyc
-%%PYTHON_SITELIBDIR%%/FreeImagePy/tools/__init__.pyo
-%%PYTHON_SITELIBDIR%%/FreeImagePy/tools/create_function_List.pyo
-%%PYTHON_SITELIBDIR%%/FreeImagePy/tools/functList.txt
 %%PYTHON_SITELIBDIR%%/FreeImagePy/FreeImagePy.pyc
-%%PYTHON_SITELIBDIR%%/FreeImagePy/__init__.pyc
-%%PYTHON_SITELIBDIR%%/FreeImagePy/constants.pyc
 %%PYTHON_SITELIBDIR%%/FreeImagePy/FreeImagePy.pyo
+%%PYTHON_SITELIBDIR%%/FreeImagePy/__init__.py
+%%PYTHON_SITELIBDIR%%/FreeImagePy/__init__.pyc
 %%PYTHON_SITELIBDIR%%/FreeImagePy/__init__.pyo
+%%PYTHON_SITELIBDIR%%/FreeImagePy/constants.py
+%%PYTHON_SITELIBDIR%%/FreeImagePy/constants.pyc
 %%PYTHON_SITELIBDIR%%/FreeImagePy/constants.pyo
-%%PYTHON_SITELIBDIR%%/FreeImagePy/FAQ.txt
-%%PYTHON_SITELIBDIR%%/FreeImagePy/LICENSE.txt
-%%PYTHON_SITELIBDIR%%/FreeImagePy/README.txt
-%%PYTHON_SITELIBDIR%%/FreeImagePy/README_TEST.txt
-%%PYTHON_SITELIBDIR%%/FreeImagePy/license-fi.txt
-%%PYTHON_SITELIBDIR%%/FreeImagePy/license-gpl.txt
-@dirrm %%PYTHON_SITELIBDIR%%/FreeImagePy/test
+%%PYTHON_SITELIBDIR%%/FreeImagePy/test/__init__.py
+%%PYTHON_SITELIBDIR%%/FreeImagePy/test/__init__.pyc
+%%PYTHON_SITELIBDIR%%/FreeImagePy/test/__init__.pyo
+%%PYTHON_SITELIBDIR%%/FreeImagePy/test/test.py
+%%PYTHON_SITELIBDIR%%/FreeImagePy/test/test.pyc
+%%PYTHON_SITELIBDIR%%/FreeImagePy/test/test.pyo
+%%PYTHON_SITELIBDIR%%/FreeImagePy/test/test_FI_PythonFile.py
+%%PYTHON_SITELIBDIR%%/FreeImagePy/test/test_FI_PythonFile.pyc
+%%PYTHON_SITELIBDIR%%/FreeImagePy/test/test_FI_PythonFile.pyo
+%%PYTHON_SITELIBDIR%%/FreeImagePy/test/test_old.py
+%%PYTHON_SITELIBDIR%%/FreeImagePy/test/test_old.pyc
+%%PYTHON_SITELIBDIR%%/FreeImagePy/test/test_old.pyo
+%%PYTHON_SITELIBDIR%%/FreeImagePy/tools/__init__.py
+%%PYTHON_SITELIBDIR%%/FreeImagePy/tools/__init__.pyc
+%%PYTHON_SITELIBDIR%%/FreeImagePy/tools/__init__.pyo
+%%PYTHON_SITELIBDIR%%/FreeImagePy/tools/create_function_List.py
+%%PYTHON_SITELIBDIR%%/FreeImagePy/tools/create_function_List.pyc
+%%PYTHON_SITELIBDIR%%/FreeImagePy/tools/create_function_List.pyo
+%%PYTHON_SITELIBDIR%%/FreeImagePy/utils.py
+%%PYTHON_SITELIBDIR%%/FreeImagePy/utils.pyc
+%%PYTHON_SITELIBDIR%%/FreeImagePy/utils.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/FreeImagePy/tools
+@dirrm %%PYTHON_SITELIBDIR%%/FreeImagePy/test
 @dirrm %%PYTHON_SITELIBDIR%%/FreeImagePy
