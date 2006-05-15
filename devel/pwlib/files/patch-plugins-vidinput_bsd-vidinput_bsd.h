@@ -1,6 +1,6 @@
---- plugins/vidinput_bsd/vidinput_bsd.h.orig	Tue Aug  9 11:08:09 2005
-+++ plugins/vidinput_bsd/vidinput_bsd.h	Thu Apr  6 09:37:11 2006
-@@ -1,13 +1,24 @@
+--- plugins/vidinput_bsd/vidinput_bsd.h.orig	Tue Aug  9 05:08:09 2005
++++ plugins/vidinput_bsd/vidinput_bsd.h	Sun May 14 13:42:28 2006
+@@ -1,15 +1,29 @@
 +#ifndef _PVIDEOIOBSDCAPTURE
  
 -//#include <sys/mman.h>
@@ -10,8 +10,6 @@
 +#ifdef __GNUC__   
 +#pragma interface
 +#endif
-+
-+#include <sys/mman.h>
  
  #include <ptlib.h>
  #include <ptlib/videoio.h>
@@ -19,6 +17,9 @@
  
  #if defined(P_FREEBSD)
 +#include <sys/param.h>
++#if __FreeBSD_version <= 500000
++#include <sys/types.h>
++#endif
 +# if __FreeBSD_version >= 502100
 +#include <dev/bktr/ioctl_meteor.h>
 +# else
@@ -26,8 +27,12 @@
 +# endif
  #endif
  
++#include <sys/mman.h>
++
  #if defined(P_OPENBSD) || defined(P_NETBSD)
-@@ -20,19 +30,24 @@
+ #if P_OPENBSD >= 200105
+ #include <dev/ic/bt8xx.h>
+@@ -20,19 +34,24 @@
  #endif
  #endif
  
@@ -59,7 +64,7 @@
  
    BOOL IsOpen();
  
-@@ -43,11 +58,24 @@
+@@ -43,11 +62,24 @@
  
    BOOL IsCapturing();
  
@@ -87,7 +92,7 @@
  
    BOOL GetFrameSizeLimits(unsigned int&, unsigned int&,
  			  unsigned int&, unsigned int&);
-@@ -99,3 +127,5 @@
+@@ -99,3 +131,5 @@
    int    mmap_size;
   
  };
