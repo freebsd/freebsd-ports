@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	beacon
-PORTVERSION=	1.1
-PORTREVISION=	1
+PORTVERSION=	1.3
 CATEGORIES=	net perl5 mbone ipv6
 MASTER_SITES=	http://dast.nlanr.net/Projects/Beacon/releases/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-0
+DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Beacon active measurement tool to monitor multicast
@@ -22,14 +21,15 @@ WWW_DIR?=	${PREFIX}/www/
 PLIST_SUB+=	VERSION=${PORTVERSION}
 USE_PERL5=	yes
 USE_AUTOTOOLS=	autoconf:259
-CONFIGURE_ARGS=	--bindir=${WWW_DIR}/${PORTNAME}-${PORTVERSION}
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
-.ifdef(WITH_IPV6)
+.ifdef(WITHOUT_IPV6)
+CONFIGURE_ARGS=
+.else
 #enable IPv6 name lookup, and sending IPv6 multicast
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Socket6.pm:${PORTSDIR}/net/p5-Socket6
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src_beacon.in
-CONFUGURE_ARGS+=	--enable-ipv6
+CONFIGURE_ARGS+=	--enable-ipv6
 .endif
 
 .include <bsd.port.pre.mk>
@@ -39,8 +39,13 @@ IGNORE=		requires perl 5.6.1 or later. Install lang/perl5 then try again
 .endif
 
 .if ${ARCH} != "i386"
-BROKEN=		"Does not compile on !i386"
+BROKEN=		Does not compile on !i386
 .endif
+
+pre-build:
+	cd ${WRKSRC}/Net-Multicast-Beacon && \
+		make Makefile.perl && \
+		${REINPLACE_CMD} -E 's,doc_\$$\(INSTALLDIRS\)_install$$,,g' Makefile.perl
 
 post-install:
 	@${ECHO} "Sample config installed at \
