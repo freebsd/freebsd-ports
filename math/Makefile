@@ -199,6 +199,7 @@
     SUBDIR += p5-Math-Symbolic-Custom-Transformation
     SUBDIR += p5-Math-SymbolicX-BigNum
     SUBDIR += p5-Math-SymbolicX-Complex
+    SUBDIR += p5-Math-SymbolicX-Error
     SUBDIR += p5-Math-SymbolicX-Inline
     SUBDIR += p5-Math-SymbolicX-NoSimplification
     SUBDIR += p5-Math-SymbolicX-ParserExtensionFactory
