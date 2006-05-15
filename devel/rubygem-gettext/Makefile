@@ -26,7 +26,7 @@ USE_RUBY=	yes
 USE_RUBY_FEATURES=	racc-runtime
 USE_RUBY_SETUP=	yes
 
-RUBY_SHEBANG_FILES=	${WRKSRC}/samples/*.rb
+RUBY_SHEBANG_FILES=	bin/rgettext ${WRKSRC}/samples/*.rb
 
 DOCS_EN=	ChangeLog README
 DOCS_JA=	README.ja
