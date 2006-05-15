@@ -1,0 +1,8 @@
+This module adds big number support to Math::Symbolic. It does so by 
+extending the parser of the Math::Symbolic module (that is, the one stored 
+in $Math::Symbolic::Parser) with certain special functions that create 
+arbitrary precision constants. (Math::Symbolic::Variable objects have been 
+able to contain arbitrary precision objects since the very beginning.)
+
+WWW: http://search.cpan.org/dist/Math-SymbolicX-BigNum
+Author: Steffen Mueller <symbolic-module@steffen-mueller.net>

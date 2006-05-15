@@ -192,6 +192,7 @@
     SUBDIR += p5-Math-Symbolic
     SUBDIR += p5-Math-Symbolic-Custom-CCompiler
     SUBDIR += p5-Math-Symbolic-Custom-Contains
+    SUBDIR += p5-Math-SymbolicX-BigNum
     SUBDIR += p5-Math-SymbolicX-Inline
     SUBDIR += p5-Math-SymbolicX-ParserExtensionFactory
     SUBDIR += p5-Math-TrulyRandom
