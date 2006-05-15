@@ -8978,6 +8978,7 @@ p5-Nmap-Scanner	ports/security/p5-Nmap-Scanner
 p5-Norge	ports/misc/p5-Norge
 p5-Number-Compare	ports/math/p5-Number-Compare
 p5-Number-Format	ports/textproc/p5-Number-Format
+p5-Number-WithError	ports/math/p5-Number-WithError
 p5-OAI-Harvester	ports/net/p5-OAI-Harvester
 p5-OLE-Storage_Lite	ports/devel/p5-OLE-Storage_Lite
 p5-OOTools	ports/devel/p5-OOTools
