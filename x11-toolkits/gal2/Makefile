@@ -29,6 +29,7 @@ USE_PERL5=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomeprefix intlhack libgnomeui libgnomeprintui \
 		ltverhack
+USE_GETTEXT=	yes
 INSTALLS_SHLIB=	yes
 USE_AUTOTOOLS=  libtool:15
 CONFIGURE_ARGS=	--enable-static --with-libiconv

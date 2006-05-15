@@ -21,6 +21,7 @@ USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomeprefix intlhack gnomehack libgnomeui gnomevfs2
+USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 USE_PERL5_RUN=	yes

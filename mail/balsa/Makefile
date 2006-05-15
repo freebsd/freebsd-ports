@@ -30,6 +30,7 @@ USE_PERL5=	yes
 USE_OPENSSL=	yes
 USE_GNOME=	gnomeprefix intlhack gnomehack libgnomeui libgnomeprintui \
 		gtkhtml3
+USE_GETTEXT=	yes
 USE_AUTOTOOLS=	libltdl:15
 USE_GCC=	3.4+
 GNU_CONFIGURE=	yes

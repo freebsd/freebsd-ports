@@ -24,6 +24,7 @@ USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 INSTALLS_OMF=	yes
 USE_GNOME=	gnomeprefix gnomehack libgnomeprintui libgnomeui vte
+USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 USE_GCC=	3.4+
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

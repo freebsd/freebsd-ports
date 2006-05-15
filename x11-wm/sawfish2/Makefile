@@ -29,6 +29,7 @@ USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehier gnomehack esound
 WANT_GNOME=	yes
+USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-readline \
 		--localstatedir=${PREFIX}/share \

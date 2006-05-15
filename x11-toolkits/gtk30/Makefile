@@ -43,6 +43,7 @@ USE_PERL5=	yes
 INSTALLS_SHLIB=	yes
 USE_AUTOTOOLS=  libtool:15
 USE_GNOME=	gnomehack atk pango ltverhack
+USE_GETTEXT=	yes
 CONFIGURE_ARGS=	--enable-static --with-xinput=yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/freetype2 \
 			  -I${LOCALBASE}/include -I${X11BASE}/include" \

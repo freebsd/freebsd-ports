@@ -25,6 +25,7 @@ USE_PYTHON=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomelibs gnomeprint gnomevfs \
 		gnomeprefix
+USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-regex
 .if exists(/usr/lib/libcrypto.a)

@@ -23,6 +23,7 @@ USE_GNOME=	gnomehack gnomeprefix gnometarget intltool ltverhack
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GCC=	3.4
+USE_GETTEXT=	yes
 USE_X_PREFIX=	yes
 USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes

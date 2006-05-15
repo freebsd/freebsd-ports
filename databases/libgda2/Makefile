@@ -31,6 +31,7 @@ RUN_DEPENDS=	scrollkeeper-config:${PORTSDIR}/textproc/scrollkeeper
 USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack glib20 libxslt referencehack
+USE_GETTEXT=	yes
 INSTALLS_OMF=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes

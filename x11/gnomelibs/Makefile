@@ -26,6 +26,7 @@ USE_XPM=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomeprefix esound gtk12 imlib libxml orbit
+USE_GETTEXT=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-test-gnome

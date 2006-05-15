@@ -26,6 +26,7 @@ GNOME_DESKTOP_VERSION=2
 USE_GNOME=	gnomehack intlhack gnomeprefix libgnome gnomepanel libglade2 \
 		gnomedocutils
 USE_GMAKE=	yes
+USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

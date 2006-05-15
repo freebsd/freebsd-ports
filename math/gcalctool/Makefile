@@ -24,6 +24,7 @@ USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeui
+USE_GETTEXT=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

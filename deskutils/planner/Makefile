@@ -23,6 +23,7 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeui libgnomeprintui \
 		libgsf
 WANT_GNOME=	yes
+USE_GETTEXT=	yes
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 INSTALLS_SHLIB=	yes

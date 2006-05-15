@@ -24,6 +24,7 @@ USE_PERL5=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomeprefix gnomehier libglade gnomevfs
 USE_ICONV=	yes
+USE_GETTEXT=	yes
 GNOME_HTML_DIR=	${PREFIX}/share/doc/gal
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes

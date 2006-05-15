@@ -25,6 +25,7 @@ USE_GL=		yes
 USE_GMAKE=	yes
 USE_PERL5_RUN=	yes
 USE_GNOME=	gnomehier libglade2 gnomehack
+USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gl --with-gle --with-xpm --with-xml \
 		--with-hackdir=${PREFIX}/bin/xscreensaver-hacks \
