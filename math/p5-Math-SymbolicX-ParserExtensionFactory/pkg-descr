@@ -1,0 +1,38 @@
+This module provides a simple way to extend the Math::Symbolic parser with 
+arbitrary functions that return any valid Math::Symbolic tree. The return 
+value of the function call is inserted into the complete parse tree at the 
+point at which the function call is parsed. Familiarity with the 
+Math::Symbolic module will be assumed throughout the documentation.
+
+This module is not object oriented. It does not export anything. You 
+should not call any subroutines directly nor should you modify any class 
+data directly. The complete interface is the call to use 
+Math::SymbolicX::ParserExtensionFactory and its arguments. The reason for 
+the long module name is that you should not have to call it multiple times 
+in your code because it modifies the parser for good. It is intended to be 
+a pain to type. :-)
+
+The aim of the module is to allow for hooks into the parser without 
+modifying the parser yourself because that requires rather in-depth 
+knowledge of the module code. By specifying key => value pairs of function 
+names and function implementations (code references) as arguments to the 
+use() call of the module, this module extends the parser that is stored in 
+the $Math::Symbolic::Parser variable with the specified functions and 
+whenever "yourfunction(any argument string not containing an unescaped \) 
+)" occurs in the code, the subroutine reference is called with the 
+argument string as argument.
+
+The subroutine is expected to return any Math::Symbolic tree. That means, 
+as of version 0.133, a Math::Symbolic::Operator, a 
+Math::Symbolic::Variable, or a Math::Symbolic::Constant object. The 
+returned object will be incorporated into the Math::Symbolic tree that 
+results from the parse at the exact position at which the custom function 
+call was parsed.
+
+Please note that the usage of this module will be quite slow at compile 
+time because it has to regenerate the complete Math::Symbolic parser the 
+first time you use this module in your code. The run time performance 
+penalty should be low, however.
+
+WWW: http://search.cpan.org/dist/Math-SymbolicX-ParserExtensionFactory
+Author: Steffen Mueller <symbolic-module@steffen-mueller.net>
