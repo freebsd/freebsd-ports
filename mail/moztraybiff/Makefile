@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	moztraybiff
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
 CATEGORIES=	mail gnome
 MASTER_SITES=	${MASTER_SITE_MOZDEV}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,8 +19,6 @@ BUILD_DEPENDS=	${X11BASE}/lib/thunderbird/components/libwidget_gtk2.so:${PORTSDI
 		zip:${PORTSDIR}/archivers/zip
 RUN_DEPENDS=	${X11BASE}/lib/thunderbird/components/libwidget_gtk2.so:${PORTSDIR}/mail/thunderbird
 
-BROKEN=		Does not compile
-
 .if !exists(../thunderbird/Makefile)
 BROKEN=		${PORTNAME} needs the Thunderbird port in order to build
 .else
@@ -30,7 +28,7 @@ TBVER!=		cd ../thunderbird && ${MAKE} -V PORTVERSION
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	libgnome
-MAKE_ARGS+=	MOZILLA_PLATFORM=tbird TBVER=${TBVER}
+MAKE_ARGS+=	MOZILLA_PLATFORM=tbird TBVER=${TBVER} MOZ_TRUNK=0
 
 FILENAME=	mozTrayBiff-${PORTVERSION}-tb${TBVER}.xpi
 PLIST_FILES=	share/${PORTNAME}/${FILENAME}
