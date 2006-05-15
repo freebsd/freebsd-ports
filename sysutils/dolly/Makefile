@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	dolly
-PORTVERSION=	0.57
+DISTVERSION=	0.58C
 CATEGORIES=	sysutils net
 MASTER_SITES=	http://www.cs.inf.ethz.ch/CoPs/patagonia/dolly/
-DISTNAME=	${PORTNAME}.${PORTVERSION}
+DISTNAME=	${PORTNAME}.${DISTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A program to clone harddisks/partitions over a fast switched network
 
-OPTIONS=	BZIP2	"bzip2 instead of gzip for compressing"	on \
-		HIGHEST_COMPRESSION	"Highest rather than fastest compression"	on
+OPTIONS=	BZIP2 "bzip2 instead of gzip for compressing"	on \
+		HIGHEST_COMPRESSION "Highest rather than fastest compression" on
 
 PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	README
@@ -30,8 +30,8 @@ do-configure:
 do-install:
 .ifndef(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-. for file in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}/
+. for _file in ${PORTDOCS}
+	@${INSTALL_DATA} ${WRKSRC}/${_file} ${DOCSDIR}/
 . endfor
 .endif
 	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
@@ -49,7 +49,7 @@ post-patch:
 		-e 's|use gzip|use gunzip|' \
 		${WRKSRC}/dolly.c
 # Properly reference bzip2 instead of gzip
-.ifdef(WITH_BZIP2)
+.ifndef(WITHOUT_BZIP2)
 	@${REINPLACE_CMD} -E \
 		-e 's|/usr/bin/gzip|${BZIP2_CMD}|' \
 		-e 's|gzip|bzip2|' \
@@ -70,7 +70,7 @@ post-patch:
 		${WRKSRC}/*
 .endif
 # Highest compression possible
-.ifdef(WITH_HIGHEST_COMPRESSION)
+.ifndef(WITHOUT_HIGHEST_COMPRESSION)
 	@${REINPLACE_CMD} -E \
 		-e 's|-cf|-9cf|' \
 		${WRKSRC}/dolly.c
