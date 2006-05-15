@@ -6,7 +6,7 @@ In order to use VMware, you must follow these steps:
 2) Make sure the Linux Compatibility module is loaded (use
    'kldstat' to check) or built into the kernel.
 
-3) Run '@@PREFIX@@/etc/rc.d/001.vmware.sh start'
+3) Run '%%PREFIX%%/etc/rc.d/001.vmware.sh start'
    to avoid rebooting.
 
 4) Load the kernel module aio.ko or add it to the kernel 
@@ -37,6 +37,6 @@ more information.
 If you'd like to learn more on how to configure vmnet
 interfaces for multiple instances of VMware, please read:
 
- @@PREFIX@@/share/doc/vmware/MultipleInstances.FreeBSD
+ %%PREFIX%%/share/doc/vmware/MultipleInstances.FreeBSD
 
 ************************************************************
