@@ -1,0 +1,20 @@
+This module is an extension to the Math::Symbolic module. A basic 
+familiarity with that module is required.
+
+Math::Symbolic offers some builtin simplification routines. These, 
+however, are not capable of complex simplifications. This extension offers 
+facilities to override the default simplification routines through means 
+of subclassing this module. A subclass of this module is required to 
+define a simplify object method that implements a simplification of 
+Math::Symbolic trees.
+
+There are two class methods to inherit: register and unregister. Calling 
+the register method on your subclass registers your class as providing the 
+simplify method that is invoked whenever simplify() is called on a 
+Math::Symbolic::Operator object.
+
+Calling unregister on your subclass restores whichever simplification 
+routines where in place before.
+
+WWW: http://search.cpan.org/dist/Math-Symbolic-Custom-Simplification
+Author: Steffen Mueller <symbolic-module@steffen-mueller.net>
