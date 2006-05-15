@@ -9295,6 +9295,7 @@ p5-Tangram	ports/databases/p5-Tangram
 p5-Task-Catalyst	ports/www/p5-Task-Catalyst
 p5-Tcl		ports/lang/p5-Tcl
 p5-Tcl-Tk	ports/x11-toolkits/p5-Tcl-Tk
+p5-TeX-Encode	ports/textproc/p5-TeX-Encode
 p5-TeX-Hyphen	ports/textproc/p5-TeX-Hyphen
 p5-Telnet-Cisco	ports/net-mgmt/p5-Telnet-Cisco
 p5-Template-Extract	ports/textproc/p5-Template-Extract
