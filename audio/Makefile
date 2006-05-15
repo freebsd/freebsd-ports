@@ -469,7 +469,6 @@
     SUBDIR += ruby-audiofile
     SUBDIR += ruby-esound
     SUBDIR += ruby-freedb
-    SUBDIR += ruby-mp3info
     SUBDIR += ruby-mp3tag
     SUBDIR += ruby-musicbrainz
     SUBDIR += ruby-musicextras
@@ -480,6 +479,7 @@
     SUBDIR += ruby-vorbisfile
     SUBDIR += ruby-xmms
     SUBDIR += ruby-xmms2
+    SUBDIR += rubygem-mp3info
     SUBDIR += s3mod
     SUBDIR += sbagen
     SUBDIR += schism
