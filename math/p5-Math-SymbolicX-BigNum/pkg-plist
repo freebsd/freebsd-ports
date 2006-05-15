@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Math/SymbolicX/BigNum.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/SymbolicX/BigNum/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/SymbolicX/BigNum
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/SymbolicX
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math
+@dirrmtry %%SITE_PERL%%/Math/SymbolicX
+@dirrmtry %%SITE_PERL%%/Math
