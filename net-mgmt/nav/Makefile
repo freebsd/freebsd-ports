@@ -11,7 +11,7 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	http://metanav.ntnu.no/downloads/v3/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/_beta/}
 
-MAINTAINER=	anders@FreeBSD.org
+MAINTAINER=	des@FreeBSD.org
 COMMENT=	Network Administration Visualized
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/ant:${PORTSDIR}/devel/apache-ant \
