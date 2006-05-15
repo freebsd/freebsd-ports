@@ -11817,6 +11817,7 @@ ruby-ming	ports/graphics/ruby-ming
 ruby-mmap	ports/devel/ruby-mmap
 ruby-mnogosearch	ports/www/ruby-mnogosearch
 ruby-mode.el	ports/lang/ruby-mode.el
+ruby-mp3info	ports/audio/ruby-mp3info
 ruby-mp3tag	ports/audio/ruby-mp3tag
 ruby-mpi	ports/net/ruby-mpi
 ruby-msql	ports/databases/ruby-msql
