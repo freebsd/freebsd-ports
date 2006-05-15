@@ -22,7 +22,7 @@ PREFIX?=	${X11BASE}
 
 .if !defined(REFERENCE_PORT)
 
-PORTREVISION=	1
+PORTREVISION=	2
 
 RUN_DEPENDS=	gnome-menu-editor:${PORTSDIR}/deskutils/gnome-menu-editor
 
