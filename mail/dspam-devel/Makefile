@@ -19,11 +19,11 @@ MASTER_SITES=	# set later
 MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	Bayesian spam filter - development version
 
-PORTVER_MAJ=	3.6.5
-SNAP_DATE=	.20060513.1125
-_UPD_LINE_NO=	13
+PORTVER_MAJ=	3.6.6
+#SNAP_DATE=	.20060513.1125
+_UPD_LINE_NO=	9
 
-MIN_OPTIONS_VER=	${PORTNAME}-3.6.5
+MIN_OPTIONS_VER=	${PORTNAME}-3.6.6
 
 .ifdef(SNAP_DATE)
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
@@ -63,7 +63,6 @@ OPTIONS+=	MYSQL_LOCAL "RUN_DEPEND on selected MySQL server ver." off
 OPTIONS+=	POSTGRESQL "Use PostgreSQL as back-end" on
 OPTIONS+=	POSTGRESQL_LOCAL "RUN_DEPEND on PostgreSQL server" off
 OPTIONS+=	ORACLE "Use Oracle as back-end (BROKEN)" off
-OPTIONS+=	BDB4 "Use BDB4 as back-end (not recomanded)" off
 OPTIONS+=	SQLITE2 "Use SQLite v2.x as back-end" off
 OPTIONS+=	SQLITE3 "Use SQLite v3.x as back-end" on
 OPTIONS+=	HASH "Use hash driver" on
@@ -204,7 +203,7 @@ SUB_LIST+=	CLAMD=
 _DBDRV_COUNT=	# blank, but defined so we can check against it
 #_DBDRV_ALL=	pgsql_drv,ora_drv,libdb4_drv,sqlite3_drv,sqlite_drv,hash_drv,mysql_drv
 # above won't work because ORACLE support is broken so
-_DBDRV=		pgsql_drv,libdb41_drv,sqlite3_drv,sqlite_drv,hash_drv,mysql_drv,
+_DBDRV=		pgsql_drv,sqlite3_drv,sqlite_drv,hash_drv,mysql_drv,
 
 .ifndef(WITHOUT_POSTGRESQL)
 USE_PGSQL=	yes
@@ -232,18 +231,6 @@ _DBDRV:=	${_DBDRV:S/pgsql_drv,//}
 #_DBDRV_COUNT:=	${_DBDRV_COUNT}o
 #.else
 #_DBDRV:=	${_DBDRV:S/ora_drv,//}
-.endif
-
-.ifdef(WITH_BDB4)
-# change me when we have BDB_VERSOIN in bsd.databases.mk
-USE_BDB=	41
-CONFIGURE_ARGS+=	--with-db4-includes=${LOCALBASE}/include/db41
-PLIST_SUB+=	DB4=""
-#PKGNAMESUFFIX=	-bdb41
-_DBDRV_COUNT:=	${_DBDRV_COUNT}o
-.else
-_DBDRV:=	${_DBDRV:S/libdb41_drv,//}
-PLIST_SUB+=	DB4="@comment "
 .endif
 
 .ifndef(WITHOUT_SQLITE3)
@@ -441,7 +428,7 @@ PLIST_SUB+=	CGI="@comment "
 _SED_SCRIPT+=	-e '/%%CGI%%/D'
 .endif
 
-MAN1=	dspam.1 dspam_clean.1 dspam_corpus.1 dspam_dump.1 dspam_merge.1 \
+MAN1=	dspam.1 dspam_clean.1 dspam_dump.1 dspam_merge.1 \
 	dspam_stats.1 dspam_train.1
 MAN3=	libdspam.3
 MLINKS=		libdspam.3 dspam_init.3
