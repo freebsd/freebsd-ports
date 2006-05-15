@@ -1,4 +1,5 @@
 bin/gbf-am-parse
+bin/gbf-mkfile-parse
 include/gnome-build-1.0/gbf/gbf-backend.h
 include/gnome-build-1.0/gbf/gbf-build-info.h
 include/gnome-build-1.0/gbf/gbf-project-model.h
@@ -9,9 +10,13 @@ include/gnome-build-1.0/gbf/gbf-tree-data.h
 include/gnome-build-1.0/gbf/gbf-widgets.h
 include/gnome-build-1.0/gbf/glue-plugin.h
 lib/gnome-build-1.0/backends/gbf-am.server
+lib/gnome-build-1.0/backends/gbf-mkfile.server
 lib/gnome-build-1.0/backends/libgbf-am.la
 lib/gnome-build-1.0/backends/libgbf-am.so
 lib/gnome-build-1.0/backends/libgbf-am.so.0
+lib/gnome-build-1.0/backends/libgbf-mkfile.la
+lib/gnome-build-1.0/backends/libgbf-mkfile.so
+lib/gnome-build-1.0/backends/libgbf-mkfile.so.0
 lib/libgbf-1.la
 lib/libgbf-1.so
 lib/libgbf-1.so.0
@@ -21,7 +26,9 @@ lib/libgbf-widgets-1.so.0
 libdata/pkgconfig/gnome-build-1.0.pc
 share/gnome/gnome-build/GBF/AmFiles.pm
 share/gnome/gnome-build/GBF/General.pm
+share/gnome/gnome-build/GBF/Make.pm
 share/gnome/gnome-build/glade/create_dialogs.glade
+share/gnome/gnome-build/glade/gbf-am-dialogs.glade
 share/gnome/pixmaps/gbf-build.png
 share/gnome/pixmaps/gbf-install.png
 share/locale/am/LC_MESSAGES/gbf-1.mo
@@ -34,6 +41,7 @@ share/locale/el/LC_MESSAGES/gbf-1.mo
 share/locale/en_CA/LC_MESSAGES/gbf-1.mo
 share/locale/en_GB/LC_MESSAGES/gbf-1.mo
 share/locale/es/LC_MESSAGES/gbf-1.mo
+share/locale/fi/LC_MESSAGES/gbf-1.mo
 share/locale/fr/LC_MESSAGES/gbf-1.mo
 share/locale/gl/LC_MESSAGES/gbf-1.mo
 share/locale/hr/LC_MESSAGES/gbf-1.mo
@@ -45,8 +53,8 @@ share/locale/mk/LC_MESSAGES/gbf-1.mo
 share/locale/ml/LC_MESSAGES/gbf-1.mo
 share/locale/ms/LC_MESSAGES/gbf-1.mo
 share/locale/nb/LC_MESSAGES/gbf-1.mo
+share/locale/ne/LC_MESSAGES/gbf-1.mo
 share/locale/nl/LC_MESSAGES/gbf-1.mo
-share/locale/no/LC_MESSAGES/gbf-1.mo
 share/locale/pa/LC_MESSAGES/gbf-1.mo
 share/locale/pl/LC_MESSAGES/gbf-1.mo
 share/locale/pt/LC_MESSAGES/gbf-1.mo
@@ -58,6 +66,7 @@ share/locale/sq/LC_MESSAGES/gbf-1.mo
 share/locale/sr/LC_MESSAGES/gbf-1.mo
 share/locale/sr@Latn/LC_MESSAGES/gbf-1.mo
 share/locale/sv/LC_MESSAGES/gbf-1.mo
+share/locale/uk/LC_MESSAGES/gbf-1.mo
 share/locale/vi/LC_MESSAGES/gbf-1.mo
 share/locale/zh_CN/LC_MESSAGES/gbf-1.mo
 @dirrm share/gnome/gnome-build/glade
