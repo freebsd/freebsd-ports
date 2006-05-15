@@ -8815,6 +8815,7 @@ p5-Math-Symbolic-Custom-Simplification	ports/math/p5-Math-Symbolic-Custom-Simpli
 p5-Math-Symbolic-Custom-Transformation	ports/math/p5-Math-Symbolic-Custom-Transformation
 p5-Math-SymbolicX-BigNum	ports/math/p5-Math-SymbolicX-BigNum
 p5-Math-SymbolicX-Complex	ports/math/p5-Math-SymbolicX-Complex
+p5-Math-SymbolicX-Error	ports/math/p5-Math-SymbolicX-Error
 p5-Math-SymbolicX-Inline	ports/math/p5-Math-SymbolicX-Inline
 p5-Math-SymbolicX-NoSimplification	ports/math/p5-Math-SymbolicX-NoSimplification
 p5-Math-SymbolicX-ParserExtensionFactory	ports/math/p5-Math-SymbolicX-ParserExtensionFactory
