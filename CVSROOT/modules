@@ -8804,6 +8804,7 @@ p5-Math-Random	ports/math/p5-Math-Random
 p5-Math-Random-MT	ports/math/p5-Math-Random-MT
 p5-Math-Round		ports/math/p5-Math-Round
 p5-Math-Sequence	ports/math/p5-Math-Sequence
+p5-Math-Series	ports/math/p5-Math-Series
 p5-Math-SimpleVariable	ports/math/p5-Math-SimpleVariable
 p5-Math-Spline	ports/math/p5-Math-Spline
 p5-Math-Symbolic	ports/math/p5-Math-Symbolic
