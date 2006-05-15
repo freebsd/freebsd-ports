@@ -1,5 +1,5 @@
---- plugins/check_snmp.c.orig	Sat Oct 15 09:41:06 2005
-+++ plugins/check_snmp.c	Sat Oct 15 09:48:43 2005
+--- plugins/check_snmp.c.orig	Tue Nov  1 06:33:19 2005
++++ plugins/check_snmp.c	Fri May 12 23:29:24 2006
 @@ -206,6 +206,7 @@
  	strcat(perfstr, "| ");
  	while (ptr) {
@@ -15,4 +15,4 @@
 -		char *str[MAX_INPUT_BUFFER];
  		asprintf(str, "=%s%s;;;; ", show, type ? type : "");
  		strcat(perfstr, *str);
-
+ 

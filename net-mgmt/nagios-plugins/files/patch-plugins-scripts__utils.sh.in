@@ -1,0 +1,15 @@
+--- plugins-scripts/utils.sh.in.orig	Wed Mar 22 23:29:36 2006
++++ plugins-scripts/utils.sh.in	Fri May 12 23:37:49 2006
+@@ -14,10 +14,10 @@
+ 
+ print_revision() {
+ 	echo "$1 (@PACKAGE@ @VERSION@) $2"
+-	$ECHO "@WARRANTY@" | sed -e 's/\n/ /g'
++	$ECHO "@WARRANTY@" | /usr/bin/sed -e 's/\n/ /g'
+ }
+ 
+ support() {
+-	$ECHO "@SUPPORT@" | sed -e 's/\n/ /g'
++	$ECHO "@SUPPORT@" | /usr/bin/sed -e 's/\n/ /g'
+ }
+ 

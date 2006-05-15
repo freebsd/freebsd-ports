@@ -1,0 +1,11 @@
+--- plugins/Makefile.am.orig	Tue Mar 21 22:12:59 2006
++++ plugins/Makefile.am	Fri May 12 23:37:04 2006
+@@ -4,7 +4,7 @@
+ 
+ VPATH = $(top_srcdir) $(top_srcdir)/lib $(top_srcdir)/plugins $(top_srcdir)/plugins/t 
+ 
+-INCLUDES = -I.. -I$(top_srcdir)/lib -I$(top_srcdir)/intl @LDAPINCLUDE@ @PGINCLUDE@ @SSLINCLUDE@
++INCLUDES = -I.. -I$(top_srcdir)/lib -I$(top_srcdir)/intl @LDAPINCLUDE@ @PGINCLUDE@ @SSLINCLUDE@ @RADIUSINCLUDE@
+ 
+ datadir = @datadir@
+ localedir = $(datadir)/locale
