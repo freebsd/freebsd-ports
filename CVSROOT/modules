@@ -13408,7 +13408,6 @@ vdk		ports/x11-toolkits/vdk
 vdkbuilder	ports/x11-toolkits/vdkbuilder
 vdrift		ports/games/vdrift
 vdrift-data	ports/games/vdrift-data
-vecfem		ports/math/vecfem
 vectoroids	ports/games/vectoroids
 ved		ports/editors/ved
 velocity	ports/x11-fm/velocity
