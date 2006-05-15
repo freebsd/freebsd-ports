@@ -1,0 +1,9 @@
+%%SITE_PERL%%//Math/Symbolic/Custom/LaTeXDumper.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Symbolic/Custom/LaTeXDumper/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Symbolic/Custom/LaTeXDumper
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Symbolic/Custom
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Symbolic
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math
+@dirrmtry %%SITE_PERL%%/Math/Symbolic/Custom
+@dirrmtry %%SITE_PERL%%/Math/Symbolic
+@dirrmtry %%SITE_PERL%%/Math
