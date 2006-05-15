@@ -4,38 +4,43 @@
 #
 # $FreeBSD$
 
-PORTNAME=	callgen
-PORTVERSION=	1.2.6
-PORTREVISION=	1
+PORTNAME=	callgen323
+DISTVERSION=	2.0.0.cvs.20060407
 CATEGORIES=	net
-MASTER_SITES=	http://www.openh323.org/bin/
-DISTNAME=	callgen323_${PORTVERSION}
+MASTER_SITES=	ftp://ftp.frm2.tum.de/pub/jpulz/FreeBSD/distfiles/
 
-MAINTAINER=	jacke@bofh.pl
+MAINTAINER=	Joerg.Pulz@frm2.tum.de
 COMMENT=	H.323 Call Generator
 
-BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/net/openh323-112:configure
-
-NOCLEANDEPENDS=	yes
 USE_GMAKE=	yes
-WRKSRC=		${WRKDIR}/callgen323
-MAKE_ENV=	PWLIBDIR=${WRKDIRPREFIX}${.CURDIR}/../../devel/pwlib152/work/pwlib \
-		OPENH323DIR=${WRKDIRPREFIX}${.CURDIR}/../openh323-112/work/openh323
-THE_MACHTYPE=	${ARCH:S/i386/x86/}
+ALL_TARGET=	optshared
+MAKE_ENV=	PWLIBDIR=${LOCALBASE}/share/pwlib \
+		OPENH323DIR=${LOCALBASE}/share/openh323 \
+		OPALDIR=${LOCALBASE}/share/opal \
+		SYSLIBDIR=${LOCALBASE}/lib
+MAKE_ARGS=	OSTYPE=${OPSYS} MACHTYPE=${ARCH:S/i386/x86/} \
+		OSRELEASE=${OSVERSION} CPLUS=${CXX}
 
 PLIST_FILES=	bin/callgen323
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.if ${ARCH} == sparc64 && ${OSVERSION} <= 700003
+BROKEN=		does not link due to missing symbol in default thread library
 .endif
 
-.if ${ARCH} == "amd64"
-BROKEN=		"Does not build on amd64 (shared libraries must be compiled with -fPIC)"
+.ifdef (WITH_OPAL)
+LIB_DEPENDS+=	opal_r.2:${PORTSDIR}/net/opal
+PKGNAMESUFFIX=	-opal
+MAKE_ENV+=	USE_OPAL=1
+OBJ_DIR=	obj_opal_r
+.else
+LIB_DEPENDS+=	h323_r.1:${PORTSDIR}/net/openh323
+OBJ_DIR=	obj_r
+PKGNAMESUFFIX=	-openh323
 .endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/obj_${OPSYS}_${THE_MACHTYPE}_d/callgen323 ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${OBJ_DIR}/callgen323 ${PREFIX}/bin
 
 .include <bsd.port.post.mk>
