@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Image-ExifTool
-PORTVERSION=	6.01
+PORTVERSION=	6.17
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://www.sno.phy.queensu.ca/~phil/exiftool/ \
 		${MASTER_SITE_PERL_CPAN}
@@ -21,12 +21,12 @@ PERL_CONFIGURE=	yes
 MANTAGS=	AFCP AIFF APP12 ASF BMP BuildTagLookup Canon CanonCustom \
 		CanonRaw Casio DICOM DNG Exif Fixup FujiFilm GIF GPS GeoTiff \
 		HtmlDump ICC_Profile ID3 IPTC JVC Jpeg2000 Kodak KyoceraRaw \
-		Leaf MIFF MNG MakerNotes Minolta Nikon NikonCapture Olympus \
-		PDF PICT PNG PPM Panasonic Pentax Photoshop PostScript \
-		PrintIM QuickTime RIFF Ricoh Sanyo Shift Shortcuts Sigma \
-		SigmaRaw Sony TagLookup TagNames Unknown WriteCanonRaw \
-		WriteExif WriteIPTC WritePNG WritePhotoshop WriteXMP Writer \
-		XMP
+		Leaf MIE MIFF MNG MakerNotes Minolta MinoltaRaw Nikon \
+		NikonCapture Olympus PDF PICT PNG PPM Panasonic Pentax \
+		Photoshop PostScript PrintIM QuickTime RIFF Ricoh Sanyo Shift \
+		Shortcuts Sigma SigmaRaw Sony TagLookup TagNames Unknown \
+		WriteCanonRaw WriteExif WriteIPTC WritePNG WritePhotoshop \
+		WritePostScript WriteXMP Writer XMP
 
 MAN3=		File::RandomAccess.3 \
 		Image::ExifTool.3 \

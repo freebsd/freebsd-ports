@@ -30,10 +30,12 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/Kodak.pm
 %%SITE_PERL%%/Image/ExifTool/KyoceraRaw.pm
 %%SITE_PERL%%/Image/ExifTool/Leaf.pm
+%%SITE_PERL%%/Image/ExifTool/MIE.pm
 %%SITE_PERL%%/Image/ExifTool/MIFF.pm
 %%SITE_PERL%%/Image/ExifTool/MNG.pm
 %%SITE_PERL%%/Image/ExifTool/MakerNotes.pm
 %%SITE_PERL%%/Image/ExifTool/Minolta.pm
+%%SITE_PERL%%/Image/ExifTool/MinoltaRaw.pm
 %%SITE_PERL%%/Image/ExifTool/Nikon.pm
 %%SITE_PERL%%/Image/ExifTool/NikonCapture.pm
 %%SITE_PERL%%/Image/ExifTool/Olympus.pm
@@ -64,6 +66,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/WriteIPTC.pl
 %%SITE_PERL%%/Image/ExifTool/WritePNG.pl
 %%SITE_PERL%%/Image/ExifTool/WritePhotoshop.pl
+%%SITE_PERL%%/Image/ExifTool/WritePostScript.pl
 %%SITE_PERL%%/Image/ExifTool/WriteXMP.pl
 %%SITE_PERL%%/Image/ExifTool/Writer.pl
 %%SITE_PERL%%/Image/ExifTool/XMP.pm
@@ -74,6 +77,7 @@ bin/exiftool
 %%PORTDOCS%%%%DOCSDIR%%/data_members.html
 %%PORTDOCS%%%%DOCSDIR%%/exiftool_pod.html
 %%PORTDOCS%%%%DOCSDIR%%/faq.html
+%%PORTDOCS%%%%DOCSDIR%%/filename.html
 %%PORTDOCS%%%%DOCSDIR%%/history.html
 %%PORTDOCS%%%%DOCSDIR%%/htmldump.html
 %%PORTDOCS%%%%DOCSDIR%%/idiosyncracies.html
@@ -84,6 +88,7 @@ bin/exiftool
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/AFCP.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/AIFF.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/APP12.html
+%%PORTDOCS%%%%DOCSDIR%%/TagNames/APP14.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/ASF.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/BMP.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Canon.html
@@ -107,9 +112,11 @@ bin/exiftool
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Kodak.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/KyoceraRaw.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Leaf.html
+%%PORTDOCS%%%%DOCSDIR%%/TagNames/MIE.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/MIFF.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/MNG.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Minolta.html
+%%PORTDOCS%%%%DOCSDIR%%/TagNames/MinoltaRaw.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Nikon.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/NikonCapture.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Olympus.html
