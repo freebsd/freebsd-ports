@@ -37,6 +37,14 @@ USE_SUBMAKE=	yes
 VMDIR=		${PREFIX}/lib/vmware
 SRC_BASE?=	/usr/src
 
+SUB_FILES=	vmware vmware-wizard pkg-message config 001.vmware.sh
+SUB_LIST=	BRIDGED="${VMNET_BRIDGED}" \
+		BRIDGE_INTF="${VMNET_BRIDGED_INTERFACE}" \
+		HOST_IP="${VMNET_HOST_IP}" \
+		NETMASK="${VMNET_NETMASK}" \
+		LINUXBASE="${LINUXBASE}" \
+		NETWORKING="${VMNET_NETWORKING}" \
+		VMNET1_MINOR="${VMNET1_MINOR}"
 ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes
 USE_X_PREFIX=	yes
@@ -108,18 +116,17 @@ pre-patch:
 	@cd ${WRKSRC}/vmnet-only && ${PATCH} -p1 < ${WRKDIR}/vmnet-only.diff
 
 .if exists(/sys/compat/linux/linux_ioctl.h)
-	${PERL} -i -pe 's,i386(/linux/linux_ioctl\.h),compat$$1,' \
+	${REINPLACE_CMD} -i "" -e 's,i386(/linux/linux_ioctl\.h),compat$$1,' \
 		${WRKSRC}/vmnet-only/freebsd/vmnet_linux.c
 .endif
 .if exists(/usr/include/sys/selinfo.h)
-	${PERL} -i -pe 's,<sys/select\.h>,<sys/selinfo.h>,' \
+	${REINPLACE_CMD} -i "" -e 's,<sys/select\.h>,<sys/selinfo.h>,' \
 		${WRKSRC}/vmmon-only/freebsd/*.c
 .endif
 	cd ${WRKSRC}/vmmon-only/freebsd && ${TOUCH} bus_if.h device_if.h
 .if ${OSVERSION} >= 500019
-	${PERL} -i -pe 's,<machine/ioctl_fd\.h>,<sys/fdcio.h>,' \
-		${WRKSRC}/vmmon-only/freebsd/*.c \
-		${WRKSRC}/vmware-distrib/vmmon-only/freebsd/*.c
+	${REINPLACE_CMD} -i "" -e 's,<machine/ioctl_fd\.h>,<sys/fdcio.h>,' \
+		${WRKSRC}/vmmon-only/freebsd/*.c
 .endif
 
 post-patch:
@@ -127,39 +134,14 @@ post-patch:
 	${CP} ${FILESDIR}/Makefile.vmmon ${WRKSRC}/vmmon-only/Makefile
 	${CP} ${FILESDIR}/Makefile.vmnet ${WRKSRC}/vmnet-only/Makefile
 .if ${OSVERSION} < 500000
-	${CAT} ${FILESDIR}/freebsd4.patch | (cd ${WRKSRC} && ${PATCH}) > /dev/null 2>&1
+	cd ${WRKSRC} && ${PATCH} < ${FILESDIR}/freebsd4.patch
 .endif
 .if ${OSVERSION} > 600000
-	${CAT} ${FILESDIR}/fbsd6-1.patch | (cd ${WRKSRC} && ${PATCH}) > /dev/null 2>&1
-	${CAT} ${FILESDIR}/fbsd6-2.patch | (cd ${WRKSRC} && ${PATCH}) > /dev/null 2>&1
+	cd ${WRKSRC} && ${PATCH} < ${FILESDIR}/fbsd6-1.patch
+	cd ${WRKSRC} && ${PATCH} < ${FILESDIR}/fbsd6-2.patch
 .endif
 
-setoptions:
-	${SED} 	-e 's;@@PREFIX@@;${PREFIX};' \
-		-e 's;@@BRIDGED@@;${VMNET_BRIDGED};' \
-		-e 's;@@BRIDGE_INTF@@;${VMNET_BRIDGED_INTERFACE};' \
-		-e 's;@@HOST_IP@@;${VMNET_HOST_IP};' \
-		-e 's;@@NETMASK@@;${VMNET_NETMASK};' \
-		${FILESDIR}/config > ${WRKDIR}/config
-
-	${SED} 	-e 's;@@PREFIX@@;${PREFIX};' \
-		-e 's;@@LINUXBASE@@;${LINUXBASE};' \
-		-e 's;@@NETWORKING@@;${VMNET_NETWORKING};' \
-		-e 's;@@VMNET1_MINOR@@;${VMNET1_MINOR};' \
-		${FILESDIR}/001.vmware.sh > ${WRKDIR}/001.vmware.sh
-
-	${SED} 	-e 's;@@PREFIX@@;${PREFIX};' \
-		-e 's;@@LINUXBASE@@;${LINUXBASE};' \
-		${FILESDIR}/vmware > ${WRKDIR}/vmware
-
-	 ${SED}  -e 's;@@PREFIX@@;${PREFIX};' \
-		 -e 's;@@LINUXBASE@@;${LINUXBASE};' \
-		${FILESDIR}/vmware-wizard > ${WRKDIR}/vmware-wizard
-
-	${SED}  -e 's;@@PREFIX@@;${PREFIX};' \
-		${FILESDIR}/pkg-message.in > ${PKGMESSAGE}
-
-pre-install: setoptions
+pre-install:
 	${INSTALL_MAN} ${WRKSRC}/man/man1/vmware.1 ${MANPREFIX}/man/man1
 	${MKDIR} ${VMDIR}/modules
 

@@ -2,9 +2,9 @@
 #
 # Start or stop vmware
 #
-# $FreeBSD: /tmp/pcvs/ports/emulators/vmware3/files/Attic/001.vmware.sh,v 1.2 2004-07-08 08:26:34 silby Exp $
+# $FreeBSD: /tmp/pcvs/ports/emulators/vmware3/files/Attic/001.vmware.sh.in,v 1.1 2006-05-15 07:25:01 lawrance Exp $
 
-vmware_config_file=@@PREFIX@@/etc/vmware/config
+vmware_config_file=%%PREFIX%%/etc/vmware/config
 
 if [ ! -e $vmware_config_file ]; then
     echo "$vmware_config_file does not exist!" >&2
@@ -23,9 +23,9 @@ vmware_config() {
 
 vmware=`vmware_config vmware.fullpath`
 vmware_libdir=`vmware_config libdir`
-networking=@@NETWORKING@@
+networking=%%NETWORKING%%
 dev_vmnet1=/dev/vmnet1
-vmnet1_minor=@@VMNET1_MINOR@@
+vmnet1_minor=%%VMNET1_MINOR%%
 
 if [ ! -x $vmware ]; then
     echo "$vmware does not exist!" >&2
