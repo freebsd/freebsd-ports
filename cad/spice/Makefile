@@ -7,7 +7,7 @@
 
 PORTNAME=	spice
 PORTVERSION=	3f5.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	cad
 MASTER_SITES=	http://embedded.eecs.berkeley.edu/pubs/downloads/spice/:sources	 \
 		ftp://ic.eecs.berkeley.edu/pub/Spice3/um.3f3.ps/:docs
