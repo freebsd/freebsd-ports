@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Math/SymbolicX/NoSimplification.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/SymbolicX/NoSimplification/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/SymbolicX/NoSimplification
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/SymbolicX
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math
+@dirrmtry %%SITE_PERL%%/Math/SymbolicX
+@dirrmtry %%SITE_PERL%%/Math
