@@ -1,10 +1,16 @@
 --- ./src/daemon/common/commonSwarming.ml.orig	Mon Apr 10 14:06:20 2006
-+++ ./src/daemon/common/commonSwarming.ml	Sun May  7 06:39:10 2006
-@@ -17,6 +17,26 @@
++++ ./src/daemon/common/commonSwarming.ml	Mon May 15 13:03:12 2006
+@@ -17,6 +17,32 @@
      Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  *)
  
-+(*                      OVERALL SCHEMA
++(*
++  The jobs of swarmers are :
++  * select what data to ask from each uploader
++  * merge data coming from uploaders, potentially from different
++  networks, into a single Unix32 backend.
++
++                            OVERALL SCHEMA
 +
 +Each network frontend can have a different (fixed) chunk size
 +t1 +--------+--------+--------+--------+--------+--------+-------- chunks
@@ -27,7 +33,7 @@
  open Int64ops
  open Options
  open Printf2
-@@ -25,7 +45,6 @@
+@@ -25,7 +51,6 @@
  
    
  let check_swarming = false
@@ -35,7 +41,7 @@
  let debug_all = false
  
  open CommonTypes
-@@ -37,11 +56,8 @@
+@@ -37,11 +62,8 @@
  
  exception VerifierNotReady
  
@@ -49,7 +55,7 @@
  | AvailableBitv of Bitv.t
  
  type verification =
-@@ -54,18 +70,17 @@
+@@ -54,18 +76,17 @@
  let exit_on_error = ref false
  
  (* prints a new logline with date, module and starts newline *)
@@ -74,7 +80,7 @@
  open CommonFile
  open CommonTypes
  open CommonClient
-@@ -93,6 +108,8 @@
+@@ -93,6 +114,8 @@
  
  *)
  
@@ -83,7 +89,7 @@
  type chunk = {
      chunk_uid : uid_type;
      chunk_size : int64;
-@@ -102,20 +119,27 @@
+@@ -102,20 +125,27 @@
  (* glossary:
     network frontend use "chunks" of data,
     swarmer use "blocks" of data *)
@@ -116,7 +122,7 @@
  
  (* mapping from network chunks to swarmer blocks *)
      mutable t_blocks_of_chunk : int list array;
-@@ -124,12 +148,12 @@
+@@ -124,13 +154,12 @@
    }
  
  and swarmer = {
@@ -124,15 +130,16 @@
 -    mutable s_filename : string;
 +    s_num : int;
 +    s_filename : string;
++    s_size : int64;
  
      mutable s_networks : t list; (** list of frontends, primary at head 
  				     t.t_s = s <=> t in s.s_networks *)
 -    mutable s_size : int64;
-+    s_size : int64;
-     mutable s_range_size : int64;
+-    mutable s_range_size : int64;
      mutable s_strategy : strategy;
  
-@@ -156,20 +180,21 @@
+     mutable s_verified_bitmap : string;
+@@ -156,20 +185,21 @@
      mutable block_end : Int64.t;
      mutable block_ranges : range; (** [range] of the double-linked
  				      list of ranges associated to the
@@ -161,16 +168,29 @@
    }
  
  and uploader = {
-@@ -178,7 +203,7 @@
+@@ -178,26 +208,33 @@
  
      mutable up_declared : bool;
  
 -    mutable up_chunks : chunks;
 +    mutable up_intervals : intervals;
      mutable up_complete_blocks : int array; (** block numbers *)
-     mutable up_ncomplete : int;
+-    mutable up_ncomplete : int;
++    mutable up_ncomplete : int; (** number of blocks not yet handled,
++				    at the beginning of
++				    up_complete_blocks *)
  
-@@ -193,11 +218,14 @@
+     mutable up_partial_blocks : (int * int64 * int64) array; (** block
+ 								 number,
+ 								 begin_pos,
+ 								 end_pos
+ 								 *)
+-    mutable up_npartial : int;
++    mutable up_npartial : int; (** number of blocks not yet handled,
++				   at the beginning of
++				   up_partial_blocks *)
+ 
+     mutable up_block : block option;
      mutable up_block_begin : int64;
      mutable up_block_end : int64;
  
@@ -187,7 +207,7 @@
  
     [block]'s [block_ranges] reference the first (smallest offsets) of
     the [range]s associated with it. 
-@@ -216,12 +244,59 @@
+@@ -216,12 +253,64 @@
     overlap, and are sorted in increasing offsets order:
  
     b.block_begin <= b.block_ranges.block_begin ... <=
@@ -201,7 +221,7 @@
 +(* range owners are only used thru uploaders.up_ranges. blocks could be
 +   saved in [uploaders]' [up_ranges] along range, but would
 +   need uploading when the swarmer is splitted.
-+
+ 
 +   Removing [range] from [up_ranges] and [range_nuploading] from
 +   [range] could be good too, because they're not correctly updated
 +   when the swarmer is splitted. Again, getting rid of them is a
@@ -232,56 +252,63 @@
 +   hence t_ncomplete_chunks >= t_nverified_chunks
 +
 +   All chunks are [t_chunk_size] bytes in size, and first start at
-+   offset 0. This is assumed in [associate], [verify_chunk], maybe more.
++   offset 0. This is assumed in [create], [associate], [verify_chunk],
++   [duplicate_chunks], maybe more.
 +*)
 +
 +(* uploaders invariants ?
-+   At first, I supposed
-+   up_ncomplete = Array.length up_complete_blocks 
-+   up.up_npartial = Array.length up_partial_blocks
-+   if so, since Array.length complexity is O(1), why keep them ?
- 
-+   => see permute_and_return, they're used to simulate to removal of 
-+   elements without array reallocation
++   uploader block numbers are stored in reverse order in
++   up_complete_blocks and up_partial_blocks (first blocks at the end
++   of arrays), then array is processed from end to begin.
 +
-+   So the question is now, aren't there better datastructures than
-+   arrays for the job ?
++   0 <= up_ncomplete < Array.length up_complete_blocks 
++   0 <= up.up_npartial < Array.length up_partial_blocks
++
++   When a block has been selected, it's pushed out of the first
++   up_ncomplete first elements of up_complete_blocks by swapping it
++   with the #(up_ncomplete-1) element, then up_ncomplete is
++   decreased. (and similarly with s/complete/partial/ ?)
++
++   The question is now, aren't there better datastructures than
++   arrays for the job ? ;)
 +*)
  
  (*************************************************************************)
  (*                                                                       *)
-@@ -251,8 +326,6 @@
+@@ -251,112 +340,52 @@
  
  let swarmer_counter = ref 0
  
 -let has_multinet = true
 -
- (*************************************************************************)
- (*                                                                       *)
- (*                         dummy_swarmer                                 *)
-@@ -276,10 +349,10 @@
- (** (debug) output an [uploader] to current log *)
- 
- let print_uploader up =
--  lprintf_n () "  interesting complete_blocks: %d\n     " up.up_ncomplete;
-+  lprintf_n "  interesting complete_blocks: %d\n     " up.up_ncomplete;
-   Array.iter (fun i -> lprintf " %d " i) up.up_complete_blocks;
-   lprint_newline ();
--  lprintf_n () "  interesting partial_blocks: %d\n     " up.up_npartial;
-+  lprintf_n "  interesting partial_blocks: %d\n     " up.up_npartial;
-   Array.iter (fun (i, begin_pos, end_pos) ->
-       lprintf " %d[%Ld...%Ld] " i begin_pos end_pos
-   ) up.up_partial_blocks;
-@@ -289,23 +362,37 @@
-     associated file's [t.t_file] last seen value to the oldest of the
-     remaining last seen values *)
- 
-+let string_for_all p s =
-+  let l = String.length s in
+-(*************************************************************************)
+-(*                                                                       *)
+-(*                         dummy_swarmer                                 *)
+-(*                                                                       *)
+-(*************************************************************************)
++let string_init n f =
++  let s = String.create n in
 +  let rec aux i =
-+    i >= l || p s.[i] && aux (i+1) in
-+  aux 0
-+
++    if i < n then begin
++      s.[i] <- f i;
++      aux (i+1)
++    end in 
++  aux 0;
++  s
+ 
+-let dummy_swarmer = {
+-    s_num = 0;
+-    s_filename = "";
+-    s_networks = [];
+-    s_size = zero;
+-    s_range_size = zero;
+-    s_strategy = AdvancedStrategy;
+-    s_verified_bitmap = "";
+-    s_blocks = [||];
+-    s_block_pos = [||];
+-    s_availability = [||];
+-    s_nuploading = [||];
+-  }
 +let string_iter f s =
 +  let l = String.length s in
 +  let rec aux i =
@@ -290,7 +317,34 @@
 +      aux (i+1)
 +    end in 
 +  aux 0
-+
+ 
+-(** (debug) output an [uploader] to current log *)
++let string_existsi p s =
++  let l = String.length s in
++  let rec aux i =
++    i < l && (p i s.[i] || aux (i+1)) in
++  aux 0
+ 
+-let print_uploader up =
+-  lprintf_n () "  interesting complete_blocks: %d\n     " up.up_ncomplete;
+-  Array.iter (fun i -> lprintf " %d " i) up.up_complete_blocks;
+-  lprint_newline ();
+-  lprintf_n () "  interesting partial_blocks: %d\n     " up.up_npartial;
+-  Array.iter (fun (i, begin_pos, end_pos) ->
+-      lprintf " %d[%Ld...%Ld] " i begin_pos end_pos
+-  ) up.up_partial_blocks;
+-  lprint_newline ()
++let string_for_all p s =
++  let l = String.length s in
++  let rec aux i =
++    i >= l || p s.[i] && aux (i+1) in
++  aux 0
+ 
+ (** sets [t.t_last_seen] of the verified blocks to current time, and 
+-    associated file's [t.t_file] last seen value to the oldest of the
++    associated file's [t.t_s.s_file] last seen value to the oldest of the
+     remaining last seen values *)
+ 
  let compute_last_seen t =
    let last_seen_total = ref (BasicSocket.last_time ()) in
 -  for i = 0 to String.length t.t_converted_verified_bitmap - 1 do
@@ -305,74 +359,67 @@
    set_file_last_seen t.t_file !last_seen_total;
    t.t_last_seen
  
- (** if a swarmer is already associated with that [file_name], return it;
+-(** if a swarmer is already associated with that [file_name], return it;
 -    Otherwise create a new one with default values (including a default
 -    [range_size] instead of the provided value ??) *)
 -
 -let create_swarmer file_name file_size range_size =
-+    Otherwise create a new one with default values, that will be fixed
-+    by the first frontend association *)
- 
-+let create_swarmer file_name file_size =
-   try
-     HS.find swarmers_by_name
-       { dummy_swarmer with
-@@ -314,9 +401,7 @@
-   with Not_found ->
-       incr swarmer_counter;
- 
+-
+-  try
+-    HS.find swarmers_by_name
+-      { dummy_swarmer with
+-      s_filename = file_name
+-    }
+-  with Not_found ->
+-      incr swarmer_counter;
+-
 -(* Let be VERY conservative... *)
 -      let range_size = edonkey_range_size in
 -
-+      let range_size = edonkey_range_size in (* yuck ? *)
-       let nchunks = 1 in
-       let rec s = {
- 
-@@ -357,6 +442,43 @@
-   let b = s.s_block_pos in
-   b.(i)
- 
-+(** Finds the number of the block containing [chunk_pos] offset, using
-+    dichotomy. Blocks are half opened [block_begin, block_end[ *)
-+
-+(* 0 <= chunk_pos < s.s_size *)
-+let compute_block_num s chunk_pos =
-+  assert (0L <= chunk_pos && chunk_pos < s.s_size);
-+  let b = s.s_block_pos in
-+(* invariants:
-+   0 <= min <= max <= Array.length b - 1
-+   compute_block_begin s min <= chunk_pos < compute_block_end s max *)
-+
-+  let rec iter min max =
-+    if min = max then min
-+    else (* from now on, min < max *)
-+      let medium = (min + max) / 2 in
-+      (* Euclide        => 2*medium <= min + max <= 2*medium + 1 *)
-+      (* min < max      => 2*min < min + max < 2*max
-+                        => min <= medium < max                   *)
-+      if min < medium then
-+        if chunk_pos < b.(medium) then
-+          iter min (medium - 1)
-+        else
-+          iter medium max
-+      else
-+        (* min = medium < max  => 2*min < min + max <= 2*min + 1
-+                              <=>   min <       max <=   min + 1
-+                              <=> min + 1 = max                  *)
-+        if chunk_pos < b.(max) then
-+          min else max
-+  in
-+  let i = iter 0 (Array.length b - 1) in
-+  if debug_all then
-+    lprintf_nl "%Ld is block %d [%Ld-%Ld]" chunk_pos i
-+      (compute_block_begin s i) (compute_block_end s i);
-+  i
-+
-+
+-      let nchunks = 1 in
+-      let rec s = {
+-
+-          s_num = !swarmer_counter;
+-          s_filename = file_name;
+-
+-          s_networks = [];
+-
+-          s_size = file_size;
+-          s_range_size = range_size;
+-          s_strategy = AdvancedStrategy;
+-
+-          s_verified_bitmap = String.make nchunks '0';
+-          s_blocks = Array.create nchunks EmptyBlock ;
+-          s_block_pos = Array.create nchunks zero;
+-          s_availability = Array.create nchunks 0;
+-          s_nuploading = Array.create nchunks 0;
+-(*      s_last_seen = Array.create nchunks 0; *)
+-        }
+-      in
+-      HS.add swarmers_by_name s;
+-      s
+-
+-(** (internal) return the offset of the end of the [i]th block of
+-    swarmer [s] *)
+-
+-let compute_block_end s i =
+-  let b = s.s_block_pos in
+-  if Array.length b = i + 1 then
+-    s.s_size
+-  else
+-    b.(i+1)
+-
+-(** (internal) return the offset of the beginning of the [i]th block
+-    of swarmer [s] *)
+-
+-let compute_block_begin s i =
+-  let b = s.s_block_pos in
+-  b.(i)
+-
  (** (internal) return a 0 sized range at offset [pos], and assigned to
      block [b] *)
  
-@@ -368,19 +490,40 @@
+@@ -368,19 +397,40 @@
        range_end = pos;
        range_block = b;
        range_nuploading = 0;
@@ -418,16 +465,18 @@
  
  (** (internal) 
      Find ranges that are after [cut_pos] offset, unlink them from r
-@@ -392,8 +535,6 @@
+@@ -392,9 +442,7 @@
      If [cut_pos] is within one of the ranges, that range is cut in
      two at [cut_pos] offset, and link each half to its side.
  
 -    What should happen to range_begin is unclear.
 -
-     Also, what do to if range_nuploaders is not 0 ?
+-    Also, what do to if range_nuploaders is not 0 ?
++    Also, what do to if range_nuploading is not 0 ?
      => [cut_ranges_after] is being called from [split_blocks] that
      does not preserve [s_nuploading] for blocks either
-@@ -417,16 +558,15 @@
+ *)
+@@ -417,34 +465,165 @@
        (* "right" half *)
        let split_r = { r with
  	range_prev = None;
@@ -443,11 +492,68 @@
  
        if r.range_nuploading <> 0 then
 -	lprintf_n () "WARNING: Splitting a range currently being uploaded, don't know what to do with range_nuploaders :/\n";
-+	lprintf_n "WARNING: Splitting a range currently being uploaded, don't know what to do with range_nuploaders :/\n";
++	lprintf_n "WARNING: Splitting a range currently being uploaded, don't know what to do with range_nuploading :/\n";
  
        split_r in
    let cut_ranges = iter r in
-@@ -438,10 +578,10 @@
+   own_ranges b cut_ranges;
+   cut_ranges
+   
++(** (internal) return the offset of the end of the [i]th block of
++    swarmer [s] *)
++
++let compute_block_end s i =
++  let b = s.s_block_pos in
++  if Array.length b = i + 1 then
++    s.s_size
++  else
++    b.(i+1)
++
++(** (internal) return the offset of the beginning of the [i]th block
++    of swarmer [s] *)
++
++let compute_block_begin s i =
++  let b = s.s_block_pos in
++  b.(i)
++
++(** Finds the number of the block containing [chunk_pos] offset, using
++    dichotomy. Blocks are half opened [block_begin, block_end[ *)
++
++(* 0 <= chunk_pos < s.s_size *)
++let compute_block_num s chunk_pos =
++  assert (0L <= chunk_pos && chunk_pos < s.s_size);
++  let b = s.s_block_pos in
++(* invariants:
++   0 <= min <= max <= Array.length b - 1
++   compute_block_begin s min <= chunk_pos < compute_block_end s max *)
++
++  let rec iter min max =
++    if min = max then min
++    else (* from now on, min < max *)
++      let medium = (min + max) / 2 in
++      (* Euclide        => 2*medium <= min + max <= 2*medium + 1 *)
++      (* min < max      => 2*min < min + max < 2*max
++                        => min <= medium < max                   *)
++      if min < medium then
++        if chunk_pos < b.(medium) then
++          iter min (medium - 1)
++        else
++          iter medium max
++      else
++        (* min = medium < max  => 2*min < min + max <= 2*min + 1
++                              <=>   min <       max <=   min + 1
++                              <=> min + 1 = max                  *)
++        if chunk_pos < b.(max) then
++          min else max
++  in
++  let i = iter 0 (Array.length b - 1) in
++  if debug_all then
++    lprintf_nl "%Ld is block %d [%Ld-%Ld]" chunk_pos i
++      (compute_block_begin s i) (compute_block_end s i);
++  i
++
+ (** Return true if ranges fully "cover" their block
+     ("the block is made of holes") *)
  
  let empty_block b =
    let rec iter begin_pos r =
@@ -461,7 +567,89 @@
    in
    iter b.block_begin b.block_ranges
  
-@@ -490,7 +630,7 @@
++let iter_intervals s f intervals =
++  let nchunks = Array.length s.s_blocks in
++  List.iter (fun (interval_begin, interval_end) ->
++    let interval_begin = min interval_begin s.s_size in
++    let interval_end = min interval_end s.s_size in
++(*  lprintf "apply on %Ld-%Ld\n" interval_begin interval_end; *)
++    if interval_begin < interval_end then
++      let i0 = compute_block_num s interval_begin in
++      let block_begin = compute_block_begin s i0 in
++      let rec iter_blocks i block_begin interval_begin =
++(*      lprintf "iter_blocks %d %Ld %Ld\n" i block_begin interval_begin; *)
++        if i < nchunks && block_begin < interval_end then
++          let block_end = compute_block_end s i in
++          let current_end =  min block_end interval_end in
++	  
++          if debug_all then
++            lprintf_nl "Apply: %d %Ld-%Ld %Ld-%Ld"
++              i block_begin block_end interval_begin current_end;
++	  
++          f i block_begin block_end interval_begin current_end;
++          iter_blocks (i+1) block_end block_end
++      in
++      iter_blocks i0 block_begin interval_begin
++  ) intervals
++
++(*************************************************************************)
++(*                                                                       *)
++(*                              Swarmers                                 *)
++(*                                                                       *)
++(*************************************************************************)
++
++let dummy_swarmer = {
++    s_num = 0;
++    s_filename = "";
++    s_size = zero;
++    s_networks = [];
++    s_strategy = AdvancedStrategy;
++    s_verified_bitmap = "";
++    s_blocks = [||];
++    s_block_pos = [||];
++    s_availability = [||];
++    s_nuploading = [||];
++  }
++
++(** if a swarmer is already associated with that [file_name], return it;
++    Otherwise create a new one with default values, that will be fixed
++    by the first frontend association *)
++
++let create_swarmer file_name file_size =
++  try
++    HS.find swarmers_by_name
++      { dummy_swarmer with
++	s_filename = file_name
++      }
++  with Not_found ->
++    incr swarmer_counter;
++
++    let nblocks = 1 in
++    let rec s = {
++
++      s_num = !swarmer_counter;
++      s_filename = file_name;
++      s_size = file_size;
++
++      s_networks = [];
++
++      s_strategy = AdvancedStrategy;
++
++      s_verified_bitmap = String.make nblocks '0';
++      s_blocks = Array.create nblocks EmptyBlock ;
++      s_block_pos = Array.create nblocks zero;
++      s_availability = Array.create nblocks 0;
++      s_nuploading = Array.create nblocks 0;
++(*      s_last_seen = Array.create nblocks 0; *)
++    }
++    in
++    HS.add swarmers_by_name s;
++    s
++
+ (** Split swarmer existing blocks in at [chunk_size] boundaries *)
+ let split_blocks s chunk_size =
+ 
+@@ -490,7 +669,7 @@
  (* We need to split this block in two parts *)
          s.s_block_pos.(index_s) <- chunk_end;
          match s.s_blocks.(index_s) with
@@ -470,7 +658,7 @@
  
  (* s.s_blocks.(index_s) will appear twice in the result list *)
              let new_blocks =  (
-@@ -501,7 +641,6 @@
+@@ -501,7 +680,6 @@
              iter index_s chunk_end new_blocks
  
          | PartialBlock b1 ->
@@ -478,7 +666,7 @@
  	    (* split b1 in two; b2 is the part after [chunk_end] offset *)
              let b2 = {
                  block_s = s;
-@@ -535,12 +674,8 @@
+@@ -535,12 +713,8 @@
                  s.s_verified_bitmap.[index_s] <- '0';
                end else
                  s.s_blocks.(index_s) <- PartialBlock b2;
@@ -491,7 +679,7 @@
    in
    let blocks = iter 0 zero [] in
  
-@@ -554,9 +689,9 @@
+@@ -554,9 +728,9 @@
      aux 0 in
  
    if array_exist ((<>) 0) s.s_availability then
@@ -503,7 +691,7 @@
  
    s.s_blocks <- Array.create nblocks EmptyBlock;
    s.s_verified_bitmap <- String.make nblocks '0';
-@@ -571,8 +706,8 @@
+@@ -571,8 +745,8 @@
      | (b, pos, c) :: tail ->
          begin
            match b with
@@ -514,9 +702,38 @@
          end;
          s.s_blocks.(i) <- b;
          s.s_verified_bitmap.[i] <- c;
-@@ -613,11 +748,18 @@
+@@ -585,17 +759,15 @@
+ (** Associate a(n additional) frontend to a swarmer *)
+ 
+ let associate is_primary t s =
+-
+ (* a swarmer cannot be associated more than once to a network *)
+   if not (List.memq t s.s_networks) then
+   let size = file_size t.t_file in
+ 
+ (* what about raising an exception instead ? *)
+-  assert (s.s_size = size);
+-
+-  (* shouldn't just [t] be removed from the list ? *)
+-  (* t.t_s.s_networks <- []; *)
+-  t.t_s.s_networks <- List.filter ((!=) t) t.t_s.s_networks;
++  if s.s_size <> size then begin
++    lprintf_nl "file_size for %s does not match: swarmer %Ld / real %Ld" s.s_filename s.s_size size;
++    exit 2
++  end;
+ 
+   t.t_s <- s;
+   t.t_converted_verified_bitmap <- String.make t.t_nchunks '0';
+@@ -608,17 +780,23 @@
+     t.t_primary <- true;
+     s.s_networks <- t :: s.s_networks;
+   end else begin
+-    t.t_primary <- false;
+-    s.s_networks <- s.s_networks @ [t];
      (* TODO: transfer data into swarmer instead of discarding it *)
      Unix32.remove (file_fd t.t_file);
++    t.t_primary <- false;
++    s.s_networks <- s.s_networks @ [t];
    end;
 +
 +  (match s.s_networks with
@@ -530,11 +747,12 @@
  the t_chunk_of_block and t_blocks_of_chunk fields. *)
  
 -  let chunk_size = t.t_block_size in
+-
 +  let chunk_size = t.t_chunk_size in
- 
    split_blocks s chunk_size;
  
-@@ -628,7 +770,7 @@
+   let nblocks = Array.length s.s_blocks in
+@@ -628,7 +806,7 @@
        t.t_chunk_of_block <- Array.create nblocks 0;
        t.t_blocks_of_chunk <- Array.create nchunks [];
  
@@ -543,7 +761,7 @@
        for i = 0 to nblocks - 1 do
          let block_begin = compute_block_begin s i in
          let chunk = Int64.to_int (block_begin // chunk_size) in
-@@ -642,19 +784,14 @@
+@@ -642,42 +820,35 @@
      add_file_downloaded t.t_file (zero -- file_downloaded t.t_file);
  
  (* check that all frontends use the primary's file backend *)
@@ -560,6 +778,8 @@
 -          set_file_fd t.t_file (file_fd tt.t_file)
 -      | _ -> ()
 -    end;
+-
+-  ()
 +  (match s.s_networks with
 +   | t :: tail when is_primary ->
 +       List.iter (fun tt ->
@@ -567,11 +787,10 @@
 +       ) tail
 +   | tprim :: tail ->
 +       set_file_fd t.t_file (file_fd tprim.t_file)
-+   | [] -> assert false);
++   | [] -> assert false)
  
-   ()
+ (** Create a primary frontend and its swarmer *)
  
-@@ -663,21 +800,21 @@
  let create ss file chunk_size =
  
    let size = file_size file in
@@ -598,7 +817,7 @@
  
        t_converted_verified_bitmap = String.make nchunks '0';
        t_last_seen = Array.create nchunks 0;
-@@ -692,120 +829,59 @@
+@@ -692,120 +863,54 @@
    associate true t ss;
    t
  
@@ -655,26 +874,16 @@
 -    lprintf_nl () "%Ld is block %d [%Ld-%Ld]" chunk_pos i
 -      (compute_block_begin s i) (compute_block_end s i);
 -  i
-+    f with receive block number, block beginning and ending offsets,
-+    and overlapping interval beginning and ending offsets.
- 
-+    If an interval starts halfway of a block, iteration starts on the
-+    next block, with interval_begin < block_begin indicating where the
-+    interval really started.
- 
+-
+-
 -(*************************************************************************)
 -(*                                                                       *)
 -(*                         apply_intervals (internal)                    *)
 -(*                                                                       *)
 -(*************************************************************************)
-+    If an interval ends halfway of a block, iteration ends on that
-+    block, with interval_end < block_end indicating where the interval
-+    really ended.
-+*)
- 
+-
 -let apply_intervals s f chunks =
-+let iter_intervals s f intervals =
-   let nchunks = Array.length s.s_blocks in
+-  let nchunks = Array.length s.s_blocks in
 -  let rec iter chunks =
 -    match chunks with
 -      [] -> ()
@@ -696,9 +905,14 @@
 -                if debug_all then
 -                  lprintf_nl () "Apply: %d %Ld-%Ld %Ld-%Ld"
 -                    i block_begin block_end chunk_begin current_end;
--
++    f with receive block number, block beginning and ending offsets,
++    and overlapping interval beginning and ending offsets.
+ 
 -                f i block_begin block_end chunk_begin current_end;
--
++    If an interval starts halfway of a block, iteration starts on the
++    next block, with interval_begin < block_begin indicating where the
++    interval really started.
+ 
 -                iter_blocks (i+1) block_end block_end
 -            in
 -            iter_blocks i0 block_begin chunk_begin;
@@ -706,29 +920,30 @@
 -        iter tail
 -  in
 -  iter chunks
--
-+  List.iter (fun (interval_begin, interval_end) ->
-+    let interval_begin = min interval_begin s.s_size in
-+    let interval_end = min interval_end s.s_size in
-+(*  lprintf "apply on %Ld-%Ld\n" interval_begin interval_end; *)
-+    if interval_begin < interval_end then
-+      let i0 = compute_block_num s interval_begin in
-+      let block_begin = compute_block_begin s i0 in
-+      let rec iter_blocks i block_begin interval_begin =
-+(*      lprintf "iter_blocks %d %Ld %Ld\n" i block_begin interval_begin; *)
-+        if i < nchunks && block_begin < interval_end then
-+          let block_end = compute_block_end s i in
-+          let current_end =  min block_end interval_end in
-+	  
-+          if debug_all then
-+            lprintf_nl "Apply: %d %Ld-%Ld %Ld-%Ld"
-+              i block_begin block_end interval_begin current_end;
-+	  
-+          f i block_begin block_end interval_begin current_end;
-+          iter_blocks (i+1) block_end block_end
-+      in
-+      iter_blocks i0 block_begin interval_begin
-+  ) intervals
++    If an interval ends halfway of a block, iteration ends on that
++    block, with interval_end < block_end indicating where the interval
++    really ended.
++*)
+ 
++let check_finished t =
++  let file = t.t_file in
++  match file_state file with
++  | FileNew 
++  | FileCancelled 
++  | FileAborted _ 
++  | FileShared 
++  | FileDownloaded 
++  | FileQueued 
++  | FilePaused -> 
++      false
++  | FileDownloading ->
++      if string_existsi (fun i c -> c <> '3')
++	t.t_converted_verified_bitmap then false
++      else begin
++        if file_size file <> file_downloaded t.t_file then
++          lprintf_nl "Downloaded size differs after complete verification";
++        true
++      end
  
 -(*************************************************************************)
 -(*                                                                       *)
@@ -758,7 +973,7 @@
        let block_begin = compute_block_begin s i in
        let block_end = compute_block_end s i in
        lprintf "%Ld - %Ld [%Ld] %c " block_begin block_end
-@@ -818,7 +894,7 @@
+@@ -818,7 +923,7 @@
        ) s.s_networks;
  
        match b with
@@ -767,7 +982,7 @@
            lprintf " [%Ld .. %Ld] --> "
              b.block_begin b.block_end;
            iter b.block_ranges
-@@ -827,119 +903,70 @@
+@@ -827,266 +932,352 @@
        | VerifiedBlock -> lprintf_nl2 "V"
    ) s.s_blocks;
  
@@ -926,7 +1141,8 @@
  
  (*************************************************************************)
  (*                                                                       *)
-@@ -947,146 +974,245 @@
+-(*                         set_verified_bitmap (internal)                *)
++(*                         swarmers verified bitmaps                     *)
  (*                                                                       *)
  (*************************************************************************)
  
@@ -960,14 +1176,14 @@
 -            t.t_blocks_of_chunk.(j) then
 -            t.t_converted_verified_bitmap.[j] <- '0'
 +	  match t.t_converted_verified_bitmap.[j] with
-+	    | '0' -> ()
-+	    | '1' ->
-+		if List.for_all (fun i -> s.s_verified_bitmap.[i] = '0')
-+		  t.t_blocks_of_chunk.(j) then
-+		    t.t_converted_verified_bitmap.[j] <- '0'
-+	    | '2' -> lprintf_nl "set_swarmer_bitmap_0: invalidating a block within a completed chunk?"
-+	    | '3' -> lprintf_nl "set_swarmer_bitmap_0: invalidating a block within a verified chunk?"
-+	    | _ -> assert false
++	  | '0' -> ()
++	  | '1' ->
++	      if List.for_all (fun i -> s.s_verified_bitmap.[i] = '0')
++		t.t_blocks_of_chunk.(j) then
++		  t.t_converted_verified_bitmap.[j] <- '0'
++	  | '2' -> lprintf_nl "set_swarmer_bitmap_0: invalidating a block within a completed chunk?"
++	  | '3' -> lprintf_nl "set_swarmer_bitmap_0: invalidating a block within a verified chunk?"
++	  | _ -> assert false
        ) s.s_networks
      end
  
@@ -975,38 +1191,44 @@
    also as started. *)
 -let set_bitmap_1 s i =
 -  if s.s_verified_bitmap.[i] = '0' then begin
--      s.s_verified_bitmap.[i] <- '1';
--      List.iter (fun t ->
 +let set_swarmer_bitmap_1 s i =
 +  match s.s_verified_bitmap.[i] with
-+    | '0' ->
-+       s.s_verified_bitmap.[i] <- '1';
-+	List.iter (fun t ->
-           let j = t.t_chunk_of_block.(i) in
++  | '0' ->
+       s.s_verified_bitmap.[i] <- '1';
+       List.iter (fun t ->
+-          let j = t.t_chunk_of_block.(i) in
 -          if t.t_converted_verified_bitmap.[j] = '0' then
 -            t.t_converted_verified_bitmap.[j] <- '1'
--      ) s.s_networks
++        let j = t.t_chunk_of_block.(i) in
++        match t.t_converted_verified_bitmap.[j] with
++	| '0' -> t.t_converted_verified_bitmap.[j] <- '1'
++	| '1' -> ()
++	| '2' -> lprintf_nl "set_bitmap1: partial block within a completed chunk?"
++	| '3' -> lprintf_nl "set_bitmap1: partial block within a verified chunk?"
++	| _ -> assert false
+       ) s.s_networks
 -    end
-+          match t.t_converted_verified_bitmap.[j] with
-+	    | '0' -> t.t_converted_verified_bitmap.[j] <- '1'
-+	    | '1' -> ()
-+	    | '2' -> lprintf_nl "set_bitmap1: partial block within a completed chunk?"
-+	    | '3' -> lprintf_nl "set_bitmap1: partial block within a verified chunk?"
-+	    | _ -> assert false
-+	) s.s_networks
-+    | '1' -> ()
-+    | '2' -> lprintf_nl "set_swarmer_bitmap_1: trying to demote a completed block?"
-+    | '3' -> lprintf_nl "set_swarmer_bitmap_1: trying to demote a verified block?"
-+    | _ -> assert false
++  | '1' -> ()
++  | '2' -> lprintf_nl "set_swarmer_bitmap_1: trying to demote a completed block?"
++  | '3' -> lprintf_nl "set_swarmer_bitmap_1: trying to demote a verified block?"
++  | _ -> assert false
 +	
  
 -(* we finished this block, we need know to verify it *)
 -let set_bitmap_2 s i =
 -  if s.s_verified_bitmap.[i] < '2' then begin
 -      s.s_verified_bitmap.[i] <- '2';
--      match s.s_networks with
++(* we finished this block, trying to escalate to primary frontend
++   verification bitmap *)
++let set_swarmer_bitmap_2 s i =
++  match s.s_verified_bitmap.[i] with
++  | '0' | '1' ->
++      (s.s_verified_bitmap.[i] <- '2';
+       match s.s_networks with
 -      | t :: _ when t.t_primary ->
--          let j = t.t_chunk_of_block.(i) in
++      | t :: _ ->
++	  assert (t.t_primary);
+           let j = t.t_chunk_of_block.(i) in
 -          if List.for_all (fun i -> s.s_verified_bitmap.[i] = '2')
 -            t.t_blocks_of_chunk.(j) &&
 -            t.t_converted_verified_bitmap.[j] <> '3' then begin
@@ -1016,30 +1238,22 @@
 -      | [] -> assert false
 -      | _ -> ()
 -    end
-+(* we finished this block, trying to escalate to primary frontend
-+   verification bitmap *)
-+let set_swarmer_bitmap_2 s i =
-+  match s.s_verified_bitmap.[i] with
-+    | '0' | '1' ->
-+	(s.s_verified_bitmap.[i] <- '2';
-+	match s.s_networks with
-+	  | t :: _ ->
-+	      assert (t.t_primary);
-+              let j = t.t_chunk_of_block.(i) in
-+	      (match t.t_converted_verified_bitmap.[j] with
-+		| '0' | '1' -> 
-+		    if List.for_all (fun i -> s.s_verified_bitmap.[i] = '2')
-+		      t.t_blocks_of_chunk.(j) then begin
-+			t.t_ncomplete_chunks <- t.t_ncomplete_chunks + 1;
-+			t.t_converted_verified_bitmap.[j] <- '2'
-+		      end
-+		| '2' -> ()
-+		| '3' -> lprintf_nl "set_swarmer_bitmap_2: trying to demote a verified block? (1)"
-+		| _ -> assert false)
-+	  | [] -> assert false)
-+    | '2' -> ()
-+    | '3' -> lprintf_nl "set_swarmer_bitmap_2: trying to demote a verified block? (2)"
-+    | _ -> assert false
++	  (match t.t_converted_verified_bitmap.[j] with
++	  | '0' | '1' -> 
++	      if List.for_all (fun i -> s.s_verified_bitmap.[i] = '2')
++		t.t_blocks_of_chunk.(j) then begin
++		  t.t_ncomplete_chunks <- t.t_ncomplete_chunks + 1;
++		  t.t_converted_verified_bitmap.[j] <- '2'
++		end
++	  | '2' -> ()
++	  | '3' -> 
++	      (* lprintf_nl "set_swarmer_bitmap_2: trying to demote a verified block? (1)" *)
++	      ()
++	  | _ -> assert false)
++      | [] -> assert false)
++  | '2' -> ()
++  | '3' -> lprintf_nl "set_swarmer_bitmap_2: trying to demote a verified block? (2)"
++  | _ -> assert false
  
  (* the primary verifier has worked, so let ask secondary ones for
 -verification too *)
@@ -1081,6 +1295,9 @@
 +      | [] -> assert false
 +      | tprim :: secondaries ->
 +	  assert (tprim.t_primary);
++	  (* that test is somewhat redundant, since only primary
++	     frontends with verification can have merged secondary
++	     frontends; See merge *)
 +	  match tprim.t_verifier with
 +	  | NoVerification | VerificationNotAvailable -> ()
 +	  | Verification _ | ForceVerification ->
@@ -1178,13 +1395,14 @@
        set_completed_block None s j;
        s.s_blocks.(j) <- VerifiedBlock;
 -      set_bitmap_3 s j
--
--(*************************************************************************)
--(*                                                                       *)
--(*                         set_verified_chunk (internal)                 *)
--(*                                                                       *)
--(*************************************************************************)
 +      set_swarmer_bitmap_3 s j
+ 
+ (*************************************************************************)
+ (*                                                                       *)
+-(*                         set_verified_chunk (internal)                 *)
++(*                        frontends verified bitmaps                     *)
+ (*                                                                       *)
+ (*************************************************************************)
  
 -let set_verified_chunk t i =
 -  t.t_nverified_blocks <- t.t_nverified_blocks + 1;
@@ -1210,18 +1428,18 @@
 +      t.t_converted_verified_bitmap.[j] <- '0';
 +      List.iter (fun i ->
 +        match s.s_blocks.(i) with
-+	  | EmptyBlock -> set_swarmer_bitmap_0 s i
-+          | PartialBlock _ ->  set_swarmer_bitmap_1 s i
-+          | CompleteBlock ->
-+              let block_begin = compute_block_begin s i in
-+              let block_end = compute_block_end s i in
-+	      (* negative *)
-+              add_file_downloaded None s (block_begin -- block_end);
++	| EmptyBlock -> set_swarmer_bitmap_0 s i
++        | PartialBlock _ ->  set_swarmer_bitmap_1 s i
++        | CompleteBlock ->
++            let block_begin = compute_block_begin s i in
++            let block_end = compute_block_end s i in
++	    (* negative *)
++            add_file_downloaded None s (block_begin -- block_end);
 +	      
-+              s.s_blocks.(i) <- EmptyBlock;
-+              set_swarmer_bitmap_0 s i
-+		
-+          | VerifiedBlock -> assert false
++            s.s_blocks.(i) <- EmptyBlock;
++            set_swarmer_bitmap_0 s i
++	      
++        | VerifiedBlock -> assert false
 +      ) t.t_blocks_of_chunk.(j)
      end
 +  else begin
@@ -1243,15 +1461,27 @@
 -(*                         verify (internal)                             *)
 -(*                                                                       *)
 -(*************************************************************************)
-+(* aka set_verified_chunk (internal) *)
++(* aka set_completed_chunk (internal) *)
++let set_frontend_bitmap_2 t j =
++  match t.t_converted_verified_bitmap.[j] with
++  | '0' | '1' ->
++      if !verbose_swarming || !verbose then
++	lprintf_nl "Completed block %d/%d of %s"
++          (j + 1) t.t_nchunks (file_best_name t.t_file);
++      let s = t.t_s in
++      List.iter (fun i -> set_completed_block None s i)
++	t.t_blocks_of_chunk.(j)
++  | '2' | '3' -> ()
++  | _ -> assert false
  
 -let verify t chunks num begin_pos end_pos =
 -  file_verify t.t_file chunks.(num) begin_pos end_pos
++(* aka set_verified_chunk (internal) *)
 +let set_frontend_bitmap_3 t j =
 +  let mark_verified () =
 +    t.t_converted_verified_bitmap.[j] <- '3';
 +    if !verbose_swarming || !verbose then
-+      lprintf_nl "Completed block %d/%d of %s"
++      lprintf_nl "Verified block %d/%d of %s"
 +        (j + 1) t.t_nchunks (file_best_name t.t_file);
 +    if t.t_primary then begin
 +      let s = t.t_s in
@@ -1262,25 +1492,38 @@
 +    end;
 +    t.t_verified t.t_nverified_chunks j in
 +  match t.t_converted_verified_bitmap.[j] with
-+    | '0' | '1' ->
-+	t.t_ncomplete_chunks <- t.t_ncomplete_chunks + 1;
-+	t.t_nverified_chunks <- t.t_nverified_chunks + 1;
-+	mark_verified ();
++  | '0' | '1' ->
++      t.t_ncomplete_chunks <- t.t_ncomplete_chunks + 1;
++      t.t_nverified_chunks <- t.t_nverified_chunks + 1;
++      mark_verified ();
++  | '2' ->
++      t.t_nverified_chunks <- t.t_nverified_chunks + 1;
++      mark_verified ();
++  | '3' -> ()
++  | _ -> assert false
++
++let set_chunks_verified_bitmap t bitmap =
++  string_iter (fun j c ->
++    match c with
++    | '0' | '1' -> 
++	()
 +    | '2' ->
-+	t.t_nverified_chunks <- t.t_nverified_chunks + 1;
-+	mark_verified ();
-+    | '3' -> ()
++	set_frontend_bitmap_2 t j
++    | '3' ->
++	set_frontend_bitmap_3 t j;
++        if t.t_converted_verified_bitmap.[j] <> '3' then
++          lprintf_nl "FIELD AS BEEN CLEARED"
 +    | _ -> assert false
++  ) bitmap
++
++let chunks_verified_bitmap t = t.t_converted_verified_bitmap
 +
 +(** Check the equality of the hash of [t]'s data between offsets
 +    [begin_pos] and [end_pos] against the value of [uid] *)
-+
-+let verify t uid begin_pos end_pos =
-+  file_verify t.t_file uid begin_pos end_pos
  
  (*************************************************************************)
  (*                                                                       *)
-@@ -1094,258 +1220,107 @@
+@@ -1094,258 +1285,82 @@
  (*                                                                       *)
  (*************************************************************************)
  
@@ -1288,6 +1531,9 @@
 -  if t.t_converted_verified_bitmap.[i] = '2' then
 -    let nblocks = String.length t.t_converted_verified_bitmap in
 +let verify_chunk t j =
++  let verify t uid begin_pos end_pos =
++    file_verify t.t_file uid begin_pos end_pos in
++
 +  if t.t_converted_verified_bitmap.[j] = '2' then
 +    let nchunks = String.length t.t_converted_verified_bitmap in
      match t.t_verifier with
@@ -1452,14 +1698,14 @@
 +	      ) t.t_converted_verified_bitmap
            with VerifierNotReady -> ()
 -        end
--
--
+ 
+ 
 -(*************************************************************************)
 -(*                                                                       *)
 -(*                         must_verify_chunk (internal)                  *)
 -(*                                                                       *)
 -(*************************************************************************)
- 
+-
 -            (*
 -let must_verify_chunk t i immediatly =
 -  match t.t_verifier with
@@ -1470,7 +1716,7 @@
 -      if t.t_converted_verified_bitmap.[i] = '2' && immediatly then
 -        verify_chunk t i
 -          *)
- 
+-
 -(*************************************************************************)
 -(*                                                                       *)
 -(*                         must_verify_block                             *)
@@ -1511,41 +1757,34 @@
 -  for i = 0 to String.length s.s_verified_bitmap - 1 do
 -    must_verify_block s i immediatly
 -  done
-+  string_iter (fun i _ -> must_verify_block s i) s.s_verified_bitmap
- 
+-
 -(*************************************************************************)
 -(*                                                                       *)
 -(*                         compute_bitmap                                *)
 -(*                                                                       *)
 -(*************************************************************************)
-+(** same, and synchronously calls the verification of all chunks *)
-+
-+let verify_all_chunks_immediately t =
-+  verify_all_chunks t;
-+  string_iter (fun i _ -> verify_chunk t i) t.t_converted_verified_bitmap
-+    
- 
-+(** synchronously verify all completed chunks not yet verified *)
- 
- let compute_bitmap t =
+-
+-
+-let compute_bitmap t =
 -  if t.t_ncomplete_blocks > t.t_nverified_blocks then begin
 -      for i = 0 to String.length t.t_converted_verified_bitmap - 1 do
 -        if t.t_converted_verified_bitmap.[i] = '2' then
 -            verify_chunk t i
 -      done
 -    end
-+  if t.t_ncomplete_chunks > t.t_nverified_chunks then 
-+    string_iter (fun i c -> 
-+      if c = '2' then verify_chunk t i) t.t_converted_verified_bitmap
++  string_iter (fun i _ -> must_verify_block s i) s.s_verified_bitmap
  
++(** same, and synchronously calls the verification of all chunks *)
  
 -(*************************************************************************)
 -(*                                                                       *)
 -(*                         split_range (internal)                        *)
 -(*                                                                       *)
 -(*************************************************************************)
-+(** Replaces the ith block of the swarmer with a PartialBlock
-+    ranges are created with s_range_size size *)
++let verify_all_chunks_immediately t =
++  verify_all_chunks t;
++  string_iter (fun i _ -> verify_chunk t i) t.t_converted_verified_bitmap
++    
  
 -let rec split_range r range_size =
 -  assert (r.range_current_begin = r.range_begin);
@@ -1560,59 +1799,41 @@
 -        range_begin = next_range;
 -        range_current_begin = next_range;
 -        range_end = r.range_end;
-+let new_block s i =
-+
-+  (** Split a range in ranges of at most [range_size] bytes, if needed 
-+      ranges stay linked together *)
-+
-+  let rec split_range r range_size =
-+    let cut_pos = r.range_begin ++ range_size in
-+(*  lprintf "   split_range: cut_pos %Ld\n" cut_pos; *)
-+    if r.range_end > cut_pos then
-+      (* "right" half *)
-+      let split_r = {
-+	range_block = r.range_block;
-+	range_nuploading = 0;
-+	range_next = r.range_next;
-+	range_prev = Some r;
-+	range_begin = cut_pos;
-+	range_end = r.range_end;
-       } in
+-      } in
 -    begin
 -      match r.range_next with
 -        None -> ()
 -      | Some rrr ->
-+      (match r.range_next with
-+	| None -> ()
-+	| Some old_next_range ->
- (*          lprintf "Another one ??\n"; *)
+-(*          lprintf "Another one ??\n"; *)
 -          rrr.range_prev <- Some rr;
 -    end;
 -    r.range_next <- Some rr;
 -    r.range_end <- next_range;
-+            old_next_range.range_prev <- Some split_r);
-+      (* "left" half *)
-+      r.range_next <- Some split_r;
-+      r.range_end <- cut_pos;
- (*    lprintf "      NEW RANGE: %Ld- OLD RANGE: %Ld-%Ld\n"
+-(*    lprintf "      NEW RANGE: %Ld- OLD RANGE: %Ld-%Ld\n"
 -      rr.range_begin r.range_begin r.range_end; *)
--
++(** synchronously verify all completed chunks not yet verified *)
+ 
 -    split_range rr range_size
--
--
++let compute_bitmap t =
++  if t.t_ncomplete_chunks > t.t_nverified_chunks then 
++    string_iter (fun i c -> 
++      if c = '2' then verify_chunk t i) t.t_converted_verified_bitmap
+ 
+ 
 -(*************************************************************************)
 -(*                                                                       *)
 -(*                         new_block (internal)                          *)
 -(*                                                                       *)
 -(*************************************************************************)
-+      split_r.range_begin r.range_begin r.range_end; *)
-+      split_range split_r range_size in
++(** Replaces the ith block of the swarmer with a PartialBlock
++    ranges are created with s_range_size size *)
  
--let new_block s i =
+ let new_block s i =
++
    let block_begin = compute_block_begin s i in
    let block_end = compute_block_end s i in
    let rec b = {
-@@ -1365,348 +1340,227 @@
+@@ -1365,348 +1380,273 @@
        range_end = block_end;
        range_block = b;
        range_nuploading = 0;
@@ -1621,8 +1842,8 @@
    in
 -
  (*  lprintf "New block %Ld-%Ld\n" block_begin block_end; *)
-   split_range range s.s_range_size;
- 
+-  split_range range s.s_range_size;
+-
 -(*
 -  let rec iter r =
 -    lprintf "  Range %Ld-%Ld\n" r.range_begin r.range_end;
@@ -1632,7 +1853,7 @@
 -  in
 -  iter b.block_ranges;
 -*)
--
+ 
    s.s_blocks.(i) <- PartialBlock b;
    if s.s_verified_bitmap.[i] < '1' then
 -    set_bitmap_1 s i;
@@ -1711,33 +1932,6 @@
 -                      begin
 -                        match s.s_blocks.(b.block_num) with
 -                          PartialBlock _ | EmptyBlock ->
--
--                            begin
--                              match s.s_networks with
--                                [] -> assert false
--                              | t :: _ when t.t_primary ->
--                                  begin
--                                    match t.t_verifier with
--                                      NoVerification ->
--                                        set_verified_block s b.block_num
--                                    | _ ->
--                                        set_completed_block (Some t) s b.block_num;
--                                        must_verify_block s b.block_num false
--                                  end
--                              | _ -> ()
--                            end
--                        | _ -> ()
--                      end
--                  | Some rr -> b.block_ranges <- rr
--                end;
--            | Some rr -> rr.range_next <- r.range_next);
--          r.range_next <- None;
--          r.range_prev <- None;
--        end (* else begin
--          lprintf " ... new range %Ld-%Ld\n" r.range_current_begin r.range_end;
--        end *)
--    end
--
 +    let new_current_begin =
 +      max (min interval_end r.range_end) r.range_begin in
 +    let downloaded = new_current_begin -- r.range_begin in
@@ -1780,6 +1974,56 @@
 +           end *)
 +  end
  
+-                            begin
+-                              match s.s_networks with
+-                                [] -> assert false
+-                              | t :: _ when t.t_primary ->
+-                                  begin
+-                                    match t.t_verifier with
+-                                      NoVerification ->
+-                                        set_verified_block s b.block_num
+-                                    | _ ->
+-                                        set_completed_block (Some t) s b.block_num;
+-                                        must_verify_block s b.block_num false
+-                                  end
+-                              | _ -> ()
+-                            end
+-                        | _ -> ()
+-                      end
+-                  | Some rr -> b.block_ranges <- rr
+-                end;
+-            | Some rr -> rr.range_next <- r.range_next);
+-          r.range_next <- None;
+-          r.range_prev <- None;
+-        end (* else begin
+-          lprintf " ... new range %Ld-%Ld\n" r.range_current_begin r.range_end;
+-        end *)
+-    end
++(** Split a range at [cut_pos] offset, if needed;
++    ranges stay linked together *)
+ 
++let rec split_range r cut_pos =
++(*  lprintf "   split_range: cut_pos %Ld\n" cut_pos; *)
++  if r.range_begin < cut_pos && r.range_end > cut_pos then
++    (* "right" half *)
++    let split_r = {
++      range_block = r.range_block;
++      range_nuploading = 0;
++      range_next = r.range_next;
++      range_prev = Some r;
++      range_begin = cut_pos;
++      range_end = r.range_end;
++    } in
++    (match r.range_next with
++     | None -> ()
++     | Some old_next_range ->
++         old_next_range.range_prev <- Some split_r);
++    (* "left" half *)
++    r.range_next <- Some split_r;
++    r.range_end <- cut_pos
++(*    lprintf "      NEW RANGE: %Ld- OLD RANGE: %Ld-%Ld\n"
++      split_r.range_begin r.range_begin r.range_end; *)
+ 
 -(*************************************************************************)
 -(*                                                                       *)
 -(*                         set_present_block (internal)                  *)
@@ -1820,8 +2064,18 @@
 -(*                                                                       *)
 -(*************************************************************************)
 +let set_present_block b interval_begin interval_end =
++  let interval_size = interval_end -- interval_begin in
++  let old_remaining = b.block_remaining in
++  (* download can only happen at the beginning of ranges, so we must
++     first split at each interval beginning *)
 +  iter_block_ranges (fun r ->
-+    range_received None r interval_begin interval_end) b
++    split_range r interval_begin) b;
++  iter_block_ranges (fun r ->
++    range_received None r interval_begin interval_end) b;
++  let new_present = old_remaining -- b.block_remaining in
++  if new_present <> interval_size then
++    lprintf_nl "set_present_block: %Ld added <> %Ld effectively added"
++      interval_size new_present
  
 -let set_present s chunks =
 +(** Remove a list of intervals from the ranges of a swarmer *)
@@ -1866,14 +2120,15 @@
  (*          lprintf "  Other\n"; *)
 -          ()
 -  ) chunks
--
++        ()
++  ) intervals
+ 
 -(*************************************************************************)
 -(*                                                                       *)
 -(*                         end_present (internal)                        *)
 -(*                                                                       *)
 -(*************************************************************************)
-+        ()
-+  ) intervals
++(** reverse absent/present in the list and call set_present *)
  
 -let rec end_present present begin_present end_file list =
 -  match list with
@@ -1889,32 +2144,40 @@
 -        else (begin_present, begin_absent) :: present
 -      in
 -      end_present present end_absent end_file tail
-+(** reverse absent/present in the list and call set_present *)
- 
--(*************************************************************************)
--(*                                                                       *)
--(*                         set_absent                                    *)
--(*                                                                       *)
--(*************************************************************************)
 +let set_absent s list_absent =
 +(** Build the complementary list of intervals of [intervals] in 
 +    [set_begin, set_end[ *)
 +  let rec complementary acc set_begin set_end intervals =
 +    match intervals with
-+      | [] ->
-+	  let acc =
-+            if set_begin = set_end then acc else
-+              (set_begin, set_end) :: acc
-+	  in
-+	  List.rev acc
-+      | (interval_begin, interval_end) :: other_intervals ->
-+	  let acc =
-+            if set_begin = interval_begin then acc
-+            else (set_begin, interval_begin) :: acc
-+	  in
-+	  complementary acc interval_end set_end other_intervals in
++    | [] ->
++	let acc =
++          if set_begin = set_end then acc else
++            (set_begin, set_end) :: acc
++	in
++	List.rev acc
++    | (interval_begin, interval_end) :: other_intervals ->
++	let acc =
++          if set_begin = interval_begin then acc
++          else (set_begin, interval_begin) :: acc
++	in
++	complementary acc interval_end set_end other_intervals in
 +  let list_present = complementary [] Int64.zero s.s_size list_absent in
 +  set_present s list_present
++
++let intervals_to_string s intervals =
++  match intervals with
++  | AvailableIntervals intervals ->
++      let st = String.make (Array.length s.s_blocks) '0' in
++      iter_intervals s (fun i _ _ _ _ -> st.[i] <- '1') intervals;
++      st
++  | AvailableBitv b -> Bitv.to_string b
+ 
+ (*************************************************************************)
+ (*                                                                       *)
+-(*                         set_absent                                    *)
++(*                               Uploaders                               *)
+ (*                                                                       *)
+ (*************************************************************************)
  
 -let set_absent s list =
 -(* reverse absent/present in the list and call set_present *)
@@ -1927,20 +2190,22 @@
 -          end_present [zero, t1] t2 s.s_size tail
 -  in
 -  set_present s list
-+let intervals_to_string s intervals =
-+  match intervals with
-+  | AvailableIntervals intervals ->
-+      let st = String.make (Array.length s.s_blocks) '0' in
-+      iter_intervals s (fun i _ _ _ _ -> st.[i] <- '1') intervals;
-+      st
-+  | AvailableBitv b -> Bitv.to_string b
++(** (debug) output an [uploader] to current log *)
  
- (*************************************************************************)
- (*                                                                       *)
+-(*************************************************************************)
+-(*                                                                       *)
 -(*                         chunks_to_string (internal)                   *)
-+(*                               Uploaders                               *)
- (*                                                                       *)
- (*************************************************************************)
+-(*                                                                       *)
+-(*************************************************************************)
++let print_uploader up =
++  lprintf_n "  interesting complete_blocks: %d\n     " up.up_ncomplete;
++  Array.iter (fun i -> lprintf " %d " i) up.up_complete_blocks;
++  lprint_newline ();
++  lprintf_n "  interesting partial_blocks: %d\n     " up.up_npartial;
++  Array.iter (fun (i, begin_pos, end_pos) ->
++      lprintf " %d[%Ld...%Ld] " i begin_pos end_pos
++  ) up.up_partial_blocks;
++  lprint_newline ()
  
 -let chunks_to_string s chunks =
 -  match chunks with
@@ -2132,7 +2397,7 @@
  
  (*************************************************************************)
  (*                                                                       *)
-@@ -1714,15 +1568,14 @@
+@@ -1714,15 +1654,14 @@
  (*                                                                       *)
  (*************************************************************************)
  
@@ -2150,7 +2415,7 @@
  
        up_complete_blocks = [||];
        up_ncomplete = 0;
-@@ -1733,11 +1586,12 @@
+@@ -1733,11 +1672,12 @@
        up_block = None;
        up_block_begin = zero;
        up_block_end = zero;
@@ -2164,7 +2429,7 @@
    up
  
  (*************************************************************************)
-@@ -1746,34 +1600,63 @@
+@@ -1746,34 +1686,63 @@
  (*                                                                       *)
  (*************************************************************************)
  
@@ -2250,7 +2515,7 @@
      | CompleteBlock -> lprintf "C"
      | VerifiedBlock -> lprintf "V"
      | PartialBlock b ->
-@@ -1781,127 +1664,128 @@
+@@ -1781,127 +1750,125 @@
            lprintf "X"
          else
            lprintf "%d" s.s_nuploading.(i)
@@ -2291,15 +2556,12 @@
 -(*                         permute_and_return (internal)                 *)
 -(*                                                                       *)
 -(*************************************************************************)
-+(** swap elements n and up_ncomplete-1 in up_complete_blocks, then
-+    decrease up_ncomplete block, return up_ncomplete block, converting
-+    it to a PartialBlock as needed.
-+    global effect is that up_complete_blocks array virtually contains
-+    two disctinct lists, with elements flowing from one to the other,
-+    without any allocation needed.
-+
-+    0 .. up_ncomplete-1 : not yet returned by permute_and_return
-+    up_ncomplete .. Array.length up_complete_blocks - 1 : already returned 
++(** (see uploaders invariants above)
++    Drop the [n]th element from the [up.up_ncomplete] first elements
++    of [up.complete_blocks] by swapping it with the
++    ([up.up_ncomplete]-1)th element, then decrease [up.up_ncomplete];
++    Then return that element, after converting associated block to
++    PartialBlock if necessary.
 +*)
  
  let permute_and_return up n =
@@ -2465,7 +2727,7 @@
    in
  (*  if result then
      lprintf "should_download_block %d\n" n; *)
-@@ -1913,264 +1797,204 @@
+@@ -1913,264 +1880,302 @@
  (*                                                                       *)
  (*************************************************************************)
  
@@ -2481,11 +2743,20 @@
 +  choice_num : int;
 +  choice_user_priority : int;
 +  choice_nuploaders : int;
-+  choice_size : int64;
 +  choice_remaining : int64;
-+  choice_remaining_per_uploader : int64;
++  choice_saturated : bool; (* has enough uploaders *)
 +  choice_other_complete : int Lazy.t; (* ...blocks in the same chunk *)
 +  choice_availability : int;
++}
++
++let dummy_choice = {
++  choice_num = 0;
++  choice_user_priority = 0;
++  choice_nuploaders = 0;
++  choice_remaining = 0L;
++  choice_saturated = true;
++  choice_other_complete = lazy 0;
++  choice_availability = 0
 +}
 +
 +(* based on Array.fold_left code *)
@@ -2495,8 +2766,30 @@
 +    r := f !r i (Array.unsafe_get a i)
 +  done;
 +  !r
++
++let subarray_fold_lefti f x a firstidx lastidx =
++  let len = Array.length a in
++  assert(firstidx >= 0 && firstidx < len);
++  assert(lastidx >= 0 && lastidx < len);
++  let r = ref x in
++  for i = firstidx to lastidx do
++    r := f !r i (Array.unsafe_get a i)
++  done;
++  !r
++
++(* DEBUGGING *)
++let delta_needed = ref 0
++let delta_undecided = ref 0
  
  let select_block up =
++(* DEBUGGING *)
++  let compare_choices_saturation = ref 0 in
++  let compare_choices_priority = ref 0 in
++  let compare_choices_rarity = ref 0 in
++  let compare_choices_completion = ref 0 in
++  let compare_choices_siblings = ref 0 in
++  let compare_choices_failure = ref 0 in
++
    let t = up.up_t in
    let s = t.t_s in
    try
@@ -2614,19 +2907,14 @@
 -                              s.s_verified_bitmap.[s_index] = '2'
 -                          ) t.t_blocks_of_chunk.(t_index) in
 -                        let nbs = List.length bs in
--
--(* TODO remove this *)
--                        let b = should_download_block s n in
 +(* to evaluate the relative rarity of a block, we must compare it to
 +   the availability of *all* blocks, not only those available from
 +   that uploader *)
 +	let sum_availability = Array.fold_left (+) 0 s.s_availability in
 +	let mean_availability = sum_availability / Array.length s.s_blocks in
  
--                        if !verbose_swarming then
--                            lprintf_nl2 "  test %d %c %d %b %d"
--                              n s.s_verified_bitmap.[n] s.s_nuploading.(n)
--                            b nbs;
+-(* TODO remove this *)
+-                        let b = should_download_block s n in
 +	let my_t = if t.t_verifier <> NoVerification then t else 
 +	  match s.s_networks with
 +	    | tprim :: _ ->
@@ -2635,9 +2923,10 @@
 +	    | [] -> assert false in
 +	let verification_available = my_t.t_verifier <> NoVerification in
  
--                        if s.s_verified_bitmap.[n] < '2' &&
--                          s.s_nuploading.(n) < max_uploaders &&
--                          should_download_block s n then
+-                        if !verbose_swarming then
+-                            lprintf_nl2 "  test %d %c %d %b %d"
+-                              n s.s_verified_bitmap.[n] s.s_nuploading.(n)
+-                            b nbs;
 +	let several_frontends = List.length s.s_networks > 1 in
 +	(* many results may not be useful, evaluate them as needed *)
 +	let completed_blocks_in_chunk = 
@@ -2646,6 +2935,12 @@
 +              List.fold_left (fun acc b ->
 +		if s.s_verified_bitmap.[b] = '2' then acc + 1 else acc
 +              ) 0 my_t.t_blocks_of_chunk.(i))) in
+ 
+-                        if s.s_verified_bitmap.[n] < '2' &&
+-                          s.s_nuploading.(n) < max_uploaders &&
+-                          should_download_block s n then
++	let preview_beginning = 10000000L in
++	let preview_end = (s.s_size ** 98L) // 100L in
  
 -                          if (!partial_block = -1 || !partial_remaining < nbs)
 -                          then
@@ -2661,24 +2956,55 @@
 -                          raise (BlockFound !partial_block)
 -                        end
 -                    in
-+	let preview_beginning = 10000000L in
-+	let preview_end = (s.s_size ** 98L) // 100L in
++	(* sources_per_chunk was initially for edonkey only *)
++	let data_per_source = 9728000L // (Int64.of_int !!sources_per_chunk) in
++	
++	let need_to_complete_some_blocks_quickly =
++	  verification_available && t.t_nverified_chunks < 2 in
  
 -                    if my_t.t_verifier <> NoVerification then begin
 -                        download_partial max_nuploaders;
 -                      end;
 -                  end;
-+	(* sources_per_chunk was initially for edonkey only *)
-+	let data_per_source = 9728000L // (Int64.of_int !!sources_per_chunk) in
++	(** > 0 == c1 is best, < 0 = c2 is best, 0 == they're equivalent *)
++	let compare_choices c1 c2 =
  
 -(************* Download rarest first only if other blocks are much more
 -  available *)
-+	let need_to_complete_some_blocks_quickly = true
-+	  (* verification_available && t.t_nverified_chunks < 2 *) in
++	  (* avoid overly unbalanced situations *)
++	  let cmp = 
++	    match c1.choice_saturated, c2.choice_saturated with
++	    | false, false -> 0
++	    | true, false -> -1
++	    | false, true -> 1
++	    | true, true ->
++		let result =
++		(* both are saturated, try to balance situation *)
++		incr delta_needed;
++		let delta = 
++		  c1.choice_remaining ** Int64.of_int c2.choice_nuploaders -- 
++		  c2.choice_remaining ** Int64.of_int c1.choice_nuploaders in
++		if delta > c2.choice_remaining then 1
++		else if delta < Int64.neg c1.choice_remaining then -1
++		else begin
++		  (* either way we'll unbalance the situation *)
++		  incr delta_undecided;
++		  0 
++		end in
++		lprintf_nl "compare_choices needed delta %d times, which couldn't decide %d times" !delta_needed !delta_undecided;
++		result in
++	  if cmp <> 0 then begin
++	    incr compare_choices_saturation;
++	    cmp 
++	  end else
  
 -                if debug_all then lprintf "{Rarest}";
-+	(** > 0 == c1 is best, < 0 = c2 is best, 0 == they're equivalent *)
-+	let compare_choices c1 c2 =
++	  (* Do what Master asked for *)
++	  let cmp = compare c1.choice_user_priority c2.choice_user_priority in
++	  if cmp <> 0 then begin
++	    incr compare_choices_priority;
++	    cmp 
++	  end else
  
 -                let sum_availability = ref 0 in
 -                let min_availability = ref max_int in
@@ -2689,19 +3015,30 @@
 -                  min_availability := min !min_availability
 -                    s.s_availability.(n);
 -                done;
-+	  (* avoid overly unbalanced situations *)
++	  (* Pick really rare gems: if average availability of all
++	     blocks is higher than 5 connected sources, pick in
++	     priority blocks present in at most 3 connected sources;
++	     is that too restrictive ? *)
 +	  let cmp = 
-+	    if c1.choice_remaining_per_uploader < data_per_source ||
-+	      c2.choice_remaining_per_uploader < data_per_source then
-+		compare c1.choice_remaining_per_uploader 
-+		  c2.choice_remaining_per_uploader else 0 in
-+	  if cmp <> 0 then cmp else
++	    if not need_to_complete_some_blocks_quickly && 
++	      mean_availability > 5 &&
++	      (c1.choice_availability <= 3 || c2.choice_availability <= 3) then
++		compare c2.choice_availability c1.choice_availability 
++	    else 0 in
++	  if cmp <> 0 then begin
++	    incr compare_choices_rarity;
++	    cmp 
++	  end else
  
 -                let mean_availability =
 -                  !sum_availability / up.up_ncomplete in
-+	  (* Do what Master asked for *)
-+	  let cmp = compare c1.choice_user_priority c2.choice_user_priority in
-+	  if cmp <> 0 then cmp else
++	  (* try to quickly complete blocks *)
++	  let cmp = 
++	    compare c2.choice_remaining c1.choice_remaining in
++	  if cmp <> 0 then begin 
++	    incr compare_choices_completion;
++	    cmp 
++	  end else
  
 -                if mean_availability > 5 && !min_availability < 3 then
 -                  for i = 0 to up.up_ncomplete - 1 do
@@ -2711,20 +3048,25 @@
 -                    then
 -                      raise (BlockFound i)
 -                  done;
-+	  (* Pick really rare gems *)
++	  (* try to quickly complete (and validate) chunks; 
++	     if there's only one frontend, each chunk has only one
++	     block, and looking at siblings make no sense *)
 +	  let cmp = 
-+	    if mean_availability > 5 &&
-+	      (c1.choice_availability <= 3 || c2.choice_availability <= 3) then
-+		compare c2.choice_availability c1.choice_availability 
++	    if verification_available && several_frontends then 
++	      compare (Lazy.force c1.choice_other_complete)
++		(Lazy.force c2.choice_other_complete)
 +	    else 0 in
-+	  if cmp <> 0 then cmp else
++	  if cmp <> 0 then begin
++	    incr compare_choices_siblings;
++	    cmp 
++	  end else
  
 -(************* Otherwise, download in random order *)
-+	  (* try to quickly complete blocks *)
-+	  let cmp = 
-+	    if need_to_complete_some_blocks_quickly then
-+	      compare c2.choice_remaining c1.choice_remaining else 0 in
-+	  if cmp <> 0 then cmp else
++	  begin
++	    (* Can't tell *)
++	    incr compare_choices_failure;
++	    0 
++	  end in
  
 -                if debug_all then lprintf "{Random}";
 -                let find_random max_uploaders =
@@ -2745,20 +3087,8 @@
 -                      raise (BlockFound (array.(
 -                            random_int (Array.length array))))
 -                in
-+	  (* try to quickly complete (and validate) chunks *)
-+	  let cmp = 
-+	    if verification_available && several_frontends then 
-+	      compare (Lazy.force c1.choice_other_complete)
-+		(Lazy.force c2.choice_other_complete)
-+	    else 0 in
-+	  if cmp <> 0 then cmp else
- 
--                find_random max_nuploaders
-+	  (* Can't tell *)
-+	  0 in
- 
--(************* Fall back on linear download if nothing worked *)
-+	let best_choices = array_fold_lefti (fun acc n b ->
++	let best_choices, specimen = 
++	  subarray_fold_lefti (fun ((best_choices, specimen) as acc) n b ->
 +	  (* priority bitmap <> 0 here ? *)
 +	  if not (should_download_block s b) then acc else
 +	    let nchunk = my_t.t_chunk_of_block.(b) in
@@ -2776,26 +3106,63 @@
 +		if block_begin < preview_beginning then 3 else
 +		  if block_end > preview_end then 2 else 1;
 +	      choice_nuploaders = nuploaders;
-+	      choice_size = size;
 +	      choice_remaining = remaining;
-+	      choice_remaining_per_uploader = remaining //
-+		(Int64.of_int (nuploaders + 1)); (* planned value *)
++	      choice_saturated =
++		not need_to_complete_some_blocks_quickly &&
++		  remaining <= Int64.of_int nuploaders ** data_per_source;
++(*
++		  nuploaders >= Int64.to_int (
++		    Int64.pred (
++		      remaining ** Int64.of_int !!sources_per_chunk ++ size) 
++		    // size)
++*)
 +	      choice_other_complete = completed_blocks_in_chunk.(nchunk);
 +	      choice_availability = s.s_availability.(b);
 +	    } in
-+	    match acc with
-+	    | [] -> [this_choice]
-+	    | h :: _ ->
++	    match best_choices with
++	    | [] -> [n], this_choice
++	    | _ :: _ ->
 +		(* all the choices in the accumulator are supposed to
-+		   be equivalent, compare against the first *)
-+		let cmp = compare_choices this_choice h in
-+		if cmp > 0 then [this_choice]
++		   be equivalent, compare against the specimen *)
++		let cmp = compare_choices this_choice specimen in
++		if cmp > 0 then [n], this_choice
 +		else if cmp < 0 then acc
-+		else this_choice :: acc
-+	) [] up.up_complete_blocks in
++		else n :: best_choices, specimen
++	  ) ([], dummy_choice) up.up_complete_blocks 0 (up.up_ncomplete - 1) in
 +	(* what about up_partial_blocks ? 
 +	   currently they're taken care of by linear_select_block
 +	   fallback below *)
+ 
+-                find_random max_nuploaders
++	if debug_all then begin
++	  let nbest_choices = List.length best_choices in
++	  lprintf_nl "compare_choices: %d choices left based on saturation:%d priority:%d rarity:%d completion:%d siblings:%d failed:%d"
++	    nbest_choices
++	    !compare_choices_saturation !compare_choices_priority
++	    !compare_choices_rarity !compare_choices_completion
++	    !compare_choices_siblings !compare_choices_failure;
++	  let print_choice c =
++	    lprintf_nl "selected %d:%d priority:%d nup:%d rem:%Ld sat:%s sib:%s av:%d" 
++	      c.choice_num up.up_complete_blocks.(c.choice_num)
++	      c.choice_user_priority 
++	      c.choice_nuploaders 
++	      c.choice_remaining 
++	      (if c.choice_saturated then "true" else "false") 
++	      (if Lazy.lazy_is_val c.choice_other_complete then
++		string_of_int (Lazy.force c.choice_other_complete) else "?") 
++	      c.choice_availability in
++	  print_choice specimen
++	end;
+ 
+-(************* Fall back on linear download if nothing worked *)
++	try
++	  let n = 
++	    match best_choices with
++	      | [] -> raise Not_found
++	      | [choice] -> choice
++	      | _::_ -> 
++		  let nchoices = List.length best_choices in
++		  List.nth best_choices (Random.int nchoices) in
  
 -              in
 -              iter_max_uploaders !!sources_per_chunk;
@@ -2808,20 +3175,12 @@
 -                permute_and_return up n
 -          end else
 -          LinearStrategy.select_block up
-+	try
-+	  let result = 
-+	    match best_choices with
-+	      | [] -> raise Not_found
-+	      | [choice] -> choice
-+	      | _::_ -> 
-+		  let nchoices = List.length best_choices in
-+		  List.nth best_choices (Random.int nchoices) in
-+	  let n = result.choice_num in
-+	  
 +          if debug_all then lprintf "\nBlockFound %d\n"
 +            up.up_complete_blocks.(n);
 +          permute_and_return up n
 +	with Not_found ->
++	  if !verbose_swarming || !verbose then
++	    lprintf "select_block: fallback to linear strategy";
 +	  linear_select_block up
    with Not_found ->
  
@@ -2887,7 +3246,7 @@
          let num = b.block_num in
          s.s_nuploading.(num) <- s.s_nuploading.(num) + 1;
          up.up_block <- Some b;
-@@ -2179,60 +2003,33 @@
+@@ -2179,60 +2184,33 @@
          if debug_all then lprintf " = %d \n" num;
          b
    with e ->
@@ -2964,10 +3323,12 @@
  
  (*************************************************************************)
  (*                                                                       *)
-@@ -2240,262 +2037,200 @@
+@@ -2240,262 +2218,294 @@
  (*                                                                       *)
  (*************************************************************************)
  
+-let find_range up =
+-  clean_ranges up;
 +let uploader_ranges_fold_left f acc l =
 +  let rec aux acc l =
 +    match l with
@@ -2975,14 +3336,55 @@
 +    | h :: q -> aux (f acc h) q
 +  in aux acc l
 +
- let find_range up =
--  clean_ranges up;
++(** Find a range to upload from [up], that is at most [range_size]
++    bytes long (split some range if necessary) *)
++
++(* Is merging at all useful ? Once range starts downloading, they can
++   no longer be merged, so it should be very rare... *)
++let allow_merge_ranges = true
++
++type ranges_cluster = {
++  cluster_ranges: range list;
++  cluster_nuploading: int;
++  cluster_size: Int64.t
++}    
++
++let dummy_ranges_cluster = {
++  cluster_ranges = [];
++  cluster_nuploading = 0;
++  cluster_size = 0L
++}
++
++let find_range up range_size =
++
++  (** merge two consecutive ranges in the first, if possible;
++      Return true if successful *)
++  let merge_ranges r r2 =
++    match r.range_next with
++    | None -> false
++    | Some rr ->
++	if rr != r2 ||
++	  r.range_end < r2.range_begin ||
++	  r2.range_nuploading > 0 then false
++	else begin
++	  r.range_end <- r2.range_end;
++	  r.range_next <- r2.range_next;
++	  (match r.range_next with
++	  | None -> ()
++	  | Some r3 ->
++	      r3.range_prev <- Some r);
++	  true
++	end in
++
 +  remove_completed_uploader_ranges up;
  
    let b =
      match up.up_block with
 -      None -> raise Not_found
-+    | None -> raise Not_found
++    | None -> 
++	if debug_all then
++	  lprintf_nl "find_range: uploader had no block selected";
++	raise Not_found
      | Some b -> b
    in
 -  let r = b.block_ranges in
@@ -2994,48 +3396,75 @@
    | FileAborted _
 -  | FileCancelled -> raise Not_found
 -  | _ ->
--
--      let rec iter limit r =
--
--(* let use a very stupid heuristics: ask for the first non-used range.
--we thus might put a lot of clients on the same range !
--*)
 +  | FileCancelled 
 +  | FileShared
 +  | FileNew
 +  | FileDownloaded -> 
++      lprintf_nl "find_range: file in bad state";
 +      raise Not_found
 +  | FileDownloading
 +  | FileQueued ->
-+      (* pick the first correct range with fewest uploaders *)
-+      let best_range =
-+	let rec iter acc r =
-+	  let better_found =
-+	    if in_uploader_ranges r up.up_ranges ||
-+	      r.range_begin = r.range_end ||
-+	      r.range_begin < up.up_block_begin ||
-+	      r.range_end > up.up_block_end then
-+		false
++      if debug_all then
++	lprintf_nl "find_range: is there a range of size %Ld in [%Ld-%Ld] for %d ?" 
++	  range_size up.up_block_begin up.up_block_end (client_num up.up_client);
++      let correct_range r =
++	not (in_uploader_ranges r up.up_ranges) &&
++	  (* r.range_begin < r.range_end && *)
++	  r.range_begin >= up.up_block_begin 
++	  (* && r.range_end <= up.up_block_end *) in
++      (* pick the first correct cluster with fewest uploaders 
++	 We're not trying to get a range that's at least as big as
++	 [range_size] bytes - that would prevent partially downloaded
++	 ranges from being completed first *)
++      let rec iter acc r =
++	let best_cluster =
++	  if not (correct_range r) then acc
++	  else 
++	    (* find if they're ranges to merge ahead *)
++	    let rec iter_cluster r cluster =
++	      if debug_all then
++		lprintf_nl "[%Ld-%Ld] " r.range_begin r.range_end;
++	      let cluster = { cluster with
++		cluster_ranges = r :: cluster.cluster_ranges;
++		cluster_size = cluster.cluster_size ++ 
++		  (r.range_end -- r.range_begin)
++	      } in
++	      if not allow_merge_ranges ||
++		cluster.cluster_size >= range_size then cluster 
++	      else
++		match r.range_next with
++		| None -> cluster
++		| Some rr ->
++		    if rr.range_begin = r.range_end &&
++		      correct_range rr && rr.range_nuploading = 0 then 
++		      iter_cluster rr cluster
++		    else cluster in
+ 
+-      let rec iter limit r =
++	    let cluster = 
++	      iter_cluster r { dummy_ranges_cluster with
++		cluster_nuploading = r.range_nuploading } in
++	    if debug_all then
++	      lprint_newline ();
++	    if acc.cluster_ranges = [] then cluster
 +	    else
-+	      match acc with
-+	      | None -> true
-+	      | Some best_range ->
-+		  best_range.range_nuploading > r.range_nuploading in
-+	  (* fast exit, and why I didn't use an iterator :/ *)
-+	  if better_found && r.range_nuploading = 0 then Some r
-+	  else
-+	    let acc = if better_found then Some r else acc in
-+	    match r.range_next with
-+	    | None -> acc
-+	    | Some rr -> iter acc rr in
-+	iter None b.block_ranges in
-+      match best_range with
-+      | None -> raise Not_found
-+      | Some r ->
-+	  let key = r.range_begin, r.range_end, r in
-+	  up.up_ranges <- up.up_ranges @ [key];
-+	  r.range_nuploading <- r.range_nuploading + 1;
-+	  key
++	      (* find a range with as few uploaders as possible *)
++	      let cmp = compare acc.cluster_nuploading
++		cluster.cluster_nuploading in
++	      if cmp < 0 then acc
++	      else cluster in
+ 
+-(* let use a very stupid heuristics: ask for the first non-used range.
+-we thus might put a lot of clients on the same range !
+-*)
++	(* fast exit, and why I didn't use an iterator :/ 
++	   Could have used an exception, but I don't like that ;) *)
++	if best_cluster.cluster_ranges <> [] &&
++	  best_cluster.cluster_nuploading = 0 then best_cluster
++	else
++	  match r.range_next with
++	  | None -> best_cluster
++	  | Some rr -> iter best_cluster rr in
  
 -        if not (in_uploader_ranges r up.up_ranges) &&
 -          r.range_current_begin < r.range_end &&
@@ -3060,32 +3489,55 @@
 -      with Not_found ->
 -(* force maximal uploading otherwise to finish it *)
 -          iter max_int r
-+(** range accessor(s) *)
++      let best_cluster = iter dummy_ranges_cluster b.block_ranges in
++      match List.rev best_cluster.cluster_ranges with
++      | [] -> 
++	  if debug_all then
++	    lprintf_nl "find_range: no correct range found!";
++	  raise Not_found
++      | r :: q ->
++	  if not (List.for_all (merge_ranges r) q) then
++	    lprintf_nl "find_range: ranges did not merge as well as planned";
++	  split_range r (min (r.range_begin ++ range_size)
++	   up.up_block_end);
++	  if debug_all then begin
++	    lprintf "=> [%Ld-%Ld], left:" r.range_begin r.range_end;
++	    iter_block_ranges (fun r ->
++	      lprintf " [%Ld-%Ld]" r.range_begin r.range_end
++	    ) b;
++	    lprint_newline ();
++	  end;
++	  let key = r.range_begin, r.range_end, r in
++	  up.up_ranges <- up.up_ranges @ [key];
++	  r.range_nuploading <- r.range_nuploading + 1;
++	  key
  
 -(*************************************************************************)
 -(*                                                                       *)
 -(*                         range_range                                   *)
 -(*                                                                       *)
 -(*************************************************************************)
-+let range_range r = (r.range_begin, r.range_end)
++(** range accessor(s) *)
  
 -let range_range r = (r.range_current_begin, r.range_end)
-+(** Data has been received from uploader [up]. Transfer data to file
-+    and update uploader ranges.
-+    Data = String.sub [str] [string_begin] [string_len] *)
++let range_range r = (r.range_begin, r.range_end)
  
 -(*************************************************************************)
 -(*                                                                       *)
 -(*                         received                                      *)
 -(*                                                                       *)
 -(*************************************************************************)
++(** Data has been received from uploader [up]. Transfer data to file
++    and update uploader ranges.
++    Data = String.sub [str] [string_begin] [string_len] *)
+ 
+-let received (up : uploader) (file_begin : Int64.t)
+-  (str:string) (string_begin:int) (string_len:int) =
 +let received up file_begin str string_begin string_len =
 +  assert (string_begin >= 0);
 +  assert (string_len >= 0);
 +  assert (string_begin + string_len <= String.length str);
- 
--let received (up : uploader) (file_begin : Int64.t)
--  (str:string) (string_begin:int) (string_len:int) =
++
 +(*
 +  let debug_bad_write r string_pos =
 +    if !verbose then begin
@@ -3393,34 +3845,300 @@
  
  (*************************************************************************)
  (*                                                                       *)
-@@ -2550,7 +2285,7 @@
-           sw := (t, i, pos) :: !sw;
-           iter (i+1) len (pos ++ bsize) bsize size
-       in
+@@ -2503,223 +2513,96 @@
+ (*                                                                       *)
+ (*************************************************************************)
+ 
+-let propagate_chunk t1 ts pos1 size =
++type chunk_occurrence = t * int * Int64.t (* frontend, chunk number, offset *)
+ 
+-  (*
+-  List.iter (fun (t2, i2, pos2) ->
++type chunk_occurrences = {
++  mutable occurrence_present : chunk_occurrence list;
++  mutable occurrence_missing : chunk_occurrence list;
++}
++
++let propagate_chunk t1 pos1 size destinations =
++  List.iter (fun (t2, j2, pos2) ->
++    if t1 != t2 || pos1 <> pos2 then begin
+       lprintf "Should propagate chunk from %s %Ld to %s %Ld [%Ld]\n"
+         (file_best_name t1.t_file) pos1
+         (file_best_name t2.t_file) pos2 size;
+       Unix32.copy_chunk (file_fd t1.t_file)  (file_fd t2.t_file)
+       pos1 pos2 (Int64.to_int size);
++      set_frontend_bitmap_2 t2 j2
++    end
++  ) destinations
+ 
+-      set_toverify_block t2 i2;
+-      set_verified_block t2 i2;
+-  ) ts
+-*)
+-  ()
+-
+-(*************************************************************************)
+-(*                                                                       *)
+-(*                         duplicate_chunks                              *)
+-(*                                                                       *)
+-(*************************************************************************)
+-
+-(* This is the least aggressive version. I was thinking of computing
+-checksums for all possible schemas for all files, to be able to
+-move chunks from/to BT files from/to ED2k files. *)
++let dummy_chunk_occurrences () = 
++  { occurrence_present = []; occurrence_missing = [] }
+ 
+ let duplicate_chunks () =
+-  (*
+   let chunks = Hashtbl.create 100 in
+-  HS.iter (fun t ->
+-      let rec iter i len pos bsize size =
+-        if i < len then
+-          let c = {
+-              chunk_uid = t.t_checksums.(i);
+-              chunk_size = min (size -- pos) bsize;
+-            } in
+-          let (has, has_not) = try
+-              Hashtbl.find chunks c
+-            with _ ->
+-                let sw = (ref [], ref []) in
+-                Hashtbl.add chunks c sw;
+-                sw
+-          in
+-          let sw = if t.t_verified_bitmap.[i] = '3' then has else has_not in
+-          sw := (t, i, pos) :: !sw;
+-          iter (i+1) len (pos ++ bsize) bsize size
+-      in
 -      iter 0 (Array.length t.t_checksums) zero t.t_block_size t.t_size
-+      iter 0 (Array.length t.t_checksums) zero t.t_chunk_size t.t_size
-   ) swarmers_by_num;
-   Hashtbl.iter (fun c (has, has_not) ->
-       match !has, !has_not with
-@@ -2600,7 +2335,7 @@
-     match bitmap.[i] with
-     | '2' ->
-         if t.t_converted_verified_bitmap.[i] < '2' then begin
+-  ) swarmers_by_num;
+-  Hashtbl.iter (fun c (has, has_not) ->
+-      match !has, !has_not with
+-        _ ,  []
+-      | [], _ -> ()
+-      | (t, _, pos) :: _, ts ->
+-          propagate_chunk t ts pos c.chunk_size
++  HS.iter (fun s ->
++    List.iter (fun t ->
++      let nchunks = String.length t.t_converted_verified_bitmap in
++      match t.t_verifier with
++      | Verification uids when Array.length uids = nchunks ->
++	  let rec iter j len pos =
++            if j < len then
++              let c = {
++		chunk_uid = uids.(j);
++		chunk_size = min (s.s_size -- pos) t.t_chunk_size;
++              } in
++              let occurrences = 
++		try
++		  Hashtbl.find chunks c
++		with Not_found ->
++                  let occurrences = dummy_chunk_occurrences () in
++                  Hashtbl.add chunks c occurrences;
++                  occurrences in
++	      if t.t_converted_verified_bitmap.[j] = '3' then 
++		occurrences.occurrence_present <- 
++		  (t, j, pos) :: occurrences.occurrence_present
++	      else
++		occurrences.occurrence_missing <- 
++		  (t, j, pos) :: occurrences.occurrence_missing;
++              iter (j+1) len (pos ++ t.t_chunk_size)
++	  in
++	  iter 0 (String.length t.t_converted_verified_bitmap) zero
++      | _ -> ()
++    ) s.s_networks
++  ) swarmers_by_name;
++  Hashtbl.iter (fun c occurrences ->
++    match occurrences.occurrence_present, occurrences.occurrence_missing with
++    | _ , []
++    | [], _ -> ()
++    | (t, _, pos) :: _, missing ->
++        propagate_chunk t pos c.chunk_size missing
+   ) chunks
+-*)
+-  ()
+-
+-(*************************************************************************)
+-(*                                                                       *)
+-(*                         set_checksums                                 *)
+-(*                                                                       *)
+-(*************************************************************************)
+-
+-
+-(* TODO: where is this used ? check that the fact of using the UID for
+-  small files does not create any problem. *)
+-let get_checksums t =
+-  match t.t_verifier with
+-    Verification tab -> tab
+-  | _ -> [||]
+-
+-
+-
+-(*************************************************************************)
+-(*                                                                       *)
+-(*                         primary (internal)                            *)
+-(*                                                                       *)
+-(*************************************************************************)
+-
+-let primary t = t.t_primary
+-
+-(*************************************************************************)
+-(*                                                                       *)
+-(*                         set_verified_bitmap                           *)
+-(*                                                                       *)
+-(*************************************************************************)
+-
+-let set_verified_bitmap primary t bitmap =
+-(*  t.t_verified_bitmap <- bitmap; *)
+-
+-  for i = 0 to String.length bitmap - 1 do
+-
+-    match bitmap.[i] with
+-    | '2' ->
+-        if t.t_converted_verified_bitmap.[i] < '2' then begin
 -            t.t_ncomplete_blocks <- t.t_ncomplete_blocks + 1;
-+            t.t_ncomplete_chunks <- t.t_ncomplete_chunks + 1;
-             t.t_converted_verified_bitmap.[i] <- '2'
-           end
- 
-@@ -2625,7 +2360,7 @@
-                   ()
-           ) t.t_blocks_of_chunk.(i);
-           if t.t_converted_verified_bitmap.[i] <> '3' then
+-            t.t_converted_verified_bitmap.[i] <- '2'
+-          end
+-
+-    | '3' ->
+-(*        lprintf "Setting 3 on %d\n" i;        *)
+-        t.t_converted_verified_bitmap.[i] <- '3';
+-        if primary then
+-          let s = t.t_s in
+-          List.iter (fun i ->
+-(*              lprintf "Should set %d\n" i; *)
+-              match s.s_blocks.(i) with
+-                CompleteBlock ->
+-(*                  lprintf "CompleteBlock\n"; *)
+-                  set_verified_block s i
+-              | EmptyBlock | PartialBlock _ ->
+-(*                  lprintf "EmptyBlock/PartialBlock\n"; *)
+-                  set_completed_block None s i;
+-(*                  lprintf "set_verified_block\n"; *)
+-                  set_verified_block s i
+-              | VerifiedBlock ->
+-(*                  lprintf "Block already verified\n" *)
+-                  ()
+-          ) t.t_blocks_of_chunk.(i);
+-          if t.t_converted_verified_bitmap.[i] <> '3' then
 -            lprintf_nl () "FIELD AS BEEN CLEARED"
-+            lprintf_nl "FIELD AS BEEN CLEARED"
-     | _ -> ()
-   done
+-    | _ -> ()
+-  done
+-
+-(*************************************************************************)
+-(*                                                                       *)
+-(*                         verified_bitmap                               *)
+-(*                                                                       *)
+-(*************************************************************************)
  
-@@ -2746,7 +2481,7 @@
+-let verified_bitmap t = t.t_converted_verified_bitmap
+-
+-(*************************************************************************)
+-(*                                                                       *)
+-(*                         set_verifier                                  *)
+-(*                                                                       *)
+-(*************************************************************************)
+ 
+ let set_verifier t f =
+   t.t_verifier <- f;
+-(* TODO: check that false as primary is a good value to start with *)
+-  set_verified_bitmap false t t.t_converted_verified_bitmap
+-
+-(*************************************************************************)
+-(*                                                                       *)
+-(*                         set_verifier                                  *)
+-(*                                                                       *)
+-(*************************************************************************)
++(* TODO: check that false as t_primary is a good value to start with *)
++  set_chunks_verified_bitmap t t.t_converted_verified_bitmap
+ 
+ let set_verified t f =
+   t.t_verified <- f
+ 
+-(*************************************************************************)
+-(*                                                                       *)
+-(*                         downloaded                                    *)
+-(*                                                                       *)
+-(*************************************************************************)
+-
+ let downloaded t = file_downloaded t.t_file
+ 
+-(*************************************************************************)
+-(*                                                                       *)
+-(*                         block_block                                   *)
+-(*                                                                       *)
+-(*************************************************************************)
+-
+-let block_num t b =
+-  let n = t.t_chunk_of_block.(b.block_num) in
+-  n
+-
+-(*************************************************************************)
+-(*                                                                       *)
+-(*                         partition_size                                *)
+-(*                                                                       *)
+-(*************************************************************************)
++let block_chunk_num t b =
++  t.t_chunk_of_block.(b.block_num)
+ 
+ let partition_size t = String.length t.t_converted_verified_bitmap
+ 
+ let uploader_swarmer up = up.up_t
+ 
++(** Return the availability of the chunks of [t] as a string *)
+ 
+-(*************************************************************************)
+-(*                                                                       *)
+-(*                         availability                                  *)
+-(*                                                                       *)
+-(*************************************************************************)
+-
+-let availability t =
+-
++let chunks_availability t =
+   let s = t.t_s in
+-  let len = String.length t.t_converted_verified_bitmap in
+-  let str = String.make len '\000' in
+-  for i = 0 to len - 1 do
+-    str.[i] <- char_of_int (
++  string_init (partition_size t) (fun i ->
++    char_of_int (
+       let v = List2.min
+-          (List.map (fun i -> s.s_availability.(i)) t.t_blocks_of_chunk.(i)) in
++        (List.map (fun i -> s.s_availability.(i)) t.t_blocks_of_chunk.(i)) in
+       if v < 0 then 0 else
+-      if v > 200 then 200 else v)
+-  done;
+-  str
+-
+-(*************************************************************************)
+-(*                                                                       *)
+-(*                         is_interesting                                *)
+-(*                                                                       *)
+-(*************************************************************************)
+-
+-(*return true if s is interesting for p1
+-    NB: works when s is a mask of 0s(absent bloc) and 1s(present bloc)
+-    p1 can be a string 0(absent) 1(partial) 2(present unverified) or
+-      3(present verified)
+-                        s : 00001111
+-                       p1 : 01230123
+-           is_interesting : 00001110
+-*)
++	if v > 200 then 200 else v))
+ 
+ let is_interesting up =
+   up.up_ncomplete > 0 || up.up_npartial > 0
+@@ -2733,7 +2616,7 @@
+ 
+ let value_to_int64_pair v =
+   match v with
+-    List [v1;v2] | SmallList [v1;v2] ->
++  | List [v1;v2] | SmallList [v1;v2] ->
+       (value_to_int64 v1, value_to_int64 v2)
+   | _ ->
+       failwith "Options: Not an int32 pair"
+@@ -2746,33 +2629,53 @@
  
  let set_present t = set_present t.t_s
  let set_absent t = set_absent t.t_s
@@ -3429,96 +4147,308 @@
  let print_t str t = print_s str t.t_s
  let print_uploaders t = print_uploaders t.t_s
  
-@@ -2794,7 +2529,7 @@
-             (get_value  "file_all_chunks" value_to_string)
+ (*************************************************************************)
+ (*                                                                       *)
+-(*                         value_to_swarmer                              *)
++(*                         value_to_frontend                             *)
+ (*                                                                       *)
+ (*************************************************************************)
  
-     with e ->
+-let value_to_swarmer t assocs =
+-  let get_value name conv = conv (List.assoc name assocs) in
++let value_to_frontend t assocs =
++
++  let debug_wrong_downloaded t present d =
++    lprintf_nl "ERROR: stored downloaded value not restored  !!! (%Ld/%Ld)" (downloaded t) d;
++    lprintf_nl "ERROR: present:";
++    List.iter (fun (x,y) ->
++      lprintf_nl "     (%Ld,%Ld);" x y
++    ) present;
++    
++    let p = present_intervals t in
++    lprintf_nl "ERROR: present now:";
++    
++    let total = 
++      List.fold_left (fun acc (x,y) ->
++	lprintf_nl "     (%Ld,%Ld);" x y;
++	acc ++ (y -- x)
++      ) zero p in
++    
++    lprintf_nl "ERROR: total %Ld" total;
++    if p = present then begin
++      lprintf_nl "ERROR: both appear to be the same!";
++    end;
++    if !exit_on_error then exit 2 in
+ 
++  let get_value name conv = conv (List.assoc name assocs) in
+ 
+   let primary =
+-    try get_value "file_primary" value_to_bool with _ -> true
+-  in
++    try get_value "file_primary" value_to_bool with _ -> true in
+ 
+   (try
+-      let file_name = get_value "file_swarmer" value_to_string in
+-      let s =
+-        HS.find swarmers_by_name { dummy_swarmer with s_filename = file_name }
+-      in
+-      associate primary t s;
+-(* TODO: make as many checks as possible to ensure the file and the swarmers
+-  are correctly associed. *)
+-    with Not_found -> ());
++    let file_name = get_value "file_swarmer" value_to_string in
++    let s = HS.find swarmers_by_name 
++	{ dummy_swarmer with s_filename = file_name } in
++    associate primary t s
++    (* TODO: make as many checks as possible to ensure the file and the swarmers
++       are correctly associed. *)
++  with Not_found -> ());
+ 
+   let _ =
+     let mtime = try file_mtime t.t_file with _ -> 0. in
+@@ -2783,19 +2686,20 @@
+     in
+     old_mtime = mtime
+   in
+-(* TODO: if set_bitmap is false, we should the bitmap to 2222222222 so that
+-it is verified as soon as possible. *)
++  
+   (try
+-      try
+-        set_verified_bitmap primary t
+-          (get_value  "file_chunks" value_to_string)
+-      with Not_found ->
+-          set_verified_bitmap primary t
+-            (get_value  "file_all_chunks" value_to_string)
+-
+-    with e ->
 -        lprintf_nl () "Exception %s while loading bitmap"
-+        lprintf_nl "Exception %s while loading bitmap"
-           (Printexc2.to_string e);
+-          (Printexc2.to_string e);
++    try
++      set_chunks_verified_bitmap t
++        (get_value  "file_chunks" value_to_string)
++    with Not_found ->
++      set_chunks_verified_bitmap t
++        (get_value  "file_all_chunks" value_to_string)
++	
++  with e ->
++    lprintf_nl "Exception %s while loading bitmap"
++      (Printexc2.to_string e);
++    (* force everything to be checked ASAP ? *)
++    set_chunks_verified_bitmap t (String.make (partition_size t) '2')
    );
  
-@@ -2804,7 +2539,7 @@
+   (*
+@@ -2804,61 +2708,28 @@
  *)
  
    if primary then begin
 -      if !verbose_swarming then lprintf_nl () "Loading present...";
-+      if !verbose_swarming then lprintf_nl "Loading present...";
-       let present = try
-           let present =
-             (get_value "file_present_chunks"
-@@ -2813,46 +2548,46 @@
-           set_present t present;
-           present
-         with e ->
+-      let present = try
+-          let present =
+-            (get_value "file_present_chunks"
+-                (value_to_list value_to_int64_pair))
+-          in
+-          set_present t present;
+-          present
+-        with e ->
 -            lprintf_nl () "Exception %s while set present"
-+            lprintf_nl "Exception %s while set present"
-               (Printexc2.to_string e);
-             []
+-              (Printexc2.to_string e);
+-            []
++    if !verbose_swarming then lprintf_nl "Loading present...";
++    let present = try
++      let present =
++        (get_value "file_present_chunks"
++          (value_to_list value_to_int64_pair))
        in
 -      if !verbose_swarming then lprintf_nl () "Downloaded after present %Ld" (downloaded t);
-+      if !verbose_swarming then lprintf_nl "Downloaded after present %Ld" (downloaded t);
- 
- (*
+-
+-(*
 -      if !verbose then lprintf_nl () "Loading absent...";
-+      if !verbose then lprintf_nl "Loading absent...";
-       (try
-           set_absent t
-             (get_value "file_absent_chunks"
-               (value_to_list value_to_int64_pair));
-         with e ->
+-      (try
+-          set_absent t
+-            (get_value "file_absent_chunks"
+-              (value_to_list value_to_int64_pair));
+-        with e ->
 -            if !verbose_hidden_errors then lprintf_nl () "Exception %s while set absent"
-+            if !verbose_hidden_errors then lprintf_nl "Exception %s while set absent"
-               (Printexc2.to_string e);
-       );
+-              (Printexc2.to_string e);
+-      );
 -      if !verbose then lprintf_nl () "Downloaded after absent %Ld" (downloaded t);
-+      if !verbose then lprintf_nl "Downloaded after absent %Ld" (downloaded t);
- *)
-       (try
-           let d = get_value "file_downloaded" value_to_int64 in
- 
-           if d <> downloaded t && !verbose then begin
+-*)
+-      (try
+-          let d = get_value "file_downloaded" value_to_int64 in
+-
+-          if d <> downloaded t && !verbose then begin
 -              lprintf_nl () "ERROR: stored downloaded value not restored  !!! (%Ld/%Ld)" (downloaded t) d;
 -              lprintf_nl () "ERROR: present:";
-+              lprintf_nl "ERROR: stored downloaded value not restored  !!! (%Ld/%Ld)" (downloaded t) d;
-+              lprintf_nl "ERROR: present:";
-               List.iter (fun (x,y) ->
+-              List.iter (fun (x,y) ->
 -                  lprintf_nl () "     (%Ld,%Ld);" x y
-+                  lprintf_nl "     (%Ld,%Ld);" x y
-               ) present;
- 
+-              ) present;
+-
 -              let p = present_chunks t in
 -              lprintf_nl () "ERROR: present now:";
-+              let p = present_intervals t in
-+              lprintf_nl "ERROR: present now:";
- 
-               let total = ref zero in
-               List.iter (fun (x,y) ->
+-
+-              let total = ref zero in
+-              List.iter (fun (x,y) ->
 -                  lprintf_nl () "     (%Ld,%Ld);" x y;
-+                  lprintf_nl "     (%Ld,%Ld);" x y;
-                   total := !total ++ (y -- x);
-               ) p;
- 
+-                  total := !total ++ (y -- x);
+-              ) p;
+-
 -              lprintf_nl () "ERROR: total %Ld" !total;
-+              lprintf_nl "ERROR: total %Ld" !total;
-               if p = present then begin
+-              if p = present then begin
 -                  lprintf_nl () "ERROR: both appear to be the same!";
-+                  lprintf_nl "ERROR: both appear to be the same!";
-                 end;
-         if !exit_on_error then exit 2
-             end
-@@ -2893,7 +2628,7 @@
-   ("file_present_chunks", List
-       (List.map (fun (i1,i2) ->
-           SmallList [int64_to_value i1; int64_to_value i2])
--      (present_chunks t))) ::
-+      (present_intervals t))) ::
-   ("file_downloaded", int64_to_value (downloaded t)) ::
+-                end;
+-        if !exit_on_error then exit 2
+-            end
++      set_present t present;
++      present
++    with e ->
++      lprintf_nl "Exception %s while set present"
++        (Printexc2.to_string e);
++      verify_all_chunks t;
++      []
++    in
++    if !verbose_swarming then lprintf_nl "Downloaded after present %Ld" (downloaded t);
  
-   ("file_chunks_age", List (Array.to_list
-@@ -2955,27 +2690,28 @@
-   let s1 = HS.find swarmers_by_name { dummy_swarmer with s_filename = file_disk_name f1 } in
-   let s2 = HS.find swarmers_by_name { dummy_swarmer with s_filename = file_disk_name f2 } in
+-        with e -> ());
+-    end;
++    (try
++      let d = get_value "file_downloaded" value_to_int64 in
++      if d <> downloaded t && !verbose then
++	debug_wrong_downloaded t present d
++    with Not_found -> ());
++  end;
+ 
+ (* TODO re-implement this
+   (try
+@@ -2872,122 +2743,102 @@
+ 
+ (*************************************************************************)
+ (*                                                                       *)
+-(*                         set_verified_bitmap                           *)
+-(*                                                                       *)
+-(*************************************************************************)
+-
+-let set_verified_bitmap t bitmap =
+-  set_verified_bitmap (primary t) t bitmap
+-
+-(*************************************************************************)
+-(*                                                                       *)
+-(*                         swarmer_to_value                              *)
++(*                         frontend_to_value                             *)
+ (*                                                                       *)
+ (*************************************************************************)
+ 
+-let swarmer_to_value t other_vals =
+-  ("file_primary", bool_to_value (primary t)) ::
+-  ("file_swarmer", string_to_value t.t_s.s_filename) ::
+-  ("file_mtime", float_to_value (try file_mtime t.t_file with _ -> 0.)) ::
+-  ("file_chunks", string_to_value (verified_bitmap t)) ::
+-  ("file_present_chunks", List
++let frontend_to_value t other_vals =
++  [("file_primary", bool_to_value t.t_primary);
++   ("file_swarmer", string_to_value t.t_s.s_filename);
++   ("file_mtime", float_to_value (try file_mtime t.t_file with _ -> 0.));
++   ("file_chunks", string_to_value (chunks_verified_bitmap t))] @
++  (if t.t_primary then
++    [("file_present_chunks", List
+       (List.map (fun (i1,i2) ->
+-          SmallList [int64_to_value i1; int64_to_value i2])
+-      (present_chunks t))) ::
+-  ("file_downloaded", int64_to_value (downloaded t)) ::
+-
+-  ("file_chunks_age", List (Array.to_list
+-        (Array.map int_to_value t.t_last_seen))) ::
+-
++        SmallList [int64_to_value i1; int64_to_value i2])
++	(present_intervals t)))] 
++   else []) @
++  [("file_downloaded", int64_to_value (downloaded t));
++   ("file_chunks_age", List (Array.to_list
++      (Array.map int_to_value t.t_last_seen)))] @
+   other_vals
+ 
+-(*************************************************************************)
+-(*                                                                       *)
+-(*                         verify_one_chunk                              *)
+-(*                                                                       *)
+-(*************************************************************************)
++(** Verify one chunk of swarmer [s], if any frontend of that swarmer
++    has a chunk to verify *)
+ 
+ let verify_one_chunk s =
+-(*  lprintf "verify_one_chunk: %d networks\n" (List.length s.s_networks);  *)
+-  List.iter (fun t ->
++  (*  lprintf "verify_one_chunk: %d networks\n" (List.length s.s_networks);  *)
++  List.exists (fun t ->
+ (*      lprintf "verify_one_chunk of file %d\n" (file_num t.t_file); *)
+-      let bitmap = t.t_converted_verified_bitmap in
+-      for i = 0 to String.length bitmap - 1 do
+-        if bitmap.[i] = '2' then begin
+-(*            lprintf "  verifying...\n"; *)
+-            verify_chunk t i;
+-            raise Exit
+-          end
+-      done
+-  ) s.s_networks;
++    string_existsi (fun i c ->
++      if c = '2' then verify_chunk t i;
++      c = '2') t.t_converted_verified_bitmap
++  ) s.s_networks
+ (*  lprintf "verify_one_chunk: nothing done\n"; *)
+-  ()
+ 
+-(*************************************************************************)
+-(*                                                                       *)
+-(*                         verify_some_chunks                            *)
+-(*                                                                       *)
+-(*************************************************************************)
++(** Verify one chunk of each swarmer that needs it *)
+ 
+ let verify_some_chunks () =
+   HS.iter (fun s ->
+-      try
+-        verify_one_chunk s
+-      with _ -> ()) swarmers_by_name
++    try
++      ignore(verify_one_chunk s)
++    with _ -> ()
++  ) swarmers_by_name
+ 
+-(*************************************************************************)
+-(*                                                                       *)
+-(*                         verify_one_chunk                              *)
+-(*                                                                       *)
+-(*************************************************************************)
++(** Verify one chunk of the swarmer associated with [t], if needed *)
+ 
+ let verify_one_chunk t =
+-  verify_one_chunk t.t_s
++  ignore(verify_one_chunk t.t_s)
+ 
+-(*************************************************************************)
+-(*                                                                       *)
+-(*                         merge                                         *)
+-(*                                                                       *)
+-(*************************************************************************)
++(** Merge a second frontend [f2] to a first one [f1], so they share
++    the same swarmer.
++
++    First swarmer [f1] must support some hashing scheme.
++    Data of the second swarmer [f2] is currently lost during merging, so
++    you'd better merge in swarmers quickly.
++    Merging is denied if any of the two frontends is being used, so it
++    may be necessary to pause them first, to get rid of any downloads.
++*)
+ 
+ let merge f1 f2 =
+ 
+-  let s1 = HS.find swarmers_by_name { dummy_swarmer with s_filename = file_disk_name f1 } in
+-  let s2 = HS.find swarmers_by_name { dummy_swarmer with s_filename = file_disk_name f2 } in
++  let s1 = HS.find swarmers_by_name { dummy_swarmer with 
++    s_filename = file_disk_name f1 } in
++  let s2 = HS.find swarmers_by_name { dummy_swarmer with 
++    s_filename = file_disk_name f2 } in
  
 -  if s1 == s2 then
 +  if s1.s_filename = s2.s_filename then
@@ -3551,9 +4481,42 @@
 +        | Verification _ | ForceVerification -> t1
    in
  
-   begin
-@@ -3012,7 +2748,7 @@
-     None -> () 
+-  begin
+-    List.iter (fun (s, filename) ->
+-        for i = 0 to Array.length s.s_nuploading -  1 do
+-          if s.s_nuploading.(i) > 0 then
+-            failwith (Printf.sprintf "%s is currently being downloaded" filename)
+-        done
+-    ) [
+-      s1, "First file";
+-      s2, "Second file" ];
+-  end;
++  List.iter (fun (s, filename) ->
++    Array.iteri (fun i nuploading ->
++      if nuploading > 0 then
++        failwith (Printf.sprintf "%s is currently being downloaded" filename)
++    ) s.s_nuploading
++  ) [
++    s1, "First file";
++    s2, "Second file"];
+ 
+ (* replace T2 swarmer *)
+   associate false t2 t1.t_s
+@@ -2999,7 +2850,7 @@
+ (*************************************************************************)
+ 
+ let has_secondaries t =
+-  primary t && List.length t.t_s.s_networks > 1
++  t.t_primary && List.length t.t_s.s_networks > 1
+ 
+ (*************************************************************************)
+ (*                                                                       *)
+@@ -3009,10 +2860,10 @@
+ 
+ let remove_swarmer file_swarmer =
+   match file_swarmer with 
+-    None -> () 
++  | None -> () 
    | Some sw -> if not (has_secondaries sw)
                  then HS.remove swarmers_by_name sw.t_s
 -                else lprintf_nl () "Tried to remove swarmer with secondaries"
@@ -3561,7 +4524,12 @@
  
  (*************************************************************************)
  (*                                                                       *)
-@@ -3037,7 +2773,7 @@
+@@ -3033,11 +2884,11 @@
+ 
+     let value_to_swarmer v =
+       match v with
+-        Module assocs ->
++      | Module assocs ->
            let get_value name conv = conv (List.assoc name assocs) in
            let file_size = get_value "file_size" value_to_int64 in
            let file_name = get_value "file_name" value_to_string in
@@ -3570,7 +4538,7 @@
            let block_sizes = get_value "file_chunk_sizes"
                (value_to_list value_to_int64) in
            List.iter (fun bsize ->
-@@ -3053,7 +2789,7 @@
+@@ -3053,7 +2904,7 @@
          ("file_name", string_to_value s.s_filename);
          ("file_bitmap", string_to_value s.s_verified_bitmap);
          ("file_chunk_sizes", list_to_value int64_to_value
@@ -3579,7 +4547,126 @@
          ]
  
      let t =
-@@ -3189,9 +2925,8 @@
+@@ -3061,55 +2912,49 @@
+ 
+   end
+ 
+-(*************************************************************************)
+-(*                                                                       *)
+-(*                         check_swarmer                                 *)
+-(*                                                                       *)
+-(*************************************************************************)
++(** Checks most variants of a swarmer, nobably verification bitmaps
++    consistency; Raise an exception if a problem is found *)
+ 
+ let check_swarmer s =
+   try
+     match s.s_networks with
+-      [] -> ()
+-    | t :: tail ->
+-        assert  t.t_primary;
++    | [] -> assert false
++    | tprim :: tail ->
++        assert(tprim.t_primary);
+ 
+-        for i = 0 to t.t_nchunks - 1 do
+-          List.iter (fun j ->
+-              if t.t_converted_verified_bitmap.[i] = '3' then begin
+-                  if s.s_verified_bitmap.[j] <> '3' then
+-                    failwith "Bad propagation of 3 from primary to main";
+-                end
+-              else
+-              if s.s_verified_bitmap.[j] = '3' then begin
+-                  failwith "Main has 3 not coming from primary";
+-                end
+-          ) t.t_blocks_of_chunk.(i)
+-        done;
++	string_iter (fun i c ->
++	    if c = '3' then begin
++	      if List.exists (fun j -> s.s_verified_bitmap.[j] <> '3') 
++		tprim.t_blocks_of_chunk.(i) then
++                  failwith "Bad propagation of 3 from primary to swarmer";
++            end
++            else if List.exists (fun j -> s.s_verified_bitmap.[j] = '3')
++	      tprim.t_blocks_of_chunk.(i) then
++                failwith "Swarmer has 3 not coming from primary";
++	) tprim.t_converted_verified_bitmap;
+ 
+-        let fd = file_fd t.t_file in
++        let fd = file_fd tprim.t_file in
+ 
+         List.iter (fun t ->
+-            assert (not t.t_primary);
+-            assert (file_fd t.t_file == fd);
+-
+-            for i = 0 to t.t_nchunks - 1 do
+-              List.iter (fun j ->
+-                  if t.t_converted_verified_bitmap.[i] = '3' then begin
+-                      if s.s_verified_bitmap.[j] <> '3' then
+-                        failwith "3 in secondary without 3 in primary";
+-                    end
+-                  else
+-                  if t.t_converted_verified_bitmap.[i] = '2' then begin
+-                      if s.s_verified_bitmap.[j] <> '3' then
+-                        failwith "2 in secondary without 3 in primary";
+-                    end
+-              ) t.t_blocks_of_chunk.(i)
+-            done;
++          assert (not t.t_primary);
++          assert (file_fd t.t_file == fd);
++	  
++	  string_iter (fun i c ->
++	    if c = '3' then begin
++	      if List.exists (fun j -> s.s_verified_bitmap.[j] <> '3')
++		t.t_blocks_of_chunk.(i) then
++                  failwith "3 in secondary without 3 in primary"
++	    end 
++	    else if c = '2' then begin
++	      if List.exists (fun j -> s.s_verified_bitmap.[j] <> '3')
++		t.t_blocks_of_chunk.(i) then
++                  failwith "2 in secondary without 3 in primary"
++	    end 
++	  ) t.t_converted_verified_bitmap
+         ) tail
+   with e ->
+-      print_s "ERROR" s;
+-      raise e
++    print_s "ERROR" s;
++    raise e
+ 
+ (*************************************************************************)
+ (*                                                                       *)
+@@ -3130,19 +2975,18 @@
+ let _ =
+   set_after_save_hook files_ini (fun _ -> swarmers =:= []);
+   set_before_save_hook files_ini (fun _ ->
+-      let list = ref [] in
+-      HS.iter (fun s ->
+-          if s.s_networks <> [] then
+-          list := s :: !list) swarmers_by_name;
+-      swarmers =:= !list
++    let list = ref [] in
++    HS.iter (fun s ->
++      if s.s_networks <> [] then
++        list := s :: !list) swarmers_by_name;
++    swarmers =:= !list
+   );
+   set_after_load_hook files_ini (fun _ ->
+-      List.iter (fun s ->
+-          check_swarmer s;
+-      ) !!swarmers;
+-
+-      swarmers =:= [])
+-
++    List.iter (fun s ->
++      check_swarmer s;
++    ) !!swarmers;
++    swarmers =:= []
++  )
+ 
+ (*************************************************************************)
+ (*                                                                       *)
+@@ -3189,9 +3033,8 @@
              Array.length up.up_complete_blocks * 4 +
              List.length up.up_ranges * (12 + 16 + 12 + 12 +  4) +
              Array.length up.up_partial_blocks * (16 + 12 + 12) +
@@ -3591,12 +4678,24 @@
              | AvailableBitv b -> let ws = Sys.word_size in (ws/8) + ((ws / 8) * (Bitv.length b / (ws - 2))) 
            ) ;
            incr counter;
-@@ -3211,7 +2946,7 @@
-           if bitmap.[i] <> '3' then raise Not_found;
-         done;
-         if file_size file <> downloaded t then
+@@ -3199,20 +3042,3 @@
+       Printf.bprintf buf "  Uploaders: %d\n" !counter;
+       Printf.bprintf buf "  Storage: %d bytes\n" !storage;
+   )
+-
+-let check_finished t =
+-  try
+-    let file = t.t_file in
+-    match file_state file with
+-      FileCancelled | FileShared | FileDownloaded -> false
+-    | _ ->
+-        let bitmap = verified_bitmap t in
+-        for i = 0 to String.length bitmap - 1 do
+-          if bitmap.[i] <> '3' then raise Not_found;
+-        done;
+-        if file_size file <> downloaded t then
 -          lprintf_nl () "Downloaded size differs after complete verification";
-+          lprintf_nl "Downloaded size differs after complete verification";
-         true
-   with _ -> false
- 
+-        true
+-  with _ -> false
+-
+-

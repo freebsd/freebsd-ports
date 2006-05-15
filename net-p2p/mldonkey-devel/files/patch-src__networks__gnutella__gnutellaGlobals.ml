@@ -1,5 +1,5 @@
 --- ./src/networks/gnutella/gnutellaGlobals.ml.orig	Sat Apr  8 21:26:41 2006
-+++ ./src/networks/gnutella/gnutellaGlobals.ml	Sun May  7 06:39:10 2006
++++ ./src/networks/gnutella/gnutellaGlobals.ml	Mon May 15 13:03:12 2006
 @@ -325,8 +325,7 @@
    in
    if !verbose then
