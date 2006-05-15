@@ -2302,3 +2302,4 @@ games/rtcw-paks||2006-05-11|Not needed because games/rtcw asks for the files (on
 deskutils/superkaramba|misc/kdeutils3|2006-05-13|superkaramba was integrated into the kdeutils3 port
 security/uvscan-dat||2006-05-14|Has expired
 net/callgen|net/callgen323|2006-05-15|Moved to a better name
+audio/ruby-mp3info|audio/rubygem-mp3info|2006-05-15|Switched to the rubygem version
