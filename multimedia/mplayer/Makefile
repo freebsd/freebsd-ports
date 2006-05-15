@@ -267,11 +267,15 @@
 # This knob prevents the ports system from installing additional
 # documentation. If you define this, only the manpage is going
 # to be installed.
+#
+# WITHOUT_IPV6
+# default: undefined
+# This knob disables mplayer's ipv6 protocol family capabilities.
 
 PORTNAME=	mplayer
 PORTVERSION=	0.99.7
 PORTREVISION=	14
-CATEGORIES=	multimedia audio ipv6
+CATEGORIES=	multimedia audio
 MASTER_SITES=	http://www1.mplayerhq.hu/MPlayer/releases/ \
 		http://www2.mplayerhq.hu/MPlayer/releases/ \
 		http://ftp.lug.udel.edu/MPlayer/releases/ \
@@ -468,6 +472,8 @@ WITH_FREETYPE=	yes
 # binary-suitable package or custom build
 
 .if defined(MPLAYER_GENERIC_BUILD)
+#Generic build includes ipv6 on FreeBSD
+CATEGORIES+=	ipv6
 #Compiler flags
 CFLAGS=		#let mplayer decide on this
 CONFIGURE_ARGS+=--enable-runtime-cpudetection
@@ -549,6 +555,12 @@ CONFIGURE_ARGS+=	--enable-debug
 
 .if defined(WITH_OPTIMIZED_CFLAGS)
 CFLAGS+=	-O3 -ffast-math -fomit-frame-pointer
+.endif
+
+.if defined(WITHOUT_IPV6)
+CONFIGURE_ARGS+=	--disable-inet6
+.else
+CATEGORIES+=	ipv6
 .endif
 
 .if ${HAVE_GNOME:Mgtk12}!="" && !defined(WITH_GTK2) && !defined(WITHOUT_GUI)
