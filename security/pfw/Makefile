@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pfw
-PORTVERSION=	0.7.2
-PORTREVISION=	2
+PORTVERSION=	0.7.3
 CATEGORIES=	security www
 MASTER_SITES=	http://www.allard.nu/pfw/download/
 EXTRACT_SUFX=	.tgz
@@ -38,10 +37,6 @@ PORTDOCS=	INSTALL README README_TEST
 .if ${OSVERSION} < 502105
 IGNORE=		pf is only in 5.x and newer
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -E 's,id=("theform"),name=\1 id=\1,' \
-		${WRKSRC}/include.inc.php
 
 do-install:
 	${MKDIR} ${PFW_PREFIX}
