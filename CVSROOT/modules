@@ -8806,6 +8806,7 @@ p5-Math-Round		ports/math/p5-Math-Round
 p5-Math-SimpleVariable	ports/math/p5-Math-SimpleVariable
 p5-Math-Spline	ports/math/p5-Math-Spline
 p5-Math-Symbolic	ports/math/p5-Math-Symbolic
+p5-Math-Symbolic-Custom-CCompiler	ports/math/p5-Math-Symbolic-Custom-CCompiler
 p5-Math-Symbolic-Custom-Contains	ports/math/p5-Math-Symbolic-Custom-Contains
 p5-Math-SymbolicX-Inline	ports/math/p5-Math-SymbolicX-Inline
 p5-Math-TrulyRandom	ports/math/p5-Math-TrulyRandom
