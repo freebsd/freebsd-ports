@@ -308,7 +308,6 @@
     SUBDIR += ump
     SUBDIR += units
     SUBDIR += unixstat
-    SUBDIR += vecfem
     SUBDIR += vtk
     SUBDIR += vtk43
     SUBDIR += vtk-data
