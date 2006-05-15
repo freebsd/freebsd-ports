@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	pkg-orphan
-PORTVERSION=	0.1.0
+PORTVERSION=	0.1.1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=${PORTNAME}
 
-MAINTAINER=	semionov@mail.bg
+MAINTAINER=	vsemionov@gmail.com
 COMMENT=	A console utility for managing unreferenced FreeBSD packages
 
 NO_BUILD=	yes
