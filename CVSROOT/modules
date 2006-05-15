@@ -11817,7 +11817,6 @@ ruby-ming	ports/graphics/ruby-ming
 ruby-mmap	ports/devel/ruby-mmap
 ruby-mnogosearch	ports/www/ruby-mnogosearch
 ruby-mode.el	ports/lang/ruby-mode.el
-ruby-mp3info	ports/audio/ruby-mp3info
 ruby-mp3tag	ports/audio/ruby-mp3tag
 ruby-mpi	ports/net/ruby-mpi
 ruby-msql	ports/databases/ruby-msql
@@ -11944,6 +11943,7 @@ rubygem-capistrano	ports/sysutils/rubygem-capistrano
 rubygem-colortools	ports/print/rubygem-colortools
 rubygem-event-loop	ports/devel/rubygem-event-loop
 rubygem-memcache-client	ports/databases/rubygem-memcache-client
+rubygem-mp3info	ports/audio/rubygem-mp3info
 rubygem-needle	ports/devel/rubygem-needle
 rubygem-net-sftp	ports/security/rubygem-net-sftp
 rubygem-net-ssh	ports/security/rubygem-net-ssh
