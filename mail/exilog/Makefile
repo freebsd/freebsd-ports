@@ -7,7 +7,7 @@
 
 PORTNAME=	exilog
 PORTVERSION=	0.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	http://duncanthrax.net/exilog/
 
@@ -29,9 +29,9 @@ WITH_MYSQL=	yes
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
 .elif (${WITH_SQL_BACKEND} == "postgresql")
 WITH_POSTGRESQL=	yes
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
 .else
-BROKEN=	"You should specify sql backend using WITH_SQL_BACKEND"
+BROKEN=	You should specify sql backend using WITH_SQL_BACKEND
 .endif
 
 .ifndef WITHOUT_WWWDIR
@@ -43,7 +43,7 @@ EXILOGDIR?=	${PREFIX}/exilog
 .if defined(NO_AGENT)
 PLIST_SUB+=	AGENT="@comment "
 .else
-USE_RC_SUBR=	yes
+USE_RC_SUBR=	exilog.sh
 PLIST_SUB+=	AGENT=""
 .endif
 
@@ -60,15 +60,13 @@ pre-patch:
 	@${REINPLACE_CMD} -e 's,$$RealBin/exilog.conf,${PREFIX}/etc/exilog.conf,' ${WRKSRC}/exilog_config.pm
 	@${REINPLACE_CMD} -e "s,\(use exilog_config\),use lib \'${EXILOGDIR}\'; \1," ${WRKSRC}/exilog_agent.pl
 	@${REINPLACE_CMD} -e "s,\(use exilog_config\),use lib \'${EXILOGDIR}\'; \1," ${WRKSRC}/exilog_cleanup.pl
-	@${SED} -e 's,%%RC_SUBR%%,${RC_SUBR},' \
-		-e 's,%%PREFIX%%,${PREFIX},' ${FILESDIR}/exilog.sh > ${WRKDIR}/exilog.sh
 
 do-install:
 	@${MKDIR} ${EXILOGDIR}
 	@${MKDIR} ${EXILOGDIR}/icons
 	@${CP} ${WRKSRC}/*.pm ${WRKSRC}/*.css ${WRKSRC}/*.js ${EXILOGDIR}
 	@${CP} ${WRKSRC}/icons/*  ${EXILOGDIR}/icons
-	
+
 .if !defined(NO_AGENT)
 	@${INSTALL_SCRIPT} ${WRKSRC}/exilog_agent.pl ${PREFIX}/sbin
 .endif
