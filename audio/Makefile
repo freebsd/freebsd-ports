@@ -469,6 +469,7 @@
     SUBDIR += ruby-audiofile
     SUBDIR += ruby-esound
     SUBDIR += ruby-freedb
+    SUBDIR += ruby-mp3info
     SUBDIR += ruby-mp3tag
     SUBDIR += ruby-musicbrainz
     SUBDIR += ruby-musicextras
