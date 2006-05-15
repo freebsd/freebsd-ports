@@ -197,6 +197,7 @@
     SUBDIR += p5-Math-SymbolicX-Complex
     SUBDIR += p5-Math-SymbolicX-Inline
     SUBDIR += p5-Math-SymbolicX-ParserExtensionFactory
+    SUBDIR += p5-Math-SymbolicX-Statistics-Distributions
     SUBDIR += p5-Math-TrulyRandom
     SUBDIR += p5-Math-Vec
     SUBDIR += p5-Math-VecStat
