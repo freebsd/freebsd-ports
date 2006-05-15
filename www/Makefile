@@ -993,6 +993,7 @@
     SUBDIR += xpi-no-referrer
     SUBDIR += xpi-noscript
     SUBDIR += xpi-pdf_download
+    SUBDIR += xpi-searchstatus
     SUBDIR += xpi-server_switcher
     SUBDIR += xpi-stumbleupon
     SUBDIR += xpi-tabmixplus
