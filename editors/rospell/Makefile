@@ -2,12 +2,11 @@
 # Date created:				2005-11-04
 # Whom:			Ion-Mihai "IOnut" Tetcu <itetcu@people.tecnik93.com>
 #
+# $Tecnik: ports/editors/rospell/Makefile,v 1.4 2006/05/15 10:49:31 itetcu Exp $
 # $FreeBSD$
-# $Id: Makefile,v 1.1 2005/11/20 18:17:56 itetcu Rel $
-# $Tecnik: ports/editors/rospell/Makefile,v 1.2 2005/12/12 19:00:23 itetcu Exp $
 
 PORTNAME=	rospell
-PORTVERSION=	2005.03
+PORTVERSION=	2006.00
 CATEGORIES=	editors textproc # this should/will be romanian ;)
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
