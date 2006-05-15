@@ -42,7 +42,7 @@ CONFIGURE_ARGS=	${RUBY_CONFIGURE_ARGS} \
 
 .if defined(WITH_PTHREADS)
 CONFIGURE_ARGS+=--enable-pthread
-PKGNAMESUFFIX=	-pthreads
+PKGNAMESUFFIX:=	${PKGNAMESUFFIX}+pthreads
 .else
 CONFIGURE_ARGS+=--disable-pthread
 .endif
