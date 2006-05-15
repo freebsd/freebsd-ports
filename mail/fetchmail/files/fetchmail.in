@@ -52,7 +52,7 @@ name=fetchmail
 rcvar=`set_rcvar`
 
 command=%%PREFIX%%/bin/${name}
-pidfile=/var/run/${name}.pid
+pidfile=/var/run/fetchmail/${name}.pid
 extra_commands="awaken"
 awaken_cmd="fetchmail_awaken"
 

@@ -11,6 +11,7 @@
 
 PORTNAME=	fetchmail
 PORTVERSION=	6.3.4
+PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://download.berlios.de/%SUBDIR%/ \
 		http://home.pages.de/~mandree/%SUBDIR%/ \
@@ -111,10 +112,11 @@ post-install:
 
 	${INSTALL_SCRIPT} ${WRKDIR}/fetchmailconf ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/fetchmailconf.py ${PREFIX}/libexec
-	${INSTALL} -d -m 755 -o fetchmail -g fetchmail /var/run/fetchmail
+
 	${INSTALL} -m 644 -o fetchmail -g fetchmail ${FILESDIR}/fetchmailrc.sample ${PREFIX}/etc/fetchmailrc.sample
 	if [ ! -f ${PREFIX}/etc/fetchmailrc ]; then \
-	        ${CP} -p ${PREFIX}/etc/fetchmailrc.sample ${PREFIX}/etc/fetchmailrc ; \
+		cp -p ${PREFIX}/etc/fetchmailrc.sample ${PREFIX}/etc/fetchmailrc ; \
 	fi
+
 
 .include <bsd.port.post.mk>
