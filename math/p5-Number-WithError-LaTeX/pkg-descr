@@ -1,0 +1,13 @@
+This class is a subclass of Number::WithError. It provides the same 
+interface and the same exports.
+
+It adds several methods to every object. The main functionality is 
+provided by latex(), which dumps the object as valid LaTeX code. Also, 
+encode() is a convenient way to encode any UTF-8 string into TeX. It is 
+just a convenience thing since it is delegated to TeX::Encode.
+
+Unlike Number::WithError, this module requires perl version 5.8 or later. 
+(That is the rationale for creating a separate distribution, too.)
+
+WWW: http://search.cpan.org/dist/Number-WithError-LaTeX
+Author: Steffen Mueller <symbolic-module@steffen-mueller.net>
