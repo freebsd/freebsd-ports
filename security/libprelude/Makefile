@@ -45,10 +45,6 @@ CONFIGURE_ARGS+=	--with-html-dir=${PREFIX}/share/doc
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN=	Doesn't build on FreeBSD < 5.x
-.endif
-
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/api/html/* ${DOCSDIR}
