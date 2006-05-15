@@ -1,0 +1,9 @@
+%%SITE_PERL%%/Math/Symbolic/Custom/CCompiler.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Symbolic/Custom/CCompiler/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Symbolic/Custom/CCompiler
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Symbolic/Custom
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Symbolic
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math
+@dirrmtry %%SITE_PERL%%/Math/Symbolic/Custom
+@dirrmtry %%SITE_PERL%%/Math/Symbolic
+@dirrmtry %%SITE_PERL%%/Math
