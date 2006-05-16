@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://freefriends.org/arnold/Source/ \
 		${MASTER_SITE_NETBSD}
 EXTRACT_SUFX=	.shar.gz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	serge.gagnon@b2b2c.ca
 COMMENT=	A simple menu patterened after plan9
 
 PLIST_FILES=		bin/9menu
@@ -22,6 +22,7 @@ EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=	|sh
 MAKEFILE=		Makefile.noimake
 ALL_TARGET=		9menu
+MAKE_ARGS=		CC="${CC}"
 
 NO_WRKSUBDIR=	yes
 
