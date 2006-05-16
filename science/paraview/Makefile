@@ -31,10 +31,12 @@ MAKE_ENV=	CC="${CC}" \
 		CXX="${CXX}"
 LIB_INSTDIR=	${PREFIX}/lib/${PORTNAME}-${PORTVERSION:R}
 
+BROKEN=		Does not build with new cmake
+
 pre-patch:
 	${REINPLACE_CMD} -e 's|vtkpng|png|g' \
 		${WRKDIR}/paraview-${PORTVERSION}/GUI/Widgets/CMakeLists.txt
-		
+
 do-configure:
 	${MKDIR} ${WRKSRC}
 	cd ${WRKSRC} && \
