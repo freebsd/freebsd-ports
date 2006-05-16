@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	solfege
-PORTVERSION=	3.0.7
+PORTVERSION=	3.2.0
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,17 +17,26 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free eartraining software
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
-		swig:${PORTSDIR}/devel/swig13
+		swig:${PORTSDIR}/devel/swig13 \
+		${STYLESHEET}:${PORTSDIR}/textproc/docbook-xsl
+.if defined(PACKAGE_BUILDING)
+BUILD_DEPENDS+=	Xvfb:${X_VFBSERVER_PORT} \
+		${X11BASE}/lib/X11/fonts/misc/8x13O.pcf.gz:${X_FONTS_MISC_PORT}
+.endif
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomeprefix pygnomeextras
 USE_PYTHON=	yes
+USE_GETTEXT=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	M4=${LOCALBASE}/bin/gm4
-CONFIGURE_ARGS=	--disable-oss-sound
+CONFIGURE_ARGS=	--disable-oss-sound \
+		--enable-docbook-stylesheet=${STYLESHEET}
 
 MAN1=		lessonfile_editor.1 solfege.1
+
+STYLESHEET=	${LOCALBASE}/share/xsl/docbook/xhtml/chunk.xsl
 
 post-patch:
 	@${GREP} -lR "/usr/bin/python" ${WRKSRC} | ${XARGS} \
