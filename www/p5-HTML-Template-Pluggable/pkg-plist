@@ -3,3 +3,5 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Template/Pluggable/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Template/Pluggable
 @dirrmtry %%SITE_PERL%%/HTML/Template/Plugin
+@dirrmtry %%SITE_PERL%%/HTML/Template
+@dirrmtry %%SITE_PERL%%/HTML
