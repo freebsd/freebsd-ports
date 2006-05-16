@@ -7,7 +7,7 @@
 
 PORTNAME=	uvscan
 PORTVERSION=	4.40e
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	http://download.nai.com/products/evaluation/virusscan/english/cmdline/bsd/v4.40/
 DISTNAME=	vbsd440e
@@ -16,9 +16,17 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	jeh@FreeBSD.org
 COMMENT=	Evaluation version of a DOS/Windows/Linux file virus scanner
 
-# misc/compat3x is forbidden, but if it is compiled into the system
-# we may still be good to go.
+# misc/compat3x is forbidden, but with FreeBSD 5.1 or later you can use
+# libmap.conf(5) to map against current libc. This may affect the system
+# security. Use at your own risk.
+.include <bsd.port.pre.mk>
+.if defined(WITHOUT_COMPAT3)
+.if ${OSVERSION} < 510000
+IGNORE=		requires FreeBSD 5.1 or later
+.endif
+.else
 LIB_DEPENDS+=	c.3:${PORTSDIR}/misc/compat3x
+.endif
 LIB_DEPENDS+=	m.2:${PORTSDIR}/misc/compat4x
 
 ONLY_FOR_ARCHS=		i386
@@ -65,7 +73,16 @@ do-install:
 
 post-install:
 	${LN} -sf ${PREFIX}/lib/libbsdfv.so.4 ${PREFIX}/lib/libbsdfv.so
-	${ECHO_CMD} "Trying to fetch the current DAT file"
+.if defined(WITHOUT_COMPAT3) && ${OSVERSION} >= 510000
+	@${ECHO_CMD} ""
+	@${ECHO_CMD} "This may affect the system security. Use at your own risk."
+	@${ECHO_CMD} "You need to add the following two lines to your libmap.conf(5):"
+	@${ECHO_CMD} ""
+	@${ECHO_CMD} "[/usr/local/libexec/uvscan/uvscan]"
+	@${ECHO_CMD} "libc.so.3         libc.so"
+	@${ECHO_CMD} ""
+.endif
+	@${ECHO_CMD} "Trying to fetch the current DAT file"
 	${SH} ${PREFIX}/sbin/update_dat
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
