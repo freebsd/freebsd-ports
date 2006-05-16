@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	Perl-Critic
-PORTVERSION=	0.15
+PORTVERSION=	0.16
 CATEGORIES=	textproc devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Perl
@@ -37,6 +37,8 @@ MAN3=	Perl::Critic.3 \
 	Perl::Critic::Policy::BuiltinFunctions::RequireBlockGrep.3 \
 	Perl::Critic::Policy::BuiltinFunctions::RequireBlockMap.3 \
 	Perl::Critic::Policy::BuiltinFunctions::RequireGlobFunction.3 \
+	Perl::Critic::Policy::BuiltinFunctions::ProhibitUniversalIsa.3 \
+	Perl::Critic::Policy::BuiltinFunctions::ProhibitUniversalCan.3 \
 	Perl::Critic::Policy::ClassHierarchies::ProhibitAutoloading.3 \
 	Perl::Critic::Policy::ClassHierarchies::ProhibitExplicitISA.3 \
 	Perl::Critic::Policy::ClassHierarchies::ProhibitOneArgBless.3 \
@@ -50,6 +52,7 @@ MAN3=	Perl::Critic.3 \
 	Perl::Critic::Policy::ControlStructures::ProhibitPostfixControls.3 \
 	Perl::Critic::Policy::ControlStructures::ProhibitUnlessBlocks.3 \
 	Perl::Critic::Policy::ControlStructures::ProhibitUntilBlocks.3 \
+	Perl::Critic::Policy::ControlStructures::ProhibitUnreachableCode.3 \
 	Perl::Critic::Policy::Documentation::RequirePodAtEnd.3 \
 	Perl::Critic::Policy::Documentation::RequirePodSections.3 \
 	Perl::Critic::Policy::InputOutput::ProhibitBacktickOperators.3 \
@@ -61,6 +64,7 @@ MAN3=	Perl::Critic.3 \
 	Perl::Critic::Policy::Miscellanea::ProhibitFormats.3 \
 	Perl::Critic::Policy::Miscellanea::ProhibitTies.3 \
 	Perl::Critic::Policy::Miscellanea::RequireRcsKeywords.3 \
+	Perl::Critic::Policy::Modules::ProhibitAutomaticExportation.3 \
 	Perl::Critic::Policy::Modules::ProhibitMultiplePackages.3 \
 	Perl::Critic::Policy::Modules::RequireBarewordIncludes.3 \
 	Perl::Critic::Policy::Modules::RequireExplicitPackage.3 \
@@ -94,6 +98,7 @@ MAN3=	Perl::Critic.3 \
 	Perl::Critic::Policy::ValuesAndExpressions::RequireNumberSeparators.3 \
 	Perl::Critic::Policy::ValuesAndExpressions::RequireQuotedHeredocTerminator.3 \
 	Perl::Critic::Policy::ValuesAndExpressions::RequireUpperCaseHeredocTerminator.3 \
+	Perl::Critic::Policy::ValuesAndExpressions::ProhibitVersionStrings.3 \
 	Perl::Critic::Policy::Variables::ProhibitLocalVars.3 \
 	Perl::Critic::Policy::Variables::ProhibitPackageVars.3 \
 	Perl::Critic::Policy::Variables::ProhibitPunctuationVars.3 \
