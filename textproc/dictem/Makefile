@@ -7,14 +7,15 @@
 PORTNAME=	dictem
 PORTVERSION=	0.7
 CATEGORIES=	textproc net elisp
-MASTER_SITES=	http://www.mova.org/~cheusov/pub/dictem/
+MASTER_SITES=	http://www.mova.org/~cheusov/pub/dictem/ \
+		http://ncd0.bsd.by/ports/distfiles/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
 MAINTAINER=	m.boyarov@gmail.com
 COMMENT=	DictEm is a dict client for [X]Emacs
 
 USE_EMACS=	yes
-USE_AUTOTOOLS=  autoconf:259
+USE_AUTOTOOLS=	autoconf:259
 
 EMACS_PORT_NAME?=emacs21
 
