@@ -54,9 +54,11 @@
     SUBDIR += gstreamer-plugins-core
     SUBDIR += gstreamer-plugins-core80
     SUBDIR += gstreamer-plugins-dirac80
+    SUBDIR += gstreamer-plugins-dts
     SUBDIR += gstreamer-plugins-dts80
     SUBDIR += gstreamer-plugins-dv
     SUBDIR += gstreamer-plugins-dv80
+    SUBDIR += gstreamer-plugins-dvd
     SUBDIR += gstreamer-plugins-dvd80
     SUBDIR += gstreamer-plugins-gnonlin
     SUBDIR += gstreamer-plugins-good

@@ -60,8 +60,8 @@ GST80_SHLIB_VERSION=	1
 #
 # These are the current supported gstreamer-plugins modules
 #
-_USE_GSTREAMER_ALL=	a52dec aalib bad cairo cdparanoia \
-			dv esound faac faad ffmpeg flac gconf gnomevfs \
+_USE_GSTREAMER_ALL=	a52dec aalib bad cairo cdparanoia dts \
+			dv dvd esound faac faad ffmpeg flac gconf gnomevfs \
 			gnonlin good gsm ivorbis jpeg ladspa lame libcaca \
 			libmms libpng libvisual mad mpeg2dec \
 			musepack ogg pango sdl shout2 sidplay \
@@ -184,8 +184,6 @@ bad_DEPENDS=	multimedia/gstreamer-plugins-bad
 
 dirac_DEPENDS=	multimedia/gstreamer-plugins-dirac
 
-dts_DEPENDS=	multimedia/gstreamer-plugins-dts
-
 ffmpeg_DEPENDS=	multimedia/gstreamer-ffmpeg
 ffmpeg_GST80_SUFX=	80
 ffmpeg_GST80_PREFIX=	gstreamer-
@@ -193,6 +191,8 @@ ffmpeg_GST_PREFIX=	gstreamer-
 ffmpeg_GST_SUFX=	# empty
 ffmpeg_GST80_VERSION=	0.8.7
 ffmpeg_GST_VERSION=	0.10.0
+
+dts_DEPENDS=	multimedia/gstreamer-plugins-dts
 
 dv_DEPENDS=	multimedia/gstreamer-plugins-dv
 

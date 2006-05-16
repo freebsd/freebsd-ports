@@ -7,6 +7,9 @@ lib/gstreamer-%%VERSION%%/libgstfreeze.so
 lib/gstreamer-%%VERSION%%/libgstglimagesink.a
 lib/gstreamer-%%VERSION%%/libgstglimagesink.la
 lib/gstreamer-%%VERSION%%/libgstglimagesink.so
+lib/gstreamer-%%VERSION%%/libgstmodplug.a
+lib/gstreamer-%%VERSION%%/libgstmodplug.la
+lib/gstreamer-%%VERSION%%/libgstmodplug.so
 lib/gstreamer-%%VERSION%%/libgstqtdemux.a
 lib/gstreamer-%%VERSION%%/libgstqtdemux.la
 lib/gstreamer-%%VERSION%%/libgstqtdemux.so
@@ -16,3 +19,6 @@ lib/gstreamer-%%VERSION%%/libgstspeed.so
 lib/gstreamer-%%VERSION%%/libgsttta.a
 lib/gstreamer-%%VERSION%%/libgsttta.la
 lib/gstreamer-%%VERSION%%/libgsttta.so
+lib/gstreamer-%%VERSION%%/libgstxingheader.a
+lib/gstreamer-%%VERSION%%/libgstxingheader.la
+lib/gstreamer-%%VERSION%%/libgstxingheader.so
