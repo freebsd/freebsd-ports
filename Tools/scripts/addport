@@ -34,7 +34,7 @@
 # Id: addport,v 1.5 2000/04/22 22:19:43 mharo Exp (perl conversion)
 # $FreeBSD$
 #
-# MAINTAINER=	will@FreeBSD.org
+# MAINTAINER=	garga@FreeBSD.org
 #
 
 use Cwd "abs_path";
@@ -53,6 +53,7 @@ sub usage();
 sub contains($@);
 sub lsports();
 sub lastcomment();
+sub addmodule($);
 
 my %opts;
 
@@ -98,6 +99,7 @@ my $sshmod;
 if( !defined $ENV{"CVS_RSH"} ) {
 	$ENV{CVS_RSH} = "ssh";
 }
+my $portsdir = $ENV{PORTSDIR} ? $ENV{PORTSDIR} : '/usr/ports';
 my $make = "make";
 my $portlint = `which portlint`; chomp $portlint;
 my $plint_args = "-N -a -c -t";
@@ -105,6 +107,7 @@ my $perl = "perl";
 my $cp = "cp";
 my $mv = "mv";
 my $rm = "rm";
+my $modulesupdate = ( -f "/usr/local/bin/modulesupdate" ? "/usr/local/bin/modulesupdate" : "$portsdir/Tools/scripts/modulesupdate" );
 # vars required for commitfile
 my $descr; my $portversion; my $pkgcomment;
 my $tmp; my $pkgcommentlen; my $comment; my $orig;
@@ -112,7 +115,7 @@ my $tmp2; my $offset; my $commitfile = "";
 $tmp = $tmp2 = $offset = 0;
 
 chomp(my $myhost = lc(hostname()));
-$moduleshost = "freefall.freebsd.org" if ($moduleshost eq "");
+$moduleshost = $myhost if ($moduleshost eq "");
 
 # SSH is always required nowadays... pcvs.FreeBSD.org isn't shell accessible.
 $ssh = "$ENV{CVS_RSH} $h -l $u";
@@ -358,9 +361,7 @@ foreach my $thisdir (@dirs) {
 	chdir "$tmpdir/$category" or err(1, "$tmpdir/$category");
 	system("$cvs $n ci $commitfile Makefile $portname") && errx(1, "cvs commit failed, aborting.");
 	if (!$nomodules && ($n ne "-n")) {
-		print "*** If you have problems with the below modulesupdate command, PLEASE\n";
-		print "*** ensure that you can login to $h from $moduleshost!\n";
-		system("$sshmod env CVSROOT=$repo $perl /usr/local/bin/modulesupdate $module ports/$category/$portname") && errx(1, "adding port to modules failed, aborting.");
+		addmodule("$sshmod env CVSROOT=$repo $perl $modulesupdate $module ports/$category/$portname") && errx(1, "adding port to modules failed, aborting.");
 	}
 }
 
@@ -510,4 +511,16 @@ sub lastcomment() {
 		next;
 	}
 	return $num;
+}
+
+# this adds the module
+sub addmodule($) {
+	my ($command) = @_;
+
+	print "*** If you have problems with the below modulesupdate command, PLEASE\n";
+	print "*** ensure that you can login to $h from $moduleshost!\n";
+	do {
+		system($command);
+	} while ( ($? != 0) && !prompt("Add module failed, retry? ") );
+	return $?;
 }
