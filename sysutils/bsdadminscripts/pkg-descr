@@ -1,0 +1,8 @@
+This is a collection of administration scripts. At the moment it
+consists of a script to control rc.d scripts at runtime and a
+script that adds functionality to portupgrade.
+
+WWW: http://sourceforge.net/projects/bsdadminscripts/
+
+- Kamikaze
+lon_kamikaze@gmx.de
