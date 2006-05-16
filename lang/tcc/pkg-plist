@@ -1,0 +1,14 @@
+bin/tcc
+include/libtcc.h
+lib/tcc/include/stdarg.h
+lib/tcc/include/stddef.h
+lib/tcc/include/stdbool.h
+lib/tcc/include/float.h
+lib/tcc/include/varargs.h
+lib/tcc/include/tcclib.h
+lib/tcc/libtcc1.a
+lib/tcc/bcheck.o
+lib/libtcc.a
+%%DOCSDIR%%/tcc-doc.html
+@dirrm lib/tcc/include
+@dirrm lib/tcc
