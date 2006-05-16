@@ -1,5 +1,5 @@
 #
-#	$FreeBSD: /tmp/pcvs/ports/Mk/bsd.emacs.mk,v 1.56 2006-05-16 14:33:12 anray Exp $
+#	$FreeBSD: /tmp/pcvs/ports/Mk/bsd.emacs.mk,v 1.57 2006-05-16 17:11:20 anray Exp $
 #
 #	bsd.emacs.mk - 19990829 Shigeyuki Fukushima.
 #
@@ -198,13 +198,18 @@ PLIST?=                 ${PKGDIR}/pkg-plist.${EMACS_PORT_NAME}
 .endif
 
 # XEmacs-21 development version with Mule
-.elif (${EMACS_PORT_NAME} == "xemacs-devel-mule")
+.elif (${EMACS_PORT_NAME} == "xemacs-devel-mule") || \
+	(${EMACS_PORT_NAME} == "xemacs-mule-xft")
 EMACS_NAME=		xemacs
 EMACS_VER=		21.5-b27
 EMACS_MAJOR_VER=	21
 EMACS_LIBDIR?=		lib/${EMACS_NAME}
 EMACS_LIBDIR_WITH_VER?=	lib/${EMACS_NAME}-${EMACS_VER}
+.if ${EMACS_PORT_NAME} == "xemacs-mule-xft"
+EMACS_PORTSDIR=		${PORTSDIR}/editors/xemacs-devel-mule-xft
+.else
 EMACS_PORTSDIR=		${PORTSDIR}/editors/xemacs-devel-mule
+.endif
 EMACS_COMMON_PORT=	NO
 EMACS_HAS_MULE=		YES
 EMACS_NO_SUBDIRSEL=	NO
@@ -220,7 +225,7 @@ check-makevars::
 	@${ECHO} "Valid values are:"
 	@${ECHO} "	Emacs  family: emacs19 mule emacs20 emacs21 emacs22"
 	@${ECHO} "	XEmacs family: xemacs xemacs20 xemacs21 xemacs21-mule"
-	@${ECHO} "	                xemacs-devel xemacs-devel-mule"
+	@${ECHO} "	               xemacs-devel xemacs-devel-mule xemacs-mule-xft"
 	@${FALSE}
 .endif
 
