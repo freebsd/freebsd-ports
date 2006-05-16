@@ -8,16 +8,24 @@ UNIX_TYPE=freebsd
 
 PREFIX=%%PREFIX%%
 LOCALBASE=%%LOCALBASE%%
-QMAIL_PREFIX=%%QMAIL_PREFIX%%
+QMAIL_DIR=%%QMAIL_DIR%%
 
 echo "### DEAMON PATH CONFIGURATION ###"
-PATH_HTTPD_CONF="${LOCALBASE}/etc/apache/httpd.conf"
+PATH_HTTPD_CONF="${LOCALBASE}/etc/apache2/httpd.conf"
 PATH_NAMED_CONF="/etc/namedb/named.conf"
 PATH_PROFTPD_CONF="${LOCALBASE}/etc/proftpd.conf"
-PATH_QMAIL_CTRL="${QMAIL_PREFIX}/control"
+PATH_DOVECOT_CONF="${LOCALBASE}/etc/dovecot.conf"
+PATH_COURIER_CONF_PATH="${LOCALBASE}/etc/courier"
+PATH_POSTFIX_CONF="${LOCALBASE}/etc/postfix/main.cf"
+PATH_POSTFIX_ETC="${LOCALBASE}/etc/postfix"
+PATH_SASL_PASSWD2="${LOCALBASE}/sbin/saslpasswd2"
+PATH_AWSTATS_ETC=${LOCALBASE}/etc/awstats
+PATH_QMAIL_CTRL="${QMAIL_DIR}/control"
+PATH_CRONTAB_CONF="/etc/crontab"
+PATH_AMAVISD_CONF="${LOCALBASE}/etc/amavis/amavisd.conf"
 
 # Multi OS (Unix system) uninstall sh script for DTC
-# Written by Thomas GOIRAND <thomas@goirand.fr>
+# Written by Thomas GOIRAND <thomas [ at ] goirand.fr>
 # under LGPL Licence
 
 # The configuration for all thoses variables must be written BEFORE this
@@ -36,74 +44,221 @@ PATH_QMAIL_CTRL="${QMAIL_PREFIX}/control"
 # uninstall named.conf
 #
 
-if grep "Configured by DTC" $PATH_NAMED_CONF
+VERBOSE_INSTALL=yes
+
+if [ -z "$MKTEMP" ] ; then
+	MKTEMP="mktemp -t"
+fi
+
+if grep "Configured by DTC" $PATH_CRONTAB_CONF >/dev/null
 then
-	echo "===> Uninstalling inclusion from named.conf"
-	grep -v "Configured by DTC" $PATH_NAMED_CONF >/tmp/dtc_uninstall.named.conf
-	grep -v "include \"$PATH_DTC_ETC/named.conf\"" /tmp/dtc_uninstall.named.conf >/tmp/dtc_uninstall2.named.conf
+	if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+		echo "===> Uninstalling inclusion from crontab"
+	fi
+	TMP_FILE=`${MKTEMP} DTC_uninstall.crontab.XXXXXX` || exit 1
+	TMP_FILE2=`${MKTEMP} DTC_uninstall.crontab.XXXXXX` || exit 1
+	grep -v "Configured by DTC" $PATH_CRONTAB_CONF > $TMP_FILE
+	grep -v "cd /usr/share/dtc/admin; " $TMP_FILE > $TMP_FILE2
 	cp -f $PATH_NAMED_CONF $PATH_NAMED_CONF.DTC.removed
-	mv /tmp/dtc_uninstall2.named.conf $PATH_NAMED_CONF
-	rm -f /tmp/dtc_uninstall.named.conf
+	# don't rm the original file, just empty it so we keep permissions
+	echo -n > $PATH_CRONTAB_CONF
+	cat < $TMP_FILE2 >> $PATH_CRONTAB_CONF
+	rm -f $TMP_FILE $TMP_FILE2
+fi
+
+
+if grep "Configured by DTC" $PATH_NAMED_CONF >/dev/null
+then
+	if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+		echo "===> Uninstalling inclusion from named.conf"
+		echo "removing \"Configured by DTC\" and include \""${PATH_DTC_ETC}/named.conf"\" lines"
+	fi
+	TMP_FILE=`${MKTEMP} DTC_uninstall.named.conf.XXXXXX` || exit 1
+	TMP_FILE2=`${MKTEMP} DTC_uninstall.named.conf.XXXXXX` || exit 1
+	grep -v "Configured by DTC" $PATH_NAMED_CONF > $TMP_FILE
+	grep -v "include \"$PATH_DTC_ETC/named.conf\"" $TMP_FILE > $TMP_FILE2
+	cp -f $PATH_NAMED_CONF $PATH_NAMED_CONF.DTC.removed
+	# don't purge the original file, just empty it
+	echo -n > $PATH_NAMED_CONF
+	cat < $TMP_FILE2 >> $PATH_NAMED_CONF
+	rm -f $TMP_FILE
+	rm -f $TMP_FILE2
 fi
 
 #
 # uninstall httpd.conf
 #
-if grep "Configured by DTC" $PATH_HTTPD_CONF
+if grep "Configured by DTC" $PATH_HTTPD_CONF >/dev/null
 then
-	echo "===> Uninstalling inclusion from httpd.conf"
+	if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+		echo "===> Uninstalling inclusion from httpd.conf"
+	fi
 	if grep "Configured by DTC v0.10" $PATH_HTTPD_CONF >/dev/null 2>&1
 	then
-		grep -v "Configured by DTC" $PATH_HTTPD_CONF | grep -v "Include $PATH_DTC_ETC/vhosts.conf" >/tmp/dtc_uninstall.httpd.conf
+		TMP_FILE=`$MKTEMP DTC_uninstall.httpd.conf.XXXXXX` || exit 1
+		grep -v "Configured by DTC" $PATH_HTTPD_CONF | grep -v "Include $PATH_DTC_ETC/vhosts.conf" > $TMP_FILE
 		cp -f $PATH_HTTPD_CONF $PATH_HTTPD_CONF.DTC.removed
-		mv /tmp/dtc_uninstall.httpd.conf $PATH_HTTPD_CONF
+		echo -n > $PATH_HTTPD_CONF
+		cat <$TMP_FILE >> $PATH_HTTPD_CONF
+		rm $TMP_FILE
 	else
+		TMP_FILE=`$MKTEMP DTC_uninstall.httpd.conf.XXXXXX` || exit 1
 		start_line=`grep -n "Configured by DTC" $PATH_HTTPD_CONF | cut -d":" -f1`
 		end_line=`grep -n "End of DTC configuration" $PATH_HTTPD_CONF| cut -d":" -f1`
 		nbr_line=`cat $PATH_HTTPD_CONF | wc -l`
-		cat $PATH_HTTPD_CONF | head -n $(($start_line - 1 )) >/tmp/DTC_uninstall.httpd.conf
-		cat $PATH_HTTPD_CONF | tail -n $(($nbr_line - $end_line )) >>/tmp/DTC_uninstall.httpd.conf
-		cat </tmp/DTC_uninstall.httpd.conf >$PATH_HTTPD_CONF
+		cat $PATH_HTTPD_CONF | head -n $(($start_line - 1 )) > $TMP_FILE
+		cat $PATH_HTTPD_CONF | tail -n $(($nbr_line - $end_line )) >> $TMP_FILE
+		cat < $TMP_FILE >$PATH_HTTPD_CONF
+		rm $TMP_FILE
 	fi
 fi
 
 #
+# uninstall courier config details
+#
+
+if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+	echo "===> Uninstalling inclusion from courier authdaemonrc"
+fi
+if grep "Configured by DTC" $PATH_COURIER_CONF_PATH/authdaemonrc >/dev/null 2>&1
+then
+	start_line=`grep -n "Configured by DTC" $PATH_COURIER_CONF_PATH/authdaemonrc | cut -d":" -f1`
+	end_line=`grep -n "End of DTC configuration" $PATH_COURIER_CONF_PATH/authdaemonrc| cut -d":" -f1`
+	nbr_line=`cat $PATH_COURIER_CONF_PATH/authdaemonrc | wc -l`
+	TMP_FILE=`${MKTEMP} DTC_uninstall.courier.conf.XXXXXX` || exit 1
+	cat $PATH_COURIER_CONF_PATH/authdaemonrc | head -n $(($start_line - 1 )) > $TMP_FILE
+	cat $PATH_COURIER_CONF_PATH/authdaemonrc | tail -n $(($nbr_line - $end_line )) >> $TMP_FILE
+	cp -f $PATH_COURIER_CONF_PATH/authdaemonrc $PATH_COURIER_CONF_PATH/authdaemonrc.DTC.removed
+	echo -n > $PATH_COURIER_CONF_PATH/authdaemonrc
+	cat < $TMP_FILE >> $PATH_COURIER_CONF_PATH/authdaemonrc
+	rm $TMP_FILE
+fi
+#
+# uninstall dovecot.conf
+#
+
+if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+	echo "===> Uninstalling inclusion from dovecot.conf"
+fi
+if grep "Configured by DTC" $PATH_DOVECOT_CONF >/dev/null 2>&1
+then
+	start_line=`grep -n "Configured by DTC" $PATH_DOVECOT_CONF | cut -d":" -f1`
+	end_line=`grep -n "End of DTC configuration" $PATH_DOVECOT_CONF| cut -d":" -f1`
+	nbr_line=`cat $PATH_DOVECOT_CONF | wc -l`
+	TMP_FILE=`${MKTEMP} DTC_uninstall.dovecot.conf.XXXXXX` || exit 1
+	cat $PATH_DOVECOT_CONF | head -n $(($start_line - 1 )) > $TMP_FILE
+	cat $PATH_DOVECOT_CONF | tail -n $(($nbr_line - $end_line )) >> $TMP_FILE
+	cp -f $PATH_DOVECOT_CONF $PATH_DOVECOT_CONF.DTC.removed
+	echo -n > $PATH_DOVECOT_CONF
+	cat < $TMP_FILE >> $PATH_DOVECOT_CONF
+        rm $TMP_FILE
+fi
+#
 # uninstall proftpd.conf
 #
 
-echo "===> Uninstalling inclusion from proftpd.conf"
-if grep "Configured by DTC" $PATH_PROFTPD_CONF
+if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+	echo "===> Uninstalling inclusion from proftpd.conf"
+fi
+if grep "Configured by DTC" $PATH_PROFTPD_CONF >/dev/null 2>&1
 then
 	start_line=`grep -n "Configured by DTC" $PATH_PROFTPD_CONF | cut -d":" -f1`
 	end_line=`grep -n "End of DTC configuration" $PATH_PROFTPD_CONF| cut -d":" -f1`
 	nbr_line=`cat $PATH_PROFTPD_CONF | wc -l`
-	cat $PATH_PROFTPD_CONF | head -n $(($start_line - 1 )) >/tmp/DTC_uninstall.profptd.conf
-	cat $PATH_PROFTPD_CONF | tail -n $(($nbr_line - $end_line )) >>/tmp/DTC_uninstall.profptd.conf
+	TMP_FILE=`${MKTEMP} DTC_uninstall.proftpd.conf.XXXXXX` || exit 1
+	cat $PATH_PROFTPD_CONF | head -n $(($start_line - 1 )) > $TMP_FILE
+	cat $PATH_PROFTPD_CONF | tail -n $(($nbr_line - $end_line )) >> $TMP_FILE
 	cp -f $PATH_PROFTPD_CONF $PATH_PROFTPD_CONF.DTC.removed
-	mv /tmp/DTC_uninstall.profptd.conf $PATH_PROFTPD_CONF
+	echo -n > $PATH_PROFTPD_CONF
+	cat < $TMP_FILE >> $PATH_PROFTPD_CONF
+        rm $TMP_FILE
+fi
+
+#
+# uninstall postfix/main.cf
+#
+
+if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+	echo "===> Uninstalling inclusion from postfix/main.cf"
+fi
+if grep "Configured by DTC" $PATH_POSTFIX_CONF >/dev/null 2>&1
+then
+	start_line=`grep -n "Configured by DTC" $PATH_POSTFIX_CONF | cut -d":" -f1`
+	end_line=`grep -n "End of DTC configuration" $PATH_POSTFIX_CONF| cut -d":" -f1`
+	nbr_line=`cat $PATH_POSTFIX_CONF | wc -l`
+	TMP_FILE=`${MKTEMP} DTC_uninstall.postfix.conf.XXXXXX` || exit 1
+	cat $PATH_POSTFIX_CONF | head -n $(($start_line - 1 )) > $TMP_FILE
+	cat $PATH_POSTFIX_CONF | tail -n $(($nbr_line - $end_line )) >> $TMP_FILE
+	cp -f $PATH_POSTFIX_CONF $PATH_POSTFIX_CONF.DTC.removed
+	echo -n > $PATH_POSTFIX_CONF
+	cat < $TMP_FILE >> $PATH_POSTFIX_CONF
+        rm $TMP_FILE
+fi
+
+#
+# uninstall amavis/amavisd.conf
+#
+
+if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+	echo "===> Uninstalling inclusion from amavis/amavisd.conf"
+fi
+if grep "Configured by DTC" $PATH_AMAVISD_CONF >/dev/null 2>&1
+then
+	start_line=`grep -n "Configured by DTC" $PATH_AMAVISD_CONF | cut -d":" -f1`
+	end_line=`grep -n "End of DTC configuration" $PATH_AMAVISD_CONF| cut -d":" -f1`
+	nbr_line=`cat $PATH_AMAVISD_CONF | wc -l`
+	TMP_FILE=`${MKTEMP} DTC_uninstall.amavisd.conf.XXXXXX` || exit 1
+	cat $PATH_AMAVISD_CONF | head -n $(($start_line - 1 )) > $TMP_FILE
+	cat $PATH_AMAVISD_CONF | tail -n $(($nbr_line - $end_line )) >> $TMP_FILE
+	cp -f $PATH_AMAVISD_CONF $PATH_AMAVISD_CONF.DTC.removed
+	echo -n > $PATH_AMAVISD_CONF
+	cat < $TMP_FILE >> $PATH_AMAVISD_CONF
+        rm $TMP_FILE
+fi
+
+#
+# uninstall postfix/sasl/smtpd.conf
+#
+
+if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+	echo "===> Uninstalling inclusion from postfix/sasl/smtpd.conf"
+fi
+if grep "Configured by DTC" $PATH_POSTFIX_ETC/sasl/smtpd.conf >/dev/null 2>&1
+then
+	start_line=`grep -n "Configured by DTC" $PATH_POSTFIX_ETC/sasl/smtpd.conf | cut -d":" -f1`
+	end_line=`grep -n "End of DTC configuration" $PATH_POSTFIX_ETC/sasl/smtpd.conf | cut -d":" -f1`
+	nbr_line=`cat $PATH_POSTFIX_ETC/sasl/smtpd.conf | wc -l`
+	TMP_FILE=`${MKTEMP} DTC_uninstall.postfix.sasl.XXXXXX` || exit 1
+	cat $PATH_POSTFIX_ETC/sasl/smtpd.conf | head -n $(($start_line - 1 )) > $TMP_FILE
+	cat $PATH_POSTFIX_ETC/sasl/smtpd.conf | tail -n $(($nbr_line - $end_line )) >> $TMP_FILE
+	cp -f $PATH_POSTFIX_ETC/sasl/smtpd.conf $PATH_POSTFIX_CONF.DTC.removed
+	echo -n > $PATH_POSTFIX_ETC/sasl/smtpd.conf
+	cat < $TMP_FILE >> $PATH_POSTFIX_ETC/sasl/smtpd.conf
+        rm $TMP_FILE
 fi
 
 #
 # Uninstall qmail
 #
 
-echo "===> Uninstalling from qmail"
-#if ! [ -f $PATH_QMAIL_CTRL/rcpthosts.DTC.backup ] ; then
-#	rm -f $PATH_QMAIL_CTRL/rcpthosts
-#	mv -f $PATH_QMAIL_CTRL/rcpthosts.DTC.backup $PATH_QMAIL_CTRL/rcpthosts
-#fi
-
-if ! [ -f $PATH_QMAIL_CTRL/virtualdomains.DTC.backup ] ; then
-	rm -f $PATH_QMAIL_CTRL/virtualdomains.DTC.backup
-	mv -f $PATH_QMAIL_CTRL/virtualdomains.DTC.backup $PATH_QMAIL_CTRL/virtualdomains
+if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+	echo "===> Uninstalling from qmail"
 fi
+if [ -e /var/qmail ]
+then
+	if [ -e /var/qmail/control/rcpthosts.DTC.backup ] ; then
+		cp -f /var/qmail/control/rcpthosts.DTC.backup /var/qmail/control/rcpthosts
+	fi
 
-#if ! [ -f $PATH_QMAIL_CTRL/users/assign.DTC.backup ] ; then
-#	rm -f $PATH_QMAIL_CTRL/users/assign.DTC.backup
-#	mv -f $PATH_QMAIL_CTRL/users/assign.DTC.backup $PATH_QMAIL_CTRL/users/assign
-#fi
+	if [ -e /var/qmail/control/virtualdomains.DTC.backup ] ; then
+		cp -f /var/qmail/control/virtualdomains.DTC.backup /var/qmail/control/virtualdomains
+	fi
 
-if ! [ -f /etc/poppasswd.DTC.backup ] ; then
-	rm -f /etc/poppasswd.DTC.backup
-	mv -f/etc/poppasswd.DTC.backup /etc/poppasswd
+	if [ -e /var/qmail/control/users/assign.DTC.backup ] ; then
+		cp -f /var/qmail/control/users/assign.DTC.backup /var/qmail/control/users/assign
+	fi
+
+	if [ -e /etc/poppasswd.DTC.backup ] ; then
+		cp -f /etc/poppasswd.DTC.backup /etc/poppasswd
+	fi
 fi

@@ -6,49 +6,48 @@
 #
 
 PORTNAME=	dtc
-PORTVERSION=	0.12.0.6
-PORTREVISION=	2
+PORTVERSION=	0.17.0.4
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.gplhost.com/pub/dtc/bsd/
 
 MAINTAINER=	thomas@goirand.fr
-COMMENT=	A hosting web GUI for admin and accounting apache/named/proftpd/qmail
+COMMENT=	A hosting web GUI for admin and accounting all hosting services
 
 RUN_DEPENDS=	${LOCALBASE}/share/pear/Crypt/CBC.php:${PORTSDIR}/security/pear-Crypt_CBC \
-		${LOCALBASE}/sbin/proftpd:${PORTSDIR}/ftp/proftpd-mysql \
+		proftpd-mysql>=0:${PORTSDIR}/ftp/proftpd-mysql \
 		${LOCALBASE}/libexec/apache/mod_log_sql.so:${PORTSDIR}/www/mod_log_sql2 \
 		${LOCALBASE}/bin/webalizer:${PORTSDIR}/www/webalizer \
+		${LOCALBASE}/www/cgi-bin/sbox:${PORTSDIR}/www/sbox-dtc
 
-USE_PHP=	session mysql sockets gd
+NO_BUILD=	yes
+USE_MYSQL=	yes
+USE_PHP=	mysql pcre session
+
+.if defined(WITH_PHP5)
+DEFAULT_PHP_VER=5
+BROKEN_WITH_PHP=4
+USE_PHP+=	bz2 gd mbstring mcrypt mysql mysqli openssl pcre \
+		pear session sockets xml zlib
+.endif
 
 DTCROOT?=	www/dtc
 DTCDIR=		${PREFIX}/${DTCROOT}
 PLIST_SUB+=	DTCROOT="${DTCROOT}"
 
+# Now tested and working. In fact, under BSD it's easyer to use Apache2 now.
+# If you know what to do so all dependancies are set correctly, please help!
 .if defined(WITH_APACHE2)
-IGNORE=		Untested
+IGNORE=		with Apache 2 is untested
 .endif
 
-NO_BUILD=	yes
-USE_MYSQL=	yes
-
-USE_QMAIL_RUN=	yes
-
-do-configure:
-	@${SED} -e 's,%%PREFIX%%,${PREFIX},;\
-		s,%%LOCALBASE%%,${LOCALBASE},;\
-		s,%%QMAIL_PREFIX%%,${QMAIL_PREFIX},' \
-		${FILESDIR}/dtc-install.in > ${WRKDIR}/dtc-install
-	@${SED} -e 's,%%PREFIX%%,${PREFIX},;\
-		s,%%LOCALBASE%%,${LOCALBASE},;\
-		s,%%QMAIL_PREFIX%%,${QMAIL_PREFIX},' \
-		${FILESDIR}/dtc-deinstall.in > ${WRKDIR}/dtc-deinstall
+SUB_FILES=	dtc-install dtc-deinstall
+SUB_LIST+=	QMAIL_DIR="${QMAIL_DIR}"
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKDIR}/dtc-install ${PREFIX}/sbin/dtc-install
 	@${INSTALL_SCRIPT} ${WRKDIR}/dtc-deinstall ${PREFIX}/sbin/dtc-deinstall
 	@${MKDIR} ${DTCDIR}
-	@cd ${WRKSRC}/dtc ; ${TAR} cfp - . | ${TAR} xfp - -C ${DTCDIR}
+	@cd ${WRKSRC} ; ${TAR} cfp - . | ${TAR} xfp - -C ${DTCDIR}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

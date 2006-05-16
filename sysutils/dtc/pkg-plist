@@ -1,45 +1,64 @@
-%%DTCROOT%%/admin/dtcrm/main.php
-%%DTCROOT%%/admin/dtcrm/submit_to_sql.php
-%%DTCROOT%%/admin/.htaccess
+%%DTCROOT%%/Makefile
+%%DTCROOT%%/admin/checkbind.sh
 %%DTCROOT%%/admin/404.php
+%%DTCROOT%%/admin/dtcrm/main.php
+%%DTCROOT%%/admin/dtcrm/product_manager.php
+%%DTCROOT%%/admin/dtcrm/submit_to_sql.php
+%%DTCROOT%%/admin/bw_per_month.php
 %%DTCROOT%%/admin/cron.php
 %%DTCROOT%%/admin/deamons_state.php
 %%DTCROOT%%/admin/deamons_state_strings.php
 %%DTCROOT%%/admin/favicon.ico
 %%DTCROOT%%/admin/index.php
+%%DTCROOT%%/admin/view_waitingusers.php
 %%DTCROOT%%/admin/genfiles/gen_backup_script.php
 %%DTCROOT%%/admin/genfiles/gen_email_account.php
+%%DTCROOT%%/admin/genfiles/gen_maildrop_userdb.php
 %%DTCROOT%%/admin/genfiles/gen_named_files.php
 %%DTCROOT%%/admin/genfiles/gen_perso_vhost.php
+%%DTCROOT%%/admin/genfiles/gen_postfix_email_account.php
 %%DTCROOT%%/admin/genfiles/gen_pro_vhost.php
+%%DTCROOT%%/admin/genfiles/gen_qmail_email_account.php
+%%DTCROOT%%/admin/genfiles/gen_sasl.sh
 %%DTCROOT%%/admin/genfiles/gen_webalizer_stat.php
 %%DTCROOT%%/admin/genfiles/genfiles.php
-%%DTCROOT%%/admin/genfiles/.#gen_backup_script.php.1.1
-%%DTCROOT%%/admin/inc/database.png
-%%DTCROOT%%/admin/inc/dns.png
-%%DTCROOT%%/admin/inc/domain.png
+%%DTCROOT%%/admin/genfiles/remote_mail_list.php
+%%DTCROOT%%/admin/genfiles/gen_awstats.php
+%%DTCROOT%%/admin/genfiles/gen_mailfilter.sh
+%%DTCROOT%%/admin/inc/domains.png
+%%DTCROOT%%/admin/inc/ftp-accounts.png
 %%DTCROOT%%/admin/inc/draw_user_admin.php
 %%DTCROOT%%/admin/inc/dtc_config.php
 %%DTCROOT%%/admin/inc/dtc_config_strings.php
-%%DTCROOT%%/admin/inc/floppy.png
+%%DTCROOT%%/admin/inc/mailboxs.png
 %%DTCROOT%%/admin/inc/folder.png
 %%DTCROOT%%/admin/inc/help.png
-%%DTCROOT%%/admin/inc/home.png
 %%DTCROOT%%/admin/inc/img.php
-%%DTCROOT%%/admin/inc/mail.png
-%%DTCROOT%%/admin/inc/man.png
+%%DTCROOT%%/admin/inc/my-account.png
 %%DTCROOT%%/admin/inc/nav.php
-%%DTCROOT%%/admin/inc/stat.png
+%%DTCROOT%%/admin/inc/package-installer.png
 %%DTCROOT%%/admin/inc/submit_root_querys.php
-%%DTCROOT%%/admin/inc/tool.png
-%%DTCROOT%%/admin/inc/tst_icon.png
+%%DTCROOT%%/admin/inc/adddomain.png
+%%DTCROOT%%/admin/inc/arial.ttf
+%%DTCROOT%%/admin/inc/databases.png
+%%DTCROOT%%/admin/inc/mailing-lists.png
+%%DTCROOT%%/admin/inc/nameservers.png
+%%DTCROOT%%/admin/inc/nickhandles.png
+%%DTCROOT%%/admin/inc/password.png
+%%DTCROOT%%/admin/inc/reseller.png
+%%DTCROOT%%/admin/inc/stats.png
+%%DTCROOT%%/admin/inc/subdomains.png
+%%DTCROOT%%/admin/inc/tools.png
 %%DTCROOT%%/admin/tables/admin.sql
+%%DTCROOT%%/admin/tables/backup.sql
 %%DTCROOT%%/admin/tables/clients.sql
 %%DTCROOT%%/admin/tables/commande.sql
 %%DTCROOT%%/admin/tables/config.sql
 %%DTCROOT%%/admin/tables/cron_job.sql
 %%DTCROOT%%/admin/tables/domain.sql
 %%DTCROOT%%/admin/tables/email_accouting.sql
+%%DTCROOT%%/admin/tables/fetchmail.sql
+%%DTCROOT%%/admin/tables/freeradius.sql
 %%DTCROOT%%/admin/tables/ftp_access.sql
 %%DTCROOT%%/admin/tables/ftp_accounting.sql
 %%DTCROOT%%/admin/tables/ftp_logs.sql
@@ -47,12 +66,30 @@
 %%DTCROOT%%/admin/tables/handle.sql
 %%DTCROOT%%/admin/tables/http_accounting.sql
 %%DTCROOT%%/admin/tables/nameservers.sql
+%%DTCROOT%%/admin/tables/new_admin.sql
 %%DTCROOT%%/admin/tables/paiement.sql
+%%DTCROOT%%/admin/tables/pending_queries.sql
 %%DTCROOT%%/admin/tables/pop_access.sql
 %%DTCROOT%%/admin/tables/product.sql
+%%DTCROOT%%/admin/tables/secpayconf.sql
 %%DTCROOT%%/admin/tables/smtp_logs.sql
 %%DTCROOT%%/admin/tables/subdomain.sql
+%%DTCROOT%%/admin/tables/whitelist.sql
 %%DTCROOT%%/admin/tables/whois.sql
+%%DTCROOT%%/admin/tables/mailinglist.sql
+%%DTCROOT%%/admin/dtc_db.php
+%%DTCROOT%%/admin/restor_db.php
+%%DTCROOT%%/client/bw_per_month.php
+%%DTCROOT%%/client/dynip.php
+%%DTCROOT%%/client/favicon.ico
+%%DTCROOT%%/client/img2.php
+%%DTCROOT%%/client/index.php
+%%DTCROOT%%/client/list_domains.php
+%%DTCROOT%%/client/login.php
+%%DTCROOT%%/client/new_account.php
+%%DTCROOT%%/client/new_account_form.php
+%%DTCROOT%%/client/paypal.php
+%%DTCROOT%%/client/secpaycallback_worldpay.php
 %%DTCROOT%%/client/inc/database.png
 %%DTCROOT%%/client/inc/dns.png
 %%DTCROOT%%/client/inc/domain.png
@@ -63,132 +100,25 @@
 %%DTCROOT%%/client/inc/img.php
 %%DTCROOT%%/client/inc/mail.png
 %%DTCROOT%%/client/inc/man.png
+%%DTCROOT%%/client/inc/package-installer.png
 %%DTCROOT%%/client/inc/stat.png
 %%DTCROOT%%/client/inc/tool.png
 %%DTCROOT%%/client/inc/tst_icon.png
-%%DTCROOT%%/client/dynip.php
-%%DTCROOT%%/client/favicon.ico
-%%DTCROOT%%/client/img2.php
-%%DTCROOT%%/client/index.php
-%%DTCROOT%%/client/secpaycallback_worldpay.php
-%%DTCROOT%%/shared/drawlib/anotherDtc.php
-%%DTCROOT%%/shared/drawlib/cc_code_popup.php
-%%DTCROOT%%/shared/drawlib/dtc_functions.php
-%%DTCROOT%%/shared/drawlib/skin.php
-%%DTCROOT%%/shared/drawlib/skinLib.php
-%%DTCROOT%%/shared/drawlib/tree_menu.php
-%%DTCROOT%%/shared/.htaccess
-%%DTCROOT%%/shared/autoSQLconfig.php
-%%DTCROOT%%/shared/dtc_lib.php
-%%DTCROOT%%/shared/upgrade_sql.php
-%%DTCROOT%%/shared/dtcrm/srs/CHANGELOG
-%%DTCROOT%%/shared/dtcrm/srs/OPS.php
-%%DTCROOT%%/shared/dtcrm/srs/country_codes.php
-%%DTCROOT%%/shared/dtcrm/srs/openSRS.php
-%%DTCROOT%%/shared/dtcrm/srs/openSRS_base.php
-%%DTCROOT%%/shared/dtcrm/srs/ops.dtd
-%%DTCROOT%%/shared/dtcrm/srs/readme
-%%DTCROOT%%/shared/dtcrm/srs/test.php
-%%DTCROOT%%/shared/dtcrm/srs/test.xml
-%%DTCROOT%%/shared/dtcrm/srs/todo
-%%DTCROOT%%/shared/dtcrm/RENAME_ME_srs_config.php
-%%DTCROOT%%/shared/dtcrm/draw.php
-%%DTCROOT%%/shared/dtcrm/draw_adddomain.php
-%%DTCROOT%%/shared/dtcrm/draw_handle.php
-%%DTCROOT%%/shared/dtcrm/draw_nameservers.php
-%%DTCROOT%%/shared/dtcrm/draw_register_forms.php
-%%DTCROOT%%/shared/dtcrm/draw_transferdomain.php
-%%DTCROOT%%/shared/dtcrm/draw_whois.php
-%%DTCROOT%%/shared/dtcrm/opensrs.php
-%%DTCROOT%%/shared/dtcrm/registry_calls.php
-%%DTCROOT%%/shared/dtcrm/srs_base.php
-%%DTCROOT%%/shared/dtcrm/srs_nameserver.php
-%%DTCROOT%%/shared/dtcrm/srs_registernames.php
-%%DTCROOT%%/shared/dtcrm/submit_to_sql.php
-%%DTCROOT%%/shared/dtcrm/todo
-%%DTCROOT%%/shared/gfx/dtc_logo.gif
-%%DTCROOT%%/shared/gfx/dtc.css
-%%DTCROOT%%/shared/gfx/bar/middle_n.png
-%%DTCROOT%%/shared/gfx/bar/end.png
-%%DTCROOT%%/shared/gfx/bar/middle_s.png
-%%DTCROOT%%/shared/gfx/bar/start.png
-%%DTCROOT%%/shared/gfx/dtc/all_scripts.gif
-%%DTCROOT%%/shared/gfx/dtc/generate_backup.gif
-%%DTCROOT%%/shared/gfx/dtc/generate_mail.gif
-%%DTCROOT%%/shared/gfx/dtc/generate_named.gif
-%%DTCROOT%%/shared/gfx/dtc/generate_stats.gif
-%%DTCROOT%%/shared/gfx/dtc/generate_web.gif
-%%DTCROOT%%/shared/gfx/dtc/generate_web2.gif
-%%DTCROOT%%/shared/gfx/dtc/reinit_named.gif
-%%DTCROOT%%/shared/gfx/dtc_logo_small.gif
-%%DTCROOT%%/shared/gfx/language/de.gif
-%%DTCROOT%%/shared/gfx/language/dtc.gif
-%%DTCROOT%%/shared/gfx/language/en.gif
-%%DTCROOT%%/shared/gfx/language/fr.gif
-%%DTCROOT%%/shared/gfx/language/nl.gif
-%%DTCROOT%%/shared/gfx/language/ru.gif
-%%DTCROOT%%/shared/gfx/language/en/pub/banner_alight.gif
-%%DTCROOT%%/shared/gfx/language/en/button_en.gif
-%%DTCROOT%%/shared/gfx/language/fr/pub/banner_alight.gif
-%%DTCROOT%%/shared/gfx/language/fr/button_fr.gif
-%%DTCROOT%%/shared/gfx/language/nl/pub/banner_alight.gif
-%%DTCROOT%%/shared/gfx/language/nl/button_en.gif
-%%DTCROOT%%/shared/gfx/language/ru/pub/banner_alight.gif
-%%DTCROOT%%/shared/gfx/language/ru/button_en.gif
-%%DTCROOT%%/shared/gfx/language/es.gif
-%%DTCROOT%%/shared/gfx/menu/config.gif
-%%DTCROOT%%/shared/gfx/menu/recycle.gif
-%%DTCROOT%%/shared/gfx/menu/users.gif
-%%DTCROOT%%/shared/gfx/securepay/poweredByWorldPay.gif
-%%DTCROOT%%/shared/gfx/skin/notitle/darkblue/background.gif
-%%DTCROOT%%/shared/gfx/skin/notitle/darkblue/border_1.gif
-%%DTCROOT%%/shared/gfx/skin/notitle/darkblue/border_2.gif
-%%DTCROOT%%/shared/gfx/skin/notitle/darkblue/border_3.gif
-%%DTCROOT%%/shared/gfx/skin/notitle/darkblue/border_4.gif
-%%DTCROOT%%/shared/gfx/skin/notitle/darkblue/corner_1.gif
-%%DTCROOT%%/shared/gfx/skin/notitle/darkblue/corner_2.gif
-%%DTCROOT%%/shared/gfx/skin/notitle/darkblue/corner_3.gif
-%%DTCROOT%%/shared/gfx/skin/notitle/darkblue/corner_4.gif
-%%DTCROOT%%/shared/gfx/skin/notitle/darkblue/skin.css
-%%DTCROOT%%/shared/gfx/skin/notitle/darkblue/skin.php
-%%DTCROOT%%/shared/gfx/skin/simple/green/background.gif
-%%DTCROOT%%/shared/gfx/skin/simple/green/border_1.gif
-%%DTCROOT%%/shared/gfx/skin/simple/green/border_2.gif
-%%DTCROOT%%/shared/gfx/skin/simple/green/border_3.gif
-%%DTCROOT%%/shared/gfx/skin/simple/green/border_4.gif
-%%DTCROOT%%/shared/gfx/skin/simple/green/corner_1.gif
-%%DTCROOT%%/shared/gfx/skin/simple/green/corner_2.gif
-%%DTCROOT%%/shared/gfx/skin/simple/green/corner_3.gif
-%%DTCROOT%%/shared/gfx/skin/simple/green/corner_4.gif
-%%DTCROOT%%/shared/gfx/skin/simple/green/skin.css
-%%DTCROOT%%/shared/gfx/skin/simple/green/skin.php
-%%DTCROOT%%/shared/gfx/skin/simple/green2/background.gif
-%%DTCROOT%%/shared/gfx/skin/simple/green2/border_1.gif
-%%DTCROOT%%/shared/gfx/skin/simple/green2/border_2.gif
-%%DTCROOT%%/shared/gfx/skin/simple/green2/border_3.gif
-%%DTCROOT%%/shared/gfx/skin/simple/green2/border_4.gif
-%%DTCROOT%%/shared/gfx/skin/simple/green2/corner_1.gif
-%%DTCROOT%%/shared/gfx/skin/simple/green2/corner_2.gif
-%%DTCROOT%%/shared/gfx/skin/simple/green2/corner_3.gif
-%%DTCROOT%%/shared/gfx/skin/simple/green2/corner_4.gif
-%%DTCROOT%%/shared/gfx/skin/simple/green2/skin.css
-%%DTCROOT%%/shared/gfx/skin/simple/green2/skin.php
-%%DTCROOT%%/shared/inc/accounting.php
-%%DTCROOT%%/shared/inc/dbconect.php
-%%DTCROOT%%/shared/inc/draw.php
-%%DTCROOT%%/shared/inc/fetch.php
-%%DTCROOT%%/shared/inc/submit_to_sql.php
-%%DTCROOT%%/shared/securepay/RENAME_ME_paiement_config.php
-%%DTCROOT%%/shared/securepay/paiement.php
-%%DTCROOT%%/shared/securepay/pay_functions.php
-%%DTCROOT%%/shared/securepay/paypal.php
-%%DTCROOT%%/shared/securepay/worldpay.php
-%%DTCROOT%%/shared/template/index.php
-%%DTCROOT%%/shared/vars/global_vars.php
-%%DTCROOT%%/shared/vars/lang.php
-%%DTCROOT%%/shared/vars/strings.php
-%%DTCROOT%%/shared/vars/table_names.php
-%%DTCROOT%%/shared/dtc_version.php
+%%DTCROOT%%/client/inc/adddomain.png
+%%DTCROOT%%/client/inc/arial.ttf
+%%DTCROOT%%/client/inc/databases.png
+%%DTCROOT%%/client/inc/domains.png
+%%DTCROOT%%/client/inc/ftp-accounts.png
+%%DTCROOT%%/client/inc/mailboxs.png
+%%DTCROOT%%/client/inc/mailing-lists.png
+%%DTCROOT%%/client/inc/my-account.png
+%%DTCROOT%%/client/inc/nameservers.png
+%%DTCROOT%%/client/inc/nickhandles.png
+%%DTCROOT%%/client/inc/password.png
+%%DTCROOT%%/client/inc/reseller.png
+%%DTCROOT%%/client/inc/stats.png
+%%DTCROOT%%/client/inc/subdomains.png
+%%DTCROOT%%/client/inc/tools.png
 %%DTCROOT%%/doc/changelog
 %%DTCROOT%%/doc/INSTALL
 %%DTCROOT%%/doc/LICENSE
@@ -202,6 +132,7 @@
 %%DTCROOT%%/doc/bind_conf/db.root
 %%DTCROOT%%/doc/changelog.Debian
 %%DTCROOT%%/doc/copyright
+%%DTCROOT%%/doc/.#todo.1.8
 %%DTCROOT%%/doc/todo
 %%DTCROOT%%/doc/upgrade_sql_from_beta.sql
 %%DTCROOT%%/doc/daemonconf_howto/ftp_http_logging_to_mysql
@@ -220,10 +151,11 @@
 %%DTCROOT%%/doc/html/en/doc.css
 %%DTCROOT%%/doc/html/en/domainconf.png
 %%DTCROOT%%/doc/html/en/dtc.png
+%%DTCROOT%%/doc/html/en/dtc_cluster.png
 %%DTCROOT%%/doc/html/en/dtc_logo.gif
 %%DTCROOT%%/doc/html/en/ftps.png
+%%DTCROOT%%/doc/html/en/index.example.php
 %%DTCROOT%%/doc/html/en/index.html
-%%DTCROOT%%/doc/html/en/index.php
 %%DTCROOT%%/doc/html/en/mailboxs.png
 %%DTCROOT%%/doc/html/en/menudtc.png
 %%DTCROOT%%/doc/html/en/newadmin.png
@@ -249,6 +181,283 @@
 %%DTCROOT%%/doc/html/fr/menudtc.png
 %%DTCROOT%%/doc/html/fr/newadmin.png
 %%DTCROOT%%/doc/html/fr/page_top.html
+%%DTCROOT%%/doc/ssl_cert.sh.txt
+%%DTCROOT%%/email/index.php
+%%DTCROOT%%/email/api.php
+%%DTCROOT%%/email/inc/img.php
+%%DTCROOT%%/email/login.php
+%%DTCROOT%%/email/submit_to_sql_dtcemail.php
+%%DTCROOT%%/email/gfx
+%%DTCROOT%%/email/imgcache
+%%DTCROOT%%/shared/404_template/index.php
+%%DTCROOT%%/shared/404_template/404.php
+%%DTCROOT%%/shared/autoSQLconfig.php
+%%DTCROOT%%/shared/dtc_lib.php
+%%DTCROOT%%/shared/upgrade_sql.php
+%%DTCROOT%%/shared/drawlib/anotherDtc.php
+%%DTCROOT%%/shared/drawlib/cc_code_popup.php
+%%DTCROOT%%/shared/drawlib/dtc_functions.php
+%%DTCROOT%%/shared/drawlib/skin.php
+%%DTCROOT%%/shared/drawlib/skinLib.php
+%%DTCROOT%%/shared/drawlib/tree_menu.php
+%%DTCROOT%%/shared/dtcrm/srs/CHANGELOG
+%%DTCROOT%%/shared/dtcrm/srs/OPS.php
+%%DTCROOT%%/shared/dtcrm/srs/country_codes.php
+%%DTCROOT%%/shared/dtcrm/srs/openSRS.php
+%%DTCROOT%%/shared/dtcrm/srs/openSRS_base.php
+%%DTCROOT%%/shared/dtcrm/srs/ops.dtd
+%%DTCROOT%%/shared/dtcrm/srs/readme
+%%DTCROOT%%/shared/dtcrm/srs/test.php
+%%DTCROOT%%/shared/dtcrm/srs/test.xml
+%%DTCROOT%%/shared/dtcrm/srs/todo
+%%DTCROOT%%/shared/dtcrm/RENAME_ME_srs_config.php
+%%DTCROOT%%/shared/dtcrm/draw.php
+%%DTCROOT%%/shared/dtcrm/draw_adddomain.php
+%%DTCROOT%%/shared/dtcrm/draw_handle.php
+%%DTCROOT%%/shared/dtcrm/draw_nameservers.php
+%%DTCROOT%%/shared/dtcrm/draw_register_forms.php
+%%DTCROOT%%/shared/dtcrm/draw_transferdomain.php
+%%DTCROOT%%/shared/dtcrm/draw_whois.php
+%%DTCROOT%%/shared/dtcrm/opensrs.php
+%%DTCROOT%%/shared/dtcrm/registry_calls.php
+%%DTCROOT%%/shared/dtcrm/srs_base.php
+%%DTCROOT%%/shared/dtcrm/srs_nameserver.php
+%%DTCROOT%%/shared/dtcrm/srs_registernames.php
+%%DTCROOT%%/shared/dtcrm/submit_to_sql.php
+%%DTCROOT%%/shared/dtcrm/todo
+%%DTCROOT%%/shared/dtcrm/strings.php
+%%DTCROOT%%/shared/gfx/dtc_logo.gif
+%%DTCROOT%%/shared/gfx/dtc.css
+%%DTCROOT%%/shared/gfx/bar/middle_n.png
+%%DTCROOT%%/shared/gfx/bar/end.gif
+%%DTCROOT%%/shared/gfx/bar/end.png
+%%DTCROOT%%/shared/gfx/bar/middle_green.gif
+%%DTCROOT%%/shared/gfx/bar/middle_orange.gif
+%%DTCROOT%%/shared/gfx/bar/middle_red.gif
+%%DTCROOT%%/shared/gfx/bar/middle_s.png
+%%DTCROOT%%/shared/gfx/bar/middle_umpty.gif
+%%DTCROOT%%/shared/gfx/bar/middle_yellow.gif
+%%DTCROOT%%/shared/gfx/bar/start.gif
+%%DTCROOT%%/shared/gfx/bar/start.png
+%%DTCROOT%%/shared/gfx/dtc/all_scripts.gif
+%%DTCROOT%%/shared/gfx/dtc/generate_backup.gif
+%%DTCROOT%%/shared/gfx/dtc/generate_mail.gif
+%%DTCROOT%%/shared/gfx/dtc/generate_named.gif
+%%DTCROOT%%/shared/gfx/dtc/generate_stats.gif
+%%DTCROOT%%/shared/gfx/dtc/generate_web.gif
+%%DTCROOT%%/shared/gfx/dtc/generate_web2.gif
+%%DTCROOT%%/shared/gfx/dtc/reinit_named.gif
+%%DTCROOT%%/shared/gfx/dtc_logo_small.gif
+%%DTCROOT%%/shared/gfx/stock_add_24.png
+%%DTCROOT%%/shared/gfx/stock_apply_20.png
+%%DTCROOT%%/shared/gfx/stock_save_24.png
+%%DTCROOT%%/shared/gfx/stock_trash_24.png
+%%DTCROOT%%/shared/gfx/language/en/pub/banner_alight.gif
+%%DTCROOT%%/shared/gfx/language/en/button_en.gif
+%%DTCROOT%%/shared/gfx/language/de.gif
+%%DTCROOT%%/shared/gfx/language/dtc.gif
+%%DTCROOT%%/shared/gfx/language/en.gif
+%%DTCROOT%%/shared/gfx/language/es.gif
+%%DTCROOT%%/shared/gfx/language/fr.gif
+%%DTCROOT%%/shared/gfx/language/hu.gif
+%%DTCROOT%%/shared/gfx/language/it.gif
+%%DTCROOT%%/shared/gfx/language/nl.gif
+%%DTCROOT%%/shared/gfx/language/ru.gif
+%%DTCROOT%%/shared/gfx/language/zh.gif
+%%DTCROOT%%/shared/gfx/language/fr/pub/banner_alight.gif
+%%DTCROOT%%/shared/gfx/language/fr/button_fr.gif
+%%DTCROOT%%/shared/gfx/language/nl/pub/banner_alight.gif
+%%DTCROOT%%/shared/gfx/language/nl/button_en.gif
+%%DTCROOT%%/shared/gfx/language/ru/pub/banner_alight.gif
+%%DTCROOT%%/shared/gfx/language/ru/button_en.gif
+%%DTCROOT%%/shared/gfx/language/pl.png
+%%DTCROOT%%/shared/gfx/menu/admins.png
+%%DTCROOT%%/shared/gfx/menu/bw_icon.png
+%%DTCROOT%%/shared/gfx/menu/config.gif
+%%DTCROOT%%/shared/gfx/menu/config_panel.png
+%%DTCROOT%%/shared/gfx/menu/crm.png
+%%DTCROOT%%/shared/gfx/menu/daemons.png
+%%DTCROOT%%/shared/gfx/menu/product_manager.png
+%%DTCROOT%%/shared/gfx/menu/recycle.gif
+%%DTCROOT%%/shared/gfx/menu/users.gif
+%%DTCROOT%%/shared/gfx/menu/user-editor.png
+%%DTCROOT%%/shared/gfx/securepay/poweredByWorldPay.gif
+%%DTCROOT%%/shared/gfx/skin/darkblue/background.gif
+%%DTCROOT%%/shared/gfx/skin/darkblue/bgcolor.php
+%%DTCROOT%%/shared/gfx/skin/darkblue/border_1.gif
+%%DTCROOT%%/shared/gfx/skin/darkblue/border_2.gif
+%%DTCROOT%%/shared/gfx/skin/darkblue/border_3.gif
+%%DTCROOT%%/shared/gfx/skin/darkblue/border_4.gif
+%%DTCROOT%%/shared/gfx/skin/darkblue/corner_1.gif
+%%DTCROOT%%/shared/gfx/skin/darkblue/corner_2.gif
+%%DTCROOT%%/shared/gfx/skin/darkblue/corner_3.gif
+%%DTCROOT%%/shared/gfx/skin/darkblue/corner_4.gif
+%%DTCROOT%%/shared/gfx/skin/darkblue/skin.css
+%%DTCROOT%%/shared/gfx/skin/darkblue/skin.php
+%%DTCROOT%%/shared/gfx/skin/frame/border_1.gif
+%%DTCROOT%%/shared/gfx/skin/frame/border_2.gif
+%%DTCROOT%%/shared/gfx/skin/frame/border_3.gif
+%%DTCROOT%%/shared/gfx/skin/frame/border_4.gif
+%%DTCROOT%%/shared/gfx/skin/frame/corner_1.gif
+%%DTCROOT%%/shared/gfx/skin/frame/corner_2.gif
+%%DTCROOT%%/shared/gfx/skin/frame/corner_3.gif
+%%DTCROOT%%/shared/gfx/skin/frame/corner_4.gif
+%%DTCROOT%%/shared/gfx/skin/frame/skin.css
+%%DTCROOT%%/shared/gfx/skin/frame/skin.php
+%%DTCROOT%%/shared/gfx/skin/green/background.gif
+%%DTCROOT%%/shared/gfx/skin/green/border_1.gif
+%%DTCROOT%%/shared/gfx/skin/green/border_2.gif
+%%DTCROOT%%/shared/gfx/skin/green/border_3.gif
+%%DTCROOT%%/shared/gfx/skin/green/border_4.gif
+%%DTCROOT%%/shared/gfx/skin/green/corner_1.gif
+%%DTCROOT%%/shared/gfx/skin/green/corner_2.gif
+%%DTCROOT%%/shared/gfx/skin/green/corner_3.gif
+%%DTCROOT%%/shared/gfx/skin/green/corner_4.gif
+%%DTCROOT%%/shared/gfx/skin/green/skin.css
+%%DTCROOT%%/shared/gfx/skin/green/skin.php
+%%DTCROOT%%/shared/gfx/skin/green2/background.gif
+%%DTCROOT%%/shared/gfx/skin/green2/border_1.gif
+%%DTCROOT%%/shared/gfx/skin/green2/border_2.gif
+%%DTCROOT%%/shared/gfx/skin/green2/border_3.gif
+%%DTCROOT%%/shared/gfx/skin/green2/border_4.gif
+%%DTCROOT%%/shared/gfx/skin/green2/corner_1.gif
+%%DTCROOT%%/shared/gfx/skin/green2/corner_2.gif
+%%DTCROOT%%/shared/gfx/skin/green2/corner_3.gif
+%%DTCROOT%%/shared/gfx/skin/green2/corner_4.gif
+%%DTCROOT%%/shared/gfx/skin/green2/skin.css
+%%DTCROOT%%/shared/gfx/skin/green2/skin.php
+%%DTCROOT%%/shared/gfx/skin/green_gpl/icons/debian.gif
+%%DTCROOT%%/shared/gfx/skin/green_gpl/icons/dolar.gif
+%%DTCROOT%%/shared/gfx/skin/green_gpl/icons/dtc.gif
+%%DTCROOT%%/shared/gfx/skin/green_gpl/icons/dtc_logo.gif
+%%DTCROOT%%/shared/gfx/skin/green_gpl/icons/earth.gif
+%%DTCROOT%%/shared/gfx/skin/green_gpl/icons/gplhost.gif
+%%DTCROOT%%/shared/gfx/skin/green_gpl/icons/icann-logo_small.gif
+%%DTCROOT%%/shared/gfx/skin/green_gpl/icons/phpmyadmin.png
+%%DTCROOT%%/shared/gfx/skin/green_gpl/background.png
+%%DTCROOT%%/shared/gfx/skin/green_gpl/bgcolor.php
+%%DTCROOT%%/shared/gfx/skin/green_gpl/border_bottom.png
+%%DTCROOT%%/shared/gfx/skin/green_gpl/border_left.png
+%%DTCROOT%%/shared/gfx/skin/green_gpl/border_right.png
+%%DTCROOT%%/shared/gfx/skin/green_gpl/corner_bottom_left.png
+%%DTCROOT%%/shared/gfx/skin/green_gpl/corner_bottom_right.png
+%%DTCROOT%%/shared/gfx/skin/green_gpl/corner_top_left.png
+%%DTCROOT%%/shared/gfx/skin/green_gpl/corner_top_right.png
+%%DTCROOT%%/shared/gfx/skin/green_gpl/no_title_corner_top_left.png
+%%DTCROOT%%/shared/gfx/skin/green_gpl/no_title_corner_top_right.png
+%%DTCROOT%%/shared/gfx/skin/green_gpl/no_title_title_3_background.png
+%%DTCROOT%%/shared/gfx/skin/green_gpl/skin.css
+%%DTCROOT%%/shared/gfx/skin/green_gpl/skin.php
+%%DTCROOT%%/shared/gfx/skin/green_gpl/title_1_icon.png
+%%DTCROOT%%/shared/gfx/skin/green_gpl/title_2_transi.png
+%%DTCROOT%%/shared/gfx/skin/green_gpl/title_3_background.png
+%%DTCROOT%%/shared/gfx/skin/green_gpl/title_4_end.png
+%%DTCROOT%%/shared/gfx/skin/iglobal/background.gif
+%%DTCROOT%%/shared/gfx/skin/iglobal/bgcolor.php
+%%DTCROOT%%/shared/gfx/skin/iglobal/border_bottom.gif
+%%DTCROOT%%/shared/gfx/skin/iglobal/border_left.gif
+%%DTCROOT%%/shared/gfx/skin/iglobal/border_right.gif
+%%DTCROOT%%/shared/gfx/skin/iglobal/border_top.gif
+%%DTCROOT%%/shared/gfx/skin/iglobal/corner_bottom_left.gif
+%%DTCROOT%%/shared/gfx/skin/iglobal/corner_bottom_right.gif
+%%DTCROOT%%/shared/gfx/skin/iglobal/corner_top_left.gif
+%%DTCROOT%%/shared/gfx/skin/iglobal/corner_top_right.gif
+%%DTCROOT%%/shared/gfx/skin/iglobal/skin.css
+%%DTCROOT%%/shared/gfx/skin/iglobal/skin.php
+%%DTCROOT%%/shared/gfx/skin/muedgrey/amp_style.css
+%%DTCROOT%%/shared/gfx/skin/muedgrey/background.gif
+%%DTCROOT%%/shared/gfx/skin/muedgrey/bgcolor.php
+%%DTCROOT%%/shared/gfx/skin/muedgrey/border_1.gif
+%%DTCROOT%%/shared/gfx/skin/muedgrey/border_2.gif
+%%DTCROOT%%/shared/gfx/skin/muedgrey/border_3.gif
+%%DTCROOT%%/shared/gfx/skin/muedgrey/border_4.gif
+%%DTCROOT%%/shared/gfx/skin/muedgrey/corner_1.gif
+%%DTCROOT%%/shared/gfx/skin/muedgrey/corner_2.gif
+%%DTCROOT%%/shared/gfx/skin/muedgrey/corner_3.gif
+%%DTCROOT%%/shared/gfx/skin/muedgrey/corner_4.gif
+%%DTCROOT%%/shared/gfx/skin/muedgrey/degrade.jpg
+%%DTCROOT%%/shared/gfx/skin/muedgrey/skin.css
+%%DTCROOT%%/shared/gfx/skin/muedgrey/skin.php
+%%DTCROOT%%/shared/gfx/skin/ruffdogs_mozilla/background.png
+%%DTCROOT%%/shared/gfx/skin/ruffdogs_mozilla/bgcolor.php
+%%DTCROOT%%/shared/gfx/skin/ruffdogs_mozilla/border_bottom.png
+%%DTCROOT%%/shared/gfx/skin/ruffdogs_mozilla/ruffdogs.css
+%%DTCROOT%%/shared/gfx/skin/ruffdogs_mozilla/skin.css
+%%DTCROOT%%/shared/gfx/skin/ruffdogs_mozilla/skin.php
+%%DTCROOT%%/shared/gfx/skin/ruffdogs_mozilla/title_1_icon.png
+%%DTCROOT%%/shared/gfx/skin/ruffdogs_mozilla/title_2_transi.png
+%%DTCROOT%%/shared/gfx/skin/ruffdogs_mozilla/title_3_background.png
+%%DTCROOT%%/shared/gfx/skin/tex/bgcolor.php
+%%DTCROOT%%/shared/gfx/skin/tex/bgtitlewin.png
+%%DTCROOT%%/shared/gfx/skin/tex/bgwin.png
+%%DTCROOT%%/shared/gfx/skin/tex/skin.css
+%%DTCROOT%%/shared/gfx/skin/tex/skin.php
+%%DTCROOT%%/shared/gfx/skin/tex/pagetop.html
+%%DTCROOT%%/shared/gfx/pagetop/dtc_banner.gif
+%%DTCROOT%%/shared/gfx/pagetop/dtc_banner_end.gif
+%%DTCROOT%%/shared/gfx/pagetop/dtc_logo.gif
+%%DTCROOT%%/shared/gfx/pagetop/logoend.gif
+%%DTCROOT%%/shared/gfx/pagetop/logofond.gif
+%%DTCROOT%%/shared/gfx/pagetop/logostart.gif
+%%DTCROOT%%/shared/gfx/tucows.jpg
+%%DTCROOT%%/shared/inc/forms/admin_stats.php
+%%DTCROOT%%/shared/inc/forms/database.php
+%%DTCROOT%%/shared/inc/forms/dns.php
+%%DTCROOT%%/shared/inc/forms/domain_info.php
+%%DTCROOT%%/shared/inc/forms/domain_stats.php
+%%DTCROOT%%/shared/inc/forms/email.php
+%%DTCROOT%%/shared/inc/forms/ftp.php
+%%DTCROOT%%/shared/inc/forms/lists.php
+%%DTCROOT%%/shared/inc/forms/my_account.php
+%%DTCROOT%%/shared/inc/forms/packager.php
+%%DTCROOT%%/shared/inc/forms/root_admin.php
+%%DTCROOT%%/shared/inc/forms/subdomain.php
+%%DTCROOT%%/shared/inc/forms/reseller.php
+%%DTCROOT%%/shared/inc/accounting.php
+%%DTCROOT%%/shared/inc/dbconect.php
+%%DTCROOT%%/shared/inc/draw.php
+%%DTCROOT%%/shared/inc/fetch.php
+%%DTCROOT%%/shared/inc/fetchmail.php
+%%DTCROOT%%/shared/inc/submit_to_sql.php
+%%DTCROOT%%/shared/inc/sql/database.php
+%%DTCROOT%%/shared/inc/sql/dns.php
+%%DTCROOT%%/shared/inc/sql/domain_info.php
+%%DTCROOT%%/shared/inc/sql/email.php
+%%DTCROOT%%/shared/inc/sql/ftp.php
+%%DTCROOT%%/shared/inc/sql/subdomain.php
+%%DTCROOT%%/shared/inc/sql/reseller.php
+%%DTCROOT%%/shared/inc/sql/lists.php
+%%DTCROOT%%/shared/inc/.#submit_to_sql.php.1.26
+%%DTCROOT%%/shared/inc/tree_mem_to_db.php
+%%DTCROOT%%/shared/package-installer/phpbb/phpBB-2.0.17.tar.bz2
+%%DTCROOT%%/shared/package-installer/phpbb/dtc-pkg-info.php
+%%DTCROOT%%/shared/package-installer/phpbb/dtc-pkg-install.php
+%%DTCROOT%%/shared/package-installer/horde/dtc-pkg-info.php
+%%DTCROOT%%/shared/package-installer/horde/horde-3.0.4.tar.gz
+%%DTCROOT%%/shared/package-installer/horde/dtc-pkg-install.php
+%%DTCROOT%%/shared/package-installer/oscommerce/dtc-pkg-info.php
+%%DTCROOT%%/shared/package-installer/oscommerce/dtc-pkg-install.php
+%%DTCROOT%%/shared/package-installer/oscommerce/oscommerce-2.2ms2.tar.gz
+%%DTCROOT%%/shared/package-installer/phpnuke/dtc-pkg-info.php
+%%DTCROOT%%/shared/package-installer/phpnuke/dtc-pkg-install.php
+%%DTCROOT%%/shared/package-installer/phpnuke/phpnuke-7.7.tar.gz
+%%DTCROOT%%/shared/package-installer/drupal/drupal-4.6.3.tar.gz
+%%DTCROOT%%/shared/package-installer/drupal/dtc-pkg-info.php
+%%DTCROOT%%/shared/package-installer/drupal/dtc-pkg-install.php
+%%DTCROOT%%/shared/securepay/gateways/paypal.php
+%%DTCROOT%%/shared/securepay/gateways/worldpay.php
+%%DTCROOT%%/shared/securepay/RENAME_ME_paiement_config.php
+%%DTCROOT%%/shared/securepay/paiement.php
+%%DTCROOT%%/shared/securepay/pay_functions.php
+%%DTCROOT%%/shared/template/dtc_logo.gif
+%%DTCROOT%%/shared/template/index.php
+%%DTCROOT%%/shared/template/favicon.ico
+%%DTCROOT%%/shared/vars/global_vars.php
+%%DTCROOT%%/shared/vars/lang.php
+%%DTCROOT%%/shared/vars/strings.php
+%%DTCROOT%%/shared/vars/table_names.php
+%%DTCROOT%%/shared/default_admin_site.php
+%%DTCROOT%%/shared/dtc_version.php
 %%DTCROOT%%/admin/gfx
 %%DTCROOT%%/admin/imgcache
 %%DTCROOT%%/client/gfx
@@ -257,16 +466,32 @@ sbin/dtc-install
 sbin/dtc-deinstall
 @dirrm %%DTCROOT%%/shared/vars
 @dirrm %%DTCROOT%%/shared/template
+@dirrm %%DTCROOT%%/shared/securepay/gateways
 @dirrm %%DTCROOT%%/shared/securepay
+@dirrm %%DTCROOT%%/shared/package-installer/phpnuke
+@dirrm %%DTCROOT%%/shared/package-installer/phpbb
+@dirrm %%DTCROOT%%/shared/package-installer/oscommerce
+@dirrm %%DTCROOT%%/shared/package-installer/horde
+@dirrm %%DTCROOT%%/shared/package-installer/drupal
+@dirrm %%DTCROOT%%/shared/package-installer
+@dirrm %%DTCROOT%%/shared/inc/sql
+@dirrm %%DTCROOT%%/shared/inc/forms
 @dirrm %%DTCROOT%%/shared/inc
+@dirrm %%DTCROOT%%/shared/imgcache
 @dirrm %%DTCROOT%%/shared/gfx/usermenu
-@dirrm %%DTCROOT%%/shared/gfx/skin/simple/green2
-@dirrm %%DTCROOT%%/shared/gfx/skin/simple/green
-@dirrm %%DTCROOT%%/shared/gfx/skin/simple
-@dirrm %%DTCROOT%%/shared/gfx/skin/notitle/darkblue
-@dirrm %%DTCROOT%%/shared/gfx/skin/notitle
+@dirrm %%DTCROOT%%/shared/gfx/skin/tex
+@dirrm %%DTCROOT%%/shared/gfx/skin/ruffdogs_mozilla
+@dirrm %%DTCROOT%%/shared/gfx/skin/muedgrey
+@dirrm %%DTCROOT%%/shared/gfx/skin/iglobal
+@dirrm %%DTCROOT%%/shared/gfx/skin/green_gpl/icons
+@dirrm %%DTCROOT%%/shared/gfx/skin/green_gpl
+@dirrm %%DTCROOT%%/shared/gfx/skin/green2
+@dirrm %%DTCROOT%%/shared/gfx/skin/green
+@dirrm %%DTCROOT%%/shared/gfx/skin/frame
+@dirrm %%DTCROOT%%/shared/gfx/skin/darkblue
 @dirrm %%DTCROOT%%/shared/gfx/skin
 @dirrm %%DTCROOT%%/shared/gfx/securepay
+@dirrm %%DTCROOT%%/shared/gfx/pagetop
 @dirrm %%DTCROOT%%/shared/gfx/menu
 @dirrm %%DTCROOT%%/shared/gfx/language/ru/pub
 @dirrm %%DTCROOT%%/shared/gfx/language/ru
@@ -283,7 +508,10 @@ sbin/dtc-deinstall
 @dirrm %%DTCROOT%%/shared/dtcrm/srs
 @dirrm %%DTCROOT%%/shared/dtcrm
 @dirrm %%DTCROOT%%/shared/drawlib
+@dirrm %%DTCROOT%%/shared/404_template
 @dirrm %%DTCROOT%%/shared
+@dirrm %%DTCROOT%%/email/inc
+@dirrm %%DTCROOT%%/email
 @dirrm %%DTCROOT%%/doc/html/fr
 @dirrm %%DTCROOT%%/doc/html/en
 @dirrm %%DTCROOT%%/doc/html
@@ -293,6 +521,7 @@ sbin/dtc-deinstall
 @dirrm %%DTCROOT%%/doc/bind_conf
 @dirrm %%DTCROOT%%/doc
 @dirrm %%DTCROOT%%/client/inc
+@dirrm %%DTCROOT%%/client/gateways
 @dirrm %%DTCROOT%%/client
 @dirrm %%DTCROOT%%/admin/tables
 @dirrm %%DTCROOT%%/admin/inc

@@ -7,9 +7,11 @@
 
 PREFIX=%%PREFIX%%
 LOCALBASE=%%LOCALBASE%%
-QMAIL_PREFIX=%%QMAIL_PREFIX%%
+QMAIL_DIR=%%QMAIL_DIR%%
 
 UNIX_TYPE=freebsd
+
+VERBOSE_INSTALL=yes
 
 echo "###############################################################"
 echo "### Welcome to DTC config script for automatic installation ###"
@@ -28,38 +30,59 @@ echo "If you didn't setup a root password before,"
 echo "DTC can do it of you (later on this script)."
 echo -n 'MySQL hostname [localhost]: '
 read conf_mysql_host
-if [ $conf_mysql_host == ""];
+if [ "$conf_mysql_host" = "" ];
 then
 	conf_mysql_host="localhost"
 fi
 
 echo -n 'MySQL root login [root]: '
 read conf_mysql_login
-if [ $conf_mysql_login == ""];
+if [ "$conf_mysql_login" = "" ];
 then
 	conf_mysql_login="root"
 fi
 
+echo "This is the password you want to be used after"
+echo "this script is finished (not the old pass)."
 echo -n 'MySQL root password []: '
 read conf_mysql_pass
 
 echo ""
 echo "Do you want that DTC setup this password"
-echo "for you ? (eg: UPDATE user SET Password...)"
+echo "for you ? (eg: UPDATE user SET Password=PASSWORD('XXX')...)"
 echo -n 'Setup the mysql password [Ny]: '
 read conf_mysql_change_root
-if [ $conf_mysql_change_root == ""];
+if [ ""$conf_mysql_change_root = "y" ];
 then
-	echo "Skinping MySQL password root change!"
-else
 	echo "===> Changing MySQL Root password"
-	echo "If you didn't setup a root pass for mysqld, just hit ENTER."
+	echo "MySQL will now prompt your for the password to connect to"
+	echo "the database. This is the OLD password that was there before"
+	echo "you launched this script. If you didn't setup a root pass for"
+	echo "mysqld, just hit ENTER to use empty pass."
 	mysql -u$conf_mysql_login -p -h$conf_mysql_host -Dmysql --execute="UPDATE user SET Password=PASSWORD('"$conf_mysql_pass"') WHERE User='root'; FLUSH PRIVILEGES;";
+else
+	echo "Skinping MySQL password root change!"
+fi
+
+echo ""
+echo "What MTA (Mail Tranport Agent, the one that"
+echo "will route and deliver your incoming mail) do"
+echo "you wish to use with DTC ? Type q for qmail"
+echo "or type p for postfix."
+echo -n 'MTA type (Qmail or Postfix) [Q/p]: '
+read conf_mta_type
+if [ "$conf_mta_type" = "p" ];
+then
+	conf_mta_type=postfix
+	echo "Postfix will be used"
+else
+	conf_mta_type=qmail
+	echo "Qmail will be used"
 fi
 
 echo -n 'Choose a DB name for DTC [dtc]: '
 read conf_mysql_db
-if [ $conf_mysql_db == ""];
+if [ "$conf_mysql_db" = "" ];
 then
 	conf_mysql_db="dtc"
 fi
@@ -82,7 +105,7 @@ echo -n 'Subdomain for DTC admin panel [dtc]: '
 read dtc_admin_subdomain
 
 
-if [ $dtc_admin_subdomain == ""];
+if [ "$dtc_admin_subdomain" = "" ];
 then
 	dtc_admin_subdomain="dtc"
 fi
@@ -92,25 +115,66 @@ echo "I need now your host information for apache !"
 echo -n "What is your IP addresse ? [ 127.0.0.1 ]: "
 read conf_ip_addr
 
-if [ $conf_ip_addr == ""];
+if [ "$conf_ip_addr" = "" ];
 then
 	conf_ip_addr="127.0.0.1"
 fi
 
 echo ""
+echo " Do you want that DTC generates apache file to use"
+echo "a LAN IP address that your server is using?"
+echo "If your server is in the LAN behind a firewall"
+echo "that does NAT and port redirections of the public IP(s)"
+echo "address(es) to your server, then you must say YES"
+echo "here, otherwise (if your server is connected directly"
+echo "to the internet with a public static IP) leave it to NO."
+echo -n "Use NATed vhosts ? [N/y]: "
+read conf_use_nated_vhosts
+
+if [ ""$conf_use_nated_vhosts = "y" -o ""$conf_use_nated_vhosts = "Y" -o ""$conf_use_nated_vhosts = "yes"]; then
+	conf_use_nated_vhosts = "yes";
+else
+	conf_use_nated_vhosts = "no";
+fi
+
+echo ""
+echo " Please enter the LAN IP of your server if you said"
+echo "yes to use nated vhosts. Ignore otherwise."
+echo -n "IP address of your server if in the LAN [192.168.0.2]: "
+read conf_nated_vhost_ip
+if [ ""$conf_nated_vhosts_ip = "" ]; then
+	conf_nated_vhosts_ip = "192.168.0.2"
+fi
+
+
+echo ""
 echo "Where will you keep your files for hosting ?"
 echo -n "Hosting path [/var/www/sites]: "
 read conf_hosting_path
-if [ $conf_hosting_path == ""];
+if [ "$conf_hosting_path" = "" ];
 then
 	conf_hosting_path="/var/www/sites"
+fi
+
+echo ""
+echo "Path where to build the chroot environment."
+echo "Where do you want DTC to build the cgi-bin chroot"
+echo "environment? Please note that DTC will do hardlinks"
+echo "to that directory, so the chroot path should be in"
+echo "the same logical device as the path for hosted"
+echo "domains files."
+echo -n "Chroot path [/var/www/chroot]: "
+read conf_chroot_path
+if [ "$conf_chroot_path" = "" ];
+then
+	conf_chroot_path="/var/www/chroot"
 fi
 
 echo ""
 echo "What admin login/pass do you want for the administration of "$main_domain_name "?"
 echo -n "Login [dtc]: "
 read conf_adm_login
-if [ $conf_adm_login == ""];
+if [ "$conf_adm_login" = "" ];
 then
 	conf_adm_login="dtc"
 fi
@@ -120,7 +184,14 @@ read conf_adm_pass
 # Deamon path configuration
 
 echo "### DEAMON PATH CONFIGURATION ###"
-PATH_HTTPD_CONF="${LOCALBASE}/etc/apache/httpd.conf"
+if [ -f "${LOCALBASE}/etc/apache/httpd.conf" ] ;then
+	PATH_HTTPD_CONF="${LOCALBASE}/etc/apache/httpd.conf"
+elif [ -f "${LOCALBASE}/etc/apache2/httpd.conf" ] ;then
+	PATH_HTTPD_CONF="${LOCALBASE}/etc/apache2/httpd.conf"
+else
+	echo "Could not found your httpd.conf: exiting."
+	exit 1
+fi
 PATH_NAMED_CONF="/etc/namedb/named.conf"
 # Copy default conf if no conf exists (BSD specific)
 if [ ! -f ${LOCALBASE}/etc/proftpd.conf ];
@@ -128,13 +199,29 @@ then
 	cp ${LOCALBASE}/etc/proftpd.conf.default ${LOCALBASE}/etc/proftpd.conf
 fi
 PATH_PROFTPD_CONF="${LOCALBASE}/etc/proftpd.conf"
-PATH_QMAIL_CTRL="${QMAIL_PREFIX}/control"
+PATH_DOVECOT_CONF="${LOCALBASE}/etc/dovecot.conf"
+PATH_COURIER_CONF_PATH="${LOCALBASE}/etc/courier"
+PATH_POSTFIX_CONF="${LOCALBASE}/etc/postfix/main.cf"
+PATH_POSTFIX_ETC="${LOCALBASE}/etc/postfix"
+PATH_SASL_PASSWD2="${LOCALBASE}/sbin/saslpasswd2"
+PATH_MAILDROP_BIN="${LOCALBASE}/bin/maildrop"
+PATH_USERDB_BIN="${LOCALBASE}/sbin/userdb"
+PATH_QMAIL_CTRL="${QMAIL_DIR}/control"
 PATH_PHP_CGI="${LOCALBASE}/bin/php"
+FREERADIUS_ETC="${LOCALBASE}/etc/raddb"
 PATH_DTC_SHARED="${PREFIX}/www/dtc"
+PATH_CRONTAB_CONF=/etc/crontab
+PATH_AWSTATS_ETC=${LOCALBASE}/etc/awstats
+MYSQL_DB_SOCKET_PATH="/tmp/mysqld.sock"
 
 PATH_DTC_ETC=$PATH_DTC_SHARED"/etc"
 PATH_DTC_ADMIN=$PATH_DTC_SHARED"/admin"
 PATH_DTC_CLIENT=$PATH_DTC_SHARED"/client"
+
+USER_ADD_CMD=useradd
+USER_ADD_CMD=groupadd
+USER_MOD_CMD=usermod
+PASSWD_CMD=passwd
 
 echo ""
 echo ""
@@ -157,8 +244,13 @@ echo "DTC pass: "$conf_adm_pass
 echo "httpd.conf: "$PATH_HTTPD_CONF
 echo "named.conf: "$PATH_NAMED_CONF
 echo "proftpd.conf: "$PATH_PROFTPD_CONF
+echo "dovecot.conf: "$PATH_DOVECOT_CONF
+echo "Courier authdaemonrc: "$PATH_COURIER_CONF_PATH
+echo "postfix/main.cf: "$PATH_POSTFIX_CONF
 echo "qmail control: "$PATH_QMAIL_CTRL
 echo "php4 cgi: "$PATH_PHP_CGI
+echo "Freeradius sql.conf and rad.conf folder: "$FREERADIUS_ETC
+echo "Awstats awstats.conf folder: "$PATH_AWSTATS_ETC
 echo "generated files: "$PATH_DTC_ETC
 echo ""
 echo ""
@@ -166,8 +258,7 @@ echo ""
 echo -n 'Confirm and install DTC ? [Ny]:'
 read valid_infos
 
-read valid_infos1
-if [ "$valid_infos1" =  "y" ];
+if [ "$valid_infos" =  "y" ];
 then
 	echo "Installation has started..."
 else
@@ -203,7 +294,7 @@ if [ $kernel = "OpenBSD" ];
 then
 	flag=`grep named_flags=\"-c /etc/rc.conf`	
 	echo "conf $flag"
-	if [ "$flag" == "" ];
+	if [ "$flag" = "" ];
 	then
 		echo "===> OpenBSD: Backing up /etc/rc.conf and insterting named_flags=\"-c /etc/named.conf\""
 		echo "/etc/rc.conf no named"
@@ -232,9 +323,34 @@ then
 	echo "conf done"
 fi
 
+# Copy dist file if no php.ini is there yet...
+if [ -e /usr/local/etc/php.ini-dist ] ; then
+	if ! [ -e /usr/local/etc/php.ini ] ; then
+		cp /usr/local/etc/php.ini-dist /usr/local/etc/php.ini
+	fi
+fi
+# Check for pear in include path
+if [ -f /usr/local/share/pear/PEAR.php ] ;then
+	if [ -e /usr/local/etc/php.ini ] ; then
+		if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+			echo "Checking include_path=/usr/local/share/pear in php.ini"
+		fi
+		if grep include_path /usr/local/etc/php.ini | grep /usr/local/share/pear > /dev/null
+		then
+			if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+				echo "Seems ok: skiping include_path insertion in php.ini"
+			fi
+		else
+			if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+				echo "Your php.ini doesn't has pear in it's inc path: changin!"
+			fi
+			echo "include_path = \".:/usr/local/share/pear\"" >>/usr/local/etc/php.ini
+		fi
+	fi
+fi
 
 # Multi OS (Unix system) DATABASE setup sh script for DTC
-# Written by Thomas GOIRAND <thomas@goirand.fr>
+# Written by Thomas GOIRAND <thomas [ at ] goirand.fr>
 # under LGPL Licence
 
 # The configuration for all thoses variables must be written BEFORE this
@@ -266,60 +382,263 @@ fi
 # "Hosting path: "$conf_hosting_path
 # $PATH_DTC_ETC & $PATH_DTC_SHARED
 
-echo "==> Creating directory for hosting "$main_domain_name
-mkdir -p $conf_hosting_path"/"$conf_adm_login"/"$main_domain_name"/"$dtc_admin_subdomain"/www/html"
-mkdir -p $conf_hosting_path"/"$conf_adm_login"/"$main_domain_name"/"$dtc_admin_subdomain"/www/logs"
-mkdir -p $conf_hosting_path"/"$conf_adm_login"/"$main_domain_name"/"$dtc_admin_subdomain"/www/cgi-bin"
+if [ -z "$MKTEMP" ] ; then
+	MKTEMP="mktemp -t"
+fi
+
+if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+	echo "DTC is configuring your services: please wait..."
+	echo "DTC installer is in VERBOSE mode"
+else
+	echo -n "DTC is configuring your services: please wait..."
+fi
+
+# Create hosting directories for main site
+if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+	echo "==> Creating directory for hosting "$main_domain_name
+fi
+mkdir -p $conf_hosting_path"/"$conf_adm_login"/"$main_domain_name"/subdomains/"$dtc_admin_subdomain"/html"
+mkdir -p $conf_hosting_path"/"$conf_adm_login"/"$main_domain_name"/subdomains/"$dtc_admin_subdomain"/logs"
+mkdir -p $conf_hosting_path"/"$conf_adm_login"/"$main_domain_name"/subdomains/"$dtc_admin_subdomain"/cgi-bin"
 mkdir -p $conf_hosting_path"/"$conf_adm_login"/"$main_domain_name"/subdomains/www/html"
 mkdir -p $conf_hosting_path"/"$conf_adm_login"/"$main_domain_name"/subdomains/www/logs"
 mkdir -p $conf_hosting_path"/"$conf_adm_login"/"$main_domain_name"/subdomains/www/cgi-bin"
+mkdir -p $conf_hosting_path"/"$conf_adm_login"/"$main_domain_name"/subdomains/404/html"
+mkdir -p $conf_hosting_path"/"$conf_adm_login"/"$main_domain_name"/subdomains/404/logs"
+mkdir -p $conf_hosting_path"/"$conf_adm_login"/"$main_domain_name"/subdomains/404/cgi-bin"
 mkdir -p $conf_hosting_path"/"$conf_adm_login"/"$main_domain_name"/Mailboxs"
 mkdir -p $conf_hosting_path"/"$conf_adm_login"/"$main_domain_name"/mysql"
-mkdir -p $conf_hosting_path"/"$conf_adm_login"/"$main_domain_name"/subdomains/dtc/html"
-mkdir -p $conf_hosting_path"/"$conf_adm_login"/"$main_domain_name"/subdomains/dtc/logs"
-mkdir -p $conf_hosting_path"/"$conf_adm_login"/"$main_domain_name"/subdomains/dtc/cgi-bin"
+ADMIN_HOME=$conf_hosting_path"/"$conf_adm_login"/"$main_domain_name"/subdomains/"$dtc_admin_subdomain"/html"
+if ! [ -e $ADMIN_HOME"/index.php" ] ;then
+	cp $PATH_DTC_SHARED"/shared/default_admin_site.php" $ADMIN_HOME"/index.php"
+	if ! [ -e $ADMIN_HOME"/dtc_logo.gif" ] ;then
+		cp $PATH_DTC_SHARED"/shared/template/dtc_logo.gif" $ADMIN_HOME
+	fi
+	if ! [ -e $ADMIN_HOME"/favicon.ico" ] ;then
+		cp $PATH_DTC_SHARED"/shared/template/favicon.ico" $ADMIN_HOME
+	fi
+fi
 
-chown -R nobody:nogroup $conf_hosting_path
+# Copy a template site to the new main site
+MAINSITE_HOME=$conf_hosting_path"/"$conf_adm_login"/"$main_domain_name"/subdomains/www/html"
+if ! [ -e $MAINSITE_HOME"/index.php" ] ;then
+	if ! [ -e $MAINSITE_HOME"/index.html" ] ;then
+		cp $PATH_DTC_SHARED"/shared/template/index.php" $MAINSITE_HOME
+		if ! [ -e $MAINSITE_HOME"/dtc_logo.gif" ] ;then
+			cp $PATH_DTC_SHARED"/shared/template/dtc_logo.gif" $MAINSITE_HOME
+		fi
+	fi
+fi
 
-echo "==> DTC is now creating it's database:"
-if [ $conf_mysql_pass == ""];
+if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+	echo chown -R nobody:65534 $conf_hosting_path
+fi
+chown -R nobody:65534 $conf_hosting_path
+
+if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+	echo "==> DTC is now creating it's database:"
+fi
+# Added for MacOS X support with mysql not in the path...
+if [ ""$conf_mysql_cli_path = "" ] ;then
+	if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+		echo "mysql_cli_path is not set"
+	fi
+	conf_mysql_cli_path="mysql";
+fi
+if [ ""$conf_mysqlshow_cli_path = "" ] ;then
+	if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+		echo "mysqlshow_cli_path is not set"
+	fi
+	conf_mysqlshow_cli_path="mysqlshow";
+fi
+if [ "$conf_mysql_pass" = "" ];
 then
-        MYSQL="mysql"
+	if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+		echo "Setting up mysql cli "$conf_mysql_cli_path" without password"
+	fi
+        MYSQL=""$conf_mysql_cli_path
+	MYSQLSOW=$conf_mysqlshow_cli_path
 else
-	MYSQL="mysql -p${conf_mysql_pass}"
+	if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+		echo "Setting up mysql cli with password"
+	fi
+#	MYSQL=""$conf_mysql_cli_path "-p"$conf_mysql_pass
+	MYSQL=$conf_mysql_cli_path" -p${conf_mysql_pass}"
+	MYSQLSHOW=$conf_mysqlshow_cli_path" -p${conf_mysql_pass}"
 fi
 
 
 create_tables=$PATH_DTC_SHARED"/admin/tables"
 curdir=`pwd`
 
-echo "If not exists, create DTC's database name: "$conf_mysql_db
+if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+	echo "If not exists, create DTC's database name: "$conf_mysql_db
+fi
 $MYSQL -u$conf_mysql_login -h$conf_mysql_host --execute="CREATE DATABASE IF NOT EXISTS "$conf_mysql_db
-echo "Creating apachelogs database: apachelogs"
+if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+	echo "Creating apachelogs database: apachelogs"
+fi
 $MYSQL -u$conf_mysql_login -h$conf_mysql_host --execute="CREATE DATABASE IF NOT EXISTS apachelogs"
+
 cd $create_tables
-echo -n "DTC is now creating table if not exists: "
+if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+	echo -n "DTC is now creating table if not exists: "
+fi
 for i in $( ls *.sql );
 do
 	table_name=`echo $i | cut -f1 -d"."`
-	echo -n $table_name" "
+	if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+		echo -n $table_name" "
+	fi
 	table_create=`cat $i`
-#	$MYSQL -u$conf_mysql_login -h$conf_mysql_host -D$conf_mysql_db --execute="DROP TABLE IF EXISTS "$table_name
 	$MYSQL -u$conf_mysql_login -h$conf_mysql_host -D$conf_mysql_db <$i
 done
-echo "done."
-
-echo "Inserting values in mysql for hosting "$main_domain_name
+if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+	echo "done."
+fi
+#echo $PATH_PHP_CGI $PATH_DTC_ADMIN/restor_db.php -u $conf_mysql_login -h $conf_mysql_host -d $conf_mysql_db $conf_mysql_pass
+if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+	cd $PATH_DTC_ADMIN; $PATH_PHP_CGI $PATH_DTC_ADMIN/restor_db.php -u $conf_mysql_login -h $conf_mysql_host -d $conf_mysql_db "$conf_mysql_pass"
+else
+	cd $PATH_DTC_ADMIN; $PATH_PHP_CGI $PATH_DTC_ADMIN/restor_db.php -u $conf_mysql_login -h $conf_mysql_host -d $conf_mysql_db "$conf_mysql_pass" >/dev/null
+fi
+if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+	echo "Inserting values in mysql for hosting "$main_domain_name
+fi
 $MYSQL -u$conf_mysql_login -h$conf_mysql_host -D$conf_mysql_db --execute="INSERT IGNORE INTO groups (members) VALUES ('zigo')"
 $MYSQL -u$conf_mysql_login -h$conf_mysql_host -D$conf_mysql_db --execute="INSERT IGNORE INTO admin (adm_login,adm_pass,path) VALUES ('"$conf_adm_login"','"$conf_adm_pass"','"$conf_hosting_path"/"$conf_adm_login"')"
 $MYSQL -u$conf_mysql_login -h$conf_mysql_host -D$conf_mysql_db --execute="INSERT IGNORE INTO domain (name,owner,default_subdomain,generate_flag,ip_addr) VALUES ('"$main_domain_name"','"$conf_adm_login"','www','yes','"$conf_ip_addr"')"
 $MYSQL -u$conf_mysql_login -h$conf_mysql_host -D$conf_mysql_db --execute="INSERT IGNORE INTO subdomain (domain_name,subdomain_name,path) VALUES ('"$main_domain_name"','www','www')"
+$MYSQL -u$conf_mysql_login -h$conf_mysql_host -D$conf_mysql_db --execute="INSERT IGNORE INTO subdomain (domain_name,subdomain_name,path) VALUES ('"$main_domain_name"','404','404')"
 $MYSQL -u$conf_mysql_login -h$conf_mysql_host -D$conf_mysql_db --execute="INSERT IGNORE INTO subdomain(domain_name,subdomain_name,ip) VALUES ('"$main_domain_name"','ns1','$conf_ip_addr')"
 $MYSQL -u$conf_mysql_login -h$conf_mysql_host -D$conf_mysql_db --execute="INSERT IGNORE INTO subdomain(domain_name,subdomain_name,ip) VALUES ('"$main_domain_name"','mx','$conf_ip_addr')"
 $MYSQL -u$conf_mysql_login -h$conf_mysql_host -D$conf_mysql_db --execute="INSERT IGNORE INTO subdomain (domain_name,subdomain_name,path) VALUES ('"$main_domain_name"','"$dtc_admin_subdomain"','www')"
-$MYSQL -u$conf_mysql_login -h$conf_mysql_host -D$conf_mysql_db --execute="INSERT IGNORE INTO config (unicrow,demo_version,main_site_ip,site_addrs,addr_mail_server,webmaster_email_addr,addr_primary_dns,administrative_site,site_root_host_path,generated_file_path,dtcshared_path,dtcadmin_path,dtcclient_path) VALUES('1','no','"$conf_ip_addr"','"$conf_ip_addr"','mx."$main_domain_name"','webmaster@"$main_domain_name"','ns1."$main_domain_name"','"$dtc_admin_subdomain"."$main_domain_name"','"$conf_hosting_path"','"$PATH_DTC_ETC"','"$PATH_DTC_SHARED"','"$PATH_DTC_ADMIN"','"$PATH_DTC_CLIENT"')"
+$MYSQL -u$conf_mysql_login -h$conf_mysql_host -D$conf_mysql_db --execute="INSERT IGNORE INTO config (unicrow,demo_version,main_site_ip,site_addrs,addr_mail_server,webmaster_email_addr,addr_primary_dns,administrative_site,site_root_host_path,generated_file_path,dtcshared_path,dtcadmin_path,dtcclient_path,mta_type,main_domain,404_subdomain) VALUES('1','no','"$conf_ip_addr"','"$conf_ip_addr"','mx."$main_domain_name"','webmaster@"$main_domain_name"','ns1."$main_domain_name"','"$dtc_admin_subdomain"."$main_domain_name"','"$conf_hosting_path"','"$PATH_DTC_ETC"','"$PATH_DTC_SHARED"','"$PATH_DTC_ADMIN"','"$PATH_DTC_CLIENT"','"$conf_mta_type"','"$main_domain_name"','404')"
 $MYSQL -u$conf_mysql_login -h$conf_mysql_host -D$conf_mysql_db --execute="INSERT IGNORE INTO cron_job (unicrow,reload_named,restart_apache,gen_vhosts,gen_named) VALUES ('1','yes','yes','yes','yes')"
+$MYSQL -u$conf_mysql_login -h$conf_mysql_host -D$conf_mysql_db --execute="INSERT IGNORE INTO secpayconf (unicrow,use_paypal,paypal_rate,paypal_flat,paypal_autovalidate,paypal_email) VALUES ('1','yes','3.21','0.50','no','webmaster@"$main_domain_name"')"
 
+# Regenerate the "main" domain on each installs...
+$MYSQL -u$conf_mysql_login -h$conf_mysql_host -D$conf_mysql_db --execute="UPDATE domain SET generate_flag='yes' WHERE name='"$main_domain_name"'"
+
+# This one is in case of reinstalltion, so the installer has prority to old values
+$MYSQL -u$conf_mysql_login -h$conf_mysql_host -D$conf_mysql_db --execute="UPDATE config SET main_site_ip='"$conf_ip_addr"',administrative_site='"$dtc_admin_subdomain"."$main_domain_name"',site_root_host_path='"$conf_hosting_path"',generated_file_path='"$PATH_DTC_ETC"',mta_type='"$conf_mta_type"',main_domain='"$main_domain_name"',404_subdomain='404' WHERE 1"
+$MYSQL -u$conf_mysql_login -h$conf_mysql_host -D$conf_mysql_db --execute="UPDATE cron_job SET qmail_newu='yes',restart_qmail='yes',gen_qmail='yes',reload_named='yes',restart_apache='yes',gen_vhosts='yes',gen_named='yes' WHERE 1"
+$MYSQL -u$conf_mysql_login -h$conf_mysql_host -D$conf_mysql_db --execute="UPDATE config SET php_library_path='/usr/lib/php:/tmp:/usr/share/pear:$PATH_DTC_ETC/dtc404' WHERE 1"
+$MYSQL -u$conf_mysql_login -h$conf_mysql_host -D$conf_mysql_db --execute="UPDATE domain SET  ip_addr='"$conf_ip_addr"', generate_flag='yes' WHERE name='"$main_domain_name"'"
+
+# Here are some DB maintainance for old DTC versions
+$MYSQL -u$conf_mysql_login -h$conf_mysql_host -D$conf_mysql_db --execute="ALTER TABLE subdomain CHANGE ip ip VARCHAR(255) DEFAULT 'default' NOT NULL"
+$MYSQL -u$conf_mysql_login -h$conf_mysql_host -D$conf_mysql_db --execute="ALTER TABLE ftp_access CHANGE homedir homedir VARCHAR(255) DEFAULT '' NOT NULL"
+$MYSQL -u$conf_mysql_login -h$conf_mysql_host -D$conf_mysql_db --execute="ALTER TABLE pop_access CHANGE crypt crypt VARCHAR(255) DEFAULT '' NOT NULL"
+$MYSQL -u$conf_mysql_login -h$conf_mysql_host -D$conf_mysql_db --execute="ALTER TABLE pop_access CHANGE passwd passwd VARCHAR(255) DEFAULT '' NOT NULL"
+$MYSQL -u$conf_mysql_login -h$conf_mysql_host -D$conf_mysql_db --execute="UPDATE pop_access SET crypt=ENCRYPT(passwd,CONCAT(\"\$1\$\",SUBSTRING(crypt,4,8)))"
+
+# Add dtc userspace info to mysql db if it's not there
+TMP_FILE=`${MKTEMP} dtc_downer_grep.XXXXXXXX`  || exit 1
+$MYSQL -u$conf_mysql_login -h$conf_mysql_host -Dmysql --execute="DESCRIBE user dtcowner" >${TMP_FILE}
+if ! grep dtcowner ${TMP_FILE} 2>&1 >/dev/null ;then
+	if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+		echo "Adding dtcowner column to mysql.user"
+	fi
+	$MYSQL -u$conf_mysql_login -h$conf_mysql_host -D$conf_mysql_db --execute="ALTER IGNORE TABLE mysql.user ADD dtcowner varchar (255) DEFAULT 'none' NOT NULL"
+fi
+if [ -e ${TMP_FILE} ] ;then
+	rm ${TMP_FILE}
+fi
+
+# 2005/05/05 Remove bad keys preventing good accounting set in old dtc versions
+# This needs to be fixed with no error. Any idea???
+#$MYSQL -u$conf_mysql_login -h$conf_mysql_host -D$conf_mysql_db --execute="ALTER IGNORE TABLE smtp_logs DROP INDEX sender_domain"
+#$MYSQL -u$conf_mysql_login -h$conf_mysql_host -D$conf_mysql_db --execute="ALTER IGNORE TABLE smtp_logs DROP INDEX delivery_domain"
+#$MYSQL -u$conf_mysql_login -h$conf_mysql_host -D$conf_mysql_db --execute="ALTER IGNORE TABLE smtp_logs DROP INDEX delivery_id_text"
+#$MYSQL -u$conf_mysql_login -h$conf_mysql_host -D$conf_mysql_db --execute="ALTER IGNORE TABLE smtp_logs DROP INDEX delivery_id_text_2"
+#$MYSQL -u$conf_mysql_login -h$conf_mysql_host -D$conf_mysql_db --execute="ALTER IGNORE TABLE http_accounting DROP INDEX month"
+#$MYSQL -u$conf_mysql_login -h$conf_mysql_host -D$conf_mysql_db --execute="ALTER IGNORE TABLE email_accounting DROP INDEX sender_domain"
+#$MYSQL -u$conf_mysql_login -h$conf_mysql_host -D$conf_mysql_db --execute="ALTER IGNORE TABLE email_accounting DROP INDEX delivery_domain"
+
+# Add a fullemail field to the pop table if not exists.
+TMP_FILE=`${MKTEMP} dtc_pop_access_grep.XXXXXXXX`  || exit 1
+$MYSQL -u$conf_mysql_login -h$conf_mysql_host -D$conf_mysql_db --execute="DESCRIBE pop_access fullemail" >${TMP_FILE}
+if ! grep fullemail ${TMP_FILE} 2>&1 >/dev/null ;then
+	if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+		echo "Adding fullemail column to dtc.pop_access and updating id@mbox_host field."
+	fi
+	if $MYSQL -u$conf_mysql_login -h$conf_mysql_host -D$conf_mysql_db --execute="ALTER IGNORE TABLE pop_access ADD fullemail varchar (255) DEFAULT 'none' NOT NULL" ; then
+		echo "plop !"
+	fi
+	$MYSQL -u$conf_mysql_login -h$conf_mysql_host -D$conf_mysql_db --execute="UPDATE pop_access SET fullemail = concat( id,  \"@\", mbox_host )"
+fi
+if [ -e ${TMP_FILE} ] ;then
+	rm ${TMP_FILE}
+fi
+
+# Add a dtc user to the mysql db, generate a password randomly if no password is there already
+# Using a file to remember password...
+PATH_DB_PWD_FILE=${PATH_DTC_ETC}/dtcdb_passwd
+if ! [ -e ""${PATH_DB_PWD_FILE} ] ;then
+	MYSQL_DTCDAEMONS_PASS=`echo ${RANDOM}${RANDOM}`
+	echo ${MYSQL_DTCDAEMONS_PASS} >${PATH_DB_PWD_FILE}
+else
+	MYSQL_DTCDAEMONS_PASS=`cat <${PATH_DB_PWD_FILE}`
+fi
+if [ -z "${MYSQL_DTCDAEMONS_PASS}" ] ;then
+	MYSQL_DTCDAEMONS_PASS=${RANDOM}${RANDOM}
+	echo ${MYSQL_DTC_PASS} >${PATH_DB_PWD_FILE}
+fi
+
+chmod 600 ${PATH_DB_PWD_FILE}
+
+# Inserting the user
+$MYSQL -u$conf_mysql_login -h$conf_mysql_host -D$conf_mysql_db --execute="INSERT IGNORE INTO mysql.user (Host, User, Password, Select_priv, Insert_priv, Update_priv, Delete_priv, Create_priv, Drop_priv, Reload_priv, Shutdown_priv, Process_priv, File_priv, Grant_priv, References_priv, Index_priv, Alter_priv) VALUES ('localhost', 'dtcdaemons', PASSWORD('"${MYSQL_DTCDAEMONS_PASS}"'), 'N', 'N', 'N', 'N', 'N', 'N', 'N', 'N', 'N', 'N', 'N', 'N', 'N', 'N')"
+
+# Update the password in case of (bad) reinstallation case
+$MYSQL -u$conf_mysql_login -h$conf_mysql_host -D$conf_mysql_db --execute="UPDATE mysql.user SET Password=PASSWORD('"${MYSQL_DTCDAEMONS_PASS}"') WHERE User='dtcdaemons'"
+
+# grant Select,Insert,Update,Delete,References,Index to ftp_access
+$MYSQL -u$conf_mysql_login -h$conf_mysql_host -D$conf_mysql_db --execute="INSERT IGNORE INTO mysql.tables_priv (Host, Db, User, Table_name, Grantor, Timestamp, Table_priv, Column_priv) VALUES ('localhost', 'dtc', 'dtcdaemons', 'ftp_access', '', NOW(NULL), 'Select,Insert,Update,Delete,References,Index', 'Select')"
+
+# grant Select,Insert,Update,Delete,References,Index to ftp_access
+$MYSQL -u$conf_mysql_login -h$conf_mysql_host -D$conf_mysql_db --execute="INSERT IGNORE INTO mysql.tables_priv (Host, Db, User, Table_name, Grantor, Timestamp, Table_priv, Column_priv) VALUES ('localhost', 'dtc', 'dtcdaemons', 'groups', '', NOW(NULL), 'Select,Insert,Update,Delete,References,Index', 'Select')"
+
+# grant Select,Insert,Update,Delete,References,Index to ftp_logs
+$MYSQL -u$conf_mysql_login -h$conf_mysql_host -D$conf_mysql_db --execute="INSERT IGNORE INTO mysql.tables_priv (Host, Db, User, Table_name, Grantor, Timestamp, Table_priv, Column_priv) VALUES ('localhost', 'dtc', 'dtcdaemons', 'ftp_logs', '', NOW(NULL), 'Select,Insert,Update,Delete,References,Index', '')"
+
+# grant Select,Insert,Update,Delete,References,Index to ftp_accounting
+$MYSQL -u$conf_mysql_login -h$conf_mysql_host -D$conf_mysql_db --execute="INSERT IGNORE INTO mysql.tables_priv (Host, Db, User, Table_name, Grantor, Timestamp, Table_priv, Column_priv) VALUES ('localhost', 'dtc', 'dtcdaemons', 'ftp_accounting', '', NOW(NULL), 'Select,Insert,Update,Delete,References,Index', '')"
+
+# grant all to apachelogs
+$MYSQL -u$conf_mysql_login -h$conf_mysql_host -D$conf_mysql_db --execute="INSERT IGNORE INTO mysql.db (Host, Db, User, Select_priv, Insert_priv, Update_priv, Delete_priv, Create_priv, Drop_priv, Grant_priv, References_priv, Index_priv, Alter_priv) VALUES ('localhost', 'apachelogs', 'dtcdaemons', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'N', 'Y', 'Y', 'Y')"
+
+# grant select to pop_access 
+$MYSQL -u$conf_mysql_login -h$conf_mysql_host -D$conf_mysql_db --execute="INSERT IGNORE INTO mysql.tables_priv (Host, Db, User, Table_name, Grantor, Timestamp, Table_priv, Column_priv) VALUES ('localhost', 'dtc', 'dtcdaemons', 'pop_access', '', NOW(NULL), 'Select,Update', 'Select,Update')"
+# update in case of old installations
+$MYSQL -u$conf_mysql_login -h$conf_mysql_host -D$conf_mysql_db --execute="UPDATE IGNORE mysql.tables_priv SET Timestamp = NOW(NULL) , Table_priv = 'Select,Update', Column_priv = 'Select,Update' WHERE Host = 'localhost' AND Db = 'dtc' AND User = 'dtcdaemons' AND Table_name = 'pop_access' LIMIT 1 "
+
+#$MYSQL -u$conf_mysql_login -h$conf_mysql_host -D$conf_mysql_db --execute="GRANT SELECT , UPDATE ( crypt , passwd ) ON dtc.pop_access TO 'dtcdaemons'@'localhost'"
+
+# grant Select,Insert,Update,Delete,References,Index to smtp_logs
+$MYSQL -u$conf_mysql_login -h$conf_mysql_host -D$conf_mysql_db --execute="INSERT IGNORE INTO mysql.tables_priv (Host, Db, User, Table_name, Grantor, Timestamp, Table_priv, Column_priv) VALUES ('localhost', 'dtc', 'dtcdaemons', 'smtp_logs', '', NOW(NULL), 'Select,Insert,Update,Delete,References,Index', '')"
+
+# grant select to whitelist
+$MYSQL -u$conf_mysql_login -h$conf_mysql_host -D$conf_mysql_db --execute="INSERT IGNORE INTO mysql.tables_priv (Host, Db, User, Table_name, Grantor, Timestamp, Table_priv, Column_priv) VALUES ('localhost', 'dtc', 'dtcdaemons', 'whitelist', '', NOW(NULL), 'Select', 'Select')"
+
+# grant select to fetchmail
+$MYSQL -u$conf_mysql_login -h$conf_mysql_host -D$conf_mysql_db --execute="INSERT IGNORE INTO mysql.tables_priv (Host, Db, User, Table_name, Grantor, Timestamp, Table_priv, Column_priv) VALUES ('localhost', 'dtc', 'dtcdaemons', 'fetchmail', '', NOW(NULL), 'Select', 'Select')"
+
+$MYSQL -u$conf_mysql_login -h$conf_mysql_host -D$conf_mysql_db --execute="FLUSH PRIVILEGES"
+
+# Setup good values depending on Unix distribution
+$MYSQL -u$conf_mysql_login -h$conf_mysql_host -D$conf_mysql_db --execute="UPDATE config SET dtcadmin_path='${PATH_DTC_ADMIN}', dtcclient_path='${PATH_DTC_CLIENT}', dtcdoc_path='${PATH_DTC_SHARED}/doc', dtcemail_path='${PATH_DTC_SHARED}/email' WHERE 1"
+
+# Add the config for nated vhosts if needed
+if [ ""$conf_use_nated_vhosts = "yes" ] ;then
+	$MYSQL -u$conf_mysql_login -h$conf_mysql_host -D$conf_mysql_db --execute="UPDATE config SET use_nated_vhost='yes'"
+	$MYSQL -u$conf_mysql_login -h$conf_mysql_host -D$conf_mysql_db --execute="UPDATE config SET nated_vhost_ip='"${nated_vhost_ip}"'"
+else
+	$MYSQL -u$conf_mysql_login -h$conf_mysql_host -D$conf_mysql_db --execute="UPDATE config SET use_nated_vhost='no'"
+fi
+
+# The panel needs root access (it does database management)
 echo "<?php" > $PATH_DTC_SHARED"/shared/mysql_config.php"
 echo "\$conf_mysql_host=\""$conf_mysql_host"\";" >> $PATH_DTC_SHARED"/shared/mysql_config.php"
 echo "\$conf_mysql_login=\""$conf_mysql_login"\";" >> $PATH_DTC_SHARED"/shared/mysql_config.php"
@@ -329,6 +648,212 @@ echo "\$conf_mysql_conf_ok=\"yes\";" >> $PATH_DTC_SHARED"/shared/mysql_config.ph
 echo "?>" >> $PATH_DTC_SHARED"/shared/mysql_config.php"
 
 cd $curdir
+#!/bin/sh
+
+# this chroot creation script will only work for debian testing
+# please modify this for your particular distribution/OS
+# Damien Mascord <tusker@tusker.org>
+
+# Added support for Debian stable and integrate it in install
+# script for all OS (path needs to be checked for BSD and RedHat...
+# so this script is for the moment UNTESTED)
+# Thomas GOIRAND <thomas [ at ] goirand.fr>
+
+# first check to see if we have the correct command line settings
+#if [ "$1" = "" ]
+#then
+#	echo "Usage: $0 <directory to create chroot in> <webuser> <webgroup>"
+#	exit 1
+#fi
+
+# assign our variables
+CHROOT_DIR=$conf_chroot_path
+WEB_USER=nobody
+
+if [ $CHROOT_DIR"" = "" ] ; then
+	CHROOT_DIR=/var/www/chroot
+fi
+
+if [ $UNIX_TYPE"" = "freebsd" ] ; then
+	WEB_GROUP=nobody
+else
+	WEB_GROUP=nogroup
+fi
+
+if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+	echo "===> Creating chroot tree in "$CHROOT_DIR
+fi
+
+# set our umask so things are created with the correct group perms
+umask 022
+
+# now onto the creation
+mkdir -p $CHROOT_DIR
+cd $CHROOT_DIR
+
+# create directory structure
+mkdir -p etc dev bin lib tmp var/tmp var/run sbin
+mkdir -p usr/bin usr/lib usr/libexec usr/share usr/lib/zoneinfo
+
+# make devices - adjust MAJOR/MINOR as appropriate ( see ls -l /dev/* )
+if ! [ -e dev/null ]
+then
+	if [ $UNIX_TYPE"" = "freebsd" -o $UNIX_TYPE"" = "osx" ];
+	then
+		mknod dev/null    c  2 2   # FreeBSD?
+	else
+		mknod dev/null    c  1 3   # Linux
+	fi
+fi
+
+if [ $UNIX_TYPE"" = "freebsd"  -o $UNIX_TYPE"" = "osx" ] ; then
+	if [ $kernel"" = "OpenBSD" ] ; then
+		if ! [ -e dev/urandom ] ; then
+			mknod dev/urandom c 45 2   # OpenBSD ?
+		fi
+	else
+		if ! [ -e dev/random ] ; then
+			mknod dev/random  c  2 3   # FreeBSD
+		fi
+		if ! [ -e dev/urandom ] ; then
+			mknod dev/urandom  c  2 3
+		fi
+	fi
+else
+	if ! [ -e dev/random ] ; then
+		mknod dev/random  c  1 8   # Linux
+	fi
+	if ! [ -e dev/urandom ] ; then
+		mknod dev/urandom c  1 9   # Linux
+	fi
+fi
+
+# some external programs may need these:
+if [ $UNIX_TYPE"" = "freebsd"  -o $UNIX_TYPE"" = "osx" ] ; then
+	if ! [ -e dev/stdin ] ; then
+		mknod dev/stdin   c 22 0   # FreeBSD, OpenBSD
+	fi
+	if ! [ -e dev/stdout ] ; then
+		mknod dev/stdout  c 22 1   # FreeBSD, OpenBSD
+	fi
+	if ! [ -e dev/stderr ] ; then
+		mknod dev/stderr  c 22 2   # FreeBSD, OpenBSD
+	fi
+fi
+
+# copy required binaries to $CHROOT_DIR/usr/bin and $CHROOT_DIR/bin
+if [ $UNIX_TYPE"" = "gentoo" ] ; then
+	cp -pf /bin/bzip2 usr/bin/
+else
+	cp -pf /usr/bin/bzip2 usr/bin/
+fi
+
+cp -pf /usr/bin/file usr/bin/
+
+if [ $UNIX_TYPE"" = "freebsd" -o $UNIX_TYPE"" = "osx" ] ; then
+	cp -pf /usr/bin/cpio usr/bin
+	cp -pf /usr/bin/gunzip /usr/bin/false /usr/bin/su bin/
+else
+	cp -pf /bin/gunzip /usr/bin/zip /bin/false /bin/su bin/
+	cp -pf /bin/cpio usr/bin
+fi
+
+# copy required binaries to $CHROOT_DIR/bin
+cp -pf /bin/sh /bin/echo /bin/ls /bin/pwd /bin/cat bin/
+
+# copy ldconfig from sbin to $CHROOT_DIR/sbin
+if ! [ $UNIX_TYPE"" = "osx" ] ; then
+	cp -pf /sbin/ldconfig sbin/
+fi
+
+# copy needed /etc files to $CHROOT_DIR/etc
+cp -pf /etc/protocols /etc/services /etc/hosts \
+  /etc/group /etc/passwd /etc/resolv.conf etc/
+
+if [ -e /etc/host.conf ] ; then
+	cp -pf /etc/host.conf etc/
+fi
+
+if [ -e /etc/ld.conf ] ; then
+	cp -pf /etc/ld.conf etc/
+fi
+
+if [ -e /etc/nsswitch.conf ] ; then
+	cp -pf /etc/nsswitch.conf etc/
+fi
+
+if [ -e /etc/localtime ] ; then
+	cp -pf /etc/localtime etc/
+fi
+
+# copy shared libraries to $CHROOT_DIR/lib
+#   (check:  ldd /usr/bin/perl (or other binary) to see which ones are needed)
+#
+#FreeBSD: 
+#for j in \
+if [ $UNIX_TYPE"" = "freebsd"  ] ; then
+	cp -pf /usr/lib/libc.so* /usr/lib/libm.so* \
+	  /usr/lib/libstdc\+\+.so* usr/lib/
+	if [ -e /usr/compat/linux/usr/lib/libz.so.1 ] ; then
+		cp /usr/compat/linux/usr/lib/libz.so.1 usr/lib
+	fi
+else
+	if [ $UNIX_TYPE"" = "osx"  ] ; then
+		cp -pf /usr/lib/dyld /usr/lib/libSystem.B.dylib \
+		  /usr/lib/libc.dylib /usr/lib/libdl.dylib \
+		  /usr/lib/libncurses.5.dylib /usr/lib/libpam.dylib \
+		  /usr/lib/libpthread.dylib usr/lib/
+		cp -pf /usr/lib/dylib1.o /usr/lib/libSystem.dylib \
+		  /usr/lib/libcrypto.dylib /usr/lib/libm.dylib \
+		  /usr/lib/libncurses.dylib /usr/lib/libpam_misc.dylib \
+		  /usr/lib/libz.dylib usr/lib
+		mkdir usr/lib/system
+		cp -pf /usr/lib/system/libmathCommon.A.dylib usr/lib/system
+	else
+		cp -pf /lib/libdl.so.2 /lib/libm.so.6 /lib/libpthread.so.0 \
+		  /lib/libc.so.6 /lib/libcrypt.so.1 /lib/ld-linux.so.2 \
+		  /lib/libncurses.so.5 \
+		  /lib/librt.so.1 \
+		  /lib/libpam.so.0 /lib/libpam_misc.so.0 lib/
+		if [ -e /usr/lib/libmagic.so.1 ]
+		then
+			cp -pf /usr/lib/libmagic.so.1 lib/
+		fi
+		if [ $UNIX_TYPE"" = "gentoo" ] ; then
+			cp -pf /lib/libz.so.1 lib/
+		else
+			cp -pf /usr/lib/libz.so.1 lib/
+		fi
+	fi
+fi
+
+# magic files needed by file(1). Different versions and installations
+# expect magic files in different locations. Check the documentation.
+# Some usual locations are:
+if [ -e /usr/share/misc/file ]
+then
+	#cp -pf /usr/local/share/file/*  usr/local/share/file/
+	mkdir -p usr/share/misc/file
+	cp -pf /usr/share/misc/file/magic*   usr/share/misc/file
+	#cp -pf /usr/share/magic         usr/share/
+fi
+
+# set protections
+chmod 1770 tmp
+chmod 1770 var/tmp
+chmod 666 dev/null
+chmod 644 dev/*random
+
+#now need to copy over the perl binary and some modules
+cp -pf /usr/bin/perl usr/bin/
+
+if ! [ $UNIX_TYPE"" = "osx" ] ;then
+	# now create our ld.so cache
+	chroot $CHROOT_DIR ./sbin/ldconfig 
+	# just in case we have wiped our /etc/ld.so.cache (run locally)
+	/sbin/ldconfig
+fi
+
 
 # Multi OS (Unix system) install sh script for DTC
 # Written by Thomas GOIRAND <thomas@goirand.fr>
@@ -346,7 +871,7 @@ cd $curdir
 # because it's up to you to write it ! :)
 # Do a "cat configure_deamons.sh >>your_os_setup_script"
 
-# This script modify named, profptd, apache and qmail configuration
+# This script modify all your daemons configuration
 # files so that it uses the DTC genated files.
 
 #
@@ -354,8 +879,39 @@ cd $curdir
 # so it works automaticaly even without Tucows API
 #
 
-if ! [ -f $PATH_DTC_SHARED/securepay/paiement_config.php ]
-then
+# VERBOSE_INSTALL=yes
+
+# We are just after the creation of the chroot tree, so it's time to copy it over
+# our newly created vhosts dirs (in update mode)
+
+if [ -z ""$MYSQL_DB_SOCKET_PATH ] ;then
+	MYSQL_DB_SOCKET_PATH="/var/run/mysqld/mysqld.sock"
+fi
+
+
+# Copy newly created chroot tree to the 3 vhosts created with this installer (mx and ns don't have apache vhosts generated)
+if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+	echo -n "===> Adding chroot environment to www."$main_domain_name
+fi
+cp -fupR  $conf_chroot_path $conf_hosting_path"/"$conf_adm_login"/"$main_domain_name"/subdomains/www/"
+
+if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+	echo -n " "$dtc_admin_subdomain"."$main_domain_name
+fi
+cp -fupR  $conf_chroot_path $conf_hosting_path"/"$conf_adm_login"/"$main_domain_name"/subdomains/404"
+
+if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+	echo -n " 404."$main_domain_name
+fi
+cp -fupR  $conf_chroot_path $conf_hosting_path"/"$conf_adm_login"/"$main_domain_name"/subdomains/"$dtc_admin_subdomain
+
+if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+	echo chown -R nobody:65534 $conf_hosting_path"/"$conf_adm_login"/"$main_domain_name"/subdomains"
+fi
+chown -R nobody:65534 $conf_hosting_path"/"$conf_adm_login"/"$main_domain_name"/subdomains"
+
+
+if ! [ -f $PATH_DTC_SHARED/shared/securepay/paiement_config.php ] ; then
 	cp -v $PATH_DTC_SHARED/shared/securepay/RENAME_ME_paiement_config.php $PATH_DTC_SHARED/shared/securepay/paiement_config.php
 fi
 
@@ -363,25 +919,60 @@ fi
 # Include $PATH_DTC_ETC/vhosts.conf in $PATH_HTTPD_CONF
 #
 
-TMP_FILE=/tmp/DTC_install.httpd.conf
+TMP_FILE=`${MKTEMP} DTC_install.httpd.conf.XXXXXX` || exit 1
 
-echo "===> Modifying httpd.conf"
-if grep "Configured by DTC" $PATH_HTTPD_CONF
+if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+	echo "===> Modifying httpd.conf"
+fi
+# need to see if we can use the modules-config or apacheconfig tools
+HTTPD_MODULES_CONFIG=/usr/sbin/apache-modconf
+
+# if apacheconfig is a symlink (deprecated), then use modules-config
+if [ -f $HTTPD_MODULES_CONFIG ]
 then
-	echo "httpd.conf has been configured before : skiping include inssertion !"
+	HTTPD_MODULES_CONFIG="$HTTPD_MODULES_CONFIG apache"
+else
+	HTTPD_MODULES_CONFIG=""
+fi
+
+# check to see if our apacheconfig has been obseleted
+if [ "$HTTPD_MODULES_CONFIG" = "" ]
+then
+	if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+		echo "Not using modules-config tool"
+	fi
+else
+	if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+		echo "Using $HTTPD_MODULES_CONFIG to configure apache modules"
+	fi
+fi
+
+if grep "Configured by DTC" $PATH_HTTPD_CONF >/dev/null
+then
+	if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+		echo "httpd.conf has been configured before : skiping include inssertion !"
+	fi
 else
 	if ! [ -f $PATH_HTTPD_CONF.DTC.backup ]
 	then
-		echo "===> Backuping "$PATH_HTTPD_CONF
+		if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+			echo "===> Backuping "$PATH_HTTPD_CONF
+		fi
 		cp -f "$PATH_HTTPD_CONF" "$PATH_HTTPD_CONF.DTC.backup"
 	fi
-	echo "=> Verifying User and Group directive"
+
+	if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+		echo "=> Verifying User and Group directive"
+	fi
+
+	# Those 2 are for debian
 	if grep "User www-data" $PATH_HTTPD_CONF >/dev/null 2>&1
 	then
 		echo "User www-data -> User nobody"
 		sed "s/User www-data/User nobody/" $PATH_HTTPD_CONF >$TMP_FILE
 		cat <$TMP_FILE >$PATH_HTTPD_CONF
 	fi
+
 	if grep "Group www-data" $PATH_HTTPD_CONF >/dev/null 2>&1
 	then
 		echo "Group www-data -> Group nogroup"
@@ -389,6 +980,7 @@ else
 		cat <$TMP_FILE >$PATH_HTTPD_CONF
 	fi
 
+	# Those 2 are for BSD
 	if grep "User www" $PATH_HTTPD_CONF >/dev/null 2>&1
 	then
 		echo "User www -> User nobody"
@@ -401,93 +993,213 @@ else
 		sed "s/Group www/Group nobody/" $PATH_HTTPD_CONF >$TMP_FILE
 		cat <$TMP_FILE >$PATH_HTTPD_CONF
 	fi
-
-	echo "=> Checking apache modules"
-	echo -n "Checking for php4..."
-	if grep -i "# LoadModule php4_module" $PATH_HTTPD_CONF >/dev/null 2>&1
+	# Those 2 are for RedHat
+	if grep "User apache" $PATH_HTTPD_CONF >/dev/null 2>&1
 	then
-		echo "found commented: activating php4 module!"
-		sed "s/# LoadModule php4_module/LoadModule php4_module/" $PATH_HTTPD_CONF >$TMP_FILE
+		echo "User apache -> User nobody"
+		sed "s/User apache/User nobody/" $PATH_HTTPD_CONF >$TMP_FILE
 		cat <$TMP_FILE >$PATH_HTTPD_CONF
-	else
-		if grep -i "LoadModule php4_module" $PATH_HTTPD_CONF >/dev/null 2>&1
-		then
-			echo " ok!"
-		else
-			echo "php4 missing! please install it or run apacheconfig!!!"
-			exit 1
-		fi
+	fi
+	if grep "Group apache" $PATH_HTTPD_CONF >/dev/null 2>&1
+	then
+		echo "Group apache -> Group nobody"
+		sed "s/Group apache/Group nobody/" $PATH_HTTPD_CONF >$TMP_FILE
+		cat <$TMP_FILE >$PATH_HTTPD_CONF
 	fi
 
-	echo -n "Checking for ssl..."
-	if grep -i "# LoadModule ssl_module" $PATH_HTTPD_CONF >/dev/null 2>&1
+	if [ "$UNIX_TYPE" = "debian" -o "$UNIX_TYPE" = "osx" ]
 	then
-		echo "found commented: activating ssl module!"
-		sed "s/# LoadModule ssl_module/LoadModule ssl_module/" $PATH_HTTPD_CONF >$TMP_FILE
-		cat <$TMP_FILE >$PATH_HTTPD_CONF
-	else
-		if grep -i "LoadModule ssl_module" $PATH_HTTPD_CONF >/dev/null 2>&1
-		then
-			echo " ok!"
-		else
-			echo "!!! Warning: ssl_module for apache not present !!!"
+		if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+			echo "=> Checking apache modules"
+			echo -n "Checking for php4..."
 		fi
-	fi
+		# first of all, may as well try to use the provided modules-config or apacheconfig provided by debian...
+		# else use the normal method to be cross platform compatible
 
-	echo -n "Checking for sql_log..."
-	if grep -i "# LoadModule sql_log_module" $PATH_HTTPD_CONF >/dev/null 2>&1
-	then
-		echo "found commented: ativating sql_log module!"
-		sed "s/# LoadModule sql_log_module/LoadModule sql_log_module/" $PATH_HTTPD_CONF >$TMP_FILE
-		cat <$TMP_FILE >$PATH_HTTPD_CONF
-	else
-		if grep -i "LoadModule log_sql_module" $PATH_HTTPD_CONF >/dev/null 2>&1
+		if [ "$HTTPD_MODULES_CONFIG" = "" ]
 		then
-			echo " ok!"
-		else
-			if grep -i "# LoadModule log_sql_module" $PATH_HTTPD_CONF >/dev/null 2>&1
+			# need to support modules.conf version of apache debian package
+			# default to normal HTTPD_CONF
+			PATH_HTTPD_CONF_TEMP=$PATH_HTTPD_CONF
+			if [ -f $PATH_HTTPD_MODULES_CONF ]
 			then
-				echo "found commented: ativating sql_log module!"
-				sed "s/# LoadModule log_sql_module/LoadModule log_sql_module/" $PATH_HTTPD_CONF >$TMP_FILE
-				cat <$TMP_FILE >$PATH_HTTPD_CONF
+				PATH_HTTPD_CONF_TEMP=$PATH_HTTPD_MODULES_CONF
+			fi
+			if grep -i "# LoadModule php4_module" $PATH_HTTPD_CONF_TEMP >/dev/null 2>&1
+			then
+				if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+					echo "found commented: activating php4 module!"
+				fi
+				sed "s/# LoadModule php4_module/LoadModule php4_module/" $PATH_HTTPD_CONF_TEMP >$TMP_FILE
+				cat <$TMP_FILE >$PATH_HTTPD_CONF_TEMP
 			else
-				if grep -i "LoadModule sql_log_module" $PATH_HTTPD_CONF >/dev/null 2>&1
+				if grep -i "LoadModule php4_module" $PATH_HTTPD_CONF_TEMP >/dev/null 2>&1
 				then
-					echo " ok!"
+					if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+						echo " ok!"
+					fi
 				else
-					echo "!!! sql_log_module for apache not present !!!"
-					echo "please install it or run apacheconfig"
-					echo "or add the following type directive"
-					echo "(matching your path) to httpd.conf:"
-					echo "LoadModule sql_log_module /usr/lib/apache/1.3/mod_log_sql.so (debian)"
-					echo "LoadModule log_sql_module /usr/local/libexec/apache/mod_log_sql.so (bsd)"
+					if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+						echo "php4 missing! please install it or run apacheconfig!!!"
+					fi
 					exit 1
 				fi
 			fi
+		else
+			if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+				echo $HTTPD_MODULES_CONFIG enable php4_module
+			fi
+			$HTTPD_MODULES_CONFIG enable php4_module
+			if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+				echo $HTTPD_MODULES_CONFIG enable mod_php4
+			fi
+			$HTTPD_MODULES_CONFIG enable mod_php4
+			if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+				echo " enabled by $HTTPD_MODULES_CONFIG"
+			fi
 		fi
+
+		if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+			echo -n "Checking for ssl..."
+		fi
+		if [ "$HTTPD_MODULES_CONFIG" = "" ]
+		then
+			if grep -i "# LoadModule ssl_module" $PATH_HTTPD_CONF_TEMP >/dev/null 2>&1
+			then
+				if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+					echo "found commented: activating ssl module!"
+				fi
+				sed "s/# LoadModule ssl_module/LoadModule ssl_module/" $PATH_HTTPD_CONF_TEMP >$TMP_FILE
+				cat <$TMP_FILE >$PATH_HTTPD_CONF_TEMP
+			else
+				if grep -i "LoadModule ssl_module" $PATH_HTTPD_CONF_TEMP >/dev/null 2>&1
+				then
+					if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+						echo " ok!"
+					fi
+				else
+					if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+						echo "!!! Warning: ssl_module for apache not present !!!"
+					fi
+				fi
+			fi
+		else
+			if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+				echo $HTTPD_MODULES_CONFIG enable ssl_module
+			fi
+			$HTTPD_MODULES_CONFIG enable ssl_module
+			if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+				echo " enabled by $HTTPD_MODULES_CONFIG"
+			fi
+		fi
+
+		if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+			echo -n "Checking for sql_log..."
+		fi
+		if [ "$HTTPD_MODULES_CONFIG" = "" ]
+		then
+			if grep -i "# LoadModule sql_log_module" $PATH_HTTPD_CONF_TEMP >/dev/null 2>&1
+			then
+				if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+					echo "found commented: ativating sql_log module!"
+				fi
+				sed "s/# LoadModule sql_log_module/LoadModule sql_log_module/" $PATH_HTTPD_CONF_TEMP >$TMP_FILE
+				cat <$TMP_FILE >$PATH_HTTPD_CONF_TEMP
+			else
+				if grep -i "LoadModule log_sql_module" $PATH_HTTPD_CONF_TEMP >/dev/null 2>&1
+				then
+					if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+						echo " ok!"
+					fi
+				else
+					if grep -i "# LoadModule log_sql_module" $PATH_HTTPD_CONF_TEMP >/dev/null 2>&1
+					then
+						if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+							echo "found commented: ativating sql_log module!"
+						fi
+						sed "s/# LoadModule log_sql_module/LoadModule log_sql_module/" $PATH_HTTPD_CONF_TEMP >$TMP_FILE
+						cat <$TMP_FILE >$PATH_HTTPD_CONF_TEMP
+					else
+						if grep -i "LoadModule sql_log_module" $PATH_HTTPD_CONF_TEMP >/dev/null 2>&1
+						then
+							if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+								echo " ok!"
+							fi
+						else
+							echo "!!! sql_log_module for apache not present !!!"
+							echo "please install it or run apacheconfig"
+							echo "or add the following type directive"
+							echo "(matching your path) to httpd.conf:"
+							echo "LoadModule sql_log_module /usr/lib/apache/1.3/mod_log_sql.so (debian)"
+							echo "LoadModule log_sql_module /usr/local/libexec/apache/mod_log_sql.so (bsd)"
+							exit 1
+						fi
+					fi
+				fi
+			fi
+		else
+			if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+				echo $HTTPD_MODULES_CONFIG enable sql_log_module
+			fi
+			$HTTPD_MODULES_CONFIG enable sql_log_module
+			$HTTPD_MODULES_CONFIG enable mod_log_sql # just in case
+			if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+				echo " enabled by $HTTPD_MODULES_CONFIG"
+			fi
+		fi
+	else
+		echo ""
+		echo "!!! WARNING !!! Tests for the folling apache modules"
+		echo "has NOT been executed because this could crash"
+		echo "the installer. Please verify you have the following"
+		echo "apache modules configured and working:"
+		echo "php4, ssl, rewrite, and sql_log"
+		echo "Note also that current DTC wroks with SBOX and that it"
+		echo "should be compiled and installed on your server to"
+		echo "enable cgi-bin protected and chrooted environment."
+		echo ""
 	fi
 
-	echo -n "Checking for AllowOverride..."
+	if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+		echo -n "Checking for AllowOverride..."
+	fi
 	if grep "AllowOverride None" $PATH_HTTPD_CONF
 	then
-		echo "AllowOverride None -> AllowOverride AuthConfig FileInfo Limit Indexes"
+		if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+			echo "AllowOverride None -> AllowOverride AuthConfig FileInfo Limit Indexes"
+		fi
 		sed "s/AllowOverride None/AllowOverride AuthConfig FileInfo Limit Indexes/" $PATH_HTTPD_CONF >$TMP_FILE
 		cat <$TMP_FILE >$PATH_HTTPD_CONF
 	else
-		echo "ok!"
+		if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+			echo "ok!"
+		fi
+	fi
+	if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+		echo "=> Adding DTC's directives to httpd.conf end"
 	fi
 
-	echo "=> Adding DTC's directives to httpd.conf end"
-	echo "# Configured by DTC v0.12 : please do not touch this line !
+	# It seems redhat has already the Listen directives...
+	if [ ""$UNIX_TYPE = "redhat" -o ""$UNIX_TYPE = "gentoo" ] ;then
+		echo "# Configured by DTC v0.12 : please do not touch this line !
+Include $PATH_DTC_ETC/vhosts.conf" >>$PATH_HTTPD_CONF
+	else
+		echo "# Configured by DTC v0.12 : please do not touch this line !
 Include $PATH_DTC_ETC/vhosts.conf
 Listen 80
-Listen 443
-
-LogSQLLoginInfo localhost "$conf_mysql_login" "$conf_mysql_pass"
-LogSQLSocketFile /var/run/mysqld/mysqld.sock
-LogSQLDatabase apachelogs
+Listen 443" >>$PATH_HTTPD_CONF
+	fi
+	echo "LogSQLLoginInfo localhost dtcdaemons "${MYSQL_DTCDAEMONS_PASS} >>$PATH_HTTPD_CONF
+	if [ ""$UNIX_TYPE = "freebsd" ] ;then
+		echo "LogSQLSocketFile /tmp/mysqld.sock" >>$PATH_HTTPD_CONF
+	else
+		echo "LogSQLSocketFile ${MYSQL_DB_SOCKET_PATH}" >>$PATH_HTTPD_CONF
+	fi
+	echo "LogSQLDatabase apachelogs
 LogSQLCreateTables On
 LogSQLTransferLogFormat IAbhRrSsU
+Alias /dtc404/	$PATH_DTC_ETC/dtc404/
+ErrorDocument 404 /dtc404/404.php
 # End of DTC configuration v0.12 : please don't touch this line !" >>$PATH_HTTPD_CONF
 	if [ -f $TMP_FILE ]
 	then
@@ -495,95 +1207,734 @@ LogSQLTransferLogFormat IAbhRrSsU
 	fi
 fi
 
+# Create the ssl certificate if it does not exists (for distribs with /etc/apache only for the moment)
+if [ -e "/etc/apache" ]; then
+	if [ -e "/etc/apache/ssl" ]; then
+		mkdir -p /etc/apache/ssl
+	fi
+fi
+
+# copy the template directory from shared to etc, so we can edit it without worry of being purged on each install
+# only copy the directory, if it doesn't already exist in the etc path
+if [ -e "$PATH_DTC_SHARED/shared/template" ]; then
+	if [ ! -e "$PATH_DTC_ETC/template" ]; then
+		cp -r $PATH_DTC_SHARED/shared/template $PATH_DTC_ETC
+	fi
+	chown -R nobody:65534 $PATH_DTC_ETC/template
+	chmod -R 775 $PATH_DTC_ETC/template
+fi
+
+# copy the 404 index.php file if none is found.
+if ! [ -e $conf_hosting_path"/"$conf_adm_login"/"$main_domain_name"/subdomains/404/html/index.php" ]; then
+	if ! [ -e $conf_hosting_path"/"$conf_adm_login"/"$main_domain_name"/subdomains/404/html/index.html" ]; then
+		if [ -e $PATH_DTC_SHARED/shared/404_template/index.php ]; then
+			cp $PATH_DTC_SHARED/shared/404_template/index.php $conf_hosting_path"/"$conf_adm_login"/"$main_domain_name"/subdomains/404/html/"
+		fi
+	fi
+fi
+
+# copy the Error 404 document
+if ! [ -e $conf_hosting_path"/"$conf_adm_login"/"$main_domain_name"/subdomains/www/html/404.php" ]; then
+	if [ -e $PATH_DTC_SHARED/shared/404_template/404.php ]; then 
+		cp $PATH_DTC_SHARED/shared/404_template/404.php $conf_hosting_path"/"$conf_adm_login"/"$main_domain_name"/subdomains/www/html/"
+	fi
+fi
+
+# also copy it to the dtc404 directory
+if ! [ -e $PATH_DTC_ETC/dtc404/404.php ]; then
+	mkdir -p $PATH_DTC_ETC/dtc404/
+	cp $PATH_DTC_SHARED/shared/404_template/404.php $PATH_DTC_ETC/dtc404/
+fi
+
+PATH_PAMD_SMTP=/etc/pam.d/smtp
+if [ -e /etc/pam.d/ ]
+then
+	if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+		echo "===> Adding configuration inside "$PATH_PAMD_SMTP
+	fi
+	if [ -f $PATH_PAMD_SMTP ]
+	then
+		if ! [ -f $PATH_PAMD_SMTP.DTC.backup ]
+		then
+			cp -f $PATH_PAMD_SMTP $PATH_PAMD_SMTP.DTC.backup
+		fi
+	fi
+	touch $PATH_PAMD_SMTP
+	echo "auth required pam_mysql.so user=dtcdaemons passwd="${MYSQL_DAEMONS_PASS}" db="$conf_mysql_db" table=pop_access usercolumn=id passwdcolumn=password crypt=0" >$PATH_PAMD_SMTP
+#	if grep "Configured by DTC" $PATH_PAMD_SMTP
+#		echo $PATH_PAMD_SMTP" has been configured before: skiping include insertion!"
+#	else
+#		echo "Including configuration in "$PATH_PAMD_SMTP
+#	fi
+fi
+
 #
 # include $PATH_DTC_ETC/named.zones in $PATH_NAMED_CONF
 #
-echo "===> Adding inclusion to named.conf"
-if grep "Configured by DTC" $PATH_NAMED_CONF
+if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+	echo "===> Adding inclusion to named.conf"
+fi
+if grep "Configured by DTC" $PATH_NAMED_CONF >/dev/null
 then
-	echo "named.conf has been configured before : skiping include inssertion !"
+	if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+		echo "named.conf has been configured before : skiping include insertion !"
+	fi
 else
-	echo "Including named.conf in $PATH_NAMED_CONF"
+	if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+		echo "Including named.conf in $PATH_NAMED_CONF"
+	fi
 	if ! [ -f $PATH_NAMED_CONF.DTC.backup ]
 	then
 		cp -f $PATH_NAMED_CONF $PATH_NAMED_CONF.DTC.backup
 	fi
-	echo "// Configured by DTC v0.10 : please don't touch this line !" >/tmp/DTC_install_named.conf
-	echo "include \"$PATH_DTC_ETC/named.conf\";" >>/tmp/DTC_install_named.conf
+	TMP_FILE=`${MKTEMP} DTC_install.named.conf.XXXXXX` || exit 1
+	echo "// Configured by DTC v0.10 : please don't touch this line !" > $TMP_FILE
+	echo "include \"$PATH_DTC_ETC/named.conf\";" >> $TMP_FILE
 	touch $PATH_DTC_ETC/named.conf
-	cat </tmp/DTC_install_named.conf >>$PATH_NAMED_CONF
+	cat < $TMP_FILE >>$PATH_NAMED_CONF
+	if [ -e $TMP_FILE ]; then
+		rm -f $TMP_FILE
+	fi
+fi
+
+# only try and do qmail stuff if we have qmail installed! (check the control directory)
+if [ -e "$PATH_QMAIL_CTRL" ] ;then
+	#
+	# Install the qmail links in the /etc/qmail
+	#
+	if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+		echo "===> Linking qmail control files to DTC generated files"
+		echo "111"
+	fi
+	if ! [ -e $PATH_QMAIL_CTRL/rcpthosts.DTC.backup ]
+	then
+		cp -f $PATH_QMAIL_CTRL/rcpthosts $PATH_QMAIL_CTRL/rcpthosts.DTC.backup
+	fi
+	rm -f $PATH_QMAIL_CTRL/rcpthosts
+	touch $PATH_DTC_ETC/rcpthosts
+	ln -s $PATH_DTC_ETC/rcpthosts $PATH_QMAIL_CTRL/rcpthosts
+
+	touch $PATH_QMAIL_CTRL/virtualdomains
+	if ! [ -e $PATH_QMAIL_CTRL/virtualdomains.DTC.backup ]
+	then
+		cp -f $PATH_QMAIL_CTRL/virtualdomains $PATH_QMAIL_CTRL/virtualdomains.DTC.backup
+	fi
+	rm -f $PATH_QMAIL_CTRL/virtualdomains
+	touch $PATH_DTC_ETC/virtualdomains
+	ln -s $PATH_DTC_ETC/virtualdomains $PATH_QMAIL_CTRL/virtualdomains
+
+	if ! [ -e /var/qmail/users/assign.DTC.backup ]
+	then
+		if [ -e /var/qmail/users/assign ]; then
+			cp -f /var/qmail/users/assign /var/qmail/users/assign.DTC.backup
+		fi
+	fi
+	rm -f /var/qmail/users/assign
+	touch $PATH_DTC_ETC/assign
+	if ! [ -e /var/qmail/users ]; then
+		mkdir -p /var/qmail/users
+	fi
+	ln -s $PATH_DTC_ETC/assign /var/qmail/users/assign
+
+	# Complete mistake ! Please forgive me !
+	#
+	#if ! [ -f $PATH_QMAIL_CTRL/locals.DTC.backup ]
+	#then
+	#	touch $PATH_QMAIL_CTRL/locals
+	#        cp -f $PATH_QMAIL_CTRL/locals $PATH_QMAIL_CTRL/locals.DTC.backup
+	#fi
+	#rm -f $PATH_QMAIL_CTRL/locals
+	#touch $PATH_DTC_ETC/rcpthosts
+	#ln -s $PATH_DTC_ETC/rcpthosts $PATH_QMAIL_CTRL/locals
+
+	touch /etc/poppasswd
+	if ! [ -e /etc/poppasswd.DTC.backup ]
+	then
+		cp -f /etc/poppasswd /etc/poppasswd.DTC.backup
+	fi
+	rm -f /etc/poppasswd
+	touch $PATH_DTC_ETC/poppasswd
+	ln -s $PATH_DTC_ETC/poppasswd /etc/poppasswd
+else
+	if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+		echo "Could not found qmail directory: skipping"
+	fi
 fi
 
 #
-# Install the qmail links in the /etc/qmail
+# Make some changes to the amavisd-new configuration to allow clamav to work with it cleanly
 #
-echo "===> Linking qmail control files to DTC generated files"
-if ! [ -f $PATH_QMAIL_CTRL/rcpthosts.DTC.backup ]
-then
-	cp -f $PATH_QMAIL_CTRL/rcpthosts $PATH_QMAIL_CTRL/rcpthosts.DTC.backup
-fi
-rm -f $PATH_QMAIL_CTRL/rcpthosts
-touch $PATH_DTC_ETC/rcpthosts
-ln -s $PATH_DTC_ETC/rcpthosts $PATH_QMAIL_CTRL/rcpthosts
 
-touch $PATH_QMAIL_CTRL/virtualdomains
-if ! [ -f $PATH_QMAIL_CTRL/virtualdomains.DTC.backup ]
-then
-	cp -f $PATH_QMAIL_CTRL/virtualdomains $PATH_QMAIL_CTRL/virtualdomains.DTC.backup
-fi
-rm -f $PATH_QMAIL_CTRL/virtualdomains
-touch $PATH_DTC_ETC/virtualdomains
-ln -s $PATH_DTC_ETC/virtualdomains $PATH_QMAIL_CTRL/virtualdomains
+# make sure the amavisd configuration has 'amavis' user and group
 
-if ! [ -f /var/qmail/users/assign.DTC.backup ]
-then
-	cp -f /var/qmail/users/assign /var/qmail/users/assign.DTC.backup
-fi
-rm -f /var/qmail/users/assign
-touch $PATH_DTC_ETC/assign
-ln -s $PATH_DTC_ETC/assign /var/qmail/users/assign
+if [ -f "$PATH_AMAVISD_CONF" ]; then
+        if [ ""$VERBOSE_INSTALL == "yes" ]; then
+                echo "Checking user and group configuration for amavisd..."
+        fi
 
-# Complete mistake ! Please forgive me !
+        # make sure our users exist for amavis
+        set +e
+        # turn back on error handling, these users probably exist already
+        $GROUP_ADD_CMD amavis > /dev/null 2>&1
+        if [ $? -ne 0 ]; then
+                if [ ""$VERBOSE_INSTALL == "yes" ]; then
+                        echo "Group amavis already exists..."
+                fi
+        fi
+        $USER_ADD_CMD -g amavis amavis > /dev/null 2>&1
+        if [ $? -ne 0 ]; then
+                if [ ""$VERBOSE_INSTALL == "yes" ]; then
+                        echo "User amavis already exists..."
+                fi
+        fi
+        $PASSWD_CMD -l amavis > /dev/null 2>&1
+        if [ $? -ne 0 ]; then
+                if [ ""$VERBOSE_INSTALL == "yes" ]; then
+                        echo "Change password failed for amavis user"
+                fi
+        fi
+        set -e
+
+        if grep "Configured by DTC" "$PATH_AMAVISD_CONF" >/dev/null; then
+                if [ ""$VERBOSE_INSTALL == "yes" ]; then
+                        echo "$PATH_AMAVISD_CONF already configured..."
+                fi
+        else
+                if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+                        echo "Inserting configuration into $PATH_AMAVISD_CONF"
+                fi
+
+                # strip the 1; from the end of the config file
+                perl -i -p -e 's/^1;[^\n]*\n//' $PATH_AMAVISD_CONF
+
+		# fix the clamd ctl file to point to /var/run/clamav/clamd.ctl
+		perl -i -p -e 's/\"i\/.*?\/clamd.ctl\"/\"\/var\/run\/clamav\/clamd.ctl\"/' $PATH_AMAVISD_CONF
+
+		mkdir -p /var/run/clamav/
+		chown -R clamav:clamav /var/run/clamav
+
+                TMP_FILE=`${MKTEMP} dtc_install.amavisd.conf.XXXXXX` || exit 1
+                echo "# Configured by DTC $VERSION" >> $TMP_FILE
+                echo "\$daemon_user  = 'amavis';" >> $TMP_FILE
+                echo "\$daemon_group  = 'amavis';" >> $TMP_FILE
+                echo "\$final_virus_destiny = D_DISCARD;" >> $TMP_FILE
+                echo "\$final_spam_destiny = D_PASS;" >> $TMP_FILE
+                echo "\$final_banned_destiny = D_PASS;" >> $TMP_FILE
+                echo "\$final_bad_header_destiny = D_PASS;" >> $TMP_FILE
+                echo "\$warnvirussender = 0;" >> $TMP_FILE
+                echo "\$warnspamsender = 0;" >> $TMP_FILE
+		echo " # kill level defaults " >> $TMP_FILE
+
+		echo "\$sa_tag_level_deflt  = 2.0;" >> $TMP_FILE
+		echo "\$sa_tag2_level_deflt = 6.3;" >> $TMP_FILE
+		echo "\$sa_kill_level_deflt = \$sa_tag2_level_deflt;" >> $TMP_FILE
+		echo "\$sa_dsn_cutoff_level = 50;" >> $TMP_FILE
+
+		echo "\$sa_mail_body_size_limit = 150*1024;" >> $TMP_FILE
+		echo "# The following line will read the local domains as generated by DTC, amavisd will need to be restarted for new domains..." >> $TMP_FILE
+		echo "read_hash(\\%local_domains, '$PATH_DTC_ETC/local_domains');" >> $TMP_FILE
+
+                echo "# End of DTC configuration $VERSION" >> $TMP_FILE
+                echo "1;  # insure a defined return" >> $TMP_FILE
+
+                # now to insert it at the end of the actual amavisd.conf
+                cat < $TMP_FILE >>$PATH_AMAVISD_CONF
+        fi
+fi
+
+if [ -f "$PATH_CLAMAV_CONF" ]; then
+        if [ ""$VERBOSE_INSTALL == "yes" ]; then
+                echo "Checking user and group configuration for clamav..."
+        fi
+
+        # make sure our users exist for amavis
+        set +e
+        # turn back on error handling, these users probably exist already
+        $GROUP_ADD_CMD clamav > /dev/null 2>&1
+        if [ $? -ne 0 ]; then
+                if [ ""$VERBOSE_INSTALL == "yes" ]; then
+                        echo "Group clamav already exists..."
+                fi
+        fi
+        $USER_ADD_CMD -g clamav clamav > /dev/null 2>&1
+        if [ $? -ne 0 ]; then
+                if [ ""$VERBOSE_INSTALL == "yes" ]; then
+                        echo "User clamav already exists..."
+                fi
+        fi
+        $PASSWD_CMD -l clamav > /dev/null 2>&1
+        if [ $? -ne 0 ]; then
+                if [ ""$VERBOSE_INSTALL == "yes" ]; then
+                        echo "Change password failed for clamav user"
+                fi
+        fi
+	# now add amavisd to the clamav group and vice versa
+	$USER_MOD_CMD -G clamav,amavis clamav > /dev/null 2>&1
+        if [ $? -ne 0 ]; then
+                if [ ""$VERBOSE_INSTALL == "yes" ]; then
+                        echo "Change group failed for clamav user"
+                fi
+	fi
+	$USER_MOD_CMD -G amavis,clamav amavis > /dev/null 2>&1
+        if [ $? -ne 0 ]; then
+                if [ ""$VERBOSE_INSTALL == "yes" ]; then
+                        echo "Change group failed for amavis user"
+                fi
+	fi
+	# need to add the following to the config file:
+	# AllowSupplementaryGroups
+	# LocalSocket /var/run/clamav/clamd.ctl
+	
+	# need to fix a problem with a previous version
+
+	if grep "^1;" "$PATH_CLAMAV_CONF" > /dev/null; then
+		perl -i -p -e 's/^1;[^\n]*\n//' $PATH_CLAMAV_CONF
+	fi
+
+	if grep "Configured by DTC" "$PATH_CLAMAV_CONF" >/dev/null; then
+                if [ ""$VERBOSE_INSTALL == "yes" ]; then
+                        echo "$PATH_CLAMAV_CONF already configured..."
+                fi
+        else
+                if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+                        echo "Inserting configuration into $PATH_CLAMAV_CONF"
+                fi
+
+                TMP_FILE=`${MKTEMP} dtc_install.clamav.conf.XXXXXX` || exit 1
+                echo "# Configured by DTC $VERSION" >> $TMP_FILE
+		echo "AllowSupplementaryGroups" >> $TMP_FILE
+		echo "LocalSocket /var/run/clamav/clamd.ctl" >> $TMP_FILE
+
+                echo "# End of DTC configuration $VERSION" >> $TMP_FILE
+
+                # now to insert it at the end of the actual clamav.conf
+                cat < $TMP_FILE >>$PATH_CLAMAV_CONF
+        fi
+fi
+
+
+# 
+# Modify the postfix main.cf to include virtual delivery options
 #
-#if ! [ -f $PATH_QMAIL_CTRL/locals.DTC.backup ]
-#then
-#	touch $PATH_QMAIL_CTRL/locals
-#        cp -f $PATH_QMAIL_CTRL/locals $PATH_QMAIL_CTRL/locals.DTC.backup
-#fi
-#rm -f $PATH_QMAIL_CTRL/locals
-#touch $PATH_DTC_ETC/rcpthosts
-#ln -s $PATH_DTC_ETC/rcpthosts $PATH_QMAIL_CTRL/locals
 
-touch /etc/poppasswd
-if ! [ -f /etc/poppasswd.DTC.backup ]
+# Declare this makes the test when appenning the configuration for SASL
+# works if you don't have SASL
+
+SASLTMP_FILE="/thisfiledoesnotexists"
+if [ -f "$PATH_POSTFIX_CONF" ]
 then
-	cp -f /etc/poppasswd /etc/poppasswd.DTC.backup
+	if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+		echo "===> Linking postfix control files to DTC generated files"
+	fi
+	if grep "Configured by DTC" "$PATH_POSTFIX_CONF" >/dev/null
+	then
+		if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+			echo "Postfix main.cf has been configured before, not adding virtual mailbox options"
+		fi
+	else
+		if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+			echo "Inserting DTC configuration inside $PATH_POSTFIX_CONF"
+		fi
+
+		TMP_FILE=`${MKTEMP} DTC_install.postfix_main.cf.XXXXXX` || exit 1
+		echo "# Configured by DTC v0.12 : Please don't touch this line !" > $TMP_FILE
+		echo "# DTC virtual configuration
+# disable the following functionality by default (otherwise can't match subdomains correctly)
+parent_domain_matches_subdomains=
+
+# disable mailbox size limit by default (user can add to postfix_config_snippets)
+mailbox_size_limit = 0
+
+# stuff for amavis
+content_filter=smtp-amavis:[127.0.0.1]:10024
+
+virtual_mailbox_domains = hash:$PATH_DTC_ETC/postfix_virtual_mailbox_domains
+virtual_mailbox_base = /
+virtual_mailbox_maps = hash:$PATH_DTC_ETC/postfix_vmailbox
+virtual_minimum_uid = 100
+virtual_uid_maps = static:65534
+virtual_gid_maps = static:65534
+virtual_alias_maps = hash:$PATH_DTC_ETC/postfix_virtual
+alias_maps = hash:/etc/aliases, hash:$PATH_DTC_ETC/postfix_aliases
+relay_domains = $PATH_DTC_ETC/postfix_relay_domains
+relay_recipient_maps = hash:$PATH_DTC_ETC/postfix_relay_recipients
+virtual_uid_maps = hash:$PATH_DTC_ETC/postfix_virtual_uid_mapping" >> $TMP_FILE
+		if [ -n $conf_dnsbl_list ]; then
+			if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+				echo " Adding DNS Blacklist to postfix configuration..."
+			fi
+			IFS=, 
+			for i in $conf_dnsbl_list; do 
+				dnsbl_list="$dnsbl_list reject_rbl_client $i,"
+			done
+			unset IFS
+		fi
+		
+
+		if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+			echo " Attempting to determine if you have sasl2 installed..."
+		fi
+		if [ "$PATH_SASL_PASSWD2" = "" ]; then
+			if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+				echo "No saslpasswd2 installed";
+			fi
+		elif [ -f $PATH_SASL_PASSWD2 ]; then
+			if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+				echo "Found sasl2passwd at $PATH_SASL_PASSWD2"
+			fi
+
+			mkdir -p $PATH_POSTFIX_ETC/sasl
+			
+			if [ -e $PATH_POSTFIX_ETC/sasl/smtpd.conf ]; then
+				if ! [ -e $PATH_POSTFIX_ETC/sasl/smtpd.conf.dtcbackup ]; then 
+					cp $PATH_POSTFIX_ETC/sasl/smtpd.conf $PATH_POSTFIX_ETC/sasl/smtpd.conf.dtcbackup
+				fi
+			fi
+
+			# prepare some sasldb2 files, so that our script latter can fix them
+
+			if [ -e /var/spool/postfix/etc ]; then
+				touch /var/spool/postfix/etc/sasldb2
+				chown postfix:65534 /var/spool/postfix/etc/sasldb2
+				chmod 664 /var/spool/postfix/etc/sasldb2
+				if [ ! -e $PATH_DTC_ETC/sasldb2 ]; then
+					cp /var/spool/postfix/etc/sasldb2 $PATH_DTC_ETC/sasldb2
+				fi
+			else
+				if [ -d /etc/sasl2 ]; then
+					touch /etc/sasl2/sasldb2
+					chown postfix:65534 /etc/sasl2/sasldb2
+					chmod 664 /etc/sasl2/sasldb2
+				else
+					touch /etc/sasldb2
+					chown postfix:65534 /etc/sasldb2
+					chmod 664 /etc/sasldb2
+				fi
+				if [ ! -e $PATH_DTC_ETC/sasldb2 ]; then
+					if [ -d /etc/sasl2 ]; then
+						cp /etc/sasl2/sasldb2 $PATH_DTC_ETC/sasldb2
+					else
+						cp /etc/sasldb2 $PATH_DTC_ETC/sasldb2
+					fi
+				fi
+			fi
+
+			SASLTMP_FILE=`${MKTEMP} DTC_install.postfix_sasl.XXXXXX` || exit 1
+			echo "# Configured by DTC v0.15 : Please don't touch this line !" > ""$SASLTMP_FILE
+			echo "pwcheck_method: auxprop
+mech_list: plain login digest-md5 cram-md5" >> $SASLTMP_FILE
+			echo "# End of DTC configuration v0.15 : please don't touch this line !" >> $SASLTMP_FILE
+			echo "smtpd_recipient_restrictions = permit_mynetworks, 
+                               permit_sasl_authenticated,
+			       $dnsbl_list
+                               reject_unauth_destination" >> $TMP_FILE
+echo "smtp_sasl_auth_enable = no
+smtpd_sasl_security_options = noanonymous
+smtpd_sasl_local_domain = /etc/mailname
+smtpd_sasl_auth_enable = yes
+smtpd_tls_auth_only = no
+" >> $TMP_FILE
+		else
+			if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+				echo "No saslpasswd2 found"
+			fi
+			echo "smtpd_recipient_restrictions = permit_mynetworks,
+                               $dnsbl_list
+                               reject_unauth_destination" >> $TMP_FILE
+		fi
+		# this adds supports for "config" snippets to append to main.cf
+		if [ -f $PATH_DTC_ETC/postfix_config_snippets ]; then
+			cat $PATH_DTC_ETC/postfix_config_snippets >> $TMP_FILE
+		else
+			echo "# /usr/share/dtc/etc/postfix_config_snippets
+# this file is appended to the postfix configure, in case you need to override some configure parameters in the postfix main.cf" > $PATH_DTC_ETC/postfix_config_snippets
+		fi
+
+		# if we have maildrop, we should use it!
+		if [ -n ""$PATH_USERDB_BIN -a -f "$PATH_USERDB_BIN" -a -n ""$PATH_MAILDROP_BIN -a -f "$PATH_MAILDROP_BIN" ]; then
+			echo "virtual_transport = maildrop" >> $TMP_FILE
+			echo "## Set to 1 because Maildrop only delivers one message at a time.
+maildrop_destination_recipient_limit = 1" >> $TMP_FILE
+			if grep "Configured by DTC" "$PATH_POSTFIX_ETC/master.cf" >/dev/null; then
+				if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+					echo "Postfix master.cf has been configured before, not adding maildrop options"
+				fi
+			else
+				if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+					echo "Inserting DTC configuration inside $PATH_POSTFIX_ETC/master.cf"
+				fi
+
+				TMP_FILE2=`${MKTEMP} DTC_install.postfix_master.cf.XXXXXX` || exit 1
+				echo "# Configured by DTC v0.17 : Please don't touch this line !" > $TMP_FILE2
+				echo "maildrop  unix  -       n       n       -       -       pipe
+    flags=DRhu user=nobody argv=$PATH_MAILDROP_BIN -d \${user}@\${nexthop} \${extension} \${recipient} \${user} \${nexthop}
+" >> $TMP_FILE2
+				echo "# End of DTC configuration v0.17 : please don't touch this line !" >> $TMP_FILE2
+
+			cat < $TMP_FILE2 >>"$PATH_POSTFIX_ETC/master.cf"
+			rm $TMP_FILE2
+			fi
+		fi
+
+		# check to see if we have our amavis stuff configured in our master.cf yet
+		if grep "smtp-amavis" $PATH_POSTFIX_ETC/master.cf > /dev/null; then
+			if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+				echo "Postfix master.cf has amavis configured before..."
+			fi
+		else
+			if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+				echo "Adding amavis options to Postfix master.cf..."
+			fi
+			TMP_FILE2=`${MKTEMP} DTC_install.postfix_master.cf.XXXXXX` || exit 1
+			echo "# Configured by DTC v0.17 : Please don't touch this line !" > $TMP_FILE2
+		
+			echo "# amavisd-new
+smtp-amavis unix -      -       -       -       2  smtp
+    -o smtp_data_done_timeout=1200
+    -o smtp_send_xforward_command=yes
+    -o disable_dns_lookups=yes
+    -o max_use=20
+
+127.0.0.1:10025 inet n  -       -       -       -  smtpd
+    -o content_filter=
+    -o local_recipient_maps=
+    -o relay_recipient_maps=
+    -o smtpd_restriction_classes=
+    -o smtpd_client_restrictions=
+    -o smtpd_helo_restrictions=
+    -o smtpd_sender_restrictions=
+    -o smtpd_recipient_restrictions=permit_mynetworks,reject
+    -o mynetworks=127.0.0.0/8
+    -o strict_rfc821_envelopes=yes
+    -o smtpd_error_sleep_time=0
+    -o smtpd_soft_error_limit=1001
+    -o smtpd_hard_error_limit=1000
+    -o smtpd_client_connection_count_limit=0
+    -o smtpd_client_connection_rate_limit=0
+    -o receive_override_options=no_header_body_checks,no_unknown_recipient_checks
+" >> $TMP_FILE2
+				echo "# End of DTC configuration v0.17 : please don't touch this line !" >> $TMP_FILE2
+			cat < $TMP_FILE2 >>"$PATH_POSTFIX_ETC/master.cf"
+			rm $TMP_FILE2
+
+		fi
+
+		echo "# End of DTC configuration v0.12 : please don't touch this line !" >> $TMP_FILE
+
+		# now to insert it at the end of the actual main.cf
+		cat < $TMP_FILE >>$PATH_POSTFIX_CONF
+		rm $TMP_FILE
+		# over-write the configuration for SASL
+		if [ -e $SASLTMP_FILE ]; then
+			cat $SASLTMP_FILE > $PATH_POSTFIX_ETC/sasl/smtpd.conf
+			rm $SASLTMP_FILE
+		fi
+	fi
+
 fi
-rm -f /etc/poppasswd
-touch $PATH_DTC_ETC/poppasswd
-ln -s $PATH_DTC_ETC/poppasswd /etc/poppasswd
+
+#
+# prepare mlmmj environment to work with dtc
+#
+if [ -f "/usr/bin/mlmmj-make-ml" ]
+then
+	mkdir -p /etc/mlmmj/lists
+	chown -R root:65534 /etc/mlmmj/lists
+	chmod -R g+w /etc/mlmmj/lists
+fi
+
+# This avoid hanging when (re)starting daemons under debian
+if [ "$UNIX_TYPE" = "debian" ]
+then
+	db_stop
+fi
+
+#
+# Install courier mysql authenticaion
+#
+if [ -f "$PATH_COURIER_CONF_PATH/authdaemonrc" ]
+then
+	if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+		echo "===> Adding directives to Courier authdaemonrc"
+	fi
+	if grep "Configured by DTC" $PATH_COURIER_CONF_PATH/authdaemonrc >/dev/null
+	then
+		if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+			echo "authdaemonrc has been configure before: skipping include insertion !"
+		fi
+	else
+		if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+			echo "Inserting DTC configuration inside "$PATH_COURIER_CONF_PATH/authdaemonrc
+		fi
+		if ! [ -f $PATH_COURIER_CONF_PATH.DTC.backup ]
+		then
+			cp -f $PATH_COURIER_CONF_PATH/authdaemonrc $PATH_COURIER_CONF_PATH.DTC.backup
+		fi
+		TMP_FILE=`${MKTEMP} DTC_install.courier.conf.XXXXXX` || exit 1
+		echo "# Configured by DTC v0.12 : Please don't touch this line !" > $TMP_FILE
+		echo "authmodulelist=\"authmysql authpam\"" >> $TMP_FILE
+		echo "# End of DTC configuration v0.12 : please don't touch this line !" >> $TMP_FILE
+		# now append this to the existing configuration file
+		cat < $TMP_FILE >> $PATH_COURIER_CONF_PATH/authdaemonrc
+		rm $TMP_FILE
+		echo "
+# DB details for dtc mysql DB
+MYSQL_SERVER		$conf_mysql_host
+MYSQL_PORT		3306
+MYSQL_DATABASE		$conf_mysql_db
+MYSQL_USERNAME		dtcdaemons
+MYSQL_PASSWORD		${MYSQL_DTCDAEMONS_PASS}
+MYSQL_USER_TABLE        pop_access
+MYSQL_LOGIN_FIELD       id
+MYSQL_CRYPT_PWFIELD     crypt
+MYSQL_HOME_FIELD        home
+MYSQL_UID_FIELD         uid
+MYSQL_GID_FIELD         gid
+MYSQL_DEFAULT_DOMAIN    $main_domain_name
+
+# use the experimental query
+MYSQL_SELECT_CLAUSE     SELECT concat(id, '@', mbox_host), crypt, passwd, uid, gid, home, '', quota_size, ''  FROM pop_access  WHERE (id = '\$(local_part)' AND mbox_host = '\$(domain)') OR (id = SUBSTRING_INDEX('\$(local_part)', '%', 1) AND mbox_host = SUBSTRING_INDEX('\$(local_part)', '%', -1))
+
+MYSQL_CHPASS_CLAUSE     UPDATE pop_access SET passwd='\$(newpass)', crypt='\$(newpass_crypt)' WHERE (id = '\$(local_part)' AND mbox_host = '\$(domain)') OR (id = SUBSTRING_INDEX('\$(local_part)', '%', 1)  AND mbox_host = SUBSTRING_INDEX('\$(local_part)', '%', -1))
+" > $PATH_COURIER_CONF_PATH/authmysqlrc
+		if [ -x "/etc/init.d/courier-authdaemon" ] ; then
+			if [ -x /usr/sbin/invoke-rc.d ]; then
+				/usr/sbin/invoke-rc.d courier-authdaemon restart
+			else
+				/etc/init.d/courier-authdaemon restart
+			fi
+		fi
+		if [ -x "/etc/init.d/courier-imap" ] ; then
+			if [ -x /usr/sbin/invoke-rc.d ]; then
+				/usr/sbin/invoke-rc.d courier-imap restart
+			else
+				/etc/init.d/courier-imap restart
+			fi
+		fi
+		if [ -x "/etc/init.d/courier-pop" ] ; then
+			if [ -x /usr/sbin/invoke-rc.d ]; then
+				/usr/sbin/invoke-rc.d courier-pop restart
+			else
+				/etc/init.d/courier-pop restart
+			fi
+		fi
+	fi	
+fi
+
+# Generate the OpenSSL test certificate if it does not exists
+if [ ""$conf_gen_ssl_cert = "true" ]; then
+	if [ ! -e $PATH_DTC_ETC"/ssl" ]; then
+		mkdir -p $PATH_DTC_ETC"/ssl"
+	fi
+	cwd=`pwd`
+	cd $PATH_DTC_ETC"/ssl"
+	if [ ! -e "./"new.cert.csr ]; then
+		if [ ! -e "./"new.cert.cert ]; then
+			if [ ! -e "./"new.cert.key ]; then
+			CERTPASS_TMP_FILE=`${MKTEMP} certfilepass.XXXXXX` || exit 1
+			echo $conf_gen_ssl_cert"" >$CERTPASS_TMP_FILE
+			( echo $conf_cert_countrycode;
+			echo "the state";
+			echo $conf_cert_locality;
+			echo $conf_cert_organization;
+			echo $conf_cert_unit;
+			echo $dtc_admin_subdomain"."$main_domain_name;
+			echo $conf_cert_email;
+			echo $conf_cert_challenge_pass;
+			echo $conf_cert_organization; ) | openssl req -passout file:$CERTPASS_TMP_FILE -new > new.cert.csr
+			openssl rsa -passin file:$CERTPASS_TMP_FILE -in privkey.pem -out new.cert.key
+			openssl x509 -in new.cert.csr -out new.cert.cert -req -signkey new.cert.key -days 3650
+			rm $CERTPASS_TMP_FILE
+			fi
+		fi
+	fi
+	cd $cwd
+fi
+
+#
+# Install dovecot mysql authenticaion
+#
+if [ -f $PATH_DOVECOT_CONF ]
+then
+	if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+		echo "===> Adding directives to dovecot.conf"
+	fi
+	if grep "Configured by DTC" $PATH_DOVECOT_CONF >/dev/null
+	then
+		if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+			echo "dovecot.conf has been configure before: skipping include insertion !"
+		fi
+	else
+		if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+			echo "Inserting DTC configuration inside "$PATH_DOVECOT_CONF
+		fi
+		if ! [ -f $PATH_DOVECOT_CONF.DTC.backup ]
+		then
+			cp -f $PATH_DOVECOT_CONF $PATH_DOVECOT_CONF.DTC.backup
+		fi
+		TMP_FILE=`${MKTEMP} DTC_install.dovecot.conf.XXXXXX` || exit 1
+		echo "# Configured by DTC v0.12 : Please don't touch this line !" > $TMP_FILE
+		echo "auth_userdb = mysql $PATH_DTC_ETC/dovecot-mysql.conf" >> $TMP_FILE
+		echo "auth_passdb = mysql $PATH_DTC_ETC/dovecot-mysql.conf" >> $TMP_FILE
+		echo "# End of DTC configuration v0.12 : please don't touch this line !" >> $TMP_FILE 
+		# now append this to the existing configuration file
+		cat < $TMP_FILE >> $PATH_DOVECOT_CONF
+		rm  $TMP_FILE
+		echo "
+# DB details for dtc mysql DB
+db_host = $conf_mysql_host
+db_port = 3306
+db_unix_socket = $MYSQL_DB_SOCKET_PATH
+db = $conf_mysql_db
+db_user = dtcdaemons
+db_passwd = ${MYSQL_DTCDAEMONS_PASS}
+db_client_flags = 0
+
+default_pass_scheme = PLAIN
+password_query = SELECT passwd FROM pop_access WHERE id = '%n' AND mbox_host = '%d'
+user_query = SELECT home, uid, gid FROM pop_access WHERE id = '%n' AND mbox_host = '%d'
+" > $PATH_DTC_ETC/dovecot-mysql.conf
+		# need to restart dovecot too
+		if [ -x "/etc/init.d/dovecot" ] ; then
+                        /etc/init.d/dovecot restart
+                else
+                        if [ -x /usr/sbin/invoke-rc.d ]; then
+                                /usr/sbin/invoke-rc.d dovecot restart
+                        fi
+                fi
+	fi	
+fi
+
 
 #
 # Install proftpd.conf to access to the database
 #
-echo "===> Adding directives to proftpd.conf"
-if grep "Configured by DTC" $PATH_PROFTPD_CONF
+if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+	echo "===> Adding directives to proftpd.conf"
+fi
+if grep "Configured by DTC" $PATH_PROFTPD_CONF >/dev/null
 then
-	echo "proftpd.conf has been configured before : skiping include inssertion !"
+	if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+		echo "proftpd.conf has been configured before : skiping include inssertion !"
+	fi
 else
-	echo "Inserting DTC configuration inside "$PATH_PROFTPD_CONF
+	if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+		echo "Inserting DTC configuration inside "$PATH_PROFTPD_CONF
+	fi
 	if ! [ -f $PATH_PROFTPD_CONF.DTC.backup ]
 	then
 		cp -f $PATH_PROFTPD_CONF $PATH_PROFTPD_CONF.DTC.backup
 	fi
-	echo "# Configured by DTC v0.10 : Please don't touch this line !" >/tmp/DTC_config_proftpd.conf
+	TMP_FILE=`${MKTEMP} DTC_install.proftp.conf.XXXXXX` || exit 1
+	echo "# Configured by DTC v0.10 : Please don't touch this line !" > $TMP_FILE
 # This directive is not used anymore in newer version of proftpd
-#	echo "#UserReverseDNS	off" >>/tmp/DTC_config_proftpd.conf
-	echo "IdentLookups	off" >>/tmp/DTC_config_proftpd.conf
-	echo "SQLAuthenticate	on" >>/tmp/DTC_config_proftpd.conf
-	echo "SQLConnectInfo	"$conf_mysql_db"@"$conf_mysql_host" "$conf_mysql_login" "$conf_mysql_pass >>/tmp/DTC_config_proftpd.conf
-	echo "SQLAuthTypes	Plaintext" >>/tmp/DTC_config_proftpd.conf
-	echo "SQLUserInfo	ftp_access login password uid gid homedir shell" >>/tmp/DTC_config_proftpd.conf
+#	echo "#UserReverseDNS	off" >> $TMP_FILE
+	echo "IdentLookups	off" >> $TMP_FILE
+	echo "DefaultRoot	~" >> $TMP_FILE
+	echo "SQLAuthenticate	on" >> $TMP_FILE
+	echo "SQLConnectInfo	"$conf_mysql_db"@"$conf_mysql_host" dtcdaemons "${MYSQL_DTCDAEMONS_PASS} >> $TMP_FILE
+	echo "SQLAuthTypes	Plaintext" >> $TMP_FILE
+	echo "SQLUserInfo	ftp_access login password uid gid homedir shell" >> $TMP_FILE
 	echo "# // Transfer Log to Proftpd
 SQLLog RETR,STOR transfer1
 SQLNamedQuery transfer1 INSERT \"'%u', '%f', '%b', '%h', '%a', '%m', '%T',now(), 'c', NULL\" ftp_logs
@@ -612,37 +1963,222 @@ SQLNamedQuery         ulbytescount UPDATE \"ul_bytes=ul_bytes+%b WHERE login='%u
 SQLLog STOR           ulcount
 SQLNamedQuery         ulcount UPDATE \"ul_count=ul_count+1 WHERE login='%u'\" ftp_access
 
-# End of DTC configuration v0.10 : please don't touch this line !" >>/tmp/DTC_config_proftpd.conf
-	cat </tmp/DTC_config_proftpd.conf >>$PATH_PROFTPD_CONF
-	rm /tmp/DTC_config_proftpd.conf
-fi
-
-#
-# Install the cron php4 script in the /etc/crontab
-#
-echo "===> Installing cron script in /etc/crontab"
-if grep "Configured by DTC" /etc/crontab
-then
-	echo "/etc/crontab has been configured before : skinping include inssertion"
-else
-	echo "Inserting DTC cronjob in /etc/crontab"
-	if ! [ -f /etc/crontab.DTC.backup ]
-	then
-		cp -f /etc/crontab /etc/crontab.DTC.backup
+# End of DTC configuration v0.10 : please don't touch this line !" >> $TMP_FILE
+	cat < $TMP_FILE >>$PATH_PROFTPD_CONF
+	rm $TMP_FILE
+	# This restarts proftpd if under debian like system
+	# work has to be done under other OS to restart the ftp daemon
+	if [ -x "/etc/init.d/proftpd" ] ; then
+		if [ -x /usr/sbin/invoke-rc.d ]; then
+			/usr/sbin/invoke-rc.d proftpd restart
+		else
+			/etc/init.d/proftpd restart
+		fi
 	fi
-	echo "# Configured by DTC v0.10 : Please don't touch this line !" >/tmp/DTC_config_crontab
-	echo "00,10,20,30,40,50 * * * * root cd $PATH_DTC_ADMIN; $PATH_PHP_CGI $PATH_DTC_ADMIN/cron.php >>/var/log/dtc.log" >>/tmp/DTC_config_crontab
-	cat </tmp/DTC_config_crontab >>/etc/crontab
-	rm /tmp/DTC_config_crontab
 fi
 
-cd $PATH_DTC_ADMIN; $PATH_PHP_CGI $PATH_DTC_ADMIN/cron.php
+#
+# Install and configuration of FreeRadius 1.0
+#
+if [ -e ""$FREERADIUS_ETC ] ;then 
+	if [ ""$VERBOSE_INSTALL = "yes" ] ;then  
+		echo "DTC has found you are using Freeradius and it's now configuring it" 
+	fi 
 
-echo "--- --- --- INSTALLATION FINISHED --- --- ---"
-echo "DTC has finished to install. You can point your favorite"
-echo "browser to: http(s)://"$dtc_admin_subdomain"."$main_domain_name"/dtcadmin/"
-echo "Dont forget to edit the forwarders part of your bind"
-echo "configuration if not done already !"
+	FREERADIUS_CONF=$FREERADIUS_ETC/radiusd.conf  
+	FREERADIUS_SQL_DOT_CONF=$FREERADIUS_ETC/sql.conf 
+
+	# Backup of freeradius config files
+	if [ -e $FREERADIUS_CONF ] ;then
+		if ! [ -e $FREERADIUS_CONF".DTCbackup" ] ;then
+			cp $FREERADIUS_CONF $FREERADIUS_CONF".DTCbackup"
+		fi
+	fi
+
+	if [ -e $FREERADIUS_SQL_DOT_CONF ] ;then
+		if ! [ -e $FREERADIUS_SQL_DOT_CONF".DTCbackup" ] ;then
+			cp $FREERADIUS_SQL_DOT_CONF $FREERADIUS_SQL_DOT_CONF".DTCbackup"
+		fi
+	fi
+
+	TMP_FILE=`${MKTEMP} DTC_install.radius.conf.XXXXXX` || exit 1
+	TMP_FILE2=`${MKTEMP} DTC_install.radius.conf.XXXXXX` || exit 1
+	TMP_FILE3=`${MKTEMP} DTC_install.radius.conf.XXXXXX` || exit 1
+	TMP_FILE4=`${MKTEMP} DTC_install.radius.conf.XXXXXX` || exit 1
+	TMP_FILE5=`${MKTEMP} DTC_install.radius.conf.XXXXXX` || exit 1
+	TMP_FILE6=`${MKTEMP} DTC_install.radius.conf.XXXXXX` || exit 1
+
+	if [ -e /var/log/radacct ] ;then
+		chown -R nobody /var/log/radacct
+	fi
+
+	sed "s/#user = nobody/user = nobody/" $FREERADIUS_CONF >$TMP_FILE
+	if grep "group = nobody" $TMP_FILE >/dev/null ;then
+		sed "s/#group = nobody/group = nobody/" $TMP_FILE >$TMP_FILE2
+	else
+		sed "s/#group = nogroup/group = nogroup/" $TMP_FILE >$TMP_FILE2
+	fi
+	sed "s/log_auth = no/log_auth = yes/" $TMP_FILE2 >$TMP_FILE3
+	sed "s/log_auth_badpass = no/log_auth_badpass = yes/" $TMP_FILE3 >$TMP_FILE4
+	sed "s/log_auth_goodpass = no/log_auth_goodpass = yes/" $TMP_FILE4 >$TMP_FILE5
+	sed "s/#	sql/       sql/" $TMP_FILE5 >$TMP_FILE6 
+
+	cat <$TMP_FILE6 >$FREERADIUS_CONF
+
+	rm $TMP_FILE $TMP_FILE2 $TMP_FILE3 $TMP_FILE4 $TMP_FILE5 $TMP_FILE6
+
+	if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+	        echo "===> Adding directives to sql.conf"
+	fi
+
+	if grep "Configured by DTC" $FREERADIUS_SQL_DOT_CONF >/dev/null
+	then
+	        if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+	                echo "sql.conf has been configured before : skiping include inssertion !"
+	        fi
+	else
+		if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+                	echo "Inserting DTC configuration inside "$FREERADIUS_SQL_DOT_CONF
+		fi
+
+	        TMP_FILE1=`${MKTEMP} DTC_install.sql.conf.XXXXXX` || exit 1
+	        TMP_FILE2=`${MKTEMP} DTC_install.sql.conf.XXXXXX` || exit 1
+	        TMP_FILE3=`${MKTEMP} DTC_install.sql.conf.XXXXXX` || exit 1
+	        TMP_FILE4=`${MKTEMP} DTC_install.sql.conf.XXXXXX` || exit 1
+	        TMP_FILE5=`${MKTEMP} DTC_install.sql.conf.XXXXXX` || exit 1
+
+		# Remove the default config
+		grep -v "server =" $FREERADIUS_SQL_DOT_CONF >$TMP_FILE1
+		grep -v "login =" $TMP_FILE1 >$TMP_FILE2
+		grep -v "password =" $TMP_FILE2 >$TMP_FILE3
+		grep -v "radius_db = " $TMP_FILE3 >$TMP_FILE4
+		grep -v "}" $TMP_FILE4 >$TMP_FILE5
+
+		# Install the DTC db config
+	        TMP_FILE=`${MKTEMP} DTC_install.sql.conf.XXXXXX` || exit 1
+	        echo "# Configured by DTC v0.10 : Please don't touch this line !
+        # Connect info
+        server = "$conf_mysql_host"
+        login = "$conf_mysql_login"
+        password = "$conf_mysql_pass"" >> $TMP_FILE5
+#	        echo "SQLConnectInfo    "$conf_mysql_db"@"$conf_mysql_host" "$conf_mysql_login" "$conf_mysql_pass >> $TMP_FILE4
+	        echo "        # Database table configuration
+        radius_db = "$conf_mysql_db"
+# End of DTC configuration v0.10 : please don't touch this line !
+}
+" >> $TMP_FILE5
+
+		cat <$TMP_FILE5 >$FREERADIUS_SQL_DOT_CONF
+		rm $TMP_FILE $TMP_FILE1 $TMP_FILE2 $TMP_FILE3 $TMP_FILE4 $TMP_FILE5
+	fi
+fi
+
+#
+# Generate default config file for awstats (if we have it installed)
+#
+
+if [ -f $PATH_AWSTATS_ETC/awstats.conf ]; then
+	# now if we don't already have a dtc awstats config, create one based on the installed package config
+	if ! [ -f $PATH_AWSTATS_ETC/awstats.dtc.conf ]; then
+		# we will use the environment variables while calling awstats...
+		# Parameter="__ENVNAME__"
+		cp $PATH_AWSTATS_ETC/awstats.conf $PATH_AWSTATS_ETC/awstats.dtc.conf
+		perl -i -p -e 's/^LogFile=\"[^\"]*\"/LogFile=\"__AWSTATS_LOG_FILE__\"/'  $PATH_AWSTATS_ETC/awstats.dtc.conf
+		perl -i -p -e 's/^SiteDomain=\"[^\"]*\"/SiteDomain=\"__AWSTATS_FULL_DOMAIN__\"/' $PATH_AWSTATS_ETC/awstats.dtc.conf
+		perl -i -p -e 's/^DirData=\"[^\"]*\"/DirData=\"__AWSTATS_DIR_DATA__\"/' $PATH_AWSTATS_ETC/awstats.dtc.conf
+		perl -i -p -e 's/^CreateDirDataIfNotExists=0/CreateDirDataIfNotExists=1/' $PATH_AWSTATS_ETC/awstats.dtc.conf
+	fi
+fi
+
+#
+# Install the cron php4 script in the $PATH_CRONTAB_CONF
+#
+
+# just in case we haven't specified PATH_CRONTAB_CONF, default to /etc/crontab
+if [ -z ""$PATH_CRONTAB_CONF ]; then
+	PATH_CRONTAB_CONF=/etc/crontab
+fi
+
+if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+	echo "===> Installing cron script in "$PATH_CRONTAB_CONF
+fi
+if grep "Configured by DTC " $PATH_CRONTAB_CONF >/dev/null
+then
+	if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+		echo "/etc/crontab has been configured before : skinping include inssertion"
+	fi
+else
+	if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+		echo "Inserting DTC cronjob in "$PATH_CRONTAB_CONF
+	fi
+	if ! [ -f $PATH_CRONTAB_CONF.DTC.backup ]
+	then
+		cp -f $PATH_CRONTAB_CONF $PATH_CRONTAB_CONF.DTC.backup
+	fi
+	TMP_FILE=`${MKTEMP} DTC_install.crontab.XXXXXX` || exit 1
+	echo "# Configured by DTC v0.10 : Please don't touch this line !" > $TMP_FILE
+	echo "00,10,20,30,40,50 * * * * root cd $PATH_DTC_ADMIN; $PATH_PHP_CGI $PATH_DTC_ADMIN/cron.php >>/var/log/dtc.log" >> $TMP_FILE
+	cat < $TMP_FILE >>/etc/crontab
+	rm $TMP_FILE
+fi
+
+# add the default password to .htpasswd if it doesn't exist already
+if [ -e $conf_hosting_path/.htpasswd ]; then 
+	if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+		echo "OK, you have your "$conf_hosting_path"/.htpasswd setup already!"
+	fi
+else 
+	if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+		echo "Creating "$conf_hosting_path"/.htpasswd with username '$conf_adm_login' and password '$conf_adm_pass'"
+	fi
+	if [ -e "/usr/local/bin/htpasswd" ] ;then
+		HTPASSWD="/usr/local/bin/htpasswd"
+	else
+		if [ -e "/usr/bin/htpasswd" ] ;then
+			HTPASSWD="/usr/bin/htpasswd"
+		else
+			HTPASSWD="htpasswd"
+		fi
+	fi
+	$HTPASSWD -cb "$conf_hosting_path"/.htpasswd "$conf_adm_login" $conf_adm_pass
+fi
+
+if [ -e $PATH_DTC_ADMIN/.htaccess ]; then
+	if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+		echo "OK, you have your "$PATH_DTC_ADMIN"/.htaccess setup already!"
+	fi
+else
+	if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+		echo "Creating "$PATH_DTC_ADMIN"/.htaccess file."
+	fi
+	echo "AuthName \"DTC root control panel login!\"
+AuthType Basic
+AuthUserFile "$conf_hosting_path"/.htpasswd
+require valid-user" >$PATH_DTC_ADMIN/.htaccess
+fi
+
+if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+	echo "***********************************************************"
+	echo "*** Please wait while DTC configures all the daemons... ***"
+	echo "***********************************************************"
+
+	cd $PATH_DTC_ADMIN; $PATH_PHP_CGI $PATH_DTC_ADMIN/cron.php
+	echo "--- --- --- INSTALLATION FINISHED --- --- ---"
+else
+	cd $PATH_DTC_ADMIN; $PATH_PHP_CGI $PATH_DTC_ADMIN/cron.php 2>&1 >/var/log/dtc.log
+	echo "done!"
+fi
+
 echo ""
-echo "Please visit DTC home:"
+echo "Browse to: \"http(s)://"$dtc_admin_subdomain"."$main_domain_name"/dtcadmin/\""
+echo "with login/pass of the main domain admin."
+echo "Remember to relaunch this installer if you"
+echo "install some other mail servers, whatever"
+echo "it is (qmail, postfix, courier, etc...)."
+if [ ""$VERBOSE_INSTALL = "yes" ] ;then
+	echo ""
+	echo "Visit DTC Home page"
+fi
 echo "http://www.gplhost.com/?rub=softwares&sousrub=dtc"
+
+exit 0
