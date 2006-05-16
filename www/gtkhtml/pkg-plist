@@ -97,11 +97,11 @@ lib/libgtkhtml-1.1.la
 lib/libgtkhtml-1.1.so
 lib/libgtkhtml-1.1.so.3
 libdata/pkgconfig/gtkhtml-1.1.pc
-share/doc/gtkhtml/gtkhtml-decl.txt
-share/doc/gtkhtml/gtkhtml-sections.txt
-share/doc/gtkhtml/gtkhtml.hierarchy
-share/doc/gtkhtml/gtkhtml.sgml
-share/doc/gtkhtml/gtkhtml.types
+%%DOCSDIR%%/gtkhtml-decl.txt
+%%DOCSDIR%%/gtkhtml-sections.txt
+%%DOCSDIR%%/gtkhtml.hierarchy
+%%DOCSDIR%%/gtkhtml.sgml
+%%DOCSDIR%%/gtkhtml.types
 share/gnome/apps/Settings/Documents/gtkhtml-properties.desktop
 share/gnome/control-center/Documents/gtkhtml-properties.desktop
 share/gnome/gtkhtml-1.1/Editor.idl
@@ -198,7 +198,7 @@ share/locale/zh_CN/LC_MESSAGES/gtkhtml.mo
 share/locale/zh_TW/LC_MESSAGES/gtkhtml.mo
 @dirrm share/gnome/gtkhtml-1.1/icons
 @dirrm share/gnome/gtkhtml-1.1
-@dirrm share/doc/gtkhtml/gtkhtml
-@dirrm share/doc/gtkhtml
+@dirrm %%DOCSDIR%%/gtkhtml
+@dirrm %%DOCSDIR%%
 @dirrm include/gtkhtml-1.1/gtkhtml
 @dirrm include/gtkhtml-1.1
