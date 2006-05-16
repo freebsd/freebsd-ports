@@ -8,7 +8,7 @@
 PORTNAME=	quirc
 PORTVERSION=	0.9.84
 CATEGORIES=	irc tk84
-MASTER_SITES=	http://quirc.org/
+MASTER_SITES=	${MASTER_SITE_LOCAL:S/$/:local/}
 
 MAINTAINER=	kevlo@FreeBSD.org
 COMMENT=	An irc client for the X Window System that uses TCL/TK
