@@ -1,0 +1,5 @@
+%%SITE_PERL%%/String/Fraction.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/String/Fraction/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/String/Fraction
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/String
+@dirrmtry %%SITE_PERL%%/String

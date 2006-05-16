@@ -418,6 +418,7 @@
     SUBDIR += p5-Spreadsheet-WriteExcelXML
     SUBDIR += p5-String-Divert
     SUBDIR += p5-String-Format
+    SUBDIR += p5-String-Fraction
     SUBDIR += p5-String-Koremutake
     SUBDIR += p5-String-Scanf
     SUBDIR += p5-String-ShellQuote
