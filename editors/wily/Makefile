@@ -6,14 +6,11 @@
 #
 
 PORTNAME=	wily
-PORTVERSION=	0.13.41
-PORTREVISION=	2
+PORTVERSION=	0.13.42
 CATEGORIES=	editors plan9
-MASTER_SITES=	ftp://ftp.cs.yorku.ca/pub/wily/src/old/ \
-		ftp://ftp.cs.su.oz.au/gary/wily/src/old/
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	ftp://ftp.cs.yorku.ca/pub/wily/src/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	serge.gagnon@b2b2c.ca
 COMMENT=	A clone of the Plan9 editor `acme'
 
 RUN_DEPENDS=	${LOCALBASE}/bin/rc:${PORTSDIR}/shells/rc \
@@ -42,12 +39,13 @@ BROKEN=		Requires more recent libc
 
 post-patch:
 	cd  ${WRKSRC}/tools/win; ${REINPLACE_CMD} -e 's," in " __FUNCTION__ "()",,' \
-		win.c wgoto.c wreplace.c
+		win.c wgoto.c wreplace.c; \
+		${CHMOD} 755 configure mkinstalldirs;
 
 # Run the configure script in the tools directory.
 post-configure:
 	@${RM} ${WRKSRC}/tools/win/config.cache
-	cd ${WRKSRC}/tools/win; ./configure
+	cd ${WRKSRC}/tools/win;  ./configure --prefix=${PREFIX}
 
 # The default Wily makefile does not install any documentation.  Rectify.
 post-install:
