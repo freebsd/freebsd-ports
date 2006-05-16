@@ -49,56 +49,56 @@ include/pygtk/pygtk.h
 %%PYTHON_SITELIBDIR%%/pygtk.py
 %%PYTHON_SITELIBDIR%%/pygtk.pyc
 %%PYTHON_SITELIBDIR%%/pygtk.pyo
-share/doc/py-gtk/MAPPING
-share/examples/py-gtk/gl/README
-share/examples/py-gtk/gl/cone.py
-share/examples/py-gtk/gl/dots.py
-share/examples/py-gtk/gl/gears.py
-share/examples/py-gtk/glade/README
-share/examples/py-gtk/glade/glade.py
-share/examples/py-gtk/glade/test.glade
-share/examples/py-gtk/glade/test2.glade
-share/examples/py-gtk/ide/README
-share/examples/py-gtk/ide/break.xpm
-share/examples/py-gtk/ide/browse.py
-share/examples/py-gtk/ide/continue.xpm
-share/examples/py-gtk/ide/edit.py
-share/examples/py-gtk/ide/edit.xpm
-share/examples/py-gtk/ide/gtkcons.py
-share/examples/py-gtk/ide/gtkdb.py
-share/examples/py-gtk/ide/gtkprof.py
-share/examples/py-gtk/ide/minibreak.xpm
-share/examples/py-gtk/ide/next.xpm
-share/examples/py-gtk/ide/pyide.py
-share/examples/py-gtk/ide/quit.xpm
-share/examples/py-gtk/ide/return.xpm
-share/examples/py-gtk/ide/run.xpm
-share/examples/py-gtk/ide/step.xpm
-share/examples/py-gtk/imlib/view.py
-share/examples/py-gtk/neil/README
-share/examples/py-gtk/neil/TAppli.py
-share/examples/py-gtk/neil/TAppli2.py
-share/examples/py-gtk/neil/TAppli3.py
-share/examples/py-gtk/neil/TAppli4.py
-share/examples/py-gtk/neil/TAppli5.py
-share/examples/py-gtk/neil/bomb.xpm
-share/examples/py-gtk/neil/gtk-logo.xpm
-share/examples/py-gtk/neil/notebook.py
-share/examples/py-gtk/neil/question.xpm
-share/examples/py-gtk/simple/README
-share/examples/py-gtk/simple/dnd.py
-share/examples/py-gtk/simple/dndpixmap.py
-share/examples/py-gtk/simple/hello1.py
-share/examples/py-gtk/simple/hello2.py
-share/examples/py-gtk/simple/scribble.py
-share/examples/py-gtk/simple/simple1.py
-share/examples/py-gtk/simple/simple2.py
-share/examples/py-gtk/simple/tooltip1.py
-share/examples/py-gtk/simple/tooltip2.py
-share/examples/py-gtk/testgtk/README
-share/examples/py-gtk/testgtk/test.xpm
-share/examples/py-gtk/testgtk/testgtk.py
-share/examples/py-gtk/testgtk/testgtkrc
+%%DOCSDIR%%/MAPPING
+%%EXAMPLESDIR%%/gl/README
+%%EXAMPLESDIR%%/gl/cone.py
+%%EXAMPLESDIR%%/gl/dots.py
+%%EXAMPLESDIR%%/gl/gears.py
+%%EXAMPLESDIR%%/glade/README
+%%EXAMPLESDIR%%/glade/glade.py
+%%EXAMPLESDIR%%/glade/test.glade
+%%EXAMPLESDIR%%/glade/test2.glade
+%%EXAMPLESDIR%%/ide/README
+%%EXAMPLESDIR%%/ide/break.xpm
+%%EXAMPLESDIR%%/ide/browse.py
+%%EXAMPLESDIR%%/ide/continue.xpm
+%%EXAMPLESDIR%%/ide/edit.py
+%%EXAMPLESDIR%%/ide/edit.xpm
+%%EXAMPLESDIR%%/ide/gtkcons.py
+%%EXAMPLESDIR%%/ide/gtkdb.py
+%%EXAMPLESDIR%%/ide/gtkprof.py
+%%EXAMPLESDIR%%/ide/minibreak.xpm
+%%EXAMPLESDIR%%/ide/next.xpm
+%%EXAMPLESDIR%%/ide/pyide.py
+%%EXAMPLESDIR%%/ide/quit.xpm
+%%EXAMPLESDIR%%/ide/return.xpm
+%%EXAMPLESDIR%%/ide/run.xpm
+%%EXAMPLESDIR%%/ide/step.xpm
+%%EXAMPLESDIR%%/imlib/view.py
+%%EXAMPLESDIR%%/neil/README
+%%EXAMPLESDIR%%/neil/TAppli.py
+%%EXAMPLESDIR%%/neil/TAppli2.py
+%%EXAMPLESDIR%%/neil/TAppli3.py
+%%EXAMPLESDIR%%/neil/TAppli4.py
+%%EXAMPLESDIR%%/neil/TAppli5.py
+%%EXAMPLESDIR%%/neil/bomb.xpm
+%%EXAMPLESDIR%%/neil/gtk-logo.xpm
+%%EXAMPLESDIR%%/neil/notebook.py
+%%EXAMPLESDIR%%/neil/question.xpm
+%%EXAMPLESDIR%%/simple/README
+%%EXAMPLESDIR%%/simple/dnd.py
+%%EXAMPLESDIR%%/simple/dndpixmap.py
+%%EXAMPLESDIR%%/simple/hello1.py
+%%EXAMPLESDIR%%/simple/hello2.py
+%%EXAMPLESDIR%%/simple/scribble.py
+%%EXAMPLESDIR%%/simple/simple1.py
+%%EXAMPLESDIR%%/simple/simple2.py
+%%EXAMPLESDIR%%/simple/tooltip1.py
+%%EXAMPLESDIR%%/simple/tooltip2.py
+%%EXAMPLESDIR%%/testgtk/README
+%%EXAMPLESDIR%%/testgtk/test.xpm
+%%EXAMPLESDIR%%/testgtk/testgtk.py
+%%EXAMPLESDIR%%/testgtk/testgtkrc
 share/pygtk/1.2/codegen/generate.py
 share/pygtk/1.2/codegen/generate.pyc
 share/pygtk/1.2/codegen/generate.pyo
@@ -122,15 +122,15 @@ share/pygtk/1.2/defs/libglade.defs
 @dirrm share/pygtk/1.2/codegen
 @dirrm share/pygtk/1.2
 @dirrm share/pygtk
-@dirrm share/examples/py-gtk/testgtk
-@dirrm share/examples/py-gtk/simple
-@dirrm share/examples/py-gtk/neil
-@dirrm share/examples/py-gtk/imlib
-@dirrm share/examples/py-gtk/ide
-@dirrm share/examples/py-gtk/glade
-@dirrm share/examples/py-gtk/gl
-@dirrm share/examples/py-gtk
-@dirrm share/doc/py-gtk
+@dirrm %%EXAMPLESDIR%%/testgtk
+@dirrm %%EXAMPLESDIR%%/simple
+@dirrm %%EXAMPLESDIR%%/neil
+@dirrm %%EXAMPLESDIR%%/imlib
+@dirrm %%EXAMPLESDIR%%/ide
+@dirrm %%EXAMPLESDIR%%/glade
+@dirrm %%EXAMPLESDIR%%/gl
+@dirrm %%EXAMPLESDIR%%
+@dirrm %%DOCSDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/gtk-1.2/pyglade
 @dirrm %%PYTHON_SITELIBDIR%%/gtk-1.2
 @dirrm include/pygtk
