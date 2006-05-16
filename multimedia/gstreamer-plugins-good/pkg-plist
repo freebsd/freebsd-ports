@@ -34,6 +34,9 @@ lib/gstreamer-%%VERSION%%/libgstflxdec.so
 lib/gstreamer-%%VERSION%%/libgstgoom.a
 lib/gstreamer-%%VERSION%%/libgstgoom.la
 lib/gstreamer-%%VERSION%%/libgstgoom.so
+lib/gstreamer-%%VERSION%%/libgsticydemux.a
+lib/gstreamer-%%VERSION%%/libgsticydemux.la
+lib/gstreamer-%%VERSION%%/libgsticydemux.so
 lib/gstreamer-%%VERSION%%/libgstid3demux.a
 lib/gstreamer-%%VERSION%%/libgstid3demux.la
 lib/gstreamer-%%VERSION%%/libgstid3demux.so
@@ -67,6 +70,9 @@ lib/gstreamer-%%VERSION%%/libgstsmpte.so
 lib/gstreamer-%%VERSION%%/libgstudp.a
 lib/gstreamer-%%VERSION%%/libgstudp.la
 lib/gstreamer-%%VERSION%%/libgstudp.so
+lib/gstreamer-%%VERSION%%/libgstvideobalance.a
+lib/gstreamer-%%VERSION%%/libgstvideobalance.la
+lib/gstreamer-%%VERSION%%/libgstvideobalance.so
 lib/gstreamer-%%VERSION%%/libgstvideobox.a
 lib/gstreamer-%%VERSION%%/libgstvideobox.la
 lib/gstreamer-%%VERSION%%/libgstvideobox.so
@@ -82,3 +88,6 @@ lib/gstreamer-%%VERSION%%/libgstwavenc.so
 lib/gstreamer-%%VERSION%%/libgstwavparse.a
 lib/gstreamer-%%VERSION%%/libgstwavparse.la
 lib/gstreamer-%%VERSION%%/libgstwavparse.so
+lib/gstreamer-%%VERSION%%/libgstximagesrc.a
+lib/gstreamer-%%VERSION%%/libgstximagesrc.la
+lib/gstreamer-%%VERSION%%/libgstximagesrc.so

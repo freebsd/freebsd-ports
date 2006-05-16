@@ -12,34 +12,52 @@ BASE_GST_ALL_PLUGINS= \
 		vorbis
 # bad
 BAD_GST_ALL_PLUGINS+= \
+		amrwb \
+		bz2 \
 		directfb \
+		divx \
+		dts \
 		faac \
 		faad \
 		gsm \
 		ivorbis \
 		libmms \
 		musepack \
+		musicbrainz \
+		neon \
 		sdl \
+		soundtouch \
+		swfdec \
+		xvid \
 		wavpack
+#		throra
+
 # good
 GOOD_GST_ALL_PLUGINS+= \
 		aalib \
+		annodex \
 		cairo \
+		cdio \
 		dv \
 		esd \
 		flac \
 		gconf \
+		gdk_pixbuf \
+		hal \
 		jpeg \
 		ladspa \
 		libcaca \
 		libpng \
 		raw1394 \
 		shout2 \
-		speex
+		speex \
+		taglib
 # Ugly
 UGLY_GST_ALL_PLUGINS+= \
 		a52dec \
 		amrnb \
+		dvdnav \
+		dvdread \
 		lame \
 		mad \
 		mpeg2dec \
@@ -139,10 +157,34 @@ EXTRA_LIBS+=	-lgstcdda-${VERSION}
 DIST=	base
 .endif
 
+# dts
+.if ${GST_PLUGIN}=="dts"
+LIB_DEPENDS+=   dv.4:${PORTSDIR}/multimedia/libdv
+PLIST_FILES=	${GST_LIB_DIR}/libgstdtsdec.a \
+		${GST_LIB_DIR}/libgstdtsdec.la \
+		${GST_LIB_DIR}/libgstdtsdec.so
+DIST=	bad
+.endif
+
 # dv
 .if ${GST_PLUGIN}=="dv"
 LIB_DEPENDS+=	dv.4:${PORTSDIR}/multimedia/libdv
 .endif
+
+.if ${GST_PLUGIN}=="dvd"
+EXTRA_LIBS+=	-ldvdnav
+LIB_DEPENDS+=	dvdnav.4:${PORTSDIR}/multimedia/libdvdnav
+GST_PLUGIN_DIR=	ext/dvdnav \
+		ext/dvdread
+PLIST_FILES=	${GST_LIB_DIR}/libgstdvdnav.a \
+		${GST_LIB_DIR}/libgstdvdnav.la \
+		${GST_LIB_DIR}/libgstdvdnav.so \
+		${GST_LIB_DIR}/libgstdvdread.a \
+		${GST_LIB_DIR}/libgstdvdread.la \
+		${GST_LIB_DIR}/libgstdvdread.so
+DIST=	ugly
+.endif
+
 
 # esound
 .if ${GST_PLUGIN}=="esound"
@@ -269,6 +311,15 @@ DIST=	ugly
 # musepack
 .if ${GST_PLUGIN}=="musepack"
 LIB_DEPENDS+=	mpcdec.4:${PORTSDIR}/audio/libmpcdec
+DIST=	bad
+.endif
+
+# musicbrainz
+.if ${GST_PLUGIN}=="musicbrainz"
+LIB_DEPENDS+=	musicbrainz.4:${PORTSDIR}/audio/libmusicbrainz
+PLIST_FILES=	${GST_LIB_DIR}/libgsttrm.so \
+		${GST_LIB_DIR}/libgsttrm.a \
+		${GST_LIB_DIR}/libgsttrm.la
 DIST=	bad
 .endif
 
