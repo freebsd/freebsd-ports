@@ -1,31 +1,31 @@
 bin/passepartout
 bin/xml2ps
-share/doc/passepartout/README
-share/doc/passepartout/docbook.xslt
-share/doc/passepartout/examples/docbook.xslt
-share/doc/passepartout/examples/example1.html
-share/doc/passepartout/examples/example1.pp
-share/doc/passepartout/examples/gradient.eps
-share/doc/passepartout/examples/hippie.jpg
-share/doc/passepartout/examples/hline.eps
-share/doc/passepartout/examples/snowflake.eps
-share/doc/passepartout/examples/snowflake.xml
-share/doc/passepartout/examples/vline.eps
-share/doc/passepartout/examples/xhtml.xslt
-share/doc/passepartout/examples/xml2ps-example.xml
-share/doc/passepartout/faq.html
-share/doc/passepartout/faq.xml
-share/doc/passepartout/nsfaq.html
-share/doc/passepartout/nsfaq.xml
-share/doc/passepartout/pptout-sv.eps
-share/doc/passepartout/users_guide.html
-share/doc/passepartout/users_guide.pp
-share/doc/passepartout/users_guide.xml
-share/doc/passepartout/xhtml.xslt
+%%DOCSDIR%%/README
+%%DOCSDIR%%/docbook.xslt
+%%DOCSDIR%%/examples/docbook.xslt
+%%DOCSDIR%%/examples/example1.html
+%%DOCSDIR%%/examples/example1.pp
+%%DOCSDIR%%/examples/gradient.eps
+%%DOCSDIR%%/examples/hippie.jpg
+%%DOCSDIR%%/examples/hline.eps
+%%DOCSDIR%%/examples/snowflake.eps
+%%DOCSDIR%%/examples/snowflake.xml
+%%DOCSDIR%%/examples/vline.eps
+%%DOCSDIR%%/examples/xhtml.xslt
+%%DOCSDIR%%/examples/xml2ps-example.xml
+%%DOCSDIR%%/faq.html
+%%DOCSDIR%%/faq.xml
+%%DOCSDIR%%/nsfaq.html
+%%DOCSDIR%%/nsfaq.xml
+%%DOCSDIR%%/pptout-sv.eps
+%%DOCSDIR%%/users_guide.html
+%%DOCSDIR%%/users_guide.pp
+%%DOCSDIR%%/users_guide.xml
+%%DOCSDIR%%/xhtml.xslt
 share/xml/passepartout/docbook.xslt
 share/xml/passepartout/xhtml.xslt
 share/xml/passepartout/xml2ps.dtd
-@dirrm share/doc/passepartout/examples
-@dirrm share/doc/passepartout
+@dirrm %%DOCSDIR%%/examples
+@dirrm %%DOCSDIR%%
 @dirrm share/xml/passepartout
-@unexec /bin/rmdir %D/share/xml 2> /dev/null || /usr/bin/true
+@dirrmtry share/xml
