@@ -38,7 +38,7 @@ MAN1=		inkscape.1 inkview.1
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-IGNORE=	Requires symbols not present on 4.X
+IGNORE=	requires symbols not present on 4.X
 .endif
 
 .if ${HAVE_GNOME:Mlibgnomeprintui} != ""
