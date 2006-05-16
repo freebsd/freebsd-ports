@@ -221,6 +221,7 @@
     SUBDIR += gstreamer-plugins-mikmod80
     SUBDIR += gstreamer-plugins-musepack
     SUBDIR += gstreamer-plugins-musepack80
+    SUBDIR += gstreamer-plugins-musicbrainz
     SUBDIR += gstreamer-plugins-musicbrainz80
     SUBDIR += gstreamer-plugins-nas80
     SUBDIR += gstreamer-plugins-ogg
