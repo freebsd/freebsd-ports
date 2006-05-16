@@ -45,6 +45,8 @@ etc/cyphesis/werewolf.xml
 %%DATADIR%%/rulesets/basic/mind/panlingua/ontology.py
 %%DATADIR%%/rulesets/basic/mind/panlingua/panlingua.py
 %%DATADIR%%/rulesets/basic/mind/panlingua/syntax.py
+%%DATADIR%%/rulesets/basic/terrain.py
+%%DATADIR%%/rulesets/basic/test_python_api.py
 %%DATADIR%%/rulesets/basic/world/__init__.py
 %%DATADIR%%/rulesets/basic/world/objects/Pile.py
 %%DATADIR%%/rulesets/basic/world/objects/Thing.py
@@ -105,6 +107,10 @@ etc/cyphesis/werewolf.xml
 %%DATADIR%%/rulesets/mason/world/statistics/Statistics.py
 %%DATADIR%%/rulesets/mason/world/statistics/__init__.py
 %%DATADIR%%/rulesets/mason/world/tasks/Combat.py
+%%DATADIR%%/rulesets/mason/world/tasks/Ram.py
+%%DATADIR%%/rulesets/mason/world/tasks/Logging.py
+%%DATADIR%%/rulesets/mason/world/tasks/Raise.py
+%%DATADIR%%/rulesets/mason/world/tasks/Sharpen.py
 %%DATADIR%%/rulesets/mason/world/tasks/__init__.py
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
