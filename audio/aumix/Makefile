@@ -18,7 +18,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Audio mixer for X11, terminal, or command line
 
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--includedir="${LOCALBASE}/include" \
@@ -33,9 +32,16 @@ PLIST_FILES=	bin/aumix bin/mute bin/xaumix
 .for ii in ansi aumix.xpm fadein.set fadeout.set vt100 xterm
 PLIST_FILES+=	share/aumix/${ii}
 .endfor
+
+.if defined(WITHOUT_NLS) || defined(WITHOUT_ALL)
+CONFIGURE_ARGS+=--disable-nls
+.else
+USE_GETTEXT=	yes
 .for ii in de el es fr gl ja nl pl pt_BR ru sv uk zh_CN
 PLIST_FILES+=	share/locale/${ii}/LC_MESSAGES/aumix.mo
 .endfor
+.endif
+
 .include <bsd.port.pre.mk>
 
 pre-extract:
@@ -48,11 +54,7 @@ pre-extract:
 .endif
 
 do-patch:
-.for ii in c h
-	${CP} -p ${WRKSRC}/src/common.${ii} ${WRKSRC}/src/common.${ii}.orig
-	${SED} -e "s:/etc:${PREFIX}/etc:" < ${WRKSRC}/src/common.${ii}.orig \
-		> ${WRKSRC}/src/common.${ii}
-.endfor
+	@${REINPLACE_CMD} -e "s:/etc:${PREFIX}/etc:" ${WRKSRC}/src/common.[c,h]
 
 .if (${HAVE_GNOME:Mgtk12}!="") && !defined(WITHOUT_ALL) && \
 	!defined(WITHOUT_GTK)&& !defined(WITH_GTK2)
