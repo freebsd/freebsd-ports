@@ -4,8 +4,9 @@
  * Skeleton configuration file -- this file is empty on a fresh
  * installaton of phpmyadmin.
  * 
- * Copy any settings you want to override from config.defaults.php
- * or use scripts/setup.php to generate a basic configuration file.
+ * Copy any settings you want to override from
+ * libraries/config.default.php or use scripts/setup.php to generate a
+ * basic configuration file
  * 
  */
 
