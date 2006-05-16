@@ -35,7 +35,7 @@ MAN1=		anjuta.1 anjuta_launcher.1
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-IGNORE=	Uses symbols not available on 4.X
+IGNORE=	uses symbols not available on 4.X
 .endif
 
 post-configure:
