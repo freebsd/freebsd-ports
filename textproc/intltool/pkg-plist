@@ -4,12 +4,12 @@ bin/intltool-prepare
 bin/intltool-update
 bin/intltoolize
 share/aclocal/intltool.m4
-share/intltool/Makefile.in.in
-share/intltool/XML/Parser/Style/OrigTree.pm
-share/intltool/intltool-extract.in
-share/intltool/intltool-merge.in
-share/intltool/intltool-update.in
-@dirrm share/intltool/XML/Parser/Style
-@dirrm share/intltool/XML/Parser
-@dirrm share/intltool/XML
-@dirrm share/intltool
+%%DATADIR%%/Makefile.in.in
+%%DATADIR%%/XML/Parser/Style/OrigTree.pm
+%%DATADIR%%/intltool-extract.in
+%%DATADIR%%/intltool-merge.in
+%%DATADIR%%/intltool-update.in
+@dirrm %%DATADIR%%/XML/Parser/Style
+@dirrm %%DATADIR%%/XML/Parser
+@dirrm %%DATADIR%%/XML
+@dirrm %%DATADIR%%
