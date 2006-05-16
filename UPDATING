@@ -6,6 +6,17 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20060516:
+  AFFECTS: users of www/tinyproxy
+  AUTHOR: wxs@csh.rit.edu
+
+  tinyproxy now installs a rc.d script.  To enable tinyproxy at boot
+  time, set the following in rc.conf(5):
+      tinyproxy_enable="YES"
+  The confiration file for tinyproxy has been moved to
+  ${PREFIX}/etc/tinyproxy.conf.  Any old configuration files will need
+  to be migrated over to the new location.
+
 20060514:
   AFFECTS: users of sysutils/smartmontools, others
   AUTHOR:  jylefort@FreeBSD.org
