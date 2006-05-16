@@ -17,10 +17,10 @@ DIST_SUBDIR=	gnome
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Gnome print support library
 
-USE_GHOSTSCRIPT_RUN=	yes
-
-BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2	# XXX
+BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
+
+USE_GHOSTSCRIPT_RUN=	yes
 
 PLIST_SUB=	VERSION=${PORTVERSION}
 
