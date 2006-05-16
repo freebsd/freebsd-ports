@@ -76,6 +76,7 @@ lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/extw-Xlib.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/extw-Xt.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/faces.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/file-coding.h
+lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/font-mgr.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/frame-impl.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/frame.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/frameslots.h
@@ -383,7 +384,6 @@ lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/vdb.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/window-impl.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/window.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/winslots.h
-lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/xft-fonts.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/xgccache.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/xintrinsic.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/xintrinsicp.h
