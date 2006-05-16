@@ -10,9 +10,9 @@ PORTNAME=	gstreamer
 PORTVERSION=	0.8.12
 PORTREVISION?=	2
 CATEGORIES?=	multimedia audio
-MASTER_SITES=	${MASTER_SITE_GNOME} \
+MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://gstreamer.freedesktop.org/src/gst-plugins/
-MASTER_SITE_SUBDIR=	sources/gst-plugins/0.8
+MASTER_SITE_SUBDIR=	ahze
 PKGNAMESUFFIX=	-plugins${GST_PLUGIN_SUFFIX}80
 DISTNAME=	gst-plugins-${PORTVERSION}
 DIST_SUBDIR=	gnome2
