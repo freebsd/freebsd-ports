@@ -7,7 +7,7 @@
 
 PORTNAME=	avahi
 PORTVERSION=	0.6.10
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES?=	net dns
 MASTER_SITES=	http://www.avahi.org/download/
 
