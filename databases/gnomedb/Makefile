@@ -7,7 +7,7 @@
 
 PORTNAME=	gnomedb
 PORTVERSION=	0.2.96
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	databases gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-db/0.2
@@ -22,6 +22,7 @@ USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomeprefix gnomehier libgda
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
+INSTALLS_OMF=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

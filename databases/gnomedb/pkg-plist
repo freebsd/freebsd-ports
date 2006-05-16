@@ -41,11 +41,11 @@ lib/libgnomedb.a
 lib/libgnomedb.la
 lib/libgnomedb.so
 lib/libgnomedb.so.0
-share/doc/gnomedb/libgnomedb-decl.txt
-share/doc/gnomedb/libgnomedb-sections.txt
-share/doc/gnomedb/libgnomedb.args
-share/doc/gnomedb/libgnomedb.hierarchy
-share/doc/gnomedb/libgnomedb.types
+%%DOCSDIR%%/libgnomedb-decl.txt
+%%DOCSDIR%%/libgnomedb-sections.txt
+%%DOCSDIR%%/libgnomedb.args
+%%DOCSDIR%%/libgnomedb.hierarchy
+%%DOCSDIR%%/libgnomedb.types
 share/gnome/apps/Applications/gnomedb-fe.desktop
 share/gnome/help/gnome-db/C/comlib.html
 share/gnome/help/gnome-db/C/components.html
@@ -174,6 +174,6 @@ share/locale/zh_TW/LC_MESSAGES/gnome-db.mo
 @dirrm share/gnome/help/gnome-db/C/images
 @dirrm share/gnome/help/gnome-db/C
 @dirrm share/gnome/help/gnome-db
-@dirrm share/doc/gnomedb
+@dirrm %%DOCSDIR%%
 @dirrm include/libgnomedb-%%VERSION%%/gnome-db
 @dirrm include/libgnomedb-%%VERSION%%
