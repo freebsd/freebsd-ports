@@ -1,5 +1,6 @@
-etc/rc.d/tinyproxy.sh
-etc/tinyproxy/tinyproxy.conf-dist
+@unexec if cmp -s %D/etc/tinyproxy.conf-dist %D/etc/tinyproxy.conf; then rm -f %D/etc/tinyproxy.conf; fi
+etc/tinyproxy.conf-dist
+@exec if [ ! -f %D/etc/tinyproxy.conf ] ; then cp -p %D/%F %B/tinyproxy.conf; fi
 sbin/tinyproxy
 %%DATADIR%%/HTML_VARIABLES
 %%DATADIR%%/debug.html
@@ -9,4 +10,3 @@ sbin/tinyproxy
 %%DATADIR%%/stats.html
 %%DATADIR%%/stats.html.dist
 @dirrm %%DATADIR%%
-@dirrm etc/tinyproxy

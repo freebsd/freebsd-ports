@@ -7,17 +7,19 @@
 
 PORTNAME=	tinyproxy
 PORTVERSION=	1.7.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wxs@csh.rit.edu
 COMMENT=	A small, efficient HTTP proxy server
 
+USE_RC_SUBR=	tinyproxy.sh
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--bindir=${PREFIX}/sbin \
-		--with-config=${PREFIX}/etc/tinyproxy/tinyproxy.conf \
+		--with-config=${PREFIX}/etc/tinyproxy.conf \
 		--program-transform-name=""
 
 MAN8=		tinyproxy.8
@@ -26,15 +28,16 @@ MAN8=		tinyproxy.8
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2||' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|/\(etc/tinyproxy/tinyproxy.conf\)|${PREFIX}/\1|' \
+	@${REINPLACE_CMD} -e 's|/etc/tinyproxy/tinyproxy.conf|${PREFIX}/etc/tinyproxy.conf|' \
 	  ${WRKSRC}/doc/tinyproxy.8
 .if ${OSVERSION} < 500000
 	@${REINPLACE_CMD} -e 's|stdint.h|stdlib.h|' ${WRKSRC}/src/scanner.c
 .endif
 
 post-install:
-	@${SED} -e "s#%PREFIX%#${PREFIX}#" ${FILESDIR}/tinyproxy.sh > ${WRKDIR}/tinyproxy.sh
-	@${INSTALL_SCRIPT} ${WRKDIR}/tinyproxy.sh ${LOCALBASE}/etc/rc.d
-	@${SED} -e "s#/usr/local/#${LOCALBASE}/#" ${PKGMESSAGE}
+	@if [ ! -f ${PREFIX}/etc/tinyproxy.conf ]; then \
+		${CP} -p ${PREFIX}/etc/tinyproxy.conf-dist \
+		${PREFIX}/etc/tinyproxy.conf ; \
+	fi
 
 .include <bsd.port.post.mk>
