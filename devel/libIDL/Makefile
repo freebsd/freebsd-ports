@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.8
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	A library for creating trees of CORBA Interface Definition Language files
+COMMENT=	A library for creating trees of CORBA IDL files
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
