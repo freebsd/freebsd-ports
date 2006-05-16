@@ -159,7 +159,7 @@ DIST=	base
 
 # dts
 .if ${GST_PLUGIN}=="dts"
-LIB_DEPENDS+=   dv.4:${PORTSDIR}/multimedia/libdv
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libdts.a:${PORTSDIR}/multimedia/libdts
 PLIST_FILES=	${GST_LIB_DIR}/libgstdtsdec.a \
 		${GST_LIB_DIR}/libgstdtsdec.la \
 		${GST_LIB_DIR}/libgstdtsdec.so
