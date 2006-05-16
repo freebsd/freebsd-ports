@@ -4,25 +4,9 @@ and install one or more projects.
 
 Refer to the BOINC web page at:
 	http://boinc.berkeley.edu/
-for a list of projects and refer to each of their sites for info
-on how to register with them and how to use them on FreeBSD.
-Note that not all projects support FreeBSD; some do, some let
-you download the client source code to install yourself, and some
-don't work on FreeBSD at all.
 
-SETI@HOME for FreeBSD is available in port astro/boinc-setiathome.
+SETI@HOME is available in port astro/boinc-setiathome.
+Einstein@Home is available for i386 users in astro/boinc-einsteinathome port.
 
-Einstein@Home will soon be available as a binary port for
-	FreeBSD/i386 users; it may also be available as an
-	automatic BOINC download.
-
-Read the "boinc" man page for more info on running BOINC and
-attaching projects.
-
-This version of the port includes the "boincmgr" GUI management
-interface and support for the client application status screens.
-Read the "boincmgr" man page for info on setting up your DISPLAY
-environment variable and xhost access permissions to use this.
-NB: Due to bugs in the x11-toolkits/wxgtk port on FreeBSD 4.x/alpha
-boincmgr may not work on that platform.
+Other projects are not known to work on FreeBSD at this moment.
 -------------------------------------------------------------------
