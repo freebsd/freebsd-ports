@@ -66,21 +66,21 @@
 %%PYTHON_SITELIBDIR%%/gtk-1.2/gtkhtml.py
 %%PYTHON_SITELIBDIR%%/gtk-1.2/gtkhtml.pyc
 %%PYTHON_SITELIBDIR%%/gtk-1.2/gtkhtml.pyo
-share/examples/py-gnome/about.py
-share/examples/py-gnome/bookmarks-applet.py
-share/examples/py-gnome/calculator.py
-share/examples/py-gnome/canvas-example.py
-share/examples/py-gnome/canvas.py
-share/examples/py-gnome/clock-applet.py
-share/examples/py-gnome/colorpicker.py
-share/examples/py-gnome/dial.py
-share/examples/py-gnome/fifteen.py
-share/examples/py-gnome/gtkhtml_demo.py
-share/examples/py-gnome/html_demo.py
-share/examples/py-gnome/stock_demo.py
-share/examples/py-gnome/ted_demo.py
-share/examples/py-gnome/uiinfo_demo.py
-share/examples/py-gnome/zterm.py
+%%EXAMPLESDIR%%/about.py
+%%EXAMPLESDIR%%/bookmarks-applet.py
+%%EXAMPLESDIR%%/calculator.py
+%%EXAMPLESDIR%%/canvas-example.py
+%%EXAMPLESDIR%%/canvas.py
+%%EXAMPLESDIR%%/clock-applet.py
+%%EXAMPLESDIR%%/colorpicker.py
+%%EXAMPLESDIR%%/dial.py
+%%EXAMPLESDIR%%/fifteen.py
+%%EXAMPLESDIR%%/gtkhtml_demo.py
+%%EXAMPLESDIR%%/html_demo.py
+%%EXAMPLESDIR%%/stock_demo.py
+%%EXAMPLESDIR%%/ted_demo.py
+%%EXAMPLESDIR%%/uiinfo_demo.py
+%%EXAMPLESDIR%%/zterm.py
 share/pygtk/1.2/defs/applet.defs
 share/pygtk/1.2/defs/capplet.defs
 share/pygtk/1.2/defs/gnome-enums.defs
@@ -89,5 +89,5 @@ share/pygtk/1.2/defs/gnomeui.defs
 share/pygtk/1.2/defs/gtkhtml.defs
 share/pygtk/1.2/defs/xmhtml.defs
 share/pygtk/1.2/defs/zvt.defs
-@dirrm share/examples/py-gnome
+@dirrm %%EXAMPLESDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/gtk-1.2/gnome
