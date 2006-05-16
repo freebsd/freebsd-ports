@@ -9,18 +9,18 @@ lib/libgnomeole2.so
 lib/libgnomeole2.so.0
 share/aclocal/gnome-libole2.m4
 share/aclocal/libole2.m4
-share/libole2/html/libole2-decl.txt
-share/libole2/html/libole2-sections.txt
-share/libole2/html/libole2.html
-share/libole2/html/libole2/index.html
-share/libole2/html/libole2/libole2-common.html
-share/libole2/html/libole2/libole2-miscellaneous.html
-share/libole2/html/libole2/libole2-msole.html
-share/libole2/html/libole2/libole2-msolestream.html
-share/libole2/html/libole2/libole2-msolesummary.html
-share/libole2/html/libole2/r14.html
-share/libole2/html/libole2/r19.html
-@dirrm share/libole2/html/libole2
-@dirrm share/libole2/html
-@dirrm share/libole2
+%%DATADIR%%/html/libole2-decl.txt
+%%DATADIR%%/html/libole2-sections.txt
+%%DATADIR%%/html/libole2.html
+%%DATADIR%%/html/libole2/index.html
+%%DATADIR%%/html/libole2/libole2-common.html
+%%DATADIR%%/html/libole2/libole2-miscellaneous.html
+%%DATADIR%%/html/libole2/libole2-msole.html
+%%DATADIR%%/html/libole2/libole2-msolestream.html
+%%DATADIR%%/html/libole2/libole2-msolesummary.html
+%%DATADIR%%/html/libole2/r14.html
+%%DATADIR%%/html/libole2/r19.html
+@dirrm %%DATADIR%%/html/libole2
+@dirrm %%DATADIR%%/html
+@dirrm %%DATADIR%%
 @dirrm include/libole2
