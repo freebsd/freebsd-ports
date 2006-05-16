@@ -1,5 +1,5 @@
---- Dependencies/RestrictedPython-Zope-2.9.2/RestrictedPython/tests/verify.py.orig	Sat Jan  7 21:07:51 2006
-+++ Dependencies/RestrictedPython-Zope-2.9.2/RestrictedPython/tests/verify.py	Sun Jan 15 13:43:23 2006
+--- Dependencies/RestrictedPython-Zope-2.9.3/RestrictedPython/tests/verify.py.orig	Sat Jan  7 21:07:51 2006
++++ Dependencies/RestrictedPython-Zope-2.9.3/RestrictedPython/tests/verify.py	Sun Jan 15 13:43:23 2006
 @@ -21,6 +21,7 @@
  function.
  """
