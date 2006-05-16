@@ -29,7 +29,7 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-wx-config=wxgtk2u-2.6-config \
 		--program-suffix=${PKGNAMESUFFIX}
 PKGCONFIGS=atk fontconfig gdk-2.0 pango
-CONFIGURE_ENV=	CPPFLAGS_APPEND="`pkg-config --cflags ${PKGCONFIGS}` \
+CONFIGURE_ENV+=	CPPFLAGS_APPEND="`pkg-config --cflags ${PKGCONFIGS}` \
 		-I${LOCALBASE}/include/atk-1.0/atk \
 		-I${X11BASE}/include/gtk-2.0/gtk"
 
