@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	commons-collections
-PORTVERSION=	3.1
+PORTVERSION=	3.2
 CATEGORIES=	java devel
 MASTER_SITES=	${MASTER_SITE_APACHE_JAKARTA}
 MASTER_SITE_SUBDIR=	commons/collections/source/
@@ -19,8 +19,6 @@ COMMENT=	Classes that extend/augment the Java Collections Framework
 USE_JAVA=	yes
 JAVA_VERSION=	1.2+
 USE_ANT=	yes
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 ALL_TARGET=	jar
 .if !defined(NOPORTDOCS)
