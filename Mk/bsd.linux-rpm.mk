@@ -1,7 +1,7 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4
 #
-# $FreeBSD: /tmp/pcvs/ports/Mk/bsd.linux-rpm.mk,v 1.4 2006-05-02 10:06:54 netchild Exp $
+# $FreeBSD: /tmp/pcvs/ports/Mk/bsd.linux-rpm.mk,v 1.5 2006-05-16 18:19:35 netchild Exp $
 #
 
 # Variables:
@@ -148,7 +148,7 @@ do-install:
 new-plist: build
 	@${RM} -f ${PLIST}.new
 	@cd ${WRKSRC} && \
-		${FIND} * ! type d | ${SORT} > ${PLIST}.new; \
+		${FIND} * ! -type d | ${SORT} > ${PLIST}.new; \
 		${FIND} -d * -type d | ${SED} -e 's|^|@dirrm |' >> ${PLIST}.new; \
 	done
 .  endif
