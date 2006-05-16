@@ -6,14 +6,16 @@
 #
 
 PORTNAME=	uni2ascii
-PORTVERSION=	3.8
+PORTVERSION=	3.9
 CATEGORIES=	textproc
-MASTER_SITES=	http://critical.ch/distfiles/
+MASTER_SITES=	http://billposer.org/Software/Downloads/ \
+		http://critical.ch/distfiles/
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Convert between UTF-8 Unicode and 7-bit ASCII equivalents
 
 GNU_CONFIGURE=	yes
+USE_BZIP2=	yes
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 
 MAN1=		uni2ascii.1 ascii2uni.1
