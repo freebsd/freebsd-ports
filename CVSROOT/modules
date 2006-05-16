@@ -907,6 +907,7 @@ brs		ports/misc/brs
 brutecopy	ports/net/brutecopy
 bruteforceblocker	ports/security/bruteforceblocker
 bsd-airtools	ports/net-mgmt/bsd-airtools
+bsdadminscripts	ports/sysutils/bsdadminscripts
 bsdav		ports/multimedia/bsdav
 bsdbktr_tvtune	ports/multimedia/bsdbktr_tvtune
 bsdftpd-ssl	ports/ftp/bsdftpd-ssl
