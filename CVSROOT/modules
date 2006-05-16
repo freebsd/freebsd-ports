@@ -3607,6 +3607,7 @@ gstreamer-plugins-mpeg2enc80	ports/multimedia/gstreamer-plugins-mpeg2enc80
 gstreamer-plugins-mplex80	ports/multimedia/gstreamer-plugins-mplex80
 gstreamer-plugins-musepack	ports/audio/gstreamer-plugins-musepack
 gstreamer-plugins-musepack80	ports/audio/gstreamer-plugins-musepack80
+gstreamer-plugins-musicbrainz	ports/audio/gstreamer-plugins-musicbrainz
 gstreamer-plugins-musicbrainz80	ports/audio/gstreamer-plugins-musicbrainz80
 gstreamer-plugins-nas80		ports/audio/gstreamer-plugins-nas80
 gstreamer-plugins-ogg		ports/audio/gstreamer-plugins-ogg
