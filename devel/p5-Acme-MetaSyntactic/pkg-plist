@@ -78,6 +78,7 @@ bin/meta
 %%SITE_PERL%%/Acme/MetaSyntactic/trigan.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/unicode.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/us_presidents.pm
+%%SITE_PERL%%/Acme/MetaSyntactic/userfriendly.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/viclones.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/weekdays.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/yapc.pm
