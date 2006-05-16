@@ -9271,6 +9271,7 @@ p5-String-Checker	ports/devel/p5-String-Checker
 p5-String-Divert	ports/textproc/p5-String-Divert
 p5-String-Ediff	ports/devel/p5-String-Ediff
 p5-String-Format	ports/textproc/p5-String-Format
+p5-String-Fraction	ports/textproc/p5-String-Fraction
 p5-String-Koremutake	ports/textproc/p5-String-Koremutake
 p5-String-LRC	ports/devel/p5-String-LRC
 p5-String-Multibyte	ports/converters/p5-String-Multibyte
