@@ -22,15 +22,17 @@ bin/perlcritic
 %%SITE_PERL%%/Perl/Critic/Policy/InputOutput/RequireBracedFileHandleWithPrint.pm
 %%SITE_PERL%%/Perl/Critic/Policy/ControlStructures/ProhibitCStyleForLoops.pm
 %%SITE_PERL%%/Perl/Critic/Policy/ControlStructures/ProhibitUntilBlocks.pm
+%%SITE_PERL%%/Perl/Critic/Policy/ControlStructures/ProhibitUnreachableCode.pm
 %%SITE_PERL%%/Perl/Critic/Policy/ControlStructures/ProhibitCascadingIfElse.pm
 %%SITE_PERL%%/Perl/Critic/Policy/ControlStructures/ProhibitPostfixControls.pm
 %%SITE_PERL%%/Perl/Critic/Policy/ControlStructures/ProhibitUnlessBlocks.pm
 %%SITE_PERL%%/Perl/Critic/Policy/Documentation/RequirePodAtEnd.pm
 %%SITE_PERL%%/Perl/Critic/Policy/Documentation/RequirePodSections.pm
-%%SITE_PERL%%/Perl/Critic/Policy/ValuesAndExpressions/ProhibitLeadingZeros.pm
 %%SITE_PERL%%/Perl/Critic/Policy/ValuesAndExpressions/ProhibitInterpolationOfLiterals.pm
-%%SITE_PERL%%/Perl/Critic/Policy/ValuesAndExpressions/RequireQuotedHeredocTerminator.pm
+%%SITE_PERL%%/Perl/Critic/Policy/ValuesAndExpressions/ProhibitLeadingZeros.pm
 %%SITE_PERL%%/Perl/Critic/Policy/ValuesAndExpressions/ProhibitNoisyQuotes.pm
+%%SITE_PERL%%/Perl/Critic/Policy/ValuesAndExpressions/ProhibitVersionStrings.pm
+%%SITE_PERL%%/Perl/Critic/Policy/ValuesAndExpressions/RequireQuotedHeredocTerminator.pm
 %%SITE_PERL%%/Perl/Critic/Policy/ValuesAndExpressions/RequireUpperCaseHeredocTerminator.pm
 %%SITE_PERL%%/Perl/Critic/Policy/ValuesAndExpressions/RequireNumberSeparators.pm
 %%SITE_PERL%%/Perl/Critic/Policy/ValuesAndExpressions/ProhibitConstantPragma.pm
@@ -40,6 +42,7 @@ bin/perlcritic
 %%SITE_PERL%%/Perl/Critic/Policy/Modules/RequireVersionVar.pm
 %%SITE_PERL%%/Perl/Critic/Policy/Modules/RequireBarewordIncludes.pm
 %%SITE_PERL%%/Perl/Critic/Policy/Modules/RequireExplicitPackage.pm
+%%SITE_PERL%%/Perl/Critic/Policy/Modules/ProhibitAutomaticExportation.pm
 %%SITE_PERL%%/Perl/Critic/Policy/Modules/ProhibitMultiplePackages.pm
 %%SITE_PERL%%/Perl/Critic/Policy/Modules/ProhibitEvilModules.pm
 %%SITE_PERL%%/Perl/Critic/Policy/Modules/RequireEndWithOne.pm
@@ -51,6 +54,8 @@ bin/perlcritic
 %%SITE_PERL%%/Perl/Critic/Policy/BuiltinFunctions/RequireGlobFunction.pm
 %%SITE_PERL%%/Perl/Critic/Policy/BuiltinFunctions/RequireBlockMap.pm
 %%SITE_PERL%%/Perl/Critic/Policy/BuiltinFunctions/ProhibitLvalueSubstr.pm
+%%SITE_PERL%%/Perl/Critic/Policy/BuiltinFunctions/ProhibitUniversalIsa.pm
+%%SITE_PERL%%/Perl/Critic/Policy/BuiltinFunctions/ProhibitUniversalCan.pm
 %%SITE_PERL%%/Perl/Critic/Policy/BuiltinFunctions/RequireBlockGrep.pm
 %%SITE_PERL%%/Perl/Critic/Policy/BuiltinFunctions/ProhibitStringyEval.pm
 %%SITE_PERL%%/Perl/Critic/Policy/BuiltinFunctions/ProhibitSleepViaSelect.pm
