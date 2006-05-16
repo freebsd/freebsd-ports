@@ -1,4 +1,5 @@
 %%SITE_PERL%%/TeX/Encode.pm
+%%SITE_PERL%%/TeX/debug.pl
 %%SITE_PERL%%/auto/TeX/Encode/autosplit.ix
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/TeX/Encode/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/TeX/Encode
