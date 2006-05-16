@@ -23,30 +23,30 @@ lib/libgdk_pixbuf_xlib.a
 lib/libgdk_pixbuf_xlib.so
 lib/libgdk_pixbuf_xlib.so.2
 share/aclocal/gdk-pixbuf.m4
-share/doc/gdk-pixbuf/a3696.html
-share/doc/gdk-pixbuf/compiling.html
-share/doc/gdk-pixbuf/extra-configuration-options.html
-share/doc/gdk-pixbuf/gdk-pixbuf-animation.html
-share/doc/gdk-pixbuf/gdk-pixbuf-creating.html
-share/doc/gdk-pixbuf/gdk-pixbuf-file-loading.html
-share/doc/gdk-pixbuf/gdk-pixbuf-from-drawables.html
-share/doc/gdk-pixbuf/gdk-pixbuf-gdk-pixbuf-xlib-from-drawables.html
-share/doc/gdk-pixbuf/gdk-pixbuf-gdk-pixbuf-xlib-init.html
-share/doc/gdk-pixbuf/gdk-pixbuf-gdk-pixbuf-xlib-rendering.html
-share/doc/gdk-pixbuf/gdk-pixbuf-gdk-pixbuf-xlib-rgb.html
-share/doc/gdk-pixbuf/gdk-pixbuf-gdk-pixbuf.html
-share/doc/gdk-pixbuf/gdk-pixbuf-refcounting.html
-share/doc/gdk-pixbuf/gdk-pixbuf-rendering.html
-share/doc/gdk-pixbuf/gdk-pixbuf-scaling.html
-share/doc/gdk-pixbuf/gdk-pixbuf-util.html
-share/doc/gdk-pixbuf/gdkpixbufloader.html
-share/doc/gdk-pixbuf/gnomecanvaspixbuf.html
-share/doc/gdk-pixbuf/index.html
-share/doc/gdk-pixbuf/license.html
-share/doc/gdk-pixbuf/r27.html
-share/doc/gdk-pixbuf/x3715.html
-share/doc/gdk-pixbuf/x3767.html
-@dirrm share/doc/gdk-pixbuf
+%%DOCSDIR%%/a3696.html
+%%DOCSDIR%%/compiling.html
+%%DOCSDIR%%/extra-configuration-options.html
+%%DOCSDIR%%/gdk-pixbuf-animation.html
+%%DOCSDIR%%/gdk-pixbuf-creating.html
+%%DOCSDIR%%/gdk-pixbuf-file-loading.html
+%%DOCSDIR%%/gdk-pixbuf-from-drawables.html
+%%DOCSDIR%%/gdk-pixbuf-gdk-pixbuf-xlib-from-drawables.html
+%%DOCSDIR%%/gdk-pixbuf-gdk-pixbuf-xlib-init.html
+%%DOCSDIR%%/gdk-pixbuf-gdk-pixbuf-xlib-rendering.html
+%%DOCSDIR%%/gdk-pixbuf-gdk-pixbuf-xlib-rgb.html
+%%DOCSDIR%%/gdk-pixbuf-gdk-pixbuf.html
+%%DOCSDIR%%/gdk-pixbuf-refcounting.html
+%%DOCSDIR%%/gdk-pixbuf-rendering.html
+%%DOCSDIR%%/gdk-pixbuf-scaling.html
+%%DOCSDIR%%/gdk-pixbuf-util.html
+%%DOCSDIR%%/gdkpixbufloader.html
+%%DOCSDIR%%/gnomecanvaspixbuf.html
+%%DOCSDIR%%/index.html
+%%DOCSDIR%%/license.html
+%%DOCSDIR%%/r27.html
+%%DOCSDIR%%/x3715.html
+%%DOCSDIR%%/x3767.html
+@dirrm %%DOCSDIR%%
 @dirrm lib/gdk-pixbuf/loaders
 @dirrm lib/gdk-pixbuf
 @dirrm include/gdk-pixbuf-1.0/gdk-pixbuf
