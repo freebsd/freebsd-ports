@@ -1,0 +1,47 @@
+#!/bin/sh
+
+# Start or stop jabber's mu-conference
+# $FreeBSD$
+
+# PROVIDE: mu_conference
+# REQUIRE: DAEMON jabberd
+# KEYWORD: FreeBSD shutdown
+#
+# Define these mu_conference_* variables in one of these files:
+#       /etc/rc.conf
+#       /etc/rc.conf.local
+#       /etc/rc.conf.d/mu_conference
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+#
+# mu_conference_config : path
+#   Path to the configuration file ("%%PREFIX%%/etc/muc.xml", the default).
+#
+# mu_conference_enable : bool
+#   Enable ("YES") or disable ("NO", the default) this startup script.
+#
+
+. %%RC_SUBR%%
+
+name="mu_conference"
+rcvar=`set_rcvar`
+
+command="%%PREFIX%%/bin/mu-conference"
+pidfile="/var/jabberd/pid/mu-conference.pid"
+
+stop_postcmd="mu_conference_stop_post"
+
+mu_conference_stop_post () {
+        rm -f ${pidfile}
+}
+
+load_rc_config $name
+
+: ${mu_conference_config="%%PREFIX%%/etc/muc.xml"}
+: ${mu_conference_enable="NO"}
+: ${mu_conference_user="jabber"}
+
+command_args="-c $mu_conference_config -B"
+
+run_rc_command "$1"
+
