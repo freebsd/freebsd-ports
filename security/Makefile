@@ -435,6 +435,7 @@
     SUBDIR += pam_krb5
     SUBDIR += pam_ldap
     SUBDIR += pam_mkhomedir
+    SUBDIR += pam_per_user
     SUBDIR += pam_pgina
     SUBDIR += pam_pop3
     SUBDIR += pam_pwdfile

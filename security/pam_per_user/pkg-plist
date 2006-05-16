@@ -1,0 +1,3 @@
+sbin/authtest
+lib/security/pam_per_user.so.1
+@dirrmtry lib/security
