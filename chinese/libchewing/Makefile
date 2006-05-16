@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libchewing
-PORTVERSION=	0.2.7
-PORTREVISION=	1
+PORTVERSION=	0.3.0
 CATEGORIES=	chinese textproc
 MASTER_SITES=	http://chewing.csie.net/download/libchewing/
 
