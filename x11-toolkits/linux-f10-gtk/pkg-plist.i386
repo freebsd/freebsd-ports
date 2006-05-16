@@ -117,6 +117,8 @@ usr/share/themes/Default/gtk/gtkrc
 @dirrmtry usr/share/locale/nn
 @dirrmtry usr/share/locale/lt/LC_MESSAGES
 @dirrmtry usr/share/locale/lt
+@dirrmtry usr/share/locale/ga/LC_MESSAGES
+@dirrmtry usr/share/locale/ga
 @dirrmtry usr/share/locale/eu/LC_MESSAGES
 @dirrmtry usr/share/locale/eu
 @dirrmtry usr/share/locale/az/LC_MESSAGES
