@@ -14,15 +14,15 @@ lib/anjuta/libanjuta_sample1.a
 lib/anjuta/libanjuta_sample1.la
 lib/anjuta/libanjuta_sample1.so
 lib/anjuta/libanjuta_sample1.so.0
-%%PORTDOCS%%share/doc/anjuta/AUTHORS
-%%PORTDOCS%%share/doc/anjuta/COPYING
-%%PORTDOCS%%share/doc/anjuta/ChangeLog
-%%PORTDOCS%%share/doc/anjuta/FUTURE
-%%PORTDOCS%%share/doc/anjuta/INSTALL
-%%PORTDOCS%%share/doc/anjuta/NEWS
-%%PORTDOCS%%share/doc/anjuta/README
-%%PORTDOCS%%share/doc/anjuta/ScintillaDoc.html
-%%PORTDOCS%%share/doc/anjuta/TODO
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/FUTURE
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/ScintillaDoc.html
+%%PORTDOCS%%%%DOCSDIR%%/TODO
 share/gnome/anjuta/README.stock_libs
 share/gnome/anjuta/anjuta_project.template
 share/gnome/anjuta/autogen.sh
@@ -444,5 +444,5 @@ share/locale/zh_TW/LC_MESSAGES/anjuta.mo
 @dirrm share/gnome/anjuta/gdl/glade
 @dirrm share/gnome/anjuta/gdl
 @dirrm share/gnome/anjuta
-%%PORTDOCS%%@dirrm share/doc/anjuta
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/anjuta
