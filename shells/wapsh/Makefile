@@ -21,7 +21,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/}
 
 WWWOWN?=	www
 WWWGRP?=	www
-WWWDIR?=	www/data/${PORTNAME}
+WWWDIR?=	www/${PORTNAME}
 DATADIR=	${PREFIX}/${WWWDIR}
 SUB_FILES=	pkg-message
 
