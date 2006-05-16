@@ -3,8 +3,8 @@ network shares at login time. It is relatively difficult in setup - you should
 understand, what you do, know how to install SMB/CIFS support into a kernel,
 how to setup /etc/nsmb.conf and .nsmbrc files, etc.
 
-Script are written on Shell. Uses Samba utility findsmb to locate Windows boxes
-when generated .nsmbrc file in semi-automated mode with smb2nsmbrc helper
+Script are written on Shell. Uses nbtscan and host utilites to locate Windows
+boxes when generated .nsmbrc file in semi-automated mode with smb2nsmbrc helper
 script. Also uses their own file .mssmbrc to describe any share, mounted with
 mountsmb2.
 
