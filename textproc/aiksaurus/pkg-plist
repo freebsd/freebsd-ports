@@ -7,7 +7,7 @@ lib/libAiksaurus-1.2.so.0
 lib/libAiksaurus.la
 lib/libAiksaurus.so
 libdata/pkgconfig/aiksaurus-1.0.pc
-share/aiksaurus/meanings.dat
-share/aiksaurus/words.dat
-@dirrm share/aiksaurus
+%%DATADIR%%/meanings.dat
+%%DATADIR%%/words.dat
+@dirrm %%DATADIR%%
 @dirrm include/Aiksaurus
