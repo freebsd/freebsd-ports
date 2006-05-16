@@ -6,22 +6,23 @@
 #
 
 PORTNAME=	mod_bw
-PORTVERSION=	0.6
+PORTVERSION=	0.7
 CATEGORIES=	www
-MASTER_SITES=	http://www.ivn.cl/apache/
-DISTNAME=	bw_mod-${PORTVERSION}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	bwmod
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	apache2
 
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Bandwidth and Connection control per Virtual Host or Directory
 
+WRKSRC=		${WRKDIR}/mod_bw
 USE_APACHE=	20+
 AP_FAST_BUILD=	YES
 AP_GENPLIST=	YES
 
-SRC_FILE=	bw_mod-0.6.c
-PORTDOCS=	APACHE2-LICENSE LICENSE bw_mod-0.6.txt
+SRC_FILE=	mod_bw.c
+PORTDOCS=	LICENSE mod_bw.txt
 
 post-install:
 	@${MKDIR} ${DOCSDIR}

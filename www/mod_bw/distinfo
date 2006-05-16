@@ -1,3 +1,3 @@
-MD5 (apache2/bw_mod-0.6.tgz) = 0c92fa6344f487321291a592dbb49856
-SHA256 (apache2/bw_mod-0.6.tgz) = 7b99f80cfc1ad2ec895ef7acb1bc2bbea53153057106790e79a2459ec77bab8c
-SIZE (apache2/bw_mod-0.6.tgz) = 50298
+MD5 (apache2/mod_bw-0.7.tgz) = 84b43c95fedabfa93be6b6af2e5f5672
+SHA256 (apache2/mod_bw-0.7.tgz) = 21fe083874ee427887c4d2c3dac630e760aa8c6b97b2f1cbf09c2d853a1c87aa
+SIZE (apache2/mod_bw-0.7.tgz) = 18585
