@@ -416,6 +416,7 @@
     SUBDIR += p5-Net-Finger
     SUBDIR += p5-Net-Gnats
     SUBDIR += p5-Net-Google
+    SUBDIR += p5-Net-Google-Calendar
     SUBDIR += p5-Net-Gopher
     SUBDIR += p5-Net-HL7
     SUBDIR += p5-Net-Ident

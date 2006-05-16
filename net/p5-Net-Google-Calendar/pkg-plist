@@ -1,0 +1,6 @@
+%%SITE_PERL%%/Net/Google/Calendar.pm
+%%SITE_PERL%%/Net/Google/Calendar/Entry.pm
+%%SITE_PERL%%/Net/Google/Calendar/Person.pm
+@dirrm %%SITE_PERL%%/Net/Google/Calendar
+@dirrm %%SITE_PERL%%/Net/Google
+@dirrmtry %%SITE_PERL%%/Net
