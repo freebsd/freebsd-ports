@@ -427,6 +427,7 @@ bin/proofgeneral
 @dirrm %%EMACS_SITE_LISPDIR%%/proofgeneral/acl2
 @dirrm %%EMACS_SITE_LISPDIR%%/proofgeneral
 @dirrmtry %%EMACS_SITE_LISPDIR%%/site-start.d
+@dirrmtry %%EMACS_SITE_LISPDIR%%
 share/application-registry/proofgeneral.applications
 share/applications/proofgeneral.desktop
 share/icons/hicolor/16x16/proofgeneral.png
