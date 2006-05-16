@@ -1,13 +1,18 @@
-A hosting web GUI for admin and accounting apache/named/proftpd/qmail
-Domain Technologie Control (DTC) is a set of PHP scripts and a web
-interface that manage a MySQL database that handles all the host
-information. It generates backup scripts, statistic calculation scripts, and
-config files for bind, Apache, qmail, and proftpd, using a single system
-UID/GID. With DTC, you can delegate the task of creating subdomains, email,
-and FTP accounts to users for the domain names they own, and monitor
-bandwidth per user and service.
+A GPL web control panel for admin and accounting hosting services.
+Domain Technologie Control (DTC) is a GPL control panel for hosting. Using a
+web GUI for admin and accounting all hosting services, DTC can delegate the
+task of creating subdomains, email, and FTP accounts to users for the domain
+names they own. DTC manages a MySQL database containing all the hosting
+informations. It has support for many programs (bind 8 and 9 and
+compatibles, MySQL, Apache 1.3, php4, qmail, postfix 2, courier, dovecot,
+proftpd, webalizer, mod-log-sql, etc...) thrue config files and/or MySQL
+plugin (when service is non-critical). It can also generates backup scripts,
+calculation scripts, and config files using a single system UID/GID, and
+monitor all trafic accounting per user and per service. Since version 0.12,
+DTC is fully skinable and translated in 7 language (Chinese, English,
+Spanish, French, Deuch, German and Russian).
 
-WWW: http://www.gplhost.com/?rub=software&sousrub=dtc
+WWW: http://www.gplhost.com/?rub=softwares&sousrub=dtc
 
 - Thomas GOIRAND
 thomas@goirand.fr
