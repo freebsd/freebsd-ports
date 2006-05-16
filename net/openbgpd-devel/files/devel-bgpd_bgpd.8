@@ -1,0 +1,32 @@
+--- bgpd/bgpd.8.orig	Tue May 16 17:14:46 2006
++++ bgpd/bgpd.8	Tue May 16 17:16:27 2006
+@@ -48,9 +48,9 @@
+ .Nm
+ is usually started at boot time, and can be enabled by
+ setting the following in
+-.Pa /etc/rc.conf.local :
++.Pa /etc/rc.conf :
+ .Pp
+-.Dl bgpd_flags=\&"\&"
++.Dl openbgpd_flags=\&"\&"
+ .Pp
+ See
+ .Xr rc 8
+@@ -92,7 +92,7 @@
+ .Ar file
+ as the configuration file,
+ instead of the default
+-.Pa /etc/bgpd.conf .
++.Pa %%PREFIX%%/etc/bgpd.conf .
+ .It Fl n
+ Configtest mode.
+ Only check the configuration file for validity.
+@@ -110,7 +110,7 @@
+ .El
+ .Sh FILES
+ .Bl -tag -width "/var/run/bgpd.sockXXX" -compact
+-.It Pa /etc/bgpd.conf
++.It Pa %%PREFIX%%/etc/bgpd.conf
+ default
+ .Nm
+ configuration file
