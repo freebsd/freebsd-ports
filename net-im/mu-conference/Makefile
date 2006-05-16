@@ -6,7 +6,7 @@
 
 PORTNAME=	mu-conference
 PORTVERSION=	0.6.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-im
 MASTER_SITES=	${MASTER_SITE_GENTOO} \
 		http://jabber.terrapin.com/JCR/:jcr
@@ -17,6 +17,8 @@ MAINTAINER=	dsh@vlink.ru
 COMMENT=	Multi-User Conferencing component for Jabber
 
 USE_GNOME=	glib20
+USE_RC_SUBR=	${PORTNAME}.sh
+
 WRKSRC=		${WRKDIR}/jcr-${JCR_VER}
 
 JCR_VER?=	0.2.4
