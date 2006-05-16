@@ -18,6 +18,10 @@
 %%SITE_PERL%%/Math/Symbolic/Parser/Yapp.pm
 %%SITE_PERL%%/Math/Symbolic/Variable.pm
 %%SITE_PERL%%/Math/Symbolic/VectorCalculus.pm
+%%SITE_PERL%%/Math/compile_yapp_parser.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Symbolic/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Symbolic
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math
 @dirrm %%SITE_PERL%%/Math/Symbolic/Parser
 @dirrm %%SITE_PERL%%/Math/Symbolic/Custom
 @dirrm %%SITE_PERL%%/Math/Symbolic
