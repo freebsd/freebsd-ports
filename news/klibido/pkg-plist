@@ -19,6 +19,7 @@ share/apps/klibido/klibidoui.rc
 %%PORTDOCS%%share/doc/HTML/en/klibido/index.docbook
 share/icons/hicolor/16x16/apps/klibido.png
 share/icons/hicolor/32x32/apps/klibido.png
+share/locale/fr/LC_MESSAGES/klibido.mo
 @dirrm share/apps/klibido/icons/hicolor/16x16/actions
 @dirrm share/apps/klibido/icons/hicolor/16x16/apps
 @dirrm share/apps/klibido/icons/hicolor/32x32/actions
