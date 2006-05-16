@@ -7,6 +7,7 @@
 
 PORTNAME=	smarteiffel
 DISTVERSION=	1.2r6
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://except.com.ar/downloads/smarteiffel/
 DISTNAME=	SmartEiffel-${DISTVERSION}
@@ -29,6 +30,12 @@ ALL_TARGET=
 PLIST_SUB+=	PORTVERSION=${DISTVERSION}
 
 SUB_FILES=	pkg-install pkg-message
+
+post-patch:
+	@${REINPLACE_CMD} \
+		-e 's|^.*c_compiler_options:.*$$|c_compiler_options: ${CFLAGS}|' \
+		-e 's|^.*cpp_compiler_options:.*$$|cpp_compiler_options: ${CXXFLAGS}|' \
+			${WRKSRC}/install/gcc.rc
 
 # Make sure we can set the symbolic link SmartEiffel
 # to the actual release directory.
