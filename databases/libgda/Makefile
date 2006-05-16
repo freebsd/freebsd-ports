@@ -7,7 +7,7 @@
 
 PORTNAME=	libgda
 PORTVERSION=	0.2.96
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	databases gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.2
@@ -23,6 +23,7 @@ USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomeprefix gnomehier gconf bonobo
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
+INSTALLS_OMF=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-gtk-doc
