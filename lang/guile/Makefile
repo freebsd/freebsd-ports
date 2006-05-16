@@ -33,7 +33,7 @@ INFO=		goops guile-tut guile r5rs
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64"
-BROKEN=		"Does not install on ${ARCH}"
+BROKEN=		Does not install on ${ARCH}
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-ia64
 .endif
 
