@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wmnd
-PORTVERSION=	0.4.11
+PORTVERSION=	0.4.12
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.yuv.info/pub/wmnd/releases/
 
@@ -20,7 +20,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datadir=${EXAMPLESDIR} --with-drivers="freebsd_sysctl" \
 		--program-transform-name=""
 
-INFO=		gpl
 MAN1=		wmnd.1
 
 post-install:
