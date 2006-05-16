@@ -290,6 +290,7 @@ include/irssi/src/fe-common/irc/module-formats.h
 include/irssi/src/common.h
 include/irssi/config.h
 include/irssi/irssi-version.h
+@exec mkdir -p %D/lib/irssi/modules
 @dirrm lib/irssi/modules
 @dirrm lib/irssi
 @dirrm %%DOCSDIR%%
