@@ -33,7 +33,7 @@ PLIST_DIRS=	%%DATADIR%%
 
 DESKTOP_ENTRIES=	"SFBOL" "Star Fleet Battles Online" \
 			"${DATADIR}/sfbicon.ico" \
-			"sfbol" "Application;Game;BoardGame;StrategyGame" \
+			"sfbol" "Application;Game;BoardGame;StrategyGame;" \
 			false
 
 RESTRICTED=	Commerical software.  Licenses does not allow redistribution.
