@@ -1,0 +1,26 @@
+#!/bin/sh
+
+# PROVIDE: tinyproxy
+# REQUIRE: LOGIN
+
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf to enable tinyproxy:
+# tinyproxy_enable (bool): Set to "NO" by default.
+#                          Set it to "YES" to enable tinyproxy 
+# tinyproxy_config (path): Set to "%%PREFIX%%/etc/tinyproxy.conf" by default.
+#
+
+. %%RC_SUBR%%
+
+name="tinyproxy"
+rcvar=`set_rcvar`
+
+load_rc_config $name
+
+: ${tinyproxy_enable="NO"}
+: ${tinyproxy_config="%%PREFIX%%/etc/tinyproxy.conf"}
+
+command=%%PREFIX%%/sbin/tinyproxy
+command_args="-c $tinyproxy_config 2> /dev/null"
+
+run_rc_command "$1"
