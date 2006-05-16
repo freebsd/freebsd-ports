@@ -1,0 +1,11 @@
+--- Makefile.orig	Tue May 16 06:33:17 2006
++++ Makefile	Tue May 16 06:33:28 2006
+@@ -5,7 +5,7 @@
+ 
+ CFLAGS=-O2 -g -Wall
+ ifndef CONFIG_WIN32
+-LIBS=-ldl
++#LIBS=-ldl
+ BCHECK_O=bcheck.o
+ endif
+ CFLAGS_P=$(CFLAGS) -pg -static -DCONFIG_TCC_STATIC
