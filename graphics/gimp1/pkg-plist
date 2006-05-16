@@ -270,1109 +270,1109 @@ libexec/gimp/1.2/plug-ins/xpm
 libexec/gimp/1.2/plug-ins/xwd
 libexec/gimp/1.2/plug-ins/zealouscrop
 share/aclocal/gimp.m4
-share/gimp/brushes/10x10square.gbr
-share/gimp/brushes/10x10squareBlur.gbr
-share/gimp/brushes/11circle.gbr
-share/gimp/brushes/11fcircle.gbr
-share/gimp/brushes/13circle.gbr
-share/gimp/brushes/13fcircle.gbr
-share/gimp/brushes/15circle.gbr
-share/gimp/brushes/15fcircle.gbr
-share/gimp/brushes/17circle.gbr
-share/gimp/brushes/17fcircle.gbr
-share/gimp/brushes/19circle.gbr
-share/gimp/brushes/19fcircle.gbr
-share/gimp/brushes/1circle.gbr
-share/gimp/brushes/20x20square.gbr
-share/gimp/brushes/20x20squareBlur.gbr
-share/gimp/brushes/3circle.gbr
-share/gimp/brushes/3fcircle.gbr
-share/gimp/brushes/5circle.gbr
-share/gimp/brushes/5fcircle.gbr
-share/gimp/brushes/5x5square.gbr
-share/gimp/brushes/5x5squareBlur.gbr
-share/gimp/brushes/7circle.gbr
-share/gimp/brushes/7fcircle.gbr
-share/gimp/brushes/9circle.gbr
-share/gimp/brushes/9fcircle.gbr
-share/gimp/brushes/DStar11.gbr
-share/gimp/brushes/DStar17.gbr
-share/gimp/brushes/DStar25.gbr
-share/gimp/brushes/SketchBrush-16.gih
-share/gimp/brushes/SketchBrush-32.gih
-share/gimp/brushes/SketchBrush-64.gih
-share/gimp/brushes/callig1.gbr
-share/gimp/brushes/callig2.gbr
-share/gimp/brushes/callig3.gbr
-share/gimp/brushes/callig4.gbr
-share/gimp/brushes/confetti.gbr
-share/gimp/brushes/confetti.gih
-share/gimp/brushes/dunes.gbr
-share/gimp/brushes/feltpen.gih
-share/gimp/brushes/hsparks.gih
-share/gimp/brushes/galaxy.gbr
-share/gimp/brushes/galaxy_big.gbr
-share/gimp/brushes/galaxy_small.gbr
-share/gimp/brushes/pepper.gbr
-share/gimp/brushes/pixel.gbr
-share/gimp/brushes/thegimp.gbr
-share/gimp/brushes/vine.gih
-share/gimp/brushes/xcf.gbr
-share/gimp/devel-docs/html/libgimp/gimpchainbutton.html
-share/gimp/devel-docs/html/libgimp/gimpcolorbutton.html
-share/gimp/devel-docs/html/libgimp/gimpdefinitions.html
-share/gimp/devel-docs/html/libgimp/gimpfileselection.html
-share/gimp/devel-docs/html/libgimp/gimpmodule.html
-share/gimp/devel-docs/html/libgimp/gimppatheditor.html
-share/gimp/devel-docs/html/libgimp/gimppixmap.html
-share/gimp/devel-docs/html/libgimp/gimpsizeentry.html
-share/gimp/devel-docs/html/libgimp/gimpunitmenu.html
-share/gimp/devel-docs/html/libgimp/index.html
-share/gimp/devel-docs/html/libgimp/index.sgml
-share/gimp/devel-docs/html/libgimp/libgimp-gimp.html
-share/gimp/devel-docs/html/libgimp/libgimp-gimpbrushes.html
-share/gimp/devel-docs/html/libgimp/libgimp-gimpchannel.html
-share/gimp/devel-docs/html/libgimp/libgimp-gimpchannelops.html
-share/gimp/devel-docs/html/libgimp/libgimp-gimpcolor.html
-share/gimp/devel-docs/html/libgimp/libgimp-gimpcolordisplay.html
-share/gimp/devel-docs/html/libgimp/libgimp-gimpcolorselector.html
-share/gimp/devel-docs/html/libgimp/libgimp-gimpcolorspace.html
-share/gimp/devel-docs/html/libgimp/libgimp-gimpcompat.html
-share/gimp/devel-docs/html/libgimp/libgimp-gimpconvert.html
-share/gimp/devel-docs/html/libgimp/libgimp-gimpdialog.html
-share/gimp/devel-docs/html/libgimp/libgimp-gimpdisplay.html
-share/gimp/devel-docs/html/libgimp/libgimp-gimpdrawable.html
-share/gimp/devel-docs/html/libgimp/libgimp-gimpedit.html
-share/gimp/devel-docs/html/libgimp/libgimp-gimpenums.html
-share/gimp/devel-docs/html/libgimp/libgimp-gimpenv.html
-share/gimp/devel-docs/html/libgimp/libgimp-gimpexport.html
-share/gimp/devel-docs/html/libgimp/libgimp-gimpfeatures.html
-share/gimp/devel-docs/html/libgimp/libgimp-gimpfileops.html
-share/gimp/devel-docs/html/libgimp/libgimp-gimpfloatingsel.html
-share/gimp/devel-docs/html/libgimp/libgimp-gimpgimprc.html
-share/gimp/devel-docs/html/libgimp/libgimp-gimpgradients.html
-share/gimp/devel-docs/html/libgimp/libgimp-gimpguides.html
-share/gimp/devel-docs/html/libgimp/libgimp-gimphelp.html
-share/gimp/devel-docs/html/libgimp/libgimp-gimphelpui.html
-share/gimp/devel-docs/html/libgimp/libgimp-gimpimage.html
-share/gimp/devel-docs/html/libgimp/libgimp-gimplayer.html
-share/gimp/devel-docs/html/libgimp/libgimp-gimplimits.html
-share/gimp/devel-docs/html/libgimp/libgimp-gimpmath.html
-share/gimp/devel-docs/html/libgimp/libgimp-gimpmatrix.html
-share/gimp/devel-docs/html/libgimp/libgimp-gimpmenu.html
-share/gimp/devel-docs/html/libgimp/libgimp-gimpmessage.html
-share/gimp/devel-docs/html/libgimp/libgimp-gimpmisc.html
-share/gimp/devel-docs/html/libgimp/libgimp-gimpmodule.html
-share/gimp/devel-docs/html/libgimp/libgimp-gimppalette.html
-share/gimp/devel-docs/html/libgimp/libgimp-gimpparasite.html
-share/gimp/devel-docs/html/libgimp/libgimp-gimpparasiteio.html
-share/gimp/devel-docs/html/libgimp/libgimp-gimppatterns.html
-share/gimp/devel-docs/html/libgimp/libgimp-gimppixelrgn.html
-share/gimp/devel-docs/html/libgimp/libgimp-gimpplugin.html
-share/gimp/devel-docs/html/libgimp/libgimp-gimpproceduraldb.html
-share/gimp/devel-docs/html/libgimp/libgimp-gimpprotocol.html
-share/gimp/devel-docs/html/libgimp/libgimp-gimpquerybox.html
-share/gimp/devel-docs/html/libgimp/libgimp-gimpselection.html
-share/gimp/devel-docs/html/libgimp/libgimp-gimpsignal.html
-share/gimp/devel-docs/html/libgimp/libgimp-gimptexttool.html
-share/gimp/devel-docs/html/libgimp/libgimp-gimptile.html
-share/gimp/devel-docs/html/libgimp/libgimp-gimptools.html
-share/gimp/devel-docs/html/libgimp/libgimp-gimpui.html
-share/gimp/devel-docs/html/libgimp/libgimp-gimpundo.html
-share/gimp/devel-docs/html/libgimp/libgimp-gimpunit.html
-share/gimp/devel-docs/html/libgimp/libgimp-gimputils.html
-share/gimp/devel-docs/html/libgimp/libgimp-gimpvector.html
-share/gimp/devel-docs/html/libgimp/libgimp-gimpwidgets.html
-share/gimp/devel-docs/html/libgimp/libgimp-gimpwire.html
-share/gimp/devel-docs/html/libgimp/libgimp.html
-share/gimp/devel-docs/html/libgimp/libgimpui.html
-share/gimp/fractalexplorer/Asteroid_Field
-share/gimp/fractalexplorer/Bar_Code_Label
-share/gimp/fractalexplorer/Beauty_of_Nature
-share/gimp/fractalexplorer/Blue_Curtain
-share/gimp/fractalexplorer/Car_Track
-share/gimp/fractalexplorer/Energetic_Diamond
-share/gimp/fractalexplorer/Explosive
-share/gimp/fractalexplorer/Flower
-share/gimp/fractalexplorer/Fragments
-share/gimp/fractalexplorer/Hemp
-share/gimp/fractalexplorer/High_Voltage
-share/gimp/fractalexplorer/Hoops
-share/gimp/fractalexplorer/Ice_Crystal
-share/gimp/fractalexplorer/Leaves
-share/gimp/fractalexplorer/Lightning
-share/gimp/fractalexplorer/Mandelbrot
-share/gimp/fractalexplorer/Marble
-share/gimp/fractalexplorer/Marble2
-share/gimp/fractalexplorer/Medusa
-share/gimp/fractalexplorer/Nautilus
-share/gimp/fractalexplorer/Nebula
-share/gimp/fractalexplorer/Plant
-share/gimp/fractalexplorer/Rose
-share/gimp/fractalexplorer/Saturn
-share/gimp/fractalexplorer/Snow_Crystal
-share/gimp/fractalexplorer/Soma
-share/gimp/fractalexplorer/Spark
-share/gimp/fractalexplorer/Suns
-share/gimp/fractalexplorer/Tentacles
-share/gimp/fractalexplorer/The_Green_Place
-share/gimp/fractalexplorer/Wave
-share/gimp/fractalexplorer/Wood
-share/gimp/fractalexplorer/Zooming_Circle
-share/gimp/gfig/A_star
-share/gimp/gfig/curves
-share/gimp/gfig/polys
-share/gimp/gfig/ring
-share/gimp/gfig/ring+star
-share/gimp/gfig/simily
-share/gimp/gfig/spirals_and_stars
-share/gimp/gfig/sprial
-share/gimp/gfig/star2
-share/gimp/gfig/stars
-share/gimp/gflare/Bright_Star
-share/gimp/gflare/Classic
-share/gimp/gflare/Default
-share/gimp/gflare/Distant_Sun
-share/gimp/gflare/GFlare_101
-share/gimp/gflare/GFlare_102
-share/gimp/gflare/Hidden_Planet
-share/gimp/gimp_logo.ppm
-share/gimp/gimp_splash.ppm
-share/gimp/gimpressionist/Brushes/arrow01.pgm
-share/gimp/gimpressionist/Brushes/ball.ppm
-share/gimp/gimpressionist/Brushes/blob.ppm
-share/gimp/gimpressionist/Brushes/box.ppm
-share/gimp/gimpressionist/Brushes/chalk01.pgm
-share/gimp/gimpressionist/Brushes/cone.ppm
-share/gimp/gimpressionist/Brushes/crayon01.pgm
-share/gimp/gimpressionist/Brushes/crayon02.pgm
-share/gimp/gimpressionist/Brushes/crayon03.pgm
-share/gimp/gimpressionist/Brushes/crayon04.pgm
-share/gimp/gimpressionist/Brushes/crayon05.pgm
-share/gimp/gimpressionist/Brushes/crayon06.pgm
-share/gimp/gimpressionist/Brushes/crayon07.pgm
-share/gimp/gimpressionist/Brushes/crayon08.pgm
-share/gimp/gimpressionist/Brushes/defaultbrush.pgm
-share/gimp/gimpressionist/Brushes/dribble.pgm
-share/gimp/gimpressionist/Brushes/fabric.pgm
-share/gimp/gimpressionist/Brushes/fabric01.pgm
-share/gimp/gimpressionist/Brushes/fabric02.pgm
-share/gimp/gimpressionist/Brushes/fabric03.pgm
-share/gimp/gimpressionist/Brushes/flower01.pgm
-share/gimp/gimpressionist/Brushes/flower02.pgm
-share/gimp/gimpressionist/Brushes/flower03.pgm
-share/gimp/gimpressionist/Brushes/flower04.pgm
-share/gimp/gimpressionist/Brushes/grad01.pgm
-share/gimp/gimpressionist/Brushes/grad02.pgm
-share/gimp/gimpressionist/Brushes/grad03.pgm
-share/gimp/gimpressionist/Brushes/heart.ppm
-share/gimp/gimpressionist/Brushes/leaf01.pgm
-share/gimp/gimpressionist/Brushes/paintbrush.pgm
-share/gimp/gimpressionist/Brushes/paintbrush01.pgm
-share/gimp/gimpressionist/Brushes/paintbrush02.pgm
-share/gimp/gimpressionist/Brushes/paintbrush03.pgm
-share/gimp/gimpressionist/Brushes/paintbrush04.pgm
-share/gimp/gimpressionist/Brushes/paper01.pgm
-share/gimp/gimpressionist/Brushes/paper02.pgm
-share/gimp/gimpressionist/Brushes/paper03.pgm
-share/gimp/gimpressionist/Brushes/paper04.pgm
-share/gimp/gimpressionist/Brushes/pentagram.pgm
-share/gimp/gimpressionist/Brushes/scribble.pgm
-share/gimp/gimpressionist/Brushes/shape01.pgm
-share/gimp/gimpressionist/Brushes/shape02.pgm
-share/gimp/gimpressionist/Brushes/shape03.pgm
-share/gimp/gimpressionist/Brushes/shape04.pgm
-share/gimp/gimpressionist/Brushes/snow1.pgm
-share/gimp/gimpressionist/Brushes/sphere.ppm
-share/gimp/gimpressionist/Brushes/splat1.pgm
-share/gimp/gimpressionist/Brushes/splat2.pgm
-share/gimp/gimpressionist/Brushes/splat3.pgm
-share/gimp/gimpressionist/Brushes/spunge01.pgm
-share/gimp/gimpressionist/Brushes/spunge02.pgm
-share/gimp/gimpressionist/Brushes/spunge03.pgm
-share/gimp/gimpressionist/Brushes/spunge04.pgm
-share/gimp/gimpressionist/Brushes/spunge05.pgm
-share/gimp/gimpressionist/Brushes/strange01.pgm
-share/gimp/gimpressionist/Brushes/thegimp.pgm
-share/gimp/gimpressionist/Brushes/torus.ppm
-share/gimp/gimpressionist/Brushes/wavy.pgm
-share/gimp/gimpressionist/Brushes/weave.pgm
-share/gimp/gimpressionist/Brushes/worm.pgm
-share/gimp/gimpressionist/Paper/bricks.pgm
-share/gimp/gimpressionist/Paper/bricks2.pgm
-share/gimp/gimpressionist/Paper/burlap.pgm
-share/gimp/gimpressionist/Paper/canvas2.pgm
-share/gimp/gimpressionist/Paper/defaultpaper.pgm
-share/gimp/gimpressionist/Paper/marble.pgm
-share/gimp/gimpressionist/Paper/marble2.pgm
-share/gimp/gimpressionist/Paper/struc.pgm
-share/gimp/gimpressionist/Paper/stone.pgm
-share/gimp/gimpressionist/Presets/ApplyCanvas
-share/gimp/gimpressionist/Presets/Ballpark
-share/gimp/gimpressionist/Presets/Canvas
-share/gimp/gimpressionist/Presets/Crosshatch
-share/gimp/gimpressionist/Presets/Cubism
-share/gimp/gimpressionist/Presets/Dotify
-share/gimp/gimpressionist/Presets/Embroidery
-share/gimp/gimpressionist/Presets/Feathers
-share/gimp/gimpressionist/Presets/Felt-marker
-share/gimp/gimpressionist/Presets/Flowerbed
-share/gimp/gimpressionist/Presets/Furry
-share/gimp/gimpressionist/Presets/Line-art
-share/gimp/gimpressionist/Presets/Line-art-2
-share/gimp/gimpressionist/Presets/Maggot-invasion
-share/gimp/gimpressionist/Presets/MarbleMadness
-share/gimp/gimpressionist/Presets/Mossy
-share/gimp/gimpressionist/Presets/Painted_Rock
-share/gimp/gimpressionist/Presets/Parquette
-share/gimp/gimpressionist/Presets/Patchwork
-share/gimp/gimpressionist/Presets/Ringworks
-share/gimp/gimpressionist/Presets/Sample
-share/gimp/gimpressionist/Presets/Smash
-share/gimp/gimpressionist/Presets/Straws
-share/gimp/gimpressionist/Presets/Weave
-share/gimp/gimpressionist/Presets/Wormcan
-share/gimp/gradients/Abstract_1
-share/gimp/gradients/Abstract_2
-share/gimp/gradients/Abstract_3
-share/gimp/gradients/Aneurism
-share/gimp/gradients/Blinds
-share/gimp/gradients/Blue_Green
-share/gimp/gradients/Browns
-share/gimp/gradients/Brushed_Aluminium
-share/gimp/gradients/Burning_Paper
-share/gimp/gradients/Burning_Transparency
-share/gimp/gradients/CD
-share/gimp/gradients/CD_Half
-share/gimp/gradients/Caribbean_Blues
-share/gimp/gradients/Coffee
-share/gimp/gradients/Cold_Steel
-share/gimp/gradients/Cold_Steel_2
-share/gimp/gradients/Crown_molding
-share/gimp/gradients/Danish_flag
-share/gimp/gradients/Dark_1
-share/gimp/gradients/Deep_Sea
-share/gimp/gradients/Default
-share/gimp/gradients/Flare_Glow_Angular_1
-share/gimp/gradients/Flare_Glow_Radial_1
-share/gimp/gradients/Flare_Glow_Radial_2
-share/gimp/gradients/Flare_Glow_Radial_3
-share/gimp/gradients/Flare_Glow_Radial_4
-share/gimp/gradients/Flare_Radial_101
-share/gimp/gradients/Flare_Radial_102
-share/gimp/gradients/Flare_Radial_103
-share/gimp/gradients/Flare_Rays_Radial_1
-share/gimp/gradients/Flare_Rays_Radial_2
-share/gimp/gradients/Flare_Rays_Size_1
-share/gimp/gradients/Flare_Sizefac_101
-share/gimp/gradients/Four_bars
-share/gimp/gradients/French_flag
-share/gimp/gradients/French_flag_smooth
-share/gimp/gradients/Full_saturation_spectrum_CCW
-share/gimp/gradients/Full_saturation_spectrum_CW
-share/gimp/gradients/German_flag
-share/gimp/gradients/German_flag_smooth
-share/gimp/gradients/Golden
-share/gimp/gradients/Greens
-share/gimp/gradients/Horizon_1
-share/gimp/gradients/Horizon_2
-share/gimp/gradients/Incandescent
-share/gimp/gradients/Land_1
-share/gimp/gradients/Land_and_Sea
-share/gimp/gradients/Metallic_Something
-share/gimp/gradients/Mexican_flag
-share/gimp/gradients/Mexican_flag_smooth
-share/gimp/gradients/Nauseating_Headache
-share/gimp/gradients/Neon_Cyan
-share/gimp/gradients/Neon_Green
-share/gimp/gradients/Neon_Yellow
-share/gimp/gradients/Pastel_Rainbow
-share/gimp/gradients/Pastels
-share/gimp/gradients/Purples
-share/gimp/gradients/Radial_Eyeball_Blue
-share/gimp/gradients/Radial_Eyeball_Brown
-share/gimp/gradients/Radial_Eyeball_Green
-share/gimp/gradients/Radial_Glow_1
-share/gimp/gradients/Radial_Rainbow_Hoop
-share/gimp/gradients/Romanian_flag
-share/gimp/gradients/Romanian_flag_smooth
-share/gimp/gradients/Rounded_edge
-share/gimp/gradients/Shadows_1
-share/gimp/gradients/Shadows_2
-share/gimp/gradients/Shadows_3
-share/gimp/gradients/Skyline
-share/gimp/gradients/Skyline_polluted
-share/gimp/gradients/Square_Wood_Frame
-share/gimp/gradients/Sunrise
-share/gimp/gradients/Three_bars_sin
-share/gimp/gradients/Tropical_Colors
-share/gimp/gradients/Tube_Red
-share/gimp/gradients/Wood_1
-share/gimp/gradients/Wood_2
-share/gimp/gradients/Yellow_Contrast
-share/gimp/gradients/Yellow_Orange
-share/gimp/help/C/bug_submission.html
-share/gimp/help/C/channels/channel_to_selection.html
-share/gimp/help/C/channels/delete_channel.html
-@exec mkdir -p %D/share/gimp/help/C/channels
-@exec ln -sf %D/share/gimp/help/C/dialogs/channels %D/share/gimp/help/C/channels/dialogs
-@unexec rm -f %D/share/gimp/help/C/channels/dialogs
-share/gimp/help/C/channels/duplicate_channel.html
-share/gimp/help/C/channels/index.html
-share/gimp/help/C/channels/lower_channel.html
-share/gimp/help/C/channels/raise_channel.html
-share/gimp/help/C/command_line.html
-share/gimp/help/C/contents.html
-share/gimp/help/C/dialogs/about.html
-share/gimp/help/C/dialogs/border_selection.html
-share/gimp/help/C/dialogs/brush_editor.html
-share/gimp/help/C/dialogs/brush_selection.html
-share/gimp/help/C/dialogs/channels/channels.html
-share/gimp/help/C/dialogs/channels/edit_channel_attributes.html
-share/gimp/help/C/dialogs/channels/new_channel.html
-share/gimp/help/C/dialogs/color_selectors/built_in.html
-share/gimp/help/C/dialogs/color_selectors/gtk.html
-share/gimp/help/C/dialogs/color_selectors/triangle.html
-share/gimp/help/C/dialogs/color_selectors/watercolor.html
-share/gimp/help/C/dialogs/confirm_save.html
-share/gimp/help/C/dialogs/convert_to_indexed.html
-share/gimp/help/C/dialogs/copy_named.html
-share/gimp/help/C/dialogs/cut_named.html
-share/gimp/help/C/dialogs/device_status.html
-share/gimp/help/C/dialogs/document_index.html
-share/gimp/help/C/dialogs/edit_qmask_attributes.html
-share/gimp/help/C/dialogs/error_console.html
-share/gimp/help/C/dialogs/export_file.html
-share/gimp/help/C/dialogs/feather_selection.html
-share/gimp/help/C/dialogs/file_new.html
-share/gimp/help/C/dialogs/file_open.html
-share/gimp/help/C/dialogs/file_save.html
-share/gimp/help/C/dialogs/gradient_editor/copy_gradient.html
-share/gimp/help/C/dialogs/gradient_editor/delete_gradient.html
-share/gimp/help/C/dialogs/gradient_editor/gradient_editor.html
-share/gimp/help/C/dialogs/gradient_editor/new_gradient.html
-share/gimp/help/C/dialogs/gradient_editor/rename_gradient.html
-share/gimp/help/C/dialogs/gradient_editor/replicate_segment.html
-share/gimp/help/C/dialogs/gradient_editor/save_as_povray.html
-share/gimp/help/C/dialogs/gradient_editor/split_segments_uniformly.html
-share/gimp/help/C/dialogs/gradient_selection.html
-share/gimp/help/C/dialogs/grow_selection.html
-share/gimp/help/C/dialogs/help.html
-share/gimp/help/C/dialogs/index.html
-share/gimp/help/C/dialogs/indexed_palette.html
-share/gimp/help/C/dialogs/info_window.html
-share/gimp/help/C/dialogs/input_devices.html
-share/gimp/help/C/dialogs/layers/add_layer_mask.html
-share/gimp/help/C/dialogs/layers/edit_layer_attributes.html
-share/gimp/help/C/dialogs/layers/layer_boundary_size.html
-share/gimp/help/C/dialogs/layers/layers.html
-share/gimp/help/C/dialogs/layers/merge_visible_layers.html
-share/gimp/help/C/dialogs/layers/new_layer.html
-share/gimp/help/C/dialogs/layers/scale_layer.html
-share/gimp/help/C/dialogs/layers_and_channels.html
-share/gimp/help/C/dialogs/module_browser.html
-share/gimp/help/C/dialogs/navigation_window.html
-share/gimp/help/C/dialogs/offset.html
-share/gimp/help/C/dialogs/palette_editor/delete_palette.html
-share/gimp/help/C/dialogs/palette_editor/import_palette.html
-share/gimp/help/C/dialogs/palette_editor/merge_palette.html
-share/gimp/help/C/dialogs/palette_editor/new_palette.html
-share/gimp/help/C/dialogs/palette_editor/palette_editor.html
-share/gimp/help/C/dialogs/palette_selection.html
-share/gimp/help/C/dialogs/paste_named.html
-share/gimp/help/C/dialogs/paths/edit_path_attributes.html
-share/gimp/help/C/dialogs/paths/export_path.html
-share/gimp/help/C/dialogs/paths/import_path.html
-share/gimp/help/C/dialogs/paths/paths.html
-share/gimp/help/C/dialogs/pattern_selection.html
-share/gimp/help/C/dialogs/preferences/directories.html
-share/gimp/help/C/dialogs/preferences/display.html
-share/gimp/help/C/dialogs/preferences/environment.html
-share/gimp/help/C/dialogs/preferences/interface.html
-share/gimp/help/C/dialogs/preferences/monitor.html
-share/gimp/help/C/dialogs/preferences/new_file.html
-share/gimp/help/C/dialogs/preferences/preferences.html
-share/gimp/help/C/dialogs/preferences/session.html
-share/gimp/help/C/dialogs/really_close.html
-share/gimp/help/C/dialogs/really_quit.html
-share/gimp/help/C/dialogs/scale_image.html
-share/gimp/help/C/dialogs/scale_layer_warn.html
-share/gimp/help/C/dialogs/set_canvas_size.html
-share/gimp/help/C/dialogs/shrink_selection.html
-share/gimp/help/C/dialogs/tip_of_the_day.html
-share/gimp/help/C/dialogs/tool_options.html
-share/gimp/help/C/dialogs/undo_history.html
-share/gimp/help/C/file/close.html
-@exec mkdir -p %D/share/gimp/help/C/file
-@exec ln -sf %D/share/gimp/help/C/dialogs %D/share/gimp/help/C/file/dialogs
-@unexec rm -f %D/share/gimp/help/C/file/dialogs
-@exec ln -sf %D/share/gimp/help/C/filters %D/share/gimp/help/C/file/filters
-@unexec rm -f %D/share/gimp/help/C/file/filters
-share/gimp/help/C/file/index.html
-share/gimp/help/C/file/last_opened.html
-@exec ln -sf %D/share/gimp/help/C/open %D/share/gimp/help/C/file/open
-@unexec rm -f %D/share/gimp/help/C/file/open
-share/gimp/help/C/file/revert.html
-share/gimp/help/C/file/quit.html
-@exec ln -sf %D/share/gimp/help/C/save %D/share/gimp/help/C/file/save
-@unexec rm -f %D/share/gimp/help/C/file/save
-share/gimp/help/C/file_formats.html
-share/gimp/help/C/filters/alienmap.html
-share/gimp/help/C/filters/alienmap2.html
-share/gimp/help/C/filters/align_layers.html
-share/gimp/help/C/filters/animate_cells.html
-share/gimp/help/C/filters/animationplay.html
-share/gimp/help/C/filters/animoptimize.html
-share/gimp/help/C/filters/apply_lens.html
-share/gimp/help/C/filters/applycanvas.html
-share/gimp/help/C/filters/autocrop.html
-share/gimp/help/C/filters/autostretch_hsv.html
-share/gimp/help/C/filters/blended2.html
-share/gimp/help/C/filters/blinds.html
-share/gimp/help/C/filters/blur.html
-share/gimp/help/C/filters/blowinout.html
-share/gimp/help/C/filters/border.html
-share/gimp/help/C/filters/borderaverage.html
-share/gimp/help/C/filters/bumpmap.html
-share/gimp/help/C/filters/burst.html
-share/gimp/help/C/filters/bz2.html
-share/gimp/help/C/filters/c_astretch.html
-share/gimp/help/C/filters/centerguide.html
-share/gimp/help/C/filters/checkerboard.html
-share/gimp/help/C/filters/cml_explorer.html
-share/gimp/help/C/filters/color_enhance.html
-share/gimp/help/C/filters/colorify.html
-share/gimp/help/C/filters/colortoalpha.html
-share/gimp/help/C/filters/convmatrix.html
-share/gimp/help/C/filters/compose.html
-share/gimp/help/C/filters/cubism.html
-share/gimp/help/C/filters/curve_bend.html
-share/gimp/help/C/filters/decompose.html
-share/gimp/help/C/filters/deinterlace.html
-share/gimp/help/C/filters/depthmerge.html
-share/gimp/help/C/filters/despeckle.html
-share/gimp/help/C/filters/destripe.html
-share/gimp/help/C/filters/diffraction.html
-share/gimp/help/C/filters/displace.html
-share/gimp/help/C/filters/ditherize.html
-share/gimp/help/C/filters/dust.html
-share/gimp/help/C/filters/edge.html
-share/gimp/help/C/filters/emboss.html
-share/gimp/help/C/filters/engrave.html
-share/gimp/help/C/filters/exchange.html
-share/gimp/help/C/filters/fade-alpha.html
-share/gimp/help/C/filters/film.html
-share/gimp/help/C/filters/fire.html
-share/gimp/help/C/filters/fit-text.html
-share/gimp/help/C/filters/fits.html
-share/gimp/help/C/filters/flame.html
-share/gimp/help/C/filters/flarefx.html
-share/gimp/help/C/filters/fractalexplorer.html
-share/gimp/help/C/filters/fractaltrace.html
-share/gimp/help/C/filters/fp.html
-share/gimp/help/C/filters/frame_filter.html
-share/gimp/help/C/filters/gap_filter.html
-share/gimp/help/C/filters/gap_frontends.html
-share/gimp/help/C/filters/gap_navigator_dialog.html
-share/gimp/help/C/filters/gap_plugins.html
-share/gimp/help/C/filters/gauss_iir.html
-share/gimp/help/C/filters/gauss_rle.html
-share/gimp/help/C/filters/gee_zoom.html
-share/gimp/help/C/filters/gdyntext.html
-share/gimp/help/C/filters/gfig.html
-share/gimp/help/C/filters/gflare.html
-share/gimp/help/C/filters/gih.html
-share/gimp/help/C/filters/gimpressionist.html
-share/gimp/help/C/filters/glasstile.html
-share/gimp/help/C/filters/glowing_steel.html
-share/gimp/help/C/filters/gouge.html
-share/gimp/help/C/filters/gradmap.html
-share/gimp/help/C/filters/grid.html
-share/gimp/help/C/filters/gqbist.html
-share/gimp/help/C/filters/gtm.html
-share/gimp/help/C/filters/guide_remove.html
-share/gimp/help/C/filters/guidegrid.html
-share/gimp/help/C/filters/guides_to_selection.html
-share/gimp/help/C/filters/guillotine.html
-share/gimp/help/C/filters/gz.html
-share/gimp/help/C/filters/hot.html
-share/gimp/help/C/filters/hrz.html
-share/gimp/help/C/filters/ifscompose.html
-share/gimp/help/C/filters/illusion.html
-share/gimp/help/C/filters/image_tile.html
-share/gimp/help/C/filters/imagemap.html
-share/gimp/help/C/filters/iwarp.html
-share/gimp/help/C/filters/index.html
-share/gimp/help/C/filters/jigsaw.html
-share/gimp/help/C/filters/jpeg.html
-share/gimp/help/C/filters/laplace.html
-share/gimp/help/C/filters/layerfuncs.html
-share/gimp/help/C/filters/lic.html
-share/gimp/help/C/filters/lighting.html
-share/gimp/help/C/filters/logulator.html
-share/gimp/help/C/filters/mail.html
-share/gimp/help/C/filters/map_to_gradient.html
-share/gimp/help/C/filters/mapcolor.html
-share/gimp/help/C/filters/mapobject.html
-share/gimp/help/C/filters/max_rgb.html
-share/gimp/help/C/filters/maze.html
-share/gimp/help/C/filters/mblur.html
-share/gimp/help/C/filters/miff.html
-share/gimp/help/C/filters/mirrorsplit.html
-share/gimp/help/C/filters/mosaic.html
-share/gimp/help/C/filters/newsprint.html
-share/gimp/help/C/filters/nlfilt.html
-share/gimp/help/C/filters/nova.html
-share/gimp/help/C/filters/noisify.html
-share/gimp/help/C/filters/none.html
-share/gimp/help/C/filters/normalize.html
-share/gimp/help/C/filters/oilify.html
-share/gimp/help/C/filters/pagecurl.html
-share/gimp/help/C/filters/papertile.html
-share/gimp/help/C/filters/pat.html
-share/gimp/help/C/filters/perlotine.html
-share/gimp/help/C/filters/pixelmap.html
-share/gimp/help/C/filters/pixelize.html
-share/gimp/help/C/filters/plasma.html
-share/gimp/help/C/filters/polar.html
-share/gimp/help/C/filters/prep4gif.html
-share/gimp/help/C/filters/png.html
-share/gimp/help/C/filters/pnm.html
-share/gimp/help/C/filters/print.html
-share/gimp/help/C/filters/psd.html
-share/gimp/help/C/filters/psp.html
-share/gimp/help/C/filters/randomblends.html
-share/gimp/help/C/filters/randomize.html
-share/gimp/help/C/filters/rcm.html
-share/gimp/help/C/filters/repdup.html
-share/gimp/help/C/filters/repeat_last.html
-share/gimp/help/C/filters/reshow_last.html
-share/gimp/help/C/filters/resynth.html
-share/gimp/help/C/filters/ripple.html
-share/gimp/help/C/filters/rotate.html
-share/gimp/help/C/filters/roundsel.html
-share/gimp/help/C/filters/sample_colorize.html
-share/gimp/help/C/filters/scatter_hsv.html
-share/gimp/help/C/filters/scratches.html
-share/gimp/help/C/filters/sel2path.html
-share/gimp/help/C/filters/sel_gauss.html
-share/gimp/help/C/filters/semiflatten.html
-share/gimp/help/C/filters/sharpen.html
-share/gimp/help/C/filters/shift.html
-share/gimp/help/C/filters/sgi.html
-share/gimp/help/C/filters/sinus.html
-share/gimp/help/C/filters/smooth_palette.html
-share/gimp/help/C/filters/snoise.html
-share/gimp/help/C/filters/sobel.html
-share/gimp/help/C/filters/sparkle.html
-share/gimp/help/C/filters/spread.html
-share/gimp/help/C/filters/stampify.html
-share/gimp/help/C/filters/struc.html
-share/gimp/help/C/filters/sunras.html
-share/gimp/help/C/filters/terral_text.html
-share/gimp/help/C/filters/tex-to-float.html
-share/gimp/help/C/filters/tga.html
-share/gimp/help/C/filters/threshold_alpha.html
-share/gimp/help/C/filters/tiff.html
-share/gimp/help/C/filters/tile.html
-share/gimp/help/C/filters/tileit.html
-share/gimp/help/C/filters/tiler.html
-share/gimp/help/C/filters/tileable_blur.html
-share/gimp/help/C/filters/translogo.html
-share/gimp/help/C/filters/unsharp.html
-share/gimp/help/C/filters/url.html
-share/gimp/help/C/filters/video.html
-share/gimp/help/C/filters/vinvert.html
-share/gimp/help/C/filters/vpropagate.html
-share/gimp/help/C/filters/warp-sharp.html
-share/gimp/help/C/filters/warp.html
-share/gimp/help/C/filters/waves.html
-share/gimp/help/C/filters/webify.html
-share/gimp/help/C/filters/whirlpinch.html
-share/gimp/help/C/filters/wind.html
-share/gimp/help/C/filters/windify.html
-share/gimp/help/C/filters/wmf.html
-share/gimp/help/C/filters/xachlego.html
-share/gimp/help/C/filters/xachshadow.html
-share/gimp/help/C/filters/xachvision.html
-share/gimp/help/C/filters/xwd.html
-share/gimp/help/C/filters/zealouscrop.html
-share/gimp/help/C/gimp_license.html
-share/gimp/help/C/gimp_remote.html
-share/gimp/help/C/gimptool.html
-share/gimp/help/C/glossary.html
-@exec mkdir -p %D/share/gimp/help/C/image
-@exec ln -sf %D/share/gimp/help/C/dialogs %D/share/gimp/help/C/image/dialogs
-@unexec rm -f %D/share/gimp/help/C/image/dialogs
-share/gimp/help/C/image/edit/clear.html
-share/gimp/help/C/image/edit/copy.html
-share/gimp/help/C/image/edit/cut.html
-@exec mkdir -p %D/share/gimp/help/C/image/edit
-@exec ln -sf %D/share/gimp/help/C/dialogs %D/share/gimp/help/C/image/edit/dialogs
-@unexec rm -f %D/share/gimp/help/C/image/edit/dialogs
-share/gimp/help/C/image/edit/fill.html
-share/gimp/help/C/image/edit/paste.html
-share/gimp/help/C/image/edit/paste_as_new.html
-share/gimp/help/C/image/edit/paste_into.html
-share/gimp/help/C/image/edit/redo.html
-share/gimp/help/C/image/edit/stroke.html
-share/gimp/help/C/image/edit/undo.html
-@exec ln -sf %D/share/gimp/help/C/file %D/share/gimp/help/C/image/file
-@unexec rm -f %D/share/gimp/help/C/image/file
-@exec ln -sf %D/share/gimp/help/C/filters %D/share/gimp/help/C/image/filters
-@unexec rm -f %D/share/gimp/help/C/image/filters
-share/gimp/help/C/image/image/colors/auto/equalize.html
-share/gimp/help/C/image/image/colors/desaturate.html
-share/gimp/help/C/image/image/colors/invert.html
-@exec mkdir -p %D/share/gimp/help/C/image/image
-@exec ln -sf %D/share/gimp/help/C/dialogs %D/share/gimp/help/C/image/image/dialogs
-@unexec rm -f %D/share/gimp/help/C/image/image/dialogs
-share/gimp/help/C/image/image/duplicate.html
-share/gimp/help/C/image/image/mode/convert_to_grayscale.html
-share/gimp/help/C/image/image/mode/convert_to_rgb.html
-@exec mkdir -p %D/share/gimp/help/C/image/image/mode
-@exec ln -sf %D/share/gimp/help/C/dialogs %D/share/gimp/help/C/image/image/mode/dialogs
-@unexec rm -f %D/share/gimp/help/C/image/image/mode/dialogs
-@exec mkdir -p %D/share/gimp/help/C/image/image/transforms
-@exec ln -sf %D/share/gimp/help/C/dialogs %D/share/gimp/help/C/image/image/transforms/dialogs
-@unexec rm -f %D/share/gimp/help/C/image/image/transforms/dialogs
-share/gimp/help/C/image/image_window.html
-share/gimp/help/C/image/index.html
-@exec ln -sf %D/share/gimp/help/C/layers %D/share/gimp/help/C/image/layers
-@unexec rm -f %D/share/gimp/help/C/image/layers
-share/gimp/help/C/image/select/all.html
-@exec mkdir -p %D/share/gimp/help/C/image/select
-@exec ln -sf %D/share/gimp/help/C/dialogs %D/share/gimp/help/C/image/select/dialogs
-@unexec rm -f %D/share/gimp/help/C/image/select/dialogs
-share/gimp/help/C/image/select/float.html
-share/gimp/help/C/image/select/invert.html
-share/gimp/help/C/image/select/none.html
-share/gimp/help/C/image/select/save_to_channel.html
-share/gimp/help/C/image/select/sharpen.html
-@exec ln -sf %D/share/gimp/help/C/toolbox %D/share/gimp/help/C/image/toolbox
-@unexec rm -f %D/share/gimp/help/C/image/toolbox
-@exec ln -sf %D/share/gimp/help/C/tools %D/share/gimp/help/C/image/tools
-@unexec rm -f %D/share/gimp/help/C/image/tools
-@exec mkdir -p %D/share/gimp/help/C/image/view
-@exec ln -sf %D/share/gimp/help/C/dialogs %D/share/gimp/help/C/image/view/dialogs
-@unexec rm -f %D/share/gimp/help/C/image/view/dialogs
-share/gimp/help/C/image/view/dot_for_dot.html
-share/gimp/help/C/image/view/new_view.html
-share/gimp/help/C/image/view/shrink_wrap.html
-share/gimp/help/C/image/view/snap_to_guides.html
-share/gimp/help/C/image/view/toggle_guides.html
-share/gimp/help/C/image/view/toggle_rulers.html
-share/gimp/help/C/image/view/toggle_selection.html
-share/gimp/help/C/image/view/toggle_statusbar.html
-share/gimp/help/C/image/view/zoom.html
-share/gimp/help/C/images/add_point.png
-share/gimp/help/C/images/anchor_layer.png
-share/gimp/help/C/images/channel_to_selection.png
-share/gimp/help/C/images/delete_channel.png
-share/gimp/help/C/images/delete_directory.png
-share/gimp/help/C/images/delete_layer.png
-share/gimp/help/C/images/delete_path.png
-share/gimp/help/C/images/dotted_square.png
-share/gimp/help/C/images/duplicate_channel.png
-share/gimp/help/C/images/duplicate_layer.png
-share/gimp/help/C/images/duplicate_path.png
-share/gimp/help/C/images/edit_point.png
-share/gimp/help/C/images/eye.png
-share/gimp/help/C/images/examples/border-selection-01.png
-share/gimp/help/C/images/examples/border-selection-02.png
-share/gimp/help/C/images/glossary/modes-addition.png
-share/gimp/help/C/images/glossary/modes-color.png
-share/gimp/help/C/images/glossary/modes-darken.png
-share/gimp/help/C/images/glossary/modes-difference.png
-share/gimp/help/C/images/glossary/modes-dissolve.png
-share/gimp/help/C/images/glossary/modes-divide.png
-share/gimp/help/C/images/glossary/modes-hue.png
-share/gimp/help/C/images/glossary/modes-lighten.png
-share/gimp/help/C/images/glossary/modes-multiply.png
-share/gimp/help/C/images/glossary/modes-normal.png
-share/gimp/help/C/images/glossary/modes-normal2.png
-share/gimp/help/C/images/glossary/modes-overlay.png
-share/gimp/help/C/images/glossary/modes-saturation.png
-share/gimp/help/C/images/glossary/modes-screen.png
-share/gimp/help/C/images/glossary/modes-subtract.png
-share/gimp/help/C/images/glossary/modes-value.png
-share/gimp/help/C/images/geezoom.png
-share/gimp/help/C/images/image_menu.png
-share/gimp/help/C/images/image_window.png
-share/gimp/help/C/images/layers_dialog.png
-share/gimp/help/C/images/layers_example.png
-share/gimp/help/C/images/layers_menu.png
-share/gimp/help/C/images/layers_overview.png
-share/gimp/help/C/images/lower_channel.png
-share/gimp/help/C/images/lower_directory.png
-share/gimp/help/C/images/lower_layer.png
-share/gimp/help/C/images/new_channel.png
-share/gimp/help/C/images/new_directory.png
-share/gimp/help/C/images/new_path.png
-share/gimp/help/C/images/new_point.png
-share/gimp/help/C/images/path_to_selection.png
-share/gimp/help/C/images/preview_box.png
-share/gimp/help/C/images/print_color.png
-share/gimp/help/C/images/print_main.png
-share/gimp/help/C/images/print_setup.png
-share/gimp/help/C/images/raise_channel.png
-share/gimp/help/C/images/raise_directory.png
-share/gimp/help/C/images/raise_layer.png
-share/gimp/help/C/images/red_square.png
-share/gimp/help/C/images/remove_point.png
-share/gimp/help/C/images/selection_to_path.png
-share/gimp/help/C/images/stroke_path.png
-share/gimp/help/C/images/tool_options.png
-share/gimp/help/C/images/toolbox.png
-share/gimp/help/C/images/tools/tool-opt-increment.png
-share/gimp/help/C/images/tools/tool-opt-nonincrement.png
-share/gimp/help/C/images/tools/tool_airbrush.png
-share/gimp/help/C/images/tools/tool_apartheid.png
-share/gimp/help/C/images/tools/tool_bezier.png
-share/gimp/help/C/images/tools/tool_blend.png
-share/gimp/help/C/images/tools/tool_burndodge.png
-share/gimp/help/C/images/tools/tool_convolver.png
-share/gimp/help/C/images/tools/tool_crop.png
-share/gimp/help/C/images/tools/tool_dodgeburn.png
-share/gimp/help/C/images/tools/tool_ellipse_sel.png
-share/gimp/help/C/images/tools/tool_eraser.png
-share/gimp/help/C/images/tools/tool_fill.png
-share/gimp/help/C/images/tools/tool_flip.png
-share/gimp/help/C/images/tools/tool_free_sel.png
-share/gimp/help/C/images/tools/tool_fuzzy_sel.png
-share/gimp/help/C/images/tools/tool_gradient.png
-share/gimp/help/C/images/tools/tool_ink.png
-share/gimp/help/C/images/tools/tool_measure.png
-share/gimp/help/C/images/tools/tool_move.png
-share/gimp/help/C/images/tools/tool_paintbrush.png
-share/gimp/help/C/images/tools/tool_pencil.png
-share/gimp/help/C/images/tools/tool_picker.png
-share/gimp/help/C/images/tools/tool_rect_sel.png
-share/gimp/help/C/images/tools/tool_scissors.png
-share/gimp/help/C/images/tools/tool_smudge.png
-share/gimp/help/C/images/tools/tool_smuge.png
-share/gimp/help/C/images/tools/tool_text.png
-share/gimp/help/C/images/tools/tool_transform.png
-share/gimp/help/C/images/tools/tool_zoom.png
-share/gimp/help/C/images/triangle.png
-share/gimp/help/C/images/wilber.png
-share/gimp/help/C/index.html
-share/gimp/help/C/introduction.html
-share/gimp/help/C/keyboard_shortcuts.html
-share/gimp/help/C/layers/add_alpha_channel.html
-share/gimp/help/C/layers/alpha_to_selection.html
-share/gimp/help/C/layers/anchor_layer.html
-share/gimp/help/C/layers/apply_mask.html
-@exec mkdir -p %D/share/gimp/help/C/layers
-@exec ln -sf %D/share/gimp/help/C/dialogs/layers %D/share/gimp/help/C/layers/dialogs
-@unexec rm -f %D/share/gimp/help/C/layers/dialogs
-share/gimp/help/C/layers/delete_layer.html
-share/gimp/help/C/layers/delete_mask.html
-share/gimp/help/C/layers/duplicate_layer.html
-share/gimp/help/C/layers/flatten_image.html
-share/gimp/help/C/layers/index.html
-share/gimp/help/C/layers/layer_to_image_size.html
-share/gimp/help/C/layers/mask_to_selection.html
-share/gimp/help/C/layers/merge_down.html
-share/gimp/help/C/layers/stack/stack.html
-share/gimp/help/C/layers/using_layers.html
-share/gimp/help/C/ln7.html
-share/gimp/help/C/main_interface.html
-@exec mkdir -p %D/share/gimp/help/C/open
-@exec ln -sf %D/share/gimp/help/C/dialogs %D/share/gimp/help/C/open/dialogs
-@unexec rm -f %D/share/gimp/help/C/open/dialogs
-@exec ln -sf %D/share/gimp/help/C/filters %D/share/gimp/help/C/open/filters
-@unexec rm -f %D/share/gimp/help/C/open/filters
-share/gimp/help/C/open/index.html
-share/gimp/help/C/open/open_by_extension.html
-share/gimp/help/C/paths/copy_path.html
-share/gimp/help/C/paths/delete_path.html
-@exec mkdir -p %D/share/gimp/help/C/paths
-@exec ln -sf %D/share/gimp/help/C/dialogs %D/share/gimp/help/C/paths/dialogs
-@unexec rm -f %D/share/gimp/help/C/paths/dialogs
-share/gimp/help/C/paths/duplicate_path.html
-@exec ln -sf %D/share/gimp/help/C/filters %D/share/gimp/help/C/paths/filters
-@unexec rm -f %D/share/gimp/help/C/paths/filters
-share/gimp/help/C/paths/index.html
-share/gimp/help/C/paths/new_path.html
-share/gimp/help/C/paths/paste_path.html
-share/gimp/help/C/paths/path_to_selection.html
-share/gimp/help/C/paths/stroke_path.html
-@exec mkdir -p %D/share/gimp/help/C/save
-@exec ln -sf %D/share/gimp/help/C/dialogs %D/share/gimp/help/C/save/dialogs
-@unexec rm -f %D/share/gimp/help/C/save/dialogs
-@exec ln -sf %D/share/gimp/help/C/filters %D/share/gimp/help/C/save/filters
-@unexec rm -f %D/share/gimp/help/C/save/filters
-share/gimp/help/C/save/index.html
-share/gimp/help/C/save/save_by_extension.html
-@exec mkdir -p %D/share/gimp/help/C/toolbox
-@exec ln -sf %D/share/gimp/help/C/dialogs %D/share/gimp/help/C/toolbox/dialogs
-@unexec rm -f %D/share/gimp/help/C/toolbox/dialogs
-@exec ln -sf %D/share/gimp/help/C/file %D/share/gimp/help/C/toolbox/file
-@unexec rm -f %D/share/gimp/help/C/toolbox/file
-@exec ln -sf %D/share/gimp/help/C/filters %D/share/gimp/help/C/toolbox/filters
-@unexec rm -f %D/share/gimp/help/C/toolbox/filters
-share/gimp/help/C/toolbox/help/context_help.html
-@exec mkdir -p %D/share/gimp/help/C/toolbox/help
-@exec ln -sf %D/share/gimp/help/C/dialogs %D/share/gimp/help/C/toolbox/help/dialogs
-@unexec rm -f %D/share/gimp/help/C/toolbox/help/dialogs
-@exec ln -sf %D/share/gimp/help/C/filters %D/share/gimp/help/C/toolbox/help/filters
-@unexec rm -f %D/share/gimp/help/C/toolbox/help/filters
-share/gimp/help/C/stylesheet-images/note.gif
-share/gimp/help/C/stylesheet-images/tip.gif
-share/gimp/help/C/stylesheet-images/warning.gif
-share/gimp/help/C/toolbox/index.html
-share/gimp/help/C/toolbox/toolbox.html
-share/gimp/help/C/tools/airbrush.html
-share/gimp/help/C/tools/bezier_select.html
-share/gimp/help/C/tools/blend.html
-share/gimp/help/C/tools/brightness_contrast.html
-share/gimp/help/C/tools/bucket_fill.html
-share/gimp/help/C/tools/by_color_select.html
-share/gimp/help/C/tools/clone.html
-share/gimp/help/C/tools/color_balance.html
-share/gimp/help/C/tools/color_picker.html
-share/gimp/help/C/tools/convolve.html
-share/gimp/help/C/tools/crop.html
-share/gimp/help/C/tools/curves.html
-share/gimp/help/C/tools/dodgeburn.html
-share/gimp/help/C/tools/ellipse_select.html
-share/gimp/help/C/tools/eraser.html
-share/gimp/help/C/tools/flip.html
-share/gimp/help/C/tools/free_select.html
-share/gimp/help/C/tools/fuzzy_select.html
-share/gimp/help/C/tools/histogram.html
-share/gimp/help/C/tools/hue_saturation.html
-share/gimp/help/C/tools/index.html
-share/gimp/help/C/tools/ink.html
-share/gimp/help/C/tools/intelligent_scissors.html
-share/gimp/help/C/tools/levels.html
-share/gimp/help/C/tools/magnify.html
-share/gimp/help/C/tools/measure.html
-share/gimp/help/C/tools/move.html
-share/gimp/help/C/tools/paintbrush.html
-share/gimp/help/C/tools/pencil.html
-share/gimp/help/C/tools/posterize.html
-share/gimp/help/C/tools/rect_select.html
-share/gimp/help/C/tools/smudge.html
-share/gimp/help/C/tools/text.html
-share/gimp/help/C/tools/threshold.html
-share/gimp/help/C/tools/transform.html
-share/gimp/help/C/using_gimp.html
-share/gimp/help/C/why_gimp.html
-share/gimp/palettes/Bears
-share/gimp/palettes/Bgold
-share/gimp/palettes/Blues
-share/gimp/palettes/Borders
-share/gimp/palettes/Browns_And_Yellows
-share/gimp/palettes/Caramel
-share/gimp/palettes/Cascade
-share/gimp/palettes/China
-share/gimp/palettes/Coldfire
-share/gimp/palettes/Cool_Colors
-share/gimp/palettes/Cranes
-share/gimp/palettes/Dark_pastels
-share/gimp/palettes/Default
-share/gimp/palettes/Ega
-share/gimp/palettes/Firecode
-share/gimp/palettes/Gold
-share/gimp/palettes/GrayViolet
-share/gimp/palettes/Grayblue
-share/gimp/palettes/Grays
-share/gimp/palettes/Greens
-share/gimp/palettes/Hilite
-share/gimp/palettes/Kahki
-share/gimp/palettes/Lights
-share/gimp/palettes/Muted
-share/gimp/palettes/Named_Colors
-share/gimp/palettes/News3
-share/gimp/palettes/Op2
-share/gimp/palettes/Paintjet
-share/gimp/palettes/Pastels
-share/gimp/palettes/Plasma
-share/gimp/palettes/Reds
-share/gimp/palettes/Reds_And_Purples
-share/gimp/palettes/Royal
-share/gimp/palettes/Topographic
-share/gimp/palettes/Visibone
-share/gimp/palettes/Visibone2
-share/gimp/palettes/Volcano
-share/gimp/palettes/Warm_Colors
-share/gimp/palettes/Web
-share/gimp/patterns/3dgreen.pat
-share/gimp/patterns/Craters.pat
-share/gimp/patterns/Moonfoot.pat
-share/gimp/patterns/amethyst.pat
-share/gimp/patterns/bark.pat
-share/gimp/patterns/blue.pat
-share/gimp/patterns/bluegrid.pat
-share/gimp/patterns/bluesquares.pat
-share/gimp/patterns/blueweb.pat
-share/gimp/patterns/brick.pat
-share/gimp/patterns/burlap.pat
-share/gimp/patterns/burlwood.pat
-share/gimp/patterns/choc_swirl.pat
-share/gimp/patterns/corkboard.pat
-share/gimp/patterns/cracked.pat
-share/gimp/patterns/crinklepaper.pat
-share/gimp/patterns/electric.pat
-share/gimp/patterns/fibers.pat
-share/gimp/patterns/granite1.pat
-share/gimp/patterns/ground1.pat
-share/gimp/patterns/ice.pat
-share/gimp/patterns/java.pat
-share/gimp/patterns/leather.pat
-share/gimp/patterns/leaves.pat
-share/gimp/patterns/leopard.pat
-share/gimp/patterns/lightning.pat
-share/gimp/patterns/marble1.pat
-share/gimp/patterns/marble2.pat
-share/gimp/patterns/marble3.pat
-share/gimp/patterns/nops.pat
-share/gimp/patterns/paper.pat
-share/gimp/patterns/parque1.pat
-share/gimp/patterns/parque2.pat
-share/gimp/patterns/parque3.pat
-share/gimp/patterns/pastel.pat
-share/gimp/patterns/pine.pat
-share/gimp/patterns/pink_marble.pat
-share/gimp/patterns/pool.pat
-share/gimp/patterns/qube1.pat
-share/gimp/patterns/rain.pat
-share/gimp/patterns/recessed.pat
-share/gimp/patterns/redcube.pat
-share/gimp/patterns/rock.pat
-share/gimp/patterns/sky.pat
-share/gimp/patterns/slate.pat
-share/gimp/patterns/sm_squares.pat
-share/gimp/patterns/starfield.pat
-share/gimp/patterns/stone33.pat
-share/gimp/patterns/terra.pat
-share/gimp/patterns/walnut.pat
-share/gimp/patterns/warning.pat
-share/gimp/patterns/wood1.pat
-share/gimp/patterns/wood2.pat
-share/gimp/patterns/wood3.pat
-share/gimp/patterns/wood4.pat
-share/gimp/patterns/wood5.pat
-share/gimp/scripts/3d-outline.scm
-share/gimp/scripts/3dTruchet.scm
-share/gimp/scripts/add-bevel.scm
-share/gimp/scripts/addborder.scm
-share/gimp/scripts/alien-glow-arrow.scm
-share/gimp/scripts/alien-glow-bar.scm
-share/gimp/scripts/alien-glow-bullet.scm
-share/gimp/scripts/alien-glow-button.scm
-share/gimp/scripts/alien-glow-logo.scm
-share/gimp/scripts/alien-neon-logo.scm
-share/gimp/scripts/asc2img.scm
-share/gimp/scripts/basic1-logo.scm
-share/gimp/scripts/basic2-logo.scm
-share/gimp/scripts/beavis.jpg
-share/gimp/scripts/beveled-button.scm
-share/gimp/scripts/beveled-pattern-arrow.scm
-share/gimp/scripts/beveled-pattern-bullet.scm
-share/gimp/scripts/beveled-pattern-button.scm
-share/gimp/scripts/beveled-pattern-heading.scm
-share/gimp/scripts/beveled-pattern-hrule.scm
-share/gimp/scripts/blend-anim.scm
-share/gimp/scripts/blended-logo.scm
-share/gimp/scripts/bovinated-logo.scm
-share/gimp/scripts/camo.scm
-share/gimp/scripts/carve-it.scm
-share/gimp/scripts/carved-logo.scm
-share/gimp/scripts/chalk.scm
-share/gimp/scripts/chip-away.scm
-share/gimp/scripts/chrome-it.scm
-share/gimp/scripts/chrome-logo.scm
-share/gimp/scripts/circuit.scm
-share/gimp/scripts/clothify.scm
-share/gimp/scripts/coffee.scm
-share/gimp/scripts/comic-logo.scm
-share/gimp/scripts/coolmetal-logo.scm
-share/gimp/scripts/copy-visible.scm
-share/gimp/scripts/crystal-logo.scm
-share/gimp/scripts/distress_selection.scm
-share/gimp/scripts/drop-shadow.scm
-share/gimp/scripts/erase-rows.scm
-share/gimp/scripts/fade-outline.scm
-share/gimp/scripts/flatland.scm
-share/gimp/scripts/font-map.scm
-share/gimp/scripts/frosty-logo.scm
-share/gimp/scripts/fuzzyborder.scm
-share/gimp/scripts/gimp-headers.scm
-share/gimp/scripts/gimp-labels.scm
-share/gimp/scripts/glossy.scm
-share/gimp/scripts/glowing-logo.scm
-share/gimp/scripts/gradient-bevel-logo.scm
-share/gimp/scripts/gradient-example.scm
-share/gimp/scripts/grid-system.scm
-share/gimp/scripts/hsv-graph.scm
-share/gimp/scripts/i26-gunya2.scm
-share/gimp/scripts/image-structure.scm
-share/gimp/scripts/land.scm
-share/gimp/scripts/lava.scm
-share/gimp/scripts/line-nova.scm
-share/gimp/scripts/mkbrush.scm
-share/gimp/scripts/neon-logo.scm
-share/gimp/scripts/news-text.scm
-share/gimp/scripts/old_photo.scm
-share/gimp/scripts/perspective-shadow.scm
-share/gimp/scripts/predator.scm
-share/gimp/scripts/pupi-button.scm
-share/gimp/scripts/rendermap.scm
-share/gimp/scripts/ripply-anim.scm
-share/gimp/scripts/round-corners.scm
-share/gimp/scripts/script-fu-util.scm
-share/gimp/scripts/sel-to-anim-img.scm
-share/gimp/scripts/select_to_brush.scm
-share/gimp/scripts/select_to_image.scm
-share/gimp/scripts/selection-round.scm
-share/gimp/scripts/slide.scm
-share/gimp/scripts/sota-chrome-logo.scm
-share/gimp/scripts/speed-text.scm
-share/gimp/scripts/sphere.scm
-share/gimp/scripts/spinning_globe.scm
-share/gimp/scripts/starburst-logo.scm
-share/gimp/scripts/starscape-logo.scm
-share/gimp/scripts/swirltile.scm
-share/gimp/scripts/swirly-pattern.scm
-share/gimp/scripts/t-o-p-logo.scm
-share/gimp/scripts/text-circle.scm
-share/gimp/scripts/texture.jpg
-share/gimp/scripts/texture1.jpg
-share/gimp/scripts/texture2.jpg
-share/gimp/scripts/texture3.jpg
-share/gimp/scripts/textured-logo.scm
-share/gimp/scripts/tileblur.scm
-share/gimp/scripts/title-header.scm
-share/gimp/scripts/trochoid.scm
-share/gimp/scripts/truchet.scm
-share/gimp/scripts/unsharp-mask.scm
-share/gimp/scripts/waves-anim.scm
-share/gimp/scripts/weave.scm
-share/gimp/scripts/web-browser.scm
-share/gimp/scripts/xach-effect.scm
-share/gimp/tips/gimp_conseils.fr.txt
-share/gimp/tips/gimp_tips.cs.txt
-share/gimp/tips/gimp_tips.da.txt
-share/gimp/tips/gimp_tips.de.txt
-share/gimp/tips/gimp_tips.es.txt
-share/gimp/tips/gimp_tips.hu.txt
-share/gimp/tips/gimp_tips.it.txt
-share/gimp/tips/gimp_tips.ja.txt
-share/gimp/tips/gimp_tips.ko.txt
-share/gimp/tips/gimp_tips.lt.txt
-share/gimp/tips/gimp_tips.pl.txt
-share/gimp/tips/gimp_tips.ru.txt
-share/gimp/tips/gimp_tips.sk.txt
-share/gimp/tips/gimp_tips.sl.txt
-share/gimp/tips/gimp_tips.txt
-share/gimp/tips/gimp_tips.tr.txt
-share/gimp/tips/gimp_tips.uk.txt
-share/gimp/tips/gimp_tips.zh_CN.txt
-share/gimp/tips/gimp_tips.zh_TW.txt
-share/gimp/user_install
+%%DATADIR%%/brushes/10x10square.gbr
+%%DATADIR%%/brushes/10x10squareBlur.gbr
+%%DATADIR%%/brushes/11circle.gbr
+%%DATADIR%%/brushes/11fcircle.gbr
+%%DATADIR%%/brushes/13circle.gbr
+%%DATADIR%%/brushes/13fcircle.gbr
+%%DATADIR%%/brushes/15circle.gbr
+%%DATADIR%%/brushes/15fcircle.gbr
+%%DATADIR%%/brushes/17circle.gbr
+%%DATADIR%%/brushes/17fcircle.gbr
+%%DATADIR%%/brushes/19circle.gbr
+%%DATADIR%%/brushes/19fcircle.gbr
+%%DATADIR%%/brushes/1circle.gbr
+%%DATADIR%%/brushes/20x20square.gbr
+%%DATADIR%%/brushes/20x20squareBlur.gbr
+%%DATADIR%%/brushes/3circle.gbr
+%%DATADIR%%/brushes/3fcircle.gbr
+%%DATADIR%%/brushes/5circle.gbr
+%%DATADIR%%/brushes/5fcircle.gbr
+%%DATADIR%%/brushes/5x5square.gbr
+%%DATADIR%%/brushes/5x5squareBlur.gbr
+%%DATADIR%%/brushes/7circle.gbr
+%%DATADIR%%/brushes/7fcircle.gbr
+%%DATADIR%%/brushes/9circle.gbr
+%%DATADIR%%/brushes/9fcircle.gbr
+%%DATADIR%%/brushes/DStar11.gbr
+%%DATADIR%%/brushes/DStar17.gbr
+%%DATADIR%%/brushes/DStar25.gbr
+%%DATADIR%%/brushes/SketchBrush-16.gih
+%%DATADIR%%/brushes/SketchBrush-32.gih
+%%DATADIR%%/brushes/SketchBrush-64.gih
+%%DATADIR%%/brushes/callig1.gbr
+%%DATADIR%%/brushes/callig2.gbr
+%%DATADIR%%/brushes/callig3.gbr
+%%DATADIR%%/brushes/callig4.gbr
+%%DATADIR%%/brushes/confetti.gbr
+%%DATADIR%%/brushes/confetti.gih
+%%DATADIR%%/brushes/dunes.gbr
+%%DATADIR%%/brushes/feltpen.gih
+%%DATADIR%%/brushes/hsparks.gih
+%%DATADIR%%/brushes/galaxy.gbr
+%%DATADIR%%/brushes/galaxy_big.gbr
+%%DATADIR%%/brushes/galaxy_small.gbr
+%%DATADIR%%/brushes/pepper.gbr
+%%DATADIR%%/brushes/pixel.gbr
+%%DATADIR%%/brushes/thegimp.gbr
+%%DATADIR%%/brushes/vine.gih
+%%DATADIR%%/brushes/xcf.gbr
+%%DATADIR%%/devel-docs/html/libgimp/gimpchainbutton.html
+%%DATADIR%%/devel-docs/html/libgimp/gimpcolorbutton.html
+%%DATADIR%%/devel-docs/html/libgimp/gimpdefinitions.html
+%%DATADIR%%/devel-docs/html/libgimp/gimpfileselection.html
+%%DATADIR%%/devel-docs/html/libgimp/gimpmodule.html
+%%DATADIR%%/devel-docs/html/libgimp/gimppatheditor.html
+%%DATADIR%%/devel-docs/html/libgimp/gimppixmap.html
+%%DATADIR%%/devel-docs/html/libgimp/gimpsizeentry.html
+%%DATADIR%%/devel-docs/html/libgimp/gimpunitmenu.html
+%%DATADIR%%/devel-docs/html/libgimp/index.html
+%%DATADIR%%/devel-docs/html/libgimp/index.sgml
+%%DATADIR%%/devel-docs/html/libgimp/libgimp-gimp.html
+%%DATADIR%%/devel-docs/html/libgimp/libgimp-gimpbrushes.html
+%%DATADIR%%/devel-docs/html/libgimp/libgimp-gimpchannel.html
+%%DATADIR%%/devel-docs/html/libgimp/libgimp-gimpchannelops.html
+%%DATADIR%%/devel-docs/html/libgimp/libgimp-gimpcolor.html
+%%DATADIR%%/devel-docs/html/libgimp/libgimp-gimpcolordisplay.html
+%%DATADIR%%/devel-docs/html/libgimp/libgimp-gimpcolorselector.html
+%%DATADIR%%/devel-docs/html/libgimp/libgimp-gimpcolorspace.html
+%%DATADIR%%/devel-docs/html/libgimp/libgimp-gimpcompat.html
+%%DATADIR%%/devel-docs/html/libgimp/libgimp-gimpconvert.html
+%%DATADIR%%/devel-docs/html/libgimp/libgimp-gimpdialog.html
+%%DATADIR%%/devel-docs/html/libgimp/libgimp-gimpdisplay.html
+%%DATADIR%%/devel-docs/html/libgimp/libgimp-gimpdrawable.html
+%%DATADIR%%/devel-docs/html/libgimp/libgimp-gimpedit.html
+%%DATADIR%%/devel-docs/html/libgimp/libgimp-gimpenums.html
+%%DATADIR%%/devel-docs/html/libgimp/libgimp-gimpenv.html
+%%DATADIR%%/devel-docs/html/libgimp/libgimp-gimpexport.html
+%%DATADIR%%/devel-docs/html/libgimp/libgimp-gimpfeatures.html
+%%DATADIR%%/devel-docs/html/libgimp/libgimp-gimpfileops.html
+%%DATADIR%%/devel-docs/html/libgimp/libgimp-gimpfloatingsel.html
+%%DATADIR%%/devel-docs/html/libgimp/libgimp-gimpgimprc.html
+%%DATADIR%%/devel-docs/html/libgimp/libgimp-gimpgradients.html
+%%DATADIR%%/devel-docs/html/libgimp/libgimp-gimpguides.html
+%%DATADIR%%/devel-docs/html/libgimp/libgimp-gimphelp.html
+%%DATADIR%%/devel-docs/html/libgimp/libgimp-gimphelpui.html
+%%DATADIR%%/devel-docs/html/libgimp/libgimp-gimpimage.html
+%%DATADIR%%/devel-docs/html/libgimp/libgimp-gimplayer.html
+%%DATADIR%%/devel-docs/html/libgimp/libgimp-gimplimits.html
+%%DATADIR%%/devel-docs/html/libgimp/libgimp-gimpmath.html
+%%DATADIR%%/devel-docs/html/libgimp/libgimp-gimpmatrix.html
+%%DATADIR%%/devel-docs/html/libgimp/libgimp-gimpmenu.html
+%%DATADIR%%/devel-docs/html/libgimp/libgimp-gimpmessage.html
+%%DATADIR%%/devel-docs/html/libgimp/libgimp-gimpmisc.html
+%%DATADIR%%/devel-docs/html/libgimp/libgimp-gimpmodule.html
+%%DATADIR%%/devel-docs/html/libgimp/libgimp-gimppalette.html
+%%DATADIR%%/devel-docs/html/libgimp/libgimp-gimpparasite.html
+%%DATADIR%%/devel-docs/html/libgimp/libgimp-gimpparasiteio.html
+%%DATADIR%%/devel-docs/html/libgimp/libgimp-gimppatterns.html
+%%DATADIR%%/devel-docs/html/libgimp/libgimp-gimppixelrgn.html
+%%DATADIR%%/devel-docs/html/libgimp/libgimp-gimpplugin.html
+%%DATADIR%%/devel-docs/html/libgimp/libgimp-gimpproceduraldb.html
+%%DATADIR%%/devel-docs/html/libgimp/libgimp-gimpprotocol.html
+%%DATADIR%%/devel-docs/html/libgimp/libgimp-gimpquerybox.html
+%%DATADIR%%/devel-docs/html/libgimp/libgimp-gimpselection.html
+%%DATADIR%%/devel-docs/html/libgimp/libgimp-gimpsignal.html
+%%DATADIR%%/devel-docs/html/libgimp/libgimp-gimptexttool.html
+%%DATADIR%%/devel-docs/html/libgimp/libgimp-gimptile.html
+%%DATADIR%%/devel-docs/html/libgimp/libgimp-gimptools.html
+%%DATADIR%%/devel-docs/html/libgimp/libgimp-gimpui.html
+%%DATADIR%%/devel-docs/html/libgimp/libgimp-gimpundo.html
+%%DATADIR%%/devel-docs/html/libgimp/libgimp-gimpunit.html
+%%DATADIR%%/devel-docs/html/libgimp/libgimp-gimputils.html
+%%DATADIR%%/devel-docs/html/libgimp/libgimp-gimpvector.html
+%%DATADIR%%/devel-docs/html/libgimp/libgimp-gimpwidgets.html
+%%DATADIR%%/devel-docs/html/libgimp/libgimp-gimpwire.html
+%%DATADIR%%/devel-docs/html/libgimp/libgimp.html
+%%DATADIR%%/devel-docs/html/libgimp/libgimpui.html
+%%DATADIR%%/fractalexplorer/Asteroid_Field
+%%DATADIR%%/fractalexplorer/Bar_Code_Label
+%%DATADIR%%/fractalexplorer/Beauty_of_Nature
+%%DATADIR%%/fractalexplorer/Blue_Curtain
+%%DATADIR%%/fractalexplorer/Car_Track
+%%DATADIR%%/fractalexplorer/Energetic_Diamond
+%%DATADIR%%/fractalexplorer/Explosive
+%%DATADIR%%/fractalexplorer/Flower
+%%DATADIR%%/fractalexplorer/Fragments
+%%DATADIR%%/fractalexplorer/Hemp
+%%DATADIR%%/fractalexplorer/High_Voltage
+%%DATADIR%%/fractalexplorer/Hoops
+%%DATADIR%%/fractalexplorer/Ice_Crystal
+%%DATADIR%%/fractalexplorer/Leaves
+%%DATADIR%%/fractalexplorer/Lightning
+%%DATADIR%%/fractalexplorer/Mandelbrot
+%%DATADIR%%/fractalexplorer/Marble
+%%DATADIR%%/fractalexplorer/Marble2
+%%DATADIR%%/fractalexplorer/Medusa
+%%DATADIR%%/fractalexplorer/Nautilus
+%%DATADIR%%/fractalexplorer/Nebula
+%%DATADIR%%/fractalexplorer/Plant
+%%DATADIR%%/fractalexplorer/Rose
+%%DATADIR%%/fractalexplorer/Saturn
+%%DATADIR%%/fractalexplorer/Snow_Crystal
+%%DATADIR%%/fractalexplorer/Soma
+%%DATADIR%%/fractalexplorer/Spark
+%%DATADIR%%/fractalexplorer/Suns
+%%DATADIR%%/fractalexplorer/Tentacles
+%%DATADIR%%/fractalexplorer/The_Green_Place
+%%DATADIR%%/fractalexplorer/Wave
+%%DATADIR%%/fractalexplorer/Wood
+%%DATADIR%%/fractalexplorer/Zooming_Circle
+%%DATADIR%%/gfig/A_star
+%%DATADIR%%/gfig/curves
+%%DATADIR%%/gfig/polys
+%%DATADIR%%/gfig/ring
+%%DATADIR%%/gfig/ring+star
+%%DATADIR%%/gfig/simily
+%%DATADIR%%/gfig/spirals_and_stars
+%%DATADIR%%/gfig/sprial
+%%DATADIR%%/gfig/star2
+%%DATADIR%%/gfig/stars
+%%DATADIR%%/gflare/Bright_Star
+%%DATADIR%%/gflare/Classic
+%%DATADIR%%/gflare/Default
+%%DATADIR%%/gflare/Distant_Sun
+%%DATADIR%%/gflare/GFlare_101
+%%DATADIR%%/gflare/GFlare_102
+%%DATADIR%%/gflare/Hidden_Planet
+%%DATADIR%%/gimp_logo.ppm
+%%DATADIR%%/gimp_splash.ppm
+%%DATADIR%%/gimpressionist/Brushes/arrow01.pgm
+%%DATADIR%%/gimpressionist/Brushes/ball.ppm
+%%DATADIR%%/gimpressionist/Brushes/blob.ppm
+%%DATADIR%%/gimpressionist/Brushes/box.ppm
+%%DATADIR%%/gimpressionist/Brushes/chalk01.pgm
+%%DATADIR%%/gimpressionist/Brushes/cone.ppm
+%%DATADIR%%/gimpressionist/Brushes/crayon01.pgm
+%%DATADIR%%/gimpressionist/Brushes/crayon02.pgm
+%%DATADIR%%/gimpressionist/Brushes/crayon03.pgm
+%%DATADIR%%/gimpressionist/Brushes/crayon04.pgm
+%%DATADIR%%/gimpressionist/Brushes/crayon05.pgm
+%%DATADIR%%/gimpressionist/Brushes/crayon06.pgm
+%%DATADIR%%/gimpressionist/Brushes/crayon07.pgm
+%%DATADIR%%/gimpressionist/Brushes/crayon08.pgm
+%%DATADIR%%/gimpressionist/Brushes/defaultbrush.pgm
+%%DATADIR%%/gimpressionist/Brushes/dribble.pgm
+%%DATADIR%%/gimpressionist/Brushes/fabric.pgm
+%%DATADIR%%/gimpressionist/Brushes/fabric01.pgm
+%%DATADIR%%/gimpressionist/Brushes/fabric02.pgm
+%%DATADIR%%/gimpressionist/Brushes/fabric03.pgm
+%%DATADIR%%/gimpressionist/Brushes/flower01.pgm
+%%DATADIR%%/gimpressionist/Brushes/flower02.pgm
+%%DATADIR%%/gimpressionist/Brushes/flower03.pgm
+%%DATADIR%%/gimpressionist/Brushes/flower04.pgm
+%%DATADIR%%/gimpressionist/Brushes/grad01.pgm
+%%DATADIR%%/gimpressionist/Brushes/grad02.pgm
+%%DATADIR%%/gimpressionist/Brushes/grad03.pgm
+%%DATADIR%%/gimpressionist/Brushes/heart.ppm
+%%DATADIR%%/gimpressionist/Brushes/leaf01.pgm
+%%DATADIR%%/gimpressionist/Brushes/paintbrush.pgm
+%%DATADIR%%/gimpressionist/Brushes/paintbrush01.pgm
+%%DATADIR%%/gimpressionist/Brushes/paintbrush02.pgm
+%%DATADIR%%/gimpressionist/Brushes/paintbrush03.pgm
+%%DATADIR%%/gimpressionist/Brushes/paintbrush04.pgm
+%%DATADIR%%/gimpressionist/Brushes/paper01.pgm
+%%DATADIR%%/gimpressionist/Brushes/paper02.pgm
+%%DATADIR%%/gimpressionist/Brushes/paper03.pgm
+%%DATADIR%%/gimpressionist/Brushes/paper04.pgm
+%%DATADIR%%/gimpressionist/Brushes/pentagram.pgm
+%%DATADIR%%/gimpressionist/Brushes/scribble.pgm
+%%DATADIR%%/gimpressionist/Brushes/shape01.pgm
+%%DATADIR%%/gimpressionist/Brushes/shape02.pgm
+%%DATADIR%%/gimpressionist/Brushes/shape03.pgm
+%%DATADIR%%/gimpressionist/Brushes/shape04.pgm
+%%DATADIR%%/gimpressionist/Brushes/snow1.pgm
+%%DATADIR%%/gimpressionist/Brushes/sphere.ppm
+%%DATADIR%%/gimpressionist/Brushes/splat1.pgm
+%%DATADIR%%/gimpressionist/Brushes/splat2.pgm
+%%DATADIR%%/gimpressionist/Brushes/splat3.pgm
+%%DATADIR%%/gimpressionist/Brushes/spunge01.pgm
+%%DATADIR%%/gimpressionist/Brushes/spunge02.pgm
+%%DATADIR%%/gimpressionist/Brushes/spunge03.pgm
+%%DATADIR%%/gimpressionist/Brushes/spunge04.pgm
+%%DATADIR%%/gimpressionist/Brushes/spunge05.pgm
+%%DATADIR%%/gimpressionist/Brushes/strange01.pgm
+%%DATADIR%%/gimpressionist/Brushes/thegimp.pgm
+%%DATADIR%%/gimpressionist/Brushes/torus.ppm
+%%DATADIR%%/gimpressionist/Brushes/wavy.pgm
+%%DATADIR%%/gimpressionist/Brushes/weave.pgm
+%%DATADIR%%/gimpressionist/Brushes/worm.pgm
+%%DATADIR%%/gimpressionist/Paper/bricks.pgm
+%%DATADIR%%/gimpressionist/Paper/bricks2.pgm
+%%DATADIR%%/gimpressionist/Paper/burlap.pgm
+%%DATADIR%%/gimpressionist/Paper/canvas2.pgm
+%%DATADIR%%/gimpressionist/Paper/defaultpaper.pgm
+%%DATADIR%%/gimpressionist/Paper/marble.pgm
+%%DATADIR%%/gimpressionist/Paper/marble2.pgm
+%%DATADIR%%/gimpressionist/Paper/struc.pgm
+%%DATADIR%%/gimpressionist/Paper/stone.pgm
+%%DATADIR%%/gimpressionist/Presets/ApplyCanvas
+%%DATADIR%%/gimpressionist/Presets/Ballpark
+%%DATADIR%%/gimpressionist/Presets/Canvas
+%%DATADIR%%/gimpressionist/Presets/Crosshatch
+%%DATADIR%%/gimpressionist/Presets/Cubism
+%%DATADIR%%/gimpressionist/Presets/Dotify
+%%DATADIR%%/gimpressionist/Presets/Embroidery
+%%DATADIR%%/gimpressionist/Presets/Feathers
+%%DATADIR%%/gimpressionist/Presets/Felt-marker
+%%DATADIR%%/gimpressionist/Presets/Flowerbed
+%%DATADIR%%/gimpressionist/Presets/Furry
+%%DATADIR%%/gimpressionist/Presets/Line-art
+%%DATADIR%%/gimpressionist/Presets/Line-art-2
+%%DATADIR%%/gimpressionist/Presets/Maggot-invasion
+%%DATADIR%%/gimpressionist/Presets/MarbleMadness
+%%DATADIR%%/gimpressionist/Presets/Mossy
+%%DATADIR%%/gimpressionist/Presets/Painted_Rock
+%%DATADIR%%/gimpressionist/Presets/Parquette
+%%DATADIR%%/gimpressionist/Presets/Patchwork
+%%DATADIR%%/gimpressionist/Presets/Ringworks
+%%DATADIR%%/gimpressionist/Presets/Sample
+%%DATADIR%%/gimpressionist/Presets/Smash
+%%DATADIR%%/gimpressionist/Presets/Straws
+%%DATADIR%%/gimpressionist/Presets/Weave
+%%DATADIR%%/gimpressionist/Presets/Wormcan
+%%DATADIR%%/gradients/Abstract_1
+%%DATADIR%%/gradients/Abstract_2
+%%DATADIR%%/gradients/Abstract_3
+%%DATADIR%%/gradients/Aneurism
+%%DATADIR%%/gradients/Blinds
+%%DATADIR%%/gradients/Blue_Green
+%%DATADIR%%/gradients/Browns
+%%DATADIR%%/gradients/Brushed_Aluminium
+%%DATADIR%%/gradients/Burning_Paper
+%%DATADIR%%/gradients/Burning_Transparency
+%%DATADIR%%/gradients/CD
+%%DATADIR%%/gradients/CD_Half
+%%DATADIR%%/gradients/Caribbean_Blues
+%%DATADIR%%/gradients/Coffee
+%%DATADIR%%/gradients/Cold_Steel
+%%DATADIR%%/gradients/Cold_Steel_2
+%%DATADIR%%/gradients/Crown_molding
+%%DATADIR%%/gradients/Danish_flag
+%%DATADIR%%/gradients/Dark_1
+%%DATADIR%%/gradients/Deep_Sea
+%%DATADIR%%/gradients/Default
+%%DATADIR%%/gradients/Flare_Glow_Angular_1
+%%DATADIR%%/gradients/Flare_Glow_Radial_1
+%%DATADIR%%/gradients/Flare_Glow_Radial_2
+%%DATADIR%%/gradients/Flare_Glow_Radial_3
+%%DATADIR%%/gradients/Flare_Glow_Radial_4
+%%DATADIR%%/gradients/Flare_Radial_101
+%%DATADIR%%/gradients/Flare_Radial_102
+%%DATADIR%%/gradients/Flare_Radial_103
+%%DATADIR%%/gradients/Flare_Rays_Radial_1
+%%DATADIR%%/gradients/Flare_Rays_Radial_2
+%%DATADIR%%/gradients/Flare_Rays_Size_1
+%%DATADIR%%/gradients/Flare_Sizefac_101
+%%DATADIR%%/gradients/Four_bars
+%%DATADIR%%/gradients/French_flag
+%%DATADIR%%/gradients/French_flag_smooth
+%%DATADIR%%/gradients/Full_saturation_spectrum_CCW
+%%DATADIR%%/gradients/Full_saturation_spectrum_CW
+%%DATADIR%%/gradients/German_flag
+%%DATADIR%%/gradients/German_flag_smooth
+%%DATADIR%%/gradients/Golden
+%%DATADIR%%/gradients/Greens
+%%DATADIR%%/gradients/Horizon_1
+%%DATADIR%%/gradients/Horizon_2
+%%DATADIR%%/gradients/Incandescent
+%%DATADIR%%/gradients/Land_1
+%%DATADIR%%/gradients/Land_and_Sea
+%%DATADIR%%/gradients/Metallic_Something
+%%DATADIR%%/gradients/Mexican_flag
+%%DATADIR%%/gradients/Mexican_flag_smooth
+%%DATADIR%%/gradients/Nauseating_Headache
+%%DATADIR%%/gradients/Neon_Cyan
+%%DATADIR%%/gradients/Neon_Green
+%%DATADIR%%/gradients/Neon_Yellow
+%%DATADIR%%/gradients/Pastel_Rainbow
+%%DATADIR%%/gradients/Pastels
+%%DATADIR%%/gradients/Purples
+%%DATADIR%%/gradients/Radial_Eyeball_Blue
+%%DATADIR%%/gradients/Radial_Eyeball_Brown
+%%DATADIR%%/gradients/Radial_Eyeball_Green
+%%DATADIR%%/gradients/Radial_Glow_1
+%%DATADIR%%/gradients/Radial_Rainbow_Hoop
+%%DATADIR%%/gradients/Romanian_flag
+%%DATADIR%%/gradients/Romanian_flag_smooth
+%%DATADIR%%/gradients/Rounded_edge
+%%DATADIR%%/gradients/Shadows_1
+%%DATADIR%%/gradients/Shadows_2
+%%DATADIR%%/gradients/Shadows_3
+%%DATADIR%%/gradients/Skyline
+%%DATADIR%%/gradients/Skyline_polluted
+%%DATADIR%%/gradients/Square_Wood_Frame
+%%DATADIR%%/gradients/Sunrise
+%%DATADIR%%/gradients/Three_bars_sin
+%%DATADIR%%/gradients/Tropical_Colors
+%%DATADIR%%/gradients/Tube_Red
+%%DATADIR%%/gradients/Wood_1
+%%DATADIR%%/gradients/Wood_2
+%%DATADIR%%/gradients/Yellow_Contrast
+%%DATADIR%%/gradients/Yellow_Orange
+%%DATADIR%%/help/C/bug_submission.html
+%%DATADIR%%/help/C/channels/channel_to_selection.html
+%%DATADIR%%/help/C/channels/delete_channel.html
+@exec mkdir -p %D/%%DATADIR%%/help/C/channels
+@exec ln -sf %D/%%DATADIR%%/help/C/dialogs/channels %D/%%DATADIR%%/help/C/channels/dialogs
+@unexec rm -f %D/%%DATADIR%%/help/C/channels/dialogs
+%%DATADIR%%/help/C/channels/duplicate_channel.html
+%%DATADIR%%/help/C/channels/index.html
+%%DATADIR%%/help/C/channels/lower_channel.html
+%%DATADIR%%/help/C/channels/raise_channel.html
+%%DATADIR%%/help/C/command_line.html
+%%DATADIR%%/help/C/contents.html
+%%DATADIR%%/help/C/dialogs/about.html
+%%DATADIR%%/help/C/dialogs/border_selection.html
+%%DATADIR%%/help/C/dialogs/brush_editor.html
+%%DATADIR%%/help/C/dialogs/brush_selection.html
+%%DATADIR%%/help/C/dialogs/channels/channels.html
+%%DATADIR%%/help/C/dialogs/channels/edit_channel_attributes.html
+%%DATADIR%%/help/C/dialogs/channels/new_channel.html
+%%DATADIR%%/help/C/dialogs/color_selectors/built_in.html
+%%DATADIR%%/help/C/dialogs/color_selectors/gtk.html
+%%DATADIR%%/help/C/dialogs/color_selectors/triangle.html
+%%DATADIR%%/help/C/dialogs/color_selectors/watercolor.html
+%%DATADIR%%/help/C/dialogs/confirm_save.html
+%%DATADIR%%/help/C/dialogs/convert_to_indexed.html
+%%DATADIR%%/help/C/dialogs/copy_named.html
+%%DATADIR%%/help/C/dialogs/cut_named.html
+%%DATADIR%%/help/C/dialogs/device_status.html
+%%DATADIR%%/help/C/dialogs/document_index.html
+%%DATADIR%%/help/C/dialogs/edit_qmask_attributes.html
+%%DATADIR%%/help/C/dialogs/error_console.html
+%%DATADIR%%/help/C/dialogs/export_file.html
+%%DATADIR%%/help/C/dialogs/feather_selection.html
+%%DATADIR%%/help/C/dialogs/file_new.html
+%%DATADIR%%/help/C/dialogs/file_open.html
+%%DATADIR%%/help/C/dialogs/file_save.html
+%%DATADIR%%/help/C/dialogs/gradient_editor/copy_gradient.html
+%%DATADIR%%/help/C/dialogs/gradient_editor/delete_gradient.html
+%%DATADIR%%/help/C/dialogs/gradient_editor/gradient_editor.html
+%%DATADIR%%/help/C/dialogs/gradient_editor/new_gradient.html
+%%DATADIR%%/help/C/dialogs/gradient_editor/rename_gradient.html
+%%DATADIR%%/help/C/dialogs/gradient_editor/replicate_segment.html
+%%DATADIR%%/help/C/dialogs/gradient_editor/save_as_povray.html
+%%DATADIR%%/help/C/dialogs/gradient_editor/split_segments_uniformly.html
+%%DATADIR%%/help/C/dialogs/gradient_selection.html
+%%DATADIR%%/help/C/dialogs/grow_selection.html
+%%DATADIR%%/help/C/dialogs/help.html
+%%DATADIR%%/help/C/dialogs/index.html
+%%DATADIR%%/help/C/dialogs/indexed_palette.html
+%%DATADIR%%/help/C/dialogs/info_window.html
+%%DATADIR%%/help/C/dialogs/input_devices.html
+%%DATADIR%%/help/C/dialogs/layers/add_layer_mask.html
+%%DATADIR%%/help/C/dialogs/layers/edit_layer_attributes.html
+%%DATADIR%%/help/C/dialogs/layers/layer_boundary_size.html
+%%DATADIR%%/help/C/dialogs/layers/layers.html
+%%DATADIR%%/help/C/dialogs/layers/merge_visible_layers.html
+%%DATADIR%%/help/C/dialogs/layers/new_layer.html
+%%DATADIR%%/help/C/dialogs/layers/scale_layer.html
+%%DATADIR%%/help/C/dialogs/layers_and_channels.html
+%%DATADIR%%/help/C/dialogs/module_browser.html
+%%DATADIR%%/help/C/dialogs/navigation_window.html
+%%DATADIR%%/help/C/dialogs/offset.html
+%%DATADIR%%/help/C/dialogs/palette_editor/delete_palette.html
+%%DATADIR%%/help/C/dialogs/palette_editor/import_palette.html
+%%DATADIR%%/help/C/dialogs/palette_editor/merge_palette.html
+%%DATADIR%%/help/C/dialogs/palette_editor/new_palette.html
+%%DATADIR%%/help/C/dialogs/palette_editor/palette_editor.html
+%%DATADIR%%/help/C/dialogs/palette_selection.html
+%%DATADIR%%/help/C/dialogs/paste_named.html
+%%DATADIR%%/help/C/dialogs/paths/edit_path_attributes.html
+%%DATADIR%%/help/C/dialogs/paths/export_path.html
+%%DATADIR%%/help/C/dialogs/paths/import_path.html
+%%DATADIR%%/help/C/dialogs/paths/paths.html
+%%DATADIR%%/help/C/dialogs/pattern_selection.html
+%%DATADIR%%/help/C/dialogs/preferences/directories.html
+%%DATADIR%%/help/C/dialogs/preferences/display.html
+%%DATADIR%%/help/C/dialogs/preferences/environment.html
+%%DATADIR%%/help/C/dialogs/preferences/interface.html
+%%DATADIR%%/help/C/dialogs/preferences/monitor.html
+%%DATADIR%%/help/C/dialogs/preferences/new_file.html
+%%DATADIR%%/help/C/dialogs/preferences/preferences.html
+%%DATADIR%%/help/C/dialogs/preferences/session.html
+%%DATADIR%%/help/C/dialogs/really_close.html
+%%DATADIR%%/help/C/dialogs/really_quit.html
+%%DATADIR%%/help/C/dialogs/scale_image.html
+%%DATADIR%%/help/C/dialogs/scale_layer_warn.html
+%%DATADIR%%/help/C/dialogs/set_canvas_size.html
+%%DATADIR%%/help/C/dialogs/shrink_selection.html
+%%DATADIR%%/help/C/dialogs/tip_of_the_day.html
+%%DATADIR%%/help/C/dialogs/tool_options.html
+%%DATADIR%%/help/C/dialogs/undo_history.html
+%%DATADIR%%/help/C/file/close.html
+@exec mkdir -p %D/%%DATADIR%%/help/C/file
+@exec ln -sf %D/%%DATADIR%%/help/C/dialogs %D/%%DATADIR%%/help/C/file/dialogs
+@unexec rm -f %D/%%DATADIR%%/help/C/file/dialogs
+@exec ln -sf %D/%%DATADIR%%/help/C/filters %D/%%DATADIR%%/help/C/file/filters
+@unexec rm -f %D/%%DATADIR%%/help/C/file/filters
+%%DATADIR%%/help/C/file/index.html
+%%DATADIR%%/help/C/file/last_opened.html
+@exec ln -sf %D/%%DATADIR%%/help/C/open %D/%%DATADIR%%/help/C/file/open
+@unexec rm -f %D/%%DATADIR%%/help/C/file/open
+%%DATADIR%%/help/C/file/revert.html
+%%DATADIR%%/help/C/file/quit.html
+@exec ln -sf %D/%%DATADIR%%/help/C/save %D/%%DATADIR%%/help/C/file/save
+@unexec rm -f %D/%%DATADIR%%/help/C/file/save
+%%DATADIR%%/help/C/file_formats.html
+%%DATADIR%%/help/C/filters/alienmap.html
+%%DATADIR%%/help/C/filters/alienmap2.html
+%%DATADIR%%/help/C/filters/align_layers.html
+%%DATADIR%%/help/C/filters/animate_cells.html
+%%DATADIR%%/help/C/filters/animationplay.html
+%%DATADIR%%/help/C/filters/animoptimize.html
+%%DATADIR%%/help/C/filters/apply_lens.html
+%%DATADIR%%/help/C/filters/applycanvas.html
+%%DATADIR%%/help/C/filters/autocrop.html
+%%DATADIR%%/help/C/filters/autostretch_hsv.html
+%%DATADIR%%/help/C/filters/blended2.html
+%%DATADIR%%/help/C/filters/blinds.html
+%%DATADIR%%/help/C/filters/blur.html
+%%DATADIR%%/help/C/filters/blowinout.html
+%%DATADIR%%/help/C/filters/border.html
+%%DATADIR%%/help/C/filters/borderaverage.html
+%%DATADIR%%/help/C/filters/bumpmap.html
+%%DATADIR%%/help/C/filters/burst.html
+%%DATADIR%%/help/C/filters/bz2.html
+%%DATADIR%%/help/C/filters/c_astretch.html
+%%DATADIR%%/help/C/filters/centerguide.html
+%%DATADIR%%/help/C/filters/checkerboard.html
+%%DATADIR%%/help/C/filters/cml_explorer.html
+%%DATADIR%%/help/C/filters/color_enhance.html
+%%DATADIR%%/help/C/filters/colorify.html
+%%DATADIR%%/help/C/filters/colortoalpha.html
+%%DATADIR%%/help/C/filters/convmatrix.html
+%%DATADIR%%/help/C/filters/compose.html
+%%DATADIR%%/help/C/filters/cubism.html
+%%DATADIR%%/help/C/filters/curve_bend.html
+%%DATADIR%%/help/C/filters/decompose.html
+%%DATADIR%%/help/C/filters/deinterlace.html
+%%DATADIR%%/help/C/filters/depthmerge.html
+%%DATADIR%%/help/C/filters/despeckle.html
+%%DATADIR%%/help/C/filters/destripe.html
+%%DATADIR%%/help/C/filters/diffraction.html
+%%DATADIR%%/help/C/filters/displace.html
+%%DATADIR%%/help/C/filters/ditherize.html
+%%DATADIR%%/help/C/filters/dust.html
+%%DATADIR%%/help/C/filters/edge.html
+%%DATADIR%%/help/C/filters/emboss.html
+%%DATADIR%%/help/C/filters/engrave.html
+%%DATADIR%%/help/C/filters/exchange.html
+%%DATADIR%%/help/C/filters/fade-alpha.html
+%%DATADIR%%/help/C/filters/film.html
+%%DATADIR%%/help/C/filters/fire.html
+%%DATADIR%%/help/C/filters/fit-text.html
+%%DATADIR%%/help/C/filters/fits.html
+%%DATADIR%%/help/C/filters/flame.html
+%%DATADIR%%/help/C/filters/flarefx.html
+%%DATADIR%%/help/C/filters/fractalexplorer.html
+%%DATADIR%%/help/C/filters/fractaltrace.html
+%%DATADIR%%/help/C/filters/fp.html
+%%DATADIR%%/help/C/filters/frame_filter.html
+%%DATADIR%%/help/C/filters/gap_filter.html
+%%DATADIR%%/help/C/filters/gap_frontends.html
+%%DATADIR%%/help/C/filters/gap_navigator_dialog.html
+%%DATADIR%%/help/C/filters/gap_plugins.html
+%%DATADIR%%/help/C/filters/gauss_iir.html
+%%DATADIR%%/help/C/filters/gauss_rle.html
+%%DATADIR%%/help/C/filters/gee_zoom.html
+%%DATADIR%%/help/C/filters/gdyntext.html
+%%DATADIR%%/help/C/filters/gfig.html
+%%DATADIR%%/help/C/filters/gflare.html
+%%DATADIR%%/help/C/filters/gih.html
+%%DATADIR%%/help/C/filters/gimpressionist.html
+%%DATADIR%%/help/C/filters/glasstile.html
+%%DATADIR%%/help/C/filters/glowing_steel.html
+%%DATADIR%%/help/C/filters/gouge.html
+%%DATADIR%%/help/C/filters/gradmap.html
+%%DATADIR%%/help/C/filters/grid.html
+%%DATADIR%%/help/C/filters/gqbist.html
+%%DATADIR%%/help/C/filters/gtm.html
+%%DATADIR%%/help/C/filters/guide_remove.html
+%%DATADIR%%/help/C/filters/guidegrid.html
+%%DATADIR%%/help/C/filters/guides_to_selection.html
+%%DATADIR%%/help/C/filters/guillotine.html
+%%DATADIR%%/help/C/filters/gz.html
+%%DATADIR%%/help/C/filters/hot.html
+%%DATADIR%%/help/C/filters/hrz.html
+%%DATADIR%%/help/C/filters/ifscompose.html
+%%DATADIR%%/help/C/filters/illusion.html
+%%DATADIR%%/help/C/filters/image_tile.html
+%%DATADIR%%/help/C/filters/imagemap.html
+%%DATADIR%%/help/C/filters/iwarp.html
+%%DATADIR%%/help/C/filters/index.html
+%%DATADIR%%/help/C/filters/jigsaw.html
+%%DATADIR%%/help/C/filters/jpeg.html
+%%DATADIR%%/help/C/filters/laplace.html
+%%DATADIR%%/help/C/filters/layerfuncs.html
+%%DATADIR%%/help/C/filters/lic.html
+%%DATADIR%%/help/C/filters/lighting.html
+%%DATADIR%%/help/C/filters/logulator.html
+%%DATADIR%%/help/C/filters/mail.html
+%%DATADIR%%/help/C/filters/map_to_gradient.html
+%%DATADIR%%/help/C/filters/mapcolor.html
+%%DATADIR%%/help/C/filters/mapobject.html
+%%DATADIR%%/help/C/filters/max_rgb.html
+%%DATADIR%%/help/C/filters/maze.html
+%%DATADIR%%/help/C/filters/mblur.html
+%%DATADIR%%/help/C/filters/miff.html
+%%DATADIR%%/help/C/filters/mirrorsplit.html
+%%DATADIR%%/help/C/filters/mosaic.html
+%%DATADIR%%/help/C/filters/newsprint.html
+%%DATADIR%%/help/C/filters/nlfilt.html
+%%DATADIR%%/help/C/filters/nova.html
+%%DATADIR%%/help/C/filters/noisify.html
+%%DATADIR%%/help/C/filters/none.html
+%%DATADIR%%/help/C/filters/normalize.html
+%%DATADIR%%/help/C/filters/oilify.html
+%%DATADIR%%/help/C/filters/pagecurl.html
+%%DATADIR%%/help/C/filters/papertile.html
+%%DATADIR%%/help/C/filters/pat.html
+%%DATADIR%%/help/C/filters/perlotine.html
+%%DATADIR%%/help/C/filters/pixelmap.html
+%%DATADIR%%/help/C/filters/pixelize.html
+%%DATADIR%%/help/C/filters/plasma.html
+%%DATADIR%%/help/C/filters/polar.html
+%%DATADIR%%/help/C/filters/prep4gif.html
+%%DATADIR%%/help/C/filters/png.html
+%%DATADIR%%/help/C/filters/pnm.html
+%%DATADIR%%/help/C/filters/print.html
+%%DATADIR%%/help/C/filters/psd.html
+%%DATADIR%%/help/C/filters/psp.html
+%%DATADIR%%/help/C/filters/randomblends.html
+%%DATADIR%%/help/C/filters/randomize.html
+%%DATADIR%%/help/C/filters/rcm.html
+%%DATADIR%%/help/C/filters/repdup.html
+%%DATADIR%%/help/C/filters/repeat_last.html
+%%DATADIR%%/help/C/filters/reshow_last.html
+%%DATADIR%%/help/C/filters/resynth.html
+%%DATADIR%%/help/C/filters/ripple.html
+%%DATADIR%%/help/C/filters/rotate.html
+%%DATADIR%%/help/C/filters/roundsel.html
+%%DATADIR%%/help/C/filters/sample_colorize.html
+%%DATADIR%%/help/C/filters/scatter_hsv.html
+%%DATADIR%%/help/C/filters/scratches.html
+%%DATADIR%%/help/C/filters/sel2path.html
+%%DATADIR%%/help/C/filters/sel_gauss.html
+%%DATADIR%%/help/C/filters/semiflatten.html
+%%DATADIR%%/help/C/filters/sharpen.html
+%%DATADIR%%/help/C/filters/shift.html
+%%DATADIR%%/help/C/filters/sgi.html
+%%DATADIR%%/help/C/filters/sinus.html
+%%DATADIR%%/help/C/filters/smooth_palette.html
+%%DATADIR%%/help/C/filters/snoise.html
+%%DATADIR%%/help/C/filters/sobel.html
+%%DATADIR%%/help/C/filters/sparkle.html
+%%DATADIR%%/help/C/filters/spread.html
+%%DATADIR%%/help/C/filters/stampify.html
+%%DATADIR%%/help/C/filters/struc.html
+%%DATADIR%%/help/C/filters/sunras.html
+%%DATADIR%%/help/C/filters/terral_text.html
+%%DATADIR%%/help/C/filters/tex-to-float.html
+%%DATADIR%%/help/C/filters/tga.html
+%%DATADIR%%/help/C/filters/threshold_alpha.html
+%%DATADIR%%/help/C/filters/tiff.html
+%%DATADIR%%/help/C/filters/tile.html
+%%DATADIR%%/help/C/filters/tileit.html
+%%DATADIR%%/help/C/filters/tiler.html
+%%DATADIR%%/help/C/filters/tileable_blur.html
+%%DATADIR%%/help/C/filters/translogo.html
+%%DATADIR%%/help/C/filters/unsharp.html
+%%DATADIR%%/help/C/filters/url.html
+%%DATADIR%%/help/C/filters/video.html
+%%DATADIR%%/help/C/filters/vinvert.html
+%%DATADIR%%/help/C/filters/vpropagate.html
+%%DATADIR%%/help/C/filters/warp-sharp.html
+%%DATADIR%%/help/C/filters/warp.html
+%%DATADIR%%/help/C/filters/waves.html
+%%DATADIR%%/help/C/filters/webify.html
+%%DATADIR%%/help/C/filters/whirlpinch.html
+%%DATADIR%%/help/C/filters/wind.html
+%%DATADIR%%/help/C/filters/windify.html
+%%DATADIR%%/help/C/filters/wmf.html
+%%DATADIR%%/help/C/filters/xachlego.html
+%%DATADIR%%/help/C/filters/xachshadow.html
+%%DATADIR%%/help/C/filters/xachvision.html
+%%DATADIR%%/help/C/filters/xwd.html
+%%DATADIR%%/help/C/filters/zealouscrop.html
+%%DATADIR%%/help/C/gimp_license.html
+%%DATADIR%%/help/C/gimp_remote.html
+%%DATADIR%%/help/C/gimptool.html
+%%DATADIR%%/help/C/glossary.html
+@exec mkdir -p %D/%%DATADIR%%/help/C/image
+@exec ln -sf %D/%%DATADIR%%/help/C/dialogs %D/%%DATADIR%%/help/C/image/dialogs
+@unexec rm -f %D/%%DATADIR%%/help/C/image/dialogs
+%%DATADIR%%/help/C/image/edit/clear.html
+%%DATADIR%%/help/C/image/edit/copy.html
+%%DATADIR%%/help/C/image/edit/cut.html
+@exec mkdir -p %D/%%DATADIR%%/help/C/image/edit
+@exec ln -sf %D/%%DATADIR%%/help/C/dialogs %D/%%DATADIR%%/help/C/image/edit/dialogs
+@unexec rm -f %D/%%DATADIR%%/help/C/image/edit/dialogs
+%%DATADIR%%/help/C/image/edit/fill.html
+%%DATADIR%%/help/C/image/edit/paste.html
+%%DATADIR%%/help/C/image/edit/paste_as_new.html
+%%DATADIR%%/help/C/image/edit/paste_into.html
+%%DATADIR%%/help/C/image/edit/redo.html
+%%DATADIR%%/help/C/image/edit/stroke.html
+%%DATADIR%%/help/C/image/edit/undo.html
+@exec ln -sf %D/%%DATADIR%%/help/C/file %D/%%DATADIR%%/help/C/image/file
+@unexec rm -f %D/%%DATADIR%%/help/C/image/file
+@exec ln -sf %D/%%DATADIR%%/help/C/filters %D/%%DATADIR%%/help/C/image/filters
+@unexec rm -f %D/%%DATADIR%%/help/C/image/filters
+%%DATADIR%%/help/C/image/image/colors/auto/equalize.html
+%%DATADIR%%/help/C/image/image/colors/desaturate.html
+%%DATADIR%%/help/C/image/image/colors/invert.html
+@exec mkdir -p %D/%%DATADIR%%/help/C/image/image
+@exec ln -sf %D/%%DATADIR%%/help/C/dialogs %D/%%DATADIR%%/help/C/image/image/dialogs
+@unexec rm -f %D/%%DATADIR%%/help/C/image/image/dialogs
+%%DATADIR%%/help/C/image/image/duplicate.html
+%%DATADIR%%/help/C/image/image/mode/convert_to_grayscale.html
+%%DATADIR%%/help/C/image/image/mode/convert_to_rgb.html
+@exec mkdir -p %D/%%DATADIR%%/help/C/image/image/mode
+@exec ln -sf %D/%%DATADIR%%/help/C/dialogs %D/%%DATADIR%%/help/C/image/image/mode/dialogs
+@unexec rm -f %D/%%DATADIR%%/help/C/image/image/mode/dialogs
+@exec mkdir -p %D/%%DATADIR%%/help/C/image/image/transforms
+@exec ln -sf %D/%%DATADIR%%/help/C/dialogs %D/%%DATADIR%%/help/C/image/image/transforms/dialogs
+@unexec rm -f %D/%%DATADIR%%/help/C/image/image/transforms/dialogs
+%%DATADIR%%/help/C/image/image_window.html
+%%DATADIR%%/help/C/image/index.html
+@exec ln -sf %D/%%DATADIR%%/help/C/layers %D/%%DATADIR%%/help/C/image/layers
+@unexec rm -f %D/%%DATADIR%%/help/C/image/layers
+%%DATADIR%%/help/C/image/select/all.html
+@exec mkdir -p %D/%%DATADIR%%/help/C/image/select
+@exec ln -sf %D/%%DATADIR%%/help/C/dialogs %D/%%DATADIR%%/help/C/image/select/dialogs
+@unexec rm -f %D/%%DATADIR%%/help/C/image/select/dialogs
+%%DATADIR%%/help/C/image/select/float.html
+%%DATADIR%%/help/C/image/select/invert.html
+%%DATADIR%%/help/C/image/select/none.html
+%%DATADIR%%/help/C/image/select/save_to_channel.html
+%%DATADIR%%/help/C/image/select/sharpen.html
+@exec ln -sf %D/%%DATADIR%%/help/C/toolbox %D/%%DATADIR%%/help/C/image/toolbox
+@unexec rm -f %D/%%DATADIR%%/help/C/image/toolbox
+@exec ln -sf %D/%%DATADIR%%/help/C/tools %D/%%DATADIR%%/help/C/image/tools
+@unexec rm -f %D/%%DATADIR%%/help/C/image/tools
+@exec mkdir -p %D/%%DATADIR%%/help/C/image/view
+@exec ln -sf %D/%%DATADIR%%/help/C/dialogs %D/%%DATADIR%%/help/C/image/view/dialogs
+@unexec rm -f %D/%%DATADIR%%/help/C/image/view/dialogs
+%%DATADIR%%/help/C/image/view/dot_for_dot.html
+%%DATADIR%%/help/C/image/view/new_view.html
+%%DATADIR%%/help/C/image/view/shrink_wrap.html
+%%DATADIR%%/help/C/image/view/snap_to_guides.html
+%%DATADIR%%/help/C/image/view/toggle_guides.html
+%%DATADIR%%/help/C/image/view/toggle_rulers.html
+%%DATADIR%%/help/C/image/view/toggle_selection.html
+%%DATADIR%%/help/C/image/view/toggle_statusbar.html
+%%DATADIR%%/help/C/image/view/zoom.html
+%%DATADIR%%/help/C/images/add_point.png
+%%DATADIR%%/help/C/images/anchor_layer.png
+%%DATADIR%%/help/C/images/channel_to_selection.png
+%%DATADIR%%/help/C/images/delete_channel.png
+%%DATADIR%%/help/C/images/delete_directory.png
+%%DATADIR%%/help/C/images/delete_layer.png
+%%DATADIR%%/help/C/images/delete_path.png
+%%DATADIR%%/help/C/images/dotted_square.png
+%%DATADIR%%/help/C/images/duplicate_channel.png
+%%DATADIR%%/help/C/images/duplicate_layer.png
+%%DATADIR%%/help/C/images/duplicate_path.png
+%%DATADIR%%/help/C/images/edit_point.png
+%%DATADIR%%/help/C/images/eye.png
+%%DATADIR%%/help/C/images/examples/border-selection-01.png
+%%DATADIR%%/help/C/images/examples/border-selection-02.png
+%%DATADIR%%/help/C/images/glossary/modes-addition.png
+%%DATADIR%%/help/C/images/glossary/modes-color.png
+%%DATADIR%%/help/C/images/glossary/modes-darken.png
+%%DATADIR%%/help/C/images/glossary/modes-difference.png
+%%DATADIR%%/help/C/images/glossary/modes-dissolve.png
+%%DATADIR%%/help/C/images/glossary/modes-divide.png
+%%DATADIR%%/help/C/images/glossary/modes-hue.png
+%%DATADIR%%/help/C/images/glossary/modes-lighten.png
+%%DATADIR%%/help/C/images/glossary/modes-multiply.png
+%%DATADIR%%/help/C/images/glossary/modes-normal.png
+%%DATADIR%%/help/C/images/glossary/modes-normal2.png
+%%DATADIR%%/help/C/images/glossary/modes-overlay.png
+%%DATADIR%%/help/C/images/glossary/modes-saturation.png
+%%DATADIR%%/help/C/images/glossary/modes-screen.png
+%%DATADIR%%/help/C/images/glossary/modes-subtract.png
+%%DATADIR%%/help/C/images/glossary/modes-value.png
+%%DATADIR%%/help/C/images/geezoom.png
+%%DATADIR%%/help/C/images/image_menu.png
+%%DATADIR%%/help/C/images/image_window.png
+%%DATADIR%%/help/C/images/layers_dialog.png
+%%DATADIR%%/help/C/images/layers_example.png
+%%DATADIR%%/help/C/images/layers_menu.png
+%%DATADIR%%/help/C/images/layers_overview.png
+%%DATADIR%%/help/C/images/lower_channel.png
+%%DATADIR%%/help/C/images/lower_directory.png
+%%DATADIR%%/help/C/images/lower_layer.png
+%%DATADIR%%/help/C/images/new_channel.png
+%%DATADIR%%/help/C/images/new_directory.png
+%%DATADIR%%/help/C/images/new_path.png
+%%DATADIR%%/help/C/images/new_point.png
+%%DATADIR%%/help/C/images/path_to_selection.png
+%%DATADIR%%/help/C/images/preview_box.png
+%%DATADIR%%/help/C/images/print_color.png
+%%DATADIR%%/help/C/images/print_main.png
+%%DATADIR%%/help/C/images/print_setup.png
+%%DATADIR%%/help/C/images/raise_channel.png
+%%DATADIR%%/help/C/images/raise_directory.png
+%%DATADIR%%/help/C/images/raise_layer.png
+%%DATADIR%%/help/C/images/red_square.png
+%%DATADIR%%/help/C/images/remove_point.png
+%%DATADIR%%/help/C/images/selection_to_path.png
+%%DATADIR%%/help/C/images/stroke_path.png
+%%DATADIR%%/help/C/images/tool_options.png
+%%DATADIR%%/help/C/images/toolbox.png
+%%DATADIR%%/help/C/images/tools/tool-opt-increment.png
+%%DATADIR%%/help/C/images/tools/tool-opt-nonincrement.png
+%%DATADIR%%/help/C/images/tools/tool_airbrush.png
+%%DATADIR%%/help/C/images/tools/tool_apartheid.png
+%%DATADIR%%/help/C/images/tools/tool_bezier.png
+%%DATADIR%%/help/C/images/tools/tool_blend.png
+%%DATADIR%%/help/C/images/tools/tool_burndodge.png
+%%DATADIR%%/help/C/images/tools/tool_convolver.png
+%%DATADIR%%/help/C/images/tools/tool_crop.png
+%%DATADIR%%/help/C/images/tools/tool_dodgeburn.png
+%%DATADIR%%/help/C/images/tools/tool_ellipse_sel.png
+%%DATADIR%%/help/C/images/tools/tool_eraser.png
+%%DATADIR%%/help/C/images/tools/tool_fill.png
+%%DATADIR%%/help/C/images/tools/tool_flip.png
+%%DATADIR%%/help/C/images/tools/tool_free_sel.png
+%%DATADIR%%/help/C/images/tools/tool_fuzzy_sel.png
+%%DATADIR%%/help/C/images/tools/tool_gradient.png
+%%DATADIR%%/help/C/images/tools/tool_ink.png
+%%DATADIR%%/help/C/images/tools/tool_measure.png
+%%DATADIR%%/help/C/images/tools/tool_move.png
+%%DATADIR%%/help/C/images/tools/tool_paintbrush.png
+%%DATADIR%%/help/C/images/tools/tool_pencil.png
+%%DATADIR%%/help/C/images/tools/tool_picker.png
+%%DATADIR%%/help/C/images/tools/tool_rect_sel.png
+%%DATADIR%%/help/C/images/tools/tool_scissors.png
+%%DATADIR%%/help/C/images/tools/tool_smudge.png
+%%DATADIR%%/help/C/images/tools/tool_smuge.png
+%%DATADIR%%/help/C/images/tools/tool_text.png
+%%DATADIR%%/help/C/images/tools/tool_transform.png
+%%DATADIR%%/help/C/images/tools/tool_zoom.png
+%%DATADIR%%/help/C/images/triangle.png
+%%DATADIR%%/help/C/images/wilber.png
+%%DATADIR%%/help/C/index.html
+%%DATADIR%%/help/C/introduction.html
+%%DATADIR%%/help/C/keyboard_shortcuts.html
+%%DATADIR%%/help/C/layers/add_alpha_channel.html
+%%DATADIR%%/help/C/layers/alpha_to_selection.html
+%%DATADIR%%/help/C/layers/anchor_layer.html
+%%DATADIR%%/help/C/layers/apply_mask.html
+@exec mkdir -p %D/%%DATADIR%%/help/C/layers
+@exec ln -sf %D/%%DATADIR%%/help/C/dialogs/layers %D/%%DATADIR%%/help/C/layers/dialogs
+@unexec rm -f %D/%%DATADIR%%/help/C/layers/dialogs
+%%DATADIR%%/help/C/layers/delete_layer.html
+%%DATADIR%%/help/C/layers/delete_mask.html
+%%DATADIR%%/help/C/layers/duplicate_layer.html
+%%DATADIR%%/help/C/layers/flatten_image.html
+%%DATADIR%%/help/C/layers/index.html
+%%DATADIR%%/help/C/layers/layer_to_image_size.html
+%%DATADIR%%/help/C/layers/mask_to_selection.html
+%%DATADIR%%/help/C/layers/merge_down.html
+%%DATADIR%%/help/C/layers/stack/stack.html
+%%DATADIR%%/help/C/layers/using_layers.html
+%%DATADIR%%/help/C/ln7.html
+%%DATADIR%%/help/C/main_interface.html
+@exec mkdir -p %D/%%DATADIR%%/help/C/open
+@exec ln -sf %D/%%DATADIR%%/help/C/dialogs %D/%%DATADIR%%/help/C/open/dialogs
+@unexec rm -f %D/%%DATADIR%%/help/C/open/dialogs
+@exec ln -sf %D/%%DATADIR%%/help/C/filters %D/%%DATADIR%%/help/C/open/filters
+@unexec rm -f %D/%%DATADIR%%/help/C/open/filters
+%%DATADIR%%/help/C/open/index.html
+%%DATADIR%%/help/C/open/open_by_extension.html
+%%DATADIR%%/help/C/paths/copy_path.html
+%%DATADIR%%/help/C/paths/delete_path.html
+@exec mkdir -p %D/%%DATADIR%%/help/C/paths
+@exec ln -sf %D/%%DATADIR%%/help/C/dialogs %D/%%DATADIR%%/help/C/paths/dialogs
+@unexec rm -f %D/%%DATADIR%%/help/C/paths/dialogs
+%%DATADIR%%/help/C/paths/duplicate_path.html
+@exec ln -sf %D/%%DATADIR%%/help/C/filters %D/%%DATADIR%%/help/C/paths/filters
+@unexec rm -f %D/%%DATADIR%%/help/C/paths/filters
+%%DATADIR%%/help/C/paths/index.html
+%%DATADIR%%/help/C/paths/new_path.html
+%%DATADIR%%/help/C/paths/paste_path.html
+%%DATADIR%%/help/C/paths/path_to_selection.html
+%%DATADIR%%/help/C/paths/stroke_path.html
+@exec mkdir -p %D/%%DATADIR%%/help/C/save
+@exec ln -sf %D/%%DATADIR%%/help/C/dialogs %D/%%DATADIR%%/help/C/save/dialogs
+@unexec rm -f %D/%%DATADIR%%/help/C/save/dialogs
+@exec ln -sf %D/%%DATADIR%%/help/C/filters %D/%%DATADIR%%/help/C/save/filters
+@unexec rm -f %D/%%DATADIR%%/help/C/save/filters
+%%DATADIR%%/help/C/save/index.html
+%%DATADIR%%/help/C/save/save_by_extension.html
+@exec mkdir -p %D/%%DATADIR%%/help/C/toolbox
+@exec ln -sf %D/%%DATADIR%%/help/C/dialogs %D/%%DATADIR%%/help/C/toolbox/dialogs
+@unexec rm -f %D/%%DATADIR%%/help/C/toolbox/dialogs
+@exec ln -sf %D/%%DATADIR%%/help/C/file %D/%%DATADIR%%/help/C/toolbox/file
+@unexec rm -f %D/%%DATADIR%%/help/C/toolbox/file
+@exec ln -sf %D/%%DATADIR%%/help/C/filters %D/%%DATADIR%%/help/C/toolbox/filters
+@unexec rm -f %D/%%DATADIR%%/help/C/toolbox/filters
+%%DATADIR%%/help/C/toolbox/help/context_help.html
+@exec mkdir -p %D/%%DATADIR%%/help/C/toolbox/help
+@exec ln -sf %D/%%DATADIR%%/help/C/dialogs %D/%%DATADIR%%/help/C/toolbox/help/dialogs
+@unexec rm -f %D/%%DATADIR%%/help/C/toolbox/help/dialogs
+@exec ln -sf %D/%%DATADIR%%/help/C/filters %D/%%DATADIR%%/help/C/toolbox/help/filters
+@unexec rm -f %D/%%DATADIR%%/help/C/toolbox/help/filters
+%%DATADIR%%/help/C/stylesheet-images/note.gif
+%%DATADIR%%/help/C/stylesheet-images/tip.gif
+%%DATADIR%%/help/C/stylesheet-images/warning.gif
+%%DATADIR%%/help/C/toolbox/index.html
+%%DATADIR%%/help/C/toolbox/toolbox.html
+%%DATADIR%%/help/C/tools/airbrush.html
+%%DATADIR%%/help/C/tools/bezier_select.html
+%%DATADIR%%/help/C/tools/blend.html
+%%DATADIR%%/help/C/tools/brightness_contrast.html
+%%DATADIR%%/help/C/tools/bucket_fill.html
+%%DATADIR%%/help/C/tools/by_color_select.html
+%%DATADIR%%/help/C/tools/clone.html
+%%DATADIR%%/help/C/tools/color_balance.html
+%%DATADIR%%/help/C/tools/color_picker.html
+%%DATADIR%%/help/C/tools/convolve.html
+%%DATADIR%%/help/C/tools/crop.html
+%%DATADIR%%/help/C/tools/curves.html
+%%DATADIR%%/help/C/tools/dodgeburn.html
+%%DATADIR%%/help/C/tools/ellipse_select.html
+%%DATADIR%%/help/C/tools/eraser.html
+%%DATADIR%%/help/C/tools/flip.html
+%%DATADIR%%/help/C/tools/free_select.html
+%%DATADIR%%/help/C/tools/fuzzy_select.html
+%%DATADIR%%/help/C/tools/histogram.html
+%%DATADIR%%/help/C/tools/hue_saturation.html
+%%DATADIR%%/help/C/tools/index.html
+%%DATADIR%%/help/C/tools/ink.html
+%%DATADIR%%/help/C/tools/intelligent_scissors.html
+%%DATADIR%%/help/C/tools/levels.html
+%%DATADIR%%/help/C/tools/magnify.html
+%%DATADIR%%/help/C/tools/measure.html
+%%DATADIR%%/help/C/tools/move.html
+%%DATADIR%%/help/C/tools/paintbrush.html
+%%DATADIR%%/help/C/tools/pencil.html
+%%DATADIR%%/help/C/tools/posterize.html
+%%DATADIR%%/help/C/tools/rect_select.html
+%%DATADIR%%/help/C/tools/smudge.html
+%%DATADIR%%/help/C/tools/text.html
+%%DATADIR%%/help/C/tools/threshold.html
+%%DATADIR%%/help/C/tools/transform.html
+%%DATADIR%%/help/C/using_gimp.html
+%%DATADIR%%/help/C/why_gimp.html
+%%DATADIR%%/palettes/Bears
+%%DATADIR%%/palettes/Bgold
+%%DATADIR%%/palettes/Blues
+%%DATADIR%%/palettes/Borders
+%%DATADIR%%/palettes/Browns_And_Yellows
+%%DATADIR%%/palettes/Caramel
+%%DATADIR%%/palettes/Cascade
+%%DATADIR%%/palettes/China
+%%DATADIR%%/palettes/Coldfire
+%%DATADIR%%/palettes/Cool_Colors
+%%DATADIR%%/palettes/Cranes
+%%DATADIR%%/palettes/Dark_pastels
+%%DATADIR%%/palettes/Default
+%%DATADIR%%/palettes/Ega
+%%DATADIR%%/palettes/Firecode
+%%DATADIR%%/palettes/Gold
+%%DATADIR%%/palettes/GrayViolet
+%%DATADIR%%/palettes/Grayblue
+%%DATADIR%%/palettes/Grays
+%%DATADIR%%/palettes/Greens
+%%DATADIR%%/palettes/Hilite
+%%DATADIR%%/palettes/Kahki
+%%DATADIR%%/palettes/Lights
+%%DATADIR%%/palettes/Muted
+%%DATADIR%%/palettes/Named_Colors
+%%DATADIR%%/palettes/News3
+%%DATADIR%%/palettes/Op2
+%%DATADIR%%/palettes/Paintjet
+%%DATADIR%%/palettes/Pastels
+%%DATADIR%%/palettes/Plasma
+%%DATADIR%%/palettes/Reds
+%%DATADIR%%/palettes/Reds_And_Purples
+%%DATADIR%%/palettes/Royal
+%%DATADIR%%/palettes/Topographic
+%%DATADIR%%/palettes/Visibone
+%%DATADIR%%/palettes/Visibone2
+%%DATADIR%%/palettes/Volcano
+%%DATADIR%%/palettes/Warm_Colors
+%%DATADIR%%/palettes/Web
+%%DATADIR%%/patterns/3dgreen.pat
+%%DATADIR%%/patterns/Craters.pat
+%%DATADIR%%/patterns/Moonfoot.pat
+%%DATADIR%%/patterns/amethyst.pat
+%%DATADIR%%/patterns/bark.pat
+%%DATADIR%%/patterns/blue.pat
+%%DATADIR%%/patterns/bluegrid.pat
+%%DATADIR%%/patterns/bluesquares.pat
+%%DATADIR%%/patterns/blueweb.pat
+%%DATADIR%%/patterns/brick.pat
+%%DATADIR%%/patterns/burlap.pat
+%%DATADIR%%/patterns/burlwood.pat
+%%DATADIR%%/patterns/choc_swirl.pat
+%%DATADIR%%/patterns/corkboard.pat
+%%DATADIR%%/patterns/cracked.pat
+%%DATADIR%%/patterns/crinklepaper.pat
+%%DATADIR%%/patterns/electric.pat
+%%DATADIR%%/patterns/fibers.pat
+%%DATADIR%%/patterns/granite1.pat
+%%DATADIR%%/patterns/ground1.pat
+%%DATADIR%%/patterns/ice.pat
+%%DATADIR%%/patterns/java.pat
+%%DATADIR%%/patterns/leather.pat
+%%DATADIR%%/patterns/leaves.pat
+%%DATADIR%%/patterns/leopard.pat
+%%DATADIR%%/patterns/lightning.pat
+%%DATADIR%%/patterns/marble1.pat
+%%DATADIR%%/patterns/marble2.pat
+%%DATADIR%%/patterns/marble3.pat
+%%DATADIR%%/patterns/nops.pat
+%%DATADIR%%/patterns/paper.pat
+%%DATADIR%%/patterns/parque1.pat
+%%DATADIR%%/patterns/parque2.pat
+%%DATADIR%%/patterns/parque3.pat
+%%DATADIR%%/patterns/pastel.pat
+%%DATADIR%%/patterns/pine.pat
+%%DATADIR%%/patterns/pink_marble.pat
+%%DATADIR%%/patterns/pool.pat
+%%DATADIR%%/patterns/qube1.pat
+%%DATADIR%%/patterns/rain.pat
+%%DATADIR%%/patterns/recessed.pat
+%%DATADIR%%/patterns/redcube.pat
+%%DATADIR%%/patterns/rock.pat
+%%DATADIR%%/patterns/sky.pat
+%%DATADIR%%/patterns/slate.pat
+%%DATADIR%%/patterns/sm_squares.pat
+%%DATADIR%%/patterns/starfield.pat
+%%DATADIR%%/patterns/stone33.pat
+%%DATADIR%%/patterns/terra.pat
+%%DATADIR%%/patterns/walnut.pat
+%%DATADIR%%/patterns/warning.pat
+%%DATADIR%%/patterns/wood1.pat
+%%DATADIR%%/patterns/wood2.pat
+%%DATADIR%%/patterns/wood3.pat
+%%DATADIR%%/patterns/wood4.pat
+%%DATADIR%%/patterns/wood5.pat
+%%DATADIR%%/scripts/3d-outline.scm
+%%DATADIR%%/scripts/3dTruchet.scm
+%%DATADIR%%/scripts/add-bevel.scm
+%%DATADIR%%/scripts/addborder.scm
+%%DATADIR%%/scripts/alien-glow-arrow.scm
+%%DATADIR%%/scripts/alien-glow-bar.scm
+%%DATADIR%%/scripts/alien-glow-bullet.scm
+%%DATADIR%%/scripts/alien-glow-button.scm
+%%DATADIR%%/scripts/alien-glow-logo.scm
+%%DATADIR%%/scripts/alien-neon-logo.scm
+%%DATADIR%%/scripts/asc2img.scm
+%%DATADIR%%/scripts/basic1-logo.scm
+%%DATADIR%%/scripts/basic2-logo.scm
+%%DATADIR%%/scripts/beavis.jpg
+%%DATADIR%%/scripts/beveled-button.scm
+%%DATADIR%%/scripts/beveled-pattern-arrow.scm
+%%DATADIR%%/scripts/beveled-pattern-bullet.scm
+%%DATADIR%%/scripts/beveled-pattern-button.scm
+%%DATADIR%%/scripts/beveled-pattern-heading.scm
+%%DATADIR%%/scripts/beveled-pattern-hrule.scm
+%%DATADIR%%/scripts/blend-anim.scm
+%%DATADIR%%/scripts/blended-logo.scm
+%%DATADIR%%/scripts/bovinated-logo.scm
+%%DATADIR%%/scripts/camo.scm
+%%DATADIR%%/scripts/carve-it.scm
+%%DATADIR%%/scripts/carved-logo.scm
+%%DATADIR%%/scripts/chalk.scm
+%%DATADIR%%/scripts/chip-away.scm
+%%DATADIR%%/scripts/chrome-it.scm
+%%DATADIR%%/scripts/chrome-logo.scm
+%%DATADIR%%/scripts/circuit.scm
+%%DATADIR%%/scripts/clothify.scm
+%%DATADIR%%/scripts/coffee.scm
+%%DATADIR%%/scripts/comic-logo.scm
+%%DATADIR%%/scripts/coolmetal-logo.scm
+%%DATADIR%%/scripts/copy-visible.scm
+%%DATADIR%%/scripts/crystal-logo.scm
+%%DATADIR%%/scripts/distress_selection.scm
+%%DATADIR%%/scripts/drop-shadow.scm
+%%DATADIR%%/scripts/erase-rows.scm
+%%DATADIR%%/scripts/fade-outline.scm
+%%DATADIR%%/scripts/flatland.scm
+%%DATADIR%%/scripts/font-map.scm
+%%DATADIR%%/scripts/frosty-logo.scm
+%%DATADIR%%/scripts/fuzzyborder.scm
+%%DATADIR%%/scripts/gimp-headers.scm
+%%DATADIR%%/scripts/gimp-labels.scm
+%%DATADIR%%/scripts/glossy.scm
+%%DATADIR%%/scripts/glowing-logo.scm
+%%DATADIR%%/scripts/gradient-bevel-logo.scm
+%%DATADIR%%/scripts/gradient-example.scm
+%%DATADIR%%/scripts/grid-system.scm
+%%DATADIR%%/scripts/hsv-graph.scm
+%%DATADIR%%/scripts/i26-gunya2.scm
+%%DATADIR%%/scripts/image-structure.scm
+%%DATADIR%%/scripts/land.scm
+%%DATADIR%%/scripts/lava.scm
+%%DATADIR%%/scripts/line-nova.scm
+%%DATADIR%%/scripts/mkbrush.scm
+%%DATADIR%%/scripts/neon-logo.scm
+%%DATADIR%%/scripts/news-text.scm
+%%DATADIR%%/scripts/old_photo.scm
+%%DATADIR%%/scripts/perspective-shadow.scm
+%%DATADIR%%/scripts/predator.scm
+%%DATADIR%%/scripts/pupi-button.scm
+%%DATADIR%%/scripts/rendermap.scm
+%%DATADIR%%/scripts/ripply-anim.scm
+%%DATADIR%%/scripts/round-corners.scm
+%%DATADIR%%/scripts/script-fu-util.scm
+%%DATADIR%%/scripts/sel-to-anim-img.scm
+%%DATADIR%%/scripts/select_to_brush.scm
+%%DATADIR%%/scripts/select_to_image.scm
+%%DATADIR%%/scripts/selection-round.scm
+%%DATADIR%%/scripts/slide.scm
+%%DATADIR%%/scripts/sota-chrome-logo.scm
+%%DATADIR%%/scripts/speed-text.scm
+%%DATADIR%%/scripts/sphere.scm
+%%DATADIR%%/scripts/spinning_globe.scm
+%%DATADIR%%/scripts/starburst-logo.scm
+%%DATADIR%%/scripts/starscape-logo.scm
+%%DATADIR%%/scripts/swirltile.scm
+%%DATADIR%%/scripts/swirly-pattern.scm
+%%DATADIR%%/scripts/t-o-p-logo.scm
+%%DATADIR%%/scripts/text-circle.scm
+%%DATADIR%%/scripts/texture.jpg
+%%DATADIR%%/scripts/texture1.jpg
+%%DATADIR%%/scripts/texture2.jpg
+%%DATADIR%%/scripts/texture3.jpg
+%%DATADIR%%/scripts/textured-logo.scm
+%%DATADIR%%/scripts/tileblur.scm
+%%DATADIR%%/scripts/title-header.scm
+%%DATADIR%%/scripts/trochoid.scm
+%%DATADIR%%/scripts/truchet.scm
+%%DATADIR%%/scripts/unsharp-mask.scm
+%%DATADIR%%/scripts/waves-anim.scm
+%%DATADIR%%/scripts/weave.scm
+%%DATADIR%%/scripts/web-browser.scm
+%%DATADIR%%/scripts/xach-effect.scm
+%%DATADIR%%/tips/gimp_conseils.fr.txt
+%%DATADIR%%/tips/gimp_tips.cs.txt
+%%DATADIR%%/tips/gimp_tips.da.txt
+%%DATADIR%%/tips/gimp_tips.de.txt
+%%DATADIR%%/tips/gimp_tips.es.txt
+%%DATADIR%%/tips/gimp_tips.hu.txt
+%%DATADIR%%/tips/gimp_tips.it.txt
+%%DATADIR%%/tips/gimp_tips.ja.txt
+%%DATADIR%%/tips/gimp_tips.ko.txt
+%%DATADIR%%/tips/gimp_tips.lt.txt
+%%DATADIR%%/tips/gimp_tips.pl.txt
+%%DATADIR%%/tips/gimp_tips.ru.txt
+%%DATADIR%%/tips/gimp_tips.sk.txt
+%%DATADIR%%/tips/gimp_tips.sl.txt
+%%DATADIR%%/tips/gimp_tips.txt
+%%DATADIR%%/tips/gimp_tips.tr.txt
+%%DATADIR%%/tips/gimp_tips.uk.txt
+%%DATADIR%%/tips/gimp_tips.zh_CN.txt
+%%DATADIR%%/tips/gimp_tips.zh_TW.txt
+%%DATADIR%%/user_install
 share/locale/ca/LC_MESSAGES/gimp-libgimp.mo
 share/locale/ca/LC_MESSAGES/gimp-script-fu.mo
 share/locale/ca/LC_MESSAGES/gimp-std-plugins.mo
@@ -1509,55 +1509,55 @@ share/locale/zh_TW/LC_MESSAGES/gimp.mo
 @dirrm libexec/gimp/1.2/modules
 @dirrm libexec/gimp/1.2
 @dirrm libexec/gimp
-@dirrm share/gimp/brushes
-@dirrm share/gimp/devel-docs/html/libgimp
-@dirrm share/gimp/devel-docs/html
-@dirrm share/gimp/devel-docs
-@dirrm share/gimp/fractalexplorer
-@dirrm share/gimp/gfig
-@dirrm share/gimp/gflare
-@dirrm share/gimp/gimpressionist/Brushes
-@dirrm share/gimp/gimpressionist/Paper
-@dirrm share/gimp/gimpressionist/Presets
-@dirrm share/gimp/gimpressionist
-@dirrm share/gimp/gradients
-@dirrm share/gimp/help/C/dialogs/layers
-@dirrm share/gimp/help/C/dialogs/channels
-@dirrm share/gimp/help/C/dialogs/paths
-@dirrm share/gimp/help/C/dialogs/palette_editor
-@dirrm share/gimp/help/C/dialogs/gradient_editor
-@dirrm share/gimp/help/C/dialogs/color_selectors
-@dirrm share/gimp/help/C/dialogs/preferences
-@dirrm share/gimp/help/C/dialogs
-@dirrm share/gimp/help/C/stylesheet-images
-@dirrm share/gimp/help/C/tools
-@dirrm share/gimp/help/C/layers/stack
-@dirrm share/gimp/help/C/layers
-@dirrm share/gimp/help/C/channels
-@dirrm share/gimp/help/C/paths
-@dirrm share/gimp/help/C/toolbox/help
-@dirrm share/gimp/help/C/toolbox
-@dirrm share/gimp/help/C/images/examples
-@dirrm share/gimp/help/C/images/glossary
-@dirrm share/gimp/help/C/images/tools
-@dirrm share/gimp/help/C/images
-@dirrm share/gimp/help/C/image/edit
-@dirrm share/gimp/help/C/image/select
-@dirrm share/gimp/help/C/image/view
-@dirrm share/gimp/help/C/image/image/colors/auto
-@dirrm share/gimp/help/C/image/image/colors
-@dirrm share/gimp/help/C/image/image/mode
-@dirrm share/gimp/help/C/image/image/transforms
-@dirrm share/gimp/help/C/image/image
-@dirrm share/gimp/help/C/image
-@dirrm share/gimp/help/C/open
-@dirrm share/gimp/help/C/save
-@dirrm share/gimp/help/C/filters
-@dirrm share/gimp/help/C/file
-@dirrm share/gimp/help/C
-@dirrm share/gimp/help
-@dirrm share/gimp/palettes
-@dirrm share/gimp/patterns
-@dirrm share/gimp/scripts
-@dirrm share/gimp/tips
-@dirrm share/gimp
+@dirrm %%DATADIR%%/brushes
+@dirrm %%DATADIR%%/devel-docs/html/libgimp
+@dirrm %%DATADIR%%/devel-docs/html
+@dirrm %%DATADIR%%/devel-docs
+@dirrm %%DATADIR%%/fractalexplorer
+@dirrm %%DATADIR%%/gfig
+@dirrm %%DATADIR%%/gflare
+@dirrm %%DATADIR%%/gimpressionist/Brushes
+@dirrm %%DATADIR%%/gimpressionist/Paper
+@dirrm %%DATADIR%%/gimpressionist/Presets
+@dirrm %%DATADIR%%/gimpressionist
+@dirrm %%DATADIR%%/gradients
+@dirrm %%DATADIR%%/help/C/dialogs/layers
+@dirrm %%DATADIR%%/help/C/dialogs/channels
+@dirrm %%DATADIR%%/help/C/dialogs/paths
+@dirrm %%DATADIR%%/help/C/dialogs/palette_editor
+@dirrm %%DATADIR%%/help/C/dialogs/gradient_editor
+@dirrm %%DATADIR%%/help/C/dialogs/color_selectors
+@dirrm %%DATADIR%%/help/C/dialogs/preferences
+@dirrm %%DATADIR%%/help/C/dialogs
+@dirrm %%DATADIR%%/help/C/stylesheet-images
+@dirrm %%DATADIR%%/help/C/tools
+@dirrm %%DATADIR%%/help/C/layers/stack
+@dirrm %%DATADIR%%/help/C/layers
+@dirrm %%DATADIR%%/help/C/channels
+@dirrm %%DATADIR%%/help/C/paths
+@dirrm %%DATADIR%%/help/C/toolbox/help
+@dirrm %%DATADIR%%/help/C/toolbox
+@dirrm %%DATADIR%%/help/C/images/examples
+@dirrm %%DATADIR%%/help/C/images/glossary
+@dirrm %%DATADIR%%/help/C/images/tools
+@dirrm %%DATADIR%%/help/C/images
+@dirrm %%DATADIR%%/help/C/image/edit
+@dirrm %%DATADIR%%/help/C/image/select
+@dirrm %%DATADIR%%/help/C/image/view
+@dirrm %%DATADIR%%/help/C/image/image/colors/auto
+@dirrm %%DATADIR%%/help/C/image/image/colors
+@dirrm %%DATADIR%%/help/C/image/image/mode
+@dirrm %%DATADIR%%/help/C/image/image/transforms
+@dirrm %%DATADIR%%/help/C/image/image
+@dirrm %%DATADIR%%/help/C/image
+@dirrm %%DATADIR%%/help/C/open
+@dirrm %%DATADIR%%/help/C/save
+@dirrm %%DATADIR%%/help/C/filters
+@dirrm %%DATADIR%%/help/C/file
+@dirrm %%DATADIR%%/help/C
+@dirrm %%DATADIR%%/help
+@dirrm %%DATADIR%%/palettes
+@dirrm %%DATADIR%%/patterns
+@dirrm %%DATADIR%%/scripts
+@dirrm %%DATADIR%%/tips
+@dirrm %%DATADIR%%
