@@ -999,6 +999,9 @@
 %%ZOPEBASEDIR%%/lib/python/OFS/tests/testFolder.py
 %%ZOPEBASEDIR%%/lib/python/OFS/tests/testFolder.pyc
 %%ZOPEBASEDIR%%/lib/python/OFS/tests/testFolder.pyo
+%%ZOPEBASEDIR%%/lib/python/OFS/tests/testHistory.py
+%%ZOPEBASEDIR%%/lib/python/OFS/tests/testHistory.pyc
+%%ZOPEBASEDIR%%/lib/python/OFS/tests/testHistory.pyo
 %%ZOPEBASEDIR%%/lib/python/OFS/tests/testObjectManager.py
 %%ZOPEBASEDIR%%/lib/python/OFS/tests/testObjectManager.pyc
 %%ZOPEBASEDIR%%/lib/python/OFS/tests/testObjectManager.pyo
@@ -3359,6 +3362,12 @@
 %%ZOPEBASEDIR%%/lib/python/Testing/makerequest.py
 %%ZOPEBASEDIR%%/lib/python/Testing/makerequest.pyc
 %%ZOPEBASEDIR%%/lib/python/Testing/makerequest.pyo
+%%ZOPEBASEDIR%%/lib/python/Testing/tests/__init__.py
+%%ZOPEBASEDIR%%/lib/python/Testing/tests/__init__.pyc
+%%ZOPEBASEDIR%%/lib/python/Testing/tests/__init__.pyo
+%%ZOPEBASEDIR%%/lib/python/Testing/tests/test_makerequest.py
+%%ZOPEBASEDIR%%/lib/python/Testing/tests/test_makerequest.pyc
+%%ZOPEBASEDIR%%/lib/python/Testing/tests/test_makerequest.pyo
 %%ZOPEBASEDIR%%/lib/python/Testing/var/README.txt
 %%ZOPEBASEDIR%%/lib/python/ThreadLock/SETUP.cfg
 %%ZOPEBASEDIR%%/lib/python/ThreadLock/_ThreadLock.so
@@ -8298,6 +8307,30 @@
 %%ZOPEBASEDIR%%/lib/python/zope/app/interface/vocabulary.py
 %%ZOPEBASEDIR%%/lib/python/zope/app/interface/vocabulary.pyc
 %%ZOPEBASEDIR%%/lib/python/zope/app/interface/vocabulary.pyo
+%%ZOPEBASEDIR%%/lib/python/zope/app/intid/DEPENDENCIES.cfg
+%%ZOPEBASEDIR%%/lib/python/zope/app/intid/SETUP.cfg
+%%ZOPEBASEDIR%%/lib/python/zope/app/intid/__init__.py
+%%ZOPEBASEDIR%%/lib/python/zope/app/intid/__init__.pyc
+%%ZOPEBASEDIR%%/lib/python/zope/app/intid/__init__.pyo
+%%ZOPEBASEDIR%%/lib/python/zope/app/intid/browser/__init__.py
+%%ZOPEBASEDIR%%/lib/python/zope/app/intid/browser/__init__.pyc
+%%ZOPEBASEDIR%%/lib/python/zope/app/intid/browser/__init__.pyo
+%%ZOPEBASEDIR%%/lib/python/zope/app/intid/browser/configure.zcml
+%%ZOPEBASEDIR%%/lib/python/zope/app/intid/browser/ftests.py
+%%ZOPEBASEDIR%%/lib/python/zope/app/intid/browser/ftests.pyc
+%%ZOPEBASEDIR%%/lib/python/zope/app/intid/browser/ftests.pyo
+%%ZOPEBASEDIR%%/lib/python/zope/app/intid/browser/registrations.pt
+%%ZOPEBASEDIR%%/lib/python/zope/app/intid/browser/tracking.txt
+%%ZOPEBASEDIR%%/lib/python/zope/app/intid/configure.zcml
+%%ZOPEBASEDIR%%/lib/python/zope/app/intid/ftests.py
+%%ZOPEBASEDIR%%/lib/python/zope/app/intid/ftests.pyc
+%%ZOPEBASEDIR%%/lib/python/zope/app/intid/ftests.pyo
+%%ZOPEBASEDIR%%/lib/python/zope/app/intid/interfaces.py
+%%ZOPEBASEDIR%%/lib/python/zope/app/intid/interfaces.pyc
+%%ZOPEBASEDIR%%/lib/python/zope/app/intid/interfaces.pyo
+%%ZOPEBASEDIR%%/lib/python/zope/app/intid/tests.py
+%%ZOPEBASEDIR%%/lib/python/zope/app/intid/tests.pyc
+%%ZOPEBASEDIR%%/lib/python/zope/app/intid/tests.pyo
 %%ZOPEBASEDIR%%/lib/python/zope/app/introspector/__init__.py
 %%ZOPEBASEDIR%%/lib/python/zope/app/introspector/__init__.pyc
 %%ZOPEBASEDIR%%/lib/python/zope/app/introspector/__init__.pyo
@@ -8319,6 +8352,21 @@
 %%ZOPEBASEDIR%%/lib/python/zope/app/introspector/tests/test_introspectorview.py
 %%ZOPEBASEDIR%%/lib/python/zope/app/introspector/tests/test_introspectorview.pyc
 %%ZOPEBASEDIR%%/lib/python/zope/app/introspector/tests/test_introspectorview.pyo
+%%ZOPEBASEDIR%%/lib/python/zope/app/keyreference/SETUP.cfg
+%%ZOPEBASEDIR%%/lib/python/zope/app/keyreference/__init__.py
+%%ZOPEBASEDIR%%/lib/python/zope/app/keyreference/__init__.pyc
+%%ZOPEBASEDIR%%/lib/python/zope/app/keyreference/__init__.pyo
+%%ZOPEBASEDIR%%/lib/python/zope/app/keyreference/configure.zcml
+%%ZOPEBASEDIR%%/lib/python/zope/app/keyreference/interfaces.py
+%%ZOPEBASEDIR%%/lib/python/zope/app/keyreference/interfaces.pyc
+%%ZOPEBASEDIR%%/lib/python/zope/app/keyreference/interfaces.pyo
+%%ZOPEBASEDIR%%/lib/python/zope/app/keyreference/persistent.py
+%%ZOPEBASEDIR%%/lib/python/zope/app/keyreference/persistent.pyc
+%%ZOPEBASEDIR%%/lib/python/zope/app/keyreference/persistent.pyo
+%%ZOPEBASEDIR%%/lib/python/zope/app/keyreference/persistent.txt
+%%ZOPEBASEDIR%%/lib/python/zope/app/keyreference/tests.py
+%%ZOPEBASEDIR%%/lib/python/zope/app/keyreference/tests.pyc
+%%ZOPEBASEDIR%%/lib/python/zope/app/keyreference/tests.pyo
 %%ZOPEBASEDIR%%/lib/python/zope/app/locales/README.txt
 %%ZOPEBASEDIR%%/lib/python/zope/app/locales/TRANSLATE.txt
 %%ZOPEBASEDIR%%/lib/python/zope/app/locales/__init__.py
@@ -9382,6 +9430,33 @@
 %%ZOPEBASEDIR%%/lib/python/zope/app/servicenames.py
 %%ZOPEBASEDIR%%/lib/python/zope/app/servicenames.pyc
 %%ZOPEBASEDIR%%/lib/python/zope/app/servicenames.pyo
+%%ZOPEBASEDIR%%/lib/python/zope/app/session/DEPENDENCIES.cfg
+%%ZOPEBASEDIR%%/lib/python/zope/app/session/SETUP.cfg
+%%ZOPEBASEDIR%%/lib/python/zope/app/session/__init__.py
+%%ZOPEBASEDIR%%/lib/python/zope/app/session/__init__.pyc
+%%ZOPEBASEDIR%%/lib/python/zope/app/session/__init__.pyo
+%%ZOPEBASEDIR%%/lib/python/zope/app/session/api.txt
+%%ZOPEBASEDIR%%/lib/python/zope/app/session/bootstrap.py
+%%ZOPEBASEDIR%%/lib/python/zope/app/session/bootstrap.pyc
+%%ZOPEBASEDIR%%/lib/python/zope/app/session/bootstrap.pyo
+%%ZOPEBASEDIR%%/lib/python/zope/app/session/browser.zcml
+%%ZOPEBASEDIR%%/lib/python/zope/app/session/configure.zcml
+%%ZOPEBASEDIR%%/lib/python/zope/app/session/design.txt
+%%ZOPEBASEDIR%%/lib/python/zope/app/session/ftests.py
+%%ZOPEBASEDIR%%/lib/python/zope/app/session/ftests.pyc
+%%ZOPEBASEDIR%%/lib/python/zope/app/session/ftests.pyo
+%%ZOPEBASEDIR%%/lib/python/zope/app/session/http.py
+%%ZOPEBASEDIR%%/lib/python/zope/app/session/http.pyc
+%%ZOPEBASEDIR%%/lib/python/zope/app/session/http.pyo
+%%ZOPEBASEDIR%%/lib/python/zope/app/session/interfaces.py
+%%ZOPEBASEDIR%%/lib/python/zope/app/session/interfaces.pyc
+%%ZOPEBASEDIR%%/lib/python/zope/app/session/interfaces.pyo
+%%ZOPEBASEDIR%%/lib/python/zope/app/session/session.py
+%%ZOPEBASEDIR%%/lib/python/zope/app/session/session.pyc
+%%ZOPEBASEDIR%%/lib/python/zope/app/session/session.pyo
+%%ZOPEBASEDIR%%/lib/python/zope/app/session/tests.py
+%%ZOPEBASEDIR%%/lib/python/zope/app/session/tests.pyc
+%%ZOPEBASEDIR%%/lib/python/zope/app/session/tests.pyo
 %%ZOPEBASEDIR%%/lib/python/zope/app/site/__init__.py
 %%ZOPEBASEDIR%%/lib/python/zope/app/site/__init__.pyc
 %%ZOPEBASEDIR%%/lib/python/zope/app/site/__init__.pyo
@@ -9931,6 +10006,22 @@
 %%ZOPEBASEDIR%%/lib/python/zope/configuration/zopeconfigure.py
 %%ZOPEBASEDIR%%/lib/python/zope/configuration/zopeconfigure.pyc
 %%ZOPEBASEDIR%%/lib/python/zope/configuration/zopeconfigure.pyo
+%%ZOPEBASEDIR%%/lib/python/zope/contentprovider/DEPENDENCIES.cfg
+%%ZOPEBASEDIR%%/lib/python/zope/contentprovider/README.txt
+%%ZOPEBASEDIR%%/lib/python/zope/contentprovider/SETUP.cfg
+%%ZOPEBASEDIR%%/lib/python/zope/contentprovider/__init__.py
+%%ZOPEBASEDIR%%/lib/python/zope/contentprovider/__init__.pyc
+%%ZOPEBASEDIR%%/lib/python/zope/contentprovider/__init__.pyo
+%%ZOPEBASEDIR%%/lib/python/zope/contentprovider/configure.zcml
+%%ZOPEBASEDIR%%/lib/python/zope/contentprovider/interfaces.py
+%%ZOPEBASEDIR%%/lib/python/zope/contentprovider/interfaces.pyc
+%%ZOPEBASEDIR%%/lib/python/zope/contentprovider/interfaces.pyo
+%%ZOPEBASEDIR%%/lib/python/zope/contentprovider/tales.py
+%%ZOPEBASEDIR%%/lib/python/zope/contentprovider/tales.pyc
+%%ZOPEBASEDIR%%/lib/python/zope/contentprovider/tales.pyo
+%%ZOPEBASEDIR%%/lib/python/zope/contentprovider/tests.py
+%%ZOPEBASEDIR%%/lib/python/zope/contentprovider/tests.pyc
+%%ZOPEBASEDIR%%/lib/python/zope/contentprovider/tests.pyo
 %%ZOPEBASEDIR%%/lib/python/zope/deprecation/DEPENDENCIES.cfg
 %%ZOPEBASEDIR%%/lib/python/zope/deprecation/README.txt
 %%ZOPEBASEDIR%%/lib/python/zope/deprecation/__init__.py
@@ -11958,6 +12049,35 @@
 %%ZOPEBASEDIR%%/lib/python/zope/thread/tests.py
 %%ZOPEBASEDIR%%/lib/python/zope/thread/tests.pyc
 %%ZOPEBASEDIR%%/lib/python/zope/thread/tests.pyo
+%%ZOPEBASEDIR%%/lib/python/zope/viewlet/DEPENDENCIES.cfg
+%%ZOPEBASEDIR%%/lib/python/zope/viewlet/README.txt
+%%ZOPEBASEDIR%%/lib/python/zope/viewlet/SETUP.cfg
+%%ZOPEBASEDIR%%/lib/python/zope/viewlet/__init__.py
+%%ZOPEBASEDIR%%/lib/python/zope/viewlet/__init__.pyc
+%%ZOPEBASEDIR%%/lib/python/zope/viewlet/__init__.pyo
+%%ZOPEBASEDIR%%/lib/python/zope/viewlet/configure.zcml
+%%ZOPEBASEDIR%%/lib/python/zope/viewlet/css_viewlet.pt
+%%ZOPEBASEDIR%%/lib/python/zope/viewlet/directives.txt
+%%ZOPEBASEDIR%%/lib/python/zope/viewlet/interfaces.py
+%%ZOPEBASEDIR%%/lib/python/zope/viewlet/interfaces.pyc
+%%ZOPEBASEDIR%%/lib/python/zope/viewlet/interfaces.pyo
+%%ZOPEBASEDIR%%/lib/python/zope/viewlet/javascript_viewlet.pt
+%%ZOPEBASEDIR%%/lib/python/zope/viewlet/manager.py
+%%ZOPEBASEDIR%%/lib/python/zope/viewlet/manager.pyc
+%%ZOPEBASEDIR%%/lib/python/zope/viewlet/manager.pyo
+%%ZOPEBASEDIR%%/lib/python/zope/viewlet/meta.zcml
+%%ZOPEBASEDIR%%/lib/python/zope/viewlet/metaconfigure.py
+%%ZOPEBASEDIR%%/lib/python/zope/viewlet/metaconfigure.pyc
+%%ZOPEBASEDIR%%/lib/python/zope/viewlet/metaconfigure.pyo
+%%ZOPEBASEDIR%%/lib/python/zope/viewlet/metadirectives.py
+%%ZOPEBASEDIR%%/lib/python/zope/viewlet/metadirectives.pyc
+%%ZOPEBASEDIR%%/lib/python/zope/viewlet/metadirectives.pyo
+%%ZOPEBASEDIR%%/lib/python/zope/viewlet/tests.py
+%%ZOPEBASEDIR%%/lib/python/zope/viewlet/tests.pyc
+%%ZOPEBASEDIR%%/lib/python/zope/viewlet/tests.pyo
+%%ZOPEBASEDIR%%/lib/python/zope/viewlet/viewlet.py
+%%ZOPEBASEDIR%%/lib/python/zope/viewlet/viewlet.pyc
+%%ZOPEBASEDIR%%/lib/python/zope/viewlet/viewlet.pyo
 %%ZOPEBASEDIR%%/skel/Extensions/README.txt
 %%ZOPEBASEDIR%%/skel/Products/README.txt
 %%ZOPEBASEDIR%%/skel/README.txt
@@ -11995,8 +12115,14 @@
 %%ZOPEBASEDIR%%/zopeskel/etc/package-includes/undo-configure.zcml
 %%ZOPEBASEDIR%%/zopeskel/etc/package-includes/zope.app.authentication-configure.zcml
 %%ZOPEBASEDIR%%/zopeskel/etc/package-includes/zope.app.dtmlpage-configure.zcml
+%%ZOPEBASEDIR%%/zopeskel/etc/package-includes/zope.app.intid-configure.zcml
+%%ZOPEBASEDIR%%/zopeskel/etc/package-includes/zope.app.keyreference-configure.zcml
 %%ZOPEBASEDIR%%/zopeskel/etc/package-includes/zope.app.schema-configure.zcml
+%%ZOPEBASEDIR%%/zopeskel/etc/package-includes/zope.app.session-configure.zcml
 %%ZOPEBASEDIR%%/zopeskel/etc/package-includes/zope.app.zptpage.textindex-configure.zcml
+%%ZOPEBASEDIR%%/zopeskel/etc/package-includes/zope.contentprovider-configure.zcml
+%%ZOPEBASEDIR%%/zopeskel/etc/package-includes/zope.viewlet-configure.zcml
+%%ZOPEBASEDIR%%/zopeskel/etc/package-includes/zope.viewlet-meta.zcml
 %%ZOPEBASEDIR%%/zopeskel/etc/package-includes/zptpage-configure.zcml
 @dirrm %%ZOPEBASEDIR%%/zopeskel/etc/package-includes
 @dirrm %%ZOPEBASEDIR%%/zopeskel/etc
@@ -12011,6 +12137,7 @@
 @dirrm %%ZOPEBASEDIR%%/skel/Products
 @dirrm %%ZOPEBASEDIR%%/skel/Extensions
 @dirrm %%ZOPEBASEDIR%%/skel
+@dirrm %%ZOPEBASEDIR%%/lib/python/zope/viewlet
 @dirrm %%ZOPEBASEDIR%%/lib/python/zope/thread
 @dirrm %%ZOPEBASEDIR%%/lib/python/zope/testing/testrunner-ex/usecompiled/package
 @dirrm %%ZOPEBASEDIR%%/lib/python/zope/testing/testrunner-ex/usecompiled
@@ -12112,6 +12239,7 @@
 @dirrm %%ZOPEBASEDIR%%/lib/python/zope/documenttemplate/tests
 @dirrm %%ZOPEBASEDIR%%/lib/python/zope/documenttemplate
 @dirrm %%ZOPEBASEDIR%%/lib/python/zope/deprecation
+@dirrm %%ZOPEBASEDIR%%/lib/python/zope/contentprovider
 @dirrm %%ZOPEBASEDIR%%/lib/python/zope/configuration/tests/samplepackage
 @dirrm %%ZOPEBASEDIR%%/lib/python/zope/configuration/tests
 @dirrm %%ZOPEBASEDIR%%/lib/python/zope/configuration
@@ -12146,6 +12274,7 @@
 @dirrm %%ZOPEBASEDIR%%/lib/python/zope/app/size
 @dirrm %%ZOPEBASEDIR%%/lib/python/zope/app/site/tests
 @dirrm %%ZOPEBASEDIR%%/lib/python/zope/app/site
+@dirrm %%ZOPEBASEDIR%%/lib/python/zope/app/session
 @dirrm %%ZOPEBASEDIR%%/lib/python/zope/app/security/tests
 @dirrm %%ZOPEBASEDIR%%/lib/python/zope/app/security/browser
 @dirrm %%ZOPEBASEDIR%%/lib/python/zope/app/security
@@ -12219,8 +12348,11 @@
 @dirrm %%ZOPEBASEDIR%%/lib/python/zope/app/locales/de/LC_MESSAGES
 @dirrm %%ZOPEBASEDIR%%/lib/python/zope/app/locales/de
 @dirrm %%ZOPEBASEDIR%%/lib/python/zope/app/locales
+@dirrm %%ZOPEBASEDIR%%/lib/python/zope/app/keyreference
 @dirrm %%ZOPEBASEDIR%%/lib/python/zope/app/introspector/tests
 @dirrm %%ZOPEBASEDIR%%/lib/python/zope/app/introspector
+@dirrm %%ZOPEBASEDIR%%/lib/python/zope/app/intid/browser
+@dirrm %%ZOPEBASEDIR%%/lib/python/zope/app/intid
 @dirrm %%ZOPEBASEDIR%%/lib/python/zope/app/interface/tests
 @dirrm %%ZOPEBASEDIR%%/lib/python/zope/app/interface
 @dirrm %%ZOPEBASEDIR%%/lib/python/zope/app/i18n/xmlrpc
@@ -12415,6 +12547,7 @@
 @dirrm %%ZOPEBASEDIR%%/lib/python/ThreadedAsync
 @dirrm %%ZOPEBASEDIR%%/lib/python/ThreadLock
 @dirrm %%ZOPEBASEDIR%%/lib/python/Testing/var
+@dirrm %%ZOPEBASEDIR%%/lib/python/Testing/tests
 @dirrm %%ZOPEBASEDIR%%/lib/python/Testing/ZopeTestCase/zopedoctest
 @dirrm %%ZOPEBASEDIR%%/lib/python/Testing/ZopeTestCase/doc
 @dirrm %%ZOPEBASEDIR%%/lib/python/Testing/ZopeTestCase
@@ -12649,5 +12782,5 @@
 @dirrm %%ZOPEBASEDIR%%/include/python
 @dirrm %%ZOPEBASEDIR%%/include
 @dirrm %%ZOPEBASEDIR%%/bin
-@dirrm %%ZOPEBASEDIR%%/Products
-@dirrm %%ZOPEBASEDIR%%
+@dirrmtry %%ZOPEBASEDIR%%/Products
+@dirrmtry %%ZOPEBASEDIR%%
