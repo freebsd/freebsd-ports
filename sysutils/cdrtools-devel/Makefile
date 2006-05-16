@@ -7,13 +7,14 @@
 
 PORTNAME=	cdrtools
 PORTVERSION=	2.01.01a09
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	sysutils audio
 MASTER_SITES=	ftp://ftp.berlios.de/pub/cdrecord/alpha/ \
 		ftp://ftp.cs.tu-berlin.de/pub/misc/cdrecord/alpha/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	CD/CD-R[W] and ISO-9660 image creation and extraction tools
+COMMENT=	CD/DVD and ISO-9660 image creation and extraction tools
 
 CONFLICTS=	cdrtools-[0-9]*
 

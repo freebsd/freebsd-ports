@@ -3,8 +3,9 @@ ISO-9660 filesystems, verify their integrity, and write them to
 disc.
 
 This package contains the following programs:
-- cdda2wav (an digital CD audio extraction program)
-- cdrecord (a CD-R[W] recording program)
+- btcflash (a firmware flash utility for BTC DRW1008 DVD+/-RW recorder)
+- cdda2wav (a digital CD audio extraction program)
+- cdrecord (a CD/DVD recording program)
 - devdump (dump a device or file in hex)
 - isodebug (show debug info contained in an ISO-9660 image)
 - isodump (dump a device or file based on ISO-9660)
