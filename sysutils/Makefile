@@ -49,6 +49,7 @@
     SUBDIR += blimitd
     SUBDIR += boxbackup
     SUBDIR += bpm
+    SUBDIR += bsdadminscripts
     SUBDIR += bsdsar
     SUBDIR += bubblemon-dockapp
     SUBDIR += bubblemon2
