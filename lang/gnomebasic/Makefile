@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	sources/gb/0.0
 DISTNAME=	gb-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	Provide Visual Basic compatible functionality for GNOME, especially VBA
+COMMENT=	Provide VB compatible functionality for GNOME, especially VBA
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
