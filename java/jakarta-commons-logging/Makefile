@@ -6,62 +6,37 @@
 #
 
 PORTNAME=	commons-logging
-PORTVERSION=	1.0.4
-PORTREVISION=	1
+PORTVERSION=	1.1
 CATEGORIES=	java devel
 MASTER_SITES=	${MASTER_SITE_APACHE_JAKARTA}
-MASTER_SITE_SUBDIR=	${PORTNAME:S,-,/,}/source
+MASTER_SITE_SUBDIR=	${PORTNAME:S,-,/,}/binaries
 PKGNAMEPREFIX=	jakarta-
-DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	hq@FreeBSD.org
 COMMENT=	Generic logging wrapper library
 
-OPTIONS=	LOG4J "Enable Jakarta Log4j log factory" on \
-		LOGKIT "Enable Avalon LogKit log factory" off \
-		JDK14LOG "Enable JDK 1.4 log factory" off
-
 USE_JAVA=	yes
-USE_ANT=	yes
-MAKE_ENV+=	ANT_INCLUDE_SHARED_JARS=YES
+JAVA_VERSION=	1.2+
+NO_BUILD=	yes
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_JDK14LOG)
-JAVA_VERSION=	1.4+
-.else
-JAVA_VERSION=	1.2+
-.endif
-
-.if defined(WITH_LOG4J)
-BUILD_DEPENDS+=	${JAVALIBDIR}/log4j.jar:${PORTSDIR}/devel/log4j
-.endif
-
-.if defined(WITH_LOGKIT)
-BUILD_DEPENDS+=	${JAVALIBDIR}/logkit.jar:${PORTSDIR}/java/avalon-logkit
-.endif
-
-ALL_TARGET=	compile
 .if !defined(NOPORTDOCS)
-ALL_TARGET+=	javadoc
-OTHERDOCS=	LICENSE.txt NOTICE.txt RELEASE-NOTES.txt
-PORTDOCS=	api ${OTHERDOCS}
+PORTDOCS=	*
 .endif
-JARFILE=	${PORTNAME}.jar ${PORTNAME}-api.jar
-PLIST_FILES=	${JARFILE:S|^|%%JAVAJARDIR%%/|}
+PLIST_FILES=	%%JAVAJARDIR%%/commons-logging.jar
 
 do-install:
-	@${ECHO_MSG} -n ">> Installing JAR as ${JARFILE:S|^|${JAVAJARDIR}/|}..."
-	@${INSTALL_DATA} ${JARFILE:S|^|${WRKSRC}/target/|} ${JAVAJARDIR}
+	@${ECHO_MSG} -n ">> Installing JAR as ${JAVAJARDIR}/${PORTNAME}.jar..."
+	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}-${PORTVERSION}.jar ${JAVAJARDIR}/${PORTNAME}.jar
 	@${ECHO_MSG} " [ DONE ]"
 
 .if !defined(NOPORTDOCS)
 	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}/..."
-	@cd ${WRKSRC}/dist/docs \
-	  && ${FIND} api -type d -exec ${MKDIR} ${DOCSDIR}/{} \; \
-	  && ${FIND} api -type f -exec ${INSTALL_DATA} {} ${DOCSDIR}/{} \;
-	@${INSTALL_DATA} ${OTHERDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
-	@${ECHO_MSG} " ${PORTDOCS} [ DONE ]"
+	@cd ${WRKSRC}/docs \
+	  && ${FIND} . -type d -exec ${MKDIR} ${DOCSDIR}/{} \; \
+	  && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${DOCSDIR}/{} \;
+	@${ECHO_MSG} " [ DONE ]"
 .endif
 
 .include <bsd.port.post.mk>
