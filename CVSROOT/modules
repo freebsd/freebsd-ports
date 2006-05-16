@@ -13986,6 +13986,7 @@ xeji		ports/games/xeji
 xemacs		ports/editors/xemacs
 xemacs-devel	ports/editors/xemacs-devel
 xemacs-devel-mule	ports/editors/xemacs-devel-mule
+xemacs-devel-mule-xft	ports/editors/xemacs-devel-mule-xft
 xemacs-mule-packages	ports/editors/xemacs-mule-packages
 xemacs-packages		ports/editors/xemacs-packages
 xemacs21-mule	ports/editors/xemacs21-mule
