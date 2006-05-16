@@ -12804,6 +12804,7 @@ taucs		ports/math/taucs
 tavrasm		ports/devel/tavrasm
 taxipilot	ports/games/taxipilot
 tcb		ports/misc/tcb
+tcc		ports/lang/tcc
 tcl-Mysql	ports/databases/tcl-Mysql
 tcl-manual	ports/lang/tcl-manual
 tcl-memchan	ports/devel/tcl-memchan
