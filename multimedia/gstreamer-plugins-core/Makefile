@@ -7,7 +7,7 @@
 
 PORTNAME=	gstreamer-plugins-core
 PORTVERSION=	0.10
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia audio
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -40,7 +40,7 @@ USE_GSTREAMER+=	ffmpeg good theora
 
 .if !defined(WITHOUT_DVD)
 # Audio plugins
-USE_GSTREAMER+=	a52dec
+USE_GSTREAMER+=	a52dec dvd dts
 .endif
 
 pre-everything::
