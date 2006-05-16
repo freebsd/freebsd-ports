@@ -19,6 +19,6 @@ USE_GMAKE=	yes
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 
-CONFLICTS=	intltool-*
+CONFLICTS=	intltool-[0-9]*
 
 .include <bsd.port.mk>

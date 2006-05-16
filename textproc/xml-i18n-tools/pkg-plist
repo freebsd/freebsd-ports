@@ -5,9 +5,9 @@ bin/xml-i18n-toolize
 bin/xml-i18n-unicodify
 bin/xml-i18n-update
 share/aclocal/xml-i18n-tools.m4
-share/xml-i18n-tools/xml-i18n-extract.in
-share/xml-i18n-tools/xml-i18n-merge.in
-share/xml-i18n-tools/xml-i18n-po-Makefile.in.in-patch-1
-share/xml-i18n-tools/xml-i18n-po-Makefile.in.in-patch-2
-share/xml-i18n-tools/xml-i18n-update.in
-@dirrm share/xml-i18n-tools
+%%DATADIR%%/xml-i18n-extract.in
+%%DATADIR%%/xml-i18n-merge.in
+%%DATADIR%%/xml-i18n-po-Makefile.in.in-patch-1
+%%DATADIR%%/xml-i18n-po-Makefile.in.in-patch-2
+%%DATADIR%%/xml-i18n-update.in
+@dirrm %%DATADIR%%
