@@ -69,8 +69,8 @@ www/base/includes/base_state_criteria.inc.php
 www/base/includes/base_state_query.inc.php
 www/base/includes/base_template.php
 www/base/includes/base_user.inc.php
-www/base/includes/class.ezpdf.php
-www/base/includes/class.pdf.php
+www/base/includes/fpdf_class.php
+www/base/includes/fpdf_fonts.php
 www/base/index.php
 www/base/languages/czech.lang.php
 www/base/languages/chinese.lang.php
