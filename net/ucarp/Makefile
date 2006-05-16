@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ucarp
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.ucarp.org/pub/ucarp/
 
