@@ -1,0 +1,11 @@
+--- Makefile.in.bak    Wed May 17 08:19:28 2006
++++ Makefile.in        Wed May 17 08:19:59 2006
+@@ -43,7 +43,7 @@
+   -D_XOPEN_SOURCE_EXTENDED=1 -D_GNU_SOURCE=1 -D__EXTENSIONS__=1 -D_HPUX_SOURCE=1
+ CFLAGS = -Wall -fsigned-char $(RELCFLAGS)
+ LIBS = -L./qdbm -lqdbm @LIBS@
+-LDFLAGS = -L. -L./qdbm -L$(HOME)/lib -L/usr/local/lib $(LIBS)
++LDFLAGS = -L. -L./qdbm -L$(HOME)/lib -L/usr/local/lib $(LIBS) $(PTHREAD_LIBS)
+ LDENV = LD_RUN_PATH=/lib:/usr/lib:$(HOME)/lib:/usr/local/lib
+ lpath = $(HOME)/lib:/usr/local/lib:$(LD_LIBRARY_PATH):$(DYLD_LIBRARY_PATH):$(SHLIB_PATH)
+ RUNENV = LD_LIBRARY_PATH="$(lpath)" DYLD_LIBRARY_PATH="$(lpath)" SHLIB_PATH="$(lpath)"

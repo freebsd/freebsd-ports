@@ -7,7 +7,7 @@
 
 PORTNAME=	estraier
 PORTVERSION=	1.2.29
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://estraier.sourceforge.net/
@@ -43,7 +43,7 @@ CONFIGURE_ARGS+=	--enable-chasen
 
 .if ${OSVERSION} > 500000
 .if ${ARCH} == i386 && defined(WITH_MECAB)
-LIB_DEPENDS+=	mecab.0:${PORTSDIR}/japanese/mecab
+LIB_DEPENDS+=	mecab.1:${PORTSDIR}/japanese/mecab
 
 CONFIGURE_ARGS+=	--enable-mecab
 .endif
