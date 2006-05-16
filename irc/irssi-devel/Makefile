@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	irssi
-PORTVERSION=	20050720
-PORTREVISION=	1
+PORTVERSION=	20060326
 CATEGORIES=	irc
-MASTER_SITES=	http://highsecure.ru/
+MASTER_SITES=	http://www.irssi.org/files/snapshots/ \
+		http://mirror.inerd.com/FreeBSD/distfiles/irssi-devel/
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	ports@FreeBSD.org
@@ -23,11 +23,13 @@ USE_GMAKE=	yes
 
 MAN1=		irssi.1
 
-OPTIONS=	PERL "Enable perl support" on \
+OPTIONS=	PERL "Enable Perl support" on \
 		PROXY "Enable proxy support" off \
 		SOCKS "Enable socks proxy support" off \
 		IPV6 "Enable IPv6" on \
 		BOT "Enable bot" off
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-0.8.10
 
 # USE_OPENSSL must be defined before bsd.port.pre.mk so use old schema
 # for WITH_SSL option
@@ -42,7 +44,7 @@ USE_OPENSSL=	yes
 
 # Process options.
 
-.if defined(WITH_PERL)
+.if !defined(WITHOUT_PERL)
 USE_PERL5=	yes
 CONFIGURE_ARGS+=	--with-perl-lib=site
 PLIST_SUB+=	WITH_PERL=""
@@ -62,12 +64,12 @@ PLIST_SUB+=	WITH_PROXY="@comment "
 CONFIGURE_ARGS+=	--with-socks
 .endif
 
-.if defined(WITH_IPV6)
+.if !defined(WITHOUT_IPV6)
 .if ${OSVERSION} >= 400014
 CONFIGURE_ARGS+=	--enable-ipv6
 CATEGORIES+=	ipv6
 .else
-BROKEN=	"This version of FreeBSD does not support IPv6. Please use WITH_IPV6=no"
+BROKEN=	This version of FreeBSD does not support IPv6. Please define WITHOUT_IPV6
 .endif
 .endif
 

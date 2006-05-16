@@ -1,16 +1,16 @@
---- Makefile.in.orig	Sun Nov 23 15:15:19 2003
-+++ Makefile.in	Sun Nov 23 15:24:26 2003
-@@ -119,7 +119,7 @@
+--- Makefile.in.orig	Fri Mar 24 23:02:58 2006
++++ Makefile.in	Mon May 15 02:44:38 2006
+@@ -255,7 +255,7 @@
+ @BUILD_PLUGINS_TRUE@PLUGINS = plugins
  SUBDIRS = src docs scripts
- 
  confdir = $(sysconfdir)
 -conf_DATA = irssi.conf
 +conf_DATA = irssi.conf.sample
- 
  themedir = $(datadir)/irssi/themes
  theme_DATA = default.theme colorless.theme
-@@ -459,8 +459,8 @@
- 
+ pkginclude_HEADERS = config.h irssi-version.h
+@@ -784,8 +784,8 @@
+ # create default-config.h
  config.h: default-config.h default-theme.h
  
 -default-config.h: $(srcdir)/irssi.conf
