@@ -13,8 +13,8 @@ MASTER_SITES=	${MASTER_SITE_GNOME:S/$/:gnome/} \
 		${MASTER_SITE_SOURCEFORGE:S/$/:sf/}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.2/:gnome \
 		libsigc/:sf
-DIST_SUBDIR=	gnome2
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:sf,gnome
+DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Callback Framework for C++
