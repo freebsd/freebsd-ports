@@ -23,7 +23,7 @@ LIB_DEPENDS=	event-1.1a.1:${PORTSDIR}/devel/libevent
 
 CONFLICTS=	zebra-0* quagga-0*
 
-SNAPSHOT=	20060320
+SNAPSHOT=	20060516
 WRKSRC=		${WRKDIR}
 MANCOMPRESSED=	yes
 USE_RC_SUBR=	openospfd.sh
@@ -61,8 +61,10 @@ post-patch:
 		${WRKSRC}/ospfd/ospfd.h \
 		${WRKSRC}/ospfd/ospfd.8 \
 		${WRKSRC}/ospfd/ospfd.conf.5
-	@${REINPLACE_CMD} -e "s|__dead ||"	\
-		${WRKSRC}/ospfd/ospfd.c ${WRKSRC}/ospfctl/ospfctl.c
+	@${REINPLACE_CMD} -e "s|__dead||"	\
+		${WRKSRC}/ospfd/log.h \
+		${WRKSRC}/ospfd/ospfd.c \
+		${WRKSRC}/ospfctl/ospfctl.c
 
 do-build:
 .for i in ${SUBDIRS}
