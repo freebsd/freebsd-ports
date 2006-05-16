@@ -16,6 +16,11 @@ the following to your Apache configuration file:
 In order for the graphing functions to work in BASE, make sure you
 include PEAR in your %%LOCALBASE%%/etc/php.ini configuration file, like:
 
-    include_path = ".:%%PREFIX%%/share/pear"
+    include_path = ".:%%LOCALBASE%%/share/pear"
+
+If you built BASE with PDF support, make sure you include the FPDF
+path in your %%LOCALBASE%%/etc/php.ini configuration file, like:
+
+    include_path = ".:%%LOCALBASE%%/share/pear:%%LOCALBASE%%/share/fpdf"
 
 ========================================================================
