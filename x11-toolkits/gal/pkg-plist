@@ -143,12 +143,12 @@ lib/libgal.la
 lib/libgal.so
 lib/libgal.so.23
 libdata/pkgconfig/gal.pc
-share/doc/gal/gal-api.sgml
-share/doc/gal/gal-decl.txt
-share/doc/gal/gal-sections.txt
-share/doc/gal/gal.hierarchy
-share/doc/gal/gal.signals
-share/doc/gal/gal.types
+%%DOCSDIR%%/gal-api.sgml
+%%DOCSDIR%%/gal-decl.txt
+%%DOCSDIR%%/gal-sections.txt
+%%DOCSDIR%%/gal.hierarchy
+%%DOCSDIR%%/gal.signals
+%%DOCSDIR%%/gal.types
 share/gnome/etable/%%VERSION%%/glade/e-table-config-no-group.glade
 share/gnome/etable/%%VERSION%%/glade/e-table-config.glade
 share/gnome/etable/%%VERSION%%/glade/e-table-field-chooser.glade
@@ -216,8 +216,8 @@ share/locale/zh_TW/LC_MESSAGES/gal-%%VERSION%%.mo
 @dirrm share/gnome/etable/%%VERSION%%/glade
 @dirrm share/gnome/etable/%%VERSION%%
 @dirrm share/gnome/etable
-@dirrm share/doc/gal/gal
-@dirrm share/doc/gal
+@dirrm %%DOCSDIR%%/gal
+@dirrm %%DOCSDIR%%
 @dirrm include/gal-1.0/gal/widgets
 @dirrm include/gal-1.0/gal/util
 @dirrm include/gal-1.0/gal/unicode
