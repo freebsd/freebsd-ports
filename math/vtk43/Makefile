@@ -17,7 +17,8 @@ PORTNAME=	vtk
 PORTVERSION=	4.3.0
 PORTREVISION=	3
 CATEGORIES=	math graphics
-MASTER_SITES=	http://ovt.irfu.se/vtk/files/
+MASTER_SITES=	http://ovt.irfu.se/vtk/files/\
+		http://www.neuro.mcw.edu/~bacon/Ports/distfiles/VTK43/
 DISTFILES?=	VTK-${PORTVERSION}-cvs${CVSDATE}.tar.gz
 
 MAINTAINER=	bacon@smithers.neuro.mcw.edu
