@@ -1,6 +1,6 @@
---- includes/cf/freebsd.h.orig	Wed Mar  3 02:32:39 2004
-+++ includes/cf/freebsd.h	Wed Mar  3 02:31:56 2004
-@@ -42,7 +42,7 @@
+--- includes/cf/freebsd.h.orig	Wed Sep  1 19:06:36 2004
++++ includes/cf/freebsd.h	Mon May 15 09:13:18 2006
+@@ -33,7 +33,7 @@
   */
  
  #include <syslog.h>
@@ -9,7 +9,16 @@
  #include <string.h>
  #include <paths.h>
  #include <errno.h>
-@@ -101,6 +101,10 @@
+@@ -82,7 +82,7 @@
+ 
+ /* Time stuff... */
+ #include <sys/time.h>
+-#define TIME time_t
++#define TIME u_int32_t
+ #define GET_TIME(x)	time ((x))
+ 
+ #define HAVE_SA_LEN
+@@ -97,6 +97,10 @@
  #define SOCKLEN_T int
  #endif
  
@@ -20,7 +29,7 @@
  #if defined (USE_DEFAULT_NETWORK)
  #  define USE_BPF
  #endif
-@@ -111,6 +115,9 @@
+@@ -107,6 +111,9 @@
   #endif /* HAVE_DEV_RANDOM */
  
  const char *cmds[] = {
@@ -30,7 +39,7 @@
  	"/bin/ps -axlw 2>&1",
  	"/usr/sbin/arp -an 2>&1",
  	"/usr/bin/netstat -an 2>&1",
-@@ -121,10 +128,12 @@
+@@ -117,10 +124,12 @@
  	"/usr/sbin/iostat  2>&1",
  	"/usr/bin/vmstat  2>&1",
  	"/usr/bin/w  2>&1",
@@ -43,7 +52,7 @@
  	"/tmp",
  	"/usr/tmp",
  	".",
-@@ -134,13 +143,16 @@
+@@ -130,13 +139,16 @@
  	"/var/mail",
  	"/home",
  	"/usr/home",
