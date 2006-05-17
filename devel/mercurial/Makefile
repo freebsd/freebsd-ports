@@ -16,11 +16,6 @@ COMMENT=	A fast, lightweight source control management system
 USE_PYTHON=	2.3+
 USE_PYDISTUTILS=yes
 
-SHAREDDIR=	${PREFIX}/share/${PORTNAME}
-DOCSDIR=	${SHAREDDIR}/doc
-CONTRIBDIR=	${SHAREDDIR}/contrib
-WWWDIR=		${SHAREDDIR}/www
-
 CONTRIB_FILES=	bash_completion \
 		convert-repo \
 		favicon.ico \
@@ -33,25 +28,23 @@ CONTRIB_FILES=	bash_completion \
 		tcsh_completion \
 		zsh_completion
 
+PORTDOCS=	CONTRIBUTORS COPYING README *.txt doc/*.txt
+
 PKGMESSAGE=	${WRKDIR}/MESSAGE
 
 post-build:
 	@${SED} -e 's,%%PREFIX%%,${PREFIX},g' ${PKGDIR}/pkg-message > ${PKGMESSAGE}
 
 post-install:
-	${MKDIR} ${SHAREDDIR}
-	${INSTALL_DATA} ${WRKSRC}/CONTRIBUTORS ${SHAREDDIR}
-	${INSTALL_DATA} ${WRKSRC}/COPYING ${SHAREDDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${SHAREDDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.txt ${SHAREDDIR}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/*.txt ${DOCSDIR}
-	${MKDIR} ${CONTRIBDIR}
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DATADIR}
+	${MKDIR} ${DATADIR}/contrib
 	for f in ${CONTRIB_FILES}; do \
-		${CP} -p ${WRKSRC}/contrib/$${f} ${CONTRIBDIR}; \
+		${CP} -p ${WRKSRC}/contrib/$${f} ${DATADIR}/contrib; \
 	done
-	${MKDIR} ${WWWDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.cgi ${WWWDIR}
+	${MKDIR} ${DATADIR}/www
+	${INSTALL_MAN} ${WRKSRC}/*.cgi ${DATADIR}/www
 	@${CAT} ${PKGMESSAGE}
+.endif
 
 .include <bsd.port.mk>

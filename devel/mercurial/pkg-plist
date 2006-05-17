@@ -182,33 +182,33 @@ bin/hgmerge
 %%PYTHON_SITELIBDIR%%/mercurial/version.py
 %%PYTHON_SITELIBDIR%%/mercurial/version.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/version.pyo
-%%SHAREDDIR%%/CONTRIBUTORS
-%%SHAREDDIR%%/COPYING
-%%SHAREDDIR%%/README
-%%SHAREDDIR%%/comparison.txt
-%%SHAREDDIR%%/notes.txt
-%%SHAREDDIR%%/contrib/bash_completion
-%%SHAREDDIR%%/contrib/convert-repo
-%%SHAREDDIR%%/contrib/favicon.ico
-%%SHAREDDIR%%/contrib/hg-menu.vim
-%%SHAREDDIR%%/contrib/hg-ssh
-%%SHAREDDIR%%/contrib/hgdiff
-%%SHAREDDIR%%/contrib/hgk
-%%SHAREDDIR%%/contrib/hgk.py
-%%SHAREDDIR%%/contrib/mercurial.el
-%%SHAREDDIR%%/contrib/tcsh_completion
-%%SHAREDDIR%%/contrib/zsh_completion
-%%SHAREDDIR%%/doc/hg.1.txt
-%%SHAREDDIR%%/doc/hgignore.5.txt
-%%SHAREDDIR%%/doc/hgmerge.1.txt
-%%SHAREDDIR%%/doc/hgrc.5.txt
-%%SHAREDDIR%%/www/hgweb.cgi
-%%SHAREDDIR%%/www/hgwebdir.cgi
+%%PORTSDOC%%%%DOCSDIR%%/CONTRIBUTORS
+%%PORTSDOC%%%%DOCSDIR%%/COPYING
+%%PORTSDOC%%%%DOCSDIR%%/README
+%%PORTSDOC%%%%DOCSDIR%%/comparison.txt
+%%PORTSDOC%%%%DOCSDIR%%/notes.txt
+%%PORTSDOC%%%%DOCSDIR%%/hg.1.txt
+%%PORTSDOC%%%%DOCSDIR%%/hgignore.5.txt
+%%PORTSDOC%%%%DOCSDIR%%/hgmerge.1.txt
+%%PORTSDOC%%%%DOCSDIR%%/hgrc.5.txt
+%%PORTSDOC%%%%DATADIR%%/contrib/bash_completion
+%%PORTSDOC%%%%DATADIR%%/contrib/convert-repo
+%%PORTSDOC%%%%DATADIR%%/contrib/favicon.ico
+%%PORTSDOC%%%%DATADIR%%/contrib/hg-menu.vim
+%%PORTSDOC%%%%DATADIR%%/contrib/hg-ssh
+%%PORTSDOC%%%%DATADIR%%/contrib/hgdiff
+%%PORTSDOC%%%%DATADIR%%/contrib/hgk
+%%PORTSDOC%%%%DATADIR%%/contrib/hgk.py
+%%PORTSDOC%%%%DATADIR%%/contrib/mercurial.el
+%%PORTSDOC%%%%DATADIR%%/contrib/tcsh_completion
+%%PORTSDOC%%%%DATADIR%%/contrib/zsh_completion
+%%PORTSDOC%%%%DATADIR%%/www/hgweb.cgi
+%%PORTSDOC%%%%DATADIR%%/www/hgwebdir.cgi
 @dirrm %%PYTHON_SITELIBDIR%%/mercurial/templates/static
 @dirrm %%PYTHON_SITELIBDIR%%/mercurial/templates
 @dirrm %%PYTHON_SITELIBDIR%%/mercurial
 @dirrm %%PYTHON_SITELIBDIR%%/hgext
-@dirrm %%SHAREDIR%%/www
-@dirrm %%SHAREDIR%%/doc
-@dirrm %%SHAREDIR%%/contrib
-@dirrm %%SHAREDIR%%
+%%PORTSDOC%%@dirrm %%DATADIR%%/www
+%%PORTSDOC%%@dirrm %%DATADIR%%
+%%PORTSDOC%%@dirrm %%DOCSDIR%%/contrib
+%%PORTSDOC%%@dirrm %%DOCSDIR%%
