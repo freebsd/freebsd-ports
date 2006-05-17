@@ -26,7 +26,6 @@ LATEST_LINK:=	${LATEST_LINK}-reference
 
 COMMENT=	Programming reference for ${REFERENCE_PORT}
 
-DESCR=		${WRKDIR}/pkg-descr
 MD5_FILE=	${PARENTDIR}/distinfo
 
 REFERENCE_SRC?=	${WRKSRC}/docs/reference
@@ -39,9 +38,7 @@ do-build:
 	@${DO_NADA}
 .endif
 
-pre-install: gnome-reference-pre-install
-
-gnome-reference-pre-install:
+make-descr:
 	@${ECHO_CMD} "This port contains the programming reference for ${REFERENCE_PORT}." > ${DESCR}
 	@www=`${GREP} "^WWW:" ${PARENTDIR}/pkg-descr` || ${TRUE}; \
 	if [ -n "$$www" ]; then \
