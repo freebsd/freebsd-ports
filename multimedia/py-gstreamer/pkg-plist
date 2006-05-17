@@ -36,6 +36,7 @@ share/gst-python/0.10/examples/gst123
 share/gst-python/0.10/examples/gstfile.py
 share/gst-python/0.10/examples/pipeline-tester
 share/gst-python/0.10/examples/play.py
+share/gst-python/0.10/examples/remuxer.py
 share/gst-python/0.10/examples/sinkelement.py
 share/gst-python/0.10/examples/vorbisplay.py
 share/gst-python/0.10/examples/vumeter.py
