@@ -7,7 +7,7 @@
 
 PORTNAME=	gstreamer-plugins-core
 PORTVERSION=	0.10
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	multimedia audio
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -36,7 +36,7 @@ USE_GSTREAMER+=	libpng
 USE_GSTREAMER+=	pango
 
 # Multimedia plugins
-USE_GSTREAMER+=	ffmpeg good theora
+USE_GSTREAMER+=	ffmpeg good theora xvid
 
 .if !defined(WITHOUT_DVD)
 # Audio plugins
