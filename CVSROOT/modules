@@ -11387,6 +11387,7 @@ queue-fix	ports/mail/queue-fix
 queue-repair	ports/mail/queue-repair
 quftp		ports/ftp/quftp
 quick-lounge-applet	ports/misc/quick-lounge-applet
+quickie		ports/www/quickie
 quickml		ports/mail/quickml
 quintuple-agent	ports/security/quintuple-agent
 quirc		ports/irc/quirc
