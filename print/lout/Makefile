@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_TEX_CTAN} \
 		ftp://ftp.it.usyd.edu.au/jeff/lout/
 MASTER_SITE_SUBDIR=	support/lout
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bdluevel@heitec.net
 COMMENT=	LaTeX like document creation system with PostScript/PDF output
 
 USE_GMAKE=	yes
