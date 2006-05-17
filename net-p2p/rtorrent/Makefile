@@ -5,16 +5,19 @@
 # $FreeBSD$
 #
 
-PORTNAME=	rtorrent
-PORTVERSION=	0.4.5
+PORTNAME?=	rtorrent
+PORTVERSION?=	0.4.5
+PORTREVISION?=	0
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://libtorrent.rakshasa.no/downloads/
 
-MAINTAINER=	flz@FreeBSD.org
-COMMENT=	BitTorrent Client written in C++
+MAINTAINER?=	flz@FreeBSD.org
+COMMENT?=	BitTorrent Client written in C++
 
-LIB_DEPENDS=	curl.3:${PORTSDIR}/ftp/curl		\
-		torrent.6:${PORTSDIR}/net-p2p/libtorrent
+LIB_DEPENDS?=	torrent.6:${PORTSDIR}/net-p2p/libtorrent
+LIB_DEPENDS+=	curl.3:${PORTSDIR}/ftp/curl
+
+CONFLICTS=	rtorrent-devel-[0-9]*
 
 MAN1=		rtorrent.1
 

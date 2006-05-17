@@ -97,6 +97,7 @@
     SUBDIR += qtorrent
     SUBDIR += rblibtorrent
     SUBDIR += rtorrent
+    SUBDIR += rtorrent-devel
     SUBDIR += squall
     SUBDIR += torrentflux
     SUBDIR += torrentsniff
