@@ -61,6 +61,7 @@
     SUBDIR += stars
     SUBDIR += stellarium
     SUBDIR += sunclock
+    SUBDIR += weatherspect
     SUBDIR += wmglobe
     SUBDIR += wmjupiter
     SUBDIR += wmmoonclock
