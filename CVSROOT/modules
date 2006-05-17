@@ -632,6 +632,7 @@ baghira		ports/x11-themes/baghira
 bakery		ports/x11-toolkits/bakery
 balance		ports/net/balance
 balazar		ports/games/balazar
+balazarbrothers	ports/games/balazarbrothers
 balsa		ports/mail/balsa
 bamg		ports/math/bamg
 bandwidthd	ports/net-mgmt/bandwidthd
