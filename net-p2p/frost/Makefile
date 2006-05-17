@@ -69,7 +69,7 @@ PLIST_DIRS+=	\
 
 DESKTOP_ENTRIES=	"Frost" "A Freenet Client" \
 			"${JAVASHAREDIR}/${PORTNAME}/jtc.ico" \
-			"frost" "Application;P2P;Internet;" \
+			"frost" "Application;P2P;Network;" \
 			false
 
 pre-everything::
