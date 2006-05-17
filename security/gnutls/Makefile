@@ -21,14 +21,6 @@ COMMENT=	GNU Transport Layer Security library
 LIB_DEPENDS=	gcrypt.13:${PORTSDIR}/security/libgcrypt \
 		gpg-error.2:${PORTSDIR}/security/libgpg-error
 
-.if defined(WITH_OPENCDK) || exists(${LOCALBASE}/lib/libopencdk.so.8)
-LIB_DEPENDS+=	opencdk.8:${PORTSDIR}/security/opencdk
-.endif
-
-.if defined(WITH_LIBTASN1) || exists(${LOCALBASE}/lib/libtasn1.so.3)
-LIB_DEPENDS+=	tasn1.3:${PORTSDIR}/security/libtasn1
-.endif
-
 CONFLICTS=	gnutls-devel-[0-9]*
 
 USE_BZIP2=	yes
@@ -46,6 +38,14 @@ CONFIGURE_ARGS+=	--with-included-lzo --with-included-libtasn1
 MANCOMPRESSED=	no
 
 .include <bsd.port.pre.mk>
+.if defined(WITH_OPENCDK) || exists(${LOCALBASE}/lib/libopencdk.so.8)
+LIB_DEPENDS+=   opencdk.8:${PORTSDIR}/security/opencdk
+.endif
+
+.if defined(WITH_LIBTASN1) || exists(${LOCALBASE}/lib/libtasn1.so.3)
+LIB_DEPENDS+=   tasn1.2:${PORTSDIR}/security/libtasn1
+.endif
+
 .if ${OSVERSION} < 600000
 BUILD_DEPENDS+=	${LOCALBASE}/bin/makeinfo:${PORTSDIR}/print/texinfo
 .endif
