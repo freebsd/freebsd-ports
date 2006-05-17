@@ -6,33 +6,29 @@
 #
 
 PORTNAME=	itk
-PORTVERSION=	${MAJOR}.${MINOR}.1
-PORTREVISION=	1
+PORTVERSION=	3.3
 CATEGORIES=	x11-toolkits tk84
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=incrtcl
-DISTNAME=	itcl${PORTVERSION}
-EXTRACT_SUFX=	_src.tgz
+DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	[incr Tk] (A.K.A. "itk")
 
 LIB_DEPENDS=	tk84:${PORTSDIR}/x11-toolkits/tk84 \
-		itcl${MAJOR}${MINOR}.1:${PORTSDIR}/lang/itcl
+		itcl.${MAJOR}:${PORTSDIR}/lang/itcl
 
-WRKSRC=		${WRKDIR}/itcl${PORTVERSION}/itk
 INSTALLS_SHLIB=	yes
 MAKE_ENV+=	${PLIST_SUB} \
 		SHLIB_MAJOR=${SHLIB_MAJOR} SHLIB_MINOR=${SHLIB_MINOR}
 
-EXTRACT_AFTER_ARGS=| ${TAR} -xf - itcl${PORTVERSION}/itk
 MAKEFILE=	${FILESDIR}/Makefile.lib
-SHLIB_MAJOR=	1
-SHLIB_MINOR=	1
-MAJOR=		3
-MINOR=		2
+SHLIB_MAJOR=	${MAJOR}
+SHLIB_MINOR=	${MINOR}
+MAJOR=		${PORTVERSION:R}
+MINOR=		${PORTVERSION:E}
 PLIST_SUB+=	MAJOR=${MAJOR} MINOR=${MINOR}
-ITK_LIB=	libitk${MAJOR}${MINOR}.so
+ITK_LIB=	libitk.so.${MAJOR}
 .if defined(MAKE_JOBS)
 MAKE_ARGS+=	-j${MAKE_JOBS}
 .endif
@@ -41,13 +37,14 @@ MANN=		Archetype.n Toplevel.n Widget.n itk.n itkvars.n usual.n
 
 ITK_LIB_FILE=	${ITK_LIB}.${SHLIB_MAJOR}
 
-post-patch:
-	${REINPLACE_CMD} \
-		-e 's,package require Itk,load \
-			[glob ${WRKSRC}/${ITK_LIB_FILE}*],;' \
-		-e 's,return$$,exit,' ${WRKSRC}/tests/*
-	${REINPLACE_CMD} \
-		-e 's,\@itk_LIB_FILE\@,${ITK_LIB_FILE},' \
-		${WRKSRC}/pkgIndex.tcl.in
+post-build:
+	#
+	# Consider running ``make test'' now, if the X11 environment
+	# is available in this session
+	#
+
+test:
+	cd ${WRKSRC} && ${SETENV} ITK_LIBRARY=${WRKSRC}/library \
+		${PREFIX}/bin/wish8.4 tests/all.tcl -load "load ./${ITK_LIB}; package require Tk"
 
 .include <bsd.port.mk>

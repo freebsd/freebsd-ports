@@ -11,19 +11,18 @@ CATEGORIES=	x11-toolkits tk84
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=incrtcl
 DISTNAME=	iwidgets${PORTVERSION}
-DISTFILES=	itcl3.2.1_src.tgz ${PORTNAME}${PORTVERSION}.tar.gz
 
 MAINTAINER=	pauls@utdallas.edu
 COMMENT=	Iwidgets - [incr Widgets]
 
-LIB_DEPENDS=	itk32.1:${PORTSDIR}/x11-toolkits/itk
+LIB_DEPENDS=	itk:${PORTSDIR}/x11-toolkits/itk
 
 NO_BUILD=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--with-tcl=${LOCALBASE}/lib/tcl8.4 \
 		--with-tk=${LOCALBASE}/lib/tk8.4 \
-		--with-itcl=${WRKDIR}/itcl3.2.1
+		--with-itcl=${LOCALBASE}/lib/itcl3.3
 SUB_LIST=	IWIDGETS=${DISTNAME}
 SUB_FILES=	pkg-message
 PLIST_SUB=	IWIDGETS=${DISTNAME}
@@ -43,6 +42,14 @@ MANN=	iwidgets_buttonbox.n iwidgets_calendar.n iwidgets_canvasprintbox.n iwidget
 	iwidgets_selectiondialog.n iwidgets_shell.n iwidgets_spindate.n iwidgets_spinint.n iwidgets_spinner.n \
 	iwidgets_spintime.n iwidgets_tabnotebook.n iwidgets_tabset.n iwidgets_timeentry.n iwidgets_timefield.n \
 	iwidgets_toolbar.n iwidgets_watch.n
+
+post-patch:
+	${REINPLACE_CMD} -e 's,^MKINSTALLDIRS =.*,MKINSTALLDIRS=${MKDIR},' \
+		-e 's,^INSTALL =.*,INSTALL=${INSTALL} -c,' \
+		-e 's,^INSTALL_PROGRAM =.*,INSTALL_PROGRAM=${INSTALL_PROGRAM},' \
+		-e 's,^INSTALL_DATA =.*,INSTALL_DATA=${INSTALL_DATA},' \
+		-e 's,^INSTALL_SCRIPT =.*,INSTALL_SCRIPT=${INSTALL_SCRIPT},' \
+		-e 's,@ITCL_VERSION@,3.3,g' ${WRKSRC}/Makefile.in
 
 post-install:
 

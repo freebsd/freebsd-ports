@@ -1,5 +1,5 @@
 NOPROFILE=	yes
-LIB=		itcl${MAJOR}${MINOR}
+LIB=		itcl
 ITCL_LIBRARY=	${PREFIX}/lib/itcl${MAJOR}.${MINOR}
 CFLAGS+=	-I. -I./../generic \
 		-I${PREFIX}/include/tcl8.4/generic \
@@ -17,13 +17,15 @@ LDADD+=		-L${PREFIX}/lib -ltcl84
 
 SRCS=	itcl_bicmds.c itcl_class.c itcl_cmds.c itcl_ensemble.c \
 	itcl_linkage.c itcl_methods.c itcl_migrate.c itcl_objects.c \
-	itcl_obsolete.c itcl_parse.c itcl_util.c \
-	itclStubInit.c itclStubLib.c
+	itcl_parse.c itcl_util.c itclStubInit.c itclStubLib.c
 
-pkgIndex.tcl: ${.CURDIR}/pkgIndex.tcl.in
-	sed -e "s#@RELPATH@#..#" -e "s#@VERSION@#${MAJOR}.${MINOR}#" \
-		-e "s#@itcl_LIB_FILE@#${SHLIB_NAME}#" \
-		< ${.CURDIR}/pkgIndex.tcl.in > pkgIndex.tcl
+pkgIndex.tcl: pkgIndex.tcl.in
+	sed -e 's#"@PKG_LIB_FILE@"#.. ${SHLIB_NAME}#' -e "s#@PACKAGE_VERSION@#${MAJOR}.${MINOR}#" \
+		< $> > $@
+
+itclConfig.sh: itclConfig.sh.in
+	sed -e 's#@itcl_LIB_FILE@#${SHLIB_NAME}#g' \
+		-e 's#@itcl_LIB_SPEC@#-L${LIBDIR} -litcl#' < $> > $@
 
 SCRIPTDIR=	lib/itcl${MAJOR}.${MINOR}
 SCRIPTPATH=	${PREFIX}/${SCRIPTDIR}
@@ -33,8 +35,8 @@ INCDIR=		${PREFIX}/include/itcl${MAJOR}.${MINOR}
 ${SCRIPTPATH} ${INCDIR}:
 	mkdir -p ${.TARGET}
 
-beforeinstall: pkgIndex.tcl ${SCRIPTPATH} ${INCDIR}
-	${BSD_INSTALL_DATA} pkgIndex.tcl ${.CURDIR}/library/itcl.tcl \
+beforeinstall: pkgIndex.tcl itclConfig.sh ${SCRIPTPATH} ${INCDIR}
+	${BSD_INSTALL_DATA} pkgIndex.tcl itclConfig.sh ${.CURDIR}/library/itcl.tcl \
 		${SCRIPTPATH}
 	${BSD_INSTALL_DATA} ${.CURDIR}/generic/*.h ${INCDIR}
 

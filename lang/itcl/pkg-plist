@@ -2,10 +2,11 @@ include/itcl%%MAJOR%%.%%MINOR%%/itcl.h
 include/itcl%%MAJOR%%.%%MINOR%%/itclInt.h
 include/itcl%%MAJOR%%.%%MINOR%%/itclDecls.h
 include/itcl%%MAJOR%%.%%MINOR%%/itclIntDecls.h
-lib/libitcl%%MAJOR%%%%MINOR%%.so.1
-lib/libitcl%%MAJOR%%%%MINOR%%.so
-lib/libitcl%%MAJOR%%%%MINOR%%.a
+lib/libitcl.so.%%MAJOR%%.%%MINOR%%
+lib/libitcl.so
+lib/libitcl.a
 lib/itcl%%MAJOR%%.%%MINOR%%/itcl.tcl
+lib/itcl%%MAJOR%%.%%MINOR%%/itclConfig.sh
 lib/itcl%%MAJOR%%.%%MINOR%%/pkgIndex.tcl
 @dirrm include/itcl%%MAJOR%%.%%MINOR%%
 @dirrm lib/itcl%%MAJOR%%.%%MINOR%%

@@ -1,7 +1,23 @@
---- configure.orig	Wed Apr 14 12:39:47 2004
-+++ configure	Sat Apr 17 21:05:56 2004
-@@ -1592,8 +1592,9 @@
- # Determine include directories
+--- configure	Tue Apr 13 23:39:47 2004
++++ configure	Tue May 16 16:57:39 2006
+@@ -1568,12 +1568,12 @@
+ echo "${ECHO_T}./blt" >&6
+ else
+-   BLT_LIB_SPEC="-L$BLT_LIB_PATH -lBLT"
+-   BLT_LIB_STATIC=$BLT_LIB_PATH/libBLT.a
++   BLT_LIB_SPEC="-L$BLT_LIB_PATH -lBLT24"
++   BLT_LIB_STATIC=$BLT_LIB_PATH/libBLT24.a
+    NEED_BLT_LIB=
+    if test   ! -f $BLT_LIB_PATH/libBLT.a \
+           -a ! -f $BLT_LIB_PATH/libBLT.so
+    then
+-      if test   ! -f $BLT_LIB_PATH/lib/libBLT.a \
+-	     -a ! -f $BLT_LIB_PATH/lib/libBLT.so
++      if test   ! -f $BLT_LIB_PATH/lib/libBLT24.a \
++	     -a ! -f $BLT_LIB_PATH/lib/libBLT24.so
+       then
+ 	 echo
+@@ -1593,6 +1593,7 @@
  #
  
 -TCL_INCLUDE_PATH=$TCL_EXEC_PREFIX/include
@@ -11,4 +27,10 @@
 +
  
  #
- # Perform substitutions
+@@ -4509,5 +4510,5 @@
+ echo "${ECHO_T}$blt_cv_struct_wait_works" >&6
+ 
+-                                                  ac_config_files="$ac_config_files Makefile libdesk/Makefile blt/Makefile netscape-remote/Makefile tkdeskclient/Makefile"
++                                                  ac_config_files="$ac_config_files Makefile libdesk/Makefile netscape-remote/Makefile tkdeskclient/Makefile"
+ 
+ 
