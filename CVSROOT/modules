@@ -3853,6 +3853,7 @@ heartbeat	ports/sysutils/heartbeat
 heimdal		ports/security/heimdal
 heirloom	ports/sysutils/heirloom
 heirloom-doctools	ports/textproc/heirloom-doctools
+helixplayer	ports/multimedia/helixplayer
 hellanzb	ports/news/hellanzb
 hello		ports/misc/hello
 help2man	ports/misc/help2man
