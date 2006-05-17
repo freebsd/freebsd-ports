@@ -1,0 +1,7 @@
+Event::RPC supports you in developing Event based networking client/server
+applications with transparent object/method access from the client to the
+server. Network communication is optionally encrypted using IO::Socket::SSL.
+Several event loop managers are supported due to an extensible API. Currently
+Event and Glib are implemented.
+
+WWW: http://search.cpan.org/dist/Event::RPC/
