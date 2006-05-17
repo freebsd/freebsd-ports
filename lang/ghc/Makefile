@@ -27,9 +27,12 @@ OPTIONS=	PROFILE "Compile for profiling as well" on
 
 DISTFILES=	${SRC_DIST}
 
+.if ${OSVERSION} < 600000
+IGNORE=		unsupported at the moment
+.endif
+
 .if ${OSVERSION} < 500000
 DISTFILES+=	${BOOT_DIST4}
-IGNORE=		unsupported at the moment
 .else
 DISTFILES+=	${BOOT_DIST}
 .if ${OSVERSION} >= 600000
