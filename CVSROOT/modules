@@ -3635,6 +3635,7 @@ gstreamer-plugins-vorbis80	ports/audio/gstreamer-plugins-vorbis80
 gstreamer-plugins-wavpack	ports/audio/gstreamer-plugins-wavpack
 gstreamer-plugins-wavpack80	ports/audio/gstreamer-plugins-wavpack80
 gstreamer-plugins-x26480	ports/multimedia/gstreamer-plugins-x26480
+gstreamer-plugins-xvid		ports/multimedia/gstreamer-plugins-xvid
 gstreamer-plugins-xvid80	ports/multimedia/gstreamer-plugins-xvid80
 gstreamer-plugins80		ports/multimedia/gstreamer-plugins80
 gstreamer80		ports/multimedia/gstreamer80
