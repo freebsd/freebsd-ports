@@ -20,6 +20,8 @@ BUILD_DEPENDS=	\
 	p5-Digest-MD5>0:${PORTSDIR}/security/p5-Digest-MD5 \
 	p5-Digest-HMAC>0:${PORTSDIR}/security/p5-Digest-HMAC
 
+OPTIONS=	KERBEROS "Enable Kerberos support" On
+
 PERL_CONFIGURE=	yes
 CONFIGURE_ENV+=	AUTOMATED_TESTING=yes
 
