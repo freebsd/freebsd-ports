@@ -8327,6 +8327,7 @@ p5-Env-PS1	ports/devel/p5-Env-PS1
 p5-Errno	ports/devel/p5-Errno
 p5-Error	ports/lang/p5-Error
 p5-Event	ports/devel/p5-Event
+p5-Event-RPC	ports/devel/p5-Event-RPC
 p5-Excel-Template	ports/textproc/p5-Excel-Template
 p5-Exception-Class	ports/devel/p5-Exception-Class
 p5-Exception-Class-DBI	ports/databases/p5-Exception-Class-DBI
