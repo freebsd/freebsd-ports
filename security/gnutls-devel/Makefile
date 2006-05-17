@@ -23,14 +23,6 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/makeinfo:${PORTSDIR}/print/texinfo
 LIB_DEPENDS=	gcrypt.13:${PORTSDIR}/security/libgcrypt \
 		gpg-error.2:${PORTSDIR}/security/libgpg-error
 
-.if defined(WITH_OPENCDK) || exists(${LOCALBASE}/lib/libopencdk.so.8)
-LIB_DEPENDS+=	opencdk.8:${PORTSDIR}/security/opencdk
-.endif
-
-.if defined(WITH_LIBTASN1) || exists(${LOCALBASE}/lib/libtasn1.so.3)
-LIB_DEPENDS+=	tasn1.3:${PORTSDIR}/security/libtasn1
-.endif
-
 CONFLICTS=	gnutls-[0-9]*
 
 USE_BZIP2=	yes
@@ -46,6 +38,15 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-included-lzo --disable-static --disable-nls
 MANCOMPRESSED=	no
+
+.include <bsd.port.pre.mk>
+.if defined(WITH_OPENCDK) || exists(${LOCALBASE}/lib/libopencdk.so.8)
+LIB_DEPENDS+=   opencdk.8:${PORTSDIR}/security/opencdk
+.endif
+
+.if defined(WITH_LIBTASN1) || exists(${LOCALBASE}/lib/libtasn1.so.3)
+LIB_DEPENDS+=   tasn1.2:${PORTSDIR}/security/libtasn1
+.endif
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	AUTHORS NEWS README THANKS
@@ -67,4 +68,4 @@ post-install:
 .endif
 
 .include "Makefile.man"
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
