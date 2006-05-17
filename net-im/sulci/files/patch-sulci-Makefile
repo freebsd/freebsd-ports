@@ -1,0 +1,11 @@
+--- sulci/Makefile.orig	Fri Feb  3 16:05:51 2006
++++ sulci/Makefile	Sun Feb  5 00:59:08 2006
+@@ -7,7 +7,7 @@
+ SOURCES = version.ml config.ml logger.ml common.ml types.ml lang.ml muc.ml \
+ 	  find_url.ml muc_log.ml hooks.ml iq.ml http_suck.ml
+ 
+-SUBDIRS = lang
++SUBDIRS = lang utils/wtf
+ 
+ #ifdef MUC_LOG
+ #  SOURCES += muc_log.ml
