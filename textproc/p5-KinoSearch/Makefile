@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	KinoSearch
-PORTVERSION=	0.09
+PORTVERSION=	0.10
 CATEGORIES=	textproc perl5
 #MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITES=	http://www.rectangular.com/downloads/
@@ -15,9 +15,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	vivek@khera.org
 COMMENT=	A Perl search engine library
 
-BUILD_DEPENDS=	${SITE_PERL}/Lingua/StopWords.pm:${PORTSDIR}/textproc/p5-Lingua-StopWords \
-		${SITE_PERL}/${PERL_ARCH}/Lingua/Stem/Snowball.pm:${PORTSDIR}/textproc/p5-Lingua-Stem-Snowball \
-		${SITE_PERL}/${PERL_ARCH}/Clone.pm:${PORTSDIR}/devel/p5-Clone
+BUILD_DEPENDS=	p5-Lingua-StopWords>=0.02:${PORTSDIR}/textproc/p5-Lingua-StopWords \
+		p5-Lingua-Stem-Snowball>=0.94:${PORTSDIR}/textproc/p5-Lingua-Stem-Snowball \
+		p5-Clone>=0.18:${PORTSDIR}/devel/p5-Clone \
+		p5-Compress-Zlib>=0.0:${PORTSDIR}/archivers/p5-Compress-Zlib
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_MODBUILD=	yes
