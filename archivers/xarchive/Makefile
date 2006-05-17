@@ -22,8 +22,6 @@ MAN1=		xarchive.1
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20
 USE_X_PREFIX=	yes
-MAKE_ARGS=	-E doc_DATA
-MAKE_ENV=	doc_DATA=""
 
 OPTIONS=	7ZIP "Support for 7zip archives" off \
 		ARJ "Support for ARJ archives" off \
