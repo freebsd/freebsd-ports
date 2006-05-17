@@ -46,8 +46,8 @@ WITH_GSTREAMER=	yes
 .endif
 
 .if defined(WITH_GSTREAMER)
-LIB_DEPENDS+=	gstreamer:${PORTSDIR}/multimedia/gstreamer \
-		gstplay:${PORTSDIR}/multimedia/gstreamer-plugins
+LIB_DEPENDS+=	gstreamer:${PORTSDIR}/multimedia/gstreamer80 \
+		gstplay:${PORTSDIR}/multimedia/gstreamer-plugins80
 .endif
 
 pre-everything::
