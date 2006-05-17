@@ -1,6 +1,6 @@
---- config/Makefile.in.orig	Fri May 12 15:37:48 2006
-+++ config/Makefile.in	Fri May 12 15:38:05 2006
-@@ -682,7 +682,7 @@ install-data-hook: gdm.conf gdm.conf-cus
+--- config/Makefile.in.orig	Wed May 17 13:47:25 2006
++++ config/Makefile.in	Wed May 17 13:47:50 2006
+@@ -682,13 +682,13 @@ install-data-hook: gdm.conf gdm.conf-cus
  	if test '!' -d $(DESTDIR)$(logdir); then \
  		$(mkinstalldirs) $(DESTDIR)$(logdir); \
  		chmod 755 $(DESTDIR)$(logdir); \
@@ -9,3 +9,10 @@
  	fi
  
  	if test '!' -d $(DESTDIR)$(authdir); then \
+ 		$(mkinstalldirs) $(DESTDIR)$(authdir); \
+ 		chmod 1770 $(DESTDIR)$(authdir); \
+-		chown root:gdm $(DESTDIR)$(authdir); \
++		chown root:wheel $(DESTDIR)$(authdir); \
+ 	fi
+ 
+ 	system=`uname`; \
