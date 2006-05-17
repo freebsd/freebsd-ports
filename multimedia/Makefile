@@ -71,6 +71,7 @@
     SUBDIR += gstreamer-plugins-theora80
     SUBDIR += gstreamer-plugins-ugly
     SUBDIR += gstreamer-plugins-x26480
+    SUBDIR += gstreamer-plugins-xvid
     SUBDIR += gstreamer-plugins-xvid80
     SUBDIR += gstreamer-plugins80
     SUBDIR += gstreamer80
