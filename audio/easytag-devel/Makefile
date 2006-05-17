@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	easytag
-PORTVERSION=	1.99.11
+PORTVERSION=	1.99.12
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -25,8 +25,9 @@ CONFLICTS=	easytag-[0-9]*
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomehack gnomeprefix gtk20
-GNU_CONFIGURE=  yes
+USE_GETTEXT=	yes
+USE_GNOME=	gnomehack gnomeprefix gtk20 desktopfileutils
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -DHAVE_GTK" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
