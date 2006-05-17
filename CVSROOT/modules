@@ -5915,7 +5915,7 @@ libtnl		ports/net/libtnl
 libtomcrypt	ports/security/libtomcrypt
 libtommath	ports/math/libtommath
 libtool15	ports/devel/libtool15
-libtorrent	ports/net-p2p/libtorrent
+libtorrent-devel	ports/net-p2p/libtorrent-devel
 libtranslate	ports/textproc/libtranslate
 libtre		ports/textproc/libtre
 libtremor	ports/audio/libtremor
@@ -11650,7 +11650,7 @@ rtfm		ports/misc/rtfm
 rtfreader	ports/textproc/rtfreader
 rtfx		ports/textproc/rtfx
 rtg		ports/net/rtg
-rtorrent	ports/net-p2p/rtorrent
+rtorrent-devel	ports/net-p2p/rtorrent-devel
 rtplib		ports/devel/rtplib
 rtpmon		ports/mbone/rtpmon
 rtptools	ports/mbone/rtptools
