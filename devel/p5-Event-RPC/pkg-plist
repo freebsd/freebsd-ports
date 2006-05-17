@@ -1,0 +1,17 @@
+%%SITE_PERL%%/Event/RPC.pm
+%%SITE_PERL%%/Event/RPC/AuthPasswdHash.pm
+%%SITE_PERL%%/Event/RPC/Client.pm
+%%SITE_PERL%%/Event/RPC/Connection.pm
+%%SITE_PERL%%/Event/RPC/LogConnection.pm
+%%SITE_PERL%%/Event/RPC/Logger.pm
+%%SITE_PERL%%/Event/RPC/Loop.pm
+%%SITE_PERL%%/Event/RPC/Loop/Event.pm
+%%SITE_PERL%%/Event/RPC/Loop/Glib.pm
+%%SITE_PERL%%/Event/RPC/Message.pm
+%%SITE_PERL%%/Event/RPC/Server.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Event/RPC/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Event/RPC
+@dirrm %%SITE_PERL%%/Event/RPC/Loop
+@dirrm %%SITE_PERL%%/Event/RPC
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Event
+@dirrmtry %%SITE_PERL%%/Event
