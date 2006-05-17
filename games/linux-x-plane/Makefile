@@ -14,7 +14,7 @@ MAINTAINER=	jylefort@FreeBSD.org
 COMMENT=	A commercial flight simulator
 
 RUN_DEPENDS=	${LINUXBASE}/lib/libgcc/libgcc_s.so.1:${PORTSDIR}/lang/linux-libgcc \
-		${LINUXBASE}/usr/lib/libopenal.so.0:${PORTSDIR}/audio/linux-openal \
+		${LINUXBASE}/usr/lib/libopenal.so.1:${PORTSDIR}/audio/linux-openal \
 		${LINUXBASE}/usr/X11R6/lib/libGLU.so.1.3:${PORTSDIR}/graphics/linux_dri
 
 IGNOREFILES=	${DISTFILES}	# user-created distribution
