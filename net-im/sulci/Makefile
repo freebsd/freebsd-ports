@@ -37,6 +37,12 @@ SUB_FILES=	pkg-message
 
 OCAML_SITELIBDIR=	${LOCALBASE}/lib/ocaml/site-lib
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+BROKEN=		does not build on ${ARCH}, included getopt.cmxa and ${LOCALBASE}/lib/ocaml/stdlib.cmxa conflict
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME}/${PORTNAME} ${PREFIX}/sbin
 
@@ -70,4 +76,4 @@ do-install:
 post-install:
 	${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
