@@ -6,7 +6,7 @@
 #    $MCom: ports/multimedia/gstreamer-plugins-gnonlin/Makefile,v 1.2 2006/04/25 20:54:56 ahze Exp $
 
 PORTNAME=	gstreamer-plugins-gnonlin
-PORTVERSION=	0.10.3
+PORTVERSION=	0.10.4
 CATEGORIES=	multimedia
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gnonlin/
 DISTNAME=	gnonlin-${PORTVERSION}
