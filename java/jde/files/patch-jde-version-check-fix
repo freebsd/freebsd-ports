@@ -1,0 +1,48 @@
+diff -ru ../old/jde-2.3.5/lisp/jde-util.el ./lisp/jde-util.el
+--- ../old/jde-2.3.5/lisp/jde-util.el	Fri Dec 17 04:29:37 2004
++++ ./lisp/jde-util.el	Tue Apr 11 03:27:47 2006
+@@ -90,6 +90,13 @@
+ 	      (aset newstr i tochar)))
+ 	newstr)))
+ 
++(if (not (fboundp 'replace-in-string))
++    (defun replace-in-string  (string regexp newtext &optional literal)
++      "Replace REGEXP with NEWTEXT in STRIng."
++      (if (string-match regexp string)
++	  (replace-match newtext nil nil string)
++	string)))
++
+ (defun jde-get-line-at-point (&optional pos)
+   "Get the number of the line at point."
+   (let* ((point (or pos (point)))
+diff -ru ../old/jde-2.3.5/lisp/jde.el ./lisp/jde.el
+--- ../old/jde-2.3.5/lisp/jde.el	Fri Dec 17 04:29:35 2004
++++ ./lisp/jde.el	Tue Apr 11 03:27:04 2006
+@@ -998,17 +998,16 @@
+ 
+ (defun jde-earlier-versionp (ver1 ver2) 
+   "Return non-nil if VER1 is earlier than VER2"
+-  (let ((ver1-betap (string-match "beta" ver1))
+-        (ver2-betap (string-match "beta" ver2)))
+-    (if (or (and ver1-betap ver2-betap)
+-            (and (not ver1-betap) (not ver2-betap)))
+-        (string< ver1 ver2)
+-      (if ver1-betap
+-          (progn
+-            (or (string= ver2 (substring ver1  0 ver1-betap))
+-                (string< (substring ver1 0 ver1-betap) ver2)))
+-          (progn
+-            (string< ver1 (substring ver2 0 ver2-betap)))))))
++  (let ((ver1n (replace-in-string ver1 "beta" "zb"))
++	(ver2n (replace-in-string ver2 "beta" "zb")))
++    (setq ver1n (replace-in-string ver1n "pre" "zp"))
++    (setq ver2n (replace-in-string ver2n "pre" "zp"))
++    (if (string-match "z" ver1n)
++	(unless (string-match "z" ver2n)
++	  (setq ver2n (concat ver2n "zz")))
++      (if (string-match "z" ver2n)
++	  (setq ver1n (concat ver1n "zz"))))
++    (string< ver1n ver2n)))
+       
+ (defcustom jde-log-max 500
+   "*Maximum number of lines to keep in the JDE log buffer.
