@@ -7,17 +7,17 @@
 #
 
 PORTNAME=	pipe
-PORTVERSION=	0.b.1.5
+PORTVERSION=	2.0
 CATEGORIES=	misc java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	petri-net
-DISTNAME=	${PORTNAME}-beta-1.5
+MASTER_SITE_SUBDIR=	pipe2
+DISTNAME=	PIPE2_V2_0
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Platform Independent Petri-Net Editor
+COMMENT=	Platform Independent Petri-Net Editor 2
 
 USE_ZIP=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/Pipe
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 USE_JAVA=	yes
@@ -27,7 +27,7 @@ PLIST_FILES=	bin/pipe
 SUB_FILES=	pipe.sh
 
 .if !defined(NOPORTDOCS)
-PORTDOCS=	javadoc license manual
+PORTDOCS=*
 .endif
 
 do-install:
@@ -37,16 +37,15 @@ do-install:
 		${FIND} . -type d -exec ${MKDIR} ${DATADIR}/{} \;
 	cd ${WRKSRC}/bin && \
 		${FIND} . -type f -exec ${INSTALL_DATA} {} ${DATADIR}/{} \;
-	${LN} -s ${DATADIR}/petri-nets ${DATADIR}/Example\ nets
 	@${FIND} ${DATADIR} ! -type d | \
 		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
 	@${FIND} ${DATADIR} -type d | ${SORT} -r | \
 		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 .if !defined(NOPORTDOCS)
-	cd ${WRKSRC}/resources && \
-		${FIND} ${PORTDOCS} -type d -exec ${MKDIR} ${DOCSDIR}/{} \;
-	cd ${WRKSRC}/resources && \
-		${FIND} ${PORTDOCS} -type f -exec ${INSTALL_DATA} {} ${DOCSDIR}/{} \;
+	cd ${WRKSRC}/doc && \
+		${FIND} . -type d -exec ${MKDIR} ${DOCSDIR}/javadoc/{} \;
+	cd ${WRKSRC}/doc && \
+		${FIND} . -type f -exec ${INSTALL_DATA} {} ${DOCSDIR}/javadoc/{} \;
 .endif
 
 .include <bsd.port.mk>
