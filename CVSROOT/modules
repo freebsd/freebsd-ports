@@ -10877,6 +10877,7 @@ py-cairo	ports/graphics/py-cairo
 py-cdb	ports/databases/py-cdb
 py-cddb		ports/audio/py-cddb
 py-celementtree	ports/devel/py-celementtree
+py-cerealizer	ports/security/py-cerealizer
 py-cgkit	ports/graphics/py-cgkit
 py-chardet	ports/textproc/py-chardet
 py-chart	ports/graphics/py-chart
