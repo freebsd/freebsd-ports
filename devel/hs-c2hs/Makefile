@@ -24,7 +24,7 @@ GHC=		ghc-5.04.3
 GHCDEP=		ghc5
 GHCMAJOR=	5
 .else
-GHC=		ghc-6.4.1
+GHC=		ghc-6.4.2
 GHCDEP=		ghc
 GHCMAJOR=	6
 .endif
