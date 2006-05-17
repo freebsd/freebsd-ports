@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	scim-chewing
-PORTVERSION=	0.2.1
-PORTREVISION=	1
+PORTVERSION=	0.3.0
 CATEGORIES=	chinese
 MASTER_SITES=	http://chewing.csie.net/download/scim/
 
@@ -15,7 +14,7 @@ MAINTAINER=	yinjieh@csie.nctu.edu.tw
 COMMENT=	SCIM chewing Chinese input methods
 
 BUILD_DEPENDS=	scim:${PORTSDIR}/textproc/scim
-LIB_DEPENDS=	chewing.2:${PORTSDIR}/chinese/libchewing
+LIB_DEPENDS=	chewing.3:${PORTSDIR}/chinese/libchewing
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_X_PREFIX=	yes
