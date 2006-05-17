@@ -1,0 +1,6 @@
+Weather::Underground is a perl module which provides a simple OO interface to
+retrieving weather data for a geographic location.  It does so by querying
+wunderground.com and parsing the returned results.
+
+Author:	Mina Naguib <mina.cpan@naguib.ca>
+WWW: http://search.cpan.org/dist/Weather-Underground/
