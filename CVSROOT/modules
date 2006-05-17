@@ -13604,6 +13604,7 @@ wbxml2		ports/textproc/wbxml2
 wcol		ports/www/wcol
 wdiff		ports/textproc/wdiff
 wdm		ports/x11/wdm
+weatherspect	ports/astro/weatherspect
 web-traceroute	ports/www/web-traceroute
 web2ldap	ports/www/web2ldap
 webalizer	ports/www/webalizer
