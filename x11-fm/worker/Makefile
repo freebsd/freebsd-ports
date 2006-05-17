@@ -25,7 +25,7 @@ CONFIGURE_ARGS=	--disable-libxpkmaster
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-BROKEN=		"Does not compile on FreeBSD 4.x"
+BROKEN=		Does not compile on FreeBSD 4.x
 .endif
 
 pre-configure:

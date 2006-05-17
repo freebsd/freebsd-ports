@@ -1,37 +1,37 @@
 bin/worker
-share/worker/catalogs/deutsch.catalog
-share/worker/catalogs/deutsch.catalog.coms
-share/worker/catalogs/deutsch.catalog.flags
-share/worker/catalogs/francais.catalog
-share/worker/catalogs/francais.catalog.coms
-share/worker/catalogs/francais.catalog.flags
-share/worker/catalogs/italiano.catalog
-share/worker/catalogs/italiano.catalog.coms
-share/worker/catalogs/italiano.catalog.flags
-share/worker/catalogs/polski.catalog
-share/worker/catalogs/polski.catalog.coms
-share/worker/catalogs/polski.catalog.flags
-share/worker/catalogs/spanish.catalog
-share/worker/catalogs/spanish.catalog.coms
-share/worker/catalogs/spanish.catalog.flags
-share/worker/catalogs/russian.catalog
-share/worker/catalogs/russian.catalog.coms
-share/worker/catalogs/russian.catalog.flags
-share/worker/config-deutsch
-share/worker/config-english
-share/worker/scripts/xeditor
-share/worker/scripts/xliwrapper_worker
-share/worker/scripts/displaywrapper_worker
-share/worker/scripts/cd2flac.sh
-share/worker/scripts/cd2mp3.sh
-share/worker/scripts/cd2ogg.sh
-share/worker/scripts/cd2wav.sh
-share/worker/scripts/aa.pattern_rename.sh
 share/pixmaps/WorkerIcon.xpm
 share/pixmaps/WorkerIcon16.xpm
 share/pixmaps/WorkerIcon32.xpm
 share/pixmaps/WorkerIcon48.xpm
+%%DATADIR%%/catalogs/deutsch.catalog
+%%DATADIR%%/catalogs/deutsch.catalog.coms
+%%DATADIR%%/catalogs/deutsch.catalog.flags
+%%DATADIR%%/catalogs/francais.catalog
+%%DATADIR%%/catalogs/francais.catalog.coms
+%%DATADIR%%/catalogs/francais.catalog.flags
+%%DATADIR%%/catalogs/italiano.catalog
+%%DATADIR%%/catalogs/italiano.catalog.coms
+%%DATADIR%%/catalogs/italiano.catalog.flags
+%%DATADIR%%/catalogs/polski.catalog
+%%DATADIR%%/catalogs/polski.catalog.coms
+%%DATADIR%%/catalogs/polski.catalog.flags
+%%DATADIR%%/catalogs/russian.catalog
+%%DATADIR%%/catalogs/russian.catalog.coms
+%%DATADIR%%/catalogs/russian.catalog.flags
+%%DATADIR%%/catalogs/spanish.catalog
+%%DATADIR%%/catalogs/spanish.catalog.coms
+%%DATADIR%%/catalogs/spanish.catalog.flags
+%%DATADIR%%/config-deutsch
+%%DATADIR%%/config-english
+%%DATADIR%%/scripts/aa.pattern_rename.sh
+%%DATADIR%%/scripts/cd2flac.sh
+%%DATADIR%%/scripts/cd2mp3.sh
+%%DATADIR%%/scripts/cd2ogg.sh
+%%DATADIR%%/scripts/cd2wav.sh
+%%DATADIR%%/scripts/displaywrapper_worker
+%%DATADIR%%/scripts/xeditor
+%%DATADIR%%/scripts/xliwrapper_worker
+@dirrm %%DATADIR%%/scripts
+@dirrm %%DATADIR%%/catalogs
+@dirrm %%DATADIR%%
 @dirrmtry share/pixmaps
-@dirrm share/worker/catalogs
-@dirrm share/worker/scripts
-@dirrm share/worker
