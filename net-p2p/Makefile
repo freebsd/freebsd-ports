@@ -52,6 +52,7 @@
     SUBDIR += libfreenet
     SUBDIR += libpdtp
     SUBDIR += libtorrent
+    SUBDIR += libtorrent-devel
     SUBDIR += limewire
     SUBDIR += linux-agsatellite
     SUBDIR += linux-edonkey-core

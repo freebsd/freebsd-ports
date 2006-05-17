@@ -1,0 +1,25 @@
+include/torrent/bitfield.h
+include/torrent/connection_manager.h
+include/torrent/download.h
+include/torrent/event.h
+include/torrent/exceptions.h
+include/torrent/file.h
+include/torrent/file_list.h
+include/torrent/http.h
+include/torrent/object.h
+include/torrent/object_stream.h
+include/torrent/path.h
+include/torrent/peer.h
+include/torrent/piece.h
+include/torrent/poll.h
+include/torrent/poll_epoll.h
+include/torrent/poll_kqueue.h
+include/torrent/poll_select.h
+include/torrent/rate.h
+include/torrent/torrent.h
+include/torrent/tracker.h
+include/torrent/tracker_list.h
+lib/libtorrent.so
+lib/libtorrent.so.7
+libdata/pkgconfig/libtorrent.pc
+@dirrm include/torrent
