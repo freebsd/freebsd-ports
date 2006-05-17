@@ -182,33 +182,33 @@ bin/hgmerge
 %%PYTHON_SITELIBDIR%%/mercurial/version.py
 %%PYTHON_SITELIBDIR%%/mercurial/version.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/version.pyo
-%%PORTSDOC%%%%DOCSDIR%%/CONTRIBUTORS
-%%PORTSDOC%%%%DOCSDIR%%/COPYING
-%%PORTSDOC%%%%DOCSDIR%%/README
-%%PORTSDOC%%%%DOCSDIR%%/comparison.txt
-%%PORTSDOC%%%%DOCSDIR%%/notes.txt
-%%PORTSDOC%%%%DOCSDIR%%/hg.1.txt
-%%PORTSDOC%%%%DOCSDIR%%/hgignore.5.txt
-%%PORTSDOC%%%%DOCSDIR%%/hgmerge.1.txt
-%%PORTSDOC%%%%DOCSDIR%%/hgrc.5.txt
-%%PORTSDOC%%%%DATADIR%%/contrib/bash_completion
-%%PORTSDOC%%%%DATADIR%%/contrib/convert-repo
-%%PORTSDOC%%%%DATADIR%%/contrib/favicon.ico
-%%PORTSDOC%%%%DATADIR%%/contrib/hg-menu.vim
-%%PORTSDOC%%%%DATADIR%%/contrib/hg-ssh
-%%PORTSDOC%%%%DATADIR%%/contrib/hgdiff
-%%PORTSDOC%%%%DATADIR%%/contrib/hgk
-%%PORTSDOC%%%%DATADIR%%/contrib/hgk.py
-%%PORTSDOC%%%%DATADIR%%/contrib/mercurial.el
-%%PORTSDOC%%%%DATADIR%%/contrib/tcsh_completion
-%%PORTSDOC%%%%DATADIR%%/contrib/zsh_completion
-%%PORTSDOC%%%%DATADIR%%/www/hgweb.cgi
-%%PORTSDOC%%%%DATADIR%%/www/hgwebdir.cgi
+%%PORTDOCS%%%%DOCSDIR%%/CONTRIBUTORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/comparison.txt
+%%PORTDOCS%%%%DOCSDIR%%/notes.txt
+%%PORTDOCS%%%%DOCSDIR%%/hg.1.txt
+%%PORTDOCS%%%%DOCSDIR%%/hgignore.5.txt
+%%PORTDOCS%%%%DOCSDIR%%/hgmerge.1.txt
+%%PORTDOCS%%%%DOCSDIR%%/hgrc.5.txt
+%%PORTDOCS%%%%DATADIR%%/contrib/bash_completion
+%%PORTDOCS%%%%DATADIR%%/contrib/convert-repo
+%%PORTDOCS%%%%DATADIR%%/contrib/favicon.ico
+%%PORTDOCS%%%%DATADIR%%/contrib/hg-menu.vim
+%%PORTDOCS%%%%DATADIR%%/contrib/hg-ssh
+%%PORTDOCS%%%%DATADIR%%/contrib/hgdiff
+%%PORTDOCS%%%%DATADIR%%/contrib/hgk
+%%PORTDOCS%%%%DATADIR%%/contrib/hgk.py
+%%PORTDOCS%%%%DATADIR%%/contrib/mercurial.el
+%%PORTDOCS%%%%DATADIR%%/contrib/tcsh_completion
+%%PORTDOCS%%%%DATADIR%%/contrib/zsh_completion
+%%PORTDOCS%%%%DATADIR%%/www/hgweb.cgi
+%%PORTDOCS%%%%DATADIR%%/www/hgwebdir.cgi
 @dirrm %%PYTHON_SITELIBDIR%%/mercurial/templates/static
 @dirrm %%PYTHON_SITELIBDIR%%/mercurial/templates
 @dirrm %%PYTHON_SITELIBDIR%%/mercurial
 @dirrm %%PYTHON_SITELIBDIR%%/hgext
-%%PORTSDOC%%@dirrm %%DATADIR%%/www
-%%PORTSDOC%%@dirrm %%DATADIR%%
-%%PORTSDOC%%@dirrm %%DOCSDIR%%/contrib
-%%PORTSDOC%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%DATADIR%%/www
+%%PORTDOCS%%@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/contrib
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
