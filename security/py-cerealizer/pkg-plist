@@ -1,0 +1,4 @@
+%%PYTHON_SITELIBDIR%%/cerealizer/__init__.py
+%%PYTHON_SITELIBDIR%%/cerealizer/__init__.pyc
+%%PYTHON_SITELIBDIR%%/cerealizer/__init__.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/cerealizer
