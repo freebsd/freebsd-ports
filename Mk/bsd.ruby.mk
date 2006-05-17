@@ -162,7 +162,7 @@ MASTER_SITE_SUBDIR_RUBY=	snapshots
 .endif
 #      defined(RUBY_VER) && ${RUBY_VER} == 1.8
 
-CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL:C/\..*//}
+CONFIGURE_TARGET?=	${ARCH}-portbld-freebsd${OSREL:C/\..*//}
 
 RUBY_ARCH?=		${ARCH}-freebsd${OSREL:C/\..*//}
 RUBY_NAME?=		ruby${RUBY_SUFFIX}
