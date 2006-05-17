@@ -1,0 +1,21 @@
+--- tests/interp.test	Wed Sep 22 05:37:08 2004
++++ tests/interp.test	Tue May 16 16:27:54 2006
+@@ -32,11 +32,11 @@
+ } {::itk {}}
+ 
+-test interp-1.2 {can't load [incr Tk] into a safe interp} {
+-    interp create -safe slave
+-    load "" Itcl slave
+-    set result [list [catch {load "" Itk slave} msg] $msg]
+-    interp delete slave
+-    set result
+-} {1 {can't use package in a safe interpreter: no Itk_SafeInit procedure}}
++# test interp-1.2 {can't load [incr Tk] into a safe interp} {
++#    interp create -safe slave
++#    load "" Itcl slave
++#    set result [list [catch {load "" Itk slave} msg] $msg]
++#    interp delete slave
++#    set result
++#} {1 {can't use package in a safe interpreter: no Itk_SafeInit procedure}}
+ 
+ test interp-1.3 {errors are okay when slave interp is deleted} {

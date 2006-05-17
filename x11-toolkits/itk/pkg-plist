@@ -1,12 +1,13 @@
 include/itk%%MAJOR%%.%%MINOR%%/itk.h
 include/itk%%MAJOR%%.%%MINOR%%/itkDecls.h
-lib/libitk%%MAJOR%%%%MINOR%%.so.1
-lib/libitk%%MAJOR%%%%MINOR%%.so
-lib/libitk%%MAJOR%%%%MINOR%%.a
+lib/libitk.so.%%MAJOR%%.%%MINOR%%
+lib/libitk.so
+lib/libitk.a
 lib/itk%%MAJOR%%.%%MINOR%%/Archetype.itk
 lib/itk%%MAJOR%%.%%MINOR%%/Toplevel.itk
 lib/itk%%MAJOR%%.%%MINOR%%/Widget.itk
 lib/itk%%MAJOR%%.%%MINOR%%/itk.tcl
+lib/itk%%MAJOR%%.%%MINOR%%/itkConfig.sh
 lib/itk%%MAJOR%%.%%MINOR%%/tclIndex
 lib/itk%%MAJOR%%.%%MINOR%%/pkgIndex.tcl
 @dirrm include/itk%%MAJOR%%.%%MINOR%%

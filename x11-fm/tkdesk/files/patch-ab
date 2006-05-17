@@ -14,7 +14,7 @@
  	find $(SCRIPT_INSTALL_DIR) -type d -exec chmod a+rx {} \;
  	@echo "=== Creating index..."
 -	cd $(SCRIPT_INSTALL_DIR); $(BIN_INSTALL_DIR)/tkdesksh mkindex
-+	cd $(SCRIPT_INSTALL_DIR); tclsh8.3 mkindex
++	cd $(SCRIPT_INSTALL_DIR); tclsh8.4 mkindex
  	@echo "=== Installing the manual pages..."
  	@for f in tkdesk.1 cd-tkdesk.1 ed-tkdesk.1 od-tkdesk.1; do \
  	    echo "installing $$f" ;\

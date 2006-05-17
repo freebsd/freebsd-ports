@@ -1,5 +1,5 @@
 NOPROFILE=	yes
-LIB=		itk${MAJOR}${MINOR}
+LIB=		itk
 ITK_LIBRARY=	${PREFIX}/lib/itk${MAJOR}.${MINOR}
 CFLAGS+=	-I. -I./../generic \
 		-I${PREFIX}/include/tcl8.4/generic \
@@ -14,27 +14,31 @@ CFLAGS+=	-I. -I./../generic \
 		-DHAVE_SYS_FILIO_H=1 \
 		-DRETSIGTYPE=void \
 		-DITK_LIBRARY=\"${ITK_LIBRARY}\"
-LDADD+=		-L${PREFIX}/lib -litcl${MAJOR}${MINOR} -L${X11BASE}/lib -lX11 -ltk84
+LDADD+=		-L${PREFIX}/lib -litcl -L${X11BASE}/lib -lX11 -ltk84
 
 .PATH:		${.CURDIR}/generic
 
-SRCS=		itk_cmds.c itk_option.c itk_archetype.c itk_util.c
+SRCS=		itk_cmds.c itk_option.c itk_archetype.c itk_util.c itkStubInit.c
 
 SCRIPTDIR=	lib/itk${MAJOR}.${MINOR}
 SCRIPTPATH=	${PREFIX}/${SCRIPTDIR}
 LIBDIR=		${PREFIX}/lib
 INCDIR=		${PREFIX}/include/itk${MAJOR}.${MINOR}
 
-pkgIndex.tcl: ${.CURDIR}/pkgIndex.tcl.in
-	sed -e "s#@RELPATH@#..#" -e "s#@VERSION@#${MAJOR}.${MINOR}#" \
-		-e "s#@itcl_LIB_FILE@#${SHLIB_NAME}#" \
-		< ${.CURDIR}/pkgIndex.tcl.in > pkgIndex.tcl
+pkgIndex.tcl: pkgIndex.tcl.in
+	sed -e 's#"@PKG_LIB_FILE@"#.. ${SHLIB_NAME}#' -e "s#@PACKAGE_VERSION@#${MAJOR}.${MINOR}#" \
+		< $> > $@
+
+itkConfig.sh: itkConfig.sh.in
+	sed -e 's#@itk_LIB_FILE@#${SHLIB_NAME}#g' -e 's#@itk_LIB_SPEC@#-L${LIBDIR} -litk#' \
+		-e 's,@ITK_BUILD_LIB_SPEC@,-L${LIBDIR} -litk,' \
+		< $> > $@
 
 ${SCRIPTPATH} ${INCDIR}:
 	mkdir -p ${.TARGET}
 
-beforeinstall: pkgIndex.tcl ${SCRIPTPATH} ${INCDIR}
-	${BSD_INSTALL_DATA} pkgIndex.tcl ${.CURDIR}/library/* ${SCRIPTPATH}
+beforeinstall: pkgIndex.tcl itkConfig.sh ${SCRIPTPATH} ${INCDIR}
+	${BSD_INSTALL_DATA} pkgIndex.tcl itkConfig.sh ${.CURDIR}/library/* ${SCRIPTPATH}
 	${BSD_INSTALL_DATA} ${.CURDIR}/generic/*.h ${INCDIR}
 	${BSD_INSTALL_MAN} ${.CURDIR}/doc/*.n ${PREFIX}/man/mann/
 
