@@ -9559,6 +9559,7 @@ p5-WWW-Shorten	ports/www/p5-WWW-Shorten
 p5-WWW-SourceForge	ports/www/p5-WWW-SourceForge
 p5-WWW-Wikipedia	ports/www/p5-WWW-Wikipedia
 p5-Want		ports/devel/p5-Want
+p5-Weather-Underground	ports/astro/p5-Weather-Underground
 p5-WebService-Bloglines	ports/www/p5-WebService-Bloglines
 p5-WebService-NoPaste	ports/www/p5-WebService-NoPaste
 p5-WebService-Technorati	ports/www/p5-WebService-Technorati
