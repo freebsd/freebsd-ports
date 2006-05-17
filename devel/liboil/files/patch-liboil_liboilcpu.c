@@ -1,18 +1,19 @@
---- liboil/liboilcpu.c.orig	Sat May 21 14:12:56 2005
-+++ liboil/liboilcpu.c	Sat May 21 14:34:37 2005
-@@ -59,7 +59,11 @@
+--- liboil/liboilcpu.c.orig	Mon Mar 20 22:14:01 2006
++++ liboil/liboilcpu.c	Wed May 17 17:47:44 2006
+@@ -71,7 +71,11 @@
    cpuinfo = malloc(4096);
    if (cpuinfo == NULL) return NULL;
  
-+#if defined(__FreeBSD__)
-+  fd = open("/var/run/dmesg.boot", O_RDONLY);
-+#else
-   fd = open("/proc/cpuinfo", O_RDONLY);
-+#endif
-   if (fd < 0) return NULL;
- 
-   n = read(fd, cpuinfo, 4095);
-@@ -84,6 +88,37 @@
+-  fd = open("/proc/cpuinfo", O_RDONLY);
++ #if defined(__FreeBSD__)
++   fd = open("/var/run/dmesg.boot", O_RDONLY);
++ #else
++   fd = open("/proc/cpuinfo", O_RDONLY);
++ #endif
+   if (fd < 0) {
+     free (cpuinfo);
+     return NULL;
+@@ -104,6 +108,37 @@
    }
  
    flags = strsplit(cpuinfo_flags);
@@ -50,7 +51,7 @@
    for (f = flags; *f; f++) {
      if (strcmp (*f, "cmov") == 0) {
        OIL_DEBUG ("cpu flag %s", *f);
-@@ -113,6 +148,7 @@
+@@ -134,6 +169,7 @@
        OIL_DEBUG ("cpu flag %s", *f);
        oil_cpu_flags |= OIL_IMPL_FLAG_3DNOWEXT;
      }
@@ -58,7 +59,7 @@
  
      free (*f);
    }
-@@ -282,12 +318,22 @@
+@@ -381,12 +417,22 @@
    char *end;
    char *colon;
  
@@ -81,7 +82,7 @@
    if (colon == NULL) return NULL;
    colon++;
    if(colon >= end) return NULL;
-@@ -303,15 +349,22 @@
+@@ -402,15 +448,22 @@
    char *tok;
    int n = 0;
  

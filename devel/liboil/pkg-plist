@@ -1,22 +1,24 @@
-include/liboil-%%VERSION%%/liboil/liboil.h
-include/liboil-%%VERSION%%/liboil/liboilclasses.h
-include/liboil-%%VERSION%%/liboil/liboilcpu.h
-include/liboil-%%VERSION%%/liboil/liboildebug.h
-include/liboil-%%VERSION%%/liboil/liboilfuncs.h
-include/liboil-%%VERSION%%/liboil/liboilfunction.h
-include/liboil-%%VERSION%%/liboil/liboilgcc.h
-include/liboil-%%VERSION%%/liboil/liboilinternal.h
-include/liboil-%%VERSION%%/liboil/liboilparameter.h
-include/liboil-%%VERSION%%/liboil/liboilprofile.h
-include/liboil-%%VERSION%%/liboil/liboilprototype.h
-include/liboil-%%VERSION%%/liboil/liboilrandom.h
-include/liboil-%%VERSION%%/liboil/liboiltest.h
-include/liboil-%%VERSION%%/liboil/liboiltypes.h
-lib/liboil-%%VERSION%%.a
-lib/liboil-%%VERSION%%.la
-lib/liboil-%%VERSION%%.so
-lib/liboil-%%VERSION%%.so.1
-libdata/pkgconfig/liboil-%%VERSION%%.pc
+bin/oil-bugreport
+include/liboil-0.3/liboil/liboil-stdint.h
+include/liboil-0.3/liboil/liboil.h
+include/liboil-0.3/liboil/liboilclasses.h
+include/liboil-0.3/liboil/liboilcpu.h
+include/liboil-0.3/liboil/liboildebug.h
+include/liboil-0.3/liboil/liboilfuncs.h
+include/liboil-0.3/liboil/liboilfunction.h
+include/liboil-0.3/liboil/liboilgcc.h
+include/liboil-0.3/liboil/liboilinternal.h
+include/liboil-0.3/liboil/liboilparameter.h
+include/liboil-0.3/liboil/liboilprofile.h
+include/liboil-0.3/liboil/liboilprototype.h
+include/liboil-0.3/liboil/liboilrandom.h
+include/liboil-0.3/liboil/liboiltest.h
+include/liboil-0.3/liboil/liboiltypes.h
+lib/liboil-0.3.a
+lib/liboil-0.3.la
+lib/liboil-0.3.so
+lib/liboil-0.3.so.1
+libdata/pkgconfig/liboil-0.3.pc
 share/gtk-doc/html/liboil/ch01.html
 share/gtk-doc/html/liboil/ch02.html
 share/gtk-doc/html/liboil/home.png
@@ -45,11 +47,12 @@ share/gtk-doc/html/liboil/liboil-liboilrandom.html
 share/gtk-doc/html/liboil/liboil-liboiltest.html
 share/gtk-doc/html/liboil/liboil-liboiltypes.html
 share/gtk-doc/html/liboil/liboil.devhelp
+share/gtk-doc/html/liboil/liboil.devhelp2
 share/gtk-doc/html/liboil/right.png
 share/gtk-doc/html/liboil/style.css
 share/gtk-doc/html/liboil/up.png
 @dirrm share/gtk-doc/html/liboil
 @dirrmtry share/gtk-doc/html
 @dirrmtry share/gtk-doc
-@dirrm include/liboil-%%VERSION%%/liboil
-@dirrm include/liboil-%%VERSION%%
+@dirrm include/liboil-0.3/liboil
+@dirrm include/liboil-0.3

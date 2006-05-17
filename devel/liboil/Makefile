@@ -6,24 +6,24 @@
 #
 
 PORTNAME=	liboil
-PORTVERSION=	0.3.6
+PORTVERSION=	0.3.8
 CATEGORIES=	devel
-MASTER_SITES=	http://liboil.freedesktop.org/download/
+MASTER_SITES=	http://liboil.freedesktop.org/download/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	ahze
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Library of optimized inner loops
 
-USE_GNOME=	glib20
+USE_GNOME=	glib20 gnomehack
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--disable-gtk-doc
 
-PLIST_SUB=	VERSION=${PORTVERSION:R}
-
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|stdint\.h|inttypes.h|g' \
+	@${REINPLACE_CMD} -e 's|<stdint\.h|<inttypes.h|g' \
 		${WRKSRC}/liboil/liboiltypes.h \
 		${WRKSRC}/liboil/liboilprofile.h \
 		${WRKSRC}/liboil/liboil.h
