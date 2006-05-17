@@ -1,0 +1,20 @@
+#!/bin/sh
+#
+# Unload ipmi module if necessary
+#
+# $FreeBSD$
+#
+
+KMODDIR="%%KMODDIR%%"
+
+case "$2" in
+DEINSTALL)
+	echo "Unloading ipmi kernel module."
+
+	# Unload the module if it is currently loaded.
+	kldstat -n ipmi 2>/dev/null >/dev/null && kldunload ipmi || true
+	;;
+POST-DEINSTALL)
+	type kldxref >/dev/null 2>&1 && kldxref ${KMODDIR} || true
+	;;
+esac

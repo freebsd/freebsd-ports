@@ -11,10 +11,15 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://dpw.threerings.net/projects/ipmi-kmod/
 
 MAINTAINER=	snb@threerings.net
-COMMENT=	Backport of ipmi driver from FreeBSD 7-CURRENT for FreeBSD 6.x
+COMMENT=	Backport of ipmi driver from FreeBSD 7-CURRENT for FreeBSD 5.x/6.x
 
-PLIST_FILES=	include/sys/ipmi.h
-PLIST_DIRS=	include/sys
+SUB_FILES=	pkg-install pkg-deinstall
+SUB_LIST+=	KMODDIR=${KMODDIR}
+
+PLIST_FILES=	include/sys/ipmi.h \
+		"@dirrm include/sys" \
+		"@cwd /" \
+		${KMODDIR:C,^/,,}/ipmi.ko \
 
 # We want to install the module in /boot/modules rather than /boot/kernel
 KMODDIR=	/boot/modules
@@ -27,15 +32,18 @@ ONLY_FOR_ARCHS=	i386 amd64
 IGNORE=		requires kernel source to be installed
 .endif
 
-.if ${OSVERSION} < 600000
-IGNORE=		FreeBSD before 6.0 is not supported
-.elif ${OSVERSION} > 700000
-IGNORE=		FreeBSD 7.0 has an ipmi driver supplied by the kernel
+.if exists(/usr/include/sys/ipmi.h)
+IGNORE=		already in the base system
+.elif ${OSVERSION} < 503000
+IGNORE=		does not support FreeBSD before 5.3
 .endif
 
 do-install:
 	@${MKDIR} ${PREFIX}/include/sys
-	${INSTALL_SCRIPT} ${WRKSRC}/sys/ipmi.h ${PREFIX}/include/sys
-	${INSTALL_SCRIPT} ${WRKSRC}/ipmi.ko ${KMODDIR}
+	${INSTALL_DATA} ${WRKSRC}/sys/ipmi.h ${PREFIX}/include/sys
+	${INSTALL_PROGRAM} ${WRKSRC}/ipmi.ko ${DESTDIR}${KMODDIR}
+
+post-install:
+	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.post.mk>
