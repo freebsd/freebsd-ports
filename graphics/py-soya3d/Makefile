@@ -42,6 +42,12 @@ SOYATUTVER=	0.10.2
 DISTFILES+=	SoyaTutorial-${SOYATUTVER}${EXTRACT_SUFX}
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+CFLAGS	+=	-fPIC
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		-e 's|%%X11BASE%%|${X11BASE}|g' ${WRKSRC}/setup.py
@@ -76,4 +82,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

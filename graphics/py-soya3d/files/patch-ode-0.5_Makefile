@@ -5,11 +5,11 @@
  
  %$(OBJ): %.c
 -	$(CC) $(C_FLAGS) $(C_INC)$(INCPATH) $(DEFINES) $(C_OPT)1 $(C_OUT)$@ $<
-+	$(CC) $(C_INC)$(INCPATH) $(C_FLAGS) -fPIC $(DEFINES) $(C_OUT)$@ $<
++	$(CC) $(C_INC)$(INCPATH) $(C_FLAGS) $(DEFINES) $(C_OUT)$@ $<
  
  %$(OBJ): %.cpp
 -	$(CC) $(C_FLAGS) $(C_INC)$(INCPATH) $(INC_OPCODE) $(DEFINES) $(C_OPT)$(OPT) $(C_OUT)$@ $<
-+	$(CC) $(C_INC)$(INCPATH) $(C_FLAGS) -fPIC $(INC_OPCODE) $(DEFINES) $(C_OUT)$@ $<
++	$(CC) $(C_INC)$(INCPATH) $(C_FLAGS) $(INC_OPCODE) $(DEFINES) $(C_OUT)$@ $<
  
  %.exe: %$(OBJ)
 -	$(CC) $(C_EXEOUT)$@ $< $(ODE_LIB) $(DRAWSTUFF_LIB) $(RESOURCE_FILE) $(LINK_OPENGL) $(LINK_MATH)
