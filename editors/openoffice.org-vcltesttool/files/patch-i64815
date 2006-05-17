@@ -1,0 +1,4767 @@
+cws bfsixtyfour
+Index: binfilter/bf_forms/source/component/forms_imgprod.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_forms/source/component/forms_imgprod.cxx,v
+retrieving revision 1.3
+retrieving revision 1.3.74.1
+diff -u -r1.3 -r1.3.74.1
+--- binfilter/bf_forms/source/component/forms_imgprod.cxx	7 Sep 2005 15:50:06 -0000	1.3
++++ binfilter/bf_forms/source/component/forms_imgprod.cxx	27 Apr 2006 15:56:43 -0000	1.3.74.1
+@@ -70,8 +70,8 @@
+ 						ImgProdLockBytes( ::com::sun::star::uno::Reference< ::com::sun::star::io::XInputStream > & rStreamRef );
+ 	virtual				~ImgProdLockBytes();
+ 
+-	virtual ErrCode		ReadAt( sal_uInt32 nPos, void* pBuffer, sal_uInt32 nCount, sal_uInt32* pRead ) const;
+-	virtual ErrCode		WriteAt( sal_uInt32 nPos, const void* pBuffer, sal_uInt32 nCount, sal_uInt32* pWritten );
++	virtual ErrCode		ReadAt( sal_uInt32 nPos, void* pBuffer, sal_uInt32 nCount, sal_Size* pRead ) const;
++	virtual ErrCode		WriteAt( sal_uInt32 nPos, const void* pBuffer, sal_uInt32 nCount, sal_Size* pWritten );
+ 	virtual ErrCode		Flush() const;
+ 	virtual ErrCode		SetSize( sal_uInt32 nSize );
+ 	virtual ErrCode		Stat( SvLockBytesStat*, SvLockBytesStatFlag ) const;
+@@ -119,7 +119,7 @@
+ 
+ // ------------------------------------------------------------------------
+ 
+-ErrCode ImgProdLockBytes::ReadAt( sal_uInt32 nPos, void* pBuffer, sal_uInt32 nCount, sal_uInt32* pRead ) const
++ErrCode ImgProdLockBytes::ReadAt( sal_uInt32 nPos, void* pBuffer, sal_uInt32 nCount, sal_Size* pRead ) const
+ {
+ 	if( GetStream() )
+ 	{
+@@ -150,7 +150,7 @@
+ 
+ // ------------------------------------------------------------------------
+ 
+-ErrCode ImgProdLockBytes::WriteAt( sal_uInt32 nPos, const void* pBuffer, sal_uInt32 nCount, sal_uInt32* pWritten )
++ErrCode ImgProdLockBytes::WriteAt( sal_uInt32 nPos, const void* pBuffer, sal_uInt32 nCount, sal_Size* pWritten )
+ {
+ 	if( GetStream() )
+ 		return SvLockBytes::WriteAt( nPos, pBuffer, nCount, pWritten );
+Index: binfilter/bf_sc/source/core/data/sc_cell.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_sc/source/core/data/sc_cell.cxx,v
+retrieving revision 1.5
+retrieving revision 1.5.70.1
+diff -u -r1.5 -r1.5.70.1
+--- binfilter/bf_sc/source/core/data/sc_cell.cxx	7 Sep 2005 16:39:37 -0000	1.5
++++ binfilter/bf_sc/source/core/data/sc_cell.cxx	27 Apr 2006 11:21:10 -0000	1.5.70.1
+@@ -916,7 +916,7 @@
+ /*N*/ //	rStream << (BYTE) 0x00;
+ /*N*/ #endif
+ /*N*/ 	if ( nFormatIndex )
+-/*N*/ 		rStream << (BYTE) (0x10 | sizeof(UINT32)) << nFormatIndex;
++/*N*/ 		rStream << (BYTE) (0x10 | sizeof(UINT32)) << static_cast<sal_uInt32>(nFormatIndex);
+ /*N*/ 	else
+ /*N*/ 		rStream << (BYTE) 0x00;
+ /*N*/ 	rStream << cFlags << (UINT16) nFormatType;
+Index: binfilter/bf_sc/source/core/data/sc_column3.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_sc/source/core/data/sc_column3.cxx,v
+retrieving revision 1.6
+retrieving revision 1.6.74.1
+diff -u -r1.6 -r1.6.74.1
+--- binfilter/bf_sc/source/core/data/sc_column3.cxx	7 Sep 2005 16:40:58 -0000	1.6
++++ binfilter/bf_sc/source/core/data/sc_column3.cxx	27 Apr 2006 11:22:41 -0000	1.6.74.1
+@@ -1212,7 +1212,7 @@
+ /*N*/ 		if (rString.Len() > 0)
+ /*N*/ 		{
+ /*N*/ 			double nVal;
+-/*N*/ 			ULONG nIndex, nOldIndex;
++/*N*/ 			sal_uInt32 nIndex, nOldIndex;
+ /*N*/ 			sal_Unicode cFirstChar;
+ /*N*/ 			SvNumberFormatter* pFormatter = pDocument->GetFormatTable();
+ /*N*/ 			SfxObjectShell* pDocSh = pDocument->GetDocumentShell();
+Index: binfilter/bf_sc/source/core/data/sc_conditio.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_sc/source/core/data/sc_conditio.cxx,v
+retrieving revision 1.5
+retrieving revision 1.5.74.1
+diff -u -r1.5 -r1.5.74.1
+--- binfilter/bf_sc/source/core/data/sc_conditio.cxx	7 Sep 2005 16:41:15 -0000	1.5
++++ binfilter/bf_sc/source/core/data/sc_conditio.cxx	27 Apr 2006 11:26:20 -0000	1.5.74.1
+@@ -1181,7 +1181,7 @@
+ 
+ //------------------------------------------------------------------------
+ 
+-/*N*/ ScConditionalFormat::ScConditionalFormat(ULONG nNewKey, ScDocument* pDocument) :
++/*N*/ ScConditionalFormat::ScConditionalFormat(sal_uInt32 nNewKey, ScDocument* pDocument) :
+ /*N*/ 	pDoc( pDocument ),
+ /*N*/ 	pAreas( NULL ),
+ /*N*/ 	nKey( nNewKey ),
+@@ -1585,7 +1585,7 @@
+ /*N*/ 	}
+ /*N*/ }
+ 
+-/*N*/ ScConditionalFormat* ScConditionalFormatList::GetFormat( ULONG nKey )
++/*N*/ ScConditionalFormat* ScConditionalFormatList::GetFormat( sal_uInt32 nKey )
+ /*N*/ {
+ /*N*/ 	//!	binaer suchen
+ /*N*/ 
+Index: binfilter/bf_sc/source/core/data/sc_dociter.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_sc/source/core/data/sc_dociter.cxx,v
+retrieving revision 1.6
+retrieving revision 1.6.72.1
+diff -u -r1.6 -r1.6.72.1
+--- binfilter/bf_sc/source/core/data/sc_dociter.cxx	7 Sep 2005 16:41:50 -0000	1.6
++++ binfilter/bf_sc/source/core/data/sc_dociter.cxx	27 Apr 2006 11:31:33 -0000	1.6.72.1
+@@ -508,7 +508,7 @@
+ /*N*/  	for (i=0; (i<nCount) && (aParam.GetEntry(i).bDoQuery); i++)
+ /*N*/  	{
+ /*N*/  		ScQueryEntry& rEntry = aParam.GetEntry(i);
+-/*N*/  		ULONG nIndex = 0;
++/*N*/  		sal_uInt32 nIndex = 0;
+ /*N*/  		rEntry.bQueryByString =
+ /*N*/  				!(pDoc->GetFormatTable()->IsNumberFormat(*rEntry.pStr, nIndex, rEntry.nVal));
+ /*N*/  	}
+@@ -794,7 +794,7 @@
+ /*N*/ 		for (i=0; (i<MAXQUERY) && (aParam.GetEntry(i).bDoQuery); i++)
+ /*N*/ 		{
+ /*?*/ 			ScQueryEntry& rEntry = aParam.GetEntry(i);
+-/*?*/ 			ULONG nIndex = 0;
++/*?*/ 			sal_uInt32 nIndex = 0;
+ /*?*/ 			rEntry.bQueryByString =
+ /*?*/ 					 !(pDoc->GetFormatTable()->IsNumberFormat(*rEntry.pStr,
+ /*?*/ 															  nIndex, rEntry.nVal));
+Index: binfilter/bf_sc/source/core/data/sc_document.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_sc/source/core/data/sc_document.cxx,v
+retrieving revision 1.9
+retrieving revision 1.9.48.1
+diff -u -r1.9 -r1.9.48.1
+--- binfilter/bf_sc/source/core/data/sc_document.cxx	14 Dec 2005 14:33:35 -0000	1.9
++++ binfilter/bf_sc/source/core/data/sc_document.cxx	27 Apr 2006 13:17:44 -0000	1.9.48.1
+@@ -2025,7 +2025,7 @@
+ 
+ 
+ /*N*/ void ScDocument::GetNumberFormat( USHORT nCol, USHORT nRow, USHORT nTab,
+-/*N*/ 								  ULONG& rFormat )
++/*N*/ 								  sal_uInt32& rFormat )
+ /*N*/ {
+ /*N*/ 	if (VALIDTAB(nTab))
+ /*N*/ 		if (pTab[nTab])
+Index: binfilter/bf_sc/source/core/data/sc_dpshttab.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_sc/source/core/data/sc_dpshttab.cxx,v
+retrieving revision 1.5
+retrieving revision 1.5.74.1
+diff -u -r1.5 -r1.5.74.1
+--- binfilter/bf_sc/source/core/data/sc_dpshttab.cxx	7 Sep 2005 16:46:45 -0000	1.5
++++ binfilter/bf_sc/source/core/data/sc_dpshttab.cxx	27 Apr 2006 11:33:21 -0000	1.5.74.1
+@@ -105,7 +105,7 @@
+ /*M*/             }
+ /*M*/             else
+ /*M*/             {
+-/*M*/ 		        ULONG nIndex = 0;
++/*M*/ 		        sal_uInt32 nIndex = 0;
+ /*M*/ 		        rEntry.bQueryByString =
+ /*M*/ 					        !(pD->GetFormatTable()->
+ /*M*/ 						        IsNumberFormat(*rEntry.pStr, nIndex, rEntry.nVal));
+Index: binfilter/bf_sc/source/core/data/sc_table3.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_sc/source/core/data/sc_table3.cxx,v
+retrieving revision 1.5
+retrieving revision 1.5.74.1
+diff -u -r1.5 -r1.5.74.1
+--- binfilter/bf_sc/source/core/data/sc_table3.cxx	7 Sep 2005 16:54:02 -0000	1.5
++++ binfilter/bf_sc/source/core/data/sc_table3.cxx	27 Apr 2006 11:34:29 -0000	1.5.74.1
+@@ -1050,7 +1050,7 @@
+ /*N*/                         bOk = pTransliteration->isEqual( aCellStr, *rEntry.pStr );
+ /*N*/ 					else
+ /*N*/ 					{
+-/*N*/                         ::com::sun::star::uno::Sequence< long > xOff;
++/*N*/                         ::com::sun::star::uno::Sequence< sal_Int32 > xOff;
+ /*N*/                         String aCell( pTransliteration->transliterate(
+ /*N*/                             aCellStr, ScGlobal::eLnge, 0, aCellStr.Len(),
+ /*N*/                             &xOff ) );
+Index: binfilter/bf_sc/source/core/data/sc_validat.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_sc/source/core/data/sc_validat.cxx,v
+retrieving revision 1.5
+retrieving revision 1.5.72.1
+diff -u -r1.5 -r1.5.72.1
+--- binfilter/bf_sc/source/core/data/sc_validat.cxx	7 Sep 2005 16:55:35 -0000	1.5
++++ binfilter/bf_sc/source/core/data/sc_validat.cxx	27 Apr 2006 11:36:46 -0000	1.5.72.1
+@@ -558,7 +558,7 @@
+ /*N*/ 	//!		sortierte Eintraege aus rList schneller einfuegen ???
+ /*N*/ }
+ 
+-/*N*/ ScValidationData* ScValidationDataList::GetData( ULONG nKey )
++/*N*/ ScValidationData* ScValidationDataList::GetData( sal_uInt32 nKey )
+ /*N*/ {
+ /*N*/ 	//!	binaer suchen
+ /*N*/ 
+Index: binfilter/bf_sc/source/core/tool/sc_chartarr.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_sc/source/core/tool/sc_chartarr.cxx,v
+retrieving revision 1.5
+retrieving revision 1.5.70.1
+diff -u -r1.5 -r1.5.70.1
+--- binfilter/bf_sc/source/core/tool/sc_chartarr.cxx	7 Sep 2005 17:04:56 -0000	1.5
++++ binfilter/bf_sc/source/core/tool/sc_chartarr.cxx	27 Apr 2006 16:28:07 -0000	1.5.70.1
+@@ -68,7 +68,7 @@
+ /*N*/ 	rDest.SetYAxisTitle( rSource.GetYAxisTitle() );
+ /*N*/ 	rDest.SetZAxisTitle( rSource.GetZAxisTitle() );
+ /*N*/ 
+-/*N*/ 	const long* pArr;
++/*N*/ 	const sal_Int32* pArr;
+ /*N*/ 	if ( rSource.GetRowCount() == rDest.GetRowCount() &&
+ /*N*/ 		 rSource.GetColCount() == rDest.GetColCount() )
+ /*N*/ 	{
+@@ -698,7 +698,7 @@
+ /*?*/ 							nVal = ((ScValueCell*)pCell)->GetValue();
+ /*?*/ 							if ( bCalcAsShown && nVal != 0.0 )
+ /*?*/ 							{
+-/*?*/ 								ULONG nFormat;
++/*?*/ 								sal_uInt32 nFormat;
+ /*?*/ 								pDocument->GetNumberFormat( pCols[nCol],
+ /*?*/ 									pRows[nRow], nTab1, nFormat );
+ /*?*/ 								nVal = pDocument->RoundValueAsShown( nVal, nFormat );
+Index: binfilter/bf_sc/source/core/tool/sc_compiler.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_sc/source/core/tool/sc_compiler.cxx,v
+retrieving revision 1.8
+retrieving revision 1.8.72.1
+diff -u -r1.8 -r1.8.72.1
+--- binfilter/bf_sc/source/core/tool/sc_compiler.cxx	7 Sep 2005 17:06:44 -0000	1.8
++++ binfilter/bf_sc/source/core/tool/sc_compiler.cxx	27 Apr 2006 16:28:08 -0000	1.8.72.1
+@@ -877,7 +877,7 @@
+ /*N*/ BOOL ScCompiler::IsValue( const String& rSym )
+ /*N*/ {
+ /*N*/ 	double fVal;
+-/*N*/ 	ULONG nIndex = ( pSymbolTable == pSymbolTableEnglish ?
++/*N*/ 	sal_uInt32 nIndex = ( pSymbolTable == pSymbolTableEnglish ?
+ /*N*/ 		pDoc->GetFormatTable()->GetStandardIndex( LANGUAGE_ENGLISH_US ) : 0 );
+ /*N*/ //	ULONG nIndex = 0;
+ /*N*/ ////	ULONG nIndex = pDoc->GetFormatTable()->GetStandardIndex(ScGlobal::eLnge);
+Index: binfilter/bf_sc/source/core/tool/sc_interpr1.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_sc/source/core/tool/sc_interpr1.cxx,v
+retrieving revision 1.5
+retrieving revision 1.5.72.1
+diff -u -r1.5 -r1.5.72.1
+--- binfilter/bf_sc/source/core/tool/sc_interpr1.cxx	7 Sep 2005 17:11:00 -0000	1.5
++++ binfilter/bf_sc/source/core/tool/sc_interpr1.cxx	27 Apr 2006 16:28:08 -0000	1.5.72.1
+@@ -1770,7 +1770,7 @@
+ void ScInterpreter::ScValue()
+ {
+ 	String aInputString = GetString();
+-	ULONG nFIndex = 0;					// damit default Land/Spr.
++	sal_uInt32 nFIndex = 0;					// damit default Land/Spr.
+ 	double fVal;
+ 	if (pFormatter->IsNumberFormat(aInputString, nFIndex, fVal))
+ 		PushDouble(fVal);
+@@ -2080,7 +2080,7 @@
+ /*?*/ 				if( eFunc == ifCOUNT )
+ /*?*/ 				{
+ /*?*/ 					String aStr( PopString() );
+-/*?*/ 					ULONG nFIndex = 0;					// damit default Land/Spr.
++/*?*/ 					sal_uInt32 nFIndex = 0;					// damit default Land/Spr.
+ /*?*/ 					if ( bTextAsZero || pFormatter->IsNumberFormat(aStr, nFIndex, fVal))
+ /*?*/ 						nCount++;
+ /*?*/ 				}
+@@ -3074,7 +3074,7 @@
+  			else if( rString.Len() )
+  			{
+  				rParam.FillInExcelSyntax(rString,(USHORT) 0);
+- 				ULONG nIndex = 0;
++ 				sal_uInt32 nIndex = 0;
+  				rEntry.bQueryByString =
+  					!(pFormatter->IsNumberFormat(
+  						*rEntry.pStr, nIndex, rEntry.nVal));
+@@ -3244,7 +3244,7 @@
+  			else
+  			{
+  				rParam.FillInExcelSyntax(rString,(USHORT) 0);
+- 				ULONG nIndex = 0;
++ 				sal_uInt32 nIndex = 0;
+  				rEntry.bQueryByString =
+  					!(pFormatter->IsNumberFormat(
+  						*rEntry.pStr, nIndex, rEntry.nVal));
+@@ -4346,7 +4346,7 @@
+ 						ScQueryEntry& rEntry = rParam.GetEntry(i);
+ 						if ( rEntry.bDoQuery )
+ 						{
+-							ULONG nIndex = 0;
++							sal_uInt32 nIndex = 0;
+ 							rEntry.bQueryByString = !pFormatter->IsNumberFormat(
+ 								*rEntry.pStr, nIndex, rEntry.nVal );
+ 							if ( rEntry.bQueryByString && !rParam.bRegExp )
+Index: binfilter/bf_sc/source/core/tool/sc_interpr2.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_sc/source/core/tool/sc_interpr2.cxx,v
+retrieving revision 1.5
+retrieving revision 1.5.70.1
+diff -u -r1.5 -r1.5.70.1
+--- binfilter/bf_sc/source/core/tool/sc_interpr2.cxx	7 Sep 2005 17:11:19 -0000	1.5
++++ binfilter/bf_sc/source/core/tool/sc_interpr2.cxx	27 Apr 2006 16:28:08 -0000	1.5.70.1
+@@ -172,7 +172,7 @@
+ void ScInterpreter::ScGetDateValue()
+ {
+ 	String aInputString = GetString();
+-	ULONG nFIndex = 0;					// damit default Land/Spr.
++	sal_uInt32 nFIndex = 0;					// damit default Land/Spr.
+ 	double fVal;
+ 	if (pFormatter->IsNumberFormat(aInputString, nFIndex, fVal))
+ 	{
+@@ -361,7 +361,7 @@
+ void ScInterpreter::ScGetTimeValue()
+ {
+ 	String aInputString = GetString();
+-	ULONG nFIndex = 0;					// damit default Land/Spr.
++	sal_uInt32 nFIndex = 0;					// damit default Land/Spr.
+ 	double fVal;
+ 	if (pFormatter->IsNumberFormat(aInputString, nFIndex, fVal))
+ 	{
+Index: binfilter/bf_sc/source/core/tool/sc_interpr4.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_sc/source/core/tool/sc_interpr4.cxx,v
+retrieving revision 1.6
+retrieving revision 1.6.70.1
+diff -u -r1.6 -r1.6.70.1
+--- binfilter/bf_sc/source/core/tool/sc_interpr4.cxx	7 Sep 2005 17:11:58 -0000	1.6
++++ binfilter/bf_sc/source/core/tool/sc_interpr4.cxx	27 Apr 2006 16:28:08 -0000	1.6.70.1
+@@ -1288,7 +1288,7 @@
+ /*N*/ 		case svString:
+ /*N*/ 		{
+ /*N*/ 			String aStr(PopString());
+-/*N*/ 			ULONG nFIndex = 0;					// damit default Land/Spr.
++/*N*/ 			sal_uInt32 nFIndex = 0;					// damit default Land/Spr.
+ /*N*/ 			if(!pFormatter->IsNumberFormat( aStr, nFIndex, nVal ) )
+ /*N*/ 			{
+ /*N*/ 				SetError(errIllegalArgument);
+Index: binfilter/bf_sc/source/core/tool/sc_rechead.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_sc/source/core/tool/sc_rechead.cxx,v
+retrieving revision 1.4
+retrieving revision 1.4.74.1
+diff -u -r1.4 -r1.4.74.1
+--- binfilter/bf_sc/source/core/tool/sc_rechead.cxx	7 Sep 2005 17:16:09 -0000	1.4
++++ binfilter/bf_sc/source/core/tool/sc_rechead.cxx	27 Apr 2006 16:28:08 -0000	1.4.74.1
+@@ -54,7 +54,7 @@
+ /*N*/ ScReadHeader::ScReadHeader(SvStream& rNewStream) :
+ /*N*/ 	rStream( rNewStream )
+ /*N*/ {
+-/*N*/ 	ULONG nDataSize;
++/*N*/ 	sal_uInt32 nDataSize;
+ /*N*/ 	rStream >> nDataSize;
+ /*N*/ 	nDataEnd = rStream.Tell() + nDataSize;
+ /*N*/ }
+@@ -83,7 +83,7 @@
+ 
+ // -----------------------------------------------------------------------
+ 
+-/*N*/ ScWriteHeader::ScWriteHeader(SvStream& rNewStream, ULONG nDefault) :
++/*N*/ ScWriteHeader::ScWriteHeader(SvStream& rNewStream, sal_uInt32 nDefault) :
+ /*N*/ 	rStream( rNewStream )
+ /*N*/ {
+ /*N*/ 	nDataSize = nDefault;
+@@ -110,7 +110,7 @@
+ /*N*/ ScMultipleReadHeader::ScMultipleReadHeader(SvStream& rNewStream) :
+ /*N*/ 	rStream( rNewStream )
+ /*N*/ {
+-/*N*/ 	ULONG nDataSize;
++/*N*/ 	sal_uInt32 nDataSize;
+ /*N*/ 	rStream >> nDataSize;
+ /*N*/ 	ULONG nDataPos = rStream.Tell();
+ /*N*/ 	nTotalEnd = nDataPos + nDataSize;
+@@ -131,7 +131,7 @@
+ /*N*/ 	}
+ /*N*/ 	else
+ /*N*/ 	{
+-/*N*/ 		ULONG nSizeTableLen;
++/*N*/ 		sal_uInt32 nSizeTableLen;
+ /*N*/ 		rStream >> nSizeTableLen;
+ /*N*/ 		pBuf = new BYTE[nSizeTableLen];
+ /*N*/ 		rStream.Read( pBuf, nSizeTableLen );
+@@ -173,7 +173,7 @@
+ /*N*/ void ScMultipleReadHeader::StartEntry()
+ /*N*/ {
+ /*N*/ 	ULONG nPos = rStream.Tell();
+-/*N*/ 	ULONG nEntrySize;
++/*N*/ 	sal_uInt32 nEntrySize;
+ /*N*/ 	(*pMemStream) >> nEntrySize;
+ /*N*/ 
+ /*N*/ 	nEntryEnd = nPos + nEntrySize;
+@@ -192,7 +192,7 @@
+ 
+ // -----------------------------------------------------------------------
+ 
+-/*N*/ ScMultipleWriteHeader::ScMultipleWriteHeader(SvStream& rNewStream, ULONG nDefault) :
++/*N*/ ScMultipleWriteHeader::ScMultipleWriteHeader(SvStream& rNewStream, sal_uInt32 nDefault) :
+ /*N*/ 	rStream( rNewStream ),
+ /*N*/ 	aMemStream( 4096, 4096 )
+ /*N*/ {
+@@ -208,7 +208,7 @@
+ /*N*/ 	ULONG nDataEnd = rStream.Tell();
+ /*N*/ 
+ /*N*/ 	rStream << (USHORT) SCID_SIZES;
+-/*N*/ 	rStream << aMemStream.Tell();
++/*N*/ 	rStream << static_cast<sal_uInt32>(aMemStream.Tell());
+ /*N*/ 	rStream.Write( aMemStream.GetData(), aMemStream.Tell() );
+ /*N*/ 
+ /*N*/ 	if ( nDataEnd - nDataPos != nDataSize )					// Default getroffen?
+@@ -224,7 +224,7 @@
+ /*N*/ void ScMultipleWriteHeader::EndEntry()
+ /*N*/ {
+ /*N*/ 	ULONG nPos = rStream.Tell();
+-/*N*/ 	aMemStream << nPos - nEntryStart;
++/*N*/ 	aMemStream << static_cast<sal_uInt32>(nPos - nEntryStart);
+ /*N*/ }
+ 
+ /*N*/ void ScMultipleWriteHeader::StartEntry()
+Index: binfilter/bf_sc/source/ui/app/sc_inputhdl.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_sc/source/ui/app/sc_inputhdl.cxx,v
+retrieving revision 1.5
+retrieving revision 1.5.70.1
+diff -u -r1.5 -r1.5.70.1
+--- binfilter/bf_sc/source/ui/app/sc_inputhdl.cxx	7 Sep 2005 18:46:14 -0000	1.5
++++ binfilter/bf_sc/source/ui/app/sc_inputhdl.cxx	28 Apr 2006 08:58:34 -0000	1.5.70.1
+@@ -2029,7 +2029,7 @@
+ /*?*/ 			ScDocument* pDoc = pActiveViewSh->GetViewData()->GetDocument();
+ /*?*/ 			SvNumberFormatter* pFormatter = pDoc->GetFormatTable();
+ /*?*/ 			// without conditional format, as in ScColumn::SetString
+-/*?*/ 			ULONG nFormat = pLastPattern->GetNumberFormat( pFormatter );
++/*?*/ 			sal_uInt32 nFormat = pLastPattern->GetNumberFormat( pFormatter );
+ /*?*/ 			double nVal;
+ /*?*/ 			if ( pFormatter->IsNumberFormat( aString, nFormat, nVal ) )
+ /*?*/ 			{
+Index: binfilter/bf_sc/source/ui/docshell/sc_docfunc.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_sc/source/ui/docshell/sc_docfunc.cxx,v
+retrieving revision 1.5
+retrieving revision 1.5.72.1
+diff -u -r1.5 -r1.5.72.1
+--- binfilter/bf_sc/source/ui/docshell/sc_docfunc.cxx	7 Sep 2005 19:07:03 -0000	1.5
++++ binfilter/bf_sc/source/ui/docshell/sc_docfunc.cxx	27 Apr 2006 11:38:29 -0000	1.5.72.1
+@@ -986,7 +986,7 @@
+ /*N*/ 	else		// (nur) auf englisches Zahlformat testen
+ /*N*/ 	{
+ /*?*/ 		SvNumberFormatter* pFormatter = pDoc->GetFormatTable();
+-/*?*/ 		ULONG nEnglish = pFormatter->GetStandardIndex(LANGUAGE_ENGLISH_US);
++/*?*/ 		sal_uInt32 nEnglish = pFormatter->GetStandardIndex(LANGUAGE_ENGLISH_US);
+ /*?*/ 		double fVal;
+ /*?*/ 		if ( pFormatter->IsNumberFormat( rText, nEnglish, fVal ) )
+ /*?*/ 			pNewCell = new ScValueCell( fVal );
+Index: binfilter/bf_sc/source/ui/docshell/sc_impex.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_sc/source/ui/docshell/sc_impex.cxx,v
+retrieving revision 1.7
+retrieving revision 1.7.10.1
+diff -u -r1.7 -r1.7.10.1
+--- binfilter/bf_sc/source/ui/docshell/sc_impex.cxx	7 Apr 2006 13:21:16 -0000	1.7
++++ binfilter/bf_sc/source/ui/docshell/sc_impex.cxx	27 Apr 2006 11:39:17 -0000	1.7.10.1
+@@ -803,7 +803,7 @@
+ /*M*/ 		//!	SetString mit Extra-Flag ???
+ /*M*/ 
+ /*M*/ 		SvNumberFormatter* pFormatter = pDoc->GetFormatTable();
+-/*M*/ 		ULONG nEnglish = pFormatter->GetStandardIndex(LANGUAGE_ENGLISH_US);
++/*M*/ 		sal_uInt32 nEnglish = pFormatter->GetStandardIndex(LANGUAGE_ENGLISH_US);
+ /*M*/ 		double fVal;
+ /*M*/ 		if ( pFormatter->IsNumberFormat( rStr, nEnglish, fVal ) )
+ /*M*/ 		{
+Index: binfilter/bf_sc/source/ui/unoobj/sc_cellsuno.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_sc/source/ui/unoobj/sc_cellsuno.cxx,v
+retrieving revision 1.4
+retrieving revision 1.4.72.1
+diff -u -r1.4 -r1.4.72.1
+--- binfilter/bf_sc/source/ui/unoobj/sc_cellsuno.cxx	7 Sep 2005 21:10:02 -0000	1.4
++++ binfilter/bf_sc/source/ui/unoobj/sc_cellsuno.cxx	27 Apr 2006 12:43:39 -0000	1.4.72.1
+@@ -1319,7 +1319,7 @@
+                 // Since the English formatter was constructed with
+                 // LANGUAGE_ENGLISH_US the "General" format has index key 0,
+                 // we don't have to query.
+-				ULONG nNumFmt = bEnglish ?
++				sal_uInt32 nNumFmt = bEnglish ?
+ //						pFormatter->GetStandardIndex(LANGUAGE_ENGLISH_US) :
+                         0 :
+ 						pDoc->GetNumberFormat( rPosition );
+Index: binfilter/bf_sc/source/ui/view/sc_tabvwsha.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_sc/source/ui/view/sc_tabvwsha.cxx,v
+retrieving revision 1.5
+retrieving revision 1.5.72.1
+diff -u -r1.5 -r1.5.72.1
+--- binfilter/bf_sc/source/ui/view/sc_tabvwsha.cxx	7 Sep 2005 21:38:27 -0000	1.5
++++ binfilter/bf_sc/source/ui/view/sc_tabvwsha.cxx	27 Apr 2006 13:34:03 -0000	1.5.72.1
+@@ -110,7 +110,7 @@
+ /*N*/ 		aStr += '=';
+ /*N*/ 
+ /*N*/ 		//	Anzahl im Standardformat, die anderen nach Cursorposition
+-/*N*/ 		ULONG nNumFmt = 0;
++/*N*/ 		sal_uInt32 nNumFmt = 0;
+ /*N*/ 		SvNumberFormatter* pFormatter = pDoc->GetFormatTable();
+ /*N*/ 		if ( eFunc != SUBTOTAL_FUNC_CNT && eFunc != SUBTOTAL_FUNC_CNT2 )
+ /*N*/ 		{
+@@ -525,7 +525,7 @@
+ /*N*/ 					//!	Auch bei Zahlformat "Text"? -> dann beim Editieren wegnehmen
+ /*N*/ 
+ /*?*/ 					SvNumberFormatter* pFormatter = pDoc->GetFormatTable();
+-/*?*/ 					ULONG nNumFmt;
++/*?*/ 					sal_uInt32 nNumFmt;
+ /*?*/ 					pDoc->GetNumberFormat( nPosX, nPosY, nTab, nNumFmt );
+ /*?*/ 					double fDummy;
+ /*?*/ 					if ( pFormatter->IsNumberFormat(aString, nNumFmt, fDummy) )
+Index: binfilter/bf_sch/source/core/sch_chartdoc.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_sch/source/core/sch_chartdoc.cxx,v
+retrieving revision 1.6
+retrieving revision 1.6.52.1
+diff -u -r1.6 -r1.6.52.1
+--- binfilter/bf_sch/source/core/sch_chartdoc.cxx	14 Dec 2005 14:33:48 -0000	1.6
++++ binfilter/bf_sch/source/core/sch_chartdoc.cxx	27 Apr 2006 11:41:29 -0000	1.6.52.1
+@@ -346,7 +346,7 @@
+ /*N*/ 		SchIOCompat aIO(rOut, STREAM_WRITE, 1);
+ /*N*/ 
+ /*N*/ 		// AF: Don't write VCItemPool any longer (01/2001)
+-/*N*/ 		rOut << (ULONG)0L;
++/*N*/ 		rOut << (sal_uInt32)0L;
+ /*N*/ 
+ 		/**************************************************************************
+ 		* Frueher (StarChart Version 3.0, File-Format Version 1) wurde hier das
+@@ -416,7 +416,7 @@
+ /*N*/ 	{
+ /*N*/ 		SchIOCompat aIO(rIn, STREAM_READ);
+ /*N*/ 
+-/*N*/ 		ULONG n;
++/*N*/ 		sal_uInt32 n;
+ /*N*/ 		rIn >> n;
+ /*N*/ 		// must be 0 or 1. Otherwise we have an error
+ /*N*/ 		// most probably a wrong password
+Index: binfilter/bf_sch/source/core/sch_chtmode2.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_sch/source/core/sch_chtmode2.cxx,v
+retrieving revision 1.8
+retrieving revision 1.8.28.1
+diff -u -r1.8 -r1.8.28.1
+--- binfilter/bf_sch/source/core/sch_chtmode2.cxx	9 Feb 2006 15:09:05 -0000	1.8
++++ binfilter/bf_sch/source/core/sch_chtmode2.cxx	27 Apr 2006 11:43:00 -0000	1.8.28.1
+@@ -2169,7 +2169,7 @@
+ /*N*/ 			{
+ /*N*/ 				BOOL bNeedMerge=FALSE;
+ /*N*/ 				String aFmtStr;
+-/*N*/ 				ULONG nId;
++/*N*/ 				sal_uInt32 nId;
+ /*N*/ 				if(nVersion <= 11)//ab V 12 X=Y=Z-Numberformatter!
+ /*N*/ 				{
+ /*?*/ 					SvNumberFormatter *pTmp = new SvNumberFormatter( ::legacy_binfilters::getLegacyProcessServiceFactory(),
+Index: binfilter/bf_sch/source/core/sch_memchrt.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_sch/source/core/sch_memchrt.cxx,v
+retrieving revision 1.9
+retrieving revision 1.9.28.1
+diff -u -r1.9 -r1.9.28.1
+--- binfilter/bf_sch/source/core/sch_memchrt.cxx	9 Feb 2006 15:09:23 -0000	1.9
++++ binfilter/bf_sch/source/core/sch_memchrt.cxx	27 Apr 2006 11:44:43 -0000	1.9.28.1
+@@ -201,12 +201,12 @@
+ /*N*/ 	nColCnt = nCols;
+ /*N*/ 	pData   = new double[nColCnt * nRowCnt];
+ /*N*/ 
+-/*N*/ 	pRowNumFmtId= new long [nRowCnt];
+-/*N*/ 	pColNumFmtId= new long [nColCnt];
++/*N*/ 	pRowNumFmtId= new sal_Int32 [nRowCnt];
++/*N*/ 	pColNumFmtId= new sal_Int32 [nColCnt];
+ /*N*/ 	InitNumFmt();
+ /*N*/ 
+-/*N*/ 	pRowTable	= new long [nRowCnt];
+-/*N*/ 	pColTable	= new long [nColCnt];
++/*N*/ 	pRowTable	= new sal_Int32 [nRowCnt];
++/*N*/ 	pColTable	= new sal_Int32 [nColCnt];
+ /*N*/ 	ResetTranslation(pRowTable,nRowCnt);
+ /*N*/ 	ResetTranslation(pColTable,nColCnt);
+ /*N*/ 
+@@ -284,10 +284,10 @@
+ /*N*/ 	aSomeData4  = ((SchMemChart&) rMemChart).SomeData4 ();
+ /*N*/ 	pData       = new double[nColCnt * nRowCnt];
+ /*N*/ 
+-/*N*/ 	pRowNumFmtId= new long [nRowCnt];
+-/*N*/ 	pColNumFmtId= new long [nColCnt];
+-/*N*/ 	pRowTable	= new long [nRowCnt];
+-/*N*/ 	pColTable	= new long [nColCnt];
++/*N*/ 	pRowNumFmtId= new sal_Int32 [nRowCnt];
++/*N*/ 	pColNumFmtId= new sal_Int32 [nColCnt];
++/*N*/ 	pRowTable	= new sal_Int32 [nRowCnt];
++/*N*/ 	pColTable	= new sal_Int32 [nColCnt];
+ /*N*/ 
+ /*N*/     aAppLink = rMemChart.aAppLink;
+ /*N*/ 	nLastSelInfoReturn = rMemChart.nLastSelInfoReturn;
+@@ -745,10 +745,10 @@
+ /*N*/ 
+ /*N*/ 	rIn >> nInt16; rMemChart.eDataType = (short)nInt16;
+ /*N*/ 
+-/*N*/ 	rMemChart.pRowNumFmtId	= new long [rMemChart.nRowCnt];
+-/*N*/ 	rMemChart.pColNumFmtId	= new long [rMemChart.nColCnt];
+-/*N*/ 	rMemChart.pRowTable		= new long [rMemChart.nRowCnt];
+-/*N*/ 	rMemChart.pColTable		= new long [rMemChart.nColCnt];
++/*N*/ 	rMemChart.pRowNumFmtId	= new sal_Int32 [rMemChart.nRowCnt];
++/*N*/ 	rMemChart.pColNumFmtId	= new sal_Int32 [rMemChart.nColCnt];
++/*N*/ 	rMemChart.pRowTable		= new sal_Int32 [rMemChart.nRowCnt];
++/*N*/ 	rMemChart.pColTable		= new sal_Int32 [rMemChart.nColCnt];
+ /*N*/ 
+ /*N*/ 	if(aIO.GetVersion()>=1)
+ /*N*/ 	{
+Index: binfilter/bf_sch/source/ui/unoidl/sch_ChXChartDocument.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_sch/source/ui/unoidl/sch_ChXChartDocument.cxx,v
+retrieving revision 1.5
+retrieving revision 1.5.70.1
+diff -u -r1.5 -r1.5.70.1
+--- binfilter/bf_sch/source/ui/unoidl/sch_ChXChartDocument.cxx	7 Sep 2005 23:10:16 -0000	1.5
++++ binfilter/bf_sch/source/ui/unoidl/sch_ChXChartDocument.cxx	27 Apr 2006 11:04:43 -0000	1.5.70.1
+@@ -1661,7 +1661,7 @@
+             short nColCount = pData->GetColCount();
+             aResult.realloc( nColCount );
+             sal_Int32* pSeq = aResult.getArray();
+-            const long* pTransArray = pData->GetColTranslation();
++            const sal_Int32* pTransArray = pData->GetColTranslation();
+             sal_Int32 i;
+ 
+             if( nTranslation == TRANS_COL &&
+@@ -1682,7 +1682,7 @@
+             short nRowCount = pData->GetRowCount();
+             aResult.realloc( nRowCount );
+             sal_Int32* pSeq = aResult.getArray();
+-            const long* pTransArray = pData->GetRowTranslation();
++            const sal_Int32* pTransArray = pData->GetRowTranslation();
+             sal_Int32 i;
+ 
+             if( nTranslation == TRANS_ROW &&
+Index: binfilter/bf_sd/source/core/sd_drawdoc.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_sd/source/core/sd_drawdoc.cxx,v
+retrieving revision 1.7
+retrieving revision 1.7.10.1
+diff -u -r1.7 -r1.7.10.1
+--- binfilter/bf_sd/source/core/sd_drawdoc.cxx	7 Apr 2006 13:23:05 -0000	1.7
++++ binfilter/bf_sd/source/core/sd_drawdoc.cxx	27 Apr 2006 12:05:38 -0000	1.7.10.1
+@@ -675,12 +675,12 @@
+ /*N*/ 		rOut << aJobSetup;
+ /*N*/ 	}
+ /*N*/ 
+-/*N*/ 	rOut << (ULONG) rDoc.eLanguage;
++/*N*/ 	rOut << (sal_uInt32) rDoc.eLanguage;
+ /*N*/ 
+ 	/**************************************************************************
+ 	* FrameViews schreiben
+ 	**************************************************************************/
+-/*N*/ 	ULONG nFrameViewCount = 0;
++/*N*/ 	sal_uInt32 nFrameViewCount = 0;
+ /*N*/ 	SdViewShell* pViewSh = NULL;
+ /*N*/ 	SfxViewShell* pSfxViewSh = NULL;
+ /*N*/ 	SfxViewFrame* pSfxViewFrame = SfxViewFrame::GetFirst(rDoc.pDocSh,
+@@ -741,7 +741,7 @@
+ /*N*/ 	rOut << rDoc.bCustomShow;
+ /*N*/ 
+ /*N*/ 	// Anzahl CustomShows schreiben
+-/*N*/ 	ULONG nCustomShowCount = 0;
++/*N*/ 	sal_uInt32 nCustomShowCount = 0;
+ /*N*/ 
+ /*N*/ 	if (rDoc.pCustomShowList)
+ /*N*/ 	{
+@@ -760,12 +760,12 @@
+ 		}
+ 
+ 		// Position der aktuellen CustomShow
+-		ULONG nCurPos = rDoc.pCustomShowList->GetCurPos();
++		sal_uInt32 nCurPos = rDoc.pCustomShowList->GetCurPos();
+ 		rOut << nCurPos;
+ 	}
+ 
+ /*N*/ 	// ab Version 15
+-/*N*/ 	rOut << (ULONG) rDoc.GetPageNumType();
++/*N*/ 	rOut << (sal_uInt32) rDoc.GetPageNumType();
+ /*N*/ 
+ /*N*/ 	// ab Version 17
+ /*N*/ 	rOut << rDoc.GetPresPause() << rDoc.IsPresShowLogo();
+@@ -882,7 +882,7 @@
+ /*N*/ 
+ /*N*/ 	if (rDoc.nFileFormatVersion >= 3)
+ /*N*/ 	{
+-/*N*/ 		ULONG nTmp;
++/*N*/ 		sal_uInt32 nTmp;
+ /*N*/ 		rIn >> nTmp;
+ /*N*/ 		rDoc.SetLanguage( (LanguageType) nTmp, EE_CHAR_LANGUAGE );
+ /*N*/ 	}
+@@ -910,7 +910,7 @@
+ /*N*/ 		const SvtSaveOptions aOptions;
+ /*N*/ 		BOOL bIsSaveDocView = aOptions.IsSaveDocView();
+ /*N*/ 
+-/*N*/ 		ULONG nFrameViewCount = 0;
++/*N*/ 		sal_uInt32 nFrameViewCount = 0;
+ /*N*/ 		rIn >> nFrameViewCount;
+ /*N*/ 
+ /*N*/ 		for (nCount=0; nCount<nFrameViewCount; nCount++)
+@@ -998,7 +998,7 @@
+ /*N*/ 		// CustomShow aktiv
+ /*N*/ 		rIn >> rDoc.bCustomShow;
+ /*N*/ 
+-/*N*/ 		ULONG nCustomShowCount = 0;
++/*N*/ 		sal_uInt32 nCustomShowCount = 0;
+ /*N*/ 		rIn >> nCustomShowCount;
+ /*N*/ 
+ /*N*/ 		if (nCustomShowCount > 0)
+@@ -1022,7 +1022,7 @@
+ 			}
+ 
+ 			// Aktuelle CustomShow selektieren
+-			ULONG nCurPos;
++			sal_uInt32 nCurPos;
+ 			rIn >> nCurPos;
+ 			rDoc.pCustomShowList->Seek(nCurPos);
+ 		}
+@@ -1030,14 +1030,14 @@
+ /*N*/ 
+ /*N*/ 	if (rDoc.nFileFormatVersion >= 15)
+ /*N*/ 	{
+-/*N*/ 		ULONG nTmp;
++/*N*/ 		sal_uInt32 nTmp;
+ /*N*/ 		rIn >> nTmp;
+ /*N*/ 		rDoc.SetPageNumType( (SvxNumType) nTmp );
+ /*N*/ 	}
+ /*N*/ 
+ /*N*/ 	if (rDoc.nFileFormatVersion >= 17)
+ /*N*/ 	{
+-/*N*/ 		ULONG	nPauseSec;
++/*N*/ 		sal_uInt32 nPauseSec;
+ /*N*/ 		BOOL	bShowLogo;
+ /*N*/ 
+ /*N*/ 		rIn >> nPauseSec >> bShowLogo;
+Index: binfilter/bf_sd/source/core/sd_sdpage2.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_sd/source/core/sd_sdpage2.cxx,v
+retrieving revision 1.8
+retrieving revision 1.8.72.1
+diff -u -r1.8 -r1.8.72.1
+--- binfilter/bf_sd/source/core/sd_sdpage2.cxx	7 Sep 2005 23:24:33 -0000	1.8
++++ binfilter/bf_sd/source/core/sd_sdpage2.cxx	27 Apr 2006 12:08:04 -0000	1.8.72.1
+@@ -364,10 +364,10 @@
+ /*N*/ 
+ /*N*/ 	// Selektionskennung ist nicht persistent, wird nicht geschrieben
+ /*N*/ 
+-/*N*/ 	ULONG nULTemp;
+-/*N*/ 	nULTemp = (ULONG)eFadeSpeed;
++/*N*/ 	sal_uInt32 nULTemp;
++/*N*/ 	nULTemp = (sal_uInt32)eFadeSpeed;
+ /*N*/ 	rOut << nULTemp;
+-/*N*/ 	nULTemp = (ULONG)eFadeEffect;
++/*N*/ 	nULTemp = (sal_uInt32)eFadeEffect;
+ /*N*/ 	rOut << nULTemp;
+ /*N*/ 	rOut << bManual;
+ /*N*/ 	rOut << nTime;
+@@ -478,7 +478,7 @@
+ /*N*/ 
+ /*N*/ 	// Selektionskennung ist nicht persistent, wird nicht gelesen
+ /*N*/ 
+-/*N*/ 	ULONG nULTemp;
++/*N*/ 	sal_uInt32 nULTemp;
+ /*N*/ 	rIn >> nULTemp; eFadeSpeed	= (FadeSpeed)nULTemp;
+ /*N*/ 	rIn >> nULTemp; eFadeEffect = (presentation::FadeEffect)nULTemp;
+ /*N*/ 	rIn >> bManual;
+Index: binfilter/bf_sd/source/ui/inc/AccessiblePageShape.hxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_sd/source/ui/inc/AccessiblePageShape.hxx,v
+retrieving revision 1.3
+retrieving revision 1.3.72.1
+diff -u -r1.3 -r1.3.72.1
+--- binfilter/bf_sd/source/ui/inc/AccessiblePageShape.hxx	8 Sep 2005 00:27:42 -0000	1.3
++++ binfilter/bf_sd/source/ui/inc/AccessiblePageShape.hxx	28 Apr 2006 08:58:34 -0000	1.3.72.1
+@@ -114,7 +114,7 @@
+ 	//=====  XAccessibleContext  ==============================================
+ 
+     ///	Returns always 0 because there can be no children.
+-    virtual long SAL_CALL
++    virtual sal_Int32 SAL_CALL
+     	getAccessibleChildCount (void)
+         throw ();
+         
+Index: binfilter/bf_sd/source/ui/unoidl/sd_unoobj.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_sd/source/ui/unoidl/sd_unoobj.cxx,v
+retrieving revision 1.4
+retrieving revision 1.4.70.1
+diff -u -r1.4 -r1.4.70.1
+--- binfilter/bf_sd/source/ui/unoidl/sd_unoobj.cxx	8 Sep 2005 01:27:27 -0000	1.4
++++ binfilter/bf_sd/source/ui/unoidl/sd_unoobj.cxx	28 Apr 2006 08:58:35 -0000	1.4.70.1
+@@ -156,7 +156,7 @@
+ 
+ ///////////////////////////////////////////////////////////////////////
+ 
+-DECLARE_STL_STDKEY_MAP(sal_uInt32, SfxExtItemPropertySetInfo*, SdExtPropertySetInfoCache);
++DECLARE_STL_STDKEY_MAP(sal_uIntPtr, SfxExtItemPropertySetInfo*, SdExtPropertySetInfoCache);
+ static SdExtPropertySetInfoCache gImplImpressPropertySetInfoCache;
+ static SdExtPropertySetInfoCache gImplDrawPropertySetInfoCache;
+ 
+@@ -431,7 +431,7 @@
+ ::com::sun::star::uno::Reference< ::com::sun::star::beans::XPropertySetInfo > SAL_CALL SdXShape::getPropertySetInfo()
+ 	throw(::com::sun::star::uno::RuntimeException)
+ {
+-	sal_uInt32 nObjId = (sal_uInt32)mpShape->getPropertyMap();
++	sal_uIntPtr nObjId = (sal_uIntPtr)mpShape->getPropertyMap();
+ 	SfxExtItemPropertySetInfo* pInfo = NULL;
+ 
+ 	SdExtPropertySetInfoCache* pCache = (mpModel && mpModel->IsImpressDocument()) ? 
+Index: binfilter/bf_sd/source/ui/view/sd_frmview.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_sd/source/ui/view/sd_frmview.cxx,v
+retrieving revision 1.6
+retrieving revision 1.6.70.1
+diff -u -r1.6 -r1.6.70.1
+--- binfilter/bf_sd/source/ui/view/sd_frmview.cxx	8 Sep 2005 01:40:53 -0000	1.6
++++ binfilter/bf_sd/source/ui/view/sd_frmview.cxx	27 Apr 2006 16:05:09 -0000	1.6.70.1
+@@ -321,7 +321,7 @@
+ 
+ /*N*/ SvStream& operator << (SvStream& rOut, const FrameView& rView)
+ /*N*/ {
+-/*N*/ 	ULONG nULTemp;
++/*N*/ 	sal_uInt32 nULTemp;
+ /*N*/ 
+ /*N*/ 	// #95895# translate view-layer name to standard-ASCII
+ /*N*/ 	// like in MakeUniqueLayerNames()
+@@ -384,9 +384,9 @@
+ /*N*/ 	rOut << rView.bNoColors;
+ /*N*/ 	rOut << rView.bNoAttribs;
+ /*N*/ 	rOut << rView.aVisArea;
+-/*N*/ 	nULTemp = (ULONG) rView.ePageKind;            rOut << nULTemp;
++/*N*/ 	nULTemp = (sal_uInt32) rView.ePageKind;            rOut << nULTemp;
+ /*N*/ 	rOut << rView.nSelectedPage;
+-/*N*/ 	nULTemp = (ULONG) rView.eStandardEditMode;    rOut << nULTemp;
++/*N*/ 	nULTemp = (sal_uInt32) rView.eStandardEditMode;    rOut << nULTemp;
+ /*N*/ 	rOut << rView.bLayerMode;
+ /*N*/ 	rOut << rView.bQuickEdit;
+ /*N*/ 	rOut << rView.bDragWithCopy;
+@@ -396,11 +396,11 @@
+ /*N*/ 	rOut << rView.bDoubleClickTextEdit;
+ /*N*/ 	rOut << rView.bClickChangeRotation;
+ /*N*/ 
+-/*N*/ 	nULTemp = (ULONG) rView.eNotesEditMode;       rOut << nULTemp;
+-/*N*/ 	nULTemp = (ULONG) rView.eHandoutEditMode;     rOut << nULTemp;
++/*N*/ 	nULTemp = (sal_uInt32) rView.eNotesEditMode;       rOut << nULTemp;
++/*N*/ 	nULTemp = (sal_uInt32) rView.eHandoutEditMode;     rOut << nULTemp;
+ /*N*/ 
+-/*N*/ 	rOut << rView.nDrawMode;
+-/*N*/ 	rOut << rView.nPreviewDrawMode;
++/*N*/ 	rOut << static_cast<sal_uInt32>(rView.nDrawMode);
++/*N*/ 	rOut << static_cast<sal_uInt32>(rView.nPreviewDrawMode);
+ /*N*/ 
+ /*N*/ 	rOut << rView.bShowPreviewInPageMode;
+ /*N*/ 	rOut << rView.bShowPreviewInMasterPageMode;
+@@ -443,7 +443,7 @@
+ /*N*/ 
+ /*N*/ 	if (aIO.GetVersion() >= 3)
+ /*N*/ 	{
+-/*N*/ 		ULONG nULTemp;
++/*N*/ 		sal_uInt32 nULTemp;
+ /*N*/ 		rIn >> rView.aVisArea;
+ /*N*/ 		rIn >> nULTemp;          rView.ePageKind = (PageKind) nULTemp;
+ /*N*/ 		rIn >> rView.nSelectedPage;
+@@ -478,15 +478,18 @@
+ /*N*/ 
+ /*N*/ 	if (aIO.GetVersion() >= 8)
+ /*N*/ 	{
+-/*N*/ 		ULONG nULTemp;
++/*N*/ 		sal_uInt32 nULTemp;
+ /*N*/ 		rIn >> nULTemp; rView.eNotesEditMode   = (EditMode) nULTemp;
+ /*N*/ 		rIn >> nULTemp; rView.eHandoutEditMode = (EditMode) nULTemp;
+ /*N*/ 	}
+ /*N*/ 
+ /*N*/ 	if (aIO.GetVersion() >= 9)
+ /*N*/ 	{
+-/*N*/ 		rIn >> rView.nDrawMode;
+-/*N*/ 		rIn >> rView.nPreviewDrawMode;
++/*N*/ 		sal_uInt32 nTemp;
++/*N*/ 		rIn >> nTemp;
++/*N*/ 		rView.nDrawMode = nTemp;
++/*N*/ 		rIn >> nTemp;
++/*N*/ 		rView.nPreviewDrawMode = nTemp;
+ /*N*/ 	}
+ /*N*/ 
+ /*N*/ 	if (aIO.GetVersion() >= 10)
+Index: binfilter/bf_sfx2/source/appl/sfx2_sfxpicklist.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_sfx2/source/appl/sfx2_sfxpicklist.cxx,v
+retrieving revision 1.4
+retrieving revision 1.4.70.1
+diff -u -r1.4 -r1.4.70.1
+--- binfilter/bf_sfx2/source/appl/sfx2_sfxpicklist.cxx	8 Sep 2005 02:29:51 -0000	1.4
++++ binfilter/bf_sfx2/source/appl/sfx2_sfxpicklist.cxx	27 Apr 2006 15:24:14 -0000	1.4.70.1
+@@ -219,7 +219,7 @@
+ //STRIP001 		return 0;
+ //STRIP001 }
+ 
+-/*N*/ SfxPickList*	SfxPickList::GetOrCreate( const ULONG nMenuSize )
++/*N*/ SfxPickList*	SfxPickList::GetOrCreate( const sal_uInt32 nMenuSize )
+ /*N*/ {
+ /*N*/ 	if ( !pUniqueInstance )
+ /*N*/ 	{
+Index: binfilter/bf_sfx2/source/bastyp/sfx2_fltfnc.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_sfx2/source/bastyp/sfx2_fltfnc.cxx,v
+retrieving revision 1.11
+retrieving revision 1.11.68.1
+diff -u -r1.11 -r1.11.68.1
+--- binfilter/bf_sfx2/source/bastyp/sfx2_fltfnc.cxx	8 Sep 2005 02:34:30 -0000	1.11
++++ binfilter/bf_sfx2/source/bastyp/sfx2_fltfnc.cxx	27 Apr 2006 14:16:34 -0000	1.11.68.1
+@@ -380,7 +380,7 @@
+ 
+ //----------------------------------------------------------------
+ 
+-/*?*/ sal_uInt32 SfxFilterContainer::Execute( SfxMedium& rMedium, SfxFrame*& pFrame) const
++/*?*/ ULONG SfxFilterContainer::Execute( SfxMedium& rMedium, SfxFrame*& pFrame) const
+ /*?*/ {DBG_BF_ASSERT(0, "STRIP"); return 0;//STRIP001 
+ //STRIP001 	return ERRCODE_ABORT;
+ /*?*/ }
+@@ -476,7 +476,7 @@
+ 	 Ermitelt einen Filter nach seiner ClipboardID. Diese steckt im Storage.
+  */
+ /*N*/ IMPL_CONTAINER_LOOP(
+-/*N*/     GetFilter4ClipBoardId, sal_uInt32, aArg && pFilter->GetFormat() == aArg )
++/*N*/     GetFilter4ClipBoardId, ULONG, aArg && pFilter->GetFormat() == aArg )
+ 
+ #ifdef MAC
+ #define CONDITION \
+@@ -570,7 +570,7 @@
+ 
+ //-------------------------------------------------------------------------
+ 
+-/*?*/ sal_uInt32 SfxFilterContainer::GetFilter4Content(
++/*?*/ ULONG SfxFilterContainer::GetFilter4Content(
+ /*?*/     SfxMedium& rMedium, const SfxFilter** ppFilter,
+ /*?*/ 	SfxFilterFlags, SfxFilterFlags ) const
+ /*?*/ {
+@@ -690,7 +690,7 @@
+ 
+ //----------------------------------------------------------------
+ 
+-/*N*/ sal_uInt32 SfxFactoryFilterContainer::GetFilter4Content(
++/*N*/ ULONG SfxFactoryFilterContainer::GetFilter4Content(
+ /*N*/     SfxMedium& rMedium, const SfxFilter** ppFilter, SfxFilterFlags nMust, SfxFilterFlags nDont ) const
+ /*N*/ {
+ /*N*/ 	SFX_ITEMSET_ARG( rMedium.GetItemSet(), pTargetItem, SfxStringItem,
+@@ -701,7 +701,7 @@
+ /*N*/ 
+ /*N*/     if( pFunc )
+ /*N*/     {
+-/*N*/         sal_uInt32 nErr = (*pFunc)(rMedium, ppFilter, nMust, nDont);
++/*N*/         ULONG nErr = (*pFunc)(rMedium, ppFilter, nMust, nDont);
+ /*N*/         DBG_ASSERT( !*ppFilter ||
+ /*N*/                     (((*ppFilter)->GetFilterFlags() & nMust ) == nMust &&
+ /*N*/                      ((*ppFilter)->GetFilterFlags() & nDont ) == 0 ),
+@@ -803,12 +803,12 @@
+ 
+ //----------------------------------------------------------------
+ 
+-/*N*/ sal_uInt32  SfxFilterMatcher::GuessFilterIgnoringContent(
++/*N*/ ULONG SfxFilterMatcher::GuessFilterIgnoringContent(
+ /*N*/     SfxMedium& rMedium, const SfxFilter**ppFilter,
+ /*N*/     SfxFilterFlags nMust, SfxFilterFlags nDont ) const
+ /*N*/ {
+ /*N*/     String aFileName = rMedium.GetName();
+-/*N*/     sal_uInt32 nErr = ERRCODE_NONE;
++/*N*/     ULONG nErr = ERRCODE_NONE;
+ /*N*/ 	const SfxFilter* pFilter = *ppFilter;
+ /*N*/ 	const INetURLObject& rObj = rMedium.GetURLObject();
+ /*N*/ 
+@@ -924,7 +924,7 @@
+ 
+ //----------------------------------------------------------------
+ 
+-/*N*/ sal_uInt32  SfxFilterMatcher::GuessFilter(
++/*N*/ ULONG SfxFilterMatcher::GuessFilter(
+ /*N*/     SfxMedium& rMedium, const SfxFilter**ppFilter,
+ /*N*/     SfxFilterFlags nMust, SfxFilterFlags nDont ) const
+ /*N*/ {
+@@ -1274,10 +1274,10 @@
+ 
+ //----------------------------------------------------------------
+ 
+-/*STRIP003*/ sal_uInt32 SfxFilterMatcher::GetFilter4Content(
++/*STRIP003*/ ULONG SfxFilterMatcher::GetFilter4Content(
+ /*STRIP003*/     SfxMedium& rMedium, const SfxFilter** ppFilter,  SfxFilterFlags nMust, SfxFilterFlags nDont, sal_Bool bOnlyGoodOnes ) const
+ /*STRIP003*/ {
+-/*STRIP003*/     sal_uInt32 nErr = ERRCODE_NONE;
++/*STRIP003*/     ULONG nErr = ERRCODE_NONE;
+ /*STRIP003*/     SfxFContainerList_Impl& rList = pImpl->aList;
+ /*STRIP003*/     sal_uInt16 nCount = (sal_uInt16)rList.Count();
+ /*STRIP003*/     for( sal_uInt16 n = 0; n<nCount; n++ )
+@@ -1327,7 +1327,7 @@
+ /*N*/ IMPL_LOOP( GetFilter4EA, const String& )
+ /*N*/ IMPL_LOOP( GetFilter4Extension, const String& )
+ /*N*/ IMPL_LOOP( GetFilter4Protocol, SfxMedium& )
+-/*N*/ IMPL_LOOP( GetFilter4ClipBoardId, sal_uInt32 )
++/*N*/ IMPL_LOOP( GetFilter4ClipBoardId, ULONG )
+ /*N*/ IMPL_LOOP( GetFilter, const String& )
+ /*N*/ IMPL_LOOP( GetFilter4FilterName, const String& )
+ //STRIP001 IMPL_LOOP( GetFilter4UIName, const String& )
+Index: binfilter/bf_sfx2/source/doc/sfx2_docfac.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_sfx2/source/doc/sfx2_docfac.cxx,v
+retrieving revision 1.7
+retrieving revision 1.7.70.1
+diff -u -r1.7 -r1.7.70.1
+--- binfilter/bf_sfx2/source/doc/sfx2_docfac.cxx	8 Sep 2005 03:09:37 -0000	1.7
++++ binfilter/bf_sfx2/source/doc/sfx2_docfac.cxx	27 Apr 2006 15:36:34 -0000	1.7.70.1
+@@ -168,7 +168,7 @@
+ /*?*/ 	const String&   	rName,          // Klartext-Name f"ur Anzeige im Dialog
+ /*?*/ 	const String&       rWildcard,      // Default-Wildcards
+ /*?*/ 	SfxFilterFlags      eType,          // SFX_FILTER_...
+-/*?*/ 	sal_uInt32               lFormat,        // Clipboard-Format
++/*?*/ 	ULONG lFormat,        // Clipboard-Format
+ /*?*/ 	const String&       rMacType,       // 4-Byte-Type f"ur Apple Macintosh
+ /*?*/ 	const String&       rTypeName,      // String-Type f"ur OS/2
+ /*?*/ 	sal_uInt16              nIconId,        // Resource-Id f"ur Icon
+Index: binfilter/bf_sfx2/source/doc/sfx2_docfilt.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_sfx2/source/doc/sfx2_docfilt.cxx,v
+retrieving revision 1.6
+retrieving revision 1.6.70.1
+diff -u -r1.6 -r1.6.70.1
+--- binfilter/bf_sfx2/source/doc/sfx2_docfilt.cxx	8 Sep 2005 03:10:05 -0000	1.6
++++ binfilter/bf_sfx2/source/doc/sfx2_docfilt.cxx	27 Apr 2006 15:36:34 -0000	1.6.70.1
+@@ -92,7 +92,7 @@
+ /*N*/ SfxFilter::SfxFilter(  const String &rName,
+ /*N*/ 					   const String &rWildCard,
+ /*N*/ 					   SfxFilterFlags nType,
+-/*N*/ 					   sal_uInt32 lFmt,
++/*N*/ 					   ULONG lFmt,
+ /*N*/ 					   const String &rMacTyp,
+ /*N*/ 					   const String &rTypNm,
+ /*N*/ 					   sal_uInt16 nIcon,
+Index: binfilter/bf_sfx2/source/doc/sfx2_docinf.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_sfx2/source/doc/sfx2_docinf.cxx,v
+retrieving revision 1.5
+retrieving revision 1.5.72.1
+diff -u -r1.5 -r1.5.72.1
+--- binfilter/bf_sfx2/source/doc/sfx2_docinf.cxx	8 Sep 2005 03:10:21 -0000	1.5
++++ binfilter/bf_sfx2/source/doc/sfx2_docinf.cxx	27 Apr 2006 15:36:34 -0000	1.5.72.1
+@@ -353,11 +353,11 @@
+ /*N*/ 				   60* aDateTime.GetMin() +
+ /*N*/ 				   60L*60* aDateTime.GetHour() ));
+ /*N*/ 
+-/*N*/ 	BigInt aUlongMax((ULONG)ULONG_MAX);
++/*N*/ 	BigInt aUlongMax(SAL_MAX_UINT32);
+ /*N*/ 	aUlongMax += 1;
+ /*N*/ 
+-/*N*/ 	rStream<<(UINT32)(aTime % aUlongMax) ;
+-/*N*/ 	rStream<<(UINT32)(aTime / aUlongMax);
++/*N*/ 	rStream<<rStream<<static_cast<sal_uInt32>(static_cast<ULONG>(aTime % aUlongMax));
++/*N*/ 	rStream<<rStream<<static_cast<sal_uInt32>(static_cast<ULONG>(aTime / aUlongMax));
+ /*N*/ 	return rStream.GetErrorCode();
+ /*N*/ }
+ 
+@@ -368,7 +368,7 @@
+ /*N*/ 	UINT32 nLow, nHigh;
+ /*N*/ 	rStream >> nLow;
+ /*N*/ 	rStream >> nHigh;
+-/*N*/ 	BigInt aUlongMax( (ULONG)ULONG_MAX );
++/*N*/ 	BigInt aUlongMax( SAL_MAX_UINT32 );
+ /*N*/ 	aUlongMax += 1;
+ /*N*/ 	BigInt aTime = aUlongMax * BigInt( nHigh );
+ /*N*/ 	aTime += nLow;
+Index: binfilter/bf_sfx2/source/inc/sfxpicklist.hxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_sfx2/source/inc/sfxpicklist.hxx,v
+retrieving revision 1.4
+retrieving revision 1.4.72.1
+diff -u -r1.4 -r1.4.72.1
+--- binfilter/bf_sfx2/source/inc/sfxpicklist.hxx	8 Sep 2005 03:34:48 -0000	1.4
++++ binfilter/bf_sfx2/source/inc/sfxpicklist.hxx	27 Apr 2006 15:24:21 -0000	1.4.72.1
+@@ -81,7 +81,7 @@
+ 	sal_uInt32						m_nAllowedMenuSize;
+ 	::com::sun::star::uno::Reference< ::com::sun::star::util::XStringWidth > m_xStringLength;
+ 
+-							SfxPickList( ULONG nMenuSize );
++							SfxPickList( sal_uInt32 nMenuSize );
+ //STRIP001 							~SfxPickList();
+ 
+ 	static osl::Mutex*		GetOrCreateMutex();
+@@ -92,7 +92,7 @@
+ //STRIP001 	void					RemovePickListEntries();
+ 
+ 	public:
+-		static SfxPickList*	GetOrCreate( const ULONG nMenuSize );
++		static SfxPickList*	GetOrCreate( const sal_uInt32 nMenuSize );
+ //STRIP001 		static SfxPickList*	Get();
+ //STRIP001 		static void			Delete();
+ 
+Index: binfilter/bf_starmath/source/starmath_document.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_starmath/source/starmath_document.cxx,v
+retrieving revision 1.8
+retrieving revision 1.8.70.1
+diff -u -r1.8 -r1.8.70.1
+--- binfilter/bf_starmath/source/starmath_document.cxx	8 Sep 2005 04:01:52 -0000	1.8
++++ binfilter/bf_starmath/source/starmath_document.cxx	27 Apr 2006 14:00:41 -0000	1.8.70.1
+@@ -1813,9 +1813,9 @@
+ /*N*/ 	{
+ /*N*/ 		SvStream*	 pSvStream = aTempStream;
+ /*N*/ 		char		 cTag;
+-/*N*/ 		ULONG		 lIdent, lVersion;
++/*N*/ 		sal_uInt32	 lIdent, lVersion;
+ /*N*/ 		long		 lTime;
+-/*N*/ 		ULONG		 lDate;
++/*N*/ 		sal_uInt32	 lDate;
+ /*N*/ 		String		 aBuffer;
+ /*N*/         ByteString   aByteStr;
+ /*N*/
+@@ -1914,9 +1914,9 @@
+ 
+         SvStream*    pSvStream = aTempStream;
+         char         cTag;
+-        ULONG        lIdent, lVersion;
++        sal_uInt32   lIdent, lVersion;
+         long         lTime;
+-        ULONG        lDate;
++        sal_uInt32   lDate;
+         UINT32       lDataSize;
+         String       aBuffer;
+         ByteString   aByteStr;
+Index: binfilter/bf_starmath/source/starmath_parse.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_starmath/source/starmath_parse.cxx,v
+retrieving revision 1.8
+retrieving revision 1.8.24.1
+diff -u -r1.8 -r1.8.24.1
+--- binfilter/bf_starmath/source/starmath_parse.cxx	7 Mar 2006 10:13:24 -0000	1.8
++++ binfilter/bf_starmath/source/starmath_parse.cxx	27 Apr 2006 14:00:41 -0000	1.8.24.1
+@@ -594,7 +594,7 @@
+ /*N*/ 	}
+ /*N*/ 	else if (aRes.TokenType & KParseType::BOOLEAN)
+ /*N*/ 	{
+-/*N*/ 		long   &rnEndPos = aRes.EndPos;
++/*N*/ 		sal_Int32   &rnEndPos = aRes.EndPos;
+ /*N*/ 		String	aName( BufferString.Copy( nRealStart, rnEndPos - nRealStart ) );
+ /*N*/ 		if (2 >= aName.Len())
+ /*N*/ 		{
+@@ -698,7 +698,7 @@
+ /*N*/ 	}
+ /*N*/ 	else if (aRes.TokenType & KParseType::ONE_SINGLE_CHAR)
+ /*N*/ 	{
+-/*N*/ 		long   &rnEndPos = aRes.EndPos;
++/*N*/ 		sal_Int32 &rnEndPos = aRes.EndPos;
+ /*N*/ 		String	aName( BufferString.Copy( nRealStart, rnEndPos - nRealStart ) );
+ /*N*/ 
+ /*N*/ 		if (1 == aName.Len())
+Index: binfilter/bf_starmath/source/starmath_utility.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_starmath/source/starmath_utility.cxx,v
+retrieving revision 1.7
+retrieving revision 1.7.70.1
+diff -u -r1.7 -r1.7.70.1
+--- binfilter/bf_starmath/source/starmath_utility.cxx	8 Sep 2005 04:07:16 -0000	1.7
++++ binfilter/bf_starmath/source/starmath_utility.cxx	27 Apr 2006 14:00:41 -0000	1.7.70.1
+@@ -78,17 +78,17 @@
+ /*N*/ SvStream& operator << (SvStream& rStream, const SmFace& rFont)
+ /*N*/ {
+ /*N*/ 	rStream.WriteByteString(ExportString(rFont.GetName()));
+-/*N*/ 	rStream << (ULONG)rFont.GetFamily();
+-/*N*/     rStream << (ULONG)GetSOStoreTextEncoding( rFont.GetCharSet() );
+-/*N*/ 	rStream << (ULONG)rFont.GetWeight();
+-/*N*/ 	rStream << (ULONG)rFont.GetItalic();
++/*N*/ 	rStream << (sal_uInt32)rFont.GetFamily();
++/*N*/     rStream << (sal_uInt32)GetSOStoreTextEncoding( rFont.GetCharSet() );
++/*N*/ 	rStream << (sal_uInt32)rFont.GetWeight();
++/*N*/ 	rStream << (sal_uInt32)rFont.GetItalic();
+ /*N*/ 
+ /*N*/ 	return rStream;
+ /*N*/ }
+ 
+ /*N*/ SvStream& operator >> (SvStream& rStream, SmFace& rFont)
+ /*N*/ {
+-/*N*/ 	ULONG	nData;
++/*N*/ 	sal_uInt32 nData;
+ /*N*/     ByteString  aByteStr;
+ /*N*/ 
+ /*N*/     rStream.ReadByteString( aByteStr );
+@@ -108,7 +108,7 @@
+ /*?*/ void ReadSM20Font(SvStream& rStream, Font& rFont)
+ /*?*/ {
+ /*?*/ 	BOOL	bData;
+-/*?*/ 	ULONG	nData;
++/*?*/ 	sal_uInt32 nData;
+ /*?*/     ByteString  aByteStr;
+ /*?*/ 
+ /*?*/     rStream.ReadByteString( aByteStr );
+Index: binfilter/bf_svx/source/editeng/editdoc.hxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_svx/source/editeng/editdoc.hxx,v
+retrieving revision 1.4
+retrieving revision 1.4.72.1
+diff -u -r1.4 -r1.4.72.1
+--- binfilter/bf_svx/source/editeng/editdoc.hxx	8 Sep 2005 05:17:39 -0000	1.4
++++ binfilter/bf_svx/source/editeng/editdoc.hxx	27 Apr 2006 12:26:03 -0000	1.4.72.1
+@@ -459,7 +459,7 @@
+ 
+ class ParaPortion;
+ 
+-SV_DECL_VARARR( CharPosArray, long, 0, CHARPOSGROW )//STRIP008 ;
++SV_DECL_VARARR( CharPosArray, sal_Int32, 0, CHARPOSGROW )//STRIP008 ;
+ 
+ // ------------------------------------------------------------------------
+ // class EditLine
+Index: binfilter/bf_svx/source/editeng/editobj2.hxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_svx/source/editeng/editobj2.hxx,v
+retrieving revision 1.3
+retrieving revision 1.3.70.1
+diff -u -r1.3 -r1.3.70.1
+--- binfilter/bf_svx/source/editeng/editobj2.hxx	8 Sep 2005 05:18:17 -0000	1.3
++++ binfilter/bf_svx/source/editeng/editobj2.hxx	27 Apr 2006 12:16:58 -0000	1.3.70.1
+@@ -193,7 +193,7 @@
+ 	BOOL					bOwnerOfPool;
+ 	XParaPortionList*		pPortionInfo;
+ 	
+-	ULONG					nObjSettings;
++	sal_uInt32				nObjSettings;
+ 	USHORT 					nMetric;
+ 	USHORT 					nVersion;
+ 	USHORT					nUserType;
+Index: binfilter/bf_svx/source/editeng/impedit.hxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_svx/source/editeng/impedit.hxx,v
+retrieving revision 1.5
+retrieving revision 1.5.72.1
+diff -u -r1.5 -r1.5.72.1
+--- binfilter/bf_svx/source/editeng/impedit.hxx	8 Sep 2005 05:20:38 -0000	1.5
++++ binfilter/bf_svx/source/editeng/impedit.hxx	27 Apr 2006 12:10:21 -0000	1.5.72.1
+@@ -248,7 +248,7 @@
+ 
+ 
+ 	long				nInvMore;
+-	sal_uInt32			nControl;
++	ULONG				nControl;
+ 	sal_uInt32			nTravelXPos;
+     sal_uInt16          nExtraCursorFlags;
+     sal_uInt16          nCursorBidiLevel;
+Index: binfilter/bf_svx/source/editeng/svx_editdoc2.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_svx/source/editeng/svx_editdoc2.cxx,v
+retrieving revision 1.6
+retrieving revision 1.6.70.1
+diff -u -r1.6 -r1.6.70.1
+--- binfilter/bf_svx/source/editeng/svx_editdoc2.cxx	8 Sep 2005 05:22:41 -0000	1.6
++++ binfilter/bf_svx/source/editeng/svx_editdoc2.cxx	27 Apr 2006 12:26:03 -0000	1.6.70.1
+@@ -94,7 +94,7 @@
+ 
+ /*N*/ DBG_NAME( EE_ParaPortion )
+ 
+-/*N*/ SV_IMPL_VARARR( CharPosArray, long );
++/*N*/ SV_IMPL_VARARR( CharPosArray, sal_Int32 );
+ 
+ /*
+ 
+Index: binfilter/bf_svx/source/editeng/svx_editeng.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_svx/source/editeng/svx_editeng.cxx,v
+retrieving revision 1.7
+retrieving revision 1.7.70.2
+diff -u -r1.7 -r1.7.70.2
+--- binfilter/bf_svx/source/editeng/svx_editeng.cxx	8 Sep 2005 05:22:56 -0000	1.7
++++ binfilter/bf_svx/source/editeng/svx_editeng.cxx	27 Apr 2006 12:26:03 -0000	1.7.70.2
+@@ -1256,7 +1256,7 @@
+ /*N*/ 		pImpEditEngine->FormatAndUpdate();
+ /*N*/ }
+ 
+-/*N*/ sal_uInt32 EditEngine::Read( SvStream& rInput, EETextFormat eFormat, SvKeyValueIterator* pHTTPHeaderAttrs /* = NULL */ )
++/*N*/ ULONG EditEngine::Read( SvStream& rInput, EETextFormat eFormat, SvKeyValueIterator* pHTTPHeaderAttrs /* = NULL */ )
+ /*N*/ {DBG_BF_ASSERT(0, "STRIP");return 0; //STRIP001 
+ //STRIP001 	DBG_CHKTHIS( EditEngine, 0 );
+ //STRIP001 	sal_Bool bUndoEnabled = pImpEditEngine->IsUndoEnabled();
+@@ -1269,7 +1269,7 @@
+ /*N*/ }
+ 
+ #ifndef SVX_LIGHT
+-/*N*/ sal_uInt32 EditEngine::Write( SvStream& rOutput, EETextFormat eFormat )
++/*N*/ ULONG EditEngine::Write( SvStream& rOutput, EETextFormat eFormat )
+ /*N*/ {DBG_BF_ASSERT(0, "STRIP"); return 0;//STRIP001 
+ //STRIP001 	DBG_CHKTHIS( EditEngine, 0 );
+ //STRIP001 	EditPaM aStartPaM( pImpEditEngine->GetEditDoc().GetStartPaM() );
+@@ -2333,7 +2333,7 @@
+ // =====================================================================
+ // ======================   Virtuelle Methoden   =======================
+ // =====================================================================
+-/*N*/ void __EXPORT EditEngine::DrawingText( const Point&, const XubString&, USHORT nTextStart, USHORT nTextLen, const long*, const SvxFont&, sal_uInt16 nPara, sal_uInt16 nIndex, BYTE nRightToLeft )
++/*N*/ void __EXPORT EditEngine::DrawingText( const Point&, const XubString&, USHORT nTextStart, USHORT nTextLen, const sal_Int32*, const SvxFont&, sal_uInt16 nPara, sal_uInt16 nIndex, BYTE nRightToLeft )
+ /*N*/ {
+ /*N*/ 	DBG_CHKTHIS( EditEngine, 0 );
+ /*N*/ }
+Index: binfilter/bf_svx/source/editeng/svx_editobj.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_svx/source/editeng/svx_editobj.cxx,v
+retrieving revision 1.8
+retrieving revision 1.8.26.1
+diff -u -r1.8 -r1.8.26.1
+--- binfilter/bf_svx/source/editeng/svx_editobj.cxx	9 Feb 2006 15:09:38 -0000	1.8
++++ binfilter/bf_svx/source/editeng/svx_editobj.cxx	27 Apr 2006 12:16:42 -0000	1.8.26.1
+@@ -483,7 +483,7 @@
+ /*N*/ 	USHORT nWhich = Which();
+ /*N*/ 	rOStream << nWhich;
+ /*N*/ 
+-/*N*/ 	ULONG nStructSz = 0;
++/*N*/ 	sal_uInt32 nStructSz = 0;
+ /*N*/ 	rOStream << nStructSz;
+ /*N*/ 
+ /*N*/ 	// Eigene Daten:
+@@ -507,7 +507,7 @@
+ /*N*/ 	USHORT nWhich;
+ /*N*/ 	rIStream >> nWhich;
+ /*N*/ 
+-/*N*/ 	ULONG nStructSz;
++/*N*/ 	sal_uInt32 nStructSz;
+ /*N*/ 	rIStream >> nStructSz;
+ /*N*/ 
+ /*N*/ 	DBG_ASSERT( ( nWhich == 0x22 /*EE_FORMAT_BIN300*/ ) || ( nWhich == EE_FORMAT_BIN ), "CreateTextObject: Unbekanntes Objekt!" );
+@@ -1842,11 +1842,11 @@
+ /*N*/ 	GetPool()->Load( rIStream );
+ /*N*/ 
+ /*N*/ 	// Die Anzahl der Absaetze...
+-/*N*/ 	ULONG nParagraphs;
++/*N*/ 	sal_uInt32 nParagraphs;
+ /*N*/ 	rIStream >> nParagraphs;
+ /*N*/ 
+ /*N*/ 	// Die einzelnen Absaetze...
+-/*N*/ 	for ( ULONG nPara = 0; nPara < nParagraphs; nPara++ )
++/*N*/ 	for ( sal_uInt32 nPara = 0; nPara < nParagraphs; nPara++ )
+ /*N*/ 	{
+ /*N*/ 		ContentInfo* pC = CreateAndInsertContent();
+ /*N*/ 
+@@ -1863,13 +1863,13 @@
+ /*N*/ 		pC->GetParaAttribs().Load( rIStream );
+ /*N*/ 
+ /*N*/ 		// Die Anzahl der Attribute...
+-/*N*/ 		ULONG nAttribs;
++/*N*/ 		sal_uInt32 nAttribs;
+ /*N*/ 		rIStream >> nAttribs;
+ /*N*/ 
+ /*N*/ 		// Und die einzelnen Attribute
+ /*N*/ 		// Items als Surregate => immer 8 Byte pro Attrib
+ /*N*/ 		// Which = 2; Surregat = 2; Start = 2; End = 2;
+-/*N*/ 		for ( ULONG nAttr = 0; nAttr < nAttribs; nAttr++ )
++/*N*/ 		for ( sal_uInt32 nAttr = 0; nAttr < nAttribs; nAttr++ )
+ /*N*/ 		{
+ /*N*/ 			USHORT nWhich, nStart, nEnd;
+ /*N*/ 			const SfxPoolItem* pItem;
+Index: binfilter/bf_svx/source/editeng/svx_impedit2.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_svx/source/editeng/svx_impedit2.cxx,v
+retrieving revision 1.7
+retrieving revision 1.7.70.1
+diff -u -r1.7 -r1.7.70.1
+--- binfilter/bf_svx/source/editeng/svx_impedit2.cxx	8 Sep 2005 05:26:27 -0000	1.7
++++ binfilter/bf_svx/source/editeng/svx_impedit2.cxx	27 Apr 2006 12:19:11 -0000	1.7.70.1
+@@ -2786,14 +2786,14 @@
+ /*?*/ 	return aPaM;
+ /*N*/ }
+ 
+-/*N*/ ULONG ImpEditEngine::GetTextHeight() const
++/*N*/ sal_uInt32 ImpEditEngine::GetTextHeight() const
+ /*N*/ {
+ /*N*/ 	DBG_ASSERT( GetUpdateMode(), "Sollte bei Update=FALSE nicht verwendet werden: GetTextHeight" );
+ /*N*/ 	DBG_ASSERT( IsFormatted() || IsFormatting(), "GetTextHeight: Nicht formatiert" );
+ /*N*/ 	return nCurTextHeight;
+ /*N*/ }
+ 
+-/*N*/ ULONG ImpEditEngine::CalcTextWidth( BOOL bIgnoreExtraSpace )
++/*N*/ sal_uInt32 ImpEditEngine::CalcTextWidth( BOOL bIgnoreExtraSpace )
+ /*N*/ {
+ /*N*/ 	// Wenn noch nicht formatiert und nicht gerade dabei.
+ /*N*/ 	// Wird in der Formatierung bei AutoPageSize gerufen.
+@@ -2856,10 +2856,10 @@
+ /*?*/ 		nMaxWidth = 0;
+ /*N*/ 
+ /*N*/ 	nMaxWidth++; // Ein breiter, da in CreateLines bei >= umgebrochen wird.
+-/*N*/ 	return (ULONG)nMaxWidth;
++/*N*/ 	return (sal_uInt32)nMaxWidth;
+ /*N*/ }
+ 
+-/*N*/ ULONG ImpEditEngine::CalcLineWidth( ParaPortion* pPortion, EditLine* pLine, BOOL bIgnoreExtraSpace )
++/*N*/ sal_uInt32 ImpEditEngine::CalcLineWidth( ParaPortion* pPortion, EditLine* pLine, BOOL bIgnoreExtraSpace )
+ /*N*/ {
+ /*N*/ 	USHORT nPara = GetEditDoc().GetPos( pPortion->GetNode() );
+ /*N*/     ULONG nOldLayoutMode = GetRefDevice()->GetLayoutMode();
+@@ -2869,7 +2869,7 @@
+ /*N*/     SvxAdjust eJustification = GetJustification( nPara );
+ /*N*/ 
+ /*N*/     // Berechnung der Breite ohne die Indents...
+-/*N*/ 	ULONG nWidth = 0;
++/*N*/ 	sal_uInt32 nWidth = 0;
+ /*N*/     USHORT nPos = pLine->GetStart();
+ /*N*/ 	for ( USHORT nTP = pLine->GetStartPortion(); nTP <= pLine->GetEndPortion(); nTP++ )
+ /*N*/ 	{
+@@ -2907,10 +2907,10 @@
+ /*N*/     return nWidth;
+ /*N*/ }
+ 
+-/*N*/ ULONG ImpEditEngine::CalcTextHeight()
++/*N*/ sal_uInt32 ImpEditEngine::CalcTextHeight()
+ /*N*/ {
+ /*N*/ 	DBG_ASSERT( GetUpdateMode(), "Sollte bei Update=FALSE nicht verwendet werden: CalcTextHeight" );
+-/*N*/ 	ULONG nY = 0;
++/*N*/ 	sal_uInt32 nY = 0;
+ /*N*/ 	for ( USHORT nPortion = 0; nPortion < GetParaPortions().Count(); nPortion++ )
+ /*N*/ 		nY += GetParaPortions()[nPortion]->GetHeight();
+ /*N*/ 	return nY;
+Index: binfilter/bf_svx/source/editeng/svx_impedit3.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_svx/source/editeng/svx_impedit3.cxx,v
+retrieving revision 1.8
+retrieving revision 1.8.40.1
+diff -u -r1.8 -r1.8.40.1
+--- binfilter/bf_svx/source/editeng/svx_impedit3.cxx	19 Jan 2006 17:28:27 -0000	1.8
++++ binfilter/bf_svx/source/editeng/svx_impedit3.cxx	27 Apr 2006 12:26:03 -0000	1.8.40.1
+@@ -777,7 +777,7 @@
+ /*N*/ 	SvxFont aTmpFont( pNode->GetCharAttribs().GetDefFont() );
+ /*N*/ 
+ /*N*/ 	sal_Bool bCalcCharPositions = sal_True;
+-/*N*/ 	long* pBuf = new long[ pNode->Len() ];
++/*N*/ 	sal_Int32* pBuf = new sal_Int32[ pNode->Len() ];
+ /*N*/ 
+ /*N*/ 	sal_Bool bSameLineAgain = sal_False;	// Fuer TextRanger, wenn sich die Hoehe aendert.
+ /*N*/ 	TabInfo aCurrentTab;
+@@ -2932,8 +2932,8 @@
+ /*N*/ 								XubString aText;
+ /*N*/                                 USHORT nTextStart = 0;
+ /*N*/                                 USHORT nTextLen = 0;
+-/*N*/ 								const long* pDXArray = 0;
+-/*N*/ 								long* pTmpDXArray = 0;
++/*N*/ 								const sal_Int32* pDXArray = 0;
++/*N*/ 								sal_Int32* pTmpDXArray = 0;
+ /*N*/ 
+ /*N*/ 								if ( pTextPortion->GetKind() == PORTIONKIND_TEXT )
+ /*N*/ 								{
+@@ -2951,7 +2951,7 @@
+ /*?*/                                     nTextStart = 0;
+ /*?*/                                     nTextLen = aText.Len();
+ /*?*/ 
+-/*?*/ 									pTmpDXArray = new long[ aText.Len() ];
++/*?*/ 									pTmpDXArray = new sal_Int32[ aText.Len() ];
+ /*?*/ 									pDXArray = pTmpDXArray;
+ /*?*/ 									Font aOldFont( GetRefDevice()->GetFont() );
+ /*?*/ 									aTmpFont.SetPhysFont( GetRefDevice() );
+Index: binfilter/bf_svx/source/editeng/svx_impedit4.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_svx/source/editeng/svx_impedit4.cxx,v
+retrieving revision 1.7
+retrieving revision 1.7.72.1
+diff -u -r1.7 -r1.7.72.1
+--- binfilter/bf_svx/source/editeng/svx_impedit4.cxx	8 Sep 2005 05:27:00 -0000	1.7
++++ binfilter/bf_svx/source/editeng/svx_impedit4.cxx	27 Apr 2006 12:26:03 -0000	1.7.72.1
+@@ -1284,7 +1284,7 @@
+ /*N*/ 	if ( pPortionInfo && ( (long)pPortionInfo->GetPaperWidth() == aPaperSize.Width() )
+ /*N*/ 			&& ( pPortionInfo->GetRefMapMode() == GetRefDevice()->GetMapMode() ) )
+ /*N*/ 	{
+-/*?*/ 		if ( ( pPortionInfo->GetRefDevPtr() == (sal_uInt32)GetRefDevice() ) ||
++/*?*/ 		if ( ( pPortionInfo->GetRefDevPtr() == (sal_uIntPtr)GetRefDevice() ) ||
+ /*?*/ 			 ( ( pPortionInfo->GetRefDevType() == OUTDEV_VIRDEV ) &&
+ /*?*/ 			   ( GetRefDevice()->GetOutDevType() == OUTDEV_VIRDEV ) ) )
+ /*?*/ 		bUsePortionInfo = sal_True;
+Index: binfilter/bf_svx/source/items/svx_flditem.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_svx/source/items/svx_flditem.cxx,v
+retrieving revision 1.9
+retrieving revision 1.9.10.1
+diff -u -r1.9 -r1.9.10.1
+--- binfilter/bf_svx/source/items/svx_flditem.cxx	7 Apr 2006 13:26:42 -0000	1.9
++++ binfilter/bf_svx/source/items/svx_flditem.cxx	27 Apr 2006 10:24:29 -0000	1.9.10.1
+@@ -80,7 +80,7 @@
+ #include "so3/staticbaseurl.hxx"
+ namespace binfilter {
+ 
+-#define FRAME_MARKER	(ULONG)0x21981357
++#define FRAME_MARKER	(sal_uInt32)0x21981357
+ #define CHARSET_MARKER	(FRAME_MARKER+1)
+ 
+ // -----------------------------------------------------------------------
+@@ -415,7 +415,7 @@
+ /*N*/ void SvxURLField::Load( SvPersistStream & rStm )
+ /*N*/ {
+ /*N*/ 	USHORT nFormat;
+-/*N*/ 	ULONG nFrameMarker, nCharSetMarker;
++/*N*/ 	sal_uInt32 nFrameMarker, nCharSetMarker;
+ /*N*/ 	long nUlongSize = (long)sizeof(ULONG);
+ /*N*/ 	String aTmpURL;
+ /*N*/ 
+@@ -696,7 +696,7 @@
+ /*N*/         break;
+ /*N*/ 	}
+ /*N*/ 
+-/*N*/     ULONG nFormatKey;
++/*N*/     sal_uInt32 nFormatKey;
+ /*N*/ 
+ /*N*/ 	switch( eTmpFormat )
+ /*N*/ 	{
+Index: binfilter/bf_svx/source/items/svx_frmitems.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_svx/source/items/svx_frmitems.cxx,v
+retrieving revision 1.7
+retrieving revision 1.7.38.1
+diff -u -r1.7 -r1.7.38.1
+--- binfilter/bf_svx/source/items/svx_frmitems.cxx	20 Jan 2006 11:38:46 -0000	1.7
++++ binfilter/bf_svx/source/items/svx_frmitems.cxx	27 Apr 2006 10:19:20 -0000	1.7.38.1
+@@ -505,8 +505,8 @@
+ 
+ // -----------------------------------------------------------------------
+ 
+-/*N*/ SvxLRSpaceItem::SvxLRSpaceItem( const sal_Int32 nLeft, const sal_Int32 nRight,
+-/*N*/ 								const sal_Int32 nTLeft, const short nOfset,
++/*N*/ SvxLRSpaceItem::SvxLRSpaceItem( const long nLeft, const long nRight,
++/*N*/ 								const long nTLeft, const short nOfset,
+ /*N*/ 								const sal_uInt16 nId ) :
+ /*N*/ 
+ /*N*/ 	SfxPoolItem( nId ),
+Index: binfilter/bf_svx/source/items/svx_svxfont.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_svx/source/items/svx_svxfont.cxx,v
+retrieving revision 1.6
+retrieving revision 1.6.72.1
+diff -u -r1.6 -r1.6.72.1
+--- binfilter/bf_svx/source/items/svx_svxfont.cxx	8 Sep 2005 06:20:45 -0000	1.6
++++ binfilter/bf_svx/source/items/svx_svxfont.cxx	27 Apr 2006 10:27:41 -0000	1.6.72.1
+@@ -478,7 +478,7 @@
+ /*N*/ }
+ 
+ /*N*/ Size SvxFont::QuickGetTextSize( const OutputDevice *pOut, const XubString &rTxt,
+-/*N*/ 						 const USHORT nIdx, const USHORT nLen, long* pDXArray ) const
++/*N*/ 						 const USHORT nIdx, const USHORT nLen, sal_Int32* pDXArray ) const
+ /*N*/ {
+ /*N*/ 	if ( !IsCaseMap() && !IsKern() )
+ /*N*/ 		return Size( pOut->GetTextArray( rTxt, pDXArray, nIdx, nLen ),
+@@ -565,7 +565,7 @@
+ 
+ /*N*/ void SvxFont::QuickDrawText( OutputDevice *pOut,
+ /*N*/ 	const Point &rPos, const XubString &rTxt,
+-/*N*/ 	const xub_StrLen nIdx, const xub_StrLen nLen, const long* pDXArray ) const
++/*N*/ 	const xub_StrLen nIdx, const xub_StrLen nLen, const sal_Int32* pDXArray ) const
+ /*N*/ {
+ /*N*/ 	// Font muss ins OutputDevice selektiert sein...
+ /*N*/ 	if ( !IsCaseMap() && !IsCapital() && !IsKern() && !IsEsc() )
+Index: binfilter/bf_svx/source/items/svx_textitem.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_svx/source/items/svx_textitem.cxx,v
+retrieving revision 1.8
+retrieving revision 1.8.10.1
+diff -u -r1.8 -r1.8.10.1
+--- binfilter/bf_svx/source/items/svx_textitem.cxx	7 Apr 2006 13:27:19 -0000	1.8
++++ binfilter/bf_svx/source/items/svx_textitem.cxx	27 Apr 2006 10:29:34 -0000	1.8.10.1
+@@ -464,7 +464,7 @@
+ /*N*/     // #96441# Kach for EditEngine, only set while creating clipboard stream.
+ /*N*/     if ( bEnableStoreUnicodeNames )
+ /*N*/     {
+-/*N*/         ULONG nMagic = STORE_UNICODE_MAGIC_MARKER;
++/*N*/         sal_uInt32 nMagic = STORE_UNICODE_MAGIC_MARKER;
+ /*N*/         rStrm << nMagic;
+ /*N*/         rStrm.WriteByteString( aStoreFamilyName, RTL_TEXTENCODING_UNICODE );
+ /*N*/ 	    rStrm.WriteByteString( GetStyleName(), RTL_TEXTENCODING_UNICODE );
+@@ -498,7 +498,7 @@
+ /*N*/ 
+ /*N*/     // Check if we have stored unicode
+ /*N*/     ULONG nStreamPos = rStrm.Tell();
+-/*N*/     ULONG nMagic = STORE_UNICODE_MAGIC_MARKER;
++/*N*/     sal_uInt32 nMagic = STORE_UNICODE_MAGIC_MARKER;
+ /*N*/     rStrm >> nMagic;
+ /*N*/     if ( nMagic == STORE_UNICODE_MAGIC_MARKER )
+ /*N*/     {
+Index: binfilter/bf_svx/source/outliner/outleeng.hxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_svx/source/outliner/outleeng.hxx,v
+retrieving revision 1.3
+retrieving revision 1.3.72.1
+diff -u -r1.3 -r1.3.72.1
+--- binfilter/bf_svx/source/outliner/outleeng.hxx	8 Sep 2005 06:41:59 -0000	1.3
++++ binfilter/bf_svx/source/outliner/outleeng.hxx	28 Apr 2006 08:58:35 -0000	1.3.72.1
+@@ -61,7 +61,7 @@
+ 	virtual void 		ParagraphDeleted( USHORT nDeletedParagraph );
+ 	
+ 	// #101498#
+-	virtual void 		DrawingText(const Point& rStartPos, const XubString& rText, USHORT nTextStart, USHORT nTextLen, const long* pDXArray, const SvxFont& rFont, USHORT nPara, USHORT nIndex, BYTE nRightToLeft);
++	virtual void 		DrawingText(const Point& rStartPos, const XubString& rText, USHORT nTextStart, USHORT nTextLen, const sal_Int32* pDXArray, const SvxFont& rFont, USHORT nPara, USHORT nIndex, BYTE nRightToLeft);
+ 
+ //STRIP001 	virtual	void 		StyleSheetChanged( SfxStyleSheet* pStyle );
+ 	virtual void 		ParaAttribsChanged( USHORT nPara );
+Index: binfilter/bf_svx/source/outliner/svx_outleeng.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_svx/source/outliner/svx_outleeng.cxx,v
+retrieving revision 1.4
+retrieving revision 1.4.72.1
+diff -u -r1.4 -r1.4.72.1
+--- binfilter/bf_svx/source/outliner/svx_outleeng.cxx	8 Sep 2005 06:43:13 -0000	1.4
++++ binfilter/bf_svx/source/outliner/svx_outleeng.cxx	28 Apr 2006 08:58:35 -0000	1.4.72.1
+@@ -149,7 +149,7 @@
+ /*N*/ }
+ 
+ // #101498#
+-/*N*/ void OutlinerEditEng::DrawingText( const Point& rStartPos, const XubString& rText, USHORT nTextStart, USHORT nTextLen, const long* pDXArray, const SvxFont& rFont, USHORT nPara, USHORT nIndex, BYTE nRightToLeft)
++/*N*/ void OutlinerEditEng::DrawingText( const Point& rStartPos, const XubString& rText, USHORT nTextStart, USHORT nTextLen, const sal_Int32* pDXArray, const SvxFont& rFont, USHORT nPara, USHORT nIndex, BYTE nRightToLeft)
+ /*N*/ {
+ /*N*/ 	if ( nIndex == 0 )
+ /*N*/ 	{
+Index: binfilter/bf_svx/source/outliner/svx_outliner.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_svx/source/outliner/svx_outliner.cxx,v
+retrieving revision 1.8
+retrieving revision 1.8.70.1
+diff -u -r1.8 -r1.8.70.1
+--- binfilter/bf_svx/source/outliner/svx_outliner.cxx	8 Sep 2005 06:43:46 -0000	1.8
++++ binfilter/bf_svx/source/outliner/svx_outliner.cxx	28 Apr 2006 08:58:36 -0000	1.8.70.1
+@@ -2023,7 +2023,7 @@
+ /*N*/ }
+ 
+ // #101498#
+-/*N*/ void Outliner::DrawingText( const Point& rStartPos, const XubString& rText, USHORT nTextStart, USHORT nTextLen, const long* pDXArray,const SvxFont& rFont, USHORT nPara, USHORT nIndex, BYTE nRightToLeft)
++/*N*/ void Outliner::DrawingText( const Point& rStartPos, const XubString& rText, USHORT nTextStart, USHORT nTextLen, const sal_Int32* pDXArray,const SvxFont& rFont, USHORT nPara, USHORT nIndex, BYTE nRightToLeft)
+ /*N*/ {
+ /*N*/ 	DBG_CHKTHIS(Outliner,0);
+ /*N*/ 	
+Index: binfilter/bf_svx/source/outliner/svx_outlobj.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_svx/source/outliner/svx_outlobj.cxx,v
+retrieving revision 1.6
+retrieving revision 1.6.72.1
+diff -u -r1.6 -r1.6.72.1
+--- binfilter/bf_svx/source/outliner/svx_outlobj.cxx	8 Sep 2005 06:44:14 -0000	1.6
++++ binfilter/bf_svx/source/outliner/svx_outlobj.cxx	28 Apr 2006 08:58:36 -0000	1.6.72.1
+@@ -136,7 +136,7 @@
+ /*N*/ void OutlinerParaObject::Store(SvStream& rStream ) const
+ /*N*/ {
+ /*N*/ 	rStream << nCount;
+-/*N*/ 	rStream << (ULONG) 0x42345678;
++/*N*/ 	rStream << (sal_uInt32) 0x42345678;
+ /*N*/ 	pText->Store( rStream );
+ /*N*/ 
+ /*N*/ 	for( USHORT nPos=0; nPos < nCount; nPos++ )
+@@ -150,10 +150,10 @@
+ /*N*/ 	OutlinerParaObject* pPObj = NULL;
+ /*N*/ 	USHORT nVersion = 0;
+ /*N*/ 
+-/*N*/ 	ULONG nCount;
++/*N*/ 	sal_uInt32 nCount;
+ /*N*/ 	rStream >> nCount;
+ /*N*/ 
+-/*N*/ 	ULONG nSyncRef;
++/*N*/ 	sal_uInt32 nSyncRef;
+ /*N*/ 	rStream >> nSyncRef;
+ /*N*/ 	if( nSyncRef == 0x12345678 )
+ /*N*/ 		nVersion = 1;
+@@ -175,7 +175,7 @@
+ /*N*/ 			{
+ /*N*/ 				EditTextObject* pText = EditTextObject::Create( rStream, NULL );
+ /*N*/ 				DBG_ASSERT(pText,"CreateEditTextObject failed")
+-/*N*/ 				ULONG nSync = 0;
++/*N*/ 				sal_uInt32 nSync = 0;
+ /*N*/ 				rStream >> nSync;
+ /*N*/ 				DBG_ASSERT(nSync==nSyncRef,"Stream out of sync")
+ /*N*/ 				USHORT nDepth;
+@@ -219,7 +219,7 @@
+ /*N*/ 				nCurPara++;
+ /*N*/ 				if( nCount )
+ /*N*/ 				{
+-/*N*/ 					ULONG nSync = 0;
++/*N*/ 					sal_uInt32 nSync = 0;
+ /*N*/ 					rStream >> nSync;
+ /*N*/ 					DBG_ASSERT(nSync==nSyncRef,"Stream out of sync")
+ /*N*/ 				}
+Index: binfilter/bf_svx/source/svdraw/svx_svdmodel.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_svx/source/svdraw/svx_svdmodel.cxx,v
+retrieving revision 1.8
+retrieving revision 1.8.70.1
+diff -u -r1.8 -r1.8.70.1
+--- binfilter/bf_svx/source/svdraw/svx_svdmodel.cxx	8 Sep 2005 06:57:34 -0000	1.8
++++ binfilter/bf_svx/source/svdraw/svx_svdmodel.cxx	28 Apr 2006 08:58:36 -0000	1.8.70.1
+@@ -1684,8 +1684,8 @@
+ 
+ /*N*/ void SdrModel::WriteData(SvStream& rOut) const
+ /*N*/ {
+-/*N*/ 	const ULONG nOldCompressMode = nStreamCompressMode;
+-/*N*/ 	ULONG		nNewCompressMode = nStreamCompressMode;
++/*N*/ 	const sal_uInt32 nOldCompressMode = nStreamCompressMode;
++/*N*/ 	sal_uInt32 nNewCompressMode = nStreamCompressMode;
+ /*N*/ 
+ /*N*/ 	if( SOFFICE_FILEFORMAT_40 <= rOut.GetVersion() )
+ /*N*/ 	{
+Index: binfilter/bf_svx/source/svdraw/svx_svdoattr.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_svx/source/svdraw/svx_svdoattr.cxx,v
+retrieving revision 1.5
+retrieving revision 1.5.70.1
+diff -u -r1.5 -r1.5.70.1
+--- binfilter/bf_svx/source/svdraw/svx_svdoattr.cxx	8 Sep 2005 06:58:20 -0000	1.5
++++ binfilter/bf_svx/source/svdraw/svx_svdoattr.cxx	28 Apr 2006 08:58:37 -0000	1.5.70.1
+@@ -1084,11 +1084,11 @@
+ /*N*/ 	nSttWdt /= 2;
+ /*N*/ 
+ /*N*/ 	// Lieber etwas mehr, dafuer keine Wurzel ziehen
+-/*N*/ 	long nSttAdd = Max(nSttWdt, nSttHgt);
++/*N*/ 	sal_Int32 nSttAdd = Max(nSttWdt, nSttHgt);
+ /*N*/ 	nSttAdd *= 3;
+ /*N*/ 	nSttAdd /= 2;
+ /*N*/ 
+-/*N*/ 	long nEndWdt = ((const XLineEndWidthItem&)(rSet.Get(XATTR_LINEENDWIDTH))).GetValue();
++/*N*/ 	sal_Int32 nEndWdt = ((const XLineEndWidthItem&)(rSet.Get(XATTR_LINEENDWIDTH))).GetValue();
+ /*N*/ 
+ /*N*/ 	if(nEndWdt < 0)
+ /*N*/ 		nEndWdt = -nLineWdt * nEndWdt / 100; // <0 = relativ
+Index: binfilter/bf_svx/source/svdraw/svx_svdopath.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_svx/source/svdraw/svx_svdopath.cxx,v
+retrieving revision 1.5
+retrieving revision 1.5.68.1
+diff -u -r1.5 -r1.5.68.1
+--- binfilter/bf_svx/source/svdraw/svx_svdopath.cxx	8 Sep 2005 07:01:06 -0000	1.5
++++ binfilter/bf_svx/source/svdraw/svx_svdopath.cxx	28 Apr 2006 08:58:37 -0000	1.5.68.1
+@@ -79,6 +79,8 @@
+ // #104018# replace macros above with type-safe methods
+ inline sal_Int32 ImplTwipsToMM(sal_Int32 nVal) { return ((nVal * 127 + 36) / 72); }
+ inline sal_Int32 ImplMMToTwips(sal_Int32 nVal) { return ((nVal * 72 + 63) / 127); }
++inline sal_Int64 ImplTwipsToMM(sal_Int64 nVal) { return ((nVal * 127 + 36) / 72); }
++inline sal_Int64 ImplMMToTwips(sal_Int64 nVal) { return ((nVal * 72 + 63) / 127); }
+ inline double ImplTwipsToMM(double fVal) { return (fVal * (127.0 / 72.0)); }
+ inline double ImplMMToTwips(double fVal) { return (fVal * (72.0 / 127.0)); }
+ 
+Index: binfilter/bf_svx/source/xoutdev/svx__xfont.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_svx/source/xoutdev/svx__xfont.cxx,v
+retrieving revision 1.6
+retrieving revision 1.6.72.1
+diff -u -r1.6 -r1.6.72.1
+--- binfilter/bf_svx/source/xoutdev/svx__xfont.cxx	8 Sep 2005 07:37:56 -0000	1.6
++++ binfilter/bf_svx/source/xoutdev/svx__xfont.cxx	27 Apr 2006 15:45:25 -0000	1.6.72.1
+@@ -187,7 +187,7 @@
+ 
+ // #101498# Helper method ImpGetTextLength to get text length taking into account
+ // hor/vertical and BIDI, especially right-to-left.
+-/*N*/ sal_Int32 ImpGetTextLength(OutputDevice* pOut, DrawPortionInfo* pInfo, long* pDXArray, 
++/*N*/ sal_Int32 ImpGetTextLength(OutputDevice* pOut, DrawPortionInfo* pInfo, sal_Int32* pDXArray, 
+ /*N*/ 	xub_StrLen nIndex, xub_StrLen nLen)
+ /*N*/ {
+ /*N*/ 	sal_Bool bRightToLeft = pInfo->IsRTL();
+@@ -266,7 +266,7 @@
+ /*N*/ 	sal_Bool bToLastPoint, sal_Bool bDraw, sal_Bool bIsShadow)
+ /*N*/ {
+ /*N*/ 	Font aFont = pInfo->rFont;
+-/*N*/ 	const long* pDXArray = pInfo->pDXArray;
++/*N*/ 	const sal_Int32* pDXArray = pInfo->pDXArray;
+ /*N*/ 	sal_Bool bUseBreakIterator(sal_False);
+ /*N*/ 
+ /*N*/ 	Reference < ::com::sun::star::i18n::XBreakIterator > xBreak;
+@@ -348,7 +348,7 @@
+ /*N*/ 		pDXArray = NULL;
+ /*N*/ 	}
+ /*N*/ 
+-/*N*/ 	nTextWidth = ImpGetTextLength(pOut, pInfo, (long*) pDXArray, 0, pInfo->nTextLen);
++/*N*/ 	nTextWidth = ImpGetTextLength(pOut, pInfo, const_cast<sal_Int32*>(pDXArray), 0, pInfo->nTextLen);
+ /*N*/ 
+ /*N*/ 	if ( eFormTextAdjust != XFT_LEFT && nAbsStart <= 0 )
+ /*N*/ 	{
+@@ -443,7 +443,7 @@
+ /*N*/ 		fLen = sqrt(fDx * fDx + fDy * fDy);
+ /*N*/ 		nLen = (long) (fLen + 0.5);
+ /*N*/ 
+-/*N*/ 		nChar1Len = ImpGetTextLength(pOut, pInfo, (long*) pDXArray, nChar, nGlyphLen);
++/*N*/ 		nChar1Len = ImpGetTextLength(pOut, pInfo, const_cast<sal_Int32*>(pDXArray), nChar, nGlyphLen);
+ /*N*/ 
+ /*N*/ 		double fXDist, fYDist;
+ /*N*/ 		double fCos = fDx;
+@@ -498,7 +498,7 @@
+ /*N*/ 						CharacterIteratorMode::SKIPCELL, 1, nDone) - (nChar + pInfo->nTextStart + nCnt);
+ /*N*/ 				}
+ /*N*/ 
+-/*N*/ 				nTextLen = ImpGetTextLength(pOut, pInfo, (long*) pDXArray, nChar, nCnt + nNextGlyphLen);
++/*N*/ 				nTextLen = ImpGetTextLength(pOut, pInfo, const_cast<sal_Int32*>(pDXArray), nChar, nCnt + nNextGlyphLen);
+ /*N*/ 
+ /*N*/ 				nCnt += nNextGlyphLen;
+ /*N*/ 			}
+@@ -606,7 +606,7 @@
+ /*?*/ 					{
+ /*?*/ 						long nW;
+ /*?*/ 
+-/*?*/ 						nW = ImpGetTextLength(pOut, pInfo, (long*) pDXArray, nChar, i);
++/*?*/ 						nW = ImpGetTextLength(pOut, pInfo, const_cast<sal_Int32*>(pDXArray), nChar, i);
+ /*?*/ 
+ /*?*/ 						aPolyPos.X() += (long) (fDx * nW / fLen);
+ /*?*/ 						aPolyPos.Y() += (long) (fDy * nW / fLen);
+@@ -657,7 +657,7 @@
+ /*?*/ 					{
+ /*?*/ 						long nW;
+ /*?*/ 
+-/*?*/ 						nW = ImpGetTextLength(pOut, pInfo, (long*) pDXArray, nChar + i, nNextGlyphLen);
++/*?*/ 						nW = ImpGetTextLength(pOut, pInfo, const_cast<sal_Int32*>(pDXArray), nChar + i, nNextGlyphLen);
+ /*?*/ 
+ /*?*/ 						aPolyPos.X() -= nW / 2;
+ /*?*/ 
+Index: binfilter/bf_svx/source/xoutdev/svx_xtabdash.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_svx/source/xoutdev/svx_xtabdash.cxx,v
+retrieving revision 1.6
+retrieving revision 1.6.72.1
+diff -u -r1.6 -r1.6.72.1
+--- binfilter/bf_svx/source/xoutdev/svx_xtabdash.cxx	8 Sep 2005 07:42:49 -0000	1.6
++++ binfilter/bf_svx/source/xoutdev/svx_xtabdash.cxx	27 Apr 2006 15:45:26 -0000	1.6.72.1
+@@ -199,10 +199,10 @@
+ /*N*/ 		XDash& rDash = pEntry->GetDash();
+ /*N*/ 		rOut << (long)rDash.GetDashStyle();
+ /*N*/ 		rOut << (long)rDash.GetDots();
+-/*N*/ 		rOut << rDash.GetDotLen();
++/*N*/ 		rOut << static_cast<sal_uInt32>(rDash.GetDotLen());
+ /*N*/ 		rOut << (long)rDash.GetDashes();
+-/*N*/ 		rOut << rDash.GetDashLen();
+-/*N*/ 		rOut << rDash.GetDistance();
++/*N*/ 		rOut << static_cast<sal_uInt32>(rDash.GetDashLen());
++/*N*/ 		rOut << static_cast<sal_uInt32>(rDash.GetDistance());
+ /*N*/ 		pEntry = (XDashEntry*)aTable.Next();
+ /*N*/ 	}
+ /*N*/ 
+@@ -227,10 +227,10 @@
+ /*N*/ 
+ /*N*/ 	long		nStyle;
+ /*N*/ 	long		nDots;
+-/*N*/ 	ULONG		nDotLen;
++/*N*/ 	sal_uInt32	nDotLen;
+ /*N*/ 	long		nDashes;
+-/*N*/ 	ULONG		nDashLen;
+-/*N*/ 	ULONG		nDistance;
++/*N*/ 	sal_uInt32	nDashLen;
++/*N*/ 	sal_uInt32	nDistance;
+ /*N*/ 
+ /*N*/ 	rIn >> nType;
+ /*N*/ 
+@@ -546,10 +546,10 @@
+ /*N*/ 		XDash& rDash = pEntry->GetDash();
+ /*N*/ 		rOut << (long)rDash.GetDashStyle();
+ /*N*/ 		rOut << (long)rDash.GetDots();
+-/*N*/ 		rOut << rDash.GetDotLen();
++/*N*/ 		rOut << static_cast<sal_uInt32>(rDash.GetDotLen());
+ /*N*/ 		rOut << (long)rDash.GetDashes();
+-/*N*/ 		rOut << rDash.GetDashLen();
+-/*N*/ 		rOut << rDash.GetDistance();
++/*N*/ 		rOut << static_cast<sal_uInt32>(rDash.GetDashLen());
++/*N*/ 		rOut << static_cast<sal_uInt32>(rDash.GetDistance());
+ /*N*/ 	}
+ /*N*/ 	return rOut;
+ /*N*/ }
+@@ -618,10 +618,10 @@
+ /*N*/ 
+ /*N*/ 	long		nStyle;
+ /*N*/ 	long		nDots;
+-/*N*/ 	ULONG		nDotLen;
++/*N*/ 	sal_uInt32	nDotLen;
+ /*N*/ 	long		nDashes;
+-/*N*/ 	ULONG		nDashLen;
+-/*N*/ 	ULONG		nDistance;
++/*N*/ 	sal_uInt32	nDashLen;
++/*N*/ 	sal_uInt32	nDistance;
+ /*N*/ 
+ /*N*/ 	rIn >> nCount;
+ /*N*/ 
+Index: binfilter/bf_svx/source/xoutdev/svx_xtabgrdt.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_svx/source/xoutdev/svx_xtabgrdt.cxx,v
+retrieving revision 1.6
+retrieving revision 1.6.72.1
+diff -u -r1.6 -r1.6.72.1
+--- binfilter/bf_svx/source/xoutdev/svx_xtabgrdt.cxx	8 Sep 2005 07:43:06 -0000	1.6
++++ binfilter/bf_svx/source/xoutdev/svx_xtabgrdt.cxx	27 Apr 2006 15:45:26 -0000	1.6.72.1
+@@ -195,9 +195,9 @@
+ /*N*/ 		rOut << rGradient.GetEndColor().GetGreen();
+ /*N*/ 		rOut << rGradient.GetEndColor().GetBlue();
+ /*N*/ 		rOut << rGradient.GetAngle();
+-/*N*/ 		rOut << (ULONG)rGradient.GetBorder();
+-/*N*/ 		rOut << (ULONG)rGradient.GetXOffset();
+-/*N*/ 		rOut << (ULONG)rGradient.GetYOffset();
++/*N*/ 		rOut << (sal_uInt32)rGradient.GetBorder();
++/*N*/ 		rOut << (sal_uInt32)rGradient.GetXOffset();
++/*N*/ 		rOut << (sal_uInt32)rGradient.GetYOffset();
+ /*N*/ 		pEntry = (XGradientEntry*)aTable.Next();
+ /*N*/ 	}
+ /*N*/ 
+@@ -227,9 +227,9 @@
+ /*N*/ 	Color	aStart;
+ /*N*/ 	Color	aEnd;
+ /*N*/ 	long	nAngle;
+-/*N*/ 	ULONG	nBorder;
+-/*N*/ 	ULONG	nXOfs;
+-/*N*/ 	ULONG	nYOfs;
++/*N*/ 	sal_uInt32 nBorder;
++/*N*/ 	sal_uInt32 nXOfs;
++/*N*/ 	sal_uInt32 nYOfs;
+ /*N*/ 
+ /*N*/ 	rIn >> nType;
+ /*N*/ 
+@@ -567,11 +567,11 @@
+ /*N*/ 		nCol = nCol << 8;
+ /*N*/ 		rOut << nCol;
+ /*N*/ 		rOut << rGradient.GetAngle();
+-/*N*/ 		rOut << (ULONG)rGradient.GetBorder();
+-/*N*/ 		rOut << (ULONG)rGradient.GetXOffset();
+-/*N*/ 		rOut << (ULONG)rGradient.GetYOffset();
+-/*N*/ 		rOut << (ULONG)rGradient.GetStartIntens();
+-/*N*/ 		rOut << (ULONG)rGradient.GetEndIntens();
++/*N*/ 		rOut << (sal_uInt32)rGradient.GetBorder();
++/*N*/ 		rOut << (sal_uInt32)rGradient.GetXOffset();
++/*N*/ 		rOut << (sal_uInt32)rGradient.GetYOffset();
++/*N*/ 		rOut << (sal_uInt32)rGradient.GetStartIntens();
++/*N*/ 		rOut << (sal_uInt32)rGradient.GetEndIntens();
+ /*N*/ 	}
+ /*N*/ 
+ /*N*/ 	return rOut;
+@@ -618,11 +618,11 @@
+ /*N*/ 	Color	aStart;
+ /*N*/ 	Color	aEnd;
+ /*N*/ 	long	nAngle;
+-/*N*/ 	ULONG	nBorder;
+-/*N*/ 	ULONG	nXOfs;
+-/*N*/ 	ULONG	nYOfs;
+-/*N*/ 	ULONG	nStartIntens;
+-/*N*/ 	ULONG	nEndIntens;
++/*N*/ 	sal_uInt32 nBorder;
++/*N*/ 	sal_uInt32 nXOfs;
++/*N*/ 	sal_uInt32 nYOfs;
++/*N*/ 	sal_uInt32 nStartIntens;
++/*N*/ 	sal_uInt32 nEndIntens;
+ /*N*/ 
+ /*N*/ 	// Kennung oder Anzahl
+ /*N*/ 	rIn >> nCheck;
+Index: binfilter/bf_svx/source/xoutdev/svx_xtablend.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_svx/source/xoutdev/svx_xtablend.cxx,v
+retrieving revision 1.6
+retrieving revision 1.6.72.1
+diff -u -r1.6 -r1.6.72.1
+--- binfilter/bf_svx/source/xoutdev/svx_xtablend.cxx	8 Sep 2005 07:43:54 -0000	1.6
++++ binfilter/bf_svx/source/xoutdev/svx_xtablend.cxx	27 Apr 2006 15:45:26 -0000	1.6.72.1
+@@ -273,7 +273,7 @@
+ /*N*/ 				rIn.ReadByteString(aName);
+ /*N*/ 	
+ /*N*/ 				USHORT nPoints;
+-/*N*/ 				ULONG  nTemp;
++/*N*/ 				sal_uInt32 nTemp;
+ /*N*/ 				Point  aPoint;
+ /*N*/ 				rIn >> nTemp; nPoints = (USHORT)nTemp;
+ /*N*/ 				XPolygon* pXPoly = new XPolygon(nPoints);
+@@ -672,7 +672,7 @@
+ /*N*/ 
+ /*N*/ 			aName = ConvertName( aName );
+ /*N*/ 			USHORT nPoints;
+-/*N*/ 			ULONG  nTemp;
++/*N*/ 			sal_uInt32 nTemp;
+ /*N*/ 			Point  aPoint;
+ /*N*/ 			rIn >> nTemp; nPoints = (USHORT)nTemp;
+ /*N*/ 			XPolygon* pXPoly = new XPolygon(nPoints);
+Index: binfilter/bf_sw/source/core/doc/sw_docedt.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_sw/source/core/doc/sw_docedt.cxx,v
+retrieving revision 1.6
+retrieving revision 1.6.70.1
+diff -u -r1.6 -r1.6.70.1
+--- binfilter/bf_sw/source/core/doc/sw_docedt.cxx	8 Sep 2005 08:34:56 -0000	1.6
++++ binfilter/bf_sw/source/core/doc/sw_docedt.cxx	27 Apr 2006 10:41:56 -0000	1.6.70.1
+@@ -2241,7 +2241,7 @@
+ /*N*/ 
+ 	/* #i9185# This whould lead to a segmentation fault if not catched
+        above. */
+-/*N*/ 	sal_uInt32 nNextNd = rEnd.nNode.GetIndex() + 1;
++/*N*/ 	ULONG nNextNd = rEnd.nNode.GetIndex() + 1;
+ /*N*/ 	SwTableNode* pTblNd = aNodes[ nNextNd ]->GetTableNode();
+ /*N*/ 
+ /*N*/ 	if( pTblNd && pNd->IsCntntNode() )
+Index: binfilter/bf_sw/source/core/doc/sw_tblafmt.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_sw/source/core/doc/sw_tblafmt.cxx,v
+retrieving revision 1.6
+retrieving revision 1.6.72.1
+diff -u -r1.6 -r1.6.72.1
+--- binfilter/bf_sw/source/core/doc/sw_tblafmt.cxx	8 Sep 2005 08:45:26 -0000	1.6
++++ binfilter/bf_sw/source/core/doc/sw_tblafmt.cxx	27 Apr 2006 10:49:47 -0000	1.6.72.1
+@@ -749,7 +749,7 @@
+ /*?*/			rChg.GetValueFormat( sFmt, eLng, eSys );
+ /*?*/			if( sFmt.Len() )
+ /*?*/			{
+-/*?*/				ULONG nKey = 0;
++/*?*/				sal_uInt32 nKey = 0;
+ /*?*/				if ( eLng == LANGUAGE_SYSTEM && eSys != ::binfilter::GetAppLanguage() )
+ /*?*/				{
+ /*?*/					//	#53381# wenn System beim Speichern etwas anderes war,
+Index: binfilter/bf_sw/source/core/fields/sw_cellfml.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_sw/source/core/fields/sw_cellfml.cxx,v
+retrieving revision 1.5
+retrieving revision 1.5.70.1
+diff -u -r1.5 -r1.5.70.1
+--- binfilter/bf_sw/source/core/fields/sw_cellfml.cxx	8 Sep 2005 09:06:44 -0000	1.5
++++ binfilter/bf_sw/source/core/fields/sw_cellfml.cxx	27 Apr 2006 14:17:39 -0000	1.5.70.1
+@@ -267,7 +267,7 @@
+ /*N*/ 
+ /*N*/ 			double aNum;
+ /*N*/ 			String sTxt( rTxt.Copy( nSttPos ) );
+-/*N*/ 			ULONG nFmtIndex = GetFrmFmt()->GetTblBoxNumFmt().GetValue();
++/*N*/ 			sal_uInt32 nFmtIndex = GetFrmFmt()->GetTblBoxNumFmt().GetValue();
+ /*N*/ 
+ /*N*/ 			SvNumberFormatter* pNumFmtr = pDoc->GetNumberFormatter();
+ /*N*/ 
+@@ -277,7 +277,7 @@
+ /*?*/ 			else if( sTxt.Len() &&
+ /*?*/ 					NUMBERFORMAT_PERCENT == pNumFmtr->GetType( nFmtIndex ))
+ /*?*/ 			{
+-/*?*/ 				ULONG nTmpFmt = 0;
++/*?*/ 				sal_uInt32 nTmpFmt = 0;
+ /*?*/ 				if( pNumFmtr->IsNumberFormat( sTxt, nTmpFmt, aNum ) &&
+ /*?*/ 					NUMBERFORMAT_NUMBER == pNumFmtr->GetType( nTmpFmt ))
+ /*?*/ 					sTxt += '%';
+Index: binfilter/bf_sw/source/core/fields/sw_docufld.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_sw/source/core/fields/sw_docufld.cxx,v
+retrieving revision 1.8
+retrieving revision 1.8.70.1
+diff -u -r1.8 -r1.8.70.1
+--- binfilter/bf_sw/source/core/fields/sw_docufld.cxx	8 Sep 2005 09:10:04 -0000	1.8
++++ binfilter/bf_sw/source/core/fields/sw_docufld.cxx	27 Apr 2006 14:29:08 -0000	1.8.70.1
+@@ -446,7 +446,7 @@
+ /*N*/ {
+ /*N*/ }
+ 
+-/*N*/ String SwAuthorFieldType::Expand(sal_uInt32 nFmt) const
++/*N*/ String SwAuthorFieldType::Expand(ULONG nFmt) const
+ /*N*/ {
+ /*N*/ 	String sRet;
+ /*N*/ 	SvtUserOptions aOpt;
+@@ -556,7 +556,7 @@
+ /*N*/ 	pDoc = pDocument;
+ /*N*/ }
+ 
+-/*M*/ String SwFileNameFieldType::Expand(sal_uInt32 nFmt) const
++/*M*/ String SwFileNameFieldType::Expand(ULONG nFmt) const
+ /*M*/ {
+ /*M*/ 	String aRet;
+ /*M*/ 	const SwDocShell* pDShell = pDoc->GetDocShell();
+@@ -741,7 +741,7 @@
+ /*N*/ 	pDoc = pDocument;
+ /*N*/ }
+ 
+-/*N*/ String SwTemplNameFieldType::Expand(sal_uInt32 nFmt) const
++/*N*/ String SwTemplNameFieldType::Expand(ULONG nFmt) const
+ /*N*/ {
+ /*N*/ 	ASSERT(nFmt >= FF_BEGIN && nFmt < FF_END, "Expand: kein guelt. Fmt!" );
+ /*N*/ 
+Index: binfilter/bf_sw/source/core/fields/sw_fldbas.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_sw/source/core/fields/sw_fldbas.cxx,v
+retrieving revision 1.8
+retrieving revision 1.8.70.1
+diff -u -r1.8 -r1.8.70.1
+--- binfilter/bf_sw/source/core/fields/sw_fldbas.cxx	8 Sep 2005 09:11:01 -0000	1.8
++++ binfilter/bf_sw/source/core/fields/sw_fldbas.cxx	27 Apr 2006 14:43:14 -0000	1.8.70.1
+@@ -249,7 +249,7 @@
+ 					Felder sind n-mal vorhanden, Feldtypen nur einmal
+  --------------------------------------------------------------------*/
+ 
+-/*N*/ SwField::SwField(SwFieldType* pTyp, ULONG nFmt, USHORT nLng) :
++/*N*/ SwField::SwField(SwFieldType* pTyp, sal_uInt32 nFmt, USHORT nLng) :
+ /*N*/ 	nFormat(nFmt),
+ /*N*/     nLang(nLng),
+ /*N*/     bIsAutomaticLanguage(TRUE)
+@@ -534,7 +534,7 @@
+ /*N*/ 	nLang = nLng;
+ /*N*/ }
+ 
+-/*N*/ void SwField::ChangeFormat(ULONG n)
++/*N*/ void SwField::ChangeFormat(sal_uInt32 n)
+ /*N*/ {
+ /*N*/ 	nFormat = n;
+ /*N*/ }
+@@ -672,7 +672,7 @@
+ 	Beschreibung: Numerierung expandieren
+  --------------------------------------------------------------------*/
+ 
+-/*N*/ String FormatNumber(USHORT nNum, ULONG nFormat)
++/*N*/ String FormatNumber(USHORT nNum, sal_uInt32 nFormat)
+ /*N*/ {
+ /*N*/     if(SVX_NUM_PAGEDESC == nFormat)
+ /*?*/         return  String::CreateFromInt32( nNum );
+@@ -707,7 +707,7 @@
+  --------------------------------------------------------------------*/
+ 
+ /*N*/ String SwValueFieldType::ExpandValue( const double& rVal,
+-/*N*/ 										ULONG nFmt, USHORT nLng) const
++/*N*/ 										sal_uInt32 nFmt, USHORT nLng) const
+ /*N*/ {
+ /*N*/ 	if (rVal >= DBL_MAX)		// FehlerString fuer Calculator
+ /*?*/ 		return ViewShell::GetShellRes()->aCalc_Error;
+@@ -728,7 +728,7 @@
+ /*?*/ 
+ /*?*/ 		if (pEntry && nLng != pEntry->GetLanguage())
+ /*?*/ 		{
+-/*?*/ 			ULONG nNewFormat = pFormatter->GetFormatForLanguageIfBuiltIn(nFmt,
++/*?*/ 			sal_uInt32 nNewFormat = pFormatter->GetFormatForLanguageIfBuiltIn(nFmt,
+ /*?*/ 													(LanguageType)nFmtLng);
+ /*?*/ 
+ /*?*/ 			if (nNewFormat == nFmt)
+@@ -793,7 +793,7 @@
+ 	Beschreibung: CTOR SwValueField
+  --------------------------------------------------------------------*/
+ 
+-/*N*/ SwValueField::SwValueField( SwValueFieldType* pFldType, ULONG nFmt,
++/*N*/ SwValueField::SwValueField( SwValueFieldType* pFldType, sal_uInt32 nFmt,
+ /*N*/ 							USHORT nLang, const double fVal )
+ /*N*/ 	: SwField(pFldType, nFmt, nLang),
+ /*N*/ 	fValue(fVal)
+@@ -884,7 +884,7 @@
+ /*N*/ {
+ /*N*/     if( IsAutomaticLanguage() && 
+ /*N*/             ((SwValueFieldType *)GetTyp())->UseFormat() &&
+-/*N*/ 		GetFormat() != ULONG_MAX )
++/*N*/ 		GetFormat() != SAL_MAX_UINT32 )
+ /*N*/ 	{
+ /*N*/ 		// wegen Bug #60010
+ /*N*/ 		SvNumberFormatter* pFormatter = GetDoc()->GetNumberFormatter();
+@@ -899,7 +899,7 @@
+ /*N*/ 
+ /*N*/ 			if( pEntry && nFmtLng != pEntry->GetLanguage() )
+ /*N*/ 			{
+-/*N*/ 				ULONG nNewFormat = pFormatter->GetFormatForLanguageIfBuiltIn(
++/*N*/ 				sal_uInt32 nNewFormat = pFormatter->GetFormatForLanguageIfBuiltIn(
+ /*N*/ 										GetFormat(), (LanguageType)nFmtLng );
+ /*N*/ 
+ /*N*/ 				if( nNewFormat == GetFormat() )
+@@ -940,7 +940,7 @@
+ 	Beschreibung: SwFormulaField
+  --------------------------------------------------------------------*/
+ 
+-/*N*/ SwFormulaField::SwFormulaField( SwValueFieldType* pFldType, ULONG nFmt, const double fVal)
++/*N*/ SwFormulaField::SwFormulaField( SwValueFieldType* pFldType, sal_uInt32 nFmt, const double fVal)
+ /*N*/ 	: SwValueField(pFldType, nFmt, LANGUAGE_SYSTEM, fVal)
+ /*N*/ {
+ /*N*/ }
+@@ -968,9 +968,9 @@
+ /*N*/ {
+ /*N*/ 	sFormula = rStr;
+ /*N*/ 
+-/*N*/ 	ULONG nFmt(GetFormat());
++/*N*/ 	sal_uInt32 nFmt(GetFormat());
+ /*N*/ 
+-/*N*/ 	if( nFmt && ULONG_MAX != nFmt )
++/*N*/ 	if( nFmt && SAL_MAX_UINT32 != nFmt )
+ /*N*/ 	{
+ /*N*/ 		xub_StrLen nPos = 0;
+ /*N*/ 		double fValue;
+@@ -985,9 +985,9 @@
+ 
+ void SwFormulaField::SetExpandedFormula( const String& rStr )
+ {
+-    ULONG nFmt(GetFormat());
++    sal_uInt32 nFmt(GetFormat());
+ 
+-    if (nFmt && nFmt != ULONG_MAX && ((SwValueFieldType *)GetTyp())->UseFormat())
++    if (nFmt && nFmt != SAL_MAX_UINT32 && ((SwValueFieldType *)GetTyp())->UseFormat())
+     {
+         double fValue;
+ 
+@@ -1011,9 +1011,9 @@
+ 
+ String SwFormulaField::GetExpandedFormula() const
+ {
+-    ULONG nFmt(GetFormat());
++    sal_uInt32 nFmt(GetFormat());
+ 
+-    if (nFmt && nFmt != ULONG_MAX && ((SwValueFieldType *)GetTyp())->UseFormat())
++    if (nFmt && nFmt != SAL_MAX_UINT32 && ((SwValueFieldType *)GetTyp())->UseFormat())
+     {
+         String sFormattedValue;
+         Color* pCol = 0;
+Index: binfilter/bf_sw/source/core/fields/sw_usrfld.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_sw/source/core/fields/sw_usrfld.cxx,v
+retrieving revision 1.6
+retrieving revision 1.6.72.1
+diff -u -r1.6 -r1.6.72.1
+--- binfilter/bf_sw/source/core/fields/sw_usrfld.cxx	8 Sep 2005 09:14:28 -0000	1.6
++++ binfilter/bf_sw/source/core/fields/sw_usrfld.cxx	27 Apr 2006 14:43:14 -0000	1.6.72.1
+@@ -301,7 +301,7 @@
+ 
+ /*N*/ String SwUserFieldType::GetContent( sal_uInt32 nFmt )
+ /*N*/ {
+-/*N*/ 	if (nFmt && nFmt != ULONG_MAX)
++/*N*/ 	if (nFmt && nFmt != SAL_MAX_UINT32)
+ /*N*/ 	{
+ /*?*/ 		String sFormattedValue;
+ /*?*/ 		Color* pCol = 0;
+@@ -321,7 +321,7 @@
+ /*N*/ 	{
+ /*N*/ 		aContent = rStr;
+ /*N*/ 
+-/*N*/ 		if (nFmt && nFmt != ULONG_MAX)
++/*N*/ 		if (nFmt && nFmt != SAL_MAX_UINT32)
+ /*N*/ 		{
+ /*?*/ 			double fValue;
+ /*?*/ 
+Index: binfilter/bf_sw/source/core/inc/drawfont.hxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_sw/source/core/inc/drawfont.hxx,v
+retrieving revision 1.4
+retrieving revision 1.4.10.1
+diff -u -r1.4 -r1.4.10.1
+--- binfilter/bf_sw/source/core/inc/drawfont.hxx	7 Apr 2006 13:29:22 -0000	1.4
++++ binfilter/bf_sw/source/core/inc/drawfont.hxx	28 Apr 2006 08:58:37 -0000	1.4.10.1
+@@ -182,7 +182,7 @@
+     USHORT HasKana( xub_StrLen nStart, const xub_StrLen nEnd ) const;
+ 
+     // modifies the kerning array according to a given compress value
+-    long Compress( long* pKernArray, xub_StrLen nIdx, xub_StrLen nLen,
++    long Compress( sal_Int32* pKernArray, xub_StrLen nIdx, xub_StrLen nLen,
+                    const USHORT nCompress, const USHORT nFontHeight,
+                    Point* pPoint = NULL ) const;
+ 
+Index: binfilter/bf_sw/source/core/layout/sw_flycnt.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_sw/source/core/layout/sw_flycnt.cxx,v
+retrieving revision 1.5
+retrieving revision 1.5.72.1
+diff -u -r1.5 -r1.5.72.1
+--- binfilter/bf_sw/source/core/layout/sw_flycnt.cxx	8 Sep 2005 09:47:15 -0000	1.5
++++ binfilter/bf_sw/source/core/layout/sw_flycnt.cxx	27 Apr 2006 11:47:13 -0000	1.5.72.1
+@@ -774,7 +774,7 @@
+ /*N*/ 		{
+ /*N*/ 			//Jetzt die Entfernung zwischen den beiden Punkten berechnen.
+ /*N*/ 			//'Delta' X^2 + 'Delta'Y^2 = 'Entfernung'^2
+-/*N*/ 			ULONG dX = Max( pCnt->Frm().Left(), rPt.X() ) -
++/*N*/ 			sal_uInt32 dX = Max( pCnt->Frm().Left(), rPt.X() ) -
+ /*N*/ 					   Min( pCnt->Frm().Left(), rPt.X() ),
+ /*N*/ 				  dY = Max( pCnt->Frm().Top(), rPt.Y() ) -
+ /*N*/ 					   Min( pCnt->Frm().Top(), rPt.Y() );
+Index: binfilter/bf_sw/source/core/layout/sw_frmtool.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_sw/source/core/layout/sw_frmtool.cxx,v
+retrieving revision 1.5
+retrieving revision 1.5.72.1
+diff -u -r1.5 -r1.5.72.1
+--- binfilter/bf_sw/source/core/layout/sw_frmtool.cxx	8 Sep 2005 09:48:44 -0000	1.5
++++ binfilter/bf_sw/source/core/layout/sw_frmtool.cxx	27 Apr 2006 11:48:17 -0000	1.5.72.1
+@@ -2586,7 +2586,7 @@
+ /*N*/ 			nOldErg = nErg;
+ /*N*/ 		}
+ /*N*/ 	}
+-/*N*/ 	return nErg >= BigInt((ULONG)ULONG_MAX) ? ULONG_MAX : (ULONG)nErg;
++/*N*/ 	return nErg >= BigInt(SAL_MAX_UINT32) ? ULONG_MAX : (ULONG)nErg;
+ /*N*/ }
+ 
+ /*************************************************************************
+Index: binfilter/bf_sw/source/core/layout/sw_laycache.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_sw/source/core/layout/sw_laycache.cxx,v
+retrieving revision 1.5
+retrieving revision 1.5.72.1
+diff -u -r1.5 -r1.5.72.1
+--- binfilter/bf_sw/source/core/layout/sw_laycache.cxx	8 Sep 2005 09:50:11 -0000	1.5
++++ binfilter/bf_sw/source/core/layout/sw_laycache.cxx	27 Apr 2006 11:51:11 -0000	1.5.72.1
+@@ -280,9 +280,9 @@
+ /*N*/                             aIo.OpenFlagRec( bFollow ? 0x01 : 0x00,
+ /*N*/                                             bFollow ? 8 : 4 );
+ /*N*/                             nNdIdx -= nStartOfContent;
+-/*N*/                             aIo.GetStream() << nNdIdx;
++/*N*/                             aIo.GetStream() << static_cast<sal_uInt32>(nNdIdx);
+ /*N*/                             if( bFollow )
+-/*?*/                                 aIo.GetStream() << (ULONG)((SwTxtFrm*)pTmp)->GetOfst();
++/*?*/                                 aIo.GetStream() << static_cast<sal_uInt32>(((SwTxtFrm*)pTmp)->GetOfst());
+ /*N*/                             aIo.CloseFlagRec();
+ /*N*/                             /*  Close Paragraph Record */
+ /*N*/                             aIo.CloseRec( SW_LAYCACHE_IO_REC_PARA );
+@@ -321,8 +321,8 @@
+ /*N*/                                 aIo.OpenRec( SW_LAYCACHE_IO_REC_TABLE );
+ /*N*/                                 aIo.OpenFlagRec( 0, 8 );
+ /*N*/                                 nNdIdx -= nStartOfContent;
+-/*N*/                                 aIo.GetStream() << nNdIdx
+-/*N*/                                                 << nOfst;
++/*N*/                                 aIo.GetStream() << static_cast<sal_uInt32>(nNdIdx)
++/*N*/                                                 << static_cast<sal_uInt32>(nOfst);
+ /*N*/                                 aIo.CloseFlagRec();
+ /*N*/                                 /* Close Table Record  */
+ /*N*/                                 aIo.CloseRec( SW_LAYCACHE_IO_REC_TABLE );
+@@ -375,15 +375,15 @@
+ /*?*/                             const SwContact *pC = (SwContact*)GetUserCall(pO);
+ /*?*/                             if( pC )
+ /*?*/                             {
+-/*?*/                                 ULONG nOrdNum = pO->GetOrdNum();
++/*?*/                                 sal_uInt32 nOrdNum = pO->GetOrdNum();
+ /*?*/                                 USHORT nPageNum = pPage->GetPhyPageNum();
+ /*?*/                                 /* Open Fly Record */
+ /*?*/                                 aIo.OpenRec( SW_LAYCACHE_IO_REC_FLY );
+ /*?*/                                 aIo.OpenFlagRec( 0, 0 );
+ /*?*/                                 aIo.CloseFlagRec();
+ /*?*/                                 SwRect &rRct = pFly->Frm();
+-/*?*/                                 long nX = rRct.Left() - pPage->Frm().Left();
+-/*?*/                                 long nY = rRct.Top() - pPage->Frm().Top();
++/*?*/                                 sal_Int32 nX = rRct.Left() - pPage->Frm().Left();
++/*?*/                                 sal_Int32 nY = rRct.Top() - pPage->Frm().Top();
+ /*?*/                                 aIo.GetStream() << nPageNum << nOrdNum
+ /*?*/                                                 << nX << nY << rRct.Width()
+ /*?*/                                                 << rRct.Height();
+Index: binfilter/bf_sw/source/core/layout/sw_trvlfrm.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_sw/source/core/layout/sw_trvlfrm.cxx,v
+retrieving revision 1.5
+retrieving revision 1.5.72.1
+diff -u -r1.5 -r1.5.72.1
+--- binfilter/bf_sw/source/core/layout/sw_trvlfrm.cxx	8 Sep 2005 09:53:38 -0000	1.5
++++ binfilter/bf_sw/source/core/layout/sw_trvlfrm.cxx	27 Apr 2006 11:51:52 -0000	1.5.72.1
+@@ -1058,7 +1058,7 @@
+ /*N*/ {
+ /*N*/ 	//Jetzt die Entfernung zwischen den beiden Punkten berechnen.
+ /*N*/ 	//'Delta' X^2 + 'Delta'Y^2 = 'Entfernung'^2
+-/*N*/ 	ULONG dX = Max( rPt1.X(), rPt2.X() ) -
++/*N*/ 	sal_uInt32 dX = Max( rPt1.X(), rPt2.X() ) -
+ /*N*/ 			   Min( rPt1.X(), rPt2.X() ),
+ /*N*/ 		  dY = Max( rPt1.Y(), rPt2.Y() ) -
+ /*N*/ 			   Min( rPt1.Y(), rPt2.Y() );
+Index: binfilter/bf_sw/source/core/sw3io/sw3imp.hxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_sw/source/core/sw3io/sw3imp.hxx,v
+retrieving revision 1.6
+retrieving revision 1.6.72.1
+diff -u -r1.6 -r1.6.72.1
+--- binfilter/bf_sw/source/core/sw3io/sw3imp.hxx	8 Sep 2005 09:58:01 -0000	1.6
++++ binfilter/bf_sw/source/core/sw3io/sw3imp.hxx	28 Apr 2006 08:58:38 -0000	1.6.72.1
+@@ -308,7 +308,7 @@
+ 	void   Store( SvStream& );
+ 
+ 	static USHORT ConvertFromOldPoolId( USHORT nId, USHORT nVersion );
+-	static USHORT ConvertToOldPoolId( USHORT nId, ULONG nFFVersion );
++	static USHORT ConvertToOldPoolId( USHORT nId, sal_uInt32 nFFVersion );
+ };
+ 
+ // Informationen, die nur beim Export eines Doks benoetigt werden
+@@ -437,8 +437,8 @@
+ 	SvUShorts*		   pSectionDepths;
+ 	Sw3Fmts*		   pConvToSymbolFmts;
+ 	SwHiddenDrawObjList_Impl *pHiddenDrawObjs;
+-	ULONG			   nCurPercent;	// Aktueller Stand der Prozentanzeige
+-	ULONG			   nEndPercent;	// Maximalwert der Prozentanzeige
++	sal_uInt32		   nCurPercent;	// Aktueller Stand der Prozentanzeige
++	sal_uInt32		   nEndPercent;	// Maximalwert der Prozentanzeige
+ 	UINT32			   nDate,nTime;	// Zeitpunkt der Speicherung
+ 	long			   nSizeDivFac;	// Divisionsfaktor fuer FRMSIZE-Attribs
+ 
+@@ -530,8 +530,8 @@
+ 	BOOL OpenRec( BYTE cType );		// Record oeffnen
+ 	void CloseRec( BYTE cType );	// Record schliessen
+ 	void SkipRec();					// Record uebergehen
+-    void InsertRecordSize( ULONG nPos, ULONG nSize );
+-    ULONG GetRecordSize( ULONG nPos );
++    void InsertRecordSize( sal_uInt32 nPos, sal_uInt32 nSize );
++    sal_uInt32 GetRecordSize( sal_uInt32 nPos );
+ 	BOOL HasRecSizes() const { return pRecSizes != 0; }
+     void FlushRecSizes();
+     void InRecSizes( ULONG nRecPos );
+@@ -556,8 +556,8 @@
+ 										sal_Char cSrcDelim,
+ 										sal_Unicode cDelim,
+ 										rtl_TextEncoding eSource );
+-	static ULONG InULong( SvStream& ); 		   // ULONG komprimiert lesen
+-	static void OutULong( SvStream&, ULONG );  // ULONG komprimiert schreiben
++	static sal_uInt32 InULong( SvStream& ); 		   // ULONG komprimiert lesen
++	static void OutULong( SvStream&, sal_uInt32 );  // ULONG komprimiert schreiben
+ 	inline SvStream& InString( SvStream& rStrm, String& rStr );
+ 	inline SvStream& OutString( SvStream& rStrm, const String& rStr );
+ 
+@@ -579,9 +579,9 @@
+ 	inline BOOL IsVersion( USHORT nMinVers1, USHORT nMaxVers1,
+ 						   USHORT nMinVers2, USHORT nMaxVers2 ) const;
+ 
+-	void OpenPercentBar( ULONG, ULONG );
++	void OpenPercentBar( sal_uInt32, sal_uInt32 );
+ 	void ClosePercentBar();
+-	void SetPercentBar( ULONG );
++	void SetPercentBar( sal_uInt32 );
+ 
+ 	void Cleanup( BOOL bConnectPageDescs = TRUE );	// Nach Einlesen aufraeumen
+ 	void ChangeFontItemCharSet();
+Index: binfilter/bf_sw/source/core/sw3io/sw_sw3attr.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_sw/source/core/sw3io/sw_sw3attr.cxx,v
+retrieving revision 1.5
+retrieving revision 1.5.72.1
+diff -u -r1.5 -r1.5.72.1
+--- binfilter/bf_sw/source/core/sw3io/sw_sw3attr.cxx	8 Sep 2005 09:59:09 -0000	1.5
++++ binfilter/bf_sw/source/core/sw3io/sw_sw3attr.cxx	28 Apr 2006 08:58:38 -0000	1.5.72.1
+@@ -1007,7 +1007,7 @@
+ /*N*/ 	ASSERT( nIVer != USHRT_MAX,
+ /*N*/ 			"SwFmtLineNumber: Wer faengt da Version USHRT_MAX nicht ab?" );
+ /*N*/ 
+-/*N*/ 	rStrm << nStartValue << IsCount();
++/*N*/ 	rStrm << static_cast<sal_uInt32>(nStartValue) << IsCount();
+ /*N*/ 	return rStrm;
+ /*N*/ }
+ 
+@@ -1016,7 +1016,7 @@
+ /*N*/ SfxPoolItem* SwFmtLineNumber::Create( SvStream& rStrm, USHORT ) const
+ /*N*/ {
+ /*N*/ 	SwFmtLineNumber *pTmp = new SwFmtLineNumber;
+-/*N*/ 	ULONG nTmp; BOOL bTmp;
++/*N*/ 	sal_uInt32 nTmp; BOOL bTmp;
+ /*N*/ 	rStrm >> nTmp; pTmp->SetStartValue( nTmp );
+ /*N*/ 	rStrm >> bTmp; pTmp->SetCountLines( bTmp );
+ /*N*/ 	return pTmp;
+Index: binfilter/bf_sw/source/core/sw3io/sw_sw3field.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_sw/source/core/sw3io/sw_sw3field.cxx,v
+retrieving revision 1.8
+retrieving revision 1.8.70.1
+diff -u -r1.8 -r1.8.70.1
+--- binfilter/bf_sw/source/core/sw3io/sw_sw3field.cxx	8 Sep 2005 10:00:25 -0000	1.8
++++ binfilter/bf_sw/source/core/sw3io/sw_sw3field.cxx	28 Apr 2006 08:58:38 -0000	1.8.70.1
+@@ -239,7 +239,7 @@
+ };
+ 
+ /*N*/ void sw3io_ConvertFromOldField( SwDoc& rDoc, USHORT& rWhich,
+-/*N*/ 								USHORT& rSubType, ULONG &rFmt,
++/*N*/ 								USHORT& rSubType, UINT32 &rFmt,
+ /*N*/ 								USHORT nVersion )
+ /*N*/ {
+ /*N*/ 	const OldFormats *pOldFmt = 0L;
+@@ -347,10 +347,10 @@
+ /*N*/ }
+ 
+ /*N*/ void sw3io_ConvertToOldField( const SwField* pFld, USHORT& rWhich,
+-/*N*/ 							  ULONG& rFmt, ULONG nFFVersion )
++/*N*/ 							  UINT32& rFmt, ULONG nFFVersion )
+ /*N*/ {
+ /*N*/ 	const OldFormats *pOldFmt = 0L;
+-/*N*/ 	ULONG nOldFmt = rFmt;
++/*N*/ 	UINT32 nOldFmt = rFmt;
+ /*N*/ 
+ /*N*/ 	switch( rWhich )
+ /*N*/ 	{
+@@ -444,7 +444,7 @@
+ /*N*/ 			while( pOldFmt[i].eFormatIdx != NF_NUMERIC_START ||
+ /*N*/ 				   pOldFmt[i].nOldFormat )
+ /*N*/ 			{
+-/*N*/ 				ULONG nKey = pFormatter->GetFormatIndex(
++/*N*/ 				sal_uInt32 nKey = pFormatter->GetFormatIndex(
+ /*N*/ 							pOldFmt[i].eFormatIdx, pEntry->GetLanguage() );
+ /*N*/ 
+ /*N*/ 				if( nOldFmt == nKey )
+@@ -875,7 +875,7 @@
+ /*  */
+ 
+ /*N*/ SwField* lcl_sw3io_InDBField40( Sw3IoImp& rIo, SwFieldType* pType,
+-/*N*/ 								USHORT nSubType, ULONG& rFmt )
++/*N*/ 								USHORT nSubType, UINT32& rFmt )
+ /*N*/ {
+ /*N*/ 	pType = 0;
+ /*N*/ 	String aName;
+@@ -932,7 +932,7 @@
+ /*N*/ }
+ 
+ /*N*/ SwField* lcl_sw3io_InDBField( Sw3IoImp& rIo, SwFieldType* pType,
+-/*N*/ 							  USHORT nSubType, ULONG& rFmt )
++/*N*/ 							  USHORT nSubType, UINT32& rFmt )
+ /*N*/ {
+ /*N*/ 	pType = 0;
+ /*N*/ 	String aExpand;
+@@ -1038,7 +1038,7 @@
+ /*  */
+ 
+ /*N*/ SwField* lcl_sw3io_InFileNameField( Sw3IoImp& rIo, SwFieldType* pType,
+-/*N*/ 									USHORT, ULONG& rFmt )
++/*N*/ 									USHORT, UINT32& rFmt )
+ /*N*/ {
+ /*N*/ 	// Das fixe Feld gibt es erst in der 5.1. Da das Fileformat zur 5.0
+ /*N*/ 	// kompatibel geblieben ist und die 5.0 das Fixed-Flag nicht loescht,
+@@ -1068,7 +1068,7 @@
+ /*  */
+ 
+ /*N*/ SwField* lcl_sw3io_InDBNameField( Sw3IoImp& rIo, SwFieldType* pType,
+-/*N*/ 								  USHORT, ULONG& )
++/*N*/ 								  USHORT, UINT32& )
+ /*N*/ {
+ /*N*/ 	String aDBName;
+ /*N*/ 	if( rIo.IsVersion( SWG_MULTIDB, SWG_EXPORT31, SWG_DESKTOP40 ) )
+@@ -1101,7 +1101,7 @@
+ /*  */
+ 
+ /*N*/ SwField* lcl_sw3io_InDateField40( Sw3IoImp& rIo, SwFieldType* pType,
+-/*N*/ 								  USHORT nSubType, ULONG& )
++/*N*/ 								  USHORT nSubType, UINT32& )
+ /*N*/ { //SW40.SDW  
+ /*N*/ 	SwDateTimeField* pFld =
+ /*N*/ 		new SwDateTimeField( (SwDateTimeFieldType *)pType, DATEFLD );
+@@ -1113,7 +1113,7 @@
+ /*  */
+ 
+ /*N*/ SwField* lcl_sw3io_InTimeField40( Sw3IoImp& rIo, SwFieldType* pType,
+-/*N*/ 								  USHORT nSubType, ULONG& )
++/*N*/ 								  USHORT nSubType, UINT32& )
+ /*N*/ {
+             SwDateTimeField* pFld =
+                 new SwDateTimeField( (SwDateTimeFieldType*)pType, TIMEFLD );
+@@ -1125,7 +1125,7 @@
+ /*  */
+ 
+ /*N*/ SwField* lcl_sw3io_InPageNumberField40( Sw3IoImp& rIo, SwFieldType* pType,
+-/*N*/ 										USHORT, ULONG& rFmt )
++/*N*/ 										USHORT, UINT32& rFmt )
+ /*N*/ {
+ /*N*/ 	INT16 nOff;
+ /*N*/ 	UINT16 nSub;
+@@ -1147,7 +1147,7 @@
+ /*N*/ }
+ 
+ /*N*/ SwField* lcl_sw3io_InPageNumberField( Sw3IoImp& rIo, SwFieldType* pType,
+-/*N*/ 									  USHORT nSubType, ULONG& rFmt )
++/*N*/ 									  USHORT nSubType, UINT32& rFmt )
+ /*N*/ {
+ /*N*/ 	INT16 nOff;
+ /*N*/ 	String sUserStr;
+@@ -1192,7 +1192,7 @@
+ /*  */
+ 
+ /*N*/ SwField* lcl_sw3io_InUserField40( Sw3IoImp& rIo, SwFieldType *pType,
+-/*N*/ 								  USHORT nSubType, ULONG& rFmt )
++/*N*/ 								  USHORT nSubType, UINT32& rFmt )
+ /*N*/ {
+ /*N*/ 	pType = 0;
+ /*N*/ 	if( rIo.nVersion < SWG_SHORTFIELDS )
+@@ -1222,7 +1222,7 @@
+ /*N*/ }
+ 
+ /*N*/ SwField* lcl_sw3io_InUserField( Sw3IoImp& rIo, SwFieldType* pType,
+-/*N*/ 								USHORT nSubType, ULONG& )
++/*N*/ 								USHORT nSubType, UINT32& )
+ /*N*/ {
+ /*N*/ 	pType = 0;
+ /*N*/ 
+@@ -1251,7 +1251,7 @@
+ /*  */
+ 
+ /*N*/ SwField* lcl_sw3io_InGetRefField40( Sw3IoImp& rIo, SwFieldType* pType,
+-/*N*/ 									USHORT, ULONG& rFmt )
++/*N*/ 									USHORT, UINT32& rFmt )
+ /*N*/ {
+ /*N*/ 	String aName, aExpand;
+ /*N*/ 	UINT16 nFmt16 = 0, nSubType, nSeqNo;
+@@ -1290,7 +1290,7 @@
+ /*N*/ }
+ 
+ /*N*/ SwField* lcl_sw3io_InGetRefField( Sw3IoImp& rIo, SwFieldType* pType,
+-/*N*/ 								  USHORT nSubType, ULONG& )
++/*N*/ 								  USHORT nSubType, UINT32& )
+ /*N*/ {
+ /*N*/ 	String aName, aExpand;
+ /*N*/ 	UINT16 nFmt = 0, nSeqNo;
+@@ -1355,7 +1355,7 @@
+ /*N*/ }
+ 
+ /*N*/ SwField* lcl_sw3io_InHiddenTxtField40( Sw3IoImp& rIo, SwFieldType* pType,
+-/*N*/ 									   USHORT, ULONG& )
++/*N*/ 									   USHORT, UINT32& )
+ /*N*/ { //SW40.SDW  
+ /*N*/ 	BYTE cFlags;
+ /*N*/ 	USHORT nSubType;
+@@ -1381,7 +1381,7 @@
+ /*N*/ }
+ 
+ /*N*/ SwField* lcl_sw3io_InHiddenTxtField( Sw3IoImp& rIo, SwFieldType* pType,
+-/*N*/ 									 USHORT nSubType, ULONG& )
++/*N*/ 									 USHORT nSubType, UINT32& )
+ /*N*/ {
+ /*N*/ 	BYTE cFlags;
+ /*N*/ 	String aText, aCond;
+@@ -1474,7 +1474,7 @@
+ /*  */
+ 
+ /*N*/ SwField* lcl_sw3io_InPostItField( Sw3IoImp& rIo, SwFieldType* pType,
+-/*N*/ 								  USHORT, ULONG& )
++/*N*/ 								  USHORT, UINT32& )
+ /*N*/ {
+         INT32 nDate;
+         String aAuthor, aText;
+@@ -1495,7 +1495,7 @@
+ /*  */
+ 
+ /*N*/ SwField* lcl_sw3io_InDateTimeField( Sw3IoImp& rIo, SwFieldType* pType,
+-/*N*/ 									USHORT nSubType, ULONG& )
++/*N*/ 									USHORT nSubType, UINT32& )
+ /*N*/ {
+ /*N*/ 	double	fVal;
+ /*N*/ 
+@@ -1524,7 +1524,7 @@
+ /*  */
+ 
+ /*N*/ SwField* lcl_sw3io_InFixDateField40( Sw3IoImp& rIo, SwFieldType* pType,
+-/*N*/ 									 USHORT, ULONG& )
++/*N*/ 									 USHORT, UINT32& )
+ /*N*/ {
+ /*N*/ 	INT32 nVal;
+ /*N*/ 	*rIo.pStrm >> nVal;
+@@ -1544,7 +1544,7 @@
+ /*  */
+ 
+ /*N*/ SwField* lcl_sw3io_InFixTimeField40( Sw3IoImp& rIo, SwFieldType* pType,
+-/*N*/ 									 USHORT, ULONG& )
++/*N*/ 									 USHORT, UINT32& )
+ /*N*/ {
+         INT32 nVal;
+         *rIo.pStrm >> nVal;
+@@ -1563,7 +1563,7 @@
+ /*  */
+ 
+ /*N*/ SwField* lcl_sw3io_InAuthorField( Sw3IoImp& rIo, SwFieldType* pType,
+-/*N*/ 								  USHORT, ULONG& )
++/*N*/ 								  USHORT, UINT32& )
+ /*N*/ {
+ /*N*/ 	SwAuthorField *pFld =
+ /*N*/ 		new SwAuthorField( (SwAuthorFieldType*)pType );
+@@ -1587,7 +1587,7 @@
+ /*  */
+ 
+ /*N*/ SwField* lcl_sw3io_InChapterField( Sw3IoImp& rIo, SwFieldType* pType,
+-/*N*/ 								   USHORT, ULONG& )
++/*N*/ 								   USHORT, UINT32& )
+ /*N*/ {
+ /*N*/ 	SwChapterField* pFld = new SwChapterField( (SwChapterFieldType*)pType );
+ /*N*/ 	if( rIo.nVersion >= SWG_OLENAME )
+@@ -1613,7 +1613,7 @@
+ /*  */
+ 
+ /*N*/ SwField* lcl_sw3io_InDocStatField40( Sw3IoImp& rIo, SwFieldType* pType,
+-/*N*/ 									 USHORT, ULONG& rFmt )
++/*N*/ 									 USHORT, UINT32& rFmt )
+ /*N*/ {
+ /*N*/ 	UINT16 nSubType;
+ /*N*/ 	*rIo.pStrm >> nSubType;
+@@ -1621,7 +1621,7 @@
+ /*N*/ }
+ /*N*/ 
+ /*N*/ SwField* lcl_sw3io_InDocStatField( Sw3IoImp& rIo, SwFieldType* pType,
+-/*N*/ 								   USHORT nSubType, ULONG& rFmt )
++/*N*/ 								   USHORT nSubType, UINT32& rFmt )
+ /*N*/ {
+ /*N*/ 	return new SwDocStatField( (SwDocStatFieldType*)pType, nSubType, rFmt );
+ /*N*/ }
+@@ -1636,7 +1636,7 @@
+ /*  */
+ 
+ /*N*/ SwField* lcl_sw3io_InDDEField( Sw3IoImp& rIo, SwFieldType* pType,
+-/*N*/ 							   USHORT, ULONG& )
++/*N*/ 							   USHORT, UINT32& )
+ /*N*/ {
+ /*N*/ 	pType = 0;
+ /*N*/ 	if( rIo.nVersion < SWG_SHORTFIELDS )
+@@ -1665,7 +1665,7 @@
+ /*  */
+ 
+ /*N*/ SwField* lcl_sw3io_InInputField40( Sw3IoImp& rIo, SwFieldType* pType,
+-/*N*/ 								 USHORT, ULONG& )
++/*N*/ 								 USHORT, UINT32& )
+ /*N*/ { //SW40.SDW  
+ /*N*/ 	String aContent, aPrompt;
+ /*N*/ 	UINT16 nSubType;
+@@ -1676,7 +1676,7 @@
+ /*N*/ }
+ 
+ /*N*/ SwField* lcl_sw3io_InInputField( Sw3IoImp& rIo, SwFieldType* pType,
+-/*N*/ 								 USHORT nSubType, ULONG& )
++/*N*/ 								 USHORT nSubType, UINT32& )
+ /*N*/ {
+ /*N*/ 	String aContent, aPrompt;
+ /*N*/ 	rIo.InString( *rIo.pStrm, aContent );
+@@ -1700,7 +1700,7 @@
+ /*  */
+ 
+ /*N*/ SwField* lcl_sw3io_InMacroField( Sw3IoImp& rIo, SwFieldType* pType,
+-/*N*/ 								 USHORT, ULONG& )
++/*N*/ 								 USHORT, UINT32& )
+ /*N*/ {
+ /*N*/ 	String aName;
+ /*N*/ 	String aText;
+@@ -1718,7 +1718,7 @@
+ /*  */
+ 
+ /*N*/ SwField* lcl_sw3io_InTblField( Sw3IoImp& rIo, SwFieldType* pType,
+-/*N*/ 							   USHORT nSubType, ULONG& )
++/*N*/ 							   USHORT nSubType, UINT32& )
+ /*N*/ {
+ /*N*/ 	String aFormula, aText;
+ /*N*/ 	UINT16 nSub = 0;
+@@ -1754,7 +1754,7 @@
+ /*  */
+ 
+ /*N*/ SwField *lcl_sw3io_InGetExpField40( Sw3IoImp& rIo, SwFieldType *pType,
+-/*N*/ 									USHORT nSubType, ULONG& rFmt )
++/*N*/ 									USHORT nSubType, UINT32& rFmt )
+ /*N*/ { //SW40.SDW  
+ /*N*/ 	String aText, aExpand;
+ /*N*/ 	UINT16 nSub;
+@@ -1774,7 +1774,7 @@
+ /*N*/ }
+ 
+ /*N*/ SwField* lcl_sw3io_InGetExpField( Sw3IoImp& rIo, SwFieldType *pType,
+-/*N*/ 								  USHORT nSubType, ULONG& )
++/*N*/ 								  USHORT nSubType, UINT32& )
+ /*N*/ {
+ /*N*/ 	String aText, aExpand;
+ /*N*/ 	rIo.InString( *rIo.pStrm, aText );
+@@ -1804,7 +1804,7 @@
+ /*  */
+ 
+ /*N*/ SwField* lcl_sw3io_InSetExpField40( Sw3IoImp& rIo, SwFieldType *pType,
+-/*N*/ 									USHORT nSubType, ULONG& rFmt )
++/*N*/ 									USHORT nSubType, UINT32& rFmt )
+ /*N*/ {
+ /*N*/ 	pType = 0;
+ /*N*/ 	if( rIo.nVersion < SWG_SHORTFIELDS )
+@@ -1884,7 +1884,7 @@
+ /*N*/ }
+ 
+ /*N*/ SwField* lcl_sw3io_InSetExpField( Sw3IoImp& rIo, SwFieldType *pType,
+-/*N*/ 								  USHORT nSubType, ULONG& rFmt )
++/*N*/ 								  USHORT nSubType, UINT32& rFmt )
+ /*N*/ {
+ /*N*/ 	pType = 0;
+ /*N*/ 
+@@ -2005,7 +2005,7 @@
+ /*  */
+ 
+ /*N*/ SwField* lcl_sw3io_InHiddenParaField( Sw3IoImp& rIo, SwFieldType* pType,
+-/*N*/ 									  USHORT, ULONG& )
++/*N*/ 									  USHORT, UINT32& )
+ /*N*/ {
+ /*N*/ 	BYTE bHidden;
+ /*N*/ 	String aCond;
+@@ -2025,7 +2025,7 @@
+ /*  */
+ 
+ /*N*/ SwField* lcl_sw3io_InDocInfoField40( Sw3IoImp& rIo, SwFieldType* pType,
+-/*N*/ 									 USHORT nSubType, ULONG& rFmt )
++/*N*/ 									 USHORT nSubType, UINT32& rFmt )
+ /*N*/ { 
+ /*N*/ 	UINT16 nSub;
+ /*N*/ 	*rIo.pStrm >> nSub;
+@@ -2037,7 +2037,7 @@
+ /*N*/ }
+ 
+ /*N*/ SwField* lcl_sw3io_InDocInfoField( Sw3IoImp& rIo, SwFieldType* pType,
+-/*N*/ 								   USHORT nSubType, ULONG& rFmt )
++/*N*/ 								   USHORT nSubType, UINT32& rFmt )
+ /*N*/ {
+ /*N*/ 	BYTE cFlags;
+ /*N*/ 	SwDocInfoField *pFld = new SwDocInfoField( (SwDocInfoFieldType*)pType,
+@@ -2098,7 +2098,7 @@
+ /*  */
+ 
+ /*N*/ SwField* lcl_sw3io_InTemplNameField( Sw3IoImp& rIo, SwFieldType* pType,
+-/*N*/ 									 USHORT, ULONG& rFmt )
++/*N*/ 									 USHORT, UINT32& rFmt )
+ /*N*/ {
+ /*N*/ 	return new SwTemplNameField( (SwTemplNameFieldType*)pType, rFmt );
+ /*N*/ }
+@@ -2106,7 +2106,7 @@
+ /*  */
+ 
+ /*N*/ SwField* lcl_sw3io_InDBNextSetField( Sw3IoImp& rIo, SwFieldType* pType,
+-/*N*/ 									 USHORT, ULONG& )
++/*N*/ 									 USHORT, UINT32& )
+ /*N*/ {
+ /*N*/ 	String aName, aCond, aDBName;
+ /*N*/ 	rIo.InString( *rIo.pStrm, aCond );
+@@ -2145,7 +2145,7 @@
+ // in der exportierten Version auch verkehrt herum wieder ein.
+ 
+ /*N*/ SwField* lcl_sw3io_InDBNumSetField( Sw3IoImp& rIo, SwFieldType* pType,
+-/*N*/ 									USHORT, ULONG& )
++/*N*/ 									USHORT, UINT32& )
+ /*N*/ {
+ /*N*/ 	String aNumber, aCond, aDBName;
+ /*N*/ 
+@@ -2198,7 +2198,7 @@
+ /*  */
+ 
+ /*N*/ SwField* lcl_sw3io_InDBSetNumberField( Sw3IoImp& rIo, SwFieldType* pType,
+-/*N*/ 									   USHORT, ULONG& )
++/*N*/ 									   USHORT, UINT32& )
+ /*N*/ {
+ /*N*/ 	String aDBName;
+ /*N*/ 	INT32 n;
+@@ -2234,7 +2234,7 @@
+ /*  */
+ 
+ /*N*/ SwField* lcl_sw3io_InExtUserField40( Sw3IoImp& rIo, SwFieldType* pType,
+-/*N*/ 									 USHORT, ULONG& )
++/*N*/ 									 USHORT, UINT32& )
+ /*N*/ {
+ /*N*/ 	String aData;
+ /*N*/ 	UINT16 nSubType;
+@@ -2246,7 +2246,7 @@
+ /*N*/ }
+ 
+ /*N*/ SwField* lcl_sw3io_InExtUserField( Sw3IoImp& rIo, SwFieldType* pType,
+-/*N*/ 								   USHORT nSubType, ULONG& )
++/*N*/ 								   USHORT nSubType, UINT32& )
+ /*N*/ {
+ /*N*/ 	String aData;
+ /*N*/ 	rIo.InString( *rIo.pStrm, aData );
+@@ -2281,7 +2281,7 @@
+ /*  */
+ 
+ /*N*/ SwField* lcl_sw3io_InRefPageSetField( Sw3IoImp& rIo, SwFieldType* pType,
+-/*N*/ 									  USHORT, ULONG& )
++/*N*/ 									  USHORT, UINT32& )
+ /*N*/ {
+             INT16 nOffset;
+             BYTE cIsOn;
+@@ -2298,7 +2298,7 @@
+ /*  */
+ 
+ /*N*/ SwField* lcl_sw3io_InRefPageGetField( Sw3IoImp& rIo, SwFieldType* pType,
+-/*N*/ 									  USHORT, ULONG& )
++/*N*/ 									  USHORT, UINT32& )
+ /*N*/ {
+             String aString;
+             SwRefPageGetField *pFld = new SwRefPageGetField( (SwRefPageGetFieldType*)pType, 0 );
+@@ -2314,7 +2314,7 @@
+ 
+ /*  */
+ 
+-/*N*/ SwField *lcl_sw3io_InINetField31( Sw3IoImp& rIo, SwFieldType *, USHORT, ULONG& )
++/*N*/ SwField *lcl_sw3io_InINetField31( Sw3IoImp& rIo, SwFieldType *, USHORT, UINT32& )
+ /*N*/ {
+ /*N*/ 	ASSERT( !(rIo.pFmtINetFmt || rIo.aINetFldText.Len()),
+ /*N*/ 			"Da sind noch Rest-Infos vom INet-Feld!" );
+@@ -2356,7 +2356,7 @@
+ /*  */
+ 
+ /*N*/ SwField* lcl_sw3io_InJumpEditField( Sw3IoImp& rIo, SwFieldType* pType,
+-/*N*/ 									USHORT, ULONG& )
++/*N*/ 									USHORT, UINT32& )
+ /*N*/ {
+ /*N*/ 	String aText, aHelp;
+ /*N*/ 	rIo.InString( *rIo.pStrm, aText );
+@@ -2374,7 +2374,7 @@
+ /*  */
+ 
+ /*N*/ SwField* lcl_sw3io_InScriptField40( Sw3IoImp& rIo, SwFieldType* pType,
+-/*N*/ 									USHORT, ULONG& )
++/*N*/ 									USHORT, UINT32& )
+ /*N*/ {
+         String aType, aCode;
+         BYTE cFlags = 0;
+@@ -2403,7 +2403,7 @@
+ /*N*/ }
+ 
+ /*N*/ SwField* lcl_sw3io_InScriptField( Sw3IoImp& rIo, SwFieldType* pType,
+-/*N*/ 								  USHORT, ULONG& )
++/*N*/ 								  USHORT, UINT32& )
+ /*N*/ {
+         String aType, aCode;
+         BYTE cFlags = 0;
+@@ -2460,7 +2460,7 @@
+ /*  */
+ 
+ /*N*/ SwField* lcl_sw3io_InAuthorityField( Sw3IoImp& rIo, SwFieldType*,
+-/*N*/ 								  USHORT, ULONG& )
++/*N*/ 								  USHORT, UINT32& )
+ /*N*/ {
+         rIo.OpenFlagRec();
+ 
+@@ -2501,7 +2501,7 @@
+ 
+ #define	SWG_FIELD 'y'
+ 
+-typedef SwField *(*Sw3InFieldFn)( Sw3IoImp&, SwFieldType*, USHORT, ULONG& );
++typedef SwField *(*Sw3InFieldFn)( Sw3IoImp&, SwFieldType*, USHORT, UINT32& );
+ 
+ static Sw3InFieldFn aInFieldFnTbl40[] =
+ {
+@@ -2840,7 +2840,7 @@
+ /*N*/ 		return;
+ /*N*/ 
+ /*N*/ 	UINT16 nWhich = pType->Which();
+-/*N*/ 	ULONG nFmt = pFld->GetFormat();
++/*N*/ 	sal_uInt32 nFmt = pFld->GetFormat();
+ /*N*/ 
+ /*N*/ 	if( SOFFICE_FILEFORMAT_40 >= pStrm->GetVersion() )
+ /*N*/ 	{
+Index: binfilter/bf_sw/source/core/sw3io/sw_sw3imp.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_sw/source/core/sw3io/sw_sw3imp.cxx,v
+retrieving revision 1.6
+retrieving revision 1.6.72.1
+diff -u -r1.6 -r1.6.72.1
+--- binfilter/bf_sw/source/core/sw3io/sw_sw3imp.cxx	8 Sep 2005 10:01:25 -0000	1.6
++++ binfilter/bf_sw/source/core/sw3io/sw_sw3imp.cxx	28 Apr 2006 08:58:39 -0000	1.6.72.1
+@@ -273,14 +273,14 @@
+ 		Table()
+ 	{}
+ 
+-	sal_Bool Insert( sal_uInt32 nKey, sal_uInt32 p )
++	sal_Bool Insert( ULONG nKey, sal_uInt32 p )
+ 	{
+ 		return Table::Insert( nKey, (void*)p );
+ 	}
+ 
+-	sal_uInt32 GetObject( sal_uInt32 nPos ) const
++	sal_uInt32 GetObject( ULONG nPos ) const
+ 	{
+-		return (sal_Int32)Table::GetObject( nPos );
++		return (sal_uIntPtr)Table::GetObject( nPos );
+ 	}
+ };
+ 
+@@ -487,12 +487,12 @@
+ /*N*/ }
+ #endif
+ 
+-/*N*/ void Sw3IoImp::Error( sal_uInt32 nCode )
++/*N*/ void Sw3IoImp::Error( ULONG nCode )
+ /*N*/ {
+ /*N*/ 	nRes = nCode ? nCode : ERR_SWG_FILE_FORMAT_ERROR;
+ /*N*/ }
+  
+-/*N*/ void Sw3IoImp::Warning( sal_uInt32 nCode )
++/*N*/ void Sw3IoImp::Warning( ULONG nCode )
+ /*N*/ {
+ /*N*/ 	nWarn = nCode ? nCode : WARN_SWG_FEATURES_LOST;
+ /*N*/ }
+@@ -907,7 +907,7 @@
+ /*N*/ 		if( LONG_RECSIZE == nSize && IsVersion( SWG_LONGRECS ) )
+ /*N*/ 		{
+                 sal_uInt32 nTmp = GetRecordSize( nPos );
+-/*?*/           if( nTmp != ULONG_MAX )
++/*?*/           if( nTmp != SAL_MAX_UINT32 )
+ /*?*/               nSize = nTmp;
+ /*N*/ 		}
+ /*N*/ 
+@@ -1022,14 +1022,15 @@
+ 
+ sal_uInt32 Sw3IoImp::GetRecordSize( sal_uInt32 nPos )
+ {
+-    sal_uInt32 nTablePos, nRet = ULONG_MAX;
++    sal_uInt32 nRet = SAL_MAX_UINT32;
++    ULONG nTablePos;
+ 
+     if( pRecSizes &&
+         TABLE_ENTRY_NOTFOUND != pRecSizes->SearchKey( nPos, &nTablePos ) )
+     {
+         nRet = pRecSizes->GetObject( nTablePos );
+     }
+-    ASSERT( nRet != ULONG_MAX, "Record-Size nicht gefunden" );
++    ASSERT( nRet != SAL_MAX_UINT32, "Record-Size nicht gefunden" );
+ 
+     return nRet;
+ }
+@@ -1042,14 +1043,14 @@
+ 
+ // Zurueckliefern, wie viele Bytes ein Record noch enthaelt
+ 
+-/*N*/ sal_uInt32 Sw3IoImp::BytesLeft()
++/*N*/ ULONG Sw3IoImp::BytesLeft()
+ /*N*/ {
+ /*N*/ 	sal_uInt16 nLvl = aRecSizes.Count();
+-/*N*/ 	sal_uInt32 n = 0;
++/*N*/ 	ULONG n = 0;
+ /*N*/ 	if( nLvl && !nRes )
+ /*N*/ 	{
+ /*N*/ 		sal_uInt32 nEndPos = aRecSizes[ nLvl-1 ];
+-/*N*/ 		sal_uInt32 nPos = pStrm->Tell();
++/*N*/ 		ULONG nPos = pStrm->Tell();
+ /*N*/ 		if( nEndPos > nPos )
+ /*N*/ 			n = nEndPos - nPos;
+ /*N*/ 	}
+@@ -1094,7 +1095,7 @@
+ /*N*/ 	CloseRec( c );
+ /*N*/ }
+ 
+-void Sw3IoImp::InRecSizes( sal_uInt32 nRecPos )
++void Sw3IoImp::InRecSizes( ULONG nRecPos )
+ {
+     ASSERT( !pRecSizes, "RecSize-Tabelle existiert noch" );
+     ASSERT( nRecPos, "Keine Position der RecSize-Tabelle" );
+@@ -1106,7 +1107,7 @@
+         // Wenn der Stream vor dem Record steht, wird der Record
+         // normal gelesen. Sonst wird erstmal zu ihm geseekt und
+         // nach dem Lesen wieder am die aktuelle Stelle zurueck.
+-        sal_uInt32 nOldPos = pStrm->Tell();
++        ULONG nOldPos = pStrm->Tell();
+         if( nOldPos != nRecPos )
+             pStrm->Seek( nRecPos );
+ 
+@@ -1116,10 +1117,10 @@
+         *pStrm >> nCount;
+         CloseFlagRec();
+ 
+-        for( sal_uInt32 i=0; i < (sal_uInt32)nCount; i++ )
++        for( sal_uInt32 i=0; i < nCount; i++ )
+         {
+             *pStrm >> nPos >> nSize;
+-            pRecSizes->Insert( (sal_uInt32)nPos, nSize );
++            pRecSizes->Insert( nPos, nSize );
+         }
+ 
+         CloseRec( SWG_RECSIZES );
+@@ -1129,9 +1130,9 @@
+     }
+ }
+ 
+-sal_uInt32 Sw3IoImp::OutRecSizes()
++ULONG Sw3IoImp::OutRecSizes()
+ {
+-    sal_uInt32 nRecPos = 0;
++    ULONG nRecPos = 0;
+     if( pRecSizes )
+     {
+         sal_uInt32 nCount = pRecSizes->Count();
+Index: binfilter/bf_sw/source/core/sw3io/sw_sw3misc.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_sw/source/core/sw3io/sw_sw3misc.cxx,v
+retrieving revision 1.7
+retrieving revision 1.7.72.1
+diff -u -r1.7 -r1.7.72.1
+--- binfilter/bf_sw/source/core/sw3io/sw_sw3misc.cxx	8 Sep 2005 10:02:02 -0000	1.7
++++ binfilter/bf_sw/source/core/sw3io/sw_sw3misc.cxx	28 Apr 2006 08:58:39 -0000	1.7.72.1
+@@ -879,8 +879,8 @@
+ /*N*/ 		if( !pTOXBaseSect || !pTOXBaseSect->GetTOXType() )
+ /*N*/ 			continue;
+ /*N*/ 
+-/*N*/ 		sal_uInt32 nStartIdx = pSectNd->GetIndex();
+-/*N*/ 		sal_uInt32 nEndIdx = pSectNd->EndOfSectionIndex();
++/*N*/ 		ULONG nStartIdx = pSectNd->GetIndex();
++/*N*/ 		ULONG nEndIdx = pSectNd->EndOfSectionIndex();
+ /*N*/ 
+ /*N*/ 		// Skip TOXs that are not contained within the saved area completely.
+ /*N*/ 		if( nStart >= nEndOfIcons && (nStartIdx < nStart || nEndIdx > nEnd) )
+@@ -1000,7 +1000,7 @@
+ 
+ // Die Marks eines Nodes schreiben
+ 
+-/*N*/ void Sw3IoImp::OutNodeMarks( sal_uInt32 nIdx )
++/*N*/ void Sw3IoImp::OutNodeMarks( ULONG nIdx )
+ /*N*/ {
+ /*N*/ 	if(pMarks )
+ /*N*/ 	{
+@@ -2133,7 +2133,7 @@
+ /*N*/ 											   pSectFmt->GetPoolFmtId() );
+ /*N*/ 		const SwSectionFmt *pTitleSectFmt = 0;
+ /*N*/ 
+-/*N*/ 		sal_uInt32 nNextNdIdx = pSectNd->GetIndex() + 1;
++/*N*/ 		ULONG nNextNdIdx = pSectNd->GetIndex() + 1;
+ /*N*/ 		const SwSectionNode *pNextSectNd =
+ /*N*/ 			pDoc->GetNodes()[nNextNdIdx]->GetSectionNode();
+ /*N*/ 			if( pNextSectNd &&
+@@ -2476,8 +2476,12 @@
+ /*N*/ 
+ /*N*/ 	if( IsVersion(SWG_LONGIDX) )
+ /*N*/ 	{
+-/*N*/ 		*pStrm  >> aDocStat.nPage
+-/*N*/ 				>> aDocStat.nPara;
++/*N*/ 		sal_uInt32 nPage, nPara;
++/*N*/ 		*pStrm >> nPage
++/*N*/ 			   >> nPara;
++/*N*/ 
++/*N*/ 		aDocStat.nPage = nPage;
++/*N*/ 		aDocStat.nPara = nPara;
+ /*N*/ 	}
+ /*N*/ 	else
+ /*N*/ 	{
+@@ -2489,9 +2493,12 @@
+ /*N*/ 		aDocStat.nPara = nPara;
+ /*N*/ 	}
+ /*N*/ 
+-/*N*/ 	*pStrm	>> aDocStat.nWord
+-/*N*/ 			>> aDocStat.nChar
+-/*N*/ 			>> c;
++/*N*/ 	sal_uInt32 w;
++/*N*/ 	*pStrm	>> w;
++/*N*/ 	aDocStat.nWord = w;
++/*N*/ 	*pStrm	>> w;
++/*N*/ 	aDocStat.nChar = w;
++/*N*/ 	*pStrm >> c;
+ /*N*/ 
+ /*N*/ 	aDocStat.bModified = c;
+ /*N*/ 
+Index: binfilter/bf_sw/source/core/text/inftxt.hxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_sw/source/core/text/inftxt.hxx,v
+retrieving revision 1.5
+retrieving revision 1.5.42.1
+diff -u -r1.5 -r1.5.42.1
+--- binfilter/bf_sw/source/core/text/inftxt.hxx	19 Jan 2006 17:30:31 -0000	1.5
++++ binfilter/bf_sw/source/core/text/inftxt.hxx	28 Apr 2006 08:58:39 -0000	1.5.42.1
+@@ -182,7 +182,7 @@
+  *						class SwTxtSizeInfo
+  *************************************************************************/
+ 
+-DECLARE_TABLE( SwTxtPortionTable, INT32 )
++DECLARE_TABLE( SwTxtPortionTable, sal_IntPtr )
+ 
+ class SwTxtSizeInfo : public SwTxtInfo
+ {
+Index: binfilter/bf_sw/source/core/text/sw_porlay.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_sw/source/core/text/sw_porlay.cxx,v
+retrieving revision 1.7
+retrieving revision 1.7.70.1
+diff -u -r1.7 -r1.7.70.1
+--- binfilter/bf_sw/source/core/text/sw_porlay.cxx	9 Sep 2005 02:29:52 -0000	1.7
++++ binfilter/bf_sw/source/core/text/sw_porlay.cxx	28 Apr 2006 08:58:39 -0000	1.7.70.1
+@@ -1235,7 +1235,7 @@
+  *                      SwScriptInfo::Compress()
+  *************************************************************************/
+ 
+-/*N*/ long SwScriptInfo::Compress( long* pKernArray, xub_StrLen nIdx, xub_StrLen nLen,
++/*N*/ long SwScriptInfo::Compress( sal_Int32* pKernArray, xub_StrLen nIdx, xub_StrLen nLen,
+ /*N*/                              const USHORT nCompress, const USHORT nFontHeight,
+ /*N*/                              Point* pPoint ) const
+ /*N*/ {
+Index: binfilter/bf_sw/source/core/txtnode/sw_fntcache.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_sw/source/core/txtnode/sw_fntcache.cxx,v
+retrieving revision 1.6
+retrieving revision 1.6.70.1
+diff -u -r1.6 -r1.6.70.1
+--- binfilter/bf_sw/source/core/txtnode/sw_fntcache.cxx	9 Sep 2005 02:39:43 -0000	1.6
++++ binfilter/bf_sw/source/core/txtnode/sw_fntcache.cxx	27 Apr 2006 16:20:50 -0000	1.6.70.1
+@@ -2271,7 +2271,7 @@
+ /*?*/         {
+ /*?*/             const USHORT nGridWidth = pGrid->GetBaseHeight();
+ /*?*/ 
+-/*?*/             long* pKernArray = new long[rInf.GetLen()];
++/*?*/             sal_Int32* pKernArray = new sal_Int32[rInf.GetLen()];
+ /*?*/             rInf.GetOut().GetTextArray( rInf.GetText(), pKernArray,
+ /*?*/                                         rInf.GetIdx(), rInf.GetLen() );
+ /*?*/ 
+@@ -2373,7 +2373,7 @@
+ /*N*/ 			nLn = 1;
+ /*N*/ 		else if( nLn > 2 * nTxtBreak )
+ /*N*/ 			nLn = 2 * nTxtBreak;
+-/*N*/ 		long *pKernArray = new long[ nLn ];
++/*N*/ 		sal_Int32 *pKernArray = new sal_Int32[ nLn ];
+ /*N*/ 		rInf.GetOut().GetTextArray( rInf.GetText(), pKernArray,
+ /*N*/ 									rInf.GetIdx(), nLn );
+ /*N*/         if( rInf.GetScriptInfo()->Compress( pKernArray, rInf.GetIdx(), nLn,
+Index: binfilter/bf_sw/source/core/txtnode/sw_txtedt.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_sw/source/core/txtnode/sw_txtedt.cxx,v
+retrieving revision 1.6
+retrieving revision 1.6.72.1
+diff -u -r1.6 -r1.6.72.1
+--- binfilter/bf_sw/source/core/txtnode/sw_txtedt.cxx	9 Sep 2005 02:42:05 -0000	1.6
++++ binfilter/bf_sw/source/core/txtnode/sw_txtedt.cxx	27 Apr 2006 16:20:50 -0000	1.6.72.1
+@@ -560,12 +560,12 @@
+ /*N*/                 pBreakIt->xBreak->getScriptType( rText, nBegin );
+ /*N*/
+ /*N*/         XubString aTmpWord = rText.Copy( nBegin, aBound.endPos - nBegin );
+-/*N*/         const long nScriptEnd = nBegin +
++/*N*/         const sal_Int32 nScriptEnd = nBegin +
+ /*N*/             pBreakIt->xBreak->endOfScript( aTmpWord, 0, nCurrScript );
+-/*N*/         const long nEnd = Min( aBound.endPos, nScriptEnd );
++/*N*/         const sal_Int32 nEnd = Min( aBound.endPos, nScriptEnd );
+ /*N*/
+ /*N*/         // restrict word start to last script change position
+-/*N*/         long nScriptBegin = 0;
++/*N*/         sal_Int32 nScriptBegin = 0;
+ /*N*/         if ( aBound.startPos < nBegin )
+ /*N*/         {
+ /*N*/             // search from nBegin backwards until the next script change
+@@ -583,9 +583,9 @@
+ /*N*/         const USHORT nCurrScript =
+ /*N*/                 pBreakIt->xBreak->getScriptType( rText, aBound.startPos );
+ /*N*/         XubString aTmpWord = rText.Copy( aBound.startPos, aBound.endPos - aBound.startPos );
+-/*N*/         const long nScriptEnd = aBound.startPos +
++/*N*/         const sal_Int32 nScriptEnd = aBound.startPos +
+ /*N*/             pBreakIt->xBreak->endOfScript( aTmpWord, 0, nCurrScript );
+-/*N*/         const long nEnd = Min( aBound.endPos, nScriptEnd );
++/*N*/         const sal_Int32 nEnd = Min( aBound.endPos, nScriptEnd );
+ /*N*/         nBegin = (xub_StrLen)aBound.startPos;
+ /*N*/         nLen = (xub_StrLen)(nEnd - nBegin);
+ /*N*/     }
+Index: binfilter/bf_sw/source/core/unocore/sw_unoobj.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_sw/source/core/unocore/sw_unoobj.cxx,v
+retrieving revision 1.7
+retrieving revision 1.7.70.1
+diff -u -r1.7 -r1.7.70.1
+--- binfilter/bf_sw/source/core/unocore/sw_unoobj.cxx	9 Sep 2005 02:52:13 -0000	1.7
++++ binfilter/bf_sw/source/core/unocore/sw_unoobj.cxx	27 Apr 2006 12:34:24 -0000	1.7.70.1
+@@ -894,7 +894,7 @@
+ 		}
+ 
+ 		const SwNodes& rNds = rPam.GetDoc()->GetNodes();
+-		for( sal_uInt32 n = nSttNd; n <= nEndNd; ++n )
++		for( ULONG n = nSttNd; n <= nEndNd; ++n )
+ 		{
+ 			const SwTxtNode* pNd = rNds[ n ]->GetTxtNode();
+ 			if( pNd )
+Index: binfilter/bf_sw/source/core/unocore/sw_unoobj2.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_sw/source/core/unocore/sw_unoobj2.cxx,v
+retrieving revision 1.5
+retrieving revision 1.5.68.1
+diff -u -r1.5 -r1.5.68.1
+--- binfilter/bf_sw/source/core/unocore/sw_unoobj2.cxx	9 Sep 2005 02:52:29 -0000	1.5
++++ binfilter/bf_sw/source/core/unocore/sw_unoobj2.cxx	27 Apr 2006 12:36:26 -0000	1.5.68.1
+@@ -1036,7 +1036,7 @@
+ 
+ 			// beim 1.Node traegt der Node die Werte in den GetSet ein (Initial)
+ 			// alle weiteren Nodes werden zum GetSet zu gemergt
+-			for( sal_uInt32 n = nSttNd; n <= nEndNd; ++n )
++			for( ULONG n = nSttNd; n <= nEndNd; ++n )
+ 			{
+ 				SwNode* pNd = rPam.GetDoc()->GetNodes()[ n ];
+ 				switch( pNd->GetNodeType() )
+Index: binfilter/bf_sw/source/core/unocore/sw_unosett.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_sw/source/core/unocore/sw_unosett.cxx,v
+retrieving revision 1.5
+retrieving revision 1.5.72.1
+diff -u -r1.5 -r1.5.72.1
+--- binfilter/bf_sw/source/core/unocore/sw_unosett.cxx	9 Sep 2005 02:54:44 -0000	1.5
++++ binfilter/bf_sw/source/core/unocore/sw_unosett.cxx	27 Apr 2006 12:33:42 -0000	1.5.72.1
+@@ -1111,7 +1111,7 @@
+ 				{
+ 					INT32 nVal;
+ 					aValue >>= nVal;
+-					aInfo.SetPosFromLeft(Min(MM100_TO_TWIP(nVal), sal_Int32(0xffff)));
++					aInfo.SetPosFromLeft(Min(static_cast<sal_Int32>(MM100_TO_TWIP(nVal)), sal_Int32(0xffff)));
+ 				}
+ 				break;
+ 				case WID_INTERVAL   :
+@@ -1230,7 +1230,7 @@
+ 					sal_uInt32 nPos = rInfo.GetPosFromLeft();
+ 					if(USHRT_MAX == nPos)
+ 						nPos = 0;
+-					aRet <<= TWIP_TO_MM100(nPos);
++					aRet <<= static_cast < sal_Int32 >(TWIP_TO_MM100(nPos));
+ 				}
+ 				break;
+ 				case WID_INTERVAL   :
+@@ -2634,7 +2634,7 @@
+ 	switch(pMap->nWID)
+ 	{
+ 		case WID_TXTCOL_LINE_WIDTH:
+-			aRet <<= TWIP_TO_MM100(nSepLineWidth);
++			aRet <<= static_cast < sal_Int32 >(TWIP_TO_MM100(nSepLineWidth));
+ 		break;
+ 		case WID_TXTCOL_LINE_COLOR:
+ 			aRet <<= nSepLineColor;
+Index: binfilter/bf_sw/source/filter/xml/sw_swxml.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_sw/source/filter/xml/sw_swxml.cxx,v
+retrieving revision 1.4
+retrieving revision 1.4.72.1
+diff -u -r1.4 -r1.4.72.1
+--- binfilter/bf_sw/source/filter/xml/sw_swxml.cxx	9 Sep 2005 03:39:48 -0000	1.4
++++ binfilter/bf_sw/source/filter/xml/sw_swxml.cxx	27 Apr 2006 10:32:10 -0000	1.4.72.1
+@@ -427,7 +427,7 @@
+ }
+ 
+ 
+-sal_uInt32 XMLReader::Read( SwDoc &rDoc, SwPaM &rPaM, const String & rName )
++ULONG XMLReader::Read( SwDoc &rDoc, SwPaM &rPaM, const String & rName )
+ {
+ 	// Get service factory
+ 	Reference< lang::XMultiServiceFactory > xServiceFactory =
+@@ -587,7 +587,7 @@
+     }
+ 
+ 	rDoc.AddLink();	// prevent deletion
+-	sal_uInt32 nRet = 0;
++	ULONG nRet = 0;
+ 
+ 	// save redline mode into import info property set
+ 	Any aAny;
+Index: binfilter/bf_sw/source/filter/xml/sw_wrtxml.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_sw/source/filter/xml/sw_wrtxml.cxx,v
+retrieving revision 1.4
+retrieving revision 1.4.72.1
+diff -u -r1.4 -r1.4.72.1
+--- binfilter/bf_sw/source/filter/xml/sw_wrtxml.cxx	9 Sep 2005 03:40:15 -0000	1.4
++++ binfilter/bf_sw/source/filter/xml/sw_wrtxml.cxx	27 Apr 2006 10:35:38 -0000	1.4.72.1
+@@ -441,12 +441,12 @@
+ 	return 0;
+ }
+ 
+-sal_uInt32 SwXMLWriter::WriteStorage()
++ULONG SwXMLWriter::WriteStorage()
+ {
+ 	return _Write();
+ }
+ 
+-sal_uInt32 SwXMLWriter::Write( SwPaM& rPaM, SfxMedium& rMed,
++ULONG SwXMLWriter::Write( SwPaM& rPaM, SfxMedium& rMed,
+ 							   const String* pFileName )
+ {
+ 	return IsStgWriter()
+Index: binfilter/bf_sw/source/filter/xml/sw_xmlimp.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_sw/source/filter/xml/sw_xmlimp.cxx,v
+retrieving revision 1.7
+retrieving revision 1.7.72.1
+diff -u -r1.7 -r1.7.72.1
+--- binfilter/bf_sw/source/filter/xml/sw_xmlimp.cxx	9 Sep 2005 03:41:46 -0000	1.7
++++ binfilter/bf_sw/source/filter/xml/sw_xmlimp.cxx	27 Apr 2006 10:33:19 -0000	1.7.72.1
+@@ -710,7 +710,7 @@
+ 		if( !pPos->nContent.GetIndex() )
+ 		{
+ 			SwTxtNode* pCurrNd;
+-			sal_uInt32 nNodeIdx = pPos->nNode.GetIndex();
++			ULONG nNodeIdx = pPos->nNode.GetIndex();
+ 			pDoc = pPaM->GetDoc();
+ 
+ 			DBG_ASSERT( pPos->nNode.GetNode().IsCntntNode(),
+Index: binfilter/bf_sw/source/filter/xml/sw_xmlimpit.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_sw/source/filter/xml/sw_xmlimpit.cxx,v
+retrieving revision 1.6
+retrieving revision 1.6.70.1
+diff -u -r1.6 -r1.6.70.1
+--- binfilter/bf_sw/source/filter/xml/sw_xmlimpit.cxx	9 Sep 2005 03:41:59 -0000	1.6
++++ binfilter/bf_sw/source/filter/xml/sw_xmlimpit.cxx	27 Apr 2006 10:40:50 -0000	1.6.70.1
+@@ -777,7 +777,7 @@
+                         }
+                         else if( -1 != aToken.indexOf( sal_Unicode('%') ) )
+                         {
+-                            long nPrc = 50;
++                            sal_Int32 nPrc = 50;
+                             if( rUnitConverter.convertPercent( nPrc, aToken ) )
+                             {
+                                 if( !bHori )
+Index: binfilter/bf_sw/source/filter/xml/sw_xmlithlp.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_sw/source/filter/xml/sw_xmlithlp.cxx,v
+retrieving revision 1.5
+retrieving revision 1.5.72.1
+diff -u -r1.5 -r1.5.72.1
+--- binfilter/bf_sw/source/filter/xml/sw_xmlithlp.cxx	9 Sep 2005 03:43:09 -0000	1.5
++++ binfilter/bf_sw/source/filter/xml/sw_xmlithlp.cxx	27 Apr 2006 10:39:47 -0000	1.5.72.1
+@@ -203,7 +203,7 @@
+     rWidth = 0;
+     rNamedWidth = USHRT_MAX;
+ 
+-    long nTemp;
++    sal_Int32 nTemp;
+     while( aTokens.getNextToken( aToken ) && aToken.getLength() != 0 )
+     {
+         if( !rHasWidth &&
+Index: binfilter/bf_sw/source/filter/xml/sw_xmltble.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_sw/source/filter/xml/sw_xmltble.cxx,v
+retrieving revision 1.7
+retrieving revision 1.7.70.1
+diff -u -r1.7 -r1.7.70.1
+--- binfilter/bf_sw/source/filter/xml/sw_xmltble.cxx	9 Sep 2005 03:44:06 -0000	1.7
++++ binfilter/bf_sw/source/filter/xml/sw_xmltble.cxx	27 Apr 2006 10:38:23 -0000	1.7.70.1
+@@ -677,7 +677,7 @@
+ 				pColumn->SetWidthOpt( (sal_uInt16)nColAbsWidth, sal_False );
+ 			}
+ 
+-			sal_uInt32 nExpPos = 0;
++			ULONG nExpPos = 0;
+ 			if( rExpCols.Seek_Entry( pColumn, &nExpPos ) )
+ 			{
+ 				pColumn->SetStyleName(
+Index: binfilter/bf_sw/source/filter/xml/sw_xmltexti.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_sw/source/filter/xml/sw_xmltexti.cxx,v
+retrieving revision 1.7
+retrieving revision 1.7.70.1
+diff -u -r1.7 -r1.7.70.1
+--- binfilter/bf_sw/source/filter/xml/sw_xmltexti.cxx	9 Sep 2005 03:45:02 -0000	1.7
++++ binfilter/bf_sw/source/filter/xml/sw_xmltexti.cxx	27 Apr 2006 10:37:22 -0000	1.7.70.1
+@@ -175,7 +175,7 @@
+ };
+ static void lcl_putHeightAndWidth ( SfxItemSet &rItemSet, 
+ 		sal_Int32 nHeight, sal_Int32 nWidth,
+-		sal_Int32 *pTwipHeight=0, sal_Int32 *pTwipWidth=0 )
++		long *pTwipHeight=0, long *pTwipWidth=0 )
+ {
+ 	if( nWidth > 0 && nHeight > 0 )
+ 	{
+Index: binfilter/bf_sw/source/filter/xml/wrtxml.hxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_sw/source/filter/xml/wrtxml.hxx,v
+retrieving revision 1.3
+retrieving revision 1.3.72.1
+diff -u -r1.3 -r1.3.72.1
+--- binfilter/bf_sw/source/filter/xml/wrtxml.hxx	9 Sep 2005 03:45:15 -0000	1.3
++++ binfilter/bf_sw/source/filter/xml/wrtxml.hxx	27 Apr 2006 10:35:17 -0000	1.3.72.1
+@@ -67,7 +67,7 @@
+ 	sal_uInt32 _Write();
+ 
+ protected:
+-	virtual sal_uInt32 WriteStorage();
++	virtual ULONG WriteStorage();
+ 
+ public:
+ 
+Index: binfilter/bf_sw/source/ui/inc/view.hxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_sw/source/ui/inc/view.hxx,v
+retrieving revision 1.5
+retrieving revision 1.5.38.1
+diff -u -r1.5 -r1.5.38.1
+--- binfilter/bf_sw/source/ui/inc/view.hxx	19 Jan 2006 17:30:50 -0000	1.5
++++ binfilter/bf_sw/source/ui/inc/view.hxx	27 Apr 2006 13:37:16 -0000	1.5.38.1
+@@ -408,7 +408,7 @@
+ 	SfxDispatcher 	&GetDispatcher();
+ 
+ //STRIP001 	virtual SdrView*		GetDrawView() const;
+-	virtual	BOOL			HasUIFeature( ULONG nFeature );
++	virtual	BOOL			HasUIFeature( sal_uInt32 nFeature );
+ 	virtual	void			ShowCursor( FASTBOOL bOn = TRUE );
+ //STRIP001 	virtual ErrCode			DoVerb( long nVerb );
+ 
+Index: binfilter/bf_xmloff/source/core/xmloff_xmlehelp.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_xmloff/source/core/xmloff_xmlehelp.cxx,v
+retrieving revision 1.3
+retrieving revision 1.3.72.1
+diff -u -r1.3 -r1.3.72.1
+--- binfilter/bf_xmloff/source/core/xmloff_xmlehelp.cxx	9 Sep 2005 07:46:00 -0000	1.3
++++ binfilter/bf_xmloff/source/core/xmloff_xmlehelp.cxx	28 Apr 2006 08:58:40 -0000	1.3.72.1
+@@ -58,7 +58,7 @@
+ using namespace ::rtl;
+ using namespace ::binfilter::xmloff::token;
+ 
+-void SvXMLExportHelper::AddLength( long nValue, MapUnit eValueUnit,
++void SvXMLExportHelper::AddLength( sal_Int32 nValue, MapUnit eValueUnit,
+ 		   			  	   		   OUStringBuffer& rOut,
+ 								   MapUnit eOutUnit )
+ {
+@@ -70,9 +70,9 @@
+ 	}
+ 	
+ 	// The new length is (nVal * nMul)/(nDiv*nFac*10)
+-	long nMul = 1000;
+-	long nDiv = 1;
+-	long nFac = 100;
++	sal_Int32 nMul = 1000;
++	sal_Int32 nDiv = 1;
++	sal_Int32 nFac = 100;
+ 	enum XMLTokenEnum eUnit = XML_TOKEN_INVALID;
+ 	switch( eValueUnit )
+ 	{
+@@ -176,9 +176,9 @@
+ 	}
+ 
+ 
+-	long nLongVal;
++	sal_Int32 nLongVal;
+ 	BOOL bOutLongVal = TRUE;
+-	if( nValue > LONG_MAX / nMul )
++	if( nValue > SAL_MAX_INT32 / nMul )
+ 	{
+ 		// A big int is required for calculation
+ 		BigInt nBigVal( nValue );
+@@ -190,8 +190,8 @@
+ 
+ 		if( nBigVal.IsLong() )
+ 		{
+-			// To convert the value into a string a long is sufficient
+-			nLongVal = (long)nBigVal;
++			// To convert the value into a string a sal_Int32 is sufficient
++			nLongVal = (sal_Int32)nBigVal;
+ 		}
+ 		else
+ 		{
+@@ -313,7 +313,7 @@
+ 
+ }
+ 
+-void SvXMLExportHelper::AddPercentage( long nValue, OUStringBuffer& rOut )
++void SvXMLExportHelper::AddPercentage( sal_Int32 nValue, OUStringBuffer& rOut )
+ {
+ 	rOut.append( nValue );
+ 	rOut.append( sal_Unicode('%' ) );
+Index: binfilter/bf_xmloff/source/core/xmloff_xmluconv.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_xmloff/source/core/xmloff_xmluconv.cxx,v
+retrieving revision 1.3
+retrieving revision 1.3.70.1
+diff -u -r1.3 -r1.3.70.1
+--- binfilter/bf_xmloff/source/core/xmloff_xmluconv.cxx	9 Sep 2005 07:48:30 -0000	1.3
++++ binfilter/bf_xmloff/source/core/xmloff_xmluconv.cxx	28 Apr 2006 08:58:40 -0000	1.3.70.1
+@@ -931,7 +931,7 @@
+             bDone = sal_True;
+         else if ( sal_Unicode('0') <= c && sal_Unicode('9') >= c )
+         {
+-            if ( nTemp >= LONG_MAX / 10 )
++            if ( nTemp >= SAL_MAX_INT32 / 10 )
+                 bSuccess = sal_False;
+             else
+             {
+Index: binfilter/bf_xmloff/source/meta/xmloff_xmlmetai.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_xmloff/source/meta/xmloff_xmlmetai.cxx,v
+retrieving revision 1.4
+retrieving revision 1.4.10.1
+diff -u -r1.4 -r1.4.10.1
+--- binfilter/bf_xmloff/source/meta/xmloff_xmlmetai.cxx	7 Apr 2006 13:33:38 -0000	1.4
++++ binfilter/bf_xmloff/source/meta/xmloff_xmlmetai.cxx	28 Apr 2006 08:58:40 -0000	1.4.10.1
+@@ -328,7 +328,7 @@
+             bDone = sal_True;
+         else if ( sal_Unicode('0') <= c && sal_Unicode('9') >= c )
+         {
+-            if ( nTemp >= LONG_MAX / 10 )
++            if ( nTemp >= SAL_MAX_INT32 / 10 )
+                 bSuccess = sal_False;
+             else
+             {
+Index: binfilter/bf_xmloff/source/style/xmloff_XMLBackgroundImageContext.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_xmloff/source/style/xmloff_XMLBackgroundImageContext.cxx,v
+retrieving revision 1.3
+retrieving revision 1.3.70.1
+diff -u -r1.3 -r1.3.70.1
+--- binfilter/bf_xmloff/source/style/xmloff_XMLBackgroundImageContext.cxx	9 Sep 2005 09:42:20 -0000	1.3
++++ binfilter/bf_xmloff/source/style/xmloff_XMLBackgroundImageContext.cxx	27 Apr 2006 12:45:03 -0000	1.3.70.1
+@@ -248,7 +248,7 @@
+ 					}
+ 					else if( -1 != aToken.indexOf( sal_Unicode('%') ) )
+ 					{
+-						long nPrc = 50;
++						sal_Int32 nPrc = 50;
+ 						if( rUnitConverter.convertPercent( nPrc, aToken ) )
+ 						{
+ 							if( !bHori )
+Index: binfilter/bf_xmloff/source/style/xmloff_XMLFontAutoStylePool.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_xmloff/source/style/xmloff_XMLFontAutoStylePool.cxx,v
+retrieving revision 1.3
+retrieving revision 1.3.72.1
+diff -u -r1.3 -r1.3.72.1
+--- binfilter/bf_xmloff/source/style/xmloff_XMLFontAutoStylePool.cxx	9 Sep 2005 09:44:45 -0000	1.3
++++ binfilter/bf_xmloff/source/style/xmloff_XMLFontAutoStylePool.cxx	27 Apr 2006 12:47:21 -0000	1.3.72.1
+@@ -196,7 +196,7 @@
+ 	OUString sName;
+ 	XMLFontAutoStylePoolEntry_Impl aTmp( rFamilyName, rStyleName, nFamily,
+ 									 	 nPitch, eEnc );
+-	sal_uInt32 nPos;
++	ULONG nPos;
+ 	if( pPool->Seek_Entry( &aTmp, &nPos ) )
+ 	{
+ 		sName = pPool->GetObject( nPos )->GetName();
+@@ -250,7 +250,7 @@
+ 	OUString sName;
+ 	XMLFontAutoStylePoolEntry_Impl aTmp( rFamilyName, rStyleName, nFamily,
+ 									 	 nPitch, eEnc );
+-	sal_uInt32 nPos;
++	ULONG nPos;
+ 	if( pPool->Seek_Entry( &aTmp, &nPos ) )
+ 	{
+ 		sName = pPool->GetObject( nPos )->GetName();
+Index: binfilter/bf_xmloff/source/style/xmloff_backhdl.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_xmloff/source/style/xmloff_backhdl.cxx,v
+retrieving revision 1.3
+retrieving revision 1.3.72.1
+diff -u -r1.3 -r1.3.72.1
+--- binfilter/bf_xmloff/source/style/xmloff_backhdl.cxx	9 Sep 2005 09:47:12 -0000	1.3
++++ binfilter/bf_xmloff/source/style/xmloff_backhdl.cxx	27 Apr 2006 12:54:39 -0000	1.3.72.1
+@@ -107,7 +107,7 @@
+ 		}
+ 		else if( -1 != aToken.indexOf( sal_Unicode('%') ) )
+ 		{
+-			long nPrc = 50;
++			sal_Int32 nPrc = 50;
+ 			if( rUnitConverter.convertPercent( nPrc, aToken ) )
+ 			{
+ 				if( !bHori )
+Index: binfilter/bf_xmloff/source/style/xmloff_bordrhdl.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_xmloff/source/style/xmloff_bordrhdl.cxx,v
+retrieving revision 1.3
+retrieving revision 1.3.72.1
+diff -u -r1.3 -r1.3.72.1
+--- binfilter/bf_xmloff/source/style/xmloff_bordrhdl.cxx	9 Sep 2005 09:47:29 -0000	1.3
++++ binfilter/bf_xmloff/source/style/xmloff_bordrhdl.cxx	27 Apr 2006 12:54:39 -0000	1.3.72.1
+@@ -355,7 +355,7 @@
+ 	sal_uInt16 nNamedWidth = USHRT_MAX;
+ 	Color aColor;
+ 
+-	long nTemp;
++	sal_Int32 nTemp;
+ 	while( aTokens.getNextToken( aToken ) && aToken.getLength() != 0 )
+ 	{
+ 		if( !bHasWidth &&
+Index: binfilter/bf_xmloff/source/style/xmloff_impastp4.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_xmloff/source/style/xmloff_impastp4.cxx,v
+retrieving revision 1.3
+retrieving revision 1.3.72.1
+diff -u -r1.3 -r1.3.72.1
+--- binfilter/bf_xmloff/source/style/xmloff_impastp4.cxx	9 Sep 2005 09:50:58 -0000	1.3
++++ binfilter/bf_xmloff/source/style/xmloff_impastp4.cxx	27 Apr 2006 12:54:39 -0000	1.3.72.1
+@@ -110,7 +110,7 @@
+ 		sal_Bool bAsFamily )
+ {
+ 	// store family in a list if not already stored
+-	sal_uInt32 nPos;
++	ULONG nPos;
+ 	XMLFamilyData_Impl *pFamily = new XMLFamilyData_Impl( nFamily, rStrName, rMapper, rStrPrefix, bAsFamily );
+ 	if( !maFamilyList.Seek_Entry( pFamily, &nPos ) )
+ 		maFamilyList.Insert( pFamily );
+@@ -127,7 +127,7 @@
+ {
+ 	SvXMLAutoStylePoolNamesP_Impl *pNames = 0;
+ 
+-	sal_uInt32 nPos;
++	ULONG nPos;
+ 	XMLFamilyData_Impl aTmp( nFamily );
+ 	if( maFamilyList.Seek_Entry( &aTmp, &nPos ) )
+ 		pNames = maFamilyList.GetObject( nPos )->mpNameList;
+@@ -158,7 +158,7 @@
+ 				sal_Bool bCache)
+ {
+ 	sal_Bool bRet(sal_False);
+-	sal_uInt32 nPos;
++	ULONG nPos;
+ 
+ 	XMLFamilyData_Impl *pFamily = 0;
+ 	XMLFamilyData_Impl aTmp( nFamily );
+@@ -206,7 +206,7 @@
+ OUString SvXMLAutoStylePoolP_Impl::AddToCache( sal_Int32 nFamily,
+ 							 		    const OUString& rParent )
+ {
+-	sal_uInt32 nPos;
++	ULONG nPos;
+ 
+ 	XMLFamilyData_Impl *pFamily = 0;
+ 	XMLFamilyData_Impl aTmp( nFamily );
+@@ -238,7 +238,7 @@
+ {
+ 	OUString sName;
+ 
+-	sal_uInt32 nPos;
++	ULONG nPos;
+ 	XMLFamilyData_Impl aTmp( nFamily );
+ 	XMLFamilyData_Impl *pFamily = 0;
+ 	if( maFamilyList.Seek_Entry( &aTmp, &nPos ) )
+@@ -265,7 +265,7 @@
+ {
+ 	OUString sName;
+ 
+-	sal_uInt32 nPos;
++	ULONG nPos;
+ 	XMLFamilyData_Impl aTmp( nFamily );
+ 	XMLFamilyData_Impl *pFamily = 0;
+ 	if( maFamilyList.Seek_Entry( &aTmp, &nPos ) )
+@@ -307,7 +307,7 @@
+ 	sal_uInt32 nCount = 0;
+ 
+ 	// Get list of parents for current family (nFamily)
+-	sal_uInt32 nPos;
++	ULONG nPos;
+ 	XMLFamilyData_Impl aTmp( nFamily );
+ 	XMLFamilyData_Impl *pFamily = 0;
+ 	if( maFamilyList.Seek_Entry( &aTmp, &nPos ) )
+Index: binfilter/bf_xmloff/source/style/xmloff_xmlnumi.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_xmloff/source/style/xmloff_xmlnumi.cxx,v
+retrieving revision 1.3
+retrieving revision 1.3.70.1
+diff -u -r1.3 -r1.3.70.1
+--- binfilter/bf_xmloff/source/style/xmloff_xmlnumi.cxx	9 Sep 2005 09:58:11 -0000	1.3
++++ binfilter/bf_xmloff/source/style/xmloff_xmlnumi.cxx	28 Apr 2006 08:58:41 -0000	1.3.70.1
+@@ -758,11 +758,11 @@
+ 			sVerticalRel = rValue;
+ 			break;
+ 		case XML_TOK_STYLE_ATTRIBUTES_ATTR_WIDTH:
+-			if( rUnitConv.convertMeasure( nVal, rValue, 0, LONG_MAX ) )
++			if( rUnitConv.convertMeasure( nVal, rValue, 0, SAL_MAX_INT32 ) )
+ 				rListLevel.SetImageWidth( nVal );
+ 			break;
+ 		case XML_TOK_STYLE_ATTRIBUTES_ATTR_HEIGHT:
+-			if( rUnitConv.convertMeasure( nVal, rValue, 0, LONG_MAX ) )
++			if( rUnitConv.convertMeasure( nVal, rValue, 0, SAL_MAX_INT32 ) )
+ 				rListLevel.SetImageHeight( nVal );
+ 			break;
+ 		case XML_TOK_STYLE_ATTRIBUTES_ATTR_COLOR:
+Index: binfilter/bf_xmloff/source/style/xmloff_xmlstyle.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_xmloff/source/style/xmloff_xmlstyle.cxx,v
+retrieving revision 1.4
+retrieving revision 1.4.70.1
+diff -u -r1.4 -r1.4.70.1
+--- binfilter/bf_xmloff/source/style/xmloff_xmlstyle.cxx	9 Sep 2005 09:59:15 -0000	1.4
++++ binfilter/bf_xmloff/source/style/xmloff_xmlstyle.cxx	27 Apr 2006 12:54:39 -0000	1.4.70.1
+@@ -459,7 +459,7 @@
+ 	if( pIndices )
+ 	{
+ 		SvXMLStyleIndex_Impl aIndex( nFamily, rName );
+-		sal_uInt32 nPos = 0;
++		ULONG nPos = 0;
+ 		if( pIndices->Seek_Entry( &aIndex, &nPos ) )
+ 			pStyle = pIndices->GetObject( nPos )->GetStyle();
+ 	}
+Index: binfilter/bf_xmloff/source/text/xmloff_XMLTextListAutoStylePool.cxx
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_xmloff/source/text/xmloff_XMLTextListAutoStylePool.cxx,v
+retrieving revision 1.3
+retrieving revision 1.3.72.1
+diff -u -r1.3 -r1.3.72.1
+--- binfilter/bf_xmloff/source/text/xmloff_XMLTextListAutoStylePool.cxx	9 Sep 2005 10:31:16 -0000	1.3
++++ binfilter/bf_xmloff/source/text/xmloff_XMLTextListAutoStylePool.cxx	27 Apr 2006 15:53:55 -0000	1.3.72.1
+@@ -226,7 +226,7 @@
+ 
+ sal_uInt32 XMLTextListAutoStylePool::Find( XMLTextListAutoStylePoolEntry_Impl* pEntry ) const
+ {
+-	sal_uInt32 nPos;
++	ULONG nPos;
+ 	if( !pEntry->IsNamed() && mxNumRuleCompare.is() )
+ 	{
+ 		const sal_uInt32 nCount = pPool->Count();
+Index: binfilter/inc/bf_sc/appoptio.hxx
+===================================================================
+RCS file: /cvs/framework/binfilter/inc/bf_sc/appoptio.hxx,v
+retrieving revision 1.5
+retrieving revision 1.5.72.1
+diff -u -r1.5 -r1.5.72.1
+--- binfilter/inc/bf_sc/appoptio.hxx	9 Sep 2005 10:56:59 -0000	1.5
++++ binfilter/inc/bf_sc/appoptio.hxx	27 Apr 2006 16:28:36 -0000	1.5.72.1
+@@ -85,14 +85,14 @@
+ 	void		SetDetectiveAuto( BOOL bNew )	{ bDetectiveAuto = bNew; }
+ 	BOOL		GetDetectiveAuto() const		{ return bDetectiveAuto; }
+ 
+-	void		SetTrackContentColor(ULONG nNew) { nTrackContentColor = nNew; }
+-	ULONG		GetTrackContentColor() const	 { return nTrackContentColor; }
+-	void		SetTrackInsertColor(ULONG nNew)	 { nTrackInsertColor = nNew;  }
+-	ULONG		GetTrackInsertColor() const		 { return nTrackInsertColor;  }
+-	void		SetTrackDeleteColor(ULONG nNew)	 { nTrackDeleteColor = nNew;  }
+-	ULONG		GetTrackDeleteColor() const		 { return nTrackDeleteColor;  }
+-	void		SetTrackMoveColor(ULONG nNew)	 { nTrackMoveColor = nNew;    }
+-	ULONG		GetTrackMoveColor() const		 { return nTrackMoveColor;    }
++	void		SetTrackContentColor(sal_uInt32 nNew) { nTrackContentColor = nNew; }
++	sal_uInt32	GetTrackContentColor() const	 { return nTrackContentColor; }
++	void		SetTrackInsertColor(sal_uInt32 nNew)	 { nTrackInsertColor = nNew;  }
++	sal_uInt32	GetTrackInsertColor() const		 { return nTrackInsertColor;  }
++	void		SetTrackDeleteColor(sal_uInt32 nNew)	 { nTrackDeleteColor = nNew;  }
++	sal_uInt32	GetTrackDeleteColor() const		 { return nTrackDeleteColor;  }
++	void		SetTrackMoveColor(sal_uInt32 nNew)	 { nTrackMoveColor = nNew;    }
++	sal_uInt32	GetTrackMoveColor() const		 { return nTrackMoveColor;    }
+ 
+ 	ScLkUpdMode GetLinkMode() const				{ return eLinkMode ;}
+ 	void		SetLinkMode( ScLkUpdMode nSet )	{ 	eLinkMode  = nSet;}
+@@ -116,10 +116,10 @@
+ 	USHORT		nStatusFunc;
+ 	BOOL		bAutoComplete;
+ 	BOOL		bDetectiveAuto;
+-	ULONG		nTrackContentColor;
+-	ULONG		nTrackInsertColor;
+-	ULONG		nTrackDeleteColor;
+-	ULONG		nTrackMoveColor;
++	sal_uInt32	nTrackContentColor;
++	sal_uInt32	nTrackInsertColor;
++	sal_uInt32	nTrackDeleteColor;
++	sal_uInt32	nTrackMoveColor;
+ 	ScLkUpdMode eLinkMode;
+ 	INT32		nDefaultObjectSizeWidth;
+ 	INT32		nDefaultObjectSizeHeight;
+Index: binfilter/inc/bf_sc/conditio.hxx
+===================================================================
+RCS file: /cvs/framework/binfilter/inc/bf_sc/conditio.hxx,v
+retrieving revision 1.3
+retrieving revision 1.3.72.1
+diff -u -r1.3 -r1.3.72.1
+--- binfilter/inc/bf_sc/conditio.hxx	9 Sep 2005 11:03:32 -0000	1.3
++++ binfilter/inc/bf_sc/conditio.hxx	27 Apr 2006 11:27:33 -0000	1.3.72.1
+@@ -206,13 +206,13 @@
+ {
+ 	ScDocument*			pDoc;
+ 	ScRangeList*		pAreas;				// Bereiche fuer Paint
+-	ULONG				nKey;				// Index in Attributen
++	sal_uInt32			nKey;				// Index in Attributen
+ 	ScCondFormatEntry**	ppEntries;
+ 	USHORT				nEntryCount;
+ 	BOOL				bIsUsed;			// temporaer beim Speichern
+ 
+ public:
+-			ScConditionalFormat(ULONG nNewKey, ScDocument* pDocument);
++			ScConditionalFormat(sal_uInt32 nNewKey, ScDocument* pDocument);
+ 			ScConditionalFormat(const ScConditionalFormat& r);
+ 			ScConditionalFormat(SvStream& rStream, ScMultipleReadHeader& rHdr,
+ 								ScDocument* pDocument);
+@@ -245,8 +245,8 @@
+ 	void			DoRepaint( const ScRange* pModified );
+ 	void			InvalidateArea();
+ 
+-	ULONG			GetKey() const			{ return nKey; }
+-	void			SetKey(ULONG nNew)		{ nKey = nNew; }	// nur wenn nicht eingefuegt!
++	sal_uInt32		GetKey() const			{ return nKey; }
++	void			SetKey(sal_uInt32 nNew)	{ nKey = nNew; }	// nur wenn nicht eingefuegt!
+ 
+ 	void			SetUsed(BOOL bSet)		{ bIsUsed = bSet; }
+ 	BOOL			IsUsed() const			{ return bIsUsed; }
+@@ -277,7 +277,7 @@
+ 	void	InsertNew( ScConditionalFormat* pNew )
+ 				{ if (!Insert(pNew)) delete pNew; }
+ 
+-	ScConditionalFormat* GetFormat( ULONG nKey );
++	ScConditionalFormat* GetFormat( sal_uInt32 nKey );
+ 
+ 	void	Load( SvStream& rStream, ScDocument* pDocument );
+ 	void	Store( SvStream& rStream ) const;
+Index: binfilter/inc/bf_sc/document.hxx
+===================================================================
+RCS file: /cvs/framework/binfilter/inc/bf_sc/document.hxx,v
+retrieving revision 1.6
+retrieving revision 1.6.52.1
+diff -u -r1.6 -r1.6.52.1
+--- binfilter/inc/bf_sc/document.hxx	14 Dec 2005 14:34:42 -0000	1.6
++++ binfilter/inc/bf_sc/document.hxx	27 Apr 2006 13:17:57 -0000	1.6.52.1
+@@ -759,7 +759,7 @@
+ 	void			GetValue( USHORT nCol, USHORT nRow, USHORT nTab, double& rValue );
+ 	double			RoundValueAsShown( double fVal, ULONG nFormat );
+ 	void			GetNumberFormat( USHORT nCol, USHORT nRow, USHORT nTab,
+-									 ULONG& rFormat );
++									 sal_uInt32& rFormat );
+ 	ULONG			GetNumberFormat( const ScAddress& ) const;
+ 					/// if no number format attribute is set the calculated
+ 					/// number format of the formula cell is returned
+Index: binfilter/inc/bf_sc/rechead.hxx
+===================================================================
+RCS file: /cvs/framework/binfilter/inc/bf_sc/rechead.hxx,v
+retrieving revision 1.3
+retrieving revision 1.3.72.1
+diff -u -r1.3 -r1.3.72.1
+--- binfilter/inc/bf_sc/rechead.hxx	9 Sep 2005 11:24:36 -0000	1.3
++++ binfilter/inc/bf_sc/rechead.hxx	27 Apr 2006 16:28:36 -0000	1.3.72.1
+@@ -158,10 +158,10 @@
+ private:
+ 	SvStream&	rStream;
+ 	ULONG		nDataPos;
+-	ULONG		nDataSize;
++	sal_uInt32	nDataSize;
+ 
+ public:
+-	ScWriteHeader(SvStream& rNewStream, ULONG nDefault = 0);
++	ScWriteHeader(SvStream& rNewStream, sal_uInt32 nDefault = 0);
+ 	~ScWriteHeader();
+ };
+ 
+@@ -192,11 +192,11 @@
+ 	SvStream&		rStream;
+ 	SvMemoryStream	aMemStream;
+ 	ULONG			nDataPos;
+-	ULONG			nDataSize;
++	sal_uInt32		nDataSize;
+ 	ULONG			nEntryStart;
+ 
+ public:
+-	ScMultipleWriteHeader(SvStream& rNewStream, ULONG nDefault = 0);
++	ScMultipleWriteHeader(SvStream& rNewStream, sal_uInt32 nDefault = 0);
+ 	~ScMultipleWriteHeader();
+ 
+ 	void	StartEntry();
+Index: binfilter/inc/bf_sc/validat.hxx
+===================================================================
+RCS file: /cvs/framework/binfilter/inc/bf_sc/validat.hxx,v
+retrieving revision 1.3
+retrieving revision 1.3.72.1
+diff -u -r1.3 -r1.3.72.1
+--- binfilter/inc/bf_sc/validat.hxx	9 Sep 2005 11:36:11 -0000	1.3
++++ binfilter/inc/bf_sc/validat.hxx	27 Apr 2006 11:37:03 -0000	1.3.72.1
+@@ -70,7 +70,7 @@
+ 
+ class ScValidationData : public ScConditionEntry
+ {
+-	ULONG				nKey;				// Index in Attributen
++	sal_uInt32			nKey;				// Index in Attributen
+ 
+ 	ScValidationMode	eDataMode;
+ 	BOOL				bShowInput;
+@@ -132,8 +132,8 @@
+ //STRIP001 	void			DoCalcError( ScFormulaCell* pCell ) const;
+ 
+ 	BOOL			IsEmpty() const;
+-	ULONG			GetKey() const			{ return nKey; }
+-	void			SetKey(ULONG nNew)		{ nKey = nNew; }	// nur wenn nicht eingefuegt!
++	sal_uInt32		GetKey() const			{ return nKey; }
++	void			SetKey(sal_uInt32 nNew)		{ nKey = nNew; }	// nur wenn nicht eingefuegt!
+ 
+ 	void			SetUsed(BOOL bSet)		{ bIsUsed = bSet; }
+ 	BOOL			IsUsed() const			{ return bIsUsed; }
+@@ -166,7 +166,7 @@
+ 	void	InsertNew( ScValidationData* pNew )
+ 				{ if (!Insert(pNew)) delete pNew; }
+ 
+-	ScValidationData* GetData( ULONG nKey );
++	ScValidationData* GetData( sal_uInt32 nKey );
+ 
+ 	void	Load( SvStream& rStream, ScDocument* pDocument );
+ 	void	Store( SvStream& rStream ) const;
+Index: binfilter/inc/bf_sch/memchrt.hxx
+===================================================================
+RCS file: /cvs/framework/binfilter/inc/bf_sch/memchrt.hxx,v
+retrieving revision 1.6
+retrieving revision 1.6.72.1
+diff -u -r1.6 -r1.6.72.1
+--- binfilter/inc/bf_sch/memchrt.hxx	9 Sep 2005 11:48:05 -0000	1.6
++++ binfilter/inc/bf_sch/memchrt.hxx	27 Apr 2006 11:05:12 -0000	1.6.72.1
+@@ -194,12 +194,12 @@
+ 
+ 	// number formatter and format id
+ 	SvNumberFormatter*  mpNumFormatter;
+-	long *pRowNumFmtId;
+-	long *pColNumFmtId;
++	sal_Int32 *pRowNumFmtId;
++	sal_Int32 *pColNumFmtId;
+ 
+ 	// translation table for row-/column reordering (internal)
+-	long *pRowTable;
+-	long *pColTable;
++	sal_Int32 *pRowTable;
++	sal_Int32 *pColTable;
+ 	ChartSelectionInfo aSelectionInfo;
+ 
+ 	// is not copied in copy contrustor (?)
+@@ -263,49 +263,49 @@
+ 	// methods for translation of data
+ //STRIP001 	BOOL TransCol(long nCol,BOOL bUp=TRUE);
+ //STRIP001 	BOOL TransRow(long nRow,BOOL bUp=TRUE);
+-	inline void ResetTranslation(long *pTable,long nCnt);
++	inline void ResetTranslation(sal_Int32 *pTable,long nCnt);
+ 	BOOL VerifyTranslation();
+ 	long GetTranslation() const { return nTranslated; }
+-	inline void UpdateTranslation(long *pTable,long nCnt);
++	inline void UpdateTranslation(sal_Int32 *pTable,long nCnt);
+ 	// for acces always use these Get-methods !
+ 	double GetTransData(long nCol,long nRow);
+ 	double GetTransDataInPercent(long nCol ,long nRow,BOOL bRowData) const;
+ 	const String& GetTransColText(long nCol) const;
+ 	const String& GetTransRowText(long nRow) const;
+ 
+-	const long *GetRowTranslation() const { return pRowTable; }
+-	const long *GetColTranslation() const { return pColTable; }
++	const sal_Int32 *GetRowTranslation() const { return pRowTable; }
++	const sal_Int32 *GetColTranslation() const { return pColTable; }
+ 
+ #ifdef SCH_COPY_HACK
+-	const long* GetRowNumFmtTable() const { return pRowNumFmtId; }
+-	const long* GetColNumFmtTable() const { return pColNumFmtId; }
++	const sal_Int32* GetRowNumFmtTable() const { return pRowNumFmtId; }
++	const sal_Int32* GetColNumFmtTable() const { return pColNumFmtId; }
+ 
+ 	// ********************
+ 	// BM: Fix for #68864#
+ 	// Use these four methods with care! The arrays MUST have the correct size!
+ 	// ********************
+-	void SetRowTranslation( const long* pTransTable )
++	void SetRowTranslation( const sal_Int32* pTransTable )
+ 	{
+ 		if( !pRowTable ) return;
+-		for( long i=0; i<nRowCnt; i++ )
++		for( sal_Int32 i=0; i<nRowCnt; i++ )
+ 			pRowTable[ i ] = pTransTable[ i ];
+ 	}
+-	void SetColTranslation( const long* pTransTable )
++	void SetColTranslation( const sal_Int32* pTransTable )
+ 	{
+ 		if( !pColTable ) return;
+-		for( long i=0; i<nColCnt; i++ )
++		for( sal_Int32 i=0; i<nColCnt; i++ )
+ 			pColTable[ i ] = pTransTable[ i ];
+ 	}
+-	void SetRowNumFmtTable( const long* pNumFmtTable )
++	void SetRowNumFmtTable( const sal_Int32* pNumFmtTable )
+ 	{
+ 		if( !pRowNumFmtId ) return;
+-		for( long i=0; i<nRowCnt; i++ )
++		for( sal_Int32 i=0; i<nRowCnt; i++ )
+ 			pRowNumFmtId[ i ] = pNumFmtTable[ i ];
+ 	}
+-	void SetColNumFmtTable( const long* pNumFmtTable )
++	void SetColNumFmtTable( const sal_Int32* pNumFmtTable )
+ 	{
+ 		if( !pColNumFmtId ) return;
+-		for( long i=0; i<nColCnt; i++ )
++		for( sal_Int32 i=0; i<nColCnt; i++ )
+ 			pColNumFmtId[ i ] = pNumFmtTable[ i ];
+ 	}
+ 	// this is only valid if the corresponding translation table was set correctly!
+@@ -481,7 +481,7 @@
+ 
+ // ==================== Inline Implementations ====================
+ 
+-inline void SchMemChart::ResetTranslation(long *pTable,long nCnt)
++inline void SchMemChart::ResetTranslation(sal_Int32 *pTable,long nCnt)
+ {
+ 	long i;
+ 	if(pTable)
+@@ -494,12 +494,13 @@
+ 		nTranslated=TRANS_NONE;
+ }
+ 
+-inline void SchMemChart::UpdateTranslation(long *pTable,long nCnt)
++inline void SchMemChart::UpdateTranslation(sal_Int32 *pTable,long nCnt)
+ {
+ 	if( (pTable==pRowTable && nTranslated==TRANS_ROW)
+ 	  ||(pTable==pColTable && nTranslated==TRANS_COL))
+ 	{
+-		long i,nMax=0;
++		long i;
++		sal_Int32 nMax=0;
+ 		for(i=0;i<nCnt;i++)
+ 			nMax=Max(nMax,pTable[i]);
+ 
+@@ -588,11 +589,11 @@
+ 	delete[] pOldData;
+ 
+ 	String *pOldColText     = pColText;
+-	long   *pOldColNumFmtId = pColNumFmtId;
+-	long   *pOldColTable    = pColTable;
++	sal_Int32 *pOldColNumFmtId = pColNumFmtId;
++	sal_Int32 *pOldColTable    = pColTable;
+ 
+-	pColNumFmtId	= new long  [nNewColCnt];
+-	pColTable		= new long  [nNewColCnt];
++	pColNumFmtId	= new sal_Int32 [nNewColCnt];
++	pColTable		= new sal_Int32 [nNewColCnt];
+ 	pColText		= new String[nNewColCnt];
+ 
+ 	long nC=nNewColCnt;
+@@ -636,12 +637,12 @@
+ 	pData = new double[nNewColCnt * nRowCnt];
+ 
+ 	String* pOldColText		= pColText;
+-	long*   pOldColNumFmtId	= pColNumFmtId;
+-	long*   pOldColTable	= pColTable;
++	sal_Int32* pOldColNumFmtId	= pColNumFmtId;
++	sal_Int32* pOldColTable	= pColTable;
+ 
+ 	pColText		= new String[nNewColCnt];
+-	pColNumFmtId	= new long  [nNewColCnt];
+-	pColTable		= new long  [nNewColCnt];
++	pColNumFmtId	= new sal_Int32 [nNewColCnt];
++	pColTable		= new sal_Int32 [nNewColCnt];
+ 
+ 	short i, j, nOld;
+ 
+@@ -710,11 +711,11 @@
+ 	delete[] pOldData;
+ 
+ 	String *pOldRowText     =pRowText;
+-	long   *pOldRowNumFmtId =pRowNumFmtId;
+-	long   *pOldRowTable    =pRowTable;
++	sal_Int32 *pOldRowNumFmtId =pRowNumFmtId;
++	sal_Int32 *pOldRowTable    =pRowTable;
+ 
+-	pRowNumFmtId	= new long  [nNewRowCnt];
+-	pRowTable		= new long  [nNewRowCnt];
++	pRowNumFmtId	= new sal_Int32 [nNewRowCnt];
++	pRowTable		= new sal_Int32 [nNewRowCnt];
+ 	pRowText        = new String[nNewRowCnt];
+ 
+ 	long nC=nNewRowCnt;
+@@ -773,12 +774,12 @@
+ 	delete[] pOldData;
+ 
+ 	String* pOldRowText		= pRowText;
+-	long*   pOldRowNumFmtId	= pRowNumFmtId;
+-	long*   pOldRowTable	= pRowTable;
++	sal_Int32*   pOldRowNumFmtId	= pRowNumFmtId;
++	sal_Int32*   pOldRowTable	= pRowTable;
+ 
+ 	pRowText		= new String[nNewRowCnt];
+-	pRowNumFmtId	= new long  [nNewRowCnt];
+-	pRowTable		= new long  [nNewRowCnt];
++	pRowNumFmtId	= new sal_Int32 [nNewRowCnt];
++	pRowTable		= new sal_Int32 [nNewRowCnt];
+ 
+ 	for (i = 0, nOld = 0;; i++, nOld++)
+ 	{
+Index: binfilter/inc/bf_sd/drawdoc.hxx
+===================================================================
+RCS file: /cvs/framework/binfilter/inc/bf_sd/drawdoc.hxx,v
+retrieving revision 1.5
+retrieving revision 1.5.10.1
+diff -u -r1.5 -r1.5.10.1
+--- binfilter/inc/bf_sd/drawdoc.hxx	7 Apr 2006 13:37:44 -0000	1.5
++++ binfilter/inc/bf_sd/drawdoc.hxx	27 Apr 2006 12:06:47 -0000	1.5.10.1
+@@ -169,7 +169,7 @@
+ 	BOOL			    bPresLockedPages;
+ 	BOOL			    bPresAlwaysOnTop;
+ 	BOOL                bPresFullScreen;
+-	ULONG			    nPresPause;
++	sal_uInt32		    nPresPause;
+ 	BOOL			    bPresShowLogo;
+ 	BOOL			    bOnlineSpell;
+ 	BOOL			    bHideSpell;
+@@ -177,7 +177,7 @@
+     BOOL                bSummationOfParagraphs;
+ 	bool				mbStartWithPresentation;		// is set to true when starting with command line parameter -start
+ 
+-	ULONG			    nPresFirstPage;
++	sal_uInt32		    nPresFirstPage;
+ 	LanguageType	    eLanguage;
+ 	LanguageType	    eLanguageCJK;
+ 	LanguageType	    eLanguageCTL;
+@@ -363,8 +363,8 @@
+ 	void                SetAnimationAllowed (BOOL bAllowed) { bAnimationAllowed = bAllowed; }
+ 	BOOL                IsAnimationAllowed() const { return bAnimationAllowed; }
+ 
+-	void                SetPresPause( ULONG nSecondsToWait ) { nPresPause = nSecondsToWait; }
+-	ULONG               GetPresPause() const { return nPresPause; }
++	void                SetPresPause( sal_uInt32 nSecondsToWait ) { nPresPause = nSecondsToWait; }
++	sal_uInt32          GetPresPause() const { return nPresPause; }
+ 
+ 	void                SetPresShowLogo( BOOL bShowLogo ) { bPresShowLogo = bShowLogo; }
+ 	BOOL                IsPresShowLogo() const { return bPresShowLogo; }
+Index: binfilter/inc/bf_sfx2/dispatch.hxx
+===================================================================
+RCS file: /cvs/framework/binfilter/inc/bf_sfx2/dispatch.hxx,v
+retrieving revision 1.3
+retrieving revision 1.3.72.1
+diff -u -r1.3 -r1.3.72.1
+--- binfilter/inc/bf_sfx2/dispatch.hxx	9 Sep 2005 12:12:58 -0000	1.3
++++ binfilter/inc/bf_sfx2/dispatch.hxx	27 Apr 2006 14:55:06 -0000	1.3.72.1
+@@ -139,7 +139,7 @@
+ 	DECL_LINK( PostMsgHandler, SfxRequest * );
+ 
+ 	int 				Call_Impl( SfxShell& rShell, const SfxSlot &rSlot, SfxRequest &rReq, BOOL bRecord );
+-	ULONG               _Update_Impl( BOOL,BOOL,BOOL,SfxMenuBarManager*,SfxWorkWindow*);
++	sal_uInt32          _Update_Impl( BOOL,BOOL,BOOL,SfxMenuBarManager*,SfxWorkWindow*);
+ 	void				CollectTools_Impl(SfxWorkWindow*);
+ 
+ protected:
+@@ -234,8 +234,8 @@
+ 
+ 	BOOL                IsAllowed( USHORT nSlot ) const;
+     ::com::sun::star::frame::XDispatch*          GetDispatchInterface( const String& );
+-	void				SetDisableFlags( ULONG nFlags );
+-	ULONG				GetDisableFlags() const;
++	void				SetDisableFlags( sal_uInt32 nFlags );
++	sal_uInt32			GetDisableFlags() const;
+ 
+ #if _SOLAR__PRIVATE
+ 	BOOL				HasSlot_Impl( USHORT );
+Index: binfilter/inc/bf_sfx2/docinf.hxx
+===================================================================
+RCS file: /cvs/framework/binfilter/inc/bf_sfx2/docinf.hxx,v
+retrieving revision 1.5
+retrieving revision 1.5.72.1
+diff -u -r1.5 -r1.5.72.1
+--- binfilter/inc/bf_sfx2/docinf.hxx	9 Sep 2005 12:14:19 -0000	1.5
++++ binfilter/inc/bf_sfx2/docinf.hxx	27 Apr 2006 15:36:59 -0000	1.5.72.1
+@@ -130,7 +130,7 @@
+ 	String   aDefaultTarget;
+ 	String   aReloadURL;
+ 	BOOL     bReloadEnabled;
+-	ULONG    nReloadSecs;
++	sal_uInt32 nReloadSecs;
+ 
+ 	DateTime aTemplateDate;	// Stamp der Dokumentvorlage
+ 
+Index: binfilter/inc/bf_sfx2/viewfrm.hxx
+===================================================================
+RCS file: /cvs/framework/binfilter/inc/bf_sfx2/viewfrm.hxx,v
+retrieving revision 1.5
+retrieving revision 1.5.70.1
+diff -u -r1.5 -r1.5.70.1
+--- binfilter/inc/bf_sfx2/viewfrm.hxx	9 Sep 2005 12:45:26 -0000	1.5
++++ binfilter/inc/bf_sfx2/viewfrm.hxx	28 Apr 2006 08:58:41 -0000	1.5.70.1
+@@ -112,7 +112,7 @@
+ 							SFX_DECL_INTERFACE(SFX_INTERFACE_SFXVIEWFRM);
+ 
+ 							SfxViewFrame() {}
+-							SfxViewFrame( SfxBindings&, SfxFrame*, SfxObjectShell *pDoc=0, ULONG nType = 0 );
++							SfxViewFrame( SfxBindings&, SfxFrame*, SfxObjectShell *pDoc=0, sal_uInt32 nType = 0 );
+ //STRIP001 							SfxViewFrame(SfxObjectShell&, SfxBindings&, SfxFrame*p=0, ULONG nType = 0);
+ //STRIP001 							SfxViewFrame(
+ //STRIP001 								const SfxViewFrame &, SfxBindings &, SfxFrame *pFrame);
+Index: binfilter/inc/bf_starmath/document.hxx
+===================================================================
+RCS file: /cvs/framework/binfilter/inc/bf_starmath/document.hxx,v
+retrieving revision 1.4
+retrieving revision 1.4.70.1
+diff -u -r1.4 -r1.4.70.1
+--- binfilter/inc/bf_starmath/document.hxx	9 Sep 2005 12:47:58 -0000	1.4
++++ binfilter/inc/bf_starmath/document.hxx	27 Apr 2006 14:01:41 -0000	1.4.70.1
+@@ -83,15 +83,15 @@
+ 
+ #define HINT_DATACHANGED	1004
+ 
+-#define SM30BIDENT	 ((ULONG)0x534D3033L)
+-#define SM30IDENT	 ((ULONG)0x30334d53L)
+-#define SM304AIDENT  ((ULONG)0x34303330L)
+-#define SM30VERSION  ((ULONG)0x00010000L)
+-#define SM50VERSION	 ((ULONG)0x00010001L)	//Unterschied zur SM30VERSION ist
++#define SM30BIDENT	 ((sal_uInt32)0x534D3033L)
++#define SM30IDENT	 ((sal_uInt32)0x30334d53L)
++#define SM304AIDENT  ((sal_uInt32)0x34303330L)
++#define SM30VERSION  ((sal_uInt32)0x00010000L)
++#define SM50VERSION	 ((sal_uInt32)0x00010001L)	//Unterschied zur SM30VERSION ist
+ 											//der neue Border im Format.
+ 
+-#define FRMIDENT	((ULONG)0x03031963L)
+-#define FRMVERSION	((ULONG)0x00010001L)
++#define FRMIDENT	((sal_uInt32)0x03031963L)
++#define FRMVERSION	((sal_uInt32)0x00010001L)
+ 
+ #define STAROFFICE_XML	"StarOffice XML (Math)"
+ #define MATHML_XML		"MathML XML (Math)"
+Index: binfilter/inc/bf_svx/editeng.hxx
+===================================================================
+RCS file: /cvs/framework/binfilter/inc/bf_svx/editeng.hxx,v
+retrieving revision 1.5
+retrieving revision 1.5.10.2
+diff -u -r1.5 -r1.5.10.2
+--- binfilter/inc/bf_svx/editeng.hxx	7 Apr 2006 13:39:00 -0000	1.5
++++ binfilter/inc/bf_svx/editeng.hxx	27 Apr 2006 12:27:00 -0000	1.5.10.2
+@@ -196,19 +196,19 @@
+ 
+ 	String			GetText( LineEnd eEnd = LINEEND_LF ) const;
+ 	String			GetText( const ESelection& rSelection, const LineEnd eEnd = LINEEND_LF ) const;
+-	ULONG			GetTextLen() const;
+-	ULONG			GetTextHeight() const;
+-	ULONG			CalcTextWidth();
++	sal_uInt32		GetTextLen() const;
++	sal_uInt32		GetTextHeight() const;
++	sal_uInt32		CalcTextWidth();
+ 
+ 	String 			GetText( USHORT nParagraph ) const;
+ 	xub_StrLen			GetTextLen( USHORT nParagraph ) const;
+-	ULONG			GetTextHeight( USHORT nParagraph ) const;
++	sal_uInt32		GetTextHeight( USHORT nParagraph ) const;
+ 
+ 	USHORT 			GetParagraphCount() const;
+ 
+ 	USHORT			GetLineCount( USHORT nParagraph ) const;
+ 	xub_StrLen		GetLineLen( USHORT nParagraph, USHORT nLine ) const;
+-	ULONG			GetLineHeight( USHORT nParagraph, USHORT nLine = 0 );
++	sal_uInt32		GetLineHeight( USHORT nParagraph, USHORT nLine = 0 );
+ 	USHORT			GetFirstLineOffset( USHORT nParagraph );
+ 	ParagraphInfos 	GetParagraphInfos( USHORT nPara );
+ 	USHORT			FindParagraph( long nDocPosY );
+@@ -306,8 +306,8 @@
+ 	BOOL			IsFlatMode() const;
+ //STRIP001 	void			SetFlatMode( BOOL bFlat );
+ 
+-	void			SetControlWord( ULONG nWord );
+-	ULONG			GetControlWord() const;
++	void			SetControlWord( sal_uInt32 nWord );
++	sal_uInt32		GetControlWord() const;
+ 
+ 	void			QuickSetAttribs( const SfxItemSet& rSet, const ESelection& rSel );
+ 	void 			QuickRemoveCharAttribs( USHORT nPara, USHORT nWhich = 0 );
+@@ -400,7 +400,7 @@
+ 	virtual	void	ParagraphHeightChanged( USHORT nPara );
+ 
+ 	// #101498#
+-	virtual void	DrawingText( const Point& rStartPos, const String& rText, USHORT nTextStart, USHORT nTextLen, const long* pDXArray, const SvxFont& rFont, USHORT nPara, xub_StrLen nIndex, BYTE nRightToLeft);
++	virtual void	DrawingText( const Point& rStartPos, const String& rText, USHORT nTextStart, USHORT nTextLen, const sal_Int32* pDXArray, const SvxFont& rFont, USHORT nPara, xub_StrLen nIndex, BYTE nRightToLeft);
+ 
+ 	virtual String	GetUndoComment( USHORT nUndoId ) const;
+ 	virtual BOOL	FormattingParagraph( USHORT nPara );
+Index: binfilter/inc/bf_svx/flditem.hxx
+===================================================================
+RCS file: /cvs/framework/binfilter/inc/bf_svx/flditem.hxx,v
+retrieving revision 1.6
+retrieving revision 1.6.10.1
+diff -u -r1.6 -r1.6.10.1
+--- binfilter/inc/bf_svx/flditem.hxx	7 Apr 2006 13:40:04 -0000	1.6
++++ binfilter/inc/bf_svx/flditem.hxx	27 Apr 2006 10:24:44 -0000	1.6.10.1
+@@ -144,7 +144,7 @@
+ 
+ class SvxDateField : public SvxFieldData
+ {
+-	ULONG					nFixDate;
++	sal_uInt32				nFixDate;
+ 	SvxDateType				eType;
+ 	SvxDateFormat			eFormat;
+ 
+@@ -156,7 +156,7 @@
+ 								SvxDateType eType = SVXDATETYPE_VAR,
+ 								SvxDateFormat eFormat = SVXDATEFORMAT_STDSMALL );
+ 
+-	ULONG					GetFixDate() const { return nFixDate; }
++	sal_uInt32				GetFixDate() const { return nFixDate; }
+ 	void					SetFixDate( const Date& rDate ) { nFixDate = rDate.GetDate(); }
+ 
+ 	SvxDateType				GetType() const { return eType; }
+@@ -283,7 +283,7 @@
+ class SvxExtTimeField : public SvxFieldData
+ {
+ private:
+-	ULONG					nFixTime;
++	sal_uInt32				nFixTime;
+ 	SvxTimeType				eType;
+ 	SvxTimeFormat			eFormat;
+ 
+@@ -294,7 +294,7 @@
+ 								SvxTimeType eType = SVXTIMETYPE_VAR,
+ 								SvxTimeFormat eFormat = SVXTIMEFORMAT_STANDARD );
+ 
+-	ULONG					GetFixTime() const { return nFixTime; }
++	sal_uInt32				GetFixTime() const { return nFixTime; }
+ 	void					SetFixTime( const Time& rTime ) { nFixTime = rTime.GetTime(); }
+ 
+ 	SvxTimeType				GetType() const { return eType; }
+Index: binfilter/inc/bf_svx/outliner.hxx
+===================================================================
+RCS file: /cvs/framework/binfilter/inc/bf_svx/outliner.hxx,v
+retrieving revision 1.5
+retrieving revision 1.5.10.1
+diff -u -r1.5 -r1.5.10.1
+--- binfilter/inc/bf_svx/outliner.hxx	7 Apr 2006 13:40:55 -0000	1.5
++++ binfilter/inc/bf_svx/outliner.hxx	28 Apr 2006 08:58:42 -0000	1.5.10.1
+@@ -416,7 +416,7 @@
+ 
+     const SvxFont&  rFont;
+ 
+-    const long*     pDXArray;
++    const sal_Int32*     pDXArray;
+ 
+ 	// #101498# BiDi level needs to be transported, too.
+ 	BYTE			mnBiDiLevel;
+@@ -425,7 +425,7 @@
+ 	sal_Bool IsRTL() const;
+ 
+     DrawPortionInfo( const Point& rPos, const String& rTxt, USHORT nTxtStart, USHORT nTxtLen, 
+-		const SvxFont& rFnt, USHORT nPar, xub_StrLen nIdx, const long* pDXArr, BYTE nBiDiLevel) 
++		const SvxFont& rFnt, USHORT nPar, xub_StrLen nIdx, const sal_Int32* pDXArr, BYTE nBiDiLevel) 
+         :	rStartPos(rPos), rText(rTxt), rFont(rFnt), nPara(nPar), nIndex(nIdx), 
+ 			pDXArray(pDXArr), mnBiDiLevel(nBiDiLevel)
+ 	    {
+@@ -795,7 +795,7 @@
+ 
+ 	// #101498#
+ 	virtual void    DrawingText( const Point& rStartPos, const String& rText, USHORT nTextStart, USHORT nTextLen, 
+-						const long* pDXArray, const SvxFont& rFont,
++						const sal_Int32* pDXArray, const SvxFont& rFont,
+ 						USHORT nPara, xub_StrLen nIndex, BYTE nRightToLeft);
+ 
+ 	Size            CalcTextSize();
+Index: binfilter/inc/bf_svx/outlobj.hxx
+===================================================================
+RCS file: /cvs/framework/binfilter/inc/bf_svx/outlobj.hxx,v
+retrieving revision 1.3
+retrieving revision 1.3.72.1
+diff -u -r1.3 -r1.3.72.1
+--- binfilter/inc/bf_svx/outlobj.hxx	9 Sep 2005 14:06:49 -0000	1.3
++++ binfilter/inc/bf_svx/outlobj.hxx	28 Apr 2006 08:58:42 -0000	1.3.72.1
+@@ -67,7 +67,7 @@
+ 
+ 	EditTextObject* 			pText;
+ 	USHORT* 					pDepthArr;
+-	ULONG 						nCount;
++	sal_uInt32					nCount;
+ 	BOOL						bIsEditDoc;
+ 								OutlinerParaObject( USHORT nParaCount );
+ 
+@@ -84,7 +84,7 @@
+ 	BOOL						IsVertical() const;
+ 	void						SetVertical( BOOL bVertical );
+ 
+-	ULONG 						Count() const 					{ return nCount; }
++	sal_uInt32					Count() const 					{ return nCount; }
+ 	USHORT 						GetDepth( USHORT nPara ) const	{ return pDepthArr[nPara]; }
+ 	const EditTextObject& 		GetTextObject() const 			{ return *pText; }
+ 	void						ClearPortionInfo();
+Index: binfilter/inc/bf_svx/svdogrp.hxx
+===================================================================
+RCS file: /cvs/framework/binfilter/inc/bf_svx/svdogrp.hxx,v
+retrieving revision 1.3
+retrieving revision 1.3.70.1
+diff -u -r1.3 -r1.3.70.1
+--- binfilter/inc/bf_svx/svdogrp.hxx	9 Sep 2005 14:39:54 -0000	1.3
++++ binfilter/inc/bf_svx/svdogrp.hxx	28 Apr 2006 08:58:42 -0000	1.3.70.1
+@@ -78,7 +78,7 @@
+ 	long						nShearWink0; // Letzter bekannter Shearwinkel des Originals
+ 
+ 	ImpSdrObjGroupLink*			pLink;
+-	ULONG						nObjNum;     // des referenzierten Objekts
++	sal_uInt32					nObjNum;     // des referenzierten Objekts
+ 	USHORT						nPageNum;    // zum schnelleren wiederauffinden
+ 	FASTBOOL					bMasterPage; // Liegt im Referenzdokoment auf einer Masterpage
+ 
+Index: binfilter/inc/bf_svx/svxfont.hxx
+===================================================================
+RCS file: /cvs/framework/binfilter/inc/bf_svx/svxfont.hxx,v
+retrieving revision 1.4
+retrieving revision 1.4.10.1
+diff -u -r1.4 -r1.4.10.1
+--- binfilter/inc/bf_svx/svxfont.hxx	7 Apr 2006 13:41:39 -0000	1.4
++++ binfilter/inc/bf_svx/svxfont.hxx	27 Apr 2006 10:28:10 -0000	1.4.10.1
+@@ -120,10 +120,10 @@
+ //STRIP001 			   const USHORT nIdx = 0, const USHORT nLen = STRING_LEN ) const;
+ 
+ 	void QuickDrawText( OutputDevice *pOut, const Point &rPos, const String &rTxt,
+-			   const USHORT nIdx = 0, const USHORT nLen = STRING_LEN, const long* pDXArray = NULL ) const;
++			   const USHORT nIdx = 0, const USHORT nLen = STRING_LEN, const sal_Int32* pDXArray = NULL ) const;
+ 
+ 	Size QuickGetTextSize( const OutputDevice *pOut, const String &rTxt,
+-						 const USHORT nIdx, const USHORT nLen, long* pDXArray = NULL ) const;
++						 const USHORT nIdx, const USHORT nLen, sal_Int32* pDXArray = NULL ) const;
+ 
+ //STRIP001 	void DrawPrev( OutputDevice* pOut, Printer* pPrinter,
+ //STRIP001 				   const Point &rPos, const String &rTxt,
+Index: binfilter/inc/bf_sw/chpfld.hxx
+===================================================================
+RCS file: /cvs/framework/binfilter/inc/bf_sw/chpfld.hxx,v
+retrieving revision 1.5
+retrieving revision 1.5.72.1
+diff -u -r1.5 -r1.5.72.1
+--- binfilter/inc/bf_sw/chpfld.hxx	9 Sep 2005 15:50:44 -0000	1.5
++++ binfilter/inc/bf_sw/chpfld.hxx	27 Apr 2006 14:44:04 -0000	1.5.72.1
+@@ -80,7 +80,7 @@
+ 	BYTE nLevel;
+ 	String sTitle, sNumber, sPre, sPost;
+ public:
+-	SwChapterField(SwChapterFieldType*, ULONG nFmt = 0);
++	SwChapterField(SwChapterFieldType*, sal_uInt32 nFmt = 0);
+ 
+ 	void ChangeExpansion( const SwFrm*, const SwTxtNode*, BOOL bSrchNum = FALSE);
+ 
+Index: binfilter/inc/bf_sw/doc.hxx
+===================================================================
+RCS file: /cvs/framework/binfilter/inc/bf_sw/doc.hxx,v
+retrieving revision 1.6
+retrieving revision 1.6.70.1
+diff -u -r1.6 -r1.6.70.1
+--- binfilter/inc/bf_sw/doc.hxx	9 Sep 2005 15:54:17 -0000	1.6
++++ binfilter/inc/bf_sw/doc.hxx	27 Apr 2006 10:48:48 -0000	1.6.70.1
+@@ -940,7 +940,7 @@
+ 	void UnlockExpFlds()				{ if( nLockExpFld ) --nLockExpFld; }
+ 	sal_Bool IsExpFldsLocked() const		{ return 0 != nLockExpFld; }
+ 	SwDocUpdtFld& GetUpdtFlds() const 	{ return *pUpdtFlds; }
+-	sal_Bool SetFieldsDirty( sal_Bool b, const SwNode* pChk = 0, sal_uInt32 nLen = 0 );
++	sal_Bool SetFieldsDirty( sal_Bool b, const SwNode* pChk = 0, ULONG nLen = 0 );
+ 
+ 	void SetFixFields( sal_Bool bOnlyTimeDate = sal_False,
+ 						const DateTime* pNewDateTime = 0 );
+@@ -1383,7 +1383,7 @@
+ 											const SwTOXBase& rTOX,
+ 											const SfxItemSet* pSet = 0,
+ 											sal_Bool bExpand = sal_False );
+-	const SwTOXBaseSection* InsertTableOf( sal_uInt32 nSttNd, sal_uInt32 nEndNd,
++	const SwTOXBaseSection* InsertTableOf( ULONG nSttNd, ULONG nEndNd,
+ 											const SwTOXBase& rTOX,
+ 											const SfxItemSet* pSet = 0											);
+ 	const SwTOXBase* GetCurTOX( const SwPosition& rPos ) const;
+@@ -1475,7 +1475,7 @@
+ 	// loeschen geht nur, wenn die ::com::sun::star::chaos::Rule niemand benutzt!
+ 	sal_Bool DelNumRule( const String& rName );
+ 	String GetUniqueNumRuleName( const String* pChkStr = 0, sal_Bool bAutoNum = sal_True ) const;
+-	void UpdateNumRule( const String& rName, sal_uInt32 nUpdPos );
++	void UpdateNumRule( const String& rName, ULONG nUpdPos );
+ 	void UpdateNumRule();	// alle invaliden Updaten
+ 	void ChgNumRuleFmts( const SwNumRule& rRule );
+ //STRIP001 	sal_Bool ReplaceNumRule( const SwPosition& rPos, const String& rOldRule,
+Index: binfilter/inc/bf_sw/docufld.hxx
+===================================================================
+RCS file: /cvs/framework/binfilter/inc/bf_sw/docufld.hxx,v
+retrieving revision 1.4
+retrieving revision 1.4.72.1
+diff -u -r1.4 -r1.4.72.1
+--- binfilter/inc/bf_sw/docufld.hxx	9 Sep 2005 15:55:57 -0000	1.4
++++ binfilter/inc/bf_sw/docufld.hxx	27 Apr 2006 14:44:05 -0000	1.4.72.1
+@@ -158,7 +158,7 @@
+ public:
+ 	SwPageNumberFieldType();
+ 
+-	String& Expand( ULONG nFmt, short nOff, const String&, String& rRet ) const;
++	String& Expand( sal_uInt32 nFmt, short nOff, const String&, String& rRet ) const;
+ 	void ChangeExpansion( SwDoc* pDoc, USHORT nNum, USHORT nMax,
+ 							BOOL bVirtPageNum, const sal_Int16* pNumFmt = 0 );
+ 	inline sal_Int16 GetNumFormat() const { return nNumberingType; }
+@@ -177,7 +177,7 @@
+ 
+ public:
+ 	SwPageNumberField(SwPageNumberFieldType*, USHORT nSub = PG_RANDOM,
+-					  ULONG nFmt = 0, short nOff = 0);
++					  sal_uInt32 nFmt = 0, short nOff = 0);
+ 
+ 	virtual String		Expand() const;
+ 	virtual SwField*	Copy() const;
+@@ -216,7 +216,7 @@
+ 	String	aContent;
+ 
+ public:
+-	SwAuthorField(SwAuthorFieldType*, ULONG nFmt = 0);
++	SwAuthorField(SwAuthorFieldType*, sal_uInt32 nFmt = 0);
+ 
+ 	virtual String	 	Expand() const;
+ 	virtual SwField* 	Copy() const;
+@@ -251,7 +251,7 @@
+ 	String aContent;
+ 
+ public:
+-	SwFileNameField(SwFileNameFieldType*, ULONG nFmt = 0);
++	SwFileNameField(SwFileNameFieldType*, sal_uInt32 nFmt = 0);
+ 
+ 	virtual String	 	Expand() const;
+ 	virtual SwField* 	Copy() const;
+@@ -284,7 +284,7 @@
+ class SwTemplNameField : public SwField
+ {
+ public:
+-	SwTemplNameField(SwTemplNameFieldType*, ULONG nFmt = 0);
++	SwTemplNameField(SwTemplNameFieldType*, sal_uInt32 nFmt = 0);
+ 
+ 	virtual String	 	Expand() const;
+ 	virtual SwField* 	Copy() const;
+@@ -304,7 +304,7 @@
+ 
+ public:
+ 	SwDocStatFieldType(SwDoc*);
+-	String 					Expand(USHORT nSubType, ULONG nFmt) const;
++	String 					Expand(USHORT nSubType, sal_uInt32 nFmt) const;
+  	virtual SwFieldType*    Copy() const;
+ 
+ 	inline sal_Int16 		GetNumFormat() const 		{ return nNumberingType; }
+@@ -321,7 +321,7 @@
+ 
+ public:
+ 	SwDocStatField( SwDocStatFieldType*,
+-					USHORT nSubType = 0, ULONG nFmt = 0);
++					USHORT nSubType = 0, sal_uInt32 nFmt = 0);
+ 
+ 	void ChangeExpansion( const SwFrm* pFrm );
+ 
+@@ -552,7 +552,7 @@
+ public:
+ 	SwDocInfoFieldType(SwDoc* pDc);
+ 
+-	String					Expand(USHORT nSubType, ULONG nFormat, USHORT nLang) const;
++	String					Expand(USHORT nSubType, sal_uInt32 nFormat, USHORT nLang) const;
+  	virtual SwFieldType*    Copy() const;
+ };
+ 
+@@ -562,7 +562,7 @@
+ 	String  aContent;
+ 
+ public:
+-	SwDocInfoField(SwDocInfoFieldType*, USHORT nSub, ULONG nFmt=0);
++	SwDocInfoField(SwDocInfoFieldType*, USHORT nSub, sal_uInt32 nFmt=0);
+ 
+     virtual void            SetSubType(USHORT);
+ 	virtual USHORT	 		GetSubType() const;
+@@ -590,7 +590,7 @@
+ 	inline const String& 	GetData() const					{ return aData; }
+ 	inline void			 	SetData(const String& rStr)		{ aData = rStr; }
+ 
+-	String					Expand(USHORT nSubType, ULONG nFormat) const;
++	String					Expand(USHORT nSubType, sal_uInt32 nFormat) const;
+ 	virtual SwFieldType*    Copy() const;
+ };
+ 
+@@ -600,7 +600,7 @@
+ 	USHORT 	nType;
+ 
+ public:
+-	SwExtUserField(SwExtUserFieldType*, USHORT nSub, ULONG nFmt=0);
++	SwExtUserField(SwExtUserFieldType*, USHORT nSub, sal_uInt32 nFmt=0);
+ 
+ 	virtual String		Expand() const;
+ 	virtual SwField*	Copy() const;
+@@ -690,7 +690,7 @@
+ {
+ 	String sTxt;
+ public:
+-	SwRefPageGetField( SwRefPageGetFieldType*, ULONG nFmt );
++	SwRefPageGetField( SwRefPageGetFieldType*, sal_uInt32 nFmt );
+ 
+ 	virtual String		Expand() const;
+     virtual SwField*    Copy() const;
+@@ -726,7 +726,7 @@
+ {
+ 	String sTxt, sHelp;
+ public:
+-	SwJumpEditField( SwJumpEditFieldType*, ULONG nFormat,
++	SwJumpEditField( SwJumpEditFieldType*, sal_uInt32 nFormat,
+ 					const String& sText, const String& sHelp );
+ 
+ 	virtual String		Expand() const;
+Index: binfilter/inc/bf_sw/fldbas.hxx
+===================================================================
+RCS file: /cvs/framework/binfilter/inc/bf_sw/fldbas.hxx,v
+retrieving revision 1.7
+retrieving revision 1.7.10.1
+diff -u -r1.7 -r1.7.10.1
+--- binfilter/inc/bf_sw/fldbas.hxx	7 Apr 2006 13:42:59 -0000	1.7
++++ binfilter/inc/bf_sw/fldbas.hxx	27 Apr 2006 14:44:05 -0000	1.7.10.1
+@@ -267,11 +267,11 @@
+ 	Beschreibung: Allgemeine Tools
+  --------------------------------------------------------------------*/
+ 
+-String	GetResult(double nVal, ULONG nNumFmt, USHORT nLang = LANGUAGE_SYSTEM);
++String	GetResult(double nVal, sal_uInt32 nNumFmt, USHORT nLang = LANGUAGE_SYSTEM);
+ void    SetErrorStr(const String& rStr);
+ //String	ExpandDate(const Date& rDate, ULONG nFmt, USHORT nLang);
+ //String 	ExpandTime(const Time& rTime, ULONG nFmt, USHORT nLang);
+-String  FormatNumber(USHORT nNum, ULONG nFormat);
++String  FormatNumber(USHORT nNum, sal_uInt32 nFormat);
+ 
+ /*--------------------------------------------------------------------
+ 	Beschreibung: 	Instanzen von SwFields und Abgeleiteten kommen 0-n mal vor.
+@@ -330,13 +330,13 @@
+ {
+ 	USHORT				nLang;	// Immer ueber SetLanguage aendern!
+     BOOL                bIsAutomaticLanguage;
+-	ULONG 				nFormat;
++	sal_uInt32			nFormat;
+ 
+ 	SwFieldType* 		pType;
+ protected:
+-	void				SetFormat(ULONG nSet) {nFormat = nSet;}
++	void				SetFormat(sal_uInt32 nSet) {nFormat = nSet;}
+ 
+-	SwField(SwFieldType* pTyp, ULONG nFmt = 0, USHORT nLang = LANGUAGE_SYSTEM);
++	SwField(SwFieldType* pTyp, sal_uInt32 nFmt = 0, USHORT nLang = LANGUAGE_SYSTEM);
+ public:
+ 	virtual 			~SwField();
+ 
+@@ -372,13 +372,13 @@
+ 	virtual void		SetLanguage(USHORT nLng);
+ 
+ 	// Parameter fuer Dialog und BASIC erfragen
+-	inline ULONG		GetFormat() const;
++	inline sal_uInt32 GetFormat() const;
+ 	virtual const String& GetPar1() const;
+ 	virtual String		GetPar2() 	const;
+ 
+ 	virtual String		GetFormula() const;
+ 
+-	virtual void  		ChangeFormat(ULONG n);
++	virtual void  		ChangeFormat(sal_uInt32 n);
+     virtual void        SetPar1(const String& rStr);
+     virtual void        SetPar2(const String& rStr);
+ 
+@@ -396,7 +396,7 @@
+ inline SwFieldType*	SwField::GetTyp() const
+ 	{ return pType; 	}
+ 
+-inline ULONG SwField::GetFormat() const
++inline sal_uInt32 SwField::GetFormat() const
+ 	{ return nFormat; 	}
+ 
+ inline USHORT SwField::GetLanguage() const
+@@ -423,7 +423,7 @@
+ 	inline BOOL		UseFormat() const					{ return bUseFormat; }
+ 	inline void		EnableFormat(BOOL bFormat = TRUE)	{ bUseFormat = bFormat; }
+ 
+-	String			ExpandValue(const double& rVal, ULONG nFmt, USHORT nLng=0) const;
++	String			ExpandValue(const double& rVal, sal_uInt32 nFmt, USHORT nLng=0) const;
+ 	void			DoubleToString(String &rValue, const double &rVal, LanguageType eLng) const;
+ //STRIP001 	void			DoubleToString(String &rValue, const double &rVal, ULONG nFmt) const;
+ };
+@@ -434,7 +434,7 @@
+ //	String sExpand;
+ 
+ protected:
+-	SwValueField( SwValueFieldType* pFldType, ULONG nFmt = 0, USHORT nLang = LANGUAGE_SYSTEM, const double fVal = 0.0 );
++	SwValueField( SwValueFieldType* pFldType, sal_uInt32 nFmt = 0, USHORT nLang = LANGUAGE_SYSTEM, const double fVal = 0.0 );
+ //STRIP001 	SwValueField( const SwValueField& rFld );
+ 
+ public:
+@@ -450,7 +450,7 @@
+ 	virtual double			GetValue() const;
+ 	virtual void 			SetValue( const double& rVal );
+ 
+-	inline String	ExpandValue(const double& rVal, ULONG nFmt, USHORT nLng=0) const
++	inline String	ExpandValue(const double& rVal, sal_uInt32 nFmt, USHORT nLng=0) const
+ 		{ return ((SwValueFieldType*)GetTyp())->ExpandValue(rVal, nFmt, nLng); }
+ 
+ //STRIP001 	static ULONG			GetSystemFormat(SvNumberFormatter* pFormatter, ULONG nFmt);
+@@ -461,7 +461,7 @@
+ 	String sFormula;
+ 
+ protected:
+-	SwFormulaField( SwValueFieldType* pFldType, ULONG nFmt = 0, const double fVal = 0.0 );
++	SwFormulaField( SwValueFieldType* pFldType, sal_uInt32 nFmt = 0, const double fVal = 0.0 );
+ //STRIP001 	SwFormulaField( const SwFormulaField& rFld );
+ 
+ public:
+Index: binfilter/inc/bf_sw/usrfld.hxx
+===================================================================
+RCS file: /cvs/framework/binfilter/inc/bf_sw/usrfld.hxx,v
+retrieving revision 1.4
+retrieving revision 1.4.72.1
+diff -u -r1.4 -r1.4.72.1
+--- binfilter/inc/bf_sw/usrfld.hxx	9 Sep 2005 16:49:18 -0000	1.4
++++ binfilter/inc/bf_sw/usrfld.hxx	27 Apr 2006 14:44:05 -0000	1.4.72.1
+@@ -62,10 +62,10 @@
+ 	virtual const String&	GetName() const;
+ 	virtual SwFieldType*	Copy() const;
+ 
+-	String					Expand(ULONG nFmt, USHORT nSubType, USHORT nLng);
++	String					Expand(sal_uInt32 nFmt, USHORT nSubType, USHORT nLng);
+ 
+-	String					GetContent( ULONG nFmt = 0 );
+-		   void				SetContent( const String& rStr, ULONG nFmt = 0 );
++	String					GetContent( sal_uInt32 nFmt = 0 );
++		   void				SetContent( const String& rStr, sal_uInt32 nFmt = 0 );
+ //STRIP001 		   void				CtrlSetContent( const String& rStr );
+ 
+ 	inline BOOL 			IsValid() const;
+@@ -117,7 +117,7 @@
+ 	USHORT  nSubType;
+ 
+ public:
+-	SwUserField(SwUserFieldType*, USHORT nSub = 0, ULONG nFmt = 0);
++	SwUserField(SwUserFieldType*, USHORT nSub = 0, sal_uInt32 nFmt = 0);
+ 
+ 	virtual USHORT	 		GetSubType() const;
+ 	virtual void	 		SetSubType(USHORT nSub);
+Index: binfilter/inc/bf_xmloff/xmlehelp.hxx
+===================================================================
+RCS file: /cvs/framework/binfilter/inc/bf_xmloff/xmlehelp.hxx,v
+retrieving revision 1.3
+retrieving revision 1.3.72.1
+diff -u -r1.3 -r1.3.72.1
+--- binfilter/inc/bf_xmloff/xmlehelp.hxx	9 Sep 2005 17:38:19 -0000	1.3
++++ binfilter/inc/bf_xmloff/xmlehelp.hxx	28 Apr 2006 08:58:43 -0000	1.3.72.1
+@@ -46,10 +46,10 @@
+ class SvXMLExportHelper
+ {
+ public:
+-	static void AddLength( long nValue, MapUnit eValueUnit,
++	static void AddLength( sal_Int32 nValue, MapUnit eValueUnit,
+ 						   ::rtl::OUStringBuffer& rOut,
+ 						   MapUnit eOutUnit );
+-	static void AddPercentage( long nVal, ::rtl::OUStringBuffer& rOut );
++	static void AddPercentage( sal_Int32 nVal, ::rtl::OUStringBuffer& rOut );
+ 	static double GetConversionFactor(::rtl::OUStringBuffer& rUnit, 
+ 		const MapUnit eCoreUnit, const MapUnit eDestUnit);
+ 	static MapUnit GetUnitFromString(const ::rtl::OUString& rString, 
+Index: binfilter/inc/bf_xmloff/xmluconv.hxx
+===================================================================
+RCS file: /cvs/framework/binfilter/inc/bf_xmloff/xmluconv.hxx,v
+retrieving revision 1.3
+retrieving revision 1.3.70.1
+diff -u -r1.3 -r1.3.70.1
+--- binfilter/inc/bf_xmloff/xmluconv.hxx	9 Sep 2005 17:45:40 -0000	1.3
++++ binfilter/inc/bf_xmloff/xmluconv.hxx	28 Apr 2006 08:58:43 -0000	1.3.70.1
+@@ -165,8 +165,8 @@
+ 	/** convert string to measure using optional min and max values*/
+ 	sal_Bool convertMeasure( sal_Int32& rValue,
+ 						 const ::rtl::OUString& rString,
+-						 sal_Int32 nMin = LONG_MIN,
+-						 sal_Int32 nMax = LONG_MAX ) const;
++						 sal_Int32 nMin = SAL_MIN_INT32,
++						 sal_Int32 nMax = SAL_MAX_INT32 ) const;
+ 
+ 	/** convert measure to string */
+ 	void convertMeasure( ::rtl::OUStringBuffer& rBuffer,
+@@ -182,8 +182,8 @@
+ 	static sal_Bool convertMeasure( sal_Int32& rVal,
+ 								const ::rtl::OUString& rString,
+ 								MapUnit eDstUnit,
+-								sal_Int32 nMin = LONG_MIN,
+-								sal_Int32 nMax = LONG_MAX );
++								sal_Int32 nMin = SAL_MIN_INT32,
++								sal_Int32 nMax = SAL_MAX_INT32 );
+ 
+ 	/** convert measure in given unit to string with given unit */
+ 	static void convertMeasure( ::rtl::OUStringBuffer& rBuffer,
+@@ -261,8 +261,8 @@
+ 	/** convert string to number with optional min and max values */
+ 	static sal_Bool convertNumber( sal_Int32& rValue,
+ 							   const ::rtl::OUString& rString,
+-							   sal_Int32 nMin = LONG_MIN,
+-							   sal_Int32 nMax = LONG_MAX );
++							   sal_Int32 nMin = SAL_MIN_INT32,
++							   sal_Int32 nMax = SAL_MAX_INT32 );
+ 
+ 	/** convert double number to string (using ::rtl::math) and DO
+ 		convert to export MapUnit */
