@@ -43,6 +43,7 @@
     SUBDIR += p5-Astro-Sunrise
     SUBDIR += p5-GPS
     SUBDIR += p5-Geo-METAR
+    SUBDIR += p5-Weather-Underground
     SUBDIR += phoon
     SUBDIR += planets
     SUBDIR += pp3

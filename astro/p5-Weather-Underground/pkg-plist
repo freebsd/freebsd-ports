@@ -1,0 +1,5 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Weather/Underground/.packlist
+%%SITE_PERL%%/Weather/Underground.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Weather/Underground
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Weather
+@dirrmtry %%SITE_PERL%%/Weather
