@@ -1,3 +1,4 @@
+bin/lockersh
 bin/pidwatch
 bin/lockerd
 bin/pidstatd
