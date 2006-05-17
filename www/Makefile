@@ -991,6 +991,7 @@
     SUBDIR += xpi-fasterfox
     SUBDIR += xpi-flashblock
     SUBDIR += xpi-mldonkey
+    SUBDIR += xpi-mousegestures
     SUBDIR += xpi-no-referrer
     SUBDIR += xpi-noscript
     SUBDIR += xpi-pdf_download
