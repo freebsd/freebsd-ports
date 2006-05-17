@@ -1,0 +1,38 @@
+--- player/app/gtk/hxplay.orig	Thu Apr 29 19:35:24 2004
++++ player/app/gtk/hxplay	Thu May 27 23:05:02 2004
+@@ -1,7 +1,7 @@
+ #!/bin/sh
+ 
+ # If you don't have readlink, fill in the path to hxplay.bin here.
+-# HELIX_LIBS="/usr/local/HelixPlayer" ; export HELIX_LIBS
++HELIX_LIBS="%%PREFIX%%/HelixPlayer" ; export HELIX_LIBS
+ 
+ # To install this script, create a symlink to it from somewhere in your
+ # path.  Do *not* move the script out of the HelixPlayer directory, since
+@@ -28,7 +28,7 @@
+             HXPLAYSCRIPT=`$PERL -e 'print readlink($ARGV[0])' -- $HXPLAYSYMLINK`            
+         elif [ -x "$PYTHON" ] ; then
+             # echo "Using python"
+-            HXPLAYSCRIPT=`echo 'import os; print os.readlink("/usr/local/bin/hxplay")' | $PYTHON -`
++            HXPLAYSCRIPT=`echo 'import os; print os.readlink("%%PREFIX%%/HelixPlayer/hxplay")' | $PYTHON -`
+         else
+             # echo "Using ls (directory name cannot contain spaces)"
+             HXPLAYSCRIPT=`ls -l $HXPLAYSYMLINK | sed -e 's/.* //'`
+@@ -44,7 +44,7 @@
+     fi
+ 
+     # if HXPLAYDIR detection doesn't work, hardcode the directory here
+-    HXPLAYDIR=`dirname $HXPLAYSCRIPT`
++    HXPLAYDIR=%%PREFIX%%/HelixPlayer
+ 
+     # setup environment
+     # find our common, plugin and codec dlls
+@@ -66,7 +66,7 @@
+ if [ -n "$DEBUG" -a -x "$CATCHSEGV" ]; then
+     $CATCHSEGV $HXPLAYBIN ${1+"$@"}
+ else
+-    while /bin/true; do
++    while /usr/bin/true; do
+         # Restart the player if exit code is 10
+         $HXPLAYBIN "$@"
+         if [ $? -ne 10 ]; then

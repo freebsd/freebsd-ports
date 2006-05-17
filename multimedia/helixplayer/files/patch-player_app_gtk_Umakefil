@@ -1,0 +1,50 @@
+--- player/app/gtk/Umakefil.orig	Thu Feb 10 19:39:00 2005
++++ player/app/gtk/Umakefil	Sun Mar 27 11:54:01 2005
+@@ -65,11 +65,11 @@
+ # package = "."
+ 
+ # Uncomment this for something more standard:
+-project_defs =[ ( "PACKAGE_DATA_DIR",    "/usr/share" ),
+-        ( "LIBDIR",     "/usr/lib" ),
+-        ( "SYSCONFDIR", "/etc" ),
+-        ( "PREFIX",     "/usr" ),
+-        ( "LOCALEDIR",  "/usr/share/locale" ),
++project_defs =[ ( "PACKAGE_DATA_DIR",    "/usr/local/share" ),
++        ( "LIBDIR",     "%%PREFIX%%/lib" ),
++        ( "SYSCONFDIR", "%%PREFIX%%/etc" ),
++        ( "PREFIX",     "%%PREFIX%%" ),
++        ( "LOCALEDIR",  "%%PREFIX%%/locale" ),
+ 	( "PLATFORM_BUILD_STATUS", platform_build_status ) ]
+ 
+ if project.IsDefined('HELIX_FEATURE_REAL_BRANDING'):
+@@ -127,12 +127,12 @@
+ # together at the libgtkhx.a level.
+ project.AddModuleLibraries("common/runtime[runtlib]",
+                            "common/system[syslib]",
++                           "player/mime/util[mimelib]",
+                            "common/container[contlib]",
+                            "common/runtime[runtlib]",
+                            "common/dbgtool[debuglib]",
+                            "common/util[utillib]",
+-                           "player/hxclientkit[hxclientlib]",
+-                           "player/mime/util[mimelib]")
++                           "player/hxclientkit[hxclientlib]")
+ 
+ 
+ # project.AddDefines('HELIX_FEATURE_RP_SIGN_IN')
+@@ -148,13 +148,14 @@
+                                    "common/lang/xml/pub")
+         project.AddSources("signin.cpp")
+ 
+-        
++
+         if not project.IsDefined('HELIX_FEATURE_LIBGLADE'):
+                 project.AddSources("signin_interface.c")
+ 
+ # Add includes
+ project.AddModuleIncludes("common/include",
+                           "player/common/gtk/pub",
++                          "common/container/pub",
+                           "player/app/gtk/pub")
+ 
+ # Includes needed by guids.cpp

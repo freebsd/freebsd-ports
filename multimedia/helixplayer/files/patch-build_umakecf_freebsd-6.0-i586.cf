@@ -1,0 +1,11 @@
+--- build/umakecf/freebsd-6.0-i586.cf.orig	Wed May 11 20:35:52 2005
++++ build/umakecf/freebsd-6.0-i586.cf	Tue Jul 19 19:16:30 2005
+@@ -57,6 +57,6 @@
+ 
+ project.AddDefines("_FREEBSD6", "_LITTLE_ENDIAN")
+ 
+-platform.cc.args['default']  = '-pipe -fsigned-char -march=pentium -D__pentium__'
+-platform.cxx.args['default'] = '-pipe -fsigned-char -march=pentium -D__pentium__'
++platform.cc.args['default']  = '%%CFLAGS%% -fsigned-char -march=pentium -D__pentium__ %%PTHREAD_CFLAGS%%'
++platform.cxx.args['default'] = '%%CFLAGS%% -fsigned-char -march=pentium -D__pentium__ %%PTHREAD_CFLAGS%%'
+ 

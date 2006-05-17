@@ -1,0 +1,12 @@
+--- player/installer/stage1/Umakefil.orig	Wed Apr 21 00:34:38 2004
++++ player/installer/stage1/Umakefil	Tue May 25 23:18:55 2004
+@@ -55,8 +55,8 @@
+     "player/installer/common/pub")
+ 
+ project.AddModuleLibraries("common/util[utillib]",
+-    "installer/common/util[instutil]",
+     "installer/common[prodinstlib]",
++    "installer/common/util[instutil]",
+     "common/container[contlib]",
+     "common/system[syslib]",
+     "common/dbgtool[debuglib]",
