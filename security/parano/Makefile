@@ -15,7 +15,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	A Gnome program to deal with hashfiles
 
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py:${PORTSDIR}/x11-toolkits/py-gtk2
+BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py:${PORTSDIR}/x11-toolkits/py-gtk2
+RUN_DEPENDS+=	${BUILD_DEPENDS}
 
 GNU_CONFIGURE=	yes
 USE_PYTHON=	yes
