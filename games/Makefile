@@ -51,6 +51,7 @@
     SUBDIR += atris-sounds
     SUBDIR += awele
     SUBDIR += balazar
+    SUBDIR += balazarbrothers
     SUBDIR += barrage
     SUBDIR += bass
     SUBDIR += bastet
