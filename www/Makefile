@@ -826,6 +826,7 @@
     SUBDIR += pyblosxom
     SUBDIR += pyweblib
     SUBDIR += qdecoder
+    SUBDIR += quickie
     SUBDIR += quixote
     SUBDIR += raqdevil
     SUBDIR += rejik
