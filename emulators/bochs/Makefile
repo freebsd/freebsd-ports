@@ -75,6 +75,10 @@ CONFIGURE_ARGS+=	--enable-debugger --enable-disasm
 CONFIGURE_ARGS+=	--enable-x86-debugger
 .endif
 
+.if defined(WITH_BOCHS_PORT_E9_HACK)
+CONFIGURE_ARGS+=	--enable-port-e9-hack
+.endif
+
 pre-patch::
 	@${ECHO_MSG}
 .if !defined(WITH_BOCHS_CPU_LEVEL)
@@ -111,6 +115,11 @@ pre-patch::
 .if !defined(WITH_BOCHS_AMD64)
 	@${ECHO_MSG} "If you want to compile with AMD x86-64 support,"
 	@${ECHO_MSG} "hit Ctrl-C right now and use \"make WITH_BOCHS_AMD64=yes\""
+	@${ECHO_MSG}
+.endif
+.if !defined(WITH_BOCHS_PORT_E9_HACK)
+	@${ECHO_MSG} "If you want to compile with port e9 hack support,"
+	@${ECHO_MSG} "hit Ctrl-C right now and use \"make WITH_BOCHS_PORT_E9_HACK=yes\""
 	@${ECHO_MSG}
 .endif
 
