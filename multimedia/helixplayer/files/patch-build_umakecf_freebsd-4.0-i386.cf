@@ -1,0 +1,13 @@
+--- build/umakecf/freebsd-4.0-i386.cf.orig	Thu Jul  8 00:00:05 2004
++++ build/umakecf/freebsd-4.0-i386.cf	Sun Aug 15 21:38:16 2004
+@@ -55,7 +55,7 @@
+ ## list of PCF files to run
+ platform.pcf_prefix_list = ['unix', 'freebsd', 'freebsd4']
+ 
+-project.AddDefines("_FREEBSD4", "_LITTLE_ENDIAN")
++project.AddDefines("_FREEBSD4", "_LITTLE_ENDIAN", "HELIX_CONFIG_DISABLE_ATOMIC_OPERATORS", "HAVE_DECL_GETOPT")
+ 
+-platform.cc.args['default'] = '--permissive -pipe -fsigned-char'
+-platform.cxx.args['default'] = '--permissive -pipe -fsigned-char'
++platform.cc.args['default']  = '--permissive %%CFLAGS%% -fsigned-char %%PTHREAD_CFLAGS%%'
++platform.cxx.args['default'] = '--permissive %%CXXFLAGS%% -fsigned-char %%PTHREAD_CFLAGS%%'

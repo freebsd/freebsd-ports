@@ -82,6 +82,7 @@
     SUBDIR += gxmms
     SUBDIR += handbrake
     SUBDIR += hayes
+    SUBDIR += helixplayer
     SUBDIR += istanbul
     SUBDIR += jahshaka
     SUBDIR += k9copy

@@ -1,0 +1,9 @@
+--- player/installer/stage1/unix.pcf.orig	Wed Apr 21 00:34:39 2004
++++ player/installer/stage1/unix.pcf	Mon May 24 22:36:15 2004
+@@ -41,5 +41,5 @@
+ 
+ project.AddSources("platform/unix/stage1app.cpp")
+ 
+-project.AddSystemLibraries("dl")
++#project.AddSystemLibraries("dl")
+ 

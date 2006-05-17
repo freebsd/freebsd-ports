@@ -1,0 +1,23 @@
+--- build/umakecf/freebsd-7.0-i586.cf.orig	Tue Jul 19 19:18:09 2005
++++ build/umakecf/freebsd-7.0-i586.cf	Tue Jul 19 19:20:28 2005
+@@ -48,15 +48,15 @@
+ # 
+ # ***** END LICENSE BLOCK *****
+ # 
+-"""FreeBSD 6.x using gcc 3.4 with pentium optimizations."""
++"""FreeBSD 7.x using gcc 3.4 with pentium optimizations."""
+ 
+ exec_config_file('freebsd.cf')
+ 
+ ## list of PCF files to run
+-platform.pcf_prefix_list = ['unix', 'freebsd', 'freebsd6']
++platform.pcf_prefix_list = ['unix', 'freebsd', 'freebsd7']
+ 
+-project.AddDefines("_FREEBSD6", "_LITTLE_ENDIAN")
++project.AddDefines("_FREEBSD7", "_LITTLE_ENDIAN")
+ 
+-platform.cc.args['default']  = '-pipe -fsigned-char -march=pentium -D__pentium__'
+-platform.cxx.args['default'] = '-pipe -fsigned-char -march=pentium -D__pentium__'
++platform.cc.args['default']  = '%%CFLAGS%%  -fsigned-char -march=pentium -D__pentium__ %%PTHREAD_CFLAGS%%'
++platform.cxx.args['default'] = '%%CFLAGS%%  -fsigned-char -march=pentium -D__pentium__ %%PTHREAD_CFLAGS%%'
+ 

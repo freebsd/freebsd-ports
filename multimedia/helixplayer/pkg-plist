@@ -1,0 +1,195 @@
+HelixPlayer/Bin/setup
+HelixPlayer/LICENSE
+HelixPlayer/README
+HelixPlayer/codecs/colorcvt.so
+HelixPlayer/codecs/cvt1.so
+HelixPlayer/common/clntcore.so
+HelixPlayer/common/clntxres.so
+HelixPlayer/hxplay
+HelixPlayer/hxplay.bin
+HelixPlayer/lib/libgtkhx.so
+HelixPlayer/lib/libgtkhx.so.0
+HelixPlayer/mozilla/nphelix.so
+HelixPlayer/mozilla/nphelix.xpt
+HelixPlayer/plugins/audplin.so
+HelixPlayer/plugins/aufformat.so
+HelixPlayer/plugins/authmgr.so
+HelixPlayer/plugins/clbascauth.so
+HelixPlayer/plugins/giffformat.so
+HelixPlayer/plugins/gifrender.so
+HelixPlayer/plugins/h263render.so
+HelixPlayer/plugins/httpfsys.so
+HelixPlayer/plugins/hxsdp.so
+HelixPlayer/plugins/hxxml.so
+HelixPlayer/plugins/jpgfformat.so
+HelixPlayer/plugins/jpgrender.so
+HelixPlayer/plugins/memfsys.so
+HelixPlayer/plugins/oggfformat.so
+HelixPlayer/plugins/pcmrend.so
+HelixPlayer/plugins/pngfformat.so
+HelixPlayer/plugins/pngrender.so
+HelixPlayer/plugins/ramfformat.so
+HelixPlayer/plugins/ramrender.so
+HelixPlayer/plugins/rn5auth.so
+HelixPlayer/plugins/rpfformat.so
+HelixPlayer/plugins/rpgifplin.so
+HelixPlayer/plugins/rpjpgplin.so
+HelixPlayer/plugins/rppngplin.so
+HelixPlayer/plugins/rprender.so
+HelixPlayer/plugins/rtfformat.so
+HelixPlayer/plugins/rtrender.so
+HelixPlayer/plugins/sdpplin.so
+HelixPlayer/plugins/smlfformat.so
+HelixPlayer/plugins/smlrender.so
+HelixPlayer/plugins/smplfsys.so
+HelixPlayer/plugins/theorarend.so
+HelixPlayer/plugins/vidsite.so
+HelixPlayer/plugins/vorbisrend.so
+HelixPlayer/plugins/wbmpfformat.so
+HelixPlayer/plugins/wbmprend.so
+HelixPlayer/postinst/confscript.sh
+HelixPlayer/postinst/postinst.sh
+HelixPlayer/share/default/clipinfo.png
+HelixPlayer/share/default/congestion.png
+HelixPlayer/share/default/fastforward.png
+HelixPlayer/share/default/next.png
+HelixPlayer/share/default/pause.png
+HelixPlayer/share/default/play.png
+HelixPlayer/share/default/prefs_advanced.png
+HelixPlayer/share/default/prefs_connection.png
+HelixPlayer/share/default/prefs_content.png
+HelixPlayer/share/default/prefs_hardware.png
+HelixPlayer/share/default/prefs_internet.png
+HelixPlayer/share/default/prefs_mediatypes.png
+HelixPlayer/share/default/prefs_playback.png
+HelixPlayer/share/default/prefs_proxy.png
+HelixPlayer/share/default/prefs_raw.png
+HelixPlayer/share/default/prefs_transport.png
+HelixPlayer/share/default/previous.png
+HelixPlayer/share/default/rewind.png
+HelixPlayer/share/default/stop.png
+HelixPlayer/share/default/tactoggle.png
+HelixPlayer/share/default/volume_high.png
+HelixPlayer/share/default/volume_low.png
+HelixPlayer/share/default/volume_mid.png
+HelixPlayer/share/default/volume_mute.png
+HelixPlayer/share/default/volume_off.png
+HelixPlayer/share/default/volume_popup_high.png
+HelixPlayer/share/default/volume_popup_low.png
+HelixPlayer/share/default/volume_popup_mid.png
+HelixPlayer/share/default/volume_popup_mute.png
+HelixPlayer/share/default/volume_popup_off.png
+HelixPlayer/share/hxplay.applications
+HelixPlayer/share/hxplay.desktop
+HelixPlayer/share/hxplay.keys
+HelixPlayer/share/hxplay.mime
+HelixPlayer/share/hxplay.png
+HelixPlayer/share/hxplay.xml
+HelixPlayer/share/hxplay/embedded_logo.png
+HelixPlayer/share/hxplay/icon.png
+HelixPlayer/share/hxplay/logo.png
+HelixPlayer/share/hxplay/prefs_general.png
+HelixPlayer/share/hxplay/setup_title.png
+HelixPlayer/share/hxplay/setup_welcome.png
+HelixPlayer/share/hxplay_help.html
+HelixPlayer/share/icons/hxplay_16x16.png
+HelixPlayer/share/icons/hxplay_192x192.png
+HelixPlayer/share/icons/hxplay_32x32.png
+HelixPlayer/share/icons/hxplay_48x48.png
+HelixPlayer/share/icons/mime-application-generic_192x192.png
+HelixPlayer/share/icons/mime-application-generic_48x48.png
+HelixPlayer/share/icons/mime-application-ogg_192x192.png
+HelixPlayer/share/icons/mime-application-ogg_48x48.png
+HelixPlayer/share/icons/mime-application-ram_192x192.png
+HelixPlayer/share/icons/mime-application-ram_48x48.png
+HelixPlayer/share/icons/mime-application-rpm_192x192.png
+HelixPlayer/share/icons/mime-application-rpm_48x48.png
+HelixPlayer/share/icons/mime-application-smil_192x192.png
+HelixPlayer/share/icons/mime-application-smil_48x48.png
+HelixPlayer/share/icons/mime-audio-aiff_192x192.png
+HelixPlayer/share/icons/mime-audio-aiff_48x48.png
+HelixPlayer/share/icons/mime-audio-au_192x192.png
+HelixPlayer/share/icons/mime-audio-au_48x48.png
+HelixPlayer/share/icons/mime-audio-generic_192x192.png
+HelixPlayer/share/icons/mime-audio-generic_48x48.png
+HelixPlayer/share/icons/mime-audio-ogg_192x192.png
+HelixPlayer/share/icons/mime-audio-ogg_48x48.png
+HelixPlayer/share/icons/mime-audio-wav_192x192.png
+HelixPlayer/share/icons/mime-audio-wav_48x48.png
+HelixPlayer/share/icons/mime-text-realtext_192x192.png
+HelixPlayer/share/icons/mime-text-realtext_48x48.png
+HelixPlayer/share/icons/mime-video-generic_192x192.png
+HelixPlayer/share/icons/mime-video-generic_48x48.png
+HelixPlayer/share/icons/mime-video-ogg_192x192.png
+HelixPlayer/share/icons/mime-video-ogg_48x48.png
+HelixPlayer/share/locale/de/LICENSE
+HelixPlayer/share/locale/de/README
+HelixPlayer/share/locale/de/player.mo
+HelixPlayer/share/locale/de/widget.mo
+HelixPlayer/share/locale/es/LICENSE
+HelixPlayer/share/locale/es/README
+HelixPlayer/share/locale/es/player.mo
+HelixPlayer/share/locale/es/widget.mo
+HelixPlayer/share/locale/fr/LICENSE
+HelixPlayer/share/locale/fr/README
+HelixPlayer/share/locale/fr/player.mo
+HelixPlayer/share/locale/fr/widget.mo
+HelixPlayer/share/locale/hi/README
+HelixPlayer/share/locale/hi/player.mo
+HelixPlayer/share/locale/hi/widget.mo
+HelixPlayer/share/locale/it/LICENSE
+HelixPlayer/share/locale/it/README
+HelixPlayer/share/locale/it/player.mo
+HelixPlayer/share/locale/it/widget.mo
+HelixPlayer/share/locale/ja/LICENSE
+HelixPlayer/share/locale/ja/README
+HelixPlayer/share/locale/ja/player.mo
+HelixPlayer/share/locale/ja/widget.mo
+HelixPlayer/share/locale/ko/LICENSE
+HelixPlayer/share/locale/ko/README
+HelixPlayer/share/locale/ko/player.mo
+HelixPlayer/share/locale/ko/widget.mo
+HelixPlayer/share/locale/pl/README
+HelixPlayer/share/locale/pl/player.mo
+HelixPlayer/share/locale/pl/widget.mo
+HelixPlayer/share/locale/pt_BR/LICENSE
+HelixPlayer/share/locale/pt_BR/README
+HelixPlayer/share/locale/pt_BR/player.mo
+HelixPlayer/share/locale/pt_BR/widget.mo
+HelixPlayer/share/locale/zh_CN/LICENSE
+HelixPlayer/share/locale/zh_CN/README
+HelixPlayer/share/locale/zh_CN/player.mo
+HelixPlayer/share/locale/zh_CN/widget.mo
+HelixPlayer/share/locale/zh_TW/LICENSE
+HelixPlayer/share/locale/zh_TW/README
+HelixPlayer/share/locale/zh_TW/player.mo
+HelixPlayer/share/locale/zh_TW/widget.mo
+HelixPlayer/share/tigris.css
+bin/hxplay
+share/applications/hxplay.desktop
+@dirrm HelixPlayer/share/locale/zh_TW
+@dirrm HelixPlayer/share/locale/zh_CN
+@dirrm HelixPlayer/share/locale/pt_BR
+@dirrm HelixPlayer/share/locale/pl
+@dirrm HelixPlayer/share/locale/ko
+@dirrm HelixPlayer/share/locale/ja
+@dirrm HelixPlayer/share/locale/it
+@dirrm HelixPlayer/share/locale/hi
+@dirrm HelixPlayer/share/locale/fr
+@dirrm HelixPlayer/share/locale/es
+@dirrm HelixPlayer/share/locale/de
+@dirrm HelixPlayer/share/locale
+@dirrm HelixPlayer/share/icons
+@dirrm HelixPlayer/share/hxplay
+@dirrm HelixPlayer/share/default
+@dirrm HelixPlayer/share
+@dirrm HelixPlayer/postinst
+@dirrm HelixPlayer/plugins
+@dirrm HelixPlayer/mozilla
+@dirrm HelixPlayer/lib
+@dirrm HelixPlayer/doc
+@dirrm HelixPlayer/common
+@dirrm HelixPlayer/codecs
+@dirrm HelixPlayer/Bin
+@dirrm HelixPlayer
+@dirrmtry share/applications

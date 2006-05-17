@@ -1,0 +1,19 @@
+
+================================================================================
+    To use the HelixPlayer player with Mozilla you must create a
+    symbolic link from
+
+ %%PREFIX%%/HelixPlayer/mozilla/nphelix.so
+
+    to your Mozilla plugins directory, which is usually found at
+
+ %%X11BASE%%/lib/mozilla/plugins
+
+    To use it with Firefox, create the symbolic link to
+    %%X11BASE%%/lib/firefox/plugins
+
+E.g.
+ln -sf %%PREFIX%%/HelixPlayer/mozilla/nphelix.so %%X11BASE%%/lib/firefox/plugins
+
+================================================================================
+

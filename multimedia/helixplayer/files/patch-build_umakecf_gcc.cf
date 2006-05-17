@@ -1,0 +1,47 @@
+--- build/umakecf/gcc.cf.orig	Wed Oct 19 06:07:04 2005
++++ build/umakecf/gcc.cf	Sat May  6 17:53:25 2006
+@@ -54,14 +54,14 @@
+ 
+ ## Set up the C compiler
+ platform.cc = cc = Compiler()
+-cc.cmd = 'gcc'
+-cc.args['default'] = '-pipe'
++cc.cmd = '%%CC%%'
++cc.args['default'] = '%%CFLAGS%%'
+ cc.args['debug'] = '-O0 -g -DDEBUG -D_DEBUG'
+ 
+ if project.IsDefined('HELIX_CONFIG_MINIMIZE_SIZE'):
+     cc.args['release'] = '-Os -fomit-frame-pointer -finline-functions -finline-limit=50'
+ else:
+-    cc.args['release'] = '-O2 '
++    cc.args['release'] = '%%CFLAGS%% '
+ 
+ if not project.BuildOption("nopic"):
+     cc.args['dll'] = '-fPIC -DPIC'
+@@ -77,14 +77,14 @@
+ 
+ ## Set up the C++ Compiler
+ platform.cxx = cxx = Compiler()
+-cxx.cmd = 'g++'
+-cxx.args['default'] = '-pipe'
++cxx.cmd = '%%CXX%%'
++cxx.args['default'] = '%%CXXFLAGS%%'
+ cxx.args['debug'] = '-O0 -g -DDEBUG -D_DEBUG'
+ 
+ if project.IsDefined('HELIX_CONFIG_MINIMIZE_SIZE'):
+     cxx.args['release'] = '-Os -fomit-frame-pointer  -finline-functions -finline-limit=50'
+ else:
+-    cxx.args['release'] = '-O2 '
++    cxx.args['release'] = '%%CXXFLAGS%% '
+ 
+ if project.BuildOption("symbols"):
+     cc.args['release'] = cc.args['release'] + ' -g '
+@@ -119,7 +119,7 @@
+         self.args['profile'] = '-pg'
+         self.args['static'] = '-static'
+         self.target_arg = '-o'
+-        self.ldcmd = 'g++'
++        self.ldcmd = '%%CXX%%'
+         self.ldargs = ''
+ 
+     def crti_path(self):

@@ -1,0 +1,11 @@
+--- ./player/app/gtk/realplay.orig	Tue May  4 18:30:10 2004
++++ ./player/app/gtk/realplay	Wed May 26 21:17:27 2004
+@@ -65,7 +65,7 @@
+ if [ -n "$DEBUG" -a -x "$CATCHSEGV" ]; then
+     $CATCHSEGV $REALPLAYBIN ${1+"$@"}
+ else
+-    while /bin/true; do
++    while /usr/bin/true; do
+         # Restart the player if exit code is 10
+         $REALPLAYBIN "$@"
+         if [ $? -ne 10 ]; then
