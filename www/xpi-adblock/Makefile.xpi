@@ -80,6 +80,8 @@ do-install:
 	@${CP} -Rp ${WRKSRC}/ ${_TD_FULL}/
 	@if [ -d ${FILESDIR} -a -f ${FILESDIR}/chrome.manifest ] ; \
 		then ${CP} -p ${FILESDIR}/chrome.manifest ${_TD_FULL}/ ; fi
+	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${_TD_FULL}/
+	@${CHMOD} -R a+rX,go-w ${_TD_FULL}/
 	@for _app in ${XPI_APPS} ; { ${LN} -sf ${_TD_FULL} $$_app ${_Q} ; }
 
 relink:
