@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	libqglviewer
-PORTVERSION=	2.2.1.0
+PORTVERSION=	2.2.2.1
 CATEGORIES=	graphics
 MASTER_SITES=	http://artis.imag.fr/Members/Gilles.Debunne/QGLViewer/src/
 DISTNAME=	libQGLViewer-${PORTVERSION:R}-${PORTVERSION:E}
