@@ -244,6 +244,15 @@ LIB_DEPENDS+=	vorbisidec.1:${PORTSDIR}/audio/libtremor
 DIST=	bad
 .endif
 
+# hal
+.if ${GST_PLUGIN}=="hal"
+LIB_DEPENDS+=	hal.1:${PORTSDIR}/sysutils/hal
+PLIST_FILES=	${GST_LIB_DIR}/libgsthalelements.a \
+		${GST_LIB_DIR}/libgsthalelements.la \
+		${GST_LIB_DIR}/libgsthalelements.so
+
+.endif
+
 # jpeg
 .if ${GST_PLUGIN}=="jpeg"
 LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg
@@ -374,6 +383,12 @@ USE_GSTREAMER+=	ogg
 LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
 EXTRA_LIBS+=	-lgsttag-${VERSION} -lgstaudio-${VERSION}
 DIST=	base
+.endif
+
+# xvid
+.if ${GST_PLUGIN}=="xvid"
+LIB_DEPENDS+=	xvidcore.4:${PORTSDIR}/multimedia/xvid
+DIST=	bad
 .endif
 
 # wavpack

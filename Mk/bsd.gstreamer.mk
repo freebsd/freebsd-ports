@@ -65,7 +65,7 @@ _USE_GSTREAMER_ALL=	a52dec aalib bad cairo cdparanoia dts \
 			gnonlin good gsm ivorbis jpeg ladspa lame libcaca \
 			libmms libpng libvisual mad mpeg2dec \
 			musepack ogg pango sdl shout2 sidplay \
-			speex theora ugly vorbis wavpack
+			speex theora ugly vorbis wavpack xvid
 _USE_GSTREAMER80_ALL=	a52dec aalib artsd audiofile cairo cdaudio cdio cdparanoia \
 			dirac dts dv dvd esound faac faad ffmpeg flac \
 			gconf gdkpixbuf gnomevfs gsm hermes ivorbis jack jpeg \
