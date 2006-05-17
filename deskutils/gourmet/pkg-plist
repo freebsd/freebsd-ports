@@ -332,6 +332,12 @@ bin/gourmet
 %%PYTHON_SITELIBDIR%%/gourmet/timeEntry.py
 %%PYTHON_SITELIBDIR%%/gourmet/timeEntry.pyc
 %%PYTHON_SITELIBDIR%%/gourmet/timeEntry.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/timeScanner.py
+%%PYTHON_SITELIBDIR%%/gourmet/timeScanner.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/timeScanner.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/timer.py
+%%PYTHON_SITELIBDIR%%/gourmet/timer.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/timer.pyo
 %%PYTHON_SITELIBDIR%%/gourmet/treeview_extras.py
 %%PYTHON_SITELIBDIR%%/gourmet/treeview_extras.pyc
 %%PYTHON_SITELIBDIR%%/gourmet/treeview_extras.pyo
@@ -346,8 +352,10 @@ bin/gourmet
 %%PYTHON_SITELIBDIR%%/gourmet/version.pyo
 share/applications/gourmet.desktop
 %%DATADIR%%/ABBREV.txt
+%%DATADIR%%/AddToShoppingList.png
 %%DATADIR%%/FAQ
 %%DATADIR%%/FOOD_DES.txt
+%%DATADIR%%/Nutrition.png
 %%DATADIR%%/WEIGHT.txt
 %%DATADIR%%/app.glade
 %%DATADIR%%/converter.glade
@@ -368,6 +376,7 @@ share/applications/gourmet.desktop
 %%DATADIR%%/recipe.dtd
 %%DATADIR%%/shopList.glade
 %%DATADIR%%/splash.png
+%%DATADIR%%/timerDialog.glade
 share/locale/bg/LC_MESSAGES/gourmet.mo
 share/locale/ca/LC_MESSAGES/gourmet.mo
 share/locale/cs/LC_MESSAGES/gourmet.mo
