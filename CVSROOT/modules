@@ -14379,6 +14379,7 @@ xpi-displayquota	ports/mail/xpi-displayquota
 xpi-fasterfox	ports/www/xpi-fasterfox
 xpi-flashblock	ports/www/xpi-flashblock
 xpi-mldonkey	ports/www/xpi-mldonkey
+xpi-mousegestures	ports/www/xpi-mousegestures
 xpi-no-referrer	ports/www/xpi-no-referrer
 xpi-noscript	ports/www/xpi-noscript
 xpi-pdf_download	ports/www/xpi-pdf_download
