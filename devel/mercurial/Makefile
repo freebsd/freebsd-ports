@@ -37,6 +37,10 @@ post-build:
 
 post-install:
 .if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	for f in ${PORTDOCS}; do \
+		${INSTALL_MAN} ${WRKSRC}/$${f} ${DOCSDIR}; \
+	done
 	${MKDIR} ${DATADIR}
 	${MKDIR} ${DATADIR}/contrib
 	for f in ${CONTRIB_FILES}; do \
