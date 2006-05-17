@@ -1,0 +1,9 @@
+WeatherSpect provides a reasonably accurate simulation of what the
+weather looks like outside, in ASCII art. It includes rain, snow,
+lightning, sleet, and hail. The windspeed and cloudiness are reflected
+in the velocity and quantity of clouds. There are trees that age,
+reproduce and die over the course of an hour, and a sun and moon that
+follow the actual sun and moonrise. There's also a dancing turtle.
+
+Author:	Kirk Baucom <kbaucom@schizoid.com>
+WWW:	http://www.robobunny.com/projects/weatherspect/html/
