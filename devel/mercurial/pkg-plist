@@ -182,15 +182,6 @@ bin/hgmerge
 %%PYTHON_SITELIBDIR%%/mercurial/version.py
 %%PYTHON_SITELIBDIR%%/mercurial/version.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/version.pyo
-%%PORTDOCS%%%%DOCSDIR%%/CONTRIBUTORS
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/comparison.txt
-%%PORTDOCS%%%%DOCSDIR%%/notes.txt
-%%PORTDOCS%%%%DOCSDIR%%/hg.1.txt
-%%PORTDOCS%%%%DOCSDIR%%/hgignore.5.txt
-%%PORTDOCS%%%%DOCSDIR%%/hgmerge.1.txt
-%%PORTDOCS%%%%DOCSDIR%%/hgrc.5.txt
 %%PORTDOCS%%%%DATADIR%%/contrib/bash_completion
 %%PORTDOCS%%%%DATADIR%%/contrib/convert-repo
 %%PORTDOCS%%%%DATADIR%%/contrib/favicon.ico
@@ -209,6 +200,5 @@ bin/hgmerge
 @dirrm %%PYTHON_SITELIBDIR%%/mercurial
 @dirrm %%PYTHON_SITELIBDIR%%/hgext
 %%PORTDOCS%%@dirrm %%DATADIR%%/www
+%%PORTDOCS%%@dirrm %%DATADIR%%/contrib
 %%PORTDOCS%%@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/contrib
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
