@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	SVN-Notify
-PORTVERSION=	2.43
+PORTVERSION=	2.59
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/D/DW/DWHEELER/
@@ -22,6 +22,6 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 PERL_MODBUILD=	yes
 
 MAN1=		svnnotify.1
-MAN3=		SVN::Notify.3 SVN::Notify::HTML.3 SVN::Notify::HTML::ColorDiff.3
+MAN3=		SVN::Notify.3 SVN::Notify::Alternative.3 SVN::Notify::HTML.3 SVN::Notify::HTML::ColorDiff.3
 
 .include <bsd.port.mk>
