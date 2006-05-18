@@ -5,10 +5,6 @@
 # $FreeBSD$
 #
 
-PKGNAMESUFFIX=		-sasl-client
-
-COMMENT=		Open source LDAP client implementation with SASL2 support
-
 CLIENT_ONLY=		yes
 WITH_SASL=		yes
 

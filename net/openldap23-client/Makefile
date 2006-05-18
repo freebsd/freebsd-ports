@@ -5,10 +5,6 @@
 # $FreeBSD$
 #
 
-PKGNAMESUFFIX=		-client
-
-COMMENT=		Open source LDAP client implementation
-
 CLIENT_ONLY=		yes
 WITHOUT_SASL=		yes
 
