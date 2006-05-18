@@ -1,0 +1,12 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/Write.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/Write/Layer.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/Write/Layer2.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/Write/Layer3.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/Write/Layer4.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Write/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Write/Write.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Write/Write.so
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Write
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Net/Write
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Net
