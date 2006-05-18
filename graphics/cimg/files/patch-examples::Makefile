@@ -1,5 +1,5 @@
---- examples/Makefile.orig	Fri Mar 31 18:11:20 2006
-+++ examples/Makefile	Fri Mar 31 19:45:50 2006
+--- examples/Makefile.orig	Thu May 18 15:11:56 2006
++++ examples/Makefile	Thu May 18 21:04:55 2006
 @@ -7,10 +7,10 @@
  # -----------------------------------------------------------------------------------
  
@@ -7,28 +7,29 @@
 -CC      = g++
 -X11PATH = /usr/X11R6
 -CFLAGS  = -Wall -ansi -pedantic -ffast-math -I$(X11PATH)/include
--LDFLAGS = -lm -lpthread -lX11 -L$(X11PATH)/lib
+-LDFLAGS = -lm
 +CC      = $(CXX)
 +#X11PATH = /usr/X11R6
 +#CFLAGS  = -Wall -ansi -pedantic -ffast-math -I$(X11PATH)/include
-+#LDFLAGS = -lm -lpthread -lX11 -L$(X11PATH)/lib
- CIMGVER = 1.13
++#LDFLAGS = -lm
+ CIMGVER = 1.14
  
- # Compilation rules
-@@ -18,7 +18,7 @@
+ CIMGFILES = CImg_demo \
+@@ -38,7 +38,7 @@
  	@echo
  	@echo "** Compiling '$* ($(CIMGVER))' with '`$(CC) -v 2>&1 | grep version`'"
  	@echo
 -	$(CC) -o $* $< $(CFLAGS) $(LDFLAGS) $(ARCHFLAGS)
 +	$(CC) -o $* $< $(CPPFLAGS) -Wall -ansi -pedantic -ffast-math  -I$(X11PATH)/include -lX11 -L$(X11PATH)/lib $(LDFLAGS)
- 
- first:
+ menu:
  	@echo
-@@ -72,6 +72,7 @@
+ 	@echo "CImg Library $(CIMGVER) : Examples"
+@@ -63,7 +63,7 @@
+ all: $(CIMGFILES)
  
  clean:
- 	rm -f *.exe *~ \
-+	Makefile.orig \
- 	CImg_test \
-         fade_images \
-         greycstoration \
+-	rm -f *.exe *~ $(CIMGFILES)
++	rm -f *.exe *~ $(CIMGFILES) Makefile.orig
+ 
+ # Linux/Mac OSX targets
+ linux:
