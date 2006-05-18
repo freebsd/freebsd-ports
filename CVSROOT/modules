@@ -1710,6 +1710,7 @@ diablo-jdk15	ports/java/diablo-jdk15
 diablo-jre15	ports/java/diablo-jre15
 diacanvas2	ports/graphics/diacanvas2
 dialyzer	ports/devel/dialyzer
+diary-hercules	ports/misc/diary-hercules
 dice		ports/lang/dice
 dictd		ports/net/dictd
 dictd-database	ports/net/dictd-database
