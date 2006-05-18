@@ -28,6 +28,7 @@
     SUBDIR += airrox
     SUBDIR += alephone
     SUBDIR += alephone-data
+    SUBDIR += alienarena
     SUBDIR += alienarena-data
     SUBDIR += alienblaster
     SUBDIR += alienwave

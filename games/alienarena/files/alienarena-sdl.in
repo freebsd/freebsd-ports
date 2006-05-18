@@ -1,0 +1,5 @@
+#!/bin/sh
+
+cd %%LIBDIR%% || exit 1
+
+exec ./crx.sdl +set game arena "$@"
