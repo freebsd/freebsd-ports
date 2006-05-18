@@ -7,7 +7,7 @@
 
 PORTNAME=	ocp
 PORTVERSION=	0.1.9
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	http://labs.nixia.no/ \
 		http://critical.ch/distfiles/
@@ -64,7 +64,7 @@ CONFIGURE_ARGS+=	--with-x11=yes
 CONFIGURE_ARGS+=	--with-debug
 .endif
 .if defined(WITH_ADPLUG)
-LIB_DEPENDS+=		adplug-1.5.1:${PORTSDIR}/audio/libadplug
+LIB_DEPENDS+=		adplug-2.0.0:${PORTSDIR}/audio/libadplug
 CONFIGURE_ARGS+=	--without-x11 --with-adplug
 PLIST_SUB+=		ADPLUG=""
 .else
