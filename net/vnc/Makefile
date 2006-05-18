@@ -51,7 +51,8 @@ USE_PERL5=	yes
 
 EXTRA_PATCHES+=	${WRKSRC}/xc.patch \
 		${PATCHDIR}/vnc.def-patch \
-		${PATCHDIR}/FreeBSD.cf-patch
+		${PATCHDIR}/FreeBSD.cf-patch \
+		${PATCHDIR}/extra-patch-fix_Xvnc_no_valid_address
 
 MAN1+=		Xvnc.1 \
 		vncserver.1
