@@ -25,6 +25,10 @@
 # MASTER_SITE_SUBDIR
 #				- Default: extensions/${PORTNAME}
 # LATEST_LINK	- Default: ${PKGBASE:S/_//g}
+# XPI_LIBDIR	- Name of the directory to install extensions in.
+#				  Default: ${PREFIX}/lib/xpi
+# XPI_XPIDIR	- Name of the directory to install extension's files in.
+#				  Default: ${XPI_LIBDIR}/${XPI_ID}
 #
 # This Makefile is an alpha-version of the new xpi infrastructure. It currently
 # supports Gecko 1.8+ (Firefox 1.5+). Support for Gecko 1.7x (and Seamonkey 1.0)
@@ -47,6 +51,13 @@
 # xpi ports do not depend on their master applications. You can install an
 # extension before the app and run relink when the app is present.
 
+.if !defined(IGNORE_MASTER_SITE_CSME)
+MASTER_SITE_CSME+= \
+	http://bsd1.csme.ru/myports/ \
+	http://bsd2.csme.ru/myports/ \
+	http://bsd3.csme.ru/myports/
+.endif
+
 MASTER_SITES?=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR?=	extensions/${XPI_DISTNAME}
 PKGNAMEPREFIX?=	xpi-
@@ -60,20 +71,21 @@ USE_ZIP=	yes
 EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
 
 XPI_DISTNAME?=	${PORTNAME}
-XPI_DIRS?=		chrome components defaults/preferences defaults
 WITH_XPI_APPS?=	*firefox* *thunderbird* *flock*
 XPI_APPS?=		${WITH_XPI_APPS:S.^.${X11BASE}/lib/.:S.$./extensions.}
 
-_TD=		lib/xpi/${XPI_ID}
-_TD_FULL=	${PREFIX}/${_TD}
-_Q=			2>/dev/null || true
-PLIST_FILES_CMD+='@exec for _app in ${XPI_APPS} ; { ${LN} -sf ${_TD_FULL} $$_app ${_Q}; }'
-PLIST_FILES_CMD+='@unexec for _app in ${XPI_APPS} ; { ${RM} -f $$_app/${XPI_ID} ; }'
+XPI_LIBDIR?=	${PREFIX}/lib/xpi
+XPI_XPIDIR?=	${XPI_LIBDIR}/${XPI_ID}
+
+PLIST_SUB+=		XPI_LIBDIR="${XPI_LIBDIR:S,^${PREFIX}/,,}" \
+				XPI_XPIDIR="${XPI_XPIDIR:S,^${PREFIX}/,,}"
+
+_TD=		${XPI_XPIDIR:S,^${PREFIX}/,,}
+_TD_FULL=	${XPI_XPIDIR}
+_A=	>> ${TMPPLIST}
+_Q=	2>/dev/null || true
 PLIST_FILES+=	${XPI_FILES:S!^!${_TD}/!}
-PLIST_FILES+=	${PLIST_FILES_CMD:S/ /%%SPACE%%/g}
-PLIST_DIRS+=	${XPI_DIRS:S!^!${_TD}/!}
-PLIST_DIRS+=	${_TD} lib/xpi
-PLIST_SUB+=		SPACE=" "
+PLIST_DIRS+=	${XPI_DIRS:S!^!${_TD}/!} ${_TD}
 
 do-install:
 	@${INSTALL} -d ${_TD_FULL}
@@ -83,6 +95,9 @@ do-install:
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${_TD_FULL}/
 	@${CHMOD} -R a+rX,go-w ${_TD_FULL}/
 	@for _app in ${XPI_APPS} ; { ${LN} -sf ${_TD_FULL} $$_app ${_Q} ; }
+	@${ECHO_CMD} '@exec for _app in ${XPI_APPS} ; { ${LN} -sf ${_TD_FULL} $$_app ${_Q}; }' ${_A}
+	@${ECHO_CMD} '@unexec for _app in ${XPI_APPS} ; { ${RM} -f $$_app/${XPI_ID} ; }' ${_A}
+	@${ECHO_CMD} '@unexec rmdir ${XPI_LIBDIR:S,^${PREFIX},%D,} ${_Q}' ${_A}
 
 relink:
 	@-for _app in ${XPI_APPS} ; { ${LN} -sf ${_TD_FULL} $$_app ${_Q} ; }
@@ -104,3 +119,10 @@ xpi-gen:	extract
 	@${ECHO_CMD} -n 'XPI_DIRS='
 	@cd ${WRKSRC} && ${FIND} -ds . -not -name . -type d | cut -f2- -d/ | ${TR} '\n' ' '
 	@${ECHO_CMD}
+
+xpi-plist:	extract
+	@${FIND} -s ${WRKSRC} -not -type d | ${SED} -e "s,^${WRKSRC},%%XPI_XPIDIR%%," > ${PLIST}
+	@if [ -d ${FILESDIR} -a -f ${FILESDIR}/chrome.manifest ] ; \
+		then ${ECHO_CMD} %%XPI_XPIDIR%%/chrome.manifest >> ${PLIST} ; fi
+	@${FIND} -ds ${WRKSRC} -type d -not -name ${DISTNAME} | \
+		${SED} -e "s,^${WRKSRC},@dirrm %%XPI_XPIDIR%%," >> ${PLIST}
