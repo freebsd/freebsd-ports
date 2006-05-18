@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libextractor
-PORTVERSION=	0.5.12
+PORTVERSION=	0.5.14
 CATEGORIES=	textproc
 MASTER_SITES=	http://gnunet.org/libextractor/download/ \
 		${MASTER_SITE_GNU}
@@ -24,6 +24,8 @@ INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--disable-ltdl-install
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+LIB_DEPENDS=	mpeg2:${PORTSDIR}/multimedia/libmpeg2
 
 EXTRACT_AFTER_ARGS=	| ${TAR} -xf - --exclude libltdl
 
