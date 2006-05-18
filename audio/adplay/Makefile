@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	adplay
-PORTVERSION=	1.4
-PORTREVISION=	3
+PORTVERSION=	1.5
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	adplug
@@ -15,7 +14,7 @@ MASTER_SITE_SUBDIR=	adplug
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	AdLib player using adplug library
 
-LIB_DEPENDS=	adplug-1.5.1:${PORTSDIR}/audio/libadplug
+LIB_DEPENDS=	adplug-2.0.0:${PORTSDIR}/audio/libadplug
 
 PLIST_FILES=	bin/adplay
 
