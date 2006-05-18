@@ -1,0 +1,43 @@
+--- sal/osl/unx/socket.c.orig	Thu Sep  8 11:01:17 2005
++++ sal/osl/unx/socket.c	Fri May  5 19:14:17 2006
+@@ -813,7 +813,7 @@
+ 	const char *name, struct hostent *result,
+ 	char *buffer, int buflen, int *h_errnop)
+ {
+-#ifdef LINUX
++#if defined(LINUX) || (defined(FREEBSD) && (__FreeBSD_version >= 700015))
+ 	struct hostent *__result; /* will be the same as result */
+ 	int __error;
+ 	__error = gethostbyname_r (name, result, buffer, buflen,
+--- sal/osl/unx/system.c.orig	Fri Apr  7 04:06:25 2006
++++ sal/osl/unx/system.c	Fri May  5 19:18:51 2006
+@@ -343,6 +343,8 @@
+ }
+ #endif /* defined SCO */
+ 
++#if !defined(FREEBSD) || (__FreeBSD_version < 700015)
++
+ extern int h_errno;
+ 
+ struct hostent *gethostbyname_r(const char *name, struct hostent *result,
+@@ -433,6 +435,7 @@
+ 
+   	return res;
+ }
++#endif /* !defined(FREEBSD) || (__FreeBSD_version < 700015) */
+ 
+ #if defined(MACOSX)
+ /*
+--- sal/osl/unx/system.h.orig	Fri Apr  7 04:06:48 2006
++++ sal/osl/unx/system.h	Fri May  5 18:57:50 2006
+@@ -540,8 +540,10 @@
+ struct tm *localtime_r(const time_t *timep, struct tm *buffer);
+ struct tm *gmtime_r(const time_t *timep, struct tm *buffer);
+ #endif /* !defined FREEBSD || (__FreeBSD_version < 500112) */
++#if !defined(FREEBSD) || (__FreeBSD_version < 700015)
+ struct hostent *gethostbyname_r(const char *name, struct hostent *result,
+ 								char *buffer, int buflen, int *h_errnop);
++#endif /* !defined(FREEBSD) || (__FreeBSD_version < 700015) */
+ #endif
+ 
+ #endif /* __OSL_SYSTEM_H__ */
