@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# <<<Add FreeBSD CVS ID here!>>>
+# $FreeBSD$
 #
 
 # PROVIDE: spamass-milter
