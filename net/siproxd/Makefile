@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	siproxd
-PORTVERSION=	0.5.11
-PORTREVISION=	1
+PORTVERSION=	0.5.12
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	siproxd
@@ -18,7 +17,7 @@ COMMENT=	A proxy/masquerading daemon for the SIP protocol
 LIB_DEPENDS=	osip2.3:${PORTSDIR}/net/libosip2
 
 USE_GETOPT_LONG=yes
-USE_RC_SUBR=	yes
+USE_RC_SUBR=	siproxd.sh
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--with-libosip-prefix=${PREFIX}
 
@@ -26,8 +25,7 @@ PORTDOCS1=	AUTHORS ChangeLog README RELNOTES
 PORTDOCS2=	FAQ KNOWN_BUGS RFC3261_compliance.txt \
 		sample_cfg_budgetone.txt sample_cfg_x-lite.txt
 PORTDOCS=	${PORTDOCS1} ${PORTDOCS2}
-PLIST_FILES=	etc/rc.d/siproxd.sh etc/siproxd.conf.example \
-		etc/siproxd_passwd.cfg sbin/siproxd
+PLIST_FILES=	etc/siproxd.conf.example etc/siproxd_passwd.cfg sbin/siproxd
 
 .include <bsd.port.pre.mk>
 
@@ -47,9 +45,5 @@ post-install:
 .endfor
 .endif
 	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g' \
-		-e 's|%%RC_SUBR%%|${RC_SUBR}|g' \
-		${FILESDIR}/siproxd.sh > ${PREFIX}/etc/rc.d/siproxd.sh
-	@${CHMOD} 755 ${PREFIX}/etc/rc.d/siproxd.sh
 
 .include <bsd.port.post.mk>

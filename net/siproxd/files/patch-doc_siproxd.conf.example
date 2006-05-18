@@ -1,5 +1,5 @@
---- doc/siproxd.conf.example.orig	Tue Apr 19 21:00:20 2005
-+++ doc/siproxd.conf.example	Thu May  5 17:35:35 2005
+--- doc/siproxd.conf.example.orig	Sun Jan  1 21:09:42 2006
++++ doc/siproxd.conf.example	Wed Apr 19 16:41:31 2006
 @@ -17,8 +17,8 @@
  #    or a hostname that resolves to that address (use a dyndns address for
  #    example).
