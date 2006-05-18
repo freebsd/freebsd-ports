@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	freefem++
-DISTVERSION=	2.7-2
+PORTVERSION=	2.8
 CATEGORIES=	math science
 MASTER_SITES=	http://www.freefem.org/ff++/ftp/
 
@@ -30,6 +30,7 @@ RUN_DEPENDS=	dvips:${PORTSDIR}/print/dvipsk-tetex			\
 
 RESTRICTED=	No resale or commercial use
 
+USE_BISON=		yes
 USE_GL=			yes
 USE_GCC=		3.4
 USE_GMAKE=		yes
