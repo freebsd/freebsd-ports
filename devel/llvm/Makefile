@@ -16,6 +16,7 @@ COMMENT=	Low Level Virtual Machine
 GNU_CONFIGURE=	yes
 USE_BISON=	yes
 USE_GMAKE=	yes
+USE_PERL5_BUILD=yes
 MAKE_ENV=	ENABLE_OPTIMIZED=1 # strips binaries
 
 WRKSRC=		${WRKDIR}/llvm
