@@ -7,7 +7,7 @@
 
 PORTNAME=	dhid
 PORTVERSION=	5.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	dns
 MASTER_SITES=	ftp://ftp.dhis.org/pub/dhis/
 
@@ -19,8 +19,10 @@ LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4
 MAKE_ARGS+=	CC="${CC}" CFLAGS="${CFLAGS} -I${LOCALBASE}/include -DQRC=1" \
 		LFLAGS="-L${LOCALBASE}/lib"
 
+USE_RC_SUBR=	dhid
+
 PORTDOCS=	AUTHORS CONTRIBUTORS COPYRIGHT INSTALL README WHATSNEW
-PLIST_FILES=	sbin/dhid bin/genkeys etc/dhid.conf.sample etc/rc.d/dhid.sh.sample
+PLIST_FILES=	sbin/dhid bin/genkeys etc/dhid.conf.sample
 
 DHID_USER=	dhis
 DHID_GROUP=	dhis
@@ -48,10 +50,6 @@ do-install:
 	@${ECHO_CMD} "@exec ${CHOWN} ${DHID_USER}:${DHID_GROUP} ${DHID_PID_DIR}" >> ${TMPPLIST}
 	@${ECHO_CMD} "@exec ${CHMOD} 0700 ${DHID_PID_DIR}" >> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec ${RM} -rf /${DHID_PID_DIR}" >> ${TMPPLIST}
-.if !exists(${PREFIX}/etc/rc.d/dhid.sh)
-	@${ECHO_MSG} "===>   Installing ${PREFIX}/etc/rc.d/dhid.sh.sample startup file."
-	${INSTALL_SCRIPT} -m 751 ${FILESDIR}/dhid.sh ${PREFIX}/etc/rc.d/dhid.sh.sample
-.endif
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
