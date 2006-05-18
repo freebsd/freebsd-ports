@@ -1660,6 +1660,7 @@ deltup		ports/sysutils/deltup
 demeter		ports/graphics/demeter
 demime		ports/mail/demime
 demoniac	ports/misc/demoniac
+demonquake	ports/games/demonquake
 demoroniser	ports/www/demoroniser
 denature	ports/textproc/denature
 denemo		ports/audio/denemo
