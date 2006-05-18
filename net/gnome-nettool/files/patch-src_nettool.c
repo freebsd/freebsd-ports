@@ -1,5 +1,5 @@
---- src/nettool.c.orig	Tue May 10 18:14:48 2005
-+++ src/nettool.c	Sun Apr 23 22:00:13 2006
+--- src/nettool.c.orig	Fri Apr 14 08:36:08 2006
++++ src/nettool.c	Fri May 12 15:54:15 2006
 @@ -24,6 +24,7 @@
  #include <string.h>
  #include <sys/types.h>
@@ -8,15 +8,6 @@
  #include <signal.h>
  #include <errno.h>
  #include <sys/wait.h>
-@@ -315,7 +316,7 @@ netinfo_io_text_buffer_dialog (GIOChanne
- 			       GIOCondition condition, gpointer data)
- {
- 	gchar *text = NULL;
--	gint len;
-+	gsize len;
- 	Netinfo *netinfo = (Netinfo *) data;
- 
- 	g_return_val_if_fail (channel != NULL, FALSE);
 @@ -360,6 +361,10 @@ netinfo_io_text_buffer_dialog (GIOChanne
  						 	len, NULL);
  			}
