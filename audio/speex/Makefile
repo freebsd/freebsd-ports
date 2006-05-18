@@ -27,13 +27,10 @@ USE_GNOME=	gnomehack
 USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ARGS=	--with-ogg-dir=${LOCALBASE}
 INSTALLS_SHLIB=	yes
 
 MAN1=		speexdec.1 speexenc.1
-
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
