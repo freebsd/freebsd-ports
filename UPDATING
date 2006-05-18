@@ -6,6 +6,15 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20060518:
+  AFFECTS: users of net/openldap23-server
+  AUTHOR: delphij@FreeBSD.org
+
+  The OpenLDAP 2.3.x series now automatically disables threading when
+  shell backend is enabled, as suggested by the OpenLDAP developers.
+  Users should be aware of the change and choose whether to enable
+  the feature.
+
 20060516:
   AFFECTS: users of www/tinyproxy
   AUTHOR: wxs@csh.rit.edu
