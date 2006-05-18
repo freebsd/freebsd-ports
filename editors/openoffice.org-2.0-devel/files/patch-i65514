@@ -1,0 +1,12 @@
+--- berkeleydb/makefile.mk	8 Mar 2006 14:13:53 -0000	1.31
++++ berkeleydb/makefile.mk	12 May 2006 00:26:22 -0000
+@@ -88,6 +88,9 @@
+ .IF "$(SOLAR_JAVA)"!=""
+ CONFIGURE_FLAGS+=--enable-java
+ .ENDIF
++.IF "$(COM)$(CPU)"=="GCCX"
++CONFIGURE_FLAGS+=--with-mutex=x86/gcc-assembly
++.ENDIF
+ 
+ BUILD_DIR=$(CONFIGURE_DIR)
+ BUILD_DIR_OUT=$(CONFIGURE_DIR)
