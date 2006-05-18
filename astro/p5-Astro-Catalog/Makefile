@@ -7,14 +7,14 @@
 #
 
 PORTNAME=	Astro-Catalog
-PORTVERSION=	3.9.9
+PORTVERSION=	4.1.0
 CATEGORIES=	astro perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
 		http://www.estar.org.uk/software/
 MASTER_SITE_SUBDIR=	Astro
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A generic stellar catalogue object
 
 BUILD_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww
@@ -33,12 +33,15 @@ MAN3=		Astro::Catalog.3 \
 		Astro::Catalog::IO::FITSTable.3 \
 		Astro::Catalog::IO::GaiaPick.3 \
 		Astro::Catalog::IO::JCMT.3 \
+		Astro::Catalog::IO::RITMatch.3 \
 		Astro::Catalog::IO::SExtractor.3 \
 		Astro::Catalog::IO::STL.3 \
 		Astro::Catalog::IO::Simple.3 \
 		Astro::Catalog::IO::TST.3 \
 		Astro::Catalog::IO::UKIRTBS.3 \
 		Astro::Catalog::IO::VOTable.3 \
+		Astro::Catalog::Item.3 \
+		Astro::Catalog::Item::Morphology.3 \
 		Astro::Catalog::Query.3 \
 		Astro::Catalog::Query::2MASS.3 \
 		Astro::Catalog::Query::CMC.3 \
