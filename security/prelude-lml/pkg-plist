@@ -49,6 +49,8 @@ etc/prelude-lml/ruleset/webmin.rules
 etc/prelude-lml/ruleset/wu-ftp.rules
 etc/prelude-lml/ruleset/zywall.rules
 etc/prelude-lml/ruleset/zyxel.rules
+etc/prelude-lml/ruleset/sonicwall.rules
+etc/prelude-lml/ruleset/spamassassin.rules
 include/prelude-lml/prelude-lml.h
 lib/prelude-lml/debug.la
 lib/prelude-lml/debug.so
@@ -56,6 +58,6 @@ lib/prelude-lml/pcre.la
 lib/prelude-lml/pcre.so
 @dirrm include/prelude-lml
 @dirrm lib/prelude-lml
-@dirrmtry etc/prelude-lml/ruleset
+@dirrm etc/prelude-lml/ruleset
 @dirrmtry etc/prelude-lml
 @unexec echo "If you are permanently removing this port, you should remove ${PKG_PREFIX}/etc/prelude-lml and /var/spool/prelude-lml directories to clean up any configuration and logfile metadata files left." | fmt
