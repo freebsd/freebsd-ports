@@ -1,0 +1,142 @@
+--- ./linux/Makefile.orig	Tue May 16 15:20:10 2006
++++ ./linux/Makefile	Tue May 16 15:22:41 2006
+@@ -11,25 +11,14 @@
+ GLIBC=
+ endif
+ 
+-ifneq (,$(findstring alpha,$(shell uname -m)))
+-ARCH=axp
+-else
+-ifneq (,$(findstring ppc,$(shell uname -m)))
+-ARCH=ppc
+-else
+-ifneq (,$(findstring x86_64,$(shell uname -m)))
+-ARCH=x86_64
+-else
+-ARCH=i386
+-endif
+-endif
+-endif
++ARCH=$(shell uname -m)
++
+ NOARCH=noarch
+ 
+ MOUNT_DIR=..
+ 
+-BUILD_DEBUG_DIR=debug$(ARCH)
+-BUILD_RELEASE_DIR=release$(ARCH)
++BUILD_DEBUG_DIR=debug
++BUILD_RELEASE_DIR=release
+ CLIENT_DIR=$(MOUNT_DIR)/client
+ SERVER_DIR=$(MOUNT_DIR)/server
+ REF_GL_DIR=$(MOUNT_DIR)/ref_gl
+@@ -42,54 +31,38 @@
+ 
+ EGCS=/usr/local/egcs-1.1.2/bin/gcc
+ 
+-CC=gcc
++CC?=gcc
+ 
+-ifeq ($(ARCH),x86_64)
+-_LIB := lib64
+-else
+-_LIB := lib
+-endif
++BASE_CFLAGS=$(CFLAGS) -Dstricmp=strcasecmp -D_stricmp=strcasecmp
+ 
+-BASE_CFLAGS=-Dstricmp=strcasecmp -D_stricmp=strcasecmp -D__linux__
++RELEASE_CFLAGS=$(BASE_CFLAGS)
+ 
+-ifeq ($(ARCH),axp)
+-RELEASE_CFLAGS=$(BASE_CFLAGS) -ffast-math -funroll-loops \
++ifdef OPTIMIZED_CFLAGS
++RELEASE_CFLAGS+=-O2 -ffast-math -funroll-loops \
+ 	-fomit-frame-pointer -fexpensive-optimizations
++  ifeq ($(ARCH),i386)
++RELEASE_CFLAGS+=-falign-loops=2 -falign-jumps=2 -falign-functions=2 \
++	-fno-strict-aliasing
++  endif
+ endif
+ 
+-ifeq ($(ARCH),ppc)
+-RELEASE_CFLAGS=$(BASE_CFLAGS) -O2 -ffast-math -funroll-loops \
+-	-fomit-frame-pointer -fexpensive-optimizations
+-endif
++ARENA_CFLAGS=-DARENA
+ 
+-ifeq ($(ARCH),sparc)
+-RELEASE_CFLAGS=$(BASE_CFLAGS) -ffast-math -funroll-loops \
+-	-fomit-frame-pointer -fexpensive-optimizations
+-endif
++DEBUG_CFLAGS=$(BASE_CFLAGS) -g
+ 
+-ifeq ($(ARCH),i386)
+-RELEASE_CFLAGS=$(BASE_CFLAGS) -O2 -ffast-math -funroll-loops -falign-loops=2 \
+-	-falign-jumps=2 -falign-functions=2 -fno-strict-aliasing
+-endif
++LDFLAGS+=-lm
+ 
+-ifeq ($(ARCH),x86_64)
+-RELEASE_CFLAGS=$(BASE_CFLAGS) -O2 -ffast-math -funroll-loops \
+-	-fomit-frame-pointer -fexpensive-optimizations -fno-strict-aliasing
+-endif
++SVGALDFLAGS=-lvga -lm
+ 
+-ARENA_CFLAGS=-DARENA
++GLCFLAGS=-I$(X11BASE)/include
+ 
+-DEBUG_CFLAGS=$(BASE_CFLAGS) -g
+-LDFLAGS=-ldl -lm
+-SVGALDFLAGS=-lvga -lm
+-XLDFLAGS=-L/usr/X11R6/$(_LIB) -lX11 -lXext -lXxf86dga
+-XCFLAGS=
++XLDFLAGS=-L$(X11BASE)/lib -lX11 -lXext -lXxf86dga
+ 
+-GLLDFLAGS=-L/usr/X11R6/$(_LIB) -L/usr/local/$(_LIB) -lX11 -lXext -lvga -lm
+-GLXLDFLAGS=-L/usr/X11R6/$(_LIB) -L/usr/local/$(_LIB) -lX11 -lXext -lXxf86dga -lXxf86vm -lm -ljpeg -lGL -lGLU
++GLLDFLAGS=-L$(X11BASE)/lib -L$(LOCALBASE)/lib -lX11 -lXext -lvga -lm
++GLXLDFLAGS=-L$(X11BASE)/lib -L$(LOCALBASE)/lib -lX11 -lXext -lXxf86dga -lXxf86vm -lm -ljpeg -lGL -lGLU
+ 
+-SDLCFLAGS=$(shell sdl-config --cflags)
+-SDLLDFLAGS=$(shell sdl-config --libs)
++SDLCFLAGS=$(shell $(SDL_CONFIG) --cflags)
++SDLLDFLAGS=$(shell $(SDL_CONFIG) --libs)
+ 
+ SHLIBEXT=so
+ 
+@@ -117,13 +90,13 @@
+ 
+ ifeq ($(ARCH),axp)
+ TARGETS=$(BUILDDIR)/crded \
+-	$(BUILDDIR)/game$(ARCH).$(SHLIBEXT) \
+-	$(BUILDDIR)/arena/game$(ARCH).$(SHLIBEXT)
++	$(BUILDDIR)/game.$(SHLIBEXT) \
++	$(BUILDDIR)/arena/game.$(SHLIBEXT)
+ else
+ TARGETS=$(BUILDDIR)/crded \
+ 	$(BUILDDIR)/crx \
+-	$(BUILDDIR)/game$(ARCH).$(SHLIBEXT) \
+-	$(BUILDDIR)/arena/game$(ARCH).$(SHLIBEXT)
++	$(BUILDDIR)/game.$(SHLIBEXT) \
++	$(BUILDDIR)/arena/game.$(SHLIBEXT)
+ endif
+ 
+ ifeq ($(strip $(SDLSOUND)),1)
+@@ -617,7 +590,7 @@
+ 
+ 
+ 
+-$(BUILDDIR)/game$(ARCH).$(SHLIBEXT) : $(GAME_OBJS)
++$(BUILDDIR)/game.$(SHLIBEXT) : $(GAME_OBJS)
+ 	$(CC) $(CFLAGS) $(SHLIBLDFLAGS) -o $@ $(GAME_OBJS)
+ 
+ 
+@@ -853,7 +826,7 @@
+ 	$(BUILDDIR)/arena/p_weapon.o \
+ 	$(BUILDDIR)/arena/vehicles.o
+ 
+-$(BUILDDIR)/arena/game$(ARCH).$(SHLIBEXT) : $(ARENA_OBJS)
++$(BUILDDIR)/arena/game.$(SHLIBEXT) : $(ARENA_OBJS)
+ 	$(CC) $(CFLAGS) $(SHLIBLDFLAGS) -o $@ $(ARENA_OBJS)
+ 
+ 
