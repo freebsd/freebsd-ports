@@ -34,6 +34,34 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+
+  <vuln vid="4645b98c-e46e-11da-9ae7-00123fcc6e5c">
+    <topic>Authentication bypass vulnerability found in RealVNC</topic>
+    <affects>
+      <package>
+	<name>vnc</name>
+	<range><eq>4.1.1</eq></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>RealVNC is susceptible to an authentication-bypass vulnerability.
+	  A malicious VNC client can cause a VNC server to allow it to connect
+	  without any authentication regardless of the authentication settings
+	  configured in the server. Exploiting this issue allows attackers to
+	  gain unauthenticated, remote access to the VNC  servers.</p>
+      </body>
+    </description>
+    <references>
+      <bid>17978</bid>
+      <mlist>http://www.securityfocus.com/archive/1/433994/30/0/threaded</mlist>
+    </references>
+    <dates>
+      <discovery>2006-05-15</discovery>
+      <entry>2006-05-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6d78202e-e2f9-11da-8674-00123ffe8333">
     <topic>phpldapadmin -- Cross-Site Scripting and Script Insertion vulnerabilities</topic>
     <affects>
