@@ -317,6 +317,7 @@ alexandria	ports/deskutils/alexandria
 alf		ports/devel/alf
 algae		ports/math/algae
 algotutor	ports/math/algotutor
+alienarena	ports/games/alienarena
 alienarena-data	ports/games/alienarena-data
 alienblaster	ports/games/alienblaster
 alienwah	ports/audio/alienwah
