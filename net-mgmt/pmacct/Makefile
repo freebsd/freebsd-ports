@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pmacct
-PORTVERSION=	0.10.1
+PORTVERSION=	0.10.2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.pmacct.net/
 
