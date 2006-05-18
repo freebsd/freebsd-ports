@@ -3,4 +3,6 @@
 @dirrm    %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Application/Plugin/HTDot
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Application/Plugin
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Application
-@dirrmtry lib/perl5/site_perl/5.8.7/CGI/Application/Plugin
+@dirrmtry %%SITE_PERL%%/CGI/Application/Plugin
+@dirrmtry %%SITE_PERL%%/CGI/Application
+@dirrmtry %%SITE_PERL%%/CGI
