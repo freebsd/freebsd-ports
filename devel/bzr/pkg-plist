@@ -92,6 +92,15 @@ bin/bzr
 %%PYTHON_SITELIBDIR%%/bzrlib/export/tar_exporter.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/export/zip_exporter.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/__init__.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/launchpad/__init__.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/launchpad/lp_registration.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/launchpad/test_register.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/launchpad/__init__.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/launchpad/lp_registration.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/launchpad/test_register.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/launchpad/__init__.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/launchpad/lp_registration.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/launchpad/test_register.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/__init__.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/__init__.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/store/__init__.py
@@ -752,6 +761,7 @@ bin/bzr
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/doc/api
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/doc
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/export
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/launchpad
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/store/revision
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/store/versioned
