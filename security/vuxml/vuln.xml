@@ -36,7 +36,7 @@ Note:  Please add new entries to the beginning of this file.
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
 
   <vuln vid="4645b98c-e46e-11da-9ae7-00123fcc6e5c">
-    <topic>Authentication bypass vulnerability found in RealVNC</topic>
+    <topic>vnc - authentication bypass vulnerability</topic>
     <affects>
       <package>
 	<name>vnc</name>
