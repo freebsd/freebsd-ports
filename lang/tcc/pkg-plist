@@ -10,5 +10,6 @@ lib/tcc/libtcc1.a
 lib/tcc/bcheck.o
 lib/libtcc.a
 %%DOCSDIR%%/tcc-doc.html
+@dirrm %%DOCSDIR%%
 @dirrm lib/tcc/include
 @dirrm lib/tcc
