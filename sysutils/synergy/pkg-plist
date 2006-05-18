@@ -1,11 +1,11 @@
 bin/synergyc
 bin/synergys
-share/examples/synergy/synergy.conf
-%%PORTDOCS%%share/doc/synergy/AUTHORS
-%%PORTDOCS%%share/doc/synergy/COPYING
-%%PORTDOCS%%share/doc/synergy/ChangeLog
-%%PORTDOCS%%share/doc/synergy/INSTALL
-%%PORTDOCS%%share/doc/synergy/NEWS
-%%PORTDOCS%%share/doc/synergy/README
-%%PORTDOCS%%@dirrm share/doc/synergy
-@dirrm share/examples/synergy
+%%EXAMPLESDIR%%/synergy.conf
+@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
