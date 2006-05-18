@@ -824,4 +824,4 @@
 @dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%
 @exec echo %%WX_PYTHON_DIR%% >> %D/%%PYTHON_SITELIBDIR%%/wx.pth 2>/dev/null || true
 @exec chmod 0444 %D/%%PYTHON_SITELIBDIR%%/wx.pth 2>/dev/null || true
-@unexec sed -i -e /%%WX_PYTHON_DIR%%/d %D/%%PYTHON_SITELIBDIR%%/wx.pth; if [ ! -s %D/%%PYTHON_SITELIBDIR%%/wx.pth ]; then rm %D/%%PYTHON_SITELIBDIR%%/wx.pth; fi
+@unexec sed -i '' -e /%%WX_PYTHON_DIR%%/d %D/%%PYTHON_SITELIBDIR%%/wx.pth; if [ ! -s %D/%%PYTHON_SITELIBDIR%%/wx.pth ]; then rm %D/%%PYTHON_SITELIBDIR%%/wx.pth; fi
