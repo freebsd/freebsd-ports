@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bazaar-ng
-PORTVERSION=	0.8
+PORTVERSION=	0.8.2
 CATEGORIES=	devel
 MASTER_SITES=	http://bazaar-vcs.org/pkg/ \
 		http://voodoo.bawue.com/download/
