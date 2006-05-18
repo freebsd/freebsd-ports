@@ -11,6 +11,7 @@ etc/skycat.cfg.default
 %%SITE_PERL%%/Astro/Catalog/Star.pm
 %%SITE_PERL%%/Astro/Catalog/IO/Simple.pm
 %%SITE_PERL%%/Astro/Catalog/IO/FINDOFF.pm
+%%SITE_PERL%%/Astro/Catalog/IO/RITMatch.pm
 %%SITE_PERL%%/Astro/Catalog/IO/SExtractor.pm
 %%SITE_PERL%%/Astro/Catalog/IO/GaiaPick.pm
 %%SITE_PERL%%/Astro/Catalog/IO/Binary.pm
@@ -23,6 +24,8 @@ etc/skycat.cfg.default
 %%SITE_PERL%%/Astro/Catalog/IO/UKIRTBS.pm
 %%SITE_PERL%%/Astro/Catalog/IO/TST.pm
 %%SITE_PERL%%/Astro/Catalog/IO/ASCII.pm
+%%SITE_PERL%%/Astro/Catalog/Item.pm
+%%SITE_PERL%%/Astro/Catalog/Item/Morphology.pm
 %%SITE_PERL%%/Astro/Catalog/Query/SkyCat.pm
 %%SITE_PERL%%/Astro/Catalog/Query/2MASS.pm
 %%SITE_PERL%%/Astro/Catalog/Query/SuperCOSMOS.pm
@@ -39,6 +42,7 @@ etc/skycat.cfg.default
 %%SITE_PERL%%/Tk/AstroCatalog.pm
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Astro/Catalog
 @dirrm %%SITE_PERL%%/Astro/Catalog/IO
+@dirrm %%SITE_PERL%%/Astro/Catalog/Item
 @dirrm %%SITE_PERL%%/Astro/Catalog/Query
 @dirrm %%SITE_PERL%%/Astro/Catalog/Star
 @dirrm %%SITE_PERL%%/Astro/Catalog/Transport
