@@ -1,0 +1,5 @@
+Hercules is a personal workout diary program for bodybuilders.
+Hercules written on Python with wxPython GUI library. To store
+data its use SQLite.
+
+WWW: http://sourceforge.net/projects/hercules/
