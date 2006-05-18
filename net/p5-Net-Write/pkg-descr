@@ -1,0 +1,5 @@
+Net::Write provides a portable interface to open a network interface, and be
+able to write raw data directly to the network.
+
+Authors: Patrice Auffret <netpkt@gomor.org>
+WWW: http://search.cpan.org/dist/Net-Write
