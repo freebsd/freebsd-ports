@@ -60,6 +60,7 @@
     SUBDIR += delay
     SUBDIR += demoniac
     SUBDIR += detachtty
+    SUBDIR += diary-hercules
     SUBDIR += diction
     SUBDIR += dirtree
     SUBDIR += display
