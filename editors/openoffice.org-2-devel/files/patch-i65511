@@ -1,0 +1,15 @@
+Index: jvmfwk/plugins/sunmajor/pluginlib/sunjre.cxx
+===================================================================
+RCS file: /cvs/udk/jvmfwk/plugins/sunmajor/pluginlib/sunjre.cxx,v
+retrieving revision 1.4
+diff -u -r1.4 sunjre.cxx
+--- jvmfwk/plugins/sunmajor/pluginlib/sunjre.cxx	7 Sep 2005 19:31:11 -0000	1.4
++++ jvmfwk/plugins/sunmajor/pluginlib/sunjre.cxx	11 May 2006 23:00:16 -0000
+@@ -76,6 +76,7 @@
+         "/bin/classic/jvm.dll"
+ #elif UNX
+         "/lib/" JFW_PLUGIN_ARCH "/client/libjvm.so",
++        "/lib/" JFW_PLUGIN_ARCH "/server/libjvm.so",
+         "/lib/" JFW_PLUGIN_ARCH "/classic/libjvm.so"
+ #endif
+ 
