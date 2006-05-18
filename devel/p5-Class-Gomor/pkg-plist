@@ -1,0 +1,8 @@
+%%SITE_PERL%%/Class/Gomor.pm
+%%SITE_PERL%%/Class/Gomor/Array.pm
+%%SITE_PERL%%/Class/Gomor/Hash.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Gomor/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Gomor
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
+@dirrm %%SITE_PERL%%/Class/Gomor
+@dirrmtry %%SITE_PERL%%/Class

@@ -1,0 +1,5 @@
+This module is yet another class builder. This one adds parameter checking in
+new constructor, that is to check for attributes existence, and definedness.
+
+Authors: GomoR <netpkt@gomor.org>
+WWW: http://search.cpan.org/dist/Class-Gomor/
