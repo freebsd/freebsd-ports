@@ -1,0 +1,110 @@
+--- ./Makefile.orig	Thu Nov 10 09:52:39 2005
++++ ./Makefile	Tue May 16 14:33:39 2006
+@@ -8,7 +8,7 @@
+ # Modified by QuDos at http://qudos.quakedev.com
+ 
+ BASEVERSION=0.16
+-VERSION=$(BASEVERSION)$(GLIBC)
++VERSION=$(BASEVERSION)
+ 
+ ifneq (,$(findstring libc6,$(shell if [ -e /lib/libc.so.6 ];then echo libc6;fi)))
+ GLIBC=-glibc
+@@ -16,45 +16,42 @@
+ GLIBC=
+ endif
+ 
+-ifneq (,$(findstring alpha,$(shell uname -m)))
+-ARCH=axp
+-else
+-ARCH=i386
+-endif
+ NOARCH=noarch
+ 
+ MOUNT_DIR=./src
+ 
+-BUILD_DEBUG_DIR=debug$(ARCH)$(GLIBC)
+-BUILD_RELEASE_DIR=release$(ARCH)$(GLIBC)
++BUILD_DEBUG_DIR=debug
++BUILD_RELEASE_DIR=release
+ 
+-BUILD_SDL=YES   # demonquake sdl glx executable (uses SDL for cdrom and sound)
++BUILD_SDL?=NO   # demonquake sdl glx executable (uses SDL for cdrom and sound)
+ 
+-CC=gcc
++CC?=gcc
+ 
+-BASE_CFLAGS=-Dstricmp=strcasecmp -Did386 -funsigned-char #-Wall
++BASE_CFLAGS=$(CFLAGS) -DDATADIR='"$(Q1DIR)"' -Dstricmp=strcasecmp -funsigned-char #-Wall
+ 
+-RELEASE_CFLAGS=$(BASE_CFLAGS) -march=i686 -O2 -ffast-math -funroll-loops \
++ifeq ($(ARCH),i386)
++BASE_CFLAGS+=-Did386
++endif
++
++RELEASE_CFLAGS=$(BASE_CFLAGS)
++ifeq ($(WITH_OPTIMIZED_CFLAGS),YES)
++RELEASE_CFLAGS+=-O2 -ffast-math -funroll-loops \
+ 	-fomit-frame-pointer -fexpensive-optimizations -fno-strict-aliasing -pipe #-Wall
++endif
+ 	
+ DEBUG_CFLAGS=$(BASE_CFLAGS) -g #-DDEBUG_MEM
+ 
+-
+-LDFLAGS=-lm -ldl
+-
+-LDFLAGS += -L./src/fmod -Wl,-rpath,. -lfmod  #-L./src/mss -Wl,-rpath,. -lmss
++LDFLAGS+=-lm
+ 
+ ifeq ($(strip $(BUILD_SDL)),YES)
+- SDLCFLAGS=$(shell sdl-config --cflags)
+- SDLLDFLAGS=$(shell sdl-config --libs)
+- LDFLAGS += \
+-    -lSDL
++ SDLCFLAGS=$(shell $(SDL_CONFIG) --cflags)
++ SDLLDFLAGS=$(shell $(SDL_CONFIG) --libs)
+  BASE_CFLAGS += \
+     -D_SDL_FIX -D_SDL_BIN
+ endif
+ 
+-GLLDFLAGS=-L/usr/X11R6/lib -L/usr/lib -L/usr/local/lib -lGL -lGLU -lX11 -lXext -ldl -lXxf86dga -lXxf86vm -lm -lz -lpng -ljpeg
+-GLCFLAGS=-DGLQUAKE -I/usr/include -I/usr/X11R6/include
++GLLDFLAGS=-L$(X11BASE)/lib -L/usr/lib -L$(LOCALBASE)/lib -lGL -lGLU -lX11 -lXext -lXxf86dga -lXxf86vm -lm -lz -lpng -ljpeg
++GLCFLAGS=-DGLQUAKE -I/usr/include -I$(X11BASE)/include -I$(LOCALBASE)/include
+ 
+ DO_CC=$(CC) $(CFLAGS) -o $@ -c $<
+ DO_DEBUG_CC=$(CC) $(DEBUG_CFLAGS) -o $@ -c $<
+@@ -70,10 +67,10 @@
+ # SETUP AND BUILD
+ #############################################################################
+ 
+-   TARGETS=$(BUILDDIR)/demonquake.glx
++   TARGETS=$(BUILDDIR)/demonquake
+ 
+ ifeq ($(strip $(BUILD_SDL)),YES)
+-   TARGETS +=$(BUILDDIR)/demonquake-sdl.glx
++   TARGETS +=$(BUILDDIR)/demonquake-sdl
+ endif
+ 
+ all:
+@@ -183,10 +180,10 @@
+ GLX_OBJS=$(BUILDDIR)/glquake/vid_glx.o \
+ 	$(BUILDDIR)/glquake/vid_common_gl.o
+ 
+-$(BUILDDIR)/demonquake.glx : $(GLQUAKE_OBJS) $(GLQUAKE_LNX_OBJS)  $(GLX_OBJS)
++$(BUILDDIR)/demonquake : $(GLQUAKE_OBJS) $(GLQUAKE_LNX_OBJS)  $(GLX_OBJS)
+ 	$(CC) $(CFLAGS) -o $@ $(GLQUAKE_OBJS) $(GLQUAKE_LNX_OBJS)  $(GLX_OBJS) $(GLLDFLAGS) $(LDFLAGS)
+ 	
+-$(BUILDDIR)/demonquake-sdl.glx : $(GLQUAKE_OBJS) $(GLQUAKE_SDL_OBJS)  $(GLX_OBJS)
++$(BUILDDIR)/demonquake-sdl : $(GLQUAKE_OBJS) $(GLQUAKE_SDL_OBJS)  $(GLX_OBJS)
+ 	$(CC) $(CFLAGS) -o $@ $(GLQUAKE_OBJS) $(GLQUAKE_SDL_OBJS)  $(GLX_OBJS) $(GLLDFLAGS) $(LDFLAGS) $(SDLLDFLAGS)
+ 
+ $(BUILDDIR)/glquake/cl_collision.o : $(MOUNT_DIR)/cl_collision.c
+@@ -291,7 +288,7 @@
+ $(BUILDDIR)/glquake/mathlib.o :      $(MOUNT_DIR)/mathlib.c
+ 	$(DO_GL_CC)
+ 
+-$(BUILDDIR)/glquake/mod.o :          $(MOUNT_DIR)/mod.c
++$(BUILDDIR)/glquake/mod.o :      $(MOUNT_DIR)/mod.c
+ 	$(DO_GL_CC)
+ 
+ $(BUILDDIR)/glquake/nehahra.o :      $(MOUNT_DIR)/nehahra.c

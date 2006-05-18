@@ -125,6 +125,7 @@
     SUBDIR += darkplaces
     SUBDIR += deal
     SUBDIR += defendguin
+    SUBDIR += demonquake
     SUBDIR += deng
     SUBDIR += digger-vgl
     SUBDIR += dmjava
