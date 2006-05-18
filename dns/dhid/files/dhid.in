@@ -1,0 +1,30 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: dhid
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+
+#
+# Add the following line to /etc/rc.conf to enable dhid:
+#
+# dhid_enable="YES"
+#
+
+. %%RC_SUBR%%
+
+name="dhid"
+rcvar=`set_rcvar`
+
+load_rc_config $name
+
+dhid_enable=${dhid_enable:-"NO"}
+dhid_user=${dhid_user:-"dhis"}
+
+command="%%PREFIX%%/sbin/${name}"
+required_files="%%PREFIX%%/etc/${name}.conf"
+
+run_rc_command "$1"
