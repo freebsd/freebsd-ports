@@ -7947,6 +7947,7 @@ p5-Class-Factory	ports/devel/p5-Class-Factory
 p5-Class-Factory-Util	ports/devel/p5-Class-Factory-Util
 p5-Class-Fields	ports/devel/p5-Class-Fields
 p5-Class-Generate	ports/devel/p5-Class-Generate
+p5-Class-Gomor	ports/devel/p5-Class-Gomor
 p5-Class-Gomor-Hash	ports/devel/p5-Class-Gomor-Hash
 p5-Class-Handle	ports/devel/p5-Class-Handle
 p5-Class-Hook	ports/devel/p5-Class-Hook
