@@ -6,27 +6,45 @@
 #
 
 PORTNAME=	playgsf
-PORTVERSION=	0.6
+PORTVERSION=	0.7.1
 CATEGORIES=	audio
-MASTER_SITES=	http://projects.raphnet.net/playgsf/
+MASTER_SITES=	http://projects.raphnet.net/playgsf/ \
+		http://critical.ch/distfiles/
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A command line player for gsf audio files
+
+LIB_DEPENDS=	ao.3:${PORTSDIR}/audio/libao
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_GCC=	3.4+
 
-# avoid a "of memory error" gcc bug
+# disable optimization flags to avoid a possible bug in gcc
+# (gcc tries to allocate memory in an endless loop)
 CFLAGS+=	-O0
+
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+
+MAKE_ENV+=	LIBS="${LDFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV+=	CC="${CC}" CXX="${CXX}" LDFLAGS="${LDFLAGS}" LIBS="${LDFLAGS}" CFLAGS="${CFLAGS}"
 
 PLIST_FILES=	bin/playgsf
 
-ONLY_FOR_ARCHS=	i386	# contains x86 assembler
+# contains x86 assembler
+ONLY_FOR_ARCHS=	i386
 
 post-patch:
+	@${REINPLACE_CMD} \
+		-e 's|\(@LDFLAGS@\)|\1 ${LDFLAGS}|' \
+		-e 's|\([[:space:]]*\).*configure.*|\1@true|' \
+			${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|^\(CFLAGS="\)\(-DLINUX\)|\1${CFLAGS} \2|' \
 		${WRKSRC}/configure
+
+post-configure:
+	@(cd ${WRKSRC}/libresample-0.1.3; ./configure ${CONFIGURE_ENV})
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
