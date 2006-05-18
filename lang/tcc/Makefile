@@ -7,6 +7,7 @@
 
 PORTNAME=	tcc
 PORTVERSION=	0.9.23
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://fabrice.bellard.free.fr/tcc/ \
 		${MASTER_SITE_LOCAL}
