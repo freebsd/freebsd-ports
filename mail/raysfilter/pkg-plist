@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 libexec/rays-filter
 bin/mf-reset
 bin/mf-start
