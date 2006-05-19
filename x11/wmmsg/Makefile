@@ -9,7 +9,7 @@ PORTNAME=	wmmsg
 PORTVERSION=	1.0
 PORTREVISION=	3
 CATEGORIES=	x11 windowmaker
-MASTER_SITES=	http://taxiway.swapspace.net/~matt/wmmsg/
+MASTER_SITES=	http://mirror.israel.net/pub/FreeBSD/distfiles/
 
 MAINTAINER=	t.kempka@web.de
 COMMENT=	Dockapp that notifies you on ICQ, AIM and IRC events
