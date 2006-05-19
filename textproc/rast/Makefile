@@ -24,8 +24,8 @@ USE_GMAKE=	YES
 USE_RUBY=	YES
 CONFIGURE_ARGS=	--with-apr-config=${LOCALBASE}/bin/apr-1-config \
 	--with-apu-config=${LOCALBASE}/bin/apu-1-config \
-	--with-db-includes="-I${LOCALBASE}/include/db42" \
-	--with-db-libs="-L${LOCALBASE}/lib/db42 -ldb-4.2" \
+	--with-db-includes="-I${BDB_INCLUDE_DIR}" \
+	--with-db-libs="-L${BDB_LIB_DIR} -l${BDB_LIB_NAME}" \
 	--with-ruby=${LOCALBASE}/bin/ruby \
 	--with-default-encoding=${DEFAULT_ENCODING} \
 	--with-filter-moduledir=${PREFIX}/lib/rast/filters
