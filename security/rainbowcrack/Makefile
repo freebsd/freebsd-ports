@@ -19,6 +19,10 @@ COMMENT=	Hash cracker that precomputes plaintext - ciphertext pairs in advance
 BROKEN=		does not build on 4.x
 .endif
 
+.if ${ARCH} == "ia64" || ${ARCH} == "sparc64"
+BROKEN=		does not compile on ia64 or sparc64
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|g++|$$(CXX) $$(CXXFLAGS)|; s|\-O3||' \
 		${WRKSRC}/${MAKEFILE}
