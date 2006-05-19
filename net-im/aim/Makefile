@@ -7,7 +7,7 @@
 
 PORTNAME=	aim
 PORTVERSION=	1.5.286
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-im linux
 MASTER_SITES=	ftp://ftp.newaol.com/aimgen/380469/
 DISTNAME=	aim-${PORTVERSION}
@@ -18,27 +18,32 @@ COMMENT=	AOL's Instant Messenger (AIM) client
 
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libgtk-1.2.so.0:${PORTSDIR}/x11-toolkits/linux-gtk
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX=	yes
 USE_X_PREFIX=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
+INSTALLS_SHLIB=	yes
+USE_LINUX_PREFIX=	yes
+PLIST_SUB=	LINUXBASE=${LINUXBASE}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/usr/bin/aim ${PREFIX}/libexec
-	${BRANDELF} -t Linux ${PREFIX}/libexec/aim
-	(cd ${WRKSRC}/usr/lib;exec ${TAR} --exclude aim/source -cf - *)|(cd ${PREFIX}/lib;exec ${TAR} -xpf -)
+	${INSTALL_PROGRAM} ${WRKSRC}/usr/bin/aim ${LINUXBASE}/usr/bin
+	${BRANDELF} -t Linux ${LINUXBASE}/usr/bin/aim
+	(cd ${WRKSRC}/usr/lib;exec ${TAR} --exclude aim/source -cf - *)|(cd ${LINUXBASE}/usr/lib;exec ${TAR} -xpf -)
 	@${ECHO_CMD} "#!/bin/sh" >${PREFIX}/bin/aim
 	@${ECHO_CMD} "ulimit -Sc 0" >>${PREFIX}/bin/aim
-	@${ECHO_CMD} -n "exec ${PREFIX}/libexec/aim --install_dir ${PREFIX}/lib/aim" >>${PREFIX}/bin/aim
+	@${ECHO_CMD} -n "exec ${LINUXBASE}/usr/bin/aim" >>${PREFIX}/bin/aim
 	@${ECHO_CMD} ' "$$@"' >>${PREFIX}/bin/aim
 	${CHMOD} ${BINMODE} ${PREFIX}/bin/aim
 
+.include <bsd.port.pre.mk>
+
 post-install:
-.if !exists(${LINUXBASE}/usr/bin/esdplay) && !exists(${PREFIX}/bin/esdplay)
+.if !exists(${LINUXBASE}/usr/bin/esdplay) && !exists(${LOCALBASE}/bin/esdplay)
 	@${ECHO_MSG} "-----------------------------------------------------------------"
 	@${ECHO_MSG} "Install audio/linux-esound or disable Sounds in aim's Preferences"
 	@${ECHO_MSG} "-----------------------------------------------------------------"
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
