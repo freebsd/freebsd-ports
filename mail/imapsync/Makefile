@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	imapsync
-PORTVERSION=	1.145
+PORTVERSION=	1.172
 CATEGORIES=	mail perl5
 MASTER_SITES=	http://www.linux-france.org/prj/imapsync/dist/ \
 		http://freebsd.komi.mtsnet.ru/ports/distfiles/
