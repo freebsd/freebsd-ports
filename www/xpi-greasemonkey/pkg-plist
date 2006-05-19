@@ -1,0 +1,31 @@
+%%XPI_XPIDIR%%/chrome/chromeFiles/content/accelimation.js
+%%XPI_XPIDIR%%/chrome/chromeFiles/content/browser.js
+%%XPI_XPIDIR%%/chrome/chromeFiles/content/browser.xul
+%%XPI_XPIDIR%%/chrome/chromeFiles/content/config.js
+%%XPI_XPIDIR%%/chrome/chromeFiles/content/convert2RegExp.js
+%%XPI_XPIDIR%%/chrome/chromeFiles/content/default-config.xml
+%%XPI_XPIDIR%%/chrome/chromeFiles/content/manage.xul
+%%XPI_XPIDIR%%/chrome/chromeFiles/content/menucommander.js
+%%XPI_XPIDIR%%/chrome/chromeFiles/content/miscapis.js
+%%XPI_XPIDIR%%/chrome/chromeFiles/content/pages-overlay.xul
+%%XPI_XPIDIR%%/chrome/chromeFiles/content/prefmanager.js
+%%XPI_XPIDIR%%/chrome/chromeFiles/content/scriptdownloader.js
+%%XPI_XPIDIR%%/chrome/chromeFiles/content/status_off.gif
+%%XPI_XPIDIR%%/chrome/chromeFiles/content/status_on.gif
+%%XPI_XPIDIR%%/chrome/chromeFiles/content/template.user.js
+%%XPI_XPIDIR%%/chrome/chromeFiles/content/test.html
+%%XPI_XPIDIR%%/chrome/chromeFiles/content/utils.js
+%%XPI_XPIDIR%%/chrome/chromeFiles/content/versioning.js
+%%XPI_XPIDIR%%/chrome/chromeFiles/content/xmlhttprequester.js
+%%XPI_XPIDIR%%/chrome.manifest
+%%XPI_XPIDIR%%/components/gmIBrowserWindow.xpt
+%%XPI_XPIDIR%%/components/gmIGreasemonkeyService.xpt
+%%XPI_XPIDIR%%/components/gmIMenuCommand.xpt
+%%XPI_XPIDIR%%/components/greasemonkey.js
+%%XPI_XPIDIR%%/install.js
+%%XPI_XPIDIR%%/install.rdf
+%%XPI_XPIDIR%%/license.txt
+@dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/content
+@dirrm %%XPI_XPIDIR%%/chrome/chromeFiles
+@dirrm %%XPI_XPIDIR%%/chrome
+@dirrm %%XPI_XPIDIR%%/components
