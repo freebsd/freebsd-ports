@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dcraw
-PORTVERSION=	8.15
+PORTVERSION=	8.18
 CATEGORIES=	graphics
 MASTER_SITES=	http://bsd1.csme.ru/myports/ \
 		http://bsd2.csme.ru/myports/ \
