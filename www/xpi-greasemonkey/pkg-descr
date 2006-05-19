@@ -1,0 +1,7 @@
+Greasemonkey is a Firefox extension which lets you to add bits of
+DHTML ("user scripts") to any web page to change its behavior. In
+much the same way that user CSS lets you take control of a web
+page's style, user scripts let you easily control any aspect of a
+web page's design or interaction.
+
+WWW: http://greasemonkey.mozdev.org/
