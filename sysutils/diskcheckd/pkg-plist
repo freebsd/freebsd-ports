@@ -1,5 +1,4 @@
 sbin/diskcheckd
-etc/rc.d/diskcheckd.sh
 @unexec if cmp -s %D/etc/diskcheckd.conf.sample %D/etc/diskcheckd.conf; then rm -f %D/etc/diskcheckd.conf; fi
 etc/diskcheckd.conf.sample
 @exec if [ ! -f %D/etc/diskcheckd.conf ]; then cp %D/etc/diskcheckd.conf.sample %D/etc/diskcheckd.conf; fi
