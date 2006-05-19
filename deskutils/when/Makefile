@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	when
-PORTVERSION=	1.0.28
+PORTVERSION=	1.0.29
 CATEGORIES=	deskutils
 MASTER_SITES=	http://bsd1.csme.ru/myports/ \
 		http://bsd2.csme.ru/myports/ \
