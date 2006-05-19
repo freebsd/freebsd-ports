@@ -16,9 +16,6 @@ bin/soya_editor
 %%PYTHON_SITELIBDIR%%/soya/blender2soya.py
 %%PYTHON_SITELIBDIR%%/soya/blender2soya.pyc
 %%PYTHON_SITELIBDIR%%/soya/blender2soya.pyo
-%%PYTHON_SITELIBDIR%%/soya/cal3d.py
-%%PYTHON_SITELIBDIR%%/soya/cal3d.pyc
-%%PYTHON_SITELIBDIR%%/soya/cal3d.pyo
 %%PYTHON_SITELIBDIR%%/soya/cerealizer4soya.py
 %%PYTHON_SITELIBDIR%%/soya/cerealizer4soya.pyc
 %%PYTHON_SITELIBDIR%%/soya/cerealizer4soya.pyo
@@ -38,9 +35,6 @@ bin/soya_editor
 %%PYTHON_SITELIBDIR%%/soya/data/shader.png
 %%PYTHON_SITELIBDIR%%/soya/data/shader_default.data
 %%PYTHON_SITELIBDIR%%/soya/data/soya3d_logo.png
-%%PYTHON_SITELIBDIR%%/soya/distutils_pyrex_ext.py
-%%PYTHON_SITELIBDIR%%/soya/distutils_pyrex_ext.pyc
-%%PYTHON_SITELIBDIR%%/soya/distutils_pyrex_ext.pyo
 %%PYTHON_SITELIBDIR%%/soya/editor/__init__.py
 %%PYTHON_SITELIBDIR%%/soya/editor/__init__.pyc
 %%PYTHON_SITELIBDIR%%/soya/editor/__init__.pyo
@@ -138,9 +132,6 @@ bin/soya_editor
 %%PYTHON_SITELIBDIR%%/soya/pudding/sysfont.py
 %%PYTHON_SITELIBDIR%%/soya/pudding/sysfont.pyc
 %%PYTHON_SITELIBDIR%%/soya/pudding/sysfont.pyo
-%%PYTHON_SITELIBDIR%%/soya/pudding/test.py
-%%PYTHON_SITELIBDIR%%/soya/pudding/test.pyc
-%%PYTHON_SITELIBDIR%%/soya/pudding/test.pyo
 %%PYTHON_SITELIBDIR%%/soya/ray.py
 %%PYTHON_SITELIBDIR%%/soya/ray.pyc
 %%PYTHON_SITELIBDIR%%/soya/ray.pyo
@@ -148,9 +139,6 @@ bin/soya_editor
 %%PYTHON_SITELIBDIR%%/soya/sdl_mixer4soya.pyc
 %%PYTHON_SITELIBDIR%%/soya/sdl_mixer4soya.pyo
 %%PYTHON_SITELIBDIR%%/soya/sdlconst.so
-%%PYTHON_SITELIBDIR%%/soya/soya0.6.1_2_soya0.7.py
-%%PYTHON_SITELIBDIR%%/soya/soya0.6.1_2_soya0.7.pyc
-%%PYTHON_SITELIBDIR%%/soya/soya0.6.1_2_soya0.7.pyo
 %%PYTHON_SITELIBDIR%%/soya/soya2blender.py
 %%PYTHON_SITELIBDIR%%/soya/soya2blender.pyc
 %%PYTHON_SITELIBDIR%%/soya/soya2blender.pyo
