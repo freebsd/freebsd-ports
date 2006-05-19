@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cups-pdf
-PORTVERSION=	2.2.0
+PORTVERSION=	2.3.1
 CATEGORIES=	print
 MASTER_SITES=	http://www.physik.uni-wuerzburg.de/~vrbehr/cups-pdf/src/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -33,7 +33,7 @@ SUBST_CMD=		-e "s,/usr/bin/gs,${LOCALBASE}/bin/gs," \
 .elif ${PDF_VERSION} == 1.4
 .elif ${PDF_VERSION} == 1.5
 .else
-BROKEN=		"unsupported PDF-Version selected: ${PDF_VERSION}"
+BROKEN=		Unsupported PDF-Version selected: ${PDF_VERSION}
 .endif
 SUBST_CMD+=	-e 's,CPPDFVER "1.4",CPPDFVER "${PDF_VERSION}",'
 .endif
@@ -50,7 +50,7 @@ SUBST_CMD+=	-e 's,CPOUT "/var/spool/cups-pdf",CPOUT "${OUTPUT_DIRECTORY}",'
 SUBST_CMD+=	-e "s,/var/log/cups,${LOG_DIRECTORY},"
 .endif
 
-pre-fetch:
+pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "You may use the following build options:"
 	@${ECHO_MSG} ""
@@ -69,9 +69,11 @@ pre-fetch:
 	@${ECHO_MSG} "LOG_DIRECTORY=<dir>           Place logfile into <dir>/cups-pdf_log"
 .endif
 
+post-extract:
+	@${GUNZIP_CMD} ${WRKSRC}/extra/PostscriptColor.ppd.gz
+
 post-configure:
 	@${REINPLACE_CMD} ${SUBST_CMD} ${WRKSRC}/src/cups-pdf.h
-	@${GUNZIP_CMD} ${WRKSRC}/extra/PostscriptColor.ppd.gz
 
 do-build:
 	cd ${WRKSRC}/src; ${CC} ${CFLAGS} -o cups-pdf cups-pdf.c
