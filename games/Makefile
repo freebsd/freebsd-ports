@@ -420,6 +420,7 @@
     SUBDIR += mythserver
     SUBDIR += nInvaders
     SUBDIR += nadar
+    SUBDIR += nehquake
     SUBDIR += nethack32
     SUBDIR += nethack33
     SUBDIR += nethack33-gnome

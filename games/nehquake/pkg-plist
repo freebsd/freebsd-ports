@@ -1,0 +1,3 @@
+bin/nehahra
+%%SDL%%bin/nehahra-sdl
+@unexec rmdir %D/%%Q1DIR%%/nehahra 2>/dev/null || echo "If you are permanently removing this port, you should remove any configuration files and data files left in %D/%%Q1DIR%%/nehahra." | fmt
