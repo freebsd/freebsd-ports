@@ -14399,6 +14399,7 @@ xpi-mousegestures	ports/www/xpi-mousegestures
 xpi-no-referrer	ports/www/xpi-no-referrer
 xpi-noscript	ports/www/xpi-noscript
 xpi-pdf_download	ports/www/xpi-pdf_download
+xpi-savegenpage	ports/www/xpi-savegenpage
 xpi-searchstatus	ports/www/xpi-searchstatus
 xpi-server_switcher	ports/www/xpi-server_switcher
 xpi-stumbleupon	ports/www/xpi-stumbleupon
