@@ -988,6 +988,7 @@
     SUBDIR += xpi-colorfultabs
     SUBDIR += xpi-cssviewer
     SUBDIR += xpi-cutemenus-crystalsvg
+    SUBDIR += xpi-downthemall
     SUBDIR += xpi-fasterfox
     SUBDIR += xpi-flashblock
     SUBDIR += xpi-google-notebook

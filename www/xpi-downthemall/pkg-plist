@@ -1,0 +1,339 @@
+%%XPI_XPIDIR%%/chrome/content/about/about.xul
+%%XPI_XPIDIR%%/chrome/content/about/logogif.png
+%%XPI_XPIDIR%%/chrome/content/about/logopng.png
+%%XPI_XPIDIR%%/chrome/content/about/stile.css
+%%XPI_XPIDIR%%/chrome/content/barra.xul
+%%XPI_XPIDIR%%/chrome/content/contents.rdf
+%%XPI_XPIDIR%%/chrome/content/dmoverlay.js
+%%XPI_XPIDIR%%/chrome/content/dta/addingFunctions.js
+%%XPI_XPIDIR%%/chrome/content/dta/addurl.js
+%%XPI_XPIDIR%%/chrome/content/dta/addurl.xul
+%%XPI_XPIDIR%%/chrome/content/dta/dialog.js
+%%XPI_XPIDIR%%/chrome/content/dta/dialog.xul
+%%XPI_XPIDIR%%/chrome/content/dta/down.js
+%%XPI_XPIDIR%%/chrome/content/dta/dta.js
+%%XPI_XPIDIR%%/chrome/content/dta/info.js
+%%XPI_XPIDIR%%/chrome/content/dta/info.xul
+%%XPI_XPIDIR%%/chrome/content/dta/manager.xul
+%%XPI_XPIDIR%%/chrome/content/dta/privacy.xul
+%%XPI_XPIDIR%%/chrome/content/dta/renamingmask.js
+%%XPI_XPIDIR%%/chrome/content/dta/renamingmask.xul
+%%XPI_XPIDIR%%/chrome/content/dta/select.xul
+%%XPI_XPIDIR%%/chrome/content/dta/stile.css
+%%XPI_XPIDIR%%/chrome/content/dta/string.js
+%%XPI_XPIDIR%%/chrome/content/dta/style/mac/style.css
+%%XPI_XPIDIR%%/chrome/content/dta/style/unix/style.css
+%%XPI_XPIDIR%%/chrome/content/dta/style/win/style.css
+%%XPI_XPIDIR%%/chrome/content/gpl.txt
+%%XPI_XPIDIR%%/chrome/content/immagini/about.png
+%%XPI_XPIDIR%%/chrome/content/immagini/add-bkg.png
+%%XPI_XPIDIR%%/chrome/content/immagini/addpart.png
+%%XPI_XPIDIR%%/chrome/content/immagini/advPref32.png
+%%XPI_XPIDIR%%/chrome/content/immagini/alert.png
+%%XPI_XPIDIR%%/chrome/content/immagini/box.png
+%%XPI_XPIDIR%%/chrome/content/immagini/boxhover.png
+%%XPI_XPIDIR%%/chrome/content/immagini/boxpiccolo.png
+%%XPI_XPIDIR%%/chrome/content/immagini/browse.png
+%%XPI_XPIDIR%%/chrome/content/immagini/check.png
+%%XPI_XPIDIR%%/chrome/content/immagini/checked.png
+%%XPI_XPIDIR%%/chrome/content/immagini/doc.png
+%%XPI_XPIDIR%%/chrome/content/immagini/dtasmall.png
+%%XPI_XPIDIR%%/chrome/content/immagini/dtatoolbar/l1.png
+%%XPI_XPIDIR%%/chrome/content/immagini/dtatoolbar/l2.png
+%%XPI_XPIDIR%%/chrome/content/immagini/dtatoolbar/l3.png
+%%XPI_XPIDIR%%/chrome/content/immagini/dtatoolbar/notselectedbutton.png
+%%XPI_XPIDIR%%/chrome/content/immagini/dtatoolbar/p1.png
+%%XPI_XPIDIR%%/chrome/content/immagini/dtatoolbar/p2.png
+%%XPI_XPIDIR%%/chrome/content/immagini/dtatoolbar/p3.png
+%%XPI_XPIDIR%%/chrome/content/immagini/dtatoolbar/selectedbutton.png
+%%XPI_XPIDIR%%/chrome/content/immagini/dtatoolbar/toolbarlogo.png
+%%XPI_XPIDIR%%/chrome/content/immagini/filters.png
+%%XPI_XPIDIR%%/chrome/content/immagini/filters32.png
+%%XPI_XPIDIR%%/chrome/content/immagini/folder.png
+%%XPI_XPIDIR%%/chrome/content/immagini/htm.png
+%%XPI_XPIDIR%%/chrome/content/immagini/icon.png
+%%XPI_XPIDIR%%/chrome/content/immagini/info.png
+%%XPI_XPIDIR%%/chrome/content/immagini/jpg.png
+%%XPI_XPIDIR%%/chrome/content/immagini/launch.png
+%%XPI_XPIDIR%%/chrome/content/immagini/mainPref32.png
+%%XPI_XPIDIR%%/chrome/content/immagini/modrenaming.png
+%%XPI_XPIDIR%%/chrome/content/immagini/movebottom.png
+%%XPI_XPIDIR%%/chrome/content/immagini/movedown.png
+%%XPI_XPIDIR%%/chrome/content/immagini/movetop.png
+%%XPI_XPIDIR%%/chrome/content/immagini/moveup.png
+%%XPI_XPIDIR%%/chrome/content/immagini/mp3.png
+%%XPI_XPIDIR%%/chrome/content/immagini/mpg.png
+%%XPI_XPIDIR%%/chrome/content/immagini/opzioni.png
+%%XPI_XPIDIR%%/chrome/content/immagini/other.png
+%%XPI_XPIDIR%%/chrome/content/immagini/pause.png
+%%XPI_XPIDIR%%/chrome/content/immagini/play.png
+%%XPI_XPIDIR%%/chrome/content/immagini/privacy32.png
+%%XPI_XPIDIR%%/chrome/content/immagini/rempart.png
+%%XPI_XPIDIR%%/chrome/content/immagini/renamingtag.png
+%%XPI_XPIDIR%%/chrome/content/immagini/selectall.png
+%%XPI_XPIDIR%%/chrome/content/immagini/selectinv.png
+%%XPI_XPIDIR%%/chrome/content/immagini/stop.png
+%%XPI_XPIDIR%%/chrome/content/immagini/tbbgslim.png
+%%XPI_XPIDIR%%/chrome/content/immagini/tdtasmall.png
+%%XPI_XPIDIR%%/chrome/content/immagini/toolbar/a1.png
+%%XPI_XPIDIR%%/chrome/content/immagini/toolbar/a2.png
+%%XPI_XPIDIR%%/chrome/content/immagini/toolbar/a3.png
+%%XPI_XPIDIR%%/chrome/content/immagini/toolbar/alert.png
+%%XPI_XPIDIR%%/chrome/content/immagini/toolbar/b1.png
+%%XPI_XPIDIR%%/chrome/content/immagini/toolbar/b2.png
+%%XPI_XPIDIR%%/chrome/content/immagini/toolbar/b3.png
+%%XPI_XPIDIR%%/chrome/content/immagini/toolbar/d1.png
+%%XPI_XPIDIR%%/chrome/content/immagini/toolbar/d2.png
+%%XPI_XPIDIR%%/chrome/content/immagini/toolbar/d3.png
+%%XPI_XPIDIR%%/chrome/content/immagini/toolbar/donate.png
+%%XPI_XPIDIR%%/chrome/content/immagini/toolbar/donatehover.png
+%%XPI_XPIDIR%%/chrome/content/immagini/toolbar/f1.png
+%%XPI_XPIDIR%%/chrome/content/immagini/toolbar/f2.png
+%%XPI_XPIDIR%%/chrome/content/immagini/toolbar/f3.png
+%%XPI_XPIDIR%%/chrome/content/immagini/toolbar/i1.png
+%%XPI_XPIDIR%%/chrome/content/immagini/toolbar/i2.png
+%%XPI_XPIDIR%%/chrome/content/immagini/toolbar/i3.png
+%%XPI_XPIDIR%%/chrome/content/immagini/toolbar/p1.png
+%%XPI_XPIDIR%%/chrome/content/immagini/toolbar/p2.png
+%%XPI_XPIDIR%%/chrome/content/immagini/toolbar/p3.png
+%%XPI_XPIDIR%%/chrome/content/immagini/toolbar/s1.png
+%%XPI_XPIDIR%%/chrome/content/immagini/toolbar/s2.png
+%%XPI_XPIDIR%%/chrome/content/immagini/toolbar/s3.png
+%%XPI_XPIDIR%%/chrome/content/immagini/toolbar/t1.png
+%%XPI_XPIDIR%%/chrome/content/immagini/toolbar/t2.png
+%%XPI_XPIDIR%%/chrome/content/immagini/toolbar/t3.png
+%%XPI_XPIDIR%%/chrome/content/immagini/toolbar/tooldta3.png
+%%XPI_XPIDIR%%/chrome/content/immagini/toolbar/u1.png
+%%XPI_XPIDIR%%/chrome/content/immagini/toolbar/u2.png
+%%XPI_XPIDIR%%/chrome/content/immagini/toolbar/u3.png
+%%XPI_XPIDIR%%/chrome/content/immagini/tooldtalarge.png
+%%XPI_XPIDIR%%/chrome/content/immagini/tooldtalargehover.png
+%%XPI_XPIDIR%%/chrome/content/immagini/toolsmall.png
+%%XPI_XPIDIR%%/chrome/content/immagini/tooltdtalarge.png
+%%XPI_XPIDIR%%/chrome/content/immagini/tooltdtalargehover.png
+%%XPI_XPIDIR%%/chrome/content/immagini/trash.png
+%%XPI_XPIDIR%%/chrome/content/immagini/uncheck.png
+%%XPI_XPIDIR%%/chrome/content/immagini/uncheck2.png
+%%XPI_XPIDIR%%/chrome/content/immagini/unchecked.png
+%%XPI_XPIDIR%%/chrome/content/immagini/visual32.png
+%%XPI_XPIDIR%%/chrome/content/immagini/zip.png
+%%XPI_XPIDIR%%/chrome/content/menu.js
+%%XPI_XPIDIR%%/chrome/content/menu.xul
+%%XPI_XPIDIR%%/chrome/content/notice.txt
+%%XPI_XPIDIR%%/chrome/content/opzioni/advPane.xul
+%%XPI_XPIDIR%%/chrome/content/opzioni/filtersPane.js
+%%XPI_XPIDIR%%/chrome/content/opzioni/filtersPane.xul
+%%XPI_XPIDIR%%/chrome/content/opzioni/interfacePane.xul
+%%XPI_XPIDIR%%/chrome/content/opzioni/mainPane.xul
+%%XPI_XPIDIR%%/chrome/content/opzioni/newPref.js
+%%XPI_XPIDIR%%/chrome/content/opzioni/newPref.xul
+%%XPI_XPIDIR%%/chrome/content/opzioni/privaPane.xul
+%%XPI_XPIDIR%%/chrome/content/opzioni/restorePref.js
+%%XPI_XPIDIR%%/chrome/content/opzioni/style/mac/style.css
+%%XPI_XPIDIR%%/chrome/content/opzioni/style/unix/style.css
+%%XPI_XPIDIR%%/chrome/content/opzioni/style/win/style.css
+%%XPI_XPIDIR%%/chrome/content/privacy/overlayBrowser.xul
+%%XPI_XPIDIR%%/chrome/content/privacy/overlaySanitizeCode.xul
+%%XPI_XPIDIR%%/chrome/content/privacy/overlaySanitizeUI.xul
+%%XPI_XPIDIR%%/chrome/content/saveas.xul
+%%XPI_XPIDIR%%/chrome/locale/de-DE/about.dtd
+%%XPI_XPIDIR%%/chrome/locale/de-DE/addurl.properties
+%%XPI_XPIDIR%%/chrome/locale/de-DE/dialog.dtd
+%%XPI_XPIDIR%%/chrome/locale/de-DE/down.dtd
+%%XPI_XPIDIR%%/chrome/locale/de-DE/down.properties
+%%XPI_XPIDIR%%/chrome/locale/de-DE/dta.dtd
+%%XPI_XPIDIR%%/chrome/locale/de-DE/dta.properties
+%%XPI_XPIDIR%%/chrome/locale/de-DE/menu.dtd
+%%XPI_XPIDIR%%/chrome/locale/de-DE/prefpanes.dtd
+%%XPI_XPIDIR%%/chrome/locale/de-DE/prefpanes.properties
+%%XPI_XPIDIR%%/chrome/locale/de-DE/privacy.dtd
+%%XPI_XPIDIR%%/chrome/locale/de-DE/renamingmask.properties
+%%XPI_XPIDIR%%/chrome/locale/de-DE/saveas.dtd
+%%XPI_XPIDIR%%/chrome/locale/el-GR/about.dtd
+%%XPI_XPIDIR%%/chrome/locale/el-GR/addurl.properties
+%%XPI_XPIDIR%%/chrome/locale/el-GR/dialog.dtd
+%%XPI_XPIDIR%%/chrome/locale/el-GR/down.dtd
+%%XPI_XPIDIR%%/chrome/locale/el-GR/down.properties
+%%XPI_XPIDIR%%/chrome/locale/el-GR/dta.dtd
+%%XPI_XPIDIR%%/chrome/locale/el-GR/dta.properties
+%%XPI_XPIDIR%%/chrome/locale/el-GR/menu.dtd
+%%XPI_XPIDIR%%/chrome/locale/el-GR/prefpanes.dtd
+%%XPI_XPIDIR%%/chrome/locale/el-GR/prefpanes.properties
+%%XPI_XPIDIR%%/chrome/locale/el-GR/privacy.dtd
+%%XPI_XPIDIR%%/chrome/locale/el-GR/renamingmask.properties
+%%XPI_XPIDIR%%/chrome/locale/el-GR/saveas.dtd
+%%XPI_XPIDIR%%/chrome/locale/en-US/.#prefpanes.dtd.1.1
+%%XPI_XPIDIR%%/chrome/locale/en-US/.#renamingmask.properties.1.1
+%%XPI_XPIDIR%%/chrome/locale/en-US/about.dtd
+%%XPI_XPIDIR%%/chrome/locale/en-US/addurl.properties
+%%XPI_XPIDIR%%/chrome/locale/en-US/dialog.dtd
+%%XPI_XPIDIR%%/chrome/locale/en-US/down.dtd
+%%XPI_XPIDIR%%/chrome/locale/en-US/down.properties
+%%XPI_XPIDIR%%/chrome/locale/en-US/dta.dtd
+%%XPI_XPIDIR%%/chrome/locale/en-US/dta.properties
+%%XPI_XPIDIR%%/chrome/locale/en-US/menu.dtd
+%%XPI_XPIDIR%%/chrome/locale/en-US/prefpanes.dtd
+%%XPI_XPIDIR%%/chrome/locale/en-US/prefpanes.properties
+%%XPI_XPIDIR%%/chrome/locale/en-US/privacy.dtd
+%%XPI_XPIDIR%%/chrome/locale/en-US/renamingmask.properties
+%%XPI_XPIDIR%%/chrome/locale/en-US/saveas.dtd
+%%XPI_XPIDIR%%/chrome/locale/es-ES/about.dtd
+%%XPI_XPIDIR%%/chrome/locale/es-ES/addurl.properties
+%%XPI_XPIDIR%%/chrome/locale/es-ES/dialog.dtd
+%%XPI_XPIDIR%%/chrome/locale/es-ES/down.dtd
+%%XPI_XPIDIR%%/chrome/locale/es-ES/down.properties
+%%XPI_XPIDIR%%/chrome/locale/es-ES/dta.dtd
+%%XPI_XPIDIR%%/chrome/locale/es-ES/dta.properties
+%%XPI_XPIDIR%%/chrome/locale/es-ES/menu.dtd
+%%XPI_XPIDIR%%/chrome/locale/es-ES/prefpanes.dtd
+%%XPI_XPIDIR%%/chrome/locale/es-ES/prefpanes.properties
+%%XPI_XPIDIR%%/chrome/locale/es-ES/privacy.dtd
+%%XPI_XPIDIR%%/chrome/locale/es-ES/renamingmask.properties
+%%XPI_XPIDIR%%/chrome/locale/es-ES/saveas.dtd
+%%XPI_XPIDIR%%/chrome/locale/fr-FR/about.dtd
+%%XPI_XPIDIR%%/chrome/locale/fr-FR/addurl.properties
+%%XPI_XPIDIR%%/chrome/locale/fr-FR/dialog.dtd
+%%XPI_XPIDIR%%/chrome/locale/fr-FR/down.dtd
+%%XPI_XPIDIR%%/chrome/locale/fr-FR/down.properties
+%%XPI_XPIDIR%%/chrome/locale/fr-FR/dta.dtd
+%%XPI_XPIDIR%%/chrome/locale/fr-FR/dta.properties
+%%XPI_XPIDIR%%/chrome/locale/fr-FR/menu.dtd
+%%XPI_XPIDIR%%/chrome/locale/fr-FR/prefpanes.dtd
+%%XPI_XPIDIR%%/chrome/locale/fr-FR/prefpanes.properties
+%%XPI_XPIDIR%%/chrome/locale/fr-FR/privacy.dtd
+%%XPI_XPIDIR%%/chrome/locale/fr-FR/renamingmask.properties
+%%XPI_XPIDIR%%/chrome/locale/fr-FR/saveas.dtd
+%%XPI_XPIDIR%%/chrome/locale/it-IT/about.dtd
+%%XPI_XPIDIR%%/chrome/locale/it-IT/addurl.properties
+%%XPI_XPIDIR%%/chrome/locale/it-IT/dialog.dtd
+%%XPI_XPIDIR%%/chrome/locale/it-IT/down.dtd
+%%XPI_XPIDIR%%/chrome/locale/it-IT/down.properties
+%%XPI_XPIDIR%%/chrome/locale/it-IT/dta.dtd
+%%XPI_XPIDIR%%/chrome/locale/it-IT/dta.properties
+%%XPI_XPIDIR%%/chrome/locale/it-IT/menu.dtd
+%%XPI_XPIDIR%%/chrome/locale/it-IT/prefpanes.dtd
+%%XPI_XPIDIR%%/chrome/locale/it-IT/prefpanes.properties
+%%XPI_XPIDIR%%/chrome/locale/it-IT/privacy.dtd
+%%XPI_XPIDIR%%/chrome/locale/it-IT/renamingmask.properties
+%%XPI_XPIDIR%%/chrome/locale/it-IT/saveas.dtd
+%%XPI_XPIDIR%%/chrome/locale/ko-KR/about.dtd
+%%XPI_XPIDIR%%/chrome/locale/ko-KR/addurl.properties
+%%XPI_XPIDIR%%/chrome/locale/ko-KR/dialog.dtd
+%%XPI_XPIDIR%%/chrome/locale/ko-KR/down.dtd
+%%XPI_XPIDIR%%/chrome/locale/ko-KR/down.properties
+%%XPI_XPIDIR%%/chrome/locale/ko-KR/dta.dtd
+%%XPI_XPIDIR%%/chrome/locale/ko-KR/dta.properties
+%%XPI_XPIDIR%%/chrome/locale/ko-KR/menu.dtd
+%%XPI_XPIDIR%%/chrome/locale/ko-KR/prefpanes.dtd
+%%XPI_XPIDIR%%/chrome/locale/ko-KR/prefpanes.properties
+%%XPI_XPIDIR%%/chrome/locale/ko-KR/privacy.dtd
+%%XPI_XPIDIR%%/chrome/locale/ko-KR/renamingmask.properties
+%%XPI_XPIDIR%%/chrome/locale/ko-KR/saveas.dtd
+%%XPI_XPIDIR%%/chrome/locale/nl-NL/about.dtd
+%%XPI_XPIDIR%%/chrome/locale/nl-NL/addurl.properties
+%%XPI_XPIDIR%%/chrome/locale/nl-NL/dialog.dtd
+%%XPI_XPIDIR%%/chrome/locale/nl-NL/down.dtd
+%%XPI_XPIDIR%%/chrome/locale/nl-NL/down.properties
+%%XPI_XPIDIR%%/chrome/locale/nl-NL/dta.dtd
+%%XPI_XPIDIR%%/chrome/locale/nl-NL/dta.properties
+%%XPI_XPIDIR%%/chrome/locale/nl-NL/menu.dtd
+%%XPI_XPIDIR%%/chrome/locale/nl-NL/prefpanes.dtd
+%%XPI_XPIDIR%%/chrome/locale/nl-NL/prefpanes.properties
+%%XPI_XPIDIR%%/chrome/locale/nl-NL/privacy.dtd
+%%XPI_XPIDIR%%/chrome/locale/nl-NL/renamingmask.properties
+%%XPI_XPIDIR%%/chrome/locale/nl-NL/saveas.dtd
+%%XPI_XPIDIR%%/chrome/locale/pl-PL/about.dtd
+%%XPI_XPIDIR%%/chrome/locale/pl-PL/addurl.properties
+%%XPI_XPIDIR%%/chrome/locale/pl-PL/dialog.dtd
+%%XPI_XPIDIR%%/chrome/locale/pl-PL/down.dtd
+%%XPI_XPIDIR%%/chrome/locale/pl-PL/down.properties
+%%XPI_XPIDIR%%/chrome/locale/pl-PL/dta.dtd
+%%XPI_XPIDIR%%/chrome/locale/pl-PL/dta.properties
+%%XPI_XPIDIR%%/chrome/locale/pl-PL/menu.dtd
+%%XPI_XPIDIR%%/chrome/locale/pl-PL/prefpanes.dtd
+%%XPI_XPIDIR%%/chrome/locale/pl-PL/prefpanes.properties
+%%XPI_XPIDIR%%/chrome/locale/pl-PL/privacy.dtd
+%%XPI_XPIDIR%%/chrome/locale/pl-PL/renamingmask.properties
+%%XPI_XPIDIR%%/chrome/locale/pl-PL/saveas.dtd
+%%XPI_XPIDIR%%/chrome/locale/pt-BR/about.dtd
+%%XPI_XPIDIR%%/chrome/locale/pt-BR/addurl.properties
+%%XPI_XPIDIR%%/chrome/locale/pt-BR/dialog.dtd
+%%XPI_XPIDIR%%/chrome/locale/pt-BR/down.dtd
+%%XPI_XPIDIR%%/chrome/locale/pt-BR/down.properties
+%%XPI_XPIDIR%%/chrome/locale/pt-BR/dta.dtd
+%%XPI_XPIDIR%%/chrome/locale/pt-BR/dta.properties
+%%XPI_XPIDIR%%/chrome/locale/pt-BR/menu.dtd
+%%XPI_XPIDIR%%/chrome/locale/pt-BR/prefpanes.dtd
+%%XPI_XPIDIR%%/chrome/locale/pt-BR/prefpanes.properties
+%%XPI_XPIDIR%%/chrome/locale/pt-BR/privacy.dtd
+%%XPI_XPIDIR%%/chrome/locale/pt-BR/renamingmask.properties
+%%XPI_XPIDIR%%/chrome/locale/pt-BR/saveas.dtd
+%%XPI_XPIDIR%%/chrome/locale/ru-RU/about.dtd
+%%XPI_XPIDIR%%/chrome/locale/ru-RU/addurl.properties
+%%XPI_XPIDIR%%/chrome/locale/ru-RU/dialog.dtd
+%%XPI_XPIDIR%%/chrome/locale/ru-RU/down.dtd
+%%XPI_XPIDIR%%/chrome/locale/ru-RU/down.properties
+%%XPI_XPIDIR%%/chrome/locale/ru-RU/dta.dtd
+%%XPI_XPIDIR%%/chrome/locale/ru-RU/dta.properties
+%%XPI_XPIDIR%%/chrome/locale/ru-RU/menu.dtd
+%%XPI_XPIDIR%%/chrome/locale/ru-RU/prefpanes.dtd
+%%XPI_XPIDIR%%/chrome/locale/ru-RU/prefpanes.properties
+%%XPI_XPIDIR%%/chrome/locale/ru-RU/privacy.dtd
+%%XPI_XPIDIR%%/chrome/locale/ru-RU/renamingmask.properties
+%%XPI_XPIDIR%%/chrome/locale/ru-RU/saveas.dtd
+%%XPI_XPIDIR%%/chrome/locale/sk-SK/about.dtd
+%%XPI_XPIDIR%%/chrome/locale/sk-SK/addurl.properties
+%%XPI_XPIDIR%%/chrome/locale/sk-SK/dialog.dtd
+%%XPI_XPIDIR%%/chrome/locale/sk-SK/down.dtd
+%%XPI_XPIDIR%%/chrome/locale/sk-SK/down.properties
+%%XPI_XPIDIR%%/chrome/locale/sk-SK/dta.dtd
+%%XPI_XPIDIR%%/chrome/locale/sk-SK/dta.properties
+%%XPI_XPIDIR%%/chrome/locale/sk-SK/menu.dtd
+%%XPI_XPIDIR%%/chrome/locale/sk-SK/prefpanes.dtd
+%%XPI_XPIDIR%%/chrome/locale/sk-SK/prefpanes.properties
+%%XPI_XPIDIR%%/chrome/locale/sk-SK/privacy.dtd
+%%XPI_XPIDIR%%/chrome/locale/sk-SK/renamingmask.properties
+%%XPI_XPIDIR%%/chrome/locale/sk-SK/saveas.dtd
+%%XPI_XPIDIR%%/chrome/skin/classic/contents.rdf
+%%XPI_XPIDIR%%/chrome/skin/classic/stile.css
+%%XPI_XPIDIR%%/chrome.manifest
+%%XPI_XPIDIR%%/components/privacycontrol.js
+%%XPI_XPIDIR%%/defaults/preferences/privacycontrol.js
+%%XPI_XPIDIR%%/gpl.txt
+%%XPI_XPIDIR%%/install.rdf
+%%XPI_XPIDIR%%/notice.txt
+@dirrm %%XPI_XPIDIR%%/chrome/content/about
+@dirrm %%XPI_XPIDIR%%/chrome/content/dta/style/mac
+@dirrm %%XPI_XPIDIR%%/chrome/content/dta/style/unix
+@dirrm %%XPI_XPIDIR%%/chrome/content/dta/style/win
+@dirrm %%XPI_XPIDIR%%/chrome/content/dta/style
+@dirrm %%XPI_XPIDIR%%/chrome/content/dta
+@dirrm %%XPI_XPIDIR%%/chrome/content/immagini/dtatoolbar
+@dirrm %%XPI_XPIDIR%%/chrome/content/immagini/toolbar
+@dirrm %%XPI_XPIDIR%%/chrome/content/immagini
+@dirrm %%XPI_XPIDIR%%/chrome/content/opzioni/style/mac
+@dirrm %%XPI_XPIDIR%%/chrome/content/opzioni/style/unix
+@dirrm %%XPI_XPIDIR%%/chrome/content/opzioni/style/win
+@dirrm %%XPI_XPIDIR%%/chrome/content/opzioni/style
+@dirrm %%XPI_XPIDIR%%/chrome/content/opzioni
+@dirrm %%XPI_XPIDIR%%/chrome/content/privacy
+@dirrm %%XPI_XPIDIR%%/chrome/content
+@dirrm %%XPI_XPIDIR%%/chrome/locale/de-DE
+@dirrm %%XPI_XPIDIR%%/chrome/locale/el-GR
+@dirrm %%XPI_XPIDIR%%/chrome/locale/en-US
+@dirrm %%XPI_XPIDIR%%/chrome/locale/es-ES
+@dirrm %%XPI_XPIDIR%%/chrome/locale/fr-FR
+@dirrm %%XPI_XPIDIR%%/chrome/locale/it-IT
+@dirrm %%XPI_XPIDIR%%/chrome/locale/ko-KR
+@dirrm %%XPI_XPIDIR%%/chrome/locale/nl-NL
+@dirrm %%XPI_XPIDIR%%/chrome/locale/pl-PL
+@dirrm %%XPI_XPIDIR%%/chrome/locale/pt-BR
+@dirrm %%XPI_XPIDIR%%/chrome/locale/ru-RU
+@dirrm %%XPI_XPIDIR%%/chrome/locale/sk-SK
+@dirrm %%XPI_XPIDIR%%/chrome/locale
+@dirrm %%XPI_XPIDIR%%/chrome/skin/classic
+@dirrm %%XPI_XPIDIR%%/chrome/skin
+@dirrm %%XPI_XPIDIR%%/chrome
+@dirrm %%XPI_XPIDIR%%/components
+@dirrm %%XPI_XPIDIR%%/defaults/preferences
+@dirrm %%XPI_XPIDIR%%/defaults
