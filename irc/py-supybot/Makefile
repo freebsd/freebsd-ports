@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	supybot
-PORTVERSION=	0.80.1
+PORTVERSION=	0.83.1
 CATEGORIES=	irc python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	supybot
@@ -16,24 +16,26 @@ DISTNAME=	Supybot-${PORTVERSION}
 MAINTAINER=	x@Vex.Net
 COMMENT=	Supybot - A Superb Python IRC bot
 
+USE_BZIP2=	yes
 USE_PYTHON=	2.3+
 USE_PYDISTUTILS=	yes
 
-DOCS=	ACKS BUGS ChangeLog DEVS INSTALL LICENSE README RELNOTES TODO
+DOCS=	ACKS ChangeLog INSTALL LICENSE README RELNOTES
 
 MANCOMPRESSED=	no
-MAN1=	supybot.1 supybot-adduser.1 supybot-newplugin.1 supybot-wizard.1
+MAN1=	supybot.1 supybot-adduser.1 supybot-wizard.1 supybot-botchk.1 \
+	supybot-plugin-create.1 supybot-plugin-doc.1
 
 post-install:
+.for f in ${MAN1}
+	${INSTALL_MAN} ${WRKSRC}/docs/man/${f} ${MAN1PREFIX}/man/man1
+.endfor
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for f in ${MAN1}
-	@${CP} ${WRKSRC}/docs/man/${f} ${PREFIX}/man/man1/
-.endfor
 .for f in ${DOCS}
-	@${CP} ${WRKSRC}/${f} ${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
-	@${CP} -R ${WRKSRC}/docs/ ${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/docs/GETTING_STARTED ${DOCSDIR}
 .endif
 .if !defined(BATCH)
 	@${CAT} ${PKGMESSAGE}
