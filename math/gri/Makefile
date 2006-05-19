@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gri
-PORTVERSION=	2.12.10
+PORTVERSION=	2.12.11
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -23,15 +23,12 @@ BUILD_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick	\
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-FreeBSD
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
 REINPLACE_ARGS=	-Ei.bak
 MAKE_ENV+=	MAKEINFOFLAGS=--no-split
 
 MAN1=	gri.1 gri_merge.1 gri_unpage.1
-.if !defined(NOPORTDOCS)
-INFO=		gri
-.endif
+INFO=	gri
 
 post-patch:
 .if defined(NOPORTDOCS)
@@ -39,7 +36,7 @@ post-patch:
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if defined(NOPORTDOCS)
 	${INSTALL_MAN} ${WRKSRC}/doc/gri-manpage.1 ${MANPREFIX}/man/man1/gri.1
 	${INSTALL_MAN} ${WRKSRC}/doc/gri_merge.1-skel ${MANPREFIX}/man/man1/gri_merge.1
 	${INSTALL_MAN} ${WRKSRC}/doc/gri_unpage.1-skel ${MANPREFIX}/man/man1/gri_unpage.1
