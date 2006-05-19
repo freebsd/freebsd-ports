@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	PDO
-DISTVERSION=	1.0.2
+DISTVERSION=	1.0.3
 CATEGORIES=	databases www
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -17,7 +17,6 @@ MAINTAINER=	zaa@zaa.pp.ru
 COMMENT=	PHP Data Objects Interface
 
 USE_PHP=	zlib
-USE_PHPIZE=	yes
 USE_PHPEXT=	yes
 DEFAULT_PHP_VER=5
 PHP_MODNAME=	pdo
