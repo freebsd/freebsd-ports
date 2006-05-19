@@ -1,0 +1,88 @@
+--- ./Makefile.orig	Thu Nov 10 11:57:23 2005
++++ ./Makefile	Tue May 16 17:36:22 2006
+@@ -9,9 +9,9 @@
+ #
+ 
+ BASEVERSION=1.09
+-VERSION=$(BASEVERSION)$(GLIBC)
++VERSION=$(BASEVERSION)
+ 
+-BUILD_SDL=YES	# quake sdl glx executable (uses SDL for cdrom and sound)
++#BUILD_SDL=YES	# quake sdl glx executable (uses SDL for cdrom and sound)
+ 
+ ifneq (,$(findstring libc6,$(shell if [ -e /lib/libc.so.6 ];then echo libc6;fi)))
+ GLIBC=-glibc
+@@ -28,32 +28,33 @@
+ 
+ MOUNT_DIR=./src
+ 
+-BUILD_DEBUG_DIR=debug$(ARCH)$(GLIBC)
+-BUILD_RELEASE_DIR=release$(ARCH)$(GLIBC)
++BUILD_DEBUG_DIR=debug
++BUILD_RELEASE_DIR=release
+ 
+-CC=gcc
++CC?=gcc
+ 
+-BASE_CFLAGS=-Dstricmp=strcasecmp #-Wall
++BASE_CFLAGS=$(CFLAGS) -Dstricmp=strcasecmp #-Wall
+ 
+-RELEASE_CFLAGS=$(BASE_CFLAGS) -march=i686 -O2 -ffast-math -funroll-loops \
++RELEASE_CFLAGS=$(BASE_CFLAGS)
++
++ifdef OPTIMIZED_CFLAGS
++RELEASE_CFLAGS+=-O2 -ffast-math -funroll-loops \
+ 	-fomit-frame-pointer -fexpensive-optimizations -fno-strict-aliasing
+-DEBUG_CFLAGS=$(BASE_CFLAGS) -g
++endif
+ 
+-LDFLAGS=-lm
++DEBUG_CFLAGS=$(BASE_CFLAGS) -g
+ 
+-LDFLAGS += -lz -L./src/fmod -Wl,-rpath,. -lfmod
++LDFLAGS+=-lm -lz
+ 
+ ifeq ($(strip $(BUILD_SDL)),YES)
+- SDLCFLAGS=$(shell sdl-config --cflags)
+- SDLLDFLAGS=$(shell sdl-config --libs)
+- LDFLAGS += \
+- 	-lSDL
++ SDLCFLAGS=$(shell $(SDL_CONFIG) --cflags)
++ SDLLDFLAGS=$(shell $(SDL_CONFIG) --libs)
+  BASE_CFLAGS += \
+     -D_SDL_BIN
+ endif
+ 
+-GLLDFLAGS=-L/usr/X11R6/lib -L/usr/local/lib -lGL -lX11 -lXext -ldl -lXxf86dga -lXxf86vm
+-GLCFLAGS=-DGLQUAKE -I/usr/include -I/usr/X11R6/include
++GLLDFLAGS=-L$(X11BASE)/lib -lGL -lX11 -lXext -lXxf86dga -lXxf86vm
++GLCFLAGS=-DGLQUAKE -I$(X11BASE)/include
+ 
+ DO_CC=$(CC) $(CFLAGS) -o $@ -c $<
+ DO_DEBUG_CC=$(CC) $(DEBUG_CFLAGS) -o $@ -c $<
+@@ -70,10 +71,10 @@
+ #############################################################################
+ 
+ 
+-	TARGETS=$(BUILDDIR)/nehahra.glx
++	TARGETS=$(BUILDDIR)/nehahra
+ 	
+ ifeq ($(strip $(BUILD_SDL)),YES)
+-	TARGETS +=$(BUILDDIR)/nehahra-sdl.glx
++	TARGETS +=$(BUILDDIR)/nehahra-sdl
+ endif
+ 
+ all:
+@@ -182,10 +183,10 @@
+ 	
+ GLX_OBJS=$(BUILDDIR)/glquake/gl_vidlinuxglx.o
+ 
+-$(BUILDDIR)/nehahra.glx : $(GLQUAKE_OBJS) $(GLQUAKE_LNX_OBJS)  $(GLX_OBJS)
++$(BUILDDIR)/nehahra : $(GLQUAKE_OBJS) $(GLQUAKE_LNX_OBJS)  $(GLX_OBJS)
+ 	$(CC) $(CFLAGS) -o $@ $(GLQUAKE_OBJS) $(GLX_OBJS) $(GLQUAKE_LNX_OBJS)  $(GLLDFLAGS) $(LDFLAGS)
+ 	
+-$(BUILDDIR)/nehahra-sdl.glx : $(GLQUAKE_OBJS) $(GLQUAKE_SDL_OBJS)  $(GLX_OBJS)
++$(BUILDDIR)/nehahra-sdl : $(GLQUAKE_OBJS) $(GLQUAKE_SDL_OBJS)  $(GLX_OBJS)
+ 	$(CC) $(CFLAGS) -o $@ $(GLQUAKE_OBJS) $(GLX_OBJS) $(GLQUAKE_SDL_OBJS)  $(GLLDFLAGS) $(LDFLAGS) $(SDLLDFLAGS)
+ 
+ $(BUILDDIR)/glquake/cl_demo.o :      $(MOUNT_DIR)/cl_demo.c
