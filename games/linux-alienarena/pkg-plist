@@ -1,0 +1,32 @@
+bin/linux-alienarena
+bin/linux-alienarena-ded
+%%LIBDIR%%/arena/ctf.cfg
+%%LIBDIR%%/arena/default.cfg
+%%LIBDIR%%/arena/gamei386.so
+%%LIBDIR%%/arena/maps.lst
+%%LIBDIR%%/arena/motd.txt
+%%LIBDIR%%/arena/pics
+%%LIBDIR%%/arena/server.cfg
+%%LIBDIR%%/arena/video
+%%LIBDIR%%/botinfo
+%%LIBDIR%%/crded
+%%LIBDIR%%/crx.sdl
+%%LIBDIR%%/data1/default.cfg
+%%LIBDIR%%/data1/env
+%%LIBDIR%%/data1/gamei386.so
+%%LIBDIR%%/data1/gfx
+%%LIBDIR%%/data1/levelshots
+%%LIBDIR%%/data1/maps
+%%LIBDIR%%/data1/maps.lst
+%%LIBDIR%%/data1/models
+%%LIBDIR%%/data1/particles
+%%LIBDIR%%/data1/pics
+%%LIBDIR%%/data1/players
+%%LIBDIR%%/data1/scripts
+%%LIBDIR%%/data1/sound
+%%LIBDIR%%/data1/sprites
+%%LIBDIR%%/data1/textures
+%%LIBDIR%%/data1/vehicles
+@dirrm %%LIBDIR%%/data1
+@dirrm %%LIBDIR%%/arena
+@dirrm %%LIBDIR%%
