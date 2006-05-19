@@ -1007,6 +1007,7 @@
     SUBDIR += xpi-server_switcher
     SUBDIR += xpi-stumbleupon
     SUBDIR += xpi-tabmixplus
+    SUBDIR += xpi-togglewordwrap
     SUBDIR += xpi-unplug
     SUBDIR += xpi-videodownloader
     SUBDIR += xpi-web_developer
