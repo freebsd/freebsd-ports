@@ -1,0 +1,7 @@
+---------------------------------------------------------------------
+
+Be sure to copy %%PREFIX%%/share/examples/jlj/dot.livejournal.rc to
+~/.livejournal.rc before running jlj.  More details can be found
+in %%PREFIX%%/share/doc/jlj/README.
+
+---------------------------------------------------------------------
