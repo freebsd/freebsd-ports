@@ -58,7 +58,7 @@ upgrades.
   and change sulci's configuration file in "vocabulary" directive, see
     /usr/local/share/examples/sulci/sulci.conf.example
 
-200605R0728:
+20060507:
   AFFECTS: users of net/isc-dhcp3-server with failover setup
   AUTHOR: Joerg.Pulz@frm2.tum.de
 
