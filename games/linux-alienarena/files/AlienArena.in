@@ -1,4 +1,0 @@
-#!/bin/sh
-
-cd %%PREFIX%%/lib/alienarena || exit 1
-exec ./crx +set game arena "$@"

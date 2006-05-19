@@ -1,4 +1,5 @@
 #!/bin/sh
 
-cd %%PREFIX%%/lib/alienarena || exit 1
+cd %%LIBDIR%% || exit 1
+
 exec ./crded +set game arena +set port 27910 "$@"
