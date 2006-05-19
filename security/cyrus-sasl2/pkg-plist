@@ -42,12 +42,14 @@ lib/sasl2/libanonymous.so.2
 lib/sasl2/libsasldb.a
 lib/sasl2/libsasldb.so
 lib/sasl2/libsasldb.so.2
+sbin/pluginviewer
 sbin/sasldblistusers2
 sbin/saslpasswd2
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL.TXT
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/ONEWS
