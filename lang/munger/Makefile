@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	munger
-PORTVERSION=	4.102
+PORTVERSION=	4.103
 CATEGORIES=	lang
 MASTER_SITES=	http://www.jamesbailie.com/
 
@@ -29,7 +29,7 @@ INSTALLS_SHLIB=	yes
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_SQL)
-LIB_DEPENDS+=	sqlite3:${PORTSDIR}/databases/sqlite3
+USE_SQLITE=	3
 MAKE_ARGS+=	-DWITH_SQL
 .endif
 

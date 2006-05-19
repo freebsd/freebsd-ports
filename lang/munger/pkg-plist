@@ -1,5 +1,5 @@
 bin/munger
-lib/libmunger.so.4
+lib/libmunger.so.5
 %%DKNS_BIN%%
 %%DATADIR%%/msh.munger
 %%DATADIR%%/mbox2munger.munger
