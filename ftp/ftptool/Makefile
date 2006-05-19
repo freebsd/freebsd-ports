@@ -11,15 +11,16 @@ PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	utilities
-DISTFILES=	Ftptool${PORTVERSION}.tar.gz
+DISTNAME=	Ftptool${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	serge.gagnon@b2b2c.ca
 COMMENT=	Graphic ftp shell based on xview
 
 LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
 RUN_DEPENDS=	${X11BASE}/bin/textedit:${PORTSDIR}/editors/textedit
 
 USE_IMAKE=	yes
+MAKE_ARGS=	CC=${CC}
 WRKSRC=		${WRKDIR}/Ftptool4.6
 
 MAN1=		ftptool.1
