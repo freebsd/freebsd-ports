@@ -13,7 +13,7 @@ share/ggz/ttt3d/board.bmp
 share/ggz/ttt3d/cursor.bmp
 share/ggz/ttt3d/figure.bmp
 share/ggz/ttt3d/lines.bmp
-@dirrm lib/ggz
 @dirrm share/ggz/geekgame
 @dirrm share/ggz/ttt3d
+@dirrmtry lib/ggz
 @dirrmtry share/ggz

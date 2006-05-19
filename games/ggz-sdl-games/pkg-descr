@@ -1,5 +1,16 @@
-This core client is not only useful for environments where no
-graphical desktop is available, but does also serve as a reference
-implementation of the ggzcore functionality.
+======================================
+The GGZ Gaming Zone - SDL Game Modules
+======================================
+
+GGZ does not only feature Gtk+ and KDE games, but also
+games written with the SDL toolkit.
+The following games are included so far:
+
+        - TicTacToe 3D
+                An OpenGL client compatible to our other TicTacToe clients,
+                and working fine with our server.
+        - The Geek Game
+                Calculate numbers, in either direction: horizontally or
+                vertically, forwards or backwards, and wrapped around the edges.
 
 WWW: http://www.ggzgamingzone.org/
