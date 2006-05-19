@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	balazar
-PORTVERSION=	0.2
+PORTVERSION=	0.3
 CATEGORIES=	games python
 MASTER_SITES=	http://download.gna.org/balazar/
 DISTNAME=	Balazar-${PORTVERSION}
@@ -21,7 +21,8 @@ RUN_DEPENDS=	soya_editor:${PORTSDIR}/graphics/py-soya3d \
 		${PYTHON_SITELIBDIR}/_openal.so:${PORTSDIR}/audio/py-openal \
 		${PYTHON_SITELIBDIR}/pysdl_mixer/sdl_mixer.so:${PORTSDIR}/audio/py-sdl_mixer \
 		${PYTHON_SITELIBDIR}/ogg/vorbis.so:${PORTSDIR}/audio/py-vorbis \
-		${PYTHON_SITELIBDIR}/tofu/client.py:${PORTSDIR}/net/py-tofu
+		${PYTHON_SITELIBDIR}/tofu/client.py:${PORTSDIR}/net/py-tofu \
+		${PYTHON_SITELIBDIR}/cerealizer/__init__.py:${PORTSDIR}/security/py-cerealizer
 
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes
@@ -30,6 +31,7 @@ USE_PYDISTUTILS=	yes
 USE_TWISTED=	yes
 USE_GL=		yes
 USE_SDL=	sdl mixer
+USE_GETTEXT=	yes
 
 post-install:
 .if !defined(NOPORTDOCS)
