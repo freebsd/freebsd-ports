@@ -21,6 +21,8 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS= --prefix=${PREFIX}
 MAN1=		tcc.1
 
+CONFLICTS=	TenDRA-4*
+
 ONLY_FOR_ARCHS=	i386
 
 BROKEN=		tcc -run works, but little else
