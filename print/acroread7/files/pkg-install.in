@@ -1,0 +1,16 @@
+#!/bin/sh
+
+[ "$2" != "POST-INSTALL" ] && exit 0
+
+if [ ! -e $PKG_PREFIX/share/applications/AdobeReader.desktop ]; then
+	mkdir -p $PKG_PREFIX/share/applications
+	cp -p $PKG_PREFIX/%%ACRODIR%%/Resource/Support/AdobeReader_GNOME.desktop \
+		$PKG_PREFIX/share/applications/AdobeReader.desktop
+	cat >>$PKG_PREFIX/share/applications/AdobeReader.desktop <<EOF
+Comment=View PDF documents
+StartupNotify=true
+EOF
+	cp -p $PKG_PREFIX/%%ACRODIR%%/Resource/Icons/AdobeReader.png \
+		$PKG_PREFIX/share/pixmaps
+	update-desktop-database >/dev/null || true
+fi

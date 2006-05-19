@@ -7,7 +7,7 @@
 
 PORTNAME=	acroread7
 PORTVERSION?=	7.0.1
-PORTREVISION?=	0
+PORTREVISION?=	1
 PORTEPOCH?=	1
 CATEGORIES?=	print linux
 MASTER_SITES?=	http://ardownload.adobe.com/pub/adobe/reader/unix/7x/${VERSIONDIR}/${ADOBE_LANG:L}/ \
@@ -27,14 +27,15 @@ NO_PACKAGE=	"Use and redistribution with repackaging are not allowed"
 ONLY_FOR_ARCHS=	amd64 i386
 USE_LINUX=	yes
 USE_X_PREFIX=	yes
+USE_GNOME=	desktopfileutils
 NO_BUILD=	yes
 PLIST=		${PKGDIR}/pkg-plist.${PORTVERSION}
 PLIST_SUB=	ACRODIR=${ACRODIR} \
 		PLUGINDIR=${PLUGINDIR} \
 		ADOBE_LANG=${ADOBE_LANG:U} \
 		LOCALE_NAME=${LOCALE_NAME}
-SUB_FILES=	ln mv rm pkg-message
-SUB_LIST=	ADOBE_LANG=${ADOBE_LANG:U}
+SUB_FILES=	ln mv rm pkg-message pkg-install
+SUB_LIST=	ADOBE_LANG=${ADOBE_LANG:U} ACRODIR=${ACRODIR}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 WRKSRC=		${WRKDIR}/AdobeReader
 
@@ -83,6 +84,7 @@ do-install:
 	@cd ${WRKSRC} && ${SETENV} PATH=${WRKDIR}/bin:${PATH} ${INSTALLEXEC}
 	${CHMOD} 0 ${INSTALLDIR}/Reader/intellinux/plug_ins/PPKLite.api
 	${BRANDELF} -t Linux ${INSTALLDIR}/Reader/intellinux/bin/acroread
+	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .if ${ADOBE_LANG:U} != ENU
 post-install:
