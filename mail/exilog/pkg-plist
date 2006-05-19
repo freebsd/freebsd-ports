@@ -1,6 +1,5 @@
-%%AGENT%%@unexec [ ! -f /var/run/exilog.pid ] || %D/etc/rc.d/exilog.sh stop
+%%AGENT%%@unexec [ ! -f /var/run/exilog.pid ] || %D/etc/rc.d/%%RCSCRIPT%% stop
 %%AGENT%%sbin/exilog_agent.pl
-%%AGENT%%etc/rc.d/exilog.sh
 sbin/exilog_cleanup.pl
 %%EXILOGDIR%%/exilog_cgi.pl
 %%EXILOGDIR%%/exilog_cgi_html.pm

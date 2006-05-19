@@ -2,6 +2,10 @@
 #
 # $FreeBSD$
 #
+# PROVIDE: exilog
+# REQUIRE: %%SERVER%%
+# KEYWORD: shutdown
+#
 # Add the following lines to /etc/rc.conf to enable exilog agent:
 #
 #exilog_enable="YES"

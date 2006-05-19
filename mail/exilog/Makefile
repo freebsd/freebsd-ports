@@ -7,7 +7,7 @@
 
 PORTNAME=	exilog
 PORTVERSION=	0.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail
 MASTER_SITES=	http://duncanthrax.net/exilog/
 
@@ -27,24 +27,32 @@ WITH_SQL_BACKEND?=	mysql
 .if (${WITH_SQL_BACKEND} == "mysql")
 WITH_MYSQL=	yes
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
+SERVER=		mysql
 .elif (${WITH_SQL_BACKEND} == "postgresql")
 WITH_POSTGRESQL=	yes
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
+SERVER=		postgresql
 .else
 BROKEN=	You should specify sql backend using WITH_SQL_BACKEND
 .endif
-
+SUB_LIST+=	SERVER=${SERVER}
 .ifndef WITHOUT_WWWDIR
 EXILOGDIR?=	${PREFIX}/www/exilog
 .else
 EXILOGDIR?=	${PREFIX}/exilog
 .endif
-
-.if defined(NO_AGENT)
+.include <bsd.port.pre.mk>
+.if defined(WITHOUT_AGENT)
 PLIST_SUB+=	AGENT="@comment "
 .else
 USE_RC_SUBR=	exilog.sh
 PLIST_SUB+=	AGENT=""
+.if (${OSVERSION} >= 700007 || (${OSVERSION} < 700000 && ${OSVERSION} >= 600101))
+RCSCRIPT=	exilog
+.else
+RCSCRIPT=	exilog.sh
+.endif
+PLIST_SUB+=	RCSCRIPT=${RCSCRIPT}
 .endif
 
 PLIST_SUB+=	EXILOGDIR="${EXILOGDIR:S,^${PREFIX}/,,}"
@@ -67,7 +75,7 @@ do-install:
 	@${CP} ${WRKSRC}/*.pm ${WRKSRC}/*.css ${WRKSRC}/*.js ${EXILOGDIR}
 	@${CP} ${WRKSRC}/icons/*  ${EXILOGDIR}/icons
 
-.if !defined(NO_AGENT)
+.if !defined(WITHOUT_AGENT)
 	@${INSTALL_SCRIPT} ${WRKSRC}/exilog_agent.pl ${PREFIX}/sbin
 .endif
 	@${INSTALL_SCRIPT} ${WRKSRC}/exilog_cleanup.pl ${PREFIX}/sbin
@@ -76,9 +84,6 @@ do-install:
 	@${CHMOD} 0600 ${PREFIX}/etc/exilog.conf-dist
 	@${CHOWN} ${WWWOWN}:${WWWGRP} ${PREFIX}/etc/exilog.conf-dist
 	@${CP} ${FILESDIR}/htaccess ${EXILOGDIR}/.htaccess
-.if !defined(NO_AGENT)
-	@${INSTALL_SCRIPT} ${WRKDIR}/exilog.sh ${PREFIX}/etc/rc.d
-.endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for docfile in ${PORTDOC_FILES}
@@ -86,4 +91,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
