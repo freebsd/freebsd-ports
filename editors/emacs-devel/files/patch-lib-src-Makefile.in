@@ -1,5 +1,7 @@
---- lib-src/Makefile.in.orig    Fri Jun 11 04:39:49 2004
-+++ lib-src/Makefile.in Tue Apr 12 23:08:49 2005
+Index: lib-src/Makefile.in
+===================================================================
+--- lib-src/Makefile.in	(.../branches/gnu/emacs)	(revision 15)
++++ lib-src/Makefile.in	(.../trunk/emacs)	(revision 15)
 @@ -94,6 +94,7 @@
  INSTALL = @INSTALL@
  INSTALL_PROGRAM = @INSTALL_PROGRAM@
@@ -9,19 +11,20 @@
  INSTALL_STRIP =
  
 @@ -319,7 +320,7 @@
-         if [ `(cd ${archlibdir} && /bin/pwd)` \
+         if [ `(cd $(DESTDIR)${archlibdir} && /bin/pwd)` \
               != `(cd ${srcdir} && /bin/pwd)` ]; then \
  	  for file in ${SCRIPTS}; do \
--	    $(INSTALL_PROGRAM) ${srcdir}/$$file ${archlibdir}/$$file; \
-+	    $(INSTALL_SCRIPT) ${srcdir}/$$file ${archlibdir}/$$file; \
+-	    $(INSTALL_PROGRAM) ${srcdir}/$$file $(DESTDIR)${archlibdir}/$$file; \
++	    $(INSTALL_SCRIPT) ${srcdir}/$$file $(DESTDIR)${archlibdir}/$$file; \
  	  done ; \
  	fi
  
 @@ -331,7 +332,7 @@
- 	  chmod a+rx ${bindir}/`echo $${file} | sed '$(TRANSFORM)'`; \
+ 	  chmod a+rx $(DESTDIR)${bindir}/`echo $${file} | sed '$(TRANSFORM)'`; \
  	done
  	for file in ${INSTALLABLE_SCRIPTS} ; do \
--	  $(INSTALL_PROGRAM) ${srcdir}/$${file} ${bindir}/`echo $${file} | sed '$(TRANSFORM)'`  ; \
-+	  $(INSTALL_SCRIPT) ${srcdir}/$${file} ${bindir}/`echo $${file} | sed '$(TRANSFORM)'`  ; \
- 	  chmod a+rx ${bindir}/`echo $${file} | sed '$(TRANSFORM)'`; \
+-	  $(INSTALL_PROGRAM) ${srcdir}/$${file} $(DESTDIR)${bindir}/`echo $${file} | sed '$(TRANSFORM)'`  ; \
++	  $(INSTALL_SCRIPT) ${srcdir}/$${file} $(DESTDIR)${bindir}/`echo $${file} | sed '$(TRANSFORM)'`  ; \
+ 	  chmod a+rx $(DESTDIR)${bindir}/`echo $${file} | sed '$(TRANSFORM)'`; \
  	done
+ 
