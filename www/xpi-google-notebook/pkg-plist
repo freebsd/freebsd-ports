@@ -1,0 +1,17 @@
+%%XPI_XPIDIR%%/META-INF/manifest.mf
+%%XPI_XPIDIR%%/META-INF/zigbert.rsa
+%%XPI_XPIDIR%%/META-INF/zigbert.sf
+%%XPI_XPIDIR%%/chrome/chromeFiles/content/gnotes_overlay.css
+%%XPI_XPIDIR%%/chrome/chromeFiles/content/google-gnotes-overlay.xul
+%%XPI_XPIDIR%%/chrome/chromeFiles/content/notebook.png
+%%XPI_XPIDIR%%/chrome/chromeFiles/content/notebook32.png
+%%XPI_XPIDIR%%/chrome.manifest
+%%XPI_XPIDIR%%/components/bootstrap.js
+%%XPI_XPIDIR%%/install.rdf
+%%XPI_XPIDIR%%/lib/gnotes.js
+@dirrm %%XPI_XPIDIR%%/META-INF
+@dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/content
+@dirrm %%XPI_XPIDIR%%/chrome/chromeFiles
+@dirrm %%XPI_XPIDIR%%/chrome
+@dirrm %%XPI_XPIDIR%%/components
+@dirrm %%XPI_XPIDIR%%/lib
