@@ -996,6 +996,7 @@
     SUBDIR += xpi-gbrain
     SUBDIR += xpi-google-notebook
     SUBDIR += xpi-greasemonkey
+    SUBDIR += xpi-imdbpreview
     SUBDIR += xpi-mldonkey
     SUBDIR += xpi-mousegestures
     SUBDIR += xpi-no-referrer
