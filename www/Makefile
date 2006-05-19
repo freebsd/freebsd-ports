@@ -992,6 +992,7 @@
     SUBDIR += xpi-fasterfox
     SUBDIR += xpi-fission
     SUBDIR += xpi-flashblock
+    SUBDIR += xpi-flashgot
     SUBDIR += xpi-google-notebook
     SUBDIR += xpi-greasemonkey
     SUBDIR += xpi-mldonkey
