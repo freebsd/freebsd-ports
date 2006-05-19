@@ -7,17 +7,19 @@
 #
 
 PORTNAME=	aub
-PORTVERSION=	2.1.3
+PORTVERSION=	2.2
 CATEGORIES=	news
 MASTER_SITES=	http://yukidoke.org/~mako/projects/aub/download/
+DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	obrien@FreeBSD.org
 COMMENT=	Assemble usenet binaries
 
 NO_BUILD=	yes
-MAN1=		aub.1 aubconf.1
+MAN1=		aub.1.sgml aubconf.1.sgml
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-DOC_FILES=	COPYING README aubconf.example Introducing_AUB USAGE
+DOC_FILES=	COPYING README aubconf.example
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/aub ${PREFIX}/bin
