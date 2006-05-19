@@ -990,6 +990,7 @@
     SUBDIR += xpi-cutemenus-crystalsvg
     SUBDIR += xpi-fasterfox
     SUBDIR += xpi-flashblock
+    SUBDIR += xpi-google-notebook
     SUBDIR += xpi-mldonkey
     SUBDIR += xpi-mousegestures
     SUBDIR += xpi-no-referrer
