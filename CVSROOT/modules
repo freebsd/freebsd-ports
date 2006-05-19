@@ -14386,6 +14386,7 @@ xpi-displayquota	ports/mail/xpi-displayquota
 xpi-fasterfox	ports/www/xpi-fasterfox
 xpi-flashblock	ports/www/xpi-flashblock
 xpi-google-notebook	ports/www/xpi-google-notebook
+xpi-greasemonkey	ports/www/xpi-greasemonkey
 xpi-mldonkey	ports/www/xpi-mldonkey
 xpi-mousegestures	ports/www/xpi-mousegestures
 xpi-no-referrer	ports/www/xpi-no-referrer
