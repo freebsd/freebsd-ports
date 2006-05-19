@@ -274,10 +274,10 @@ lib/klone/write-string.kl
 lib/klone/xml-kxf.kl
 lib/klone/xml-sxp.kl
 lib/klone/xpm-format.kl
-%%PORTDOCS%%share/doc/klone/KloneReference.ps
-%%PORTDOCS%%share/doc/klone/Profiler.readme
-%%PORTDOCS%%share/doc/klone/amc-lisp.el
-%%PORTDOCS%%share/doc/klone/xml-sxp.txt
-%%PORTDOCS%%@dirrm share/doc/klone
+%%PORTDOCS%%%%DOCSDIR%%/KloneReference.ps
+%%PORTDOCS%%%%DOCSDIR%%/Profiler.readme
+%%PORTDOCS%%%%DOCSDIR%%/amc-lisp.el
+%%PORTDOCS%%%%DOCSDIR%%/xml-sxp.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/klone/scripts
 @dirrm lib/klone
