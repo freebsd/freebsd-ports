@@ -1,3 +1,6 @@
 MD5 (adplay-1.5.tar.gz) = 159edf8e4d6290752ab21df8f3dc7f3e
 SHA256 (adplay-1.5.tar.gz) = 8124693ebbbc3f99eae36b76fa5fff74aaf09ad66dc40ced17f4502860427fbb
 SIZE (adplay-1.5.tar.gz) = 339687
+MD5 (adplug.db) = 5cbd3df5537700f28c350dbe08695c28
+SHA256 (adplug.db) = 7db721bf259b7768556c3ddcb6a704a1093bb01a6373b519b27cdcfd8e88bd32
+SIZE (adplug.db) = 3184
