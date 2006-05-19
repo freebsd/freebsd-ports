@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	redet
-PORTVERSION=	8.10
+PORTVERSION=	8.11
 CATEGORIES=	textproc tk84
 MASTER_SITES=	http://bsd1.csme.ru/myports/ \
 		http://bsd2.csme.ru/myports/ \
-		http://bsd3.csme.ru/myports/ \
-		${MASTER_SITE_LOCAL}
+		http://bsd3.csme.ru/myports/
 MASTER_SITE_SUBDIR=	vsevolod
 
 MAINTAINER=	infofarmer@FreeBSD.org
@@ -24,7 +23,7 @@ USE_BZIP2=	yes
 USE_TK=		84
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-PORTDOCS=	AUTHORS COPYING CREDITS LICENSE README-General
+PORTDOCS=	AUTHORS COPYING CREDITS LICENSE README-General ChangeLog
 MAN1=		redet.1
 PLIST_FILES=	bin/redet
 
@@ -35,7 +34,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/redet.tcl ${PREFIX}/bin/redet
 	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${MAN1PREFIX}/man/man1/
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	@${INSTALL} -d ${DOCSDIR}
 	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
 .endif
 
