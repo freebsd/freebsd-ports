@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nas
-PORTVERSION=	1.7b
+PORTVERSION=	1.7c
 CATEGORIES=	audio
 MASTER_SITES=	http://nas.codebrilliance.com/nas/
 EXTRACT_SUFX=	.src.tar.gz
