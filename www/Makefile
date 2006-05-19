@@ -990,6 +990,7 @@
     SUBDIR += xpi-cutemenus-crystalsvg
     SUBDIR += xpi-downthemall
     SUBDIR += xpi-fasterfox
+    SUBDIR += xpi-fission
     SUBDIR += xpi-flashblock
     SUBDIR += xpi-google-notebook
     SUBDIR += xpi-greasemonkey
