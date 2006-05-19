@@ -2,24 +2,24 @@ bin/jove
 bin/teachjove
 libexec/jove/portsrv
 libexec/jove/recover
-share/jove/teach-jove
-share/jove/cmds.doc
-share/jove/jove.rc.sun
-share/jove/keychart.
-share/jove/keychart.3022
-share/jove/jove.rc.3022
-share/jove/keychart.z29
-share/jove/jove.rc.z29
-share/jove/keychart.xterm
-share/jove/jove.rc.xterm
-share/jove/keychart.wyse
-share/jove/jove.rc.wyse
-share/jove/keychart.vt100
-share/jove/jove.rc.vt100
-share/jove/keychart.sun-cmd
-share/jove/jove.rc.sun-cmd
-share/jove/keychart.sun
-share/jove/XTermresource
-share/jove/jove.rc
+%%DATADIR%%/XTermresource
+%%DATADIR%%/cmds.doc
+%%DATADIR%%/jove.rc
+%%DATADIR%%/jove.rc.3022
+%%DATADIR%%/jove.rc.sun
+%%DATADIR%%/jove.rc.sun-cmd
+%%DATADIR%%/jove.rc.vt100
+%%DATADIR%%/jove.rc.wyse
+%%DATADIR%%/jove.rc.xterm
+%%DATADIR%%/jove.rc.z29
+%%DATADIR%%/keychart.
+%%DATADIR%%/keychart.3022
+%%DATADIR%%/keychart.sun
+%%DATADIR%%/keychart.sun-cmd
+%%DATADIR%%/keychart.vt100
+%%DATADIR%%/keychart.wyse
+%%DATADIR%%/keychart.xterm
+%%DATADIR%%/keychart.z29
+%%DATADIR%%/teach-jove
+@dirrm %%DATADIR%%
 @dirrm libexec/jove
-@dirrm share/jove
