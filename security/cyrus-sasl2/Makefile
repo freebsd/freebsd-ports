@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	cyrus-sasl
-PORTVERSION=	2.1.21
-PORTREVISION=	2
+PORTVERSION=	2.1.22
+PORTREVISION=	0
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/%SUBDIR%/ \
 		ftp://ftp.westbend.net/pub/cyrus-mail/%SUBDIR%/ \
@@ -30,20 +30,21 @@ MAN3=		sasl.3 sasl_authorize_t.3 sasl_auxprop.3 \
 		sasl_client_init.3 sasl_client_new.3 sasl_client_start.3 \
 		sasl_client_step.3 sasl_decode.3 sasl_dispose.3 sasl_done.3 \
 		sasl_encode.3 sasl_encodev.3 sasl_errdetail.3 sasl_errors.3 \
-		sasl_errstring.3 sasl_getopt_t.3 sasl_getpath_t.3 \
-		sasl_getprop.3 sasl_getrealm_t.3 sasl_getsecret_t.3 \
-		sasl_getsimple_t.3 sasl_global_listmech.3 \
+		sasl_errstring.3 sasl_getconfpath_t.3 sasl_getopt_t.3 \
+		sasl_getpath_t.3 sasl_getprop.3 sasl_getrealm_t.3 \
+		sasl_getsecret_t.3 sasl_getsimple_t.3 sasl_global_listmech.3 \
 		sasl_idle.3 sasl_listmech.3 sasl_log_t.3 \
 		sasl_server_init.3 sasl_server_new.3 sasl_server_start.3 \
 		sasl_server_step.3 sasl_server_userdb_checkpass_t.3 \
 		sasl_server_userdb_setpass_t.3 sasl_setpass.3 sasl_setprop.3 \
 		sasl_user_exists.3 sasl_verifyfile_t.3
-MAN8=		sasldblistusers2.8 saslpasswd2.8
+MAN8=		pluginviewer.8 sasldblistusers2.8 saslpasswd2.8
 
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
+		--with-configdir=${PREFIX}/lib/sasl2:${PREFIX}/etc/sasl2 \
 		--with-plugindir=${PREFIX}/lib/sasl2 \
 		--with-dbpath=${PREFIX}/etc/sasldb2 \
 		--includedir=${PREFIX}/include \
@@ -103,16 +104,20 @@ CONFIGURE_ARGS+=--enable-sql
 SQL=	"@comment "
 .endif
 
-.if defined(WITH_AUTHDAEMON)
-CONFIGURE_ARGS+=--with-authdaemond
-.endif
-
 .if defined(WITH_DEV_URANDOM)
 CONFIGURE_ARGS+=--with-devrandom=/dev/urandom
 .endif
 
 .if defined(WITH_ALWAYSTRUE)
 CONFIGURE_ARGS+=--enable-alwaystrue
+.endif
+
+.if defined(WITH_KEEP_DB_OPEN)
+CONFIGURE_ARGS+=--enable-keep-db-open
+.endif
+
+.if defined(WITHOUT_AUTHDAEMOND)
+CONFIGURE_ARGS+=--with-authdaemond=no
 .endif
 
 .if defined(WITHOUT_LOGIN)
@@ -191,7 +196,7 @@ SASLAUTHD_RUNPATH?=	/var/run/saslauthd
 CYRUS_USER?=	cyrus
 CYRUS_GROUP?=	cyrus
 
-DOCS=	AUTHORS COPYING ChangeLog INSTALL NEWS README
+DOCS=	AUTHORS COPYING ChangeLog INSTALL INSTALL.TXT NEWS README
 
 DOC2=	ONEWS TODO draft-burdis-cat-srp-sasl-xx.txt \
 	draft-ietf-sasl-anon-xx.txt draft-ietf-sasl-crammd5-xx.txt \

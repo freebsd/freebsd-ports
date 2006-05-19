@@ -1,8 +1,8 @@
 Index: configure
 diff -u configure.orig configure
---- configure.orig	Sun May 15 14:58:28 2005
-+++ configure	Wed Nov  2 19:11:22 2005
-@@ -1583,6 +1583,7 @@
+--- configure.orig	Fri May 19 04:30:13 2006
++++ configure	Sat May 20 04:04:39 2006
+@@ -1586,6 +1586,7 @@
  fi
  echo "$as_me:$LINENO: result: yes" >&5
  echo "${ECHO_T}yes" >&6
@@ -10,7 +10,7 @@ diff -u configure.orig configure
  test "$program_prefix" != NONE &&
    program_transform_name="s,^,$program_prefix,;$program_transform_name"
  # Use a double $ so make ignores it.
-@@ -5124,7 +5125,7 @@
+@@ -5125,7 +5126,7 @@
  	fi
  
  	saved_LIBS=$LIBS
@@ -19,7 +19,7 @@ diff -u configure.orig configure
            do
  	    LIBS="$saved_LIBS -l$dbname"
  	    cat >conftest.$ac_ext <<_ACEOF
-@@ -5134,6 +5135,7 @@
+@@ -5135,6 +5136,7 @@
  cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
@@ -27,7 +27,7 @@ diff -u configure.orig configure
  #include <db.h>
  int
  main ()
-@@ -5881,7 +5883,7 @@
+@@ -5882,7 +5884,7 @@
  	fi
  
  	saved_LIBS=$LIBS
@@ -36,7 +36,7 @@ diff -u configure.orig configure
            do
  	    LIBS="$saved_LIBS -l$dbname"
  	    cat >conftest.$ac_ext <<_ACEOF
-@@ -5891,6 +5893,7 @@
+@@ -5892,6 +5894,7 @@
  cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
@@ -44,34 +44,7 @@ diff -u configure.orig configure
  #include <db.h>
  int
  main ()
-@@ -6512,7 +6515,7 @@
- echo "$as_me: WARNING: Disabling SASL authentication database support" >&2;}
-             SASL_DB_BACKEND="db_none.lo"
-     SASL_DB_BACKEND_STATIC="db_none.o"
--    SASL_DB_BACKEND_STATIC_SRC="../sasldb/db_none.c"
-+    SASL_DB_BACKEND_STATIC_SRCS="../sasldb/db_none.c"
-     SASL_DB_UTILS=""
-     SASL_DB_MANS=""
-     SASL_DB_LIB=""
-@@ -6521,7 +6524,7 @@
- 
- if test "$enable_static" = yes; then
-     if test "$dblib" != "none"; then
--      SASL_STATIC_SRCS="$SASL_STATIC_SRCS ../plugins/sasldb.c $SASL_DB_BACKEND_STATIC_SRC"
-+      SASL_STATIC_SRCS="$SASL_STATIC_SRCS ../plugins/sasldb.c $SASL_DB_BACKEND_STATIC_SRCS"
-       SASL_STATIC_OBJS="$SASL_STATIC_OBJS sasldb.o $SASL_DB_BACKEND_STATIC"
- 
- cat >>confdefs.h <<\_ACEOF
-@@ -6530,7 +6533,7 @@
- 
-     else
-       SASL_STATIC_OBJS="$SASL_STATIC_OBJS $SASL_DB_BACKEND_STATIC"
--      SASL_STATIC_SRCS="$SASL_STATIC_SRCS $SASL_DB_BACKEND_STATIC_SRC"
-+      SASL_STATIC_SRCS="$SASL_STATIC_SRCS $SASL_DB_BACKEND_STATIC_SRCS"
-     fi
- fi
- 
-@@ -7167,6 +7170,8 @@
+@@ -7193,6 +7196,8 @@
    SASLAUTHD_TRUE='#'
    SASLAUTHD_FALSE=
  fi
@@ -80,7 +53,7 @@ diff -u configure.orig configure
  
  echo "$as_me:$LINENO: checking if I should include saslauthd" >&5
  echo $ECHO_N "checking if I should include saslauthd... $ECHO_C" >&6
-@@ -10564,7 +10569,7 @@
+@@ -10650,7 +10655,7 @@
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -89,8 +62,8 @@ diff -u configure.orig configure
  cat >conftest.$ac_ext <<_ACEOF
  #line $LINENO "configure"
  /* confdefs.h.  */
-@@ -10914,7 +10919,7 @@
-     GSSAPIBASE_STATIC_LIBS="$GSSAPIBASE_LIBS $gssapi_dir/libgssapi_krb5.a $gssapi_dir/libkrb5.a $gssapi_dir/libk5crypto.a $gssapi_dir/libcom_err.a"
+@@ -11060,7 +11065,7 @@
+     GSSAPIBASE_STATIC_LIBS="$GSSAPIBASE_LIBS $gssapi_dir/libgssapi_krb5.a $gssapi_dir/libkrb5.a $gssapi_dir/libk5crypto.a $gssapi_dir/libcom_err.a ${K5SUPSTATIC}"
    elif test "$gss_impl" = "heimdal"; then
      CPPFLAGS="$CPPFLAGS -DKRB5_HEIMDAL"
 -    GSSAPIBASE_LIBS="$GSSAPIBASE_LIBS -lgssapi -lkrb5 -lasn1 -lroken ${LIB_CRYPT} ${LIB_DES} -lcom_err"
@@ -98,7 +71,7 @@ diff -u configure.orig configure
      GSSAPIBASE_STATIC_LIBS="$GSSAPIBASE_STATIC_LIBS $gssapi_dir/libgssapi.a $gssapi_dir/libkrb5.a $gssapi_dir/libasn1.a $gssapi_dir/libroken.a $gssapi_dir/libcom_err.a ${LIB_CRYPT}"
    elif test "$gss_impl" = "cybersafe03"; then
  # Version of CyberSafe with two libraries
-@@ -11752,7 +11757,7 @@
+@@ -11898,7 +11903,7 @@
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -107,12 +80,3 @@ diff -u configure.orig configure
  cat >conftest.$ac_ext <<_ACEOF
  #line $LINENO "configure"
  /* confdefs.h.  */
-@@ -12253,6 +12258,8 @@
- char *__openldap_compat = "2.1.27 or better okay";
- #elif LDAP_VENDOR_VERSION_MAJOR == 2  && LDAP_VENDOR_VERSION_MINOR == 2 && LDAP_VENDOR_VERSION_PATCH > 5
- char *__openldap_compat = "2.2.6 or better okay";
-+#elif LDAP_VENDOR_VERSION_MAJOR == 2  && LDAP_VENDOR_VERSION_MINOR > 2
-+char *__openldap_compat = "2.3.0 or better okay";
- #endif
- 
- _ACEOF

@@ -1,0 +1,13 @@
+Index: saslauthd/Makefile.in
+diff -u saslauthd/Makefile.in.orig saslauthd/Makefile.in
+--- saslauthd/Makefile.in.orig	Fri May 19 04:30:21 2006
++++ saslauthd/Makefile.in	Sat May 20 05:21:31 2006
+@@ -621,7 +621,7 @@
+ 
+ install-data-local: saslauthd.8
+ 	$(mkinstalldirs) $(DESTDIR)$(mandir)/man8
+-	$(INSTALL_DATA) $(srcdir)/saslauthd.8 $(DESTDIR)$(mandir)/man8/saslauthd.8
++	$(INSTALL_DATA) $(srcdir)/saslauthd.8 $(DESTDIR)$(mandir)/cat8/saslauthd.8
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:

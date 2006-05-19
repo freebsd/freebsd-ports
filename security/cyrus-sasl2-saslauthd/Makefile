@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	saslauthd
-PORTVERSION=	2.1.21
-PORTREVISION=	1
+PORTVERSION=	2.1.22
+PORTREVISION=	0
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/%SUBDIR%/ \
 		ftp://ftp.westbend.net/pub/cyrus-mail/%SUBDIR%/ \
@@ -69,6 +69,10 @@ BROKEN=		"this port requires OpenLDAP >= 2.0"
 .endif
 USE_OPENLDAP=	yes
 CONFIGURE_ARGS+=--with-ldap=${LOCALBASE}
+.endif
+
+.if defined(WITH_HTTPFORM)
+CONFIGURE_ARGS+=--enable-httpform
 .endif
 
 .include <bsd.port.pre.mk>
