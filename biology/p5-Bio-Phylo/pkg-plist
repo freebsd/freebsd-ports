@@ -5,8 +5,6 @@ bin/dnd2svg.pl
 bin/droptip.pl
 bin/postmb.pl
 %%SITE_PERL%%/Bio/Phylo.pm
-%%SITE_PERL%%/Bio/Phylo/CONSTANT.pm
-%%SITE_PERL%%/Bio/Phylo/Exceptions.pm
 %%SITE_PERL%%/Bio/Phylo/Forest.pm
 %%SITE_PERL%%/Bio/Phylo/Forest/Node.pm
 %%SITE_PERL%%/Bio/Phylo/Forest/Tree.pm
@@ -19,6 +17,8 @@ bin/postmb.pl
 %%SITE_PERL%%/Bio/Phylo/Matrices/Datum.pm
 %%SITE_PERL%%/Bio/Phylo/Matrices/Matrix.pm
 %%SITE_PERL%%/Bio/Phylo/Matrices/Sequence.pm
+%%SITE_PERL%%/Bio/Phylo/Parsers/Fastnewick.pm
+%%SITE_PERL%%/Bio/Phylo/Parsers/Fastnexus.pm
 %%SITE_PERL%%/Bio/Phylo/Parsers/Newick.pm
 %%SITE_PERL%%/Bio/Phylo/Parsers/Nexus.pm
 %%SITE_PERL%%/Bio/Phylo/Parsers/Table.pm
@@ -26,12 +26,18 @@ bin/postmb.pl
 %%SITE_PERL%%/Bio/Phylo/Taxa.pm
 %%SITE_PERL%%/Bio/Phylo/Taxa/Taxon.pm
 %%SITE_PERL%%/Bio/Phylo/Treedrawer.pm
-%%SITE_PERL%%/Bio/Phylo/Treedrawer/SVG.pm
+%%SITE_PERL%%/Bio/Phylo/Treedrawer/Svg.pm
+%%SITE_PERL%%/Bio/Phylo/Unparsers/Mrp.pm
 %%SITE_PERL%%/Bio/Phylo/Unparsers/Newick.pm
+%%SITE_PERL%%/Bio/Phylo/Unparsers/Nexus.pm
 %%SITE_PERL%%/Bio/Phylo/Unparsers/Pagel.pm
+%%SITE_PERL%%/Bio/Phylo/Util/CONSTANT.pm
+%%SITE_PERL%%/Bio/Phylo/Util/Exceptions.pm
+%%SITE_PERL%%/Bio/Phylo/Util/IDPool.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bio/Phylo/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bio/Phylo
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bio
+@dirrm %%SITE_PERL%%/Bio/Phylo/Util
 @dirrm %%SITE_PERL%%/Bio/Phylo/Unparsers
 @dirrm %%SITE_PERL%%/Bio/Phylo/Treedrawer
 @dirrm %%SITE_PERL%%/Bio/Phylo/Taxa
