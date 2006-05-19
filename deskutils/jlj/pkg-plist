@@ -1,5 +1,0 @@
-bin/jlj
-%%PORTDOCS%%share/doc/jlj/README
-share/examples/jlj/dot.livejournal.rc
-@dirrm share/examples/jlj
-%%PORTDOCS%%@dirrm share/doc/jlj

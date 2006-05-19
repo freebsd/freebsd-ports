@@ -6,25 +6,29 @@
 #
 
 PORTNAME=	jlj
-PORTVERSION=	2.7
-PORTREVISION=	1
+PORTVERSION=	2.12
 CATEGORIES=	deskutils net
 MASTER_SITES=	http://patsy.cis.rit.edu/Software/perl/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-PATCH_SITES=	http://www.atarininja.org/~wxs/patches/
-PATCHFILES=	jlj-tags-port.diff
-
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wxs@csh.rit.edu
 COMMENT=	Jerry's command-line LiveJournal.com entry system
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_PERL5=	yes
+USE_PERL5_RUN=	yes
 NO_BUILD=	yes
+SUB_FILES=	pkg-message
+
+PLIST_FILES=	bin/jlj share/examples/jlj/dot.livejournal.rc
+PLIST_DIRS=	share/examples/jlj
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	README
+.endif
 
 post-patch:
-	@${PERL} -pi -e 's!/usr/bin/perl!${PERL}!' ${WRKSRC}/jlj.pl
+	@${REINPLACE_CMD} -e 's!/usr/bin/perl!${PERL}!' ${WRKSRC}/jlj.pl
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/jlj.pl ${PREFIX}/bin/jlj
@@ -32,8 +36,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/.livejournal.rc \
 		${PREFIX}/share/examples/jlj/dot.livejournal.rc
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/jlj
-	${INSTALL_DATA} ${WRKSRC}/README.JLJ ${PREFIX}/share/doc/jlj/README
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.JLJ ${DOCSDIR}/README
 .endif
 	@${CAT} ${PKGMESSAGE}
 
