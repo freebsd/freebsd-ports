@@ -1,0 +1,23 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: denyhosts
+# REQUIRE: DAEMON
+#
+
+. %%RC_SUBR%%
+
+name="denyhosts"
+rcvar=${name}_enable
+
+command="%%PREFIX%%/bin/denyhosts.py"
+command_interpreter="/usr/local/bin/python"
+command_args="--config %%PREFIX%%/etc/denyhosts.conf --daemon"
+pidfile="/var/run/${name}.pid"
+
+load_rc_config $name
+
+: ${denyhosts_enable="NO"}
+
+run_rc_command "$1"

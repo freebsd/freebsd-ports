@@ -29,6 +29,9 @@ bin/denyhosts.py
 %%PYTHON_SITELIBDIR%%/DenyHosts/plugin.py
 %%PYTHON_SITELIBDIR%%/DenyHosts/plugin.pyc
 %%PYTHON_SITELIBDIR%%/DenyHosts/plugin.pyo
+%%PYTHON_SITELIBDIR%%/DenyHosts/purgecounter.py
+%%PYTHON_SITELIBDIR%%/DenyHosts/purgecounter.pyc
+%%PYTHON_SITELIBDIR%%/DenyHosts/purgecounter.pyo
 %%PYTHON_SITELIBDIR%%/DenyHosts/constants.py
 %%PYTHON_SITELIBDIR%%/DenyHosts/constants.pyc
 %%PYTHON_SITELIBDIR%%/DenyHosts/constants.pyo
