@@ -1,4 +1,6 @@
 bin/aim
+@cwd %%LINUXBASE%%/usr
+bin/aim
 lib/libXpcs.so
 lib/libXpcs.so.1
 lib/libXprt.so
@@ -127,7 +129,6 @@ lib/aim/sounds/ring.wav
 lib/aim/sounds/talkbeg.wav
 lib/aim/sounds/talkend.wav
 lib/aim/sounds/talkstop.wav
-libexec/aim
 @dirrm lib/aim/extra
 @dirrm lib/aim/help/images
 @dirrm lib/aim/help
