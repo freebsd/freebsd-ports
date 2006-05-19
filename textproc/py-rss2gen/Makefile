@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rss2gen
-PORTVERSION=	0.1.1
+PORTVERSION=	1.0.0
 CATEGORIES=	textproc python
 MASTER_SITES=	http://www.dalkescientific.com/Python/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
