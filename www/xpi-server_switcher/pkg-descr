@@ -2,9 +2,4 @@ Server Switcher is a navigational help tool for web developers. It allows
 you to easily switch between sites on your development and live servers, so
 that you can immediately see the differences.
 
-Use case: When you are on http://localhost/page.html (your
-development-server) and click the ServerSwitcher-icon you will instantly be
-redirected to http://www.yoursite.com/page.html (your live-server).
-("localhost" and "www.yoursite.com" are of course configurable)
-
-WWW: https://addons.mozilla.org/firefox/2409/
+WWW: http://hermann.czedik.net/projekte/switcher/

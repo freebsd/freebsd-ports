@@ -1,0 +1,23 @@
+%%XPI_XPIDIR%%/chrome/switcher/content/about.xul
+%%XPI_XPIDIR%%/chrome/switcher/content/common/preferences.js
+%%XPI_XPIDIR%%/chrome/switcher/content/common/string.js
+%%XPI_XPIDIR%%/chrome/switcher/content/dialogs/serveradd.js
+%%XPI_XPIDIR%%/chrome/switcher/content/dialogs/serveradd.xul
+%%XPI_XPIDIR%%/chrome/switcher/content/switcherOptions.js
+%%XPI_XPIDIR%%/chrome/switcher/content/switcherOptions.xul
+%%XPI_XPIDIR%%/chrome/switcher/content/switcherOverlay.js
+%%XPI_XPIDIR%%/chrome/switcher/content/switcherOverlay.xul
+%%XPI_XPIDIR%%/chrome/switcher/skin/classic/devserver.png
+%%XPI_XPIDIR%%/chrome/switcher/skin/classic/hceswitch.css
+%%XPI_XPIDIR%%/chrome/switcher/skin/classic/icon.png
+%%XPI_XPIDIR%%/chrome/switcher/skin/classic/liveserver.png
+%%XPI_XPIDIR%%/chrome.manifest
+%%XPI_XPIDIR%%/install.rdf
+%%XPI_XPIDIR%%/license.txt
+@dirrm %%XPI_XPIDIR%%/chrome/switcher/content/common
+@dirrm %%XPI_XPIDIR%%/chrome/switcher/content/dialogs
+@dirrm %%XPI_XPIDIR%%/chrome/switcher/content
+@dirrm %%XPI_XPIDIR%%/chrome/switcher/skin/classic
+@dirrm %%XPI_XPIDIR%%/chrome/switcher/skin
+@dirrm %%XPI_XPIDIR%%/chrome/switcher
+@dirrm %%XPI_XPIDIR%%/chrome
