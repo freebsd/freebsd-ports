@@ -13,6 +13,8 @@ MASTER_SITES=	http://rbp.chat.ru/pub/nwlib/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utilites to work with Novell NetWare servers
 
+ONLY_FOR_ARCHS=	i386
+
 .if !exists(/usr/src/sys/kern/vnode_if.src)
 IGNORE=		requires kernel source
 .endif
