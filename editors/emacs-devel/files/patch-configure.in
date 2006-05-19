@@ -1,5 +1,7 @@
---- configure.in.orig	Sat Apr  1 23:17:28 2006
-+++ configure.in	Sat Apr  1 23:28:18 2006
+Index: configure.in
+===================================================================
+--- configure.in	(.../branches/gnu/emacs)	(revision 15)
++++ configure.in	(.../trunk/emacs)	(revision 15)
 @@ -237,6 +237,9 @@
      opsys=freebsd
      case "${canonical}" in

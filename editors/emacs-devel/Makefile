@@ -8,12 +8,11 @@
 PORTNAME=	emacs
 PORTVERSION=	${EMACS_VER}.${SNAPSHOT}
 CATEGORIES=	editors ipv6
-MASTER_SITES=	http://dl.droso.net/FreeBSD/distfiles/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	erwin/kvs
-DISTNAME=	${PORTNAME}-cvs-snapshot-2006-02-28
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR= keramida
+DISTNAME=	${PORTNAME}-cvs-snapshot-2006.05.02.05.51.52
 
-MAINTAINER=	kvs@pil.dk
+MAINTAINER=	keramida@ceid.upatras.gr
 COMMENT=	GNU editing macros
 
 .if !defined(WITHOUT_X11)
@@ -31,7 +30,7 @@ CONFLICTS=	emacs-19.* emacs-21.* \
 		xemacs-mule-[0-9]* xemacs-devel-mule-[0-9]*
 
 EMACS_VER=	22.0.50
-SNAPSHOT=	20060228
+SNAPSHOT=	20060502
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	autoconf:259
 .if !defined(WITHOUT_X11)
@@ -45,7 +44,7 @@ USE_XPM=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-CONFIGURE_TARGET=	${MACHINE_ARCH}--freebsd
+CONFIGURE_TARGET=	${MACHINE_ARCH}-freebsd
 .if defined(WITHOUT_X11)
 CONFIGURE_ARGS=		--with-x=no
 .else

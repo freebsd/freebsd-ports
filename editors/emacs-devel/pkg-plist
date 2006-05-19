@@ -24,7 +24,7 @@ libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/yow
 %%DATADIR%%/%%EMACS_VER%%/etc/COPYING
 %%DATADIR%%/%%EMACS_VER%%/etc/DEBUG
 %%DATADIR%%/%%EMACS_VER%%/etc/DISTRIB
-%%DATADIR%%/%%EMACS_VER%%/etc/DOC-22.0.50.1
+%%DATADIR%%/%%EMACS_VER%%/etc/DOC-%%EMACS_VER%%.1
 %%DATADIR%%/%%EMACS_VER%%/etc/ERC-NEWS
 %%DATADIR%%/%%EMACS_VER%%/etc/ETAGS.EBNF
 %%DATADIR%%/%%EMACS_VER%%/etc/FTP
@@ -124,20 +124,28 @@ libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/yow
 %%DATADIR%%/%%EMACS_VER%%/etc/grep.txt
 %%DATADIR%%/%%EMACS_VER%%/etc/images/README
 %%DATADIR%%/%%EMACS_VER%%/etc/images/attach.pbm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/attach.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/back-arrow.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/back-arrow.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/cancel.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/cancel.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/close.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/close.xpm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/connect.xpm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/contact.pbm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/contact.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/copy.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/copy.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/cut.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/cut.xpm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/data-save.pbm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/data-save.xpm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/delete.pbm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/delete.xpm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/describe.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/diropen.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/diropen.xpm
-%%DATADIR%%/%%EMACS_VER%%/etc/images/execute.pbm
-%%DATADIR%%/%%EMACS_VER%%/etc/images/execute.xpm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/disconnect.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/exit.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/exit.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/ezimage/bits.xpm
@@ -167,8 +175,6 @@ libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/yow
 %%DATADIR%%/%%EMACS_VER%%/etc/images/ezimage/tag-v.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/ezimage/tag.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/ezimage/unlock.xpm
-%%DATADIR%%/%%EMACS_VER%%/etc/images/fld-open.pbm
-%%DATADIR%%/%%EMACS_VER%%/etc/images/fld-open.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/fwd-arrow.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/fwd-arrow.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/gnus/bar.xbm
@@ -223,6 +229,7 @@ libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/yow
 %%DATADIR%%/%%EMACS_VER%%/etc/images/gnus/save-art.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/gnus/subscribe.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/gnus/subscribe.xpm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/gnus/toggle-subscription.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/gnus/unimportant.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/gnus/unsubscribe.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/gnus/unsubscribe.xpm
@@ -268,8 +275,6 @@ libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/yow
 %%DATADIR%%/%%EMACS_VER%%/etc/images/gud/watch.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/help.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/help.xpm
-%%DATADIR%%/%%EMACS_VER%%/etc/images/highlight.pbm
-%%DATADIR%%/%%EMACS_VER%%/etc/images/highlight.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/home.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/home.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/icons/emacs_16.png
@@ -284,6 +289,9 @@ libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/yow
 %%DATADIR%%/%%EMACS_VER%%/etc/images/jump-to.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/left-arrow.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/left-arrow.xpm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/lock-broken.xpm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/lock-ok.xpm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/lock.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/low-color/back-arrow.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/low-color/copy.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/low-color/cut.xpm
@@ -308,14 +316,19 @@ libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/yow
 %%DATADIR%%/%%EMACS_VER%%/etc/images/low-color/undo.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/low-color/up-arrow.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/low-color/up-node.xpm
-%%DATADIR%%/%%EMACS_VER%%/etc/images/mail.pbm
-%%DATADIR%%/%%EMACS_VER%%/etc/images/mail.xpm
-%%DATADIR%%/%%EMACS_VER%%/etc/images/mail/alias.pbm
-%%DATADIR%%/%%EMACS_VER%%/etc/images/mail/alias.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/mail/compose.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/mail/compose.xpm
-%%DATADIR%%/%%EMACS_VER%%/etc/images/mail/refile.pbm
-%%DATADIR%%/%%EMACS_VER%%/etc/images/mail/refile.xpm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/mail/copy.xpm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/mail/flag-for-followup.pbm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/mail/flag-for-followup.xpm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/mail/forward.xpm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/mail/inbox.pbm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/mail/inbox.xpm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/mail/move.pbm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/mail/move.xpm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/mail/not-spam.xpm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/mail/outbox.xpm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/mail/preview.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/mail/repack.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/mail/repack.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/mail/reply-all.pbm
@@ -326,17 +339,20 @@ libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/yow
 %%DATADIR%%/%%EMACS_VER%%/etc/images/mail/reply-to.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/mail/reply.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/mail/reply.xpm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/mail/save-draft.xpm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/mail/save.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/mail/send.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/mail/send.xpm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/mail/spam.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/mh-logo.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/new.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/new.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/next-node.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/next-node.xpm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/next-page.pbm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/next-page.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/open.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/open.xpm
-%%DATADIR%%/%%EMACS_VER%%/etc/images/page-down.pbm
-%%DATADIR%%/%%EMACS_VER%%/etc/images/page-down.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/paste.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/paste.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/preferences.pbm
@@ -345,6 +361,7 @@ libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/yow
 %%DATADIR%%/%%EMACS_VER%%/etc/images/prev-node.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/print.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/print.xpm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/redo.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/refresh.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/refresh.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/right-arrow.pbm
@@ -357,6 +374,7 @@ libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/yow
 %%DATADIR%%/%%EMACS_VER%%/etc/images/search-replace.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/search.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/search.xpm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/separator.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/show.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/show.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/smilies/blink.pbm
@@ -375,6 +393,11 @@ libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/yow
 %%DATADIR%%/%%EMACS_VER%%/etc/images/smilies/smile.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/smilies/wry.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/smilies/wry.xpm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/sort-ascending.xpm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/sort-column-ascending.xpm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/sort-criteria.xpm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/sort-descending.xpm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/sort-row-ascending.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/spell.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/spell.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/undo.pbm
@@ -383,8 +406,9 @@ libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/yow
 %%DATADIR%%/%%EMACS_VER%%/etc/images/up-arrow.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/up-node.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/up-node.xpm
-%%DATADIR%%/%%EMACS_VER%%/etc/images/widen.pbm
-%%DATADIR%%/%%EMACS_VER%%/etc/images/widen.xpm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/zoom-in.xpm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/zoom-out.pbm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/zoom-out.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/ledit.l
 %%DATADIR%%/%%EMACS_VER%%/etc/letter.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/letter.xpm
@@ -1209,7 +1233,6 @@ libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/yow
 %%DATADIR%%/%%EMACS_VER%%/lisp/fringe.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/generic-x.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/generic-x.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/gnus/TODO
 %%DATADIR%%/%%EMACS_VER%%/lisp/gnus/binhex.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/gnus/binhex.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/gnus/canlock.el.gz
@@ -1228,6 +1251,8 @@ libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/yow
 %%DATADIR%%/%%EMACS_VER%%/lisp/gnus/flow-fill.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/gnus/format-spec.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/gnus/format-spec.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/gnus/gmm-utils.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/gnus/gmm-utils.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/gnus/gnus-agent.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/gnus/gnus-agent.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/gnus/gnus-art.el.gz
@@ -1417,7 +1442,6 @@ libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/yow
 %%DATADIR%%/%%EMACS_VER%%/lisp/gnus/nnrss.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/gnus/nnrss.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/gnus/nnslashdot.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/gnus/nnslashdot.el.new
 %%DATADIR%%/%%EMACS_VER%%/lisp/gnus/nnslashdot.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/gnus/nnsoup.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/gnus/nnsoup.elc
@@ -2160,8 +2184,6 @@ libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/yow
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/idlw-complete-structtag.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/idlw-help.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/idlw-help.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/idlw-rinfo.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/idlw-rinfo.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/idlw-shell.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/idlw-shell.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/idlw-toolbar.el.gz
@@ -2287,6 +2309,8 @@ libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/yow
 %%DATADIR%%/%%EMACS_VER%%/lisp/subdirs.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/subr.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/subr.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/t-mouse.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/t-mouse.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/tabify.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/tabify.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/talk.el.gz
@@ -2577,48 +2601,46 @@ libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/yow
 %%DATADIR%%/site-lisp/subdirs.el
 var/games/emacs/snake-scores
 var/games/emacs/tetris-scores
-@dirrm var/games/emacs
-@dirrm var/games
-@dirrm var
-@dirrm share/nls/en_US.US-ASCII
-@dirrm share/nls/POSIX
-@dirrm %%DATADIR%%/%%EMACS_VER%%/site-lisp
-@dirrm %%DATADIR%%/%%EMACS_VER%%/lisp/url
-@dirrm %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes
-@dirrm %%DATADIR%%/%%EMACS_VER%%/lisp/term
-@dirrm %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes
-@dirrm %%DATADIR%%/%%EMACS_VER%%/lisp/play
-@dirrm %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete
-@dirrm %%DATADIR%%/%%EMACS_VER%%/lisp/net
-@dirrm %%DATADIR%%/%%EMACS_VER%%/lisp/mh-e
-@dirrm %%DATADIR%%/%%EMACS_VER%%/lisp/mail
-@dirrm %%DATADIR%%/%%EMACS_VER%%/lisp/language
-@dirrm %%DATADIR%%/%%EMACS_VER%%/lisp/international
-@dirrm %%DATADIR%%/%%EMACS_VER%%/lisp/gnus
-@dirrm %%DATADIR%%/%%EMACS_VER%%/lisp/eshell
-@dirrm %%DATADIR%%/%%EMACS_VER%%/lisp/erc
-@dirrm %%DATADIR%%/%%EMACS_VER%%/lisp/emulation
-@dirrm %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp
-@dirrm %%DATADIR%%/%%EMACS_VER%%/lisp/calendar
-@dirrm %%DATADIR%%/%%EMACS_VER%%/lisp/calc
-@dirrm %%DATADIR%%/%%EMACS_VER%%/lisp
-@dirrm %%DATADIR%%/%%EMACS_VER%%/leim/quail
-@dirrm %%DATADIR%%/%%EMACS_VER%%/leim/ja-dic
-@dirrm %%DATADIR%%/%%EMACS_VER%%/leim
-@dirrm %%DATADIR%%/%%EMACS_VER%%/etc/tree-widget/folder
-@dirrm %%DATADIR%%/%%EMACS_VER%%/etc/tree-widget/default
-@dirrm %%DATADIR%%/%%EMACS_VER%%/etc/tree-widget
-@dirrm %%DATADIR%%/%%EMACS_VER%%/etc/images/smilies
-@dirrm %%DATADIR%%/%%EMACS_VER%%/etc/images/mail
-@dirrm %%DATADIR%%/%%EMACS_VER%%/etc/images/low-color
-@dirrm %%DATADIR%%/%%EMACS_VER%%/etc/images/icons
-@dirrm %%DATADIR%%/%%EMACS_VER%%/etc/images/gud
-@dirrm %%DATADIR%%/%%EMACS_VER%%/etc/images/gnus
-@dirrm %%DATADIR%%/%%EMACS_VER%%/etc/images/ezimage
-@dirrm %%DATADIR%%/%%EMACS_VER%%/etc/images
-@dirrm %%DATADIR%%/%%EMACS_VER%%/etc/e
-@dirrm %%DATADIR%%/%%EMACS_VER%%/etc
-@dirrm %%DATADIR%%/%%EMACS_VER%%
 @dirrm libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%
 @dirrm libexec/emacs/%%EMACS_VER%%
-@dirrm libexec/emacs
+@unexec rmdir %D/libexec/emacs 2>/dev/null || true
+@dirrm %%DATADIR%%/%%EMACS_VER%%/etc/e
+@dirrm %%DATADIR%%/%%EMACS_VER%%/etc/images/ezimage
+@dirrm %%DATADIR%%/%%EMACS_VER%%/etc/images/gnus
+@dirrm %%DATADIR%%/%%EMACS_VER%%/etc/images/gud
+@dirrm %%DATADIR%%/%%EMACS_VER%%/etc/images/icons
+@dirrm %%DATADIR%%/%%EMACS_VER%%/etc/images/low-color
+@dirrm %%DATADIR%%/%%EMACS_VER%%/etc/images/mail
+@dirrm %%DATADIR%%/%%EMACS_VER%%/etc/images/smilies
+@dirrm %%DATADIR%%/%%EMACS_VER%%/etc/images
+@dirrm %%DATADIR%%/%%EMACS_VER%%/etc/tree-widget/default
+@dirrm %%DATADIR%%/%%EMACS_VER%%/etc/tree-widget/folder
+@dirrm %%DATADIR%%/%%EMACS_VER%%/etc/tree-widget
+@dirrm %%DATADIR%%/%%EMACS_VER%%/etc
+@dirrm %%DATADIR%%/%%EMACS_VER%%/leim/ja-dic
+@dirrm %%DATADIR%%/%%EMACS_VER%%/leim/quail
+@dirrm %%DATADIR%%/%%EMACS_VER%%/leim
+@dirrm %%DATADIR%%/%%EMACS_VER%%/lisp/calc
+@dirrm %%DATADIR%%/%%EMACS_VER%%/lisp/calendar
+@dirrm %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp
+@dirrm %%DATADIR%%/%%EMACS_VER%%/lisp/emulation
+@dirrm %%DATADIR%%/%%EMACS_VER%%/lisp/erc
+@dirrm %%DATADIR%%/%%EMACS_VER%%/lisp/eshell
+@dirrm %%DATADIR%%/%%EMACS_VER%%/lisp/gnus
+@dirrm %%DATADIR%%/%%EMACS_VER%%/lisp/international
+@dirrm %%DATADIR%%/%%EMACS_VER%%/lisp/language
+@dirrm %%DATADIR%%/%%EMACS_VER%%/lisp/mail
+@dirrm %%DATADIR%%/%%EMACS_VER%%/lisp/mh-e
+@dirrm %%DATADIR%%/%%EMACS_VER%%/lisp/net
+@dirrm %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete
+@dirrm %%DATADIR%%/%%EMACS_VER%%/lisp/play
+@dirrm %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes
+@dirrm %%DATADIR%%/%%EMACS_VER%%/lisp/term
+@dirrm %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes
+@dirrm %%DATADIR%%/%%EMACS_VER%%/lisp/url
+@dirrm %%DATADIR%%/%%EMACS_VER%%/lisp
+@unexec rmdir %D/%%DATADIR%%/site-lisp 2>/dev/null || true
+@unexec rmdir %D%%DATADIR%% 2>/dev/null || true
+@dirrm var/games/emacs
+@unexec rmdir %D/var/games 2>/dev/null || true
+@unexec rmdir %D/var 2>/dev/null || true
