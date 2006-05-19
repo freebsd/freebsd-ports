@@ -9508,6 +9508,7 @@ p5-UNIVERSAL-exports	ports/devel/p5-UNIVERSAL-exports
 p5-UNIVERSAL-isa	ports/devel/p5-UNIVERSAL-isa
 p5-UNIVERSAL-moniker	ports/devel/p5-UNIVERSAL-moniker
 p5-UNIVERSAL-require	ports/devel/p5-UNIVERSAL-require
+p5-UNIVERSAL-which	ports/devel/p5-UNIVERSAL-which
 p5-UPS-Nut	ports/sysutils/p5-UPS-Nut
 p5-URI		ports/net/p5-URI
 p5-URI-Fetch	ports/www/p5-URI-Fetch
