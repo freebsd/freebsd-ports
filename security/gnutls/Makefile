@@ -43,7 +43,7 @@ LIB_DEPENDS+=   opencdk.8:${PORTSDIR}/security/opencdk
 .endif
 
 .if defined(WITH_LIBTASN1) || exists(${LOCALBASE}/lib/libtasn1.so.3)
-LIB_DEPENDS+=   tasn1.2:${PORTSDIR}/security/libtasn1
+LIB_DEPENDS+=   tasn1.3:${PORTSDIR}/security/libtasn1
 .endif
 
 .if ${OSVERSION} < 600000
