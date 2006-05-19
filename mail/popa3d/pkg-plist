@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%STANDALONE_POP3%%etc/rc.d/popa3d.sh-dist
 libexec/popa3d
 %%PORTDOCS%%%%DOCSDIR%%/DESIGN

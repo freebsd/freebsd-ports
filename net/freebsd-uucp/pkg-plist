@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/uucp
 bin/uulog
 bin/uupick
