@@ -20,7 +20,7 @@ WRKSRC=		${WRKDIR}/Klone
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"
-BROKEN=		"Does not compile on sparc64"
+BROKEN=		Does not compile on sparc64
 .endif
 
 do-configure:
