@@ -7104,6 +7104,7 @@ neXtaw		ports/x11-toolkits/neXtaw
 nec2c		ports/comms/nec2c
 nedit		ports/editors/nedit
 nefu		ports/net-mgmt/nefu
+nehquake	ports/games/nehquake
 nemesis		ports/net/nemesis
 nenscript	ports/print/nenscript
 neon		ports/www/neon
