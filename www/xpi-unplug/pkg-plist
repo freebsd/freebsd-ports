@@ -1,0 +1,67 @@
+%%XPI_XPIDIR%%/chrome/content/help_extern.html
+%%XPI_XPIDIR%%/chrome/content/help_flash.html
+%%XPI_XPIDIR%%/chrome/content/help_flv.html
+%%XPI_XPIDIR%%/chrome/content/help_hidden.html
+%%XPI_XPIDIR%%/chrome/content/help_notfound.html
+%%XPI_XPIDIR%%/chrome/content/help_playlist.html
+%%XPI_XPIDIR%%/chrome/content/help_playtext.html
+%%XPI_XPIDIR%%/chrome/content/help_programs.html
+%%XPI_XPIDIR%%/chrome/content/help_ram.html
+%%XPI_XPIDIR%%/chrome/content/help_rm.html
+%%XPI_XPIDIR%%/chrome/content/help_skim.html
+%%XPI_XPIDIR%%/chrome/content/help_stop.html
+%%XPI_XPIDIR%%/chrome/content/help_streamsave.html
+%%XPI_XPIDIR%%/chrome/content/notfound.xul
+%%XPI_XPIDIR%%/chrome/content/overlay.xul
+%%XPI_XPIDIR%%/chrome/content/pro_ftp.html
+%%XPI_XPIDIR%%/chrome/content/pro_mms.html
+%%XPI_XPIDIR%%/chrome/content/pro_other.html
+%%XPI_XPIDIR%%/chrome/content/pro_rtsp.html
+%%XPI_XPIDIR%%/chrome/content/settings.xul
+%%XPI_XPIDIR%%/chrome/content/streamsave.xul
+%%XPI_XPIDIR%%/chrome/content/unplug.js
+%%XPI_XPIDIR%%/chrome/content/unplug_extern.js
+%%XPI_XPIDIR%%/chrome/content/unplug_rulez.js
+%%XPI_XPIDIR%%/chrome/content/unplug_settings.js
+%%XPI_XPIDIR%%/chrome/content/unplug_streamwiz.js
+%%XPI_XPIDIR%%/chrome/content/zuul.html
+%%XPI_XPIDIR%%/chrome/skin/config.png
+%%XPI_XPIDIR%%/chrome/skin/ftp.png
+%%XPI_XPIDIR%%/chrome/skin/help.png
+%%XPI_XPIDIR%%/chrome/skin/hexit.png
+%%XPI_XPIDIR%%/chrome/skin/lair_all.png
+%%XPI_XPIDIR%%/chrome/skin/lair_config.png
+%%XPI_XPIDIR%%/chrome/skin/lair_dta.png
+%%XPI_XPIDIR%%/chrome/skin/lair_fxsave.png
+%%XPI_XPIDIR%%/chrome/skin/lair_helix.png
+%%XPI_XPIDIR%%/chrome/skin/lair_no.png
+%%XPI_XPIDIR%%/chrome/skin/lair_play.png
+%%XPI_XPIDIR%%/chrome/skin/lair_stream.png
+%%XPI_XPIDIR%%/chrome/skin/lair_turbo.png
+%%XPI_XPIDIR%%/chrome/skin/lair_vlc.png
+%%XPI_XPIDIR%%/chrome/skin/pagehog.png
+%%XPI_XPIDIR%%/chrome/skin/pagehogcheese.png
+%%XPI_XPIDIR%%/chrome/skin/unplug-tool-sm.png
+%%XPI_XPIDIR%%/chrome/skin/unplug.css
+%%XPI_XPIDIR%%/chrome/skin/unplug.png
+%%XPI_XPIDIR%%/chrome/skin/unstar_flv.png
+%%XPI_XPIDIR%%/chrome/skin/unstar_flvplay.png
+%%XPI_XPIDIR%%/chrome/skin/unstar_link.png
+%%XPI_XPIDIR%%/chrome/skin/unstar_me.png
+%%XPI_XPIDIR%%/chrome/skin/unstar_no.png
+%%XPI_XPIDIR%%/chrome/skin/unstar_play.png
+%%XPI_XPIDIR%%/chrome/skin/unstar_ram.png
+%%XPI_XPIDIR%%/chrome/skin/unstar_rm.png
+%%XPI_XPIDIR%%/chrome/skin/unstar_swf.png
+%%XPI_XPIDIR%%/chrome/skin/unstar_textplay.png
+%%XPI_XPIDIR%%/chrome/skin/unstar_unknown.png
+%%XPI_XPIDIR%%/chrome/skin/unstar_web.png
+%%XPI_XPIDIR%%/chrome/skin/warn.png
+%%XPI_XPIDIR%%/chrome.manifest
+%%XPI_XPIDIR%%/defaults/preferences/cn_unplug.js
+%%XPI_XPIDIR%%/install.rdf
+@dirrm %%XPI_XPIDIR%%/chrome/content
+@dirrm %%XPI_XPIDIR%%/chrome/skin
+@dirrm %%XPI_XPIDIR%%/chrome
+@dirrm %%XPI_XPIDIR%%/defaults/preferences
+@dirrm %%XPI_XPIDIR%%/defaults
