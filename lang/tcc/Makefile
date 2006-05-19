@@ -23,4 +23,6 @@ MAN1=		tcc.1
 
 ONLY_FOR_ARCHS=	i386
 
+BROKEN=		tcc -run works, but little else
+
 .include <bsd.port.mk>
