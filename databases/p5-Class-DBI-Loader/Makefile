@@ -19,10 +19,7 @@ COMMENT=	Dynamic definition of Class::DBI sub classes
 BUILD_DEPENDS=	${RUN_DEPENDS} \
 		${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
 RUN_DEPENDS=	${SITE_PERL}/Class/DBI.pm:${PORTSDIR}/databases/p5-Class-DBI \
-		${SITE_PERL}/Lingua/EN/Inflect.pm:${PORTSDIR}/textproc/p5-Lingua-EN-Inflect \
-		${SITE_PERL}/Class/DBI/Pg.pm:${PORTSDIR}/databases/p5-Class-DBI-Pg \
-		${SITE_PERL}/Class/DBI/mysql.pm:${PORTSDIR}/databases/p5-Class-DBI-mysql \
-		${SITE_PERL}/Class/DBI/SQLite.pm:${PORTSDIR}/databases/p5-Class-DBI-SQLite
+		${SITE_PERL}/Lingua/EN/Inflect.pm:${PORTSDIR}/textproc/p5-Lingua-EN-Inflect
 
 PERL_CONFIGURE=	yes
 
@@ -41,10 +38,24 @@ post-install:
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 .endif
 
+OPTIONS=	PGSQL "Enable support for PostgreSQL" Off \
+		MYSQL "Enable support for MySQL" Off \
+		SQLITE "Enable support for SQLite" Off
+
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500600
 IGNORE=		requires perl 5.6.0 or higher. Please install lang/perl5.8 and try again
+.endif
+
+.if defined(WITH_PGSQL)
+RUN_DEPENDS+=  ${SITE_PERL}/Class/DBI/Pg.pm:${PORTSDIR}/databases/p5-Class-DBI-Pg
+.endif
+.if defined(WITH_MYSQL)
+RUN_DEPENDS+=  ${SITE_PERL}/Class/DBI/mysql.pm:${PORTSDIR}/databases/p5-Class-DBI-mysql
+.endif
+.if defined(WITH_SQLITE)
+RUN_DEPENDS+=  ${SITE_PERL}/Class/DBI/SQLite.pm:${PORTSDIR}/databases/p5-Class-DBI-SQLite
 .endif
 
 .include <bsd.port.post.mk>
