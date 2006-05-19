@@ -7,9 +7,11 @@
 
 PORTNAME=	avidemux2
 PORTVERSION=	2.1.2
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://fixounet.free.fr/avidemux/ \
-		http://download.berlios.de/avidemux/
+		${MASTER_SITE_BERLIOS}
+MASTER_SITE_SUBDIR=	avidemux
 DISTNAME=	avidemux-${PORTVERSION}
 
 MAINTAINER=	amistry@am-productions.biz
@@ -96,7 +98,7 @@ LIB_DEPENDS+=	faad.0:${PORTSDIR}/audio/faad
 .endif
 
 .if defined(WITH_X264)
-LIB_DEPENDS+=	x264.1:${PORTSDIR}/multimedia/x264
+LIB_DEPENDS+=	x264.47:${PORTSDIR}/multimedia/x264
 .endif
 
 .if defined(WITH_VORBIS)
@@ -104,7 +106,7 @@ LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
 .endif
 
 .if ${OSVERSION} < 500000
-BROKEN=		"does not compile"
+BROKEN=		does not compile
 .endif
 
 post-extract:
