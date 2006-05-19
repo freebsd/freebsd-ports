@@ -6,7 +6,7 @@
 #
 
 PORTVERSION=	7.0.1
-PORTREVISION=	0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	german print linux
 MASTERDIR=	${.CURDIR}/../../print/acroread7
