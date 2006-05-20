@@ -39,7 +39,7 @@ WANT_OPENLDAP_VER?=	23
 BROKEN=			incompatible OpenLDAP version: ${WANT_OPENLDAP_VER}
 .endif
 
-PORTREVISION_CLIENT=	0
+PORTREVISION_CLIENT=	1
 PORTREVISION_SERVER=	0
 
 .if !defined(CLIENT_ONLY)
@@ -125,7 +125,6 @@ LOCALSTATEDIR?=		/var/db
 DATABASEDIR?=		${LOCALSTATEDIR}/openldap-data
 SLURPDIR?=		${LOCALSTATEDIR}/openldap-slurp
 
-SUB_FILES+=		pkg-install pkg-message pkg-deinstall
 SUB_LIST+=		LDAP_RUN_DIR=${LDAP_RUN_DIR} \
 			DATABASEDIR=${DATABASEDIR} \
 			SLURPDIR=${SLURPDIR} \
@@ -157,6 +156,7 @@ INSTALLS_SHLIB=		yes
 .else
 # server specific configuration
 
+SUB_FILES+=		pkg-deinstall pkg-message pkg-install
 USE_RC_SUBR=		slapd.sh slurpd.sh
 
 EXTRA_PATCHES+=		${FILESDIR}/extrapatch-Makefile.in
