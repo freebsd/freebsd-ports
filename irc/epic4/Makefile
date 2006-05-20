@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	epic4
-PORTVERSION=	2.2
+PORTVERSION=	2.4
 PORTREVISION=	1
 CATEGORIES=	irc ipv6
 MASTER_SITES=	ftp://ftp.prbh.org/pub/epic/EPIC4-PRODUCTION/ \
@@ -16,7 +16,7 @@ MASTER_SITES=	ftp://ftp.prbh.org/pub/epic/EPIC4-PRODUCTION/ \
 		ftp://ftp.eu.uu.net/pub/unix/irc/epic/EPIC4-PRODUCTION/ \
 		ftp://totem.fix.no/pub/mirrors/epic/EPIC4-PRODUCTION/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		${PORTNAME}-help-20040801.tar.gz
+		${PORTNAME}-help-20050315.tar.gz
 
 MAINTAINER=	josh@tcbug.org
 COMMENT=	The (E)nhanced (P)rogrammable (I)RC-II (C)lient
