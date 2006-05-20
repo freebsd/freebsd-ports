@@ -5,50 +5,63 @@
 # $FreeBSD$
 #
 # Tunables:
+# WITH_DILLO_SSL:		enable experimental SSL support
 # WITH_DILLO_META-REFRESH:	make dillo accept the meta-refresh tag
 # WITHOUT_DILLO_TABS:		disable support for tabbed browsing
 # WITHOUT_DILLO_ANTIALIAS:	disable support for antialiased display
 #
-# Please see www/dillo for any general tunables not listed here.
-#
-# XXX:
-# SSL support is currently broken in this version of the i18n patchset:
-# On FreeBSD 4 with OpenSSL 0.9.7d, the configure script refuses to enable
-# ssl at all and on FreeBSD 5 and up, linking is broken.
+# TODO:
+# SSL support is currently partly broken in this version of the i18n dillo:
+# On FreeBSD 4 with OpenSSL 0.9.7d, the configure script uses checks that are
+# too strict. On FreeBSD 5 and 6 it seems to work OK.
 
-PORTREVISION=	2
+PORTNAME=	dillo
+PORTVERSION=	${DILLOVERSION}.${I18NVERSION}
+CATEGORIES=	www ipv6
+MASTER_SITES=	http://teki.jpn.ph/pc/software/
 PKGNAMESUFFIX=	-i18n
-
-PATCH_SITES=	http://teki.jpn.ph/pc/software/
-PATCHFILES=	dillo-0.8.5-i18n-misc-20060105.diff.bz2
-PATCH_DIST_STRIP=	-p1
+DISTNAME=	${PORTNAME}-${DILLOVERSION}-i18n-misc-${I18NVERSION}
 
 MAINTAINER=	tmseck@netcologne.de
 COMMENT=	A fast, small graphical Web browser with support for i18n
 
-MD5_FILE=	${.CURDIR}/distinfo
+RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+		png.5:${PORTSDIR}/graphics/png
 
-MASTERDIR=	${.CURDIR}/../../www/dillo
-PKGDIR=		${.CURDIR}
-PLIST_SUB=	NLS=""
+DILLOVERSION=	0.8.6
+I18NVERSION=	20060516
+
+USE_BZIP2=	yes
+USE_GNOME=	gnometarget gtk12
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
+		LDFLAGS="${LDFLAGS}"
+CONFIGURE_ARGS=	--enable-cookies --enable-ipv6 --enable-threaded-dns \
+		--disable-dlgui \
+		--libdir=${PREFIX}/libexec
 
 CONFLICTS=	dillo-[0-9].[0-9].[0-9]*
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
 PLIST_SUB=	NLS=""
+CONFIGURE_ARGS+=	--enable-nls
 .else
-# Unfortunately, this option does not work yet; the dpi plugins do not
-# build without NLS support anymore.
-# I leave this option in in case anyone really wants to fix this in the
-# i18n patch.
 PLIST_SUB=	NLS="@comment "
 CONFIGURE_ARGS+=	--disable-nls
-IGNORE=		does not build without NLS support
 .endif
 
 .if defined(WITH_DILLO_SSL)
-IGNORE=		does not build with SSL support
+# Note: the configure script will deactivate SSL support on 4.x systems.
+# This might get fixed someday so I activate this option unconditionally.
+CONFIGURE_ARGS+=	--enable-ssl
+USE_OPENSSL=	yes
+.else
+CONFIGURE_ARGS+=	--disable-ssl
 .endif
 
 .if defined(WITH_DILLO_META-REFRESH)
@@ -70,7 +83,18 @@ CONFIGURE_ARGS+=	--enable-anti-alias
 CONFIGURE_ARGS+=	--disable-anti-alias
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|g ; \
+		 s|-D_THREAD_SAFE|${PTHREAD_CFLAGS}|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|dillorc|dillorc.sample|g' ${WRKSRC}/Makefile.in
+	@${CP} ${WRKSRC}/dillorc ${WRKSRC}/dillorc.sample
+
 pre-configure:
+.if !defined(WITH_DILLO_SSL)
+	@${ECHO_CMD} ""
+	@${ECHO_CMD} "   Set WITH_DILLO_SSL=yes in your make environment or on the"
+	@${ECHO_CMD} "   commandline to enable experimental SSL support."
+.endif
 .if !defined(WITH_DILLO_META-REFRESH)
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "   Set WITH_DILLO_META-REFRESH=yes in your make environment or on the"
@@ -88,4 +112,4 @@ pre-configure:
 .endif
 	@${ECHO_CMD} ""
 
-.include "${MASTERDIR}/Makefile"
+.include <bsd.port.mk>
