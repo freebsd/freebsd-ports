@@ -1,7 +1,7 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4
 #
-# $FreeBSD: /tmp/pcvs/ports/Mk/bsd.linux-rpm.mk,v 1.5 2006-05-16 18:19:35 netchild Exp $
+# $FreeBSD: /tmp/pcvs/ports/Mk/bsd.linux-rpm.mk,v 1.6 2006-05-20 15:54:24 netchild Exp $
 #
 
 # Variables:
@@ -111,9 +111,11 @@ _LINUX_BASE_SUFFIX=		8
 _LINUX_BASE_SUFFIX=		debian
 .    elif ${USE_LINUX} == "fc3"
 _LINUX_BASE_SUFFIX=		fc3
+.    elif ${USE_LINUX} == "fc4"
+_LINUX_BASE_SUFFIX=		fc4
 .    else
 # other linux_base ports do not provide a pkg-plist file
-IGNORE=					uses AUTOMATIC_PLIST with an unsupported USE_LINUX, \"${USE_LINUX}\". Supported values are \"yes\", \"8\", \"debian\" and \"fc3\"
+IGNORE=					uses AUTOMATIC_PLIST with an unsupported USE_LINUX, \"${USE_LINUX}\". Supported values are \"yes\", \"8\", \"debian\", \"fc3\" and \"fc4\"
 .    endif
 
 PLIST?=					${WRKDIR}/.PLIST.linux-rpm
