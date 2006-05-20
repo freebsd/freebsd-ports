@@ -25,7 +25,7 @@ REPLACE_ARGS=	-e 's=/usr/local/openldap-REL_ENG_2_1/lib=${LOCALBASE}/lib=' \
 .if defined(WITH_SASL)
 WANT_OPENLDAP_SASL=	yes
 REPLACE_ARGS+=	-e 's=/usr/local/cyrus-sasl/lib=${LOCALBASE}/lib/sasl2=' \
-		-e 's=/usr/local/cyrus-sasl/include=${LOCALBASE}/include/sasl2='
+		-e 's=/usr/local/cyrus-sasl/include=${LOCALBASE}/include/sasl='
 CONFLICTS+=	openldap2[23]-client-2.*
 .else
 REPLACE_ARGS+=	-e 's=ldap_r lber sasl2 ssl crypto=ldap_r lber ssl crypto='
