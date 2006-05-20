@@ -1,0 +1,10 @@
+--- dpi/https.c.orig	Sat Mar 25 16:46:48 2006
++++ dpi/https.c	Sat Mar 25 16:47:38 2006
+@@ -62,7 +62,6 @@
+ #include "dpiutil.h"
+ 
+ #define ENABLE_SSL
+-#undef ENABLE_SSL
+ #ifdef ENABLE_SSL
+ 
+ #include <openssl/ssl.h>
