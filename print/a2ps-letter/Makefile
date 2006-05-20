@@ -58,7 +58,7 @@ PLIST_SUB+=	WITHEMACS="@comment "
 post-install:
 	${STRIP_CMD} ${PREFIX}/bin/a2ps
 .if defined(WITH_EMACS)
-	${MKDIR} -p ${PREFIX}/lib/xemacs/site-lisp
+	${MKDIR} ${PREFIX}/lib/xemacs/site-lisp
 	${LN} -sf ${PREFIX}/share/emacs/site-lisp/a2ps-print.el \
 		  ${PREFIX}/lib/xemacs/site-lisp/a2ps-print.el
 	${LN} -sf ${PREFIX}/share/emacs/site-lisp/a2ps.el \
