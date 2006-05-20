@@ -1,0 +1,7 @@
+XML::Xerces is the Perl API to the Apache project's Xerces XML 
+parser. It is implemented using the Xerces C++ API, and it provides 
+access to most of the C++ API from Perl. 
+
+WWW: http://xerces.apache.org/xerces-p/
+
+-- Ken Menzel <kenm@icarz.com>
