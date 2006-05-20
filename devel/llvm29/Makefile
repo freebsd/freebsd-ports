@@ -17,6 +17,7 @@ GNU_CONFIGURE=	yes
 USE_BISON=	yes
 USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
+USE_GCC=	3.3+
 MAKE_ENV=	ENABLE_OPTIMIZED=1 # strips binaries
 
 WRKSRC=		${WRKDIR}/llvm
