@@ -28,6 +28,12 @@ MAN1=		mecab.1
 
 DOCS=		AUTHORS README doc/*.html
 
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500800
+IGNORE=		requires perl 5.8.x or later.  Install lang/perl5.8 and try again
+.endif
+
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
@@ -41,4 +47,4 @@ post-patch:
 	${REINPLACE_CMD} -e 's/-lpthread/${PTHREAD_LIBS}/g' \
 			 -e 's/-O3/${CFLAGS}/' ${WRKSRC}/${CONFIGURE_SCRIPT}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
