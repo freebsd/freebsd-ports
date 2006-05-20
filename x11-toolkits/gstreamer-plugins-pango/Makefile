@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-CATEGORIES=	x11-toolkits
 PORTREVISION=	1
+CATEGORIES=	x11-toolkits
 
 COMMENT=	Gstreamer pango textoverlay plugin
 

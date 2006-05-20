@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-CATEGORIES=	audio
 PORTREVISION=	2
+CATEGORIES=	audio
 
 COMMENT=	Gstreamer icecast plugin
 

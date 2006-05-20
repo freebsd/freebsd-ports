@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-CATEGORIES=	audio
 PORTREVISION=	3
+CATEGORIES=	audio
 
 COMMENT=	Gstreamer musepack mpc encoder/decoder plugin
 

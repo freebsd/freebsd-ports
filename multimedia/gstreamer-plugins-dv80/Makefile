@@ -6,8 +6,8 @@
 #    $MCom: ports/multimedia/gstreamer-plugins-dv80/Makefile,v 1.2 2006/01/25 02:18:17 ahze Exp $
 #
 
-CATEGORIES=	multimedia
 PORTREVISION=	2
+CATEGORIES=	multimedia
 
 COMMENT=	Gstreamer dv plugin
 

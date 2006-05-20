@@ -6,8 +6,8 @@
 #    $MCom: ports/graphics/gstreamer-plugins-libpng80/Makefile,v 1.2 2006/02/24 18:50:34 marcus Exp $
 #
 
-CATEGORIES=	graphics
 PORTREVISION=	5
+CATEGORIES=	graphics
 
 COMMENT=	Gstreamer png plugin
 

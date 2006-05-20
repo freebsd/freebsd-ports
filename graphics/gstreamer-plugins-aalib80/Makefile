@@ -6,8 +6,8 @@
 #    $MCom: ports/graphics/gstreamer-plugins-aalib80/Makefile,v 1.2 2006/02/24 18:50:32 marcus Exp $
 #
 
-CATEGORIES=	graphics
 PORTREVISION=	2
+CATEGORIES=	graphics
 
 COMMENT=	Gstreamer ascii art plugin
 

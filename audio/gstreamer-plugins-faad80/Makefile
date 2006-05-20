@@ -6,8 +6,8 @@
 #    $MCom: ports/audio/gstreamer-plugins-faad80/Makefile,v 1.2 2006/02/23 18:05:31 marcus Exp $
 #
 
-CATEGORIES=	audio
 PORTREVISION=	2
+CATEGORIES=	audio
 
 COMMENT=	Gstreamer MPEG-2 and MPEG-4 ACC decoder plugin
 

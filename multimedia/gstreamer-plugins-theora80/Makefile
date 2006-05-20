@@ -6,8 +6,8 @@
 #    $MCom: ports/multimedia/gstreamer-plugins-theora80/Makefile,v 1.1 2006/01/20 02:56:07 ahze Exp $
 #
 
-CATEGORIES=	multimedia
 PORTREVISION=	2
+CATEGORIES=	multimedia
 
 COMMENT=	Gstreamer theora plugin
 

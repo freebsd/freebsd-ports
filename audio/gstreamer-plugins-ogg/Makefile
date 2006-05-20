@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-CATEGORIES=	audio
 PORTREVISION=	1
+CATEGORIES=	audio
 
 COMMENT=	Gstreamer Ogg bitstream plugin
 

@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-CATEGORIES=	multimedia
 PORTREVISION=	0
+CATEGORIES=	multimedia
 
 COMMENT=	Gstreamer dvd plugin set
 

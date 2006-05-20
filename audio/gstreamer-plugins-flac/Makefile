@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-CATEGORIES=	audio
 PORTREVISION=	1
+CATEGORIES=	audio
 
 COMMENT=	Gstreamer free lossless audio encoder/decoder plugin
 

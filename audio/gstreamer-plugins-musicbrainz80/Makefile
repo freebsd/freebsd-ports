@@ -6,8 +6,8 @@
 #    $MCom: ports/audio/gstreamer-plugins-musicbrainz80/Makefile,v 1.2 2006/02/23 18:05:33 marcus Exp $
 #
 
-CATEGORIES=	audio
 PORTREVISION=	2
+CATEGORIES=	audio
 
 COMMENT=	Gstreamer CD index/audio metadata plugin
 

@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-CATEGORIES=	audio
 PORTREVISION=	0
+CATEGORIES=	audio
 
 COMMENT=	Gstreamer CD index/audio metadata plugin
 

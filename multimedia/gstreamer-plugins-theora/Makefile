@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-CATEGORIES=	multimedia
 PORTREVISION=	2
+CATEGORIES=	multimedia
 
 COMMENT=	Gstreamer theora plugin
 

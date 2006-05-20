@@ -6,8 +6,8 @@
 #    $MCom: ports/audio/gstreamer-plugins-wavpack80/Makefile,v 1.2 2006/02/23 18:05:35 marcus Exp $
 #
 
-CATEGORIES=	audio
 PORTREVISION=	2
+CATEGORIES=	audio
 
 GST_PLUGIN=	wavpack
 

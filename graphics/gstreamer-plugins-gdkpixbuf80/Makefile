@@ -6,8 +6,8 @@
 #    $MCom: ports/graphics/gstreamer-plugins-gdkpixbuf80/Makefile,v 1.2 2006/02/24 18:50:33 marcus Exp $
 #
 
-CATEGORIES=	graphics
 PORTREVISION=	2
+CATEGORIES=	graphics
 
 COMMENT=	Gstreamer image decoder plugin
 

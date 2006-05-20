@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-CATEGORIES=	devel
 PORTREVISION=	1
+CATEGORIES=	devel
 
 COMMENT=	Gstreamer SDL plugin
 

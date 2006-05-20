@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-CATEGORIES=	graphics
 PORTREVISION=	1
+CATEGORIES=	graphics
 
 COMMENT=	Gstreamer jpeg encoder/decoder plugin
 
