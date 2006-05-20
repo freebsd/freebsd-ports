@@ -80,6 +80,7 @@
     SUBDIR += opendchub
     SUBDIR += peercast
     SUBDIR += phex
+    SUBDIR += py-vertex
     SUBDIR += pyslsk
     SUBDIR += py-bittornado
     SUBDIR += py-bittornado-core
