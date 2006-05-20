@@ -10,10 +10,10 @@ PORTVERSION=	${CONSOLE_LICQ_VER}
 PORTREVISION=	4
 CATEGORIES=	net-im
 
-LIB_DEPENDS=	cdk.5:${PORTSDIR}/devel/cdk
-
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Ncurses-based console plugin for Licq
+
+LIB_DEPENDS=	cdk.5:${PORTSDIR}/devel/cdk
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
