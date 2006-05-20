@@ -1,15 +1,15 @@
---- obj/Makefile.in.orig	Fri Oct 15 19:55:39 2004
-+++ obj/Makefile.in	Fri Oct 15 19:55:53 2004
-@@ -247,10 +247,10 @@
- 	(cd ${DESTDIR}$(PREFIX)/lib; rm -f ${LINK_DEPDOM}.a libxercesdepdom.dll.a; ln -s ${LIBDEPDOM}${SO_TARGET_VERSION}${SHLIBSUFFIX}.a ${LINK_NAME}.a; ln -s ${LIBDEPDOM}${SO_TARGET_VERSION}${SHLIBSUFFIX}.a libxercesdepdom.dll.a)
+--- obj/Makefile.in.orig	Wed Sep  7 11:56:58 2005
++++ obj/Makefile.in	Wed Mar 29 11:50:22 2006
+@@ -235,10 +235,10 @@
+ 	(cd ${DESTDIR}$(PREFIX)/lib; rm -f ${LINK_DEPDOM}.a libxercesdepdom.dll.a; ln -s ${LIBDEPDOM}${SO_TARGET_VERSION}${SHLIBSUFFIX}.a ${LINK_DEPDOM}.a; rm -f libxercesdepdom.dll.a; ln -s ${LIBDEPDOM}${SO_TARGET_VERSION}${SHLIBSUFFIX}.a libxercesdepdom.dll.a)
  else
  	$(CP) ${FQ_REAL_NAME} ${DESTDIR}$(PREFIX)/lib
--	(cd ${DESTDIR}$(PREFIX)/lib; ln -s ${REAL_NAME} ${SO_NAME}; ln -s ${REAL_NAME} ${LINK_NAME})
-+	(cd ${DESTDIR}$(PREFIX)/lib; ln -sf ${REAL_NAME} ${SO_NAME}; ln -sf ${REAL_NAME} ${LINK_NAME})
+-	(cd ${DESTDIR}$(PREFIX)/lib; rm -f ${SO_NAME}; ln -s ${REAL_NAME} ${SO_NAME}; rm -f ${LINK_NAME}; ln -s ${REAL_NAME} ${LINK_NAME})
++	(cd ${DESTDIR}$(PREFIX)/lib; rm -f ${SO_NAME}; ln -sf ${REAL_NAME} ${SO_NAME}; rm -f ${LINK_NAME}; ln -sf ${REAL_NAME} ${LINK_NAME})
  	
  	$(CP) ${FQ_REAL_DEPDOM} ${DESTDIR}$(PREFIX)/lib
--	(cd ${DESTDIR}$(PREFIX)/lib; ln -s ${REAL_DEPDOM} ${SO_DEPDOM}; ln -s ${REAL_DEPDOM} ${LINK_DEPDOM})	
-+	(cd ${DESTDIR}$(PREFIX)/lib; ln -sf ${REAL_DEPDOM} ${SO_DEPDOM}; ln -sf ${REAL_DEPDOM} ${LINK_DEPDOM})	
+-	(cd ${DESTDIR}$(PREFIX)/lib; rm -f ${SO_DEPDOM}; ln -s ${REAL_DEPDOM} ${SO_DEPDOM}; rm -f ${LINK_DEPDOM}; ln -s ${REAL_DEPDOM} ${LINK_DEPDOM})	
++	(cd ${DESTDIR}$(PREFIX)/lib; rm -f ${SO_DEPDOM}; ln -sf ${REAL_DEPDOM} ${SO_DEPDOM}; rm -f ${LINK_DEPDOM}; ln -sf ${REAL_DEPDOM} ${LINK_DEPDOM})	
  endif
  ifeq (${PLATFORM},OS390)
  	$(CP) ${LIBNAME}${VER}${OS390SIDEDECK} ${DESTDIR}$(PREFIX)/lib
