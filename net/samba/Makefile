@@ -29,6 +29,9 @@ PATCHFILES+=	samba-2.2.9-browsing-hacks.diff
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A free SMB and CIFS client and server for UNIX
 
+FORBIDDEN=	http://vuxml.FreeBSD.org/3b3676be-52e1-11d9-a9e7-0001020eed82.html
+EXPIRATION_DATE=2006-08-20
+
 CONFLICTS=	ja-samba-2.* samba-3.* sharity-light-1.*
 USE_SUBMAKE=	YES
 USE_GMAKE=	YES
