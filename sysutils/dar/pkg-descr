@@ -1,9 +1,10 @@
-DAR is a command-line backup tool, that uses compression,
-makes differential or full backups, which can be split over
-several files or disks. Dar saves *all* UNIX inode types,
-hard links, as well as Extended Attributes.
-And many other features ...
+dar is a shell command that backs up directory trees and files. It has been
+tested under Linux, Windows, Solaris, FreeBSD, NetBSD, MacOS X and several
+other systems, it is released under the GNU General Public License (GPL).
+Since version 2.0.0 an Application Interface (API) is available, opening the
+way for external/independent Graphical User Interfaces (GUIs) like kdar.
+This API relies on the libdar library, which is the core part of DAR
+programs; as such, the API is released under the GPL. Consequently, to use
+the API, your program must be released under the GPL as well.
 
 WWW: http://dar.linux.free.fr/
-
-Author: Denis Corbin <edrusb@users.sourceforge.net>

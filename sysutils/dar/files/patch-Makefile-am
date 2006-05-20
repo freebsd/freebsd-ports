@@ -1,0 +1,8 @@
+--- Makefile.am-orig	Fri Apr 21 13:58:39 2006
++++ Makefile.am	Fri Apr 21 13:58:48 2006
+@@ -1,4 +1,4 @@
+-SUBDIRS = m4 man src doc misc po
++SUBDIRS = m4 man src misc 
+ dist_noinst_DATA = INSTALL README THANKS TODO AUTHORS COPYING ChangeLog NEWS ABOUT-NLS
+ ACLOCAL_AMFLAGS = -I m4
+ 

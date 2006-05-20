@@ -1,0 +1,24 @@
+diff -ru doc/man-orig/Makefile.am doc/man/Makefile.am
+--- doc/man-orig/Makefile.am	Wed Apr 19 15:57:01 2006
++++ doc/man/Makefile.am	Wed Apr 19 15:54:23 2006
+@@ -2,7 +2,7 @@
+ 
+ if USE_GROFF
+ 
+-TARGET=dar.html dar_slave.html dar_xform.html dar_manager.html dar_cp.html
++TARGET=#dar.html dar_slave.html dar_xform.html dar_manager.html dar_cp.html
+ 
+ %.1:
+ 	cp ../../man/$@ .
+diff -ru doc/man-orig/Makefile.in doc/man/Makefile.in
+--- doc/man-orig/Makefile.in	Wed Apr 19 15:57:01 2006
++++ doc/man/Makefile.in	Wed Apr 19 15:54:42 2006
+@@ -190,7 +190,7 @@
+ tmp = @tmp@
+ upx = @upx@
+ dist_noinst_DATA = index.html
+-@USE_GROFF_TRUE@TARGET = dar.html dar_slave.html dar_xform.html dar_manager.html dar_cp.html
++@USE_GROFF_TRUE@TARGET = #dar.html dar_slave.html dar_xform.html dar_manager.html dar_cp.html
+ all: all-am
+ 
+ .SUFFIXES:
