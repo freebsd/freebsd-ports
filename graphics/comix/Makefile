@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	comix
-PORTVERSION=	3.1
+PORTVERSION=	3.1.2
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -54,6 +54,7 @@ do-install:
 	@${MKDIR} ${PREFIX}/share/mime/packages
 	@(cd ${WRKSRC} ; \
 		${PYTHON_CMD} install.py install --installdir ${PREFIX})
+	@${MKDIR} ${PREFIX}/etc/gconf/schemas
 	@${INSTALL_DATA} ${WRKSRC}/mime/comicbook.schemas \
 		${PREFIX}/etc/gconf/schemas/
 .else
