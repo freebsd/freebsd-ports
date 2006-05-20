@@ -1,0 +1,50 @@
+%%XPI_XPIDIR%%/chrome/forecastfox.jar
+%%XPI_XPIDIR%%/components/ffDisk.js
+%%XPI_XPIDIR%%/components/ffDisk.xpt
+%%XPI_XPIDIR%%/components/ffError.js
+%%XPI_XPIDIR%%/components/ffError.xpt
+%%XPI_XPIDIR%%/components/ffIconManager.js
+%%XPI_XPIDIR%%/components/ffIconManager.xpt
+%%XPI_XPIDIR%%/components/ffIconPack.js
+%%XPI_XPIDIR%%/components/ffIconPack.xpt
+%%XPI_XPIDIR%%/components/ffParser.js
+%%XPI_XPIDIR%%/components/ffParser.xpt
+%%XPI_XPIDIR%%/components/ffPing.js
+%%XPI_XPIDIR%%/components/ffPing.xpt
+%%XPI_XPIDIR%%/components/ffProfiles.js
+%%XPI_XPIDIR%%/components/ffProfiles.xpt
+%%XPI_XPIDIR%%/components/ffResolver.js
+%%XPI_XPIDIR%%/components/ffWeb.js
+%%XPI_XPIDIR%%/components/ffWeb.xpt
+%%XPI_XPIDIR%%/components/nsForecastfox.js
+%%XPI_XPIDIR%%/components/nsForecastfox.xpt
+%%XPI_XPIDIR%%/defaults/.autoreg
+%%XPI_XPIDIR%%/defaults/icons/default.jar
+%%XPI_XPIDIR%%/defaults/parser.xml
+%%XPI_XPIDIR%%/defaults/preferences/forecastfox.js
+%%XPI_XPIDIR%%/defaults/transforms/profiles-0.4.8.xsl
+%%XPI_XPIDIR%%/defaults/transforms/profiles-0.4.9.xsl
+%%XPI_XPIDIR%%/defaults/transforms/profiles-0.5.1.xsl
+%%XPI_XPIDIR%%/defaults/transforms/profiles-0.5.8.xsl
+%%XPI_XPIDIR%%/defaults/transforms/profiles-0.5.9.xsl
+%%XPI_XPIDIR%%/defaults/transforms/profiles-0.5.xsl
+%%XPI_XPIDIR%%/defaults/transforms/profiles-0.7.1.xsl
+%%XPI_XPIDIR%%/defaults/transforms/profiles-0.7.5.xsl
+%%XPI_XPIDIR%%/defaults/transforms/profiles-0.7.6.xsl
+%%XPI_XPIDIR%%/defaults/transforms/profiles-0.7.7.xsl
+%%XPI_XPIDIR%%/defaults/transforms/profiles-0.7.8.xsl
+%%XPI_XPIDIR%%/defaults/transforms/profiles-0.7.9.xsl
+%%XPI_XPIDIR%%/defaults/transforms/profiles-0.7.xsl
+%%XPI_XPIDIR%%/defaults/transforms/profiles-0.8.1.xsl
+%%XPI_XPIDIR%%/defaults/transforms/profiles-0.8.2.xsl
+%%XPI_XPIDIR%%/defaults/transforms/profiles-0.8.5.xsl
+%%XPI_XPIDIR%%/defaults/transforms/profiles-0.8.xsl
+%%XPI_XPIDIR%%/install.js
+%%XPI_XPIDIR%%/install.rdf
+%%XPI_XPIDIR%%/chrome.manifest
+@dirrm %%XPI_XPIDIR%%/chrome
+@dirrm %%XPI_XPIDIR%%/components
+@dirrm %%XPI_XPIDIR%%/defaults/icons
+@dirrm %%XPI_XPIDIR%%/defaults/preferences
+@dirrm %%XPI_XPIDIR%%/defaults/transforms
+@dirrm %%XPI_XPIDIR%%/defaults
