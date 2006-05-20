@@ -1,6 +1,6 @@
---- data/Makefile.in.orig	Mon Jun 27 20:57:15 2005
-+++ data/Makefile.in	Mon Nov 28 23:59:39 2005
-@@ -57,7 +57,7 @@
+--- data/Makefile.in.orig	Wed Jul 20 19:41:54 2005
++++ data/Makefile.in	Sun May 21 01:47:29 2006
+@@ -55,7 +55,7 @@
  pkgdataDATA_INSTALL = $(INSTALL_DATA)
  DATA = $(pkgdata_DATA)
  DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
@@ -9,12 +9,3 @@
  ACLOCAL = @ACLOCAL@
  AMDEP_FALSE = @AMDEP_FALSE@
  AMDEP_TRUE = @AMDEP_TRUE@
-@@ -135,7 +135,7 @@
- sharedstatedir = @sharedstatedir@
- sysconfdir = @sysconfdir@
- target_alias = @target_alias@
--pkgdata_DATA = CMap config
-+pkgdata_DATA = config
- EXTRA_DIST = $(pkgdata_DATA)
- all: all-am
- 
