@@ -6,8 +6,8 @@
 #    $MCom: ports/devel/gstreamer-plugins-sdl80/Makefile,v 1.2 2006/02/24 18:24:52 marcus Exp $
 #
 
-CATEGORIES=	devel
 PORTREVISION=	2
+CATEGORIES=	devel
 
 COMMENT=	Gstreamer SDL plugin
 

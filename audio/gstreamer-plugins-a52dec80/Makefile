@@ -6,8 +6,8 @@
 #    $MCom: ports/audio/gstreamer-plugins-a52dec80/Makefile,v 1.2 2006/02/23 18:05:29 marcus Exp $
 #
 
-CATEGORIES=	audio
 PORTREVISION=	2
+CATEGORIES=	audio
 
 COMMENT=	Gstreamer ATSC A/52 stream aka AC-3 (dvd audio) plugin
 

@@ -6,8 +6,8 @@
 #    $MCom: ports/audio/gstreamer-plugins-musepack80/Makefile,v 1.1 2006/01/20 02:55:53 ahze Exp $
 #
 
-CATEGORIES=	audio
 PORTREVISION=	2
+CATEGORIES=	audio
 
 COMMENT=	Gstreamer musepack mpc encoder/decoder plugin
 

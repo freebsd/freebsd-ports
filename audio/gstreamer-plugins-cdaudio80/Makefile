@@ -6,8 +6,8 @@
 #    $MCom: ports/audio/gstreamer-plugins-cdaudio80/Makefile,v 1.2 2006/02/23 18:05:30 marcus Exp $
 #
 
-CATEGORIES=	audio
 PORTREVISION=	2
+CATEGORIES=	audio
 
 COMMENT=	Gstreamer audio cd playing plugin
 

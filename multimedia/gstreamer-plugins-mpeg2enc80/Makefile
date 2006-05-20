@@ -6,8 +6,8 @@
 #    $MCom: ports/multimedia/gstreamer-plugins-mpeg2enc80/Makefile,v 1.1 2006/01/20 02:56:06 ahze Exp $
 #
 
-CATEGORIES=	multimedia
 PORTREVISION=	2
+CATEGORIES=	multimedia
 
 COMMENT=	Gstreamer mpeg encoder plugin
 

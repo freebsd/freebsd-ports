@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-CATEGORIES=	graphics
 PORTREVISION=	1
+CATEGORIES=	graphics
 
 COMMENT=	Gstreamer png plugin
 

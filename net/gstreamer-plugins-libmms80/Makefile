@@ -6,8 +6,8 @@
 #    $MCom: ports/net/gstreamer-plugins-libmms80/Makefile,v 1.2 2006/02/25 00:12:31 marcus Exp $
 #
 
-CATEGORIES=	net
 PORTREVISION=	2
+CATEGORIES=	net
 
 COMMENT=	Gstreamer mms:// and mmsh:// plugin
 

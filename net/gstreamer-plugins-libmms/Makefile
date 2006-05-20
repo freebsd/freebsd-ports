@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-CATEGORIES=	net
 PORTREVISION=	1
+CATEGORIES=	net
 
 COMMENT=	Gstreamer mms:// and mmsh:// plugin
 

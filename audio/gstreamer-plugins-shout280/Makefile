@@ -6,8 +6,8 @@
 #    $MCom: ports/audio/gstreamer-plugins-shout280/Makefile,v 1.1 2006/01/20 02:55:54 ahze Exp $
 #
 
-CATEGORIES=	audio
 PORTREVISION=	2
+CATEGORIES=	audio
 
 COMMENT=	Gstreamer icecast plugin
 

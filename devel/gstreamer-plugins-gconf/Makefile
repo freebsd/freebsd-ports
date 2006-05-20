@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-CATEGORIES=	devel
 PORTREVISION=	3
+CATEGORIES=	devel
 
 COMMENT=	Gstreamer gconf plugin
 

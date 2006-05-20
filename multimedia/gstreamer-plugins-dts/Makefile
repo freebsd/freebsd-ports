@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-CATEGORIES=	multimedia
 PORTREVISION=	1
+CATEGORIES=	multimedia
 
 COMMENT=	Gstreamer dts plugin
 
