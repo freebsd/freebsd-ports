@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	komparator
-PORTVERSION=	0.3
+PORTVERSION=	0.4
 CATEGORIES=	sysutils kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,13 +17,14 @@ USE_KDELIBS_VER=3
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_BZIP2=	yes
+USE_GETTEXT=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/HTML/en/komparator
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-BROKEN=		"Does not build on 4.x"
+BROKEN=		Does not build on 4.x
 .endif
 
 post-patch:
