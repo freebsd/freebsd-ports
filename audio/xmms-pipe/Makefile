@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	xmms-pipe
-PORTVERSION=	0.5.4
-PORTREVISION=	2
+PORTVERSION=	0.5.5
 CATEGORIES=	audio
-MASTER_SITES=	http://rooster.stanford.edu/~ben/xmmspipe/
+MASTER_SITES=	http://rooster.stanford.edu/~ben/xmmspipe/files/
 DISTNAME=	xmmspipe-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
