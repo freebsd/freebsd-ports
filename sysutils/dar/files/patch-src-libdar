@@ -1,0 +1,35 @@
+diff -ur src-orig/libdar/Makefile.am src/libdar/Makefile.am
+--- src-orig/libdar/Makefile.am	Thu Apr 20 11:41:47 2006
++++ src/libdar/Makefile.am	Thu Apr 20 11:42:57 2006
+@@ -56,11 +56,11 @@
+ 	grep DAR $(DESTDIR)$(pkgincludedir)/config.h | grep -v "#undef" >  $(DESTDIR)$(pkgincludedir)/config.h.tmp
+ 	mv  $(DESTDIR)$(pkgincludedir)/config.h.tmp  $(DESTDIR)$(pkgincludedir)/config.h
+ 	chmod 0644 $(DESTDIR)$(pkgincludedir)/*
+-	$(INSTALL) -d $(DESTDIR)$(libdir)/pkgconfig
+-	$(INSTALL) -m 0644 libdar.pc $(DESTDIR)$(libdir)/pkgconfig/libdar$(LIBDAR_SUFFIX).pc
++	$(INSTALL) -d $(DESTDIR)$(exec_prefix)/libdata/pkgconfig
++	$(INSTALL) -m 0644 libdar.pc $(DESTDIR)$(exec_prefix)/libdata/pkgconfig/libdar$(LIBDAR_SUFFIX).pc
+ 
+ uninstall-local:
+-	rm -rf $(DESTDIR)$(pkgincludedir) $(DESTDIR)$(libdir)/pkgconfig/libdar$(LIBDAR_SUFFIX).pc
++	rm -rf $(DESTDIR)$(pkgincludedir) $(DESTDIR)$(exec_prefix)/libdata/pkgconfig/libdar$(LIBDAR_SUFFIX).pc
+ 
+ all-local : libdar.pc
+ 
+diff -ur src-orig/libdar/Makefile.in src/libdar/Makefile.in
+--- src-orig/libdar/Makefile.in	Thu Apr 20 11:41:47 2006
++++ src/libdar/Makefile.in	Thu Apr 20 11:43:34 2006
+@@ -642,11 +642,11 @@
+ 	grep DAR $(DESTDIR)$(pkgincludedir)/config.h | grep -v "#undef" >  $(DESTDIR)$(pkgincludedir)/config.h.tmp
+ 	mv  $(DESTDIR)$(pkgincludedir)/config.h.tmp  $(DESTDIR)$(pkgincludedir)/config.h
+ 	chmod 0644 $(DESTDIR)$(pkgincludedir)/*
+-	$(INSTALL) -d $(DESTDIR)$(libdir)/pkgconfig
+-	$(INSTALL) -m 0644 libdar.pc $(DESTDIR)$(libdir)/pkgconfig/libdar$(LIBDAR_SUFFIX).pc
++	$(INSTALL) -d $(DESTDIR)$(exec_prefix)/libdata/pkgconfig
++	$(INSTALL) -m 0644 libdar.pc $(DESTDIR)$(exec_prefix)/libdata/pkgconfig/libdar$(LIBDAR_SUFFIX).pc
+ 
+ uninstall-local:
+-	rm -rf $(DESTDIR)$(pkgincludedir) $(DESTDIR)$(libdir)/pkgconfig/libdar$(LIBDAR_SUFFIX).pc
++	rm -rf $(DESTDIR)$(pkgincludedir) $(DESTDIR)$(exec_prefix)/libdata/pkgconfig/libdar$(LIBDAR_SUFFIX).pc
+ 
+ all-local : libdar.pc

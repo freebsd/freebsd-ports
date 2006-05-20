@@ -1,0 +1,11 @@
+--- Makefile.in-orig	Fri Apr 21 13:46:43 2006
++++ Makefile.in	Fri Apr 21 13:46:50 2006
+@@ -214,7 +214,7 @@
+ target_alias = @target_alias@
+ tmp = @tmp@
+ upx = @upx@
+-SUBDIRS = m4 man src doc misc po
++SUBDIRS = m4 man src misc 
+ dist_noinst_DATA = INSTALL README THANKS TODO AUTHORS COPYING ChangeLog NEWS ABOUT-NLS
+ ACLOCAL_AMFLAGS = -I m4
+ EXTRA_DIST = config.rpath
