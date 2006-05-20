@@ -1,0 +1,15 @@
+#!/bin/sh
+# $FreeBSD$
+
+# Check if Tk module installed or not.
+%%PREFIX%%/bin/perl -MTk -e '' 2>/dev/null
+
+if [ $? -ne 0 ]; then
+	echo "You do not have Perl module Tk installed.  To use $0,"
+	echo "install the p5-Tk package (x11-toolkits/p5-Tk)"
+	echo "(this package requires Perl 5.8 or higher)."
+	echo "Then, try it again."
+	exit 1
+fi
+
+exec %%PREFIX%%/bin/texdoctk.real "$@"
