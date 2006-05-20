@@ -34,7 +34,13 @@ CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS} -I ${PREFIX}/include -I ${TCL_INCLUDEDIR}"
 MAKE_ENV+=	CPPFLAGS="${CPPFLAGS} -I ${PREFIX}/include -I ${TCL_INCLUDEDIR}" \
 		LDFLAGS="${LDFLAGS} -L ${PREFIX}/lib"
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		Does not compile on FreeBSD 4.X
+.endif
+
 post-extract:
 	${MV} ${WRKSRC}/doc/zlib.texi ${WRKSRC}/doc/${PORTNAME}-zlib.texi
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
