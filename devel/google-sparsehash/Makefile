@@ -18,6 +18,8 @@ COMMENT=	Google's hashtable implementations optimized for space or speed
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
+.include <bsd.port.pre.mk>
+
 .if ${OSVERSION} < 500000
 # /usr/include/g++/stl_algobase.h:139: template instantiation depth exceeds maximum of 17
 # /usr/include/g++/stl_algobase.h:139:  (use -ftemplate-depth-NN to increase the maximum)
@@ -38,4 +40,4 @@ post-patch:
 check: build
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
