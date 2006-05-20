@@ -7,7 +7,7 @@
 
 PORTNAME=	proftpd
 DISTVERSION=	1.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
 		ftp://ftp.fastorama.com/mirrors/ftp.proftpd.org/distrib/source/ \
@@ -41,6 +41,7 @@ CONFIGURE_ARGS=	--localstatedir=/var/run \
 
 OPTIONS=	IPV6 "Use IPv6" off \
 		LDAP "Use LDAP" off \
+		LDAP_TLS "Use LDAP TLS (Requires LDAP)" off\
 		MYSQL "Use MySQL" off \
 		POSTGRESQL "Use Postgres" off \
 		OPENSSL "Include mod_tls" off \
@@ -52,23 +53,29 @@ OPTIONS=	IPV6 "Use IPv6" off \
 		WRAP "Include mod_wrap" on \
 		RADIUS "Include mod_radius" off
 
-.include <bsd.port.pre.mk>
-
 MODULES?=
 
-.if defined(WITH_RATIO)
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+.if exists (${LOCALBASE}/include/getopt.h)
+BROKEN=	Does not build when libgnugetopt is installed
+.endif
+.endif
+
+.if !defined(WITHOUT_RATIO)
 MODULES:=${MODULES}:mod_ratio
 .endif
 
-.if defined(WITH_README)
+.if !defined(WITHOUT_README)
 MODULES:=${MODULES}:mod_readme
 .endif
 
-.if defined(WITH_REWRITE)
+.if !defined(WITHOUT_REWRITE)
 MODULES:=${MODULES}:mod_rewrite
 .endif
 
-.if defined(WITH_WRAP)
+.if !defined(WITHOUT_WRAP)
 MODULES:=${MODULES}:mod_wrap
 .endif
 
@@ -88,7 +95,7 @@ CONFIGURE_ARGS+=	--disable-auth-pam
 CONFIGURE_ARGS+=	--enable-ipv6
 .endif
 
-.if defined(WITHOUT_IPV6)
+.if !defined(WITH_IPV6)
 CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
@@ -125,6 +132,9 @@ USE_OPENSSL=	yes
 .include <${PORTSDIR}/Mk/bsd.openssl.mk>
 PROFTPD_LIBS+=	-lssl -lcrypto -L${LOCALBASE}/lib
 MODULES:=${MODULES}:mod_tls
+.if defined(WITH_LDAP_TLS)
+EXTRA_PATCHES=${FILESDIR}/extra_patch-ldap-tls-mod_ldap.c
+.endif
 .endif
 
 .if defined(WITH_CTRLS)
@@ -146,7 +156,7 @@ MODULES:=${MODULES}:mod_quotatab_sql
 .endif
 
 # mod_ifsession should be the last item in the modules list
-.if defined(WITH_IFSESSION)
+.if !defined(WITHOUT_IFSESSION)
 MODULES:=${MODULES}:mod_ifsession
 .endif
 
