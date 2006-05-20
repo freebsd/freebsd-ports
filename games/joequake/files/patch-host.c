@@ -1,6 +1,6 @@
---- host.c.orig	Wed Oct 26 10:21:22 2005
-+++ host.c	Mon Jan 16 18:45:46 2006
-@@ -969,6 +969,7 @@
+--- ./host.c.orig	Sun Apr 16 15:42:16 2006
++++ ./host.c	Sat May 20 10:00:24 2006
+@@ -964,6 +964,7 @@
  */
  void Host_Shutdown (void)
  {
@@ -8,7 +8,7 @@
  	int		i, j;
  	FILE		*cmdhist;
  	cmdhistory_t	cmdhistory;
-@@ -989,7 +990,8 @@
+@@ -984,7 +985,8 @@
  	Host_WriteConfiguration ();
  	IPLog_WriteLog ();
  

@@ -1,5 +1,5 @@
---- r_screen.c.orig	Sat Oct 15 11:42:06 2005
-+++ r_screen.c	Mon Jan 16 20:20:08 2006
+--- ./r_screen.c.orig	Sun Jan  8 18:35:00 2006
++++ ./r_screen.c	Sat May 20 10:00:24 2006
 @@ -556,8 +556,9 @@
  void SCR_ScreenShot_f (void)
  { 

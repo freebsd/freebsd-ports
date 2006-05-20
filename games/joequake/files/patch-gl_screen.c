@@ -1,6 +1,6 @@
---- gl_screen.c.orig	Wed Sep  7 11:10:32 2005
-+++ gl_screen.c	Mon Jan 16 20:20:05 2006
-@@ -734,8 +734,9 @@
+--- ./gl_screen.c.orig	Sun Apr 16 16:15:48 2006
++++ ./gl_screen.c	Sat May 20 10:00:24 2006
+@@ -728,8 +728,9 @@
  void SCR_ScreenShot_f (void) 
  {
  	int	i, success;
@@ -11,7 +11,7 @@
  	if (Cmd_Argc() == 2)
  	{
  		Q_strncpyz (name, Cmd_Argv(1), sizeof(name));
-@@ -753,7 +754,7 @@
+@@ -747,7 +748,7 @@
  		for (i=0 ; i<999 ; i++) 
  		{ 
  			Q_snprintfz (name, sizeof(name), "joequake%03i.%s", i, ext);
@@ -20,7 +20,7 @@
  				break;	// file doesn't exist
  		} 
  
-@@ -769,7 +770,7 @@
+@@ -763,7 +764,7 @@
  		return;
  	}
  

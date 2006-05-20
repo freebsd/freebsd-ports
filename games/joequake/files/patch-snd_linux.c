@@ -1,5 +1,5 @@
---- snd_linux.c.orig	Fri Sep 10 12:22:32 2004
-+++ snd_linux.c	Mon Dec  5 20:05:40 2005
+--- ./snd_linux.c.orig	Sun Jan  8 19:20:26 2006
++++ ./snd_linux.c	Sat May 20 10:00:24 2006
 @@ -25,7 +25,11 @@
  #include <sys/mman.h>
  #include <sys/shm.h>

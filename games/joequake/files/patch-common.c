@@ -1,6 +1,6 @@
---- common.c.orig	Sat Dec  3 19:45:26 2005
-+++ common.c	Tue Jan 31 15:03:09 2006
-@@ -1634,14 +1634,18 @@
+--- ./common.c.orig	Sun Jan  8 21:02:18 2006
++++ ./common.c	Sat May 20 10:00:24 2006
+@@ -1646,14 +1646,18 @@
  */
  void COM_InitFilesystem (void)
  {
@@ -20,20 +20,20 @@
  
  	for (i=0 ; i < strlen(com_basedir) ; i++)
  		if (com_basedir[i] == '\\')
-@@ -1653,6 +1657,12 @@
+@@ -1665,7 +1669,12 @@
  
  	// start up with GAMENAME by default (id1)
  	COM_AddGameDirectory (va("%s/"GAMENAME, com_basedir));
-+
-+	if (home != NULL) {
-+		Q_snprintfz(homepath, sizeof(homepath), "%s/.joequake/"GAMENAME, home);
-+		COM_AddGameDirectory(homepath);
-+	}
++	if (home != NULL)
++		COM_AddGameDirectory(va("%s/.joequake/"GAMENAME, home));
 +
  	COM_AddGameDirectory (va("%s/joequake", com_basedir));
++	if (home != NULL)
++		COM_AddGameDirectory(va("%s/.joequake/joequake", home));
  
  	if (COM_CheckParm("-rogue"))
-@@ -1675,4 +1685,11 @@
+ 		COM_AddGameDirectory (va("%s/rogue", com_basedir));
+@@ -1687,4 +1696,11 @@
  // Adds basedir/gamedir as an override game
  	if ((i = COM_CheckParm("-game")) && i + 1 < com_argc)
          	COM_AddGameDirectory (va("%s/%s", com_basedir, com_argv[i+1]));

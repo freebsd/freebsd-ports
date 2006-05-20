@@ -34,9 +34,6 @@ OPTIONS=	GLX "Build GLX client" on \
 		X11 "Build X11 client" on \
 		X86_ASM "Enable x86 assembly code" on
 
-DATADIR=	${Q1DIR}
-MAKE_ENV=	DATADIR="${DATADIR}"
-
 .include "${.CURDIR}/../quake-data/Makefile.include"
 
 .include <bsd.port.pre.mk>
@@ -91,15 +88,15 @@ PLIST_SUB+=	X11="@comment "
 .endif
 
 do-install:
-	${MKDIR} ${DATADIR}/${PORTNAME}
-	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}/pak0.pak ${DATADIR}/${PORTNAME}
+	${MKDIR} ${Q1DIR}/${PORTNAME}
+	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}/pak0.pak ${Q1DIR}/${PORTNAME}
 .if !defined(WITHOUT_GLX)
 	${INSTALL_PROGRAM} ${WRKSRC}/release_glx/joequake-gl.glx \
 		${PREFIX}/bin/joequake-glx
 .endif
 .if defined(WITH_HUD) || defined(WITH_HUD_SA)
-	${MKDIR} ${DATADIR}/${PORTNAME}/textures/wad
-	${INSTALL_DATA} ${WRKDIR}/wad/* ${DATADIR}/${PORTNAME}/textures/wad
+	${MKDIR} ${Q1DIR}/${PORTNAME}/textures/wad
+	${INSTALL_DATA} ${WRKDIR}/wad/* ${Q1DIR}/${PORTNAME}/textures/wad
 .endif
 .if !defined(WITHOUT_X11)
 	${INSTALL_PROGRAM} ${WRKSRC}/release_x11/joequake.x11 \

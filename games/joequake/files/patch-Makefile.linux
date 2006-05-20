@@ -1,5 +1,5 @@
---- Makefile.linux.orig	Wed Sep  7 20:11:50 2005
-+++ Makefile.linux	Sun Jan 15 01:54:54 2006
+--- ./Makefile.linux.orig	Sat Apr 22 12:10:56 2006
++++ ./Makefile.linux	Sat May 20 10:03:52 2006
 @@ -4,14 +4,25 @@
  # by Slawomir Mazurek <homer13@o2.pl>
  #
@@ -9,24 +9,24 @@
 +# this nice line comes from the linux kernel makefile
 +ARCH := $(shell uname -m | sed -e s/i.86/i386/ -e s/sun4u/sparc/ -e s/sparc64/sparc/ -e s/arm.*/arm/ -e s/sa110/arm/ -e s/alpha/axp/)
 +OSTYPE := $(shell uname -s)
-+
+ 
+-################
 +CC 		?= gcc
 +#_E 		:= @
 +LOCALBASE 	?= /usr/local
 +X11BASE 	?= /usr/X11R6
 +USE_OPTIMIZE 	?= YES
-+
+ 
+-default_target: glx
 +ifeq ($(ARCH),i386)
 +USE_X86_ASM 	?= YES
 +else
-+USE_X86_ASM 	?= NO
++USE_X86_ASM 	= NO
 +endif
  
- ################
- 
--default_target: glx
--
 -all: glx x11 svga
++################
++
 +all:
  
  ################################
@@ -40,7 +40,7 @@
 -	-funroll-loops	-fomit-frame-pointer	-DNDEBUG \
 -	-ffast-math	-fno-strength-reduce	-fexpensive-optimizations \
 -	-I/usr/include
-+CFLAGS += -DNDEBUG -DDATADIR='"$(DATADIR)"'
++CFLAGS += -DNDEBUG -DDATADIR='"$(Q1DIR)"'
 +
 +ifeq ($(strip $(USE_OPTIMIZE)),YES)
 +CFLAGS += -O1 -funsigned-char -funroll-loops -fomit-frame-pointer \
@@ -51,7 +51,7 @@
  
 @@ -75,19 +87,25 @@
  	image		version		security	iplog \
- 	slist
+ 	cl_slist
  
 +ifeq ($(strip $(USE_X86_ASM)),YES)
  GLX_S_FILES := \
@@ -81,7 +81,7 @@
  glx: _OBJS := $(GLX_C_OBJS) $(GLX_S_OBJS)
 @@ -138,27 +156,37 @@
  	snd_linux	image		version		security \
- 	iplog		slist
+ 	iplog		cl_slist
  
 +ifeq ($(strip $(USE_X86_ASM)),YES)
  X11_S_FILES := \
