@@ -11169,6 +11169,7 @@ py-ui		ports/devel/py-ui
 py-unit		ports/devel/py-unit
 py-urwid	ports/devel/py-urwid
 py-utils	ports/devel/py-utils
+py-vertex	ports/net-p2p/py-vertex
 py-visual	ports/graphics/py-visual
 py-vmaps	ports/devel/py-vmaps
 py-vorbis	ports/audio/py-vorbis
