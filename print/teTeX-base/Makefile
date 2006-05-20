@@ -7,7 +7,7 @@
 
 PORTNAME=	teTeX-base
 PORTVERSION=	3.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN} \
 		ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/dvips/:1
@@ -139,7 +139,7 @@ PLIST_SUB+=	TEXMFDIR=${TEXMFDIR} \
 		FMTUTIL_SYS=${FMTUTIL_SYS} \
 		UPDMAP_SYS=${UPDMAP_SYS} \
 		SETENV=${SETENV}
-SUB_FILES=	pkg-message
+SUB_FILES=	pkg-message texdoctk.wrapper
 SUB_LIST=	TEXMFDIR=${TEXMFDIR} \
 		TEXMFDISTDIR=${TEXMFDISTDIR} \
 		PREFIX=${PREFIX}
@@ -171,6 +171,8 @@ pre-su-install:
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/utils/texinfo/util/texi2dvi ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/utils/texinfo/util/texi2pdf ${PREFIX}/bin
+	${MV} -f ${PREFIX}/bin/texdoctk ${PREFIX}/bin/texdoctk.real
+	${INSTALL_SCRIPT} ${WRKDIR}/texdoctk.wrapper ${PREFIX}/bin/texdoctk
 	${MKTEXLSR}
 	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}

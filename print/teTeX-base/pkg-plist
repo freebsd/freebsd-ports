@@ -86,6 +86,7 @@ bin/texconfig-dialog
 bin/texconfig-sys
 bin/texdoc
 bin/texdoctk
+bin/texdoctk.real
 bin/texexec
 bin/texlinks
 bin/updmap
