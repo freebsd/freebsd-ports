@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel gnome python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -14,7 +14,8 @@ COMMENT=	Python interface to the D-BUS messaging system
 
 BUILD_DEPENDS=	pyrexc:${PORTSDIR}/devel/pyrex
 LIB_DEPENDS=	dbus-1.2:${PORTSDIR}/devel/dbus
-RUN_DEPENDS=	pyrexc:${PORTSDIR}/devel/pyrex
+RUN_DEPENDS=	pyrexc:${PORTSDIR}/devel/pyrex \
+		${PYTHON_SITELIBDIR}/libxml2.py:${PORTSDIR}/textproc/py-libxml2
 
 MASTERDIR=	${.CURDIR}/../dbus
 BUILD_WRKSRC=	${WRKSRC}/python
