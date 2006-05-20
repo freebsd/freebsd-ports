@@ -7,6 +7,7 @@
 
 PORTNAME=	kdevelop
 PORTVERSION=	3.3.2
+PORTREVISION=	1
 CATEGORIES?=	devel kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${KDE_VERSION:S/.0//}/src
@@ -23,8 +24,7 @@ LIB_DEPENDS=	db4:${PORTSDIR}/databases/db4 \
 RUN_DEPENDS=	extractrc:${PORTSDIR}/devel/kdesdk3 \
 		gmake:${PORTSDIR}/devel/gmake \
 		${LOCALBASE}/gnu-autotools/bin/automake:${PORTSDIR}/devel/gnu-automake \
-		${LOCALBASE}/gnu-autotools/bin/autoconf:${PORTSDIR}/devel/gnu-autoconf \
-		${LOCALBASE}/gnu-autotools/bin/libtool:${PORTSDIR}/devel/gnu-libtool
+		${LOCALBASE}/gnu-autotools/bin/autoconf:${PORTSDIR}/devel/gnu-autoconf
 
 .if defined(WITH_OPTIONAL_DEPENDS)
 RUN_DEPENDS+=	kiconedit:${PORTSDIR}/graphics/kdegraphics3 \
