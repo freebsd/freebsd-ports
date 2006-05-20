@@ -1,0 +1,10 @@
+--- src/net/zlib_interface.c.orig	Tue Jan 24 22:28:04 2006
++++ src/net/zlib_interface.c	Sat May 20 22:46:03 2006
+@@ -29,6 +29,7 @@
+ #include <stdio.h>
+ #include <zlib.h>
+ #include <string.h>
++#include <sys/types.h>
+ 
+ int JG_ZLIB_DEBUG = 1;
+ 
