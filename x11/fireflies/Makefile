@@ -23,7 +23,13 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include/GL" \
 CONFIGURE_ARGS=	--with-bindir=${X11BASE}/bin/xscreensaver-hacks --with-confdir=${X11BASE}/share/xscreensaver/config
 PLIST_SUB=	VERSION=${PORTVERSION}
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		does not compile
+.endif
+
 post-extract:
 	(cd ${WRKSRC};  ${TAR} zxvpf libgfx-1.0.1.tar.gz)
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
