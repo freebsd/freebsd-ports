@@ -29,8 +29,8 @@ MAN3=		GD.3 GD::Polyline.3 GD::Simple.3 \
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500601
-IGNORE=		requires perl 5.6.x or later. Install lang/perl5 then try again
+.if ${PERL_LEVEL} < 500800
+IGNORE=		requires perl 5.8.x or later. Install lang/perl5.8 then try again
 .endif
 
 .include <bsd.port.post.mk>
