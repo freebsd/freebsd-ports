@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	xerces-c2
-PORTVERSION=	2.6.0
-PORTREVISION=	1
+PORTVERSION=	2.7.0
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_APACHE_XML}
 MASTER_SITE_SUBDIR=	xerces-c/source
 DISTNAME=	xerces-c-src_${PORTVERSION:S/./_/g}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	kenm@icarz.com
 COMMENT=	Validating XML parser from the Apache XML Project
 
 OPTIONS=	THREADS "Build a thread enabled shared library." on \
@@ -47,7 +46,7 @@ PLIST_SUB+=		TRANSICU="@comment "
 .else
 .if (${TRANSCODER} == "icu")
 PKGNAMESUFFIX+=		-icu
-LIB_DEPENDS+=		icuuc.32:${PORTSDIR}/devel/icu
+LIB_DEPENDS+=		icuuc.34:${PORTSDIR}/devel/icu
 ICUROOT?=		${LOCALBASE}
 CONFIGURE_ENV+=		ICUROOT=${ICUROOT}
 MAKE_ENV+=		ICUROOT=${ICUROOT}
