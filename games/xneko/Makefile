@@ -19,5 +19,6 @@ COMMENT=	The classic cat-and-mouse
 NO_WRKSUBDIR=	yes
 USE_IMAKE=	yes
 MAN6=		xneko.6
+PLIST_FILES=	bin/xneko
 
 .include <bsd.port.mk>
