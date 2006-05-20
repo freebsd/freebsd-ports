@@ -7,6 +7,7 @@
 
 PORTNAME=	kdar
 PORTVERSION=	2.0.7
+PORTREVISION=	1
 CATEGORIES=	sysutils kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	kdar
@@ -15,7 +16,7 @@ DISTNAME=	kdar-${PORTVERSION:S/.b./-beta/}
 MAINTAINER=	kay_lehmann@web.de
 COMMENT=	KDar is KDE-based backuptool using libdar
 
-LIB_DEPENDS=	dar.3:${PORTSDIR}/sysutils/dar
+LIB_DEPENDS=	dar.4:${PORTSDIR}/sysutils/dar
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
