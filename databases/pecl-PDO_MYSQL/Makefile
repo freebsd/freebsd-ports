@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	PDO_MYSQL
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	databases www
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -20,7 +20,6 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/pdo.so:${PORTSDIR}/databases
 RUN_DEPENDS+=	${BUILD_DEPENDS}
 
 USE_PHP=	yes
-USE_PHPIZE=	yes
 USE_PHPEXT=	yes
 DEFAULT_PHP_VER=5
 PHP_MODNAME=	pdo_mysql
