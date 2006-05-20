@@ -6,9 +6,11 @@ include/GeoIP.h
 include/GeoIPCity.h
 include/GeoIPUpdate.h
 lib/libGeoIP.a
+lib/libGeoIP.la
 lib/libGeoIP.so
 lib/libGeoIP.so.4
 lib/libGeoIPUpdate.a
+lib/libGeoIPUpdate.la
 lib/libGeoIPUpdate.so
 lib/libGeoIPUpdate.so.0
 %%DATADIR%%/GeoIP.dat
