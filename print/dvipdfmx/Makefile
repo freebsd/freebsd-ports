@@ -7,7 +7,7 @@
 
 PORTNAME=	dvipdfmx
 PORTVERSION=	20050831
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	http://project.ktug.or.kr/dvipdfmx/snapshot/current/
 DIST_SUBDIR=	dvipdfmx
@@ -48,6 +48,8 @@ post-install:
 		${LOCALBASE}/${FONTMAPDIR}/cid-x.map
 	${LN} -s -f ${ADOBECMAPDIR} \
 		${LOCALBASE}/${FONTCMAPDIR}/adobe-cmaps
-	${MKTEXLSR}
+	${LN} -s -f ${PREFIX}/${DVIPDFMDIR}/CMap \
+		${LOCALBASE}/${FONTCMAPDIR}/
+	${MKTEXLSR} ${PREFIX}/${TEXMFDIR}
 
 .include <bsd.port.mk>

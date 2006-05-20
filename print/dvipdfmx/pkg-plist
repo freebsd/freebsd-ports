@@ -2,8 +2,13 @@
 bin/dvipdfmx
 %%FONTMAPDIR%%/cid-x.map
 %%DVIPDFMDIR%%/config/dvipdfmx.cfg
+%%DVIPDFMDIR%%/CMap/EUC-UCS2
+%%DVIPDFMDIR%%/CMap/UniKSCms-UCS2-H
+%%DVIPDFMDIR%%/CMap/UniKSCms-UCS2-V
+@dirrm %%DVIPDFMDIR%%/CMap
 %%FONTMAPDIR%%/glyphlist.txt
 %%FONTCMAPDIR%%/adobe-cmaps
+%%FONTCMAPDIR%%/CMap
 @dirrm %%FONTCMAPDIR%%
-@exec %%MKTEXLSR%%
-@unexec %%MKTEXLSR%%
+@exec %%MKTEXLSR%% %D/%%TEXMFDIR%%
+@unexec %%MKTEXLSR%% %D/%%TEXMFDIR%%
