@@ -1,5 +1,5 @@
---- image.c.orig	Sun Oct 16 21:47:00 2005
-+++ image.c	Mon Jan 16 20:18:54 2006
+--- ./image.c.orig	Sun Oct 16 22:47:00 2005
++++ ./image.c	Sat May 20 10:00:24 2006
 @@ -422,6 +422,7 @@
  		buffer[i+2] = temp;
  	}

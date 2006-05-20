@@ -1,5 +1,5 @@
---- vid_glx.c.orig	Sun Oct 16 17:40:58 2005
-+++ vid_glx.c	Mon Dec  5 21:10:31 2005
+--- ./vid_glx.c.orig	Sun Jan  8 18:36:04 2006
++++ ./vid_glx.c	Sat May 20 10:00:24 2006
 @@ -22,7 +22,9 @@
  #include <termios.h>
  #include <sys/ioctl.h>

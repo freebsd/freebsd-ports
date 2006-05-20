@@ -1,5 +1,5 @@
---- cl_slist.c.orig	Sat Apr 22 13:34:10 2006
-+++ cl_slist.c	Thu May  4 22:03:17 2006
+--- ./cl_slist.c.orig	Sat Apr 22 13:34:10 2006
++++ ./cl_slist.c	Sat May 20 10:00:24 2006
 @@ -21,10 +21,13 @@
  
  #include "quakedef.h"

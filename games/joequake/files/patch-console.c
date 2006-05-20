@@ -1,5 +1,5 @@
---- console.c.orig	Sun Aug 14 09:38:36 2005
-+++ console.c	Mon Jan 16 18:54:47 2006
+--- ./console.c.orig	Sun Jan  8 18:27:46 2006
++++ ./console.c	Sat May 20 10:00:24 2006
 @@ -205,8 +205,11 @@
  */
  void Con_Init (void)

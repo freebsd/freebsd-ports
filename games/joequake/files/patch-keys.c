@@ -1,6 +1,6 @@
---- keys.c.orig	Fri Oct 21 18:30:06 2005
-+++ keys.c	Mon Jan 16 18:47:12 2006
-@@ -783,11 +783,13 @@
+--- ./keys.c.orig	Sat Mar 25 15:00:04 2006
++++ ./keys.c	Sat May 20 10:00:24 2006
+@@ -808,11 +808,13 @@
  void Key_Init (void)
  {
  // joe: added stuff from [sons]Quake
