@@ -26,6 +26,10 @@ GNU_CONFIGURE=	yes
 LIB_DEPENDS+=	readline.5:${PORTSDIR}/devel/readline
 .endif
 
+.if ${OSVERSION} < 500000
+BROKEN=		Does not compile on FreeBSD 4.X
+.endif
+
 post-patch:
 	${REINPLACE_CMD} -e 's,libutil\.h,,g' ${WRKSRC}/configure
 
