@@ -1,19 +1,11 @@
---- dpi/https.c.orig	Sun Oct  3 17:16:15 2004
-+++ dpi/https.c	Sun Oct  3 17:17:47 2004
-@@ -53,7 +53,6 @@
- #include <glib.h>
- #include "dpiutil.h"
- 
--#undef ENABLE_SSL
- #ifdef ENABLE_SSL
- 
- #include <openssl/ssl.h>
-@@ -605,13 +616,8 @@ static void no_ssl_support(void)
+--- dpi/https.c.orig	Sat Mar 25 16:49:59 2006
++++ dpi/https.c	Sat Mar 25 16:55:35 2006
+@@ -655,13 +655,8 @@
        "<b>}</b>\n\n"
        "  <b>*** Dillo's prototype plugin for https support"
        " is disabled now ***</b>\n\n"
 -      "  If you want to test this <b>alpha</b> support code, just remove\n"
--      "  line 56 from https.c, recompile and reinstall.\n\n"
+-      "  line 65 from https.c, recompile and reinstall.\n\n"
 -      "  (beware that this https support is very limited now)\n\n"
 -      "  To use https and SSL, you must have \n"
 -      "  the OpenSSL development libraries installed.  Check your\n"

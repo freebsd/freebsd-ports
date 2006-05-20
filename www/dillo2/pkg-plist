@@ -5,6 +5,8 @@ bin/dpidc
 etc/dillorc.sample
 etc/dpidrc
 libexec/dillo/dpi/bookmarks/bookmarks.dpi
+libexec/dillo/dpi/cookies/cookies.dpi
+libexec/dillo/dpi/datauri/datauri.filter.dpi
 libexec/dillo/dpi/downloads/downloads.dpi
 libexec/dillo/dpi/file/file.dpi
 libexec/dillo/dpi/ftp/ftp.filter.dpi
@@ -15,6 +17,8 @@ libexec/dillo/dpi/https/https.filter.dpi
 @dirrm libexec/dillo/dpi/ftp
 @dirrm libexec/dillo/dpi/file
 @dirrm libexec/dillo/dpi/downloads
+@dirrm libexec/dillo/dpi/datauri
+@dirrm libexec/dillo/dpi/cookies
 @dirrm libexec/dillo/dpi/bookmarks
 @dirrm libexec/dillo/dpi
 @dirrm libexec/dillo
