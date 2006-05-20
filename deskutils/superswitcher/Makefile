@@ -5,10 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	superswitcher
-PORTVERSION=	0.1
+PORTVERSION=	0.3
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	browserbookapp
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	MrL0Lz@gmail.com
 COMMENT=	Alt-Tab replacement
