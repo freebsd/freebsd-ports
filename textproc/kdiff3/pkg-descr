@@ -5,9 +5,9 @@ KDiff3 is a program that:
     * provides an automatic merge-facility and
     * an integrated editor for comfortable solving of merge-conflicts,
     * supports KIO on KDE (allows accessing ftp, sftp, fish, smb etc.),
+    * Printing of differences,
+    * Manual alignment of lines,
+    * Automatic merging of version control history (cvs Log keyword),
     * and has an intuitive graphical user interface.
 
 WWW: http://kdiff3.sourceforge.net/
-
-Heiner
-h.eichmann@gmx.de

@@ -134,6 +134,7 @@ share/doc/HTML/it/kdiff3/screenshot_merge.png
 share/doc/HTML/it/kdiff3/triple_diff.png
 share/doc/HTML/it/kdiff3/white_space.png
 share/doc/HTML/kdiff3/README
+share/doc/HTML/kdiff3/createpdfdoc
 share/doc/HTML/nl/kdiff3/common
 share/doc/HTML/nl/kdiff3/dirbrowser.png
 share/doc/HTML/nl/kdiff3/dirmergebig.png
@@ -220,7 +221,6 @@ share/services/kdiff3part.desktop
 @dirrm share/doc/HTML/sv/kdiff3
 @dirrm share/doc/HTML/pt/kdiff3
 @dirrm share/doc/HTML/nl/kdiff3
-@dirrm share/doc/HTML/kdiff3
 @dirrm share/doc/HTML/it/kdiff3
 @dirrm share/doc/HTML/fr/kdiff3
 @dirrm share/doc/HTML/et/kdiff3
@@ -228,5 +228,6 @@ share/services/kdiff3part.desktop
 @dirrm share/doc/HTML/en/kdiff3
 @dirrm share/doc/HTML/de/kdiff3
 @dirrm share/doc/HTML/da/kdiff3
+@dirrm share/doc/HTML/kdiff3
 @dirrm share/apps/kdiff3part
 @dirrm share/apps/kdiff3
