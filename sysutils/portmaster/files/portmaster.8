@@ -24,7 +24,7 @@
 .\"
 .\" $FreeBSD$
 .\"
-.Dd February 20, 2006
+.Dd May 19, 2006
 .Dt PORTMASTER 8
 .Os
 .Sh NAME
@@ -32,19 +32,19 @@
 .Nd manage your ports
 .Sh SYNOPSIS
 .Nm
-.Op Fl Canv [f|i] [D|d] m Ar arguments for make
+.Op Fl CGanv [uf|i] [D|d] m Ar arguments for make
 .Op Ar name of port directory in /var/db/pkg
 .Pp
-.Op Fl Canv [f|i] [D|d] m Ar arguments for make
+.Op Fl CGanv [uf|i] [D|d] m Ar arguments for make
 .Op Ar glob pattern from /var/db/pkg
 .Pp
-.Op Fl Canv [f|i] [D|d] m Ar arguments for make
+.Op Fl CGanv [uf|i] [D|d] m Ar arguments for make
 .Op Fl p Ar port directory in /usr/ports
 .Pp
-.Op Fl Canv [f|i] [D|d] m Ar arguments for make
+.Op Fl CGanv [uf|i] [D|d] m Ar arguments for make
 .Op Ar full path to /usr/ports/foo/bar
 .Pp
-.Op Fl Cnv [f|i] [D|d] m Ar arguments for make
+.Op Fl CGnv [uf|i] [D|d] m Ar arguments for make
 .Op Fl r Ar name/glob of port in /var/db/pkg
 .Pp
 .Op Fl h
@@ -69,21 +69,37 @@ it.
 In the rare case where you do need to recompile
 ports which depend on a port you are updating,
 the -r option exists to accomplish this.
-.Pp
+By default
+.Nm
+will first recurse through the port to update,
+and all of its dependencies (if any) to handle
+any port OPTIONS via the 'make config' interface.
+It will then start building all ports that need
+updating.
+While recursing through dependencies,
+a 'make checksum' process will be launched
+in the background to either verify that the
+correct distfiles are available,
+or start downloading the new ones.
+.Sh OPTIONS
 The options are as follows:
 .Bl -tag -width F1
 .It Fl C
 Prevents 'make clean' being run in port directory
+.It Fl G
+Prevents the recursive 'make config'
 .It Fl a
 check all ports, update as necessary
 .It Fl n
-do not launch child process to update dependencies
+do not actually perform any updates
 .It Fl v
 verbose output
 .It Fl f
 always rebuild ports (overrides -i)
 .It Fl i
 interactive update mode
+.It Fl u
+unattended mode, accepts defaults for all portmaster dialogues
 .It Fl D
 prevents cleaning of distfiles
 .It Fl d
@@ -101,9 +117,9 @@ display help file
 list all installed ports by category
 .El
 .Sh FILES
-.Bl -tag -width ".Pa $HOME/.portmaster.rc" -compact
+.Bl -tag -width ".Pa $HOME/.portmasterrc" -compact
 .It Pa /etc/portmaster.rc
-.It Pa $HOME/.portmaster.rc
+.It Pa $HOME/.portmasterrc
 Optional system and user configuration files.
 The variables set in the script's getopts routine
 can be specified in these files to enable those options.
