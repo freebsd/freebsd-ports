@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=${PORTNAME}/
 MAINTAINER=	frank@exit.com
 COMMENT=	KDE front-end to Cscope
 
-BUILD_DEPENDS+=	bison:${PORTSDIR}/devel/bison
+BUILD_DEPENDS+=	bison2:${PORTSDIR}/devel/bison2
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 RUN_DEPENDS=	exctags:${PORTSDIR}/devel/ctags \
 		cscope:${PORTSDIR}/devel/cscope \
