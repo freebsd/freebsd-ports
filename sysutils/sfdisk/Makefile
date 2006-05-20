@@ -20,8 +20,14 @@ MAKEFILE=	Makefile.bsd
 
 NOT_FOR_ARCHS=	ia64
 
+.include <bsd.port.pre.mk>
+
 .if ${MACHINE} == "pc98"
 CFLAGS+=	-DPC98
 .endif
 
-.include <bsd.port.mk>
+.if ${OSVERSION} < 500000
+BROKEN=		Does not compile on FreeBSD 4.X
+.endif
+
+.include <bsd.port.post.mk>
