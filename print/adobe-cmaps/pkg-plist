@@ -1,4 +1,5 @@
 @comment $FreeBSD$
+%%CMAPDIR%%/ac15/cid2code.txt
 %%CMAPDIR%%/ac15/CMap/Adobe-CNS1-0
 %%CMAPDIR%%/ac15/CMap/Adobe-CNS1-1
 %%CMAPDIR%%/ac15/CMap/Adobe-CNS1-2
@@ -15,10 +16,10 @@
 %%CMAPDIR%%/ac15/CMap/CNS1-V
 %%CMAPDIR%%/ac15/CMap/CNS2-H
 %%CMAPDIR%%/ac15/CMap/CNS2-V
-%%CMAPDIR%%/ac15/CMap/ETHK-B5-H
-%%CMAPDIR%%/ac15/CMap/ETHK-B5-V
 %%CMAPDIR%%/ac15/CMap/ETen-B5-H
 %%CMAPDIR%%/ac15/CMap/ETen-B5-V
+%%CMAPDIR%%/ac15/CMap/ETHK-B5-H
+%%CMAPDIR%%/ac15/CMap/ETHK-B5-V
 %%CMAPDIR%%/ac15/CMap/HKdla-B5-H
 %%CMAPDIR%%/ac15/CMap/HKdla-B5-V
 %%CMAPDIR%%/ac15/CMap/HKdlb-B5-H
@@ -39,13 +40,16 @@
 %%CMAPDIR%%/ac15/CMap/UniCNS-UTF32-V
 %%CMAPDIR%%/ac15/CMap/UniCNS-UTF8-H
 %%CMAPDIR%%/ac15/CMap/UniCNS-UTF8-V
-%%CMAPDIR%%/ac15/cid2code.txt
+%%CMAPDIR%%/ac15/CMap/ETen-B5-UCS2
+%%CMAPDIR%%/ac15/CMap/B5pc-UCS2
+%%CMAPDIR%%/ac15/CMap/Adobe-CNS1-UCS2
+%%CMAPDIR%%/ac15/CMap/B5pc-UCS2C
+%%CMAPDIR%%/ag15/cid2code.txt
 %%CMAPDIR%%/ag15/CMap/Adobe-GB1-0
 %%CMAPDIR%%/ag15/CMap/Adobe-GB1-1
 %%CMAPDIR%%/ag15/CMap/Adobe-GB1-2
 %%CMAPDIR%%/ag15/CMap/Adobe-GB1-3
 %%CMAPDIR%%/ag15/CMap/Adobe-GB1-4
-%%CMAPDIR%%/ag15/CMap/Adobe-GB1-5
 %%CMAPDIR%%/ag15/CMap/GB-EUC-H
 %%CMAPDIR%%/ag15/CMap/GB-EUC-V
 %%CMAPDIR%%/ag15/CMap/GB-H
@@ -56,14 +60,14 @@
 %%CMAPDIR%%/ag15/CMap/GBK2K-V
 %%CMAPDIR%%/ag15/CMap/GBKp-EUC-H
 %%CMAPDIR%%/ag15/CMap/GBKp-EUC-V
+%%CMAPDIR%%/ag15/CMap/GBpc-EUC-H
+%%CMAPDIR%%/ag15/CMap/GBpc-EUC-V
 %%CMAPDIR%%/ag15/CMap/GBT-EUC-H
 %%CMAPDIR%%/ag15/CMap/GBT-EUC-V
 %%CMAPDIR%%/ag15/CMap/GBT-H
 %%CMAPDIR%%/ag15/CMap/GBT-V
 %%CMAPDIR%%/ag15/CMap/GBTpc-EUC-H
 %%CMAPDIR%%/ag15/CMap/GBTpc-EUC-V
-%%CMAPDIR%%/ag15/CMap/GBpc-EUC-H
-%%CMAPDIR%%/ag15/CMap/GBpc-EUC-V
 %%CMAPDIR%%/ag15/CMap/UniGB-UCS2-H
 %%CMAPDIR%%/ag15/CMap/UniGB-UCS2-V
 %%CMAPDIR%%/ag15/CMap/UniGB-UTF16-H
@@ -72,9 +76,14 @@
 %%CMAPDIR%%/ag15/CMap/UniGB-UTF32-V
 %%CMAPDIR%%/ag15/CMap/UniGB-UTF8-H
 %%CMAPDIR%%/ag15/CMap/UniGB-UTF8-V
-%%CMAPDIR%%/ag15/cid2code.txt
+%%CMAPDIR%%/ag15/CMap/Adobe-GB1-5
+%%CMAPDIR%%/ag15/CMap/GBpc-EUC-UCS2
+%%CMAPDIR%%/ag15/CMap/GBK-EUC-UCS2
+%%CMAPDIR%%/ag15/CMap/Adobe-GB1-UCS2
+%%CMAPDIR%%/ag15/CMap/GBpc-EUC-UCS2C
 %%CMAPDIR%%/ai0/CMap/Identity-H
 %%CMAPDIR%%/ai0/CMap/Identity-V
+%%CMAPDIR%%/aj16/cid2code.txt
 %%CMAPDIR%%/aj16/CMap/78-EUC-H
 %%CMAPDIR%%/aj16/CMap/78-EUC-V
 %%CMAPDIR%%/aj16/CMap/78-H
@@ -98,10 +107,10 @@
 %%CMAPDIR%%/aj16/CMap/Adobe-Japan1-1
 %%CMAPDIR%%/aj16/CMap/Adobe-Japan1-2
 %%CMAPDIR%%/aj16/CMap/Adobe-Japan1-3
+%%CMAPDIR%%/aj16/CMap/EUC-H
 %%CMAPDIR%%/aj16/CMap/Adobe-Japan1-4
 %%CMAPDIR%%/aj16/CMap/Adobe-Japan1-5
 %%CMAPDIR%%/aj16/CMap/Adobe-Japan1-6
-%%CMAPDIR%%/aj16/CMap/EUC-H
 %%CMAPDIR%%/aj16/CMap/EUC-V
 %%CMAPDIR%%/aj16/CMap/Ext-H
 %%CMAPDIR%%/aj16/CMap/Ext-RKSJ-H
@@ -133,7 +142,11 @@
 %%CMAPDIR%%/aj16/CMap/UniJISX0213-UTF32-V
 %%CMAPDIR%%/aj16/CMap/V
 %%CMAPDIR%%/aj16/CMap/WP-Symbol
-%%CMAPDIR%%/aj16/cid2code.txt
+%%CMAPDIR%%/aj16/CMap/90pv-RKSJ-UCS2C
+%%CMAPDIR%%/aj16/CMap/Adobe-Japan1-UCS2
+%%CMAPDIR%%/aj16/CMap/90pv-RKSJ-UCS2
+%%CMAPDIR%%/aj16/CMap/90ms-RKSJ-UCS2
+%%CMAPDIR%%/aj20/cid2code.txt
 %%CMAPDIR%%/aj20/CMap/Adobe-Japan2-0
 %%CMAPDIR%%/aj20/CMap/Hojo-EUC-H
 %%CMAPDIR%%/aj20/CMap/Hojo-EUC-V
@@ -147,7 +160,7 @@
 %%CMAPDIR%%/aj20/CMap/UniHojo-UTF32-V
 %%CMAPDIR%%/aj20/CMap/UniHojo-UTF8-H
 %%CMAPDIR%%/aj20/CMap/UniHojo-UTF8-V
-%%CMAPDIR%%/aj20/cid2code.txt
+%%CMAPDIR%%/ak12/cid2code.txt
 %%CMAPDIR%%/ak12/CMap/Adobe-Korea1-0
 %%CMAPDIR%%/ak12/CMap/Adobe-Korea1-1
 %%CMAPDIR%%/ak12/CMap/Adobe-Korea1-2
@@ -171,7 +184,10 @@
 %%CMAPDIR%%/ak12/CMap/UniKS-UTF32-V
 %%CMAPDIR%%/ak12/CMap/UniKS-UTF8-H
 %%CMAPDIR%%/ak12/CMap/UniKS-UTF8-V
-%%CMAPDIR%%/ak12/cid2code.txt
+%%CMAPDIR%%/ak12/CMap/KSCpc-EUC-UCS2
+%%CMAPDIR%%/ak12/CMap/KSCms-UHC-UCS2
+%%CMAPDIR%%/ak12/CMap/Adobe-Korea1-UCS2
+%%CMAPDIR%%/ak12/CMap/KSCpc-EUC-UCS2C
 %%CMAPDIR%%/rksj-cmaps/CNS01-RKSJ-H
 %%CMAPDIR%%/rksj-cmaps/CNS02-RKSJ-H
 %%CMAPDIR%%/rksj-cmaps/CNS03-RKSJ-H
@@ -187,23 +203,18 @@
 %%CMAPDIR%%/rksj-cmaps/KSC-RKSJ-H
 %%CMAPDIR%%/rksj-cmaps/KSC2-RKSJ-H
 %%CMAPDIR%%/rksj-cmaps/TCVN-RKSJ-H
-%%CMAPDIR%%/tounicode/Adobe-CNS1-UCS2
-%%CMAPDIR%%/tounicode/Adobe-GB1-UCS2
-%%CMAPDIR%%/tounicode/Adobe-Japan1-UCS2
-%%CMAPDIR%%/tounicode/Adobe-Korea1-UCS2
-@dirrm %%CMAPDIR%%/ac15/CMap
-@dirrm %%CMAPDIR%%/ac15
-@dirrm %%CMAPDIR%%/ag15/CMap
-@dirrm %%CMAPDIR%%/ag15
-@dirrm %%CMAPDIR%%/ai0/CMap
-@dirrm %%CMAPDIR%%/ai0
-@dirrm %%CMAPDIR%%/aj16/CMap
-@dirrm %%CMAPDIR%%/aj16
-@dirrm %%CMAPDIR%%/aj20/CMap
-@dirrm %%CMAPDIR%%/aj20
+@dirrm %%CMAPDIR%%/rksj-cmaps
 @dirrm %%CMAPDIR%%/ak12/CMap
 @dirrm %%CMAPDIR%%/ak12
-@dirrm %%CMAPDIR%%/rksj-cmaps
-@dirrm %%CMAPDIR%%/tounicode
+@dirrm %%CMAPDIR%%/aj20/CMap
+@dirrm %%CMAPDIR%%/aj20
+@dirrm %%CMAPDIR%%/aj16/CMap
+@dirrm %%CMAPDIR%%/aj16
+@dirrm %%CMAPDIR%%/ai0/CMap
+@dirrm %%CMAPDIR%%/ai0
+@dirrm %%CMAPDIR%%/ag15/CMap
+@dirrm %%CMAPDIR%%/ag15
+@dirrm %%CMAPDIR%%/ac15/CMap
+@dirrm %%CMAPDIR%%/ac15
 @dirrmtry %%CMAPDIR%%
 @dirrmtry share/fonts
