@@ -1,0 +1,12 @@
+--- snavigator/snavigator/unix/snavigator.in.orig	Mon Feb 27 20:22:56 2006
++++ snavigator/snavigator/unix/snavigator.in	Mon Feb 27 20:23:35 2006
+@@ -1,7 +1,8 @@
+ #!/bin/sh
+ 
+ # the directory where this script lives
+-snbindir=`dirname $0`
++me=`realpath $0`
++snbindir=`dirname $me`
+ 
+ # navigato is either in ../share/etc/navigato or ../../share/etc/navigato
+ 
