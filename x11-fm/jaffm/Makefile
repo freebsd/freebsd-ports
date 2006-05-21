@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	jaffm
-PORTVERSION=	1.3
+PORTVERSION=	1.3.1
 CATEGORIES=	x11-fm
-MASTER_SITES=	http://binary.is/download/
+MASTER_SITES=	http://binary.is/download/ \
+		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
 
 MAINTAINER=	shaun@inerd.com
 COMMENT=	A lightweight file manager inspired by MacOS Finder
