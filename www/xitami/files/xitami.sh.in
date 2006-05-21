@@ -1,0 +1,36 @@
+#!/bin/sh
+
+# PROVIDE: httpd
+# REQUIRE: DAEMON
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# xitami_enable (bool):   Set to NO by default.
+#               Set it to YES to enable xitami.
+# xitami_config (path):   Set to %%PREFIX%%/etc/xitami
+#               by default.
+#
+
+. %%RC_SUBR%%
+
+name="xitami"
+start_cmd=xitami_start
+rcvar=xitami_enable
+
+command=%%PREFIX%%/libexec/xitami
+
+: ${xitami_enable="NO"}
+: ${xitami_config="%%PREFIX%%/etc/xitami"}
+
+
+xitami_start()
+{
+    echo "Starting xitami."
+    cd ${xitami_config}
+    ${command} -s >/dev/null
+}
+
+
+load_rc_config $name
+run_rc_command "$1"

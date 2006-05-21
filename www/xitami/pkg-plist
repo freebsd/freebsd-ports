@@ -1,30 +1,32 @@
-etc/rc.d/xitami.sh.sample
-share/doc/xitami/html/index.htm
-share/doc/xitami/html/index1.htm
-share/doc/xitami/html/index10.htm
-share/doc/xitami/html/index11.htm
-share/doc/xitami/html/index12.htm
-share/doc/xitami/html/index13.htm
-share/doc/xitami/html/index14.htm
-share/doc/xitami/html/index15.htm
-share/doc/xitami/html/index16.htm
-share/doc/xitami/html/index2.htm
-share/doc/xitami/html/index3.htm
-share/doc/xitami/html/index4.htm
-share/doc/xitami/html/index5.htm
-share/doc/xitami/html/index6.htm
-share/doc/xitami/html/index7.htm
-share/doc/xitami/html/index8.htm
-share/doc/xitami/html/index9.htm
-share/doc/xitami/html/license.htm
-xitami/cgi-bin/testcgi
-xitami/defaults.cfg.sample
-xitami/webpages/default.html.sample
-xitami/xitami
-xitami/xitami.aut
-xitami/xitami.cfg
-@dirrm share/doc/xitami/html
-@dirrm share/doc/xitami
-@dirrmtry xitami/webpages
-@dirrmtry xitami/cgi-bin
-@dirrmtry xitami
+etc/xitami/defaults.cfg.sample
+etc/xitami/dir.gsl
+etc/xitami/pipedef.xml
+etc/xitami/xitami.aut
+etc/xitami/xitami.cfg
+libexec/xitami
+@dirrm etc/xitami
+%%PORTDOCS%%%%DOCSDIR%%/html/index.htm
+%%PORTDOCS%%%%DOCSDIR%%/html/index1.htm
+%%PORTDOCS%%%%DOCSDIR%%/html/index10.htm
+%%PORTDOCS%%%%DOCSDIR%%/html/index11.htm
+%%PORTDOCS%%%%DOCSDIR%%/html/index12.htm
+%%PORTDOCS%%%%DOCSDIR%%/html/index13.htm
+%%PORTDOCS%%%%DOCSDIR%%/html/index14.htm
+%%PORTDOCS%%%%DOCSDIR%%/html/index15.htm
+%%PORTDOCS%%%%DOCSDIR%%/html/index16.htm
+%%PORTDOCS%%%%DOCSDIR%%/html/index17.htm
+%%PORTDOCS%%%%DOCSDIR%%/html/index18.htm
+%%PORTDOCS%%%%DOCSDIR%%/html/index19.htm
+%%PORTDOCS%%%%DOCSDIR%%/html/index2.htm
+%%PORTDOCS%%%%DOCSDIR%%/html/index20.htm
+%%PORTDOCS%%%%DOCSDIR%%/html/index21.htm
+%%PORTDOCS%%%%DOCSDIR%%/html/index3.htm
+%%PORTDOCS%%%%DOCSDIR%%/html/index4.htm
+%%PORTDOCS%%%%DOCSDIR%%/html/index5.htm
+%%PORTDOCS%%%%DOCSDIR%%/html/index6.htm
+%%PORTDOCS%%%%DOCSDIR%%/html/index7.htm
+%%PORTDOCS%%%%DOCSDIR%%/html/index8.htm
+%%PORTDOCS%%%%DOCSDIR%%/html/index9.htm
+%%PORTDOCS%%%%DOCSDIR%%/html/license.htm
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

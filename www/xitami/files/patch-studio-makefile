@@ -1,0 +1,44 @@
+--- studio/makefile.orig	Thu Jul 22 16:51:52 2004
++++ studio/makefile	Wed Apr 19 10:12:34 2006
+@@ -22,7 +22,7 @@
+ #   with the iMatix c script without any arguments.
+ #
+ .c$(OBJ):
+-	c -q $<
++	$(CC) $(CFLAGS) -I../sfl -I../smt -c $<
+ #   And .c files _do_not_ depend on .l files (.l files are Libero files,
+ #   not lex input files as the default rules think).
+ #
+@@ -39,7 +39,7 @@
+ #   Dependencies
+ #
+ libstu$(LIB): ctxman$(OBJ) wtplib$(OBJ) formio$(OBJ) wtpman$(OBJ) browtp$(OBJ) brocgi$(OBJ) fxtest1$(OBJ) fxtest2$(OBJ) fxtest3$(OBJ) wtpmsg$(OBJ) 
+-	c -q -r libstu$(LIB) ctxman$(OBJ) wtplib$(OBJ) formio$(OBJ) wtpman$(OBJ) browtp$(OBJ) brocgi$(OBJ) fxtest1$(OBJ) fxtest2$(OBJ) fxtest3$(OBJ) wtpmsg$(OBJ) 
++	$(AR) -r libstu$(LIB) ctxman$(OBJ) wtplib$(OBJ) formio$(OBJ) wtpman$(OBJ) browtp$(OBJ) brocgi$(OBJ) fxtest1$(OBJ) fxtest2$(OBJ) fxtest3$(OBJ) wtpmsg$(OBJ) 
+ ctxman$(OBJ): ctxman.c #!mkdep
+ wtplib$(OBJ): wtplib.c #!mkdep
+ formio$(OBJ): formio.c #!mkdep
+@@ -50,19 +50,19 @@
+ 	gsl -q wtpmsg.xml
+ testbro$(OBJ): testbro.c #!mkdep
+ testbro$(EXE): testbro$(OBJ) libstu$(LIB) 
+-	c -q -L testbro
++	$(CC) $(CFLAGS) -o $@ $> -L../sfl -lsfl
+ fxtest1$(OBJ): fxtest1.c #!mkdep
+ fxtest2$(OBJ): fxtest2.c #!mkdep
+ fxtest3$(OBJ): fxtest3.c #!mkdep
+ fxdemo$(OBJ): fxdemo.c #!mkdep
+ fxdemo$(EXE): fxdemo$(OBJ) libstu$(LIB) 
+-	c -q -L fxdemo
++	$(CC) $(CFLAGS) -o $@ $> -L../sfl -lsfl
+ fxdemo2$(OBJ): fxdemo2.c #!mkdep
+ fxdemo2$(EXE): fxdemo2$(OBJ) libstu$(LIB) 
+-	c -q -L fxdemo2
++	$(CC) $(CFLAGS) -o $@ $> -L../sfl -lsfl
+ fxdemo3$(OBJ): fxdemo3.c #!mkdep
+ fxdemo3$(EXE): fxdemo3$(OBJ) libstu$(LIB) 
+-	c -q -L fxdemo3
++	$(CC) $(CFLAGS) -o $@ $> -L../sfl -lsfl
+ wtpman.i: wtpman.l
+ 	lr wtpman.l
+ wtpman.d: wtpman.l

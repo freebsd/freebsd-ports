@@ -1,5 +1,5 @@
---- src/sfl/prelude.h.orig	Fri Jul 11 23:10:08 2003
-+++ src/sfl/prelude.h	Tue Jul 20 15:21:33 2004
+--- sfl/prelude.h.orig	Fri Jul 11 23:10:08 2003
++++ sfl/prelude.h	Tue Jul 20 15:21:33 2004
 @@ -175,6 +175,10 @@
  #elif (defined (FreeBSD) || defined (__FreeBSD__))
  #   define __UTYPE_FREEBSD

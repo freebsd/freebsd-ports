@@ -1,0 +1,20 @@
+--- smt/makefile.orig	Thu Jul 22 16:51:50 2004
++++ smt/makefile	Wed Apr 19 09:11:22 2006
+@@ -22,7 +22,7 @@
+ #   with the iMatix c script without any arguments.
+ #
+ .c$(OBJ):
+-	c -q $<
++	$(CC) $(CFLAGS) -I../sfl -I../gsl -c $<
+ #   And .c files _do_not_ depend on .l files (.l files are Libero files,
+ #   not lex input files as the default rules think).
+ #
+@@ -39,7 +39,7 @@
+ #   Dependencies
+ #
+ libsmt$(LIB): smtecho$(OBJ) smtftpc$(OBJ) smtftpd$(OBJ) smtftpl$(OBJ) smthlog$(OBJ) smthttp$(OBJ) smthttpl$(OBJ) smtlib$(OBJ) smtlog$(OBJ) smtoper$(OBJ) smtpipe$(OBJ) smtrdns$(OBJ) smtrdnsl$(OBJ) smtsimu$(OBJ) smtslot$(OBJ) smtsock$(OBJ) smttime$(OBJ) smttran$(OBJ) smttst1$(OBJ) smttst2$(OBJ) smttst3$(OBJ) smtupmc$(OBJ) smtupmd$(OBJ) xiddns$(OBJ) xierror$(OBJ) xiredir$(OBJ) xiimap$(OBJ) xilrwp$(OBJ) xisuper$(OBJ) xixlog$(OBJ) xixssi$(OBJ) xixxml$(OBJ) smtmsg$(OBJ) smtsslm$(OBJ) xixlogm$(OBJ) 
+-	c -q -r libsmt$(LIB) smtecho$(OBJ) smtftpc$(OBJ) smtftpd$(OBJ) smtftpl$(OBJ) smthlog$(OBJ) smthttp$(OBJ) smthttpl$(OBJ) smtlib$(OBJ) smtlog$(OBJ) smtoper$(OBJ) smtpipe$(OBJ) smtrdns$(OBJ) smtrdnsl$(OBJ) smtsimu$(OBJ) smtslot$(OBJ) smtsock$(OBJ) smttime$(OBJ) smttran$(OBJ) smttst1$(OBJ) smttst2$(OBJ) smttst3$(OBJ) smtupmc$(OBJ) smtupmd$(OBJ) xiddns$(OBJ) xierror$(OBJ) xiredir$(OBJ) xiimap$(OBJ) xilrwp$(OBJ) xisuper$(OBJ) xixlog$(OBJ) xixssi$(OBJ) xixxml$(OBJ) smtmsg$(OBJ) smtsslm$(OBJ) xixlogm$(OBJ) 
++	$(AR) -r libsmt$(LIB) smtecho$(OBJ) smtftpc$(OBJ) smtftpd$(OBJ) smtftpl$(OBJ) smthlog$(OBJ) smthttp$(OBJ) smthttpl$(OBJ) smtlib$(OBJ) smtlog$(OBJ) smtoper$(OBJ) smtpipe$(OBJ) smtrdns$(OBJ) smtrdnsl$(OBJ) smtsimu$(OBJ) smtslot$(OBJ) smtsock$(OBJ) smttime$(OBJ) smttran$(OBJ) smttst1$(OBJ) smttst2$(OBJ) smttst3$(OBJ) smtupmc$(OBJ) smtupmd$(OBJ) xiddns$(OBJ) xierror$(OBJ) xiredir$(OBJ) xiimap$(OBJ) xilrwp$(OBJ) xisuper$(OBJ) xixlog$(OBJ) xixssi$(OBJ) xixxml$(OBJ) smtmsg$(OBJ) smtsslm$(OBJ) xixlogm$(OBJ) 
+ smtmsg.h: smtmsg.xml
+ 	gsl -q smtmsg.xml
+ smtsslm.h: smtsslm.xml
