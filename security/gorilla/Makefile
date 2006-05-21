@@ -7,6 +7,7 @@
 
 PORTNAME=	gorilla
 PORTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.fpx.de/fp/Software/Gorilla/download/
 
@@ -14,7 +15,7 @@ MAINTAINER=	kay_lehmann@web.de
 COMMENT=	Password Gorilla is cross-platform Password Manager
 
 BUILD_DEPENDS=	wish${TK_VER}:${PORTSDIR}/x11-toolkits/tk${USE_TK}
-LIB_DEPENDS=	itcl32.1:${PORTSDIR}/lang/itcl
+LIB_DEPENDS=	itcl.3:${PORTSDIR}/lang/itcl
 RUN_DEPENDS=	${LOCALBASE}/lib/bwidget/init.tcl:${PORTSDIR}/x11-toolkits/bwidget
 
 USE_TCL=	yes
