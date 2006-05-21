@@ -15,6 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	paul@aps.org
 COMMENT=	Convert Pod to LaTeX
 
+BROKEN=		Incorrect pkg-plist
+
 PERL_CONFIGURE=	yes
 
 MAN1=		pod2latex.1

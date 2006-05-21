@@ -14,6 +14,8 @@ DISTNAME=	pari-${MAJOR_VERSION}.${MINOR_VERSION}.${REV_VERSION}.beta
 MAINTAINER=	yoshiaki@kt.rim.or.jp
 COMMENT=	Mathmatics library and advanced calculator package
 
+BROKEN=		Incorrect pkg-plist
+
 CONFLICTS=	pari-2.1.*
 
 NO_LATEST_LINK=	yes

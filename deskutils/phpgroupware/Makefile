@@ -14,6 +14,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	A web based GroupWare system
 
+BROKEN=		Incorrect pkg-plist
+
 USE_BZIP2=	yes
 USE_PHP=	yes
 WANT_PHP_MOD=	yes
