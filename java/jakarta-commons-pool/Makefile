@@ -7,6 +7,7 @@
 
 PORTNAME=	commons-pool
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	${MASTER_SITE_APACHE_JAKARTA}
 MASTER_SITE_SUBDIR=	${PORTNAME:S,-,/,}/source
@@ -20,8 +21,6 @@ BUILD_DEPENDS=	${JAR_DEPENDS}
 RUN_DEPENDS=	${JAR_DEPENDS}
 
 JAR_DEPENDS=	${JAVALIBDIR}/commons-collections.jar:${PORTSDIR}/java/jakarta-commons-collections
-
-BROKEN=		Does not compile
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.2+

@@ -1,0 +1,32 @@
+--- build.xml.orig	Tue May 16 16:41:33 2006
++++ build.xml	Tue May 16 16:42:52 2006
+@@ -93,7 +93,8 @@
+                noindex="false"
+                nohelp="true"
+                nonavbar="false"
+-               serialwarn="false">
++	       serialwarn="false"
++	       source="1.2">
+           <link href="http://java.sun.com/j2se/1.4.2/docs/api"/>
+       </javadoc>
+    </target>
+@@ -107,7 +108,8 @@
+              classpath="${classpath}"
+              debug="${javac.debug}"
+              deprecation="${javac.deprecation}"
+-             optimize="${javac.optimize}"/>
++	     optimize="${javac.optimize}"
++	     source="1.2"/>
+    </target>
+    
+    <target name="compile-test" depends="compile">
+@@ -116,7 +118,8 @@
+              srcdir="${src.test.dir}"
+              debug="${javac.debug}"
+              deprecation="${javac.deprecation}"
+-             optimize="${javac.optimize}">
++	     optimize="${javac.optimize}"
++	     source="1.2">
+         <classpath>
+           <pathelement location="${build.classes.dir}" /> 
+           <pathelement location="${build.test-classes.dir}" /> 
