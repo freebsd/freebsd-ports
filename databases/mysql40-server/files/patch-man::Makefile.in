@@ -1,13 +1,11 @@
---- man/Makefile.in.orig	Mon Dec 27 16:29:53 2004
-+++ man/Makefile.in	Sun Jan  9 10:26:07 2005
-@@ -290,9 +290,7 @@
+--- man/Makefile.in.orig	Sat May  6 15:56:15 2006
++++ man/Makefile.in	Fri May 19 15:59:41 2006
+@@ -293,7 +293,7 @@
  uname_prog = @uname_prog@
  vio_dir = @vio_dir@
  vio_libs = @vio_libs@
--man_MANS = mysql.1 isamchk.1 isamlog.1 mysql_zap.1 mysqlaccess.1 \
--		mysqladmin.1 mysqld.1 mysqld_multi.1 mysqldump.1 mysqlshow.1 \
--		perror.1 replace.1 mysqld_safe.1 mysql_fix_privilege_tables.1
-+man_MANS =
+-man1_MANS = @man1_files@
++man1_MANS = 
+ EXTRA_DIST = $(man1_MANS)
+ all: all-am
  
- EXTRA_DIST = mysql.1.in isamchk.1.in isamlog.1.in mysql_zap.1.in \
- 		mysqlaccess.1.in mysqladmin.1.in mysqld.1.in mysqld_multi.1.in \
