@@ -1076,3 +1076,4 @@ www/data/oscommerce/catalog/tell_a_friend.php
 @dirrm www/data/oscommerce/catalog/admin
 @dirrm www/data/oscommerce/catalog
 @dirrm www/data/oscommerce
+@dirrmtry www/data

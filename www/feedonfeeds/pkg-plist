@@ -39,3 +39,4 @@
 @dirrm %%DATADIR%%/magpierss/extlib
 @dirrm %%DATADIR%%/magpierss
 @dirrmtry %%DATADIR%%
+@dirrmtry www/data

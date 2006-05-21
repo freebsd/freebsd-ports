@@ -59,7 +59,8 @@ pre-install:
 		${SED} -e 's|^./||;s|^|${B2EVO_DIR}/|' > ${PLIST} \
 		&& ${FIND} -d * -type d | \
 		${SED} -e 's|^|@dirrm ${B2EVO_DIR}/|' >> ${PLIST} \
-		&& ${ECHO_CMD} @dirrm ${B2EVO_DIR} >> ${PLIST}
+		&& ${ECHO_CMD} @dirrm ${B2EVO_DIR} >> ${PLIST} \
+		&& ${ECHO_CMD} @dirrmtry ${WWWDOCROOT} >> ${PLIST}
 
 do-install:
 	-${MKDIR} ${PREFIX}/${B2EVO_DIR}

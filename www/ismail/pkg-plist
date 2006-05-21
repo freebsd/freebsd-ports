@@ -156,3 +156,4 @@
 @dirrm %%EXAMPLESDIR%%
 @dirrm %%DOCSDIR%%
 @dirrm %%ISMAILDIR%%
+@dirrmtry www/data

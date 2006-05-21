@@ -183,3 +183,4 @@
 @dirrm %%INSTALLDIR%%/style
 @dirrm %%INSTALLDIR%%/includes
 @dirrm %%INSTALLDIR%%
+@dirrmtry www/data

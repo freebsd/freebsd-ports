@@ -30,5 +30,6 @@ do-install:
 		${SED} -e "s,^${PREFIX}/,," >> ${TMPPLIST}
 	@${FIND} ${PNEWSDIR} -type d | ${SORT} -r | \
 		${SED} -e "s,^${PREFIX}/,@dirrm ," >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec rmdir %D/www/data 2>/dev/null || true" >> ${TMPPLIST}
 
 .include <bsd.port.mk>

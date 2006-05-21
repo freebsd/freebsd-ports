@@ -36,7 +36,8 @@ pre-install:
 		${SED} -e 's|^|${WORDPRESS}/|' > ${PLIST} \
 		&& ${FIND} -d * -type d | \
 		${SED} -e 's|^|@dirrm ${WORDPRESS}/|' >> ${PLIST} \
-		&& ${ECHO_CMD} @dirrm ${WORDPRESS} >> ${PLIST}
+		&& ${ECHO_CMD} @dirrm ${WORDPRESS} >> ${PLIST} \
+		&& ${ECHO_CMD} @dirrmtry www/data >> ${PLIST}
 	if [! -f ${WRKSRC}/wp-config-sample.php]; then ${CP} \
 		${WRKSRC}/wp-config.php.sample ${WRKSRC}/wp-config.php; fi
 

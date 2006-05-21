@@ -45,7 +45,8 @@ pre-install:
 		${SED} -e 's|^|${WORDPRESSMU}/|' > ${PLIST} \
 		&& ${FIND} -d * -type d | \
 	${SED} -e 's|^|@dirrm ${WORDPRESSMU}/|' >> ${PLIST} \
-		&& ${ECHO_CMD} @dirrm ${WORDPRESSMU} >> ${PLIST}
+		&& ${ECHO_CMD} @dirrm ${WORDPRESSMU} >> ${PLIST} \
+		&& ${ECHO_CMD} @dirrmtry www/data >> ${PLIST}
 
 post-install:
 	${CAT} ${PKGMESSAGE}

@@ -1189,3 +1189,4 @@
 @dirrm %%GALLERYDIR%%/classes/HTML
 @dirrm %%GALLERYDIR%%/classes
 @dirrmtry %%GALLERYDIR%%
+@dirrmtry www/data

@@ -27,5 +27,6 @@ do-install:
 		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
 	@${FIND} ${PHPWEBAPP} -type d | ${SORT} -r | \
 		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec rmdir %D/www/data 2>/dev/null || true" >> ${TMPPLIST}
 
 .include <bsd.port.mk>

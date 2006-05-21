@@ -7826,3 +7826,4 @@
 @dirrmtry %%GALLERY2DIR%%/install
 @dirrm %%GALLERY2DIR%%/images
 @dirrmtry %%GALLERY2DIR%%
+@dirrmtry www/data

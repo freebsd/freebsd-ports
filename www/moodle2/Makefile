@@ -48,6 +48,7 @@ pre-install:
 	@${FIND} -s -d ${WRKSRC} -type f | ${SED} "s?${WRKSRC}?${MOODLEDIR}?g" >${PLIST}
 	@${FIND} -s -d ${WRKSRC} -type d  | ${SED} "s?${WRKSRC}?@dirrm ${MOODLEDIR}?g" >> ${PLIST}
 	@${ECHO} @dirrm ${MOODLEDATADIR} >> ${PLIST}
+	@${ECHO} @dirrmtry www/data >> ${PLIST}
 
 do-install:
 	${INSTALL_DATA} -d ${PREFIX}/${MOODLEDIR}
