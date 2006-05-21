@@ -34,6 +34,36 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="2ecd02e2-e864-11da-b9f4-00123ffe8333">
+    <topic>phpmyadmin -- XSRF vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>phpMyAdmin</name>
+	<range><lt>2.8.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>phpMyAdmin security team reports:</p>
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security.php?issue=PMASA-2006-3">
+	  <p>It was possible to inject arbitrary SQL commands by forcing an
+	    authenticated user to follow a crafted link.</p>
+	  <p>Such issue is quite common in many PHP applications and users
+	    should take care what links they follow. We consider these
+	    vulnerabilities to be quite dangerous.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-1804</cvename>
+      <url>http://www.phpmyadmin.net/home_page/security.php?issue=PMASA-2006-3</url>
+      <url>http://secunia.com/advisories/19659</url>
+    </references>
+    <dates>
+      <discovery>2006-05-20</discovery>
+      <entry>2006-05-21</entry>
+    </dates>
+  </vuln>
 
   <vuln vid="4645b98c-e46e-11da-9ae7-00123fcc6e5c">
     <topic>vnc - authentication bypass vulnerability</topic>
