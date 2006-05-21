@@ -1,0 +1,10 @@
+This module is just a wrapper around the gpc C library written by Alan 
+Murta
+
+gpc: General Polygon Clipping library (C) 1997-1999, Advanced Interfaces 
+Group, University of Manchester.
+
+Please refer to the gpc manual for more details on gpc.
+
+WWW: http://search.cpan.org/dist/Math-Geometry-Planar-GPC
+Author: Danny Van de Pol <daniel.van_de_pol@alcatel.be>
