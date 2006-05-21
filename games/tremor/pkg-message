@@ -1,0 +1,15 @@
+==============================================================================
+
+Tremor has been installed.
+
+To start it in full-screen mode you can run it with the "-fullscreen"
+parameter.
+
+If you have mouse problems you can try running it with the "-nomdga"
+parameter (this will make the mouse work fine when the DGA X11 extension is
+disabled).
+
+If you hace sound problems try running it with the parameter
+"-sndspeed <speed>", where "<speed>" could be 22050 or 44100 for example.
+
+==============================================================================
