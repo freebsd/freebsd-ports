@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	unidesc
-PORTVERSION=	2.16
+PORTVERSION=	2.17
 CATEGORIES=	sysutils textproc
 MASTER_SITES=	http://billposer.org/Software/Downloads/
 DISTNAME=	${PORTNAME}
