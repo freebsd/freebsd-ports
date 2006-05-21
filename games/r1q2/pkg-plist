@@ -1,0 +1,10 @@
+bin/r1q2
+%%SDL%%bin/r1q2-sdl
+%%LIBDIR%%/baseq2/game.so
+%%LIBDIR%%/ref_r1gl.so
+%%SDLGL%%%%LIBDIR%%/ref_r1sdl.so
+%%PORTDOCS%%%%DOCSDIR%%/r1q2.txt
+%%PORTDOCS%%%%DOCSDIR%%/readme.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%LIBDIR%%/baseq2
+@dirrm %%LIBDIR%%
