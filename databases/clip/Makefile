@@ -29,6 +29,8 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg		\
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash			\
 		wget:${PORTSDIR}/ftp/wget
 
+BROKEN=		Installs files prior to 'make install'
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-prg-${DISTVERSION}
 USE_GETTEXT=	yes
 WANT_GNOME=	yes
