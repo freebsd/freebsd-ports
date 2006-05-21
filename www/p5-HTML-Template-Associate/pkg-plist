@@ -1,4 +1,5 @@
 %%SITE_PERL%%/HTML/Template/Associate.pm
+%%SITE_PERL%%/HTML/Template/Associate/DBI.pm
 %%SITE_PERL%%/HTML/Template/Associate/FormValidator.pm
 @dirrm %%SITE_PERL%%/HTML/Template/Associate
 %%SITE_PERL%%/mach/auto/HTML/Template/Associate/.packlist

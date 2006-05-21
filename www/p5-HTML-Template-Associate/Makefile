@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTML-Template-Associate
-PORTVERSION=	1.10
+PORTVERSION=	1.19
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/A/AL/ALEXP
@@ -16,12 +16,13 @@ MAINTAINER=	mig@mig-29.net
 COMMENT=	Bridges gap between HTML::Template and other modules
 
 RUN_DEPENDS=	${SITE_PERL}/HTML/Template.pm:${PORTSDIR}/www/p5-HTML-Template \
-		${SITE_PERL}/CGI/Base.pm:${PORTSDIR}/www/p5-CGI-modules \
 		${SITE_PERL}/Data/FormValidator.pm:${PORTSDIR}/textproc/p5-Data-FormValidator
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
 MAN3=		HTML::Template::Associate.3 \
+		HTML::Template::Associate::DBI.3 \
 		HTML::Template::Associate::FormValidator.3
 
 .include <bsd.port.mk>
