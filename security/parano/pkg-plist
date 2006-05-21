@@ -10,5 +10,8 @@ share/pixmaps/parano-icon.png
 %%DATADIR%%/parano-icon.png
 %%DATADIR%%/parano.glade
 @dirrm %%DATADIR%%
+@dirrmtry share/applications
+@dirrmtry share/application-registry
+@dirrmtry share/mime-info
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
