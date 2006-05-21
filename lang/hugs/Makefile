@@ -6,20 +6,20 @@
 #
 
 PORTNAME=	hugs98
-PORTVERSION=	200503
-PORTREVISION=	1
+PORTVERSION=	200605
 CATEGORIES=	lang haskell
-MASTER_SITES=	http://cvs.haskell.org/Hugs/downloads/${HUGS_DATE}/
-DISTNAME=	${PORTNAME}-${HUGS_DATE}-patched
+MASTER_SITES=	http://cvs.haskell.org/Hugs/downloads/2006-05/
+DISTNAME=	${PORTNAME}-plus-${HUGS_DATE}
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	An interpreter for the functional programming language Haskell 98
 
+BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
+
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
 #OPTIONS=	HUGS_OPENGL "OpenGL/GLUT support" off
-WITH_HUGS_OPENGL=	yes
-HUGS_DATE=	Mar2005
+HUGS_DATE=	May2006
 USE_BISON=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -28,11 +28,19 @@ GNU_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_HUGS_OPENGL)
-#CONFIGURE_ARGS+=	--enable-hopengl
+CONFIGURE_ARGS+=	--with-pthreads
+
+.if (${OSVERSION} < 500000)
+BROKEN=		missing data type declarations
+.endif
+
+.if !defined(WITHOUT_X11)
 USE_GL=	yes
+LIB_DEPENDS+=	glut.4:${PORTSDIR}/graphics/libglut
 PLIST_SUB+=	X11=""
 .else
+BROKEN=		not supported at the moment
+CONFIGURE_ARGS+=	--disable-hgl --disable-opengl --disable-alut --disable-glut --disable-x11
 PLIST_SUB+=	X11="@comment "
 .endif
 
@@ -46,6 +54,7 @@ post-patch:
 	@${REINPLACE_CMD} -e '/^install		:: install_notes/d ; \
 		/^install		:: install_guide/d' \
 		${WRKSRC}/src/MkInstal.in
+	@${REINPLACE_CMD} -e 's|^#!/bin/sh|#!/usr/local/bin/bash|' ${WRKSRC}/libraries/tools/make_bootlib
 
 do-build:
 .	for dir in src libraries docs
