@@ -34,6 +34,12 @@ MAKE_ENV=	LDFLAGS="${LDFLAGS}" CPPFLAGS="${CXXFLAGS}"
 SUB_FILES=	pkg-message
 MAN1=	jacklaunch.1
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		does not compile
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PTHREAD%%|${PTHREAD_LIBS}|g' ${WRKSRC}/${CONFIGURE_SCRIPT}
 
@@ -49,4 +55,4 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${PREFIX}/man/man1/
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
