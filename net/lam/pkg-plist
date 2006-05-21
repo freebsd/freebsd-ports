@@ -72,11 +72,11 @@ lib/libmpi.la
 lib/libmpi.a
 lib/liblammpi++.a
 lib/liblammpio.a
-share/lam/doc/ROMIO-COPYRIGHT
-share/lam/doc/ROMIO-README
-share/lam/doc/ROMIO-README_LAM
-share/lam/doc/romio-users-guide.ps.gz
-share/lam/mpi.share
+%%DATADIR%%/doc/ROMIO-COPYRIGHT
+%%DATADIR%%/doc/ROMIO-README
+%%DATADIR%%/doc/ROMIO-README_LAM
+%%DATADIR%%/doc/romio-users-guide.ps.gz
+%%DATADIR%%/mpi.share
 @dirrm include/mpi2c++
-@dirrm share/lam/doc
-@dirrm share/lam
+@dirrm %%DATADIR%%/doc
+@dirrm %%DATADIR%%
