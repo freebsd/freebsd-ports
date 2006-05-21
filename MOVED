@@ -1913,7 +1913,6 @@ deskutils/gdesklets-sensor-psi_theme||2005-11-11|Deleted; dead and unfetchable
 deskutils/gdesklets-psi_themes||2005-11-11|Deleted; dead and unfetchable
 devel/libidn|dns/libidn|2005-11-12|Moved to a better category
 devel/p5-Net-LibIDN|dns/p5-Net-LibIDN|2005-11-12|Moved to a better category
-net/libnet-devel/net/libnet|2005-11-14|Moved
 graphics/libpixman||2005-11-14|Project merged into cairo
 security/hping|net/hping|2005-11-15|Moved to a better category
 lang/dis||2005-11-15|Master site has vanished
@@ -2223,7 +2222,6 @@ sysutils/stat||2006-03-20|Remove expired port
 sysutils/rubygem-switchtower|sysutils/rubygem-capistrano|2006-03-22|Project renamed
 irc/dancer-ircd||2006-03-23|Has expired: mastersite disappeared, no longer maintained by author
 irc/dancer-services||2006-03-23|Has expired: mastersite disappeared, no longer maintained by author
-databases/libgda2|databases/libgda3|Port has renamed to accommodate legacy libgda2
 irc/scrollz-doc||2006-03-27|Has expired: Mastersite disappeared, no longer maintained by author
 japanese/cal.rb||2006-03-27|Has expired: mastersite disappeared, no longer maintained by author
 mail/glacier||2006-03-31|Has expired: mastersite disappeared, no longer maintained by author
