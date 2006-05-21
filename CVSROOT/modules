@@ -11418,6 +11418,7 @@ qvwm		ports/x11-wm/qvwm
 qwdtools	ports/games/qwdtools
 qwt		ports/x11-toolkits/qwt
 qwtplot3d	ports/math/qwtplot3d
+r1q2		ports/games/r1q2
 rabl_client	ports/mail/rabl_client
 rabl_server	ports/mail/rabl_server
 race		ports/games/race
