@@ -19,6 +19,8 @@ COMMENT=	Proxy/Server driver for DBI-for-Ruby
 
 RUN_DEPENDS=	${RUBY_SITELIBDIR}/dbi.rb:${RUBY_DBI_PORTDIR}
 
+BROKEN=		Does not build
+
 USE_RUBY=	yes
 USE_RUBY_FEATURES=	drb
 USE_RUBY_SETUP=	yes
