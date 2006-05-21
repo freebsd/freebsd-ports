@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	kdesvn
-PORTVERSION=	0.8.3
+PORTVERSION=	0.8.4
 CATEGORIES=	devel kde
 MASTER_SITES=	http://www.alwins-world.de/programs/download/${PORTNAME}/ \
 		http://www.yuanjue.net/download/
