@@ -2,9 +2,9 @@ bin/xpad
 share/applications/xpad.desktop
 share/icons/hicolor/48x48/apps/xpad.png
 share/icons/hicolor/scalable/apps/xpad.svg
-share/pixmaps/xpad.png
 share/locale/af/LC_MESSAGES/xpad.mo
 share/locale/bg/LC_MESSAGES/xpad.mo
+share/locale/da/LC_MESSAGES/xpad.mo
 share/locale/es/LC_MESSAGES/xpad.mo
 share/locale/fr/LC_MESSAGES/xpad.mo
 share/locale/ga/LC_MESSAGES/xpad.mo
@@ -17,6 +17,10 @@ share/locale/ru/LC_MESSAGES/xpad.mo
 share/locale/rw/LC_MESSAGES/xpad.mo
 share/locale/sk/LC_MESSAGES/xpad.mo
 share/locale/sl/LC_MESSAGES/xpad.mo
+share/locale/sv/LC_MESSAGES/xpad.mo
 share/locale/vi/LC_MESSAGES/xpad.mo
+share/locale/zh_CN/LC_MESSAGES/xpad.mo
 share/locale/zh_TW/LC_MESSAGES/xpad.mo
-@dirrmtry share/applications
+share/pixmaps/xpad.png
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
