@@ -8,9 +8,12 @@
 PORTNAME=	mcabber
 PORTVERSION=	0.7.6
 CATEGORIES=	net-im
-MASTER_SITES=	http://www.lilotux.net/~mikael/mcabber/files/
+MASTER_SITES=	http://www.lilotux.net/~mikael/mcabber/files/ \
+		http://bsd1.csme.ru/myports/ \
+		http://bsd2.csme.ru/myports/ \
+		http://bsd3.csme.ru/myports/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Small Jabber console client
 
 USE_BZIP2=	yes
