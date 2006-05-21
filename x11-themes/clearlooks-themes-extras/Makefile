@@ -15,9 +15,8 @@ DISTNAME=	Clearlooks-Big_Pack-${PORTVERSION}.x
 MAINTAINER=	mezz@FreeBSD.org
 COMMENT=	Extras colour schemes for Clearlooks engine theme
 
-BROKEN=		Broken dependency
-
 NO_BUILD=	yes
+USE_GNOME=	gtk20
 USE_X_PREFIX=	yes
 
 THEME_DIR=	${PREFIX}/share/themes
