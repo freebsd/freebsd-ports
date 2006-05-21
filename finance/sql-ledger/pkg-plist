@@ -109,7 +109,7 @@ sql-ledger/doc/UPGRADE-2.4.0-2.4.2
 sql-ledger/doc/UPGRADE-2.4.16-2.6.0
 sql-ledger/doc/UPGRADE-2.4.2-2.4.3
 sql-ledger/doc/UPGRADE-2.4.3-2.4.16
-sql-ledger/doc/UPGRADE-2.6.0-2.6.8
+sql-ledger/doc/UPGRADE-2.6.0-2.6.11
 sql-ledger/doc/faq.html
 sql-ledger/favicon.ico
 sql-ledger/gl.pl
@@ -183,6 +183,37 @@ sql-ledger/locale/be_nl/ps
 sql-ledger/locale/be_nl/pw
 sql-ledger/locale/be_nl/rc
 sql-ledger/locale/be_nl/rp
+sql-ledger/locale/bg_utf/COPYING
+sql-ledger/locale/bg_utf/LANGUAGE
+sql-ledger/locale/bg_utf/aa
+sql-ledger/locale/bg_utf/admin
+sql-ledger/locale/bg_utf/all
+sql-ledger/locale/bg_utf/am
+sql-ledger/locale/bg_utf/ap
+sql-ledger/locale/bg_utf/ar
+sql-ledger/locale/bg_utf/arap
+sql-ledger/locale/bg_utf/arapprn
+sql-ledger/locale/bg_utf/bp
+sql-ledger/locale/bg_utf/ca
+sql-ledger/locale/bg_utf/cp
+sql-ledger/locale/bg_utf/ct
+sql-ledger/locale/bg_utf/gl
+sql-ledger/locale/bg_utf/hr
+sql-ledger/locale/bg_utf/ic
+sql-ledger/locale/bg_utf/io
+sql-ledger/locale/bg_utf/ir
+sql-ledger/locale/bg_utf/is
+sql-ledger/locale/bg_utf/jc
+sql-ledger/locale/bg_utf/locales.pl
+sql-ledger/locale/bg_utf/login
+sql-ledger/locale/bg_utf/menu
+sql-ledger/locale/bg_utf/oe
+sql-ledger/locale/bg_utf/pe
+sql-ledger/locale/bg_utf/pos
+sql-ledger/locale/bg_utf/ps
+sql-ledger/locale/bg_utf/pw
+sql-ledger/locale/bg_utf/rc
+sql-ledger/locale/bg_utf/rp
 sql-ledger/locale/br/COPYING
 sql-ledger/locale/br/LANGUAGE
 sql-ledger/locale/br/aa
@@ -1740,8 +1771,10 @@ sql-ledger/sql/Simplified-Chinese_Default-UTF8-chart.sql
 sql-ledger/sql/Simplified-Chinese_Default-chart.sql
 sql-ledger/sql/Spain-ISO-chart.sql
 sql-ledger/sql/Spain-UTF8-chart.sql
-sql-ledger/sql/Swedish-chart.sql
-sql-ledger/sql/Swedish-gifi.sql
+sql-ledger/sql/Sweden-chart.sql
+sql-ledger/sql/Sweden-gifi.sql
+sql-ledger/sql/Sweden_Agriculture-chart.sql
+sql-ledger/sql/Sweden_Church_Society-chart.sql
 sql-ledger/sql/Swiss-German-chart.sql
 sql-ledger/sql/Swiss-German-gifi.sql
 sql-ledger/sql/Traditional-Chinese_Default-UTF8-chart.sql
@@ -2379,6 +2412,7 @@ etc/sql-ledger-httpd.conf
 @dirrm sql-ledger/locale/ca_fr
 @dirrm sql-ledger/locale/ca_en
 @dirrm sql-ledger/locale/br
+@dirrm sql-ledger/locale/bg_utf
 @dirrm sql-ledger/locale/be_nl
 @dirrm sql-ledger/locale/be_fr
 @dirrm sql-ledger/locale
