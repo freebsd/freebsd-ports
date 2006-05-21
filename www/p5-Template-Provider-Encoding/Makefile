@@ -23,4 +23,10 @@ MAN3=	Template::Provider::Encoding.3 \
 	Template::Stash::ForceUTF8.3 \
 	Template::Plugin::encoding.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+IGNORE=	requires perl 5.6.0 or later. Install lang/perl5.8 and try again
+.endif
+
+.include <bsd.port.post.mk>
