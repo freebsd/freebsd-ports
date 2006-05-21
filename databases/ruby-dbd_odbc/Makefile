@@ -20,8 +20,6 @@ COMMENT=	ODBC driver for DBI-for-Ruby
 RUN_DEPENDS=	${RUBY_SITELIBDIR}/dbi.rb:${RUBY_DBI_PORTDIR} \
 		${RUBY_SITEARCHLIBDIR}/odbc.so:${.CURDIR}/../ruby-odbc
 
-BROKEN=		Does not build
-
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
 
