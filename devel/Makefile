@@ -1010,6 +1010,7 @@
     SUBDIR += p5-Getopt-Popt
     SUBDIR += p5-Glib2
     SUBDIR += p5-Gnome2-GConf
+    SUBDIR += p5-Gtk2-Spell
     SUBDIR += p5-Heap
     SUBDIR += p5-Heap-Simple
     SUBDIR += p5-Heap-Simple-Perl
