@@ -1,0 +1,37 @@
+--- ./Makefile.orig	Sat May 13 08:01:01 2006
++++ ./Makefile	Sun May 14 16:20:57 2006
+@@ -90,7 +90,7 @@
+ 
+ STRIP ?= strip
+ 
+-CFLAGS := -Wall -Wno-trigraphs
++CFLAGS := $(CFLAGS) -Wall -Wno-trigraphs
+ 
+ # Enable this if you're getting pedantic again...
+ #ifeq ($(TARGET_OS),LINUX)
+@@ -100,6 +100,7 @@
+ ifdef DEBUG
+ CFLAGS += -g
+ else
++ifdef OPTIMIZED_CFLAGS
+ CFLAGS += -O2
+ # -funit-at-a-time is buggy for MinGW GCC > 3.2
+ # I'm assuming it's fixed for MinGW GCC >= 4.0 when that comes about
+@@ -107,7 +108,7 @@
+ 		then echo $(call cc-option,-fno-unit-at-a-time); fi ;)
+ CFLAGS += $(call cc-option,-fweb,)
+ CFLAGS += $(call cc-option,-frename-registers,)
+-CFLAGS += $(call cc-option,-mtune=i686,-mcpu=i686)
++endif
+ endif
+ 
+ # ---------------------------------------------------------
+@@ -133,7 +134,7 @@
+ .PHONY:	prepare
+ prepare:	$(BUILD_DIRS)
+ 
+-COMMON_CPPFLAGS := -DTYR_VERSION=$(TYR_VERSION)
++COMMON_CPPFLAGS := -DTYR_VERSION=$(TYR_VERSION) -DDATADIR='"$(Q1DIR)"' -I$(X11BASE)/include
+ ifdef DEBUG
+ COMMON_CPPFLAGS += -DDEBUG
+ else

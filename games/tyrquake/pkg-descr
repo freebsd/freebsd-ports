@@ -1,0 +1,8 @@
+This is meant to be a very conservative branch of the Quake source code. I
+intend to support Quake and Quakeworld in both software and GL versions, as
+well as Quakeworld Server; all on both MS Windows and Linux. I don't intend on
+adding lots of rendering enhancements, but rather fixing little bugs that I've
+come across over the years. I'll be adding small enhancements, but I don't
+want to completely overhaul the engine.
+
+WWW: http://disenchant.net/engine.html

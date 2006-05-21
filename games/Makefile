@@ -662,6 +662,7 @@
     SUBDIR += tvp
     SUBDIR += twitch
     SUBDIR += typespeed
+    SUBDIR += tyrquake
     SUBDIR += uhexen
     SUBDIR += umark
     SUBDIR += uox3
