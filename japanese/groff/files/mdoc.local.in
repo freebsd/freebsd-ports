@@ -1,0 +1,69 @@
+.\" Copyright (c) 2001 Ruslan Ermilov <ru@FreeBSD.org>.
+.\" All rights reserved.
+.\"
+.\" Redistribution and use in source and binary forms, with or without
+.\" modification, are permitted provided that the following conditions
+.\" are met:
+.\" 1. Redistributions of source code must retain the above copyright
+.\"    notice, this list of conditions and the following disclaimer.
+.\" 2. Redistributions in binary form must reproduce the above copyright
+.\"    notice, this list of conditions and the following disclaimer in the
+.\"    documentation and/or other materials provided with the distribution.
+.\"
+.\" THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND
+.\" ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+.\" IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+.\" ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
+.\" FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+.\" DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+.\" OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+.\" HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+.\" LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+.\" OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+.\" SUCH DAMAGE.
+.\"
+.\" %FreeBSD: src/gnu/usr.bin/groff/tmac/mdoc.local,v 1.2.2.19 2003/03/25 10:20:12 murray Exp %
+.\" $FreeBSD$
+.\"
+.eo
+.ds volume-operating-system FreeBSD
+.ds str-Lb-libc_r      Reentrant C\~Library (libc_r, \-pthread)
+.ds str-Lb-libcalendar Calendar Arithmetic Library (libcalendar, \-lcalendar)
+.ds str-Lb-libcam      Common Access Method User Library (libcam, \-lcam)
+.ds str-Lb-libcipher   FreeSec Crypt Library (libcipher, \-lcipher)
+.ds str-Lb-libdevinfo  Device and Resource Information Utility Library (libdevinfo, \-ldevinfo)
+.ds str-Lb-libdevstat  Device Statistics Library (libdevstat, \-ldevstat)
+.ds str-Lb-libdisk     Interface to Slice and Partition Labels Library (libdisk, \-ldisk)
+.ds str-Lb-libedit     Line Editor and History Library (libedit, \-ledit)
+.ds str-Lb-libfetch    File Transfer Library (libfetch, \-lfetch)
+.ds str-Lb-libipx      IPX Address Conversion Support Library (libipx, \-lipx)
+.ds str-Lb-libmd       Message Digest (MD4, MD5, etc.) Support Library (libmd, \-lmd)
+.ds str-Lb-libnetgraph Netgraph User Library (libnetgraph, \-lnetgraph)
+.ds str-Lb-libpam      PAM Library (libpam, \-lpam)
+.ds str-Lb-libposix1e  POSIX.1e Security API Library (libposix1e, \-lposix1e)
+.ds str-Lb-librpcsvc   RPC Service Library (librpcsvc, \-lrpcsvc)
+.ds str-Lb-libskey     S/Key Password Control Table Access Library (libskey, \-lskey)
+.ds str-Lb-libusbhid   USB HID access routines library (libusbhid, \-lusbhid)
+.ds str-Lb-libvgl      Video Graphics Library (libvgl, \-lvgl)
+.ds operating-system FreeBSD\~%%OSREL%%
+.ds operating-system-FreeBSD-4.9    4.9
+.ds operating-system-FreeBSD-4.10   4.10
+.ds operating-system-FreeBSD-4.11   4.11
+.ds operating-system-FreeBSD-5.2    5.2
+.ds operating-system-FreeBSD-5.2.1  5.2.1
+.ds operating-system-FreeBSD-5.3    5.3
+.ds operating-system-FreeBSD-5.4    5.4
+.ds operating-system-FreeBSD-5.5    5.5
+.ds operating-system-FreeBSD-6.0    6.0
+.ds operating-system-FreeBSD-6.1    6.1
+.ds operating-system-FreeBSD-7.0    7.0
+.ec
+.if d locale \{\
+.ie "\*[locale]"ru.KOI8-R" \
+.mso mdoc/ru.KOI8-R
+.el \{ .if "\*[locale]"ja.eucJP" \
+.mso mdoc/ja.eucJP
+.\}\}
+.if d lang \{\
+.if "\*[lang]"ja_JP.eucJP" .mso mdoc/ja.eucJP
+.\}

@@ -8,7 +8,7 @@
 PORTNAME=	groff
 PORTVERSION=	1.18.1
 DISTVERSIONSUFFIX=	.1
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	japanese print
 MASTER_SITES=	${MASTER_SITE_LOCAL:S,%SUBDIR%,okazaki/&,} \
 		${MASTER_SITE_DEBIAN:S,$,:debian,}
@@ -45,6 +45,15 @@ SITETMACDIR=	share/groff/site-tmac
 MDOCDIR=	${TMACDIR}/mdoc
 PLIST_SUB=	GROFF_VERSION=${PORTVERSION}
 
+SUB_FILES=	mdoc.local
+SUB_LIST=	OSREL=${OSREL}
+
+TMACFILES=	tmac.orig_me tmac.vgrind \
+		an-old.tmac doc.tmac e.tmac
+MDOCFILES=	ja.eucJP doc-common doc-syms
+
+DOCUMENTS=	ChangeLog.jp NEWS PROBLEMS README README.jp
+
 MAN1=		addftinfo.1 afmtodit.1 \
 		eqn.1 eqn2graph.1 \
 		grn.1 grodvi.1 groff.1 groffer.1 grog.1 \
@@ -57,13 +66,6 @@ MAN7=		ditroff.7 groff.7 groff_char.7 groff_diff.7 \
 		groff_man.7 groff_mdoc.7 \
 		groff_me.7 groff_mm.7 groff_mmse.7 groff_mom.7 groff_ms.7 \
 		groff_trace.7 groff_www.7 roff.7
-
-SITETMACFILES=	mdoc.local
-TMACFILES=	tmac.orig_me tmac.vgrind \
-		an-old.tmac doc.tmac e.tmac
-MDOCFILES=	ja.eucJP doc-common doc-syms
-
-DOCUMENTS=	ChangeLog.jp NEWS PROBLEMS README README.jp
 
 .include <bsd.port.pre.mk>
 
@@ -128,15 +130,13 @@ post-build:
 	| ${XARGS} ${REINPLACE_CMD} -E -e 's|pro +([^/].*)|pro ${PREFIX}/bin/\1|g;'
 
 post-install: ${POST_INSTALL_SEQ}
-.for F in ${SITETMACFILES}
-	${INSTALL_DATA} ${TMACBASE}/${F} ${PREFIX}/${SITETMACDIR}
-.endfor
 .for F in ${TMACFILES}
 	${INSTALL_DATA} ${TMACBASE}/${F} ${PREFIX}/${TMACDIR}
 .endfor
 .for F in ${MDOCFILES}
 	${INSTALL_DATA} ${TMACBASE}/mdoc/${F} ${PREFIX}/${MDOCDIR}
 .endfor
+	${INSTALL_DATA} ${WRKDIR}/mdoc.local ${PREFIX}/${SITETMACDIR}
 
 install-documents:
 	@${MKDIR} ${DOCSDIR}/${PORTVERSION}
