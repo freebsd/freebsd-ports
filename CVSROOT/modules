@@ -13265,6 +13265,7 @@ typetools	ports/print/typetools
 typhoon		ports/databases/typhoon
 typo		ports/www/typo
 typo3		ports/www/typo3
+tyrquake	ports/games/tyrquake
 uDrawGraph	ports/graphics/uDrawGraph
 ua-ispell	ports/textproc/ua-ispell
 uae		ports/emulators/uae
