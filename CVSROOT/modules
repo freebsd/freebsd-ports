@@ -9675,6 +9675,7 @@ p5-YAML-Syck	ports/textproc/p5-YAML-Syck
 p5-YAPE-HTML	ports/textproc/p5-YAPE-HTML
 p5-YAPE-Regex	ports/textproc/p5-YAPE-Regex
 p5-YAPE-Regex-Explain	ports/textproc/p5-YAPE-Regex-Explain
+p5-Yada-Yada-Yada	ports/devel/p5-Yada-Yada-Yada
 p5-accessors	ports/devel/p5-accessors
 p5-base		ports/devel/p5-base
 p5-bioperl	ports/biology/p5-bioperl
