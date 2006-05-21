@@ -27,7 +27,8 @@ pre-install:
 		${SED} -e 's|^|${WEBSVNDIR}/|' > ${PLIST} \
 		&& ${FIND} -d * -type d | \
 		${SED} -e 's|^|@dirrm ${WEBSVNDIR}/|' >> ${PLIST} \
-		&& ${ECHO_CMD} @dirrm ${WEBSVNDIR} >> ${PLIST}
+		&& ${ECHO_CMD} @dirrm ${WEBSVNDIR} >> ${PLIST} \
+		&& ${ECHO_CMD} @dirrmtry www/data >> ${PLIST}
 
 do-install:
 	${MKDIR} ${PREFIX}/${WEBSVNDIR}
