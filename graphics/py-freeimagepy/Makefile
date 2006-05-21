@@ -18,6 +18,8 @@ COMMENT=	A FreeImage library python wrapper
 
 LIB_DEPENDS=	freeimage:${PORTSDIR}/graphics/freeimage
 
+BROKEN=		Incomplete pkg-plist
+
 WRKSRC=		${WRKDIR}/FreeImagePy
 USE_BZIP2=	yes
 USE_PYTHON=	yes

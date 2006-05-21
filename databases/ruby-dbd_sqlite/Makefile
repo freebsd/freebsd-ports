@@ -20,6 +20,8 @@ COMMENT=	SQLite driver for DBI-for-Ruby
 LIB_DEPENDS=	sqlite.2:${PORTSDIR}/databases/sqlite2
 RUN_DEPENDS=	${RUBY_SITELIBDIR}/dbi.rb:${RUBY_DBI_PORTDIR}
 
+BROKEN=		Incomplete pkg-plist
+
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
 
