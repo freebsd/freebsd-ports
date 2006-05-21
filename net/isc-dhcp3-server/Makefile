@@ -40,6 +40,10 @@ OPTIONS=	DHCP_PARANOIA "add -user, -group and -chroot options" on \
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "amd64" || ${ARCH} == "ia64" || ${ARCH} == "sparc64"
+FORBIDDEN=	the last fix for 64-bit platforms may cause security problems
+.endif
+
 .if ${SUBSYS} == server && defined(WITH_DHCP_LDAP)
 # Based on patch from Brian Masney :
 PATCH_SITES=	http://www.newwave.net/~masneyb/:ldap \
