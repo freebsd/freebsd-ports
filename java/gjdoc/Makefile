@@ -35,6 +35,12 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION}
 MAN1=		gjdoc.1
 INFO=		gjdoc
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386"
+BROKEN=		Broken dependency
+.endif
+
 post-extract:
 	@${CP} ${DISTDIR}/${ANTLR}.jar ${WRKSRC}
 	@${MKDIR} ${WRKDIR}/bin
@@ -42,4 +48,4 @@ post-extract:
 	@${LN} -s ${LOCALBASE}/bin/gij41 ${WRKDIR}/bin/gij
 	@${LN} -s ${LOCALBASE}/bin/fastjar41 ${WRKDIR}/bin/fastjar
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
