@@ -21,6 +21,7 @@ include/ogmrip/ogmrip-video.h
 include/ogmrip/ogmrip-vobsub.h
 include/ogmrip/ogmrip-vorbis.h
 include/ogmrip/ogmrip-wav.h
+%%X264_SUPPORT%%include/ogmrip/ogmrip-x264.h
 include/ogmrip/ogmrip-xvid.h
 include/ogmrip/ogmrip.h
 include/ogmspawn/ogmsp-bin.h

@@ -7,7 +7,7 @@
 
 PORTNAME=	ogmrip
 PORTVERSION=	0.9.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,9 +19,12 @@ BUILD_DEPENDS=	mencoder:${PORTSDIR}/multimedia/mplayer \
 		oggenc:${PORTSDIR}/audio/vorbis-tools \
 		ogmmerge:${PORTSDIR}/multimedia/ogmtools \
 		lame:${PORTSDIR}/audio/lame \
-		gsed:${PORTSDIR}/textproc/gsed \
 		gocr:${PORTSDIR}/graphics/gocr
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	mencoder:${PORTSDIR}/multimedia/mplayer \
+		oggenc:${PORTSDIR}/audio/vorbis-tools \
+		ogmmerge:${PORTSDIR}/multimedia/ogmtools \
+		lame:${PORTSDIR}/audio/lame \
+		gocr:${PORTSDIR}/graphics/gocr
 LIB_DEPENDS=	xvidcore:${PORTSDIR}/multimedia/xvid \
 		dvdread:${PORTSDIR}/multimedia/libdvdread \
 		enchant:${PORTSDIR}/textproc/enchant
@@ -49,6 +52,10 @@ PLIST_SUB+=	MKV_SUPPORT=""
 PLIST_SUB+=	MKV_SUPPORT="@comment "
 .endif
 
+X264_SUPPORT!=	${LOCALBASE}/bin/mencoder -ovc help 2> /dev/null | ${GREP} -q '^ *x264 *- .*$$' \
+	  && ${ECHO_CMD} "" || ${ECHO_CMD} "@comment "
+PLIST_SUB+=	X264_SUPPORT="${X264_SUPPORT}"
+
 .if !defined(WITH_DEBUG)
 pre-extract:
 	@${ECHO_MSG} ""
@@ -67,10 +74,6 @@ pre-configure:
 	  ${ECHO_MSG} "" ; \
 	  ${FALSE} ; \
 	fi
-
-pre-install:
-	@${LOCALBASE}/bin/mencoder -ovc help 2> /dev/null | ${GREP} -q "^ *x264 *- .*$$" \
-	  && ${ECHO_CMD} "include/ogmrip/ogmrip-x264.h" >>${TMPPLIST} || ${TRUE}
 
 post-install:
 	@${ECHO_CMD} ""
