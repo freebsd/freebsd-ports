@@ -53,3 +53,4 @@
 @dirrm %%MYADMDIR%%/images
 @dirrm %%MYADMDIR%%/contrib
 @dirrm %%MYADMDIR%%
+@dirrmtry www/data

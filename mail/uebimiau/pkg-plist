@@ -196,3 +196,4 @@ www/data/uebimiau/upload.php
 @dirrm www/data/uebimiau/docs
 @dirrm www/data/uebimiau/database
 @dirrm www/data/uebimiau
+@dirrmtry www/data

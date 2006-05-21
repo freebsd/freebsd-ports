@@ -71,3 +71,4 @@ etc/webfwlog.conf.sample
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/mysql
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+@dirrmtry www/data
