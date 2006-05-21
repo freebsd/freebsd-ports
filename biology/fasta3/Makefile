@@ -16,6 +16,8 @@ EXTRACT_SUFX=	.shar.Z
 MAINTAINER=	fernan@iib.unsam.edu.ar
 COMMENT=	A collection of programs for searching DNA and protein databases
 
+BROKEN=		Unfetchable
+
 NO_CDROM=	"May not be sold or incorporated into a commercial product"
 WRKSRC=		${WRKDIR}/${PORTNAME}
 SUB_FILES=	pkg-message

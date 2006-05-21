@@ -17,6 +17,8 @@ COMMENT=	Online presence and instant messaging server
 
 LIB_DEPENDS=	idn.16:${PORTSDIR}/dns/libidn
 
+BROKEN=		Unfetchable
+
 OPTIONS=	POSTGRESQL "Use PostgreSQL for storage and authentication" off \
 		MYSQL "Use MySQL for storage and authentication" off \
 		LDAP "Use LDAP for authentication" off \
