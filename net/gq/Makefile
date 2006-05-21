@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	gq
-PORTVERSION=	1.0r1
+PORTVERSION=	1.0.0
+PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://dryice.name/computer/FreeBSD/distfiles/
