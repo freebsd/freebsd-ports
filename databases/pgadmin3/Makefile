@@ -9,11 +9,12 @@ PORTNAME=	pgadmin3
 PORTVERSION=	1.4.2
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
-MASTER_SITE_SUBDIR= pgadmin3/release/v${PORTVERSION}/src
+MASTER_SITE_SUBDIR=	pgadmin3/release/v${PORTVERSION}/src
 
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	PostgreSQL database design and management system
 
+USE_GETTEXT=	yes
 USE_PGSQL=	yes
 BROKEN_WITH_PGSQL=	73
 GNU_CONFIGURE=	yes
@@ -31,7 +32,7 @@ post-install:
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-BROKEN=		requires wchar_t 
+BROKEN=		requires wchar_t
 .endif
 
 .include <bsd.port.post.mk>
