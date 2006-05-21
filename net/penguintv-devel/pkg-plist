@@ -120,7 +120,7 @@ share/pixmaps/penguintvicon.png
 @dirrmtry share/applications
 @dirrm share/penguintv
 @dirrm %%PYTHON_SITELIBDIR%%/penguintv/ptvbittorrent
-@dirrm %%PYTHON_SITELIBDIR%%/penguintv/democracy_moz
+%%WITH_MOZILLA%%@dirrm %%PYTHON_SITELIBDIR%%/penguintv/democracy_moz
 @dirrm %%PYTHON_SITELIBDIR%%/penguintv
 
 @cwd %%X11BASE%%
