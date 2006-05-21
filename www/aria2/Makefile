@@ -19,6 +19,7 @@ LIB_DEPENDS=	gnutls.15:${PORTSDIR}/security/gnutls \
 
 CONFIGURE_ARGS=	--with-libintl-prefix=${LOCALBASE}
 
+USE_GCC=	3.4+
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack
 USE_GETTEXT=	yes
