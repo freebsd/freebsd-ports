@@ -1184,7 +1184,6 @@ sysutils/fastresolve|dns/fastresolve|2004-08-08|Move to the right category
 audio/p5-dapple|audio/p5-Net-DAAP-Client|2004-08-09|Module renamed
 audio/p5-Net-DAAP-Client-Auth||2004-08-09|Obsoleted
 x11-servers/XFree86-4-Server-snap|x11-servers/XFree86-4-Server|2004-08-09|Obsoleted by XFree86-4-Server update
-net/ntp-devel||2004-08-10|Cleanup, NTP development branch has been dormant for a long while.
 shells/bash3|shells/bash|2004-08-11|move latest stable version to unnumbered directory
 audio/songpring||2004-08-15|Obsolete, it has not been developed since 2000
 audio/mpt||2004-08-15|Obsolete, it has not been developed since 2000
@@ -1387,7 +1386,6 @@ www/mod_php3||2005-02-18|port was broken or obsolete
 lang/php3||2005-02-18|port was broken or obsolete
 x11-themes/aquaosk||2005-02-18|port was broken or obsolete
 x11-themes/kwin_flatcurve||2005-02-18|port was broken or obsolete
-x11-toolkits/flu||2005-02-18|port was broken or obsolete
 x11-toolkits/hs-gtk+hs||2005-02-18|port was broken or obsolete
 x11-toolkits/p5-Glade||2005-02-18|port was broken or obsolete
 x11-wm/wmx||2005-02-18|port was broken or obsolete
@@ -1595,7 +1593,6 @@ graphics/mgp-gallery||2005-09-15|disappeared from web
 security/pf||2005-09-15|included in base system since 5.3
 security/authpf||2005-09-15|included in base system since 5.3
 net/openldap23-sasl-server||2005-09-15|Is no longer needed as separated port
-audio/py-libtunepimp||2005-09-21|audio/libtunepimp rolled back to version 0.3.0 and the bindings do not work at that version
 devel/libunrar|archivers/libunrar|2005-09-23|corrected category
 www/gecko-sharp|www/gecko-sharp10|2005-09-25|renamed to reflect API version
 x11-toolkits/gtk-sharp|x11-toolkits/gtk-sharp10|2005-09-28|renamed to reflect API version
