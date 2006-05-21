@@ -45,6 +45,10 @@ MLINKS=		mkntfs.8 mkfs.ntfs.8
 
 .include <bsd.port.pre.mk>
 
+.if (${OSVERSION} < 500000)
+BROKEN=	Does not build on FreeBSD < 5.x. Doesn't have fstatvfs(3).
+.endif
+
 .if defined(WITH_GNOMEVFS2)
 CONFIGURE_ARGS+=--enable-gnome-vfs
 USE_GNOME=	gnomevfs2
