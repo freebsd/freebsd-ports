@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sql-ledger
-PORTVERSION=	2.6.9
+PORTVERSION=	2.6.11
 CATEGORIES=	finance perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.sql-ledger.com/source/
