@@ -20,6 +20,7 @@ USE_GMAKE=		yes
 GNU_CONFIGURE=		yes
 USE_GNOME=		gtk20 gnomeprefix
 USE_X_PREFIX=		yes
+USE_GETOPT_LONG=	yes
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=		yes
