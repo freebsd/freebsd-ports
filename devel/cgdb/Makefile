@@ -24,6 +24,7 @@ GNU_CONFIGURE=	yes
 
 .if ${OSVERSION} < 700016
 LIB_DEPENDS+=	readline.5:${PORTSDIR}/devel/readline
+CONFIGURE_ARGS+=	--with-readline=${LOCALBASE}
 .endif
 
 .if ${OSVERSION} < 500000
