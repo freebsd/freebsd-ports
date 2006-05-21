@@ -39,6 +39,12 @@ MAKE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 
 PKGDEINSTALL=	${PKGINSTALL}
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 5000000
+BROKEN=		does not compile
+.endif
+
 post-extract:
 	@${RM} -r ${WRKSRC}/data/images/CVS
 
@@ -85,4 +91,4 @@ post-install:
 		${PREFIX}/libexec/cups/filter/foomatic-rip
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
