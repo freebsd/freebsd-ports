@@ -5,6 +5,7 @@
 
 PORTNAME=	chroot_safe
 PORTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	security sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	chrootsafe
@@ -24,5 +25,6 @@ post-patch:
 		-e 's|-o chroot_safe.so|chroot_safe.cpp -o chroot_safe.so|' \
 		${WRKSRC}/Makefile.in
 	${REINPLACE_CMD} 's|chroot(1)|chroot(8)|' ${WRKSRC}/chroot_safe.1.in
+	${REINPLACE_CMD} 's|putenv|unsetenv|' ${WRKSRC}/chroot_safe.cpp
 
 .include <bsd.port.mk>
