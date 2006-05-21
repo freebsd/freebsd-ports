@@ -8,7 +8,7 @@
 PORTNAME=	sarep
 PORTVERSION=	1.1
 CATEGORIES=	textproc
-MASTER_SITES=	http://tarp.worldserve.net/software/
+MASTER_SITES=	ftp://sunsite.unc.edu/pub/linux/utils/text/
 EXTRACT_SUFX=
 
 MAINTAINER=	ache@FreeBSD.org
