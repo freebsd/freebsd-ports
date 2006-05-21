@@ -31,6 +31,8 @@ BUILD_DEPENDS+=	gsed:${PORTSDIR}/textproc/gsed \
 LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
+BROKEN=		Prebuilt binary depends on old version of libgmp
+
 SRC_DIST=	${DISTNAME}-1.freebsd.src.tgz
 BOOT_DIST=	${PORTNAME}-${BOOT_VER}-1.${MACHINE_ARCH}-freebsd.${BOOT_SUF}
 
