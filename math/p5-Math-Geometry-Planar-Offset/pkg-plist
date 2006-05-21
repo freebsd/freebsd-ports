@@ -1,0 +1,4 @@
+%%SITE_PERL%%/Math/Geometry/Planar/Offset.pm
+@dirrmtry %%SITE_PERL%%/Math/Geometry/Planar
+@dirrmtry %%SITE_PERL%%/Math/Geometry
+@dirrmtry %%SITE_PERL%%/Math
