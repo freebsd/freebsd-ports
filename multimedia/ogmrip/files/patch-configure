@@ -1,0 +1,23 @@
+--- configure.orig	Tue Jun 28 08:16:09 2005
++++ configure	Sun May 21 14:20:18 2006
+@@ -20713,11 +20713,6 @@
+ fi
+ 
+ fi
+-if ! "$SED_PROG" --version 2> /dev/null | head -n 1 | grep -q "GNU sed"; then
+-  { { echo "$as_me:$LINENO: error: Unable to GNU sed in the PATH. You need GNU sed to configure OGMRip. Find it on ftp://ftp.gnu.org/gnu/sed" >&5
+-echo "$as_me: error: Unable to GNU sed in the PATH. You need GNU sed to configure OGMRip. Find it on ftp://ftp.gnu.org/gnu/sed" >&2;}
+-   { (exit 1); exit 1; }; }
+-fi
+ 
+ 
+ GTK_REQUIRED=2.6.0
+@@ -21304,7 +21299,7 @@
+ 
+ 
+ if $MPLAYER_PROG | grep -q "MPlayer [0-1]\.[0-9]\+pre[0-9]\+.*"; then
+-  MPLAYER_PRE=`$MPLAYER_PROG | head -n 1 | $SED_PROG -e 's%MPlayer [0-1]\.[0-9]\+pre\([0-9]\+\).*%\1%'`
++  MPLAYER_PRE=`$MPLAYER_PROG | head -n 1 | $SED_PROG -e 's%MPlayer [0-1]\.[0-9]pre\([0-9]\).*%\1%'`
+ 
+ cat >>confdefs.h <<_ACEOF
+ #define MPLAYER_PRE $MPLAYER_PRE
