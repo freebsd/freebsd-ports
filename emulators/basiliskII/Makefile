@@ -18,6 +18,8 @@ COMMENT=	A free, portable, Open Source 68k Mac emulator
 
 WRKSRC=		${WRKDIR}/BasiliskII-${PORTVERSION}/src/Unix
 
+BROKEN=		Does not compile
+
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes
 USE_GNOME=	esound gtk20
