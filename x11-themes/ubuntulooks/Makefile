@@ -23,4 +23,10 @@ USE_GNOME=	gtk20
 USE_X_PREFIX=	yes
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		does not compile
+.endif
+
+.include <bsd.port.post.mk>

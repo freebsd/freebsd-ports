@@ -26,6 +26,10 @@ PLIST_FILES=	bin/${PORTNAME}
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 500000
+BROKEN=		does not compile
+.endif
+
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} qmake -project
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} qmake -nocache

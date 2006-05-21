@@ -148,6 +148,7 @@ CONFIGURE_ENV+=	R_PAPERSIZE=letter
 
 .if ${OSVERSION} < 500000
 CONFIGURE_ARGS+=	--disable-mbcs
+BROKEN=		does not compile
 .endif
 
 .if ${OSVERSION} < 600000
