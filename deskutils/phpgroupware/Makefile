@@ -14,8 +14,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	A web based GroupWare system
 
-BROKEN=		Incorrect pkg-plist
-
 USE_BZIP2=	yes
 USE_PHP=	yes
 WANT_PHP_MOD=	yes
@@ -27,6 +25,7 @@ post-extract:
 		@${FIND} ${WRKSRC} -name CVS -type d | ${XARGS} ${RM} -rf
 
 do-install:
+		@${MKDIR} ${PREFIX}/www/data-dist
 		@${CP} -r ${WRKSRC} ${PREFIX}/www/data-dist/
 
 .include <bsd.port.mk>
