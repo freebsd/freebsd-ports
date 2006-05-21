@@ -483,3 +483,4 @@
 @dirrm %%INSTALLDIR%%/FAQ
 @dirrm %%INSTALLDIR%%/CHANGES
 @dirrm %%INSTALLDIR%%
+@dirrmtry www/data
