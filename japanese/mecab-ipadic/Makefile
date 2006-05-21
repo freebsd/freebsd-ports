@@ -20,6 +20,7 @@ BUILD_DEPENDS=	mecab-config:${PORTSDIR}/japanese/mecab
 DISTVERSION=	20060408
 SUB_DIR=	19691
 
+USE_PERL5_BUILD=	yes
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>
