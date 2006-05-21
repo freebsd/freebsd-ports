@@ -1,0 +1,11 @@
+For Perl 6 we've been promised a "yada yada yada" operator, which makes 
+'...' valid syntax for "I'll fill this bit in later.", allowing the code 
+to compile, but issue a run-time warning.
+
+But, like many of the other things that may or may not happen in Perl 6, 
+we can already make this happen in Perl 5.
+
+All you need is to 'use Yada::Yada::Yada' and off you go ...
+
+WWW: http://search.cpan.org/dist/Yada-Yada-Yada
+Author: Tony Bowden <bug-Yada-Yada-Yada@rt.cpan.org>
