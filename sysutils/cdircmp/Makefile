@@ -8,7 +8,7 @@
 PORTNAME=	cdircmp
 PORTVERSION=	0.3
 CATEGORIES=	sysutils
-MASTER_SITES=	http://home.hccnet.nl/paul.schuurmans/download/
+MASTER_SITES=	http://critical.ch/distfiles/
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Compare directories and select files to copy
