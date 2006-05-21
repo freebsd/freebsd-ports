@@ -21,6 +21,8 @@ BUILD_DEPENDS=	zh-libchewing>=0.2.6:${PORTSDIR}/chinese/libchewing
 RUN_DEPENDS=	zh-libchewing>=0.2.6:${PORTSDIR}/chinese/libchewing \
 		zh-fireflyttf>=0:${PORTSDIR}/chinese/fireflyttf
 
+BROKEN=		Does not compile
+
 OPTIONS=	GTK2 "Enable GTK2 input method module" On
 
 USE_GCC=	3.2+
