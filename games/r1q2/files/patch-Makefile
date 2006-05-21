@@ -1,0 +1,101 @@
+--- ./Makefile.orig	Wed May 17 22:21:33 2006
++++ ./Makefile	Wed May 17 22:47:04 2006
+@@ -21,25 +21,25 @@
+ #===============================#
+ # Quake 2 dedicated server only #
+ #===============================#
+-BUILD_DEDICATED=YES
++#BUILD_DEDICATED=YES
+ 
+ #===============================#
+ # Quake 2 SDL Options           #
+ # Uses SDL for cdrom and sound  #
+ # SDL OpenGL ref library        #
+ #===============================#
+-BUILD_SDL=YES
+-BUILD_SDLGL=YES
++#BUILD_SDL=YES
++#BUILD_SDLGL=YES
+ 
+ #===============================#
+ # HTTP download stuff           #
+ #===============================#
+-WITH_HTTP_DOWNLOAD_SUPPORT=YES
++#WITH_HTTP_DOWNLOAD_SUPPORT=YES
+ 
+ #===============================#
+ # OpenAL stuff                  #
+ #===============================#
+-WITH_OPENAL_SUPPORT=YES
++#WITH_OPENAL_SUPPORT=YES
+ 
+ #===============================#
+ # CD Audio                      #
+@@ -61,18 +61,21 @@
+ REF_GL_DIR=$(MOUNT_DIR)/ref_gl
+ SERVER_DIR=$(MOUNT_DIR)/server
+ 
+-CC=gcc
++CC?=gcc
+ 
+-BASE_CFLAGS= -DLINUX -ffloat-store
+-RELEASE_CFLAGS=$(BASE_CFLAGS) -DNDEBUG -O2 -ffast-math -funroll-loops -fno-strict-aliasing
++BASE_CFLAGS=$(CFLAGS) -DDATADIR='\"$(Q2DIR)\"' -DLIBDIR='\"$(LIBDIR)\"' -I$(LOCALBASE)/include -I$(X11BASE)/include -DLINUX -ffloat-store
++RELEASE_CFLAGS=$(BASE_CFLAGS)
+ 
+-ifeq ($(ARCH),i386)
+-  RELEASE_CFLAGS+=-falign-loops=2 -falign-jumps=2 -falign-functions=2
++ifdef OPTIMIZED_CFLAGS
++RELEASE_CFLAGS+=-DNDEBUG -O2 -ffast-math -funroll-loops -fno-strict-aliasing
++  ifeq  ($(ARCH),i386)
++RELEASE_CFLAGS+=-falign-loops=2 -falign-jumps=2 -falign-functions=2
++  endif
+ endif
+ 
+ DEBUG_CFLAGS=$(BASE_CFLAGS) -g -ggdb -Wall -pipe
+ 
+-LDFLAGS+=-lm -lz
++LDFLAGS+=-L$(LOCALBASE)/lib -L$(X11BASE)/lib -lm -lz
+ 
+ ifeq ($(OSTYPE),Linux)
+ LDFLAGS+=-ldl
+@@ -91,16 +94,16 @@
+ endif
+ 
+ ifeq ($(strip $(WITH_HTTP_DOWNLOAD_SUPPORT)),YES)
+-#LDFLAGS+= -lcurl
+-LDFLAGS+= /usr/local/lib/libcurl.a  # Statically linked, note the path, if curl is not installed in your system, 
++LDFLAGS+= -lcurl
++#LDFLAGS+= /usr/local/lib/libcurl.a  # Statically linked, note the path, if curl is not installed in your system, 
+                                     # set to NO in the build options
+ BASE_CFLAGS+= -DUSE_CURL
+ endif
+ 
+-GLXLDFLAGS=-L/usr/X11R6/lib -L/usr/local/lib -lX11 -lXext -lXxf86dga -lXxf86vm -lGL -lpng -ljpeg
++GLXLDFLAGS=-L$(LOCALBASE)/lib -L$(X11BASE)/lib -lX11 -lXext -lXxf86dga -lXxf86vm -lGL -lpng -ljpeg
+ 
+-SDLCFLAGS=$(shell sdl-config --cflags)
+-SDLLDFLAGS=$(shell sdl-config --libs)
++SDLCFLAGS=$(shell $(SDL_CONFIG) --cflags)
++SDLLDFLAGS=$(shell $(SDL_CONFIG) --libs)
+ SDLGLCFLAGS=$(SDLCFLAGS) -DOPENGL
+ SDLGLLDFLAGS=$(SDLLDFLAGS)
+ 
+@@ -122,7 +125,7 @@
+ 	$(BINDIR)/ref_r1gl.$(SHLIBEXT)  
+ 	
+ ifeq ($(strip $(BUILD_GAME)),YES)
+-  TARGETS+=$(BINDIR)/baseq2/game$(ARCH).$(SHLIBEXT)
++  TARGETS+=$(BINDIR)/baseq2/game.$(SHLIBEXT)
+ endif
+ 
+ ifeq ($(strip $(BUILD_DEDICATED)),YES)
+@@ -618,7 +621,7 @@
+ 	$(BUILDDIR)/objects/game/p_weapon.o \
+ 	$(BUILDDIR)/objects/game/m_flash.o
+ 
+-$(BINDIR)/baseq2/game$(ARCH).$(SHLIBEXT) : $(GAME_OBJS)
++$(BINDIR)/baseq2/game.$(SHLIBEXT) : $(GAME_OBJS)
+ 	$(CC) $(CFLAGS) $(SHLIBLDFLAGS) -o $@ $(GAME_OBJS)
+ 
+ $(BUILDDIR)/objects/game/g_ai.o :        $(GAME_DIR)/g_ai.c

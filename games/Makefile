@@ -546,6 +546,7 @@
     SUBDIR += quetoo
     SUBDIR += quit
     SUBDIR += qwdtools
+    SUBDIR += r1q2
     SUBDIR += race
     SUBDIR += reminiscence
     SUBDIR += rfksay
