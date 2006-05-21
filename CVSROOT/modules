@@ -9283,6 +9283,7 @@ p5-Statistics-LTU	ports/math/p5-Statistics-LTU
 p5-Statistics-Lite	ports/math/p5-Statistics-Lite
 p5-Statistics-OLS	ports/math/p5-Statistics-OLS
 p5-Storable	ports/devel/p5-Storable
+p5-Stream	ports/devel/p5-Stream
 p5-String-Approx	ports/devel/p5-String-Approx
 p5-String-CRC32	ports/devel/p5-String-CRC32
 p5-String-Checker	ports/devel/p5-String-Checker
