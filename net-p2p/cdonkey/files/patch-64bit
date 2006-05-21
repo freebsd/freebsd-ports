@@ -1,0 +1,426 @@
+diff -ur --exclude=config.* cDonkey-0.9.0/cServer_udp.cpp cServer_udp.cpp
+--- cDonkey-0.9.0/cServer_udp.cpp	Wed May  7 14:21:33 2003
++++ cServer_udp.cpp	Fri May 19 15:58:42 2006
+@@ -15,7 +15,7 @@
+ 	peer_ip.s_addr = ip.s_addr;
+ 	peer_port =port;
+ 	if (logSend('>', this, OP_REASKFILEPING, true)) printf("%32s\n", hash_bin2hex(file_hash));
+-	unsigned len, LEN = len = 18;
++	size_t len, LEN = len = 18;
+ 	unsigned char *buf, *BUF = buf = reinterpret_cast<unsigned char*>(alloca(LEN));
+ 	ADD_U1   (&buf, &len, OP_EMULEPROT);
+ 	ADD_U1   (&buf, &len, OP_REASKFILEPING);
+@@ -29,7 +29,7 @@
+ 	if (!nextPing (&peer_ip, &peer_port, &quest)) return false;
+ 	peer_port += 4;
+ 	if (logSend('>', this, OP_GLOBSERVSTATREQ, false));
+-	unsigned len, LEN = len = 6;
++	size_t len, LEN = len = 6;
+ 	unsigned char *buf, *BUF = buf = reinterpret_cast<unsigned char*>(alloca(LEN));
+ 	ADD_U1 (&buf, &len, OP_EDONKEYHEADER);
+ 	ADD_U1 (&buf, &len, OP_GLOBSERVSTATREQ);
+@@ -49,7 +49,7 @@
+ 	printf("Extending search to %s %u\n", inet_ntoa(ip), peer_port);
+ 	ASSERT (gui!=NULL);
+ 	if (logSend('>', this, OP_GLOBSEARCHREQ, false));
+-	unsigned len, LEN = len = 2 + gui->searchLen();
++	size_t len, LEN = len = 2 + gui->searchLen();
+ 	unsigned char *buf, *BUF = buf = reinterpret_cast<unsigned char*>(alloca(LEN));
+ 	ADD_U1 (&buf, &len, OP_EDONKEYHEADER);
+ 	ADD_U1 (&buf, &len, OP_GLOBSEARCHREQ);
+@@ -70,7 +70,7 @@
+ 	if (!IP_is_OK (ip)) return false;
+ 	if (logSend('>', this, OP_GLOBGETSOURCES, true)) printf("%32s\n", hash_bin2hex(Hash));
+ 	actionServer    (ip, port);
+-	unsigned len, LEN = len = 18;
++	size_t len, LEN = len = 18;
+ 	unsigned char *buf, *BUF = buf = reinterpret_cast<unsigned char*>(alloca(LEN));
+ 	ADD_U1   (&buf, &len, OP_EDONKEYHEADER);
+ 	ADD_U1   (&buf, &len, OP_GLOBGETSOURCES);
+@@ -81,7 +81,7 @@
+ 	}}}
+ bool cServer_udp::UDP_req_callback  (uint32_t idx) {{{ // (0x9C)
+ 	if (logSend('>', this, OP_GLOBCALLBACKREQ, true)) printf("%u\n", idx);	
+-	unsigned len, LEN = len = 12;
++	size_t len, LEN = len = 12;
+ 	unsigned char *buf, *BUF = buf = reinterpret_cast<unsigned char*>(alloca(LEN));
+ 	ADD_U1 (&buf, &len, OP_EDONKEYHEADER	);
+ 	ADD_U1 (&buf, &len, OP_GLOBCALLBACKREQ	);
+@@ -96,7 +96,7 @@
+ 	peer_ip    = ip;
+ 	peer_port  = port + 4;
+ 	if (logSend('>', this, OP_SERVER_DESC_REQ, false));
+-	unsigned len, LEN = len = 2;
++	size_t len, LEN = len = 2;
+ 	unsigned char *buf, *BUF = buf = reinterpret_cast<unsigned char*>(alloca(LEN));
+ 	ADD_U1   (&buf, &len, OP_EDONKEYHEADER);
+ 	ADD_U1   (&buf, &len, OP_SERVER_DESC_REQ);
+@@ -108,7 +108,7 @@
+ 	peer_port = port + 4;
+ 	peer_ip   = ip;
+ 	if (logSend('>', this, OP_SERVER_LIST_REQ, false));
+-	unsigned len, LEN = len = 2;
++	size_t len, LEN = len = 2;
+ 	unsigned char *buf, *BUF = buf = reinterpret_cast<unsigned char*>(alloca(LEN));
+ 	ADD_U1   (&buf, &len, OP_EDONKEYHEADER);
+ 	ADD_U1   (&buf, &len, OP_SERVER_LIST_REQ);
+@@ -303,7 +303,7 @@
+ 	GET_HASH(&data, &in_len, hash);
+ 	sFile *file = forHash(hash);
+ 	if (file == NULL) {
+-		unsigned len, LEN = len = 2;
++		size_t len, LEN = len = 2;
+ 		unsigned char *buf, *BUF = buf = reinterpret_cast<unsigned char*>(alloca(LEN));
+ 		ADD_U1 (&buf, &len, OP_EDONKEYHEADER);
+ 		ADD_U1 (&buf, &len, OP_FILENOTFOUND);
+@@ -312,7 +312,7 @@
+ 		return 1;
+ 		}
+ 	else {
+-		unsigned len, LEN = len = 4;
++		size_t len, LEN = len = 4;
+ 		unsigned char *buf, *BUF = buf = reinterpret_cast<unsigned char*>(alloca(LEN));
+ 		ADD_U1 (&buf, &len, OP_EDONKEYHEADER);
+ 		ADD_U1 (&buf, &len, OP_REASKACK);
+diff -ur --exclude=config.* cDonkey-0.9.0/donkey.cpp donkey.cpp
+--- cDonkey-0.9.0/donkey.cpp	Fri May 19 15:58:52 2006
++++ donkey.cpp	Fri May 19 15:58:42 2006
+@@ -201,7 +201,7 @@
+ const int 		 UDP_SEARCH_TIMEOUT	=    5;
+ const int 		 UDP_SEARCH_COUNT	=   15;
+ unsigned int 		 CLIENT_COUNT   	=  140;
+-size_t			 TCP_CLIENT_COUNT   	= 4000;
++unsigned int			 TCP_CLIENT_COUNT   	= 4000;
+ unsigned int 		 TCP_SERVER_COUNT   	=  200;
+ bool 			 running		= true ;
+ bool			 eMule			= true ;
+diff -ur --exclude=config.* cDonkey-0.9.0/kademlia.cpp kademlia.cpp
+--- cDonkey-0.9.0/kademlia.cpp	Wed May  7 14:21:34 2003
++++ kademlia.cpp	Fri May 19 15:58:42 2006
+@@ -137,7 +137,7 @@
+ 	logSend('>', OVERNET_CONNECT, 24 );
+ 	unsigned char BUF[24];
+ 	unsigned char *buf = BUF;
+-	unsigned int  len = 24;
++	size_t  len = 24;
+ 	ADD_U1	(&buf, &len, OP_EDONKEYHEADER);
+ 	ADD_U1	(&buf, &len, OVERNET_CONNECT);
+ 	ADD_HASH(&buf, &len, seek_hash);
+@@ -191,7 +191,7 @@
+ 	logSend('>', OVERNET_HELLO_ACK,  2 );
+ 	unsigned char BUF[2];
+ 	unsigned char *buf = BUF;
+-	unsigned len = 2;
++	size_t len = 2;
+ 	ADD_U1 (&buf, &len, OP_EDONKEYHEADER);
+ 	ADD_U1 (&buf, &len, OVERNET_HELLO_ACK);
+ 	Write  (BUF, 2);
+@@ -201,7 +201,7 @@
+ 	logSend('>', OVERNET_REQUEST, 19 );
+ 	unsigned char BUF[19];
+ 	unsigned char *buf = BUF;
+-	unsigned int  len, LEN = len = 19;
++	size_t  len, LEN = len = 19;
+ 	ADD_U1	(&buf, &len, OP_EDONKEYHEADER);
+ 	ADD_U1	(&buf, &len, OVERNET_REQUEST);
+ 	ADD_U1	(&buf, &len, for_type);
+@@ -242,7 +242,7 @@
+ 	logSend('>', OVERNET_SEARCH_REQUEST, 23);
+ 	char BUF[23];
+ 	char *buf = BUF;
+-	unsigned len = 23;
++	size_t len = 23;
+ 	ADD_U1   (&buf, &len, OP_EDONKEYHEADER);
+ 	ADD_U1   (&buf, &len, OVERNET_SEARCH_REQUEST);
+ 	ADD_HASH (&buf, &len, seek_hash);
+@@ -293,7 +293,7 @@
+ 	logSend('>', OVERNET_SEARCH_END, 22);
+ 	unsigned char BUF[22];
+ 	unsigned char *buf = BUF;
+-	unsigned len = 22;
++	size_t len = 22;
+ 	ADD_U1   (&buf, &len, OP_EDONKEYHEADER);
+ 	ADD_U1   (&buf, &len, OVERNET_SEARCH_END);
+ 	ADD_HASH (&buf, &len, p_hash);
+@@ -305,7 +305,7 @@
+ bool     cKademlia::send_Publish           (const uint8_t *key, size_t size, const char* name) {{{ // (0x13) Publish an meta description
+ 	ASSERT(name != NULL);
+ 	ASSERT(key  != NULL);
+-	unsigned len, LEN = len = 52+strlen(name);
++	size_t len, LEN = len = 52+strlen(name);
+ 	unsigned char *buf, *BUF = buf = reinterpret_cast<unsigned char*>(alloca(LEN));
+ 	logSend('>', OVERNET_PUBLISH_REQ, len);
+ 	ADD_U1     (&buf, &len, OP_EDONKEYHEADER);
+@@ -320,7 +320,7 @@
+ 	return true;
+ 	}}}
+ bool     cKademlia::send_Publish_ack       (const uint8_t * p_hash   ) {{{ // (0x14) acknowlegde the send_Publish
+-	unsigned len, LEN = len = 18;
++	size_t len, LEN = len = 18;
+ 	unsigned char BUF[18], *buf = BUF;
+ 	ADD_U1     (&buf, &len, OP_EDONKEYHEADER);
+ 	ADD_U1     (&buf, &len, OVERNET_PUBLISH_ACK);
+@@ -332,7 +332,7 @@
+ 	}}}
+ bool     cKademlia::send_Identify_reply    (void) {{{   // (0x15)
+ 	logSend('>', OVERNET_IDENTIFY_RES, 25);
+-	unsigned int  len = 25;
++	size_t len = 25;
+ 	unsigned char BUF[25];
+ 	unsigned char *buf = BUF;
+ 	ADD_U1	(&buf, &len, OP_EDONKEYHEADER);
+@@ -345,7 +345,7 @@
+ 	}}}
+ bool     cKademlia::send_Identify_ack      (void) {{{   // (0x16)
+ 	logSend('>',OVERNET_IDENTIFY_ACK,  4);
+-	unsigned int  len = 4;
++	size_t len = 4;
+ 	unsigned char BUF[4];
+ 	unsigned char *buf = BUF;
+ 	ADD_U1	(&buf, &len, OP_EDONKEYHEADER);
+@@ -369,7 +369,7 @@
+ bool     cKademlia::send_IP_query          (void) {{{ // (0x1B) Ask after BOOT what the other see as my ip
+ 	unsigned char BUF[4];
+ 	unsigned char *buf = BUF;
+-	unsigned len, LEN = len = 4;
++	size_t len, LEN = len = 4;
+ 	ADD_U1	(&buf, &len, OP_EDONKEYHEADER);
+ 	ADD_U1	(&buf, &len, OVERNET_IP_REQ);
+ 	ADD_U2	(&buf, &len, pref.ports.client);
+@@ -380,7 +380,7 @@
+ bool     cKademlia::send_IP_answer         (void) {{{ // (0x1C) Answer for send_IP_query
+ 	unsigned char BUF[6];
+ 	unsigned char *buf = BUF;
+-	unsigned len, LEN = len = 6;
++	size_t len, LEN = len = 6;
+ 	ADD_U1 (&buf, &len, OP_EDONKEYHEADER);
+ 	ADD_U1 (&buf, &len, OVERNET_IP_RES);
+ 	ADD_U4 (&buf, &len, peer_ip.s_addr);
+@@ -391,7 +391,7 @@
+ bool     cKademlia::send_IP_end            (void) {{{ // (0x1D) returned after send_IP_answer
+ 	unsigned char BUF[2];
+ 	unsigned char *buf = BUF;
+-	unsigned len, LEN = len = 2;
++	size_t len, LEN = len = 2;
+ 	ADD_U1 (&buf, &len, OP_EDONKEYHEADER);
+ 	ADD_U1 (&buf, &len, OVERNET_IP_ACK);
+ 	logSend('>', OVERNET_IP_ACK,  LEN);
+@@ -401,7 +401,7 @@
+ bool     cKademlia::send_Identify          (void) {{{ // (0x1E) 
+ 	unsigned char BUF[2];
+ 	unsigned char *buf = BUF;
+-	unsigned len, LEN = len = 2;
++	size_t len, LEN = len = 2;
+ 	ADD_U1 (&buf, &len, OP_EDONKEYHEADER);
+ 	ADD_U1 (&buf, &len, OVERNET_SEARCH_END);
+ //	logSend('>', 0x1E,  LEN);
+@@ -423,7 +423,7 @@
+ 	}}}
+ // }}}
+ // recv {{{
+-void	    cKademlia::parsePeer_lst          (unsigned char **buf , unsigned *len, unsigned cnt) {{{
++void	    cKademlia::parsePeer_lst          (unsigned char **buf , size_t *len, unsigned cnt) {{{
+ 	for (unsigned i = 0; i < cnt && *len >= 23; i++) {
+ 		uint8_t  p_hash[KAD_HASH_LEN];
+ 		GET_HASH (buf, len, p_hash);
+diff -ur --exclude=config.* cDonkey-0.9.0/kademlia.h kademlia.h
+--- cDonkey-0.9.0/kademlia.h	Sun Apr 27 17:04:24 2003
++++ kademlia.h	Fri May 19 15:58:42 2006
+@@ -45,7 +45,7 @@
+ 
+ 	private:
+ 		bool	 logSend   (char dir, unsigned cmd, size_t len, bool extra = false);
+-		void     parsePeer_lst       	(unsigned char **buf , unsigned *len, unsigned cnt);
++		void     parsePeer_lst       	(unsigned char **buf , size_t *len, unsigned cnt);
+ 		void	 Init_Search		(void);
+ 		// send Handling {{{	
+ 		bool	 send_Connect 		(void			); // (0x0A) request boot list
+diff -ur --exclude=config.* cDonkey-0.9.0/misc.h misc.h
+--- cDonkey-0.9.0/misc.h	Sat May  3 15:48:49 2003
++++ misc.h	Fri May 19 15:58:42 2006
+@@ -160,7 +160,7 @@
+ unsigned cntFiles    (void);
+ unsigned cntSource   (void);
+ unsigned cntServer   (void);
+-bool encode64(const char *_in, unsigned inlen, char *_out, size_t  outmax, size_t *outlen);
++bool encode64(const char *_in, size_t inlen, char *_out, size_t  outmax, size_t *outlen);
+ bool decode64(const char * in, unsigned inlen, char * out, size_t *outlen);
+ 
+ 
+diff -ur --exclude=config.* cDonkey-0.9.0/protocol.cpp protocol.cpp
+--- cDonkey-0.9.0/protocol.cpp	Sat May  3 15:48:50 2003
++++ protocol.cpp	Fri May 19 15:58:42 2006
+@@ -13,7 +13,7 @@
+ 
+ class sTag *parseTag  (class sPacket *packet) {{{
+ 	unsigned char *data   = packet->DATA();
+-	unsigned len = packet->Unused();
++	size_t len = packet->Unused();
+ 	sTag *ret = parse_tag(data, &len);
+ 	packet->GET_BLIND(len);
+ 	return ret;
+diff -ur --exclude=config.* cDonkey-0.9.0/sGui.cpp sGui.cpp
+--- cDonkey-0.9.0/sGui.cpp	Wed May  7 14:21:34 2003
++++ sGui.cpp	Fri May 19 15:58:42 2006
+@@ -122,7 +122,7 @@
+ 	unsigned limit = max_cnt * (78 + sizeof(s->name) + sizeof(s->desc));
+ 	unsigned char *buffer, *BUFFER = buffer = reinterpret_cast<unsigned char*>(alloca (limit));	
+ 	s = nextServers (true);
+-	unsigned unused = limit;
++	size_t unused = limit;
+ 	unsigned cnt = 0 ;
+ 	while (s != NULL) {	// we have reserved the maximum possible size
+ 		cnt++;
+@@ -156,7 +156,7 @@
+     	if (!auth) return 0;
+     	unsigned limit = 3000; // hardcoded ! BAD
+     	unsigned char *buffer, *BUFFER = buffer = reinterpret_cast<unsigned char*>(alloca (limit));
+-    	unsigned unused = limit;
++    	size_t unused = limit;
+     	unsigned cnt = 0 ;
+     	FILE_LIST {{{
+         if ( ! akt->get_Completed() ) continue;
+diff -ur --exclude=config.* cDonkey-0.9.0/sServer.cpp sServer.cpp
+--- cDonkey-0.9.0/sServer.cpp	Wed May  7 14:21:34 2003
++++ sServer.cpp	Fri May 19 15:58:42 2006
+@@ -661,7 +661,7 @@
+ 	char		*key;
+ 			 cTreeSearch(void);
+ 			~cTreeSearch(void);
+-	bool		 Parse (unsigned char *data, unsigned len);
++	bool		 Parse (unsigned char *data, size_t len);
+ 	bool		 Match (void) { return false; }
+ 	};
+ cTreeSearch:: cTreeSearch(void) {{{
+@@ -678,7 +678,7 @@
+ 	if (val_str != NULL) Free2 (val_str);
+ 	if (key     != NULL) Free2 (key    );
+ 	}}}
+-bool cTreeSearch::Parse (unsigned char *data, unsigned len) {{{
++bool cTreeSearch::Parse (unsigned char *data, size_t len) {{{
+ 	while (len>0) {
+ 		unsigned new_op = GET_U1 (&data, &len);
+ 		switch (new_op) {
+diff -ur --exclude=config.* cDonkey-0.9.0/sSource.cpp sSource.cpp
+--- cDonkey-0.9.0/sSource.cpp	Wed May  7 14:21:35 2003
++++ sSource.cpp	Fri May 19 15:58:42 2006
+@@ -97,7 +97,7 @@
+ 	return true;
+ 	}}}
+ 
+-static int res_sources          (sSource *, unsigned char *buf, unsigned len) {{{
++static int res_sources          (sSource *, unsigned char *buf, size_t len) {{{
+ 	tHash    hash;
+ 	unsigned count;
+ 	GET_HASH(&buf, &len, hash);
+@@ -575,7 +575,7 @@
+ 	}}}
+ int  sSource::no_such_file         (const tHash &hash ) {{{ // (0x48)
+ 	logSend ('>', this, OP_FILEREQANSNOFIL, false);
+-	unsigned LEN , len = LEN = 22;
++	size_t LEN , len = LEN = 22;
+ 	unsigned char *buf, *BUF = buf = reinterpret_cast<unsigned char*>(alloca(LEN));
+ 	ADD_U1  (&buf, &len, OP_EDONKEYHEADER);
+ 	ADD_U4  (&buf, &len, LEN - PACKET_LEN_SUB);
+@@ -587,7 +587,7 @@
+ 	}}}
+ int  sSource::end_of_download      (void              ) {{{ // (0x49) o.p.
+ 	logSend ('>', this, OP_END_OF_DOWNLOAD, false);
+-	unsigned LEN , len = LEN = 22;
++	size_t LEN , len = LEN = 22;
+ 	unsigned char *buf, *BUF = buf = reinterpret_cast<unsigned char*>(alloca(LEN));
+ 	ADD_U1  (&buf, &len, OP_EDONKEYHEADER);
+ 	ADD_U4  (&buf, &len, LEN - PACKET_LEN_SUB);
+@@ -671,7 +671,7 @@
+ 	dlFile(old_dl);
+ 
+ 	if (logSend('>', this, OP_SETREQFILEID, true)) printf("%32s\n", hash_bin2hex(hash));
+-	unsigned LEN , len = LEN = 22;
++	size_t LEN , len = LEN = 22;
+ 	unsigned char *buf, *BUF = buf = reinterpret_cast<unsigned char*>(alloca(LEN));
+ 	ADD_U1  (&buf, &len, OP_EDONKEYHEADER);
+ 	ADD_U4  (&buf, &len, LEN - PACKET_LEN_SUB);
+@@ -706,7 +706,7 @@
+ 	}}}
+ int  sSource::req_part_hash        (const tHash &hash ) {{{ // (0x51) o.p. <HASH>
+ 	if (logSend('>', this, OP_HASHSETREQUEST, true)) printf("%32s\n", hash_bin2hex(hash));
+-	unsigned LEN , len = LEN = 22;
++	size_t LEN , len = LEN = 22;
+ 	unsigned char *buf, *BUF = buf = reinterpret_cast<unsigned char*>(alloca(LEN));
+ 	ADD_U1  (&buf, &len, OP_EDONKEYHEADER);
+ 	ADD_U4  (&buf, &len, LEN - PACKET_LEN_SUB);
+@@ -738,7 +738,7 @@
+ 	if (next_slot >= currentTime) return 1;
+ 	next_slot = currentTime + 300;
+ 	logSend('>', this, OP_STARTUPLOADREQ, false);
+-	unsigned LEN, len = LEN = 22;
++	size_t LEN, len = LEN = 22;
+ 	unsigned char *buf, *BUF = buf = reinterpret_cast<unsigned char*>(alloca(LEN));
+ 	ADD_U1  (&buf, &len, OP_EDONKEYHEADER);
+ 	ADD_U4  (&buf, &len, LEN - PACKET_LEN_SUB);
+@@ -750,7 +750,7 @@
+ 	}}}
+ int  sSource::CMD_slot_available   (void              ) {{{ // (0x55) o.p. (null)
+ 	logSend('>', this, OP_ACCEPTUPLOADREQ, false);
+-	unsigned LEN, len = LEN = 6;
++	size_t LEN, len = LEN = 6;
+ 	unsigned char *buf, *BUF = buf = reinterpret_cast<unsigned char*>(alloca(LEN));
+ 	ADD_U1(&buf, &len, OP_EDONKEYHEADER);
+ 	ADD_U4(&buf, &len, LEN - PACKET_LEN_SUB);
+@@ -760,7 +760,7 @@
+ 	}}}
+ int  sSource::res_slot_close       (void              ) {{{ // (0x57) o.p. (null)
+ 	logSend('>', this, OP_OUTOFPARTREQS, false);
+-	unsigned LEN, len = LEN = 6;
++	size_t LEN, len = LEN = 6;
+ 	unsigned char *buf, *BUF = buf = reinterpret_cast<unsigned char*>(alloca(LEN));
+ 	ADD_U1(&buf, &len, OP_EDONKEYHEADER);
+ 	ADD_U4(&buf, &len, LEN - PACKET_LEN_SUB);
+@@ -784,7 +784,7 @@
+ 		}
+ 	dlFile(old_dl);
+ 	if (logSend('>', this, OP_FILEREQUEST, true)) printf("%32s\n", hash_bin2hex(hash));
+-	unsigned LEN , len = LEN = 22;
++	size_t LEN , len = LEN = 22;
+ 	unsigned char *buf, *BUF = buf = reinterpret_cast<unsigned char*>(alloca(LEN));
+ 	ADD_U1  (&buf, &len, OP_EDONKEYHEADER);
+ 	ADD_U4  (&buf, &len, LEN - PACKET_LEN_SUB);
+@@ -812,7 +812,7 @@
+ 	}}}
+ int  sSource::C5_res_rang          (uint8_t rang      ) {{{ // (0x60) o.p. <RANG(2)><padding(10)>
+ 	if (logSend ('>', this,0xC560, true)) printf("%hi\n", rang);
+-	unsigned LEN , len = LEN = 18;
++	size_t LEN , len = LEN = 18;
+ 	unsigned char *buf, *BUF = buf = reinterpret_cast<unsigned char*>(alloca(LEN));
+ 	ADD_U1 (&buf, &len, OP_EMULEPROT);
+ 	ADD_U4 (&buf, &len, LEN - PACKET_LEN_SUB);
+@@ -831,7 +831,7 @@
+ 	nextFile (hash, true);	// <- set cursor_count
+ 	if (cursor_count > 512) return 1;
+ 	if(logSend ('>', this , 0xC581, true)) printf("%32s\n", hash_bin2hex(hash));
+-	unsigned LEN , len = LEN = 22;
++	size_t LEN , len = LEN = 22;
+ 	unsigned char *buf, *BUF = buf = reinterpret_cast<unsigned char*>(alloca(LEN));
+ 	ADD_U1  (&buf, &len, OP_EMULEPROT);
+ 	ADD_U4  (&buf, &len, LEN - PACKET_LEN_SUB);
+diff -ur --exclude=config.* cDonkey-0.9.0/sTag.cpp sTag.cpp
+--- cDonkey-0.9.0/sTag.cpp	Sat Apr  5 13:06:46 2003
++++ sTag.cpp	Fri May 19 15:58:42 2006
+@@ -65,7 +65,7 @@
+ 	*dst = *src;
+ 	*src = NULL;
+ 	}}}
+-sTag *parse_tag (unsigned char *data, unsigned *len) {{{
++sTag *parse_tag (unsigned char *data, size_t *len) {{{
+ 	ASSERT (NULL != data);
+ 	ASSERT (NULL != len );
+ 	if (data == NULL) {{{
+@@ -74,7 +74,7 @@
+ 		}}}
+ 	if (*len == 0) return NULL;
+ 	unsigned char *DATA = data;
+-	int   LEN  = *len;
++	size_t   LEN  = *len;
+ 	unsigned char *start = data;
+ 	unsigned count = GET_U4(&data, len);
+ 	if (count == 0) return NULL;

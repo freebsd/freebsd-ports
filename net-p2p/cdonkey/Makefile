@@ -8,6 +8,7 @@
 
 PORTNAME=	cdonkey
 PORTVERSION=	0.9.0
+PORTREVISION=	1
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://suche.org/
 DISTNAME=	cDonkey-${PORTVERSION}
@@ -26,11 +27,9 @@ WRKSRC=		${WRKDIR}/cDonkey-${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "i386"
-BROKEN=		"Does not compile on !i386"
-.endif
-
 post-patch:
-	@${REINPLACE_CMD} -e "s|-ldb|-ldb3|g" ${WRKSRC}/configure
+	${REINPLACE_CMD} -e "s|-ldb|-ldb3|g" ${WRKSRC}/configure
+	${REINPLACE_CMD} -e "s|/etc/|${LOCALBASE}/etc/|" \
+		${WRKSRC}/donkey.cpp ${WRKSRC}/donkey.h
 
 .include <bsd.port.post.mk>
