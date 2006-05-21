@@ -101,7 +101,8 @@ pre-install:
 		${SED} -e 's|^./||;s|^|${DOKUWIKI_DIR}/|' > ${PLIST} \
 		&& ${FIND} -d * -type d | \
 		${SED} -e 's|^|@dirrm ${DOKUWIKI_DIR}/|' >> ${PLIST} \
-		&& ${ECHO_CMD} "@unexec ${RMDIR} %D/${DOKUWIKI_DIR} 2>/dev/null || true">> ${PLIST}
+		&& ${ECHO_CMD} "@dirrmtry ${DOKUWIKI_DIR}">> ${PLIST} \
+		&& ${ECHO_CMD} "@dirrmtry ${WWWDOCROOT}" >> ${PLIST}
 
 do-install:
 # Data files

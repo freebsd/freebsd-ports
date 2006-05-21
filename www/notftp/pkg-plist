@@ -18,3 +18,4 @@
 @dirrm %%INSTALLDIR%%/lib/lang
 @dirrm %%INSTALLDIR%%/lib
 @dirrm %%INSTALLDIR%%
+@dirrmtry www/data

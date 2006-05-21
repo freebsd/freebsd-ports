@@ -2016,3 +2016,4 @@ www/data/geeklog/system/pear/template.spec
 @dirrm www/data/geeklog/docs
 @dirrm www/data/geeklog/backups
 @dirrm www/data/geeklog
+@dirrmtry www/data

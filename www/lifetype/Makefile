@@ -71,7 +71,8 @@ pre-install:
 		&& ${ECHO_CMD} "@unexec ${RM} -fr %D/${PLOGDIR}/tmp/* 2>/dev/null || ${TRUE}" >> ${PLIST} \
 		&& ${FIND} -d * -type d | \
 		${SED} -e 's|^|@dirrm ${PLOGDIR}/|' >> ${PLIST} \
-		&& ${ECHO_CMD} @dirrm ${PLOGDIR} >> ${PLIST}
+		&& ${ECHO_CMD} @dirrm ${PLOGDIR} >> ${PLIST} \
+		&& ${ECHO_CMD} @dirrmtry ${WWWDOCROOT} >> ${PLIST}
 
 do-install:
 	@${MKDIR} ${PREFIX}/${PLOGDIR}

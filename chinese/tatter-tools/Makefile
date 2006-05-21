@@ -54,7 +54,8 @@ pre-install:
 		${SED} -e 's|^./||;s|^|${TT_DIR}/|' > ${PLIST} \
 		&& ${FIND} -d * -type d | \
 		${SED} -e 's|^|@dirrm ${TT_DIR}/|' >> ${PLIST} \
-		&& ${ECHO_CMD} @dirrm ${TT_DIR} >> ${PLIST}
+		&& ${ECHO_CMD} @dirrm ${TT_DIR} >> ${PLIST} \
+		&& ${ECHO_CMD} @dirrmtry ${WWWDOCROOT} >> ${PLIST}
 
 do-install:
 	-${MKDIR} ${PREFIX}/${TT_DIR}

@@ -171,3 +171,4 @@
 @dirrm %%INSTALLDIR%%/index_icons
 @dirrm %%INSTALLDIR%%/languages
 @dirrm %%INSTALLDIR%%
+@dirrmtry www/data

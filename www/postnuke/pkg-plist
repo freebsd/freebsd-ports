@@ -3438,3 +3438,4 @@
 @dirrm %%NUKEDIR%%/html/docs
 @dirrm %%NUKEDIR%%/html
 @dirrm %%NUKEDIR%%
+@dirrmtry www/data

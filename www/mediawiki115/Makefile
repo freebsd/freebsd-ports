@@ -52,6 +52,7 @@ post-install:
 		| ${SED} -ne 's,^${WRKSRC},${MEDIAWIKIDIR},p' >> ${TMPPLIST}
 	@${FIND} -d ${WRKSRC}/${file} -type d \
 		| ${SED} -ne 's,^${WRKSRC},@dirrm ${MEDIAWIKIDIR},p' >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec rmdir %D/www/data-dist 2>/dev/null || true" >> ${TMPPLIST}
 	@${SED} -e 's|%%MEDIAWIKIDIR%%|${PREFIX}/${MEDIAWIKIDIR}|' ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

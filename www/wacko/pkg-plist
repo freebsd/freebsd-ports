@@ -375,3 +375,4 @@
 @dirrm %%WACKODIR%%/actions
 @dirrm %%WACKODIR%%/_cache
 @dirrm %%WACKODIR%%
+@dirrmtry www/data

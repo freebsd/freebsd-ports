@@ -40,6 +40,7 @@ post-extract:
 .endfor
 	${FIND} -s -d ${WRKSRC} -type f | ${SED} "s?${WRKSRC}?%%GEDVIEWDIR%%?g" >${PLIST}
 	${FIND} -s -d ${WRKSRC} -type d  | ${SED} "s?${WRKSRC}?@dirrm %%GEDVIEWDIR%%?g" >> ${PLIST}
+	${ECHO_CMD} @dirrmtry www/data >> ${PLIST}
 
 do-install:
 	${INSTALL_DATA} -d ${FULLGWDIR}

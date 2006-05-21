@@ -304,3 +304,4 @@
 @dirrm %%PHPSURVEYORDIR%%/admin
 @dirrm %%PHPSURVEYORDIR%%
 @exec chown -R %%WWWOWN%%:%%WWWGRP%% %%PREFIX%%/%%PHPSURVEYORDIR%%
+@dirrmtry www/data
