@@ -16,6 +16,8 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 MAINTAINER=	mutoh@openedu.org
 COMMENT=	A web based GroupWare system
 
+BROKEN=		Does not install 
+
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/phpgroupware
 INSTALLDIR=	${PREFIX}/www/data/phpgroupware
