@@ -1219,7 +1219,6 @@ sysutils/portindex||2004-09-13|Removed on maintainer's request
 russian/gaim|net/gaim|2004-10-12|Functionality merged into original Gaim
 graphics/py-magick||2004-10-12|Broken without view for a fix
 net/netatalk-devel|net/netatalk|2004-10-12|Netatalk port upgraded to 2.0.0
-textproc/p5-XML-RSS-Parser|textproc/p5-XML-RAI|2004-10-13|Module was integrated into XML-RAI package
 misc/kwordquiz|misc/kdeedu3|2004-10-13|kwordquiz was integrated into the kdeedu3 port
 audio/libvorbis-aotuv|audio/libvorbis|2004-10-13|The aoTuV enhancement has been merged into the mainstream
 graphics/kolourpaint|graphics/kdegraphics3|2004-10-13|kolourpaint was integrated into the kdegraphics3 port
@@ -1430,7 +1429,6 @@ databases/pear-sqlite|databases/pecl-sqlite|2005-04-13|Project is now PECL exten
 www/flashplugin-mozilla-devel|www/flashplugin-mozilla|2005-04-20|Merged with flashplugin-mozilla
 www/flashplugin-firefox|www/flashplugin-mozilla|2005-04-20|Merged with flashplugin-mozilla
 games/baduki||2005-04-21|Abandoned
-www/opera-devel|www/opera|2005-04-21|stable version caught up with -devel
 mail/policyd|mail/postfix-policyd-spf|2005-04-24|port renamed
 sysutils/gdesklets-sysinfo||2005-04-26|Project abandoned
 mail/sendmail812|mail/sendmail|2005-04-26|obsolete
