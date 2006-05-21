@@ -158,6 +158,7 @@
     SUBDIR += p5-Bit-ShiftReg
     SUBDIR += p5-Bit-Vector
     SUBDIR += p5-Bit-Vector-Minimal
+    SUBDIR += p5-CAD-Calc
     SUBDIR += p5-Chart-Math-Axis
     SUBDIR += p5-Date-Handler
     SUBDIR += p5-Geo-Distance
