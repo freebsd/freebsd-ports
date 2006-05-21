@@ -1,0 +1,20 @@
+--- xiadmin/makefile.orig	Thu Jul 22 16:51:53 2004
++++ xiadmin/makefile	Wed Apr 19 09:51:47 2006
+@@ -22,7 +22,7 @@
+ #   with the iMatix c script without any arguments.
+ #
+ .c$(OBJ):
+-	c -q $<
++	$(CC) $(CFLAGS) -c -I../smt -I../sfl -I../studio $<
+ #   And .c files _do_not_ depend on .l files (.l files are Libero files,
+ #   not lex input files as the default rules think).
+ #
+@@ -39,7 +39,7 @@
+ #   Dependencies
+ #
+ libxac$(LIB): xiadmin$(OBJ) 
+-	c -q -r libxac$(LIB) xiadmin$(OBJ) 
++	$(AR) -r libxac$(LIB) xiadmin$(OBJ) 
+ xiadmin$(OBJ): xiadmin.c #!mkdep
+ xiadmin.i: xiadmin.l
+ 	lr xiadmin.l

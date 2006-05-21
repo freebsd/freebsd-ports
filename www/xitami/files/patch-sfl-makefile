@@ -1,0 +1,22 @@
+--- sfl/makefile.orig	Thu Jul 22 16:51:48 2004
++++ sfl/makefile	Sun May 21 22:23:17 2006
+@@ -21,8 +21,8 @@
+ #   Objects depend on source files with the same name; and are compiled
+ #   with the iMatix c script without any arguments.
+ #
+-.c$(OBJ):
+-	c -q $<
++#.c$(OBJ):
++#	c -q $<
+ #   And .c files _do_not_ depend on .l files (.l files are Libero files,
+ #   not lex input files as the default rules think).
+ #
+@@ -39,7 +39,7 @@
+ #   Dependencies
+ #
+ libsfl$(LIB): sflbits$(OBJ) sflcomp$(OBJ) sflcons$(OBJ) sflconv$(OBJ) sflcryp$(OBJ) sflcvbs$(OBJ) sflcvdp$(OBJ) sflcvds$(OBJ) sflcvns$(OBJ) sflcvsb$(OBJ) sflcvsd$(OBJ) sflcvsn$(OBJ) sflcvst$(OBJ) sflcvtp$(OBJ) sflcvts$(OBJ) sfldate$(OBJ) sfldbio$(OBJ) sfldir$(OBJ) sflenv$(OBJ) sflexdr$(OBJ) sflfile$(OBJ) sflfind$(OBJ) sflfort$(OBJ) sflhttp$(OBJ) sflini$(OBJ) sfllang$(OBJ) sfllbuf$(OBJ) sfllist$(OBJ) sflmail$(OBJ) sflmath$(OBJ) sflmem$(OBJ) sflmesg$(OBJ) sflmime$(OBJ) sflmysql$(OBJ) sflnode$(OBJ) sflprint$(OBJ) sflproc$(OBJ) sflslot$(OBJ) sflsock$(OBJ) sflstr$(OBJ) sflsymb$(OBJ) sflsyst$(OBJ) sfltok$(OBJ) sfltree$(OBJ) sfltron$(OBJ) sfluid$(OBJ) sflxml$(OBJ) sflxmll$(OBJ) 
+-	c -q -r libsfl$(LIB) sflbits$(OBJ) sflcomp$(OBJ) sflcons$(OBJ) sflconv$(OBJ) sflcryp$(OBJ) sflcvbs$(OBJ) sflcvdp$(OBJ) sflcvds$(OBJ) sflcvns$(OBJ) sflcvsb$(OBJ) sflcvsd$(OBJ) sflcvsn$(OBJ) sflcvst$(OBJ) sflcvtp$(OBJ) sflcvts$(OBJ) sfldate$(OBJ) sfldbio$(OBJ) sfldir$(OBJ) sflenv$(OBJ) sflexdr$(OBJ) sflfile$(OBJ) sflfind$(OBJ) sflfort$(OBJ) sflhttp$(OBJ) sflini$(OBJ) sfllang$(OBJ) sfllbuf$(OBJ) sfllist$(OBJ) sflmail$(OBJ) sflmath$(OBJ) sflmem$(OBJ) sflmesg$(OBJ) sflmime$(OBJ) sflmysql$(OBJ) sflnode$(OBJ) sflprint$(OBJ) sflproc$(OBJ) sflslot$(OBJ) sflsock$(OBJ) sflstr$(OBJ) sflsymb$(OBJ) sflsyst$(OBJ) sfltok$(OBJ) sfltree$(OBJ) sfltron$(OBJ) sfluid$(OBJ) sflxml$(OBJ) sflxmll$(OBJ) 
++	$(AR) -r libsfl$(LIB) sflbits$(OBJ) sflcomp$(OBJ) sflcons$(OBJ) sflconv$(OBJ) sflcryp$(OBJ) sflcvbs$(OBJ) sflcvdp$(OBJ) sflcvds$(OBJ) sflcvns$(OBJ) sflcvsb$(OBJ) sflcvsd$(OBJ) sflcvsn$(OBJ) sflcvst$(OBJ) sflcvtp$(OBJ) sflcvts$(OBJ) sfldate$(OBJ) sfldbio$(OBJ) sfldir$(OBJ) sflenv$(OBJ) sflexdr$(OBJ) sflfile$(OBJ) sflfind$(OBJ) sflfort$(OBJ) sflhttp$(OBJ) sflini$(OBJ) sfllang$(OBJ) sfllbuf$(OBJ) sfllist$(OBJ) sflmail$(OBJ) sflmath$(OBJ) sflmem$(OBJ) sflmesg$(OBJ) sflmime$(OBJ) sflmysql$(OBJ) sflnode$(OBJ) sflprint$(OBJ) sflproc$(OBJ) sflslot$(OBJ) sflsock$(OBJ) sflstr$(OBJ) sflsymb$(OBJ) sflsyst$(OBJ) sfltok$(OBJ) sfltree$(OBJ) sfltron$(OBJ) sfluid$(OBJ) sflxml$(OBJ) sflxmll$(OBJ) 
+ sflbits$(OBJ): sflbits.c #!mkdep
+ sflcomp$(OBJ): sflcomp.c #!mkdep
+ sflcons$(OBJ): sflcons.c #!mkdep

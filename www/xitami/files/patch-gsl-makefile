@@ -1,0 +1,24 @@
+--- gsl/makefile.orig	Thu Jul 22 16:51:49 2004
++++ gsl/makefile	Wed Apr 19 10:27:25 2006
+@@ -22,7 +22,7 @@
+ #   with the iMatix c script without any arguments.
+ #
+ .c$(OBJ):
+-	c -q $<
++	$(CC) $(CFLAGS) -I../sfl -c $<
+ #   And .c files _do_not_ depend on .l files (.l files are Libero files,
+ #   not lex input files as the default rules think).
+ #
+@@ -39,10 +39,10 @@
+ #   Dependencies
+ #
+ libgsl$(LIB): ggcode$(OBJ) ggcomm$(OBJ) ggeval$(OBJ) ggfile$(OBJ) ggfunc$(OBJ) ggobjt$(OBJ) ggstrn$(OBJ) ggpars$(OBJ) 
+-	c -q -r libgsl$(LIB) ggcode$(OBJ) ggcomm$(OBJ) ggeval$(OBJ) ggfile$(OBJ) ggfunc$(OBJ) ggobjt$(OBJ) ggstrn$(OBJ) ggpars$(OBJ) 
++	$(AR) -r libgsl$(LIB) ggcode$(OBJ) ggcomm$(OBJ) ggeval$(OBJ) ggfile$(OBJ) ggfunc$(OBJ) ggobjt$(OBJ) ggstrn$(OBJ) ggpars$(OBJ) 
+ gslgen$(OBJ): gslgen.c #!mkdep
+ gslgen$(EXE): gslgen$(OBJ) libgsl$(LIB) 
+-	c -q -L gslgen
++	$(CC) $(CFLAGS) -o $@ $> -L../sfl -lsfl -lm
+ ggcode$(OBJ): ggcode.c #!mkdep
+ ggcomm$(OBJ): ggcomm.c #!mkdep
+ ggeval$(OBJ): ggeval.c #!mkdep

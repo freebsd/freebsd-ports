@@ -1,0 +1,24 @@
+.output "$(tempfile?httpdir.lst)"
+<html><title>Directory listing of $(urlbase:)</title>
+<body>
+<strong>$(urlbase:)</strong><hr>
+<table border=0>
+<tr><th align=left>Name</th><th align=center>Size</th><th align=left>Modified</th></tr>
+.if defined (urlparent)
+    <tr><td><a href="$(urlparent:)"><tt>../</tt></a></td><td></td><td></td>
+.endif
+.for file
+.   if defined (directory)
+    <tr><td><a href="$(urlbase:)$(nameurl:)"><tt>$(name:)/</tt></a></td>
+.   else
+    <tr><td><a href="$(urlbase:)$(nameurl:)"><tt>$(name:)</tt></a></td>
+.   endif
+.   if defined (directory)
+    <td></td>
+.   else
+    <td align=right><tt>$(size) $(units:)</tt></td>
+.   endif
+    <td align=left><tt>$(date) $(time)</tt></td></tr>
+.endfor
+</table>
+</body></html>

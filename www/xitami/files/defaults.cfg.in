@@ -1,0 +1,44 @@
+[Server]
+    webpages=%%PREFIX%%/share/doc/xitami/html
+    dir-script=dir.gsl
+    default1=index.html
+    default2=-
+
+    error-header=<html><title>HTTP Error</title><body><strong>HTTP Error</strong><p>
+    text-400=400 (Bad request)
+    text-401=401 (Unauthorized)
+    text-402=402 (Payment required)
+    text-403=403 (Forbidden)
+    text-404=404 (Not found)
+    text-412=412 (Precondition failed)
+    text-413=413 (Request entity too large)
+    text-500=500 (Internal error)
+    text-501=501 (Not implemented)
+    text-502=502 (Service temporarily overloaded)
+    error-footer=</body></html>
+
+[CGI]
+    enabled=0
+
+[Security]
+    admin=0
+    superuser=""
+    safepaths=0
+    setuid=1
+    setuid-user=www
+    setuid-group=www
+
+[ServerLog]
+    enabled=0
+
+[AccessLog]
+    enabled=0
+
+[ErrorLog]
+    enabled=0
+
+[Ftp]
+    enabled=0
+
+[Lrwp]
+    enabled=0

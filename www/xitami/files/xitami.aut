@@ -1,9 +1,31 @@
-#  Authorization file for XITAMI
-#  Each [Entry] defines a protected subdirectory
-#  The directory name is followed by user=password pairs
+#   This section defines the password for the browser-based administration
+#   screens.  When you install Xitami, the initial password is '-', meaning
+#   'no access'.  We don't like default passwords.  You should change both
+#   the user name and password to something safe.
 #
-#  A sample entry to control access to the admin pages
-#  follows. CHANGE IT AS SOON AS POSSIBLE!
+#   Special entries:
+#       webmask       include/exclude specific IP addresses
+#       realm         realm for authentication
+#       http-put      allow HTTP PUT method
+#       http-delete   allow HTTP DELETE method
+#       all=*         allow access to all users
+#*END
+[/admin]
+    Admin=-             #   By default, admin access is disabled
+#   Admin=LinPopTea
+#   Webmask=local       #   <== when 'local', remote access is not allowed
 #
-[admin]
-admin=letmein
+#[Private]
+#    Jacky=robusta
+#    Jonas=realtime
+#    Sarah=arabica
+#
+#[Documention]
+#    all=*
+#    webmask=local
+#
+#[Stats]
+#    Admin=QzeCat96
+#    Root=PakYupTon
+#    http-put=1
+#    http-delete=1

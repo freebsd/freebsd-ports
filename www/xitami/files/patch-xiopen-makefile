@@ -1,0 +1,8 @@
+--- xiopen/makefile.orig	Wed Apr 19 10:28:13 2006
++++ xiopen/makefile	Wed Apr 19 10:36:37 2006
+@@ -0,0 +1,5 @@
++
++all : xitami
++
++xitami : xitami.c
++	$(CC) $(CFLAGS) -o $@ -I../smt -I../sfl $< -L../smt -lsmt -L../xiadmin -lxac -L../gsl -lgsl -L../studio -lstu -L../sfl -lsfl -lm
