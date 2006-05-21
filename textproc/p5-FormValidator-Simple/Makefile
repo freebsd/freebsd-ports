@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		FormValidator-Simple
-PORTVERSION=		0.15
+PORTVERSION=		0.16
 CATEGORIES=		textproc perl5
 MASTER_SITES=		${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/L/LY/LYOKATO
@@ -19,6 +19,7 @@ BUILD_DEPENDS=	p5-Class-Accessor>=0.22:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-Class-Data-Inheritable>=0.04:${PORTSDIR}/devel/p5-Class-Data-Inheritable \
 		p5-Class-Inspector>=1.13:${PORTSDIR}/devel/p5-Class-Inspector \
 		p5-Date-Calc>=5.4:${PORTSDIR}/devel/p5-Date-Calc \
+		p5-DateTime-Format-Strptime>=1.07:${PORTSDIR}/devel/p5-DateTime-Format-Strptime \
 		p5-Email-Valid>=0.15:${PORTSDIR}/mail/p5-Email-Valid \
 		p5-Email-Valid-Loose>=0.04:${PORTSDIR}/mail/p5-Email-Valid-Loose \
 		p5-List-MoreUtils>=0.16:${PORTSDIR}/lang/p5-List-MoreUtils \
