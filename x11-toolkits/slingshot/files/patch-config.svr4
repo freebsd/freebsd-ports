@@ -1,0 +1,11 @@
+--- config.svr4.orig	Wed May 17 11:15:53 2006
++++ config.svr4	Wed May 17 11:19:04 2006
+@@ -1,7 +1,7 @@
+ 
+ #	@(#) config.svr4 1.7 92/10/27 
+ 
+-CONFIGPIC		= -Kpic
++CONFIGPIC		= -fPIC
+ CONFIGSHAREDLIBLD	= ld -G -o $@ -h libsspkg.so.1 $? -lm -lc;
+ 
+ SHAREDLIB		= $(LIBDIR)/libsspkg.so.1
