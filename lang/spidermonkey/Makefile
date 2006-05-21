@@ -53,6 +53,9 @@ ALL_TARGET=	${OPSYS}`${UNAME} -r`_DBG.OBJ/js
 MAKE_ENV+=	CC="${CC}" CCC="${CXX}"
 INSTALLS_SHLIB=	YES
 SRC_DIR=	js/src
+JSH=		jsapi.h jsautocfg.h jscompat.h jslong.h jsosdep.h jsotypes.h jspubtd.h jstypes.h \
+		jsstr.h jshash.h jsprvtd.h
+PLIST_FILES=	bin/js lib/libjs.so ${JSH:S,^,include/,}
 WRKSRC=	${WRKDIR}/${SRC_DIR}
 EXTRACT_AFTER_ARGS=| ${TAR} -xf - \
 		--exclude js/jsd	\
@@ -84,8 +87,6 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${OPSYS}`${UNAME} -r`_DBG.OBJ/libjs.so \
 		${PREFIX}/lib
 	${CP} ${WRKSRC}/${OPSYS}`${UNAME} -r`_DBG.OBJ/jsautocfg.h ${WRKSRC}
-.for jsh in jsapi.h jsautocfg.h jscompat.h jslong.h jsosdep.h jsotypes.h jspubtd.h jstypes.h
-	@${INSTALL_DATA} ${WRKSRC}/${jsh} ${PREFIX}/include/
-.endfor
+	@${INSTALL_DATA} ${JSH:S,^,${WRKSRC}/,} ${PREFIX}/include/
 
 .include <bsd.port.post.mk>
