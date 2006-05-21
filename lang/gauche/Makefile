@@ -43,8 +43,8 @@ INFO=		gauche-refe gauche-refj
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "i386" && ${ARCH} != "alpha"
-BROKEN=		"Does not compile on !i386 and !alpha (due to included boehm-gc)"
+.if ${ARCH} == "ia64"
+BROKEN=		Does not compile on ${ARCH} (due to included boehm-gc)
 .endif
 
 post-build:
