@@ -12,6 +12,8 @@ PKGDIR=         ${.CURDIR}
 PLIST=          ${MASTERDIR}/pkg-plist
 PKGMESSAGE=     ${MASTERDIR}/pkg-message
 
+BROKEN=		Incomplete pkg-plist
+
 USE_EMACS=	yes
 EMACS_PORT_NAME=	xemacs21-mule
 EMACS_PACKAGESDIR=	lib/xemacs/site-packages
