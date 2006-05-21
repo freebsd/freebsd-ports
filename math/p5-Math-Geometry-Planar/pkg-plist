@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Math/Geometry/Planar.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Geometry/Planar/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Geometry/Planar
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Geometry
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math
+@dirrmtry %%SITE_PERL%%/Math/Geometry
+@dirrmtry %%SITE_PERL%%/Math
