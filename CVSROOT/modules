@@ -8811,6 +8811,7 @@ p5-Math-Financial	ports/finance/p5-Math-Financial
 p5-Math-FixedPrecision	ports/math/p5-Math-FixedPrecision
 p5-Math-GMP	ports/math/p5-Math-GMP
 p5-Math-GSL	ports/math/p5-Math-GSL
+p5-Math-Geometry-Planar	ports/math/p5-Math-Geometry-Planar
 p5-Math-Geometry-Planar-GPC	ports/math/p5-Math-Geometry-Planar-GPC
 p5-Math-Geometry-Planar-Offset	ports/math/p5-Math-Geometry-Planar-Offset
 p5-Math-Interpolate	ports/math/p5-Math-Interpolate
