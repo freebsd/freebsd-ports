@@ -60,7 +60,7 @@ do-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 	@${TAR} --exclude=./dev -xpy --exclude=./proc -C ${PREFIX} \
 		-f ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES}
-	@${FIND} ${PREFIX} -fstype ufs -type d -exec ${CHMOD} 755 \{\} \;
+	${FIND} ${PREFIX} \! -path "/compat/linux/proc*" -type d -exec ${CHMOD} 755 \{\} \;
 	@${CP} -p /etc/resolv.conf ${PREFIX}/etc/
 	@${BRANDELF} -t Linux ${PREFIX}/sbin/ldconfig ${PREFIX}/sbin/sln
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
