@@ -8,9 +8,9 @@
 PORTNAME=	getbdf
 PORTVERSION=	1.0
 CATEGORIES=	x11-fonts
-MASTER_SITES=   ftp://ftp.nstu.ru/pub/sources/x/fonts/utils/
+MASTER_SITES=	http://www.netsw.org/x11/tools/internal/
 DISTNAME=	${PORTNAME}
-EXTRACT_SUFX=	.tar.Z
+EXTRACT_SUFX=	.tar.gz
 
 MAINTAINER=	ache@FreeBSD.org
 COMMENT=	Convert any X server font to .bdf format
