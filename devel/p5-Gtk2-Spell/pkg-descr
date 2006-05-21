@@ -1,0 +1,5 @@
+Perl bindings to the 2.x series of the GtkSpell graphical user interface
+library.  This module allows you to write perl applications that utilize the
+GtkSpell library for mis-spelled word highlighting.
+
+WWW:	http://gtk2-perl.sourceforge.net/
