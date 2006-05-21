@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	smooth-engine
 MAINTAINER=	amistry@am-productions.biz
 COMMENT=	Flexible GTK Theme Engine
 
+BROKEN=		Does not compile
+
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnometarget
