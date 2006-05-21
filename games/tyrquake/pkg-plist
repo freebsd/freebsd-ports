@@ -1,0 +1,7 @@
+bin/tyr-glquake
+bin/tyr-glqwcl
+bin/tyr-quake
+bin/tyr-qwcl
+bin/tyr-qwsv
+%%PORTDOCS%%%%DOCSDIR%%/readme.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
