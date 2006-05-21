@@ -9044,6 +9044,7 @@ p5-POE-Component-Client-SMTP	ports/mail/p5-POE-Component-Client-SMTP
 p5-POE-Component-Client-UserAgent	ports/www/p5-POE-Component-Client-UserAgent
 p5-POE-Component-ControlPort	ports/net/p5-POE-Component-ControlPort
 p5-POE-Component-DBIAgent	ports/databases/p5-POE-Component-DBIAgent
+p5-POE-Component-Daemon	ports/devel/p5-POE-Component-Daemon
 p5-POE-Component-DebugShell	ports/devel/p5-POE-Component-DebugShell
 p5-POE-Component-DirWatch	ports/devel/p5-POE-Component-DirWatch
 p5-POE-Component-EasyDBI	ports/databases/p5-POE-Component-EasyDBI
