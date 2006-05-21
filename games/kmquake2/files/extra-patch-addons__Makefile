@@ -1,0 +1,174 @@
+--- ../KMQuake2_addons_src_unix/Makefile.orig	Sun Apr  9 13:33:05 2006
++++ ../KMQuake2_addons_src_unix/Makefile	Sat May 20 11:55:47 2006
+@@ -17,32 +17,16 @@
+ #OPTIONS
+ ######################################
+ 
+-BUILD_3ZB2=YES		# game$(ARCH).so for 3zb2 bots.
+-BUILD_CTF=YES		# game$(ARCH).so for Capture the Flag.
+-BUILD_HYBRID=YES	# game$(ARCH).so for Rogue-Xatrix hybrid.
+-BUILD_LAZARUS=YES	# game$(ARCH).so for Lazarus mod.
+-BUILD_LIGHTS=YES	# game$(ARCH).so for Lights mod with bots.
+-BUILD_PAX=YES		# game$(ARCH).so for Pax Imperia Addon.
+-BUILD_ROGUE=YES		# game$(ARCH).so for Rogue (see README for details)
+-BUILD_XATRIX=YES	# game$(ARCH).so for Xatrix (see README for details)
+-BUILD_ZAERO=YES		# game$(ARCH).so for Zaero (commercial expansion pack)
+ 
+ ######################################
+ 
+ ######################################
+ 
+-VERSION=KMQuake2_Addons
+ MOUNT_DIR=.
+ BINDIR=quake2
+ 
+ CC?=gcc
+-BASE_CFLAGS= 
+ DEBUG_CFLAGS=$(BASE_CFLAGS) -g -ggdb -Wall -pipe
+-RELEASE_CFLAGS=$(BASE_CFLAGS) -O2 -ffast-math -funroll-loops -fomit-frame-pointer -fexpensive-optimizations
+-
+-ifeq ($(ARCH),i386)
+-  RELEASE_CFLAGS+=-falign-loops=2 -falign-jumps=2 -falign-functions=2 -fno-strict-aliasing
+-endif
+ 
+ BUILD_DEBUG_DIR=build_debug
+ BUILD_RELEASE_DIR=build_release
+@@ -97,39 +81,39 @@
+ endif
+ 
+ ifeq ($(strip $(BUILD_3ZB2)),YES)
+-  TARGETS+=$(BINDIR)/3zb2/kmq2game$(ARCH).$(SHLIBEXT)
++  TARGETS+=$(BINDIR)/3zb2/kmq2game.$(SHLIBEXT)
+ endif
+ 
+ ifeq ($(strip $(BUILD_CTF)),YES)
+-  TARGETS+=$(BINDIR)/ctf/kmq2game$(ARCH).$(SHLIBEXT)
++  TARGETS+=$(BINDIR)/ctf/kmq2game.$(SHLIBEXT)
+ endif
+ 
+ ifeq ($(strip $(BUILD_HYBRID)),YES)
+-  TARGETS+=$(BINDIR)/rogue_xatrix/kmq2game$(ARCH).$(SHLIBEXT)
++  TARGETS+=$(BINDIR)/rogue_xatrix/kmq2game.$(SHLIBEXT)
+ endif
+ 
+ ifeq ($(strip $(BUILD_PAX)),YES)
+-  TARGETS+=$(BINDIR)/pax/kmq2game$(ARCH).$(SHLIBEXT)
++  TARGETS+=$(BINDIR)/pax/kmq2game.$(SHLIBEXT)
+ endif
+ 
+ ifeq ($(strip $(BUILD_ROGUE)),YES)
+-  TARGETS+=$(BINDIR)/rogue/kmq2game$(ARCH).$(SHLIBEXT)
++  TARGETS+=$(BINDIR)/rogue/kmq2game.$(SHLIBEXT)
+ endif
+ 
+ ifeq ($(strip $(BUILD_XATRIX)),YES)
+-  TARGETS+=$(BINDIR)/xatrix/kmq2game$(ARCH).$(SHLIBEXT)
++  TARGETS+=$(BINDIR)/xatrix/kmq2game.$(SHLIBEXT)
+ endif
+ 
+ ifeq ($(strip $(BUILD_ZAERO)),YES)
+-  TARGETS+=$(BINDIR)/zaero/kmq2game$(ARCH).$(SHLIBEXT)
++  TARGETS+=$(BINDIR)/zaero/kmq2game.$(SHLIBEXT)
+ endif
+ 
+ ifeq ($(strip $(BUILD_LIGHTS)),YES)
+-  TARGETS+=$(BINDIR)/lights/kmq2game$(ARCH).$(SHLIBEXT)
++  TARGETS+=$(BINDIR)/lights/kmq2game.$(SHLIBEXT)
+ endif
+ 
+ ifeq ($(strip $(BUILD_LAZARUS)),YES)
+-  TARGETS+=$(BINDIR)/lazarus/kmq2game$(ARCH).$(SHLIBEXT)
++  TARGETS+=$(BINDIR)/lazarus/kmq2game.$(SHLIBEXT)
+ endif
+ 
+ all:
+@@ -246,7 +230,7 @@
+ 	@-mkdir -p $(BINDIR)/lights
+ endif
+ 
+-	$(MAKE) targets BUILDDIR=$(BUILD_RELEASE_DIR) CFLAGS+="$(RELEASE_CFLAGS) -DKMQUAKE2_VERSION='\"$(VERSION)\"'"
++	$(MAKE) targets BUILDDIR=$(BUILD_RELEASE_DIR) CFLAGS+="$(RELEASE_CFLAGS)"
+ 
+ targets: $(TARGETS)
+ 
+@@ -332,7 +316,7 @@
+ 	$(BUILDDIR)/lazarus/p_weapon.o \
+ 	$(BUILDDIR)/lazarus/q_shared.o
+ 
+-$(BINDIR)/lazarus/kmq2game$(ARCH).$(SHLIBEXT) : $(LAZARUS_OBJS)
++$(BINDIR)/lazarus/kmq2game.$(SHLIBEXT) : $(LAZARUS_OBJS)
+ 	$(CC) $(CFLAGS) $(SHLIBLDFLAGS) -o $@ $(LAZARUS_OBJS)
+ 
+ $(BUILDDIR)/lazarus/acebot_ai.o :          $(LAZARUS_DIR)/acesrc/acebot_ai.c
+@@ -597,7 +581,7 @@
+ 	$(BUILDDIR)/ctf/p_weapon.o \
+ 	$(BUILDDIR)/ctf/q_shared.o
+ 
+-$(BINDIR)/ctf/kmq2game$(ARCH).$(SHLIBEXT) : $(CTF_OBJS)
++$(BINDIR)/ctf/kmq2game.$(SHLIBEXT) : $(CTF_OBJS)
+ 	$(CC) $(CFLAGS) $(SHLIBLDFLAGS) -o $@ $(CTF_OBJS)
+ 
+ $(BUILDDIR)/ctf/g_ai.o :       $(CTF_DIR)/g_ai.c
+@@ -736,7 +720,7 @@
+ 	$(BUILDDIR)/xatrix/p_weapon.o \
+ 	$(BUILDDIR)/xatrix/q_shared.o
+ 
+-$(BINDIR)/xatrix/kmq2game$(ARCH).$(SHLIBEXT) : $(XATRIX_OBJS)
++$(BINDIR)/xatrix/kmq2game.$(SHLIBEXT) : $(XATRIX_OBJS)
+ 	$(CC) $(CFLAGS) $(SHLIBLDFLAGS) -o $@ $(XATRIX_OBJS)
+ 
+ $(BUILDDIR)/xatrix/g_ai.o :        $(XATRIX_DIR)/g_ai.c
+@@ -963,7 +947,7 @@
+ 	$(BUILDDIR)/rogue/p_weapon.o \
+ 	$(BUILDDIR)/rogue/q_shared.o
+ 
+-$(BINDIR)/rogue/kmq2game$(ARCH).$(SHLIBEXT) : $(ROGUE_OBJS)
++$(BINDIR)/rogue/kmq2game.$(SHLIBEXT) : $(ROGUE_OBJS)
+ 	$(CC) $(CFLAGS) $(SHLIBLDFLAGS) -o $@ $(ROGUE_OBJS)
+ 
+ $(BUILDDIR)/rogue/dm_ball.o :      $(ROGUE_DIR)/dm_ball.c
+@@ -1222,7 +1206,7 @@
+ 	$(BUILDDIR)/zaero/q_shared.o
+ 
+ 
+-$(BINDIR)/zaero/kmq2game$(ARCH).$(SHLIBEXT) : $(ZAERO_OBJS)
++$(BINDIR)/zaero/kmq2game.$(SHLIBEXT) : $(ZAERO_OBJS)
+ 	$(CC) $(CFLAGS) $(SHLIBLDFLAGS) -o $@ $(ZAERO_OBJS)
+ 
+ $(BUILDDIR)/zaero/g_ai.o :         $(ZAERO_DIR)/g_ai.c
+@@ -1505,7 +1489,7 @@
+ 	$(BUILDDIR)/pax/p_weapon.o \
+ 	$(BUILDDIR)/pax/q_shared.o
+ 	
+-$(BINDIR)/pax/kmq2game$(ARCH).$(SHLIBEXT) : $(PAX_OBJS)
++$(BINDIR)/pax/kmq2game.$(SHLIBEXT) : $(PAX_OBJS)
+ 	$(CC) $(CFLAGS) $(SHLIBLDFLAGS) -o $@ $(PAX_OBJS)
+ 
+ $(BUILDDIR)/pax/dm_ball.o :      $(PAX_DIR)/dm_ball.c
+@@ -1802,7 +1786,7 @@
+ 	$(BUILDDIR)/3zb2/p_weapon.o \
+ 	$(BUILDDIR)/3zb2/q_shared.o
+ 
+-$(BINDIR)/3zb2/kmq2game$(ARCH).$(SHLIBEXT) : $(3ZB2_OBJS)
++$(BINDIR)/3zb2/kmq2game.$(SHLIBEXT) : $(3ZB2_OBJS)
+ 	$(CC) $(CFLAGS) $(SHLIBLDFLAGS) -o $@ $(3ZB2_OBJS)
+ 	
+ $(BUILDDIR)/3zb2/bot.o :         $(3ZB2_DIR)/bot.c
+@@ -1962,7 +1946,7 @@
+ 	$(BUILDDIR)/lights/scanner.o \
+ 	$(BUILDDIR)/lights/m_flash.o
+ 
+-$(BINDIR)/lights/kmq2game$(ARCH).$(SHLIBEXT) : $(LBOTS_OBJS)
++$(BINDIR)/lights/kmq2game.$(SHLIBEXT) : $(LBOTS_OBJS)
+ 	$(CC) $(CFLAGS) $(SHLIBLDFLAGS) -o $@ $(LBOTS_OBJS)
+ 
+ $(BUILDDIR)/lights/acebot_ai.o :          $(LBOTS_DIR)/ace/acebot_ai.c
+@@ -2242,7 +2226,7 @@
+ 	$(BUILDDIR)/rogue_xatrix/p_weapon.o \
+ 	$(BUILDDIR)/rogue_xatrix/q_shared.o
+ 	
+-$(BINDIR)/rogue_xatrix/kmq2game$(ARCH).$(SHLIBEXT) : $(HYBRID_OBJS)
++$(BINDIR)/rogue_xatrix/kmq2game.$(SHLIBEXT) : $(HYBRID_OBJS)
+ 	$(CC) $(CFLAGS) $(SHLIBLDFLAGS) -o $@ $(HYBRID_OBJS)
+ 
+ $(BUILDDIR)/rogue_xatrix/dm_ball.o :      $(HYBRID_DIR)/dm_ball.c

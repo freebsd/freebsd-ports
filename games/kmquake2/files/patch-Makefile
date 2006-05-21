@@ -1,0 +1,91 @@
+--- ./Makefile.orig	Mon Apr 10 04:38:03 2006
++++ ./Makefile	Sat May 20 13:44:43 2006
+@@ -20,12 +20,12 @@
+ #OPTIONS
+ ######################################
+ 
+-BUILD_DATADIR=NO                # Use DATADIR to read (data, renderers, etc.) and ~/.quake2 to write.
++BUILD_DATADIR=YES                # Use DATADIR to read (data, renderers, etc.) and ~/.quake2 to write.
+ BUILD_GAME=YES                  # game$(ARCH).so
+ BUILD_KMQUAKE2=YES              # kmquake executable (uses OSS for cdrom and sound)
+-BUILD_KMQUAKE2_DEDICATED=YES	# build a dedicated kmquake2 server
+-BUILD_KMQUAKE2_SDL=YES          # kmquake2-sdl executable (uses SDL for cdrom and sound)
+-BUILD_LIBDIR=NO                 # Use LIBDIR to read data and renderers (independent from DATADIR).
++#BUILD_KMQUAKE2_DEDICATED=YES	# build a dedicated kmquake2 server
++#BUILD_KMQUAKE2_SDL=YES          # kmquake2-sdl executable (uses SDL for cdrom and sound)
++BUILD_LIBDIR=YES                 # Use LIBDIR to read data and renderers (independent from DATADIR).
+ 
+ ######################################
+ 
+@@ -38,13 +38,17 @@
+ BINDIR=quake2
+ 
+ CC?=gcc
+-BASE_CFLAGS=
++BASE_CFLAGS=$(CFLAGS)
+ DEBUG_CFLAGS=$(BASE_CFLAGS) -g -ggdb -Wall -pipe
+-RELEASE_CFLAGS=$(BASE_CFLAGS) -O2 -ffast-math -funroll-loops -fomit-frame-pointer -fexpensive-optimizations
++RELEASE_CFLAGS=$(BASE_CFLAGS)
++
++ifdef OPTIMIZED_CFLAGS
++RELEASE_CFLAGS+=-O2 -ffast-math -funroll-loops -fomit-frame-pointer -fexpensive-optimizations
+ 
+ ifeq ($(ARCH),i386)
+   RELEASE_CFLAGS+=-falign-loops=2 -falign-jumps=2 -falign-functions=2 -fno-strict-aliasing
+ endif
++endif
+ 
+ CLIENT_DIR=$(MOUNT_DIR)/client
+ SERVER_DIR=$(MOUNT_DIR)/server
+@@ -72,7 +76,7 @@
+ X11BASE?=/usr/X11R6
+ PREFIX?=$(LOCALBASE)
+ 
+-DATADIR?=$(LOCALBASE)/share/quake2
++Q2DIR?=$(LOCALBASE)/share/quake2
+ LIBDIR?=$(LOCALBASE)/lib/kmquake2
+ 
+ XCFLAGS=-I$(X11BASE)/include
+@@ -91,7 +95,7 @@
+ endif
+ 
+ ifeq ($(strip $(BUILD_DATADIR)),YES)
+-  BASE_CFLAGS+=-DDATADIR='\"$(DATADIR)\"'
++  BASE_CFLAGS+=-DDATADIR='\"$(Q2DIR)\"'
+ endif
+ 
+ ifeq ($(strip $(BUILD_KMQUAKE2_SDL)),YES)
+@@ -136,7 +140,11 @@
+ endif
+ 
+ ifeq ($(strip $(BUILD_GAME)),YES)
+-  TARGETS+=$(BINDIR)/baseq2/kmq2game$(ARCH).$(SHLIBEXT)
++  TARGETS+=$(BINDIR)/baseq2/kmq2game.$(SHLIBEXT)
++endif
++
++ifdef KMQ2_ADDONS
++ TARGETS += addons
+ endif
+ 
+ all:
+@@ -293,6 +301,9 @@
+ 	@echo
+ 	$(CC) $(CFLAGS) -o $@ $(QUAKE2_OBJS) $(QUAKE2_AS_OBJS) $(QUAKE2_SDL_OBJS) $(GLXLDFLAGS) $(LDFLAGS) $(SDLLDFLAGS)
+ 
++addons:
++	$(MAKE) -C ../$(KMQ2_ADDONS) release
++
+ $(BUILDDIR)/client/cl_cin.o :     	$(CLIENT_DIR)/cl_cin.c
+ 	$(DO_CC)
+ 	
+@@ -753,8 +764,8 @@
+ 	$(BUILDDIR)/game/p_weapon.o \
+ 	$(BUILDDIR)/game/q_shared.o
+ 	
+-$(BINDIR)/baseq2/kmq2game$(ARCH).$(SHLIBEXT) : $(GAME_OBJS)
+-	$(CC) $(CFLAGS) $(SHLIBLDFLAGS) -o $@ $(GAME_OBJS) -lGL
++$(BINDIR)/baseq2/kmq2game.$(SHLIBEXT) : $(GAME_OBJS)
++	$(CC) $(CFLAGS) $(SHLIBLDFLAGS) -o $@ $(GAME_OBJS) -L$(X11BASE)/lib -lGL
+ 
+ $(BUILDDIR)/game/acebot_ai.o :          $(GAME_DIR)/acesrc/acebot_ai.c
+ 	$(DO_SHLIB_CC)
