@@ -49,18 +49,6 @@
   #
   # Make.config has things that are needed to build on various platforms.
 ***************
-*** 35,40 ****
---- 35,43 ----
-  	@ if [ -s /vmunix ]; then  \
-  		echo cp config.sunos4x Make.config ; \
-  		cp config.sunos4x Make.config ; \
-+ 	elif [ -s /kernel ]; then  \
-+ 		echo cp config.fbsd Make.config ; \
-+ 		cp config.fbsd Make.config ; \
-  	else  \
-  		echo cp config.svr4 Make.config ; \
-  		cp config.svr4 Make.config ; \
-***************
 *** 45,58 ****
   
   clean:

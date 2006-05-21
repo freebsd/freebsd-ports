@@ -7,7 +7,7 @@
 
 PORTNAME=	slingshot
 PORTVERSION=	2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.x.org/R5contrib/
 DISTNAME=	SlingShot${PORTVERSION}
@@ -24,20 +24,12 @@ INSTALLS_SHLIB=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	OPENWINHOME=${X11BASE}
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
-BROKEN=		"Does not compile on amd64 or ia64 (missing -fPIC)"
-.endif
-
-pre-patch:
-	${CP} ${WRKSRC}/config.sunos4x ${WRKSRC}/config.fbsd
-
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/SlingShot
-	${INSTALL_DATA} ${WRKSRC}/README  ${PREFIX}/share/doc/SlingShot
-	${INSTALL_DATA} ${WRKSRC}/doc/*.ps ${PREFIX}/share/doc/SlingShot
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/*.ps ${DOCSDIR}
+	${GZIP_CMD} ${DOCSDIR}/README ${DOCSDIR}/*.ps
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

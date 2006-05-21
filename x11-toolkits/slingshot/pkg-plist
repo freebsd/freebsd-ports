@@ -11,14 +11,14 @@ include/sspkg/tree.h
 lib/libsspkg.a
 lib/libsspkg.so
 lib/libsspkg.so.1
-%%PORTDOCS%%share/doc/SlingShot/README
-%%PORTDOCS%%share/doc/SlingShot/appA.ps
-%%PORTDOCS%%share/doc/SlingShot/appB.ps
-%%PORTDOCS%%share/doc/SlingShot/appC.ps
-%%PORTDOCS%%share/doc/SlingShot/appD.ps
-%%PORTDOCS%%share/doc/SlingShot/appE.ps
-%%PORTDOCS%%share/doc/SlingShot/ch1.ps
-%%PORTDOCS%%share/doc/SlingShot/ch2.ps
-%%PORTDOCS%%share/doc/SlingShot/ch3.ps
-%%PORTDOCS%%@dirrm share/doc/SlingShot
+%%PORTDOCS%%%%DOCSDIR%%/README.gz
+%%PORTDOCS%%%%DOCSDIR%%/appA.ps.gz
+%%PORTDOCS%%%%DOCSDIR%%/appB.ps.gz
+%%PORTDOCS%%%%DOCSDIR%%/appC.ps.gz
+%%PORTDOCS%%%%DOCSDIR%%/appD.ps.gz
+%%PORTDOCS%%%%DOCSDIR%%/appE.ps.gz
+%%PORTDOCS%%%%DOCSDIR%%/ch1.ps.gz
+%%PORTDOCS%%%%DOCSDIR%%/ch2.ps.gz
+%%PORTDOCS%%%%DOCSDIR%%/ch3.ps.gz
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/sspkg
