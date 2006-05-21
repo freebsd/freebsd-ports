@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mlterm
-PORTVERSION=	2.9.2
-PORTREVISION=	2
+PORTVERSION=	2.9.3
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -25,15 +24,18 @@ CONFIGURE_ARGS=	--with-imagelib=gdk-pixbuf --enable-utmp \
 CONFIGURE_ENV=	LIBS=-L${LOCALBASE}/lib CFLAGS=-I${LOCALBASE}/include
 
 OPTIONS=	FRIBIDI	"Use Fribidi for BiDi rendering" off \
-		UIM "uim support" off \
-		M17NLIB "m17n library support" off \
-		IIIMF "IIIMF support (broken)" off
+		UIM "uim support (experimental)" off \
+		M17NLIB "m17n library support (experimental)" off \
+		IIIMF "IIIMF support (experimental)" off \
+		SCIM "SCIM support (experimental)" off
 
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_FRIBIDI)
 CONFIGURE_ARGS+=	--enable-fribidi
 LIB_DEPENDS+=	fribidi.0:${PORTSDIR}/converters/fribidi
+.else
+CONFIGURE_ARGS+=	--disable-fribidi
 .endif
 
 .if defined(WITH_UIM)
@@ -42,6 +44,7 @@ MAKE_ENV=	LIBS_LOCAL=-L${LOCALBASE}/lib
 LIB_DEPENDS+=	uim.1:${PORTSDIR}/textproc/uim
 PLIST_SUB+=	UIM=""
 .else
+CONFIGURE_ARGS+=	--disable-uim
 PLIST_SUB+=	UIM="@comment "
 .endif
 
@@ -51,6 +54,7 @@ MAKE_ENV=	LIBS_LOCAL=-L${LOCALBASE}/lib
 LIB_DEPENDS+=	m17n.1:${PORTSDIR}/devel/m17n-lib
 PLIST_SUB+=	M17NLIB=""
 .else
+CONFIGURE_ARGS+=	--disable-m17nlib
 PLIST_SUB+=	M17NLIB="@comment "
 .endif
 
@@ -60,12 +64,22 @@ EXTRA_PATCHES=	${PATCHDIR}/extra-patch-inputmethod:iiimf:im_iiimf.c
 .endif
 
 CONFIGURE_ARGS+=	--enable-iiimf
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}" CFLAGS=-I${LOCALBASE}/include
-MAKE_ENV=	LIBS_LOCAL="-L${LOCALBASE}/lib ${PTHREAD_LIBS}" CFLAGS_LOCAL="-I${LOCALBASE}/include/iiimf -I${LOCALBASE}/include/iiimf/iiimp"
-LIB_DEPENDS+=	iiimcf.2:${PORTSDIR}/textproc/iiimf-client-lib
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}" CFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/iiim"
+LIB_DEPENDS+=	iiimcf.3:${PORTSDIR}/textproc/iiimf-client-lib
 PLIST_SUB+=	IIIMF=""
 .else
+CONFIGURE_ARGS+=	--disable-iiimf
 PLIST_SUB+=	IIIMF="@comment "
+.endif
+
+.if defined(WITH_SCIM)
+CONFIGURE_ARGS+=	--enable-scim
+MAKE_ENV=	LIBS_LOCAL=-L${LOCALBASE}/lib
+LIB_DEPENDS+=	scim-1.0.9:${PORTSDIR}/textproc/scim
+PLIST_SUB+=	SCIM=""
+.else
+CONFIGURE_ARGS+=	--disable-scim
+PLIST_SUB+=	SCIM="@comment "
 .endif
 
 INSTALLS_SHLIB=	yes
@@ -74,8 +88,9 @@ MAN1=	mlterm.1 mlclient.1
 
 .if ${X_WINDOW_SYSTEM:L} == xfree86-3
 PKGNAMESUFFIX=	-noaa
+CONFIGURE_ARGS+=	--with-type-engines=xcore
 .else
-CONFIGURE_ARGS+=	--enable-anti-alias
+CONFIGURE_ARGS+=	--with-type-engines="xcore,xft"
 LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/libXft
 .endif
 

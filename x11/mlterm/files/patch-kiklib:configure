@@ -1,19 +1,74 @@
---- kiklib/configure.orig	Sun Feb 19 02:28:35 2006
-+++ kiklib/configure	Sun Feb 19 03:03:42 2006
-@@ -7261,11 +7261,7 @@
+--- kiklib/configure.orig	Sun May 21 13:21:24 2006
++++ kiklib/configure	Sun May 21 13:24:06 2006
+@@ -7299,66 +7299,7 @@
  	if test "$kik_cv_mingw32" = yes ; then
  		kik_cv_pty=win32
  	else
--		if test -c /dev/ptmx ; then
+-		echo $ac_n "checking for posix_openpt""... $ac_c" 1>&6
+-echo "configure:7304: checking for posix_openpt" >&5
+-if eval "test \"`echo '$''{'ac_cv_func_posix_openpt'+set}'`\" = set"; then
+-  echo $ac_n "(cached) $ac_c" 1>&6
+-else
+-  cat > conftest.$ac_ext <<EOF
+-#line 7309 "configure"
+-#include "confdefs.h"
+-/* System header to define __stub macros and hopefully few prototypes,
+-    which can conflict with char posix_openpt(); below.  */
+-#include <assert.h>
+-/* Override any gcc2 internal prototype to avoid an error.  */
+-/* We use char because int might match the return type of a gcc2
+-    builtin and then its argument prototype would still apply.  */
+-char posix_openpt();
+-
+-int main() {
+-
+-/* The GNU C library defines this for functions which it implements
+-    to always fail with ENOSYS.  Some functions are actually named
+-    something starting with __ and the normal name is an alias.  */
+-#if defined (__stub_posix_openpt) || defined (__stub___posix_openpt)
+-choke me
+-#else
+-posix_openpt();
+-#endif
+-
+-; return 0; }
+-EOF
+-if { (eval echo configure:7332: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
+-  rm -rf conftest*
+-  eval "ac_cv_func_posix_openpt=yes"
+-else
+-  echo "configure: failed program was:" >&5
+-  cat conftest.$ac_ext >&5
+-  rm -rf conftest*
+-  eval "ac_cv_func_posix_openpt=no"
+-fi
+-rm -f conftest*
+-fi
+-
+-if eval "test \"`echo '$ac_cv_func_'posix_openpt`\" = yes"; then
+-  echo "$ac_t""yes" 1>&6
+-  
+-			cat >> confdefs.h <<\EOF
+-#define HAVE_POSIX_OPENPT 
+-EOF
+-
 -			kik_cv_pty=streams
--		else
--			kik_cv_pty=bsd
--		fi
+-			
+-else
+-  echo "$ac_t""no" 1>&6
+-
+-			if test -c /dev/ptmx ; then
+-				kik_cv_pty=streams
+-			else
+-				kik_cv_pty=bsd
+-			fi
+-fi
+-
 +		kik_cv_pty=bsd
  	fi
  fi
  
-@@ -7535,11 +7531,6 @@
+@@ -7623,11 +7564,6 @@
    *) # Relative path.
      srcdir="$ac_dots$ac_given_srcdir$ac_dir_suffix"
      top_srcdir="$ac_dots$ac_given_srcdir" ;;
