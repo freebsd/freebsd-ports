@@ -1320,6 +1320,7 @@
     SUBDIR += p5-VCS-CVS
     SUBDIR += p5-Want
     SUBDIR += p5-XSLoader
+    SUBDIR += p5-Yada-Yada-Yada
     SUBDIR += p5-accessors
     SUBDIR += p5-base
     SUBDIR += p5-capitalization

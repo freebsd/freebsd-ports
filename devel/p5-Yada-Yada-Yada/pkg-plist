@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Yada/Yada/Yada.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Yada/Yada/Yada/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Yada/Yada/Yada
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Yada/Yada
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Yada
+@dirrm %%SITE_PERL%%/Yada/Yada
+@dirrm %%SITE_PERL%%/Yada
