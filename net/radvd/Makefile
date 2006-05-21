@@ -15,6 +15,7 @@ COMMENT=	A Linux/BSD IPv6 router advertisement daemon
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_GCC=	3.4+
 USE_RC_SUBR=	radvd
 
 MAN5=	radvd.conf.5
