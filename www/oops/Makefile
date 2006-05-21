@@ -49,6 +49,10 @@ OPTIONS=	GIGABASE	"GigaBase storage" on \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 700015
+BROKEN=		Does not compile on FreeBSD >= 7.0
+.endif
+
 .if !defined(WITHOUT_GIGABASE)
 .if defined (WITH_DB4)
 BROKEN=	"Only one DB storage can be used (First)"
