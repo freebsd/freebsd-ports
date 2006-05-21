@@ -38,6 +38,12 @@ DESKTOP_ENTRIES="Stellarium" \
 		"Application;Astronomy;Science;Education;" \
 		false
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+IGNORE=		does not build on FreeBSD 4.x
+.endif
+
 post-build:
 	@icoconvert ${WRKSRC}/data/stellarium.ico
 
@@ -49,4 +55,4 @@ post-install:
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
