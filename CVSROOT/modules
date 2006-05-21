@@ -5222,6 +5222,7 @@ kmldonkey	ports/net-p2p/kmldonkey
 kmovisto	ports/science/kmovisto
 kmp		ports/audio/kmp
 kmplayer	ports/multimedia/kmplayer
+kmquake2	ports/games/kmquake2
 kmyirc		ports/irc/kmyirc
 kmymoney2	ports/finance/kmymoney2
 kmysqladmin	ports/databases/kmysqladmin
