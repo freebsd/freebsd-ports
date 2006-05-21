@@ -34,6 +34,9 @@ lib/mlterm/libim-kbd.so
 %%M17NLIB%%lib/mlterm/libim-m17nlib.a
 %%M17NLIB%%lib/mlterm/libim-m17nlib.la
 %%M17NLIB%%lib/mlterm/libim-m17nlib.so
+%%SCIM%%lib/mlterm/libim-scim.a
+%%SCIM%%lib/mlterm/libim-scim.la
+%%SCIM%%lib/mlterm/libim-scim.so
 %%UIM%%lib/mlterm/libim-uim.a
 %%UIM%%lib/mlterm/libim-uim.la
 %%UIM%%lib/mlterm/libim-uim.so
@@ -59,6 +62,7 @@ libexec/w3mmlconfig/mlconfig.cgi
 %%PORTDOCS%%share/doc/ja/mlterm/README.ja
 share/locale/de/LC_MESSAGES/mlconfig.mo
 share/locale/ja/LC_MESSAGES/mlconfig.mo
+share/locale/vi/LC_MESSAGES/mlconfig.mo
 share/locale/zh_TW/LC_MESSAGES/mlconfig.mo
 @dirrm etc/mlterm
 @dirrm lib/mlterm
