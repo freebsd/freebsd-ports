@@ -332,6 +332,7 @@
     SUBDIR += kgeography
     SUBDIR += kiki
     SUBDIR += klondike
+    SUBDIR += kmquake2
     SUBDIR += knights
     SUBDIR += kobodeluxe
     SUBDIR += koth

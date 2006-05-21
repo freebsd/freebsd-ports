@@ -1,0 +1,48 @@
+bin/kmquake2
+%%SDL%%bin/kmquake2-sdl
+%%3ZB2%%%%LIBDIR%%/3zb2/kmq2game.so
+%%LIBDIR%%/baseq2/gfx/flare1.png
+%%LIBDIR%%/baseq2/gfx/flare2.png
+%%LIBDIR%%/baseq2/gfx/flare3.png
+%%LIBDIR%%/baseq2/gfx/flare4.png
+%%LIBDIR%%/baseq2/gfx/flare5.png
+%%LIBDIR%%/baseq2/gfx/flare6.png
+%%LIBDIR%%/baseq2/kmq2game.so
+%%LIBDIR%%/baseq2/kmquake2.pk3
+%%CTF%%%%LIBDIR%%/ctf/kmq2game.so
+%%LIGHTS%%%%LIBDIR%%/lights/kmq2game.so
+%%PAX%%%%LIBDIR%%/pax/default.cfg
+%%PAX%%%%LIBDIR%%/pax/kmq2game.so
+%%PAX%%%%LIBDIR%%/pax/levelshots/pax.jpg
+%%PAX%%%%LIBDIR%%/pax/levelshots/pax2.jpg
+%%PAX%%%%LIBDIR%%/pax/levelshots/pax3.jpg
+%%PAX%%%%LIBDIR%%/pax/levelshots/pax4.jpg
+%%PAX%%%%LIBDIR%%/pax/levelshots/pax5.jpg
+%%PAX%%%%LIBDIR%%/pax/levelshots/pax6.jpg
+%%PAX%%%%LIBDIR%%/pax/levelshots/pax7.jpg
+%%PAX%%%%LIBDIR%%/pax/levelshots/pax8.jpg
+%%PAX%%%%LIBDIR%%/pax/pax.pak
+%%PAX%%%%LIBDIR%%/pax/paxpatch.pak
+%%PAX%%%%LIBDIR%%/pax/readme.html
+%%PAX%%%%LIBDIR%%/pax/sound/world/driller1.wav
+%%ROGUE%%%%LIBDIR%%/rogue/kmq2game.so
+%%HYBRID%%%%LIBDIR%%/rogue_xatrix/kmq2game.so
+%%XATRIX%%%%LIBDIR%%/xatrix/kmq2game.so
+%%ZAERO%%%%LIBDIR%%/zaero/kmq2game.so
+%%PORTDOCS%%%%DOCSDIR%%/Readme.unix
+%%PORTDOCS%%%%DOCSDIR%%/kmquake2.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%ZAERO%%@dirrm %%LIBDIR%%/zaero
+%%XATRIX%%@dirrm %%LIBDIR%%/xatrix
+%%HYBRID%%@dirrm %%LIBDIR%%/rogue_xatrix
+%%ROGUE%%@dirrm %%LIBDIR%%/rogue
+%%PAX%%@dirrm %%LIBDIR%%/pax/sound/world
+%%PAX%%@dirrm %%LIBDIR%%/pax/sound
+%%PAX%%@dirrm %%LIBDIR%%/pax/levelshots
+%%PAX%%@dirrm %%LIBDIR%%/pax
+%%LIGHTS%%@dirrm %%LIBDIR%%/lights
+%%CTF%%@dirrm %%LIBDIR%%/ctf
+@dirrm %%LIBDIR%%/baseq2/gfx
+@dirrm %%LIBDIR%%/baseq2
+%%3ZB2%%@dirrm %%LIBDIR%%/3zb2
+@dirrm %%LIBDIR%%
