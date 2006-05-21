@@ -3,67 +3,9 @@ bin/mkmovixiso
 bin/movix-conf
 bin/movix-files
 bin/movix-version
-share/emovix/boot-messages/README.encoding
-share/emovix/boot-messages/de/credits.txt
-share/emovix/boot-messages/de/help.txt
-share/emovix/boot-messages/de/mphelp.txt
-share/emovix/boot-messages/de/mxhelp.txt
-share/emovix/boot-messages/de/trblst.txt
-share/emovix/boot-messages/de/trblst2.txt
-share/emovix/boot-messages/en/credits.txt
-share/emovix/boot-messages/en/help.txt
-share/emovix/boot-messages/en/mphelp.txt
-share/emovix/boot-messages/en/mxhelp.txt
-share/emovix/boot-messages/en/trblst.txt
-share/emovix/boot-messages/en/trblst.txt~
-share/emovix/boot-messages/en/trblst2.txt
-share/emovix/boot-messages/es/credits.txt
-share/emovix/boot-messages/es/mphelp.txt
-share/emovix/boot-messages/es/mxhelp.txt
-share/emovix/boot-messages/es/trblst.txt
-share/emovix/boot-messages/esp/credits.txt
-share/emovix/boot-messages/esp/mphelp.txt
-share/emovix/boot-messages/esp/mxhelp.txt
-share/emovix/boot-messages/esp/trblst.txt
-share/emovix/boot-messages/fr/credits.txt
-share/emovix/boot-messages/fr/help.txt
-share/emovix/boot-messages/fr/mphelp.txt
-share/emovix/boot-messages/fr/mxhelp.txt
-share/emovix/boot-messages/fr/trblst.txt
-share/emovix/boot-messages/fr/trblst2.txt
-share/emovix/boot-messages/hu/credits.txt
-share/emovix/boot-messages/hu/help.txt
-share/emovix/boot-messages/hu/mphelp.txt
-share/emovix/boot-messages/hu/mxhelp.txt
-share/emovix/boot-messages/hu/trblst.txt
-share/emovix/boot-messages/hu/trblst2.txt
-share/emovix/boot-messages/it/credits.txt
-share/emovix/boot-messages/it/help.txt
-share/emovix/boot-messages/it/mphelp.txt
-share/emovix/boot-messages/it/mxhelp.txt
-share/emovix/boot-messages/it/trblst.txt
-share/emovix/boot-messages/it/trblst2.txt
-share/emovix/boot-messages/jp/credits.txt
-share/emovix/boot-messages/jp/mphelp.txt
-share/emovix/boot-messages/jp/mxhelp.txt
-share/emovix/boot-messages/jp/trblst.txt
-share/emovix/boot-messages/nl/credits.txt
-share/emovix/boot-messages/nl/mphelp.txt
-share/emovix/boot-messages/nl/mxhelp.txt
-share/emovix/boot-messages/nl/trblst.txt
-share/emovix/boot-messages/pl/credits.txt
-share/emovix/boot-messages/pl/mphelp.txt
-share/emovix/boot-messages/pl/mxhelp.txt
-share/emovix/boot-messages/pl/trblst.txt
-share/emovix/boot-messages/pl/trblst2.txt
-share/emovix/boot-messages/pt/credits.txt
-share/emovix/boot-messages/pt/mphelp.txt
-share/emovix/boot-messages/pt/mxhelp.txt
-share/emovix/boot-messages/pt/trblst.txt
-share/emovix/boot-messages/sar/credits.txt
-share/emovix/boot-messages/sar/mphelp.txt
-share/emovix/boot-messages/sar/mxhelp.txt
-share/emovix/boot-messages/sar/trblst.txt
+share/emovix/backgrounds/black.avi
+share/emovix/backgrounds/coresis.avi
+share/emovix/backgrounds/movix.music.avi
 share/emovix/isolinux/credits.txt
 share/emovix/isolinux/initrd.gz
 share/emovix/isolinux/iso.sort
@@ -76,6 +18,8 @@ share/emovix/isolinux/mphelp.txt
 share/emovix/isolinux/mxhelp.txt
 share/emovix/isolinux/trblst.txt
 share/emovix/keyboard-i18n/README
+share/emovix/keyboard-i18n/be/bootkey.map
+share/emovix/keyboard-i18n/be/shellkey.map
 share/emovix/keyboard-i18n/de/bootkey.map
 share/emovix/keyboard-i18n/de/shellkey.map
 share/emovix/keyboard-i18n/es/bootkey.map
@@ -88,24 +32,28 @@ share/emovix/keyboard-i18n/it/bootkey.map
 share/emovix/keyboard-i18n/it/shellkey.map
 share/emovix/keyboard-i18n/nl/bootkey.map
 share/emovix/keyboard-i18n/nl/shellkey.map
+share/emovix/keyboard-i18n/no/bootkey.map
+share/emovix/keyboard-i18n/no/shellkey.map
 share/emovix/keyboard-i18n/pt/bootkey.map
 share/emovix/keyboard-i18n/pt/shellkey.map
 share/emovix/keyboard-i18n/us/bootkey.map
 share/emovix/keyboard-i18n/us/shellkey.map
 share/emovix/movix/bugReport.sh
 share/emovix/movix/config
+share/emovix/movix/help.txt
 share/emovix/movix/input.conf
 share/emovix/movix/isapnpmodules.sh
-share/emovix/movix/lircd.conf
-share/emovix/movix/lircrc
 share/emovix/movix/manpage.txt
 share/emovix/movix/menu.conf
 share/emovix/movix/mixer.pl
 share/emovix/movix/movix-files
+share/emovix/movix/movix.music.avi
 share/emovix/movix/movix.pl
+share/emovix/movix/movixrc
 share/emovix/movix/profile
 share/emovix/movix/rc.lirc
 share/emovix/movix/rc.movix
+share/emovix/movix/remotes.data
 share/emovix/movix/setHardware.pl
 share/emovix/movix/showisapnpmodules.sh
 share/emovix/movix/showpcimodules.sh
@@ -191,6 +139,255 @@ share/emovix/mplayer-fonts/turkish/iso-8859-9-a.raw
 share/emovix/mplayer-fonts/turkish/iso-8859-9-b.raw
 share/emovix/mplayer-fonts/turkish/osd-mplayer-a.raw
 share/emovix/mplayer-fonts/turkish/osd-mplayer-b.raw
+share/emovix/remotes/lircd.conf.abit
+share/emovix/remotes/lircd.conf.grundig_tp720
+share/emovix/remotes/lircd.conf.hauppauge
+share/emovix/remotes/lircd.conf.hauppauge2
+share/emovix/remotes/lircd.conf.haupserial
+share/emovix/remotes/lircd.conf.haupsir
+share/emovix/remotes/lircd.conf.kingman_code_026
+share/emovix/remotes/lircd.conf.logitech
+share/emovix/remotes/lircd.conf.packard_bell
+share/emovix/remotes/lircd.conf.pctv
+share/emovix/remotes/lircd.conf.realmagic
+share/emovix/remotes/lircd.conf.toshiba
+share/emovix/remotes/lircrc.abit
+share/emovix/remotes/lircrc.grundig_tp720
+share/emovix/remotes/lircrc.hauppauge
+share/emovix/remotes/lircrc.hauppauge2
+share/emovix/remotes/lircrc.haupserial
+share/emovix/remotes/lircrc.haupsir
+share/emovix/remotes/lircrc.kingman_code_026
+share/emovix/remotes/lircrc.logitech
+share/emovix/remotes/lircrc.packard_bell
+share/emovix/remotes/lircrc.pctv
+share/emovix/remotes/lircrc.realmagic
+share/emovix/remotes/lircrc.toshiba
+share/emovix/translations/README.encoding
+share/emovix/translations/de/credits.man
+share/emovix/translations/de/credits.man.~1.2.~
+share/emovix/translations/de/credits.txt
+share/emovix/translations/de/expert1.txt
+share/emovix/translations/de/expert2.txt
+share/emovix/translations/de/help.sh
+share/emovix/translations/de/helpsub.sub
+share/emovix/translations/de/menu.conf
+share/emovix/translations/de/menu.man
+share/emovix/translations/de/movix.msg
+share/emovix/translations/de/mphelp.txt
+share/emovix/translations/de/mplayer.man
+share/emovix/translations/de/mxhelp.txt
+share/emovix/translations/de/progress.sh
+share/emovix/translations/de/trblst.txt
+share/emovix/translations/de/trblst2.txt
+share/emovix/translations/en/credits.man
+share/emovix/translations/en/credits.man.~1.2.~
+share/emovix/translations/en/credits.txt
+share/emovix/translations/en/expert1.txt
+share/emovix/translations/en/expert1.txt.~1.1.~
+share/emovix/translations/en/expert2.txt
+share/emovix/translations/en/expert2.txt.~1.1.~
+share/emovix/translations/en/help.sh
+share/emovix/translations/en/helpsub.sub
+share/emovix/translations/en/menu.conf
+share/emovix/translations/en/menu.man
+share/emovix/translations/en/movix.msg
+share/emovix/translations/en/movix.msg.~1.2.~
+share/emovix/translations/en/mphelp.txt
+share/emovix/translations/en/mplayer.man
+share/emovix/translations/en/mxhelp.txt
+share/emovix/translations/en/mxhelp.txt.~1.1.~
+share/emovix/translations/en/progress.sh
+share/emovix/translations/en/trblst.txt
+share/emovix/translations/en/trblst.txt.~1.1.~
+share/emovix/translations/en/trblst2.txt
+share/emovix/translations/en/trblst2.txt.~1.2.~
+share/emovix/translations/es/credits.man
+share/emovix/translations/es/credits.txt
+share/emovix/translations/es/expert1.txt
+share/emovix/translations/es/expert2.txt
+share/emovix/translations/es/help.sh
+share/emovix/translations/es/helpsub.sub
+share/emovix/translations/es/menu.conf
+share/emovix/translations/es/menu.man
+share/emovix/translations/es/movix.msg
+share/emovix/translations/es/mphelp.txt
+share/emovix/translations/es/mplayer.man
+share/emovix/translations/es/mxhelp.txt
+share/emovix/translations/es/progress.sh
+share/emovix/translations/es/trblst.txt
+share/emovix/translations/es/trblst2.txt
+share/emovix/translations/esp/credits.man
+share/emovix/translations/esp/credits.txt
+share/emovix/translations/esp/expert1.txt
+share/emovix/translations/esp/expert2.txt
+share/emovix/translations/esp/help.sh
+share/emovix/translations/esp/helpsub.sub
+share/emovix/translations/esp/menu.conf
+share/emovix/translations/esp/menu.man
+share/emovix/translations/esp/movix.msg
+share/emovix/translations/esp/mphelp.txt
+share/emovix/translations/esp/mplayer.man
+share/emovix/translations/esp/mxhelp.txt
+share/emovix/translations/esp/progress.sh
+share/emovix/translations/esp/trblst.txt
+share/emovix/translations/esp/trblst2.txt
+share/emovix/translations/fr/credits.man
+share/emovix/translations/fr/credits.txt
+share/emovix/translations/fr/expert1.txt
+share/emovix/translations/fr/expert2.txt
+share/emovix/translations/fr/help.sh
+share/emovix/translations/fr/helpsub.sub
+share/emovix/translations/fr/menu.conf
+share/emovix/translations/fr/menu.man
+share/emovix/translations/fr/movix.msg
+share/emovix/translations/fr/mphelp.txt
+share/emovix/translations/fr/mplayer.man
+share/emovix/translations/fr/mxhelp.txt
+share/emovix/translations/fr/progress.sh
+share/emovix/translations/fr/trblst.txt
+share/emovix/translations/fr/trblst2.txt
+share/emovix/translations/hu/credits.man
+share/emovix/translations/hu/credits.man.~1.2.~
+share/emovix/translations/hu/credits.txt
+share/emovix/translations/hu/expert1.txt
+share/emovix/translations/hu/expert2.txt
+share/emovix/translations/hu/help.sh
+share/emovix/translations/hu/helpsub.sub
+share/emovix/translations/hu/menu.conf
+share/emovix/translations/hu/menu.man
+share/emovix/translations/hu/movix.msg
+share/emovix/translations/hu/mphelp.txt
+share/emovix/translations/hu/mplayer.man
+share/emovix/translations/hu/mxhelp.txt
+share/emovix/translations/hu/progress.sh
+share/emovix/translations/hu/trblst.txt
+share/emovix/translations/hu/trblst2.txt
+share/emovix/translations/it/credits.man
+share/emovix/translations/it/credits.txt
+share/emovix/translations/it/expert1.txt
+share/emovix/translations/it/expert1.txt.~1.2.~
+share/emovix/translations/it/expert2.txt
+share/emovix/translations/it/expert2.txt.~1.2.~
+share/emovix/translations/it/help.sh
+share/emovix/translations/it/helpsub.sub
+share/emovix/translations/it/menu.conf
+share/emovix/translations/it/menu.man
+share/emovix/translations/it/movix.msg
+share/emovix/translations/it/movix.msg.~1.2.~
+share/emovix/translations/it/mphelp.txt
+share/emovix/translations/it/mplayer.man
+share/emovix/translations/it/mxhelp.txt
+share/emovix/translations/it/mxhelp.txt.~1.2.~
+share/emovix/translations/it/progress.sh
+share/emovix/translations/it/trblst.txt
+share/emovix/translations/it/trblst.txt.~1.2.~
+share/emovix/translations/it/trblst2.txt
+share/emovix/translations/it/trblst2.txt.~1.2.~
+share/emovix/translations/jp/credits.man
+share/emovix/translations/jp/credits.txt
+share/emovix/translations/jp/expert1.txt
+share/emovix/translations/jp/expert2.txt
+share/emovix/translations/jp/help.sh
+share/emovix/translations/jp/helpsub.sub
+share/emovix/translations/jp/menu.conf
+share/emovix/translations/jp/menu.man
+share/emovix/translations/jp/movix.msg
+share/emovix/translations/jp/mphelp.txt
+share/emovix/translations/jp/mplayer.man
+share/emovix/translations/jp/mxhelp.txt
+share/emovix/translations/jp/progress.sh
+share/emovix/translations/jp/trblst.txt
+share/emovix/translations/jp/trblst2.txt
+share/emovix/translations/nl/credits.man
+share/emovix/translations/nl/credits.txt
+share/emovix/translations/nl/expert1.txt
+share/emovix/translations/nl/expert2.txt
+share/emovix/translations/nl/help.sh
+share/emovix/translations/nl/helpsub.sub
+share/emovix/translations/nl/menu.conf
+share/emovix/translations/nl/menu.man
+share/emovix/translations/nl/movix.msg
+share/emovix/translations/nl/mphelp.txt
+share/emovix/translations/nl/mplayer.man
+share/emovix/translations/nl/mxhelp.txt
+share/emovix/translations/nl/progress.sh
+share/emovix/translations/nl/trblst.txt
+share/emovix/translations/nl/trblst2.txt
+share/emovix/translations/pl/credits.man
+share/emovix/translations/pl/credits.txt
+share/emovix/translations/pl/expert1.txt
+share/emovix/translations/pl/expert2.txt
+share/emovix/translations/pl/help.sh
+share/emovix/translations/pl/helpsub.sub
+share/emovix/translations/pl/menu.conf
+share/emovix/translations/pl/menu.man
+share/emovix/translations/pl/movix.msg
+share/emovix/translations/pl/mphelp.txt
+share/emovix/translations/pl/mplayer.man
+share/emovix/translations/pl/mxhelp.txt
+share/emovix/translations/pl/progress.sh
+share/emovix/translations/pl/trblst.txt
+share/emovix/translations/pl/trblst2.txt
+share/emovix/translations/pt/credits.man
+share/emovix/translations/pt/credits.txt
+share/emovix/translations/pt/expert1.txt
+share/emovix/translations/pt/expert2.txt
+share/emovix/translations/pt/helpsub.sub
+share/emovix/translations/pt/menu.conf
+share/emovix/translations/pt/menu.man
+share/emovix/translations/pt/movix.msg
+share/emovix/translations/pt/mphelp.txt
+share/emovix/translations/pt/mplayer.man
+share/emovix/translations/pt/mxhelp.txt
+share/emovix/translations/pt/progress.sh
+share/emovix/translations/pt/trblst.txt
+share/emovix/translations/pt/trblst2.txt
+share/emovix/translations/ru/credits.man
+share/emovix/translations/ru/credits.txt
+share/emovix/translations/ru/expert1.txt
+share/emovix/translations/ru/expert2.txt
+share/emovix/translations/ru/help.sh
+share/emovix/translations/ru/helpsub.sub
+share/emovix/translations/ru/menu.conf
+share/emovix/translations/ru/menu.man
+share/emovix/translations/ru/movix.msg
+share/emovix/translations/ru/mphelp.txt
+share/emovix/translations/ru/mplayer.man
+share/emovix/translations/ru/mxhelp.txt
+share/emovix/translations/ru/progress.sh
+share/emovix/translations/ru/trblst.txt
+share/emovix/translations/ru/trblst2.txt
+share/emovix/translations/sar/credits.man
+share/emovix/translations/sar/credits.txt
+share/emovix/translations/sar/expert1.txt
+share/emovix/translations/sar/expert2.txt
+share/emovix/translations/sar/help.sh
+share/emovix/translations/sar/helpsub.sub
+share/emovix/translations/sar/menu.conf
+share/emovix/translations/sar/menu.man
+share/emovix/translations/sar/movix.msg
+share/emovix/translations/sar/mphelp.txt
+share/emovix/translations/sar/mplayer.man
+share/emovix/translations/sar/mxhelp.txt
+share/emovix/translations/sar/progress.sh
+share/emovix/translations/sar/trblst.txt
+share/emovix/translations/sar/trblst2.txt
+@dirrm share/emovix/translations/sar
+@dirrm share/emovix/translations/ru
+@dirrm share/emovix/translations/pt
+@dirrm share/emovix/translations/pl
+@dirrm share/emovix/translations/nl
+@dirrm share/emovix/translations/jp
+@dirrm share/emovix/translations/it
+@dirrm share/emovix/translations/hu
+@dirrm share/emovix/translations/fr
+@dirrm share/emovix/translations/esp
+@dirrm share/emovix/translations/es
+@dirrm share/emovix/translations/en
+@dirrm share/emovix/translations/de
+@dirrm share/emovix/translations
+@dirrm share/emovix/remotes
 @dirrm share/emovix/mplayer-fonts/turkish
 @dirrm share/emovix/mplayer-fonts/russian
 @dirrm share/emovix/mplayer-fonts/polish
@@ -204,26 +401,16 @@ share/emovix/mplayer-fonts/turkish/osd-mplayer-b.raw
 @dirrm share/emovix/movix
 @dirrm share/emovix/keyboard-i18n/us
 @dirrm share/emovix/keyboard-i18n/pt
+@dirrm share/emovix/keyboard-i18n/no
 @dirrm share/emovix/keyboard-i18n/nl
 @dirrm share/emovix/keyboard-i18n/it
 @dirrm share/emovix/keyboard-i18n/hu
 @dirrm share/emovix/keyboard-i18n/fr
 @dirrm share/emovix/keyboard-i18n/es
 @dirrm share/emovix/keyboard-i18n/de
+@dirrm share/emovix/keyboard-i18n/be
 @dirrm share/emovix/keyboard-i18n
 @dirrm share/emovix/isolinux/kernel
 @dirrm share/emovix/isolinux
-@dirrm share/emovix/boot-messages/sar
-@dirrm share/emovix/boot-messages/pt
-@dirrm share/emovix/boot-messages/pl
-@dirrm share/emovix/boot-messages/nl
-@dirrm share/emovix/boot-messages/jp
-@dirrm share/emovix/boot-messages/it
-@dirrm share/emovix/boot-messages/hu
-@dirrm share/emovix/boot-messages/fr
-@dirrm share/emovix/boot-messages/esp
-@dirrm share/emovix/boot-messages/es
-@dirrm share/emovix/boot-messages/en
-@dirrm share/emovix/boot-messages/de
-@dirrm share/emovix/boot-messages
+@dirrm share/emovix/backgrounds
 @dirrm share/emovix
