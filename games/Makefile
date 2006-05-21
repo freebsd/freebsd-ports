@@ -639,6 +639,7 @@
     SUBDIR += trackballs
     SUBDIR += tractorgen
     SUBDIR += traindirector
+    SUBDIR += tremor
     SUBDIR += trigger
     SUBDIR += trimines
     SUBDIR += trojka

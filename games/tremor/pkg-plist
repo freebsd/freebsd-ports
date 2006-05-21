@@ -1,0 +1,16 @@
+bin/tremor
+%%SDL%%bin/tremor-sdl
+%%PORTDOCS%%%%DOCSDIR%%/tremor.txt
+%%GOODIES%%%%Q1DIR%%/tremor/md3ammo.pak
+%%Q1DIR%%/tremor/autoexec.cfg
+%%Q1DIR%%/tremor/config.cfg
+%%GOODIES%%%%Q1DIR%%/tremor/lgmdl.pak
+%%Q1DIR%%/tremor/textures/charsets/charset_babylon5.png
+%%Q1DIR%%/tremor/tremor0.pak
+%%GOODIES%%%%Q1DIR%%/tremor/tremor1.pak
+%%TEXTURES%%%%Q1DIR%%/tremor/tremor_textures.pak
+%%GOODIES%%%%Q1DIR%%/tremor/wpnmdls.pak
+@dirrm %%Q1DIR%%/tremor/textures/charsets
+@dirrm %%Q1DIR%%/tremor/textures
+@dirrm %%Q1DIR%%/tremor
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
