@@ -8,8 +8,10 @@
 PORTNAME=	parano
 PORTVERSION=	0.3.0
 CATEGORIES=	security
-MASTER_SITES=	http://download.berlios.de/%SUBDIR%/ \
-		http://download2.berlios.de/%SUBDIR%/
+MASTER_SITES=	${MASTER_SITE_BERLIOS} \
+		http://bsd1.csme.ru/myports/ \
+		http://bsd2.csme.ru/myports/ \
+		http://bsd3.csme.ru/myports/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	infofarmer@FreeBSD.org
