@@ -19,6 +19,8 @@ COMMENT=	GNOME Sudoku game
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/Numeric/Numeric.py:${PORTSDIR}/math/py-numeric \
 		${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging
 
+BROKEN=		Configure fails
+
 USE_X_PREFIX=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
