@@ -1,3 +1,6 @@
+@exec mkdir -p %D/%%RUBY_SITEARCHLIBDIR%%/DBD
+@exec mkdir -p %D/%%RUBY_SITEARCHLIBDIR%%/dbi
+@exec mkdir -p %D/%%RUBY_SITELIBDIR%%/DBD
 bin/sqlsh.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/dbd/frontbase/README
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/dbd/mysql/HISTORY
