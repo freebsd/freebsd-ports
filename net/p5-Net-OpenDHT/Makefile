@@ -24,6 +24,8 @@ BUILD_DEPENDS=	${SITE_PERL}/Class/Accessor/Chained/Fast.pm:${PORTSDIR}/devel/p5-
 		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+BROKEN=		Does not build
+
 PERL_MOD_BUILD=	yes
 
 MAN3=		Net::OpenDHT.3
