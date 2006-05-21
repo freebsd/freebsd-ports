@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libqalculate
-PORTVERSION=	0.9.0
-PORTREVISION=	1
+PORTVERSION=	0.9.3
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	qalculate
@@ -18,6 +17,7 @@ COMMENT=	Very powerful GUI calculator for GNOME (backend library)
 LIB_DEPENDS=	cln.4:${PORTSDIR}/math/cln
 
 USE_GMAKE=	yes
+USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	intlhack gnomehack glib20 libxml2
 INSTALLS_SHLIB=	yes

@@ -1,23 +1,24 @@
 bin/qalc
-include/libqalculate/Function.h
+include/libqalculate/BuiltinFunctions.h
 include/libqalculate/Calculator.h
 include/libqalculate/DataSet.h
-include/libqalculate/Variable.h
 include/libqalculate/ExpressionItem.h
-include/libqalculate/Number.h
+include/libqalculate/Function.h
 include/libqalculate/MathStructure.h
+include/libqalculate/Number.h
 include/libqalculate/Prefix.h
-include/libqalculate/util.h
-include/libqalculate/includes.h
 include/libqalculate/Unit.h
-include/libqalculate/BuiltinFunctions.h
+include/libqalculate/Variable.h
+include/libqalculate/includes.h
 include/libqalculate/qalculate.h
+include/libqalculate/util.h
 lib/libqalculate.a
 lib/libqalculate.la
 lib/libqalculate.so
-lib/libqalculate.so.0
+lib/libqalculate.so.2
 libdata/pkgconfig/libqalculate.pc
 share/locale/sv/LC_MESSAGES/libqalculate.mo
+share/qalculate/currencies.xml
 share/qalculate/datasets.xml
 share/qalculate/elements.xml
 share/qalculate/functions.xml
@@ -25,6 +26,5 @@ share/qalculate/planets.xml
 share/qalculate/prefixes.xml
 share/qalculate/units.xml
 share/qalculate/variables.xml
-share/qalculate/currencies.xml
-@dirrm include/libqalculate
 @dirrm share/qalculate
+@dirrm include/libqalculate
