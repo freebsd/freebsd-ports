@@ -214,3 +214,4 @@
 @dirrm %%PHPBT%%/templates/default
 @dirrm %%PHPBT%%/templates
 @dirrm %%PHPBT%%
+@dirrmtry www/data-dist

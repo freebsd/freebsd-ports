@@ -7656,3 +7656,4 @@ www/data-dist/egroupware/xmlrpc.php
 @dirrm www/data-dist/egroupware/addressbook/inc
 @dirrm www/data-dist/egroupware/addressbook
 @dirrmtry www/data-dist/egroupware
+@dirrmtry www/data-dist

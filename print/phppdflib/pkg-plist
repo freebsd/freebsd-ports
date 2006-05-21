@@ -82,3 +82,4 @@ www/data/phppdflib/examples/text.txt
 @dirrm www/data/phppdflib/examples
 @dirrm www/data/phppdflib/doc
 @dirrm www/data/phppdflib
+@dirrmtry www/data
