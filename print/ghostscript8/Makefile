@@ -19,14 +19,15 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:gs_srcs,bjc250/} \
 		ftp://download.canon-sales.co.jp/pub/driver/lasershot/linux/:cpca \
 		http://www.ucatv.ne.jp/~taeko/software/gs/:lips \
 		http://www.humblesoft.com/pub/:epag \
-		http://www.epkowa3.on.arena.ne.jp/gslpd/data/V${EPLASER_VERS:S/.//g}/:eplaser \
+		${MASTER_SITE_LOCAL}:eplaser \
 		http://www.linuxprinting.org/download/printing/samsung-gdi/:gdi \
 		http://www.linuxprinting.org/download/printing/:lxm3200 \
 		http://homepage.powerup.com.au/~pbwest/lexmark/:lx5000 \
 		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/GPL/gs${GS_VERSION:S/.//}/:gs_srcs
 MASTER_SITE_SUBDIR=	ghostscript/:gs_srcs,ports_jp_gs \
 			bjc250gs/:bjc250 \
-			./:ports_jp
+			./:ports_jp \
+			arved/:eplaser
 PKGNAMESUFFIX=	-gpl
 DISTFILES=	${GS_SRCS}:gs_srcs \
 		${HP8XX_SRCS}:hp8xx \
