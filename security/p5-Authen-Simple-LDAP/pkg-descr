@@ -1,0 +1,4 @@
+Authenticate against an LDAP service.
+
+WWW: http://search.cpan.org/dist/Authen-Simple-LDAP
+Author: Christian Hansen <ch@ngmedia.com>
