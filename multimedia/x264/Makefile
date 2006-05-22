@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	x264
-PORTVERSION=	0.0.20060509
+PORTVERSION=	0.0.20060521
 CATEGORIES=	multimedia
 MASTER_SITES=	http://downloads.videolan.org/pub/videolan/x264/snapshots/
 DISTNAME=	${PORTNAME}-snapshot-${PORTVERSION:S/0.0.//}-2245
@@ -36,7 +36,6 @@ OPTIONS=	GPAC "Enable MPEG-4 Output" On \
 
 CONFIGURE_ARGS+=	--extra-cflags="${CPPFLAGS} ${CFLAGS} -fPIC -I${LOCALBASE}/include -I${X11BASE}/include" \
 			--extra-ldflags="${LDFLAGS} -L${LOCALBASE}/lib -L${X11BASE}/lib" \
-			--disable-pthread \
 			--enable-shared
 
 .include <bsd.port.pre.mk>
@@ -72,7 +71,8 @@ USE_XLIB=		yes
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' \
+	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|; \
+		s|-lpthread|${PTHREAD_LIBS}|' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|${PREFIX}/libdata/pkgconfig|' \
 		${WRKSRC}/Makefile
