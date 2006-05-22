@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	asciidoc
-PORTVERSION= 	7.1.0
+PORTVERSION= 	7.1.2
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.methods.co.nz/asciidoc/
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
