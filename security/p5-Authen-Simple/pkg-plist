@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Authen/Simple.pm
+%%SITE_PERL%%/Authen/Simple/Adapter.pm
+%%SITE_PERL%%/Authen/Simple/Apache.pm
+%%SITE_PERL%%/Authen/Simple/Log.pm
+%%SITE_PERL%%/Authen/Simple/Password.pm
+@dirrm %%SITE_PERL%%/Authen/Simple
+@dirrmtry %%SITE_PERL%%/Authen
