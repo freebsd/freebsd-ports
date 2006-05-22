@@ -25,7 +25,7 @@ NO_BUILD=	yes
 RUN_DEPENDS+=	${tool}:${PORTSDIR}/devel/${tool}
 .endfor
 RUN_DEPENDS+=	libtool:${PORTSDIR}/devel/libtool15
-.for tool in autoconf automake libtool
+.for tool in autoconf automake
 RUN_DEPENDS+=	${LOCALBASE}/gnu-autotools/bin/${tool}:${PORTSDIR}/devel/gnu-${tool}
 .endfor
 RUN_DEPENDS+=	gnome-autogen.sh:${PORTSDIR}/devel/gnomecommon
