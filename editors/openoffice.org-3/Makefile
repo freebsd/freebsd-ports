@@ -259,7 +259,7 @@ post-install:
 		for file in `cd ${ICONS}/hicolor/$${dir}/mimetypes; ls *.png`; do \
 			${CP} ${ICONS}/hicolor/$${dir}/mimetypes/$${file} \
 			    ${PREFIX}/share/icons/hicolor/$${dir}/mimetypes/ ; \
-			${PRINTF} "share/icons/hiclor/$${dir}/mimetypes/$${file}\n" >> ${TMPPLIST} ; \
+			${PRINTF} "share/icons/hicolor/$${dir}/mimetypes/$${file}\n" >> ${TMPPLIST} ; \
 		done ; \
 	done
 	@cd ${PREFIX} ; ${FIND} -s bin -type f | ${GREP} ${EXECBASE} >> ${TMPPLIST}
