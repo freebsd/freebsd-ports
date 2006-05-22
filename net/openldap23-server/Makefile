@@ -152,6 +152,8 @@ CONFIGURE_ARGS+=	--disable-slapd \
 			--disable-syncprov
 
 INSTALLS_SHLIB=		yes
+SUB_FILES+=		pkg-message.client
+PKGMESSAGE=		${WRKSRC}/pkg-message.client
 
 .else
 # server specific configuration
