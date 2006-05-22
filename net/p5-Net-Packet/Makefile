@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	Net-Packet
-PORTVERSION=	2.04
+PORTVERSION=	2.22
 CATEGORIES=	net perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
-		http://www.gomor.org/netpkt/
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	netpkt@gomor.org
 COMMENT=	A framework to easily send and receive frames from layer 2 to layer 7
 
-BUILD_DEPENDS=	${SITE_PERL}/Class/Gomor/Hash.pm:${PORTSDIR}/devel/p5-Class-Gomor-Hash \
+BUILD_DEPENDS=	${SITE_PERL}/Class/Gomor/Hash.pm:${PORTSDIR}/devel/p5-Class-Gomor \
+		${SITE_PERL}/${PERL_ARCH}/Net/Write/Layer2.pm:${PORTSDIR}/net/p5-Net-Write \
 		${SITE_PERL}/${PERL_ARCH}/IO/Interface.pm:${PORTSDIR}/net/p5-IO-Interface \
 		${SITE_PERL}/Net/IPv6Addr.pm:${PORTSDIR}/net-mgmt/p5-Net-IPv6Addr \
 		${SITE_PERL}/${PERL_ARCH}/Net/Pcap.pm:${PORTSDIR}/net/p5-Net-Pcap \
@@ -55,4 +55,10 @@ MAN3=		Net::Packet.3 \
 		Net::Packet::VLAN.3 \
 		Net::Pkt.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+IGNORE=	requires perl 5.6.0 or higher. Please install lang/perl5.8 and try again
+.endif
+
+.include <bsd.port.post.mk>
