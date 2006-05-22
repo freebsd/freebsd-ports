@@ -34,6 +34,116 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="0b628470-e9a6-11da-b9f4-00123ffe8333">
+    <topic>coppermine -- Multiple File Extensions Vulnerability</topic>
+    <affects>
+      <package>
+	<name>coppermine</name>
+	<range><lt>1.4.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/20211/">
+	  <p>Coppermine Photo Gallery have a vulnerability, which can be
+	    exploited by malicious users to compromise a vulnerable system.</p>
+	  <p>The vulnerability is caused due to an error in the handling of
+	    file uploads where a filename has multiple file extensions. This
+	    can be exploited to upload malicious script files inside the web
+	    root (e.g. a PHP script).</p>
+	  <p>Successful exploitation may allow execution of script code
+	    depending on the HTTP server configuration (it requires e.g. an
+	    Apache server with the "mod_mime" module installed).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://sourceforge.net/project/shownotes.php?group_id=89658&amp;release_id=418266</url>
+      <url>http://secunia.com/advisories/20211/</url>
+    </references>
+    <dates>
+      <discovery>2006-05-22</discovery>
+      <entry>2006-05-22</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="6738977b-e9a5-11da-b9f4-00123ffe8333">
+    <topic>coppermine -- "file" Local File Inclusion Vulnerability</topic>
+    <affects>
+      <package>
+	<name>coppermine</name>
+	<range><lt>1.4.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/19665/">
+	  <p>Coppermine Photo Gallery have a vulnerability, which can be
+	    exploited by malicious people to disclose sensitive
+	    information.</p>
+	  <p>Input passed to the "file" parameter in "index.php" isn't properly
+	    verified, before it is used to include files. This can be exploited
+	    to include arbitrary files from local resources.</p>
+	  <p>Example:
+	    http://[host]/index.php?file=.//././/././/././/./[file]%00</p>
+	  <p>Successful exploitation requires that "magic_quotes_gpc" is
+	    disabled.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-1909</cvename>
+      <url>http://coppermine-gallery.net/forum/index.php?topic=30655.0</url>
+      <url>http://myimei.com/security/2006-04-14/copperminephotogallery144-plugininclusionsystemindexphp-remotefileinclusion-attack.html</url>
+      <url>http://secunia.com/advisories/19665/</url>
+    </references>
+    <dates>
+      <discovery>2006-04-19</discovery>
+      <entry>2006-05-22</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="77cceaef-e9a4-11da-b9f4-00123ffe8333">
+    <topic>coppermine -- File Inclusion Vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>coppermine</name>
+	<range><lt>1.4.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/18941/">
+	  <p>Coppermine Photo Gallery have a vulnerability, which can be
+	    exploited by malicious people and by malicious users to compromise
+	    a vulnerable system.</p>
+	  <p>1) Input passed to the "lang" parameter in include/init.inc.php
+	    isn't properly verified, before it is used to include files. This
+	    can be exploited to include arbitrary files from local resources.
+	    The vulnerability can be further exploited by users who are allowed
+	    to upload image files to execute arbitrary PHP code.</p>
+	  <p>2) Input passed to the "f" parameter in docs/showdoc.php isn't
+	    properly verified, before it is used to include files. This can be
+	    exploited to include arbitrary files from local resources on the
+	    Windows platform, and remote files from Windows shared folders.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-0872</cvename>
+      <cvename>CVE-2006-0873</cvename>
+      <url>http://retrogod.altervista.org/cpg_143_adv.html</url>
+      <url>http://secunia.com/advisories/18941/</url>
+    </references>
+    <dates>
+      <discovery>2006-02-20</discovery>
+      <entry>2006-05-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2ecd02e2-e864-11da-b9f4-00123ffe8333">
     <topic>phpmyadmin -- XSRF vulnerabilities</topic>
     <affects>
