@@ -19,6 +19,6 @@
      This means that squid will not start automatically at boot time.
 
      To enable squid, set squid_enable=yes in either
-     etc/rc.conf, /etc/rc.conf.local or /etc/rc.conf.d/squid
+     /etc/rc.conf, /etc/rc.conf.local or /etc/rc.conf.d/squid
      Please see %%PREFIX%%/etc/rc.d/squid(.sh) for further details.
 --end rcng

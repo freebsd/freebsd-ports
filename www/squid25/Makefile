@@ -72,8 +72,7 @@
 #
 
 PORTNAME=	squid
-PORTVERSION=	2.5.13
-PORTREVISION=	1
+PORTVERSION=	2.5.14
 CATEGORIES=	www
 MASTER_SITES=	\
 		ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
@@ -82,14 +81,11 @@ MASTER_SITES=	\
 		ftp://ftp.mirrorservice.org/sites/ftp.squid-cache.org/pub/%SUBDIR%/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/squid/&,}
 MASTER_SITE_SUBDIR=	squid-2/STABLE
-DISTNAME=	squid-2.5.STABLE13
+DISTNAME=	squid-2.5.STABLE14
 DIST_SUBDIR=	squid2.5
 
 PATCH_SITES=	http://www.squid-cache.org/Versions/v2/2.5/bugs/
-PATCHFILES=	squid-2.5.STABLE13-hostnamelen.patch \
-		squid-2.5.STABLE13-icons.patch \
-		squid-2.5.STABLE13-htcp_leak.patch \
-		squid-2.5.STABLE13-ident_leak.patch
+PATCHFILES=
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	tmseck@netcologne.de
@@ -204,7 +200,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 basic_auth+=	SASL
 libexec+=	sasl_auth
 .endif
-.if !defined(NO_NIS)
+.if !defined(NO_NIS) && !defined(WITHOUT_NIS)
 basic_auth+=	YP
 libexec+=	yp_auth
 .endif

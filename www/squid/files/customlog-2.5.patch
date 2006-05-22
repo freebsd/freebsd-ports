@@ -2,9 +2,9 @@
 ! Modified diff paths to apply cleanly
 
 Index: src/access_log.c
-diff -u src/access_log.c:1.15.6.8 src/access_log.c:1.15.6.3.2.14
+diff -u src/access_log.c:1.15.6.8 src/access_log.c:1.15.6.3.2.15
 --- src/access_log.c:1.15.6.8	Tue Mar 29 18:17:46 2005
-+++ src/access_log.c	Thu Sep  1 12:28:46 2005
++++ src/access_log.c	Mon May 15 03:58:22 2006
 @@ -36,9 +36,6 @@
  
  #include "squid.h"
@@ -522,7 +522,7 @@ diff -u src/access_log.c:1.15.6.8 src/access_log.c:1.15.6.3.2.14
 +	lt->type = LFT_STRING;
 +	lt->data.string = cp;
 +	while (l > 0) {
-+	    switch(*cur) {
++	    switch (*cur) {
 +	    case '"':
 +		if (*quote == LOG_QUOTE_NONE)
 +		    *quote = LOG_QUOTE_QUOTES;
@@ -530,11 +530,11 @@ diff -u src/access_log.c:1.15.6.8 src/access_log.c:1.15.6.3.2.14
 +		    *quote = LOG_QUOTE_NONE;
 +		break;
 +	    case '[':
-+	    	if (*quote == LOG_QUOTE_NONE)
++		if (*quote == LOG_QUOTE_NONE)
 +		    *quote = LOG_QUOTE_BRAKETS;
 +		break;
 +	    case ']':
-+	    	if (*quote == LOG_QUOTE_BRAKETS)
++		if (*quote == LOG_QUOTE_BRAKETS)
 +		    *quote = LOG_QUOTE_NONE;
 +		break;
 +	    }
@@ -564,7 +564,7 @@ diff -u src/access_log.c:1.15.6.8 src/access_log.c:1.15.6.3.2.14
 +	cur++;
 +	break;
 +    default:
-+    	lt->quote = *quote;
++	lt->quote = *quote;
 +	break;
 +    }
 +    if (*cur == '-') {
@@ -621,14 +621,14 @@ diff -u src/access_log.c:1.15.6.8 src/access_log.c:1.15.6.3.2.14
 +		    lt->data.header.separator = ',';
 +		lt->data.header.element = cp;
 +		lt->type = (lt->type == LFT_REQUEST_HEADER) ?
-+			    LFT_REQUEST_HEADER_ELEM :
-+			    LFT_REPLY_HEADER_ELEM;
++		    LFT_REQUEST_HEADER_ELEM :
++		    LFT_REPLY_HEADER_ELEM;
 +	    }
 +	    lt->data.header.header = header;
 +	} else {
 +	    lt->type = (lt->type == LFT_REQUEST_HEADER) ?
-+			LFT_REQUEST_ALL_HEADERS :
-+			LFT_REPLY_ALL_HEADERS;
++		LFT_REQUEST_ALL_HEADERS :
++		LFT_REPLY_ALL_HEADERS;
 +	    Config.onoff.log_mime_hdrs = 1;
 +	}
 +	break;
@@ -710,15 +710,15 @@ diff -u src/access_log.c:1.15.6.8 src/access_log.c:1.15.6.3.2.14
 +
 +		    arg = argbuf;
 +		    type = (type == LFT_REQUEST_HEADER_ELEM) ?
-+			    LFT_REQUEST_HEADER :
-+			    LFT_REPLY_HEADER;
++			LFT_REQUEST_HEADER :
++			LFT_REPLY_HEADER;
 +		    break;
 +
 +		case LFT_REQUEST_ALL_HEADERS:
 +		case LFT_REPLY_ALL_HEADERS:
 +		    type = (type == LFT_REQUEST_ALL_HEADERS) ?
-+			    LFT_REQUEST_HEADER :
-+			    LFT_REPLY_HEADER;
++			LFT_REQUEST_HEADER :
++			LFT_REPLY_HEADER;
 +		    break;
 +
 +		default:
@@ -876,7 +876,7 @@ diff -u src/access_log.c:1.15.6.8 src/access_log.c:1.15.6.3.2.14
      }
 -    logfileFlush(logfile);
 +  last:
-+    (void)0; /* NULL statement for label */
++    (void) 0;			/* NULL statement for label */
 +
  #if MULTICAST_MISS_STREAM
      if (al->cache.code != LOG_TCP_MISS)
@@ -938,9 +938,9 @@ diff -u src/access_log.c:1.15.6.8 src/access_log.c:1.15.6.3.2.14
      headerslog = logfileOpen("/usr/local/squid/logs/headers.log", MAX_URL << 1, 0);
      assert(NULL != headerslog);
 Index: src/cache_cf.c
-diff -u src/cache_cf.c:1.38.6.24 src/cache_cf.c:1.38.6.11.4.9
---- src/cache_cf.c:1.38.6.24	Fri May  6 19:15:36 2005
-+++ src/cache_cf.c	Thu May 26 21:34:13 2005
+diff -u src/cache_cf.c:1.38.6.29 src/cache_cf.c:1.38.6.11.4.10
+--- src/cache_cf.c:1.38.6.29	Wed Oct 26 19:13:24 2005
++++ src/cache_cf.c	Fri Mar  3 18:27:50 2006
 @@ -60,6 +60,14 @@
  static void dump_cachedir_option_readonly(StoreEntry * e, const char *option, SwapDir * sd);
  static void parse_cachedir_option_maxsize(SwapDir * sd, const char *option, const char *value, int reconfiguring);
@@ -956,7 +956,7 @@ diff -u src/cache_cf.c:1.38.6.24 src/cache_cf.c:1.38.6.11.4.9
  static struct cache_dir_option common_cachedir_options[] =
  {
      {"read-only", parse_cachedir_option_readonly, dump_cachedir_option_readonly},
-@@ -2631,3 +2639,144 @@
+@@ -2625,3 +2633,144 @@
  	return t;
      }
  }
@@ -1102,10 +1102,10 @@ diff -u src/cache_cf.c:1.38.6.24 src/cache_cf.c:1.38.6.11.4.9
 +    }
 +}
 Index: src/cf.data.pre
-diff -u src/cf.data.pre:1.49.2.77 src/cf.data.pre:1.49.2.40.2.17
---- src/cf.data.pre:1.49.2.77	Tue May 10 19:17:53 2005
-+++ src/cf.data.pre	Thu Sep  1 12:28:46 2005
-@@ -833,16 +833,97 @@
+diff -u src/cf.data.pre:1.49.2.86 src/cf.data.pre:1.49.2.40.2.18
+--- src/cf.data.pre:1.49.2.86	Sat Feb 25 19:13:57 2006
++++ src/cf.data.pre	Fri Mar  3 18:27:50 2006
+@@ -834,16 +834,97 @@
  	(hard coded at 1 MB).
  DOC_END
  
@@ -1211,7 +1211,7 @@ diff -u src/cf.data.pre:1.49.2.77 src/cf.data.pre:1.49.2.40.2.17
  
  NAME: cache_log
  TYPE: string
-@@ -2429,6 +2510,17 @@
+@@ -2440,6 +2521,17 @@
  	no limit imposed.
  DOC_END
  
@@ -1230,8 +1230,9 @@ diff -u src/cf.data.pre:1.49.2.77 src/cf.data.pre:1.49.2.40.2.17
   ADMINISTRATIVE PARAMETERS
   -----------------------------------------------------------------------------
 Index: src/client_side.c
---- src/client_side.c.orig	Fri Mar 10 23:58:35 2006
-+++ src/client_side.c	Sat Mar 18 23:53:25 2006
+diff -u src/client_side.c:1.47.2.76 src/client_side.c:1.47.2.31.2.15
+--- src/client_side.c:1.47.2.76	Fri Mar 10 19:16:31 2006
++++ src/client_side.c	Mon Apr 24 08:22:33 2006
 @@ -871,14 +871,18 @@
  	http->al.cache.code = http->log_type;
  	http->al.cache.msec = tvSubMsec(http->start, current_time);
@@ -1320,10 +1321,86 @@ diff -u src/icp_v2.c:1.5 src/icp_v2.c:1.5.60.1
  
  void
 Index: src/logfile.c
-diff -u src/logfile.c:1.5.38.3 src/logfile.c:1.5.38.3.4.1
+diff -u src/logfile.c:1.5.38.3 src/logfile.c:1.5.38.3.4.4
 --- src/logfile.c:1.5.38.3	Mon Jan 20 19:15:11 2003
-+++ src/logfile.c	Wed Mar  2 12:50:03 2005
-@@ -39,33 +39,38 @@
++++ src/logfile.c	Sun May 21 16:56:52 2006
+@@ -36,36 +36,127 @@
+ 
+ static void logfileWriteWrapper(Logfile * lf, const void *buf, size_t len);
+ 
++#if HAVE_SYSLOG
++typedef struct {
++    const char *name;
++    int value;
++}syslog_symbol_t;
++
++static int 
++syslog_ntoa(const char *s)
++{
++#define syslog_symbol(a) #a, a
++    static syslog_symbol_t symbols[] =
++    {
++#ifdef LOG_AUTHPRIV
++	{syslog_symbol(LOG_AUTHPRIV)},
++#endif
++#ifdef LOG_DAEMON
++	{syslog_symbol(LOG_DAEMON)},
++#endif
++#ifdef LOG_LOCAL0
++	{syslog_symbol(LOG_LOCAL0)},
++#endif
++#ifdef LOG_LOCAL1
++	{syslog_symbol(LOG_LOCAL1)},
++#endif
++#ifdef LOG_LOCAL2
++	{syslog_symbol(LOG_LOCAL2)},
++#endif
++#ifdef LOG_LOCAL3
++	{syslog_symbol(LOG_LOCAL3)},
++#endif
++#ifdef LOG_LOCAL4
++	{syslog_symbol(LOG_LOCAL4)},
++#endif
++#ifdef LOG_LOCAL5
++	{syslog_symbol(LOG_LOCAL5)},
++#endif
++#ifdef LOG_LOCAL6
++	{syslog_symbol(LOG_LOCAL6)},
++#endif
++#ifdef LOG_LOCAL7
++	{syslog_symbol(LOG_LOCAL7)},
++#endif
++#ifdef LOG_USER
++	{syslog_symbol(LOG_USER)},
++#endif
++#ifdef LOG_ERR
++	{syslog_symbol(LOG_ERR)},
++#endif
++#ifdef LOG_WARNING
++	{syslog_symbol(LOG_WARNING)},
++#endif
++#ifdef LOG_NOTICE
++	{syslog_symbol(LOG_NOTICE)},
++#endif
++#ifdef LOG_INFO
++	{syslog_symbol(LOG_INFO)},
++#endif
++#ifdef LOG_DEBUG
++	{syslog_symbol(LOG_DEBUG)},
++#endif
++	{NULL, 0}
++    };
++    syslog_symbol_t *p;
++
++    for (p = symbols; p->name != NULL; ++p)
++	if (!strcmp(s, p->name) || !strcmp(s, p->name + 4))
++	    return p->value;
++    return 0;
++}
++
++#define PRIORITY_MASK (LOG_ERR | LOG_WARNING | LOG_NOTICE | LOG_INFO | LOG_DEBUG)
++#endif /* HAVE_SYSLOG */
++
  Logfile *
  logfileOpen(const char *path, size_t bufsz, int fatal_flag)
  {
@@ -1345,11 +1422,24 @@ diff -u src/logfile.c:1.5.38.3 src/logfile.c:1.5.38.3.4.1
 -	    return NULL;
 +    Logfile *lf = xcalloc(1, sizeof(*lf));
 +    xstrncpy(lf->path, path, MAXPATHLEN);
-+    if (strcmp(path, "syslog") == 0) {
++#if HAVE_SYSLOG
++    if (strcmp(path, "syslog") == 0 || strncmp(path, "syslog:", 7) == 0) {
 +	lf->flags.syslog = 1;
-+	lf->syslog_priority = LOG_INFO;
 +	lf->fd = -1;
-+    } else  {
++	if (path[6] != '\0') {
++	    const char *priority = path + 7;
++	    char *facility = strchr(priority, '|');
++	    if (facility) {
++		*facility++ = '\0';
++		lf->syslog_priority |= syslog_ntoa(facility);
++	    }
++	    lf->syslog_priority |= syslog_ntoa(priority);
++	}
++	if ((lf->syslog_priority & PRIORITY_MASK) == 0)
++	    lf->syslog_priority |= LOG_INFO;
++    } else
++#endif
++    {
 +	int fd = file_open(path, O_WRONLY | O_CREAT | O_TEXT);
 +	if (DISK_ERROR == fd) {
 +	    if (ENOENT == errno && fatal_flag) {
@@ -1385,7 +1475,7 @@ diff -u src/logfile.c:1.5.38.3 src/logfile.c:1.5.38.3.4.1
      return lf;
  }
  
-@@ -73,7 +78,8 @@
+@@ -73,7 +164,8 @@
  logfileClose(Logfile * lf)
  {
      logfileFlush(lf);
@@ -1395,7 +1485,7 @@ diff -u src/logfile.c:1.5.38.3 src/logfile.c:1.5.38.3.4.1
      if (lf->buf)
  	xfree(lf->buf);
      xfree(lf);
-@@ -89,6 +95,8 @@
+@@ -89,6 +181,8 @@
      char from[MAXPATHLEN];
      char to[MAXPATHLEN];
      assert(lf->path);
@@ -1404,21 +1494,23 @@ diff -u src/logfile.c:1.5.38.3 src/logfile.c:1.5.38.3.4.1
  #ifdef S_ISREG
      if (stat(lf->path, &sb) == 0)
  	if (S_ISREG(sb.st_mode) == 0)
-@@ -120,6 +128,10 @@
+@@ -120,6 +214,12 @@
  void
  logfileWrite(Logfile * lf, void *buf, size_t len)
  {
++#if HAVE_SYSLOG
 +    if (lf->flags.syslog) {
-+	syslog(lf->syslog_priority, "%s", (char *)buf);
++	syslog(lf->syslog_priority, "%s", (char *) buf);
 +	return;
 +    }
++#endif
      if (0 == lf->bufsz) {
  	/* buffering disabled */
  	logfileWriteWrapper(lf, buf, len);
 Index: src/protos.h
-diff -u src/protos.h:1.41.6.30 src/protos.h:1.41.6.14.2.9
---- src/protos.h:1.41.6.30	Wed May 18 19:14:37 2005
-+++ src/protos.h	Thu May 26 21:34:15 2005
+diff -u src/protos.h:1.41.6.34 src/protos.h:1.41.6.14.2.10
+--- src/protos.h:1.41.6.34	Sat Feb 25 19:13:57 2006
++++ src/protos.h	Fri Mar  3 18:27:52 2006
 @@ -34,11 +34,14 @@
  #ifndef SQUID_PROTOS_H
  #define SQUID_PROTOS_H
@@ -1436,9 +1528,9 @@ diff -u src/protos.h:1.41.6.30 src/protos.h:1.41.6.14.2.9
  #if FORW_VIA_DB
  extern void fvdbCountVia(const char *key);
 Index: src/structs.h
-diff -u src/structs.h:1.48.2.39 src/structs.h:1.48.2.11.2.12
---- src/structs.h:1.48.2.39	Wed May  4 19:18:43 2005
-+++ src/structs.h	Thu May 26 21:34:16 2005
+diff -u src/structs.h:1.48.2.46 src/structs.h:1.48.2.11.2.14
+--- src/structs.h:1.48.2.46	Fri Mar 10 19:16:31 2006
++++ src/structs.h	Mon Apr 24 08:22:34 2006
 @@ -465,7 +465,6 @@
      char *as_whois_server;
      struct {
@@ -1456,7 +1548,7 @@ diff -u src/structs.h:1.48.2.39 src/structs.h:1.48.2.11.2.12
  	int rotateNumber;
      } Log;
      char *adminEmail;
-@@ -619,6 +620,7 @@
+@@ -623,6 +624,7 @@
  	acl_access *AlwaysDirect;
  	acl_access *ASlists;
  	acl_access *noCache;
@@ -1464,7 +1556,7 @@ diff -u src/structs.h:1.48.2.39 src/structs.h:1.48.2.11.2.12
  #if SQUID_SNMP
  	acl_access *snmp;
  #endif
-@@ -1057,6 +1059,8 @@
+@@ -1061,6 +1063,8 @@
  	const char *method_str;
      } private;
      HierarchyLogEntry hier;
@@ -1473,7 +1565,7 @@ diff -u src/structs.h:1.48.2.39 src/structs.h:1.48.2.11.2.12
  };
  
  struct _clientHttpRequest {
-@@ -2200,8 +2204,32 @@
+@@ -2210,8 +2214,32 @@
      size_t bufsz;
      ssize_t offset;
      struct {
