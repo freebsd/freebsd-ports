@@ -1,4 +1,0 @@
-@cwd %%BOINC_HOME%%
-projects/%%SETI_SITE%%/app_info.xml
-projects/%%SETI_SITE%%/%%SETI_BINARY%%
-@unexec rmdir %D/projects/%%SETI_SITE%% 2>/dev/null || true
