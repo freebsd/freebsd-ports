@@ -17,4 +17,6 @@ GNU_CONFIGURE=	yes
 PLIST_SUB=	VERSION=${PORTVERSION}
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 
+MAN1=		blackened.1
+
 .include <bsd.port.mk>
