@@ -1,39 +1,40 @@
 This is the FreeBSD Ports Collection.  For an easy to use
 WEB-based interface to it, please see:
 
-        http://www.freebsd.org/ports
+	http://www.FreeBSD.org/ports
 
-For general information on the ports collection, please see the
-FreeBSD Handbook which is available from:
+For general information on the Ports Collection, please see the
+FreeBSD Handbook ports section which is available from:
 
-        file://localhost/usr/share/doc/handbook/handbook.html
+	http://www.FreeBSD.org/doc/en_US.ISO8859-1/books/handbook/ports.html
+		for the latest official version
+	or:
+	The ports(7) manual page (man ports).
 
-(if you installed the doc distribution on your machine)
+These will explain how to use ports and packages.
 
-Or:
+If you would like to search for a port, you can do so easily by
+saying (in /usr/ports):
 
-        http://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/
 
-for the latest official version from FreeBSD-current.
-
-The section "The Ports Collection" will tell you how to use the
-ports and packages and the "Porting Applications" section
-describes how one can contribute to the ports collection.
-
-If you would like to search for a given port, you can do so easily
-by saying:
-
+	make search name="<name>"
+	or:
 	make search key="<keyword>"
 
-Which will generate a list of all ports matching <keyword>.
+which will generate a list of all ports matching <name> or <keyword>.
+make search also supports wildcards, such as:
 
-NOTE:  This tree can GROW significantly in size during normal usage!
+	make search name="gtk*"
+
+For information about contributing to FreeBSD ports, please see the Porter's
+Handbook, available at:
+
+	http://www.FreeBSD.org/doc/en_US.ISO8859-1/books/porters-handbook/
+
+NOTE:  This tree will GROW significantly in size during normal usage!
 The distribution tar files can and do accumulate in /usr/ports/distfiles,
 and the individual ports will also use up lots of space in their work
 subdirectories unless you remember to "make clean" after you're done
 building a given port.  /usr/ports/distfiles can also be periodically
-cleaned without ill-effect, though if you don't have the original
-distribution tarball(s) for something on CDROM then you will need to pull
-it all over your network connection again if you ever try to build the
-associated port.
+cleaned without ill-effect.
 
