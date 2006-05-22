@@ -7734,6 +7734,7 @@ p5-Authen-Simple-HTTP	ports/security/p5-Authen-Simple-HTTP
 p5-Authen-Simple-LDAP	ports/security/p5-Authen-Simple-LDAP
 p5-Authen-Simple-Net	ports/security/p5-Authen-Simple-Net
 p5-Authen-Simple-Passwd	ports/security/p5-Authen-Simple-Passwd
+p5-Authen-Simple-SSH	ports/security/p5-Authen-Simple-SSH
 p5-Authen-Smb	ports/security/p5-Authen-Smb
 p5-Authen-TacacsPlus	ports/security/p5-Authen-TacacsPlus
 p5-Authen-Ticket	ports/security/p5-Authen-Ticket
