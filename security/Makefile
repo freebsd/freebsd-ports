@@ -296,6 +296,7 @@
     SUBDIR += p5-Authen-Simple-LDAP
     SUBDIR += p5-Authen-Simple-Net
     SUBDIR += p5-Authen-Simple-Passwd
+    SUBDIR += p5-Authen-Simple-SSH
     SUBDIR += p5-Authen-Smb
     SUBDIR += p5-Authen-TacacsPlus
     SUBDIR += p5-Authen-Ticket

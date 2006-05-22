@@ -1,0 +1,3 @@
+%%SITE_PERL%%/Authen/Simple/SSH.pm
+@dirrmtry %%SITE_PERL%%/Authen/Simple
+@dirrmtry %%SITE_PERL%%/Authen
