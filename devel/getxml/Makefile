@@ -10,8 +10,7 @@ PORTNAME=	getxml
 PORTVERSION=	1.0.4
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	toutdoux
+MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An XML internationalization tool
