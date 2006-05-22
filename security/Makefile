@@ -298,6 +298,7 @@
     SUBDIR += p5-Authen-Simple-Net
     SUBDIR += p5-Authen-Simple-PAM
     SUBDIR += p5-Authen-Simple-Passwd
+    SUBDIR += p5-Authen-Simple-RADIUS
     SUBDIR += p5-Authen-Simple-SMB
     SUBDIR += p5-Authen-Simple-SSH
     SUBDIR += p5-Authen-Smb
