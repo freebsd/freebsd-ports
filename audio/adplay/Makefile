@@ -7,7 +7,7 @@
 
 PORTNAME=	adplay
 PORTVERSION=	1.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	adplug
@@ -21,6 +21,7 @@ COMMENT=	AdLib player using adplug library
 LIB_DEPENDS=	adplug-2.0.0:${PORTSDIR}/audio/libadplug
 
 GNU_CONFIGURE=	yes
+WANT_SDL=	yes
 USE_GCC=	3.4+
 
 DBFILE=		adplug.db
@@ -38,7 +39,13 @@ MAN1=		adplay.1
 PLIST_FILES=	bin/adplay %%DATADIR%%/adplug.db
 PLIST_DIRS=	%%DATADIR%%
 
+OPTIONS=	SDL	"Build with SDL output support"	off
+
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_SDL)
+USE_SDL=	sdl mixer
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^\(adplug_data_dir.*\)/.*|\1|' \
