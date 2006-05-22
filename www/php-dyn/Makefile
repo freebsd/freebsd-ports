@@ -19,6 +19,8 @@ COMMENT=	A PHP Extension to help debugging a PHP script
 USE_PHP=	yes
 USE_PHPIZE=	yes
 WITH_PHP_MOD=	yes
+BROKEN_WITH_PHP=5
+DEFAULT_PHP_VER=4
 
 CONFIGURE_ARGS=	--enable-php_dyn=shared
 
