@@ -16,6 +16,7 @@ MAINTAINER=	nivit@email.it
 COMMENT=	A graphical, easy to use math program
 
 CONFLICTS=	ump-1.[0-9]*
+LATEST_LINK=	math-ump
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
