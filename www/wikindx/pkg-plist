@@ -694,3 +694,4 @@
 @dirrm %%WIKINDX%%/attachments
 @dirrm %%WIKINDX%%
 @dirrm %%DOCSDIR%%
+@dirrmtry www/data-dist

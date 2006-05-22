@@ -197,3 +197,4 @@
 @dirrm %%PMWIKIDIR%%/docs
 @dirrm %%PMWIKIDIR%%/cookbook
 @dirrmtry %%PMWIKIDIR%%
+@dirrmtry www/data-dist

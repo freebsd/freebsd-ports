@@ -104,3 +104,4 @@
 @dirrm %%TEXTPATTERN%%/files/\
 @dirrm %%TEXTPATTERN%%/files
 @dirrm %%TEXTPATTERN%%
+@dirrmtry www/data-dist
