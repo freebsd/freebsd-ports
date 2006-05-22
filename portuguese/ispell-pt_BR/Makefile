@@ -8,7 +8,7 @@
 PORTNAME=	ispell
 PORTVERSION=	2.4
 CATEGORIES=	portuguese textproc
-MASTER_SITES=	ftp://ftp.ime.usp.br/pub/ueda/br.ispell/
+MASTER_SITES=	http://www.ime.usp.br/~ueda/br.ispell/
 PKGNAMEPREFIX=	pt_BR-
 DISTNAME=	br.ispell-2.4
 
