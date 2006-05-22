@@ -9755,6 +9755,7 @@ pam_mkhomedir	ports/security/pam_mkhomedir
 pam_per_user	ports/security/pam_per_user
 pam_pgina	ports/security/pam_pgina
 pam_pop3	ports/security/pam_pop3
+pam_pseudo	ports/security/pam_pseudo
 pam_pwdfile	ports/security/pam_pwdfile
 pam_smb		ports/security/pam_smb
 paman		ports/audio/paman
