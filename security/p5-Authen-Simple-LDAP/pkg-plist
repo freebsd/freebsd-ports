@@ -1,0 +1,4 @@
+%%SITE_PERL%%/Authen/Simple/ActiveDirectory.pm
+%%SITE_PERL%%/Authen/Simple/LDAP.pm
+@dirrmtry %%SITE_PERL%%/Authen/Simple
+@dirrmtry %%SITE_PERL%%/Authen
