@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bouml
-PORTVERSION=	2.14.3
+PORTVERSION=	2.14.4
 CATEGORIES=	devel
 MASTER_SITES=	http://bouml.free.fr/
 DISTFILES=	${PORTNAME}_${PORTVERSION}${EXTRACT_SUFX}
@@ -48,7 +48,7 @@ post-install:
 	${FIND} ${DATADIR} -type f -perm 755 | ${XARGS} ${STRIP_CMD}
 .if !defined(NOPORTDOCS)
 	cd ${WRKDIR}/doc && ${FIND} . -type d -exec ${MKDIR} ${DOCSDIR}/{} \;
-	@cd ${WRKDIR}/doc && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${DOCSDIR}/{} \;
+	cd ${WRKDIR}/doc && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${DOCSDIR}/{} \;
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 .endif
 
