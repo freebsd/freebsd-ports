@@ -77,7 +77,7 @@ CPPFLAGS+=	-I${X11BASE}/include/wx-2.6/
 BROKEN=Does not compile with perl ${PERL_VERSION}
 .endif
 
-.if exists(${LOCALBASE}/lib/libavutil-CVS.so) || !exists(${LOCALBASE}/lib/libavformat.a)
+.if exists(${LOCALBASE}/libdata/pkgconfig/libavcodec.pc) || !exists(${LOCALBASE}/lib/libavformat.a)
 LIB_DEPENDS+=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg-devel
 .else
 LIB_DEPENDS+=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg
