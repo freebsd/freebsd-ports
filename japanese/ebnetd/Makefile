@@ -9,8 +9,7 @@ PORTNAME=	ebnetd
 PORTVERSION=	1.0
 PORTREVISION=	2
 CATEGORIES=	japanese ipv6
-MASTER_SITES=	ftp://ftp.sra.co.jp/pub/misc/eb/ \
-		ftp://ftp.eos.hokudai.ac.jp/pub/net/ndtp/eb/
+MASTER_SITES=	ftp://ftp.sra.co.jp/pub/misc/eb/
 
 MAINTAINER=	yasu@utahime.org
 COMMENT=	Servers for accessing CD-ROM books via TCP/IP

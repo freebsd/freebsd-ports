@@ -16,4 +16,4 @@ sbin/ndtpcheck
 sbin/ndtpcontrol
 sbin/ndtpd
 @exec /bin/mkdir -m 0755 -p /var/run/ebnetd
-@unexec rmdir /var/run/ebnetd
+@dirrmtry /var/run/ebnetd
