@@ -37,7 +37,6 @@ include/mysql/mysql_version.h
 include/mysql/mysqld_ername.h
 include/mysql/mysqld_error.h
 include/mysql/plugin.h
-include/mysql/raid.h
 include/mysql/sql_common.h
 include/mysql/sql_state.h
 include/mysql/sslopt-case.h
