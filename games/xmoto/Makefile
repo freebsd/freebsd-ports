@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmoto
-PORTVERSION=	0.1.12
+PORTVERSION=	0.1.14
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -36,11 +36,22 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 PORTDOCS=	README ChangeLog
 
+OPTIONS=	CURL	"Online high-scores and new levels download support"	on
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_CURL)
+LIB_DEPENDS+=	curl.3:${PORTSDIR}/ftp/curl
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|SDL/|SDL11/|' ${WRKSRC}/src/VCommon.h
 	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|' ${WRKSRC}/src/image/tim_memory_crt.cpp
 	@${REINPLACE_CMD} -e 's|endian.h|sys/endian.h|' ${WRKSRC}/src/VCommon.h
 	@${REINPLACE_CMD} -e '/LIBS/ s|\(-lSDL_mixer\)|\1 `${SDL_CONFIG} --libs`|' ${WRKSRC}/configure
+.if !defined(WITH_CURL)
+	@${REINPLACE_CMD} -e 's|test $$ac_cv_lib_curl_curl_easy_init = yes|false|' ${WRKSRC}/configure
+.endif
 
 .if !defined(NOPORTDOCS)
 post-install:
@@ -50,4 +61,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
