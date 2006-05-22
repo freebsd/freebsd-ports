@@ -74,6 +74,7 @@ bin/bouml
 %%DATADIR%%/FileControl/stereotypes
 %%DATADIR%%/FileControl/tools
 %%DATADIR%%/bouml
+%%DATADIR%%/browsersort
 %%DATADIR%%/cpp_generator
 %%DATADIR%%/cpp_reverse
 %%DATADIR%%/cpp_util
@@ -151,6 +152,81 @@ bin/bouml
 %%DATADIR%%/cpp_utilities/java_imports
 %%DATADIR%%/cpp_utilities/stereotypes
 %%DATADIR%%/cpp_utilities/tools
+%%DATADIR%%/deplcl
+%%DATADIR%%/deploy/1024.bodies
+%%DATADIR%%/deploy/1152.bodies
+%%DATADIR%%/deploy/1280.bodies
+%%DATADIR%%/deploy/128002.diagram
+%%DATADIR%%/deploy/128130.diagram
+%%DATADIR%%/deploy/128256.bodies
+%%DATADIR%%/deploy/128258.diagram
+%%DATADIR%%/deploy/128386.diagram
+%%DATADIR%%/deploy/128512.bodies
+%%DATADIR%%/deploy/128768.bodies
+%%DATADIR%%/deploy/128896.bodies
+%%DATADIR%%/deploy/129.diagram
+%%DATADIR%%/deploy/129152.bodies
+%%DATADIR%%/deploy/129280.bodies
+%%DATADIR%%/deploy/129536.bodies
+%%DATADIR%%/deploy/129920.bodies
+%%DATADIR%%/deploy/130176.bodies
+%%DATADIR%%/deploy/130432.bodies
+%%DATADIR%%/deploy/130688.bodies
+%%DATADIR%%/deploy/130944.bodies
+%%DATADIR%%/deploy/131200.bodies
+%%DATADIR%%/deploy/131456.bodies
+%%DATADIR%%/deploy/131712.bodies
+%%DATADIR%%/deploy/131968.bodies
+%%DATADIR%%/deploy/132224.bodies
+%%DATADIR%%/deploy/132480.bodies
+%%DATADIR%%/deploy/1408.bodies
+%%DATADIR%%/deploy/1536.bodies
+%%DATADIR%%/deploy/1664.bodies
+%%DATADIR%%/deploy/1792.bodies
+%%DATADIR%%/deploy/1920.bodies
+%%DATADIR%%/deploy/2048.bodies
+%%DATADIR%%/deploy/2176.bodies
+%%DATADIR%%/deploy/2304.bodies
+%%DATADIR%%/deploy/2432.bodies
+%%DATADIR%%/deploy/256
+%%DATADIR%%/deploy/2560.bodies
+%%DATADIR%%/deploy/257.diagram
+%%DATADIR%%/deploy/2688.bodies
+%%DATADIR%%/deploy/2944.bodies
+%%DATADIR%%/deploy/3072.bodies
+%%DATADIR%%/deploy/3200.bodies
+%%DATADIR%%/deploy/3328.bodies
+%%DATADIR%%/deploy/3456.bodies
+%%DATADIR%%/deploy/3584.bodies
+%%DATADIR%%/deploy/3712.bodies
+%%DATADIR%%/deploy/384
+%%DATADIR%%/deploy/3840.bodies
+%%DATADIR%%/deploy/385.diagram
+%%DATADIR%%/deploy/3968.bodies
+%%DATADIR%%/deploy/4096.bodies
+%%DATADIR%%/deploy/4224.bodies
+%%DATADIR%%/deploy/4352.bodies
+%%DATADIR%%/deploy/4736.bodies
+%%DATADIR%%/deploy/4864.bodies
+%%DATADIR%%/deploy/4992.bodies
+%%DATADIR%%/deploy/512
+%%DATADIR%%/deploy/5120.bodies
+%%DATADIR%%/deploy/513.diagram
+%%DATADIR%%/deploy/5248.bodies
+%%DATADIR%%/deploy/641
+%%DATADIR%%/deploy/6528.bodies
+%%DATADIR%%/deploy/7169.bodies
+%%DATADIR%%/deploy/768.bodies
+%%DATADIR%%/deploy/7681.bodies
+%%DATADIR%%/deploy/8833.bodies
+%%DATADIR%%/deploy/896.bodies
+%%DATADIR%%/deploy/cpp_includes
+%%DATADIR%%/deploy/deploy.prj
+%%DATADIR%%/deploy/generation_settings
+%%DATADIR%%/deploy/idl_includes
+%%DATADIR%%/deploy/java_imports
+%%DATADIR%%/deploy/stereotypes
+%%DATADIR%%/deploy/tools
 %%DATADIR%%/empty/1024.bodies
 %%DATADIR%%/empty/1152.bodies
 %%DATADIR%%/empty/1280.bodies
@@ -881,6 +957,7 @@ bin/bouml
 @dirrm %%DATADIR%%/html
 @dirrm %%DATADIR%%/genpro
 @dirrm %%DATADIR%%/empty
+@dirrm %%DATADIR%%/deploy
 @dirrm %%DATADIR%%/cpp_utilities
 @dirrm %%DATADIR%%/FileControl
 @dirrm %%DATADIR%%
