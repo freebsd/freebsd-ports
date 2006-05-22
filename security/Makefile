@@ -291,6 +291,7 @@
     SUBDIR += p5-Authen-SASL
     SUBDIR += p5-Authen-SASL-Cyrus
     SUBDIR += p5-Authen-Simple
+    SUBDIR += p5-Authen-Simple-DBI
     SUBDIR += p5-Authen-Simple-LDAP
     SUBDIR += p5-Authen-Smb
     SUBDIR += p5-Authen-TacacsPlus
