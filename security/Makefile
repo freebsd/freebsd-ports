@@ -437,6 +437,7 @@
     SUBDIR += p5-SHA
     SUBDIR += p5-Safe-Hole
     SUBDIR += p5-Tie-EncryptedHash
+    SUBDIR += p5-Tree-Authz
     SUBDIR += pad
     SUBDIR += pam-mysql
     SUBDIR += pam-pgsql

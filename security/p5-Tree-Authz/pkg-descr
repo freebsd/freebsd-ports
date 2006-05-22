@@ -1,0 +1,17 @@
+Class for inheritable, role-based permissions system (Role Based Access 
+Control - RBAC).
+
+Custom methods can be placed on role objects. Authorization can be 
+performed either by checking whether the role name matches the required 
+name, or by testing (via can) whether the role can perform the method 
+required.
+
+Two role are specified by default. At the top, superusers can do anything 
+($superuser->can( $action ) always returns a coderef). At the bottom, the 
+base role can do nothing ($base->can( $action ) always returns undef).
+
+All roles are automatically capable of authorizing actions named for the 
+singular and plural of the role name.
+
+WWW: http://search.cpan.org/dist/Tree-Authz
+Author: David Baird <cpan@riverside-cms.co.uk>
