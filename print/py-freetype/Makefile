@@ -7,6 +7,7 @@
 
 PORTNAME=	py-freetype
 PORTVERSION=	0.65
+PORTREVISION=	1
 CATEGORIES=	print python
 MASTER_SITES=	http://starship.python.net/crew/kernr/source/
 DISTNAME=	PyFT-${PORTVERSION}
