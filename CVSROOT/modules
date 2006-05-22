@@ -7794,6 +7794,7 @@ p5-Business-UPS	ports/misc/p5-Business-UPS
 p5-Business-WorldPay-Junior	ports/finance/p5-Business-WorldPay-Junior
 p5-C-Scan	ports/devel/p5-C-Scan
 p5-CAD-Calc	ports/math/p5-CAD-Calc
+p5-CAD-Drawing	ports/graphics/p5-CAD-Drawing
 p5-CDB_File	ports/databases/p5-CDB_File
 p5-CDB_File-Generator	ports/databases/p5-CDB_File-Generator
 p5-CDDB		ports/audio/p5-CDDB
