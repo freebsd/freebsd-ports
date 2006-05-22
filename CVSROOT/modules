@@ -7731,6 +7731,7 @@ p5-Authen-SASL-Cyrus	ports/security/p5-Authen-SASL-Cyrus
 p5-Authen-Simple	ports/security/p5-Authen-Simple
 p5-Authen-Simple-DBI	ports/security/p5-Authen-Simple-DBI
 p5-Authen-Simple-LDAP	ports/security/p5-Authen-Simple-LDAP
+p5-Authen-Simple-Net	ports/security/p5-Authen-Simple-Net
 p5-Authen-Smb	ports/security/p5-Authen-Smb
 p5-Authen-TacacsPlus	ports/security/p5-Authen-TacacsPlus
 p5-Authen-Ticket	ports/security/p5-Authen-Ticket
