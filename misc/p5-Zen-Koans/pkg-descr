@@ -1,0 +1,10 @@
+A koan (pronounced /ko.an/) is a story, dialog, question, or statement in 
+the history and lore of Chan (Zen) Buddhism, generally containing aspects 
+that are inaccessible to rational understanding, yet that may be 
+accessible to intuition.
+
+This module contains over 100 Zen Koans, all taken from Ashidakim Zen 
+Koans here: http://www.ashidakim.com/zenkoans/zenindex.html
+
+WWW: http://search.cpan.org/dist/Zen-Koans
+Author: Luke Closs <lukec@cpan.org>

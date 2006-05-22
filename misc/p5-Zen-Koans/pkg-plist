@@ -1,0 +1,6 @@
+%%SITE_PERL%%/Zen/Koan.pm
+%%SITE_PERL%%/Zen/Koans.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Zen/Koans/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Zen/Koans
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Zen
+@dirrmtry %%SITE_PERL%%/Zen

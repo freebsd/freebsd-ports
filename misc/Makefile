@@ -360,6 +360,7 @@
     SUBDIR += p5-Norge
     SUBDIR += p5-Text-FIGlet
     SUBDIR += p5-Tie-DxHash
+    SUBDIR += p5-Zen-Koans
     SUBDIR += patanjali
     SUBDIR += patchutils
     SUBDIR += pbs
