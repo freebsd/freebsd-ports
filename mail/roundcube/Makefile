@@ -8,14 +8,15 @@
 PORTNAME=	roundcube
 PORTVERSION=	0.1.${SNAPSHOT}
 CATEGORIES=	mail
-MASTER_SITES=	http://www.unixified.net/roundcube/
-MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.${SNAPSHOT}//}-${SNAPSHOT}
+MASTER_SITES=	http://www.unixified.net/roundcube/:unixified \
+		${MASTER_SITE_LOCAL:S/$/:freebsd/g}
+MASTER_SITE_SUBDIR=	flz/${PORTNAME}/:freebsd
+DISTFILES=	${PORTNAME}-${PORTVERSION:S/.${SNAPSHOT}//}-${SNAPSHOT}${EXTRACT_SUFX}:freebsd
 
 MAINTAINER=	flz@FreeBSD.org
 COMMENT=	Fully skinnable XHTML/CSS webmail written in PHP
 
-SNAPSHOT=	20060328
+SNAPSHOT=	20060518
 
 WRKSRC=		${WRKDIR}/${PORTNAME}mail
 NO_BUILD=	yes

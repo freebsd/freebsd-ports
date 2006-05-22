@@ -22,6 +22,7 @@
 %%RCUBEDIR%%/program/include/session.inc
 %%RCUBEDIR%%/program/js/app.js
 %%RCUBEDIR%%/program/js/common.js
+%%RCUBEDIR%%/program/js/googiespell.js
 %%RCUBEDIR%%/program/lib/Auth/SASL.php
 %%RCUBEDIR%%/program/lib/Auth/SASL/Anonymous.php
 %%RCUBEDIR%%/program/lib/Auth/SASL/Common.php
@@ -166,6 +167,8 @@
 %%RCUBEDIR%%/program/localization/it/messages.inc
 %%RCUBEDIR%%/program/localization/ja/labels.inc
 %%RCUBEDIR%%/program/localization/ja/messages.inc
+%%RCUBEDIR%%/program/localization/lt/labels.inc
+%%RCUBEDIR%%/program/localization/lt/messages.inc
 %%RCUBEDIR%%/program/localization/lv/labels.inc
 %%RCUBEDIR%%/program/localization/lv/messages.inc
 %%RCUBEDIR%%/program/localization/nb_NO/labels.inc
@@ -188,6 +191,8 @@
 %%RCUBEDIR%%/program/localization/ru/messages.inc
 %%RCUBEDIR%%/program/localization/se/labels.inc
 %%RCUBEDIR%%/program/localization/se/messages.inc
+%%RCUBEDIR%%/program/localization/si/labels.inc
+%%RCUBEDIR%%/program/localization/si/messages.inc
 %%RCUBEDIR%%/program/localization/sk/labels.inc
 %%RCUBEDIR%%/program/localization/sk/messages.inc
 %%RCUBEDIR%%/program/localization/tr/labels.inc
@@ -216,6 +221,7 @@
 %%RCUBEDIR%%/program/steps/mail/search.inc
 %%RCUBEDIR%%/program/steps/mail/sendmail.inc
 %%RCUBEDIR%%/program/steps/mail/show.inc
+%%RCUBEDIR%%/program/steps/mail/spell.inc
 %%RCUBEDIR%%/program/steps/mail/upload.inc
 %%RCUBEDIR%%/program/steps/mail/viewsource.inc
 %%RCUBEDIR%%/program/steps/settings/delete_identity.inc
@@ -227,6 +233,7 @@
 %%RCUBEDIR%%/program/steps/settings/save_prefs.inc
 %%RCUBEDIR%%/skins/default/addresses.css
 %%RCUBEDIR%%/skins/default/common.css
+%%RCUBEDIR%%/skins/default/googiespell.css
 %%RCUBEDIR%%/skins/default/images/blank.gif
 %%RCUBEDIR%%/skins/default/images/buttons/add_act.png
 %%RCUBEDIR%%/skins/default/images/buttons/add_contact_act.png
@@ -283,6 +290,10 @@
 %%RCUBEDIR%%/skins/default/images/display/loading.gif
 %%RCUBEDIR%%/skins/default/images/display/warning.png
 %%RCUBEDIR%%/skins/default/images/favicon.ico
+%%RCUBEDIR%%/skins/default/images/googiespell/change_lang.gif
+%%RCUBEDIR%%/skins/default/images/googiespell/indicator.gif
+%%RCUBEDIR%%/skins/default/images/googiespell/ok.gif
+%%RCUBEDIR%%/skins/default/images/googiespell/spellc.gif
 %%RCUBEDIR%%/skins/default/images/icons/abcard.png
 %%RCUBEDIR%%/skins/default/images/icons/attachment.png
 %%RCUBEDIR%%/skins/default/images/icons/dot.png
@@ -308,6 +319,7 @@
 %%RCUBEDIR%%/skins/default/images/roundcube_logo.gif
 %%RCUBEDIR%%/skins/default/images/roundcube_logo.png
 %%RCUBEDIR%%/skins/default/images/roundcube_logo_print.gif
+%%RCUBEDIR%%/skins/default/images/searchfield.gif
 %%RCUBEDIR%%/skins/default/images/sort_asc.gif
 %%RCUBEDIR%%/skins/default/images/sort_desc.gif
 %%RCUBEDIR%%/skins/default/images/tab_act.gif
@@ -345,6 +357,7 @@
 %%RCUBEDIR%%/temp/.htaccess
 @dirrm %%RCUBEDIR%%/skins/default/templates
 @dirrm %%RCUBEDIR%%/skins/default/includes
+@dirrm %%RCUBEDIR%%/skins/default/images/googiespell
 @dirrm %%RCUBEDIR%%/skins/default/images/icons
 @dirrm %%RCUBEDIR%%/skins/default/images/display
 @dirrm %%RCUBEDIR%%/skins/default/images/buttons
@@ -358,6 +371,7 @@
 @dirrm %%RCUBEDIR%%/program/localization/tw
 @dirrm %%RCUBEDIR%%/program/localization/tr
 @dirrm %%RCUBEDIR%%/program/localization/sk
+@dirrm %%RCUBEDIR%%/program/localization/si
 @dirrm %%RCUBEDIR%%/program/localization/se
 @dirrm %%RCUBEDIR%%/program/localization/ru
 @dirrm %%RCUBEDIR%%/program/localization/ro
@@ -369,6 +383,7 @@
 @dirrm %%RCUBEDIR%%/program/localization/nl_BE
 @dirrm %%RCUBEDIR%%/program/localization/nb_NO
 @dirrm %%RCUBEDIR%%/program/localization/lv
+@dirrm %%RCUBEDIR%%/program/localization/lt
 @dirrm %%RCUBEDIR%%/program/localization/ja
 @dirrm %%RCUBEDIR%%/program/localization/it
 @dirrm %%RCUBEDIR%%/program/localization/hu
