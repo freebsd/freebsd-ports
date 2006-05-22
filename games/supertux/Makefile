@@ -8,7 +8,8 @@
 PORTNAME=	supertux
 PORTVERSION=	0.1.3
 CATEGORIES=	games
-MASTER_SITES=	http://download.berlios.de/supertux/
+MASTER_SITES=	${MASTER_SITE_BERLIOS}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Super Tux is a side-scroller similar to Super Mario Brothers
