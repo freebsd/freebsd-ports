@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Module-Build
-PORTVERSION=	0.26.12
+PORTVERSION=	0.28.01
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Module/KWILLIAMS
@@ -19,6 +19,7 @@ COMMENT=	Build and install Perl modules
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathTools \
 		${SITE_PERL}/ExtUtils/CBuilder.pm:${PORTSDIR}/devel/p5-ExtUtils-CBuilder
 BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS+=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
 
 PERL_MODBUILD=	yes
 
@@ -40,10 +41,14 @@ RUN_DEPENDS+=	${SITE_PERL}/YAML.pm:${PORTSDIR}/textproc/p5-YAML
 .endif
 
 MAN3=		Module::Build.3 \
+		Module::Build::API.3 \
+		Module::Build::Authoring.3 \
 		Module::Build::Base.3 \
 		Module::Build::Compat.3 \
 		Module::Build::ConfigData.3 \
 		Module::Build::Cookbook.3 \
+		Module::Build::ModuleInfo.3 \
+		Module::Build::Notes.3 \
 		Module::Build::PPMMaker.3 \
 		Module::Build::Platform::Amiga.3 \
 		Module::Build::Platform::Default.3 \
@@ -58,7 +63,8 @@ MAN3=		Module::Build.3 \
 		Module::Build::Platform::aix.3 \
 		Module::Build::Platform::cygwin.3 \
 		Module::Build::Platform::darwin.3 \
-		Module::Build::Platform::os2.3
+		Module::Build::Platform::os2.3 \
+		Module::Build::YAML.3
 MAN1=		config_data.1
 
 .if ${PERL_LEVEL} < 500805
