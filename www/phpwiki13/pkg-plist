@@ -1627,4 +1627,5 @@
 @dirrm %%PHPWIKI%%/lib
 @dirrm %%PHPWIKI%%/config
 @dirrm %%PHPWIKI%%
+@dirrmtry www/data-dist
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
