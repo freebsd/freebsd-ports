@@ -1,0 +1,3 @@
+sbin/authtest
+lib/security/pam_pseudo.so.1
+@dirrmtry lib/security

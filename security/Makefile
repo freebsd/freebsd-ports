@@ -444,6 +444,7 @@
     SUBDIR += pam_per_user
     SUBDIR += pam_pgina
     SUBDIR += pam_pop3
+    SUBDIR += pam_pseudo
     SUBDIR += pam_pwdfile
     SUBDIR += pam_smb
     SUBDIR += pamsfs
