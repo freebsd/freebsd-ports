@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	phpmyfaq
-PORTVERSION=	1.5.8
+PORTVERSION=	1.6.1
 CATEGORIES=	www
 MASTER_SITES=	http://www.phpmyfaq.de/download/
 DISTNAME=	${PORTNAME}.${PORTVERSION}.full
@@ -51,7 +51,8 @@ pre-install:
 		&& ${ECHO_CMD} @dirrm ${PHPMYFAQ_URL}/data/ >> ${PLIST} \
 		&& ${ECHO_CMD} @dirrm ${PHPMYFAQ_URL}/pdf/ >> ${PLIST} \
 		&& ${ECHO_CMD} @dirrm ${PHPMYFAQ_URL}/xml/ >> ${PLIST} \
-		&& ${ECHO_CMD} @dirrm ${PHPMYFAQ_URL} >> ${PLIST}
+		&& ${ECHO_CMD} @dirrm ${PHPMYFAQ_URL} >> ${PLIST} \
+		&& ${ECHO_CMD} @dirrmtry ${WWWDOCROOT} >> ${PLIST}
 
 do-install:
 	# Data files
