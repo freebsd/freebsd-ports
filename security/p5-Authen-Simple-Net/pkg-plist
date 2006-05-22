@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Authen/Simple/FTP.pm
+%%SITE_PERL%%/Authen/Simple/POP3.pm
+%%SITE_PERL%%/Authen/Simple/SMTP.pm
+@dirrmtry %%SITE_PERL%%/Authen/Simple
+@dirrmtry %%SITE_PERL%%/Authen
