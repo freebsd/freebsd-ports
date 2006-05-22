@@ -7,33 +7,48 @@
 
 PORTNAME=		ncurses
 PORTVERSION=		5.5
+PORTREVISION=		1
 CATEGORIES=		devel
 MASTER_SITES=		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=		garga@FreeBSD.org
+MAINTAINER=		rafan@infor.org
 COMMENT=		Library for terminal-independent, full-screen output
-
-LIB_DEPENDS=		utf-8:${PORTSDIR}/converters/libutf-8
 
 NO_FILTER_SHLIBS=	no
 
 GNU_CONFIGURE=	yes
+CONFIGURE_SCRIPT=../configure
 CONFIGURE_ARGS=	--datadir=${PREFIX}/share/misc --disable-overwrite \
 		--disable-termcap --includedir=${PREFIX}/include/ncurses \
 		--with-profile --with-shared --without-debug \
 		--without-curses-h --with-termlib --program-prefix= \
 		--enable-safe-sprintf --disable-root-environ \
-		--with-manpage-format=gzip  #--enable-widec
+		--with-manpage-format=gzip --srcdir=../
 # needed by devel/py-ncurses port
 .if defined(WITH_TRACE)
 CONFIGURE_ARGS+=	--with-trace
 .endif
 
-CONFIGURE_ENV=	gnat_exists="no" \
-		ac_cv_path_LDCONFIG="${LDCONFIG} -m ${PREFIX}/lib"
+LDFLAGS+=	-rpath ${PREFIX}/lib
 
-PLIST_SUB+=	PORTVERSION=${PORTVERSION}
+CONFIGURE_ENV=	gnat_exists="no" \
+		ac_cv_path_LDCONFIG="${LDCONFIG} -m ${PREFIX}/lib" \
+		LDFLAGS="${LDFLAGS}"
+
+WIDEC_WRKSRC=	${WRKSRC}/build.widec
+NOWIDEC_WRKSRC=	${WRKSRC}/build.nowidec
+WIDEC_EXAMPLESDIR=	${EXAMPLESDIR}/widec
+NOWIDEC_EXAMPLESDIR=	${EXAMPLESDIR}/nowidec
+EXAMPLES_TARGETS=	NOWIDEC
+
+CONFIGURE_WRKSRC=	${NOWIDEC_WRKSRC}
+BUILD_WRKSRC=	${NOWIDEC_WRKSRC}
+INSTALL_WRKSRC=	${NOWIDEC_WRKSRC}
+
+PLIST_SUB+=	PORTVERSION=${PORTVERSION} \
+		WIDEC_EXAMPLESDIR=${WIDEC_EXAMPLESDIR:S,${PREFIX}/,,} \
+		NOWIDEC_EXAMPLESDIR=${NOWIDEC_EXAMPLESDIR:S,${PREFIX}/,,}
 
 INSTALLS_SHLIB=	yes
 MANCOMPRESSED=	yes
@@ -207,17 +222,55 @@ EXAMPLES_CPP=	Makefile NEWS PROBLEMS README-first cursesapp.cc \
 MANUAL_PACKAGE_BUILD=	conflicts with system ncurses
 .endif
 
+.if ${OSVERSION} < 503000
+WITHOUT_WIDEC=	yes
+PLIST_SUB+=	WIDEC="@comment "
+.else
+PLIST_SUB+=	WIDEC=""
+EXAMPLES_TARGETS+=	WIDEC
+.endif
+
+post-extract:
+	@${MKDIR} ${WIDEC_WRKSRC}
+	@${MKDIR} ${NOWIDEC_WRKSRC}
+
+post-configure:
+.if !defined(WITHOUT_WIDEC)
+	${MAKE} CONFIGURE_WRKSRC=${WIDEC_WRKSRC} \
+	    CONFIGURE_ARGS="${CONFIGURE_ARGS} --enable-widec" \
+	    do-configure
+.endif
+.for d in test c++
+.if !defined(WITHOUT_WIDEC)
+	${CP} ${WRKSRC}/${d}/* ${WIDEC_WRKSRC}/${d}/
+.endif
+	${CP} ${WRKSRC}/${d}/* ${NOWIDEC_WRKSRC}/${d}/
+.endfor
+
+post-build:
+.if !defined(WITHOUT_WIDEC)
+	${MAKE} BUILD_WRKSRC=${WIDEC_WRKSRC} do-build
+.endif
+
 post-install:
-	${MKDIR} ${EXAMPLESDIR}/c++
+.if !defined(WITHOUT_WIDEC)
+	${MAKE} INSTALL_WRKSRC=${WIDEC_WRKSRC} do-install
+.endif
+
 	${INSTALL_DATA} ${WRKSRC}/misc/terminfo.src \
 		${PREFIX}/share/misc/terminfo
+
+.for i in ${EXAMPLES_TARGETS}
+	${MKDIR} ${${i}_EXAMPLESDIR}/c++
 .for f in ${EXAMPLES}
-	${INSTALL_DATA} ${WRKSRC}/test/${f} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${${i}_WRKSRC}/test/${f} ${${i}_EXAMPLESDIR}
 .endfor
-	${INSTALL_SCRIPT} ${WRKSRC}/test/tracemunch ${EXAMPLESDIR}
+	${INSTALL_SCRIPT} ${${i}_WRKSRC}/test/tracemunch ${${i}_EXAMPLESDIR}
 .for f in ${EXAMPLES_CPP}
-	${INSTALL_DATA} ${WRKSRC}/c++/${f} ${EXAMPLESDIR}/c++
+	${INSTALL_DATA} ${${i}_WRKSRC}/c++/${f} ${${i}_EXAMPLESDIR}/c++
 .endfor
+.endfor
+
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 . for f in ${DOCS}
