@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	conky
-PORTVERSION=	1.4.1
+PORTVERSION=	1.4.2
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,10 +16,11 @@ COMMENT=	An advanced, highly configurable system monitor for X
 
 USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
+USE_ICONV=	yes
 USE_X_PREFIX=	yes
 CONFIGURE_ARGS+=	--disable-portmon --disable-proc-uptime
-CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I${X11BASE}/include" \
-		LDFLAGS="${LDFLAGS} -L${X11BASE}/lib"
+CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I${X11BASE}/include -I${LOCALBASE}/include" \
+		LDFLAGS="${LDFLAGS} -L${X11BASE}/lib -L${LOCALBASE}/lib"
 
 MAN1=		conky.1
 
@@ -68,6 +69,9 @@ pre-everything::
 	@${ECHO_MSG} "WITHOUT_DOUBLE_BUFFER=yes to disable double buffer support"
 	@${ECHO_MSG} " "
 
+post-configure:
+	@${REINPLACE_CMD} -e 's|-lm|-lm -liconv|' ${WRKSRC}/src/Makefile
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/conky ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/doc/conky.1 ${PREFIX}/man/man1
@@ -89,7 +93,7 @@ post-install:
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-BROKEN=		"Doesn't compile on 4.x"
+IGNORE=		not supported on 4.x
 .endif
 
 .include <bsd.port.post.mk>
