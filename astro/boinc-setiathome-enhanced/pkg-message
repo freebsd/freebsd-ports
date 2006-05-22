@@ -1,14 +1,14 @@
 ATTACHING PROJECT
 
 Just run boinc_gui, choose Attach, and follow instructions.
-Project URL is setiweb.ssl.berkeley.edu/beta
+Project URL is setiathome.berkeley.edu
 
 MANUAL INSTALLATION
  *) If this is your first time in any BOINC project, create a new account at
-    http://setiweb.berkeley.edu/beta/create_account_form.php
+    http://setiathome.berkeley.edu/create_account_form.php
 
- *) Or get your account key at http://setiweb.ssl.berkeley.edu/beta/get_passwd.php
+ *) Or get your account key at http://setiathome.berkeley.edu/get_passwd.php
 
  *) Attach to the project:
     cd /var/db/boinc
-    boinc_cmd --project_attach setiweb.ssl.berkeley.edu/beta <account key>
+    boinc_cmd --project_attach setiathome.berkeley.edu <account key>

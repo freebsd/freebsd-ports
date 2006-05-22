@@ -1,8 +1,8 @@
 SETI - Search for Extra-Terrestrial Intelligence -- Enhanced version
 
 Use your unused CPU cycles to aid in computations analyzing radio
-telescope information for possible signs of ET.  The Enhanced version
-is still beta, but this is mainly for administrative reasons.
+telescope information for possible signs of ET.  The project exclusively
+uses the enhanced version as of 2006-05-17.
 
 This version is a FreeBSD binary built by Stefan Urbat for Pentium II
 or AMD K6 CPUs and higher (requires MMX instructions). 

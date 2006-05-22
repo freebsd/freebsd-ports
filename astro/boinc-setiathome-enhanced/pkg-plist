@@ -1,4 +1,9 @@
 @cwd %%BOINC_HOME%%
 projects/%%SETI_SITE%%/app_info.xml
+projects/%%SETI_SITE%%/AUTHORS
+projects/%%SETI_SITE%%/CHANGES
+projects/%%SETI_SITE%%/COPYING
+projects/%%SETI_SITE%%/COPYRIGHT
+projects/%%SETI_SITE%%/README
 projects/%%SETI_SITE%%/%%SETI_BINARY%%
 @dirrmtry %D/projects/%%SETI_SITE%% 2>/dev/null
