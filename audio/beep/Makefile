@@ -7,7 +7,8 @@
 PORTNAME=	beep
 PORTVERSION=	1.0
 CATEGORIES=	audio
-MASTER_SITES=	ftp://ftp.ugh.net.au/pub/unix/beep/
+MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
+		http://ftp.osuosl.org/pub/FreeBSD/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Beeps a certain duration and pitch out of the PC Speaker
