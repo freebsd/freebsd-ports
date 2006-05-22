@@ -400,6 +400,7 @@
     SUBDIR += orca
     SUBDIR += osg
     SUBDIR += p5-CAD-Drawing
+    SUBDIR += p5-CAD-Drawing-Template
     SUBDIR += p5-Cairo
     SUBDIR += p5-Chart-Graph
     SUBDIR += p5-Chart-PNGgraph

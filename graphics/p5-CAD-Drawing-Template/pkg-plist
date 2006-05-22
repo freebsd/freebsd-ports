@@ -1,0 +1,3 @@
+%%SITE_PERL%%/CAD/Drawing/Template.pm
+@dirrmtry %%SITE_PERL%%/CAD/Drawing
+@dirrmtry %%SITE_PERL%%/CAD
