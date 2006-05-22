@@ -7728,6 +7728,7 @@ p5-Authen-PAM	ports/security/p5-Authen-PAM
 p5-Authen-Radius	ports/security/p5-Authen-Radius
 p5-Authen-SASL	ports/security/p5-Authen-SASL
 p5-Authen-SASL-Cyrus	ports/security/p5-Authen-SASL-Cyrus
+p5-Authen-Simple	ports/security/p5-Authen-Simple
 p5-Authen-Smb	ports/security/p5-Authen-Smb
 p5-Authen-TacacsPlus	ports/security/p5-Authen-TacacsPlus
 p5-Authen-Ticket	ports/security/p5-Authen-Ticket
