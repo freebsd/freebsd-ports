@@ -7730,6 +7730,7 @@ p5-Authen-SASL	ports/security/p5-Authen-SASL
 p5-Authen-SASL-Cyrus	ports/security/p5-Authen-SASL-Cyrus
 p5-Authen-Simple	ports/security/p5-Authen-Simple
 p5-Authen-Simple-DBI	ports/security/p5-Authen-Simple-DBI
+p5-Authen-Simple-DBM	ports/security/p5-Authen-Simple-DBM
 p5-Authen-Simple-HTTP	ports/security/p5-Authen-Simple-HTTP
 p5-Authen-Simple-LDAP	ports/security/p5-Authen-Simple-LDAP
 p5-Authen-Simple-Net	ports/security/p5-Authen-Simple-Net
