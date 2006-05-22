@@ -1,0 +1,3 @@
+%%SITE_PERL%%/Authen/Simple/DBM.pm
+@dirrmtry %%SITE_PERL%%/Authen/Simple
+@dirrmtry %%SITE_PERL%%/Authen
