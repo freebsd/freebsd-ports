@@ -1,0 +1,17 @@
+%%SITE_PERL%%/CAD/Drawing.pm
+%%SITE_PERL%%/CAD/Drawing/Calculate.pm
+%%SITE_PERL%%/CAD/Drawing/Calculate/Finite.pm
+%%SITE_PERL%%/CAD/Drawing/Defined.pm
+%%SITE_PERL%%/CAD/Drawing/IO.pm
+%%SITE_PERL%%/CAD/Drawing/IO/Circ.pm
+%%SITE_PERL%%/CAD/Drawing/IO/Compressed.pm
+%%SITE_PERL%%/CAD/Drawing/IO/FlatYAML.pm
+%%SITE_PERL%%/CAD/Drawing/IO/Split.pm
+%%SITE_PERL%%/CAD/Drawing/Manipulate.pm
+%%SITE_PERL%%/CAD/Drawing/Manipulate/Graphics.pm
+%%SITE_PERL%%/CAD/Drawing/Manipulate/Transform.pm
+@dirrm %%SITE_PERL%%/CAD/Drawing/Manipulate
+@dirrm %%SITE_PERL%%/CAD/Drawing/IO
+@dirrm %%SITE_PERL%%/CAD/Drawing/Calculate
+@dirrm %%SITE_PERL%%/CAD/Drawing
+@dirrmtry %%SITE_PERL%%/CAD
