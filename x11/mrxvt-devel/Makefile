@@ -34,6 +34,10 @@ OPTIONS=	XFT "Enable Xft support for fonts" Off \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 500000
+BROKEN=		does not compile
+.endif
+
 .if defined(WITH_JAPANESE)
 CONFIGURE_ARGS+=	--enable-xim --enable-cjk --with-encoding=eucj
 .endif
