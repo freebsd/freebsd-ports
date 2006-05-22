@@ -1,0 +1,78 @@
+--- configure.orig	Sun Mar 19 20:14:57 2006
++++ configure	Mon May 22 12:43:14 2006
+@@ -6244,9 +6244,6 @@
+   echo "$ac_t""no" 1>&6
+ fi
+ 
+-if test -z "${_PATH_PERL}" ; then
+-    { echo "configure: error: perl was not found in path and is required" 1>&2; exit 1; }
+-fi
+ # Extract the first word of "sh", so it can be a program name with args.
+ set dummy sh; ac_word=$2
+ echo $ac_n "checking for $ac_word""... $ac_c" 1>&6
+@@ -6402,24 +6399,6 @@
+ done
+ test -n "$_PATH_UUX" || _PATH_UUX="uux"
+ 
+-
+-inn_perl_command='print $]'
+-
+-
+-echo $ac_n "checking for Perl version""... $ac_c" 1>&6
+-echo "configure:6411: checking for Perl version" >&5
+-if eval "test \"`echo '$''{'inn_cv_perl_version'+set}'`\" = set"; then
+-  echo $ac_n "(cached) $ac_c" 1>&6
+-else
+-  if $_PATH_PERL -e 'require 5.004_03;' > /dev/null 2>&1 ; then
+-    inn_cv_perl_version=`$_PATH_PERL -e "$inn_perl_command"`
+-else
+-    { echo "configure: error: Perl 5.004_03 or greater is required" 1>&2; exit 1; }
+-fi
+-fi
+-
+-echo "$ac_t""$inn_cv_perl_version" 1>&6
+-
+ pgpverify=true
+ for ac_prog in gpgv
+ do
+@@ -11852,40 +11831,3 @@
+ chmod +x $CONFIG_STATUS
+ rm -fr confdefs* $ac_clean_files
+ test "$no_create" = yes || ${CONFIG_SHELL-/bin/sh} $CONFIG_STATUS || exit 1
+-
+-
+-cat <<EOM
+-
+-Please check the following files before running make, to ensure that 
+-everything was set correctly.
+-
+-	Makefile.global
+-	include/config.h
+-	include/paths.h
+-	innfeed/innfeed.h
+-
+-EOM
+-
+-if $_PATH_PERL -e "exit((stat('$tmpdir'))[2] & 2)" > /dev/null ; then
+-    :
+-else
+-    cat <<EOM
+-
+-WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING
+-
+-  The temporary directory you have configured is world-writeable.  It is
+-  currently set to $tmpdir.
+-
+-  This directory is used by INN for temporary files and should only be
+-  writeable by the news user.  INN does not go to great lengths to prevent
+-  symlink attacks and the like because it assumes this directory is not
+-  world-writeable.  By configuring INN in this fashion, you may be
+-  introducing a locally exploitable security hole.
+-
+-  It is STRONGLY recommended that you use a temporary directory reserved for
+-  INN's exclusive use, one which is not world-writeable.  You can do this
+-  either with --with-tmp-dir or by setting --prefix to something other than
+-  /usr or /.
+-
+-EOM
+-fi
