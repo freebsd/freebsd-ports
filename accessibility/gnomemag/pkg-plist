@@ -3,10 +3,17 @@ include/gnome-mag-1.0/magnifier/GNOME_Magnifier.h
 lib/libgnome-mag.la
 lib/libgnome-mag.so
 lib/libgnome-mag.so.2
+lib/orbit-2.0/GNOME_Magnifier_module.la
+lib/orbit-2.0/GNOME_Magnifier_module.so
 libdata/bonobo/servers/GNOME_Magnifier.server
 libdata/pkgconfig/gnome-mag-1.0.pc
+%%DOCSDIR%%/reference/html/GNOME__Magnifier-common_8c-source.html
 %%DOCSDIR%%/reference/html/GNOME__Magnifier-common_8c.html
+%%DOCSDIR%%/reference/html/GNOME__Magnifier-imodule_8c-source.html
+%%DOCSDIR%%/reference/html/GNOME__Magnifier-imodule_8c.html
+%%DOCSDIR%%/reference/html/GNOME__Magnifier-skels_8c-source.html
 %%DOCSDIR%%/reference/html/GNOME__Magnifier-skels_8c.html
+%%DOCSDIR%%/reference/html/GNOME__Magnifier-stubs_8c-source.html
 %%DOCSDIR%%/reference/html/GNOME__Magnifier-stubs_8c.html
 %%DOCSDIR%%/reference/html/GNOME__Magnifier_8h-source.html
 %%DOCSDIR%%/reference/html/GNOME__Magnifier_8h.html
@@ -15,6 +22,7 @@ libdata/pkgconfig/gnome-mag-1.0.pc
 %%DOCSDIR%%/reference/html/annotated.html
 %%DOCSDIR%%/reference/html/classGNOME_1_1Magnifier_1_1Magnifier.html
 %%DOCSDIR%%/reference/html/classGNOME_1_1Magnifier_1_1ZoomRegion.html
+%%DOCSDIR%%/reference/html/damage-client_8c-source.html
 %%DOCSDIR%%/reference/html/damage-client_8c.html
 %%DOCSDIR%%/reference/html/damage-client_8h-source.html
 %%DOCSDIR%%/reference/html/damage-client_8h.html
@@ -52,42 +60,24 @@ libdata/pkgconfig/gnome-mag-1.0.pc
 %%DOCSDIR%%/reference/html/functions_eval.html
 %%DOCSDIR%%/reference/html/functions_func.html
 %%DOCSDIR%%/reference/html/functions_vars.html
-%%DOCSDIR%%/reference/html/functions_vars_0x61.html
-%%DOCSDIR%%/reference/html/functions_vars_0x62.html
-%%DOCSDIR%%/reference/html/functions_vars_0x63.html
-%%DOCSDIR%%/reference/html/functions_vars_0x64.html
-%%DOCSDIR%%/reference/html/functions_vars_0x65.html
-%%DOCSDIR%%/reference/html/functions_vars_0x66.html
-%%DOCSDIR%%/reference/html/functions_vars_0x67.html
-%%DOCSDIR%%/reference/html/functions_vars_0x68.html
-%%DOCSDIR%%/reference/html/functions_vars_0x69.html
-%%DOCSDIR%%/reference/html/functions_vars_0x6c.html
-%%DOCSDIR%%/reference/html/functions_vars_0x6d.html
-%%DOCSDIR%%/reference/html/functions_vars_0x6e.html
-%%DOCSDIR%%/reference/html/functions_vars_0x70.html
-%%DOCSDIR%%/reference/html/functions_vars_0x71.html
-%%DOCSDIR%%/reference/html/functions_vars_0x72.html
-%%DOCSDIR%%/reference/html/functions_vars_0x73.html
-%%DOCSDIR%%/reference/html/functions_vars_0x74.html
-%%DOCSDIR%%/reference/html/functions_vars_0x75.html
-%%DOCSDIR%%/reference/html/functions_vars_0x76.html
-%%DOCSDIR%%/reference/html/functions_vars_0x77.html
-%%DOCSDIR%%/reference/html/functions_vars_0x78.html
-%%DOCSDIR%%/reference/html/functions_vars_0x79.html
-%%DOCSDIR%%/reference/html/functions_vars_0x7a.html
 %%DOCSDIR%%/reference/html/globals.html
+%%DOCSDIR%%/reference/html/globals_0x61.html
 %%DOCSDIR%%/reference/html/globals_0x62.html
 %%DOCSDIR%%/reference/html/globals_0x63.html
 %%DOCSDIR%%/reference/html/globals_0x64.html
 %%DOCSDIR%%/reference/html/globals_0x65.html
+%%DOCSDIR%%/reference/html/globals_0x66.html
 %%DOCSDIR%%/reference/html/globals_0x67.html
 %%DOCSDIR%%/reference/html/globals_0x69.html
+%%DOCSDIR%%/reference/html/globals_0x6c.html
 %%DOCSDIR%%/reference/html/globals_0x6d.html
+%%DOCSDIR%%/reference/html/globals_0x6e.html
 %%DOCSDIR%%/reference/html/globals_0x6f.html
 %%DOCSDIR%%/reference/html/globals_0x70.html
 %%DOCSDIR%%/reference/html/globals_0x72.html
 %%DOCSDIR%%/reference/html/globals_0x73.html
 %%DOCSDIR%%/reference/html/globals_0x74.html
+%%DOCSDIR%%/reference/html/globals_0x75.html
 %%DOCSDIR%%/reference/html/globals_0x7a.html
 %%DOCSDIR%%/reference/html/globals_defs.html
 %%DOCSDIR%%/reference/html/globals_defs_0x62.html
@@ -104,12 +94,23 @@ libdata/pkgconfig/gnome-mag-1.0.pc
 %%DOCSDIR%%/reference/html/globals_enum.html
 %%DOCSDIR%%/reference/html/globals_eval.html
 %%DOCSDIR%%/reference/html/globals_func.html
+%%DOCSDIR%%/reference/html/globals_func_0x62.html
+%%DOCSDIR%%/reference/html/globals_func_0x63.html
+%%DOCSDIR%%/reference/html/globals_func_0x67.html
+%%DOCSDIR%%/reference/html/globals_func_0x69.html
+%%DOCSDIR%%/reference/html/globals_func_0x6d.html
+%%DOCSDIR%%/reference/html/globals_func_0x70.html
+%%DOCSDIR%%/reference/html/globals_func_0x72.html
+%%DOCSDIR%%/reference/html/globals_func_0x74.html
+%%DOCSDIR%%/reference/html/globals_func_0x7a.html
 %%DOCSDIR%%/reference/html/globals_type.html
 %%DOCSDIR%%/reference/html/globals_vars.html
 %%DOCSDIR%%/reference/html/index.html
+%%DOCSDIR%%/reference/html/magnifier-main_8c-source.html
 %%DOCSDIR%%/reference/html/magnifier-main_8c.html
 %%DOCSDIR%%/reference/html/magnifier-private_8h-source.html
 %%DOCSDIR%%/reference/html/magnifier-private_8h.html
+%%DOCSDIR%%/reference/html/magnifier_8c-source.html
 %%DOCSDIR%%/reference/html/magnifier_8c.html
 %%DOCSDIR%%/reference/html/magnifier_8h-source.html
 %%DOCSDIR%%/reference/html/magnifier_8h.html
@@ -162,6 +163,7 @@ libdata/pkgconfig/gnome-mag-1.0.pc
 %%DOCSDIR%%/reference/html/structtiming.html
 %%DOCSDIR%%/reference/html/zoom-region-private_8h-source.html
 %%DOCSDIR%%/reference/html/zoom-region-private_8h.html
+%%DOCSDIR%%/reference/html/zoom-region_8c-source.html
 %%DOCSDIR%%/reference/html/zoom-region_8c.html
 %%DOCSDIR%%/reference/html/zoom-region_8h-source.html
 %%DOCSDIR%%/reference/html/zoom-region_8h.html
@@ -199,6 +201,7 @@ share/locale/cs/LC_MESSAGES/gnome-mag.mo
 share/locale/cy/LC_MESSAGES/gnome-mag.mo
 share/locale/da/LC_MESSAGES/gnome-mag.mo
 share/locale/de/LC_MESSAGES/gnome-mag.mo
+share/locale/dz/LC_MESSAGES/gnome-mag.mo
 share/locale/el/LC_MESSAGES/gnome-mag.mo
 share/locale/en_CA/LC_MESSAGES/gnome-mag.mo
 share/locale/en_GB/LC_MESSAGES/gnome-mag.mo
@@ -232,7 +235,6 @@ share/locale/nb/LC_MESSAGES/gnome-mag.mo
 share/locale/ne/LC_MESSAGES/gnome-mag.mo
 share/locale/nl/LC_MESSAGES/gnome-mag.mo
 share/locale/nn/LC_MESSAGES/gnome-mag.mo
-share/locale/no/LC_MESSAGES/gnome-mag.mo
 share/locale/or/LC_MESSAGES/gnome-mag.mo
 share/locale/pa/LC_MESSAGES/gnome-mag.mo
 share/locale/pl/LC_MESSAGES/gnome-mag.mo
@@ -262,6 +264,8 @@ share/locale/zh_TW/LC_MESSAGES/gnome-mag.mo
 @dirrmtry share/locale/ky
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
 @dirrmtry share/locale/ang/LC_MESSAGES
 @dirrmtry share/locale/ang
 @dirrm share/gnome/idl/gnome-mag-1.0
