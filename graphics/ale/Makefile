@@ -7,12 +7,11 @@
 #
 
 PORTNAME=	ale
-PORTVERSION=	0.8.3
-PORTREVISION=	2
+PORTVERSION=	0.8.4
 CATEGORIES=	graphics
 MASTER_SITES=	http://auricle.dyndns.org/ALE/download/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	shaun@inerd.com
 COMMENT=	Anti-Lamenessing Engine
 
 OPTIONS=	DOUBLE "64bit Data Precision Support" off \
