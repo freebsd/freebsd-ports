@@ -7,6 +7,7 @@
 
 PORTNAME=	oxim
 PORTVERSION=	1.0.3
+PORTREVISION=	1
 CATEGORIES=	chinese textproc
 MASTER_SITES=	ftp://apt.nc.hcc.edu.tw/pub/mirror/opendesktop.org.tw/OXIM/Source/ \
 		ftp://ftp4.tnc.edu.tw/pub3/opendesktop-tw/odp/ \
@@ -15,15 +16,12 @@ MASTER_SITES=	ftp://apt.nc.hcc.edu.tw/pub/mirror/opendesktop.org.tw/OXIM/Source/
 MAINTAINER=	rafan@infor.org
 COMMENT=	Open X Input Method server
 
-# make sure we have the required libchewing
 LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/libXft
-BUILD_DEPENDS=	zh-libchewing>=0.2.6:${PORTSDIR}/chinese/libchewing
-RUN_DEPENDS=	zh-libchewing>=0.2.6:${PORTSDIR}/chinese/libchewing \
-		zh-fireflyttf>=0:${PORTSDIR}/chinese/fireflyttf
+RUN_DEPENDS=	zh-fireflyttf>=0:${PORTSDIR}/chinese/fireflyttf
 
-BROKEN=		Does not compile
-
-OPTIONS=	GTK2 "Enable GTK2 input method module" On
+OPTIONS=	GTK2 "Enable GTK2 input method module" On \
+		CHEWING "Enable Chewing input module" On \
+		UNICODE "Enable Unicode input module" On
 
 USE_GCC=	3.2+
 USE_ICONV=	yes
@@ -34,9 +32,7 @@ GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include -I${X11BASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -liconv
-CONFIGURE_ENV+=	CONFIG_SHELL=${SH} \
-		CHEWING_CFLAGS=-I${LOCALBASE}/include \
-		CPPFLAGS="${CPPFLAGS}" \
+CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS+=--disable-bimsphone-module \
 		--disable-static \
@@ -53,12 +49,32 @@ CONFIGURE_ARGS+=	--enable-gtk-immodule
 PLIST_SUB+=	GTK2=""
 .endif
 
+.if !defined(WITHOUT_CHEWING)
+# make sure we have the required libchewing
+BUILD_DEPENDS+=	zh-libchewing>=0.3.0_1:${PORTSDIR}/chinese/libchewing
+RUN_DEPENDS+=	zh-libchewing>=0.3.0_1:${PORTSDIR}/chinese/libchewing
+
+CONFIGURE_ARGS+=	--enable-chewing-module
+CONFIGURE_ENV+=	CHEWING_CFLAGS=-I${LOCALBASE}/include
+PLIST_SUB+=	CHEWING=""
+.else
+CONFIGURE_ARGS+=	--disable-chewing-module
+PLIST_SUB+=	CHEWING="@comment "
+.endif
+
+.if !defined(WITHOUT_UNICODE)
+CONFIGURE_ARGS+=	--enable-unicode-module
+PLIST_SUB+=	UNICODE=""
+.else
+CONFIGURE_ARGS+=	--disable-unicode-module
+PLIST_SUB+=	UNICODE="@comment "
+.endif
+
 # TODO WITHOUT_NLS knob
 #.if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
+CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS} -lintl"
 PLIST_SUB+=	NLS=""
-LDFLAGS+=	-lintl
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 #.else
 #CONFIGURE_ARGS+=--disable-nls
 #PLIST_SUB+=	NLS="@comment "

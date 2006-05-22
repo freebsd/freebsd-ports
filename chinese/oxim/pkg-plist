@@ -7,12 +7,12 @@ lib/liboxim.so
 lib/liboxim.so.0
 %%GTK2%%lib/gtk-2.0/immodules/gtk-im-oxim.la
 %%GTK2%%lib/gtk-2.0/immodules/gtk-im-oxim.so
-lib/oxim/modules/chewing.la
-lib/oxim/modules/chewing.so
+%%CHEWING%%lib/oxim/modules/chewing.la
+%%CHEWING%%lib/oxim/modules/chewing.so
 lib/oxim/modules/gen-inp.la
 lib/oxim/modules/gen-inp.so
-lib/oxim/modules/unicode.la
-lib/oxim/modules/unicode.so
+%%UNICODE%%lib/oxim/modules/unicode.la
+%%UNICODE%%lib/oxim/modules/unicode.so
 lib/oxim/panels/defaultkeyboard.conf
 lib/oxim/panels/defaultkeyboard.xpm
 lib/oxim/tables/array30.tab
