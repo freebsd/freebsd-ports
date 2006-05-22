@@ -232,6 +232,7 @@
 @dirrm %%PHPWIKI%%/images
 @dirrm %%PHPWIKI%%/admin
 @dirrm %%PHPWIKI%%
+@dirrmtry www/data-dist
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/DBLIB.txt

@@ -7,7 +7,7 @@
 
 PORTNAME=	phpwiki
 PORTVERSION=	1.2.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	phpwiki
@@ -18,7 +18,7 @@ COMMENT=	A PHP WikiWikiWeb
 CONFLICTS=	phpwiki-1.3*
 
 .if !defined(WITHOUT_PHP_DEPENDS)
-USE_PHP=	ctype pcre posix session tokenizer xml zlib
+USE_PHP=	ctype gettext pcre posix session tokenizer xml zlib
 .endif
 
 NO_BUILD=	YES
