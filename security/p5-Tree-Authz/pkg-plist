@@ -1,0 +1,4 @@
+%%SITE_PERL%%/Tree/Authz.pm
+%%SITE_PERL%%/Tree/Authz/Role.pm
+@dirrm %%SITE_PERL%%/Tree/Authz
+@dirrmtry %%SITE_PERL%%/Tree
