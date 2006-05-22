@@ -1,10 +1,14 @@
 @comment $FreeBSD$
 bin/config_data
 %%SITE_PERL%%/Module/Build.pm
+%%SITE_PERL%%/Module/Build/API.pod
+%%SITE_PERL%%/Module/Build/Authoring.pod
 %%SITE_PERL%%/Module/Build/Base.pm
 %%SITE_PERL%%/Module/Build/Compat.pm
 %%SITE_PERL%%/Module/Build/ConfigData.pm
 %%SITE_PERL%%/Module/Build/Cookbook.pm
+%%SITE_PERL%%/Module/Build/ModuleInfo.pm
+%%SITE_PERL%%/Module/Build/Notes.pm
 %%SITE_PERL%%/Module/Build/PPMMaker.pm
 %%SITE_PERL%%/Module/Build/Platform/Amiga.pm
 %%SITE_PERL%%/Module/Build/Platform/Default.pm
@@ -21,6 +25,7 @@ bin/config_data
 %%SITE_PERL%%/Module/Build/Platform/darwin.pm
 %%SITE_PERL%%/Module/Build/Platform/os2.pm
 %%SITE_PERL%%/Module/Build/PodParser.pm
+%%SITE_PERL%%/Module/Build/YAML.pm
 @dirrm %%SITE_PERL%%/Module/Build/Platform
 @dirrm %%SITE_PERL%%/Module/Build
 @dirrmtry %%SITE_PERL%%/Module
