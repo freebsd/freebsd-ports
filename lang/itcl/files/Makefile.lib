@@ -25,6 +25,7 @@ pkgIndex.tcl: pkgIndex.tcl.in
 
 itclConfig.sh: itclConfig.sh.in
 	sed -e 's#@itcl_LIB_FILE@#${SHLIB_NAME}#g' \
+		-e "s#@PACKAGE_VERSION@#${MAJOR}.${MINOR}#" \
 		-e 's#@itcl_BUILD_LIB_SPEC@#-L${LIBDIR} -litcl#' \
 		-e 's#@itcl_LIB_SPEC@#-L${LIBDIR} -litcl#' < $> > $@
 
