@@ -2292,3 +2292,5 @@ deskutils/superkaramba|misc/kdeutils3|2006-05-13|superkaramba was integrated int
 security/uvscan-dat||2006-05-14|Has expired
 net/callgen|net/callgen323|2006-05-15|Moved to a better name
 math/vecfem||2006-05-15|removed deprecated port
+astro/boinc-setiathome|astro/boinc-setiathome-enhanced|2006-05-22|project migrated to enhanced
+astro/boinc-setiathome-naparst|astro/boinc-setiathome-enhanced|2006-05-22|project migrated to enhanced
