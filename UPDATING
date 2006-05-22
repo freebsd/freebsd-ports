@@ -6,6 +6,21 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+2006-05-22:
+  AFFECTS: users of astro/boinc-setiathome-enhanced,
+           astro/boinc-setiathome-naparst, astro-boinc-setiathome
+  AUTHOR: r.c.ladan@gmail.com
+
+  As SETI@home doesn't generate work for 4.x clients anymore, the ports
+  structure has been updated to use the 5.x client by default.
+  People currently using any of the above ports should finish and report
+  their existing work (both for normal and enhanced) and not allow any
+  new work until after their ports are updated, to minimize loss of
+  work.
+  Note that this update changes the enhanced client to work for the
+  normal instead of the beta project.  When a beta client for Astropulse
+  is released, it will work as the new client for the beta project.
+
 20060518:
   AFFECTS: users of net/openldap23-server
   AUTHOR: delphij@FreeBSD.org
