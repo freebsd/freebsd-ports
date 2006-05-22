@@ -293,6 +293,7 @@
     SUBDIR += p5-Authen-Simple
     SUBDIR += p5-Authen-Simple-DBI
     SUBDIR += p5-Authen-Simple-LDAP
+    SUBDIR += p5-Authen-Simple-Net
     SUBDIR += p5-Authen-Smb
     SUBDIR += p5-Authen-TacacsPlus
     SUBDIR += p5-Authen-Ticket
