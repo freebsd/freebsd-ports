@@ -1,27 +1,28 @@
+@comment $FreeBSD$
 bin/crossip
-share/java/classes/CrossIP.jar
-share/java/crossip-1.2/LICENSE.txt
-share/java/crossip-1.2/README.txt
-share/java/crossip-1.2/bin/com/algenta/crossip/Actions.class
-share/java/crossip-1.2/bin/com/algenta/crossip/Config.class
-share/java/crossip-1.2/bin/com/algenta/crossip/ConfigFileException.class
-share/java/crossip-1.2/bin/com/algenta/crossip/CrossIP.class
-share/java/crossip-1.2/bin/com/algenta/crossip/CrossIPConstants.class
-share/java/crossip-1.2/bin/com/algenta/crossip/CrossIPException.class
-share/java/crossip-1.2/lib/CrossIP.jar
-share/java/crossip-1.2/src/com/algenta/crossip/Actions.java
-share/java/crossip-1.2/src/com/algenta/crossip/Config.java
-share/java/crossip-1.2/src/com/algenta/crossip/ConfigFileException.java
-share/java/crossip-1.2/src/com/algenta/crossip/CrossIP.java
-share/java/crossip-1.2/src/com/algenta/crossip/CrossIPConstants.java
-share/java/crossip-1.2/src/com/algenta/crossip/CrossIPException.java
-@dirrm share/java/crossip-1.2/src/com/algenta/crossip
-@dirrm share/java/crossip-1.2/src/com/algenta
-@dirrm share/java/crossip-1.2/src/com
-@dirrm share/java/crossip-1.2/src
-@dirrm share/java/crossip-1.2/lib
-@dirrm share/java/crossip-1.2/bin/com/algenta/crossip
-@dirrm share/java/crossip-1.2/bin/com/algenta
-@dirrm share/java/crossip-1.2/bin/com
-@dirrm share/java/crossip-1.2/bin
-@dirrm share/java/crossip-1.2
+%%JAVAJARDIR%%/CrossIP.jar
+%%DATADIR%%/LICENSE.txt
+%%DATADIR%%/README.txt
+%%DATADIR%%/bin/com/algenta/crossip/Actions.class
+%%DATADIR%%/bin/com/algenta/crossip/Config.class
+%%DATADIR%%/bin/com/algenta/crossip/ConfigFileException.class
+%%DATADIR%%/bin/com/algenta/crossip/CrossIP.class
+%%DATADIR%%/bin/com/algenta/crossip/CrossIPConstants.class
+%%DATADIR%%/bin/com/algenta/crossip/CrossIPException.class
+%%DATADIR%%/lib/CrossIP.jar
+%%DATADIR%%/src/com/algenta/crossip/Actions.java
+%%DATADIR%%/src/com/algenta/crossip/Config.java
+%%DATADIR%%/src/com/algenta/crossip/ConfigFileException.java
+%%DATADIR%%/src/com/algenta/crossip/CrossIP.java
+%%DATADIR%%/src/com/algenta/crossip/CrossIPConstants.java
+%%DATADIR%%/src/com/algenta/crossip/CrossIPException.java
+@dirrm %%DATADIR%%/src/com/algenta/crossip
+@dirrm %%DATADIR%%/src/com/algenta
+@dirrm %%DATADIR%%/src/com
+@dirrm %%DATADIR%%/src
+@dirrm %%DATADIR%%/lib
+@dirrm %%DATADIR%%/bin/com/algenta/crossip
+@dirrm %%DATADIR%%/bin/com/algenta
+@dirrm %%DATADIR%%/bin/com
+@dirrm %%DATADIR%%/bin
+@dirrm %%DATADIR%%
