@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Example files for IBM's OpenDX
 
 BUILD_DEPENDS=	dx:${PORTSDIR}/graphics/opendx
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	dx:${PORTSDIR}/graphics/opendx
 
 BROKEN=		Changes permissions on installed file usr/local/dx/java/server/nets
 
@@ -26,7 +26,8 @@ CONFIGURE_ENV=	SHELL=/bin/sh
 USE_GMAKE=	yes
 
 .if !defined(WITHOUT_JAVA)
-USE_JAVA=	1.3+
+USE_JAVA=	yes
+JAVA_VERSION=	1.3+
 PLIST_SUB+=	JAVA=""
 .else
 CONFIGURE_ARGS+=	--without-javadx
