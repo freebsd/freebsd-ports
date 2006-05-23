@@ -1,0 +1,11 @@
+Data.ByteString (formerly FPS) provides packed strings (byte arrays held by a
+ForeignPtr), along with a list interface to these strings.  It lets you do
+extremely fast IO in Haskell; in some cases, even faster than typical C
+implementations, and much faster than [Char].  It uses a flexible "foreign
+pointer" representation, allowing the transparent use of Haskell or C code to
+manipulate the strings.
+
+Data.ByteString is written in Haskell98 + the foreign function interface and
+cpp. It has been tested succesfully with GHC 6.4 and 6.5, and hugs March 2005.
+
+WWW: http://www.cse.unsw.edu.au/~dons/fps.html

@@ -1,0 +1,13 @@
+lib/fps-%%FPS_VERSION%%/ghc-%%GHC_VERSION%%/Data/ByteString/Char8.hi
+%%PROFILE%%lib/fps-%%FPS_VERSION%%/ghc-%%GHC_VERSION%%/Data/ByteString/Char8.p_hi
+@dirrm lib/fps-%%FPS_VERSION%%/ghc-%%GHC_VERSION%%/Data/ByteString
+lib/fps-%%FPS_VERSION%%/ghc-%%GHC_VERSION%%/Data/ByteString.hi
+%%PROFILE%%lib/fps-%%FPS_VERSION%%/ghc-%%GHC_VERSION%%/Data/ByteString.p_hi
+@dirrm lib/fps-%%FPS_VERSION%%/ghc-%%GHC_VERSION%%/Data
+lib/fps-%%FPS_VERSION%%/ghc-%%GHC_VERSION%%/libHSfps-0.6.a
+lib/fps-%%FPS_VERSION%%/ghc-%%GHC_VERSION%%/HSfps-0.6.o
+lib/fps-%%FPS_VERSION%%/ghc-%%GHC_VERSION%%/libHSfps-0.6_p.a
+@dirrm lib/fps-%%FPS_VERSION%%/ghc-%%GHC_VERSION%%
+@dirrm lib/fps-%%FPS_VERSION%%
+@unexec %D/bin/ghc-pkg -r fps
+@unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
