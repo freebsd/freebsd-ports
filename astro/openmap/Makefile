@@ -7,35 +7,30 @@
 
 PORTNAME=	openmap
 PORTVERSION=	4.6.2
+PORTREVISION=	1
 CATEGORIES=	astro java devel graphics
 MASTER_SITES=	http://openmap.bbn.com/src/
 
 MAINTAINER=	des@FreeBSD.org
 COMMENT=	Java toolkit for manipulating and displaying geographic data
 
-BUILD_DEPENDS=	ant:${PORTSDIR}/devel/apache-ant
 RUN_DEPENDS=	classpath:${PORTSDIR}/java/javavmwrapper
 
-USE_JAVA=	1.4+
+USE_JAVA=	yes
+JAVA_VERSION=	1.4+
 
 PKGMESSAGE=	${WRKSRC}/LICENSE
 
-ANT_PROPERTIES=	openmap.home=${WRKSRC} \
-		idl2java.compiler=${JAVA_HOME}/bin/idlj
-ANT_CMD=	${LOCALBASE}/bin/ant ${ANT_PROPERTIES:C/^/-D/}
+USE_ANT=	yes
+MAKE_ARGS+=	-Dopenmap.home=${WRKSRC} \
+		-Didl2java.compiler=${JAVA_HOME}/bin/idlj
+
+SUB_FILES=	openmap.sh
 
 do-configure:
 	(cd ${WRKSRC} && ${FIND} . -type f -print0 | ${XARGS} -0 \
 	    ${REINPLACE_CMD} -e 's,/usr/local/openmap,${DATADIR},g')
 	(cd ${WRKSRC} && ${FIND} . -type f -name \*.bak -delete)
-	${SED} \
-	    -e 's,%%CLASSPATH%%,${LOCALBASE}/bin/classpath,' \
-	    -e 's,%%JAVAVM%%,${LOCALBASE}/bin/java,' \
-	    -e 's,%%DATADIR%%,${DATADIR},' \
-	    <${FILESDIR}/openmap.sh >${WRKDIR}/openmap.sh
-
-do-build:
-	(cd ${WRKSRC} && ${ANT_CMD})
 
 do-install:
 	(cd ${WRKSRC}/lib && \
