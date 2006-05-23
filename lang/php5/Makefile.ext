@@ -141,6 +141,8 @@ USE_OPENSSL=	yes
 LIB_DEPENDS+=	gds.1:${PORTSDIR}/databases/firebird-client
 
 CONFIGURE_ARGS+=--with-interbase=${LOCALBASE}
+
+USE_GCC=	3.4+
 .endif
 
 .if ${PHP_MODNAME} == "ldap"
@@ -283,6 +285,7 @@ CONFIGURE_ARGS+=--enable-soap \
 		--with-libxml-dir=${LOCALBASE}
 
 USE_GNOME=	libxml2
+USE_GCC=	3.4+
 
 USE_PHP=	session
 USE_PHP_BUILD=	yes

@@ -153,6 +153,8 @@ USE_OPENSSL=	yes
 LIB_DEPENDS+=	gds.1:${PORTSDIR}/databases/firebird-client
 
 CONFIGURE_ARGS+=--with-interbase=${LOCALBASE}
+
+USE_GCC=	3.4+
 .endif
 
 .if ${PHP_MODNAME} == "ldap"
