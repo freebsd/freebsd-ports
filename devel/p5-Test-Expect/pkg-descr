@@ -1,0 +1,10 @@
+Test::Expect is a module for automated driving and testing of 
+terminal-based programs. It is handy for testing interactive programs 
+which have a prompt, and is based on the same concepts as the Tcl Expect 
+tool. As in Expect::Simple, the Expect object is made available for 
+tweaking.
+
+Test::Expect is intended for use in a test script.
+
+WWW: http://search.cpan.org/dist/Test-Expect
+Author: Leon Brocard <acme@astray.com>
