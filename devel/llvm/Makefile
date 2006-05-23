@@ -35,4 +35,7 @@ post-patch:
 		${WRKSRC}/Makefile.config.in
 	${RM} -rf ${WRKSRC}/projects/sample
 
+post-install:
+	${RM} -f ${PREFIX}/bin/.dir ${PREFIX}/lib/.dir
+
 .include <bsd.port.mk>
