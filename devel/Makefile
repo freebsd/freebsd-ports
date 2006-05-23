@@ -950,6 +950,7 @@
     SUBDIR += p5-Event
     SUBDIR += p5-Event-RPC
     SUBDIR += p5-Exception-Class
+    SUBDIR += p5-Expect-Simple
     SUBDIR += p5-Exporter-Lite
     SUBDIR += p5-Exporter-Tidy
     SUBDIR += p5-ExtUtils-AutoInstall
