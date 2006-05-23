@@ -8,7 +8,7 @@
 PORTNAME=	rreadline
 PORTVERSION=	0.5.4
 CATEGORIES=	devel ruby
-MASTER_SITES=	http://www.mag.keio.ac.jp/~hiroya/ruby/rreadline/
+MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
