@@ -1,11 +1,11 @@
---- configure.orig	Wed Apr 12 12:53:56 2006
-+++ configure	Wed Apr 12 13:06:36 2006
-@@ -24849,7 +24849,7 @@
+--- configure.orig	Tue May 23 08:07:51 2006
++++ configure	Tue May 23 08:08:07 2006
+@@ -24856,7 +24856,7 @@
      fi
  fi
  
 -if test "x$have_qt" == "xyes"; then
 +if test "x$have_qt" = "xyes"; then
-     POPPLER_QT_CXXFLAGS="-I$qt_incdir"
-     POPPLER_QT_LIBS="$qt_libdir/$qt_test_library"
-     :
+     ac_ext=cc
+ ac_cpp='$CXXCPP $CPPFLAGS'
+ ac_compile='$CXX -c $CXXFLAGS $CPPFLAGS conftest.$ac_ext >&5'

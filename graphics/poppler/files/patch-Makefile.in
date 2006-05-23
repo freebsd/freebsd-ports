@@ -1,0 +1,20 @@
+--- Makefile.in.orig	Tue May 23 07:59:21 2006
++++ Makefile.in	Tue May 23 08:00:41 2006
+@@ -76,7 +76,7 @@
+ DATA = $(pkgconfig_DATA)
+ ETAGS = etags
+ CTAGS = ctags
+-DIST_SUBDIRS = goo fofi splash poppler utils glib qt test qt4
++DIST_SUBDIRS = goo fofi splash poppler utils glib qt qt4
+ DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
+ distdir = $(PACKAGE)-$(VERSION)
+ top_distdir = $(distdir)
+@@ -254,7 +254,7 @@
+ @BUILD_POPPLER_QT4_TRUE@qt4_subdir = qt4
+ @BUILD_POPPLER_QT4_TRUE@qt4_pc_file = poppler-qt4.pc
+ @BUILD_UTILS_TRUE@utils_subdir = utils
+-SUBDIRS = goo fofi $(splash_subdir) poppler $(utils_subdir) $(glib_subdir) $(qt_subdir) test $(qt4_subdir)
++SUBDIRS = goo fofi $(splash_subdir) poppler $(utils_subdir) $(glib_subdir) $(qt_subdir) $(qt4_subdir)
+ EXTRA_DIST = \
+ 	README-XPDF				\
+ 	poppler.pc.in				\
