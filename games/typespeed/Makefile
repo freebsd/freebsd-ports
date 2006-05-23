@@ -9,7 +9,8 @@ PORTNAME=	typespeed
 PORTVERSION=	0.4.4
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	http://ls.purkki.org/typespeed/
+MASTER_SITES=	http://tobias.eyedacor.org/typespeed/ \
+		http://critical.ch/distfiles/
 DISTNAME=	typespeed-${PORTVERSION}
 
 MAINTAINER=	ehaupt@FreeBSD.org
