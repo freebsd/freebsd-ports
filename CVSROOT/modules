@@ -8501,6 +8501,7 @@ p5-Gtk		ports/x11-toolkits/p5-Gtk
 p5-Gtk2		ports/x11-toolkits/p5-Gtk2
 p5-Gtk2-Html2	ports/x11-toolkits/p5-Gtk2-Html2
 p5-Gtk2-PodViewer	ports/x11-toolkits/p5-Gtk2-PodViewer
+p5-Gtk2-Spell	ports/devel/p5-Gtk2-Spell
 p5-Gtk2-TrayIcon	ports/x11-toolkits/p5-Gtk2-TrayIcon
 p5-GtkXmHTML	ports/x11-toolkits/p5-GtkXmHTML
 p5-HTML		ports/www/p5-HTML
