@@ -46,6 +46,7 @@ MAN3+=	Acme::MetaSyntactic::loremipsum.3
 MAN3+=	Acme::MetaSyntactic::magic8ball.3
 MAN3+=	Acme::MetaSyntactic::magicroundabout.3
 MAN3+=	Acme::MetaSyntactic::monty_spam.3
+MAN3+=	Acme::MetaSyntactic::norse_mythology.3
 MAN3+=	Acme::MetaSyntactic::octothorpe.3
 MAN3+=	Acme::MetaSyntactic::opcodes.3
 MAN3+=	Acme::MetaSyntactic::oulipo.3
