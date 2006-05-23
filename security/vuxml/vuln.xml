@@ -34,6 +34,38 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="72d8df84-ea6d-11da-8a53-00123ffe8333">
+    <topic>cscope -- buffer overflow vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>cscope</name>
+	<range><lt>15.5_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jason Duell reports:</p>
+	<blockquote cite="http://sourceforge.net/tracker/index.php?func=detail&amp;aid=1064875&amp;group_id=4664&amp;atid=104664">
+	  <p>Cscope contains an alarming number of buffer overflow
+	    vulnerabilities. By a rough count, there are at least 48 places
+	    where we blindly sprintf() a file name into a fixed-length buffer
+	    of size PATHLEN without checking to see if the file's name
+	    is &lt;= PATHLEN. We do similar things with environment variable
+	    values.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2004-2541</cvename>
+      <url>http://sourceforge.net/tracker/index.php?func=detail&amp;aid=1064875&amp;group_id=4664&amp;atid=104664</url>
+      <url>http://secunia.com/advisories/13237</url>
+    </references>
+    <dates>
+      <discovery>2004-11-11</discovery>
+      <entry>2006-05-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0b628470-e9a6-11da-b9f4-00123ffe8333">
     <topic>coppermine -- Multiple File Extensions Vulnerability</topic>
     <affects>
