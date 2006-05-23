@@ -18,6 +18,4 @@ PLIST=		${PKGDIR}/pkg-plist.client
 
 CLIENT_ONLY=	yes
 
-BROKEN=		Incorrect pkg-plist
-
 .include "${MASTERDIR}/Makefile"
