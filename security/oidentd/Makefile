@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	oidentd
-PORTVERSION=	2.0.7
-PORTREVISION=	8
+PORTVERSION=	2.0.8
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ojnk
@@ -16,6 +15,7 @@ MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Ident server that supports user-defined ident strings
 
 USE_RC_SUBR=	yes
+USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 

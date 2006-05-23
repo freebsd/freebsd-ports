@@ -31,21 +31,3 @@
  #include <netinet/ip_nat.h>
  _ACEOF
  rm -f conftest.$ac_objext
-@@ -5888,7 +5896,7 @@
- 
- 		if test "$masq_support" = "no"; then
- 			case "$host_os" in
--				*freebsd[45]* )
-+				*freebsd[4-9]* )
- 					use_kmem=no
- 					os_src=freebsd4.c
- 				;;
-@@ -5900,7 +5908,7 @@
- 			esac
- 		else
- 			case "$host_os" in
--				*freebsd5* )
-+				*freebsd[5-9]* )
- 					use_kmem=yes
- 					os_src=freebsd5.c
- 				;;
