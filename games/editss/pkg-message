@@ -1,9 +1,0 @@
--------------------------------------------------------------------------------
-WARNING: editss will dump a core if it is not able to find a shipshapes file.
-
-You  should  copy  the  editss rc  file  from  /usr/X11R6/share/editss/editssrc
-to  $HOME/.editssrc  and   change  the  shiplib  keyword in  that  file to make
-it point to your shipshapes file.
-
-A nice shipshapes file can be found at ftp://ftp.xpilot.org/pub/shipshapes
--------------------------------------------------------------------------------
