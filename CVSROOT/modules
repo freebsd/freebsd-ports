@@ -9219,6 +9219,7 @@ p5-SQL-Abstract-Limit	ports/databases/p5-SQL-Abstract-Limit
 p5-SQL-Statement	ports/databases/p5-SQL-Statement
 p5-SQL-Translator	ports/databases/p5-SQL-Translator
 p5-SQLite-Work	ports/databases/p5-SQLite-Work
+p5-SRU		ports/www/p5-SRU
 p5-SSN-Validate	ports/devel/p5-SSN-Validate
 p5-SVG	ports/textproc/p5-SVG
 p5-SVG-Graph	ports/graphics/p5-SVG-Graph
