@@ -8356,6 +8356,7 @@ p5-Excel-Template	ports/textproc/p5-Excel-Template
 p5-Exception-Class	ports/devel/p5-Exception-Class
 p5-Exception-Class-DBI	ports/databases/p5-Exception-Class-DBI
 p5-Expect	ports/lang/p5-Expect
+p5-Expect-Simple	ports/devel/p5-Expect-Simple
 p5-Exporter-Lite	ports/devel/p5-Exporter-Lite
 p5-Exporter-Tidy	ports/devel/p5-Exporter-Tidy
 p5-ExtUtils-AutoInstall	ports/devel/p5-ExtUtils-AutoInstall
