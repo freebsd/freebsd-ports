@@ -9,7 +9,8 @@ PORTNAME=	playgsf
 PORTVERSION=	0.7.1
 CATEGORIES=	audio
 MASTER_SITES=	http://projects.raphnet.net/playgsf/ \
-		http://critical.ch/distfiles/
+		http://critical.ch/distfiles/ \
+		http://energy.critical.ch/distfiles/
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A command line player for gsf audio files
@@ -35,6 +36,12 @@ PLIST_FILES=	bin/playgsf
 # contains x86 assembler
 ONLY_FOR_ARCHS=	i386
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700000
+BROKEN=		Does not configure on FreeBSD 7.x
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} \
 		-e 's|\(@LDFLAGS@\)|\1 ${LDFLAGS}|' \
@@ -52,4 +59,4 @@ do-install:
 post-install:
 	${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
