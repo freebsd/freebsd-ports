@@ -12,7 +12,7 @@ upgrades.
 
   The executable has been renamed to 'jasmin' (was 'jasmin.sh')
 
-2006-05-22:
+20060522:
   AFFECTS: users of astro/boinc-setiathome-enhanced,
            astro/boinc-setiathome-naparst, astro-boinc-setiathome
   AUTHOR: r.c.ladan@gmail.com
