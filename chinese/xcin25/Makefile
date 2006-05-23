@@ -7,7 +7,7 @@
 
 PORTNAME=	xcin
 PORTVERSION=	2.5.3.p2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	chinese x11
 MASTER_SITES=	ftp://ftp.linux.org.tw/pub/xcin/xcin/ \
 		ftp://ftp.linux.org.tw/pub/xcin/xcin/devel/ \
@@ -20,15 +20,11 @@ COMMENT=	Chinese input method server under X
 
 LIB_DEPENDS=	tabe.2:${PORTSDIR}/chinese/libtabe
 
-.if !defined(USE_DB2)
-LIB_DEPENDS+=	db3.3:${PORTSDIR}/databases/db3
-.else
-LIB_DEPENDS+=	db2.0:${PORTSDIR}/databases/db2
-.endif
-RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/local/kc15f.pcf.gz:${PORTSDIR}/chinese/kcfonts \
-		${LOCALBASE}/share/tabe/libtabe-0.2.5:${PORTSDIR}/chinese/libtabe
+RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/local/kc15f.pcf.gz:${PORTSDIR}/chinese/kcfonts
 
 WRKSRC=		${WRKDIR}/xcin
+USE_BDB=       yes
+OBSOLETE_BDB_VAR=	USE_DB2
 USE_GETTEXT=	yes
 USE_ICONV=	yes
 USE_X_PREFIX=	yes
@@ -37,27 +33,28 @@ INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--x-libraries=${X11BASE}/lib \
 		--with-xcin-dir=${PREFIX}/lib/X11/xcin25 \
-		--with-db-lib=${LOCALBASE}/lib \
+		--with-db-name=${BDB_LIB_NAME} \
+		--with-db-inc=${BDB_INCLUDE_DIR} \
+		--with-db-lib=${BDB_LIB_DIR}/lib \
 		--with-tabe-inc=${LOCALBASE}/include/tabe \
 		--with-tabe-lib=${LOCALBASE}/lib \
 		--with-intl-inc=${LOCALBASE}/include \
 		--with-intl-lib=${LOCALBASE}/lib \
 		--with-iconv-inc=${LOCALBASE}/include \
 		--with-iconv-lib=${LOCALBASE}/lib
-.if !defined(USE_DB2)
-CONFIGURE_ARGS+= --with-db-inc=${LOCALBASE}/include/db3
-.else
-CONFIGURE_ARGS+= --with-db-inc=${LOCALBASE}/include/db2
-.endif
 
 MAN1=		xcin.1
 
-pre-fetch:
-.if !defined(USE_DB2)
-	@${ECHO} --
-	@${ECHO} "Type \"make -DUSE_DB2\" if you want use DB2."
-	@${ECHO} "Otherwise, xcin2.5 will use DB3."
-	@${ECHO} --
+.include <bsd.port.pre.mk>
+
+pre-everything::
+.if defined(WITH_BDB_VER)
+	@${ECHO_CMD} ""
+	@${ECHO_CMD} "WARNING:"
+	@${ECHO_CMD} "      You have defined WITH_BDB_VER. Make sure you use the same"
+	@${ECHO_CMD} "      db version that libtabe uses. Otherwise, this port may"
+	@${ECHO_CMD} "      not work correctly."
+	@${ECHO_CMD} ""
 .endif
 
 post-extract:
@@ -101,4 +98,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

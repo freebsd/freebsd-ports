@@ -7,7 +7,7 @@
 
 PORTNAME=	libtabe
 PORTVERSION=	0.2.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	chinese
 MASTER_SITES=	ftp://ftp.linux.org.tw/pub/xcin/libtabe/devel/
 
@@ -25,18 +25,34 @@ DATADIR=	${PREFIX}/share/tabe
 DOCSDIR=	${PREFIX}/share/doc/tabe
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--includedir=${PREFIX}/include/tabe \
+		--with-db-name=${BDB_LIB_NAME} \
 		--with-db-inc=${BDB_INCLUDE_DIR} \
 		--with-db-lib=${BDB_LIB_DIR} \
 		--with-db-bin=${LOCALBASE}/bin \
 		--enable-shared
 
 .if !defined(WITHOUT_X11)
-PLIST_SUB+=	X11=""
 USE_XLIB=	yes
+PLIST_SUB+=	X11=""
 .else
 CONFIGURE_ARGS+=--without-x
 PLIST_SUB+=	X11="@comment "
+.endif
+
+.include <bsd.port.pre.mk>
+
+pre-everything::
+.if defined(WITH_BDB_VER)
+	@${ECHO} ""
+	@${ECHO} "WARNING:"
+	@${ECHO} "	You have defined WITH_BDB_VER. Make sure you use the same"
+	@${ECHO} "	db version for all ports that use libtabe, such as xcin."
+	@${ECHO} "	Otherwise, ports that use libtabe may not work correctly."
+	@${ECHO} ""
+.endif
+
 post-patch:
+.if defined(WITHOUT_X11)
 	${REINPLACE_CMD} -e '/all:/s/ bims//; /bims/d' ${WRKSRC}/src/Makefile.in
 .endif
 
@@ -55,4 +71,4 @@ post-install:
 	${MKDIR} ${DATADIR}
 	${TOUCH} ${DATADIR}/${PORTNAME}-${PORTVERSION}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
