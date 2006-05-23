@@ -5,7 +5,7 @@
 #
 
 PORTNAME=	boinc-einsteinathome
-PORTVERSION=	0.40
+PORTVERSION=	4.61
 CATEGORIES=	astro
 MASTER_SITES=	http://einstein.phys.uwm.edu/app_test/FreeBSD/
 DISTNAME=	albert_${PORTVERSION}_i386-unknown-freebsd
@@ -17,14 +17,14 @@ COMMENT=	Einstein@Home for BOINC
 .include <bsd.port.pre.mk>
 
 ONLY_FOR_ARCHS=	i386 amd64
-# Binary is built on 4.9 :
-.if ${OSVERSION} >= 500000
-.if ${ARCH} == "amd64"
-RUN_DEPENDS+=	compat4x-i386>0:${PORTSDIR}/misc/compat4x
-.else
-LIB_DEPENDS+=	c_r.4:${PORTSDIR}/misc/compat4x
+
+# Binary is built for 5.X :
+.if ${OSVERSION} < 500000
+IGNORE=		only supports FreeBSD 5.X and newer
 .endif
-# also depends on libm.so.2
+
+.if ${OSVERSION} >= 600000
+LIB_DEPENDS+=	c.5:${PORTSDIR}/misc/compat5x
 .endif
 
 RUN_DEPENDS+=	boinc_client:${PORTSDIR}/net/boinc-client
@@ -39,6 +39,15 @@ BOINC_HOME?=	/var/db/boinc
 
 EINSTEIN_SITE=	einstein.phys.uwm.edu
 EINSTEIN_BINARY=${DISTNAME}
+
+.if ${ARCH} == amd64 && ${OSVERSION} >= 600000
+AMD64=		""
+.else
+AMD64=		"@comment "
+.endif
+
+SUB_FILES=	pkg-message
+SUB_LIST=	AMD64=${AMD64}
 
 PLIST_SUB=	EINSTEIN_BINARY="${EINSTEIN_BINARY}" EINSTEIN_SITE=${EINSTEIN_SITE} \
 		BOINC_HOME=${BOINC_HOME}

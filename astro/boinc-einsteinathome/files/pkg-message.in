@@ -1,0 +1,22 @@
+*****************************************************************************
+ATTACHING PROJECT
+
+Just run boinc_gui, choose Attach, and follow instructions.
+Project URL is einstein.phys.uwm.edu
+
+MANUAL INSTALLATION
+ *) If this is your first time in any BOINC project, create a new account at
+    http://einstein.phys.uwm.edu/create_account_form.php
+
+ *) Or get your account key at http://einstein.phys.uwm.edu/get_passwd.php
+
+ *) Attach to the project:
+    cd /var/db/boinc
+    boinc_cmd --project_attach einstein.phys.uwm.edu <account key>
+*****************************************************************************
+%%AMD64%%  IMPORTANT NOTICE FOR AMD64 USERS RUNNING 6.X:
+%%AMD64%%
+%%AMD64%% You have to have this line in /etc/libmap32.conf:
+%%AMD64%%   libpthread.so.1	libc_r.so.5
+%%AMD64%% before you attach the project.  Otherwise it will not work.
+%%AMD64%%*****************************************************************************
