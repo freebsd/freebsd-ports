@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	evince
-PORTVERSION=	0.5.2
-PORTREVISION=	2
+PORTVERSION=	0.5.3
 CATEGORIES=	graphics print gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.5
@@ -74,7 +73,6 @@ DJVU_DIR?=	# empty
 DJVU_DIR?=	-nox11
 .endif
 
-# DJVU is broken, need older version of djvu
 #.if defined(WITH_DJVU)
 #LIB_DEPENDS+=		djvulibre.17:${PORTSDIR}/graphics/djvulibre${DJVU_DIR}
 #CONFIGURE_ARGS+=	--enable-djvu
@@ -91,7 +89,7 @@ LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus
 CONFIGURE_ARGS+=	--enable-comics
 GCONF_SCHEMAS+=	evince-thumbnailer-comics.schemas
 
-RUN_DEPENDS=	unrar:${PORTSDIR}/archivers/unrar \
+RUN_DEPENDS+=	unrar:${PORTSDIR}/archivers/unrar \
 		unzip:${PORTSDIR}/archivers/unzip
 .endif
 
