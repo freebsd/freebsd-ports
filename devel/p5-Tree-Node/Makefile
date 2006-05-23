@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Tree
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	aaron@daltons.ca
+MAINTAINER=	aaron@FreeBSD.org
 COMMENT=	Memory-efficient tree nodes in Perl
 
 PERL_MODBUILD=	yes
