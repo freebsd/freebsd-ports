@@ -6,7 +6,7 @@ as an SPFv1 or SPF-Classic record.
 If an error is found, it tries its best to report the error in question and the
 specific location in the record where the error occured.
 
-WWW: http://spfval.codeshare.ca/
+WWW: http://freshmeat.net/projects/spfval/
 
 - ehaupt
 ehaupt@critical.ch
