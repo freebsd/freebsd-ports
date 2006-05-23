@@ -114,16 +114,15 @@ bin/kf
 %%DATADIR%%/unavailable.png
 %%DATADIR%%/unavailable_desc.png
 %%DATADIR%%/unknown.png
-%%DATADIR%%/vcard.png
 %%DATADIR%%/vcard.glade
 %%DATADIR%%/vcard.glade.h
+%%DATADIR%%/vcard.png
 %%DATADIR%%/www.png
 %%DATADIR%%/xa.png
-share/applications/kf.desktop
-share/locale/bg/LC_MESSAGES/kf.mo
-share/locale/pl/LC_MESSAGES/kf.mo
-share/locale/ru/LC_MESSAGES/kf.mo
-share/pixmaps/kf.png
+%%NLS%%share/locale/bg/LC_MESSAGES/kf.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/kf.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/kf.mo
+%%NLS%%share/pixmaps/kf.png
 @dirrm %%DATADIR%%/emoticons
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
