@@ -16,6 +16,8 @@ DISTFILES=	${FRONTPAGE}
 MAINTAINER=	swhetzel@gmail.com
 COMMENT=	Microsoft mod_frontpage (by RTR) for Apache ${FP_AP_VER}
 
+FORBIDDEN=	Remote code execution vulnerability
+
 RUN_DEPENDS=	${LOCALBASE}/${FP_SETPERM}:${PORTSDIR}/www/frontpage
 
 DIST_SUBDIR=	fp${PORTVERSION:S/.//g}
