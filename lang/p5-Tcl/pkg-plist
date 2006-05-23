@@ -2,5 +2,4 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tcl/Tcl.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tcl/Tcl.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tcl/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/create-moveable-dist.pl
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tcl
