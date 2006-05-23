@@ -1,0 +1,10 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+cd "%%DATADIR%%"
+JAVA_VERSION="%%JAVA_VERSION%%" \
+    exec "%%LOCALBASE%%/bin/java" \
+    -classpath $(%%LOCALBASE%%/bin/classpath) \
+    com.bbn.openmap.app.OpenMap "%@"

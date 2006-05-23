@@ -2639,11 +2639,11 @@
 %%PORTDOCS%%%%DOCSDIR%%/user-guide-4.html
 %%PORTDOCS%%%%DOCSDIR%%/user-guide.html
 bin/openmap
-share/java/classes/milStd2525_png.jar
-share/java/classes/omcorba.jar
-share/java/classes/omj3d.jar
-share/java/classes/omsvg.jar
-share/java/classes/openmap.jar
+%%JAVAJARDIR%%/milStd2525_png.jar
+%%JAVAJARDIR%%/omcorba.jar
+%%JAVAJARDIR%%/omj3d.jar
+%%JAVAJARDIR%%/omsvg.jar
+%%JAVAJARDIR%%/openmap.jar
 @dirrm %%DATADIR%%/data/shape/cntry02
 @dirrm %%DATADIR%%/data/shape
 @dirrm %%DATADIR%%/data
