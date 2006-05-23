@@ -80,7 +80,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # DISTNAME		- Name of port or distribution used in generating
 #				  WRKSRC and DISTFILES below.
 #				  Default:
-#				  ${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX})
+#				  ${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 # CATEGORIES	- A list of descriptive categories into which this port falls.
 #				  Mandatory.
 #
@@ -92,7 +92,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # EXTRACT_SUFX	- Suffix for archive names
 #				  You never have to set both DISTFILES and EXTRACT_SUFX.
 #				  Default: .tar.bz2 if USE_BZIP2 is set, .zip if USE_ZIP is
-#				  set, .tar.gz otherwise).
+#				  set, .tar.gz otherwise.
 # MASTER_SITES	- Primary location(s) for distribution files if not found
 #				  locally.  See bsd.sites.mk for common choices for
 #				  MASTER_SITES.
@@ -120,9 +120,10 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  ${MASTER_SITE_OVERRIDE})
 # EXTRACT_ONLY	- If set, a subset of ${DISTFILES} you want to
 #				  actually extract.
-# ALWAYS_KEEP_DISTFILES - If set, the package building cluster will save the distfiles along
-#				  with the packages. This may be required to comply with some
-#				  licenses, e.g. GPL in some cases.
+# ALWAYS_KEEP_DISTFILES
+#				- If set, the package building cluster will save the distfiles
+#				  along with the packages. This may be required to comply with
+#				  some licenses, e.g. GPL in some cases.
 #				  Default: not set.
 #
 # (NOTE: by convention, the MAINTAINER entry (see above) should go here.)
@@ -176,6 +177,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # DISABLE_VULNERABILITIES
 #				- If set, do not check if the port is listed in the
 #				  vulnerabilities database.
+#
 # In addition to RESTRICTED or NO_CDROM, if only a subset of distfiles
 # or patchfiles have redistribution restrictions, set the following
 # to the list of such files.
@@ -207,6 +209,12 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # ONLY_FOR_ARCHS
 #				- Only build ports if ${ARCH} matches one of these.
 # NOT_FOR_ARCHS	- Only build ports if ${ARCH} doesn't match one of these.
+# ONLY_FOR_ARCHS_REASON
+# ONLY_FOR_ARCHS_REASON_${ARCH}
+#				- Reason why it's only for ${ONLY_FOR_ARCHS}s
+# NOT_FOR_ARCHS_REASON
+# NOT_FOR_ARCHS_REASON_${ARCH}
+#				- Reason why it's not for ${NOT_FOR_ARCHS}s
 #
 # Dependency checking.  Use these if your port requires another port
 # not in the list below.  (Default: empty.)
@@ -443,13 +451,15 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				- Set to yes to enable automatic packing list generation.
 #				  Currently has no effect unless USE_LINUX_RPM is set.
 #
-# OVERRIDE_LINUX_BASE_PORT	- This specifies the default linux base to use, for valid values
-#				  have a look at the description of USE_LINUX. This is an user-only
-#				  variable. Don't use it in any port, it's meant to be used in
-#				  make.conf.
+# OVERRIDE_LINUX_BASE_PORT
+#				- This specifies the default linux base to use, for valid
+#				  values have a look at the description of USE_LINUX. This is
+#				  an user-only variable. Don't use it in any port, it's meant
+#				  to be used in make.conf.
 #
-# LINUX_BASE_PORT		- This is a read-only variable, it gets set to a value which
-#				  is usable in *_DEPENDS (e.g. BUILD_DEPENDS=${LINUX_BASE_PORT}).
+# LINUX_BASE_PORT
+#				- This is a read-only variable, it gets set to a value which is
+#				  usable in *_DEPENDS (e.g. BUILD_DEPENDS=${LINUX_BASE_PORT}).
 #				  It honors USE_LINUX=foo and OVERRIDE_LINUX_BASE_PORT.
 # USE_RC_SUBR	- If set, the ports startup/shutdown script uses the common
 # 				  routines found in etc/rc.subr and may need to
@@ -458,8 +468,6 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # 				  automatically added to ${SUB_FILES}, some %%VAR%%'s will
 # 				  automatically be expanded, they will be installed in
 # 				  ${PREFIX}/etc/rc.d and added to the packing list.
-# 				  pairs will be added to ${SUB_LIST}. These files will be
-# 				  installed in ${PREFIX}/etc/rc.d and added to the packing list.
 # USE_RCORDER	- List of rc.d startup scripts to be called early in the boot
 # 				  process. This acts exactly like USE_RC_SUBR except that
 # 				  scripts are installed in /etc/rc.d.
@@ -536,7 +544,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #
 # NO_INSTALL_MANPAGES
 #				- If set, this port doesn't want to install any manpages.
-#				  Default: not set, i.e. manpages are installed by default).
+#				  Default: not set, i.e. manpages are installed by default.
 #
 # Set the following to specify all manpages that your port installs.
 # These manpages will be automatically listed in ${PLIST}.  Depending
@@ -573,7 +581,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # INFO_PATH		- Path, where all .info files will be installed by your
 #				  port, relative to ${PREFIX}
 #				  Default: "share/info" if ${PREFIX} is equal to /usr
-#				  and "info" otherwise).
+#				  and "info" otherwise.
 #
 # Set the following to specify all documentation your port installs into
 # ${DOCSDIR}
@@ -827,7 +835,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  described below except that any line beginning with @comment
 #				  is deleted.
 # SUB_LIST		- List of "variable=value" pair for substitution in ${SUB_FILES}
-#				  Some pairs are added by default: eg. PREFIX=${PREFIX})
+#				  Some pairs are added by default: eg. PREFIX=${PREFIX}
 #
 # INSTALLS_SHLIB
 #				- If set, bsd.port.mk will automatically run ldconfig commands
@@ -865,8 +873,14 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #					  variable permits, write it yourself and install it
 #					  in ${DESKTOPDIR}.
 #				  Notes:
-#					* Comment and Icon may be empty strings (""). The other
-#					  fields are mandatory.
+#					* Comment and Icon may be empty strings (""). Categories
+#					  may be an empty string in some cases (see below). The
+#					  other fields are mandatory.
+#					* If Categories is an empty string, bsd.port.mk will try
+#					  to deduce a default value using the CATEGORIES variable.
+#					  If the deduction fails, you will have to set Categories
+#					  manually. You should check the generated value using
+#					  "make desktop-categories", and override it if necessary.
 #					* Exec will also be used to name the .desktop file.
 #					* The files will be automatically added to ${PLIST}.
 #				  Example:
@@ -1339,7 +1353,7 @@ PERL=		${LOCALBASE}/bin/perl
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
 .endif
 
-.if defined(USE_EMACS) || defined(EMACS_PORT_NAME)
+.if defined(USE_EMACS)
 .include "${PORTSDIR}/Mk/bsd.emacs.mk"
 .endif
 
@@ -1363,7 +1377,7 @@ PERL=		${LOCALBASE}/bin/perl
 .include "${PORTSDIR}/Mk/bsd.ruby.mk"
 .endif
 
-.if defined(USE_TCL) || defined(USE_TK)
+.if defined(USE_TCL) || defined(USE_TCL_BUILD) || defined(USE_TK)
 .include "${PORTSDIR}/Mk/bsd.tcl.mk"
 .endif
 
@@ -1769,6 +1783,9 @@ CONFIGURE_ARGS+=	INSTALLDIRS="site"
 
 .if defined(PERL_CONFIGURE)
 USE_PERL5=	yes
+.if (defined(BATCH) && !defined(IS_INTERACTIVE))
+CONFIGURE_ENV+=	PERL_MM_USE_DEFAULT="YES"
+.endif
 .endif
 
 .if ${PERL_LEVEL} >= 500600
@@ -1808,7 +1825,7 @@ RUN_DEPENDS+=	${PERL5}:${PORTSDIR}/lang/${PERL_PORT}
 .include "${PORTSDIR}/Mk/bsd.python.mk"
 .endif
 
-.if defined(USE_TCL) || defined(USE_TK)
+.if defined(USE_TCL) || defined(USE_TCL_BUILD) || defined(USE_TK)
 .include "${PORTSDIR}/Mk/bsd.tcl.mk"
 .endif
 
@@ -1874,12 +1891,12 @@ REINPLACE_ARGS?=	-i.bak
 REINPLACE_CMD?=	${SED} ${REINPLACE_ARGS}
 
 # Names of cookies used to skip already completed stages
-EXTRACT_COOKIE?=	${WRKDIR}/.extract_done.${PKGNAME}.${PREFIX:S/\//_/g}
-CONFIGURE_COOKIE?=	${WRKDIR}/.configure_done.${PKGNAME}.${PREFIX:S/\//_/g}
-INSTALL_COOKIE?=	${WRKDIR}/.install_done.${PKGNAME}.${PREFIX:S/\//_/g}
-BUILD_COOKIE?=		${WRKDIR}/.build_done.${PKGNAME}.${PREFIX:S/\//_/g}
-PATCH_COOKIE?=		${WRKDIR}/.patch_done.${PKGNAME}.${PREFIX:S/\//_/g}
-PACKAGE_COOKIE?=	${WRKDIR}/.package_done.${PKGNAME}.${PREFIX:S/\//_/g}
+EXTRACT_COOKIE?=	${WRKDIR}/.extract_done.${PORTNAME}.${PREFIX:S/\//_/g}
+CONFIGURE_COOKIE?=	${WRKDIR}/.configure_done.${PORTNAME}.${PREFIX:S/\//_/g}
+INSTALL_COOKIE?=	${WRKDIR}/.install_done.${PORTNAME}.${PREFIX:S/\//_/g}
+BUILD_COOKIE?=		${WRKDIR}/.build_done.${PORTNAME}.${PREFIX:S/\//_/g}
+PATCH_COOKIE?=		${WRKDIR}/.patch_done.${PORTNAME}.${PREFIX:S/\//_/g}
+PACKAGE_COOKIE?=	${WRKDIR}/.package_done.${PORTNAME}.${PREFIX:S/\//_/g}
 
 # How to do nothing.  Override if you, for some strange reason, would rather
 # do something.
@@ -2556,7 +2573,7 @@ maintainer:
 .endif
 
 .if !target(check-makefile)
-check-makefile:
+check-makefile::
 	@${DO_NADA}
 .endif
 
@@ -2593,7 +2610,7 @@ check-categories:
 .endif
 
 .if !target(check-makevars)
-check-makevars:
+check-makevars::
 	@${DO_NADA}
 .endif
 
@@ -2726,7 +2743,7 @@ _MANPAGES+=	${MAN${sect}:S%^%${MAN${sect}PREFIX}/${manlang}/man${sect:L}/%}
 
 .endfor
 
-.if !defined(_MLINKS)
+.if !defined(_TMLINKS)
 _TMLINKS=
 .endif
 
@@ -2799,6 +2816,7 @@ LDCONFIG_RUNLIST!=	${ECHO_CMD} ${LDCONFIG_PLIST} | ${SED} -e "s!%D!${PREFIX}!g"
 # Don't build a port if the system is too old.
 ################################################################
 
+# Check the machine architectures
 .if defined(ONLY_FOR_ARCHS)
 .for __ARCH in ${ONLY_FOR_ARCHS}
 .if ${ARCH:M${__ARCH}} != ""
@@ -2821,11 +2839,25 @@ __ARCH_OK?=     1
 .if defined(ONLY_FOR_ARCHS)
 IGNORE=		is only for ${ONLY_FOR_ARCHS},
 .else # defined(NOT_FOR_ARCHS)
-IGNORE=		does not run on ${NOT_FOR_ARCHS},
+IGNORE=		does not run on ${NOT_FOR_ARCHS}.
 .endif
-IGNORE+=	and you are running ${ARCH}
+IGNORE+=	and you are running ${ARCH}.
+
+.if defined(ONLY_FOR_ARCHS_REASON_${ARCH})
+IGNORE+=	Reason: ${ONLY_FOR_ARCHS_REASON_${ARCH}}
+.elif defined(ONLY_FOR_ARCHS_REASON)
+IGNORE+=	Reason: ${ONLY_FOR_ARCHS_REASON}
 .endif
 
+.if defined(NOT_FOR_ARCHS_REASON_${ARCH})
+IGNORE+=	Reason: ${NOT_FOR_ARCHS_REASON_${ARCH}}
+.elif defined(NOT_FOR_ARCHS_REASON)
+IGNORE+=	Reason: ${NOT_FOR_ARCHS_REASON}
+.endif
+
+.endif
+
+# Check the user interaction and legal issues
 .if !defined(NO_IGNORE)
 .if (defined(IS_INTERACTIVE) && defined(BATCH))
 IGNORE=	is an interactive port
@@ -3753,8 +3785,9 @@ security-check:
 # should not be modified.
 
 _SANITY_SEQ=	pre-everything check-makefile check-categories \
-				check-makevars check-depends check-deprecated \
-				check-vulnerable buildanyway-message options-message
+				check-makevars check-desktop-entries check-depends \
+				check-deprecated check-vulnerable buildanyway-message \
+				options-message
 _FETCH_DEP=		check-sanity
 _FETCH_SEQ=		fetch-depends pre-fetch pre-fetch-script \
 				do-fetch post-fetch post-fetch-script
@@ -4892,9 +4925,11 @@ _PRETTY_PRINT_DEPENDS_LIST=\
 	if [ ! -r ${INDEXDIR}/${INDEXFILE} ] ; then \
 		${ECHO_CMD} "${.TARGET} requires an INDEX file (${INDEXFILE}). Please run make index or make fetchindex."; \
 	else \
+		target=${.TARGET:C/pretty-print-(.*)-depends-list/\1/} ; \
+		if [ "$$target" = "build" ] ; then fldnum=8 ; else fldnum=9 ; fi ; \
 		${ECHO_CMD} -n 'This port requires package(s) "' ; \
-		${ECHO_CMD} -n `${AWK} -F\| '$$1 ~ /^${PKGNAME}/ {print $$8;}' ${INDEXDIR}/${INDEXFILE}` ; \
-		${ECHO_CMD} '" to ${.TARGET:C/pretty-print-(.*)-depends-list/\1/}.'; \
+		${ECHO_CMD} -n `${AWK} -F\| "\\$$1 ~ /^${PKGNAME}/ {print \\$$$${fldnum};}" ${INDEXDIR}/${INDEXFILE}` ; \
+		${ECHO_CMD} "\" to $$target."; \
 	fi;
 
 
@@ -5028,12 +5063,12 @@ add-plist-info:
 .if defined(INFO)
 .for i in ${INFO}
 	install-info --quiet ${PREFIX}/${INFO_PATH}/$i.info ${PREFIX}/${INFO_PATH}/dir
-	@${ECHO_CMD} "@unexec install-info --delete %D/${INFO_PATH}/$i.info %D/${INFO_PATH}/dir" \
+	@${ECHO_CMD} "@unexec install-info --quiet --delete %D/${INFO_PATH}/$i.info %D/${INFO_PATH}/dir" \
 		>> ${TMPPLIST}
 	@${LS} ${PREFIX}/${INFO_PATH}/$i.info* | ${SED} -e s:${PREFIX}/::g >> ${TMPPLIST}
-	@${ECHO_CMD} "@exec install-info %D/${INFO_PATH}/$i.info %D/${INFO_PATH}/dir" \
+	@${ECHO_CMD} "@exec install-info --quiet %D/${INFO_PATH}/$i.info %D/${INFO_PATH}/dir" \
 		>> ${TMPPLIST}
-	if [ "`${DIRNAME} $i`" != "." ]; then \
+	@if [ "`${DIRNAME} $i`" != "." ]; then \
 		${ECHO_CMD} "@unexec ${RMDIR} %D/info/`${DIRNAME} $i` 2> /dev/null || true" >> ${TMPPLIST}; \
 	fi
 .endfor
@@ -5072,7 +5107,7 @@ install-rc-script:
 .if defined(USE_RC_SUBR) && ${USE_RC_SUBR:U} != "YES"
 	@${ECHO_CMD} "===> Installing rc.d startup script(s)"
 	@${ECHO_CMD} "@cwd ${PREFIX}" >> ${TMPPLIST}
-.if (${OSVERSION} >= 700007 || (${OSVERSION} < 700000 && ${OSVERSION} >= 600101))
+.if (${OSVERSION} >= 700007 || ( ${OSVERSION} < 700000 && ${OSVERSION} >= 600101 ))
 	@for i in ${USE_RC_SUBR}; do \
 		${INSTALL_SCRIPT} ${WRKDIR}/$${i} ${PREFIX}/etc/rc.d/$${i%.sh}; \
 		${ECHO_CMD} "etc/rc.d/$${i%.sh}" >> ${TMPPLIST}; \
@@ -5358,6 +5393,145 @@ rmconfig-recursive:
 	done
 .endif
 
+desktop-categories:
+	@categories=""; \
+	for native_category in ${CATEGORIES}; do \
+		c=""; \
+		case $$native_category in \
+			accessibility)	c="Accessibility Utility"		;; \
+			archivers)		c="Archiving"					;; \
+			astro)			c="Astronomy Science Education"	;; \
+			audio)			c="Audio AudioVideo"			;; \
+			benchmarks)		c="System"						;; \
+			biology)		c="Biology Science Education"	;; \
+			cad)			c="Engineering"					;; \
+			databases)		c="Database"					;; \
+			deskutils)		c="Utility"						;; \
+			devel)			c="Development"					;; \
+			dns)			c="Network"						;; \
+			elisp)			c="Development"					;; \
+			emulators)		c="Emulator"					;; \
+			finance)		c="Finance Office"				;; \
+			ftp)			c="FileTransfer Network"		;; \
+			games)			c="Game"						;; \
+			gnome)			c="GNOME GTK"					;; \
+			graphics)		c="Graphics"					;; \
+			hamradio)		c="HamRadio"					;; \
+			haskell)		c="Development"					;; \
+			ipv6)			c="Network"						;; \
+			irc)			c="IRCClient Network"			;; \
+			java)			c="Java Development"			;; \
+			kde)			c="KDE QT"						;; \
+			lang)			c="Development"					;; \
+			lisp)			c="Development"					;; \
+			mail)			c="Email Office Network"		;; \
+			mbone)			c="Network AudioVideo"			;; \
+			multimedia)		c="AudioVideo"					;; \
+			net)			c="Network"						;; \
+			net-im)			c="InstantMessaging Network"	;; \
+			net-mgmt)		c="Network"						;; \
+			net-p2p)		c="P2P Network"					;; \
+			news)			c="News"						;; \
+			pear)			c="WebDevelopment Development"	;; \
+			perl5)			c="Development"					;; \
+			python)			c="Development"					;; \
+			ruby)			c="Development"					;; \
+			rubygems)		c="Development"					;; \
+			scheme)			c="Development"					;; \
+			science)		c="Science Education"			;; \
+			security)		c="Security System"				;; \
+			shells)			c="Shell"						;; \
+			sysutils)		c="System Utility"				;; \
+			tcl*|tk*)		c="Development"					;; \
+			www)			c="Network"						;; \
+			x11-clocks)		c="Clock Utility"				;; \
+			x11-fm)			c="FileManager"					;; \
+			xfce)			c="GTK"							;; \
+			zope)			c="WebDevelopment Development"	;; \
+		esac; \
+		if [ -n "$$c" ]; then \
+			categories="$$categories $$c"; \
+		fi; \
+	done; \
+	if [ -n "$$categories" ]; then \
+		for c in Application $$categories; do ${ECHO_MSG} "$$c"; done \
+			| ${SORT} -u | ${TR} '\n' ';'; \
+		${ECHO_MSG}; \
+	fi
+
+VALID_DESKTOP_CATEGORIES+= Application Core Development Building Debugger IDE \
+	GUIDesigner Profiling RevisionControl Translation Office Calendar \
+	ContactManagement Database Dictionary Chart Email Finance FlowChart PDA \
+	ProjectManagement Presentation Spreadsheet WordProcessor Graphics \
+	2DGraphics VectorGraphics RasterGraphics 3DGraphics Scanning OCR \
+	Photography Viewer Settings DesktopSettings HardwareSettings \
+	PackageManager Network Dialup InstantMessaging IRCClient FileTransfer \
+	HamRadio News P2P RemoteAccess Telephony WebBrowser WebDevelopment \
+	AudioVideo Audio Midi Mixer Sequencer Tuner Video TV AudioVideoEditing \
+	Player Recorder DiscBurning Game ActionGame AdventureGame ArcadeGame \
+	BoardGame BlocksGame CardGame KidsGame LogicGame RolePlaying Simulation \
+	SportsGame StrategyGame Education Art Construction Music Languages \
+	Science Astronomy Biology Chemistry Geology Math MedicalSoftware Physics \
+	Teaching Amusement Applet Archiving Electronics Emulator Engineering \
+	FileManager Shell Screensaver TerminalEmulator TrayIcon System Filesystem \
+	Monitor Security Utility Accessibility Calculator Clock TextEditor KDE \
+	GNOME GTK Qt Motif Java ConsoleOnly AdvancedSettings
+
+check-desktop-entries:
+.if defined(DESKTOP_ENTRIES)
+	@set ${DESKTOP_ENTRIES} XXX; \
+	if [ $$((($$# - 1) % 6)) -ne 0 ]; then \
+		${ECHO_CMD} "${PKGNAME}: Makefile error: the DESKTOP_ENTRIES list must contain one or more groups of 6 elements"; \
+		exit 1; \
+	fi; \
+	num=1; \
+	while [ $$# -gt 6 ]; do \
+		entry="#$$num"; \
+		if [ -n "$$4" ]; then \
+			entry="$$entry ($$4)"; \
+		elif [ -n "$$1" ]; then \
+			entry="$$entry ($$1)"; \
+		fi; \
+		if [ -z "$$1" ]; then \
+			${ECHO_CMD} "${PKGNAME}: Makefile error: in desktop entry $$entry: field 1 (Name) is empty"; \
+			exit 1; \
+		fi; \
+		if [ -z "$$4" ]; then \
+			${ECHO_CMD} "${PKGNAME}: Makefile error: in desktop entry $$entry: field 4 (Exec) is empty"; \
+			exit 1; \
+		fi; \
+		if [ -n "$$5" ]; then \
+			for c in `${ECHO_CMD} "$$5" | ${TR} ';' ' '`; do \
+				if ! ${ECHO_CMD} ${VALID_DESKTOP_CATEGORIES} | ${GREP} -wq $$c; then \
+					${ECHO_CMD} "${PKGNAME}: Makefile error: in desktop entry $$entry: category $$c is not a valid desktop category"; \
+					exit 1; \
+				fi; \
+			done; \
+			if ! ${ECHO_CMD} "$$5" | ${GREP} -q ';$$'; then \
+				${ECHO_CMD} "${PKGNAME}: Makefile error: in desktop entry $$entry: field 5 (Categories) does not end with a semicolon"; \
+				exit 1; \
+			fi; \
+		else \
+			if [ -z "`cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} desktop-categories`" ]; then \
+				${ECHO_CMD} "${PKGNAME}: Makefile error: in desktop entry $$entry: field 5 (Categories) is empty and could not be deduced from the CATEGORIES variable"; \
+				exit 1; \
+			fi; \
+		fi; \
+		if [ -z "$$6" ]; then \
+			${ECHO_CMD} "${PKGNAME}: Makefile error: in desktop entry $$entry: field 6 (StartupNotify) is empty"; \
+			exit 1; \
+		fi; \
+		if [ "x$$6" != "xtrue" ] && [ "x$$6" != "xfalse" ]; then \
+			${ECHO_CMD} "${PKGNAME}: Makefile error: in desktop entry $$entry: field 6 (StartupNotify) is not \"true\" or \"false\""; \
+			exit 1; \
+		fi; \
+		shift 6; \
+		num=$$((num + 1)); \
+	done
+.else
+	@${DO_NADA}
+.endif
+
 .if !target(install-desktop-entries)
 install-desktop-entries:
 .if defined(DESKTOP_ENTRIES)
@@ -5370,6 +5544,10 @@ install-desktop-entries:
 	while [ $$# -gt 6 ]; do \
 		filename="$$4.desktop"; \
 		pathname="${DESKTOPDIR}/$$filename"; \
+		categories="$$5"; \
+		if [ -z "$$categories" ]; then \
+			categories="`cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} desktop-categories`"; \
+		fi; \
 		${ECHO_CMD} "${_DESKTOPDIR_REL}$$filename" >> ${TMPPLIST}; \
 		${ECHO_CMD} "[Desktop Entry]" > $$pathname; \
 		${ECHO_CMD} "Type=Application" >> $$pathname; \
@@ -5383,7 +5561,7 @@ install-desktop-entries:
 			${ECHO_CMD} "Icon=$$3" >> $$pathname; \
 		fi; \
 		${ECHO_CMD} "Exec=$$4" >> $$pathname; \
-		${ECHO_CMD} "Categories=$$5" >> $$pathname; \
+		${ECHO_CMD} "Categories=$$categories" >> $$pathname; \
 		${ECHO_CMD} "StartupNotify=$$6" >> $$pathname; \
 		shift 6; \
 	done; \
