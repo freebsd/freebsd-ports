@@ -7,7 +7,7 @@
 
 PORTNAME=	clamav
 PORTVERSION=	0.88.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	clamav
@@ -18,7 +18,7 @@ COMMENT=	Command line virus scanner written entirely in C
 LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4
 RUN_DEPENDS=	lha:${PORTSDIR}/archivers/lha \
 		unarj:${PORTSDIR}/archivers/unarj \
-		zoo:${PORTSDIR}/archivers/zoo \
+		unzoo:${PORTSDIR}/archivers/unzoo \
 		arc:${PORTSDIR}/archivers/arc \
 		unzip:${PORTSDIR}/archivers/unzip
 
