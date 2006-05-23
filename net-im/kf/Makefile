@@ -8,7 +8,8 @@
 PORTNAME=	kf
 PORTVERSION=	0.5.4.1
 CATEGORIES=	net-im
-MASTER_SITES=	http://files.jabberstudio.org/kf/
+MASTER_SITES=	http://jabberstudio.rediris.es/kf/ \
+		http://freebsd.unixfreunde.de/sources/
 
 MAINTAINER=	anray@FreeBSD.org
 COMMENT=	A simple Jabber client using the GTK+ 2.0 toolkit
@@ -27,6 +28,15 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 .ifndef(WITHOUT_GTKSPELL)
 LIB_DEPENDS+=	gtkspell.0:${PORTSDIR}/textproc/gtkspell2
 CONFIGURE_ARGS+=	--enable-gtkspell
+.endif
+
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=		yes
+CONFIGURE_ARGS+=	--enable-nls
+PLIST_SUB=		NLS=""
+.else
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB=		NLS="@comment "
 .endif
 
 .include <bsd.port.mk>
