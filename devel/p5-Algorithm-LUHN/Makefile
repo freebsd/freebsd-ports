@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/T/TA/TAYERS
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	aaron@daltons.ca
+MAINTAINER=	aaron@FreeBSD.org
 COMMENT=	Calculate the Modulus 10 Double Add Double checksum
 
 MAN3=		Algorithm::LUHN.3
