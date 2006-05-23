@@ -383,6 +383,7 @@
     SUBDIR += hs-cpphs
     SUBDIR += hs-crypto
     SUBDIR += hs-drift
+    SUBDIR += hs-fps
     SUBDIR += hs-green-card
     SUBDIR += hs-haddock
     SUBDIR += hs-happy
