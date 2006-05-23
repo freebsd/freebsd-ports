@@ -10,6 +10,39 @@ in the release notes.
 
 All ports committers are allowed to commit to this file.
 
+20060523:
+AUTHOR: portmgr@FreeBSD.org
+
+The following functional changes were made to bsd.port.mk:
+
+  * include bsd.emacs.mk only when USE_EMACS is set [5]
+
+  * Correct the implementation of pretty-print-run-depends-list [8]
+
+  * Use a consistent name for the cookies file when PKGNAMEPREFIX/SUFFIX
+    are set after bsd.port.pre.mk. [9]
+
+  * Include bsd.tcl.mk if USE_TCL_BUILD is defined [10]
+
+  * Set PERL_MM_USE_DEFAULT in BATCH mode [11]
+
+  * Add the {ONLY,NOT}_FOR_ARCH_REASON and
+    {ONLY,NOT}_FOR_ARCH_REASON_${ARCH} variables to allow better
+    customization of the error string reported to users when they
+    attempt a build on an unsupported architecture. [12]
+
+  * Avoid errors from duplicated targets when parsing MLINKS on ports
+    without a default value set. [13]
+
+  * Fix handling of MLINKS when invalid entries are listed [14]
+
+  * Enforce sanity of DESKTOP_ENTRIES.  If the Categories field is
+    omitted, try to map ports categories to their freedesktop.org
+    counterpart [15]
+
+  PR:     95238 [5], 94164 [8], 94219 [9], 92355 [10],
+          95579 [11], 94675 [12], 66109 [13], 66110 [14], 95603 [15]
+
 20060121:
 AUTHOR: portmgr@FreeBSD.org
 The following changes affecting ports developers were introduced:
