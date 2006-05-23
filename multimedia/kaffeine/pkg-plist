@@ -20,6 +20,7 @@ lib/kde3/libkaffeinepart.la
 lib/kde3/libkaffeinepart.so
 lib/libkaffeineaudioencoder.a
 lib/libkaffeineaudioencoder.la
+lib/libkaffeineaudioencoder.so
 lib/libkaffeineaudioencoder.so.0
 lib/libkmediapart.a
 lib/libkmediapart.la
@@ -100,6 +101,7 @@ share/locale/ga/LC_MESSAGES/kaffeine.mo
 share/locale/gl/LC_MESSAGES/kaffeine.mo
 share/locale/he/LC_MESSAGES/kaffeine.mo
 share/locale/hu/LC_MESSAGES/kaffeine.mo
+share/locale/it/LC_MESSAGES/kaffeine.mo
 share/locale/ja/LC_MESSAGES/kaffeine.mo
 share/locale/lt/LC_MESSAGES/kaffeine.mo
 share/locale/mk/LC_MESSAGES/kaffeine.mo
