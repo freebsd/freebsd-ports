@@ -3953,6 +3953,7 @@ hs-c2hs		ports/devel/hs-c2hs
 hs-cpphs	ports/devel/hs-cpphs
 hs-crypto	ports/devel/hs-crypto
 hs-drift	ports/devel/hs-drift
+hs-fps		ports/devel/hs-fps
 hs-frantk	ports/x11-toolkits/hs-frantk
 hs-green-card	ports/devel/hs-green-card
 hs-gtk2hs	ports/x11-toolkits/hs-gtk2hs
