@@ -22,6 +22,7 @@
 prefix=%%PREFIX%%
 
 . %%RC_SUBR%%
+command=${prefix}/bin/pg_ctl
 
 load_rc_config postgresql
 
@@ -34,7 +35,6 @@ postgresql_class=${postgresql_class:-"default"}
 
 name=postgresql
 rcvar=`set_rcvar`
-command=${prefix}/bin/pg_ctl
 command_args="-D ${postgresql_data} ${postgresql_flags}"
 extra_commands="reload initdb"
 

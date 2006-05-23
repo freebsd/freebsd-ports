@@ -20,6 +20,7 @@
 # For postmaster startup options, edit ${postgresql_data}/postgresql.conf
 
 prefix=%%PREFIX%%
+command=${prefix}/bin/pg_ctl
 
 . %%RC_SUBR%%
 
@@ -34,7 +35,6 @@ postgresql_class=${postgresql_class:-"default"}
 
 name=postgresql
 rcvar=`set_rcvar`
-command=${prefix}/bin/pg_ctl
 command_args="-D ${postgresql_data} ${postgresql_flags}"
 extra_commands="reload initdb"
 
