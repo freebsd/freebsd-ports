@@ -1,3 +1,5 @@
 bin/editss
-share/editss/editssrc
-@dirrm share/editss
+libexec/editss
+%%DATADIR%%/editssrc
+%%DATADIR%%/ships
+@dirrm %%DATADIR%%
