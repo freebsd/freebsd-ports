@@ -17,7 +17,7 @@ DIST_SUBDIR=	fp${PORTVERSION:S/.//g}
 MAINTAINER=	swhetzel@gmail.com
 COMMENT=	Microsoft Frontpage 2002 Extensions
 
-FORBIDDEN=	Remote code execution vulnerability
+FORBIDDEN=	http://vuxml.FreeBSD.org/c0171f59-ea8a-11da-be02-000c6ec775d9.html
 
 ONLY_FOR_ARCHS=	i386 ia64 amd64 alpha sparc
 
