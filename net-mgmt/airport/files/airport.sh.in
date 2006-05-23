@@ -1,4 +1,6 @@
 #! /bin/sh
+#
+# $FreeBSD$
 
 case $0 in
 	*airport)
@@ -21,6 +23,5 @@ case $0 in
 	exit 1
 esac
 
-exec %%PREFIX%%/bin/javavm -jar %%PREFIX%%/share/java/${file}.jar
-
-exit 1
+JAVA_VERSION="%%JAVA_VERSION%%" \
+	exec "%%LOCALBASE%%/bin/java" -jar "%%DATADIR%%/${file}.jar" "$@"
