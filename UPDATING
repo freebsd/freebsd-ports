@@ -6,6 +6,12 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20060524:
+  AFFECTS: users of java/jasmin
+  AUTHOR: hq@FreeBSD.org
+
+  The executable has been renamed to 'jasmin' (was 'jasmin.sh')
+
 2006-05-22:
   AFFECTS: users of astro/boinc-setiathome-enhanced,
            astro/boinc-setiathome-naparst, astro-boinc-setiathome
