@@ -1,0 +1,25 @@
+%%SITE_PERL%%/Catalyst/Plugin/SRU.pm
+%%SITE_PERL%%/SRU.pm
+%%SITE_PERL%%/SRU/Request.pm
+%%SITE_PERL%%/SRU/Request/Explain.pm
+%%SITE_PERL%%/SRU/Request/Scan.pm
+%%SITE_PERL%%/SRU/Request/SearchRetrieve.pm
+%%SITE_PERL%%/SRU/Response.pm
+%%SITE_PERL%%/SRU/Response/Diagnostic.pm
+%%SITE_PERL%%/SRU/Response/Explain.pm
+%%SITE_PERL%%/SRU/Response/Record.pm
+%%SITE_PERL%%/SRU/Response/Scan.pm
+%%SITE_PERL%%/SRU/Response/SearchRetrieve.pm
+%%SITE_PERL%%/SRU/Response/Term.pm
+%%SITE_PERL%%/SRU/Server.pm
+%%SITE_PERL%%/SRU/Utils.pm
+%%SITE_PERL%%/SRU/Utils/XML.pm
+%%SITE_PERL%%/SRU/Utils/XMLTest.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SRU/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SRU
+@dirrm %%SITE_PERL%%/SRU/Utils
+@dirrm %%SITE_PERL%%/SRU/Response
+@dirrm %%SITE_PERL%%/SRU/Request
+@dirrmtry %%SITE_PERL%%/SRU
+@dirrmtry %%SITE_PERL%%/Catalyst/Plugin
+@dirrmtry %%SITE_PERL%%/Catalyst
