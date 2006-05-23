@@ -7,7 +7,7 @@
 
 PORTNAME?=	postgresql
 PKGNAMESUFFIX?=	-server
-PORTVERSION?=	7.3.14
+PORTVERSION?=	7.3.15
 PORTREVISION?=	0
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
@@ -212,7 +212,7 @@ post-build:
 .endif
 
 .if defined(SERVER_ONLY)
-pre-install:
+pre-su-install:
 	@ ${SETENV} PKG_PREFIX=${PREFIX} \
 		${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
 .endif
