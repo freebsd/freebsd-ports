@@ -3,4 +3,3 @@
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/LUHN
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm
 @dirrmtry %%SITE_PERL%%/Algorithm
-
