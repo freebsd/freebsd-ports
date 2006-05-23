@@ -9380,6 +9380,7 @@ p5-Test-Data	ports/devel/p5-Test-Data
 p5-Test-Deep	ports/devel/p5-Test-Deep
 p5-Test-Differences	ports/devel/p5-Test-Differences
 p5-Test-Exception	ports/devel/p5-Test-Exception
+p5-Test-Expect	ports/devel/p5-Test-Expect
 p5-Test-File	ports/devel/p5-Test-File
 p5-Test-File-Contents	ports/devel/p5-Test-File-Contents
 p5-Test-HTTP-Server-Simple	ports/www/p5-Test-HTTP-Server-Simple
