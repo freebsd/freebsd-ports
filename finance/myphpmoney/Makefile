@@ -15,7 +15,6 @@ DISTNAME=		${PORTNAME}-${PORTVERSION:S/.r/RC/}
 MAINTAINER=		courou@users.sourceforge.net
 COMMENT=		A PHP script for managing your accounts
 
-PREFIX=			${LOCALBASE}
 WEBOWN?=		www
 WEBGRP?=		www
 APACHEDIR=		${PREFIX}/www/data
@@ -24,16 +23,8 @@ USE_BZIP2=		yes
 USE_PHP=		yes
 WANT_PHP_WEB=		yes
 NO_BUILD=		yes
-PLIST=			${WRKDIR}/plist
 
 PLIST_SUB+=		INSTALLDIR=${INSTALLDIR:S,^${PREFIX}/,,}
-
-post-patch:
-	@cd ${WRKSRC};\
-	${FIND} . ! -type d | ${SORT} | ${SED} "s|^.|%%INSTALLDIR%%|"\
-		>${PLIST};\
-	${FIND} . -type d | ${SORT} -r | ${SED} "s|^.|@dirrm %%INSTALLDIR%%|"\
-		>>${PLIST}
 
 do-install:
 	${MKDIR} ${INSTALLDIR}
