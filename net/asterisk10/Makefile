@@ -28,7 +28,7 @@ LIB_DEPENDS=	speex.3:${PORTSDIR}/audio/speex \
 		curl.3:${PORTSDIR}/ftp/curl
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 
-ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS=	i386 sparc64 amd64
 
 GNU_CONFIGURE=	yes
 CONFIGURE_WRKSRC=	${WRKSRC}/editline
