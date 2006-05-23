@@ -6,9 +6,11 @@
 #
 
 PORTNAME=	xmlenc
-PORTVERSION=	0.51
+PORTVERSION=	0.52
 CATEGORIES=	textproc java
-MASTER_SITES=	http://${PORTNAME}.sourceforge.net/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	xmlenc
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	hq@FreeBSD.org
 COMMENT=	Light-weight XML encoding library for Java
