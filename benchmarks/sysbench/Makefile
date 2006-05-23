@@ -21,7 +21,9 @@ OPTIONS=	MYSQL "Enable MySQL support" on \
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_MYSQL)
+.if defined(WITHOUT_MYSQL)
+CONFIGURE_ARGS+=	--with-mysql=no
+.else
 USE_MYSQL=	yes
 CONFIGURE_ARGS+=	--with-mysql
 .endif
@@ -30,6 +32,8 @@ CONFIGURE_ARGS+=	--with-mysql
 USE_PGSQL=	yes
 WANT_PGSQL_VER?=	80
 CONFIGURE_ARGS+=	--with-pgsql
+.else
+CONFIGURE_ARGS+=	--with-pgsql=no
 .endif
 
 do-install:
