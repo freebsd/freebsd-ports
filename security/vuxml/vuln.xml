@@ -34,6 +34,54 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="c0171f59-ea8a-11da-be02-000c6ec775d9">
+    <topic>frontpage -- cross site scripting vulnerability</topic>
+    <affects>
+      <package>
+	<name>frontpage</name>
+	<name>mod_frontpage13</name>
+	<name>mod_frontpage20</name>
+	<name>mod_frontpage21</name>
+	<name>mod_frontpage22</name>
+	<range><lt>5.0.2.4803</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Esteban Martinez Fayo reports:</p>
+	<blockquote cite="http://marc.theaimsgroup.com/?l=bugtraq&amp;m=114487846329000">
+	  <p>The FrontPage Server Extensions 2002 (included in Windows
+	    Sever 2003 IIS 6.0 and available as a separate download
+	    for Windows 2000 and XP) has a web page
+	    /_vti_bin/_vti_adm/fpadmdll.dll that is used for
+	    administrative purposes.  This web page is vulnerable to
+	    cross site scripting attacks allowing an attacker to run
+	    client-side script on behalf of an FPSE user. If the
+	    victim is an administrator, the attacker could take
+	    complete control of a Front Page Server Extensions 2002
+	    server.</p>
+	  <p>To exploit the vulnerability an attacker can send a
+	    specially crafted e-mail message to a FPSE user and then
+	    persuade the user to click a link in the e-mail
+	    message.</p>
+	  <p>In addition, this vulnerability can be exploited if an
+	    attacker hosts a malicious website and persuade the user
+	    to visit it.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-0015</cvename>
+      <mlist msgid="0e3f01c65e78$93c00800$de00a8c0@rigel">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=114487846329000</mlist>
+      <url>http://www.microsoft.com/technet/security/bulletin/MS06-017.mspx</url>
+      <url>http://www.rtr.com/fpsupport/fpse_release_may_2_2006.htm</url>
+    </references>
+    <dates>
+      <discovery>2006-04-12</discovery>
+      <entry>2006-05-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="72d8df84-ea6d-11da-8a53-00123ffe8333">
     <topic>cscope -- buffer overflow vulnerabilities</topic>
     <affects>

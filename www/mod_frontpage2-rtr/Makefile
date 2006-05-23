@@ -16,7 +16,7 @@ DISTFILES=	${FRONTPAGE}
 MAINTAINER=	swhetzel@gmail.com
 COMMENT=	Microsoft mod_frontpage (by RTR) for Apache ${FP_AP_VER}
 
-FORBIDDEN=	Remote code execution vulnerability
+FORBIDDEN=	http://vuxml.FreeBSD.org/c0171f59-ea8a-11da-be02-000c6ec775d9.html
 
 RUN_DEPENDS=	${LOCALBASE}/${FP_SETPERM}:${PORTSDIR}/www/frontpage
 
