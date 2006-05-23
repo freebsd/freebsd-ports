@@ -1,5 +1,6 @@
-share/java/classes/jasmin.jar
-bin/jasmin.sh
+@comment $FreeBSD$
+%%JAVAJARDIR%%/jasmin.jar
+bin/jasmin
 %%EXAMPLESDIR%%/ANewArray.j
 %%EXAMPLESDIR%%/AnInterface.j
 %%EXAMPLESDIR%%/Arrays.j
