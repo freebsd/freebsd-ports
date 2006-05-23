@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	File
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	aaron@daltons.ca
+MAINTAINER=	aaron@FreeBSD.org
 COMMENT=	Perl module for random selecting of a file
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Want.pm:${PORTSDIR}/devel/p5-Want
@@ -25,7 +25,7 @@ MAN3=		File::Random.3
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500600
-IGNORE= Perl 5.6 or newer required. Install lang/perl5 or lang/perl5.8 and try again.
+IGNORE=	requires at least Perl 5.6. Please install lang/perl5.8 and try again
 .endif
 
 .include <bsd.port.post.mk>
