@@ -17,6 +17,8 @@ DIST_SUBDIR=	fp${PORTVERSION:S/.//g}
 MAINTAINER=	swhetzel@gmail.com
 COMMENT=	Microsoft Frontpage 2002 Extensions
 
+FORBIDDEN=	Remote code execution vulnerability
+
 ONLY_FOR_ARCHS=	i386 ia64 amd64 alpha sparc
 
 EXTRACT_ONLY=
