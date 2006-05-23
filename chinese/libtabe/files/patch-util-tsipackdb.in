@@ -1,0 +1,63 @@
+--- util/tsipackdb.in.orig	Sun Nov 11 07:33:09 2001
++++ util/tsipackdb.in	Mon May  1 10:19:51 2006
+@@ -29,31 +29,37 @@
+ }
+ 
+ pack_db_file () {
+-    db_stat=`mywhich ${1}_stat`
+-    db_dump=`mywhich ${1}_dump`
+-    db_load=`mywhich ${1}_load`
+-    test x$db_stat != x && test x$db_dump != x && test x$db_load != x && \
+-	$db_stat -d $2 2>&1 | (
+-	    read line
+-	    read line
+-	    test "$line" = "$3" && \
+-		echo "Using $db_dump and $db_load to pack $2 ...." && \
+-		${1}_dump $2 | ${1}_load $2.new && \
+-		mv $2.new $2 && \
+-		return 0
+-	    return -1 \
+-	)
+-}
++    case "${1}" in
++    db|db3|db4|db41) 
++        db_dump=`mywhich ${1}_dump`
++        db_load=`mywhich ${1}_load`
++        ;;
++    db-4.[234])
++        db_name=${1#db-}
++        db_dump=`mywhich db_dump-${db_name}`
++        db_load=`mywhich db_load-${db_name}`
++        ;;
++    *)
++        echo "unsupportted Berkyley version: ${1}"
++        return 1
++    esac
++    if [ -x "$db_dump" ] && [ -x "$db_load" ]; then
++
++	echo "Try using $db_dump and $db_load to pack $2 ...."
+ 
++	$db_dump $2 > $2.tmp && \
++	$db_load $2.new < $2.tmp && \
++	mv $2.new $2 && \
++	return 0
+ 
+-if [ "$USE_DB" = "DB2" ]; then
+-    pack_db_file db  $1 "$DB2_VER" && exit 0
+-    pack_db_file db2 $1 "$DB2_VER" && exit 0
+-fi
++    fi
++
++    return 1
++}
+ 
+-if [ "$USE_DB" = "DB3" ]; then
+-    pack_db_file db  $1 "$DB3_VER" && exit 0
+-    pack_db_file db3 $1 "$DB3_VER" && exit 0
+-fi
++for dbname in @with_db_name@ db db2 db3 db4
++do
++    pack_db_file $dbname $1 && exit 0
++done
+ 
+ exit 0

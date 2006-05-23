@@ -1,36 +1,69 @@
---- configure.orig	Sat Oct 20 20:03:29 2001
-+++ configure	Wed Apr  5 13:26:48 2006
-@@ -5315,18 +5315,15 @@
+--- configure.orig	Sat Oct 20 07:03:29 2001
++++ configure	Mon May  1 10:53:24 2006
+@@ -22,6 +22,8 @@
+ ac_help="$ac_help
+   --with-db-bin=PATH      set the binary dir of Berkeley DB2/3."
+ ac_help="$ac_help
++  --with-db-name=NAME     set the library name of Berkeley DB."
++ac_help="$ac_help
+   --enable-shared[=PKGS]  build shared libraries [default=yes]"
+ ac_help="$ac_help
+   --enable-static[=PKGS]  build static libraries [default=yes]"
+@@ -790,6 +792,14 @@
+   :
+ fi
+ 
++# Check whether --with-db_name or --without-db_name was given.
++if test "${with_db_name+set}" = set; then
++  withval="$with_db_name"
++    test x$withval != x && with_db_name="$withval"
++else
++    with_db_name='db'
++fi;
++
+ 
+ if test "$program_prefix" != NONE; then
+     program_prefix="$program_prefix/"
+@@ -5315,18 +5325,22 @@
    cat conftest.$ac_ext >&5
  fi
  rm -f conftest*
 -test "$ac_cv_search_db_create" = "no" && for i in db db3; do
-+test "$ac_cv_search_db_create" = "no" && for i in db db3 db4 db41 db-4.2 db-4.3 db-4.4; do
++test "$ac_cv_search_db_create" = "no" && for i in $with_db_name; do
  LIBS="-l$i  $ac_func_search_save_LIBS"
++__db_create="db_create"
++if [ "$i" = "db-4.2" ]; then
++  __db_create="db_create_4002"
++fi
  cat > conftest.$ac_ext <<EOF
  #line 5322 "configure"
  #include "confdefs.h"
--/* Override any gcc2 internal prototype to avoid an error.  */
--/* We use char because int might match the return type of a gcc2
--    builtin and then its argument prototype would still apply.  */
+ /* Override any gcc2 internal prototype to avoid an error.  */
+ /* We use char because int might match the return type of a gcc2
+     builtin and then its argument prototype would still apply.  */
 -char db_create();
-+#include "db.h"
++char $__db_create();
  
  int main() {
 -db_create()
-+db_create(0,0,0)
++$__db_create()
  ; return 0; }
  EOF
  if { (eval echo configure:5333: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
-@@ -5726,11 +5723,6 @@
-   echo "$ac_t""libraries $x_libraries, headers $x_includes" 1>&6
+@@ -5385,7 +5399,7 @@
+   cat conftest.$ac_ext >&5
  fi
- 
--if test x$no_x = xyes; then
--    echo "$ac_t""You need X11R6 header files to compile libtabe." 1>&6
--    echo "$ac_t""Please use --x-includes to configure." 1>&6
--    exit 1
--fi
- 
- 
- 
+ rm -f conftest*
+-test "$ac_cv_search_db_open" = "no" && for i in db db2; do
++test "$ac_cv_search_db_open" = "no" && for i in $with_db_name; do
+ LIBS="-l$i  $ac_func_search_save_LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 5392 "configure"
+@@ -6219,6 +6233,7 @@
+ s%@with_db_inc@%$with_db_inc%g
+ s%@with_db_lib@%$with_db_lib%g
+ s%@with_db_bin@%$with_db_bin%g
++s%@with_db_name@%$with_db_name%g
+ s%@USE_DB@%$USE_DB%g
+ s%@x_includes@%$x_includes%g
+ s%@x_libraries@%$x_libraries%g
