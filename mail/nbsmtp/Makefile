@@ -10,8 +10,7 @@
 PORTNAME=	nbsmtp
 PORTVERSION=	1.00
 CATEGORIES=	mail
-MASTER_SITES=	http://www.gentoo-es.org/~ferdy/ \
-		http://www.it.uc3m.es/~ferdy/nbsmtp/
+MASTER_SITES=	http://critical.ch/distfiles/
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Simple program for outgoing SMTP delivery
