@@ -232,6 +232,7 @@
     SUBDIR += linux-beonex
     SUBDIR += linux-firefox
     SUBDIR += linux-firefox-devel
+    SUBDIR += linux-flashplugin6
     SUBDIR += linux-flashplugin7
     SUBDIR += linux-flock
     SUBDIR += linux-mozilla

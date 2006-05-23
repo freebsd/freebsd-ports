@@ -6063,6 +6063,7 @@ linux-esound	ports/audio/linux-esound
 linux-expat	ports/textproc/linux-expat
 linux-firefox	ports/www/linux-firefox
 linux-firefox-devel	ports/www/linux-firefox-devel
+linux-flashplugin6	ports/www/linux-flashplugin6
 linux-flashplugin7	ports/www/linux-flashplugin7
 linux-flock	ports/www/linux-flock
 linux-fontconfig	ports/x11-fonts/linux-fontconfig
