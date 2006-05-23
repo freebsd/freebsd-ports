@@ -44,6 +44,9 @@ include/poppler/Stream.h
 include/poppler/TextOutputDev.h
 include/poppler/UGooString.h
 include/poppler/UTF8.h
+include/poppler/UnicodeCClassTables.h
+include/poppler/UnicodeCompTables.h
+include/poppler/UnicodeDecompTables.h
 include/poppler/UnicodeMap.h
 include/poppler/UnicodeMapTables.h
 include/poppler/UnicodeTypeTable.h
