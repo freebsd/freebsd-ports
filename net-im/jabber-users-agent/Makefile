@@ -8,7 +8,8 @@
 PORTNAME=	users-agent
 PORTVERSION=	1.2
 CATEGORIES=	net-im
-MASTER_SITES=	http://files.jabberstudio.org/users-agent/
+MASTER_SITES=	http://jabberstudio.rediris.es/users-agent/ \
+		http://freebsd.unixfreunde.de/sources/
 PKGNAMEPREFIX=	jabber-
 DISTNAME=	Users-Agent-${PORTVERSION}
 
