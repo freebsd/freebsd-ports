@@ -44,6 +44,7 @@ bin/meta
 %%SITE_PERL%%/Acme/MetaSyntactic/magic8ball.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/magicroundabout.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/monty_spam.pm
+%%SITE_PERL%%/Acme/MetaSyntactic/norse_mythology.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/octothorpe.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/opcodes.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/oulipo.pm
