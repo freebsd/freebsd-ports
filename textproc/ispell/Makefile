@@ -7,7 +7,7 @@
 
 PORTNAME?=	ispell
 PORTVERSION?=	3.2.06
-PORTREVISION?=	14
+PORTREVISION?=	15
 CATEGORIES+=	textproc
 MASTER_SITES=	http://fmg-www.cs.ucla.edu/geoff/tars/ \
 		http://distfiles.opendarwin.org/
@@ -44,7 +44,8 @@ pre-everything::
 	@${ECHO_MSG} '*                              Use make-flag:           *'
 #	@${ECHO_MSG} '*  - Afrikaans                 ISPELL_AF=yes            *'
 	@${ECHO_MSG} '*  - British                   ISPELL_BRITISH=yes       *'
-	@${ECHO_MSG} '*    (replaces the American dictionary)                 *'
+	@${ECHO_MSG} '*    (replaces the American dictionary, specify also    *'
+	@${ECHO_MSG} '*     ISPELL_INCLAMERICAN=yes to have both)             *'
 	@${ECHO_MSG} '*  - Brazilian Portuguese      ISPELL_BR=yes            *'
 	@${ECHO_MSG} '*  - Bulgarian                 ISPELL_BG=yes            *'
 	@${ECHO_MSG} '*  - Dutch                     ISPELL_NL=yes            *'
@@ -63,6 +64,9 @@ pre-everything::
 .else
 .if defined(ISPELL_BRITISH)
 SCRIPTS_ENV+=	ISPELL_BRITISH=${ISPELL_BRITISH}
+.if defined(ISPELL_INCLAMERICAN)
+SCRIPTS_ENV+=   ISPELL_INCLAMERICAN=${ISPELL_INCLAMERICAN}
+.endif
 .endif
 .if defined(ISPELL_IT)
 ITDISTFILE=	ispell-it2001.tgz
@@ -333,6 +337,9 @@ post-install:
 .endif
 .if defined(ISPELL_BRITISH)
 	@${CAT} ${MASTERDIR}/pkg-plist.british >> ${TMPPLIST}
+.if defined(ISPELL_INCLAMERICAN)
+	@${CAT} ${MASTERDIR}/pkg-plist.am >> ${TMPPLIST}
+.endif
 .else
 	@${CAT} ${MASTERDIR}/pkg-plist.am >> ${TMPPLIST}
 .endif

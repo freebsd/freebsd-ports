@@ -14,6 +14,12 @@ cd $WRKSRC || exit 1;
 
 sed -e s:/usr/local:$PREFIX: <local.h.samp >local.h || exit 1;
 echo "#undef NO8BIT" >> local.h 
+
+if [ ! -z "ISPELL_INCLAMERICAN" ] && \
+    [ "$ISPELL_INCLAMERICAN" = "YES" -o "$ISPELL_INCLAMERICAN" = "yes" ]; then
+	LOCAL="{american,MASTERDICTS=american.med+,HASHFILES=americanmed+.hash,EXTRADICT=/usr/share/dict/words}"
+    fi
+
 if [ ! -z "$ISPELL_BRITISH" ] && \
     [ "$ISPELL_BRITISH" = "YES" -o "$ISPELL_BRITISH" = "yes" ]; then
 	echo "#define LANGUAGES \"{british,MASTERDICTS=british.xlg,HASHFILES=britishxlg.hash,EXTRADICT=}$LOCAL\""  >>local.h ||exit 1;
