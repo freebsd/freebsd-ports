@@ -1,10 +1,5 @@
-===================================================================
-RCS file: /cvsroot/cscope/cscope/src/main.c,v
-retrieving revision 1.33
-retrieving revision 1.34
-diff -u -r1.33 -r1.34
---- src/main.c	2004/04/30 15:31:43	1.33
-+++ src/main.c	2004/12/06 14:56:43	1.34
+--- src/main.c.orig	Thu Aug 14 11:36:18 2003
++++ src/main.c	Tue May 23 11:56:09 2006
 @@ -101,6 +101,7 @@
  #endif
  char	temp1[PATHLEN + 1];	/* temporary file name */
@@ -21,7 +16,7 @@ diff -u -r1.33 -r1.34
  	
  	yyin = stdin;
  	yyout = stdout;
-@@ -330,9 +332,18 @@
+@@ -330,9 +332,23 @@
  	}
  
  	/* create the temporary file names */
@@ -29,7 +24,7 @@ diff -u -r1.33 -r1.34
  	pid = getpid();
 -	(void) sprintf(temp1, "%s/cscope%d.1", tmpdir, pid);
 -	(void) sprintf(temp2, "%s/cscope%d.2", tmpdir, pid);
-+	(void) sprintf(tempdirpv, "%s/cscope.%d", tmpdir, pid);
++	(void) snprintf(tempdirpv, sizeof(tempdirpv), "%s/cscope.%d", tmpdir, pid);
 +	if(mkdir(tempdirpv,S_IRWXU)) 
 +	{
 +		fprintf(stderr, "cscope: Could not create private temp dir %s\n",tempdirpv);
@@ -37,12 +32,17 @@ diff -u -r1.33 -r1.34
 +	}
 +	umask(orig_umask);
 +
-+	(void) sprintf(temp1, "%s/cscope.1", tempdirpv, pid);
-+	(void) sprintf(temp2, "%s/cscope.2", tempdirpv, pid);
++	if ((strlen(tempdirpv) + strlen("/cscope.X")) > PATHLEN) {
++		fprintf(stderr, "cscope: Could not create private temp files\n");
++		myexit(1);
++	}
++
++	(void) snprintf(temp1, sizeof(temp1), "%s/cscope.1", tempdirpv);
++	(void) snprintf(temp2, sizeof(temp2), "%s/cscope.2", tempdirpv);
  
  	/* if running in the foreground */
  	if (signal(SIGINT, SIG_IGN) != SIG_IGN) {
-@@ -834,6 +845,7 @@
+@@ -834,6 +850,7 @@
  	if (temp1[0] != '\0') {
  		(void) unlink(temp1);
  		(void) unlink(temp2);
