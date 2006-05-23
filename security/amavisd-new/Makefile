@@ -12,7 +12,7 @@ PORTEPOCH=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.ijs.si/software/amavisd/ \
 		http://mirrors.catpipe.net/amavisd-new/ \
-		http://ftp.cfu.net/pub/amavisd-new/
+		http://mirror.mainloop.se/amavisd/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p/-p/}
 
 MAINTAINER=	gkovesdan@t-hosting.hu
