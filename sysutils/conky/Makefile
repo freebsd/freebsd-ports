@@ -7,6 +7,7 @@
 
 PORTNAME=	conky
 PORTVERSION=	1.4.2
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -28,8 +29,8 @@ PORTDOCS=	README AUTHORS ChangeLog TODO \
 		docs.html variables.html config_settings.html
 
 .if defined(WITH_BMPX)
-BUILD_DEPENDS+=		bmpx:${PORTSDIR}/multimedia/bmpx
-RUN_DEPENDS+=		bmpx:${PORTSDIR}/multimedia/bmpx
+BUILD_DEPENDS+=		beep-media-player-2:${PORTSDIR}/multimedia/bmpx
+RUN_DEPENDS+=		beep-media-player-2:${PORTSDIR}/multimedia/bmpx
 LIB_DEPENDS+=		dbus-1.2:${PORTSDIR}/devel/dbus
 CONFIGURE_ARGS+=	--enable-bmpx
 .else
