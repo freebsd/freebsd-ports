@@ -11,6 +11,3 @@ These three delegation mechanisms can be specified for:
 	* all methods, delegated or not.
 
 WWW: http://search.cpan.org/dist/Class-Delegation/
-
--- Sergey Skvortsov
-skv@FreeBSD.org
