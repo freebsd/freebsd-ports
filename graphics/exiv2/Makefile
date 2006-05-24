@@ -7,6 +7,7 @@
 
 PORTNAME=	exiv2
 PORTVERSION=	0.9.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.exiv2.org/
 
