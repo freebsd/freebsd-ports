@@ -8,7 +8,8 @@
 PORTNAME=	jabberd
 PORTVERSION=	2.0.11
 CATEGORIES=	net-im
-MASTER_SITES=	http://files.jabberstudio.org/jabberd2/
+MASTER_SITES=	http://jabberstudio.rediris.es/jabberd2/ \
+		http://jabberstudio.2nw.net/jabberd2/
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}s${PORTVERSION:E}
 DIST_SUBDIR=	jabber
 
@@ -16,8 +17,6 @@ MAINTAINER=	kirk@strauser.com
 COMMENT=	Online presence and instant messaging server
 
 LIB_DEPENDS=	idn.16:${PORTSDIR}/dns/libidn
-
-BROKEN=		Unfetchable
 
 OPTIONS=	POSTGRESQL "Use PostgreSQL for storage and authentication" off \
 		MYSQL "Use MySQL for storage and authentication" off \
