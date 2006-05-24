@@ -7,16 +7,16 @@
 #
 
 PORTNAME=	fasta3
-PORTVERSION=	34.t25.d6
+PORTVERSION=	34.t25.d7
 CATEGORIES=	biology
-MASTER_SITES=	ftp://ftp.virginia.edu/pub/fasta/
+MASTER_SITES=	ftp://ftp.virginia.edu/pub/fasta/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	sem
 DISTNAME=	fasta${PORTVERSION:S/.//g}
 EXTRACT_SUFX=	.shar.Z
 
 MAINTAINER=	fernan@iib.unsam.edu.ar
 COMMENT=	A collection of programs for searching DNA and protein databases
-
-BROKEN=		Unfetchable
 
 NO_CDROM=	"May not be sold or incorporated into a commercial product"
 WRKSRC=		${WRKDIR}/${PORTNAME}
@@ -45,9 +45,6 @@ do-extract:
 	@ for file in ${EXTRACT_ONLY}; do \
 	  cd ${WRKSRC} && (${GZCAT} ${DISTDIR}/$${file} | ${SH} >/dev/null); \
 	done
-
-post-extract:
-	@ cp ${FILESDIR}/Makefile.freebsd ${WRKSRC}
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/fastlibs ${PREFIX}/etc/fastlibs.sample
