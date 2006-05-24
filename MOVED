@@ -2294,3 +2294,4 @@ net/callgen|net/callgen323|2006-05-15|Moved to a better name
 math/vecfem||2006-05-15|removed deprecated port
 astro/boinc-setiathome|astro/boinc-setiathome-enhanced|2006-05-22|project migrated to enhanced
 astro/boinc-setiathome-naparst|astro/boinc-setiathome-enhanced|2006-05-22|project migrated to enhanced
+audio/mutagen|audio/py-mutagen|2006-05-24|correctly rename python library
