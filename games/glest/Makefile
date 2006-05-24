@@ -7,6 +7,7 @@
 
 PORTNAME=	glest
 PORTVERSION=	2.0.0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,7 +17,7 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	acardenas@bsd.org.pe
 COMMENT=	Free 3d real-time customizable strategy game
 
-LIB_DEPENDS=	xerces-c.26:${PORTSDIR}/textproc/xerces-c2 \
+LIB_DEPENDS=	xerces-c.27:${PORTSDIR}/textproc/xerces-c2 \
 		vorbis.3:${PORTSDIR}/audio/libvorbis \
 		openal.0:${PORTSDIR}/audio/openal \
 		alut.0:${PORTSDIR}/audio/freealut
