@@ -1,20 +1,20 @@
 bin/glurp
+%%DATADIR%%/glurp.glade
 %%DATADIR%%/pixmaps/add.png
 %%DATADIR%%/pixmaps/config.png
 %%DATADIR%%/pixmaps/media-audiofile.png
-%%DATADIR%%/pixmaps/player-prev.png
-%%DATADIR%%/pixmaps/player-play.png
-%%DATADIR%%/pixmaps/player-pause.png
-%%DATADIR%%/pixmaps/player-stop.png
-%%DATADIR%%/pixmaps/player-next.png
-%%DATADIR%%/pixmaps/player-repeat.png
-%%DATADIR%%/pixmaps/player-random.png
-%%DATADIR%%/pixmaps/online.png
 %%DATADIR%%/pixmaps/offline.png
+%%DATADIR%%/pixmaps/online.png
 %%DATADIR%%/pixmaps/outputs.png
+%%DATADIR%%/pixmaps/player-next.png
+%%DATADIR%%/pixmaps/player-pause.png
+%%DATADIR%%/pixmaps/player-play.png
+%%DATADIR%%/pixmaps/player-prev.png
+%%DATADIR%%/pixmaps/player-random.png
+%%DATADIR%%/pixmaps/player-repeat.png
+%%DATADIR%%/pixmaps/player-stop.png
 %%DATADIR%%/pixmaps/playlist.png
 %%DATADIR%%/pixmaps/playlists.png
 %%DATADIR%%/pixmaps/remove.png
-%%DATADIR%%/glurp.glade
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%
