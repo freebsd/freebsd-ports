@@ -59,6 +59,8 @@ PORTDOCS=	AUTHORS ChangeLog FAQ FAQ.html HACKING HTML \
 .if defined(WITH_SPAMPHOBIA)
 PATCH_SITES+=	http://people.freebsd.org/~leeym/:SPAMPHOBIA
 PATCHFILES+=	${DISTNAME}-spamphobia.diff.gz:SPAMPHOBIA
+post-patch:
+	${REINPLACE_CMD} -e '/nocem filter/s|logd|//logd|g' ${WRKSRC}/src/xover.c
 .endif
 
 post-configure:
