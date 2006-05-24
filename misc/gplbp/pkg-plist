@@ -1,8 +1,8 @@
 bin/gplbp
-share/gplbp/editcopy.xpm
-share/gplbp/editcut.xpm
-share/gplbp/editpaste.xpm
-share/gplbp/filenew.xpm
-share/gplbp/fileopen.xpm
-share/gplbp/fileprint.xpm
-@dirrm share/gplbp
+%%DATADIR%%/editcopy.xpm
+%%DATADIR%%/editcut.xpm
+%%DATADIR%%/editpaste.xpm
+%%DATADIR%%/filenew.xpm
+%%DATADIR%%/fileopen.xpm
+%%DATADIR%%/fileprint.xpm
+@dirrm %%DATADIR%%
