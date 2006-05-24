@@ -7634,6 +7634,7 @@ p5-Algorithm-NaiveBayes	ports/devel/p5-Algorithm-NaiveBayes
 p5-Algorithm-Networksort	ports/devel/p5-Algorithm-Networksort
 p5-Algorithm-Numerical-Shuffle	ports/devel/p5-Algorithm-Numerical-Shuffle
 p5-Algorithm-Permute	ports/devel/p5-Algorithm-Permute
+p5-Algorithm-RabinKarp	ports/textproc/p5-Algorithm-RabinKarp
 p5-Algorithm-SVM	ports/devel/p5-Algorithm-SVM
 p5-Alias	ports/devel/p5-Alias
 p5-Altoids	ports/net-mgmt/p5-Altoids
