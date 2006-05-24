@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	polyester
-PORTVERSION=	0.9
+PORTVERSION=	0.9.2
 CATEGORIES=	x11-themes kde
 MASTER_SITES=	http://www.notmart.org/files/
 PKGNAMEPREFIX=	kde-style-
