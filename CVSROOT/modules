@@ -9773,6 +9773,7 @@ pam_pgina	ports/security/pam_pgina
 pam_pop3	ports/security/pam_pop3
 pam_pseudo	ports/security/pam_pseudo
 pam_pwdfile	ports/security/pam_pwdfile
+pam_require	ports/security/pam_require
 pam_smb		ports/security/pam_smb
 paman		ports/audio/paman
 paml		ports/biology/paml
