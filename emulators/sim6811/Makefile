@@ -9,7 +9,7 @@ PORTNAME=	sim6811
 PORTVERSION=	1.6
 PORTREVISION=	2
 CATEGORIES=	emulators
-MASTER_SITES=	ftp://crl.nmsu.edu/pub/non-lexical/6811/
+MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
 DISTNAME=	sim
 EXTRACT_SUFX=	.tar.Z
 
