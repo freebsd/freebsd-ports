@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zip
-PORTVERSION=	1.2.1
+PORTVERSION=	1.3.1
 CATEGORIES=	archivers pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
