@@ -7,7 +7,7 @@
 
 PORTNAME=	rmagick
 PORTVERSION=	1.9.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics ruby
 MASTER_SITES=	http://rubyforge.lauschmusik.de/rmagick/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -44,7 +44,7 @@ DOCS=		ChangeLog README.html
 .if defined(WITH_GRAPHICSMAGICK)
 LIB_DEPENDS=GraphicsMagick.1:${PORTSDIR}/graphics/GraphicsMagick
 .else
-LIB_DEPENDS=Magick.9:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS=Magick.10:${PORTSDIR}/graphics/ImageMagick
 .endif
 
 .if ${OSVERSION} < 500000

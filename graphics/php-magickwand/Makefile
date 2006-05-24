@@ -7,6 +7,7 @@
 
 PORTNAME=	magickwand
 PORTVERSION=	0.1.8
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.magickwand.org/download/php/
 PKGNAMEPREFIX=	php-
@@ -14,7 +15,7 @@ PKGNAMEPREFIX=	php-
 MAINTAINER=	mark@goodstorm.com
 COMMENT=	A PHP extension to manipulate images
 
-LIB_DEPENDS=	Magick.9:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS=	Magick.10:${PORTSDIR}/graphics/ImageMagick
 
 USE_PHP=	yes
 USE_PHPEXT=	yes

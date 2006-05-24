@@ -7,6 +7,7 @@
 
 PORTNAME=	cimg
 DISTVERSION=	1-14
+PORTREVISION=	1
 CATEGORIES=	graphics devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -34,7 +35,7 @@ NOBUILD=	yes
 .endif
 
 .if !defined(WITHOUT_IM)
-RUN_DEPENDS+=	${LOCALBASE}/lib/libMagick.so.9:${PORTSDIR}/graphics/ImageMagick
+RUN_DEPENDS+=	${LOCALBASE}/lib/libMagick.so.10:${PORTSDIR}/graphics/ImageMagick
 .endif
 .if !defined(WITHOUT_LAPACK)
 LIB_DEPENDS+=	atlas:${PORTSDIR}/math/atlas

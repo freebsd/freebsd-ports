@@ -7,7 +7,7 @@
 
 PORTNAME=	imagick
 PORTVERSION=	0.9.11
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -27,7 +27,7 @@ OPTIONS=	GM "Use GraphicsMagick backend" on
 .include <bsd.port.pre.mk>
 
 .if defined(WITHOUT_GM)
-LIB_DEPENDS=	Magick.9:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS=	Magick.10:${PORTSDIR}/graphics/ImageMagick
 .else
 LIB_DEPENDS=	GraphicsMagick.1:${PORTSDIR}/graphics/GraphicsMagick
 CONFIGURE_ARGS+=--with-imagick-gm

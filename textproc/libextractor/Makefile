@@ -7,6 +7,7 @@
 
 PORTNAME=	libextractor
 PORTVERSION=	0.5.14
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://gnunet.org/libextractor/download/ \
 		${MASTER_SITE_GNU}
@@ -34,7 +35,8 @@ MAN3=		libextractor.3
 
 post-extract:
 	@${FIND} ${WRKSRC} -name "*.[ch]" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|$$||g'
+		's|
+$$||g'
 
 post-patch:
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${TOUCH} -f
@@ -53,7 +55,7 @@ check: build
 .include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/include/wand/magick-wand.h)
-LIB_DEPENDS+=	Magick.9:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS+=	Magick.10:${PORTSDIR}/graphics/ImageMagick
 .endif
 
 .if exists(${LOCALBASE}/include/vorbis/vorbisfile.h)

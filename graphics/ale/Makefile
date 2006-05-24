@@ -8,6 +8,7 @@
 
 PORTNAME=	ale
 PORTVERSION=	0.8.4
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://auricle.dyndns.org/ALE/download/
 
@@ -44,7 +45,7 @@ MAKE_ARGS+=	FFTW=1
 .endif
 
 .if !defined(WITHOUT_IMAGEMAGICK)
-LIB_DEPENDS+=	Magick.9:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS+=	Magick.10:${PORTSDIR}/graphics/ImageMagick
 MAKE_ARGS+=	IMAGEMAGICK=1
 .endif
 

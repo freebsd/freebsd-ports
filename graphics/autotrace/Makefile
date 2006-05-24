@@ -7,7 +7,7 @@
 
 PORTNAME=	autotrace
 PORTVERSION=	0.31.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,7 +17,7 @@ COMMENT=	Convert bitmap to vector graphics
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		ming.4:${PORTSDIR}/graphics/ming \
-		Magick.9:${PORTSDIR}/graphics/ImageMagick \
+		Magick.10:${PORTSDIR}/graphics/ImageMagick \
 		pstoedit.0:${PORTSDIR}/graphics/pstoedit
 
 INSTALLS_SHLIB=	yes

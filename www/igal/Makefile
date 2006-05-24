@@ -7,7 +7,7 @@
 
 PORTNAME=	igal
 PORTVERSION=	1.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www graphics
 MASTER_SITES=	http://www.stanford.edu/~epop/igal/
 

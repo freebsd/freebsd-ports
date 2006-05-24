@@ -7,7 +7,7 @@
 
 PORTNAME=	gnudatalanguage
 PORTVERSION=	0.8.11
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	science lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -55,7 +55,7 @@ PLIST_SUB+=	MASTER=""
 .endif
 
 .if !defined(WITHOUT_IMAGEMAGICK)
-LIB_DEPENDS+=	Magick.9:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS+=	Magick.10:${PORTSDIR}/graphics/ImageMagick
 CONFIGURE_ARGS+=--with-Magick=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--with-Magick=no

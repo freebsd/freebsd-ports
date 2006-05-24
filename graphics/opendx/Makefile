@@ -8,7 +8,7 @@
 
 PORTNAME=	opendx
 PORTVERSION=	4.4.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics math
 MASTER_SITES=	http://opendx.npaci.edu/source/
 DISTNAME=	dx-${PORTVERSION}
@@ -16,7 +16,7 @@ DISTNAME=	dx-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IBM's Open Visualization Data Explorer
 
-LIB_DEPENDS=	Magick.9:${PORTSDIR}/graphics/ImageMagick	\
+LIB_DEPENDS=	Magick.10:${PORTSDIR}/graphics/ImageMagick	\
 		tiff.4:${PORTSDIR}/graphics/tiff		\
 		cdf.0:${PORTSDIR}/science/cdf
 

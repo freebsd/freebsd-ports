@@ -7,7 +7,7 @@
 
 PORTNAME=	kino
 PORTVERSION=	0.8.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,7 +16,7 @@ MAINTAINER=	pb@FreeBSD.org
 COMMENT=	A DV non-linear video editor
 
 LIB_DEPENDS=	dv.4:${PORTSDIR}/multimedia/libdv	\
-		Magick.9:${PORTSDIR}/graphics/ImageMagick	\
+		Magick.10:${PORTSDIR}/graphics/ImageMagick	\
 		samplerate.1:${PORTSDIR}/audio/libsamplerate
 
 OPTIONS=	QUICKTIME "With Quicktime support" off
