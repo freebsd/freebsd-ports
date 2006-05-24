@@ -8788,6 +8788,7 @@ p5-Mail-Freshmeat	ports/mail/p5-Mail-Freshmeat
 p5-Mail-GnuPG		ports/mail/p5-Mail-GnuPG
 p5-Mail-Graph		ports/mail/p5-Mail-Graph
 p5-Mail-IMAPClient	ports/mail/p5-Mail-IMAPClient
+p5-Mail-IMAPTalk	ports/mail/p5-Mail-IMAPTalk
 p5-Mail-ListDetector	ports/mail/p5-Mail-ListDetector
 p5-Mail-MailStats	ports/mail/p5-Mail-MailStats
 p5-Mail-Mbox-MessageParser	ports/mail/p5-Mail-Mbox-MessageParser
