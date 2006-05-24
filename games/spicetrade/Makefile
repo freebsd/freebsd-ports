@@ -7,6 +7,7 @@
 
 PORTNAME=	spicetrade
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	games java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,10 +18,11 @@ EXTRACT_ONLY=
 MAINTAINER=	daniel@roe.ch
 COMMENT=	Colourful 14th century Arab spice trading game
 
-NO_PACKAGE=	"Package will be 186MB, set FORCE_PACKAGE if you really want to build it"
+NO_PACKAGE=	Package will be 186MB, set FORCE_PACKAGE if you really want to build it
 
-USE_JAVA=	1.4+
-USE_X_PREFIX=	yes
+USE_JAVA=	yes
+JAVA_VERSION=	1.4+
+DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 NO_BUILD=	yes
 
 SUB_FILES=	${PORTNAME}
