@@ -376,7 +376,6 @@
     SUBDIR += musicbox-tag-editor
     SUBDIR += musiccontrol
     SUBDIR += musicpd
-    SUBDIR += mutagen
     SUBDIR += mutemix
     SUBDIR += napster
     SUBDIR += nas
