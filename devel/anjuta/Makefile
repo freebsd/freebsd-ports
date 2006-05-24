@@ -7,7 +7,7 @@
 
 PORTNAME=	anjuta
 PORTVERSION=	1.2.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	anjuta
@@ -18,7 +18,7 @@ COMMENT=	Integrated Development Environment for C and C++
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre-utf8
 RUN_DEPENDS=	${LOCALBASE}/gnu-autotools/bin/autoconf:${PORTSDIR}/devel/gnu-autoconf \
 		${LOCALBASE}/gnu-autotools/bin/automake:${PORTSDIR}/devel/gnu-automake \
-		${LOCALBASE}/gnu-autotools/bin/libtool:${PORTSDIR}/devel/gnu-libtool
+		libtool:${PORTSDIR}/devel/libtool15
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
