@@ -102,6 +102,7 @@
     SUBDIR += eawplus
     SUBDIR += ecasound
     SUBDIR += ecawave
+    SUBDIR += emms
     SUBDIR += emu10kx
     SUBDIR += enscribe
     SUBDIR += epos-devel

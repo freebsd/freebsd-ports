@@ -1,0 +1,31 @@
+--- Makefile.orig	Sat Apr 29 22:28:28 2006
++++ Makefile	Wed May 24 03:31:25 2006
+@@ -1,4 +1,4 @@
+-EMACS=emacs
++EMACS=$(EMACS_NAME)-$(EMACS_VER)
+ SITEFLAG=--no-site-file
+ GZIP=gzip
+ ALLSOURCE=$(wildcard *.el)
+@@ -11,10 +11,10 @@
+ DESTDIR=
+ PREFIX=$(DESTDIR)/usr/local
+ INFODIR=$(PREFIX)/info
+-MAN1DIR=$(PREFIX)/share/man/man1
+-SITELISP=$(PREFIX)/share/emacs/site-lisp/emms
++MAN1DIR=$(PREFIX)/man/man1
++SITELISP=$(PREFIX)/$(EMACS_SITE_LISPDIR)/emms
+ 
+-INSTALLINFO = /usr/sbin/install-info --info-dir=$(INFODIR)
++INSTALLINFO = /usr/bin/install-info --info-dir=$(INFODIR)
+ 
+ .PHONY: all install deb-install clean
+ .PRECIOUS: %.elc %.info %.html
+@@ -48,7 +48,7 @@
+ 	[ -d $(INFODIR) ] || install -d $(INFODIR)
+ 	install -m 644 $(ALLSOURCE) $(SITELISP)
+ 	install -m 644 $(ALLCOMPILED) $(SITELISP)
+-	install -m 0644 emms.info $(INFODIR)/emms
++	install -m 0644 emms.info $(INFODIR)
+ 	for p in $(MAN1PAGES) ; do $(GZIP) -9c $$p > $(MAN1DIR)/$$p.gz ; done
+ 	$(INSTALLINFO) emms.info
+ 
