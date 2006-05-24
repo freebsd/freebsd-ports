@@ -11074,6 +11074,7 @@ py-mssql	ports/databases/py-mssql
 py-mt		ports/www/py-mt
 py-musicbrainz	ports/audio/py-musicbrainz
 py-musicbrainz2	ports/audio/py-musicbrainz2
+py-mutagen	ports/audio/py-mutagen
 py-mx-base	ports/lang/py-mx-base
 py-mx-experimental	ports/devel/py-mx-experimental
 py-nautilus	ports/x11-fm/py-nautilus
