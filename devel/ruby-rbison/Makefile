@@ -9,7 +9,7 @@ PORTNAME=	rbison
 PORTVERSION=	0.0.7
 PORTREVISION=	1
 CATEGORIES=	devel ruby
-MASTER_SITES=	http://www.cs.umass.edu/~aseltine/
+MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
