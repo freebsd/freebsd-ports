@@ -20,6 +20,7 @@ USE_GCC=	3.4+
 USE_GNOME=	glib20
 USE_PYTHON=	yes
 USE_AUTOTOOLS=	libltdl:15
+USE_DOS2UNIX=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--disable-ltdl-install
@@ -32,11 +33,6 @@ EXTRACT_AFTER_ARGS=	| ${TAR} -xf - --exclude libltdl
 
 MAN1=		extract.1
 MAN3=		libextractor.3
-
-post-extract:
-	@${FIND} ${WRKSRC} -name "*.[ch]" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|
-$$||g'
 
 post-patch:
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${TOUCH} -f
