@@ -10,7 +10,8 @@ PORTVERSION=	2.7.7
 PORTREVISION=	1
 CATEGORIES=	databases
 #MASTER_SITES=	http://www.sleepycat.com/update/snapshot/
-MASTER_SITES=	ftp://sleepycat1.inetu.net/releases/
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	../../src/misc
 DISTNAME=	db-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
