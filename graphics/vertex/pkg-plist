@@ -1,40 +1,40 @@
 bin/vertex
-share/vertex/LICENSE
-share/vertex/help/application_map.png
-share/vertex/help/contacts.html
-share/vertex/help/create_model_dialog.png
-share/vertex/help/four_quad_cylender.png
-share/vertex/help/header_dialog.png
-share/vertex/help/index.html
-share/vertex/help/keyboard.html
-share/vertex/help/legend.html
-share/vertex/help/light_properties_dialog.png
-share/vertex/help/plugins.html
-share/vertex/help/primitives_palette.png
-share/vertex/help/texture_orient_example.png
-share/vertex/help/tutorial01.html
-share/vertex/help/tutorial02.html
-share/vertex/help/tutorial03.html
-share/vertex/help/tutorial04.html
-share/vertex/help/tutorial05.html
-share/vertex/help/tutorial06.html
-share/vertex/help/tutorial07.html
-share/vertex/help/tutorial08.html
-share/vertex/help/tutorials.html
-share/vertex/help/v3dformat.html
-share/vertex/help/values_list.png
-share/vertex/help/viewing.html
-share/vertex/icons/vertex.xpm
-share/vertex/images/installer_footer.xpm
-share/vertex/images/installer_heading.xpm
-share/vertex/images/installer_main.xpm
-share/vertex/images/splash.xpm
-share/vertex/preset_models/01.3d
-share/vertex/preset_models/02.3d
-share/vertex/preset_primitives/01.3d
-@dirrm share/vertex/preset_primitives
-@dirrm share/vertex/preset_models
-@dirrm share/vertex/images
-@dirrm share/vertex/icons
-@dirrm share/vertex/help
-@dirrm share/vertex
+%%DATADIR%%/LICENSE
+%%DATADIR%%/help/application_map.png
+%%DATADIR%%/help/contacts.html
+%%DATADIR%%/help/create_model_dialog.png
+%%DATADIR%%/help/four_quad_cylender.png
+%%DATADIR%%/help/header_dialog.png
+%%DATADIR%%/help/index.html
+%%DATADIR%%/help/keyboard.html
+%%DATADIR%%/help/legend.html
+%%DATADIR%%/help/light_properties_dialog.png
+%%DATADIR%%/help/plugins.html
+%%DATADIR%%/help/primitives_palette.png
+%%DATADIR%%/help/texture_orient_example.png
+%%DATADIR%%/help/tutorial01.html
+%%DATADIR%%/help/tutorial02.html
+%%DATADIR%%/help/tutorial03.html
+%%DATADIR%%/help/tutorial04.html
+%%DATADIR%%/help/tutorial05.html
+%%DATADIR%%/help/tutorial06.html
+%%DATADIR%%/help/tutorial07.html
+%%DATADIR%%/help/tutorial08.html
+%%DATADIR%%/help/tutorials.html
+%%DATADIR%%/help/v3dformat.html
+%%DATADIR%%/help/values_list.png
+%%DATADIR%%/help/viewing.html
+%%DATADIR%%/icons/vertex.xpm
+%%DATADIR%%/images/installer_footer.xpm
+%%DATADIR%%/images/installer_heading.xpm
+%%DATADIR%%/images/installer_main.xpm
+%%DATADIR%%/images/splash.xpm
+%%DATADIR%%/preset_models/01.3d
+%%DATADIR%%/preset_models/02.3d
+%%DATADIR%%/preset_primitives/01.3d
+@dirrm %%DATADIR%%/preset_primitives
+@dirrm %%DATADIR%%/preset_models
+@dirrm %%DATADIR%%/images
+@dirrm %%DATADIR%%/icons
+@dirrm %%DATADIR%%/help
+@dirrm %%DATADIR%%

@@ -9,7 +9,7 @@ PORTNAME=	vertex
 PORTVERSION=	0.1.15
 PORTREVISION=	2
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://wolfpack.twu.net/users/wolfpack/
+MASTER_SITES=	http://wolfpack.twu.net/users/wolfpack/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A 3D modeller for generating efficient game models
