@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Digest-SHA
-PORTVERSION=	5.34
+PORTVERSION=	5.37
 CATEGORIES=	security perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Digest
@@ -23,12 +23,7 @@ MAN3=	Digest::SHA.3
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500600
-BUILD_DEPENDS+=	${SITE_PERL}/XSLoader.pm:${PORTSDIR}/devel/p5-XSLoader
-RUN_DEPENDS+=	${SITE_PERL}/XSLoader.pm:${PORTSDIR}/devel/p5-XSLoader
-
-post-patch:
-	${PERL} -pi -e 's/^our\s+([\$$\@\%]\w+)/use vars qw($$1); $$1/;' ${WRKSRC}/SHA.pm
-	${PERL} -pi -e '$$_="" if m{warnings}' ${WRKSRC}/SHA.pm
+IGNORE=		requires perl 5.6.0 or later. Install lang/perl5.8 and try again
 .endif
 
 .include <bsd.port.post.mk>
