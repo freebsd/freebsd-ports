@@ -19,7 +19,7 @@ COMMENT=	RDF Notation3 parser
 BUILD_DEPENDS=	${SITE_PERL}/XML/SAX.pm:${PORTSDIR}/textproc/p5-XML-SAX \
 		${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathTools \
 		${SITE_PERL}/RDF/Core.pm:${PORTSDIR}/textproc/p5-RDF-Core \
-		${SITE_PERL}/RDFStore.pm:${PORTSDIR}/textproc/p5-RDFStore
+		${SITE_PERL}/${PERL_ARCH}/RDFStore.pm:${PORTSDIR}/textproc/p5-RDFStore
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 BROKEN=		Broken dependency
