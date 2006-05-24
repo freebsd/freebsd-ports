@@ -8,7 +8,7 @@
 PORTNAME=	mgp-mode.el
 PORTVERSION=	1.30
 CATEGORIES=	misc elisp
-MASTER_SITES=	ftp://TypeHack.aial.hiroshima-u.ac.jp/pub/Emacs/MagicPoint/
+MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
 DISTFILES=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
