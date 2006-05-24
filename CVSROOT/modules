@@ -9527,6 +9527,7 @@ p5-Tk-XMLViewer	ports/textproc/p5-Tk-XMLViewer
 p5-TraceFuncs	ports/devel/p5-TraceFuncs
 p5-Tree-Authz	ports/security/p5-Tree-Authz
 p5-Tree-Binary	ports/devel/p5-Tree-Binary
+p5-Tree-Binary-Dictionary	ports/devel/p5-Tree-Binary-Dictionary
 p5-Tree-DAG_Node	ports/devel/p5-Tree-DAG_Node
 p5-Tree-Nary	ports/textproc/p5-Tree-Nary
 p5-Tree-Node	ports/devel/p5-Tree-Node
