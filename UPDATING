@@ -7,6 +7,14 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 20060524:
+  AFFECTS: users of games/spicetrade
+  AUTHOR: hq@FreeBSD.org
+
+  To comply with the Porter's Handbook recommendations, spicetrade port no
+  longer defines USE_X_PREFIX. Hence the executable used to launch the game has
+  moved to ${PREFIX}/bin/spicetrade (was ${X11BASE}/bin/spicetrade).
+
+20060524:
   AFFECTS: users of java/jasmin
   AUTHOR: hq@FreeBSD.org
 
