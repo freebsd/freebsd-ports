@@ -310,6 +310,7 @@
     SUBDIR += p5-CSS-Tiny
     SUBDIR += p5-Chess-PGN-Parse
     SUBDIR += p5-Data-FormValidator
+    SUBDIR += p5-Data-Report
     SUBDIR += p5-DelimMatch
     SUBDIR += p5-Devel-TraceSAX
     SUBDIR += p5-Excel-Template
