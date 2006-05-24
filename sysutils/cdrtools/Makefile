@@ -7,7 +7,7 @@
 
 PORTNAME=	cdrtools
 PORTVERSION?=	2.01
-PORTREVISION?=	4
+PORTREVISION?=	5
 CATEGORIES?=	sysutils audio
 MASTER_SITES=	ftp://ftp.berlios.de/pub/cdrecord/ \
 		ftp://ftp.cs.tu-berlin.de/pub/misc/cdrecord/
@@ -58,7 +58,7 @@ IGNORE=		The mlockall(2) of your FreeBSD 5.x version causes problems when used b
 .if exists(${LOCALBASE}/lib/libcdio.a) || defined(WITH_CDDB)
 WITH_CDDB=	yes
 LIB_DEPENDS+=	cddb.3:${PORTSDIR}/audio/libcddb \
-		cdio.6:${PORTSDIR}/sysutils/libcdio
+		cdio.7:${PORTSDIR}/sysutils/libcdio
 .endif
 
 pre-everything::

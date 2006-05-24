@@ -10,6 +10,7 @@
 
 PORTNAME=	vlc
 DISTVERSION=	0.8.6.20060521
+PORTREVISION=	1
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://nightlies.videolan.org/build/source/
 #		http://download.videolan.org/pub/videolan/vlc/${PORTVERSION}/ \
@@ -184,7 +185,7 @@ CONFIGUE_ARGS+=		--disable-bonjour
 
 .if !defined(WITHOUT_CDROM)
 LIB_DEPENDS+=	vcdinfo.2:${PORTSDIR}/multimedia/vcdimager \
-		cdio.6:${PORTSDIR}/sysutils/libcdio
+		cdio.7:${PORTSDIR}/sysutils/libcdio
 CONFIGURE_ARGS+=--enable-vcd \
 		--disable-libcdio \
 		--disable-libcddb \
