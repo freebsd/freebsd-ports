@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	libcdio
-PORTVERSION=	0.76
-PORTREVISION=	1
+PORTVERSION=	0.77
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	libcdio
@@ -24,13 +23,25 @@ USE_ICONV=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS+=	--with-libpopt-prefix=${LOCALBASE} \
 			--with-libiconv-prefix=${LOCALBASE} \
-			--without-cd-paranoia
 USE_PERL5_BUILD=yes
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -liconv"
 
 INFO=		libcdio
 
+OPTIONS=	PARANOIA "Support for accessing audio via CD Paranoia" off
+
+.include <bsd.port.pre.mk>
+
+.ifdef(WITH_PARANOIA)
+LIB_DEPENDS+=	cdda_paranoia.0:${PORTSDIR}/audio/cdparanoia
+PLIST_SUB+=	PARANOIA=""
+MAN1=	cd-paranoia.1
+.else
+CONFIGURE_ARGS+=	--without-cd-paranoia
+PLIST_SUB+=	PARANOIA="@comment "
+.endif
+
 post-patch:
 	${REINPLACE_CMD} -e "s,freebsd5\.\*,freebsd5\.\*|freebsd6\.\*|freebsd7\.\*," ${WRKSRC}/configure
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
