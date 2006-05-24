@@ -9,7 +9,10 @@ PORTNAME=	stream
 PORTVERSION=	0.5
 PORTREVISION=	1
 CATEGORIES=	devel rubygems
-MASTER_SITES=	http://www.galgenberg.net/~q/
+MASTER_SITES=	${MASTER_SITE_LOCAL} \
+		http://www.galgenberg.net/distfiles/
+MASTER_SITE_SUBDIR=	fenner
+
 
 MAINTAINER=	q@galgenberg.net
 COMMENT=	Interface for external iterators
