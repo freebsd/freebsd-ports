@@ -1,0 +1,29 @@
+This module communicates with an IMAP server. Each IMAP server command is 
+mapped to a method of this object.
+
+Although other IMAP modules exist on CPAN, this has several advantages 
+over other modules.
+
+    * It parses the more complex IMAP structures like envelopes and body 
+structures into nice Perl data structures.
+    * It correctly supports atoms, quoted strings and literals at any 
+point. Some parsers in other modules aren't fully IMAP compatiable and may 
+break at odd times with certain messages on some servers.
+    * It allows large return values (eg. attachments on a message) to be 
+read directly into a file, rather than into memory.
+    * It includes some helper functions to find the actual text/plain or 
+text/html part of a message out of a complex MIME structure. It also can 
+find a list of attachements, and CID links for HTML messages with attached 
+images.
+    * It supports decoding of MIME headers to Perl utf-8 strings 
+automatically, so you don't have to deal with MIME encoded headers 
+(enabled optionally).
+
+While the IMAP protocol does allow for asynchronous running of commands, 
+this module is designed to be used in a synchronous manner. That is, you 
+issue a command by calling a method, and the command will block until the 
+appropriate response is returned. The method will then return the parsed 
+results from the given command.
+
+WWW: http://search.cpan.org/dist/Mail-IMAPTalk
+Author: Rob Mueller <cpan@robm.fastmail.fm>

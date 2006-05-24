@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Mail/IMAPTalk.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/IMAPTalk/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/IMAPTalk
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail
+@dirrmtry %%SITE_PERL%%/Mail
