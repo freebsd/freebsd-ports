@@ -1,10 +1,13 @@
 %%SITE_PERL%%/DBIx/Class/Schema/Loader.pm
-%%SITE_PERL%%/DBIx/Class/Schema/Loader/DB2.pm
-%%SITE_PERL%%/DBIx/Class/Schema/Loader/Generic.pm
-%%SITE_PERL%%/DBIx/Class/Schema/Loader/Pg.pm
-%%SITE_PERL%%/DBIx/Class/Schema/Loader/SQLite.pm
-%%SITE_PERL%%/DBIx/Class/Schema/Loader/Writing.pm
-%%SITE_PERL%%/DBIx/Class/Schema/Loader/mysql.pm
+%%SITE_PERL%%/DBIx/Class/Schema/Loader/Base.pm
+%%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI.pm
+%%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI/DB2.pm
+%%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI/Pg.pm
+%%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI/SQLite.pm
+%%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI/Writing.pm
+%%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI/mysql.pm
+%%SITE_PERL%%/DBIx/Class/Schema/Loader/RelBuilder.pm
+@dirrmtry %%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI
 @dirrmtry %%SITE_PERL%%/DBIx/Class/Schema/Loader
 @dirrmtry %%SITE_PERL%%/DBIx/Class/Schema
 @dirrmtry %%SITE_PERL%%/DBIx/Class
