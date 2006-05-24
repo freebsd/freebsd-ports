@@ -10,7 +10,7 @@ PORTNAME=	newsbot
 PORTVERSION=	0.4.5
 PORTREVISION=	1
 CATEGORIES=	net-im
-MASTER_SITES=	http://www.jabberstudio.org/files/${PORTNAME}/
+MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
 DISTNAME=	${PORTNAME}-0.45
 
 MAINTAINER=	ports@FreeBSD.org
