@@ -7,7 +7,7 @@
 
 PORTNAME=	crossip
 DISTVERSION=	1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	dns java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME:L}
@@ -27,8 +27,9 @@ SUB_FILES=	crossip.sh
 
 do-install:
 	${MKDIR} ${DATADIR}
-	${CP} -R ${WRKSRC}/* ${DATADIR}
-	${LN} -sf ${DATADIR}/lib/CrossIP.jar ${JAVAJARDIR}/CrossIP.jar
+	${INSTALL_DATA} ${WRKSRC}/LICENSE.txt ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/README.txt ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/lib/CrossIP.jar ${DATADIR}
 	@${INSTALL_SCRIPT} ${WRKDIR}/crossip.sh ${PREFIX}/bin/crossip
 
 .include <bsd.port.mk>
