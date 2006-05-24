@@ -1,28 +1,6 @@
 @comment $FreeBSD$
 bin/crossip
-%%JAVAJARDIR%%/CrossIP.jar
+%%DATADIR%%/CrossIP.jar
 %%DATADIR%%/LICENSE.txt
 %%DATADIR%%/README.txt
-%%DATADIR%%/bin/com/algenta/crossip/Actions.class
-%%DATADIR%%/bin/com/algenta/crossip/Config.class
-%%DATADIR%%/bin/com/algenta/crossip/ConfigFileException.class
-%%DATADIR%%/bin/com/algenta/crossip/CrossIP.class
-%%DATADIR%%/bin/com/algenta/crossip/CrossIPConstants.class
-%%DATADIR%%/bin/com/algenta/crossip/CrossIPException.class
-%%DATADIR%%/lib/CrossIP.jar
-%%DATADIR%%/src/com/algenta/crossip/Actions.java
-%%DATADIR%%/src/com/algenta/crossip/Config.java
-%%DATADIR%%/src/com/algenta/crossip/ConfigFileException.java
-%%DATADIR%%/src/com/algenta/crossip/CrossIP.java
-%%DATADIR%%/src/com/algenta/crossip/CrossIPConstants.java
-%%DATADIR%%/src/com/algenta/crossip/CrossIPException.java
-@dirrm %%DATADIR%%/src/com/algenta/crossip
-@dirrm %%DATADIR%%/src/com/algenta
-@dirrm %%DATADIR%%/src/com
-@dirrm %%DATADIR%%/src
-@dirrm %%DATADIR%%/lib
-@dirrm %%DATADIR%%/bin/com/algenta/crossip
-@dirrm %%DATADIR%%/bin/com/algenta
-@dirrm %%DATADIR%%/bin/com
-@dirrm %%DATADIR%%/bin
 @dirrm %%DATADIR%%
