@@ -16,6 +16,8 @@ DISTNAME=	kdar-${PORTVERSION:S/.b./-beta/}
 MAINTAINER=	kay_lehmann@web.de
 COMMENT=	KDar is KDE-based backuptool using libdar
 
+BROKEN=		Does not compile with dar-2.3.0
+
 LIB_DEPENDS=	dar.4:${PORTSDIR}/sysutils/dar
 
 USE_BZIP2=	yes
@@ -26,7 +28,7 @@ USE_KDEBASE_VER=3
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-IGNORE=		Does not build on FreeBSD 4.X
+IGNORE=		does not build on FreeBSD 4.X
 .endif
 
 post-patch:
