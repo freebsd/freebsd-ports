@@ -2117,6 +2117,7 @@ emh-emacs20	ports/mail/emh-emacs20
 emh-xemacs21-mule	ports/mail/emh-xemacs21-mule
 emiclock	ports/x11-clocks/emiclock
 emil		ports/mail/emil
+emms		ports/audio/emms
 emovix		ports/multimedia/emovix
 emp		ports/www/emp
 empire		ports/games/empire
