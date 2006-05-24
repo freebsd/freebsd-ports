@@ -5,18 +5,18 @@
 #
 
 PORTNAME=	bcel
-PKGNAMEPREFIX=	jakarta-
 PORTVERSION=	5.1
 CATEGORIES=	java devel
-MASTER_SITES=	http://www.apache.org/dist/jakarta/${PORTNAME}/binaries/ \
-		http://nagoya.apache.org/mirror/jakarta/${PORTNAME}/binaries/ \
-		http://www.powertech.no/apache/dist/jakarta/${PORTNAME}/binaries/ \
+MASTER_SITES=	${MASTER_SITE_APACHE_JAKARTA}
+MASTER_SITE_SUBDIR=	${PORTNAME}/binaries
+PKGNAMEPREFIX=	jakarta-
 
 MAINTAINER=	des@FreeBSD.org
 COMMENT=	A library for generating Java bytecode
 
 NO_BUILD=	yes
-USE_JAVA=	1.2+
+USE_JAVA=	yes
+JAVA_VERSION=	1.2+
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/${DISTNAME}.jar \
