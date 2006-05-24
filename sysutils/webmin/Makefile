@@ -7,7 +7,7 @@
 
 PORTNAME=	webmin
 PORTVERSION=	1.270
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webmin.com/updates/:up \
 		${MASTER_SITE_SOURCEFORGE:S/$/:sf/} \
@@ -30,7 +30,7 @@ SUB_LIST=	PERL5=${PERL}
 
 WEBMIN_MODULES=	apache-1.270-3.wbm.gz \
 		file-1.270-4.wbm.gz \
-		ldap-useradmin-1.270-1.wbm.gz
+		ldap-useradmin-1.270-4.wbm.gz
 
 post-extract:
 	@if [ "${WEBMIN_MODULES}" != "" ]; then \
@@ -53,7 +53,7 @@ post-patch:
 		spam/config-freebsd squid/config-freebsd \
 		stunnel/config usermin/config webalizer/config-freebsd \
 		wuftpd/config-freebsd xinetd/config-freebsd
-	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/${file}
+	@${REINPLACE_CMD} -e "s=%%PREFIX%%=${PREFIX}=" ${WRKSRC}/${file}
 .endfor
 	@${REINPLACE_CMD} -e "s=%%PREFIX%%=${PREFIX}=" ${WRKSRC}/setup.sh
 	@${FIND} ${WRKSRC} -name "*.cgi" -print \
@@ -83,6 +83,9 @@ post-install:
 	@${ECHO_CMD} "x!"				>> ${WRKDIR}/ex.script
 	@${CP} -p ${TMPPLIST} ${TMPPLIST}.pre-lib-webmin
 	@cd ${WRKDIR} ; ex < ex.script
+	@if [ -d ${PREFIX}/etc/webmin ]; then \
+		${PREFIX}/lib/webmin/setup.sh; \
+	fi
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
