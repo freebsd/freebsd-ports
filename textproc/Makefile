@@ -302,6 +302,7 @@
     SUBDIR += openvanilla-modules
     SUBDIR += or-aspell
     SUBDIR += p5-AI-Categorizer
+    SUBDIR += p5-Algorithm-RabinKarp
     SUBDIR += p5-Apache-ParseLog
     SUBDIR += p5-Apache-XBEL
     SUBDIR += p5-Bloom-Filter
