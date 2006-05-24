@@ -7,7 +7,7 @@
 
 PORTNAME=	grip
 PORTVERSION=	3.2.0
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -109,7 +109,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/dev/cdrom|${DEFAULT_CDROM_DEVICE}|' \
 		${WRKSRC}/src/grip.c
 	@${REINPLACE_CMD} -e 's|{"xingmp3enc","-B %b -Q %w","mp3"},||; \
-		s|{"l3enc","-br %b %w %m","mp3"},|{"faac","--no-midside -w --artist %a --album %d --track %t --year %y --genre %g -b %b %w -o %m", "m4a"},|; \
+		s|{"l3enc","-br %b %w %m","mp3"},|{"faac","--no-midside -w -q 100 --artist %a --album %d --track %t --title %n --year %y --genre %g -b %b %w -o %m", "m4a"},|; \
 		s|mp3encode|encode|' \
 		${WRKSRC}/src/gripcfg.c
 .for l in ${ISO_LOCALES}
