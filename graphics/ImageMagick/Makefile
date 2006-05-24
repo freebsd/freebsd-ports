@@ -6,12 +6,20 @@
 #
 
 PORTNAME=	ImageMagick
-PORTVERSION=	6.2.5.5
-PORTREVISION=	4
+DISTVERSION=	6.2.7-7
 CATEGORIES=	graphics perl5
-MASTER_SITES=	ftp://ftp.nluug.nl/pub/ImageMagick/ \
-		${MASTER_SITE_LOCAL:S/%SUBDIR%/pav/}
-DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}
+MASTER_SITES=	ftp://ftp.imagemagick.org/pub/ImageMagick/ \
+		ftp://gd.tuwien.ac.at/pub/graphics/ImageMagick/ \
+		ftp://ftp.carnet.hr/misc/imagemagick/ \
+		ftp://ftp.fu-berlin.de/unix/X11/graphics/ImageMagick/ \
+		ftp://ftp.kddlabs.co.jp/graphics/ImageMagick/ \
+		ftp://ftp.u-aizu.ac.jp/pub/graphics/image/ImageMagick/imagemagick.org/ \
+		ftp://zoffy.asahi-net.or.jp/pub/graphics/ImageMagick/ \
+		ftp://ftp.nluug.nl/pub/ImageMagick/ \
+		ftp://ftp.sunet.se/pub/multimedia/graphics/ImageMagick/ \
+		ftp://ftp.fifi.org/pub/ImageMagick/ \
+		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	imagemagick
 
 MAINTAINER=	avleeuwen@piwebs.com
 COMMENT=	Image processing tools
