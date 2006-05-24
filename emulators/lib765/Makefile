@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lib765
-PORTVERSION=	0.3.3
+PORTVERSION=	0.3.4
 CATEGORIES=	emulators devel
 MASTER_SITES=	http://www.seasip.demon.co.uk/Unix/LibDsk/
 
