@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	dinotrace
-PORTVERSION=	9.2.b
+DISTVERSION=	9.3b
 CATEGORIES=	cad
 MASTER_SITES=	http://www.veripool.com/ftp/
-DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	watchman@ludd.ltu.se
 COMMENT=	A graphical signal trace waveform viewer
