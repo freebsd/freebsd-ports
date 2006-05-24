@@ -1,24 +1,30 @@
 
 $FreeBSD$
 
---- setup.sh.orig	Fri Jun  4 01:15:55 2004
-+++ setup.sh	Sat Jun 19 19:24:25 2004
-@@ -89,12 +89,12 @@
+--- setup.sh.orig
++++ setup.sh
+@@ -95,19 +95,7 @@
  echo "Unless you want to run multiple versions of Webmin at the same time"
  echo "you can just accept the defaults."
  echo ""
 -printf "Config file directory [/etc/webmin]: "
-+printf "Config file directory [%%PREFIX%%/etc/webmin]: "
- if [ "$config_dir" = "" ]; then
- 	read config_dir
- fi
- if [ "$config_dir" = "" ]; then
+-if [ "$config_dir" = "" ]; then
+-	read config_dir
+-fi
+-if [ "$config_dir" = "" ]; then
 -	config_dir=/etc/webmin
-+	config_dir=%%PREFIX%%/etc/webmin
- fi
- abspath=`echo $config_dir | grep "^/"`
- if [ "$abspath" = "" ]; then
-@@ -199,12 +199,12 @@
+-fi
+-abspath=`echo $config_dir | grep "^/"`
+-if [ "$abspath" = "" ]; then
+-	echo "Config directory must be an absolute path"
+-	echo ""
+-	exit 2
+-fi
++config_dir=%%PREFIX%%/etc/webmin
+ if [ ! -d $config_dir ]; then
+ 	mkdir $config_dir;
+ 	if [ $? != 0 ]; then
+@@ -206,12 +194,12 @@
  	fi
  
  	# Ask for log directory
@@ -33,7 +39,7 @@ $FreeBSD$
  	fi
  	abspath=`echo $var_dir | grep "^/"`
  	if [ "$abspath" = "" ]; then
-@@ -232,7 +232,9 @@
+@@ -239,7 +227,9 @@
  	echo "Webmin is written entirely in Perl. Please enter the full path to the"
  	echo "Perl 5 interpreter on your system."
  	echo ""
@@ -44,7 +50,7 @@ $FreeBSD$
  		perldef=/usr/bin/perl
  	elif [ -x /usr/local/bin/perl ]; then
  		perldef=/usr/local/bin/perl
-@@ -418,22 +420,6 @@
+@@ -438,22 +428,6 @@
  		fi
  	fi
  
@@ -67,7 +73,7 @@ $FreeBSD$
  	# Copy files to target directory
  	echo "***********************************************************************"
  	if [ "$wadir" != "$srcdir" ]; then
-@@ -535,6 +521,7 @@
+@@ -564,6 +538,7 @@
  	fi
  fi
  
@@ -75,11 +81,27 @@ $FreeBSD$
  if [ "$noperlpath" = "" ]; then
  	echo "Inserting path to perl into scripts.."
  	(find "$wadir" -name '*.cgi' -print ; find "$wadir" -name '*.pl' -print) | $perl "$wadir/perlpath.pl" $perl -
-@@ -545,7 +532,6 @@
+@@ -574,7 +549,6 @@
  echo "Creating start and stop scripts.."
- rm -f $config_dir/stop $config_dir/start $config_dir/restart
+ rm -f $config_dir/stop $config_dir/start $config_dir/restart $config_dir/reload
  echo "#!/bin/sh" >>$config_dir/start
 -echo "echo Starting Webmin server in $wadir" >>$config_dir/start
  echo "trap '' 1" >>$config_dir/start
  echo "LANG=" >>$config_dir/start
  echo "export LANG" >>$config_dir/start
+@@ -696,6 +670,7 @@
+ 	echo passdelay=1 >> $config_dir/miniserv.conf
+ fi
+ 
++nouninstall="yes"
+ if [ "$nouninstall" = "" ]; then
+ 	echo "Creating uninstall script $config_dir/uninstall.sh .."
+ 	cat >$config_dir/uninstall.sh <<EOF
+@@ -765,6 +740,7 @@
+ 	. "$srcdir/setup-post.sh"
+ fi
+ 
++nostart="yes"
+ if [ "$nostart" = "" ]; then
+ 	if [ "$inetd" != "1" ]; then
+ 		echo "Attempting to start Webmin mini web server.."
