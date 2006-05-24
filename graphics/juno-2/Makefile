@@ -8,7 +8,7 @@
 PORTNAME=	juno-2
 PORTVERSION=	1.23
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.research.compaq.com/SRC/juno-2/
+MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
 DISTNAME=	juno-sources
 
 MAINTAINER=	ports@FreeBSD.org
@@ -30,6 +30,9 @@ L1=		${PREFIX}/lib/m3/${TARGET}/
 PROGS=		bin/Juno
 SOVERSION=	7
 
+DATADIR=	${PREFIX}/share/Juno
+EXAMPLESDIR=	${PREFIX}/share/examples/Juno
+
 .include <bsd.port.pre.mk>
 
 .if ${PORTOBJFORMAT} == "aout"
@@ -49,7 +52,7 @@ TARGETDIR=	freebsd-4
 WORDSIZE=	32
 .elif ${ARCH} == "alpha"
 .if ${OSVERSION} < 400011
-IGNORE=		Not supported on older versions of FreeBSD/Alpha
+IGNORE=		not supported on older versions of FreeBSD/Alpha
 .endif
 CFLAGS+=	-mieee
 L2=		.so.${SOVERSION}
@@ -83,10 +86,10 @@ do-install:
 		${PREFIX}/bin/m3ship) \
 	done
 	@for i in ${PROGS}; do ${STRIP_CMD} ${PREFIX}/$$i; done
-	@${ECHO_MSG} "Installing examples into ${PREFIX}/share/examples/Juno"
-	@${MKDIR} ${PREFIX}/share/examples/Juno
-	@${CP} -R ${WRKSRC}/juno-app/juno-src/* ${PREFIX}/share/examples/Juno
-	@${MKDIR} ${PREFIX}/share/Juno
-	@${INSTALL_DATA} ${FILESDIR}/COPYRIGHT ${PREFIX}/share/Juno
+	@${ECHO_MSG} "Installing examples into ${EXAMPLESDIR}"
+	@${MKDIR} ${EXAMPLESDIR}
+	@${CP} -R ${WRKSRC}/juno-app/juno-src/* ${EXAMPLESDIR}
+	@${MKDIR} ${DATADIR}
+	@${INSTALL_DATA} ${FILESDIR}/COPYRIGHT ${DATADIR}
 
 .include <bsd.port.post.mk>
