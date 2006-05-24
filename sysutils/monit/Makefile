@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	monit
-PORTVERSION=	4.7
+PORTVERSION=	4.8.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.tildeslash.com/monit/dist/
 
@@ -20,6 +20,7 @@ USE_GMAKE=	yes
 USE_BISON=	yes
 USE_RC_SUBR=	monit.sh
 
+CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man
 CONFIGURE_ENV=	CC="${CC}" CPPFLAGS="${CPPFLAGS}" \
 		CFLAGS="${CFLAGS}" \
 		LDFLAGS="${LDFLAGS}" CONFIG_SHELL="${SH}" \
