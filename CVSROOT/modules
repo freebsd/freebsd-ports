@@ -8183,6 +8183,7 @@ p5-Data-Page	ports/databases/p5-Data-Page
 p5-Data-Password	ports/security/p5-Data-Password
 p5-Data-Properties	ports/devel/p5-Data-Properties
 p5-Data-Random	ports/devel/p5-Data-Random
+p5-Data-Report	ports/textproc/p5-Data-Report
 p5-Data-Serializer	ports/devel/p5-Data-Serializer
 p5-Data-ShowTable	ports/devel/p5-Data-ShowTable
 p5-Data-Stag	ports/devel/p5-Data-Stag
