@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 %%PORTDOCS%%%%DOCSDIR%%/apidocs/allclasses-frame.html
 %%PORTDOCS%%%%DOCSDIR%%/apidocs/allclasses-noframe.html
 %%PORTDOCS%%%%DOCSDIR%%/apidocs/constant-values.html
@@ -1120,7 +1121,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/xref/overview-frame.html
 %%PORTDOCS%%%%DOCSDIR%%/xref/overview-summary.html
 %%PORTDOCS%%%%DOCSDIR%%/xref/stylesheet.css
-share/java/classes/bcel.jar
+%%JAVAJARDIR%%/bcel.jar
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/xref/org/apache/bcel/verifier/structurals
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/xref/org/apache/bcel/verifier/statics
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/xref/org/apache/bcel/verifier/exc
