@@ -1,0 +1,4 @@
+A PAM module that allows you to require a special group or
+user to access a service.
+
+WWW: http://www.splitbrain.org/projects/pam_require/
