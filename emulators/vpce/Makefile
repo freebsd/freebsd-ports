@@ -8,7 +8,7 @@
 PORTNAME=	vpce
 PORTVERSION=	0.3f
 CATEGORIES=	emulators
-MASTER_SITES=	http://www.geocities.com/SiliconValley/Way/3340/
+MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}_freebsd
 EXTRACT_SUFX=	.tgz
 
@@ -21,10 +21,14 @@ NO_BUILD=	yes
 
 STRIP=
 
+PLIST_FILES=	bin/xvpce
+PORTDOCS=	README
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xvpce_03f_freebsd ${PREFIX}/bin/xvpce
 .if !defined(NOPORTDOCS)
-	@ ${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/README.vpce
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
