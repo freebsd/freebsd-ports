@@ -1,0 +1,23 @@
+Data::Report is a flexible, plugin-driven reporting framework.
+
+The Data::Report framework consists of three parts:
+
+- the plugins
+
+Plugins implement a specific type of report. Standard plugins provided
+are Data::Report::Plugin::Text for textual reports,
+Data::Report::Plugin::Html for HTML reports, and
+Data::Report::Plugin::Csv for CSV (comma-separated) files.
+
+- the base class
+
+The base class Data::Report::Base implements the functionality common to
+all reporters, plus a number of utility functions the plugins can use.
+
+- the factory
+
+The actual Data::Report module is a factory that creates a reporter for
+a given report type by selecting the appropriate plugin and returning an
+instance thereof.
+
+WWW: http://search.cpan.org/dist/Data-Report/
