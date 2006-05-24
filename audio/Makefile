@@ -442,6 +442,7 @@
     SUBDIR += py-mad
     SUBDIR += py-musicbrainz
     SUBDIR += py-musicbrainz2
+    SUBDIR += py-mutagen
     SUBDIR += py-ogg
     SUBDIR += py-openal
     SUBDIR += py-sdl_mixer
