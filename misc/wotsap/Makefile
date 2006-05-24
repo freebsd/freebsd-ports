@@ -9,7 +9,7 @@
 PORTNAME=	wotsap
 PORTVERSION=	0.6
 CATEGORIES=	misc
-MASTER_SITES=	http://www.lysator.liu.se/~jc/wotsap/download/
+MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
