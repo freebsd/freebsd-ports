@@ -1303,6 +1303,7 @@
     SUBDIR += p5-TimeDate
     SUBDIR += p5-TraceFuncs
     SUBDIR += p5-Tree-Binary
+    SUBDIR += p5-Tree-Binary-Dictionary
     SUBDIR += p5-Tree-DAG_Node
     SUBDIR += p5-Tree-Node
     SUBDIR += p5-Tree-Parser

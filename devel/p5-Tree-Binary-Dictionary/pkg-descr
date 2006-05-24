@@ -1,0 +1,7 @@
+A simple class to provide a dictionary style API to a binary tree of data.
+
+This can provide a useful alternative to a long-lived hash in long running 
+daemons and processes.
+
+WWW: http://search.cpan.org/dist/Tree-Binary-Dictionary
+Author: aaron trevena <teejay@droogs.org>
