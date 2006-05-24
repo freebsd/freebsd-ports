@@ -9,8 +9,7 @@ PORTNAME=	utserver
 PORTVERSION=	436
 PORTREVISION=	5
 CATEGORIES=	games linux
-MASTER_SITES=	http://public.planetmirror.com/pub/lokigames/installers/ut/ \
-		http://fileserver.talkware.net/ut/
+MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
 DISTNAME=	ut-server-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -22,7 +21,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes
 USE_PERL5=	yes
-NO_CDROM=	"Size; the data set is much too big"
+NO_CDROM=	Size; the data set is much too big
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/ut-server
 
