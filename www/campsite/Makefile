@@ -7,6 +7,7 @@
 
 PORTNAME=	campsite
 PORTVERSION=	2.5.1
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,7 +16,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	koutek@o-k.cz
 COMMENT=	The free and open multilingual web publishing tool for news sites
 
-LIB_DEPENDS=	Magick.9:${PORTSDIR}/graphics/ImageMagick \
+LIB_DEPENDS=	Magick.10:${PORTSDIR}/graphics/ImageMagick \
 		idn.16:${PORTSDIR}/dns/libidn
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		gm4:${PORTSDIR}/devel/m4 \

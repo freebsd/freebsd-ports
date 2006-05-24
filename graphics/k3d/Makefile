@@ -8,7 +8,7 @@
 
 PORTNAME=	k3d
 PORTVERSION=	0.4.4.0
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,7 +22,7 @@ BUILD_DEPENDS=	${X11BASE}/lib/libplibul.a:${PORTSDIR}/x11-toolkits/plib
 LIB_DEPENDS=	sigc.1:${PORTSDIR}/devel/libsigc++ \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		tiff.4:${PORTSDIR}/graphics/tiff \
-		Magick++.9:${PORTSDIR}/graphics/ImageMagick \
+		Magick++.10:${PORTSDIR}/graphics/ImageMagick \
 		netpbm.1:${PORTSDIR}/graphics/netpbm \
 		Half.2:${PORTSDIR}/graphics/OpenEXR \
 		gts.5:${PORTSDIR}/graphics/gts

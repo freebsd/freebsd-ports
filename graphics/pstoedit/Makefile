@@ -7,6 +7,7 @@
 
 PORTNAME=	pstoedit
 PORTVERSION=	3.44
+PORTREVISION=	1
 CATEGORIES=	graphics print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -48,7 +49,7 @@ LDFLAGS+=	-lstlport_gcc ${PTHREAD_LIBS}
 CONFIGURE_ARGS+=	--without-magick
 PLIST_SUB+=	IMAGEMAGICK="@comment "
 .else
-LIB_DEPENDS+=	Magick++.9:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS+=	Magick++.10:${PORTSDIR}/graphics/ImageMagick
 PLIST_SUB+=	IMAGEMAGICK=""
 .endif
 

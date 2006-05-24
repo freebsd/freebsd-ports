@@ -30,7 +30,7 @@ LIB_DEPENDS=	FLAC.7:${PORTSDIR}/audio/flac \
 		cdio.7:${PORTSDIR}/sysutils/libcdio \
 		modplug.0:${PORTSDIR}/audio/libmodplug \
 		vcdinfo.2:${PORTSDIR}/multimedia/vcdimager \
-		Wand.9:${PORTSDIR}/graphics/ImageMagick
+		Wand.10:${PORTSDIR}/graphics/ImageMagick
 
 USE_GETTEXT=	yes
 USE_ICONV=	yes

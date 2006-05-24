@@ -7,7 +7,7 @@
 
 PORTNAME=	q
 PORTVERSION=	6.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	q-lang
@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Q -- equational programming language
 
 BUILD_DEPENDS=	${LOCALBASE}/dx/lib_freebsd/libDXL.a:${PORTSDIR}/graphics/opendx
-LIB_DEPENDS=	Magick.9:${PORTSDIR}/graphics/ImageMagick \
+LIB_DEPENDS=	Magick.10:${PORTSDIR}/graphics/ImageMagick \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		gdbm.3:${PORTSDIR}/databases/gdbm \
 		gii.1:${PORTSDIR}/devel/libgii \

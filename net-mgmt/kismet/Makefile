@@ -7,7 +7,7 @@
 
 PORTNAME=	kismet
 PORTVERSION=	200508.r1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.kismetwireless.net/code/
 DISTNAME=	kismet-2005-08-R1
@@ -48,7 +48,7 @@ PLIST_SUB+=	GPS="@comment "
 PLIST_SUB+=	GPS=""
 LIB_DEPENDS+=	gmp.7:${PORTSDIR}/math/libgmp4 \
 		expat.6:${PORTSDIR}/textproc/expat2 \
-		Magick++.9:${PORTSDIR}/graphics/ImageMagick
+		Magick++.10:${PORTSDIR}/graphics/ImageMagick
 BUILD_DEPENDS+=	wget:${PORTSDIR}/ftp/wget
 RUN_DEPENDS+=	wget:${PORTSDIR}/ftp/wget
 .endif

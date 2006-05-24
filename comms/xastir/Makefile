@@ -7,6 +7,7 @@
 
 PORTNAME=	xastir
 PORTVERSION=	1.8.0
+PORTREVISION=	1
 CATEGORIES=	comms hamradio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	xastir
@@ -69,7 +70,7 @@ LIB_DEPENDS+=	shp.1:${PORTSDIR}/devel/shapelib
 .if defined(WITHOUT_MAGICK)
 CONFIGURE_ARGS+=	--without-imagemagick
 .else
-LIB_DEPENDS+=	Magick:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS+=	Magick.10:${PORTSDIR}/graphics/ImageMagick
 .endif
 
 .if defined(WITHOUT_DBFAWK)

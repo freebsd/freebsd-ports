@@ -7,7 +7,7 @@
 
 PORTNAME=	transcode
 PORTVERSION=	1.0.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://dl.fkb.wormulon.net/transcode/ \
 		http://dl.kel.wormulon.net/transcode/ \
@@ -165,7 +165,7 @@ CONFIGURE_ARGS+=	--enable-theora=no
 .endif
 
 .if defined(WITH_IMAGEMAGICK)
-LIB_DEPENDS+=	Magick.9:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS+=	Magick.10:${PORTSDIR}/graphics/ImageMagick
 PLIST_SUB+=	WITH_IMAGEMAGICK=""
 CONFIGURE_ARGS+=	--enable-imagemagick --with-imagemagick-prefix=${LOCALBASE}
 .else

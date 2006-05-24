@@ -7,7 +7,7 @@
 
 PORTNAME=	typo3
 PORTVERSION=	3.8.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -57,7 +57,7 @@ USE_PHP+=	zlib
 .include "${PORTSDIR}/Mk/bsd.php.mk"
 
 .if defined(WITH_IMAGICK)
-LIB_DEPENDS+=	Magick.9:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS+=	Magick.10:${PORTSDIR}/graphics/ImageMagick
 .endif
 
 do-install:

@@ -7,7 +7,7 @@
 
 PORTNAME=	imageindex
 PORTVERSION=	1.0.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.edwinh.org/imageindex/release/ \
 		http://www.reynoldsnet.org/imageindex/release/
