@@ -1,0 +1,11 @@
+--- src/Makefile.orig	Fri May  5 11:46:42 2006
++++ src/Makefile	Fri May  5 11:47:15 2006
+@@ -199,7 +199,7 @@
+ bin: lib $(BINARY) $(EXIV2BIN) $(MCBIN) path-test
+ 
+ lib: $(OBJ)
+-	$(LIBTOOL) --mode=link $(CXX) $(LDFLAGS) $(LOBJ) -o $(LIBRARY) -rpath $(libdir) -release $(EXIV2_VERSION)
++	$(LIBTOOL) --mode=link $(CXX) $(LDFLAGS) $(LOBJ) -o $(LIBRARY) -rpath $(libdir) -version-number $(subst .,:,$(EXIV2_VERSION))
+ 	@touch lib
+ 
+ path-test: path-test.o utils.o
