@@ -355,7 +355,6 @@ share/locale/tr/LC_MESSAGES/stellarium.mo
 share/locale/zh_CN/LC_MESSAGES/stellarium.mo
 share/locale/zh_HK/LC_MESSAGES/stellarium.mo
 share/locale/zh_TW/LC_MESSAGES/stellarium.mo
-share/pixmaps/stellarium.png
 @dirrm %%DATADIR%%/data/scripts
 @dirrm %%DATADIR%%/data/sky_cultures/chinese
 @dirrm %%DATADIR%%/data/sky_cultures/egyptian
