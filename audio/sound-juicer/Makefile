@@ -8,6 +8,7 @@
 
 PORTNAME=	sound-juicer
 PORTVERSION=	2.14.3
+PORTREVISION=	1
 CATEGORIES=	audio gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -18,7 +19,7 @@ COMMENT=	Clean, mean and lean CD ripper for GNOME2
 
 LIB_DEPENDS=	musicbrainz.4:${PORTSDIR}/audio/libmusicbrainz \
 		gnome-media-profiles.0:${PORTSDIR}/audio/gnomemedia2 \
-		cdio.6:${PORTSDIR}/sysutils/libcdio
+		cdio.7:${PORTSDIR}/sysutils/libcdio
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
