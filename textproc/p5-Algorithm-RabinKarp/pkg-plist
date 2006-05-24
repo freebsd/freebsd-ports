@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Algorithm/RabinKarp.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/RabinKarp/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/RabinKarp
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm
+@dirrmtry %%SITE_PERL%%/Algorithm

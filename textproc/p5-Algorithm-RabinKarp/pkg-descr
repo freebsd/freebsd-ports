@@ -1,0 +1,18 @@
+This is an implementation of Rabin and Karp's streaming hash, as described 
+in "Winnowing: Local Algorithms for Document Fingerprinting" by Schleimer, 
+Wilkerson, and Aiken. Following the suggestion of Schleimer, I am using 
+their second equation:
+
+  $H[ $c[2..$k + 1] ] = (( $H[ $c[1..$k] ] - $c[1] ** $k ) + $c[$k+1] ) * $k
+
+The results of this hash encodes information about the next k values in 
+the stream (hense k-gram.) This means for any given stream of length n 
+integer values (or characters), you will get back n - k + 1 hash values.
+
+For best results, you will want to create a code generator that filters 
+your data to remove all unnecessary information. For example, in a large 
+english document, you should probably remove all white space, as well as 
+removing all capitalization.
+
+WWW: http://search.cpan.org/dist/Algorithm-RabinKarp
+Author: Norman Nunley <nnunley@gmail.com>
