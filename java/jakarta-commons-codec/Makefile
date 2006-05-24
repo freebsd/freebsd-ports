@@ -20,13 +20,13 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.2+
 USE_ANT=	yes
 
-NO_WRKSUBDIR=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 ALL_TARGET=	dist
 
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar
 
 .if !defined(NOPORTDOCS)
-PORTDOCS=	LICENSE.txt RELEASE-NOTES.txt api
+PORTDOCS=	RELEASE-NOTES.txt api
 .endif
 
 do-install:
@@ -39,7 +39,7 @@ do-install:
 	@${MKDIR} ${DOCSDIR}
 	@cd ${WRKSRC}/dist/docs && ${FIND} api \
 	  | ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR} > /dev/null 2>&1
-	@${INSTALL_DATA} ${WRKSRC}/dist/LICENSE.txt ${WRKSRC}/dist/RELEASE-NOTES.txt \
+	@${INSTALL_DATA} ${WRKSRC}/dist/RELEASE-NOTES.txt \
 		${DOCSDIR}/
 	@${ECHO_MSG} " [DONE]"
 .endif

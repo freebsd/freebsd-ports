@@ -1,11 +1,10 @@
---- build.xml.orig	Mon May 24 01:30:33 2004
-+++ build.xml	Thu Nov  3 07:59:01 2005
-@@ -90,14 +90,14 @@
+--- build.xml.orig	Mon May 24 01:30:34 2004
++++ build.xml	Wed May 24 08:24:55 2006
+@@ -90,14 +90,12 @@
      </target>
      <target name="dist" depends="compile,javadoc" description="Create binary distribution">
          <mkdir dir="${dist.home}"/>
 -        <copy file="../LICENSE" todir="${dist.home}"/>
-+        <copy file="${basedir}/LICENSE.txt" todir="${dist.home}"/>
          <copy file="${basedir}/RELEASE-NOTES.txt" todir="${dist.home}"/>
          <antcall target="jar"/>
      </target>
@@ -13,7 +12,6 @@
          <mkdir dir="${dist.home}"/>
          <mkdir dir="${build.home}/classes/META-INF"/>
 -        <copy file="../LICENSE" tofile="${build.home}/classes/META-INF/LICENSE.txt"/>
-+        <copy file="${basedir}/LICENSE.txt" tofile="${build.home}/classes/META-INF/LICENSE.txt"/>
          <jar jarfile="${dist.home}/${final.name}.jar" basedir="${build.home}/classes" manifest="${build.home}/conf/MANIFEST.MF"/>
      </target>
      <target name="install-jar" depends="jar" description="--> Installs jar file in ${lib.repo}">
