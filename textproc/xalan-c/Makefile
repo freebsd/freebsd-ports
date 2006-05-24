@@ -8,6 +8,7 @@
 
 PORTNAME=	xalan-c
 PORTVERSION=	1.9.0
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_APACHE_XML:S/$/:msax,docs/}
 MASTER_SITE_SUBDIR=	${PORTNAME}/source/:msax ${PORTNAME}/docs/:docs
@@ -43,7 +44,7 @@ DOCS_TARBALL=	Xalan-C_${PORTVERSION:S/./_/g}-docs${EXTRACT_SUFX}
 
 # we need the _extracted_ xerces-c2 port sources to build this one
 # (installed version of port is enough)
-XERCESC_LIB_VER?=	26
+XERCESC_LIB_VER?=	27
 LIB_DEPENDS+=	xerces-c.${XERCESC_LIB_VER}:${PORTSDIR}/textproc/xerces-c2
 XERCESCROOT?=	${LOCALBASE}
 
