@@ -18,6 +18,8 @@ MAINTAINER=	ports@brandon.dvalentine.com
 COMMENT=	The official Macromedia Flash Player for Linux Mozilla and Netscape 6+
 
 FORBIDDEN=	http://vuxml.FreeBSD.org/83421018-b3ef-11da-a32d-000c6ec775d9.html
+DEPRECATED=	"This port has known security flaws that are not likely to be fixed"
+EXPIRATION_DATE=2006-06-07
 
 ONLY_FOR_ARCHS=	amd64 i386
 USE_LINUX=	yes
