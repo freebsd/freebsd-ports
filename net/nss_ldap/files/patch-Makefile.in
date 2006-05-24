@@ -12,12 +12,12 @@
 -
 +nss_ldap_so_SOURCES = ldap-nss.c ldap-pwd.c ldap-grp.c \
 +	ldap-schema.c utils.c ltf.c snprintf.c resolve.c \
-+	dnsconfig.c irs-nss.c pagectrl.c bsdnss.c
++	dnsconfig.c irs-nss.c pagectrl.c bsdnss.c ldap-hosts.c
  
  NSS_LDAP_SOURCES = ldap-nss.c ldap-grp.c ldap-pwd.c ldap-netgrp.c ldap-schema.c \
  	util.c ltf.c snprintf.c resolve.c dnsconfig.c \
 -	irs-nss.c pagectrl.c aix_authmeth.c
-+	irs-nss.c pagectrl.c aix_authmeth.c bsdnss.c
++	irs-nss.c pagectrl.c aix_authmeth.c bsdnss.c ldap-hosts.c
  
  DEFS = @DEFS@
  
@@ -41,7 +41,7 @@
 +	util.$(OBJEXT) ltf.$(OBJEXT) \
  	snprintf.$(OBJEXT) resolve.$(OBJEXT) dnsconfig.$(OBJEXT) \
 -	irs-nss.$(OBJEXT) pagectrl.$(OBJEXT) ldap-sldap.$(OBJEXT)
-+	irs-nss.$(OBJEXT) pagectrl.$(OBJEXT) bsdnss.$(OBJEXT)
++	irs-nss.$(OBJEXT) pagectrl.$(OBJEXT) bsdnss.$(OBJEXT)  ldap-hosts.$(OBJEXT)
  nss_ldap_so_OBJECTS = $(am_nss_ldap_so_OBJECTS)
  nss_ldap_so_LDADD = $(LDADD)
  nss_ldap_so_DEPENDENCIES =
@@ -68,7 +68,7 @@
  @AMDEP_TRUE@	$(DEPDIR)/pagectrl.Po $(DEPDIR)/resolve.Po \
 -@AMDEP_TRUE@	$(DEPDIR)/snprintf.Po $(DEPDIR)/util.Po
 +@AMDEP_TRUE@	$(DEPDIR)/snprintf.Po $(DEPDIR)/util.Po \
-+@AMDEP_TRUE@	$(DEPDIR)/bsdnss.Po	
++@AMDEP_TRUE@	$(DEPDIR)/bsdnss.Po $(DEPDIR)/ldap-hosts.Po 
  COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
  	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
  CCLD = $(CC)
@@ -108,7 +108,7 @@
  config.h: stamp-h
  	@if test ! -f $@; then \
  		rm -f stamp-h; \
-@@ -248,22 +240,11 @@
+@@ -248,21 +240,11 @@
  @AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/aix_authmeth.Po@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/dnsconfig.Po@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/irs-nss.Po@am__quote@
@@ -117,7 +117,7 @@
 -@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/ldap-bp.Po@am__quote@
 -@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/ldap-ethers.Po@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/ldap-grp.Po@am__quote@
--@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/ldap-hosts.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/ldap-hosts.Po@am__quote@
 -@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/ldap-netgrp.Po@am__quote@
 -@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/ldap-network.Po@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/ldap-nss.Po@am__quote@
