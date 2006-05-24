@@ -8,7 +8,7 @@
 
 PORTNAME=	dhcp
 PORTVERSION=	3.0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_ISC}
 MASTER_SITE_SUBDIR=	dhcp dhcp/dhcp-3.0-history
@@ -39,10 +39,6 @@ OPTIONS=	DHCP_PARANOIA "add -user, -group and -chroot options" on \
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64" || ${ARCH} == "ia64" || ${ARCH} == "sparc64"
-FORBIDDEN=	the last fix for 64-bit platforms may cause security problems
-.endif
 
 .if ${SUBSYS} == server && defined(WITH_DHCP_LDAP)
 # Based on patch from Brian Masney :

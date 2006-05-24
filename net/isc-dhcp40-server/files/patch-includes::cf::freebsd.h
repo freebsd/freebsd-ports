@@ -9,15 +9,6 @@
  #include <string.h>
  #include <paths.h>
  #include <errno.h>
-@@ -82,7 +82,7 @@
- 
- /* Time stuff... */
- #include <sys/time.h>
--#define TIME time_t
-+#define TIME u_int32_t
- #define GET_TIME(x)	time ((x))
- 
- #define HAVE_SA_LEN
 @@ -97,6 +97,10 @@
  #define SOCKLEN_T int
  #endif
