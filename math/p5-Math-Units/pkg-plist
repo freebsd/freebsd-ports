@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Math/Units.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Units/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Units
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math
+@dirrmtry %%SITE_PERL%%/Math
