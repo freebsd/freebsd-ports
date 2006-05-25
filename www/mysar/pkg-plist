@@ -8,6 +8,7 @@
 %%MYSAR%%/bin/mysar-resolver.php
 %%MYSAR%%/etc/mysar.apache
 %%MYSAR%%/etc/mysar.cron
+%%MYSAR%%/etc/config.ini.example
 %%MYSAR%%/inc/common.inc.php
 %%MYSAR%%/inc/functions.inc.php
 %%MYSAR%%/inc/smarty/Config_File.class.php
@@ -82,7 +83,6 @@
 %%MYSAR%%/inc/smarty/plugins/shared.escape_special_chars.php
 %%MYSAR%%/inc/smarty/plugins/shared.make_timestamp.php
 %%MYSAR%%/log/.keep
-%%MYSAR%%/smarty-tmp
 %%MYSAR%%/www-templates/IPSitesSummary.tpl
 %%MYSAR%%/www-templates/IPSummary.tpl
 %%MYSAR%%/www-templates/administration.tpl
@@ -92,12 +92,22 @@
 %%MYSAR%%/www-templates/header.tpl
 %%MYSAR%%/www-templates/index.tpl
 %%MYSAR%%/www-templates/siteusers.tpl
+%%MYSAR%%/www-templates.pt_BR/header.tpl
+%%MYSAR%%/www-templates.pt_BR/IPSummary.tpl
+%%MYSAR%%/www-templates.pt_BR/details.tpl
+%%MYSAR%%/www-templates.pt_BR/allsites.tpl
+%%MYSAR%%/www-templates.pt_BR/siteusers.tpl
+%%MYSAR%%/www-templates.pt_BR/index.tpl
+%%MYSAR%%/www-templates.pt_BR/IPSitesSummary.tpl
+%%MYSAR%%/www-templates.pt_BR/footer.tpl
+%%MYSAR%%/www-templates.pt_BR/administration.tpl
 %%MYSAR%%/www/dfl.css
 %%MYSAR%%/www/images/down-arrow.gif
 %%MYSAR%%/www/images/splash_main.gif
 %%MYSAR%%/www/images/up-arrow.gif
 %%MYSAR%%/www/index.php
 %%MYSAR%%/www/install/index.php
+
 @dirrm %%MYSAR%%/bin
 @dirrm %%MYSAR%%/etc
 @dirrm %%MYSAR%%/inc/smarty/internals
@@ -106,6 +116,7 @@
 @dirrm %%MYSAR%%/inc
 @dirrm %%MYSAR%%/smarty-tmp
 @dirrm %%MYSAR%%/log
+@dirrm %%MYSAR%%/www-templates.pt_BR
 @dirrm %%MYSAR%%/www-templates
 @dirrm %%MYSAR%%/www/images
 @dirrm %%MYSAR%%/www/install
