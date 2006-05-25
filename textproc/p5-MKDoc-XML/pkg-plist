@@ -1,0 +1,26 @@
+%%SITE_PERL%%/MKDoc/XML.pm
+%%SITE_PERL%%/MKDoc/XML/Decode.pm
+%%SITE_PERL%%/MKDoc/XML/Decode/Numeric.pm
+%%SITE_PERL%%/MKDoc/XML/Decode/XHTML.pm
+%%SITE_PERL%%/MKDoc/XML/Decode/XMLBase.pm
+%%SITE_PERL%%/MKDoc/XML/Dumper.pm
+%%SITE_PERL%%/MKDoc/XML/Encode.pm
+%%SITE_PERL%%/MKDoc/XML/Stripper.pm
+%%SITE_PERL%%/MKDoc/XML/Stripper/mkdoc16.txt
+%%SITE_PERL%%/MKDoc/XML/Stripper/xhtml10frameset.txt
+%%SITE_PERL%%/MKDoc/XML/Stripper/xhtml10strict.txt
+%%SITE_PERL%%/MKDoc/XML/Stripper/xhtml10transitional.txt
+%%SITE_PERL%%/MKDoc/XML/Tagger.pm
+%%SITE_PERL%%/MKDoc/XML/Tagger/Preserve.pm
+%%SITE_PERL%%/MKDoc/XML/Token.pm
+%%SITE_PERL%%/MKDoc/XML/Tokenizer.pm
+%%SITE_PERL%%/MKDoc/XML/TreeBuilder.pm
+%%SITE_PERL%%/MKDoc/XML/TreePrinter.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MKDoc/XML/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MKDoc/XML
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MKDoc
+@dirrm %%SITE_PERL%%/MKDoc/XML/Tagger
+@dirrm %%SITE_PERL%%/MKDoc/XML/Stripper
+@dirrm %%SITE_PERL%%/MKDoc/XML/Decode
+@dirrm %%SITE_PERL%%/MKDoc/XML
+@dirrmtry %%SITE_PERL%%/MKDoc

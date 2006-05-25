@@ -365,6 +365,7 @@
     SUBDIR += p5-Lingua-StopWords
     SUBDIR += p5-MARC
     SUBDIR += p5-MARC-Record
+    SUBDIR += p5-MKDoc-XML
     SUBDIR += p5-Makefile-Parser
     SUBDIR += p5-MathML-Entities
     SUBDIR += p5-NetAddr-IP-Find
