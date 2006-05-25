@@ -6,7 +6,7 @@
 #    $MCom: ports-stable/databases/qdbm/Makefile,v 1.4 2006/03/04 21:25:54 ahze Exp $
 
 PORTNAME=	qdbm
-PORTVERSION=	1.8.53
+PORTVERSION=	1.8.57
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://qdbm.sourceforge.net/
