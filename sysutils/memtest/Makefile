@@ -11,7 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://pyropus.ca/software/${PORTNAME}er/
 DISTNAME=	${PORTNAME}er-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	question+fbsdports@closedsrc.org
 COMMENT=	Utility to test for faulty memory subsystem
 
 MAN8=		${PORTNAME}.8
