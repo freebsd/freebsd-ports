@@ -16,26 +16,28 @@
 # Makefile.BSD, which is included in the source distribution.
 
 PORTNAME=	afni
-PORTVERSION=	2005.12.30.0934.2
+PORTVERSION=	2006.03.21.1314
 CATEGORIES=	science biology graphics
-MASTER_SITES=	http://www.neuro.mcw.edu/~bacon/Ports/distfiles/AFNI/${PORTVERSION}/
-DISTFILES=	afni_src.tgz afni_doc.tgz afni.1 \
-		Makefile.FreeBSD_PORT TTatlas+tlrc.BRIK.gz TTatlas+tlrc.HEAD
+MASTER_SITES=	http://afni.nimh.nih.gov/pub/dist/tgz/ \
+		http://www.neuro.mcw.edu/~bacon/Ports/distfiles/AFNI/${PORTVERSION}/
+DISTFILES=	afni_src.tgz afni_doc.tgz afni.1 Makefile.FreeBSD_PORT \
+		TTatlas+tlrc.BRIK.gz TTatlas+tlrc.HEAD CA_EZ_v1.3b-Mar1506.tgz
 DIST_SUBDIR=	AFNI-${PORTVERSION}
-EXTRACT_ONLY=	afni_src.tgz afni_doc.tgz
+EXTRACT_ONLY=	afni_src.tgz afni_doc.tgz CA_EZ_v1.3b-Mar1506.tgz
 
 MAINTAINER=	bacon@smithers.neuro.mcw.edu
 COMMENT=	Advanced Functional Neuro Imaging
+
+RUN_DEPENDS=	cjpeg:${PORTSDIR}/graphics/jpeg \
+		mpeg_encode:${PORTSDIR}/multimedia/mpeg_encode \
+		whirlgif:${PORTSDIR}/graphics/whirlgif \
+		ppmtogif:${PORTSDIR}/graphics/netpbm
 
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"
 BROKEN=	Does not compile on sparc64: "undefined reference to `_mcount'"
 .endif
-
-RUN_DEPENDS=	cjpeg:${PORTSDIR}/graphics/jpeg \
-		mpeg_encode:${PORTSDIR}/multimedia/mpeg_encode \
-		whirlgif:${PORTSDIR}/graphics/whirlgif
 
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
@@ -85,9 +87,11 @@ SCRIPTS=\
 	@clip_volume \
 	@fix_FSsphere \
 	@make_stim_file \
+	@np \
 	@parse_afni_name \
 	@parse_name \
-	suma_change_spec \
+	3dMax \
+	suma_change_spec
 
 PLIST_FILES+=	${SCRIPTS:S|^|bin/|}
 
@@ -122,6 +126,7 @@ do-install:
 .endfor
 	${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/* ${PREFIX}/bin
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/TTatlas* ${DATADIR}
+	${INSTALL_DATA} ${WRKDIR}/CA_EZ_v1.3b-Mar1506/* ${DATADIR}
 	${INSTALL_MAN} ${DISTDIR}/${DIST_SUBDIR}/afni.1 ${PREFIX}/man/man1
 	@${MV} ${INSTALL_TEMP}/* ${INSTALL_WRKSRC}
 .if !defined(NOPORTDOCS)

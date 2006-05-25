@@ -3,6 +3,7 @@ bin/1ddot
 bin/1deval
 bin/1dfft
 bin/1dgrayplot
+bin/1dmatcalc
 bin/1dnorm
 bin/1dplot
 bin/1dsum
@@ -11,7 +12,6 @@ bin/1dtranspose
 bin/24swap
 bin/2dImReg
 bin/2swap
-bin/3T_toafni
 bin/3dAFNIto3D
 bin/3dAFNItoANALYZE
 bin/3dAFNItoMINC
@@ -29,6 +29,7 @@ bin/3dAutoTcorrelate
 bin/3dAutobox
 bin/3dAutomask
 bin/3dBRAIN_VOYAGERtoAFNI
+bin/3dBrickStat
 bin/3dCM
 bin/3dCRUISEtoAFNI
 bin/3dClipLevel
@@ -47,12 +48,12 @@ bin/3dFourier
 bin/3dFriedman
 bin/3dGetrow
 bin/3dIntracranial
+bin/3dInvFMRI
 bin/3dKruskalWallis
 bin/3dLRflip
 bin/3dLocalstat
 bin/3dMINCtoAFNI
 bin/3dMannWhitney
-bin/3dMax
 bin/3dMean
 bin/3dMedianFilter
 bin/3dNLfim
@@ -76,6 +77,7 @@ bin/3dTqual
 bin/3dTshift
 bin/3dTsmooth
 bin/3dTstat
+bin/3dTwotoComplex
 bin/3dUndump
 bin/3dUniformize
 bin/3dVol2Surf
@@ -106,6 +108,7 @@ bin/3dhistog
 bin/3dinfo
 bin/3dmaskave
 bin/3dmaskdump
+bin/3dmatcalc
 bin/3dmaxima
 bin/3dmerge
 bin/3dnewid
@@ -309,6 +312,18 @@ lib/plug_vol2surf.so
 lib/plug_volreg.so
 lib/plug_wavelets.so
 lib/plug_zeropad.so
+%%DATADIR%%/Dist_Stamp
+%%DATADIR%%/Readme_dist
+%%DATADIR%%/TT_N27+tlrc.BRIK.gz
+%%DATADIR%%/TT_N27+tlrc.HEAD
+%%DATADIR%%/TT_N27_CA_EZ_MPM+tlrc.BRIK.gz
+%%DATADIR%%/TT_N27_CA_EZ_MPM+tlrc.HEAD
+%%DATADIR%%/TT_N27_CA_EZ_PMaps+tlrc.BRIK.gz
+%%DATADIR%%/TT_N27_CA_EZ_PMaps+tlrc.HEAD
+%%DATADIR%%/TT_N27_EZ_LR+tlrc.BRIK.gz
+%%DATADIR%%/TT_N27_EZ_LR+tlrc.HEAD
+%%DATADIR%%/TT_N27_EZ_ML+tlrc.BRIK.gz
+%%DATADIR%%/TT_N27_EZ_ML+tlrc.HEAD
 %%DATADIR%%/TTatlas+tlrc.BRIK.gz
 %%DATADIR%%/TTatlas+tlrc.HEAD
 %%DATADIR%%/face_JimEliassen.jpg
@@ -341,6 +356,7 @@ lib/plug_zeropad.so
 %%DATADIR%%/face_claudio.jpg
 %%DATADIR%%/face_cmoritz.jpg
 %%DATADIR%%/face_cmyers.jpg
+%%DATADIR%%/face_cscholl.jpg
 %%DATADIR%%/face_csenior.jpg
 %%DATADIR%%/face_cwettig.jpg
 %%DATADIR%%/face_dglen.jpg
@@ -376,11 +392,13 @@ lib/plug_zeropad.so
 %%DATADIR%%/face_kropella.jpg
 %%DATADIR%%/face_kschreiber.jpg
 %%DATADIR%%/face_kuba.jpg
+%%DATADIR%%/face_kylesimmons.jpg
 %%DATADIR%%/face_lask.jpg
 %%DATADIR%%/face_laura.jpg
 %%DATADIR%%/face_lincoln1.jpg
 %%DATADIR%%/face_lincoln2.jpg
 %%DATADIR%%/face_lindachao.jpg
+%%DATADIR%%/face_lisaeyler.jpg
 %%DATADIR%%/face_lizyoder.jpg
 %%DATADIR%%/face_ljcox.jpg
 %%DATADIR%%/face_llatour.jpg
