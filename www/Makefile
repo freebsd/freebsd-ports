@@ -793,7 +793,6 @@
     SUBDIR += postnuke
     SUBDIR += pound
     SUBDIR += preferential
-    SUBDIR += preferential-firefox
     SUBDIR += privoxy
     SUBDIR += privoxy+ipv6
     SUBDIR += pserv
@@ -1005,6 +1004,7 @@
     SUBDIR += xpi-no-referrer
     SUBDIR += xpi-noscript
     SUBDIR += xpi-pdf_download
+    SUBDIR += xpi-preferential
     SUBDIR += xpi-savegenpage
     SUBDIR += xpi-searchstatus
     SUBDIR += xpi-server_switcher
