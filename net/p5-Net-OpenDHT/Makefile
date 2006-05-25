@@ -15,25 +15,25 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	aaron@FreeBSD.org
 COMMENT=	Access the Open Distributed Hash Table (Open DHT)
 
-BUILD_DEPENDS=	${SITE_PERL}/Class/Accessor/Chained/Fast.pm:${PORTSDIR}/devel/p5-Class-Accessor-Chained \
+RUN_DEPENDS=	${SITE_PERL}/Class/Accessor/Chained/Fast.pm:${PORTSDIR}/devel/p5-Class-Accessor-Chained \
 		${SITE_PERL}/App/Cache.pm:${PORTSDIR}/devel/p5-App-Cache \
 		${SITE_PERL}/${PERL_ARCH}/List/Util.pm:${PORTSDIR}/lang/p5-Scalar-List-Utils \
 		${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
 		${SITE_PERL}/${PERL_ARCH}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-XML-LibXML \
 		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS+=	${SITE_PERL}/Test/Exception.pm:${PORTSDIR}/devel/p5-Test-Exception \
+		${SITE_PERL}/Test/Simple.pm:${PORTSDIR}/devel/p5-Test-Simple
 
-BROKEN=		Does not build
-
-PERL_MOD_BUILD=	yes
+PERL_MODBUILD=	yes
 
 MAN3=		Net::OpenDHT.3
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500800
-IGNORE=		requires Perl 5.8.  Please install lang/perl5 or lang/perl5.8
+.if ${PERL_LEVEL} < 500600
+IGNORE=		requires Perl 5.6.  Please install lang/perl5 or lang/perl5.8
 .endif
 
 .include <bsd.port.post.mk>
