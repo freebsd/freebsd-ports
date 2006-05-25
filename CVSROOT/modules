@@ -8822,6 +8822,7 @@ p5-MasonX-Interp-WithCallbacks	ports/www/p5-MasonX-Interp-WithCallbacks
 p5-MasonX-Profiler	ports/www/p5-MasonX-Profiler
 p5-MasonX-Request-WithApacheSession	ports/www/p5-MasonX-Request-WithApacheSession
 p5-MasonX-WebApp	ports/www/p5-MasonX-WebApp
+p5-Math-Algebra-Symbols	ports/math/p5-Math-Algebra-Symbols
 p5-Math-Base85	ports/math/p5-Math-Base85
 p5-Math-BaseCalc	ports/math/p5-Math-BaseCalc
 p5-Math-Bezier	ports/math/p5-Math-Bezier
