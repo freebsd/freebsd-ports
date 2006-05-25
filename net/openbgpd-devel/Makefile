@@ -9,8 +9,7 @@ PORTNAME=	openbgpd-devel
 PORTVERSION=	${SNAPSHOT}
 PORTREVISION=	0
 CATEGORIES=	net
-DISTFILES=	${PORTNAME}-${PORTVERSION}.tgz:freebsd \
-		hash.h:freebsd strtonum.c:freebsd
+DISTFILES=	${PORTNAME}-${PORTVERSION}.tgz:freebsd
 SNAPSHOT=	20060516
 
 MAINTAINER=	flz@FreeBSD.org
@@ -21,11 +20,6 @@ CONFLICTS=	zebra-0* quagga-0* openbgpd-devel-*
 MASTERDIR=	${.CURDIR}/../openbgpd
 MD5_FILE=	${.CURDIR}/distinfo
 
-EXTRA_PATCHES=	${.CURDIR}/files/devel-bgpd_bgpd.8 \
-		${.CURDIR}/files/devel-bgpd_kroute.c \
-		${.CURDIR}/files/devel-bgpctl_bgpctl.c \
-		${.CURDIR}/files/devel-bgpctl_parser.c
-
-COPTS+=		-DRTA_LABEL=0
+EXTRA_PATCHES=	${.CURDIR}/files/devel-bgpd_bgpd.8
 
 .include "${MASTERDIR}/Makefile"
