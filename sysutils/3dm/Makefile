@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	3dm
-PORTVERSION=	2.04.00.014
+PORTVERSION=	2.04.00.018
 PORTEPOCH=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.3ware.com/download/Escalade9000Series/9.3.0.3/
-DISTNAME=	3DM2-freebsd_5.4-9.3.0.3
+MASTER_SITES=	http://www.3ware.com/download/Escalade9500S-Series/9.3.0.4/
+DISTNAME=	3DM2-freebsd_5.4-9.3.0.4
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	darren.pilgrim@bitfreak.org
 COMMENT=	3ware RAID controller monitoring daemon and web server
 
 USE_RC_SUBR=	3dm2.sh
@@ -53,7 +53,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/en/*.html ${SHAREDIR}
 	${INSTALL_DATA} ${WRKSRC}/en/*.css ${SHAREDIR}
 	${INSTALL_DATA} ${WRKSRC}/en/images/* ${SHAREDIR}/images
-	${INSTALL_DATA} ${WRKSRC}/en/scripts/*.js ${SHAREDIR}/scripts
 
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"
 	${INSTALL_PROGRAM} ${WRKSRC}/3dm2.x86_64 ${PREFIX}/sbin/3dm2
@@ -103,8 +102,6 @@ post-install:
 	@${LN} -s ${PREFIX}/etc/3dm2/3dm2.conf /etc/3dm2/3dm2.conf
 	@${LN} -s ${PREFIX}/etc/3dm2/3dm2.pem /etc/3dm2/3dm2.pem
 
-	@${ECHO} ""
-	@${ECHO} "Add twdm2_enable=\"YES\" to /etc/rc.conf to run 3dm2 from startup."
-	@${ECHO} ""
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
