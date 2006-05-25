@@ -9706,6 +9706,7 @@ p5-XML-Stream	ports/textproc/p5-XML-Stream
 p5-XML-TreeBuilder	ports/textproc/p5-XML-TreeBuilder
 p5-XML-Twig	ports/textproc/p5-XML-Twig
 p5-XML-Validator-Schema	ports/textproc/p5-XML-Validator-Schema
+p5-XML-WBXML	ports/converters/p5-XML-WBXML
 p5-XML-Writer	ports/textproc/p5-XML-Writer
 p5-XML-XBEL	ports/textproc/p5-XML-XBEL
 p5-XML-XPath	ports/textproc/p5-XML-XPath
