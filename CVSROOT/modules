@@ -8916,6 +8916,7 @@ p5-NSNMP	ports/net-mgmt/p5-NSNMP
 p5-Net		ports/net/p5-Net
 p5-Net-AIM	ports/net-im/p5-Net-AIM
 p5-Net-AOLIM	ports/net-im/p5-Net-AOLIM
+p5-Net-Address-IPv4-Local	ports/net/p5-Net-Address-IPv4-Local
 p5-Net-Akismet	ports/www/p5-Net-Akismet
 p5-Net-Amazon	ports/net/p5-Net-Amazon
 p5-Net-BGP	ports/net/p5-Net-BGP
