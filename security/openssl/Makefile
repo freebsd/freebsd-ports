@@ -6,14 +6,6 @@
 #
 
 PORTNAME=	openssl
-.if !defined(WITHOUT_OPENSSL_097) && !defined(WITH_OPENSSL_BETA)
-.if !defined(OSVERSION6)
-OSVERSION6!=	make OSVERSION6=0 -V OSVERSION
-.endif
-.if ( ${OSVERSION6} >= 600000 ) && ( ${OSVERSION6} < 600100 )
-WITH_OPENSSL_097=	yes
-.endif
-.endif
 .if defined(WITH_OPENSSL_SNAPSHOT)
 PORTVERSION=	0.9.8
 PORTREVISION!=	date -v-1d +%Y%m%d
@@ -23,7 +15,7 @@ PORTVERSION=	0.9.7j
 PORTREVISION?=	0
 .else
 PORTVERSION=	0.9.8b
-PORTREVISION?=	0
+PORTREVISION?=	1
 .endif
 .endif
 CATEGORIES=	security devel
@@ -60,13 +52,11 @@ NO_LATEST_LINK=		yes
 BETA_SUFFIX=		-stable
 PLIST_SUB+=		OPENSSL_BETA="@comment "
 PLIST_SUB+=		OPENSSL_STABLE=""
-OPENSSL_SHLIBVER?=	3
 CONFLICTS?=		openssl-0.* openssl-beta-0.*
 .else
 PATCHDIR=		${MASTERDIR}/files-beta
 PLIST_SUB+=		OPENSSL_BETA=""
 PLIST_SUB+=		OPENSSL_STABLE="@comment "
-OPENSSL_SHLIBVER?=	4
 CONFLICTS?=		openssl-beta-0.* openssl-stable-0.*
 .endif
 
@@ -896,6 +886,20 @@ MLINKS+=	\
 MAKE_ARGS+=	WHOLE_ARCHIVE_FLAG=-Bforcearchive
 .else
 MAKE_ARGS+=	WHOLE_ARCHIVE_FLAG=--whole-archive
+.endif
+
+.if defined(WITH_OPENSSL_097) || defined(WITH_OPENSSL_STABLE)
+.if ( ${OSVERSION} >= 600100 )
+OPENSSL_SHLIBVER?=	4
+.else
+OPENSSL_SHLIBVER?=	3
+.endif
+.else
+.if ( ${OSVERSION} >= 600100 )
+OPENSSL_SHLIBVER?=	5
+.else
+OPENSSL_SHLIBVER?=	4
+.endif
 .endif
 
 # disable runtime SSE2 detection
