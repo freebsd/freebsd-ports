@@ -1,0 +1,150 @@
+--- ./makefile.orig	Tue May 23 20:06:00 2006
++++ ./makefile	Tue May 23 20:11:46 2006
+@@ -1,37 +1,64 @@
+-BUILD_CLIENT=YES	# client executable
+-BUILD_DEDICATED=YES	# server executable
+-BUILD_CGAME=YES		# cgame dll
+-BUILD_GAME=YES		# game dll
++# GNU Makefile for EGL.
++
++# Compilation components and options.
++BUILD_CLIENT?=YES	# Client executable.
++BUILD_DEDICATED?=YES	# Server executable.
++BUILD_CGAME?=YES	# cgame shared library.
++BUILD_GAME?=YES		# game shared library.
++WITH_OPT_CFLAGS?=YES	# Optimized compiler flags.
++WITH_HOMEDIR?=YES	# Write files in "~/.egl".
+ 
++# Common variables.
++CC?=gcc
+ VERSION=0.0.6
++EGL_MAKEFILE=makefile
+ 
++# Compiler flags.
++SHARED_FLAGS=	$(CFLAGS) -DARCH='\"$(ARCH)\"' \
++		-DGAME_NAME='\"$(GAME_NAME)\"' \
++		-DEGLCGAME_NAME='\"$(EGLCGAME_NAME)\"'
++RELEASE_CFLAGS=	-Isource/ -I./ -I../ $(SHARED_FLAGS)
++DEBUG_CFLAGS=-	g -Isource/ -I./ -I../ $(SHARED_FLAGS) -DC_ONLY
+ 
+-CC=gcc
+-EGL_MAKEFILE=makefile
+-SHARED_FLAGS:=
+-RELEASE_CFLAGS=-Isource/ -I./ -I../ $(SHARED_FLAGS) -O2 -fno-strict-aliasing -ffast-math -fexpensive-optimizations
+-DEBUG_CFLAGS=-g -Isource/ -I./ -I../ $(SHARED_FLAGS) -DC_ONLY
+-LDFLAGS=-ldl -lm -lz -ljpeg -lpng
+-DED_LDFLAGS=-ldl -lm -lz
+-MODULE_LDFLAGS=-ldl -lm
+-X11_LDFLAGS=-L/usr/X11R6/lib -lX11 -lXext
++# Linker flags.
++LDFLAGS+=-lm
++DED_LDFLAGS=-lz
++MODULE_LDFLAGS=
++X11_LDFLAGS=-lX11 -lXext -ljpeg -lpng -lz
+ 
++# Compilation commands.
+ 
+ SHLIBCFLAGS=-fPIC
+ SHLIBLDFLAGS=-shared
+ 
+-
+ DO_CC=$(CC) $(CFLAGS) -o $@ -c $<
+ DO_DED_CC=$(CC) $(CFLAGS) -DDEDICATED_ONLY -o $@ -c $<
+ DO_SHLIB_CC=$(CC) $(CFLAGS) $(SHLIBCFLAGS) -o $@ -c $<
+ 
+-
+-# this nice line comes from the linux kernel makefile
++# This nice line comes from the linux kernel makefile.
+ ARCH := $(shell uname -m | sed -e s/i.86/i386/ -e s/sun4u/sparc/ -e s/sparc64/sparc/ -e s/arm.*/arm/ -e s/sa110/arm/ -e s/alpha/axp/)
+ SHLIBEXT =so
+ 
+-BUILD_DEBUG_DIR=debug$(ARCH)
+-BUILD_RELEASE_DIR=release$(ARCH)
++OSTYPE := $(shell uname -s)
++
++BUILD_DEBUG_DIR=debug
++BUILD_RELEASE_DIR=release
++
++ifeq ($(OSTYPE),Linux)
++LDFLAGS+=-ldl
++GAME_NAME=	game$(ARCH)
++EGLCGAME_NAME=	eglcgame$(ARCH)
++endif
++
++ifeq ($(OSTYPE),FreeBSD)
++# These variables are defined from the port, and passed by the environment.
++SHARED_FLAGS+=	-I$(LOCALBASE)/include -I$(X11BASE)/include \
++		-DDATADIR='\"$(Q2DIR)\"' -DLIBDIR='\"$(LIBDIR)\"'
++LDFLAGS+=	-L$(LOCALBASE)/lib -L$(X11BASE)/lib
++X11_LDFLAGS+=	$(PTHREAD_LIBS)
++GAME_NAME=	game
++EGLCGAME_NAME=	eglcgame
++endif
+ 
+ ifeq ($(strip $(BUILD_CLIENT)),YES)
+   TARGETS += $(BUILDDIR)/egl
+@@ -42,20 +69,27 @@
+ endif
+ 
+ ifeq ($(strip $(BUILD_CGAME)),YES)
+- TARGETS += $(BUILDDIR)/baseq2/eglcgame$(ARCH).$(SHLIBEXT)
++ TARGETS += $(BUILDDIR)/baseq2/$(EGLCGAME_NAME).$(SHLIBEXT)
+ endif
+ 
+ ifeq ($(strip $(BUILD_GAME)),YES)
+- TARGETS += $(BUILDDIR)/baseq2/game$(ARCH).$(SHLIBEXT)
++ TARGETS += $(BUILDDIR)/baseq2/$(GAME_NAME).$(SHLIBEXT)
+ endif
+ 
++ifeq ($(strip $(WITH_OPT_CFLAGS)),YES)
++RELEASE_CFLAGS += -O2 -fno-strict-aliasing -ffast-math -fexpensive-optimizations
++endif
+ 
+-ifeq ($(wildcard /usr/include/X11/extensions/xf86vmode.h),/usr/include/X11/extensions/xf86vmode.h)
++ifeq ($(strip $(WITH_HOMEDIR)),YES)
++SHARED_FLAGS += -DHOMEDIR
++endif
++
++ifeq ($(wildcard $(X11BASE)/include/X11/extensions/xf86vmode.h),$(X11BASE)/include/X11/extensions/xf86vmode.h)
+ SHARED_FLAGS += -DXF86VMODE
+ X11_LDFLAGS += -lXxf86vm
+ endif
+ 
+-ifeq ($(wildcard /usr/include/X11/extensions/xf86dga.h),/usr/include/X11/extensions/xf86dga.h)
++ifeq ($(wildcard $(X11BASE)/include/X11/extensions/xf86dga.h),$(X11BASE)/include/X11/extensions/xf86dga.h)
+ SHARED_FLAGS += -DXF86DGA
+ X11_LDFLAGS += -lXxf86dga
+ endif
+@@ -527,7 +561,7 @@
+ 
+ $(BUILDDIR)/eglded: $(OBJS_DEDICATED)
+ 	@echo Linking eglded;
+-	$(CC) $(CFLAGS) -o $@ $(OBJS_DEDICATED) $(DED_LDFLAGS)
++	$(CC) $(CFLAGS) -o $@ $(OBJS_DEDICATED) $(LDFLAGS) $(DED_LDFLAGS)
+ 
+ $(BUILDDIR)/dedicated/alias.o: $(SOURCEDIR)/common/alias.c
+ 	$(DO_DED_CC)
+@@ -738,9 +772,9 @@
+ 	$(BUILDDIR)/baseq2/cgame/m_flash.o \
+ 
+ 
+-$(BUILDDIR)/baseq2/eglcgame$(ARCH).$(SHLIBEXT): $(OBJS_CGAME)
++$(BUILDDIR)/baseq2/$(EGLCGAME_NAME).$(SHLIBEXT): $(OBJS_CGAME)
+ 	@echo Linking cgame dll;
+-	$(CC) $(CFLAGS) $(SHLIBLDFLAGS) -o $@ $(OBJS_CGAME) $(MODULE_LDFLAGS)
++	$(CC) $(CFLAGS) $(SHLIBLDFLAGS) -o $@ $(OBJS_CGAME) $(LDFLAGS) $(MODULE_LDFLAGS)
+ 
+ $(BUILDDIR)/baseq2/cgame/cg_api.o: $(SOURCEDIR)/cgame/cg_api.c
+ 	$(DO_SHLIB_CC)
+@@ -1026,9 +1060,9 @@
+ 	$(BUILDDIR)/baseq2/game/string.o \
+ 
+ 
+-$(BUILDDIR)/baseq2/game$(ARCH).$(SHLIBEXT): $(OBJS_GAME)
++$(BUILDDIR)/baseq2/$(GAME_NAME).$(SHLIBEXT): $(OBJS_GAME)
+ 	@echo Linking game dll;
+-	$(CC) $(CFLAGS) $(SHLIBLDFLAGS) -o $@ $(OBJS_GAME) $(MODULE_LDFLAGS)
++	$(CC) $(CFLAGS) $(SHLIBLDFLAGS) -o $@ $(OBJS_GAME) $(LDFLAGS) $(MODULE_LDFLAGS)
+ 
+ $(BUILDDIR)/baseq2/game/cg_api.o: $(SOURCEDIR)/cgame/cg_api.c
+ 	$(DO_SHLIB_CC)

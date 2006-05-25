@@ -148,6 +148,7 @@
     SUBDIR += easysok
     SUBDIR += eboard
     SUBDIR += editss
+    SUBDIR += egl
     SUBDIR += egoboo
     SUBDIR += eif
     SUBDIR += eights
