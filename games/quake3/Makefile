@@ -32,7 +32,7 @@ OPTIONS=	CLIENT "Build client" on \
 		OPTIMIZED_CFLAGS "Enable compilation optimizations" on \
 		SMP "Build SMP (threaded) client" on
 
-MAKE_ENV=	LIBDIR="${LIBDIR}" DLL_ONLY=true
+MAKE_ENV=	LIBDIR="${LIBDIR}"
 PLIST_SUB=	LIBDIR="${LIBDIR:S/${PREFIX}\///}"
 
 LIBDIR=		${PREFIX}/lib/${PORTNAME}
