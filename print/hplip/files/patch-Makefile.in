@@ -1,6 +1,18 @@
---- Makefile.in.orig	Thu Mar 23 22:35:33 2006
-+++ Makefile.in	Mon Apr 24 09:15:54 2006
-@@ -1973,15 +1973,9 @@
+--- Makefile.in.orig	Tue May  9 14:18:36 2006
++++ Makefile.in	Sun May 21 14:32:27 2006
+@@ -377,9 +377,9 @@
+ www5dir = $(docdir)/supported_devices
+ dist_www5_DATA = $(wwwsrc)/supported_devices/*
+ www6dir = $(docdir)/tech_docs
+-dist_www6_DATA = $(wwwsrc)/tech_docs/*
++dist_www6_DATA = $(wwwsrc)/tech_docs/*.html
+ www61dir = $(docdir)/tech_docs/man_pages
+-dist_www61_DATA = $(wwwsrc)/tech_docs/man_pages/*
++dist_www61_DATA = $(wwwsrc)/tech_docs/man_pages/*.html
+ www7dir = $(docdir)/troubleshooting
+ dist_www7_DATA = $(wwwsrc)/troubleshooting/*
+ dist_hplip_DATA = $(doc_DATA) hplip.conf
+@@ -2348,15 +2348,9 @@
  #
  #       Do full install if not rpm_install.
  	if [ "$(rpm_install)" = "no" ]; then \
@@ -19,7 +31,7 @@
  	fi
  
  install-data-hook: test-destdir
-@@ -2039,30 +2033,31 @@
+@@ -2414,7 +2408,7 @@
  	    newname=$${i%.*}; \
  	    mv $(DESTDIR)$(hplipdir)/$$i $(DESTDIR)$(hplipdir)/$$newname; \
  	    if [ "$(rpm_install)" = "no" ]; then \
@@ -28,39 +40,7 @@
  	    fi \
  	done
  #
- #       Edit hpiod.conf in destdir.
- 	echo -e "\n[$(PACKAGE)]\nversion=$(VERSION)\njdprobe=0\n" >> $(DESTDIR)$(hplipdir)/$(PACKAGE).conf
- 	echo -e "[dirs]\nhome=$(hplipdir)\nrun=$(rundir)\nppd=$(hpppddir)\n" >> $(DESTDIR)$(hplipdir)/$(PACKAGE).conf
--	echo -ne "# Following values are determined at configure time and cannot be changed.\n[configure]\n" >> $(DESTDIR)$(hplipdir)/$(PACKAGE).conf
-+	echo "# Following values are determined at configure time and cannot be changed." >> $(DESTDIR)$(hplipdir)/$(PACKAGE).conf
-+	echo "[configure]" >> $(DESTDIR)$(hplipdir)/$(PACKAGE).conf
- 	if [ "$(rpm_install)" = "yes" ]; then \
--	   echo -ne "rpm-install=1\n" >> $(DESTDIR)$(hplipdir)/$(PACKAGE).conf; \
-+	   echo "rpm-install=1" >> $(DESTDIR)$(hplipdir)/$(PACKAGE).conf; \
- 	else \
--	   echo -ne "rpm-install=0\n" >> $(DESTDIR)$(hplipdir)/$(PACKAGE).conf; \
-+	   echo "rpm-install=0" >> $(DESTDIR)$(hplipdir)/$(PACKAGE).conf; \
- 	fi 
- 	if [ "$(network_build)" = "yes" ]; then \
--	   echo -ne "network-build=1\n" >> $(DESTDIR)$(hplipdir)/$(PACKAGE).conf; \
-+	   echo "network-build=1" >> $(DESTDIR)$(hplipdir)/$(PACKAGE).conf; \
- 	else \
--	   echo -ne "network-build=0\n" >> $(DESTDIR)$(hplipdir)/$(PACKAGE).conf; \
-+	   echo "network-build=0" >> $(DESTDIR)$(hplipdir)/$(PACKAGE).conf; \
- 	fi
- 	if [ "$(pp_build)" = "yes" ]; then \
--	   echo -ne "pp-build=1\n" >> $(DESTDIR)$(hplipdir)/$(PACKAGE).conf; \
-+	   echo "pp-build=1" >> $(DESTDIR)$(hplipdir)/$(PACKAGE).conf; \
- 	else \
--	   echo -ne "pp-build=0\n" >> $(DESTDIR)$(hplipdir)/$(PACKAGE).conf; \
-+	   echo "pp-build=0" >> $(DESTDIR)$(hplipdir)/$(PACKAGE).conf; \
- 	fi
--	echo -ne "internal-tag=$(PACKAGE_BUGREPORT)\n" >> $(DESTDIR)$(hplipdir)/$(PACKAGE).conf;
-+	echo "internal-tag=$(PACKAGE_BUGREPORT)" >> $(DESTDIR)$(hplipdir)/$(PACKAGE).conf;
- 
- #
- #       Edit hpiod.sh in destdir.
-@@ -2074,16 +2069,6 @@
+@@ -2449,16 +2443,6 @@
  	if [ "$(rpm_install)" = "no" ]; then \
  	   $(mkinstalldirs) $(DESTDIR)/etc/hp; \
  	   $(INSTALL_DATA) $(DESTDIR)$(hplipdir)/$(PACKAGE).conf $(DESTDIR)/etc/hp; \

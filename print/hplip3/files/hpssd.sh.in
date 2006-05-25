@@ -3,26 +3,25 @@
 # PROVIDE: hpssd
 # REQUIRE: hpiod
 # BEFORE:  cupsd
-# KEYWORD: FreeBSD shutdown
-
-[ -z "${hpssd_enable}" ] && hpssd_enable="NO"
+# KEYWORD: shutdown
 
 . /etc/rc.subr
 
-prefix=%%PREFIX%%
-
 name=hpssd
+rcvar=${name}_enable
+
+command="%%PREFIX%%/sbin/${name}"
+command_interpreter="%%PREFIX%%/bin/python"
 pidfile="/var/run/${name}.pid"
 portfile="/var/run/${name}.port"
 hpssd_user=nobody
-command="${prefix}/sbin/${name}"
-command_interpreter="$prefix/bin/python"
 command_args=">/dev/null"
+
 start_precmd="hpssd_prestart"
 
-rcvar=`set_rcvar`
-
 load_rc_config $name
+
+: ${hpssd_enable="NO"}
 
 hpssd_prestart()
 {

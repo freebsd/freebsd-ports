@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hplip
-PORTVERSION=	0.9.10
+PORTVERSION=	0.9.11
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	hplip
@@ -19,7 +19,6 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		cups.2:${PORTSDIR}/print/cups-base \
 		usb:${PORTSDIR}/devel/libusb \
 		netsnmp.9:${PORTSDIR}/net-mgmt/net-snmp
-RUN_DEPENDS=	pylupdate:${PORTSDIR}/x11-toolkits/py-qt
 
 CONFLITS=	hpijs-* foomatic-filters-*
 
@@ -39,10 +38,20 @@ MAKE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 
 PKGDEINSTALL=	${PKGINSTALL}
 
+OPTIONS=	GUI "build with Python QT" on
+
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 5000000
+.if ${OSVERSION} < 500000
 BROKEN=		does not compile
+.endif
+
+.if exists(${LOCALBASE}/bin/pylupdate)
+WITH_GUI=      yes
+.endif
+
+.if defined(WITH_GUI)
+RUN_DEPENDS+=	pylupdate:${PORTSDIR}/x11-toolkits/py-qt
 .endif
 
 post-extract:
@@ -63,7 +72,6 @@ post-patch:
 		s|/usr/lib/cups/filter|${LOCALBASE}/libexec/cups/filter|g' \
 			${WRKSRC}/base/g.py \
 			${WRKSRC}/fax/backend/hpfax.py \
-			${WRKSRC}/hplip_readme.html \
 			${WRKSRC}/hpssd.py \
 			${WRKSRC}/io/hpiod/hpiod.h \
 			${WRKSRC}/prnt/hpijs/hplip_api.h \
