@@ -9,7 +9,8 @@ PORTNAME=	fressh
 PORTVERSION=	0.8.1
 PORTREVISION=	1
 CATEGORIES=	security
-MASTER_SITES=	http://www.fressh.org/
+MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
+		http://mirror2.unixfreunde.de/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A free rewritten implementation of the SSH communication protocol
