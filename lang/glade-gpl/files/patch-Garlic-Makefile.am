@@ -1,0 +1,16 @@
+--- Garlic/Makefile.am.orig	Tue Mar 28 02:43:13 2006
++++ Garlic/Makefile.am	Tue Mar 28 02:43:23 2006
+@@ -164,13 +164,11 @@
+ 
+ s-galiop.ads:
+ 	@echo "private package System.Garlic.Linker_Options is" >s-galiop.ads
+-	@echo "" >>s-galiop.ads
+ 	@if [ "x$(EXTRA_LIBS)" != "x" ] ; then\
+ 	 for option in `echo $(EXTRA_LIBS)`; do\
+ 	  echo "   pragma Linker_Options (\"$$option\");" >>s-galiop.ads;\
+ 	 done;\
+ 	fi
+-	@echo "" >>s-galiop.ads
+ 	@echo "end System.Garlic.Linker_Options;" >>s-galiop.ads
+ 
+ used:

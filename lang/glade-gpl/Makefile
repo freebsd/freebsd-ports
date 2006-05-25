@@ -6,36 +6,35 @@
 #
 
 PORTNAME=	gnat-glade
-PORTVERSION=	3.15p
-PORTREVISION=	1
+PORTVERSION=	2005
 CATEGORIES=	lang
-MASTER_SITES=	ftp://cs.nyu.edu/pub/gnat/${PORTVERSION}/glade/
-DISTNAME=	glade-${PORTVERSION}-src
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+DISTNAME=	glade-gpl-${PORTVERSION}-src
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mek@mek.uz.ua
 COMMENT=	GNU Ada distributed systems annex
 
-BUILD_DEPENDS=	adagcc:${PORTSDIR}/lang/gnat
+BUILD_DEPENDS=	gnatgcc:${PORTSDIR}/lang/gnat
+
+USE_AUTOTOOLS=	automake:14 autoconf:259
+USE_GMAKE=	yes
+CONFIGURE_ARGS=	--prefix=${PREFIX} --program-transform-name=''
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500039
-WITHOUT_CPU_CFLAGS=	yes
+# Check for GLADE sources.
+GLADE_SRC=${DISTNAME}${EXTRACT_SUFX}
+
+.if !exists(${DISTDIR}/${GLADE_SRC}) && !defined(PACKAGE_BUILDING)
+ECHO_MSG=/usr/bin/printf
+IGNORE=: Because of licensing and registration restrictions,\n\
+you must fetch the source distribution manually.\n\
+Please access http://libre.adacore.com/\n\
+with a web browser, register (it's free), and log in.  Download the source\n\
+file:\n\
+\t${DISTFILES}\n\
+and place it in ${DISTDIR}.\n
 .endif
-USE_AUTOTOOLS=	automake:14 autoconf:213
-CONFIGURE_ENV=	ADA=adagcc
-USE_GMAKE=	yes
-USE_PERL5_BUILD=yes
-
-ADACFLAGS?=
-CFLAGS=${ADACFLAGS}
-
-pre-configure:
-	${PERL} -pi -e "s@aclocal\)@${ACLOCAL})@g;\
-			s@automake\)@${AUTOMAKE})@g" ${WRKSRC}/aclocal.m4
-
-post-install:
-	${STRIP_CMD} ${PREFIX}/bin/gnatdist
 
 .include <bsd.port.post.mk>
