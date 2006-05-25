@@ -4,6 +4,7 @@ bin/svnadmin
 bin/svndumpfilter
 bin/svnlook
 bin/svnserve
+%%ASVN%%bin/asvn
 %%SVNSERVE_WRAPPER%%bin/svnserve.bin
 bin/svnversion
 include/subversion-1/mod_dav_svn.h

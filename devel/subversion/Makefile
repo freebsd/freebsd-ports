@@ -6,7 +6,7 @@
 
 PORTNAME=	subversion
 PORTVERSION=	1.3.1
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://subversion.tigris.org/downloads/:main \
 		http://svnbook.red-bean.com/en/1.1/:bookhtml \
@@ -25,6 +25,8 @@ USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=		--with-ssl
+
+USE_RC_SUBR=svnserve.sh
 
 MAN1=		svn.1 svnadmin.1 svnlook.1 svndumpfilter.1 svnversion.1
 MAN5=		svnserve.conf.5
@@ -198,6 +200,12 @@ PORTDOCS+=	book
 DISTFILES+=	svn-book.html:bookhtml svn-book.pdf:bookpdf
 .endif
 
+.if defined(WITH_ASVN)
+PLIST_SUB+=	ASVN=""
+.else
+PLIST_SUB+=	ASVN="@comment "
+.endif
+
 SCRIPTS=
 
 SCRIPTS_DATA=
@@ -298,6 +306,12 @@ pre-everything::
 	@${ECHO_MSG} "You can install the Subversion Book by defining WITH_BOOK."
 .endif
 	@${ECHO_MSG} ""
+.if defined(WITH_ASVN)
+	@${ECHO_MSG} "asvn will be installed"
+.else
+	@${ECHO_MSG} "You can install asvn from contrib by defining WITH_ASVN"
+.endif
+	@${ECHO_MSG} ""
 	@${ECHO_MSG} "Many useful scripts will be installed into ${PREFIX}/share/subversion"
 
 post-extract:
@@ -374,6 +388,9 @@ post-install:	${MKREPOS_TARGET}
 	${INSTALL_DATA} ${DISTDIR}/svn-book.html ${DOCSDIR}/book
 	${INSTALL_DATA} ${DISTDIR}/svn-book.pdf ${DOCSDIR}/book
 .endif
+.endif
+.if defined(WITH_ASVN)
+	${INSTALL_SCRIPT} ${WRKSRC}/contrib/client-side/asvn ${PREFIX}/bin
 .endif
 .if defined(WITH_PERL)
 	cd ${WRKSRC} ; \
