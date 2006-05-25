@@ -10751,7 +10751,6 @@ prcs		ports/devel/prcs
 predict		ports/comms/predict
 preferences.app	ports/deskutils/preferences.app
 preferential	ports/www/preferential
-preferential-firefox	ports/www/preferential-firefox
 prelude-lml	ports/security/prelude-lml
 prelude-manager	ports/security/prelude-manager
 premail		ports/mail/premail
@@ -14446,6 +14445,7 @@ xpi-mousegestures	ports/www/xpi-mousegestures
 xpi-no-referrer	ports/www/xpi-no-referrer
 xpi-noscript	ports/www/xpi-noscript
 xpi-pdf_download	ports/www/xpi-pdf_download
+xpi-preferential	ports/www/xpi-preferential
 xpi-savegenpage	ports/www/xpi-savegenpage
 xpi-searchstatus	ports/www/xpi-searchstatus
 xpi-server_switcher	ports/www/xpi-server_switcher
