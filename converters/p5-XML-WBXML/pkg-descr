@@ -1,0 +1,10 @@
+This module is a wrapper around Aymerick Jehanne's libwbxml (or perhaps 
+libwbxml2, I am not sure what the distinction is) library for handling 
+Wireless Binary XML. You must install libwbxml2 prior to installing this 
+module. The library can be found at http://libwbxml.aymerick.com/ 
+(libwbxml2 itself requires the expat library to be installed.)
+
+The module defines two functions: xml_to_wbxml and wbxml_to_xml.
+
+WWW: http://search.cpan.org/dist/XML-WBXML
+Author: David Glasser <glasser@bestpractical.com>
