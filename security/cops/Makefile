@@ -8,7 +8,8 @@
 PORTNAME=	cops
 PORTVERSION=	1.04
 CATEGORIES=	security
-MASTER_SITES=	http://www.fish.com/cops/
+MASTER_SITES=	http://mirror2.unixfreunde.de/ \
+		http://freebsd.unixfreunde.de/sources/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}+
 
 MAINTAINER=	ports@FreeBSD.org
