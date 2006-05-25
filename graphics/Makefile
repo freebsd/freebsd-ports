@@ -381,6 +381,7 @@
     SUBDIR += multivideo
     SUBDIR += mxp
     SUBDIR += netpbm
+    SUBDIR += netpbm-devel
     SUBDIR += nip2
     SUBDIR += nurbs++
     SUBDIR += ocaml-images
