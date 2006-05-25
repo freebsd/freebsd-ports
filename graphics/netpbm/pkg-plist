@@ -6,6 +6,7 @@ bin/bioradtopgm
 bin/bmptopnm
 bin/bmptoppm
 bin/brushtopbm
+%%DEVEL%%bin/cameratopam
 bin/cmuwmtopbm
 bin/ddbugtopbm
 bin/escp2topbm
@@ -37,7 +38,9 @@ bin/mrftopbm
 bin/mtvtoppm
 bin/neotoppm
 bin/palmtopnm
+%%DEVEL%%bin/pamaddnoise
 bin/pamarith
+%%DEVEL%%bin/pambayer
 bin/pamchannel
 bin/pamcomp
 bin/pamcut
@@ -53,9 +56,11 @@ bin/pamfunc
 bin/pamgauss
 bin/pamlookup
 bin/pammasksharpen
+%%DEVEL%%bin/pammixinterlace
 bin/pamoil
 bin/pamperspective
 bin/pampop9
+%%DEVEL%%bin/pamrgbatopng
 bin/pamscale
 bin/pamseq
 bin/pamsharpmap
@@ -67,12 +72,15 @@ bin/pamstretch
 bin/pamstretch-gen
 bin/pamsumm
 bin/pamsummcol
+%%DEVEL%%bin/pamtilt
 bin/pamtodjvurle
+%%DEVEL%%bin/pamtofits
 bin/pamtohdiff
 bin/pamtohtmltbl
 bin/pamtopfm
 bin/pamtopnm
 bin/pamtotga
+%%DEVEL%%bin/pamtotiff
 bin/pamtouil
 bin/pbmclean
 bin/pbmlife
@@ -139,6 +147,7 @@ bin/pgmramp
 bin/pgmslice
 bin/pgmtexture
 bin/pgmtofs
+%%DEVEL%%bin/pgmmedian
 bin/pgmtolispm
 bin/pgmtopbm
 bin/pgmtopgm
@@ -209,9 +218,13 @@ bin/ppmchange
 bin/ppmcie
 bin/ppmcolormask
 bin/ppmcolors
+%%DEVEL%%bin/ppmdcfont
+%%DEVEL%%bin/ppmddumpfont
 bin/ppmdim
 bin/ppmdist
 bin/ppmdither
+%%DEVEL%%bin/ppmdmkfont
+%%DEVEL%%bin/ppmdraw
 bin/ppmfade
 bin/ppmflash
 bin/ppmforge
