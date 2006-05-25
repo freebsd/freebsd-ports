@@ -1,0 +1,6 @@
+Net::Address::IPv4::Local discovers the local system's IP address that 
+would be used as the source address when contacting "the internet" or a 
+certain specified remote IP address.
+
+WWW: http://search.cpan.org/dist/Net-Address-IPv4-Local
+Author: Julian Mehnle <julian@mehnle.net>
