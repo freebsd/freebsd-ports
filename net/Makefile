@@ -422,6 +422,7 @@
     SUBDIR += p5-Net-Gopher
     SUBDIR += p5-Net-HL7
     SUBDIR += p5-Net-Ident
+    SUBDIR += p5-Net-MAC-Vendor
     SUBDIR += p5-Net-MovableType
     SUBDIR += p5-Net-NBName
     SUBDIR += p5-Net-OpenDHT

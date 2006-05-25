@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Net/MAC/Vendor.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/MAC/Vendor/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/MAC/Vendor
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/MAC
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
+@dirrmtry %%SITE_PERL%%/Net/MAC
+@dirrmtry %%SITE_PERL%%/Net
