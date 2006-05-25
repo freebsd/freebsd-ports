@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	downthemall
-PORTVERSION=	0.9.9.0
-DISTVERSIONSUFFIX=	-fx+fl
+PORTVERSION=	0.9.9.3
+DISTVERSIONSUFFIX=	-fx+fl+tb
 CATEGORIES=	www
 
 MAINTAINER=	infofarmer@FreeBSD.org
