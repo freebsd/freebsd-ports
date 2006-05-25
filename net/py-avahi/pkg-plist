@@ -8,7 +8,6 @@ lib/%%PYTHON_VERSION%%/site-packages/avahi/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/avahi/__init__.pyc
 lib/%%PYTHON_VERSION%%/site-packages/avahi/__init__.pyo
 share/applications/avahi-discover.desktop
-%%DATADIR%%/service-types
 %%DATADIR%%/service-types.db
 @dirrmtry share/applications
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/avahi
