@@ -6,10 +6,9 @@
 #
 
 PORTNAME=		libsexy
-PORTVERSION=		0.1.5
-PORTREVISION=	1
+PORTVERSION=		0.1.8
 CATEGORIES=		x11-toolkits devel
-MASTER_SITES=		http://osiris.chipx86.com/projects/libsexy/releases/
+MASTER_SITES=		http://releases.chipx86.com/libsexy/libsexy/
 
 MAINTAINER=		andreas@syndrom23.de
 COMMENT=		Extension widgets for GTK+
