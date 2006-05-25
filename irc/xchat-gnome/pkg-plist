@@ -1,42 +1,40 @@
-bin/xchat
 bin/xchat-gnome
-%%PERL%%lib/xchat/plugins/perl.la
-%%PERL%%lib/xchat/plugins/perl.so
-%%PYTHON%%lib/xchat/plugins/python.la
-%%PYTHON%%lib/xchat/plugins/python.so
-%%TCL%%lib/xchat/plugins/tcl.la
-%%TCL%%lib/xchat/plugins/tcl.so
-lib/xchat/plugins/notification.la
-lib/xchat/plugins/notification.so
-lib/xchat/plugins/urlscraper.la
-lib/xchat/plugins/urlscraper.so
+bin/xchat-gnome-remote
+%%DBUS%%lib/xchat-gnome/plugins/dbus.a
+%%DBUS%%lib/xchat-gnome/plugins/dbus.la
+%%DBUS%%lib/xchat-gnome/plugins/dbus.so
+%%DBUS%%lib/xchat-gnome/plugins/netmonitor.a
+%%DBUS%%lib/xchat-gnome/plugins/netmonitor.la
+%%DBUS%%lib/xchat-gnome/plugins/netmonitor.so
+%%PERL%%lib/xchat-gnome/plugins/perl.a
+%%PERL%%lib/xchat-gnome/plugins/perl.la
+%%PERL%%lib/xchat-gnome/plugins/perl.so
+%%PYTHON%%lib/xchat-gnome/plugins/python.a
+%%PYTHON%%lib/xchat-gnome/plugins/python.la
+%%PYTHON%%lib/xchat-gnome/plugins/python.so
+%%TCL%%lib/xchat-gnome/plugins/tcl.a
+%%TCL%%lib/xchat-gnome/plugins/tcl.la
+%%TCL%%lib/xchat-gnome/plugins/tcl.so
+lib/xchat-gnome/plugins/autoaway.a
+lib/xchat-gnome/plugins/autoaway.la
+lib/xchat-gnome/plugins/autoaway.so
+lib/xchat-gnome/plugins/notification.a
+lib/xchat-gnome/plugins/notification.la
+lib/xchat-gnome/plugins/notification.so
+lib/xchat-gnome/plugins/notifyosd.a
+lib/xchat-gnome/plugins/notifyosd.la
+lib/xchat-gnome/plugins/notifyosd.so
+lib/xchat-gnome/plugins/soundnotification.a
+lib/xchat-gnome/plugins/soundnotification.la
+lib/xchat-gnome/plugins/soundnotification.so
+lib/xchat-gnome/plugins/urlscraper.a
+lib/xchat-gnome/plugins/urlscraper.la
+lib/xchat-gnome/plugins/urlscraper.so
 share/applications/xchat-gnome.desktop
-share/applications/xchat.desktop
-share/pixmaps/xchat-gnome.png
-share/pixmaps/xchat.png
-share/xchat/channel-list.glade
-share/xchat/color.png
-share/xchat/connect-dialog.glade
-share/xchat/dcc.png
-share/xchat/dcc-window.glade
-share/xchat/global-message.png
-share/xchat/irc.png
-share/xchat/irc-network-editor.glade
-share/xchat/newdata.png
-share/xchat/nicksaid.png
-share/xchat/plugin-manager.png
-share/xchat/preferences-dialog.glade
-share/xchat/servers.png
-share/xchat/setup-dialog.glade
-share/xchat/soap.png
-share/xchat/stock_down.png
-share/xchat/stock_link.png
-share/xchat/stock_up.png
-share/xchat/toilet-paper.png
-share/xchat/topic-change.glade
-share/xchat/xchat-gnome-small.png
-share/xchat/xchat-gnome.glade
-share/xchat/xchat-gnome-ui.xml
+share/gnome/help/xchat-gnome/C/figures/xchat-gnome_main_window.png
+share/gnome/help/xchat-gnome/C/legal.xml
+share/gnome/help/xchat-gnome/C/xchat-gnome.xml
+share/icons/hicolor/48x48/apps/xchat-gnome.png
 share/locale/am/LC_MESSAGES/xchat-gnome.mo
 share/locale/az/LC_MESSAGES/xchat-gnome.mo
 share/locale/bg/LC_MESSAGES/xchat-gnome.mo
@@ -50,9 +48,12 @@ share/locale/et/LC_MESSAGES/xchat-gnome.mo
 share/locale/eu/LC_MESSAGES/xchat-gnome.mo
 share/locale/fi/LC_MESSAGES/xchat-gnome.mo
 share/locale/fr/LC_MESSAGES/xchat-gnome.mo
+share/locale/gl/LC_MESSAGES/xchat-gnome.mo
 share/locale/hi/LC_MESSAGES/xchat-gnome.mo
+share/locale/hu/LC_MESSAGES/xchat-gnome.mo
 share/locale/it/LC_MESSAGES/xchat-gnome.mo
 share/locale/ja/LC_MESSAGES/xchat-gnome.mo
+share/locale/ka/LC_MESSAGES/xchat-gnome.mo
 share/locale/ko/LC_MESSAGES/xchat-gnome.mo
 share/locale/lt/LC_MESSAGES/xchat-gnome.mo
 share/locale/lv/LC_MESSAGES/xchat-gnome.mo
@@ -62,6 +63,7 @@ share/locale/nb/LC_MESSAGES/xchat-gnome.mo
 share/locale/nl/LC_MESSAGES/xchat-gnome.mo
 share/locale/no/LC_MESSAGES/xchat-gnome.mo
 share/locale/pa/LC_MESSAGES/xchat-gnome.mo
+share/locale/pl/LC_MESSAGES/xchat-gnome.mo
 share/locale/pt/LC_MESSAGES/xchat-gnome.mo
 share/locale/pt_BR/LC_MESSAGES/xchat-gnome.mo
 share/locale/ru/LC_MESSAGES/xchat-gnome.mo
@@ -75,15 +77,51 @@ share/locale/vi/LC_MESSAGES/xchat-gnome.mo
 share/locale/wa/LC_MESSAGES/xchat-gnome.mo
 share/locale/zh_CN/LC_MESSAGES/xchat-gnome.mo
 share/locale/zh_TW/LC_MESSAGES/xchat-gnome.mo
-share/xchat/about.png
-share/xchat/book.png
-share/xchat/hop.png
-share/xchat/op.png
-share/xchat/purple.png
-share/xchat/red.png
-share/xchat/voice.png
-@exec mkdir -p %D/lib/xchat/plugins
-@dirrm share/xchat
+share/omf/xchat-gnome/xchat-gnome-C.omf
+share/xchat-gnome/channel-list.glade
+share/xchat-gnome/color.png
+share/xchat-gnome/connect-dialog.glade
+share/xchat-gnome/dcc-window.glade
+share/xchat-gnome/dcc.png
+share/xchat-gnome/effects.png
+share/xchat-gnome/global-message.png
+share/xchat-gnome/hop.png
+share/xchat-gnome/irc-network-editor.glade
+share/xchat-gnome/irc.png
+share/xchat-gnome/logout.png
+share/xchat-gnome/message.wav
+share/xchat-gnome/newdata.png
+share/xchat-gnome/nicksaid.png
+share/xchat-gnome/notauthorized.png
+share/xchat-gnome/op.png
+share/xchat-gnome/plugin-manager.png
+share/xchat-gnome/preferences-dialog.glade
+share/xchat-gnome/preferences-keybindings.png
+share/xchat-gnome/purple.png
+share/xchat-gnome/red.png
+share/xchat-gnome/servers.png
+share/xchat-gnome/setup-dialog.glade
+share/xchat-gnome/soap.png
+share/xchat-gnome/spellcheck.png
+share/xchat-gnome/stock_down.png
+share/xchat-gnome/stock_link.png
+share/xchat-gnome/stock_up.png
+share/xchat-gnome/toilet-paper.png
+share/xchat-gnome/topic-change.glade
+share/xchat-gnome/users.png
+share/xchat-gnome/voice.png
+share/xchat-gnome/wrap.png
+share/xchat-gnome/xchat-gnome-ui.xml
+share/xchat-gnome/xchat-gnome.glade
+share/xchat-gnome/xchat-gnome.png
+@dirrm share/xchat-gnome
+@dirrm share/omf/xchat-gnome
+@dirrm share/gnome/help/xchat-gnome/C/figures
+@dirrm share/gnome/help/xchat-gnome/C
+@dirrm share/gnome/help/xchat-gnome
+@dirrm lib/xchat-gnome/plugins
+@dirrm lib/xchat-gnome
 @dirrmtry share/applications
-@dirrm lib/xchat/plugins
-@dirrm lib/xchat
+@dirrmtry share/omf
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true

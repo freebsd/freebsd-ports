@@ -1,0 +1,11 @@
+--- configure.orig	Thu May 18 06:42:21 2006
++++ configure	Thu May 18 06:41:27 2006
+@@ -21768,7 +21768,7 @@
+ 
+ if test "x$have_tcl" != "xno"; then
+ 	have_tcl=no
+-	for dir in $tcl /lib /usr/lib /usr/tcl/lib /usr/local/lib /usr/local/tcl-8.4/lib /usr/local/tcl/lib /opt/lib; do
++	for dir in $enable_tcl /lib /usr/lib /usr/tcl/lib /usr/local/lib /usr/local/tcl-8.4/lib /usr/local/tcl/lib /opt/lib; do
+ 		if test -f $dir/tclConfig.sh; then
+ 			. $dir/tclConfig.sh
+ 			TCL_LIBS="$TCL_LIB_SPEC $TCL_LIBS"

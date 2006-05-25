@@ -6,35 +6,49 @@
 #
 
 PORTNAME=	xchat
-PORTVERSION=	0.5
-PORTREVISION=	2
+PORTVERSION=	0.11
 CATEGORIES=	irc gnome ipv6
-MASTER_SITES=	http://flapjack.navi.cx/releases/xchat-gnome/
+MASTER_SITES=	http://releases.navi.cx/xchat-gnome/
 PKGNAMESUFFIX=	-gnome
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An IRC client for GNOME 2 (development version)
 
+LIB_DEPENDS=	sexy:${PORTSDIR}/x11-toolkits/libsexy \
+		notify:${PORTSDIR}/devel/libnotify
+
 USE_X_PREFIX=	yes
 USE_GETTEXT=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack libgnomeui
+USE_GNOME=	gnomehack libgnomeui gnomedocutils desktopfileutils
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
-CONFIGURE_ARGS=	--enable-nls \
-		--enable-ipv6 \
-		--enable-gnomefe
-
+CONFIGURE_ARGS=	--disable-tcl
 GCONF_SCHEMAS=	apps_xchat.schemas notification.schemas urlscraper.schemas
+INSTALLS_ICONS=	yes
+INSTALLS_OMF=	yes
 
-CONFLICTS=	xchat-1* xchat2-2*
+.if !defined(WITHOUT_DBUS)
+LIB_DEPENDS+=	dbus-1.2:${PORTSDIR}/devel/dbus
+CONFIGURE_ARGS+=	--enable-dbus
+USE_GNOME+=	gconf2
+GCONF_SCHEMAS+=	xchat_gnome_url_handler.schemas
+PLIST_SUB+=	DBUS=""
+.else
+CONFIGURE_ARGS+=--disable-dbus
+PLIST_SUB+=	DBUS="@comment "
+.endif
 
 .if defined(WITH_SOCKS)
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libsocks5.a:${PORTSDIR}/net/socks5
 CONFIGURE_ARGS+=	--enable-socks
+.endif
+
+.if !defined(WITHOUT_IPV6)
+CONFIGURE_ARGS+=	--enable-ipv6
 .endif
 
 # openssl in now default in configure
@@ -51,7 +65,7 @@ PLIST_SUB+=		PYTHON="@comment "
 .if defined(WITH_TCL)
 LIB_DEPENDS+=	tcl83.1:${PORTSDIR}/lang/tcl83
 CONFIGURE_ARGS+=--enable-tcl=${LOCALBASE}/lib/tcl8.3
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS} \
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS} \
 		-I${LOCALBASE}/include/tcl8.3" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS} \
 		-L${LOCALBASE}/lib/tcl8.3"
@@ -97,9 +111,5 @@ pre-everything::
 post-patch:
 	@${REINPLACE_CMD} -E -e 's|PY_LIBS=.*|PY_LIBS="-L\$$PY_EXEC_PREFIX/lib/python\$$PY_VER/config -lpython\$$PY_VER ${PTHREAD_LIBS} -lutil"|' \
 		${WRKSRC}/configure
-
-# Create plugins directory even when no plugins are installed
-post-install:
-	@${MKDIR} ${PREFIX}/lib/xchat/plugins
 
 .include <bsd.port.post.mk>
