@@ -16,7 +16,6 @@ host.
 
 The name "Donkey" is an acronym of "Don't Key".
 
-
 <How to use Donkey>
 
 (1) Calculate a One-Time-Password.
@@ -45,4 +44,4 @@ twice to get the entry.
 
 Donkey conforms GNU GENERAL PUBLIC LICENSE Version 2 and is
 	Copyright (C) 1995 Kazuhiko Yamamoto 
-	  <kazu@is.aist-nara.ac.jp>
+	 <kazu@is.aist-nara.ac.jp>
