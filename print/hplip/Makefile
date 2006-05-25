@@ -47,7 +47,7 @@ BROKEN=		does not compile
 .endif
 
 .if exists(${LOCALBASE}/bin/pylupdate)
-WITH_GUI=      yes
+WITH_GUI=	yes
 .endif
 
 .if defined(WITH_GUI)
