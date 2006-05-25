@@ -15,7 +15,6 @@ bin/hp-testpage
 bin/hp-toolbox
 bin/hp-unload
 bin/hpijs
-bin/hppgsz
 etc/hp/hplip.conf
 lib/libhpip.la
 lib/libhpip.so
@@ -35,13 +34,124 @@ sbin/hpiod
 sbin/hpssd
 share/applications/hplip.desktop
 share/cups/model/foomatic-ppds
-%%PORTDOCS%%share/doc/hpijs-2.1.9/COPYING
-%%PORTDOCS%%share/doc/hpijs-2.1.9/README_LIBJPG
-%%PORTDOCS%%share/doc/hpijs-2.1.9/gs_hpijs.png
-%%PORTDOCS%%share/doc/hpijs-2.1.9/hpijs_readme.html
-%%PORTDOCS%%share/doc/hplip-0.9.10/COPYING
-%%PORTDOCS%%share/doc/hplip-0.9.10/hplip_overview.png
-%%PORTDOCS%%share/doc/hplip-0.9.10/hplip_readme.html
+%%PORTDOCS%%share/doc/hpijs-2.1.10/COPYING
+%%PORTDOCS%%share/doc/hpijs-2.1.10/README_LIBJPG
+%%PORTDOCS%%share/doc/hplip-0.9.11/COPYING
+%%PORTDOCS%%share/doc/hplip-0.9.11/contacts.html
+%%PORTDOCS%%share/doc/hplip-0.9.11/faqs.html
+%%PORTDOCS%%share/doc/hplip-0.9.11/features.html
+%%PORTDOCS%%share/doc/hplip-0.9.11/howtos/build.html
+%%PORTDOCS%%share/doc/hplip-0.9.11/howtos/faxing.html
+%%PORTDOCS%%share/doc/hplip-0.9.11/howtos/index.html
+%%PORTDOCS%%share/doc/hplip-0.9.11/howtos/install.html
+%%PORTDOCS%%share/doc/hplip-0.9.11/howtos/io.html
+%%PORTDOCS%%share/doc/hplip-0.9.11/howtos/other.html
+%%PORTDOCS%%share/doc/hplip-0.9.11/howtos/pcard.html
+%%PORTDOCS%%share/doc/hplip-0.9.11/howtos/printing.html
+%%PORTDOCS%%share/doc/hplip-0.9.11/howtos/scanning.html
+%%PORTDOCS%%share/doc/hplip-0.9.11/howtos/toolbox.html
+%%PORTDOCS%%share/doc/hplip-0.9.11/images/HP_Device_ManagePrint.png
+%%PORTDOCS%%share/doc/hplip-0.9.11/images/HP_Device_ManageSend_Fax-1.png
+%%PORTDOCS%%share/doc/hplip-0.9.11/images/HP_Device_ManageSend_Fax-2.png
+%%PORTDOCS%%share/doc/hplip-0.9.11/images/HP_Device_Manager-1.png
+%%PORTDOCS%%share/doc/hplip-0.9.11/images/HP_Device_Manager-2.png
+%%PORTDOCS%%share/doc/hplip-0.9.11/images/HP_Device_Manager-3.png
+%%PORTDOCS%%share/doc/hplip-0.9.11/images/HP_Device_Manager-4.png
+%%PORTDOCS%%share/doc/hplip-0.9.11/images/HP_Device_Manager.png
+%%PORTDOCS%%share/doc/hplip-0.9.11/images/HP_Device_ManagerPhoto_Card.png
+%%PORTDOCS%%share/doc/hplip-0.9.11/images/HP_Device_ManagerSend_Fax.png
+%%PORTDOCS%%share/doc/hplip-0.9.11/images/Screenshot-xsane.png
+%%PORTDOCS%%share/doc/hplip-0.9.11/images/cups_device_list.png
+%%PORTDOCS%%share/doc/hplip-0.9.11/images/cups_model_list.png
+%%PORTDOCS%%share/doc/hplip-0.9.11/images/cups_opening.png
+%%PORTDOCS%%share/doc/hplip-0.9.11/images/cups_printer_model.png
+%%PORTDOCS%%share/doc/hplip-0.9.11/images/gs_hpijs.png
+%%PORTDOCS%%share/doc/hplip-0.9.11/images/hp-tux-printer.png
+%%PORTDOCS%%share/doc/hplip-0.9.11/images/hplip_device_manager.png
+%%PORTDOCS%%share/doc/hplip-0.9.11/images/hplip_overview.png
+%%PORTDOCS%%share/doc/hplip-0.9.11/images/network_appssocket.png
+%%PORTDOCS%%share/doc/hplip-0.9.11/images/network_device_list.png
+%%PORTDOCS%%share/doc/hplip-0.9.11/images/network_device_uri.png
+%%PORTDOCS%%share/doc/hplip-0.9.11/images/network_model_list.png
+%%PORTDOCS%%share/doc/hplip-0.9.11/images/sflogo.png
+%%PORTDOCS%%share/doc/hplip-0.9.11/images/yast_hardware.png
+%%PORTDOCS%%share/doc/hplip-0.9.11/images/yast_opening_hw.png
+%%PORTDOCS%%share/doc/hplip-0.9.11/images/yast_other_configure.png
+%%PORTDOCS%%share/doc/hplip-0.9.11/images/yast_other_kind.png
+%%PORTDOCS%%share/doc/hplip-0.9.11/images/yast_other_printer.png
+%%PORTDOCS%%share/doc/hplip-0.9.11/images/yast_printer_model.png
+%%PORTDOCS%%share/doc/hplip-0.9.11/index.html
+%%PORTDOCS%%share/doc/hplip-0.9.11/install/index.html
+%%PORTDOCS%%share/doc/hplip-0.9.11/install/step1/apt.html
+%%PORTDOCS%%share/doc/hplip-0.9.11/install/step1/index.html
+%%PORTDOCS%%share/doc/hplip-0.9.11/install/step1/rpm.html
+%%PORTDOCS%%share/doc/hplip-0.9.11/install/step2/debian.html
+%%PORTDOCS%%share/doc/hplip-0.9.11/install/step2/fc4.html
+%%PORTDOCS%%share/doc/hplip-0.9.11/install/step2/index.html
+%%PORTDOCS%%share/doc/hplip-0.9.11/install/step2/mandriva06.html
+%%PORTDOCS%%share/doc/hplip-0.9.11/install/step2/other.html
+%%PORTDOCS%%share/doc/hplip-0.9.11/install/step2/suse10.html
+%%PORTDOCS%%share/doc/hplip-0.9.11/install/step2/ubuntu510.html
+%%PORTDOCS%%share/doc/hplip-0.9.11/install/step3/index.html
+%%PORTDOCS%%share/doc/hplip-0.9.11/install/step4/cups/index.html
+%%PORTDOCS%%share/doc/hplip-0.9.11/install/step4/cups/local.html
+%%PORTDOCS%%share/doc/hplip-0.9.11/install/step4/cups/net.html
+%%PORTDOCS%%share/doc/hplip-0.9.11/install/step4/index.html
+%%PORTDOCS%%share/doc/hplip-0.9.11/install/step4/setup/index.html
+%%PORTDOCS%%share/doc/hplip-0.9.11/install/step4/setup/local.html
+%%PORTDOCS%%share/doc/hplip-0.9.11/install/step4/setup/net.html
+%%PORTDOCS%%share/doc/hplip-0.9.11/install/step4/suse/index.html
+%%PORTDOCS%%share/doc/hplip-0.9.11/legal.html
+%%PORTDOCS%%share/doc/hplip-0.9.11/license.html
+%%PORTDOCS%%share/doc/hplip-0.9.11/mailing_lists.html
+%%PORTDOCS%%share/doc/hplip-0.9.11/release_notes.html
+%%PORTDOCS%%share/doc/hplip-0.9.11/screenshots.html
+%%PORTDOCS%%share/doc/hplip-0.9.11/styles/default.css
+%%PORTDOCS%%share/doc/hplip-0.9.11/styles/rest.css
+%%PORTDOCS%%share/doc/hplip-0.9.11/support_statement.html
+%%PORTDOCS%%share/doc/hplip-0.9.11/supported_devices/color_laser.html
+%%PORTDOCS%%share/doc/hplip-0.9.11/supported_devices/color_laser_mfp.html
+%%PORTDOCS%%share/doc/hplip-0.9.11/supported_devices/index.html
+%%PORTDOCS%%share/doc/hplip-0.9.11/supported_devices/inkjet.html
+%%PORTDOCS%%share/doc/hplip-0.9.11/supported_devices/inkjet_aio.html
+%%PORTDOCS%%share/doc/hplip-0.9.11/supported_devices/laser.html
+%%PORTDOCS%%share/doc/hplip-0.9.11/supported_devices/mono_laser_mfp.html
+%%PORTDOCS%%share/doc/hplip-0.9.11/supported_devices/photosmart.html
+%%PORTDOCS%%share/doc/hplip-0.9.11/supported_devices/unsupported.html
+%%PORTDOCS%%share/doc/hplip-0.9.11/system_requirements.html
+%%PORTDOCS%%share/doc/hplip-0.9.11/tech_docs/device_classes.html
+%%PORTDOCS%%share/doc/hplip-0.9.11/tech_docs/hpijs.html
+%%PORTDOCS%%share/doc/hplip-0.9.11/tech_docs/index.html
+%%PORTDOCS%%share/doc/hplip-0.9.11/tech_docs/man_pages/align.html
+%%PORTDOCS%%share/doc/hplip-0.9.11/tech_docs/man_pages/check.html
+%%PORTDOCS%%share/doc/hplip-0.9.11/tech_docs/man_pages/clean.html
+%%PORTDOCS%%share/doc/hplip-0.9.11/tech_docs/man_pages/colorcal.html
+%%PORTDOCS%%share/doc/hplip-0.9.11/tech_docs/man_pages/fab.html
+%%PORTDOCS%%share/doc/hplip-0.9.11/tech_docs/man_pages/hpssd.html
+%%PORTDOCS%%share/doc/hplip-0.9.11/tech_docs/man_pages/index.html
+%%PORTDOCS%%share/doc/hplip-0.9.11/tech_docs/man_pages/info.html
+%%PORTDOCS%%share/doc/hplip-0.9.11/tech_docs/man_pages/levels.html
+%%PORTDOCS%%share/doc/hplip-0.9.11/tech_docs/man_pages/makeuri.html
+%%PORTDOCS%%share/doc/hplip-0.9.11/tech_docs/man_pages/photo.html
+%%PORTDOCS%%share/doc/hplip-0.9.11/tech_docs/man_pages/print.html
+%%PORTDOCS%%share/doc/hplip-0.9.11/tech_docs/man_pages/setup.html
+%%PORTDOCS%%share/doc/hplip-0.9.11/tech_docs/man_pages/testpage.html
+%%PORTDOCS%%share/doc/hplip-0.9.11/tech_docs/man_pages/toolbox.html
+%%PORTDOCS%%share/doc/hplip-0.9.11/tech_docs/man_pages/unload.html
+%%PORTDOCS%%share/doc/hplip-0.9.11/tech_docs/overview.html
+%%PORTDOCS%%share/doc/hplip-0.9.11/tech_docs/page_sizes.html
+%%PORTDOCS%%share/doc/hplip-0.9.11/tech_docs/printable_areas.html
+%%PORTDOCS%%share/doc/hplip-0.9.11/tech_docs/tarball_install.html
+%%PORTDOCS%%share/doc/hplip-0.9.11/troubleshooting/build.html
+%%PORTDOCS%%share/doc/hplip-0.9.11/troubleshooting/faxing.html
+%%PORTDOCS%%share/doc/hplip-0.9.11/troubleshooting/index.html
+%%PORTDOCS%%share/doc/hplip-0.9.11/troubleshooting/install.html
+%%PORTDOCS%%share/doc/hplip-0.9.11/troubleshooting/io.html
+%%PORTDOCS%%share/doc/hplip-0.9.11/troubleshooting/other.html
+%%PORTDOCS%%share/doc/hplip-0.9.11/troubleshooting/pcard.html
+%%PORTDOCS%%share/doc/hplip-0.9.11/troubleshooting/printing.html
+%%PORTDOCS%%share/doc/hplip-0.9.11/troubleshooting/scanning.html
+%%PORTDOCS%%share/doc/hplip-0.9.11/troubleshooting/toolbox.html
 %%DATADIR%%/COPYING
 %%DATADIR%%/__init__.py
 %%DATADIR%%/align
@@ -88,17 +198,20 @@ share/cups/model/foomatic-ppds
 %%DATADIR%%/data/images/DESKJET_970C.png
 %%DATADIR%%/data/images/DESKJET_990C.png
 %%DATADIR%%/data/images/DESKJET_995C.png
-%%DATADIR%%/data/images/Deskjet_350.png
 %%DATADIR%%/data/images/Deskjet_3740.png
+%%DATADIR%%/data/images/Deskjet_5400_series.png
 %%DATADIR%%/data/images/Deskjet_5700.png
+%%DATADIR%%/data/images/Deskjet_5900_series.png
 %%DATADIR%%/data/images/Deskjet_6500.png
 %%DATADIR%%/data/images/Deskjet_6800.png
 %%DATADIR%%/data/images/HP_2000C.png
+%%DATADIR%%/data/images/HP_2500C.png
 %%DATADIR%%/data/images/HP_BI_3000.png
 %%DATADIR%%/data/images/HP_Business_Inkjet_1200.png
 %%DATADIR%%/data/images/HP_Color_LaserJet_1500.png
 %%DATADIR%%/data/images/HP_Color_LaserJet_2840.png
 %%DATADIR%%/data/images/HP_Color_LaserJet_4500.png
+%%DATADIR%%/data/images/HP_Color_LaserJet_4730mfp.png
 %%DATADIR%%/data/images/HP_Color_LaserJet_8550.png
 %%DATADIR%%/data/images/HP_LJ1xxx.png
 %%DATADIR%%/data/images/HP_LaserJet_1012.png
@@ -108,6 +221,8 @@ share/cups/model/foomatic-ppds
 %%DATADIR%%/data/images/HP_LaserJet_4000.png
 %%DATADIR%%/data/images/HP_LaserJet_4100_MFP.png
 %%DATADIR%%/data/images/HP_LaserJet_4M.png
+%%DATADIR%%/data/images/HP_LaserJet_5Si.png
+%%DATADIR%%/data/images/HP_LaserJet_6MP.png
 %%DATADIR%%/data/images/HP_LaserJet_8100_Series.png
 %%DATADIR%%/data/images/HP_LaserJet_9000_MFP.png
 %%DATADIR%%/data/images/HP_LaserJet_9040_MFP.png
@@ -120,10 +235,15 @@ share/cups/model/foomatic-ppds
 %%DATADIR%%/data/images/LASERJET_5500dtn.png
 %%DATADIR%%/data/images/LASERJET_5550.png
 %%DATADIR%%/data/images/LASERJET_5550DTN.png
+%%DATADIR%%/data/images/OFFICEJET_PRO_1150C.png
+%%DATADIR%%/data/images/OfficeJet_Series_300.png
+%%DATADIR%%/data/images/OfficeJet_5105.png
 %%DATADIR%%/data/images/OfficeJet_6100_Series.png
 %%DATADIR%%/data/images/OfficeJet_G85.png
 %%DATADIR%%/data/images/Officejet_6150_Series.png
+%%DATADIR%%/data/images/Officejet_6200_series.png
 %%DATADIR%%/data/images/Officejet_7200_series.png
+%%DATADIR%%/data/images/Officejet_9100_series.png
 %%DATADIR%%/data/images/PHOTOSMART_100.png
 %%DATADIR%%/data/images/PHOTOSMART_1218.png
 %%DATADIR%%/data/images/PHOTOSMART_1315.png
@@ -168,6 +288,7 @@ share/cups/model/foomatic-ppds
 %%DATADIR%%/data/images/deskjet_5552.png
 %%DATADIR%%/data/images/deskjet_5600.png
 %%DATADIR%%/data/images/deskjet_6120.png
+%%DATADIR%%/data/images/dj350.png
 %%DATADIR%%/data/images/dj450.png
 %%DATADIR%%/data/images/down.png
 %%DATADIR%%/data/images/error.png
@@ -240,11 +361,13 @@ share/cups/model/foomatic-ppds
 %%DATADIR%%/data/images/next.png
 %%DATADIR%%/data/images/officejet_4200_series.png
 %%DATADIR%%/data/images/officejet_500.png
+%%DATADIR%%/data/images/officejet_5500_series.png
 %%DATADIR%%/data/images/officejet_5600.png
 %%DATADIR%%/data/images/officejet_k550.png
 %%DATADIR%%/data/images/officejet_k80.png
 %%DATADIR%%/data/images/ok.png
 %%DATADIR%%/data/images/ok_small.png
+%%DATADIR%%/data/images/opensource-75x65.png
 %%DATADIR%%/data/images/panel_lcd.xpm
 %%DATADIR%%/data/images/paper.png
 %%DATADIR%%/data/images/paper_small.png
@@ -252,6 +375,7 @@ share/cups/model/foomatic-ppds
 %%DATADIR%%/data/images/photosmart_7150.png
 %%DATADIR%%/data/images/photosmart_7900_series.png
 %%DATADIR%%/data/images/png.png
+%%DATADIR%%/data/images/powered_by_python.png
 %%DATADIR%%/data/images/prev.png
 %%DATADIR%%/data/images/psc_1100_series.png
 %%DATADIR%%/data/images/psc_2300_series.png
@@ -304,6 +428,7 @@ share/cups/model/foomatic-ppds
 %%DATADIR%%/data/xml/HPLIP-0.9.7.xml
 %%DATADIR%%/data/xml/HPLIP-02-2006.xml
 %%DATADIR%%/data/xml/HPLIP-03-2006.xml
+%%DATADIR%%/data/xml/HPLIP-05-2006.xml
 %%DATADIR%%/data/xml/models.xml
 %%DATADIR%%/data/xml/unsupported.xml
 %%DATADIR%%/fab
@@ -315,8 +440,6 @@ share/cups/model/foomatic-ppds
 %%DATADIR%%/hplip
 %%DATADIR%%/hplip.conf
 %%DATADIR%%/hplip.sh
-%%DATADIR%%/hplip_overview.png
-%%DATADIR%%/hplip_readme.html
 %%DATADIR%%/hpssd.py
 %%DATADIR%%/info
 %%DATADIR%%/levels
@@ -375,6 +498,8 @@ share/cups/model/foomatic-ppds
 %%DATADIR%%/ui/faxaddrbookform_base.py
 %%DATADIR%%/ui/faxaddrbookgroupeditform_base.py
 %%DATADIR%%/ui/faxaddrbookgroupsform_base.py
+%%DATADIR%%/ui/faxallowabletypesdlg.py
+%%DATADIR%%/ui/faxallowabletypesdlg_base.py
 %%DATADIR%%/ui/faxsendjobform.py
 %%DATADIR%%/ui/faxsendjobform_base.py
 %%DATADIR%%/ui/faxsettingsform.py
@@ -624,6 +749,8 @@ share/ppd/HP/HP-LaserJet_4_Plus-hpijs.ppd.gz
 share/ppd/HP/HP-LaserJet_5-hpijs.ppd.gz
 share/ppd/HP/HP-LaserJet_5000-hpijs.ppd.gz
 share/ppd/HP/HP-LaserJet_5100-hpijs.ppd.gz
+share/ppd/HP/HP-LaserJet_5200-hpijs.ppd.gz
+share/ppd/HP/HP-LaserJet_5200L-hpijs.ppd.gz
 share/ppd/HP/HP-LaserJet_5L-hpijs.ppd.gz
 share/ppd/HP/HP-LaserJet_5M-hpijs.ppd.gz
 share/ppd/HP/HP-LaserJet_5MP-hpijs.ppd.gz
@@ -655,6 +782,8 @@ share/ppd/HP/HP-OfficeJet_4105-hpijs.ppd.gz
 share/ppd/HP/HP-OfficeJet_4110-hpijs.ppd.gz
 share/ppd/HP/HP-OfficeJet_4115-hpijs.ppd.gz
 share/ppd/HP/HP-OfficeJet_4200-hpijs.ppd.gz
+share/ppd/HP/HP-OfficeJet_4300-hpijs.ppd.gz
+share/ppd/HP/HP-OfficeJet_6300-hpijs.ppd.gz
 share/ppd/HP/HP-OfficeJet_500-hpijs.ppd.gz
 share/ppd/HP/HP-OfficeJet_5105-hpijs.ppd.gz
 share/ppd/HP/HP-OfficeJet_5110-hpijs.ppd.gz
@@ -686,7 +815,6 @@ share/ppd/HP/HP-OfficeJet_7200-hpijs.ppd.gz
 share/ppd/HP/HP-OfficeJet_725-hpijs.ppd.gz
 share/ppd/HP/HP-OfficeJet_7300-hpijs.ppd.gz
 share/ppd/HP/HP-OfficeJet_7400-hpijs.ppd.gz
-share/ppd/HP/HP-OfficeJet_9100-hpijs.ppd.gz
 share/ppd/HP/HP-OfficeJet_D125-hpijs.ppd.gz
 share/ppd/HP/HP-OfficeJet_D135-hpijs.ppd.gz
 share/ppd/HP/HP-OfficeJet_D145-hpijs.ppd.gz
@@ -787,6 +915,7 @@ share/ppd/HP/HP_Business_Inkjet_2800.ppd.gz
 share/ppd/HP/HP_Business_Inkjet_3000.ppd.gz
 share/ppd/HP/HP_Color_LaserJet.ppd.gz
 share/ppd/HP/HP_Color_LaserJet_2550.ppd.gz
+share/ppd/HP/HP_Color_LaserJet_2605.ppd.gz
 share/ppd/HP/HP_Color_LaserJet_2800.ppd.gz
 share/ppd/HP/HP_Color_LaserJet_3000.ppd.gz
 share/ppd/HP/HP_Color_LaserJet_3800.ppd.gz
@@ -827,6 +956,8 @@ share/ppd/HP/HP_LaserJet_4V.ppd.gz
 share/ppd/HP/HP_LaserJet_4_Plus.ppd.gz
 share/ppd/HP/HP_LaserJet_5000_Series.ppd.gz
 share/ppd/HP/HP_LaserJet_5100_Series.ppd.gz
+share/ppd/HP/HP_LaserJet_5200.ppd.gz
+share/ppd/HP/HP_LaserJet_5200L.ppd.gz
 share/ppd/HP/HP_LaserJet_5M.ppd.gz
 share/ppd/HP/HP_LaserJet_5MP.ppd.gz
 share/ppd/HP/HP_LaserJet_5Si.ppd.gz
@@ -882,6 +1013,21 @@ share/ppd/HP/hp_officejet_9100_series.ppd.gz
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%/base
 @dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm share/doc/hplip-0.9.10
-%%PORTDOCS%%@dirrm share/doc/hpijs-2.1.9
+%%PORTDOCS%%@dirrm share/doc/hplip-0.9.11/troubleshooting
+%%PORTDOCS%%@dirrm share/doc/hplip-0.9.11/tech_docs/man_pages
+%%PORTDOCS%%@dirrm share/doc/hplip-0.9.11/tech_docs
+%%PORTDOCS%%@dirrm share/doc/hplip-0.9.11/supported_devices
+%%PORTDOCS%%@dirrm share/doc/hplip-0.9.11/styles
+%%PORTDOCS%%@dirrm share/doc/hplip-0.9.11/install/step4/suse
+%%PORTDOCS%%@dirrm share/doc/hplip-0.9.11/install/step4/setup
+%%PORTDOCS%%@dirrm share/doc/hplip-0.9.11/install/step4/cups
+%%PORTDOCS%%@dirrm share/doc/hplip-0.9.11/install/step4
+%%PORTDOCS%%@dirrm share/doc/hplip-0.9.11/install/step3
+%%PORTDOCS%%@dirrm share/doc/hplip-0.9.11/install/step2
+%%PORTDOCS%%@dirrm share/doc/hplip-0.9.11/install/step1
+%%PORTDOCS%%@dirrm share/doc/hplip-0.9.11/install
+%%PORTDOCS%%@dirrm share/doc/hplip-0.9.11/images
+%%PORTDOCS%%@dirrm share/doc/hplip-0.9.11/howtos
+%%PORTDOCS%%@dirrm share/doc/hplip-0.9.11
+%%PORTDOCS%%@dirrm share/doc/hpijs-2.1.10
 @dirrm etc/hp

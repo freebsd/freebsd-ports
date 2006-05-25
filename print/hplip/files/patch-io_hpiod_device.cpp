@@ -265,12 +265,3 @@
  #else
        usb_reap_urb_ex(FD[fd].pHD, &FD[fd].urb_write);
  #endif
-@@ -913,7 +1155,7 @@
-    /* Make sure uri model still matches device id model. */
-    pSys->GetURIModel(URI, uriModel, sizeof(uriModel));
-    pSys->GetModel(ID, model, sizeof(model));
--   if (strcmp(uriModel, model) != 0)
-+   if (strcasecmp(uriModel, model) != 0)
-    {
-       *result = R_INVALID_DEVICE_NODE;  /* found different device plugged in */  
-       syslog(LOG_ERR, "invalid model %s != %s Device::Open %s %d\n", uriModel, model, __FILE__, __LINE__);

@@ -2,24 +2,23 @@
 
 # PROVIDE: hpiod
 # REQUIRE: NETWORKING
-# KEYWORD: FreeBSD shutdown
-
-[ -z "${hpiod_enable}" ] && hpiod_enable="NO"
+# KEYWORD: shutdown
 
 . /etc/rc.subr
 
-prefix=%%PREFIX%%
-
 name=hpiod
+rcvar=${name}_enable
+
+command="%%PREFIX%%/sbin/${name}"
 pidfile="/var/run/${name}.pid"
 portfile="/var/run/${name}.port"
 hpiod_user=hplip
-command="${prefix}/sbin/${name}"
+
 start_precmd="hpiod_prestart"
 
-rcvar=`set_rcvar`
-
 load_rc_config $name
+
+: ${hpiod_enable="NO"}
 
 hpiod_prestart()
 {
