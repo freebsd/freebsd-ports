@@ -8,7 +8,7 @@
 
 PORTNAME=	rhythmbox
 PORTVERSION=	0.9.4.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.9
@@ -21,7 +21,7 @@ LIB_DEPENDS=	musicbrainz.4:${PORTSDIR}/audio/libmusicbrainz \
 		id3tag.0:${PORTSDIR}/audio/libid3tag \
 		totem-plparser.2:${PORTSDIR}/multimedia/totem-gstreamer \
 		dbus-1.2:${PORTSDIR}/devel/dbus \
-		sexy.1:${PORTSDIR}/x11-toolkits/libsexy \
+		sexy.2:${PORTSDIR}/x11-toolkits/libsexy \
 		soup-2.2.8:${PORTSDIR}/devel/libsoup \
 		gnome-media-profiles.0:${PORTSDIR}/audio/gnomemedia2
 
