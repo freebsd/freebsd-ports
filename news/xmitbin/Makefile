@@ -8,7 +8,8 @@
 PORTNAME=	xmitbin
 PORTVERSION=	1.9
 CATEGORIES=	news mail
-MASTER_SITES=	ftp://ftp.cadence.com/utils/
+MASTER_SITES=	http://mirror2.unixfreunde.de/ \
+		http://freebsd.unixfreunde.de/sources/
 DISTNAME=	xmitBin-1.9
 EXTRACT_SUFX=	.tar.Z
 
