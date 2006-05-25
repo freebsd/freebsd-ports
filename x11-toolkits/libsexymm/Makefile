@@ -6,10 +6,9 @@
 #
 
 PORTNAME=		libsexymm
-PORTVERSION=		0.1.5
-PORTREVISION=	1
+PORTVERSION=		0.1.7
 CATEGORIES=		x11-toolkits devel
-MASTER_SITES=		http://osiris.chipx86.com/projects/libsexy/releases/
+MASTER_SITES=		http://releases.chipx86.com/libsexy/libsexymm/
 
 MAINTAINER=		andreas@syndrom23.de
 COMMENT=		C++ bindings for libsexy
