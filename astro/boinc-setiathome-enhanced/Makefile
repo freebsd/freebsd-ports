@@ -37,6 +37,15 @@ BOINC_HOME?=	/var/db/boinc
 SETI_SITE=	setiathome.berkeley.edu
 SETI_BINARY=	setiathome-${PORTVERSION}.i386-unknown-freebsd
 
+.if ${ARCH} == amd64 && ${OSVERSION} >= 600000
+AMD64=		""
+.else
+AMD64=		"@comment "
+.endif
+
+SUB_FILES=	pkg-message
+SUB_LIST=	AMD64=${AMD64}
+
 PLIST_SUB=	SETI_BINARY="${SETI_BINARY}" SETI_SITE=${SETI_SITE} \
 		BOINC_HOME=${BOINC_HOME}
 
