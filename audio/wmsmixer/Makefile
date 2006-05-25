@@ -10,7 +10,7 @@ PORTVERSION=	0.5.1
 CATEGORIES=	audio windowmaker
 MASTER_SITES=	http://www.hibernaculum.net/download/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	lx@redundancy.redundancy.org
 COMMENT=	An audio mixer for the WindowMaker dock
 
 PLIST_FILES=	bin/wmsmixer
