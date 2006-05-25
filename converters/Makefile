@@ -64,6 +64,7 @@
     SUBDIR += p5-Unicode-RecursiveDowngrade
     SUBDIR += p5-Unicode-String
     SUBDIR += p5-Unicode-UTF8simple
+    SUBDIR += p5-XML-WBXML
     SUBDIR += pecl-fribidi
     SUBDIR += php4-iconv
     SUBDIR += php4-mbstring

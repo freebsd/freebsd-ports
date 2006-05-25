@@ -1,0 +1,7 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/XML/WBXML.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/WBXML/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/WBXML/WBXML.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/WBXML/WBXML.so
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/WBXML
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/XML
