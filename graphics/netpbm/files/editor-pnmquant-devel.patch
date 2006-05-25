@@ -1,0 +1,20 @@
+--- editor/pnmquant.orig	Sun Feb 19 22:03:42 2006
++++ editor/pnmquant	Mon Feb 20 09:41:57 2006
+@@ -116,7 +118,7 @@
+             tell(INFH);  # Avoids bogus "INFH is not referenced" warning
+         }
+     } else {
+-        open(STDIN, "<", $infile) 
++        open(STDIN, "<" . $infile) 
+             or die("Unable to open input file '$infile'.  Errno=$ERRNO");
+     }
+ }
+@@ -157,7 +159,7 @@
+         $spreadOpt = "-spreadbrightness";
+     }
+ 
+-    open(STDOUT, ">", $mapfileSpec);
++    open(STDOUT, ">" . $mapfileSpec);
+ 
+     my $maprc = system("pnmcolormap", $ncolors, $averageOpt, $spreadOpt);
+ 

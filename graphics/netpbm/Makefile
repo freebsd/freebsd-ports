@@ -6,11 +6,18 @@
 #
 
 PORTNAME=	netpbm
+.if defined(WITH_NETPBM_DEVEL)
+PORTVERSION= 	10.30
+.else
 PORTVERSION=	10.26.28
+.endif
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
+.if defined(WITH_NETPBM_DEVEL)
+PKGNAMESUFFIX=	-devel${PKGNAMESUFFIX2}
+.endif
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A toolkit for conversion of images between different formats
@@ -40,6 +47,16 @@ CFLAGS+=	-O0
 .if ${OSVERSION} < 500000
 CFLAGS+=	-O0
 .endif
+.endif
+
+.if defined(WITH_NETPBM_DEVEL)
+EXTRA_PATCHES+=	${FILESDIR}/editor-pnmquant-devel.patch
+EXTRA_PATCHES+=	${FILESDIR}/converter-other-cameratopam-identify.patch
+PLIST_SUB+=	DEVEL=""
+.else
+EXTRA_PATCHES+=	${FILESDIR}/editor-pnmquant-stable.patch
+EXTRA_PATCHES+=	${FILESDIR}/converter-other-pstopnm.patch
+PLIST_SUB+=	DEVEL="@comment "
 .endif
 
 pre-configure:
