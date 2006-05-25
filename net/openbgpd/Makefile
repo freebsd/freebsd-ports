@@ -28,7 +28,7 @@ USE_RC_SUBR=	openbgpd.sh
 MAKE_ENV=	BINDIR="${PREFIX}/sbin" \
 		MANDIR="${PREFIX}/man/man"
 
-EXTRA_PATCHES?=	${.CURDIR}/stable-bgpd_bgpd.8
+EXTRA_PATCHES?=	${.CURDIR}/files/stable-bgpd_bgpd.8
 
 PLIST_FILES=	sbin/bgpctl	\
 		sbin/bgpd
