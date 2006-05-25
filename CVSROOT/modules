@@ -8053,6 +8053,7 @@ p5-Crypt-DES_EDE3	ports/security/p5-Crypt-DES_EDE3
 p5-Crypt-DES_PP	ports/security/p5-Crypt-DES_PP
 p5-Crypt-DH	ports/security/p5-Crypt-DH
 p5-Crypt-DSA	ports/security/p5-Crypt-DSA
+p5-Crypt-Dining	ports/security/p5-Crypt-Dining
 p5-Crypt-ECB	ports/security/p5-Crypt-ECB
 p5-Crypt-Enigma	ports/security/p5-Crypt-Enigma
 p5-Crypt-GOST	ports/security/p5-Crypt-GOST
