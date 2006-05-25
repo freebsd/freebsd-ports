@@ -16,6 +16,8 @@ DIST_SUBDIR=    drupal
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	CMS that supports pgsql and mysql
 
+FORBIDDEN=	SQL injection and remote execution vulnerabilities
+
 DRUPAL_PORT=	yes
 
 USE_PHP=	gd pcre session xml
