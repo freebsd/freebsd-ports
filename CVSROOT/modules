@@ -3030,6 +3030,7 @@ gigabase	ports/databases/gigabase
 gillo		ports/games/gillo
 gimageview	ports/graphics/gimageview
 gimp		ports/graphics/gimp
+gimp-greycstoration	ports/graphics/gimp-greycstoration
 gimp-help	ports/graphics/gimp-help
 gimp-manual-html	ports/graphics/gimp-manual-html
 gimp-manual-pdf		ports/graphics/gimp-manual-pdf
