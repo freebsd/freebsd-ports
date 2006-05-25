@@ -1,0 +1,11 @@
+--- timidity/Makefile.in.orig	Wed May 24 20:45:31 2006
++++ timidity/Makefile.in	Wed May 24 20:46:31 2006
+@@ -315,7 +315,7 @@
+ 
+ INCLUDES = \
+ 	-I$(top_srcdir) \
+-	-I$(top_srcdir)/libarc \
++	-I$(LOCALBASE)/include -I$(LOCALBASE)/include/libarc \
+ 	-I$(top_srcdir)/libunimod \
+ 	-I$(top_srcdir)/interface \
+ 	-I$(top_srcdir)/utils \

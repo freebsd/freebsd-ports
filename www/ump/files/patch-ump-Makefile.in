@@ -1,0 +1,33 @@
+--- ump/Makefile.in.orig	Wed May 24 20:38:23 2006
++++ ump/Makefile.in	Wed May 24 20:39:09 2006
+@@ -183,7 +183,7 @@
+ DEF_SHLIB_DIR = -DSHLIB_DIR=\"$(SHLIB_DIR)\"
+ BITMAP_DIR = $(TCL_DIR)/bitmaps
+ 
+-INCLUDES =  	-I$(top_srcdir) 	-I$(top_srcdir)/libarc 	-I$(top_srcdir)/interface 	-I$(top_srcdir)/utils 	-I$(top_srcdir)/timidity 	-I$(top_srcdir)/libunimod 	$(EXTRAINCS)
++INCLUDES =  	-I$(top_srcdir) 	-I$(LOCALBASE)/include -I$(LOCALBASE)/include/libarc  -I$(top_srcdir)/interface 	-I$(top_srcdir)/utils 	-I$(top_srcdir)/timidity 	-I$(top_srcdir)/libunimod 	$(EXTRAINCS)
+ 
+ 
+ noinst_LIBRARIES = libump.a
+@@ -204,7 +204,7 @@
+ UMPOBJS =  	npunix.o 	UnixShell.o 	plugin_c.o 	timiditymain.o
+ 
+ 
+-UMPLINKS = $(LIBS) -lXpm
++UMPLINKS = $(LIBS) -lXpm -larc -L$(LOCALBASE)/lib
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../config.h ../interface.h
+ CONFIG_CLEAN_FILES = 
+@@ -437,11 +437,10 @@
+ ump: $(UMP)
+ 
+ $(UMP): $(UMPOBJS)
+-	for f in libarc utils interface; do (cd $(top_builddir)/$$f; $(MAKE)); done
++	for f in utils interface; do (cd $(top_builddir)/$$f; $(MAKE)); done
+ 	cd $(top_builddir)/timidity; $(MAKE) objs
+ 	$(SHLD) -o $(UMP) $(LDFLAGS) $(UMPOBJS) \
+ 	`echo $(top_builddir)/timidity/*.o | sed -e s@$(top_builddir)/timidity/timidity.o@@g` \
+-	$(top_builddir)/libarc/*.o \
+ 	$(top_builddir)/utils/*.o \
+ 	$(top_builddir)/interface/*.o \
+ 	$(top_builddir)/libunimod/*.o \

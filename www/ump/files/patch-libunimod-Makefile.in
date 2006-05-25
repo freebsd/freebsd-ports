@@ -1,0 +1,11 @@
+--- libunimod/Makefile.in.orig	Wed May 24 20:47:34 2006
++++ libunimod/Makefile.in	Wed May 24 20:50:16 2006
+@@ -317,7 +317,7 @@
+ 	-I$(top_srcdir) \
+ 	-I$(top_srcdir)/timidity \
+ 	-I$(top_srcdir)/utils \
+-	-I$(top_srcdir)/libarc \
++	-I$(LOCALBASE)/include -I$(LOCALBASE)/include/libarc \
+ 	$(EXTRAINCS)
+ 
+ 

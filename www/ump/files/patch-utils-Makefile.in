@@ -1,0 +1,11 @@
+--- utils/Makefile.in.orig	Wed May 24 20:51:07 2006
++++ utils/Makefile.in	Wed May 24 20:57:43 2006
+@@ -314,7 +314,7 @@
+ BITMAP_DIR = $(TCL_DIR)/bitmaps
+ 
+ INCLUDES = \
+-	-I$(top_srcdir)/libarc \
++	-I$(LOCALBASE)/include -I$(LOCALBASE)/include/libarc \
+ 	-I$(top_srcdir)/timidity
+ 
+ 
