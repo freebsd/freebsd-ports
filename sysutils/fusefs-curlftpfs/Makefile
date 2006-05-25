@@ -15,7 +15,8 @@ PKGNAMEPREFIX=	fusefs-
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Mount remote ftp directories
 
-LIB_DEPENDS=	fuse.2:${PORTSDIR}/sysutils/fusefs-libs
+LIB_DEPENDS=	fuse.2:${PORTSDIR}/sysutils/fusefs-libs \
+		curl.3:${PORTSDIR}/ftp/curl
 RUN_DEPENDS=	${LOCALBASE}/modules/fuse.ko:${PORTSDIR}/sysutils/fusefs-kmod
 
 GNU_CONFIGURE=	yes
