@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cyrus-imapd
-PORTVERSION=	2.3.5
+PORTVERSION=	2.3.6
 #PORTREVISION=	0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
@@ -15,8 +15,6 @@ MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
 
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	The cyrus mail server, supporting POP3 and IMAP4 protocols
-
-BROKEN=		The copied messages will be invisible in the moved folder
 
 LIB_DEPENDS=	sasl2.2:${PORTSDIR}/security/cyrus-sasl2
 RUN_DEPENDS=	${SITE_PERL}/Pod/Parser.pm:${PORTSDIR}/textproc/p5-Pod-Parser \
