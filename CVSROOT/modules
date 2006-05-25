@@ -2737,6 +2737,7 @@ fung-calc	ports/math/fung-calc
 funktrackergold	ports/audio/funktrackergold
 funnelweb	ports/devel/funnelweb
 fuse		ports/emulators/fuse
+fusefs-curlftpfs	ports/sysutils/fusefs-curlftpfs
 fusefs-kmod	ports/sysutils/fusefs-kmod
 fusefs-libs	ports/sysutils/fusefs-libs
 fusefs-sshfs	ports/sysutils/fusefs-sshfs
