@@ -1,11 +1,30 @@
 include/libsexy/sexy-enum-types.h
 include/libsexy/sexy-icon-entry.h
 include/libsexy/sexy-spell-entry.h
+include/libsexy/sexy-tooltip.h
+include/libsexy/sexy-tree-view.h
 include/libsexy/sexy-url-label.h
 include/libsexy/sexy.h
 lib/libsexy.a
 lib/libsexy.la
 lib/libsexy.so
-lib/libsexy.so.1
+lib/libsexy.so.2
 libdata/pkgconfig/libsexy.pc
+share/gtk-doc/html/libsexy/SexyIconEntry.html
+share/gtk-doc/html/libsexy/SexySpellEntry.html
+share/gtk-doc/html/libsexy/SexyTooltip.html
+share/gtk-doc/html/libsexy/SexyTreeView.html
+share/gtk-doc/html/libsexy/SexyUrlLabel.html
+share/gtk-doc/html/libsexy/ch01.html
+share/gtk-doc/html/libsexy/home.png
+share/gtk-doc/html/libsexy/index.html
+share/gtk-doc/html/libsexy/index.sgml
+share/gtk-doc/html/libsexy/left.png
+share/gtk-doc/html/libsexy/libsexy.devhelp
+share/gtk-doc/html/libsexy/right.png
+share/gtk-doc/html/libsexy/style.css
+share/gtk-doc/html/libsexy/up.png
+@dirrm share/gtk-doc/html/libsexy
+@dirrmtry share/gtk-doc/html
+@dirrmtry share/gtk-doc
 @dirrm include/libsexy
