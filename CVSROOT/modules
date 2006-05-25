@@ -7157,6 +7157,7 @@ netmond		ports/net-mgmt/netmond
 netpanzer	ports/games/netpanzer
 netpanzer-data	ports/games/netpanzer-data
 netpbm		ports/graphics/netpbm
+netpbm-devel	ports/graphics/netpbm-devel
 netperf		ports/benchmarks/netperf
 netpipe		ports/benchmarks/netpipe
 netpipes	ports/net/netpipes
