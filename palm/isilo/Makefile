@@ -8,7 +8,8 @@
 PORTNAME=	isilo
 PORTVERSION=	2.58
 CATEGORIES=	palm textproc
-MASTER_SITES=	ftp://ftp.iSilo.com/pub/
+MASTER_SITES=	http://mirror2.unixfreunde.de/ \
+		http://freebsd.unixfreunde.de/sources/
 DISTNAME=	iSiloBSD
 
 MAINTAINER=	ports@FreeBSD.org
