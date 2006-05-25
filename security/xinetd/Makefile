@@ -11,7 +11,7 @@ PORTREVISION=	0
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://www.xinetd.org/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sem@FreeBSD.org
 COMMENT=	Replacement for inetd with better control and logging
 
 USE_GMAKE=	yes
