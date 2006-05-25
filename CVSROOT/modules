@@ -9481,6 +9481,7 @@ p5-Text-TabularDisplay	ports/textproc/p5-Text-TabularDisplay
 p5-Text-Template	ports/textproc/p5-Text-Template
 p5-Text-Textile	ports/textproc/p5-Text-Textile
 p5-Text-Tmpl	ports/textproc/p5-Text-Tmpl
+p5-Text-Unaccent	ports/textproc/p5-Text-Unaccent
 p5-Text-Unidecode	ports/converters/p5-Text-Unidecode
 p5-Text-VimColor	ports/textproc/p5-Text-VimColor
 p5-Text-WikiFormat	ports/textproc/p5-Text-WikiFormat
