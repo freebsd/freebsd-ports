@@ -1,11 +1,11 @@
---- code/unix/unix_shared.c.orig	Mon Aug 15 20:10:07 2005
-+++ code/unix/unix_shared.c	Sun Nov 20 18:41:22 2005
+--- code/unix/unix_shared.c.orig	Thu May 25 14:38:44 2006
++++ code/unix/unix_shared.c	Thu May 25 14:41:26 2006
 @@ -38,7 +38,7 @@
  static char cdPath[MAX_OSPATH];
  
  // Used to determine local installation path
 -static char installPath[MAX_OSPATH];
-+static char installPath[MAX_OSPATH] = %%Q3DIR%%;
++static char installPath[MAX_OSPATH] = DATADIR;
  
  // Used to determine where to store user-specific files
  static char homePath[MAX_OSPATH];
@@ -34,7 +34,7 @@
  
  	// test the wrap issue
  #if 0	
-@@ -136,7 +140,7 @@
+@@ -136,10 +140,10 @@
  
  	return ret;
  }
@@ -42,4 +42,8 @@
 +// #endif
  
  //#if 0 // bk001215 - see snapvector.nasm for replacement
- #if (defined __APPLE__) // rcg010206 - using this for PPC builds...
+-#if (defined __APPLE__) // rcg010206 - using this for PPC builds...
++#ifndef __i386__ // rcg010206 - using this for PPC builds...
+ long fastftol( float f ) { // bk001213 - from win32/win_shared.c
+   //static int tmp;
+   //	__asm fld f

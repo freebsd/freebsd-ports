@@ -1,0 +1,12 @@
+%%DEDICATED%%bin/q3ded
+%%CLIENT%%bin/quake3
+%%SMP%%bin/quake3-smp
+%%GAMELIBS%%%%LIBDIR%%/baseq3/cgame.so
+%%GAMELIBS%%%%LIBDIR%%/baseq3/qagame.so
+%%GAMELIBS%%%%LIBDIR%%/baseq3/ui.so
+%%GAMELIBS%%%%LIBDIR%%/missionpack/cgame.so
+%%GAMELIBS%%%%LIBDIR%%/missionpack/qagame.so
+%%GAMELIBS%%%%LIBDIR%%/missionpack/ui.so
+%%GAMELIBS%%@dirrm %%LIBDIR%%/missionpack
+%%GAMELIBS%%@dirrm %%LIBDIR%%/baseq3
+%%GAMELIBS%%@dirrm %%LIBDIR%%
