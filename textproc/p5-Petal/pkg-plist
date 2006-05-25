@@ -1,0 +1,27 @@
+%%SITE_PERL%%/Petal.pm
+%%SITE_PERL%%/Petal/Cache/Disk.pm
+%%SITE_PERL%%/Petal/Cache/Memory.pm
+%%SITE_PERL%%/Petal/Canonicalizer/XHTML.pm
+%%SITE_PERL%%/Petal/Canonicalizer/XML.pm
+%%SITE_PERL%%/Petal/CodeGenerator.pm
+%%SITE_PERL%%/Petal/Cookbook.pod
+%%SITE_PERL%%/Petal/Deprecated.pm
+%%SITE_PERL%%/Petal/Entities.pm
+%%SITE_PERL%%/Petal/Functions.pm
+%%SITE_PERL%%/Petal/Hash.pm
+%%SITE_PERL%%/Petal/Hash/String.pm
+%%SITE_PERL%%/Petal/Hash/Test.pm
+%%SITE_PERL%%/Petal/Hash/Var.pm
+%%SITE_PERL%%/Petal/I18N.pm
+%%SITE_PERL%%/Petal/Parser.pm
+%%SITE_PERL%%/Petal/TranslationService/Gettext.pm
+%%SITE_PERL%%/Petal/TranslationService/MOFile.pm
+%%SITE_PERL%%/Petal/TranslationService/Noop.pm
+%%SITE_PERL%%/Petal/TranslationService/h4x0r.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Petal/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Petal
+@dirrm %%SITE_PERL%%/Petal/TranslationService
+@dirrm %%SITE_PERL%%/Petal/Hash
+@dirrm %%SITE_PERL%%/Petal/Canonicalizer
+@dirrm %%SITE_PERL%%/Petal/Cache
+@dirrmtry %%SITE_PERL%%/Petal

@@ -1,0 +1,14 @@
+Petal is a XML based templating engine that is able to process any kind of 
+XML, XHTML and HTML.
+
+Petal borrows a lot of good ideas from the Zope Page Templates TAL 
+specification, it is very well suited for the creation of WYSIWYG XHTML 
+editable templates.
+
+The idea is to further enforce the separation of logic from presentation. 
+With Petal, graphic designers can use their favorite WYSIWYG editor to 
+easily edit templates without having to worry about the loops and ifs 
+which happen behind the scene.
+
+WWW: http://search.cpan.org/dist/Petal
+Author: Fergal Daly <fergal@esatclear.ie>
