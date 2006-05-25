@@ -5,14 +5,14 @@
 # $FreeBSD$
 #
 
-PORTNAME=	Xfce4-media
+PORTNAME=	xfce4-media
 PORTVERSION=	0.9.1
 CATEGORIES=	multimedia xfce
 MASTER_SITES=	http://spuriousinterrupt.org/files/xfmedia/
 DISTNAME=	xfmedia-${PORTVERSION}
 DIST_SUBDIR=	xfce4
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	r.c.ladan@gmail.com
 COMMENT=	Lightweight media player for Xfce4 based on the xine engine
 
 LIB_DEPENDS=	xfcegui4.3:${PORTSDIR}/x11-toolkits/libxfce4gui \
@@ -22,6 +22,8 @@ LIB_DEPENDS=	xfcegui4.3:${PORTSDIR}/x11-toolkits/libxfce4gui \
 
 USE_BZIP2=	yes
 USE_GETOPT_LONG=yes
+USE_GETTEXT=	yes
+#NLS is hardcoded to "yes" in source, so no WITHOUT_NLS
 USE_GMAKE=	yes
 USE_GNOME=	libxml2 intlhack
 GNU_CONFIGURE=	yes
