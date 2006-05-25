@@ -1,0 +1,8 @@
+This package supplies a set of functions and operators to manipulate 
+operator expressions algebraically using the familiar Perl syntax.
+
+These expressions are constructed from "Symbols", "Operators", and 
+"Functions", and processed via "Methods". For examples, see: "Examples".
+
+WWW: http://search.cpan.org/dist/Math-Algebra-Symbols
+Author: Philip R Brenan <philiprbrenan@yahoo.com>
