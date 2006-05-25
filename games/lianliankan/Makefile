@@ -16,6 +16,7 @@ MAINTAINER=	liu_yinghong@yahoo.com.cn
 COMMENT=	A scarce recreation game
 
 USE_GNOME=	gtk20 esound
+USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
@@ -24,10 +25,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		does not compile
-.endif
 
 post-install:
 	${MKDIR} ${PREFIX}/share/applications
