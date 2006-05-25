@@ -9013,6 +9013,7 @@ p5-Net-Traceroute	ports/net/p5-Net-Traceroute
 p5-Net-Traceroute6	ports/net/p5-Net-Traceroute6
 p5-Net-Wake	ports/net/p5-Net-Wake
 p5-Net-Whois	ports/net/p5-Net-Whois
+p5-Net-Whois-IP	ports/net/p5-Net-Whois-IP
 p5-Net-Whois-RIPE	ports/net/p5-Net-Whois-RIPE
 p5-Net-Whois-Raw	ports/net/p5-Net-Whois-Raw
 p5-Net-Write	ports/net/p5-Net-Write
