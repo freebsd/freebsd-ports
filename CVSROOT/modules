@@ -2043,6 +2043,7 @@ efltk		ports/x11-toolkits/efltk
 egcs		ports/lang/egcs
 eggcreator	ports/irc/eggcreator
 eggdrop		ports/irc/eggdrop
+egl		ports/games/egl
 egoboo		ports/games/egoboo
 egroupware	ports/deskutils/egroupware
 ehnt		ports/net-mgmt/ehnt
