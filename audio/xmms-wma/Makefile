@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	xmms-wma
-PORTVERSION=	1.0.4.1
-PORTREVISION=	1
+PORTVERSION=	1.0.5
 CATEGORIES=	audio
 MASTER_SITES=	http://mcmcc.bat.ru/xmms-wma/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	r.c.ladan@gmail.com
 COMMENT=	WMA plugin for xmms
 
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms

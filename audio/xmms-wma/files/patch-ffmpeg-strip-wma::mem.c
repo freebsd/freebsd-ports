@@ -13,12 +13,3 @@
  
  /* you can redefine av_malloc and av_free in your project to use your
     memory allocator. You do not need to suppress this file because the
-@@ -47,7 +47,7 @@
-     void *ptr;
-     
- #if defined (HAVE_MEMALIGN)
--    ptr = memalign(16,size);
-+    ptr = memalign(16, size);
-     /* Why 64? 
-        Indeed, we should align it:
-          on 4 for 386
