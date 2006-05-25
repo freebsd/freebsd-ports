@@ -1,0 +1,7 @@
+File::FnMatch::fnmatch() provides simple, shell-like pattern matching.
+
+Though considerably less powerful than regular expressions, shell patterns 
+are nonetheless useful and familiar to a large audience of end-users.
+
+WWW: http://search.cpan.org/dist/File-FnMatch
+Author: Michael J. Pomraning <mjp-perl@pilcrow.madison.wi.us>
