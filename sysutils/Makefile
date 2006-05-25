@@ -177,6 +177,7 @@
     SUBDIR += freqsdwn
     SUBDIR += fsbackup
     SUBDIR += ftrace
+    SUBDIR += fusefs-curlftpfs
     SUBDIR += fusefs-kmod
     SUBDIR += fusefs-libs
     SUBDIR += fusefs-sshfs
