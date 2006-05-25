@@ -1,0 +1,35 @@
+#!/bin/sh
+#
+# svnserve.sh for rc.d usage (c) 2005 Thomas E. Spanjaard.
+# $Id$
+
+# PROVIDE: svnserve
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: FreeBSD shutdown
+#
+# Add the following line to /etc/rc.conf to enable SVNServe:
+#
+#  svnserve_enable="YES"
+#  # optional
+#  svnserve_flags="-d --listen-port=3690"
+#  svnserve_data="/usr/local/repositories"
+#  svnserve_user="svn"
+#  svnserve_group="svn"
+
+. "%%RC_SUBR%%"
+
+# Set some defaults
+svnserve_enable=${svnserve_enable:-"NO"}
+svnserve_flags=${svnserve_flags:-"-d --listen-port=3690"}
+svnserve_data=${svnserve_data:-"%%PREFIX%%/repositories"}
+svnserve_user=${svnserve_user:-"svn"}
+svnserve_group=${svnserve_group:-"svn"}
+
+name=svnserve
+rcvar=`set_rcvar`
+load_rc_config $name
+command=%%PREFIX%%/bin/svnserve
+command_args="-r ${svnserve_data}"
+
+run_rc_command "$1"

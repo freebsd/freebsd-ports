@@ -1,6 +1,59 @@
---- configure.orig	Sat Nov  5 16:13:58 2005
-+++ configure	Sat Nov  5 16:14:12 2005
-@@ -19933,7 +19933,7 @@
+--- configure.orig	Sat Mar 25 05:00:55 2006
++++ configure	Thu May 25 12:50:00 2006
+@@ -2934,12 +2934,15 @@
+ 
+ 
+ APR_VER_REGEX="0\.9\.[5-9]"
++APR_VER_REGEX_AP20="0\.9\.1[2-9]"
+ APR_VER_REGEX_TOO="1\."
+ APU_VER_REGEX="0\.9\.[5-9]"
++APU_VER_REGEX_AP20="0\.9\.1[2-9]"
+ APU_VER_REGEX_TOO="1\."
+ 
+ 
+   APR_WANTED_REGEX="$APR_VER_REGEX"
++  APR_WANTED_REGEX_AP20="$APR_VER_REGEX_AP20"
+   APR_WANTED_REGEX_TOO="$APR_VER_REGEX_TOO"
+ 
+   { echo "$as_me:$LINENO: Apache Portable Runtime (APR) library configuration" >&5
+@@ -3215,6 +3218,7 @@
+ echo "${ECHO_T}$apr_version" >&6
+ 
+   if test `expr $apr_version : $APR_WANTED_REGEX` -eq 0 \
++       -a `expr $apr_version : $APR_WANTED_REGEX_AP20` -eq 0 \
+        -a `expr $apr_version : $APR_WANTED_REGEX_TOO` -eq 0; then
+     echo "wanted regex is $APR_WANTED_REGEX or $APR_WANTED_REGEX_TOO"
+     { { echo "$as_me:$LINENO: error: invalid apr version found" >&5
+@@ -3287,6 +3291,7 @@
+ 
+ 
+   APRUTIL_WANTED_REGEX="$APU_VER_REGEX"
++  APRUTIL_WANTED_REGEX_AP20="$APU_VER_REGEX_AP20"
+   APRUTIL_WANTED_REGEX_TOO="$APU_VER_REGEX_TOO"
+ 
+   { echo "$as_me:$LINENO: Apache Portable Runtime Utility (APRUTIL) library configuration" >&5
+@@ -3559,6 +3564,7 @@
+ echo "${ECHO_T}$apu_version" >&6
+ 
+   if test `expr $apu_version : $APRUTIL_WANTED_REGEX` -eq 0 \
++       -a `expr $apr_version : $APRUTIL_WANTED_REGEX_AP20` -eq 0 \
+        -a `expr $apu_version : $APRUTIL_WANTED_REGEX_TOO` -eq 0; then
+     echo "wanted regex is $APRUTIL_WANTED_REGEX or $APRUTIL_WANTED_REGEX_TOO"
+     { { echo "$as_me:$LINENO: error: invalid apr-util version found" >&5
+@@ -19784,10 +19790,10 @@
+ 
+ 
+ # This can be used to rebuild libtool when needed
+-LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
++LIBTOOL_DEPS=" /usr/local/share/libtool/ltmain.sh"
+ 
+ # Always use our own libtool.
+-LIBTOOL='$(SHELL) $(top_builddir)/libtool'
++LIBTOOL='$(SHELL) /usr/local/bin/libtool'
+ 
+ # Prevent multiple expansion
+ 
+@@ -19933,7 +19939,7 @@
          if test "$NEON_VERSION" = "$svn_allowed_neon" -o $svn_allowed_neon = "any"; then
              svn_allowed_neon_on_system="yes"
              SVN_NEON_INCLUDES=`$neon_config --cflags | sed -e 's/-D[^ ]*//g'`

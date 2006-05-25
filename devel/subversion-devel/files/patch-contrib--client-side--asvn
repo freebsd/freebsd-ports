@@ -1,0 +1,146 @@
+--- contrib/client-side/asvn.orig	Tue Jun 15 06:02:44 2004
++++ contrib/client-side/asvn	Thu May 18 16:05:43 2006
+@@ -36,6 +36,7 @@
+ #
+ #
+ #-------------------------------------------------------------------------
++EDITOR?=vi
+ SVN=/usr/local/bin/svn
+ ACTION=""
+ DEV_PROP="dir:devices"
+@@ -46,7 +47,7 @@
+ TMPFILE2=/tmp/asvn.tmp2.$$
+ PCWD=`/bin/pwd`
+ SKIPSVN='\( -name .svn -prune -false \)'
+-PRINTDETAILS="-printf \"file='%p' mode=%m user=%u(%U) group=%g(%G)\n\""
++PRINTDETAILS="-printf \"file='%p' mode=%m user=(%U) group=(%G)\n\""
+ 
+ trap cleanup 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20
+ 
+@@ -105,7 +106,7 @@
+ 
+ function recorddirinfo
+ {
+-    eval "find $PCWD $SKIPSVN -o \( -type d ! -name .svn  -print \)" |while read dirlist
++    eval "gfind $PCWD $SKIPSVN -o \( -type d ! -name .svn  -print \)" |while read dirlist
+     do
+ 	updatedirsymlinks $1 $dirlist
+ 	updatedirdevices $1 $dirlist
+@@ -126,9 +127,9 @@
+     #
+     # Obtain the list of devices in this directory
+     #
+-    find "$dir" \( \( -type b -o -type c -o -type p \) -print \)  -o  -type d ! -name "`basename $dir`" -prune | while read file
++    gfind "$dir" \( \( -type b -o -type c -o -type p \) -print \)  -o  -type d ! -name "`basename $dir`" -prune | while read file
+     do
+-	echo -n `find $file -printf "file='%f' mode=%m user=%u(%U) group=%g(%G)"`
++	echo -n `gfind $file -printf "file='%f' mode=%m user=%u(%U) group=%g(%G)"`
+ 	[ -b $file ] && echo -n ' type=b'
+ 	[ -c $file ] && echo -n ' type=c'
+ 	[ -p $file ] && echo ' type=p'
+@@ -194,10 +195,10 @@
+ 	    grep -q "$info" $TMPFILE && continue # This line still matches
+ 	    file=`expr "$info" : "file='\(.*\)' "`
+ 	    mode=`expr "$info" : ".*' mode=\([0-9]*\) "`
+-	    user=`expr "$info" : ".* user=\([^(]*\)("`
+-	    uid=`expr "$info" : ".* user=[^(]*(\([0-9]*\) "`
+-	    group=`expr "$info" : ".* group=\([^(]*\)("`
+-	    gid=`expr "$info" : ".* group=[^(]*(\([0-9]*\) "`
++#	    user=`expr "$info" : ".* user=\([^(]*\)("`
++	    uid=`expr "$info" : ".* user=[^(]*(\([0-9]*\)"`
++#	    group=`expr "$info" : ".* group=\([^(]*\)("`
++	    gid=`expr "$info" : ".* group=[^(]*(\([0-9]*\)"`
+ 	    type=`expr "$info" : ".* type=\(.\)"`
+ 	    major=`expr "$info" : ".* major=\([0-9]*\)"`
+ 	    minor=`expr "$info" : ".* minor=\([0-9]*\)"`
+@@ -207,7 +208,8 @@
+ 	    #
+ 	    rm -f $dir/$file
+ 	    mknod --mode=$mode $dir/$file $type $major $minor
+-	    chown $user:$group $dir/$file
++#	    chown $user:$group $dir/$file
++	    chown $uid:$gid $dir/$file
+ 	    addignorefile $dir/$file
+ 	done
+     fi
+@@ -228,7 +230,7 @@
+     #
+     # Obtain the list of symlinks in this directory
+     #
+-    find "$dir" \( -type l -printf "file='%f' dest='%l'\n" \)  -o  -type d ! -name "`basename $dir`" -prune |
++    gfind "$dir" \( -type l -printf "file='%f' dest='%l'\n" \)  -o  -type d ! -name "`basename $dir`" -prune |
+ 	sort >$TMPFILE
+     
+     #
+@@ -294,7 +296,7 @@
+ 
+ 	    if [ -L $dir/$file  ]
+ 	    then
+-		[ "`find $dir/$file -printf '%l'`" = "$dest" ] && continue
++		[ "`gfind $dir/$file -printf '%l'`" = "$dest" ] && continue
+ 	    fi 
+ 	    rm -f $dir/$file
+ 	    ln -s $dest $dir/$file
+@@ -313,37 +315,39 @@
+ 
+     # Find all the directories and files
+     cp /dev/null $TMPFILE
+-    eval "find $PCWD $SKIPSVN -o \( \( -type d ! -name .svn  \) -o -type f \) $PRINTDETAILS" | while read info
++    eval "gfind $PCWD $SKIPSVN -o \( \( -type d ! -name .svn  \) -o -type f \) $PRINTDETAILS" | while read info
+     do
+ 	device=`expr "$info" : "file='\(.*\)' mode"`
+ 	info=`expr "$info" : "file='.*' \(mode.*\)"`
++	#echo DEBUG: device vale $device
+ 	if [ "$PCWD" = "$device" ]
+ 	then
+ 	    dir="."
+ 	    file=""
+ 	else
+ 	    dir="`basedirname $PCWD $device`"
+-	    file="`basename $device`"
++	    file=`basename "$device"`
+ 	fi
+ 	# see if the properties have changed.
+-	if [ "`$SVN propget $FILE_PROP $dir/$file`" != "$info" ]
++	if [ "`$SVN propget $FILE_PROP \"$dir/$file\"`" != "$info" ]
+ 	then
+ 	    if [ "$CHECKIN" = "true" ]
+ 	    then
+-		$SVN propset $FILE_PROP  "$info" $dir/$file
++		$SVN propset $FILE_PROP  "$info" "$dir/$file"
+ 	    else
+ 		info=`$SVN propget $FILE_PROP "$dir/$file"`
+ 		mode=`expr "$info" : "mode=\([0-9]*\) "`
+-		user=`expr "$info" : ".* user=\([^(]*\)("`
+-		uid=`expr "$info" : ".* user=[^(]*(\([0-9]*\) "`
+-		group=`expr "$info" : ".* group=\([^(]*\)("`
+-		gid=`expr "$info" : ".* group=[^(]*(\([0-9]*\) "`
+-		if  [ "$user" = "" -o "$group" = ""  -o "$mode" = "" ]
++#		user=`expr "$info" : ".* user=\([^(]*\)("`
++		uid=`expr "$info" : ".* user=[^(]*(\([0-9]*\)"`
++#		group=`expr "$info" : ".* group=\([^(]*\)("`
++		gid=`expr "$info" : ".* group=[^(]*(\([0-9]*\)"`
++		if  [ "$uid" = "" -o "$gid" = ""  -o "$mode" = "" ]
+ 		then
+ 		    echo "property $FILE_PROP not set for $dir/$file"
+ 		else
+-		    chown $user:$group  $dir/$file
+-		    chmod $mode $dir/$file
++#	    		chown $user:$group $dir/$file
++		    chown $uid:$gid  "$dir/$file"
++		    chmod $mode "$dir/$file"
+ 		fi
+ 	    fi
+ 	fi
+@@ -364,8 +368,9 @@
+     if [ "$CHDIR" = "true" ]
+     then
+ 	shift $(($# -1))
+-	cd $1
+-    PCWD="$PCWD/$1"
++        WD=`echo $1 | sed "s/\/$//" | awk -F "/" '{print $(NF)}' `
++        cd $WD
++        PCWD="$PCWD/$WD"
+     fi
+     recorddirinfo 
+     recordpermissions 
