@@ -49,8 +49,8 @@ post-build:
 		${MAKE_FLAGS} Makefile ${MAKE_ARGS} ${ALL_TARGET}
 
 post-install:
-	cd ${WRKSRC}/service-type-database && ${SETENV} ${MAKE_ENV} ${GMAKE} \
-		${MAKE_FLAGS} Makefile ${MAKE_ARGS} ${INSTALL_TARGET}
+	${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/service-type-database/service-types.db ${DATADIR}
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py -l ${PYTHON_SITELIBDIR}
 	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py -l ${PYTHON_SITELIBDIR}
 .for mf in ${MAN1}
