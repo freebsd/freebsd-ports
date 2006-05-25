@@ -1,0 +1,47 @@
+bin/predict
+bin/vocalizer
+%%DATADIR%%/default/predict.db
+%%DATADIR%%/default/predict.qth
+%%DATADIR%%/default/predict.tle
+%%DATADIR%%/vocalizer/alarm.wav
+%%DATADIR%%/vocalizer/approaching.wav
+%%DATADIR%%/vocalizer/azimuth.wav
+%%DATADIR%%/vocalizer/eclipse.wav
+%%DATADIR%%/vocalizer/eight.wav
+%%DATADIR%%/vocalizer/eighteen.wav
+%%DATADIR%%/vocalizer/eighty.wav
+%%DATADIR%%/vocalizer/elevation.wav
+%%DATADIR%%/vocalizer/eleven.wav
+%%DATADIR%%/vocalizer/fifteen.wav
+%%DATADIR%%/vocalizer/fifty.wav
+%%DATADIR%%/vocalizer/five.wav
+%%DATADIR%%/vocalizer/forty.wav
+%%DATADIR%%/vocalizer/four.wav
+%%DATADIR%%/vocalizer/fourteen.wav
+%%DATADIR%%/vocalizer/hundred.wav
+%%DATADIR%%/vocalizer/intro.wav
+%%DATADIR%%/vocalizer/los.wav
+%%DATADIR%%/vocalizer/nine.wav
+%%DATADIR%%/vocalizer/nineteen.wav
+%%DATADIR%%/vocalizer/ninety.wav
+%%DATADIR%%/vocalizer/one.wav
+%%DATADIR%%/vocalizer/receding.wav
+%%DATADIR%%/vocalizer/seven.wav
+%%DATADIR%%/vocalizer/seventeen.wav
+%%DATADIR%%/vocalizer/seventy.wav
+%%DATADIR%%/vocalizer/six.wav
+%%DATADIR%%/vocalizer/sixteen.wav
+%%DATADIR%%/vocalizer/sixty.wav
+%%DATADIR%%/vocalizer/sunlight.wav
+%%DATADIR%%/vocalizer/ten.wav
+%%DATADIR%%/vocalizer/thirteen.wav
+%%DATADIR%%/vocalizer/thirty.wav
+%%DATADIR%%/vocalizer/three.wav
+%%DATADIR%%/vocalizer/twelve.wav
+%%DATADIR%%/vocalizer/twenty.wav
+%%DATADIR%%/vocalizer/two.wav
+%%DATADIR%%/vocalizer/visible.wav
+%%DATADIR%%/vocalizer/zero.wav
+@dirrm %%DATADIR%%/default
+@dirrm %%DATADIR%%/vocalizer
+@dirrm %%DATADIR%%
