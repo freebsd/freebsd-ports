@@ -8943,6 +8943,7 @@ p5-Net-EPP-Client	ports/net/p5-Net-EPP-Client
 p5-Net-EPP-Frame	ports/net/p5-Net-EPP-Frame
 p5-Net-EPP-Proxy	ports/net/p5-Net-EPP-Proxy
 p5-Net-FTP-Common	ports/ftp/p5-Net-FTP-Common
+p5-Net-FTP-File	ports/net/p5-Net-FTP-File
 p5-Net-FTP-Recursive	ports/ftp/p5-Net-FTP-Recursive
 p5-Net-FTPServer	ports/ftp/p5-Net-FTPServer
 p5-Net-Finger	ports/net/p5-Net-Finger
