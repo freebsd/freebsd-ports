@@ -14,10 +14,10 @@ PORTVERSION=	10.26.28
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-EXTRACT_SUFX=	.tgz
 .if defined(WITH_NETPBM_DEVEL)
 PKGNAMESUFFIX=	-devel${PKGNAMESUFFIX2}
 .endif
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A toolkit for conversion of images between different formats
