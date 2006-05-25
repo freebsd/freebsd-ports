@@ -9157,6 +9157,7 @@ p5-PerlIO-via-symlink	ports/devel/p5-PerlIO-via-symlink
 p5-PerlMenu	ports/devel/p5-PerlMenu
 p5-PerlPoint-Converters	ports/textproc/p5-PerlPoint-Converters
 p5-PerlPoint-Package	ports/textproc/p5-PerlPoint-Package
+p5-Petal	ports/textproc/p5-Petal
 p5-Pg		ports/databases/p5-Pg
 p5-PlRPC	ports/net/p5-PlRPC
 p5-Plucene	ports/textproc/p5-Plucene
