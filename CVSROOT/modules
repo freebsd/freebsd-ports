@@ -8871,6 +8871,7 @@ p5-Math-SymbolicX-Statistics-Distributions	ports/math/p5-Math-SymbolicX-Statisti
 p5-Math-TrulyRandom	ports/math/p5-Math-TrulyRandom
 p5-Math-Vec	ports/math/p5-Math-Vec
 p5-Math-VecStat	ports/math/p5-Math-VecStat
+p5-MathML-Entities	ports/textproc/p5-MathML-Entities
 p5-MatrixReal	ports/math/p5-MatrixReal
 p5-Maypole	ports/www/p5-Maypole
 p5-Maypole-Authentication-UserSessionCookie	ports/www/p5-Maypole-Authentication-UserSessionCookie
