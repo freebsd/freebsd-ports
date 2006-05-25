@@ -93,12 +93,16 @@ bin/unber
 %%DATADIR%%/constraints.h
 %%DATADIR%%/der_encoder.c
 %%DATADIR%%/der_encoder.h
+%%DATADIR%%/per_decoder.c
+%%DATADIR%%/per_decoder.h
 %%DATADIR%%/xer_decoder.c
 %%DATADIR%%/xer_decoder.h
 %%DATADIR%%/xer_encoder.c
 %%DATADIR%%/xer_encoder.h
 %%DATADIR%%/xer_support.c
 %%DATADIR%%/xer_support.h
+%%DATADIR%%/per_support.c
+%%DATADIR%%/per_support.h
 %%DATADIR%%/asn-decoder-template.c
 %%DATADIR%%/file-dependencies
 %%DOCSDIR%%/TODO
@@ -107,6 +111,7 @@ bin/unber
 %%DOCSDIR%%/COPYING
 %%DOCSDIR%%/FAQ
 %%DOCSDIR%%/README
+%%DOCSDIR%%/asn1c-quick.pdf
 %%DOCSDIR%%/asn1c-usage.html
 %%DOCSDIR%%/asn1c-usage.pdf
 @dirrm %%DOCSDIR%%
