@@ -8766,6 +8766,7 @@ p5-MIME-Lite	ports/mail/p5-MIME-Lite
 p5-MIME-Lite-HTML	ports/mail/p5-MIME-Lite-HTML
 p5-MIME-Tools	ports/mail/p5-MIME-Tools
 p5-MIME-Types	ports/mail/p5-MIME-Types
+p5-MKDoc-XML	ports/textproc/p5-MKDoc-XML
 p5-MLDBM	ports/databases/p5-MLDBM
 p5-MLDBM-Sync	ports/databases/p5-MLDBM-Sync
 p5-MP3-ID3v1Tag	ports/audio/p5-MP3-ID3v1Tag
