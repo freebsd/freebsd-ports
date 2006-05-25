@@ -3,8 +3,8 @@
 %%XPI_XPIDIR%%/chrome/content/about/logopng.png
 %%XPI_XPIDIR%%/chrome/content/about/stile.css
 %%XPI_XPIDIR%%/chrome/content/barra.xul
-%%XPI_XPIDIR%%/chrome/content/contents.rdf
 %%XPI_XPIDIR%%/chrome/content/dmoverlay.js
+%%XPI_XPIDIR%%/chrome/content/done.wav
 %%XPI_XPIDIR%%/chrome/content/dta/addingFunctions.js
 %%XPI_XPIDIR%%/chrome/content/dta/addurl.js
 %%XPI_XPIDIR%%/chrome/content/dta/addurl.xul
@@ -24,6 +24,7 @@
 %%XPI_XPIDIR%%/chrome/content/dta/style/mac/style.css
 %%XPI_XPIDIR%%/chrome/content/dta/style/unix/style.css
 %%XPI_XPIDIR%%/chrome/content/dta/style/win/style.css
+%%XPI_XPIDIR%%/chrome/content/error.wav
 %%XPI_XPIDIR%%/chrome/content/gpl.txt
 %%XPI_XPIDIR%%/chrome/content/immagini/about.png
 %%XPI_XPIDIR%%/chrome/content/immagini/add-bkg.png
@@ -117,6 +118,8 @@
 %%XPI_XPIDIR%%/chrome/content/immagini/unchecked.png
 %%XPI_XPIDIR%%/chrome/content/immagini/visual32.png
 %%XPI_XPIDIR%%/chrome/content/immagini/zip.png
+%%XPI_XPIDIR%%/chrome/content/mailbarra.xul
+%%XPI_XPIDIR%%/chrome/content/mailmenu.xul
 %%XPI_XPIDIR%%/chrome/content/menu.js
 %%XPI_XPIDIR%%/chrome/content/menu.xul
 %%XPI_XPIDIR%%/chrome/content/notice.txt
@@ -136,6 +139,32 @@
 %%XPI_XPIDIR%%/chrome/content/privacy/overlaySanitizeCode.xul
 %%XPI_XPIDIR%%/chrome/content/privacy/overlaySanitizeUI.xul
 %%XPI_XPIDIR%%/chrome/content/saveas.xul
+%%XPI_XPIDIR%%/chrome/locale/bg-BG/about.dtd
+%%XPI_XPIDIR%%/chrome/locale/bg-BG/addurl.properties
+%%XPI_XPIDIR%%/chrome/locale/bg-BG/dialog.dtd
+%%XPI_XPIDIR%%/chrome/locale/bg-BG/down.dtd
+%%XPI_XPIDIR%%/chrome/locale/bg-BG/down.properties
+%%XPI_XPIDIR%%/chrome/locale/bg-BG/dta.dtd
+%%XPI_XPIDIR%%/chrome/locale/bg-BG/dta.properties
+%%XPI_XPIDIR%%/chrome/locale/bg-BG/menu.dtd
+%%XPI_XPIDIR%%/chrome/locale/bg-BG/prefpanes.dtd
+%%XPI_XPIDIR%%/chrome/locale/bg-BG/prefpanes.properties
+%%XPI_XPIDIR%%/chrome/locale/bg-BG/privacy.dtd
+%%XPI_XPIDIR%%/chrome/locale/bg-BG/renamingmask.properties
+%%XPI_XPIDIR%%/chrome/locale/bg-BG/saveas.dtd
+%%XPI_XPIDIR%%/chrome/locale/cy-GB/about.dtd
+%%XPI_XPIDIR%%/chrome/locale/cy-GB/addurl.properties
+%%XPI_XPIDIR%%/chrome/locale/cy-GB/dialog.dtd
+%%XPI_XPIDIR%%/chrome/locale/cy-GB/down.dtd
+%%XPI_XPIDIR%%/chrome/locale/cy-GB/down.properties
+%%XPI_XPIDIR%%/chrome/locale/cy-GB/dta.dtd
+%%XPI_XPIDIR%%/chrome/locale/cy-GB/dta.properties
+%%XPI_XPIDIR%%/chrome/locale/cy-GB/menu.dtd
+%%XPI_XPIDIR%%/chrome/locale/cy-GB/prefpanes.dtd
+%%XPI_XPIDIR%%/chrome/locale/cy-GB/prefpanes.properties
+%%XPI_XPIDIR%%/chrome/locale/cy-GB/privacy.dtd
+%%XPI_XPIDIR%%/chrome/locale/cy-GB/renamingmask.properties
+%%XPI_XPIDIR%%/chrome/locale/cy-GB/saveas.dtd
 %%XPI_XPIDIR%%/chrome/locale/de-DE/about.dtd
 %%XPI_XPIDIR%%/chrome/locale/de-DE/addurl.properties
 %%XPI_XPIDIR%%/chrome/locale/de-DE/dialog.dtd
@@ -162,8 +191,6 @@
 %%XPI_XPIDIR%%/chrome/locale/el-GR/privacy.dtd
 %%XPI_XPIDIR%%/chrome/locale/el-GR/renamingmask.properties
 %%XPI_XPIDIR%%/chrome/locale/el-GR/saveas.dtd
-%%XPI_XPIDIR%%/chrome/locale/en-US/.#prefpanes.dtd.1.1
-%%XPI_XPIDIR%%/chrome/locale/en-US/.#renamingmask.properties.1.1
 %%XPI_XPIDIR%%/chrome/locale/en-US/about.dtd
 %%XPI_XPIDIR%%/chrome/locale/en-US/addurl.properties
 %%XPI_XPIDIR%%/chrome/locale/en-US/dialog.dtd
@@ -203,6 +230,32 @@
 %%XPI_XPIDIR%%/chrome/locale/fr-FR/privacy.dtd
 %%XPI_XPIDIR%%/chrome/locale/fr-FR/renamingmask.properties
 %%XPI_XPIDIR%%/chrome/locale/fr-FR/saveas.dtd
+%%XPI_XPIDIR%%/chrome/locale/he-IL/about.dtd
+%%XPI_XPIDIR%%/chrome/locale/he-IL/addurl.properties
+%%XPI_XPIDIR%%/chrome/locale/he-IL/dialog.dtd
+%%XPI_XPIDIR%%/chrome/locale/he-IL/down.dtd
+%%XPI_XPIDIR%%/chrome/locale/he-IL/down.properties
+%%XPI_XPIDIR%%/chrome/locale/he-IL/dta.dtd
+%%XPI_XPIDIR%%/chrome/locale/he-IL/dta.properties
+%%XPI_XPIDIR%%/chrome/locale/he-IL/menu.dtd
+%%XPI_XPIDIR%%/chrome/locale/he-IL/prefpanes.dtd
+%%XPI_XPIDIR%%/chrome/locale/he-IL/prefpanes.properties
+%%XPI_XPIDIR%%/chrome/locale/he-IL/privacy.dtd
+%%XPI_XPIDIR%%/chrome/locale/he-IL/renamingmask.properties
+%%XPI_XPIDIR%%/chrome/locale/he-IL/saveas.dtd
+%%XPI_XPIDIR%%/chrome/locale/hu-HU/about.dtd
+%%XPI_XPIDIR%%/chrome/locale/hu-HU/addurl.properties
+%%XPI_XPIDIR%%/chrome/locale/hu-HU/dialog.dtd
+%%XPI_XPIDIR%%/chrome/locale/hu-HU/down.dtd
+%%XPI_XPIDIR%%/chrome/locale/hu-HU/down.properties
+%%XPI_XPIDIR%%/chrome/locale/hu-HU/dta.dtd
+%%XPI_XPIDIR%%/chrome/locale/hu-HU/dta.properties
+%%XPI_XPIDIR%%/chrome/locale/hu-HU/menu.dtd
+%%XPI_XPIDIR%%/chrome/locale/hu-HU/prefpanes.dtd
+%%XPI_XPIDIR%%/chrome/locale/hu-HU/prefpanes.properties
+%%XPI_XPIDIR%%/chrome/locale/hu-HU/privacy.dtd
+%%XPI_XPIDIR%%/chrome/locale/hu-HU/renamingmask.properties
+%%XPI_XPIDIR%%/chrome/locale/hu-HU/saveas.dtd
 %%XPI_XPIDIR%%/chrome/locale/it-IT/about.dtd
 %%XPI_XPIDIR%%/chrome/locale/it-IT/addurl.properties
 %%XPI_XPIDIR%%/chrome/locale/it-IT/dialog.dtd
@@ -229,6 +282,19 @@
 %%XPI_XPIDIR%%/chrome/locale/ko-KR/privacy.dtd
 %%XPI_XPIDIR%%/chrome/locale/ko-KR/renamingmask.properties
 %%XPI_XPIDIR%%/chrome/locale/ko-KR/saveas.dtd
+%%XPI_XPIDIR%%/chrome/locale/mk-MK/about.dtd
+%%XPI_XPIDIR%%/chrome/locale/mk-MK/addurl.properties
+%%XPI_XPIDIR%%/chrome/locale/mk-MK/dialog.dtd
+%%XPI_XPIDIR%%/chrome/locale/mk-MK/down.dtd
+%%XPI_XPIDIR%%/chrome/locale/mk-MK/down.properties
+%%XPI_XPIDIR%%/chrome/locale/mk-MK/dta.dtd
+%%XPI_XPIDIR%%/chrome/locale/mk-MK/dta.properties
+%%XPI_XPIDIR%%/chrome/locale/mk-MK/menu.dtd
+%%XPI_XPIDIR%%/chrome/locale/mk-MK/prefpanes.dtd
+%%XPI_XPIDIR%%/chrome/locale/mk-MK/prefpanes.properties
+%%XPI_XPIDIR%%/chrome/locale/mk-MK/privacy.dtd
+%%XPI_XPIDIR%%/chrome/locale/mk-MK/renamingmask.properties
+%%XPI_XPIDIR%%/chrome/locale/mk-MK/saveas.dtd
 %%XPI_XPIDIR%%/chrome/locale/nl-NL/about.dtd
 %%XPI_XPIDIR%%/chrome/locale/nl-NL/addurl.properties
 %%XPI_XPIDIR%%/chrome/locale/nl-NL/dialog.dtd
@@ -294,6 +360,32 @@
 %%XPI_XPIDIR%%/chrome/locale/sk-SK/privacy.dtd
 %%XPI_XPIDIR%%/chrome/locale/sk-SK/renamingmask.properties
 %%XPI_XPIDIR%%/chrome/locale/sk-SK/saveas.dtd
+%%XPI_XPIDIR%%/chrome/locale/sv-SE/about.dtd
+%%XPI_XPIDIR%%/chrome/locale/sv-SE/addurl.properties
+%%XPI_XPIDIR%%/chrome/locale/sv-SE/dialog.dtd
+%%XPI_XPIDIR%%/chrome/locale/sv-SE/down.dtd
+%%XPI_XPIDIR%%/chrome/locale/sv-SE/down.properties
+%%XPI_XPIDIR%%/chrome/locale/sv-SE/dta.dtd
+%%XPI_XPIDIR%%/chrome/locale/sv-SE/dta.properties
+%%XPI_XPIDIR%%/chrome/locale/sv-SE/menu.dtd
+%%XPI_XPIDIR%%/chrome/locale/sv-SE/prefpanes.dtd
+%%XPI_XPIDIR%%/chrome/locale/sv-SE/prefpanes.properties
+%%XPI_XPIDIR%%/chrome/locale/sv-SE/privacy.dtd
+%%XPI_XPIDIR%%/chrome/locale/sv-SE/renamingmask.properties
+%%XPI_XPIDIR%%/chrome/locale/sv-SE/saveas.dtd
+%%XPI_XPIDIR%%/chrome/locale/zh-CN/about.dtd
+%%XPI_XPIDIR%%/chrome/locale/zh-CN/addurl.properties
+%%XPI_XPIDIR%%/chrome/locale/zh-CN/dialog.dtd
+%%XPI_XPIDIR%%/chrome/locale/zh-CN/down.dtd
+%%XPI_XPIDIR%%/chrome/locale/zh-CN/down.properties
+%%XPI_XPIDIR%%/chrome/locale/zh-CN/dta.dtd
+%%XPI_XPIDIR%%/chrome/locale/zh-CN/dta.properties
+%%XPI_XPIDIR%%/chrome/locale/zh-CN/menu.dtd
+%%XPI_XPIDIR%%/chrome/locale/zh-CN/prefpanes.dtd
+%%XPI_XPIDIR%%/chrome/locale/zh-CN/prefpanes.properties
+%%XPI_XPIDIR%%/chrome/locale/zh-CN/privacy.dtd
+%%XPI_XPIDIR%%/chrome/locale/zh-CN/renamingmask.properties
+%%XPI_XPIDIR%%/chrome/locale/zh-CN/saveas.dtd
 %%XPI_XPIDIR%%/chrome/skin/classic/contents.rdf
 %%XPI_XPIDIR%%/chrome/skin/classic/stile.css
 %%XPI_XPIDIR%%/chrome.manifest
@@ -318,18 +410,25 @@
 @dirrm %%XPI_XPIDIR%%/chrome/content/opzioni
 @dirrm %%XPI_XPIDIR%%/chrome/content/privacy
 @dirrm %%XPI_XPIDIR%%/chrome/content
+@dirrm %%XPI_XPIDIR%%/chrome/locale/bg-BG
+@dirrm %%XPI_XPIDIR%%/chrome/locale/cy-GB
 @dirrm %%XPI_XPIDIR%%/chrome/locale/de-DE
 @dirrm %%XPI_XPIDIR%%/chrome/locale/el-GR
 @dirrm %%XPI_XPIDIR%%/chrome/locale/en-US
 @dirrm %%XPI_XPIDIR%%/chrome/locale/es-ES
 @dirrm %%XPI_XPIDIR%%/chrome/locale/fr-FR
+@dirrm %%XPI_XPIDIR%%/chrome/locale/he-IL
+@dirrm %%XPI_XPIDIR%%/chrome/locale/hu-HU
 @dirrm %%XPI_XPIDIR%%/chrome/locale/it-IT
 @dirrm %%XPI_XPIDIR%%/chrome/locale/ko-KR
+@dirrm %%XPI_XPIDIR%%/chrome/locale/mk-MK
 @dirrm %%XPI_XPIDIR%%/chrome/locale/nl-NL
 @dirrm %%XPI_XPIDIR%%/chrome/locale/pl-PL
 @dirrm %%XPI_XPIDIR%%/chrome/locale/pt-BR
 @dirrm %%XPI_XPIDIR%%/chrome/locale/ru-RU
 @dirrm %%XPI_XPIDIR%%/chrome/locale/sk-SK
+@dirrm %%XPI_XPIDIR%%/chrome/locale/sv-SE
+@dirrm %%XPI_XPIDIR%%/chrome/locale/zh-CN
 @dirrm %%XPI_XPIDIR%%/chrome/locale
 @dirrm %%XPI_XPIDIR%%/chrome/skin/classic
 @dirrm %%XPI_XPIDIR%%/chrome/skin
