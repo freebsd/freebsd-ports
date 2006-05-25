@@ -28,5 +28,5 @@ include/vista.h
 lib/libqdbm.a
 lib/libqdbm.so
 lib/libqdbm.so.12
-lib/libqdbm.so.12.14.0
+lib/libqdbm.so.12.18.0
 libdata/pkgconfig/qdbm.pc
