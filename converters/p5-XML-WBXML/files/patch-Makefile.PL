@@ -1,5 +1,11 @@
 --- Makefile.PL	Thu Aug 11 19:31:58 2005
-+++ Makefile.PL	Thu May 25 15:13:58 2006
++++ Makefile.PL	Thu May 25 15:42:44 2006
+@@ -1,4 +1,4 @@
+-use 5.008003;
++use 5.00600;
+ use ExtUtils::MakeMaker;
+ # See lib/ExtUtils/MakeMaker.pm for details of how to influence
+ # the contents of the Makefile that is written.
 @@ -8,9 +8,9 @@
      PREREQ_PM         => {}, # e.g., Module::Name => 1.1
      ABSTRACT_FROM  => 'lib/XML/WBXML.pm', # retrieve abstract from module
