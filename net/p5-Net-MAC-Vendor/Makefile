@@ -16,6 +16,7 @@ MAINTAINER=	aaron@FreeBSD.org
 COMMENT=	Look up the vendor for a MAC
 
 BUILD_DEPENDS=	${SITE_PERL}/LWP/Simple.pm:${PORTSDIR}/www/p5-libwww
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 MAN3=	Net::MAC::Vendor.3
 
