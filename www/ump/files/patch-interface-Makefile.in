@@ -1,0 +1,11 @@
+--- interface/Makefile.in.orig	Wed May 24 20:40:04 2006
++++ interface/Makefile.in	Wed May 24 20:43:13 2006
+@@ -319,7 +319,7 @@
+ 
+ INCLUDES = \
+ 	-I$(top_srcdir)/timidity \
+-	-I$(top_srcdir)/libarc \
++	-I$(LOCALBASE)/include -I$(LOCALBASE)/include/libarc \
+ 	-I$(top_srcdir)/utils
+ 
+ 
