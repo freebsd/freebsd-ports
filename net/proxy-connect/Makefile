@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	proxy-connect
-PORTVERSION=	1.68
+PORTVERSION=	1.96
 CATEGORIES=	net
 MASTER_SITES=	http://people.freebsd.org/~alfred/sources/proxy-connect/
 DISTNAME=	$(PORTNAME)-$(PORTVERSION)
