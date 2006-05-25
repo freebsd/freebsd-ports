@@ -1,0 +1,7 @@
+Perl module to allow whois lookup of ip addresses. This module should 
+recursively query the various whois providers until it gets the more 
+detailed information including either TechPhone or OrgTechPhone by 
+default; however, this is overrideable.
+
+WWW: http://search.cpan.org/dist/Net-Whois-IP
+Author: Ben Schmitz <ben@foink.com>
