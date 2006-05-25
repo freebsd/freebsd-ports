@@ -400,6 +400,7 @@
     SUBDIR += p5-IO-Socket-Multicast
     SUBDIR += p5-IP-Country
     SUBDIR += p5-Net
+    SUBDIR += p5-Net-Address-IPv4-Local
     SUBDIR += p5-Net-Amazon
     SUBDIR += p5-Net-BGP
     SUBDIR += p5-Net-Blogger
