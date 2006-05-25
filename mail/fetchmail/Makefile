@@ -11,7 +11,7 @@
 
 PORTNAME=	fetchmail
 PORTVERSION=	6.3.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://download.berlios.de/%SUBDIR%/ \
 		http://home.pages.de/~mandree/%SUBDIR%/ \
@@ -24,7 +24,7 @@ COMMENT=	Batch mail retrieval utility for IMAP/POP2/POP3/ETRN/ODMR
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root.crt:${PORTSDIR}/security/ca-roots
 
 USE_RC_SUBR=	fetchmail
-FETCHMAILRC=	${PREFIX}/etc//fetchmailrc
+FETCHMAILRC=	${PREFIX}/etc/fetchmailrc
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
