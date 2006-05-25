@@ -40,6 +40,8 @@ PKGDEINSTALL=	${PKGINSTALL}
 
 OPTIONS=	GUI "build with Python QT" on
 
+PLIST_SUB+=	PORTVERSION=${PORTVERSION} IJSVER=2.1.10
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000

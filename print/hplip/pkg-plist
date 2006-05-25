@@ -34,124 +34,124 @@ sbin/hpiod
 sbin/hpssd
 share/applications/hplip.desktop
 share/cups/model/foomatic-ppds
-%%PORTDOCS%%share/doc/hpijs-2.1.10/COPYING
-%%PORTDOCS%%share/doc/hpijs-2.1.10/README_LIBJPG
-%%PORTDOCS%%share/doc/hplip-0.9.11/COPYING
-%%PORTDOCS%%share/doc/hplip-0.9.11/contacts.html
-%%PORTDOCS%%share/doc/hplip-0.9.11/faqs.html
-%%PORTDOCS%%share/doc/hplip-0.9.11/features.html
-%%PORTDOCS%%share/doc/hplip-0.9.11/howtos/build.html
-%%PORTDOCS%%share/doc/hplip-0.9.11/howtos/faxing.html
-%%PORTDOCS%%share/doc/hplip-0.9.11/howtos/index.html
-%%PORTDOCS%%share/doc/hplip-0.9.11/howtos/install.html
-%%PORTDOCS%%share/doc/hplip-0.9.11/howtos/io.html
-%%PORTDOCS%%share/doc/hplip-0.9.11/howtos/other.html
-%%PORTDOCS%%share/doc/hplip-0.9.11/howtos/pcard.html
-%%PORTDOCS%%share/doc/hplip-0.9.11/howtos/printing.html
-%%PORTDOCS%%share/doc/hplip-0.9.11/howtos/scanning.html
-%%PORTDOCS%%share/doc/hplip-0.9.11/howtos/toolbox.html
-%%PORTDOCS%%share/doc/hplip-0.9.11/images/HP_Device_ManagePrint.png
-%%PORTDOCS%%share/doc/hplip-0.9.11/images/HP_Device_ManageSend_Fax-1.png
-%%PORTDOCS%%share/doc/hplip-0.9.11/images/HP_Device_ManageSend_Fax-2.png
-%%PORTDOCS%%share/doc/hplip-0.9.11/images/HP_Device_Manager-1.png
-%%PORTDOCS%%share/doc/hplip-0.9.11/images/HP_Device_Manager-2.png
-%%PORTDOCS%%share/doc/hplip-0.9.11/images/HP_Device_Manager-3.png
-%%PORTDOCS%%share/doc/hplip-0.9.11/images/HP_Device_Manager-4.png
-%%PORTDOCS%%share/doc/hplip-0.9.11/images/HP_Device_Manager.png
-%%PORTDOCS%%share/doc/hplip-0.9.11/images/HP_Device_ManagerPhoto_Card.png
-%%PORTDOCS%%share/doc/hplip-0.9.11/images/HP_Device_ManagerSend_Fax.png
-%%PORTDOCS%%share/doc/hplip-0.9.11/images/Screenshot-xsane.png
-%%PORTDOCS%%share/doc/hplip-0.9.11/images/cups_device_list.png
-%%PORTDOCS%%share/doc/hplip-0.9.11/images/cups_model_list.png
-%%PORTDOCS%%share/doc/hplip-0.9.11/images/cups_opening.png
-%%PORTDOCS%%share/doc/hplip-0.9.11/images/cups_printer_model.png
-%%PORTDOCS%%share/doc/hplip-0.9.11/images/gs_hpijs.png
-%%PORTDOCS%%share/doc/hplip-0.9.11/images/hp-tux-printer.png
-%%PORTDOCS%%share/doc/hplip-0.9.11/images/hplip_device_manager.png
-%%PORTDOCS%%share/doc/hplip-0.9.11/images/hplip_overview.png
-%%PORTDOCS%%share/doc/hplip-0.9.11/images/network_appssocket.png
-%%PORTDOCS%%share/doc/hplip-0.9.11/images/network_device_list.png
-%%PORTDOCS%%share/doc/hplip-0.9.11/images/network_device_uri.png
-%%PORTDOCS%%share/doc/hplip-0.9.11/images/network_model_list.png
-%%PORTDOCS%%share/doc/hplip-0.9.11/images/sflogo.png
-%%PORTDOCS%%share/doc/hplip-0.9.11/images/yast_hardware.png
-%%PORTDOCS%%share/doc/hplip-0.9.11/images/yast_opening_hw.png
-%%PORTDOCS%%share/doc/hplip-0.9.11/images/yast_other_configure.png
-%%PORTDOCS%%share/doc/hplip-0.9.11/images/yast_other_kind.png
-%%PORTDOCS%%share/doc/hplip-0.9.11/images/yast_other_printer.png
-%%PORTDOCS%%share/doc/hplip-0.9.11/images/yast_printer_model.png
-%%PORTDOCS%%share/doc/hplip-0.9.11/index.html
-%%PORTDOCS%%share/doc/hplip-0.9.11/install/index.html
-%%PORTDOCS%%share/doc/hplip-0.9.11/install/step1/apt.html
-%%PORTDOCS%%share/doc/hplip-0.9.11/install/step1/index.html
-%%PORTDOCS%%share/doc/hplip-0.9.11/install/step1/rpm.html
-%%PORTDOCS%%share/doc/hplip-0.9.11/install/step2/debian.html
-%%PORTDOCS%%share/doc/hplip-0.9.11/install/step2/fc4.html
-%%PORTDOCS%%share/doc/hplip-0.9.11/install/step2/index.html
-%%PORTDOCS%%share/doc/hplip-0.9.11/install/step2/mandriva06.html
-%%PORTDOCS%%share/doc/hplip-0.9.11/install/step2/other.html
-%%PORTDOCS%%share/doc/hplip-0.9.11/install/step2/suse10.html
-%%PORTDOCS%%share/doc/hplip-0.9.11/install/step2/ubuntu510.html
-%%PORTDOCS%%share/doc/hplip-0.9.11/install/step3/index.html
-%%PORTDOCS%%share/doc/hplip-0.9.11/install/step4/cups/index.html
-%%PORTDOCS%%share/doc/hplip-0.9.11/install/step4/cups/local.html
-%%PORTDOCS%%share/doc/hplip-0.9.11/install/step4/cups/net.html
-%%PORTDOCS%%share/doc/hplip-0.9.11/install/step4/index.html
-%%PORTDOCS%%share/doc/hplip-0.9.11/install/step4/setup/index.html
-%%PORTDOCS%%share/doc/hplip-0.9.11/install/step4/setup/local.html
-%%PORTDOCS%%share/doc/hplip-0.9.11/install/step4/setup/net.html
-%%PORTDOCS%%share/doc/hplip-0.9.11/install/step4/suse/index.html
-%%PORTDOCS%%share/doc/hplip-0.9.11/legal.html
-%%PORTDOCS%%share/doc/hplip-0.9.11/license.html
-%%PORTDOCS%%share/doc/hplip-0.9.11/mailing_lists.html
-%%PORTDOCS%%share/doc/hplip-0.9.11/release_notes.html
-%%PORTDOCS%%share/doc/hplip-0.9.11/screenshots.html
-%%PORTDOCS%%share/doc/hplip-0.9.11/styles/default.css
-%%PORTDOCS%%share/doc/hplip-0.9.11/styles/rest.css
-%%PORTDOCS%%share/doc/hplip-0.9.11/support_statement.html
-%%PORTDOCS%%share/doc/hplip-0.9.11/supported_devices/color_laser.html
-%%PORTDOCS%%share/doc/hplip-0.9.11/supported_devices/color_laser_mfp.html
-%%PORTDOCS%%share/doc/hplip-0.9.11/supported_devices/index.html
-%%PORTDOCS%%share/doc/hplip-0.9.11/supported_devices/inkjet.html
-%%PORTDOCS%%share/doc/hplip-0.9.11/supported_devices/inkjet_aio.html
-%%PORTDOCS%%share/doc/hplip-0.9.11/supported_devices/laser.html
-%%PORTDOCS%%share/doc/hplip-0.9.11/supported_devices/mono_laser_mfp.html
-%%PORTDOCS%%share/doc/hplip-0.9.11/supported_devices/photosmart.html
-%%PORTDOCS%%share/doc/hplip-0.9.11/supported_devices/unsupported.html
-%%PORTDOCS%%share/doc/hplip-0.9.11/system_requirements.html
-%%PORTDOCS%%share/doc/hplip-0.9.11/tech_docs/device_classes.html
-%%PORTDOCS%%share/doc/hplip-0.9.11/tech_docs/hpijs.html
-%%PORTDOCS%%share/doc/hplip-0.9.11/tech_docs/index.html
-%%PORTDOCS%%share/doc/hplip-0.9.11/tech_docs/man_pages/align.html
-%%PORTDOCS%%share/doc/hplip-0.9.11/tech_docs/man_pages/check.html
-%%PORTDOCS%%share/doc/hplip-0.9.11/tech_docs/man_pages/clean.html
-%%PORTDOCS%%share/doc/hplip-0.9.11/tech_docs/man_pages/colorcal.html
-%%PORTDOCS%%share/doc/hplip-0.9.11/tech_docs/man_pages/fab.html
-%%PORTDOCS%%share/doc/hplip-0.9.11/tech_docs/man_pages/hpssd.html
-%%PORTDOCS%%share/doc/hplip-0.9.11/tech_docs/man_pages/index.html
-%%PORTDOCS%%share/doc/hplip-0.9.11/tech_docs/man_pages/info.html
-%%PORTDOCS%%share/doc/hplip-0.9.11/tech_docs/man_pages/levels.html
-%%PORTDOCS%%share/doc/hplip-0.9.11/tech_docs/man_pages/makeuri.html
-%%PORTDOCS%%share/doc/hplip-0.9.11/tech_docs/man_pages/photo.html
-%%PORTDOCS%%share/doc/hplip-0.9.11/tech_docs/man_pages/print.html
-%%PORTDOCS%%share/doc/hplip-0.9.11/tech_docs/man_pages/setup.html
-%%PORTDOCS%%share/doc/hplip-0.9.11/tech_docs/man_pages/testpage.html
-%%PORTDOCS%%share/doc/hplip-0.9.11/tech_docs/man_pages/toolbox.html
-%%PORTDOCS%%share/doc/hplip-0.9.11/tech_docs/man_pages/unload.html
-%%PORTDOCS%%share/doc/hplip-0.9.11/tech_docs/overview.html
-%%PORTDOCS%%share/doc/hplip-0.9.11/tech_docs/page_sizes.html
-%%PORTDOCS%%share/doc/hplip-0.9.11/tech_docs/printable_areas.html
-%%PORTDOCS%%share/doc/hplip-0.9.11/tech_docs/tarball_install.html
-%%PORTDOCS%%share/doc/hplip-0.9.11/troubleshooting/build.html
-%%PORTDOCS%%share/doc/hplip-0.9.11/troubleshooting/faxing.html
-%%PORTDOCS%%share/doc/hplip-0.9.11/troubleshooting/index.html
-%%PORTDOCS%%share/doc/hplip-0.9.11/troubleshooting/install.html
-%%PORTDOCS%%share/doc/hplip-0.9.11/troubleshooting/io.html
-%%PORTDOCS%%share/doc/hplip-0.9.11/troubleshooting/other.html
-%%PORTDOCS%%share/doc/hplip-0.9.11/troubleshooting/pcard.html
-%%PORTDOCS%%share/doc/hplip-0.9.11/troubleshooting/printing.html
-%%PORTDOCS%%share/doc/hplip-0.9.11/troubleshooting/scanning.html
-%%PORTDOCS%%share/doc/hplip-0.9.11/troubleshooting/toolbox.html
+%%PORTDOCS%%share/doc/hpijs-%%IJSVER%%/COPYING
+%%PORTDOCS%%share/doc/hpijs-%%IJSVER%%/README_LIBJPG
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/contacts.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/faqs.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/features.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/howtos/build.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/howtos/faxing.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/howtos/index.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/howtos/install.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/howtos/io.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/howtos/other.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/howtos/pcard.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/howtos/printing.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/howtos/scanning.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/howtos/toolbox.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/HP_Device_ManagePrint.png
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/HP_Device_ManageSend_Fax-1.png
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/HP_Device_ManageSend_Fax-2.png
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/HP_Device_Manager-1.png
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/HP_Device_Manager-2.png
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/HP_Device_Manager-3.png
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/HP_Device_Manager-4.png
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/HP_Device_Manager.png
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/HP_Device_ManagerPhoto_Card.png
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/HP_Device_ManagerSend_Fax.png
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/Screenshot-xsane.png
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/cups_device_list.png
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/cups_model_list.png
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/cups_opening.png
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/cups_printer_model.png
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/gs_hpijs.png
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/hp-tux-printer.png
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/hplip_device_manager.png
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/hplip_overview.png
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/network_appssocket.png
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/network_device_list.png
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/network_device_uri.png
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/network_model_list.png
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/sflogo.png
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/yast_hardware.png
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/yast_opening_hw.png
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/yast_other_configure.png
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/yast_other_kind.png
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/yast_other_printer.png
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/yast_printer_model.png
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/install/index.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/install/step1/apt.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/install/step1/index.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/install/step1/rpm.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/install/step2/debian.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/install/step2/fc4.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/install/step2/index.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/install/step2/mandriva06.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/install/step2/other.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/install/step2/suse10.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/install/step2/ubuntu510.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/install/step3/index.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/install/step4/cups/index.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/install/step4/cups/local.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/install/step4/cups/net.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/install/step4/index.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/install/step4/setup/index.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/install/step4/setup/local.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/install/step4/setup/net.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/install/step4/suse/index.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/legal.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/license.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/mailing_lists.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/release_notes.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/screenshots.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/styles/default.css
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/styles/rest.css
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/support_statement.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/supported_devices/color_laser.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/supported_devices/color_laser_mfp.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/supported_devices/index.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/supported_devices/inkjet.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/supported_devices/inkjet_aio.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/supported_devices/laser.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/supported_devices/mono_laser_mfp.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/supported_devices/photosmart.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/supported_devices/unsupported.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/system_requirements.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/tech_docs/device_classes.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/tech_docs/hpijs.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/tech_docs/index.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/tech_docs/man_pages/align.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/tech_docs/man_pages/check.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/tech_docs/man_pages/clean.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/tech_docs/man_pages/colorcal.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/tech_docs/man_pages/fab.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/tech_docs/man_pages/hpssd.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/tech_docs/man_pages/index.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/tech_docs/man_pages/info.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/tech_docs/man_pages/levels.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/tech_docs/man_pages/makeuri.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/tech_docs/man_pages/photo.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/tech_docs/man_pages/print.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/tech_docs/man_pages/setup.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/tech_docs/man_pages/testpage.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/tech_docs/man_pages/toolbox.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/tech_docs/man_pages/unload.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/tech_docs/overview.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/tech_docs/page_sizes.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/tech_docs/printable_areas.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/tech_docs/tarball_install.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/troubleshooting/build.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/troubleshooting/faxing.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/troubleshooting/index.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/troubleshooting/install.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/troubleshooting/io.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/troubleshooting/other.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/troubleshooting/pcard.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/troubleshooting/printing.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/troubleshooting/scanning.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/troubleshooting/toolbox.html
 %%DATADIR%%/COPYING
 %%DATADIR%%/__init__.py
 %%DATADIR%%/align
@@ -1013,21 +1013,21 @@ share/ppd/HP/hp_officejet_9100_series.ppd.gz
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%/base
 @dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm share/doc/hplip-0.9.11/troubleshooting
-%%PORTDOCS%%@dirrm share/doc/hplip-0.9.11/tech_docs/man_pages
-%%PORTDOCS%%@dirrm share/doc/hplip-0.9.11/tech_docs
-%%PORTDOCS%%@dirrm share/doc/hplip-0.9.11/supported_devices
-%%PORTDOCS%%@dirrm share/doc/hplip-0.9.11/styles
-%%PORTDOCS%%@dirrm share/doc/hplip-0.9.11/install/step4/suse
-%%PORTDOCS%%@dirrm share/doc/hplip-0.9.11/install/step4/setup
-%%PORTDOCS%%@dirrm share/doc/hplip-0.9.11/install/step4/cups
-%%PORTDOCS%%@dirrm share/doc/hplip-0.9.11/install/step4
-%%PORTDOCS%%@dirrm share/doc/hplip-0.9.11/install/step3
-%%PORTDOCS%%@dirrm share/doc/hplip-0.9.11/install/step2
-%%PORTDOCS%%@dirrm share/doc/hplip-0.9.11/install/step1
-%%PORTDOCS%%@dirrm share/doc/hplip-0.9.11/install
-%%PORTDOCS%%@dirrm share/doc/hplip-0.9.11/images
-%%PORTDOCS%%@dirrm share/doc/hplip-0.9.11/howtos
-%%PORTDOCS%%@dirrm share/doc/hplip-0.9.11
-%%PORTDOCS%%@dirrm share/doc/hpijs-2.1.10
+%%PORTDOCS%%@dirrm %%DOCSDIR%%-%%PORTVERSION%%/troubleshooting
+%%PORTDOCS%%@dirrm %%DOCSDIR%%-%%PORTVERSION%%/tech_docs/man_pages
+%%PORTDOCS%%@dirrm %%DOCSDIR%%-%%PORTVERSION%%/tech_docs
+%%PORTDOCS%%@dirrm %%DOCSDIR%%-%%PORTVERSION%%/supported_devices
+%%PORTDOCS%%@dirrm %%DOCSDIR%%-%%PORTVERSION%%/styles
+%%PORTDOCS%%@dirrm %%DOCSDIR%%-%%PORTVERSION%%/install/step4/suse
+%%PORTDOCS%%@dirrm %%DOCSDIR%%-%%PORTVERSION%%/install/step4/setup
+%%PORTDOCS%%@dirrm %%DOCSDIR%%-%%PORTVERSION%%/install/step4/cups
+%%PORTDOCS%%@dirrm %%DOCSDIR%%-%%PORTVERSION%%/install/step4
+%%PORTDOCS%%@dirrm %%DOCSDIR%%-%%PORTVERSION%%/install/step3
+%%PORTDOCS%%@dirrm %%DOCSDIR%%-%%PORTVERSION%%/install/step2
+%%PORTDOCS%%@dirrm %%DOCSDIR%%-%%PORTVERSION%%/install/step1
+%%PORTDOCS%%@dirrm %%DOCSDIR%%-%%PORTVERSION%%/install
+%%PORTDOCS%%@dirrm %%DOCSDIR%%-%%PORTVERSION%%/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%-%%PORTVERSION%%/howtos
+%%PORTDOCS%%@dirrm %%DOCSDIR%%-%%PORTVERSION%%
+%%PORTDOCS%%@dirrm share/doc/hpijs-%%IJSVER%%
 @dirrm etc/hp
