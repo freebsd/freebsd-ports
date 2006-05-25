@@ -3,21 +3,18 @@ bin/fsh
 bin/fshd
 bin/in.fshd
 libexec/fcpwrap
-share/fsh/fsh.py
-share/fsh/fsh.pyc
-share/fsh/fshcompat.py
-share/fsh/fshcompat.pyc
-share/fsh/fshconfig.py
-share/fsh/fshconfig.pyc
-share/fsh/fshd.py
-share/fsh/fshd.pyc
-share/fsh/fshlib.py
-share/fsh/fshlib.pyc
-share/fsh/fshversion.py
-share/fsh/fshversion.pyc
-share/fsh/infshd.py
-share/fsh/infshd.pyc
-@unexec install-info --delete %D/info/fsh.info %D/info/dir
-info/fsh.info
-@exec install-info --section="Shells and utilities" --entry="* FSH: (fsh).			fast remote command execution." %D/info/lsh.info %D/info/dir
-@dirrm share/fsh
+%%DATADIR%%/fsh.py
+%%DATADIR%%/fsh.pyc
+%%DATADIR%%/fshcompat.py
+%%DATADIR%%/fshcompat.pyc
+%%DATADIR%%/fshconfig.py
+%%DATADIR%%/fshconfig.pyc
+%%DATADIR%%/fshd.py
+%%DATADIR%%/fshd.pyc
+%%DATADIR%%/fshlib.py
+%%DATADIR%%/fshlib.pyc
+%%DATADIR%%/fshversion.py
+%%DATADIR%%/fshversion.pyc
+%%DATADIR%%/infshd.py
+%%DATADIR%%/infshd.pyc
+@dirrm %%DATADIR%%
