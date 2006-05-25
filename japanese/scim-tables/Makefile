@@ -12,7 +12,7 @@ CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=scim
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	lx@redundancy.redundancy.org
 COMMENT=	SCIM table based Japanese input methods
 
 BUILD_DEPENDS=	scim-make-table:${PORTSDIR}/textproc/scim-table-imengine

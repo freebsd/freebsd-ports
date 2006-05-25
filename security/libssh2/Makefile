@@ -11,7 +11,7 @@ CATEGORIES=	security devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	lx@redundancy.redundancy.org
 COMMENT=	A library implementing the SSH2 protocol
 
 USE_OPENSSL=	yes

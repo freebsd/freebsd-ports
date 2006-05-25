@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_PACKETSTORM} \
 		http://www.securesoftware.com/rats/
 MASTER_SITE_SUBDIR=	UNIX/security
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	lx@redundancy.redundancy.org
 COMMENT=	Source code auditing tool
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2

@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	utils/file
 DISTNAME=	ncat-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	lx@redundancy.redundancy.org
 COMMENT=	Network aware cat
 
 USE_GETOPT_LONG=yes

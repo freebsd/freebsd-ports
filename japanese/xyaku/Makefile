@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	japanese textproc
 MASTER_SITES=	http://home.catv.ne.jp/pp/ginoue/software/xyaku/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	lx@redundancy.redundancy.org
 COMMENT=	A general dictionary/search engine front-end for X
 
 RUN_DEPENDS=	${EDICT_FILE}:${PORTSDIR}/japanese/edict \
