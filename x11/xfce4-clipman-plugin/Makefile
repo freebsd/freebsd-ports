@@ -9,10 +9,11 @@ PORTNAME=	xfce4-clipman-plugin
 PORTVERSION=	0.4.1
 PORTREVISION=	3
 CATEGORIES=	x11 xfce
-MASTER_SITES=	http://download.berlios.de/xfce-goodies/
+MASTER_SITES=	${MASTER_SITE_BERLIOS}
+MASTER_SITE_SUBDIR=	xfce-goodies
 DIST_SUBDIR=	xfce4
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	r.c.ladan@gmail.com
 COMMENT=	XFce 4 clipboard module for xfce4-panel
 
 BUILD_DEPENDS=	xfce4-panel:${PORTSDIR}/x11-wm/xfce4-panel
