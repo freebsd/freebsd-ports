@@ -11,33 +11,28 @@ CFLAGS	=	-O2
 .endif
 
 default:	all
+all:		predict vocalizer/vocalizer
 
-all:		predict
+LIBS += -lm -lncurses
+predict:	predict.c predict.h
+		${CC} ${CFLAGS} -o predict predict.c ${LIBS}
 
-SRCS = \
- predict.c
-
-OBJS = ${SRCS:.c=.o}
-LIBS += -lm -lncurses -o predict
-#
-#
-HDRS = predict.h
-
-predict:	${OBJS} ${HDRS}
-		${CC} ${CFLAGS} -o $@ ${OBJS} ${LIBS}
-
-.c.o:
-	${CC} ${CPPFLAGS} ${CFLAGS} -c $<
-
-,v.c:
-	co $<
+vocalizer/vocalizer:	vocalizer/vocalizer.c vocalizer/vocalizer.h	
+		${CC} ${CFLAGS} -o vocalizer/vocalizer vocalizer/vocalizer.c ${LIBS}
 
 clean:
-	rm -f *.o predict *core *~ \#* *.txt
+	rm -f *.o predict *core *~ \#* *.txt vocalizer/vocalizer
 
 install:
-	echo INSTALL
+	mkdir -p ${PREFIX}/share/predict/
+	mkdir ${PREFIX}/share/predict/default
+	mkdir ${PREFIX}/share/predict/vocalizer
+	cp default/predict.db ${PREFIX}/share/predict/default
+	cp default/predict.qth ${PREFIX}/share/predict/default
+	cp default/predict.tle ${PREFIX}/share/predict/default
+	cp vocalizer/*.wav ${PREFIX}/share/predict/vocalizer
 	install	predict ${PREFIX}/bin
+	install vocalizer/vocalizer ${PREFIX}/bin
 
 install.man:
 	install docs/man/predict.1 ${PREFIX}/man/man1
