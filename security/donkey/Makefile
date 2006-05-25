@@ -8,7 +8,8 @@
 PORTNAME=	donkey
 PORTVERSION=	0.5
 CATEGORIES=	security
-MASTER_SITES=	ftp://ftp.aist-nara.ac.jp/pub/Security/tool/donkey/
+MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
+		http://mirror2.unixfreunde.de/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An alternative for S/KEY's key command
