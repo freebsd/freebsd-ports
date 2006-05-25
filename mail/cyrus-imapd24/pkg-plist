@@ -24,6 +24,7 @@ cyrus/bin/fud
 cyrus/bin/imapd
 cyrus/bin/ipurge
 cyrus/bin/lmtpd
+cyrus/bin/lmtpproxyd
 %%REPLICATION%%cyrus/bin/make_md5
 cyrus/bin/masssievec
 cyrus/bin/master
@@ -86,6 +87,8 @@ include/cyrus/stristr.h
 include/cyrus/sysexits.h
 include/cyrus/util.h
 include/cyrus/xmalloc.h
+include/cyrus/xstrlcat.h
+include/cyrus/xstrlcpy.h
 lib/libcyrus_min.a
 lib/libcyrus.a
 %%SITE_PERL%%/%%PERL_ARCH%%/Cyrus/IMAP/Admin.pm
