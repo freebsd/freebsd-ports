@@ -8,9 +8,11 @@
 PORTNAME=	mudix
 PORTVERSION=	4.3
 CATEGORIES=	net
-MASTER_SITES=	http://dw.nl.eu.org/mudix/
+MASTER_SITES=	http://dw.nl.eu.org/mudix/ \
+		http://freebsd.unixfreunde.de/sources/ \
+		http://mirror2.unixfreunde.de/
 
-MAINTAINER=	scorpio@drkshdw.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ncurses-based MUD client with triggers, aliases, colors
 
 GNU_CONFIGURE=	yes
