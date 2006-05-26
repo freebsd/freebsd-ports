@@ -8,7 +8,9 @@
 PORTNAME=	mgv
 PORTVERSION=	3.1.5
 CATEGORIES=	print
-MASTER_SITES=	http://www.trends.net/~mu/
+MASTER_SITES=	http://www.netsw.org/graphic/postscript/interpreter/mgv/ \
+		http://mirror2.unixfreunde.de/ \
+		http://freebsd.unixfreunde.de/sources/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A PostScript and PDF previewer
@@ -20,7 +22,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	X11BASE=${X11BASE}
 CONFIGURE_ARGS=	--enable-optimize \
 		--disable-debug
-PLIST_SUB=	MGV_VERSION=3.1.5
+PLIST_SUB=	MGV_VERSION=${PORTVERSION}
 
 MAN1=		mgv.1
 
