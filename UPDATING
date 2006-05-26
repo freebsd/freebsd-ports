@@ -7,6 +7,20 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 20060526:
+  AFFECTS: users of security/amavisd-new
+  AUTHOR: gkovesdan@t-hosting.hu
+
+  The Clamav project recommended that security/clamav and security/clamav-devel
+  should depend on archivers/unzoo instead of zoo, and on archivers/arj instead
+  of unarj. Because the clamav and clamav-devel ports are used quite often with
+  amavisd-new, this port was modified to depend on the same two archiver ports
+  as well. The amavisd-new port automatically recognizes arj, but not unzoo, so
+  ${PREFIX}/etc/amavisd.conf should be modified. This line should be changed:
+	  ['zoo',  \&do_zoo,         'zoo'],
+  To this one:
+	  ['zoo',  \&do_zoo,         ['zoo','unzoo'] ],
+
+20060526:
   AFFECTS: users of net/openldap23-server
   AUTHOR: delphij@FreeBSD.org
 
