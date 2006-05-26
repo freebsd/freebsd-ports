@@ -7,10 +7,9 @@
 #
 
 PORTNAME=	nofgpg
-PORTVERSION=	0.4
-PORTREVISION=	2
+PORTVERSION=	0.5.1
 CATEGORIES=	security python
-MASTER_SITES=	http://www.cgabriel.org/sw/nofgpg/
+MASTER_SITES=	http://www.cgabriel.org/download/nofgpg/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	No One Fears GPG
