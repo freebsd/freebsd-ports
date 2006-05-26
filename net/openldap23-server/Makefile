@@ -40,12 +40,12 @@ BROKEN=			incompatible OpenLDAP version: ${WANT_OPENLDAP_VER}
 .endif
 
 PORTREVISION_CLIENT=	1
-PORTREVISION_SERVER=	0
+PORTREVISION_SERVER=	1
 
 .if !defined(CLIENT_ONLY)
 OPTIONS=	SASL "With (Cyrus) SASL2 support" on \
 		PERL "With Perl backend" off \
-		SHELL "With Shell backend (disables threading)" on \
+		SHELL "With Shell backend (disables threading)" off \
 		ODBC "With SQL backend" off \
 		SLP "With SLPv2 (RFC 2608) support" off \
 		SLAPI "With Netscape SLAPI plugin API" off \
@@ -67,7 +67,8 @@ OPTIONS=	SASL "With (Cyrus) SASL2 support" on \
 		UNIQUE "With attribute Uniqueness overlay" off \
 		VALSORT "With Value Sorting overlay" off \
 		ACI "With per-object ACIs (experimental)" off \
-		DYNAMIC_BACKENDS "Build dynamic backends" on
+		DYNAMIC_BACKENDS "Build dynamic backends" on \
+		SLURPD "Build slurpd replication daemon" on
 .endif
 
 .if defined(CLIENT_ONLY)
@@ -159,7 +160,7 @@ PKGMESSAGE=		${WRKSRC}/pkg-message.client
 # server specific configuration
 
 SUB_FILES+=		pkg-deinstall pkg-message pkg-install
-USE_RC_SUBR=		slapd.sh slurpd.sh
+USE_RC_SUBR=		slapd.sh ${SLURPDSH}
 
 EXTRA_PATCHES+=		${FILESDIR}/extrapatch-Makefile.in
 
@@ -295,11 +296,12 @@ CONFIGURE_SED+=		-e 's,ol_DB_LIB=$$,&-l${BDB_LIB_NAME:R},' \
 			-e 's,(ol_cv_lib_db=)yes$$,\1-l${BDB_LIB_NAME:R},'
 .endif
 
-.if defined(WITHOUT_SHELL)
-PLIST_SUB+=		BACK_SHELL="@comment "
-.else
+.if defined(WITH_SHELL)
 CONFIGURE_ARGS+=	--without-threads --enable-shell=${BACKEND_ENABLE}
 PLIST_SUB+=		BACK_SHELL=${BACKEND_PLIST}
+.else
+PLIST_SUB+=		BACK_SHELL="@comment "
+WANT_OPENLDAP_THREADS=	yes
 .endif
 
 .if defined(WITH_PERL)
@@ -341,6 +343,14 @@ PLIST_SUB+=		SLAPI="@comment "
 .if defined(WITH_SLP)
 CONFIGURE_ARGS+=	--enable-slp
 LIB_DEPENDS+=		slp.1:${PORTSDIR}/net/openslp
+.endif
+
+.if defined(WANT_OPENLDAP_THREADS) && !defined(WITHOUT_SLURPD)
+SLURPDSH=		slurpd.sh
+PLIST_SUB+=		SLURPD=""
+.else
+PLIST_SUB+=		SLURPD="@comment "
+CONFIGURE_ARGS+=	--disable-slurpd
 .endif
 
 # Include tcp-wrapper support
