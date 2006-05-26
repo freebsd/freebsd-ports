@@ -11117,6 +11117,7 @@ py-orbit2	ports/devel/py-orbit2
 py-osd		ports/misc/py-osd
 py-paida	ports/science/py-paida
 py-paint	ports/graphics/py-paint
+py-paramiko	ports/security/py-paramiko
 py-parsing	ports/devel/py-parsing
 py-pcap		ports/net/py-pcap
 py-pcapy	ports/net/py-pcapy
