@@ -6,6 +6,21 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20060526:
+  AFFECTS: users of net/openldap23-server
+  AUTHOR: delphij@FreeBSD.org
+
+  The setting of SHELL backend has been inverted to off by default,
+  because of the side effect it can cause.  A new option, SLURPD
+  has been added to give the user decision on whether the
+  replication should be built and installed.  Please note that the
+  replication daemon is disabled when threading is disabled (e.g.
+  when using shell backend), no matter what the user option SLURPD
+  is set to.
+
+  You are advised to do a "make config" in the net/openldap23-server
+  directory *before* upgrading.
+
 20060524:
   AFFECTS: users of games/spicetrade
   AUTHOR: hq@FreeBSD.org
