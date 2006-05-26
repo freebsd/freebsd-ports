@@ -7495,6 +7495,9 @@ openldap22-server	ports/net/openldap22-server
 openldap23-client	ports/net/openldap23-client
 openldap23-sasl-client	ports/net/openldap23-sasl-client
 openldap23-server	ports/net/openldap23-server
+openldap24-client	ports/net/openldap24-client
+openldap24-sasl-client	ports/net/openldap24-sasl-client
+openldap24-server	ports/net/openldap24-server
 openmap		ports/astro/openmap
 openmcu		ports/net/openmcu
 openmortal	ports/games/openmortal
