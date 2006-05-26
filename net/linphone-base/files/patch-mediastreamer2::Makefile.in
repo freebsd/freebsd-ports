@@ -1,12 +1,25 @@
---- mediastreamer2/Makefile.in.orig	Wed Mar  8 19:41:19 2006
-+++ mediastreamer2/Makefile.in	Sat Mar 11 01:23:47 2006
-@@ -310,8 +310,7 @@
- 				msfileplayer.c 	msfileplayer.h waveheader.h\
- $(am__append_1)
- libmediastreamer2_la_LIBADD = $(top_builddir)/oRTP/src/libortp.la \
--				$(ALSA_LIBS) \
--				-lrt
-+				$(ALSA_LIBS)
- 
- INCLUDES = -I$(top_srcdir)/oRTP/include
+--- mediastreamer2/Makefile.in.orig	Sat Apr  1 00:58:16 2006
++++ mediastreamer2/Makefile.in	Sat Apr  1 00:59:37 2006
+@@ -64,7 +64,7 @@
+ libmediastreamer2_la_DEPENDENCIES =  \
+ 	$(top_builddir)/oRTP/src/libortp.la $(am__DEPENDENCIES_1) \
+ 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
+-	$(top_builddir)/gsmlib/libgsm.la $(am__DEPENDENCIES_2)
++	$(am__DEPENDENCIES_2)
+ am__libmediastreamer2_la_SOURCES_DIST = mscommon.c mscommon.h \
+ 	allfilters.h msfilter.c msfilter.h msvideo.h msqueue.c \
+ 	msqueue.h msticker.c msticker.h alaw.c g711common.h ulaw.c \
+@@ -360,11 +360,10 @@
+ 				$(ALSA_LIBS) \
+ 				$(ARTS_LIBS) \
+ 				$(SPEEX_LIBS) \
+-				$(top_builddir)/gsmlib/libgsm.la \
+-				-lrt\
++				-lgsm\
+ $(am__append_6)
+ libquickstream_la_LIBADD = libmediastreamer2.la
+-INCLUDES = -I$(top_srcdir)/oRTP/include -I$(top_srcdir)/gsmlib
++INCLUDES = -I$(top_srcdir)/oRTP/include
  ORTP_CFLAGS = `cat $(top_builddir)/oRTP/ortp.defs`
+ AM_CFLAGS = $(ORTP_CFLAGS) $(SPEEX_CFLAGS) $(STRICT_OPTIONS)
+ all: $(BUILT_SOURCES)

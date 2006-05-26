@@ -40,15 +40,15 @@ libexec/mediastream
 %%DATADIR%%/sounds/rings/synth.wav
 %%DATADIR%%/sounds/rings/tapping.wav
 %%DATADIR%%/sounds/rings/toy.wav
-share/doc/linphone/mediastreamer/book1.html
-share/doc/linphone/mediastreamer/coreapi.html
-share/doc/linphone/mediastreamer/index.sgml
-share/doc/linphone/mediastreamer/mediastreamer-filters.html
-share/doc/linphone/mediastreamer/mediastreamer-msringplayer.html
-share/doc/linphone/mediastreamer/mediastreamer-mssync.html
-share/doc/linphone/mediastreamer/mediastreamer-running-processing-chains.html
-share/doc/linphone/mediastreamer/msfilterimplementations.html
-share/doc/linphone/mediastreamer/userapi.html
+%%DOCSDIR%%/mediastreamer/book1.html
+%%DOCSDIR%%/mediastreamer/coreapi.html
+%%DOCSDIR%%/mediastreamer/index.sgml
+%%DOCSDIR%%/mediastreamer/mediastreamer-filters.html
+%%DOCSDIR%%/mediastreamer/mediastreamer-msringplayer.html
+%%DOCSDIR%%/mediastreamer/mediastreamer-mssync.html
+%%DOCSDIR%%/mediastreamer/mediastreamer-running-processing-chains.html
+%%DOCSDIR%%/mediastreamer/msfilterimplementations.html
+%%DOCSDIR%%/mediastreamer/userapi.html
 share/locale/cs/LC_MESSAGES/linphone.mo
 share/locale/de/LC_MESSAGES/linphone.mo
 share/locale/es/LC_MESSAGES/linphone.mo
@@ -59,8 +59,8 @@ share/locale/nl/LC_MESSAGES/linphone.mo
 share/locale/pl/LC_MESSAGES/linphone.mo
 share/locale/pt_BR/LC_MESSAGES/linphone.mo
 share/locale/sv/LC_MESSAGES/linphone.mo
-@dirrm share/doc/linphone/mediastreamer
-@dirrm share/doc/linphone
+@dirrm %%DOCSDIR%%/mediastreamer
+@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/sounds/rings
 @dirrm %%DATADIR%%/sounds
 @dirrm %%DATADIR%%
