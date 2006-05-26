@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	hte
-PORTVERSION=	0.9.1
+PORTVERSION=	0.9.2
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -27,7 +27,7 @@ PLIST_FILES=	bin/ht
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == ia64
-BROKEN=		"Does not build on ia64"
+BROKEN=		Does not build on ia64
 .endif
 
 .if ${OSVERSION} < 400000
