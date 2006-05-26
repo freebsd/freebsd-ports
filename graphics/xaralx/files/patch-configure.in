@@ -1,5 +1,5 @@
---- configure.in.orig	Mon Apr 10 12:05:33 2006
-+++ configure.in	Mon Apr 10 12:09:09 2006
+--- configure.in.orig	Wed May 10 14:01:21 2006
++++ configure.in	Wed May 10 14:04:32 2006
 @@ -47,7 +47,7 @@
  AC_PROG_INSTALL
  # We don't need dlopen right now and it's not supported on Darwin
@@ -17,19 +17,19 @@
  	else
  		AC_MSG_RESULT([not found])
  	fi
-@@ -177,20 +176,7 @@
+@@ -215,20 +214,7 @@
  	# GTK build, so call FTTEST function to test for FreeType
  	FTTEST
  	FT_CFLAGS="`$FTCONFIG --cflags`"
 -
 -	# check for the Pango package
--	PkgError = "no"
+-	PkgError="no"
 -	PKG_CHECK_MODULES(PANGOX, pangox,
 -			  [
 -				PANGO_CFLAGS="$PANGOX_CFLAGS"
 -			  ],
 -			  [
--				PkgError = "yes"
+-				PkgError="yes"
 -			  ]
 -			  )
 -	if test PkgError = "yes"; then
@@ -39,18 +39,18 @@
  else
  	# non-GTK build, i.e., MacOS, so Pango and FreeType are not required
  	FT_CFLAGS=""
-@@ -208,8 +194,8 @@
+@@ -246,8 +232,8 @@
  fi
  
  # pass the Pango, FreeType and GTK flags (required for wxGTK font rendering)
--CPPFLAGS="$CPPFLAGS $WX_CPPFLAGS $PANGO_CFLAGS $FT_CFLAGS $GTK_CFLAGS"
--CXXFLAGS="$CXXFLAGS $WX_CPPFLAGS $PANGO_CFLAGS $FT_CFLAGS $GTK_CFLAGS"
-+CPPFLAGS="$CPPFLAGS $WX_CPPFLAGS $PANGO_CFLAGS $FT_CFLAGS $GTK_CFLAGS $CPPFLAGS_APPEND"
-+CXXFLAGS="$CXXFLAGS $WX_CPPFLAGS $PANGO_CFLAGS $FT_CFLAGS $GTK_CFLAGS $CPPFLAGS_APPEND"
+-CPPFLAGS="$CPPFLAGS $WX_CPPFLAGS $PANGO_CFLAGS $FT_CFLAGS $GTK_CFLAGS $LIBXML2_CFLAGS"
+-CXXFLAGS="$CXXFLAGS $WX_CPPFLAGS $PANGO_CFLAGS $FT_CFLAGS $GTK_CFLAGS $LIBXML2_CFLAGS"
++CPPFLAGS="$CPPFLAGS $WX_CPPFLAGS $PANGO_CFLAGS $FT_CFLAGS $GTK_CFLAGS $LIBXML2_CFLAGS $CPPFLAGS_APPEND"
++CXXFLAGS="$CXXFLAGS $WX_CPPFLAGS $PANGO_CFLAGS $FT_CFLAGS $GTK_CFLAGS $LIBXML2_CFLAGS $CPPFLAGS_APPEND"
  
  AC_MSG_CHECKING([Linker])
  case $host in
-@@ -248,6 +234,7 @@
+@@ -286,6 +272,7 @@
  AM_CONDITIONAL(DARWIN_LINK, [test "$DarwinLink" = "yes"])
  
  AC_SUBST(TOPDIR)
