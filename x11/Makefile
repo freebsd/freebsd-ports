@@ -236,7 +236,6 @@
     SUBDIR += xfce4-clipman-plugin
     SUBDIR += xfce4-taskmanager
     SUBDIR += xfce4-trigger-launcher
-    SUBDIR += xfedor
     SUBDIR += xfishtank
     SUBDIR += xfree86_xkb_xml
     SUBDIR += xgrab

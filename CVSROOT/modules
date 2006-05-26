@@ -14133,7 +14133,6 @@ xfce4-xmms-controller-plugin	ports/multimedia/xfce4-xmms-controller-plugin
 xfce4-xmms-plugin	ports/multimedia/xfce4-xmms-plugin
 xfe		ports/x11-fm/xfe
 xfed		ports/x11-fonts/xfed
-xfedor		ports/x11/xfedor
 xferstats	ports/net/xferstats
 xfig		ports/graphics/xfig
 xfig-devel	ports/graphics/xfig-devel
