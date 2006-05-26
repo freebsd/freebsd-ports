@@ -8158,6 +8158,7 @@ p5-DBIx-MySQLSequence	ports/databases/p5-DBIx-MySQLSequence
 p5-DBIx-Password	ports/databases/p5-DBIx-Password
 p5-DBIx-Recordset	ports/databases/p5-DBIx-Recordset
 p5-DBIx-SQLEngine	ports/databases/p5-DBIx-SQLEngine
+p5-DBIx-SQLite-Simple	ports/databases/p5-DBIx-SQLite-Simple
 p5-DBIx-SearchBuilder	ports/databases/p5-DBIx-SearchBuilder
 p5-DBIx-Sequence	ports/databases/p5-DBIx-Sequence
 p5-DBIx-Simple	ports/databases/p5-DBIx-Simple
