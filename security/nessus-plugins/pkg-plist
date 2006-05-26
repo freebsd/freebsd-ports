@@ -75,6 +75,7 @@ lib/nessus/plugins/TelSrv_DoS.nasl
 lib/nessus/plugins/W32.Sasser.Worm.nasl
 lib/nessus/plugins/Xeneo_Web_Server_2.2.9.0_DoS.nasl
 lib/nessus/plugins/Xerver_DoS.nasl
+lib/nessus/plugins/aardvark_422_remote_file_include.nasl
 lib/nessus/plugins/abyss_msdos_dos.nasl
 lib/nessus/plugins/acc.nasl
 lib/nessus/plugins/account_bash.nasl
@@ -92,6 +93,7 @@ lib/nessus/plugins/account_super_forgot.nasl
 lib/nessus/plugins/account_swift_swift.nasl
 lib/nessus/plugins/account_user_debug.nasl
 lib/nessus/plugins/account_user_forgot.nasl
+lib/nessus/plugins/admbook_cmd_exec.nasl
 lib/nessus/plugins/advanced_guestbook.nasl
 lib/nessus/plugins/afs_version.nasl
 lib/nessus/plugins/agora.nasl
@@ -180,6 +182,7 @@ lib/nessus/plugins/bugbear_b.nasl
 lib/nessus/plugins/bugbear_b_1080.nasl
 lib/nessus/plugins/bugport_attachment_handling_flaw.nasl
 lib/nessus/plugins/bugzilla_remote_exec.nasl
+lib/nessus/plugins/burning_board_database_sql_injection.nasl
 lib/nessus/plugins/cachemgr_cgi.nasl
 lib/nessus/plugins/cactuShop_multiple_flaws.nasl
 lib/nessus/plugins/calendar_express_flaws.nasl
@@ -322,6 +325,7 @@ lib/nessus/plugins/finger_overflow.nasl
 lib/nessus/plugins/formmail_pl.nasl
 lib/nessus/plugins/fortigate_detect.nasl
 lib/nessus/plugins/foxweb_dll.nasl
+lib/nessus/plugins/free_articles_directory_file_includes.nasl
 lib/nessus/plugins/frontpage_overflow.nasl
 lib/nessus/plugins/ftp_administrator.nasl
 lib/nessus/plugins/ftp_func.inc
@@ -334,6 +338,7 @@ lib/nessus/plugins/ftpglob.nasl
 lib/nessus/plugins/fusetalk_forum_xss.nasl
 lib/nessus/plugins/fw1_udp_DoS.nasl
 lib/nessus/plugins/gator.nasl
+lib/nessus/plugins/gcards_dir_transversal.nasl
 lib/nessus/plugins/generic_WEB-INF.nasl
 lib/nessus/plugins/gentoo_GLSA-200409-14.nasl
 lib/nessus/plugins/gentoo_GLSA-200411-01.nasl
@@ -477,6 +482,8 @@ lib/nessus/plugins/iplanet_data_snag.nasl
 lib/nessus/plugins/iplanet_perf.nasl
 lib/nessus/plugins/ipswitch_IMail_bo.nasl
 lib/nessus/plugins/ipswitch_IMail_version.nasl
+lib/nessus/plugins/ipswitch_whatsup_auth_bypass.nasl
+lib/nessus/plugins/ipswitch_whatsup_info_disclosure.nasl
 lib/nessus/plugins/ircd.nasl
 lib/nessus/plugins/ircd_ignition_ircop_vuln.nasl
 lib/nessus/plugins/iss_deploymanager.nasl
@@ -551,6 +558,7 @@ lib/nessus/plugins/mdaemon_imap_server_dos2.nasl
 lib/nessus/plugins/mdaemon_mail_server_dos.nasl
 lib/nessus/plugins/merak_multiple_vulns.nasl
 lib/nessus/plugins/mercora_imradio_installed.nasl
+lib/nessus/plugins/mercur_imap_buffer_overflow.nasl
 lib/nessus/plugins/metacart_sql.nasl
 lib/nessus/plugins/minishare_overflow.nasl
 lib/nessus/plugins/misc_format_string.nasl
@@ -581,8 +589,10 @@ lib/nessus/plugins/mssql_hello_overflow.nasl
 lib/nessus/plugins/mssql_ping.nasl
 lib/nessus/plugins/mssqlserver_detect.nasl
 lib/nessus/plugins/mt-load_cgi.nasl
+lib/nessus/plugins/mtl_remote_file_include.nasl
 lib/nessus/plugins/multiple_ftpd_dos.nasl
 lib/nessus/plugins/mvnforum_search_xss.nasl
+lib/nessus/plugins/myevent_multiple_flaws.nasl
 lib/nessus/plugins/myserver_dir_list_and_xss.nasl
 lib/nessus/plugins/myserver_post_dos.nasl
 lib/nessus/plugins/myserver_traversal.nasl
@@ -704,6 +714,7 @@ lib/nessus/plugins/phorum_register_xss.nasl
 lib/nessus/plugins/php3_path_disclosure.nasl
 lib/nessus/plugins/phpMyAdmin_remote_cmd.nasl
 lib/nessus/plugins/phpMyAdmin_xss.nasl
+lib/nessus/plugins/phpMyAgenda_30final_file_include.nasl
 lib/nessus/plugins/phpSurveyor_sql_inject.nasl
 lib/nessus/plugins/php_apache_win32_default.nasl
 lib/nessus/plugins/php_arbitrary_file_access.nasl
@@ -735,6 +746,7 @@ lib/nessus/plugins/phpgroupware_sql_injection.nasl
 lib/nessus/plugins/phpgroupware_xss.nasl
 lib/nessus/plugins/phpinfo.nasl
 lib/nessus/plugins/phpix.nasl
+lib/nessus/plugins/phplistpro_remote_file_include.nasl
 lib/nessus/plugins/phpmyfaq_action_parameter_flaw.nasl
 lib/nessus/plugins/phprocketaddin_traversal.nasl
 lib/nessus/plugins/phptonuke_dir_trav.nasl
@@ -1011,8 +1023,10 @@ lib/nessus/plugins/w_agora_dir_traversal.nasl
 lib/nessus/plugins/w_agora_dir_traversal2.nasl
 lib/nessus/plugins/wackowiki_xss.nasl
 lib/nessus/plugins/webadmin.nasl
+lib/nessus/plugins/webalbum_local_file_include.nasl
 lib/nessus/plugins/webalizer.nasl
 lib/nessus/plugins/webapp_apage_cmd_exe.nasl
+lib/nessus/plugins/webcalendar_info_disclosure.nasl
 lib/nessus/plugins/webcart_cmd_exec.nasl
 lib/nessus/plugins/webfroot_shoutbox_traversal.nasl
 lib/nessus/plugins/webgui_remote_cmd_exec.nasl

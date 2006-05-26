@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nessus-libnasl
-PORTVERSION=	2.2.7
+PORTVERSION=	2.2.8
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.nessus.org/pub/nessus/nessus-${PORTVERSION}/src/ \
 		ftp://ftp.gwdg.de/pub/linux/misc/nessus/nessus-${PORTVERSION}/src/ \
@@ -19,8 +19,6 @@ MAINTAINER=	udo.schweigert@siemens.com
 COMMENT=	Nessus Attack Scripting Language
 
 LIB_DEPENDS=	nessus.4:${PORTSDIR}/security/nessus-libraries
-
-CONFLICTS=	nessus-libnasl-devel-[0-9]*
 
 DIST_SUBDIR=	nessus
 WRKSRC=		${WRKDIR}/libnasl

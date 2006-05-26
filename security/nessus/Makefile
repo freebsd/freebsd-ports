@@ -11,7 +11,7 @@
 #  WITHOUT_NESSUS_GTK
 
 PORTNAME=	nessus
-PORTVERSION=	2.2.7
+PORTVERSION=	2.2.8
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.nessus.org/pub/nessus/nessus-${PORTVERSION}/src/ \
 		ftp://ftp.gwdg.de/pub/linux/misc/nessus/nessus-${PORTVERSION}/src/ \
@@ -25,15 +25,13 @@ COMMENT=	A security scanner: looks for vulnerabilities in a given network
 
 LIB_DEPENDS=	nasl.4:${PORTSDIR}/security/nessus-libnasl
 
-CONFLICTS=	nessus-devel-[0-9]* nessus-devel-gtk-[0-9]* \
-		nessus-devel-gtk2-[0-9]*
-
 DIST_SUBDIR=	nessus
 WRKSRC=		${WRKDIR}/nessus-core
-PKGDEINSTALL=	${WRKDIR}/pkg-deinstall.sh
+SUB_FILES=	pkg-deinstall
+SUB_LIST=	PKGNAME=${PKGNAME}
 
 GNU_CONFIGURE=	yes
-USE_RC_SUBR=	YES
+USE_RC_SUBR=	nessusd.sh
 WANT_GNOME=	yes
 .if defined(WITHOUT_NESSUS_GTK) || defined(WITHOUT_GTK)
 WITHOUT_GNOME=	yes
@@ -54,21 +52,7 @@ CONFIGURE_ARGS+=--disable-gtk
 MAN1=		nessus.1 nessus-mkrand.1 nessus-mkcert-client.1 nessus-fetch.1
 MAN8=		nessusd.8 nessus-adduser.8 nessus-mkcert.8 nessus-rmuser.8
 
-RC_SCRIPTS_SUB=	PREFIX=${PREFIX} \
-		RC_SUBR=${RC_SUBR}
-
-SED_SCRIPT=	-e 's,%%PKGNAME%%,${PKGNAME},g' \
-		-e 's,%%PREFIX%%,${PREFIX},g'
-
-post-build:
-.for script in pkg-deinstall
-	@${SED} ${SED_SCRIPT} ${SCRIPTDIR}/${script} > ${WRKDIR}/${script}.sh
-.endfor
-
 post-install:
-	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${FILESDIR}/nessusd.sh > ${PREFIX}/etc/rc.d/nessusd.sh
-	@${CHMOD} +x ${PREFIX}/etc/rc.d/nessusd.sh
 	@${SED} -e 's;\$${PREFIX};${PREFIX};' ${FILESDIR}/nessusd.conf \
 		> ${PREFIX}/etc/nessus/nessusd.conf.dist
 	@${SED} -e 's;\$${PREFIX};${PREFIX};' ${FILESDIR}/nessusd.rules \
