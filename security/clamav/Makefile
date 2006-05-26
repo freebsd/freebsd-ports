@@ -7,7 +7,7 @@
 
 PORTNAME=	clamav
 PORTVERSION=	0.88.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	clamav
@@ -24,7 +24,8 @@ RUN_DEPENDS=	lha:${PORTSDIR}/archivers/lha \
 
 OPTIONS=	MILTER "Compile the milter interface" Off \
 		CURL "Support URL downloading" Off \
-		LIBUNRAR "Support for external Unrar library" Off
+		LIBUNRAR "Support for external Unrar library" Off \
+		STDERR "Print logs to stderr instead of stdout" Off
 
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
@@ -130,9 +131,15 @@ RUN_DEPENDS+=		unrar:${PORTSDIR}/archivers/unrar
 EXTRA_PATCHES=		${FILESDIR}/extra-patch-libclamav__unrarlib.h
 .endif
 
+.if defined(WITH_STDERR)
+EXTRA_PATCHES+=		${FILESDIR}/extra-patch-shared_output.c
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-pthread -lc_r|${PTHREAD_LIBS}|g' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+	@${REINPLACE_CMD} -e 's,unarj,arj,g' \
+		${WRKSRC}/docs/man/clamscan.1
 
 pre-build:
 	@if ${LDCONFIG} -r | ${GREP} -qw -e -lclamav; then \
