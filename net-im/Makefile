@@ -44,6 +44,7 @@
     SUBDIR += icmpchat
     SUBDIR += icqlib
     SUBDIR += imcom
+    SUBDIR += jabber.el
     SUBDIR += jabberd
     SUBDIR += jabber
     SUBDIR += jabber-aim
