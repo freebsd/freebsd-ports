@@ -7,6 +7,7 @@
 
 PORTNAME=	clamav
 PORTVERSION=	20060525
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.clamav.net/snapshot/ \
 		http://www.galle.com.br/~garga/clamav-devel/
@@ -25,7 +26,8 @@ RUN_DEPENDS=	lha:${PORTSDIR}/archivers/lha \
 		unzip:${PORTSDIR}/archivers/unzip
 
 OPTIONS=	MILTER "Compile the milter interface" Off \
-		CURL "Support URL downloading" Off
+		CURL "Support URL downloading" Off \
+		STDERR "Print logs to stderr instead of stdout" Off
 
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
@@ -125,11 +127,17 @@ CONFIGURE_ARGS+=	--with-libcurl
 CONFIGURE_ARGS+=	--without-libcurl
 .endif
 
+.if defined(WITH_STDERR)
+EXTRA_PATCHES+=		${FILESDIR}/extra-patch-shared_output.c
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's,$$(libdir)/pkgconfig,$$(prefix)/libdata/pkgconfig,' \
 		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|-pthread -lc_r|${PTHREAD_LIBS}|g' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+	@${REINPLACE_CMD} -e 's,unarj,arj,g' \
+		${WRKSRC}/docs/man/clamscan.1
 
 pre-build:
 	@if ${LDCONFIG} -r | ${GREP} -qw -e -lclamav; then \
