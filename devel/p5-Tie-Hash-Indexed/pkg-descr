@@ -1,0 +1,7 @@
+Tie::Hash::Indexed is very similar to Tie::IxHash. However,
+it is written completely in XS and usually about twice as
+fast as Tie::IxHash. It's quite a lot faster when it comes
+to clearing or deleting entries from large hashes.
+Currently, only the plain tying mechanism is supported.
+
+WWW: http://search.cpan.org/dist/Tie-Hash-Indexed/
