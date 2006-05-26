@@ -1137,6 +1137,7 @@
     SUBDIR += p5-POE-Devel-Profiler
     SUBDIR += p5-POE-Exceptions
     SUBDIR += p5-POE-Session-MultiDispatch
+    SUBDIR += p5-POE-XS-Queue-Array
     SUBDIR += p5-PPerl
     SUBDIR += p5-PV
     SUBDIR += p5-PadWalker
