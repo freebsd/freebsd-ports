@@ -40,7 +40,7 @@ BROKEN=			incompatible OpenLDAP version: ${WANT_OPENLDAP_VER}
 .endif
 
 PORTREVISION_CLIENT=	0
-PORTREVISION_SERVER=	0
+PORTREVISION_SERVER=	1
 
 .if !defined(CLIENT_ONLY)
 OPTIONS=	SASL "With (Cyrus) SASL2 support" on \
@@ -74,7 +74,8 @@ OPTIONS=	SASL "With (Cyrus) SASL2 support" on \
 		VALSORT "With Value Sorting overlay" off \
 		ACI "With per-object ACIs (experimental)" off \
 		DYNACL "With run-time loadable ACLs (experimental)" off \
-		DYNAMIC_BACKENDS "Build dynamic backends" on
+		DYNAMIC_BACKENDS "Build dynamic backends" on \
+		SLURPD "Build slurpd replication daemon" on
 .endif
 
 .if defined(CLIENT_ONLY)
@@ -166,7 +167,7 @@ INSTALLS_SHLIB=		yes
 # server specific configuration
 
 SUB_FILES+=		pkg-install pkg-message pkg-deinstall
-USE_RC_SUBR=		slapd.sh slurpd.sh
+USE_RC_SUBR=		slapd.sh ${SLURPDSH}
 
 EXTRA_PATCHES+=		${FILESDIR}/extrapatch-Makefile.in
 
@@ -337,6 +338,7 @@ CONFIGURE_ARGS+=	--without-threads --enable-shell=${BACKEND_ENABLE}
 PLIST_SUB+=		BACK_SHELL=${BACKEND_PLIST}
 .else
 PLIST_SUB+=		BACK_SHELL="@comment "
+WANT_OPENLDAP_THREADS=	yes
 .endif
 
 .if defined(WITH_PERL)
@@ -385,6 +387,14 @@ PLIST_SUB+=		SLAPI="@comment "
 .if defined(WITH_SLP)
 CONFIGURE_ARGS+=	--enable-slp
 LIB_DEPENDS+=		slp.1:${PORTSDIR}/net/openslp
+.endif
+
+.if defined(WANT_OPENLDAP_THREADS) && !defined(WITHOUT_SLURPD)
+SLURPDSH=		slurpd.sh
+PLIST_SUB+=		SLURPD=""
+.else
+PLIST_SUB+=		SLURPD="@comment "
+CONFIGURE_ARGS+=	--disable-slurpd
 .endif
 
 # Include tcp-wrapper support
