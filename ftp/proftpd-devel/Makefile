@@ -58,9 +58,9 @@ MODULES?=
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-.if exists (${LOCALBASE}/include/getopt.h)
-BROKEN=	Does not build when libgnugetopt is installed
-.endif
+CONFIGURE_ARGS+=	--without-getopt
+EXTRA_PATCHES=	${FILESDIR}/extra_patch-configure.in
+USE_AUTOTOOLS=	autoconf:259
 .endif
 
 .if !defined(WITHOUT_RATIO)
@@ -133,7 +133,7 @@ USE_OPENSSL=	yes
 PROFTPD_LIBS+=	-lssl -lcrypto -L${LOCALBASE}/lib
 MODULES:=${MODULES}:mod_tls
 .if defined(WITH_LDAP_TLS)
-EXTRA_PATCHES=${FILESDIR}/extra_patch-ldap-tls-mod_ldap.c
+EXTRA_PATCHES+=	${FILESDIR}/extra_patch-ldap-tls-mod_ldap.c
 .endif
 .endif
 
