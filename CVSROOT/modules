@@ -7439,6 +7439,7 @@ omi		ports/ftp/omi
 omnetpp		ports/science/omnetpp
 omniNotify	ports/devel/omniNotify
 omniORB		ports/devel/omniORB
+omnitty		ports/net/omnitty
 oneko		ports/games/oneko
 oneko-sakura	ports/games/oneko-sakura
 onenetd		ports/net/onenetd
