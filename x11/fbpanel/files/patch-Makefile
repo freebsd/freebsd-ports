@@ -1,0 +1,13 @@
+--- Makefile~	Tue May 16 19:28:38 2006
++++ Makefile	Tue May 16 19:14:24 2006
+@@ -24,6 +24,10 @@
+ -include $(DEP)
+ endif
+ 
++ifeq ($(PLUGIN_CPU),on)
++override CFLAGS += -DPLUGIN_CPU
++endif
++
+ TARGET := fbpanel
+ 
+ EXTRAOBJ :=
