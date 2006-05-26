@@ -8,8 +8,8 @@
 PORTNAME=	radius
 PORTVERSION=	1.0.0
 CATEGORIES=	net ruby
-MASTER_SITES=	http://savannah.gnu.org/download/ruby-radius/ruby-radius.pkg/%SUBDIR%/
-MASTER_SITE_SUBDIR=	${PORTVERSION}
+MASTER_SITES=	http://mirror2.unixfreunde.de/ \
+		http://freebsd.unixfreunde.de/sources/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
