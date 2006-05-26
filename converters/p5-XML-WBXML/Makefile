@@ -21,6 +21,9 @@ MAN3=	XML::WBXML.3
 
 PERL_CONFIGURE=	yes
 
+post-patch:
+	@${RM} ${WRKSRC}/lib/XML/*.orig
+
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500600
