@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Unicode-Normalize
-PORTVERSION=	0.32
+PORTVERSION=	1.00
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Unicode
@@ -14,8 +14,6 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	aaron@FreeBSD.org
 COMMENT=	Unicode Normalization Forms
-
-MAN3=	Unicode::Normalize.3
 
 PERL_CONFIGURE=	yes
 
