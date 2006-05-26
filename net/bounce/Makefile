@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	obrien
 DISTNAME=	bounce
 EXTRACT_SUFX=	.c
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	matt@efs.org
 COMMENT=	Bounce tcp connections to another machine/port
 
 NO_WRKSUBDIR=	yes
