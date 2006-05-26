@@ -26,6 +26,7 @@ OPTIONS=	COMPRESSED_TOMLIB	"Compress tomlib files"		On \
 		EXAMPLE			"Build binaries for example"	Off \
 		GRAPE			"Build binaries for grape"	Off \
 		KBMAG			"Build binaries for kbmag"	Off \
+		OPENMATH		"Build binaries for openmath"	Off \
 		PARGAP			"Build binaries for pargap"	Off \
 		XGAP			"Build binaries for xgap"	Off
 
@@ -34,7 +35,7 @@ OPTIONS=	COMPRESSED_TOMLIB	"Compress tomlib files"		On \
 .include <bsd.port.pre.mk>
 
 GAP_VERSION=	gap4r4
-GAP_PKGTIME=	2006_03_30-15_12_UTC
+GAP_PKGTIME=	2006_05_11-20_30_UTC
 GAP_PKGDATE=	${GAP_PKGTIME:C/-.*//:S/_//g}
 GAP_WRKSRC=	${WRKSRC}/${GAP_VERSION}
 GAP_LIBDIR=	${PREFIX}/lib/${GAP_VERSION}
@@ -49,7 +50,7 @@ do-extract:
 	${TAR} xyf ${DISTDIR}/${DIST_SUBDIR}/packages-${GAP_PKGTIME}.tar.bz2 )
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|CC=\'.(CC)\' ||g" ${GAP_WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e "/^CC=/d" ${GAP_WRKSRC}/Makefile.in
 
 do-configure:
 	(cd ${GAP_WRKSRC}; ./configure)
@@ -78,6 +79,9 @@ post-build:
 .endif
 .if defined(WITH_KBMAG)
 	(cd ${GAP_WRKSRC}/pkg/kbmag; ./configure ../..; make )
+.endif
+.if defined(WITH_OPENMATH)
+	(cd ${GAP_WRKSRC}/pkg/openmath/OMCv1.3c/src/; ./configure; make; cd ../..; ./configure ../../; make )
 .endif
 .if defined(WITH_PARGAP)
 	(cd ${GAP_WRKSRC}/pkg/pargap; ./configure ../..; make )
