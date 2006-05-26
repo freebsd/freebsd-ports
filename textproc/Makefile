@@ -384,6 +384,7 @@
     SUBDIR += p5-PerlPoint-Package
     SUBDIR += p5-Petal
     SUBDIR += p5-Petal-CodePerl
+    SUBDIR += p5-Petal-Mail
     SUBDIR += p5-Plucene
     SUBDIR += p5-Plucene-Plugin-Analyzer-SnowballAnalyzer
     SUBDIR += p5-Pod-Constants
