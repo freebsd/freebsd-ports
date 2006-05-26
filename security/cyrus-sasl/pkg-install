@@ -76,7 +76,7 @@ create_sasldb() {
 	if [ ! -f ${SASLDB_NAME} ]; then
 		echo "test" | ${PKG_PREFIX}/sbin/saslpasswd -p -c cyrus
 		if [ `${PKG_PREFIX}/sbin/sasldblistusers | wc -l` -eq 0 ] ; then
-                        echo "WARNING: Failed to create ${PKG_PREFIX}/etc/$SASLDB_NAME}"
+                        echo "WARNING: Failed to create ${SASLDB_NAME}"
                 else
 			${PKG_PREFIX}/sbin/saslpasswd -d cyrus
 			chown ${CYRUS_USER}:mail ${SASLDB_NAME}
