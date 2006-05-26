@@ -1,0 +1,35 @@
+# New ports collection makefile for:	vultures-eye
+# Date created:				13 April 2006
+# Whom:					Leland Wang <llwang@infor.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	vultures
+PORTVERSION=	2.0.0
+CATEGORIES=	games
+MASTER_SITES=	http://www.darkarts.co.za/projects/vultures/downloads/${PORTVERSION}/
+PKGNAMESUFFIX=	-eye
+DISTFILES=	${DISTNAME}${PKGNAMESUFFIX}${EXTRACT_SUFX}
+
+MAINTAINER=	llwang@infor.org
+COMMENT=	A graphical interface for NetHack 3.4.3 forked from Falcon's Eye
+
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
+
+LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
+
+USE_GMAKE=	yes
+USE_SDL=	sdl mixer image ttf
+USE_BZIP2=	yes
+WRKSRC=		${WRKDIR}/${DISTNAME}/nethack
+HAS_CONFIGURE=	yes
+CONFIGURE_WRKSRC=	${WRKSRC}/sys/unix
+CONFIGURE_SCRIPT=	setup.sh
+DATADIR=	${PREFIX}/share/${PORTNAME}${PKGNAMESUFFIX}
+MAKE_ENV+=	SDL_CONFIG="${SDL_CONFIG}" DATADIR="${DATADIR}" MAKE="${GMAKE}"
+
+pre-configure:
+	@${CHMOD} 755 ${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+
+.include <bsd.port.mk>

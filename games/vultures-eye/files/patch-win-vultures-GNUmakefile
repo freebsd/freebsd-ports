@@ -1,0 +1,20 @@
+--- win/vultures/GNUmakefile.orig	Thu May 25 01:17:43 2006
++++ win/vultures/GNUmakefile	Thu May 25 01:28:16 2006
+@@ -12,7 +12,7 @@
+ 	ifndef SDL_CONFIG
+ 		OS := $(shell uname -s)
+ 		ifeq ($(OS),FreeBSD)
+-			SDL_CONFIG := sdl11-config
++#			SDL_CONFIG := sdl11-config
+ 		else
+ 			SDL_CONFIG := sdl-config
+ 		endif
+@@ -34,7 +34,7 @@
+ OUTPUT_OBJ := $(BUILDDIR)/vultures.o
+ 
+ 
+-NHDIR := ../$(BUILD)
++NHDIR := ../..
+ NHSRC := $(NHDIR)/src
+ INCLUDE := -I $(NHDIR)/include/  -I . -I $(BUILDDIR)/
+ 
