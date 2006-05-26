@@ -8,7 +8,8 @@
 PORTNAME=	whichman
 PORTVERSION=	2.4
 CATEGORIES=	misc
-MASTER_SITES=	http://main.linuxfocus.org/~guido.socher/
+MASTER_SITES=	http://main.linuxfocus.org/~guido.socher/ \
+		http://main.linuxfocus.org/~guido/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Approximate matching utilities to search for manpages and files
