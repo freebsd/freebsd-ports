@@ -9,8 +9,8 @@ PORTNAME=	leafnode+
 PORTVERSION=	2.15
 PORTREVISION=	1
 CATEGORIES=	news ipv6
-MASTER_SITES=	http://www.io.com/~kazushi/leafnode+/ \
-		ftp://ftp.io.com/pub/usr/kazushi/leafnode+/
+MASTER_SITES=	http://mirror2.unixfreunde.de/ \
+		http://freebsd.unixfreunde.de/sources/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-user offline Usenet news package for small sites
