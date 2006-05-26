@@ -7,22 +7,16 @@
 #
 
 PORTNAME=	yaml
-PORTVERSION=	3.01
+PORTVERSION=	3.02
 CATEGORIES=	devel python
 MASTER_SITES=	http://pyyaml.org/download/pyyaml/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	PyYAML-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	neal@nelson.name
 COMMENT=	Python YAML parser
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-
-post-install:
-	@${FIND} ${PYTHON_SITELIBDIR}/yaml ! -type d | \
-		${SED} -e "s,^${PREFIX}/,," >> ${TMPPLIST}
-	@${FIND} ${PYTHON_SITELIBDIR}/yaml -type d | ${SORT} -r | \
-		${SED} -e "s,^${PREFIX}/,@dirrm ," >> ${TMPPLIST}
 
 .include <bsd.port.mk>
