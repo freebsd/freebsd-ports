@@ -9,7 +9,8 @@ PORTNAME=	wmq3
 PORTVERSION=	0.2.2
 PORTREVISION=	1
 CATEGORIES=	net windowmaker games
-MASTER_SITES=	http://www.soberart.de/down/
+MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
+		http://mirror2.unixfreunde.de/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dockapp that query and display information on Quake 3 servers
@@ -21,14 +22,11 @@ USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 
+SUB_FILES=	pkg-message
+
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/wmq3 ${PREFIX}/bin
-	@${MKDIR} ${PREFIX}/share/examples/${PORTNAME}
-	@${INSTALL_DATA} ${WRKSRC}/wmq3rc \
-		${PREFIX}/share/examples/${PORTNAME}
-
-post-install:
-	@${SED} 's|%%EXAMPLEDIR%%|${PREFIX}/share/examples/${PORTNAME}|' \
-		${PKGMESSAGE}
+	@${MKDIR} ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/wmq3rc ${EXAMPLESDIR}
 
 .include <bsd.port.mk>
