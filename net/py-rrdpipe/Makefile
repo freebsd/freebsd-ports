@@ -9,7 +9,8 @@
 PORTNAME=	rrdpipe
 PORTVERSION=	0.1
 CATEGORIES=	net python
-MASTER_SITES=	http://projects.gasperino.org/projects/PyRRDpipe/
+MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
+		http://mirror2.unixfreunde.de/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	PyRRDpipe-${PORTVERSION}
 
