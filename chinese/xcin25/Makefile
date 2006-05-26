@@ -23,7 +23,7 @@ LIB_DEPENDS=	tabe.2:${PORTSDIR}/chinese/libtabe
 RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/local/kc15f.pcf.gz:${PORTSDIR}/chinese/kcfonts
 
 WRKSRC=		${WRKDIR}/xcin
-USE_BDB=       yes
+USE_BDB=	yes
 OBSOLETE_BDB_VAR=	USE_DB2
 USE_GETTEXT=	yes
 USE_ICONV=	yes
