@@ -10,7 +10,7 @@ PORTVERSION=	1.2a
 CATEGORIES=	audio
 MASTER_SITES=	http://nekohako.xware.cx/id3tool/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gavin.atkinson@ury.york.ac.uk
 COMMENT=	A utility for manipulating mp3 ID3 Tags
 
 GNU_CONFIGURE=	yes
