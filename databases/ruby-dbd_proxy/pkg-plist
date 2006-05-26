@@ -1,4 +1,3 @@
 bin/proxyserver.rb
 %%RUBY_SITELIBDIR%%/DBD/Proxy/Proxy.rb
 @dirrm %%RUBY_SITELIBDIR%%/DBD/Proxy
-@dirrmtry %%RUBY_SITELIBDIR%%/DBD
