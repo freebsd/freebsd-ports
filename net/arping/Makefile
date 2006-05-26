@@ -10,7 +10,7 @@ PORTVERSION=	2.05
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.habets.pp.se/pub/synscan/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gavin.atkinson@ury.york.ac.uk
 COMMENT=	ARP level "ping" utility
 
 BUILD_DEPENDS=	libnet*<=1.1.0,1:${PORTSDIR}/net/libnet10
