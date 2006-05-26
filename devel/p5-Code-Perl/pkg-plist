@@ -1,0 +1,28 @@
+%%SITE_PERL%%/Code/Perl.pm
+%%SITE_PERL%%/Code/Perl.pod
+%%SITE_PERL%%/Code/Perl/Base.pm
+%%SITE_PERL%%/Code/Perl/Expr.pm
+%%SITE_PERL%%/Code/Perl/Expr/Append.pm
+%%SITE_PERL%%/Code/Perl/Expr/Base.pm
+%%SITE_PERL%%/Code/Perl/Expr/CallMethod.pm
+%%SITE_PERL%%/Code/Perl/Expr/CallSub.pm
+%%SITE_PERL%%/Code/Perl/Expr/Constant.pm
+%%SITE_PERL%%/Code/Perl/Expr/DerefArray.pm
+%%SITE_PERL%%/Code/Perl/Expr/DerefHash.pm
+%%SITE_PERL%%/Code/Perl/Expr/Holder.pm
+%%SITE_PERL%%/Code/Perl/Expr/Infix.pm
+%%SITE_PERL%%/Code/Perl/Expr/List.pm
+%%SITE_PERL%%/Code/Perl/Expr/Not.pm
+%%SITE_PERL%%/Code/Perl/Expr/Number.pm
+%%SITE_PERL%%/Code/Perl/Expr/Perl.pm
+%%SITE_PERL%%/Code/Perl/Expr/Scalar.pm
+%%SITE_PERL%%/Code/Perl/Expr/String.pm
+%%SITE_PERL%%/Code/Perl/Expr/SubName.pm
+%%SITE_PERL%%/Code/Perl/Test/Expr.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Code/Perl/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Code/Perl
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Code
+@dirrm %%SITE_PERL%%/Code/Perl/Test
+@dirrm %%SITE_PERL%%/Code/Perl/Expr
+@dirrm %%SITE_PERL%%/Code/Perl
+@dirrmtry %%SITE_PERL%%/Code
