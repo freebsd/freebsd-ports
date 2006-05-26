@@ -13343,6 +13343,7 @@ ucpp		ports/devel/ucpp
 ucspi-ipc	ports/sysutils/ucspi-ipc
 ucspi-proxy	ports/sysutils/ucspi-proxy
 ucspi-ssl	ports/sysutils/ucspi-ssl
+ucspi-ssl-tls	ports/sysutils/ucspi-ssl-tls
 ucspi-tcp	ports/sysutils/ucspi-tcp
 ucspi-unix	ports/sysutils/ucspi-unix
 ude		ports/x11-wm/ude
