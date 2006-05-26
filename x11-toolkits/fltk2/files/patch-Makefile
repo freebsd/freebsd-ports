@@ -1,0 +1,11 @@
+--- ./Makefile.orig	Thu Aug  4 00:08:19 2005
++++ ./Makefile	Sun Apr  2 13:24:34 2006
+@@ -34,7 +34,7 @@
+ 	done
+ 
+ install: makeinclude
+-	for dir in $(DIRS) documentation; do\
++	for dir in $(DIRS); do\
+ 		echo "=== installing $$dir ===";\
+ 		(cd $$dir; $(MAKE) $(MFLAGS) DESTDIR=$(DESTDIR) install) || exit $$?;\
+ 	done

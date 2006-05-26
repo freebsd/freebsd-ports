@@ -1,0 +1,16 @@
+--- ./makeinclude.in.orig	Wed Aug 10 17:43:23 2005
++++ ./makeinclude.in	Sun Apr  2 13:24:34 2006
+@@ -49,11 +49,11 @@
+ 
+ # compiler names:
+ CC		= @CC@
+-CXX		= @CXX@
++CXX		= %%CXX%%
+ MAKEDEPEND	= @MAKEDEPEND@ -Y
+ 
+ # flags for C++ compiler:
+-OPTIM		= @OPTIM@
++OPTIM		= 
+ CFLAGS		= $(OPTIM) @CFLAGS@
+ CXXFLAGS	= $(OPTIM) @CXXFLAGS@
+ 

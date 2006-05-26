@@ -1,0 +1,14 @@
+--- ./fluid/Makefile.orig	Wed Aug 10 17:31:43 2005
++++ ./fluid/Makefile	Sun Apr  2 13:24:34 2006
+@@ -122,10 +122,8 @@
+ install:
+ 	echo "Installing FLUID in $(bindir)..."
+ 	-$(MKDIR) $(DESTDIR)$(bindir)
+-	$(CP) $(FLUID) $(DESTDIR)$(bindir)/fluid$(EXEEXT)
+-	$(STRIP) $(DESTDIR)$(bindir)/fluid$(EXEEXT)
++	$(BSD_INSTALL_PROGRAM) $(FLUID) $(DESTDIR)$(bindir)/fluid$(EXEEXT)
+ 	$(bindir)/fltk-config --post $(DESTDIR)$(bindir)/fluid$(EXEEXT)
+-	$(CHMOD) 755 $(DESTDIR)$(bindir)/fluid$(EXEEXT)
+ 
+ 
+ uninstall:

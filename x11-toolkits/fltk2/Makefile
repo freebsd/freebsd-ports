@@ -1,0 +1,78 @@
+# New ports collection makefile for:	fltk2
+# Date created:				2006-03-26
+# Whom:					Thomas-Martin Seck <tmseck@netcologne.de>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	fltk
+PORTVERSION=	2.0.${SNAPSHOT}
+CATEGORIES=	x11-toolkits
+MASTER_SITES=	http://ftp.easysw.com/pub/%SUBDIR%/ \
+		ftp://ftp2.easysw.com/pub/%SUBDIR%/ \
+		ftp://ftp3.easysw.com/pub/%SUBDIR%/ \
+		http://mirror.nu6.org/ftp.easysw.com/pub/%SUBDIR%/ \
+		http://ftp.funet.fi/pub/mirrors/ftp.easysw.com/pub/%SUBDIR%/ \
+		ftp://ftp.funet.fi/pub/mirrors/ftp.easysw.com/pub/%SUBDIR%/ \
+		ftp://ftp.rz.tu-bs.de/pub/mirror/ftp.easysw.com/ftp/pub/%SUBDIR%/ \
+		http://ftp.rz.tu-bs.de/pub/mirror/ftp.easysw.com/ftp/pub/%SUBDIR%/
+MASTER_SITE_SUBDIR=	fltk/snapshots
+DISTNAME=	fltk-2.0.x-${SNAPSHOT}
+
+MAINTAINER=	tmseck@netcologne.de
+COMMENT=	Fast Light Toolkit version 2 (development snapshot)
+
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
+		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		Xft.2:${PORTSDIR}/x11-fonts/libXft
+
+SNAPSHOT=	r4825
+
+OPTIONS=	FLTK_THREADS "Install with threads support" on
+
+CONFLICTS=	fltk-1.* fltk-threads-1.*
+
+LATEST_LINK=	fltk2
+
+USE_BZIP2=	yes
+USE_GMAKE=	yes
+USE_GL=		yes
+USE_X_PREFIX=	yes
+GNU_CONFIGURE=	yes
+
+CPPFLAGS+=	"-I${LOCALBASE}/include"
+LDFLAGS+=	"-L${LOCALBASE}/lib"
+
+CONFIGURE_ARGS+=	--enable-jpeg --enable-png --enable-gl --enable-xft \
+			--enable-zlib
+# Turn shared library support off for now since fltk2 is not yet stable.
+# fltk2 applications should only be linked statically for now to avoid trouble
+# after possibly incompatible updates to fltk2.
+CONFIGURE_ARGS+=	--disable-shared
+CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbuild-freebsd${OSREL}
+
+PORTDOCS=	*
+
+.include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_FLTK_THREADS)
+CONFIGURE_ARGS+=	--enable-threads
+CPPFLAGS+=	"${PTHREAD_CFLAGS}"
+LDFLAGS+=	"${PTHREAD_LIBS}"
+.else
+CONFIGURE_ARGS+=	--disable-threads
+.endif
+
+post-patch:
+	${REINPLACE_CMD} -e 's:%%CXX%%:${CXX}:g' \
+	    ${WRKSRC}/fltk-config.in \
+	    ${WRKSRC}/makeinclude.in
+
+post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC}/documentation && ${INSTALL_DATA} *.html *.gif ${DOCSDIR}
+.endif
+
+.include <bsd.port.post.mk>
