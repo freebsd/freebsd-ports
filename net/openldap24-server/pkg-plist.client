@@ -2,6 +2,7 @@
 bin/ldapadd
 bin/ldapcompare
 bin/ldapdelete
+bin/ldapexop
 bin/ldapmodify
 bin/ldapmodrdn
 bin/ldappasswd
@@ -19,28 +20,20 @@ include/ldap_features.h
 include/ldap_schema.h
 include/ldap_utf8.h
 include/slapi-plugin.h
-lib/liblber-2.3.so
-lib/liblber-2.3.so.2
+lib/liblber-2.4.so
+lib/liblber-2.4.so.1
 lib/liblber.a
 lib/liblber.la
 lib/liblber.so
-lib/libldap-2.3.so
-lib/libldap-2.3.so.2
+lib/libldap-2.4.so
+lib/libldap-2.4.so.1
 lib/libldap.a
 lib/libldap.la
 lib/libldap.so
-lib/libldap_r-2.3.so
-lib/libldap_r-2.3.so.2
+lib/libldap_r-2.4.so
+lib/libldap_r-2.4.so.1
 lib/libldap_r.a
 lib/libldap_r.la
 lib/libldap_r.so
-@comment share/openldap/ucdata/case.dat
-@comment share/openldap/ucdata/cmbcl.dat
-@comment share/openldap/ucdata/comp.dat
-@comment share/openldap/ucdata/ctype.dat
-@comment share/openldap/ucdata/decomp.dat
-@comment share/openldap/ucdata/kdecomp.dat
-@comment share/openldap/ucdata/num.dat
-@comment @dirrm share/openldap/ucdata
-@comment @dirrm share/openldap
 @dirrmtry libexec/openldap
+@dirrmtry etc/openldap

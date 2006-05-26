@@ -1,17 +1,13 @@
-# New ports collection makefile for:	openldap23-client
-# Date created:				02 May 2005
-# Whom:					Vsevolod Stakhov <vsevolod@highsecure.ru>
+# New ports collection makefile for:	openldap24-client
+# Date created:				19 May 2006
+# Whom:					Xin LI <delphij@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-PKGNAMESUFFIX=		-client
-
-COMMENT=		Open source LDAP client implementation
-
 CLIENT_ONLY=		yes
 WITHOUT_SASL=		yes
 
-MASTERDIR=		${.CURDIR}/../openldap23-server
+MASTERDIR=		${.CURDIR}/../openldap24-server
 
 .include "${MASTERDIR}/Makefile"
