@@ -8,7 +8,8 @@
 PORTNAME=	kf
 PORTVERSION=	0.5.4.1
 CATEGORIES=	net-im
-MASTER_SITES=	http://jabberstudio.rediris.es/kf/ \
+MASTER_SITES=	http://files.jabberstudio.org/kf/ \
+		http://jabberstudio.rediris.es/kf/ \
 		http://freebsd.unixfreunde.de/sources/
 
 MAINTAINER=	anray@FreeBSD.org
