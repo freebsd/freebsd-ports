@@ -8,7 +8,8 @@
 PORTNAME=	icmp
 PORTVERSION=	0.2.1
 CATEGORIES=	net ruby
-MASTER_SITES=	http://www.notwork.org/~gotoyuzo/ruby/src/
+MASTER_SITES=	http://mirror2.unixfreunde.de/ \
+		http://freebsd.unixfreunde.de/sources/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
