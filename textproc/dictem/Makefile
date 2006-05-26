@@ -11,7 +11,7 @@ MASTER_SITES=	http://www.mova.org/~cheusov/pub/dictem/ \
 		http://ncd0.bsd.by/ports/distfiles/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
-MAINTAINER=	m.boyarov@gmail.com
+MAINTAINER=	m.boyarov@bsd.by
 COMMENT=	DictEm is a dict client for [X]Emacs
 
 USE_EMACS=	yes

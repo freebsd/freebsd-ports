@@ -12,7 +12,7 @@ DISTNAME=	rpm-spec-mode.el
 EXTRACT_SUFX=	# empty
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	m.boyarov@gmail.com
+MAINTAINER=	m.boyarov@bsd.by
 COMMENT=	RPM spec file editing commands for [X]Emacs
 
 NO_WRKSUBDIR=	yes
