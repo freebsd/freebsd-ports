@@ -57,9 +57,9 @@ extra_commands="awaken"
 awaken_cmd="fetchmail_awaken"
 
 if [ -f %%PREFIX%%/etc/rc.d/fetchmail ]; then
-        fetchmail_script=/usr/local/etc/rc.d/fetchmail
+        fetchmail_script=%%PREFIX%%/etc/rc.d/fetchmail
 elif [ -f %%PREFIX%%/etc/rc.d/fetchmail.sh ]; then
-        fetchmail_script=/usr/local/etc/rc.d/fetchmail.sh
+        fetchmail_script=%%PREFIX%%/etc/rc.d/fetchmail.sh
 fi
 
 # read settings, set default values
