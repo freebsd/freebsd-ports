@@ -10,7 +10,7 @@ PORTVERSION=	0.40
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://jodies.de/ipcalc-archive/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ceri@FreeBSD.org
 COMMENT=	IP Calculator
 
 PLIST_FILES=	bin/ipcalc
