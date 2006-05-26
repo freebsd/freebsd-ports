@@ -9,8 +9,8 @@ PORTNAME=	instant-server
 PORTVERSION=	1.0
 PORTREVISION=	2
 CATEGORIES=	misc
-MASTER_SITES=	ftp://ftp.lemis.com/pub/
-MASTER_SITE_SUBDIR=	pub/instant-server
+MASTER_SITES=	# Empty
+DISTFILES=	# None
 
 MAINTAINER=	grog@lemis.com
 COMMENT=	Instant server installs a typical set of ports for a server
@@ -27,8 +27,8 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/postfix:${PORTSDIR}/mail/postfix \
 # Don't let stupid programs ask for configuration.
 
 BATCH=		YES
-NO_WRKSUBDIR=	YES
 APACHE_COMPAT=	YES
+NO_BUILD=	yes
 
 # comms/hylafax irc/ircd-hybrid
 
