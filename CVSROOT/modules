@@ -2509,6 +2509,7 @@ flphoto		ports/graphics/flphoto
 flpsed		ports/print/flpsed
 fltk		ports/x11-toolkits/fltk
 fltk-threads	ports/x11-toolkits/fltk-threads
+fltk2		ports/x11-toolkits/fltk2
 flu		ports/x11-toolkits/flu
 fluctuate	ports/biology/fluctuate
 fluidsynth	ports/audio/fluidsynth
