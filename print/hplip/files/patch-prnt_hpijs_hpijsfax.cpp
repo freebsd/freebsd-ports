@@ -1,6 +1,18 @@
---- prnt/hpijs/hpijsfax.cpp.orig	Sat Apr  1 16:35:53 2006
-+++ prnt/hpijs/hpijsfax.cpp	Sat Apr  1 16:37:36 2006
-@@ -297,8 +297,8 @@
+--- prnt/hpijs/hpijsfax.cpp.orig	Tue Feb 21 13:19:54 2006
++++ prnt/hpijs/hpijsfax.cpp	Fri May 26 11:56:49 2006
+@@ -39,7 +39,11 @@
+ #include <string.h>
+ #include <unistd.h>
+ #include <fcntl.h>
++#ifdef __FreeBSD__
++#include <inttypes.h>
++#else
+ #include <stdint.h>
++#endif
+ #include <time.h>
+ #include <sys/time.h>
+ #include <math.h>
+@@ -297,8 +301,8 @@
  
  	memset (&tv, 0, sizeof (tv));
  	gettimeofday (&tv, NULL);

@@ -45,7 +45,7 @@ PLIST_SUB+=	PORTVERSION=${PORTVERSION} IJSVER=2.1.10
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-BROKEN=		does not compile
+USE_AUTOTOOLS=	automake:19:env autoconf:259:env aclocal:19:env
 .endif
 
 .if exists(${LOCALBASE}/bin/pylupdate)
@@ -82,6 +82,7 @@ post-patch:
 			${WRKSRC}/*.py \
 			${WRKSRC}/*/*.py \
 			${WRKSRC}/*/*/*.py
+	@${REINPLACE_CMD} 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e 's|install-data-am: install-docDATA|install-data-am:|g' \
 		${WRKSRC}/prnt/hpijs/Makefile.in
