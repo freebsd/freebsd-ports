@@ -7,7 +7,7 @@
 
 PORTNAME=	fbpanel
 PORTVERSION=	4.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,7 +19,7 @@ COMMENT=	A desktop panel that includes a taskbar, pager, launchbar and more
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk20
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX} --cpu=off
+CONFIGURE_ARGS=	--prefix=${PREFIX}
 CFLAGS+=	-I${WRKSRC}
 USE_GMAKE=	yes
 
@@ -28,10 +28,5 @@ MANCOMPRESSED=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|share/man|man|g' ${WRKSRC}/man/Makefile
-
-post-install:
-	@${ECHO_MSG} ""
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG} ""
 
 .include <bsd.port.mk>
