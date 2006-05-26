@@ -1266,6 +1266,7 @@ smarteiffel-%%PORTVERSION%%/lib/io/binary_file_read.e
 smarteiffel-%%PORTVERSION%%/lib/io/text_file_read.e
 smarteiffel-%%PORTVERSION%%/lib/io/file.e
 smarteiffel-%%PORTVERSION%%/lib/io/std_file_read.e
+smarteiffel-%%PORTVERSION%%/lib/io/file_information.e
 smarteiffel-%%PORTVERSION%%/lib/io/null_output.e
 smarteiffel-%%PORTVERSION%%/lib/io/null_input.e
 smarteiffel-%%PORTVERSION%%/lib/io/std_file_read_write.e
