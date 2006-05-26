@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	smarteiffel
-DISTVERSION=	1.2r6
-PORTREVISION=	2
+DISTVERSION=	1.2r7
 CATEGORIES=	lang
 MASTER_SITES=	http://except.com.ar/downloads/smarteiffel/
 DISTNAME=	SmartEiffel-${DISTVERSION}
