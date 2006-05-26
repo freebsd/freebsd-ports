@@ -9513,6 +9513,7 @@ p5-Tie-DxHash	ports/misc/p5-Tie-DxHash
 p5-Tie-EncryptedHash	ports/security/p5-Tie-EncryptedHash
 p5-Tie-File	ports/devel/p5-Tie-File
 p5-Tie-FileLRUCache	ports/devel/p5-Tie-FileLRUCache
+p5-Tie-Hash-Indexed	ports/devel/p5-Tie-Hash-Indexed
 p5-Tie-Hash-Sorted	ports/devel/p5-Tie-Hash-Sorted
 p5-Tie-Hash-TwoWay	ports/devel/p5-Tie-Hash-TwoWay
 p5-Tie-IxHash	ports/devel/p5-Tie-IxHash
