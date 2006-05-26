@@ -10,7 +10,7 @@ to suit your needs and add the following lines to /etc/rc.conf:
   slapd_sockets="/var/run/openldap/ldapi"
 
 Then start the server with
-  %%RC_DIR%%/etc/rc.d/slapd%%RC_SUFX%% start
+  %%PREFIX%%/etc/rc.d/slapd%%RC_SUFX%% start
 or reboot.
 
 Try `man slapd' and the online manual at
@@ -18,6 +18,6 @@ Try `man slapd' and the online manual at
 for more information.
   
 slapd runs under a non-privileged user id (by default `ldap'),
-see %%RC_DIR%%/etc/rc.d/slapd%%RC_SUFX%% for more information.
+see %%PREFIX%%/etc/rc.d/slapd%%RC_SUFX%% for more information.
 
 ************************************************************

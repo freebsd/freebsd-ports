@@ -1,12 +1,12 @@
-# New ports collection makefile for:	openldap23-server
-# Date created:				02 May 2005
-# Whom:					Vsevolod Stakhov <vsevolod@highsecure.ru>
+# New ports collection makefile for:	openldap24-server
+# Date created:				19 May 2006
+# Whom:					Xin LI <delphij@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
 PORTNAME=		openldap
-DISTVERSION=		2.3.21
+DISTVERSION=		2.4.2alpha
 PORTREVISION=		${OPENLDAP_PORTREVISION}
 CATEGORIES=		net databases
 MASTER_SITES=		ftp://ftp.OpenLDAP.org/pub/OpenLDAP/%SUBDIR%/ \
@@ -23,35 +23,41 @@ MASTER_SITES=		ftp://ftp.OpenLDAP.org/pub/OpenLDAP/%SUBDIR%/ \
 			ftp://ftp.rediris.es/mirror/OpenLDAP/%SUBDIR%/ \
 			ftp://sunsite.cnlab-switch.ch/mirror/OpenLDAP/%SUBDIR%/ \
 			ftp://ftp.plig.org/pub/OpenLDAP/%SUBDIR%/
-MASTER_SITE_SUBDIR=	openldap-release
+MASTER_SITE_SUBDIR=	openldap-test
 PKGNAMESUFFIX?=		-server
 EXTRACT_SUFX=		.tgz
 
 MAINTAINER=		delphij@FreeBSD.org
 COMMENT?=		Open source LDAP server implementation
 
-UNIQUENAME?=		${PKGNAMEPREFIX}openldap23
+UNIQUENAME?=		${PKGNAMEPREFIX}openldap24
 LATEST_LINK?=		${UNIQUENAME}${PKGNAMESUFFIX}
+USE_OPENSSL=		yes
 
-WANT_OPENLDAP_VER?=	23
-.if ${WANT_OPENLDAP_VER} != 23
-BROKEN=			"incompatible OpenLDAP version: ${WANT_OPENLDAP_VER}"
+WANT_OPENLDAP_VER?=	24
+.if ${WANT_OPENLDAP_VER} != 24
+BROKEN=			incompatible OpenLDAP version: ${WANT_OPENLDAP_VER}
 .endif
 
 PORTREVISION_CLIENT=	0
-PORTREVISION_SERVER=	2
+PORTREVISION_SERVER=	0
 
 .if !defined(CLIENT_ONLY)
 OPTIONS=	SASL "With (Cyrus) SASL2 support" on \
+		DNSSRV "With Dnssrv backend" off \
+		PASSWD "With Passwd backend" off \
 		PERL "With Perl backend" off \
-		SHELL "With Shell backend" on \
+		RELAY "With Relay backend" off \
+		SHELL "With Shell backend (disables threading)" off \
 		ODBC "With SQL backend" off \
+		RLOOKUPS "With reverse lookups of client hostnames" off \
 		SLP "With SLPv2 (RFC 2608) support" off \
 		SLAPI "With Netscape SLAPI plugin API" off \
 		TCP_WRAPPERS "With tcp wrapper support" on \
 		BDB "With BerkeleyDB support" on \
 		ACCESSLOG "With In-Directory Access Logging overlay" off \
 		AUDITLOG "With Audit Logging overlay" off \
+		DDS "Dynamic Directory Services overlay" off \
 		DENYOP "With Deny Operation overlay" off \
 		DYNGROUP "With Dynamic Group overlay" off \
 		DYNLIST "With Dynamic List overlay" off \
@@ -61,61 +67,64 @@ OPTIONS=	SASL "With (Cyrus) SASL2 support" on \
 		REFINT "With Referential Integrity overlay" off \
 		RETCODE "With Return Code testing overlay" off \
 		RWM "With Rewrite/Remap overlay" off \
+		SEQMOD "Sequential Modify overlay" off \
 		SYNCPROV "With Syncrepl Provider overlay" off \
 		TRANSLUCENT "With Translucent Proxy overlay" off \
 		UNIQUE "With attribute Uniqueness overlay" off \
 		VALSORT "With Value Sorting overlay" off \
 		ACI "With per-object ACIs (experimental)" off \
-		DYNAMIC_BACKENDS "Build dynamic backends" on \
-		RCORDER "Add rc order for slapd(1)" off
+		DYNACL "With run-time loadable ACLs (experimental)" off \
+		DYNAMIC_BACKENDS "Build dynamic backends" on
+.endif
+
+.if defined(CLIENT_ONLY)
+OPENLDAP_PORTREVISION=	${PORTREVISION_CLIENT}
+OPENLDAP_PKGFILESUFX=	.client
+.else
+OPENLDAP_PORTREVISION=	${PORTREVISION_SERVER}
+OPENLDAP_PKGFILESUFX=
 .endif
 
 .include <bsd.port.pre.mk>
 
 .if defined(CLIENT_ONLY)
-OPENLDAP_PORTREVISION=	${PORTREVISION_CLIENT}
-OPENLDAP_PKGFILESUFX=	.client
-
-.if ${PKGNAMESUFFIX} == "-sasl-client"
+.if defined(WITH_SASL)
+PKGNAMESUFFIX=		-sasl-client
+COMMENT=		Open source LDAP client implementation with SASL2 support
 CONFLICTS=		${PKGNAMEPREFIX}${PORTNAME}-client-2.* \
-			${PKGNAMEPREFIX}${PORTNAME}-sasl-client-2.[!3].*
-.elif ${PKGNAMESUFFIX} == "-client"
-CONFLICTS=		${PKGNAMEPREFIX}${PORTNAME}-client-2.[!3].* \
-			${PKGNAMEPREFIX}${PORTNAME}-sasl-client-2.*
+			${PKGNAMEPREFIX}${PORTNAME}-sasl-client-2.[!4].*
 .else
-BROKEN=			"Unknown PKGNAMESUFFIX ${PKGNAMESUFFIX}"
+PKGNAMESUFFIX=		-client
+COMMENT=		Open source LDAP client implementation
+CONFLICTS=		${PKGNAMEPREFIX}${PORTNAME}-client-2.[!4].* \
+			${PKGNAMEPREFIX}${PORTNAME}-sasl-client-2.*
 .endif
 
 PORTDOCS=		CHANGES drafts rfc
 
 .if defined(USE_OPENLDAP)
-IGNORE=			: You have \`USE_OPENLDAP' defined either in your environment or in make(1) arguments
+BROKEN=			You have `USE_OPENLDAP' variable defined either in environment or in make(1) arguments. Please undefine and try again.
 .endif
 .else
-OPENLDAP_PORTREVISION=	${PORTREVISION_SERVER}
-OPENLDAP_PKGFILESUFX=
+USE_OPENLDAP=		yes
+WANT_OPENLDAP_VER=	24
 
 .if defined(WITH_SASL) && !defined(WITHOUT_SASL)
-RUN_DEPENDS=		${LOCALBASE}/lib/libldap-2.3.so.2:${PORTSDIR}/net/openldap23-sasl-client
+WANT_OPENLDAP_SASL=	yes
 CONFLICTS=		${PKGNAMEPREFIX}${PORTNAME}-client-2.*
 .else
-RUN_DEPENDS=		${LOCALBASE}/lib/libldap-2.3.so.2:${PORTSDIR}/net/openldap23-client
 CONFLICTS=		${PKGNAMEPREFIX}${PORTNAME}-sasl-client-2.*
 .endif
 
 .endif
 
-USE_OPENSSL=		yes
 USE_AUTOTOOLS=		libtool:15
 
 DESCR=			${PKGDIR}/pkg-descr${OPENLDAP_PKGFILESUFX}
 PLIST=			${PKGDIR}/pkg-plist${OPENLDAP_PKGFILESUFX}
-PKGINSTALL=		${WRKDIR}/pkg-install
-PKGMESSAGE=		${WRKDIR}/pkg-message
-PKGDEINSTALL=		${WRKDIR}/pkg-deinstall
 
-SCHEMATA=		corba core cosine dyngroup \
-			inetorgperson java misc \
+SCHEMATA=		collective corba core cosine duaconf dyngroup \
+			inetorgperson java misc nadf \
 			nis openldap ppolicy
 
 LDAP_RUN_DIR?=		/var/run/openldap
@@ -123,15 +132,10 @@ LOCALSTATEDIR?=		/var/db
 DATABASEDIR?=		${LOCALSTATEDIR}/openldap-data
 SLURPDIR?=		${LOCALSTATEDIR}/openldap-slurp
 
-PLIST_SUB+=		LDAP_RUN_DIR=${LDAP_RUN_DIR} \
+SUB_LIST+=		LDAP_RUN_DIR=${LDAP_RUN_DIR} \
 			DATABASEDIR=${DATABASEDIR} \
 			SLURPDIR=${SLURPDIR} \
-
-SED_SCRIPT=		-e 's,%%PKGNAME%%,${PKGNAME},g' \
-			-e 's,%%PREFIX%%,${PREFIX},g' \
-			-e 's,%%LDAP_RUN_DIR%%,${LDAP_RUN_DIR},g' \
-			-e 's,%%DATABASEDIR%%,${DATABASEDIR},g' \
-			-e 's,%%SLURPDIR%%,${SLURPDIR},g'
+			PKGNAME=${PKGNAME}
 
 CONFIGURE_ARGS=		--with-threads=posix \
 			--with-tls=openssl \
@@ -153,13 +157,16 @@ CONFIGURE_ARGS+=	--disable-slapd \
 			--disable-relay \
 			--disable-glue \
 			--disable-syncprov
+SUB_FILES+=		pkg-message.client
+PKGMESSAGE=		${WRKSRC}/pkg-message.client
 
 INSTALLS_SHLIB=		yes
 
 .else
 # server specific configuration
 
-USE_RC_SUBR=		yes
+SUB_FILES+=		pkg-install pkg-message pkg-deinstall
+USE_RC_SUBR=		slapd.sh slurpd.sh
 
 EXTRA_PATCHES+=		${FILESDIR}/extrapatch-Makefile.in
 
@@ -184,7 +191,6 @@ BACKEND_PLIST=		"@comment "
 .endif
 
 CONFIGURE_ARGS+=	--localstatedir=${LOCALSTATEDIR} \
-			--enable-ldbm=${BACKEND_ENABLE} \
 			--enable-crypt \
 			--enable-lmpasswd \
 			--enable-ldap=${BACKEND_ENABLE} \
@@ -201,6 +207,10 @@ CONFIGURE_ARGS+=	--enable-accesslog
 
 .if defined(WITH_AUDITLOG)
 CONFIGURE_ARGS+=	--enable-auditlog
+.endif
+
+.if defined(WITH_DDS)
+CONFIGURE_ARGS+=	--enable-dds
 .endif
 
 .if defined(WITH_DENYOP)
@@ -239,6 +249,10 @@ CONFIGURE_ARGS+=	--enable-retcode
 CONFIGURE_ARGS+=	--enable-rwm
 .endif
 
+.if defined(WITH_SEQMOD)
+CONFIGURE_ARGS+=	--enable-seqmod
+.endif
+
 .if defined(WITH_SYNCPROV)
 CONFIGURE_ARGS+=	--enable-syncprov
 .else
@@ -261,62 +275,68 @@ CONFIGURE_ARGS+=	--enable-valsort
 CONFIGURE_ARGS+=	--enable-aci
 .endif
 
+.if defined(WITH_DYNACL)
+CONFIGURE_ARGS+=	--enable-dynacl
+.endif
+
 .if defined(WITHOUT_BDB)
 CONFIGURE_ARGS+=	--disable-bdb \
-			--disable-hdb \
-			--enable-ldbm-api=bcompat
+			--disable-hdb
 PLIST_SUB+=		BACK_BDB="@comment " \
 			BACK_HDB="@comment "
 .else
 
 WITH_BDB_VER?=		43
+USE_BDB=		yes
 
-.if ${WITH_BDB_VER} == 43
+.if ${WITH_BDB_VER} >= 42
 CONFIGURE_ARGS+=	--enable-bdb=${BACKEND_ENABLE} \
 			--enable-hdb=${BACKEND_ENABLE}
 PLIST_SUB+=		BACK_BDB=${BACKEND_PLIST} \
 			BACK_HDB=${BACKEND_PLIST}
-BDBLIB=			db-4.3.0
-.elif ${WITH_BDB_VER} == 42
-CONFIGURE_ARGS+=	--enable-bdb=${BACKEND_ENABLE} \
-			--enable-hdb=${BACKEND_ENABLE}
-PLIST_SUB+=		BACK_BDB=${BACKEND_PLIST} \
-			BACK_HDB=${BACKEND_PLIST}
-BDBLIB=			db-4.2.2
-.elif ${WITH_BDB_VER} == 41
+.elif ${WITH_BDB_VER} >= 4
 CONFIGURE_ARGS+=	--disable-bdb \
 			--enable-hdb=${BACKEND_ENABLE}
 PLIST_SUB+=		BACK_BDB="@comment " \
 			BACK_HDB=${BACKEND_PLIST}
-BDBLIB=			db41.1
-.elif ${WITH_BDB_VER} == 4
-CONFIGURE_ARGS+=	--disable-bdb \
-			--enable-hdb=${BACKEND_ENABLE}
-PLIST_SUB+=		BACK_BDB="@comment " \
-			BACK_HDB=${BACKEND_PLIST}
-BDBLIB=			db4.0
 .elif ${WITH_BDB_VER} == 3
 CONFIGURE_ARGS+=	--disable-bdb \
 			--disable-hdb
 PLIST_SUB+=		BACK_BDB="@comment " \
 			BACK_HDB="@comment "
-BDBLIB=			db3.3
-.else
-IGNORE=			: WITH_BDB_VER must be 3, 4, 41, 42 or 43
 .endif
 
-LIB_DEPENDS+=		${BDBLIB}:${PORTSDIR}/databases/db${WITH_BDB_VER}
-CPPFLAGS+=		-I${LOCALBASE}/include/db${WITH_BDB_VER}
-CONFIGURE_ARGS+=	--enable-ldbm-api=berkeley
-CONFIGURE_SED+=		-e 's,ol_DB_LIB=$$,&-l${BDBLIB:R},' \
-			-e 's,(ol_cv_lib_db=)yes$$,\1-l${BDBLIB:R},'
+CPPFLAGS+=		-I${BDB_INCLUDE_DIR}
+CONFIGURE_SED+=		-e 's,ol_DB_LIB=$$,&-l${BDB_LIB_NAME:R},' \
+			-e 's,(ol_cv_lib_db=)yes$$,\1-l${BDB_LIB_NAME:R},'
 .endif
 
-.if defined(WITHOUT_SHELL)
-PLIST_SUB+=		BACK_SHELL="@comment "
+.if defined(WITH_DNSSRV)
+CONFIGURE_ARGS+=	--enable-dnssrv=${BACKEND_ENABLE}
+PLIST_SUB+=		BACK_DNSSRV=${BACKEND_PLIST}
 .else
-CONFIGURE_ARGS+=	--enable-shell=${BACKEND_ENABLE}
+PLIST_SUB+=		BACK_DNSSRV="@comment "
+.endif
+
+.if defined(WITH_PASSWD)
+CONFIGURE_ARGS+=	--enable-passwd=${BACKEND_ENABLE}
+PLIST_SUB+=		BACK_PASSWD=${BACKEND_PLIST}
+.else
+PLIST_SUB+=		BACK_PASSWD="@comment "
+.endif
+
+.if defined(WITH_RELAY)
+CONFIGURE_ARGS+=	--enable-relay=${BACKEND_ENABLE}
+PLIST_SUB+=		BACK_RELAY=${BACKEND_PLIST}
+.else
+PLIST_SUB+=		BACK_RELAY="@comment "
+.endif
+
+.if defined(WITH_SHELL)
+CONFIGURE_ARGS+=	--without-threads --enable-shell=${BACKEND_ENABLE}
 PLIST_SUB+=		BACK_SHELL=${BACKEND_PLIST}
+.else
+PLIST_SUB+=		BACK_SHELL="@comment "
 .endif
 
 .if defined(WITH_PERL)
@@ -341,10 +361,17 @@ LIB_DEPENDS+=		iodbc.3:${PORTSDIR}/databases/libiodbc
 .elif ${WITH_ODBC_TYPE:L} == unixodbc
 LIB_DEPENDS+=		odbc.1:${PORTSDIR}/databases/unixODBC
 .else
-IGNORE=			: WITH_ODBC_TYPE must be iODBC or unixODBC
+BROKEN=			choose either iODBC or unixODBC for WITH_ODBC_TYPE
 .endif
 .else
 PLIST_SUB+=		BACK_SQL="@comment "
+.endif
+
+.if defined(WITH_RLOOKUPS)
+CONFIGURE_ARGS+=	--enable-rlookups
+PLIST_SUB+=		RLOOKUPS=""
+.else
+PLIST_SUB+=		RLOOKUPS="@comment "
 .endif
 
 .if defined(WITH_SLAPI)
@@ -385,20 +412,18 @@ CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS}" \
 .if defined(CLIENT_ONLY)
 .include "${FILESDIR}/manpages"
 .else
-.if defined(WITH_RCORDER) && ( defined(DFOSVERSION) || ${OSVERSION} >= 500038 )
-RC_DIR=			/
+.if (${OSVERSION} >= 700007 || (${OSVERSION} < 700000 && ${OSVERSION} >= 600101))
 RC_SUFX=
-PLIST_SUB+=		RCORDER="" RC_DIR=""
 .else
-RC_DIR=			${PREFIX}
 RC_SUFX=		.sh
-PLIST_SUB+=		RCORDER="@comment " RC_DIR="%D"
 .endif
-SED_SCRIPT+=		-e 's,%%RC_SUBR%%,${RC_SUBR},g' \
-			-e 's,%%RC_DIR%%,${RC_DIR:S/\/$//},g' \
-			-e 's,%%RC_SUFX%%,${RC_SUFX},g'
-PLIST_SUB+=		RC_SUFX=${RC_SUFX}
+SUB_LIST+=		RC_DIR=${PREFIX} \
+			RC_SUFX=${RC_SUFX} \
+			LDAP_RUN_DIR=${LDAP_RUN_DIR} \
+			DATABASEDIR=${DATABASEDIR}
 .endif
+
+PLIST_SUB+=		${SUB_LIST}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,%LOCALSTATEDIR%/run/,${LDAP_RUN_DIR}/,g' \
@@ -413,17 +438,6 @@ pre-configure:
 		${ECHO_CMD} "${PKGNAME}: bind installed with PORT_REPLACES_BASE_BIND causes build problems."; \
 		${FALSE}; \
 	fi
-
-post-build:
-.for script in slapd slurpd
-	@${SED} ${SED_SCRIPT} ${FILESDIR}/${script}.sh >${WRKDIR}/${script}.sh
-.endfor
-.for text in pkg-install pkg-message pkg-deinstall
-	@if [ -f ${PKGDIR}/${text}${OPENLDAP_PKGFILESUFX} ]; then \
-		${SED} ${SED_SCRIPT} ${PKGDIR}/${text}${OPENLDAP_PKGFILESUFX} \
-		>${WRKDIR}/${text}; \
-	fi
-.endfor
 
 .if !defined(CLIENT_ONLY)
 test: build
@@ -460,12 +474,6 @@ post-install:
 	done >>${TMPPLIST}
 	@${ECHO_CMD} "@unexec ${RMDIR} %D/etc/openldap/schema 2>/dev/null || true" >>${TMPPLIST}
 	@${ECHO_CMD} "@unexec ${RMDIR} %D/etc/openldap 2>/dev/null || true" >>${TMPPLIST}
-	@[ "${RC_DIR:S/\/$//}" = "${PREFIX}" ] || ${ECHO_CMD} "@cwd ${RC_DIR}" >>${TMPPLIST}
-.for script in slapd slurpd
-	@${INSTALL_SCRIPT} ${WRKDIR}/${script}.sh ${DESTDIR}${RC_DIR:S/\/$//}/etc/rc.d/${script}${RC_SUFX}
-	@${ECHO_CMD} "etc/rc.d/${script}${RC_SUFX}" >>${TMPPLIST}
-.endfor
-	@[ "${RC_DIR:S/\/$//}" = "${PREFIX}" ] || ${ECHO_CMD} "@cwd ${PREFIX}" >>${TMPPLIST}
 .endif
 	@${CAT} ${PKGMESSAGE}
 

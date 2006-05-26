@@ -11,47 +11,55 @@ etc/openldap/DB_CONFIG.example
 %%SLAPI%%lib/libslapi.a
 %%SLAPI%%lib/libslapi.la
 %%SLAPI%%lib/libslapi.so
-%%SLAPI%%lib/libslapi-2.3.so
-%%SLAPI%%lib/libslapi-2.3.so.2
+%%SLAPI%%lib/libslapi-2.4.so
+%%SLAPI%%lib/libslapi-2.4.so.1
 %%MODULES%%@exec mkdir -p %D/libexec/openldap
-%%BACK_BDB%%libexec/openldap/back_bdb-2.3.so
-%%BACK_BDB%%libexec/openldap/back_bdb-2.3.so.2
+%%BACK_BDB%%libexec/openldap/back_bdb-2.4.so
+%%BACK_BDB%%libexec/openldap/back_bdb-2.4.so.1
 %%BACK_BDB%%libexec/openldap/back_bdb.la
 %%BACK_BDB%%libexec/openldap/back_bdb.so
-%%BACK_HDB%%libexec/openldap/back_hdb-2.3.so
-%%BACK_HDB%%libexec/openldap/back_hdb-2.3.so.2
+%%BACK_HDB%%libexec/openldap/back_hdb-2.4.so
+%%BACK_HDB%%libexec/openldap/back_hdb-2.4.so.1
 %%BACK_HDB%%libexec/openldap/back_hdb.la
 %%BACK_HDB%%libexec/openldap/back_hdb.so
-%%BACKEND%%libexec/openldap/back_ldap-2.3.so
-%%BACKEND%%libexec/openldap/back_ldap-2.3.so.2
+%%BACKEND%%libexec/openldap/back_ldap-2.4.so
+%%BACKEND%%libexec/openldap/back_ldap-2.4.so.1
 %%BACKEND%%libexec/openldap/back_ldap.la
 %%BACKEND%%libexec/openldap/back_ldap.so
-%%BACKEND%%libexec/openldap/back_ldbm-2.3.so
-%%BACKEND%%libexec/openldap/back_ldbm-2.3.so.2
-%%BACKEND%%libexec/openldap/back_ldbm.la
-%%BACKEND%%libexec/openldap/back_ldbm.so
-%%BACKEND%%libexec/openldap/back_meta-2.3.so
-%%BACKEND%%libexec/openldap/back_meta-2.3.so.2
+%%BACKEND%%libexec/openldap/back_meta-2.4.so
+%%BACKEND%%libexec/openldap/back_meta-2.4.so.1
 %%BACKEND%%libexec/openldap/back_meta.la
 %%BACKEND%%libexec/openldap/back_meta.so
-%%BACKEND%%libexec/openldap/back_monitor-2.3.so
-%%BACKEND%%libexec/openldap/back_monitor-2.3.so.2
+%%BACKEND%%libexec/openldap/back_monitor-2.4.so
+%%BACKEND%%libexec/openldap/back_monitor-2.4.so.1
 %%BACKEND%%libexec/openldap/back_monitor.la
 %%BACKEND%%libexec/openldap/back_monitor.so
-%%BACKEND%%libexec/openldap/back_null-2.3.so
-%%BACKEND%%libexec/openldap/back_null-2.3.so.2
+%%BACKEND%%libexec/openldap/back_null-2.4.so
+%%BACKEND%%libexec/openldap/back_null-2.4.so.1
 %%BACKEND%%libexec/openldap/back_null.la
 %%BACKEND%%libexec/openldap/back_null.so
-%%BACK_PERL%%libexec/openldap/back_perl-2.3.so
-%%BACK_PERL%%libexec/openldap/back_perl-2.3.so.2
+%%BACK_DNSSRV%%libexec/openldap/back_dnssrv-2.4.so
+%%BACK_DNSSRV%%libexec/openldap/back_dnssrv-2.4.so.1
+%%BACK_DNSSRV%%libexec/openldap/back_dnssrv.la
+%%BACK_DNSSRV%%libexec/openldap/back_dnssrv.so
+%%BACK_PASSWD%%libexec/openldap/back_passwd-2.4.so
+%%BACK_PASSWD%%libexec/openldap/back_passwd-2.4.so.1
+%%BACK_PASSWD%%libexec/openldap/back_passwd.la
+%%BACK_PASSWD%%libexec/openldap/back_passwd.so
+%%BACK_PERL%%libexec/openldap/back_perl-2.4.so
+%%BACK_PERL%%libexec/openldap/back_perl-2.4.so.1
 %%BACK_PERL%%libexec/openldap/back_perl.la
 %%BACK_PERL%%libexec/openldap/back_perl.so
-%%BACK_SHELL%%libexec/openldap/back_shell-2.3.so
-%%BACK_SHELL%%libexec/openldap/back_shell-2.3.so.2
+%%BACK_RELAY%%libexec/openldap/back_relay-2.4.so
+%%BACK_RELAY%%libexec/openldap/back_relay-2.4.so.1
+%%BACK_RELAY%%libexec/openldap/back_relay.la
+%%BACK_RELAY%%libexec/openldap/back_relay.so
+%%BACK_SHELL%%libexec/openldap/back_shell-2.4.so
+%%BACK_SHELL%%libexec/openldap/back_shell-2.4.so.1
 %%BACK_SHELL%%libexec/openldap/back_shell.la
 %%BACK_SHELL%%libexec/openldap/back_shell.so
-%%BACK_SQL%%libexec/openldap/back_sql-2.3.so
-%%BACK_SQL%%libexec/openldap/back_sql-2.3.so.2
+%%BACK_SQL%%libexec/openldap/back_sql-2.4.so
+%%BACK_SQL%%libexec/openldap/back_sql-2.4.so.1
 %%BACK_SQL%%libexec/openldap/back_sql.la
 %%BACK_SQL%%libexec/openldap/back_sql.so
 libexec/slapd
@@ -66,8 +74,8 @@ sbin/slapindex
 sbin/slappasswd
 sbin/slaptest
 @exec mkdir -p %%LDAP_RUN_DIR%%
-@unexec rmdir %%LDAP_RUN_DIR%% 2>/dev/null || true
+@dirrmtry %%LDAP_RUN_DIR%%
 @exec mkdir -p %%DATABASEDIR%%
-@unexec rmdir %%DATABASEDIR%% 2>/dev/null || true
+@dirrmtry %%DATABASEDIR%%
 @exec mkdir -p %%SLURPDIR%%
-@unexec rmdir %%SLURPDIR%% 2>/dev/null || true
+@dirrmtry %%SLURPDIR%%

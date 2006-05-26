@@ -23,6 +23,7 @@ MAN3+=	lber-decode.3 \
 	ldap_compare.3 \
 	ldap_delete.3 \
 	ldap_error.3 \
+	ldap_extended_operation.3 \
 	ldap_first_attribute.3 \
 	ldap_first_entry.3 \
 	ldap_first_message.3 \
@@ -34,6 +35,9 @@ MAN3+=	lber-decode.3 \
 	ldap_open.3 \
 	ldap_parse_reference.3 \
 	ldap_parse_result.3 \
+	ldap_parse_sort_control.3 \
+	ldap_parse_vlv_control.3 \
+	ldap_rename.3 \
 	ldap_result.3 \
 	ldap_schema.3 \
 	ldap_search.3 \
@@ -87,6 +91,7 @@ MLINKS+= \
 	ldap_bind.3 ldap_kerberos_bind_s.3 \
 	ldap_bind.3 ldap_sasl_bind.3 \
 	ldap_bind.3 ldap_sasl_bind_s.3 \
+	ldap_bind.3 ldap_set_rebind_proc.3 \
 	ldap_bind.3 ldap_simple_bind.3 \
 	ldap_bind.3 ldap_simple_bind_s.3 \
 	ldap_bind.3 ldap_unbind.3 \
@@ -104,6 +109,7 @@ MLINKS+= \
 	ldap_error.3 ldap_errlist.3 \
 	ldap_error.3 ldap_perror.3 \
 	ldap_error.3 ldap_result2error.3 \
+	ldap_extended_operation.3 ldap_extended_operation_s.3 \
 	ldap_first_attribute.3 ldap_next_attribute.3 \
 	ldap_first_entry.3 ldap_count_entries.3 \
 	ldap_first_entry.3 ldap_next_entry.3 \
@@ -132,8 +138,10 @@ MLINKS+= \
 	ldap_modrdn.3 ldap_modrdn2_s.3 \
 	ldap_modrdn.3 ldap_modrdn_s.3 \
 	ldap_open.3 ldap_init.3 \
+	ldap_open.3 ldap_initialize.3 \
 	ldap_parse_result.3 ldap_parse_extended_result.3 \
 	ldap_parse_result.3 ldap_parse_sasl_bind_result.3 \
+	ldap_rename.3 ldap_rename_s.3 \
 	ldap_result.3 ldap_msgfree.3 \
 	ldap_result.3 ldap_msgid.3 \
 	ldap_result.3 ldap_msgtype.3 \
@@ -180,7 +188,6 @@ MAN5+=	ldap.conf.5 \
 	slapd-relay.5 \
 	slapd-shell.5 \
 	slapd-sql.5 \
-	slapd-tcl.5 \
 	slapd.access.5 \
 	slapd.conf.5 \
 	slapd.plugin.5 \
@@ -188,6 +195,7 @@ MAN5+=	ldap.conf.5 \
 	slapo-accesslog.5 \
 	slapo-auditlog.5 \
 	slapo-chain.5 \
+	slapo-dds.5 \
 	slapo-dynlist.5 \
 	slapo-lastmod.5 \
 	slapo-pcache.5 \
