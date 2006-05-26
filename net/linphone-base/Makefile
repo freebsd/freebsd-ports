@@ -24,6 +24,7 @@ LIB_DEPENDS=	gsm.1:${PORTSDIR}/audio/gsm \
 		osip2.3:${PORTSDIR}/net/libosip2
 
 USE_GNOME=	glib20 gnomehack gnometarget intlhack pkgconfig
+USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 LIBTOOLFILES=	configure oRTP/configure

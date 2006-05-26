@@ -1,9 +1,9 @@
---- Makefile.in.orig	Tue Mar 22 00:53:37 2005
-+++ Makefile.in	Wed Mar 23 18:51:15 2005
-@@ -274,9 +274,11 @@
- sysconfdir = @sysconfdir@
- target_alias = @target_alias@
- @BUILD_TRUESPEECH_TRUE@WIN32ACM_DIR = win32acm
+--- Makefile.in.orig	Tue Apr  4 17:18:50 2006
++++ Makefile.in	Wed Apr  5 12:43:31 2006
+@@ -289,9 +289,11 @@
+ 
+ # let make re-run automake upon need
+ ACLOCAL_AMFLAGS = -I m4
 -SUBDIRS = m4 support pixmaps po ipkg oRTP gsmlib lpc10-1.5 \
 +ifndef SUBDIRS
 +SUBDIRS = m4 support po ipkg oRTP lpc10-1.5 \
