@@ -1,0 +1,38 @@
+--- sys/unix/Makefile.top.orig	Thu Apr  6 02:59:04 2006
++++ sys/unix/Makefile.top	Thu May 25 00:59:53 2006
+@@ -14,18 +14,18 @@
+ # MAKE = make
+ 
+ # make NetHack
+-PREFIX	 = /usr
++#PREFIX	 = /usr
+ GAME     = vultureseye
+ # GAME     = nethack.prg
+ GAMEUID  = games
+-GAMEGRP  = bin
++GAMEGRP  = games
+ 
+ # Permissions - some places use setgid instead of setuid, for instance
+ # See also the option "SECURE" in include/config.h
+-GAMEPERM = 04755
+-FILEPERM = 0644
++GAMEPERM = 02755
++FILEPERM = 0664
+ EXEPERM  = 0755
+-DIRPERM  = 0755
++DIRPERM  = 0775
+ 
+ # GAMEDIR also appears in config.h as "HACKDIR".
+ # VARDIR may also appear in unixconf.h as "VAR_PLAYGROUND" else GAMEDIR
+@@ -35,9 +35,9 @@
+ # therefore there should not be anything in GAMEDIR that you want to keep
+ # (if there is, you'll have to do the installation by hand or modify the
+ # instructions)
+-GAMEDIR  = $(PREFIX)/games/lib/$(GAME)dir
++GAMEDIR  = $(DATADIR)
+ VARDIR  = $(GAMEDIR)
+-SHELLDIR = $(PREFIX)/games
++SHELLDIR = $(PREFIX)/bin
+ 
+ # per discussion in Install.X11 and Install.Qt
+ VARDATND = 

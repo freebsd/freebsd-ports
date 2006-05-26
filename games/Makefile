@@ -682,6 +682,7 @@
     SUBDIR += volleyball
     SUBDIR += vor
     SUBDIR += vultures-claw
+    SUBDIR += vultures-eye
     SUBDIR += wanderer
     SUBDIR += wargus
     SUBDIR += warzone2100
