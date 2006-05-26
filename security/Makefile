@@ -530,6 +530,7 @@
     SUBDIR += py-mcrypt
     SUBDIR += py-mhash
     SUBDIR += py-openssl
+    SUBDIR += py-paramiko
     SUBDIR += py-posix1e
     SUBDIR += py-pow
     SUBDIR += py-pycrypto
