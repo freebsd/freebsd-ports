@@ -9121,6 +9121,7 @@ p5-POE-Exceptions	ports/devel/p5-POE-Exceptions
 p5-POE-Filter-IRCD	ports/irc/p5-POE-Filter-IRCD
 p5-POE-Filter-XML	ports/textproc/p5-POE-Filter-XML
 p5-POE-Session-MultiDispatch	ports/devel/p5-POE-Session-MultiDispatch
+p5-POE-XS-Queue-Array	ports/devel/p5-POE-XS-Queue-Array
 p5-PPI		ports/textproc/p5-PPI
 p5-PPI-HTML	ports/textproc/p5-PPI-HTML
 p5-PPerl	ports/devel/p5-PPerl
