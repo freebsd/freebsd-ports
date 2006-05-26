@@ -8,6 +8,7 @@
 
 PORTNAME=	evince
 PORTVERSION=	0.5.3
+PORTREVISION=	1
 CATEGORIES=	graphics print gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.5
@@ -19,6 +20,7 @@ LIB_DEPENDS=	poppler-glib.1:${PORTSDIR}/graphics/poppler-gtk
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+INSTALLS_ICONS=	yes
 USE_GETTEXT=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
