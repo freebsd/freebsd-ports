@@ -11,7 +11,7 @@ PORTREVISION=	0
 CATEGORIES=	japanese
 MASTER_SITES=	http://www25.big.jp/~jam/less/ \
 		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	sf
+MASTER_SITE_SUBDIR=	nork
 DISTNAME=	less-${PORTVERSION:R}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		regex_cs-lwp9k.shar.gz
@@ -25,7 +25,7 @@ PATCHFILES=	${DISTNAME}-iso258.patch.gz \
 		${DISTNAME}-iso261-${PORTVERSION:E}.patch.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nork@FreeBSD.org
 COMMENT=	Less + zcat + ISO-2022 - a pager similar to more and pg
 
 GNU_CONFIGURE=	yes
