@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	quickie
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	www
 MASTER_SITES=	http://${PORTNAME}.sourceforge.net/ \
 		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
@@ -19,6 +19,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}		\
 		--sysconfdir=${PREFIX}/etc	\
 		--localstatedir=${DATADIR}
+
+USE_GETOPT_LONG=	yes
 
 MAN1=		quickie-config.1 quickie_prime.1 quickie.1 quickie_svt.1 \
 		quickie_license.1 quickie_post_install.1
@@ -38,13 +40,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 .include <bsd.port.pre.mk>
 
-.if (${OSVERSION} < 500041)
-BROKEN=		does not compile on 4.x; needs a newer libc
-.endif
-
 post-patch:
 	@${CP} ${FILESDIR}/freebsd.h ${WRKSRC}/lib
-	@${REINPLACE_CMD} -e 's#var/[^ ]*\.man##g' ${WRKSRC}/Makefile.in
 
 pre-install:
 	@${MKDIR} ${DATADIR}/admin
