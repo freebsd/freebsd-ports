@@ -4781,6 +4781,7 @@ jabber-pyicq	ports/net-im/jabber-pyicq
 jabber-pymsn	ports/net-im/jabber-pymsn
 jabber-users-agent	ports/net-im/jabber-users-agent
 jabber-yahoo	ports/net-im/jabber-yahoo
+jabber.el	ports/net-im/jabber.el
 jabberd		ports/net-im/jabberd
 jabref		ports/print/jabref
 jacal		ports/math/jacal
