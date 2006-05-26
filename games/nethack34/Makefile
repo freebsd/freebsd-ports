@@ -45,10 +45,11 @@ GRAPHICS=	GNOME_GRAPHICS
 .elif ${PKGNAMESUFFIX} == "-nox11"
 GRAPHICS=	# none
 .if defined(WITH_MENUCOLORS)
-PATCHFILES+=	nh343-menucolor.diff
-PATCH_SITES+=	${MASTER_SITE_LOCAL:S|%SUBDIR%|glewis|}
+PATCHFILES+=	nh343-menucolor_jilles.diff
+PATCH_SITES+=	http://www.stack.nl/~jilles/games/ \
+		${MASTER_SITE_LOCAL:S|%SUBDIR%|glewis|}
 PATCH_DIST_STRIP=	-p1
-MAKE_ENV+=	LIBTTY="-lgnuregex"
+CFLAGS+=	-DMENU_COLOR_REGEX_POSIX
 .endif
 .elif ${PKGNAMESUFFIX} == "-qt"
 USE_QT_VER=	3
@@ -60,15 +61,6 @@ GRAPHICS=	QT_GRAPHICS
 .endif
 
 .include <bsd.port.pre.mk>
-
-# FreeBSD 5.2.1-RELEASE (or, well, almost) and above use include/gnu/regex.h
-# while prior releases use include/gnuregex.h.  This simply gets rid of the
-# repetitive warning during the build process on 5.x.
-.if ${OSVERSION} >= 502010
-GNU_REGEX_H=	<gnu/regex.h>
-.else
-GNU_REGEX_H=	<gnuregex.h>
-.endif
 
 pre-everything::
 	@if [ "${PKGBASE}" != "nethack" ]; then \
@@ -82,18 +74,14 @@ pre-everything::
 
 post-patch:
 .for f in include/config.h sys/unix/Makefile.src sys/unix/Makefile.top
-	${REINPLACE_CMD} -e 's|%%HACKNAME%%|${HACKNAME}|g;s|%%HACKDIR%%|${PREFIX}/${HACKDIR}|g' ${WRKSRC}/${f}
+	@${REINPLACE_CMD} -e 's|%%HACKNAME%%|${HACKNAME}|g;s|%%HACKDIR%%|${PREFIX}/${HACKDIR}|g' ${WRKSRC}/${f}
 .endfor
-	${REINPLACE_CMD} -e 's|<regex.h>|${GNU_REGEX_H}|g' ${WRKSRC}/src/sounds.c
-	${REINPLACE_CMD} -e 's|<malloc.h>|<stdlib.h>|g' ${WRKSRC}/win/Qt/qt_win.cpp
+	@${REINPLACE_CMD} -e 's|<malloc.h>|<stdlib.h>|g' ${WRKSRC}/win/Qt/qt_win.cpp
 .if defined(WITHOUT_SHELL)
-	${REINPLACE_CMD} -e 's|#define SHELL|/* #define SHELL|' ${WRKSRC}/include/unixconf.h
-.endif
-.if defined(WITH_MENUCOLORS)
-	${REINPLACE_CMD} -e 's|<regex.h>|${GNU_REGEX_H}|g' ${WRKSRC}/include/color.h
+	@${REINPLACE_CMD} -e 's|#define SHELL|/* #define SHELL|' ${WRKSRC}/include/unixconf.h
 .endif
 .if defined(WITH_MAIL)
-	${REINPLACE_CMD} -e 's|/\* #define MAIL \*/|#define MAIL|' ${WRKSRC}/include/unixconf.h
+	@${REINPLACE_CMD} -e 's|/\* #define MAIL \*/|#define MAIL|' ${WRKSRC}/include/unixconf.h
 .endif
 
 pre-configure:
