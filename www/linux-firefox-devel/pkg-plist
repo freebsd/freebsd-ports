@@ -25,8 +25,12 @@ lib/%%APP_NAME%%/components/jsconsole-clhandler.js
 lib/%%APP_NAME%%/components/libjar50.so
 lib/%%APP_NAME%%/components/libjsd.so
 lib/%%APP_NAME%%/components/libmozgnome.so
+lib/%%APP_NAME%%/components/libmyspell.so
 lib/%%APP_NAME%%/components/libnkgnomevfs.so
+lib/%%APP_NAME%%/components/libspellchecker.so
 lib/%%APP_NAME%%/components/libxpinstall.so
+lib/%%APP_NAME%%/components/myspell/en-US.aff
+lib/%%APP_NAME%%/components/myspell/en-US.dic
 lib/%%APP_NAME%%/components/nsBrowserContentHandler.js
 lib/%%APP_NAME%%/components/nsBrowserGlue.js
 lib/%%APP_NAME%%/components/nsCloseAllWindows.js
@@ -37,11 +41,15 @@ lib/%%APP_NAME%%/components/nsHelperAppDlg.js
 lib/%%APP_NAME%%/components/nsInterfaceInfoToIDL.js
 lib/%%APP_NAME%%/components/nsMicrosummaryService.js
 lib/%%APP_NAME%%/components/nsProxyAutoConfig.js
+lib/%%APP_NAME%%/components/nsSafebrowsingApplication.js
 lib/%%APP_NAME%%/components/nsSearchService.js
-lib/%%APP_NAME%%/components/nsSessionStore.js
+lib/%%APP_NAME%%/components/nsSearchSuggestions.js
 lib/%%APP_NAME%%/components/nsSetDefaultBrowser.js
 lib/%%APP_NAME%%/components/nsSidebar.js
 lib/%%APP_NAME%%/components/nsUpdateService.js
+lib/%%APP_NAME%%/components/nsUrlClassifierLib.js
+lib/%%APP_NAME%%/components/nsUrlClassifierListManager.js
+lib/%%APP_NAME%%/components/nsUrlClassifierTable.js
 lib/%%APP_NAME%%/components/nsXmlRpcClient.js
 lib/%%APP_NAME%%/components/pluginGlue.js
 lib/%%APP_NAME%%/defaults/autoconfig/platform.js
@@ -60,8 +68,6 @@ lib/%%APP_NAME%%/defaults/profile/search.rdf
 lib/%%APP_NAME%%/extensions/inspector@mozilla.org/chrome.manifest
 lib/%%APP_NAME%%/extensions/inspector@mozilla.org/chrome/inspector.jar
 lib/%%APP_NAME%%/extensions/inspector@mozilla.org/components/inspector-cmdline.js
-lib/%%APP_NAME%%/extensions/inspector@mozilla.org/components/inspector.xpt
-lib/%%APP_NAME%%/extensions/inspector@mozilla.org/components/libinspector.so
 lib/%%APP_NAME%%/extensions/inspector@mozilla.org/defaults/preferences/inspector.js
 lib/%%APP_NAME%%/extensions/inspector@mozilla.org/install.rdf
 lib/%%APP_NAME%%/extensions/talkback@mozilla.org/chrome.manifest
@@ -188,6 +194,7 @@ lib/%%APP_NAME%%/linkfarm
 @dirrm lib/%%APP_NAME%%/defaults/autoconfig
 @dirrm lib/%%APP_NAME%%/defaults
 @dirrm lib/%%APP_NAME%%/searchplugins
+@dirrm lib/%%APP_NAME%%/components/myspell
 @dirrm lib/%%APP_NAME%%/components
 @dirrm lib/%%APP_NAME%%/plugins
 @dirrm lib/%%APP_NAME%%/res/fonts
