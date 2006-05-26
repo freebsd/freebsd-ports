@@ -9,7 +9,8 @@
 PORTNAME=	wprint
 PORTVERSION=	2.05
 CATEGORIES=	print
-MASTER_SITES=	http://www.esperanto.org.uy/programoj/angle/
+MASTER_SITES=	http://mirror2.unixfreunde.de/ \
+		http://freebsd.unixfreunde.de/sources/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mozilla/HtmlDoc/Netscape Postscript Filter
