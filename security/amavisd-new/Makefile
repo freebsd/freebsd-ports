@@ -8,6 +8,7 @@
 
 PORTNAME=	amavisd-new
 PORTVERSION=	2.4.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.ijs.si/software/amavisd/ \
@@ -35,9 +36,9 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Unix/Syslog.pm:${PORTSDIR}/sysutils/p5-Un
 		${LOCALBASE}/bin/unfreeze:${PORTSDIR}/archivers/freeze \
 		${LOCALBASE}/bin/lha:${PORTSDIR}/archivers/lha \
 		${LOCALBASE}/bin/lzop:${PORTSDIR}/archivers/lzop \
-		${LOCALBASE}/bin/unarj:${PORTSDIR}/archivers/unarj \
+		${LOCALBASE}/bin/arj:${PORTSDIR}/archivers/arj \
 		${LOCALBASE}/bin/unrar:${PORTSDIR}/archivers/unrar \
-		${LOCALBASE}/bin/zoo:${PORTSDIR}/archivers/zoo \
+		${LOCALBASE}/bin/unzoo:${PORTSDIR}/archivers/unzoo \
 		${LOCALBASE}/bin/cabextract:${PORTSDIR}/archivers/cabextract \
 		${LOCALBASE}/bin/rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
 
@@ -107,9 +108,9 @@ RUN_DEPENDS+=	${SITE_PERL}/Net/LDAP.pm:${PORTSDIR}/net/p5-perl-ldap
 .endif
 
 post-patch:
-	@for f in amavisd.conf amavisd.conf-sample amavisd amavisd-agent amavisd-nanny amavisd-release; do \
-		${SED} ${SED_SCRIPT} < ${WRKSRC}/$${f} > ${WRKDIR}/$${f}; \
-	done
+.for f in amavisd.conf amavisd.conf-sample amavisd amavisd-agent amavisd-nanny amavisd-release
+	@${REINPLACE_CMD} ${SED_SCRIPT} -e "s@'zoo'\]@['zoo','unzoo'] ]@" ${WRKSRC}/${f}
+.endfor
 
 pre-install:
 	@${SH} ${PKGINSTALL} ${DISTNAME} PRE-INSTALL
@@ -121,25 +122,25 @@ do-install:
 .if !defined(AMAVIS_NOMILTER)
 	${INSTALL_PROGRAM} ${WRKSRC}/helper-progs/amavis-milter ${PREFIX}/sbin
 .endif
-	${INSTALL_SCRIPT} ${WRKDIR}/amavisd ${PREFIX}/sbin
-	${INSTALL_SCRIPT} ${WRKDIR}/amavisd-agent ${PREFIX}/sbin
-	${INSTALL_SCRIPT} ${WRKDIR}/amavisd-nanny ${PREFIX}/sbin
-	${INSTALL_SCRIPT} ${WRKDIR}/amavisd-release ${PREFIX}/sbin
-	${INSTALL_SCRIPT} ${WRKDIR}/amavisd.conf ${PREFIX}/etc/amavisd.conf-dist
+	${INSTALL_SCRIPT} ${WRKSRC}/amavisd ${PREFIX}/sbin
+	${INSTALL_SCRIPT} ${WRKSRC}/amavisd-agent ${PREFIX}/sbin
+	${INSTALL_SCRIPT} ${WRKSRC}/amavisd-nanny ${PREFIX}/sbin
+	${INSTALL_SCRIPT} ${WRKSRC}/amavisd-release ${PREFIX}/sbin
+	${INSTALL_SCRIPT} ${WRKSRC}/amavisd.conf ${PREFIX}/etc/amavisd.conf-dist
 .if !exists(${PREFIX}/etc/amavisd.conf)
-	${INSTALL_SCRIPT} ${WRKDIR}/amavisd.conf ${PREFIX}/etc
+	${INSTALL_SCRIPT} ${WRKSRC}/amavisd.conf ${PREFIX}/etc
 .endif
-	${INSTALL_SCRIPT} ${WRKDIR}/amavisd.conf-sample ${PREFIX}/etc/amavisd.conf-sample
+	${INSTALL_SCRIPT} ${WRKSRC}/amavisd.conf-sample ${PREFIX}/etc/amavisd.conf-sample
 	${INSTALL_SCRIPT} ${WRKSRC}/amavisd.conf-default ${PREFIX}/etc/amavisd.conf-default
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for FILE in AAAREADME.first INSTALL LDAP.schema LICENSE RELEASE_NOTES README_FILES/*
+. for FILE in AAAREADME.first INSTALL LDAP.schema LICENSE RELEASE_NOTES README_FILES/*
 	${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
-.endfor
+. endfor
+.endif
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
-.endif
 
 .if ${PERL_LEVEL} < 500802
 IGNORE=		requires perl 5.8.2 or higher
