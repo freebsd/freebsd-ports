@@ -18,6 +18,7 @@
     SUBDIR += fl_editor
     SUBDIR += fltk
     SUBDIR += fltk-threads
+    SUBDIR += fltk2
     SUBDIR += flu
     SUBDIR += flvw
     SUBDIR += fox

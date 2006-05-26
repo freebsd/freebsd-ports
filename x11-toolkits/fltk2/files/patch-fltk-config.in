@@ -1,0 +1,11 @@
+--- ./fltk-config.in.orig	Thu Aug 11 02:17:12 2005
++++ ./fltk-config.in	Sun Apr  2 13:24:34 2006
+@@ -62,7 +62,7 @@
+ srcdir=@srcdir@
+ 
+ # compiler names
+-CXX="@CXX@"
++CXX="%%CXX%%"
+ CC="@CC@"
+ 
+ # post-process command (only needed for MacOS)
