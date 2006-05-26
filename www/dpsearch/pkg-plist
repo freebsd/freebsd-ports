@@ -226,6 +226,7 @@ etc/dpsearch/langmap/vi.viscii.lm
 etc/dpsearch/langmap/wa.utf-8.lm
 etc/dpsearch/langmap/zh-min-nan.utf-8.lm
 etc/dpsearch/langmap/zh.big5.lm
+etc/dpsearch/langmap/zh.gb18030.lm
 etc/dpsearch/langmap/zh.gb2312.lm
 etc/dpsearch/langmap/zh.utf8.lm
 etc/dpsearch/opensearch.htm-dist
@@ -290,6 +291,7 @@ include/dps_common.h
 include/dps_conf.h
 include/dps_config.h
 include/dps_contentencoding.h
+include/dps_cookies.h
 include/dps_crc32.h
 include/dps_crossword.h
 include/dps_db.h
@@ -347,11 +349,11 @@ include/dps_wild.h
 include/dps_word.h
 include/dps_xmalloc.h
 include/dpsearch.h
-lib/libdpcharset-4.so
+lib/libdpcharset-440.so
 lib/libdpcharset.a
 lib/libdpcharset.la
 lib/libdpcharset.so
-lib/libdpsearch-4.so
+lib/libdpsearch-440.so
 lib/libdpsearch.a
 lib/libdpsearch.la
 lib/libdpsearch.so
