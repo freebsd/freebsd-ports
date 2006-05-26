@@ -7,6 +7,7 @@
 
 PORTNAME=	Data-Report
 PORTVERSION=	0.03
+PORTREVISION=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Data
@@ -24,7 +25,7 @@ RUN_DEPENDS=	${COMMON_DEPENDS}
 
 PERL_MODBUILD=	yes
 
-MAN3=	Data::Report.3 Data::Report::API.3 Data::Report::Base.3
+MAN3=	Data::Report.3 Data::Report::Base.3
 
 .include <bsd.port.pre.mk>
 
