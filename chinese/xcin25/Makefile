@@ -35,7 +35,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--with-xcin-dir=${PREFIX}/lib/X11/xcin25 \
 		--with-db-name=${BDB_LIB_NAME} \
 		--with-db-inc=${BDB_INCLUDE_DIR} \
-		--with-db-lib=${BDB_LIB_DIR}/lib \
+		--with-db-lib=${BDB_LIB_DIR} \
 		--with-tabe-inc=${LOCALBASE}/include/tabe \
 		--with-tabe-lib=${LOCALBASE}/lib \
 		--with-intl-inc=${LOCALBASE}/include \
