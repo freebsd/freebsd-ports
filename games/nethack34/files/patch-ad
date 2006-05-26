@@ -66,8 +66,7 @@ diff -ruN sys.orig/unix/Makefile.src sys/unix/Makefile.src
  # WINTTYLIB = -lcurses
  # WINTTYLIB = -lcurses16
  # WINTTYLIB = -lncurses
--WINTTYLIB = -ltermlib
-+WINTTYLIB = -ltermlib ${LIBTTY}
+ WINTTYLIB = -ltermlib
  #
  # libraries for X11
  # If USE_XPM is defined in config.h, you will also need -lXpm here.
@@ -79,7 +78,7 @@ diff -ruN sys.orig/unix/Makefile.src sys/unix/Makefile.src
  #
  # libraries for Qt
 -WINQTLIB = -L$(QTDIR)/lib -lqt
-+WINQTLIB = ${QTCFGLIBS} ${LIBQT} -lgnuregex
++WINQTLIB = ${QTCFGLIBS} ${LIBQT}
  #
  # libraries for KDE (with Qt)
  WINKDELIB = -lkdecore -lkdeui -lXext
