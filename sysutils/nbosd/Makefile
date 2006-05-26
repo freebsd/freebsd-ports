@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nbosd
-PORTVERSION=	0.4.0
+PORTVERSION=	0.4.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://bsd-geek.de/FreeBSD/distfiles/
 EXTRACT_SUFX=	.tgz
@@ -27,6 +27,7 @@ post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/CHANGELOG ${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>
