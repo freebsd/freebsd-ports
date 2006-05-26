@@ -1,3 +1,5 @@
+bin/benchmark_stemmers.plx
+bin/generate_tests.plx
 %%SITE_PERL%%/%%PERL_ARCH%%/Lingua/Stem/Snowball.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/Stem/Snowball/Snowball.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/Stem/Snowball/Snowball.so
