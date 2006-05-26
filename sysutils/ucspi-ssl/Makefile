@@ -6,16 +6,18 @@
 #
 
 PORTNAME=	ucspi-ssl
-PORTVERSION=	0.70
+PORTVERSION?=	0.70
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.superscript.com/ucspi-ssl/
 
-MAINTAINER=	lx@redundancy.redundancy.org
-COMMENT=	UCSPI tools for building SSL client-server applications
+MAINTAINER?=	lx@redundancy.redundancy.org
+COMMENT?=	UCSPI tools for building SSL client-server applications
 
 BUILD_DEPENDS=	${LOCALBASE}/share/certs/ca-root.crt:${PORTSDIR}/security/ca-roots
 RUN_DEPENDS=	tcpserver:${PORTSDIR}/sysutils/ucspi-tcp \
 		${BUILD_DEPENDS}
+
+CONFLICTS?=	ucspi-ssl-tls-[0-9]*
 
 USE_PERL5=	yes
 
