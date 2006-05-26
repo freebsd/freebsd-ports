@@ -8,7 +8,8 @@ PORTNAME=	fsh
 PORTVERSION=	1.2
 PORTREVISION=	3
 CATEGORIES=	security
-MASTER_SITES=	http://mirror2.unixfreunde.de/ \
+MASTER_SITES=	http://www.lysator.liu.se/fsh/ \
+		http://mirror2.unixfreunde.de/ \
 		http://freebsd.unixfreunde.de/sources/
 
 MAINTAINER=	sumikawa@FreeBSD.org
