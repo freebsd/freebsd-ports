@@ -1,5 +1,5 @@
---- arcrun.c.orig	Sun Oct  9 03:38:22 2005
-+++ arcrun.c	Fri Oct 14 00:53:57 2005
+--- arcrun.c.orig	Wed Oct 12 19:22:18 2005
++++ arcrun.c	Sat May 27 03:47:30 2006
 @@ -98,7 +98,7 @@
  		strcpy(sys, buf);
  
@@ -26,11 +26,11 @@
 +	if (arcwarn)
  		if ((tmp = fopen(buf, "r")))
  			arcdie("Temporary file %s already exists", buf);
- 	if (!(tmp = fopen(buf, OPEN_W)))
-@@ -148,7 +148,7 @@
+ 	if (!(tmp = tmpopen(buf)))
+@@ -146,7 +146,7 @@
+ 	if (system(buf))		/* try to invoke it */
+ 		arcdie("Execution failed for %s", buf);
  #endif
- 	chdir(dir);
- 	free(dir);		/* return to whence we started */
 -	if (unlink(buf) && warn) {
 +	if (unlink(buf) && arcwarn) {
  		printf("Cannot unsave temporary file %s\n", buf);
