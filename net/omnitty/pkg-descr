@@ -1,0 +1,11 @@
+Omnitty is a curses-based program that allows one to log into several
+machines simultaneously and interact with them, selectively directing
+input to individual machines or groups of selected machines.
+
+You can run both line-oriented and screen oriented in the target
+machines, because Omnitty has built-in terminal emulation capability.
+When the window is large enough, Omnitty also displays a "summary area"
+for each machine, in which it shows what the latest output from the
+machine was, so you can have an idea of what is going on in each machine. 
+
+WWW: http://omnitty.sourceforge.net/

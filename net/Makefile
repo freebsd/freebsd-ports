@@ -356,6 +356,7 @@
     SUBDIR += ocaml-netclient
     SUBDIR += ohphone
     SUBDIR += olsrd
+    SUBDIR += omnitty
     SUBDIR += onenetd
     SUBDIR += onion-fec
     SUBDIR += opal
