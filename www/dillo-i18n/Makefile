@@ -30,7 +30,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 
 DILLOVERSION=	0.8.6
-I18NVERSION=	20060516
+I18NVERSION=	20060524
 
 USE_BZIP2=	yes
 USE_GNOME=	gnometarget gtk12
