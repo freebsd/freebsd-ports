@@ -26,7 +26,19 @@ GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
 
+OPTIONS=	MOZILLA "Build mozilla plugin" off
+
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_MOZILLA)
+USE_GECKO=	mozilla
+.include "${PORTSDIR}/www/mozilla/bsd.gecko.mk"
+CONFIGURE_ARGS+=--enable-mozilla-plugin
+PLIST_SUB=	MOZILLA=""
+.else
+CONFIGURE_ARGS+=--disable-mozilla-plugin
+PLIST_SUB=	MOZILLA="@comment "
+.endif
 
 .if ${OSVERSION} < 500000
 BROKEN=		does not link with openbabel

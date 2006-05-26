@@ -26,7 +26,10 @@ include/gchemutils/gcu/xml-utils.h
 lib/libgcu.la
 lib/libgcu.so
 lib/libgcu.so.6
+%%MOZILLA%%lib/mozilla/plugins/libmozgcu.la
+%%MOZILLA%%lib/mozilla/plugins/libmozgcu.so
 libdata/pkgconfig/gcu.pc
+%%MOZILLA%%libexec/chem-viewer
 share/gnome/applications/gchem3d-viewer.desktop
 share/gnome/applications/gchemcalc.desktop
 share/gnome/applications/gchemtable.desktop
