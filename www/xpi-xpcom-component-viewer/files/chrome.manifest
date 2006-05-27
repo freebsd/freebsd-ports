@@ -1,0 +1,8 @@
+
+overlay	chrome://browser/content/browser.xul	chrome://cview/content/cviewOverlay.xul
+overlay	chrome://navigator/content/navigator.xul	chrome://cview/content/cviewOverlay.xul
+content	cview	jar:chrome/cview.jar!/content/cview/
+
+skin	cview	classic/1.0	jar:chrome/cview.jar!/skin/classic/cview/
+
+locale	cview	en-US	jar:chrome/cview.jar!/locale/cview/en-US/
