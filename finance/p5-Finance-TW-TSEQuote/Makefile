@@ -17,7 +17,7 @@ MAINTAINER=	ijliao@FreeBSD.org
 COMMENT=	Check stock quotes from Taiwan Security Exchange
 
 BUILD_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
-		p5-Encode>=0:${PORTSDIR}/devel/p5-Encode \
+		p5-Encode>=0:${PORTSDIR}/converters/p5-Encode \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI
 RUN_DEPENDS=	${BUILD_DEPENDS}
 

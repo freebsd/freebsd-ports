@@ -113,8 +113,8 @@ IGNORE=		this program only support perl 5.8.0 or above
 .endif
 
 .if ${PERL_LEVEL} < 500807
-BUILD_DEPENDS+=	p5-Encode>=2.10:${PORTSDIR}/devel/p5-Encode
-RUN_DEPENDS+=	p5-Encode>=2.10:${PORTSDIR}/devel/p5-Encode
+BUILD_DEPENDS+=	p5-Encode>=2.10:${PORTSDIR}/converters/p5-Encode
+RUN_DEPENDS+=	p5-Encode>=2.10:${PORTSDIR}/converters/p5-Encode
 .endif
 
 pre-everything::

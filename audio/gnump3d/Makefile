@@ -39,7 +39,7 @@ CONFDIR=	${PREFIX}/etc/${PORTNAME}
 IGNORE=	needs at least perl 5.8. Do not use FreeBSD 4.x' system perl,\
 	it's outdated. Install lang/perl5.8 and issue 'use.perl port'
 .elif ${PERL_LEVEL} < 500806
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Encode.pm:${PORTSDIR}/devel/p5-Encode
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Encode.pm:${PORTSDIR}/converters/p5-Encode
 .endif
 
 post-patch:

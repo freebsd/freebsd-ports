@@ -92,7 +92,7 @@ BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Template.pm:${PORTSDIR}/www/p5-Templat
 
 .if ${PERL_LEVEL} >= 500600 && ${PERL_LEVEL} < 500800
 .if exists(${SITE_PERL}/Encode/compat.pm)
-BUILD_DEPENDS+=	${SITE_PERL}/Encode/compat.pm:${PORTSDIR}/devel/p5-Encode-compat
+BUILD_DEPENDS+=	${SITE_PERL}/Encode/compat.pm:${PORTSDIR}/converters/p5-Encode-compat
 .endif
 .endif
 
