@@ -1,0 +1,7 @@
+%%SITE_PERL%%/JavaScript/RPC/Server/CGI.pm
+%%SITE_PERL%%/mach/auto/JavaScript/RPC/.packlist
+@dirrm %%SITE_PERL%%/mach/auto/JavaScript/RPC
+@dirrmtry %%SITE_PERL%%/mach/auto/JavaScript
+@dirrm %%SITE_PERL%%/JavaScript/RPC/Server
+@dirrm %%SITE_PERL%%/JavaScript/RPC
+@dirrmtry %%SITE_PERL%%/JavaScript
