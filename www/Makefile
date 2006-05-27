@@ -994,6 +994,7 @@
     SUBDIR += xpi-cutemenus-crystalsvg
     SUBDIR += xpi-downthemall
     SUBDIR += xpi-fasterfox
+    SUBDIR += xpi-firefox-showcase
     SUBDIR += xpi-fission
     SUBDIR += xpi-flashblock
     SUBDIR += xpi-flashgot
