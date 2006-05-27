@@ -45,6 +45,8 @@ GCONF_SCHEMAS=	charpick.schemas drivemount.schemas geyes.schemas \
 		mixer.schemas multiload.schemas \
 		stickynotes.schemas
 
+OPTIONS=	MINI_COMMANDER "Enable mini-commander applet" off
+
 FREEBSD_SYS?=	/usr/src/sys
 
 .include <bsd.port.pre.mk>
@@ -67,6 +69,14 @@ PLIST_SUB+=	CPUFREQ="@comment "
 .else
 PLIST_SUB+=	CPUFREQ=""
 GCONF_SCHEMAS+=	cpufreq-applet.schemas
+.endif
+
+.if defined(WITH_MINI_COMMANDER)
+CONFIGURE_ARGS+=	--enable-mini-commander
+GCONF_SCHEMAS+=	mini-commander-global.schemas mini-commander.schemas
+PLIST_SUB+=	COMMANDER=""
+.else
+PLIST_SUB+=	COMMANDER="@comment "
 .endif
 
 post-patch:
