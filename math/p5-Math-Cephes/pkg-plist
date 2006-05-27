@@ -1,0 +1,16 @@
+bin/pmath
+%%SITE_PERL%%/%%PERL_ARCH%%/Math/Cephes.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Math/Cephes.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Math/Cephes/Complex.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Math/Cephes/Fraction.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Math/Cephes/Matrix.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Math/Cephes/Polynomial.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Cephes/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Cephes/Cephes.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Cephes/Cephes.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Cephes/libmd/extralibs.ld
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Cephes/libmd
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Cephes
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Math/Cephes
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Math
