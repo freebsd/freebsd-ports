@@ -1571,6 +1571,7 @@
     SUBDIR += qmake
     SUBDIR += qsa
     SUBDIR += qssl
+    SUBDIR += radrails
     SUBDIR += ragel
     SUBDIR += raknet
     SUBDIR += rapidsvn
