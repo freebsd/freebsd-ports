@@ -91,6 +91,7 @@ share/doc/HTML/es/kpresenter/barstyle4.png
 share/doc/HTML/es/kpresenter/barstyle5.png
 share/doc/HTML/es/kpresenter/barstyle6.png
 share/doc/HTML/es/kpresenter/barstyle7.png
+share/doc/HTML/es/kpresenter/common
 share/doc/HTML/es/kpresenter/faq.docbook
 share/doc/HTML/es/kpresenter/great-presentations.docbook
 share/doc/HTML/es/kpresenter/guides.docbook
@@ -102,6 +103,8 @@ share/doc/HTML/es/kpresenter/htmlshow03.png
 share/doc/HTML/es/kpresenter/htmlshow04.png
 share/doc/HTML/es/kpresenter/htmlshow05.png
 share/doc/HTML/es/kpresenter/htmlshow07.png
+share/doc/HTML/es/kpresenter/index.cache.bz2
+share/doc/HTML/es/kpresenter/index.docbook
 share/doc/HTML/es/kpresenter/menus.docbook
 share/doc/HTML/es/kpresenter/msexport1.png
 share/doc/HTML/es/kpresenter/msexport2.png
