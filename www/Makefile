@@ -987,6 +987,7 @@
     SUBDIR += xpath2rss
     SUBDIR += xpi-adblock
     SUBDIR += xpi-adblock_plus
+    SUBDIR += xpi-autobrowse
     SUBDIR += xpi-colorfultabs
     SUBDIR += xpi-cssviewer
     SUBDIR += xpi-cutemenus-crystalsvg
