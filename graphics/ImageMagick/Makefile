@@ -204,7 +204,7 @@ CONFIGURE_ARGS+=	--with-xml
 .else
 CONFIGURE_ARGS+=	--without-xml
 .endif
-.if !defined(WITHOUT_IMAGEMAGICK_SVG)
+.if defined(WITH_IMAGEMAGICK_SVG)
 LIB_DEPENDS+=		rsvg-2.2:${PORTSDIR}/graphics/librsvg2
 CONFIGURE_ARGS+=	--with-rsvg
 CONFIGURE_ENV+=		RSVG_CFLAGS="-I${X11BASE}/include/librsvg-2" \
