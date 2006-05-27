@@ -1017,6 +1017,7 @@
     SUBDIR += xpi-searchstatus
     SUBDIR += xpi-server_switcher
     SUBDIR += xpi-stumbleupon
+    SUBDIR += xpi-tablesort
     SUBDIR += xpi-tabmixplus
     SUBDIR += xpi-togglewordwrap
     SUBDIR += xpi-unplug
