@@ -8674,6 +8674,7 @@ p5-Iterator-Misc	ports/devel/p5-Iterator-Misc
 p5-Iterator-Util	ports/devel/p5-Iterator-Util
 p5-JSON		ports/converters/p5-JSON
 p5-Jabber-Connection	ports/net-im/p5-Jabber-Connection
+p5-JavaScript-RPC	ports/net/p5-JavaScript-RPC
 p5-JavaScript-SpiderMonkey	ports/lang/p5-JavaScript-SpiderMonkey
 p5-JavaScript-Squish	ports/lang/p5-JavaScript-Squish
 p5-Jifty	ports/www/p5-Jifty
