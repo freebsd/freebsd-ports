@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	aria2
-PORTVERSION=	0.4.1
+DISTVERSION=	0.5.0+1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -24,6 +24,11 @@ USE_BZIP2=	yes
 USE_GNOME=	gnomehack
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
-PLIST_FILES=	bin/aria2c share/locale/ja/LC_MESSAGES/aria2c.mo
+PLIST_FILES=	bin/aria2c \
+		share/locale/de/LC_MESSAGES/aria2c.mo \
+		share/locale/ja/LC_MESSAGES/aria2c.mo
+
+post-patch:
+	@${REINPLACE_CMD} -e 's/SA_ONESHOT/SA_RESETHAND/g' ${WRKSRC}/src/main.cc
 
 .include <bsd.port.mk>
