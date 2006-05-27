@@ -35,4 +35,6 @@ NO_BUILD=	yes
 postinstall:
 	cd ${PORTSDIR}/mail/postfix; make replace
 
+do-install:
+
 .include <bsd.port.mk>
