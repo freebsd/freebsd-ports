@@ -20,11 +20,13 @@ LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 
 USE_GMAKE=	yes
+USE_DOS2UNIX=	yes
 USE_GL=		yes
 USE_BZIP2=	yes
 
 OPTIONS=	OPTIMIZED_CFLAGS "Enable compilation optimizations" on \
-		SDL "Build SDL client" on
+		SDL "Build SDL client" on \
+		X86_ASM "Enable x86 assembly code" on
 
 ALL_TARGET=	release
 
@@ -36,9 +38,13 @@ PLIST_DIRS=	%%Q1DIR%%/${PORTNAME}
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_OPTIMIZED_CFLAGS)
-MAKE_ENV+=	WITH_OPTIMIZED_CFLAGS=YES
-.endif
+.for f in OPTIMIZED_CFLAGS X86_ASM
+.   if !defined(WITHOUT_${f})
+MAKE_ENV+=	USE_${f}=YES
+.   else
+MAKE_ENV+=	USE_${f}=NO
+.   endif
+.endfor
 
 .if !defined(WITHOUT_SDL)
 USE_SDL=	sdl
