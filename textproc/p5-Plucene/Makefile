@@ -18,7 +18,7 @@ COMMENT=	Perl port of the Java Lucene search engine
 BUILD_DEPENDS=	${SITE_PERL}/Memoize.pm:${PORTSDIR}/devel/p5-Memoize \
 		${SITE_PERL}/Tie/Array/Sorted.pm:${PORTSDIR}/devel/p5-Tie-Array-Sorted \
 		${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathTools \
-		${SITE_PERL}/Encode/compat.pm:${PORTSDIR}/devel/p5-Encode-compat \
+		${SITE_PERL}/Encode/compat.pm:${PORTSDIR}/converters/p5-Encode-compat \
 		${SITE_PERL}/File/Slurp.pm:${PORTSDIR}/devel/p5-File-Slurp \
 		${SITE_PERL}/Class/Virtual.pm:${PORTSDIR}/devel/p5-Class-Virtual \
 		${SITE_PERL}/Class/Accessor.pm:${PORTSDIR}/devel/p5-Class-Accessor \
