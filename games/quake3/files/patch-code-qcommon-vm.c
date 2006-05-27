@@ -1,14 +1,5 @@
---- code/qcommon/vm.c.orig	Thu May 25 16:59:36 2006
-+++ code/qcommon/vm.c	Thu May 25 17:08:51 2006
-@@ -478,7 +478,7 @@
- 		}
- 	}
- 
--	if ( interpret == VMI_NATIVE ) {
-+	if ( 1 ) {
- 		// try to load as a system dll
- 		Com_Printf( "Loading dll file %s.\n", vm->name );
- 		vm->dllHandle = Sys_LoadDll( module, vm->fqpath , &vm->entryPoint, VM_DllSyscall );
+--- code/qcommon/vm.c.orig	Sat May 27 14:56:20 2006
++++ code/qcommon/vm.c	Sat May 27 15:40:59 2006
 @@ -826,7 +826,7 @@
  
  
