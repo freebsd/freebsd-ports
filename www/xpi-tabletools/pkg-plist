@@ -1,0 +1,23 @@
+%%XPI_XPIDIR%%/chrome/content/tablesort/about.xul
+%%XPI_XPIDIR%%/chrome/content/tablesort/contents.rdf
+%%XPI_XPIDIR%%/chrome/content/tablesort/tablesortOptions.js
+%%XPI_XPIDIR%%/chrome/content/tablesort/tablesortOptions.xul
+%%XPI_XPIDIR%%/chrome/content/tablesort/tablesortOverlay.js
+%%XPI_XPIDIR%%/chrome/content/tablesort/tablesortOverlay.xul
+%%XPI_XPIDIR%%/chrome/skin/classic/tablesort/contents.rdf
+%%XPI_XPIDIR%%/chrome/skin/classic/tablesort/tsort_large.png
+%%XPI_XPIDIR%%/chrome/skin/classic/tablesort/tsort_small.png
+%%XPI_XPIDIR%%/chrome/tablesort.jar
+%%XPI_XPIDIR%%/context.png
+%%XPI_XPIDIR%%/defaults/preferences/ts_defaults.js
+%%XPI_XPIDIR%%/install.rdf
+%%XPI_XPIDIR%%/options.png
+%%XPI_XPIDIR%%/chrome.manifest
+@dirrm %%XPI_XPIDIR%%/chrome/content/tablesort
+@dirrm %%XPI_XPIDIR%%/chrome/content
+@dirrm %%XPI_XPIDIR%%/chrome/skin/classic/tablesort
+@dirrm %%XPI_XPIDIR%%/chrome/skin/classic
+@dirrm %%XPI_XPIDIR%%/chrome/skin
+@dirrm %%XPI_XPIDIR%%/chrome
+@dirrm %%XPI_XPIDIR%%/defaults/preferences
+@dirrm %%XPI_XPIDIR%%/defaults
