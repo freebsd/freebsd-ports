@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tin
-PORTVERSION=	1.8.1
+PORTVERSION=	1.8.2
 CATEGORIES+=	news ipv6
 MASTER_SITES=	http://mirrors.rcn.net/pub/news/tin/stable/ \
 		ftp://ftp.stikman.com/pub/tin/stable/ \
