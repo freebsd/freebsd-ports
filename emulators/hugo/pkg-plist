@@ -1,0 +1,28 @@
+bin/hugo
+bin/hugod
+%%PORTDOCS%%%%DOCSDIR%%/README.old.txt
+%%PORTDOCS%%%%DOCSDIR%%/cdrom.html
+%%PORTDOCS%%%%DOCSDIR%%/cdrom.txt
+%%PORTDOCS%%%%DOCSDIR%%/hugo_manual.css
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/joypad.html
+%%PORTDOCS%%%%DOCSDIR%%/joypad.txt
+%%PORTDOCS%%%%DOCSDIR%%/linux.html
+%%PORTDOCS%%%%DOCSDIR%%/linux.txt
+%%PORTDOCS%%%%DOCSDIR%%/netplay.html
+%%PORTDOCS%%%%DOCSDIR%%/netplay.txt
+%%PORTDOCS%%%%DOCSDIR%%/others.html
+%%PORTDOCS%%%%DOCSDIR%%/others.txt
+%%PORTDOCS%%%%DOCSDIR%%/quickstart.html
+%%PORTDOCS%%%%DOCSDIR%%/quickstart.txt
+%%PORTDOCS%%%%DOCSDIR%%/win32.html
+%%PORTDOCS%%%%DOCSDIR%%/win32.txt
+%%DATADIR%%/pixmaps/cdrom.png
+%%DATADIR%%/pixmaps/gnome-fs-network-24.png
+%%DATADIR%%/pixmaps/gnome-fs-network.png
+%%DATADIR%%/pixmaps/joystick.png
+%%DATADIR%%/pixmaps/keyboard.png
+%%DATADIR%%/pixmaps/rom.png
+@dirrm %%DATADIR%%/pixmaps
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

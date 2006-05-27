@@ -42,6 +42,7 @@
     SUBDIR += hercules
     SUBDIR += hfs
     SUBDIR += hfsutils
+    SUBDIR += hugo
     SUBDIR += ia64sim
     SUBDIR += ines
     SUBDIR += its
