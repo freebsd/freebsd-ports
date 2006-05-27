@@ -21,7 +21,8 @@ USE_GL=		yes
 USE_GMAKE=	yes
 
 OPTIONS=	OPTIMIZED_CFLAGS "Enable compilation optimizations" on \
-		SDL "Build SDL client" on
+		SDL "Build SDL client" on \
+		X86_ASM "Enable x86 assembly code" on
 
 ALL_TARGET=	release
 SUB_FILES=	pkg-message
@@ -30,9 +31,13 @@ SUB_FILES=	pkg-message
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_OPTIMIZED_CFLAGS)
-MAKE_ENV+=	OPTIMIZED_CFLAGS=YES
-.endif
+.for f in OPTIMIZED_CFLAGS X86_ASM
+.   if !defined(WITHOUT_${f})
+MAKE_ENV+=	USE_${f}=YES
+.   else
+MAKE_ENV+=	USE_${f}=NO
+.   endif
+.endfor
 
 .if !defined(WITHOUT_SDL)
 USE_SDL=	sdl
