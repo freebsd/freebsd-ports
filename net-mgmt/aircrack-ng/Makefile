@@ -1,0 +1,42 @@
+# New ports collection makefile for:	aircrack-ng
+# Date created:				2006-05-25
+# Whom:					Lars Engels <lars.engels@0x20.net>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	aircrack-ng
+PORTVERSION=	0.5
+CATEGORIES=	net-mgmt
+MASTER_SITES=	http://download.aircrack-ng.org/ \
+		http://bsd-geek.de/FreeBSD/distfiles/
+
+MAINTAINER=	lars.engels@0x20.net
+COMMENT=	Aircrack-ng is the next generation of aircrack
+
+ALL_TARGET=	aircrack-ng airdecap-ng arpforge-ng ivstools kstats
+
+PLIST_FILES=	bin/aircrack-ng bin/airdecap-ng bin/arpforge-ng bin/ivstools \
+		bin/kstats
+MAN1=		aircrack-ng.1 airdecap-ng.1 arpforge-ng.1 ivstools.1
+
+.include <bsd.port.pre.mk>
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' ${WRKSRC}/Makefile
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/aircrack-ng ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/airdecap-ng ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/arpforge-ng ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/ivstools ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/kstats ${PREFIX}/bin
+.for manpage in ${MAN1}
+	${INSTALL_MAN} ${WRKSRC}/manpages/${manpage} ${PREFIX}/man/man1
+.endfor
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
+
+.include <bsd.port.post.mk>
