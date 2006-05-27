@@ -159,6 +159,7 @@
 %%MPIDIR%%/share/openmpi/help-orted.txt
 %%MPIDIR%%/share/openmpi/help-orteprobe.txt
 %%MPIDIR%%/share/openmpi/help-orterun.txt
+%%MPIDIR%%/share/openmpi/help-pls-base.txt
 %%MPIDIR%%/share/openmpi/help-pls-rsh.txt
 %%MPIDIR%%/share/openmpi/help-pls-slurm.txt
 %%MPIDIR%%/share/openmpi/help-ras-slurm.txt

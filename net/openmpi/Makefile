@@ -44,9 +44,9 @@ BROKEN=		Does not compile on sparc64
 
 .if ${OSVERSION} < 503000
 .if !exists(/usr/include/stdint.h)
-BROKEN=         requires stdint.h
+BROKEN=		requires stdint.h
 .else
-IGNORE=         is not supported for FreeBSD < 5.3
+IGNORE=		is not supported for FreeBSD < 5.3
 .endif
 .endif
 
