@@ -32,7 +32,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 IGNORE=		requires kernel source to be installed
 .endif
 
-.if exists(/usr/include/sys/ipmi.h)
+.if ${OSVERSION} >= 700014
 IGNORE=		already in the base system
 .elif ${OSVERSION} < 503000
 IGNORE=		does not support FreeBSD before 5.3
