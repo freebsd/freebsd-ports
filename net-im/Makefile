@@ -98,6 +98,7 @@
     SUBDIR += p5-Net-OSCAR
     SUBDIR += p5-Net-XMPP
     SUBDIR += psi
+    SUBDIR += psi-gentoo
     SUBDIR += py-jabber
     SUBDIR += py-twistedWords
     SUBDIR += py-xmpppy
