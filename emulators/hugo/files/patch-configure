@@ -1,0 +1,65 @@
+--- configure.orig	Tue Apr  5 14:28:53 2005
++++ configure	Fri May 19 02:02:42 2006
+@@ -3256,7 +3256,7 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lSDL  $LIBS"
++LIBS="`${SDL_CONFIG} --libs`  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -3312,7 +3312,7 @@
+ #define HAVE_LIBSDL 1
+ _ACEOF
+ 
+-  LIBS="-lSDL $LIBS"
++  LIBS="`${SDL_CONFIG} --libs` $LIBS"
+ 
+ fi
+  #,,[AC_MSG_ERROR([need SDL. See #http://www.libsdl.org])])
+@@ -7877,7 +7877,7 @@
+ echo "$as_me:$LINENO: checking whether netplay support was asked" >&5
+ echo $ECHO_N "checking whether netplay support was asked...            $ECHO_C" >&6
+ 
+-if test "x$HAVE_LIBSDL_NET" == "xyes"
++if test "x$HAVE_LIBSDL_NET" = "xyes"
+ then
+ 
+ 
+@@ -8675,7 +8675,36 @@
+   SDL_FREEBSD_FALSE=
+ fi
+ 
++
++			 if test "$USE_SDL_mixer" = "yes"; then
++				LIBS="$LIBS -lSDL_mixer "
++
++
++if true; then
++  SDL_MIXER_LINUX_TRUE=
++  SDL_MIXER_LINUX_FALSE='#'
++else
++  SDL_MIXER_LINUX_TRUE='#'
++  SDL_MIXER_LINUX_FALSE=
++fi
++
++			 fi
++
++			 if test "$OGG_SUPPORT" = "yes"; then
++				LIBS="$LIBS -lvorbis -lvorbisfile"
++
++
++if true; then
++  ZE_HCD_OGG_SUPPORT_TRUE=
++  ZE_HCD_OGG_SUPPORT_FALSE='#'
++else
++  ZE_HCD_OGG_SUPPORT_TRUE='#'
++  ZE_HCD_OGG_SUPPORT_FALSE=
++fi
++ # ZE_: needs to be processed after SDL_MIXER_LINUX...
++			 fi
++
+ 	 ;;
+ 	sun4u-SunOS)
+ 	  echo "Solaris build enabled"

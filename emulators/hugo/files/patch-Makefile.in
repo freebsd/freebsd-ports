@@ -1,0 +1,27 @@
+--- Makefile.in.orig	Tue Apr  5 15:23:11 2005
++++ Makefile.in	Fri May 19 02:40:30 2006
+@@ -444,7 +444,7 @@
+ 	-test -z "$(bin_PROGRAMS)" || rm -f $(bin_PROGRAMS)
+ hugo$(EXEEXT): $(hugo_OBJECTS) $(hugo_DEPENDENCIES) 
+ 	@rm -f hugo$(EXEEXT)
+-	$(LINK) $(hugo_LDFLAGS) $(hugo_OBJECTS) $(hugo_LDADD) $(LIBS)
++	$(LINK) $(hugo_LDFLAGS) $(hugo_OBJECTS) $(hugo_LDADD) $(LIBS) -largp
+ hugod$(EXEEXT): $(hugod_OBJECTS) $(hugod_DEPENDENCIES) 
+ 	@rm -f hugod$(EXEEXT)
+ 	$(LINK) $(hugod_LDFLAGS) $(hugod_OBJECTS) $(hugod_LDADD) $(LIBS)
+@@ -813,11 +813,11 @@
+ 	    fi \
+ 	  done \
+ 	fi && \
+-	if test -d $(srcdir)/doc; then \
+-	  $(mkinstalldirs) $(DESTDIR)$(pkgdatadir)/doc; \
+-	  for doc in $(srcdir)/doc/*.{html,txt,css}; do \
++	if test -d $(srcdir)/doc && ${PORTDOCS}; then \
++	  $(mkinstalldirs) ${DOCSDIR}; \
++	  for doc in $(srcdir)/doc/*.html $(srcdir)/doc/*.txt $(srcdir)/doc/*.css; do \
+ 	    if test -f $$doc; then \
+-	      $(INSTALL_DATA) $$doc $(DESTDIR)$(pkgdatadir)/doc; \
++	      $(INSTALL_DATA) $$doc ${DOCSDIR}; \
+ 	    fi \
+ 	  done \
+ 	fi
