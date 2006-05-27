@@ -1,5 +1,19 @@
 --- Makefile.in.orig	Sat May 20 23:25:57 2006
-+++ Makefile.in	Thu May 25 17:21:09 2006
++++ Makefile.in	Sat May 27 15:31:14 2006
+@@ -8118,11 +8118,11 @@
+ @am__fastdepCC_FALSE@	$(LIBTOOL) --tag=CC --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(magick_libMagick_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o magick/magick_libMagick_la-transform.lo `test -f 'magick/transform.c' || echo '$(srcdir)/'`magick/transform.c
+ 
+ magick/magick_libMagick_la-type.lo: magick/type.c
+-@am__fastdepCC_TRUE@	if $(LIBTOOL) --tag=CC --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(magick_libMagick_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT magick/magick_libMagick_la-type.lo -MD -MP -MF "magick/$(DEPDIR)/magick_libMagick_la-type.Tpo" -c -o magick/magick_libMagick_la-type.lo `test -f 'magick/type.c' || echo '$(srcdir)/'`magick/type.c; \
++@am__fastdepCC_TRUE@	if $(LIBTOOL) --tag=CC --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(FONTCONFIG_CFLAGS) $(magick_libMagick_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT magick/magick_libMagick_la-type.lo -MD -MP -MF "magick/$(DEPDIR)/magick_libMagick_la-type.Tpo" -c -o magick/magick_libMagick_la-type.lo `test -f 'magick/type.c' || echo '$(srcdir)/'`magick/type.c; \
+ @am__fastdepCC_TRUE@	then mv -f "magick/$(DEPDIR)/magick_libMagick_la-type.Tpo" "magick/$(DEPDIR)/magick_libMagick_la-type.Plo"; else rm -f "magick/$(DEPDIR)/magick_libMagick_la-type.Tpo"; exit 1; fi
+ @AMDEP_TRUE@@am__fastdepCC_FALSE@	source='magick/type.c' object='magick/magick_libMagick_la-type.lo' libtool=yes @AMDEPBACKSLASH@
+ @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(LIBTOOL) --tag=CC --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(magick_libMagick_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o magick/magick_libMagick_la-type.lo `test -f 'magick/type.c' || echo '$(srcdir)/'`magick/type.c
++@am__fastdepCC_FALSE@	$(LIBTOOL) --tag=CC --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(FONTCONFIG_CFLAGS) $(magick_libMagick_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o magick/magick_libMagick_la-type.lo `test -f 'magick/type.c' || echo '$(srcdir)/'`magick/type.c
+ 
+ magick/magick_libMagick_la-utility.lo: magick/utility.c
+ @am__fastdepCC_TRUE@	if $(LIBTOOL) --tag=CC --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(magick_libMagick_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT magick/magick_libMagick_la-utility.lo -MD -MP -MF "magick/$(DEPDIR)/magick_libMagick_la-utility.Tpo" -c -o magick/magick_libMagick_la-utility.lo `test -f 'magick/utility.c' || echo '$(srcdir)/'`magick/utility.c; \
 @@ -8643,11 +8643,11 @@
  @am__fastdepCC_FALSE@	$(LIBTOOL) --tag=CC --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(magick_libMagick_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o coders/magick_libMagick_la-sun.lo `test -f 'coders/sun.c' || echo '$(srcdir)/'`coders/sun.c
  

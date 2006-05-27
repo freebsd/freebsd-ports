@@ -176,6 +176,7 @@ LIB_DEPENDS+=		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
 CONFIGURE_ARGS+=	--with-fontconfig
 CONFIGURE_ENV+=		FONTCONFIG_CFLAGS="-I${X11BASE}/include" \
 			FONTCONFIG_LIBS="-L${X11BASE}/lib"
+MAKE_ENV+=		FONTCONFIG_CFLAGS="-I${X11BASE}/include"
 .else
 CONFIGURE_ARGS+=	--without-fontconfig
 .endif
