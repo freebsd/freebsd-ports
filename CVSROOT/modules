@@ -1515,6 +1515,7 @@ cyberbit-ttfonts	ports/x11-fonts/cyberbit-ttfonts
 cybercalendar	ports/www/cybercalendar
 cycle		ports/deskutils/cycle
 cyclone		ports/lang/cyclone
+cygne-sdl	ports/emulators/cygne-sdl
 cymbaline	ports/audio/cymbaline
 cyphesis	ports/net/cyphesis
 cyr-rfx		ports/x11-fonts/cyr-rfx
