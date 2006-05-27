@@ -1,6 +1,6 @@
 bin/oto
-share/oto/GB2312.TXT
-share/oto/GB12345.TXT
-share/oto/GB12345p.TXT
-share/oto/BIG5.TXT
-@dirrm share/oto
+%%DATADIR%%/GB2312.TXT
+%%DATADIR%%/GB12345.TXT
+%%DATADIR%%/GB12345p.TXT
+%%DATADIR%%/BIG5.TXT
+@dirrm %%DATADIR%%
