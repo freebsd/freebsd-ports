@@ -1,0 +1,43 @@
+LD = ${CXX}
+
+### Include and lib stuff ####
+#STDINCLUDE = /usr/include
+#STDLIB     = /usr/lib 
+#SDLINCLUDE = /usr/local/include/SDL
+#SDLLIB	   = /usr/local/lib
+
+CFLAGS+= -DUNIX -DTARGET_UNIX -DGCC -DUSES_16BIT_ONLY -D__SDL__ -fomit-frame-pointer \
+         -fexpensive-optimizations -funroll-loops -funroll-all-loops -pipe \
+         -fschedule-insns2 -fstrength-reduce -malign-double -mfancy-math-387 -ffast-math -fforce-addr \
+         -fforce-mem `${SDL_CONFIG} --cflags`# \
+#         -L$(STDLIB) -L$(SDLLIB) -I$(STDINCLUDE) -I$(SDLINCLUDE)
+
+#LDFLAGS = $(CFLAGS)
+
+TARGET = cygne
+
+OBJ = ddrawsdl.o filessdl.o gfx.o nec.o tcache.o memory.o mainsdl.o zlib/unzip.o
+
+LIBS = `${SDL_CONFIG} --libs` -lz
+
+all: $(TARGET)
+
+INCS = -I. `${SDL_CONFIG} --cflags`
+
+THECC = $(CC) $(CFLAGS) $(INCS)
+THECXX = $(CXX) $(CFLAGS) $(INCS)
+
+%.o: %.asm
+	$(NASM) -f elf -o $@ $<
+
+%.o: %.c
+	$(THECC) -c $< -o $@
+
+%.o: %.cpp
+	$(THECXX) -c $< -o $@
+
+cygne: $(OBJ) Makefile
+	$(LD) $(LDFLAGS) -o $@ $(OBJ) $(LIBS)
+	 
+clean:
+	rm -f cygne *.o zlib/*.o
