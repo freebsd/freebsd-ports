@@ -186,6 +186,18 @@
 %%GSRES_DIR%%/CMap/Adobe-GB1-UCS2
 %%GSRES_DIR%%/CMap/Adobe-Japan1-UCS2
 %%GSRES_DIR%%/CMap/Adobe-Korea1-UCS2
+%%GSRES_DIR%%/CMap/90ms-RKSJ-UCS2
+%%GSRES_DIR%%/CMap/90pv-RKSJ-UCS2
+%%GSRES_DIR%%/CMap/90pv-RKSJ-UCS2C
+%%GSRES_DIR%%/CMap/B5pc-UCS2
+%%GSRES_DIR%%/CMap/B5pc-UCS2C
+%%GSRES_DIR%%/CMap/ETen-B5-UCS2
+%%GSRES_DIR%%/CMap/GBK-EUC-UCS2
+%%GSRES_DIR%%/CMap/GBpc-EUC-UCS2
+%%GSRES_DIR%%/CMap/GBpc-EUC-UCS2C
+%%GSRES_DIR%%/CMap/KSCms-UHC-UCS2
+%%GSRES_DIR%%/CMap/KSCpc-EUC-UCS2
+%%GSRES_DIR%%/CMap/KSCpc-EUC-UCS2C
 @dirrm %%GSRES_DIR%%/CMap
 @dirrmtry %%GSRES_DIR%%
 @exec /bin/mv %D/share/ghostscript/%%GS_VERSION%%/lib/gs_init.ps %D/share/ghostscript/%%GS_VERSION%%/lib/gs_init.ps.pre_sed
