@@ -11501,6 +11501,7 @@ radiusclient	ports/net/radiusclient
 radiusd-cistron	ports/net/radiusd-cistron
 radiusniff	ports/security/radiusniff
 radmind		ports/sysutils/radmind
+radrails	ports/devel/radrails
 radreport	ports/net/radreport
 radvd		ports/net/radvd
 ragel		ports/devel/ragel
