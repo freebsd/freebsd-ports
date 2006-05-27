@@ -16,7 +16,7 @@ MAINTAINER=	aaron@FreeBSD.org
 COMMENT=	Format text e-mail using Petal
 
 BUILD_DEPENDS=	${SITE_PERL}/Petal.pm:${PORTSDIR}/textproc/p5-Petal \
-		${SITE_PERL}/${PERL_ARCH}/Encode.pm:${PORTSDIR}/devel/p5-Encode
+		${SITE_PERL}/${PERL_ARCH}/Encode.pm:${PORTSDIR}/converters/p5-Encode
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 MAN3=	Petal::Mail.3
