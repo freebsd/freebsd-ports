@@ -1,0 +1,10 @@
+--- src/ftpd.c.orig	Fri Nov 30 01:56:11 2001
++++ src/ftpd.c	Wed May 24 16:21:21 2006
+@@ -6926,6 +6926,7 @@
+  */
+ 
+ #include <security/pam_appl.h>
++#define PAM_ESTABLISH_CRED 0x1
+ /* Static variables used to communicate between the conversation function
+  * and the server_login function
+  */
