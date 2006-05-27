@@ -9,14 +9,3 @@
  
  #if ZEND_DEBUG
  
-@@ -580,7 +580,9 @@
- 				if ((version = mmc_get_version(mmc TSRMLS_CC)) == NULL && !_mmc_open(mmc, error_string, errnum TSRMLS_CC)) {
- 					break;
- 				}
--				efree(version);
-+				if (version) {
-+					efree(version);
-+				}
- 				mmc->status = MMC_STATUS_CONNECTED;
- 			}
- 			return 1;
