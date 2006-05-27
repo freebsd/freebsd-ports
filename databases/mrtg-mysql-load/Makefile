@@ -8,7 +8,8 @@
 PORTNAME=	mrtg-mysql-load
 PORTVERSION=	1.02
 CATEGORIES=	databases net-mgmt
-MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
+MASTER_SITES=	http://www.bitbybit.dk/mysql/mrtg-mysql-load/ \
+		http://freebsd.unixfreunde.de/sources/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A MySQL load analysis fetcher for MRTG
