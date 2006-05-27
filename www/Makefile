@@ -684,6 +684,7 @@
     SUBDIR += p5-PodToHTML
     SUBDIR += p5-RTx-Statistics
     SUBDIR += p5-SRU
+    SUBDIR += p5-SWF-Chart
     SUBDIR += p5-Sledge
     SUBDIR += p5-Sledge-Plugin-CacheContent
     SUBDIR += p5-Sledge-Plugin-Download
