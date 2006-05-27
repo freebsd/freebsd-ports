@@ -14,6 +14,7 @@
     SUBDIR += cingb
     SUBDIR += cpmemu
     SUBDIR += cpmtools
+    SUBDIR += cygne-sdl
     SUBDIR += darcnes
     SUBDIR += dgen-sdl
     SUBDIR += dlx
