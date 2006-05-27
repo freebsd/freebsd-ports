@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	shaun@inerd.com
-COMMENT=	A Qt-based Jabber client
+COMMENT?=	A Qt-based Jabber client
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 LIB_DEPENDS=	qca.1:${PORTSDIR}/devel/qca
@@ -36,6 +36,16 @@ MAKE_ARGS+=	QTDIR=${X11BASE} \
 
 PORTDOCS=	README ChangeLog
 
+OPTIONS?=	GENTOO_EXTRAS "Build with unofficial Gentoo patches"	off
+
+PLIST_SUB=	GENTOO="@comment "
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_GENTOO_EXTRAS)
+.	include "Makefile.gentoo"
+.endif
+
 post-install:
 	${STRIP_CMD} ${PREFIX}/bin/psi
 .if !defined(NOPORTDOCS)
@@ -45,4 +55,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
