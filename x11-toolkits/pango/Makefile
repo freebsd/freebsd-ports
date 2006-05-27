@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	pango
-PORTVERSION=	1.12.2
+PORTVERSION=	1.12.3
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,sources/${PORTNAME}/1.12,} \
 		ftp://ftp.gtk.org/pub/gtk/v2.10/
@@ -20,8 +20,6 @@ USE_BZIP2=	yes
 PREFIX?=	${X11BASE}
 
 .if !defined(REFERENCE_PORT)
-
-PORTREVISION=	2
 
 BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2
 LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo
