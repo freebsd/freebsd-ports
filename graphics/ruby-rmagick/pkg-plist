@@ -68,6 +68,7 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/constants.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/contrast.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/crop.rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/crop_resized.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/crop_with_gravity.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/css/.rmagick
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/css/doc.css
@@ -339,6 +340,8 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/tspan03.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/unsharp_mask.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/viewex.rb
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/vignette.jpg
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/vignette.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/wave.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/writing_mode01.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/writing_mode02.rb
@@ -483,6 +486,8 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/crop_with_gravity.miff
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/crop_after.jpg
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/crop_before.jpg
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/crop_resized.jpg
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/crop_resized.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/contrast.jpg
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/composite.gif
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/colors.gif
@@ -677,6 +682,7 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/unsharp_mask.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/usage.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/viewex.rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/vignette.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/wave.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/writing_mode01.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/writing_mode02.rb.html
@@ -692,9 +698,8 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/import_export.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/pattern_fill.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rotating_text.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/spinner.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/thumbnail.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/vignette.rb
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
 @dirrm %%RUBY_SITELIBDIR%%/rvg
-
-
