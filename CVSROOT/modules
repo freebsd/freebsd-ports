@@ -4021,6 +4021,7 @@ hu-koffice-i18n	ports/hungarian/koffice-i18n
 huc		ports/lang/huc
 hugelatex	ports/print/hugelatex
 hugin		ports/graphics/hugin
+hugo		ports/emulators/hugo
 hugs		ports/lang/hugs
 hulgalugha	ports/misc/hulgalugha
 hunch		ports/security/hunch
