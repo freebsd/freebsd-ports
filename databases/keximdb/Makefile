@@ -5,10 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=		keximdb
-PORTVERSION=		1.0
+PORTVERSION=		1.0.1
 CATEGORIES=		databases
-MASTER_SITES=		${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/apps/KDE3.x/database
+MASTER_SITES=		http://martin.ellis.name/koffice/
 
 MAINTAINER=		kde@FreeBSD.org
 COMMENT=		MS Access import plugin for Kexi
