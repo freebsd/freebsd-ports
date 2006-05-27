@@ -8,6 +8,7 @@
 
 PORTNAME=	dovecot
 DISTVERSION=	1.0.beta8
+PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://www.dovecot.org/releases/
 
