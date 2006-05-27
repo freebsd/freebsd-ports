@@ -198,7 +198,7 @@ CONFIGURE_ARGS+=	--without-wmf
 
 # SVG (Scalable Vector Graphics) images and MSL (Magick Scripting Language)
 # both require XML
-.if !defined(WITHOUT_IMAGEMAGICK_SVG) || !defined(WITHOUT_IMAGEMAGICK_MSL)
+.if defined(WITH_IMAGEMAGICK_SVG) || !defined(WITHOUT_IMAGEMAGICK_MSL)
 USE_GNOME+=		libxml2
 CONFIGURE_ARGS+=	--with-xml
 .else
