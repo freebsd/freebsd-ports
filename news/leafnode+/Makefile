@@ -9,7 +9,8 @@ PORTNAME=	leafnode+
 PORTVERSION=	2.15
 PORTREVISION=	1
 CATEGORIES=	news ipv6
-MASTER_SITES=	http://mirror2.unixfreunde.de/ \
+MASTER_SITES=	http://www25.big.jp/~jam/leafnode+/ \
+		http://mirror2.unixfreunde.de/ \
 		http://freebsd.unixfreunde.de/sources/
 
 MAINTAINER=	ports@FreeBSD.org

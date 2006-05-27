@@ -13,3 +13,5 @@ directory required to run Leafnode+, typically PREFIX/lib/leafnode and
 NOTE: This software contains a number of data-loss bugs and does not
 appear to be actively maintained.  For new installations, the
 news/leafnode port is likely to serve your needs better.
+
+WWW: http://www25.big.jp/~jam/leafnode+/
