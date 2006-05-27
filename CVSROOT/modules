@@ -10842,6 +10842,7 @@ psgml-emacs19	ports/editors/psgml-emacs19
 psgml-emacs20	ports/editors/psgml-emacs20
 psgml-mule	ports/editors/psgml-mule
 psi		ports/net-im/psi
+psi-gentoo	ports/net-im/psi-gentoo
 psi3		ports/science/psi3
 psi88		ports/biology/psi88
 psiconv		ports/converters/psiconv
