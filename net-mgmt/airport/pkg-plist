@@ -9,6 +9,7 @@ bin/airmodem
 %%DATADIR%%/HostMonitor.jar
 %%DATADIR%%/LinkMonitor.jar
 %%DATADIR%%/AirportModemUtility.jar
+@dirrm %%DATADIR%%
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/helpdocs/ReadMe.txt
