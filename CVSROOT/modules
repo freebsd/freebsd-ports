@@ -14497,6 +14497,7 @@ xpi-tablesort	ports/www/xpi-tablesort
 xpi-tabmixplus	ports/www/xpi-tabmixplus
 xpi-togglewordwrap	ports/www/xpi-togglewordwrap
 xpi-unplug	ports/www/xpi-unplug
+xpi-urllink	ports/www/xpi-urllink
 xpi-videodownloader	ports/www/xpi-videodownloader
 xpi-web_developer	ports/www/xpi-web_developer
 xpilot		ports/games/xpilot
