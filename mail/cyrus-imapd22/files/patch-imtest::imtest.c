@@ -21,3 +21,16 @@ diff -u imtest/imtest.c.orig imtest/imtest.c
  /*
   * This is the setup routine for the SSL client. 
   *
+@@ -886,6 +886,12 @@
+     }
+     
+     if (*str != '\r') {
++	/* trim CRLF */
++	char *p = str + strlen(str) - 1;
++	if (p >= str && *p == '\n') *p-- = '\0';
++	if (p >= str && *p == '\r') *p-- = '\0';
++
++	/* alloc space for decoded response */
+ 	len = strlen(str) + 1;
+ 	*line = malloc(len);
+ 	if ((*line) == NULL) {
