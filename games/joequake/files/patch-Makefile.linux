@@ -15,7 +15,7 @@
 +#_E 		:= @
 +LOCALBASE 	?= /usr/local
 +X11BASE 	?= /usr/X11R6
-+USE_OPTIMIZE 	?= YES
++USE_OPTIMIZED_CFLAGS 	?= YES
  
 -default_target: glx
 +ifeq ($(ARCH),i386)
@@ -42,7 +42,7 @@
 -	-I/usr/include
 +CFLAGS += -DNDEBUG -DDATADIR='"$(Q1DIR)"'
 +
-+ifeq ($(strip $(USE_OPTIMIZE)),YES)
++ifeq ($(strip $(USE_OPTIMIZED_CFLAGS)),YES)
 +CFLAGS += -O1 -funsigned-char -funroll-loops -fomit-frame-pointer \
 +	  -ffast-math -fno-strength-reduce -fexpensive-optimizations
 +endif
