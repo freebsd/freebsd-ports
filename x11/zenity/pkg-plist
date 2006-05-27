@@ -151,7 +151,10 @@ share/locale/uk/LC_MESSAGES/zenity-0.1.mo
 share/locale/vi/LC_MESSAGES/zenity-0.1.mo
 share/locale/xh/LC_MESSAGES/zenity-0.1.mo
 share/locale/zh_CN/LC_MESSAGES/zenity-0.1.mo
+share/locale/zh_HK/LC_MESSAGES/zenity-0.1.mo
 share/locale/zh_TW/LC_MESSAGES/zenity-0.1.mo
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/ug/LC_MESSAGES
 @dirrmtry share/locale/ug
 @dirrmtry share/locale/ku/LC_MESSAGES
