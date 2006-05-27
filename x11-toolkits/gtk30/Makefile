@@ -7,7 +7,8 @@
 #
 
 PORTNAME=	gtk
-PORTVERSION=	2.8.17
+PORTVERSION=	2.8.18
+PORTREVISION?=	0
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,sources/gtk+/2.8,} \
 		ftp://ftp.gtk.org/pub/gtk/v2.8/ \
@@ -29,8 +30,6 @@ PREFIX?=	${X11BASE}
 
 .if !defined(REFERENCE_PORT)
 
-PORTREVISION=	1
-
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
@@ -41,7 +40,7 @@ USE_XLIB=	yes
 USE_XPM=	yes
 USE_PERL5=	yes
 INSTALLS_SHLIB=	yes
-USE_AUTOTOOLS=  libtool:15
+USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnomehack atk pango ltverhack
 USE_GETTEXT=	yes
 CONFIGURE_ARGS=	--enable-static --with-xinput=yes
