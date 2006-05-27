@@ -2297,3 +2297,5 @@ astro/boinc-setiathome-naparst|astro/boinc-setiathome-enhanced|2006-05-22|projec
 audio/mutagen|audio/py-mutagen|2006-05-24|correctly rename python library
 www/preferential-firefox|www/xpi-preferential|2006-05-25|Preferential is not limited to Firefox
 x11/xfedor||2006-05-26|Has expired: old, old, old, unmaintained, no usable MASTER_SITES
+devel/p5-Encode|converters/p5-Encode|2006-05-27|Move to better category
+devel/p5-Encode-compat|converters/p5-Encode-compat|2006-05-27|Move to better category

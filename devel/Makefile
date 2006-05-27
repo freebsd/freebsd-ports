@@ -945,8 +945,6 @@
     SUBDIR += p5-Devel-TraceCalls
     SUBDIR += p5-Devel-ptkdb
     SUBDIR += p5-Dialog
-    SUBDIR += p5-Encode
-    SUBDIR += p5-Encode-compat
     SUBDIR += p5-Env-PS1
     SUBDIR += p5-Errno
     SUBDIR += p5-Event

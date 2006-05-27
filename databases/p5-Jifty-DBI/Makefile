@@ -70,8 +70,8 @@ IGNORE=		requires perl 5.8.3 or later. Install lang/perl5.8 and try again
 .endif
 
 .if ${PERL_LEVEL} < 500807
-BUILD_DEPENDS+=	p5-Encode>=2.10:${PORTSDIR}/devel/p5-Encode
-RUN_DEPENDS+=	p5-Encode>=2.10:${PORTSDIR}/devel/p5-Encode
+BUILD_DEPENDS+=	p5-Encode>=2.10:${PORTSDIR}/converters/p5-Encode
+RUN_DEPENDS+=	p5-Encode>=2.10:${PORTSDIR}/converters/p5-Encode
 .endif
 
 .include <bsd.port.post.mk>
