@@ -171,6 +171,7 @@
     SUBDIR += p5-Math-BigInt
     SUBDIR += p5-Math-BigRat
     SUBDIR += p5-Math-Calc-Units
+    SUBDIR += p5-Math-Cephes
     SUBDIR += p5-Math-Combinatorics
     SUBDIR += p5-Math-ConvexHull
     SUBDIR += p5-Math-Currency
