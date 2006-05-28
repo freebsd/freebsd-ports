@@ -120,9 +120,9 @@
     SUBDIR += gnome-icon-theme
     SUBDIR += gnome-mime-data
     SUBDIR += gnome-osd
+    SUBDIR += gnome-user-docs
     SUBDIR += gnomehier
     SUBDIR += gnomesword
-    SUBDIR += gnomeuserdocs2
     SUBDIR += gnu-watch
     SUBDIR += gnuls
     SUBDIR += gnustep-examples
