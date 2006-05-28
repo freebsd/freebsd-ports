@@ -14,7 +14,21 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	r.c.ladan@gmail.com
 COMMENT=	Library giving userland programs access to USB devices
 
+OPTIONS=	SGML "Install developer guide from SGML" off
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_SGML)
+BUILD_DEPENDS+=	${LOCALBASE}/share/sgml/jade/catalog:${PORTSDIR}/textproc/jade \
+		${LOCALBASE}/share/sgml/docbook/dsssl/modular/catalog:${PORTSDIR}/textproc/dsssl-docbook-modular \
+		${LOCALBASE}/share/sgml/docbook/catalog:${PORTSDIR}/textproc/docbook
+MAKE_ENV+=	SGML_CATALOG_FILES=${LOCALBASE}/share/sgml/jade/catalog:${LOCALBASE}/share/sgml/docbook/dsssl/modular/catalog:${LOCALBASE}/share/sgml/docbook/catalog:${LOCALBASE}/share/sgml/docbook/4.2/catalog
+PLIST_SUB=	SGML=""
+.else
 CONFIGURE_ARGS=	--disable-build-docs
+PLIST_SUB=	SGML="@comment "
+.endif
+
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 
@@ -22,4 +36,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|{libdir}/pkgconfig|{prefix}/libdata/pkgconfig|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|<stdint.h>|<inttypes.h>|' ${WRKSRC}/descriptors.c
 
-.include <bsd.port.mk>
+post-install:
+.if defined(WITH_SGML)
+	@${MKDIR} ${DOCSDIR}/html
+	@${INSTALL_DATA} ${WRKSRC}/doc/html/* ${DOCSDIR}/html
+.endif
+
+.include <bsd.port.post.mk>
