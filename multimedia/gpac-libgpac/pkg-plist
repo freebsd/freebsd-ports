@@ -56,6 +56,7 @@ include/gpac/utf.h
 include/gpac/xml.h
 include/gpac/yuv.h
 lib/libgpac.so
+lib/libgpac.so.1
 lib/libgpac_static.a
 @dirrm include/gpac/modules
 @dirrm include/gpac/internal

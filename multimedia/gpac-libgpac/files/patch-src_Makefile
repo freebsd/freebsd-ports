@@ -1,0 +1,19 @@
+--- src/Makefile.orig	Mon Aug  1 16:43:11 2005
++++ src/Makefile	Sun May 28 18:40:47 2006
+@@ -24,7 +24,7 @@
+ endif
+ 
+ 
+-LIB=libgpac.$(DYN_LIB_SUFFIX)
++LIB=libgpac.$(DYN_LIB_SUFFIX).1
+ ifeq ($(CONFIG_WIN32),yes)
+ LDFLAGS+=-export-symbols libgpac.def
+ else
+@@ -33,6 +33,7 @@
+ endif
+ EXTRALIBS+=$(GPAC_SH_FLAGS)
+ endif
++EXTRALIBS+=-Wl,-soname,$(LIB)
+ 
+ all: lib
+ 
