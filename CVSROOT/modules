@@ -3226,6 +3226,7 @@ gnome-crash	ports/devel/gnome-crash
 gnome-cups-manager	ports/print/gnome-cups-manager
 gnome-db	ports/databases/gnome-db
 gnome-font-sampler	ports/x11-fonts/gnome-font-sampler
+gnome-games	ports/games/gnome-games
 gnome-icon-theme	ports/misc/gnome-icon-theme
 gnome-icons	ports/x11-themes/gnome-icons
 gnome-icons-aqua-fusion	ports/x11-themes/gnome-icons-aqua-fusion
@@ -3291,7 +3292,6 @@ gnomedesktop	ports/x11/gnomedesktop
 gnomedesktop-reference	ports/x11/gnomedesktop-reference
 gnomedocutils	ports/textproc/gnomedocutils
 gnomefind	ports/sysutils/gnomefind
-gnomegames2	ports/games/gnomegames2
 gnomegames2-extra-data	ports/games/gnomegames2-extra-data
 gnomehier	ports/misc/gnomehier
 gnomeiconedit	ports/graphics/gnomeiconedit

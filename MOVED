@@ -2313,3 +2313,4 @@ devel/libgtop2|devel/libgtop|2006-05-27|Renamed to use real vendor package name
 devel/pkgconfig|devel/pkg-config|2006-05-27|Renamed to use real vendor package name
 devel/py-orbit2|devel/py-orbit|2006-05-28|Renamed to use real vendor package name
 games/gcompris2|games/gcompris|2006-05-28|Renamed to use real vendor package name
+games/gnomegames2|games/gnome-games|2006-05-28|Renamed to use real vendor package name
