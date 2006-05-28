@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	ion-3ds
-PORTVERSION=	20060326
+PORTVERSION=	20060524
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://modeemi.fi/~tuomov/ion/dl/
 
 MAINTAINER=	ed@fxq.nl
 COMMENT=	The development version of the Ion window manager
 
-LIB_DEPENDS=	lua.5:${PORTSDIR}/lang/lua50
+BUILD_DEPENDS=	${LOCALBASE}/include/lua.hpp:${PORTSDIR}/lang/lua
 RUN_DEPENDS=	run-mailcap:${PORTSDIR}/misc/mime-support
 
 CONFLICTS=	ion-2002* pwm-[0-9]* ion-2*
