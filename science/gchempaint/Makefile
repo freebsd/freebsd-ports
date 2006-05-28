@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	pav@FreeBSD.org
 COMMENT=	2D chemical structures editor for GNOME 2
 
-BUILD_DEPENDS=	gnome-doc-prepare:${PORTSDIR}/textproc/gnomedocutils
+BUILD_DEPENDS=	gnome-doc-prepare:${PORTSDIR}/textproc/gnome-doc-utils
 LIB_DEPENDS=	gcu.6:${PORTSDIR}/science/gchemutils
 
 USE_BZIP2=	yes
