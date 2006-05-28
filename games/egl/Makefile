@@ -9,7 +9,7 @@ PORTNAME=	egl
 PORTVERSION=	0.2.5
 CATEGORIES=	games
 MASTER_SITES=	http://egl.quakedev.com/files/:src \
-		ftp://ftp.alepulver.com.ar/ports/egl/:data
+		ftp://ftp.alepulver.com.ar/distfiles/:data
 DISTNAME=	${PORTNAME}-v${PORTVERSION}-src
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:src \
 		egl.pkz:data
