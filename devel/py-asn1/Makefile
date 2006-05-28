@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	asn1
-PORTVERSION=	0.0.4a
+PORTVERSION=	0.0.5a
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	py${PORTNAME}
@@ -30,6 +30,7 @@ BASEDOCS=	CHANGES \
 DOCDOCS=	notes.html
 
 EXAMPLE_FILES=	snmp.py \
+		sshkey.py \
 		x509.py
 
 post-install:
