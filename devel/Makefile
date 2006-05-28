@@ -505,7 +505,7 @@
     SUBDIR += libgnugetopt
     SUBDIR += libgsf
     SUBDIR += libgsf-gnome
-    SUBDIR += libgtop2
+    SUBDIR += libgtop
     SUBDIR += libgutenfetch
     SUBDIR += libhash
     SUBDIR += libhoard
