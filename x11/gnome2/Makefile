@@ -31,7 +31,7 @@ RUN_DEPENDS?=	${X11BASE}/libexec/gweather-applet-2:${PORTSDIR}/x11/gnomeapplets2
 		nautilus:${PORTSDIR}/x11-fm/nautilus2 \
 		yelp:${PORTSDIR}/x11/yelp \
 		${X11BASE}/sbin/gdm:${PORTSDIR}/x11/gdm \
-		${X11BASE}/share/gnome/help/user-guide/C/user-guide.xml:${PORTSDIR}/misc/gnomeuserdocs2 \
+		${X11BASE}/share/gnome/help/user-guide/C/user-guide.xml:${PORTSDIR}/misc/gnome-user-docs \
 		${X11BASE}/share/gnome/sounds/question.wav:${PORTSDIR}/audio/gnome-audio \
 		${X11BASE}/libdata/pkgconfig/libgail-gnome.pc:${PORTSDIR}/x11-toolkits/libgail-gnome \
 		file-roller:${PORTSDIR}/archivers/file-roller \

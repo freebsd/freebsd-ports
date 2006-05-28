@@ -6,7 +6,7 @@
 #   $MCom: ports/misc/gnomeuserdocs2/Makefile,v 1.25 2006/04/13 07:52:36 bland Exp $
 #
 
-PORTNAME=	gnomeuserdocs2
+PORTNAME=	gnome-user-docs
 PORTVERSION=	2.14.2
 CATEGORIES=	misc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
