@@ -2315,3 +2315,4 @@ devel/py-orbit2|devel/py-orbit|2006-05-28|Renamed to use real vendor package nam
 games/gcompris2|games/gcompris|2006-05-28|Renamed to use real vendor package name
 games/gnomegames2|games/gnome-games|2006-05-28|Renamed to use real vendor package name
 irc/xchat2|irc/xchat|2006-05-28|Use unversioned name for latest version
+misc/gnomemimedata|misc/gnome-mime-data|2006-05-28|Renamed to use real vendor package name

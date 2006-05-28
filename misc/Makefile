@@ -118,9 +118,9 @@
     SUBDIR += gkx86info2
     SUBDIR += gman
     SUBDIR += gnome-icon-theme
+    SUBDIR += gnome-mime-data
     SUBDIR += gnome-osd
     SUBDIR += gnomehier
-    SUBDIR += gnomemimedata
     SUBDIR += gnomesword
     SUBDIR += gnomeuserdocs2
     SUBDIR += gnu-watch
