@@ -38,7 +38,7 @@ INFO=		gjdoc
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != "i386"
-BROKEN=		Broken dependency
+BROKEN=		Broken dependency (JAVA is not enabled at lang/gcc41)
 .endif
 
 post-extract:
