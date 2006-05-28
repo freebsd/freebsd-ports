@@ -62,7 +62,7 @@
     SUBDIR += gnats
     SUBDIR += gnats4
     SUBDIR += gnatsweb4
-    SUBDIR += gnomedb
+    SUBDIR += gnome-db
     SUBDIR += gqlplus
     SUBDIR += grass
     SUBDIR += grass-i18n

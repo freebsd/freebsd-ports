@@ -1,8 +1,0 @@
-gnome-db can be considered as an extension of the libgda project.
-
-Its aims are the same: to provide universal data source access for
-client applications, as well as development tools and libraries
-for doing so. gnome-db; is an extension to libgda; because it adds
-support to the architecture for the GNOME project.
-
-WWW: http://www.gnome-db.org/
