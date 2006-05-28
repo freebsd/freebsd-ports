@@ -14,6 +14,8 @@ DESCR=	${.CURDIR}/pkg-descr
 
 WITH_JAVA_AWT=	yes
 
+.include <bsd.port.pre.mk>
+
 .if ${OSVERSION} >= 600105
 BROKEN=	Does not compile on FreeBSD >= 6.1
 .endif
