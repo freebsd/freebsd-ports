@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	xnecview
-PORTVERSION=	1.34
-PORTREVISION=	1
+PORTVERSION=	1.35
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://wwwhome.cs.utwente.nl/%7Eptdeboer/ham/xnecview/
 EXTRACT_SUFX=	.tgz
