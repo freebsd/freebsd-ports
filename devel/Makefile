@@ -338,9 +338,9 @@
     SUBDIR += gmake
     SUBDIR += gnome-build
     SUBDIR += gnome-common
+    SUBDIR += gnome-crash
     SUBDIR += gnome-vfsmm
     SUBDIR += gnome2-hacker-tools
-    SUBDIR += gnomecrash
     SUBDIR += gnomevfs
     SUBDIR += gnomevfs2
     SUBDIR += gnomevfs2-reference

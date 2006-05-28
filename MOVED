@@ -2311,3 +2311,4 @@ audio/gnomemedia2|audio/gnome-media|2006-05-27|Renamed to use real vendor packag
 databases/gnomedb|databases/gnome-db|2006-05-27|Renamed to use real vendor package name
 deskutils/gnomeutils2|deskutils/gnome-utils|2006-05-27|Renamed to use real vendor package name
 devel/bugbuddy|devel/bug-buddy|2006-05-27|Renamed to use real vendor package name
+devel/gnomecrash|devel/gnome-crash|2006-05-27|Renamed to use real vendor package name
