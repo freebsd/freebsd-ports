@@ -22,7 +22,7 @@ PREFIX?=	${X11BASE}
 
 PORTREVISION=	1
 
-LIB_DEPENDS+=	gnome-keyring.0:${PORTSDIR}/security/gnomekeyring \
+LIB_DEPENDS+=	gnome-keyring.0:${PORTSDIR}/security/gnome-keyring \
 		startup-notification-1.0:${PORTSDIR}/x11/startup-notification
 RUN_DEPENDS=	${X11BASE}/share/icons/gnome/index.theme:${PORTSDIR}/misc/gnome-icon-theme
 

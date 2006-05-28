@@ -3,10 +3,9 @@
 # Whom:					Adam Weinberger <adamw@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/security/gnomekeyringmanager/Makefile,v 1.19 2006/04/13 07:52:37 bland Exp $
 #
 
-PORTNAME=	gnomekeyringmanager
+PORTNAME=	gnome-keyring-manager
 PORTVERSION=	2.14.0
 CATEGORIES=	security gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
@@ -17,7 +16,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME keyring manager
 
-LIB_DEPENDS=	gnome-keyring:${PORTSDIR}/security/gnomekeyring
+LIB_DEPENDS=	gnome-keyring:${PORTSDIR}/security/gnome-keyring
 
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes

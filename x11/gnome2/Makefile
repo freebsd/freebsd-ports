@@ -57,7 +57,7 @@ RUN_DEPENDS?=	${X11BASE}/libexec/gweather-applet-2:${PORTSDIR}/x11/gnomeapplets2
 		gnome-control-center:${PORTSDIR}/sysutils/gnomecontrolcenter2 \
 		${X11BASE}/share/gnome/gnome-background-properties/gnome-branded.xml:${PORTSDIR}/x11-themes/gnome-backgrounds \
 		sound-juicer:${PORTSDIR}/audio/sound-juicer \
-		gnome-keyring-manager:${PORTSDIR}/security/gnomekeyringmanager \
+		gnome-keyring-manager:${PORTSDIR}/security/gnome-keyring-manager \
 		${X11BASE}/libdata/pkgconfig/libgtkhtml-2.0.pc:${PORTSDIR}/www/libgtkhtml \
 		evince:${PORTSDIR}/graphics/evince \
 		${X11BASE}/libexec/fast-user-switch-applet:${PORTSDIR}/x11/fast-user-switch-applet \

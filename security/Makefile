@@ -135,10 +135,10 @@
     SUBDIR += gaim-encryption
     SUBDIR += gaim-otr
     SUBDIR += gcipher
+    SUBDIR += gnome-keyring
+    SUBDIR += gnome-keyring-manager
     SUBDIR += gnome-password-generator
     SUBDIR += gnome-ssh-askpass
-    SUBDIR += gnomekeyring
-    SUBDIR += gnomekeyringmanager
     SUBDIR += gnu-crypto
     SUBDIR += gnupg
     SUBDIR += gnupg-devel
