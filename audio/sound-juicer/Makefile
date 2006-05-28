@@ -17,7 +17,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Clean, mean and lean CD ripper for GNOME2
 
 LIB_DEPENDS=	musicbrainz.4:${PORTSDIR}/audio/libmusicbrainz \
-		gnome-media-profiles.0:${PORTSDIR}/audio/gnomemedia2 \
+		gnome-media-profiles.0:${PORTSDIR}/audio/gnome-media \
 		cdio.7:${PORTSDIR}/sysutils/libcdio
 
 USE_BZIP2=	yes
