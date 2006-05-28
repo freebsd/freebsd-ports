@@ -1,12 +1,12 @@
 # New ports collection makefile for:	pychm
-# Date created:                		25 November 2004
-# Whom:                    		Radek Kozlowski <radek@raadradd.com>
+# Date created:				25 November 2004
+# Whom:					Radek Kozlowski <radek@raadradd.com>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	pychm
-PORTVERSION=	0.8.2
+PORTVERSION=	0.8.3
 CATEGORIES=	textproc python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gnochm
@@ -20,6 +20,6 @@ NO_BUILD=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_INSTALLARGS=	build_ext -I${LOCALBASE}/include -L${LOCALBASE}/lib \
-			 	install -c -O1 --prefix=${PREFIX}
+				install -c -O1 --prefix=${PREFIX}
 
 .include <bsd.port.mk>
