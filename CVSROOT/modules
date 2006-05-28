@@ -940,7 +940,7 @@ bubbros		ports/games/bubbros
 buddy		ports/science/buddy
 buffer		ports/misc/buffer
 buffy		ports/x11-themes/buffy
-bugbuddy	ports/devel/bugbuddy
+bug-buddy	ports/devel/bug-buddy
 bugle		ports/graphics/bugle
 bugmenot	ports/www/bugmenot
 bugmenot-firefox	ports/www/bugmenot-firefox
