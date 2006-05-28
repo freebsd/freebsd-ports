@@ -19,7 +19,7 @@ RUN_DEPENDS=	${X11BASE}/lib/epiphany/2.14/extensions/libgesturesextension.so:${P
 		splashsetter:${PORTSDIR}/deskutils/splashsetter \
 		gdesklets:${PORTSDIR}/deskutils/gdesklets \
 		cog:${PORTSDIR}/sysutils/cog \
-		gnome-blog-poster:${PORTSDIR}/deskutils/gnomeblog \
+		gnome-blog-poster:${PORTSDIR}/deskutils/gnome-blog \
 		gnomesu:${PORTSDIR}/security/libgnomesu \
 		bpm:${PORTSDIR}/sysutils/bpm \
 		gnome-file-share-properties:${PORTSDIR}/www/gnome-user-share \
