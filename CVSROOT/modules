@@ -3278,6 +3278,7 @@ gnome-pkgview	ports/sysutils/gnome-pkgview
 gnome-print	ports/print/gnome-print
 gnome-schedule	ports/sysutils/gnome-schedule
 gnome-screensaver	ports/x11/gnome-screensaver
+gnome-session	ports/x11/gnome-session
 gnome-speech	ports/accessibility/gnome-speech
 gnome-spell	ports/textproc/gnome-spell
 gnome-splashscreen-manager	ports/x11-themes/gnome-splashscreen-manager
@@ -3321,7 +3322,6 @@ gnomemm		ports/x11-toolkits/gnomemm
 gnomephotoprinter	ports/print/gnomephotoprinter
 gnomepm		ports/finance/gnomepm
 gnomermind	ports/games/gnomermind
-gnomesession	ports/x11/gnomesession
 gnomesu		ports/sysutils/gnomesu
 gnomesudoku	ports/games/gnomesudoku
 gnomesword	ports/misc/gnomesword
