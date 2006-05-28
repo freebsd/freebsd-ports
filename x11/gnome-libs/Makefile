@@ -5,13 +5,12 @@
 # $FreeBSD$
 #
 
-PORTNAME=	gnomelibs
+PORTNAME=	gnome-libs
 PORTVERSION=	1.4.2
 PORTREVISION=	4
 CATEGORIES?=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-libs/1.4
-DISTNAME=	gnome-libs-${PORTVERSION}
 DIST_SUBDIR=	gnome
 
 MAINTAINER?=	gnome@FreeBSD.org

@@ -65,6 +65,7 @@
     SUBDIR += gnome-desktop
     SUBDIR += gnome-desktop-reference
     SUBDIR += gnome-launch-box
+    SUBDIR += gnome-libs
     SUBDIR += gnome-menus
     SUBDIR += gnome-screensaver
     SUBDIR += gnome-swallow
@@ -72,7 +73,6 @@
     SUBDIR += gnome2-fifth-toe
     SUBDIR += gnome2-lite
     SUBDIR += gnome2-power-tools
-    SUBDIR += gnomelibs
     SUBDIR += gnomepanel
     SUBDIR += gnomepanel-reference
     SUBDIR += gnomesession
