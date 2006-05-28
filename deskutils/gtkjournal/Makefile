@@ -17,7 +17,7 @@ COMMENT=	Gtk+-2 journal/diary
 
 LIB_DEPENDS=	gtkmm-2.0:${PORTSDIR}/x11-toolkits/gtk--2 \
 		sqlite.2:${PORTSDIR}/databases/sqlite2 \
-		gtkspell:${PORTSDIR}/textproc/gtkspell2
+		gtkspell:${PORTSDIR}/textproc/gtkspell
 
 USE_X_PREFIX=	yes
 USE_OPENSSL=	yes

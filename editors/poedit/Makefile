@@ -17,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gettext catalogs (.po files) editor
 
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
-LIB_DEPENDS=	gtkspell.0:${PORTSDIR}/textproc/gtkspell2	\
+LIB_DEPENDS=	gtkspell.0:${PORTSDIR}/textproc/gtkspell \
 		db${LIB_SUFFIX}:${PORTSDIR}/databases/db${WITH_BDB_VER}
 
 USE_X_PREFIX=	yes

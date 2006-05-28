@@ -83,7 +83,7 @@ CONFIGURE_ARGS+=--disable-ldap
 .endif
 
 .if defined(WITH_GTKSPELL)
-LIB_DEPENDS+=	gtkspell.0:${PORTSDIR}/textproc/gtkspell2
+LIB_DEPENDS+=	gtkspell.0:${PORTSDIR}/textproc/gtkspell
 CONFIGURE_ARGS+=--enable-gtkspell
 .else
 CONFIGURE_ARGS+=--disable-gtkspell

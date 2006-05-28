@@ -108,7 +108,7 @@ PLIST_SUB+=	DOCKAPP:="@comment "
 .endif
 
 .if defined(WITH_GTKSPELL)
-LIB_DEPENDS+=	gtkspell.0:${PORTSDIR}/textproc/gtkspell2
+LIB_DEPENDS+=	gtkspell.0:${PORTSDIR}/textproc/gtkspell
 CONFIGURE_ARGS+=	--with-gtkspell
 .else
 CONFIGURE_ARGS+=	--without-gtkspell

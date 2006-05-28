@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.gajim.org/downloads/
 MAINTAINER=	stephan@spaceboyz.net
 COMMENT=	Gajim is a Jabber client based on a plugin system
 
-LIB_DEPENDS=	gtkspell.0:${PORTSDIR}/textproc/gtkspell2
+LIB_DEPENDS=	gtkspell.0:${PORTSDIR}/textproc/gtkspell
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pysqlite2/__init__.py:${PORTSDIR}/databases/py-pysqlite21
 
 PATCH_DIST_STRIP=-p1

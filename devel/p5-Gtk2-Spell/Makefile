@@ -18,7 +18,7 @@ COMMENT=	Perl interface to the Gtk2Spell library
 BUILD_DEPENDS=	${SITE_PERL}/ExtUtils/Depends.pm:${PORTSDIR}/devel/p5-ExtUtils-Depends \
 		${SITE_PERL}/ExtUtils/PkgConfig.pm:${PORTSDIR}/devel/p5-ExtUtils-PkgConfig \
 		${SITE_PERL}/${PERL_ARCH}/Gtk2.pm:${PORTSDIR}/x11-toolkits/p5-Gtk2
-LIB_DEPENDS=	gtkspell.0:${PORTSDIR}/textproc/gtkspell2
+LIB_DEPENDS=	gtkspell.0:${PORTSDIR}/textproc/gtkspell
 
 PERL_CONFIGURE=	yes
 
