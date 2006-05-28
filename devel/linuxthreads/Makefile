@@ -211,7 +211,7 @@ pre-build:
 		${SETENV} ${MAKE_ENV} ${MAKE}
 .endif
 
-pre-install:
+pre-su-install:
 	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m 0755 ${PREFIX}/lib
 	@cd ${WRKSRC}/libgcc_r ; \
 		${SETENV} ${MAKE_ENV} ${MAKE} install
