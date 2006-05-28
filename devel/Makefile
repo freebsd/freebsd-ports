@@ -337,9 +337,9 @@
     SUBDIR += glui
     SUBDIR += gmake
     SUBDIR += gnome-build
+    SUBDIR += gnome-common
     SUBDIR += gnome-vfsmm
     SUBDIR += gnome2-hacker-tools
-    SUBDIR += gnomecommon
     SUBDIR += gnomecrash
     SUBDIR += gnomevfs
     SUBDIR += gnomevfs2

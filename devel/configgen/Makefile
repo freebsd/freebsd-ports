@@ -28,7 +28,7 @@ RUN_DEPENDS+=	libtool:${PORTSDIR}/devel/libtool15
 .for tool in autoconf automake
 RUN_DEPENDS+=	${LOCALBASE}/gnu-autotools/bin/${tool}:${PORTSDIR}/devel/gnu-${tool}
 .endfor
-RUN_DEPENDS+=	gnome-autogen.sh:${PORTSDIR}/devel/gnomecommon
+RUN_DEPENDS+=	gnome-autogen.sh:${PORTSDIR}/devel/gnome-common
 .endif
 
 pre-everything::

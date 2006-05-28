@@ -14,8 +14,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	MrL0Lz@gmail.com
 COMMENT=	Alt-Tab replacement
 
-BUILD_DEPENDS=	gnome-autogen.sh:${PORTSDIR}/devel/gnomecommon
-RUN_DEPENDS=	gnome-autogen.sh:${PORTSDIR}/devel/gnomecommon
+BUILD_DEPENDS=	gnome-autogen.sh:${PORTSDIR}/devel/gnome-common
+RUN_DEPENDS=	gnome-autogen.sh:${PORTSDIR}/devel/gnome-common
 
 USE_GMAKE=	yes
 USE_GNOME=	gtk20 libwnck pango
