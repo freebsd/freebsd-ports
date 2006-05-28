@@ -1,6 +1,9 @@
 #include "pthread.h"
 #include <netdb.h>
 #include <string.h>
+#include <sys/param.h>
+
+#if __FreeBSD_version < 700016
 
 static pthread_mutex_t getprotoby_mutex = PTHREAD_MUTEX_INITIALIZER;
 
@@ -103,3 +106,5 @@ getprotoent_r (struct protoent *result, char *buffer, int buflen)
   pthread_mutex_unlock (&getprotoby_mutex);
   return result;
 }
+
+#endif /* #if __FreeBSD_version < 700016 */
