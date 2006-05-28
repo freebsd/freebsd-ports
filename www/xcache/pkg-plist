@@ -1,0 +1,11 @@
+lib/php/%%PHP_EXT_DIR%%/xcache.so
+@dirrmtry lib/php/%%PHP_EXT_DIR%%
+%%EXAMPLESDIR%%/admin/config.php.example
+%%EXAMPLESDIR%%/admin/index.php
+%%EXAMPLESDIR%%/admin/tablesort.js
+%%EXAMPLESDIR%%/admin/xcache.css
+%%EXAMPLESDIR%%/admin/xcache.php
+%%EXAMPLESDIR%%/admin/xcache.tpl.php
+%%EXAMPLESDIR%%/xcache.ini
+@dirrm %%EXAMPLESDIR%%/admin
+@dirrm %%EXAMPLESDIR%%
