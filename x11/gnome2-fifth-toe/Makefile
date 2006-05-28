@@ -16,7 +16,7 @@ RUN_DEPENDS=	pan:${PORTSDIR}/news/pan \
 		xchat:${PORTSDIR}/irc/xchat \
 		gimp-2.2:${PORTSDIR}/graphics/gimp \
 		sodipodi:${PORTSDIR}/graphics/sodipodi \
-		gnomeicu:${PORTSDIR}/net-im/gnomeicu2 \
+		gnomeicu:${PORTSDIR}/net-im/gnomeicu \
 		gthumb:${PORTSDIR}/graphics/gthumb \
 		${X11BASE}/lib/gaim/docklet.so:${PORTSDIR}/net-im/gaim \
 		tsclient:${PORTSDIR}/net/tsclient \

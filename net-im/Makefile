@@ -35,7 +35,7 @@
     SUBDIR += ginsu
     SUBDIR += gloox
     SUBDIR += gnome-jabber
-    SUBDIR += gnomeicu2
+    SUBDIR += gnomeicu
     SUBDIR += gossip
     SUBDIR += gtkyahoo
     SUBDIR += gyach
