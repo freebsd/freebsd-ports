@@ -3247,6 +3247,8 @@ gnome-icons-stylish	ports/x11-themes/gnome-icons-stylish
 gnome-icons-ximian-south	ports/x11-themes/gnome-icons-ximian-south
 gnome-industrial-theme	ports/x11-themes/gnome-industrial-theme
 gnome-jabber	ports/net-im/gnome-jabber
+gnome-keyring	ports/security/gnome-keyring
+gnome-keyring-manager	ports/security/gnome-keyring-manager
 gnome-launch-box	ports/x11/gnome-launch-box
 gnome-look	ports/x11-themes/gnome-look
 gnome-mag	ports/accessibility/gnome-mag
@@ -3303,8 +3305,6 @@ gnomefind	ports/sysutils/gnomefind
 gnomehier	ports/misc/gnomehier
 gnomeiconedit	ports/graphics/gnomeiconedit
 gnomeicu2	ports/net-im/gnomeicu2
-gnomekeyring	ports/security/gnomekeyring
-gnomekeyringmanager	ports/security/gnomekeyringmanager
 gnomekiss	ports/games/gnomekiss
 gnomelibs	ports/x11/gnomelibs
 gnomemeeting	ports/net/gnomemeeting
