@@ -210,7 +210,7 @@ libcapplet_LIB_DEPENDS=	capplet.5:${PORTSDIR}/x11/libcapplet
 libcapplet_DETECT=	${X11BASE}/etc/cappletConf.sh
 libcapplet_USE_GNOME_IMPL=gnomelibs
 
-gnomeprint_LIB_DEPENDS=	gnomeprint.16:${PORTSDIR}/print/gnomeprint
+gnomeprint_LIB_DEPENDS=	gnomeprint.16:${PORTSDIR}/print/gnome-print
 gnomeprint_DETECT=	${X11BASE}/etc/printConf.sh
 gnomeprint_USE_GNOME_IMPL=gnomelibs gnomecanvas
 

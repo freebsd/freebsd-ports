@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	gnomeprint
+PORTNAME=	gnome-print
 PORTVERSION=	0.37
 PORTREVISION=	2
 CATEGORIES=	print gnome

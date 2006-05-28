@@ -2321,3 +2321,4 @@ misc/gnomeuserdocs2|misc/gnome-user-docs|2006-05-28|Renamed to use real vendor p
 news/pan2|news/pan|2006-05-28|Use unversioned name
 palm/gnomepilot2|palm/gnome-pilot|2006-05-28|Renamed to use real vendor package name
 palm/gnomepilot-conduits2|palm/gnome-pilot-conduits|2006-05-28|Renamed to use real vendor package name
+print/gnomeprint|print/gnome-print|2006-05-28|Renamed to use real vendor package name

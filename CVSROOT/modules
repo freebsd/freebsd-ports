@@ -3262,6 +3262,7 @@ gnome-pilot	ports/palm/gnome-pilot
 gnome-pilot-conduits	ports/palm/gnome-pilot-conduits
 gnome-pim	ports/deskutils/gnome-pim
 gnome-pkgview	ports/sysutils/gnome-pkgview
+gnome-print	ports/print/gnome-print
 gnome-schedule	ports/sysutils/gnome-schedule
 gnome-screensaver	ports/x11/gnome-screensaver
 gnome-speech	ports/accessibility/gnome-speech
@@ -3313,7 +3314,6 @@ gnomepanel	ports/x11/gnomepanel
 gnomepanel-reference	ports/x11/gnomepanel-reference
 gnomephotoprinter	ports/print/gnomephotoprinter
 gnomepm		ports/finance/gnomepm
-gnomeprint	ports/print/gnomeprint
 gnomermind	ports/games/gnomermind
 gnomesession	ports/x11/gnomesession
 gnomespell	ports/textproc/gnomespell
