@@ -2305,3 +2305,4 @@ deskutils/gnomeblog|deskutils/gnome-blog|2006-05-27|Renamed to use real vendor p
 deskutils/gnomepim|deskutils/gnome-pim|2006-05-27|Renamed to use real vendor package name
 devel/gnomebuild|devel/gnome-build|2006-05-27|Renamed to use real vendor package name
 devel/gnomecommon|devel/gnome-common|2006-05-27|Renamed to use real vendor package name
+archivers/fileroller|archivers/file-roller|2006-05-27|Renamed to use real vendor package name
