@@ -50,7 +50,7 @@
     SUBDIR += gnochm
     SUBDIR += gnome-blog
     SUBDIR += gnome-menu-editor
-    SUBDIR += gnomepim
+    SUBDIR += gnome-pim
     SUBDIR += gnomeutils2
     SUBDIR += gnotime
     SUBDIR += goats
