@@ -12,7 +12,7 @@ PKGNAMESUFFIX=	-lite
 
 COMMENT=	The "meta-port" of the GNOME desktop slimmed down for FreeBSD releases
 
-RUN_DEPENDS=	${X11BASE}/libexec/gweather-applet-2:${PORTSDIR}/x11/gnomeapplets2 \
+RUN_DEPENDS=	${X11BASE}/libexec/gweather-applet-2:${PORTSDIR}/x11/gnome-applets \
 		gnome-cd:${PORTSDIR}/audio/gnome-media \
 	 	gnome-dictionary:${PORTSDIR}/deskutils/gnome-utils \
 		eog:${PORTSDIR}/graphics/eog \
