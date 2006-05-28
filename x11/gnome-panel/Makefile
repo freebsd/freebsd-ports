@@ -6,12 +6,11 @@
 #   $MCom: ports/x11/gnomepanel/Makefile,v 1.128 2006/04/13 07:52:40 bland Exp $
 #
 
-PORTNAME=	gnomepanel
+PORTNAME=	gnome-panel
 PORTVERSION=	2.14.1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-panel/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
-DISTNAME=	gnome-panel-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
