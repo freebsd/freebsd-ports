@@ -209,11 +209,11 @@
     SUBDIR += gnome-control-center1
     SUBDIR += gnome-pkgview
     SUBDIR += gnome-schedule
+    SUBDIR += gnome-system-monitor
+    SUBDIR += gnome-system-tools
     SUBDIR += gnomebaker
     SUBDIR += gnomefind
     SUBDIR += gnomesu
-    SUBDIR += gnomesystemmonitor
-    SUBDIR += gnomesystemtools
     SUBDIR += gpart
     SUBDIR += gpkgdep
     SUBDIR += gpte
