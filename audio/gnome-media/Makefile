@@ -6,12 +6,11 @@
 #   $MCom: ports/audio/gnomemedia2/Makefile,v 1.95 2006/04/13 07:52:30 bland Exp $
 #
 
-PORTNAME=	gnomemedia2
+PORTNAME=	gnome-media
 PORTVERSION=	2.14.0
 CATEGORIES=	audio gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-media/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
-DISTNAME=	gnome-media-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org

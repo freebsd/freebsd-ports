@@ -6,12 +6,11 @@
 #    $MCom: ports/devel/gnomecommon/Makefile,v 1.5 2005/09/20 09:39:51 ahze Exp $
 #
 
-PORTNAME=	gnomecommon
+PORTNAME=	gnome-common
 PORTVERSION=	2.12.0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-common/2.12
-DISTNAME=	gnome-common-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org

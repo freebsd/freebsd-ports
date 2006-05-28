@@ -6,13 +6,12 @@
 #   $MCom: ports/archivers/fileroller/Makefile,v 1.95 2006/04/18 18:52:18 ahze Exp $
 #
 
-PORTNAME=	fileroller
+PORTNAME=	file-roller
 PORTVERSION=	2.14.2
 PORTEPOCH=	1
 CATEGORIES=	archivers gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/file-roller/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
-DISTNAME=	file-roller-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org

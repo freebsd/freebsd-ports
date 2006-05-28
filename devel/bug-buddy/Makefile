@@ -6,12 +6,11 @@
 #   $MCom: ports/devel/bugbuddy/Makefile,v 1.29 2006/04/13 07:52:31 bland Exp $
 #
 
-PORTNAME=	bugbuddy
+PORTNAME=	bug-buddy
 PORTVERSION=	2.14.0
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/bug-buddy/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
-DISTNAME=	bug-buddy-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org

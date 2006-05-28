@@ -5,13 +5,11 @@
 # $FreeBSD$
 #
 
-PORTNAME=	gnomeaudio
+PORTNAME=	gnome-audio
 PORTVERSION=	2.0.0
 CATEGORIES=	audio gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-audio/2.0
-PKGNAMESUFFIX=	2
-DISTNAME=	gnome-audio-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Sound files for use with GNOME 2

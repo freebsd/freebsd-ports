@@ -6,14 +6,13 @@
 #   $MCom: ports/deskutils/gnomeutils2/Makefile,v 1.92 2006/04/19 04:46:41 marcus Exp $
 #
 
-PORTNAME=	gnomeutils2
+PORTNAME=	gnome-utils
 PORTVERSION=	2.14.0
 PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-utils/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
-DISTNAME=	gnome-utils-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org

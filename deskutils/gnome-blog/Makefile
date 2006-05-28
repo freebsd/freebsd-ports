@@ -5,13 +5,12 @@
 # $FreeBSD$
 #
 
-PORTNAME=	gnomeblog
+PORTNAME=	gnome-blog
 PORTVERSION=	0.8
 PORTREVISION=	2
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-blog/0.8
-DISTNAME=	gnome-blog-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME app to post to blogs

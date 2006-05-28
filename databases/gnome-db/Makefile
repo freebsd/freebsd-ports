@@ -5,13 +5,12 @@
 # $FreeBSD$
 #
 
-PORTNAME=	gnomedb
+PORTNAME=	gnome-db
 PORTVERSION=	0.2.96
 PORTREVISION=	4
 CATEGORIES=	databases gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-db/0.2
-DISTNAME=	gnome-db-${PORTVERSION}
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
