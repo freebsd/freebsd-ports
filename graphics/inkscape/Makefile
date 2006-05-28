@@ -18,7 +18,7 @@ COMMENT=	A program seeks to become a full featured open source SVG editor
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
 		gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24 \
 		gc.1:${PORTSDIR}/devel/boehm-gc \
-		gtkspell.0:${PORTSDIR}/textproc/gtkspell2
+		gtkspell.0:${PORTSDIR}/textproc/gtkspell
 RUN_DEPENDS=	${SITE_PERL}/XML/XQL.pm:${PORTSDIR}/textproc/p5-XML-XQL
 
 USE_BZIP2=	yes

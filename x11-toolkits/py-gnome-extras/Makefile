@@ -19,7 +19,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A set of Python bindings for GNOME 2
 
-LIB_DEPENDS=	gtkspell.0:${PORTSDIR}/textproc/gtkspell2 \
+LIB_DEPENDS=	gtkspell.0:${PORTSDIR}/textproc/gtkspell \
 		gksu1.2.0:${PORTSDIR}/sysutils/libgksu \
 		gksuui1.0.1:${PORTSDIR}/sysutils/libgksuui \
 		gdl-1.0:${PORTSDIR}/x11-toolkits/gdl

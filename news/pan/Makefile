@@ -36,7 +36,7 @@ OPTIONS=	GTKSPELL "Enable spell checking support" on
 .if defined(WITHOUT_GTKSPELL)
 CONFIGURE_ARGS+=	--disable-gtkspell
 .else
-LIB_DEPENDS+=		gtkspell.0:${PORTSDIR}/textproc/gtkspell2
+LIB_DEPENDS+=		gtkspell.0:${PORTSDIR}/textproc/gtkspell
 .endif
 
 post-patch:

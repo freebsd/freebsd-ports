@@ -105,7 +105,7 @@ PLIST_SUB+=	PANEL="@comment "
 .endif
 
 .if (exists(${X11BASE}/libdata/pkgconfig/gtkspell-2.0.pc)) || defined(WITH_GTKSPELL)
-LIB_DEPENDS+=	gtkspell.0:${PORTSDIR}/textproc/gtkspell2
+LIB_DEPENDS+=	gtkspell.0:${PORTSDIR}/textproc/gtkspell
 
 CONFIGURE_ARGS+=	--with-gtkspell
 PLIST_SUB+=	GTKSPELL=""

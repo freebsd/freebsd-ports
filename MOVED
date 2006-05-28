@@ -2333,3 +2333,5 @@ sysutils/gnomesystemmonitor|sysutils/gnome-system-monitor|2006-05-28|Renamed to 
 sysutils/gnomesystemtools|sysutils/gnome-system-tools|2006-05-28|Renamed to use real vendor package name
 textproc/gnomedocutils|textproc/gnome-doc-utils|2006-05-28|Renamed to use real vendor package name
 textproc/gnomespell|textproc/gnome-spell|2006-05-28|Renamed to use real vendor package name
+textproc/gtkspell2|textproc/gtkspell|2006-05-28|Use unversioned name
+textproc/gtkspell2-reference|textproc/gtkspell-reference|2006-05-28|Use unversioned name

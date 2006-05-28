@@ -15,7 +15,7 @@ MASTER_SITES=	http://www.beatniksoftware.com/tomboy/releases/
 MAINTAINER=	bsd-sharp-list@forge.novell.com
 COMMENT=	Personal note taking system for the GNOME desktop
 
-LIB_DEPENDS=	gtkspell.0:${PORTSDIR}/textproc/gtkspell2
+LIB_DEPENDS=	gtkspell.0:${PORTSDIR}/textproc/gtkspell
 BUILD_DEPENDS=	gapi-fixup:${PORTSDIR}/x11-toolkits/gtk-sharp10 \
 		${LOCALBASE}/lib/mono/dbus-sharp/dbus-sharp.dll:${PORTSDIR}/devel/dbus-sharp
 RUN_DEPENDS=	gapi-fixup:${PORTSDIR}/x11-toolkits/gtk-sharp10 \

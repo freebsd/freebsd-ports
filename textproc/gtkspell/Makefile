@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	gtkspell2
+PORTNAME=	gtkspell
 PORTVERSION=	2.0.11
 CATEGORIES=	textproc gnome
 MASTER_SITES=	http://gtkspell.sourceforge.net/download/

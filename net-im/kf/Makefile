@@ -27,7 +27,7 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 .ifndef(WITHOUT_GTKSPELL)
-LIB_DEPENDS+=	gtkspell.0:${PORTSDIR}/textproc/gtkspell2
+LIB_DEPENDS+=	gtkspell.0:${PORTSDIR}/textproc/gtkspell
 CONFIGURE_ARGS+=	--enable-gtkspell
 .endif
 
