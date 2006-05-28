@@ -3273,6 +3273,7 @@ gnome-print	ports/print/gnome-print
 gnome-schedule	ports/sysutils/gnome-schedule
 gnome-screensaver	ports/x11/gnome-screensaver
 gnome-speech	ports/accessibility/gnome-speech
+gnome-spell	ports/textproc/gnome-spell
 gnome-splashscreen-manager	ports/x11-themes/gnome-splashscreen-manager
 gnome-ssh-askpass	ports/security/gnome-ssh-askpass
 gnome-swallow	ports/x11/gnome-swallow
@@ -3318,7 +3319,6 @@ gnomephotoprinter	ports/print/gnomephotoprinter
 gnomepm		ports/finance/gnomepm
 gnomermind	ports/games/gnomermind
 gnomesession	ports/x11/gnomesession
-gnomespell	ports/textproc/gnomespell
 gnomesu		ports/sysutils/gnomesu
 gnomesudoku	ports/games/gnomesudoku
 gnomesword	ports/misc/gnomesword

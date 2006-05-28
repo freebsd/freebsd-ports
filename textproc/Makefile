@@ -145,8 +145,8 @@
     SUBDIR += gmat
     SUBDIR += gmetadom
     SUBDIR += gnome-doc-utils
+    SUBDIR += gnome-spell
     SUBDIR += gnome-translate
-    SUBDIR += gnomespell
     SUBDIR += google-ctemplate
     SUBDIR += gpp
     SUBDIR += grap
