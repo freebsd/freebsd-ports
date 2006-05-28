@@ -9819,7 +9819,7 @@ paman		ports/audio/paman
 paml		ports/biology/paml
 pamsfs		ports/security/pamsfs
 pamtester	ports/security/pamtester
-pan2		ports/news/pan2
+pan		ports/news/pan
 pancho		ports/net-mgmt/pancho
 panda		ports/print/panda
 pango		ports/x11-toolkits/pango

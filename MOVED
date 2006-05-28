@@ -2318,3 +2318,4 @@ irc/xchat2|irc/xchat|2006-05-28|Use unversioned name for latest version
 misc/gnomemimedata|misc/gnome-mime-data|2006-05-28|Renamed to use real vendor package name
 games/gnomegames2-extra-data|games/gnome-games-extra-data|2006-05-28|Renamed to use real vendor package name
 misc/gnomeuserdocs2|misc/gnome-user-docs|2006-05-28|Renamed to use real vendor package name
+news/pan2|news/pan|2006-05-28|Use unversioned name

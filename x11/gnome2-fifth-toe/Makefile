@@ -12,7 +12,7 @@ PKGNAMESUFFIX=	-fifth-toe
 
 COMMENT=	Additional GNOME 2 applications not included in the core desktop
 
-RUN_DEPENDS=	pan:${PORTSDIR}/news/pan2 \
+RUN_DEPENDS=	pan:${PORTSDIR}/news/pan \
 		xchat:${PORTSDIR}/irc/xchat \
 		gimp-2.2:${PORTSDIR}/graphics/gimp \
 		sodipodi:${PORTSDIR}/graphics/sodipodi \

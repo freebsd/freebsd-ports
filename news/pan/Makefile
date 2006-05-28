@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	pan2
+PORTNAME=	pan
 PORTVERSION=	0.14.2.91
 PORTREVISION=	4
 CATEGORIES=	news gnome
