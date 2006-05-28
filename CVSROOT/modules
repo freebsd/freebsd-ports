@@ -3286,6 +3286,7 @@ gnome-ssh-askpass	ports/security/gnome-ssh-askpass
 gnome-swallow	ports/x11/gnome-swallow
 gnome-system-monitor	ports/sysutils/gnome-system-monitor
 gnome-system-tools	ports/sysutils/gnome-system-tools
+gnome-terminal	ports/x11/gnome-terminal
 gnome-themes	ports/x11-themes/gnome-themes
 gnome-themes-extras	ports/x11-themes/gnome-themes-extras
 gnome-translate	ports/textproc/gnome-translate
@@ -3326,7 +3327,6 @@ gnomesu		ports/sysutils/gnomesu
 gnomesudoku	ports/games/gnomesudoku
 gnomesword	ports/misc/gnomesword
 gnometelnet	ports/net/gnometelnet
-gnometerminal	ports/x11/gnometerminal
 gnomoradio	ports/audio/gnomoradio
 gnopernicus	ports/accessibility/gnopernicus
 gnosamba	ports/net/gnosamba
