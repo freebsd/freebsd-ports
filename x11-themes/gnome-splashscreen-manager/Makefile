@@ -15,7 +15,7 @@ DISTNAME=	gnome-art-${PORTVERSION}
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Gnome splash screen manager
 
-BUILD_DEPENDS=	gnome-session:${PORTSDIR}/x11/gnomesession \
+BUILD_DEPENDS=	gnome-session:${PORTSDIR}/x11/gnome-session \
 		ruby-glade-create-template:${PORTSDIR}/devel/ruby-libglade2 \
 		${RUBY_SITEARCHLIBDIR}/gnome2.so:${PORTSDIR}/x11/ruby-gnome2 \
 		${RUBY_SITEARCHLIBDIR}/gconf2.so:${PORTSDIR}/devel/ruby-gconf2

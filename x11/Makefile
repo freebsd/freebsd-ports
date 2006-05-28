@@ -70,12 +70,12 @@
     SUBDIR += gnome-panel
     SUBDIR += gnome-panel-reference
     SUBDIR += gnome-screensaver
+    SUBDIR += gnome-session
     SUBDIR += gnome-swallow
     SUBDIR += gnome2
     SUBDIR += gnome2-fifth-toe
     SUBDIR += gnome2-lite
     SUBDIR += gnome2-power-tools
-    SUBDIR += gnomesession
     SUBDIR += gnometerminal
     SUBDIR += gpctool
     SUBDIR += grabc
