@@ -15,9 +15,9 @@ DISTNAME=	gnome-games-extra-data-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	Themes and artwork for the gnomegames2 package
+COMMENT=	Themes and artwork for the gnome-games package
 
-RUN_DEPENDS=	${X11BASE}/bin/sol:${PORTSDIR}/games/gnomegames2
+RUN_DEPENDS=	${X11BASE}/bin/sol:${PORTSDIR}/games/gnome-games
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
