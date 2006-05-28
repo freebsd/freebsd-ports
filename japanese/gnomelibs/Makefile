@@ -9,7 +9,7 @@
 #PORTVERSION=	1.4.1.3
 CATEGORIES=	japanese x11 gnome
 
-MASTERDIR=	${.CURDIR}/../../x11/gnomelibs
+MASTERDIR=	${.CURDIR}/../../x11/gnome-libs
 
 EXTRA_PATCHES=	${.CURDIR}/files/patch-*
 
