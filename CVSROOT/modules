@@ -3251,6 +3251,7 @@ gnome-password-generator	ports/security/gnome-password-generator
 gnome-pkgview	ports/sysutils/gnome-pkgview
 gnome-schedule	ports/sysutils/gnome-schedule
 gnome-screensaver	ports/x11/gnome-screensaver
+gnome-speech	ports/accessibility/gnome-speech
 gnome-splashscreen-manager	ports/x11-themes/gnome-splashscreen-manager
 gnome-ssh-askpass	ports/security/gnome-ssh-askpass
 gnome-swallow	ports/x11/gnome-swallow
@@ -3313,7 +3314,6 @@ gnomepm		ports/finance/gnomepm
 gnomeprint	ports/print/gnomeprint
 gnomermind	ports/games/gnomermind
 gnomesession	ports/x11/gnomesession
-gnomespeech	ports/accessibility/gnomespeech
 gnomespell	ports/textproc/gnomespell
 gnomesu		ports/sysutils/gnomesu
 gnomesudoku	ports/games/gnomesudoku
