@@ -2304,3 +2304,4 @@ accessibility/gnomespeech|accessibility/gnome-speech|2006-05-27|Renamed to use r
 deskutils/gnomeblog|deskutils/gnome-blog|2006-05-27|Renamed to use real vendor package name
 deskutils/gnomepim|deskutils/gnome-pim|2006-05-27|Renamed to use real vendor package name
 devel/gnomebuild|devel/gnome-build|2006-05-27|Renamed to use real vendor package name
+devel/gnomecommon|devel/gnome-common|2006-05-27|Renamed to use real vendor package name

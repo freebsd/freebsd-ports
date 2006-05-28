@@ -13,7 +13,7 @@ PKGNAMESUFFIX=	-hacker-tools
 COMMENT=	GNOME 2 development tools
 
 RUN_DEPENDS=	mlview:${PORTSDIR}/editors/mlview \
-		gnome-autogen.sh:${PORTSDIR}/devel/gnomecommon \
+		gnome-autogen.sh:${PORTSDIR}/devel/gnome-common \
 		glade-2:${PORTSDIR}/devel/glade2 \
 		ghex2:${PORTSDIR}/editors/ghex \
 		gob2:${PORTSDIR}/devel/gob2 \
