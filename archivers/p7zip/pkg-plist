@@ -30,6 +30,7 @@ libexec/p7zip/7zCon.sfx
 %%MODULES%%libexec/p7zip/Formats/cpio.so
 %%MODULES%%libexec/p7zip/Formats/deb.so
 %%MODULES%%libexec/p7zip/Formats/gz.so
+%%MODULES%%libexec/p7zip/Formats/nsis.so
 %%MODULES%%libexec/p7zip/Formats/rpm.so
 %%MODULES%%libexec/p7zip/Formats/split.so
 %%MODULES%%libexec/p7zip/Formats/lzh.so
