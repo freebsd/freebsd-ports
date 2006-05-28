@@ -28,7 +28,7 @@ LDFLAGS=	-L${LOCALBASE}/lib
 .if defined(WITHOUT_GTOP)
 CONFIGURE_ARGS+=	--disable-gtop
 .else
-LIB_DEPENDS+=	gtop-2.0:${PORTSDIR}/devel/libgtop2
+LIB_DEPENDS+=	gtop-2.0:${PORTSDIR}/devel/libgtop
 .endif
 
 .if defined(WITHOUT_CURL)

@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	S-Lang System Monitor
 
-LIB_DEPENDS=	gtop-2.0.7:${PORTSDIR}/devel/libgtop2 \
+LIB_DEPENDS=	gtop-2.0.7:${PORTSDIR}/devel/libgtop \
 		slang.1:${PORTSDIR}/devel/libslang
 
 USE_GETOPT_LONG=	yes

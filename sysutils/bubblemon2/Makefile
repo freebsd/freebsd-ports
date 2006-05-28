@@ -15,7 +15,7 @@ DISTNAME=	bubblemon-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A system CPU and memory load monitor for GNOME2
 
-LIB_DEPENDS=	gtop-2.0:${PORTSDIR}/devel/libgtop2
+LIB_DEPENDS=	gtop-2.0:${PORTSDIR}/devel/libgtop
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomepanel gnomeprefix gnometarget intlhack
