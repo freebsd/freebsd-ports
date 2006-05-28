@@ -8,7 +8,8 @@ PORTNAME=	ghemical
 PORTVERSION=	1.01
 PORTREVISION=	2
 CATEGORIES=	science
-MASTER_SITES=	http://www.uku.fi/~thassine/ghemical/download/
+MASTER_SITES=	http://bioinformatics.org/ghemical/download/archive/ \
+		http://www.uku.fi/~thassine/projects/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
