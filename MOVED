@@ -2319,3 +2319,5 @@ misc/gnomemimedata|misc/gnome-mime-data|2006-05-28|Renamed to use real vendor pa
 games/gnomegames2-extra-data|games/gnome-games-extra-data|2006-05-28|Renamed to use real vendor package name
 misc/gnomeuserdocs2|misc/gnome-user-docs|2006-05-28|Renamed to use real vendor package name
 news/pan2|news/pan|2006-05-28|Use unversioned name
+palm/gnomepilot2|palm/gnome-pilot|2006-05-28|Renamed to use real vendor package name
+palm/gnomepilot-conduits2|palm/gnome-pilot-conduits|2006-05-28|Renamed to use real vendor package name
