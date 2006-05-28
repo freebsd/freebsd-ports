@@ -116,7 +116,7 @@ PLIST_SUB+=		FREETRANSLATION:="@comment "
 .endif
 
 .if defined(WITH_GDICT)
-RUN_DEPENDS+=		gnome-dictionary:${PORTSDIR}/deskutils/gnomeutils2
+RUN_DEPENDS+=		gnome-dictionary:${PORTSDIR}/deskutils/gnome-utils
 CONFIGURE_ARGS+=	--enable-gdict
 PLIST_SUB+=		GDICT:=""
 .else

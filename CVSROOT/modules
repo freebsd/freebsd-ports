@@ -3266,6 +3266,7 @@ gnome-themes	ports/x11-themes/gnome-themes
 gnome-themes-extras	ports/x11-themes/gnome-themes-extras
 gnome-translate	ports/textproc/gnome-translate
 gnome-user-share	ports/www/gnome-user-share
+gnome-utils	ports/deskutils/gnome-utils
 gnome-verbiste	ports/french/gnome-verbiste
 gnome-vfsmm	ports/devel/gnome-vfsmm
 gnome-vnc	ports/net/gnome-vnc
@@ -3323,7 +3324,6 @@ gnomesystemtools	ports/sysutils/gnomesystemtools
 gnometelnet	ports/net/gnometelnet
 gnometerminal	ports/x11/gnometerminal
 gnomeuserdocs2	ports/misc/gnomeuserdocs2
-gnomeutils2	ports/deskutils/gnomeutils2
 gnomevfs	ports/devel/gnomevfs
 gnomevfs2	ports/devel/gnomevfs2
 gnomevfs2-reference	ports/devel/gnomevfs2-reference
