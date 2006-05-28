@@ -15,9 +15,9 @@ MASTER_SITE_SUBDIR=	bind9/${ISCVERSION} bind-dlz/:dlz
 PKGNAMESUFFIX?=	-dlz${POSTGRESQL_SUFFIX}${MYSQL_SUFFIX}${BERKLEYDB_SUFFIX}${LDAP_SUFFIX}${PKGNAMESUFFIX2}
 DISTFILES=	bind-${ISCVERSION}.tar.gz
 
-PATCH_SITES=	${MASTER_SITES} http://projects.navynet.it/DLZ/:it 
+PATCH_SITES=	${MASTER_SITES} http://projects.navynet.it/DLZ/:it
 PATCH_SITE_SUBDIR=	bind9/${ISCVERSION}
-PATCHFILES=	
+PATCHFILES=
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	dinoex@FreeBSD.org
@@ -40,6 +40,18 @@ PATCH_STRIP=	-p1
 .if defined(BATCH)
 # default package, can be configured in /etc/make.conf
 BINDDLZ_OPTIONS?=	\"Threads\" \"OpenSSL\" \"PostgreSQL\" \"FileSystem\"
+.if ${BINDDLZ_OPTIONS:M*PostgreSQL*}
+WITH_POSTGRESQL_DRIVER=yes
+.endif
+.if ${BINDDLZ_OPTIONS:M*MySQL*}
+WITH_MYSQL_DRIVER=yes
+.endif
+.if ${BINDDLZ_OPTIONS:M*BerkleyDB*}
+WITH_BERKLEYDB_DRIVER=yes
+.endif
+.if ${BINDDLZ_OPTIONS:M*OpenLDAP*}
+WITH_LDAP=yes
+.endif
 .endif
 # make INDEX match
 NO_DESCRIBE=yes
@@ -61,6 +73,7 @@ PLIST_SUB+=	BIND931="" BIND922="@comment "
 .if defined(WITH_POSTGRESQL_DRIVER)
 .if !defined(WITHOUT_POSTGRESQL_DRIVER)
 POSTGRESQL_SUFFIX=	+postgres
+EXTRA_PATCHES+=	${FILESDIR}/postgres.patch
 USE_PGSQL=	yes
 CONFIGURE_ARGS+=	--with-dlz-postgres
 .endif
@@ -68,28 +81,27 @@ CONFIGURE_ARGS+=	--with-dlz-postgres
 
 .if defined(WITH_MYSQL_DRIVER)
 MYSQL_SUFFIX=	+mysql
-MYSQL_PORT?=	databases/mysql323-client
-LIB_DEPENDS+=	mysqlclient:${PORTSDIR}/${MYSQL_PORT}
+USE_MYSQL=	yes
 CONFIGURE_ARGS+=	--with-dlz-mysql
 .endif
 
 .if defined(WITH_LDAP)
 LDAP_SUFFIX=	+ldap
-.if defined(LDAP_PORT)
-BUILD_DEPENDS+=	${LOCALBASE}/lib/${OPENLDAP_LIB}:${PORTSDIR}/${LDAP_PORT}
-RUN_DEPENDS+=	${LOCALBASE}/lib/${OPENLDAP_LIB}:${PORTSDIR}/${LDAP_PORT}
-.else
 USE_OPENLDAP_VER?=	22
-.endif
 CONFIGURE_ARGS+=	--with-dlz-ldap
 .endif
 
 .if defined(WITH_BERKLEYDB_DRIVER)
+WITH_BDB=	yes
+.endif
+
+.if defined(WITH_BDB)
 BERKLEYDB_SUFFIX=	+db4
-BERKLEYDB_PORT?=	databases/db41
-BERKLEYDB_LIB?=		db41.1
+USE_BDB=		yes
+IGNORE_WITH_BDB=	2 3 40
+OBSOLETE_BDB_VAR=	BERKLEYDB_PORT BERKLEYDB_LIB
+BERKLEYDB_SUFFIX=	+${BDB_INCLUDE_DIR:S,^${LOCALBASE}/include/,,}
 CONFIGURE_ARGS+=	--with-dlz-bdb=${LOCALBASE}
-LIB_DEPENDS+=		${BERKLEYDB_LIB}:${PORTSDIR}/${BERKLEYDB_PORT}
 .endif
 
 .if defined(WITH_FILESYSTEM_DRIVER)
@@ -173,6 +185,13 @@ MAN8=	dnssec-keygen.8 dnssec-signzone.8 lwresd.8 named-checkconf.8 \
 
 pre-fetch:
 	@ ${SETENV} ${SCRIPTS_ENV} ${SH} ${FILESDIR}/configure.bind9-dlz
+
+.if defined(WITH_BDB)
+post-patch:
+	@${REINPLACE_CMD} -e 's#db-4.2#${BDB_LIB_NAME}#g' \
+	-e 's#db42#${BDB_INCLUDE_DIR:S,^${LOCALBASE}/include/,,}#g' \
+	${WRKSRC}/configure
+.endif
 
 pre-configure:
 .for FILE in check/named-checkconf.8 named/named.8 nsupdate/nsupdate.8 \
