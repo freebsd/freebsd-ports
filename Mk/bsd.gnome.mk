@@ -422,8 +422,8 @@ gtksourceview_DETECT=	${X11BASE}/libdata/pkgconfig/gtksourceview-1.0.pc
 gtksourceview_USE_GNOME_IMPL=libgnome libgnomeprintui
 
 pkgconfig_DETECT=			${LOCALBASE}/bin/pkg-config
-pkgconfig_BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
-pkgconfig_RUN_DEPENDS=		pkg-config:${PORTSDIR}/devel/pkgconfig
+pkgconfig_BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
+pkgconfig_RUN_DEPENDS=		pkg-config:${PORTSDIR}/devel/pkg-config
 
 libgsf_LIB_DEPENDS=			gsf-1.114:${PORTSDIR}/devel/libgsf
 libgsf_DETECT=			${X11BASE}/libdata/pkgconfig/libgsf-1.pc
