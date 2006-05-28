@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	x264
-PORTVERSION=	0.0.20060521
+PORTVERSION=	0.0.20060528
 CATEGORIES=	multimedia
 MASTER_SITES=	http://downloads.videolan.org/pub/videolan/x264/snapshots/
 DISTNAME=	${PORTNAME}-snapshot-${PORTVERSION:S/0.0.//}-2245
@@ -61,7 +61,7 @@ CFLAGS+=	-O2 -funroll-loops -ffast-math
 .endif
 
 .if !defined(WITHOUT_GPAC)
-BUILD_DEPENDS+=		${LOCALBASE}/lib/libgpac_static.a:${PORTSDIR}/multimedia/gpac-libgpac
+LIB_DEPENDS+=		gpac.1:${PORTSDIR}/multimedia/gpac-libgpac
 CONFIGURE_ARGS+=	--enable-mp4-output
 .endif
 

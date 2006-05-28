@@ -1,5 +1,5 @@
---- configure.orig	Tue May  9 16:45:02 2006
-+++ configure	Tue May  9 22:04:19 2006
+--- configure.orig	Sun May 21 16:45:02 2006
++++ configure	Sun May 28 18:27:03 2006
 @@ -129,7 +129,7 @@
        ASFLAGS="$ASFLAGS -f elf"
      fi
@@ -18,3 +18,12 @@
      ;;
  esac
  
+@@ -290,7 +288,7 @@
+     esac
+ fi
+ 
+-MP4_LDFLAGS="-lgpac_static"
++MP4_LDFLAGS="-lgpac"
+ if [ $SYS = CYGWIN -o $SYS = MINGW ]; then
+     MP4_LDFLAGS="$MP4_LDFLAGS -lwinmm"
+ fi
