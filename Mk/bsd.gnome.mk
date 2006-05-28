@@ -200,7 +200,7 @@ gconf_DETECT=		${GCONF_CONFIG}
 gconf_USE_GNOME_IMPL=	oaf
 
 GNOME_VFS_CONFIG?=	${X11BASE}/bin/gnome-vfs-config
-gnomevfs_LIB_DEPENDS=	gnomevfs.0:${PORTSDIR}/devel/gnomevfs
+gnomevfs_LIB_DEPENDS=	gnomevfs.0:${PORTSDIR}/devel/gnome-vfs1
 gnomevfs_CONFIGURE_ENV=	GNOME_VFS_CONFIG="${GNOME_VFS_CONFIG}"
 gnomevfs_MAKE_ENV=	GNOME_VFS_CONFIG="${GNOME_VFS_CONFIG}"
 gnomevfs_DETECT=	${GNOME_VFS_CONFIG}
@@ -310,7 +310,7 @@ gconf2_LIB_DEPENDS=	gconf-2.4:${PORTSDIR}/devel/gconf2
 gconf2_DETECT=		${X11BASE}/libdata/pkgconfig/gconf-2.0.pc
 gconf2_USE_GNOME_IMPL=	orbit2 libxml2 gtk20 linc
 
-gnomevfs2_LIB_DEPENDS=	gnomevfs-2.0:${PORTSDIR}/devel/gnomevfs2
+gnomevfs2_LIB_DEPENDS=	gnomevfs-2.0:${PORTSDIR}/devel/gnome-vfs
 gnomevfs2_DETECT=	${X11BASE}/libdata/pkgconfig/gnome-vfs-2.0.pc
 gnomevfs2_USE_GNOME_IMPL=gconf2 libbonobo gnomemimedata
 

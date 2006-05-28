@@ -339,11 +339,11 @@
     SUBDIR += gnome-build
     SUBDIR += gnome-common
     SUBDIR += gnome-crash
+    SUBDIR += gnome-vfs
+    SUBDIR += gnome-vfs-reference
+    SUBDIR += gnome-vfs1
     SUBDIR += gnome-vfsmm
     SUBDIR += gnome2-hacker-tools
-    SUBDIR += gnomevfs
-    SUBDIR += gnomevfs2
-    SUBDIR += gnomevfs2-reference
     SUBDIR += gnu-autoconf
     SUBDIR += gnu-automake
     SUBDIR += gnu-libtool
