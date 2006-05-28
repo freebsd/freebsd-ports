@@ -3222,6 +3222,8 @@ gnome-colorscheme	ports/graphics/gnome-colorscheme
 gnome-commander	ports/x11-fm/gnome-commander
 gnome-commander2	ports/x11-fm/gnome-commander2
 gnome-common	ports/devel/gnome-common
+gnome-control-center	ports/sysutils/gnome-control-center
+gnome-control-center1	ports/sysutils/gnome-control-center1
 gnome-crash	ports/devel/gnome-crash
 gnome-cups-manager	ports/print/gnome-cups-manager
 gnome-db	ports/databases/gnome-db
@@ -3296,8 +3298,6 @@ gnomebasic	ports/lang/gnomebasic
 gnomebreakout	ports/games/gnomebreakout
 gnomecanvas	ports/graphics/gnomecanvas
 gnomechess	ports/games/gnomechess
-gnomecontrolcenter	ports/sysutils/gnomecontrolcenter
-gnomecontrolcenter2	ports/sysutils/gnomecontrolcenter2
 gnomedesktop	ports/x11/gnomedesktop
 gnomedesktop-reference	ports/x11/gnomedesktop-reference
 gnomedocutils	ports/textproc/gnomedocutils

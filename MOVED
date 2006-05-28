@@ -2327,3 +2327,5 @@ net/gnomenetstatus|net/gnome-netstatus|2006-05-28|Renamed to use real vendor pac
 net/gnomenettool|net/gnome-nettool|2006-05-28|Renamed to use real vendor package name
 security/gnomekeyring|security/gnome-keyring|2006-05-28|Renamed to use real vendor package name
 security/gnomekeyringmanager|security/gnome-keyring-manager|2006-05-28|Renamed to use real vendor package name
+sysutils/gnomecontrolcenter|sysutils/gnome-control-center1|2006-05-28|Renamed to use real vendor package name
+sysutils/gnomecontrolcenter2|sysutils/gnome-control-center|2006-05-28|Renamed to use real vendor package name

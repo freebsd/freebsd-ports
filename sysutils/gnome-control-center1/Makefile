@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	gnomecontrolcenter
+PORTNAME=	gnome-control-center
 PORTVERSION=	1.4.0.5
 PORTREVISION=	4
 CATEGORIES=	sysutils gnome
@@ -26,5 +26,7 @@ INSTALLS_OMF=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
+
+LATEST_LINK=	gnome-control-center1
 
 .include <bsd.port.mk>

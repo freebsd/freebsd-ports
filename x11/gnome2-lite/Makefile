@@ -31,7 +31,7 @@ RUN_DEPENDS=	${X11BASE}/libexec/gweather-applet-2:${PORTSDIR}/x11/gnomeapplets2 
 		gucharmap:${PORTSDIR}/deskutils/gucharmap \
 		${X11BASE}/lib/X11/fonts/bitstream-vera/Vera.ttf:${PORTSDIR}/x11-fonts/bitstream-vera \
 		gconf-editor:${PORTSDIR}/sysutils/gconf-editor \
-		gnome-control-center:${PORTSDIR}/sysutils/gnomecontrolcenter2 \
+		gnome-control-center:${PORTSDIR}/sysutils/gnome-control-center \
 		totem:${PORTSDIR}/multimedia/totem-gstreamer
 
 MASTERDIR=	${.CURDIR}/../gnome2
