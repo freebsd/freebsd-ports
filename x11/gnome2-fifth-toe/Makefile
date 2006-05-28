@@ -30,7 +30,7 @@ RUN_DEPENDS=	pan:${PORTSDIR}/news/pan2 \
 		gnotime:${PORTSDIR}/deskutils/gnotime \
 		rhythmbox:${PORTSDIR}/audio/rhythmbox \
 		jamboree:${PORTSDIR}/audio/jamboree \
-		${X11BASE}/share/gnome/pixmaps/glines/classic.png:${PORTSDIR}/games/gnomegames2-extra-data \
+		${X11BASE}/share/gnome/pixmaps/glines/classic.png:${PORTSDIR}/games/gnome-games-extra-data \
 		nautilus-sendto:${PORTSDIR}/deskutils/nautilus-sendto \
 		goobox:${PORTSDIR}/audio/goobox \
 		inkscape:${PORTSDIR}/graphics/inkscape \

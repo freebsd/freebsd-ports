@@ -6,12 +6,11 @@
 #   $MCom: ports/games/gnomegames2-extra-data/Makefile,v 1.8 2006/04/22 18:07:24 marcus Exp $
 #
 
-PORTNAME=	gnomegames2-extra-data
+PORTNAME=	gnome-games-extra-data
 PORTVERSION=	2.14.0
 CATEGORIES=	games gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-games-extra-data/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
-DISTNAME=	gnome-games-extra-data-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org

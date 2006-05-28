@@ -239,11 +239,11 @@
     SUBDIR += gnmm
     SUBDIR += gno3dtet
     SUBDIR += gnome-games
+    SUBDIR += gnome-games-extra-data
     SUBDIR += gnome-music-quiz
     SUBDIR += gnomeattacks
     SUBDIR += gnomebreakout
     SUBDIR += gnomechess
-    SUBDIR += gnomegames2-extra-data
     SUBDIR += gnomekiss
     SUBDIR += gnomememoryblocks
     SUBDIR += gnomermind
