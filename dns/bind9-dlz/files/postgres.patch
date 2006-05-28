@@ -1,0 +1,134 @@
+--- bind-9.3.2/bin/named/dlz_postgres_driver.c.orig	Tue May 23 13:33:45 2006
++++ bind-9.3.2/bin/named/dlz_postgres_driver.c	Tue May 23 13:37:43 2006
+@@ -351,7 +351,7 @@
+ 	REQUIRE(*rs == NULL);
+ 
+ //** temporary logging message
+-isc_log_write(dns_lctx, DNS_LOGCATEGORY_DATABASE, DNS_LOGMODULE_DLZ, ISC_LOG_ERROR,
++isc_log_write(dns_lctx, DNS_LOGCATEGORY_DATABASE, DNS_LOGMODULE_DLZ, ISC_LOG_DEBUG(2),
+ "%d Getting DBI", dlz_thread_num);
+ 
+ 		// get db instance / connection
+@@ -369,7 +369,7 @@
+ #endif /* ISC_PLATFORM_USETHREADS */
+ 
+ //** temporary logging message
+-isc_log_write(dns_lctx, DNS_LOGCATEGORY_DATABASE, DNS_LOGMODULE_DLZ, ISC_LOG_ERROR,
++isc_log_write(dns_lctx, DNS_LOGCATEGORY_DATABASE, DNS_LOGMODULE_DLZ, ISC_LOG_DEBUG(2),
+ "%d Got DBI - checking query", dlz_thread_num);
+ 
+ 		// if DBI is null, can't do anything else
+@@ -433,7 +433,7 @@
+ 	}
+ 
+ //** temporary logging message
+-isc_log_write(dns_lctx, DNS_LOGCATEGORY_DATABASE, DNS_LOGMODULE_DLZ, ISC_LOG_ERROR,
++isc_log_write(dns_lctx, DNS_LOGCATEGORY_DATABASE, DNS_LOGMODULE_DLZ, ISC_LOG_DEBUG(2),
+ "%d checked query", dlz_thread_num);
+ 
+ 		// was a zone string passed?  If so, make it safe for use in queries.
+@@ -465,7 +465,7 @@
+ 	}
+ 
+ //** temporary logging message
+-isc_log_write(dns_lctx, DNS_LOGCATEGORY_DATABASE, DNS_LOGMODULE_DLZ, ISC_LOG_ERROR,
++isc_log_write(dns_lctx, DNS_LOGCATEGORY_DATABASE, DNS_LOGMODULE_DLZ, ISC_LOG_DEBUG(2),
+ "%d did zone", dlz_thread_num);
+ 
+ 		// was a record string passed?  If so, make it safe for use in queries.
+@@ -481,7 +481,7 @@
+ 
+ 
+ //** temporary logging message
+-isc_log_write(dns_lctx, DNS_LOGCATEGORY_DATABASE, DNS_LOGMODULE_DLZ, ISC_LOG_ERROR,
++isc_log_write(dns_lctx, DNS_LOGCATEGORY_DATABASE, DNS_LOGMODULE_DLZ, ISC_LOG_DEBUG(2),
+ "%d did record", dlz_thread_num);
+ 
+ 		// was a client string passed?  If so, make it safe for use in queries.
+@@ -496,7 +496,7 @@
+ 	}
+ 
+ //** temporary logging message
+-isc_log_write(dns_lctx, DNS_LOGCATEGORY_DATABASE, DNS_LOGMODULE_DLZ, ISC_LOG_ERROR,
++isc_log_write(dns_lctx, DNS_LOGCATEGORY_DATABASE, DNS_LOGMODULE_DLZ, ISC_LOG_DEBUG(2),
+ "%d did client", dlz_thread_num);
+ 
+ 		// what type of query are we going to run?
+@@ -526,7 +526,7 @@
+ 	}
+ 
+ //** temporary logging message
+-isc_log_write(dns_lctx, DNS_LOGCATEGORY_DATABASE, DNS_LOGMODULE_DLZ, ISC_LOG_ERROR,
++isc_log_write(dns_lctx, DNS_LOGCATEGORY_DATABASE, DNS_LOGMODULE_DLZ, ISC_LOG_DEBUG(2),
+ "%d built query", dlz_thread_num);
+ 
+ 		// if the querystring is null, Bummer, outta RAM.  UPGRADE TIME!!!  
+@@ -536,7 +536,7 @@
+ 	}
+ 
+ //** temporary logging message
+-isc_log_write(dns_lctx, DNS_LOGCATEGORY_DATABASE, DNS_LOGMODULE_DLZ, ISC_LOG_ERROR,
++isc_log_write(dns_lctx, DNS_LOGCATEGORY_DATABASE, DNS_LOGMODULE_DLZ, ISC_LOG_DEBUG(2),
+ "%d query is '%s'", dlz_thread_num, querystring);
+ 
+ 		// output the full query string during debug so we can see
+@@ -548,7 +548,7 @@
+ 		// attempt query up to 3 times.
+ 	for(j=0; j < 3; j++){
+ //** temporary logging message
+-isc_log_write(dns_lctx, DNS_LOGCATEGORY_DATABASE, DNS_LOGMODULE_DLZ, ISC_LOG_ERROR,
++isc_log_write(dns_lctx, DNS_LOGCATEGORY_DATABASE, DNS_LOGMODULE_DLZ, ISC_LOG_DEBUG(2),
+ "%d executing query for %d time", dlz_thread_num, j);
+ 			// try to get result set
+ 		*rs = PQexec((PGconn *)dbi->dbconn, querystring );
+@@ -556,7 +556,7 @@
+ 			// if result set is null, reset DB connection, max 3 attempts.
+ 		for(i=0; *rs == NULL && i < 3; i++){
+ //** temporary logging message
+-isc_log_write(dns_lctx, DNS_LOGCATEGORY_DATABASE, DNS_LOGMODULE_DLZ, ISC_LOG_ERROR,
++isc_log_write(dns_lctx, DNS_LOGCATEGORY_DATABASE, DNS_LOGMODULE_DLZ, ISC_LOG_DEBUG(2),
+ "%d resetting connection", dlz_thread_num);
+ 			result = ISC_R_FAILURE;
+ 			PQreset((PGconn *) dbi->dbconn);
+@@ -567,12 +567,12 @@
+ 			// result set ok, break outter loop
+ 		if(PQresultStatus(*rs) == PGRES_TUPLES_OK){
+ //** temporary logging message
+-isc_log_write(dns_lctx, DNS_LOGCATEGORY_DATABASE, DNS_LOGMODULE_DLZ, ISC_LOG_ERROR,
++isc_log_write(dns_lctx, DNS_LOGCATEGORY_DATABASE, DNS_LOGMODULE_DLZ, ISC_LOG_DEBUG(2),
+ "%d rs ok", dlz_thread_num);
+ 			break;
+ 		}else{	// we got a result set object, but it's not right.
+ //** temporary logging message
+-isc_log_write(dns_lctx, DNS_LOGCATEGORY_DATABASE, DNS_LOGMODULE_DLZ, ISC_LOG_ERROR,
++isc_log_write(dns_lctx, DNS_LOGCATEGORY_DATABASE, DNS_LOGMODULE_DLZ, ISC_LOG_DEBUG(2),
+ "%d clearing rs", dlz_thread_num);
+ 			PQclear(*rs);	// get rid of it
+ 			result = ISC_R_FAILURE;	// incase this was the last attempt
+@@ -582,7 +582,7 @@
+ cleanup:	// it's always good to cleanup after yourself
+ 
+ //** temporary logging message
+-isc_log_write(dns_lctx, DNS_LOGCATEGORY_DATABASE, DNS_LOGMODULE_DLZ, ISC_LOG_ERROR,
++isc_log_write(dns_lctx, DNS_LOGCATEGORY_DATABASE, DNS_LOGMODULE_DLZ, ISC_LOG_DEBUG(2),
+ "%d cleaning up", dlz_thread_num);
+ 
+ 		// if we couldn't even allocate DBI, just return NULL
+@@ -612,7 +612,7 @@
+ #ifdef ISC_PLATFORM_USETHREADS
+ 
+ //** temporary logging message
+-isc_log_write(dns_lctx, DNS_LOGCATEGORY_DATABASE, DNS_LOGMODULE_DLZ, ISC_LOG_ERROR,
++isc_log_write(dns_lctx, DNS_LOGCATEGORY_DATABASE, DNS_LOGMODULE_DLZ, ISC_LOG_DEBUG(2),
+ "%d unlocking mutex", dlz_thread_num);
+ 
+ 		// release the lock so another thread can use this dbi
+@@ -625,7 +625,7 @@
+ 		isc_mem_free(ns_g_mctx, querystring );
+ 
+ //** temporary logging message
+-isc_log_write(dns_lctx, DNS_LOGCATEGORY_DATABASE, DNS_LOGMODULE_DLZ, ISC_LOG_ERROR,
++isc_log_write(dns_lctx, DNS_LOGCATEGORY_DATABASE, DNS_LOGMODULE_DLZ, ISC_LOG_DEBUG(2),
+ "%d returning", dlz_thread_num);
+ 
+ 		// return result

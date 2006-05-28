@@ -16,12 +16,9 @@ OldDLZ		"use old Bind9.2.2" OFF \
 OpenSSL		"OpenSSL support" ON \
 Threads		"Thread support" ON \
 PostgreSQL	"PostgreSQL driver" ON \
-MySQL323	"MySQL 3.23 driver" OFF \
-MySQL40	"MySQL 4.0 driver" OFF \
-MySQL41	"MySQL 4.1 driver" OFF \
+MySQL		"MySQL driver" OFF \
 OpenLDAP22	"OpenLDAP 2.2 backend" OFF \
-BerkleyDB41	"BerkleyDB 4.1 backend" OFF \
-BerkleyDB42	"BerkleyDB 4.2 backend" OFF \
+BerkleyDB	"Berkley DB 4.1+ backend" OFF \
 FileSystem	"Filesystem driver" ON \
 Stub		"Stub driver" OFF \
 2> /tmp/checklist.tmp.$$
@@ -60,32 +57,14 @@ while [ "$1" ]; do
 		\"PostgreSQL\")
 			echo WITH_POSTGRESQL_DRIVER=YES
 			;;
-		\"MySQL323\")
+		\"MySQL\")
 			echo WITH_MYSQL_DRIVER=YES
-			echo MYSQL_PORT?=databases/mysql323-client
 			;;
-		\"MySQL40\")
-			echo WITH_MYSQL_DRIVER=YES
-			echo MYSQL_PORT?=databases/mysql40-client
-			;;
-		\"MySQL41\")
-			echo WITH_MYSQL_DRIVER=YES
-			echo MYSQL_PORT?=databases/mysql41-client
-			;;
-		\"OpenLDAP22\")
+		\"OpenLDAP\")
 			echo WITH_LDAP=YES
-			echo LDAP_PORT?=net/openldap22-client
-			echo OPENLDAP_LIB?=libldap-2.2.so.7
 			;;
-		\"BerkleyDB41\")
-			echo WITH_BERKLEYDB_DRIVER=YES
-			echo BERKLEYDB_LIB?=db41.1
-			echo BERKLEYDB_PORT?=databases/db41
-			;;
-		\"BerkleyDB42\")
-			echo WITH_BERKLEYDB_DRIVER=YES
-			echo BERKLEYDB_LIB?=db-4.2
-			echo BERKLEYDB_PORT?=databases/db42
+		\"BerkleyDB\")
+			echo WITH_BDB=YES
 			;;
 		\"FileSystem\")
 			echo WITH_FILESYSTEM_DRIVER=YES
