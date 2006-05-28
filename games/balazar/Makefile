@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	balazar
-PORTVERSION=	0.3
+PORTVERSION=	0.3.1
 CATEGORIES=	games python
 MASTER_SITES=	http://download.gna.org/balazar/
 DISTNAME=	Balazar-${PORTVERSION}
@@ -32,6 +32,9 @@ USE_TWISTED=	yes
 USE_GL=		yes
 USE_SDL=	sdl mixer
 USE_GETTEXT=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX},g" ${WRKSRC}/setup.cfg
 
 post-install:
 .if !defined(NOPORTDOCS)
