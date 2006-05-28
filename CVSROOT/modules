@@ -3287,6 +3287,9 @@ gnome-user-docs	ports/misc/gnome-user-docs
 gnome-user-share	ports/www/gnome-user-share
 gnome-utils	ports/deskutils/gnome-utils
 gnome-verbiste	ports/french/gnome-verbiste
+gnome-vfs	ports/devel/gnome-vfs
+gnome-vfs-reference	ports/devel/gnome-vfs-reference
+gnome-vfs1	ports/devel/gnome-vfs1
 gnome-vfsmm	ports/devel/gnome-vfsmm
 gnome-vnc	ports/net/gnome-vnc
 gnome-web-photo	ports/www/gnome-web-photo
@@ -3324,9 +3327,6 @@ gnomesudoku	ports/games/gnomesudoku
 gnomesword	ports/misc/gnomesword
 gnometelnet	ports/net/gnometelnet
 gnometerminal	ports/x11/gnometerminal
-gnomevfs	ports/devel/gnomevfs
-gnomevfs2	ports/devel/gnomevfs2
-gnomevfs2-reference	ports/devel/gnomevfs2-reference
 gnomoradio	ports/audio/gnomoradio
 gnopernicus	ports/accessibility/gnopernicus
 gnosamba	ports/net/gnosamba

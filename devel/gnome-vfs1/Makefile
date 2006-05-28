@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	gnomevfs
+PORTNAME=	gnome-vfs
 PORTVERSION=	1.0.5
 PORTREVISION=	8
 CATEGORIES=	devel gnome
@@ -29,6 +29,8 @@ INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib" \
 		BSD_PTHREAD_LIBS=${PTHREAD_LIBS}
+
+LATEST_LINK=	gnome-vfs1
 
 .if exists(${LOCALBASE}/lib/libcdda_paranoia.a)
 WITH_CDPARANOIA=	yes
