@@ -8793,6 +8793,7 @@ p5-Mac-Macbinary	ports/archivers/p5-Mac-Macbinary
 p5-Mail-Address-MobileJp	ports/mail/p5-Mail-Address-MobileJp
 p5-Mail-Alias	ports/mail/p5-Mail-Alias
 p5-Mail-Audit	ports/mail/p5-Mail-Audit
+p5-Mail-Audit-Attach	ports/mail/p5-Mail-Audit-Attach
 p5-Mail-Box	ports/mail/p5-Mail-Box
 p5-Mail-Box-Parser-C	ports/mail/p5-Mail-Box-Parser-C
 p5-Mail-Box1	ports/mail/p5-Mail-Box1
