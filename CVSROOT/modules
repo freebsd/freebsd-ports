@@ -11127,7 +11127,7 @@ py-openal	ports/audio/py-openal
 py-opengl	ports/graphics/py-opengl
 py-openssl	ports/security/py-openssl
 py-optik	ports/devel/py-optik
-py-orbit2	ports/devel/py-orbit2
+py-orbit	ports/devel/py-orbit
 py-osd		ports/misc/py-osd
 py-paida	ports/science/py-paida
 py-paint	ports/graphics/py-paint
