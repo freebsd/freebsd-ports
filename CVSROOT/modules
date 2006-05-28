@@ -3228,6 +3228,8 @@ gnome-control-center1	ports/sysutils/gnome-control-center1
 gnome-crash	ports/devel/gnome-crash
 gnome-cups-manager	ports/print/gnome-cups-manager
 gnome-db	ports/databases/gnome-db
+gnome-desktop	ports/x11/gnome-desktop
+gnome-desktop-reference	ports/x11/gnome-desktop-reference
 gnome-doc-utils	ports/textproc/gnome-doc-utils
 gnome-font-sampler	ports/x11-fonts/gnome-font-sampler
 gnome-games	ports/games/gnome-games
@@ -3305,8 +3307,6 @@ gnomebasic	ports/lang/gnomebasic
 gnomebreakout	ports/games/gnomebreakout
 gnomecanvas	ports/graphics/gnomecanvas
 gnomechess	ports/games/gnomechess
-gnomedesktop	ports/x11/gnomedesktop
-gnomedesktop-reference	ports/x11/gnomedesktop-reference
 gnomefind	ports/sysutils/gnomefind
 gnomehier	ports/misc/gnomehier
 gnomeiconedit	ports/graphics/gnomeiconedit

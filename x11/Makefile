@@ -62,6 +62,8 @@
     SUBDIR += gmrun
     SUBDIR += gnome-applets
     SUBDIR += gnome-clipboard-daemon
+    SUBDIR += gnome-desktop
+    SUBDIR += gnome-desktop-reference
     SUBDIR += gnome-launch-box
     SUBDIR += gnome-menus
     SUBDIR += gnome-screensaver
@@ -70,8 +72,6 @@
     SUBDIR += gnome2-fifth-toe
     SUBDIR += gnome2-lite
     SUBDIR += gnome2-power-tools
-    SUBDIR += gnomedesktop
-    SUBDIR += gnomedesktop-reference
     SUBDIR += gnomelibs
     SUBDIR += gnomepanel
     SUBDIR += gnomepanel-reference
