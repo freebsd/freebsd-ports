@@ -9,25 +9,15 @@ PORTNAME=		q3base
 PORTVERSION=		0.1
 CATEGORIES=		games
 MASTER_SITES=		http://quake3.quakesrc.org/files/quake3/q3base/
-PKGNAMEPREFIX=		quake3-
 
 MAINTAINER=		ed@fxq.nl
 COMMENT=		Quake III Arena fork using SDL
 
-BUILD_DEPENDS=		nasm:${PORTSDIR}/devel/nasm
-
 USE_BZIP2=		yes
 USE_SDL=		sdl net
 
-ONLY_FOR_ARCHS=		i386
-
 GNU_CONFIGURE=		yes
-CONFIGURE_ENV+=		SDL_CONFIG=${SDL_CONFIG}
 CONFIGURE_TARGET=
-CONFLICTS=		q3server-1.32* quake3-[0-9]*
-
-SUB_FILES=		pkg-message
-PKGMESSAGE=		${WRKSRC}/pkg-message
 
 .if defined(WITHOUT_X11)
 CONFIGURE_ARGS=		--disable-client
@@ -38,9 +28,27 @@ USE_SDL+=		image
 
 .include <bsd.port.pre.mk>
 
-post-install:
-	@${MKDIR} ${PREFIX}/share/quake3/baseq3
-	@${MKDIR} ${PREFIX}/share/quake3/missionpack
-	@${CAT} ${PKGMESSAGE}
+.if ${ARCH} == "i386"
+BUILD_DEPENDS=		nasm:${PORTSDIR}/devel/nasm
+.endif
 
+.if ${ARCH} != "i386"
+NO_PACkAGE=	we don't know if this port works on ${ARCH}
+SUB_FILES+=	pkg-message
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|\($${exec_prefix}/lib\)/quake3|\1/q3base|' \
+		${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -e 's|botlib\.log|/dev/null|' \
+		${WRKSRC}/src/botlib/be_interface.c
+
+.if ${ARCH} != "i386"
+post-install:
+	@${ECHO_CMD}
+	@${CAT} ${PKGMESSAGE}
+	@${ECHO_CMD}
+.endif
+
+.include "${.CURDIR}/../quake3-data/Makefile.include"
 .include <bsd.port.post.mk>
