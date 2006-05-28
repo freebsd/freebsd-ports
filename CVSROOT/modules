@@ -3310,7 +3310,7 @@ gnomechess	ports/games/gnomechess
 gnomefind	ports/sysutils/gnomefind
 gnomehier	ports/misc/gnomehier
 gnomeiconedit	ports/graphics/gnomeiconedit
-gnomeicu2	ports/net-im/gnomeicu2
+gnomeicu	ports/net-im/gnomeicu
 gnomekiss	ports/games/gnomekiss
 gnomelibs	ports/x11/gnomelibs
 gnomemeeting	ports/net/gnomemeeting
