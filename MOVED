@@ -2299,3 +2299,4 @@ www/preferential-firefox|www/xpi-preferential|2006-05-25|Preferential is not lim
 x11/xfedor||2006-05-26|Has expired: old, old, old, unmaintained, no usable MASTER_SITES
 devel/p5-Encode|converters/p5-Encode|2006-05-27|Move to better category
 devel/p5-Encode-compat|converters/p5-Encode-compat|2006-05-27|Move to better category
+accessibility/gnomemag|accessibility/gnome-mag|2006-05-27|Renamed to use real vendor package name

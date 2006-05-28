@@ -10,7 +10,7 @@
     SUBDIR += dasher
     SUBDIR += gail
     SUBDIR += gail-reference
-    SUBDIR += gnomemag
+    SUBDIR += gnome-mag
     SUBDIR += gnomespeech
     SUBDIR += gnopernicus
     SUBDIR += gok
