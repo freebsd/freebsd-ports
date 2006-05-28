@@ -73,7 +73,7 @@ WITH_GSTREAMER=	yes
 .endif
 
 .if defined(WITH_PILOT)
-LIB_DEPENDS+=	gpilotdconduit.2:${PORTSDIR}/palm/gnomepilot2
+LIB_DEPENDS+=	gpilotdconduit.2:${PORTSDIR}/palm/gnome-pilot
 CONFIGURE_ARGS+=	--with-pisock=${LOCALBASE} \
 			--enable-pilot-conduits=yes
 PLIST_SUB+=	PILOT:=""

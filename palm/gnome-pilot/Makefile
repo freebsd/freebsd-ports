@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	gnomepilot2
+PORTNAME=	gnome-pilot
 PORTVERSION=	2.0.13
 PORTREVISION=	5
 CATEGORIES=	palm comms gnome

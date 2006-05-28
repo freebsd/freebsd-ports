@@ -5,8 +5,8 @@
 
     SUBDIR += bibelot
     SUBDIR += coldsync
-    SUBDIR += gnomepilot-conduits2
-    SUBDIR += gnomepilot2
+    SUBDIR += gnome-pilot
+    SUBDIR += gnome-pilot-conduits
     SUBDIR += iSiloXC
     SUBDIR += imgvtopgm
     SUBDIR += isilo
