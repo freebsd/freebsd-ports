@@ -1,7 +1,7 @@
 # $FreeBSD$
 #
 
-    COMMENT = Software support for the 3Com Palm(tm) series
+    COMMENT = Software support for handheld devices (Palm, PocketPC, ...)
 
     SUBDIR += bibelot
     SUBDIR += coldsync
