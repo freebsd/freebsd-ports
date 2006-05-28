@@ -34,6 +34,7 @@ bin/chartex
 %%PORTDOCS%%%%DOCSDIR%%/tpj0503-0004-05.gif
 %%PORTDOCS%%%%DOCSDIR%%/win32ole.gif
 %%PORTDOCS%%%%EXAMPLESDIR%%/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/autofit.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/bigfile.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/bug_report.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/cgi.pl
@@ -86,12 +87,14 @@ bin/chartex
 %%PORTDOCS%%%%EXAMPLESDIR%%/repeat.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/republic.bmp
 %%PORTDOCS%%%%EXAMPLESDIR%%/right_to_left.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/row_wrap.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/sales.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/sendmail.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/simple.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/stats.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/stats_ext.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/stocks.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/tab_colors.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/tab2xls.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/textwrap.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/unicode.pl
