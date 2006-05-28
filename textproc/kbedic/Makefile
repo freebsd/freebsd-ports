@@ -9,12 +9,11 @@ PORTNAME=	kbedic
 PORTVERSION=	4.0
 PORTREVISION=	2
 CATEGORIES=	textproc kde
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		http://kbedic.search.bg/download/
-MASTER_SITE_SUBDIR=kbedic
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	roam@FreeBSD.org
-COMMENT=	An English-to-Bulgarian and Bulgarian-to-English dictionary
+COMMENT=	An English-Bulgarian-English dictionary
 
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
