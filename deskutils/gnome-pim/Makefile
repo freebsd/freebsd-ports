@@ -5,12 +5,11 @@
 # $FreeBSD$
 #
 
-PORTNAME=	gnomepim
+PORTNAME=	gnome-pim
 PORTVERSION=	1.4.9
 PORTREVISION=	3
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://www.jroger.in-berlin.de/gnome-pim/
-DISTNAME=	gnome-pim-${PORTVERSION}
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org

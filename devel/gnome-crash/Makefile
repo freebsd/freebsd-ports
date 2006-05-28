@@ -5,13 +5,12 @@
 # $FreeBSD$
 #
 
-PORTNAME=	gnomecrash
+PORTNAME=	gnome-crash
 PORTVERSION=	0.0.5
 PORTREVISION=	2
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-crash/0.0
-DISTNAME=	gnome-crash-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A small coredump analysis tool for GNOME

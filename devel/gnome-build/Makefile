@@ -5,12 +5,11 @@
 # $FreeBSD$
 #
 
-PORTNAME=	gnomebuild
+PORTNAME=	gnome-build
 PORTVERSION=	0.1.3
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/gnome/gnome-/}/0.1
-DISTNAME=	${PORTNAME:S/gnome/gnome-/}-${PORTVERSION}
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.1
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A GNOME Build Framework (GBF)

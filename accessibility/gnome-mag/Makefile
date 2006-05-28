@@ -6,12 +6,11 @@
 #   $MCom: ports-stable/accessibility/gnomemag/Makefile,v 1.1 2006/03/13 23:49:23 mezz Exp $
 #
 
-PORTNAME=	gnomemag
+PORTNAME=	gnome-mag
 PORTVERSION=	0.12.5
 CATEGORIES=	accessibility gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-mag/0.12
-DISTNAME=	gnome-mag-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
