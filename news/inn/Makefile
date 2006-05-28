@@ -7,6 +7,7 @@
 
 PORTNAME=	inn
 PORTVERSION=	2.4.3
+PORTREVISION=	1
 CATEGORIES=	news ipv6
 MASTER_SITES=	${MASTER_SITE_ISC}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -146,6 +147,9 @@ post-patch:
 	@${REINPLACE_CMD} -e 's!<tcl.h>!<tcl8.3/tcl.h>!' ${WRKSRC}/innd/innd.h
 	@${REINPLACE_CMD} -e 's!-ltcl!-ltcl83!' ${WRKSRC}/configure
 .endif
+
+pre-install:
+	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
 .if !defined(WITHOUT_STRIP)
