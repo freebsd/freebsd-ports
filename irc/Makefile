@@ -118,7 +118,7 @@
     SUBDIR += xchat-gnome
     SUBDIR += xchat-mircryption
     SUBDIR += xchat-systray-plugin
-    SUBDIR += xchat2
+    SUBDIR += xchat1
     SUBDIR += zircon
 
 .include <bsd.port.subdir.mk>

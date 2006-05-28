@@ -14039,7 +14039,7 @@ xchat-fish	ports/irc/xchat-fish
 xchat-gnome	ports/irc/xchat-gnome
 xchat-mircryption	ports/irc/xchat-mircryption
 xchat-systray-plugin	ports/irc/xchat-systray-plugin
-xchat2		ports/irc/xchat2
+xchat1		ports/irc/xchat1
 xcheckers	ports/games/xcheckers
 xchm		ports/deskutils/xchm
 xchomp		ports/games/xchomp

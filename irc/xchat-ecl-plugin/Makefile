@@ -17,7 +17,7 @@ MAINTAINER=	der_julian@web.de
 COMMENT=	X-Chat 2.x plugin to allow Common Lisp scripting
 
 BUILD_DEPENDS=	ecl:${PORTSDIR}/lang/ecl
-RUN_DEPENDS=	xchat:${PORTSDIR}/irc/xchat2
+RUN_DEPENDS=	xchat:${PORTSDIR}/irc/xchat
 
 BROKEN=		Does not build
 

@@ -15,7 +15,7 @@ DISTNAME=	mircryption_xchatsrc
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A free encryption add-on for the popular XChat irc client
 
-RUN_DEPENDS=	xchat:${PORTSDIR}/irc/xchat2
+RUN_DEPENDS=	xchat:${PORTSDIR}/irc/xchat
 
 USE_X_PREFIX=	yes
 USE_ZIP=	yes

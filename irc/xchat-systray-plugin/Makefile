@@ -16,7 +16,7 @@ DISTNAME=	xchat-systray-integration-${PORTVERSION}-src
 MAINTAINER=	pav@FreeBSD.org
 COMMENT=	Systray icon plugin for X-Chat
 
-RUN_DEPENDS=	xchat:${PORTSDIR}/irc/xchat2
+RUN_DEPENDS=	xchat:${PORTSDIR}/irc/xchat
 
 WRKSRC=		${WRKDIR}/xchat-systray-integration-${PORTVERSION}
 USE_X_PREFIX=	yes
