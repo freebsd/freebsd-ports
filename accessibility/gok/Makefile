@@ -16,13 +16,12 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME On-Screen Keyboard (GOK)
 
-LIB_DEPENDS=	gnomespeech.7:${PORTSDIR}/accessibility/gnomespeech
-
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_X_PREFIX=	yes
 INSTALLS_OMF=	yes
-USE_GNOME=	gnomehack gnomeprefix intlhack libgnomeui atspi libwnck
+USE_GNOME=	gnomehack gnomeprefix intlhack libgnomeui atspi libwnck \
+		gnomespeech
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
