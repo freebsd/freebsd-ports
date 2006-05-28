@@ -175,7 +175,7 @@
     SUBDIR += gmpccaa
     SUBDIR += gnapster
     SUBDIR += gnome-audio
-    SUBDIR += gnomemedia2
+    SUBDIR += gnome-media
     SUBDIR += gnomoradio
     SUBDIR += gnowavcut
     SUBDIR += gnuitar

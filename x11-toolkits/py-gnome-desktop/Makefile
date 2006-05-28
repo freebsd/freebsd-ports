@@ -21,7 +21,7 @@ COMMENT=	A set of Python bindings used by modules in the GNOME Desktop
 
 LIB_DEPENDS=	gtop-2.0.7:${PORTSDIR}/devel/libgtop2 \
 		totem-plparser.2:${PORTSDIR}/multimedia/totem-gstreamer \
-		gnome-media-profiles.0:${PORTSDIR}/audio/gnomemedia2
+		gnome-media-profiles.0:${PORTSDIR}/audio/gnome-media
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes

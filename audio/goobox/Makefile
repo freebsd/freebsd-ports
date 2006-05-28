@@ -17,7 +17,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	CD player and ripper for GNOME Desktop environment
 
-RUN_DEPENDS=	cddb-slave2-properties:${PORTSDIR}/audio/gnomemedia2
+RUN_DEPENDS=	cddb-slave2-properties:${PORTSDIR}/audio/gnome-media
 
 USE_X_PREFIX=	yes
 USE_GETTEXT=	yes

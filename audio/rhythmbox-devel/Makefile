@@ -23,7 +23,7 @@ LIB_DEPENDS=	musicbrainz.4:${PORTSDIR}/audio/libmusicbrainz \
 		dbus-1.2:${PORTSDIR}/devel/dbus \
 		sexy.2:${PORTSDIR}/x11-toolkits/libsexy \
 		soup-2.2.8:${PORTSDIR}/devel/libsoup \
-		gnome-media-profiles.0:${PORTSDIR}/audio/gnomemedia2
+		gnome-media-profiles.0:${PORTSDIR}/audio/gnome-media
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
