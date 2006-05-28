@@ -14,7 +14,7 @@ MASTER_SITES=	http://download.qballcow.nl/programs/gcursor/
 MAINTAINER=	mezz@FreeBSD.org
 COMMENT=	A mouse cursor theme selector for GNOME
 
-RUN_DEPENDS=	file-roller:${PORTSDIR}/archivers/fileroller
+RUN_DEPENDS=	file-roller:${PORTSDIR}/archivers/file-roller
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes

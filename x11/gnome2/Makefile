@@ -34,7 +34,7 @@ RUN_DEPENDS?=	${X11BASE}/libexec/gweather-applet-2:${PORTSDIR}/x11/gnomeapplets2
 		${X11BASE}/share/gnome/help/user-guide/C/user-guide.xml:${PORTSDIR}/misc/gnomeuserdocs2 \
 		${X11BASE}/share/gnome/sounds/question.wav:${PORTSDIR}/audio/gnomeaudio2 \
 		${X11BASE}/libdata/pkgconfig/libgail-gnome.pc:${PORTSDIR}/x11-toolkits/libgail-gnome \
-		file-roller:${PORTSDIR}/archivers/fileroller \
+		file-roller:${PORTSDIR}/archivers/file-roller \
 		${X11BASE}/share/themes/HighContrast/gtk-2.0/gtkrc:${PORTSDIR}/x11-themes/gnome-themes \
 		gok:${PORTSDIR}/accessibility/gok \
 		nautilus-cd-burner:${PORTSDIR}/sysutils/nautilus-cd-burner \

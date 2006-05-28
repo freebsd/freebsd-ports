@@ -2424,11 +2424,11 @@ figlet		ports/misc/figlet
 figlet-fonts	ports/misc/figlet-fonts
 figurine	ports/graphics/figurine
 fiked		ports/security/fiked
+file-roller	ports/archivers/file-roller
 filedupe	ports/sysutils/filedupe
 filelight	ports/sysutils/filelight
 filepp		ports/textproc/filepp
 fileprune	ports/sysutils/fileprune
-fileroller	ports/archivers/fileroller
 filerunner	ports/x11-fm/filerunner
 fileschanged	ports/sysutils/fileschanged
 fillets-ng	ports/games/fillets-ng

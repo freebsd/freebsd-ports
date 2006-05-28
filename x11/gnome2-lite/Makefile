@@ -24,7 +24,7 @@ RUN_DEPENDS=	${X11BASE}/libexec/gweather-applet-2:${PORTSDIR}/x11/gnomeapplets2 
 		yelp:${PORTSDIR}/x11/yelp \
 		${X11BASE}/share/gnome/help/user-guide/C/user-guide.xml:${PORTSDIR}/misc/gnomeuserdocs2 \
 		${X11BASE}/share/gnome/sounds/question.wav:${PORTSDIR}/audio/gnomeaudio2 \
-		file-roller:${PORTSDIR}/archivers/fileroller \
+		file-roller:${PORTSDIR}/archivers/file-roller \
 		${X11BASE}/share/themes/HighContrast/gtk-2.0/gtkrc:${PORTSDIR}/x11-themes/gnome-themes \
 		evince:${PORTSDIR}/graphics/evince \
 		gcalctool:${PORTSDIR}/math/gcalctool \
