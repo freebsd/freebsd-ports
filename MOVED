@@ -2323,3 +2323,5 @@ palm/gnomepilot2|palm/gnome-pilot|2006-05-28|Renamed to use real vendor package 
 palm/gnomepilot-conduits2|palm/gnome-pilot-conduits|2006-05-28|Renamed to use real vendor package name
 print/gnomeprint|print/gnome-print|2006-05-28|Renamed to use real vendor package name
 graphics/libart_lgpl2|graphics/libart_lgpl|2006-05-28|Renamed to use real vendor package name
+net/gnomenetstatus|net/gnome-netstatus|2006-05-28|Renamed to use real vendor package name
+net/gnomenettool|net/gnome-nettool|2006-05-28|Renamed to use real vendor package name

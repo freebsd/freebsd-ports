@@ -152,10 +152,10 @@
     SUBDIR += gnetcat
     SUBDIR += gnoemoe
     SUBDIR += gnome-mud
+    SUBDIR += gnome-netstatus
+    SUBDIR += gnome-nettool
     SUBDIR += gnome-vnc
     SUBDIR += gnomemeeting
-    SUBDIR += gnomenetstatus
-    SUBDIR += gnomenettool
     SUBDIR += gnometelnet
     SUBDIR += gnosamba
     SUBDIR += gnu-finger

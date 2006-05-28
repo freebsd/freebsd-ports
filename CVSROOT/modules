@@ -3256,6 +3256,8 @@ gnome-menus	ports/x11/gnome-menus
 gnome-mime-data	ports/misc/gnome-mime-data
 gnome-mud	ports/net/gnome-mud
 gnome-music-quiz	ports/games/gnome-music-quiz
+gnome-netstatus	ports/net/gnome-netstatus
+gnome-nettool	ports/net/gnome-nettool
 gnome-osd	ports/misc/gnome-osd
 gnome-password-generator	ports/security/gnome-password-generator
 gnome-pilot	ports/palm/gnome-pilot
@@ -3308,8 +3310,6 @@ gnomelibs	ports/x11/gnomelibs
 gnomemeeting	ports/net/gnomemeeting
 gnomememoryblocks	ports/games/gnomememoryblocks
 gnomemm		ports/x11-toolkits/gnomemm
-gnomenetstatus	ports/net/gnomenetstatus
-gnomenettool	ports/net/gnomenettool
 gnomepanel	ports/x11/gnomepanel
 gnomepanel-reference	ports/x11/gnomepanel-reference
 gnomephotoprinter	ports/print/gnomephotoprinter

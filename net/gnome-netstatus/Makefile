@@ -3,10 +3,9 @@
 # Whom:				Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/net/gnomenetstatus/Makefile,v 1.39 2005/10/08 19:41:39 marcus Exp $
 #
 
-PORTNAME=	gnomenetstatus
+PORTNAME=	gnome-netstatus
 PORTVERSION=	2.12.0
 PORTREVISION=	2
 CATEGORIES=	net gnome
