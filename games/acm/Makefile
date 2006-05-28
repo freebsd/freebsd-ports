@@ -8,7 +8,7 @@
 PORTNAME=	acm
 PORTVERSION=	5.0
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.websimulations.com/pub/download/
+MASTER_SITES=	http://www.websimulations.com/download/
 
 MAINTAINER=	se@FreeBSD.org
 COMMENT=	A flight simulator for X11
