@@ -1,0 +1,66 @@
+diff -ru ../../work.PRE4/linuxthreads-2.2.3_20/freebsd-compat.h ./freebsd-compat.h
+--- ../../work.PRE4/linuxthreads-2.2.3_20/freebsd-compat.h	Sun Jun  8 17:13:55 2003
++++ ./freebsd-compat.h	Tue May 23 21:39:26 2006
+@@ -4,6 +4,7 @@
+ #include <sched.h>
+ #include <sys/types.h>
+ #include <sys/time.h>
++#include <sys/errno.h>
+ 
+ 
+ #if __FreeBSD__ >= 5
+@@ -15,9 +16,9 @@
+ #define __libc_fsync __sys_fsync
+ #define __libc_nanosleep __sys_nanosleep
+ #define __libc_open __sys_open
+-#define __libc_read __sys_read
++#define __libc_oread __sys_read
+ #define __libc_waitpid __waitpid
+-#define __libc_write __sys_write
++#define __libc_owrite __sys_write
+ #define __libc_longjmp __longjmp
+ #define __libc_siglongjmp __siglongjmp
+ #define __libc_msync __sys_msync
+@@ -37,9 +38,9 @@
+ #define __libc_fsync _fsync
+ #define __libc_nanosleep _nanosleep
+ #define __libc_open _open
+-#define __libc_read _read
++#define __libc_oread _read
+ #define __libc_waitpid __waitpid
+-#define __libc_write _write
++#define __libc_owrite _write
+ #define __libc_longjmp __longjmp
+ #define __libc_siglongjmp __siglongjmp
+ #define __libc_msync _msync
+@@ -75,8 +76,28 @@
+ #define __ptr_t void *
+ #define __pid_t pid_t
+ 
+-ssize_t __libc_write(int, const void *, size_t);
+-ssize_t __libc_read(int, void *, size_t);
++ssize_t __libc_owrite(int, const void *, size_t);
++ssize_t __libc_oread(int, void *, size_t);
++static inline ssize_t
++__libc_write(int fd, const void *buf, size_t wsize) 
++{
++	ssize_t written;
++	
++	do {
++		written = __libc_owrite(fd, buf, wsize);
++	} while (written < 0 && errno == EINTR);
++	return (written);
++}
++static inline ssize_t
++__libc_read(int fd, void *buf, size_t rsize) 
++{
++	ssize_t got;
++
++	do {
++		got = __libc_oread(fd, buf, rsize);
++	} while (got < 0 && errno == EINTR);
++	return (got);
++}
+ pid_t   __libc_waitpid(pid_t wpid, int *status, int options);
+ int	__libc_poll(struct pollfd *_pfd, unsigned int _nfsd, int _timeout);
+ pid_t	__libc_getpid(void);
