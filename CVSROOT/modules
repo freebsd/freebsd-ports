@@ -3212,6 +3212,7 @@ gnofract4d	ports/graphics/gnofract4d
 gnokii		ports/comms/gnokii
 gnome-art	ports/x11-themes/gnome-art
 gnome-audio	ports/audio/gnome-audio
+gnome-applets	ports/x11/gnome-applets
 gnome-backgrounds	ports/x11-themes/gnome-backgrounds
 gnome-blog	ports/deskutils/gnome-blog
 gnome-bluecurve-theme	ports/x11-themes/gnome-bluecurve-theme
@@ -3295,7 +3296,6 @@ gnome2-hacker-tools	ports/devel/gnome2-hacker-tools
 gnome2-lite	ports/x11/gnome2-lite
 gnome2-office	ports/editors/gnome2-office
 gnome2-power-tools	ports/x11/gnome2-power-tools
-gnomeapplets2	ports/x11/gnomeapplets2
 gnomeattacks	ports/games/gnomeattacks
 gnomebaker	ports/sysutils/gnomebaker
 gnomebasic	ports/lang/gnomebasic
