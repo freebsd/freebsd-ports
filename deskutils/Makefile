@@ -51,7 +51,7 @@
     SUBDIR += gnome-blog
     SUBDIR += gnome-menu-editor
     SUBDIR += gnome-pim
-    SUBDIR += gnomeutils2
+    SUBDIR += gnome-utils
     SUBDIR += gnotime
     SUBDIR += goats
     SUBDIR += gourmet
