@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	imapfilter
-PORTVERSION=	1.0.1
+PORTVERSION=	1.2.1
 CATEGORIES=	mail
 MASTER_SITES=	http://imapfilter.hellug.gr/source/
 
-MAINTAINER=	lefcha@hellug.gr
+MAINTAINER=	stefan@FreeBSD.org
 COMMENT=	IMAP mail filtering utility
 
-LIB_DEPENDS=	lua.5:${PORTSDIR}/lang/lua50
+BUILD_DEPENDS=	${LOCALBASE}/include/lua.hpp:${PORTSDIR}/lang/lua
 
 USE_BZIP2=	yes
 USE_OPENSSL=	yes
@@ -29,6 +29,10 @@ PLIST_FILES=	bin/imapfilter \
 		${EXAMPLESDIR:S%${PREFIX}/%%}/sample.config.lua \
 		${EXAMPLESDIR:S%${PREFIX}/%%}/sample.extend.lua
 PLIST_DIRS=	${DATADIR:S%${PREFIX}/%%} ${EXAMPLESDIR:S%${PREFIX}/%%}
+
+post-patch:
+	${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX},g" ${WRKSRC}/configure
+	${REINPLACE_CMD} -e "s,%%LOCALBASE%%,${LOCALBASE},g" ${WRKSRC}/configure
 
 post-install:
 	${STRIP_CMD} ${PREFIX}/bin/imapfilter
