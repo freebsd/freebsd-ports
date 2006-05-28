@@ -302,7 +302,7 @@
     SUBDIR += libGLU
     SUBDIR += libafterimage
     SUBDIR += libart
-    SUBDIR += libart_lgpl2
+    SUBDIR += libart_lgpl
     SUBDIR += libaux
     SUBDIR += libcaca
     SUBDIR += libdjvu++

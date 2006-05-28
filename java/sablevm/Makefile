@@ -21,7 +21,7 @@ BUILD_DEPENDS=	jikes:${PORTSDIR}/java/jikes
 LIB_DEPENDS=	popt:${PORTSDIR}/devel/popt \
 		ffi:${PORTSDIR}/devel/libffi \
 		gtk-x11-2.0:${PORTSDIR}/x11-toolkits/gtk20 \
-		art_lgpl_2:${PORTSDIR}/graphics/libart_lgpl2
+		art_lgpl_2:${PORTSDIR}/graphics/libart_lgpl
 
 USE_AUTOTOOLS=	autoconf:259 libltdl:15 libtool:15
 #GNU_CONFIGURE=	yes

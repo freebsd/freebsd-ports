@@ -50,7 +50,7 @@ PLIST_SUB+=		USE_XLIB="@comment "
 BACK_SUFFIX?=		-xdps
 CONFLICTS?=		gunstep-back-0.* gunstep-back-art-0.* gunstep-back-cairo-0.*
 .elif defined(WITH_GNUSTEP_LIBART)
-LIB_DEPENDS+=		art_lgpl_2:${PORTSDIR}/graphics/libart_lgpl2
+LIB_DEPENDS+=		art_lgpl_2:${PORTSDIR}/graphics/libart_lgpl
 CONFIGURE_ARGS+=	--enable-graphics=art --with-name=art
 CONFIGURE_ARGS+=	--disable-glitz
 PLIST_SUB+=		BACK=art-${BACKVERSION}
@@ -59,7 +59,7 @@ BACK_SUFFIX?=		-art
 CONFLICTS?=		gunstep-back-0.* gunstep-back-xdps-0.* gunstep-back-cairo-0.*
 .elif defined(WITH_GNUSTEP_CAIRO)
 CFLAGS+=		-I${LOCALBASE}/include/freetype2
-LIB_DEPENDS+=		art_lgpl_2:${PORTSDIR}/graphics/libart_lgpl2
+LIB_DEPENDS+=		art_lgpl_2:${PORTSDIR}/graphics/libart_lgpl
 LIB_DEPENDS+=		glitz-glx.1:${PORTSDIR}/graphics/glitz
 LIB_DEPENDS+=		cairo.2:${PORTSDIR}/graphics/cairo
 CONFIGURE_ARGS+=	--enable-graphics=cairo --with-name=cairo
