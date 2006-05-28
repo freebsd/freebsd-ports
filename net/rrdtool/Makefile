@@ -15,7 +15,7 @@ MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Round Robin Database Tools
 
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
-		art_lgpl_2.5:${PORTSDIR}/graphics/libart_lgpl2 \
+		art_lgpl_2.5:${PORTSDIR}/graphics/libart_lgpl \
 		png.5:${PORTSDIR}/graphics/png
 
 USE_PERL5=	yes

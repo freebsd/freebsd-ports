@@ -129,7 +129,7 @@ BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 #LIB_DEPENDS+=	xslt.2:${PORTSDIR}/textproc/libxslt
 #.endif
 .if !defined(WITH_GPC)
-LIB_DEPENDS=	art_lgpl_2:${PORTSDIR}/graphics/libart_lgpl2
+LIB_DEPENDS=	art_lgpl_2:${PORTSDIR}/graphics/libart_lgpl
 .endif
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/OOo_${RELEASE_NR}

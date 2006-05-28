@@ -18,7 +18,7 @@ COMMENT=	Office Suite for KDE3
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libpqxx.a:${PORTSDIR}/databases/postgresql-libpqxx \
 		Magick-config:${PORTSDIR}/graphics/ImageMagick
-LIB_DEPENDS=	art_lgpl_2.5:${PORTSDIR}/graphics/libart_lgpl2 \
+LIB_DEPENDS=	art_lgpl_2.5:${PORTSDIR}/graphics/libart_lgpl \
 		aspell:${PORTSDIR}/textproc/aspell \
 		exif.12:${PORTSDIR}/graphics/libexif \
 		fontconfig:${PORTSDIR}/x11-fonts/fontconfig \

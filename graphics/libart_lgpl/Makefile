@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	libart_lgpl2
+PORTNAME=	libart_lgpl
 PORTVERSION=	2.3.17
 PORTREVISION=	1
 CATEGORIES=	graphics

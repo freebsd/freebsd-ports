@@ -17,7 +17,7 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Graphics utilities for the KDE3 integrated X11 desktop
 
 BUILD_DEPENDS=	kpsewhich:${PORTSDIR}/print/teTeX-base
-LIB_DEPENDS=	art_lgpl_2:${PORTSDIR}/graphics/libart_lgpl2 \
+LIB_DEPENDS=	art_lgpl_2:${PORTSDIR}/graphics/libart_lgpl \
 		fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
 		freetype:${PORTSDIR}/print/freetype2 \
 		fribidi:${PORTSDIR}/converters/fribidi \

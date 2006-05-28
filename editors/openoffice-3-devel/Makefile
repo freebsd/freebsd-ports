@@ -158,7 +158,7 @@ ANT_DISTFILE=   apache-ant-${ANT_VERSION}-bin.tar.bz2
 ANT_VERSION=	1.6.5
 .endif
 .if !defined(WITH_GPC)
-LIB_DEPENDS=	art_lgpl_2:${PORTSDIR}/graphics/libart_lgpl2
+LIB_DEPENDS=	art_lgpl_2:${PORTSDIR}/graphics/libart_lgpl
 .endif
 
 GNU_CONFIGURE=	yes
