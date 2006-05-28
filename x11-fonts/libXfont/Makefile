@@ -13,7 +13,7 @@ MASTER_SITES=	http://freedesktop.org/~ajax/xlibs-release/
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X font libary
 
-BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig \
+BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config \
 		${X11BASE}/libdata/pkgconfig/xproto.pc:${PORTSDIR}/x11/xproto
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 

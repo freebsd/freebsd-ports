@@ -18,7 +18,7 @@ USE_BZIP2=	yes
 
 #WXDEP=	${X11BASE}/libwx_baseu-2.6.so.0.3.1
 WXDEP=	wxgtk2-unicode>=2.6.3
-BUILD_DEPENDS+=	pkg-config:${PORTSDIR}/devel/pkgconfig \
+BUILD_DEPENDS+=	pkg-config:${PORTSDIR}/devel/pkg-config \
 		${WXDEP}:${PORTSDIR}/x11-toolkits/wxgtk26-unicode \
 		md5sum:${PORTSDIR}/archivers/dpkg \
 		xml2-config:${PORTSDIR}/textproc/libxml2 \

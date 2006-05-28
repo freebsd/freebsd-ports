@@ -16,7 +16,7 @@ MAINTAINER=	cjh@FreeBSD.org
 COMMENT=	Clone of Mdir, mc-style terminal file manager
 
 LIB_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv
-BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
+BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
 
 USE_OPENSSL=	yes
 USE_GMAKE=	yes

@@ -6,12 +6,11 @@
 #   $MCom: ports/devel/pkgconfig/Makefile,v 1.6 2005/10/14 20:39:57 adamw Exp $
 #
 
-PORTNAME=	pkgconfig
+PORTNAME=	pkg-config
 PORTVERSION=	0.20
 PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://pkgconfig.freedesktop.org/releases/
-DISTNAME=	pkg-config-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org

@@ -16,7 +16,7 @@ DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 MAINTAINER=	nivit@email.it
 COMMENT=	Mathematical expressions parser library written in C++
 
-RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
+RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
 
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes

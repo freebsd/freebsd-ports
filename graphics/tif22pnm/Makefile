@@ -16,7 +16,7 @@ COMMENT=	Converts TIFF- sampled images to PNM image
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
-BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
+BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

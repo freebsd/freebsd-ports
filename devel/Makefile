@@ -1439,7 +1439,7 @@
     SUBDIR += picp
     SUBDIR += picprog
     SUBDIR += pinstall
-    SUBDIR += pkgconfig
+    SUBDIR += pkg-config
     SUBDIR += plan9port
     SUBDIR += ply
     SUBDIR += pmake

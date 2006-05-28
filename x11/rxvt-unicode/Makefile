@@ -15,7 +15,7 @@ MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	A clone of the terminal emulator rxvt modified to support Unicode
 
 LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/libXft
-BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
+BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
 
 USE_X_PREFIX=		yes
 USE_XPM=		yes

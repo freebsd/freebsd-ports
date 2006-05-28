@@ -16,7 +16,7 @@ MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Google Talk's implementation of Jingle and Jingle-Audio
 
 BUILD_DEPENDS=	\
-		pkg-config:${PORTSDIR}/devel/pkgconfig
+		pkg-config:${PORTSDIR}/devel/pkg-config
 LIB_DEPENDS=	\
 		speex.3:${PORTSDIR}/audio/speex \
 		ilbc.0:${PORTSDIR}/net/ilbc \

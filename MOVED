@@ -2312,3 +2312,4 @@ deskutils/gnomeutils2|deskutils/gnome-utils|2006-05-27|Renamed to use real vendo
 devel/bugbuddy|devel/bug-buddy|2006-05-27|Renamed to use real vendor package name
 devel/gnomecrash|devel/gnome-crash|2006-05-27|Renamed to use real vendor package name
 devel/libgtop2|devel/libgtop|2006-05-27|Renamed to use real vendor package name
+devel/pkgconfig|devel/pkg-config|2006-05-27|Renamed to use real vendor package name
