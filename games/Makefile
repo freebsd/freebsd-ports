@@ -210,7 +210,7 @@
     SUBDIR += galaxymage
     SUBDIR += garith
     SUBDIR += gbottler
-    SUBDIR += gcompris2
+    SUBDIR += gcompris
     SUBDIR += geki2
     SUBDIR += geki3
     SUBDIR += gemdropx
