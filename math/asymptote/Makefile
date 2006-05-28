@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	asymptote
-PORTVERSION=	1.04
-PORTREVISION=	1
+PORTVERSION=	1.05
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -60,17 +59,17 @@ LN_OPTS=	-sf
 GCVERSION=	6.6
 GC_DISTNAME=	gc${GCVERSION}.tar.gz
 
-post-install:
-	@${CAT} ${PKGMESSAGE}
-
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-LIB_DEPENDS+=	readline.5:${PORTSDIR}/devel/readline
+BROKEN=		depends on net/avahi
 .endif
 
 pre-configure:
 	@cd ${WRKSRC}; \
 	${LN} ${LN_OPTS} ${DISTDIR}/${GC_DISTNAME} ${GC_DISTNAME}
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
