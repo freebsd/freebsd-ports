@@ -54,7 +54,6 @@ post-patch:
 	@${REINPLACE_CMD} -e '/^install		:: install_notes/d ; \
 		/^install		:: install_guide/d' \
 		${WRKSRC}/src/MkInstal.in
-	@${REINPLACE_CMD} -e 's|^#!/bin/sh|#!/usr/local/bin/bash|' ${WRKSRC}/libraries/tools/make_bootlib
 
 do-build:
 .	for dir in src libraries docs
