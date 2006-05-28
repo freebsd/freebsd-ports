@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	typo3
-PORTVERSION=	3.8.1
-PORTREVISION=	2
+PORTVERSION=	4.0
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -24,20 +23,9 @@ TYPO3DIR=	www/${DISTNAME}
 SITEDIR?=	www/typo3
 SITESRC=	${WRKDIR}/${EDITION}-${PORTVERSION}
 
-.if defined(WITH_EDITION) && (${WITH_EDITION} == "quickstart" || ${WITH_EDITION} == "testsite")
-EDITION=	${WITH_EDITION}
-.else
 EDITION=	dummy
-.endif
 
-.if make(makesum)
-DISTFILES+=	${DISTNAME}${EXTRACT_SUFX} \
-		dummy-${PORTVERSION}${EXTRACT_SUFX} \
-		quickstart-${PORTVERSION}${EXTRACT_SUFX} \
-		testsite-${PORTVERSION}${EXTRACT_SUFX}
-.else
 DISTFILES+=	${DISTNAME}${EXTRACT_SUFX} ${EDITION}-${PORTVERSION}${EXTRACT_SUFX}
-.endif
 
 OPTIONS=	GD "Configure with GDlib/freetype support" off \
 		ZLIB "Configure with zlib support" off \
