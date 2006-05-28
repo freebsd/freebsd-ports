@@ -3249,6 +3249,7 @@ gnome-mud	ports/net/gnome-mud
 gnome-music-quiz	ports/games/gnome-music-quiz
 gnome-osd	ports/misc/gnome-osd
 gnome-password-generator	ports/security/gnome-password-generator
+gnome-pim	ports/deskutils/gnome-pim
 gnome-pkgview	ports/sysutils/gnome-pkgview
 gnome-schedule	ports/sysutils/gnome-schedule
 gnome-screensaver	ports/x11/gnome-screensaver
@@ -3309,7 +3310,6 @@ gnomepanel-reference	ports/x11/gnomepanel-reference
 gnomephotoprinter	ports/print/gnomephotoprinter
 gnomepilot-conduits2	ports/palm/gnomepilot-conduits2
 gnomepilot2	ports/palm/gnomepilot2
-gnomepim	ports/deskutils/gnomepim
 gnomepm		ports/finance/gnomepm
 gnomeprint	ports/print/gnomeprint
 gnomermind	ports/games/gnomermind
