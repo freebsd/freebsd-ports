@@ -108,6 +108,7 @@ MAN3=	CosEventChannelAdmin.3 \
 	dbg.3 \
 	debugger.3 \
 	dets.3 \
+	dialyzer.3 \
 	dict.3 \
 	digraph.3 \
 	digraph_utils.3 \
@@ -181,6 +182,11 @@ MAN3=	CosEventChannelAdmin.3 \
 	instrument.3 \
 	int.3 \
 	interceptors.3 \
+	inviso.3 \
+	inviso_as_lib.3 \
+	inviso_lfm.3 \
+	inviso_lfm_tpfreader.3 \
+	inviso_rt.3 \
 	io.3 \
 	io_lib.3 \
 	lib.3 \
@@ -290,6 +296,7 @@ MAN3=	CosEventChannelAdmin.3 \
 	sys.3 \
 	systools.3 \
 	tags.3 \
+	tftp.3 \
 	timer.3 \
 	toolbar.3 \
 	ttb.3 \
@@ -298,8 +305,14 @@ MAN3=	CosEventChannelAdmin.3 \
 	webtool.3 \
 	win32reg.3 \
 	wrap_log_reader.3 \
+	xmerl.3 \
+	xmerl_eventp.3 \
+	xmerl_scan.3 \
+	xmerl_xpath.3 \
+	xmerl_xs.3 \
 	xref.3 \
 	yecc.3 \
+	zip.3 \
 	zlib.3
 	
 MAN4=	app.4 \
@@ -315,4 +328,5 @@ MAN6=	crypto.6 \
 	runtime_tools.6 \
 	sasl.6 \
 	snmp.6 \
-	ssl.6
+	ssl.6 \
+	stdlib.6
