@@ -53,12 +53,12 @@ WITHOUT_CPU_CFLAGS=	true
 
 ONLY_FOR_ARCHS=	i386
 
-.if !defined(WITHOUT_JAVA)
+#.if !defined(WITHOUT_JAVA)
 USE_JAVA=	yes
 JAVA_VERSION=	1.4
 JAVA_BUILD=	jdk
 JAVA_VENDOR=	bsdjava
-.endif
+#.endif
 
 .include <bsd.port.pre.mk>
 .include <${FILESDIR}/Makefile.localized>
@@ -125,9 +125,9 @@ BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		unzip:${PORTSDIR}/archivers/unzip \
 		gcp:${PORTSDIR}/sysutils/coreutils \
 		imake:${X_IMAKE_PORT}
-.if defined(WITHOUT_JAVA)
-LIB_DEPENDS+=	xslt.2:${PORTSDIR}/textproc/libxslt
-.endif
+#.if defined(WITHOUT_JAVA)
+#LIB_DEPENDS+=	xslt.2:${PORTSDIR}/textproc/libxslt
+#.endif
 .if !defined(WITH_GPC)
 LIB_DEPENDS=	art_lgpl_2:${PORTSDIR}/graphics/libart_lgpl2
 .endif

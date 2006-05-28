@@ -1,12 +1,12 @@
 # Makefile for knobs
 # Whom:         Maho Nakata <maho@FreeBSD.org>
-# $FreeBSD: /tmp/pcvs/ports/editors/openoffice.org-1.1-devel/files/Attic/Makefile.knobs,v 1.4 2005-10-31 07:34:44 maho Exp $
+# $FreeBSD: /tmp/pcvs/ports/editors/openoffice.org-1.1-devel/files/Attic/Makefile.knobs,v 1.5 2006-05-28 10:03:53 maho Exp $
 
-.if defined(WITHOUT_JAVA)
-CONFIGURE_ARGS+=	--disable-java
-.else
+#.if defined(WITHOUT_JAVA)
+#CONFIGURE_ARGS+=	--disable-java
+#.else
 CONFIGURE_ARGS+=	--with-jdk-home="${JAVA_HOME}"
-.endif
+#.endif
 
 .if !defined(WITH_GPC)
 CONFIGURE_ARGS+=	--enable-libart
@@ -77,11 +77,11 @@ pre-fetch:
 	@${ECHO} "sl-SI sv th tn tr we zh-CN zh-TW zu"
 	@${ECHO}
 .endif
-.if !defined(WITHOUT_JAVA)
-	@${ECHO}
-	@${ECHO} "You can compile OOo without Java support by"
-	@${ECHO} "make -DWITHOUT_JAVA"
-.endif
+#.if !defined(WITHOUT_JAVA)
+#	@${ECHO}
+#	@${ECHO} "You can compile OOo without Java support by"
+#	@${ECHO} "make -DWITHOUT_JAVA"
+#.endif
 .if !defined(WITH_GPC)
 	@${ECHO}
 	@${ECHO} "You can compile OOo with gpc instead of libart by"
