@@ -27,6 +27,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 .if ${ARCH} != "i386" || defined(WITHOUT_X86_ASM)
 CONFIGURE_ARGS+=	--disable-asm
+.else
+CONFIGURE_ARGS+=	--enable-asm
 .endif
 
 .if ${HAVE_GNOME:Mgnomelibs}!=""
@@ -61,7 +63,8 @@ PLIST_SUB+=	NLS=""
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's| install-exec-local||g'
-	@${REINPLACE_CMD} -e 's|-pthread -ldl||g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|asm_support=yes|asm_support=$$enableval|g ; \
+		 s|-pthread -ldl||g' ${WRKSRC}/configure
 
 pre-build:
 .if !defined(WITHOUT_NLS)

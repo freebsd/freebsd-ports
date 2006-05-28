@@ -30,8 +30,8 @@ bin/soundtracker
 %%DATADIR%%/soundtracker_splash.png
 %%DATADIR%%/stop.xpm
 @dirrm %%DATADIR%%
-%%NLS%%@dirrm share/locale/rw/LC_MESSAGES
-%%NLS%%@dirrm share/locale/rw
+%%NLS%%@dirrmtry share/locale/rw/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/rw
 %%NLS%%@dirrm share/locale/en@quot/LC_MESSAGES
 %%NLS%%@dirrm share/locale/en@quot
 %%NLS%%@dirrm share/locale/en@boldquot/LC_MESSAGES
