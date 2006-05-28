@@ -2339,3 +2339,5 @@ x11/gnomeapplets2|x11/gnome-applets|2006-05-28|Renamed to use real vendor packag
 devel/gnomevfs|devel/gnome-vfs1|2006-05-28|Renamed to use real vendor package name
 devel/gnomevfs2|devel/gnome-vfs|2006-05-28|Renamed to use real vendor package name
 devel/gnomevfs2-reference|devel/gnome-vfs-reference|2006-05-28|Renamed to use real vendor package name
+x11/gnomedesktop|x11/gnome-desktop|2006-05-28|Renamed to use real vendor package name
+x11/gnomedesktop-reference|x11/gnome-desktop-reference|2006-05-28|Renamed to use real vendor package name

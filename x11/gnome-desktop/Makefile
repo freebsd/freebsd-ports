@@ -6,12 +6,11 @@
 #   $MCom: ports/x11/gnomedesktop/Makefile,v 1.90 2006/04/13 07:52:40 bland Exp $
 #
 
-PORTNAME=	gnomedesktop
+PORTNAME=	gnome-desktop
 PORTVERSION=	2.14.1.1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-desktop/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
-DISTNAME=	gnome-desktop-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
