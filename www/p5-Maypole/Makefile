@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	MVC web application framework
 
-BUILD_DEPENDS=	${SITE_PERL}/Class/DBI/Loader.pm:${PORTSDIR}/databases/p5-Class-DBI-Loader \
+RUN_DEPENDS=	${SITE_PERL}/Class/DBI/Loader.pm:${PORTSDIR}/databases/p5-Class-DBI-Loader \
 		${SITE_PERL}/Class/DBI/AbstractSearch.pm:${PORTSDIR}/databases/p5-Class-DBI-AbstractSearch \
 		${SITE_PERL}/Class/DBI/Pager.pm:${PORTSDIR}/databases/p5-Class-DBI-Pager \
 		${SITE_PERL}/Class/DBI/Plugin/RetrieveAll.pm:${PORTSDIR}/databases/p5-Class-DBI-Plugin-RetrieveAll \
@@ -23,7 +23,7 @@ BUILD_DEPENDS=	${SITE_PERL}/Class/DBI/Loader.pm:${PORTSDIR}/databases/p5-Class-D
 		${SITE_PERL}/Class/DBI/Loader/Relationship.pm:${PORTSDIR}/databases/p5-Class-DBI-Loader-Relationship \
 		${SITE_PERL}/CGI/Untaint.pm:${PORTSDIR}/www/p5-CGI-Untaint \
 		${SITE_PERL}/UNIVERSAL/moniker.pm:${PORTSDIR}/devel/p5-UNIVERSAL-moniker \
-		${SITE_PERL}/UNIVERSAL/require.pm:${PORTSDIR}/devel/p5-UNIVERSAL-exports \
+		${SITE_PERL}/UNIVERSAL/require.pm:${PORTSDIR}/devel/p5-UNIVERSAL-require \
 		${SITE_PERL}/Template/Plugin/Class.pm:${PORTSDIR}/www/p5-Template-Plugin-Class \
 		${SITE_PERL}/Class/Accessor/Fast.pm:${PORTSDIR}/devel/p5-Class-Accessor \
 		${SITE_PERL}/${PERL_ARCH}/Template.pm:${PORTSDIR}/www/p5-Template-Toolkit \
@@ -33,7 +33,8 @@ BUILD_DEPENDS=	${SITE_PERL}/Class/DBI/Loader.pm:${PORTSDIR}/databases/p5-Class-D
 		${SITE_PERL}/CGI/Simple.pm:${PORTSDIR}/www/p5-CGI-Simple \
 		${SITE_PERL}/HTTP/Headers.pm:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS+=	${SITE_PERL}/Test/MockModule.pm:${PORTSDIR}/devel/p5-Test-MockModule
 
 OPTIONS=	MODPERL "mod_perl support" on
 
@@ -41,10 +42,8 @@ OPTIONS=	MODPERL "mod_perl support" on
 
 .if defined(WITH_MODPERL)
 .if defined(WITH_APACHE2)
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Apache2/Request.pm:${PORTSDIR}/www/p5-libapreq2
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Apache2/Request.pm:${PORTSDIR}/www/p5-libapreq2
 .else
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Apache/Request.pm:${PORTSDIR}/www/p5-libapreq
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Apache/Request.pm:${PORTSDIR}/www/p5-libapreq
 .endif
 .endif
@@ -132,7 +131,7 @@ post-install:
 	@ ${CAT} ${PKGMESSAGE}
 
 .if ${PERL_LEVEL} < 500600
-IGNORE=		Perl 5.6 or newer required. Install lang/perl5 or lang/perl5.8 and try again.
+IGNORE=		requires perl 5.6 or above. Install lang/perl5 or lang/perl5.8 and try again
 .endif
 
 .include <bsd.port.post.mk>
