@@ -8178,6 +8178,7 @@ p5-DBM-Deep	ports/databases/p5-DBM-Deep
 p5-DBZ_File	ports/databases/p5-DBZ_File
 p5-DB_File-Lock	ports/devel/p5-DB_File-Lock
 p5-DNS-Config	ports/dns/p5-DNS-Config
+p5-DNS-EasyDNS	ports/dns/p5-DNS-EasyDNS
 p5-DNS-Zone	ports/dns/p5-DNS-Zone
 p5-DNS-ZoneParse	ports/dns/p5-DNS-ZoneParse
 p5-DWH_File	ports/databases/p5-DWH_File
