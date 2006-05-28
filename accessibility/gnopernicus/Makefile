@@ -17,7 +17,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Collection of accessibility apps for GNOME 2
 
-LIB_DEPENDS=	gnome-mag.2:${PORTSDIR}/accessibility/gnomemag
+LIB_DEPENDS=	gnome-mag.2:${PORTSDIR}/accessibility/gnome-mag
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
