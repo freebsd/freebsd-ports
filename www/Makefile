@@ -983,6 +983,7 @@
     SUBDIR += wwwstat
     SUBDIR += wyvern
     SUBDIR += xaraya
+    SUBDIR += xcache
     SUBDIR += xist
     SUBDIR += xitami
     SUBDIR += xpath2rss
