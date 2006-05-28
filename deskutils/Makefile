@@ -48,8 +48,8 @@
     SUBDIR += glabels
     SUBDIR += gmcal
     SUBDIR += gnochm
+    SUBDIR += gnome-blog
     SUBDIR += gnome-menu-editor
-    SUBDIR += gnomeblog
     SUBDIR += gnomepim
     SUBDIR += gnomeutils2
     SUBDIR += gnotime
