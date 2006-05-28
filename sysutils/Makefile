@@ -205,11 +205,11 @@
     SUBDIR += gkrelltop
     SUBDIR += gksu
     SUBDIR += glload
+    SUBDIR += gnome-control-center
+    SUBDIR += gnome-control-center1
     SUBDIR += gnome-pkgview
     SUBDIR += gnome-schedule
     SUBDIR += gnomebaker
-    SUBDIR += gnomecontrolcenter
-    SUBDIR += gnomecontrolcenter2
     SUBDIR += gnomefind
     SUBDIR += gnomesu
     SUBDIR += gnomesystemmonitor
