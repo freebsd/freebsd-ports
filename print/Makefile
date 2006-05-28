@@ -94,8 +94,8 @@
     SUBDIR += gimp-print
     SUBDIR += gl2ps
     SUBDIR += gnome-cups-manager
+    SUBDIR += gnome-print
     SUBDIR += gnomephotoprinter
-    SUBDIR += gnomeprint
     SUBDIR += gribouy
     SUBDIR += gsfonts
     SUBDIR += gtklp
