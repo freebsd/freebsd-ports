@@ -62,7 +62,7 @@ CONFIGURE_ARGS+=	--with-ldap
 .endif
 
 .if !defined(WITHOUT_GTKSPELL)
-LIB_DEPENDS+=	gtkspell.0:${PORTSDIR}/textproc/gtkspell2
+LIB_DEPENDS+=	gtkspell.0:${PORTSDIR}/textproc/gtkspell
 CONFIGURE_ARGS+=--with-gtkspell
 .endif
 
