@@ -1,5 +1,5 @@
-Welcome to libpqxx, a C++ API to the PostgreSQL database management
-system.
+Welcome to libpqxx, the official C++ API to the PostgreSQL database
+management system.
 
 There are many similar libraries for PostgreSQL and for other
 databases, some of them database-independent.  Most of these, however,
@@ -15,4 +15,4 @@ management under control; and even basic object-orientation to give
 you some extra reliability features that would be hard to get with
 most other database interfaces.
 
-WWW: http://gborg.postgresql.org/project/libpqxx/
+WWW: http://pqxx.org/
