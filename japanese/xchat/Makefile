@@ -12,6 +12,6 @@ COMMENT=	An X11 IRC client using the GTK+ toolkit, and optionally, GNOME
 
 CONFIGURE_ARGS=	--enable-japanese-conv
 
-MASTERDIR=	${.CURDIR}/../../irc/xchat
+MASTERDIR=	${.CURDIR}/../../irc/xchat1
 
 .include "${MASTERDIR}/Makefile"

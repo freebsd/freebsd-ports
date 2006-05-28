@@ -1,88 +1,112 @@
-# New ports collection makefile for:	xchat
-# Date created:			17 Nov 1998
-# Whom:				Jim Mock <jim@FreeBSD.org>
+# New ports collection makefile for:	xchat2
+# Date created:			17 Aug 2002
+# Whom:				Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=		xchat
-PORTVERSION=		1.8.11
-PORTREVISION=		6
-CATEGORIES+=		irc gnome ipv6
-MASTER_SITES=		http://xchat.org/files/source/1.8/ \
-			http://xchat.linuxpower.org/files/source/1.8/
+PORTNAME=	xchat
+PORTVERSION=	2.6.2
+CATEGORIES=	irc gnome ipv6
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+		http://xchat.org/files/source/2.6/
+MASTER_SITE_SUBDIR=	${PORTNAME:S|2||}
+DISTNAME=	xchat-${PORTVERSION}
 
-MAINTAINER?=		ports@FreeBSD.org
-COMMENT=	An X11 IRC client using the GTK+ toolkit, and optionally, GNOME
+MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	An X11 IRC client using the GTK+ 2 toolkit
 
-# This port has a slave port japanese/xchat.  Do not carelessly overwrite
-# the variables or the targets defined in it.  When you need to, please
-# contact its maintainer.
+USE_X_PREFIX=	yes
+USE_BZIP2=	yes
+USE_GMAKE=	yes
+USE_GNOME=	gnomehack gtk20
+USE_GETTEXT=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
+		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+CONFIGURE_ARGS=	--enable-nls \
+		--enable-ipv6
 
-USE_X_PREFIX=		yes
-USE_BZIP2=		yes
-USE_GMAKE=		yes
-USE_ICONV=		yes
-USE_PERL5=		yes
-USE_GNOME=		gtk12
-WANT_GNOME=		yes
-GNU_CONFIGURE=		yes
-# Assign with `+=' for slave ports
-CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LIBS="-L${LOCALBASE}/lib -lintl -liconv"
-CONFIGURE_ARGS+=	--without-included-gettext \
-			--enable-nls \
-			--enable-ipv6 \
-			--datadir="${PREFIX}/share" \
-			--enable-perl
+CONFLICTS=	xchat-1*
 
-.if defined(WITH_SSL)
-USE_OPENSSL=		YES
-CONFIGURE_ARGS+=	--enable-openssl
+.if defined(WITH_SOCKS)
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libsocks5.a:${PORTSDIR}/net/socks5
+CONFIGURE_ARGS+=	--enable-socks
 .endif
 
+# openssl in now default in configure
+
 .if defined(WITH_PYTHON)
-USE_PYTHON=	yes
+USE_PYTHON=		yes
 CONFIGURE_ARGS+=	--enable-python
+PLIST_SUB+=		PYTHON=""
 .else
 CONFIGURE_ARGS+=	--disable-python
+PLIST_SUB+=		PYTHON="@comment "
+.endif
+
+.if defined(WITH_TCL)
+LIB_DEPENDS+=	tcl83.1:${PORTSDIR}/lang/tcl83
+CONFIGURE_ARGS+=--enable-tcl=${LOCALBASE}/lib/tcl8.3
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS} \
+		-I${LOCALBASE}/include/tcl8.3" \
+		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS} \
+		-L${LOCALBASE}/lib/tcl8.3"
+PLIST_SUB+=	TCL=""
+.else
+CONFIGURE_ARGS+=--enable-tcl=no
+PLIST_SUB+=	TCL="@comment "
+.endif
+
+.if !defined(WITHOUT_DBUS)
+LIB_DEPENDS+=	dbus-1.2:${PORTSDIR}/devel/dbus
+CONFIGURE_ARGS+=--enable-dbus
+USE_GNOME+=	gconf2
+GCONF_SCHEMAS=	apps_xchat_url_handler.schemas
+PLIST_SUB+=	DBUS=""
+.else
+CONFIGURE_ARGS+=--disable-dbus
+PLIST_SUB+=	DBUS="@comment "
 .endif
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_SOCKS)
-# Assign with `+=' for slave ports
-BUILD_DEPENDS+=		${LOCALBASE}/lib/libsocks5.a:${PORTSDIR}/net/socks5
-CONFIGURE_ARGS+=	--enable-socks
-.endif
-
-.if defined(WITH_TRANSPARENCY)
-BUILD_DEPENDS+=		${X11BASE}/bin/gdk-pixbuf-config:${PORTSDIR}/graphics/gdk-pixbuf
-CONFIGURE_ARGS+=	--enable-gdk-pixbuf
-.endif
-
-.if ${HAVE_GNOME:Mimlib}!=""
-USE_GNOME=		imlib
-CONFIGURE_ARGS+=	--enable-gnome --enable-panel --enable-gdk-pixbuf \
-			--enable-zvt
-MAKE_ARGS=		icondir="${PREFIX}/share/gnome/pixmaps" \
-			utildir="${PREFIX}/share/gnome/apps/Internet"
+.if ${PERL_LEVEL} < 500600 || defined(WITHOUT_PERL)
+CONFIGURE_ARGS+=--disable-perl
+PLIST_SUB+=	PERL="@comment "
 .else
-CONFIGURE_ARGS+=	--disable-gnome --disable-zvt
+USE_PERL5=	yes
+CONFIGURE_ARGS+=--enable-perl
+PLIST_SUB+=	PERL=""
+.endif
+
+pre-everything::
+.if !defined(WITH_PYTHON) || !defined(WITH_SOCKS) || !defined(WITH_TCL) || !defined(WITHOUT_PERL) || !defined(WITHOUT_DBUS)
+	@${ECHO_MSG} "You may specify the following on the command line:"
+	@${ECHO_MSG} ""
+.endif
+.if !defined(WITH_PYTHON)
+	@${ECHO_MSG} "WITH_PYTHON=yes for Python support"
+.endif
+.if !defined(WITH_SOCKS)
+	@${ECHO_MSG} "WITH_SOCKS=yes for SOCKS5 proxy support"
+.endif
+.if !defined(WITH_TCL)
+	@${ECHO_MSG} "WITH_TCL=yes for tcl support"
+.endif
+.if !defined(WITHOUT_PERL)
+	@${ECHO_MSG} "WITHOUT_PERL=yes to disable Perl support"
+.endif
+.if !defined(WITHOUT_DBUS)
+	@${ECHO_MSG} "WITHOUT_DBUS=yes to disable dbus support"
 .endif
 
 post-patch:
-	@${PERL} -pi \
-		-e 's|-lpthread|${PTHREAD_LIBS}|g;' \
+	@${REINPLACE_CMD} -E -e 's|PY_LIBS=.*|PY_LIBS="-L\$$PY_EXEC_PREFIX/lib/python\$$PY_VER/config -lpython\$$PY_VER ${PTHREAD_LIBS} -lutil"|' \
 		${WRKSRC}/configure
 
+# Create plugins directory even when no plugins are installed
 post-install:
-.if !defined(NOPORTDOCS)
-	@${ECHO_MSG} "===>   Installing xchat docs in ${PREFIX}/share/doc/xchat"
-	@${MKDIR} ${PREFIX}/share/doc/xchat && ${CHMOD} a+rx ${PREFIX}/share/doc/xchat
-	${INSTALL_DATA} ${WRKSRC}/doc/*.* ${PREFIX}/share/doc/xchat
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/xchat
-	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${PREFIX}/share/doc/xchat
-.endif
+	@${MKDIR} ${PREFIX}/lib/xchat/plugins
 
 .include <bsd.port.post.mk>

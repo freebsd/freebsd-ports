@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An encryption plugin for XChat
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libmiracl.a:${PORTSDIR}/math/miracl
-RUN_DEPENDS=	xchat:${PORTSDIR}/irc/xchat2
+RUN_DEPENDS=	xchat:${PORTSDIR}/irc/xchat
 
 USE_X_PREFIX=	yes
 USE_ZIP=	yes

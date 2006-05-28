@@ -1,11 +1,17 @@
---- configure.orig	Wed Jan 15 23:38:08 2003
-+++ configure	Wed Jan 15 23:38:08 2003
-@@ -6017,4 +6017,4 @@
- #include "confdefs.h"
+--- configure.orig	Sun Apr  2 19:17:32 2006
++++ configure	Sun Apr  2 19:18:07 2006
+@@ -24741,12 +24741,12 @@ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
  #include <libintl.h>
  extern int _nl_msg_cat_cntr;
 -extern int *_nl_domain_bindings;
 +extern int *libintl_nl_domain_bindings;
-@@ -6031,2 +6031,2 @@
--return (int) gettext ("") + _nl_msg_cat_cntr + *_nl_domain_bindings
-+return (int) gettext ("") + _nl_msg_cat_cntr + *libintl_nl_domain_bindings
+ int
+ main ()
+ {
+ bindtextdomain ("", "");
+-return * gettext ("") + _nl_msg_cat_cntr + *_nl_domain_bindings
++return * gettext ("") + _nl_msg_cat_cntr + *libintl_nl_domain_bindings
+   ;
+   return 0;
+ }
