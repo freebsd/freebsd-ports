@@ -8,7 +8,8 @@
 PORTNAME=	distutils
 PORTVERSION=	1.0.2
 CATEGORIES=	misc python
-MASTER_SITES=	http://www.python.org/sigs/distutils-sig/download/
+MASTER_SITES=	${MASTER_SITE_PYTHON}
+MASTER_SITE_SUBDIR=	community/sigs/current/distutils-sig/download
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Distutils-${PORTVERSION}
 
@@ -20,7 +21,7 @@ USE_PYTHON=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} > 211
-IGNORE=		"Use the version distributed with ${PYTHON_VERSION}"
+IGNORE=		won't work with the installed Python: use the version distributed with ${PYTHON_VERSION}
 .endif
 
 do-build:
