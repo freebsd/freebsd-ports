@@ -35,7 +35,7 @@ USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_PERL5_BUILD=yes
 .if defined(WITH_JAVA_AWT)
-USE_GNOME=	gtk20
+USE_GNOME=	gtk20 libartlgpl2
 .endif
 
 PATCH_WRKSRC=	${SRCDIR}
