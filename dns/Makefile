@@ -64,6 +64,7 @@
     SUBDIR += odsclient
     SUBDIR += p5-BIND-Conf_Parser
     SUBDIR += p5-DNS-Config
+    SUBDIR += p5-DNS-EasyDNS
     SUBDIR += p5-DNS-Zone
     SUBDIR += p5-DNS-ZoneParse
     SUBDIR += p5-Data-Validate-Domain

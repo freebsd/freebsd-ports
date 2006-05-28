@@ -1,0 +1,9 @@
+%%SITE_PERL%%/DNS/EasyDNS.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/DNS/EasyDNS/.packlist
+%%PORTDOCS%%%%EXAMPLESDIR%%/easydns-by-interface
+%%PORTDOCS%%%%EXAMPLESDIR%%/easydns-from-router
+%%PORTDOCS%%%%EXAMPLESDIR%%/easydns-simple
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DNS/EasyDNS
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DNS
+@dirrmtry %%SITE_PERL%%/DNS
