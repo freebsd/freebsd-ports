@@ -6,12 +6,11 @@
 #   $MCom: ports/x11/gnometerminal/Makefile,v 1.69 2006/04/13 07:52:41 bland Exp $
 #
 
-PORTNAME=	gnometerminal
+PORTNAME=	gnome-terminal
 PORTVERSION=	2.14.1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-terminal/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
-DISTNAME=	gnome-terminal-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org

@@ -2346,3 +2346,4 @@ x11/gnomelibs|x11/gnome-libs|2006-05-28|Renamed to use real vendor package name
 x11/gnomepanel|x11/gnome-panel|2006-05-28|Renamed to use real vendor package name
 x11/gnomepanel-reference|x11/gnome-panel-reference|2006-05-28|Renamed to use real vendor package name
 x11/gnomesession|x11/gnome-session|2006-05-28|Renamed to use real vendor package name
+x11/gnometerminal|x11/gnome-terminal|2006-05-28|Renamed to use real vendor package name

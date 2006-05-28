@@ -72,11 +72,11 @@
     SUBDIR += gnome-screensaver
     SUBDIR += gnome-session
     SUBDIR += gnome-swallow
+    SUBDIR += gnome-terminal
     SUBDIR += gnome2
     SUBDIR += gnome2-fifth-toe
     SUBDIR += gnome2-lite
     SUBDIR += gnome2-power-tools
-    SUBDIR += gnometerminal
     SUBDIR += gpctool
     SUBDIR += grabc
     SUBDIR += gromit

@@ -17,7 +17,7 @@ RUN_DEPENDS=	${X11BASE}/libexec/gweather-applet-2:${PORTSDIR}/x11/gnome-applets 
 	 	gnome-dictionary:${PORTSDIR}/deskutils/gnome-utils \
 		eog:${PORTSDIR}/graphics/eog \
 		gedit:${PORTSDIR}/editors/gedit \
-		gnome-terminal:${PORTSDIR}/x11/gnometerminal \
+		gnome-terminal:${PORTSDIR}/x11/gnome-terminal \
 		gnome-session:${PORTSDIR}/x11/gnome-session \
 		gnome-system-monitor:${PORTSDIR}/sysutils/gnome-system-monitor \
 		nautilus:${PORTSDIR}/x11-fm/nautilus2 \
