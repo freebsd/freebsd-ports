@@ -96,7 +96,7 @@
     SUBDIR += boost-gcc3
     SUBDIR += boost-python
     SUBDIR += bouml
-    SUBDIR += bugbuddy
+    SUBDIR += bug-buddy
     SUBDIR += bugzilla
     SUBDIR += buildbot
     SUBDIR += buildtool
