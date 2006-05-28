@@ -226,7 +226,7 @@ libgda_DETECT=		${GDA_CONFIG}
 libgda_USE_GNOME_IMPL=	gconf bonobo
 
 GNOMEDB_CONFIG?=	${X11BASE}/bin/gnomedb-config
-gnomedb_LIB_DEPENDS=	gnomedb.0:${PORTSDIR}/databases/gnomedb
+gnomedb_LIB_DEPENDS=	gnomedb.0:${PORTSDIR}/databases/gnome-db
 gnomedb_CONFIGURE_ENV=	GNOMEDB_CONFIG="${GNOMEDB_CONFIG}"
 gnomedb_MAKE_ENV=	GNOMEDB_CONFIG="${GNOMEDB_CONFIG}"
 gnomedb_DETECT=		${GNOMEDB_CONFIG}
