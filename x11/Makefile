@@ -60,6 +60,7 @@
     SUBDIR += ggiterm
     SUBDIR += gmessage
     SUBDIR += gmrun
+    SUBDIR += gnome-applets
     SUBDIR += gnome-clipboard-daemon
     SUBDIR += gnome-launch-box
     SUBDIR += gnome-menus
@@ -69,7 +70,6 @@
     SUBDIR += gnome2-fifth-toe
     SUBDIR += gnome2-lite
     SUBDIR += gnome2-power-tools
-    SUBDIR += gnomeapplets2
     SUBDIR += gnomedesktop
     SUBDIR += gnomedesktop-reference
     SUBDIR += gnomelibs
