@@ -14024,6 +14024,7 @@ xbubble		ports/games/xbubble
 xbuffy		ports/mail/xbuffy
 xc-mail		ports/mail/xc-mail
 xca		ports/security/xca
+xcache		ports/www/xcache
 xcalendar	ports/deskutils/xcalendar
 xcalib		ports/x11/xcalib
 xcb		ports/x11/xcb
