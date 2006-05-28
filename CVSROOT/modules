@@ -10431,13 +10431,13 @@ pkfonts300	ports/print/pkfonts300
 pkfonts360	ports/print/pkfonts360
 pkfonts400	ports/print/pkfonts400
 pkfonts600	ports/print/pkfonts600
+pkg-config	ports/devel/pkg-config
 pkg-orphan	ports/sysutils/pkg-orphan
 pkg_cutleaves	ports/sysutils/pkg_cutleaves
 pkg_remove	ports/sysutils/pkg_remove
 pkg_rmleaves	ports/sysutils/pkg_rmleaves
 pkg_trackinst	ports/sysutils/pkg_trackinst
 pkg_tree	ports/sysutils/pkg_tree
-pkgconfig	ports/devel/pkgconfig
 pkgfe		ports/sysutils/pkgfe
 pks		ports/security/pks
 pktsuckers	ports/security/pktsuckers

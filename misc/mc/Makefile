@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	utils/file/managers/mc/
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	Midnight Commander, a free Norton Commander Clone
 
-BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
+BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
 
 USE_GETTEXT=	yes
 USE_GMAKE=	yes

@@ -17,7 +17,7 @@ MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Shows current mldonkey donwload/upload rates and allows setting them
 
 BUILD_DEPENDS=	\
-		pkg-config:${PORTSDIR}/devel/pkgconfig \
+		pkg-config:${PORTSDIR}/devel/pkg-config \
 		${X11BASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 

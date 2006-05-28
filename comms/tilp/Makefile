@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	tilp
 MAINTAINER=	tijl@ulyssis.org
 COMMENT=	TI Linking Program
 
-BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
+BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
 LIB_DEPENDS=	ticalcs.9:${PORTSDIR}/devel/libticalcs \
 		ticables.12:${PORTSDIR}/comms/libticables \
 		tifiles.6:${PORTSDIR}/devel/libtifiles

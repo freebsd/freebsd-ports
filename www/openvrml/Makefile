@@ -17,7 +17,7 @@ COMMENT=	VRML97 runtime and browser ("lookat")
 
 BUILD_DEPENDS=	${X11BASE}/libdata/pkgconfig/mozilla-js.pc:${PORTSDIR}/www/mozilla	\
 		${LOCALBASE}/include/argp.h:${PORTSDIR}/devel/argp-standalone	\
-		pkg-config:${PORTSDIR}/devel/pkgconfig
+		pkg-config:${PORTSDIR}/devel/pkg-config
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
