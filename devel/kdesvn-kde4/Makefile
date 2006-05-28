@@ -6,6 +6,7 @@
 
 PORTNAME=	kdesvn
 PORTVERSION=	0.8.4
+PORTREVISION=	1
 CATEGORIES=	devel kde
 MASTER_SITES=	http://www.alwins-world.de/programs/download/${PORTNAME}/ \
 		http://www.yuanjue.net/download/
@@ -27,7 +28,13 @@ INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS+=--with-apr-config=apr-1-config \
 		--with-apu-config=apu-1-config
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		Does not compile on 4.x
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2||g'	${WRKSRC}/${CONFIGURE_SCRIPT}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

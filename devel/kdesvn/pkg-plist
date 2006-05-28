@@ -67,6 +67,7 @@ share/icons/hicolor/128x128/actions/kdesvninfo.png
 share/icons/hicolor/128x128/actions/kdesvnlock.png
 share/icons/hicolor/128x128/actions/kdesvnlog.png
 share/icons/hicolor/128x128/actions/kdesvnmerge.png
+share/icons/hicolor/128x128/filesystems/kdesvnneedlock.png
 share/icons/hicolor/128x128/actions/kdesvnrelocate.png
 share/icons/hicolor/128x128/actions/kdesvnswitch.png
 share/icons/hicolor/128x128/actions/kdesvnunlock.png
@@ -94,6 +95,7 @@ share/icons/hicolor/16x16/actions/kdesvninfo.png
 share/icons/hicolor/16x16/actions/kdesvnlock.png
 share/icons/hicolor/16x16/actions/kdesvnlog.png
 share/icons/hicolor/16x16/actions/kdesvnmerge.png
+share/icons/hicolor/16x16/filesystems/kdesvnneedlock.png
 share/icons/hicolor/16x16/actions/kdesvnrelocate.png
 share/icons/hicolor/16x16/actions/kdesvnswitch.png
 share/icons/hicolor/16x16/actions/kdesvnunlock.png
@@ -121,6 +123,7 @@ share/icons/hicolor/22x22/actions/kdesvninfo.png
 share/icons/hicolor/22x22/actions/kdesvnlock.png
 share/icons/hicolor/22x22/actions/kdesvnlog.png
 share/icons/hicolor/22x22/actions/kdesvnmerge.png
+share/icons/hicolor/22x22/filesystems/kdesvnneedlock.png
 share/icons/hicolor/22x22/actions/kdesvnrelocate.png
 share/icons/hicolor/22x22/actions/kdesvnswitch.png
 share/icons/hicolor/22x22/actions/kdesvnunlock.png
@@ -148,6 +151,7 @@ share/icons/hicolor/32x32/actions/kdesvninfo.png
 share/icons/hicolor/32x32/actions/kdesvnlock.png
 share/icons/hicolor/32x32/actions/kdesvnlog.png
 share/icons/hicolor/32x32/actions/kdesvnmerge.png
+share/icons/hicolor/32x32/filesystems/kdesvnneedlock.png
 share/icons/hicolor/32x32/actions/kdesvnrelocate.png
 share/icons/hicolor/32x32/actions/kdesvnswitch.png
 share/icons/hicolor/32x32/actions/kdesvnunlock.png
@@ -175,6 +179,7 @@ share/icons/hicolor/48x48/actions/kdesvninfo.png
 share/icons/hicolor/48x48/actions/kdesvnlock.png
 share/icons/hicolor/48x48/actions/kdesvnlog.png
 share/icons/hicolor/48x48/actions/kdesvnmerge.png
+share/icons/hicolor/48x48/filesystems/kdesvnneedlock.png
 share/icons/hicolor/48x48/actions/kdesvnrelocate.png
 share/icons/hicolor/48x48/actions/kdesvnswitch.png
 share/icons/hicolor/48x48/actions/kdesvnunlock.png
@@ -202,6 +207,7 @@ share/icons/hicolor/64x64/actions/kdesvninfo.png
 share/icons/hicolor/64x64/actions/kdesvnlock.png
 share/icons/hicolor/64x64/actions/kdesvnlog.png
 share/icons/hicolor/64x64/actions/kdesvnmerge.png
+share/icons/hicolor/64x64/filesystems/kdesvnneedlock.png
 share/icons/hicolor/64x64/actions/kdesvnrelocate.png
 share/icons/hicolor/64x64/actions/kdesvnswitch.png
 share/icons/hicolor/64x64/actions/kdesvnunlock.png
@@ -229,6 +235,7 @@ share/icons/hicolor/scalable/actions/kdesvninfo.svgz
 share/icons/hicolor/scalable/actions/kdesvnlock.svgz
 share/icons/hicolor/scalable/actions/kdesvnlog.svgz
 share/icons/hicolor/scalable/actions/kdesvnmerge.svgz
+share/icons/hicolor/scalable/filesystems/kdesvnneedlock.svgz
 share/icons/hicolor/scalable/actions/kdesvnrelocate.svgz
 share/icons/hicolor/scalable/actions/kdesvnswitch.svgz
 share/icons/hicolor/scalable/actions/kdesvnunlock.svgz
