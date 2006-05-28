@@ -71,6 +71,7 @@
 %%PYTHON_SITELIBDIR%%/pyasn1/v1/codec/der/encoder.pyc
 %%PYTHON_SITELIBDIR%%/pyasn1/v1/codec/der/encoder.pyo
 %%EXAMPLESDIR%%/snmp.py
+%%EXAMPLESDIR%%/sshkey.py
 %%EXAMPLESDIR%%/x509.py
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
