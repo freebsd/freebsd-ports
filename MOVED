@@ -2331,3 +2331,4 @@ sysutils/gnomecontrolcenter|sysutils/gnome-control-center1|2006-05-28|Renamed to
 sysutils/gnomecontrolcenter2|sysutils/gnome-control-center|2006-05-28|Renamed to use real vendor package name
 sysutils/gnomesystemmonitor|sysutils/gnome-system-monitor|2006-05-28|Renamed to use real vendor package name
 sysutils/gnomesystemtools|sysutils/gnome-system-tools|2006-05-28|Renamed to use real vendor package name
+textproc/gnomedocutils|textproc/gnome-doc-utils|2006-05-28|Renamed to use real vendor package name

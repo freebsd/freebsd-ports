@@ -3,10 +3,9 @@
 # Whom:					Adam Weinberger <adamw@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/textproc/gnomedocutils/Makefile,v 1.32 2006/03/14 03:06:20 marcus Exp $
 #
 
-PORTNAME=	gnomedocutils
+PORTNAME=	gnome-doc-utils
 PORTVERSION=	0.6.0
 PORTREVISION=	2
 CATEGORIES=	textproc gnome

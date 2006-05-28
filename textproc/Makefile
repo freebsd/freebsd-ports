@@ -144,8 +144,8 @@
     SUBDIR += glimpse
     SUBDIR += gmat
     SUBDIR += gmetadom
+    SUBDIR += gnome-doc-utils
     SUBDIR += gnome-translate
-    SUBDIR += gnomedocutils
     SUBDIR += gnomespell
     SUBDIR += google-ctemplate
     SUBDIR += gpp
