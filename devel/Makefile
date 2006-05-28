@@ -1513,7 +1513,7 @@
     SUBDIR += py-ncurses
     SUBDIR += py-omniorb
     SUBDIR += py-optik
-    SUBDIR += py-orbit2
+    SUBDIR += py-orbit
     SUBDIR += py-parsing
     SUBDIR += py-period
     SUBDIR += py-plex

@@ -978,7 +978,6 @@ ftp/wget+ipv6|ftp/wget|2004-04-06|removed, ftp/wget has this function
 misc/metatheme2||2004-04-09|removed obsolete port
 x11-fm/apotheke||2004-04-10|removed obsolete port
 devel/glg||2004-04-10|removed unfetchable port
-devel/py-orbit|devel/py-orbit2|2004-04-10|removed deprecated port
 devel/veepee||2004-04-10|removed deprecated port
 graphics/cybervrml97||2004-04-10|removed unfetchable port
 security/inflex||2004-04-10|removed deprecated port
@@ -2313,3 +2312,4 @@ devel/bugbuddy|devel/bug-buddy|2006-05-27|Renamed to use real vendor package nam
 devel/gnomecrash|devel/gnome-crash|2006-05-27|Renamed to use real vendor package name
 devel/libgtop2|devel/libgtop|2006-05-27|Renamed to use real vendor package name
 devel/pkgconfig|devel/pkg-config|2006-05-27|Renamed to use real vendor package name
+devel/py-orbit2|devel/py-orbit|2006-05-28|Renamed to use real vendor package name
