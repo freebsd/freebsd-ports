@@ -1,5 +1,5 @@
---- system.mk.orig	Sat Jun 25 17:13:43 2005
-+++ system.mk	Sat Jul 16 18:56:28 2005
+--- system.mk.orig	Thu May 18 16:06:53 2006
++++ system.mk	Fri May 19 13:19:25 2006
 @@ -7,7 +7,7 @@
  ## Installation paths
  ##
@@ -29,11 +29,11 @@
  ##
 @@ -56,7 +56,7 @@
  
- # If you have installed Lua 5.0 from the official tarball without changing
+ # If you have installed Lua 5.1 from the official tarball without changing
  # paths, this should do it.
 -LUA_DIR=/usr/local
 +LUA_DIR=$(LOCALBASE)
- LUA_LIBS = -L$(LUA_DIR)/lib -llua -llualib
+ LUA_LIBS = -L$(LUA_DIR)/lib -llua
  LUA_INCLUDES = -I$(LUA_DIR)/include
  LUA=$(LUA_DIR)/bin/lua
 @@ -74,7 +74,7 @@
