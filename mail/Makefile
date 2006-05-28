@@ -292,6 +292,7 @@
     SUBDIR += p5-Mail-Address-MobileJp
     SUBDIR += p5-Mail-Alias
     SUBDIR += p5-Mail-Audit
+    SUBDIR += p5-Mail-Audit-Attach
     SUBDIR += p5-Mail-Box
     SUBDIR += p5-Mail-Box-Parser-C
     SUBDIR += p5-Mail-Box1
