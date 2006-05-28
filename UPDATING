@@ -6,6 +6,16 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20060528:
+  AFFECTS: users of news/inn
+  AUTHOR: shaun@inerd.com
+
+  The 2.4.3 port of inn has an unfortunate bug which causes inn's database files
+  to be erased during an uninstall or upgrade. Earlier versions are also
+  affected. The latest port revision fixes this, but before upgrading, users are
+  advised to move their ${PREFIX}/news/db directory out of the way, in order to
+  save the history, active and newsgroups databases from destruction.
+
 20060526:
   AFFECTS: users of security/amavisd-new
   AUTHOR: gkovesdan@t-hosting.hu

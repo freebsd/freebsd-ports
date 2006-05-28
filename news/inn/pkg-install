@@ -6,6 +6,10 @@ PKG_PREFIX=${PKG_PREFIX:-/usr/local}
 
 case $2 in
     PRE-INSTALL)
+	echo "===>  Checking for old database files"
+	if [ ! -d ${PKG_PREFIX}/news/db ]; then
+		mkdir -p ${PKG_PREFIX}/news/db.dist
+	fi
 	;;
     CHECK-CONF)
 	ETC_DIR=${3}
@@ -37,6 +41,13 @@ case $2 in
 	    ${NEWSBASE}/spool/outgoing \
 	    ${NEWSBASE}/spool/overview \
 	    ${NEWSBASE}/spool/tmp
+
+	if [ -d ${NEWSBASE}/db.dist -a ! -f ${NEWSBASE}/db.dist/* ]; then
+		for f in ${NEWSBASE}/db/*; do
+			cp -pR ${f} ${NEWSBASE}/db.dist
+		done
+	fi
+
 	;;
     *)
 	echo "Unexpected Argument $2!!!"
