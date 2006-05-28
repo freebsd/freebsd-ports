@@ -47,17 +47,39 @@ USE_PERL5=	yes
 #USE_BZIP2=	yes
 WITHOUT_CPU_CFLAGS=	true
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	amd64 i386
+
+# XXX Cut & paste from bsd.port.mk.
+UNAME?=	/usr/bin/uname
+.if !defined(ARCH)
+ARCH!=  ${UNAME} -p
+.endif
+
+.if ${ARCH} == amd64
+BROKEN=	"Work in progress"
+.endif
 
 .if !defined(WITH_GNUGCJ)
 USE_JAVA=	yes
 JAVA_VERSION=	1.4+
 JAVA_BUILD=	jdk
+.if ${ARCH} == amd64
+JAVA_VENDOR=	bsdjava
+.else
 JAVA_VENDOR=	freebsd bsdjava
+.endif
 .endif
 
 .include <bsd.port.pre.mk>
 .include <${FILESDIR}/Makefile.localized>
+
+.if ${ARCH} == amd64
+GCC_TARGET=		x86_64-portbld-freebsd${OSREL}
+FREEBSD_ENV_SET=	FreeBSDAMDEnv.Set
+.else
+GCC_TARGET=		${ARCH}-portbld-freebsd${OSREL}
+FREEBSD_ENV_SET=	FreeBSDIntelEnv.Set
+.endif
 
 .if ${PERL_LEVEL} < 500600
 IGNORE=		install lang/perl5.8 then try again
@@ -72,7 +94,11 @@ INSTALLATION_BASEDIR?=	openoffice.org-${OOOTAG}
 EXECBASE?=		openoffice.org-${OOOTAG}
 DIST_SUBDIR=		openoffice.org2.0
 SIMPLEOSVER=		${OSREL:C/\.//g}
+.if ${ARCH} == amd64
+PACKAGE_BASENAME=	OOo_${OOOTAG}_${OPSYS}${SIMPLEOSVER}X86_64
+.else
 PACKAGE_BASENAME=	OOo_${OOOTAG}_${OPSYS}${SIMPLEOSVER}Intel
+.endif
 
 LOCALIZED_LANG?=	en-US
 # FIXME (Somehow INDEX build fails)
