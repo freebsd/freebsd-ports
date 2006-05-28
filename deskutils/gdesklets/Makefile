@@ -17,7 +17,7 @@ DISTNAME=	gDesklets-${PORTVERSION}
 MAINTAINER=	klammer@webonaut.com
 COMMENT=	A framework for Gnome 2.x for desktop applets
 
-LIB_DEPENDS=	gtop-2.0.7:${PORTSDIR}/devel/libgtop2
+LIB_DEPENDS=	gtop-2.0.7:${PORTSDIR}/devel/libgtop
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes

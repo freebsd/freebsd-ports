@@ -5753,7 +5753,7 @@ libgsf-gnome	ports/devel/libgsf-gnome
 libgtk-java	ports/x11-toolkits/libgtk-java
 libgtkeditor	ports/x11-toolkits/libgtkeditor
 libgtkhtml	ports/www/libgtkhtml
-libgtop2	ports/devel/libgtop2
+libgtop		ports/devel/libgtop
 libgutenfetch	ports/devel/libgutenfetch
 libhash		ports/devel/libhash
 libhoard	ports/devel/libhoard

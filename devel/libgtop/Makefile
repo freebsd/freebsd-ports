@@ -6,13 +6,12 @@
 #   $MCom: ports/devel/libgtop2/Makefile,v 1.70 2006/04/15 05:49:08 marcus Exp $
 #
 
-PORTNAME=	libgtop2
+PORTNAME=	libgtop
 PORTVERSION=	2.14.1
 PORTREVISION=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
-DISTNAME=	libgtop-${PORTVERSION}
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org

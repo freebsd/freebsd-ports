@@ -17,7 +17,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME 2 system monitor program
 
-LIB_DEPENDS=	gtop-2.0.7:${PORTSDIR}/devel/libgtop2
+LIB_DEPENDS=	gtop-2.0.7:${PORTSDIR}/devel/libgtop
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes

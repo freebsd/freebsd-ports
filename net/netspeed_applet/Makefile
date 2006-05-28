@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.wh-hms.uni-ulm.de/~mfcn/shared/netspeed/
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Applet that shows how much network traffic occurs on an interface
 
-LIB_DEPENDS=	gtop-2.0:${PORTSDIR}/devel/libgtop2
+LIB_DEPENDS=	gtop-2.0:${PORTSDIR}/devel/libgtop
 
 USE_X_PREFIX=	yes
 INSTALLS_OMF=	yes
