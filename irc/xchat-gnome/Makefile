@@ -12,7 +12,7 @@ MASTER_SITES=	http://releases.navi.cx/xchat-gnome/
 PKGNAMESUFFIX=	-gnome
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ports@thepentagon.org
 COMMENT=	An IRC client for GNOME 2 (development version)
 
 LIB_DEPENDS=	sexy:${PORTSDIR}/x11-toolkits/libsexy \
