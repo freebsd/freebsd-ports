@@ -11,7 +11,7 @@
     SUBDIR += gail
     SUBDIR += gail-reference
     SUBDIR += gnome-mag
-    SUBDIR += gnomespeech
+    SUBDIR += gnome-speech
     SUBDIR += gnopernicus
     SUBDIR += gok
     SUBDIR += kdeaccessibility

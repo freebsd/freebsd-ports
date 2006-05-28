@@ -2300,3 +2300,4 @@ x11/xfedor||2006-05-26|Has expired: old, old, old, unmaintained, no usable MASTE
 devel/p5-Encode|converters/p5-Encode|2006-05-27|Move to better category
 devel/p5-Encode-compat|converters/p5-Encode-compat|2006-05-27|Move to better category
 accessibility/gnomemag|accessibility/gnome-mag|2006-05-27|Renamed to use real vendor package name
+accessibility/gnomespeech|accessibility/gnome-speech|2006-05-27|Renamed to use real vendor package name
