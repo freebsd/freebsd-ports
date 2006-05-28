@@ -17,6 +17,7 @@ ONLY_FOR_ARCHS=	i386
 
 SRC_DIST=	ghc-${PORTVERSION}-src${EXTRACT_SUFX}:source
 BOOT_DIST4=	ghc-${PORTVERSION}-i386-unknown-freebsd4-boot${EXTRACT_SUFX}:boot
+BOOT_DIST5=	ghc-${PORTVERSION}-i386-unknown-freebsd5-boot${EXTRACT_SUFX}:boot
 BOOT_DIST=	ghc-${PORTVERSION}-i386-unknown-freebsd6-boot${EXTRACT_SUFX}:boot
 
 USE_BZIP2=	yes
@@ -27,16 +28,14 @@ OPTIONS=	PROFILE "Compile for profiling as well" on
 
 DISTFILES=	${SRC_DIST}
 
-.if ${OSVERSION} < 600000
-IGNORE=		unsupported at the moment
-.endif
-
 .if ${OSVERSION} < 500000
 DISTFILES+=	${BOOT_DIST4}
+IGNORE=		unsupported at the moment
 .else
-DISTFILES+=	${BOOT_DIST}
 .if ${OSVERSION} >= 600000
-LIB_DEPENDS+=	c.5:${PORTSDIR}/misc/compat5x
+DISTFILES+=	${BOOT_DIST}
+.else
+DISTFILES+=	${BOOT_DIST5}
 .endif
 .endif
 
