@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	timerapplet
 MAINTAINER=	jylefort@FreeBSD.org
 COMMENT=	A timer applet for the GNOME panel
 
-RUN_DEPENDS=	${X11BASE}/share/gnome/sounds/gtk-events/clicked.wav:${PORTSDIR}/audio/gnomeaudio2
+RUN_DEPENDS=	${X11BASE}/share/gnome/sounds/gtk-events/clicked.wav:${PORTSDIR}/audio/gnome-audio
 
 USE_GNOME=	gnomehack gnomeprefix gnomepanel intlhack
 GNU_CONFIGURE=	yes

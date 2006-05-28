@@ -2306,3 +2306,4 @@ deskutils/gnomepim|deskutils/gnome-pim|2006-05-27|Renamed to use real vendor pac
 devel/gnomebuild|devel/gnome-build|2006-05-27|Renamed to use real vendor package name
 devel/gnomecommon|devel/gnome-common|2006-05-27|Renamed to use real vendor package name
 archivers/fileroller|archivers/file-roller|2006-05-27|Renamed to use real vendor package name
+audio/gnomeaudio2|audio/gnome-audio|2006-05-27|Renamed to use real vendor package name
