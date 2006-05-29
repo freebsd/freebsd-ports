@@ -23,7 +23,6 @@ USE_X_PREFIX=	yes
 NO_PACKAGE=	should be recompiled for a particular FreeBSD kernel
 INSTALLS_SHLIB=	yes
 SUB_FILES+=	pkg-message
-PKGMESSAGE=	${WRKDIR}/pkg-message
 DOCSDIR=	${PREFIX}/share/doc/NVIDIA_GLX-1.0
 
 OPTIONS=	FREEBSD_AGP	"Use FreeBSD AGP GART driver" off \
@@ -103,8 +102,10 @@ PLIST_SUB+=	XSERVVERSION=${XSERVVERSION} XLIBVERSION=${XLIBVERSION} \
 		LINUXBASE=${LINUXBASE} NVVERSION=${NVVERSION}
 
 .if !defined(WITHOUT_LINUX)
+# Add explicit X11 libraries dependency since USE_LINUX causes the port to
+# RUN_DEPEND on the Linux libraries rather than LIB_DEPEND on native ones
+LIB_DEPENDS+=	X11.6:${X_LIBRARIES_PORT}
 USE_LINUX=	yes
-USE_XLIB=	yes
 PLIST_SUB+=	LINUX=""
 .else
 PLIST_SUB+=	LINUX="@comment "
