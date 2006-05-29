@@ -198,11 +198,14 @@ libdata/pkgconfig/gtk2-java.pc
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/CellLayout.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/CellLayoutHelper.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/CellRenderer.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/CellRenderer.Attribute.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/CellRendererAttribute.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/CellRendererCombo.Attribute.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/CellRendererCombo.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/CellRendererMode.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/CellRendererPixbuf.Attribute.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/CellRendererPixbuf.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/CellRendererProgress.Attribute.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/CellRendererProgress.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/CellRendererState.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/CellRendererText.Attribute.html
@@ -229,6 +232,7 @@ libdata/pkgconfig/gtk2-java.pc
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/DataColumnDouble.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/DataColumnIconSize.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/DataColumnInt.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/DataColumnLong.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/DataColumnObject.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/DataColumnPixbuf.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/DataColumnStockItem.html
@@ -414,6 +418,7 @@ libdata/pkgconfig/gtk2-java.pc
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/TreeModelFilterVisibleMethod.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/TreeModelSort.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/TreePath.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/TreeRowReference.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/TreeSelection.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/TreeSelectionForEach.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/TreeSortable.html
