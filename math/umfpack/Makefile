@@ -14,14 +14,22 @@ DISTNAME=	UMFPACKv${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unsymmetric-pattern MultiFrontal Package
 
+.ifdef WITH_ATLAS
 LIB_DEPENDS=	atlas.1:${PORTSDIR}/math/atlas
+.else
+LIB_DEPENDS=	blas.1:${PORTSDIR}/math/blas
+.endif
 
 CONFLICTS=	elmer-umfpack-4*
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/UMFPACK
 ALL_TARGET=	lib
 
-CBLAS_LIBS?=	-L${LOCALBASE}/lib -lcblas -latlas
+.ifdef WITH_ATLAS
+BLAS_LIBS=	-lf77blas -latlas
+.else
+BLAS_LIBS?=	-lblas
+.endif
 
 post-extract:
 	${CP}	${WRKDIR}/${DISTNAME}/AMD/Make/Make.linux	\
@@ -31,7 +39,7 @@ pre-build:
 	@${REINPLACE_CMD} -e 's+%%CC%%+${CC}+g ;	\
 	s+%%CFLAGS%%+${CFLAGS}+ ;		\
 	s+%%LOCALBASE%%+${LOCALBASE}+ ;		\
-	s+%%CBLAS_LIBS%%+${CBLAS_LIBS}+ ;'	\
+	s+%%BLAS_LIBS%%+${BLAS_LIBS}+ ;'	\
 	 ${WRKDIR}/${DISTNAME}/AMD/Make/Make.freebsd
 
 do-install:

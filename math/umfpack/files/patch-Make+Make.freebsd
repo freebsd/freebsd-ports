@@ -1,5 +1,5 @@
---- Make/Make.freebsd.orig	Sun Feb 19 15:26:42 2006
-+++ Make/Make.freebsd	Sun Feb 19 15:29:05 2006
+--- Make/Make.freebsd.orig	Sun May 28 22:27:24 2006
++++ Make/Make.freebsd	Sun May 28 22:35:56 2006
 @@ -6,8 +6,8 @@
  # if you use the Intel compiler and the Fortran BLAS.
  
@@ -17,14 +17,14 @@
  # 2: with the ATLAS C-BLAS (http://www.netlib.org/atlas).
 -# CONFIG = -DCBLAS -I../ATLAS/include
 -# LIB = -lcblas -latlas -lm
-+CONFIG = -DGETRUSAGE -DCBLAS -I../ATLAS/include -I%%LOCALBASE%%/include
-+LIB = %%CBLAS_LIBS%% -lm
++# CONFIG = -DGETRUSAGE -DCBLAS -I../ATLAS/include -I%%LOCALBASE%%/include
++# LIB = %%CBLAS_LIBS%% -lm
  
  # 3: with Fortran interface to the ATLAS BLAS
 -# CONFIG =
 -# LIB = -lf77blas -latlas -lfrtbegin -lg2c -lm
-+# CONFIG = -I%%LOCALBASE%%/include
-+# LIB = -L%%LOCALBASE%%/lib -lf77blas -latlas -lfrtbegin -lg2c -lm
++CONFIG =  -DGETRUSAGE
++LIB = -L%%LOCALBASE%%/lib %%BLAS_LIBS%% -lg2c -lm
  
  # 4: with Fortran interface to the BLAS, and Goto's BLAS
 -  CONFIG =
