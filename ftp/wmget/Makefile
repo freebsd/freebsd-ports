@@ -10,7 +10,7 @@ CATEGORIES=	ftp
 MASTER_SITES=	http://amtrickey.net/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	q@galgenberg.net
+MAINTAINER=	uspoerlein@gmail.com
 COMMENT=	Dock app for Window Maker providing wget functionality
 
 LIB_DEPENDS=	curl.3:${PORTSDIR}/ftp/curl

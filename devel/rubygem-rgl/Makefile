@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	http://rubyforge.org/frs/download.php/3958/
 
-MAINTAINER=	q@galgenberg.net
+MAINTAINER=	uspoerlein@gmail.com
 COMMENT=	Framework for graph datastructures and algorithms implemented in Ruby
 
 RUN_DEPENDS=	${LOCALBASE}/lib/ruby/gems/1.8/specifications/stream-0.5.gemspec:${PORTSDIR}/devel/rubygem-stream

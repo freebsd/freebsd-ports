@@ -12,7 +12,7 @@ DISTVERSIONSUFFIX=-bsd
 CATEGORIES=	net
 MASTER_SITES=	http://digitalssg.net/debian/
 
-MAINTAINER=	q@galgenberg.net
+MAINTAINER=	uspoerlein@gmail.com
 COMMENT=	Dockapp displaying the signal strength of WiFi connection
 
 USE_X_PREFIX=	yes
