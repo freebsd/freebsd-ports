@@ -17,7 +17,7 @@ DISTNAME=	slang-${PORTVERSION}
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Routines for rapid alpha-numeric terminal applications development
 
-OPTIONS=	UTF8	"Enable UTF-8 support"	off
+OPTIONS=	UTF8	"Enable UTF-8 support - EXPERIMENTAL"	off
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
@@ -37,6 +37,10 @@ PORTDOCS=	*
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_UTF8)
+. if ${OSVERSION} < 500000
+IGNORE=	UTF8 support doesn't work on FreeBSD < 5.x
+. endif
+
 PATCH_SITES+=	http://www.emaillab.org/mutt/tools/
 PATCHFILES+=	slang-1.4.8-utf8.diff.gz
 PATCH_DIST_STRIP+=	-p1
