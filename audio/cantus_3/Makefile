@@ -17,7 +17,7 @@ MAINTAINER=	asa@gascom.ru
 COMMENT=	Tool for tagging and renaming MP3 and OGG/Vorbis files
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash2
-LIB_DEPENDS=	gtkmm-2.0.6:${PORTSDIR}/x11-toolkits/gtk--2 \
+LIB_DEPENDS=	gtkmm-2.0.6:${PORTSDIR}/x11-toolkits/gtkmm20 \
 		glademm-2.0.1:${PORTSDIR}/devel/libglademm \
 		ogg.5:${PORTSDIR}/audio/libogg \
 		vorbis.3:${PORTSDIR}/audio/libvorbis

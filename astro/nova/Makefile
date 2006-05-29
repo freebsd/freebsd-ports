@@ -17,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An Integrated Observational Environment for amateur astronomers
 
 LIB_DEPENDS=	sigc-1.2.5:${PORTSDIR}/devel/libsigc++12 \
-		gtkmm-2.0.6:${PORTSDIR}/x11-toolkits/gtk--2 \
+		gtkmm-2.0.6:${PORTSDIR}/x11-toolkits/gtkmm20 \
 		gnomemm-2.0.1:${PORTSDIR}/x11/libgnomemm \
 		glademm-2.0.1:${PORTSDIR}/devel/libglademm \
 		gconfmm-2.0.1:${PORTSDIR}/devel/gconfmm \

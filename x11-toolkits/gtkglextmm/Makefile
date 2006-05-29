@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ wrapper for GtkGLExt
 
 LIB_DEPENDS=	gtkglext-x11-1.0.2:${PORTSDIR}/x11-toolkits/gtkglext \
-		gtkmm-2.0:${PORTSDIR}/x11-toolkits/gtk--2
+		gtkmm-2.0:${PORTSDIR}/x11-toolkits/gtkmm20
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes

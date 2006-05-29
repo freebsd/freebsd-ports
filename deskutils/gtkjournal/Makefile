@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	Gtk+-2 journal/diary
 
-LIB_DEPENDS=	gtkmm-2.0:${PORTSDIR}/x11-toolkits/gtk--2 \
+LIB_DEPENDS=	gtkmm-2.0:${PORTSDIR}/x11-toolkits/gtkmm20 \
 		sqlite.2:${PORTSDIR}/databases/sqlite2 \
 		gtkspell:${PORTSDIR}/textproc/gtkspell
 

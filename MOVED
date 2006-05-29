@@ -2348,3 +2348,5 @@ x11/gnomesession|x11/gnome-session|2006-05-28|Renamed to use real vendor package
 x11/gnometerminal|x11/gnome-terminal|2006-05-28|Renamed to use real vendor package name
 x11-fm/nautilus2|x11-fm/nautilus|2006-05-28|Use unversioned name
 x11-toolkits/gtk--|x11-toolkits/gtkmm12|2006-05-29|Renamed to use real vendor package name
+x11-toolkits/gtk--2|x11-toolkits/gtkmm20|2006-05-29|Renamed to use real vendor package name
+x11-toolkits/gtk--2-reference|x11-toolkits/gtkmm20-reference|2006-05-29|Renamed to use real vendor package name

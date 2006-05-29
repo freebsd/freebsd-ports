@@ -3661,8 +3661,6 @@ gthumb		ports/graphics/gthumb
 gtic		ports/net/gtic
 gtick		ports/audio/gtick
 gtimer		ports/deskutils/gtimer
-gtk--2		ports/x11-toolkits/gtk--2
-gtk--2-reference	ports/x11-toolkits/gtk--2-reference
 gtk-Mac2-theme	ports/x11-themes/gtk-Mac2-theme
 gtk-aluminumalloy-cryogenic-theme	ports/x11-themes/gtk-aluminumalloy-cryogenic-theme
 gtk-aluminumalloy-smog-theme	ports/x11-themes/gtk-aluminumalloy-smog-theme
@@ -3741,6 +3739,8 @@ gtklife		ports/games/gtklife
 gtklp		ports/print/gtklp
 gtkmathview	ports/x11-toolkits/gtkmathview
 gtkmm12		ports/x11-toolkits/gtkmm12
+gtkmm20		ports/x11-toolkits/gtkmm20
+gtkmm20-reference	ports/x11-toolkits/gtkmm20-reference
 gtkmm24		ports/x11-toolkits/gtkmm24
 gtkmm24-reference	ports/x11-toolkits/gtkmm24-reference
 gtkmozedit	ports/devel/gtkmozedit
