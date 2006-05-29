@@ -1,0 +1,26 @@
+# New ports collection makefile for:	p5-Encode-JIS2K
+# Date created:				May 21 2006
+# Whom:					Rong-En Fan <rafan@infor.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	Encode-JIS2K
+PORTVERSION=	0.02
+CATEGORIES=	converters perl5
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	Encode
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	rafan@infor.org
+COMMENT=	JIS X 0212 (aka JIS 2000) Encodings
+
+PERL_CONFIGURE=	yes
+
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500703
+IGNORE=		requires Perl 5.7.3 or above
+.endif
+
+.include <bsd.port.post.mk>
