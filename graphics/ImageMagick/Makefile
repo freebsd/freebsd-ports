@@ -19,7 +19,8 @@ MASTER_SITES=	ftp://ftp.imagemagick.org/pub/ImageMagick/ \
 		ftp://ftp.nluug.nl/pub/ImageMagick/ \
 		ftp://ftp.sunet.se/pub/multimedia/graphics/ImageMagick/ \
 		ftp://ftp.fifi.org/pub/ImageMagick/ \
-		${MASTER_SITE_SOURCEFORGE}
+		${MASTER_SITE_SOURCEFORGE} \
+		${MASTER_SITE_LOCAL:S/%SUBDIR%/pav/}
 MASTER_SITE_SUBDIR=	imagemagick
 
 MAINTAINER=	avleeuwen@piwebs.com
