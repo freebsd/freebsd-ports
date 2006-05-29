@@ -29,6 +29,7 @@ share/locale/az/LC_MESSAGES/nautilus-cd-burner.mo
 share/locale/be/LC_MESSAGES/nautilus-cd-burner.mo
 share/locale/bg/LC_MESSAGES/nautilus-cd-burner.mo
 share/locale/bn/LC_MESSAGES/nautilus-cd-burner.mo
+share/locale/br/LC_MESSAGES/nautilus-cd-burner.mo
 share/locale/bs/LC_MESSAGES/nautilus-cd-burner.mo
 share/locale/ca/LC_MESSAGES/nautilus-cd-burner.mo
 share/locale/cs/LC_MESSAGES/nautilus-cd-burner.mo
@@ -59,6 +60,7 @@ share/locale/ka/LC_MESSAGES/nautilus-cd-burner.mo
 share/locale/ko/LC_MESSAGES/nautilus-cd-burner.mo
 share/locale/lt/LC_MESSAGES/nautilus-cd-burner.mo
 share/locale/lv/LC_MESSAGES/nautilus-cd-burner.mo
+share/locale/mg/LC_MESSAGES/nautilus-cd-burner.mo
 share/locale/mk/LC_MESSAGES/nautilus-cd-burner.mo
 share/locale/mn/LC_MESSAGES/nautilus-cd-burner.mo
 share/locale/ms/LC_MESSAGES/nautilus-cd-burner.mo
@@ -98,5 +100,9 @@ share/locale/zh_TW/LC_MESSAGES/nautilus-cd-burner.mo
 @dirrmtry share/locale/ug
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
+@dirrmtry share/locale/mg/LC_MESSAGES
+@dirrmtry share/locale/mg
+@dirrmtry share/locale/br/LC_MESSAGES
+@dirrmtry share/locale/br
 @dirrm share/gnome/nautilus-cd-burner
 @dirrm include/libnautilus-burn
