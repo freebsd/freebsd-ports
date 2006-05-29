@@ -1,0 +1,16 @@
+This module implements encodings that covers JIS X 0213 charset (AKA
+JIS 2000, hence the module name). Encodings supported are as follows.
+
+Canonical     Alias                                      Description
+--------------------------------------------------------------------
+euc-jisx0213  qr/\beuc.*jp[ \-]?(?:2000|2k)$/i          EUC-JISX0213
+              qr/\bjp.*euc[ \-]?(2000|2k)$/i
+              qr/\bujis[ \-]?(?:2000|2k)$/i
+shiftjisx0123 qr/\bshift.*jis(?:2000|2k)$/i           Shift_JISX0213
+              qr/\bsjisp \-]?(?:2000|2k)$/i
+
+iso-2022-jp-3
+jis0213-1-raw                         JIS X 0213 plane 1, raw format
+jis0213-2-raw                         JIS X 0213 plane 2, raw format
+
+WWW: http://search.cpan.org/dist/Encode-JIS2K/
