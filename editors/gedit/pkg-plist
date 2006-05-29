@@ -332,7 +332,10 @@ share/locale/uk/LC_MESSAGES/gedit.mo
 share/locale/vi/LC_MESSAGES/gedit.mo
 share/locale/wa/LC_MESSAGES/gedit.mo
 share/locale/zh_CN/LC_MESSAGES/gedit.mo
+share/locale/zh_HK/LC_MESSAGES/gedit.mo
 share/locale/zh_TW/LC_MESSAGES/gedit.mo
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/br/LC_MESSAGES
