@@ -13,7 +13,7 @@ CATEGORIES=	misc
 MASTER_SITES=	# http://infosun.fmi.uni-passau.de/GTL/
 DISTNAME=	GTL-${PORTVERSION}
 
-MAINTAINER=	q@galgenberg.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ STL-based support for graphs and graph algorithms
 
 RESTRICTED=	License forbids redistribution (source or binary)

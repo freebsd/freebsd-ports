@@ -15,7 +15,7 @@ PATCHFILES=	${PORTNAME}${PORTVERSION}-ssl.diff.gz
 PATCH_SITES=	http://www.egghelp.org/files/patches/
 PATCH_WRKSRC=	${WRKDIR}
 
-MAINTAINER=	q@galgenberg.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The most popular open source Internet Relay Chat bot
 
 USE_BZIP2=	yes
