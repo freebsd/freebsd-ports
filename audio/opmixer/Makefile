@@ -15,7 +15,7 @@ DISTNAME=	opMixer-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Adjusts a mixer
 
-LIB_DEPENDS=	gtkmm-1.2.2:${PORTSDIR}/x11-toolkits/gtk--
+LIB_DEPENDS=	gtkmm-1.2.2:${PORTSDIR}/x11-toolkits/gtkmm12
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes

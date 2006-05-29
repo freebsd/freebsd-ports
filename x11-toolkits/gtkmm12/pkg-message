@@ -1,9 +1,9 @@
 ****************************************************************
 *                                                              *
-*  - To compile gtk-- based applications, type                 *
+*  - To compile gtkmm12 based applications, type               *
 *    eg++ `gtkmm-config --cflags` foo.cc `gtkmm-config --libs` *
 *                                                              *
-*  - If you want to use autoconf with gtk--,                   *
+*  - If you want to use autoconf with gtkmm12,                 *
 *    Please copy gtk--.m4 to /usr/local/share/aclocal          *
 *    by yourself, thanks.                                      *
 *                                                              *

@@ -18,7 +18,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GtkGLArea-- is a wrapper for the GtkGLArea widget
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
-LIB_DEPENDS=	gtkmm-1.2.2:${PORTSDIR}/x11-toolkits/gtk-- \
+LIB_DEPENDS=	gtkmm-1.2.2:${PORTSDIR}/x11-toolkits/gtkmm12 \
 		gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea
 
 USE_GL=		yes
