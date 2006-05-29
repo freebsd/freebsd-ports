@@ -1,5 +1,5 @@
---- ./Makefile.orig	Thu Nov 10 09:57:12 2005
-+++ ./Makefile	Tue May 16 14:59:52 2006
+--- Makefile.orig	Thu Nov 10 09:57:12 2005
++++ Makefile	Mon May 29 16:46:29 2006
 @@ -9,9 +9,9 @@
  #
  
@@ -35,17 +35,11 @@
 +CC?=gcc
  
 -BASE_CFLAGS=-Dstricmp=strcasecmp -Did386 -funsigned-char #-Wall
-+BASE_CFLAGS=$(CFLAGS) -I$(LOCALBASE)/include -DDATADIR='"$(Q1DIR)"' -Dstricmp=strcasecmp -funsigned-char #-Wall
-+
-+ifeq ($(ARCH),i386)
-+  ifdef X86_ASM
-+BASE_CFLAGS+=-Did386
-+  endif
-+endif
++BASE_CFLAGS=$(CFLAGS) -I$(LOCALBASE)/include -DDATADIR='"$(Q1DIR)"' -Dstricmp=strcasecmp -funsigned-char
 +
 +RELEASE_CFLAGS=$(BASE_CFLAGS)
 +
-+ifdef OPTIMIZED_CFLAGS
++ifeq ($(strip $(USE_OPTIMIZED_CFLAGS)),YES)
 +RELEASE_CFLAGS+=-O2 -ffast-math -funroll-loops \
 +	-fomit-frame-pointer -fexpensive-optimizations -fno-strict-aliasing
 +endif
@@ -55,23 +49,32 @@
 -	
  DEBUG_CFLAGS=$(BASE_CFLAGS) -g
  
- 
--LDFLAGS=-lm -ldl
 +LDFLAGS+=-L$(LOCALBASE)/lib -lm
  
- ifeq ($(strip $(BUILD_SDL)),YES)
+-LDFLAGS=-lm -ldl
++ifeq ($(ARCH),i386)
++USE_X86_ASM 	?= YES
++else
++USE_X86_ASM 	= NO
++endif
+ 
+-ifeq ($(strip $(BUILD_SDL)),YES)
 - LDFLAGS += \
 -    -lSDL
-  BASE_CFLAGS += \
-     -D_SDL_FIX -D_SDL_BIN
+- BASE_CFLAGS += \
+-    -D_SDL_FIX -D_SDL_BIN
++ifeq ($(strip $(USE_X86_ASM)),YES)
++BASE_CFLAGS+=-Did386
  endif
  
  
  ifeq ($(strip $(BUILD_SDL)),YES)
 -SDLCFLAGS=$(shell sdl-config --cflags)
 -SDLLDFLAGS=$(shell sdl-config --libs)
-+SDLCFLAGS=$(shell $(SDL_CONFIG) --cflags)
-+SDLLDFLAGS=$(shell $(SDL_CONFIG) --libs)
++ BASE_CFLAGS += \
++    -D_SDL_FIX -D_SDL_BIN
++ SDLCFLAGS=$(shell $(SDL_CONFIG) --cflags)
++ SDLLDFLAGS=$(shell $(SDL_CONFIG) --libs)
  endif
  
 -GLLDFLAGS=-L/usr/X11R6/lib -L/usr/lib -L/usr/local/lib -lGL -lGLU -lX11 -lXext -ldl -lXxf86dga -lXxf86vm -lm -lpng -lz -ljpeg
@@ -90,11 +93,28 @@
  
  ifeq ($(strip $(BUILD_SDL)),YES)
 - TARGETS +=$(BUILDDIR)/tremor-sdl.glx
-+ TARGETS +=$(BUILDDIR)/tremor-sdl
++ TARGETS += $(BUILDDIR)/tremor-sdl
  endif
  
  all:
-@@ -183,10 +187,10 @@
+@@ -166,11 +170,14 @@
+    $(BUILDDIR)/glquake/sys_linux.o \
+    $(BUILDDIR)/glquake/snd_dma.o \
+    $(BUILDDIR)/glquake/snd_mem.o \
+-   $(BUILDDIR)/glquake/snd_mix.o \
+-   \
++   $(BUILDDIR)/glquake/snd_mix.o
++
++ifeq ($(strip $(USE_X86_ASM)),YES)
++GLQUAKE_OBJS+= \
+    $(BUILDDIR)/glquake/math.o \
+    $(BUILDDIR)/glquake/snd_mixa.o \
+    $(BUILDDIR)/glquake/sys_x86.o
++endif
+ 
+ GLQUAKE_LNX_OBJS = \
+    $(BUILDDIR)/glquake/cd_linux.o \
+@@ -183,10 +190,10 @@
  GLX_OBJS=$(BUILDDIR)/glquake/vid_glx.o \
  	$(BUILDDIR)/glquake/vid_common_gl.o
  
@@ -107,7 +127,7 @@
  	$(CC) $(CFLAGS) -o $@ $(GLQUAKE_OBJS) $(GLQUAKE_SDL_OBJS) $(GLX_OBJS) $(GLLDFLAGS) $(LDFLAGS) $(SDLLDFLAGS)
  
  $(BUILDDIR)/glquake/cl_demo.o :      $(MOUNT_DIR)/cl_demo.c
-@@ -395,4 +399,4 @@
+@@ -395,4 +402,4 @@
  		$(GLX_OBJS) \
  		$(GLQUAKE_LNX_OBJS) \
  		$(GLQUAKE_SDL_OBJS)
