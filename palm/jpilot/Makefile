@@ -12,7 +12,7 @@ PORTREVISION=	2
 CATEGORIES+=	palm comms
 MASTER_SITES=	http://jpilot.org/
 
-MAINTAINER?=	freebsd-ports@varju.ca
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT=	Desktop Organizer Software for the Palm Pilot
 
 LIB_DEPENDS=	pisock.8:${PORTSDIR}/palm/pilot-link
