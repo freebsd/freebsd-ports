@@ -1,4 +1,5 @@
 bin/liferea
+bin/liferea-add-feed
 %%XPI%%lib/firefox/extensions/{79ea0ec1-3fc3-4ade-8220-262d4c4825ab}/chrome/feedbag.jar
 %%XPI%%lib/firefox/extensions/{79ea0ec1-3fc3-4ade-8220-262d4c4825ab}/chrome.manifest
 %%XPI%%lib/firefox/extensions/{79ea0ec1-3fc3-4ade-8220-262d4c4825ab}/install.rdf

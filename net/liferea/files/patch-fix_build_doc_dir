@@ -1,0 +1,19 @@
+--- configure.orig	Mon May 29 17:24:27 2006
++++ configure	Mon May 29 17:26:55 2006
+@@ -25798,7 +25798,7 @@
+ 
+ 
+ 
+-ac_config_files="$ac_config_files Makefile src/Makefile src/mozilla/Makefile src/gtkhtml2/Makefile src/net/Makefile src/liferea doc/html/Makefile pixmaps/Makefile opml/Makefile po/Makefile.in liferea.spec liferea-SuSE.spec"
++ac_config_files="$ac_config_files Makefile src/Makefile src/mozilla/Makefile src/gtkhtml2/Makefile src/net/Makefile src/liferea doc/Makefile doc/html/Makefile pixmaps/Makefile opml/Makefile po/Makefile.in liferea.spec liferea-SuSE.spec"
+ 
+ cat >confcache <<\_ACEOF
+ # This file is a shell script that caches the results of configure
+@@ -26450,6 +26450,7 @@
+     "src/gtkhtml2/Makefile") CONFIG_FILES="$CONFIG_FILES src/gtkhtml2/Makefile" ;;
+     "src/net/Makefile") CONFIG_FILES="$CONFIG_FILES src/net/Makefile" ;;
+     "src/liferea") CONFIG_FILES="$CONFIG_FILES src/liferea" ;;
++    "doc/Makefile") CONFIG_FILES="$CONFIG_FILES doc/Makefile" ;;
+     "doc/html/Makefile") CONFIG_FILES="$CONFIG_FILES doc/html/Makefile" ;;
+     "pixmaps/Makefile") CONFIG_FILES="$CONFIG_FILES pixmaps/Makefile" ;;
+     "opml/Makefile") CONFIG_FILES="$CONFIG_FILES opml/Makefile" ;;
