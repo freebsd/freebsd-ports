@@ -1008,6 +1008,7 @@
     SUBDIR += xpi-imdbpreview
     SUBDIR += xpi-inline-google-definitions
     SUBDIR += xpi-linkification
+    SUBDIR += xpi-locale-switcher
     SUBDIR += xpi-mldonkey
     SUBDIR += xpi-mousegestures
     SUBDIR += xpi-no-referrer
