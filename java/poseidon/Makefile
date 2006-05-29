@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	poseidon
-PORTVERSION=	4.1.1
+PORTVERSION=	4.1.2
 CATEGORIES=	java devel
 MASTER_SITES=	ftp://ftp.gentleware.org/ \
 		http://download.gentleware.org/ \
