@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnome-control-center
-PORTVERSION=	2.14.1
-PORTREVISION=	2
+PORTVERSION=	2.14.2
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/control-center/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -32,7 +31,7 @@ GNU_CONFIGURE=	yes
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 INSTALLS_SHLIB=	yes
-CONFIGURE_ARGS= --enable-gstreamer=0.10 \
+CONFIGURE_ARGS=	--enable-gstreamer=0.10 \
 		--disable-hal
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
