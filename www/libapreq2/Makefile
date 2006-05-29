@@ -7,20 +7,19 @@
 
 PORTNAME=	libapreq2
 PORTVERSION=	2.07
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www devel
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD}
 MASTER_SITE_SUBDIR=libapreq
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Generic Apache2 Request Library
 
-WITH_APACHE2=	yes
+USE_APACHE=	2.0+
 INSTALLS_SHLIB=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-apache2-apxs=${APXS}
-USE_APACHE=	yes
 
 .if defined (WITH_MODPERL2)
 PKGNAMEPREFIX+=	p5-
@@ -31,7 +30,7 @@ BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/mod_perl2.pm:${PORTSDIR}/www/mod_perl2
 RUN_DEPENDS+=	${BUILD_DEPENDS}
 
 USE_PERL5=	yes
-CONFIGURE_ARGS+=	--enable-perl-glue
+CONFIGURE_ARGS+=	--enable-perl-glue --with-perl=${PERL5}
 
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		APR::Request.3 \
@@ -48,10 +47,9 @@ MAN3=		APR::Request.3 \
 
 PLIST_SUB+=	WITH_MODPERL2=""
 
-post-configure:
-	cd ${WRKSRC}/glue/perl && \
-		${PERL5} Makefile.PL -apxs ${APXS} && \
-		${PERL5} -pi -e 's/ doc_(perl|site|\$$\(INSTALLDIRS\))_install$$//' Makefile
+post-patch:
+	@${PERL5} -pi -e "s!%%APACHEINCLUDEDIR%%!${APACHEINCLUDEDIR}!" \
+		${WRKSRC}/glue/perl/Makefile.PL
 .else
 PLIST_SUB+=	WITH_MODPERL2="@comment "
 .endif
