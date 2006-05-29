@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=picmonger
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An automated USENET (NNTP) picture decoding client
 
-LIB_DEPENDS=	gtkmm-1.2.2:${PORTSDIR}/x11-toolkits/gtk--
+LIB_DEPENDS=	gtkmm-1.2.2:${PORTSDIR}/x11-toolkits/gtkmm12
 RUN_DEPENDS=	mpack:${PORTSDIR}/converters/mpack
 
 USE_X_PREFIX=	yes

@@ -44,7 +44,6 @@
     SUBDIR += gob
     SUBDIR += gstreamer-plugins-pango
     SUBDIR += gstreamer-plugins-pango80
-    SUBDIR += gtk--
     SUBDIR += gtk--2
     SUBDIR += gtk--2-reference
     SUBDIR += gtk-sharp10
@@ -65,6 +64,7 @@
     SUBDIR += gtkglext
     SUBDIR += gtkglextmm
     SUBDIR += gtkmathview
+    SUBDIR += gtkmm12
     SUBDIR += gtkmm24
     SUBDIR += gtkmm24-reference
     SUBDIR += gtkscintilla
