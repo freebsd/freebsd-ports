@@ -12,15 +12,15 @@ CATEGORIES=	net comms linux
 MASTER_SITES=
 DISTNAME=	${PORTNAME}-linuxx86-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	thomas@goodking.ca
 COMMENT=	Citrix(R) client for the Microsoft Windows Terminal Server
 
-RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXm.so.3:${PORTSDIR}/x11-toolkits/linux-openmotif
+RUN_DEPENDS=	${LINUXBASE}${X11BASE}/lib/libXm.so.3:${PORTSDIR}/x11-toolkits/linux-openmotif
 
 ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes
 #USE_X_PREFIX=	yes
-RESTRICTED=	"License prohibits redistribution"
+RESTRICTED=	License prohibits redistribution
 IS_INTERACTIVE=	"Noisy license agreement ignores stdin"
 
 NO_WRKSUBDIR=	yes
@@ -29,12 +29,12 @@ NO_BUILD=	yes
 CDIR=		${PREFIX}/ICAClient
 BINDIR=		${PREFIX}/bin
 
-NSCP=	/usr/local/libexec/netscape \
-	/usr/local/libexec/netscape-linux \
-	/usr/local/netscape \
-	/usr/local/netscape-linux \
-	/usr/local/lib/netscape \
-	/usr/local/lib/netscape-linux \
+NSCP=	${LOCALBASE}/libexec/netscape \
+	${LOCALBASE}/libexec/netscape-linux \
+	${LOCALBASE}/netscape \
+	${LOCALBASE}/netscape-linux \
+	${LOCALBASE}/lib/netscape \
+	${LOCALBASE}/lib/netscape-linux \
 	${MOZILLA_HOME}
 
 PLIST_SUB=	MOZILLA_HOME=${MOZILLA_HOME}
@@ -78,7 +78,7 @@ do-install:
 		> ${WRKSRC}/wfcmgr.x
 	${SED} s%DESTINATION%${CDIR}% < ${FILESDIR}/wfica \
 		> ${WRKSRC}/wfica.x
-	cd ${WRKSRC} && /bin/sh -c './setupwfc'
+	cd ${WRKSRC} && ${SH} -c './setupwfc'
 	${INSTALL_SCRIPT} ${WRKSRC}/wfcmgr.x ${PREFIX}/bin/wfcmgr
 	${INSTALL_SCRIPT} ${WRKSRC}/wfica.x ${PREFIX}/bin/wfica
 # XXX: This is missing a "${BRANDELF} -t Linux <executables>".
