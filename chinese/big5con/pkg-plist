@@ -1,8 +1,8 @@
 bin/b5c
 bin/b5cfld
 etc/big5con.cfg.default
-lib/fonts/kc16.smf
-lib/fonts/kc8x16.smf
+lib/fonts/kc15f.smf
+lib/fonts/kc8x15.smf
 lib/xcin/array30.tab
 lib/xcin/array30.tab.rev
 lib/xcin/cj.tab
