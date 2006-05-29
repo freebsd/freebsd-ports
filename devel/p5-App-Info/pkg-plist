@@ -2,6 +2,7 @@
 %%SITE_PERL%%/App/Info/HTTPD/Apache.pm
 %%SITE_PERL%%/App/Info/Lib/Iconv.pm
 %%SITE_PERL%%/App/Info/Lib/Expat.pm
+%%SITE_PERL%%/App/Info/Lib/OSSPUUID.pm
 %%SITE_PERL%%/App/Info/Lib.pm
 %%SITE_PERL%%/App/Info/RDBMS.pm
 %%SITE_PERL%%/App/Info/Request.pm
