@@ -81,4 +81,4 @@ include/quagga/zebra.h
 @dirrm include/quagga
 @dirrm share/examples/quagga
 @dirrm etc/quagga
-@unexec rmdir %%LOCALSTATE_DIR%% 2>/dev/null || true
+@dirrmtry %%LOCALSTATE_DIR%%
