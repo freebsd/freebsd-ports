@@ -9,7 +9,7 @@ PORTNAME=	ggsd
 PORTVERSION=	0.1
 PORTREVISION=	2
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.gpad.ac.ru/pub/FreeBSD/distfiles/
+MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
 DISTNAME=	ggsd
 EXTRACT_SUFX=	.tar
 
