@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dvdstyler
-DISTVERSION=	1.5b4
+DISTVERSION=	1.5b5
 PORTEPOCH=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -29,7 +29,7 @@ DVDSTYLER_ICON=	${DATADIR}/rc/dvdstyler.png
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-
+USE_GETTEXT=	yes
 CONFIGURE_ARGS=	--with-wx-config=wxgtk2-2.6-config
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}"
@@ -70,7 +70,7 @@ post-patch:
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|@datadir@/docs/@PACKAGE@|${DOCSDIR}|' \
 		${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e 's|/dev/dvd|${DEFAULT_DVD_DEVICE}|' \
+	@${REINPLACE_CMD} -e 's|/dev/dvd|${DEFAULT_DVD_DEVICE}|g' \
 		${WRKSRC}/src/Config.h
 .if !defined(WITH_OPTIMIZED_CFLAGS)
 	@${REINPLACE_CMD} -e 's|-O3||' \

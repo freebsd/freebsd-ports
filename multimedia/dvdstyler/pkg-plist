@@ -24,6 +24,7 @@ share/applications/dvdstyler.desktop
 %%DATADIR%%/buttons/arrow-next.xml
 %%DATADIR%%/buttons/arrow-right.xml
 %%DATADIR%%/buttons/arrow-up.xml
+%%DATADIR%%/buttons/arrow.xml
 %%DATADIR%%/buttons/arrow2-down.xml
 %%DATADIR%%/buttons/arrow2-left.xml
 %%DATADIR%%/buttons/arrow2-right.xml
@@ -33,8 +34,10 @@ share/applications/dvdstyler.desktop
 %%DATADIR%%/buttons/ellipse.xml
 %%DATADIR%%/buttons/frame.xml
 %%DATADIR%%/buttons/ok.xml
+%%DATADIR%%/buttons/text-shadow.xml
 %%DATADIR%%/buttons/text.xml
 %%DATADIR%%/data/silence.mp2
+%%DATADIR%%/objects/ellipse.xml
 %%DATADIR%%/objects/frame.xml
 %%DATADIR%%/objects/image.xml
 %%DATADIR%%/objects/rectangle.xml
@@ -44,7 +47,6 @@ share/applications/dvdstyler.desktop
 %%DATADIR%%/rc/folder1.png
 %%DATADIR%%/rc/folder2.png
 %%DATADIR%%/rc/logo.png
-%%DATADIR%%/rc/logo_big.png
 %%DATADIR%%/rc/minus.png
 %%DATADIR%%/rc/move.cur
 %%DATADIR%%/rc/nesw.cur
