@@ -2603,7 +2603,7 @@ var/games/emacs/snake-scores
 var/games/emacs/tetris-scores
 @dirrm libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%
 @dirrm libexec/emacs/%%EMACS_VER%%
-@unexec rmdir %D/libexec/emacs 2>/dev/null || true
+@dirrmtry libexec/emacs
 @dirrm %%DATADIR%%/%%EMACS_VER%%/etc/e
 @dirrm %%DATADIR%%/%%EMACS_VER%%/etc/images/ezimage
 @dirrm %%DATADIR%%/%%EMACS_VER%%/etc/images/gnus
@@ -2639,8 +2639,9 @@ var/games/emacs/tetris-scores
 @dirrm %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes
 @dirrm %%DATADIR%%/%%EMACS_VER%%/lisp/url
 @dirrm %%DATADIR%%/%%EMACS_VER%%/lisp
-@unexec rmdir %D/%%DATADIR%%/site-lisp 2>/dev/null || true
-@unexec rmdir %D%%DATADIR%% 2>/dev/null || true
-@dirrm var/games/emacs
-@unexec rmdir %D/var/games 2>/dev/null || true
-@unexec rmdir %D/var 2>/dev/null || true
+@dirrmtry %%DATADIR%%/site-lisp
+@dirrmtry %%DATADIR%%/%%EMACS_VER%%
+@dirrmtry %%DATADIR%%
+@dirrmtry var/games/emacs
+@dirrmtry var/games
+@dirrmtry var
