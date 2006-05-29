@@ -1,6 +1,5 @@
-PySNMP is fully functional SNMP v.1 engine (BER encoders/decoders
-for a subset of ASN.1 data types, sockets based networking etc.)
-written entirely in Python.  This package provides command-line utilities
-(pysnmpget, etc).
+PySNMP is fully functional SNMP v1, v2c and v3 engine (agent and manager)
+written entirely in Python.  The -apps distribution contains command-line
+workalikes for snmpwalk, snmpget, etc. written using the PySNMP 4 module.
 
 WWW: http://pysnmp.sourceforge.net/
