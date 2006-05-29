@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.xs4all.nl/~wpd/symon/philes/
 
-MAINTAINER=	q@galgenberg.net
+MAINTAINER=	uspoerlein@gmail.com
 COMMENT=	Performance and information monitoring tool
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

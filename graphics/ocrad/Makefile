@@ -11,7 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	q@galgenberg.net
+MAINTAINER=	uspoerlein@gmail.com
 COMMENT=	OCR program implemented as filter
 
 USE_BZIP2=	yes

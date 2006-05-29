@@ -13,8 +13,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://www.galgenberg.net/distfiles/
 MASTER_SITE_SUBDIR=	fenner
 
-
-MAINTAINER=	q@galgenberg.net
+MAINTAINER=	uspoerlein@gmail.com
 COMMENT=	Interface for external iterators
 
 .include <bsd.port.pre.mk>

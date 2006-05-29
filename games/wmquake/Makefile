@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.ne.jp/asahi/linux/timecop/software/
 
-MAINTAINER=	q@galgenberg.net
+MAINTAINER=	uspoerlein@gmail.com
 COMMENT=	Id Software\'s Quake I in a 64x64 WM dockapp window
 
 USE_BZIP2=	yes

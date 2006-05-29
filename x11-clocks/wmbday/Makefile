@@ -9,7 +9,7 @@ PORTVERSION=	0.3
 CATEGORIES=	x11-clocks
 MASTER_SITES=	http://buzzinhornetz.ath.cx/wmbday/files/
 
-MAINTAINER=	q@galgenberg.net
+MAINTAINER=	uspoerlein@gmail.com
 COMMENT=	Window Maker dock app that will remind you of birthdays
 
 BUILD_DEPENDS=	${X11BASE}/bin/xmessage:${X_CLIENTS_PORT}
