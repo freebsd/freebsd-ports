@@ -10,7 +10,7 @@ PORTVERSION=	2.5
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.sentex.net/~mwandel/jhead/
 
-MAINTAINER=	xride@x12.dk
+MAINTAINER=	nivo+kw+ports.bfa274@is-root.com
 COMMENT=	Exif Jpeg camera setting parser, rotator and much more
 
 RUN_DEPENDS=	jpegtran:${PORTSDIR}/graphics/jpeg
