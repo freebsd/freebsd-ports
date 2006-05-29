@@ -63,10 +63,10 @@ PORTDOCS=		CHANGES drafts rfc
 .if defined(USE_OPENLDAP)
 IGNORE=			: You have \`USE_OPENLDAP' defined either in your environment or in make(1) arguments
 .endif
+.else
 USE_OPENLDAP=		yes
 WANT_OPENLDAP_VER=	22
 
-.else
 OPENLDAP_PORTREVISION=	${PORTREVISION_SERVER}
 OPENLDAP_PKGFILESUFX=
 
