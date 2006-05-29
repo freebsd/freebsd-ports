@@ -29,6 +29,9 @@
 #				  Default: ${PREFIX}/lib/xpi
 # XPI_XPIDIR	- Name of the directory to install extension's files in.
 #				  Default: ${XPI_LIBDIR}/${XPI_ID}
+# USE_XPI		- If set, the port installs one or more xpi extensions.
+#				  If this is set to a list of apps (wildcards possible) the
+#				  extensions will be installed for them only.
 #
 # This Makefile is an alpha-version of the new xpi infrastructure. It currently
 # supports Gecko 1.8+ (Firefox 1.5+). Support for Gecko 1.7x (and Seamonkey 1.0)
@@ -71,8 +74,16 @@ USE_ZIP=	yes
 EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
 
 XPI_DISTNAME?=	${PORTNAME}
-WITH_XPI_APPS?=	*firefox* *thunderbird* *flock*
-XPI_APPS?=		${WITH_XPI_APPS:S.^.${X11BASE}/lib/.:S.$./extensions.}
+XPI_APPS_ALL=	*firefox* *thunderbird* *flock*
+WITH_XPI_APPS?=	${XPI_APPS_ALL}
+
+.if defined(USE_XPI) && ( ${USE_XPI:U} == "YES" || ${USE_XPI} == "*" )
+USE_XPI=	${WITH_XPI_APPS}
+.else
+USE_XPI?=	${WITH_XPI_APPS}
+.endif
+
+XPI_APPS?=	${USE_XPI:S.^.${X11BASE}/lib/.:S.$./extensions.}
 
 XPI_LIBDIR?=	${PREFIX}/lib/xpi
 .ifndef XPI_DISTNAMES
