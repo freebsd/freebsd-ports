@@ -75,7 +75,9 @@ WITH_XPI_APPS?=	*firefox* *thunderbird* *flock*
 XPI_APPS?=		${WITH_XPI_APPS:S.^.${X11BASE}/lib/.:S.$./extensions.}
 
 XPI_LIBDIR?=	${PREFIX}/lib/xpi
+.ifndef XPI_DISTNAMES
 XPI_XPIDIR?=	${XPI_LIBDIR}/${XPI_ID}
+.endif
 
 PLIST_SUB+=		XPI_LIBDIR="${XPI_LIBDIR:S,^${PREFIX}/,,}" \
 				XPI_XPIDIR="${XPI_XPIDIR:S,^${PREFIX}/,,}"
@@ -87,6 +89,14 @@ _Q=	2>/dev/null || true
 PLIST_FILES+=	${XPI_FILES:S!^!${_TD}/!}
 PLIST_DIRS+=	${XPI_DIRS:S!^!${_TD}/!} ${_TD}
 
+.for dist in ${XPI_DISTNAMES}
+XPI_XPIDIR_${dist}=	${XPI_LIBDIR}/${XPI_ID_${dist}}
+_TD_${dist}=	${XPI_XPIDIR_${dist}:S,^${PREFIX}/,,}
+PLIST_FILES+=	${XPI_FILES_${dist}:S!^!${_TD_${dist}}/!}
+PLIST_DIRS+=	${XPI_DIRS_${dist}:S!^!${_TD_${dist}}/!} ${_TD_${dist}}
+.endfor
+
+.if !target(do-install)
 do-install:
 	@${INSTALL} -d ${_TD_FULL}
 	@${CP} -Rp ${WRKSRC}/ ${_TD_FULL}/
@@ -98,18 +108,23 @@ do-install:
 	@${ECHO_CMD} '@exec for _app in ${XPI_APPS} ; { ${LN} -sf ${_TD_FULL} $$_app ${_Q}; }' ${_A}
 	@${ECHO_CMD} '@unexec for _app in ${XPI_APPS} ; { ${RM} -f $$_app/${XPI_ID} ; }' ${_A}
 	@${ECHO_CMD} '@unexec rmdir ${XPI_LIBDIR:S,^${PREFIX},%D,} ${_Q}' ${_A}
+.endif
 
+.if !target(relink)
 relink:
 	@-for _app in ${XPI_APPS} ; { ${LN} -sf ${_TD_FULL} $$_app ${_Q} ; }
+.endif
 
+.if !target(relink-all)
 relink-all:
-	@-for _app in ${XPI_APPS} ; { for _xpi in ${PREFIX}/lib/xpi/\{*\} ; { \
+	@-for _app in ${XPI_APPS} ; { for _xpi in ${XPI_LIBDIR}/*[\{@]* ; { \
 		${LN} -sf $$_xpi $$_app ${_Q} ; } ; }
+.endif
 
 # Maintainer section
 xpi-gen:	extract
 	@${ECHO_CMD} -n 'XPI_ID='
-	@${GREP} -m1 em:id ${WRKSRC}/install.rdf | ${CUT} -f2- -d\> | \
+	@${GREP} -Em1 'em:id|<id>' ${WRKSRC}/install.rdf | ${CUT} -f2- -d\> | \
 	${CUT} -f1 -d\< | ${CUT} -f2 -d\"
 	@${ECHO_CMD} -n 'XPI_FILES='
 	@cd ${WRKSRC} && ${FIND} -s . -not -type d | cut -f2- -d/ | ${TR} '\n' ' '
