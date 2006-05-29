@@ -47,9 +47,13 @@ PLIST_SUB+=	GOODIES=""
 PLIST_SUB+=	GOODIES="@comment "
 .endif
 
-.if !defined(WITHOUT_OPTIMIZED_CFLAGS)
-MAKE_ENV+=	OPTIMIZED_CFLAGS=YES
-.endif
+.for f in OPTIMIZED_CFLAGS X86_ASM
+.   if !defined(WITHOUT_${f})
+MAKE_ENV+=	USE_${f}=YES
+.   else
+MAKE_ENV+=	USE_${f}=NO
+.   endif
+.endfor
 
 .if !defined(WITHOUT_SDL)
 USE_SDL=	sdl
@@ -64,10 +68,6 @@ DISTFILES+=	tremor_texture_packX.zip:data
 PLIST_SUB+=	TEXTURES=""
 .else
 PLIST_SUB+=	TEXTURES="@comment "
-.endif
-
-.if !defined(WITHOUT_X86_ASM)
-MAKE_ENV+=	X86_ASM=YES
 .endif
 
 post-extract:
