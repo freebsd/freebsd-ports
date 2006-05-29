@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	links
-PORTVERSION=	2.1.p20
+PORTVERSION=	2.1.p21
 PORTEPOCH=	1
 CATEGORIES?=	www
 MASTER_SITES=	http://links.twibright.com/download/
-DISTNAME=	${PORTNAME}-2.1pre20
+DISTNAME=	${PORTNAME}-2.1pre21
 
 MAINTAINER?=	demon@FreeBSD.org
 COMMENT=	Lynx-like text WWW browser
