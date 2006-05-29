@@ -87,7 +87,7 @@ diff -u -r1.3 freetype-2.1.4.patch
 +    /*   do not #undef this macro here, since the build system might         */
 +    /*   define for certain configurations                                   */
 +    /*                                                                       */
-+! #define  TT_CONFIG_OPTION_BYTECODEpwd_INTERPRETER
++! #define  TT_CONFIG_OPTION_BYTECODE_INTERPRETER
 +  
 +  
 +    /*************************************************************************/

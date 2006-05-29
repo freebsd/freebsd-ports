@@ -1,0 +1,33 @@
+Index: epm/epm-3.7.patch
+===================================================================
+RCS file: /cvs/external/epm/epm-3.7.patch,v
+retrieving revision 1.9
+diff -u -r1.9 epm-3.7.patch
+--- epm/epm-3.7.patch	17 Feb 2006 16:16:42 -0000	1.9
++++ epm/epm-3.7.patch	15 May 2006 21:54:11 -0000
+@@ -659,3 +659,25 @@
+   	      putc(*s, fp);
+   	    }
+   
++*** misc/epm-3.7/bsd.c	Wed Jan 15 02:05:01 2003
++--- misc/build/epm-3.7/bsd.c	Mon May 15 13:48:17 2006
++***************
++*** 348,355 ****
++                    current, commentname, descrname, plistname, name))
++      return (1);
++  
++!   if (run_command(NULL, "mv %s.tgz %s", name, directory))
++!     return (1);
++  
++   /*
++    * Remove temporary files...
++--- 348,356 ----
++                    current, commentname, descrname, plistname, name))
++      return (1);
++  
++!   if (run_command(NULL, "mv %s.tbz %s", name, directory))
++!     if (run_command(NULL, "mv %s.tgz %s", name, directory))
++!       return (1);
++  
++   /*
++    * Remove temporary files...

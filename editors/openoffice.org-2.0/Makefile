@@ -27,7 +27,7 @@ EXTRACT_ONLY=	OOo_${OOOVERSION}_src.tar.gz
 MAINTAINER=	openoffice@FreeBSD.org
 COMMENT?=	Integrated wordprocessor/dbase/spreadsheet/drawing/chart/browser
 
-OOOVERSION=	2.0.2
+OOOVERSION=	2.0.3rc3
 NO_LATEST_LINK=	yes
 USE_GNOME=	gtk20 gnomevfs2
 MOZILLA_VERSION=	1.7.5
@@ -45,17 +45,39 @@ USE_GMAKE=	yes
 USE_PERL5=	yes
 WITHOUT_CPU_CFLAGS=	true
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	amd64 i386
+
+# XXX Cut & paste from bsd.port.mk.
+UNAME?=	/usr/bin/uname
+.if !defined(ARCH)
+ARCH!=  ${UNAME} -p
+.endif
+
+.if ${ARCH} == amd64
+BROKEN=	"Work in progress"
+.endif
 
 .if !defined(WITH_GNUGCJ)
 USE_JAVA=	yes
 JAVA_VERSION=	1.4+
 JAVA_BUILD=	jdk
+.if ${ARCH} == amd64
+JAVA_VENDOR=	bsdjava
+.else
 JAVA_VENDOR=	freebsd bsdjava
+.endif
 .endif
 
 .include <bsd.port.pre.mk>
 .include <${FILESDIR}/Makefile.localized>
+
+.if ${ARCH} == amd64
+GCC_TARGET=		x86_64-portbld-freebsd${OSREL}
+FREEBSD_ENV_SET=	FreeBSDAMDEnv.Set
+.else
+GCC_TARGET=		${ARCH}-portbld-freebsd${OSREL}
+FREEBSD_ENV_SET=	FreeBSDIntelEnv.Set
+.endif
 
 .if ${PERL_LEVEL} < 500600
 IGNORE=		install lang/perl5.8 then try again
@@ -63,12 +85,16 @@ IGNORE=		install lang/perl5.8 then try again
 
 CODELINE=		680
 RELEASE_NR=		2.0
-OOOTAG?=		OOB680_m5
+OOOTAG?=		OOC680_m3
 INSTALLATION_BASEDIR?=	openoffice.org-${OOOVERSION}
 EXECBASE?=		openoffice.org-${OOOVERSION}
 DIST_SUBDIR=		openoffice.org2.0
 SIMPLEOSVER=		${OSREL:C/\.//g}
+.if ${ARCH} == amd64
+PACKAGE_BASENAME=	OOo_${OOOVERSION}_${OPSYS}${SIMPLEOSVER}X86_64
+.else
 PACKAGE_BASENAME=	OOo_${OOOVERSION}_${OPSYS}${SIMPLEOSVER}Intel
+.endif
 
 LOCALIZED_LANG?=	en-US
 # FIXME (Somehow INDEX build fails)
@@ -141,19 +167,17 @@ NUMOFPROCESSES?=	1
 CONFIGURE_ENV+=      PATH="${WRKDIR}/gnugcj/bin:${PATH}"
 .endif
 
-CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp --with-gnu-patch=${LOCALBASE}/bin/gpatch --with-epm=internal --with-system-freetype --enable-crashdump=yes --enable-symbols=SMALL
+CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp --with-gnu-patch=${LOCALBASE}/bin/gpatch --with-epm=internal --enable-crashdump=yes --enable-symbols=SMALL
 #workarounds
 CONFIGURE_ARGS+=	--with-system-xrender-headers=yes #i62713#
-
+CONFIGURE_ARGS+=	--with-system-freetype #link error with internal one
 .if (${OSVERSION} <= 492000)
 EXTRA_PATCHES+=	${FILESDIR}/fbsd4-workaroundpatch
 .endif
 .if defined(WITH_GNUGCJ)
-EXTRA_PATCHES+=	${FILESDIR}/gcj-cws_jaxpapi ${FILESDIR}/gcj-patches ${FILESDIR}/gcj-fbsdworkaround
+EXTRA_PATCHES+=	${FILESDIR}/cws-maho1.diff ${FILESDIR}/gcj-fbsdworkaround
 .endif
-.if defined(WITHOUT_MOZILLA)
-EXTRA_PATCHES+=	${FILESDIR}/moz-patch_i59729 #cws pj50
-.endif
+
 #.if defined(WITH_TTF_BYTECODE_ENABLED)
 #EXTRA_PATCHES+=	 ${FILESDIR}/optpatch-freetype
 #.endif
@@ -203,17 +227,17 @@ do-build:
 	@cd ${WRKSRC} ; ./bootstrap
 # PR:84786 #i53289#
 .if (${NUMOFPROCESSES}>1)
-	@cd ${WRKSRC} ;	${SETENV} "LANG=C" "LC_ALL=C" ${TCSH} -c "source FreeBSDEnv.Set ; cd instsetoo_native ; build.pl -P${NUMOFPROCESSES} --all"
+	@cd ${WRKSRC} ; ${SETENV} "LANG=C" "LC_ALL=C" ${TCSH} -c "source ${FREEBSD_ENV_SET} ; cd instsetoo_native ; build.pl -P${NUMOFPROCESSES} --all"
 .else
-	@cd ${WRKSRC} ;	${SETENV} "LANG=C" "LC_ALL=C" ${TCSH} -c "source FreeBSDEnv.Set ; dmake"
+	@cd ${WRKSRC} ; ${SETENV} "LANG=C" "LC_ALL=C" ${TCSH} -c "source ${FREEBSD_ENV_SET} ; dmake"
 .endif
 
 do-install:
-	@cd ${WRKSRC}/instsetoo_native/unxfbsd.pro/OpenOffice/bsd/install/${LOCALIZED_LANG}/freebsd-*/ ; ${LS} *.tgz > ${WRKDIR}/INSTALLFILES
+	@cd ${WRKSRC}/instsetoo_native/unxfbsd?.pro/OpenOffice/bsd/install/${LOCALIZED_LANG}/freebsd-*/ ; ${LS} *.t?z > ${WRKDIR}/INSTALLFILES
 	@${RM} -Rf ${WRKDIR}/tmp
 	@${MKDIR} ${WRKDIR}/tmp
 	@for i in `${CAT} ${WRKDIR}/INSTALLFILES`; do \
-		${CP} ${WRKSRC}/instsetoo_native/unxfbsd.pro/OpenOffice/bsd/install/${LOCALIZED_LANG}/freebsd-*/$$i ${WRKDIR}/tmp ; \
+		${CP} ${WRKSRC}/instsetoo_native/unxfbsd?.pro/OpenOffice/bsd/install/${LOCALIZED_LANG}/freebsd-*/$$i ${WRKDIR}/tmp ; \
 		cd ${WRKDIR}/tmp ; ${TAR} xfz ${WRKDIR}/tmp/$$i ; \
 	done
 	@${MKDIR} ${PREFIX}/${INSTALLATION_BASEDIR}
@@ -247,7 +271,6 @@ post-install:
 	@ln -sf ${PREFIX}/${INSTALLATION_BASEDIR}/share/xdg \
 			${PREFIX}/share/applnk/${EXECBASE}
 	@${PRINTF} "share/applnk/${EXECBASE}\n" >> ${TMPPLIST}
-.endif
 	@for dir in `ls ${ICONS}/hicolor | grep -v CVS`; do \
 		for app in base calc draw impress math printeradmin writer; do \
 			if [ -r ${ICONS}/hicolor/$${dir}/apps/$${app}.png ]; then \
@@ -262,6 +285,7 @@ post-install:
 			${PRINTF} "share/icons/hicolor/$${dir}/mimetypes/$${file}\n" >> ${TMPPLIST} ; \
 		done ; \
 	done
+.endif
 	@cd ${PREFIX} ; ${FIND} -s bin -type f | ${GREP} ${EXECBASE} >> ${TMPPLIST}
 	@cd ${PREFIX} ; ${FIND} -s bin -type l | ${GREP} ${EXECBASE} >> ${TMPPLIST}
 	@cd ${PREFIX} ; ${FIND} -s ${INSTALLATION_BASEDIR} -type f >> ${TMPPLIST}

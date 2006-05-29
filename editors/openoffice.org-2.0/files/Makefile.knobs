@@ -77,6 +77,7 @@ pre-fetch:
 #	@${ECHO} "make -DWITH_TTF_BYTECODE_ENABLED"
 #	@${ECHO} "See http://www.freetype.org/patents.html for details"
 #.endif
+.if !defined(LOCALIZED_LANG)
 	@${ECHO}
 	@${ECHO} "You can select the language for OOo by making it with:"
 	@${ECHO} "make LOCALIZED_LANG=xx" 
@@ -88,6 +89,7 @@ pre-fetch:
 	@${ECHO} "st sv sw sw-TZ sx ta-IN th tn tr ts ve vi xh zh-CN"
 	@${ECHO} "zh-TW zu"
 	@${ECHO} "Default: en-US"
+.endif
 .if !defined(WITH_GNUGCJ)
 	@${ECHO}
 	@${ECHO} "You can compile OOo with GNU GCJ instead of SUN's JDK with"
