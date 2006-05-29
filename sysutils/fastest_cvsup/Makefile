@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://fastest-cvsup.sourceforge.net/download/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nivo+kw+ports.bfa274@is-root.com
 COMMENT=	Finds fastest CVSup server
 
 DISTVERSION=	0.2.8
