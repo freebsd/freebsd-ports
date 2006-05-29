@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	autogen
-PORTVERSION=	5.8.1
-PORTREVISION=	1
+PORTVERSION=	5.8.4
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		${MASTER_SITE_GNU:S/$/:gnu/}
@@ -31,9 +30,11 @@ MAN1=	autogen.1 autoopts-config.1 columns.1 getdefs.1 xml2ag.1
 MAN3=	ao_string_tokenize.3 configFileLoad.3 optionFileLoad.3 \
 	optionFindNextValue.3 optionFindValue.3 optionFree.3 \
 	optionGetValue.3 optionLoadLine.3 optionNextValue.3 \
-	optionProcess.3 optionRestore.3 optionSaveFile.3 \
-	optionSaveState.3 optionUnloadNested.3 optionVersion.3 \
-	strequate.3 streqvcmp.3 streqvmap.3 strneqvcmp.3 strtransform.3
+	optionProcess.3 optionRestore.3 optionOnlyUsage.3 \
+	optionSaveFile.3 optionSaveState.3 optionUnloadNested.3 \
+	optionVersion.3 strequate.3 streqvcmp.3 streqvmap.3 strneqvcmp.3 \
+	strtransform.3
+
 INFO=	autogen
 
 .include <bsd.port.mk>
