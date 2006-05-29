@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	synaesthesia
-PORTVERSION=	2.3
+PORTVERSION=	2.4
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.logarithmic.net/pfh-files/synaesthesia/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Graphically represents sound in real time
 
 USE_SDL=	sdl
@@ -19,14 +19,15 @@ USE_X_PREFIX=	Yes
 
 GNU_CONFIGURE=	Yes
 CONFIGURE_ARGS=	--with-sdl-prefix=${LOCALBASE}
+PORTDOCS=	README
+PLIST_FILES=	bin/${PORTNAME}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,stdint.h,inttypes.h,' `${FIND} ${WRKSRC} -name \*.cc -or -name \*.c`
-	@${REINPLACE_CMD} -e 's,int16_t,u_int16_t,' \
-		-e 's,machine/soundcard.h,sys/soundcard.h,' ${WRKSRC}/sound.cc
+	@${REINPLACE_CMD} -e 's,stdint.h,inttypes.h,' ${WRKSRC}/*.c?
+	@${REINPLACE_CMD} -e 's,int16_t,u_int16_t,' ${WRKSRC}/sound.cc
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/synaesthesia ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/synaesthesia ${PREFIX}/bin/
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
