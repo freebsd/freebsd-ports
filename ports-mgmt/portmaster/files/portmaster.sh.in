@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Local version: 1.63
+# Local version: 1.65
 # $FreeBSD$
 
 # Copyright (c) 2005-2006 Douglas Barton, All rights reserved
@@ -61,9 +61,17 @@ update_contents () {
 	local tempfile
 
 	tempfile=`mktemp -t tempfile-${new_port}`
+
 	sed "s/@pkgdep $1/@pkgdep $2/" $dep_port_contents > $tempfile &&
 	    mv $tempfile $pdb/$dep_port/+CONTENTS
 	    chmod 644 $pdb/$dep_port/+CONTENTS
+
+	if [ -n "$oldportdir" ]; then
+		sed "s%N:${oldportdir}\$%N:${newportdir}%" $dep_port_contents > $tempfile &&
+		    mv $tempfile $pdb/$dep_port/+CONTENTS
+		    chmod 644 $pdb/$dep_port/+CONTENTS
+		
+	fi
 }
 
 dep_warn () {
@@ -196,7 +204,7 @@ check_for_updates () {
 }
 
 find_moved_port () {
-	# newportdir is used globally
+	# newportdir and oldportdir are used globally
 	local m
 
 	newportdir=`sed -ne "s#^${1}|\([^|]*\)|.*#\1#p" $pd/MOVED`
@@ -213,9 +221,14 @@ find_moved_port () {
 		fi
 	fi
 
+	m=`sed -ne "s#^${1}|.*|.*|\(.*\)#\1#p" $pd/MOVED`
+	oldportdir=$1
 	# Just in case there was more than one match, use the last one
 	newportdir=`echo $newportdir | sed 's/.* //'`
-	echo "===>>> The $1 port has moved to $pd/$newportdir"
+	echo ''
+	echo "===>>> The $1 port has moved to $newportdir"
+	echo "===>>> Reason: $m"
+	echo ''
 
 	return 0
 }
@@ -611,7 +624,7 @@ while [ -f "$fetchlog" ]; do
 	tail -10 $fetchlog | grep -v '^$'
 	echo ''
 	echo "===>>> Waiting on fetch to complete for $portdir <<<==="
-	sleep 3
+	sleep 5
 done
 
 make $MAKE_ARGS || fail "make failed for $portdir"
@@ -624,7 +637,7 @@ short_port="${prefix}${portname}${suffix}"
 
 # Check for dependencies here in case +REQUIRED_BY is not up to date or missing
 grep_deps=`mktemp -t grep-deps-${short_port}`
-grep -l "pkgdep ${short_port}-" $pdb/*/+CONTENTS | cut -f 5 -d '/' |
+grep -l "pkgdep ${upg_port%-*}-" $pdb/*/+CONTENTS | cut -f 5 -d '/' |
     sort -u > $grep_deps
 
 if [ -s "$pdb/$upg_port/+REQUIRED_BY" ]; then
