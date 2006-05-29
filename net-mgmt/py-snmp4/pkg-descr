@@ -1,5 +1,4 @@
-PySNMP is fully functional SNMP v.1 engine (BER encoders/decoders
-for a subset of ASN.1 data types, sockets based networking etc.)
+PySNMP is fully functional SNMP v1, v2c and v3 engine (agent and manager)
 written entirely in Python.
 
 WWW: http://pysnmp.sourceforge.net/

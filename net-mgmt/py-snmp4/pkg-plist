@@ -1,3 +1,5 @@
+bin/build-pysnmp-mib
+bin/libsmi2pysnmp
 %%PYTHON_SITELIBDIR%%/pysnmp/__init__.py
 %%PYTHON_SITELIBDIR%%/pysnmp/__init__.pyc
 %%PYTHON_SITELIBDIR%%/pysnmp/__init__.pyo
@@ -286,7 +288,7 @@
 %%PYTHON_SITELIBDIR%%/pysnmp/v4/smi/view.py
 %%PYTHON_SITELIBDIR%%/pysnmp/v4/smi/view.pyc
 %%PYTHON_SITELIBDIR%%/pysnmp/v4/smi/view.pyo
-%%EXAMPLESDIR%%/buildmibs.sh
+%%EXAMPLESDIR%%/build-pysnmp-mib
 %%EXAMPLESDIR%%/libsmi2pysnmp
 %%EXAMPLESDIR%%/smi/backend.py
 %%EXAMPLESDIR%%/smi/instrum.py
