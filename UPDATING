@@ -7,6 +7,14 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 20060529:
+  AFFECTS: users of net/quagga
+  AUTHOR: lawrance@FreeBSD.org
+
+  As of version 0.99.4 quagga no longer supports UCD-SNMP v4.  If you
+  require this functionality, you should make alternative arrangements
+  before upgrading quagga.
+
+20060529:
   AFFECTS: users of mail/qmail-spamcontrol
   AUTHOR: garga@FreeBSD.org
 
