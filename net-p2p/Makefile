@@ -78,6 +78,7 @@
     SUBDIR += napshare
     SUBDIR += nicotine
     SUBDIR += opendchub
+    SUBDIR += opennap
     SUBDIR += peercast
     SUBDIR += phex
     SUBDIR += py-vertex
