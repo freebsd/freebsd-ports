@@ -25,7 +25,7 @@ USE_LINUX=		yes
 USE_LINUX_PREFIX=	yes
 LDCONFIG_LINUX=	${LINUXBASE}/sbin/ldconfig
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 DIST_SUBDIR=	rpm
 NO_BUILD=	yes
 
@@ -37,8 +37,14 @@ RPMFLAGS+=	--excludedocs
 .endif
 RPMDIR=		${DISTDIR}/${DIST_SUBDIR}
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+MACHINE_ARCH=	i386
+.endif
+
 do-install:
 	@${LOCALBASE}/bin/rpm -U ${RPMFLAGS} ${RPMDIR}/${DISTFILES}
 	@${LDCONFIG_LINUX}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
