@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pfw
-PORTVERSION=	0.7.3
-PORTREVISION=	1
+PORTVERSION=	0.7.4
 CATEGORIES=	security www
 MASTER_SITES=	http://www.allard.nu/pfw/download/
 EXTRACT_SUFX=	.tgz
@@ -40,7 +39,7 @@ IGNORE=		pf is only in 5.x and newer
 .endif
 
 do-install:
-	${MKDIR} ${PFW_PREFIX}
+	@${MKDIR} ${PFW_PREFIX}
 	${INSTALL_DATA} ${WRKSRC}/include.inc.php ${PFW_PREFIX}
 .for dir in ${CPDIRS}
 	@${MKDIR} ${PFW_PREFIX}/${dir}
@@ -51,14 +50,14 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/${f} ${PFW_PREFIX}/bin
 .endfor
 	@${MKDIR} ${DATADIR}
-	${CP} ${WRKSRC}/docs/sql/sqlite.sql ${DATADIR}
+	@${CP} -v ${WRKSRC}/docs/sql/sqlite.sql ${DATADIR}
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
 . for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/docs/${f} ${DOCSDIR}
 . endfor
 .endif
-	${MKDIR} ${PFW_PREFIX}/conf
+	@${MKDIR} ${PFW_PREFIX}/conf
 	${CHOWN} www:www ${PFW_PREFIX}/conf
 
 post-install:
