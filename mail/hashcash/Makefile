@@ -11,7 +11,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://www.hashcash.org/source/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nivo+kw+ports.bfa274@is-root.com
 COMMENT=	Anti-spam / denial of service counter-measure tool
 
 MAN1=		hashcash.1 sha1-hashcash.1
