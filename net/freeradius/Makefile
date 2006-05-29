@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	freeradius
-PORTVERSION=	1.1.1
-PORTREVISION=	0
+PORTVERSION=	1.1.2
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.freeradius.org/pub/radius/ \
 		http://freeradius.portal-to-web.de/
@@ -144,16 +143,16 @@ DICTS=		dictionary.3com dictionary.3gpp dictionary.3gpp2 dictionary.acc \
 		dictionary.cablelabs dictionary.cabletron dictionary.cisco \
 		dictionary.cisco.bbsm dictionary.cisco.vpn3000 dictionary.cisco.vpn5000 \
 		dictionary.colubris dictionary.columbia_university dictionary.compat \
-		dictionary.cosine dictionary.digest dictionary.epygi \
+		dictionary.cosine dictionary.digest dictionary.digium dictionary.epygi \
 		dictionary.ericsson dictionary.erx dictionary.extreme \
 		dictionary.fortinet dictionary.foundry dictionary.freeradius \
 		dictionary.freeradius.internal dictionary.gandalf dictionary.garderos \
-		dictionary.gemtek dictionary.ipunplugged dictionary.issanni \
+		dictionary.gemtek dictionary.hp dictionary.ipunplugged dictionary.issanni \
 		dictionary.itk dictionary.juniper dictionary.karlnet \
 		dictionary.livingston dictionary.localweb dictionary.lucent \
 		dictionary.merit dictionary.microsoft dictionary.mikrotik \
 		dictionary.motorola dictionary.navini dictionary.netscreen \
-		dictionary.nokia dictionary.nomadix dictionary.ntua \
+		dictionary.nokia dictionary.nomadix dictionary.nortel dictionary.ntua \
 		dictionary.packeteer dictionary.propel dictionary.quintum \
 		dictionary.redback dictionary.redcreek dictionary.rfc2865 \
 		dictionary.rfc2866 dictionary.rfc2867 dictionary.rfc2868 \

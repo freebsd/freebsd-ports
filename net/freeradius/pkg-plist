@@ -55,6 +55,7 @@ etc/raddb/radiusd.conf.sample
 etc/raddb/realms.sample
 etc/raddb/snmp.conf.sample
 etc/raddb/sql.conf.sample
+etc/raddb/sqlippool.conf.sample
 etc/raddb/users.sample
 lib/libeap-%%PORTVERSION%%.la
 lib/libeap-%%PORTVERSION%%.so
@@ -423,6 +424,7 @@ sbin/rc.radiusd
 %%DATADIR%%/dictionary.compat
 %%DATADIR%%/dictionary.cosine
 %%DATADIR%%/dictionary.digest
+%%DATADIR%%/dictionary.digium
 %%DATADIR%%/dictionary.epygi
 %%DATADIR%%/dictionary.ericsson
 %%DATADIR%%/dictionary.erx
@@ -496,4 +498,3 @@ sbin/rc.radiusd
 @exec mkdir -p /var/run/radiusd
 @unexec rm -fr /var/run/radiusd
 @unexec rmdir %D/etc/raddb 2> /dev/null || echo "You should remove %D/etc/raddb if you don't need it anymore."
-
