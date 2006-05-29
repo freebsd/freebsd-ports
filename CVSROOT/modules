@@ -14491,6 +14491,7 @@ xpi-greasemonkey	ports/www/xpi-greasemonkey
 xpi-imdbpreview	ports/www/xpi-imdbpreview
 xpi-inline-google-definitions	ports/www/xpi-inline-google-definitions
 xpi-linkification	ports/www/xpi-linkification
+xpi-locale-switcher	ports/www/xpi-locale-switcher
 xpi-mldonkey	ports/www/xpi-mldonkey
 xpi-mousegestures	ports/www/xpi-mousegestures
 xpi-no-referrer	ports/www/xpi-no-referrer
