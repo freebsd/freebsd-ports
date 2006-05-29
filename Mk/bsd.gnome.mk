@@ -388,7 +388,7 @@ gnomepanel_DETECT=	${X11BASE}/libdata/pkgconfig/libpanelapplet-2.0.pc
 gnomepanel_USE_GNOME_IMPL=gnomedesktop libwnck gnomemenus gnomedocutils
 gnomepanel_GNOME_DESKTOP_VERSION=2
 
-nautilus2_LIB_DEPENDS=	nautilus-extension.1:${PORTSDIR}/x11-fm/nautilus2
+nautilus2_LIB_DEPENDS=	nautilus-extension.1:${PORTSDIR}/x11-fm/nautilus
 nautilus2_DETECT=	${X11BASE}/libdata/pkgconfig/libnautilus-extension.pc
 nautilus2_USE_GNOME_IMPL=librsvg2 eel2 gnomedesktop desktopfileutils
 nautilus2_GNOME_DESKTOP_VERSION=2

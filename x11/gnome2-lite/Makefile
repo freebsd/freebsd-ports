@@ -20,7 +20,7 @@ RUN_DEPENDS=	${X11BASE}/libexec/gweather-applet-2:${PORTSDIR}/x11/gnome-applets 
 		gnome-terminal:${PORTSDIR}/x11/gnome-terminal \
 		gnome-session:${PORTSDIR}/x11/gnome-session \
 		gnome-system-monitor:${PORTSDIR}/sysutils/gnome-system-monitor \
-		nautilus:${PORTSDIR}/x11-fm/nautilus2 \
+		nautilus:${PORTSDIR}/x11-fm/nautilus \
 		yelp:${PORTSDIR}/x11/yelp \
 		${X11BASE}/share/gnome/help/user-guide/C/user-guide.xml:${PORTSDIR}/misc/gnome-user-docs \
 		${X11BASE}/share/gnome/sounds/question.wav:${PORTSDIR}/audio/gnome-audio \

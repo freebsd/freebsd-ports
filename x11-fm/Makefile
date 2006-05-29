@@ -21,7 +21,7 @@
     SUBDIR += jaffm
     SUBDIR += krusader
     SUBDIR += mtoolsfm
-    SUBDIR += nautilus2
+    SUBDIR += nautilus
     SUBDIR += offix-files
     SUBDIR += pcmanfm
     SUBDIR += py-nautilus

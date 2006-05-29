@@ -28,7 +28,7 @@ RUN_DEPENDS?=	${X11BASE}/libexec/gweather-applet-2:${PORTSDIR}/x11/gnome-applets
 		gnome-session:${PORTSDIR}/x11/gnome-session \
 		bug-buddy:${PORTSDIR}/devel/bug-buddy \
 		gnome-system-monitor:${PORTSDIR}/sysutils/gnome-system-monitor \
-		nautilus:${PORTSDIR}/x11-fm/nautilus2 \
+		nautilus:${PORTSDIR}/x11-fm/nautilus \
 		yelp:${PORTSDIR}/x11/yelp \
 		${X11BASE}/sbin/gdm:${PORTSDIR}/x11/gdm \
 		${X11BASE}/share/gnome/help/user-guide/C/user-guide.xml:${PORTSDIR}/misc/gnome-user-docs \
