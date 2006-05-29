@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tth
-PORTVERSION=	3.72
+PORTVERSION=	3.74
 CATEGORIES=	textproc
 MASTER_SITES=	http://hutchinson.belmont.ma.us/tth/tth-noncom/
 DISTNAME=	tth_C
