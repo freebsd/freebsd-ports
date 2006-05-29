@@ -6,11 +6,13 @@
 #
 
 PORTNAME=	slimeforest
-PORTVERSION=	0.53
+PORTVERSION=	0.55
 CATEGORIES=	japanese games linux
-MASTER_SITES=	http://lrnj.com/
+MASTER_SITES=	http://nivi.interfree.it/distfiles/${DIST_SUBDIR}/ \
+		http://lrnj.com/
 DISTNAME=	sfa
 EXTRACT_SUFX=	.tgz
+DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	nivit@users.sourceforge.net
 COMMENT=	A NES RPG game for learning KANA and KANJI (linux version)
