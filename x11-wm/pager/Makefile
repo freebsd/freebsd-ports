@@ -15,8 +15,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ebert@informatik.unibw-muenchen.de
 COMMENT=	A pager for sawfish without GNOME
 
-BUILD_DEPENDS=	${X11BASE}/bin/sawfish:${PORTSDIR}/x11-wm/sawfish2
-RUN_DEPENDS=	${X11BASE}/bin/sawfish:${PORTSDIR}/x11-wm/sawfish2
+BUILD_DEPENDS=	${X11BASE}/bin/sawfish:${PORTSDIR}/x11-wm/sawfish
+RUN_DEPENDS=	${X11BASE}/bin/sawfish:${PORTSDIR}/x11-wm/sawfish
 
 USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile

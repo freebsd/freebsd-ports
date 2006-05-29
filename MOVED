@@ -390,7 +390,6 @@ x11/xalf||2003-07-15|removed as part of GNOME 1.4 desktop phase out
 x11/linux-xalf||2003-07-15|removed as part of GNOME 1.4 desktop phase out
 x11/gnome||2003-07-15|removed as part of GNOME 1.4 desktop phase out
 x11/gnome-fifth-toe||2003-07-15|removed as part of GNOME 1.4 desktop phase out
-x11-wm/sawfish||2003-07-15|removed as part of GNOME 1.4 desktop phase out
 audio/gnomemedia||2003-07-15|removed as part of GNOME 1.4 desktop phase out
 sysutils/gtop||2003-07-15|removed as part of GNOME 1.4 desktop phase out
 audio/gnomeaudio||2003-07-15|removed as part of GNOME 1.4 desktop phase out
@@ -2350,3 +2349,4 @@ x11-fm/nautilus2|x11-fm/nautilus|2006-05-28|Use unversioned name
 x11-toolkits/gtk--|x11-toolkits/gtkmm12|2006-05-29|Renamed to use real vendor package name
 x11-toolkits/gtk--2|x11-toolkits/gtkmm20|2006-05-29|Renamed to use real vendor package name
 x11-toolkits/gtk--2-reference|x11-toolkits/gtkmm20-reference|2006-05-29|Renamed to use real vendor package name
+x11-wm/sawfish2|x11-wm/sawfish|2006-05-29|Use unversioned name

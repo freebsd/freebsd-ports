@@ -1,5 +1,5 @@
 
-$FreeBSD$
+$FreeBSD: /tmp/pcvs/ports/x11-wm/sawfish/files/Attic/patch-lisp::sawfish::ui::widgets::workspace-geometry.jl,v 1.1 2006-05-29 06:23:01 mezz Exp $
 
 --- lisp/sawfish/ui/widgets/workspace-geometry.jl	2002/04/29 19:16:50	1.1
 +++ lisp/sawfish/ui/widgets/workspace-geometry.jl	2002/04/29 19:17:07

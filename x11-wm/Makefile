@@ -88,7 +88,7 @@
     SUBDIR += ratmenu
     SUBDIR += ratpoison
     SUBDIR += sapphire
-    SUBDIR += sawfish2
+    SUBDIR += sawfish
     SUBDIR += selectwm
     SUBDIR += skippy
     SUBDIR += skippy-xd

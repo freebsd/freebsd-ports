@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	karma@ez.pereslavl.ru
 COMMENT=	Themes for Sawfish window manager
 
-RUN_DEPENDS=	sawfish:${PORTSDIR}/x11-wm/sawfish2
+RUN_DEPENDS=	sawfish:${PORTSDIR}/x11-wm/sawfish
 
 USE_X_PREFIX=	yes
 

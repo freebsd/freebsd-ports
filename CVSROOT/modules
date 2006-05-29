@@ -12133,8 +12133,8 @@ sather		ports/lang/Sather
 sattrack	ports/astro/sattrack
 sauerbraten	ports/games/sauerbraten
 savelogs	ports/sysutils/savelogs
+sawfish		ports/x11-wm/sawfish
 sawfish-themes	ports/x11-themes/sawfish-themes
-sawfish2	ports/x11-wm/sawfish2
 saxon		ports/textproc/saxon
 saxon-devel	ports/textproc/saxon-devel
 sb16config	ports/sysutils/sb16config
