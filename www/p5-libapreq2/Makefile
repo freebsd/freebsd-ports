@@ -7,7 +7,7 @@
 
 CATEGORIES=	www perl5 devel
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Generic Apache2 Request Library with perl binding
 
 MASTERDIR=	${.CURDIR}/../libapreq2
