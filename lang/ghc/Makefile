@@ -47,7 +47,7 @@ USE_AUTOTOOLS=	autoconf:259:env
 LIB_DEPENDS+=	gmp.7:${PORTSDIR}/math/libgmp4 \
 		readline.5:${PORTSDIR}/devel/readline
 
-MAINTAINER=	simonmar@microsoft.com
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A Compiler for the functional language Haskell
 
 USE_PERL5=	yes
