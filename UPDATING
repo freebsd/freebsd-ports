@@ -6,6 +6,20 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20060529:
+  AFFECTS: users of mail/qmail-spamcontrol
+  AUTHOR: garga@FreeBSD.org
+
+  Updated to version 2.4.14 that brings a lot of news, most significant is
+  STARTTLS support on smtpd and pop3d, if you want to use it, you need to
+  install sysutils/ucspi-ssl-tls port that has the necessary patch applied.
+
+  Remember to select STDERR option and rebuils security/clamav port, this is
+  necessary to have the correct log on smtpd.
+
+  After upgrade from 2.3.x you will need to set environment var SMTPAUTH to
+  enable auth, you canset it as "login" or "crammd5" to set which auth you want.
+
 20060528:
   AFFECTS: users of news/inn
   AUTHOR: shaun@inerd.com
