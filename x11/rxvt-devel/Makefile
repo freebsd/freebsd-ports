@@ -93,6 +93,11 @@ CONFIGURE_ARGS+=	--enable-rxvt-scroll
 CONFIGURE_ARGS+=	--enable-smart-resize
 .endif # WITH_SMART_RESIZE
 #
+# make resources checking via XGetDefault()
+.if defined(WITH_XGETDEFAULT)
+CONFIGURE_ARGS+=	--enable-xgetdefault
+.endif # WITH_XGETDEFAULT
+#
 # XIM (X Input Method) protocol support
 .ifndef(WITHOUT_XIM)
 CONFIGURE_ARGS+=	--enable-xim
@@ -117,9 +122,10 @@ pre-everything::
 	@${ECHO_MSG} "WITHOUT_BACKSPACE_KEY=yes	disable handling of the backspace key"
 	@${ECHO_MSG} "WITHOUT_DELETE_KEY=yes		disable handling of the delete key"
 	@${ECHO_MSG} "WITHOUT_XIM=yes			disable support for XIM (X Input Method) protocol"
+	@${ECHO_MSG} "WITH_XGETDEFAULT=yes		make resources checking via XGetDefault()"
 	@${ECHO_MSG} "WITH_GRAPHICS=yes		enable rxvt own graphics mode"
 	@${ECHO_MSG} "WITH_GREEK_KEYBOARD=yes		add support for greek keyboard"
-	@${ECHO_MSG} "WITH_LINESPACE=yes	add support for line-spacing"
+	@${ECHO_MSG} "WITH_LINESPACE=yes		add support for line-spacing"
 	@${ECHO_MSG} "WITH_MENUBAR=yes		add support for rxvt menu bar system"
 	@${ECHO_MSG} "WITH_MOUSEWHEEL=yes		add support for scrolling via mouse wheel"
 	@${ECHO_MSG} "				or buttons 4 & 5"

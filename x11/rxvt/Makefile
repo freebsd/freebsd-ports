@@ -74,6 +74,11 @@ CONFIGURE_ARGS+=	--enable-menubar
 CONFIGURE_ARGS+=	--enable-next-scroll
 .endif
 #
+# make resources checking via XGetDefault()
+.if defined(WITH_XGETDEFAULT)
+CONFIGURE_ARGS+=	--enable-xgetdefault
+.endif # WITH_XGETDEFAULT
+#
 # XIM (X Input Method) protocol support
 .ifndef(WITHOUT_XIM)
 CONFIGURE_ARGS+=	--enable-xim
@@ -90,6 +95,7 @@ pre-fetch:
 	@${ECHO_MSG} "You may use the following build options:"
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "WITHOUT_XIM=yes		disable support for XIM (X Input Method) protocol"
+	@${ECHO_MSG} "WITH_XGETDEFAULT=yes	make resources checking via XGetDefault()"
 	@${ECHO_MSG} "WITH_BIG5=yes		add support for Chinese characters (BIG5)"
 	@${ECHO_MSG} "WITH_GB=yes		add support for Chinese characters (GB)"
 	@${ECHO_MSG} "WITH_GREEK_KEYBOARD=yes	add support for greek keyboard"
