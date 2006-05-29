@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	parrot
-PORTVERSION=	0.4.3
-PORTREVISION=	1
+PORTVERSION=	0.4.4
 CATEGORIES=	lang perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/L/LT/LTOETSCH
@@ -18,8 +17,6 @@ COMMENT=	Parrot - virtual machine for dynamic languages
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4 \
 		icudata.34:${PORTSDIR}/devel/icu
-
-BROKEN=		Incorrect pkg-plist
 
 USE_GCC=	3.4+
 USE_PERL5=	yes
@@ -36,6 +33,8 @@ CONFIGURE_ARGS=	--cc=${CC} --cxx=${CXX} --ld=${CC} --ccflags="${CFLAGS}" \
 		--verbose \
 		--prefix=${PREFIX}
 #		--verbose
+
+PLIST_SUB+=	SHLIB_VER="${PORTVERSION}"
 
 post-patch:
 	${PERL} -pi -e "s=libdir}, 'pkgconfig=prefix}, 'libdata/pkgconfig=" \

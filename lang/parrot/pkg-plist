@@ -5,11 +5,11 @@ bin/pbc_info
 bin/pbc_merge
 bin/pdb
 bin/pdump
-include/parrot/autoprefix.h
 include/parrot/builtin.h
 include/parrot/caches.h
 include/parrot/cclass.h
 include/parrot/charset.h
+include/parrot/compiler.h
 include/parrot/config.h
 include/parrot/core_pmcs.h
 include/parrot/datatypes.h
@@ -22,8 +22,6 @@ include/parrot/enums.h
 include/parrot/events.h
 include/parrot/exceptions.h
 include/parrot/exec.h
-include/parrot/exec_dep.h
-include/parrot/exec_save.h
 include/parrot/exit.h
 include/parrot/extend.h
 include/parrot/extend_vtable.h
@@ -54,7 +52,6 @@ include/parrot/op.h
 include/parrot/oplib.h
 include/parrot/packfile.h
 include/parrot/parrot.h
-include/parrot/perltypes.h
 include/parrot/pic.h
 include/parrot/platform.h
 include/parrot/platform_interface.h
@@ -63,7 +60,6 @@ include/parrot/pmc_freeze.h
 include/parrot/pobj.h
 include/parrot/register.h
 include/parrot/resources.h
-include/parrot/runops_cores.h
 include/parrot/settings.h
 include/parrot/slice.h
 include/parrot/smallobject.h
@@ -90,7 +86,7 @@ include/parrot/oplib/core_ops_switch.h
 include/parrot/oplib/ops.h
 lib/libparrot.a
 lib/libparrot.so
-lib/libparrot.so.0.4.3
+lib/libparrot.so.%%SHLIB_VER%%
 lib/parrot/dynext/dynlexpad.so
 lib/parrot/dynext/libnci_test.so
 lib/parrot/dynext/match_group.so
@@ -166,8 +162,8 @@ lib/parrot/library/JSON/Parser.pir
 lib/parrot/library/PGE/Dumper.pir
 lib/parrot/library/PGE/Glob.pir
 lib/parrot/library/PGE/Hs.pir
-lib/parrot/library/PGE/P6Grammar.pir
 lib/parrot/library/PGE/Text.pir
+lib/parrot/library/PGE/Util.pir
 lib/parrot/library/SDL/App.pir
 lib/parrot/library/SDL/Button.pir
 lib/parrot/library/SDL/Color.pir
@@ -226,6 +222,7 @@ libdata/pkgconfig/parrot.pc
 %%DOCSDIR%%/docs/overview.pod
 %%DOCSDIR%%/docs/parrot.pod
 %%DOCSDIR%%/docs/parrotbyte.pod
+%%DOCSDIR%%/docs/pir-tutorial.pod
 %%DOCSDIR%%/docs/pmc.pod
 %%DOCSDIR%%/docs/porting_intro.pod
 %%DOCSDIR%%/docs/practical_notes.pod
@@ -289,8 +286,10 @@ libdata/pkgconfig/parrot.pc
 %%DOCSDIR%%/docs/pdds/clip/pdd17_basic_types.pod
 %%DOCSDIR%%/docs/pdds/clip/pdd18_security.pod
 %%DOCSDIR%%/docs/pdds/clip/pdd19_pir.pod
-%%DOCSDIR%%/docs/pdds/clip/pddXX_exceptions.pod
-%%DOCSDIR%%/docs/pdds/clip/pddXX_io.pod
+%%DOCSDIR%%/docs/pdds/clip/pdd22_io.pod
+%%DOCSDIR%%/docs/pdds/clip/pdd23_exceptions.pod
+%%DOCSDIR%%/docs/pdds/clip/pdd24_events.pod
+%%DOCSDIR%%/docs/pdds/clip/pdd25_threads.pod
 %%DOCSDIR%%/docs/pmc/array.pod
 %%DOCSDIR%%/docs/pmc/iterator.pod
 %%DOCSDIR%%/docs/pmc/perlarray.pod
@@ -530,6 +529,14 @@ libdata/pkgconfig/parrot.pc
 %%DOCSDIR%%/examples/subs/no_retval.pir
 %%DOCSDIR%%/examples/subs/pasm_sub1.pasm
 %%DOCSDIR%%/examples/subs/single_retval.pir
+%%DOCSDIR%%/examples/tge/branch/lib/Branch.pir
+%%DOCSDIR%%/examples/tge/branch/lib/Leaf.pir
+%%DOCSDIR%%/examples/tge/branch/branch.g
+%%DOCSDIR%%/examples/tge/branch/transform.pir
+%%DOCSDIR%%/examples/tge/README
+@dirrm %%DOCSDIR%%/examples/tge/branch/lib
+@dirrm %%DOCSDIR%%/examples/tge/branch
+@dirrm %%DOCSDIR%%/examples/tge
 @dirrm %%DOCSDIR%%/examples/subs
 @dirrm %%DOCSDIR%%/examples/streams
 @dirrm %%DOCSDIR%%/examples/shootout
