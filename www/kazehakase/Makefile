@@ -7,11 +7,10 @@
 #
 
 PORTNAME=	kazehakase
-PORTVERSION=	0.3.7
-PORTREVISION=	1
+PORTVERSION=	0.3.8
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
-MASTER_SITE_SUBDIR=	${PORTNAME}/20010
+MASTER_SITE_SUBDIR=	${PORTNAME}/20333
 
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Kazehakase is a browser with gecko engine like Epiphany or Galeon
@@ -85,7 +84,8 @@ pre-everything::
 	@${ECHO_MSG} ""
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|thunderbird|xulrunner|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|thunderbird|xulrunner|' \
+		 ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/usr/share/migemo|${LOCALBASE}/share/migemo|; \
 		s|=beginner|=medium|' ${WRKSRC}/etc/kzrc
 .if defined(WITH_MIGEMO)

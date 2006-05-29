@@ -1,0 +1,11 @@
+--- configure.orig	Mon May 29 10:03:44 2006
++++ configure	Mon May 29 10:03:54 2006
+@@ -976,7 +976,7 @@
+ psdir='${docdir}'
+ libdir='${exec_prefix}/lib'
+ localedir='${datarootdir}/locale'
+-mandir='${datarootdir}/man'
++mandir='${prefix}/man'
+ 
+ ac_prev=
+ ac_dashdash=
