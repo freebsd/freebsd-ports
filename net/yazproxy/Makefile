@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	yazproxy
-PORTVERSION=	1.0.1
+PORTVERSION=	1.2.1
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.indexdata.dk/pub/yazproxy/
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	A powerful general purpose Z39.50/SRW/SRU proxy
 
-LIB_DEPENDS=	yazcpp.1:${PORTSDIR}/net/yaz++
+LIB_DEPENDS=	yazpp:${PORTSDIR}/net/yaz++
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-shared --with-yazpp=${LOCALBASE}/bin
