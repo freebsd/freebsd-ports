@@ -9467,6 +9467,7 @@ p5-Text-Chomp	ports/textproc/p5-Text-Chomp
 p5-Text-Context-EitherSide	ports/textproc/p5-Text-Context-EitherSide
 p5-Text-Diff	ports/textproc/p5-Text-Diff
 p5-Text-Diff-HTML	ports/textproc/p5-Text-Diff-HTML
+p5-Text-Diff3	ports/textproc/p5-Text-Diff3
 p5-Text-DoubleMetaphone	ports/textproc/p5-Text-DoubleMetaphone
 p5-Text-EtText	ports/textproc/p5-Text-EtText
 p5-Text-ExtractWords	ports/textproc/p5-Text-ExtractWords
