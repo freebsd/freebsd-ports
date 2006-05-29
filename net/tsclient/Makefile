@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	tsclient
-PORTVERSION=	0.140
-PORTREVISION=	2
+PORTVERSION=	0.148
 CATEGORIES=	net gnome
 MASTER_SITES=	http://www.gnomepro.com/tsclient/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ports@thepentagon.org
 COMMENT=	A GNOME 2 frontend for rdesktop and vncviewer
 
 RUN_DEPENDS=	rdesktop:${PORTSDIR}/net/rdesktop
