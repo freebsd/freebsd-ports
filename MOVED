@@ -2350,3 +2350,4 @@ x11-toolkits/gtk--|x11-toolkits/gtkmm12|2006-05-29|Renamed to use real vendor pa
 x11-toolkits/gtk--2|x11-toolkits/gtkmm20|2006-05-29|Renamed to use real vendor package name
 x11-toolkits/gtk--2-reference|x11-toolkits/gtkmm20-reference|2006-05-29|Renamed to use real vendor package name
 x11-wm/sawfish2|x11-wm/sawfish|2006-05-29|Use unversioned name
+audio/opennap|net-p2p/opennap|2006-05-29|Napster-based server belongs to net-p2p
