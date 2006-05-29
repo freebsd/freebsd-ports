@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	smbldap-tools
-PORTVERSION=	0.9.1
-PORTREVISION=	1
+PORTVERSION=	0.9.2
 CATEGORIES=	net
-MASTER_SITES=	http://samba.idealx.org/dist/
+MASTER_SITES=	http://www.idealx.com/downloads/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	flz@FreeBSD.org
+MAINTAINER=	freebsd@unixfreunde.de
 COMMENT=	Useful package for managing users and groups in a LDAP directory
 
 BUILD_DEPENDS=	${SITE_PERL}/Net/LDAP.pm:${PORTSDIR}/net/p5-perl-ldap \
