@@ -454,6 +454,7 @@
     SUBDIR += p5-Text-Context-EitherSide
     SUBDIR += p5-Text-Diff
     SUBDIR += p5-Text-Diff-HTML
+    SUBDIR += p5-Text-Diff3
     SUBDIR += p5-Text-DoubleMetaphone
     SUBDIR += p5-Text-EtText
     SUBDIR += p5-Text-ExtractWords
