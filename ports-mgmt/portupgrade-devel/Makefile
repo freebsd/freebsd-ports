@@ -7,7 +7,7 @@
 
 PORTNAME=	portupgrade
 PORTVERSION=	2.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://dists.lovepeers.org/distfiles/portupgrade/
@@ -27,11 +27,14 @@ PATCH_DIST_STRIP=	-p1
 
 OPTIONS=	BDB4 "Use Berkeley DB >=2 as backend. (Use BDB 1.85 if off)" off
 
-USE_RC_SUBR=	yes
 USE_BZIP2=	yes
 USE_RUBY=	yes
 USE_RUBY_FEATURES=	optparse ruby18
 USE_PERL5_RUN=	yes
+
+INSTALLS_SHLIB=	yes
+LDCONFIG_DIRS=	%%PREFIX%%/lib/compat/pkg
+USE_LDCONFIG=	${PREFIX}/lib/compat/pkg
 
 MAKE_ARGS=	PREFIX="${PREFIX}" RUBY="${RUBY}"
 
@@ -57,6 +60,7 @@ INSTALL_TARGET+=	install-doc
 .endif
 
 .include <bsd.port.pre.mk>
+.include "${PORTSDIR}/misc/ldconfig_compat/bsd.ldconfig.mk"
 
 .if defined(WITH_BDB4)
 # For PKG_DBDRIVER={bdb_btree,bdb_hash,bdb}
@@ -72,7 +76,7 @@ PKG_CREATE_OK!=	/usr/sbin/pkg_create 2>&1 | ${GREP} ' -b ' || ${TRUE}
 IGNORE=	pkg_create does not support -b. Please update /usr/sbin/pkg_* to those of the latest RELENG_4
 .endif
 
-post-install:
+post-install: install-ldconfig-file
 	if [ ! -f ${PREFIX}/etc/pkgtools.conf ]; then \
 		${CP} -p ${PREFIX}/etc/pkgtools.conf.sample ${PREFIX}/etc/pkgtools.conf; \
 	fi
