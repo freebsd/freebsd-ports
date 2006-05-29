@@ -11,7 +11,7 @@ CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	sf
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	r.c.ladan@gmail.com
 COMMENT=	Legacy locale data for FreeBSD 6+
 
 USE_BZIP2=	yes
