@@ -31,7 +31,6 @@ lib/modules/drivers/nvidia_drv.o
 %%DRVSO%%lib/modules/drivers/nvidia_drv.so
 lib/modules/extensions/libglx.so.1
 @exec ln -sf %D/lib/modules/extensions/libglx.so.1 %D/lib/modules/extensions/libglx.so
-@unexec rm -f %D/lib/modules/extensions/libglx.so
 %%PORTDOCS%%%%DOCSDIR%%/html/appendix-a.html
 %%PORTDOCS%%%%DOCSDIR%%/html/appendix-b.html
 %%PORTDOCS%%%%DOCSDIR%%/html/appendix-c.html
