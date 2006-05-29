@@ -17,6 +17,7 @@ COMMENT=	A bingo game Perl implementation
 
 PERL_MODBUILD=	yes
 
+MAN1=		bingo.pl.1
 MAN3=		Games::Bingo.3 \
 		Games::Bingo::Card.3 \
 		Games::Bingo::Column.3 \
@@ -26,13 +27,6 @@ MAN3=		Games::Bingo.3 \
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@${PERL} -pi -e '$$_="" if /Test::/' ${WRKSRC}/Build.PL
-
-post-install:
-.ifndef(NOPORTDOCS)
-	@${ECHO_MSG} "===>   Installing example for ${PKGNAME}"
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/bingo.pl ${EXAMPLESDIR}
-.endif
+	@${PERL} -pi -e '$$_="" if m|Test::|' ${WRKSRC}/Build.PL
 
 .include <bsd.port.post.mk>
