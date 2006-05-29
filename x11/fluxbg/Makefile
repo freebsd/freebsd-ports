@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Background changer for fluxbox/blackbox
 
-LIB_DEPENDS=	gtkmm-2.0:${PORTSDIR}/x11-toolkits/gtk--2
+LIB_DEPENDS=	gtkmm-2.0:${PORTSDIR}/x11-toolkits/gtkmm20
 
 .if !exists(${X11BASE}/bin/bsetbg) &&  \
     !exists(${X11BASE}/bin/fbsetbg) && \

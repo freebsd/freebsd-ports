@@ -1,9 +1,9 @@
 # $FreeBSD$
 
-PATCH_DEPENDS=	${NONEXISTENT}:${.CURDIR}/../gtk--2:patch
-BUILD_DEPENDS=	${NONEXISTENT}:${.CURDIR}/../gtk--2:configure
+PATCH_DEPENDS=	${NONEXISTENT}:${.CURDIR}/../gtkmm20:patch
+BUILD_DEPENDS=	${NONEXISTENT}:${.CURDIR}/../gtkmm20:configure
 
-PARENT_WRKSRC!=	cd ${.CURDIR}/../gtk--2 && ${MAKE} -V WRKSRC
+PARENT_WRKSRC!=	cd ${.CURDIR}/../gtkmm20 && ${MAKE} -V WRKSRC
 EXTRACT_ONLY=
 USE_GMAKE=	yes
 

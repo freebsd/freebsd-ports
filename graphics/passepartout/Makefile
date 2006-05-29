@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.stacken.kth.se/project/pptout/files/
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	DTP application for X
 
-LIB_DEPENDS=	gtkmm-2.0:${PORTSDIR}/x11-toolkits/gtk--2 \
+LIB_DEPENDS=	gtkmm-2.0:${PORTSDIR}/x11-toolkits/gtkmm20 \
 		xml\\+\\+-1.0:${PORTSDIR}/textproc/libxml++
 RUN_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
 

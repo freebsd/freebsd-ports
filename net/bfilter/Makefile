@@ -29,7 +29,7 @@ CONFIGURE_ARGS+=	--enable-debug
 
 .if defined(WITH_GUI)
 USE_GNOME=	gtk20 pkgconfig
-LIB_DEPENDS+=	gtkmm-2.0:${PORTSDIR}/x11-toolkits/gtk--2
+LIB_DEPENDS+=	gtkmm-2.0:${PORTSDIR}/x11-toolkits/gtkmm20
 CONFIGURE_ARGS+=	--with-gui
 PLIST_SUB+=	WITH_GUI=""
 .else

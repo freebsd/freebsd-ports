@@ -14,7 +14,7 @@ MASTER_SITES=	http://varg.dyndns.org/psi/files/
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	A GTK+ based program that lets you edit you XFree86 mouse cursors
 
-LIB_DEPENDS=	gtkmm-2.0.6:${PORTSDIR}/x11-toolkits/gtk--2
+LIB_DEPENDS=	gtkmm-2.0.6:${PORTSDIR}/x11-toolkits/gtkmm20
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gnometarget gtk20
