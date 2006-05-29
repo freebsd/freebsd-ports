@@ -1,5 +1,5 @@
---- apr-util-1.2.2/dbd/apr_dbd_sqlite3.c.orig	Wed Nov  2 20:47:48 2005
-+++ apr-util-1.2.2/dbd/apr_dbd_sqlite3.c	Wed Nov  2 20:55:50 2005
+--- apr-util-1.2.7/dbd/apr_dbd_sqlite3.c.orig	Wed Mar 15 01:04:54 2006
++++ apr-util-1.2.7/dbd/apr_dbd_sqlite3.c	Mon May 29 09:08:08 2006
 @@ -24,6 +24,7 @@
  #include <sqlite3.h>
  
@@ -18,7 +18,7 @@
      apr_pool_t *pool;
  };
  
-@@ -92,11 +95,15 @@
+@@ -93,11 +96,15 @@
          return sql->trans->errnum;
      }
  
@@ -34,7 +34,7 @@
          return ret;
      } else {
          int column_count;
-@@ -115,7 +122,9 @@
+@@ -118,7 +125,9 @@
                  if (retry_count++ > MAX_RETRY_COUNT) {
                      ret = SQLITE_ERROR;
                  } else {
@@ -42,9 +42,9 @@
                      apr_thread_mutex_unlock(sql->mutex);
 +#endif
                      apr_sleep(MAX_RETRY_SLEEP);
+                     apr_thread_mutex_lock(sql->mutex);
                  }
-             } else if (ret == SQLITE_ROW) {
-@@ -170,7 +179,9 @@
+@@ -179,7 +188,9 @@
          } while (ret == SQLITE_ROW || ret == SQLITE_BUSY);
      }
      ret = sqlite3_finalize(stmt);
@@ -54,9 +54,9 @@
  
      if (sql->trans) {
          sql->trans->errnum = ret;
-@@ -240,7 +251,9 @@
-         return SQLITE_ERROR;
+@@ -242,7 +253,9 @@
      }
+ 
      length = strlen(query);
 +#if APR_HAS_THREADS
      apr_thread_mutex_lock(sql->mutex);
@@ -64,16 +64,16 @@
  
      do {
          ret = sqlite3_prepare(sql->conn, query, length, &stmt, &tail);
-@@ -259,7 +272,9 @@
+@@ -260,7 +273,9 @@
      if (dbd_sqlite3_is_success(ret)) {
-         res = 0;
+         ret =  0;
      }
 +#if APR_HAS_THREADS
      apr_thread_mutex_unlock(sql->mutex);
 +#endif
-     apr_pool_destroy(pool);
      if (sql->trans) {
-         sql->trans->errnum = res;
+         sql->trans->errnum = ret;
+     }
 @@ -366,12 +381,14 @@
      sql->conn = conn;
      sql->pool = pool;
