@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Apache-DB
-PORTVERSION=	0.10
+PORTVERSION=	0.13
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Apache
@@ -16,10 +16,17 @@ MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Debugging and profiling tools for mod_perl
 
 PERL_CONFIGURE=	yes
+USE_APACHE=	yes
 
 MAN3=		Apache::DB.3 Apache::DProf.3 Apache::SmallProf.3
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_MODPERL2)
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/mod_perl2.pm:${PORTSDIR}/www/mod_perl2
+.else
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/mod_perl.pm:${PORTSDIR}/www/mod_perl
+.endif
 
 .if ${PERL_LEVEL} < 500600
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Devel/DProf.pm:${PORTSDIR}/devel/p5-Devel-DProf
