@@ -1,11 +1,14 @@
 bin/glpsol
 bin/tspsol
 include/glpavl.h
+include/glpbfi.h
 include/glpdmp.h
+include/glphbm.h
 include/glpiet.h
 include/glpinv.h
 include/glpios.h
 include/glpipm.h
+include/glpipp.h
 include/glpk.h
 include/glplib.h
 include/glplpp.h
