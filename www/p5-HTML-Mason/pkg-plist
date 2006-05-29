@@ -1,3 +1,4 @@
+bin/mason.pl
 %%SITE_PERL%%/Apache/Mason.pm
 %%SITE_PERL%%/Bundle/HTML/Mason.pm
 %%SITE_PERL%%/HTML/Mason.pm

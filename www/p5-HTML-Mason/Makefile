@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTML-Mason
-PORTVERSION=	1.32
+PORTVERSION=	1.33
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	HTML
@@ -59,6 +59,13 @@ MAN3=		Bundle::HTML::Mason.3 \
 		HTML::Mason::Utils.3
 
 OPTIONS=	MOD_PERL "with mod_perl dependency" off
+
+post-build:
+	${MV} -f ${WRKSRC}/bin ${WRKSRC}/bin.orig
+	${MV} -f ${WRKSRC}/blib/script ${WRKSRC}/blib/script.orig
+
+post-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/blib/script.orig/mason.pl ${PREFIX}/bin
 
 .include <bsd.port.pre.mk>
 
