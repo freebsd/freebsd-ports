@@ -8,11 +8,11 @@
 PORTNAME=	alienarena
 DISTVERSION=	2006.ge
 CATEGORIES=	games
-MASTER_SITES=	http://offload1.icculus.org/~ravage/alienarena2006/ \
-		http://cor.planetquake.gamespy.com/codered/files/
+MASTER_SITES=	http://offload1.icculus.org/~ravage/alienarena2006/:data \
+		ftp://ftp.alepulver.com.ar/distfiles/:patch
 PKGNAMESUFFIX=	-data
-DISTFILES=	${PORTNAME}-2006ge-x86.run \
-		aa2k6updateGE501c-x86.zip
+DISTFILES=	${PORTNAME}-2006ge-x86.run:data \
+		aa2k6updateGE501c-x86.zip:patch
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Alien Arena 2006 (data)
