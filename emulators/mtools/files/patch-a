@@ -1,5 +1,5 @@
---- Makefile.in.orig	Wed Nov 16 12:38:06 2005
-+++ Makefile.in	Wed Nov 16 12:40:28 2005
+--- Makefile.in.orig	Sat May 27 06:56:01 2006
++++ Makefile.in	Sat May 27 07:07:37 2006
 @@ -116,7 +116,7 @@
  xdf_io.c mkmanifest.c
  
@@ -9,18 +9,18 @@
  
  LINKS=mattrib mcat mcd mclasserase mcopy mdel mdeltree mdir mdu mformat minfo \
  mlabel mmd mmount mmove mpartition mrd mren mtype mtoolstest mshowfat \
-@@ -258,11 +258,11 @@
- install-scripts: $(bindir)/mtools
- 	@$(top_srcdir)/mkinstalldirs $(bindir)
+@@ -257,11 +257,11 @@
+ install-scripts: $(DESTDIR)$(bindir)/mtools
+ 	@$(top_srcdir)/mkinstalldirs $(DESTDIR)$(bindir)
  	@for j in $(SCRIPTS) ; do \
--		$(INSTALL_PROGRAM) $(srcdir)/scripts/$$j $(bindir)/$$j ; \
-+		$(BSD_INSTALL_SCRIPT) $(srcdir)/scripts/$$j $(bindir)/$$j ; \
- 		echo $(bindir)/$$j ; \
+-		$(INSTALL_PROGRAM) $(srcdir)/scripts/$$j $(DESTDIR)$(bindir)/$$j ; \
++		$(BSD_INSTALL_SCRIPT) $(srcdir)/scripts/$$j $(DESTDIR)$(bindir)/$$j ; \
+ 		echo $(DESTDIR)$(bindir)/$$j ; \
  	done
--	rm -f $(bindir)/lz
--	$(LN_S) uz $(bindir)/lz
-+	#rm -f $(bindir)/lz
-+	#$(LN_S) uz $(bindir)/lz
+-	rm -f $(DESTDIR)$(bindir)/lz
+-	$(LN_S) uz $(DESTDIR)$(bindir)/lz
++	#rm -f $(DESTDIR)$(bindir)/lz
++	#$(LN_S) uz $(DESTDIR)$(bindir)/lz
  
  install-man:
  	@$(top_srcdir)/mkinstalldirs $(MAN1DIR)
