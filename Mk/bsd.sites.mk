@@ -471,14 +471,17 @@ MASTER_SITE_GNU_ALPHA+=	\
 
 .if !defined(IGNORE_MASTER_SITE_IDSOFTWARE)
 MASTER_SITE_IDSOFTWARE+=	\
-	ftp://ftp.chg.ru/.3/games/idgames/idstuff/%SUBDIR%/ \
+	ftp://ftp.chg.ru/pub/games/idgames/idstuff/%SUBDIR%/ \
+	http://ftp4.de.freesbie.org/pub/misc/ftp.idsoftware.com/idstuff/%SUBDIR%/ \
 	ftp://ftp.fasta.fh-dortmund.de/mirror/idstuff/%SUBDIR%/ \
 	ftp://ftp.fu-berlin.de/pc/games/idgames/idstuff/%SUBDIR%/ \
-	http://www.gamers.org/pub/idgames/idstuff/%SUBDIR%/ \
+	ftp://ftp.gamers.org/pub/idgames/idstuff/%SUBDIR%/ \
+	http://ftp.iinet.net.au/games/idstuff/%SUBDIR%/ \
 	ftp://ftp.mirror.nl/disk2/idsoftware/idstuff/%SUBDIR%/ \
 	ftp://ftp.nsu.ru/mirrors/ftp.idsoftware.com/idstuff/%SUBDIR%/ \
 	ftp://ftp.ntua.gr/pub/vendors/idgames/idstuff/%SUBDIR%/ \
 	ftp://ftp.omen.net.au/games/idstuff/%SUBDIR%/ \
+	http://ftp.planetmirror.com/pub/idgames/idstuff/%SUBDIR%/ \
 	ftp://ftp.sunsite.org.uk/sites/ftp.idsoftware.com/idstuff/%SUBDIR%/ \
 	ftp://ftp.idsoftware.com/idstuff/%SUBDIR%/
 .endif
