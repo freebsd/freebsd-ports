@@ -7,7 +7,7 @@
 
 PORTNAME=		openldap
 PORTVERSION=		2.2.30
-OPENLDAP_PORTREVISION=	${PORTREVISION_CLIENT}
+PORTREVISION=		${OPENLDAP_PORTREVISION}
 CATEGORIES=		net databases
 MASTER_SITES=		ftp://ftp.OpenLDAP.org/pub/OpenLDAP/%SUBDIR%/ \
 			http://public.planetmirror.com/pub/openldap/%SUBDIR%/ \
@@ -24,35 +24,36 @@ MASTER_SITES=		ftp://ftp.OpenLDAP.org/pub/OpenLDAP/%SUBDIR%/ \
 			ftp://sunsite.cnlab-switch.ch/mirror/OpenLDAP/%SUBDIR%/ \
 			ftp://ftp.plig.org/pub/OpenLDAP/%SUBDIR%/
 MASTER_SITE_SUBDIR=	openldap-release
-PKGNAMESUFFIX?=		-server
 EXTRACT_SUFX=		.tgz
 
 MAINTAINER=		delphij@FreeBSD.org
-COMMENT?=		Open source LDAP server implementation
 
 UNIQUENAME?=		${PKGNAMEPREFIX}openldap22
 LATEST_LINK?=		${UNIQUENAME}${PKGNAMESUFFIX}
+USE_OPENSSL=		yes
 
 WANT_OPENLDAP_VER?=	22
 .if ${WANT_OPENLDAP_VER} != 22
 BROKEN=			"incompatible OpenLDAP version: ${WANT_OPENLDAP_VER}"
 .endif
 
-OPENLDAP_PORTREVISION=	${PORTREVISION_CLIENT}
-OPENLDAP_PORTREVISION=	${PORTREVISION_CLIENT}
+PORTREVISION_CLIENT=	0
+PORTREVISION_SERVER=	0
 
 .if defined(CLIENT_ONLY)
 OPENLDAP_PORTREVISION=	${PORTREVISION_CLIENT}
 OPENLDAP_PKGFILESUFX=	.client
 
-.if ${PKGNAMESUFFIX} == "-sasl-client"
+.if defined(WITH_SASL)
+COMMENT=		Open source LDAP client implementation with SASL2 support
+PKGNAMESUFFIX=		-sasl-client
 CONFLICTS=		${PKGNAMEPREFIX}${PORTNAME}-client-2.* \
 			${PKGNAMEPREFIX}${PORTNAME}-sasl-client-2.[!2].*
-.elif ${PKGNAMESUFFIX} == "-client"
+.else
+COMMENT=		Open source LDAP client implementation
+PKGNAMESUFFIX=		-client
 CONFLICTS=		${PKGNAMEPREFIX}${PORTNAME}-client-2.[!2].* \
 			${PKGNAMEPREFIX}${PORTNAME}-sasl-client-2.*
-.else
-BROKEN=			Unknown PKGNAMESUFFIX ${PKGNAMESUFFIX}
 .endif
 
 .if !defined(NOPORTDOCS)
@@ -62,29 +63,27 @@ PORTDOCS=		CHANGES drafts rfc
 .if defined(USE_OPENLDAP)
 IGNORE=			: You have \`USE_OPENLDAP' defined either in your environment or in make(1) arguments
 .endif
+USE_OPENLDAP=		yes
+WANT_OPENLDAP_VER=	22
+
 .else
 OPENLDAP_PORTREVISION=	${PORTREVISION_SERVER}
 OPENLDAP_PKGFILESUFX=
 
 .if defined(WITH_SASL)
-RUN_DEPENDS=		${LOCALBASE}/lib/libldap-2.2.so.7:${PORTSDIR}/net/openldap22-sasl-client
-.else
-RUN_DEPENDS=		${LOCALBASE}/lib/libldap-2.2.so.7:${PORTSDIR}/net/openldap22-client
-.endif
-
-.if ${PKGNAMESUFFIX} == "-sasl-server"
+COMMENT=		Open source LDAP server implementation with SASL2 support
+PKGNAMESUFFIX=		-sasl-server
 CONFLICTS=		${PKGNAMEPREFIX}${PORTNAME}-server-2.* \
 			${PKGNAMEPREFIX}${PORTNAME}-sasl-server-2.[!2].*
-.elif ${PKGNAMESUFFIX} == "-server"
+.else
+COMMENT=		Open source LDAP server implementation
+PKGNAMESUFFIX=		-server
 CONFLICTS=		${PKGNAMEPREFIX}${PORTNAME}-server-2.[!2].* \
 			${PKGNAMEPREFIX}${PORTNAME}-sasl-server-2.*
-.else
-BROKEN=			Unknown PKGNAMESUFFIX ${PKGNAMESUFFIX}
 .endif
 
 .endif
 
-USE_OPENSSL=		yes
 GNU_CONFIGURE=	yes
 
 DESCR=			${PKGDIR}/pkg-descr${OPENLDAP_PKGFILESUFX}
