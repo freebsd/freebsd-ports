@@ -17,7 +17,7 @@ DISTNAME=	nautilus-python-${PORTVERSION}
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Python nautilus bindings
 
-LIB_DEPENDS=	nautilus-extension:${PORTSDIR}/x11-fm/nautilus2
+LIB_DEPENDS=	nautilus-extension:${PORTSDIR}/x11-fm/nautilus
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes

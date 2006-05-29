@@ -393,7 +393,6 @@ x11/gnome-fifth-toe||2003-07-15|removed as part of GNOME 1.4 desktop phase out
 x11-wm/sawfish||2003-07-15|removed as part of GNOME 1.4 desktop phase out
 audio/gnomemedia||2003-07-15|removed as part of GNOME 1.4 desktop phase out
 sysutils/gtop||2003-07-15|removed as part of GNOME 1.4 desktop phase out
-x11-fm/nautilus||2003-07-15|removed as part of GNOME 1.4 desktop phase out
 audio/gnomeaudio||2003-07-15|removed as part of GNOME 1.4 desktop phase out
 games/gnomegames||2003-07-15|removed as part of GNOME 1.4 desktop phase out
 misc/gnomeutils||2003-07-15|removed as part of GNOME 1.4 desktop phase out
@@ -2347,3 +2346,4 @@ x11/gnomepanel|x11/gnome-panel|2006-05-28|Renamed to use real vendor package nam
 x11/gnomepanel-reference|x11/gnome-panel-reference|2006-05-28|Renamed to use real vendor package name
 x11/gnomesession|x11/gnome-session|2006-05-28|Renamed to use real vendor package name
 x11/gnometerminal|x11/gnome-terminal|2006-05-28|Renamed to use real vendor package name
+x11-fm/nautilus2|x11-fm/nautilus|2006-05-28|Use unversioned name

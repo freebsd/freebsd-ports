@@ -6,12 +6,11 @@
 #   $MCom: ports/x11-fm/nautilus2/Makefile,v 1.105 2006/04/13 07:52:42 bland Exp $
 #
 
-PORTNAME=	nautilus2
+PORTNAME=	nautilus
 PORTVERSION=	2.14.1
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
-DISTNAME=	nautilus-${PORTVERSION}
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
