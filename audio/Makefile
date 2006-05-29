@@ -390,7 +390,6 @@
     SUBDIR += ogg2mp3
     SUBDIR += oggsplit
     SUBDIR += openal
-    SUBDIR += opennap
     SUBDIR += openspc
     SUBDIR += opmixer
     SUBDIR += orpheus

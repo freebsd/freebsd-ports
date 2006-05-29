@@ -7510,7 +7510,7 @@ openmcu		ports/net/openmcu
 openmortal	ports/games/openmortal
 openmpi		ports/net/openmpi
 openmsx		ports/emulators/openmsx
-opennap		ports/audio/opennap
+opennap		ports/net-p2p/opennap
 openntpd	ports/net/openntpd
 openobex	ports/comms/openobex
 openoffice.org-1.0	ports/editors/openoffice.org-1.0
