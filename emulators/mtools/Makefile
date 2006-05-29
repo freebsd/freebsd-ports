@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	mtools
-PORTVERSION=	3.9.9
+PORTVERSION=	3.9.10
 CATEGORIES=	emulators
 MASTER_SITES=	ftp://ftp.tux.org/pub/knaff/mtools/  \
 		http://mtools.linux.lu/
 
 PATCH_SITES=	http://mtools.linux.lu/
-PATCHFILES=	mtools-3.9.9-20050228.diff.gz
+PATCHFILES=	mtools-3.9.10-20060525.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	jmz@FreeBSD.org
