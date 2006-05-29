@@ -15,16 +15,16 @@ MASTER_SITES+=	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/developer/680
 		${MASTER_SITE_APACHE:S,%SUBDIR%/,ant/binaries/:antbin,} \
 		${MASTER_SITE_MOZILLA:S/$/:mozsrc/}
 MASTER_SITE_SUBDIR+=	mozilla/releases/mozilla${MOZILLA_VERSION}/source/:mozsrc
-#DISTFILES+=	OOo_SRC680_m${MILESTONE}_source${EXTRACT_SUFX}
-DISTFILES+=	OOo_2.0.${MILESTONE}_src${EXTRACT_SUFX}
+DISTFILES+=	OOo_SRC680_m${MILESTONE}_source${EXTRACT_SUFX}
+#DISTFILES+=	OOo_2.0.${MILESTONE}_src${EXTRACT_SUFX}
 .if defined(WITH_GPC)
 DISTFILES+=     gpc231.tar.Z:gpc
 .endif
 .if defined(WITH_GNUGCJ)
 DISTFILES+=     ${ANT_DISTFILE}:antbin
 .endif
-#EXTRACT_ONLY=	OOo_SRC680_m${MILESTONE}_source${EXTRACT_SUFX}
-EXTRACT_ONLY+=	OOo_2.0.${MILESTONE}_src${EXTRACT_SUFX}
+EXTRACT_ONLY=	OOo_SRC680_m${MILESTONE}_source${EXTRACT_SUFX}
+#EXTRACT_ONLY+=	OOo_2.0.${MILESTONE}_src${EXTRACT_SUFX}
 
 MAINTAINER=	openoffice@FreeBSD.org
 COMMENT?=	Integrated wordprocessor/dbase/spreadsheet/drawing/chart/browser(developer version)
@@ -44,7 +44,7 @@ USE_KDELIBS_VER=        3
 USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_PERL5=	yes
-#USE_BZIP2=	yes
+USE_BZIP2=	yes
 WITHOUT_CPU_CFLAGS=	true
 
 ONLY_FOR_ARCHS=	amd64 i386
@@ -87,7 +87,7 @@ IGNORE=		install lang/perl5.8 then try again
 
 CODELINE=		680
 RELEASE_NR=		2.0
-MILESTONE?=		169
+MILESTONE?=		170
 OOOTAG?=		SRC680_m${MILESTONE}
 SNAPDATE=		20060512
 INSTALLATION_BASEDIR?=	openoffice.org-${OOOTAG}
@@ -162,7 +162,8 @@ LIB_DEPENDS=	art_lgpl_2:${PORTSDIR}/graphics/libart_lgpl
 .endif
 
 GNU_CONFIGURE=	yes
-WRKSRC?=		${WRKDIR}/SRC680_m${MILESTONE}
+#WRKSRC?=		${WRKDIR}/SRC680_m${MILESTONE}
+WRKSRC?=		${WRKDIR}
 CONFIGURE_WRKSRC=	${WRKSRC}/config_office
 TCSH?=		/bin/tcsh
 PKGMESSAGE=	${WRKDIR}/pkg-message
@@ -171,16 +172,17 @@ NUMOFPROCESSES?=	1
 CONFIGURE_ENV+=      PATH="${WRKDIR}/gnugcj/bin:${PATH}"
 .endif
 
-CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp --with-gnu-patch=${LOCALBASE}/bin/gpatch --with-epm=internal --enable-crashdump=yes --enable-symbols=SMALL --with-system-freetype 
+CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp --with-gnu-patch=${LOCALBASE}/bin/gpatch --with-epm=internal --enable-crashdump=yes --enable-symbols=SMALL
 #workarounds
 CONFIGURE_ARGS+=	--with-system-xrender-headers=yes #i62713#
-
+CONFIGURE_ARGS+=	--with-system-freetype #link error with internal one
 .if (${OSVERSION} <= 492000)
 EXTRA_PATCHES+=	${FILESDIR}/fbsd4-workaroundpatch
 .endif
 .if defined(WITH_GNUGCJ)
 EXTRA_PATCHES+=	${FILESDIR}/cws-maho1.diff ${FILESDIR}/gcj-fbsdworkaround
 .endif
+
 #.if defined(WITH_TTF_BYTECODE_ENABLED)
 #EXTRA_PATCHES+=	 ${FILESDIR}/optpatch-freetype
 #.endif
@@ -230,9 +232,9 @@ do-build:
 	@cd ${WRKSRC} ; ./bootstrap
 # PR:84786 #i53289#
 .if (${NUMOFPROCESSES}>1)
-	@cd ${WRKSRC} ;	${SETENV} "LANG=C" "LC_ALL=C" ${TCSH} -c "source FreeBSDEnv.Set ; cd instsetoo_native ; build.pl -P${NUMOFPROCESSES} --all"
+	@cd ${WRKSRC} ; ${SETENV} "LANG=C" "LC_ALL=C" ${TCSH} -c "source ${FREEBSD_ENV_SET} ; cd instsetoo_native ; build.pl -P${NUMOFPROCESSES} --all"
 .else
-	@cd ${WRKSRC} ;	${SETENV} "LANG=C" "LC_ALL=C" ${TCSH} -c "source FreeBSDEnv.Set ; dmake"
+	@cd ${WRKSRC} ; ${SETENV} "LANG=C" "LC_ALL=C" ${TCSH} -c "source ${FREEBSD_ENV_SET} ; dmake"
 .endif
 
 do-install:
