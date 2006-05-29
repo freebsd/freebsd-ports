@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rote
-PORTVERSION=	0.2.6
+PORTVERSION=	0.2.8
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,7 +18,7 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 
-PLIST_FILES=	bin/rote-config include/rote/rote.h lib/librote.so.0.2.6 \
+PLIST_FILES=	bin/rote-config include/rote/rote.h lib/librote.so.${PORTVERSION} \
 		lib/librote.so.0 lib/librote.so
 PLIST_DIRS=	include/rote
 
