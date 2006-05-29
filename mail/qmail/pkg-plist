@@ -34,6 +34,7 @@ bin/qmail-inject
 %%LDAP%%bin/qmail-ldaplookup
 bin/qmail-local
 bin/qmail-lspawn
+%%SPAMCONTROL%%bin/qmail-mfrules
 bin/qmail-newmrh
 bin/qmail-newu
 bin/qmail-pop3d

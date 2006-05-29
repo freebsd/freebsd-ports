@@ -163,12 +163,8 @@ LDAP_PARAMS=	ALTQUEUE BIGBROTHER BIGTODO BIND_8_COMPAT\
 
 .elif defined(SLAVE_SPAMCONTROL)
 OPTIONS+=	RELAYMAILFROM	"Open relay based on mailfrom" off \
-		QUITASAP	"Close session in case of a filter condition" off \
 		REQBRACKETS	"Require brackets in <addresses>" on \
 		VERP		"VERP addresses for recipients" on \
-		RECIPIENTS550	"Get a 550 reply instead of a deferred bounce" off \
-		LOCALMFREQAUTH	"Require auth when from is @ your domains" off \
-		AUTHCRAM	"Aditional CRAM-MD5 support" off \
 		MOREIPME	"Additional control files moreipme & notipme" off \
 		BIGTODO		"Bruce Guenter's BigToDo patch" off
 .endif
@@ -261,16 +257,14 @@ DOCFILES_WRKDIR+=	TLS.readme
 .elif defined(SLAVE_SPAMCONTROL)
 DOCFILES_WRKDIR_doc+=	FILES.spamcontrol HISTORY.spamcontrol \
 			INSTALL.spamcontrol LICENSE.spamcontrol \
-			LOGGING.spamcontrol Makefile.djbdns README.auth \
-			README.bigtodo README.bouncemaxbytes README.djbdns \
-			README.doublebouncetrim README.moreipme \
-			README.qmailqueue README.recipients README.spamcontrol \
+			LOGGING.spamcontrol Makefile.djbdns README.bigtodo \
+			README.bouncemaxbytes README.clamav README.djbdns \
+			README.doublebouncetrim README.mav README.moreipme \
+			README.qmailqueue README.recipients \
 			README.wildmat README_spamcontrol.html \
 			RELEASE_22.spamcontrol RELEASE_23.spamcontrol \
-			SMTPREPLY.spamcontrol TESTING.spamcontrol \
-			TODO.spamcontrol badloadertypes badmailfrom \
-			badmimetypes badrcptto conf-spamcontrol \
-			install_spamcontrol.sh tarpitcount
+			SMTPREPLY.spamcontrol TODO.spamcontrol badloadertypes \
+			badmailfrom badmimetypes badrcptto tarpitcount
 SCRIPTS+=	qmail-alias2recipients qmail-pwd2recipients \
 		qmail-users2recipients qmail-vpopmail2recipients
 .endif
@@ -419,12 +413,6 @@ SELECTED_OPTIONS+=	relaymailfrom=yes
 SELECTED_OPTIONS+=	relaymailfrom=no
 . endif
 
-. if defined(WITH_QUITASAP)
-SELECTED_OPTIONS+=	quitasap=yes
-. else
-SELECTED_OPTIONS+=	quitasap=no
-. endif
-
 . if !defined(WITHOUT_REQBRACKETS)
 SELECTED_OPTIONS+=	reqbrackets=yes
 . else
@@ -435,24 +423,6 @@ SELECTED_OPTIONS+=	reqbrackets=no
 SELECTED_OPTIONS+=	verp=yes
 . else
 SELECTED_OPTIONS+=	verp=no
-. endif
-
-. if defined(WITH_RECIPIENTS550)
-SELECTED_OPTIONS+=	recipients550=yes
-. else
-SELECTED_OPTIONS+=	recipients550=no
-. endif
-
-. if defined(WITH_LOCALMFREQAUTH)
-SELECTED_OPTIONS+=	localmfreqauth=yes
-. else
-SELECTED_OPTIONS+=	localmfreqauth=no
-. endif
-
-. if defined(WITH_AUTHCRAM)
-SELECTED_OPTIONS+=	cram_md5=yes
-. else
-SELECTED_OPTIONS+=	cram_md5=no
 . endif
 
 . if defined(WITH_MOREIPME)
