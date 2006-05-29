@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	quagga
-PORTVERSION=	0.99.3
-PORTREVISION=	2
+PORTVERSION=	0.99.4
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://quagga.net/download/
 
@@ -27,7 +26,6 @@ LIBTOOLFILES=		configure
 
 MAN1=		vtysh.1
 MAN8=		bgpd.8 ospf6d.8 ospfd.8 ripd.8 ripngd.8 zebra.8
-INFO=		quagga
 
 OPTIONS=	ISISD		"Enable experimental ISIS daemon"	off \
 		PAM		"PAM authentication for vtysh"	off \
@@ -105,27 +103,18 @@ CONFIGURE_ARGS+=--enable-rtadv
 
 .if defined(WITH_SNMP) && !defined(WITHOUT_SNMP)
 CONFIGURE_ARGS+=--enable-snmp
-.if defined(WITH_SNMP_4)
-LIB_DEPENDS+=snmp.4:${PORTSDIR}/net-mgmt/net-snmp4
-.else
 LIB_DEPENDS+=netsnmp.9:${PORTSDIR}/net-mgmt/net-snmp
-.endif
 .endif
 
 .if defined(WITH_TCPMD5) && !defined(WITHOUT_TCPMD5)
 .if ${OSVERSION} < 491000
-BROKEN=	"This version of FreeBSD does not have TCP MD5 signature support"
+BROKEN=		This version of FreeBSD does not have TCP MD5 signature support
 .endif
 EXTRA_PATCHES+=${PATCHDIR}/extra-tcpmd5-patch-bgpd-bgp_network.c ${PATCHDIR}/extra-tcpmd5-patch-bgpd-bgp_vty.c ${PATCHDIR}/extra-tcpmd5-patch-bgpd-bgpd.c ${PATCHDIR}/extra-tcpmd5-patch-bgpd-bgpd.h ${PATCHDIR}/extra-tcpmd5-patch-lib-sockopt.c ${PATCHDIR}/extra-tcpmd5-patch-lib-sockopt.h
 CFLAGS+=	-DQUAGGA_TCP_MD5SIG
 .endif
 
-USE_RC_SUBR=	watchquagga.sh
-.if ${OSVERSION} < 500000
-USE_RC_SUBR+=	quagga.sh
-.else
-USE_RCORDER=	quagga.sh
-.endif
+USE_RC_SUBR=	quagga.sh watchquagga.sh
 
 SUB_LIST+=	LOCALSTATE_DIR=${LOCALSTATE_DIR} \
 		SYSCONF_DIR=${SYSCONF_DIR}
@@ -140,7 +129,6 @@ pre-everything::
 	@${ECHO}
 	@${ECHO} "You can build ${PORTNAME} with the following options:"
 	@${ECHO}
-	@${ECHO} "WITH_SNMP_4       Force net-snmp 4.x to be used"
 	@${ECHO} "ENABLE_USER       Specify user to run Quagga suite as"
 	@${ECHO} "ENABLE_GROUP      Specify group to run Quagga suite as"
 	@${ECHO} "ENABLE_VTY_GROUP  Specify group for vty socket ownership"
