@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}-2.1pre21
 MAINTAINER?=	demon@FreeBSD.org
 COMMENT=	Lynx-like text WWW browser
 
+LIB_DEPENDS+=	pcre:${PORTSDIR}/devel/pcre
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-javascript --with-ssl
 CONFIGURE_ENV+=	CPPFLAGS='-I${LOCALBASE}/include'
