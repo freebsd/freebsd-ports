@@ -433,6 +433,7 @@
     SUBDIR += p5-String-ShowDiff
     SUBDIR += p5-String-Strip
     SUBDIR += p5-String-Tokenizer
+    SUBDIR += p5-Syntax-Highlight-Engine-Kate
     SUBDIR += p5-Syntax-Highlight-Perl-Improved
     SUBDIR += p5-TeX-Encode
     SUBDIR += p5-TeX-Hyphen
