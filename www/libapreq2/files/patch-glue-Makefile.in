@@ -1,0 +1,11 @@
+--- glue/Makefile.in.orig	Mon May 29 19:31:01 2006
++++ glue/Makefile.in	Mon May 29 19:31:12 2006
+@@ -262,7 +262,7 @@
+ 	cd perl; $(MAKE) test
+ 
+ perl_install:
+-	cd perl; $(MAKE) install
++	cd perl; $(MAKE) pure_install
+ 
+ perl_clean:
+ 	-cd perl; $(MAKE) clean
