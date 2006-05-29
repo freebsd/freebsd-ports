@@ -1,3 +1,4 @@
+bin/rebuild-pysnmp-mibs
 %%PYTHON_SITELIBDIR%%/pysnmp_mibs/__init__.py
 %%PYTHON_SITELIBDIR%%/pysnmp_mibs/__init__.pyc
 %%PYTHON_SITELIBDIR%%/pysnmp_mibs/__init__.pyo
@@ -352,6 +353,18 @@
 %%PYTHON_SITELIBDIR%%/pysnmp_mibs/v4/Modem-MIB.py
 %%PYTHON_SITELIBDIR%%/pysnmp_mibs/v4/Modem-MIB.pyc
 %%PYTHON_SITELIBDIR%%/pysnmp_mibs/v4/Modem-MIB.pyo
+%%PYTHON_SITELIBDIR%%/pysnmp_mibs/v4/NET-SNMP-AGENT-MIB.py
+%%PYTHON_SITELIBDIR%%/pysnmp_mibs/v4/NET-SNMP-AGENT-MIB.pyc
+%%PYTHON_SITELIBDIR%%/pysnmp_mibs/v4/NET-SNMP-AGENT-MIB.pyo
+%%PYTHON_SITELIBDIR%%/pysnmp_mibs/v4/NET-SNMP-EXTEND-MIB.py
+%%PYTHON_SITELIBDIR%%/pysnmp_mibs/v4/NET-SNMP-EXTEND-MIB.pyc
+%%PYTHON_SITELIBDIR%%/pysnmp_mibs/v4/NET-SNMP-EXTEND-MIB.pyo
+%%PYTHON_SITELIBDIR%%/pysnmp_mibs/v4/NET-SNMP-MIB.py
+%%PYTHON_SITELIBDIR%%/pysnmp_mibs/v4/NET-SNMP-MIB.pyc
+%%PYTHON_SITELIBDIR%%/pysnmp_mibs/v4/NET-SNMP-MIB.pyo
+%%PYTHON_SITELIBDIR%%/pysnmp_mibs/v4/NET-SNMP-MONITOR-MIB.py
+%%PYTHON_SITELIBDIR%%/pysnmp_mibs/v4/NET-SNMP-MONITOR-MIB.pyc
+%%PYTHON_SITELIBDIR%%/pysnmp_mibs/v4/NET-SNMP-MONITOR-MIB.pyo
 %%PYTHON_SITELIBDIR%%/pysnmp_mibs/v4/NETWORK-SERVICES-MIB.py
 %%PYTHON_SITELIBDIR%%/pysnmp_mibs/v4/NETWORK-SERVICES-MIB.pyc
 %%PYTHON_SITELIBDIR%%/pysnmp_mibs/v4/NETWORK-SERVICES-MIB.pyo
