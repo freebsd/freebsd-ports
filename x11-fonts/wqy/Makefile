@@ -6,32 +6,37 @@
 #
 
 PORTNAME=	wqy
-PORTVERSION=	1.1.0
+PORTVERSION=	0.7.0
+PORTEPOCH=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://dryice.name/computer/FreeBSD/distfiles/
 MASTER_SITE_SUBDIR=	wqy
-DISTNAME=	${PORTNAME}-yhunifont-bdf-${PORTVERSION}
+DISTNAME=	${PORTNAME}-bitmapfont-pcf-${PORTVERSION}-4
 
 MAINTAINER=	dryice@dryice.name
 COMMENT=	A font which includes all the CJK characters covered by Unicode 4.0
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-yhunifont
+WRKSRC=		${WRKDIR}/${PORTNAME}-bitmapfont
 NO_BUILD=	yes
 USE_X_PREFIX=	yes
 FONTSDIR=	lib/X11/fonts/wqy
 
-PLIST_FILES=	${FONTSDIR}/fonts.dir ${FONTSDIR}/yhunifont.bdf
-PLIST_DIRS=	${FONTSDIR}
+PLIST_SUB=	FONTSDIR=${FONTSDIR}
 
 .if !defined(NOPORTDOCS)
-PORTDOCS=	AUTHORS ChangeLog COPYING INSTALL README.yhunifont
+PORTDOCS=	ChangeLog CREDIT GPL.txt INSTALL INSTALL.zh.gb2312 LOGO.png PLEASE_HELP_TO_IMPROVE README STAT
 .endif
 
 do-install:
 	@${MKDIR} ${PREFIX}/${FONTSDIR}
-	${INSTALL_DATA} ${WRKSRC}/fonts.dir ${PREFIX}/${FONTSDIR}
-	${INSTALL_DATA} ${WRKSRC}/yhunifont.bdf ${PREFIX}/${FONTSDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.pcf ${PREFIX}/${FONTSDIR}
+
+post-install:
+	@${RM} ${PREFIX}/${FONTSDIR}/fonts* >/dev/null 2>&1 || true
+	@command mkfontdir ${PREFIX}/${FONTSDIR} || true
+	@${CP} ${PREFIX}/${FONTSDIR}/fonts.dir ${PREFIX}/${FONTSDIR}/fonts.scale || true
+	@command fc-cache -v ${PREFIX}/${FONTSDIR} || true
 
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}

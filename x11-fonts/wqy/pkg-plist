@@ -1,0 +1,12 @@
+%%FONTSDIR%%/fonts.cache-1
+%%FONTSDIR%%/fonts.dir
+%%FONTSDIR%%/fonts.scale
+%%FONTSDIR%%/wenquanyi_10pt.pcf
+%%FONTSDIR%%/wenquanyi_10ptb.pcf
+%%FONTSDIR%%/wenquanyi_11pt.pcf
+%%FONTSDIR%%/wenquanyi_11ptb.pcf
+%%FONTSDIR%%/wenquanyi_12pt.pcf
+%%FONTSDIR%%/wenquanyi_12ptb.pcf
+%%FONTSDIR%%/wenquanyi_9pt.pcf
+%%FONTSDIR%%/wenquanyi_9ptb.pcf
+@dirrm %%FONTSDIR%%

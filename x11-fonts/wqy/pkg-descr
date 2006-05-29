@@ -1,18 +1,15 @@
-The wqy font includes all the CJK characters covered by the Unicode
-Standard 4.0.
-
-This font is created by merging GNU Unifont (by Roman Czyborra
-<roman@czyborra.com> and David Starner <dvdeug@debian.org>) with GBK 16 font
-from yh-3.1 (Yan Huang Chinese Platform, Redflag Linux,
-http://www.redflag-linux.com/).
-
-The CJK Unified Ideographs (U+4E00~U+9FA5) are now complete, and the quality
-of the bitmaps has improved significantly.
-
-This release is part of an ongoing effort from the WenQuanYi Project to
-create high-quality open-source bitmap Chinese fonts.
-
-Currently only bitmap fonts are available. TTF fonts are in progress.
+The Wen Quan Yi bitmap font includes complete CJK Unified 
+Ideograph (U4E00 - U9FA5) glyphs at four different sizes 
+(9pt-12X12 pixel, 10pt-13X13 pixel, 11pt-15X15 pixel, 
+12pt-16x16 pixel) and two weights (medium and bold). 
+Use of this bitmap font for on-screen display of Chinese 
+(traditional and simplified) in web pages and elsewhere 
+eliminates the annoying "blurring" problems caused by 
+the high stroke density of many Chinese characters and 
+insufficient "hinting" of anti-aliased Chinese fonts. 
+This font also provides bitmap glyphs for Japanese 
+Hiragana (U3040 - U309F), Katakana (U30A0 - U30FF) 
+and for Korean Hangul (UAC00 - UD7A3).
 
 WWW: http://wqy.sourceforge.net/en/
 WWW: http://sitaphi.com/pub/song_jian_biao/
