@@ -23,12 +23,13 @@ MAN1=		unzoo.1
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500000
+.if ${OSVERSION} >= 503000
 CFLAGS+=	-trigraphs
 .endif
 
 do-build:
-	${CC} ${CFLAGS} ${EXTRA_DEFINES} -o ${WRKSRC}/${PORTNAME} ${WRKSRC}/${PORTNAME}.c
+	${CC} ${CFLAGS} ${EXTRA_DEFINES} -o ${WRKSRC}/${PORTNAME} \
+		${WRKSRC}/${PORTNAME}.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
