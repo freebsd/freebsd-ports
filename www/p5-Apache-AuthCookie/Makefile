@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	Apache-AuthCookie
-PORTVERSION=	3.08
-CATEGORIES=	www
+PORTVERSION=	3.09
+CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Apache
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A perl module to provide custom forms for reauthentication
 
-APACHE_COMPAT=	yes
 RUN_DEPENDS=	${APXS}:${PORTSDIR}/${APACHE_PORT}
 .if defined(WITH_MODPERL2)
 RUN_DEPENDS+=	${LOCALBASE}/libexec/apache2/mod_perl.so:${PORTSDIR}/www/mod_perl2
@@ -25,6 +24,7 @@ RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/mod_perl.pm:${PORTSDIR}/www/mod_perl
 BUILD_DEPENDS=	${RUN_DEPENDS} \
 		${SITE_PERL}/${PERL_ARCH}/Apache/Test.pm:${PORTSDIR}/www/p5-Apache-Test
 
+APACHE_COMPAT=	yes
 CURUSER?=	`whoami`
 CURGRP?=	`groups | ${AWK} '{print $$1}'`
 TESTPORT?=	8228
