@@ -1,5 +1,14 @@
---- config/Makefile.in.orig	Tue Sep  6 21:51:36 2005
-+++ config/Makefile.in	Tue Sep  6 22:00:47 2005
+--- config/Makefile.in.orig	Sat Jun 25 01:49:14 2005
++++ config/Makefile.in	Thu Apr 20 01:23:52 2006
+@@ -19,7 +19,7 @@
+ 
+ ##################################################################
+ 
+-DEVFLAGS= -warn-error Am 
++DEVFLAGS=
+ # -dtypes
+ 
+ NO_LIBS_byte=
 @@ -144,6 +144,11 @@
    CDK_SRCS +=  $(CDK)/zlib.ml $(CDK)/zlibstubs.c
  endif

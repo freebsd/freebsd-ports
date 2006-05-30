@@ -17,8 +17,6 @@ COMMENT?=	A OCAML client for multiple peer-to-peer networks
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
 
-BROKEN=		Does not build
-
 CONFLICTS=	mldonkey-devel-[0-9]*
 
 USE_BZIP2=	yes
