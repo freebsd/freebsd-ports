@@ -72,8 +72,8 @@ DEFAULT_AUDIOSRC?=	osssrc
 .include <bsd.port.pre.mk>
 .include "${MASTERDIR}/Makefile.common"
 
-.if !defined(WITH_CPUFLAGS)
-#WITHOUT_CPU_CFLAGS=	yes
+.if ${OSVERSION} < 500000
+IGNORE=	Many plugins don't build or even work on 4.x
 .endif
 
 .if ${GST_PLUGIN} == "base"
@@ -105,17 +105,6 @@ DEFAULT_DVD_DEVICE=/dev/acd0c
 . else
 DEFAULT_DVD_DEVICE=/dev/acd0
 . endif
-.endif
-
-pre-everything::
-.if !defined(WITH_CPUFLAGS)
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "If you want to compile with CPUFLAGS"
-	@${ECHO_MSG} "hit Ctrl+C now and use make \"WITH_CPUFLAGS=yes\""
-	@${ECHO_MSG} "NOTE: This option may cause build, install, and/or"
-	@${ECHO_MSG} "runtime failures. If this option does not work for you"
-	@${ECHO_MSG} "please do not use it."
-	@${ECHO_MSG} ""
 .endif
 
 post-patch:
