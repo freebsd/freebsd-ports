@@ -9,7 +9,7 @@
 PORTNAME=	pango
 PORTVERSION=	1.12.3
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,sources/${PORTNAME}/1.12,} \
+MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,sources/pango/1.12,} \
 		ftp://ftp.gtk.org/pub/gtk/v2.10/
 DIST_SUBDIR=	gnome2
 
