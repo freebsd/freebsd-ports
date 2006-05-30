@@ -45,6 +45,8 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-doctor.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-emacs.el
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-emacs.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-epg.el
+%%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-epg.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-eval-ruby.el
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-eval-ruby.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-eval.el
