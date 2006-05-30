@@ -2,6 +2,9 @@ bin/mailmail
 %%S%%/twisted/mail/__init__.py
 %%S%%/twisted/mail/__init__.pyc
 %%S%%/twisted/mail/__init__.pyo
+%%S%%/twisted/mail/_version.py
+%%S%%/twisted/mail/_version.pyc
+%%S%%/twisted/mail/_version.pyo
 %%S%%/twisted/mail/alias.py
 %%S%%/twisted/mail/alias.pyc
 %%S%%/twisted/mail/alias.pyo
