@@ -74,8 +74,6 @@ share/aclocal/eb4.m4
 %%DOCSDIR%%/ebzip-10.html
 %%DOCSDIR%%/ebzip.html
 @dirrm %%DOCSDIR%%
-%%DATADIR%%/appendix/LIST
-%%DATADIR%%/appendix/LIST-ja
 %%DATADIR%%/appendix/cencro-1.0/catalog
 %%DATADIR%%/appendix/cencro-1.0/catalog.app
 %%DATADIR%%/appendix/cencro-1.0/cencro.app
