@@ -1,0 +1,13 @@
+This module implements yet another damn configuration-file system.
+
+The configuration language is deliberately simple and limited, and the
+module works hard to preserve as much information (section order,
+comments, etc.) as possible when a configuration file is updated.
+
+See Chapter 19 of "Perl Best Practices" (O'Reilly, 2005) for the
+rationale for this approach.
+
+The configuration language is a slight extension of the Windows INI
+format.
+
+WWW: http://search.cpan.org/dist/Config-Std/
