@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cstream
-PORTVERSION=	2.7.1
+PORTVERSION=	2.7.2
 CATEGORIES=	misc
 MASTER_SITES=	http://www.cons.org/cracauer/download/ \
 		http://www3.cons.org/freebsd-distfiles/ \
