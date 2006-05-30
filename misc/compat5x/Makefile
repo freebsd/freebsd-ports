@@ -35,7 +35,7 @@ TARGET32_DIR=	${PREFIX}/lib32/compat
 IGNORE=	is for FreeBSD 6.x and newer
 .endif
 
-.if ${OSVERSION} > 700011
+.if ${OSVERSION} > 700011 || (${OSVERSION} < 700000 && ${OSVERSION} >= 600104)
 USE_LDCONFIG=	${TARGET_DIR}
 PLIST_SUB+=	USE_LDCONFIG=""
 .else
