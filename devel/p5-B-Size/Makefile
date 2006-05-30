@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	B-Size
-PORTVERSION=	0.06
+PORTVERSION=	0.08
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	B
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	perl@FreeBSD.org
-COMMENT=	tools to measure size of Perl OPs and [SAV]Vs
+MAINTAINER=	pgollucci@p6m7g8.com
+COMMENT=	Tools to measure size of Perl OPs and [SAV]Vs
 
 PERL_CONFIGURE=	yes
 
