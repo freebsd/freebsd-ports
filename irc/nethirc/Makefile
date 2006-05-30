@@ -6,20 +6,22 @@
 #
 
 PORTNAME=	NetHirc
-PORTVERSION=	0.7
+PORTVERSION=	0.94
 CATEGORIES=	irc
-MASTER_SITES=	ftp://ftp.nog.net/pub/tony/nethirc/old/
+MASTER_SITES=	ftp://ftp.nog.net/pub/tony/nethirc/
 
 MAINTAINER=	matt_mills@btopenworld.com
 COMMENT=	Perl-based IRC client that uses Net::IRC
 
-RUN_DEPENDS=	${SITE_PERL}/Net/IRC.pm:${PORTSDIR}/irc/p5-IRC
+BUILD_DEPENDS=	${SITE_PERL}/POE/Component/IRC.pm:${PORTSDIR}/irc/p5-POE-Component-IRC \
+		${SITE_PERL}/String/Format.pm:${PORTSDIR}/textproc/p5-String-Format \
+		${SITE_PERL}/YAML.pm:${PORTSDIR}/textproc/p5-YAML
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MANCOMPRESSED=	no
 MAN1=		nethirc.pl.1
-MAN3=		NetHirc.3 nethirc.3
+MAN3=		NetHirc.3
 
 .include <bsd.port.pre.mk>
 
