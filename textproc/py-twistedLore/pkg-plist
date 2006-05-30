@@ -3,9 +3,9 @@ bin/lore
 %%S%%/twisted/lore/__init__.py
 %%S%%/twisted/lore/__init__.pyc
 %%S%%/twisted/lore/__init__.pyo
-%%S%%/twisted/lore/book.py
-%%S%%/twisted/lore/book.pyc
-%%S%%/twisted/lore/book.pyo
+%%S%%/twisted/lore/_version.py
+%%S%%/twisted/lore/_version.pyc
+%%S%%/twisted/lore/_version.pyo
 %%S%%/twisted/lore/default.py
 %%S%%/twisted/lore/default.pyc
 %%S%%/twisted/lore/default.pyo
@@ -42,9 +42,6 @@ bin/lore
 %%S%%/twisted/lore/scripts/__init__.py
 %%S%%/twisted/lore/scripts/__init__.pyc
 %%S%%/twisted/lore/scripts/__init__.pyo
-%%S%%/twisted/lore/scripts/bookify.py
-%%S%%/twisted/lore/scripts/bookify.pyc
-%%S%%/twisted/lore/scripts/bookify.pyo
 %%S%%/twisted/lore/scripts/lore.py
 %%S%%/twisted/lore/scripts/lore.pyc
 %%S%%/twisted/lore/scripts/lore.pyo
