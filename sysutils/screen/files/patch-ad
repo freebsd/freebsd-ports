@@ -1,5 +1,5 @@
---- configure.orig	Mon Jan 26 15:55:18 2004
-+++ configure	Mon Jan 26 15:58:50 2004
+--- configure.orig	Fri Dec  5 15:46:53 2003
++++ configure	Sat Mar  4 10:18:24 2006
 @@ -4746,48 +4746,6 @@
  sed 's/^/| /' conftest.$ac_ext >&5
  
@@ -58,16 +58,17 @@
  
  if test "$cross_compiling" = yes; then
    { { echo "$as_me:$LINENO: error: cannot run test program while cross compiling
-@@ -4927,7 +4883,7 @@
+@@ -4927,7 +4883,8 @@
  
  main()
  {
 - exit(strcmp(tgoto("%p1%d", 0, 1), "1") ? 0 : 1);
++ char *tgoto(const char *, int, int);
 + exit(strcmp(tgoto("%d%d", 0, 1), "1") ? 0 : 1);
  }
  _ACEOF
  rm -f conftest$ac_exeext
-@@ -5314,18 +5270,15 @@
+@@ -5314,18 +5271,15 @@
  fi
  rm -f conftest*
  
