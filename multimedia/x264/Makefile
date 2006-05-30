@@ -40,6 +40,10 @@ CONFIGURE_ARGS+=	--extra-cflags="${CPPFLAGS} ${CFLAGS} -fPIC -I${LOCALBASE}/incl
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 500000
+WITHOUT_GPAC=	yes
+.endif
+
 .if ${ARCH}=="i386"
 BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm
 MAKE_ENV+=	ARCH_X86="1"
