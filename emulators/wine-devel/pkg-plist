@@ -166,6 +166,7 @@ include/wine/windows/dxerr8.h
 include/wine/windows/dxerr9.h
 include/wine/windows/dxfile.h
 include/wine/windows/dyngraph.idl
+include/wine/windows/errors.h
 include/wine/windows/evcode.h
 include/wine/windows/evntrace.h
 include/wine/windows/excpt.h
@@ -229,6 +230,7 @@ include/wine/windows/mmreg.h
 include/wine/windows/mmstream.h
 include/wine/windows/mmstream.idl
 include/wine/windows/mmsystem.h
+include/wine/windows/mprapi.h
 include/wine/windows/msacm.h
 include/wine/windows/msacmdlg.h
 include/wine/windows/msacmdrv.h
@@ -257,6 +259,7 @@ include/wine/windows/nspapi.h
 include/wine/windows/ntddcdrm.h
 include/wine/windows/ntddscsi.h
 include/wine/windows/ntddstor.h
+include/wine/windows/ntdsapi.h
 include/wine/windows/ntsecapi.h
 include/wine/windows/ntstatus.h
 include/wine/windows/oaidl.h
@@ -340,6 +343,7 @@ include/wine/windows/tchar.h
 include/wine/windows/textserv.h
 include/wine/windows/tlhelp32.h
 include/wine/windows/tmschema.h
+include/wine/windows/twain.h
 include/wine/windows/unknwn.h
 include/wine/windows/unknwn.idl
 include/wine/windows/urlmon.h
@@ -474,6 +478,7 @@ lib/wine/gdi.exe16
 lib/wine/gdi32.dll.so
 lib/wine/glu32.dll.so
 lib/wine/glut32.dll.so
+lib/wine/gphoto2.ds.so
 lib/wine/hh.exe.so
 lib/wine/hhctrl.ocx.so
 lib/wine/iccvid.dll.so
@@ -540,6 +545,7 @@ lib/wine/liblz32.def
 lib/wine/libmapi32.def
 lib/wine/libmlang.def
 lib/wine/libmpr.def
+lib/wine/libmprapi.def
 lib/wine/libmsacm32.def
 lib/wine/libmscms.def
 lib/wine/libmsdmo.def
@@ -555,6 +561,7 @@ lib/wine/libmswsock.def
 lib/wine/libnetapi32.def
 lib/wine/libnewdev.def
 lib/wine/libntdll.def
+lib/wine/libntdsapi.def
 lib/wine/libodbc32.def
 lib/wine/libodbccp32.def
 lib/wine/libole32.def
@@ -615,7 +622,7 @@ lib/wine/mapi32.dll.so
 lib/wine/mciavi32.dll.so
 lib/wine/mcicda.dll.so
 lib/wine/mciseq.dll.so
-lib/wine/mciwave.drv.so
+lib/wine/mciwave.dll.so
 lib/wine/midimap.dll.so
 lib/wine/mlang.dll.so
 lib/wine/mmdevldr.vxd.so
@@ -623,9 +630,10 @@ lib/wine/mmsystem.dll16
 lib/wine/monodebg.vxd.so
 lib/wine/mouse.drv16
 lib/wine/mpr.dll.so
-lib/wine/msacm.drv.so
+lib/wine/mprapi.dll.so
 lib/wine/msacm.dll16
 lib/wine/msacm32.dll.so
+lib/wine/msacm32.drv.so
 lib/wine/msadp32.acm.so
 lib/wine/mscms.dll.so
 lib/wine/msdmo.dll.so
@@ -651,6 +659,7 @@ lib/wine/netapi32.dll.so
 lib/wine/newdev.dll.so
 lib/wine/notepad.exe.so
 lib/wine/ntdll.dll.so
+lib/wine/ntdsapi.dll.so
 lib/wine/objsel.dll.so
 lib/wine/odbc32.dll.so
 lib/wine/odbccp32.dll.so
@@ -686,6 +695,7 @@ lib/wine/rpcss.exe.so
 lib/wine/rsabase.dll.so
 lib/wine/rsaenh.dll.so
 lib/wine/rundll32.exe.so
+lib/wine/sane.ds.so
 lib/wine/secur32.dll.so
 lib/wine/security.dll.so
 lib/wine/sensapi.dll.so
@@ -785,6 +795,46 @@ share/aclocal/wine.m4
 share/applications/wine.desktop
 share/wine/wine.inf
 share/wine/generic.ppd
+share/wine/fonts/coue1255.fon
+share/wine/fonts/coue1256.fon
+share/wine/fonts/coue1257.fon
+share/wine/fonts/coure.fon
+share/wine/fonts/couree.fon
+share/wine/fonts/coureg.fon
+share/wine/fonts/courer.fon
+share/wine/fonts/couret.fon
+share/wine/fonts/cvgasys.fon
+share/wine/fonts/hvgasys.fon
+share/wine/fonts/jsmalle.fon
+share/wine/fonts/jvgasys.fon
+share/wine/fonts/marlett.ttf
+share/wine/fonts/smae1255.fon
+share/wine/fonts/smae1256.fon
+share/wine/fonts/smae1257.fon
+share/wine/fonts/smalle.fon
+share/wine/fonts/smallee.fon
+share/wine/fonts/smalleg.fon
+share/wine/fonts/smaller.fon
+share/wine/fonts/smallet.fon
+share/wine/fonts/ssee1255.fon
+share/wine/fonts/ssee1256.fon
+share/wine/fonts/ssee1257.fon
+share/wine/fonts/ssee874.fon
+share/wine/fonts/sserife.fon
+share/wine/fonts/sserifee.fon
+share/wine/fonts/sserifeg.fon
+share/wine/fonts/sserifer.fon
+share/wine/fonts/sserifet.fon
+share/wine/fonts/svgasys.fon
+share/wine/fonts/vgas1255.fon
+share/wine/fonts/vgas1256.fon
+share/wine/fonts/vgas1257.fon
+share/wine/fonts/vgas874.fon
+share/wine/fonts/vgasys.fon
+share/wine/fonts/vgasyse.fon
+share/wine/fonts/vgasysg.fon
+share/wine/fonts/vgasysr.fon
+share/wine/fonts/vgasyst.fon
 %%PORTDOCS%%%%DOCSDIR%%/ANNOUNCE
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
@@ -804,4 +854,5 @@ share/wine/generic.ppd
 @dirrm include/wine
 @dirrmtry man/man3w
 @dirrmtry share/applications
+@dirrm share/wine/fonts
 @dirrm share/wine
