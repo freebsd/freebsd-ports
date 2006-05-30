@@ -1,6 +1,9 @@
 %%S%%/twisted/names/__init__.py
 %%S%%/twisted/names/__init__.pyc
 %%S%%/twisted/names/__init__.pyo
+%%S%%/twisted/names/_version.py
+%%S%%/twisted/names/_version.pyc
+%%S%%/twisted/names/_version.pyo
 %%S%%/twisted/names/authority.py
 %%S%%/twisted/names/authority.pyc
 %%S%%/twisted/names/authority.pyo
@@ -40,6 +43,9 @@
 %%S%%/twisted/names/test/__init__.py
 %%S%%/twisted/names/test/__init__.pyc
 %%S%%/twisted/names/test/__init__.pyo
+%%S%%/twisted/names/test/test_cache.py
+%%S%%/twisted/names/test/test_cache.pyc
+%%S%%/twisted/names/test/test_cache.pyo
 %%S%%/twisted/names/test/test_dns.py
 %%S%%/twisted/names/test/test_dns.pyc
 %%S%%/twisted/names/test/test_dns.pyo

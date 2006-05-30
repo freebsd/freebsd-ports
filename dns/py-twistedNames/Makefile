@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	twistedNames
-PORTVERSION=	0.2.0
+PORTVERSION=	0.3.0
 CATEGORIES=	dns devel python
-MASTER_SITES=	http://twistedmatrix.com/downloads/Names/0.1/ \
-		http://tmrc.mit.edu/mirror/twisted/Names/0.2/
+MASTER_SITES=	http://tmrc.mit.edu/mirror/twisted/Names/${PORTVERSION:S/.0//}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	TwistedNames-${PORTVERSION}
 
@@ -22,7 +21,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 WRKSRC=		${WRKDIR}/TwistedNames-${PORTVERSION}
 
 USE_BZIP2=	yes
-USE_PYTHON=	2.2+
+USE_PYTHON=	2.3+
 USE_PYDISTUTILS=	yes
 
 PLIST_SUB+=	S=${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;}
