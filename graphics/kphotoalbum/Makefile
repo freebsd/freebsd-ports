@@ -6,16 +6,15 @@
 
 PORTNAME=		kphotoalbum
 PORTVERSION=		2.2
+PORTREVISION=		1
 CATEGORIES=		graphics kde
 MASTER_SITES=		http://www.kphotoalbum.org/download/
 
 MAINTAINER=		markus@FreeBSD.org
 COMMENT=		Image database for KDE
 
-LIB_DEPENDS=		kipi.1:${PORTSDIR}/graphics/libkipi
-
-RUN_DEPENDS=		exiv2:${PORTSDIR}/graphics/exiv2
-BUILD_DEPENDS=		${RUN_DEPENDS}
+LIB_DEPENDS=		kipi.1:${PORTSDIR}/graphics/libkipi \
+			exiv2.0:${PORTSDIR}/graphics/exiv2
 
 USE_KDELIBS_VER=	3
 USE_BZIP2=		yes
