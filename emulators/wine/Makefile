@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	wine
-PORTVERSION=	0.9.12
+PORTVERSION=	0.9.14
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://ibiblio.org/pub/linux/system/emulators/wine/ \
@@ -19,10 +19,15 @@ COMMENT=	Microsoft Windows compatibility layer for Unix-like systems
 
 # wine/dlls/glut32/ depends on the presence of libglut.
 LIB_DEPENDS=	lcms.1:${PORTSDIR}/graphics/lcms \
+		freetype.9:${PORTSDIR}/print/freetype2 \
+		gdraw.1:${PORTSDIR}/print/fontforge \
 		glut.4:${PORTSDIR}/graphics/libglut
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS=-I${PREFIX}/include LDFLAGS=-L${PREFIX}/lib LIBS=-Wl,-rpath,${PREFIX}/lib/wine
+CONFIGURE_ENV=	CPPFLAGS=-I${PREFIX}/include \
+		LDFLAGS="-L${PREFIX}/lib -L${LOCALBASE}/lib" \
+		LIBS=-Wl,-rpath,${PREFIX}/lib/wine \
+		EXTRA_BINARIES="wine-kthread"
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/lib/wine
 USE_LDCONFIG=	${PREFIX}/lib/wine
