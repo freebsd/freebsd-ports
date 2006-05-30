@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	twistedConch
-PORTVERSION=	0.6.0
+PORTVERSION=	0.7.0
 CATEGORIES=	security devel python
 MASTER_SITES=	http://twistedmatrix.com/downloads/Conch/${PORTVERSION:S/.0//}/ \
 		http://tmrc.mit.edu/mirror/twisted/Conch/${PORTVERSION:S/.0//}/
@@ -22,7 +22,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 WRKSRC=		${WRKDIR}/TwistedConch-${PORTVERSION}
 
 USE_BZIP2=	yes
-USE_PYTHON=	2.2+
+USE_PYTHON=	2.3+
 USE_PYDISTUTILS=	yes
 
 PLIST_SUB+=	S=${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;}
