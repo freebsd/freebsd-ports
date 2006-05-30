@@ -1,0 +1,70 @@
+# New ports collection makefile for:	thunderbird-i18n
+# Date created:		29 May 2006
+# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	thunderbird-i18n
+PORTVERSION=	1.5.0.2
+CATEGORIES=	mail
+MASTER_SITE_SUBDIR=	thunderbird/releases/${PORTVERSION}/linux-i686/xpi
+PKGNAMEPREFIX=
+DISTFILES=	${THUNDERBIRD_I18N:S/$/.xpi/}
+DIST_SUBDIR=	xpi/${DISTNAME}
+
+MAINTAINER=	infofarmer@FreeBSD.org
+COMMENT=	Localized interface for Firefox
+
+.ifndef WITHOUT_SWITCHER
+RUN_DEPENDS+=	xpi-locale-switcher>=0:${PORTSDIR}/www/xpi-locale-switcher
+.endif
+
+NO_BUILD=	yes
+USE_XPI=	*thunderbird
+
+THUNDERBIRD_I18N_ALL=	bg ca cs da de el en-GB es-AR es-ES eu fi fr gu-IN he hu it \
+			ja ko mk nb-NO nl pa-IN pl pt-BR ru sk sl sv-SE tr zh-CN
+THUNDERBIRD_I18N?=	zh-CN de fr ja ru it es-ES
+
+.if ${THUNDERBIRD_I18N} == all
+THUNDERBIRD_I18N=	${THUNDERBIRD_I18N_ALL}
+.endif
+
+WDIR=	langpack-*@thunderbird.mozilla.org
+
+XPI_DISTNAMES=	${THUNDERBIRD_I18N}
+.for dist in ${XPI_DISTNAMES}
+XPI_ID_${dist}=		langpack-${dist}@thunderbird.mozilla.org
+XPI_FILES_${dist}=	chrome.manifest install.rdf chrome/${dist}.jar chrome/chromelist.txt
+XPI_DIRS_${dist}=	chrome
+.endfor
+
+do-extract:
+	@${RM} -rf ${WRKDIR}
+	@${MKDIR} ${WRKDIR} ${WRKSRC}
+	@for lang in ${THUNDERBIRD_I18N}; do \
+		if ! (${EXTRACT_CMD} ${_DISTDIR}/$$lang.xpi -d ${WRKSRC}/langpack-$$lang@thunderbird.mozilla.org);\
+		then \
+			exit 1; \
+		fi \
+	done
+
+do-install:
+	@${INSTALL} -d ${XPI_LIBDIR}
+	@${CP} -Rp ${WRKSRC}/ ${XPI_LIBDIR}
+	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${XPI_LIBDIR}/${WDIR}/
+	@${CHMOD} -R a+rX,go-w ${XPI_LIBDIR}/${WDIR}/
+	@for _app in ${XPI_APPS} ; { for _xpi in ${XPI_LIBDIR}/${WDIR} ; { \
+		${LN} -sf $$_xpi $$_app ${_Q} ; } ; }
+	@${ECHO_CMD} '@exec for _app in ${XPI_APPS} ; { for _xpi in ${XPI_LIBDIR}/${WDIR} ; { \
+		${LN} -sf $$_xpi $$_app ${_Q} ; } ; }' ${_A}
+	@${ECHO_CMD} '@unexec for _app in ${XPI_APPS} ; { ${RM} -f $$_app/${WDIR} ; }' ${_A}
+	@${ECHO_CMD} '@unexec rmdir ${XPI_LIBDIR:S,^${PREFIX},%D,} ${_Q}' ${_A}
+
+post-patch:
+	${FIND} ${WRKSRC} -name install.rdf -print0 | \
+		${XARGS} -0L1 ${REINPLACE_CMD} -i '' '/<?xml/,$$!d'
+
+.include "${.CURDIR}/../../www/xpi-adblock/Makefile.xpi"
+.include <bsd.port.mk>
