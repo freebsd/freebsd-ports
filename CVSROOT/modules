@@ -8203,6 +8203,7 @@ p5-Data-ICal	ports/deskutils/p5-Data-ICal
 p5-Data-JavaScript	ports/lang/p5-Data-JavaScript
 p5-Data-Lazy	ports/devel/p5-Data-Lazy
 p5-Data-Page	ports/databases/p5-Data-Page
+p5-Data-Pageset	ports/databases/p5-Data-Pageset
 p5-Data-Password	ports/security/p5-Data-Password
 p5-Data-Properties	ports/devel/p5-Data-Properties
 p5-Data-Random	ports/devel/p5-Data-Random
