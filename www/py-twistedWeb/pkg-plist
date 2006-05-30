@@ -5,6 +5,9 @@ bin/websetroot
 %%S%%/twisted/web/__init__.py
 %%S%%/twisted/web/__init__.pyc
 %%S%%/twisted/web/__init__.pyo
+%%S%%/twisted/web/_version.py
+%%S%%/twisted/web/_version.pyc
+%%S%%/twisted/web/_version.pyo
 %%S%%/twisted/web/client.py
 %%S%%/twisted/web/client.pyc
 %%S%%/twisted/web/client.pyo
@@ -74,6 +77,9 @@ bin/websetroot
 %%S%%/twisted/web/test/__init__.py
 %%S%%/twisted/web/test/__init__.pyc
 %%S%%/twisted/web/test/__init__.pyo
+%%S%%/twisted/web/test/test_cgi.py
+%%S%%/twisted/web/test/test_cgi.pyc
+%%S%%/twisted/web/test/test_cgi.pyo
 %%S%%/twisted/web/test/test_distrib.py
 %%S%%/twisted/web/test/test_distrib.pyc
 %%S%%/twisted/web/test/test_distrib.pyo
@@ -183,3 +189,4 @@ bin/websetroot
 @dirrm %%S%%/twisted/web/test
 @dirrm %%S%%/twisted/web/scripts
 @dirrm %%S%%/twisted/web
+@dirrm %%S%%/twisted/plugins

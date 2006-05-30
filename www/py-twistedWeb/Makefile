@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	twistedWeb
-PORTVERSION=	0.5.0
+PORTVERSION=	0.6.0
 PORTREVISION=	1
 CATEGORIES=	www devel python
-MASTER_SITES=	http://twistedmatrix.com/downloads/Web/0.5/ \
-		http://tmrc.mit.edu/mirror/twisted/Web/0.5/
+MASTER_SITES=	http://tmrc.mit.edu/mirror/twisted/Web/${PORTVERSION:S/.0//}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	TwistedWeb-${PORTVERSION}
 
@@ -23,7 +22,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 WRKSRC=		${WRKDIR}/TwistedWeb-${PORTVERSION}
 
 USE_BZIP2=	yes
-USE_PYTHON=	2.2+
+USE_PYTHON=	2.3+
 USE_PYDISTUTILS=	yes
 
 PLIST_SUB+=	S=${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;}
