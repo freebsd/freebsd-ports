@@ -1,6 +1,9 @@
 %%S%%/twisted/news/__init__.py
 %%S%%/twisted/news/__init__.pyc
 %%S%%/twisted/news/__init__.pyo
+%%S%%/twisted/news/_version.py
+%%S%%/twisted/news/_version.pyc
+%%S%%/twisted/news/_version.pyo
 %%S%%/twisted/news/database.py
 %%S%%/twisted/news/database.pyc
 %%S%%/twisted/news/database.pyo
