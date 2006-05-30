@@ -13068,6 +13068,7 @@ thudboard	ports/games/thudboard
 thumbnail_index ports/www/thumbnail_index
 thunderbird	ports/mail/thunderbird
 thunderbird-dictionaries	ports/mail/thunderbird-dictionaries
+thunderbird-i18n	ports/mail/thunderbird-i18n
 ticker.app	ports/sysutils/ticker.app
 tide		ports/devel/tide
 tidy		ports/www/tidy
