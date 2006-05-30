@@ -303,6 +303,7 @@
     SUBDIR += twelf
     SUBDIR += visualworks
     SUBDIR += wamcc
+    SUBDIR += whitespace
     SUBDIR += xsb
     SUBDIR += yabasic
     SUBDIR += yap
