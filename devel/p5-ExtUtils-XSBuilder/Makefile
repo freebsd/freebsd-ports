@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ExtUtils-XSBuilder
-PORTVERSION=	0.27
+PORTVERSION=	0.28
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	ExtUtils
@@ -21,6 +21,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 PERL_CONFIGURE=	yes
 
 MAN3=		ExtUtils::XSBuilder.3 ExtUtils::XSBuilder::PODTemplate.3 \
-		ExtUtils::xsbuilder.osc2002.3
+		ExtUtils::XSBuilder::ParseSource.3 \
+		ExtUtils::XSBuilder::WrapXS.3 ExtUtils::xsbuilder.osc2002.3
 
 .include <bsd.port.mk>
