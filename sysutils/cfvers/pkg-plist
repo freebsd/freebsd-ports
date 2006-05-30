@@ -1,6 +1,7 @@
 @comment $FreeBSD$
 bin/cfv
 bin/cfvadmin
+sbin/cfversd
 %%PYTHON_SITELIBDIR%%/cfvers/repository/__init__.py
 %%PYTHON_SITELIBDIR%%/cfvers/repository/__init__.pyc
 %%PYTHON_SITELIBDIR%%/cfvers/repository/__init__.pyo
@@ -22,6 +23,9 @@ bin/cfvadmin
 %%PYTHON_SITELIBDIR%%/cfvers/cmd.py
 %%PYTHON_SITELIBDIR%%/cfvers/cmd.pyc
 %%PYTHON_SITELIBDIR%%/cfvers/cmd.pyo
+%%PYTHON_SITELIBDIR%%/cfvers/gateway.py
+%%PYTHON_SITELIBDIR%%/cfvers/gateway.pyc
+%%PYTHON_SITELIBDIR%%/cfvers/gateway.pyo
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
@@ -29,6 +33,9 @@ bin/cfvadmin
 %%PORTDOCS%%%%DOCSDIR%%/cfv.html
 %%PORTDOCS%%%%DOCSDIR%%/cfvadmin.html
 %%PORTDOCS%%%%DOCSDIR%%/manual.html
+%%PORTDOCS%%%%DOCSDIR%%/cfvers.conf.html
+%%PORTDOCS%%%%DOCSDIR%%/cfversd.conf.html
+%%PORTDOCS%%%%DOCSDIR%%/cfversd.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/cfvers/repository/
 @dirrm %%PYTHON_SITELIBDIR%%/cfvers/
