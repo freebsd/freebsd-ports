@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	riece
-PORTVERSION=	2.0.2
+PORTVERSION=	3.0.0
 PORTEPOCH=	1
 CATEGORIES=	irc elisp
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
@@ -18,7 +18,8 @@ COMMENT=	IRC client for Emacs
 USE_EMACS=	yes
 EMACS_PORT_NAME?=	emacs21
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-emacs=${EMACS_CMD} \
+CONFIGURE_ARGS=	--infodir=${PREFIX}/${INFO_PATH} \
+		--with-emacs=${EMACS_CMD} \
 		--with-lispdir=${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}
 USE_GMAKE=	yes
 USE_RUBY=	yes
