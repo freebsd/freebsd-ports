@@ -25,4 +25,10 @@ PLIST_FILES=	bin/acinclude
 MAN1=		acinclude.1
 PORTDOCS=	*
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500800
+IGNORE=		requires Perl 5.8 or newer to build. Install lang/perl5.8 and try again
+.endif
+
+.include <bsd.port.post.mk>
