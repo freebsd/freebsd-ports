@@ -1,6 +1,9 @@
 %%S%%/twisted/runner/__init__.py
 %%S%%/twisted/runner/__init__.pyc
 %%S%%/twisted/runner/__init__.pyo
+%%S%%/twisted/runner/_version.py
+%%S%%/twisted/runner/_version.pyc
+%%S%%/twisted/runner/_version.pyo
 %%S%%/twisted/runner/inetd.py
 %%S%%/twisted/runner/inetd.pyc
 %%S%%/twisted/runner/inetd.pyo
