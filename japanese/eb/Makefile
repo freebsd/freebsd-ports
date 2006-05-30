@@ -7,7 +7,7 @@
 
 PORTNAME=	eb
 PORTVERSION=	4.2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.sra.co.jp/pub/misc/eb/
 DISTFILES=	${EBFILES} \
@@ -19,8 +19,6 @@ MAINTAINER=	yasu@utahime.org
 COMMENT=	C library for accessing EB, EBG, EBXA and EPWING CD-ROM dictionaries
 
 EBFILES=	${DISTNAME}${EXTRACT_SUFX}
-LISTFILES=	appendix/LIST \
-		appendix/LIST-ja
 APPENDIXFILES=	appendix/cencro-1.0.tar.gz \
 		appendix/chujiten-2.3.tar.gz \
 		appendix/chujiten2-2.0.tar.gz \
@@ -72,7 +70,7 @@ APPENDIXDIR=	${DATADIR}/appendix
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64"
-BROKEN=		"Configure fails on ia64"
+BROKEN=		Configure fails on ia64
 .endif
 
 post-extract:
@@ -84,9 +82,6 @@ post-extract:
 .endfor
 
 post-install:
-.for f in ${LISTFILES}
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${f} ${APPENDIXDIR}
-.endfor
 	${CP} -R ${WRKDIR}/appendix/ ${APPENDIXDIR}
 
 .include <bsd.port.post.mk>
