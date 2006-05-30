@@ -7,20 +7,20 @@
 #
 
 PORTNAME=	firefox
-DISTVERSION=	2.0a1
-PORTREVISION=	3
+DISTVERSION=	2.0a3
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
-MASTER_SITE_SUBDIR=	${PORTNAME}/releases/bonecho/alpha1/source
+MASTER_SITE_SUBDIR=	${PORTNAME}/releases/bonecho/alpha3/source
 #DISTNAME=	${PORTNAME}-${DISTVERSION}-source
-DISTNAME=	bonecho-alpha1-source
+DISTNAME=	bonecho-alpha3-source
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
 
 LATEST_LINK=	firefox2
 MOZILLA=	${PORTNAME}${MOZILLA_SUFX}
+MOZILLA_NAME=	Firefox${MOZILLA_SUFX}
 MOZILLA_SUFX=	-devel
 MOZ_OPTIONS=	--program-transform-name='s/firefox/${MOZILLA}/'
 
@@ -65,7 +65,8 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-config_make-jars.pl
 .endif
 
 post-extract::
-	@${SED} -e 's|@FIREFOX_ICON@|${FIREFOX_ICON}|' \
+	@${SED} -e 's|@FIREFOX_ICON@|${FIREFOX_ICON}|' -e 's|@MOZILLA@|${MOZILLA}|' \
+		-e 's|@MOZILLA_NAME@|${MOZILLA_NAME}|' \
 		<${FILESDIR}/firefox.desktop.in >${WRKDIR}/${MOZILLA}.desktop
 
 post-patch:
