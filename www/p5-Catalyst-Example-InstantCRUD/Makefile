@@ -29,7 +29,8 @@ BUILD_DEPENDS=	\
 	p5-Catalyst-Model-DBIC>=0:${PORTSDIR}/www/p5-Catalyst-Model-DBIC \
 	p5-Catalyst-Model-DBIC-Schema>=0:${PORTSDIR}/www/p5-Catalyst-Model-DBIC-Schema \
 	p5-DBIx-Class>=0:${PORTSDIR}/databases/p5-DBIx-Class \
-	p5-DBIx-Class-Loader>=0:${PORTSDIR}/databases/p5-DBIx-Class-Loader
+	p5-DBIx-Class-Loader>=0:${PORTSDIR}/databases/p5-DBIx-Class-Loader \
+	p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
