@@ -1,0 +1,12 @@
+Most programmers who use Perl's object-oriented features construct their
+objects by blessing a hash. But, in doing so, they undermine the
+robustness of the OO approach. Hash-based objects are unencapsulated:
+their entries are open for the world to access and modify.
+
+Objects without effective encapsulation are vulnerable. Instead of
+politely respecting their public interface, some clever client coder
+inevitably will realize that it's marginally faster to interact directly
+with the underlying implementation, pulling out attribute values
+directly from the hash of an object.
+
+WWW: http://search.cpan.org/dist/Class-Std/
