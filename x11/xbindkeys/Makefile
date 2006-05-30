@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	xbindkeys
-PORTVERSION=	1.7.2
+PORTVERSION=	1.7.3
 CATEGORIES=	x11
 MASTER_SITES=	http://hocwp.free.fr/xbindkeys/
 
