@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	twistedLore
-PORTVERSION=	0.1.0
-PORTREVISION=	1
+PORTVERSION=	0.2.0
 CATEGORIES=	textproc python
-MASTER_SITES=	http://twistedmatrix.com/downloads/Lore/0.1/ \
-    http://tmrc.mit.edu/mirror/twisted/Lore/0.1/
+MASTER_SITES=	http://tmrc.mit.edu/mirror/twisted/Lore/${PORTVERSION:R}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	TwistedLore-${PORTVERSION}
 
@@ -23,7 +21,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 WRKSRC=		${WRKDIR}/TwistedLore-${PORTVERSION}
 
 USE_BZIP2=	yes
-USE_PYTHON=	2.2+
+USE_PYTHON=	2.3+
 USE_PYDISTUTILS=	yes
 
 PLIST_SUB+=	S=${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;}
