@@ -11,15 +11,13 @@ PORTVERSION?=	0.10.7
 ## SET BACK TO PORTREVISION?= when we reset PORTREVISION in all the gst plugin ports
 CATEGORIES?=	multimedia audio
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst-plugins-base/:base \
-		${MASTER_SITE_GNOME:S|$|sources/gst-plugins-base/0.10/:base|} \
+		http://gstreamer.freedesktop.org/src/gst-plugins-bad/:bad \
+		http://gstreamer.freedesktop.org/src/gst-plugins-good/:good \
+		http://gstreamer.freedesktop.org/src/gst-plugins-ugly/:ugly \
 		${MASTER_SITE_LOCAL:S|$|ahze/:base|} \
 		${MASTER_SITE_LOCAL:S|$|ahze/:good|} \
 		${MASTER_SITE_LOCAL:S|$|ahze/:bad|} \
 		${MASTER_SITE_LOCAL:S|$|ahze/:ugly|} \
-		http://gstreamer.freedesktop.org/src/gst-plugins-bad/:bad \
-		${MASTER_SITE_GNOME:S|$|sources/gst-plugins-good/0.10/:good|} \
-		http://gstreamer.freedesktop.org/src/gst-plugins-good/:good \
-		http://gstreamer.freedesktop.org/src/gst-plugins-ugly/:ugly \
 		http://people.freebsd.org/~ahze/distfiles/:good \
 		http://people.freebsd.org/~ahze/distfiles/:bad \
 		http://people.freebsd.org/~ahze/distfiles/:ugly \
