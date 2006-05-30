@@ -28,6 +28,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-debug --enable-ipv6 \
 		--with-rsyncd-conf=${PREFIX}/etc/rsyncd.conf
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+PATCH_STRIP=	-p1
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	NEWS README csprotocol.txt tech_report.tex
@@ -54,18 +55,15 @@ CONFIGURE_ARGS+=	--with-included-popt
 
 .if !defined(WITHOUT_TIMELIMIT)
 EXTRA_PATCHES+=	${WRKSRC}/patches/time-limit.diff
-PATCH_STRIP=	-p1
 .endif
 
 .if !defined(WITHOUT_FLAGS)
 EXTRA_PATCHES+=	${WRKSRC}/patches/flags.diff
-PATCH_STRIP=	-p1
 .endif
 
 .if !defined(WITHOUT_ACLS)
 .if ${OSVERSION} >= 500000
 EXTRA_PATCHES+=	${WRKSRC}/patches/acls.diff
-PATCH_STRIP=	-p1
 CONFIGURE_ARGS+=--enable-acl-support
 .endif
 .endif
