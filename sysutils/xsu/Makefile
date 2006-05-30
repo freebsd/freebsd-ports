@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	xsu
-PORTVERSION=	0.2.3
-PORTREVISION=	2
+PORTVERSION=	0.2.4
 CATEGORIES=	sysutils gnome
-MASTER_SITES=	http://xsu.freax.eu.org/files/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	xsu
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Xsu runs commands as root after prompting for the root password
