@@ -9,7 +9,9 @@ PORTNAME=	utserver
 PORTVERSION=	436
 PORTREVISION=	5
 CATEGORIES=	games linux
-MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
+MASTER_SITES=	http://public.planetmirror.com/pub/lokigames/installers/ut/ \
+		http://fileserver.talkware.net/ut/ \
+		http://freebsd.unixfreunde.de/sources/
 DISTNAME=	ut-server-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org

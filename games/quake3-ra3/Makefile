@@ -8,7 +8,9 @@
 PORTNAME=	ra3
 PORTVERSION=	1.76
 CATEGORIES=	games
-MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
+MASTER_SITES=	ftp.clanbase.com/pub/ \
+		ftp.mirrors.degnet.de/pub/misc/PlanetQuake3.net/modifications/rocketarena3/ \
+		http://freebsd.unixfreunde.de/sources/
 PKGNAMEPREFIX=	${Q3PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 

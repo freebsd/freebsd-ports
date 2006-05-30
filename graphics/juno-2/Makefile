@@ -8,7 +8,8 @@
 PORTNAME=	juno-2
 PORTVERSION=	1.23
 CATEGORIES=	graphics
-MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
+MASTER_SITES=	http://www.research.compaq.com/SRC/juno-2/ \
+		http://freebsd.unixfreunde.de/sources/
 DISTNAME=	juno-sources
 
 MAINTAINER=	ports@FreeBSD.org

@@ -8,7 +8,8 @@
 PORTNAME=	libsrs
 PORTVERSION=	0.3.b
 CATEGORIES=	mail
-MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
+MASTER_SITES=	http://www.libsrs.org/files/ \
+		http://freebsd.unixfreunde.de/sources/
 DISTNAME=	${PORTNAME}.${PORTVERSION}eta
 
 MAINTAINER=	ports@FreeBSD.org
