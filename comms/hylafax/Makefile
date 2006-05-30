@@ -10,7 +10,7 @@ PORTVERSION=	4.2.5
 CATEGORIES=	comms
 MASTER_SITES=	ftp://ftp.hylafax.org/source/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	W.J.Zwart@NescioLudens.nl
 COMMENT=	Fax software
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/afm/Courier:${PORTSDIR}/print/afm \
