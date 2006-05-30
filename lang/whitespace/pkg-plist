@@ -1,0 +1,11 @@
+bin/wspace
+%%PORTDOCS%%%%DOCSDIR%%/tutorial.html
+%%PORTDOCS%%%%EXAMPLESDIR%%/calc.ws
+%%PORTDOCS%%%%EXAMPLESDIR%%/count.ws
+%%PORTDOCS%%%%EXAMPLESDIR%%/fact.ws
+%%PORTDOCS%%%%EXAMPLESDIR%%/hanoi.ws
+%%PORTDOCS%%%%EXAMPLESDIR%%/hworld.ws
+%%PORTDOCS%%%%EXAMPLESDIR%%/loctest.ws
+%%PORTDOCS%%%%EXAMPLESDIR%%/name.ws
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

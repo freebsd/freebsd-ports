@@ -1,0 +1,13 @@
+Whitespace is a imperative stack-based programming language that,
+contrary to most languages, ignores any non-whitespace characters.
+Only spaces, tabs, and newlines are considered syntax in Whitespace.
+
+This port is a prototype interpreter for the Whitespace programming
+language written in Haskell.
+
+Author:	Edwin Brady
+	Chris Morris
+WWW: http://compsoc.dur.ac.uk/whitespace/
+
+- Li-Lun Wang
+llwang@infor.org
