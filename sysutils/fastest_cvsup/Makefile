@@ -7,7 +7,7 @@
 
 PORTNAME=	fastest_cvsup
 PORTVERSION=	0.2.9
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://fastest-cvsup.sourceforge.net/download/
 

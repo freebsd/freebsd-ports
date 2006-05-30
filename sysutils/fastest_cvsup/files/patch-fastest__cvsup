@@ -22,7 +22,7 @@
  # true... what's the highest cvsup number in use?
  
 -my %FREEBSD_SERVERS = (     # last updated: Thu Sep 19 12:56:23 2002
-+my %FREEBSD_SERVERS = (     # last updated: Sat Apr 16 17:15:39 CST 2005
++my %FREEBSD_SERVERS = (     # last updated: May 29 21:30:20 GMT 2006
    'ar' => 1,    # Argentina
 -  'at' => 1,    # Austria
 -  'au' => 5,    # Australia
@@ -31,17 +31,18 @@
 -  'cn' => 1,    # China
 +  'at' => 2,    # Austria
 +  'au' => 7,    # Australia
-+  'br' => 5,    # Brazil
-+  'ca' => 1,    # Canada
-+  'ch' => 1,    # Switzerland
-+  'cn' => 5,    # China
++  'br' => 4,    # Brazil
++  'ca' => 2,    # Canada
++  'ch' => 2,    # Switzerland
++  'cn' => 7,    # China
 +  'cr' => 1,    # Costa Rica
    'cz' => 1,    # Czech Republic
 -  'de' => 7,    # Germany
 -  'dk' => 1,    # Denmark
 +  'de' => 8,    # Germany
 +  'dk' => 3,    # Denmark
-   'ee' => 1,    # Estonia
+-  'ee' => 1,    # Estonia
++  'ee' => 2,    # Estonia
    'es' => 3,    # Spain
    'fi' => 2,    # Finland
 @@ -93,25 +97,32 @@
@@ -51,12 +52,13 @@
 -  'kr' => 2,    # Korea
 -  'lt' => 2,    # Lithuania
 +  'kg' => 1,    # Kyrgyzstan
-+  'kr' => 3,    # Korea
++  'kr' => 5,    # Korea
 +  'kw' => 1,    # Kuwait
 +  'lt' => 3,    # Lithuania
-   'lv' => 1,    # Latvia
+-  'lv' => 1,    # Latvia
 -  'nl' => 3,    # Netherlands
-+  'nl' => 5,    # Netherlands
++  'lv' => 3,    # Latvia
++  'nl' => 6,    # Netherlands
    'no' => 1,    # Norway
    'nz' => 1,    # New Zealand
 -  'pl' => 1,    # Poland
@@ -66,13 +68,15 @@
 +  'pl' => 3,    # Poland
 +  'pt' => 3,    # Portugal
 +  'ro' => 3,    # Romania
-   'ru' => 6,    # Russia
+-  'ru' => 6,    # Russia
 -  'se' => 2,    # Sweden
 -  'si' => 1,    # Slovenia
-+  'se' => 3,    # Sweden
+-  'sk' => 2,    # Slovak Republic
++  'ru' => 7,    # Russia
++  'se' => 4,    # Sweden
 +  'sg' => 1,    # Singapore
-+  'si' => 2,    # Slovenia
-   'sk' => 2,    # Slovak Republic
++  'si' => 3,    # Slovenia
++  'sk' => 1,    # Slovak Republic
    'sm' => 1,    # San Marino
 -  'tw' => 3,    # Taiwan
 -  'ua' => 5,    # Ukraine
@@ -81,7 +85,7 @@
 +  'th' => 1,    # Thailand
 +  'tr' => 1,    # Turkey
 +  'tw' => 13,	# Taiwan
-+  'ua' => 7,    # Ukraine
++  'ua' => 11,   # Ukraine
 +  'uk' => 4,    # United Kingdom
 +  'us' => 18,   # USA
    'za' => 2,    # South Africa
