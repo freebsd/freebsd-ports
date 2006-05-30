@@ -8031,6 +8031,7 @@ p5-Config-IniFiles	ports/devel/p5-Config-IniFiles
 p5-Config-Objective	ports/devel/p5-Config-Objective
 p5-Config-Setting	ports/devel/p5-Config-Setting
 p5-Config-Simple	ports/devel/p5-Config-Simple
+p5-Config-Std	ports/devel/p5-Config-Std
 p5-Config-Tiny	ports/devel/p5-Config-Tiny
 p5-ConfigReader	ports/devel/p5-ConfigReader
 p5-ConfigReader-Simple	ports/devel/p5-ConfigReader-Simple
