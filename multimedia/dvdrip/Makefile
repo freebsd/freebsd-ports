@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	dvdrip
-PORTVERSION=	0.52.6
-PORTREVISION=	4
+PORTVERSION=	0.52.7
 CATEGORIES=	multimedia
-MASTER_SITES=	http://www.exit1.org/dvdrip/dist/
+MASTER_SITES=	http://www.exit1.org/dvdrip/dist/ \
+		${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	Video/JRED
 DISTNAME=	Video-DVDRip-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rainer.alves@gmail.com
 COMMENT=	This is dvd::rip, a Perl Gtk+ based dvd-ripper
 
 RUN_DEPENDS+=	cdrdao:${PORTSDIR}/sysutils/cdrdao \
@@ -32,11 +33,21 @@ OPTIONS=	CLUSTER		"Enable cluster mode"	on \
 
 PERL_CONFIGURE=	yes
 USE_PERL5=	yes
+USE_GETTEXT=	yes
 
 MAN1=		dvdrip.1 dr_splitpipe.1 dr_progress.1
 MAN3=		Video::DVDRip.3 Video::DVDRip::CPAN::Scanf.3
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		Broken dependencies
+.endif
+
+.if ${PERL_LEVEL} < 500600
+BROKEN=		You need at least perl 5.6.0. Do not use FreeBSD 4.x' system perl, \
+		it's outdated. Install lang/perl5 and issue 'use.perl port'
+.endif
 
 .if !defined(WITHOUT_CLUSTER)
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable \
@@ -52,10 +63,6 @@ RUN_DEPENDS+=	oggenc:${PORTSDIR}/audio/vorbis-tools \
 
 .if !defined(WITHOUT_SUBTITLE)
 RUN_DEPENDS+=	subtitle2pgm:${PORTSDIR}/multimedia/subtitleripper
-.endif
-
-.if ${OSVERSION} < 500000
-BROKEN=		Broken dependencies
 .endif
 
 pre-everything::
@@ -82,10 +89,5 @@ post-patch:
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
-
-.if ${PERL_LEVEL} < 500600
-BROKEN=	"You need at least perl 5.6.0. Do not use FreeBSD 4.x' system perl,\
-	it's outdated. Install lang/perl5 and issue 'use.perl port'"
-.endif
 
 .include <bsd.port.post.mk>
