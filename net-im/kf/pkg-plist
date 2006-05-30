@@ -1,4 +1,5 @@
 bin/kf
+share/applications/kf.desktop
 %%DATADIR%%/add_contact.png
 %%DATADIR%%/archive.glade
 %%DATADIR%%/archive.glade.h
