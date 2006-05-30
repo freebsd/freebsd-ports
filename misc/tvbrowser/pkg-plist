@@ -1,25 +1,126 @@
 bin/tvbrowser
 %%DATADIR%%/LICENSE.txt
 %%DATADIR%%/forum.url
-%%DATADIR%%/imgs/About16.gif
-%%DATADIR%%/imgs/About24.gif
-%%DATADIR%%/imgs/Back24.gif
-%%DATADIR%%/imgs/Bookmarks16.gif
-%%DATADIR%%/imgs/Bookmarks24.gif
-%%DATADIR%%/imgs/Delete16.gif
-%%DATADIR%%/imgs/Delete24.gif
-%%DATADIR%%/imgs/Down24.gif
-%%DATADIR%%/imgs/Export16.gif
+%%DATADIR%%/icons/tango/16x16/actions/appointment-new.png
+%%DATADIR%%/icons/tango/16x16/actions/bookmark-new.png
+%%DATADIR%%/icons/tango/16x16/actions/close-pressed.png
+%%DATADIR%%/icons/tango/16x16/actions/document-edit.png
+%%DATADIR%%/icons/tango/16x16/actions/document-new.png
+%%DATADIR%%/icons/tango/16x16/actions/document-open.png
+%%DATADIR%%/icons/tango/16x16/actions/document-print-preview.png
+%%DATADIR%%/icons/tango/16x16/actions/document-properties.png
+%%DATADIR%%/icons/tango/16x16/actions/document-save-as.png
+%%DATADIR%%/icons/tango/16x16/actions/document-save.png
+%%DATADIR%%/icons/tango/16x16/actions/edit-copy.png
+%%DATADIR%%/icons/tango/16x16/actions/edit-delete.png
+%%DATADIR%%/icons/tango/16x16/actions/edit-find.png
+%%DATADIR%%/icons/tango/16x16/actions/edit-paste.png
+%%DATADIR%%/icons/tango/16x16/actions/go-down.png
+%%DATADIR%%/icons/tango/16x16/actions/go-next.png
+%%DATADIR%%/icons/tango/16x16/actions/go-previous.png
+%%DATADIR%%/icons/tango/16x16/actions/go-to-date.png
+%%DATADIR%%/icons/tango/16x16/actions/go-to-next-day.png
+%%DATADIR%%/icons/tango/16x16/actions/go-to-previous-day.png
+%%DATADIR%%/icons/tango/16x16/actions/go-to-today.png
+%%DATADIR%%/icons/tango/16x16/actions/go-up.png
+%%DATADIR%%/icons/tango/16x16/actions/mail-message-new.png
+%%DATADIR%%/icons/tango/16x16/actions/media-playback-start.png
+%%DATADIR%%/icons/tango/16x16/actions/media-seek-forward.png
+%%DATADIR%%/icons/tango/16x16/actions/process-stop.png
+%%DATADIR%%/icons/tango/16x16/actions/scroll-to-channel.png
+%%DATADIR%%/icons/tango/16x16/actions/scroll-to-now.png
+%%DATADIR%%/icons/tango/16x16/actions/scroll-to-specific-time.png
+%%DATADIR%%/icons/tango/16x16/actions/scroll-to-time.png
+%%DATADIR%%/icons/tango/16x16/actions/system-search.png
+%%DATADIR%%/icons/tango/16x16/actions/view-filter.png
+%%DATADIR%%/icons/tango/16x16/actions/view-list.png
+%%DATADIR%%/icons/tango/16x16/actions/view-plugins.png
+%%DATADIR%%/icons/tango/16x16/actions/view-refresh.png
+%%DATADIR%%/icons/tango/16x16/actions/web-search.png
+%%DATADIR%%/icons/tango/16x16/actions/zoom-in.png
+%%DATADIR%%/icons/tango/16x16/actions/zoom-out.png
+%%DATADIR%%/icons/tango/16x16/apps/appointment.png
+%%DATADIR%%/icons/tango/16x16/apps/bookmark.png
+%%DATADIR%%/icons/tango/16x16/apps/help-browser.png
+%%DATADIR%%/icons/tango/16x16/apps/internet-news-reader.png
+%%DATADIR%%/icons/tango/16x16/apps/internet-web-browser.png
+%%DATADIR%%/icons/tango/16x16/apps/office-calendar.png
+%%DATADIR%%/icons/tango/16x16/apps/preferences-desktop-font.png
+%%DATADIR%%/icons/tango/16x16/apps/preferences-desktop-locale.png
+%%DATADIR%%/icons/tango/16x16/apps/preferences-desktop-theme.png
+%%DATADIR%%/icons/tango/16x16/apps/preferences-system-network-proxy.png
+%%DATADIR%%/icons/tango/16x16/apps/system-software-update.png
+%%DATADIR%%/icons/tango/16x16/categories/preferences-desktop.png
+%%DATADIR%%/icons/tango/16x16/devices/printer.png
+%%DATADIR%%/icons/tango/16x16/emblems/emblem-symbolic-link.png
+%%DATADIR%%/icons/tango/16x16/mimetypes/video-x-generic.png
+%%DATADIR%%/icons/tango/16x16/status/close-over.png
+%%DATADIR%%/icons/tango/16x16/status/dialog-information.png
+%%DATADIR%%/icons/tango/16x16/status/dialog-warning.png
+%%DATADIR%%/icons/tango/16x16/status/folder-open.png
+%%DATADIR%%/icons/tango/16x16/status/view-filter-set.png
+%%DATADIR%%/icons/tango/22x22/actions/appointment-new.png
+%%DATADIR%%/icons/tango/22x22/actions/document-edit.png
+%%DATADIR%%/icons/tango/22x22/actions/document-new.png
+%%DATADIR%%/icons/tango/22x22/actions/document-open.png
+%%DATADIR%%/icons/tango/22x22/actions/document-print-preview.png
+%%DATADIR%%/icons/tango/22x22/actions/document-properties.png
+%%DATADIR%%/icons/tango/22x22/actions/document-save-as.png
+%%DATADIR%%/icons/tango/22x22/actions/document-save.png
+%%DATADIR%%/icons/tango/22x22/actions/edit-copy.png
+%%DATADIR%%/icons/tango/22x22/actions/edit-delete.png
+%%DATADIR%%/icons/tango/22x22/actions/edit-find.png
+%%DATADIR%%/icons/tango/22x22/actions/edit-paste.png
+%%DATADIR%%/icons/tango/22x22/actions/format-justify-fill.png
+%%DATADIR%%/icons/tango/22x22/actions/go-down.png
+%%DATADIR%%/icons/tango/22x22/actions/go-next.png
+%%DATADIR%%/icons/tango/22x22/actions/go-previous.png
+%%DATADIR%%/icons/tango/22x22/actions/go-to-date.png
+%%DATADIR%%/icons/tango/22x22/actions/go-to-next-day.png
+%%DATADIR%%/icons/tango/22x22/actions/go-to-previous-day.png
+%%DATADIR%%/icons/tango/22x22/actions/go-to-today.png
+%%DATADIR%%/icons/tango/22x22/actions/go-up.png
+%%DATADIR%%/icons/tango/22x22/actions/mail-message-new.png
+%%DATADIR%%/icons/tango/22x22/actions/media-playback-start.png
+%%DATADIR%%/icons/tango/22x22/actions/media-seek-forward.png
+%%DATADIR%%/icons/tango/22x22/actions/process-stop.png
+%%DATADIR%%/icons/tango/22x22/actions/scroll-to-channel.png
+%%DATADIR%%/icons/tango/22x22/actions/scroll-to-now.png
+%%DATADIR%%/icons/tango/22x22/actions/scroll-to-specific-time.png
+%%DATADIR%%/icons/tango/22x22/actions/scroll-to-time.png
+%%DATADIR%%/icons/tango/22x22/actions/system-search.png
+%%DATADIR%%/icons/tango/22x22/actions/view-filter.png
+%%DATADIR%%/icons/tango/22x22/actions/view-list.png
+%%DATADIR%%/icons/tango/22x22/actions/view-plugins.png
+%%DATADIR%%/icons/tango/22x22/actions/view-refresh.png
+%%DATADIR%%/icons/tango/22x22/actions/web-search.png
+%%DATADIR%%/icons/tango/22x22/actions/zoom-in.png
+%%DATADIR%%/icons/tango/22x22/actions/zoom-out.png
+%%DATADIR%%/icons/tango/22x22/apps/appointment.png
+%%DATADIR%%/icons/tango/22x22/apps/bookmark.png
+%%DATADIR%%/icons/tango/22x22/apps/help-browser.png
+%%DATADIR%%/icons/tango/22x22/apps/internet-news-reader.png
+%%DATADIR%%/icons/tango/22x22/apps/internet-web-browser.png
+%%DATADIR%%/icons/tango/22x22/apps/office-calendar.png
+%%DATADIR%%/icons/tango/22x22/apps/preferences-desktop-font.png
+%%DATADIR%%/icons/tango/22x22/apps/preferences-desktop-locale.png
+%%DATADIR%%/icons/tango/22x22/apps/preferences-desktop-theme.png
+%%DATADIR%%/icons/tango/22x22/apps/preferences-system-network-proxy.png
+%%DATADIR%%/icons/tango/22x22/apps/system-software-update.png
+%%DATADIR%%/icons/tango/22x22/categories/preferences-desktop.png
+%%DATADIR%%/icons/tango/22x22/devices/printer.png
+%%DATADIR%%/icons/tango/22x22/emblems/emblem-symbolic-link.png
+%%DATADIR%%/icons/tango/22x22/mimetypes/video-x-generic.png
+%%DATADIR%%/icons/tango/22x22/status/dialog-information.png
+%%DATADIR%%/icons/tango/22x22/status/folder-open.png
+%%DATADIR%%/icons/tango/22x22/status/view-filter-set.png
+%%DATADIR%%/icons/tango/index.theme
+%%DATADIR%%/icons/tango/license.txt
+%%DATADIR%%/icons/tango/readme.txt
 %%DATADIR%%/imgs/Filter16.png
-%%DATADIR%%/imgs/Filter24.png
+%%DATADIR%%/imgs/Filter22.png
 %%DATADIR%%/imgs/FilterSet16.png
-%%DATADIR%%/imgs/FilterSet24.png
-%%DATADIR%%/imgs/Find24.gif
-%%DATADIR%%/imgs/Forward24.gif
-%%DATADIR%%/imgs/Help16.gif
-%%DATADIR%%/imgs/Host16.gif
-%%DATADIR%%/imgs/Import16.gif
-%%DATADIR%%/imgs/Import24.gif
+%%DATADIR%%/imgs/FilterSet22.png
 %%DATADIR%%/imgs/Info_16to9.gif
 %%DATADIR%%/imgs/Info_BlackAndWhite.gif
 %%DATADIR%%/imgs/Info_DolbyDigital51.gif
@@ -30,33 +131,7 @@ bin/tvbrowser
 %%DATADIR%%/imgs/Info_SubtitleForAurallyHandicapped.gif
 %%DATADIR%%/imgs/Info_TwoChannelTone.gif
 %%DATADIR%%/imgs/Jar16.gif
-%%DATADIR%%/imgs/New16.gif
-%%DATADIR%%/imgs/New24.gif
-%%DATADIR%%/imgs/Open16.gif
-%%DATADIR%%/imgs/Play16.gif
-%%DATADIR%%/imgs/Play24.gif
-%%DATADIR%%/imgs/Preferences16.gif
-%%DATADIR%%/imgs/Preferences24.gif
-%%DATADIR%%/imgs/Refresh16.gif
-%%DATADIR%%/imgs/Refresh24.gif
-%%DATADIR%%/imgs/Search16.gif
-%%DATADIR%%/imgs/SendToPlugin.png
-%%DATADIR%%/imgs/SendToPlugin24.png
-%%DATADIR%%/imgs/Server16.gif
-%%DATADIR%%/imgs/StepForward16.gif
-%%DATADIR%%/imgs/StepForward24.gif
-%%DATADIR%%/imgs/Stop16.gif
-%%DATADIR%%/imgs/Stop24.gif
 %%DATADIR%%/imgs/TVBrowser.ico
-%%DATADIR%%/imgs/TimeEarly24.gif
-%%DATADIR%%/imgs/TimeEvening24.gif
-%%DATADIR%%/imgs/TimeMidday24.gif
-%%DATADIR%%/imgs/TimeMorning24.gif
-%%DATADIR%%/imgs/TimeNow24.gif
-%%DATADIR%%/imgs/Up24.gif
-%%DATADIR%%/imgs/WebComponent16.gif
-%%DATADIR%%/imgs/background.jpg
-%%DATADIR%%/imgs/background2.jpg
 %%DATADIR%%/imgs/beanshell.png
 %%DATADIR%%/imgs/columns2.jpg
 %%DATADIR%%/imgs/columns_afternoon.jpg
@@ -65,8 +140,6 @@ bin/tvbrowser
 %%DATADIR%%/imgs/columns_evening.jpg
 %%DATADIR%%/imgs/columns_midday.jpg
 %%DATADIR%%/imgs/desktop.ico
-%%DATADIR%%/imgs/down16.gif
-%%DATADIR%%/imgs/more.png
 %%DATADIR%%/imgs/splash.png
 %%DATADIR%%/imgs/systray.ico
 %%DATADIR%%/imgs/tvabout.png
@@ -74,19 +147,16 @@ bin/tvbrowser
 %%DATADIR%%/imgs/tvbrowser16.png
 %%DATADIR%%/imgs/tvbrowser32.png
 %%DATADIR%%/imgs/tvbrowser48.png
-%%DATADIR%%/imgs/up16.gif
 %%DATADIR%%/libDesktopIndicator.so
 %%DATADIR%%/linux.properties
+%%DATADIR%%/plugins/BlogThisPlugin.jar
 %%DATADIR%%/plugins/CalendarExportPlugin.jar
 %%DATADIR%%/plugins/CapturePlugin.jar
 %%DATADIR%%/plugins/ClipboardPlugin.jar
 %%DATADIR%%/plugins/EMailPlugin.jar
-%%DATADIR%%/plugins/FavoritesPlugin.jar
 %%DATADIR%%/plugins/ListViewPlugin.jar
 %%DATADIR%%/plugins/NewsPlugin.jar
 %%DATADIR%%/plugins/PrintPlugin.jar
-%%DATADIR%%/plugins/ProgramInfo.jar
-%%DATADIR%%/plugins/ReminderPlugin.jar
 %%DATADIR%%/plugins/SearchPlugin.jar
 %%DATADIR%%/plugins/ShowviewPlugin.jar
 %%DATADIR%%/plugins/TVRaterPlugin.jar
@@ -97,7 +167,27 @@ bin/tvbrowser
 %%DATADIR%%/tvbrowser.sh
 %%DATADIR%%/website.url
 %%DATADIR%%/wiki.url
-@dirrm share/tvbrowser/themepacks
-@dirrm share/tvbrowser/plugins
-@dirrm share/tvbrowser/imgs
-@dirrm share/tvbrowser
+@dirrm %%DATADIR%%/themepacks
+@dirrm %%DATADIR%%/plugins
+@dirrm %%DATADIR%%/imgs
+@dirrm %%DATADIR%%/icons/tango/22x22/status
+@dirrm %%DATADIR%%/icons/tango/22x22/mimetypes
+@dirrm %%DATADIR%%/icons/tango/22x22/emotes
+@dirrm %%DATADIR%%/icons/tango/22x22/emblems
+@dirrm %%DATADIR%%/icons/tango/22x22/devices
+@dirrm %%DATADIR%%/icons/tango/22x22/categories
+@dirrm %%DATADIR%%/icons/tango/22x22/apps
+@dirrm %%DATADIR%%/icons/tango/22x22/actions
+@dirrm %%DATADIR%%/icons/tango/22x22
+@dirrm %%DATADIR%%/icons/tango/16x16/status
+@dirrm %%DATADIR%%/icons/tango/16x16/mimetypes
+@dirrm %%DATADIR%%/icons/tango/16x16/emotes
+@dirrm %%DATADIR%%/icons/tango/16x16/emblems
+@dirrm %%DATADIR%%/icons/tango/16x16/devices
+@dirrm %%DATADIR%%/icons/tango/16x16/categories
+@dirrm %%DATADIR%%/icons/tango/16x16/apps
+@dirrm %%DATADIR%%/icons/tango/16x16/actions
+@dirrm %%DATADIR%%/icons/tango/16x16
+@dirrm %%DATADIR%%/icons/tango
+@dirrm %%DATADIR%%/icons
+@dirrm %%DATADIR%%
