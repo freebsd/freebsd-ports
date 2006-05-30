@@ -7,7 +7,7 @@
 
 PORTNAME=	pdumpfs-rsync
 PORTVERSION=	0.8.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils net
 MASTER_SITES=	http://tach.arege.net/software/pdumpfs-rsync/
 DISTFILES=	${PROG}
