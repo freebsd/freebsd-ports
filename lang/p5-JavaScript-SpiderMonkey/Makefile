@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	JavaScript-SpiderMonkey
-PORTVERSION=	0.11
+PORTVERSION=	0.15
 CATEGORIES=	lang perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	JavaScript
@@ -24,8 +24,7 @@ CONFIGURE_ARGS=	INC=-I${LOCALBASE}/include
 INSTALL_TARGET=	pure_install
 
 post-patch:
-	${REINPLACE_CMD} -e 's~UNKNOWN";~${LOCALBASE}/lib";~' \
-		${WRKSRC}/Makefile.PL
+	${REINPLACE_CMD} -e 's~libjs.a~libjs.so~' ${WRKSRC}/Makefile.PL
 
 MAN3=		JavaScript::SpiderMonkey.3
 
