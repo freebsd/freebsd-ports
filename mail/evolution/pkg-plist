@@ -570,6 +570,7 @@ share/gnome/evolution/%%VERSION%%/weather/category_weather_tstorm_16.png
 %%PILOT:%%share/gnome/gnome-pilot/conduits/e-calendar-%%VERSION%%.conduit
 %%PILOT:%%share/gnome/gnome-pilot/conduits/e-todo-%%VERSION%%.conduit
 share/gnome/help/evolution-%%VERSION%%/C/evolution-%%VERSION%%.xml
+share/gnome/help/evolution-%%VERSION%%/C/figures/Screenshot-Evolution-mailer-Preferences.png
 share/gnome/help/evolution-%%VERSION%%/C/figures/Screenshot-Free-Busy.png
 share/gnome/help/evolution-%%VERSION%%/C/figures/calendar.png
 share/gnome/help/evolution-%%VERSION%%/C/figures/config-cal.png
