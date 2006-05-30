@@ -12613,7 +12613,6 @@ splat		ports/comms/splat
 splay		ports/audio/splay
 splaytk		ports/audio/splaytk
 splint		ports/devel/splint
-splitmpg	ports/multimedia/splitmpg
 splitvt		ports/misc/splitvt
 spoofer		ports/net/spoofer
 spooles		ports/math/spooles

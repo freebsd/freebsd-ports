@@ -183,7 +183,6 @@
     SUBDIR += smpeg
     SUBDIR += smpeg-xmms
     SUBDIR += spigot
-    SUBDIR += splitmpg
     SUBDIR += streamanalyze
     SUBDIR += streamdvd
     SUBDIR += subconv
