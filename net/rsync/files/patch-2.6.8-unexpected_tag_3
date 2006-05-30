@@ -3,8 +3,8 @@ RCS file: /cvsroot/rsync/io.c,v
 retrieving revision 1.195
 retrieving revision 1.196
 diff -u -r1.195 -r1.196
---- rsync/io.c	2006/05/03 06:32:59	1.195
-+++ rsync/io.c	2006/05/03 16:17:46	1.196
+--- io.c	2006/05/03 06:32:59	1.195
++++ io.c	2006/05/03 16:17:46	1.196
 @@ -282,10 +282,7 @@
  			exit_cleanup(RERR_STREAMIO);
  		}
@@ -69,8 +69,8 @@ RCS file: /cvsroot/rsync/log.c,v
 retrieving revision 1.147
 retrieving revision 1.148
 diff -u -r1.147 -r1.148
---- rsync/log.c	2006/05/03 06:11:11	1.147
-+++ rsync/log.c	2006/05/03 16:17:49	1.148
+--- log.c	2006/05/03 06:11:11	1.147
++++ log.c	2006/05/03 16:17:49	1.148
 @@ -256,7 +256,7 @@
  
  	if (am_server) {
@@ -85,8 +85,8 @@ RCS file: /cvsroot/rsync/proto.h,v
 retrieving revision 1.303
 retrieving revision 1.304
 diff -u -r1.303 -r1.304
---- rsync/proto.h	2006/05/03 00:48:17	1.303
-+++ rsync/proto.h	2006/05/03 16:17:42	1.304
+--- proto.h	2006/05/03 00:48:17	1.303
++++ proto.h	2006/05/03 16:17:42	1.304
 @@ -104,7 +104,7 @@
  void set_msg_fd_out(int fd);
  void increment_active_files(int ndx, int itemizing, enum logcode code);
