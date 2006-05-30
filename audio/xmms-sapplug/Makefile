@@ -10,6 +10,7 @@ DISTVERSION=	0.3f
 PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://critical.ch/distfiles/ \
+		http://energy.critical.ch/distfiles/ \
 		ftp://ftp.atari.art.pl/stuff/audio/8bit-music-archive/sap/plugins/xmms/
 DISTNAME=	sapplug-xmms-${DISTVERSION}
 
@@ -28,12 +29,12 @@ WRKSRC=		${WRKDIR}/sapplug-${DISTVERSION}
 
 PLIST_FILES=	lib/xmms/Input/libsap.so
 
-OPTIONS=	OPTIMIZED_CXXLAGS "use optimized C++ flags" on \
-		OPTIMIZED_CFLAGS  "use optimized C flags"   on
+OPTIONS=	OPTIMIZED_CXXFLAGS "use optimized C++ flags" on \
+		OPTIMIZED_CFLAGS   "use optimized C flags"   on
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_OPTIMIZED_CXXLAGS)
+.if defined(WITH_OPTIMIZED_CXXFLAGS)
 CXXFLAGS+=	-fPIC -fpic -funroll-all-loops -fno-strength-reduce \
 		-finline-functions -fomit-frame-pointer
 .endif
