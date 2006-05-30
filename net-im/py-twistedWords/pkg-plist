@@ -5,6 +5,9 @@ bin/im
 %%S%%/twisted/words/__init__.py
 %%S%%/twisted/words/__init__.pyc
 %%S%%/twisted/words/__init__.pyo
+%%S%%/twisted/words/_version.py
+%%S%%/twisted/words/_version.pyc
+%%S%%/twisted/words/_version.pyo
 %%S%%/twisted/words/ewords.py
 %%S%%/twisted/words/ewords.pyc
 %%S%%/twisted/words/ewords.pyo
@@ -75,6 +78,9 @@ bin/im
 %%S%%/twisted/words/protocols/jabber/component.py
 %%S%%/twisted/words/protocols/jabber/component.pyc
 %%S%%/twisted/words/protocols/jabber/component.pyo
+%%S%%/twisted/words/protocols/jabber/error.py
+%%S%%/twisted/words/protocols/jabber/error.pyc
+%%S%%/twisted/words/protocols/jabber/error.pyo
 %%S%%/twisted/words/protocols/jabber/jid.py
 %%S%%/twisted/words/protocols/jabber/jid.pyc
 %%S%%/twisted/words/protocols/jabber/jid.pyo
@@ -120,9 +126,15 @@ bin/im
 %%S%%/twisted/words/test/test_jabbercomponent.py
 %%S%%/twisted/words/test/test_jabbercomponent.pyc
 %%S%%/twisted/words/test/test_jabbercomponent.pyo
+%%S%%/twisted/words/test/test_jabbererror.py
+%%S%%/twisted/words/test/test_jabbererror.pyc
+%%S%%/twisted/words/test/test_jabbererror.pyo
 %%S%%/twisted/words/test/test_jabberjid.py
 %%S%%/twisted/words/test/test_jabberjid.pyc
 %%S%%/twisted/words/test/test_jabberjid.pyo
+%%S%%/twisted/words/test/test_jabberxmlstream.py
+%%S%%/twisted/words/test/test_jabberxmlstream.pyc
+%%S%%/twisted/words/test/test_jabberxmlstream.pyo
 %%S%%/twisted/words/test/test_jabberxmppstringprep.py
 %%S%%/twisted/words/test/test_jabberxmppstringprep.pyc
 %%S%%/twisted/words/test/test_jabberxmppstringprep.pyo

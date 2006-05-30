@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	twistedWords
-PORTVERSION=	0.3.0
+PORTVERSION=	0.4.0
 CATEGORIES=	net-im devel python
-MASTER_SITES=	http://twistedmatrix.com/downloads/Words/0.3/ \
-		http://tmrc.mit.edu/mirror/twisted/Words/0.3/
+MASTER_SITES=	http://tmrc.mit.edu/mirror/twisted/Words/${PORTVERSION:R}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	TwistedWords-${PORTVERSION}
 
@@ -22,7 +21,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 WRKSRC=		${WRKDIR}/TwistedWords-${PORTVERSION}
 
 USE_BZIP2=	yes
-USE_PYTHON=	2.2+
+USE_PYTHON=	2.3+
 USE_PYDISTUTILS=	yes
 
 PLIST_SUB+=	S=${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;}
