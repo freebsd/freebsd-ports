@@ -19,6 +19,7 @@ MAN3+=	Acme::MetaSyntactic::booze.3
 MAN3+=	Acme::MetaSyntactic::browser.3
 MAN3+=	Acme::MetaSyntactic::buffy.3
 MAN3+=	Acme::MetaSyntactic::chess.3
+MAN3+=	Acme::MetaSyntactic::colours.3
 MAN3+=	Acme::MetaSyntactic::constellations.3
 MAN3+=	Acme::MetaSyntactic::contrade.3
 MAN3+=	Acme::MetaSyntactic::counting_rhyme.3
