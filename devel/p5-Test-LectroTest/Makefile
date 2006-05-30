@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Test-LectroTest
-PORTVERSION=	0.3300
+PORTVERSION=	0.3400
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Test
@@ -22,6 +22,10 @@ MAN3=		Test::LectroTest.3 Test::LectroTest::Generator.3 \
 		Test::LectroTest::Tutorial.3 Test::LectroTest::Compat.3
 
 .include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+IGNORE=		This port requires perl 5.6.0 or later. Install lang/perl5 then try again
+.endif
 
 .if ${PERL_LEVEL} < 500602
 BUILD_DEPENDS+=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
