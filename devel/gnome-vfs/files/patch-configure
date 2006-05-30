@@ -1,6 +1,6 @@
---- configure.orig	Sun May  7 00:51:33 2006
-+++ configure	Sun May  7 00:53:15 2006
-@@ -23482,6 +23482,8 @@ echo $ECHO_N "checking for $ac_func... $
+--- configure.orig	Wed May 17 11:33:28 2006
++++ configure	Wed May 17 21:44:26 2006
+@@ -23540,6 +23540,8 @@
  if eval "test \"\${$as_ac_var+set}\" = set"; then
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
@@ -9,7 +9,7 @@
    cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -23564,6 +23566,7 @@ eval "$as_ac_var=no"
+@@ -23622,6 +23624,7 @@
  fi
  rm -f conftest.err conftest.$ac_objext \
        conftest$ac_exeext conftest.$ac_ext
@@ -17,7 +17,7 @@
  fi
  echo "$as_me:$LINENO: result: `eval echo '${'$as_ac_var'}'`" >&5
  echo "${ECHO_T}`eval echo '${'$as_ac_var'}'`" >&6
-@@ -24655,6 +24658,7 @@ if test `eval echo '${'$as_ac_var'}'` = 
+@@ -23629,6 +23632,7 @@
    cat >>confdefs.h <<_ACEOF
  #define `echo "HAVE_$ac_func" | $as_tr_cpp` 1
  _ACEOF
@@ -25,7 +25,7 @@
   have_ngettext=yes
  else
    echo "$as_me:$LINENO: checking for ngettext in -lintl" >&5
-@@ -25708,7 +25712,7 @@ done
+@@ -25026,7 +25030,7 @@
  
  
  
@@ -34,7 +34,7 @@
  do
  as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`
  if eval "test \"\${$as_ac_Header+set}\" = set"; then
-@@ -34025,7 +34029,7 @@ if test "${openssl_libs+set}" = set; the
+@@ -33396,7 +33400,7 @@
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
  
@@ -43,7 +43,16 @@
  		cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -38165,6 +38169,9 @@ _ACEOF
+@@ -33694,7 +33698,7 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+ 
+-		LDFLAGS="$LDFLAGS -L$with_openssl_libs -lssl -lcrypto -ldl"
++		LDFLAGS="$LDFLAGS -L$with_openssl_libs -lssl -lcrypto"
+ 		cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -37536,6 +37540,9 @@
  cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
@@ -53,7 +62,7 @@
  #include <sys/statfs.h>
  #include <sys/fstyp.h>
  _ACEOF
-@@ -38206,6 +38213,9 @@ _ACEOF
+@@ -37577,6 +37584,9 @@
  cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
@@ -63,7 +72,7 @@
  #include <sys/statfs.h>
  #include <sys/vmount.h>
  _ACEOF
-@@ -39645,6 +39655,7 @@ s,@TEST_LIBS@,$TEST_LIBS,;t t
+@@ -39016,6 +39026,7 @@
  s,@ORBIT_IDL@,$ORBIT_IDL,;t t
  s,@BONOBO_IDLDIR@,$BONOBO_IDLDIR,;t t
  s,@WARN_CFLAGS@,$WARN_CFLAGS,;t t
