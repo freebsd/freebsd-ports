@@ -8,7 +8,9 @@
 PORTNAME=	quotes
 PORTVERSION=	1.7.2
 CATEGORIES=	misc
-MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
+MASTER_SITES=	ftp://ftp.externet.hu/.lib/disk6/linuxberg/files/console/office/ \
+		ftp://ftp.waseda.ac.jp/.u7/ports/distfiles/ \
+		http://freebsd.unixfreunde.de/sources/
 DISTNAME=	${PORTNAME}-1.7-2
 
 MAINTAINER=	ports@FreeBSD.org

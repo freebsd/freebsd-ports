@@ -9,7 +9,8 @@ PORTNAME=	gplbp
 PORTVERSION=	0.92
 PORTREVISION=	2
 CATEGORIES=	misc
-MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
+MASTER_SITES=	ftp://ftp.stampede.org/skibum/gplbp/ \
+		http://freebsd.unixfreunde.de/sources/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNOME Pilot Logbook application

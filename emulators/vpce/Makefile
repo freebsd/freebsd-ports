@@ -9,7 +9,8 @@ PORTNAME=	vpce
 PORTVERSION=	0.3f
 PORTREVISION=	1
 CATEGORIES=	emulators
-MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
+MASTER_SITES=	http://www.geocities.com/SiliconValley/Way/3340/ \
+		http://freebsd.unixfreunde.de/sources/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}_freebsd
 EXTRACT_SUFX=	.tgz
 
