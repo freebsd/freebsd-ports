@@ -28,9 +28,14 @@ CGI_BIN=	${PREFIX}/www/cgi-bin/
 CGI_PRG=	${PORTNAME}.cgi
 WWW_DIR=	${PREFIX}/www/data/mimetex/
 
+# usefull if you run mimetex on another machine
+.if defined(WITH_STATIC)
+STATIC_MIMETEX=	-static
+.endif
+
 do-build:
 	cd ${WRKDIR};\
-	${CC} ${CFLAGS} -DAA mimetex.c gifsave.c -lm -o ${CGI_PRG}
+	${CC} ${CFLAGS} ${STATIC_MIMETEX} -DAA mimetex.c gifsave.c -lm -o ${CGI_PRG}
 
 do-install:
 	${MKDIR} ${CGI_BIN}
