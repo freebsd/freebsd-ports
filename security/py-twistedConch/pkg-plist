@@ -5,6 +5,9 @@ bin/tkconch
 %%S%%/twisted/conch/__init__.py
 %%S%%/twisted/conch/__init__.pyc
 %%S%%/twisted/conch/__init__.pyo
+%%S%%/twisted/conch/_version.py
+%%S%%/twisted/conch/_version.pyc
+%%S%%/twisted/conch/_version.pyo
 %%S%%/twisted/conch/authorizer.py
 %%S%%/twisted/conch/authorizer.pyc
 %%S%%/twisted/conch/authorizer.pyo
@@ -218,6 +221,7 @@ bin/tkconch
 %%S%%/twisted/plugins/twisted_conch.py
 %%S%%/twisted/plugins/twisted_conch.pyc
 %%S%%/twisted/plugins/twisted_conch.pyo
+@dirrm %%S%%/twisted/plugins
 @dirrm %%S%%/twisted/conch/ui
 @dirrm %%S%%/twisted/conch/test
 @dirrm %%S%%/twisted/conch/ssh
