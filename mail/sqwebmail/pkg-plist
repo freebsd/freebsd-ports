@@ -50,6 +50,7 @@ share/sqwebmail/html/en-us/keyimport.html
 share/sqwebmail/html/en-us/ldaplist.html
 share/sqwebmail/html/en-us/ldapsearch.html
 share/sqwebmail/html/en-us/login.html
+share/sqwebmail/html/en-us/loginform.inc.html
 share/sqwebmail/html/en-us/navbar.inc.html
 share/sqwebmail/html/en-us/navbar2.inc.html
 share/sqwebmail/html/en-us/navbar3.inc.html
@@ -62,6 +63,7 @@ share/sqwebmail/html/en-us/printredirect.html
 share/sqwebmail/html/en-us/quickadd.html
 share/sqwebmail/html/en-us/readmsg.html
 share/sqwebmail/html/en-us/redirect.html
+share/sqwebmail/html/en-us/refreshfr.html
 share/sqwebmail/html/en-us/smileys.txt
 share/sqwebmail/html/en-us/spellchk.html
 share/sqwebmail/ldapsearch
