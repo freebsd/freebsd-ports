@@ -7,7 +7,7 @@
 
 PORTNAME=	gnome-libs
 PORTVERSION=	1.4.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES?=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-libs/1.4
@@ -38,6 +38,8 @@ MAN1=		dns-helper.1 gconfigger.1 gnome-bug.1 gnome-config.1 \
 		gnome-pty-helper.1 gnome.1 gnome_segv.1 goad-browser.1 \
 		libart-config.1 loadshlib.1 new-object.1
 MAN5=		gnome-mime.5
+
+DOCSDIR=	${PREFIX}/share/doc/gnomelibs
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
