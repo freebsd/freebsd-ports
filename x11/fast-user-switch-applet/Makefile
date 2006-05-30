@@ -6,7 +6,7 @@
 #    $MCom: ports/x11/fast-user-switch-applet/Makefile,v 1.12 2006/04/13 07:52:39 bland Exp $
 
 PORTNAME=	fast-user-switch-applet
-PORTVERSION=	2.14.1
+PORTVERSION=	2.14.2
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -20,6 +20,8 @@ USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack intlhack gnomeprefix gtk20 gnomepanel
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-gdm-config=${X11BASE}/etc/gdm/custom.conf \
 		--with-gdm-setup=${X11BASE}/sbin/gdmsetup
 
