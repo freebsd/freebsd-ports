@@ -26,6 +26,6 @@ MAN3=		App::Info::HTTPD.3 App::Info::Lib::Iconv.3 \
 		App::Info::Handler::Print.3 App::Info::RDBMS::PostgreSQL.3 \
 		App::Info::Util.3 App::Info::Handler.3 App::Info.3 \
 		App::Info::Handler::Prompt.3 App::Info::Handler::Carp.3 \
-		App::Info::RDBMS::SQLite.3
+		App::Info::RDBMS::SQLite.3 App::Info::Lib::OSSPUUID.3
 
 .include <bsd.port.mk>
