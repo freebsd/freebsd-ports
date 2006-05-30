@@ -8,7 +8,7 @@
 
 PORTNAME=	firefox
 DISTVERSION=	1.0.8
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA} \
@@ -37,6 +37,7 @@ GECKO_PLIST_PRE_DIRS=	lib/${MOZILLA}/chrome/icons/default lib/${MOZILLA}/chrome/
 FIREFOX_ICON=		${MOZILLA}.xpm
 FIREFOX_ICON_SRC=	${PREFIX}/lib/${MOZILLA}/icons/default.xpm
 MOZILLA=	${PORTNAME}${MOZILLA_SUFX}
+MOZILLA_NAME=	Firefox${MOZILLA_SUFX}
 MOZILLA_SUFX=	10
 MOZ_EXTENSIONS+=cookie,xml-rpc,xmlextras,pref,transformiix,universalchardet,webservices,inspector,p3p,gnomevfs,negotiateauth
 MOZ_EXPORT+=	MOZ_INTERNAL_LIBART_LGPL=1
@@ -73,8 +74,10 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-config_make-jars.pl
 .endif
 
 post-extract::
-	@${SED} -e 's|@FIREFOX_ICON@|${FIREFOX_ICON}|' \
+	@${SED} -e 's|@FIREFOX_ICON@|${FIREFOX_ICON}|' -e 's|@MOZILLA@|${MOZILLA}|' \
+		-e 's|@MOZILLA_NAME@|${MOZILLA_NAME}|' \
 		<${FILESDIR}/firefox.desktop.in >${WRKDIR}/${MOZILLA}.desktop
+
 
 post-patch:
 .for ii in modules/libpref/src/init extensions/sroaming/resources/content/prefs \
