@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnome-vfs
-PORTVERSION=	2.14.1
+PORTVERSION=	2.14.2
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-vfs/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
