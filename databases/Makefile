@@ -240,6 +240,7 @@
     SUBDIR += p5-DBZ_File
     SUBDIR += p5-DWH_File
     SUBDIR += p5-Data-Page
+    SUBDIR += p5-Data-Pageset
     SUBDIR += p5-Exception-Class-DBI
     SUBDIR += p5-GDBM
     SUBDIR += p5-GraphViz-DBI
