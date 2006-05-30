@@ -18,7 +18,7 @@ DISTNAME=	pathchar-a1-freebsd-3.0
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:lbl pathcharnotes.html:caida,local \
 		pathchar.8:local pathchar.mantxt:sitka,local
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nivo+kw+ports.bfa274@is-root.com
 COMMENT=	LBNL Internet path characterization tool
 
 ONLY_FOR_ARCHS=	i386
