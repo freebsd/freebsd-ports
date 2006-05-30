@@ -27,6 +27,8 @@ CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS}"
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--enable-core-inline
 
+USE_GCC=	3.2+
+
 post-patch:
 	@${REINPLACE_CMD} -e 's#\/usr\/share\/doc\/dosbox#${DOCSDIR}#g' \
 		${WRKSRC}/docs/dosbox.1
