@@ -23,9 +23,10 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		Xft.2:${PORTSDIR}/x11-fonts/libXft
 
-DEPRECATED=	"The mozilla team has shifted the development branch of \
+NOT_FOR_ARCHS=	ia64 alpha amd64
+DEPRECATED=	The mozilla team has shifted the development branch of \
 		mozilla to seamonkey, this port is outdated and has many \
-		vulnerabilities. Consider using www/seamonkey instead"
+		vulnerabilities. Consider using www/seamonkey instead
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MOZILLA?=	mozilla-devel
@@ -110,22 +111,18 @@ OPTIONS=CALENDAR "Enable the Calendar module" off \
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "ia64" || ${ARCH} == "alpha"
-BROKEN=		"Does not compile on ${ARCH}"
-.endif
-
 .if ${ARCH} == "alpha" && ${OSVERSION} < 500035
 IGNORE=		core dumps on ${ARCH} during post-build
 .endif
 
 .if exists(${X11BASE}/lib/X11/fonts/mozilla/fonts.dir)
-BROKEN=		"Mozilla${MOZ_SUFX} and Xft2 render the mozilla-fonts \
-		illegibly. Please remove the mozilla-fonts package"
+BROKEN=		Mozilla${MOZ_SUFX} and Xft2 render the mozilla-fonts \
+		illegibly. Please remove the mozilla-fonts package
 .endif
 
 .if defined(WITH_CALENDAR) && (defined(WITHOUT_MAILNEWS) || \
 	defined(WITHOUT_COMPOSER))
-BROKEN=		"Calendar requires Composer and Mailnews support."
+BROKEN=		Calendar requires Composer and Mailnews support.
 .endif
 
 .if ${OSVERSION} < 500000
