@@ -1,5 +1,3 @@
 bin/exctags
-include/ctags/readtags.h
-lib/ctags/readtags.o
-@dirrm include/ctags
-@dirrm lib/ctags
+include/readtags.h
+lib/readtags.o
