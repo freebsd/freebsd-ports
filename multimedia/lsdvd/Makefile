@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lsdvd
-PORTVERSION=	0.15
+PORTVERSION=	0.16
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	acidrip
@@ -18,6 +18,8 @@ LIB_DEPENDS=	dvdread.3:${PORTSDIR}/multimedia/libdvdread
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+
+MAN1=		lsdvd.1
 PLIST_FILES=	bin/lsdvd
 
 .include <bsd.port.pre.mk>
