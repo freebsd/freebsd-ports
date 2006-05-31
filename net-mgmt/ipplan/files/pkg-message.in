@@ -1,0 +1,6 @@
+*******************************************************************************
+IPPlan's installation hasn't completed yet. 
+Please read %%PREFIX%%/%%IPPLANDIR%%/INSTALL carefully and follow it.
+If you won't use Mysql as default database, according to your database, 
+install required port and read %%PREFIX%%/%%IPPLANDIR%%/INSTALL-[ORACLE9i|POSTGRESQL]
+*******************************************************************************
