@@ -807,6 +807,7 @@ blender		ports/graphics/blender
 blender-devel	ports/graphics/blender-devel
 bless		ports/editors/bless
 blimitd		ports/sysutils/blimitd
+blinkensisters	ports/games/blinkensisters
 blitz++		ports/math/blitz++
 blobandconquer	ports/games/blobandconquer
 blobwars	ports/games/blobwars
