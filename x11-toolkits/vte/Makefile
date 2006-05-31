@@ -8,6 +8,7 @@
 
 PORTNAME=	vte
 PORTVERSION=	0.12.2
+PORTREVISION?=	0
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -17,13 +18,12 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Terminal widget with improved accessibility and I18N support
 
 USE_BZIP2=	yes
-PREFIX?=	${X11BASE}
 
 .if !defined(REFERENCE_PORT)
 
-USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_BISON=	yes
+USE_X_PREFIX=	yes
 INSTALLS_SHLIB=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_GETTEXT=	yes

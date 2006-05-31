@@ -1,4 +1,11 @@
+# New ports collection makefile for:	gtkmm20-reference
+# Date created:				09 May 2006
+# Whom:					Jean-Yves Lefort <jylefort@FreeBSD.org>
+#
 # $FreeBSD$
+#
+
+PORTREVISION=	0
 
 PATCH_DEPENDS=	${NONEXISTENT}:${.CURDIR}/../gtkmm20:patch
 BUILD_DEPENDS=	${NONEXISTENT}:${.CURDIR}/../gtkmm20:configure
@@ -6,6 +13,7 @@ BUILD_DEPENDS=	${NONEXISTENT}:${.CURDIR}/../gtkmm20:configure
 PARENT_WRKSRC!=	cd ${.CURDIR}/../gtkmm20 && ${MAKE} -V WRKSRC
 EXTRACT_ONLY=
 USE_GMAKE=	yes
+PREFIX=		${X11BASE}
 
 DOCSDIR=	${PREFIX}/share/doc/gtkmm-2.0
 

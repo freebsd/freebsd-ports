@@ -8,6 +8,7 @@
 
 PORTNAME=	libbonobo
 PORTVERSION=	2.14.0
+PORTREVISION?=	2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -19,8 +20,6 @@ COMMENT=	A component and compound document system for GNOME2
 USE_BZIP2=	yes
 
 .if !defined(REFERENCE_PORT)
-
-PORTREVISION=	2
 
 USE_GMAKE=	yes
 USE_BISON=	yes

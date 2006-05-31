@@ -8,6 +8,7 @@
 
 PORTNAME=	ORBit2
 PORTVERSION=	2.14.0
+PORTREVISION?=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -19,8 +20,6 @@ COMMENT=	High-performance CORBA ORB with support for the C language
 USE_BZIP2=	yes
 
 .if !defined(REFERENCE_PORT)
-
-PORTREVISION=	1
 
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	gnome-vfs
 PORTVERSION=	2.14.2
+PORTREVISION?=	3
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-vfs/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -17,17 +18,14 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME Virtual File System
 
 USE_BZIP2=	yes
-PREFIX?=	${X11BASE}
 
 .if !defined(REFERENCE_PORT)
-
-PORTREVISION=	3
 
 RUN_DEPENDS=	${LOCALBASE}/share/mime/magic:${PORTSDIR}/misc/shared-mime-info
 
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
-USE_XLIB=	yes
+USE_X_PREFIX=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack gnomemimedata gconf2 \
 		libbonobo ltverhack referencehack
 USE_AUTOTOOLS=	libtool:15

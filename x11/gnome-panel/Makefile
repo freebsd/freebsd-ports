@@ -8,6 +8,7 @@
 
 PORTNAME=	gnome-panel
 PORTVERSION=	2.14.2
+PORTREVISION?=	2
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-panel/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -17,19 +18,16 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Panel component for the GNOME 2 Desktop
 
 USE_BZIP2=	yes
-PREFIX?=	${X11BASE}
 
 .if !defined(REFERENCE_PORT)
-
-PORTREVISION=	2
 
 RUN_DEPENDS=	gnome-menu-editor:${PORTSDIR}/deskutils/gnome-menu-editor
 
 USE_GETTEXT=	yes
+USE_X_PREFIX=	yes
 INSTALLS_OMF=	yes
 INSTALLS_SHLIB=	yes
 INSTALLS_ICONS=	yes
-USE_XLIB=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack gnomedesktop \
 		libwnck gnomemenus gnomedocutils ltverhack referencehack
 WANT_GNOME=	yes

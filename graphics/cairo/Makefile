@@ -8,6 +8,7 @@
 
 PORTNAME=	cairo
 PORTVERSION=	1.0.4
+PORTREVISION?=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://cairographics.org/releases/ \
 		${MASTER_SITE_LOCAL}
@@ -17,8 +18,6 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Vector graphics library with cross-device output support
 
 .if !defined(REFERENCE_PORT)
-
-PORTREVISION=	1
 
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		png.5:${PORTSDIR}/graphics/png \

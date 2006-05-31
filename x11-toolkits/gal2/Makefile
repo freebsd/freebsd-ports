@@ -8,6 +8,7 @@
 
 PORTNAME=	gal2
 PORTVERSION=	2.5.3
+PORTREVISION?=	2
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/2.5
@@ -18,18 +19,15 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A collection of widgets taken from GNOME 2 gnumeric
 
 USE_BZIP2=	yes
-PREFIX?=	${X11BASE}
 
 .if !defined(REFERENCE_PORT)
 
-PORTREVISION=	2
-
-USE_XLIB=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomeprefix intlhack libgnomeui libgnomeprintui \
 		ltverhack
 USE_GETTEXT=	yes
+USE_X_PREFIX=	yes
 INSTALLS_SHLIB=	yes
 USE_AUTOTOOLS=  libtool:15
 CONFIGURE_ARGS=	--enable-static --with-libiconv

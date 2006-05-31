@@ -8,23 +8,21 @@
 
 PORTNAME=	fontconfig
 PORTVERSION=	2.3.2
+PORTREVISION?=	5
+PORTEPOCH?=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://fontconfig.org/release/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	An XML-based font configuration API for X Windows
 
-PREFIX?=	${X11BASE}
-
 .if !defined(REFERENCE_PORT)
-
-PORTREVISION=	5
-PORTEPOCH=	1
 
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		expat.6:${PORTSDIR}/textproc/expat2
 
 USE_GMAKE=	yes
+USE_X_PREFIX=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig

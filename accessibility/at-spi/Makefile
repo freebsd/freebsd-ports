@@ -8,6 +8,7 @@
 
 PORTNAME=	at-spi
 PORTVERSION=	1.7.7
+PORTREVISION?=	1
 CATEGORIES=	accessibility x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -17,17 +18,14 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	An Assistive Technology Service Provider Interface
 
 USE_BZIP2=	yes
-PREFIX?=	${X11BASE}
 
 .if !defined(REFERENCE_PORT)
-
-PORTREVISION=	1
 
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomehier intltool gail libbonobo \
 		intlhack
-USE_XLIB=	yes
+USE_X_PREFIX=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-static

@@ -8,6 +8,7 @@
 
 PORTNAME=	gtksourceview
 PORTVERSION=	1.6.1
+PORTREVISION?=	1
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -17,14 +18,11 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A text widget that adds syntax highlighting to the GtkTextView widget
 
 USE_BZIP2=	yes
-PREFIX?=	${X11BASE}
 
 .if !defined(REFERENCE_PORT)
 
-PORTREVISION=	1
-
 USE_GETTEXT=	yes
-USE_XLIB=	yes
+USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes

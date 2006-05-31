@@ -8,6 +8,7 @@
 
 PORTNAME=	glib
 PORTVERSION=	2.10.3
+PORTREVISION?=	0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,sources/${PORTNAME}/2.10,} \
 		ftp://ftp.gtk.org/pub/gtk/v${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}/ \
