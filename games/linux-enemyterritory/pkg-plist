@@ -254,7 +254,6 @@ lib/enemyterritory/pb/pbweb.x86
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/Help/Tech Help/vendor
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/Help/Tech Help
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/Help/_borders
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/Help/_private
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/Help/images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/Help
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

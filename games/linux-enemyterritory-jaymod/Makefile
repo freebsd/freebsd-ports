@@ -7,6 +7,7 @@
 
 PORTNAME=	jaymod
 PORTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	games linux
 MASTER_SITES=	http://jaymod.clanfu.org/lib/downloads/ \
 		http://budjb.com/lib/downloads/ \
@@ -20,7 +21,6 @@ COMMENT=	Jaymod - An Enemy Territory Modification
 RUN_DEPENDS=	et:${PORTSDIR}/games/linux-enemyterritory
 
 ONLY_FOR_ARCHS=	i386
-USE_X_PREFIX=	yes
 USE_LINUX=	yes
 NO_WRKSUBDIR=	yes
 

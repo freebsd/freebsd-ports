@@ -6,42 +6,37 @@
 #
 
 PORTNAME=	enemyterritory
-PORTVERSION=	2.60
-PORTREVISION=	1
+PORTVERSION=	2.60b
 CATEGORIES=	games linux
-MASTER_SITES=	http://mirrors.xmission.com/idsoftware/et/linux/ \
-		http://3dgamers.intelenet.net/pub/3dgamers/games/wolfensteinet/ \
-		http://ftp7.3dgamers.com/pub/3dgamers/games/wolfensteinet/ \
-		http://ftp4.3dgamers.com/pub/3dgamers/games/wolfensteinet/ \
-		http://3dgamers.gameservers.net/pub/3dgamers/games/wolfensteinet/ \
-		http://downloads-3dg.planetmirror.com/pub/3dgamers/games/wolfensteinet/ \
-		http://3dgamers.iinet.net.au/pub/3dgamers/games/wolfensteinet/ \
-		${MASTER_SITE_IDSOFTWARE:S|$|et/linux/|}
+MASTER_SITES=	${MASTER_SITE_IDSOFTWARE:S|$|et/linux/:full|} \
+		${MASTER_SITE_IDSOFTWARE:S|$|et/:patch|}
 PKGNAMEPREFIX=	linux-
-DISTNAME=	et-linux-2.60.x86
-EXTRACT_SUFX=	.run
+DISTNAME=	et-linux-2.60b.x86
+DISTFILES=	et-linux-2.60.x86.run:full ET-2.60b.zip:patch
 
 MAINTAINER=	benlutz@datacomm.ch
 COMMENT=	Wolfenstein: Enemy Territory (Linux version)
 
 ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes
-USE_X_PREFIX=	yes
-NO_PACKAGE=	Package will be 257MB, set FORCE_PACKAGE if you really want to build it
-RESTRICTED=	Redistribution is limited, see license
-NO_WRKSUBDIR=	yes
+NO_CDROM=	Redistribution is limited, see license
 ETDIR=		${PREFIX}/lib/${PORTNAME}
 INSTALL_DIR=	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m ${BINMODE}
+PATCH_260B_DIR=	Enemy Territory 2.60b
 
 do-extract:
 	@${MKDIR} ${WRKSRC}
 	@cd ${WRKSRC} && \
-		${TAIL} +374 ${_DISTDIR}/${DISTFILES} | ${TAR} xfz -
+		${TAIL} +374 ${_DISTDIR}/et-linux-2.60.x86.run | ${TAR} xfz -
+	@cd ${WRKSRC} && \
+		${TAR} xf ${_DISTDIR}/ET-2.60b.zip
 
 post-patch:
 .for FILE in et etded
 	@${SED} -e 's|@ETDIR@|${ETDIR}|' ${FILESDIR}/${FILE}.in > ${WRKSRC}/${FILE}
 .endfor
+	@${MV} "${WRKSRC}/${PATCH_260B_DIR}/linux/et.x86" ${WRKSRC}/bin/Linux/x86
+	@${MV} "${WRKSRC}/${PATCH_260B_DIR}/linux/etded.x86" ${WRKSRC}/bin/Linux/x86
 
 do-build:
 	${BRANDELF} -t Linux ${WRKSRC}/pb/pbweb.x86
@@ -58,6 +53,7 @@ do-install:
 
 .if !defined(NOPORTDOCS)
 	${INSTALL_DIR} ${DOCSDIR}
+	${RMDIR} ${WRKSRC}/Docs/Help/_private
 	${CP} -R ${WRKSRC}/Docs/* ${DOCSDIR}
 	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}/*
 	${FIND} ${DOCSDIR}/* -type f -print0 | \

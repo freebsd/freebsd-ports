@@ -7,6 +7,7 @@
 
 PORTNAME=	enemyterritory-fortress
 PORTVERSION=	1.6
+PORTREVISION=	1
 CATEGORIES=	games linux
 MASTER_SITES=	http://www.sonnensturm.net/download/
 PKGNAMEPREFIX=	linux-
@@ -20,7 +21,6 @@ RUN_DEPENDS=	et:${PORTSDIR}/games/linux-enemyterritory
 
 ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes
-USE_X_PREFIX=	yes
 NO_PACKAGE=	Distfile is 263MB, set FORCE_PACKAGE if you really want to build this package
 RESTRICTED=	Redistribution is limited, see license
 NO_WRKSUBDIR=	yes
