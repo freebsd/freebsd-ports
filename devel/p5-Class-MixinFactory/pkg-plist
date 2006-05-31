@@ -1,0 +1,12 @@
+%%SITE_PERL%%/Class/MixinFactory.pm
+%%SITE_PERL%%/Class/MixinFactory/Changes.pod
+%%SITE_PERL%%/Class/MixinFactory/Factory.pm
+%%SITE_PERL%%/Class/MixinFactory/HasAFactory.pm
+%%SITE_PERL%%/Class/MixinFactory/InsideOutAttr.pm
+%%SITE_PERL%%/Class/MixinFactory/NEXT.pm
+%%SITE_PERL%%/Class/MixinFactory/ReadMe.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/MixinFactory/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/MixinFactory
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
+@dirrm %%SITE_PERL%%/Class/MixinFactory
+@dirrmtry %%SITE_PERL%%/Class
