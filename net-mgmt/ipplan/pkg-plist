@@ -1,3 +1,4 @@
+@unexec if cmp -s %D/%%IPPLANDIR%%/config.php %D/%%IPPLANDIR%%/config.php.sample ; then rm -f %D/%%IPPLANDIR%%/config.php; fi
 %%IPPLANDIR%%/CHANGELOG
 %%IPPLANDIR%%/CONTRIBUTORS
 %%IPPLANDIR%%/DNS-USAGE
@@ -201,7 +202,7 @@
 %%IPPLANDIR%%/class.phpmailer.php
 %%IPPLANDIR%%/class.smtp.php
 %%IPPLANDIR%%/class.templib.php
-%%IPPLANDIR%%/config.php
+%%IPPLANDIR%%/config.php.sample
 %%IPPLANDIR%%/contrib/bind9_revzone.xsl
 %%IPPLANDIR%%/contrib/bind9_zone.dtd
 %%IPPLANDIR%%/contrib/bind9_zone.xsl
@@ -463,6 +464,7 @@
 %%IPPLANDIR%%/templates/swip_wdb1.4_new.xsl
 %%IPPLANDIR%%/themes/default.css
 %%IPPLANDIR%%/themes/pastel.css
+%%IPPLANDIR%%/themes/penguin.css
 %%IPPLANDIR%%/user/Net/DNS.php
 %%IPPLANDIR%%/user/Net/DNS/Header.php
 %%IPPLANDIR%%/user/Net/DNS/Packet.php
@@ -591,4 +593,4 @@
 @dirrm %%IPPLANDIR%%/adodb/contrib
 @dirrm %%IPPLANDIR%%/adodb
 @dirrm %%IPPLANDIR%%/admin
-@dirrm %%IPPLANDIR%%
+@dirrmtry %%IPPLANDIR%%

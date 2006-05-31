@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	ipplan
-PORTVERSION=	4.55
+PORTVERSION=	4.56
 CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	iptrack
-DISTNAME=	${PORTNAME}-4.55
+DISTNAME=	${PORTNAME}-4.56
 
 MAINTAINER=	mt@primats.org.ua
 COMMENT=	IP address management and tracking
@@ -23,8 +23,10 @@ USE_PHP=	gettext pcre xml zlib
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 IPPLANDIR?=	share/${PORTNAME}
-PKGMESSAGE=	${WRKDIR}/pkg-message
+CONFIG=		config.php
+SUB_FILES=	pkg-message
 PLIST_SUB=	IPPLANDIR=${IPPLANDIR}
+SUB_LIST+=	IPPLANDIR=${IPPLANDIR}
 
 .if !defined(WITHOUT_MYSQL)
 USE_PHP+=	mysql
@@ -50,15 +52,22 @@ post-patch:
 		${WRKSRC}/config.php
 	@${FIND} ${WRKSRC} -name '*.orig' -delete -o -name '*.bak' -delete
 
+pre-install:
+	@${MV} ${WRKSRC}/${CONFIG} ${WRKSRC}/${CONFIG}.sample
+
 do-install:
 	@${MKDIR} ${PREFIX}/${IPPLANDIR}
-	@${CP} -R ${WRKSRC}/* ${PREFIX}/${IPPLANDIR}
+	@cd ${WRKSRC} && ${FIND} * | \
+	${CPIO} -dlmp -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/${IPPLANDIR}
 
 post-install:
+.if !exists(${PREFIX}/${IPPLANDIR}/${CONFIG})
+	@${INSTALL_DATA} ${WRKSRC}/${CONFIG}.sample \
+	${PREFIX}/${IPPLANDIR}/${CONFIG}
+.endif
 	@${MKDIR} -m 700 /var/spool/ipplan/uploads \
 		/var/spool/ipplan/exportdns
 	@${CHOWN} -R www:www /var/spool/ipplan
-	@${SED} -e 's|%IPPLANDIR%|${PREFIX}/${IPPLANDIR}|g' ${MASTERDIR}/pkg-message > ${PKGMESSAGE}
 .if defined(WITH_PGSQL)
 	@${REINPLACE_CMD} -e 's|INSTALL|INSTALL-POSTGRESQL|g' ${PKGMESSAGE}
 .endif
