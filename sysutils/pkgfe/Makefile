@@ -8,8 +8,9 @@
 PORTNAME=	pkgfe
 PORTVERSION=	20060403
 CATEGORIES=	sysutils
-MASTER_SITES=	http://ketas.life.ee/pkgfe/releases/ \
-		http://ketas.si.pri.ee/pkgfe/releases/
+MASTER_SITES=	http://kodu.neti.ee/~madis555/pkgfe/releases/ \
+		http://ketas.life.ee/pkgfe/releases/ \
+		http://ketas.si.pri.ee/pkgfe/releases/ \
 
 MAINTAINER=	madis555@hot.ee
 COMMENT=	Ncurses front-end to manage the ports collection
