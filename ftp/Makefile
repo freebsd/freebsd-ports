@@ -61,6 +61,7 @@
     SUBDIR += ocaml-ocurl
     SUBDIR += oftpd
     SUBDIR += omi
+    SUBDIR += p5-File-Fetch
     SUBDIR += p5-Net-FTP-Common
     SUBDIR += p5-Net-FTP-Recursive
     SUBDIR += p5-Net-FTPServer
