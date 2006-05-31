@@ -2354,3 +2354,4 @@ multimedia/splitmpg||2006-05-30|Has expired: mastersite disappeared, no longer m
 www/firefox-flp|www/firefox-i18n|2006-05-31|Single-locale firefox l10n ports are now obsolete
 multimedia/xmps-opendivx-plugin||2006-05-31|Has expired: mastersite disappeared, Project Mayo is now part of DivX.com
 devel/dialyzer||2006-05-31|Application was integrated into Erlang/OTP R11B-0
+security/hostapd||2006-05-31|This version was included in base system
