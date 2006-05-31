@@ -28,7 +28,13 @@ PLIST_FILES=	bin/aria2c \
 		share/locale/de/LC_MESSAGES/aria2c.mo \
 		share/locale/ja/LC_MESSAGES/aria2c.mo
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=	Does not build on 4.x
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's/SA_ONESHOT/SA_RESETHAND/g' ${WRKSRC}/src/main.cc
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
