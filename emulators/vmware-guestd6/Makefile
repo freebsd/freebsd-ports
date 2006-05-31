@@ -25,9 +25,7 @@ IGNOREFILES=	${DISTFILES}
 WRKSRC=		${WRKDIR}/vmware-tools-distrib
 
 ONLY_FOR_ARCHS=	i386 amd64
-USE_RC_SUBR=	yes
-RC_SCRIPT=	${PREFIX}/etc/rc.d/vmware-guestd.sh
-RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
+USE_RC_SUBR=	vmware-guestd.sh
 .if !defined(BATCH)
 IS_INTERACTIVE=	yes
 .endif
@@ -226,6 +224,10 @@ do-build:
 .endif
 
 do-install:
+	@if [ -f ${PREFIX}/etc/rc.d/${USE_RC_SUBR} ]; then \
+		${ECHO_CMD} "Remove old ${PREFIX}/etc/rc.d/${USE_RC_SUBR} before install."; \
+		exit 1; \
+	fi
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/sbin${BITS}/vmware-guestd ${PREFIX}/sbin
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/sbin${BITS}/vmware-checkvm ${PREFIX}/sbin
 .if defined(WITH_VMWARE_VMMEMCTL)
@@ -236,9 +238,6 @@ do-install:
 	${MKDIR} ${VMWARE_KMODDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/modules/binary/FreeBSD${VMWARE_VMXNET_PATH} ${VMWARE_KMODDIR}
 .endif
-	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${FILESDIR}/vmware-guestd.sh > ${WRKDIR}/vmware-guestd.sh
-	@${INSTALL_SCRIPT} ${WRKDIR}/vmware-guestd.sh ${RC_SCRIPT}
 	-${WRKSRC}/lib/sbin${BITS}/vmware-guestd --cmd toolinstall.end
 	${MKDIR} ${PREFIX}/share/vmware-tools
 	${LN} -sfh /usr/bin/true ${PREFIX}/share/vmware-tools/poweroff-vm-default

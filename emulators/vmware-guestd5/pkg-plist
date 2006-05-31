@@ -1,5 +1,4 @@
 @unexec %D/etc/rc.d/vmware-guestd.sh forcestop 2>/dev/null || true
-etc/rc.d/vmware-guestd.sh
 sbin/vmware-checkvm
 sbin/vmware-guestd
 %%VMWARE_VMMEMCTL:%%lib/vmware-tools/modules/vmmemctl.ko

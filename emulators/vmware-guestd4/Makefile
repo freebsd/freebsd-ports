@@ -25,9 +25,7 @@ IGNOREFILES=	${DISTFILES}
 WRKSRC=		${WRKDIR}/vmware-tools-distrib
 
 ONLY_FOR_ARCHS=	i386
-USE_RC_SUBR=	yes
-RC_SCRIPT=	${PREFIX}/etc/rc.d/vmware-guestd.sh
-RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
+USE_RC_SUBR=	vmware-guestd.sh
 .if !defined(BATCH)
 IS_INTERACTIVE=	yes
 .endif
@@ -149,15 +147,16 @@ do-build:
 .endif
 
 do-install:
+	@if [ -f ${PREFIX}/etc/rc.d/${USE_RC_SUBR} ]; then \
+		${ECHO_CMD} "Remove old ${PREFIX}/etc/rc.d/${USE_RC_SUBR} before install."; \
+		exit 1; \
+	fi
 	${INSTALL_PROGRAM} ${WRKSRC}/sbin/vmware-guestd ${PREFIX}/sbin
 	${INSTALL_PROGRAM} ${WRKSRC}/sbin/vmware-checkvm ${PREFIX}/sbin
 .if defined(WITH_VMWARE_VMMEMCTL)
 	${MKDIR} ${VMWARE_KMODDIR}
 	${INSTALL_PROGRAM} ${WRKDIR}/vmmemctl-only/vmmemctl.ko ${VMWARE_KMODDIR}
 .endif
-	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${FILESDIR}/vmware-guestd.sh > ${WRKDIR}/vmware-guestd.sh
-	@${INSTALL_SCRIPT} ${WRKDIR}/vmware-guestd.sh ${RC_SCRIPT}
 	-${LOCALBASE}/sbin/vmware-guestd --cmd toolinstall.end
 .endif
 	${MKDIR} ${PREFIX}/share/vmware-tools
