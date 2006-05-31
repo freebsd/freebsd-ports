@@ -7,3 +7,6 @@ SIZE (gentoo-psi-0.10.tar.bz2) = 211538
 MD5 (psi-indicator.png) = 0d5cafd17325fc912c4855252d73378f
 SHA256 (psi-indicator.png) = a0e9adcd0409d23c9033170ceb8f22980ba6d5e14f19234630f9986bfb94bce2
 SIZE (psi-indicator.png) = 300
+MD5 (psi-reverse_trayicon2.patch) = c2528c15be8277434647506d791663d8
+SHA256 (psi-reverse_trayicon2.patch) = 2a690a7cda661884ce3424530ac6569a7fcb1e6c97342c120767a0d5058c403c
+SIZE (psi-reverse_trayicon2.patch) = 937

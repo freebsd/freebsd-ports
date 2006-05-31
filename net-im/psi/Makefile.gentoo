@@ -6,10 +6,11 @@
 #
 
 MASTER_SITES+=	http://vivid.dat.pl/psi/:vivid \
+		http://mirror.inerd.com/FreeBSD/distfiles/psi-gentoo/:inerd \
 		http://csociety-ftp.ecn.purdue.edu/pub/gentoo-portage/net-im/psi/files/:portage \
-		${MASTER_SITE_GENTOO:C/gentoo\/%SUBDIR%/gentoo-portage\/net-im\/psi\/files/g}:portage
+		${MASTER_SITE_GENTOO:C/gentoo\/%SUBDIR%\//gentoo-portage\/net-im\/psi\/files\/:portage/g}
 
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} gentoo-psi-0.10.tar.bz2:vivid psi-indicator.png:portage
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} gentoo-psi-0.10.tar.bz2:vivid psi-indicator.png:portage psi-reverse_trayicon2.patch:inerd
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} gentoo-psi-0.10.tar.bz2
 GENTOO_PATCHES=	${WRKDIR}/0.10
 PKGNAMESUFFIX=	-gentoo
@@ -158,12 +159,17 @@ post-patch::
 
 	${GPATCH} -d ${WRKSRC} -p1 < ${GENTOO_PATCHES}/psi-gentoo-version.patch
 
+	${CP} ${DISTDIR}/psi-reverse_trayicon2.patch ${GENTOO_PATCHES}
+	${GPATCH} -d ${WRKSRC} -p0 < ${GENTOO_PATCHES}/psi-reverse_trayicon2.patch
+
 	# Repair Makefile
 	${MV} ${WRKSRC}/src/psiaccount.cpp ${WRKSRC}/src/psiaccount.cpp.orig
 	${SED} 	-e 's/include"adhoc.h"/include"..\/adhoc.h"/' \
 		-e 's/include"rc.h"/include"..\/rc.h"/' \
 		-e 's/include"adhoc_fileserver.h"/include"..\/adhoc_fileserver.h"/' \
 		${WRKSRC}/src/psiaccount.cpp.orig > ${WRKSRC}/src/psiaccount.cpp
+
+	cd ${WRKSRC} && ${PATCH} < ${FILESDIR}/gentoopatch-src_psiaccount.cpp
 
 	# Move misplaced files
 	${MV} 	${WRKSRC}/adhoc.cpp \
