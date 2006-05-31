@@ -144,8 +144,8 @@ share/gnome/help/window-list/ko/figures/window_list_group_applet.png
 share/gnome/help/window-list/ko/legal.xml
 share/gnome/help/window-list/ko/window-list.xml
 share/gnome/help/window-list/sv/figures/window_list_applet.png
-share/gnome/help/window-list/sv/figures/window_list_group_applet.png
 share/gnome/help/window-list/sv/figures/window_list_group.png
+share/gnome/help/window-list/sv/figures/window_list_group_applet.png
 share/gnome/help/window-list/sv/legal.xml
 share/gnome/help/window-list/sv/window-list.xml
 share/gnome/help/window-list/uk/figures/window_list_applet.png
@@ -246,6 +246,7 @@ share/gnome/omf/window-list/window-list-es.omf
 share/gnome/omf/window-list/window-list-fr.omf
 share/gnome/omf/window-list/window-list-it.omf
 share/gnome/omf/window-list/window-list-uk.omf
+share/gnome/omf/window-list/window-list-zh_CN.omf
 share/gnome/omf/workspace-switcher/workspace-switcher-C.omf
 share/gnome/omf/workspace-switcher/workspace-switcher-es.omf
 share/gnome/omf/workspace-switcher/workspace-switcher-fr.omf
@@ -276,8 +277,8 @@ share/locale/az/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/be/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/bg/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/bn/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/bs/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/br/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/bs/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/ca/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/cs/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/cy/LC_MESSAGES/gnome-panel-2.0.mo
@@ -312,6 +313,7 @@ share/locale/ky/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/li/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/lt/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/lv/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/mg/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/mi/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/mk/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/ml/LC_MESSAGES/gnome-panel-2.0.mo
@@ -322,7 +324,6 @@ share/locale/nb/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/ne/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/nl/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/nn/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/no/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/nso/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/or/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/pa/LC_MESSAGES/gnome-panel-2.0.mo
@@ -368,6 +369,8 @@ share/locale/zu/LC_MESSAGES/gnome-panel-2.0.mo
 @dirrmtry share/locale/mr
 @dirrmtry share/locale/mi/LC_MESSAGES
 @dirrmtry share/locale/mi
+@dirrmtry share/locale/mg/LC_MESSAGES
+@dirrmtry share/locale/mg
 @dirrmtry share/locale/ky/LC_MESSAGES
 @dirrmtry share/locale/ky
 @dirrmtry share/locale/ka/LC_MESSAGES
@@ -432,6 +435,16 @@ share/locale/zu/LC_MESSAGES/gnome-panel-2.0.mo
 @dirrm share/gnome/help/window-list/C/figures
 @dirrm share/gnome/help/window-list/C
 @dirrm share/gnome/help/window-list
+@dirrm share/gnome/help/fish/uk/figures
+@dirrm share/gnome/help/fish/uk
+@dirrm share/gnome/help/fish/it/figures
+@dirrm share/gnome/help/fish/it
+@dirrm share/gnome/help/fish/fr/figures
+@dirrm share/gnome/help/fish/fr
+@dirrm share/gnome/help/fish/es/figures
+@dirrm share/gnome/help/fish/es
+@dirrm share/gnome/help/fish/C/figures
+@dirrm share/gnome/help/fish/C
 @dirrm share/gnome/help/fish-applet-2/zh_TW/figures
 @dirrm share/gnome/help/fish-applet-2/zh_TW
 @dirrm share/gnome/help/fish-applet-2/zh_CN/figures
@@ -445,16 +458,6 @@ share/locale/zu/LC_MESSAGES/gnome-panel-2.0.mo
 @dirrm share/gnome/help/fish-applet-2/de/figures
 @dirrm share/gnome/help/fish-applet-2/de
 @dirrm share/gnome/help/fish-applet-2
-@dirrm share/gnome/help/fish/uk/figures
-@dirrm share/gnome/help/fish/uk
-@dirrm share/gnome/help/fish/it/figures
-@dirrm share/gnome/help/fish/it
-@dirrm share/gnome/help/fish/fr/figures
-@dirrm share/gnome/help/fish/fr
-@dirrm share/gnome/help/fish/es/figures
-@dirrm share/gnome/help/fish/es
-@dirrm share/gnome/help/fish/C/figures
-@dirrm share/gnome/help/fish/C
 @dirrm share/gnome/help/fish
 @dirrm share/gnome/help/clock/zh_TW/figures
 @dirrm share/gnome/help/clock/zh_TW
