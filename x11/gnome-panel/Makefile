@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gnome-panel
-PORTVERSION=	2.14.1
+PORTVERSION=	2.14.2
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-panel/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
