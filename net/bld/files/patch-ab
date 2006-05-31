@@ -1,5 +1,5 @@
---- bld.conf.sample.orig	Thu Oct 28 12:52:25 2004
-+++ bld.conf.sample	Thu Oct 28 12:52:37 2004
+--- bld.conf.sample.orig	Thu May 18 17:32:56 2006
++++ bld.conf.sample	Thu May 18 17:33:33 2006
 @@ -26,10 +26,10 @@
  #log_level=1
  

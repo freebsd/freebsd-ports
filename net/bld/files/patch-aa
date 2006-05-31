@@ -1,6 +1,6 @@
---- Makefile.in.orig	Thu Oct 28 11:44:20 2004
-+++ Makefile.in	Thu Oct 28 11:44:43 2004
-@@ -49,6 +49,10 @@
+--- Makefile.in.orig	Thu May 18 17:31:03 2006
++++ Makefile.in	Thu May 18 17:31:45 2006
+@@ -52,6 +52,10 @@
  	    && (cd $(DESTDIR)$(sbindir) && ln -s $(SUBMITNAME) $(INSERTNAME)) \
  	    && (cd $(DESTDIR)$(sbindir) && ln -s $(SUBMITNAME) $(DECRNAME))
  	strip $(DESTDIR)$(sbindir)/$(SUBMITNAME)
@@ -8,6 +8,6 @@
 +	cp utils/bld-pf_log.pl $(DESTDIR)/$(sbindir)
 +	[ -d $(DESTDIR)$(sysconfdir) ] || mkdir -p $(DESTDIR)$(sysconfdir)
 +	cp bld.conf.sample $(DESTDIR)/$(sysconfdir)
- 	[ -d $(DESTDIR)$(mandir) ] || mkdir -p $(DESTDIR)$(mandir)/man8
+ 	[ -d $(DESTDIR)$(mandir)/man8 ] || mkdir -p $(DESTDIR)$(mandir)/man8
  	$(GZIP) -c bld.8 > $(DESTDIR)$(mandir)/man8/bld.8.gz
  	$(GZIP) -c bldread.8 > $(DESTDIR)$(mandir)/man8/bldread.8.gz
