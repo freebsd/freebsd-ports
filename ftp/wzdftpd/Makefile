@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	wzdftpd
-PORTVERSION=	0.6.1
-PORTREVISION=	2
+PORTVERSION=	0.7.2
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,12 +14,12 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Modular FTP server configurable online using SITE commands
 
-USE_RC_SUBR=	yes
+USE_RC_SUBR=	wzdftpd.sh
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 USE_GNOME=	pkgconfig
-CONFIGURE_ARGS+=	--without-pam --without-pgsql --disable-bonjour
+CONFIGURE_ARGS+=	--without-pam --disable-pgsql --disable-bonjour --mandir=${MANPREFIX}/man
 CONFIGURE_ENV=	CPPFLAGS="${CPPLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
@@ -72,8 +71,8 @@ LIB_DEPENDS+=	gnutls.15:${PORTSDIR}/security/gnutls
 CONFIGURE_ARGS+=	--disable-gnutls
 .endif
 
-.if defined(WITH_IPV6)
-CONFIGURE_ARGS+=	--enable-ipv6
+.if !defined(WITH_IPV6)
+CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
 .if !defined(WITH_PERL)
@@ -88,7 +87,7 @@ PLIST_SUB+=	PERL=""
 USE_MYSQL=	yes
 PLIST_SUB+=	MYSQL=""
 .else
-CONFIGURE_ARGS+=	--without-mysql
+CONFIGURE_ARGS+=	--disable-mysql
 PLIST_SUB+=	MYSQL="@comment "
 .endif
 
@@ -126,14 +125,11 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 .endif
-	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${FILESDIR}/wzdftpd.sh > ${PREFIX}/etc/rc.d/wzdftpd.sh
-	@${CHMOD} ${BINMODE} ${PREFIX}/etc/rc.d/wzdftpd.sh
-	@if test ! -f ${PREFIX}/etc/wzd.cfg; then \
-		${CP} ${PREFIX}/etc/wzd.cfg.sample ${PREFIX}/etc/wzd.cfg; \
+	@if test ! -f ${PREFIX}/etc/wzdftpd/wzd.cfg; then \
+		${CP} ${PREFIX}/etc/wzdftpd/wzd.cfg.sample ${PREFIX}/etc/wzdftpd/wzd.cfg; \
 	fi
-	@if test ! -f ${PREFIX}/etc/users; then \
-		${CP} ${PREFIX}/etc/users.sample ${PREFIX}/etc/users; \
+	@if test ! -f ${PREFIX}/etc/wzdftpd/users; then \
+		${CP} ${PREFIX}/etc/wzdftpd/users.sample ${PREFIX}/etc/wzdftpd/users; \
 	fi
 
 .include <bsd.port.post.mk>
