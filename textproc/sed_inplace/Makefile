@@ -9,10 +9,13 @@ PORTNAME=	sed_inplace
 PORTVERSION=	2002.10.19
 CATEGORIES=	textproc
 MASTER_SITES=	#
-DISTFILES=	#
+DISTNAME=	#
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A modified version of the sed(1) which can do in-place editing of files
+
+DEPRECATED=	This port is not required anymore
+EXPIRATION_DATE=2006-07-01
 
 NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/sed_inplace
@@ -21,13 +24,13 @@ MAKEFILE=	${PKGDIR}/src/Makefile
 MAKE_ENV=	PKGDIR="${PKGDIR}"
 
 .ifdef USE_REINPLACE
-IGNORE=	Cannot install: you have `USE_REINPLACE' variable defined either in environment or in make(1) arguments. Please undefine and try again
+IGNORE=	cannot be installed: you have `USE_REINPLACE' variable defined either in environment or in make(1) arguments. Please undefine and try again
 .endif
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} > 500033
-#IGNORE=		"is in the base system"
+IGNORE=		is in the base system
 .endif
 
 do-install:
