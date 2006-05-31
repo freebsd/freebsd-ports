@@ -7997,6 +7997,7 @@ p5-Class-MOP	ports/devel/p5-Class-MOP
 p5-Class-MakeMethods	ports/devel/p5-Class-MakeMethods
 p5-Class-MethodMaker	ports/devel/p5-Class-MethodMaker
 p5-Class-MethodMapper	ports/devel/p5-Class-MethodMapper
+p5-Class-MixinFactory	ports/devel/p5-Class-MixinFactory
 p5-Class-NamedParms	ports/devel/p5-Class-NamedParms
 p5-Class-ObjectTemplate	ports/devel/p5-Class-ObjectTemplate
 p5-Class-ObjectTemplate-DB	ports/devel/p5-Class-ObjectTemplate-DB
