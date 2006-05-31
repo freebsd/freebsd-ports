@@ -8,7 +8,9 @@
 PORTNAME=	solarconquest
 PORTVERSION=	0.2
 CATEGORIES=	games
-MASTER_SITES=	http://games.sajthelper.com/
+MASTER_SITES=	http://games.sajthelper.com/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	ehaupt
 DISTNAME=	SolarConquest
 
 MAINTAINER=	amdmi3@mail.ru
