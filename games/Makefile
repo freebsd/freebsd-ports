@@ -592,6 +592,7 @@
     SUBDIR += smiley
     SUBDIR += sokoban
     SUBDIR += sol
+    SUBDIR += solarconquest
     SUBDIR += solarwolf
     SUBDIR += sopwith
     SUBDIR += spacearyarya
