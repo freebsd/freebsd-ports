@@ -1,0 +1,6 @@
+MD5 (lua_gettext.c?rev=1.15) = 24e06662fbce4903a90f6d9c96baae9e
+SHA256 (lua_gettext.c?rev=1.15) = c3ba6db0e0220f2789d06099ce28372b5a30234ffee78caf5fa47efdf274baaf
+SIZE (lua_gettext.c?rev=1.15) = 1429
+MD5 (gettext.lua?rev=1.5) = 16a2fcabd0f161712d00b60e93d1c849
+SHA256 (gettext.lua?rev=1.5) = a861d10a6aba7d0949c0851fff4d42a494bfaffbcc93a163ec85cecb38309fe3
+SIZE (gettext.lua?rev=1.5) = 315
