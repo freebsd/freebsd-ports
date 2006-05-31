@@ -841,6 +841,7 @@
     SUBDIR += yahtzee
     SUBDIR += yamsweeper
     SUBDIR += zangband
+    SUBDIR += zatacka
     SUBDIR += zephulor
     SUBDIR += znibbles
     SUBDIR += zoom
