@@ -796,6 +796,7 @@
     SUBDIR += p5-Class-MakeMethods
     SUBDIR += p5-Class-MethodMaker
     SUBDIR += p5-Class-MethodMapper
+    SUBDIR += p5-Class-MixinFactory
     SUBDIR += p5-Class-NamedParms
     SUBDIR += p5-Class-ObjectTemplate
     SUBDIR += p5-Class-ObjectTemplate-DB
