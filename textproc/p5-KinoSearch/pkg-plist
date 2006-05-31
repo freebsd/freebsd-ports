@@ -1,3 +1,5 @@
+bin/kinotidy
+bin/dump_index
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/KinoSearch/KinoSearch.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/KinoSearch/KinoSearch.so
 %%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch/InvIndexer.pm

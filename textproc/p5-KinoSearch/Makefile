@@ -6,9 +6,8 @@
 #
 
 PORTNAME=	KinoSearch
-PORTVERSION=	0.10
+PORTVERSION=	0.11
 CATEGORIES=	textproc perl5
-#MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITES=	http://www.rectangular.com/downloads/
 PKGNAMEPREFIX=	p5-
 
@@ -23,6 +22,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_MODBUILD=	yes
 
+MAN1=	dump_index.1
 MAN3=	KinoSearch.3 \
 	KinoSearch::Analysis::Analyzer.3 \
 	KinoSearch::Analysis::LCNormalizer.3 \
