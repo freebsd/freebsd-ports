@@ -1,16 +1,17 @@
 .\" $FreeBSD$
+.\"  $MCom: portlint/portlint.1,v 1.9 2006/05/30 04:47:45 marcus Exp $
 .\"
 .\" Copyright (c) 1997 by Jun-ichiro Hagino <itojun@itojun.org>.
 .\" All Rights Reserved.  Absolutely no warranty.
 .\"
-.Dd July 11, 1997
+.Dd May 30, 2006
 .Dt PORTLINT 1
 .Sh NAME
 .Nm portlint
 .Nd a verifier for port directories
 .Sh SYNOPSIS
 .Nm portlint
-.Op Fl abchvtACNV
+.Op Fl abcghvtACNV
 .Op Fl M Ar ENV
 .Op Fl B Ar n
 .Op Ar dir
@@ -53,6 +54,12 @@ Committer flag.
 It will add several checks useful only for committers.
 If you are a committer and performing check just before committing a port,
 use this option.
+.It Fl g
+Group and consolidate errors so that redundant error messages are rolled
+up into one line with a list of all affected line numbers (where
+appropriate).  This option is disabled if
+.Fl v
+is specified.
 .It Fl h
 Show the summary of command line options, then exit.
 .It Fl v
@@ -92,7 +99,7 @@ If omitted, check will be performed over the current directory.
 Messages will be sent to standard output, not standard error output.
 .Bl -tag -width WARN: foobaa
 .It FATAL: ...
-This type of error messages suggest that there is some fatal error
+This type of error message suggests that there is some fatal error
 in the port directory.
 For example, if some files need a rewrite, or if
 some inevitable files are missing, this message will show up.
@@ -102,7 +109,7 @@ a port via send-pr to the committers.
 .\"on behalf of the submitters, which may result in delay of
 .\"the development of operating system itself.
 .It WARN: ...
-This type of error messages suggest that some files may (or may not)
+This type of error message suggests that some files may (or may not)
 need some fix.
 Basically, warnings are produced when
 .Nm
@@ -115,7 +122,7 @@ uses for sanity checks.
 In those cases, the user should evaluate the result manually,
 and obey/ignore the result.
 .It OK: ...
-This type of messages are used in verbose mode
+This types of message is used in verbose mode
 .Pq Fl v .
 .El
 .Sh ENVIRONMENT
