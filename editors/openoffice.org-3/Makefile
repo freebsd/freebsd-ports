@@ -47,13 +47,7 @@ WITHOUT_CPU_CFLAGS=	true
 
 ONLY_FOR_ARCHS=	amd64 i386
 
-# XXX Cut & paste from bsd.port.mk.
-UNAME?=	/usr/bin/uname
-.if !defined(ARCH)
-ARCH!=  ${UNAME} -p
-.endif
-
-.if ${ARCH} == amd64
+.if ${MACHINE_ARCH} == amd64
 BROKEN=	"Work in progress"
 .endif
 
