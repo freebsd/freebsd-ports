@@ -8,7 +8,8 @@
 PORTNAME=	l0pht-watch
 PORTVERSION=	1.1
 CATEGORIES=	security
-MASTER_SITES=	http://www.atstake.com/research/tools/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	vs
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	dom@happygiraffe.net
