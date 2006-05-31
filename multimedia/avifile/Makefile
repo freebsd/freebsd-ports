@@ -64,6 +64,10 @@ PLIST_SUB+=	QT="@comment "
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 500000
+BROKEN=		xvid plugin fails to build
+.endif
+
 .if ${OSVERSION} >= 600000
 WITH_OPTIMIZED_CFLAGS=	yes
 .endif
