@@ -29,9 +29,13 @@ WITH_FORTRAN=	yes
 FC=	${LOCALBASE}/bin/gfortran41
 F77=	${FC}
 
+.ifdef WITH_OPTIMIZED_FLAGS
+FCFLAGS+=        -O3 -ffast-math -funroll-loops
+.endif
+
 USE_AUTOTOOLS=	autoconf:259
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	FC=${FC} F77=${FC} FCFLAGS=${FCFLAGS}
+CONFIGURE_ENV+=	FC=${FC} F77=${FC} FCFLAGS="${FCFLAGS}"
 USE_GMAKE=	yes
 ALL_TARGET=
 INSTALLS_SHLIB=	yes
