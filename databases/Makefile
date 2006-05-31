@@ -302,6 +302,7 @@
     SUBDIR += pgbash
     SUBDIR += pgcluster
     SUBDIR += pgpool
+    SUBDIR += pgtop
     SUBDIR += pgworksheet
     SUBDIR += php-sqlrelay
     SUBDIR += php4-dba
