@@ -147,7 +147,7 @@ DJ970_SRCS=	${DJ970}.c.gz
 # ijs driver with ijsgimpprint (part of print/gimp-print port) is highly
 # recommended.
 #
-# For that reason, integlation of stp driver is disabled by default.
+# For that reason, integration of stp driver is disabled by default.
 GPRINT=		gimp-print
 GPRINT_VERS=	4.2.7
 GPRINT_NAME=	${GPRINT}-${GPRINT_VERS}
@@ -256,7 +256,7 @@ pre-everything::
 
 post-extract:
 	${ECHO_MSG} ">>> in post-extract ..."
-# normazile WRKSRC so things like cups-pstoraster may work
+# normalize WRKSRC so things like cups-pstoraster may work
 	${LN} -sf ${WRKDIR}/${DISTNAME} ${WRKDIR}/${PORTNAME}
 # ** 3rd party driver **
 # Note: don't forget to add those devices in scripts/configure,
