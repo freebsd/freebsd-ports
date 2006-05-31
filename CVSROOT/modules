@@ -8922,6 +8922,7 @@ p5-Module-Info-File	ports/devel/p5-Module-Info-File
 p5-Module-Install	ports/devel/p5-Module-Install
 p5-Module-Load	ports/devel/p5-Module-Load
 p5-Module-Load-Conditional	ports/devel/p5-Module-Load-Conditional
+p5-Module-Loaded	ports/devel/p5-Module-Loaded
 p5-Module-Pluggable	ports/devel/p5-Module-Pluggable
 p5-Module-Pluggable-Fast	ports/devel/p5-Module-Pluggable-Fast
 p5-Module-Pluggable-Ordered	ports/devel/p5-Module-Pluggable-Ordered
