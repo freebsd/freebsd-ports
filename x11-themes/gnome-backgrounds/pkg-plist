@@ -45,10 +45,10 @@ share/locale/ku/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/ky/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/lt/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/lv/LC_MESSAGES/gnome-backgrounds.mo
+share/locale/mg/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/nb/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/ne/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/nl/LC_MESSAGES/gnome-backgrounds.mo
-share/locale/no/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/or/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/pa/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/pl/LC_MESSAGES/gnome-backgrounds.mo
@@ -76,6 +76,8 @@ share/locale/zh_TW/LC_MESSAGES/gnome-backgrounds.mo
 @dirrmtry share/locale/te
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
+@dirrmtry share/locale/mg/LC_MESSAGES
+@dirrmtry share/locale/mg
 @dirrmtry share/locale/ky/LC_MESSAGES
 @dirrmtry share/locale/ky
 @dirrmtry share/locale/ku/LC_MESSAGES
