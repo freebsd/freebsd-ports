@@ -19,7 +19,6 @@ PLIST_FILES=	bin/ipfwcount
 MAN1=		ipfwcount.1
 
 USE_PERL5=	yes
-USE_REINPLACE=	yes
 
 .if !defined(NOPORTDOCS)
 PLIST_DIRS=	%%EXAMPLESDIR%%
