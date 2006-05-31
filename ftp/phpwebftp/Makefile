@@ -7,10 +7,11 @@
 
 PORTNAME=	phpwebftp
 PORTVERSION=	3.3
+PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	phpwebftp
-DISTNAME=	${PORTNAME}33
+MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 
 MAINTAINER=	acardenas@bsd.org.pe
 COMMENT=	A set of PHP-scripts to manage FTP over the web
@@ -18,19 +19,19 @@ COMMENT=	A set of PHP-scripts to manage FTP over the web
 USE_ZIP=	yes
 NO_BUILD=	yes
 USE_PHP=	ftp
-PHPWEBFTPDIR?=	www/data-dist/${PORTNAME}
-PLIST_SUB+=	PHPWEBFTPDIR=${PHPWEBFTPDIR}
-WRKSRC=	${WRKDIR}/${PORTNAME}
+PHPWEBFTPDIR?=	www/${PORTNAME}
+PLIST_SUB+=	PHPWEBFTPDIR=${PHPWEBFTPDIR} WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
+WRKSRC=		${WRKDIR}/${PORTNAME}
+INSTALL_DIRE=	${INSTALL} -d -m 0755 -o ${WWWOWN} -g ${WWWGRP}
+INSTALL_FILE=	${INSTALL} -m 0644 -o ${WWWOWN} -g ${WWWGRP}
 
-do-configure:
-	@${FIND} -d ${WRKSRC} -name CVS -type d -print0 | ${XARGS} -0 ${RM} -R
+post-extract:
+	@${FIND} -d ${WRKSRC} -name CVS -type d -exec ${RM} -R "{}" \;
 
 do-install:
-	${MKDIR} ${PREFIX}/${PHPWEBFTPDIR}
+	${INSTALL_DIRE} ${PREFIX}/${PHPWEBFTPDIR}
 	@cd ${WRKSRC} && \
-		${FIND} * -type d -exec ${MKDIR} "${PREFIX}/${PHPWEBFTPDIR}/{}" \; && \
+		${FIND} * -type d -exec ${INSTALL_DIRE} "${PREFIX}/${PHPWEBFTPDIR}/{}" \; && \
 		${FIND} -E * -type f -iregex ".*\.(php|html|css|gif|js)" \
-			-exec ${INSTALL_DATA} "{}" "${PREFIX}/${PHPWEBFTPDIR}/{}" \;
-	@${CHGRP} -R ${WWWGRP} ${PREFIX}/${PHPWEBFTPDIR}
-
+			-exec ${INSTALL_FILE} "{}" "${PREFIX}/${PHPWEBFTPDIR}/{}" \;
 .include <bsd.port.mk>
