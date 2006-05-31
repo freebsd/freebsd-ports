@@ -8,7 +8,9 @@
 PORTNAME=	pipepanic
 PORTVERSION=	0.1.3
 CATEGORIES=	games
-MASTER_SITES=	http://www.users.waitrose.com/~thunor/pipepanic/dload/
+MASTER_SITES=	http://www.users.waitrose.com/~thunor/pipepanic/dload/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	ehaupt
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 
 MAINTAINER=	amdmi3@mail.ru
