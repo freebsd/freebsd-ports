@@ -24,6 +24,9 @@ FONTSDIR=	lib/X11/fonts/wqy
 
 PLIST_SUB=	FONTSDIR=${FONTSDIR}
 
+BUILD_DEPENDS+=        mkfontdir:${X_CLIENTS_PORT}
+BUILD_DEPENDS+=        fc-cache:${PORTSDIR}/x11-fonts/fontconfig
+
 .if !defined(NOPORTDOCS)
 PORTDOCS=	ChangeLog CREDIT GPL.txt INSTALL INSTALL.zh.gb2312 LOGO.png PLEASE_HELP_TO_IMPROVE README STAT
 .endif
