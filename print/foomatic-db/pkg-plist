@@ -1540,6 +1540,7 @@ share/foomatic/db/source/driver/ras3.upp.xml
 share/foomatic/db/source/driver/ras32.upp.xml
 share/foomatic/db/source/driver/ras4.upp.xml
 share/foomatic/db/source/driver/ras8m.upp.xml
+share/foomatic/db/source/driver/rastertokmXXXXdl.xml
 share/foomatic/db/source/driver/rpdl.xml
 share/foomatic/db/source/driver/s400a1.upp.xml
 share/foomatic/db/source/driver/s400b1.upp.xml
@@ -3183,6 +3184,10 @@ share/foomatic/db/source/printer/Infotec-IS_2235.xml
 share/foomatic/db/source/printer/Infotec-IS_2245.xml
 share/foomatic/db/source/printer/Kodak-DigiSource_9110.xml
 share/foomatic/db/source/printer/Kodak-IS_70_CPII.xml
+share/foomatic/db/source/printer/KonicaMinolta-magicolor_2300_DL.xml
+share/foomatic/db/source/printer/KonicaMinolta-magicolor_2430_DL.xml
+share/foomatic/db/source/printer/KonicaMinolta-magicolor_5430_DL.xml
+share/foomatic/db/source/printer/KonicaMinolta-magicolor_5440_DL.xml
 share/foomatic/db/source/printer/Kyocera-F-1000.xml
 share/foomatic/db/source/printer/Kyocera-F-1010.xml
 share/foomatic/db/source/printer/Kyocera-F-1200.xml
@@ -3400,7 +3405,6 @@ share/foomatic/db/source/printer/Minolta-magicolor_2200_DL.xml
 share/foomatic/db/source/printer/Minolta-magicolor_2300W.xml
 share/foomatic/db/source/printer/Minolta-magicolor_2300_DL.xml
 share/foomatic/db/source/printer/Minolta-magicolor_2400W.xml
-share/foomatic/db/source/printer/Minolta-magicolor_2430_DL.xml
 share/foomatic/db/source/printer/Minolta-magicolor_3100.xml
 share/foomatic/db/source/printer/Mitsubishi-CP50_Color_Printer.xml
 share/foomatic/db/source/printer/NEC-MultiWriter.xml
