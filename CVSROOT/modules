@@ -14741,6 +14741,7 @@ zabbix-agent	ports/net/zabbix-agent
 zabit		ports/mail/zabit
 zangband	ports/games/zangband
 zaptel		ports/misc/zaptel
+zatacka		ports/games/zatacka
 zebedee		ports/security/zebedee
 zebra		ports/net/zebra
 zebra-server	ports/net/zebra-server
