@@ -7,6 +7,7 @@
 
 PORTNAME=	XaraLX
 PORTVERSION?=	0.5r1175
+PORTREVISION?=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://downloads.xara.com/opensource/
 DISTFILES?=	${PORTNAME}Src-${PORTVERSION}.tar.bz2
@@ -15,6 +16,7 @@ MAINTAINER=	vd@FreeBSD.org
 COMMENT?=	Top-tier vector/general purpose graphics program (recommended version)
 
 USE_BZIP2=	yes
+USE_X_PREFIX=	yes
 
 #WXDEP=	${X11BASE}/libwx_baseu-2.6.so.0.3.1
 WXDEP=	wxgtk2-unicode>=2.6.3
@@ -45,15 +47,32 @@ MAKE_ENV+=	INCLUDES="-I../wxOil -I- -I${LOCALBASE}/include/dlmalloc"
 
 USE_GCC=	3.4+
 
+MAN1=	XaraLX${PKGNAMESUFFIX}.1
+
+.if !defined(NOPORTDOCS)
+DOCS_IN_WRKSRC=	AUTHORS GPL LICENSE README
+DOCS_IN_DOC=	en/xaralx.htm gifutil.txt mtrand.txt
+PORTDOCS=	${DOCS_IN_WRKSRC} en ${DOCS_IN_DOC:M*.txt}
+.endif
+
+# make non-conflicting with the slave port
+DOCSDIR?=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
+EXAMPLESDIR?=	${PREFIX}/share/examples/${PORTNAME}${PKGNAMESUFFIX}
+
+PIXMAPSDIR=	${PREFIX}/share/pixmaps
+
+# directories with .xar files
+XARDIRS=	Designs Templates TextDesigns testfiles
+
+PLIST_SUB+=	PKGNAMESUFFIX=${PKGNAMESUFFIX} \
+		DESKTOPDIR=${DESKTOPDIR:S|^${PREFIX}/||} \
+		PIXMAPSDIR=${PIXMAPSDIR:S|^${PREFIX}/||}
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != "i386" && ${ARCH} != "amd64" && ${ARCH} != "powerpc"
 BROKEN=	does not configure due to the lack of CDraw libraries for ${ARCH}
 .endif
-
-PROG=	XaraLX${PKGNAMESUFFIX}
-
-PLIST_FILES=	bin/${PROG}
 
 # we need to strip wxOil from the include path because it contains file
 # named strings.h which when included by /usr/include/string.h results
@@ -61,8 +80,42 @@ PLIST_FILES=	bin/${PROG}
 post-patch:
 	${REINPLACE_CMD} -E -e 's|-I[^[:space:]]*/wxOil[[:space:]]||g' \
 		${WRKSRC}/Makefile.am
+	${REINPLACE_CMD} -E \
+		-e 's/^Name=Xara LX$$/Name=Xara LX (${PORTVERSION})/' \
+		-e 's/^FilePattern=xaralx;$$/FilePattern=XaraLX/' \
+		-e 's/^Exec=xaralx %F$$/Exec=XaraLX %F/' \
+		-e 's/^TryExec=xaralx$$/TryExec=XaraLX/' \
+		${WRKSRC}/xaralx.desktop
 
 pre-configure:
 	cd ${WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${AUTORECONF} -f -s -i
+
+.if !target(do-install)
+do-install:
+	${MKDIR} ${DESKTOPDIR}
+	${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/XaraLX \
+		${PREFIX}/bin/XaraLX${PKGNAMESUFFIX}
+	${INSTALL_DATA} ${WRKSRC}/xaralx.desktop \
+		${DESKTOPDIR}/xaralx${PKGNAMESUFFIX}.desktop
+	${INSTALL_DATA} ${WRKSRC}/xaralx.png \
+		${PIXMAPSDIR}/xaralx${PKGNAMESUFFIX}.png
+.for xardir in ${XARDIRS}
+	${MKDIR} ${EXAMPLESDIR}/${xardir}
+	${INSTALL_DATA} ${WRKSRC}/${xardir}/*.xar ${EXAMPLESDIR}/${xardir}/
+.endfor
+	${INSTALL_MAN} ${WRKSRC}/doc/XaraLX.1 \
+		${MANPREFIX}/man/man1/XaraLX${PKGNAMESUFFIX}.1
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${DOCSDIR}/en
+.for d in ${DOCS_IN_WRKSRC}
+	${INSTALL_DATA} ${WRKSRC}/${d} ${DOCSDIR}/${d}
+.endfor
+.for d in ${DOCS_IN_DOC}
+	${INSTALL_DATA} ${WRKSRC}/doc/${d} ${DOCSDIR}/${d}
+.endfor
+.endif
+.endif
 
 .include <bsd.port.post.mk>
