@@ -1,0 +1,17 @@
+--- Makefile.orig	Wed May 17 00:11:29 2006
++++ Makefile	Sat May 20 18:49:20 2006
+@@ -3,11 +3,10 @@
+ TARGET=pipepanic
+ 
+ # Settings for x86.
+-CC=gcc
+-CFLAGS=-O2 -Wall -pedantic `sdl-config --cflags`
+-LINK=gcc
++CFLAGS+=`$(SDL_CONFIG) --cflags`
++LINK=$(CC)
+ LDFLAGS=
+-LIBS=`sdl-config --libs`
++LIBS=`$(SDL_CONFIG) --libs`
+ 
+ all:
+ 	$(CC) $(CFLAGS) -c $(SOURCES)

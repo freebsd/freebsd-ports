@@ -489,6 +489,7 @@
     SUBDIR += pinball
     SUBDIR += pioneers
     SUBDIR += pipenightdreams
+    SUBDIR += pipepanic
     SUBDIR += plonx
     SUBDIR += pmars
     SUBDIR += pmars-sdl
