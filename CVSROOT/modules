@@ -10157,6 +10157,7 @@ pgplot		ports/graphics/pgplot
 pgpmoose	ports/news/pgpmoose
 pgpool		ports/databases/pgpool
 pgpsendmail	ports/mail/pgpsendmail
+pgtop		ports/databases/pgtop
 pgworksheet	ports/databases/pgworksheet
 phalanx		ports/games/phalanx
 phamm		ports/net/phamm
