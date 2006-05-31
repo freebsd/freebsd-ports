@@ -9,11 +9,12 @@ PORTNAME=	metamail
 PORTVERSION=	2.7
 PORTREVISION=	3
 CATEGORIES=	mail
-MASTER_SITES=	http://ftp.funet.fi/pub/unix/mail/metamail/
+MASTER_SITES=	http://ftp.funet.fi/pub/unix/mail/metamail/ \
+		ftp://ftp.research.telcordia.com/pub/nsb/
 DISTNAME=	mm${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jean-francois.dockes@wanadoo.fr
 COMMENT=	Implementation of MIME, the Multipurpose Internet Mail Extensions
 
 BUILD_DEPENDS=	bdftopcf:${X_CLIENTS_PORT}
