@@ -22,6 +22,12 @@ CONFIGURE_ARGS=	--with-sdl-prefix=${LOCALBASE}
 PORTDOCS=	README
 PLIST_FILES=	bin/${PORTNAME}
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=	Does not build on 4.x
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's,stdint.h,inttypes.h,' ${WRKSRC}/*.c?
 	@${REINPLACE_CMD} -e 's,int16_t,u_int16_t,' ${WRKSRC}/sound.cc
@@ -33,4 +39,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
