@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ecore
-PORTVERSION=	0.9.9.026
+PORTVERSION=	0.9.9.027
 PORTREVISION=	0
 CATEGORIES=	x11
 MASTER_SITES=	http://enlightenment.freedesktop.org/files/
@@ -25,7 +25,7 @@ GNU_CONFIGURE=	yes
 USE_ICONV=	yes
 USE_GNOME=	gnomehack pkgconfig gnometarget
 INSTALLS_SHLIB=	yes
-CONFIGURE_ARGS+=	--enable-pthreads --with-iconv-link=${LOCALBASE}
+CONFIGURE_ARGS+=	--enable-pthreads
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
