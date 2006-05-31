@@ -7,7 +7,7 @@
 
 PORTNAME=	enemyterritory-tce
 PORTVERSION=	0.48
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games linux
 MASTER_SITES=	http://ftp.games.skynet.be/pub/www.filesnetwork.com/Wolfenstein_Enemy_Territory/Mods/Total_Conversions/:full,update \
 		http://darkstar.ist.utl.pt/pub/games/:full,update \
@@ -27,7 +27,6 @@ RUN_DEPENDS=	et:${PORTSDIR}/games/linux-enemyterritory
 ONLY_FOR_ARCHS=	i386
 USE_ZIP=	yes
 USE_LINUX=	yes
-USE_X_PREFIX=	yes
 NO_PACKAGE=	Distfiles are 135MB, set FORCE_PACKAGE if you really want to build this package
 RESTRICTED=	Redistribution is limited, see license
 ETDIR=		${PREFIX}/lib/enemyterritory
