@@ -5,14 +5,17 @@
 # $FreeBSD$
 #
 
-PORTNAME=	foomatic-db-engine
-PORTVERSION=	3.0.2
+PORTNAME=	engine
+PORTVERSION=	20060531
 PORTEPOCH=	1
 CATEGORIES=	print
-MASTER_SITES=	http://www.linuxprinting.org/download/foomatic/%SUBDIR%/
-MASTER_SITE_SUBDIR=	. oldstuff
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	pav
+PKGNAMEPREFIX=	foomatic-db-
+DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${FOOMATICVER}-${PORTVERSION}
+DIST_SUBDIR=	foomatic
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	acardenas@bsd.org.pe
 COMMENT=	Foomatic database engine
 
 BUILD_DEPENDS=	curl:${PORTSDIR}/ftp/curl
@@ -24,6 +27,8 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PERL=${PERL} LIBDIR=${PREFIX}/share/foomatic/
 
+FOOMATICVER=	3.0
+
 MAN1=		foomatic-printjob.1 foomatic-ppdfile.1 foomatic-perl-data.1 \
 		foomatic-configure.1 foomatic-compiledb.1 foomatic-combo-xml.1 \
 		foomatic-ppd-options.1
@@ -32,10 +37,10 @@ MAN8=		foomatic-preferred-driver.8 \
 		foomatic-addpjloptions.8
 
 post-patch:
-	@${PERL} -pi.bak -e \
+	@${REINPLACE_CMD} -e \
 		"s,sysconfdir=/etc,sysconfdir=\'${PREFIX}/etc\',g ; \
 		 s,/usr/local/etc:,${PREFIX}/etc:,g" ${WRKSRC}/configure
-	@${PERL} -pi.bak -e \
+	@${REINPLACE_CMD} -e \
 		"s,/usr/local/bin:,${PREFIX}/bin:,g" ${WRKSRC}/Makefile.in
 
 post-install:
