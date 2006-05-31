@@ -14417,7 +14417,6 @@ xmove		ports/x11/xmove
 xmp		ports/audio/xmp
 xmpeg3		ports/audio/xmpeg3
 xmps		ports/multimedia/xmps
-xmps-opendivx-plugin	ports/multimedia/xmps-opendivx-plugin
 xmps-win32-plugin	ports/multimedia/xmps-win32-plugin
 xmradio		ports/audio/xmradio
 xmris		ports/games/xmris

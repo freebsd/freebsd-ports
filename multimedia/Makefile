@@ -220,7 +220,6 @@
     SUBDIR += xmms-status-plugin
     SUBDIR += xmms-weasel
     SUBDIR += xmps
-    SUBDIR += xmps-opendivx-plugin
     SUBDIR += xmps-win32-plugin
     SUBDIR += xtheater
     SUBDIR += xvid
