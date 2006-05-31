@@ -55,7 +55,7 @@ BROKEN=	"Work in progress"
 USE_JAVA=	yes
 JAVA_VERSION=	1.4+
 JAVA_BUILD=	jdk
-.if ${ARCH} == amd64
+.if ${MACHINE_ARCH} == amd64
 JAVA_VENDOR=	bsdjava
 .else
 JAVA_VENDOR=	freebsd bsdjava
@@ -65,11 +65,11 @@ JAVA_VENDOR=	freebsd bsdjava
 .include <bsd.port.pre.mk>
 .include <${FILESDIR}/Makefile.localized>
 
-.if ${ARCH} == amd64
+.if ${MACHINE_ARCH} == amd64
 GCC_TARGET=		x86_64-portbld-freebsd${OSREL}
 FREEBSD_ENV_SET=	FreeBSDAMDEnv.Set
 .else
-GCC_TARGET=		${ARCH}-portbld-freebsd${OSREL}
+GCC_TARGET=		${MACHINE_ARCH}-portbld-freebsd${OSREL}
 FREEBSD_ENV_SET=	FreeBSDIntelEnv.Set
 .endif
 
@@ -84,7 +84,7 @@ INSTALLATION_BASEDIR?=	openoffice.org-${OOOVERSION}
 EXECBASE?=		openoffice.org-${OOOVERSION}
 DIST_SUBDIR=		openoffice.org2.0
 SIMPLEOSVER=		${OSREL:C/\.//g}
-.if ${ARCH} == amd64
+.if ${MACHINE_ARCH} == amd64
 PACKAGE_BASENAME=	OOo_${OOOVERSION}_${OPSYS}${SIMPLEOSVER}X86_64
 .else
 PACKAGE_BASENAME=	OOo_${OOOVERSION}_${OPSYS}${SIMPLEOSVER}Intel
