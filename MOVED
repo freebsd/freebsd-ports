@@ -2353,3 +2353,4 @@ audio/opennap|net-p2p/opennap|2006-05-29|Napster-based server belongs to net-p2p
 multimedia/splitmpg||2006-05-30|Has expired: mastersite disappeared, no longer maintained by author
 www/firefox-flp|www/firefox-i18n|2006-05-31|Single-locale firefox l10n ports are now obsolete
 multimedia/xmps-opendivx-plugin||2006-05-31|Has expired: mastersite disappeared, Project Mayo is now part of DivX.com
+devel/dialyzer||2006-05-31|Application was integrated into Erlang/OTP R11B-0
