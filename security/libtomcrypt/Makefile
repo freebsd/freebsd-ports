@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libtomcrypt
-PORTVERSION=	1.10
+PORTVERSION=	1.12
 CATEGORIES=	security
 MASTER_SITES=	http://libtomcrypt.com/files/
 DISTNAME=	crypt-${PORTVERSION}
@@ -26,12 +26,13 @@ CFLAGS+=	-I${PREFIX}/include
 
 OPTIONS=	DOCS "build documentation (depends on teTeX)" off \
 		LIBTOMMATH "Use LibTomMath" on \
-		TOMSFASTMATH "Use TomsFastMath" off
+		TOMSFASTMATH "Use TomsFastMath" off \
+		GMP "Use GMP" off
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITHOUT_LIBTOMMATH) && defined(WITHOUT_TOMSFASTMATH)
-IGNORE=	you must choose either LibTomMath or TomsFastMath (or both)
+.if defined(WITHOUT_LIBTOMMATH) && !defined(WITH_TOMSFASTMATH) && !defined(WITH_GMP)
+IGNORE=	you must choose at least LibTomMath, TomsFastMath, or GMP (or all three)
 .endif
 
 .if !defined(WITHOUT_LIBTOMMATH)
@@ -42,6 +43,11 @@ CFLAGS+=	-DLTM_DESC
 .if defined(WITH_TOMSFASTMATH)
 BUILD_DEPENDS+=	${LOCALBASE}/include/tfm.h:${PORTSDIR}/math/tomsfastmath
 CFLAGS+=	-DTFM_DESC
+.endif
+
+.if defined(WITH_GMP)
+BUILD_DEPENDS+=	${LOCALBASE}/include/gmp.h:${PORTSDIR}/math/libgmp4
+CFLAGS+=	-DGMP_DESC
 .endif
 
 .if defined(WITH_DOCS)
@@ -62,5 +68,13 @@ test:	build
 
 	@${ECHO_MSG} "Testing with -DUSE_LTM..."
 	(cd ${WRKSRC} && CFLAGS="${CFLAGS} -DUSE_LTM" EXTRALIBS="-L${PREFIX}/lib -ltommath" ${GMAKE} test && ${WRKSRC}/test)
+
+	@${ECHO_MSG} "Cleaning up test binary..."
+	@${RM} ${WRKSRC}/test
+	@${RM} ${WRKSRC}/demos/test.o
+
+	@${ECHO_MSG} "Testing with -DUSE_GMP..."
+	(cd ${WRKSRC} && CFLAGS="${CFLAGS} -DUSE_GMP" EXTRALIBS="-L${PREFIX}/lib -lgmp" ${GMAKE} test && ${WRKSRC}/test)
 .endif
+
 .include <bsd.port.post.mk>

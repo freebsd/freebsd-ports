@@ -1,15 +1,15 @@
---- makefile.orig	Mon Aug  1 12:34:18 2005
-+++ makefile	Wed Aug 31 15:30:39 2005
-@@ -7,7 +7,7 @@
+--- makefile.orig	Wed Apr 12 13:16:32 2006
++++ makefile	Wed Apr 12 13:16:48 2006
+@@ -11,7 +11,7 @@
  
  ifndef IGNORE_SPEED
  
--CFLAGS += -O3 -funroll-all-loops
-+CFLAGS += -funroll-all-loops
+-CFLAGS += -O3 -funroll-loops
++CFLAGS += -funroll-loops
  
  #profiling
  #PROF=-pg -g
-@@ -49,11 +49,11 @@
+@@ -53,11 +53,11 @@
  HEADERS=tfm.h
  
  ifndef LIBPATH
