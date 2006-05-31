@@ -1,5 +1,5 @@
 --- SConstruct.orig	Fri Feb 10 19:01:20 2006
-+++ SConstruct	Tue Feb 21 12:46:47 2006
++++ SConstruct	Tue May 30 22:35:47 2006
 @@ -3,7 +3,6 @@
  
  import commands, re, sys, os, pickle, string, popen2
@@ -8,54 +8,73 @@
  
  # to access some internal stuff
  import SCons
-@@ -85,10 +84,10 @@
+@@ -11,7 +10,7 @@
+ conf_filename='site.conf'
+ # there is a default hardcoded value, you can override on command line, those are saved between runs
+ # we only handle strings
+-serialized=['CC', 'CXX', 'JOBS', 'BUILD', 'SETUP']
++serialized=['CC', 'CXX', 'CCFLAGS', 'CXXFLAGS', 'LINKFLAGS', 'PTHREAD_LIBS', 'LOCALBASE', 'X11BASE', 'JOBS', 'BUILD', 'SETUP']
  
- # default settings -------------------------------
+ # help -------------------------------------------
  
--CC='gcc'
--CXX='g++'
-+CC='%%CC%%'
-+CXX='%%CXX%%'
- JOBS='1'
--BUILD='debug'
-+BUILD='release'
- INSTALL='#install'
- SETUP='0'
- g_build_root = 'build'
-@@ -172,9 +171,9 @@
+@@ -64,14 +63,7 @@
+ # TODO: detect Darwin / OSX
+ 
+ # CPU type
+-g_cpu = commands.getoutput('uname -m')
+-exp = re.compile('.*i?86.*')
+-if (g_cpu == 'Power Macintosh' or g_cpu == 'ppc'):
+-  g_cpu = 'ppc'
+-elif exp.match(g_cpu):
+-  g_cpu = 'x86'
+-else:
+-  g_cpu = 'cpu'
++g_cpu = 'cpu'
+ 
+ # OS
+ OS = commands.getoutput('uname')
+@@ -172,8 +164,8 @@
  # common flags
  warningFlags = '-W -Wall -Wcast-align -Wcast-qual -Wno-unused-parameter '
  warningFlagsCXX = '-Wno-non-virtual-dtor -Wreorder ' # -Wold-style-cast
 -CCFLAGS = '' + warningFlags
 -CXXFLAGS = '-pipe -DQ_NO_STLPORT ' + warningFlags + warningFlagsCXX
--CPPPATH = []
-+CCFLAGS = '%%CFLAGS%% '
-+CXXFLAGS = '%%CFLAGS%% -pipe -DQ_NO_STLPORT '
-+CPPPATH = ['%%LOCALBASE%%/include', '%%X11BASE%%/include']
++CCFLAGS += ' '
++CXXFLAGS += ' -pipe -DQ_NO_STLPORT '
+ CPPPATH = []
  if (BUILD == 'debug'):
  	CXXFLAGS += '-g -D_DEBUG '
- 	CCFLAGS += '-g -D_DEBUG '
-@@ -190,7 +189,7 @@
+@@ -190,7 +182,6 @@
  	print 'Unknown build configuration ' + BUILD
  	sys.exit( 0 )
  
 -LINKFLAGS = ''
-+LINKFLAGS = '-L%%LOCALBASE%%/lib -L%%X11BASE%%/lib '
  if ( OS == 'Linux' ):
  
    # static
-@@ -270,7 +269,9 @@
+@@ -218,6 +209,12 @@
+   CPPPATH.append('/sw/include')
+   CPPPATH.append('/usr/X11R6/include')
+   LINKFLAGS += '-L/sw/lib -L/usr/lib -L/usr/X11R6/lib '
++elif ( OS == 'FreeBSD' ):
++  CCFLAGS += '-fPIC '
++  CXXFLAGS += '-fPIC '
++  CPPPATH.append(LOCALBASE + '/include')
++  CPPPATH.append(X11BASE + '/include')
++  LINKFLAGS += '-L' + LOCALBASE + '/lib ' + '-L' + X11BASE + '/lib '
+ 
+ CPPPATH.append('libs')
+ 
+@@ -269,6 +266,8 @@
+   def usePThread(self):
      if ( OS == 'Darwin' ):
        self['LINKFLAGS'] += '-lpthread -Wl,-stack_size,0x400000 '
++    elif ( OS == 'FreeBSD' ):
++      self['LINKFLAGS'] += PTHREAD_LIBS
      else:
--      self['LINKFLAGS'] += '-lpthread '
-+      self['CCFLAGS'] += '%%PTHREAD_CFLAGS%% '
-+      self['CXXFLAGS'] += '%%PTHREAD_CFLAGS%% '
-+      self['LINKFLAGS'] += '%%PTHREAD_LIBS%% '
+       self['LINKFLAGS'] += '-lpthread '
  
-   def CheckLDD(self, target, source, env):
-     file = target[0]
-@@ -278,7 +279,7 @@
+@@ -278,7 +277,7 @@
          print('ERROR: CheckLDD: target %s not found\n' % target[0])
          Exit(1)
      # not using os.popen3 as I want to check the return code

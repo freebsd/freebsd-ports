@@ -30,8 +30,10 @@ USE_GCC=	3.4+
 USE_GNOME=	gtk20 libxml2
 USE_PYTHON_BUILD=	yes
 
-SUB_FILES=	${PORTNAME}
+MAKE_ENV+=	CC="${CC}" CXX="${CXX}" CCFLAGS="${CFLAGS}" BUILD=release \
+		LINKFLAGS="${LDFLAGS}" PTHREAD_LIBS="${PTHREAD_LIBS}" \
 
+SUB_FILES=	${PORTNAME}
 DATADIR=	${PREFIX}/lib/${PORTNAME}
 
 .include <bsd.port.pre.mk>
@@ -42,16 +44,13 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-libs__bytestreamutils.h \
 .endif
 
 post-patch:
-.for f in CC CXX CFLAGS LOCALBASE PTHREAD_CFLAGS PTHREAD_LIBS X11BASE
-	@${REINPLACE_CMD} -i '' -e 's|%%${f}%%|${${f}}|g' ${WRKSRC}/SConstruct
-.endfor
 	@${REINPLACE_CMD} -e 's/-ldl//' ${WRKSRC}/SConscript
 	@${GREP} -Rl 'defined[[:blank:]]*([[:blank:]]*__linux__[[:blank:]]*) || defined[[:blank:]]*([[:blank:]]*__APPLE__[[:blank:]]*)' ${WRKSRC} | \
 		${XARGS} ${REINPLACE_CMD} -e \
 		's/\(defined[[:blank:]]*([[:blank:]]*__linux__[[:blank:]]*) || defined[[:blank:]]*([[:blank:]]*__APPLE__[[:blank:]]*)\)/\1 || defined (__FreeBSD__)/'
 
 do-build:
-	cd ${WRKSRC} && scons && ${PYTHON_CMD} install.py
+	cd ${WRKSRC} && scons ${MAKE_ENV} && ${PYTHON_CMD} install.py
 	${CP} -R ${WRKDIR}/${PORTNAME}_gamepacks/* ${WRKSRC}/install
 
 do-install:

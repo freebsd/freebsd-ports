@@ -153,12 +153,12 @@ bin/gtkradiant
 %%DATADIR%%/q3bp.game/default_build_menu.xml
 %%DATADIR%%/q3bp.game/game.xlink
 %%DATADIR%%/q3data.qdt
-%%DATADIR%%/q3data.x86
-%%DATADIR%%/q3map2.x86
+%%DATADIR%%/q3data.cpu
+%%DATADIR%%/q3map2.cpu
 %%DATADIR%%/q4.game/default_build_menu.xml
 %%DATADIR%%/q4.game/q4base/default_shaderlist.txt
 %%DATADIR%%/qdata3
-%%DATADIR%%/radiant.x86
+%%DATADIR%%/radiant.cpu
 %%DATADIR%%/sof2.game/BehavEd.bhc
 %%DATADIR%%/sof2.game/ChangeLog.txt
 %%DATADIR%%/sof2.game/base/default_shaderlist.txt
