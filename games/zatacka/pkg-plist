@@ -1,0 +1,5 @@
+bin/zatacka
+%%DATADIR%%/barrier.jpg
+%%DATADIR%%/font.ttf
+%%DATADIR%%/main_screen.jpg
+@dirrm %%DATADIR%%

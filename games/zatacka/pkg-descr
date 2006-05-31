@@ -1,0 +1,6 @@
+Multiplayer game for 2-6 players on one keyboard and mouse. You handle your line
+using two kays. When you hit any line, barrier or border of game field, you die
+and other players get one point each.  When leaves only one players in game,
+he's a winner an round is finished. Each game has eleven rounds.
+
+WWW: http://zatacka.sourceforge.net/

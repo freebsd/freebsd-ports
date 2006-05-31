@@ -1,0 +1,35 @@
+--- Makefile.orig	Fri Dec 30 17:27:36 2005
++++ Makefile	Mon Mar 27 00:52:59 2006
+@@ -4,7 +4,7 @@
+ # Copryright: GNU GPL (http://www.gnu.org/copyleft/gpl.html)
+ ##----------------------------------------------------------------------------
+ rm=/bin/rm -f
+-CC= g++ 
++CXX?= g++ 
+ DEFS=  
+ PROGNAME= zatacka
+ INCLUDES=  -I. 
+@@ -12,7 +12,7 @@
+ 
+ 
+ DEFINES= $(INCLUDES) $(DEFS) -DSYS_UNIX=1
+-CFLAGS= -g $(DEFINES) `sdl-config --cflags`
++CXXFLAGS+= $(DEFINES) `sdl-config --cflags`
+ 
+ SRCS = main.cpp fx.cpp SDL_prim.c 
+ 
+@@ -20,12 +20,12 @@
+ 
+ .c.o:
+ 	$(rm) $@
+-	$(CC) $(CFLAGS) -c $*.c
++	$(CXX) $(CXXFLAGS) -c $*.c
+ 
+ all: $(PROGNAME)
+ 
+ $(PROGNAME) : $(OBJS)
+-	$(CC) $(CFLAGS) -o $(PROGNAME) $(OBJS) $(LIBS)
++	$(CXX) $(CXXFLAGS) -o $(PROGNAME) $(OBJS) $(LIBS)
+ 
+ clean:
+ 	$(rm) $(OBJS) $(PROGNAME) core *~
