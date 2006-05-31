@@ -70,3 +70,4 @@
 @dirrm %%PHPWEBFTPDIR%%/style
 @dirrm %%PHPWEBFTPDIR%%/tmp
 @dirrm %%PHPWEBFTPDIR%%
+@exec find %D/%%PHPWEBFTPDIR%% -type d -print0 | xargs -0 chown %%WWWOWN%%:%%WWWGRP%%
