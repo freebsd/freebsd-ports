@@ -7,6 +7,7 @@
 
 PORTNAME=	gtkmm
 PORTVERSION=	2.2.12
+PORTREVISION?=	6
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNOME} \
 		${MASTER_SITE_SOURCEFORGE}
@@ -18,18 +19,15 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	C++ wrapper for Gtk+, Pango, Atk, and Glib
 
 USE_BZIP2=	yes
-PREFIX?=	${X11BASE}
 LATEST_LINK=	gtkmm2
 
 .if !defined(REFERENCE_PORT)
 
-PORTREVISION=	6
-
 LIB_DEPENDS=	sigc-1.2.5:${PORTSDIR}/devel/libsigc++12
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
-USE_XLIB=	yes
 USE_GMAKE=	yes
+USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 USE_GNOME=	gnomehack lthack gtk20

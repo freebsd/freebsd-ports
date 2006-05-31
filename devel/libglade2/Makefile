@@ -7,6 +7,7 @@
 
 PORTNAME=	libglade2
 PORTVERSION=	2.5.1
+PORTREVISION?=	5
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/2.5
@@ -17,16 +18,13 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME glade library
 
 USE_BZIP2=	yes
-PREFIX?=	${X11BASE}
 
 .if !defined(REFERENCE_PORT)
 
-PORTREVISION=	5
-
 RUN_DEPENDS=	xmlcatmgr:${PORTSDIR}/textproc/xmlcatmgr
 
-USE_XLIB=	yes
 USE_GMAKE=	yes
+USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack libxml2 gtk20 referencehack
 INSTALLS_SHLIB=	yes

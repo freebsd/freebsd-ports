@@ -8,6 +8,7 @@
 
 PORTNAME=	libgda3
 PORTVERSION=	1.9.102
+PORTREVISION?=	1
 CATEGORIES=	databases gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/3$//}/${PORTVERSION:R}
@@ -18,16 +19,13 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Provides uniform access to different kinds of data sources
 
 USE_BZIP2=	yes
-PREFIX?=	${X11BASE}
 
 .if !defined(REFERENCE_PORT)
-
-PORTREVISION=	1
 
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
 USE_GETTEXT=	yes
-USE_XLIB=	yes
+USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack glib20 libxslt intlhack referencehack
 INSTALLS_SHLIB=	yes

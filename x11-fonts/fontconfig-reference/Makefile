@@ -1,4 +1,12 @@
+# New ports collection makefile for:	fontconfig-reference
+# Date created:				09 May 2006
+# Whom:					Jean-Yves Lefort <jylefort@FreeBSD.org>
+#
 # $FreeBSD$
+#
+
+PORTREVISION=	1
+PORTEPOCH=	0
 
 DOCSDIR=	${PREFIX}/share/doc/fontconfig-devel
 

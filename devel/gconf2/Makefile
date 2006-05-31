@@ -8,6 +8,7 @@
 
 PORTNAME=	gconf2
 PORTVERSION=	2.14.0
+PORTREVISION?=	2
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/GConf/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -18,15 +19,12 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A configuration database system for GNOME
 
 USE_BZIP2=	yes
-PREFIX?=	${X11BASE}
 
 .if !defined(REFERENCE_PORT)
 
-PORTREVISION=	2
-
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
-USE_XLIB=	yes
+USE_X_PREFIX=	yes
 USE_GNOME=	gnomehier gnomehack orbit2 gtk20 libxml2 linc ltverhack referencehack
 INSTALLS_SHLIB=	yes
 USE_AUTOTOOLS=	libtool:15

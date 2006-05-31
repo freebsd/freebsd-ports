@@ -7,6 +7,7 @@
 
 PORTNAME=	linc
 PORTVERSION=	1.0.3
+PORTREVISION?=	6
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.0
@@ -18,8 +19,6 @@ COMMENT=	A library for writing networked servers & clients
 USE_BZIP2=	yes
 
 .if !defined(REFERENCE_PORT)
-
-PORTREVISION=	6
 
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack glib20

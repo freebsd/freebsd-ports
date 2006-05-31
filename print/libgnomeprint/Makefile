@@ -8,6 +8,7 @@
 
 PORTNAME=	libgnomeprint
 PORTVERSION=	2.12.1
+PORTREVISION?=	2
 CATEGORIES=	print gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.12
@@ -17,21 +18,18 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Gnome print support library
 
 USE_BZIP2=	yes
-PREFIX?=	${X11BASE}
 
 .if !defined(REFERENCE_PORT)
-
-PORTREVISION=	2
 
 LIB_DEPENDS=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
 		popt.0:${PORTSDIR}/devel/popt
 
 USE_BISON=	yes
-USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix intlhack gnomehack gnomehier glib20 pango libxml2 \
 		libartlgpl2 ltverhack
 USE_GETTEXT=	yes
+USE_X_PREFIX=	yes
 INSTALLS_SHLIB=	yes
 USE_AUTOTOOLS=  libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

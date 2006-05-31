@@ -26,7 +26,6 @@ COMMENT=	Gimp Toolkit for X11 GUI (current stable version)
 
 USE_BZIP2=	yes
 LATEST_LINK=	gtk20
-PREFIX?=	${X11BASE}
 
 .if !defined(REFERENCE_PORT)
 
@@ -36,13 +35,13 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 RUN_DEPENDS=	${LOCALBASE}/share/mime/magic:${PORTSDIR}/misc/shared-mime-info \
 		${X11BASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme
 
-USE_XLIB=	yes
 USE_XPM=	yes
 USE_PERL5=	yes
 INSTALLS_SHLIB=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnomehack atk pango ltverhack
 USE_GETTEXT=	yes
+USE_X_PREFIX=	yes
 CONFIGURE_ARGS=	--enable-static --with-xinput=yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/freetype2 \
 			  -I${LOCALBASE}/include -I${X11BASE}/include" \

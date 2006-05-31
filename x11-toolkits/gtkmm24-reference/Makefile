@@ -1,4 +1,11 @@
+# New ports collection makefile for:	gtkmm24-reference
+# Date created:				09 May 2006
+# Whom:					Jean-Yves Lefort <jylefort@FreeBSD.org>
+#
 # $FreeBSD$
+#
+
+PORTREVISION=	0
 
 PATCH_DEPENDS=	${NONEXISTENT}:${.CURDIR}/../gtkmm24:patch
 BUILD_DEPENDS=	${NONEXISTENT}:${.CURDIR}/../gtkmm24:configure
@@ -6,6 +13,7 @@ BUILD_DEPENDS=	${NONEXISTENT}:${.CURDIR}/../gtkmm24:configure
 PARENT_WRKSRC!=	cd ${.CURDIR}/../gtkmm24 && ${MAKE} -V WRKSRC
 EXTRACT_ONLY=
 USE_GMAKE=	yes
+PREFIX=		${X11BASE}
 
 DOCSDIR=	${PREFIX}/share/doc/gtkmm-2.4
 

@@ -1,4 +1,11 @@
+# New ports collection makefile for:	libxml2-reference
+# Date created:				09 May 2006
+# Whom:					Jean-Yves Lefort <jylefort@FreeBSD.org>
+#
 # $FreeBSD$
+#
+
+PORTREVISION=	0
 
 BUILD_DEPENDS=	${NONEXISTENT}:${.CURDIR}/../libxml2:configure
 
