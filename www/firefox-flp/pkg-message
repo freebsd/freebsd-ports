@@ -1,8 +1,0 @@
-**************************************************************************
-Le module « Langue française » est désormais disponible pour tous les
-profils.
-
-Pour l'activer, vous devez lancer Firefox avec les paramètres suivants :
-
-firefox -contentLocale FR -UILocale fr-FR &
-**************************************************************************

@@ -2351,3 +2351,4 @@ x11-toolkits/gtk--2-reference|x11-toolkits/gtkmm20-reference|2006-05-29|Renamed 
 x11-wm/sawfish2|x11-wm/sawfish|2006-05-29|Use unversioned name
 audio/opennap|net-p2p/opennap|2006-05-29|Napster-based server belongs to net-p2p
 multimedia/splitmpg||2006-05-30|Has expired: mastersite disappeared, no longer maintained by author
+www/firefox-flp|www/firefox-i18n|2006-05-31|Single-locale firefox l10n ports are now obsolete

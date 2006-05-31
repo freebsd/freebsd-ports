@@ -126,7 +126,6 @@
     SUBDIR += fhttpd
     SUBDIR += firefox
     SUBDIR += firefox-devel
-    SUBDIR += firefox-flp
     SUBDIR += firefox-i18n
     SUBDIR += firefox-remote
     SUBDIR += firefox10
