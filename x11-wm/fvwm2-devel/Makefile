@@ -19,8 +19,6 @@ COMMENT=	Popular virtual window manager for X
 LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/libXft
 RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
-BROKEN=		Incomplete pkg-plist
-
 # Other ports this port cannot coexist with
 CONFLICTS?=	fvwm-1.* fvwm-2.4.*
 NO_LATEST_LINK=	yes
