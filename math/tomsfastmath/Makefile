@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tomsfastmath
-PORTVERSION=	0.08
+PORTVERSION=	0.09
 CATEGORIES=	math
 MASTER_SITES=	http://libtomcrypt.com/tfm/files/
 DISTNAME=	tfm-${PORTVERSION}
@@ -22,13 +22,6 @@ ALL_TARGET=	default
 
 PLIST_FILES=	include/tfm.h lib/libtfm.a
 
-.include <bsd.port.pre.mk>
+NOT_FOR_ARCHS=	sparc64
 
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not build on sparc64
-.endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|||' ${WRKSRC}/fp_montgomery_reduce.c
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

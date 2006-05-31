@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libtommath
-PORTVERSION=	0.38
+PORTVERSION=	0.39
 CATEGORIES=	math
 MASTER_SITES=	http://math.libtomcrypt.com/files/
 DISTNAME=	ltm-${PORTVERSION}
