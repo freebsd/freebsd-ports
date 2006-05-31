@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	metasploit
-PORTVERSION=	2.5
+PORTVERSION=	2.6
 CATEGORIES=	security
 MASTER_SITES=	http://www.metasploit.org/tools/
 DISTNAME=	framework-${PORTVERSION}
@@ -28,7 +28,7 @@ SCRIPTS=	msfcli msfconsole msfelfscan msfencode msflogdump msfpayload msfpescan 
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500600
-IGNORE=		This port requires perl version 5.6.0 or higher.
+IGNORE=		requires perl version 5.6.0 or higher
 .endif
 
 post-patch:
