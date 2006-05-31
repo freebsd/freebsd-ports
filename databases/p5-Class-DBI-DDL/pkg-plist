@@ -1,8 +1,5 @@
 %%SITE_PERL%%/Class/DBI/DDL.pm
 %%SITE_PERL%%/Class/DBI/DDL/Pg.pm
-%%SITE_PERL%%/Class/DBI/DDL/mysql.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/DBI/DDL/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/DBI/DDL
 @dirrm %%SITE_PERL%%/Class/DBI/DDL
 @dirrmtry %%SITE_PERL%%/Class/DBI
 @dirrmtry %%SITE_PERL%%/Class

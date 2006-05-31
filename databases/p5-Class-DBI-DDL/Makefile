@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Class-DBI-DDL
-PORTVERSION=	1.01
+PORTVERSION=	1.02
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Class
@@ -18,16 +18,15 @@ COMMENT=	DDL for Class-DBI
 RUN_DEPENDS=	${SITE_PERL}/Class/DBI.pm:${PORTSDIR}/databases/p5-Class-DBI
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_MODBUILD=	yes
 
 MAN3=		Class::DBI::DDL.3 \
-		Class::DBI::DDL::Pg.3 \
-		Class::DBI::DDL::mysql.3
+		Class::DBI::DDL::Pg.3
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500600
-IGNORE=		"Needs perl 5.6.0 or higher, install lang/perl5.6 and try again"
+.if ${PERL_LEVEL} < 500800
+IGNORE=		needs perl 5.8 or higher, install lang/perl5.8 and try again
 .endif
 
 .include <bsd.port.post.mk>
