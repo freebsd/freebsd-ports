@@ -1,44 +1,24 @@
---- install.sh.orig	Tue Apr 11 12:23:52 2006
-+++ install.sh	Thu Apr 20 11:33:45 2006
-@@ -106,7 +106,7 @@
+--- install.sh.orig	Thu May 18 12:33:54 2006
++++ install.sh	Tue May 23 11:21:36 2006
+@@ -111,7 +111,7 @@
  
      test "${prefix}" || prefix="${str_defaultprefix}"
  
 -    share_dir="${prefix}/share/opera"
 +    share_dir="${prefix}/share/opera-devel"
-     if test ${os} = 'FreeBSD' -o ${os} = 'OpenBSD'; then
-         exec_dir="${share_dir}/bin"
-         plugin_dir="${share_dir}/plugins"
-@@ -114,8 +114,8 @@
- 	exec_dir="${prefix}/lib/opera/$opera_version"
- 	plugin_dir="${prefix}/lib/opera/plugins"
-     fi
--    man_dir="${prefix}/share/man"
+     case "$os" in
+ 	AnyBSD|OpenBSD)
+ 	    exec_dir="${share_dir}/bin"
+@@ -124,7 +124,7 @@
+ 	    man_dir="$prefix/share/man"
+ 	    ;;
+     esac
 -    doc_dir="${prefix}/share/doc/opera"
-+    man_dir="${prefix}/man"
 +    doc_dir="${prefix}/share/doc/opera-devel"
      wrapper_dir="${prefix}/bin"
  }
  
-@@ -397,7 +397,7 @@
- 	    mvv=''    # SunOS mv (no -v verbose option)
- 	;;
- 
--	i[3456]86:FreeBSD|i[3456]86:NetBSD)
-+	i[3456]86:FreeBSD|amd64:FreeBSD|i[3456]86:NetBSD)
- 		cpf='-f'
- 		if test "$verbose" -gt '1'
- 		then
-@@ -789,7 +789,7 @@
-     debug_msg 0 "in generate_wrapper()"
- 
-     case "${machine}:${os}" in
--	i[3456]86:Linux|x86_64:Linux|i[3456]86:FreeBSD|i[3456]86:NetBSD|i[3456]86:OpenBSD)
-+	i[3456]86:Linux|x86_64:Linux|i[3456]86:FreeBSD|amd64:FreeBSD|i[3456]86:NetBSD|i[3456]86:OpenBSD)
- 	    wrapper_ibmjava="
- 	    IBMJava2-142/jre \\
- 	    IBMJava2-141/jre \\
-@@ -824,7 +824,7 @@
+@@ -830,7 +830,7 @@
  		error 'os'
  	;;
      esac
@@ -47,7 +27,7 @@
  
      wrapper_contain="#!/bin/sh
  
-@@ -887,6 +887,9 @@
+@@ -893,6 +893,9 @@
  OPERA_LD_PRELOAD=\"\${LD_PRELOAD}\"
  export OPERA_LD_PRELOAD
  
@@ -57,7 +37,7 @@
  # Native Java enviroment
  if test -f \"\${OPERA_PERSONALDIR}/javapath.txt\"; then
      INIJAVA=\`cat \${OPERA_PERSONALDIR}/javapath.txt\`
-@@ -910,69 +913,12 @@
+@@ -916,69 +919,12 @@
  
  if test ! \"\${OPERA_JAVA_DIR}\"; then
  
@@ -131,7 +111,7 @@
  	; do
  	for PREFIX in \${PREFIXES}; do
  	    if test -f \"\${PREFIX}/\${SUNJAVA}/lib/${wrapper_sunjava_machine}/libjava.so\"; then OPERA_JAVA_DIR=\"\${PREFIX}/\${SUNJAVA}/lib/${wrapper_sunjava_machine}\" && break; fi
-@@ -1023,11 +969,8 @@
+@@ -1029,11 +975,8 @@
  
  # Acrobat Reader
  for BINDIR in \\
@@ -145,7 +125,7 @@
      ; do
      if test -d \${BINDIR} ; then PATH=\${PATH}:\${BINDIR}; fi
  done
-@@ -1038,12 +981,13 @@
+@@ -1044,12 +987,13 @@
  LD_LIBRARY_PATH=\"\${OPERA_BINARYDIR}\${LD_LIBRARY_PATH:+:}\${LD_LIBRARY_PATH}\"
  export LD_LIBRARY_PATH
  
@@ -161,7 +141,7 @@
          LD_LIBRARY_PATH=\"\${LD_LIBRARY_PATH}:\${LIBASPELL_DIR}\"
      fi
  done"
-@@ -1153,7 +1097,7 @@
+@@ -1159,7 +1103,7 @@
      chop "${OPERADESTDIR}" "str_localdirshare"
      chop "${OPERADESTDIR}" "str_localdirplugin"
  
@@ -170,7 +150,7 @@
  
      # Executable
      debug_msg 1 "Executable"
-@@ -1191,7 +1135,7 @@
+@@ -1197,7 +1141,7 @@
  
      #cp $cpv $cpf wrapper.sh $wrapper_dir/opera
      generate_wrapper
@@ -179,7 +159,7 @@
  
      # Manual page
      debug_msg 1 "Manual page"
-@@ -1200,7 +1144,7 @@
+@@ -1206,7 +1150,7 @@
      chmod $chmodv 755 ${man_dir}
      mkdir $mkdirv $mkdirp ${man_dir}/man1
      chmod $chmodv 755 ${man_dir}/man1
@@ -188,7 +168,7 @@
  
      # Documentation
      debug_msg 1 "Documentation"
-@@ -1377,41 +1321,9 @@
+@@ -1383,41 +1327,9 @@
  
      if test -z "${OPERADESTDIR}"
      then
@@ -230,7 +210,7 @@
  	if test "${bool_icons}" -ne 0
  	then
  	    xdg
-@@ -1448,13 +1360,13 @@
+@@ -1454,13 +1366,13 @@
  {
      # arg1 = location
  
@@ -249,7 +229,7 @@
  opera group "Internet"'
  
      echo "${wmconfig_contain}" > ${wmconfig_file}
-@@ -1466,19 +1378,19 @@
+@@ -1472,19 +1384,19 @@
      # arg1 = location
      # arg2 = type
  
@@ -272,7 +252,7 @@
  Name[af]=opera
  Name[eo]=Opero
  Name[zu]=I Opera
-@@ -1502,7 +1414,7 @@
+@@ -1508,7 +1420,7 @@
  GenericName[ven]=Buronza ya Webu
  GenericName[xh]=Umkhangeli Zincwadi Zokubhaliweyo
  GenericName[zu]=Umkhangeli zincwadi we Web
@@ -281,7 +261,7 @@
  Terminal=false"
  
  # Application is not a category, according to
-@@ -1517,19 +1429,19 @@
+@@ -1523,19 +1435,19 @@
  	if test "${2}" = "xdg"; then
  	    desktop_contain="${desktop_contain}
  Categories=Application;Qt;Network;WebBrowser;X-Ximian-Main;X-Ximian-Toplevel
@@ -306,7 +286,7 @@
  Terminal=0"
      fi
  
-@@ -1623,48 +1535,43 @@
+@@ -1629,48 +1541,43 @@
      # This function searches for common gnome icon paths.
      debug_msg 1 "in gnome()"
  
@@ -378,7 +358,7 @@
  
      elif test -d /usr/share/gnome/
      then
-@@ -1675,10 +1582,10 @@
+@@ -1681,10 +1588,10 @@
  	    then
  		mkdir $mkdirv $mkdirp /usr/share/gnome/pixmaps/
  		chmod $chmodv 755 /usr/share/gnome/pixmaps
@@ -391,7 +371,7 @@
  	fi
  	# end /usr/share/gnome icon
  
-@@ -1712,45 +1619,45 @@
+@@ -1718,45 +1625,45 @@
      # This function searches for common kde2 and kde 3 icon paths.
      debug_msg 1 "in kde()"
  
@@ -452,7 +432,7 @@
  	    fi
  	fi
      fi
-@@ -1834,45 +1741,9 @@
+@@ -1840,45 +1747,9 @@
  }
  
  xdg()
