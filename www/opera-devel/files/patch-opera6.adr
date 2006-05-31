@@ -1,5 +1,5 @@
---- opera6.adr.orig	Thu Apr 20 11:52:06 2006
-+++ opera6.adr	Thu Apr 20 11:52:12 2006
+--- opera6.adr.orig	Thu May 18 12:33:54 2006
++++ opera6.adr	Tue May 23 11:26:33 2006
 @@ -25,14 +25,14 @@
  	URL=http://my.opera.com/
  	ICONFILE=my.opera.com.ico
@@ -63,8 +63,8 @@
  #URL
 -	ID=23
 +	ID=25
- 	NAME=Shopping.com
- 	URL=http://www.shopping.com/?linkin_id=3005960
+ 	NAME=PriceRunner
+ 	URL=http://www.pricerunner.com/ref-site=opera
  
  #URL
 -	ID=24
