@@ -24,10 +24,16 @@ CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 INSTALLS_SHLIB=	yes
 
+.include <bsd.port.pre.mk>
+
+.if (${OSVERSION} < 500000)
+BROKEN=		does not build on FreeBSD < 5.x
+.endif
+
 post-install:
 	@${FIND} ${PREFIX}/include/gloox ! -type d | \
 		${SED} "s,${PREFIX}/,," >> ${TMPPLIST}
 	@${FIND} ${PREFIX}/include/gloox -type d | ${SORT} -r | \
 		${SED} "s,${PREFIX}/,@dirrm ," >> ${TMPPLIST}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
