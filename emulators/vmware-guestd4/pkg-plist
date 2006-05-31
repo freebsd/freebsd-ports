@@ -1,6 +1,5 @@
 sbin/vmware-checkvm
 sbin/vmware-guestd
-etc/rc.d/vmware-guestd.sh
 %%VMWARE_VMMEMCTL:%%lib/vmware-tools/modules/vmmemctl.ko
 %%VMWARE_VMMEMCTL:%%@dirrmtry lib/vmware-tools/modules
 %%VMWARE_VMMEMCTL:%%@dirrmtry lib/vmware-tools
