@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MP3-Info
-PORTVERSION=	1.13
+PORTVERSION=	1.20
 CATEGORIES=	audio perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=MP3
@@ -16,10 +16,15 @@ MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Manipulate / fetch info from MP3 audio files
 
 BUILD_DEPENDS=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
-RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN3=		MP3::Info.3 MPEG::MP3Info.3
+MAN3=		MP3::Info.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+IGNORE=	requires at least Perl 5.6.0
+.endif
+
+.include <bsd.port.post.mk>
