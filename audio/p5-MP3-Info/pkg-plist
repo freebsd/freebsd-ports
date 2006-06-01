@@ -1,7 +1,5 @@
 %%SITE_PERL%%/MP3/Info.pm
-%%SITE_PERL%%/MPEG/MP3Info.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MP3/Info/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MP3/Info
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MP3
-@dirrmtry %%SITE_PERL%%/MPEG
 @dirrmtry %%SITE_PERL%%/MP3
