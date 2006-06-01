@@ -4975,6 +4975,7 @@ jsch		ports/net/jsch
 jsdk		ports/java/jsdk
 jslice		ports/graphics/jslice
 jsmath		ports/math/jsmath
+jsmath-fonts	ports/math/jsmath-fonts
 jtans		ports/games/jtans
 jtop		ports/sysutils/jtop
 jude-community	ports/devel/jude-community
