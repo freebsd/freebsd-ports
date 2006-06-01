@@ -12,10 +12,12 @@ CATEGORIES=	misc
 MASTER_SITES=	http://www.belousov.com/download/
 PKGNAMESUFFIX=	-kmod
 
-MAINTAINER=	strijar@urai.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Screensaver for console (matrix_saver.ko) "Matrix" like
 
 BROKEN=		Unfetchable
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=	2006-07-15
 
 KMODDIR=	${PREFIX}/modules
 SYSDIR?=	${SRC_BASE}/sys
