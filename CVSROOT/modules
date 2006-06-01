@@ -5257,7 +5257,6 @@ ko-bitchx	ports/korean/bitchx
 ko-elm		ports/korean/elm
 ko-engdic	ports/korean/engdic
 ko-eterm	ports/korean/eterm
-ko-firefox-ko	ports/korean/firefox-ko
 ko-gau		ports/korean/gau
 ko-gdick	ports/korean/gdick
 ko-ghostscript-gnu-korfont	ports/korean/ghostscript-gnu-korfont
@@ -14795,8 +14794,6 @@ zh-eterm	ports/chinese/eterm
 zh-fcitx	ports/chinese/fcitx
 zh-firebird	ports/chinese/firebird
 zh-fireflyttf	ports/chinese/fireflyttf
-zh-firefox-zh_CN	ports/chinese/firefox-zh_CN
-zh-firefox-zh_TW	ports/chinese/firefox-zh_TW
 zh-fortunetw	ports/chinese/fortunetw
 zh-gb2jis	ports/chinese/gb2jis
 zh-gb2ps	ports/chinese/gb2ps

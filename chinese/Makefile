@@ -41,8 +41,6 @@
     SUBDIR += fcitx
     SUBDIR += firebird
     SUBDIR += fireflyttf
-    SUBDIR += firefox-zh_CN
-    SUBDIR += firefox-zh_TW
     SUBDIR += fortunetw
     SUBDIR += gb2jis
     SUBDIR += gb2ps
