@@ -10,7 +10,8 @@ PORTVERSION=	0.0.3
 PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://optronic.sourceforge.net/files/ \
-		http://critical.ch/distfiles/
+		http://critical.ch/distfiles/ \
+		http://energy.critical.ch/distfiles/
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	XMMS input-plugin for playing Nintendo(TM) NSF audio files

@@ -8,7 +8,9 @@
 PORTNAME=	ccard
 PORTVERSION=	1.1
 CATEGORIES=	finance
-MASTER_SITES=	http://www.canb.auug.org.au/~millerp/
+MASTER_SITES=	http://www.canb.auug.org.au/~millerp/ \
+		http://critical.ch/distfiles/ \
+		http://energy.critical.ch/distfiles/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
 
 MAINTAINER=	ehaupt@FreeBSD.org

@@ -10,6 +10,7 @@ PORTVERSION=	0.0.3
 PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://critical.ch/distfiles/ \
+		http://energy.critical.ch/distfiles/ \
 		http://staff.xmms.org/zinx/misc/tmp/
 PKGNAMEPREFIX=	xmms-
 DISTNAME=	xmms-OpenSPC-${PORTVERSION}

@@ -8,7 +8,9 @@
 PORTNAME=	pkcrack
 PORTVERSION=	1.2.2
 CATEGORIES=	security
-MASTER_SITES=	http://www.unix-ag.uni-kl.de/~conrad/krypto/pkcrack/
+MASTER_SITES=	http://www.unix-ag.uni-kl.de/~conrad/krypto/pkcrack/ \
+		http://critical.ch/distfiles/ \
+		http://energy.critical.ch/distfiles/
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A utility for breaking pkzip encryption

@@ -11,6 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.cgarbs.de/stuff/ \
 		http://download.berlios.de/gbsplay/ \
+		http://energy.critical.ch/distfiles/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	ehaupt
 PKGNAMEPREFIX?=

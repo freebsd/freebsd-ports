@@ -9,6 +9,7 @@ PORTNAME=	tthsum
 PORTVERSION=	1.1.0
 CATEGORIES=	security
 MASTER_SITES=	http://critical.ch/distfiles/ \
+		http://energy.critical.ch/distfiles/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	ehaupt
 

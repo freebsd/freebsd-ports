@@ -8,7 +8,9 @@
 PORTNAME=	htmlise
 PORTVERSION=	0.2
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.ex-parrot.com/~chris/stuff/
+MASTER_SITES=	http://www.ex-parrot.com/~chris/stuff/ \
+		http://critical.ch/distfiles/ \
+		http://energy.critical.ch/distfiles/
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Formats plain text as HTML

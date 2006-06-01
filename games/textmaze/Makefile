@@ -9,7 +9,9 @@
 PORTNAME=	textmaze
 PORTVERSION=	1.2
 CATEGORIES=	games perl5
-MASTER_SITES=	http://www.robobunny.com/projects/textmaze/
+MASTER_SITES=	http://www.robobunny.com/projects/textmaze/ \
+		http://critical.ch/distfiles/ \
+		http://energy.critical.ch/distfiles/
 DISTNAME=	${PORTNAME}_v${PORTVERSION}
 
 MAINTAINER=	ehaupt@FreeBSD.org

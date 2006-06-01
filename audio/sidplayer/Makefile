@@ -9,6 +9,8 @@ PORTNAME=	sidplayer
 PORTVERSION=	4.4
 CATEGORIES=	audio
 MASTER_SITES=	http://wwwthep.physik.uni-mainz.de/~cbauer/ \
+		http://critical.ch/distfiles/ \
+		http://energy.critical.ch/distfiles/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	ehaupt
 DISTNAME=	SIDPlayer-${PORTVERSION}

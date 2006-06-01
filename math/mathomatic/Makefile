@@ -9,7 +9,9 @@
 PORTNAME=	mathomatic
 PORTVERSION=	12.5.16
 CATEGORIES=	math
-MASTER_SITES=	http://www.panix.com/~gesslein/
+MASTER_SITES=	http://www.panix.com/~gesslein/ \
+		http://critical.ch/distfiles/ \
+		http://energy.critical.ch/distfiles/
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Highly portable, general purpose CAS (Computer Algebra System)

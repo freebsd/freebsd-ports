@@ -8,7 +8,8 @@
 PORTNAME=	spfval
 PORTVERSION=	0.0.1
 CATEGORIES=	mail
-MASTER_SITES=	http://critical.ch/distfiles/
+MASTER_SITES=	http://critical.ch/distfiles/ \
+		http://energy.critical.ch/distfiles/
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A SPF validator

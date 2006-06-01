@@ -8,7 +8,9 @@
 PORTNAME=	countrycodes
 PORTVERSION=	1.0.5
 CATEGORIES=	misc
-MASTER_SITES=	http://www.grigna.com/diego/linux/countrycodes/
+MASTER_SITES=	http://www.grigna.com/diego/linux/countrycodes/ \
+		http://critical.ch/distfiles/ \
+		http://energy.critical.ch/distfiles/
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	An ISO 3166 country code finder

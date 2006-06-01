@@ -8,7 +8,9 @@
 PORTNAME=	linklint
 PORTVERSION=	2.3.5
 CATEGORIES=	www
-MASTER_SITES=	http://www.linklint.org/download/
+MASTER_SITES=	http://www.linklint.org/download/ \
+		http://critical.ch/distfiles/ \
+		http://energy.critical.ch/distfiles/
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Perl script that checks links on web sites

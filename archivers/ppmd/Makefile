@@ -8,7 +8,8 @@
 PORTNAME=	ppmd
 PORTVERSION=	20050811
 CATEGORIES=	archivers
-MASTER_SITES=	http://critical.ch/distfiles/
+MASTER_SITES=	http://critical.ch/distfiles/ \
+		http://energy.critical.ch/distfiles/
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A fast archiver with a good compression ratio

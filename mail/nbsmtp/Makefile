@@ -10,7 +10,8 @@
 PORTNAME=	nbsmtp
 PORTVERSION=	1.00
 CATEGORIES=	mail
-MASTER_SITES=	http://critical.ch/distfiles/
+MASTER_SITES=	http://critical.ch/distfiles/ \
+		http://energy.critical.ch/distfiles/
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Simple program for outgoing SMTP delivery

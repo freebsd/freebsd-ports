@@ -8,7 +8,8 @@
 PORTNAME=	telak
 PORTVERSION=	0.4
 CATEGORIES=	graphics
-MASTER_SITES=	http://critical.ch/distfiles/
+MASTER_SITES=	http://critical.ch/distfiles/ \
+		http://energy.critical.ch/distfiles/
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A tool to draw pictures on your root window

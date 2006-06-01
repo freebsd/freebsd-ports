@@ -9,6 +9,7 @@ PORTNAME=	rtf2html
 DISTVERSION=	1.1b
 CATEGORIES=	textproc
 MASTER_SITES=	http://critical.ch/distfiles/ \
+		http://energy.critical.ch/distfiles/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	ehaupt
 DISTNAME=	${PORTNAME}

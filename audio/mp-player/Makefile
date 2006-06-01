@@ -9,7 +9,8 @@ PORTNAME=	mp-player
 PORTVERSION=	0.6
 CATEGORIES=	audio
 MASTER_SITES=	http://mp.waw.cx/ \
-		http://critical.ch/distfiles/
+		http://critical.ch/distfiles/ \
+		http://energy.critical.ch/distfiles/
 DISTNAME=	mp-current
 EXTRACT_SUFX=	.tgz
 

@@ -8,7 +8,9 @@
 PORTNAME=	mpck
 PORTVERSION=	0.12
 CATEGORIES=	audio
-MASTER_SITES=	http://checkmate.linuxonly.nl/
+MASTER_SITES=	http://checkmate.linuxonly.nl/ \
+		http://critical.ch/distfiles/ \
+		http://energy.critical.ch/distfiles/
 DISTNAME=	checkmate-${PORTVERSION}
 
 MAINTAINER=	ehaupt@FreeBSD.org

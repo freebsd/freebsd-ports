@@ -8,7 +8,9 @@
 PORTNAME=	gzrecover
 PORTVERSION=	0.4
 CATEGORIES=	archivers
-MASTER_SITES=	http://www.urbanophile.com/arenn/hacking/gzrt/
+MASTER_SITES=	http://www.urbanophile.com/arenn/hacking/gzrt/ \
+		http://critical.ch/distfiles/ \
+		http://energy.critical.ch/distfiles/
 DISTNAME=	gzrt-${PORTVERSION}
 
 MAINTAINER=	ehaupt@FreeBSD.org

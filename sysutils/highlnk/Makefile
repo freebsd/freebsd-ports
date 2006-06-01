@@ -8,7 +8,9 @@
 PORTNAME=	highlnk
 DISTVERSION=	0.2
 CATEGORIES=	sysutils
-MASTER_SITES=	http://perli.net/projekte/highlnk/
+MASTER_SITES=	http://perli.net/projekte/highlnk/ \
+		http://critical.ch/distfiles/ \
+		http://energy.critical.ch/distfiles/
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A tool to save disk space on hard disks by using hardlinks

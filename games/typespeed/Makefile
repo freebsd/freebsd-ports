@@ -10,7 +10,8 @@ PORTVERSION=	0.4.4
 PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://tobias.eyedacor.org/typespeed/ \
-		http://critical.ch/distfiles/
+		http://critical.ch/distfiles/ \
+		http://energy.critical.ch/distfiles/
 DISTNAME=	typespeed-${PORTVERSION}
 
 MAINTAINER=	ehaupt@FreeBSD.org

@@ -8,8 +8,9 @@
 PORTNAME=	bmp2html
 PORTVERSION=	0.1
 CATEGORIES=	graphics
-MASTER_SITES=	http://critical.ch/distfiles/
-MASTER_SITES+=	http://www.dasfisk.dk/bmp2html/
+MASTER_SITES=	http://critical.ch/distfiles/ \
+		http://energy.critical.ch/distfiles/ \
+		http://www.dasfisk.dk/bmp2html/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ehaupt@FreeBSD.org

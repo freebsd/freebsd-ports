@@ -8,7 +8,8 @@
 PORTNAME=	schwobifyer
 PORTVERSION=	20050730
 CATEGORIES=	german
-MASTER_SITES=	http://critical.ch/distfiles/
+MASTER_SITES=	http://critical.ch/distfiles/ \
+		http://energy.critical.ch/distfiles/
 PKGNAMEPREFIX=	de-
 
 MAINTAINER=	ehaupt@FreeBSD.org

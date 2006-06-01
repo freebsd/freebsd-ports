@@ -9,7 +9,9 @@ PORTNAME=	recoverjpeg
 PORTVERSION=	1.1.1
 PORTREVISION=	1
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.rfc1149.net/download/recoverjpeg/
+MASTER_SITES=	http://www.rfc1149.net/download/recoverjpeg/ \
+		http://critical.ch/distfiles/ \
+		http://energy.critical.ch/distfiles/
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Recoverjpeg tries to recover JFIF (JPEG) pictures from a peripheral

@@ -8,7 +8,9 @@
 PORTNAME=	qmail-rblchk
 PORTVERSION=	2.4.1
 CATEGORIES=	mail
-MASTER_SITES=	http://morettoni.net/qmail/
+MASTER_SITES=	http://morettoni.net/qmail/ \
+		http://critical.ch/distfiles/ \
+		http://energy.critical.ch/distfiles/
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A qmail RBL filter
