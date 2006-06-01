@@ -14,6 +14,7 @@ lib/ayam/tcl/action.tcl
 lib/ayam/tcl/ai.tcl
 lib/ayam/tcl/ayam.tcl
 lib/ayam/tcl/balloon.tcl
+lib/ayam/tcl/bevel.tcl
 lib/ayam/tcl/birail1.tcl
 lib/ayam/tcl/birail2.tcl
 lib/ayam/tcl/box.tcl
@@ -61,6 +62,7 @@ lib/ayam/tcl/revolve.tcl
 lib/ayam/tcl/riattr.tcl
 lib/ayam/tcl/riinc.tcl
 lib/ayam/tcl/riopt.tcl
+lib/ayam/tcl/riproc.tcl
 lib/ayam/tcl/root.tcl
 lib/ayam/tcl/run.tcl
 lib/ayam/tcl/script.tcl
@@ -172,8 +174,10 @@ lib/ayam/tcl/BWidget-1.2.1/lang/fr.rc
 %%PORTDOCS%%%%DOCSDIR%%/html/ayam-6.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ayam-7.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ayam-8.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ayam-9.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ayam.html
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/ampick.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/pics/bevel.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/birail1.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/birail1vc.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/birail2.gif
@@ -199,6 +203,7 @@ lib/ayam/tcl/BWidget-1.2.1/lang/fr.rc
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/propgui.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/refine.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/revolve.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/pics/shiftclsbsp.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/sgordon.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/skin.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/splitnc.gif
@@ -206,6 +211,7 @@ lib/ayam/tcl/BWidget-1.2.1/lang/fr.rc
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/sweep.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/tce.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/text-ayam.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/pics/tgui.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/tools.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/treeview.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/view.gif
