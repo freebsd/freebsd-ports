@@ -14,11 +14,11 @@ sbin/authdump
 sbin/authload
 sbin/authmgr
 sbin/mqueue
-%%PORTDOCS%%share/doc/fwtk/LICENSE
-%%PORTDOCS%%share/doc/fwtk/admin_guide.ps
-%%PORTDOCS%%share/doc/fwtk/manpages.ps
-%%PORTDOCS%%share/doc/fwtk/overview.ps
-%%PORTDOCS%%share/doc/fwtk/presentation.ps
-%%PORTDOCS%%share/doc/fwtk/sample-report.txt
-%%PORTDOCS%%share/doc/fwtk/user_guide.ps
-%%PORTDOCS%%@dirrm share/doc/fwtk
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/admin_guide.ps
+%%PORTDOCS%%%%DOCSDIR%%/manpages.ps
+%%PORTDOCS%%%%DOCSDIR%%/overview.ps
+%%PORTDOCS%%%%DOCSDIR%%/presentation.ps
+%%PORTDOCS%%%%DOCSDIR%%/sample-report.txt
+%%PORTDOCS%%%%DOCSDIR%%/user_guide.ps
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

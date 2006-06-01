@@ -1,11 +1,13 @@
---- Makefile.config.orig	Tue Mar  4 20:17:46 1997
-+++ Makefile.config	Sat Apr 18 00:51:14 1998
-@@ -24,13 +24,13 @@
+--- Makefile.config.orig	Tue Mar  4 22:17:46 1997
++++ Makefile.config	Sun May 21 18:01:05 2006
+@@ -24,13 +24,15 @@
  
  # Defines for your operating system
  #
 -DEFINES=
++.if defined(WITH_SKEY)
 +DEFINES= -D_SKEY_INTERNAL
++.endif
  #DEFINES=-DSYSV -DSOLARIS
  
  # Options for your compiler (eg, "-g" for debugging, "-O" for
@@ -16,7 +18,7 @@
  #COPT=	-O $(DEFINES)
  
  # Version of "make" you want to use
-@@ -44,16 +44,16 @@
+@@ -44,16 +46,20 @@
  
  
  # Destination directory for installation of binaries
@@ -32,11 +34,15 @@
  # Names of any auxiliary libraries your system may require (e.g., -lsocket)
  # If you want to link against a resolver library, specify it here.
 -AUXLIB=
++.if defined(WITH_SKEY)
 +AUXLIB= -lcrypt -lskey -lmd
++.else
++AUXLIB= -lcrypt -lmd
++.endif
  #AUXLIB= -lsocket
  #AUXLIB= -lresolv
  # For Solaris:
-@@ -72,23 +72,23 @@
+@@ -72,23 +78,23 @@
  # or -Bstatic for static binaries under SunOS 4.1.x)
  #LDFL=	-Bstatic
  #LDFL=
@@ -64,7 +70,7 @@
  #XLIBS =  -L$(XLIBDIR) -lXaw -lXmu -lXt -lXext -lX11
  # for Linux:
  #XLIBS =  -L$(XLIBDIR) -lXaw -lXmu -lXt -lXext -lX11 -lc
-@@ -98,8 +98,8 @@
+@@ -98,8 +104,8 @@
  #XLIBS = -L$(XLIBDIR) -lXaw -lXmu -lXt -lXext -lX11
  
  # Location of X include files

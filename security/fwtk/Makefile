@@ -1,4 +1,3 @@
-# ex:ts=8
 # Ports collection makefile for:  fwtk
 # Date created:			  15th June 1996
 # Whom:				  gpalmer
@@ -8,22 +7,22 @@
 
 PORTNAME=	fwtk
 PORTVERSION=	2.1
+PORTREVISION=	1
 CATEGORIES=	security
 DISTNAME=	${PORTNAME}${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
 DISTFILES=	fwtk2.1${EXTRACT_SUFX} fwtk-doc-only${EXTRACT_SUFX}
 DIST_SUBDIR=	fwtk
 
-.if defined(WITH_JUMBO_PATCH)
-PATCHFILES=	trg-jumbo-20001114.diff
-PATCH_SITES=	http://www.fwtk.org/fwtk/patches/
-PATCH_DIST_STRIP=	-p1
-.endif
-
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pirzyk@FreeBSD.org
 COMMENT=	A toolkit used for building firewalls based on proxy services
 
-RESTRICTED=	"No form of redistribution is allowed"
+RESTRICTED=	No form of redistribution is allowed
+
+OPTIONS=	X11 "Build X11 programs" On \
+		JUMBO_PATCH "Build with  the \"Jumbo\" patch kit" Off \
+		SKEY "Build this package with S/Key support" Off \
+		SNK "Buil this package with DigiPath SNK support" Off
 
 WRKSRC=		${WRKDIR}/fwtk
 HAS_CONFIGURE=	YES
@@ -32,22 +31,31 @@ CONFIGURE_SCRIPT=	fixmake
 MAN3=		auth.3
 MAN5=		netperm-table.5
 MAN8=		authmgr.8 authsrv.8 ftp-gw.8 http-gw.8 login-sh.8 netacl.8 \
-		plug-gw.8 rlogin-gw.8 smap.8 smapd.8 tn-gw.8
+		plug-gw.8 rlogin-gw.8 smap.8 smapd.8 tn-gw.8 x-gw.8
 DOCS=		sample-report.txt manpages.ps admin_guide.ps user_guide.ps \
 		overview.ps presentation.ps
 SBIN_BINS=	authdump authload authmgr
 LIBEXEC_BINS=	authsrv ftp-gw http-gw netacl plug-gw rlogin-gw smap smapd \
-		tn-gw
-
-.if !defined(WITHOUT_X11)
-LIBEXEC_BINS+=	x-gw
-MAN8+=		x-gw.8
-.endif
+		tn-gw x-gw
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500000
-IGNORE=		does not build on 5.x and above, requires S/Key libraries and headers
+.if defined(WITH_SKEY)
+IGNORE=		does not build on 5.x and above with WITH_SKEY set because it requires S/Key libraries and headers
+.endif
+.endif
+
+.if !defined(WITHOUT_X11)
+MAN8+=		x-gw.8
+LIBEXEC_BINS+=	x-gw
+USE_XLIB=	yes
+.endif
+
+.if defined(WITH_JUMBO_PATCH)
+PATCHFILES=	trg-jumbo-20001114.diff
+PATCH_SITES=	http://www.fwtk.org/fwtk/patches/
+PATCH_DIST_STRIP=	-p1
 .endif
 
 .if !exists(${DISTDIR}/${DIST_SUBDIR}/fwtk2.1${EXTRACT_SUFX}) \
@@ -55,12 +63,18 @@ IGNORE=		does not build on 5.x and above, requires S/Key libraries and headers
 IGNORE='Please read ftp://ftp.tislabs.com/pub/firewalls/toolkit/dist/README for details of how to obtain the FTWK source.  Put the files fwtk2.1${EXTRACT_SUFX} and fwtk-doc-only${EXTRACT_SUFX} into the directory ${DISTDIR}/${DIST_SUBDIR} and run make again'
 .endif
 
-pre-patch:
-.if !defined(WITH_JUMBO_PATCH)
-	@${ECHO} "*****************************************************************************"
-	@${ECHO} "****  To enable the \"Jumbo\" patch kit, run 'make -DWITH_JUMBO_PATCH'"
-	@${ECHO} "****  For information about patches, read http://www.fwtk.org/fwtk/patches/"
-	@${ECHO} "*****************************************************************************"
+post-patch:
+	@${REINPLACE_CMD} -e 's|<varargs.h>|<stdarg.h>|' \
+		${WRKSRC}/http-gw/http-gw.h
+	@${REINPLACE_CMD} -E 's|(defined\(AIX\))|\1 \&\& !defined(__FreeBSD__)|' \
+		${WRKSRC}/x-gw/sig.c
+.if defined(WITH_SKEY)
+	@${REINPLACE_CMD} -E 's|^/\* (#define	AUTHPROTO_SKEY) \*/|\1|' \
+		${WRKSRC}/auth.h
+.endif
+.if defined(WITH_SNK)
+	@${REINPLACE_CMD} -E 's|^/\* (#define	AUTHPROTO_SNK) \*/|\1|' \
+		${WRKSRC}/auth.h
 .endif
 
 pre-configure:
@@ -74,7 +88,7 @@ pre-configure:
 		${WRKSRC}/firewall.h.in > ${WRKSRC}/firewall.h
 
 post-install:
-	cd ${PREFIX}/libexec ; strip ${SBIN_BINS} ${LIBEXEC_BINS}
+	cd ${PREFIX}/libexec ; ${STRIP_CMD} ${SBIN_BINS} ${LIBEXEC_BINS}
 	cd ${PREFIX}/libexec ; ${MV} ${SBIN_BINS} mqueue ../sbin
 	${INSTALL_DATA} ${WRKSRC}/config/netperm-table \
 		${PREFIX}/etc/netperm-table.sample
