@@ -8,7 +8,7 @@
 PORTNAME=	sidplayer
 PORTVERSION=	4.4
 CATEGORIES=	audio
-MASTER_SITES=	http://wwwthep.physik.uni-mainz.de/~cbauer/ \
+MASTER_SITES=	http://sidplayer.cebix.net/downloads/ \
 		http://critical.ch/distfiles/ \
 		http://energy.critical.ch/distfiles/ \
 		${MASTER_SITE_LOCAL}
