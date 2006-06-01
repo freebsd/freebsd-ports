@@ -1,2 +1,2 @@
 bin/jode
-share/java/classes/jode-%%VERSION%%.jar
+%%JAVAJARDIR%%/jode-%%VERSION%%.jar
