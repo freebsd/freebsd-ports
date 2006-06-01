@@ -15,7 +15,6 @@
     SUBDIR += elm
     SUBDIR += engdic
     SUBDIR += eterm
-    SUBDIR += firefox-ko
     SUBDIR += gau
     SUBDIR += gdick
     SUBDIR += ghostscript-gnu-korfont
