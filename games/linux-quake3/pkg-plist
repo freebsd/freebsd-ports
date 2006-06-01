@@ -1,9 +1,9 @@
 bin/linux-q3ded
 %%CLIENT%%bin/linux-quake3
 %%SMP%%bin/linux-quake3-smp
-%%BINDIR%%/q3ded
-%%CLIENT%%%%BINDIR%%/quake3
-%%SMP%%%%BINDIR%%/quake3-smp
+%%LIBDIR%%/q3ded
+%%CLIENT%%%%LIBDIR%%/quake3
+%%SMP%%%%LIBDIR%%/quake3-smp
 %%PORTDOCS%%%%DOCSDIR%%/LinuxFAQ/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/LinuxFAQ/index.html
 %%PORTDOCS%%%%DOCSDIR%%/LinuxFAQ/udp_wide_README.txt
@@ -73,7 +73,7 @@ bin/linux-q3ded
 %%PUNKBUSTER%%%%DATADIR%%/pb/pbag.so
 %%PUNKBUSTER%%%%DATADIR%%/pb/pbcl.so
 %%PUNKBUSTER%%%%DATADIR%%/pb/pbsv.so
-@dirrm %%BINDIR%%
+@dirrm %%LIBDIR%%
 %%PUNKBUSTER%%@dirrm %%DATADIR%%/pb/htm
 %%PUNKBUSTER%%@dirrm %%DATADIR%%/pb
 %%PUNKBUSTER%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/PunkBuster/players
