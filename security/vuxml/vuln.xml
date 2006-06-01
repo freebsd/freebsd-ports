@@ -34,6 +34,100 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="7f8cecea-f199-11da-8422-00123ffe8333">
+    <topic>MySQL -- SQL-injection security vulnerability</topic>
+    <affects>
+      <package>
+	<name>mysql-server</name>
+	<range><ge>5.1</ge><le>5.1.9</le></range>
+	<range><ge>5.0</ge><lt>5.0.22</lt></range>
+	<range><ge>4.1</ge><lt>4.1.20</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>MySQL reports:</p>
+	<blockquote cite="http://lists.mysql.com/announce/364">
+	  <p>An SQL-injection security hole has been found in multibyte
+	    encoding processing. An SQL-injection security hole can include a
+	    situation whereby when inserting user supplied data into a
+	    database, the user might inject his own SQL statements that the
+	    server will execute. With regards to this vulnerability discovered,
+	    when character set unaware escaping is used (e.g., addslashes() in
+	    PHP), it is possible to bypass it in some multibyte character sets
+	    (e.g., SJIS, BIG5 and GBK). As a result, a function like
+	    addslashes() is not able to prevent SQL injection attacks. It is
+	    impossible to fix this on the server side. The best solution is for
+	    applications to use character set aware escaping offered in a
+	    function like mysql_real_escape().</p>
+	  <p>Workarounds:</p>
+	    <p>One can use NO_BACKSLASH_ESCAPES mode as a workaround for a bug
+	      in mysql_real_escape_string(), if you cannot upgrade your server
+	      for some reason. It will enable SQL standard compatibility mode,
+	      where backslash is not considered a special character.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://lists.mysql.com/announce/364</url>
+      <url>http://lists.mysql.com/announce/365</url>
+    </references>
+    <dates>
+      <discovery>2006-05-31</discovery>
+      <entry>2006-06-01</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="4913886c-e875-11da-b9f4-00123ffe8333">
+    <topic>MySQL -- Information Disclosure and Buffer Overflow Vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>mysql-server</name>
+	<range><gt>4.0</gt><lt>4.0.27</lt></range>
+	<range><gt>4.1</gt><lt>4.1.19</lt></range>
+	<range><gt>5.1</gt><le>5.1.9</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/19929/">
+	  <p>MySQL have some vulnerabilities, which can be exploited by
+	    malicious users to disclose potentially sensitive information
+	    and compromise a vulnerable system.</p>
+	  <p>1) An error within the code that generates an error response
+	    to an invalid COM_TABLE_DUMP packet can be exploited by an
+	    authenticated client to disclosure certain memory content of the
+	    server process.</p>
+	  <p>2) A boundary error within the handling of specially crafted
+	    invalid COM_TABLE_DUMP packets can be exploited by an authenticated
+	    client to cause a buffer overflow and allows arbitrary code
+	    execution.</p>
+	  <p>3) An error within the handling of malformed login packets can be
+	    exploited to disclosure certain memory content of the server
+	    process in the error messages.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-1516</cvename>
+      <cvename>CVE-2006-1517</cvename>
+      <cvename>CVE-2006-1518</cvename>
+      <certvu>602457</certvu>
+      <url>http://www.wisec.it/vulns.php?page=7</url>
+      <url>http://www.wisec.it/vulns.php?page=8</url>
+      <url>http://dev.mysql.com/doc/refman/4.1/en/news-4-0-27.html</url>
+      <url>http://dev.mysql.com/doc/refman/4.1/en/news-4-1-19.html</url>
+      <url>http://dev.mysql.com/doc/refman/5.1/en/news-5-1-10.html</url>
+      <url>http://secunia.com/advisories/19929/</url>
+      <url>http://www.vuxml.org/freebsd/a8d8713e-dc83-11da-a22b-000c6ec775d9.html</url>
+    </references>
+    <dates>
+      <discovery>2006-05-02</discovery>
+      <entry>2006-06-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c0171f59-ea8a-11da-be02-000c6ec775d9">
     <topic>frontpage -- cross site scripting vulnerability</topic>
     <affects>
