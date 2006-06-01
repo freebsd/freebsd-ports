@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Graph/Writer/GraphViz.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Graph/Writer/GraphViz/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Graph/Writer/GraphViz
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Graph/Writer
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Graph
+@dirrmtry %%SITE_PERL%%/Graph/Writer
+@dirrmtry %%SITE_PERL%%/Graph

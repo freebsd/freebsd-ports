@@ -1,0 +1,34 @@
+# New ports collection makefile for:	p5-Graph-Writer-GraphViz
+# Date created:				31 May 2006
+# Whom:					Aaron Dalton <aaron@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	Graph-Writer-GraphViz
+PORTVERSION=	0.10
+CATEGORIES=	graphics perl5
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	Graph
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	aaron@FreeBSD.org
+COMMENT=	GraphViz Writer for Graph object
+
+BUILD_DEPENDS=	${SITE_PERL}/IO/All.pm:${PORTSDIR}/devel/p5-IO-All \
+		${SITE_PERL}/GraphViz.pm:${PORTSDIR}/graphics/p5-GraphViz \
+		${SITE_PERL}/Graph.pm:${PORTSDIR}/math/p5-Graph \
+		${SITE_PERL}/Graph/Writer.pm:${PORTSDIR}/graphics/p5-Graph-ReadWrite
+RUN_DEPENDS=	${BUILD_DEPENDS}
+
+MAN3=	Graph::Writer::GraphViz.3
+
+PERL_CONFIGURE=	yes
+
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500800
+IGNORE=	is currently broken under Perl <5.8.0.  This will hopefully be fixed soon.  Please install lang/perl5.8 and try again
+.endif
+
+.include <bsd.port.post.mk>
