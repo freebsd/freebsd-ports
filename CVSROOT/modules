@@ -8527,6 +8527,7 @@ p5-Gopher-Server	ports/net/p5-Gopher-Server
 p5-Graph	ports/math/p5-Graph
 p5-Graph-Easy	ports/graphics/p5-Graph-Easy
 p5-Graph-ReadWrite	ports/graphics/p5-Graph-ReadWrite
+p5-Graph-SocialMap	ports/graphics/p5-Graph-SocialMap
 p5-Graph-Writer-GraphViz	ports/graphics/p5-Graph-Writer-GraphViz
 p5-GraphViz	ports/graphics/p5-GraphViz
 p5-GraphViz-DBI	ports/databases/p5-GraphViz-DBI
