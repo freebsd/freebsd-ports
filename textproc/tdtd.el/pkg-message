@@ -1,5 +1,6 @@
 ****************************************************************************
-To use dtd-mode, add to your ~/.emacs the following lines:
+To use dtd-mode, add to your ~/.emacs or ~/.xemacs/init.el the following
+lines:
 
 ;; DTD mode
 (autoload 'dtd-mode "tdtd" "Major mode for SGML and XML DTDs." t)
