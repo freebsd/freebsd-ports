@@ -1,11 +1,51 @@
---- auth/Makefile.orig	Fri Apr  5 09:49:21 1996
-+++ auth/Makefile	Sat Apr 18 00:38:57 1998
-@@ -20,7 +20,7 @@
+--- auth/Makefile.orig	Fri Apr  5 11:49:21 1996
++++ auth/Makefile	Sun May 21 22:42:13 2006
+@@ -12,7 +12,7 @@
+ # RcsId: "$Header: /usr/home/rick/fwtk2.0/fwtk/auth/RCS/Makefile,v 1.1 1996/03/27 03:29:55 rick Exp rick $"
+ 
+ 
+-include	../Makefile.config
++.include "../Makefile.config"
+ 
+ 
+ #if you are using the SKEY modules, define SKEYDIR to be the source
+@@ -20,7 +20,9 @@
  #SKEYDIR=../../skey
  #SKEYINC= -I$(SKEYDIR)
  #SKEYLIB= $(SKEYDIR)/libskey.a
 -#SKEYOBJ= skey.o
++.if defined(WITH_SKEY)
 +SKEYOBJ= skey.o
++.endif
  
  
  #if you are using the SecurID module, define SECURDIR to be the source
+@@ -41,20 +43,24 @@
+ 
+ #if you are using the Digital Pathways SNK module, include this:
+ #this also requires DES routines below
+-#SNKOBJ=	snk.o
++.if defined(WITH_SNK)
++SNKOBJ=	snk.o
++.endif
+ 
+ 
+ #if you are using link-level encryption code, this should be the path
+ #to a library that contains DES routines (NOT SUPPLIED!)
+ #you will need to replace srvio.c and cliio.c
+-#DESLIB=	../../libdes/libdes.a
+-#DESINC=	-I../../libdes
++.if defined(WITH_SNK)
++DESLIB=	-lcrypto
++DESINC=	-I/usr/include/openssl
++.endif
+ 
+ 
+ #security protocol modules
+ MODULES= $(SKEYLIB) $(SECURLIB) $(DESLIB)
+ 
+-CFLAGS= -I.. $(COPT)
++CFLAGS+= -I.. $(COPT)
+ LIB=	../libauth.a
+ FWLIB=	../libfwall.a
+ 
