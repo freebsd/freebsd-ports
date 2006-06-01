@@ -1091,6 +1091,7 @@
     SUBDIR += p5-Module-Build
     SUBDIR += p5-Module-Build-Convert
     SUBDIR += p5-Module-Build-Kwalitee
+    SUBDIR += p5-Module-Compile
     SUBDIR += p5-Module-CoreList
     SUBDIR += p5-Module-Find
     SUBDIR += p5-Module-Info

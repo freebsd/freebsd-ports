@@ -1,0 +1,13 @@
+This module provides a system for writing modules that *compile* other
+Perl modules.
+
+Modules that use these compilation modules get compiled into some
+altered form the first time they are run. The result is cached into
+".pmc" files.
+
+Perl has native support for ".pmc" files. It always checks for them,
+before loading a ".pm" file.
+
+
+Author:	Ingy  <ingy@cpan.org>
+WWW:	http://search.cpan.org/~ingy/Module-Compile-0.15/
