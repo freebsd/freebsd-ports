@@ -14,8 +14,7 @@ MASTER_SITES=	http://rsync.samba.org/ftp/%SUBDIR%/ \
 		ftp://sunsite.auc.dk/pub/unix/%SUBDIR%/  \
 		ftp://ftp.sunet.se/pub/unix/admin/%SUBDIR%/  \
 		ftp://ftp.fu-berlin.de/pub/unix/network/%SUBDIR%/ \
-		http://www.mirrorservice.org/sites/rsync.samba.org/ \
-		http://public.planetmirror.com/pub/%SUBDIR%/
+		http://www.mirrorservice.org/sites/rsync.samba.org/
 MASTER_SITE_SUBDIR=	rsync
 
 MAINTAINER=	pav@FreeBSD.org
