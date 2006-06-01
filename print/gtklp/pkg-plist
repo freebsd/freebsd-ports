@@ -1,6 +1,7 @@
 bin/gtklp
 bin/gtklpq
 share/locale/ca/LC_MESSAGES/gtklp.mo
+share/locale/ca_ES/LC_MESSAGES/gtklp.mo
 share/locale/chs/LC_MESSAGES/gtklp.mo
 share/locale/cht/LC_MESSAGES/gtklp.mo
 share/locale/cz/LC_MESSAGES/gtklp.mo
@@ -17,6 +18,8 @@ share/locale/pt_BR/LC_MESSAGES/gtklp.mo
 share/locale/ru/LC_MESSAGES/gtklp.mo
 share/locale/zh_CN/LC_MESSAGES/gtklp.mo
 share/locale/zh_TW/LC_MESSAGES/gtklp.mo
+@dirrmtry share/locale/ca_ES/LC_MESSAGES
+@dirrmtry share/locale/ca_ES
 @dirrmtry share/locale/cz/LC_MESSAGES
 @dirrmtry share/locale/cz
 @dirrmtry share/locale/cht/LC_MESSAGES
