@@ -1,0 +1,37 @@
+# New ports collection makefile for:	jsMath
+# Date created:		2006-02-23
+# Whom:			Nicola Vitale <nivit@email.it>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	jsMath
+PORTVERSION=	3.3a
+CATEGORIES=	math www
+MASTER_SITES=	http://www.math.union.edu/~dpvc/jsMath/download/ \
+		http://nivi.interfree.it/distfiles/${PORTNAME}/
+
+MAINTAINER=	nivit@email.it
+COMMENT=	A Javascript tool for including mathematics in web pages
+
+USE_ZIP=	yes
+NO_BUILD=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}
+WWWDIR?=	${PREFIX}/www/${PORTNAME}
+PLIST_SUB+=	WWWDIR=${WWWDIR:S,^${PREFIX}/,,}
+
+OPTIONS=	IMAGE_FONTS "Enable image fonts" On
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_IMAGE_FONTS)
+RUN_DEPENDS+=	${WWWDIR}/fonts/cm-fonts/alpha/def.js:${PORTSDIR}/math/jsmath-fonts
+.endif
+
+do-install:
+	@${INSTALL} -d ${WWWDIR}
+	@${CP} -Rp ${WRKSRC}/ ${WWWDIR}/
+	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${WWWDIR}/
+	@${CHMOD} -R go-w ${WWWDIR}/
+
+.include <bsd.port.post.mk>

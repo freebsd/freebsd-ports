@@ -99,6 +99,8 @@
     SUBDIR += jama
     SUBDIR += javanns
     SUBDIR += javaview
+    SUBDIR += jsmath
+    SUBDIR += jsmath-fonts
     SUBDIR += k3dsurf
     SUBDIR += kash3
     SUBDIR += kaskade

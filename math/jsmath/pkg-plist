@@ -1,0 +1,51 @@
+%%WWWDIR%%/COPYING.txt
+%%WWWDIR%%/blank.gif
+%%WWWDIR%%/extensions/AMSsymbols.js
+%%WWWDIR%%/extensions/HTML.js
+%%WWWDIR%%/extensions/bbox.js
+%%WWWDIR%%/extensions/boldsymbol.js
+%%WWWDIR%%/extensions/double-click.js
+%%WWWDIR%%/extensions/fbox.js
+%%WWWDIR%%/extensions/font.js
+%%WWWDIR%%/extensions/leaders.js
+%%WWWDIR%%/extensions/mathchoice.js
+%%WWWDIR%%/extensions/mimeTeX.js
+%%WWWDIR%%/extensions/moreArrows.js
+%%WWWDIR%%/extensions/newcommand.js
+%%WWWDIR%%/extensions/underset-overset.js
+%%WWWDIR%%/jsMath-BaKoMa-fonts.js
+%%WWWDIR%%/jsMath-autoload.html
+%%WWWDIR%%/jsMath-controls.html
+%%WWWDIR%%/jsMath-fallback-mac-mozilla.js
+%%WWWDIR%%/jsMath-fallback-mac-msie.js
+%%WWWDIR%%/jsMath-fallback-mac.js
+%%WWWDIR%%/jsMath-fallback-pc.js
+%%WWWDIR%%/jsMath-fallback-symbols.js
+%%WWWDIR%%/jsMath-fallback-unix.js
+%%WWWDIR%%/jsMath-global-controls.html
+%%WWWDIR%%/jsMath-global.html
+%%WWWDIR%%/jsMath-loader-omniweb4.js
+%%WWWDIR%%/jsMath-loader.html
+%%WWWDIR%%/jsMath-msie-mac.js
+%%WWWDIR%%/jsMath-old-browsers.js
+%%WWWDIR%%/jsMath.js
+%%WWWDIR%%/plugins/CHMmode.js
+%%WWWDIR%%/plugins/autoload.js
+%%WWWDIR%%/plugins/global.js
+%%WWWDIR%%/plugins/mimeTeX.js
+%%WWWDIR%%/plugins/noCache.js
+%%WWWDIR%%/plugins/noGlobal.js
+%%WWWDIR%%/plugins/noImageFonts.js
+%%WWWDIR%%/plugins/spriteImageFonts.js
+%%WWWDIR%%/plugins/tex2math.js
+%%WWWDIR%%/uncompressed/def.js
+%%WWWDIR%%/uncompressed/font.js
+%%WWWDIR%%/uncompressed/jsMath-fallback-mac.js
+%%WWWDIR%%/uncompressed/jsMath-fallback-pc.js
+%%WWWDIR%%/uncompressed/jsMath-fallback-symbols.js
+%%WWWDIR%%/uncompressed/jsMath-fallback-unix.js
+%%WWWDIR%%/uncompressed/jsMath.js
+@dirrm %%WWWDIR%%/extensions
+@dirrm %%WWWDIR%%/plugins
+@dirrm %%WWWDIR%%/uncompressed
+@dirrmtry %%WWWDIR%%
