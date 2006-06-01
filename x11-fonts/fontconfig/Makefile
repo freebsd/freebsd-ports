@@ -22,7 +22,7 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		expat.6:${PORTSDIR}/textproc/expat2
 
 USE_GMAKE=	yes
-USE_X_PREFIX=	yes
+PREFIX?=	${X11BASE}
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
