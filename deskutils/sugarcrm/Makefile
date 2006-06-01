@@ -19,8 +19,6 @@ EXTRACT_ONLY=	${SRCNAME}${EXTRACT_SUFX}
 MAINTAINER=	nick@foobar.org
 COMMENT=	A web based customer relationship management suite
 
-BROKEN=		Unfetchable
-
 USE_PHP=	gd mysql session pcre xml
 USE_PHP=	gd mysql session pcre xml
 USE_ZIP=	yes
@@ -28,7 +26,7 @@ NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 SUGARCRMDIR?=	www/${PORTNAME}
 
-SCRM_DISPATCHER=	http://sugarforge.org/frs/download.php
+SCRM_DISPATCHER=	http://www.sugarforge.org/frs/download.php
 SRCNAME=	SugarSuite-${PORTVERSION}
 USERDOCFILE=	Sugar_Open_Source_User_Guide_v35.pdf
 INSTALLDOCFILE=	Sugar_Open_Source_Installation_Guide_v35.pdf
