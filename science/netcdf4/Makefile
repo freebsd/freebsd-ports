@@ -11,7 +11,7 @@ CATEGORIES=	science
 MASTER_SITES=	ftp://ftp.unidata.ucar.edu/pub/netcdf/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. old
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@sunpoet.net
 COMMENT=	Library for machine-independent, array-oriented data access
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
