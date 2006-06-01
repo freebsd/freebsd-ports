@@ -30,8 +30,10 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Crypt/DES.pm:${PORTSDIR}/security/p5-Cr
 		${SITE_PERL}/Data/Buffer.pm:${PORTSDIR}/misc/p5-Data-Buffer \
 		${SITE_PERL}/URI/Escape.pm:${PORTSDIR}/net/p5-URI \
 		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww
-
 RUN_DEPENDS=	${BUILD_DEPENDS}
+
+DEPRECATED=	Crypt-OpenPGP was abandoned in 2002, use security/gnupg instead
+EXPIRATION_DATE=2006-07-01
 
 PERL_CONFIGURE=	yes
 
