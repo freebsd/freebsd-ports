@@ -688,6 +688,7 @@
     SUBDIR += vultures-eye
     SUBDIR += wanderer
     SUBDIR += wargus
+    SUBDIR += warsow
     SUBDIR += warzone2100
     SUBDIR += wesnoth
     SUBDIR += wmeyes
