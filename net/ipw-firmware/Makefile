@@ -25,8 +25,23 @@ FIRMWARES?=	${RELNAME}-${PORTVERSION}-i.fw:${DRIVERNAME}-i.fw \
 		${RELNAME}-${PORTVERSION}-p.fw:${DRIVERNAME}-p.fw \
 		${RELNAME}-${PORTVERSION}.fw:${DRIVERNAME}.fw
 
-OPTIONS=	MODULE	"Install ${DRIVERNAME}(4) kernel module (very old snapshot)" off \
-		CONTROL	"Install ${DRIVERNAME}control(8) utility" on
+OSVERSION!=     /sbin/sysctl -n kern.osreldate
+
+# Dummy OSVERSION for ipw.
+MIN7OSVERSION?=	999999
+
+# Try to guess sensible defaults.
+.if ${OSVERSION} > ${MIN7OSVERSION}
+OPTIONS+=	CONTROL	"Install ${DRIVERNAME}control(8) utility" off
+.else
+OPTIONS+=	CONTROL	"Install ${DRIVERNAME}control(8) utility" on
+.endif
+
+.if ${OSVERSION} > 600023
+OPTIONS+=	MODULE	"Install ${DRIVERNAME}(4) kernel module (very old snapshot)" off
+.else
+OPTIONS+=	MODULE	"Install ${DRIVERNAME}(4) kernel module (very old snapshot)" on
+.endif
 
 # Override PREFIX to install ${DRIVERNAME}control(8) somewhere we hope it'll
 # be available soon enough.
@@ -47,9 +62,6 @@ MAKE_ENV=	BINDIR="${PREFIX}/sbin" \
 		KMODDIR="${KMODDIR}"
 
 MANCOMPRESSED=	yes
-
-# Dummy OSVERSION for ipw.
-MIN7OSVERSION?=	999999
 
 .if !defined(PACKAGE_BUILDING)
 IS_INTERACTIVE=	yes
