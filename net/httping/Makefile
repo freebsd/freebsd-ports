@@ -9,6 +9,8 @@ PORTNAME=	httping
 PORTVERSION=	1.0.10
 CATEGORIES=	net
 MASTER_SITES=	http://www.vanheusden.com/httping/ \
+		http://critical.ch/distfiles/ \
+		http://energy.critical.ch/distfiles/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	ehaupt
 EXTRACT_SUFX=	.tgz

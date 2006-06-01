@@ -8,7 +8,8 @@
 PORTNAME=	cdircmp
 PORTVERSION=	0.3
 CATEGORIES=	sysutils
-MASTER_SITES=	http://critical.ch/distfiles/
+MASTER_SITES=	http://critical.ch/distfiles/ \
+		http://energy.critical.ch/distfiles/
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Compare directories and select files to copy

@@ -9,7 +9,9 @@
 PORTNAME=	tardy
 PORTVERSION=	1.12
 CATEGORIES=	archivers
-MASTER_SITES=	http://tardy.sourceforge.net/
+MASTER_SITES=	http://tardy.sourceforge.net/ \
+		http://critical.ch/distfiles/ \
+		http://energy.critical.ch/distfiles/
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Manipulate the file headers in tar archive files in various ways

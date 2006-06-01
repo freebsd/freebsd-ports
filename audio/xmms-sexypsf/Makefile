@@ -10,7 +10,8 @@ PORTVERSION=	0.4.8
 PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://projects.raphnet.net/sexypsf/ \
-		http://critical.ch/distfiles/
+		http://critical.ch/distfiles/ \
+		http://energy.critical.ch/distfiles/
 DISTNAME=	sexypsf-${PORTVERSION}
 
 MAINTAINER=	ehaupt@FreeBSD.org

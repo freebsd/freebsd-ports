@@ -9,6 +9,7 @@ PORTNAME=	rej
 PORTVERSION=	0.16
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	http://critical.ch/distfiles/ \
+		http://energy.critical.ch/distfiles/ \
 		http://ftp.suse.com/pub/people/mason/rej/
 
 MAINTAINER=	ehaupt@FreeBSD.org

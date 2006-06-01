@@ -8,7 +8,9 @@
 PORTNAME=	delatt
 DISTVERSION=	1.1.3
 CATEGORIES=	mail
-MASTER_SITES=	http://danborn.net/delatt/
+MASTER_SITES=	http://danborn.net/delatt/ \
+		http://critical.ch/distfiles/ \
+		http://energy.critical.ch/distfiles/
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Strip attachments from email

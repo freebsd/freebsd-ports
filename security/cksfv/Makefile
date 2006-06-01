@@ -9,7 +9,8 @@ PORTNAME=	cksfv
 PORTVERSION=	1.3.9
 CATEGORIES=	security
 MASTER_SITES=	http://zakalwe.virtuaalipalvelin.net/~shd/foss/cksfv/files/ \
-		http://critical.ch/distfiles/
+		http://critical.ch/distfiles/ \
+		http://energy.critical.ch/distfiles/
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Create or manipulate Simple File Verification (SFV) checksum files

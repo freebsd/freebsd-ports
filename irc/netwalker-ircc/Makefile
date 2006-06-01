@@ -9,7 +9,8 @@ PORTNAME=	netwalker-ircc
 PORTVERSION=	0.5.0
 CATEGORIES=	irc
 MASTER_SITES=	http://www.bind.ch/software/netwalker/src/ \
-		http://critical.ch/distfiles/
+		http://critical.ch/distfiles/ \
+		http://energy.critical.ch/distfiles/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ehaupt@FreeBSD.org

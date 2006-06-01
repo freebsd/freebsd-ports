@@ -8,7 +8,8 @@
 PORTNAME=	ecm
 PORTVERSION=	1.0
 CATEGORIES=	archivers
-MASTER_SITES=	http://critical.ch/distfiles/
+MASTER_SITES=	http://critical.ch/distfiles/ \
+		http://energy.critical.ch/distfiles/
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Compresses CD images by stripping unnecessary EDC/ECC data

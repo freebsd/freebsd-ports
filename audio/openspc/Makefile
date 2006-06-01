@@ -9,7 +9,9 @@ PORTNAME=	openspc
 PORTVERSION=	0.3.1
 PORTREVISION=	1
 CATEGORIES=	audio
-MASTER_SITES=	http://membres.lycos.fr/pixels/
+MASTER_SITES=	http://membres.lycos.fr/pixels/ \
+		http://critical.ch/distfiles/ \
+		http://energy.critical.ch/distfiles/
 DISTNAME=	OpenSPC-${PORTVERSION}
 
 MAINTAINER=	ehaupt@FreeBSD.org

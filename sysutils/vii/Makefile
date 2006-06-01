@@ -8,7 +8,9 @@
 PORTNAME=	vii
 PORTVERSION=	4.0
 CATEGORIES=	sysutils
-MASTER_SITES=	http://vii.sourceforge.net/
+MASTER_SITES=	http://vii.sourceforge.net/ \
+		http://critical.ch/distfiles/ \
+		http://energy.critical.ch/distfiles/
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Execute a command repeatedly and scroll the output

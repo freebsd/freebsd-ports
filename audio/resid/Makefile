@@ -9,7 +9,9 @@ PORTNAME=	resid
 PORTVERSION=	0.16
 PORTREVISION=	1
 CATEGORIES=	audio emulators
-MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITES=	http://critical.ch/distfiles/ \
+		http://energy.critical.ch/distfiles/ \
+		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org

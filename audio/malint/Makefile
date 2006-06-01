@@ -9,7 +9,9 @@ PORTNAME=	malint
 DISTVERSION=	0.2
 CATEGORIES=	audio
 MASTER_SITES=	http://www.nih.at/malint/ \
-		ftp://sunsite.univie.ac.at/pub/nih/malint/
+		ftp://sunsite.univie.ac.at/pub/nih/malint/ \
+		http://critical.ch/distfiles/ \
+		http://energy.critical.ch/distfiles/
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	MPEG Audio stream validator

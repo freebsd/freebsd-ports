@@ -9,6 +9,7 @@ PORTNAME=	unzoo
 DISTVERSION=	4.4
 CATEGORIES=	archivers
 MASTER_SITES=	http://critical.ch/distfiles/ \
+		http://energy.critical.ch/distfiles/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	ehaupt
 

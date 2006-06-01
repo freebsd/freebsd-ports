@@ -10,7 +10,8 @@ PORTVERSION=	0.1.9
 PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	http://labs.nixia.no/ \
-		http://critical.ch/distfiles/
+		http://critical.ch/distfiles/ \
+		http://energy.critical.ch/distfiles/
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	The legendary Open Cubic Player

@@ -8,7 +8,8 @@
 PORTNAME=	yell
 PORTVERSION=	1.0
 CATEGORIES=	audio
-MASTER_SITES=	http://www.critical.ch/yell/
+MASTER_SITES=	http://critical.ch/distfiles/ \
+		http://energy.critical.ch/distfiles/
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A command line speaker bell using machine/speaker.h

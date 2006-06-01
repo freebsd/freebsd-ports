@@ -8,7 +8,9 @@
 PORTNAME=	filters
 PORTVERSION=	2.34
 CATEGORIES=	games perl5
-MASTER_SITES=	http://ftp.debian.org/debian/pool/main/f/filters/
+MASTER_SITES=	http://ftp.debian.org/debian/pool/main/f/filters/ \
+		http://critical.ch/distfiles/ \
+		http://energy.critical.ch/distfiles/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ehaupt@FreeBSD.org

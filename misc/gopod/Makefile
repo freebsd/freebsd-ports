@@ -9,7 +9,8 @@ PORTNAME=	gopod
 PORTVERSION=	1.4
 CATEGORIES=	misc
 MASTER_SITES=	http://gopod.free-go.net/gopod/ \
-		http://critical.ch/distfiles/
+		http://critical.ch/distfiles/ \
+		http://energy.critical.ch/distfiles/
 PKGNAMEPREFIX?=
 DISTNAME=	goPod-${PORTVERSION}_linux_bsd
 

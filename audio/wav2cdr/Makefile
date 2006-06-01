@@ -8,7 +8,9 @@
 PORTNAME=	wav2cdr
 PORTVERSION=	2.3.3
 CATEGORIES=	audio converters
-MASTER_SITES=	${MASTER_SITE_SUNSITE}
+MASTER_SITES=	http://critical.ch/distfiles/ \
+		http://energy.critical.ch/distfiles/ \
+		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/sound/convert
 
 MAINTAINER=	ehaupt@FreeBSD.org
