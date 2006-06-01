@@ -55,4 +55,10 @@ MAKE_ENV+=	PORTDOCS=true
 post-patch:
 	@${REINPLACE_CMD} -e 's|sdl-config|${SDL_CONFIG}|' ${WRKSRC}/configure
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500041
+LIB_DEPENDS+=		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
+.endif
+
+.include <bsd.port.post.mk>
