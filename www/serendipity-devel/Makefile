@@ -5,19 +5,20 @@
 # $FreeBSD$
 #
 
-PORTNAME=	serendipity
-PORTVERSION=	0.9.1
-PORTREVISION=	2
+PORTNAME=	serendipity-devel
+PORTVERSION=	1.0.${SNAPSHOT}
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	php-blog
+MASTER_SITES=	http://www.s9y.org/snapshots/
+DISTNAME=	s9y_${SNAPSHOT}
 
 MAINTAINER=	babak@farrokhi.net
 COMMENT=	PHP based weblog software
 
+SNAPSHOT=	200604201538
+
 RUN_DEPENDS=	${LOCALBASE}/share/pear/File/Archive.php:${PORTSDIR}/archivers/pear-File_Archive
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/serendipity-nightly
 NO_BUILD=	YES
 SERENDIPITY?=	www/${PORTNAME}
 PLIST_SUB+=	SERENDIPITY=${SERENDIPITY}

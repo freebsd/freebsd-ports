@@ -873,6 +873,7 @@
     SUBDIR += seamonkey
     SUBDIR += selenium
     SUBDIR += serendipity
+    SUBDIR += serendipity-devel
     SUBDIR += servlet-api
     SUBDIR += session2
     SUBDIR += shttpd
