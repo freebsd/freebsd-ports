@@ -30,7 +30,7 @@ $FreeBSD$
  #CXX = g++
  
  # the linker
-@@ -77,7 +77,10 @@
+@@ -80,7 +80,10 @@
  # the default configuration is to build with Affine as RIB writer without
  # any shader parsing library (i.e. you will have to build and load a
  # plugin for shader parsing)
@@ -42,18 +42,21 @@ $FreeBSD$
  
  # simple configuration using BMRT
  #CFLAGS = -O -DAYUSESLCARGS -DAYUSEBMRTRIBOUT
-@@ -128,49 +131,53 @@
- TOGLOBJECT = togl/togl.o
+@@ -134,7 +137,7 @@
  
  # OpenGL
--GLINCDIR = /usr/X11R6/include/
-+GLINCDIR = ${X11BASE}/include/
+ # OpenGL includes
+-GLINC = -I/usr/X11R6/include/
++GLINC = -I${X11BASE}/include/
+ # MacOSX (Aqua):
+ #GLINC =
  # link options for linking with OpenGL libraries
- GLLIBS = -lGLU -lGL
+@@ -144,24 +147,26 @@
  
  # TIFF
--TIFFINCDIR = /usr/include/
-+TIFFINCDIR = ${LOCALBASE}/include/
+ # TIFF includes
+-TIFFINC = -I/usr/include/
++TIFFINC = -I${LOCALBASE}/include/
  # link options for linking with TIFF library
  TIFFLIB = -ltiff
  
@@ -67,15 +70,19 @@ $FreeBSD$
 -TCLINC = -I$(TCLDIR)/generic
 +#TCLINC = -I$(TCLDIR)/generic
 +TCLINC = -I${LOCALBASE}/include/tcl8.2/generic
+ # MacOSX (Aqua):
+ #TCLINC =
  
  # Tcl library
  # link options for linking with Tcl library
 -TCLLIB = -L$(TCLDIR)/unix -ltcl8.2
 +#TCLLIB = -L$(TCLDIR)/unix -ltcl8.2
  #TCLLIB = -L$(TCLDIR)/unix -ltcl8.0
++TCLLIB = -L${LOCALBASE}/lib -ltcl82
  # if you have an installed Tcl/Tk, you probably just want:
  #TCLLIB = -ltcl
-+TCLLIB = -L${LOCALBASE}/lib -ltcl82
+ # MacOSX (Aqua):
+@@ -169,18 +174,20 @@
  
  # Tk sources directory
  # Note: You really need the Tk _sources_ in order to compile Ayam!
@@ -87,46 +94,54 @@ $FreeBSD$
 -TKINC = -I$(TKDIR)/generic -I$(TKDIR)/unix
 +#TKINC = -I$(TKDIR)/generic -I$(TKDIR)/unix
 +TKINC = -I${LOCALBASE}/include/tk8.2/generic -I${LOCALBASE}/include/tk8.2/unix
+ # MacOSX (Aqua):
+ #TKINC = -I$(TKDIR)/generic -I$(TKDIR)/macosx -I$(TKDIR)/xlib
  
  # Tk library
  # link options for linking with Tk library
 -TKLIB = -L$(TKDIR)/unix -ltk8.2
 +#TKLIB = -L$(TKDIR)/unix -ltk8.2
  #TKLIB = -L$(TKDIR)/unix -ltk8.0
++TKLIB = -L${LOCALBASE}/lib -ltk82
  # if you have an installed Tcl/Tk, you probably just want:
  #TKLIB = -ltk
-+TKLIB = -L${LOCALBASE}/lib -ltk82
+ # MacOSX (Aqua):
+@@ -188,11 +195,11 @@
  
- 
- # X11-libs
+ # X11
+ # X11 includes
+-X11INC = -I/usr/X11R6/include
++X11INC = -I${X11BASE}/include
+ # MacOSX (Aqua):
+ #X11INC =
  # link options for linking with X11
 -X11LIBS = -L/usr/X11R6/lib -lXmu -lXext -lX11
 +X11LIBS = -L${X11BASE}/lib -lXmu -lXext -lX11
  #X11LIBS = -L/usr/X11R6/lib -lXmu -lXext -lX11
- 
- 
-@@ -179,23 +186,23 @@
- AFFINEINCDIR = ./affine/include
+ # MacOSX (Aqua):
+ #X11LIBS =
+@@ -203,23 +210,23 @@
+ AFFINEINC = -Iaffine/include
  # if you use Affine as BMRT libribout replacement
  # (also add -DAYUSEAFFINE to CFLAGS!):
 -AFFINEOBJS = ./affine/src/write.o ./affine/src/constant.o
 +#AFFINEOBJS = ./affine/src/write.o ./affine/src/constant.o
  # if you do not use Affine as BMRT libribout replacement:
--#AFFINEOBJS = 
-+AFFINEOBJS = 
+-#AFFINEOBJS =
++AFFINEOBJS =
  
  # Aqsis
 -AQSISDIR = /usr/local/aqsis
--AQSISINCDIR = $(AQSISDIR)/include
+-AQSISINC = -I$(AQSISDIR)/include
 +AQSISDIR = ${LOCALBASE}
-+AQSISINCDIR = $(AQSISDIR)/include/aqsis
++AQSISINC = -I$(AQSISDIR)/include/aqsis
  AQSISLIBDIR = $(AQSISDIR)/lib
  # if you do not use Aqsis libslxargs as libslcargs replacement:
--AQSISOBJS = 
-+#AQSISOBJS = 
+-AQSISOBJS =
++#AQSISOBJS =
  # if you use Aqsis libslxargs (add -DAYUSESLXARGS to CFLAGS!):
 -#AQSISOBJS = $(AQSISLIBDIR)/rcdummy.o $(AQSISLIBDIR)/libshadervm.so $(AQSISLIBDIR)/libshaderexecenv.so $(AQSISLIBDIR)/libslxargs.so $(AQSISLIBDIR)/libaqsistypes.so -L /usr/local/lib -llog4cpp
-+AQSISOBJS = $(AQSISLIBDIR)/libaqsis.a $(AQSISLIBDIR)/libshadervm.so $(AQSISLIBDIR)/libshaderexecenv.so $(AQSISLIBDIR)/libslxargs.so $(AQSISLIBDIR)/libaqsistypes.so -L ${LOCALBASE}/lib $(AQSISLIBDIR)/libraytrace.so -lstdc++
++AQSISOBJS = $(AQSISLIBDIR)/libaqsis.a $(AQSISLIBDIR)/libshadervm.so $(AQSISLIBDIR)/libshaderexecenv.so $(AQSISLIBDIR)/libslxargs.so $(AQSISLIBDIR)/libaqsistypes.so -L${AQSISLIBDIR} $(AQSISLIBDIR)/libraytrace.so -lstdc++
  
  # if you do not use Aqsis libri2rib as BMRT libribout replacement:
 -AQSISRI2RIB =
@@ -137,32 +152,32 @@ $FreeBSD$
  
  
  # BMRT
-@@ -220,9 +227,9 @@
- # IRIX, Solaris, (MacOSX: get libdl from Fink!):
+@@ -247,9 +254,9 @@
+ # IRIX, Solaris, (MacOSX<10.4: get libdl from Fink!):
  #DL = -ldl
  # Linux:
 -DL = -ldl -lpthread
 +#DL = -ldl -lpthread
- # NetBSD:
+ # NetBSD/MacOSX (Aqua):
 -#DL =
 +DL =
  
+ 
  # linker flags to produce shared modules:
- # Linux, Solaris, IRIX:
-@@ -236,8 +243,8 @@
+@@ -266,8 +273,8 @@
  RRIBLIBS = -L$(AFFINEDIR)/lib -lribrdr -lribhash -lribnop -lm
  
  # Ayslx Plugin (Aqsis)
 -AYSLXINCDIR = $(AQSISDIR)/include
 -AYSLXLIBS = $(AQSISDIR)/lib/rcdummy.o $(AQSISDIR)/lib/libshadervm.so $(AQSISDIR)/lib/libshaderexecenv.so $(AQSISDIR)/lib/libslxargs.so $(AQSISDIR)/lib/libaqsistypes.so -L/usr/local/lib -llog4cpp
-+AYSLXINCDIR = ${AQSISINCDIR}
++AYSLXINCDIR = ${AQSISINC}
 +AYSLXLIBS = -L${AQSISLIBDIR} $(AQSISDIR)/lib/libaqsis.so $(AQSISDIR)/lib/libshadervm.so $(AQSISDIR)/lib/libshaderexecenv.so $(AQSISDIR)/lib/libslxargs.so $(AQSISDIR)/lib/libaqsistypes.so -L${LOCALBASE}/lib
  
  # Ayso Plugin (RenderDotC, RDC)
  RDCDIR = /usr/local/rdc
-@@ -431,7 +438,7 @@
+@@ -464,7 +471,7 @@
  .cpp.o:
- 	$(CXX) -c $(CFLAGS) $*.cpp -o $@ -I. -IMF3D -I$(TOGLINCDIR) $(TCLINC) $(TKINC) -I$(BMRTINCDIR) -I$(GLINCDIR) -I$(AFFINEINCDIR) -I$(AQSISINCDIR) -I$(OPENCSGINCDIR) -I$(GLEWINCDIR) -Iplugins
+ 	$(CXX) -c $(CFLAGS) $*.cpp -o $@ -I. -IMF3D $(TOGLINC) $(TCLINC) $(TKINC) $(BMRTINC) $(GLINC) $(AFFINEINC) $(AQSISINC) -I$(OPENCSGINCDIR) -I$(GLEWINCDIR) -Iplugins
  
 -all: ayamsh csphere.so mfio.so metaobj.so
 +all: ayamsh csphere.so mfio.so metaobj.so ayslx.so
