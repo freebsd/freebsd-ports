@@ -7,6 +7,7 @@
 
 PORTNAME=	Module-Signature
 PORTVERSION=	0.54
+PORTREVISION=	1
 CATEGORIES=	security perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Module
@@ -17,7 +18,6 @@ COMMENT=	Module signature file manipulation
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/SHA.pm:${PORTSDIR}/security/p5-Digest-SHA \
 		${SITE_PERL}/PAR/Dist.pm:${PORTSDIR}/devel/p5-PAR-Dist \
-		${SITE_PERL}/Crypt/OpenPGP.pm:${PORTSDIR}/security/p5-Crypt-OpenPGP \
 		${LOCALBASE}/bin/gpg:${PORTSDIR}/security/gnupg
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
