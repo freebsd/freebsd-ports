@@ -7,7 +7,8 @@
 
 PORTNAME=	tdtd.el
 PORTVERSION=	0.7.1
-CATEGORIES=	textproc
+PORTREVISION=	1
+CATEGORIES=	textproc elisp
 MASTER_SITES=	http://www.menteith.com/tdtd/data/
 DISTNAME=	tdtd071
 EXTRACT_SUFX=	.zip
@@ -15,25 +16,28 @@ EXTRACT_SUFX=	.zip
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An emacs major mode for editing SGML and XML DTDs
 
-USE_EMACS=	yes
-EMACS_PORT_NAME?=	emacs20
-
-EMACS_NO_BUILD_DEPENDS=	YES
-
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 USE_ZIP=	yes
 
 ELISPDIR=	${PREFIX}/share/emacs/site-lisp
-DOCDIR=		${PREFIX}/share/doc
+XELISPDIR=	${PREFIX}/lib/xemacs/site-lisp
+PORTDOCS=	TODO changelog.txt dot_emacs readme.txt tutorial.txt
 
 do-install:
-	${MKDIR} ${ELISPDIR}
-	${MKDIR} ${DOCDIR}/${PORTNAME}
-	@(cd ${WRKSRC} && \
-		${INSTALL_DATA} tdtd.el tdtd-font.el ${ELISPDIR} && \
-		${INSTALL_DATA} TODO changelog.txt dot_emacs readme.txt tutorial.txt ${DOCDIR}/${PORTNAME} \
+	${MKDIR} ${ELISPDIR} ${XELISPDIR}
+	@(cd ${WRKSRC}; \
+		for el in tdtd.el tdtd-font.el; do \
+		    ${INSTALL_DATA} $$el ${ELISPDIR}; \
+		    ${LN} -sf ${ELISPDIR}/$$el ${XELISPDIR}; \
+		done; \
 	)
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+.for doc in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
+.endfor
+.endif
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
