@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	portupgrade
-PORTVERSION=	2.0.1
-PORTREVISION=	2
+PORTVERSION=	2.1.0
 PORTEPOCH=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://dists.lovepeers.org/distfiles/portupgrade/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	sem
 DISTNAME=	pkgtools-${DISTVERSION}
 
-MAINTAINER=	koma2@lovepeers.org
+MAINTAINER=	sem@FreeBSD.org
 COMMENT=	FreeBSD ports/packages administration and management tool suite
 
 DISTVERSION=	${PORTVERSION}
