@@ -1,0 +1,32 @@
+# New ports collection makefile for:	Java
+# Date Created:				27 January 2006
+# Whom:					Simun Mikecin <numisemis@yahoo.com>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	Java
+PORTVERSION=	4.7
+CATEGORIES=	devel java
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=Java
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	numisemis@yahoo.com
+COMMENT=	Perl extension for accessing a JVM remotely or locally
+
+USE_RC_SUBR=	javaserver.sh
+PERL_CONFIGURE=	YES
+USE_JAVA=	yes
+JAVA_VERSION=	1.1+
+
+MAN3=		Java.3 JavaArray.3
+
+post-patch:
+	${RM} ${WRKSRC}/java_server_install.pl
+
+post-install:
+	${MKDIR} ${PREFIX}/share/p5-Java
+	${INSTALL_DATA} ${WRKSRC}/JavaServer.jar ${PREFIX}/share/p5-Java
+
+.include <bsd.port.mk>
