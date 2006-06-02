@@ -7364,6 +7364,7 @@ ny-aspell	ports/textproc/ny-aspell
 nyello		ports/audio/nyello
 nylon		ports/net/nylon
 nzbget		ports/news/nzbget
+nzbperl		ports/news/nzbperl
 o2em		ports/emulators/o2em
 oaf		ports/devel/oaf
 oak		ports/sysutils/oak
