@@ -1,0 +1,33 @@
+# New ports collection makefile for:	p5-Apache-SessionX
+# Date created:				01 Jun 2006
+# Whom:					Aaron Dalton <aaron@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	Apache-SessionX
+PORTVERSION=	2.01
+CATEGORIES=	www perl5
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	Apache
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	aaron@FreeBSD.org
+COMMENT=	An extented persistence framework for session data
+
+BUILD_DEPENDS=	${SITE_PERL}/Apache/Session.pm:${PORTSDIR}/www/p5-Apache-Session
+RUN_DEPENDS=	${BUILD_DEPENDS}
+
+MAN3=	Apache::SessionX.3 \
+	Apache::SessionX::Generate::MD5.3
+
+PERL_CONFIGURE=	yes
+IS_INTERACTIVE=	yes
+
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+IGNORE=	requires at least Perl 5.6.  Please install lang/perl5.8 and try again
+.endif
+
+.include <bsd.port.post.mk>
