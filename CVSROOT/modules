@@ -7696,6 +7696,7 @@ p5-Apache-Session-PHP	ports/www/p5-Apache-Session-PHP
 p5-Apache-Session-SQLite3	ports/www/p5-Apache-Session-SQLite3
 p5-Apache-Session-SharedMem	ports/www/p5-Apache-Session-SharedMem
 p5-Apache-Session-Wrapper	ports/www/p5-Apache-Session-Wrapper
+p5-Apache-SessionX	ports/www/p5-Apache-SessionX
 p5-Apache-Singleton	ports/www/p5-Apache-Singleton
 p5-Apache-SubProcess	ports/www/p5-Apache-SubProcess
 p5-Apache-Template	ports/www/p5-Apache-Template
