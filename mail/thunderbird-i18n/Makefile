@@ -14,7 +14,7 @@ DISTFILES=	${THUNDERBIRD_I18N:S/$/.xpi/}
 DIST_SUBDIR=	xpi/${DISTNAME}
 
 MAINTAINER=	infofarmer@FreeBSD.org
-COMMENT=	Localized interface for Firefox
+COMMENT=	Localized interface for Thunderbird
 
 .ifndef WITHOUT_SWITCHER
 RUN_DEPENDS+=	xpi-locale-switcher>=0:${PORTSDIR}/www/xpi-locale-switcher
