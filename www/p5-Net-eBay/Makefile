@@ -1,0 +1,47 @@
+# New ports collection makefile for:	p5-Net-eBay
+# Date created:				Sat May 27 13:25:11 UTC 2006
+# Whom:	      				Alexander Zhuravlev <zaa@zaa.pp.ru>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	Net-eBay
+PORTVERSION=	0.33
+CATEGORIES=	www perl5
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	Net
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	zaa@zaa.pp.ru
+COMMENT=	Perl Interface to XML based eBay API
+
+BUILD_DEPENDS=	${SITE_PERL}/Bundle/LWP.pm:${PORTSDIR}/www/p5-libwww
+BUILD_DEPENDS+=	${SITE_PERL}/XML/Simple.pm:${PORTSDIR}/textproc/p5-XML-Simple
+BUILD_DEPENDS+=	${SITE_PERL}/XML/Dumper.pm:${PORTSDIR}/textproc/p5-XML-Dumper
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Crypt/SSLeay.pm:${PORTSDIR}/security/p5-Crypt-SSLeay
+RUN_DEPENDS=	${BUILD_DEPENDS}
+
+PERL_CONFIGURE=	yes
+INSTALL_TARGET=	pure_install
+PLIST_SUB+=	EXAMPLESDIR="share/examples/${PORTNAME}"
+
+MAN3=		Net::eBay.3
+
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+IGNORE=		needs Perl 5.6 or later
+.endif
+
+pre-configure:
+	${MKDIR} ${WRKSRC}/examples
+	${MV} ${WRKSRC}/*.pl ${WRKSRC}/examples
+
+post-install:
+.ifndef(NOPORTDOCS)
+	@${ECHO_MSG} "===>   Installing examples for ${PKGNAME}"
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/examples/* ${EXAMPLESDIR}
+.endif
+
+.include <bsd.port.post.mk>
