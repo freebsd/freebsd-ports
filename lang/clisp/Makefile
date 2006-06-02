@@ -7,6 +7,7 @@
 
 PORTNAME=	clisp
 PORTVERSION=	2.38
+PORTREVISION=	1
 CATEGORIES=	lang lisp
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=${PORTNAME}/release/${PORTVERSION}
@@ -51,6 +52,8 @@ post-extract:
 post-configure:
 	cd ${WRKSRC}/${BUILD_DIRNAME} && \
 	./makemake ${MAKEMAKE_ARGS} > Makefile && \
-	make config.lisp
+	${MAKE} config.lisp
+	${REINPLACE_CMD} -e 's#^CFLAGS =#CFLAGS = -I${LOCALBASE}/include#' \
+		${WRKSRC}/${BUILD_DIRNAME}/Makefile
 
 .include <bsd.port.post.mk>
