@@ -10,7 +10,6 @@ PORTVERSION=		2.2.30
 PORTREVISION=		${OPENLDAP_PORTREVISION}
 CATEGORIES=		net databases
 MASTER_SITES=		ftp://ftp.OpenLDAP.org/pub/OpenLDAP/%SUBDIR%/ \
-			http://public.planetmirror.com/pub/openldap/%SUBDIR%/ \
 			ftp://gd.tuwien.ac.at/infosys/network/OpenLDAP/%SUBDIR%/ \
 			ftp://ftp.matrix.com.br/pub/openldap/%SUBDIR%/ \
 			ftp://ftp.ucr.ac.cr/pub/Unix/openldap/%SUBDIR%/ \
