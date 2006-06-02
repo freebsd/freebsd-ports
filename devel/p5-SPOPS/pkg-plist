@@ -26,6 +26,8 @@
 %%SITE_PERL%%/SPOPS/HashFile.pm
 %%SITE_PERL%%/SPOPS/Import.pm
 %%SITE_PERL%%/SPOPS/Import/DBI/Data.pm
+%%SITE_PERL%%/SPOPS/Import/DBI/Delete.pm
+%%SITE_PERL%%/SPOPS/Import/DBI/GenericOperation.pm
 %%SITE_PERL%%/SPOPS/Import/DBI/Table.pm
 %%SITE_PERL%%/SPOPS/Import/DBI/TableTransform.pm
 %%SITE_PERL%%/SPOPS/Import/DBI/TableTransform/InterBase.pm
@@ -34,6 +36,7 @@
 %%SITE_PERL%%/SPOPS/Import/DBI/TableTransform/Pg.pm
 %%SITE_PERL%%/SPOPS/Import/DBI/TableTransform/SQLite.pm
 %%SITE_PERL%%/SPOPS/Import/DBI/TableTransform/Sybase.pm
+%%SITE_PERL%%/SPOPS/Import/DBI/Update.pm
 %%SITE_PERL%%/SPOPS/Import/Object.pm
 %%SITE_PERL%%/SPOPS/Initialize.pm
 %%SITE_PERL%%/SPOPS/Iterator.pm
@@ -96,6 +99,7 @@
 %%PORTDOCS%%%%EXAMPLESDIR%%/fetch_doodads.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/find_defaults_demo.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/ldap_multidatasource.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/modify_debug_to_l4p.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/stock_doodads.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/stock_user_group.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/users_groups_clear.sql

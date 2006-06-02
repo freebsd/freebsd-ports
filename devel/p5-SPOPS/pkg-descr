@@ -18,6 +18,7 @@ processing) objects.  If you want to add security to these objects later, it's
 easy!
 
 WWW: http://search.cpan.org/dist/SPOPS/
+Author: Chris Winters <chris@cwinters.com>
 
 -- Sergey Skvortsov
 skv@FreeBSD.org
