@@ -1,6 +1,6 @@
-@comment $FreeBSD$
-bin/rtelnet
 bin/rfinger
 bin/rftp
+bin/rtelnet
 libexec/relay
-share/doc/relay/README
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
