@@ -15,8 +15,6 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	aaron@FreeBSD.org
 COMMENT=	Numbers with error propagation and scientific rounding
 
-IS_INTERACTIVE=	yes
-
 BUILD_DEPENDS=	${SITE_PERL}/Params/Util.pm:${PORTSDIR}/devel/p5-Params-Util \
 		${SITE_PERL}/prefork.pm:${PORTSDIR}/devel/p5-prefork \
 		${SITE_PERL}/Math/SymbolicX/Inline.pm:${PORTSDIR}/math/p5-Math-SymbolicX-Inline
