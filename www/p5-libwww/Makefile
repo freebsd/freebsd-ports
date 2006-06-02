@@ -5,11 +5,12 @@
 # $FreeBSD$
 #
 
-PORTNAME=	p5-libwww
+PORTNAME=	libwww
 PORTVERSION=	5.805
 CATEGORIES=	www perl5 devel
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	LWP
+PKGNAMEPREFIX=	p5-
 DISTNAME=	libwww-perl-${PORTVERSION}
 
 MAINTAINER=	lbr@FreeBSD.org
@@ -43,4 +44,10 @@ post-patch:
 		${WRKSRC}/lib/LWP/Protocol/mailto.pm
 	@${PERL} -pi -e 's!(?=prompt\()!1 || !g' ${WRKSRC}/Makefile.PL
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600 #inherited from Module::Build and security/p5-Authen-SASL
+IGNORE=	requires at least Perl 5.6 due to dependencies.  Please install lang/perl5.8 and try again
+.endif
+
+.include <bsd.port.post.mk>
