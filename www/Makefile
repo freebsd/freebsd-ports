@@ -465,6 +465,7 @@
     SUBDIR += p5-Apache-Session-SQLite3
     SUBDIR += p5-Apache-Session-SharedMem
     SUBDIR += p5-Apache-Session-Wrapper
+    SUBDIR += p5-Apache-SessionX
     SUBDIR += p5-Apache-Singleton
     SUBDIR += p5-Apache-SubProcess
     SUBDIR += p5-Apache-Template
