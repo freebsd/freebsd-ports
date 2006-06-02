@@ -1,11 +1,8 @@
-
-$FreeBSD$
-
---- Makefile.in.orig
-+++ Makefile.in
-@@ -27,6 +27,9 @@
- 	nroff -man $(srcdir)/soxexam.1 | col -b > soxexam.txt
- 	nroff -man $(srcdir)/libst.3 | col -b > libst.txt
+--- ./Makefile.in.orig	Mon Nov  8 01:37:20 2004
++++ ./Makefile.in	Fri Jun  2 10:55:50 2006
+@@ -30,6 +30,9 @@
+ PLAY_INSTALL_0 =
+ PLAY_INSTALL_1  = install-play
  
 +PLAY_INSTALL_0  =
 +PLAY_INSTALL_1  = install-play

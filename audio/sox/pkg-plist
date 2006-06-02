@@ -1,5 +1,0 @@
-@comment $FreeBSD$
-bin/play
-bin/rec
-bin/sox
-bin/soxmix
