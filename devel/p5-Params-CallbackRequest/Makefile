@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Params-CallbackRequest
-PORTVERSION=	1.13
+PORTVERSION=	1.15
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Params/DWHEELER
@@ -26,9 +26,8 @@ MAN3=		Params::Callback.3 Params::CallbackRequest.3 \
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500600
-post-patch:
-	@${PERL} -i -pe 's/(sub \S+) : .+ {/$$1 {/g' ${WRKSRC}/lib/Params/Callback.pm
+.if ${PERL_LEVEL} < 500800
+IGNORE=	requires at least Perl 5.8.0 due to dependencies.  Please install lang/perl5.8 and try again
 .endif
 
 .include <bsd.port.post.mk>
