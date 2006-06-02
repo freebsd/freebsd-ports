@@ -1,0 +1,8 @@
+Always thought JavaScript was for web only? well, think again...
+
+JavaScript.pm gives you the power of embedded JavaScript in your
+applications. You can write your subs, classes etc in perl and bind them
+to the JavaScript engine. Variables are converted between the language
+automaticlly and you don't have to worry about that.
+
+WWW: http://search.cpan.org/dist/JavaScript/
