@@ -8,6 +8,7 @@
 %%SITE_PERL%%/Log/Log4perl/Appender/Screen.pm
 %%SITE_PERL%%/Log/Log4perl/Appender/ScreenColoredLevels.pm
 %%SITE_PERL%%/Log/Log4perl/Appender/Socket.pm
+%%SITE_PERL%%/Log/Log4perl/Appender/String.pm
 %%SITE_PERL%%/Log/Log4perl/Appender/Synchronized.pm
 %%SITE_PERL%%/Log/Log4perl/Appender/TestArrayBuffer.pm
 %%SITE_PERL%%/Log/Log4perl/Appender/TestBuffer.pm
