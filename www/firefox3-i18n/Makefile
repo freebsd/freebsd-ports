@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	firefox-i18n
-PORTVERSION=	1.5.0.3
+PORTVERSION=	1.5.0.4
 CATEGORIES=	www
 MASTER_SITE_SUBDIR=	firefox/releases/${PORTVERSION}/linux-i686/xpi
 PKGNAMEPREFIX=
@@ -24,7 +24,7 @@ NO_BUILD=	yes
 USE_XPI=	*firefox
 
 FIREFOX_I18N_ALL=	ar bg ca cs da de el en-GB es-AR es-ES eu fi fr ga-IE gu-IN he hu it \
-			ja ko mk nb-NO nl pa-IN pl pt-BR ro ru sk sl sv-SE tr zh-CN zh-TW
+			ja ko lt mk nb-NO nl pa-IN pl pt-BR ro ru sk sl sv-SE tr zh-CN zh-TW
 FIREFOX_I18N?=	zh-CN de fr ja ru it es-ES
 
 .if ${FIREFOX_I18N} == all
