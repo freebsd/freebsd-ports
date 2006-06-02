@@ -1,5 +1,5 @@
 This port contains packages from a near-minimal installation of Fedora Core
-Linux 3.0.  These packages, in conjunction with the linux kernel module,
+Linux 4.  These packages, in conjunction with the linux kernel module,
 form the basis of the Linux compatibility environment.
 
 This port is only available for the i386/amd64 architecture (i386/32 bit mode). 
