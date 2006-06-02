@@ -9059,6 +9059,7 @@ p5-Net-XMPP	ports/net-im/p5-Net-XMPP
 p5-Net-XWhois	ports/net/p5-Net-XWhois
 p5-Net-Z3950	ports/net/p5-Net-Z3950
 p5-Net-Z3950-SimpleServer	ports/net/p5-Net-Z3950-SimpleServer
+p5-Net-eBay	ports/www/p5-Net-eBay
 p5-Net-ext	ports/net/p5-Net-ext
 p5-Net-vCard	ports/misc/p5-Net-vCard
 p5-NetAddr-IP	ports/net-mgmt/p5-NetAddr-IP
