@@ -11,6 +11,7 @@
 %%SITE_PERL%%/X11/Protocol/Connection/UNIXSocket.pm
 %%SITE_PERL%%/X11/Protocol/Ext/BIG_REQUESTS.pm
 %%SITE_PERL%%/X11/Protocol/Ext/DPMS.pm
+%%SITE_PERL%%/X11/Protocol/Ext/RENDER.pm
 %%SITE_PERL%%/X11/Protocol/Ext/SHAPE.pm
 %%SITE_PERL%%/X11/Protocol/Ext/XC_MISC.pm
 %%SITE_PERL%%/X11/Protocol/Ext/XFree86_Misc.pm

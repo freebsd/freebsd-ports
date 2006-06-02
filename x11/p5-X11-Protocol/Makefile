@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	X11-Protocol
-PORTVERSION=	0.52
+PORTVERSION=	0.55
 CATEGORIES=	x11 perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	X11
@@ -29,6 +29,7 @@ MAN3=		X11::Auth.3 \
 		X11::Protocol::Connection::UNIXSocket.3 \
 		X11::Protocol::Ext::BIG_REQUESTS.3 \
 		X11::Protocol::Ext::DPMS.3 \
+		X11::Protocol::Ext::RENDER.3 \
 		X11::Protocol::Ext::SHAPE.3 \
 		X11::Protocol::Ext::XC_MISC.3 \
 		X11::Protocol::Ext::XFree86_Misc.3
