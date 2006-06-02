@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Log-Log4perl
-PORTVERSION=	1.03
+PORTVERSION=	1.04
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Log
@@ -31,6 +31,7 @@ MAN3=		Log::Log4perl.3 \
 		Log::Log4perl::Appender::Screen.3 \
 		Log::Log4perl::Appender::ScreenColoredLevels.3 \
 		Log::Log4perl::Appender::Socket.3 \
+		Log::Log4perl::Appender::String.3 \
 		Log::Log4perl::Appender::Synchronized.3 \
 		Log::Log4perl::Appender::TestArrayBuffer.3 \
 		Log::Log4perl::Appender::TestBuffer.3 \
@@ -65,4 +66,11 @@ MAN3=		Log::Log4perl.3 \
 		Log::Log4perl::NDC.3 \
 		Log::Log4perl::Util.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.if ${PERL_LEVEL} == 500602
+EXTRA_PATCHES=	${FILESDIR}/500602-patch-lib__Log__Log4perl__Config__DOMConfigurator.pm
+
+post-patch:
+	${RM} ${WRKSRC}/lib/Log/Log4perl/Config/DOMConfigurator.pm.orig
+.endif
+.include <bsd.port.post.mk>
