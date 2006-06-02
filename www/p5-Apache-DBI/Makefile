@@ -7,9 +7,10 @@
 
 PORTNAME=	Apache-DBI
 PORTVERSION=	1.00
+PORTREVISION=	1
 CATEGORIES=	www databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Apache
+MASTER_SITE_SUBDIR=	../../authors/id/P/PG/PGOLLUCCI
 PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-${PORTVERSION}_01
 
@@ -24,12 +25,7 @@ USE_APACHE=	yes
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_MODPERL2)
-.if exists(${APXS})
-APACHE_MODULE_DIR!=${APXS} -q LIBEXECDIR
-.else
-APACHE_MODULE_DIR?=${PREFIX}/libexec/apache2
-.endif
-RUN_DEPENDS+=	${APACHE_MODULE_DIR}/mod_perl.so:${PORTSDIR}/www/mod_perl2
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/mod_perl2.pm:${PORTSDIR}/www/mod_perl2
 .else
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/mod_perl.pm:${PORTSDIR}/www/mod_perl
 .endif
