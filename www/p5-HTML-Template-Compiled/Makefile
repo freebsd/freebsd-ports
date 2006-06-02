@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTML-Template-Compiled
-PORTVERSION=	0.63
+PORTVERSION=	0.65
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	HTML
@@ -16,6 +16,7 @@ MAINTAINER=	hideo@lastamericanempire.com
 COMMENT=	Templating system that compiles HTML::Template files to Perl code
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathTools \
+		${SITE_PERL}/Test/Pod.pm:${PORTSDIR}/devel/p5-Test-Pod \
 		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
 		${SITE_PERL}/${PERL_ARCH}/HTML/Entities.pm:${PORTSDIR}/www/p5-HTML-Parser \
 		${SITE_PERL}/Data/TreeDumper/Renderer/DHTML.pm:${PORTSDIR}/www/p5-Data-TreeDumper-Renderer-DHTML \
@@ -26,7 +27,8 @@ PERL_CONFIGURE=	yes
 
 MAN3=		HTML::Template::Compiled.3 \
 		HTML::Template::Compiled::Filter.3 \
-		HTML::Template::Compiled::Utils.3
+		HTML::Template::Compiled::Utils.3 \
+		HTML::Template::Compiled::Parser.3
 
 .include <bsd.port.pre.mk>
 
