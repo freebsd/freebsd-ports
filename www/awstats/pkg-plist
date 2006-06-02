@@ -76,6 +76,7 @@ www/awstats/cgi-bin/lang/awstats-is.txt
 www/awstats/cgi-bin/lang/awstats-it.txt
 www/awstats/cgi-bin/lang/awstats-jp.txt
 www/awstats/cgi-bin/lang/awstats-ko.txt
+www/awstats/cgi-bin/lang/awstats-lt.txt
 www/awstats/cgi-bin/lang/awstats-lv.txt
 www/awstats/cgi-bin/lang/awstats-mk.txt
 www/awstats/cgi-bin/lang/awstats-nb.txt
@@ -97,10 +98,12 @@ www/awstats/cgi-bin/lang/tooltips_f/awstats-tt-br.txt
 www/awstats/cgi-bin/lang/tooltips_f/awstats-tt-cz.txt
 www/awstats/cgi-bin/lang/tooltips_f/awstats-tt-en.txt
 www/awstats/cgi-bin/lang/tooltips_f/awstats-tt-is.txt
+www/awstats/cgi-bin/lang/tooltips_f/awstats-tt-it.txt
 www/awstats/cgi-bin/lang/tooltips_m/awstats-tt-br.txt
 www/awstats/cgi-bin/lang/tooltips_m/awstats-tt-en.txt
 www/awstats/cgi-bin/lang/tooltips_m/awstats-tt-fr.txt
 www/awstats/cgi-bin/lang/tooltips_m/awstats-tt-is.txt
+www/awstats/cgi-bin/lang/tooltips_m/awstats-tt-it.txt
 www/awstats/cgi-bin/lang/tooltips_w/awstats-tt-al.txt
 www/awstats/cgi-bin/lang/tooltips_w/awstats-tt-ba.txt
 www/awstats/cgi-bin/lang/tooltips_w/awstats-tt-bg.txt
@@ -164,10 +167,13 @@ www/awstats/cgi-bin/plugins/urlalias.pm
 www/awstats/cgi-bin/plugins/userinfo.pm
 www/awstats/css/awstats_bw.css
 www/awstats/css/awstats_default.css
+www/awstats/icons/browser/abilon.png
 www/awstats/icons/browser/adobe.png
+www/awstats/icons/browser/akregator.png
 www/awstats/icons/browser/alcatel.png
 www/awstats/icons/browser/amaya.png
 www/awstats/icons/browser/amigavoyager.png
+www/awstats/icons/browser/analogx.png
 www/awstats/icons/browser/apt.png
 www/awstats/icons/browser/avant.png
 www/awstats/icons/browser/aweb.png
@@ -177,6 +183,7 @@ www/awstats/icons/browser/chimera.png
 www/awstats/icons/browser/cyberdog.png
 www/awstats/icons/browser/da.png
 www/awstats/icons/browser/dillo.png
+www/awstats/icons/browser/doris.png
 www/awstats/icons/browser/dreamcast.png
 www/awstats/icons/browser/ecatch.png
 www/awstats/icons/browser/encompass.png
@@ -185,30 +192,38 @@ www/awstats/icons/browser/ericsson.png
 www/awstats/icons/browser/feeddemon.png
 www/awstats/icons/browser/feedreader.png
 www/awstats/icons/browser/firefox.png
+www/awstats/icons/browser/flashget.png
 www/awstats/icons/browser/fpexpress.png
 www/awstats/icons/browser/fresco.png
+www/awstats/icons/browser/freshdownload.png
+www/awstats/icons/browser/frontpage.png
 www/awstats/icons/browser/galeon.png
 www/awstats/icons/browser/getright.png
+www/awstats/icons/browser/gnome.png
+www/awstats/icons/browser/gnus.png
 www/awstats/icons/browser/gozilla.png
 www/awstats/icons/browser/hotjava.png
+www/awstats/icons/browser/httrack.png
 www/awstats/icons/browser/ibrowse.png
 www/awstats/icons/browser/icab.png
 www/awstats/icons/browser/java.png
 www/awstats/icons/browser/jetbrains_omea.png
 www/awstats/icons/browser/kmeleon.png
 www/awstats/icons/browser/konqueror.png
+www/awstats/icons/browser/leechget.png
 www/awstats/icons/browser/lg.png
 www/awstats/icons/browser/lotusnotes.png
 www/awstats/icons/browser/lynx.png
 www/awstats/icons/browser/macweb.png
 www/awstats/icons/browser/mediaplayer.png
-www/awstats/icons/browser/mozilla.png
 www/awstats/icons/browser/motorola.png
+www/awstats/icons/browser/mozilla.png
 www/awstats/icons/browser/mplayer.png
 www/awstats/icons/browser/msie.png
 www/awstats/icons/browser/msie_large.png
 www/awstats/icons/browser/multizilla.png
 www/awstats/icons/browser/ncsa_mosaic.png
+www/awstats/icons/browser/neon.png
 www/awstats/icons/browser/netnewswire.png
 www/awstats/icons/browser/netpositive.png
 www/awstats/icons/browser/netscape.png
@@ -232,6 +247,7 @@ www/awstats/icons/browser/rss.png
 www/awstats/icons/browser/rssbandit.png
 www/awstats/icons/browser/rssowl.png
 www/awstats/icons/browser/rssreader.png
+www/awstats/icons/browser/rssxpress.png
 www/awstats/icons/browser/safari.png
 www/awstats/icons/browser/sagem.png
 www/awstats/icons/browser/samsung.png
@@ -241,13 +257,17 @@ www/awstats/icons/browser/shrook.png
 www/awstats/icons/browser/siemens.png
 www/awstats/icons/browser/sony.png
 www/awstats/icons/browser/staroffice.png
+www/awstats/icons/browser/subversion.png
 www/awstats/icons/browser/teleport.png
 www/awstats/icons/browser/trium.png
 www/awstats/icons/browser/unknown.png
 www/awstats/icons/browser/w3c.png
 www/awstats/icons/browser/webcopier.png
+www/awstats/icons/browser/webreaper.png
 www/awstats/icons/browser/webtv.png
 www/awstats/icons/browser/webzip.png
+www/awstats/icons/browser/winxbox.png
+www/awstats/icons/browser/wizz.png
 www/awstats/icons/clock/hr1.png
 www/awstats/icons/clock/hr10.png
 www/awstats/icons/clock/hr11.png
@@ -536,6 +556,7 @@ www/awstats/icons/mime/archive.png
 www/awstats/icons/mime/audio.png
 www/awstats/icons/mime/doc.png
 www/awstats/icons/mime/flash.png
+www/awstats/icons/mime/glasses.png
 www/awstats/icons/mime/html.png
 www/awstats/icons/mime/image.png
 www/awstats/icons/mime/jscript.png
@@ -567,6 +588,7 @@ www/awstats/icons/os/bsdfreebsd.png
 www/awstats/icons/os/bsdi.png
 www/awstats/icons/os/bsdnetbsd.png
 www/awstats/icons/os/bsdopenbsd.png
+www/awstats/icons/os/commodore.png
 www/awstats/icons/os/cpm.png
 www/awstats/icons/os/debian.png
 www/awstats/icons/os/digital.png
@@ -597,6 +619,7 @@ www/awstats/icons/os/next.png
 www/awstats/icons/os/openbsd.png
 www/awstats/icons/os/os2.png
 www/awstats/icons/os/osf.png
+www/awstats/icons/os/psp.png
 www/awstats/icons/os/qnx.png
 www/awstats/icons/os/riscos.png
 www/awstats/icons/os/sco.png
@@ -616,6 +639,7 @@ www/awstats/icons/os/wince.png
 www/awstats/icons/os/winlong.png
 www/awstats/icons/os/winme.png
 www/awstats/icons/os/winnt.png
+www/awstats/icons/os/winxbox.png
 www/awstats/icons/os/winxp.png
 www/awstats/icons/other/awstats_logo1.png
 www/awstats/icons/other/awstats_logo5.png
@@ -650,7 +674,7 @@ www/awstats/tools/awstats_updateall.pl
 www/awstats/tools/logresolvemerge.pl
 www/awstats/tools/maillogconvert.pl
 www/awstats/tools/urlaliasbuilder.pl
-www/awstats/tools/webmin/awstats-1.6.wbm
+www/awstats/tools/webmin/awstats-1.7.wbm
 @dirrm www/awstats/tools/webmin
 @dirrm www/awstats/tools
 @dirrm www/awstats/js
@@ -673,5 +697,7 @@ www/awstats/tools/webmin/awstats-1.6.wbm
 @dirrm www/awstats/cgi-bin/lang
 @dirrm www/awstats/cgi-bin
 @dirrm www/awstats
+@dirrm share/nls/en_US.US-ASCII
+@dirrm share/nls/POSIX
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
