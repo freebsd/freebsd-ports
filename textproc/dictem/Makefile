@@ -5,27 +5,22 @@
 # $FreeBSD$
 
 PORTNAME=	dictem
-PORTVERSION=	0.7
+PORTVERSION=	0.8
 CATEGORIES=	textproc net elisp
-MASTER_SITES=	http://www.mova.org/~cheusov/pub/dictem/ \
-		http://ncd0.bsd.by/ports/distfiles/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
 MAINTAINER=	m.boyarov@bsd.by
 COMMENT=	DictEm is a dict client for [X]Emacs
 
 USE_EMACS=	yes
-USE_AUTOTOOLS=	autoconf:259
 
 EMACS_PORT_NAME?=emacs21
 
 .if ${EMACS_PORT_NAME} != "emacs21"
 PORTNAMESUFFIX=	${PKGNAMESUFFIX}
 .endif
-
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV+=		EMACS=${EMACS_CMD} EMACSLOADPATH=${EMACS_BASE}/${EMACS_CORE_DIR}
-CONFIGURE_ARGS+=	--with-lispdir=${EMACS_BASE}/${LISPDIR}
 
 PLIST_FILES+=	${LISPDIR}/dictem.el	\
 		${LISPDIR}/dictem.elc
@@ -42,8 +37,14 @@ LISPDIR=	${EMACS_LIBDIR}/site-packages/lisp/dictem
 LISPDIR=	${EMACS_VERSION_SITE_LISPDIR}/dictem
 .endif
 
-pre-configure:
-	${INSTALL_SCRIPT} ${AUTOCONF_DIR}/missing ${WRKSRC}
+do-build:
+	${EMACS_CMD} -batch -f batch-byte-compile ${WRKSRC}/dictem.el
+
+do-install:
+	${MKDIR} ${PREFIX}/${LISPDIR}
+	${INSTALL_DATA} ${WRKSRC}/dictem.el ${PREFIX}/${LISPDIR}/
+	${INSTALL_DATA} ${WRKSRC}/dictem.elc ${PREFIX}/${LISPDIR}/
+
 
 post-install:
 .if !defined(NOPORTDOCS)
