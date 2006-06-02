@@ -67,6 +67,7 @@
     SUBDIR += nntpswitch
     SUBDIR += noffle
     SUBDIR += nzbget
+    SUBDIR += nzbperl
     SUBDIR += p5-Gateway
     SUBDIR += p5-NNTPClient
     SUBDIR += p5-News-Article
