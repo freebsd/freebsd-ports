@@ -1,36 +1,43 @@
---- Makefile.orig	Wed Oct 16 12:23:06 2002
-+++ Makefile	Wed Oct 16 12:26:59 2002
-@@ -510,16 +510,16 @@
- #	LIBDIR= /usr/lib
- #
- #BINDIR= /usr/local/bin
--BINDIR= /usr/bin
-+BINDIR= ${PREFIX}/bin
- 
- #SHAREDIR= /usr/local/lib
--SHAREDIR= /usr/share
-+SHAREDIR= ${PREFIX}/share
+--- Makefile.orig	Tue Oct 18 19:56:15 2005
++++ Makefile	Thu Jun  1 11:40:25 2006
+@@ -572,7 +572,7 @@
  
  #INCDIR= /usr/local/include
+ #INCDIR= /dev/env/DJDIR/include
 -INCDIR= /usr/include
 +INCDIR= ${PREFIX}/include
  
+ # Where to install calc realted things
+ #
+@@ -599,15 +599,15 @@
+ #
+ #BINDIR= /usr/local/bin
+ #BINDIR= /dev/env/DJDIR/bin
+-BINDIR= /usr/bin
++BINDIR= ${PREFIX}/bin
+ 
  #LIBDIR= /usr/local/lib
+ #LIBDIR= /dev/env/DJDIR/lib
 -LIBDIR= /usr/lib
 +LIBDIR= ${PREFIX}/lib
  
- # By default, these values are based on the above 4 values
- # --------------------------------------------------------
-@@ -576,7 +576,7 @@
+ #CALC_SHAREDIR= /usr/local/lib/calc
+ #CALC_SHAREDIR= /dev/env/DJDIR/share/calc
+-CALC_SHAREDIR= /usr/share/calc
++CALC_SHAREDIR= ${PREFIX}/share/calc
+ 
+ #CALC_INCDIR= /usr/local/include/calc
+ #CALC_INCDIR= /dev/env/DJDIR/include/calc
+@@ -681,7 +681,7 @@
  #MANDIR=
  #MANDIR= /usr/local/man/man1
  #MANDIR= /usr/man/man1
 -MANDIR= /usr/share/man/man1
 +MANDIR= ${PREFIX}/man/man1
+ #MANDIR= /dev/env/DJDIR/man/man1
  #MANDIR= /usr/man/u_man/man1
  #MANDIR= /usr/contrib/man/man1
- 
-@@ -669,8 +669,8 @@
+@@ -786,13 +786,13 @@
  #
  # If in doubt, set USE_READLINE, READLINE_LIB and READLINE_INCLUDE to nothing.
  #
@@ -39,23 +46,22 @@
 +#USE_READLINE=
 +USE_READLINE= -DUSE_READLINE
  #
- #READLINE_LIB=
- READLINE_LIB= -lreadline -lhistory -lncurses
-@@ -765,6 +765,7 @@
+-READLINE_LIB=
++#READLINE_LIB=
+ #READLINE_LIB= -lreadline -lhistory -lncurses
+ #READLINE_LIB= -L/usr/gnu/lib -lreadline -lhistory -lncurses
+-#READLINE_LIB= -L/usr/local/lib -lreadline -lhistory -lncurses
++READLINE_LIB= -lreadline -lhistory -lncurses
  #
- MAKE_FILE= Makefile
- #MAKE_FILE=
-+MANDIR=	${PREFIX}/man/man1
- 
- # If you do not wish to use purify, leave PURIFY commented out.
- #
-@@ -849,13 +850,13 @@
+ # For Apple OS X: install fink from http://fink.sourceforge.net
+ #		  and then do a 'fink install readline' and then use:
+@@ -1004,13 +1004,13 @@
  CCOPT= ${DEBUG} ${NO_SHARED}
  CCMISC=
  #
 -CFLAGS= -DCALC_SRC ${CCWARN} ${CCOPT} ${CCMISC}
 -ICFLAGS= -DCALC_SRC ${CCWARN} ${CCMISC}
-+CFLAGS+= -DCALC_SRC
++CFLAGS= -DCALC_SRC
 +ICFLAGS= ${CFLAGS}
  #
  LDFLAGS= ${NO_SHARED} ${LD_NO_SHARED}
@@ -66,3 +72,11 @@
  CC= ${PURIFY} ${LCC}
  #
  ###
+@@ -1509,6 +1509,7 @@
+ TARGETS= ${LICENSE} ${CALC_LIBS} custom/.all calc${EXT} sample/.all \
+ 	 cal/.all help/.all help/builtin cscript/.all calc.1
+ 
++RM=	rm
+ 
+ ###
+ #
