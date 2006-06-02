@@ -1,6 +1,10 @@
 bin/vavoom
 bin/Vavoom
 bin/VavoomSV
+%%DATADIR%%/basev/common/default.cfg
+%%DATADIR%%/basev/common/startup.vs
+%%DATADIR%%/basev/common/wad0.wad
+@dirrm %%DATADIR%%/basev/common
 %%DATADIR%%/basev/doom/wad0.wad
 @dirrm %%DATADIR%%/basev/doom
 %%DATADIR%%/basev/doom1/base.txt
@@ -21,9 +25,7 @@ bin/VavoomSV
 %%DATADIR%%/basev/tnt/base.txt
 %%DATADIR%%/basev/tnt/wad0.wad
 @dirrm %%DATADIR%%/basev/tnt
-%%DATADIR%%/basev/default.cfg
 %%DATADIR%%/basev/games.txt
-%%DATADIR%%/basev/startup.vs
 @dirrm %%DATADIR%%/basev
 @dirrm %%DATADIR%%
 %%PORTDOCS%%%%DOCSDIR%%/vavmref.txt

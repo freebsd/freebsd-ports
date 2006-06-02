@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vavoom
-PORTVERSION=	1.19.1
+PORTVERSION=	1.20
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -39,9 +39,10 @@ CFLAGS+=	-O3 -ffast-math -fomit-frame-pointer
 SUB_FILES=	pkg-message vavoom
 SUB_LIST=	"PREFIX=${PREFIX}" "PORTSDIR=${PORTSDIR}"
 
-.include "${.CURDIR}/../doom-data/Makefile.include"
-
 .include <bsd.port.pre.mk>
+.include "${PORTSDIR}/games/doom-data/Makefile.include"
+
+CONFIGURE_ARGS+=	--with-sdl-config=${SDL_CONFIG}
 
 OPENAL_CONFIG?=	${LOCALBASE}/bin/openal-config
 .if exists(${OPENAL_CONFIG})
@@ -120,7 +121,6 @@ pre-everything::
 	@${ECHO_CMD} ""
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|ALubyte|ALchar|' ${WRKSRC}/source/s_al.cpp
 	@${REINPLACE_CMD} -i '' -e 's|SDL\/||g' ${WRKSRC}/source/*.cpp
 	@${REINPLACE_CMD} -e 's|<malloc.h>|<stdlib.h>|' \
 		${WRKSRC}/utils/acc/parse.c ${WRKSRC}/utils/acc/strlist.c
@@ -138,23 +138,25 @@ do-install:
 
 	@${MKDIR} ${DATADIR}
 	@${MKDIR} ${DATADIR}/basev
-	${INSTALL_DATA} ${WRKSRC}/basev/default.cfg ${DATADIR}/basev
-	${INSTALL_DATA} ${WRKSRC}/basev/startup.vs ${DATADIR}/basev
 	${INSTALL_DATA} ${WRKSRC}/basev/games.txt ${DATADIR}/basev
+	@${MKDIR} ${DATADIR}/basev/common
+	${INSTALL_DATA} ${WRKSRC}/basev/common/default.cfg \
+			${WRKSRC}/basev/common/startup.vs \
+			${WRKSRC}/basev/common/wad0.wad ${DATADIR}/basev/common
 .for i in doom heretic hexen strife
 	@${MKDIR} ${DATADIR}/basev/${i}
 	${INSTALL_DATA} ${WRKSRC}/basev/${i}/wad0.wad ${DATADIR}/basev/${i}
 .endfor
 .for i in doom1 doom2 tnt plutonia
 	@${MKDIR} ${DATADIR}/basev/${i}
-	${INSTALL_DATA} ${WRKSRC}/basev/${i}/wad0.wad ${DATADIR}/basev/${i}
-	${INSTALL_DATA} ${WRKSRC}/basev/${i}/base.txt ${DATADIR}/basev/${i}
+	${INSTALL_DATA} ${WRKSRC}/basev/${i}/wad0.wad \
+			${WRKSRC}/basev/${i}/base.txt ${DATADIR}/basev/${i}
 .endfor
 
 .ifndef (NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/vavmref.txt ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/vavoom.txt ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/vavmref.txt \
+			${WRKSRC}/docs/vavoom.txt ${DOCSDIR}
 .endif
 	@${CAT} ${PKGMESSAGE}
 
