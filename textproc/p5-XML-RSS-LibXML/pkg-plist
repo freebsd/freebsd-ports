@@ -6,9 +6,6 @@
 %%SITE_PERL%%/XML/RSS/LibXML/V09.pm
 %%SITE_PERL%%/XML/RSS/LibXML/V10.pm
 %%SITE_PERL%%/XML/RSS/LibXML/V20.pm
-%%SITE_PERL%%/benchmark.pl
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML-RSS-LibXML/.packlist
 @dirrm %%SITE_PERL%%/XML/RSS/LibXML
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML-RSS-LibXML
 @dirrmtry %%SITE_PERL%%/XML/RSS
 @dirrmtry %%SITE_PERL%%/XML
