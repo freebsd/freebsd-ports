@@ -9,7 +9,8 @@ PORTNAME=	E-buttons
 PORTVERSION=	0.2
 PORTREVISION=	3
 CATEGORIES=	x11
-MASTER_SITES=	http://www.moodfarm.demon.co.uk/download/
+MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
+		http://mirror2.unixfreunde.de/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
