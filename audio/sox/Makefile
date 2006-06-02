@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	sox
-PORTVERSION=	12.17.8
+PORTVERSION=	12.18.1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	sox
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	dnelson@allantgroup.com
 COMMENT=	SOund eXchange - universal sound sample translator
@@ -24,6 +24,8 @@ MAKE_ENV=		PLAY_SUPPORT=1
 OPTIONS=	LAME "Enable mp3 encoding with LAME" off \
 		MAD "Enable mp3 decoding with MAD" off \
 		VORBIS "Enable Ogg Vorbis support" off
+
+PLIST_FILES=	bin/sox bin/soxmix bin/rec bin/play
 
 .include <bsd.port.pre.mk>
 
