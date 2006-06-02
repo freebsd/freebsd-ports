@@ -8,9 +8,7 @@
 PORTNAME=	Jabber-Connection
 PORTVERSION=	0.04
 CATEGORIES=	net-im perl5
-#MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-#MASTER_SITE_SUBDIR=	Jabber
-MASTER_SITES=	http://www.pipetree.com/jabber/jabberconnection/
+MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	lars.eggert@gmx.net
