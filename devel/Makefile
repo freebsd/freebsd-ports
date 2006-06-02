@@ -786,7 +786,6 @@
     SUBDIR += p5-Class-Fields
     SUBDIR += p5-Class-Generate
     SUBDIR += p5-Class-Gomor
-    SUBDIR += p5-Class-Gomor-Hash
     SUBDIR += p5-Class-Handle
     SUBDIR += p5-Class-Hook
     SUBDIR += p5-Class-ISA
