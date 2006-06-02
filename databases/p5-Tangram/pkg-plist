@@ -1,83 +1,150 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Tangram/.packlist
 %%SITE_PERL%%/Tangram.pm
 %%SITE_PERL%%/Tangram.pod
-%%SITE_PERL%%/Tangram/AbstractArray.pm
-%%SITE_PERL%%/Tangram/AbstractHash.pm
-%%SITE_PERL%%/Tangram/AbstractSet.pm
-%%SITE_PERL%%/Tangram/Array.pm
-%%SITE_PERL%%/Tangram/Array.pod
-%%SITE_PERL%%/Tangram/Coll.pm
+%%SITE_PERL%%/Tangram/Compat.pm
+%%SITE_PERL%%/Tangram/Compat/Stub.pm
 %%SITE_PERL%%/Tangram/Complicity.pm
-%%SITE_PERL%%/Tangram/CookedDateTime.pm
 %%SITE_PERL%%/Tangram/Core.pm
 %%SITE_PERL%%/Tangram/Core.pod
 %%SITE_PERL%%/Tangram/Cursor.pm
 %%SITE_PERL%%/Tangram/Cursor.pod
-%%SITE_PERL%%/Tangram/DMDateTime.pm
-%%SITE_PERL%%/Tangram/DateTime.pm
-%%SITE_PERL%%/Tangram/DateTime.pod
+%%SITE_PERL%%/Tangram/Cursor/Coll.pm
+%%SITE_PERL%%/Tangram/Cursor/Data.pm
 %%SITE_PERL%%/Tangram/Deploy.pm
 %%SITE_PERL%%/Tangram/Deploy.pod
-%%SITE_PERL%%/Tangram/Dump.pm
+%%SITE_PERL%%/Tangram/Driver/Oracle.pm
+%%SITE_PERL%%/Tangram/Driver/Oracle.pod
+%%SITE_PERL%%/Tangram/Driver/Oracle/Storage.pm
+%%SITE_PERL%%/Tangram/Driver/Pg.pm
+%%SITE_PERL%%/Tangram/Driver/Pg.pod
+%%SITE_PERL%%/Tangram/Driver/Pg/Storage.pm
+%%SITE_PERL%%/Tangram/Driver/SQLite.pm
+%%SITE_PERL%%/Tangram/Driver/SQLite.pod
+%%SITE_PERL%%/Tangram/Driver/SQLite/Storage.pm
+%%SITE_PERL%%/Tangram/Driver/SQLite2.pm
+%%SITE_PERL%%/Tangram/Driver/Sybase.pm
+%%SITE_PERL%%/Tangram/Driver/Sybase.pod
+%%SITE_PERL%%/Tangram/Driver/Sybase/Expr/Date.pm
+%%SITE_PERL%%/Tangram/Driver/Sybase/Statement.pm
+%%SITE_PERL%%/Tangram/Driver/Sybase/Storage.pm
+%%SITE_PERL%%/Tangram/Driver/mysql.pm
+%%SITE_PERL%%/Tangram/Driver/mysql.pod
+%%SITE_PERL%%/Tangram/Driver/mysql/Expr/Date.pm
+%%SITE_PERL%%/Tangram/Driver/mysql/Expr/Integer.pm
+%%SITE_PERL%%/Tangram/Driver/mysql/Storage.pm
 %%SITE_PERL%%/Tangram/Expr.pm
 %%SITE_PERL%%/Tangram/Expr.pod
-%%SITE_PERL%%/Tangram/FlatArray.pm
-%%SITE_PERL%%/Tangram/FlatArray.pod
-%%SITE_PERL%%/Tangram/FlatHash.pm
-%%SITE_PERL%%/Tangram/FlatHash.pod
-%%SITE_PERL%%/Tangram/Hash.pm
-%%SITE_PERL%%/Tangram/IDBIF.pm
-%%SITE_PERL%%/Tangram/IntrArray.pm
-%%SITE_PERL%%/Tangram/IntrArray.pod
-%%SITE_PERL%%/Tangram/IntrHash.pm
-%%SITE_PERL%%/Tangram/IntrRef.pm
-%%SITE_PERL%%/Tangram/IntrSet.pm
-%%SITE_PERL%%/Tangram/IntrSet.pod
+%%SITE_PERL%%/Tangram/Expr/Coll.pm
+%%SITE_PERL%%/Tangram/Expr/Coll/FromMany.pm
+%%SITE_PERL%%/Tangram/Expr/Coll/FromOne.pm
+%%SITE_PERL%%/Tangram/Expr/CursorObject.pm
+%%SITE_PERL%%/Tangram/Expr/Filter.pm
+%%SITE_PERL%%/Tangram/Expr/FlatArray.pm
+%%SITE_PERL%%/Tangram/Expr/FlatHash.pm
+%%SITE_PERL%%/Tangram/Expr/LinkTable.pm
+%%SITE_PERL%%/Tangram/Expr/QueryObject.pm
+%%SITE_PERL%%/Tangram/Expr/RDBObject.pm
+%%SITE_PERL%%/Tangram/Expr/Select.pm
+%%SITE_PERL%%/Tangram/Expr/Table.pm
+%%SITE_PERL%%/Tangram/Expr/TableAlias.pm
 %%SITE_PERL%%/Tangram/Intro.pod
-%%SITE_PERL%%/Tangram/Oracle.pm
-%%SITE_PERL%%/Tangram/Oracle.pod
-%%SITE_PERL%%/Tangram/PerlDump.pm
-%%SITE_PERL%%/Tangram/PerlDump.pod
-%%SITE_PERL%%/Tangram/Pg.pm
-%%SITE_PERL%%/Tangram/Pg.pod
-%%SITE_PERL%%/Tangram/RawDate.pm
-%%SITE_PERL%%/Tangram/RawDateTime.pm
-%%SITE_PERL%%/Tangram/RawTime.pm
-%%SITE_PERL%%/Tangram/Ref.pm
-%%SITE_PERL%%/Tangram/Ref.pod
+%%SITE_PERL%%/Tangram/Lazy/BackRef.pm
+%%SITE_PERL%%/Tangram/Lazy/Coll.pm
+%%SITE_PERL%%/Tangram/Lazy/Ref.pm
 %%SITE_PERL%%/Tangram/Relational.pm
 %%SITE_PERL%%/Tangram/Relational.pod
 %%SITE_PERL%%/Tangram/Relational/Engine.pm
+%%SITE_PERL%%/Tangram/Relational/Engine/Class.pm
 %%SITE_PERL%%/Tangram/Relational/Mappings.pod
+%%SITE_PERL%%/Tangram/Relational/PolySelectTemplate.pm
+%%SITE_PERL%%/Tangram/Relational/Schema.pm
+%%SITE_PERL%%/Tangram/Relational/TableSet.pm
 %%SITE_PERL%%/Tangram/Remote.pod
-%%SITE_PERL%%/Tangram/SQLite.pm
-%%SITE_PERL%%/Tangram/SQLite.pod
-%%SITE_PERL%%/Tangram/Scalar.pm
-%%SITE_PERL%%/Tangram/Scalar.pod
 %%SITE_PERL%%/Tangram/Schema.pm
 %%SITE_PERL%%/Tangram/Schema.pod
-%%SITE_PERL%%/Tangram/Set.pm
-%%SITE_PERL%%/Tangram/Set.pod
+%%SITE_PERL%%/Tangram/Schema/Class.pm
+%%SITE_PERL%%/Tangram/Schema/ClassHash.pm
+%%SITE_PERL%%/Tangram/Schema/Node.pm
 %%SITE_PERL%%/Tangram/Springfield.pm
 %%SITE_PERL%%/Tangram/Springfield.pod
-%%SITE_PERL%%/Tangram/Storable.pm
-%%SITE_PERL%%/Tangram/Storable.pod
 %%SITE_PERL%%/Tangram/Storage.pm
 %%SITE_PERL%%/Tangram/Storage.pod
+%%SITE_PERL%%/Tangram/Storage/Statement.pm
 %%SITE_PERL%%/Tangram/Sucks.pm
-%%SITE_PERL%%/Tangram/Sybase.pm
-%%SITE_PERL%%/Tangram/Sybase.pod
-%%SITE_PERL%%/Tangram/TimePiece.pm
 %%SITE_PERL%%/Tangram/Tour.pod
 %%SITE_PERL%%/Tangram/Type.pm
 %%SITE_PERL%%/Tangram/Type.pod
+%%SITE_PERL%%/Tangram/Type/Abstract/Array.pm
+%%SITE_PERL%%/Tangram/Type/Abstract/Coll.pm
+%%SITE_PERL%%/Tangram/Type/Abstract/Hash.pm
+%%SITE_PERL%%/Tangram/Type/Abstract/Set.pm
+%%SITE_PERL%%/Tangram/Type/Array/FromMany.pm
+%%SITE_PERL%%/Tangram/Type/Array/FromMany.pod
+%%SITE_PERL%%/Tangram/Type/Array/FromOne.pm
+%%SITE_PERL%%/Tangram/Type/Array/FromOne.pod
+%%SITE_PERL%%/Tangram/Type/Array/Scalar.pm
+%%SITE_PERL%%/Tangram/Type/Array/Scalar.pod
+%%SITE_PERL%%/Tangram/Type/BackRef.pm
+%%SITE_PERL%%/Tangram/Type/Date.pm
+%%SITE_PERL%%/Tangram/Type/Date/Cooked.pm
+%%SITE_PERL%%/Tangram/Type/Date/DateTime.pm
+%%SITE_PERL%%/Tangram/Type/Date/Manip.pm
+%%SITE_PERL%%/Tangram/Type/Date/Raw.pm
+%%SITE_PERL%%/Tangram/Type/Date/TimePiece.pm
+%%SITE_PERL%%/Tangram/Type/Dump.pm
+%%SITE_PERL%%/Tangram/Type/Dump/Any.pm
+%%SITE_PERL%%/Tangram/Type/Dump/Perl.pm
+%%SITE_PERL%%/Tangram/Type/Dump/Perl.pod
+%%SITE_PERL%%/Tangram/Type/Dump/Storable.pm
+%%SITE_PERL%%/Tangram/Type/Dump/Storable.pod
+%%SITE_PERL%%/Tangram/Type/Dump/YAML.pm
 %%SITE_PERL%%/Tangram/Type/Extending.pod
-%%SITE_PERL%%/Tangram/YAML.pm
-%%SITE_PERL%%/Tangram/mysql.pm
-%%SITE_PERL%%/Tangram/mysql.pod
+%%SITE_PERL%%/Tangram/Type/Hash/FromMany.pm
+%%SITE_PERL%%/Tangram/Type/Hash/FromOne.pm
+%%SITE_PERL%%/Tangram/Type/Hash/Scalar.pm
+%%SITE_PERL%%/Tangram/Type/Hash/Scalar.pod
+%%SITE_PERL%%/Tangram/Type/Integer.pm
+%%SITE_PERL%%/Tangram/Type/Number.pm
+%%SITE_PERL%%/Tangram/Type/Real.pm
+%%SITE_PERL%%/Tangram/Type/Ref/FromMany.pm
+%%SITE_PERL%%/Tangram/Type/Ref/FromMany.pod
+%%SITE_PERL%%/Tangram/Type/Ref/FromOne.pm
+%%SITE_PERL%%/Tangram/Type/Scalar.pm
+%%SITE_PERL%%/Tangram/Type/Scalar.pod
+%%SITE_PERL%%/Tangram/Type/Set/FromMany.pm
+%%SITE_PERL%%/Tangram/Type/Set/FromMany.pod
+%%SITE_PERL%%/Tangram/Type/Set/FromOne.pm
+%%SITE_PERL%%/Tangram/Type/Set/FromOne.pod
+%%SITE_PERL%%/Tangram/Type/String.pm
+%%SITE_PERL%%/Tangram/Type/Time.pm
+%%SITE_PERL%%/Tangram/Type/TimeAndDate.pm
+%%SITE_PERL%%/Tangram/Type/TimeAndDate.pod
 %%SITE_PERL%%/auto/Tangram/autosplit.ix
-@dirrm %%SITE_PERL%%/Tangram/Relational
-@dirrm %%SITE_PERL%%/Tangram/Type
-@dirrm %%SITE_PERL%%/Tangram
-@dirrm %%SITE_PERL%%/auto/Tangram
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Tangram/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tangram
+@dirrm %%SITE_PERL%%/auto/Tangram
+@dirrm %%SITE_PERL%%/Tangram/Type/Set
+@dirrm %%SITE_PERL%%/Tangram/Type/Ref
+@dirrm %%SITE_PERL%%/Tangram/Type/Hash
+@dirrm %%SITE_PERL%%/Tangram/Type/Dump
+@dirrm %%SITE_PERL%%/Tangram/Type/Date
+@dirrm %%SITE_PERL%%/Tangram/Type/Array
+@dirrm %%SITE_PERL%%/Tangram/Type/Abstract
+@dirrm %%SITE_PERL%%/Tangram/Type
+@dirrm %%SITE_PERL%%/Tangram/Storage
+@dirrm %%SITE_PERL%%/Tangram/Schema
+@dirrm %%SITE_PERL%%/Tangram/Relational/Engine
+@dirrm %%SITE_PERL%%/Tangram/Relational
+@dirrm %%SITE_PERL%%/Tangram/Lazy
+@dirrm %%SITE_PERL%%/Tangram/Expr/Coll
+@dirrm %%SITE_PERL%%/Tangram/Expr
+@dirrm %%SITE_PERL%%/Tangram/Driver/mysql/Expr
+@dirrm %%SITE_PERL%%/Tangram/Driver/mysql
+@dirrm %%SITE_PERL%%/Tangram/Driver/Sybase/Expr
+@dirrm %%SITE_PERL%%/Tangram/Driver/Sybase
+@dirrm %%SITE_PERL%%/Tangram/Driver/SQLite
+@dirrm %%SITE_PERL%%/Tangram/Driver/Pg
+@dirrm %%SITE_PERL%%/Tangram/Driver/Oracle
+@dirrm %%SITE_PERL%%/Tangram/Driver
+@dirrm %%SITE_PERL%%/Tangram/Cursor
+@dirrm %%SITE_PERL%%/Tangram/Compat
+@dirrm %%SITE_PERL%%/Tangram
