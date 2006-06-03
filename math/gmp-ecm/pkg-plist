@@ -1,0 +1,4 @@
+@comment $FreeBSD$
+bin/ecm
+include/ecm.h
+lib/libecm.a

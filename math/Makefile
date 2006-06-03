@@ -79,6 +79,7 @@
     SUBDIR += gexpr
     SUBDIR += glgraph
     SUBDIR += glpk
+    SUBDIR += gmp-ecm
     SUBDIR += gnumeric
     SUBDIR += gnuplot
     SUBDIR += gnuplot+
