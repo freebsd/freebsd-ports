@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gtick
-PORTVERSION=	0.3.9
+PORTVERSION=	0.3.10
 CATEGORIES=	audio
 MASTER_SITES=	http://www.antcom.de/gtick/download/
 
@@ -16,7 +16,6 @@ COMMENT=	A metronome application
 LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile
 
 GNU_CONFIGURE=	yes
-USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GETOPT_LONG=yes
 USE_GNOME=	gtk20
