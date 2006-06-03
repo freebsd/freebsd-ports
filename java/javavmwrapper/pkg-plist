@@ -3,3 +3,4 @@ bin/javavm
 bin/registervm
 bin/unregistervm
 bin/checkvms
+etc/javavm_opts.conf.dist

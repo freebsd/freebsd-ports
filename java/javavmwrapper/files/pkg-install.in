@@ -1,12 +1,23 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/java/javavmwrapper/files/pkg-install.in,v 1.2 2005-04-11 21:21:16 glewis Exp $
+# $FreeBSD: /tmp/pcvs/ports/java/javavmwrapper/files/pkg-install.in,v 1.3 2006-06-03 17:32:24 glewis Exp $
 
 LOCALBASE=%%LOCALBASE%%
 
 # This script runs during post-install
 if [ "x${2}" != "xPOST-INSTALL" ]; then
     exit 0
+fi
+
+# The option configuration file
+OPTION_CONF="${PKG_PREFIX}/etc/javavm_opts.conf"
+
+# Install default javavm options configuration
+if [ ! -e "${OPTION_CONF}" ]; then
+    cp "${OPTION_CONF}.dist" "${OPTION_CONF}"
+else
+    echo "${OPTION_CONF} already exists - not installing."
+    echo "You may need to hand merge changes."
 fi
 
 # Ensure all JDKs and JREs are installed
