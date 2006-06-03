@@ -13,15 +13,15 @@ DISTNAME=	3.0-RELEASE
 MAINTAINER=	edwardchuang@gmail.com
 COMMENT=	A Common BBS Server with its own customized INN News Server
 
-BROKEN=		Incomplete pkg-plist
-
 WRKSRC=		${WRKDIR}/bbs/bbssrc
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 IS_INTERACTIVE=	yes
+NOT_FOR_ARCHS=	amd64
 
 pre-install:
 	${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+	${FIND} ${WRKSRC} -name "*.orig" -delete
 
 post-install:
 	@if [ ! -f ${PREFIX}/etc/rc.d/bbs.sh.example ]; then \
