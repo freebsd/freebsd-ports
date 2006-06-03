@@ -6,6 +6,7 @@
 #
 # Tunables:
 # WITH_DILLO_SSL: enable experimental SSL support
+# WITH_DILLO_DLGUI: enable experimental FLTK2 based gui for file downloads
 #
 
 PORTNAME=	dillo
@@ -29,7 +30,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-cookies --enable-ipv6 --enable-threaded-dns \
-		--disable-dlgui \
 		--libdir=${PREFIX}/libexec
 
 .if defined(WITH_DILLO_SSL)
@@ -38,6 +38,15 @@ EXTRA_PATCHES+=	${PATCHDIR}/enable-ssl.patch
 USE_OPENSSL=	yes
 .else
 CONFIGURE_ARGS+=	--disable-ssl
+.endif
+
+.if defined(WITH_DILLO_DLGUI)
+CONFIGURE_ARGS+=	--enable-dlgui
+BUILD_DEPENDS+=	fltk>=2.0.r4825:${PORTSDIR}/x11-toolkits/fltk2
+CPPFLAGS+=	-I${X11BASE}/include
+LDFLAGS+=	-L${X11BASE}/lib
+.else
+CONFIGURE_ARGS+=	--disable-dlgui
 .endif
 
 CONFLICTS=	dillo-i18n-*[0-9]*
@@ -53,6 +62,11 @@ pre-configure:
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "   Set WITH_DILLO_SSL=yes in your make environment or on the"
 	@${ECHO_CMD} "   commandline to enable experimental SSL support."
+.endif
+.if !defined(WITH_DILLO_DLGUI)
+	@${ECHO_CMD} ""
+	@${ECHO_CMD} "   Set WITH_DILLO_DLGUI=yes in your make environment or on the"
+	@${ECHO_CMD} "   commandline to enable a FLTK2 based gui for download operations."
 .endif
 	@${ECHO_CMD} ""
 
