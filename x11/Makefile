@@ -40,7 +40,6 @@
     SUBDIR += dynamag
     SUBDIR += ebuttons
     SUBDIR += ecore
-    SUBDIR += efancylauncher
     SUBDIR += electricsheep
     SUBDIR += emu
     SUBDIR += erun
