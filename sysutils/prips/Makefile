@@ -8,26 +8,25 @@
 PORTNAME=	prips
 PORTVERSION=	0.9.4
 CATEGORIES=	sysutils
-MASTER_SITES=	http://ipsc.sourceforge.net/dist/prips/
-DISTNAME=	${PKGNAME}-src
+MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
+DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Prints IP subnet ranges by list or CIDR
 
-WRKSRC=		${WRKDIR}/prips
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
+
+PORTDOCS=	README
+PLIST_FILES=	bin/prips
 
 .include <bsd.port.pre.mk>
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/prips ${PREFIX}/bin
-
-post-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/prips ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/README
-.else
-	@${SED} 's#share/doc/prips/README##' ${TMPPLIST} > ${WRKDIR}/PLIST.tmp
-	@${SED} 's#@dirrm share/doc/prips##' ${WRKDIR}/PLIST.tmp > ${TMPPLIST}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>
