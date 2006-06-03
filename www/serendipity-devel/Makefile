@@ -8,7 +8,10 @@
 PORTNAME=	serendipity-devel
 PORTVERSION=	1.0.${SNAPSHOT}
 CATEGORIES=	www
-MASTER_SITES=	http://www.s9y.org/snapshots/
+MASTER_SITES=	http://www.s9y.org/snapshots/ \
+		http://bsd1.csme.ru/myports/ \
+		http://bsd2.csme.ru/myports/ \
+		http://bsd3.csme.ru/myports/
 DISTNAME=	s9y_${SNAPSHOT}
 
 MAINTAINER=	babak@farrokhi.net
