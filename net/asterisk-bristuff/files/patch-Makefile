@@ -1,8 +1,5 @@
-
-$FreeBSD$
-
---- Makefile.orig
-+++ Makefile
+--- Makefile.orig	Sat Jun  3 21:34:08 2006
++++ Makefile	Sat Jun  3 21:38:40 2006
 @@ -19,8 +19,8 @@
  # CROSS_COMPILE=/opt/montavista/pro/devkit/arm/xscale_be/bin/xscale_be-
  # CROSS_COMPILE_BIN=/opt/montavista/pro/devkit/arm/xscale_be/bin/
@@ -14,7 +11,7 @@ $FreeBSD$
  # CROSS_ARCH=Linux
  # CROSS_PROC=arm
  # SUB_PROC=xscale # or maverick
-@@ -44,14 +44,14 @@
+@@ -46,14 +46,14 @@
  #K6OPT  = -DK6OPT
  
  #Tell gcc to optimize the code
@@ -32,7 +29,7 @@ $FreeBSD$
  
  #Set NOCRYPTO to yes if you do not want to have crypto support or 
  #dependencies
-@@ -83,7 +83,7 @@
+@@ -85,7 +85,7 @@
  
  # Where to install asterisk after compiling
  # Default -> leave empty
@@ -41,7 +38,7 @@ $FreeBSD$
  
  # Staging directory
  # Files are copied here temporarily during the install process
-@@ -106,17 +106,17 @@
+@@ -108,17 +108,17 @@
  BUSYDETECT+= #-DBUSYDETECT_COMPARE_TONE_AND_SILENCE
  
  ifneq ($(OSARCH),SunOS)
@@ -68,7 +65,7 @@ $FreeBSD$
    MODULES_DIR=$(ASTLIBDIR)/modules
    AGI_DIR=$(ASTVARLIBDIR)/agi-bin
  else
-@@ -218,25 +218,25 @@
+@@ -221,25 +221,25 @@
  endif
  
  INCLUDE+=-Iinclude -I../include
@@ -100,7 +97,7 @@ $FreeBSD$
  else
    ifneq ($(wildcard $(CROSS_COMPILE_TARGET)/usr/include/osp/osp.h),)
      ASTCFLAGS+=-DOSP_SUPPORT -I$(CROSS_COMPILE_TARGET)/usr/include/osp
-@@ -245,27 +245,24 @@
+@@ -248,27 +248,24 @@
  
  ifeq ($(OSARCH),FreeBSD)
    BSDVERSION=$(shell make -V OSVERSION -f $(CROSS_COMPILE_TARGET)/usr/share/mk/bsd.port.subdir.mk)
@@ -142,7 +139,7 @@ $FreeBSD$
  
  endif # FreeBSD
  
-@@ -281,7 +278,7 @@
+@@ -284,7 +281,7 @@
  
  ifeq ($(OSARCH),SunOS)
    ASTCFLAGS+=-Wcast-align -DSOLARIS
@@ -151,7 +148,7 @@ $FreeBSD$
  endif
  
  ifeq ($(findstring CYGWIN,$(OSARCH)),CYGWIN)
-@@ -296,7 +293,7 @@
+@@ -299,7 +296,7 @@
  
  ifndef WITHOUT_ZAPTEL
  
@@ -160,7 +157,7 @@ $FreeBSD$
    ASTCFLAGS+=-DZAPTEL_OPTIMIZATIONS
  endif
  
-@@ -388,10 +385,10 @@
+@@ -391,10 +388,10 @@
  endif
  
  ifeq ($(OSARCH),SunOS)
@@ -173,7 +170,7 @@ $FreeBSD$
  endif
  
  ifeq ($(MAKETOPLEVEL),$(MAKELEVEL))
-@@ -399,7 +396,7 @@
+@@ -402,7 +399,7 @@
  endif
  
  # This is used when generating the doxygen documentation
@@ -182,7 +179,7 @@ $FreeBSD$
    HAVEDOT=yes
  else
    HAVEDOT=no
-@@ -418,7 +415,7 @@
+@@ -421,7 +418,7 @@
  	@echo " +               $(MAKE) install                +"  
  	@echo " +-------------------------------------------+"  
  
@@ -191,7 +188,7 @@ $FreeBSD$
  
  #ifneq ($(wildcard tags),)
  ctags: tags
-@@ -437,13 +434,13 @@
+@@ -440,13 +437,13 @@
  	cd editline && unset CFLAGS LIBS && test -f config.h || ./configure
  	$(MAKE) -C editline libedit.a
  
@@ -227,7 +224,7 @@ $FreeBSD$
  
  asterisk.pdf: asterisk.sgml
  	docbook2pdf asterisk.sgml
-@@ -510,14 +507,14 @@
+@@ -513,14 +510,14 @@
  cygwin_a:
  	$(MAKE) -C cygwin all
  
@@ -244,7 +241,7 @@ $FreeBSD$
  
  muted: muted.o
  	$(CC) $(AUDIO_LIBS) -o muted muted.o
-@@ -539,38 +536,38 @@
+@@ -542,38 +539,38 @@
  
  datafiles: all
  	if [ x`$(ID) -un` = xroot ]; then sh mkpkgconfig $(DESTDIR)/usr/lib/pkgconfig; fi
@@ -292,7 +289,7 @@ $FreeBSD$
  		else \
  			echo "No description for $$x"; \
  			exit 1; \
-@@ -578,18 +575,18 @@
+@@ -581,18 +578,18 @@
  	done
  	for x in sounds/demo-* sounds/vm-* sounds/transfer* sounds/pbx-* sounds/ss-* sounds/beep* sounds/dir-* sounds/conf-* sounds/agent-* sounds/invalid* sounds/tt-* sounds/auth-* sounds/privacy-* sounds/queue-* sounds/spy-* sounds/priv-* sounds/screen-* sounds/hello-*; do \
  		if $(GREP) -q "^%`basename $$x`%" sounds.txt; then \
@@ -316,7 +313,7 @@ $FreeBSD$
  
  update: 
  	@if [ -d .svn ]; then \
-@@ -618,73 +615,51 @@
+@@ -621,73 +618,51 @@
  OLDHEADERS=$(filter-out $(NEWHEADERS),$(notdir $(wildcard $(DESTDIR)$(ASTHEADERDIR)/*.h)))
  
  bininstall: all
@@ -422,7 +419,7 @@ $FreeBSD$
  	@$(MAKE) -s oldmodcheck
  
  NEWMODS=$(notdir $(wildcard */*.so))
-@@ -710,7 +685,7 @@
+@@ -711,7 +686,7 @@
  		echo " WARNING WARNING WARNING" ;\
  	fi
  
@@ -431,7 +428,7 @@ $FreeBSD$
  	@if [ -x /usr/sbin/asterisk-post-install ]; then \
  		/usr/sbin/asterisk-post-install $(DESTDIR) . ; \
  	fi
-@@ -718,16 +693,19 @@
+@@ -719,16 +694,19 @@
  upgrade: all bininstall
  
  adsi:
@@ -454,7 +451,7 @@ $FreeBSD$
  		if [ -f $(DESTDIR)$(ASTETCDIR)/`basename $$x .sample` ]; then \
  			if [ "$(OVERWRITE)" = "y" ]; then \
  				if cmp -s $(DESTDIR)$(ASTETCDIR)/`basename $$x .sample` $$x ; then \
-@@ -740,7 +718,7 @@
+@@ -741,7 +719,7 @@
  				continue; \
  			fi ;\
  		fi ; \
@@ -463,10 +460,10 @@ $FreeBSD$
  	done
  	if [ "$(OVERWRITE)" = "y" ] || [ ! -f $(DESTDIR)$(ASTCONFPATH) ]; then \
  		( \
-@@ -800,25 +778,25 @@
- 		echo "; Default: strict"; \
- 		echo ";"; \
- 		echo ";translation_algorithm = strict"; \
+@@ -763,25 +741,25 @@
+ 		echo "[options]" ; \
+ 		echo "uniquename = asterisk" ;\
+ 		echo "silence_suppression = yes" ;\
 -		) > $(DESTDIR)$(ASTCONFPATH) ; \
 +		) > $(DESTDIR)$(ASTCONFPATH)-dist ; \
  	else \
@@ -495,7 +492,7 @@ $FreeBSD$
  	:> $(DESTDIR)$(ASTSPOOLDIR)/voicemail/default/1234/unavail.gsm
  	for x in vm-theperson digits/1 digits/2 digits/3 digits/4 vm-isunavail; do \
  		cat $(DESTDIR)$(ASTVARLIBDIR)/sounds/$$x.gsm >> $(DESTDIR)$(ASTSPOOLDIR)/voicemail/default/1234/unavail.gsm ; \
-@@ -832,7 +810,7 @@
+@@ -795,7 +773,7 @@
  	@[ -d $(DESTDIR)$(HTTP_DOCSDIR)/ ] || ( printf "http docs directory not found.\nUpdate assignment of variable HTTP_DOCSDIR in Makefile!\n" && exit 1 )
  	@[ -d $(DESTDIR)$(HTTP_CGIDIR) ] || ( printf "cgi-bin directory not found.\nUpdate assignment of variable HTTP_CGIDIR in Makefile!\n" && exit 1 )
  	$(INSTALL) -m 4755 -o root -g root contrib/scripts/vmail.cgi $(DESTDIR)$(HTTP_CGIDIR)/vmail.cgi
@@ -504,7 +501,7 @@ $FreeBSD$
  	for x in images/*.gif; do \
  		$(INSTALL) -m 644 $$x $(DESTDIR)$(HTTP_DOCSDIR)/_asterisk/; \
  	done
-@@ -861,10 +839,10 @@
+@@ -824,10 +802,10 @@
  
  __rpm: include/asterisk/version.h spec
  	rm -rf /tmp/asterisk ; \

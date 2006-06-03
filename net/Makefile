@@ -30,6 +30,7 @@
     SUBDIR += aslookup
     SUBDIR += asterisk
     SUBDIR += asterisk-addons
+    SUBDIR += asterisk-bristuff
     SUBDIR += asterisk-devel
     SUBDIR += asterisk-oh323
     SUBDIR += atmsupport

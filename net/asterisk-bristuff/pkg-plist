@@ -19,9 +19,9 @@ etc/asterisk/asterisk.adsi-dist
 @unexec if cmp -s %D/etc/asterisk/asterisk.conf %D/etc/asterisk/asterisk.conf-dist; then rm -f %D/etc/asterisk/asterisk.conf; fi
 etc/asterisk/asterisk.conf-dist
 @exec [ -f %B/asterisk.conf ] || cp %B/%f %B/asterisk.conf
-%%BRISTUFF%%@unexec if cmp -s %D/etc/asterisk/capi.conf %D/etc/asterisk/capi.conf-dist; then rm -f %D/etc/asterisk/capi.conf; fi
-%%BRISTUFF%%etc/asterisk/capi.conf-dist
-%%BRISTUFF%%@exec [ -f %B/capi.conf ] || cp %B/%f %B/capi.conf
+@unexec if cmp -s %D/etc/asterisk/capi.conf %D/etc/asterisk/capi.conf-dist; then rm -f %D/etc/asterisk/capi.conf; fi
+etc/asterisk/capi.conf-dist
+@exec [ -f %B/capi.conf ] || cp %B/%f %B/capi.conf
 @unexec if cmp -s %D/etc/asterisk/cdr.conf %D/etc/asterisk/cdr.conf-dist; then rm -f %D/etc/asterisk/cdr.conf; fi
 etc/asterisk/cdr.conf-dist
 @exec [ -f %B/cdr.conf ] || cp %B/%f %B/cdr.conf
@@ -142,9 +142,9 @@ etc/asterisk/voicemail.conf-dist
 @unexec if cmp -s %D/etc/asterisk/vpb.conf %D/etc/asterisk/vpb.conf-dist; then rm -f %D/etc/asterisk/vpb.conf; fi
 etc/asterisk/vpb.conf-dist
 @exec [ -f %B/vpb.conf ] || cp %B/%f %B/vpb.conf
-%%BRISTUFF%%@unexec if cmp -s %D/etc/asterisk/watchdog.conf %D/etc/asterisk/watchdog.conf-dist; then rm -f %D/etc/asterisk/watchdog.conf; fi
-%%BRISTUFF%%etc/asterisk/watchdog.conf-dist
-%%BRISTUFF%%@exec [ -f %B/watchdog.conf ] || cp %B/%f %B/watchdog.conf
+@unexec if cmp -s %D/etc/asterisk/watchdog.conf %D/etc/asterisk/watchdog.conf-dist; then rm -f %D/etc/asterisk/watchdog.conf; fi
+etc/asterisk/watchdog.conf-dist
+@exec [ -f %B/watchdog.conf ] || cp %B/%f %B/watchdog.conf
 @unexec if cmp -s %D/etc/asterisk/zapata.conf %D/etc/asterisk/zapata.conf-dist; then rm -f %D/etc/asterisk/zapata.conf; fi
 etc/asterisk/zapata.conf-dist
 @exec [ -f %B/zapata.conf ] || cp %B/%f %B/zapata.conf
@@ -163,8 +163,8 @@ include/asterisk/build.h
 include/asterisk/callerid.h
 include/asterisk/causes.h
 include/asterisk/cdr.h
-%%BRISTUFF%%include/asterisk/chan_capi.h
-%%BRISTUFF%%include/asterisk/chan_capi_app.h
+include/asterisk/chan_capi.h
+include/asterisk/chan_capi_app.h
 include/asterisk/channel.h
 include/asterisk/chanspy.h
 include/asterisk/chanvars.h
@@ -222,11 +222,11 @@ include/asterisk/unaligned.h
 include/asterisk/utils.h
 include/asterisk/version.h
 include/asterisk/vmodem.h
-%%BRISTUFF%%include/asterisk/xlaw.h
+include/asterisk/xlaw.h
 lib/asterisk/modules/app_adsiprog.so
 lib/asterisk/modules/app_alarmreceiver.so
 lib/asterisk/modules/app_authenticate.so
-%%BRISTUFF%%lib/asterisk/modules/app_callingpres.so
+lib/asterisk/modules/app_callingpres.so
 lib/asterisk/modules/app_cdr.so
 lib/asterisk/modules/app_chanisavail.so
 lib/asterisk/modules/app_chanspy.so
@@ -234,7 +234,7 @@ lib/asterisk/modules/app_controlplayback.so
 lib/asterisk/modules/app_curl.so
 lib/asterisk/modules/app_cut.so
 lib/asterisk/modules/app_db.so
-%%BRISTUFF%%lib/asterisk/modules/app_devstate.so
+lib/asterisk/modules/app_devstate.so
 lib/asterisk/modules/app_dial.so
 lib/asterisk/modules/app_dictate.so
 lib/asterisk/modules/app_directed_pickup.so
@@ -266,7 +266,7 @@ lib/asterisk/modules/app_mp3.so
 lib/asterisk/modules/app_nbscat.so
 %%WITH_ZAPTEL%%lib/asterisk/modules/app_page.so
 lib/asterisk/modules/app_parkandannounce.so
-%%BRISTUFF%%lib/asterisk/modules/app_pickup.so
+lib/asterisk/modules/app_pickup.so
 lib/asterisk/modules/app_playback.so
 lib/asterisk/modules/app_privacy.so
 lib/asterisk/modules/app_queue.so
@@ -277,7 +277,7 @@ lib/asterisk/modules/app_realtime.so
 lib/asterisk/modules/app_record.so
 %%WITH_FAX%%lib/asterisk/modules/app_rxfax.so
 lib/asterisk/modules/app_sayunixtime.so
-%%BRISTUFF%%lib/asterisk/modules/app_segfault.so
+lib/asterisk/modules/app_segfault.so
 lib/asterisk/modules/app_senddtmf.so
 lib/asterisk/modules/app_sendtext.so
 lib/asterisk/modules/app_setcallerid.so
@@ -362,7 +362,7 @@ lib/asterisk/modules/res_indications.so
 lib/asterisk/modules/res_monitor.so
 lib/asterisk/modules/res_musiconhold.so
 lib/asterisk/modules/res_odbc.so
-%%BRISTUFF%%lib/asterisk/modules/res_watchdog.so
+lib/asterisk/modules/res_watchdog.so
 sbin/asterisk
 sbin/astgenkey
 sbin/astman
@@ -375,7 +375,7 @@ sbin/streamplayer
 %%DATADIR%%/agi-bin/agi-test.agi
 %%DATADIR%%/agi-bin/eagi-sphinx-test
 %%DATADIR%%/agi-bin/eagi-test
-%%BRISTUFF%%%%DATADIR%%/agi-bin/xagi-test
+%%DATADIR%%/agi-bin/xagi-test
 %%DATADIR%%/firmware/iax/iaxy.bin
 %%DATADIR%%/images/asterisk-intro.jpg
 %%DATADIR%%/keys/freeworlddialup.pub
