@@ -2,4 +2,4 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/Std/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/Std
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config
-@dirrmtry %%SITE_PERL%%/Class
+@dirrmtry %%SITE_PERL%%/Config
