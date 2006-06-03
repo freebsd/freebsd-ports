@@ -522,6 +522,7 @@ asr10		ports/converters/asr10
 assp		ports/mail/assp
 asterisk	ports/net/asterisk
 asterisk-addons	ports/net/asterisk-addons
+asterisk-bristuff	ports/net/asterisk-bristuff
 asterisk-devel	ports/net/asterisk-devel
 asterisk-oh323	ports/net/asterisk-oh323
 astime		ports/x11-clocks/astime
@@ -5858,6 +5859,7 @@ libpperl	ports/devel/libpperl
 libprelude	ports/security/libprelude
 libpreludedb	ports/security/libpreludedb
 libpri		ports/misc/libpri
+libpri-bristuff		ports/misc/libpri-bristuff
 libpst		ports/mail/libpst
 libqalculate	ports/math/libqalculate
 libqglviewer	ports/graphics/libqglviewer
