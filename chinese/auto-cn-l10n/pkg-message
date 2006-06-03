@@ -1,0 +1,20 @@
+**************************************************************************
+
+English Instructions:
+ Please tell your users to merge their old dotfiles with the new ones, in
+    %%PREFIX%%/share/skel/zh_CN.eucCN/dot.*
+
+ For future adduser
+    # adduser -k %%PREFIX%%/share/skel/zh_CN.eucCN
+
+**************************************************************************
+
+简体中文说明:
+ 请告诉您的用户比较他们的新旧设置,放在
+ %%PREFIX%%/share/skel/zh_CN.eucCN/dot.*
+
+ 如果以后需要新增用户,请用类似以下的方式:
+    # adduser -k %%PREFIX%%/share/skel/zh_CN.eucCN
+
+************************************************************************** 
+	

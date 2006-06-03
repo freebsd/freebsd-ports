@@ -12,6 +12,7 @@
     SUBDIR += arnettf
     SUBDIR += arphicttf
     SUBDIR += aterm
+    SUBDIR += auto-cn-l10n
     SUBDIR += auto-tw-l10n
     SUBDIR += autoconvert
     SUBDIR += bg5pdf
