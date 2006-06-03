@@ -8,7 +8,7 @@
 
 PORTNAME=	gnumeric
 PORTVERSION=	1.6.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R}
@@ -64,6 +64,7 @@ PLIST_SUB+=		GNOMEDB="@comment "
 
 post-patch:
 	@${RM} -f ${WRKSRC}/GNOME_Gnumeric.server.in
+	@${REINPLACE_CMD} 's|gnm_sys_data_dir (), "doc"|"${PREFIX}/share/gnome/help/gnumeric/"|' ${WRKSRC}/src/wbcg-actions.c
 
 post-install:
 	@-update-desktop-database
