@@ -18,7 +18,8 @@ EXTRACT_ONLY=	# none
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	An implementation of Python Interpreter in Pure Java
 
-USE_JAVA=	1.3+
+USE_JAVA=	yes
+JAVA_VERSION=	1.3+
 NO_BUILD=	yes
 REINPLACE_ARGS=	-i ""
 
