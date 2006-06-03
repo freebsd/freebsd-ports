@@ -1,12 +1,11 @@
---- epplets/Emix.c.orig	Wed Sep 13 08:24:16 2000
-+++ epplets/Emix.c	Thu Dec 18 19:20:45 2003
-@@ -6,11 +6,17 @@
- 
+--- epplets/Emix.c.orig	Sat Apr  1 06:56:17 2006
++++ epplets/Emix.c	Sat Jun  3 19:44:51 2006
+@@ -7,11 +7,16 @@
  #include "epplet.h"
  #include <sys/ioctl.h>
+ #include <fcntl.h>
 -#ifdef __FreeBSD__
 +#include <config.h>
-+
 +#ifdef HAVE_LINUX_SOUNDCARD_H
 +#include <linux/soundcard.h>
 +#elif HAVE_MACHINE_SOUNDCARD_H

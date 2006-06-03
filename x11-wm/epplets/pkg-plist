@@ -5,7 +5,6 @@ bin/E-Clock.epplet
 bin/E-Cpu.epplet
 bin/E-Disk.epplet
 bin/E-Exec.epplet
-bin/E-GtkRc.epplet
 bin/E-Load.epplet
 bin/E-LoadMeter.epplet
 bin/E-Magic.epplet
@@ -20,7 +19,6 @@ bin/E-OpenGL-Demo.epplet
 bin/E-Pants.epplet
 bin/E-Pinger.epplet
 bin/E-PlayCD.epplet
-%%APM_PROGS%%bin/E-Power.epplet
 bin/E-SD.epplet
 bin/E-ScreenSave.epplet
 bin/E-ScreenShoot.epplet
@@ -32,248 +30,233 @@ bin/E-UrlWatch.epplet
 bin/E-Wireless.epplet
 bin/E-Xss.epplet
 bin/Emix.epplet
-share/enlightenment/epplet_data/E-Biff/7of9.png
-share/enlightenment/epplet_data/E-Biff/newmail.png
-share/enlightenment/epplet_data/E-Biff/nomail.png
-share/enlightenment/epplet_data/E-Clock/E-Clock-Image.png
-share/enlightenment/epplet_data/E-Clock/E-Clock.ABOUT/MAIN
-share/enlightenment/epplet_data/E-Clock/E-Clock.ABOUT/aircut3.ttf
-share/enlightenment/epplet_data/E-Clock/E-Clock.ABOUT/bg.png
-share/enlightenment/epplet_data/E-Cpu/E-Cpu.ABOUT/MAIN
-share/enlightenment/epplet_data/E-Cpu/E-Cpu.ABOUT/aircut3.ttf
-share/enlightenment/epplet_data/E-Cpu/E-Cpu.ABOUT/bg.png
-share/enlightenment/epplet_data/E-GtkRc/E-GtkRc.ABOUT/MAIN
-share/enlightenment/epplet_data/E-GtkRc/E-GtkRc.ABOUT/aircut3.ttf
-share/enlightenment/epplet_data/E-GtkRc/E-GtkRc.ABOUT/bg.png
-share/enlightenment/epplet_data/E-Magic/8ball.png
-share/enlightenment/epplet_data/E-Magic/answers.txt
-share/enlightenment/epplet_data/E-Mixer/E-Mixer.ABOUT/E-Mixer-standard.png
-share/enlightenment/epplet_data/E-Mixer/E-Mixer.ABOUT/E-Mixer-tall.png
-share/enlightenment/epplet_data/E-Mixer/E-Mixer.ABOUT/E-Mixer-wide.png
-share/enlightenment/epplet_data/E-Mixer/E-Mixer.ABOUT/MAIN
-share/enlightenment/epplet_data/E-Mixer/E-Mixer.ABOUT/aircut3.ttf
-share/enlightenment/epplet_data/E-Mixer/E-Mixer.ABOUT/bg.png
-share/enlightenment/epplet_data/E-MoonClock/E-MoonClock-01.png
-share/enlightenment/epplet_data/E-MoonClock/E-MoonClock-02.png
-share/enlightenment/epplet_data/E-MoonClock/E-MoonClock-03.png
-share/enlightenment/epplet_data/E-MoonClock/E-MoonClock-04.png
-share/enlightenment/epplet_data/E-MoonClock/E-MoonClock-05.png
-share/enlightenment/epplet_data/E-MoonClock/E-MoonClock-06.png
-share/enlightenment/epplet_data/E-MoonClock/E-MoonClock-07.png
-share/enlightenment/epplet_data/E-MoonClock/E-MoonClock-08.png
-share/enlightenment/epplet_data/E-MoonClock/E-MoonClock-09.png
-share/enlightenment/epplet_data/E-MoonClock/E-MoonClock-10.png
-share/enlightenment/epplet_data/E-MoonClock/E-MoonClock-11.png
-share/enlightenment/epplet_data/E-MoonClock/E-MoonClock-12.png
-share/enlightenment/epplet_data/E-MoonClock/E-MoonClock-13.png
-share/enlightenment/epplet_data/E-MoonClock/E-MoonClock-14.png
-share/enlightenment/epplet_data/E-MoonClock/E-MoonClock-15.png
-share/enlightenment/epplet_data/E-MoonClock/E-MoonClock-16.png
-share/enlightenment/epplet_data/E-MoonClock/E-MoonClock-17.png
-share/enlightenment/epplet_data/E-MoonClock/E-MoonClock-18.png
-share/enlightenment/epplet_data/E-MoonClock/E-MoonClock-19.png
-share/enlightenment/epplet_data/E-MoonClock/E-MoonClock-20.png
-share/enlightenment/epplet_data/E-MoonClock/E-MoonClock-21.png
-share/enlightenment/epplet_data/E-MoonClock/E-MoonClock-22.png
-share/enlightenment/epplet_data/E-MoonClock/E-MoonClock-23.png
-share/enlightenment/epplet_data/E-MoonClock/E-MoonClock-24.png
-share/enlightenment/epplet_data/E-MoonClock/E-MoonClock-25.png
-share/enlightenment/epplet_data/E-MoonClock/E-MoonClock-26.png
-share/enlightenment/epplet_data/E-MoonClock/E-MoonClock-27.png
-share/enlightenment/epplet_data/E-MoonClock/E-MoonClock-28.png
-share/enlightenment/epplet_data/E-MoonClock/E-MoonClock-29.png
-share/enlightenment/epplet_data/E-MoonClock/E-MoonClock-30.png
-share/enlightenment/epplet_data/E-MoonClock/E-MoonClock-31.png
-share/enlightenment/epplet_data/E-MoonClock/E-MoonClock-32.png
-share/enlightenment/epplet_data/E-MoonClock/E-MoonClock-33.png
-share/enlightenment/epplet_data/E-MoonClock/E-MoonClock-34.png
-share/enlightenment/epplet_data/E-MoonClock/E-MoonClock-35.png
-share/enlightenment/epplet_data/E-MoonClock/E-MoonClock-36.png
-share/enlightenment/epplet_data/E-MoonClock/E-MoonClock-37.png
-share/enlightenment/epplet_data/E-MoonClock/E-MoonClock-38.png
-share/enlightenment/epplet_data/E-MoonClock/E-MoonClock-39.png
-share/enlightenment/epplet_data/E-MoonClock/E-MoonClock-40.png
-share/enlightenment/epplet_data/E-MoonClock/E-MoonClock-41.png
-share/enlightenment/epplet_data/E-MoonClock/E-MoonClock-42.png
-share/enlightenment/epplet_data/E-MoonClock/E-MoonClock-43.png
-share/enlightenment/epplet_data/E-MoonClock/E-MoonClock-44.png
-share/enlightenment/epplet_data/E-MoonClock/E-MoonClock-45.png
-share/enlightenment/epplet_data/E-MoonClock/E-MoonClock-46.png
-share/enlightenment/epplet_data/E-MoonClock/E-MoonClock-47.png
-share/enlightenment/epplet_data/E-MoonClock/E-MoonClock-48.png
-share/enlightenment/epplet_data/E-MoonClock/E-MoonClock-49.png
-share/enlightenment/epplet_data/E-MoonClock/E-MoonClock-50.png
-share/enlightenment/epplet_data/E-MoonClock/E-MoonClock-51.png
-share/enlightenment/epplet_data/E-MoonClock/E-MoonClock-52.png
-share/enlightenment/epplet_data/E-MoonClock/E-MoonClock-53.png
-share/enlightenment/epplet_data/E-MoonClock/E-MoonClock-54.png
-share/enlightenment/epplet_data/E-MoonClock/E-MoonClock-55.png
-share/enlightenment/epplet_data/E-MoonClock/E-MoonClock-56.png
-share/enlightenment/epplet_data/E-MoonClock/E-MoonClock-57.png
-share/enlightenment/epplet_data/E-MoonClock/E-MoonClock-58.png
-share/enlightenment/epplet_data/E-MoonClock/E-MoonClock-59.png
-share/enlightenment/epplet_data/E-MoonClock/E-MoonClock-60.png
-share/enlightenment/epplet_data/E-MoonClock/E-MoonClock.ABOUT/MAIN
-share/enlightenment/epplet_data/E-MoonClock/E-MoonClock.ABOUT/aircut3.ttf
-share/enlightenment/epplet_data/E-MoonClock/E-MoonClock.ABOUT/bg.png
-share/enlightenment/epplet_data/E-Mountbox/E-Mountbox-bg.png
-share/enlightenment/epplet_data/E-Mountbox/E-Mountbox-blockdev.png
-share/enlightenment/epplet_data/E-Mountbox/E-Mountbox-cd.png
-share/enlightenment/epplet_data/E-Mountbox/E-Mountbox-floppy.png
-share/enlightenment/epplet_data/E-Mountbox/E-Mountbox-jazz.png
-share/enlightenment/epplet_data/E-Mountbox/E-Mountbox-zip.png
-share/enlightenment/epplet_data/E-Mountbox/E-Mountbox.ABOUT/MAIN
-share/enlightenment/epplet_data/E-Mountbox/E-Mountbox.ABOUT/aircut3.ttf
-share/enlightenment/epplet_data/E-Mountbox/E-Mountbox.ABOUT/bg.png
-share/enlightenment/epplet_data/E-Mountbox/E-Mountbox.ABOUT/dialog.png
-share/enlightenment/epplet_data/E-Mountbox/E-Mountbox.ABOUT/shot.png
-share/enlightenment/epplet_data/E-Mountbox/E-Mountbox.ABOUT/shot_unmounted.png
-share/enlightenment/epplet_data/E-NetFlame/E-NetFlame.ABOUT/MAIN
-share/enlightenment/epplet_data/E-NetFlame/E-NetFlame.ABOUT/aircut3.ttf
-share/enlightenment/epplet_data/E-NetFlame/E-NetFlame.ABOUT/bg.png
-share/enlightenment/epplet_data/E-OpenGL-Demo/E-OpenGL-Demo.ABOUT/MAIN
-share/enlightenment/epplet_data/E-OpenGL-Demo/E-OpenGL-Demo.ABOUT/aircut3.ttf
-share/enlightenment/epplet_data/E-OpenGL-Demo/E-OpenGL-Demo.ABOUT/bg.png
-share/enlightenment/epplet_data/E-OpenGL-Demo/cube_texture.RGB
-share/enlightenment/epplet_data/E-Pants/E-Pants.ABOUT/MAIN
-share/enlightenment/epplet_data/E-Pants/E-Pants.ABOUT/aircut3.ttf
-share/enlightenment/epplet_data/E-Pants/E-Pants.ABOUT/bg.png
-share/enlightenment/epplet_data/E-Pinger/E-Pinger.ABOUT/MAIN
-share/enlightenment/epplet_data/E-Pinger/E-Pinger.ABOUT/aircut3.ttf
-share/enlightenment/epplet_data/E-Pinger/E-Pinger.ABOUT/bg.png
-share/enlightenment/epplet_data/E-PlayCD/E-PlayCD.ABOUT/E-PlayCD_Controls.png
-share/enlightenment/epplet_data/E-PlayCD/E-PlayCD.ABOUT/EPlayCD.jpg
-share/enlightenment/epplet_data/E-PlayCD/E-PlayCD.ABOUT/MAIN
-share/enlightenment/epplet_data/E-PlayCD/E-PlayCD.ABOUT/aircut3.ttf
-share/enlightenment/epplet_data/E-PlayCD/E-PlayCD.ABOUT/bg.png
-%%APM_PROGS%%share/enlightenment/epplet_data/E-Power/E-Power-Bat-0.png
-%%APM_PROGS%%share/enlightenment/epplet_data/E-Power/E-Power-Bat-10.png
-%%APM_PROGS%%share/enlightenment/epplet_data/E-Power/E-Power-Bat-100.png
-%%APM_PROGS%%share/enlightenment/epplet_data/E-Power/E-Power-Bat-20.png
-%%APM_PROGS%%share/enlightenment/epplet_data/E-Power/E-Power-Bat-30.png
-%%APM_PROGS%%share/enlightenment/epplet_data/E-Power/E-Power-Bat-40.png
-%%APM_PROGS%%share/enlightenment/epplet_data/E-Power/E-Power-Bat-50.png
-%%APM_PROGS%%share/enlightenment/epplet_data/E-Power/E-Power-Bat-60.png
-%%APM_PROGS%%share/enlightenment/epplet_data/E-Power/E-Power-Bat-70.png
-%%APM_PROGS%%share/enlightenment/epplet_data/E-Power/E-Power-Bat-80.png
-%%APM_PROGS%%share/enlightenment/epplet_data/E-Power/E-Power-Bat-90.png
-%%APM_PROGS%%share/enlightenment/epplet_data/E-Power/E-Power.ABOUT/MAIN
-share/enlightenment/epplet_data/E-Power/E-Power.ABOUT/aircut3.ttf
-share/enlightenment/epplet_data/E-Power/E-Power.ABOUT/bg.png
-share/enlightenment/epplet_data/E-SD/E-SD.ABOUT/MAIN
-share/enlightenment/epplet_data/E-SD/E-SD.ABOUT/aircut3.ttf
-share/enlightenment/epplet_data/E-SD/E-SD.ABOUT/bg.png
-share/enlightenment/epplet_data/E-SD/E-SD_minitime.png
-share/enlightenment/epplet_data/E-SD/E-SD_standby.png
-share/enlightenment/epplet_data/E-ScreenSave/E-ScreenSave.ABOUT/MAIN
-share/enlightenment/epplet_data/E-ScreenSave/E-ScreenSave.ABOUT/aircut3.ttf
-share/enlightenment/epplet_data/E-ScreenSave/E-ScreenSave.ABOUT/bg.png
-share/enlightenment/epplet_data/E-ScreenShoot/E-ScreenShoot.ABOUT/E_ScreenShoot_buttons.png
-share/enlightenment/epplet_data/E-ScreenShoot/E-ScreenShoot.ABOUT/E_ScreenShoot_cloak.png
-share/enlightenment/epplet_data/E-ScreenShoot/E-ScreenShoot.ABOUT/MAIN
-share/enlightenment/epplet_data/E-ScreenShoot/E-ScreenShoot.ABOUT/aircut3.ttf
-share/enlightenment/epplet_data/E-ScreenShoot/E-ScreenShoot.ABOUT/bg.png
-share/enlightenment/epplet_data/E-ScreenShoot/E-ScreenShoot_col.png
-share/enlightenment/epplet_data/E-ScreenShoot/E-ScreenShoot_minitime.png
-share/enlightenment/epplet_data/E-ScreenShoot/E-ScreenShoot_minitime2.png
-share/enlightenment/epplet_data/E-ScreenShoot/E-ScreenShoot_root.png
-share/enlightenment/epplet_data/E-ScreenShoot/E-ScreenShoot_shoot.png
-share/enlightenment/epplet_data/E-ScreenShoot/E-ScreenShoot_time.png
-share/enlightenment/epplet_data/E-ScreenShoot/E-ScreenShoot_win.png
-share/enlightenment/epplet_data/E-Toolbox/default.cfg
-share/enlightenment/epplet_data/E-Toolbox/ee2.png
-share/enlightenment/epplet_data/E-Toolbox/eterm.png
-share/enlightenment/epplet_data/E-Toolbox/folder.png
-share/enlightenment/epplet_data/E-Toolbox/linux.png
-share/enlightenment/epplet_data/E-Toolbox/mail.png
-share/enlightenment/epplet_data/E-Toolbox/netscape.png
-share/enlightenment/epplet_data/E-Toolbox/popup-sample.cfg
-share/enlightenment/epplet_data/E-Toolbox/sample.cfg
-share/enlightenment/epplet_data/E-UrlWatch/E-UrlWatch.ABOUT/MAIN
-share/enlightenment/epplet_data/E-UrlWatch/E-UrlWatch.ABOUT/aircut3.ttf
-share/enlightenment/epplet_data/E-UrlWatch/E-UrlWatch.ABOUT/bg.png
-share/enlightenment/epplet_data/E-UrlWatch/wooeep.wav
-share/enlightenment/epplet_data/E-Wireless/E-Wireless.ABOUT/MAIN
-share/enlightenment/epplet_data/E-Wireless/E-Wireless.ABOUT/aircut3.ttf
-share/enlightenment/epplet_data/E-Wireless/E-Wireless.ABOUT/bg.png
-share/enlightenment/epplet_data/E-Wireless/E-Wireless.ABOUT/delia.jpg
-share/enlightenment/epplet_data/E-Wireless/E-Wireless.ABOUT/delia.png
-share/enlightenment/epplet_data/Emix/Emix.ABOUT/MAIN
-share/enlightenment/epplet_data/Emix/Emix.ABOUT/aircut3.ttf
-share/enlightenment/epplet_data/Emix/Emix.ABOUT/bg.png
-share/enlightenment/epplet_data/Emix/Emix.AUTHORS
-share/enlightenment/epplet_data/Emix/Emix.COPYING
-share/enlightenment/epplet_data/Emix/Emix.README
-share/enlightenment/epplet_data/Emix/Emix.TODO
-share/enlightenment/epplet_data/aircut3.ttf
-share/enlightenment/epplet_data/bg.png
-share/enlightenment/epplet_icons/E-Biff.icon
-share/enlightenment/epplet_icons/E-Clock.icon
-share/enlightenment/epplet_icons/E-Cpu.icon
-share/enlightenment/epplet_icons/E-Disk.icon
-share/enlightenment/epplet_icons/E-GtkRc.icon
-share/enlightenment/epplet_icons/E-Load.icon
-share/enlightenment/epplet_icons/E-Magic.icon
-share/enlightenment/epplet_icons/E-MemWatch.icon
-share/enlightenment/epplet_icons/E-Mixer.icon
-share/enlightenment/epplet_icons/E-MoonClock.icon
-share/enlightenment/epplet_icons/E-Mountbox.icon
-share/enlightenment/epplet_icons/E-Net.icon
-share/enlightenment/epplet_icons/E-NetFlame.icon
-share/enlightenment/epplet_icons/E-OpenGL-Demo.icon
-share/enlightenment/epplet_icons/E-Pants.icon
-share/enlightenment/epplet_icons/E-Pinger.icon
-share/enlightenment/epplet_icons/E-PlayCD.icon
-%%APM_PROGS%%share/enlightenment/epplet_icons/E-Power.icon
-share/enlightenment/epplet_icons/E-SD.icon
-share/enlightenment/epplet_icons/E-ScreenSave.icon
-share/enlightenment/epplet_icons/E-ScreenShoot.icon
-share/enlightenment/epplet_icons/E-Slides.icon
-share/enlightenment/epplet_icons/E-Sys.icon
-share/enlightenment/epplet_icons/E-Time.icon
-share/enlightenment/epplet_icons/E-UrlWatch.icon
-share/enlightenment/epplet_icons/E-Wireless.icon
-share/enlightenment/epplet_icons/E-Xss.icon
-share/enlightenment/epplet_icons/Emix.icon
-@unexec rmdir %D/share/enlightenment/epplet_icons
-@dirrm share/enlightenment/epplet_data/Emix/Emix.ABOUT
-@dirrm share/enlightenment/epplet_data/Emix
-@dirrm share/enlightenment/epplet_data/E-Wireless/E-Wireless.ABOUT
-@dirrm share/enlightenment/epplet_data/E-Wireless
-@dirrm share/enlightenment/epplet_data/E-UrlWatch/E-UrlWatch.ABOUT
-@dirrm share/enlightenment/epplet_data/E-UrlWatch
-@dirrm share/enlightenment/epplet_data/E-Toolbox
-@dirrm share/enlightenment/epplet_data/E-ScreenShoot/E-ScreenShoot.ABOUT
-@dirrm share/enlightenment/epplet_data/E-ScreenShoot
-@dirrm share/enlightenment/epplet_data/E-ScreenSave/E-ScreenSave.ABOUT
-@dirrm share/enlightenment/epplet_data/E-ScreenSave
-@dirrm share/enlightenment/epplet_data/E-SD/E-SD.ABOUT
-@dirrm share/enlightenment/epplet_data/E-SD
-@dirrm share/enlightenment/epplet_data/E-Power/E-Power.ABOUT
-@dirrm share/enlightenment/epplet_data/E-Power
-@dirrm share/enlightenment/epplet_data/E-PlayCD/E-PlayCD.ABOUT
-@dirrm share/enlightenment/epplet_data/E-PlayCD
-@dirrm share/enlightenment/epplet_data/E-Pinger/E-Pinger.ABOUT
-@dirrm share/enlightenment/epplet_data/E-Pinger
-@dirrm share/enlightenment/epplet_data/E-Pants/E-Pants.ABOUT
-@dirrm share/enlightenment/epplet_data/E-Pants
-@dirrm share/enlightenment/epplet_data/E-OpenGL-Demo/E-OpenGL-Demo.ABOUT
-@dirrm share/enlightenment/epplet_data/E-OpenGL-Demo
-@dirrm share/enlightenment/epplet_data/E-NetFlame/E-NetFlame.ABOUT
-@dirrm share/enlightenment/epplet_data/E-NetFlame
-@dirrm share/enlightenment/epplet_data/E-Mountbox/E-Mountbox.ABOUT
-@dirrm share/enlightenment/epplet_data/E-Mountbox
-@dirrm share/enlightenment/epplet_data/E-MoonClock/E-MoonClock.ABOUT
-@dirrm share/enlightenment/epplet_data/E-MoonClock
-@dirrm share/enlightenment/epplet_data/E-Mixer/E-Mixer.ABOUT
-@dirrm share/enlightenment/epplet_data/E-Mixer
-@dirrm share/enlightenment/epplet_data/E-Magic
-@dirrm share/enlightenment/epplet_data/E-GtkRc/E-GtkRc.ABOUT
-@dirrm share/enlightenment/epplet_data/E-GtkRc
-@dirrm share/enlightenment/epplet_data/E-Cpu/E-Cpu.ABOUT
-@dirrm share/enlightenment/epplet_data/E-Cpu
-@dirrm share/enlightenment/epplet_data/E-Clock/E-Clock.ABOUT
-@dirrm share/enlightenment/epplet_data/E-Clock
-@dirrm share/enlightenment/epplet_data/E-Biff
-@unexec rmdir %D/share/enlightenment/epplet_data
-@dirrmtry share/enlightenment
+include/epplet.h
+lib/libepplet.a
+lib/libepplet.la
+lib/libepplet.so
+lib/libepplet.so.1
+share/e16/epplet_data/E-Biff/7of9.png
+share/e16/epplet_data/E-Biff/newmail.png
+share/e16/epplet_data/E-Biff/nomail.png
+share/e16/epplet_data/E-Clock/E-Clock-Image.png
+share/e16/epplet_data/E-Clock/E-Clock.ABOUT/MAIN
+share/e16/epplet_data/E-Clock/E-Clock.ABOUT/aircut3.ttf
+share/e16/epplet_data/E-Clock/E-Clock.ABOUT/bg.png
+share/e16/epplet_data/E-Cpu/E-Cpu.ABOUT/MAIN
+share/e16/epplet_data/E-Cpu/E-Cpu.ABOUT/aircut3.ttf
+share/e16/epplet_data/E-Cpu/E-Cpu.ABOUT/bg.png
+share/e16/epplet_data/E-Magic/8ball.png
+share/e16/epplet_data/E-Magic/answers.txt
+share/e16/epplet_data/E-Mixer/E-Mixer.ABOUT/E-Mixer-standard.png
+share/e16/epplet_data/E-Mixer/E-Mixer.ABOUT/E-Mixer-tall.png
+share/e16/epplet_data/E-Mixer/E-Mixer.ABOUT/E-Mixer-wide.png
+share/e16/epplet_data/E-Mixer/E-Mixer.ABOUT/MAIN
+share/e16/epplet_data/E-Mixer/E-Mixer.ABOUT/aircut3.ttf
+share/e16/epplet_data/E-Mixer/E-Mixer.ABOUT/bg.png
+share/e16/epplet_data/E-MoonClock/E-MoonClock-01.png
+share/e16/epplet_data/E-MoonClock/E-MoonClock-02.png
+share/e16/epplet_data/E-MoonClock/E-MoonClock-03.png
+share/e16/epplet_data/E-MoonClock/E-MoonClock-04.png
+share/e16/epplet_data/E-MoonClock/E-MoonClock-05.png
+share/e16/epplet_data/E-MoonClock/E-MoonClock-06.png
+share/e16/epplet_data/E-MoonClock/E-MoonClock-07.png
+share/e16/epplet_data/E-MoonClock/E-MoonClock-08.png
+share/e16/epplet_data/E-MoonClock/E-MoonClock-09.png
+share/e16/epplet_data/E-MoonClock/E-MoonClock-10.png
+share/e16/epplet_data/E-MoonClock/E-MoonClock-11.png
+share/e16/epplet_data/E-MoonClock/E-MoonClock-12.png
+share/e16/epplet_data/E-MoonClock/E-MoonClock-13.png
+share/e16/epplet_data/E-MoonClock/E-MoonClock-14.png
+share/e16/epplet_data/E-MoonClock/E-MoonClock-15.png
+share/e16/epplet_data/E-MoonClock/E-MoonClock-16.png
+share/e16/epplet_data/E-MoonClock/E-MoonClock-17.png
+share/e16/epplet_data/E-MoonClock/E-MoonClock-18.png
+share/e16/epplet_data/E-MoonClock/E-MoonClock-19.png
+share/e16/epplet_data/E-MoonClock/E-MoonClock-20.png
+share/e16/epplet_data/E-MoonClock/E-MoonClock-21.png
+share/e16/epplet_data/E-MoonClock/E-MoonClock-22.png
+share/e16/epplet_data/E-MoonClock/E-MoonClock-23.png
+share/e16/epplet_data/E-MoonClock/E-MoonClock-24.png
+share/e16/epplet_data/E-MoonClock/E-MoonClock-25.png
+share/e16/epplet_data/E-MoonClock/E-MoonClock-26.png
+share/e16/epplet_data/E-MoonClock/E-MoonClock-27.png
+share/e16/epplet_data/E-MoonClock/E-MoonClock-28.png
+share/e16/epplet_data/E-MoonClock/E-MoonClock-29.png
+share/e16/epplet_data/E-MoonClock/E-MoonClock-30.png
+share/e16/epplet_data/E-MoonClock/E-MoonClock-31.png
+share/e16/epplet_data/E-MoonClock/E-MoonClock-32.png
+share/e16/epplet_data/E-MoonClock/E-MoonClock-33.png
+share/e16/epplet_data/E-MoonClock/E-MoonClock-34.png
+share/e16/epplet_data/E-MoonClock/E-MoonClock-35.png
+share/e16/epplet_data/E-MoonClock/E-MoonClock-36.png
+share/e16/epplet_data/E-MoonClock/E-MoonClock-37.png
+share/e16/epplet_data/E-MoonClock/E-MoonClock-38.png
+share/e16/epplet_data/E-MoonClock/E-MoonClock-39.png
+share/e16/epplet_data/E-MoonClock/E-MoonClock-40.png
+share/e16/epplet_data/E-MoonClock/E-MoonClock-41.png
+share/e16/epplet_data/E-MoonClock/E-MoonClock-42.png
+share/e16/epplet_data/E-MoonClock/E-MoonClock-43.png
+share/e16/epplet_data/E-MoonClock/E-MoonClock-44.png
+share/e16/epplet_data/E-MoonClock/E-MoonClock-45.png
+share/e16/epplet_data/E-MoonClock/E-MoonClock-46.png
+share/e16/epplet_data/E-MoonClock/E-MoonClock-47.png
+share/e16/epplet_data/E-MoonClock/E-MoonClock-48.png
+share/e16/epplet_data/E-MoonClock/E-MoonClock-49.png
+share/e16/epplet_data/E-MoonClock/E-MoonClock-50.png
+share/e16/epplet_data/E-MoonClock/E-MoonClock-51.png
+share/e16/epplet_data/E-MoonClock/E-MoonClock-52.png
+share/e16/epplet_data/E-MoonClock/E-MoonClock-53.png
+share/e16/epplet_data/E-MoonClock/E-MoonClock-54.png
+share/e16/epplet_data/E-MoonClock/E-MoonClock-55.png
+share/e16/epplet_data/E-MoonClock/E-MoonClock-56.png
+share/e16/epplet_data/E-MoonClock/E-MoonClock-57.png
+share/e16/epplet_data/E-MoonClock/E-MoonClock-58.png
+share/e16/epplet_data/E-MoonClock/E-MoonClock-59.png
+share/e16/epplet_data/E-MoonClock/E-MoonClock-60.png
+share/e16/epplet_data/E-MoonClock/E-MoonClock.ABOUT/MAIN
+share/e16/epplet_data/E-MoonClock/E-MoonClock.ABOUT/aircut3.ttf
+share/e16/epplet_data/E-MoonClock/E-MoonClock.ABOUT/bg.png
+share/e16/epplet_data/E-Mountbox/E-Mountbox-bg.png
+share/e16/epplet_data/E-Mountbox/E-Mountbox-blockdev.png
+share/e16/epplet_data/E-Mountbox/E-Mountbox-cd.png
+share/e16/epplet_data/E-Mountbox/E-Mountbox-floppy.png
+share/e16/epplet_data/E-Mountbox/E-Mountbox-jazz.png
+share/e16/epplet_data/E-Mountbox/E-Mountbox-zip.png
+share/e16/epplet_data/E-Mountbox/E-Mountbox.ABOUT/MAIN
+share/e16/epplet_data/E-Mountbox/E-Mountbox.ABOUT/aircut3.ttf
+share/e16/epplet_data/E-Mountbox/E-Mountbox.ABOUT/bg.png
+share/e16/epplet_data/E-Mountbox/E-Mountbox.ABOUT/dialog.png
+share/e16/epplet_data/E-Mountbox/E-Mountbox.ABOUT/shot.png
+share/e16/epplet_data/E-Mountbox/E-Mountbox.ABOUT/shot_unmounted.png
+share/e16/epplet_data/E-NetFlame/E-NetFlame.ABOUT/MAIN
+share/e16/epplet_data/E-NetFlame/E-NetFlame.ABOUT/aircut3.ttf
+share/e16/epplet_data/E-NetFlame/E-NetFlame.ABOUT/bg.png
+share/e16/epplet_data/E-OpenGL-Demo/E-OpenGL-Demo.ABOUT/MAIN
+share/e16/epplet_data/E-OpenGL-Demo/E-OpenGL-Demo.ABOUT/aircut3.ttf
+share/e16/epplet_data/E-OpenGL-Demo/E-OpenGL-Demo.ABOUT/bg.png
+share/e16/epplet_data/E-OpenGL-Demo/cube_texture.RGB
+share/e16/epplet_data/E-Pants/E-Pants.ABOUT/MAIN
+share/e16/epplet_data/E-Pants/E-Pants.ABOUT/aircut3.ttf
+share/e16/epplet_data/E-Pants/E-Pants.ABOUT/bg.png
+share/e16/epplet_data/E-Pinger/E-Pinger.ABOUT/MAIN
+share/e16/epplet_data/E-Pinger/E-Pinger.ABOUT/aircut3.ttf
+share/e16/epplet_data/E-Pinger/E-Pinger.ABOUT/bg.png
+share/e16/epplet_data/E-PlayCD/E-PlayCD.ABOUT/E-PlayCD_Controls.png
+share/e16/epplet_data/E-PlayCD/E-PlayCD.ABOUT/EPlayCD.jpg
+share/e16/epplet_data/E-PlayCD/E-PlayCD.ABOUT/MAIN
+share/e16/epplet_data/E-PlayCD/E-PlayCD.ABOUT/aircut3.ttf
+share/e16/epplet_data/E-PlayCD/E-PlayCD.ABOUT/bg.png
+share/e16/epplet_data/E-Power/E-Power.ABOUT/aircut3.ttf
+share/e16/epplet_data/E-Power/E-Power.ABOUT/bg.png
+share/e16/epplet_data/E-SD/E-SD.ABOUT/MAIN
+share/e16/epplet_data/E-SD/E-SD.ABOUT/aircut3.ttf
+share/e16/epplet_data/E-SD/E-SD.ABOUT/bg.png
+share/e16/epplet_data/E-SD/E-SD_minitime.png
+share/e16/epplet_data/E-SD/E-SD_standby.png
+share/e16/epplet_data/E-ScreenSave/E-ScreenSave.ABOUT/MAIN
+share/e16/epplet_data/E-ScreenSave/E-ScreenSave.ABOUT/aircut3.ttf
+share/e16/epplet_data/E-ScreenSave/E-ScreenSave.ABOUT/bg.png
+share/e16/epplet_data/E-ScreenShoot/E-ScreenShoot.ABOUT/E_ScreenShoot_buttons.png
+share/e16/epplet_data/E-ScreenShoot/E-ScreenShoot.ABOUT/E_ScreenShoot_cloak.png
+share/e16/epplet_data/E-ScreenShoot/E-ScreenShoot.ABOUT/MAIN
+share/e16/epplet_data/E-ScreenShoot/E-ScreenShoot.ABOUT/aircut3.ttf
+share/e16/epplet_data/E-ScreenShoot/E-ScreenShoot.ABOUT/bg.png
+share/e16/epplet_data/E-ScreenShoot/E-ScreenShoot_col.png
+share/e16/epplet_data/E-ScreenShoot/E-ScreenShoot_minitime.png
+share/e16/epplet_data/E-ScreenShoot/E-ScreenShoot_minitime2.png
+share/e16/epplet_data/E-ScreenShoot/E-ScreenShoot_root.png
+share/e16/epplet_data/E-ScreenShoot/E-ScreenShoot_shoot.png
+share/e16/epplet_data/E-ScreenShoot/E-ScreenShoot_time.png
+share/e16/epplet_data/E-ScreenShoot/E-ScreenShoot_win.png
+share/e16/epplet_data/E-Toolbox/default.cfg
+share/e16/epplet_data/E-Toolbox/ee2.png
+share/e16/epplet_data/E-Toolbox/eterm.png
+share/e16/epplet_data/E-Toolbox/folder.png
+share/e16/epplet_data/E-Toolbox/linux.png
+share/e16/epplet_data/E-Toolbox/mail.png
+share/e16/epplet_data/E-Toolbox/netscape.png
+share/e16/epplet_data/E-Toolbox/popup-sample.cfg
+share/e16/epplet_data/E-Toolbox/sample.cfg
+share/e16/epplet_data/E-UrlWatch/E-UrlWatch.ABOUT/MAIN
+share/e16/epplet_data/E-UrlWatch/E-UrlWatch.ABOUT/aircut3.ttf
+share/e16/epplet_data/E-UrlWatch/E-UrlWatch.ABOUT/bg.png
+share/e16/epplet_data/E-UrlWatch/wooeep.wav
+share/e16/epplet_data/E-Wireless/E-Wireless.ABOUT/MAIN
+share/e16/epplet_data/E-Wireless/E-Wireless.ABOUT/aircut3.ttf
+share/e16/epplet_data/E-Wireless/E-Wireless.ABOUT/bg.png
+share/e16/epplet_data/E-Wireless/E-Wireless.ABOUT/delia.jpg
+share/e16/epplet_data/E-Wireless/E-Wireless.ABOUT/delia.png
+share/e16/epplet_data/Emix/Emix.ABOUT/MAIN
+share/e16/epplet_data/Emix/Emix.ABOUT/aircut3.ttf
+share/e16/epplet_data/Emix/Emix.ABOUT/bg.png
+share/e16/epplet_data/Emix/Emix.AUTHORS
+share/e16/epplet_data/Emix/Emix.COPYING
+share/e16/epplet_data/Emix/Emix.README
+share/e16/epplet_data/Emix/Emix.TODO
+share/e16/epplet_data/aircut3.ttf
+share/e16/epplet_data/bg.png
+share/e16/epplet_icons/E-Biff.icon
+share/e16/epplet_icons/E-Clock.icon
+share/e16/epplet_icons/E-Cpu.icon
+share/e16/epplet_icons/E-Disk.icon
+share/e16/epplet_icons/E-Load.icon
+share/e16/epplet_icons/E-Magic.icon
+share/e16/epplet_icons/E-MemWatch.icon
+share/e16/epplet_icons/E-Mixer.icon
+share/e16/epplet_icons/E-MoonClock.icon
+share/e16/epplet_icons/E-Mountbox.icon
+share/e16/epplet_icons/E-Net.icon
+share/e16/epplet_icons/E-NetFlame.icon
+share/e16/epplet_icons/E-OpenGL-Demo.icon
+share/e16/epplet_icons/E-Pants.icon
+share/e16/epplet_icons/E-Pinger.icon
+share/e16/epplet_icons/E-PlayCD.icon
+share/e16/epplet_icons/E-SD.icon
+share/e16/epplet_icons/E-ScreenSave.icon
+share/e16/epplet_icons/E-ScreenShoot.icon
+share/e16/epplet_icons/E-Slides.icon
+share/e16/epplet_icons/E-Sys.icon
+share/e16/epplet_icons/E-Time.icon
+share/e16/epplet_icons/E-UrlWatch.icon
+share/e16/epplet_icons/E-Wireless.icon
+share/e16/epplet_icons/E-Xss.icon
+share/e16/epplet_icons/Emix.icon
+@dirrmtry rmdir %D/share/e16/epplet_icons
+@dirrm share/e16/epplet_data/Emix/Emix.ABOUT
+@dirrm share/e16/epplet_data/Emix
+@dirrm share/e16/epplet_data/E-Wireless/E-Wireless.ABOUT
+@dirrm share/e16/epplet_data/E-Wireless
+@dirrm share/e16/epplet_data/E-UrlWatch/E-UrlWatch.ABOUT
+@dirrm share/e16/epplet_data/E-UrlWatch
+@dirrm share/e16/epplet_data/E-Toolbox
+@dirrm share/e16/epplet_data/E-ScreenShoot/E-ScreenShoot.ABOUT
+@dirrm share/e16/epplet_data/E-ScreenShoot
+@dirrm share/e16/epplet_data/E-ScreenSave/E-ScreenSave.ABOUT
+@dirrm share/e16/epplet_data/E-ScreenSave
+@dirrm share/e16/epplet_data/E-SD/E-SD.ABOUT
+@dirrm share/e16/epplet_data/E-SD
+@dirrm share/e16/epplet_data/E-Power/E-Power.ABOUT
+@dirrm share/e16/epplet_data/E-Power
+@dirrm share/e16/epplet_data/E-PlayCD/E-PlayCD.ABOUT
+@dirrm share/e16/epplet_data/E-PlayCD
+@dirrm share/e16/epplet_data/E-Pinger/E-Pinger.ABOUT
+@dirrm share/e16/epplet_data/E-Pinger
+@dirrm share/e16/epplet_data/E-Pants/E-Pants.ABOUT
+@dirrm share/e16/epplet_data/E-Pants
+@dirrm share/e16/epplet_data/E-OpenGL-Demo/E-OpenGL-Demo.ABOUT
+@dirrm share/e16/epplet_data/E-OpenGL-Demo
+@dirrm share/e16/epplet_data/E-NetFlame/E-NetFlame.ABOUT
+@dirrm share/e16/epplet_data/E-NetFlame
+@dirrm share/e16/epplet_data/E-Mountbox/E-Mountbox.ABOUT
+@dirrm share/e16/epplet_data/E-Mountbox
+@dirrm share/e16/epplet_data/E-MoonClock/E-MoonClock.ABOUT
+@dirrm share/e16/epplet_data/E-MoonClock
+@dirrm share/e16/epplet_data/E-Mixer/E-Mixer.ABOUT
+@dirrm share/e16/epplet_data/E-Mixer
+@dirrm share/e16/epplet_data/E-Magic
+@dirrm share/e16/epplet_data/E-Cpu/E-Cpu.ABOUT
+@dirrm share/e16/epplet_data/E-Cpu
+@dirrm share/e16/epplet_data/E-Clock/E-Clock.ABOUT
+@dirrm share/e16/epplet_data/E-Clock
+@dirrm share/e16/epplet_data/E-Biff
+@dirrm share/e16/epplet_data
