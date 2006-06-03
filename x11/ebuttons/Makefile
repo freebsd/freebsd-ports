@@ -16,16 +16,15 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple epplet that contains several buttons used to launch programs
 
-LIB_DEPENDS=	epplet.1:${PORTSDIR}/x11-wm/libepplet
+LIB_DEPENDS=	epplet.1:${PORTSDIR}/x11-wm/epplets
 
 PLIST_FILES=	bin/E-Buttons.epplet
 
 WRKSRC=		${WRKDIR}/E-buttons
 
 USE_X_PREFIX=	yes
-
-CPPFLAGS=	-I${X11BASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS=	-L${X11BASE}/lib -lepplet ${PTHREAD_LIBS}
+CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib -lepplet -lGL ${PTHREAD_LIBS}
 
 do-build:
 	cd ${WRKSRC} && ${CC} ${CFLAGS} ${CPPFLAGS} -o E-Buttons.epplet \
