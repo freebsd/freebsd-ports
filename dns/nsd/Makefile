@@ -13,7 +13,7 @@
 # NSD_OPTIONS can be set in /etc/make.conf also.
 
 PORTNAME=	nsd
-PORTVERSION=	2.3.3
+PORTVERSION=	2.3.5
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://www.nlnetlabs.nl/downloads/nsd/	\
 		ftp://ftp.rhnet.is/pub/nsd/
