@@ -1,5 +1,5 @@
---- code/unix/unix_shared.c.orig	Thu May 25 14:38:44 2006
-+++ code/unix/unix_shared.c	Thu May 25 14:41:26 2006
+--- ./code/unix/unix_shared.c.orig	Wed May 31 18:55:12 2006
++++ ./code/unix/unix_shared.c	Wed May 31 18:55:13 2006
 @@ -38,7 +38,7 @@
  static char cdPath[MAX_OSPATH];
  

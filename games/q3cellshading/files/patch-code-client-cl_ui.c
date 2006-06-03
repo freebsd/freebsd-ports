@@ -1,5 +1,5 @@
---- code/client/cl_ui.c.orig	Thu May 25 15:41:27 2006
-+++ code/client/cl_ui.c	Thu May 25 15:46:39 2006
+--- ./code/client/cl_ui.c.orig	Wed May 31 18:55:11 2006
++++ ./code/client/cl_ui.c	Wed May 31 18:55:13 2006
 @@ -1166,7 +1166,7 @@
  		// init for this gamestate
  		VM_Call( uivm, UI_INIT, (cls.state >= CA_AUTHORIZING && cls.state < CA_ACTIVE));
