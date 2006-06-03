@@ -18,7 +18,7 @@ PATCH_SITE_SUBDIR=	fjoe
 PATCH_DIST_STRIP=	-p1
 BRIVER=		bristuff-0.3.0-PRE-1p
 
-MAINTAINER=	gonzo@univ.kiev.ua
+MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	A C implementation of the Primary Rate ISDN specification
 
 USE_GMAKE=	yes
