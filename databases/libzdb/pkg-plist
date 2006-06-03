@@ -1,0 +1,8 @@
+include/Connection.h
+include/ConnectionPool.h
+include/PreparedStatement.h
+include/ResultSet.h
+include/URL.h
+lib/libzdb.a
+lib/libzdb.so
+lib/libzdb.so.1

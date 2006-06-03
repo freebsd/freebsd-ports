@@ -101,6 +101,7 @@
     SUBDIR += libpbl
     SUBDIR += libsdb
     SUBDIR += libudbc
+    SUBDIR += libzdb
     SUBDIR += linux-oracle-instantclient-basic
     SUBDIR += linux-oracle-instantclient-sdk
     SUBDIR += linux-oracle-instantclient-sqlplus
