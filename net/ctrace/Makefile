@@ -8,7 +8,8 @@
 PORTNAME=	ctrace
 PORTVERSION=	0.9
 CATEGORIES=	net
-MASTER_SITES=	http://www.pratyeka.org/ctrace/download/
+MASTER_SITES=	http://www.pratyeka.org/ctrace/download/ \
+		http://freebsd.unixfreunde.de/sources/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multiprotocol traceroute tool
