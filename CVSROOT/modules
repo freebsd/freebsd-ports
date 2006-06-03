@@ -9681,6 +9681,7 @@ p5-X11-GUITest	ports/x11/p5-X11-GUITest
 p5-X11-IdleTime	ports/x11/p5-X11-IdleTime
 p5-X11-Protocol	ports/x11/p5-X11-Protocol
 p5-X500-DN	ports/net/p5-X500-DN
+p5-XML-ApacheFOP	ports/print/p5-XML-ApacheFOP
 p5-XML-Atom	ports/textproc/p5-XML-Atom
 p5-XML-Atom-Filter	ports/textproc/p5-XML-Atom-Filter
 p5-XML-Atom-SimpleFeed	ports/textproc/p5-XML-Atom-SimpleFeed
