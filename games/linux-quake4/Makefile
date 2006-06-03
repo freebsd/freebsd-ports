@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	quake4
-PORTVERSION=	1.1
+PORTVERSION=	1.2.1
 PORTEPOCH=	1
 CATEGORIES=	games linux
-MASTER_SITES=	${MASTER_SITE_IDSOFTWARE:S|$|quake4/linux/old/|} \
-		${MASTER_SITE_GENTOO}
-MASTER_SITE_SUBDIR=	distfiles
+MASTER_SITES=	${MASTER_SITE_IDSOFTWARE:S|$|quake4/linux/|} \
+		${MASTER_SITE_GENTOO:S|$|distfiles/|}
 PKGNAMEPREFIX=	linux-
 DISTNAME=	${PORTNAME}-${PKGNAMEPREFIX}${PORTVERSION}.x86
 EXTRACT_SUFX=	.run
@@ -25,9 +24,21 @@ ONLY_FOR_ARCHS=	i386 amd64
 USE_X_PREFIX=	yes
 USE_LINUX=	yes
 NO_WRKSUBDIR=	yes
-Q4DIR=		lib/${PORTNAME}/
-PLIST_SUB+=	Q4DIR="${Q4DIR}"
+Q4DIR=		lib/${PORTNAME}
+PLIST_SUB+=	Q4DIR="${Q4DIR}" \
+		LINUXBASE="${LINUXBASE}"
 SUB_FILES=	pkg-message
+
+OPTIONS=	SMP	"Install threaded version"	on \
+		GERMANY	"Germany version"	off
+
+.include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_SMP)
+PLIST_SUB+=	SMP=""
+.else
+PLIST_SUB+=	SMP="@comment "
+.endif
 
 do-extract:
 	@${RM} -rf ${WRKDIR}
@@ -36,23 +47,33 @@ do-extract:
 		${TAR} zxf -
 
 do-build:
-.for i in quake4 q4ded
-	${BRANDELF} -t Linux ${WRKSRC}/bin/FreeBSD/x86/$i.x86
+.for FILE in quake4 q4ded quake4smp
+	${BRANDELF} -t Linux ${WRKSRC}/bin/FreeBSD/x86/${FILE}.x86
 
 	# Startup scripts
 	@${SED} \
 		-e 's|@Q4DIR@|${PREFIX}/${Q4DIR}|' \
-		-e 's|@APP@|$i.x86|' \
-		${FILESDIR}/run.sh.in > ${WRKSRC}/$i.sh
+		-e 's|@APP@|${FILE}.x86|' \
+		${FILESDIR}/run.sh.in > ${WRKSRC}/${FILE}.sh
 .endfor
 
 do-install:
 	# Executables
 	@${MKDIR} ${PREFIX}/${Q4DIR}
-.for i in quake4 q4ded
-	${INSTALL_SCRIPT} ${WRKSRC}/$i.sh ${PREFIX}/bin/$i
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/FreeBSD/x86/$i.x86 ${PREFIX}/${Q4DIR}/
+.for FILE in quake4 q4ded
+	${INSTALL_SCRIPT} ${WRKSRC}/${FILE}.sh ${PREFIX}/bin/${FILE}
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/FreeBSD/x86/${FILE}.x86 ${PREFIX}/${Q4DIR}
 .endfor
+
+.if !defined(WITHOUT_SMP)
+	${INSTALL_SCRIPT} ${WRKSRC}/quake4smp.sh ${PREFIX}/bin/quake4smp
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/FreeBSD/x86/quake4smp.x86 ${PREFIX}/${Q4DIR}
+.endif
+	# Libraries
+.for FILE in libSDL-1.2.id.so.0 libstdc++.so.6
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/FreeBSD/x86/${FILE} ${PREFIX}/${Q4DIR}
+.endfor
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/FreeBSD/x86/libgcc_s.so.1  ${PREFIX}/${Q4DIR}
 
 	# Punkbuster
 	@${MKDIR} ${PREFIX}/${Q4DIR}/pb/htm
@@ -67,6 +88,17 @@ do-install:
 		${FIND} -E q4base -type f -iregex ".*\.(cfg|scriptcfg|pk4)" \
 			-exec ${INSTALL_DATA} "{}" "${PREFIX}/${Q4DIR}/{}" \;
 
+	# All version (except germany) or only germany version
+.if defined(WITH_GERMANY)
+	@cd ${WRKSRC}/germany && \
+		${FIND} -E q4base -type f -iregex ".*\.(pk4)" \
+			-exec ${INSTALL_DATA} "{}" "${PREFIX}/${Q4DIR}/{}" \;
+.else
+	@cd ${WRKSRC}/us && \
+		${FIND} -E q4base -type f -iregex ".*\.(pk4)" \
+			-exec ${INSTALL_DATA} "{}" "${PREFIX}/${Q4DIR}/{}" \;
+.endif
+
 	# Documentation
 .if !defined (NOPORTDOCS)
 	@cd ${WRKSRC}/Docs && \
@@ -80,4 +112,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
