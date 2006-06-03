@@ -1,9 +1,14 @@
+tigcc/bin/a68k
+tigcc/bin/ar-tigcc
 tigcc/bin/as
+tigcc/bin/cc1
 tigcc/bin/envreg
-tigcc/bin/parser
+tigcc/bin/gcc
+tigcc/bin/ld-tigcc
 tigcc/bin/patcher
 tigcc/bin/tigcc
 tigcc/bin/tigccdoc
+tigcc/bin/tprbuilder
 tigcc/bin/ttarchive
 tigcc/bin/ttbin2bin
 tigcc/bin/ttbin2hex
@@ -289,10 +294,13 @@ tigcc/doc/html/basfunc_push_cumsum.html
 tigcc/doc/html/basfunc_push_czeros.html
 tigcc/doc/html/basfunc_push_def_int.html
 tigcc/doc/html/basfunc_push_denominator.html
+tigcc/doc/html/basfunc_push_dense_poly_eval.html
 tigcc/doc/html/basfunc_push_desolve.html
 tigcc/doc/html/basfunc_push_determinant.html
 tigcc/doc/html/basfunc_push_diag.html
 tigcc/doc/html/basfunc_push_dimension.html
+tigcc/doc/html/basfunc_push_div_dif_1c.html
+tigcc/doc/html/basfunc_push_div_dif_1f.html
 tigcc/doc/html/basfunc_push_dotproduct.html
 tigcc/doc/html/basfunc_push_eigvc.html
 tigcc/doc/html/basfunc_push_eigvl.html
@@ -715,18 +723,39 @@ tigcc/doc/html/default_import_binary.html
 tigcc/doc/html/dialogs.html
 tigcc/doc/html/dialogs_Buttons.html
 tigcc/doc/html/dialogs_CENTER.html
+tigcc/doc/html/dialogs_DIALOG_ITEM.html
+tigcc/doc/html/dialogs_DIALOG_STRUCT.html
 tigcc/doc/html/dialogs_Dialog.html
 tigcc/doc/html/dialogs_DialogAdd.html
+tigcc/doc/html/dialogs_DialogAddDynamicPulldown.html
+tigcc/doc/html/dialogs_DialogAddDynamicRequest.html
+tigcc/doc/html/dialogs_DialogAddMenu.html
 tigcc/doc/html/dialogs_DialogAddPulldown.html
+tigcc/doc/html/dialogs_DialogAddPulldownEx.html
 tigcc/doc/html/dialogs_DialogAddRequest.html
+tigcc/doc/html/dialogs_DialogAddRequestEx.html
+tigcc/doc/html/dialogs_DialogAddScrollRegion.html
+tigcc/doc/html/dialogs_DialogAddStaticPulldown.html
 tigcc/doc/html/dialogs_DialogAddText.html
+tigcc/doc/html/dialogs_DialogAddTextEx.html
 tigcc/doc/html/dialogs_DialogAddTitle.html
+tigcc/doc/html/dialogs_DialogAddTitleEx.html
+tigcc/doc/html/dialogs_DialogAddXFlags.html
 tigcc/doc/html/dialogs_DialogDo.html
+tigcc/doc/html/dialogs_DialogFlags.html
+tigcc/doc/html/dialogs_DialogMessages.html
 tigcc/doc/html/dialogs_DialogNew.html
 tigcc/doc/html/dialogs_DialogNewSimple.html
-tigcc/doc/html/dialogs_DialogNew_t.html
+tigcc/doc/html/dialogs_DialogTypes.html
+tigcc/doc/html/dialogs_DialogXFlags.html
+tigcc/doc/html/dialogs_Dialog_Callback_t.html
+tigcc/doc/html/dialogs_Dialog_GetHandle_t.html
 tigcc/doc/html/dialogs_DlgMessage.html
+tigcc/doc/html/dialogs_HI_WORD.html
+tigcc/doc/html/dialogs_LO_WORD.html
 tigcc/doc/html/dialogs_NoCallBack.html
+tigcc/doc/html/dialogs_OWNER_DRAW_STRUCT.html
+tigcc/doc/html/dialogs_SIZED_DIALOG.html
 tigcc/doc/html/dialogs_VarNew.html
 tigcc/doc/html/dialogs_VarOpen.html
 tigcc/doc/html/dialogs_VarSaveAs.html
@@ -959,7 +988,9 @@ tigcc/doc/html/events_MO_digestOptions.html
 tigcc/doc/html/events_MO_isMultigraphTask.html
 tigcc/doc/html/events_MO_modeDialog.html
 tigcc/doc/html/events_MO_notifyModeChange.html
+tigcc/doc/html/events_MO_option.html
 tigcc/doc/html/events_MO_sendQuit.html
+tigcc/doc/html/events_MoNotifyFlags.html
 tigcc/doc/html/events_ModeSettings.html
 tigcc/doc/html/events_PaintFlags.html
 tigcc/doc/html/events_StandardTaskIDs.html
@@ -1065,6 +1096,30 @@ tigcc/doc/html/faq_misc.html
 tigcc/doc/html/faq_strings.html
 tigcc/doc/html/faq_tibasic.html
 tigcc/doc/html/faq_vat.html
+tigcc/doc/html/files.html
+tigcc/doc/html/files_FILES.html
+tigcc/doc/html/files_FileStatusEnum.html
+tigcc/doc/html/files_TIOS_FAccess.html
+tigcc/doc/html/files_TIOS_FClose.html
+tigcc/doc/html/files_TIOS_FCreate.html
+tigcc/doc/html/files_TIOS_FDelete.html
+tigcc/doc/html/files_TIOS_FEof.html
+tigcc/doc/html/files_TIOS_FFindFirst.html
+tigcc/doc/html/files_TIOS_FFindNext.html
+tigcc/doc/html/files_TIOS_FGetC.html
+tigcc/doc/html/files_TIOS_FGetPos.html
+tigcc/doc/html/files_TIOS_FGetSize.html
+tigcc/doc/html/files_TIOS_FOpen.html
+tigcc/doc/html/files_TIOS_FPutC.html
+tigcc/doc/html/files_TIOS_FRead.html
+tigcc/doc/html/files_TIOS_FSetBufSize.html
+tigcc/doc/html/files_TIOS_FSetPos.html
+tigcc/doc/html/files_TIOS_FSetSize.html
+tigcc/doc/html/files_TIOS_FSetVer.html
+tigcc/doc/html/files_TIOS_FStatus.html
+tigcc/doc/html/files_TIOS_FType.html
+tigcc/doc/html/files_TIOS_FWrite.html
+tigcc/doc/html/files_fileMode.html
 tigcc/doc/html/flash.html
 tigcc/doc/html/flash_BatTooLowFlash.html
 tigcc/doc/html/flash_EM_GC.html
@@ -1413,7 +1468,6 @@ tigcc/doc/html/graph_DrawPix.html
 tigcc/doc/html/graph_DrawStr.html
 tigcc/doc/html/graph_DrawStrWidth.html
 tigcc/doc/html/graph_DrawStrWidthP.html
-tigcc/doc/html/graph_DrawTo.html
 tigcc/doc/html/graph_FillLines2.html
 tigcc/doc/html/graph_FillTriangle.html
 tigcc/doc/html/graph_FontCharWidth.html
@@ -1449,6 +1503,33 @@ tigcc/doc/html/graph_ScrToWin.html
 tigcc/doc/html/graph_SetCurAttr.html
 tigcc/doc/html/graph_SetCurClip.html
 tigcc/doc/html/graph_pICON.html
+tigcc/doc/html/graphing.html
+tigcc/doc/html/graphing_CkValidDelta.html
+tigcc/doc/html/graphing_CptDeltax.html
+tigcc/doc/html/graphing_CptDeltay.html
+tigcc/doc/html/graphing_DB3.html
+tigcc/doc/html/graphing_EQU_DS.html
+tigcc/doc/html/graphing_EQU_DS_AMS1.html
+tigcc/doc/html/graphing_FUNCID.html
+tigcc/doc/html/graphing_GR_FLAGS_struct.html
+tigcc/doc/html/graphing_GR_MODES.html
+tigcc/doc/html/graphing_GR_WIN_VARS.html
+tigcc/doc/html/graphing_GrFmtFlags.html
+tigcc/doc/html/graphing_GrFmtFlags2.html
+tigcc/doc/html/graphing_GrMode3dStyles.html
+tigcc/doc/html/graphing_GrSides.html
+tigcc/doc/html/graphing_GrWinFlags.html
+tigcc/doc/html/graphing_StepCk.html
+tigcc/doc/html/graphing_TABLE_WIN_VARS.html
+tigcc/doc/html/graphing_TableFlags.html
+tigcc/doc/html/graphing_WinVarEnum.html
+tigcc/doc/html/graphing_gdb_len.html
+tigcc/doc/html/graphing_gdb_recall.html
+tigcc/doc/html/graphing_gdb_store.html
+tigcc/doc/html/graphing_gr_active.html
+tigcc/doc/html/graphing_gr_flags.html
+tigcc/doc/html/graphing_gr_other.html
+tigcc/doc/html/graphing_rngLen.html
 tigcc/doc/html/gray.html
 tigcc/doc/html/gray_GRAYDBUFFER_SIZE.html
 tigcc/doc/html/gray_GrayAdjust.html
@@ -1530,6 +1611,10 @@ tigcc/doc/html/httigcc_advanced_kernelrelocs.html
 tigcc/doc/html/httigcc_advanced_kernelrom.html
 tigcc/doc/html/httigcc_advanced_linker.html
 tigcc/doc/html/httigcc_advanced_mergebss.html
+tigcc/doc/html/httigcc_advanced_mlinkbss.html
+tigcc/doc/html/httigcc_advanced_mlinkdata.html
+tigcc/doc/html/httigcc_advanced_mlinkrelocs.html
+tigcc/doc/html/httigcc_advanced_mlinkrom.html
 tigcc/doc/html/httigcc_advanced_optcalc.html
 tigcc/doc/html/httigcc_advanced_optrom.html
 tigcc/doc/html/httigcc_advanced_savescreen.html
@@ -1546,6 +1631,7 @@ tigcc/doc/html/httigcc_amsdep_func_tech.html
 tigcc/doc/html/httigcc_amsdep_macro_ams.html
 tigcc/doc/html/httigcc_amsdep_macro_tech.html
 tigcc/doc/html/httigcc_comment.html
+tigcc/doc/html/httigcc_comment_authors.html
 tigcc/doc/html/httigcc_comment_bw_icon.html
 tigcc/doc/html/httigcc_comment_gray_icon.html
 tigcc/doc/html/httigcc_comment_program_name.html
@@ -1616,9 +1702,11 @@ tigcc/doc/html/kbd_BEGIN_KEYTEST.html
 tigcc/doc/html/kbd_CommonKeys.html
 tigcc/doc/html/kbd_END_KEYTEST.html
 tigcc/doc/html/kbd_GKeyDown.html
+tigcc/doc/html/kbd_GKeyFlags.html
 tigcc/doc/html/kbd_GKeyFlush.html
 tigcc/doc/html/kbd_GKeyIn.html
 tigcc/doc/html/kbd_GetAlphaStatus.html
+tigcc/doc/html/kbd_KB_AUTOREPEAT.html
 tigcc/doc/html/kbd_KeyYesOrNo.html
 tigcc/doc/html/kbd_OSFastArrows.html
 tigcc/doc/html/kbd_OSGetStatKeys.html
@@ -1714,6 +1802,10 @@ tigcc/doc/html/ld_insert_kernel_libs.html
 tigcc/doc/html/ld_insert_kernel_ram_calls.html
 tigcc/doc/html/ld_insert_kernel_relocs.html
 tigcc/doc/html/ld_insert_kernel_rom_calls.html
+tigcc/doc/html/ld_insert_mlink_bss_refs.html
+tigcc/doc/html/ld_insert_mlink_data_refs.html
+tigcc/doc/html/ld_insert_mlink_relocs.html
+tigcc/doc/html/ld_insert_mlink_rom_calls.html
 tigcc/doc/html/ld_insert_nostub_comments.html
 tigcc/doc/html/ld_insert_preos_compressed_tables.html
 tigcc/doc/html/ld_invocation.html
@@ -1755,6 +1847,7 @@ tigcc/doc/html/ld_symbols_ld_entry_point.html
 tigcc/doc/html/ld_symbols_ld_entry_point_plus_0x8000.html
 tigcc/doc/html/ld_symbols_ld_export_count.html
 tigcc/doc/html/ld_symbols_ld_file_version.html
+tigcc/doc/html/ld_symbols_ld_hardware_id.html
 tigcc/doc/html/ld_symbols_ld_has.html
 tigcc/doc/html/ld_symbols_ld_kernel_bss_table.html
 tigcc/doc/html/ld_symbols_ld_kernel_export_table.html
@@ -1805,13 +1898,8 @@ tigcc/doc/html/link_OSLinkTxQueueActive.html
 tigcc/doc/html/link_OSLinkTxQueueInquire.html
 tigcc/doc/html/link_OSReadLinkBlock.html
 tigcc/doc/html/link_OSWriteLinkBlock.html
-tigcc/doc/html/link_flush_link.html
 tigcc/doc/html/link_getcalc.html
-tigcc/doc/html/link_receive.html
-tigcc/doc/html/link_reset_link.html
 tigcc/doc/html/link_sendcalc.html
-tigcc/doc/html/link_transmit.html
-tigcc/doc/html/link_tx_free.html
 tigcc/doc/html/math.html
 tigcc/doc/html/mem.html
 tigcc/doc/html/mem__memset.html
@@ -1907,9 +1995,11 @@ tigcc/doc/html/peekpoke_peek_l.html
 tigcc/doc/html/peekpoke_peek_w.html
 tigcc/doc/html/peekpoke_poke.html
 tigcc/doc/html/peekpoke_pokeIO.html
+tigcc/doc/html/peekpoke_pokeIO_bchg.html
 tigcc/doc/html/peekpoke_pokeIO_bclr.html
 tigcc/doc/html/peekpoke_pokeIO_bset.html
 tigcc/doc/html/peekpoke_pokeIO_w.html
+tigcc/doc/html/peekpoke_poke_bchg.html
 tigcc/doc/html/peekpoke_poke_bclr.html
 tigcc/doc/html/peekpoke_poke_bset.html
 tigcc/doc/html/peekpoke_poke_l.html
@@ -2129,7 +2219,9 @@ tigcc/doc/html/system_idle.html
 tigcc/doc/html/system_kbd_queue.html
 tigcc/doc/html/system_off.html
 tigcc/doc/html/textedit.html
+tigcc/doc/html/textedit_ETE_FLAGS.html
 tigcc/doc/html/textedit_TEXT_EDIT.html
+tigcc/doc/html/textedit_TE_FAR_RIGHT.html
 tigcc/doc/html/textedit_TE_checkSlack.html
 tigcc/doc/html/textedit_TE_close.html
 tigcc/doc/html/textedit_TE_empty.html
@@ -2265,10 +2357,7 @@ tigcc/doc/html/unknown.html
 tigcc/doc/html/unknown_CTypeTable.html
 tigcc/doc/html/unknown_CharNumber.html
 tigcc/doc/html/unknown_CheckGraphRef.html
-tigcc/doc/html/unknown_CkValidDelta.html
 tigcc/doc/html/unknown_CountGrFunc.html
-tigcc/doc/html/unknown_CptDeltax.html
-tigcc/doc/html/unknown_CptDeltay.html
 tigcc/doc/html/unknown_CptFuncX.html
 tigcc/doc/html/unknown_CptIndep.html
 tigcc/doc/html/unknown_CptLastIndepDE.html
@@ -2277,10 +2366,7 @@ tigcc/doc/html/unknown_CustomBegin.html
 tigcc/doc/html/unknown_CustomEnd.html
 tigcc/doc/html/unknown_CustomFree.html
 tigcc/doc/html/unknown_CustomMenuItem.html
-tigcc/doc/html/unknown_DB3.html
 tigcc/doc/html/unknown_DataTypeNames.html
-tigcc/doc/html/unknown_EQU_DS.html
-tigcc/doc/html/unknown_EQU_DS_AMS1.html
 tigcc/doc/html/unknown_EQU_SELECT_enum.html
 tigcc/doc/html/unknown_EQU_deStatus.html
 tigcc/doc/html/unknown_EQU_getNameInfo.html
@@ -2298,10 +2384,8 @@ tigcc/doc/html/unknown_EV_errorCode.html
 tigcc/doc/html/unknown_EV_flags.html
 tigcc/doc/html/unknown_EV_quit.html
 tigcc/doc/html/unknown_EV_runningApp.html
-tigcc/doc/html/unknown_FILES.html
 tigcc/doc/html/unknown_FLOATTAB.html
 tigcc/doc/html/unknown_FOLDER_TYPE.html
-tigcc/doc/html/unknown_FUNCID.html
 tigcc/doc/html/unknown_FindFunc.html
 tigcc/doc/html/unknown_FindGrFunc.html
 tigcc/doc/html/unknown_FirstNonblank.html
@@ -2326,10 +2410,7 @@ tigcc/doc/html/unknown_GM_Value.html
 tigcc/doc/html/unknown_GR3_addContours.html
 tigcc/doc/html/unknown_GR3_freeDB.html
 tigcc/doc/html/unknown_GR3_handleEvent.html
-tigcc/doc/html/unknown_GR_FLAGS_struct.html
-tigcc/doc/html/unknown_GR_MODES.html
 tigcc/doc/html/unknown_GR_Pan.html
-tigcc/doc/html/unknown_GR_WIN_VARS.html
 tigcc/doc/html/unknown_GS_PlotAll.html
 tigcc/doc/html/unknown_GS_PlotTrace.html
 tigcc/doc/html/unknown_GT_BackupToScr.html
@@ -2395,7 +2476,6 @@ tigcc/doc/html/unknown_LOC_formatDate.html
 tigcc/doc/html/unknown_LOC_getLocalDateFormat.html
 tigcc/doc/html/unknown_LOC_localVersionDate.html
 tigcc/doc/html/unknown_LoadSymFromFindHandle.html
-tigcc/doc/html/unknown_MO_option.html
 tigcc/doc/html/unknown_NG_cleanup_graph_fun.html
 tigcc/doc/html/unknown_NG_control.html
 tigcc/doc/html/unknown_NG_setup_graph_fun.html
@@ -2451,30 +2531,8 @@ tigcc/doc/html/unknown_SYM_LEN.html
 tigcc/doc/html/unknown_ScrRectDivide.html
 tigcc/doc/html/unknown_SearchExprStruct.html
 tigcc/doc/html/unknown_SetGraphMode.html
-tigcc/doc/html/unknown_StepCk.html
 tigcc/doc/html/unknown_SymPG_S.html
-tigcc/doc/html/unknown_TABLE_WIN_VARS.html
 tigcc/doc/html/unknown_TIOS_EV_getAppID.html
-tigcc/doc/html/unknown_TIOS_FAccess.html
-tigcc/doc/html/unknown_TIOS_FClose.html
-tigcc/doc/html/unknown_TIOS_FCreate.html
-tigcc/doc/html/unknown_TIOS_FDelete.html
-tigcc/doc/html/unknown_TIOS_FEof.html
-tigcc/doc/html/unknown_TIOS_FFindFirst.html
-tigcc/doc/html/unknown_TIOS_FFindNext.html
-tigcc/doc/html/unknown_TIOS_FGetC.html
-tigcc/doc/html/unknown_TIOS_FGetPos.html
-tigcc/doc/html/unknown_TIOS_FGetSize.html
-tigcc/doc/html/unknown_TIOS_FOpen.html
-tigcc/doc/html/unknown_TIOS_FPutC.html
-tigcc/doc/html/unknown_TIOS_FRead.html
-tigcc/doc/html/unknown_TIOS_FSetBufSize.html
-tigcc/doc/html/unknown_TIOS_FSetPos.html
-tigcc/doc/html/unknown_TIOS_FSetSize.html
-tigcc/doc/html/unknown_TIOS_FSetVer.html
-tigcc/doc/html/unknown_TIOS_FStatus.html
-tigcc/doc/html/unknown_TIOS_FType.html
-tigcc/doc/html/unknown_TIOS_FWrite.html
 tigcc/doc/html/unknown_TIOS_abs.html
 tigcc/doc/html/unknown_TIOS_div.html
 tigcc/doc/html/unknown_TIOS_labs.html
@@ -2574,7 +2632,6 @@ tigcc/doc/html/unknown__ROM_CALL_48D.html
 tigcc/doc/html/unknown__ROM_CALL_494.html
 tigcc/doc/html/unknown__ROM_CALL_495.html
 tigcc/doc/html/unknown__ROM_CALL_49B.html
-tigcc/doc/html/unknown__ROM_CALL_49C.html
 tigcc/doc/html/unknown__ROM_CALL_4B1.html
 tigcc/doc/html/unknown__ROM_CALL_4C2.html
 tigcc/doc/html/unknown__ROM_CALL_4C6.html
@@ -2650,10 +2707,6 @@ tigcc/doc/html/unknown__ROM_CALL_5F7.html
 tigcc/doc/html/unknown__ROM_CALL_5FA.html
 tigcc/doc/html/unknown__ROM_CALL_5FE.html
 tigcc/doc/html/unknown__ROM_CALL_601.html
-tigcc/doc/html/unknown__ROM_CALL_602.html
-tigcc/doc/html/unknown__ROM_CALL_603.html
-tigcc/doc/html/unknown__ROM_CALL_604.html
-tigcc/doc/html/unknown__ROM_CALL_605.html
 tigcc/doc/html/unknown__ROM_CALL_606.html
 tigcc/doc/html/unknown__bcd_math.html
 tigcc/doc/html/unknown__ds16u16.html
@@ -2695,9 +2748,6 @@ tigcc/doc/html/unknown_estack_to_float.html
 tigcc/doc/html/unknown_execute_graph_func.html
 tigcc/doc/html/unknown_fix_loop_displacements.html
 tigcc/doc/html/unknown_freeIdList.html
-tigcc/doc/html/unknown_gdb_len.html
-tigcc/doc/html/unknown_gdb_recall.html
-tigcc/doc/html/unknown_gdb_store.html
 tigcc/doc/html/unknown_gen_version.html
 tigcc/doc/html/unknown_get_lb.html
 tigcc/doc/html/unknown_get_list_indices.html
@@ -2707,7 +2757,6 @@ tigcc/doc/html/unknown_grFuncName.html
 tigcc/doc/html/unknown_gr_CptIndepInc.html
 tigcc/doc/html/unknown_gr_DelFolder.html
 tigcc/doc/html/unknown_gr_DispLabels.html
-tigcc/doc/html/unknown_gr_active.html
 tigcc/doc/html/unknown_gr_add_fldpic.html
 tigcc/doc/html/unknown_gr_ck_solvergraph.html
 tigcc/doc/html/unknown_gr_de_axes_lbl.html
@@ -2720,10 +2769,8 @@ tigcc/doc/html/unknown_gr_execute_seq.html
 tigcc/doc/html/unknown_gr_find_de_result.html
 tigcc/doc/html/unknown_gr_find_el.html
 tigcc/doc/html/unknown_gr_find_func_index.html
-tigcc/doc/html/unknown_gr_flags.html
 tigcc/doc/html/unknown_gr_initCondName.html
 tigcc/doc/html/unknown_gr_openFolder.html
-tigcc/doc/html/unknown_gr_other.html
 tigcc/doc/html/unknown_gr_remove_fldpic.html
 tigcc/doc/html/unknown_gr_seq_value.html
 tigcc/doc/html/unknown_gr_stopic.html
@@ -2778,8 +2825,6 @@ tigcc/doc/html/unknown_push_constant_factors.html
 tigcc/doc/html/unknown_push_constant_terms.html
 tigcc/doc/html/unknown_push_dependent_factors.html
 tigcc/doc/html/unknown_push_dependent_terms.html
-tigcc/doc/html/unknown_push_div_dif_1c.html
-tigcc/doc/html/unknown_push_div_dif_1f.html
 tigcc/doc/html/unknown_push_float_qr_fact.html
 tigcc/doc/html/unknown_push_format.html
 tigcc/doc/html/unknown_push_gcd_then_cofactors.html
@@ -2826,7 +2871,6 @@ tigcc/doc/html/unknown_replace_top2_with_ratio.html
 tigcc/doc/html/unknown_replace_top2_with_sum.html
 tigcc/doc/html/unknown_replace_top_with_post_simplified.html
 tigcc/doc/html/unknown_replace_top_with_reciprocal.html
-tigcc/doc/html/unknown_rngLen.html
 tigcc/doc/html/unknown_run_one_seq.html
 tigcc/doc/html/unknown_seqStepCk.html
 tigcc/doc/html/unknown_seqWebInit.html
@@ -3024,10 +3068,6 @@ tigcc/doc/html/wingraph_WinShow.html
 tigcc/doc/html/wingraph_WinStr.html
 tigcc/doc/html/wingraph_WinStrXY.html
 tigcc/doc/html/wingraph_WinWidth.html
-tigcc/doc/parser/AUTHORS
-tigcc/doc/parser/COPYING
-tigcc/doc/parser/ChangeLog
-tigcc/doc/parser/README
 tigcc/doc/patcher/AUTHORS
 tigcc/doc/patcher/COPYING
 tigcc/doc/patcher/ChangeLog
@@ -3067,6 +3107,12 @@ tigcc/examples/Custom DLL Test.c
 tigcc/examples/Custom DLL Test.tpr
 tigcc/examples/Custom DLL.c
 tigcc/examples/Custom DLL.tpr
+tigcc/examples/Dialog Items AMS1.c
+tigcc/examples/Dialog Items AMS1.tpr
+tigcc/examples/Dialog Items.c
+tigcc/examples/Dialog Items.tpr
+tigcc/examples/Dialog Struct.c
+tigcc/examples/Dialog Struct.tpr
 tigcc/examples/Dialog Test.c
 tigcc/examples/Dialog Test.tpr
 tigcc/examples/Draw Line.c
@@ -3197,10 +3243,12 @@ tigcc/include/c/doors.h
 tigcc/include/c/error.h
 tigcc/include/c/estack.h
 tigcc/include/c/events.h
+tigcc/include/c/files.h
 tigcc/include/c/flash.h
 tigcc/include/c/float.h
 tigcc/include/c/gdraw.h
 tigcc/include/c/graph.h
+tigcc/include/c/graphing.h
 tigcc/include/c/gray.h
 tigcc/include/c/homescr.h
 tigcc/include/c/intr.h
@@ -3233,23 +3281,21 @@ tigcc/include/c/vat.h
 tigcc/include/c/version.h
 tigcc/include/c/wingraph.h
 tigcc/include/s/os.h
-tigcc/lib/pstarter-titanium.o
 tigcc/lib/pstarter.o
 tigcc/lib/tigcc.a
 @dirrm tigcc/projects
+@dirrm tigcc/lib
 @dirrm tigcc/include/s
 @dirrm tigcc/include/c
 @dirrm tigcc/include/asm
+@dirrm tigcc/include
 @dirrm tigcc/examples
 @dirrm tigcc/doc/tprbuilder
 @dirrm tigcc/doc/tools
 @dirrm tigcc/doc/tigcc
 @dirrm tigcc/doc/patcher
-@dirrm tigcc/doc/parser
 @dirrm tigcc/doc/html
 @dirrm tigcc/doc/a68k
 @dirrm tigcc/doc
 @dirrm tigcc/bin
-@dirrm tigcc/include
-@dirrm tigcc/lib
 @dirrm tigcc
