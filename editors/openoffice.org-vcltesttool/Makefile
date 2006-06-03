@@ -47,17 +47,11 @@ USE_PERL5=	yes
 USE_BZIP2=	yes
 WITHOUT_CPU_CFLAGS=	true
 
-ONLY_FOR_ARCHS=	amd64 i386
-
-.if ${MACHINE_ARCH} == amd64
-BROKEN=	"Work in progress"
-.endif
-
 .if !defined(WITH_GNUGCJ)
 USE_JAVA=	yes
 JAVA_VERSION=	1.4+
 JAVA_BUILD=	jdk
-.if ${MACHINE_ARCH} == amd64
+.if ${MACHINE_ARCH} == amd64 # cannot use ARCH
 JAVA_VENDOR=	bsdjava
 .else
 JAVA_VENDOR=	freebsd bsdjava
@@ -67,11 +61,17 @@ JAVA_VENDOR=	freebsd bsdjava
 .include <bsd.port.pre.mk>
 .include <${FILESDIR}/Makefile.localized>
 
-.if ${MACHINE_ARCH} == amd64
+ONLY_FOR_ARCHS=	amd64 i386
+
+.if ${ARCH} == amd64
+BROKEN=		"Work in progress"
+.endif
+
+.if ${ARCH} == amd64
 GCC_TARGET=		x86_64-portbld-freebsd${OSREL}
 FREEBSD_ENV_SET=	FreeBSDAMDEnv.Set
 .else
-GCC_TARGET=		${MACHINE_ARCH}-portbld-freebsd${OSREL}
+GCC_TARGET=		${ARCH}-portbld-freebsd${OSREL}
 FREEBSD_ENV_SET=	FreeBSDIntelEnv.Set
 .endif
 
@@ -88,7 +88,7 @@ INSTALLATION_BASEDIR?=	openoffice.org-${OOOTAG}
 EXECBASE?=		openoffice.org-${OOOTAG}
 DIST_SUBDIR=		openoffice.org2.0
 SIMPLEOSVER=		${OSREL:C/\.//g}
-.if ${MACHINE_ARCH} == amd64
+.if ${ARCH} == amd64
 PACKAGE_BASENAME=	OOo_${OOOTAG}_${OPSYS}${SIMPLEOSVER}X86_64
 .else
 PACKAGE_BASENAME=	OOo_${OOOTAG}_${OPSYS}${SIMPLEOSVER}Intel
@@ -105,34 +105,36 @@ PKGNAMESUFFIX?=         -${LANG_SUFFIX}
 
 .if defined(WITH_GNUGCJ)
 #this wired part must be rewritten
-GCCVER=4.1.1
-BUILD_DEPENDS+=	${PREFIX}/lib/gcc/${MACHINE_ARCH}-portbld-freebsd${OSREL}/${GCCVER}/lib-gnu-java-awt-peer-gtk.so:${PORTSDIR}/lang/gcc41-withgcjawt
-BUILD_DEPENDS+=	gjdoc:${PORTSDIR}/java/gjdoc
-RUN_DEPENDS+=	${PREFIX}/lib/gcc/${MACHINE_ARCH}-portbld-freebsd${OSREL}/${GCCVER}/lib-gnu-java-awt-peer-gtk.so:${PORTSDIR}/lang/gcc41-withgcjawt
+GCCVER=4.1.2
+BUILD_DEPENDS+= ${PREFIX}/lib/gcc/${GCC_TARGET}/${GCCVER}/lib-gnu-java-awt-peer-gtk.so:${PORTSDIR}/lang/gcc41-withgcjawt
+BUILD_DEPENDS+= gjdoc:${PORTSDIR}/java/gjdoc
+RUN_DEPENDS+=   ${PREFIX}/lib/gcc/${GCC_TARGET}/${GCCVER}/lib-gnu-java-awt-peer-gtk.so:${PORTSDIR}/lang/gcc41-withgcjawt
 .else
-BUILD_DEPENDS+=	gcc-ooo:${PORTSDIR}/lang/gcc-ooo
+.if ${ARCH} == amd64
+GCCVER=4.1.2
+BUILD_DEPENDS+= gcc41:${PORTSDIR}/lang/gcc41
+.else
+GCCVER=3.4.1
+BUILD_DEPENDS+= gcc-ooo:${PORTSDIR}/lang/gcc-ooo
+.endif
 .endif
 
-# FIXME (correctly add ccache before gcc and g++)
 .if defined(WITH_CCACHE)
 BUILD_DEPENDS+=	ccache:${PORTSDIR}/devel/ccache
-.if defined(WITH_GNUGCJ)
-CC=	ccache gcc41
-CXX=	ccache g++41
+CCACHE_PREFIX=	ccache
 .else
-CC=	ccache gcc-ooo
-CXX=	ccache g++-ooo
-.endif #WITH_GNUGCJ
-.endif #WITH_CCACHE
-.if !defined(WITH_CCACHE)
-.if defined(WITH_GNUGCJ)
-CC=	gcc41
-CXX=	g++41
-.else
-CC=	gcc-ooo
-CXX=	g++-ooo
-.endif #WITH_GNUGCJ
-.endif #!WITH_CCACHE
+CCACHE_PREFIX=
+.endif
+.if (${GCCVER} == 4.1.2)
+CC=     gcc41
+CXX=    g++41
+.endif
+.if (${GCCVER} == 3.4.1)
+CC=     gcc-ooo
+CXX=    g++-ooo
+.endif
+CC:=	${CCACHE_PREFIX} ${CC}
+CXX:=	${CCACHE_PREFIX} ${CXX}
 
 BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		unzip:${PORTSDIR}/archivers/unzip \
@@ -141,15 +143,13 @@ BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip \
 		bison2:${PORTSDIR}/devel/bison2 \
 		imake:${X_IMAKE_PORT}
-.if !defined(WITH_GNUGCJ)
-BUILD_DEPENDS+=	ant:${PORTSDIR}/devel/apache-ant
-.else
+.if defined(WITH_GNUGCJ)
 LIB_DEPENDS+=	xslt.2:${PORTSDIR}/textproc/libxslt
 LIB_DEPENDS+=	xml2.5:${PORTSDIR}/textproc/libxml2
-.endif
-.if defined(WITH_GNUGCJ)
 ANT_DISTFILE=   apache-ant-${ANT_VERSION}-bin.tar.bz2
 ANT_VERSION=	1.6.5
+.else
+BUILD_DEPENDS+=	ant:${PORTSDIR}/devel/apache-ant
 .endif
 .if !defined(WITH_GPC)
 LIB_DEPENDS=	art_lgpl_2:${PORTSDIR}/graphics/libart_lgpl
@@ -170,6 +170,10 @@ CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp --with-gnu-patch=${LOCALBASE
 #workarounds
 CONFIGURE_ARGS+=	--with-system-xrender-headers=yes #i62713#
 CONFIGURE_ARGS+=	--with-system-freetype #link error with internal one
+.if (${GCCVER} == 4.1.1)
+LIB_DEPENDS=   boost_regex:${PORTSDIR}/devel/boost
+CONFIGURE_ARGS+=       --with-system-boost=yes #i58343#
+.endif
 .if (${OSVERSION} <= 492000)
 EXTRA_PATCHES+=	${FILESDIR}/fbsd4-workaroundpatch
 .endif

@@ -1,5 +1,5 @@
---- config_office/set_soenv.in.orig	Mon May  8 11:55:43 2006
-+++ config_office/set_soenv.in	Mon May 22 17:39:23 2006
+--- config_office/set_soenv.in	Mon May  8 11:55:43 2006
++++ config_office/set_soenv.in	Tue May 23 14:31:50 2006
 @@ -320,32 +320,60 @@
        $XPVERSION      = "3"; 
  }
@@ -72,7 +72,17 @@
  } 
  elsif ( $platform =~ m/linux-gnu/ ) 
  {
-@@ -1294,6 +1322,7 @@
+@@ -963,8 +991,7 @@
+                         $D.$OS.
+                         $D.$CPUNAME;
+     if  ($platform =~ m/freebsd/)
+-    {  $SOLARDEF     .= $D."X86".
+-                        $D."OSVERSION=$OSVERSION".
++    {  $SOLARDEF     .= $D."OSVERSION=$OSVERSION".
+                         " @PTHREAD_CFLAGS@";
+     }
+     $SOLARDEF        .= $D."_REENTRANT".
+@@ -1294,6 +1321,7 @@
     		{
        		$SOLARINC   .=$I.'$JAVA_HOME'.$INCLUDE.$ds."freebsd";
        		$SOLARINC   .=$I.'$JAVA_HOME'.$INCLUDE.$ds."bsd";

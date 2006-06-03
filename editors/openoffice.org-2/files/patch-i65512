@@ -28,9 +28,9 @@
  
  #if defined(MACOSX)
  /*
---- sal/osl/unx/system.h.orig	Fri Apr  7 04:06:48 2006
-+++ sal/osl/unx/system.h	Fri May  5 18:57:50 2006
-@@ -540,8 +540,10 @@
+--- sal/osl/unx/system.h.orig	Thu May  4 04:48:25 2006
++++ sal/osl/unx/system.h	Wed May 24 16:06:13 2006
+@@ -543,8 +543,10 @@
  struct tm *localtime_r(const time_t *timep, struct tm *buffer);
  struct tm *gmtime_r(const time_t *timep, struct tm *buffer);
  #endif /* !defined FREEBSD || (__FreeBSD_version < 500112) */
