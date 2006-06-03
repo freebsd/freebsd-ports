@@ -11,15 +11,15 @@ CATEGORIES=	net
 MASTER_SITES=	http://ftp.digium.com/pub/asterisk/ \
 		http://ftp.digium.com/pub/asterisk/old-releases/
 
-PATCHFILES=	asterisk127_codec_negotiation-20060419.diff.gz
-PATCH_SITES=	http://unofficial.portaone.com/~bamby/public/
+PKGNAMESUFFIX=	-bristuff
+PATCHFILES=	${PORTNAME}-${PORTVERSION}-${BRIVER}.patch.gz
+PATCH_SITES=	${MASTER_SITE_LOCAL}
+PATCH_SITE_SUBDIR=	fjoe
+PATCH_DIST_STRIP=	-p1
+BRIVER=		bristuff-0.3.0-PRE-1p
+CONFLICTS=	asterisk-[0-9]*
 
-#		${PORTNAME}-1.2.4-${BRIVER}.patch.gz:bristuff
-#		${MASTER_SITE_LOCAL:S,$,:bristuff,}
-#PATCH_SITE_SUBDIR=	fjoe/:bristuff
-#BRIVER=		bristuff-0.3.0-PRE-1l
-
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	An Open Source PBX and telephony toolkit
 
 BUILD_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
@@ -42,7 +42,6 @@ MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		OPENH323DIR=${LOCALBASE}/share/openh323 \
 		OSVERSION=${OSVERSION} \
 		CXX="${CXX}"
-PLIST_SUB=	BRISTUFF="@comment "
 MAN8=		asterisk.8 astgenkey.8 autosupport.8 safe_asterisk.8
 
 .include <bsd.port.pre.mk>
@@ -65,9 +64,8 @@ MAKE_ENV+=	WITH_H323=1
 PLIST_SUB+=	WITH_ZAPTEL="@comment "
 MAKE_ENV+=	WITHOUT_ZAPTEL=1
 .else
-BUILD_DEPENDS+=	libpri>=1.2.0:${PORTSDIR}/misc/libpri \
-		${LOCALBASE}/include/zaptel.h:${PORTSDIR}/misc/zaptel
-LIB_DEPENDS+=	pri.1:${PORTSDIR}/misc/libpri
+BUILD_DEPENDS+=	${LOCALBASE}/include/zaptel.h:${PORTSDIR}/misc/zaptel
+LIB_DEPENDS+=	pri-bristuff.1:${PORTSDIR}/misc/libpri-bristuff
 RUN_DEPENDS+=	${LOCALBASE}/include/zaptel.h:${PORTSDIR}/misc/zaptel
 PLIST_SUB+=	WITH_ZAPTEL=""
 MAKE_ENV+=	WITH_ZAPTEL=1
@@ -100,5 +98,7 @@ PLIST_SUB+=	NEWGCC="@comment "
 
 post-patch:
 	${REINPLACE_CMD} -e 's|/var/lib|${PREFIX}/share|g' ${WRKSRC}/configs/musiconhold.conf.sample
+	${REINPLACE_CMD} -e 's,^#include <libpri\.h>,#include <libpri-bristuff.h>,' ${WRKSRC}/channels/chan_zap.c
+	${REINPLACE_CMD} -e 's,-lpri,-lpri-bristuff,' ${WRKSRC}/channels/Makefile
 
 .include <bsd.port.post.mk>
