@@ -7,6 +7,7 @@
 
 PORTNAME=	ipfcount
 PORTVERSION=	0.2.1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://deathbeforedecaf.net/misc/ports/ \
 		http://users.netleader.com.au/~rob/
@@ -14,15 +15,16 @@ MASTER_SITES=	http://deathbeforedecaf.net/misc/ports/ \
 MAINTAINER=	freebsd@deathbeforedecaf.net
 COMMENT=	Summarise ipf logs by counting and sorting the fields
 
-PLIST_FILES=	bin/ipfcount \
-		%%EXAMPLESDIR%%/100.ipfcount
-PLIST_DIRS=	%%EXAMPLESDIR%%
-
+PLIST_FILES=	bin/ipfcount
 MAN1=		ipfcount.1
 
-SUB_FILES=	pkg-message
-
 USE_PERL5=	yes
+
+.if !defined(NOPORTDOCS)
+PLIST_DIRS=	%%EXAMPLESDIR%%
+PLIST_FILES+=	%%EXAMPLESDIR%%/100.ipfcount
+SUB_FILES=	pkg-message
+.endif
 
 .include <bsd.port.pre.mk>
 
@@ -39,10 +41,14 @@ do-build:
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/ipfcount ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/ipfcount.1 ${PREFIX}/man/man1/ipfcount.1
+.if !defined(NOPORTDOCS)
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/100.ipfcount ${EXAMPLESDIR}
+.endif
 
 post-install:
+.if !defined(NOPORTDOCS)
 	@${CAT} ${PKGMESSAGE}
+.endif
 
 .include <bsd.port.post.mk>
