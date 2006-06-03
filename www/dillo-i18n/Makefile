@@ -9,6 +9,8 @@
 # WITH_DILLO_META-REFRESH:	make dillo accept the meta-refresh tag
 # WITHOUT_DILLO_TABS:		disable support for tabbed browsing
 # WITHOUT_DILLO_ANTIALIAS:	disable support for antialiased display
+# WITH_DILLO_DLGUI:		enable experimental FLTK2 based gui for file
+# 				downloads
 #
 # TODO:
 # SSL support is currently partly broken in this version of the i18n dillo:
@@ -41,7 +43,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-cookies --enable-ipv6 --enable-threaded-dns \
-		--disable-dlgui \
 		--libdir=${PREFIX}/libexec
 
 CONFLICTS=	dillo-[0-9].[0-9].[0-9]*
@@ -83,6 +84,15 @@ CONFIGURE_ARGS+=	--enable-anti-alias
 CONFIGURE_ARGS+=	--disable-anti-alias
 .endif
 
+.if defined(WITH_DILLO_DLGUI)
+CONFIGURE_ARGS+=	--enable-dlgui
+BUILD_DEPENDS+=	fltk>=2.0.r4825:${PORTSDIR}/x11-toolkits/fltk2
+CPPFLAGS+=	-I${X11BASE}/include
+LDFLAGS+=	-L${X11BASE}/lib
+.else
+CONFIGURE_ARGS+=	--disable-dlgui
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|g ; \
 		 s|-D_THREAD_SAFE|${PTHREAD_CFLAGS}|g' ${WRKSRC}/configure
@@ -110,6 +120,12 @@ pre-configure:
 	@${ECHO_CMD} "   Set WITHOUT_DILLO_ANTIALIAS=yes in your make environment or on the"
 	@${ECHO_CMD} "   commandline to disable support for antialiased fonts."
 .endif
+.if !defined(WITH_DILLO_DLGUI)
+	@${ECHO_CMD} ""
+	@${ECHO_CMD} "   Set WITH_DILLO_DLGUI=yes in your make environment or on the"
+	@${ECHO_CMD} "   commandline to enable a FLTK2 based gui for download operations."
+.endif
+
 	@${ECHO_CMD} ""
 
 .include <bsd.port.mk>
