@@ -7,19 +7,20 @@
 
 PORTNAME=	mrtg-mysql-load
 PORTVERSION=	1.02
+PORTREVISION=	1
 CATEGORIES=	databases net-mgmt
 MASTER_SITES=	http://www.bitbybit.dk/mysql/mrtg-mysql-load/ \
 		http://freebsd.unixfreunde.de/sources/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	thomas@goodking.ca
 COMMENT=	A MySQL load analysis fetcher for MRTG
 
-RUN_DEPENDS=	mrtg:${PORTSDIR}/net-mgmt/mrtg \
-		mysqladmin:${PORTSDIR}/databases/mysql40-client
+RUN_DEPENDS=	mrtg:${PORTSDIR}/net-mgmt/mrtg
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 USE_PERL5_RUN=	yes
+USE_MYSQL=	yes
 
 MAN1=		${PORTNAME}.1
 
