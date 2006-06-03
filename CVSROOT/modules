@@ -5665,7 +5665,6 @@ libebml		ports/textproc/libebml
 libecc		ports/security/libecc
 libelf		ports/devel/libelf
 libemf		ports/graphics/libemf
-libepplet	ports/x11-wm/libepplet
 liberator	ports/net-p2p/liberator
 libesmtp	ports/mail/libesmtp
 libetpan	ports/mail/libetpan
