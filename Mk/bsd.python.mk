@@ -384,15 +384,19 @@ PYDISTUTILS_INSTALLARGS?=	-c -O1 --prefix=${PREFIX}
 .if ${ZOPE_VERSION} == "3.2"
 SZOPEBASEDIR?=			www/Zope3
 ZOPE_PORTSDIR=			${PORTSDIR}/www/zope3
+ZOPESKELDIR=			${ZOPEBASEDIR}/zopeskel
 .elif ${ZOPE_VERSION} == "2.9"
 SZOPEBASEDIR?=			www/Zope29
 ZOPE_PORTSDIR=			${PORTSDIR}/www/zope29
+ZOPESKELDIR=			${ZOPEBASEDIR}/skel
 .elif ${ZOPE_VERSION} == "2.8"
 SZOPEBASEDIR?=			www/Zope28
 ZOPE_PORTSDIR=			${PORTSDIR}/www/zope28
+ZOPESKELDIR=			${ZOPEBASEDIR}/skel
 .elif ${ZOPE_VERSION} == "2.7"
 SZOPEBASEDIR?=			www/Zope
 ZOPE_PORTSDIR=			${PORTSDIR}/www/zope
+ZOPESKELDIR=			${ZOPEBASEDIR}/skel
 .else
 check-makevars::
 	@${ECHO} "Makefile error: bad value for ZOPE_VERSION: ${ZOPE_VERSION}."
@@ -427,7 +431,7 @@ RUN_DEPENDS+=	${PYTHON_CMD}:${PYTHON_PORTSDIR}
 .endif		# ${PYTHON_NO_DEPENDS} == "NO"
 
 .if defined(USE_ZOPE)
-RUN_DEPENDS+=	${ZOPEBASEDIR}/skel/bin/zopectl.in:${ZOPE_PORTSDIR}
+RUN_DEPENDS+=	${ZOPESKELDIR}/bin/zopectl.in:${ZOPE_PORTSDIR}
 .endif
 
 # set $PREFIX as Python's one
