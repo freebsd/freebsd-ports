@@ -18,7 +18,7 @@ MASTER_SITE_SUBDIR=lesi/compat5x
 PKGNAMESUFFIX=	-${ARCH}
 DISTNAME=	${PORTNAME}-${ARCH}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	r.c.ladan@gmail.com
 COMMENT=	A convenience package to install the compat5x libraries
 
 ONLY_FOR_ARCHS=	alpha amd64 i386 sparc64

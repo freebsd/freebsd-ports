@@ -8,4 +8,3 @@ Usage example:
     .if ${OSVERSION} >= 600000
     LIB_DEPENDS+=	c.5:${PORTSDIR}/misc/compat5x
     .endif
-
