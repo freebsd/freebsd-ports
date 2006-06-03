@@ -70,8 +70,7 @@
 # to be installed.
 
 PORTNAME=	scponly
-PORTVERSION=	4.4
-PORTREVISION=	0
+PORTVERSION=	4.6
 CATEGORIES=	shells
 MASTER_SITES=	http://www.sublimation.org/scponly/ \
 		${MASTER_SITE_SOURCEFORGE}
