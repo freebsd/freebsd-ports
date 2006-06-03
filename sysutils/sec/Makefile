@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sec
-PORTVERSION=	2.3.2
+PORTVERSION=	2.3.3
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	simple-evcorr
@@ -22,12 +22,12 @@ PORTDOCS=	ChangeLog README convert.pl itostream.c
 PLIST_FILES=	bin/sec
 
 post-patch:
-	${REINPLACE_CMD} -e \
+	@${REINPLACE_CMD} -e \
 	's|${PORTNAME}.pl|${PORTNAME}|g' ${WRKSRC}/${PORTNAME}.pl.man
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/sec.pl ${PREFIX}/bin/${PORTNAME}
-	@${INSTALL_MAN} ${WRKSRC}/sec.pl.man ${PREFIX}/man/man8/sec.8
+	${INSTALL_SCRIPT} ${WRKSRC}/sec.pl ${PREFIX}/bin/${PORTNAME}
+	${INSTALL_MAN} ${WRKSRC}/sec.pl.man ${PREFIX}/man/man8/sec.8
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
