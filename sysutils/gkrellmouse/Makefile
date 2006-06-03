@@ -9,7 +9,9 @@ PORTNAME=	gkrellmouse
 PORTVERSION=	0.0.2
 PORTREVISION=	2
 CATEGORIES=	sysutils
-MASTER_SITES=	http://ssl.usu.edu/paul/gkrellmouse/
+MASTER_SITES=	http://www.nafpik.com/paul/gkrellmouse/ \
+		http://mirror2.unixfreunde.de/ \
+		http://freebsd.unixfreunde.de/sources/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
