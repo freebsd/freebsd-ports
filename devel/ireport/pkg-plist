@@ -139,18 +139,27 @@ bin/iReport
 %%JAVAJARDIR%%/asm.jar
 %%JAVAJARDIR%%/barbecue-1.1.jar
 %%JAVAJARDIR%%/cglib-2.1.jar
+%%JAVAJARDIR%%/commons-dbcp-1.2.1.jar
 %%JAVAJARDIR%%/commons-javaflow-20060411.jar
+%%JAVAJARDIR%%/commons-pool-1.3.jar
 %%JAVAJARDIR%%/ehcache-1.1.jar
+%%JAVAJARDIR%%/eigenbase-properties.jar
+%%JAVAJARDIR%%/eigenbase-resgen.jar
+%%JAVAJARDIR%%/eigenbase-xom.jar
 %%JAVAJARDIR%%/groovy-all-1.0-beta-10.jar
 %%JAVAJARDIR%%/hibernate3.jar
 %%JAVAJARDIR%%/iReport.jar
-%%JAVAJARDIR%%/jdt-compiler.jar
+%%JAVAJARDIR%%/javacup.jar
+%%JAVAJARDIR%%/jdt-compiler-3.1.1.jar
+%%JAVAJARDIR%%/jpa.jar
 %%JAVAJARDIR%%/jr-bsh-compiler.jar
 %%JAVAJARDIR%%/jsmoothgen-ant-0.9.7.jar
 %%JAVAJARDIR%%/jta.jar
 %%JAVAJARDIR%%/jxl.jar
+%%JAVAJARDIR%%/mondrian-2.0.1.jar
 %%JAVAJARDIR%%/nsisant-1.1.jar
 %%JAVAJARDIR%%/png-encoder-1.5.jar
+%%JAVAJARDIR%%/servlet.jar
 %%JAVAJARDIR%%/toniclf.jar
 @dirrm %%DATADIR%%/templates
 @dirrm %%DATADIR%%/plugins

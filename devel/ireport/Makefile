@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ireport
-PORTVERSION=	1.2.2
+PORTVERSION=	1.2.3
 CATEGORIES=	devel databases java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,15 +15,18 @@ DISTNAME=	iReport-${PORTVERSION}
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	A visual report builder/designer for JasperReports
 
-RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper	\
-		${JAVALIBDIR}/bsh.jar:${PORTSDIR}/java/bsh	\
-		${JAVALIBDIR}/dom4j.jar:${PORTSDIR}/textproc/dom4j	\
-		${JAVALIBDIR}/antlr.jar:${PORTSDIR}/devel/antlr	\
-		${JAVALIBDIR}/looks.jar:${PORTSDIR}/devel/looks	\
-		${JAVALIBDIR}/tinylaf.jar:${PORTSDIR}/devel/tinylaf	\
-		${JAVALIBDIR}/jcmdline.jar:${PORTSDIR}/devel/jcmdline	\
-		${JAVALIBDIR}/xml-apis.jar:${PORTSDIR}/textproc/xerces-j	\
+RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper					\
+		${JAVALIBDIR}/bsh.jar:${PORTSDIR}/java/bsh				\
+		${JAVALIBDIR}/dom4j.jar:${PORTSDIR}/textproc/dom4j			\
+		${JAVALIBDIR}/antlr.jar:${PORTSDIR}/devel/antlr				\
+		${JAVALIBDIR}/looks.jar:${PORTSDIR}/devel/looks				\
+		${JAVALIBDIR}/tinylaf.jar:${PORTSDIR}/devel/tinylaf			\
+		${JAVALIBDIR}/bcel.jar:${PORTSDIR}/java/jakarta-bcel			\
+		${JAVALIBDIR}/jcmdline.jar:${PORTSDIR}/devel/jcmdline			\
+		${JAVALIBDIR}/xml-apis.jar:${PORTSDIR}/textproc/xerces-j		\
 		${JAVALIBDIR}/jasperreports.jar:${PORTSDIR}/databases/jasperreports
+#		${JAVALIBDIR}/commons-dbcp.jar:${PORTSDIR}/java/jakarta-commons-dbcp (commons-pool BROKEN)
+#		${JAVALIBDIR}/commons-pool.jar:${PORTSDIR}/java/jakarta-commons-pool (BROKEN)
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.4+
@@ -34,21 +37,27 @@ PLIST_SUB=	VER=${PORTVERSION} VERMAN=0.2.0
 JARFILES=	LICENSE.asm-attr.txt LICENSE.asm.txt LICENSE.barbecue-1.1.txt	\
 		LICENSE.jta.txt asm-attrs.jar asm.jar barbecue-1.1.jar		\
 		cglib-2.1.jar commons-javaflow-20060411.jar ehcache-1.1.jar	\
+		eigenbase-properties.jar eigenbase-resgen.jar eigenbase-xom.jar	\
 		groovy-all-1.0-beta-10.jar hibernate3.jar iReport.jar		\
-		jdt-compiler.jar jr-bsh-compiler.jar jsmoothgen-ant-0.9.7.jar	\
-		jta.jar jxl.jar nsisant-1.1.jar png-encoder-1.5.jar toniclf.jar
+		javacup.jar jdt-compiler-3.1.1.jar jpa.jar jr-bsh-compiler.jar	\
+		jsmoothgen-ant-0.9.7.jar jta.jar jxl.jar mondrian-2.0.1.jar	\
+		nsisant-1.1.jar png-encoder-1.5.jar servlet.jar toniclf.jar	\
+		commons-pool-1.3.jar commons-dbcp-1.2.1.jar
 BASEFILES=	Changelog.txt notice.txt relnotes${PORTVERSION}.html
 SUBDIRS=	fonts plugins templates
 
 # Jarfiles to be included in classpath
 CLSSPTH=	antlr asm-attrs asm barbecue-1.1 bsh cglib-2.1 commons-beanutils\
-		commons-collections commons-digester commons-javaflow-20060411	\
-		commons-logging commons-logging-api dom4j ehcache-1.1		\
-		groovy-all-1.0-beta-10 hibernate3 iReport itext	jasperreports	\
-		jcmdline jcommon jdt-compiler jfreechart jr-bsh-compiler	\
-		jsmoothgen-ant-0.9.7 jta jxl log4j looks mysql-connector-java	\
-		nsisant-1.1 png-encoder-1.5 poi postgresql tinylaf toniclf xalan\
-		xercesImpl xml-apis ${CLSSHSQLDB}
+		commons-collections commons-dbcp commons-digester		\
+		commons-javaflow-20060411 commons-logging commons-logging-api	\
+		commons-pool dom4j ehcache-1.1 eigenbase-properties		\
+		eigenbase-resgen eigenbase-xom groovy-all-1.0-beta-10 hibernate3\
+		iReport itext bcel jasperreports javacup jcmdline jcommon	\
+		jdt-compiler-3.1.1 jfreechart jpa jr-bsh-compiler		\
+		jsmoothgen-ant-0.9.7 jta jxl log4j looks mondrian-2.0.1		\
+		mysql-connector-java nsisant-1.1 png-encoder-1.5 poi postgresql	\
+		servlet tinylaf toniclf xalan xercesImpl xml-apis ${CLSSHSQLDB}	\
+		commons-pool-1.3 commons-dbcp-1.2.1
 
 .if !defined(NOPORTDOCS)
 SUBDIRS+=	docs
