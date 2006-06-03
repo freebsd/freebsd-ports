@@ -5989,6 +5989,7 @@ libxslt		ports/textproc/libxslt
 libxslt-reference	ports/textproc/libxslt-reference
 libyahoo2	ports/net-im/libyahoo2
 libytnef	ports/devel/libytnef
+libzdb		ports/databases/libzdb
 libzip		ports/archivers/libzip
 libzvbi		ports/devel/libzvbi
 libzvt		ports/x11-toolkits/libzvt
