@@ -1,0 +1,266 @@
+Only in ../scripts: Install
+Only in ../scripts: Install_All
+Only in ../scripts: Install_All_nopatch
+Only in ../scripts: Install_step_1
+Only in ../scripts: Install_step_2
+Only in ../scripts: Install_step_3
+Only in ../scripts: Install_step_4
+Only in ../scripts: Install_step_5
+Only in ../scripts: SCRIPTS
+diff -u ../scripts/launch.a68k scripts/launch.a68k
+--- ../scripts/launch.a68k	Tue Feb  1 23:36:52 2005
++++ scripts/launch.a68k	Tue Mar 21 15:24:04 2006
+@@ -2,9 +2,18 @@
+ #
+ # Compile and install the A68K assembler
+ #
++
++isbsd=`uname | grep "BSD"`
++if [ $isbsd = "" ]; then
++	  #Assume GNU make
++        make=make
++else
++        make=gmake
++fi
++
+ echo Installing a68k assembler...
+ cd ../sources/a68k/
+-make -e
++${make} -e
+ cp A68k $TIGCC/bin/a68k
+-make clean
++${make} clean
+ echo Done.
+diff -u ../scripts/launch.binutils scripts/launch.binutils
+--- ../scripts/launch.binutils	Sat Jul  2 23:05:42 2005
++++ scripts/launch.binutils	Tue Mar 21 15:09:11 2006
+@@ -3,6 +3,15 @@
+ # This script launch configure with the right arguments
+ # The tree must have been patched before doing this.
+ #
++
++isbsd=`uname | grep "BSD"`
++if [ $isbsd = "" ]; then
++	  #Assume GNU make
++        make=make
++else
++        make=gmake
++fi
++
+ echo TIGCC script: Configuring, compiling and installing binutils...
+ mkdir ../build; mkdir ../build/binutils;
+ cd ../build/binutils; ../../download/binutils.ti/configure --disable-serial-configure --prefix=$TIGCC --target=m68k-coff --disable-shared --enable-static --disable-multilib --disable-nls --disable-win32-registry
+@@ -16,7 +25,7 @@
+ #This keeps us from patching the generated makefile in advance.
+ #So we have to call make 5 times to get it to work with our removed directories.
+ 
+-make
++${make}
+ 
+ echo You should have seen an error. This is normal. TIGCC installation continues.
+ 
+@@ -24,7 +33,7 @@
+ rm -f libiberty/testsuite/Makefile
+ echo all: >libiberty/testsuite/Makefile
+ 
+-make
++${make}
+ 
+ echo You should have seen an error. This is normal. TIGCC installation continues.
+ 
+@@ -36,7 +45,7 @@
+ rm -f bfd/po/Makefile
+ echo all: >bfd/po/Makefile
+ 
+-make
++${make}
+ 
+ echo You should have seen an error. This is normal. TIGCC installation continues.
+ 
+@@ -44,7 +53,7 @@
+ rm -f opcodes/po/Makefile
+ echo all: >opcodes/po/Makefile
+ 
+-make
++${make}
+ 
+ echo You should have seen an error. This is normal. TIGCC installation continues.
+ 
+@@ -58,7 +67,7 @@
+ echo all: >gas/po/Makefile
+ 
+ #Now this one should really work...
+-make
++${make}
+ if [ $? -ne 0 ]
+     then echo "TIGCC script: Error while making"
+     exit 2
+diff -u ../scripts/launch.envreg scripts/launch.envreg
+--- ../scripts/launch.envreg	Sat Jan 24 03:58:25 2004
++++ scripts/launch.envreg	Tue Mar 21 15:09:21 2006
+@@ -2,9 +2,18 @@
+ #
+ # Compile and install the TIGCC environment registrator
+ #
++
++isbsd=`uname | grep "BSD"`
++if [ $isbsd = "" ]; then
++	  #Assume GNU make
++        make=make
++else
++        make=gmake
++fi
++
+ echo Installing tigcc environment registrator...
+ cd ../sources/envreg/src/
+-make -e
++${make} -e
+ cp envreg $TIGCC/bin
+-make clean
++${make} clean
+ echo Done.
+diff -u ../scripts/launch.gcc scripts/launch.gcc
+--- ../scripts/launch.gcc	Thu Mar 24 02:48:25 2005
++++ scripts/launch.gcc	Tue Mar 21 15:09:46 2006
+@@ -3,6 +3,15 @@
+ # This script launches configure with the right arguments
+ # The tree must have been patched before doing this.
+ #
++
++isbsd=`uname | grep "BSD"`
++if [ $isbsd = "" ]; then
++	  #Assume GNU make
++        make=make
++else
++        make=gmake
++fi
++
+ echo TIGCC script: Configuring, compiling and installing gcc...
+ 
+ CFLAGS_FOR_BUILD="$CFLAGS"
+@@ -22,21 +31,21 @@
+ #This keeps us from patching the generated makefile in advance.
+ #So we have to call make 3 times to get it to work with our removed directories.
+ 
+-make
++${make}
+ echo You should have seen an error. This is normal. TIGCC installation continues.
+ 
+ # Create dummy libiberty testsuite makefile
+ rm -f libiberty/testsuite/Makefile
+ echo all: >libiberty/testsuite/Makefile
+ 
+-make
++${make}
+ echo You should have seen an error. This is normal. TIGCC installation continues.
+ 
+ # Create dummy build-libiberty testsuite makefile
+ rm -f `ls -d build-*`/libiberty/testsuite/Makefile
+ echo all: >`ls -d build-*`/libiberty/testsuite/Makefile
+ 
+-make
++${make}
+ echo You should have seen an error. This is normal. TIGCC installation continues.
+ 
+ cd ../../scripts
+diff -u ../scripts/launch.ld-tigcc scripts/launch.ld-tigcc
+--- ../scripts/launch.ld-tigcc	Thu Sep 25 05:35:03 2003
++++ scripts/launch.ld-tigcc	Tue Mar 21 15:10:32 2006
+@@ -2,10 +2,19 @@
+ #
+ # Compile and install the TIGCC linker
+ #
++
++isbsd=`uname | grep "BSD"`
++if [ $isbsd = "" ]; then
++	  #Assume GNU make
++        make=make
++else
++        make=gmake
++fi
++
+ echo Installing TIGCC linker...
+ cd ../sources/ld-tigcc
+-make -e
++${make} -e
+ cp ld-tigcc $TIGCC/bin
+ cp ar-tigcc $TIGCC/bin
+-make clean
++${make} clean
+ echo Done.
+diff -u ../scripts/launch.patcher scripts/launch.patcher
+--- ../scripts/launch.patcher	Thu Sep 25 05:35:13 2003
++++ scripts/launch.patcher	Tue Mar 21 15:11:51 2006
+@@ -2,9 +2,18 @@
+ #
+ # Compile and install the TIGCC patcher
+ #
++
++isbsd=`uname | grep "BSD"`
++if [ $isbsd = "" ]; then
++	  #Assume GNU make
++        make=make
++else
++        make=gmake
++fi
++
+ echo Installing tigcc patcher...
+ cd ../sources/patcher/src/
+-make -e
++${make} -e
+ cp patcher $TIGCC/bin
+-make clean
++${make} clean
+ echo Done.
+diff -u ../scripts/launch.tigcc scripts/launch.tigcc
+--- ../scripts/launch.tigcc	Thu Sep 25 05:35:23 2003
++++ scripts/launch.tigcc	Tue Mar 21 15:12:09 2006
+@@ -2,9 +2,18 @@
+ #
+ # Compile and install the TIGCC front-end
+ #
++
++isbsd=`uname | grep "BSD"`
++if [ $isbsd = "" ]; then
++	  #Assume GNU make
++        make=make
++else
++        make=gmake
++fi
++
+ echo Installing tigcc front-end...
+ cd ../sources/tigcc/src/
+-make -e
++${make} -e
+ cp tigcc $TIGCC/bin
+-make clean
++${make} clean
+ echo Done.
+diff -u ../scripts/launch.tprbuilder scripts/launch.tprbuilder
+--- ../scripts/launch.tprbuilder	Thu Sep 25 05:35:31 2003
++++ scripts/launch.tprbuilder	Tue Mar 21 15:12:23 2006
+@@ -2,9 +2,18 @@
+ #
+ # Compile and install the TIGCC project builder
+ #
++
++isbsd=`uname | grep "BSD"`
++if [ $isbsd = "" ]; then
++	  #Assume GNU make
++        make=make
++else
++        make=gmake
++fi
++
+ echo Installing tigcc project builder...
+ cd ../sources/tprbuilder/src/
+-make -e
++${make} -e
+ cp tprbuilder $TIGCC/bin
+-make clean
++${make} clean
+ echo Done.
+Only in ../scripts: package_bin
+Only in ../scripts: package_src
+Only in ../scripts: updatedoc
+Only in ../scripts: updatesrc
