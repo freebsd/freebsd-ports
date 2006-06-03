@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	apparix
-PORTVERSION=	20060105
+PORTVERSION=	20060523
 CATEGORIES=	misc
 MASTER_SITES=	http://micans.org/apparix/src/
-DISTNAME=	${PORTNAME}-06-005
+DISTNAME=	${PORTNAME}-06-142
 
 MAINTAINER=	steinex@nognu.de
 COMMENT=	Bookmark directories and apparate inside them
 
+USE_GCC=	3.2+
 GNU_CONFIGURE=	yes
 MANCOMPRESSED=	no
 
@@ -25,7 +26,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/doc/${MAN1} ${MAN1PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/doc/${f} ${DOCSDIR}
 .endfor
