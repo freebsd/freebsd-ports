@@ -111,7 +111,6 @@ bbs/bbssrc/src/userinfo.c
 bbs/bbssrc/src/ver.sh
 bbs/bbssrc/src/vote.c
 bbs/bbssrc/src/xyz.c
-bbs/bbssrc/src/Install.sh.in.orig
 bbs/bbssrc/src/Install.sh
 bbs/bbssrc/src/bbsd
 bbs/bbssrc/src/chatd
@@ -369,7 +368,6 @@ bbs/bbssrc/config.sub
 bbs/bbssrc/configure
 bbs/bbssrc/configure.in
 bbs/bbssrc/install.sh
-bbs/bbssrc/configure.orig
 bbs/bbssrc/configure.inf
 bbs/bbssrc/Makefile
 bbs/bbssrc/.reldate
