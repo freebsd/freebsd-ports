@@ -1,0 +1,97 @@
+.\"
+.\" Copyright (C) 2006 Greg Lewis. All rights reserved.
+.\"
+.\" Redistribution and use in source and binary forms, with or without
+.\" modification, are permitted provided that the following conditions
+.\" are met:
+.\" 1. Redistributions of source code must retain the above copyright
+.\"    notice, this list of conditions and the following disclaimer.
+.\" 2. Redistributions in binary form must reproduce the above copyright
+.\"    notice, this list of conditions and the following disclaimer in the
+.\"    documentation and/or other materials provided with the distribution.
+.\"
+.\" THIS SOFTWARE IS PROVIDED BY AUTHOR AND CONTRIBUTORS ``AS IS'' AND
+.\" ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+.\" IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+.\" ARE DISCLAIMED.  IN NO EVENT SHALL AUTHOR OR CONTRIBUTORS BE LIABLE
+.\" FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+.\" DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+.\" OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+.\" HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+.\" LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+.\" OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+.\" SUCH DAMAGE.
+.\"
+.\" $FreeBSD$
+.\"
+.Dd May 28, 2006
+.Os
+.Dt JAVAVM_OPTS.CONF 5
+.Sh NAME
+.Nm javavm_opts.conf
+.Nd the Java VM wrapper options configuration file.
+.Sh DESCRIPTION
+The file
+.Nm
+contains variables which set options that should be passed to the
+Java VM that is invoked by the Java VM wrapper.
+.Pp
+Which Java VM a variable provides options for is determined by the variable
+name.  The Java VM wrapper currently recognises the following patterns for
+variable names:
+.Bl -tag -width indent
+.It Ev JAVAVM_OPTS
+The options specified by this variable are passed to all Java VM
+invocations.  In practise, this variable should be reserved for use
+on the command line and not set in
+.Nm .
+.It Ev JAVAVM_OPTS_JAVA_HOME_DIR
+The contents of this variable are passed as options to all java
+commands invoked by javavm within the
+.Pa JAVA_HOME_DIR
+directory specified.
+The
+.Pa JAVA_HOME_DIR
+specified here is the directory portion of
+.Ev JAVA_HOME
+with special characters replaced by an underscore.
+.It Ev JAVAVM_OPTS_JAVA_PROG
+The contents of this variable are passed as options to all invocations
+of the specified java programme.
+.It Ev JAVAVM_OPTS_JAVA_HOME_DIR_JAVA_PROG
+The contents of this variable are passed as options to the invocation
+of the specified java programme within the specified JAVA_HOME
+directory.
+This allows the options to only affect a single programme.
+.El
+.Sh FILES
+.Bl -tag -width indent
+.It Pa %%PREFIX%%/etc/javavm_opts.conf
+The location of the Java VM wrapper options configuration file.
+.It Pa %%PREFIX%%/etc/javavm_opts.conf.dist
+The location of the example Java VM wrapper options configuration file
+distributed with the Java VM wrapper.
+.El
+.Sh EXAMPLES
+.Bl -tag -width indent
+.It Ev JAVAVM_OPTS_diablo_jdk1_5_0=-XX:+UseMembar
+Run the Java VMs installed by the Diablo JDK in
+.Pa %%PREFIX%%/diablo-jdk1.5.0
+with the option
+.Dq -XX:+UseMembar .
+.It Ev JAVAVM_OPTS_javac=-deprecation
+Run the
+.Pa javac
+programme with the option
+.Dq -deprecation .
+.It Ev JAVAVM_OPTS_diablo_jdk1_5_0_javac=-Xlint
+Run the javac installed by the Diablo JDK with the option
+.Dq -Xlint .
+.El
+.Pp
+Due to stacking, if the above three variables were set, then the javac
+installed by the Diablo JDK would run with the options
+.Dq -XX:+UseMembar -deprecation -Xlint
+(although not necessarily in that order).
+.Sh SEE ALSO
+.Xr javavm 1

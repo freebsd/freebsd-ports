@@ -34,6 +34,7 @@ export PATH=/bin:/sbin:/usr/bin:/usr/sbin
 
 _JAVAVM_PREFIX="%%PREFIX%%"
 _JAVAVM_CONF="${_JAVAVM_PREFIX}/etc/javavms"
+_JAVAVM_OPTS_CONF="${_JAVAVM_PREFIX}/etc/javavm_opts.conf"
 _JAVAVM_PROG=`basename "${0}"`
 _JAVAVM_MAKE=/usr/bin/make
 
@@ -50,6 +51,33 @@ tryJavaCommand () {
     fi
 
     echo "${_JAVAVM_PROG}: warning: couldn't run specified Java command - \"${1}\"" >&2
+}
+
+#
+# Set java command options, if applicable
+# 1 - Name of the java programme to be executed.
+# 2 - Base directory of JAVA_HOME for the java programme to be executed.
+#
+setJavaOptions () {
+    local OPTS_PROG=`echo ${1} | sed -e s/\\\\./_/g -e s/-/_/g`
+    local OPTS_JAVA_HOME=`echo ${2} | sed -e s/\\\\./_/g -e s/-/_/g`
+    local JAVA_HOME_PROG_OPTS="`eval echo \$\{JAVAVM_OPTS_${OPTS_JAVA_HOME}_${OPTS_PROG}\} 2>/dev/null`"
+    local JAVA_HOME_OPTS="`eval echo \$\{JAVAVM_OPTS_${OPTS_JAVA_HOME}\} 2>/dev/null`"
+    local PROG_OPTS="`eval echo \$\{JAVAVM_OPTS_${OPTS_PROG}\} 2>/dev/null`"
+
+    # Possible environment variables are stackable
+    if [ ! -z "${JAVA_HOME_PROG_OPTS}" ]; then
+        _JAVAVM_OPTS="${_JAVAVM_OPTS} ${JAVA_HOME_PROG_OPTS}"
+    fi
+    if [ ! -z "${JAVA_HOME_OPTS}" ]; then
+        _JAVAVM_OPTS="${_JAVAVM_OPTS} ${JAVA_HOME_OPTS}"
+    fi
+    if [ ! -z "${PROG_OPTS}" ]; then
+        _JAVAVM_OPTS="${_JAVAVM_OPTS} ${PROG_OPTS}"
+    fi
+    if [ ! -z "${JAVAVM_OPTS}" ]; then
+        _JAVAVM_OPTS="${_JAVAVM_OPTS} ${JAVAVM_OPTS}"
+    fi
 }
 
 #
@@ -412,15 +440,23 @@ if [ "${_JAVAVM_PROG}" = "javavm" ]; then
     _JAVAVM_PROG=java
 fi
 
+# Initialise options
+if [ -r "${_JAVAVM_OPTS_CONF}" ]; then
+    . "${_JAVAVM_OPTS_CONF}"
+fi
+_JAVAVM_OPTS=
+
 # Ignore JAVA_HOME if it's set to %%PREFIX%%
 if [ "`realpath "${JAVA_HOME}"`" != "`realpath "${_JAVAVM_PREFIX}"`" ]; then
     # Otherwise use JAVA_HOME if it's set
     if [ ! -z "${JAVA_HOME}" -a -x "${JAVA_HOME}/bin/${_JAVAVM_PROG}" ]; then
+        setJavaOptions "${_JAVAVM_PROG}" "`basename ${JAVA_HOME}`"
         export JAVA_HOME
-        tryJavaCommand "${JAVA_HOME}/bin/${_JAVAVM_PROG}" "${@}"
+        tryJavaCommand "${JAVA_HOME}/bin/${_JAVAVM_PROG}" ${_JAVAVM_OPTS} "${@}"
     elif [ ! -z "${JAVA_HOME}" -a -x "${JAVA_HOME}/jre/bin/${_JAVAVM_PROG}" ]; then
+        setJavaOptions "${_JAVAVM_PROG}" "`basename ${JAVA_HOME}`"
         export JAVA_HOME
-        tryJavaCommand "${JAVA_HOME}/jre/bin/${_JAVAVM_PROG}" "${@}"
+        tryJavaCommand "${JAVA_HOME}/jre/bin/${_JAVAVM_PROG}" ${_JAVAVM_OPTS} "${@}"
     fi
 fi
 
@@ -442,12 +478,14 @@ if [ ! -z "${_JAVAVM_BSD_PORT_MK}" ]; then
     JAVA_HOME=`"${_JAVAVM_MAKE}" -f "${_JAVAVM_BSD_PORT_MK}" -V JAVA_HOME USE_JAVA=yes 2>/dev/null`
     if [ ! -z "${JAVA_HOME}" -a \
          -x "${JAVA_HOME}/bin/${_JAVAVM_PROG}" ]; then
+        setJavaOptions "${_JAVAVM_PROG}" "`basename ${JAVA_HOME}`"
         export JAVA_HOME
-        tryJavaCommand "${JAVA_HOME}/bin/${_JAVAVM_PROG}" "${@}"
+        tryJavaCommand "${JAVA_HOME}/bin/${_JAVAVM_PROG}" ${_JAVAVM_OPTS} "${@}"
     elif [ ! -z "${JAVA_HOME}" -a \
            -x "${JAVA_HOME}/jre/bin/${_JAVAVM_PROG}" ]; then
+        setJavaOptions "${_JAVAVM_PROG}" "`basename ${JAVA_HOME}`"
         export JAVA_HOME
-        tryJavaCommand "${JAVA_HOME}/jre/bin/${_JAVAVM_PROG}" "${@}"
+        tryJavaCommand "${JAVA_HOME}/jre/bin/${_JAVAVM_PROG}" ${_JAVAVM_OPTS} "${@}"
     fi
 fi
 
@@ -561,12 +599,14 @@ for _JAVAVM_JAVAVM in ${_JAVAVM_VMS}; do
     # Check if the command exists and try to run it.
     if [ ! -z "${JAVA_HOME}" -a \
          -x "${JAVA_HOME}/bin/${_JAVAVM_PROG}" ]; then
+        setJavaOptions "${_JAVAVM_PROG}" "`basename ${JAVA_HOME}`"
         export JAVA_HOME
-        tryJavaCommand "${JAVA_HOME}/bin/${_JAVAVM_PROG}" "${@}"
+        tryJavaCommand "${JAVA_HOME}/bin/${_JAVAVM_PROG}" ${_JAVAVM_OPTS} "${@}"
     elif [ ! -z "${JAVA_HOME}" -a \
            -x "${JAVA_HOME}/jre/bin/${_JAVAVM_PROG}" ]; then
+        setJavaOptions "${_JAVAVM_PROG}" "`basename ${JAVA_HOME}`"
         export JAVA_HOME
-        tryJavaCommand "${JAVA_HOME}/jre/bin/${_JAVAVM_PROG}" "${@}"
+        tryJavaCommand "${JAVA_HOME}/jre/bin/${_JAVAVM_PROG}" ${_JAVAVM_OPTS} "${@}"
     fi
 done
 

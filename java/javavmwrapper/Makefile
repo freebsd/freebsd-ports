@@ -8,8 +8,7 @@
 #
 
 PORTNAME=	javavmwrapper
-PORTVERSION=	2.0
-PORTREVISION=	7
+PORTVERSION=	2.1
 CATEGORIES=	java
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -25,7 +24,7 @@ NO_WRKSUBDIR=	yes
 PKGINSTALL=	${WRKDIR}/pkg-install
 
 MAN1=		checkvms.1 javavm.1 registervm.1 unregistervm.1
-MAN5=		javavms.5
+MAN5=		javavm_opts.conf.5 javavms.5
 
 SRC=		${.CURDIR}/src
 SCRIPTS=	classpath javavmwrapper
@@ -62,7 +61,11 @@ do-install:
 .endfor
 	${INSTALL_MAN} ${WRKDIR}/registervm.1 \
 		${MAN1PREFIX}/man/man1/unregistervm.1
-	${INSTALL_MAN} ${WRKDIR}/${MAN5} ${MAN5PREFIX}/man/man5
+.for _man in ${MAN5}
+	${INSTALL_MAN} ${WRKDIR}/${_man} ${MAN5PREFIX}/man/man5
+.endfor
+	${INSTALL_DATA} ${FILESDIR}/javavm_opts.conf.dist \
+		${PREFIX}/etc/javavm_opts.conf.dist
 
 post-install:
 	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} \

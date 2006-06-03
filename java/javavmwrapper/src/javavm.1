@@ -1,6 +1,6 @@
 .\"
 .\" Copyright (C) 2005 Greg Lewis. All rights reserved.
-.\" 
+.\"
 .\" Redistribution and use in source and binary forms, with or without
 .\" modification, are permitted provided that the following conditions
 .\" are met:
@@ -9,7 +9,7 @@
 .\" 2. Redistributions in binary form must reproduce the above copyright
 .\"    notice, this list of conditions and the following disclaimer in the
 .\"    documentation and/or other materials provided with the distribution.
-.\" 
+.\"
 .\" THIS SOFTWARE IS PROVIDED BY AUTHOR AND CONTRIBUTORS ``AS IS'' AND
 .\" ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
 .\" IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
@@ -124,6 +124,12 @@ Currently allowed versions are
 .Ql 1.5
 and
 .Ql 1.5+ .
+.It Ev JAVAVM_OPTS
+The contents of this environment variable will be passed to the invoked
+Java VM as options.
+For more information on environment variables which can be used to set
+options see
+.Pa %%PREFIX%%/etc/javavm_opts.conf.dist .
 .El
 .Sh FILES
 .Bl -tag -width indent
@@ -157,6 +163,7 @@ Execute MyApp with either a Java VM that is either version 1.2 or version 1.4.
 .Xr make 1 ,
 .Xr registervm 1 ,
 .Xr unregistervm 1 ,
+.Xr javavm_opts.conf 5 ,
 .Xr javavms 5
 .Sh BUGS
 The internal selection procedure of
