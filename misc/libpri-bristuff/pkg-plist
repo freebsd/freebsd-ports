@@ -1,4 +1,4 @@
-include/libpri.h
-lib/libpri.a
-lib/libpri.so
-lib/libpri.so.1
+include/libpri-bristuff.h
+lib/libpri-bristuff.a
+lib/libpri-bristuff.so
+lib/libpri-bristuff.so.1
