@@ -63,7 +63,6 @@
     SUBDIR += kompmgr
     SUBDIR += larswm
     SUBDIR += libdockapp
-    SUBDIR += libepplet
     SUBDIR += lwm
     SUBDIR += matchbox
     SUBDIR += metacity
