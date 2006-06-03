@@ -22,12 +22,12 @@ MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	A C implementation of the Primary Rate ISDN specification
 
 USE_GMAKE=	yes
-INSTALLS_SHLIB= yes
+INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "alpha"
-BROKEN=		"Does not compile on alpha"
+BROKEN=		Does not compile on alpha
 .endif
 
 .include <bsd.port.post.mk>
