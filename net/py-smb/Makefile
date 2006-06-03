@@ -9,7 +9,9 @@
 PORTNAME=	smb
 PORTVERSION=	0.4.2
 CATEGORIES=	net python
-MASTER_SITES=	http://miketeo.net/projects/pysmb/
+MASTER_SITES=	http://miketeo.net/old/projects/pysmb/ \
+		http://mirror2.unixfreunde.de/ \
+		http://freebsd.unixfreunde.de/sources/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pysmb-${PORTVERSION}
 
