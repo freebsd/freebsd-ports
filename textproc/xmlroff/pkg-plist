@@ -33,7 +33,7 @@ include/libfo-0.3/util/fo-pixbuf.h
 lib/libfo-0.3.a
 lib/libfo-0.3.la
 lib/libfo-0.3.so
-lib/libfo-0.3.so.306
+lib/libfo-0.3.so.309
 libdata/pkgconfig/libfo-0.3.pc
 %%DOCSDIR%%/FoArea.html
 %%DOCSDIR%%/FoAreaArea.html
@@ -307,6 +307,7 @@ libdata/pkgconfig/libfo-0.3.pc
 %%DOCSDIR%%/xmlroff-border-style.html
 %%DOCSDIR%%/xmlroff-border-top.html
 %%DOCSDIR%%/xmlroff-border-width.html
+%%DOCSDIR%%/xmlroff-extent.html
 %%DOCSDIR%%/xmlroff-float.html
 %%DOCSDIR%%/xmlroff-fo-block-area.html
 %%DOCSDIR%%/xmlroff-fo-block-block-area.html
@@ -360,10 +361,10 @@ libdata/pkgconfig/libfo-0.3.pc
 %%DOCSDIR%%/xmlroff-space-startoptimum.html
 %%DOCSDIR%%/xmlroff-space-startprecedence.html
 %%DOCSDIR%%/xmlroff.devhelp
-share/xml/libfo-0.3.8/catalog.xml
-share/xml/libfo-0.3.8/libfo-compat.xsl
-share/xml/libfo-0.3.8/xmlroff.fo
-@dirrm share/xml/libfo-0.3.8
+share/xml/libfo-0.3.9/catalog.xml
+share/xml/libfo-0.3.9/libfo-compat.xsl
+share/xml/libfo-0.3.9/xmlroff.fo
+@dirrm share/xml/libfo-0.3.9
 @dirrmtry share/xml
 @dirrm %%DOCSDIR%%
 @dirrm include/libfo-0.3/util
