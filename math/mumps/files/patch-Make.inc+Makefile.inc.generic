@@ -1,0 +1,86 @@
+--- Make.inc/Makefile.inc.generic.orig	Fri Apr 14 08:00:50 2006
++++ Make.inc/Makefile.inc.generic	Fri May 26 10:28:02 2006
+@@ -39,20 +39,20 @@
+ #          Metis is now available as an internal ordering for MUMPS.
+ 
+ 
+-#LSCOTCHDIR = $(HOME)/JY/emilio/bin/generic
++#LSCOTCHDIR = @LOCALBASE@/lib
+ #LSCOTCH   = -L$(LSCOTCHDIR) -lesmumps  -lfax -lorder -lscotch -lsymbol -ldof -lgraph -lcommon -lm
+ 
+ LPORDDIR = ../PORD/lib/
+ IPORD    = -I../PORD/include/
+ LPORD    = -L$(LPORDDIR) -lpord
+ 
+-#LMETISDIR = Directory containing Metis library
++LMETISDIR = @LOCALBASE@/lib
+ #IMETIS    = # Metis doesn't need include files (Fortran interface avail.)
+ #LMETIS    = -L$(LMETISDIR) -lmetis
+ 
+ # Corresponding variables reused later
+ #ORDERINGS = -Dmetis -Dpord
+-ORDERINGSF  = -Dpord
++ORDERINGSF  += -Dpord
+ ORDERINGSC  = $(ORDERINGSF)
+ LORDERINGS = $(LMETIS) $(LPORD) $(LSCOTCH)
+ IORDERINGS = $(IMETIS) $(IPORD) $(ISCOTCH)
+@@ -66,11 +66,11 @@
+ # RM : remove files
+ RM      = /bin/rm -f
+ # CC : C compiler
+-CC      = cc
++CC      = @CC@
+ # FC : Fortran 90 compiler
+-FC      = f90
++FC      = @FC@
+ # FL : Fortran linker
+-FL      = f90
++FL      = @FC@
+ # AR : Archive object in a library
+ AR      = ar vr
+ # RANLIB : generate index of an archive file
+@@ -79,13 +79,13 @@
+ #RANLIB  = echo
+ 
+ # SCALAP should define the SCALAPACK and  BLACS libraries.
+-SCALAP  = -lscalapack -lblacs
++SCALAP  = -L@LOCALBASE@/lib -lscalapack -lblacs -lblacsc -lblacsf77 -lblacs
+ 
+ # INCLUDE DIRECTORY FOR MPI
+-INCPAR  = -I/usr/include
++INCPAR  = -I@LOCALBASE@/mpich/include
+ 
+ # LIBRARIES USED BY THE PARALLEL VERSION OF MUMPS: $(SCALAP) and MPI
+-LIBPAR  = $(SCALAP) -L/usr/lib -lmpi
++LIBPAR  = $(SCALAP) -L@LOCALBASE@/mpich/lib -lfmpich -lmpich
+ 
+ # The parallel version is not concerned by the next two lines.
+ # They are related to the sequential library provided by MUMPS,
+@@ -95,10 +95,10 @@
+ 
+ # DEFINE HERE YOUR BLAS LIBRARY
+ 
+-LIBBLAS = -lblas
++LIBBLAS = -L@LOCALBASE@/lib @BLAS_LIBS@
+ 
+ # DEFINE YOUR PTHREAD LIBRARY
+-LIBOTHERS = -lpthread
++LIBOTHERS = @PTHREAD_LIBS@ -lg2c
+ 
+ # FORTRAN/C COMPATIBILITY:
+ #  Use:
+@@ -111,11 +111,11 @@
+ #     leave empty if your Fortran compiler does not change the symbols.
+ #
+ 
+-CDEFS = -DAdd_
++CDEFS ?= -DAdd_
+ 
+ #COMPILER OPTIONS
+-OPTF    = -O
+-OPTC    = -O -I.
++OPTF    = @FCFLAGS@
++OPTC    = @CFLAGS@
+ OPTL    = -O
+ 
+ # CHOOSE BETWEEN USING THE SEQUENTIAL OR THE PARALLEL VERSION.

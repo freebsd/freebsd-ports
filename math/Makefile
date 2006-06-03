@@ -137,6 +137,7 @@
     SUBDIR += mprime
     SUBDIR += mtl
     SUBDIR += mtrxmath
+    SUBDIR += mumps
     SUBDIR += mupad
     SUBDIR += muparser
     SUBDIR += naturalmath
