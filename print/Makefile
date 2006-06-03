@@ -182,6 +182,7 @@
     SUBDIR += p5-PDFLib
     SUBDIR += p5-PostScript-Simple
     SUBDIR += p5-Text-PDF
+    SUBDIR += p5-XML-ApacheFOP
     SUBDIR += panda
     SUBDIR += passivetex
     SUBDIR += pcal

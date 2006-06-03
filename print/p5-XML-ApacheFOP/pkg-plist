@@ -1,0 +1,5 @@
+%%SITE_PERL%%/XML/ApacheFOP.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/ApacheFOP/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/ApacheFOP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
+@dirrmtry %%SITE_PERL%%/XML
