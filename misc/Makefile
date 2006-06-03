@@ -293,6 +293,7 @@
     SUBDIR += libhome
     SUBDIR += libmcal
     SUBDIR += libpri
+    SUBDIR += libpri-bristuff
     SUBDIR += libutf
     SUBDIR += lifelines
     SUBDIR += lile
