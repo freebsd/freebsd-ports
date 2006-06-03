@@ -1155,6 +1155,20 @@ MASTER_SITE_THEMES+= \
 	ftp://gd.tuwien.ac.at/opsys/linux/freshmeat/themes/%SUBDIR%/
 .endif
 
+.if !defined(IGNORE_MASTER_SITE_TUCOWS)
+.for mirror in chariot ns-linux iinets easyhost bihnet pucpr cdli olivant otenet hellasonline pihk \
+	cyberec panservice fastweb mclink kasnet wananchi latvia uunetnl wish bit vianl introweb \
+	dekooi inspirenet pl-task clix simplesnet netvisao idilis rdstm atk saix mweb mundo-r gva \
+	dataphone ankara tulumba tr-net mintac epix theplanet wcn ukms blueyonder
+MASTER_SITE_TUCOWS+= \
+	http://${mirror}.linux.tucows.com/files/%SUBDIR%/
+.endfor
+MASTER_SITE_TUCOWS+= \
+	http://linuxberg.nexicom.net/files/%SUBDIR%/ \
+	http://linuxberg.xs4all.nl/files/%SUBDIR%/ \
+	http://linuxberg.ua.pt/files/%SUBDIR%/
+.endif
+
 .if !defined(IGNORE_MASTER_SITE_VIM)
 MASTER_SITE_VIM+= \
 	ftp://ftp.vim.org/pub/vim/unix/  \
