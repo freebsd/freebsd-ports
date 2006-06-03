@@ -2038,7 +2038,6 @@ edonkey-gui-gtk-urlslave	ports/net-p2p/edonkey-gui-gtk-urlslave
 edonkey-tool-hash	ports/net-p2p/edonkey-tool-hash
 eel		ports/x11-toolkits/eel
 eet		ports/devel/eet
-efancylauncher	ports/x11/efancylauncher
 efax		ports/comms/efax
 efax-gtk	ports/comms/efax-gtk
 efltk		ports/x11-toolkits/efltk
