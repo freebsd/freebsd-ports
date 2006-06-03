@@ -7,7 +7,7 @@
 
 PORTNAME=	aster
 DISTVERSION=	8.2.0-4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	french cad python
 MASTER_SITES=	http://www.code-aster.org/FICHIERS/
 DISTNAME=	${PORTNAME}-full-src-${DISTVERSION}
@@ -23,8 +23,9 @@ COMMENT=	Code_Aster finite element method solver
 # - WITH_ZSH or WITH_BASH or WITH_KSH: select a shell among
 #			zsh (default), bash or ksh;
 # - WITH_ED: select an editor accepting '-display' (e.g. gvim, nedit);
-# - WITH_BLAS: don't link with atlas, but with blas;
-#			(blas is slower, but lighter)
+# - WITH_ATLAS: replace blas;
+# - WITH_BLAS: don't link with atlas, even if present, but with blas;
+#			(blas might be slower, but is lighter)
 # - WITHOUT_ASTK_CLI: won't use the GUI from this machine;
 # - WITHOUT_EFICAS: don't install ASter Command FIle Editor;
 # - WITHOUT_GMSH: don't install GMSH (a mesh generator);
@@ -32,6 +33,7 @@ COMMENT=	Code_Aster finite element method solver
 # - WITHOUT_MACR_RECAL: don't install Numerical Python
 #			(required by the macro MACR_RECAL);
 # - WITHOUT_SCOTCH: don't install Scotch.
+# - WITH_MUMPS: install the interface between Code_Aster and MUMPS (experimental)
 #
 #-----------------------------------------------------------------------
 
@@ -47,8 +49,8 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/Gnuplot:${PORTSDIR}/math/py-gnuplot	\
 		${LOCALBASE}/bin/onmetis.exe:${PORTSDIR}/math/metis-edf		\
 		${LOCALBASE}/aster/ASTK/ASTK_SERV:${PORTSDIR}/cad/astk-serveur
 
-#USE_GCC=	3.4	# Helps on 4.x, but not sufficient.
 USE_PYTHON=	yes
+USE_BISON=	yes
 HAS_CONFIGURE=	yes
 REINPLACE_ARGS=	-i ""
 
@@ -80,10 +82,13 @@ BROKEN=	Seg. fault on ${ARCH} during compilation of elements.
 BROKEN=		Does not build on sparc64
 .endif
 
-.if defined(WITH_BLAS)
-LIB_DEPENDS+=	blas.1:${PORTSDIR}/math/blas
-.else
+.if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
+WITH_ATLAS=	yes
+.endif
+.if defined(WITH_ATLAS)
 LIB_DEPENDS+=	f77blas.1:${PORTSDIR}/math/atlas
+.else
+LIB_DEPENDS+=	blas.1:${PORTSDIR}/math/blas
 .endif
 .if !defined(WITHOUT_ASTK_CLI)
 RUN_DEPENDS+=	${ASTKDIR}:${PORTSDIR}/cad/astk-client
@@ -114,6 +119,17 @@ RUN_DEPENDS+=	${PYNUMERIC}
 .endif
 .if !defined(WITHOUT_SCOTCH)
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libscotch.a:${PORTSDIR}/cad/scotch
+.endif
+
+.if exists(${LOCALBASE}/lib/libcmumps.a)
+WITH_MUMPS=	yes
+.endif
+.if defined(WITH_MUMPS)
+F90=		gfortran41
+FC=		${LOCALBASE}/bin/${F90}
+DLIBF90!=	${DIRNAME} `${LDCONFIG} -r | ${GREP} gfortran | ${AWK} '{print $$3}'`
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libcmumps.a:${PORTSDIR}/math/mumps	\
+		${FC}:${PORTSDIR}/lang/gfortran
 .endif
 
 .if !${OSVERSION} < 500039
@@ -178,20 +194,22 @@ v_ifdef=	${OPSYS:U}
 SHELL_INSTALL_ASTER=	${LOCALBASE}/bin/${SHIA}
 tcl_dir=	${LOCALBASE}
 hdf_dir=	${LOCALBASE}
-.if defined(WITH_BLAS)
-lib_blas=	blas
+.if defined(WITH_ATLAS)
+lib_blas=	ptf77blas
+lib_atlas=	atlas_r
 .else
-lib_blas=	f77blas
-lib_atlas=	atlas
+lib_blas=	blas
+lib_atlas=	# empty
 .endif
 LASTKDIR?=	${PORTNAME}/ASTK/ASTK_CLIENT
 ASTKDIR=	${LOCALBASE}/${LASTKDIR}
 
 pre-configure:
+	@${REINPLACE_CMD} -e 's|PREFER_SHARED_LIBS=False|PREFER_SHARED_LIBS=True|' ${WRKSRC}/setup.cfg
 	@${REINPLACE_CMD} -e 's|/opt/aster|${WRKSRC}/instdir|'		\
 		-e 's|/usr/bin/gcc|${CC}|;s|/usr/bin/g77|${F77}|'	\
 		${WRKSRC}/setup.cfg
-.if !defined(WITH_BLAS)
+.if defined(WITH_ATLAS)
 	@${REINPLACE_CMD} -e "s|cfg\['BLASLIB'\]|cfg['BLASLIB'], cfg['ATLASLIB']|"	\
 		${WRKSRC}/products.py
 .endif
@@ -212,13 +230,24 @@ pre-configure:
 	@${ECHO_CMD} "_install_aster_Linux = False"		>> ${WRKSRC}/setup.cfg
 	@${ECHO_CMD} "_install_scotch  = False"			>> ${WRKSRC}/setup.cfg
 	@${ECHO_CMD} "HOME_SCOTCH = '${LOCALBASE}'"		>> ${WRKSRC}/setup.cfg
+.if defined(WITH_MUMPS)
+	@${ECHO_CMD} "HOME_MUMPS = '${LOCALBASE}'"		>> ${WRKSRC}/setup.cfg
+	@${ECHO_CMD} "F90='${LOCALBASE}/bin/gfortran41'"	>> ${WRKSRC}/setup.cfg
+	@${ECHO_CMD} "SYSLIB='-Xlinker -export-dynamic ${PTHREAD_LIBS} -lutil -lm -lz -lg2c -L${DLIBF90} -lgfortran'"	\
+		>> ${WRKSRC}/setup.cfg
+.else
 	@${ECHO_CMD} "HOME_MUMPS = ''"				>> ${WRKSRC}/setup.cfg
+	@${ECHO_CMD} "SYSLIB='-Xlinker -export-dynamic ${PTHREAD_LIBS} -lutil -lm -lz -lg2c'"	\
+		>> ${WRKSRC}/setup.cfg
+.endif
 	@${ECHO_CMD} "HOME_ZMAT = ''"				>> ${WRKSRC}/setup.cfg
 	@${ECHO_CMD} "HOME_HDF='${hdf_dir}'"			>> ${WRKSRC}/setup.cfg
 	@${ECHO_CMD} "HOME_MED='${LOCALBASE}'"			>> ${WRKSRC}/setup.cfg
 	@${ECHO_CMD} "HOME_TCL_TK='${tcl_dir}'"			>> ${WRKSRC}/setup.cfg
-	@${ECHO_CMD} "BLASLIB='${lib_blas}'"			>> ${WRKSRC}/setup.cfg
+.if defined(WITH_ATLAS)
 	@${ECHO_CMD} "ATLASLIB='${lib_atlas}'"			>> ${WRKSRC}/setup.cfg
+.endif
+	@${ECHO_CMD} "BLASLIB='${lib_blas}'"			>> ${WRKSRC}/setup.cfg
 	@${ECHO_CMD} "LAPACKLIB='${LOCALBASE}/lib/liblapack.a'"	>> ${WRKSRC}/setup.cfg
 	@${ECHO_CMD} "GZIP='/usr/bin/gzip'"			>> ${WRKSRC}/setup.cfg
 	@${ECHO_CMD} "SHELL_EXECUTION='${SHELL_INSTALL_ASTER}'"	>> ${WRKSRC}/setup.cfg
@@ -226,11 +255,13 @@ pre-configure:
 	@${ECHO_CMD} "LDFLAGS='-v ${LDFLAGS}'"			>> ${WRKSRC}/setup.cfg
 	@${ECHO_CMD} "FFLAGS='-c ${FFLAGS} -D${FLAGARCH}'"	>> ${WRKSRC}/setup.cfg
 	@${ECHO_CMD} "FFLAGS_DBG='-c -g -O -D${FLAGARCH}'"	>> ${WRKSRC}/setup.cfg
+	@${ECHO_CMD} "F90FLAGS='-c ${FFLAGS} -ff2c -D${FLAGARCH}'"		\
+		>> ${WRKSRC}/setup.cfg
+	@${ECHO_CMD} "F90FLAGS_DBG='-c -g -O -ff2c -D${FLAGARCH}'"		\
+		>> ${WRKSRC}/setup.cfg
 	@${ECHO_CMD} "CFLAGS='-c ${CFLAGS} ${PTHREAD_CFLAGS} -D${FLAGARCH}'"	\
 		>> ${WRKSRC}/setup.cfg
 	@${ECHO_CMD} "CFLAGS_DBG='-c -g -O -pipe ${PTHREAD_CFLAGS} -D${FLAGARCH}'"	\
-		>> ${WRKSRC}/setup.cfg
-	@${ECHO_CMD} "SYSLIB='-Xlinker -export-dynamic ${PTHREAD_LIBS} -lutil -lm -lz -lg2c'"	\
 		>> ${WRKSRC}/setup.cfg
 
 do-configure:
@@ -305,7 +336,7 @@ post-install:
 	@${ECHO_MSG}
 
 .if defined(MAINTAINER_MODE)
-test:	install
+regression-test:	install
 	(cd ${inst_dir};	\
 	${LOCALBASE}/aster/ASTK/ASTK_SERV/bin/as_run forma01a.export)
 	@${ECHO_CMD} Note: homard must be installed to run some steps succesfully.
