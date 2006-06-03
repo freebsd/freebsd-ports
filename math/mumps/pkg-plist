@@ -1,0 +1,25 @@
+include/cmumps_c.h
+include/cmumps_prec.h
+include/cmumps_root.h
+include/cmumps_struc.h
+include/dmumps_c.h
+include/dmumps_prec.h
+include/dmumps_root.h
+include/dmumps_struc.h
+include/smumps_c.h
+include/smumps_prec.h
+include/smumps_root.h
+include/smumps_struc.h
+include/zmumps_c.h
+include/zmumps_prec.h
+include/zmumps_root.h
+include/zmumps_struc.h
+lib/libcmumps.a
+lib/libdmumps.a
+lib/libsmumps.a
+lib/libzmumps.a
+lib/libpord.a
+%%WITH_LIBSEQ%%lib/libmpiseq.a
+%%PORTDOCS%%%%DOCSDIR%%/userguide_%%MUMPSVERSION%%.pdf
+%%PORTDOCS%%%%DOCSDIR%%/userguide_%%MUMPSVERSION%%.ps.gz
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

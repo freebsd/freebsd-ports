@@ -1,0 +1,70 @@
+--- Make.inc/Makefile.inc.generic.SEQ.orig	Fri Apr 14 08:00:50 2006
++++ Make.inc/Makefile.inc.generic.SEQ	Fri May 26 10:27:58 2006
+@@ -42,20 +42,20 @@
+ #          Metis is now available as an internal ordering for MUMPS.
+ 
+ 
+-#LSCOTCHDIR = $(HOME)/JY/emilio/bin/generic
++#LSCOTCHDIR = @LOCALBASE@/lib
+ #LSCOTCH   = -L$(LSCOTCHDIR) -lesmumps  -lfax -lorder -lscotch -lsymbol -ldof -lgraph -lcommon -lm
+ 
+ LPORDDIR = ../PORD/lib/
+ IPORD    = -I../PORD/include/
+ LPORD    = -L$(LPORDDIR) -lpord
+ 
+-#LMETISDIR = Directory containing Metis library
++LMETISDIR = @LOCALBASE@/lib
+ #IMETIS    = # Metis doesn't need include files (Fortran interface avail.)
+ #LMETIS    = -L$(LMETISDIR) -lmetis
+ 
+ # Corresponding variables reused later
+ #ORDERINGS = -Dmetis -Dpord
+-ORDERINGSF  = -Dpord
++ORDERINGSF  += -Dpord
+ ORDERINGSC  = $(ORDERINGSF)
+ LORDERINGS = $(LMETIS) $(LPORD) $(LSCOTCH)
+ IORDERINGS = $(IMETIS) $(IPORD) $(ISCOTCH)
+@@ -69,11 +69,11 @@
+ # RM : remove files
+ RM      = /bin/rm -f
+ # CC : C compiler
+-CC      = cc
++CC      = @CC@
+ # FC : Fortran 90 compiler
+-FC      = f90
++FC      = @FC@
+ # FL : Fortran linker
+-FL      = f90
++FL      = @FC@
+ # AR : Archive object in a library
+ AR      = ar vr
+ # RANLIB : generate index of an archive file
+@@ -89,10 +89,10 @@
+ 
+ # DEFINE HERE YOUR BLAS LIBRARY
+ 
+-LIBBLAS = -lblas
++LIBBLAS = -L@LOCALBASE@/lib @BLAS_LIBS@
+ 
+ # DEFINE HERE YOUR PTHREAD LIBRARY
+-LIBOTHERS = -lpthread
++LIBOTHERS = @PTHREAD_LIBS@ -lg2c
+ 
+ # FORTRAN/C COMPATIBILITY:
+ #  Use:
+@@ -105,12 +105,12 @@
+ #     leave empty if your Fortran compiler does not change the symbols.
+ #
+ 
+-CDEFS = -DAdd_
++CDEFS ?= -DAdd_
+ 
+ #COMPILER OPTIONS
+ 
+-OPTF    = -O
+-OPTC    = -O -I.
++OPTF    = @FCFLAGS@
++OPTC    = @CFLAGS@
+ OPTL    = -O
+ 
+ #Sequential:
