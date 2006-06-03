@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	icbirc
-PORTVERSION=	1.6
+PORTVERSION=	1.7
 CATEGORIES=	irc
 MASTER_SITES=	http://www.benzedrine.cx/
 
