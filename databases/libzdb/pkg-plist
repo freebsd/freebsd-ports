@@ -4,5 +4,6 @@ include/PreparedStatement.h
 include/ResultSet.h
 include/URL.h
 lib/libzdb.a
+lib/libzdb.la
 lib/libzdb.so
 lib/libzdb.so.1
