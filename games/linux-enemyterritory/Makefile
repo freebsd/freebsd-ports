@@ -95,7 +95,6 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/Linux/x86/${FILE} ${ETDIR}
 .endfor
 
-	${INSTALL_DIR} ${PREFIX}/bin
 .for FILE in et etded
 	${INSTALL_SCRIPT} ${WRKSRC}/${FILE} ${PREFIX}/bin
 .endfor
