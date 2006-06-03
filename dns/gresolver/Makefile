@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gresolver
-PORTVERSION=	0.0.4
-PORTREVISION=	1
+PORTVERSION=	0.0.5
 CATEGORIES=	dns
 MASTER_SITES=	http://jodrell.net/files/gresolver/
 
@@ -21,6 +20,20 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Locale/gettext.pm:${PORTSDIR}/devel/p5-Lo
 
 USE_X_PREFIX=	yes
 
+.include <bsd.port.pre.mk>
+
+# The Perl script uses GtkFileChooser widgets, which need libpthread
+# through /usr/X11R6/lib/gtk-2.0/2.4.0/filesystems/libgnome-vfs.so.
+# Unfortunately, on FreeBSD, if an application uses a library which
+# uses libpthread, the application itself must link against
+# libpthread. This is why a threaded Perl is required.
+
+HAVE_THREADS!=	${PERL} -mthreads -e '' >/dev/null 2>&1 && ${ECHO_CMD} 'yes' || true
+
+.if empty(HAVE_THREADS)
+IGNORE=		needs a threaded Perl, install lang/perl5.8 with threads support and try again
+.endif
+
 do-build:
 	@${SED} -e 's|@PREFIX@|${PREFIX}|' ${WRKSRC}/gresolver.pl > ${WRKSRC}/gresolver
 
@@ -33,4 +46,4 @@ do-install:
 	${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/gresolver.glade ${DATADIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
