@@ -1,5 +1,5 @@
---- code/qcommon/files.c.orig	Thu May 25 16:39:34 2006
-+++ code/qcommon/files.c	Thu May 25 16:41:43 2006
+--- ./code/qcommon/files.c.orig	Wed May 31 18:55:11 2006
++++ ./code/qcommon/files.c	Wed May 31 18:55:13 2006
 @@ -2763,6 +2763,7 @@
  	if (fs_basepath->string[0]) {
  		FS_AddGameDirectory( fs_basepath->string, gameName );

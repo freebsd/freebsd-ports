@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	quake3
-PORTVERSION=	1.32b
-PORTREVISION=	5
+PORTVERSION=	1.32c
 CATEGORIES=	games
 MASTER_SITES=	http://www.proarena.com/p/ftpx/x8524/quake_3_arena/ \
 		http://www.planetgargoyle.com/ \
@@ -15,7 +14,7 @@ MASTER_SITES=	http://www.proarena.com/p/ftpx/x8524/quake_3_arena/ \
 		http://0day.icculus.org/mirrors/quake3/ \
 		http://www.olpainless.net/files/ \
 		${MASTER_SITE_IDSOFTWARE:S|$|source/|}
-DISTFILES=	${DISTNAME}-source${EXTRACT_SUFX}
+DISTNAME=	${PORTNAME}-${REALVERSION}-source
 
 MAINTAINER=	shirshegsm@gmail.com
 COMMENT=	Quake III Arena -- first person shooter (native build)
@@ -24,11 +23,12 @@ USE_ZIP=	yes
 USE_DOS2UNIX=	yes
 USE_GMAKE=	yes
 USE_GCC=	3.2+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${REALVERSION}
 BUILD_WRKSRC=	${WRKSRC}/code/unix
 
 OPTIONS=	CLIENT "Build client" on \
 		DEDICATED "Build dedicated server" on \
-		GAMELIBS "Build game libraries (mandatory on !i386)" off \
+		GAMELIBS "Build game libraries (when not mandatory)" off \
 		OPTIMIZED_CFLAGS "Enable compilation optimizations" on \
 		SMP "Build SMP (threaded) client" on
 
@@ -36,6 +36,7 @@ MAKE_ENV=	LIBDIR="${LIBDIR}"
 PLIST_SUB=	LIBDIR="${LIBDIR:S/${PREFIX}\///}"
 
 LIBDIR=		${PREFIX}/lib/${PORTNAME}
+REALVERSION=	1.32b
 
 .include <bsd.port.pre.mk>
 
@@ -45,10 +46,10 @@ IGNORE=		needs at least one of CLIENT, DEDICATED and SMP options
 .endif
 
 .if ${ARCH} == "i386"
-BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
+BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm
 .endif
 
-.if !defined(WITHOUT_CLIENT) && !defined(WITHOUT_SMP)
+.if !defined(WITHOUT_CLIENT) || !defined(WITHOUT_SMP)
 USE_GL=		yes
 .endif
 
@@ -68,7 +69,7 @@ Q3BIN+=		q3ded
 PLIST_SUB+=	DEDICATED="@comment "
 .endif
 
-.if defined(WITH_GAMELIBS) || ${ARCH} != "i386"
+.if defined(WITH_GAMELIBS) || (${ARCH} != "i386" && ${ARCH} != "powerpc")
 MAKE_ENV+=	GAMELIBS=YES
 PLIST_SUB+=	GAMELIBS=""
 .else
@@ -94,14 +95,13 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|//[[:blank:]]*\(Swap_Init[[:blank:]]*();\)|\1|' \
 		${WRKSRC}/code/botlib/be_interface.c \
-		${WRKSRC}/code/qcommon/common.c \
 		${WRKSRC}/code/renderer/tr_init.c
 
 do-install:
 .for bin in ${Q3BIN}
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/release/${bin} ${PREFIX}/bin
 .endfor
-.if defined(WITH_GAMELIBS) || ${ARCH} != "i386"
+.if defined(WITH_GAMELIBS) || (${ARCH} != "i386" && ${ARCH} != "powerpc")
 .for dir in baseq3 missionpack
 	${MKDIR} ${LIBDIR}/${dir}
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/release/${dir}/*.so ${LIBDIR}/${dir}

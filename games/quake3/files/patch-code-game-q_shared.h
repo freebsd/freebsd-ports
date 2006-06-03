@@ -1,5 +1,5 @@
---- code/game/q_shared.h.orig	Thu May 25 13:26:31 2006
-+++ code/game/q_shared.h	Thu May 25 13:26:58 2006
+--- ./code/game/q_shared.h.orig	Wed May 31 18:55:11 2006
++++ ./code/game/q_shared.h	Wed May 31 19:06:40 2006
 @@ -150,12 +150,14 @@
  
  #define ID_INLINE __inline 
@@ -102,6 +102,15 @@
  
  #if !( defined __VECTORC )
  void Com_Memset (void* dest, const int val, const size_t count);
+@@ -787,7 +800,7 @@
+ float Com_Clamp( float min, float max, float value );
+ 
+ char	*COM_SkipPath( char *pathname );
+-void	COM_StripExtension( const char *in, char *out );
++void	COM_StripExtension( const char *in, char *out, int destsize );
+ void	COM_DefaultExtension( char *path, int maxSize, const char *extension );
+ 
+ void	COM_BeginParseSession( const char *name );
 @@ -888,18 +901,18 @@
  } qint64;
  

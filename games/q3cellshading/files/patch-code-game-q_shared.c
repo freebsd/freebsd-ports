@@ -1,6 +1,33 @@
---- code/game/q_shared.c.orig	Thu May 25 13:42:26 2006
-+++ code/game/q_shared.c	Thu May 25 13:44:30 2006
-@@ -99,29 +99,29 @@
+--- ./code/game/q_shared.c.orig	Wed May 31 18:55:11 2006
++++ ./code/game/q_shared.c	Wed May 31 19:06:32 2006
+@@ -58,13 +58,20 @@
+ COM_StripExtension
+ ============
+ */
+-void COM_StripExtension( const char *in, char *out ) {
+-	while ( *in && *in != '.' ) {
+-		*out++ = *in++;
+-	}
+-	*out = 0;
+-}
++void COM_StripExtension( const char *in, char *out, int destsize ) {
++	int	length;
+ 
++	Q_strncpyz(out, in, destsize);
++
++	length = strlen(out)-1;
++	while (length > 0 && out[length] != '.') {
++		length--;
++		if (out[length] == '/')
++			return;		// no extension
++	}
++	if (length)
++		out[length] = 0;
++}
+ 
+ /*
+ ==================
+@@ -99,29 +106,29 @@
  
  ============================================================================
  */
@@ -45,7 +72,7 @@
  {
  	byte    b1,b2;
  
-@@ -131,12 +131,12 @@
+@@ -131,12 +138,12 @@
  	return (b1<<8) + b2;
  }
  
@@ -60,7 +87,7 @@
  {
  	byte    b1,b2,b3,b4;
  
-@@ -145,15 +145,15 @@
+@@ -145,15 +152,15 @@
  	b3 = (l>>16)&255;
  	b4 = (l>>24)&255;
  
@@ -79,7 +106,7 @@
  {
  	qint64	result;
  
-@@ -199,7 +199,7 @@
+@@ -199,7 +206,7 @@
  Swap_Init
  ================
  */
@@ -88,7 +115,7 @@
  void Swap_Init (void)
  {
  	byte	swaptest[2] = {1,0};
-@@ -229,7 +229,7 @@
+@@ -229,7 +236,7 @@
  	}
  
  }
