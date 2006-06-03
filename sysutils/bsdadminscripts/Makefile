@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bsdadminscripts
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -24,7 +24,7 @@ PLIST_FILES+=	${RC_SCRIPTS:S,^,sbin/rc,}
 .endif
 
 .if !defined(WITHOUT_PORTCONFIG)
-RUN_DEPENDS=	portupgrade:${PORTSDIR}/sysutils/portupgrade
+RUN_DEPENDS+=	portupgrade:${PORTSDIR}/sysutils/portupgrade
 PLIST_FILES+=	${PORT_SCRIPTS:S,^,sbin/port,}
 .endif
 
