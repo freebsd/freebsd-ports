@@ -1,6 +1,6 @@
---- hacks/webcollage.orig	Sun Apr 20 02:07:13 2003
-+++ hacks/webcollage	Sun Apr 20 02:07:52 2003
-@@ -31,6 +31,9 @@
+--- hacks/webcollage.orig	Wed May 17 16:58:51 2006
++++ hacks/webcollage	Sun Jun  4 00:01:46 2006
+@@ -38,6 +38,9 @@
  #
  # Driftnet is the Unix implementation of the MacOS "EtherPEG" program.
  
@@ -10,7 +10,7 @@
  
  require 5;
  use strict;
-@@ -46,10 +49,6 @@
+@@ -53,10 +56,6 @@
  require POSIX;
  use Fcntl ':flock'; # import LOCK_* constants
  use POSIX qw(strftime);
