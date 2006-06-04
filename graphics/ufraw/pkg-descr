@@ -1,17 +1,10 @@
-UFRaw - Unidentified Flying Raw
-Raw photo loader plugin for The GIMP
-by udi Fuchs,
+The Unidentified Flying Raw (UFRaw) is a utility to read and manipulate
+raw images from digital cameras. It can be used on its own or as a Gimp
+plug-in. It reads raw images using Dave Coffin's raw conversion utility
+- DCRaw. UFRaw supports basic color management using Little CMS,
+allowing the user to apply color profiles. For Nikon users UFRaw has the
+advantage that it can read the camera's tone curves. Even if you don't
+own a Nikon, you can still apply a Nikon curve to your images.
 
-UFRaw is a utility to read and manipulate raw images from digital cameras.
-It can be used by itself or as a Gimp plug-in.
-It reads raw images using Dave Coffin's raw conversion utility DCRaw.
-And it supports basic color management using Little CMS, allowing
-the user to apply color profiles.
- 
-Ufraw was originally based on the gimp plug-in by Dave Coffin
-http://www.cybercom.net/~dcoffin/
-and on Pawel T. Jochym's (jochym at ifj edu pl) plug-in.
-
-UFRaw is licensed under the GNU General Public License.
-
-WWW: http://ufraw.sourceforge.net
+Author: Udi Fuchs
+WWW: http://ufraw.sourceforge.net/
