@@ -1,0 +1,74 @@
+diff -ur src/command.C.orig src/command.C
+--- src/command.C.orig	Mon Feb 20 22:41:16 2006
++++ src/command.C	Sun May 21 09:36:40 2006
+@@ -301,6 +301,26 @@
+ }
+ #endif
+ 
++void from_imlocale_to_locale(const char *imlocale, const char *locale, wchar_t *wkbuf, int len)
++{
++    if(!imlocale || !locale)
++	return;
++
++    if(!strchr(imlocale,'.') || !strchr(locale,'.'))
++	return;
++
++    codeset imcs = codeset_from_name(strchr(imlocale, '.'));
++    codeset cs = codeset_from_name(strchr(locale, '.'));
++
++    if (imcs == CS_UNKNOWN || cs == CS_UNKNOWN)
++	return;
++
++    for(int i=0; i<len; i++) {
++	wchar_t unicode = TO_UNICODE(imcs, wkbuf[i]);
++	wkbuf[i] = FROM_UNICODE(cs, unicode);
++    }
++}
++
+ void
+ rxvt_term::key_press (XKeyEvent &ev)
+ {
+@@ -361,6 +381,9 @@
+           if (rs[Rs_imLocale])
+             SET_LOCALE (locale);
+ 
++	  if (rs[Rs_imLocale])
++	      from_imlocale_to_locale(rs[Rs_imLocale], locale, wkbuf, len);
++	      
+           if (status_return == XLookupChars
+               || status_return == XLookupBoth)
+             {
+diff -ur src/encoding.C.orig src/encoding.C
+--- src/encoding.C.orig	Mon Feb 20 22:41:16 2006
++++ src/encoding.C	Sun May 21 09:36:40 2006
+@@ -151,6 +151,7 @@
+ static uint32_t cs_us_ascii_from_unicode (unicode_t unicode)   { return unicode <= 127 ? unicode : NOCHAR; }
+ 
+ #define cs_us_ascii_to_unicode_16 cs_unicode_to_unicode
++static unicode_t cs_unicode_16_to_unicode (uint32_t enc)       { return enc <= 65535 ? enc : NOCHAR; }
+ static uint32_t cs_unicode_16_from_unicode (unicode_t unicode) { return unicode <= 65535 ? unicode : NOCHAR; }
+ 
+ #define ENCODING_DEFAULT
+diff -ur src/encoding.h.orig src/encoding.h
+--- src/encoding.h.orig	Sun May 21 08:14:15 2006
++++ src/encoding.h	Sun May 21 08:16:54 2006
+@@ -2,6 +2,7 @@
+ #define ENCODING_H
+ 
+ #include <inttypes.h>
++#define ENCODING_TO_UNICODE 1
+ 
+ typedef uint32_t unicode_t;
+ 
+diff -ur src/gentables.orig src/gentables
+--- src/gentables	Sun May 21 08:14:15 2006
++++ src/gentables.orig	Sun May 21 08:15:08 2006
+@@ -13,7 +13,7 @@
+ 
+ my $gen;
+ 
+-$TO_UNICODE = 0; # also generate to_unicode tables
++$TO_UNICODE = 1; # also generate to_unicode tables
+ 
+ sub linear {
+    my ($a, $l, $h, $b) = @_;
