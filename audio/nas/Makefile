@@ -16,7 +16,6 @@ COMMENT=	Network Audio System
 
 USE_IMAKE=	yes
 INSTALLS_SHLIB=	yes
-CFLAGS+=	-Werror
 MAKE_ENV+=	COMPRESS_CMD="${COMPRESS_CMD:S/c//}"
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
