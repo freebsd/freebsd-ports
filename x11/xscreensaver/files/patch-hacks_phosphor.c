@@ -1,6 +1,6 @@
---- hacks/phosphor.c.orig	Wed May 19 21:43:52 2004
-+++ hacks/phosphor.c	Wed May 19 21:44:54 2004
-@@ -33,6 +33,10 @@
+--- hacks/phosphor.c.orig	Fri Mar 31 19:50:00 2006
++++ hacks/phosphor.c	Sun Jun  4 00:01:46 2006
+@@ -41,6 +41,10 @@
  # ifdef HAVE_UTIL_H
  #  include <util.h>
  # endif
@@ -10,4 +10,4 @@
 +#include <libutil.h>
  #endif /* HAVE_FORKPTY */
  
- extern XtAppContext app;
+ #include "screenhack.h"

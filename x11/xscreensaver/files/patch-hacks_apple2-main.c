@@ -1,6 +1,6 @@
---- hacks/apple2-main.c.orig	Wed May 19 21:45:49 2004
-+++ hacks/apple2-main.c	Wed May 19 21:46:13 2004
-@@ -30,6 +30,10 @@
+--- hacks/apple2-main.c.orig	Sun Mar 26 21:34:17 2006
++++ hacks/apple2-main.c	Sun Jun  4 00:01:46 2006
+@@ -39,6 +39,10 @@
  # ifdef HAVE_UTIL_H
  #  include <util.h>
  # endif
@@ -10,4 +10,4 @@
 +#include <libutil.h>
  #endif /* HAVE_FORKPTY */
  
- #undef countof
+ #include "screenhack.h"
