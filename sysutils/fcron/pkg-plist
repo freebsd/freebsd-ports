@@ -5,8 +5,12 @@ etc/fcron.allow.dist
 etc/fcron.conf.dist
 etc/fcron.deny.dist
 sbin/fcron
-%%EXAMPLESDIR%%/fcron.pam
 %%EXAMPLESDIR%%/fcrontab-operator
 %%EXAMPLESDIR%%/fcrontab-root
+%%EXAMPLESDIR%%/fcron.pam
 %%EXAMPLESDIR%%/fcrontab.pam
 @dirrm %%EXAMPLESDIR%%
+@cwd /
+%%PAMDIR%%/fcron
+%%PAMDIR%%/fcrontab
+@dirrmtry %%PAMDIR%%
