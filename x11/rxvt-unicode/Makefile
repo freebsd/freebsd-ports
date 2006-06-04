@@ -7,6 +7,7 @@
 
 PORTNAME=	rxvt-unicode
 PORTVERSION=	7.7
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://dist.schmorp.de/rxvt-unicode/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. Attic
@@ -14,6 +15,10 @@ MASTER_SITE_SUBDIR=	. Attic
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	A clone of the terminal emulator rxvt modified to support Unicode
 
+.if !defined(WITHOUT_IMLOCALE_FIX)
+PATCH_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Encode/HanExtra.pm:${PORTSDIR}/chinese/p5-Encode-HanExtra \
+		${SITE_PERL}/${PERL_ARCH}/Encode/JIS2K.pm:${PORTSDIR}/converters/p5-Encode-JIS2K
+.endif
 LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/libXft
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
 
@@ -164,6 +169,7 @@ pre-everything::
 	@${ECHO_MSG} "WITHOUT_LINESPACE	disable support for line-spacing"
 	@${ECHO_MSG} "WITHOUT_MOUSEWHEEL	disable support for scrolling via mouse wheel"
 	@${ECHO_MSG} "WITHOUT_SMART_RESIZE	disable smart growth/shrink behaviour"
+	@${ECHO_MSG} "WITHOUT_IMLOCALE_FIX	disable imlocale encoding conversion fix"
 	@${ECHO_MSG}
 .ifndef(WITH_ENCODING)
 	@${ECHO_MSG} "==> You can compile in support for additional codeset groups by setting the WITH_ENCODING variable"
@@ -175,6 +181,12 @@ pre-everything::
 	@${ECHO_MSG} '                 "all"    all of the above;'
 	@${ECHO_MSG} '==> For example, "WITH_ENCODING=kr" for korean encodings.'
 	@${ECHO_MSG}
+.endif
+
+.if !defined(WITHOUT_IMLOCALE_FIX)
+post-patch:
+	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-imlocale
+	@cd ${WRKSRC}/src && ./gentables
 .endif
 
 pre-configure:
