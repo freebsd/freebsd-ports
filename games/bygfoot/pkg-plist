@@ -179,6 +179,8 @@ share/bygfoot/support_files/definitions/scg/league_scg2b.xml
 share/bygfoot/support_files/definitions/scotland/country_scotland.xml
 share/bygfoot/support_files/definitions/scotland/cup_scotland_fa.xml
 share/bygfoot/support_files/definitions/scotland/cup_scotland_league.xml
+share/bygfoot/support_files/definitions/scotland/cup_scotland_prom_games2.xml
+share/bygfoot/support_files/definitions/scotland/cup_scotland_prom_games3.xml
 share/bygfoot/support_files/definitions/scotland/league_scotland1.xml
 share/bygfoot/support_files/definitions/scotland/league_scotland2.xml
 share/bygfoot/support_files/definitions/scotland/league_scotland3.xml
@@ -278,7 +280,6 @@ share/bygfoot/support_files/definitions/wc06/league_wc06_europe_teams.xml
 share/bygfoot/support_files/definitions/wc06/league_wc06_ncamerica_teams.xml
 share/bygfoot/support_files/definitions/wc06/league_wc06_oceania_teams.xml
 share/bygfoot/support_files/definitions/wc06/league_wc06_samerica_teams.xml
-share/bygfoot/support_files/definitions/wc06/0,2548,All-Sep-2005,00.html
 share/bygfoot/support_files/lg_commentary/lg_commentary_bg.xml
 share/bygfoot/support_files/lg_commentary/lg_commentary_de.xml
 share/bygfoot/support_files/lg_commentary/lg_commentary_en.xml
