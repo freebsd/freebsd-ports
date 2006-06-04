@@ -5,14 +5,14 @@
 # $FreeBSD$
 
 PORTNAME=	cmucl-extra
-PORTVERSION=	19b
+PORTVERSION=	19c
 CATEGORIES=	lang lisp
-MASTER_SITES=	ftp://ftp.common-lisp.net/pub/project/cmucl/release/19b/ \
-		http://www.pmsf.de/pub/cmucl/release/19b/ \
-		ftp://ftp.averillpark.net/cmucl/release/19b/ \
-		ftp://ftp.linux.org.uk/pub/lisp/cmucl/release/19b/ \
-		ftp://ftp.tepus.com/pub/project/cmucl/release/19b/
-DISTNAME=	cmucl-19b-x86-FreeBSD.extra
+MASTER_SITES=	ftp://ftp.common-lisp.net/pub/project/cmucl/release/${PORTVERSION}/ \
+		http://www.pmsf.de/pub/cmucl/release/${PORTVERSION}/ \
+		ftp://ftp.averillpark.net/cmucl/release/${PORTVERSION}/ \
+		ftp://ftp.linux.org.uk/pub/lisp/cmucl/release/${PORTVERSION}/ \
+		ftp://ftp.tepus.com/pub/project/cmucl/release/${PORTVERSION}/
+DISTNAME=	cmucl-${PORTVERSION}-x86-FreeBSD.extra
 
 MAINTAINER=	sf@slappy.org
 COMMENT=	Optional extras for the CMU implementation of Common Lisp
@@ -31,7 +31,7 @@ LIB_DEPENDS+=	c.4:${PORTSDIR}/misc/compat4x
 .endif
 
 do-install:
-	-${MKDIR} ${PREFIX}/lib/cmucl
+	@${MKDIR} ${PREFIX}/lib/cmucl
 	cd ${WRKDIR} && ${FIND} lib | \
 		${CPIO} -pdm -L -R ${LIBOWN}:${LIBGRP} ${PREFIX}
 
