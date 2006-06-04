@@ -80,5 +80,7 @@ share/icons/hicolor/scalable/filesystems/revelation-fallback-folder.svg
 share/icons/hicolor/scalable/filesystems/revelation-fallback-folder-open.svg
 share/mime/packages/revelation.xml
 share/mime/application/x-revelation.xml
+@dirrmtry share/icons/hicolor/24x24/apps
+@dirrmtry share/icons/hicolor/24x24
 @exec update-desktop-database > /dev/null || /usr/bin/true
 @unexec update-desktop-database > /dev/null || /usr/bin/true
