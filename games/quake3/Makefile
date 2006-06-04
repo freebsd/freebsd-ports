@@ -37,16 +37,27 @@ PLIST_SUB=	LIBDIR="${LIBDIR:S/${PREFIX}\///}"
 
 LIBDIR=		${PREFIX}/lib/${PORTNAME}
 REALVERSION=	1.32b
+VM_ARCHS=	i386 powerpc
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITHOUT_CLIENT) && defined(WITHOUT_DEDICATED) \
-    && defined(WITHOUT_SMP)
+.if defined(WITHOUT_CLIENT) && defined(WITHOUT_DEDICATED) && \
+    defined(WITHOUT_SMP)
 IGNORE=		needs at least one of CLIENT, DEDICATED and SMP options
 .endif
 
 .if ${ARCH} == "i386"
 BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm
+.endif
+
+.for i in ${ARCH}
+.   if ${VM_ARCHS:M${i}} != ""
+HAVE_VM_COMPILED=	yes
+.   endif
+.endfor
+
+.if !defined(HAVE_VM_COMPILED)
+MAKE_ENV+=	DLL_ONLY=true
 .endif
 
 .if !defined(WITHOUT_CLIENT) || !defined(WITHOUT_SMP)
@@ -69,7 +80,7 @@ Q3BIN+=		q3ded
 PLIST_SUB+=	DEDICATED="@comment "
 .endif
 
-.if defined(WITH_GAMELIBS) || (${ARCH} != "i386" && ${ARCH} != "powerpc")
+.if defined(WITH_GAMELIBS) || !defined(HAVE_VM_COMPILED)
 MAKE_ENV+=	GAMELIBS=YES
 PLIST_SUB+=	GAMELIBS=""
 .else
@@ -101,7 +112,7 @@ do-install:
 .for bin in ${Q3BIN}
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/release/${bin} ${PREFIX}/bin
 .endfor
-.if defined(WITH_GAMELIBS) || (${ARCH} != "i386" && ${ARCH} != "powerpc")
+.if defined(WITH_GAMELIBS) || !defined(HAVE_VM_COMPILED)
 .for dir in baseq3 missionpack
 	${MKDIR} ${LIBDIR}/${dir}
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/release/${dir}/*.so ${LIBDIR}/${dir}
