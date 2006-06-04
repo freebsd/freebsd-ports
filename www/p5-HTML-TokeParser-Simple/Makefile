@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	HTML-TokeParser-Simple
-PORTVERSION=	3.14
+PORTVERSION=	3.15
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	HTML
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lars.eggert@gmx.net
+MAINTAINER=	aaron@FreeBSD.org
 COMMENT=	Subclass of HTML::TokeParser with easy-to-remember method calls
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/HTML/HeadParser.pm:${PORTSDIR}/www/p5-HTML-Parser \
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser \
 		${SITE_PERL}/Sub/Override.pm:${PORTSDIR}/devel/p5-Sub-Override
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
@@ -30,4 +30,10 @@ MAN3=		HTML::TokeParser::Simple.3 HTML::TokeParser::Simple::Token.3 \
 		HTML::TokeParser::Simple::Token::Tag::Start.3 \
 		HTML::TokeParser::Simple::Token::Text.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600 #inherted from www/p5-HTML-Parser
+IGNORE=	requires at least Perl 5.6 due to dependencies.  Please install lang/perl5.8 and try again
+.endif
+
+.include <bsd.port.post.mk>
