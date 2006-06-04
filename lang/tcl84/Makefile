@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tcl
-PORTVERSION=	8.4.11
+PORTVERSION=	8.4.13
 PORTEPOCH=	1
 CATEGORIES=	lang tcl84
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -33,12 +33,19 @@ PLIST_SUB=	TCL_VER=${TCL_VER} SHORT_TCL_VER=84
 .if defined(TCL_WITH_THREADS) || defined(WITH_THREADS)
 THREADS_SUFFIX=		-threads
 CONFIGURE_ARGS+=	--enable-threads
+CONFIGURE_ENV+=		PTHREAD_LIBS="${PTHREAD_LIBS}" PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"
 .endif
 
 LATEST_LINK=	tcl84${THREADS_SUFFIX}
-.include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_TCL84_MAN)
+.if defined(WITHOUT_TCL84_MAN)
+
+PLIST_SUB+=	INSTMAN='@comment '
+
+.else
+
+DATADIR=	${PREFIX}/share/${PORTNAME}${TCL_VER}
+PLIST_SUB+=	INSTMAN=''
 
 MAN1=	tclsh.1
 
@@ -593,14 +600,14 @@ MLINKS=	Access.3 Tcl_Access.3 \
 
 .endif
 
+TCLBASE?=	${PORTSDIR}/${PKGCATEGORY}/${LATEST_LINK}
+
 .if defined(TCL_WITH_THREADS) || defined(WITH_THREADS)
-post-patch:
+pre-configure:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
 		${WRKSRC}/configure
 
 .endif
-
-TCLBASE?=	${PORTSDIR}/${PKGCATEGORY}/${LATEST_LINK}
 
 post-configure:
 	${REINPLACE_CMD} \
@@ -609,14 +616,22 @@ post-configure:
 .if defined(WITHOUT_TCL84_MAN)
 	${REINPLACE_CMD} -e 's|^MAN_INSTALL_DIR.*$$|MAN_INSTALL_DIR = ${WRKDIR}|' \
 		${WRKSRC}/Makefile
+. for mp in ${MAN1} ${MAN3} ${MANN}
+	@${REINPLACE_CMD} -e 's|^.so man.macros|.so ${DATADIR}/man.macros|'	\
+		${WRKSRC}/../doc/${mp}
+. endfor
 .endif
 
 post-install:
 .if exists(${PKGINSTALL})
 	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL}
 .endif
+.if !defined(WITHOUT_TCL84_MAN)
+	${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/../doc/man.macros ${DATADIR}
+.endif
 
-test:
-	cd ${WRKSRC} && ${MAKE} test
+regression-test:	build
+	cd ${WRKSRC} && LC_ALL=C ${MAKE} test
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

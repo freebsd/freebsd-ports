@@ -122,28 +122,29 @@ lib/tk%%TK_VER%%/images/pwrdLogo175.gif
 lib/tk%%TK_VER%%/images/pwrdLogo200.gif
 lib/tk%%TK_VER%%/images/pwrdLogo75.gif
 lib/tk%%TK_VER%%/images/tai-ku.gif
+lib/tk%%TK_VER%%/listbox.tcl
+lib/tk%%TK_VER%%/menu.tcl
+lib/tk%%TK_VER%%/mkpsenc.tcl
+lib/tk%%TK_VER%%/msgbox.tcl
 lib/tk%%TK_VER%%/msgs/cs.msg
 lib/tk%%TK_VER%%/msgs/de.msg
 lib/tk%%TK_VER%%/msgs/el.msg
 lib/tk%%TK_VER%%/msgs/en.msg
 lib/tk%%TK_VER%%/msgs/en_gb.msg
+lib/tk%%TK_VER%%/msgs/eo.msg
 lib/tk%%TK_VER%%/msgs/es.msg
 lib/tk%%TK_VER%%/msgs/es_ES.msg
-lib/tk%%TK_VER%%/msgs/eo.msg
 lib/tk%%TK_VER%%/msgs/fr.msg
 lib/tk%%TK_VER%%/msgs/it.msg
 lib/tk%%TK_VER%%/msgs/nl.msg
 lib/tk%%TK_VER%%/msgs/pl.msg
+lib/tk%%TK_VER%%/msgs/pt.msg
 lib/tk%%TK_VER%%/msgs/ru.msg
-lib/tk%%TK_VER%%/listbox.tcl
-lib/tk%%TK_VER%%/menu.tcl
-lib/tk%%TK_VER%%/msgbox.tcl
-lib/tk%%TK_VER%%/mkpsenc.tcl
 lib/tk%%TK_VER%%/obsolete.tcl
 lib/tk%%TK_VER%%/optMenu.tcl
 lib/tk%%TK_VER%%/palette.tcl
-lib/tk%%TK_VER%%/pkgIndex.tcl
 lib/tk%%TK_VER%%/panedwindow.tcl
+lib/tk%%TK_VER%%/pkgIndex.tcl
 lib/tk%%TK_VER%%/prolog.ps
 lib/tk%%TK_VER%%/safetk.tcl
 lib/tk%%TK_VER%%/scale.tcl
@@ -158,6 +159,8 @@ lib/tk%%TK_VER%%/tkConfig.sh
 lib/tk%%TK_VER%%/tkfbox.tcl
 lib/tk%%TK_VER%%/unsupported.tcl
 lib/tk%%TK_VER%%/xmfbox.tcl
+%%DATADIR%%/man.macros
+@dirrm %%DATADIR%%
 @dirrm lib/tk%%TK_VER%%/demos/images
 @dirrm lib/tk%%TK_VER%%/demos
 @dirrm lib/tk%%TK_VER%%/images
