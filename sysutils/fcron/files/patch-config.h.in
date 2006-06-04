@@ -1,0 +1,8 @@
+--- config.h.in.orig	Mon Feb  6 14:44:52 2006
++++ config.h.in	Tue May  9 17:15:19 2006
+@@ -424,3 +424,5 @@
+ #define O_SYNC O_FSYNC
+ #endif
+ 
++/* Define if (struct sockaddr) has an sa_len field.  */
++#undef HAVE_SA_LEN

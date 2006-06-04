@@ -1,0 +1,20 @@
+--- configure.in.orig	Mon Jan  9 17:21:24 2006
++++ configure.in	Tue May  9 17:04:30 2006
+@@ -57,6 +57,17 @@
+ AC_STRUCT_TM
+ AC_TYPE_UID_T
+ 
++dnl Check for post-Reno style struct sockaddr
++AC_CACHE_CHECK([for sa_len],
++  ac_cv_sa_len,
++[AC_TRY_COMPILE([#include <sys/types.h>
++#include <sys/socket.h>], [int main(void) {
++ struct sockaddr t;t.sa_len = 0;}],
++  ac_cv_sa_len=yes,ac_cv_sa_len=no)])
++if test $ac_cv_sa_len = yes; then
++  AC_DEFINE(HAVE_SA_LEN)
++fi
++
+ dnl Checks for library functions.
+ AC_PROG_GCC_TRADITIONAL
+ AC_FUNC_MEMCMP
