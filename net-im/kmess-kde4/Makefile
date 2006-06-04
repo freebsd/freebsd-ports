@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kmess
-PORTVERSION=	1.4.2
+PORTVERSION=	1.4.3
 CATEGORIES=	net-im kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,22 +14,13 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MSN Messenger Client for KDE3
 
-LIB_DEPENDS=	mimelib.1:${PORTSDIR}/deskutils/kdepim3
-
-BROKEN=		Does not compile
+EXTRA_PATCHES=	${.CURDIR}/../../x11/kde3/files/extrapatch-configure
 
 USE_KDELIBS_VER=3
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 
-pre-patch:
-	${REINPLACE_CMD} -e '23s/^$$/#include <unistd.h>/' \
-		${WRKSRC}/kmess/kmessview.cpp
-	${REINPLACE_CMD} -e '20s/^$$/#include <ctype.h>/' \
-		${WRKSRC}/kmess/network/mimemessage.h
-	${REINPLACE_CMD} -e '35s|^$$|#include <netinet/in.h>|' \
-		${WRKSRC}/kmess/network/msnconnection.h
-	${REINPLACE_CMD} -e 's/-pedantic //g; s/-O2//g; \
-		s/-lpthread/${PTHREAD_LIBS}/g' ${WRKSRC}/configure
+post-patch:
+	@${TOUCH} ${WRKSRC}/config.h.in
 
 .include <bsd.port.mk>
