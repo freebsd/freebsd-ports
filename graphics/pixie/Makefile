@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pixie
-PORTVERSION=	1.5.5
+PORTVERSION=	1.6.3
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,7 +21,8 @@ LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 
 USE_GL=		yes
 USE_X_PREFIX=	yes
-USE_AUTOTOOLS=	automake:15:env autoconf:253 libtool:15
+ACLOCAL_ARGS=	--acdir=${ACLOCAL_DIR} -I ${LOCALBASE}/share/aclocal
+USE_AUTOTOOLS=	autoconf:259 aclocal:19 automake:19 libtool:15
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -O -fPIC -I${LOCALBASE}/include -I${X11BASE}/include" \
 		CXXFLAGS="${CXXFLAGS} -O -fPIC -I${LOCALBASE}/include -I${X11BASE}/include" \
@@ -44,18 +45,14 @@ NOT_FOR_ARCHS=	alpha
 .endif
 
 .if ${OSVERSION} >= 600000 && ${ARCH} == "sparc64"
-BROKEN=	"doesn't compile because of internal gcc failure"
+BROKEN=		doesn't compile because of internal gcc failure
 .endif
 
 post-patch:
 	@${FIND} -X ${WRKSRC} -name '*.cpp' -or -name '*.h' | \
 		${XARGS} ${REINPLACE_CMD} -i '' -e 's|malloc\.h|stdlib\.h|g'
 
-
 pre-configure:
-	@(cd ${WRKSRC} && ${ACLOCAL} && \
-	${SETENV} ${AUTOTOOLS_ENV} ${AUTOMAKE} --add-missing && \
-	${SETENV} ${AUTOTOOLS_ENV} ${AUTOMAKE} -i)
 	@${REINPLACE_CMD} -e '/^_LT_AC_SHELL_INIT/d' ${WRKSRC}/aclocal.m4
 
 do-install:
