@@ -6,6 +6,7 @@ include/tcl%%TCL_VER%%/generic/regguts.h
 include/tcl%%TCL_VER%%/generic/tcl.h
 include/tcl%%TCL_VER%%/generic/tclCompile.h
 include/tcl%%TCL_VER%%/generic/tclDecls.h
+include/tcl%%TCL_VER%%/generic/tclIO.h
 include/tcl%%TCL_VER%%/generic/tclInitScript.h
 include/tcl%%TCL_VER%%/generic/tclInt.h
 include/tcl%%TCL_VER%%/generic/tclIntDecls.h
@@ -14,7 +15,6 @@ include/tcl%%TCL_VER%%/generic/tclMath.h
 include/tcl%%TCL_VER%%/generic/tclPlatDecls.h
 include/tcl%%TCL_VER%%/generic/tclPort.h
 include/tcl%%TCL_VER%%/generic/tclRegexp.h
-include/tcl%%TCL_VER%%/generic/tclIO.h
 include/tcl%%TCL_VER%%/tcl.h
 include/tcl%%TCL_VER%%/tclDecls.h
 include/tcl%%TCL_VER%%/tclPlatDecls.h
@@ -63,12 +63,17 @@ lib/tcl%%TCL_VER%%/encoding/euc-jp.enc
 lib/tcl%%TCL_VER%%/encoding/euc-kr.enc
 lib/tcl%%TCL_VER%%/encoding/gb12345.enc
 lib/tcl%%TCL_VER%%/encoding/gb1988.enc
-lib/tcl%%TCL_VER%%/encoding/gb2312.enc
 lib/tcl%%TCL_VER%%/encoding/gb2312-raw.enc
+lib/tcl%%TCL_VER%%/encoding/gb2312.enc
 lib/tcl%%TCL_VER%%/encoding/iso2022-jp.enc
 lib/tcl%%TCL_VER%%/encoding/iso2022-kr.enc
 lib/tcl%%TCL_VER%%/encoding/iso2022.enc
 lib/tcl%%TCL_VER%%/encoding/iso8859-1.enc
+lib/tcl%%TCL_VER%%/encoding/iso8859-10.enc
+lib/tcl%%TCL_VER%%/encoding/iso8859-13.enc
+lib/tcl%%TCL_VER%%/encoding/iso8859-14.enc
+lib/tcl%%TCL_VER%%/encoding/iso8859-15.enc
+lib/tcl%%TCL_VER%%/encoding/iso8859-16.enc
 lib/tcl%%TCL_VER%%/encoding/iso8859-2.enc
 lib/tcl%%TCL_VER%%/encoding/iso8859-3.enc
 lib/tcl%%TCL_VER%%/encoding/iso8859-4.enc
@@ -77,11 +82,6 @@ lib/tcl%%TCL_VER%%/encoding/iso8859-6.enc
 lib/tcl%%TCL_VER%%/encoding/iso8859-7.enc
 lib/tcl%%TCL_VER%%/encoding/iso8859-8.enc
 lib/tcl%%TCL_VER%%/encoding/iso8859-9.enc
-lib/tcl%%TCL_VER%%/encoding/iso8859-10.enc
-lib/tcl%%TCL_VER%%/encoding/iso8859-13.enc
-lib/tcl%%TCL_VER%%/encoding/iso8859-14.enc
-lib/tcl%%TCL_VER%%/encoding/iso8859-15.enc
-lib/tcl%%TCL_VER%%/encoding/iso8859-16.enc
 lib/tcl%%TCL_VER%%/encoding/jis0201.enc
 lib/tcl%%TCL_VER%%/encoding/jis0208.enc
 lib/tcl%%TCL_VER%%/encoding/jis0212.enc
@@ -124,6 +124,8 @@ lib/tcl%%TCL_VER%%/tclIndex
 lib/tcl%%TCL_VER%%/tcltest2.2/pkgIndex.tcl
 lib/tcl%%TCL_VER%%/tcltest2.2/tcltest.tcl
 lib/tcl%%TCL_VER%%/word.tcl
+%%INSTMAN%%%%DATADIR%%/man.macros
+%%INSTMAN%%@dirrm %%DATADIR%%
 @dirrm lib/tcl%%TCL_VER%%/tcltest2.2
 @dirrm lib/tcl%%TCL_VER%%/opt0.4
 @dirrm lib/tcl%%TCL_VER%%/msgcat1.3

@@ -1,22 +1,38 @@
---- configure.orig	Mon Jul 26 14:40:46 2004
-+++ configure	Thu Oct 28 10:54:24 2004
-@@ -2081,3 +2081,3 @@
+--- configure.orig	Thu Apr 20 16:42:21 2006
++++ configure	Mon May  1 17:31:03 2006
+@@ -2560,7 +2560,7 @@
+     LDFLAGS_ORIG="$LDFLAGS"
+     TCL_EXPORT_FILE_SUFFIX=""
      UNSHARED_LIB_SUFFIX=""
 -    TCL_TRIM_DOTS='`echo ${VERSION} | tr -d .`'
 +    TCL_TRIM_DOTS=`echo ${VERSION} | tr -d .`
      ECHO_VERSION='`echo ${VERSION}`'
-@@ -2878,3 +2878,4 @@
+     TCL_LIB_VERSIONS_OK=ok
+     CFLAGS_DEBUG=-g
+@@ -3384,25 +3384,26 @@
+ 	FreeBSD-*)
+ 	    # FreeBSD 3.* and greater have ELF.
  	    SHLIB_CFLAGS="-fPIC"
 -	    SHLIB_LD="ld -Bshareable -x"
 +	    SHLIB_LD="ld -shared -x"
 +	    TCL_SHLIB_LD_EXTRAS="-soname \$@"
  	    SHLIB_LD_LIBS='${LIBS}'
-@@ -2883,3 +2884,3 @@
+ 	    SHLIB_SUFFIX=".so"
+ 	    DL_OBJS="tclLoadDl.o"
  	    DL_LIBS=""
 -	    LDFLAGS="$LDFLAGS -export-dynamic"
 +	    LDFLAGS=""
  	    CC_SEARCH_FLAGS='-Wl,-rpath,${LIB_RUNTIME_DIR}'
-@@ -2893,6 +2894,6 @@
+ 	    LD_SEARCH_FLAGS='-rpath ${LIB_RUNTIME_DIR}'
+ 	    if test "${TCL_THREADS}" = "1" ; then
+-		# The -pthread needs to go in the CFLAGS, not LIBS
++		# The -pthread needs to go in the LDFLAGS, not LIBS
+ 		LIBS=`echo $LIBS | sed s/-pthread//`
+-		CFLAGS="$CFLAGS -pthread"
+-	    	LDFLAGS="$LDFLAGS -pthread"
++		CFLAGS="$CFLAGS $PTHREAD_CFLAGS"
++	    	LDFLAGS="$LDFLAGS $PTHREAD_LIBS"
+ 	    fi
  	    case $system in
 -	    FreeBSD-3.*)
 +	    FreeBSD-*)
@@ -25,3 +41,5 @@
 -	    	SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.so'
 +	    	SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.so.1'
  	    	TCL_LIB_VERSIONS_OK=nodots
+ 		;;
+ 	    esac

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tk
-PORTVERSION=	8.4.11
+PORTVERSION=	8.4.13
 PORTEPOCH=	2
 CATEGORIES=	x11-toolkits tk84
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -33,15 +33,17 @@ PLIST_SUB=	TK_VER=${TK_VER} SHORT_TK_VER=${SHORT_TK_VER}
 PKGINSTALL=	${PKGDIR}/pkg-install.wish
 PKGDEINSTALL=	${PKGDIR}/pkg-deinstall.wish
 NOPRECIOUSMAKEVARS=	yes # Otherwise 'make readmes' is broken
-TCL84_PORT?=	lang/tcl84
 MANCOMPRESSED=	no
+DATADIR=	${PREFIX}/share/${PORTNAME}${TK_VER}
 
 .ifdef (WITH_THREADS)
 CONFIGURE_ARGS+=	--enable-threads
+CONFIGURE_ENV+=		PTHREAD_LIBS="${PTHREAD_LIBS}" PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"
 PKGNAMESUFFIX?=		-threads
+TCL84_PORT?=		lang/tcl84-thread
+.else
+TCL84_PORT?=		lang/tcl84
 .endif
-
-.include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_TK84_MAN)
 
@@ -353,9 +355,13 @@ TKBASE?=	${PORTSDIR}/${PKGCATEGORY}/${LATEST_LINK}
 pre-everything::
 	@if ${TEST} -e "${NONEXISTENT}"; then ${ECHO_MSG} "=== Aborted, please remove ${NONEXISTENT}"; exit 1; fi
 
-post-patch:
+pre-configure:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
 		${WRKSRC}/configure
+.for mp in ${MAN1} ${MAN3} ${MANN}
+	@${REINPLACE_CMD} -e 's|^.so man.macros|.so ${DATADIR}/man.macros|'	\
+		${WRKSRC}/../doc/${mp}
+.endfor
 
 post-configure:
 	${REINPLACE_CMD} \
@@ -368,13 +374,15 @@ post-configure:
 
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/pkgIndex.tcl ${PREFIX}/lib/tk${TK_VER}/
+	${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/../doc/man.macros ${DATADIR}
 .if exists(${PKGINSTALL})
 	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL}
 .endif
 
-test:
+regression-test:	build
 	cd ${WRKSRC}; ${MAKE} test
 	${ECHO_CMD} "package require Tk" | tclsh${TK_VER}
 	${ECHO_CMD} "load libtk${SHORT_TK_VER}.so" | tclsh${TK_VER}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
