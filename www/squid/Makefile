@@ -73,6 +73,7 @@
 
 PORTNAME=	squid
 PORTVERSION=	2.5.14
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	\
 		ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
@@ -85,7 +86,7 @@ DISTNAME=	squid-2.5.STABLE14
 DIST_SUBDIR=	squid2.5
 
 PATCH_SITES=	http://www.squid-cache.org/Versions/v2/2.5/bugs/
-PATCHFILES=
+PATCHFILES=	squid-2.5.STABLE14-httpReplyDestroy.patch
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	tmseck@netcologne.de

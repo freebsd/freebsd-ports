@@ -1289,24 +1289,6 @@ diff -u src/client_side.c:1.47.2.76 src/client_side.c:1.47.2.31.2.15
      safe_free(http->redirect.location);
      stringClean(&http->range_iter.boundary);
      if ((e = http->entry)) {
-@@ -2031,8 +2041,6 @@
- 		http->entry = clientCreateStoreEntry(http, http->request->method,
- 		    null_request_flags);
- 		errorAppendEntry(http->entry, err);
--		httpReplyDestroy(http->reply);
--		http->reply = NULL;
- 		memFree(buf, MEM_CLIENT_SOCK_BUF);
- 		return;
- 	    }
-@@ -2067,8 +2075,6 @@
- 		    http->entry = clientCreateStoreEntry(http, http->request->method,
- 			null_request_flags);
- 		    errorAppendEntry(http->entry, err);
--		    httpReplyDestroy(http->reply);
--		    http->reply = NULL;
- 		    memFree(buf, MEM_CLIENT_SOCK_BUF);
- 		    return;
- 		}
 Index: src/icp_v2.c
 diff -u src/icp_v2.c:1.5 src/icp_v2.c:1.5.60.1
 --- src/icp_v2.c:1.5	Fri May  4 06:39:12 2001
