@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	lua
-PORTVERSION=	4.0
-PORTREVISION=	2
+PORTVERSION=	4.0.1
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.tecgraf.puc-rio.br/pub/lua/ \
 		ftp://csg.uwaterloo.ca/pub/lhf/lua/ \
@@ -20,7 +19,7 @@ COMMENT=	Small, compilable scripting language providing easy access to C code
 
 LATEST_LINK=	lua4
 MAN1=		luac.1
-WRKSRC=		${WRKDIR}/lua
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 ALL_TARGET=	all so
 INSTALLS_SHLIB=	YES
 
@@ -51,7 +50,7 @@ post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/luac
 
 .if ${MACHINE_ARCH:L} == "amd64"
-CFLAGS+=    -fPIC
+CFLAGS+=	-fPIC
 .endif
 
 .include <bsd.port.mk>
