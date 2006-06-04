@@ -1,18 +1,18 @@
---- src/Makefile.in.orig	Mon Jun 26 16:50:53 2000
-+++ src/Makefile.in	Sun Apr 18 23:40:23 2004
-@@ -49,11 +49,14 @@
- 	@CC@ @LDFLAGS@ -o remind $(REMINDOBJS) @LIBS@
+--- ./src/Makefile.in.orig	Fri Sep 30 07:29:32 2005
++++ ./src/Makefile.in	Sun Jun  4 14:22:15 2006
+@@ -50,11 +50,14 @@
  
  install: all
+ 	-mkdir -p $(DESTDIR)$(bindir) || true
 -	for prog in $(PROGS) $(SCRIPTS) ; do \
 +	for prog in $(PROGS) ; do \
- 		$(INSTALL_PROGRAM) $$prog $(bindir) ; \
+ 		$(INSTALL_PROGRAM) $$prog $(DESTDIR)$(bindir) || exit 1; \
  	done
- 	-strip $(bindir)/remind
- 	-strip $(bindir)/rem2ps
+ 	-strip $(DESTDIR)$(bindir)/remind || true
+ 	-strip $(DESTDIR)$(bindir)/rem2ps || true
 +	for script in $(SCRIPTS) ; do \
-+		$(INSTALL) -m 555 $$script $(bindir) ; \
++		$(INSTALL_SCRIPT) $$script $(DESTDIR)$(bindir) || exit 1; \
 +	done
+ 	-mkdir -p $(DESTDIR)$(mandir)/man1 || true
  	for man in $(MANS) ; do  \
- 		$(INSTALL_DATA) $$man $(mandir)/man1 ; \
- 	done
+ 		$(INSTALL_DATA) $$man $(DESTDIR)$(mandir)/man1 || exit 1; \
