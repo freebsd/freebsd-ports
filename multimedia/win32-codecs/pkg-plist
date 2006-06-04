@@ -36,6 +36,8 @@ lib/win32/ir32_32.dll
 lib/win32/tm20dec.ax
 lib/win32/icmw_32.dll
 lib/win32/rt32dcmp.dll
+lib/win32/vsshdsd.dll
+lib/win32/zmbv.dll
 lib/win32/ivvideo.dll
 lib/win32/i263_32.drv
 lib/win32/mpg4ds32.ax
