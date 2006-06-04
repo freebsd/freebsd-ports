@@ -10,8 +10,8 @@ lib/liblua.so.4
 lib/liblualib.a
 lib/liblualib.so
 lib/liblualib.so.4
-share/doc/lua/idx.html
-share/doc/lua/index.html
-share/doc/lua/luac.html
-share/doc/lua/manual.html
-@dirrm share/doc/lua
+%%PORTDOCS%%%%DOCSDIR%%/idx.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/luac.html
+%%PORTDOCS%%%%DOCSDIR%%/manual.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
