@@ -162,7 +162,6 @@
     SUBDIR += gimp-manual-html
     SUBDIR += gimp-manual-pdf
     SUBDIR += gimp-pmosaic
-    SUBDIR += gimp-ufraw
     SUBDIR += gimp1
     SUBDIR += gimpshop
     SUBDIR += giram
@@ -601,6 +600,7 @@
     SUBDIR += truevision
     SUBDIR += tulip
     SUBDIR += uDrawGraph
+    SUBDIR += ufraw
     SUBDIR += urt
     SUBDIR += vcg
     SUBDIR += vertex

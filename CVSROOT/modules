@@ -3041,7 +3041,6 @@ gimp-manual-html	ports/graphics/gimp-manual-html
 gimp-manual-pdf		ports/graphics/gimp-manual-pdf
 gimp-pmosaic	ports/graphics/gimp-pmosaic
 gimp-print	ports/print/gimp-print
-gimp-ufraw	ports/graphics/gimp-ufraw
 gimp1		ports/graphics/gimp1
 gimpshop	ports/graphics/gimpshop
 gindent		ports/devel/gindent
@@ -13409,6 +13408,7 @@ uebimiau	ports/mail/uebimiau
 uemacs		ports/editors/uemacs
 uf-view		ports/misc/uf-view
 ufmcontrol-i18n	ports/audio/ufmcontrol-i18n
+ufraw		ports/graphics/ufraw
 ufs_copy	ports/sysutils/ufs_copy
 uhexen		ports/games/uhexen
 uim		ports/textproc/uim
