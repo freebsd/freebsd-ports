@@ -12,5 +12,5 @@ Although it works best with the TeX fonts installed, jsMath will fall back
 on a collection of image-based fonts (which can still be scaled or printed
 at high resolution) or unicode fonts when the TeX fonts are not available.
 
-Author:	Davide P. Cervone <dvpc@union.edu>
+Author:	Davide P. Cervone
 WWW:	http://www.math.union.edu/~dpvc/jsMath/
