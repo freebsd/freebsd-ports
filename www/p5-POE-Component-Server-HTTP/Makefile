@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	POE-Component-Server-HTTP
-PORTVERSION=	0.08
+PORTVERSION=	0.09
 CATEGORIES=	www devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	POE
@@ -16,7 +16,6 @@ MAINTAINER=	hideo@lastamericanempire.com
 COMMENT=	POE Component to create HTTP Servers
 
 BUILD_DEPENDS=	${SITE_PERL}/POE.pm:${PORTSDIR}/devel/p5-POE \
-		${SITE_PERL}/HTTP/Date.pm:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/POE/API/Peek.pm:${PORTSDIR}/devel/p5-POE-API-Peek \
 		${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathTools \
 		${SITE_PERL}/YAML.pm:${PORTSDIR}/textproc/p5-YAML \
@@ -27,4 +26,10 @@ PERL_CONFIGURE=	yes
 
 MAN3=		POE::Component::Server::HTTP.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500601
+IGNORE=		requires Perl 5.6.1 or newer. Install lang/perl5 or lang/perl5.8 and try again
+.endif
+
+.include <bsd.port.post.mk>
