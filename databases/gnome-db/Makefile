@@ -7,7 +7,7 @@
 
 PORTNAME=	gnome-db
 PORTVERSION=	0.2.96
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	databases gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-db/0.2
@@ -28,5 +28,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="${PTHREAD_LIBS} -L${LOCALBASE}/lib -lintl"
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 PLIST_SUB=	VERSION=${PORTVERSION}
+
+DOCSDIR=	${PREFIX}/share/doc/gnomedb
 
 .include <bsd.port.mk>
