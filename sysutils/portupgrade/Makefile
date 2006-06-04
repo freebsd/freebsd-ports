@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	portupgrade
-PORTVERSION=	2.1.0
+PORTVERSION=	2.1.1
 PORTEPOCH=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_LOCAL}
@@ -15,15 +15,6 @@ DISTNAME=	pkgtools-${DISTVERSION}
 
 MAINTAINER=	sem@FreeBSD.org
 COMMENT=	FreeBSD ports/packages administration and management tool suite
-
-DISTVERSION=	${PORTVERSION}
-
-.if ${DISTVERSION} != ${PORTVERSION}
-PATCH_SITES=	${MASTER_SITES}
-PATCH_SITE_SUBDIR=	${MASTER_SITE_SUBDIR}
-PATCHFILES=	${DISTNAME}-${PORTVERSION}.diff.bz2
-PATCH_DIST_STRIP=	-p1
-.endif
 
 OPTIONS=	BDB4 "Use Berkeley DB >=2 as backend. (Use BDB 1.85 if off)" off
 
@@ -67,13 +58,6 @@ INSTALL_TARGET+=	install-doc
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/bdb.so:${PORTSDIR}/databases/ruby-bdb
 .else
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/bdb1.so:${PORTSDIR}/databases/ruby-bdb1
-.endif
-
-# pkg_create(1) must support -b. (4.5-RELEASE or later)
-# XXX: PKG_CMD is not defined yet..
-PKG_CREATE_OK!=	/usr/sbin/pkg_create 2>&1 | ${GREP} ' -b ' || ${TRUE}
-.if empty(PKG_CREATE_OK)
-IGNORE=	pkg_create does not support -b. Please update /usr/sbin/pkg_* to those of the latest RELENG_4
 .endif
 
 post-install: install-ldconfig-file
