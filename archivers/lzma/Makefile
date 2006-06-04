@@ -1,18 +1,18 @@
 # New ports collection makefile for:	lzma
 # Date created:		25 Apr 2005
-# Whom:			Radim Kolar
+# Whom:			Radim Kolar <hsn@netmag.cz>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	lzma
-PORTVERSION=	4.32
+PORTVERSION=	4.43
 CATEGORIES=	archivers
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sevenzip
 DISTNAME=	lzma${PORTVERSION:S/.//g}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Command line lzma archiver
 
 USE_BZIP2=	yes
@@ -21,6 +21,7 @@ USE_DOS2UNIX=	yes
 BUILD_WRKSRC=	${WRKSRC}/C/7zip/Compress/LZMA_Alone
 MAKEFILE=	makefile.gcc
 PLIST_FILES=	bin/lzma
+CFLAGS+=	-D_LZMA_SYSTEM_SIZE_T
 
 PORTDOCS=	7zC.txt 7zFormat.txt Methods.txt history.txt lzma.txt
 
