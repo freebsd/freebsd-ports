@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	plplot
-PORTVERSION=	5.5.2
+PORTVERSION=	5.6.1
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,13 +20,13 @@ LIB_DEPENDS=	unicode.0:${PORTSDIR}/devel/libunicode \
 		qhull.5:${PORTSDIR}/math/qhull
 
 USE_AUTOTOOLS=	libltdl:15
+USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		M4="${LOCALBASE}/bin/gm4"
 CONFIGURE_ARGS=	--disable-cgm --disable-java --disable-octave \
-		--with-ltdlsystem \
 		--with-gd-incdir=${LOCALBASE}/include \
 		--with-gd-libdir=${LOCALBASE}/lib \
 		--with-freetype-font-dir=${LOCALBASE}
@@ -42,6 +42,7 @@ PLIST_SUB+=	X11="@comment "
 .else
 USE_XLIB=	yes
 PLIST_SUB+=	X11=""
+#USE_GNOME=	libgnomeui pkgconfig pango
 .endif
 
 .if !defined(WITHOUT_PTHREAD)
@@ -59,6 +60,7 @@ PLIST_SUB+=	SVGALIB="@comment "
 .if defined(WITH_PYTHON)
 USE_PYTHON=	yes
 PLIST_SUB+=	PYTHON=""
+CONFIGURE_ENV+=	PYTHON_VERSION="${PYTHON_VERSION}"
 .else
 CONFIGURE_ARGS+=	--disable-python
 PLIST_SUB+=	PYTHON="@comment "
@@ -67,16 +69,16 @@ PLIST_SUB+=	PYTHON="@comment "
 .if defined(WITH_TCLTK)
 .undef WITHOUT_X11
 PKGNAMESUFFIX=	-tcltk
-LIB_DEPENDS+=	itk32.1:${PORTSDIR}/x11-toolkits/itk
-CONFIGURE_ENV+=	ITKINCDIR="${LOCALBASE}/include/itk3.2" \
-		ITKLIBDIR="${LOCALBASE}/lib" \
-		TKINCDIR="${LOCALBASE}/include/tk8.3" \
-		TKPRIVATEINCDIR="${LOCALBASE}/include/tk8.3/generic" \
-		TKLIBDIR="${LOCALBASE}/lib" \
-		ITCLINCDIR="${LOCALBASE}/include/itcl3.2" \
+LIB_DEPENDS+=	itk.3:${PORTSDIR}/x11-toolkits/itk
+CONFIGURE_ENV+=	ITKINCDIR="${LOCALBASE}/include/itk3.3" \
+		ITKLIBDIR="${LOCALBASE}/lib"	\
+		TKINCDIR="${LOCALBASE}/include/tk8.4"	\
+		TKPRIVATEINCDIR="${LOCALBASE}/include/tk8.4/generic"	\
+		TKLIBDIR="${LOCALBASE}/lib"	\
+		ITCLINCDIR="${LOCALBASE}/include/itcl3.3"	\
 		ITCLLIBDIR="${LOCALBASE}/lib" \
-		TCLINCDIR="${LOCALBASE}/include/tcl8.3" \
-		TCLPRIVATEINCDIR="${LOCALBASE}/include/tcl8.3/generic" \
+		TCLINCDIR="${LOCALBASE}/include/tcl8.4" \
+		TCLPRIVATEINCDIR="${LOCALBASE}/include/tcl8.4/generic"	\
 		TCLLIBDIR="${LOCALBASE}/lib"
 MAN1+=		plrender.1 plserver.1 pltcl.1
 PLIST_SUB+=	TCLTK=""
@@ -97,14 +99,13 @@ pre-everything::
 	@${ECHO_MSG} ""
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-litk$$|-litk32|g ; \
-		 s|-ltk$$|-ltk83|g ; \
-		 s|-litcl$$|-litcl32|g ; \
-		 s|-ltcl$$|-ltcl83|g ; \
-		 s|-lpthread|${PTHREAD_LIBS:S/"//g}|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-ltk$$|-ltk84|g ; \
+		 s|-ltcl$$|-ltcl84|g ; \
+		 s|-lpthread|${PTHREAD_LIBS:S/"//g}|g ; \
+		 s|{libdir}/pkgconfig|{prefix}/libdata/pkgconfig|' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|tk octave java|tk|g' \
 		${WRKSRC}/bindings/Makefile.in
-	@${REINPLACE_CMD} -e 's| tclsh | ${LOCALBASE}/bin/tclsh8.3 |g' \
+	@${REINPLACE_CMD} -e 's| tclsh | ${LOCALBASE}/bin/tclsh8.4 |g' \
 		${WRKSRC}/scripts/mktclIndex
 
 post-install:
