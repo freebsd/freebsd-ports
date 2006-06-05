@@ -1,0 +1,37 @@
+lib/libphish.so.1
+lib/libphish.a
+lib/libphish.la
+include/phish.h
+bin/libphish-config
+@unexec rm -f %D/lib/libphish.so
+%%PORTDOCS%%%%DOCSDIR%%/Doxyfile
+%%PORTDOCS%%%%DOCSDIR%%/doxygen.css
+%%PORTDOCS%%%%DOCSDIR%%/annotated.html
+%%PORTDOCS%%%%DOCSDIR%%/files.html
+%%PORTDOCS%%%%DOCSDIR%%/functions.html
+%%PORTDOCS%%%%DOCSDIR%%/functions_vars.html
+%%PORTDOCS%%%%DOCSDIR%%/globals.html
+%%PORTDOCS%%%%DOCSDIR%%/globals_enum.html
+%%PORTDOCS%%%%DOCSDIR%%/globals_eval.html
+%%PORTDOCS%%%%DOCSDIR%%/globals_func.html
+%%PORTDOCS%%%%DOCSDIR%%/globals_type.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/main.html
+%%PORTDOCS%%%%DOCSDIR%%/phish_8h-source.html
+%%PORTDOCS%%%%DOCSDIR%%/phish_8h.html
+%%PORTDOCS%%%%DOCSDIR%%/structphish__url__data__t.html
+%%PORTDOCS%%%%DOCSDIR%%/tree.html
+%%PORTDOCS%%%%DOCSDIR%%/doxygen.png
+%%PORTDOCS%%%%DOCSDIR%%/ftv2blank.png
+%%PORTDOCS%%%%DOCSDIR%%/ftv2doc.png
+%%PORTDOCS%%%%DOCSDIR%%/ftv2folderclosed.png
+%%PORTDOCS%%%%DOCSDIR%%/ftv2folderopen.png
+%%PORTDOCS%%%%DOCSDIR%%/ftv2vertline.png
+%%PORTDOCS%%%%DOCSDIR%%/ftv2lastnode.png
+%%PORTDOCS%%%%DOCSDIR%%/ftv2link.png
+%%PORTDOCS%%%%DOCSDIR%%/ftv2mlastnode.png
+%%PORTDOCS%%%%DOCSDIR%%/ftv2mnode.png
+%%PORTDOCS%%%%DOCSDIR%%/ftv2node.png
+%%PORTDOCS%%%%DOCSDIR%%/ftv2plastnode.png
+%%PORTDOCS%%%%DOCSDIR%%/ftv2pnode.png
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
