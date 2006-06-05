@@ -2,7 +2,7 @@
 # Date created:				3 August 2003
 # Whom:					Dominic Marks <dom@wirespeed.org.uk>
 #
-# $Tecnik: ports/mail/dspam/Makefile,v 1.12 2006/04/30 10:04:15 itetcu Exp $
+# $Tecnik: ports/mail/dspam/Makefile,v 1.16 2006/06/05 09:21:42 itetcu Exp $
 # $FreeBSD$
 #
 
@@ -20,9 +20,9 @@ MASTER_SITES=	# set later
 MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	Bayesian spam filter - stable maintenance version
 
-PORTVER_MAJ=	3.6.6
+PORTVER_MAJ=	3.6.7
 #SNAP_DATE=	.20060421.2101
-_UPD_LINE_NO=	11
+_UPD_LINE_NO=	14
 
 MIN_OPTIONS_VER=	${PORTNAME}-3.6.6
 
@@ -36,7 +36,6 @@ MASTER_SITES=	http://dspam.irontec.com/sources/ \
 	http://dspam.systemadministrator.org/sources/ \
 	http://dspam.sourceforge.net/sources/ \
 	http://sce-tindy.tecnik93.com/FreeBSD/ports/${PORTNAME}/sources/ \
-	http://people.tecnik93.com/~itetcu/FreeBSD/ports/${PORTNAME}/sources/
 .endif
 
 ## debug / log / admin options
@@ -634,7 +633,9 @@ post-install:
 check-options-version:
 .ifdef(_OPTIONS_READ)
 	@(if ${PKG_VERSION} -t ${_OPTIONS_READ} ${MIN_OPTIONS_VER} | ${GREP} -q '<'; \
-	 then ${ECHO_CMD} "You have unsupported (old) OPTIONS, please do a 'make config; make'\n" \
+	 then	${ECHO_CMD} ""; \
+		${ECHO_CMD} "===> You have unsupported (old) OPTIONS, please do a 'make config; make'"; \
+		${ECHO_CMD} ""; \
 		exit 1; \
 	 fi)
 .endif
