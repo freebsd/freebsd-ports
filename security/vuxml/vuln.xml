@@ -34,6 +34,41 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="af8dba15-f4cc-11da-87a1-000c6ec775d9">
+    <topic>dokuwiki -- spellchecker remote PHP code execution</topic>
+    <affects>
+      <package>
+	<name>dokuwiki</name>
+	<range><lt>20060309_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Stefan Esser reports:</p>
+	<blockquote cite="http://www.hardened-php.net/advisory_042006.119.html">
+	  <p>During the evaluation of DokuWiki for a german/korean
+	    wiki of mine a flaw in DokuWiki's spellchecker was
+	    discovered, that allows injecting arbitrary PHP commands,
+	    by requesting a spellcheck on PHP commands in 'complex
+	    curly syntax'.</p>
+	  <p>Because the spellchecker is written as part of the AJAX
+	    functionality of DokuWiki, it can be directly called by
+	    any website visitor, without the need for a wiki
+	    account.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.hardened-php.net/advisory_042006.119.html</url>
+      <url>http://bugs.splitbrain.org/index.php?do=details&amp;id=823</url>
+      <url>http://secunia.com/advisories/20429/</url>
+    </references>
+    <dates>
+      <discovery>2006-06-05</discovery>
+      <entry>2006-06-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="40a0185f-ec32-11da-be02-000c6ec775d9">
     <topic>drupal -- multiple vulnerabilities</topic>
     <affects>
