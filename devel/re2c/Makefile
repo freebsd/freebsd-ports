@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	re2c
-PORTVERSION=	0.10.1
+PORTVERSION=	0.10.3
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,8 +15,8 @@ MAINTAINER=	laszlof@vonostingroup.com
 COMMENT=	Compile regular expression to C (much faster final code than flex)
 
 GNU_CONFIGURE=	yes
-USE_GCC=	3.4+
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+USE_GCC=	3.3+
 
 MAN1=		re2c.1
 
