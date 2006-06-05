@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Config-Fast
-PORTVERSION=	1.05
+PORTVERSION=	1.07
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Config
@@ -22,7 +22,7 @@ MAN3=		Config::Fast.3
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500600
-IGNORE=		needs at least perl 5.6 to build
+IGNORE=		needs at least perl 5.6 to run
 .endif
 
 .include <bsd.port.post.mk>
