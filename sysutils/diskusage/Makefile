@@ -8,7 +8,9 @@
 PORTNAME=	diskusage
 PORTVERSION=	1.05
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.maske.org/apps/downloads/
+MASTER_SITES=	ftp://ftp.maskeproductions.com/pub/FreeBSD/distfiles/ \
+		http://freebsd.unixfreunde.de/sources/ \
+		http://mirror2.unixfreunde.de/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shows current user diskusage and sum in human-readable format
