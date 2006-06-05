@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Apache-AuthCookie
-PORTVERSION=	3.09
+PORTVERSION=	3.10
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Apache
@@ -15,21 +15,22 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A perl module to provide custom forms for reauthentication
 
-RUN_DEPENDS=	${APXS}:${PORTSDIR}/${APACHE_PORT}
 .if defined(WITH_MODPERL2)
-RUN_DEPENDS+=	${LOCALBASE}/libexec/apache2/mod_perl.so:${PORTSDIR}/www/mod_perl2
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/mod_perl2.pm:${PORTSDIR}/www/mod_perl2
+BUILD_DEPENDS=	${RUN_DEPENDS}
+USE_APACHE=	2.0+
 .else
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/mod_perl.pm:${PORTSDIR}/www/mod_perl
-.endif
 BUILD_DEPENDS=	${RUN_DEPENDS} \
 		${SITE_PERL}/${PERL_ARCH}/Apache/Test.pm:${PORTSDIR}/www/p5-Apache-Test
+USE_APACHE=	1.3
+.endif
 
-APACHE_COMPAT=	yes
 CURUSER?=	`whoami`
 CURGRP?=	`groups | ${AWK} '{print $$1}'`
 TESTPORT?=	8228
 PERL_CONFIGURE=	yes
-CONFIGURE_ENV+=	APACHE="${PREFIX}/sbin/apache" \
+CONFIGURE_ENV+=	APACHE="${HTTPD}" \
 		TESTUSER="${CURUSER}" \
 		TESTGRP="${CURGRP}" \
 		TESTPORT="${TESTPORT}"
