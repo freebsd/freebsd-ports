@@ -2,6 +2,7 @@
 #
 # $FreeBSD$
 #
+# PROVIDE: tor
 # REQUIRE: NETWORKING SERVERS USR
 # BEFORE: LOGIN
 #

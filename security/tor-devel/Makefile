@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	tor
-PORTVERSION=	0.1.1.18
+PORTVERSION=	0.1.1.20
 CATEGORIES=	security net
-MASTER_SITES=	http://tor.eff.org/dist/
+MASTER_SITES=	http://tor.eff.org/dist/ \
+		http://mirror.onionland.org/dist/
 PKGNAMESUFFIX=	-devel
-DISTNAME=	${PORTNAME}-${PORTVERSION}-rc
 
 MAINTAINER=	peter.thoenen@yahoo.com
 COMMENT=	An anonymizing overlay network for TCP
@@ -23,8 +23,6 @@ USE_OPENSSL=	yes
 
 USE_RC_SUBR=	tor
 SUB_FILES=	pkg-message
-
-CONFLICTS=	tor-[0-9]*
 
 MANCOMPRESSED=	no
 MAN1=		tor.1 tor-resolve.1 torify.1
