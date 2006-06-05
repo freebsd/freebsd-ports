@@ -7,6 +7,7 @@
 
 PORTNAME=	phpmyfaq
 PORTVERSION=	1.6.1
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.phpmyfaq.de/download/
 DISTNAME=	${PORTNAME}.${PORTVERSION}.full
@@ -36,7 +37,7 @@ HOSTNAME!=	/sbin/sysctl -n kern.hostname
 HOSTNAME!=	/usr/sbin/sysctl -n kern.hostname
 .endif
 
-WWWDOCROOT?=	www/data
+WWWDOCROOT?=	www
 PHPMYFAQ_URL?=	${WWWDOCROOT}/faq
 PLIST=		${WRKDIR}/pkg-plist
 
