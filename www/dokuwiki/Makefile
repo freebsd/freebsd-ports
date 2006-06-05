@@ -7,6 +7,7 @@
 
 PORTNAME=	dokuwiki
 PORTVERSION=	${DIST_VER:S/${PORTNAME}//:S/-//g}
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.splitbrain.org/_media/projects/dokuwiki/ \
 		http://dev.splitbrain.org/browse/snapshots/
@@ -25,7 +26,7 @@ WANT_PHP_WEB=	YES
 
 WWWDOCROOT?=	www/data
 DOKUWIKI_URL?=	${PORTNAME}
-DOKUWIKI_DIR?=	${WWWDOCROOT}/${DOKUWIKI_URL}
+DOKUWIKI_DIR?=	www/${DOKUWIKI_URL}
 WRKSRC=		${WRKDIR}/${DIST_VER}
 PLIST=		${WRKDIR}/pkg-plist
 
