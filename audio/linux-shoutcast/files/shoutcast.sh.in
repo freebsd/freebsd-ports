@@ -1,0 +1,27 @@
+#!/bin/sh
+#
+
+# PROVIDE: shoutcast
+# REQUIRE: LOGIN
+# BEFORE:
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name="shoutcast"
+rcvar=`set_rcvar`
+start_cmd="shoutcast_startcmd"
+stop_cmd="shoutcast_stopcmd"
+
+shoutcast_startcmd ()
+{
+su shoutcast -c '%%PREFIX%%/sbin/sc_serv %%PREFIX%%/etc/shoutcast/sc_serv.conf & >/dev/null 2>&1'
+}
+
+shoutcast_stopcmd ()
+{
+killall sc_serv
+}
+
+load_rc_config $name
+run_rc_command "$1"
