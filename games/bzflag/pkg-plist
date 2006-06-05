@@ -1,40 +1,6 @@
 bin/bzadmin
 bin/bzflag
 bin/bzfs
-include/PyWorldBox.h
-include/PyTeam.h
-include/PyPlayer.h
-include/PyEvents.h
-include/PyEvent.h
-include/PyBZFlag.h
-include/PyBZDB.h
-lib/SAMPLE_PLUGIN.a
-lib/SAMPLE_PLUGIN.la
-lib/SAMPLE_PLUGIN.so
-lib/RogueGenocide.a
-lib/RogueGenocide.la
-lib/RogueGenocide.so
-lib/airspawn.a
-lib/airspawn.la
-lib/airspawn.so
-lib/chathistory.a
-lib/chathistory.la
-lib/chathistory.so
-lib/hiddenAdmin.a
-lib/hiddenAdmin.la
-lib/hiddenAdmin.so
-lib/killall.a
-lib/killall.la
-lib/killall.so
-lib/playHistoryTracker.a
-lib/playHistoryTracker.la
-lib/playHistoryTracker.so
-lib/shockwaveDeath.a
-lib/shockwaveDeath.la
-lib/shockwaveDeath.so
-lib/vocaliser.a
-lib/vocaliser.la
-lib/vocaliser.so
 %%DATADIR%%/automatic_icon.png
 %%DATADIR%%/blend_flash.png
 %%DATADIR%%/blue_basetop.png
@@ -202,6 +168,6 @@ lib/vocaliser.so
 %%DATADIR%%/wall.png
 %%DATADIR%%/water.png
 %%DATADIR%%/zone_ground.png
-@dirrm %%DATADIR%%/fonts
 @dirrm %%DATADIR%%/l10n
+@dirrm %%DATADIR%%/fonts
 @dirrm %%DATADIR%%
