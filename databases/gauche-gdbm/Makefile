@@ -36,11 +36,11 @@ do-extract:
 do-build:
 	cd ${WRKSRC} && ${LOCALBASE}/bin/gauche-config --fixup-extension gdbm
 	cd ${WRKSRC} && ${LOCALBASE}/bin/gosh genstub gdbm.stub
-	cd ${WRKSRC} && ${CC} ${CFLAGS} -c gdbm_head.c
-	cd ${WRKSRC} && ${CC} ${CFLAGS} -c gdbm_tail.c
-	cd ${WRKSRC} && ${CC} ${CFLAGS} -c -I${LOCALBASE}/include \
+	cd ${WRKSRC} && ${CC} ${CFLAGS} -fPIC  -c gdbm_head.c
+	cd ${WRKSRC} && ${CC} ${CFLAGS} -fPIC  -c gdbm_tail.c
+	cd ${WRKSRC} && ${CC} ${CFLAGS} -fPIC  -c -I${LOCALBASE}/include \
 		-I'${LOCALBASE}/lib/gauche/${PORTVERSION}/include' gdbm.c
-	cd ${WRKSRC} && ${CC} ${CFLAGS} ${LDFLAGS} -shared -Wl,-x -o gdbm.so \
+	cd ${WRKSRC} && ${CC} ${CFLAGS} ${LDFLAGS} -fPIC  -shared -Wl,-x -o gdbm.so \
 		-Wl,-soname,gdbm.so gdbm.o gdbm_head.o gdbm_tail.o \
 		-L${LOCALBASE}/lib -lgdbm
 
