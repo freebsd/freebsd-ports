@@ -12086,6 +12086,7 @@ rubygem-activesupport	ports/devel/rubygem-activesupport
 rubygem-bluecloth	ports/www/rubygem-bluecloth
 rubygem-capistrano	ports/sysutils/rubygem-capistrano
 rubygem-colortools	ports/print/rubygem-colortools
+rubygem-daemons	ports/devel/rubygem-daemons
 rubygem-event-loop	ports/devel/rubygem-event-loop
 rubygem-gem_plugin	ports/devel/rubygem-gem_plugin
 rubygem-memcache-client	ports/databases/rubygem-memcache-client
