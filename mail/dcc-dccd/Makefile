@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	dcc-dccd
-PORTVERSION=	1.3.31
+PORTVERSION=	1.3.34
 CATEGORIES=	mail
 MASTER_SITES=	http://www.rhyolite.com/anti-spam/dcc/source/ \
-		http://www.wa.apana.org.au/~dean/sources/ \
-		ftp://ftp.wa.apana.org.au/pub/unix/packages/
+		http://www.wa.apana.org.au/~dean/sources/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	dean@odyssey.apana.org.au
