@@ -1,0 +1,3 @@
+bin/cgdb
+%%DATADIR%%/cgdb.txt
+@dirrm %%DATADIR%%

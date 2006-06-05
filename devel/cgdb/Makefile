@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cgdb
-PORTVERSION=	0.6.2
+PORTVERSION=	0.6.3
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,22 +16,20 @@ COMMENT=	A curses-based interface to the GNU Debugger
 
 INFO=		cgdb
 MAN1=		cgdb.1
-PLIST_FILES=	bin/cgdb
 
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 600000
+IGNORE=		it can be compiled, but cannot run
+.endif
+
 .if ${OSVERSION} < 700016
 LIB_DEPENDS+=	readline.5:${PORTSDIR}/devel/readline
+LDFLAGS+=	-rpath ${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-readline=${LOCALBASE}
+CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 .endif
-
-.if ${OSVERSION} < 500000
-BROKEN=		Does not compile on FreeBSD 4.X
-.endif
-
-post-patch:
-	${REINPLACE_CMD} -e 's,libutil\.h,,g' ${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
