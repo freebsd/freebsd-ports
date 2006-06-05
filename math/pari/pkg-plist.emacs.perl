@@ -33,6 +33,8 @@ lib/pari/pari.cfg
 %%DOCSDIR%%/NEW
 %%DOCSDIR%%/README
 %%DOCSDIR%%/TODO
+%%DOCSDIR%%/PARI/822.pm
+%%DOCSDIR%%/pari.desc
 %%DOCSDIR%%/misc/README
 %%DOCSDIR%%/misc/color.dft
 %%DOCSDIR%%/misc/gpalias
@@ -69,9 +71,19 @@ lib/pari/pari.cfg
 %%DOCSDIR%%/examples/rho.gp
 %%DOCSDIR%%/examples/squfof.gp
 %%DOCSDIR%%/examples/taylor.gp
+share/emacs/site-lisp/pari/pari-conf.el
+share/emacs/site-lisp/pari/pari-completion.el
+share/emacs/site-lisp/pari/pari-fontification.el
+share/emacs/site-lisp/pari/pari-help.el
+share/emacs/site-lisp/pari/pari-messages.el
+share/emacs/site-lisp/pari/pari.el
+share/emacs/site-lisp/pari/pariemacs.txt
+share/emacs/site-lisp/pari/sli-tools.el
 @dirrm include/pari
 @dirrm lib/pari
 @dirrm %%DOCSDIR%%/misc
 @dirrm %%DOCSDIR%%/doc
 @dirrm %%DOCSDIR%%/examples
+@dirrm %%DOCSDIR%%/PARI
 @dirrm %%DOCSDIR%%
+@dirrm share/emacs/site-lisp/pari

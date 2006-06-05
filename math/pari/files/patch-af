@@ -1,15 +1,67 @@
---- config/Makefile.SH.orig	Sat Apr 26 04:08:14 2003
-+++ config/Makefile.SH	Tue Feb 28 19:07:18 2006
-@@ -183,7 +183,7 @@
- LIBDIR = \$(DESTDIR)$libdir
- BINDIR = \$(DESTDIR)$bindir
- DATADIR= \$(DESTDIR)$datadir
--MANDIR = \$(DESTDIR)$mandir
-+MANDIR = \$(DESTDIR)\${PREFIX}/man/man1
- ALLDIR = \$(DESTDIR)$miscdir
- READMEDIR = \$(ALLDIR)
- DOCDIR  = \$(ALLDIR)/doc
-@@ -355,7 +355,7 @@
+--- config/Makefile.SH.orig	Tue Jan 17 00:52:21 2006
++++ config/Makefile.SH	Tue Feb 28 18:09:23 2006
+@@ -162,7 +162,7 @@
+ CC_FLAVOR  =
+ CC         = $CC \$(CC_FLAVOR)
+ CPPFLAGS   = $CPPFLAGS
+-CFLAGS     = $CFLAGS
++CFLAGS     = $CFLAGS -fPIC
+ DLCFLAGS   = $DLCFLAGS
+ LD_FLAVOR  = \$(CC_FLAVOR)
+ LD         = $LD \$(LD_FLAVOR)
+@@ -221,13 +221,15 @@
+ 
+ # Change these installation directories to suit your needs.
+ # DESTDIR is used to install to a false hierachy (to build a Debian package)
+-INCLUDEDIR= "\$(DESTDIR)$includedir"
+-LIBDIR    = "\$(DESTDIR)$libdir"
+-BINDIR    = "\$(DESTDIR)$bindir"
+-MANDIR    = "\$(DESTDIR)$mandir"
+-EMACSDIR  = "\$(DESTDIR)$emacsdir"
+-DATADIR   = "\$(DESTDIR)$datadir"
+-SYSDATADIR= "\$(DESTDIR)$sysdatadir"
++INCLUDEDIR= "\$(DESTDIR)$includedir"
++LIBDIR    = "\$(DESTDIR)$libdir"
++BINDIR    = "\$(DESTDIR)$bindir"
++MANDIR    = "\$(DESTDIR)\${PREFIX}/man/man1"
++EMACSDIR  = "\$(DESTDIR)$emacsdir"
++ALLDIR    = "\${PREFIX}/share/doc/pari"
++READMEDIR = "\$(ALLDIR)"
++DATADIR   = "\$(ALLDIR)" 
++SYSDATADIR= "\$(DESTDIR)$sysdatadir"
+ 
+ EXDIR     = \$(DATADIR)/examples
+ MISCDIR   = \$(DATADIR)/misc
+@@ -385,7 +387,7 @@
+ 	-\$(LN) gp.1 \$(MANDIR)/pari.1
+ 	-\$(LN) gp-$version.1 \$(MANDIR)/gp.1
+ 
+-install-misc: $install_emacs_files
++install-misc: $install_emacs_files install-top
+ 	-mkdir -p \$(MISCDIR) \$(BINDIR)
+ 	\$(INSTALL_PROGRAM) $misc/tex2mail \$(BINDIR)
+ 	\$(INSTALL_DATA) $doc/tex2mail.1 \$(MANDIR)
+@@ -398,6 +400,19 @@
+ 	\$(INSTALL_DATA) $misc/pari.xpm  \$(MISCDIR)
+ 	\$(INSTALL_PROGRAM) $misc/xgp    \$(MISCDIR)
+ 
++install-top::
++	-mkdir -p \$(READMEDIR)
++	\$(INSTALL_DATA) $TOP/AUTHORS      \$(READMEDIR)
++	\$(INSTALL_DATA) $TOP/Announce.2.1 \$(READMEDIR)
++	\$(INSTALL_DATA) $TOP/CHANGES      \$(READMEDIR)
++	\$(INSTALL_DATA) $TOP/COMPAT       \$(READMEDIR)
++	\$(INSTALL_DATA) $TOP/COPYING      \$(READMEDIR)
++	\$(INSTALL_DATA) $TOP/CVS.txt      \$(READMEDIR)
++	\$(INSTALL_DATA) $TOP/MACHINES     \$(READMEDIR)
++	\$(INSTALL_DATA) $TOP/NEW          \$(READMEDIR)
++	\$(INSTALL_DATA) $TOP/README       \$(READMEDIR)
++	\$(INSTALL_DATA) $TOP/TODO         \$(READMEDIR)
++
+ install-cfg::
+ 	-mkdir -p \$(SYSDATADIR)
+ 	-\$(INSTALL_DATA) pari.cfg \$(SYSDATADIR)
+@@ -408,7 +423,7 @@
  
  install-doc::
  	-mkdir -p \$(BINDIR) \$(DOCDIR)
@@ -18,14 +70,16 @@
  	-\$(INSTALL_PROGRAM) $doc/gphelp    \$(BINDIR)
  	-\$(INSTALL_DATA) $doc/Makefile     \$(DOCDIR)
  	-\$(INSTALL_DATA) $doc/translations \$(DOCDIR)
-@@ -374,10 +374,10 @@
+@@ -426,11 +441,11 @@
  	-\$(INSTALL_DATA) $doc/usersch4.tex \$(DOCDIR)
  	-\$(INSTALL_DATA) $doc/usersch5.tex \$(DOCDIR)
  	-\$(INSTALL_DATA) $doc/paricfg.tex  \$(DOCDIR)
+-	-\$(INSTALL_DATA) $doc/libpari.dvi    \$(DOCDIR)
 -	-\$(INSTALL_DATA) $doc/users.dvi    \$(DOCDIR)
 -	-\$(INSTALL_DATA) $doc/tutorial.dvi \$(DOCDIR)
 -	-\$(INSTALL_DATA) $doc/refcard.dvi  \$(DOCDIR)
 -	-\$(INSTALL_DATA) $doc/refcard.ps   \$(DOCDIR)
++#	-\$(INSTALL_DATA) $doc/libpari.dvi    \$(DOCDIR)
 +#	-\$(INSTALL_DATA) $doc/users.dvi    \$(DOCDIR)
 +#	-\$(INSTALL_DATA) $doc/tutorial.dvi \$(DOCDIR)
 +#	-\$(INSTALL_DATA) $doc/refcard.dvi  \$(DOCDIR)
@@ -33,49 +87,15 @@
  
  install-examples:
  	-mkdir -p \$(EXDIR)
-@@ -395,8 +395,8 @@
- 	-\$(INSTALL_DATA) $ex/taylor.gp   \$(EXDIR)
+@@ -524,9 +539,9 @@
+ 	   --eval '(setq load-path (append (list ".") load-path))' \
+ 	   -f batch-byte-compile *.el
  
- install-data:
--	-mkdir -p \$(DATADIR)
--	-for f in $data/*; do \$(INSTALL_DATA)  \$\$f \$(DATADIR); done 2>/dev/null
-+#	-mkdir -p \$(DATADIR)
-+#	-for f in $data/*; do \$(INSTALL_DATA)  \$\$f \$(DATADIR); done 2>/dev/null
- 
- install-lib-sta: \$(LIBPARI_STA)
- 	-mkdir -p \$(LIBDIR)
-@@ -408,6 +408,7 @@
- 	-mkdir -p \$(LIBDIR)
- 	-\$(RM) \$(LIBDIR)/\$(LIBPARI_DYN)
- 	\$(INSTALL_PROGRAM) \$(LIBPARI_DYN) \$(LIBDIR)/\$(LIBPARI_DYN)
-+	\$(LN) \$(LIBPARI_DYN) \$(LIBDIR)/\$(LIBPARI_SO)
- EOT
- if test "$soname" != "$sodest"; then
-   cat >> $file << EOT
-@@ -436,6 +437,7 @@
- \$(LIBPARI_DYN): \$(OBJS)
- 	-\$(RM) \$(LIBPARI_DYN)
- 	\$(DLLD) -o \$@ \$(DLLDFLAGS) \$(OBJS) \$(EXTRADLLDFLAGS)
-+	\$(LN) \$(LIBPARI_DYN) \$(LIBPARI_SO)
- EOT
-     if test "$soname" != "$sodest"; then
-       cat >> $file << EOT
-@@ -464,13 +466,13 @@
- 
- if test -n "$emacs"; then
-   cat >> $file << EOT
--$pari_elc: $emx/pari.el
--	@echo "Byte-Compiling pari.el..."
--	-cd $emx; $emacs -batch -l compile
-+#$pari_elc: $emx/pari.el
-+#	@echo "Byte-Compiling pari.el..."
-+#	-cd $emx; $emacs -batch -l compile
- 
--$install_emacs_files: $pari_elc
-+$install_emacs_files: # $pari_elc
+-$install_emacs_files: elc
++$install_emacs_files: #elc
  	-mkdir -p \$(EMACSDIR)
--	-\$(INSTALL_DATA)   $pari_elc           \$(EMACSDIR)
-+#	-\$(INSTALL_DATA)   $pari_elc           \$(EMACSDIR)
- 	\$(INSTALL_DATA)    $emx/pari.el        \$(EMACSDIR)
- 	\$(INSTALL_DATA)    $emx/pariemacs.txt  \$(EMACSDIR)
- 	\$(INSTALL_DATA)    $emx/with-syntax.el     \$(EMACSDIR)
+-	-cd $emx; for f in *.elc *.el pariemacs.txt; do \
++	-cd $emx; for f in *.el pariemacs.txt; do \
+ 	  \$(INSTALL_DATA) \$\$f \$(EMACSDIR); \
+ 	done
+ EOT
