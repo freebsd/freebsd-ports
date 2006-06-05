@@ -1022,6 +1022,7 @@
     SUBDIR += xpi-noscript
     SUBDIR += xpi-pdf_download
     SUBDIR += xpi-preferential
+    SUBDIR += xpi-quickproxy
     SUBDIR += xpi-resurrectpages
     SUBDIR += xpi-savegenpage
     SUBDIR += xpi-searchstatus
