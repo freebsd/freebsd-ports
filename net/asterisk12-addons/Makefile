@@ -7,6 +7,7 @@
 
 PORTNAME=	asterisk-addons
 PORTVERSION=	1.2.3
+PORTREVISION=   1
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.digium.com/pub/asterisk/ \
 		http://ftp.digium.com/pub/asterisk/old-releases/ \
@@ -17,10 +18,10 @@ MAINTAINER=	fgast@only640k.org
 COMMENT=	Additional modules for the Asterisk Open Source PBX
 
 BUILD_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk
-LIB_DEPENDS=	mysqlclient:${PORTSDIR}/databases/mysql41-client
 RUN_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk
 
 ONLY_FOR_ARCHS=	i386 sparc64 amd64
+USE_MYSQL=	yes
 USE_GMAKE=	yes
 
 CONF_SAMPLES=	cdr_mysql.conf.sample res_mysql.conf.sample
