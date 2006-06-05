@@ -53,7 +53,6 @@ JAVA_VERSION=	1.4+
 JAVA_BUILD=	jdk
 JAVA_VENDOR=	freebsd bsdjava
 .endif
-.endif
 
 .include <bsd.port.pre.mk>
 .include <${FILESDIR}/Makefile.localized>
