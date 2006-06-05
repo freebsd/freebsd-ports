@@ -6138,6 +6138,7 @@ linux-sdl12	ports/devel/linux-sdl12
 linux-sdl_image	ports/graphics/linux-sdl_image
 linux-seamonkey	ports/www/linux-seamonkey
 linux-seamonkey-devel	ports/www/linux-seamonkey-devel
+linux-shoutcast	ports/audio/linux-shoutcast
 linux-spheresofchaos-demo	ports/games/linux-spheresofchaos-demo
 linux-steam	ports/games/linux-steam
 linux-sun-jdk12	ports/java/linux-sun-jdk12
