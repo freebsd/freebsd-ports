@@ -444,6 +444,7 @@
     SUBDIR += pam-pgsql
     SUBDIR += pam_af
     SUBDIR += pam_alreadyloggedin
+    SUBDIR += pam_authsrv
     SUBDIR += pam_bsdbioapi
     SUBDIR += pam_krb5
     SUBDIR += pam_ldap
