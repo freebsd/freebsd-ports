@@ -49,11 +49,7 @@ WITHOUT_CPU_CFLAGS=	true
 USE_JAVA=	yes
 JAVA_VERSION=	1.4+
 JAVA_BUILD=	jdk
-.if ${MACHINE_ARCH} == amd64 # cannot use ARCH
-JAVA_VENDOR=	bsdjava
-.else
 JAVA_VENDOR=	freebsd bsdjava
-.endif
 .endif
 
 .include <bsd.port.pre.mk>
