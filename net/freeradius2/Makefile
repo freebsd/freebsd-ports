@@ -25,14 +25,6 @@ USE_AUTOTOOLS=	libltdl:15 libtool:15
 USE_GMAKE=	yes
 USE_PERL5=	yes
 USE_OPENSSL=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX} --quiet --with-logdir=${LOGDIR} \
-		--localstatedir=/var \
-		--disable-ltdl-install \
-		--with-ltdl-include=${LOCALBASE}/include \
-		--with-ltdl-lib=${LOCALBASE}/lib \
-		--with-large-files --without-rlm_sql_unixodbc \
-		--without-rlm_sql_oracle --without-rlm_sql_iodbc \
-		--without-rlm_sql_db2
 MAKE_ARGS+=	LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
@@ -46,6 +38,17 @@ OPTIONS=	KERBEROS	"With Kerberos support" off \
 		EXPERIMENTAL	"Build experimental modules" off
 
 .include <bsd.port.pre.mk>
+
+CONFIGURE_ARGS=	--prefix=${PREFIX} --quiet --with-logdir=${LOGDIR} \
+		--localstatedir=/var \
+		--disable-ltdl-install \
+		--with-ltdl-include=${LOCALBASE}/include \
+		--with-ltdl-lib=${LOCALBASE}/lib \
+		--with-large-files --without-rlm_sql_unixodbc \
+		--without-rlm_sql_oracle --without-rlm_sql_iodbc \
+		--without-rlm_sql_db2 \
+		--with-openssl-includes=${OPENSSLINC} \
+		--with-openssl-libraries=${OPENSSLLIB}
 
 .if ${ARCH} == amd64
 CONFIGURE_ARGS+=	--with-pic
