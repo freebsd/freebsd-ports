@@ -1,8 +1,7 @@
-lib/libpub.a
+include/publib.h
 include/publib/alloc.h
 include/publib/base64.h
 include/publib/bitarr.h
-include/publib/cfgtool.h
 include/publib/cmp.h
 include/publib/errormsg.h
 include/publib/files.h
@@ -19,5 +18,5 @@ include/publib/sbuf.h
 include/publib/stack.h
 include/publib/strutil.h
 include/publib/tbuf.h
-include/publib.h
+lib/libpub.a
 @dirrm include/publib
