@@ -1,6 +1,18 @@
---- Makefile.orig	Fri May 26 21:40:46 2006
-+++ Makefile	Fri May 26 21:42:42 2006
-@@ -11,7 +11,8 @@
+--- Makefile.orig	Mon Mar 27 22:38:37 2006
++++ Makefile	Mon Jun  5 15:37:15 2006
+@@ -3,15 +3,16 @@
+ 
+ 
+ 
+-CC	= gcc
+-CFLAGS	= -O2 -g -Wall `pkg-config gtk+-2.0 --cflags`
++CC	?= gcc
++CFLAGS	+= `pkg-config gtk+-2.0 --cflags`
+ 
+-LD	= $(CC)
+-LDFLAGS	= `pkg-config gtk+-2.0 --libs` -lm
++LD	?= $(CC)
++LDFLAGS	+= `pkg-config gtk+-2.0 --libs` -lm
  
  ifeq ($(PNG),yes)
  CFLAGS	+= -DHAVE_LIBPNG
