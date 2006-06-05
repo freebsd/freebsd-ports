@@ -1,0 +1,8 @@
+This port provides a native (as opposed to ODBC) MySQL interface for
+Erlang applications. It has been extracted from the codebase of the
+Yxa SIP Software [1], and is provided by Process One [2].
+
+[1] http://www.stacken.kth.se/project/yxa/
+[2] http://www.process-one.net/
+
+WWW: http://support.process-one.net/doc/display/CONTRIBS/Yxa/

@@ -1,0 +1,13 @@
+%%ERLANGDIR%%/%%PORTNAME%%-%%PORTVERSION%%/src/mysql.erl
+%%ERLANGDIR%%/%%PORTNAME%%-%%PORTVERSION%%/src/mysql_auth.erl
+%%ERLANGDIR%%/%%PORTNAME%%-%%PORTVERSION%%/src/mysql_conn.erl
+%%ERLANGDIR%%/%%PORTNAME%%-%%PORTVERSION%%/src/mysql_recv.erl
+%%ERLANGDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/mysql.beam
+%%ERLANGDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/mysql_auth.beam
+%%ERLANGDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/mysql_conn.beam
+%%ERLANGDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/mysql_recv.beam
+%%ERLANGDIR%%/%%PORTNAME%%-%%PORTVERSION%%/include/mysql.hrl
+@dirrm %%ERLANGDIR%%/%%PORTNAME%%-%%PORTVERSION%%/src
+@dirrm %%ERLANGDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin
+@dirrm %%ERLANGDIR%%/%%PORTNAME%%-%%PORTVERSION%%/include
+@dirrm %%ERLANGDIR%%/%%PORTNAME%%-%%PORTVERSION%%
