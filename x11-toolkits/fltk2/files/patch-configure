@@ -1,5 +1,5 @@
---- ./configure.orig	Fri Mar 17 06:00:50 2006
-+++ ./configure	Sun Apr  2 13:24:34 2006
+--- configure.orig	Fri Jun  2 06:01:04 2006
++++ configure	Mon Jun  5 14:44:17 2006
 @@ -1328,7 +1328,7 @@
  FL_MINOR_VERSION=0
  FL_PATCH_VERSION=0

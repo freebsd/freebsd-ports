@@ -1,5 +1,5 @@
---- ./fltk-config.in.orig	Thu Aug 11 02:17:12 2005
-+++ ./fltk-config.in	Sun Apr  2 13:24:34 2006
+--- ./fltk2-config.in.orig	Tue Apr 11 00:08:47 2006
++++ ./fltk2-config.in	Fri Apr 14 15:42:24 2006
 @@ -62,7 +62,7 @@
  srcdir=@srcdir@
  
