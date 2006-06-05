@@ -5854,6 +5854,7 @@ libpci		ports/devel/libpci
 libpdel		ports/devel/libpdel
 libpdtp		ports/net-p2p/libpdtp
 libpeak		ports/devel/libpeak
+libphish	ports/devel/libphish
 libppd		ports/print/libppd
 libpperl	ports/devel/libpperl
 libprelude	ports/security/libprelude
