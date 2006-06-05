@@ -581,6 +581,7 @@
     SUBDIR += p5-HTML-Diff
     SUBDIR += p5-HTML-Element-Extended
     SUBDIR += p5-HTML-Embperl
+    SUBDIR += p5-HTML-Encoding
     SUBDIR += p5-HTML-FillInForm
     SUBDIR += p5-HTML-FromText
     SUBDIR += p5-HTML-LinkExtractor
