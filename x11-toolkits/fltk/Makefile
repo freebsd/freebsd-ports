@@ -31,7 +31,6 @@ CONFLICTS=	fltk-1*
 .else
 CONFLICTS=	fltk-threads-1*
 .endif
-CONFLICTS+=	fltk-2.*
 
 VERSION=	1.1.6
 USE_BZIP2=	yes
