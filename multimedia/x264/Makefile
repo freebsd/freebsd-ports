@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	x264
-PORTVERSION=	0.0.20060528
+PORTVERSION=	0.0.20060605
 CATEGORIES=	multimedia
 MASTER_SITES=	http://downloads.videolan.org/pub/videolan/x264/snapshots/
 DISTNAME=	${PORTNAME}-snapshot-${PORTVERSION:S/0.0.//}-2245
@@ -15,6 +15,7 @@ MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Multimedia library and tool for encoding H.264/AVC video streams
 
 USE_BZIP2=	yes
+EXTRACT_AFTER_ARGS?=	| ${TAR} -xf - --exclude .svn
 USE_GETOPT_LONG=yes
 WRKSRC=		${WRKDIR}/${DISTNAME}
 USE_GMAKE=	yes
