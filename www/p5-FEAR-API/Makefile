@@ -19,6 +19,7 @@ COMMENT=	Web Scraping Zen
 BUILD_DEPENDS=	p5-Compress-Zlib>=0:${PORTSDIR}/archivers/p5-Compress-Zlib \
 		p5-Digest-MD5>=0:${PORTSDIR}/security/p5-Digest-MD5 \
 		p5-Email-Find>=0:${PORTSDIR}/mail/p5-Email-Find \
+		p5-Exporter-Lite>=0:${PORTSDIR}/devel/p5-Exporter-Lite \
 		p5-File-MMagic>=0:${PORTSDIR}/devel/p5-File-MMagic \
 		p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp \
 		p5-File-Temp>=0:${PORTSDIR}/devel/p5-File-Temp \
