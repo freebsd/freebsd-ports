@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	jigdo
-PORTVERSION=	0.7.1
+PORTVERSION=	0.7.3
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://atterer.net/jigdo/
 
 MAINTAINER=	bra@fsn.hu
 COMMENT=	A utility used to retrieve very large files over the Internet
 
-BUILD_DEPENDS=	libwww-config:${PORTSDIR}/www/libwww \
-		${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget
+BUILD_DEPENDS=	${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget
 
 MAN1=		jigdo-file.1 jigdo-lite.1 jigdo-mirror.1
 
@@ -22,11 +21,12 @@ USE_BZIP2=	yes
 USE_SUBMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-CONFIGURE_ENV+=	"CPPFLAGS=-I${LOCALBASE}/include -I${LOCALBASE}/include/db3" \
-		LIBS=-L${LOCALBASE}/lib
+WITH_BDB_VER?=	43
+
+CONFIGURE_ENV+=	"CPPFLAGS=-I${LOCALBASE}/include"
 
 OPTIONS=	GUI "Build the gtk2 gui" off \
-		DB3 "Build with BDB3 support" on \
+		BDB "Build with Berkeley DB support (for jigdo-file cache)" on \
 		NLS "Native Language Support" on
 
 .include <bsd.port.pre.mk>
@@ -37,29 +37,31 @@ NOT_FOR_ARCHS+=	alpha
 
 .if defined(WITH_GUI)
 CONFIGURE_ARGS+=	--with-gui
-LIB_DEPENDS+=	gtk-x11-2.0:${PORTSDIR}/x11-toolkits/gtk20
-MAN1+=	jigdo.1
-PLIST_SUB+=	SUB_GUI=""
+LIB_DEPENDS+=	gtk-x11-2.0:${PORTSDIR}/x11-toolkits/gtk20 \
+		curl:${PORTSDIR}/ftp/curl
+MAN1+=		jigdo.1
+PLIST_SUB+=	GUI=""
 .else
-CONFIGURE_ARGS+=	--without-gui
-PLIST_SUB+=	SUB_GUI="@comment "
+CONFIGURE_ARGS+=--without-gui
+PLIST_SUB+=	GUI="@comment "
 .endif
 
-.if defined(WITH_DB3)
-CONFIGURE_ARGS+=	--with-libdb=-ldb3
-#CONFIGURE_ENV+=	LDFLAGS=-ldb3
-USE_BDB=	3
+.if !defined(WITHOUT_BDB)
+CONFIGURE_ENV+=	CPPFLAGS=-I${BDB_INCLUDE_DIR} \
+		LIBS=-L${BDB_LIB_DIR}
+CONFIGURE_ARGS+=--with-libdb=-l${BDB_LIB_CXX_NAME}
+USE_BDB=	${WITH_BDB_VER}
 .else
-CONFIGURE_ARGS+=	--without-libdb
+CONFIGURE_ARGS+=--without-libdb
 .endif
 
-.if defined(WITH_NLS)
+.if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
-CONFIGURE_ARGS+=	--enable-nls
+CONFIGURE_ARGS+=--enable-nls
 PLIST_SUB+=	NLS=""
 .else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	NLS="@comment"
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
 .endif
 
 post-install:
