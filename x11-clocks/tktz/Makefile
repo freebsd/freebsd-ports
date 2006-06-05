@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tktz
-PORTVERSION=	0.1
+PORTVERSION=	0.2
 CATEGORIES=	x11-clocks tk84
 MASTER_SITES=	http://gromnizki.unixdev.net/soft/
 
@@ -21,7 +21,7 @@ do-install:
 	@ ${MKDIR} ${PREFIX}/lib/tktz
 	@ ${INSTALL_SCRIPT} ${WRKSRC}/tktz ${PREFIX}/lib/tktz
 	@ ${LN} -sf ${PREFIX}/lib/tktz/tktz ${PREFIX}/bin
-.for file in tktz.help README LICENSE
+.for file in tktz.help README LICENSE NEWS
 	@ ${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/lib/tktz
 .endfor
 
