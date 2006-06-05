@@ -38,6 +38,7 @@
     SUBDIR += dbtool
     SUBDIR += dbview
     SUBDIR += edb
+    SUBDIR += erlang-mysql
     SUBDIR += erserver
     SUBDIR += evolution-data-server
     SUBDIR += fastdb
