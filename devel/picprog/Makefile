@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	picprog
-PORTVERSION=	1.7
-PORTREVISION=	1
+PORTVERSION=	1.8.1
 CATEGORIES=	devel
 MASTER_SITES=	http://hyvatti.iki.fi/~jaakko/pic/
 
