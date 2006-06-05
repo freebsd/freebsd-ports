@@ -35,7 +35,7 @@ SUB_FILES=	pkg-message
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-IGNORE=		does not build on FreeBSD 4.x
+BROKEN=		does not build on FreeBSD 4.x
 .endif
 
 post-patch:
