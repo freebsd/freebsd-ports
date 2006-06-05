@@ -1,0 +1,4 @@
+sbin/sc_serv
+@unexec if cmp -s %%PREFIX%%/etc/shoutcast/sc_serv.conf %%PREFIX%%/etc/shoutcast/sc_serv.conf.sample; then rm %%PREFIX%%/etc/shoutcast/sc_serv.conf; fi
+etc/shoutcast/sc_serv.conf.sample
+@dirrmtry etc/shoutcast
