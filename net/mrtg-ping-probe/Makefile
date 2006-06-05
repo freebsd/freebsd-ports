@@ -15,6 +15,8 @@ COMMENT=	A Round Trip Time and Packet Loss Probe for MRTG
 
 RUN_DEPENDS=	${LOCALBASE}/bin/mrtg:${PORTSDIR}/net-mgmt/mrtg
 
+FETCH_BEFORE_ARGS=	-p      # MASTER_SITE needs PASSIVE FTP.
+
 USE_PERL5=	YES
 
 MAN1=		${PORTNAME}.1
