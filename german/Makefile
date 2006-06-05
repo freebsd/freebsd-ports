@@ -34,5 +34,6 @@
     SUBDIR += tvbrowser
     SUBDIR += unix-connect
     SUBDIR += webalizer2
+    SUBDIR += wordpress
 
 .include <bsd.port.subdir.mk>
