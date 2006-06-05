@@ -1,0 +1,29 @@
+--- getweb.in	Thu May 11 17:02:59 2006
++++ getweb.in	Sun Jun  4 15:41:29 2006
+@@ -48,7 +48,7 @@
+     exefile="$2"
+     what="$3"
+     
+-    wget $WGETOPTS -O $exefile "$url/$exefile" ||
++    fetch -m -o $exefile "$url/$exefile" ||
+ 	error "Couldn't download $url/$exefile"
+     unzip -o $exefile "$what"
+     rm $exefile
+@@ -62,7 +62,7 @@
+     file="$2"
+     what="$3"
+     
+-    wget $WGETOPTS -O $file "$url/$file" ||
++    fetch -m -o $file "$url/$file" ||
+ 	error "Couldn't download $url/$file"
+     gunzip <$file | tar xvf - $what
+     rm $file
+@@ -130,7 +130,7 @@
+ 	do
+ 	    base=`basename $i .IC_`
+ 	    mv $base.IC_ $base.ic_
+-	    ./msexpand $base.ic_
++	    msexpand $base.ic_
+ 	    rm -f $base.ic_
+ 	done
+ 	;;

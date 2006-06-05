@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	foo2zjs
-PORTVERSION=	20060504
+PORTVERSION=	20060603
 CATEGORIES=	print
 MASTER_SITES=	http://foo2zjs.rkkda.com/
 DISTNAME=	${PORTNAME}
@@ -23,13 +23,15 @@ USE_GMAKE=	yes
 SUB_FILES=	pkg-message
 
 MAN1=	foo2hp.1 foo2oak-wrapper.1 foo2zjs-wrapper.1 oakdecode.1 foo2hp2600-wrapper.1 foo2oak.1 foo2zjs.1 zjsdecode.1
+EXTRAFILES=	msexpand getweb
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^CFLAGS|CFLAGS?|g' -e 's|^PREFIX|PREFIX?|g' ${WRKSRC}/icc2ps/Makefile
 
 post-install:
 	@cd ${WRKSRC} && \
-		${INSTALL_MAN} ${MAN1} ${PREFIX}/man/man1/
+		${INSTALL_MAN} ${MAN1} ${PREFIX}/man/man1/ && \
+			${INSTALL_SCRIPT} ${EXTRAFILES} ${PREFIX}/bin/
 
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
