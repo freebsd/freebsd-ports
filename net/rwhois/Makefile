@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rwhois
-PORTVERSION=	1.5.9.5
+PORTVERSION=	1.5.9.6
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.rwhois.net/ftp/ \
 		http://www.rwhois.net/ftp/older_releases/
