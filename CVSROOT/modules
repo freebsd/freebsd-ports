@@ -1645,6 +1645,7 @@ de-swissgerman-ding	ports/german/swissgerman-ding
 de-tvbrowser	ports/german/tvbrowser
 de-unix-connect	ports/german/unix-connect
 de-webalizer2	ports/german/webalizer2
+de-wordpress	ports/german/wordpress
 deal		ports/games/deal
 deb2targz	ports/archivers/deb2targz
 deco		ports/misc/deco
