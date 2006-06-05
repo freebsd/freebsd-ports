@@ -6,18 +6,19 @@
 #
 
 PORTNAME=	xcircuit
-PORTVERSION=	3.4.21
+PORTVERSION=	3.4.22
 PORTEPOCH=	1
 CATEGORIES=	cad
-MASTER_SITES=	http://opencircuitdesign.com/xcircuit/archive/
+MASTER_SITES=	http://opencircuitdesign.com/xcircuit/archive/ \
+		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
+EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	shaun@inerd.com
 COMMENT=	An X11 drawing program [especially for circuit schematics]
 
 BUILD_DEPENDS=	tclsh${TCL_VER}:${PORTSDIR}/lang/tcl${USE_TCL} \
 		wish${TK_VER}:${PORTSDIR}/x11-toolkits/tk${USE_TK}
 
-USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 USE_TCL=	84
@@ -33,12 +34,15 @@ CFLAGS+=	-fPIC
 
 MAN1=		xcircuit.1
 
-pre-everything::
-.if !defined(WITH_GHOSTSCRIPT_AFPL) || ${WITH_GHOSTSCRIPT_AFPL} != yes
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "      Define WITH_GHOSTSCRIPT_AFPL=yes to use"
-	@${ECHO_MSG} "      AFPL Postscript interpreter instead of GNU one"
-	@${ECHO_MSG} ""
+OPTIONS=	GHOSTSCRIPT_AFPL "Use AFPL Postscript interpreter" off
+
+.include <bsd.port.pre.mk>
+
+pre-configure:
+.if defined(WITH_GHOSTSCRIPT_AFPL)
+	@${ECHO_MSG} "===>  Using AFPL Postscript interpreter"
+.else
+	@${ECHO_MSG} "===>  Using GNU Postscript interpreter"
 .endif
 
 post-patch:
@@ -58,4 +62,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/examples/*.sim ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
