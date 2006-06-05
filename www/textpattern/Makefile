@@ -7,6 +7,7 @@
 
 PORTNAME=	textpattern
 PORTVERSION=	4.0.3
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.textpattern.com/dload/
 
@@ -17,7 +18,7 @@ NO_BUILD=	YES
 WANT_PHP_WEB=	YES
 WWWOWN?=	www
 WWWGRP?=	www
-TEXTPATTERN?=	www/data-dist/${PORTNAME}
+TEXTPATTERN?=	www/${PORTNAME}
 PLIST_SUB+=	TEXTPATTERN=${TEXTPATTERN}
 USE_PHP=	mbstring xml
 
