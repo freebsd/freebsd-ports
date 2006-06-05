@@ -3,9 +3,5 @@ bin/xloadimage
 bin/xsetbg
 bin/xview
 etc/xloadimagerc
-man/man1/uufilter.1.gz
-man/man1/xloadimage.1.gz
-man/man1/xsetbg.1.gz
-man/man1/xview.1.gz
 %%EXAMPLESDIR%%/xloadimagerc
 @dirrm %%EXAMPLESDIR%%
