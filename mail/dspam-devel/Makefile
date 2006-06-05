@@ -2,7 +2,7 @@
 # Date created:		24 Jun 2004
 # Whom:			Ion-Mihai "IOnut" Tetcu <itetcu@people.tecnik93.com>
 #
-# $Tecnik: ports/mail/dspam-devel/Makefile,v 1.52 2006/05/13 11:53:53 itetcu Exp $
+# $Tecnik: ports/mail/dspam-devel/Makefile,v 1.55 2006/06/05 08:41:24 itetcu Exp $
 # $FreeBSD$
 #
 
@@ -19,9 +19,9 @@ MASTER_SITES=	# set later
 MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	Bayesian spam filter - development version
 
-PORTVER_MAJ=	3.6.6
-#SNAP_DATE=	.20060513.1125
-_UPD_LINE_NO=	9
+PORTVER_MAJ=	3.6.7
+SNAP_DATE=	.20060604.1555
+_UPD_LINE_NO=	36
 
 MIN_OPTIONS_VER=	${PORTNAME}-3.6.6
 

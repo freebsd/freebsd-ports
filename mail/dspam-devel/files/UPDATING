@@ -11,6 +11,43 @@ in the port directory:
 make extract;  more `find . -type f -maxdepth 2 -name UPGRADING`
 
 ###########################################################################
+# dspam-devel-3.6.7.20060604.1555
+#
+
+Change features:
+- API change !!
+- SupressWebStats is now WebStats in dspam.conf, and setting is inverted.
+- The 'Tokenizer' setting in 3.8.0 replaces tokenizer definitions in the 
+"Feature" clause of previous version configurations. See dspam.conf.
+- if using hash_drv storage driver, you should run cssconvert to upgrade
+your .css files to a fully malaligned format.
+- Earlier versions of 3.6 did not prepend a leading "-l" flag to specifying
+log file selection. This is now required.
+- renamed PValue "graham" to "bcr"
+- dspam_train now works with filenames containing spaces
+- +various optimizations to: tokenizer core, hash_drv driver (store offset
+for writes), libdspam (preference lookups), osb/sbph
+- HashMaxSeek defaults to 10
+
+New features:
+- OSB tokenizer
+- ProcessorURLContext has been added to toggle whether URL specific tokens
+are created in the tokenizer process. The "on" value is default for
+previous versions of DSPAM.
+- HashPctIncrease; see dspam.conf
+- --client support for dspam_train
+- cache runtime user information in daemon mode
+- added logging of viruses (and the source)
+
+Bug fixes:
+- infinite loop on all non-preference-extension calls to delete a preference
+- segfault when dlopen() to storage driver library fails
+- segfault caused by bad use of va_args when vsyslog is called
+- segfault in daemon mode when DeliveryHost or ClientHost is not specified
+- added a connection check for pgsql, to reconnect on failure in daemon mode
+- in hash_drv fixed some bugs which may have caused a crash
+
+###########################################################################
 # dspam-devel-3.6.6 (stable release)
 #
 
