@@ -44,7 +44,7 @@ NOMANCOMPRESS=	yes	# too hard to deal with differences on 5-cur and releng4
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == amd64  ||  ${ARCH} == ia64  ||  ${ARCH} == sparc64
+.if ${ARCH} != i386
 WITHOUT_JAVA=	yes
 .endif
 
