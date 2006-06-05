@@ -21,7 +21,7 @@ LATEST_LINK=	phpwiki13
 USE_PHP=	ctype gettext pcre posix session tokenizer xml zlib
 
 NO_BUILD=	YES
-PHPWIKI?=	www/data-dist/phpwiki
+PHPWIKI?=	www/phpwiki
 PLIST_SUB+=	PHPWIKI=${PHPWIKI}
 SUB_FILES=	pkg-message
 ROOTFILES=	GoogleSearch.wsdl PhpWiki.wsdl RPC2.php SOAP.php \
