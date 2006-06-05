@@ -1,7 +1,7 @@
 The ifhp configuration file is ifhp.conf
 
 For further information, have a look at:
-  DOCSDIR
+  %%DOCSDIR%%
 also:
   WWW: http://www.lprng.com/
 
