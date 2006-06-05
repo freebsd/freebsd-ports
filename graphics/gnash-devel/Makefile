@@ -48,6 +48,7 @@ PLIST_SUB+=	PLUGIN=""
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|gnash-dbg.log|.gnash-dbg.log|' ${WRKSRC}/libbase/log.h
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g;s|/usr/X11R6|${X11BASE}|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 .if !defined(WITH_PLUGIN)
