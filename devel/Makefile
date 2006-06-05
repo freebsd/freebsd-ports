@@ -1191,6 +1191,7 @@
     SUBDIR += p5-ReadLine-Perl
     SUBDIR += p5-Readonly
     SUBDIR += p5-Regexp-Assemble
+    SUBDIR += p5-Regexp-Bind
     SUBDIR += p5-Regexp-Shellish
     SUBDIR += p5-Religion
     SUBDIR += p5-ResourcePool
