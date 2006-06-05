@@ -10,7 +10,8 @@ PORTNAME=	gkrellmqst
 PORTVERSION=	0.4
 PORTREVISION=	2
 CATEGORIES=	net games
-MASTER_SITES=	http://tadpol.org/projects/binaries/
+MASTER_SITES=	http://tadpol.org/projects/archives/ \
+		http://freebsd.unixfreunde.de/sources/
 DISTNAME=	gkrellm_qst-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
