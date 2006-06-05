@@ -10,7 +10,10 @@ CATEGORIES=	japanese
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XEmacs(beta version) text editor(SJ3, SKK, Canna and FreeWnn)
 
-MASTERDIR=	${.CURDIR}/../../editors/xemacs-devel-mule
+DEPRECATED=	Unsupported and broken very long time
+EXPIRATION_DATE=2006-08-05
+
+MASTERDIR=      ${.CURDIR}/../../editors/xemacs-devel-mule
 
 BROKEN=		Incomplete pkg-plist
 
