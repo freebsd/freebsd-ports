@@ -316,6 +316,7 @@
     SUBDIR += linux-libvorbis
     SUBDIR += linux-mbrola
     SUBDIR += linux-openal
+    SUBDIR += linux-shoutcast
     SUBDIR += linux-vsound
     SUBDIR += listener
     SUBDIR += liteamp
