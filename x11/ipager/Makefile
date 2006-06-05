@@ -36,6 +36,12 @@ THEMES=		atlantis.conf \
 		light_gray.conf \
 		light_orange.conf
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+IGNORE=	fails to build on FreeBSD 4.x (due to problems with threading support)
+.endif
+
 post-patch:
 	   @${REINPLACE_CMD} -e 's|/usr/local|${X11BASE}|' \
 			${WRKSRC}/SConstruct
@@ -69,4 +75,4 @@ post-install:
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} ""
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
