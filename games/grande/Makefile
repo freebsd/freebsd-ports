@@ -9,7 +9,7 @@ PORTNAME=	grande
 PORTVERSION=	0.6
 PORTREVISION=	2
 CATEGORIES=	games
-MASTER_SITES=	http://kxl.hn.org/download/
+MASTER_SITES=	http://kxl.orz.hm/download/
 DISTNAME=	${PORTNAME}-KXL-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
