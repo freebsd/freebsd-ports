@@ -2362,3 +2362,9 @@ devel/p5-Class-Gomor-Hash|devel/p5-Class-Gomor|2006-06-01|p5-Class-Gomor-Hash is
 x11-wm/libepplet||2006-06-03|Has expired
 x11/efancylauncher||2006-06-03|Has expired
 graphics/gimp-ufraw|graphics/ufraw|2006-06-04|UFRaw is a standalone app, GIMP plug-in is only a feature
+devel/gnu-libtool||2006-06-05|Has expired: devel/libtool15 is now stock and should be used instead
+japanese/linux-ttfonts||2006-06-05|Has expired: "The linuxolator uses the fonts from the X-server or font-server, so there is no need to install fonts into LINUXBASE"
+net/gnomemeeting||2006-06-05|Has expired: Superseeded by net/ekiga
+news/knzb||2006-06-05|Has expired: This seems to be abandonware. Try news/klibido
+x11/linux-gnomelibs||2006-06-05|Has expired: This is a very outdated version of GNOME and it is not used by any port.
+x11-fonts/linux-urw-fonts||2006-06-05|Has expired: "The linuxolator uses the fonts from the X-server or font-server, so there is no need to install fonts into LINUXBASE"
