@@ -6,12 +6,10 @@
 #
 
 PORTNAME=	bzflag
-PORTVERSION=	2.0.4
-PORTREVISION=	1
+PORTVERSION=	2.0.8
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-${PORTVERSION}.20050930
 
 MAINTAINER=	chuck@pkix.net
 COMMENT=	A multiplayer 3D tank battle game
@@ -31,8 +29,14 @@ MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 MAN5=	bzw.5
 MAN6=	bzadmin.6 bzflag.6 bzfquery.6 bzfs.6
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		Does not compile
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|@LINUX_TRUE@||g ; \
 		 s|@LINUX_FALSE@|#|g' ${WRKSRC}/src/platform/Makefile.in
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
