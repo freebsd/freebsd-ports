@@ -870,6 +870,7 @@
     SUBDIR += rubygem-actionwebservice
     SUBDIR += rubygem-bluecloth
     SUBDIR += rubygem-mongrel
+    SUBDIR += rubygem-mongrel_cluster
     SUBDIR += rubygem-rails
     SUBDIR += rubygem-redcloth
     SUBDIR += sarg

@@ -1,0 +1,5 @@
+Mongrel plugin that provides commands and Capistrano tasks for managing
+multiple Mongrel processes.
+
+WWW: http://fluxura.com/
+WWW: http://rubyforge.org/projects/railsmachine/
