@@ -8,7 +8,7 @@
 PORTNAME=	elisa8x8
 PORTVERSION=	1.0
 CATEGORIES=	japanese x11-fonts
-MASTER_SITES=	http://www.tea.forus.or.jp/toshi/exhibition/
+MASTER_SITES=	http://www.bsdbbq.org/~toshi/distfiles/
 DISTNAME=	elisat10
 
 MAINTAINER=	toshi@tea.forus.or.jp
