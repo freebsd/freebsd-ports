@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	fasta3
-PORTVERSION=	34.t25.d7
+PORTVERSION=	34.t25.d8
 CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp.virginia.edu/pub/fasta/ \
 		${MASTER_SITE_LOCAL}
@@ -18,7 +18,7 @@ EXTRACT_SUFX=	.shar.Z
 MAINTAINER=	fernan@iib.unsam.edu.ar
 COMMENT=	A collection of programs for searching DNA and protein databases
 
-NO_CDROM=	"May not be sold or incorporated into a commercial product"
+NO_CDROM=	May not be sold or incorporated into a commercial product
 WRKSRC=		${WRKDIR}/${PORTNAME}
 SUB_FILES=	pkg-message
 MAKEFILE=	Makefile.freebsd
