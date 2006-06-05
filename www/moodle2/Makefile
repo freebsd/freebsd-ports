@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	moodle
-PORTVERSION=	1.5.2
+PORTVERSION=	1.5.3
 CATEGORIES=	www
 MASTER_SITES=	http://download.moodle.org/stable15/
 EXTRACT_SUFX=	.tgz
@@ -30,8 +30,8 @@ USE_PHP+=	pgsql
 NO_BUILD=	yes
 PLIST=		${WRKDIR}/plist
 
-MOODLEDIR?=	www/data/moodle
-MOODLEDATADIR?=	www/data/moodledata
+MOODLEDIR?=	www/moodle
+MOODLEDATADIR?=	www/moodledata
 
 pre-everything::
 	@${ECHO_CMD} "===> You can use the following options:"
@@ -48,7 +48,6 @@ pre-install:
 	@${FIND} -s -d ${WRKSRC} -type f | ${SED} "s?${WRKSRC}?${MOODLEDIR}?g" >${PLIST}
 	@${FIND} -s -d ${WRKSRC} -type d  | ${SED} "s?${WRKSRC}?@dirrm ${MOODLEDIR}?g" >> ${PLIST}
 	@${ECHO} @dirrm ${MOODLEDATADIR} >> ${PLIST}
-	@${ECHO} @dirrmtry www/data >> ${PLIST}
 
 do-install:
 	${INSTALL_DATA} -d ${PREFIX}/${MOODLEDIR}
