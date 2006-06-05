@@ -2368,3 +2368,4 @@ net/gnomemeeting||2006-06-05|Has expired: Superseeded by net/ekiga
 news/knzb||2006-06-05|Has expired: This seems to be abandonware. Try news/klibido
 x11/linux-gnomelibs||2006-06-05|Has expired: This is a very outdated version of GNOME and it is not used by any port.
 x11-fonts/linux-urw-fonts||2006-06-05|Has expired: "The linuxolator uses the fonts from the X-server or font-server, so there is no need to install fonts into LINUXBASE"
+math/pari-devel|math/pari|2006-06-05|Merged into stable port

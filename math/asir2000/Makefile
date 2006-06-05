@@ -7,6 +7,7 @@
 
 PORTNAME=	asir
 PORTVERSION=	20060417
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.jssac.org/pub/distfiles/asir/ \
 		ftp://ftp.asir.org/pub/asir/src/ \
@@ -17,7 +18,7 @@ EXTRACT_ONLY=	${ASIR_SRC}
 MAINTAINER=	saito@asir.org
 COMMENT=	The system Risa/Asir is a general computer algebra system
 
-LIB_DEPENDS=	pari-2.2:${PORTSDIR}/math/pari-devel
+LIB_DEPENDS=	pari.2:${PORTSDIR}/math/pari
 
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	automake:15 autoconf:253

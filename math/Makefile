@@ -238,7 +238,6 @@
     SUBDIR += p5-Statistics-Lite
     SUBDIR += p5-Statistics-OLS
     SUBDIR += pari
-    SUBDIR += pari-devel
     SUBDIR += parmetis
     SUBDIR += pear-Structures_Graph
     SUBDIR += pecl-big_int
