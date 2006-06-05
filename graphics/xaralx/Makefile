@@ -29,14 +29,12 @@ RUN_DEPENDS+=	${WXDEP}:${PORTSDIR}/x11-toolkits/wxgtk26-unicode
 LIB_DEPENDS+=	dlmalloc.2:${PORTSDIR}/devel/libdlmalloc \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 
-USE_AUTOTOOLS=	autoconf:259:env aclocal:19:env automake:19:env
+USE_AUTOTOOLS=	autoconf:259:env aclocal:19:env automake:19:env libtool:15:env
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--with-wx-config=wxgtk2u-2.6-config \
 		--program-suffix=${PKGNAMESUFFIX}
-PKGCONFIGS=atk fontconfig gdk-2.0 pango
-CONFIGURE_ENV+=	CPPFLAGS_APPEND="`pkg-config --cflags ${PKGCONFIGS}` \
-		-I${LOCALBASE}/include/atk-1.0/atk \
+CONFIGURE_ENV+=	CPPFLAGS_APPEND="-I${LOCALBASE}/include/atk-1.0/atk \
 		-I${X11BASE}/include/gtk-2.0/gtk"
 # we're using dlmalloc because the stock libc does not have malloc_usable_size()
 CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib -ldlmalloc"
@@ -88,7 +86,10 @@ post-patch:
 		${WRKSRC}/xaralx.desktop
 
 pre-configure:
-	cd ${WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${AUTORECONF} -f -s -i
+	cd ${WRKSRC} && \
+	${SETENV} ${AUTOTOOLS_ENV} \
+	ACLOCAL="${ACLOCAL} -I ${LOCALBASE}/share/aclocal" \
+	${AUTORECONF} -f -i -s
 
 .if !target(do-install)
 do-install:
