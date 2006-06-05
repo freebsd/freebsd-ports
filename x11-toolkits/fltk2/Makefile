@@ -26,11 +26,9 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		Xft.2:${PORTSDIR}/x11-fonts/libXft
 
-SNAPSHOT=	r4825
+SNAPSHOT=	r5170
 
 OPTIONS=	FLTK_THREADS "Install with threads support" on
-
-CONFLICTS=	fltk-1.* fltk-threads-1.*
 
 LATEST_LINK=	fltk2
 
@@ -52,6 +50,7 @@ CONFIGURE_ARGS+=	--disable-shared
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbuild-freebsd${OSREL}
 
+DOCSDIR=	${PREFIX}/share/doc/fltk2
 PORTDOCS=	*
 
 .include <bsd.port.pre.mk>
@@ -66,7 +65,7 @@ CONFIGURE_ARGS+=	--disable-threads
 
 post-patch:
 	${REINPLACE_CMD} -e 's:%%CXX%%:${CXX}:g' \
-	    ${WRKSRC}/fltk-config.in \
+	    ${WRKSRC}/fltk2-config.in \
 	    ${WRKSRC}/makeinclude.in
 
 post-install:

@@ -1,28 +1,28 @@
---- ./src/Makefile.orig	Fri Mar 10 01:02:34 2006
-+++ ./src/Makefile	Sun Apr  2 13:24:34 2006
-@@ -254,39 +254,30 @@
+--- src/Makefile.orig	Fri May 12 00:09:39 2006
++++ src/Makefile	Mon Jun  5 14:44:17 2006
+@@ -251,36 +251,27 @@
  	    mkdir $(DESTDIR);                               \
  	  fi                                                \
  	fi
 -	$(RMDIR) $(DESTDIR)$(includedir)/fltk
  	$(MKDIR) $(DESTDIR)$(includedir)/fltk
--	$(CP) ../fltk/*.h  $(DESTDIR)$(includedir)/fltk
+-	$(CP) ../fltk/*.h ../fltk/*.r  $(DESTDIR)$(includedir)/fltk
 -	$(CHMOD) 755 $(DESTDIR)$(includedir)/fltk
 -	$(CHMOD) 644 $(DESTDIR)$(includedir)/fltk/*
-+	$(BSD_INSTALL_DATA) ../fltk/*.h  $(DESTDIR)$(includedir)/fltk
- 	echo "Installing FLTK1.1 emulation include files in $(includedir)/FL..."
--	$(RMDIR) $(DESTDIR)$(includedir)/FL
- 	$(MKDIR) $(DESTDIR)$(includedir)/FL
--	$(CP) ../FL/*.H ../FL/*.h  $(DESTDIR)$(includedir)/FL
--	$(CHMOD) 755 $(DESTDIR)$(includedir)/FL
--	$(CHMOD) 644 $(DESTDIR)$(includedir)/FL/*
-+	$(BSD_INSTALL_DATA) ../FL/*.H ../FL/*.h  $(DESTDIR)$(includedir)/FL
-         ifneq (,$(wildcard ../fltk-config))
- 	echo "Installing fltk-config in $(bindir)..."
++	$(BSD_INSTALL_DATA) ../fltk/*.h ../fltk/*.r $(DESTDIR)$(includedir)/fltk
+ 	echo "Installing FLTK1.1 emulation include files in $(includedir)/fltk..."
+-	$(RMDIR) $(DESTDIR)$(includedir)/fltk/compat/FL
+ 	$(MKDIR) $(DESTDIR)$(includedir)/fltk/compat/FL
+-	$(CP) ../fltk/compat/FL/*.H ../fltk/compat/FL/*.h  $(DESTDIR)$(includedir)/fltk/compat/FL
+-	$(CHMOD) 755 $(DESTDIR)$(includedir)/fltk/compat/FL
+-	$(CHMOD) 644 $(DESTDIR)$(includedir)/fltk/compat/FL/*
++	$(BSD_INSTALL_DATA) ../fltk/compat/FL/*.H ../fltk/compat/FL/*.h  $(DESTDIR)$(includedir)/fltk/compat/FL
+         ifneq (,$(wildcard ../fltk2-config))
+ 	echo "Installing fltk2-config in $(bindir)..."
  	$(MKDIR) $(DESTDIR)$(bindir)
--	$(CP) ../fltk-config $(DESTDIR)$(bindir)
--	$(CHMOD) 755 $(DESTDIR)$(bindir)/fltk-config
-+	$(BSD_INSTALL_SCRIPT) ../fltk-config $(DESTDIR)$(bindir)
+-	$(CP) ../fltk2-config $(DESTDIR)$(bindir)
+-	$(CHMOD) 755 $(DESTDIR)$(bindir)/fltk2-config
++	$(BSD_INSTALL_SCRIPT) ../fltk2-config $(DESTDIR)$(bindir)
          endif
          ifneq (,$(wildcard ../lib/$(LIBNAME)))
  	echo "Installing static core library in $(libdir)"
@@ -30,6 +30,7 @@
 -	$(RM) $(DESTDIR)$(libdir)/$(LIBNAME)
 -	$(CP) ../lib/$(LIBNAME) $(DESTDIR)$(libdir)
 +	$(BSD_INSTALL_DATA) ../lib/$(LIBNAME) $(DESTDIR)$(libdir)
+ 	$(RANLIB) $(DESTDIR)$(libdir)/$(LIBNAME)
          endif
          ifneq (,$(wildcard ../lib/$(DSONAME)))
  	echo "Installing shared core library in $(libdir)"
@@ -41,8 +42,3 @@
  	$(LN) $(DSONAME) $(DESTDIR)$(libdir)/$(DSOLINK)
          endif
          ifeq ($(DSONAME), fltk.dll)
--	$(CP) lib$(DSONAME).a $(DESTDIR)$(libdir)
-+	$(BSD_INSTALL_DATA) lib$(DSONAME).a $(DESTDIR)$(libdir)
-         endif
- 
- #

@@ -1,6 +1,6 @@
---- ./OpenGL/Makefile.orig	Thu Aug  4 00:08:19 2005
-+++ ./OpenGL/Makefile	Sun Apr  2 13:24:34 2006
-@@ -118,19 +118,17 @@
+--- OpenGL/Makefile.orig	Tue Apr 25 09:40:40 2006
++++ OpenGL/Makefile	Mon Jun  5 14:44:17 2006
+@@ -117,15 +117,13 @@
          ifneq (,$(wildcard ../lib/$(LIBNAME)))
  	echo "Installing static OpenGL library in $(libdir)"
  	$(MKDIR) $(DESTDIR)$(libdir)
@@ -17,9 +17,4 @@
 +	$(BSD_INSTALL_DATA) ../lib/$(DSONAME) $(DESTDIR)$(libdir)
  	$(LN) -s $(DSONAME) $(DESTDIR)$(libdir)/$(DSOLINK)
          endif
-         ifeq ($(DSONAME), fltk_gl.dll)
--	$(CP) lib$(DSONAME).a $(DESTDIR)$(libdir)
-+	$(BSD_INSTALL_DATA) lib$(DSONAME).a $(DESTDIR)$(libdir)
-         endif
- 	
- #
+         ifeq ($(DSONAME), fltk2_gl.dll)

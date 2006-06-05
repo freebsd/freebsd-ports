@@ -1,5 +1,5 @@
---- ./Makefile.orig	Thu Aug  4 00:08:19 2005
-+++ ./Makefile	Sun Apr  2 13:24:34 2006
+--- Makefile.orig	Mon Apr 24 12:07:29 2006
++++ Makefile	Mon Jun  5 14:44:17 2006
 @@ -34,7 +34,7 @@
  	done
  

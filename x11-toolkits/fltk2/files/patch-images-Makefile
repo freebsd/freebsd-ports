@@ -1,16 +1,16 @@
---- ./images/Makefile.orig	Fri Aug 12 04:53:31 2005
-+++ ./images/Makefile	Sun Apr  2 13:24:34 2006
-@@ -120,8 +120,7 @@
+--- images/Makefile.orig	Tue Apr 25 09:40:40 2006
++++ images/Makefile	Mon Jun  5 14:44:17 2006
+@@ -124,8 +124,7 @@
          ifneq (,$(wildcard ../lib/$(LIBNAME)))
  	echo "Installing static images library in $(libdir)"
  	$(MKDIR) $(DESTDIR)$(libdir)
 -	$(RM) $(DESTDIR)$(libdir)/$(LIBNAME)
 -	$(CP) ../lib/$(LIBNAME) $(DESTDIR)$(libdir)
 +	$(BSD_INSTALL_DATA) ../lib/$(LIBNAME) $(DESTDIR)$(libdir)
- 	$(RM) -f $(DESTDIR)$(libdir)/$(LIBPREFIX)fltk_z$(LIBSUFFIX)
- 	$(RM) -f $(DESTDIR)$(libdir)/$(LIBPREFIX)fltk_png$(LIBSUFFIX)
- 	$(RM) -f $(DESTDIR)$(libdir)/$(LIBPREFIX)fltk_jpeg$(LIBSUFFIX)
-@@ -132,13 +131,12 @@
+ 	$(RANLIB) $(DESTDIR)$(libdir)/$(LIBNAME)
+ 	$(RM) -f $(DESTDIR)$(libdir)/$(LIBPREFIX)fltk2_z$(LIBSUFFIX)
+ 	$(RM) -f $(DESTDIR)$(libdir)/$(LIBPREFIX)fltk2_png$(LIBSUFFIX)
+@@ -138,9 +137,8 @@
          ifneq (,$(wildcard ../lib/$(DSONAME)))
  	echo "Installing shared images library in $(libdir)"
  	$(MKDIR) $(DESTDIR)$(libdir)
@@ -20,9 +20,4 @@
 +	$(BSD_INSTALL_DATA) ../lib/$(DSONAME) $(DESTDIR)$(libdir)
  	$(LN) -s $(DSONAME) $(DESTDIR)$(libdir)/$(DSOLINK)
          endif
-         ifeq ($(DSONAME), fltk_images.dll)
--	$(CP) lib$(DSONAME).a $(DESTDIR)$(libdir)
-+	$(BSD_INSTALL_DATA) lib$(DSONAME).a $(DESTDIR)$(libdir)
-         endif
- #
- # Uninstall the libraries...
+         ifeq ($(DSONAME), fltk2_images.dll)
