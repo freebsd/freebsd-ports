@@ -33,7 +33,7 @@ pre-fetch:
 	@${ECHO_MSG} ""
 .endif
 
-PMWIKIDIR?=	www/data/pmwiki
+PMWIKIDIR?=	www/pmwiki
 WWWUSER?=	www
 WWWGROUP?=	www
 
