@@ -58,7 +58,8 @@ IGNORE=		core dumps on ${ARCH} during post-build
 .endif
 
 .if ${OSVERSION} < 500000
-BROKEN="Does not build"
+USE_GCC=        3.4
+EXTRA_PATCHES+= ${FILESDIR}/extra-patch-security_manager_Makefile.in
 .endif
 
 .if defined(WITHOUT_MAILNEWS)
