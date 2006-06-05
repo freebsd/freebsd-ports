@@ -1,0 +1,5 @@
+Inline::Files generalizes the notion of the __DATA__ marker and the
+associated <DATA> filehandle, to an arbitrary number of markers and
+associated filehandles.
+
+WWW: http://search.cpan.org/dist/Inline-Files/
