@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	selfhtml
-PORTVERSION=	81
+PORTVERSION=	8.1.1
+PORTEPOCH=	1
 CATEGORIES=	german www
 MASTER_SITES=	http://ftp.join.uni-muenster.de/pub/documents/selfhtml/ \
 		ftp://ftp.uni-ulm.de/mirrors/selfhtml/ \
@@ -19,10 +20,12 @@ MASTER_SITES=	http://ftp.join.uni-muenster.de/pub/documents/selfhtml/ \
 		http://download.iansview.com/mirror/selfhtml.org/ \
 		ftp://ftp.rub.de/pub/selfhtml/
 PKGNAMEPREFIX=	de-
-DISTNAME=	${PORTNAME}${PORTVERSION}
+DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 
 MAINTAINER=	frerich.raabe@gmx.de
 COMMENT=	Extensive german HTML reference
+
+WRKSRC=		${WRKDIR}
 
 USE_ZIP=	yes
 NO_BUILD=	yes
@@ -53,7 +56,7 @@ post-patch:
 # \r\n -> \n on text files
 	@${FIND} -E ${WRKSRC} \
 		-iregex \
-		".*\.(css|ent|htm|java|js|txt|url|vcf|wrl|xhtml|xml)$$" \
+		".*\.(css|dhtml|diverses|editorial|grafik|helferlein|htm|inter|intro|javascript|layouts|navigation|perl|php|projekt|quellen|servercgi|src|xml|xls|dtd)$$" \
 		-type f -print0 \
 		| ${XARGS} -0 -n 5 -x \
 			${REINPLACE_CMD} -E \
