@@ -8543,6 +8543,7 @@ p5-Graph-Writer-GraphViz	ports/graphics/p5-Graph-Writer-GraphViz
 p5-GraphViz	ports/graphics/p5-GraphViz
 p5-GraphViz-DBI	ports/databases/p5-GraphViz-DBI
 p5-GraphViz-Data-Structure	ports/graphics/p5-GraphViz-Data-Structure
+p5-GraphViz-Traverse	ports/graphics/p5-GraphViz-Traverse
 p5-Graphics-ColorNames	ports/graphics/p5-Graphics-ColorNames
 p5-Gtk		ports/x11-toolkits/p5-Gtk
 p5-Gtk2		ports/x11-toolkits/p5-Gtk2
