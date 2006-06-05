@@ -35,7 +35,7 @@ MASTER_SITES=	http://dspam.irontec.com/sources/ \
 	http://dspam.nuclearelephant.com/sources/ \
 	http://dspam.systemadministrator.org/sources/ \
 	http://dspam.sourceforge.net/sources/ \
-	http://sce-tindy.tecnik93.com/FreeBSD/ports/${PORTNAME}/sources/ \
+	http://sce-tindy.tecnik93.com/FreeBSD/ports/${PORTNAME}/sources/
 .endif
 
 ## debug / log / admin options
