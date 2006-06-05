@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	exiv2
-PORTVERSION=	0.9.1
-PORTREVISION=	1
+PORTVERSION=	0.10
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.exiv2.org/
 
@@ -25,6 +24,12 @@ ALLTARGET=	all
 .if ${OSVERSION} < 500000
 USE_GCC=	3.4
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|$${datarootdir}/man|${PREFIX}/man|' \
+		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|${PREFIX}/libdata/pkgconfig|' \
+		${WRKSRC}/src/Makefile
 
 post-install:
 .if !defined(NOPORTDOCS)
