@@ -1,4 +1,4 @@
-# $Tecnik: ports/mail/dspam/files/UPDATING,v 1.10 2006/04/30 10:04:19 itetcu Exp $
+# $Tecnik: ports/mail/dspam/files/UPDATING,v 1.13 2006/06/05 09:21:46 itetcu Exp $
 # $FreeBSD$
 #
 # for each PKGNAME or user option change an entry should be added in this file
@@ -17,6 +17,21 @@ in the port directory:
 make extract;  more `find . -type f -maxdepth 2 -name UPGRADING`
 
 ###########################################################################
+# dspam-3.6.7
+#
+
+Bugfixes:
+- Using UIDInSignature, wrong UID is written to message when using groups
+- PostgreSQL driver does not reconnect on failure in daemon mode
+- X-DSPAM-Probability sometimes misreported when multiple algorithms used
+- Agent segfaults when DeliveryHost or ClientHost not specified, --client
+- Agent segfaults on some systems when syslog is used
+- Agent segfaults when dlopen() to storage library fails
+- Infinite loop created when deleting preference, not using extensions
+- ATX (agent context) does not hold enough bits for 'flags' variable
+
+
+###########################################################################
 # dspam-3.6.6
 #
 
@@ -27,6 +42,7 @@ Bugfixes:
 - trainPristine preference turned "off" now overrides config turned "on"
 - segfault fix for when correcting messages using UIDInSignature with MySQL
 - when using logfile, write errors result in segfault
+
 
 ###########################################################################
 # dspam-3.6.5
