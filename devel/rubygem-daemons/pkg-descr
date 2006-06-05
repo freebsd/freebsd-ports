@@ -1,0 +1,13 @@
+Daemons provides an easy way to wrap existing ruby scripts (for example
+a self-written server) to be run as a daemon and to be controlled by
+simple start/stop/restart commands.
+
+If you want, you can also use daemons to run blocks of ruby code in a
+daemon process and to control these processes from the main application.
+
+Besides this basic functionality, daemons offers many advanced features
+like exception backtracing and logging (in case your ruby script
+crashes) and monitoring and automatic restarting of your processes if
+they crash.
+
+WWW: http://daemons.rubyforge.org/
