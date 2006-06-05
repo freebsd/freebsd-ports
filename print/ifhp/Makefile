@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ifhp
-PORTVERSION=	3.5.7
+PORTVERSION=	3.5.20
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.lprng.com/pub/%SUBDIR%/ \
 		ftp://ftp.cise.ufl.edu/pub/mirrors/%SUBDIR%/ \
@@ -21,10 +21,15 @@ COMMENT=	IFHP - A highly configurable print filter for LPRng
 
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
+USE_GHOSTSCRIPT=	yes
 
-CONFIGURE_ARGS= \
-	--with-ldopts="-L${LOCALBASE}/lib" \
-	--with-ccopts="-I${LOCALBASE}/include"
+MAN8=		ifhp.8 textps.8
+
+SUB_FILES=	pkg-message
+SUB_LIST=	DOCSDIR=${DOCSDIR}
+
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS} -L{LOCALBASE}/lib" \
+		CFLAGS="${CFLAGS} -I${LOCALBASE}/include"
 .if defined(PREFIX)
 CONFIGURE_ARGS+=	--prefix="${PREFIX}"
 .endif
@@ -32,7 +37,32 @@ CONFIGURE_ARGS+=	--prefix="${PREFIX}"
 CONFIGURE_ARGS+=	--sysconfdir="${SYSCONFDIR}"
 .endif
 
-MAN8=	ifhp.8 textps.8
+OPTIONS=	FOOMATIC	"Enable foomatic support"	on \
+		SNMP		"Enable SNMP support"		on
+
+.if !defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=	--enable-nls --with-libiconv-prefix=${LOCALBASE} \
+			--with-libintl-prefix=${LOCALBASE}
+USE_GETTEXT=		yes
+PLIST_SUB+=		NLS=""
+.else
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=		NLS="@comment "
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITHOUT_FOOMATIC)
+CONFIGURE_ARGS+=	--disable-foomatic
+.else
+BUILD_DEPENDS+=		foomatic-rip:${PORTSDIR}/print/foomatic-filters
+.endif
+
+.if defined(WITHOUT_SNMP)
+CONFIGURE_ARGS+=	--disable-snmp
+.else
+BUILD_DEPENDS+=		${SITE_PERL}/Net/SNMP.pm:${PORTSDIR}/net-mgmt/p5-Net-SNMP
+.endif
 
 pre-everything::
 	@${ECHO_MSG} "If you want to replace the default printing system with LPRng, use:"
@@ -52,10 +82,9 @@ post-install:
 .if !defined(NOPORTDOCS)
 	@${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} -m 0555 ${DOCSDIR}
 .for ext in html pdf ppt ps txt gif jpg png
-	@for i in `${LS} ${WRKSRC}/HOWTO |${GREP} "\.${ext}$$"`; \
-		do ${INSTALL_DATA} ${WRKSRC}/HOWTO/$$i ${DOCSDIR}; done
+	@for i in `${LS} ${WRKSRC}/DOCS |${GREP} "\.${ext}$$"`; \
+		do ${INSTALL_DATA} ${WRKSRC}/DOCS/$$i ${DOCSDIR}; done
 .endfor
 .endif
-	@${SED} -e "s!DOCSDIR!${DOCSDIR}/!" ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -1,12 +1,43 @@
+@unexec if cmp -s %D/etc/ifhp.conf.sample %D/etc/ifhp.conf; then rm -f %D/etc/ifhp.conf; fi
+bin/extract_pjl
+bin/snmp_printer_status
 etc/ifhp.conf.sample
+libexec/filters/UTILS/400095.ppd
+libexec/filters/UTILS/HP2500CJ.PPD
+libexec/filters/UTILS/Watermarks
+libexec/filters/UTILS/accounting.sh
+libexec/filters/UTILS/accounting.sh.in
+libexec/filters/UTILS/ellipse.ps
+libexec/filters/UTILS/extract_pjl
+libexec/filters/UTILS/fixupdate
+libexec/filters/UTILS/fixupdate.in
+libexec/filters/UTILS/install-sh
+libexec/filters/UTILS/mkinstalldirs
+libexec/filters/UTILS/one.pcl
+libexec/filters/UTILS/one.pdf
+libexec/filters/UTILS/one.pjl
+libexec/filters/UTILS/one.ps
+libexec/filters/UTILS/phaser5400_snmp_mib_query
+libexec/filters/UTILS/sendhp.sh
+libexec/filters/UTILS/sendhp.sh.in
+libexec/filters/UTILS/stopstr.c
+libexec/filters/UTILS/supported
+libexec/filters/UTILS/supported.in
+libexec/filters/UTILS/test1
+libexec/filters/UTILS/use_snmp_for_status
+libexec/filters/extract_pjl
 libexec/filters/ifhp
+libexec/filters/snmp_printer_status
+libexec/filters/snmp_printer_status.conf
 libexec/filters/textps
 libexec/filters/wrapper
-%%PORTDOCS%%%%DOCSDIR%%/IFHP-HOWTO.html
-%%PORTDOCS%%%%DOCSDIR%%/IFHP-HOWTO.pdf
+%%NLS%%share/locale/fr/LC_MESSAGES/ifhp.mo
+%%PORTDOCS%%%%DOCSDIR%%/IFHP-Reference.html
+%%PORTDOCS%%%%DOCSDIR%%/IFHP-Reference.pdf
 %%PORTDOCS%%%%DOCSDIR%%/LPRng.jpg
 %%PORTDOCS%%%%DOCSDIR%%/LPRngT-L.jpg
 %%PORTDOCS%%%%DOCSDIR%%/LPRngT-S.jpg
 %%PORTDOCS%%%%DOCSDIR%%/ifhp-S.jpg
+@dirrm libexec/filters/UTILS
 @dirrm libexec/filters
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

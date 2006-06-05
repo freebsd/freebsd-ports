@@ -3,7 +3,7 @@ PREFIX=/usr/local
 SYSCONFDIR=/usr/local/etc
 IFHP_CONF=/usr/local/etc/ifhp.conf
 MANDIR=/usr/local/man
-VERSION=3.5.7
+VERSION=3.5.20
 #
 # -- START --
 # $Id: postinstall.freebsd.sh,v 1.9 2001/12/12 01:54:49 papowell Exp papowell $
