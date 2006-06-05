@@ -1654,6 +1654,7 @@
     SUBDIR += ruby-zoom
     SUBDIR += rubygem-activesupport
     SUBDIR += rubygem-event-loop
+    SUBDIR += rubygem-gem_plugin
     SUBDIR += rubygem-needle
     SUBDIR += rubygem-rake
     SUBDIR += rubygem-rgl
