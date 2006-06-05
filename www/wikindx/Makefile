@@ -7,6 +7,7 @@
 
 PORTNAME=	wikindx
 PORTVERSION=	3.2.4
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	wikindx
@@ -19,7 +20,7 @@ USE_PHP=	session mysql
 
 NO_BUILD=	YES
 WRKSRC=		${WRKDIR}/wikindx3
-WIKINDX?=	www/data-dist/wikindx
+WIKINDX?=	www/wikindx
 PLIST_SUB+=	WIKINDX=${WIKINDX}
 ROOTFILES=	config.php index.php rss.php
 ROOTDIRS=	attachments core docs files languages modules \
