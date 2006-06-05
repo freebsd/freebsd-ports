@@ -10,7 +10,6 @@ PORTVERSION=	2006.0
 PORTREVISION=	1
 CATEGORIES=	emulators linux
 MASTER_SITES=	${MASTER_SITE_GENTOO}
-EXTRACT_ONLY=
 
 MAINTAINER=	gkovesdan@t-hosting.hu
 COMMENT=	Files from Gentoo distribution, for Linux compatibility
@@ -18,7 +17,8 @@ COMMENT=	Files from Gentoo distribution, for Linux compatibility
 RESTRICTED=	binaries licensed under GNU GPL without accompanying source
 
 CONFLICTS=	linux_base-7* linux_base-8* linux_base-debian* \
-		linux_base-rh* linux_base-suse* linux_base-fc*
+		linux_base-rh* linux_base-suse* linux_base-fc* \
+		linux_base-gentoo-stage[23]-*
 
 DIST_SUBDIR=		gentoo-linux
 NO_BUILD=		YES
