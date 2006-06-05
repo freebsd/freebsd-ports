@@ -10,7 +10,7 @@ POST-INSTALL CONFIGURATION FOR MOODLE
    restart the server:
 
    AcceptPathInfo On
-   <Directory ${PREFIX}/www/data/moodledata>
+   <Directory ${PREFIX}/www/moodledata>
       AllowOverride None
       Order Deny,Allow
       Deny from all 
