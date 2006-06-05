@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	publib
-PORTVERSION=	0.38
-PORTREVISION=	0
+PORTVERSION=	0.39
 CATEGORIES=	devel
 MASTER_SITES=	http://ftp.debian.org/debian/pool/main/p/publib/
 DISTNAME=	publib_${PORTVERSION}.orig
