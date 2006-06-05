@@ -1,0 +1,22 @@
+--- configure.in.orig	Mon Jun  5 09:30:36 2006
++++ configure.in	Mon Jun  5 10:14:28 2006
+@@ -165,7 +165,7 @@
+ 
+ 	if test "$InternationalEnable" = "yes"; then
+ 		AC_MSG_CHECKING([wxWidgets wxrc utility])
+-		WXRC="`$WXCONFIG --utility=wxrc`"
++		WXRC="`$WXCONFIG --utility=wxrc-gtk2u`"
+ 	
+ 		if test "$WXRC" = "" ; then
+ 			AC_MSG_RESULT([not found, disabling international build])
+@@ -277,8 +277,8 @@
+ fi
+ 
+ # pass the Pango, FreeType and GTK flags (required for wxGTK font rendering)
+-CPPFLAGS="$CPPFLAGS $WX_CPPFLAGS $PANGO_CFLAGS $FT_CFLAGS $GTK_CFLAGS $LIBXML2_CFLAGS"
+-CXXFLAGS="$CXXFLAGS $WX_CPPFLAGS $PANGO_CFLAGS $FT_CFLAGS $GTK_CFLAGS $LIBXML2_CFLAGS"
++CPPFLAGS="$CPPFLAGS $WX_CPPFLAGS $PANGO_CFLAGS $FT_CFLAGS $GTK_CFLAGS $LIBXML2_CFLAGS $CPPFLAGS_APPEND"
++CXXFLAGS="$CXXFLAGS $WX_CPPFLAGS $PANGO_CFLAGS $FT_CFLAGS $GTK_CFLAGS $LIBXML2_CFLAGS $CPPFLAGS_APPEND"
+ 
+ AC_MSG_CHECKING([Linker])
+ case $host in

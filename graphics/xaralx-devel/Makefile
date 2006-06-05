@@ -5,7 +5,8 @@
 # $FreeBSD$
 #
 
-PORTVERSION=	0.5r1184
+PORTVERSION=	0.5r1250
+PORTREVISION=	0
 PKGNAMESUFFIX=	-devel
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.bz2
 
@@ -13,5 +14,8 @@ COMMENT=	Top-tier vector/general purpose graphics program (development version)
 
 MASTERDIR=	${.CURDIR}/../xaralx
 MD5_FILE=	${.CURDIR}/distinfo
+
+PATCHDIR=	${.CURDIR}/files
+EXTRA_PATCHES=	${MASTERDIR}/files/patch-PreComp_Makefile.am
 
 .include "${MASTERDIR}/Makefile"
