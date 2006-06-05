@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	sharity-light
-PORTVERSION=	1.2
-PORTREVISION=	1
+PORTVERSION=	1.3
 CATEGORIES=	net
 MASTER_SITES=	http://www.obdev.at/ftp/pub/Products/Sharity-Light/
-DISTNAME=	Sharity-Light.1.2
+DISTNAME=	Sharity-Light.1.3
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An userland smbfs --- SMB to NFS protocols converter
