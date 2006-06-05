@@ -22,7 +22,7 @@ USE_PHP=	ctype gettext pcre posix session tokenizer xml zlib
 .endif
 
 NO_BUILD=	YES
-PHPWIKI?=	www/data-dist/phpwiki
+PHPWIKI?=	www/phpwiki
 PLIST_SUB+=	PHPWIKI=${PHPWIKI}
 USERFILES=	admin.php lib/config.php
 ROOTFILES=	admin.php-dist index.php
