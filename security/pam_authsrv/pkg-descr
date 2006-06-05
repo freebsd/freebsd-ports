@@ -1,0 +1,16 @@
+PAM module for TIS authsrv authentication
+
+The pam_authsrv module provides TIS authsrv authentication to PAM-aware
+applications. It has been tested under AIX 4.3.3 (using the Linux-PAM for
+AIX patch) and 5.1, Solaris 8 and 9, RedHat Linux 7.2, and HP-UX 11.00.
+
+The pam_authsrv source code is available from:
+
+    ftp://ftp.feep.net/pub/software/PAM/pam_authsrv/pam_authsrv-1.0.2.tar.gz 
+
+Binaries of pam_authsrv are available as Encap packages for a variety of
+platforms.
+
+For further information, please see the enclosed README file. 
+
+WWW: http://www.feep.net/PAM/pam_authsrv/
