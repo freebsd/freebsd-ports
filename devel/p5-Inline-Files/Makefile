@@ -16,8 +16,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Multiple virtual files at the end of your code
 
-BUILD_DEPENDS=	p5-Inline>=0:${PORTSDIR}/devel/p5-Inline \
-		p5-Filter>=0:${PORTSDIR}/devel/p5-Filter
+BUILD_DEPENDS=	p5-Filter>=0:${PORTSDIR}/devel/p5-Filter
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
