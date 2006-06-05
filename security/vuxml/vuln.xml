@@ -34,6 +34,37 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="00784d6e-f4ce-11da-87a1-000c6ec775d9">
+    <topic>squirrelmail -- plugin.php local file inclusion
+      vulnerability</topic>
+    <affects>
+      <package>
+	<name>squirrelmail</name>
+	<range><lt>1.4.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The SquirrelMail Project Team reports:</p>
+	<blockquote cite="http://www.squirrelmail.org/security/issue/2006-06-01">
+	  <p>A security issue has been uncovered in
+	    functions/plugin.php that could allow a remote user to
+	    access local files on the server without requiring
+	    login. This issue manifests itself if register_globals is
+	    enabled, and magic_quotes_gpc is disabled.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.squirrelmail.org/security/issue/2006-06-01</url>
+      <url>http://secunia.com/advisories/20406/</url>
+    </references>
+    <dates>
+      <discovery>2006-06-01</discovery>
+      <entry>2006-06-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="af8dba15-f4cc-11da-87a1-000c6ec775d9">
     <topic>dokuwiki -- spellchecker remote PHP code execution</topic>
     <affects>
