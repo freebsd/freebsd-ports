@@ -6,29 +6,38 @@
 #
 
 PORTNAME=	klamav
-PORTVERSION=	0.32
+PORTVERSION=	0.35.1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	klamav
 DISTNAME=	${PORTNAME}-${PORTVERSION}
-EXTRACT_SUFX=	.tar.bz2
 
 MAINTAINER=	anderson@cnpm.embrapa.br
 COMMENT=	A KDE 3 front-end to Clam Anti-Virus
 
-LIB_DEPENDS=	clamav:${PORTSDIR}/security/clamav
+LIB_DEPENDS=	clamav:${PORTSDIR}/security/clamav \
+		sqlite3:${PORTSDIR}/databases/sqlite3
 
-USE_KDELIBS_VER=3
-PREFIX=         ${KDE_PREFIX}
+PREFIX=		${KDE_PREFIX}
+DOCSDIR=	${PREFIX}/share/doc/HTML/en/klamav02
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/${DISTNAME}
-
-USE_BZIP2=      yes
-USE_GMAKE=      yes
-
+USE_BZIP2=	yes
+USE_GMAKE=	yes
+USE_GNOME=	pkgconfig
+USE_GETTEXT=	yes
+INSTALLS_ICONS=	yes
 USE_AUTOTOOLS=	libtool:15
 
-CONFIGURE_ENV+= LDFLAGS=${PTHREAD_LIBS}
-CONFIGURE_ARGS+= --with-qt-dir=${X11BASE}
+CONFIGURE_ENV=	LDFLAGS=${PTHREAD_LIBS}
+CONFIGURE_ARGS+=--with-qt-dir=${X11BASE} \
+		--without-included-sqlite
 
-.include <bsd.port.mk>
+USE_KDELIBS_VER=	3
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+IGNORE=	klamav doesn't compile on FreeBSD 4.X
+.endif
+
+.include <bsd.port.post.mk>

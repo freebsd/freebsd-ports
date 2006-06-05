@@ -1,0 +1,29 @@
+--- src/klamd.cpp	Wed Mar  8 15:47:12 2006
++++ src/klamd.cpp	Wed Mar  8 15:49:18 2006
+@@ -699,7 +699,7 @@
+ 
+ 	
+ 	dazukoLoaded = FALSE;
+-	QString lsmodCommand="lsmod";
++	QString lsmodCommand="kldstat";
+ 	lsmodproc = new KProcIO();
+ 	QString curpath = (QString) getenv("PATH");
+ 	lsmodproc->setEnvironment("PATH",curpath + ":/usr/local/sbin:/usr/sbin:/sbin:/usr/local/bin:/usr/bin:/bin");
+@@ -730,7 +730,7 @@
+ {
+ 	if (!(dazukoLoaded)){
+ 		int result;
+-		result = KMessageBox::warningContinueCancel(this, i18n( "I need to load a module called 'dazuko' first. This module will allow KlamAV to gain real-time access to files. If you don't want this message to appear in future, put the following command in your initialization scripts: 'modprobe dazuko.o'. You will next be asked for the root password."),
++		result = KMessageBox::warningContinueCancel(this, i18n( "I need to load a module called 'dazuko' first. This module will allow KlamAV to gain real-time access to files. If you don't want this message to appear in future, put the following command in your initialization scripts: 'kldload dazuko.ko'. You will next be asked for the root password."),
+ 		i18n( "Load Module" ),
+ 		i18n( "Load Module" ),
+ 		i18n( "Delete2" ));
+@@ -803,7 +803,7 @@
+ // 	
+ // 	//kdDebug() << release << endl;
+ // 	QString insmodCommand="insmod /lib/modules/" + release + "/dazuko.o";
+-	QString insmodCommand="modprobe dazuko";
++	QString insmodCommand="kldload  /usr/local/modules/dazuko.ko";
+ 	//QString insmodCommand="insmod /opt/kde/bin/dazuko.o";
+ 	KProcIO *insmodproc = new KProcIO();
+ 	
