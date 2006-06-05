@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	electricsheep
-PORTVERSION=	2.6.4
-PORTREVISION=	1
+PORTVERSION=	2.6.7
 PORTEPOCH=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://electricsheep.org/
