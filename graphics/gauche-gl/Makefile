@@ -7,7 +7,7 @@
 
 PORTNAME=	gl
 PORTVERSION=	0.4.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics scheme
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gauche
@@ -22,8 +22,6 @@ BUILD_DEPENDS=	gosh:${PORTSDIR}/lang/gauche
 LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-BROKEN=		Does not build
-
 USE_GL=		yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include"
@@ -36,6 +34,9 @@ PLIST_SUB=	VERSION="`gauche-config -V`" \
 .if !defined(NOPORTDOCS)
 INFO=		gauche-gl-refe gauche-gl-refj
 .endif
+
+post-patch:
+	${REINPLACE_CMD} s/VESRION/VERSION/ ${WRKSRC}/src/gen-ptrs.scm
 
 do-install:
 	cd ${WRKSRC}/src; ${MAKE} ${INSTALL_TARGET}
