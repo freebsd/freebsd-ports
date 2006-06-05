@@ -6,7 +6,7 @@
 
 PORTNAME=	shoutcast
 PORTVERSION=	1.9.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio net
 MASTER_SITES=	http://www.shoutcast.com/downloads/sc1-9-5/
 
@@ -15,14 +15,12 @@ COMMENT=	Nullsoft's streaming audio server (binary port)
 
 ONLY_FOR_ARCHS=	i386 amd64 ia64
 NO_BUILD=	YES
-NO_PACKAGE=	Redistribution of the software isn\'t allowed
+RESTRICTED=	Redistribution of the software is not allowed
+
+CONFLICTS=	linux-shoutcast-[0-9]*
 
 USE_RC_SUBR=	shoutcast.sh
-PLIST_FILES=	sbin/sc_serv etc/shoutcast/sc_serv.conf.sample
-PLIST_DIRS=	etc/shoutcast
 PORTDOCS=	README.TXT
-
-SUB_FILES=	pkg-message
 
 .include <bsd.port.pre.mk>
 
@@ -51,13 +49,14 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sc_serv ${PREFIX}/sbin
 	${MKDIR} ${PREFIX}/etc/shoutcast
 	${INSTALL_DATA} ${WRKSRC}/sc_serv.conf ${PREFIX}/etc/shoutcast/sc_serv.conf.sample
+	@[ -f ${PREFIX}/etc/shoutcast/sc_serv.conf ] || \
+		${INSTALL_DATA} ${WRKSRC}/sc_serv.conf ${PREFIX}/etc/shoutcast/sc_serv.conf
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.TXT ${DOCSDIR}
 .endif
 
 post-install:
-	@${SH} ${PKGINSTALL} ${PKGNAME}
-	@${CAT} ${PKGMESSAGE}
+	${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.post.mk>
