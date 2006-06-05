@@ -8,7 +8,8 @@
 PORTNAME=	tomsfastmath
 PORTVERSION=	0.09
 CATEGORIES=	math
-MASTER_SITES=	http://libtomcrypt.com/tfm/files/
+MASTER_SITES=	http://libtomcrypt.com/tfm/files/ \
+		http://www.atarininja.org/~wxs/distfiles/
 DISTNAME=	tfm-${PORTVERSION}
 
 MAINTAINER=	wxs@csh.rit.edu
