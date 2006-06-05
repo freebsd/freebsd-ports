@@ -8,7 +8,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	4.2.0
-PORTREVISION=	20060527
+PORTREVISION=	20060603
 CATEGORIES=	lang java
 VERSIONSTRING=	4.2-${PORTREVISION}
 MASTER_SITES=	${MASTER_SITE_GCC}
@@ -44,13 +44,9 @@ NOMANCOMPRESS=	yes	# too hard to deal with differences on 5-cur and releng4
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == amd64  ||  ${ARCH} == ia64  ||  ${ARCH} == sparc64
+.if ${ARCH} != i386
 WITHOUT_JAVA=	yes
 .endif
-
-# FIXME: As of 20060416, installing libgcj requires jar/fastjar which has
-# not been packaged for FreeBSD yet.
-WITHOUT_JAVA=	yes
 
 .if ${ARCH} == "amd64"
 CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
@@ -109,8 +105,7 @@ EXTRA_PATCHES=	${FILESDIR}/java-patch-hier
 # FIXME: we are currently getting weird build failures with libjava on
 # some 4.x and 5.x systems, which the following works around. PR 81788.
 CONFIGURE_ARGS+=--disable-rpath
-MAN1+=		fastjar${SUFFIX}.1 \
-		gcj${SUFFIX}.1 \
+MAN1+=		gcj${SUFFIX}.1 \
 		gcj-dbtool${SUFFIX}.1 \
 		gcjh${SUFFIX}.1 \
 		gij${SUFFIX}.1 \
@@ -122,7 +117,7 @@ MAN1+=		fastjar${SUFFIX}.1 \
 		jcf-dump${SUFFIX}.1 \
 		jv-scan${SUFFIX}.1 jv-convert${SUFFIX}.1 \
 		rmic${SUFFIX}.1 rmiregistry${SUFFIX}.1
-INFO+=		gcc${SUFFIX}/gcj gcc${SUFFIX}/fastjar
+INFO+=		gcc${SUFFIX}/gcj
 PLIST_SUB+=	JAVA=""
 .else
 CONFIGURE_ARGS+=--disable-libgcj
