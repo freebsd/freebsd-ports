@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	ragel
-PORTVERSION=	5.6
+PORTVERSION=	5.7
 CATEGORIES=	devel
 MASTER_SITES=	http://www.cs.queensu.ca/home/thurston/ragel/ \
 		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
