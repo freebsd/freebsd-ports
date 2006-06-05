@@ -56,6 +56,11 @@ share/doc/HTML/pt_BR/cervisia/index.cache.bz2
 share/doc/HTML/pt_BR/cervisia/index.docbook
 share/doc/HTML/pt_BR/cervisia/mainview.png
 share/doc/HTML/pt_BR/cervisia/popup.png
+share/doc/HTML/pt_BR/docs/common/fdl-translated.html
+share/doc/HTML/pt_BR/docs/common/gpl-translated.html
+share/doc/HTML/pt_BR/docs/common/kde-localised.css
+share/doc/HTML/pt_BR/docs/common/lgpl-translated.html
+share/doc/HTML/pt_BR/docs/common/logotp3.png
 share/doc/HTML/pt_BR/juk/common
 share/doc/HTML/pt_BR/juk/index.cache.bz2
 share/doc/HTML/pt_BR/juk/index.docbook
@@ -1234,11 +1239,6 @@ share/doc/HTML/pt_BR/multisynk/konnectors-chapter.docbook
 share/doc/HTML/pt_BR/noatun/common
 share/doc/HTML/pt_BR/noatun/index.cache.bz2
 share/doc/HTML/pt_BR/noatun/index.docbook
-share/doc/HTML/pt_BR/pt_BR/docs/common/fdl-translated.html
-share/doc/HTML/pt_BR/pt_BR/docs/common/gpl-translated.html
-share/doc/HTML/pt_BR/pt_BR/docs/common/kde-localised.css
-share/doc/HTML/pt_BR/pt_BR/docs/common/lgpl-translated.html
-share/doc/HTML/pt_BR/pt_BR/docs/common/logotp3.png
 share/doc/HTML/pt_BR/quanta/adv-quanta.docbook
 share/doc/HTML/pt_BR/quanta/attribute_tree.png
 share/doc/HTML/pt_BR/quanta/common
@@ -1885,9 +1885,6 @@ share/locale/pt_BR/flag.png
 @dirrm share/doc/HTML/pt_BR/umbrello
 @dirrm share/doc/HTML/pt_BR/scripts
 @dirrm share/doc/HTML/pt_BR/quanta
-@dirrm share/doc/HTML/pt_BR/pt_BR/docs/common
-@dirrm share/doc/HTML/pt_BR/pt_BR/docs
-@dirrm share/doc/HTML/pt_BR/pt_BR
 @dirrm share/doc/HTML/pt_BR/noatun
 @dirrm share/doc/HTML/pt_BR/multisynk
 @dirrm share/doc/HTML/pt_BR/lskat
@@ -2137,6 +2134,8 @@ share/locale/pt_BR/flag.png
 @dirrm share/doc/HTML/pt_BR/kaddressbook
 @dirrm share/doc/HTML/pt_BR/kaboodle
 @dirrm share/doc/HTML/pt_BR/juk
+@dirrm share/doc/HTML/pt_BR/docs/common
+@dirrm share/doc/HTML/pt_BR/docs
 @dirrm share/doc/HTML/pt_BR/cervisia
 @dirrm share/doc/HTML/pt_BR/atlantik
 @dirrm share/doc/HTML/pt_BR/artsbuilder

@@ -1,9 +1,9 @@
+share/doc/HTML/zh_CN/docs/common/fdl-translated.html
+share/doc/HTML/zh_CN/docs/common/gpl-translated.html
+share/doc/HTML/zh_CN/docs/common/kde-localised.css
+share/doc/HTML/zh_CN/docs/common/lgpl-translated.html
+share/doc/HTML/zh_CN/docs/common/logotp3.png
 share/doc/HTML/zh_CN/kdevelop/tip.database
-share/doc/HTML/zh_CN/zh_CN/docs/common/fdl-translated.html
-share/doc/HTML/zh_CN/zh_CN/docs/common/gpl-translated.html
-share/doc/HTML/zh_CN/zh_CN/docs/common/kde-localised.css
-share/doc/HTML/zh_CN/zh_CN/docs/common/lgpl-translated.html
-share/doc/HTML/zh_CN/zh_CN/docs/common/logotp3.png
 share/locale/zh_CN/LC_MESSAGES/akregator.mo
 share/locale/zh_CN/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/zh_CN/LC_MESSAGES/alsaplayerui.mo
@@ -345,6 +345,7 @@ share/locale/zh_CN/LC_MESSAGES/kmouth.mo
 share/locale/zh_CN/LC_MESSAGES/kmplot.mo
 share/locale/zh_CN/LC_MESSAGES/kmrml.mo
 share/locale/zh_CN/LC_MESSAGES/knetattach.mo
+share/locale/zh_CN/LC_MESSAGES/knetworkconf.mo
 share/locale/zh_CN/LC_MESSAGES/knewsticker.mo
 share/locale/zh_CN/LC_MESSAGES/knode.mo
 share/locale/zh_CN/LC_MESSAGES/knotes.mo
@@ -547,7 +548,6 @@ share/locale/zh_CN/LC_MESSAGES/webarchiver.mo
 share/locale/zh_CN/charset
 share/locale/zh_CN/entry.desktop
 share/locale/zh_CN/flag.png
-@dirrm share/doc/HTML/zh_CN/zh_CN/docs/common
-@dirrm share/doc/HTML/zh_CN/zh_CN/docs
-@dirrm share/doc/HTML/zh_CN/zh_CN
 @dirrm share/doc/HTML/zh_CN/kdevelop
+@dirrm share/doc/HTML/zh_CN/docs/common
+@dirrm share/doc/HTML/zh_CN/docs

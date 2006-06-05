@@ -122,6 +122,11 @@ share/doc/HTML/sv/cervisia/popup.png
 share/doc/HTML/sv/cervisia/repositories.png
 share/doc/HTML/sv/cervisia/resolve.png
 share/doc/HTML/sv/cervisia/updatetag.png
+share/doc/HTML/sv/docs/common/fdl-translated.html
+share/doc/HTML/sv/docs/common/gpl-translated.html
+share/doc/HTML/sv/docs/common/kde-localised.css
+share/doc/HTML/sv/docs/common/lgpl-translated.html
+share/doc/HTML/sv/docs/common/logotp3.png
 share/doc/HTML/sv/juk/common
 share/doc/HTML/sv/juk/history-playlist.png
 share/doc/HTML/sv/juk/index.cache.bz2
@@ -2145,11 +2150,6 @@ share/doc/HTML/sv/scripts/man-zonetab2pot.1.docbook
 share/doc/HTML/sv/superkaramba/common
 share/doc/HTML/sv/superkaramba/index.cache.bz2
 share/doc/HTML/sv/superkaramba/index.docbook
-share/doc/HTML/sv/sv/docs/common/fdl-translated.html
-share/doc/HTML/sv/sv/docs/common/gpl-translated.html
-share/doc/HTML/sv/sv/docs/common/kde-localised.css
-share/doc/HTML/sv/sv/docs/common/lgpl-translated.html
-share/doc/HTML/sv/sv/docs/common/logotp3.png
 share/doc/HTML/sv/umbrello/authors.docbook
 share/doc/HTML/sv/umbrello/code_import_and_generation.docbook
 share/doc/HTML/sv/umbrello/common
@@ -2751,9 +2751,6 @@ share/locale/sv/flag.png
 @dirrm share/doc/HTML/sv/xsldbg
 @dirrm share/doc/HTML/sv/umbrello/pics
 @dirrm share/doc/HTML/sv/umbrello
-@dirrm share/doc/HTML/sv/sv/docs/common
-@dirrm share/doc/HTML/sv/sv/docs
-@dirrm share/doc/HTML/sv/sv
 @dirrm share/doc/HTML/sv/superkaramba
 @dirrm share/doc/HTML/sv/scripts
 @dirrm share/doc/HTML/sv/quanta
@@ -3019,6 +3016,8 @@ share/locale/sv/flag.png
 @dirrm share/doc/HTML/sv/kaddressbook
 @dirrm share/doc/HTML/sv/kaboodle
 @dirrm share/doc/HTML/sv/juk
+@dirrm share/doc/HTML/sv/docs/common
+@dirrm share/doc/HTML/sv/docs
 @dirrm share/doc/HTML/sv/cervisia
 @dirrm share/doc/HTML/sv/blinken
 @dirrm share/doc/HTML/sv/atlantik

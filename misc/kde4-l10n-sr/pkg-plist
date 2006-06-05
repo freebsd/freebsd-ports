@@ -23,13 +23,13 @@ share/apps/kturtle/examples/sr/curly.logo
 share/apps/kturtle/examples/sr/example1.logo
 share/apps/kturtle/examples/sr/square.logo
 share/apps/kturtle/examples/sr/triangle.logo
+share/doc/HTML/sr/docs/common/fdl-translated.html
+share/doc/HTML/sr/docs/common/gpl-translated.html
+share/doc/HTML/sr/docs/common/kde-localised.css
+share/doc/HTML/sr/docs/common/lgpl-translated.html
+share/doc/HTML/sr/docs/common/logotp3.png
 share/doc/HTML/sr/khelpcenter/welcome.docbook
 share/doc/HTML/sr/khelpcenter/whatiskde.docbook
-share/doc/HTML/sr/sr/docs/common/fdl-translated.html
-share/doc/HTML/sr/sr/docs/common/gpl-translated.html
-share/doc/HTML/sr/sr/docs/common/kde-localised.css
-share/doc/HTML/sr/sr/docs/common/lgpl-translated.html
-share/doc/HTML/sr/sr/docs/common/logotp3.png
 share/locale/sr/LC_MESSAGES/akregator.mo
 share/locale/sr/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/sr/LC_MESSAGES/alsaplayerui.mo
@@ -594,10 +594,9 @@ share/locale/sr/LC_MESSAGES/webarchiver.mo
 share/locale/sr/charset
 share/locale/sr/entry.desktop
 share/locale/sr/flag.png
-@dirrm share/doc/HTML/sr/sr/docs/common
-@dirrm share/doc/HTML/sr/sr/docs
-@dirrm share/doc/HTML/sr/sr
 @dirrm share/doc/HTML/sr/khelpcenter
+@dirrm share/doc/HTML/sr/docs/common
+@dirrm share/doc/HTML/sr/docs
 @dirrm share/apps/kturtle/examples/sr
 @dirrm share/apps/kturtle/examples
 @dirrm share/apps/kturtle/data

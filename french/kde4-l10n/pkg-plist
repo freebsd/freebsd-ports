@@ -67,11 +67,11 @@ share/doc/HTML/fr/cervisia/logtree.png
 share/doc/HTML/fr/cervisia/mainview.png
 share/doc/HTML/fr/cervisia/resolve.png
 share/doc/HTML/fr/cervisia/updatetag.png
-share/doc/HTML/fr/fr/docs/common/fdl-translated.html
-share/doc/HTML/fr/fr/docs/common/gpl-translated.html
-share/doc/HTML/fr/fr/docs/common/kde-localised.css
-share/doc/HTML/fr/fr/docs/common/lgpl-translated.html
-share/doc/HTML/fr/fr/docs/common/logotp3.png
+share/doc/HTML/fr/docs/common/fdl-translated.html
+share/doc/HTML/fr/docs/common/gpl-translated.html
+share/doc/HTML/fr/docs/common/kde-localised.css
+share/doc/HTML/fr/docs/common/lgpl-translated.html
+share/doc/HTML/fr/docs/common/logotp3.png
 share/doc/HTML/fr/juk/common
 share/doc/HTML/fr/juk/index.cache.bz2
 share/doc/HTML/fr/juk/index.docbook
@@ -430,6 +430,7 @@ share/doc/HTML/fr/kdeprint/theory.docbook
 share/doc/HTML/fr/kdesu/common
 share/doc/HTML/fr/kdesu/index.cache.bz2
 share/doc/HTML/fr/kdesu/index.docbook
+share/doc/HTML/fr/kdesu/man-kdesu.1.docbook
 share/doc/HTML/fr/kdevelop/tip.database
 share/doc/HTML/fr/kdf/common
 share/doc/HTML/fr/kdf/index.cache.bz2
@@ -461,6 +462,7 @@ share/doc/HTML/fr/kenolaba/man-kenolaba.6.docbook
 share/doc/HTML/fr/kfind/common
 share/doc/HTML/fr/kfind/index.cache.bz2
 share/doc/HTML/fr/kfind/index.docbook
+share/doc/HTML/fr/kfind/man-kfind.1.docbook
 share/doc/HTML/fr/kfloppy/common
 share/doc/HTML/fr/kfloppy/index.cache.bz2
 share/doc/HTML/fr/kfloppy/index.docbook
@@ -547,7 +549,10 @@ share/doc/HTML/fr/khelpcenter/userguide/burning-cds.docbook
 share/doc/HTML/fr/khelpcenter/userguide/common
 share/doc/HTML/fr/khelpcenter/userguide/control-center.docbook
 share/doc/HTML/fr/khelpcenter/userguide/creating-graphics.docbook
+share/doc/HTML/fr/khelpcenter/userguide/credits-and-license.docbook
 share/doc/HTML/fr/khelpcenter/userguide/email.docbook
+share/doc/HTML/fr/khelpcenter/userguide/extragear-applications.docbook
+share/doc/HTML/fr/khelpcenter/userguide/file-sharing.docbook
 share/doc/HTML/fr/khelpcenter/userguide/first-impressions.docbook
 share/doc/HTML/fr/khelpcenter/userguide/font-installation.docbook
 share/doc/HTML/fr/khelpcenter/userguide/getting-help.docbook
@@ -562,6 +567,7 @@ share/doc/HTML/fr/khelpcenter/userguide/internet-shortcuts.docbook
 share/doc/HTML/fr/khelpcenter/userguide/intro.docbook
 share/doc/HTML/fr/khelpcenter/userguide/kde-as-root.docbook
 share/doc/HTML/fr/khelpcenter/userguide/kde-edutainment.docbook
+share/doc/HTML/fr/khelpcenter/userguide/kde-for-admins.docbook
 share/doc/HTML/fr/khelpcenter/userguide/kde-office.docbook
 share/doc/HTML/fr/khelpcenter/userguide/konsole-intro.docbook
 share/doc/HTML/fr/khelpcenter/userguide/messaging-intro.docbook
@@ -570,6 +576,7 @@ share/doc/HTML/fr/khelpcenter/userguide/more-help.docbook
 share/doc/HTML/fr/khelpcenter/userguide/net-connection-setup.docbook
 share/doc/HTML/fr/khelpcenter/userguide/networking-with-windows.docbook
 share/doc/HTML/fr/khelpcenter/userguide/notices-trademarks.docbook
+share/doc/HTML/fr/khelpcenter/userguide/panel-and-desktop.docbook
 share/doc/HTML/fr/khelpcenter/userguide/pdf-files.docbook
 share/doc/HTML/fr/khelpcenter/userguide/playing-movies.docbook
 share/doc/HTML/fr/khelpcenter/userguide/printer-setup.docbook
@@ -626,6 +633,7 @@ share/doc/HTML/fr/kicker/common
 share/doc/HTML/fr/kicker/index.cache.bz2
 share/doc/HTML/fr/kicker/index.docbook
 share/doc/HTML/fr/kicker/k_menu_icon.png
+share/doc/HTML/fr/kicker/man-kicker.1.docbook
 share/doc/HTML/fr/kicker/screenshot_left.png
 share/doc/HTML/fr/kicker/screenshot_right.png
 share/doc/HTML/fr/kicker/windowlist_icon.png
@@ -972,6 +980,7 @@ share/doc/HTML/fr/konqueror/index.cache.bz2
 share/doc/HTML/fr/konqueror/index.docbook
 share/doc/HTML/fr/konqueror/introduction.docbook
 share/doc/HTML/fr/konqueror/konqorg.png
+share/doc/HTML/fr/konqueror/man-kbookmarkmerger.1.docbook
 share/doc/HTML/fr/konqueror/parts.png
 share/doc/HTML/fr/konqueror/path-complete.docbook
 share/doc/HTML/fr/konqueror/plugins.docbook
@@ -2326,9 +2335,8 @@ share/locale/fr/relecture_gui
 @dirrm share/doc/HTML/fr/kaddressbook
 @dirrm share/doc/HTML/fr/kaboodle
 @dirrm share/doc/HTML/fr/juk
-@dirrm share/doc/HTML/fr/fr/docs/common
-@dirrm share/doc/HTML/fr/fr/docs
-@dirrm share/doc/HTML/fr/fr
+@dirrm share/doc/HTML/fr/docs/common
+@dirrm share/doc/HTML/fr/docs
 @dirrm share/doc/HTML/fr/cervisia
 @dirrm share/doc/HTML/fr/atlantik
 @dirrm share/doc/HTML/fr/artsbuilder/images

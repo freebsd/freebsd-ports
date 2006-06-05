@@ -1346,6 +1346,7 @@ share/apps/libical/zoneinfo/America/Cordoba.ics
 share/apps/libical/zoneinfo/America/Costa_Rica.ics
 share/apps/libical/zoneinfo/America/Cuiaba.ics
 share/apps/libical/zoneinfo/America/Curacao.ics
+share/apps/libical/zoneinfo/America/Danmarkshavn.ics
 share/apps/libical/zoneinfo/America/Dawson.ics
 share/apps/libical/zoneinfo/America/Dawson_Creek.ics
 share/apps/libical/zoneinfo/America/Denver.ics
@@ -1402,6 +1403,7 @@ share/apps/libical/zoneinfo/America/New_York.ics
 share/apps/libical/zoneinfo/America/Nipigon.ics
 share/apps/libical/zoneinfo/America/Nome.ics
 share/apps/libical/zoneinfo/America/Noronha.ics
+share/apps/libical/zoneinfo/America/North_Dakota/Center.ics
 share/apps/libical/zoneinfo/America/Panama.ics
 share/apps/libical/zoneinfo/America/Pangnirtung.ics
 share/apps/libical/zoneinfo/America/Paramaribo.ics
@@ -1462,6 +1464,8 @@ share/apps/libical/zoneinfo/Asia/Beirut.ics
 share/apps/libical/zoneinfo/Asia/Bishkek.ics
 share/apps/libical/zoneinfo/Asia/Brunei.ics
 share/apps/libical/zoneinfo/Asia/Calcutta.ics
+share/apps/libical/zoneinfo/Asia/Choibalsan.ics
+share/apps/libical/zoneinfo/Asia/Chongqing.ics
 share/apps/libical/zoneinfo/Asia/Chungking.ics
 share/apps/libical/zoneinfo/Asia/Colombo.ics
 share/apps/libical/zoneinfo/Asia/Damascus.ics
@@ -1501,6 +1505,7 @@ share/apps/libical/zoneinfo/Asia/Qatar.ics
 share/apps/libical/zoneinfo/Asia/Rangoon.ics
 share/apps/libical/zoneinfo/Asia/Riyadh.ics
 share/apps/libical/zoneinfo/Asia/Saigon.ics
+share/apps/libical/zoneinfo/Asia/Sakhalin.ics
 share/apps/libical/zoneinfo/Asia/Samarkand.ics
 share/apps/libical/zoneinfo/Asia/Seoul.ics
 share/apps/libical/zoneinfo/Asia/Shanghai.ics
@@ -2376,6 +2381,15 @@ share/servicetypes/kpilotconduit.desktop
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/certmanager/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/certmanager/lib/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/certmanager/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/akregator/src/librss/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/akregator/src/librss/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/akregator/src/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/akregator/src/librss/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/akregator/src/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/akregator/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/akregator/src/librss/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/akregator/src/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/akregator/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kdgantt/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kgantt/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/libemailfunctions/html
@@ -2400,6 +2414,9 @@ share/servicetypes/kpilotconduit.desktop
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kandy/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kalarm/lib/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kalarm/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/akregator/src/librss/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/akregator/src/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/akregator/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kmail/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/korganizer/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kaddressbook/html
@@ -2483,6 +2500,12 @@ share/servicetypes/kpilotconduit.desktop
 @dirrm share/doc/HTML/en/kdepim-apidocs/certmanager/lib
 @dirrm share/doc/HTML/en/kdepim-apidocs/certmanager/html
 @dirrm share/doc/HTML/en/kdepim-apidocs/certmanager
+@dirrm share/doc/HTML/en/kdepim-apidocs/akregator/src/librss/html
+@dirrm share/doc/HTML/en/kdepim-apidocs/akregator/src/librss
+@dirrm share/doc/HTML/en/kdepim-apidocs/akregator/src/html
+@dirrm share/doc/HTML/en/kdepim-apidocs/akregator/src
+@dirrm share/doc/HTML/en/kdepim-apidocs/akregator/html
+@dirrm share/doc/HTML/en/kdepim-apidocs/akregator
 @dirrm share/doc/HTML/en/kdepim-apidocs
 @dirrm share/doc/HTML/en/karm
 @dirrm share/doc/HTML/en/kandy
@@ -2513,6 +2536,7 @@ share/servicetypes/kpilotconduit.desktop
 @dirrm share/apps/libical/zoneinfo/Asia
 @dirrm share/apps/libical/zoneinfo/Arctic
 @dirrm share/apps/libical/zoneinfo/Antarctica
+@dirrm share/apps/libical/zoneinfo/America/North_Dakota
 @dirrm share/apps/libical/zoneinfo/America/Kentucky
 @dirrm share/apps/libical/zoneinfo/America/Indiana
 @dirrm share/apps/libical/zoneinfo/America

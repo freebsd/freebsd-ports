@@ -3,11 +3,11 @@ share/apps/khangman/data/fi/easy.kvtml
 share/apps/khangman/data/fi/hard.kvtml
 share/apps/khangman/data/fi/medium.kvtml
 share/apps/khangman/fi.txt
-share/doc/HTML/fi/fi/docs/common/fdl-translated.html
-share/doc/HTML/fi/fi/docs/common/gpl-translated.html
-share/doc/HTML/fi/fi/docs/common/kde-localised.css
-share/doc/HTML/fi/fi/docs/common/lgpl-translated.html
-share/doc/HTML/fi/fi/docs/common/logotp3.png
+share/doc/HTML/fi/docs/common/fdl-translated.html
+share/doc/HTML/fi/docs/common/gpl-translated.html
+share/doc/HTML/fi/docs/common/kde-localised.css
+share/doc/HTML/fi/docs/common/lgpl-translated.html
+share/doc/HTML/fi/docs/common/logotp3.png
 share/doc/HTML/fi/kfind/common
 share/doc/HTML/fi/kfind/index.cache.bz2
 share/doc/HTML/fi/kfind/index.docbook
@@ -210,6 +210,7 @@ share/locale/fi/LC_MESSAGES/kdgantt.mo
 share/locale/fi/LC_MESSAGES/kdialog.mo
 share/locale/fi/LC_MESSAGES/kdict.mo
 share/locale/fi/LC_MESSAGES/kdictapplet.mo
+share/locale/fi/LC_MESSAGES/kdjview.mo
 share/locale/fi/LC_MESSAGES/kdmconfig.mo
 share/locale/fi/LC_MESSAGES/kdmgreet.mo
 share/locale/fi/LC_MESSAGES/kdvi.mo
@@ -333,6 +334,7 @@ share/locale/fi/LC_MESSAGES/kjots.mo
 share/locale/fi/LC_MESSAGES/kjumpingcube.mo
 share/locale/fi/LC_MESSAGES/klaptopdaemon.mo
 share/locale/fi/LC_MESSAGES/klatin.mo
+share/locale/fi/LC_MESSAGES/kleopatra.mo
 share/locale/fi/LC_MESSAGES/klettres.mo
 share/locale/fi/LC_MESSAGES/klickety.mo
 share/locale/fi/LC_MESSAGES/klines.mo
@@ -496,6 +498,7 @@ share/locale/fi/LC_MESSAGES/kviewshell.mo
 share/locale/fi/LC_MESSAGES/kviewviewer.mo
 share/locale/fi/LC_MESSAGES/kvoctrain.mo
 share/locale/fi/LC_MESSAGES/kwalletmanager.mo
+share/locale/fi/LC_MESSAGES/kwatchgnupg.mo
 share/locale/fi/LC_MESSAGES/kweather.mo
 share/locale/fi/LC_MESSAGES/kwifimanager.mo
 share/locale/fi/LC_MESSAGES/kwin.mo
@@ -516,6 +519,7 @@ share/locale/fi/LC_MESSAGES/libkaddrbk_geo_xxport.mo
 share/locale/fi/LC_MESSAGES/libkaddrbk_gmx_xxport.mo
 share/locale/fi/LC_MESSAGES/libkcal.mo
 share/locale/fi/LC_MESSAGES/libkcddb.mo
+share/locale/fi/LC_MESSAGES/libkdeedu.mo
 share/locale/fi/LC_MESSAGES/libkdegames.mo
 share/locale/fi/LC_MESSAGES/libkdepim.mo
 share/locale/fi/LC_MESSAGES/libkfaximgage.mo
@@ -528,6 +532,7 @@ share/locale/fi/LC_MESSAGES/libkickermenu_recentdocs.mo
 share/locale/fi/LC_MESSAGES/libkickermenu_remotemenu.mo
 share/locale/fi/LC_MESSAGES/libkickermenu_systemmenu.mo
 share/locale/fi/LC_MESSAGES/libkickermenu_tom.mo
+share/locale/fi/LC_MESSAGES/libkleopatra.mo
 share/locale/fi/LC_MESSAGES/libkmime.mo
 share/locale/fi/LC_MESSAGES/libkonq.mo
 share/locale/fi/LC_MESSAGES/libkpgp.mo
@@ -579,9 +584,8 @@ share/locale/fi/flag.png
 @dirrm share/doc/HTML/fi/khelpcenter/glossary
 @dirrm share/doc/HTML/fi/khelpcenter
 @dirrm share/doc/HTML/fi/kfind
-@dirrm share/doc/HTML/fi/fi/docs/common
-@dirrm share/doc/HTML/fi/fi/docs
-@dirrm share/doc/HTML/fi/fi
+@dirrm share/doc/HTML/fi/docs/common
+@dirrm share/doc/HTML/fi/docs
 @dirrm share/apps/khangman/data/fi
 @dirrm share/apps/khangman/data
 @dirrm share/apps/khangman

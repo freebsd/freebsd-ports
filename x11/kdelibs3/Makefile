@@ -8,7 +8,6 @@
 
 PORTNAME=	kdelibs
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	1
 CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
@@ -27,8 +26,8 @@ LIB_DEPENDS=	IlmImf:${PORTSDIR}/graphics/OpenEXR \
 		dns_sd:${PORTSDIR}/net/mDNSResponder \
 		idn:${PORTSDIR}/dns/libidn \
 		jasper:${PORTSDIR}/graphics/jasper \
-		lua.5:${PORTSDIR}/lang/lua50 \
 		pcre:${PORTSDIR}/devel/pcre \
+		thai:${PORTSDIR}/devel/libthai \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		xml2.5:${PORTSDIR}/textproc/libxml2 \
 		xslt.2:${PORTSDIR}/textproc/libxslt
@@ -65,10 +64,8 @@ CONFIGURE_ARGS+=--disable-ltdl-install	\
 		--enable-mt \
 		--build=${MACHINE_ARCH}-portbld-freebsd${OSREL} \
 		--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include \
-		--with-lua-dir=${LOCALBASE} \
-		--with-lua-libraries=${LOCALBASE}/libs \
-		--with-lua-includes=${LOCALBASE}/include \
-		--with-ssl-dir=/
+		--with-libthai=yes \
+		--with-ssl-dir=${OPENSSLBASE}
 CONFIGURE_ENV+=	libltdl_cv_shlibext=".so"
 
 FONTSCALE=	${X11BASE}/lib/X11/fonts/TTF/luximb.ttf

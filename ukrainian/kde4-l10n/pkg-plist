@@ -1,3 +1,5 @@
+share/doc/HTML/uk/docs/common/kde-localised.css
+share/doc/HTML/uk/docs/common/logotp3.png
 share/doc/HTML/uk/kbabel/catman.docbook
 share/doc/HTML/uk/kbabel/faq.docbook
 share/doc/HTML/uk/kbabel/glossary.docbook
@@ -18,8 +20,6 @@ share/doc/HTML/uk/knotes/index.docbook
 share/doc/HTML/uk/kspell/common
 share/doc/HTML/uk/kspell/index.cache.bz2
 share/doc/HTML/uk/kspell/index.docbook
-share/doc/HTML/uk/uk/docs/common/kde-localised.css
-share/doc/HTML/uk/uk/docs/common/logotp3.png
 share/locale/uk/LC_MESSAGES/akregator.mo
 share/locale/uk/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/uk/LC_MESSAGES/alsaplayerui.mo
@@ -74,6 +74,7 @@ share/locale/uk/LC_MESSAGES/kaccess.mo
 share/locale/uk/LC_MESSAGES/kaddressbook.mo
 share/locale/uk/LC_MESSAGES/kalarm.mo
 share/locale/uk/LC_MESSAGES/kalzium.mo
+share/locale/uk/LC_MESSAGES/kanagram.mo
 share/locale/uk/LC_MESSAGES/kandy.mo
 share/locale/uk/LC_MESSAGES/kappfinder.mo
 share/locale/uk/LC_MESSAGES/karm.mo
@@ -574,9 +575,6 @@ share/locale/uk/LC_MESSAGES/webarchiver.mo
 share/locale/uk/charset
 share/locale/uk/entry.desktop
 share/locale/uk/flag.png
-@dirrm share/doc/HTML/uk/uk/docs/common
-@dirrm share/doc/HTML/uk/uk/docs
-@dirrm share/doc/HTML/uk/uk
 @dirrm share/doc/HTML/uk/kspell
 @dirrm share/doc/HTML/uk/knotes
 @dirrm share/doc/HTML/uk/kioslave
@@ -585,3 +583,5 @@ share/locale/uk/flag.png
 @dirrm share/doc/HTML/uk/khelpcenter/faq
 @dirrm share/doc/HTML/uk/khelpcenter
 @dirrm share/doc/HTML/uk/kbabel
+@dirrm share/doc/HTML/uk/docs/common
+@dirrm share/doc/HTML/uk/docs

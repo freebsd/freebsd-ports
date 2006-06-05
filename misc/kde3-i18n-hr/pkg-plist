@@ -1,25 +1,38 @@
-share/doc/HTML/hr/hr/docs/common/gpl-translated.html
+share/doc/HTML/hr/docs/common/gpl-translated.html
+share/locale/hr/LC_MESSAGES/akregator_konqplugin.mo
+share/locale/hr/LC_MESSAGES/alsaplayerui.mo
 share/locale/hr/LC_MESSAGES/amor.mo
 share/locale/hr/LC_MESSAGES/appletproxy.mo
 share/locale/hr/LC_MESSAGES/ark.mo
+share/locale/hr/LC_MESSAGES/ark_plugin.mo
 share/locale/hr/LC_MESSAGES/artsbuilder.mo
 share/locale/hr/LC_MESSAGES/artscontrol.mo
 share/locale/hr/LC_MESSAGES/artsmodules.mo
 share/locale/hr/LC_MESSAGES/atlantik.mo
+share/locale/hr/LC_MESSAGES/atlantikdesigner.mo
+share/locale/hr/LC_MESSAGES/audiorename_plugin.mo
+share/locale/hr/LC_MESSAGES/autorefresh.mo
 share/locale/hr/LC_MESSAGES/babelfish.mo
 share/locale/hr/LC_MESSAGES/cervisia.mo
+share/locale/hr/LC_MESSAGES/charlatanui.mo
 share/locale/hr/LC_MESSAGES/clockapplet.mo
+share/locale/hr/LC_MESSAGES/crashesplugin.mo
 share/locale/hr/LC_MESSAGES/cupsdconf.mo
 share/locale/hr/LC_MESSAGES/cvsservice.mo
 share/locale/hr/LC_MESSAGES/dirfilterplugin.mo
+share/locale/hr/LC_MESSAGES/display.mo
 share/locale/hr/LC_MESSAGES/dockbarextension.mo
 share/locale/hr/LC_MESSAGES/domtreeviewer.mo
 share/locale/hr/LC_MESSAGES/drkonqi.mo
 share/locale/hr/LC_MESSAGES/dub.mo
 share/locale/hr/LC_MESSAGES/extensionproxy.mo
+share/locale/hr/LC_MESSAGES/ffrs.mo
 share/locale/hr/LC_MESSAGES/filetypes.mo
+share/locale/hr/LC_MESSAGES/fsview.mo
 share/locale/hr/LC_MESSAGES/htmlsearch.mo
+share/locale/hr/LC_MESSAGES/imagerename_plugin.mo
 share/locale/hr/LC_MESSAGES/imgalleryplugin.mo
+share/locale/hr/LC_MESSAGES/joystick.mo
 share/locale/hr/LC_MESSAGES/juk.mo
 share/locale/hr/LC_MESSAGES/kabc2mutt.mo
 share/locale/hr/LC_MESSAGES/kabc_dir.mo
@@ -39,15 +52,27 @@ share/locale/hr/LC_MESSAGES/karm.mo
 share/locale/hr/LC_MESSAGES/kasbarextension.mo
 share/locale/hr/LC_MESSAGES/kasteroids.mo
 share/locale/hr/LC_MESSAGES/kate.mo
+share/locale/hr/LC_MESSAGES/katecppsymbolviewer.mo
+share/locale/hr/LC_MESSAGES/katefiletemplates.mo
+share/locale/hr/LC_MESSAGES/katefll_initplugin.mo
+share/locale/hr/LC_MESSAGES/katefll_plugin.mo
 share/locale/hr/LC_MESSAGES/katehelloworld.mo
 share/locale/hr/LC_MESSAGES/katehtmltools.mo
 share/locale/hr/LC_MESSAGES/kateinsertcommand.mo
+share/locale/hr/LC_MESSAGES/katekjswrapper.mo
+share/locale/hr/LC_MESSAGES/katemake.mo
+share/locale/hr/LC_MESSAGES/katemodeline.mo
 share/locale/hr/LC_MESSAGES/kateopenheader.mo
 share/locale/hr/LC_MESSAGES/katepart.mo
+share/locale/hr/LC_MESSAGES/katepybrowse.mo
+share/locale/hr/LC_MESSAGES/katesnippets.mo
+share/locale/hr/LC_MESSAGES/katetabbarextension.mo
 share/locale/hr/LC_MESSAGES/katetextfilter.mo
+share/locale/hr/LC_MESSAGES/katexmlcheck.mo
 share/locale/hr/LC_MESSAGES/katexmltools.mo
 share/locale/hr/LC_MESSAGES/katomic.mo
 share/locale/hr/LC_MESSAGES/kaudiocreator.mo
+share/locale/hr/LC_MESSAGES/kay.mo
 share/locale/hr/LC_MESSAGES/kbabel.mo
 share/locale/hr/LC_MESSAGES/kbackgammon.mo
 share/locale/hr/LC_MESSAGES/kbattleship.mo
@@ -82,6 +107,7 @@ share/locale/hr/LC_MESSAGES/kcmkabconfig.mo
 share/locale/hr/LC_MESSAGES/kcmkamera.mo
 share/locale/hr/LC_MESSAGES/kcmkclock.mo
 share/locale/hr/LC_MESSAGES/kcmkded.mo
+share/locale/hr/LC_MESSAGES/kcmkdnssd.mo
 share/locale/hr/LC_MESSAGES/kcmkeys.mo
 share/locale/hr/LC_MESSAGES/kcmkicker.mo
 share/locale/hr/LC_MESSAGES/kcmkio.mo
@@ -92,6 +118,7 @@ share/locale/hr/LC_MESSAGES/kcmktalkd.mo
 share/locale/hr/LC_MESSAGES/kcmkuick.mo
 share/locale/hr/LC_MESSAGES/kcmkurifilt.mo
 share/locale/hr/LC_MESSAGES/kcmkwindecoration.mo
+share/locale/hr/LC_MESSAGES/kcmkwinrules.mo
 share/locale/hr/LC_MESSAGES/kcmkwm.mo
 share/locale/hr/LC_MESSAGES/kcmlanbrowser.mo
 share/locale/hr/LC_MESSAGES/kcmlaptop.mo
@@ -99,6 +126,7 @@ share/locale/hr/LC_MESSAGES/kcmlaunch.mo
 share/locale/hr/LC_MESSAGES/kcmlayout.mo
 share/locale/hr/LC_MESSAGES/kcmlilo.mo
 share/locale/hr/LC_MESSAGES/kcmlocale.mo
+share/locale/hr/LC_MESSAGES/kcmmedia.mo
 share/locale/hr/LC_MESSAGES/kcmnic.mo
 share/locale/hr/LC_MESSAGES/kcmnotify.mo
 share/locale/hr/LC_MESSAGES/kcmperformance.mo
@@ -111,6 +139,7 @@ share/locale/hr/LC_MESSAGES/kcmspellchecking.mo
 share/locale/hr/LC_MESSAGES/kcmstyle.mo
 share/locale/hr/LC_MESSAGES/kcmtaskbar.mo
 share/locale/hr/LC_MESSAGES/kcmusb.mo
+share/locale/hr/LC_MESSAGES/kcmview1394.mo
 share/locale/hr/LC_MESSAGES/kcmxinerama.mo
 share/locale/hr/LC_MESSAGES/kcoloredit.mo
 share/locale/hr/LC_MESSAGES/kcontrol.mo
@@ -119,6 +148,7 @@ share/locale/hr/LC_MESSAGES/kdat.mo
 share/locale/hr/LC_MESSAGES/kdcop.mo
 share/locale/hr/LC_MESSAGES/kdebugdialog.mo
 share/locale/hr/LC_MESSAGES/kdelibs.mo
+share/locale/hr/LC_MESSAGES/kdelibs_colors.mo
 share/locale/hr/LC_MESSAGES/kdepasswd.mo
 share/locale/hr/LC_MESSAGES/kdeprint.mo
 share/locale/hr/LC_MESSAGES/kdeprint_part.mo
@@ -167,6 +197,7 @@ share/locale/hr/LC_MESSAGES/kfile_ts.mo
 share/locale/hr/LC_MESSAGES/kfile_vcf.mo
 share/locale/hr/LC_MESSAGES/kfile_wav.mo
 share/locale/hr/LC_MESSAGES/kfile_xbm.mo
+share/locale/hr/LC_MESSAGES/kfileaudiopreview.mo
 share/locale/hr/LC_MESSAGES/kfindpart.mo
 share/locale/hr/LC_MESSAGES/kfloppy.mo
 share/locale/hr/LC_MESSAGES/kfmclient.mo
@@ -177,6 +208,8 @@ share/locale/hr/LC_MESSAGES/kgantt.mo
 share/locale/hr/LC_MESSAGES/kget.mo
 share/locale/hr/LC_MESSAGES/kghostview.mo
 share/locale/hr/LC_MESSAGES/kgpg.mo
+share/locale/hr/LC_MESSAGES/kgreet_classic.mo
+share/locale/hr/LC_MESSAGES/kgreet_winbind.mo
 share/locale/hr/LC_MESSAGES/khangman.mo
 share/locale/hr/LC_MESSAGES/khelpcenter.mo
 share/locale/hr/LC_MESSAGES/khexedit.mo
@@ -290,12 +323,16 @@ share/locale/hr/LC_MESSAGES/ksplash.mo
 share/locale/hr/LC_MESSAGES/kstars.mo
 share/locale/hr/LC_MESSAGES/kstart.mo
 share/locale/hr/LC_MESSAGES/kstartperf.mo
+share/locale/hr/LC_MESSAGES/kstyle_highcontrast_config.mo
+share/locale/hr/LC_MESSAGES/kstyle_plastik_config.mo
 share/locale/hr/LC_MESSAGES/ksync.mo
 share/locale/hr/LC_MESSAGES/ksysguard.mo
 share/locale/hr/LC_MESSAGES/ksystemtrayapplet.mo
 share/locale/hr/LC_MESSAGES/ksystraycmd.mo
 share/locale/hr/LC_MESSAGES/ksysv.mo
 share/locale/hr/LC_MESSAGES/kteatime.mo
+share/locale/hr/LC_MESSAGES/ktexteditor_autobookmarker.mo
+share/locale/hr/LC_MESSAGES/ktexteditor_docwordcompletion.mo
 share/locale/hr/LC_MESSAGES/ktexteditor_insertfile.mo
 share/locale/hr/LC_MESSAGES/ktexteditor_isearch.mo
 share/locale/hr/LC_MESSAGES/ktexteditor_kdatatool.mo
@@ -363,6 +400,5 @@ share/locale/hr/LC_MESSAGES/webarchiver.mo
 share/locale/hr/charset
 share/locale/hr/entry.desktop
 share/locale/hr/flag.png
-@dirrm share/doc/HTML/hr/hr/docs/common
-@dirrm share/doc/HTML/hr/hr/docs
-@dirrm share/doc/HTML/hr/hr
+@dirrm share/doc/HTML/hr/docs/common
+@dirrm share/doc/HTML/hr/docs

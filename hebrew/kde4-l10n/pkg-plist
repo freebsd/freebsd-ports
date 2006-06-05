@@ -1,8 +1,8 @@
-share/doc/HTML/he/he/docs/common/fdl-translated.html
-share/doc/HTML/he/he/docs/common/gpl-translated.html
-share/doc/HTML/he/he/docs/common/kde-localised.css
-share/doc/HTML/he/he/docs/common/lgpl-translated.html
-share/doc/HTML/he/he/docs/common/logotp3.png
+share/doc/HTML/he/docs/common/fdl-translated.html
+share/doc/HTML/he/docs/common/gpl-translated.html
+share/doc/HTML/he/docs/common/kde-localised.css
+share/doc/HTML/he/docs/common/lgpl-translated.html
+share/doc/HTML/he/docs/common/logotp3.png
 share/doc/HTML/he/khelpcenter/khelpcenter.png
 share/doc/HTML/he/khelpcenter/konq.css
 share/doc/HTML/he/khelpcenter/main.html
@@ -495,6 +495,5 @@ share/locale/he/charset
 share/locale/he/entry.desktop
 share/locale/he/flag.png
 @dirrm share/doc/HTML/he/khelpcenter
-@dirrm share/doc/HTML/he/he/docs/common
-@dirrm share/doc/HTML/he/he/docs
-@dirrm share/doc/HTML/he/he
+@dirrm share/doc/HTML/he/docs/common
+@dirrm share/doc/HTML/he/docs

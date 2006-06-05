@@ -1,3 +1,8 @@
+share/apps/khangman/data/et/animals.kvtml
+share/apps/khangman/data/et/easy.kvtml
+share/apps/khangman/data/et/hard.kvtml
+share/apps/khangman/data/et/medium.kvtml
+share/apps/khangman/et.txt
 share/doc/HTML/et/KRegExpEditor/common
 share/doc/HTML/et/KRegExpEditor/index.cache.bz2
 share/doc/HTML/et/KRegExpEditor/index.docbook
@@ -22,11 +27,11 @@ share/doc/HTML/et/blinken/index.docbook
 share/doc/HTML/et/cervisia/common
 share/doc/HTML/et/cervisia/index.cache.bz2
 share/doc/HTML/et/cervisia/index.docbook
-share/doc/HTML/et/et/docs/common/fdl-translated.html
-share/doc/HTML/et/et/docs/common/gpl-translated.html
-share/doc/HTML/et/et/docs/common/kde-localised.css
-share/doc/HTML/et/et/docs/common/lgpl-translated.html
-share/doc/HTML/et/et/docs/common/logotp3.png
+share/doc/HTML/et/docs/common/fdl-translated.html
+share/doc/HTML/et/docs/common/gpl-translated.html
+share/doc/HTML/et/docs/common/kde-localised.css
+share/doc/HTML/et/docs/common/lgpl-translated.html
+share/doc/HTML/et/docs/common/logotp3.png
 share/doc/HTML/et/flashkard/common
 share/doc/HTML/et/flashkard/index.cache.bz2
 share/doc/HTML/et/flashkard/index.docbook
@@ -2165,9 +2170,8 @@ share/locale/et/flag.png
 @dirrm share/doc/HTML/et/kaboodle
 @dirrm share/doc/HTML/et/juk
 @dirrm share/doc/HTML/et/flashkard
-@dirrm share/doc/HTML/et/et/docs/common
-@dirrm share/doc/HTML/et/et/docs
-@dirrm share/doc/HTML/et/et
+@dirrm share/doc/HTML/et/docs/common
+@dirrm share/doc/HTML/et/docs
 @dirrm share/doc/HTML/et/cervisia
 @dirrm share/doc/HTML/et/blinken
 @dirrm share/doc/HTML/et/atlantik
@@ -2175,3 +2179,6 @@ share/locale/et/flag.png
 @dirrm share/doc/HTML/et/amor
 @dirrm share/doc/HTML/et/akregator
 @dirrm share/doc/HTML/et/KRegExpEditor
+@dirrm share/apps/khangman/data/et
+@dirrm share/apps/khangman/data
+@dirrm share/apps/khangman

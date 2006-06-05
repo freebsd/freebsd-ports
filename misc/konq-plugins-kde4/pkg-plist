@@ -78,7 +78,7 @@ lib/kde3/libwebarchiverplugin.so
 lib/kde3/webarchivethumbnail.a
 lib/kde3/webarchivethumbnail.la
 lib/kde3/webarchivethumbnail.so
-share/applications/kdeaddons-konq-plugins-3.5.2
+share/applications/kdeaddons-konq-plugins-3.5.3
 share/applnk/.hidden/arkplugin.desktop
 share/applnk/.hidden/kcmkuick.desktop
 share/applnk/.hidden/kuickplugin.desktop

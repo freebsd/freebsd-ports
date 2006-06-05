@@ -99,6 +99,11 @@ share/doc/HTML/nl/artsbuilder/gui.docbook
 share/doc/HTML/nl/atlantik/common
 share/doc/HTML/nl/atlantik/index.cache.bz2
 share/doc/HTML/nl/atlantik/index.docbook
+share/doc/HTML/nl/docs/common/fdl-translated.html
+share/doc/HTML/nl/docs/common/gpl-translated.html
+share/doc/HTML/nl/docs/common/kde-localised.css
+share/doc/HTML/nl/docs/common/lgpl-translated.html
+share/doc/HTML/nl/docs/common/logotp3.png
 share/doc/HTML/nl/juk/common
 share/doc/HTML/nl/juk/index.cache.bz2
 share/doc/HTML/nl/juk/index.docbook
@@ -1225,11 +1230,6 @@ share/doc/HTML/nl/multisynk/common
 share/doc/HTML/nl/multisynk/index.cache.bz2
 share/doc/HTML/nl/multisynk/index.docbook
 share/doc/HTML/nl/multisynk/konnectors-chapter.docbook
-share/doc/HTML/nl/nl/docs/common/fdl-translated.html
-share/doc/HTML/nl/nl/docs/common/gpl-translated.html
-share/doc/HTML/nl/nl/docs/common/kde-localised.css
-share/doc/HTML/nl/nl/docs/common/lgpl-translated.html
-share/doc/HTML/nl/nl/docs/common/logotp3.png
 share/doc/HTML/nl/noatun/common
 share/doc/HTML/nl/noatun/index.cache.bz2
 share/doc/HTML/nl/noatun/index.docbook
@@ -1842,9 +1842,6 @@ share/locale/nl/flag.png
 @dirrm share/doc/HTML/nl/scripts
 @dirrm share/doc/HTML/nl/quanta
 @dirrm share/doc/HTML/nl/noatun
-@dirrm share/doc/HTML/nl/nl/docs/common
-@dirrm share/doc/HTML/nl/nl/docs
-@dirrm share/doc/HTML/nl/nl
 @dirrm share/doc/HTML/nl/multisynk
 @dirrm share/doc/HTML/nl/lskat
 @dirrm share/doc/HTML/nl/kxsldbg
@@ -2065,6 +2062,8 @@ share/locale/nl/flag.png
 @dirrm share/doc/HTML/nl/kaddressbook
 @dirrm share/doc/HTML/nl/kaboodle
 @dirrm share/doc/HTML/nl/juk
+@dirrm share/doc/HTML/nl/docs/common
+@dirrm share/doc/HTML/nl/docs
 @dirrm share/doc/HTML/nl/atlantik
 @dirrm share/doc/HTML/nl/artsbuilder
 @dirrm share/doc/HTML/nl/ark

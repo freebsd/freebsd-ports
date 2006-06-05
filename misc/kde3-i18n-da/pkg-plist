@@ -134,11 +134,11 @@ share/doc/HTML/da/blinken/index.docbook
 share/doc/HTML/da/cervisia/common
 share/doc/HTML/da/cervisia/index.cache.bz2
 share/doc/HTML/da/cervisia/index.docbook
-share/doc/HTML/da/da/docs/common/fdl-translated.html
-share/doc/HTML/da/da/docs/common/gpl-translated.html
-share/doc/HTML/da/da/docs/common/kde-localised.css
-share/doc/HTML/da/da/docs/common/lgpl-translated.html
-share/doc/HTML/da/da/docs/common/logotp3.png
+share/doc/HTML/da/docs/common/fdl-translated.html
+share/doc/HTML/da/docs/common/gpl-translated.html
+share/doc/HTML/da/docs/common/kde-localised.css
+share/doc/HTML/da/docs/common/lgpl-translated.html
+share/doc/HTML/da/docs/common/logotp3.png
 share/doc/HTML/da/juk/common
 share/doc/HTML/da/juk/index.cache.bz2
 share/doc/HTML/da/juk/index.docbook
@@ -2310,9 +2310,8 @@ share/locale/da/flag.png
 @dirrm share/doc/HTML/da/kaddressbook
 @dirrm share/doc/HTML/da/kaboodle
 @dirrm share/doc/HTML/da/juk
-@dirrm share/doc/HTML/da/da/docs/common
-@dirrm share/doc/HTML/da/da/docs
-@dirrm share/doc/HTML/da/da
+@dirrm share/doc/HTML/da/docs/common
+@dirrm share/doc/HTML/da/docs
 @dirrm share/doc/HTML/da/cervisia
 @dirrm share/doc/HTML/da/blinken
 @dirrm share/doc/HTML/da/atlantik

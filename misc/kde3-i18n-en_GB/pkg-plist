@@ -7,11 +7,11 @@ share/apps/kturtle/examples/en_GB/triangle.logo
 share/doc/HTML/en_GB/cervisia/common
 share/doc/HTML/en_GB/cervisia/index.cache.bz2
 share/doc/HTML/en_GB/cervisia/index.docbook
-share/doc/HTML/en_GB/en_GB/docs/common/fdl-translated.html
-share/doc/HTML/en_GB/en_GB/docs/common/gpl-translated.html
-share/doc/HTML/en_GB/en_GB/docs/common/kde-localised.css
-share/doc/HTML/en_GB/en_GB/docs/common/lgpl-translated.html
-share/doc/HTML/en_GB/en_GB/docs/common/logotp3.png
+share/doc/HTML/en_GB/docs/common/fdl-translated.html
+share/doc/HTML/en_GB/docs/common/gpl-translated.html
+share/doc/HTML/en_GB/docs/common/kde-localised.css
+share/doc/HTML/en_GB/docs/common/lgpl-translated.html
+share/doc/HTML/en_GB/docs/common/logotp3.png
 share/doc/HTML/en_GB/kaddressbook/common
 share/doc/HTML/en_GB/kaddressbook/index.cache.bz2
 share/doc/HTML/en_GB/kaddressbook/index.docbook
@@ -1250,9 +1250,8 @@ share/locale/en_GB/flag.png
 @dirrm share/doc/HTML/en_GB/kate
 @dirrm share/doc/HTML/en_GB/kalarm
 @dirrm share/doc/HTML/en_GB/kaddressbook
-@dirrm share/doc/HTML/en_GB/en_GB/docs/common
-@dirrm share/doc/HTML/en_GB/en_GB/docs
-@dirrm share/doc/HTML/en_GB/en_GB
+@dirrm share/doc/HTML/en_GB/docs/common
+@dirrm share/doc/HTML/en_GB/docs
 @dirrm share/doc/HTML/en_GB/cervisia
 @dirrm share/apps/kturtle/examples/en_GB
 @dirrm share/apps/kturtle/examples

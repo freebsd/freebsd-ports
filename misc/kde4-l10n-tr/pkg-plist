@@ -3,6 +3,8 @@ share/apps/khangman/data/tr/easy.kvtml
 share/apps/khangman/data/tr/hard.kvtml
 share/apps/khangman/data/tr/medium.kvtml
 share/apps/khangman/tr.txt
+share/doc/HTML/tr/docs/common/gpl-translated.html
+share/doc/HTML/tr/docs/common/kde-localised.css
 share/doc/HTML/tr/khelpcenter/common
 share/doc/HTML/tr/khelpcenter/contact.docbook
 share/doc/HTML/tr/khelpcenter/faq/about.docbook
@@ -56,8 +58,6 @@ share/doc/HTML/tr/kioslave/telnet.docbook
 share/doc/HTML/tr/kioslave/thumbnail.docbook
 share/doc/HTML/tr/kioslave/webdav.docbook
 share/doc/HTML/tr/kioslave/webdavs.docbook
-share/doc/HTML/tr/tr/docs/common/gpl-translated.html
-share/doc/HTML/tr/tr/docs/common/kde-localised.css
 share/locale/tr/LC_MESSAGES/akregator.mo
 share/locale/tr/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/tr/LC_MESSAGES/alsaplayerui.mo
@@ -622,14 +622,13 @@ share/locale/tr/LC_MESSAGES/webarchiver.mo
 share/locale/tr/charset
 share/locale/tr/entry.desktop
 share/locale/tr/flag.png
-@dirrm share/doc/HTML/tr/tr/docs/common
-@dirrm share/doc/HTML/tr/tr/docs
-@dirrm share/doc/HTML/tr/tr
 @dirrm share/doc/HTML/tr/kioslave
 @dirrm share/doc/HTML/tr/kinfocenter/protocols
 @dirrm share/doc/HTML/tr/kinfocenter
 @dirrm share/doc/HTML/tr/khelpcenter/faq
 @dirrm share/doc/HTML/tr/khelpcenter
+@dirrm share/doc/HTML/tr/docs/common
+@dirrm share/doc/HTML/tr/docs
 @dirrm share/apps/khangman/data/tr
 @dirrm share/apps/khangman/data
 @dirrm share/apps/khangman

@@ -1860,6 +1860,7 @@ share/apps/ksgmltools2/customization/it/entities/underArtisticLicense.docbook
 share/apps/ksgmltools2/customization/it/entities/underBSDLicense.docbook
 share/apps/ksgmltools2/customization/it/entities/underFDL.docbook
 share/apps/ksgmltools2/customization/it/entities/underGPL.docbook
+share/apps/ksgmltools2/customization/it/entities/underLGPL.docbook
 share/apps/ksgmltools2/customization/it/entities/underX11License.docbook
 share/apps/ksgmltools2/customization/it/entities/update-doc.docbook
 share/apps/ksgmltools2/customization/it/lang.entities
@@ -3466,8 +3467,10 @@ share/icons/crystalsvg/16x16/actions/switchuser.png
 share/icons/crystalsvg/16x16/actions/tab_breakoff.png
 share/icons/crystalsvg/16x16/actions/tab_duplicate.png
 share/icons/crystalsvg/16x16/actions/tab_new.png
+share/icons/crystalsvg/16x16/actions/tab_new_bg.png
 share/icons/crystalsvg/16x16/actions/tab_new_raised.png
 share/icons/crystalsvg/16x16/actions/tab_remove.png
+share/icons/crystalsvg/16x16/actions/tab_remove_other.png
 share/icons/crystalsvg/16x16/actions/text.png
 share/icons/crystalsvg/16x16/actions/text_block.png
 share/icons/crystalsvg/16x16/actions/text_bold.png

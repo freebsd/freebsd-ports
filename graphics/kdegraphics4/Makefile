@@ -23,8 +23,8 @@ LIB_DEPENDS=	art_lgpl_2:${PORTSDIR}/graphics/libart_lgpl \
 		fribidi:${PORTSDIR}/converters/fribidi \
 		glut:${PORTSDIR}/graphics/libglut \
 		lcms:${PORTSDIR}/graphics/lcms \
-		paper:${PORTSDIR}/print/libpaper
-RUN_DEPENDS=	pdfinfo:${PORTSDIR}/graphics/xpdf
+		paper:${PORTSDIR}/print/libpaper \
+		poppler-qt:${PORTSDIR}/graphics/poppler-qt
 
 CONFLICTS=	kolourpaint-[0-9]*
 
