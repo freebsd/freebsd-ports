@@ -17,8 +17,6 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	chinsan.tw@gmail.com
 COMMENT=	A simple and easy to use wiki, no database required
 
-FORBIDDEN=	Remote code execution
-
 DIST_VER=	${PORTNAME}-2006-03-09
 USE_PHP=	gd pcre session xml zlib
 NO_BUILD=	YES
