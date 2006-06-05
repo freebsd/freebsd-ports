@@ -527,6 +527,7 @@
     SUBDIR += libpci
     SUBDIR += libpdel
     SUBDIR += libpeak
+    SUBDIR += libphish
     SUBDIR += libpperl
     SUBDIR += libredblack
     SUBDIR += libshbuf
