@@ -1,0 +1,94 @@
+bin/gpgen
+%%CACHE_DIR%%/gem_plugin-0.2.1.gem
+%%GEM_DOC_DIR%%/rdoc/classes/GemPlugin.html
+%%GEM_DOC_DIR%%/rdoc/classes/GemPlugin.src/M000001.html
+%%GEM_DOC_DIR%%/rdoc/classes/GemPlugin/Base.html
+%%GEM_DOC_DIR%%/rdoc/classes/GemPlugin/Base.src/M000002.html
+%%GEM_DOC_DIR%%/rdoc/classes/GemPlugin/Base.src/M000003.html
+%%GEM_DOC_DIR%%/rdoc/classes/GemPlugin/Base.src/M000004.html
+%%GEM_DOC_DIR%%/rdoc/classes/GemPlugin/Manager.html
+%%GEM_DOC_DIR%%/rdoc/classes/GemPlugin/Manager.src/M000005.html
+%%GEM_DOC_DIR%%/rdoc/classes/GemPlugin/Manager.src/M000006.html
+%%GEM_DOC_DIR%%/rdoc/classes/GemPlugin/Manager.src/M000007.html
+%%GEM_DOC_DIR%%/rdoc/classes/GemPlugin/Manager.src/M000008.html
+%%GEM_DOC_DIR%%/rdoc/classes/GemPlugin/Manager.src/M000009.html
+%%GEM_DOC_DIR%%/rdoc/classes/GemPlugin/Manager.src/M000010.html
+%%GEM_DOC_DIR%%/rdoc/classes/GemPlugin/Manager.src/M000011.html
+%%GEM_DOC_DIR%%/rdoc/classes/GemPlugin/PluginNotLoaded.html
+%%GEM_DOC_DIR%%/rdoc/created.rid
+%%GEM_DOC_DIR%%/rdoc/files/README.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/gem_plugin_rb.html
+%%GEM_DOC_DIR%%/rdoc/fr_class_index.html
+%%GEM_DOC_DIR%%/rdoc/fr_file_index.html
+%%GEM_DOC_DIR%%/rdoc/fr_method_index.html
+%%GEM_DOC_DIR%%/rdoc/index.html
+%%GEM_DOC_DIR%%/rdoc/rdoc-style.css
+%%GEM_LIB_DIR%%/COPYING
+%%GEM_LIB_DIR%%/LICENSE
+%%GEM_LIB_DIR%%/README
+%%GEM_LIB_DIR%%/Rakefile
+%%GEM_LIB_DIR%%/bin/gpgen
+%%GEM_LIB_DIR%%/doc/rdoc/classes/GemPlugin.html
+%%GEM_LIB_DIR%%/doc/rdoc/classes/GemPlugin.src/M000001.html
+%%GEM_LIB_DIR%%/doc/rdoc/classes/GemPlugin/Base.html
+%%GEM_LIB_DIR%%/doc/rdoc/classes/GemPlugin/Base.src/M000002.html
+%%GEM_LIB_DIR%%/doc/rdoc/classes/GemPlugin/Base.src/M000003.html
+%%GEM_LIB_DIR%%/doc/rdoc/classes/GemPlugin/Base.src/M000004.html
+%%GEM_LIB_DIR%%/doc/rdoc/classes/GemPlugin/Manager.html
+%%GEM_LIB_DIR%%/doc/rdoc/classes/GemPlugin/Manager.src/M000005.html
+%%GEM_LIB_DIR%%/doc/rdoc/classes/GemPlugin/Manager.src/M000006.html
+%%GEM_LIB_DIR%%/doc/rdoc/classes/GemPlugin/Manager.src/M000007.html
+%%GEM_LIB_DIR%%/doc/rdoc/classes/GemPlugin/Manager.src/M000008.html
+%%GEM_LIB_DIR%%/doc/rdoc/classes/GemPlugin/Manager.src/M000009.html
+%%GEM_LIB_DIR%%/doc/rdoc/classes/GemPlugin/Manager.src/M000010.html
+%%GEM_LIB_DIR%%/doc/rdoc/classes/GemPlugin/Manager.src/M000011.html
+%%GEM_LIB_DIR%%/doc/rdoc/classes/GemPlugin/PluginNotLoaded.html
+%%GEM_LIB_DIR%%/doc/rdoc/created.rid
+%%GEM_LIB_DIR%%/doc/rdoc/files/COPYING.html
+%%GEM_LIB_DIR%%/doc/rdoc/files/LICENSE.html
+%%GEM_LIB_DIR%%/doc/rdoc/files/README.html
+%%GEM_LIB_DIR%%/doc/rdoc/files/lib/gem_plugin_rb.html
+%%GEM_LIB_DIR%%/doc/rdoc/fr_class_index.html
+%%GEM_LIB_DIR%%/doc/rdoc/fr_file_index.html
+%%GEM_LIB_DIR%%/doc/rdoc/fr_method_index.html
+%%GEM_LIB_DIR%%/doc/rdoc/index.html
+%%GEM_LIB_DIR%%/doc/rdoc/rdoc-style.css
+%%GEM_LIB_DIR%%/lib/gem_plugin.rb
+%%GEM_LIB_DIR%%/resources/COPYING
+%%GEM_LIB_DIR%%/resources/LICENSE
+%%GEM_LIB_DIR%%/resources/README
+%%GEM_LIB_DIR%%/resources/Rakefile
+%%GEM_LIB_DIR%%/resources/lib/project/init.rb
+%%GEM_LIB_DIR%%/resources/resources/defaults.yaml
+%%GEM_LIB_DIR%%/resources/tools/rakehelp.rb
+%%GEM_LIB_DIR%%/test/test_plugins.rb
+%%GEM_LIB_DIR%%/tools/rakehelp.rb
+%%SPEC_DIR%%/gem_plugin-0.2.1.gemspec
+@dirrm %%GEM_LIB_DIR%%/tools
+@dirrm %%GEM_LIB_DIR%%/test
+@dirrm %%GEM_LIB_DIR%%/resources/tools
+@dirrm %%GEM_LIB_DIR%%/resources/resources
+@dirrm %%GEM_LIB_DIR%%/resources/lib/project
+@dirrm %%GEM_LIB_DIR%%/resources/lib
+@dirrm %%GEM_LIB_DIR%%/resources
+@dirrm %%GEM_LIB_DIR%%/lib
+@dirrm %%GEM_LIB_DIR%%/doc/rdoc/files/lib
+@dirrm %%GEM_LIB_DIR%%/doc/rdoc/files
+@dirrm %%GEM_LIB_DIR%%/doc/rdoc/classes/GemPlugin/Manager.src
+@dirrm %%GEM_LIB_DIR%%/doc/rdoc/classes/GemPlugin/Base.src
+@dirrm %%GEM_LIB_DIR%%/doc/rdoc/classes/GemPlugin.src
+@dirrm %%GEM_LIB_DIR%%/doc/rdoc/classes/GemPlugin
+@dirrm %%GEM_LIB_DIR%%/doc/rdoc/classes
+@dirrm %%GEM_LIB_DIR%%/doc/rdoc
+@dirrm %%GEM_LIB_DIR%%/doc
+@dirrm %%GEM_LIB_DIR%%/bin
+@dirrm %%GEM_LIB_DIR%%
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib
+@dirrm %%GEM_DOC_DIR%%/rdoc/files
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/GemPlugin/Manager.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/GemPlugin/Base.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/GemPlugin.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/GemPlugin
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes
+@dirrm %%GEM_DOC_DIR%%/rdoc
+@dirrm %%GEM_DOC_DIR%%
