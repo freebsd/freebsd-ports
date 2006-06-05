@@ -1,0 +1,7 @@
+FEAR::API is a tool that helps reduce your time creating site scraping scripts
+and help you do it in a much more elegant way. FEAR::API combines many strong
+and powerful features from various CPAN modules, such as LWP::UserAgent,
+WWW::Mechanize, Template::Extract, Encode, HTML::Parser, etc. and digests them
+into a deeper Zen.
+
+WWW: http://search.cpan.org/dist/FEAR-API/
