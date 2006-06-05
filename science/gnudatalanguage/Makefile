@@ -7,7 +7,7 @@
 
 PORTNAME=	gnudatalanguage
 PORTVERSION=	0.8.11
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	science lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -31,7 +31,7 @@ COMMENT?=	GDL, a free IDL compatible incremental compiler
 #
 #---------------------------------------------------------------------------
 
-LIB_DEPENDS+=	plplotd.10:${PORTSDIR}/math/plplot	\
+LIB_DEPENDS+=	plplotd.11:${PORTSDIR}/math/plplot	\
 		gsl.9:${PORTSDIR}/math/gsl		\
 		readline.5:${PORTSDIR}/devel/readline
 
