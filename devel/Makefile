@@ -345,7 +345,6 @@
     SUBDIR += gnome2-hacker-tools
     SUBDIR += gnu-autoconf
     SUBDIR += gnu-automake
-    SUBDIR += gnu-libtool
     SUBDIR += gnulibiberty
     SUBDIR += gnustep
     SUBDIR += gnustep-make

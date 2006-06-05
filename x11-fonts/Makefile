@@ -40,7 +40,6 @@
     SUBDIR += lfpfonts-var
     SUBDIR += libXft
     SUBDIR += linux-fontconfig
-    SUBDIR += linux-urw-fonts
     SUBDIR += mathfonts
     SUBDIR += mgopen
     SUBDIR += mkbold

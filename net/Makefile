@@ -156,7 +156,6 @@
     SUBDIR += gnome-netstatus
     SUBDIR += gnome-nettool
     SUBDIR += gnome-vnc
-    SUBDIR += gnomemeeting
     SUBDIR += gnometelnet
     SUBDIR += gnosamba
     SUBDIR += gnu-finger

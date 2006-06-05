@@ -3317,7 +3317,6 @@ gnomehier	ports/misc/gnomehier
 gnomeiconedit	ports/graphics/gnomeiconedit
 gnomeicu	ports/net-im/gnomeicu
 gnomekiss	ports/games/gnomekiss
-gnomemeeting	ports/net/gnomemeeting
 gnomememoryblocks	ports/games/gnomememoryblocks
 gnomemm		ports/x11-toolkits/gnomemm
 gnomephotoprinter	ports/print/gnomephotoprinter
@@ -3337,7 +3336,6 @@ gnu-autoconf	ports/devel/gnu-autoconf
 gnu-automake	ports/devel/gnu-automake
 gnu-crypto	ports/security/gnu-crypto
 gnu-finger	ports/net/gnu-finger
-gnu-libtool	ports/devel/gnu-libtool
 gnu-radius	ports/net/gnu-radius
 gnu-regexp	ports/java/gnu-regexp
 gnu-watch	ports/misc/gnu-watch
@@ -4529,7 +4527,6 @@ ja-libjconv	ports/japanese/libjconv
 ja-libslang	ports/japanese/libslang
 ja-libtomoe-gtk	ports/japanese/libtomoe-gtk
 ja-linux-JM	ports/japanese/linux-JM
-ja-linux-ttfonts	ports/japanese/linux-ttfonts
 ja-lipsf	ports/japanese/lipsf
 ja-lookup	ports/japanese/lookup
 ja-lookup-emacs20	ports/japanese/lookup-emacs20
@@ -5247,7 +5244,6 @@ knowit		ports/deskutils/knowit
 knowlan		ports/net-mgmt/knowlan
 knowledgekit	ports/www/knowledgekit
 knutclient	ports/sysutils/knutclient
-knzb		ports/news/knzb
 ko-FreeWnn-lib	ports/korean/FreeWnn-lib
 ko-FreeWnn-server	ports/korean/FreeWnn-server
 ko-a2ps		ports/korean/a2ps
@@ -6083,7 +6079,6 @@ linux-gdk-pixbuf	ports/graphics/linux-gdk-pixbuf
 linux-geepee32	ports/emulators/linux-geepee32
 linux-gid	ports/cad/linux-gid
 linux-glib2	ports/devel/linux-glib2
-linux-gnomelibs	ports/x11/linux-gnomelibs
 linux-goodway	ports/games/linux-goodway
 linux-gtk	ports/x11-toolkits/linux-gtk
 linux-gtk-bluecurve-theme	ports/x11-themes/linux-gtk-bluecurve-theme
@@ -6150,7 +6145,6 @@ linux-thunderbird	ports/mail/linux-thunderbird
 linux-tiff	ports/graphics/linux-tiff
 linux-unace	ports/archivers/linux-unace
 linux-ungif	ports/graphics/linux-ungif
-linux-urw-fonts	ports/x11-fonts/linux-urw-fonts
 linux-ut2003-demo	ports/games/linux-ut2003-demo
 linux-ut2004-demo	ports/games/linux-ut2004-demo
 linux-virtual-jay-peak	ports/games/linux-virtual-jay-peak
