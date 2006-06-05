@@ -1163,6 +1163,7 @@ share/apps/quanta/templates/text/others/demo.txt
 share/apps/quanta/templates/text/scripts/demo.php
 share/apps/quanta/tips
 share/apps/quanta/toolbar/ball.png
+share/apps/quanta/toolbar/button.png
 share/apps/quanta/toolbar/check.png
 share/apps/quanta/toolbar/check_clear.png
 share/apps/quanta/toolbar/check_grey.png

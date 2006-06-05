@@ -1,14 +1,14 @@
+share/doc/HTML/zh_TW/docs/common/fdl-translated.html
+share/doc/HTML/zh_TW/docs/common/gpl-translated.html
+share/doc/HTML/zh_TW/docs/common/kde-localised.css
+share/doc/HTML/zh_TW/docs/common/lgpl-translated.html
+share/doc/HTML/zh_TW/docs/common/logotp3.png
 share/doc/HTML/zh_TW/khelpcenter/contact.docbook
 share/doc/HTML/zh_TW/khelpcenter/help.docbook
 share/doc/HTML/zh_TW/khelpcenter/links.docbook
 share/doc/HTML/zh_TW/khelpcenter/support.docbook
 share/doc/HTML/zh_TW/khelpcenter/welcome.docbook
 share/doc/HTML/zh_TW/khelpcenter/whatiskde.docbook
-share/doc/HTML/zh_TW/zh_TW/docs/common/fdl-translated.html
-share/doc/HTML/zh_TW/zh_TW/docs/common/gpl-translated.html
-share/doc/HTML/zh_TW/zh_TW/docs/common/kde-localised.css
-share/doc/HTML/zh_TW/zh_TW/docs/common/lgpl-translated.html
-share/doc/HTML/zh_TW/zh_TW/docs/common/logotp3.png
 share/locale/zh_TW/LC_MESSAGES/alsaplayerui.mo
 share/locale/zh_TW/LC_MESSAGES/amor.mo
 share/locale/zh_TW/LC_MESSAGES/appletproxy.mo
@@ -375,7 +375,6 @@ share/locale/zh_TW/LC_MESSAGES/webarchiver.mo
 share/locale/zh_TW/charset
 share/locale/zh_TW/entry.desktop
 share/locale/zh_TW/flag.png
-@dirrm share/doc/HTML/zh_TW/zh_TW/docs/common
-@dirrm share/doc/HTML/zh_TW/zh_TW/docs
-@dirrm share/doc/HTML/zh_TW/zh_TW
 @dirrm share/doc/HTML/zh_TW/khelpcenter
+@dirrm share/doc/HTML/zh_TW/docs/common
+@dirrm share/doc/HTML/zh_TW/docs

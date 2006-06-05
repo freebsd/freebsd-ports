@@ -12,14 +12,14 @@ share/doc/HTML/hu/ark/index.docbook
 share/doc/HTML/hu/atlantik/common
 share/doc/HTML/hu/atlantik/index.cache.bz2
 share/doc/HTML/hu/atlantik/index.docbook
+share/doc/HTML/hu/docs/common/fdl-translated.html
+share/doc/HTML/hu/docs/common/gpl-translated.html
+share/doc/HTML/hu/docs/common/kde-localised.css
+share/doc/HTML/hu/docs/common/lgpl-translated.html
+share/doc/HTML/hu/docs/common/logotp3.png
 share/doc/HTML/hu/flashkard/common
 share/doc/HTML/hu/flashkard/index.cache.bz2
 share/doc/HTML/hu/flashkard/index.docbook
-share/doc/HTML/hu/hu/docs/common/fdl-translated.html
-share/doc/HTML/hu/hu/docs/common/gpl-translated.html
-share/doc/HTML/hu/hu/docs/common/kde-localised.css
-share/doc/HTML/hu/hu/docs/common/lgpl-translated.html
-share/doc/HTML/hu/hu/docs/common/logotp3.png
 share/doc/HTML/hu/kaboodle/common
 share/doc/HTML/hu/kaboodle/index.cache.bz2
 share/doc/HTML/hu/kaboodle/index.docbook
@@ -1038,10 +1038,9 @@ share/locale/hu/flag.png
 @dirrm share/doc/HTML/hu/kalzium
 @dirrm share/doc/HTML/hu/kaddressbook
 @dirrm share/doc/HTML/hu/kaboodle
-@dirrm share/doc/HTML/hu/hu/docs/common
-@dirrm share/doc/HTML/hu/hu/docs
-@dirrm share/doc/HTML/hu/hu
 @dirrm share/doc/HTML/hu/flashkard
+@dirrm share/doc/HTML/hu/docs/common
+@dirrm share/doc/HTML/hu/docs
 @dirrm share/doc/HTML/hu/atlantik
 @dirrm share/doc/HTML/hu/ark
 @dirrm share/doc/HTML/hu/amor

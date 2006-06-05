@@ -67,6 +67,11 @@ share/doc/HTML/pt/blinken/index.docbook
 share/doc/HTML/pt/cervisia/common
 share/doc/HTML/pt/cervisia/index.cache.bz2
 share/doc/HTML/pt/cervisia/index.docbook
+share/doc/HTML/pt/docs/common/fdl-translated.html
+share/doc/HTML/pt/docs/common/gpl-translated.html
+share/doc/HTML/pt/docs/common/kde-localised.css
+share/doc/HTML/pt/docs/common/lgpl-translated.html
+share/doc/HTML/pt/docs/common/logotp3.png
 share/doc/HTML/pt/juk/common
 share/doc/HTML/pt/juk/index.cache.bz2
 share/doc/HTML/pt/juk/index.docbook
@@ -113,9 +118,12 @@ share/doc/HTML/pt/kate-plugins/textfilter.docbook
 share/doc/HTML/pt/kate-plugins/xmlcheck.docbook
 share/doc/HTML/pt/kate-plugins/xmltools.docbook
 share/doc/HTML/pt/kate/advanced.docbook
+share/doc/HTML/pt/kate/common
 share/doc/HTML/pt/kate/configuring.docbook
 share/doc/HTML/pt/kate/fundamentals.docbook
 share/doc/HTML/pt/kate/highlighting.docbook
+share/doc/HTML/pt/kate/index.cache.bz2
+share/doc/HTML/pt/kate/index.docbook
 share/doc/HTML/pt/kate/man-kate.1.docbook
 share/doc/HTML/pt/kate/mdi.docbook
 share/doc/HTML/pt/kate/menus.docbook
@@ -125,6 +133,9 @@ share/doc/HTML/pt/kate/regular-expressions.docbook
 share/doc/HTML/pt/katomic/common
 share/doc/HTML/pt/katomic/index.cache.bz2
 share/doc/HTML/pt/katomic/index.docbook
+share/doc/HTML/pt/kaudiocreator/common
+share/doc/HTML/pt/kaudiocreator/index.cache.bz2
+share/doc/HTML/pt/kaudiocreator/index.docbook
 share/doc/HTML/pt/kbabel/catman.docbook
 share/doc/HTML/pt/kbabel/common
 share/doc/HTML/pt/kbabel/dictionaries.docbook
@@ -159,6 +170,7 @@ share/doc/HTML/pt/kbugbuster/index.docbook
 share/doc/HTML/pt/kcachegrind/common
 share/doc/HTML/pt/kcachegrind/index.cache.bz2
 share/doc/HTML/pt/kcachegrind/index.docbook
+share/doc/HTML/pt/kcalc/commands.docbook
 share/doc/HTML/pt/kcalc/common
 share/doc/HTML/pt/kcalc/index.cache.bz2
 share/doc/HTML/pt/kcalc/index.docbook
@@ -407,6 +419,7 @@ share/doc/HTML/pt/kdevelop/app-uimodes-examples.docbook
 share/doc/HTML/pt/kdevelop/applicationwizard.docbook
 share/doc/HTML/pt/kdevelop/class-browsers.docbook
 share/doc/HTML/pt/kdevelop/commands.docbook
+share/doc/HTML/pt/kdevelop/common
 share/doc/HTML/pt/kdevelop/credits.docbook
 share/doc/HTML/pt/kdevelop/cvs.docbook
 share/doc/HTML/pt/kdevelop/debugger.docbook
@@ -414,6 +427,8 @@ share/doc/HTML/pt/kdevelop/documentation.docbook
 share/doc/HTML/pt/kdevelop/editing.docbook
 share/doc/HTML/pt/kdevelop/file-browsers.docbook
 share/doc/HTML/pt/kdevelop/getting-started.docbook
+share/doc/HTML/pt/kdevelop/index.cache.bz2
+share/doc/HTML/pt/kdevelop/index.docbook
 share/doc/HTML/pt/kdevelop/kdevelop-install.docbook
 share/doc/HTML/pt/kdevelop/kdevelop-scripting.docbook
 share/doc/HTML/pt/kdevelop/kdevelop-survey.docbook
@@ -1042,6 +1057,9 @@ share/doc/HTML/pt/kshisen/index.docbook
 share/doc/HTML/pt/ksim/common
 share/doc/HTML/pt/ksim/index.cache.bz2
 share/doc/HTML/pt/ksim/index.docbook
+share/doc/HTML/pt/ksirc/common
+share/doc/HTML/pt/ksirc/index.cache.bz2
+share/doc/HTML/pt/ksirc/index.docbook
 share/doc/HTML/pt/ksirtet/common
 share/doc/HTML/pt/ksirtet/index.cache.bz2
 share/doc/HTML/pt/ksirtet/index.docbook
@@ -1262,11 +1280,6 @@ share/doc/HTML/pt/multisynk/konnectors-chapter.docbook
 share/doc/HTML/pt/noatun/common
 share/doc/HTML/pt/noatun/index.cache.bz2
 share/doc/HTML/pt/noatun/index.docbook
-share/doc/HTML/pt/pt/docs/common/fdl-translated.html
-share/doc/HTML/pt/pt/docs/common/gpl-translated.html
-share/doc/HTML/pt/pt/docs/common/kde-localised.css
-share/doc/HTML/pt/pt/docs/common/lgpl-translated.html
-share/doc/HTML/pt/pt/docs/common/logotp3.png
 share/doc/HTML/pt/quanta/adv-quanta.docbook
 share/doc/HTML/pt/quanta/common
 share/doc/HTML/pt/quanta/config-quanta.docbook
@@ -1896,9 +1909,6 @@ share/locale/pt/flag.png
 @dirrm share/doc/HTML/pt/superkaramba
 @dirrm share/doc/HTML/pt/scripts
 @dirrm share/doc/HTML/pt/quanta
-@dirrm share/doc/HTML/pt/pt/docs/common
-@dirrm share/doc/HTML/pt/pt/docs
-@dirrm share/doc/HTML/pt/pt
 @dirrm share/doc/HTML/pt/noatun
 @dirrm share/doc/HTML/pt/multisynk
 @dirrm share/doc/HTML/pt/lskat
@@ -1941,6 +1951,7 @@ share/locale/pt/flag.png
 @dirrm share/doc/HTML/pt/ksnake
 @dirrm share/doc/HTML/pt/ksmiletris
 @dirrm share/doc/HTML/pt/ksirtet
+@dirrm share/doc/HTML/pt/ksirc
 @dirrm share/doc/HTML/pt/ksim
 @dirrm share/doc/HTML/pt/kshisen
 @dirrm share/doc/HTML/pt/kscd
@@ -2148,6 +2159,7 @@ share/locale/pt/flag.png
 @dirrm share/doc/HTML/pt/kbattleship
 @dirrm share/doc/HTML/pt/kbackgammon
 @dirrm share/doc/HTML/pt/kbabel
+@dirrm share/doc/HTML/pt/kaudiocreator
 @dirrm share/doc/HTML/pt/katomic
 @dirrm share/doc/HTML/pt/kate-plugins
 @dirrm share/doc/HTML/pt/kate
@@ -2163,6 +2175,8 @@ share/locale/pt/flag.png
 @dirrm share/doc/HTML/pt/kaddressbook
 @dirrm share/doc/HTML/pt/kaboodle
 @dirrm share/doc/HTML/pt/juk
+@dirrm share/doc/HTML/pt/docs/common
+@dirrm share/doc/HTML/pt/docs
 @dirrm share/doc/HTML/pt/cervisia
 @dirrm share/doc/HTML/pt/blinken
 @dirrm share/doc/HTML/pt/atlantik

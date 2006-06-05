@@ -1,0 +1,999 @@
+bin/kopete
+bin/kopete_latexconvert.sh
+include/kopete/kabcpersistence.h
+include/kopete/kopete_export.h
+include/kopete/kopeteaccount.h
+include/kopete/kopeteaccountmanager.h
+include/kopete/kopeteaway.h
+include/kopete/kopeteawayaction.h
+include/kopete/kopeteawaydialog.h
+include/kopete/kopeteblacklister.h
+include/kopete/kopetechatsession.h
+include/kopete/kopetechatsessionmanager.h
+include/kopete/kopetecommandhandler.h
+include/kopete/kopetecontact.h
+include/kopete/kopetecontactlist.h
+include/kopete/kopetecontactlistelement.h
+include/kopete/kopetecontactproperty.h
+include/kopete/kopeteeventpresentation.h
+include/kopete/kopeteglobal.h
+include/kopete/kopetegroup.h
+include/kopete/kopetemessage.h
+include/kopete/kopetemessageevent.h
+include/kopete/kopetemessagehandler.h
+include/kopete/kopetemessagehandlerchain.h
+include/kopete/kopetemetacontact.h
+include/kopete/kopetemimetypehandler.h
+include/kopete/kopetenotifydataobject.h
+include/kopete/kopeteonlinestatus.h
+include/kopete/kopeteonlinestatusmanager.h
+include/kopete/kopetepassword.h
+include/kopete/kopetepasswordedaccount.h
+include/kopete/kopeteplugin.h
+include/kopete/kopeteprotocol.h
+include/kopete/kopetesimplemessagehandler.h
+include/kopete/kopetetask.h
+include/kopete/kopetetransfermanager.h
+include/kopete/kopeteuiglobal.h
+include/kopete/kopeteversion.h
+include/kopete/kopetexsl.h
+include/kopete/managedconnectionaccount.h
+include/kopete/ui/accountselector.h
+include/kopete/ui/addcontactpage.h
+include/kopete/ui/addressbookselectordialog.h
+include/kopete/ui/addressbookselectorwidget.h
+include/kopete/ui/editaccountwidget.h
+include/kopete/ui/fileconfirmbase.h
+include/kopete/ui/kopeteawaydialogbase.h
+include/kopete/ui/kopetecontactaction.h
+include/kopete/ui/kopetefileconfirmdialog.h
+include/kopete/ui/kopetelistview.h
+include/kopete/ui/kopetelistviewitem.h
+include/kopete/ui/kopetelistviewsearchline.h
+include/kopete/ui/kopetepassworddialog.h
+include/kopete/ui/kopetepasswordwidget.h
+include/kopete/ui/kopetepasswordwidgetbase.h
+include/kopete/ui/kopetestdaction.h
+include/kopete/ui/kopeteview.h
+include/kopete/ui/kopeteviewplugin.h
+include/kopete/ui/userinfodialog.h
+lib/kconf_update_bin/kopete-account-kconf_update
+lib/kconf_update_bin/kopete-nameTracking-kconf_update
+lib/kconf_update_bin/kopete-pluginloader2-kconf_update
+lib/kde3/kcm_kopete_accountconfig.a
+lib/kde3/kcm_kopete_accountconfig.la
+lib/kde3/kcm_kopete_accountconfig.so
+lib/kde3/kcm_kopete_addbookmarks.a
+lib/kde3/kcm_kopete_addbookmarks.la
+lib/kde3/kcm_kopete_addbookmarks.so
+lib/kde3/kcm_kopete_alias.a
+lib/kde3/kcm_kopete_alias.la
+lib/kde3/kcm_kopete_alias.so
+lib/kde3/kcm_kopete_appearanceconfig.a
+lib/kde3/kcm_kopete_appearanceconfig.la
+lib/kde3/kcm_kopete_appearanceconfig.so
+lib/kde3/kcm_kopete_autoreplace.a
+lib/kde3/kcm_kopete_autoreplace.la
+lib/kde3/kcm_kopete_autoreplace.so
+lib/kde3/kcm_kopete_avdeviceconfig.a
+lib/kde3/kcm_kopete_avdeviceconfig.la
+lib/kde3/kcm_kopete_avdeviceconfig.so
+lib/kde3/kcm_kopete_behaviorconfig.a
+lib/kde3/kcm_kopete_behaviorconfig.la
+lib/kde3/kcm_kopete_behaviorconfig.so
+lib/kde3/kcm_kopete_cryptography.a
+lib/kde3/kcm_kopete_cryptography.la
+lib/kde3/kcm_kopete_cryptography.so
+lib/kde3/kcm_kopete_highlight.a
+lib/kde3/kcm_kopete_highlight.la
+lib/kde3/kcm_kopete_highlight.so
+lib/kde3/kcm_kopete_history.a
+lib/kde3/kcm_kopete_history.la
+lib/kde3/kcm_kopete_history.so
+lib/kde3/kcm_kopete_identityconfig.a
+lib/kde3/kcm_kopete_identityconfig.la
+lib/kde3/kcm_kopete_identityconfig.so
+lib/kde3/kcm_kopete_latex.a
+lib/kde3/kcm_kopete_latex.la
+lib/kde3/kcm_kopete_latex.so
+lib/kde3/kcm_kopete_msn.a
+lib/kde3/kcm_kopete_msn.la
+lib/kde3/kcm_kopete_msn.so
+lib/kde3/kcm_kopete_netmeeting.a
+lib/kde3/kcm_kopete_netmeeting.la
+lib/kde3/kcm_kopete_netmeeting.so
+lib/kde3/kcm_kopete_nowlistening.a
+lib/kde3/kcm_kopete_nowlistening.la
+lib/kde3/kcm_kopete_nowlistening.so
+lib/kde3/kcm_kopete_texteffect.a
+lib/kde3/kcm_kopete_texteffect.la
+lib/kde3/kcm_kopete_texteffect.so
+lib/kde3/kcm_kopete_translator.a
+lib/kde3/kcm_kopete_translator.la
+lib/kde3/kcm_kopete_translator.so
+lib/kde3/kcm_kopete_webpresence.a
+lib/kde3/kcm_kopete_webpresence.la
+lib/kde3/kcm_kopete_webpresence.so
+lib/kde3/kio_jabberdisco.a
+lib/kde3/kio_jabberdisco.la
+lib/kde3/kio_jabberdisco.so
+lib/kde3/kopete_addbookmarks.a
+lib/kde3/kopete_addbookmarks.la
+lib/kde3/kopete_addbookmarks.so
+lib/kde3/kopete_aim.a
+lib/kde3/kopete_aim.la
+lib/kde3/kopete_aim.so
+lib/kde3/kopete_alias.a
+lib/kde3/kopete_alias.la
+lib/kde3/kopete_alias.so
+lib/kde3/kopete_autoreplace.a
+lib/kde3/kopete_autoreplace.la
+lib/kde3/kopete_autoreplace.so
+lib/kde3/kopete_chatwindow.a
+lib/kde3/kopete_chatwindow.la
+lib/kde3/kopete_chatwindow.so
+lib/kde3/kopete_connectionstatus.a
+lib/kde3/kopete_connectionstatus.la
+lib/kde3/kopete_connectionstatus.so
+lib/kde3/kopete_contactnotes.a
+lib/kde3/kopete_contactnotes.la
+lib/kde3/kopete_contactnotes.so
+lib/kde3/kopete_cryptography.a
+lib/kde3/kopete_cryptography.la
+lib/kde3/kopete_cryptography.so
+lib/kde3/kopete_emailwindow.a
+lib/kde3/kopete_emailwindow.la
+lib/kde3/kopete_emailwindow.so
+lib/kde3/kopete_gadu.a
+lib/kde3/kopete_gadu.la
+lib/kde3/kopete_gadu.so
+lib/kde3/kopete_groupwise.a
+lib/kde3/kopete_groupwise.la
+lib/kde3/kopete_groupwise.so
+lib/kde3/kopete_highlight.a
+lib/kde3/kopete_highlight.la
+lib/kde3/kopete_highlight.so
+lib/kde3/kopete_history.a
+lib/kde3/kopete_history.la
+lib/kde3/kopete_history.so
+lib/kde3/kopete_icq.a
+lib/kde3/kopete_icq.la
+lib/kde3/kopete_icq.so
+lib/kde3/kopete_irc.a
+lib/kde3/kopete_irc.la
+lib/kde3/kopete_irc.so
+lib/kde3/kopete_jabber.a
+lib/kde3/kopete_jabber.la
+lib/kde3/kopete_jabber.so
+lib/kde3/kopete_latex.a
+lib/kde3/kopete_latex.la
+lib/kde3/kopete_latex.so
+lib/kde3/kopete_msn.a
+lib/kde3/kopete_msn.la
+lib/kde3/kopete_msn.so
+lib/kde3/kopete_netmeeting.a
+lib/kde3/kopete_netmeeting.la
+lib/kde3/kopete_netmeeting.so
+lib/kde3/kopete_nowlistening.a
+lib/kde3/kopete_nowlistening.la
+lib/kde3/kopete_nowlistening.so
+lib/kde3/kopete_sms.a
+lib/kde3/kopete_sms.la
+lib/kde3/kopete_sms.so
+lib/kde3/kopete_statistics.a
+lib/kde3/kopete_statistics.la
+lib/kde3/kopete_statistics.so
+lib/kde3/kopete_testbed.a
+lib/kde3/kopete_testbed.la
+lib/kde3/kopete_testbed.so
+lib/kde3/kopete_texteffect.a
+lib/kde3/kopete_texteffect.la
+lib/kde3/kopete_texteffect.so
+lib/kde3/kopete_translator.a
+lib/kde3/kopete_translator.la
+lib/kde3/kopete_translator.so
+lib/kde3/kopete_webpresence.a
+lib/kde3/kopete_webpresence.la
+lib/kde3/kopete_webpresence.so
+lib/kde3/kopete_yahoo.a
+lib/kde3/kopete_yahoo.la
+lib/kde3/kopete_yahoo.so
+lib/kde3/libkrichtexteditpart.a
+lib/kde3/libkrichtexteditpart.la
+lib/kde3/libkrichtexteditpart.so
+lib/libkopete.a
+lib/libkopete.la
+lib/libkopete.so
+lib/libkopete.so.1
+lib/libkopete_msn_shared.a
+lib/libkopete_msn_shared.la
+lib/libkopete_msn_shared.so
+lib/libkopete_msn_shared.so.0
+lib/libkopete_oscar.a
+lib/libkopete_oscar.la
+lib/libkopete_oscar.so
+lib/libkopete_oscar.so.2
+lib/libkopete_videodevice.a
+lib/libkopete_videodevice.la
+lib/libkopete_videodevice.so
+lib/libkopete_videodevice.so.0
+share/applications/kde/kopete.desktop
+share/apps/kconf_update/kopete-account-0.10.pl
+share/apps/kconf_update/kopete-account-kconf_update.sh
+share/apps/kconf_update/kopete-account-kconf_update.upd
+share/apps/kconf_update/kopete-jabberpriorityaddition-kconf_update.sh
+share/apps/kconf_update/kopete-jabberpriorityaddition-kconf_update.upd
+share/apps/kconf_update/kopete-jabberproxytype-kconf_update.sh
+share/apps/kconf_update/kopete-jabberproxytype-kconf_update.upd
+share/apps/kconf_update/kopete-nameTracking.upd
+share/apps/kconf_update/kopete-pluginloader.pl
+share/apps/kconf_update/kopete-pluginloader.upd
+share/apps/kconf_update/kopete-pluginloader2.sh
+share/apps/kconf_update/kopete-pluginloader2.upd
+share/apps/kopete/eventsrc
+share/apps/kopete/icons/crystalsvg/128x128/apps/aim_protocol.png
+share/apps/kopete/icons/crystalsvg/128x128/apps/icq_protocol.png
+share/apps/kopete/icons/crystalsvg/128x128/apps/kopete_avdevice.png
+share/apps/kopete/icons/crystalsvg/128x128/apps/msn_protocol.png
+share/apps/kopete/icons/crystalsvg/128x128/apps/sms_protocol.png
+share/apps/kopete/icons/crystalsvg/128x128/apps/testbed_protocol.png
+share/apps/kopete/icons/crystalsvg/128x128/apps/yahoo_protocol.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/account_offline_overlay.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/aim_away.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/aim_connecting.mng
+share/apps/kopete/icons/crystalsvg/16x16/actions/aim_offline.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/aim_online.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/contact_away_overlay.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/contact_busy_overlay.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/contact_food_overlay.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/contact_invisible_overlay.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/contact_phone_overlay.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/contact_xa_overlay.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/emoticon.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/gg_away.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/gg_busy.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/gg_busy_d.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/gg_con.mng
+share/apps/kopete/icons/crystalsvg/16x16/actions/gg_connecting.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/gg_description_overlay.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/gg_ignored.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/gg_invi.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/gg_invi_d.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/gg_offline.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/gg_offline_d.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/gg_online.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/gg_online_d.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/groupwise_away.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/groupwise_busy.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/groupwise_connecting.mng
+share/apps/kopete/icons/crystalsvg/16x16/actions/groupwise_invisible.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/groupwise_online.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/icq_away.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/icq_connecting.mng
+share/apps/kopete/icons/crystalsvg/16x16/actions/icq_dnd.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/icq_ffc.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/icq_invisible.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/icq_na.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/icq_occupied.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/icq_offline.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/icq_online.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/irc_away.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/irc_channel.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/irc_connecting.mng
+share/apps/kopete/icons/crystalsvg/16x16/actions/irc_normal.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/irc_online.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/irc_op.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/irc_server.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/irc_voice.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/jabber_away.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/jabber_chatty.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/jabber_connecting.mng
+share/apps/kopete/icons/crystalsvg/16x16/actions/jabber_group.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/jabber_invisible.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/jabber_na.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/jabber_offline.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/jabber_online.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/jabber_original.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/jabber_raw.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/jabber_serv_off.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/jabber_serv_on.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/jabber_xa.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/kgpg_key1.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/kgpg_key2.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/kgpg_key3.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/kopeteavailable.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/kopeteaway.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/logging.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/metacontact_away.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/metacontact_offline.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/metacontact_online.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/metacontact_unknown.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/msn_away.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/msn_blocked.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/msn_brb.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/msn_busy.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/msn_connecting.mng
+share/apps/kopete/icons/crystalsvg/16x16/actions/msn_invisible.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/msn_lunch.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/msn_na.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/msn_newmsg.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/msn_offline.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/msn_online.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/msn_phone.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/newmsg.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/status_unknown.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/yahoo_away.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/yahoo_busy.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/yahoo_connecting.mng
+share/apps/kopete/icons/crystalsvg/16x16/actions/yahoo_idle.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/yahoo_invisible.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/yahoo_mobile.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/yahoo_tea.png
+share/apps/kopete/icons/crystalsvg/16x16/apps/aim_protocol.png
+share/apps/kopete/icons/crystalsvg/16x16/apps/gadu_protocol.png
+share/apps/kopete/icons/crystalsvg/16x16/apps/groupwise_protocol.png
+share/apps/kopete/icons/crystalsvg/16x16/apps/icq_protocol.png
+share/apps/kopete/icons/crystalsvg/16x16/apps/irc_protocol.png
+share/apps/kopete/icons/crystalsvg/16x16/apps/jabber_protocol.png
+share/apps/kopete/icons/crystalsvg/16x16/apps/msn_protocol.png
+share/apps/kopete/icons/crystalsvg/16x16/apps/sms_protocol.png
+share/apps/kopete/icons/crystalsvg/16x16/apps/testbed_protocol.png
+share/apps/kopete/icons/crystalsvg/16x16/apps/yahoo_protocol.png
+share/apps/kopete/icons/crystalsvg/22x22/actions/account_offline_overlay.png
+share/apps/kopete/icons/crystalsvg/22x22/actions/kopeteavailable.png
+share/apps/kopete/icons/crystalsvg/22x22/actions/kopeteaway.png
+share/apps/kopete/icons/crystalsvg/22x22/actions/logging.png
+share/apps/kopete/icons/crystalsvg/22x22/apps/groupwise_protocol.png
+share/apps/kopete/icons/crystalsvg/22x22/apps/kopete_avdevice.png
+share/apps/kopete/icons/crystalsvg/32x32/actions/account_offline_overlay.png
+share/apps/kopete/icons/crystalsvg/32x32/actions/kopeteavailable.png
+share/apps/kopete/icons/crystalsvg/32x32/actions/kopeteaway.png
+share/apps/kopete/icons/crystalsvg/32x32/actions/logging.png
+share/apps/kopete/icons/crystalsvg/32x32/actions/metacontact_away.png
+share/apps/kopete/icons/crystalsvg/32x32/actions/metacontact_offline.png
+share/apps/kopete/icons/crystalsvg/32x32/actions/metacontact_online.png
+share/apps/kopete/icons/crystalsvg/32x32/actions/metacontact_unknown.png
+share/apps/kopete/icons/crystalsvg/32x32/actions/newmessage.mng
+share/apps/kopete/icons/crystalsvg/32x32/actions/newmsg.png
+share/apps/kopete/icons/crystalsvg/32x32/apps/aim_protocol.png
+share/apps/kopete/icons/crystalsvg/32x32/apps/autoreplace.png
+share/apps/kopete/icons/crystalsvg/32x32/apps/gadu_protocol.png
+share/apps/kopete/icons/crystalsvg/32x32/apps/groupwise_protocol.png
+share/apps/kopete/icons/crystalsvg/32x32/apps/highlight.png
+share/apps/kopete/icons/crystalsvg/32x32/apps/icq_protocol.png
+share/apps/kopete/icons/crystalsvg/32x32/apps/irc_protocol.png
+share/apps/kopete/icons/crystalsvg/32x32/apps/jabber_protocol.png
+share/apps/kopete/icons/crystalsvg/32x32/apps/kopete_avdevice.png
+share/apps/kopete/icons/crystalsvg/32x32/apps/latex.png
+share/apps/kopete/icons/crystalsvg/32x32/apps/msn_protocol.png
+share/apps/kopete/icons/crystalsvg/32x32/apps/sms_protocol.png
+share/apps/kopete/icons/crystalsvg/32x32/apps/testbed_protocol.png
+share/apps/kopete/icons/crystalsvg/32x32/apps/texteffect.png
+share/apps/kopete/icons/crystalsvg/32x32/apps/yahoo_protocol.png
+share/apps/kopete/icons/crystalsvg/48x48/actions/kopeteavailable.png
+share/apps/kopete/icons/crystalsvg/48x48/actions/kopeteaway.png
+share/apps/kopete/icons/crystalsvg/48x48/actions/logging.png
+share/apps/kopete/icons/crystalsvg/48x48/actions/metacontact_away.png
+share/apps/kopete/icons/crystalsvg/48x48/actions/metacontact_offline.png
+share/apps/kopete/icons/crystalsvg/48x48/actions/metacontact_online.png
+share/apps/kopete/icons/crystalsvg/48x48/apps/aim_protocol.png
+share/apps/kopete/icons/crystalsvg/48x48/apps/groupwise_protocol.png
+share/apps/kopete/icons/crystalsvg/48x48/apps/icq_protocol.png
+share/apps/kopete/icons/crystalsvg/48x48/apps/jabber_protocol.png
+share/apps/kopete/icons/crystalsvg/48x48/apps/msn_protocol.png
+share/apps/kopete/icons/crystalsvg/48x48/apps/sms_protocol.png
+share/apps/kopete/icons/crystalsvg/48x48/apps/testbed_protocol.png
+share/apps/kopete/icons/crystalsvg/48x48/apps/yahoo_protocol.png
+share/apps/kopete/icons/crystalsvg/64x64/actions/logging.png
+share/apps/kopete/icons/crystalsvg/64x64/apps/aim_protocol.png
+share/apps/kopete/icons/crystalsvg/64x64/apps/groupwise_protocol.png
+share/apps/kopete/icons/crystalsvg/64x64/apps/icq_protocol.png
+share/apps/kopete/icons/crystalsvg/64x64/apps/kopete_avdevice.png
+share/apps/kopete/icons/crystalsvg/64x64/apps/msn_protocol.png
+share/apps/kopete/icons/crystalsvg/64x64/apps/sms_protocol.png
+share/apps/kopete/icons/crystalsvg/64x64/apps/testbed_protocol.png
+share/apps/kopete/icons/crystalsvg/64x64/apps/yahoo_protocol.png
+share/apps/kopete/icons/crystalsvg/scalable/actions/account_offline_overlay.svgz
+share/apps/kopete/icons/hicolor/16x16/actions/aim_away.png
+share/apps/kopete/icons/hicolor/16x16/actions/aim_connecting.mng
+share/apps/kopete/icons/hicolor/16x16/actions/aim_offline.png
+share/apps/kopete/icons/hicolor/16x16/actions/aim_online.png
+share/apps/kopete/icons/hicolor/16x16/actions/emoticon.png
+share/apps/kopete/icons/hicolor/16x16/actions/icq_away.png
+share/apps/kopete/icons/hicolor/16x16/actions/icq_connecting.mng
+share/apps/kopete/icons/hicolor/16x16/actions/icq_dnd.png
+share/apps/kopete/icons/hicolor/16x16/actions/icq_ffc.png
+share/apps/kopete/icons/hicolor/16x16/actions/icq_invisible.png
+share/apps/kopete/icons/hicolor/16x16/actions/icq_na.png
+share/apps/kopete/icons/hicolor/16x16/actions/icq_occupied.png
+share/apps/kopete/icons/hicolor/16x16/actions/icq_offline.png
+share/apps/kopete/icons/hicolor/16x16/actions/icq_online.png
+share/apps/kopete/icons/hicolor/16x16/actions/jabber_away.png
+share/apps/kopete/icons/hicolor/16x16/actions/jabber_chatty.png
+share/apps/kopete/icons/hicolor/16x16/actions/jabber_connecting.mng
+share/apps/kopete/icons/hicolor/16x16/actions/jabber_group.png
+share/apps/kopete/icons/hicolor/16x16/actions/jabber_invisible.png
+share/apps/kopete/icons/hicolor/16x16/actions/jabber_na.png
+share/apps/kopete/icons/hicolor/16x16/actions/jabber_offline.png
+share/apps/kopete/icons/hicolor/16x16/actions/jabber_online.png
+share/apps/kopete/icons/hicolor/16x16/actions/jabber_original.png
+share/apps/kopete/icons/hicolor/16x16/actions/jabber_raw.png
+share/apps/kopete/icons/hicolor/16x16/actions/jabber_serv_off.png
+share/apps/kopete/icons/hicolor/16x16/actions/jabber_serv_on.png
+share/apps/kopete/icons/hicolor/16x16/actions/jabber_xa.png
+share/apps/kopete/icons/hicolor/16x16/actions/kopeteavailable.png
+share/apps/kopete/icons/hicolor/16x16/actions/kopeteaway.png
+share/apps/kopete/icons/hicolor/16x16/actions/newmsg.png
+share/apps/kopete/icons/hicolor/16x16/actions/status_unknown.png
+share/apps/kopete/icons/hicolor/16x16/apps/aim_protocol.png
+share/apps/kopete/icons/hicolor/16x16/apps/icq_protocol.png
+share/apps/kopete/icons/hicolor/16x16/apps/jabber_protocol.png
+share/apps/kopete/icons/hicolor/22x22/actions/kopeteavailable.png
+share/apps/kopete/icons/hicolor/22x22/actions/kopeteaway.png
+share/apps/kopete/icons/hicolor/32x32/actions/kopeteavailable.png
+share/apps/kopete/icons/hicolor/32x32/actions/kopeteaway.png
+share/apps/kopete/icons/hicolor/32x32/actions/newmessage.mng
+share/apps/kopete/icons/hicolor/32x32/apps/aim_protocol.png
+share/apps/kopete/icons/hicolor/32x32/apps/icq_protocol.png
+share/apps/kopete/icons/hicolor/32x32/apps/jabber_protocol.png
+share/apps/kopete/icons/hicolor/48x48/actions/kopeteavailable.png
+share/apps/kopete/icons/hicolor/48x48/actions/kopeteaway.png
+share/apps/kopete/icons/hicolor/48x48/apps/jabber_protocol.png
+share/apps/kopete/ircchatui.rc
+share/apps/kopete/ircnetworks.xml
+share/apps/kopete/kopetechatwindow.rc
+share/apps/kopete/kopetecommandui.rc
+share/apps/kopete/kopeteemailwindow.rc
+share/apps/kopete/kopeteui.rc
+share/apps/kopete/nowlisteningchatui.rc
+share/apps/kopete/nowlisteningui.rc
+share/apps/kopete/pics/statistics/black.png
+share/apps/kopete/pics/statistics/blue.png
+share/apps/kopete/pics/statistics/gray.png
+share/apps/kopete/pics/statistics/navy.png
+share/apps/kopete/styles/Adium.xsl
+share/apps/kopete/styles/Enclosed.xsl
+share/apps/kopete/styles/Gaim.xsl
+share/apps/kopete/styles/Keramik.xsl
+share/apps/kopete/styles/Konsole.xsl
+share/apps/kopete/styles/Kopete-old.xsl
+share/apps/kopete/styles/Kopete.xsl
+share/apps/kopete/styles/MSN.xsl
+share/apps/kopete/styles/Minimal.xsl
+share/apps/kopete/styles/XChat.xsl
+share/apps/kopete/styles/data/Adium/adium.js
+share/apps/kopete/styles/data/Kopete/action.png
+share/apps/kopete/styles/data/Kopete/important.png
+share/apps/kopete/styles/data/Kopete/system.png
+share/apps/kopete/styles/data/iChat-Trans/blue/From/bl.png
+share/apps/kopete/styles/data/iChat-Trans/blue/From/bm.png
+share/apps/kopete/styles/data/iChat-Trans/blue/From/br.png
+share/apps/kopete/styles/data/iChat-Trans/blue/From/ml.png
+share/apps/kopete/styles/data/iChat-Trans/blue/From/mm.png
+share/apps/kopete/styles/data/iChat-Trans/blue/From/mr.png
+share/apps/kopete/styles/data/iChat-Trans/blue/From/tl.png
+share/apps/kopete/styles/data/iChat-Trans/blue/From/tm.png
+share/apps/kopete/styles/data/iChat-Trans/blue/From/tr.png
+share/apps/kopete/styles/data/iChat-Trans/blue/To/bl.png
+share/apps/kopete/styles/data/iChat-Trans/blue/To/bm.png
+share/apps/kopete/styles/data/iChat-Trans/blue/To/br.png
+share/apps/kopete/styles/data/iChat-Trans/blue/To/ml.png
+share/apps/kopete/styles/data/iChat-Trans/blue/To/mm.png
+share/apps/kopete/styles/data/iChat-Trans/blue/To/mr.png
+share/apps/kopete/styles/data/iChat-Trans/blue/To/tl.png
+share/apps/kopete/styles/data/iChat-Trans/blue/To/tm.png
+share/apps/kopete/styles/data/iChat-Trans/blue/To/tr.png
+share/apps/kopete/styles/data/iChat-Trans/blue/me.png
+share/apps/kopete/styles/data/iChat-Trans/blue/them.png
+share/apps/kopete/styles/data/iChat-Trans/clear/From/bl.png
+share/apps/kopete/styles/data/iChat-Trans/clear/From/bm.png
+share/apps/kopete/styles/data/iChat-Trans/clear/From/br.png
+share/apps/kopete/styles/data/iChat-Trans/clear/From/ml.png
+share/apps/kopete/styles/data/iChat-Trans/clear/From/mm.png
+share/apps/kopete/styles/data/iChat-Trans/clear/From/mr.png
+share/apps/kopete/styles/data/iChat-Trans/clear/From/tl.png
+share/apps/kopete/styles/data/iChat-Trans/clear/From/tm.png
+share/apps/kopete/styles/data/iChat-Trans/clear/From/tr.png
+share/apps/kopete/styles/data/iChat-Trans/clear/To/bl.png
+share/apps/kopete/styles/data/iChat-Trans/clear/To/bm.png
+share/apps/kopete/styles/data/iChat-Trans/clear/To/br.png
+share/apps/kopete/styles/data/iChat-Trans/clear/To/ml.png
+share/apps/kopete/styles/data/iChat-Trans/clear/To/mm.png
+share/apps/kopete/styles/data/iChat-Trans/clear/To/mr.png
+share/apps/kopete/styles/data/iChat-Trans/clear/To/tl.png
+share/apps/kopete/styles/data/iChat-Trans/clear/To/tm.png
+share/apps/kopete/styles/data/iChat-Trans/clear/To/tr.png
+share/apps/kopete/styles/data/iChat-Trans/clear/me.png
+share/apps/kopete/styles/data/iChat-Trans/clear/them.png
+share/apps/kopete/styles/data/iChat-Trans/graphite/From/bl.png
+share/apps/kopete/styles/data/iChat-Trans/graphite/From/bm.png
+share/apps/kopete/styles/data/iChat-Trans/graphite/From/br.png
+share/apps/kopete/styles/data/iChat-Trans/graphite/From/ml.png
+share/apps/kopete/styles/data/iChat-Trans/graphite/From/mm.png
+share/apps/kopete/styles/data/iChat-Trans/graphite/From/mr.png
+share/apps/kopete/styles/data/iChat-Trans/graphite/From/tl.png
+share/apps/kopete/styles/data/iChat-Trans/graphite/From/tm.png
+share/apps/kopete/styles/data/iChat-Trans/graphite/From/tr.png
+share/apps/kopete/styles/data/iChat-Trans/graphite/To/bl.png
+share/apps/kopete/styles/data/iChat-Trans/graphite/To/bm.png
+share/apps/kopete/styles/data/iChat-Trans/graphite/To/br.png
+share/apps/kopete/styles/data/iChat-Trans/graphite/To/ml.png
+share/apps/kopete/styles/data/iChat-Trans/graphite/To/mm.png
+share/apps/kopete/styles/data/iChat-Trans/graphite/To/mr.png
+share/apps/kopete/styles/data/iChat-Trans/graphite/To/tl.png
+share/apps/kopete/styles/data/iChat-Trans/graphite/To/tm.png
+share/apps/kopete/styles/data/iChat-Trans/graphite/To/tr.png
+share/apps/kopete/styles/data/iChat-Trans/graphite/me.png
+share/apps/kopete/styles/data/iChat-Trans/graphite/them.png
+share/apps/kopete/styles/data/iChat-Trans/green/From/bl.png
+share/apps/kopete/styles/data/iChat-Trans/green/From/bm.png
+share/apps/kopete/styles/data/iChat-Trans/green/From/br.png
+share/apps/kopete/styles/data/iChat-Trans/green/From/ml.png
+share/apps/kopete/styles/data/iChat-Trans/green/From/mm.png
+share/apps/kopete/styles/data/iChat-Trans/green/From/mr.png
+share/apps/kopete/styles/data/iChat-Trans/green/From/tl.png
+share/apps/kopete/styles/data/iChat-Trans/green/From/tm.png
+share/apps/kopete/styles/data/iChat-Trans/green/From/tr.png
+share/apps/kopete/styles/data/iChat-Trans/green/To/bl.png
+share/apps/kopete/styles/data/iChat-Trans/green/To/bm.png
+share/apps/kopete/styles/data/iChat-Trans/green/To/br.png
+share/apps/kopete/styles/data/iChat-Trans/green/To/ml.png
+share/apps/kopete/styles/data/iChat-Trans/green/To/mm.png
+share/apps/kopete/styles/data/iChat-Trans/green/To/mr.png
+share/apps/kopete/styles/data/iChat-Trans/green/To/tl.png
+share/apps/kopete/styles/data/iChat-Trans/green/To/tm.png
+share/apps/kopete/styles/data/iChat-Trans/green/To/tr.png
+share/apps/kopete/styles/data/iChat-Trans/green/me.png
+share/apps/kopete/styles/data/iChat-Trans/green/them.png
+share/apps/kopete/styles/data/iChat-Trans/orange/From/bl.png
+share/apps/kopete/styles/data/iChat-Trans/orange/From/bm.png
+share/apps/kopete/styles/data/iChat-Trans/orange/From/br.png
+share/apps/kopete/styles/data/iChat-Trans/orange/From/ml.png
+share/apps/kopete/styles/data/iChat-Trans/orange/From/mm.png
+share/apps/kopete/styles/data/iChat-Trans/orange/From/mr.png
+share/apps/kopete/styles/data/iChat-Trans/orange/From/tl.png
+share/apps/kopete/styles/data/iChat-Trans/orange/From/tm.png
+share/apps/kopete/styles/data/iChat-Trans/orange/From/tr.png
+share/apps/kopete/styles/data/iChat-Trans/orange/To/bl.png
+share/apps/kopete/styles/data/iChat-Trans/orange/To/bm.png
+share/apps/kopete/styles/data/iChat-Trans/orange/To/br.png
+share/apps/kopete/styles/data/iChat-Trans/orange/To/ml.png
+share/apps/kopete/styles/data/iChat-Trans/orange/To/mm.png
+share/apps/kopete/styles/data/iChat-Trans/orange/To/mr.png
+share/apps/kopete/styles/data/iChat-Trans/orange/To/tl.png
+share/apps/kopete/styles/data/iChat-Trans/orange/To/tm.png
+share/apps/kopete/styles/data/iChat-Trans/orange/To/tr.png
+share/apps/kopete/styles/data/iChat-Trans/orange/me.png
+share/apps/kopete/styles/data/iChat-Trans/orange/them.png
+share/apps/kopete/styles/data/iChat-Trans/pink/From/bl.png
+share/apps/kopete/styles/data/iChat-Trans/pink/From/bm.png
+share/apps/kopete/styles/data/iChat-Trans/pink/From/br.png
+share/apps/kopete/styles/data/iChat-Trans/pink/From/ml.png
+share/apps/kopete/styles/data/iChat-Trans/pink/From/mm.png
+share/apps/kopete/styles/data/iChat-Trans/pink/From/mr.png
+share/apps/kopete/styles/data/iChat-Trans/pink/From/tl.png
+share/apps/kopete/styles/data/iChat-Trans/pink/From/tm.png
+share/apps/kopete/styles/data/iChat-Trans/pink/From/tr.png
+share/apps/kopete/styles/data/iChat-Trans/pink/To/bl.png
+share/apps/kopete/styles/data/iChat-Trans/pink/To/bm.png
+share/apps/kopete/styles/data/iChat-Trans/pink/To/br.png
+share/apps/kopete/styles/data/iChat-Trans/pink/To/ml.png
+share/apps/kopete/styles/data/iChat-Trans/pink/To/mm.png
+share/apps/kopete/styles/data/iChat-Trans/pink/To/mr.png
+share/apps/kopete/styles/data/iChat-Trans/pink/To/tl.png
+share/apps/kopete/styles/data/iChat-Trans/pink/To/tm.png
+share/apps/kopete/styles/data/iChat-Trans/pink/To/tr.png
+share/apps/kopete/styles/data/iChat-Trans/pink/me.png
+share/apps/kopete/styles/data/iChat-Trans/pink/them.png
+share/apps/kopete/styles/data/iChat-Trans/purple/From/bl.png
+share/apps/kopete/styles/data/iChat-Trans/purple/From/bm.png
+share/apps/kopete/styles/data/iChat-Trans/purple/From/br.png
+share/apps/kopete/styles/data/iChat-Trans/purple/From/ml.png
+share/apps/kopete/styles/data/iChat-Trans/purple/From/mm.png
+share/apps/kopete/styles/data/iChat-Trans/purple/From/mr.png
+share/apps/kopete/styles/data/iChat-Trans/purple/From/tl.png
+share/apps/kopete/styles/data/iChat-Trans/purple/From/tm.png
+share/apps/kopete/styles/data/iChat-Trans/purple/From/tr.png
+share/apps/kopete/styles/data/iChat-Trans/purple/To/bl.png
+share/apps/kopete/styles/data/iChat-Trans/purple/To/bm.png
+share/apps/kopete/styles/data/iChat-Trans/purple/To/br.png
+share/apps/kopete/styles/data/iChat-Trans/purple/To/ml.png
+share/apps/kopete/styles/data/iChat-Trans/purple/To/mm.png
+share/apps/kopete/styles/data/iChat-Trans/purple/To/mr.png
+share/apps/kopete/styles/data/iChat-Trans/purple/To/tl.png
+share/apps/kopete/styles/data/iChat-Trans/purple/To/tm.png
+share/apps/kopete/styles/data/iChat-Trans/purple/To/tr.png
+share/apps/kopete/styles/data/iChat-Trans/purple/me.png
+share/apps/kopete/styles/data/iChat-Trans/purple/them.png
+share/apps/kopete/styles/data/iChat-Trans/yellow/From/bl.png
+share/apps/kopete/styles/data/iChat-Trans/yellow/From/bm.png
+share/apps/kopete/styles/data/iChat-Trans/yellow/From/br.png
+share/apps/kopete/styles/data/iChat-Trans/yellow/From/ml.png
+share/apps/kopete/styles/data/iChat-Trans/yellow/From/mm.png
+share/apps/kopete/styles/data/iChat-Trans/yellow/From/mr.png
+share/apps/kopete/styles/data/iChat-Trans/yellow/From/tl.png
+share/apps/kopete/styles/data/iChat-Trans/yellow/From/tm.png
+share/apps/kopete/styles/data/iChat-Trans/yellow/From/tr.png
+share/apps/kopete/styles/data/iChat-Trans/yellow/To/bl.png
+share/apps/kopete/styles/data/iChat-Trans/yellow/To/bm.png
+share/apps/kopete/styles/data/iChat-Trans/yellow/To/br.png
+share/apps/kopete/styles/data/iChat-Trans/yellow/To/ml.png
+share/apps/kopete/styles/data/iChat-Trans/yellow/To/mm.png
+share/apps/kopete/styles/data/iChat-Trans/yellow/To/mr.png
+share/apps/kopete/styles/data/iChat-Trans/yellow/To/tl.png
+share/apps/kopete/styles/data/iChat-Trans/yellow/To/tm.png
+share/apps/kopete/styles/data/iChat-Trans/yellow/To/tr.png
+share/apps/kopete/styles/data/iChat-Trans/yellow/me.png
+share/apps/kopete/styles/data/iChat-Trans/yellow/them.png
+share/apps/kopete/styles/data/iChat/blue/From/bl.png
+share/apps/kopete/styles/data/iChat/blue/From/bm.png
+share/apps/kopete/styles/data/iChat/blue/From/br.png
+share/apps/kopete/styles/data/iChat/blue/From/ml.png
+share/apps/kopete/styles/data/iChat/blue/From/mm.png
+share/apps/kopete/styles/data/iChat/blue/From/mr.png
+share/apps/kopete/styles/data/iChat/blue/From/tl.png
+share/apps/kopete/styles/data/iChat/blue/From/tm.png
+share/apps/kopete/styles/data/iChat/blue/From/tr.png
+share/apps/kopete/styles/data/iChat/blue/To/bl.png
+share/apps/kopete/styles/data/iChat/blue/To/bm.png
+share/apps/kopete/styles/data/iChat/blue/To/br.png
+share/apps/kopete/styles/data/iChat/blue/To/ml.png
+share/apps/kopete/styles/data/iChat/blue/To/mm.png
+share/apps/kopete/styles/data/iChat/blue/To/mr.png
+share/apps/kopete/styles/data/iChat/blue/To/tl.png
+share/apps/kopete/styles/data/iChat/blue/To/tm.png
+share/apps/kopete/styles/data/iChat/blue/To/tr.png
+share/apps/kopete/styles/data/iChat/blue/me.png
+share/apps/kopete/styles/data/iChat/blue/them.png
+share/apps/kopete/styles/data/iChat/clear/From/bl.png
+share/apps/kopete/styles/data/iChat/clear/From/bm.png
+share/apps/kopete/styles/data/iChat/clear/From/br.png
+share/apps/kopete/styles/data/iChat/clear/From/ml.png
+share/apps/kopete/styles/data/iChat/clear/From/mm.png
+share/apps/kopete/styles/data/iChat/clear/From/mr.png
+share/apps/kopete/styles/data/iChat/clear/From/tl.png
+share/apps/kopete/styles/data/iChat/clear/From/tm.png
+share/apps/kopete/styles/data/iChat/clear/From/tr.png
+share/apps/kopete/styles/data/iChat/clear/To/bl.png
+share/apps/kopete/styles/data/iChat/clear/To/bm.png
+share/apps/kopete/styles/data/iChat/clear/To/br.png
+share/apps/kopete/styles/data/iChat/clear/To/ml.png
+share/apps/kopete/styles/data/iChat/clear/To/mm.png
+share/apps/kopete/styles/data/iChat/clear/To/mr.png
+share/apps/kopete/styles/data/iChat/clear/To/tl.png
+share/apps/kopete/styles/data/iChat/clear/To/tm.png
+share/apps/kopete/styles/data/iChat/clear/To/tr.png
+share/apps/kopete/styles/data/iChat/clear/me.png
+share/apps/kopete/styles/data/iChat/clear/them.png
+share/apps/kopete/styles/data/iChat/graphite/From/bl.png
+share/apps/kopete/styles/data/iChat/graphite/From/bm.png
+share/apps/kopete/styles/data/iChat/graphite/From/br.png
+share/apps/kopete/styles/data/iChat/graphite/From/ml.png
+share/apps/kopete/styles/data/iChat/graphite/From/mm.png
+share/apps/kopete/styles/data/iChat/graphite/From/mr.png
+share/apps/kopete/styles/data/iChat/graphite/From/tl.png
+share/apps/kopete/styles/data/iChat/graphite/From/tm.png
+share/apps/kopete/styles/data/iChat/graphite/From/tr.png
+share/apps/kopete/styles/data/iChat/graphite/To/bl.png
+share/apps/kopete/styles/data/iChat/graphite/To/bm.png
+share/apps/kopete/styles/data/iChat/graphite/To/br.png
+share/apps/kopete/styles/data/iChat/graphite/To/ml.png
+share/apps/kopete/styles/data/iChat/graphite/To/mm.png
+share/apps/kopete/styles/data/iChat/graphite/To/mr.png
+share/apps/kopete/styles/data/iChat/graphite/To/tl.png
+share/apps/kopete/styles/data/iChat/graphite/To/tm.png
+share/apps/kopete/styles/data/iChat/graphite/To/tr.png
+share/apps/kopete/styles/data/iChat/graphite/me.png
+share/apps/kopete/styles/data/iChat/graphite/them.png
+share/apps/kopete/styles/data/iChat/green/From/bl.png
+share/apps/kopete/styles/data/iChat/green/From/bm.png
+share/apps/kopete/styles/data/iChat/green/From/br.png
+share/apps/kopete/styles/data/iChat/green/From/ml.png
+share/apps/kopete/styles/data/iChat/green/From/mm.png
+share/apps/kopete/styles/data/iChat/green/From/mr.png
+share/apps/kopete/styles/data/iChat/green/From/tl.png
+share/apps/kopete/styles/data/iChat/green/From/tm.png
+share/apps/kopete/styles/data/iChat/green/From/tr.png
+share/apps/kopete/styles/data/iChat/green/To/bl.png
+share/apps/kopete/styles/data/iChat/green/To/bm.png
+share/apps/kopete/styles/data/iChat/green/To/br.png
+share/apps/kopete/styles/data/iChat/green/To/ml.png
+share/apps/kopete/styles/data/iChat/green/To/mm.png
+share/apps/kopete/styles/data/iChat/green/To/mr.png
+share/apps/kopete/styles/data/iChat/green/To/tl.png
+share/apps/kopete/styles/data/iChat/green/To/tm.png
+share/apps/kopete/styles/data/iChat/green/To/tr.png
+share/apps/kopete/styles/data/iChat/green/me.png
+share/apps/kopete/styles/data/iChat/green/them.png
+share/apps/kopete/styles/data/iChat/orange/From/bl.png
+share/apps/kopete/styles/data/iChat/orange/From/bm.png
+share/apps/kopete/styles/data/iChat/orange/From/br.png
+share/apps/kopete/styles/data/iChat/orange/From/ml.png
+share/apps/kopete/styles/data/iChat/orange/From/mm.png
+share/apps/kopete/styles/data/iChat/orange/From/mr.png
+share/apps/kopete/styles/data/iChat/orange/From/tl.png
+share/apps/kopete/styles/data/iChat/orange/From/tm.png
+share/apps/kopete/styles/data/iChat/orange/From/tr.png
+share/apps/kopete/styles/data/iChat/orange/To/bl.png
+share/apps/kopete/styles/data/iChat/orange/To/bm.png
+share/apps/kopete/styles/data/iChat/orange/To/br.png
+share/apps/kopete/styles/data/iChat/orange/To/ml.png
+share/apps/kopete/styles/data/iChat/orange/To/mm.png
+share/apps/kopete/styles/data/iChat/orange/To/mr.png
+share/apps/kopete/styles/data/iChat/orange/To/tl.png
+share/apps/kopete/styles/data/iChat/orange/To/tm.png
+share/apps/kopete/styles/data/iChat/orange/To/tr.png
+share/apps/kopete/styles/data/iChat/orange/me.png
+share/apps/kopete/styles/data/iChat/orange/them.png
+share/apps/kopete/styles/data/iChat/pink/From/bl.png
+share/apps/kopete/styles/data/iChat/pink/From/bm.png
+share/apps/kopete/styles/data/iChat/pink/From/br.png
+share/apps/kopete/styles/data/iChat/pink/From/ml.png
+share/apps/kopete/styles/data/iChat/pink/From/mm.png
+share/apps/kopete/styles/data/iChat/pink/From/mr.png
+share/apps/kopete/styles/data/iChat/pink/From/tl.png
+share/apps/kopete/styles/data/iChat/pink/From/tm.png
+share/apps/kopete/styles/data/iChat/pink/From/tr.png
+share/apps/kopete/styles/data/iChat/pink/To/bl.png
+share/apps/kopete/styles/data/iChat/pink/To/bm.png
+share/apps/kopete/styles/data/iChat/pink/To/br.png
+share/apps/kopete/styles/data/iChat/pink/To/ml.png
+share/apps/kopete/styles/data/iChat/pink/To/mm.png
+share/apps/kopete/styles/data/iChat/pink/To/mr.png
+share/apps/kopete/styles/data/iChat/pink/To/tl.png
+share/apps/kopete/styles/data/iChat/pink/To/tm.png
+share/apps/kopete/styles/data/iChat/pink/To/tr.png
+share/apps/kopete/styles/data/iChat/pink/me.png
+share/apps/kopete/styles/data/iChat/pink/them.png
+share/apps/kopete/styles/data/iChat/purple/From/bl.png
+share/apps/kopete/styles/data/iChat/purple/From/bm.png
+share/apps/kopete/styles/data/iChat/purple/From/br.png
+share/apps/kopete/styles/data/iChat/purple/From/ml.png
+share/apps/kopete/styles/data/iChat/purple/From/mm.png
+share/apps/kopete/styles/data/iChat/purple/From/mr.png
+share/apps/kopete/styles/data/iChat/purple/From/tl.png
+share/apps/kopete/styles/data/iChat/purple/From/tm.png
+share/apps/kopete/styles/data/iChat/purple/From/tr.png
+share/apps/kopete/styles/data/iChat/purple/To/bl.png
+share/apps/kopete/styles/data/iChat/purple/To/bm.png
+share/apps/kopete/styles/data/iChat/purple/To/br.png
+share/apps/kopete/styles/data/iChat/purple/To/ml.png
+share/apps/kopete/styles/data/iChat/purple/To/mm.png
+share/apps/kopete/styles/data/iChat/purple/To/mr.png
+share/apps/kopete/styles/data/iChat/purple/To/tl.png
+share/apps/kopete/styles/data/iChat/purple/To/tm.png
+share/apps/kopete/styles/data/iChat/purple/To/tr.png
+share/apps/kopete/styles/data/iChat/purple/me.png
+share/apps/kopete/styles/data/iChat/purple/them.png
+share/apps/kopete/styles/data/iChat/yellow/From/bl.png
+share/apps/kopete/styles/data/iChat/yellow/From/bm.png
+share/apps/kopete/styles/data/iChat/yellow/From/br.png
+share/apps/kopete/styles/data/iChat/yellow/From/ml.png
+share/apps/kopete/styles/data/iChat/yellow/From/mm.png
+share/apps/kopete/styles/data/iChat/yellow/From/mr.png
+share/apps/kopete/styles/data/iChat/yellow/From/tl.png
+share/apps/kopete/styles/data/iChat/yellow/From/tm.png
+share/apps/kopete/styles/data/iChat/yellow/From/tr.png
+share/apps/kopete/styles/data/iChat/yellow/To/bl.png
+share/apps/kopete/styles/data/iChat/yellow/To/bm.png
+share/apps/kopete/styles/data/iChat/yellow/To/br.png
+share/apps/kopete/styles/data/iChat/yellow/To/ml.png
+share/apps/kopete/styles/data/iChat/yellow/To/mm.png
+share/apps/kopete/styles/data/iChat/yellow/To/mr.png
+share/apps/kopete/styles/data/iChat/yellow/To/tl.png
+share/apps/kopete/styles/data/iChat/yellow/To/tm.png
+share/apps/kopete/styles/data/iChat/yellow/To/tr.png
+share/apps/kopete/styles/data/iChat/yellow/me.png
+share/apps/kopete/styles/data/iChat/yellow/them.png
+share/apps/kopete/styles/iChat.xsl
+share/apps/kopete/webpresence/webpresence_html.xsl
+share/apps/kopete/webpresence/webpresence_html_images.xsl
+share/apps/kopete/webpresence/webpresence_xhtml.xsl
+share/apps/kopete/webpresence/webpresence_xhtml_images.xsl
+share/apps/kopete_contactnotes/contactnotesui.rc
+share/apps/kopete_cryptography/cryptographychatui.rc
+share/apps/kopete_cryptography/cryptographyui.rc
+share/apps/kopete_groupwise/gwchatui.rc
+share/apps/kopete_history/historychatui.rc
+share/apps/kopete_history/historyui.rc
+share/apps/kopete_latex/latexchatui.rc
+share/apps/kopete_msn/msnchatui.rc
+share/apps/kopete_netmeeting/netmeetingchatui.rc
+share/apps/kopete_statistics/statisticsui.rc
+share/apps/kopete_translator/translatorchatui.rc
+share/apps/kopete_translator/translatorui.rc
+share/apps/kopete_yahoo/yahoochatui.rc
+share/apps/kopeterichtexteditpart/kopeterichtexteditpartfull.rc
+share/config.kcfg/historyconfig.kcfg
+share/config.kcfg/kopete.kcfg
+share/config.kcfg/kopeteidentityconfigpreferences.kcfg
+share/config.kcfg/latexconfig.kcfg
+share/config.kcfg/nowlisteningconfig.kcfg
+share/icons/crystalsvg/16x16/mimetypes/kopete_emoticons.png
+share/icons/crystalsvg/22x22/apps/kopete_all_away.png
+share/icons/crystalsvg/22x22/apps/kopete_offline.png
+share/icons/crystalsvg/22x22/apps/kopete_some_away.png
+share/icons/crystalsvg/22x22/apps/kopete_some_online.png
+share/icons/crystalsvg/22x22/mimetypes/kopete_emoticons.png
+share/icons/hicolor/128x128/apps/kopete.png
+share/icons/hicolor/16x16/apps/kopete.png
+share/icons/hicolor/22x22/apps/kopete.png
+share/icons/hicolor/32x32/apps/kopete.png
+share/icons/hicolor/48x48/apps/kopete.png
+share/icons/hicolor/64x64/apps/kopete.png
+share/icons/hicolor/scalable/apps/kopete2.svgz
+share/mimelnk/application/x-icq.desktop
+share/mimelnk/application/x-kopete-emoticons.desktop
+share/services/aim.protocol
+share/services/chatwindow.desktop
+share/services/emailwindow.desktop
+share/services/irc.protocol
+share/services/jabberdisco.protocol
+share/services/kconfiguredialog/kopete_addbookmarks_config.desktop
+share/services/kconfiguredialog/kopete_alias_config.desktop
+share/services/kconfiguredialog/kopete_autoreplace_config.desktop
+share/services/kconfiguredialog/kopete_cryptography_config.desktop
+share/services/kconfiguredialog/kopete_highlight_config.desktop
+share/services/kconfiguredialog/kopete_history_config.desktop
+share/services/kconfiguredialog/kopete_latex_config.desktop
+share/services/kconfiguredialog/kopete_msn_config.desktop
+share/services/kconfiguredialog/kopete_netmeeting_config.desktop
+share/services/kconfiguredialog/kopete_nowlistening_config.desktop
+share/services/kconfiguredialog/kopete_texteffect_config.desktop
+share/services/kconfiguredialog/kopete_translator_config.desktop
+share/services/kconfiguredialog/kopete_webpresence_config.desktop
+share/services/kopete_accountconfig.desktop
+share/services/kopete_addbookmarks.desktop
+share/services/kopete_aim.desktop
+share/services/kopete_alias.desktop
+share/services/kopete_appearanceconfig.desktop
+share/services/kopete_autoreplace.desktop
+share/services/kopete_avdeviceconfig.desktop
+share/services/kopete_behaviorconfig.desktop
+share/services/kopete_connectionstatus.desktop
+share/services/kopete_contactnotes.desktop
+share/services/kopete_cryptography.desktop
+share/services/kopete_gadu.desktop
+share/services/kopete_groupwise.desktop
+share/services/kopete_highlight.desktop
+share/services/kopete_history.desktop
+share/services/kopete_icq.desktop
+share/services/kopete_identityconfig.desktop
+share/services/kopete_irc.desktop
+share/services/kopete_jabber.desktop
+share/services/kopete_latex.desktop
+share/services/kopete_msn.desktop
+share/services/kopete_netmeeting.desktop
+share/services/kopete_nowlistening.desktop
+share/services/kopete_sms.desktop
+share/services/kopete_statistics.desktop
+share/services/kopete_testbed.desktop
+share/services/kopete_texteffect.desktop
+share/services/kopete_translator.desktop
+share/services/kopete_webpresence.desktop
+share/services/kopete_yahoo.desktop
+share/servicetypes/kopeteplugin.desktop
+share/servicetypes/kopeteprotocol.desktop
+share/servicetypes/kopeteui.desktop
+share/sounds/Kopete_Event.ogg
+share/sounds/Kopete_Received.ogg
+share/sounds/Kopete_Sent.ogg
+share/sounds/Kopete_User_is_Online.ogg
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdenetwork-apidocs/kopete/libkopete/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdenetwork-apidocs/kopete/libkopete/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdenetwork-apidocs/kopete/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdenetwork-apidocs/kopete/libkopete/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdenetwork-apidocs/kopete/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdenetwork-apidocs/kopete/libkopete/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdenetwork-apidocs/kopete/html
+@dirrm share/services/kconfiguredialog
+@dirrm share/doc/HTML/en/kdenetwork-apidocs/kopete/libkopete/html
+@dirrm share/doc/HTML/en/kdenetwork-apidocs/kopete/libkopete
+@dirrm share/doc/HTML/en/kdenetwork-apidocs/kopete/html
+@dirrm share/doc/HTML/en/kdenetwork-apidocs/kopete
+@dirrm share/doc/HTML/en/kdenetwork-apidocs
+@dirrm share/apps/kopeterichtexteditpart
+@dirrm share/apps/kopete_yahoo
+@dirrm share/apps/kopete_translator
+@dirrm share/apps/kopete_statistics
+@dirrm share/apps/kopete_netmeeting
+@dirrm share/apps/kopete_msn
+@dirrm share/apps/kopete_latex
+@dirrm share/apps/kopete_history
+@dirrm share/apps/kopete_groupwise
+@dirrm share/apps/kopete_cryptography
+@dirrm share/apps/kopete_contactnotes
+@dirrm share/apps/kopete/webpresence
+@dirrm share/apps/kopete/styles/data/iChat/yellow/To
+@dirrm share/apps/kopete/styles/data/iChat/yellow/From
+@dirrm share/apps/kopete/styles/data/iChat/yellow
+@dirrm share/apps/kopete/styles/data/iChat/purple/To
+@dirrm share/apps/kopete/styles/data/iChat/purple/From
+@dirrm share/apps/kopete/styles/data/iChat/purple
+@dirrm share/apps/kopete/styles/data/iChat/pink/To
+@dirrm share/apps/kopete/styles/data/iChat/pink/From
+@dirrm share/apps/kopete/styles/data/iChat/pink
+@dirrm share/apps/kopete/styles/data/iChat/orange/To
+@dirrm share/apps/kopete/styles/data/iChat/orange/From
+@dirrm share/apps/kopete/styles/data/iChat/orange
+@dirrm share/apps/kopete/styles/data/iChat/green/To
+@dirrm share/apps/kopete/styles/data/iChat/green/From
+@dirrm share/apps/kopete/styles/data/iChat/green
+@dirrm share/apps/kopete/styles/data/iChat/graphite/To
+@dirrm share/apps/kopete/styles/data/iChat/graphite/From
+@dirrm share/apps/kopete/styles/data/iChat/graphite
+@dirrm share/apps/kopete/styles/data/iChat/clear/To
+@dirrm share/apps/kopete/styles/data/iChat/clear/From
+@dirrm share/apps/kopete/styles/data/iChat/clear
+@dirrm share/apps/kopete/styles/data/iChat/blue/To
+@dirrm share/apps/kopete/styles/data/iChat/blue/From
+@dirrm share/apps/kopete/styles/data/iChat/blue
+@dirrm share/apps/kopete/styles/data/iChat-Trans/yellow/To
+@dirrm share/apps/kopete/styles/data/iChat-Trans/yellow/From
+@dirrm share/apps/kopete/styles/data/iChat-Trans/yellow
+@dirrm share/apps/kopete/styles/data/iChat-Trans/purple/To
+@dirrm share/apps/kopete/styles/data/iChat-Trans/purple/From
+@dirrm share/apps/kopete/styles/data/iChat-Trans/purple
+@dirrm share/apps/kopete/styles/data/iChat-Trans/pink/To
+@dirrm share/apps/kopete/styles/data/iChat-Trans/pink/From
+@dirrm share/apps/kopete/styles/data/iChat-Trans/pink
+@dirrm share/apps/kopete/styles/data/iChat-Trans/orange/To
+@dirrm share/apps/kopete/styles/data/iChat-Trans/orange/From
+@dirrm share/apps/kopete/styles/data/iChat-Trans/orange
+@dirrm share/apps/kopete/styles/data/iChat-Trans/green/To
+@dirrm share/apps/kopete/styles/data/iChat-Trans/green/From
+@dirrm share/apps/kopete/styles/data/iChat-Trans/green
+@dirrm share/apps/kopete/styles/data/iChat-Trans/graphite/To
+@dirrm share/apps/kopete/styles/data/iChat-Trans/graphite/From
+@dirrm share/apps/kopete/styles/data/iChat-Trans/graphite
+@dirrm share/apps/kopete/styles/data/iChat-Trans/clear/To
+@dirrm share/apps/kopete/styles/data/iChat-Trans/clear/From
+@dirrm share/apps/kopete/styles/data/iChat-Trans/clear
+@dirrm share/apps/kopete/styles/data/iChat-Trans/blue/To
+@dirrm share/apps/kopete/styles/data/iChat-Trans/blue/From
+@dirrm share/apps/kopete/styles/data/iChat-Trans/blue
+@dirrm share/apps/kopete/styles/data/iChat-Trans
+@dirrm share/apps/kopete/styles/data/iChat
+@dirrm share/apps/kopete/styles/data/Kopete
+@dirrm share/apps/kopete/styles/data/Adium
+@dirrm share/apps/kopete/styles/data
+@dirrm share/apps/kopete/styles
+@dirrm share/apps/kopete/pics/statistics
+@dirrm share/apps/kopete/pics
+@dirrm share/apps/kopete/icons/hicolor/48x48/apps
+@dirrm share/apps/kopete/icons/hicolor/48x48/actions
+@dirrm share/apps/kopete/icons/hicolor/48x48
+@dirrm share/apps/kopete/icons/hicolor/32x32/apps
+@dirrm share/apps/kopete/icons/hicolor/32x32/actions
+@dirrm share/apps/kopete/icons/hicolor/32x32
+@dirrm share/apps/kopete/icons/hicolor/22x22/actions
+@dirrm share/apps/kopete/icons/hicolor/22x22
+@dirrm share/apps/kopete/icons/hicolor/16x16/apps
+@dirrm share/apps/kopete/icons/hicolor/16x16/actions
+@dirrm share/apps/kopete/icons/hicolor/16x16
+@dirrm share/apps/kopete/icons/hicolor
+@dirrm share/apps/kopete/icons/crystalsvg/scalable/actions
+@dirrm share/apps/kopete/icons/crystalsvg/scalable
+@dirrm share/apps/kopete/icons/crystalsvg/64x64/apps
+@dirrm share/apps/kopete/icons/crystalsvg/64x64/actions
+@dirrm share/apps/kopete/icons/crystalsvg/64x64
+@dirrm share/apps/kopete/icons/crystalsvg/48x48/apps
+@dirrm share/apps/kopete/icons/crystalsvg/48x48/actions
+@dirrm share/apps/kopete/icons/crystalsvg/48x48
+@dirrm share/apps/kopete/icons/crystalsvg/32x32/apps
+@dirrm share/apps/kopete/icons/crystalsvg/32x32/actions
+@dirrm share/apps/kopete/icons/crystalsvg/32x32
+@dirrm share/apps/kopete/icons/crystalsvg/22x22/apps
+@dirrm share/apps/kopete/icons/crystalsvg/22x22/actions
+@dirrm share/apps/kopete/icons/crystalsvg/22x22
+@dirrm share/apps/kopete/icons/crystalsvg/16x16/apps
+@dirrm share/apps/kopete/icons/crystalsvg/16x16/actions
+@dirrm share/apps/kopete/icons/crystalsvg/16x16
+@dirrm share/apps/kopete/icons/crystalsvg/128x128/apps
+@dirrm share/apps/kopete/icons/crystalsvg/128x128
+@dirrm share/apps/kopete/icons/crystalsvg
+@dirrm share/apps/kopete/icons
+@dirrm share/apps/kopete
+@dirrm lib/kconf_update_bin
+@dirrm include/kopete/ui
+@dirrm include/kopete

@@ -28,6 +28,11 @@ share/apps/kturtle/examples/sl/curly.logo
 share/apps/kturtle/examples/sl/example1.logo
 share/apps/kturtle/examples/sl/square.logo
 share/apps/kturtle/examples/sl/triangle.logo
+share/doc/HTML/sl/docs/common/fdl-translated.html
+share/doc/HTML/sl/docs/common/gpl-translated.html
+share/doc/HTML/sl/docs/common/kde-localised.css
+share/doc/HTML/sl/docs/common/lgpl-translated.html
+share/doc/HTML/sl/docs/common/logotp3.png
 share/doc/HTML/sl/kaddressbook/common
 share/doc/HTML/sl/kaddressbook/index.cache.bz2
 share/doc/HTML/sl/kaddressbook/index.docbook
@@ -291,11 +296,6 @@ share/doc/HTML/sl/kppp/kppp-faq.docbook
 share/doc/HTML/sl/kppp/security.docbook
 share/doc/HTML/sl/kppp/tricks.docbook
 share/doc/HTML/sl/kppp/wizard.docbook
-share/doc/HTML/sl/sl/docs/common/fdl-translated.html
-share/doc/HTML/sl/sl/docs/common/gpl-translated.html
-share/doc/HTML/sl/sl/docs/common/kde-localised.css
-share/doc/HTML/sl/sl/docs/common/lgpl-translated.html
-share/doc/HTML/sl/sl/docs/common/logotp3.png
 share/locale/sl/LC_MESSAGES/akregator.mo
 share/locale/sl/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/sl/LC_MESSAGES/alsaplayerui.mo
@@ -313,6 +313,7 @@ share/locale/sl/LC_MESSAGES/audiocd_encoder_vorbis.mo
 share/locale/sl/LC_MESSAGES/audiorename_plugin.mo
 share/locale/sl/LC_MESSAGES/autorefresh.mo
 share/locale/sl/LC_MESSAGES/babelfish.mo
+share/locale/sl/LC_MESSAGES/blinken.mo
 share/locale/sl/LC_MESSAGES/cervisia.mo
 share/locale/sl/LC_MESSAGES/charlatanui.mo
 share/locale/sl/LC_MESSAGES/clockapplet.mo
@@ -646,6 +647,7 @@ share/locale/sl/LC_MESSAGES/kmouth.mo
 share/locale/sl/LC_MESSAGES/kmplot.mo
 share/locale/sl/LC_MESSAGES/kmrml.mo
 share/locale/sl/LC_MESSAGES/knetattach.mo
+share/locale/sl/LC_MESSAGES/knetwalk.mo
 share/locale/sl/LC_MESSAGES/knewsticker.mo
 share/locale/sl/LC_MESSAGES/knode.mo
 share/locale/sl/LC_MESSAGES/knotes.mo
@@ -792,6 +794,7 @@ share/locale/sl/LC_MESSAGES/libkaddrbk_geo_xxport.mo
 share/locale/sl/LC_MESSAGES/libkaddrbk_gmx_xxport.mo
 share/locale/sl/LC_MESSAGES/libkcal.mo
 share/locale/sl/LC_MESSAGES/libkcddb.mo
+share/locale/sl/LC_MESSAGES/libkdeedu.mo
 share/locale/sl/LC_MESSAGES/libkdegames.mo
 share/locale/sl/LC_MESSAGES/libkdepim.mo
 share/locale/sl/LC_MESSAGES/libkfaximgage.mo
@@ -853,9 +856,6 @@ share/locale/sl/LC_MESSAGES/webarchiver.mo
 share/locale/sl/charset
 share/locale/sl/entry.desktop
 share/locale/sl/flag.png
-@dirrm share/doc/HTML/sl/sl/docs/common
-@dirrm share/doc/HTML/sl/sl/docs
-@dirrm share/doc/HTML/sl/sl
 @dirrm share/doc/HTML/sl/kppp
 @dirrm share/doc/HTML/sl/kpackage
 @dirrm share/doc/HTML/sl/konsole
@@ -906,6 +906,8 @@ share/locale/sl/flag.png
 @dirrm share/doc/HTML/sl/kcontrol/arts
 @dirrm share/doc/HTML/sl/kcontrol
 @dirrm share/doc/HTML/sl/kaddressbook
+@dirrm share/doc/HTML/sl/docs/common
+@dirrm share/doc/HTML/sl/docs
 @dirrm share/apps/kturtle/examples/sl
 @dirrm share/apps/kturtle/examples
 @dirrm share/apps/kturtle/data

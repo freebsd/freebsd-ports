@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	arts
-PORTVERSION=	1.5.2
+PORTVERSION=	1.5.3
 PORTEPOCH=	1
 CATEGORIES=	audio kde
 MASTER_SITES=	${MASTER_SITE_KDE}
@@ -23,6 +23,7 @@ LIB_DEPENDS+=	audiofile:${PORTSDIR}/audio/libaudiofile \
 		glib-2.0:${PORTSDIR}/devel/glib20 \
 		vorbis:${PORTSDIR}/audio/libvorbis
 
+PREFIX=		${KDE_PREFIX}
 WANT_GNOME=	yes
 USE_QT_VER=	3
 USE_BZIP2=	yes

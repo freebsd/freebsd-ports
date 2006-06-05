@@ -54,11 +54,11 @@ share/apps/klettres/cs/syllab/ad-6.ogg
 share/apps/klettres/cs/syllab/ad-7.ogg
 share/apps/klettres/cs/syllab/ad-8.ogg
 share/apps/klettres/cs/syllab/ad-9.ogg
-share/doc/HTML/cs/cs/docs/common/fdl-translated.html
-share/doc/HTML/cs/cs/docs/common/gpl-translated.html
-share/doc/HTML/cs/cs/docs/common/kde-localised.css
-share/doc/HTML/cs/cs/docs/common/lgpl-translated.html
-share/doc/HTML/cs/cs/docs/common/logotp3.png
+share/doc/HTML/cs/docs/common/fdl-translated.html
+share/doc/HTML/cs/docs/common/gpl-translated.html
+share/doc/HTML/cs/docs/common/kde-localised.css
+share/doc/HTML/cs/docs/common/lgpl-translated.html
+share/doc/HTML/cs/docs/common/logotp3.png
 share/doc/HTML/cs/kcontrol/arts/midi.docbook
 share/doc/HTML/cs/kcontrol/bell/common
 share/doc/HTML/cs/kcontrol/bell/index.cache.bz2
@@ -481,6 +481,7 @@ share/locale/cs/LC_MESSAGES/kio_smtp.mo
 share/locale/cs/LC_MESSAGES/kio_svn.mo
 share/locale/cs/LC_MESSAGES/kio_system.mo
 share/locale/cs/LC_MESSAGES/kio_tar.mo
+share/locale/cs/LC_MESSAGES/kio_thumbnail.mo
 share/locale/cs/LC_MESSAGES/kio_trash.mo
 share/locale/cs/LC_MESSAGES/kio_zeroconf.mo
 share/locale/cs/LC_MESSAGES/kioexec.mo
@@ -789,9 +790,8 @@ share/locale/cs/flag.png
 @dirrm share/doc/HTML/cs/kcontrol/bell
 @dirrm share/doc/HTML/cs/kcontrol/arts
 @dirrm share/doc/HTML/cs/kcontrol
-@dirrm share/doc/HTML/cs/cs/docs/common
-@dirrm share/doc/HTML/cs/cs/docs
-@dirrm share/doc/HTML/cs/cs
+@dirrm share/doc/HTML/cs/docs/common
+@dirrm share/doc/HTML/cs/docs
 @dirrm share/apps/klettres/cs/syllab
 @dirrm share/apps/klettres/cs/alpha
 @dirrm share/apps/klettres/cs

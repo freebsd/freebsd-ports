@@ -17,6 +17,10 @@ COMMENT=	Setuid wrapper for arts
 NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/artswrapper
 
+.if defined(KDE_PREFIX)
+PREFIX=		${KDE_PREFIX}
+.endif
+
 do-fetch:
 
 .include <bsd.port.pre.mk>

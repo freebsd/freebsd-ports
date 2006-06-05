@@ -5095,6 +5095,7 @@ kde3-i18n-af	ports/misc/kde3-i18n-af
 kde3-i18n-az	ports/misc/kde3-i18n-az
 kde3-i18n-bg	ports/misc/kde3-i18n-bg
 kde3-i18n-bn	ports/misc/kde3-i18n-bn
+kde3-i18n-br	ports/misc/kde3-i18n-br
 kde3-i18n-bs	ports/misc/kde3-i18n-bs
 kde3-i18n-ca	ports/misc/kde3-i18n-ca
 kde3-i18n-cs	ports/misc/kde3-i18n-cs
@@ -5117,6 +5118,7 @@ kde3-i18n-hsb	ports/misc/kde3-i18n-hsb
 kde3-i18n-id	ports/misc/kde3-i18n-id
 kde3-i18n-is	ports/misc/kde3-i18n-is
 kde3-i18n-it	ports/misc/kde3-i18n-it
+kde3-i18n-kk	ports/misc/kde3-i18n-kk
 kde3-i18n-km	ports/misc/kde3-i18n-km
 kde3-i18n-lt	ports/misc/kde3-i18n-lt
 kde3-i18n-lv	ports/misc/kde3-i18n-lv
@@ -5361,6 +5363,7 @@ konverse	ports/net-im/konverse
 konverter	ports/multimedia/konverter
 konwert		ports/converters/konwert
 kooka		ports/graphics/kooka
+kopete		ports/net-im/kopete
 koth		ports/games/koth
 kover		ports/print/kover
 kp		ports/misc/kp

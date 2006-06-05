@@ -12,6 +12,7 @@ bin/kbookmarkmerger
 bin/kcheckpass
 bin/kcheckrunning
 bin/kcminit
+bin/kcminit_startup
 bin/kcontrol
 bin/kcontroledit
 bin/kdcop
@@ -364,6 +365,9 @@ lib/kde3/kcm_xinerama.so
 lib/kde3/kcminit.a
 lib/kde3/kcminit.la
 lib/kde3/kcminit.so
+lib/kde3/kcminit_startup.a
+lib/kde3/kcminit_startup.la
+lib/kde3/kcminit_startup.so
 lib/kde3/kcontrol.a
 lib/kde3/kcontrol.la
 lib/kde3/kcontrol.so
@@ -770,6 +774,9 @@ lib/libkdeinit_kate.so
 lib/libkdeinit_kcminit.a
 lib/libkdeinit_kcminit.la
 lib/libkdeinit_kcminit.so
+lib/libkdeinit_kcminit_startup.a
+lib/libkdeinit_kcminit_startup.la
+lib/libkdeinit_kcminit_startup.so
 lib/libkdeinit_kcontrol.a
 lib/libkdeinit_kcontrol.la
 lib/libkdeinit_kcontrol.so
@@ -1010,7 +1017,6 @@ share/applnk/Settings/LookNFeel/panel_appearance.desktop
 share/applnk/Settings/WebBrowsing/khtml_appearance.desktop
 share/applnk/Settings/WebBrowsing/nsplugin.desktop
 share/applnk/Settings/WebBrowsing/smb.desktop
-share/applnk/Settingsmenu/printmgr.desktop
 share/applnk/System/ScreenSavers/KBlankscreen.desktop
 share/applnk/System/ScreenSavers/KRandom.desktop
 share/applnk/System/kappfinder.desktop

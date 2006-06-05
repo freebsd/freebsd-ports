@@ -45,6 +45,10 @@ share/doc/HTML/ru/atlantik/index.docbook
 share/doc/HTML/ru/cervisia/common
 share/doc/HTML/ru/cervisia/index.cache.bz2
 share/doc/HTML/ru/cervisia/index.docbook
+share/doc/HTML/ru/docs/common/fdl-translated.html
+share/doc/HTML/ru/docs/common/gpl-translated.html
+share/doc/HTML/ru/docs/common/kde-localised.css
+share/doc/HTML/ru/docs/common/logotp3.png
 share/doc/HTML/ru/juk/common
 share/doc/HTML/ru/juk/index.cache.bz2
 share/doc/HTML/ru/juk/index.docbook
@@ -1216,10 +1220,6 @@ share/doc/HTML/ru/quanta/quanta-projects.docbook
 share/doc/HTML/ru/quanta/taginputex.png
 share/doc/HTML/ru/quanta/toolbars.png
 share/doc/HTML/ru/quanta/working-with-quanta.docbook
-share/doc/HTML/ru/ru/docs/common/fdl-translated.html
-share/doc/HTML/ru/ru/docs/common/gpl-translated.html
-share/doc/HTML/ru/ru/docs/common/kde-localised.css
-share/doc/HTML/ru/ru/docs/common/logotp3.png
 share/doc/HTML/ru/scripts/man-po2xml.1.docbook
 share/doc/HTML/ru/scripts/man-split2po.1.docbook
 share/doc/HTML/ru/scripts/man-swappo.1.docbook
@@ -1804,9 +1804,6 @@ share/locale/ru/flag.png
 @dirrm share/doc/HTML/ru/umbrello
 @dirrm share/doc/HTML/ru/superkaramba
 @dirrm share/doc/HTML/ru/scripts
-@dirrm share/doc/HTML/ru/ru/docs/common
-@dirrm share/doc/HTML/ru/ru/docs
-@dirrm share/doc/HTML/ru/ru
 @dirrm share/doc/HTML/ru/quanta
 @dirrm share/doc/HTML/ru/noatun
 @dirrm share/doc/HTML/ru/multisynk
@@ -2054,6 +2051,8 @@ share/locale/ru/flag.png
 @dirrm share/doc/HTML/ru/kaddressbook
 @dirrm share/doc/HTML/ru/kaboodle
 @dirrm share/doc/HTML/ru/juk
+@dirrm share/doc/HTML/ru/docs/common
+@dirrm share/doc/HTML/ru/docs
 @dirrm share/doc/HTML/ru/cervisia
 @dirrm share/doc/HTML/ru/atlantik
 @dirrm share/doc/HTML/ru/artsbuilder

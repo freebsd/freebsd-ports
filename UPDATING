@@ -6,6 +6,14 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20060605:
+  AFFECTS: users of net/kdenetwork3
+  AUTHOR: kde@FreeBSD.org
+
+  The KDE multi-protocol instant messenger, Kopete, has been moved out
+  of the net/kdenetwork3 port and is now available separately as
+  net-im/kopete.
+
 20060529:
   AFFECTS: users of net/quagga
   AUTHOR: lawrance@FreeBSD.org

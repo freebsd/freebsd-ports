@@ -1,7 +1,7 @@
-share/doc/HTML/ko/ko/docs/common/fdl-translated.html
-share/doc/HTML/ko/ko/docs/common/gpl-translated.html
-share/doc/HTML/ko/ko/docs/common/kde-localised.css
-share/doc/HTML/ko/ko/docs/common/logotp3.png
+share/doc/HTML/ko/docs/common/fdl-translated.html
+share/doc/HTML/ko/docs/common/gpl-translated.html
+share/doc/HTML/ko/docs/common/kde-localised.css
+share/doc/HTML/ko/docs/common/logotp3.png
 share/locale/ko/LC_MESSAGES/amor.mo
 share/locale/ko/LC_MESSAGES/appletproxy.mo
 share/locale/ko/LC_MESSAGES/ark.mo
@@ -200,6 +200,5 @@ share/locale/ko/LC_MESSAGES/timezones.mo
 share/locale/ko/charset
 share/locale/ko/entry.desktop
 share/locale/ko/flag.png
-@dirrm share/doc/HTML/ko/ko/docs/common
-@dirrm share/doc/HTML/ko/ko/docs
-@dirrm share/doc/HTML/ko/ko
+@dirrm share/doc/HTML/ko/docs/common
+@dirrm share/doc/HTML/ko/docs

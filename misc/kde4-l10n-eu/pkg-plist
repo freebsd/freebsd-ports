@@ -1,7 +1,7 @@
-share/doc/HTML/eu/eu/docs/common/fdl-translated.html
-share/doc/HTML/eu/eu/docs/common/gpl-translated.html
-share/doc/HTML/eu/eu/docs/common/kde-localised.css
-share/doc/HTML/eu/eu/docs/common/logotp3.png
+share/doc/HTML/eu/docs/common/fdl-translated.html
+share/doc/HTML/eu/docs/common/gpl-translated.html
+share/doc/HTML/eu/docs/common/kde-localised.css
+share/doc/HTML/eu/docs/common/logotp3.png
 share/doc/HTML/eu/kbabel/catman.docbook
 share/doc/HTML/eu/kbabel/dictionaries.docbook
 share/doc/HTML/eu/kbabel/faq.docbook
@@ -575,6 +575,5 @@ share/locale/eu/charset
 share/locale/eu/entry.desktop
 share/locale/eu/flag.png
 @dirrm share/doc/HTML/eu/kbabel
-@dirrm share/doc/HTML/eu/eu/docs/common
-@dirrm share/doc/HTML/eu/eu/docs
-@dirrm share/doc/HTML/eu/eu
+@dirrm share/doc/HTML/eu/docs/common
+@dirrm share/doc/HTML/eu/docs

@@ -19,6 +19,11 @@ share/apps/ktuberling/sounds/ro/pinguin.wav
 share/apps/ktuberling/sounds/ro/sprinceana.wav
 share/apps/ktuberling/sounds/ro/tigara.wav
 share/apps/ktuberling/sounds/ro/ureche.wav
+share/doc/HTML/ro/docs/common/fdl-translated.html
+share/doc/HTML/ro/docs/common/gpl-translated.html
+share/doc/HTML/ro/docs/common/kde-localised.css
+share/doc/HTML/ro/docs/common/lgpl-translated.html
+share/doc/HTML/ro/docs/common/logotp3.png
 share/doc/HTML/ro/khelpcenter/common
 share/doc/HTML/ro/khelpcenter/contact.docbook
 share/doc/HTML/ro/khelpcenter/glossary/common
@@ -151,11 +156,6 @@ share/doc/HTML/ro/kioslave/telnet.docbook
 share/doc/HTML/ro/kioslave/thumbnail.docbook
 share/doc/HTML/ro/kioslave/webdav.docbook
 share/doc/HTML/ro/kioslave/webdavs.docbook
-share/doc/HTML/ro/ro/docs/common/fdl-translated.html
-share/doc/HTML/ro/ro/docs/common/gpl-translated.html
-share/doc/HTML/ro/ro/docs/common/kde-localised.css
-share/doc/HTML/ro/ro/docs/common/lgpl-translated.html
-share/doc/HTML/ro/ro/docs/common/logotp3.png
 share/locale/ro/LC_MESSAGES/akregator.mo
 share/locale/ro/LC_MESSAGES/alsaplayerui.mo
 share/locale/ro/LC_MESSAGES/amor.mo
@@ -642,9 +642,6 @@ share/locale/ro/LC_MESSAGES/webarchiver.mo
 share/locale/ro/charset
 share/locale/ro/entry.desktop
 share/locale/ro/flag.png
-@dirrm share/doc/HTML/ro/ro/docs/common
-@dirrm share/doc/HTML/ro/ro/docs
-@dirrm share/doc/HTML/ro/ro
 @dirrm share/doc/HTML/ro/kioslave
 @dirrm share/doc/HTML/ro/kinfocenter/xserver
 @dirrm share/doc/HTML/ro/kinfocenter/usb
@@ -667,6 +664,8 @@ share/locale/ro/flag.png
 @dirrm share/doc/HTML/ro/khelpcenter/visualdict
 @dirrm share/doc/HTML/ro/khelpcenter/glossary
 @dirrm share/doc/HTML/ro/khelpcenter
+@dirrm share/doc/HTML/ro/docs/common
+@dirrm share/doc/HTML/ro/docs
 @dirrm share/apps/ktuberling/sounds/ro
 @dirrm share/apps/ktuberling/sounds
 @dirrm share/apps/ktuberling

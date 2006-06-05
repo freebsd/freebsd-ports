@@ -62,11 +62,11 @@ share/doc/HTML/de/atlantik/man-atlantik.6.docbook
 share/doc/HTML/de/cervisia/common
 share/doc/HTML/de/cervisia/index.cache.bz2
 share/doc/HTML/de/cervisia/index.docbook
-share/doc/HTML/de/de/docs/common/fdl-translated.html
-share/doc/HTML/de/de/docs/common/gpl-translated.html
-share/doc/HTML/de/de/docs/common/kde-localised.css
-share/doc/HTML/de/de/docs/common/lgpl-translated.html
-share/doc/HTML/de/de/docs/common/logotp3.png
+share/doc/HTML/de/docs/common/fdl-translated.html
+share/doc/HTML/de/docs/common/gpl-translated.html
+share/doc/HTML/de/docs/common/kde-localised.css
+share/doc/HTML/de/docs/common/lgpl-translated.html
+share/doc/HTML/de/docs/common/logotp3.png
 share/doc/HTML/de/juk/common
 share/doc/HTML/de/juk/history-playlist.png
 share/doc/HTML/de/juk/index.cache.bz2
@@ -88,16 +88,35 @@ share/doc/HTML/de/kalarm/common
 share/doc/HTML/de/kalarm/index.cache.bz2
 share/doc/HTML/de/kalarm/index.docbook
 share/doc/HTML/de/kalzium/common
+share/doc/HTML/de/kalzium/gradient.png
 share/doc/HTML/de/kalzium/index.cache.bz2
 share/doc/HTML/de/kalzium/index.docbook
+share/doc/HTML/de/kalzium/infodialog_bohr.png
+share/doc/HTML/de/kalzium/infodialog_chemicaldata.png
+share/doc/HTML/de/kalzium/infodialog_energies.png
+share/doc/HTML/de/kalzium/infodialog_misc.png
+share/doc/HTML/de/kalzium/infodialog_overview.png
+share/doc/HTML/de/kalzium/infodialog_picture.png
+share/doc/HTML/de/kalzium/infodialog_spectrum.png
 share/doc/HTML/de/kalzium/man-kalzium.1.docbook
+share/doc/HTML/de/kalzium/plottingdialog.png
+share/doc/HTML/de/kalzium/quick-1.png
 share/doc/HTML/de/kalzium/screenshot1.png
 share/doc/HTML/de/kalzium/screenshot2.png
 share/doc/HTML/de/kalzium/screenshot3.png
 share/doc/HTML/de/kalzium/screenshot4.png
 share/doc/HTML/de/kalzium/screenshot5.png
 share/doc/HTML/de/kalzium/screenshot6.png
+share/doc/HTML/de/kalzium/screenshot7.png
+share/doc/HTML/de/kalzium/screenshoteqsolver.png
 share/doc/HTML/de/kalzium/settings.png
+share/doc/HTML/de/kalzium/settings1.png
+share/doc/HTML/de/kalzium/settings2.png
+share/doc/HTML/de/kalzium/settings3.png
+share/doc/HTML/de/kalzium/sidebar1.png
+share/doc/HTML/de/kalzium/sidebar2.png
+share/doc/HTML/de/kalzium/sidebar3.png
+share/doc/HTML/de/kalzium/timeline.png
 share/doc/HTML/de/kamera/common
 share/doc/HTML/de/kamera/index.cache.bz2
 share/doc/HTML/de/kamera/index.docbook
@@ -118,11 +137,13 @@ share/doc/HTML/de/kasteroids/common
 share/doc/HTML/de/kasteroids/index.cache.bz2
 share/doc/HTML/de/kasteroids/index.docbook
 share/doc/HTML/de/kate-plugins/common
+share/doc/HTML/de/kate-plugins/configure_insertcommand.png
 share/doc/HTML/de/kate-plugins/filetemplates.docbook
 share/doc/HTML/de/kate-plugins/htmltools.docbook
 share/doc/HTML/de/kate-plugins/index.cache.bz2
 share/doc/HTML/de/kate-plugins/index.docbook
 share/doc/HTML/de/kate-plugins/insertcommand.docbook
+share/doc/HTML/de/kate-plugins/insertcommand.png
 share/doc/HTML/de/kate-plugins/openheader.docbook
 share/doc/HTML/de/kate-plugins/textfilter.docbook
 share/doc/HTML/de/kate-plugins/xmlcheck.docbook
@@ -177,6 +198,7 @@ share/doc/HTML/de/kbruch/factorize.png
 share/doc/HTML/de/kbruch/gui_main.png
 share/doc/HTML/de/kbruch/index.cache.bz2
 share/doc/HTML/de/kbruch/index.docbook
+share/doc/HTML/de/kbruch/man-kbruch.1.docbook
 share/doc/HTML/de/kbruch/reduced.png
 share/doc/HTML/de/kbruch/settings.png
 share/doc/HTML/de/kbugbuster/common
@@ -841,6 +863,7 @@ share/doc/HTML/de/kmplot/index.docbook
 share/doc/HTML/de/kmplot/install.docbook
 share/doc/HTML/de/kmplot/introduction.docbook
 share/doc/HTML/de/kmplot/main.png
+share/doc/HTML/de/kmplot/man-kmplot.1.docbook
 share/doc/HTML/de/kmplot/menu.docbook
 share/doc/HTML/de/kmplot/reference.docbook
 share/doc/HTML/de/kmplot/settingsdlg.png
@@ -1033,12 +1056,23 @@ share/doc/HTML/de/kopete/index.cache.bz2
 share/doc/HTML/de/kopete/index.docbook
 share/doc/HTML/de/kopete/menus.docbook
 share/doc/HTML/de/korganizer/common
+share/doc/HTML/de/korganizer/event-attachments.png
+share/doc/HTML/de/korganizer/event-attendees.png
+share/doc/HTML/de/korganizer/event-freebusy.png
+share/doc/HTML/de/korganizer/event-general.png
+share/doc/HTML/de/korganizer/event-recurrence.png
 share/doc/HTML/de/korganizer/exchange-plugin.docbook
 share/doc/HTML/de/korganizer/group-scheduling.docbook
 share/doc/HTML/de/korganizer/index.cache.bz2
 share/doc/HTML/de/korganizer/index.docbook
+share/doc/HTML/de/korganizer/korganizer-resource.png
+share/doc/HTML/de/korganizer/o2v_importing1.png
+share/doc/HTML/de/korganizer/o2v_importing2.png
+share/doc/HTML/de/korganizer/o2v_importing3.png
 share/doc/HTML/de/korganizer/outlook-to-vcalendar.docbook
 share/doc/HTML/de/korganizer/plugins-chapter.docbook
+share/doc/HTML/de/korganizer/remotefile-resource.png
+share/doc/HTML/de/korganizer/todo-general.png
 share/doc/HTML/de/korn/common
 share/doc/HTML/de/korn/index.cache.bz2
 share/doc/HTML/de/korn/index.docbook
@@ -1198,7 +1232,6 @@ share/doc/HTML/de/ksokoban/index.docbook
 share/doc/HTML/de/kspaceduel/common
 share/doc/HTML/de/kspaceduel/index.cache.bz2
 share/doc/HTML/de/kspaceduel/index.docbook
-share/doc/HTML/de/kspaceduel/kspaceduel1.png
 share/doc/HTML/de/kspaceduel/kspaceduel3.png
 share/doc/HTML/de/kspell/common
 share/doc/HTML/de/kspell/index.cache.bz2
@@ -1545,6 +1578,9 @@ share/doc/HTML/de/quanta/q-and-a.docbook
 share/doc/HTML/de/quanta/quanta-menus.docbook
 share/doc/HTML/de/quanta/quanta-projects.docbook
 share/doc/HTML/de/quanta/working-with-quanta.docbook
+share/doc/HTML/de/superkaramba/common
+share/doc/HTML/de/superkaramba/index.cache.bz2
+share/doc/HTML/de/superkaramba/index.docbook
 share/doc/HTML/de/umbrello/activity-diagram.png
 share/doc/HTML/de/umbrello/add-remove-languages.png
 share/doc/HTML/de/umbrello/aggregation.png
@@ -2140,6 +2176,7 @@ share/locale/de/charset
 share/locale/de/entry.desktop
 share/locale/de/flag.png
 @dirrm share/doc/HTML/de/umbrello
+@dirrm share/doc/HTML/de/superkaramba
 @dirrm share/doc/HTML/de/quanta
 @dirrm share/doc/HTML/de/noatun
 @dirrm share/doc/HTML/de/lskat
@@ -2387,9 +2424,8 @@ share/locale/de/flag.png
 @dirrm share/doc/HTML/de/kaddressbook
 @dirrm share/doc/HTML/de/kaboodle
 @dirrm share/doc/HTML/de/juk
-@dirrm share/doc/HTML/de/de/docs/common
-@dirrm share/doc/HTML/de/de/docs
-@dirrm share/doc/HTML/de/de
+@dirrm share/doc/HTML/de/docs/common
+@dirrm share/doc/HTML/de/docs
 @dirrm share/doc/HTML/de/cervisia
 @dirrm share/doc/HTML/de/atlantik
 @dirrm share/doc/HTML/de/artsbuilder

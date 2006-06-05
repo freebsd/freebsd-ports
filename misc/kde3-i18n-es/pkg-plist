@@ -345,12 +345,12 @@ share/doc/HTML/es/cervisia/popup.png
 share/doc/HTML/es/cervisia/repositories.png
 share/doc/HTML/es/cervisia/resolve.png
 share/doc/HTML/es/cervisia/updatetag.png
-share/doc/HTML/es/es/docs/common/fdl-translated.html
-share/doc/HTML/es/es/docs/common/gpl-translated.html
-share/doc/HTML/es/es/docs/common/kde-localised.css
-share/doc/HTML/es/es/docs/common/kde_logo.png
-share/doc/HTML/es/es/docs/common/lgpl-translated.html
-share/doc/HTML/es/es/docs/common/logotp3.png
+share/doc/HTML/es/docs/common/fdl-translated.html
+share/doc/HTML/es/docs/common/gpl-translated.html
+share/doc/HTML/es/docs/common/kde-localised.css
+share/doc/HTML/es/docs/common/kde_logo.png
+share/doc/HTML/es/docs/common/lgpl-translated.html
+share/doc/HTML/es/docs/common/logotp3.png
 share/doc/HTML/es/flashkard/common
 share/doc/HTML/es/flashkard/index.cache.bz2
 share/doc/HTML/es/flashkard/index.docbook
@@ -485,11 +485,14 @@ share/doc/HTML/es/kaudiocreator/cdconfiguration.png
 share/doc/HTML/es/kaudiocreator/cddbconfigurationlookup.png
 share/doc/HTML/es/kaudiocreator/cddbconfigurationsubmit.png
 share/doc/HTML/es/kaudiocreator/cdinserted.png
+share/doc/HTML/es/kaudiocreator/common
 share/doc/HTML/es/kaudiocreator/confirmartistcarryover.png
 share/doc/HTML/es/kaudiocreator/encoderconfiguration.png
 share/doc/HTML/es/kaudiocreator/encodernotfound.png
 share/doc/HTML/es/kaudiocreator/entersong1.png
 share/doc/HTML/es/kaudiocreator/generalconfiguration.png
+share/doc/HTML/es/kaudiocreator/index.cache.bz2
+share/doc/HTML/es/kaudiocreator/index.docbook
 share/doc/HTML/es/kaudiocreator/jobcontrol.png
 share/doc/HTML/es/kaudiocreator/jobshavestarted.png
 share/doc/HTML/es/kaudiocreator/kaudiocreatormainwindow800.png
@@ -975,6 +978,7 @@ share/doc/HTML/es/kedit/index.docbook
 share/doc/HTML/es/keduca/common
 share/doc/HTML/es/keduca/index.cache.bz2
 share/doc/HTML/es/keduca/index.docbook
+share/doc/HTML/es/keduca/man-keduca.1.docbook
 share/doc/HTML/es/keduca/screenshot.png
 share/doc/HTML/es/kenolaba/common
 share/doc/HTML/es/kenolaba/index.cache.bz2
@@ -1137,6 +1141,7 @@ share/doc/HTML/es/khelpcenter/userguide/amarok.png
 share/doc/HTML/es/khelpcenter/userguide/base-kde-applications.docbook
 share/doc/HTML/es/khelpcenter/userguide/browser-fine-tuning.docbook
 share/doc/HTML/es/khelpcenter/userguide/burning-cds.docbook
+share/doc/HTML/es/khelpcenter/userguide/common
 share/doc/HTML/es/khelpcenter/userguide/control-center.docbook
 share/doc/HTML/es/khelpcenter/userguide/creating-graphics.docbook
 share/doc/HTML/es/khelpcenter/userguide/credits-and-license.docbook
@@ -1151,6 +1156,8 @@ share/doc/HTML/es/khelpcenter/userguide/getting-started.docbook
 share/doc/HTML/es/khelpcenter/userguide/glossary.docbook
 share/doc/HTML/es/khelpcenter/userguide/groupware-kontact.docbook
 share/doc/HTML/es/khelpcenter/userguide/history.docbook
+share/doc/HTML/es/khelpcenter/userguide/index.cache.bz2
+share/doc/HTML/es/khelpcenter/userguide/index.docbook
 share/doc/HTML/es/khelpcenter/userguide/installation.docbook
 share/doc/HTML/es/khelpcenter/userguide/internet-shortcuts.docbook
 share/doc/HTML/es/khelpcenter/userguide/intro.docbook
@@ -3554,9 +3561,8 @@ share/locale/es/flag.png
 @dirrm share/doc/HTML/es/kaboodle
 @dirrm share/doc/HTML/es/juk
 @dirrm share/doc/HTML/es/flashkard
-@dirrm share/doc/HTML/es/es/docs/common
-@dirrm share/doc/HTML/es/es/docs
-@dirrm share/doc/HTML/es/es
+@dirrm share/doc/HTML/es/docs/common
+@dirrm share/doc/HTML/es/docs
 @dirrm share/doc/HTML/es/cervisia
 @dirrm share/doc/HTML/es/blinken
 @dirrm share/doc/HTML/es/atlantik

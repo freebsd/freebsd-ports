@@ -4,21 +4,21 @@ share/apps/khangman/data/sr@Latn/easy.kvtml
 share/apps/khangman/data/sr@Latn/hard.kvtml
 share/apps/khangman/data/sr@Latn/medium.kvtml
 share/apps/khangman/sr@Latn.txt
-share/apps/ktuberling/sounds/sr/brkovi.wav
-share/apps/ktuberling/sounds/sr/cigara.wav
-share/apps/ktuberling/sounds/sr/krompirko.wav
-share/apps/ktuberling/sounds/sr/masna.wav
-share/apps/ktuberling/sounds/sr/mindjusa.wav
-share/apps/ktuberling/sounds/sr/naocare.wav
-share/apps/ktuberling/sounds/sr/naocare_za_sunce.wav
-share/apps/ktuberling/sounds/sr/nos.wav
-share/apps/ktuberling/sounds/sr/obrva.wav
-share/apps/ktuberling/sounds/sr/oko.wav
-share/apps/ktuberling/sounds/sr/sat.wav
-share/apps/ktuberling/sounds/sr/sesir.wav
-share/apps/ktuberling/sounds/sr/usta.wav
-share/apps/ktuberling/sounds/sr/uvo.wav
-share/apps/ktuberling/sounds/sr/znacka.wav
+share/apps/ktuberling/sounds/sr@Latn/brkovi.wav
+share/apps/ktuberling/sounds/sr@Latn/cigara.wav
+share/apps/ktuberling/sounds/sr@Latn/krompirko.wav
+share/apps/ktuberling/sounds/sr@Latn/masna.wav
+share/apps/ktuberling/sounds/sr@Latn/mindjusa.wav
+share/apps/ktuberling/sounds/sr@Latn/naocare.wav
+share/apps/ktuberling/sounds/sr@Latn/naocare_za_sunce.wav
+share/apps/ktuberling/sounds/sr@Latn/nos.wav
+share/apps/ktuberling/sounds/sr@Latn/obrva.wav
+share/apps/ktuberling/sounds/sr@Latn/oko.wav
+share/apps/ktuberling/sounds/sr@Latn/sat.wav
+share/apps/ktuberling/sounds/sr@Latn/sesir.wav
+share/apps/ktuberling/sounds/sr@Latn/usta.wav
+share/apps/ktuberling/sounds/sr@Latn/uvo.wav
+share/apps/ktuberling/sounds/sr@Latn/znacka.wav
 share/apps/kturtle/data/logokeywords.sr@Latn.xml
 share/apps/kturtle/examples/sr@Latn/curly.logo
 share/apps/kturtle/examples/sr@Latn/square.logo
@@ -591,7 +591,7 @@ share/locale/sr@Latn/flag.png
 @dirrm share/apps/kturtle/examples
 @dirrm share/apps/kturtle/data
 @dirrm share/apps/kturtle
-@dirrm share/apps/ktuberling/sounds/sr
+@dirrm share/apps/ktuberling/sounds/sr@Latn
 @dirrm share/apps/ktuberling/sounds
 @dirrm share/apps/ktuberling
 @dirrm share/apps/khangman/data/sr@Latn

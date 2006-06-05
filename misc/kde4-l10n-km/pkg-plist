@@ -155,6 +155,7 @@ share/locale/km/LC_MESSAGES/kcmtaskbar.mo
 share/locale/km/LC_MESSAGES/kcmthinkpad.mo
 share/locale/km/LC_MESSAGES/kcmusb.mo
 share/locale/km/LC_MESSAGES/kcmview1394.mo
+share/locale/km/LC_MESSAGES/kcmvim.mo
 share/locale/km/LC_MESSAGES/kcmwifi.mo
 share/locale/km/LC_MESSAGES/kcmxinerama.mo
 share/locale/km/LC_MESSAGES/kcoloredit.mo
@@ -227,6 +228,7 @@ share/locale/km/LC_MESSAGES/kfile_wav.mo
 share/locale/km/LC_MESSAGES/kfile_xbm.mo
 share/locale/km/LC_MESSAGES/kfile_xpm.mo
 share/locale/km/LC_MESSAGES/kfileaudiopreview.mo
+share/locale/km/LC_MESSAGES/kfileshare.mo
 share/locale/km/LC_MESSAGES/kfindpart.mo
 share/locale/km/LC_MESSAGES/kfloppy.mo
 share/locale/km/LC_MESSAGES/kfmclient.mo
@@ -236,6 +238,7 @@ share/locale/km/LC_MESSAGES/kgamma.mo
 share/locale/km/LC_MESSAGES/kgantt.mo
 share/locale/km/LC_MESSAGES/kget.mo
 share/locale/km/LC_MESSAGES/kghostview.mo
+share/locale/km/LC_MESSAGES/kgoldrunner.mo
 share/locale/km/LC_MESSAGES/kgreet_classic.mo
 share/locale/km/LC_MESSAGES/kgreet_winbind.mo
 share/locale/km/LC_MESSAGES/khelpcenter.mo
@@ -270,6 +273,7 @@ share/locale/km/LC_MESSAGES/kio_print.mo
 share/locale/km/LC_MESSAGES/kio_remote.mo
 share/locale/km/LC_MESSAGES/kio_settings.mo
 share/locale/km/LC_MESSAGES/kio_sftp.mo
+share/locale/km/LC_MESSAGES/kio_sieve.mo
 share/locale/km/LC_MESSAGES/kio_smb.mo
 share/locale/km/LC_MESSAGES/kio_smtp.mo
 share/locale/km/LC_MESSAGES/kio_system.mo
@@ -287,8 +291,10 @@ share/locale/km/LC_MESSAGES/klickety.mo
 share/locale/km/LC_MESSAGES/klines.mo
 share/locale/km/LC_MESSAGES/klipper.mo
 share/locale/km/LC_MESSAGES/kmahjongg.mo
+share/locale/km/LC_MESSAGES/kmail.mo
 share/locale/km/LC_MESSAGES/kmail_text_calendar_plugin.mo
 share/locale/km/LC_MESSAGES/kmail_text_vcard_plugin.mo
+share/locale/km/LC_MESSAGES/kmailcvt.mo
 share/locale/km/LC_MESSAGES/kmathapplet.mo
 share/locale/km/LC_MESSAGES/kmcop.mo
 share/locale/km/LC_MESSAGES/kmenuapplet.mo
@@ -317,6 +323,9 @@ share/locale/km/LC_MESSAGES/kolourpicker.mo
 share/locale/km/LC_MESSAGES/konnector_dummy.mo
 share/locale/km/LC_MESSAGES/konnector_kabc.mo
 share/locale/km/LC_MESSAGES/konnector_kcal.mo
+share/locale/km/LC_MESSAGES/konnector_local.mo
+share/locale/km/LC_MESSAGES/konnector_qtopia.mo
+share/locale/km/LC_MESSAGES/konnector_remote.mo
 share/locale/km/LC_MESSAGES/konq_smbmounterplugin.mo
 share/locale/km/LC_MESSAGES/konqsidebar_delicious.mo
 share/locale/km/LC_MESSAGES/konqsidebar_mediaplayer.mo
@@ -325,8 +334,10 @@ share/locale/km/LC_MESSAGES/konqsidebar_news.mo
 share/locale/km/LC_MESSAGES/konqueror.mo
 share/locale/km/LC_MESSAGES/konquest.mo
 share/locale/km/LC_MESSAGES/konsole.mo
+share/locale/km/LC_MESSAGES/konsolekalendar.mo
 share/locale/km/LC_MESSAGES/kontact.mo
 share/locale/km/LC_MESSAGES/kooka.mo
+share/locale/km/LC_MESSAGES/kopete.mo
 share/locale/km/LC_MESSAGES/korganizer.mo
 share/locale/km/LC_MESSAGES/kpager.mo
 share/locale/km/LC_MESSAGES/kpartapp.mo
@@ -347,10 +358,13 @@ share/locale/km/LC_MESSAGES/kres_birthday.mo
 share/locale/km/LC_MESSAGES/kres_blogging.mo
 share/locale/km/LC_MESSAGES/kres_exchange.mo
 share/locale/km/LC_MESSAGES/kres_featureplan.mo
+share/locale/km/LC_MESSAGES/kres_groupware.mo
+share/locale/km/LC_MESSAGES/kres_groupwise.mo
 share/locale/km/LC_MESSAGES/kres_kolab.mo
 share/locale/km/LC_MESSAGES/kres_opengroupware.mo
 share/locale/km/LC_MESSAGES/kres_remote.mo
 share/locale/km/LC_MESSAGES/kres_tvanytime.mo
+share/locale/km/LC_MESSAGES/kres_xmlrpc.mo
 share/locale/km/LC_MESSAGES/kreversi.mo
 share/locale/km/LC_MESSAGES/krfb.mo
 share/locale/km/LC_MESSAGES/kruler.mo
@@ -424,6 +438,7 @@ share/locale/km/LC_MESSAGES/libkdehighscores.mo
 share/locale/km/LC_MESSAGES/libkdenetwork.mo
 share/locale/km/LC_MESSAGES/libkdepim.mo
 share/locale/km/LC_MESSAGES/libkfaximgage.mo
+share/locale/km/LC_MESSAGES/libkholidays.mo
 share/locale/km/LC_MESSAGES/libkicker.mo
 share/locale/km/LC_MESSAGES/libkickermenu_kdeprint.mo
 share/locale/km/LC_MESSAGES/libkickermenu_konsole.mo
@@ -434,10 +449,13 @@ share/locale/km/LC_MESSAGES/libkickermenu_systemmenu.mo
 share/locale/km/LC_MESSAGES/libkickermenu_tom.mo
 share/locale/km/LC_MESSAGES/libkmime.mo
 share/locale/km/LC_MESSAGES/libkonq.mo
+share/locale/km/LC_MESSAGES/libkpgp.mo
 share/locale/km/LC_MESSAGES/libkpimexchange.mo
 share/locale/km/LC_MESSAGES/libkscan.mo
 share/locale/km/LC_MESSAGES/libkscreensaver.mo
+share/locale/km/LC_MESSAGES/libksieve.mo
 share/locale/km/LC_MESSAGES/libksirtet.mo
+share/locale/km/LC_MESSAGES/libksync.mo
 share/locale/km/LC_MESSAGES/libtaskbar.mo
 share/locale/km/LC_MESSAGES/libtaskmanager.mo
 share/locale/km/LC_MESSAGES/lockout.mo
