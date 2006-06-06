@@ -34,8 +34,9 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-lintl"
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+DOCSDIR=	${PREFIX}/share/doc/py-gtk
 EG_SRC_DIR=	${WRKSRC}/examples
-EG_DST_DIR=	${PREFIX}/share/examples/py-gtk
+EXAMPLESDIR=	${PREFIX}/share/examples/py-gtk
 
 CONFLICTS=	py*-gtk-0*
 
@@ -56,14 +57,14 @@ CONFIGURE_ENV+=		LDFLAGS="${LDFLAGS}"
 
 .if !defined(NOPORTDOCS)
 post-install:
-	${MKDIR} ${EG_DST_DIR}
-	${TAR} -C ${EG_SRC_DIR} -cf - . | ${TAR} -C ${EG_DST_DIR} -xf -
-	${CHOWN} -R ${BINOWN}:${BINGRP} ${EG_DST_DIR}
-	${FIND} ${EG_DST_DIR} -type d -print | ${XARGS} ${CHMOD} 0555
-	${FIND} ${EG_DST_DIR} -type f -print | ${XARGS} ${CHMOD} 0444
-	${MKDIR} ${PREFIX}/share/doc/py-gtk
-	${INSTALL_DATA} ${WRKSRC}/MAPPING ${PREFIX}/share/doc/py-gtk
-	${INSTALL_DATA} ${WRKSRC}/THREADS ${PREFIX}/share/doc/py-gtk
+	${MKDIR} ${EXAMPLESDIR}
+	${TAR} -C ${EG_SRC_DIR} -cf - . | ${TAR} -C ${EXAMPLESDIR} -xf -
+	${CHOWN} -R ${BINOWN}:${BINGRP} ${EXAMPLESDIR}
+	${FIND} ${EXAMPLESDIR} -type d -print | ${XARGS} ${CHMOD} 0555
+	${FIND} ${EXAMPLESDIR} -type f -print | ${XARGS} ${CHMOD} 0444
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/MAPPING ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/THREADS ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
