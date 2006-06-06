@@ -2311,6 +2311,7 @@ f-prot		ports/security/f-prot
 f-prot-sig	ports/security/f-prot-sig
 f-spot		ports/graphics/f-spot
 f2py		ports/lang/f2py
+f4l		ports/editors/f4l
 f77		ports/lang/f77
 f77flow		ports/devel/f77flow
 fa-aspell	ports/textproc/fa-aspell
