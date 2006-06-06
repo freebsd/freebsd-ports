@@ -15,7 +15,7 @@
 name="mailman"
 rcvar=${name}_enable
 
-pidfile="%%PREFIX%%/mailman/data/master-qrunner.pid"
+pidfile="%%MAILMANDIR%%/data/master-qrunner.pid"
 
 load_rc_config $name
 
@@ -26,11 +26,11 @@ stop_cmd=${name}_stop
 extra_commands="reload"
 
 mailman_start() {
-	%%PREFIX%%/mailman/bin/mailmanctl -s -q start
+	%%MAILMANDIR%%/bin/mailmanctl -s -q start
 }
 
 mailman_stop() {
-	%%PREFIX%%/mailman/bin/mailmanctl -q stop
+	%%MAILMANDIR%%/bin/mailmanctl -q stop
 }
 
 run_rc_command "$1"
