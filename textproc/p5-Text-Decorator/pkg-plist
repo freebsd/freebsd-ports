@@ -1,0 +1,11 @@
+%%SITE_PERL%%/Text/Decorator.pm
+%%SITE_PERL%%/Text/Decorator/Filter.pm
+%%SITE_PERL%%/Text/Decorator/Filter/Quoted.pm
+%%SITE_PERL%%/Text/Decorator/Filter/TTBridge.pm
+%%SITE_PERL%%/Text/Decorator/Filter/Test.pm
+%%SITE_PERL%%/Text/Decorator/Filter/URIFind.pm
+%%SITE_PERL%%/Text/Decorator/Group.pm
+%%SITE_PERL%%/Text/Decorator/Node.pm
+@dirrm %%SITE_PERL%%/Text/Decorator/Filter
+@dirrm %%SITE_PERL%%/Text/Decorator
+@dirrmtry %%SITE_PERL%%/Text
