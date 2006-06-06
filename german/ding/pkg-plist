@@ -1,5 +1,5 @@
 bin/ding
-share/ding/ding.png
-share/ding/ding.desktop
-share/ding/de-en.txt
+%%DATADIR%%/ding.png
+%%DATADIR%%/ding.desktop
+%%DATADIR%%/de-en.txt
 @dirrm share/ding
