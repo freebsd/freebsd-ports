@@ -1,0 +1,12 @@
+This is the port of scanbuttond, an utility to monitor the various buttons
+found on many modern scanners which are intended to trigger certain actions 
+like copying, faxing or mailing the scanned document.
+This daemon queries the scanner button state several times per second via 
+libusb and if it detects that a button is pressed it runs a shell script with
+the button number as an argument. 
+
+The supported scanner backends currently are: epson, niash, plustek, snapscan
+
+
+Author:	Bernhard Stiftner <root84@users.sourceforge.net>
+WWW:	http://scanbuttond.sourceforge.net/

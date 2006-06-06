@@ -498,6 +498,7 @@
     SUBDIR += sb16config
     SUBDIR += sbniconfig
     SUBDIR += scan_ffs
+    SUBDIR += scanbuttond
     SUBDIR += screen
     SUBDIR += sdd
     SUBDIR += sec
