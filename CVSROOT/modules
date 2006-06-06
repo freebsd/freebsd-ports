@@ -376,6 +376,7 @@ annextools	ports/net-mgmt/annextools
 annoyance-filter	ports/mail/annoyance-filter
 anomy-sanitizer	ports/mail/anomy-sanitizer
 anope		ports/irc/anope
+ansiprint	ports/print/ansiprint
 ant-xinclude-task	ports/textproc/ant-xinclude-task
 anteater	ports/sysutils/anteater
 anthem		ports/audio/anthem
