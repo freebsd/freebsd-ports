@@ -46,6 +46,7 @@
     SUBDIR += firebird-client
     SUBDIR += firebird-devel
     SUBDIR += fireprofile
+    SUBDIR += flamerobin
     SUBDIR += fpc-ibase
     SUBDIR += fpc-mysql
     SUBDIR += fpc-odbc
