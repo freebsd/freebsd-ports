@@ -1,0 +1,26 @@
+bin/aqbubble
+%%DATADIR%%/ima/burbuja.png
+%%DATADIR%%/ima/fuente1.png
+%%DATADIR%%/ima/fuente2.png
+%%DATADIR%%/ima/icono.png
+%%DATADIR%%/ima/items.png
+%%DATADIR%%/ima/logos.png
+%%DATADIR%%/ima/menu.jpg
+%%DATADIR%%/ima/nivel.png
+%%DATADIR%%/ima/otro.jpg
+%%DATADIR%%/ima/paco.png
+%%DATADIR%%/ima/particulas.png
+%%DATADIR%%/ima/pez.png
+%%DATADIR%%/ima/silvio.png
+%%DATADIR%%/sonidos/burbuja1.wav
+%%DATADIR%%/sonidos/pierde.wav
+%%DATADIR%%/sonidos/tic.wav
+%%DATADIR%%/sonidos/toc.wav
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
+share/locale/es/LC_MESSAGES/aqbubble.mo
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%/ima
+@dirrm %%DATADIR%%/sonidos
+@dirrm %%DATADIR%%
