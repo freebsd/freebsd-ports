@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Tk-TableMatrix
-PORTVERSION=	1.2
+PORTVERSION=	1.22
 CATEGORIES=	x11-toolkits perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Tk
@@ -24,4 +24,10 @@ MAN3=		Tk::TableMatrix.3 \
 		Tk::TableMatrix::Spreadsheet.3 \
 		Tk::TableMatrix::SpreadsheetHideRows.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500800
+IGNORE=	requires perl 5.8.0 or higher. Please install lang/perl5.8 and try again
+.endif
+
+.include <bsd.port.post.mk>
