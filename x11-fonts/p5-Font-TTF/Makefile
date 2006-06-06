@@ -14,12 +14,11 @@ MASTER_SITE_SUBDIR=	Font
 PKGNAMEPREFIX=	p5-
 DISTFILES=	${DISTNAME}.1${EXTRACT_SUFX}
 
-MAINTAINER=	erwin@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module for TrueType font hacking
 
 PERL_CONFIGURE=	yes
 
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=	Font::TTF::AATKern.3 Font::TTF::Anchor.3 Font::TTF::Bsln.3 \
 	Font::TTF::Cmap.3 Font::TTF::Coverage.3 Font::TTF::Cvt_.3 \
 	Font::TTF::Delta.3 Font::TTF::Fdsc.3 Font::TTF::Feat.3 \
