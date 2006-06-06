@@ -1,0 +1,22 @@
+Hashes are great for storing named data, but if you want more than one entry
+for a name, you have to use a list of pairs.  Even then, this is really boring
+to write:
+
+  @values = (
+    foo => undef,
+    bar => undef,
+    baz => undef,
+    xyz => { ... },
+  );
+
+With Data::OptList, you can do this instead:
+
+  Data::OptList::mkopt([
+    qw(foo bar baz),
+    xyz => { ... },
+  ]);
+
+This works by assuming that any defined scalar is a name and any reference
+following a name is its value.
+
+WWW: http://search.cpan.org/dist/Data-OptList/
