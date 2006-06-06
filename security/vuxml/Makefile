@@ -83,4 +83,10 @@ tidy:
 newentry:
 	@${SH} ${FILESDIR}/newentry.sh "${VUXML_FILE}"
 
+scp:
+	rsync -zv ${VUXML_FILE} freefall.freebsd.org:vuxml/vuln.xml
+
+web: scp
+	ssh freefall.freebsd.org make -C priv/vuxml-web/freebsd all install
+
 .include <bsd.port.mk>

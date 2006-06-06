@@ -40,7 +40,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>squirrelmail</name>
-	<range><lt>1.4.7</lt></range>
+	<range><lt>1.4.6_1</lt></range>
       </package>
     </affects>
     <description>
@@ -62,6 +62,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2006-06-01</discovery>
       <entry>2006-06-05</entry>
+      <modified>2006-06-06</modified>
     </dates>
   </vuln>
 
