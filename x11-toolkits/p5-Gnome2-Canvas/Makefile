@@ -7,12 +7,12 @@
 #
 
 PORTNAME=	Gnome2-Canvas
-PORTVERSION=	1.00
-PORTREVISION=	5
+PORTVERSION=	1.002
+PORTREVISION=	0
 CATEGORIES=	x11-toolkits gnome perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:S/$/:cpan/} \
 		${MASTER_SITE_SOURCEFORGE:S/$/:sf/}
-MASTER_SITE_SUBDIR=	../by-authors/id/R/RM/RMCFARLA/Gtk2-Perl/:cpan \
+MASTER_SITE_SUBDIR=	Gnome2/:cpan \
 		gtk2-perl/:sf
 PKGNAMEPREFIX=	p5-
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:cpan \
@@ -35,7 +35,7 @@ USE_GMAKE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500800
-IGNORE=		This port requires perl 5.8.0 or later. Install lang/perl5.8 then try again
+IGNORE=		requires perl 5.8.0 or later. Install lang/perl5.8 then try again
 .endif
 
 post-install:

@@ -17,6 +17,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/Canvas/Rect.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/Canvas/RichText.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/Canvas/Shape.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/Canvas/Text.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/Canvas/Widget.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/Canvas/index.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/Canvas/version.pod
