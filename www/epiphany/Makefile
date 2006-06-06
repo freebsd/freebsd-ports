@@ -25,7 +25,7 @@ USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_PYTHON=	yes
 GNOME_DESKTOP_VERSION=2
-USE_GECKO=	firefox mozilla seamonkey
+USE_GECKO=	firefox mozilla seamonkey firefox-devel<->firefox
 USE_GNOME=	gnomeprefix gnomehack intlhack gnomedesktop desktopfileutils \
 		libgnomeprintui
 WANT_GNOME=	yes
