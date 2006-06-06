@@ -1,6 +1,6 @@
 # New ports collection makefile for:	dnsmasq
 # Date created:				1 June 2003
-# Whom:					Steven Honson <steven@honson.org>
+# Whom:					Steven Honson
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://www.thekelleys.org.uk/dnsmasq/
 
-MAINTAINER=	steven@honson.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight, easy to configure DNS forwarder and DHCP server
 
 MAN8=		dnsmasq.8
@@ -25,6 +25,11 @@ USE_GETOPT_LONG=yes
 USE_GMAKE=	yes
 MAKE_ENV=	LIBS="${LDFLAGS}" RPM_OPT_FLAGS="${CPPFLAGS}"
 
+OPTIONS=	IPV6 "IPv6 support" on
+OPTIONS+=	DBUS "D_BUS support" off
+
+.include <bsd.port.pre.mk>
+
 .if defined(WITHOUT_IPV6)
 CFLAGS+=	-DNO_IPV6
 .endif
@@ -33,8 +38,6 @@ CFLAGS+=	-DNO_IPV6
 LIB_DEPENDS+=	dbus-1:${PORTSDIR}/devel/dbus
 CFLAGS+=	-DWITH_DBUS
 .endif
-
-.include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500037
 USE_RC_SUBR=	dnsmasq.sh
