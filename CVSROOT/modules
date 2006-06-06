@@ -12201,6 +12201,7 @@ sc-aspell	ports/textproc/sc-aspell
 scalapack	ports/math/scalapack
 scamper		ports/net/scamper
 scan_ffs	ports/sysutils/scan_ffs
+scanbuttond	ports/sysutils/scanbuttond
 scand		ports/net/scand
 scandoc		ports/devel/scandoc
 scanlogd	ports/security/scanlogd
