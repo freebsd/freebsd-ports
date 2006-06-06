@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	dansguardian
-PORTVERSION=	2.9.6.1
-PORTREVISION=	1
+PORTVERSION=	2.9.7.0
+#PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	# empty, see below
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -37,19 +37,19 @@ OPTIONS=	DG_APACHE  "Enable Apache support for access denied page" on \
 		DG_DMGR    "Enable the fancy download manager" on \
 		DG_CLAMD   "Enable ClamAV daemon support (clamd)" off \
 		DG_CLAMAV  "Enable ClamAV library support (libclamav)" off \
-		DG_ICAP    "Enable ICAP AV content scanner support (broken)" off \
-		DG_KASP    "Enable Kaspersky AV support (broken)" off
+		DG_ICAP    "Enable ICAP AV content scanner support (testing)" off \
+		DG_KASP    "Enable Kaspersky AV support (testing)" off \
+		DG_NTLM    "Enable NTLM authentication plugin" off \
+		DG_EMAIL   "Enable e-mail reporting support" off
 
 DG_URL=		http://dansguardian.org/index.php?page=copyright2
 CONFDIR=	${PREFIX}/etc/dansguardian
 
-NO_CDROM=	Commercial download is restricted.  Check ${DG_URL} for more info
-NO_PACKAGE=	Redistribution is restricted.  Check ${DG_URL} for more info
-RESTRICTED=	${NO_PACKAGE}
+RESTRICTED=	Redistribution and commercial download is restricted. Check ${DG_URL} for more info ${NO_PACKAGE}
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_DG_APACHE)
+.if !defined(WITHOUT_DG_APACHE)
 USE_APACHE=	1.3+
 .endif
 
@@ -86,11 +86,31 @@ PLIST_SUB+=		KAVDCONF=""
 PLIST_SUB+=		KAVDCONF="@comment "
 .endif
 
-.if defined(WITH_DG_DMGR)
+.if defined(WITH_DG_CLAMD) || defined(WITH_DG_CLAMAV) || defined(WITH_DG_ICAP) || defined(WITH_DG_KASP)
+PLIST_SUB+=		SCANNERS=""
+.else
+PLIST_SUB+=		SCANNERS="@comment "
+.endif
+
+.if !defined(WITHOUT_DG_DMGR)
 CONFIGURE_ARGS+=	--enable-fancydm
 #PLIST_SUB+=		DMGR=""
 #.else
 #PLIST_SUB+=		DMGR="@comment "
+.endif
+
+.if defined(WITH_DG_NTLM)
+CONFIGURE_ARGS+=	--enable-ntlm
+PLIST_SUB+=		NTLMCONF=""
+.else
+PLIST_SUB+=		NTLMCONF="@comment "
+.endif
+
+.if defined(WITH_DG_EMAIL)
+CONFIGURE_ARGS+=	--enable-email
+PLIST_SUB+=		EMAILCONF=""
+.else
+PLIST_SUB+=		EMAILCONF="@comment "
 .endif
 
 # User needs to manually download the distfile
