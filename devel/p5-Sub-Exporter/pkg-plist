@@ -1,4 +1,3 @@
-%%SITE_PERL%%/Data/OptList.pm
 %%SITE_PERL%%/Sub/Exporter.pm
 %%SITE_PERL%%/Sub/Exporter/Tutorial.pod
 %%SITE_PERL%%/Sub/Exporter/Util.pm
@@ -7,4 +6,3 @@
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sub
 @dirrmtry %%SITE_PERL%%/Sub/Exporter
 @dirrmtry %%SITE_PERL%%/Sub
-@dirrmtry %%SITE_PERL%%/Data
