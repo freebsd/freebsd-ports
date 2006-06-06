@@ -2,8 +2,8 @@ DBIx::Class::Schema::Loader automates the definition of a
 DBIx::Class::Schema by scanning database table definitions and setting
 up the columns and primary keys.
 
-DBIx::Class::Schema::Loader currently supports DBI for MySQL, Postgres,
-SQLite and DB2.
+DBIx::Class::Schema::Loader currently supports DBI for MySQL,
+PostgreSQL, SQLite and DB2.
 
 See DBIx::Class::Schema::Loader::DBI::Writing for notes on writing your
 own vendor-specific subclass for an unsupported DBD driver.
