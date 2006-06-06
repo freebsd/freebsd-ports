@@ -36,7 +36,8 @@ BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen	\
 .endif
 
 USE_GCC=	3.4+
-USE_JAVA=	1.4+
+USE_JAVA=	yes
+JAVA_VERSION=	1.4+
 USE_GL=		yes
 REINPLACE_ARGS=	-i ""
 
