@@ -1,5 +1,6 @@
-To start icecast at system boot, customize 
-%%PREFIX%%/etc/icecast.xml.sample to your environment and add:
+To start icecast at system boot, copy  
+%%PREFIX%%/etc/icecast.xml.sample to %%PREFIX%%/etc/icecast.xml, customize
+to your environment as desired and add:
 
 icecast_enable="YES"
 
