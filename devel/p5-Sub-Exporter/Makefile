@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Sub-Exporter
-PORTVERSION=	0.960
+PORTVERSION=	0.961
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Sub
@@ -16,13 +16,13 @@ MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	A sophisticated exporter for custom-built routines
 
 BUILD_DEPENDS=	p5-Sub-Install>=0.92:${PORTSDIR}/devel/p5-Sub-Install \
+		p5-Data-OptList>=0.100:${PORTSDIR}/devel/p5-Data-OptList \
 		p5-Params-Util>=0.14:${PORTSDIR}/devel/p5-Params-Util
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN3=	Data::OptList.3 \
-	Sub::Exporter.3 \
+MAN3=	Sub::Exporter.3 \
 	Sub::Exporter::Tutorial.3 \
 	Sub::Exporter::Util.3
 
