@@ -1,0 +1,11 @@
+--- ../apmpatch/fvwm95-2.0.43a-Autoconf.I18N.apmpatch.orig	Wed May  7 01:33:04 1997
++++ ../apmpatch/fvwm95-2.0.43a-Autoconf.I18N.apmpatch	Sat Jun  3 07:02:44 2006
+@@ -62,7 +62,7 @@
+ +int ShowBatteryStatus = False, ShowBatteryStatusP = False;
+ +char *BattFore = "NavyBlue", *BattFore2 = "Gold";
+ +unsigned long battc_fore, battc_fore2, battc_red, battc_white;
+-+struct apm_info prev_ap;
+++struct apm_info prev_ap; void CreateBatteryWindow();
+ +#else
+  int fontheight, clock_width;
+ +#endif  /* APM */

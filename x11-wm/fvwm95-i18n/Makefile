@@ -41,6 +41,11 @@ MAN1=	fvwm95.1 xpmroot.1 FvwmAudio.1 FvwmAuto.1 FvwmBacker.1 FvwmBanner.1 \
 SAMPLEDIR=	${PREFIX}/share/examples/fvwm95
 KITDIR=		${WRKDIR}/${PKGNAME}-portKit
 
+.if defined(WITH_APM)
+ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS_REASON=	apm.h is only in i386 system
+.endif
+
 post-extract:
 	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
 		${DISTDIR}/fvwm95-2.0.43a-FreeBSD.apmpatch.tar.gz \
