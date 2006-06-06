@@ -71,7 +71,7 @@ DEFAULT_AUDIOSRC?=	osssrc
 .include "${MASTERDIR}/Makefile.common"
 
 .if ${OSVERSION} < 500000
-IGNORE=	Many plugins don't build or even work on 4.x
+IGNORE=	many plugins don't build or even work on 4.x
 .endif
 
 .if ${GST_PLUGIN} == "base"
