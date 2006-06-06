@@ -17,7 +17,7 @@ COMMENT=	The wiki engine used by Wikipedia
 CONFLICTS=	mediawiki-1.[0-57-9].*
 
 NO_BUILD=	yes
-USE_PHP=	iconv mbstring pcre session xml zlib imagick readline
+USE_PHP=	iconv mbstring pcre session xml zlib readline
 WANT_PHP_WEB=	yes
 MEDIAWIKIDIR?=	www/data-dist/mediawiki
 
