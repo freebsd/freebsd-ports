@@ -16,6 +16,8 @@ COMMENT=	A daemon to monitor and configure modern scanner's buttons
 
 LIB_DEPENDS=	usb-0.1.8:${PORTSDIR}/devel/libusb
 
+USE_GCC=	3.3+
+USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
@@ -27,7 +29,7 @@ SUB_FILES+=	pkg-message
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-BROKEN=	does not build
+#BROKEN=	does not build
 .endif
 
 pre-configure:
