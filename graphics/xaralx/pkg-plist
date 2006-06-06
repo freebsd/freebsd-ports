@@ -33,36 +33,6 @@ bin/XaraLX%%PKGNAMESUFFIX%%
 %%EXAMPLESDIR%%/Templates/A4 double page spread.xar
 %%EXAMPLESDIR%%/Templates/U S Letter.xar
 %%EXAMPLESDIR%%/Templates/animation.xar
-%%EXAMPLESDIR%%/TextDesigns/AngledText.xar
-%%EXAMPLESDIR%%/TextDesigns/BaselineShift.xar
-%%EXAMPLESDIR%%/TextDesigns/FontChangesInText.xar
-%%EXAMPLESDIR%%/TextDesigns/Kerning.xar
-%%EXAMPLESDIR%%/TextDesigns/LineSpacing.xar
-%%EXAMPLESDIR%%/TextDesigns/ManualKern.xar
-%%EXAMPLESDIR%%/TextDesigns/Paragraph.xar
-%%EXAMPLESDIR%%/TextDesigns/Rotated.xar
-%%EXAMPLESDIR%%/TextDesigns/SimpleText.xar
-%%EXAMPLESDIR%%/TextDesigns/SuperSub.xar
-%%EXAMPLESDIR%%/TextDesigns/TextJust.xar
-%%EXAMPLESDIR%%/TextDesigns/Tracking.xar
-%%EXAMPLESDIR%%/TextDesigns/embeddedFonts.xar
-%%EXAMPLESDIR%%/TextDesigns/hebrew.xar
-%%EXAMPLESDIR%%/testfiles/10000GradFilledShapes.xar
-%%EXAMPLESDIR%%/testfiles/20000GradFilledShapes.xar
-%%EXAMPLESDIR%%/testfiles/20000GradFilledShapes50PCtransparent.xar
-%%EXAMPLESDIR%%/testfiles/Broken Butt Cap.xar
-%%EXAMPLESDIR%%/testfiles/OneCurve.xar
-%%EXAMPLESDIR%%/testfiles/OneLine.xar
-%%EXAMPLESDIR%%/testfiles/ProbeX16.xar
-%%EXAMPLESDIR%%/testfiles/RedStar.xar
-%%EXAMPLESDIR%%/testfiles/ScaleTest.xar
-%%EXAMPLESDIR%%/testfiles/ScaleTest2.xar
-%%EXAMPLESDIR%%/testfiles/Test00.xar
-%%EXAMPLESDIR%%/testfiles/Test01.xar
-%%EXAMPLESDIR%%/testfiles/Test02.xar
-%%EXAMPLESDIR%%/testfiles/TestBitmapFill.xar
-%%EXAMPLESDIR%%/testfiles/sortcrash.xar
-%%EXAMPLESDIR%%/testfiles/testsmooth.xar
 @dirrm %%EXAMPLESDIR%%/Designs
 @dirrm %%EXAMPLESDIR%%/Templates
 @dirrm %%EXAMPLESDIR%%/TextDesigns
