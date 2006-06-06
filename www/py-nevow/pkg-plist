@@ -590,13 +590,13 @@ bin/nevow-xmlgettext
 %%PORTDOCS%%%%DOCSDIR%%/hier.py
 %%PORTDOCS%%%%DOCSDIR%%/hier.pyc
 %%PORTDOCS%%%%DOCSDIR%%/README
+@dirrmtry %%PYTHON_SITELIBDIR%%/nevow/athena_private
 @dirrm %%PYTHON_SITELIBDIR%%/nevow/test
 @dirrm %%PYTHON_SITELIBDIR%%/nevow/taglibrary
 @dirrm %%PYTHON_SITELIBDIR%%/nevow/scripts
 @dirrm %%PYTHON_SITELIBDIR%%/nevow/plugins
 @dirrm %%PYTHON_SITELIBDIR%%/nevow/livetrial
 @dirrm %%PYTHON_SITELIBDIR%%/nevow/flat
-@dirrm %%PYTHON_SITELIBDIR%%/nevow/athena_private
 @dirrm %%PYTHON_SITELIBDIR%%/nevow
 @dirrm %%PYTHON_SITELIBDIR%%/formless/test
 @dirrm %%PYTHON_SITELIBDIR%%/formless
