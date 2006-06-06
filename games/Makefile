@@ -93,6 +93,7 @@
     SUBDIR += ceferino
     SUBDIR += cgoban
     SUBDIR += cgoban2
+    SUBDIR += chanta
     SUBDIR += childsplay
     SUBDIR += childsplay_plugins
     SUBDIR += chromium
