@@ -179,6 +179,7 @@ lib/libsvn_wc-1.so.0
 %%DATADIR%%/hook-scripts/verify-po.py
 %%DATADIR%%/po/svn-po-status-report.sh
 %%DATADIR%%/po/svn-po-status-run.sh
+%%DATADIR%%/server-side/svnauthz-validate.c
 %%DATADIR%%/test-scripts/svntest/README
 %%DATADIR%%/test-scripts/svntest/dav_svn.passwd
 %%DATADIR%%/test-scripts/svntest/mod_dav_svn.conf
@@ -349,6 +350,7 @@ lib/libsvn_wc-1.so.0
 @dirrm %%DATADIR%%/hook-scripts/mailer
 @dirrm %%DATADIR%%/hook-scripts
 @dirrm %%DATADIR%%/po
+@dirrm %%DATADIR%%/server-side
 @dirrm %%DATADIR%%/test-scripts/svntest
 @dirrm %%DATADIR%%/test-scripts
 @dirrm %%DATADIR%%/xslt
