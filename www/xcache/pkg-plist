@@ -1,11 +1,18 @@
 lib/php/%%PHP_EXT_DIR%%/xcache.so
 @dirrmtry lib/php/%%PHP_EXT_DIR%%
 %%EXAMPLESDIR%%/admin/config.php.example
+%%EXAMPLESDIR%%/admin/help.php
 %%EXAMPLESDIR%%/admin/index.php
 %%EXAMPLESDIR%%/admin/tablesort.js
 %%EXAMPLESDIR%%/admin/xcache.css
 %%EXAMPLESDIR%%/admin/xcache.php
 %%EXAMPLESDIR%%/admin/xcache.tpl.php
+%%COVERAGER%%%%EXAMPLESDIR%%/coverager/config.php.example
+%%COVERAGER%%%%EXAMPLESDIR%%/coverager/coverager.css
+%%COVERAGER%%%%EXAMPLESDIR%%/coverager/coverager.php
+%%COVERAGER%%%%EXAMPLESDIR%%/coverager/coverager.tpl.php
+%%COVERAGER%%%%EXAMPLESDIR%%/coverager/index.php
 %%EXAMPLESDIR%%/xcache.ini
 @dirrm %%EXAMPLESDIR%%/admin
+%%COVERAGER%%@dirrm %%EXAMPLESDIR%%/coverager
 @dirrm %%EXAMPLESDIR%%
