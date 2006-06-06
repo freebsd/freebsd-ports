@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	conkeror
-PORTVERSION=	0.31
+PORTVERSION=	0.32
 DISTVERSIONPREFIX=	firefox-
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_MOZDEV}
@@ -21,6 +21,7 @@ RUN_DEPENDS=	${CONK_APP}:${PORTSDIR}/www/${CONK_APP}
 CONK_ARGS=	-chrome chrome://conkeror/content
 CONK_APP?=	${PKGNAMEPREFIX}firefox
 CONK_EXEC?=	${PKGNAMEPREFIX}${PORTNAME}
+USE_XPI=	${CONK_APP}
 PLIST_FILES=	bin/${CONK_EXEC}
 XPI_ID=		{a79fe89b-6662-4ff4-8e88-09950ad4dfde}
 XPI_FILES=	chrome/conkeror.jar components/nsCrank.js install.rdf chrome.manifest
