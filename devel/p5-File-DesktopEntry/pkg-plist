@@ -1,0 +1,5 @@
+%%SITE_PERL%%/File/DesktopEntry.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/File/DesktopEntry/.packlist
+@dirrmtry %%SITE_PERL%%/File
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/DesktopEntry
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File
