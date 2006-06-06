@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pipemeter
-PORTVERSION=	1.0.0
+PORTVERSION=	1.1.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://ports.abditum.com/pipemeter/ \
 		http://spamaps.org/files/pipemeter/
@@ -14,10 +14,7 @@ MASTER_SITES=	http://ports.abditum.com/pipemeter/ \
 MAINTAINER=	rabbi@abditum.com
 COMMENT=	A tool for displaying pipe status information
 
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-WRKSRC=		${WRKDIR}/${DISTNAME}
-CONFIGURE_ENV=		PREFIX="${PREFIX}"
 
 MAN1=		pipemeter.1
 PLIST_FILES=	bin/pipemeter
