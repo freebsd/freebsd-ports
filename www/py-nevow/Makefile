@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Nevow-${PORTVERSION}
 EXTRACT_SUFX=	.tar.gz?format=raw
 
-MAINTAINER=	root@comdongin.com
+MAINTAINER=	alex@foxybanana.com
 COMMENT=	A web application templating system, based on the the Twisted Woven
 
 USE_PYTHON=	yes
