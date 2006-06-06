@@ -1,3 +1,9 @@
+Version 4.54.6
+=================
+- Upgrade to MailScanner 4.54
+- Download location changed
+- added sysutils/p5-Sys-Hostname-Long dependency
+
 Version 4.53.8
 =================
 - 4.53.7 contained a bug in scanning of phishing mails. This resulted in scanning loops
