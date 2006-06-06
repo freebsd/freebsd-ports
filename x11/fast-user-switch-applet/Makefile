@@ -16,6 +16,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Fast user switching applet for GNOME
 
 USE_BZIP2=	yes
+USE_GETTEXT=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack intlhack gnomeprefix gtk20 gnomepanel
